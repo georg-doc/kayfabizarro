@@ -6,558 +6,885 @@
   "cards": [
     {
       "name": "The Fairground Ticket",
-      "power": "Declare everything in play symbolic and open to reinterpretation",
-      "lore": "You enter a space where nothing is literal",
+      "power": "RULE: We are playing Attractions, not Diagnoses. Everything is symbolic.",
+      "lore": "\"Admit One to the Problem. We don't solve things here; we just light them better.\"",
       "grade": 1,
       "gradeReason": "Perfect frame setter",
-      "artworkPrompt": "Hand holding carnival ticket glowing entry portal messy fair"
+      "artworkPrompt": "Hand holding carnival ticket glowing entry portal messy fair",
+      "jsonLegacy": {
+        "cardName": "The Fairground Ticket",
+        "power": "Declare everything in play symbolic and open to reinterpretation",
+        "lore": "You enter a space where nothing is literal"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p1 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "name": "Uncle FrizzleBob",
-      "power": "Frame tragedy as comedy and invite absurd reinterpretation",
-      "lore": "Nothing is sacred, everything is playable",
+      "power": "AVATAR: Acts as Narrator. Allows the player to reframe any tragedy as a comedy.",
+      "lore": "\"I'm not a healer. I'm a story-wrestler. Welcome to the mess.\"",
       "grade": 1,
       "gradeReason": "Tone anchor",
       "artworkPrompt": "Chaotic rabbit host grinning carnival ringmaster surreal",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Uncle FrizzleBob",
-        "power": "AVATAR: Acts as Narrator.",
-        "lore": "Allows the player to reframe any tragedy as a comedy.",
+        "power": "Frame tragedy as comedy and invite absurd reinterpretation",
+        "lore": "Nothing is sacred, everything is playable"
+      },
+      "printTypo": "Druck-Schrift mit Glyphenfehlern (m/n/e verformt, z. B. 'Sosstimes', 'MECIIARIC', 'thea'); gemeintes Wort transkribiert",
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p1 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "name": "The Safety Whistle",
-      "power": "Pause escalation and reset emotional intensity",
-      "lore": "Someone can always stop the spiral",
+      "power": "MECHANIC: Immediate safety break. Stops the session instantly.",
+      "lore": "\"Sometimes the clown gets too close. Blow this to stop the show.\"",
       "grade": 1,
       "gradeReason": "Essential safety valve",
       "artworkPrompt": "Metal whistle steaming emergency brake symbolic",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Safety Whistle",
-        "power": "Sosstines the clown gets too close.",
-        "lore": "Blow this to stop the show.",
+        "power": "Pause escalation and reset emotional intensity",
+        "lore": "Someone can always stop the spiral"
+      },
+      "printTypo": "Druck-Schrift mit Glyphenfehlern (m/n/e verformt, z. B. 'Sosstimes', 'MECIIARIC', 'thea'); gemeintes Wort transkribiert: 'Sosstimes', 'MECIIARIC: Iasediate safety bresk'",
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p1 BL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "name": "The Invisible Rucksack",
-      "power": "Introduce unseen burden another player must carry",
-      "lore": "You carry more than you show",
+      "power": "RULE: Players must draw Rucksack Cards to start the session.",
+      "lore": "\"You are carrying things that no one sees. Put them on the table.\"",
       "grade": 1,
       "gradeReason": "Strong empathy engine",
-      "artworkPrompt": "Backpack floating heavy invisible weight straps digging"
+      "artworkPrompt": "Backpack floating heavy invisible weight straps digging",
+      "jsonLegacy": {
+        "cardName": "The Invisible Rucksack",
+        "power": "Introduce unseen burden another player must carry",
+        "lore": "You carry more than you show"
+      },
+      "printTypo": "Druck-Schrift mit Glyphenfehlern (m/n/e verformt, z. B. 'Sosstimes', 'MECIIARIC', 'thea'); gemeintes Wort transkribiert: 'thea', 'RULB', 'sust'",
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p1 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Hall of Distorting Mirrors",
-      "power": "Force players to exaggerate or distort traits",
-      "lore": "Identity bends under reflection",
+      "name": "The Hall of Distorting Mirrors",
+      "power": "Players must narrate contradictory self-images. No single truth allowed.",
+      "lore": "\"In this mirror, I'm confident. In that one, I'm a fraud. Which is real? Both.\"",
       "grade": 1,
       "gradeReason": "Immediate roleplay",
-      "artworkPrompt": "Mirror maze warped faces stretching carnival"
+      "artworkPrompt": "Mirror maze warped faces stretching carnival",
+      "jsonLegacy": {
+        "cardName": "Hall of Distorting Mirrors",
+        "power": "Force players to exaggerate or distort traits",
+        "lore": "Identity bends under reflection"
+      },
+      "printTypo": "Druck-Schrift mit Glyphenfehlern (m/n/e verformt, z. B. 'Sosstimes', 'MECIIARIC', 'thea'); gemeintes Wort transkribiert: 'mirror' als 'sirror', 'frand', 'Beth', 'Ro single'",
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p2 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Tent of Unnamed Feelings",
-      "power": "Describe emotions without naming them directly",
-      "lore": "Language fails before feeling",
+      "name": "The Tent of Unnamed Feelings",
+      "power": "Describe only somatic sensations (colors, textures, weights). No emotion labels.",
+      "lore": "\"There's a weight. Not sadness. Not anger. Just... heavy.\"",
       "grade": 1,
       "gradeReason": "Great constraint",
-      "artworkPrompt": "Foggy tent filled with colored clouds emotions"
+      "artworkPrompt": "Foggy tent filled with colored clouds emotions",
+      "jsonLegacy": {
+        "cardName": "Tent of Unnamed Feelings",
+        "power": "Describe emotions without naming them directly",
+        "lore": "Language fails before feeling"
+      },
+      "printTypo": "Druck-Schrift mit Glyphenfehlern (m/n/e verformt, z. B. 'Sosstimes', 'MECIIARIC', 'thea'); gemeintes Wort transkribiert: 'celers, teatures', 'Ro eaotien labels'",
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p2 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Rationalization Booth",
-      "power": "Explain any action as logical after the fact",
-      "lore": "We always have reasons",
+      "name": "The Rationalization Fortune Booth",
+      "power": "ZONE: Intellectualize everything until interrupted by: \"Yes, but how does it FEEL?\"",
+      "lore": "\"I can explain my trauma with perfect academic vocabulary.\"",
       "grade": 1,
       "gradeReason": "Sharp satire",
-      "artworkPrompt": "Brain in jar spinning excuses carnival booth"
+      "artworkPrompt": "Brain in jar spinning excuses carnival booth",
+      "jsonLegacy": {
+        "cardName": "Rationalization Booth",
+        "power": "Explain any action as logical after the fact",
+        "lore": "We always have reasons"
+      },
+      "printTypo": "Druck-Schrift mit Glyphenfehlern (m/n/e verformt, z. B. 'Sosstimes', 'MECIIARIC', 'thea'); gemeintes Wort transkribiert: 'ZORE', 'everytkiog aetil isterraptsd ky'",
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p2 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Grand Ringmaster Stage",
-      "power": "One player defines reality for a moment",
-      "lore": "Authority is performance",
+      "name": "The Grand Ringmaster Stage",
+      "power": "ZONE: Narrate as a Performance vs. Narrate as the Backstage Reality.",
+      "lore": "\"I'm fine! Look how competent I am! (Please don't look behind the curtain).\"",
       "grade": 1,
       "gradeReason": "Power pivot",
-      "artworkPrompt": "Ringmaster on stage spotlight commanding crowd"
+      "artworkPrompt": "Ringmaster on stage spotlight commanding crowd",
+      "jsonLegacy": {
+        "cardName": "Grand Ringmaster Stage",
+        "power": "One player defines reality for a moment",
+        "lore": "Authority is performance"
+      },
+      "printTypo": "Druck-Schrift mit Glyphenfehlern (m/n/e verformt, z. B. 'Sosstimes', 'MECIIARIC', 'thea'); gemeintes Wort transkribiert: 'LORZ', 'POWEB: ZORE', 'Rarrate', 'curtala'",
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p2 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "name": "The Apology You Never Got",
-      "power": "Introduce unresolved past interaction into scene",
-      "lore": "Closure rarely arrives",
+      "power": "BLOCK: Forgiveness is impossible. Narrator must reference the missing closure.",
+      "lore": "\"I keep waiting for them to say it. They never will.\"",
       "grade": 1,
       "gradeReason": "Emotional trigger",
-      "artworkPrompt": "Envelope unopened weighing scale guilt"
+      "artworkPrompt": "Envelope unopened weighing scale guilt",
+      "jsonLegacy": {
+        "cardName": "The Apology You Never Got",
+        "power": "Introduce unresolved past interaction into scene",
+        "lore": "Closure rarely arrives"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p3 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "name": "The Stone of Old Guilt",
-      "power": "Make a past mistake physically present in scene",
-      "lore": "You carry it anyway",
+      "power": "WEIGHT: Adds weight to narration. Player cannot choose the \"easy\" path.",
+      "lore": "\"It's not even sharp anymore. It's just heavy. I'm used to it.\"",
       "grade": 1,
       "gradeReason": "Concrete metaphor",
       "artworkPrompt": "Heavy stone on chest burden symbolism",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Stone of Old Guilt",
-        "power": "not even sharp anymore.",
-        "lore": "It's just heavy. I'm used to it.- Adds weight to narratioo. Player cannot hoose the 'easy\" path.",
+        "power": "Make a past mistake physically present in scene",
+        "lore": "You carry it anyway"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p3 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "name": "The Need to Be Liked",
-      "power": "Force decisions based on approval seeking",
-      "lore": "Connection overrides truth",
+      "power": "FILTER: Every decision must be filtered through: \"Will this make them happy?\"",
+      "lore": "\"If they don't like me, do I even exist?\"",
       "grade": 1,
       "gradeReason": "Relatable engine",
-      "artworkPrompt": "Mask smiling cracked validation seeking"
+      "artworkPrompt": "Mask smiling cracked validation seeking",
+      "jsonLegacy": {
+        "cardName": "The Need to Be Liked",
+        "power": "Force decisions based on approval seeking",
+        "lore": "Connection overrides truth"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p3 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "The Promise to Younger Self",
-      "power": "Reintroduce abandoned goal or value",
-      "lore": "You said you would",
+      "name": "The Promise to the Younger Self",
+      "power": "RIGIDITY: The Actor cannot compromise on values, even if it hurts them.",
+      "lore": "\"I said I'd never become this. Oops.\"",
       "grade": 1,
       "gradeReason": "Strong callback",
       "artworkPrompt": "Skeleton pinky promise child hand memory",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Promise to Younger Self",
-        "power": "said I'd never become this. Oops.\" Actor cannet compromise en values, even if it hurts them.",
-        "lore": "",
+        "power": "Reintroduce abandoned goal or value",
+        "lore": "You said you would"
+      },
+      "printTypo": "Druck-Schrift mit Glyphenfehlern (m/n/e verformt, z. B. 'Sosstimes', 'MECIIARIC', 'thea'); gemeintes Wort transkribiert: 'cannet compromise en values'",
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p3 BR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "name": "The Rescue Loop",
-      "power": "Repeat helping behavior even when it fails",
-      "lore": "Saving others avoids self",
+      "power": "COMPULSION: Actor MUST intervene in others' stories, causing complications.",
+      "lore": "\"I save people who didn't ask. Then I'm angry they aren't grateful.\"",
       "grade": 1,
       "gradeReason": "Clear loop",
       "artworkPrompt": "Boat rescue repeating drowning cycle",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Rescue Loop",
-        "power": "ssve people who didn't ask. Then I'm angry they aren't grateful.",
-        "lore": "COMPULSION: Actor MUST intervene in others* stories, causing complications.",
+        "power": "Repeat helping behavior even when it fails",
+        "lore": "Saving others avoids self"
+      },
+      "printTypo": "Druck: 'I ssve'",
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p4 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "name": "The Shutdown Spiral",
-      "power": "Withdraw further each time conflict appears",
-      "lore": "Silence becomes system",
+      "power": "TRIGGER: Conflict triggers silence. Player skips turn or narrates \"fade to black.\"",
+      "lore": "\"You get loud. I go quiet. We both disappear.\"",
       "grade": 1,
       "gradeReason": "Behavioral realism",
-      "artworkPrompt": "Turtle retreating into dark spiral shell"
+      "artworkPrompt": "Turtle retreating into dark spiral shell",
+      "jsonLegacy": {
+        "cardName": "The Shutdown Spiral",
+        "power": "Withdraw further each time conflict appears",
+        "lore": "Silence becomes system"
+      },
+      "printTypo": "Druck: 'We beth'",
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p4 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Meta-Analysis Loop",
-      "power": "Analyze instead of acting repeatedly",
-      "lore": "Thinking replaces doing",
+      "name": "The Meta-Analysis Loop",
+      "power": "PARALYSIS: Explain the THEORY of the action but never take the action.",
+      "lore": "\"I am thinking about my thinking about my feelings.\"",
       "grade": 1,
       "gradeReason": "Very strong satire",
       "artworkPrompt": "Brain analyzing itself infinite recursion",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Meta-Analysis Loop",
-        "power": "am thinking about thinking about my feelings.\" Explain the THEORY of the action but never take the action.",
-        "lore": "",
+        "power": "Analyze instead of acting repeatedly",
+        "lore": "Thinking replaces doing"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p4 BL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "I Can Fix Them Kit",
-      "power": "Treat others as projects instead of people",
-      "lore": "Control disguised as care",
+      "name": "The \"I Can Fix Them\" Kit",
+      "power": "ATTRACTION: Actor is drawn to the most dangerous element on the Stage.",
+      "lore": "\"They are a project, not a person. And I love projects.\"",
       "grade": 1,
       "gradeReason": "Brutal clarity",
       "artworkPrompt": "Toolbox labeled fix them hearts wires",
-      "print": {
+      "jsonLegacy": {
         "cardName": "I Can Fix Them Kit",
-        "power": "They are project, not person. And I love projects.",
-        "lore": "ATTRACTION: Actor is element on the Stage.",
+        "power": "Treat others as projects instead of people",
+        "lore": "Control disguised as care"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p4 BR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "The Gatekeeper (Strike)",
-      "power": "Refuse access to vulnerable content",
-      "lore": "Protection shuts doors",
+      "name": "The Gatekeeper (On Strike)",
+      "power": "COLLAPSE: Actor cannot say 'No' until another player volunteers as Gatekeeper.",
+      "lore": "\"I used to say no. I forgot how. Now anyone can walk in.\"",
       "grade": 1,
       "gradeReason": "Important defense",
       "artworkPrompt": "Guard blocking gate exhausted protest",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Gatekeeper (Strike)",
-        "power": "I used to say no. forgot how. Now anyone can walk in.",
-        "lore": "COLLAPSE: Actor",
+        "power": "Refuse access to vulnerable content",
+        "lore": "Protection shuts doors"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p5 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "Gatekeeper (Overcompensating)",
-      "power": "Overcontrol entry to avoid risk",
-      "lore": "Too much protection suffocates",
+      "name": "The Gatekeeper (Overcompensating)",
+      "power": "RIGIDITY: Actor rejects all help/Items until isolation becomes unbearable.",
+      "lore": "\"No one gets in. Ever. Not even me.\"",
       "grade": 1,
       "gradeReason": "Nice contrast",
-      "artworkPrompt": "Armored guard overlocking door paranoia"
+      "artworkPrompt": "Armored guard overlocking door paranoia",
+      "jsonLegacy": {
+        "cardName": "Gatekeeper (Overcompensating)",
+        "power": "Overcontrol entry to avoid risk",
+        "lore": "Too much protection suffocates"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p5 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "name": "The Exhausted Caretaker",
-      "power": "Continue helping despite depletion",
-      "lore": "Care without self",
+      "power": "ROLE: Gains tokens for helping, loses tokens for asking for help.",
+      "lore": "\"I'm fine. I just need to sleep for three years.\"",
       "grade": 1,
       "gradeReason": "Strong archetype",
-      "artworkPrompt": "Tired worker pouring from empty cup"
+      "artworkPrompt": "Tired worker pouring from empty cup",
+      "jsonLegacy": {
+        "cardName": "The Exhausted Caretaker",
+        "power": "Continue helping despite depletion",
+        "lore": "Care without self"
+      },
+      "printTypo": "Druck: 'sleep fer'",
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p5 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Inner Critic (Megaphone)",
-      "power": "Amplify negative commentary about actions",
-      "lore": "Failure is loud",
+      "name": "The Inner Critic (With Megaphone)",
+      "power": "COMMENTARY: Another player holds this and provides running cynical commentary.",
+      "lore": "\"You're doing it wrong. Everyone noticed.\"",
       "grade": 1,
       "gradeReason": "Table impact high",
-      "artworkPrompt": "Goblin shouting insults megaphone chaos"
+      "artworkPrompt": "Goblin shouting insults megaphone chaos",
+      "jsonLegacy": {
+        "cardName": "Inner Critic (Megaphone)",
+        "power": "Amplify negative commentary about actions",
+        "lore": "Failure is loud"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p5 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "name": "Future Self: The One Who Left",
-      "power": "Introduce version that escaped current situation",
-      "lore": "Another path existed",
+      "power": "JUDGMENT: Hovers above Actor. Judges every choice to 'stay' or 'endure'.",
+      "lore": "\"I left. It was hard. But I'm... lighter. And terrified.\"",
       "grade": 1,
       "gradeReason": "Perspective shift",
-      "artworkPrompt": "Glitch figure leaving timeline suitcase"
+      "artworkPrompt": "Glitch figure leaving timeline suitcase",
+      "jsonLegacy": {
+        "cardName": "Future Self: The One Who Left",
+        "power": "Introduce version that escaped current situation",
+        "lore": "Another path existed"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p6 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "name": "Future Self: The One Who Stayed",
-      "power": "Show consequence of not changing",
-      "lore": "Endurance becomes fate",
+      "power": "FAILURE: Hovers above Actor. Makes 'endurance' feel like failure.",
+      "lore": "\"I can't believe you stayed this long. It never get better.\"",
       "grade": 1,
       "gradeReason": "Contrast strong",
       "artworkPrompt": "Older self trapped room stagnant life",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Future Self: The One Who Stayed",
-        "power": "can't believe you stayed this long. It never get betier.",
-        "lore": "FAILURE: Hovers above Actor. Makes 'Endurance' feel like failure.",
+        "power": "Show consequence of not changing",
+        "lore": "Endurance becomes fate"
+      },
+      "printTypo": "'It never get better' so gedruckt",
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p6 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "Future Splitter",
-      "power": "Create multiple possible outcomes simultaneously",
-      "lore": "Choice branches reality",
+      "name": "The Future Splitter",
+      "power": "MECHANIC: Split the timeline. Narrate two contradictory outcomes (A and B).",
+      "lore": "\"A moment where the timeline cracks.\"",
       "grade": 1,
       "gradeReason": "Great engine",
-      "artworkPrompt": "Rail tracks splitting futures diverging"
+      "artworkPrompt": "Rail tracks splitting futures diverging",
+      "jsonLegacy": {
+        "cardName": "Future Splitter",
+        "power": "Create multiple possible outcomes simultaneously",
+        "lore": "Choice branches reality"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p6 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Regretometer",
-      "power": "Quantify imagined past decisions",
-      "lore": "Should have dominates now",
+      "name": "The Regretometer",
+      "power": "ARTIFACT: If the gap is too wide, Actor takes psychic damage (loses turn).",
+      "lore": "\"Measuring the gap between intent and action.\"",
       "grade": 2,
       "gradeReason": "Slightly abstract",
-      "artworkPrompt": "Machine measuring regret glowing meters"
+      "artworkPrompt": "Machine measuring regret glowing meters",
+      "jsonLegacy": {
+        "cardName": "Regretometer",
+        "power": "Quantify imagined past decisions",
+        "lore": "Should have dominates now"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p6 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "name": "Wait… What?",
-      "power": "Force confusion and reinterpretation of current scene",
-      "lore": "Meaning collapses suddenly",
+      "power": "PAUSE: Another player must restate the revelation in the dumbest possible way.",
+      "lore": "Cognitive lag. Delayed integration.",
       "grade": 1,
       "gradeReason": "Reset tool",
-      "artworkPrompt": "Duck confused neon symbols glitch"
+      "artworkPrompt": "Duck confused neon symbols glitch",
+      "jsonLegacy": {
+        "cardName": "Wait… What?",
+        "power": "Force confusion and reinterpretation of current scene",
+        "lore": "Meaning collapses suddenly"
+      },
+      "printTypo": "Druck: 'integrstion'",
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p7 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Spiritual Ego Check",
-      "power": "Call out performative enlightenment",
-      "lore": "Awakening becomes identity",
+      "name": "The Spiritual Ego Check",
+      "power": "INTERRUPT: Play if someone says \"What this really means is...\" Sentence ends.",
+      "lore": "Enlightenment inflation detected.",
       "grade": 1,
       "gradeReason": "Satire strong",
-      "artworkPrompt": "Guru dissolving rainbow ego exposure"
+      "artworkPrompt": "Guru dissolving rainbow ego exposure",
+      "jsonLegacy": {
+        "cardName": "Spiritual Ego Check",
+        "power": "Call out performative enlightenment",
+        "lore": "Awakening becomes identity"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p7 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "name": "I Need a Snack",
-      "power": "Interrupt intensity with basic need",
-      "lore": "Body breaks narrative",
+      "power": "BREAK: Play pauses for 30 seconds. Everyone breathes. Silence. Eating.",
+      "lore": "Embodiment reminder. You have a body. Feed it.",
       "grade": 1,
       "gradeReason": "Grounding tool",
-      "artworkPrompt": "Taco glowing eye hunger comic relief"
+      "artworkPrompt": "Taco glowing eye hunger comic relief",
+      "jsonLegacy": {
+        "cardName": "I Need a Snack",
+        "power": "Interrupt intensity with basic need",
+        "lore": "Body breaks narrative"
+      },
+      "printTypo": "Druck: 'You have s body'",
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p7 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "name": "Cosmic PowerPoint (Broken)",
-      "power": "Explain something profound but fail structurally",
-      "lore": "Insight without clarity",
+      "power": "CONSTRAINT: Complex feelings must be explained via bullet points and hand gestures.",
+      "lore": "Overexplained revelation.",
       "grade": 2,
       "gradeReason": "Funny niche",
       "artworkPrompt": "Broken chart glitch presentation surreal",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Cosmic PowerPoint (Broken)",
-        "power": "Complex feelings must be explained bullet points and hand gestures",
-        "lore": "Overexplained revelation.",
+        "power": "Explain something profound but fail structurally",
+        "lore": "Insight without clarity"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p7 BR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "Clown Shoe Shuffle",
-      "power": "Exaggerate physical behavior absurdly",
-      "lore": "Body becomes joke",
+      "name": "The Clown Shoe Shuffle",
+      "power": "ACTION: Walk/talk like you're wearing giant shoes. Exaggerate the limp.",
+      "lore": "\"Makes seriousness impossible.\"",
       "grade": 2,
       "gradeReason": "Light but fun",
-      "artworkPrompt": "Oversized clown shoe tripping slapstick"
+      "artworkPrompt": "Oversized clown shoe tripping slapstick",
+      "jsonLegacy": {
+        "cardName": "Clown Shoe Shuffle",
+        "power": "Exaggerate physical behavior absurdly",
+        "lore": "Body becomes joke"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p8 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Miracle Tonic Pitch",
-      "power": "Sell false solution confidently",
-      "lore": "Hope packaged",
+      "name": "The Miracle Tonic Pitch",
+      "power": "ACTION: Sell your trauma as a product. \"Step right up! Get your avoidance here!\"",
+      "lore": "\"Expose the con you're running on yourself.\"",
       "grade": 1,
       "gradeReason": "Great satire",
       "artworkPrompt": "Fox salesman tonic bottle snake oil",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Miracle Tonic Pitch",
-        "power": "Expose the con you're running on yourself.\" Sell your trauma as product..",
-        "lore": "Step right up! Get your avoidance here!",
+        "power": "Sell false solution confidently",
+        "lore": "Hope packaged"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p8 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "Stage Whisper",
-      "power": "Reveal secret dramatically",
-      "lore": "Truth leaks sideways",
+      "name": "The Stage Whisper",
+      "power": "ACTION: Tell the secret to the back row in a loud, dramatic whisper.",
+      "lore": "\"Secrets lose power when performed.\"",
       "grade": 1,
       "gradeReason": "Nice trigger",
-      "artworkPrompt": "Face whispering amplified secrets"
+      "artworkPrompt": "Face whispering amplified secrets",
+      "jsonLegacy": {
+        "cardName": "Stage Whisper",
+        "power": "Reveal secret dramatically",
+        "lore": "Truth leaks sideways"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p8 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Juggling Act",
-      "power": "Balance incompatible demands visibly",
-      "lore": "Drop is inevitable",
+      "name": "The Juggling Act",
+      "power": "ACTION: Mime juggling while talking. Drop one ball. Acknowledge it.",
+      "lore": "\"You can't hold everything. That's okay.\"",
       "grade": 1,
       "gradeReason": "Strong metaphor",
-      "artworkPrompt": "Figure juggling work love sanity chaos"
+      "artworkPrompt": "Figure juggling work love sanity chaos",
+      "jsonLegacy": {
+        "cardName": "Juggling Act",
+        "power": "Balance incompatible demands visibly",
+        "lore": "Drop is inevitable"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p8 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "name": "The Mask That Stuck",
-      "power": "A temporary role becomes permanent",
-      "lore": "Performance becomes identity",
+      "power": "STUCK: Actor cannot change behavior pattern, even when falling.",
+      "lore": "\"I forgot who is under it. The role became the skin.\"",
       "grade": 1,
       "gradeReason": "Excellent arc",
       "artworkPrompt": "Mask fused to face horror realization",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Mask That Stuck",
-        "power": "forgot who is under it. The role became the skin.",
-        "lore": "Actor cannot change behavior pattern, even when falling.",
+        "power": "A temporary role becomes permanent",
+        "lore": "Performance becomes identity"
+      },
+      "printTypo": "'even when falling' so gedruckt (evtl. 'failing' gemeint)",
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p9 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "name": "Trophy of Meaningless Suffering",
-      "power": "Turn pain into status",
-      "lore": "Look what I endured",
+      "power": "VALIDATION: Validates a struggle without resolving it.",
+      "lore": "\"At least it was hard. If it was hard, it must matter.\"",
       "grade": 1,
       "gradeReason": "Sharp critique",
-      "artworkPrompt": "Award statue labeled suffering pride"
+      "artworkPrompt": "Award statue labeled suffering pride",
+      "jsonLegacy": {
+        "cardName": "Trophy of Meaningless Suffering",
+        "power": "Turn pain into status",
+        "lore": "Look what I endured"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p9 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Bridge We Never Cross",
-      "power": "Keep conflict unresolved intentionally",
-      "lore": "Avoidance stabilizes distance",
+      "name": "The Bridge We Never Cross",
+      "power": "OBSTACLE: Defines a permanent obstacle in the relationship/story.",
+      "lore": "\"We talk about it. We look at it. We never walk on it.\"",
       "grade": 1,
       "gradeReason": "Relational tension",
-      "artworkPrompt": "Broken bridge over fog gap"
+      "artworkPrompt": "Broken bridge over fog gap",
+      "jsonLegacy": {
+        "cardName": "Bridge We Never Cross",
+        "power": "Keep conflict unresolved intentionally",
+        "lore": "Avoidance stabilizes distance"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p9 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Exit Sign (That Moves)",
-      "power": "Offer escape that constantly shifts",
-      "lore": "Leaving isn’t simple",
+      "name": "The Exit Sign (That Moves)",
+      "power": "EXTENSION: Extends the Quest difficulty just as it is about to end.",
+      "lore": "\"The goalpost shift. Just when you thought you were done.\"",
       "grade": 1,
       "gradeReason": "Strong metaphor",
-      "artworkPrompt": "Moving exit sign hallway endless"
+      "artworkPrompt": "Moving exit sign hallway endless",
+      "jsonLegacy": {
+        "cardName": "Exit Sign (That Moves)",
+        "power": "Offer escape that constantly shifts",
+        "lore": "Leaving isn’t simple"
+      },
+      "printTypo": "Druck: 'were dons'; 'The goalpost shift' so gedruckt",
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p9 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Solo Anti-Journaling",
-      "power": "Express without explaining meaning",
-      "lore": "Witness without fixing",
+      "name": "Recipe: Solo Anti-Journaling",
+      "power": "SETUP: 1 Player. 5 Actors. No Quest. Just witness the patterns.",
+      "lore": "\"Cognitive weather tracking without performance.\"",
       "grade": 2,
       "gradeReason": "Soft but useful",
       "artworkPrompt": "Pen scribbling chaotic page no structure",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Solo Anti-Journaling",
-        "power": "Cognitive weather tracking without performance.",
-        "lore": "Player. Actors. No Quest. Just Witness the patterns.",
+        "power": "Express without explaining meaning",
+        "lore": "Witness without fixing"
+      },
+      "printTypo": "Ziffer gedruckt wie 'S Actors'; als '5' gelesen",
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p10 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "Therapist & Client",
-      "power": "Assign roles of speaker and witness",
-      "lore": "Structure holds chaos",
+      "name": "Recipe: Therapist & Client",
+      "power": "SETUP: Therapist = Navigator. Client = Actors + Rucksack. Quest = Pattern Visibility.",
+      "lore": "\"The Therapist holds the frame, not the answers.\"",
       "grade": 1,
       "gradeReason": "Play mode strong",
       "artworkPrompt": "Two chairs facing session setup minimal",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Therapist & Client",
-        "power": "Quest Pattern Visibility.",
-        "lore": "Therapist holds the SETUP: Therapist Navigator.",
+        "power": "Assign roles of speaker and witness",
+        "lore": "Structure holds chaos"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p10 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "The Grey Stone",
-      "power": "Externalize burden into object",
-      "lore": "Name it, place it",
+      "name": "Recipe: The Grey Stone",
+      "power": "TECHNIQUE: If a client feels something, put a card on table. Name it. It is now outside.",
+      "lore": "\"Externalization technique.\"",
       "grade": 1,
       "gradeReason": "Clean ritual",
-      "artworkPrompt": "Stone placed outside labeled burden"
+      "artworkPrompt": "Stone placed outside labeled burden",
+      "jsonLegacy": {
+        "cardName": "The Grey Stone",
+        "power": "Externalize burden into object",
+        "lore": "Name it, place it"
+      },
+      "printTypo": "Druck: 'tabie'",
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p10 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "7-Day Witness",
-      "power": "Observe pattern across time",
-      "lore": "Boring reveals truth",
+      "name": "Recipe: The 7-Day Witness",
+      "power": "SOLO RULE: Play for 7 days. Don't fix anything. Just watch.",
+      "lore": "\"Boring is progress.\"",
       "grade": 2,
       "gradeReason": "Slow effect",
-      "artworkPrompt": "Calendar repeating eye symbols observation"
+      "artworkPrompt": "Calendar repeating eye symbols observation",
+      "jsonLegacy": {
+        "cardName": "7-Day Witness",
+        "power": "Observe pattern across time",
+        "lore": "Boring reveals truth"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p10 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Couple’s Swap",
-      "power": "Play from another perspective",
-      "lore": "You can’t unhear it",
+      "name": "Recipe: The Couple's Swap",
+      "power": "MECHANIC: Swap Actors. Play your partner's grievance from THEIR perspective.",
+      "lore": "\"You can't unhear it once you've voiced it.\"",
       "grade": 1,
       "gradeReason": "Empathy driver",
       "artworkPrompt": "Couple swapping positions mirrored",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Couple’s Swap",
-        "power": "RECIPES & SCENARIOS II:",
-        "lore": "You can’t unhear it once you've voiced it.",
+        "power": "Play from another perspective",
+        "lore": "You can’t unhear it"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p11 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "Family Constellation",
-      "power": "Assign roles instead of choosing",
-      "lore": "System speaks through you",
+      "name": "Recipe: Family Constellation",
+      "power": "MECHANIC: Role Rotation. When Quest Die hits 3, pass Role Card to the left.",
+      "lore": "\"Roles are assigned, not chosen.\"",
       "grade": 1,
       "gradeReason": "Systemic engine",
-      "artworkPrompt": "Hanging mobiles family roles constellation"
+      "artworkPrompt": "Hanging mobiles family roles constellation",
+      "jsonLegacy": {
+        "cardName": "Family Constellation",
+        "power": "Assign roles instead of choosing",
+        "lore": "System speaks through you"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p11 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "Workplace Hazard",
-      "power": "Explain why nothing is your fault",
-      "lore": "System absorbs blame",
+      "name": "Recipe: Workplace Hazard",
+      "power": "SETUP: Zone = Rationalization Booth. Everyone explains why it's not their fault.",
+      "lore": "\"90% role dynamics, 10% actual work.\"",
       "grade": 1,
       "gradeReason": "Satirical hit",
       "artworkPrompt": "Water cooler corporate absurdity blame shift",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Workplace Hazard",
-        "power": "Everyone explains why it's not their fault.",
-        "lore": "Zone Rationalization Booth.",
+        "power": "Explain why nothing is your fault",
+        "lore": "System absorbs blame"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p11 BL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "FrizzleBob’s Guarantee",
-      "power": "End with unresolved ambiguity",
-      "lore": "No neat endings",
+      "name": "FrizzleBob's Guarantee",
+      "power": "META-CARD: Use to end any dispute about rules. The house always wins.",
+      "lore": "\"No Refunds on Epiphanies.\"",
       "grade": 1,
       "gradeReason": "Perfect closer",
-      "artworkPrompt": "Void stamp carnival ticket chaotic"
+      "artworkPrompt": "Void stamp carnival ticket chaotic",
+      "jsonLegacy": {
+        "cardName": "FrizzleBob’s Guarantee",
+        "power": "End with unresolved ambiguity",
+        "lore": "No neat endings"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p11 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
-      "name": "The Bardo",
-      "power": "Mix realities and dissolve boundaries",
-      "lore": "Between states",
+      "name": "Link: The Bardo (Psychedelic)",
+      "power": "LINK: Mix with \"Doors Were Never Closed\". Entities speak through Carnival Barkers.",
+      "lore": "\"The Hall of Mirrors is a Bardo space.\"",
       "grade": 1,
       "gradeReason": "Expansion strong",
       "artworkPrompt": "Portal carnival merging worlds psychedelic",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Bardo",
-        "power": "Mix with \"Doors Were Never Closed\".",
-        "lore": "Entities speak through Carnival Barkers.",
+        "power": "Mix realities and dissolve boundaries",
+        "lore": "Between states"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p12 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "The Codependent Tango",
-      "power": "Turn relationship into performance loop",
-      "lore": "Love becomes pattern",
+      "name": "Link: The Codependent Tango",
+      "power": "LINK: Mix with \"Love & Bonding\". Relationship dynamics become Attractions.",
+      "lore": "\"Performed on the Grand Ringmaster Stage.\"",
       "grade": 1,
       "gradeReason": "Relational engine",
       "artworkPrompt": "Skeleton couple dancing loop stage",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Codependent Tango",
-        "power": "Mix with \"Love & Bonding\".",
-        "lore": "Relationship dynamics become Attractions.",
+        "power": "Turn relationship into performance loop",
+        "lore": "Love becomes pattern"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p12 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "name": "The Maintenance Crew",
-      "power": "Resolve leftover fragments quietly",
-      "lore": "Someone cleans the mess",
+      "power": "NPC: They arrive to end the session or \"clean up\" a messy narrative thread.",
+      "lore": "\"Someone has to clean up the epiphany.\"",
       "grade": 2,
       "gradeReason": "Low drama",
       "artworkPrompt": "Workers sweeping broken heart pieces",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Maintenance Crew",
-        "power": "Someone has to clean up",
-        "lore": "the epiphany.",
+        "power": "Resolve leftover fragments quietly",
+        "lore": "Someone cleans the mess"
+      },
+      "textSource": {
         "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p12 BL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
-      "name": "Back Cover / Manifesto",
-      "power": "Declare symbolic play philosophy",
-      "lore": "Stay symbolic stay theatrical",
+      "name": "The Back Cover / Manifesto",
+      "power": "CLOSING: Your problems don't need solving, they need stage lighting.",
+      "lore": "\"Stay symbolic. Stay theatrical. Stay fluffy.\"",
       "grade": 1,
       "gradeReason": "Meta anchor",
-      "artworkPrompt": "Poster rabbit manifesto theatrical pose"
+      "artworkPrompt": "Poster rabbit manifesto theatrical pose",
+      "jsonLegacy": {
+        "cardName": "Back Cover / Manifesto",
+        "power": "Declare symbolic play philosophy",
+        "lore": "Stay symbolic stay theatrical"
+      },
+      "textSource": {
+        "source": "PDF v05 The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf p12 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     }
   ],
   "qa": {

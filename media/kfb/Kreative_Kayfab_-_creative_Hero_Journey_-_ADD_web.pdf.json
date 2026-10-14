@@ -6,460 +6,939 @@
 "cards": [
 {
 "name": "The Editor Reflex",
-"power": "Cancel last card played",
-"lore": "Kills ideas before they breathe",
+"power": "Veto. Cancel the last card played. The player must narrate the next turn as this Cat.",
+"lore": "It runs fast and silent. \"This is stupid. This won't work.\" It murders the idea before it has lungs.",
 "grade": 1,
 "gradeReason": "Perfect sabotage",
 "artworkPrompt": "Angry cat editor slashing paper with red pen",
-"print": {"cardName": "The Editor Reflex", "power": "murders", "lore": "idea before has lungs.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p2 TL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Editor Reflex",
+"power": "Cancel last card played",
+"lore": "Kills ideas before they breathe"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p2 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Consensus Trap",
-"power": "Merge ideas into bland average",
-"lore": "Nobody loses, nothing matters",
+"power": "Dilution. Force two players to combine cards into one \"safe\" idea. Deals 0 damage.",
+"lore": "The idea no one hates is the idea no one loves. We are not here to be polite.",
 "grade": 1,
 "gradeReason": "Painfully real",
 "artworkPrompt": "Group of birds merging into gray blob consensus",
-"print": {"cardName": "The Consensus Trap", "power": "Dilution. Force two players to combine cards into one \"safe\" idea. Deals damage. The idea no one hates is the idea no one", "lore": "loses. We are not here to be polite.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p2 TR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Consensus Trap",
+"power": "Merge ideas into bland average",
+"lore": "Nobody loses, nothing matters"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p2 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Clarity Demand",
-"power": "Force definition or skip turn",
-"lore": "Clarity kills early ideas",
+"power": "Fog. Demand a definition. If the player cannot define their term in 5 words, they skip a turn.",
+"lore": "You want to know exactly what the problem is before you start? Then you will never start.",
 "grade": 2,
 "gradeReason": "Good pressure",
-"artworkPrompt": "Raccoon confused in fog holding cotton candy"
+"artworkPrompt": "Raccoon confused in fog holding cotton candy",
+"jsonLegacy": {
+"cardName": "The Clarity Demand",
+"power": "Force definition or skip turn",
+"lore": "Clarity kills early ideas"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p2 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Imposter Syndrome",
-"power": "Reveal hand as worse",
-"lore": "Fear blocks action",
+"power": "Exposure. Reveal your hand. If your cards are better than your story, lose a turn.",
+"lore": "You are waiting to be found out. Good. The fear keeps you honest.",
 "grade": 1,
 "gradeReason": "Strong emotional lever",
 "artworkPrompt": "Lion labeled fraud cracked mirror self doubt",
-"print": {"cardName": "The Imposter Syndrome", "power": "Exposure. Reveal your hand.", "lore": "If your cards are better than your", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p2 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Imposter Syndrome",
+"power": "Reveal hand as worse",
+"lore": "Fear blocks action"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p2 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Half-Card",
-"power": "Play only half effect",
-"lore": "Incomplete ideas matter",
+"power": "Cliffhanger. Play this hanging off the table edge. The story must address something leaving.",
+"lore": "It is about to fall. Acknowledge the impermanence or lose the table.",
 "grade": 1,
 "gradeReason": "Creative constraint",
-"artworkPrompt": "Worm split into two halves incomplete form"
+"artworkPrompt": "Worm split into two halves incomplete form",
+"jsonLegacy": {
+"cardName": "The Half-Card",
+"power": "Play only half effect",
+"lore": "Incomplete ideas matter"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p3 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
-"name": "The Post-it Artefact",
-"power": "Add external object to play",
-"lore": "Reality enters game",
+"name": "The Post-it Artifact",
+"power": "Injection. Write anything on a scrap of paper. It is now a legal card.",
+"lore": "The deck is finite. Your brain is not. Put the actual problem on the table.",
 "grade": 1,
 "gradeReason": "Breaks boundary",
-"artworkPrompt": "Bird placing sticky note glowing artifact"
+"artworkPrompt": "Bird placing sticky note glowing artifact",
+"jsonLegacy": {
+"cardName": "The Post-it Artefact",
+"power": "Add external object to play",
+"lore": "Reality enters game"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p3 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Untouchable",
-"power": "Cannot be overwritten",
-"lore": "Fixed idea",
+"power": "Static. This card stays on Stage for 2 rounds. Cannot be overwritten.",
+"lore": "You can't dodge it. You can't time it. It is in the room. Now.",
 "grade": 2,
 "gradeReason": "Static but useful",
 "artworkPrompt": "Porcupine electrified protected stance",
-"print": {"cardName": "The Untouchable", "power": "Static. This card stays on Stage for rounds. Cannot be overwritten.", "lore": "You can't dodge it. You can't time it. It is in the room. Now.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p3 BL", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "The Untouchable",
+"power": "Cannot be overwritten",
+"lore": "Fixed idea"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p3 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Ghost Slot",
-"power": "Empty slot becomes story",
-"lore": "Absence creates meaning",
+"power": "Tear. Physically tear a card. The slot is now empty but must be mentioned in every story.",
+"lore": "Some losses do not heal. They become architecture. Work around the hole.",
 "grade": 1,
 "gradeReason": "Great engine",
-"artworkPrompt": "Ghost outline empty character silhouette"
+"artworkPrompt": "Ghost outline empty character silhouette",
+"jsonLegacy": {
+"cardName": "The Ghost Slot",
+"power": "Empty slot becomes story",
+"lore": "Absence creates meaning"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p3 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Unfinished Sentence",
-"power": "Others must complete",
-"lore": "Shared authorship",
+"power": "Handoff. Stop narration mid-sentence. Player to left must finish it.",
+"lore": "Authorial control is a myth. Let the other mind complete the thought.",
 "grade": 1,
 "gradeReason": "Table generator",
 "artworkPrompt": "Parrot speaking torn sentence paper",
-"print": {"cardName": "The Unfinished Sentence", "power": "Authorial control is myth. Let the other mind complete the thought.", "lore": "", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p4 TL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Unfinished Sentence",
+"power": "Others must complete",
+"lore": "Shared authorship"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p4 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Causality Block",
-"power": "No cause-effect allowed",
-"lore": "Narrative rupture",
+"power": "Flashframe. Tell a story with NO \"because\" or \"therefore.\" Only images.",
+"lore": "Explain nothing. Show the wreckage. Let them build the bridge.",
 "grade": 1,
 "gradeReason": "Strong disruption",
 "artworkPrompt": "Fish floating near broken castle surreal",
-"print": {"cardName": "The Causality Block", "power": "Flashframe. Tell story with No \"because\" or \"therefore.\" Only images.", "lore": "Explain nothing. Show the wreckage. Let them build the bridge.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p4 TR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Causality Block",
+"power": "No cause-effect allowed",
+"lore": "Narrative rupture"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p4 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Riff Chain",
-"power": "Amplify previous content",
-"lore": "Escalation loop",
+"power": "Amplify. Do not correct the previous idea. Make it weirder. +1 Momentum Token.",
+"lore": "Consensus kills. Escalation reveals. Don't agree—inflate.",
 "grade": 1,
 "gradeReason": "Momentum builder",
 "artworkPrompt": "Jazz monkey saxophone fire rhythm",
-"print": {"cardName": "The Riff Chain", "power": "Amplify. Do not correct the previous idea. Make it weirder. + Momentum Token.", "lore": "Consensus kills. Escalation reveals. Don't agree inflate.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p4 BL", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "The Riff Chain",
+"power": "Amplify previous content",
+"lore": "Escalation loop"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p4 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Editor Chip",
-"power": "Replace card voice",
-"lore": "Narrative voice shift",
+"power": "Personify. Place an object on a card. That card is now The Block. Narrate as The Block.",
+"lore": "Don't fight the resistance. Give it a microphone and let it bore us to death.",
 "grade": 2,
 "gradeReason": "Subtle",
 "artworkPrompt": "Frog surrounded by edited papers annoyed",
-"print": {"cardName": "The Editor Chip", "power": "Personify. Place an object on card. That card Block.", "lore": "Narrative as The Block. Don't fight the resistance. Give it micropnone and let it bore us to death.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p4 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Editor Chip",
+"power": "Replace card voice",
+"lore": "Narrative voice shift"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p4 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Genre Inversion",
-"power": "Flip tone of story",
-"lore": "Comedy becomes horror",
+"power": "Reskin. Flip the tone. Serious becomes Slapstick. Thriller becomes Bedtime Story.",
+"lore": "The content is the same. The lighting changed. Now we see the teeth.",
 "grade": 1,
 "gradeReason": "Strong effect",
 "artworkPrompt": "Clown turning sinister cracked makeup",
-"print": {"cardName": "The Genre Inversion", "power": "Reskin. Flip tone Serious becomes Slapstick.", "lore": "Thriller becomes Bedtime Story.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p5 TL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Genre Inversion",
+"power": "Flip tone of story",
+"lore": "Comedy becomes horror"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p5 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Silent Witness",
-"power": "Observe without input",
-"lore": "Truth in absence",
+"power": "Observation. Sit out one round. Watch. Report only what was NOT said.",
+"lore": "The truth is in the side-glance. The truth is in the hesitation.",
 "grade": 3,
 "gradeReason": "Low impact",
 "artworkPrompt": "Lemur writing notes quietly observer",
-"print": {"cardName": "The Silent Witness", "power": "The truth is in the side-glance.", "lore": "The Truth in hesitation.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p5 TR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Silent Witness",
+"power": "Observe without input",
+"lore": "Truth in absence"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p5 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Loudest Room",
-"power": "Mute loudest player",
-"lore": "Silence reveals signal",
+"power": "Mute. The player who spoke most last round skips a turn. They choose who speaks.",
+"lore": "We trade volume for signal. Silence the alpha to hear the frequency.",
 "grade": 1,
 "gradeReason": "Great social mechanic",
 "artworkPrompt": "Gorilla shouting then silenced suddenly",
-"print": {"cardName": "The Loudest Room", "power": "Mute. The player who spoke most last round skips turn. They choose who speaks.", "lore": "We trade volume for signal. Silence the alpha to hear the frequency.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p5 BL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Loudest Room",
+"power": "Mute loudest player",
+"lore": "Silence reveals signal"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p5 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Current Room",
-"power": "Narrate real players as fiction",
-"lore": "Breaks frame",
+"power": "Meta-Breach. Narrate the actual mood of the players (tired, bored) as a story element.",
+"lore": "The fiction is leaking. The players are the terrain.",
 "grade": 1,
 "gradeReason": "Meta brilliance",
 "artworkPrompt": "Fly observing table as story map",
-"print": {"cardName": "The Current Room", "power": "Meta-Breach. Narrate the actual mood of the players (tired, bored) as story element. The fiction is leaking.", "lore": "The players are the terrain.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p5 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Current Room",
+"power": "Narrate real players as fiction",
+"lore": "Breaks frame"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p5 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "This Already Happened",
-"power": "Retrospective logic",
-"lore": "Ending defines story",
+"power": "Retrospective. Everything on Stage is now \"The Past.\" Narrate how we got here.",
+"lore": "The ending is known. The mystery is the path. Honest explanation replaces suspense.",
 "grade": 1,
 "gradeReason": "Narrative twist",
-"artworkPrompt": "Elephant looking at framed past event"
+"artworkPrompt": "Elephant looking at framed past event",
+"jsonLegacy": {
+"cardName": "This Already Happened",
+"power": "Retrospective logic",
+"lore": "Ending defines story"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p6 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "I Remember Differently",
-"power": "Contradict past event",
-"lore": "Memory war",
+"power": "Gaslight. Contradict the last event with a new memory. Both are true.",
+"lore": "History is a wrestling match. The winner writes the wiki.",
 "grade": 1,
 "gradeReason": "Conflict driver",
 "artworkPrompt": "Chameleon rewriting memory timeline",
-"print": {"cardName": "I Remember Differently", "power": "Rewire the timeline. The past just a draft.", "lore": "", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p6 TR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "I Remember Differently",
+"power": "Contradict past event",
+"lore": "Memory war"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p6 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "Skip the Middle",
-"power": "Jump to outcome",
-"lore": "Audience fills gaps",
+"power": "Ellipsis. Narrate \"Three months later...\" The group infers the disaster.",
+"lore": "The gap is where the audience works. Don't do their job for them.",
 "grade": 1,
 "gradeReason": "Great pacing tool",
 "artworkPrompt": "Kangaroo leaping over burning city",
-"print": {"cardName": "Skip the Middle", "power": "Ellipsis. Narrate \"Three months later..\" The group infers the disaster.", "lore": "The gap is where the Audience works. Don't do their job for them.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p6 BL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "Skip the Middle",
+"power": "Jump to outcome",
+"lore": "Audience fills gaps"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p6 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Retroactive Quest",
-"power": "Define goal after play",
-"lore": "Meaning after action",
+"power": "Rewrite. Change the Quest card. The story must now lead to this new goal.",
+"lore": "We didn't know what we wanted until we got what we deserved.",
 "grade": 1,
 "gradeReason": "Excellent engine",
 "artworkPrompt": "Fish reversing waterfall time loop",
-"print": {"cardName": "The Retroactive Quest", "power": "Rewrite. Change the Quest card. The story must now lead to this new goal.", "lore": "We didn't know what we wanted until we got what we deserved.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p6 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Retroactive Quest",
+"power": "Define goal after play",
+"lore": "Meaning after action"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p6 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Off-Table Roll",
-"power": "Roll dice off table",
-"lore": "Chance escapes control",
+"power": "Chaos. Roll the die off the table. Where it lands defines the outcome.",
+"lore": "The system cannot contain the result. The floor has an opinion.",
 "grade": 1,
 "gradeReason": "Fun chaos",
-"artworkPrompt": "Penguin throwing dice off edge"
+"artworkPrompt": "Penguin throwing dice off edge",
+"jsonLegacy": {
+"cardName": "The Off-Table Roll",
+"power": "Roll dice off table",
+"lore": "Chance escapes control"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p7 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Silent Pen",
-"power": "No speech allowed",
-"lore": "Think in images",
+"power": "Pointer. Use a pen to point, divide, or connect cards. No writing.",
+"lore": "Stop thinking in words. Think in vectors. Think in space.",
 "grade": 1,
 "gradeReason": "Creative shift",
 "artworkPrompt": "Octopus writing silently colorful patterns",
-"print": {"cardName": "The Silent Pen", "power": "Pointer. Use pen to point, divide, or connect cards. No writing.", "lore": "Stop thinking in words. Think in vectors. Think in space", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p7 TR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Silent Pen",
+"power": "No speech allowed",
+"lore": "Think in images"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p7 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Jodorowsky Fix",
-"power": "Destroy to resolve",
-"lore": "Sacrifice for story",
+"power": "Psychomagic. Destroy a card physically to resolve a narrative deadlock.",
+"lore": "Symbolic destruction produces real relief. Sacrifice the paper to save the scene.",
 "grade": 1,
 "gradeReason": "Strong moment",
 "artworkPrompt": "Bear tearing paper dramatic ritual",
-"print": {"cardName": "The Jodorowsky Fix", "power": ". Destroy card physically to resolve a narrative deadlock.", "lore": "", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p7 BL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Jodorowsky Fix",
+"power": "Destroy to resolve",
+"lore": "Sacrifice for story"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p7 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Worked Shoot",
-"power": "Break character",
-"lore": "Truth bleeds in",
+"power": "Truth-Bomb. Break character. Say one real thing about the project. Die moves to extreme.",
+"lore": "The kayfabe breaks so the truth can breathe. But the mask goes back on.",
 "grade": 1,
 "gradeReason": "Meta pivot",
 "artworkPrompt": "Wrestler removing mask revealing face",
-"print": {"cardName": "The Worked Shoot", "power": "breaks", "lore": "Truth can breathe. But the mask goes back on.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p7 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Worked Shoot",
+"power": "Break character",
+"lore": "Truth bleeds in"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p7 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Cut-Up Poet",
-"power": "Reassemble text randomly",
-"lore": "Meaning from chaos",
+"power": "Randomize. Reassemble the Lore text into a new sentence (26 to 1 method).",
+"lore": "Tzara knew. The accident is smarter than you are. Shake the bag.",
 "grade": 1,
 "gradeReason": "Creative engine",
 "artworkPrompt": "Dog rearranging floating letters collage",
-"print": {"cardName": "The Cut-Up Poet", "power": "", "lore": "Stolen from the artists who tried", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p8 TL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Cut-Up Poet",
+"power": "Reassemble text randomly",
+"lore": "Meaning from chaos"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p8 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Exquisite Corpse",
-"power": "Blind storytelling chain",
-"lore": "Collective creation",
+"power": "Blind-Build. Play a card face down. Next player narrates blindly. Reveal at end.",
+"lore": "The inexhaustible murmur. Logic is a fence. Jump it.",
 "grade": 1,
 "gradeReason": "Classic method",
 "artworkPrompt": "Giraffe stitched from parts surreal",
-"print": {"cardName": "The Exquisite Corpse", "power": "Blind-Build. Play card face down. Next player narrates blindly. Reveal at end.", "lore": "The inexhaustible murmur. Logic is a fence. Jump it.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p8 TR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Exquisite Corpse",
+"power": "Blind storytelling chain",
+"lore": "Collective creation"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p8 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Frottage Texture",
-"power": "Find image in texture",
-"lore": "Perception creates meaning",
+"power": "Pareidolia. Find an image in the card's texture/stains. That is the story.",
+"lore": "Paranoid-critical thinking. It's not there, but you see it. So it's there.",
 "grade": 2,
 "gradeReason": "Abstract",
 "artworkPrompt": "Woodpecker revealing face in bark texture",
-"print": {"cardName": "The Frottage Texture", "power": ". Find an image in the card's texture/ stains.", "lore": "That is the story.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p8 BL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Frottage Texture",
+"power": "Find image in texture",
+"lore": "Perception creates meaning"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p8 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Oblique Strategy",
-"power": "Follow random direction",
-"lore": "Hidden intention",
+"power": "Lateral. Draw a random direction. Follow it precisely, even if it hurts.",
+"lore": "The mistake is a hidden intention. Stop correcting. Start steering.",
 "grade": 1,
 "gradeReason": "Great prompt",
 "artworkPrompt": "Hairless cat holding sign honor the error",
-"print": {"cardName": "The Oblique Strategy", "power": "mistake is", "lore": "Hidden intention. Stop correcting. Start steering.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p8 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Oblique Strategy",
+"power": "Follow random direction",
+"lore": "Hidden intention"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p8 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Kayfabe King",
-"power": "Make audience laugh",
-"lore": "Pain is real",
+"power": "Work the Crowd. Make a lie true if the table laughs.",
+"lore": "It's fake. But the pain is real. And the belt is heavy.",
 "grade": 1,
 "gradeReason": "Strong payoff",
 "artworkPrompt": "Lion performer with mic stage spotlight",
-"print": {"cardName": "The Kayfabe King", "power": "fake.", "lore": "But the Pain is real. And the belt is heavy.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p9 TL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Kayfabe King",
+"power": "Make audience laugh",
+"lore": "Pain is real"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p9 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Noble Savage",
-"power": "Remove artificial effects",
-"lore": "Return to nature",
+"power": "Tabula Rasa. Wipe all negative effects from the Stage. Return to nature.",
+"lore": "Man is born free, and everywhere he is in spreadsheets.",
 "grade": 2,
 "gradeReason": "Situational",
 "artworkPrompt": "Wolf with books forest reclaiming nature",
-"print": {"cardName": "The Noble Savage", "power": "Tabula Rasa. Wipe all negative effects from the Stage.", "lore": "Return to nature. Man is born free, and everywhere he is in spreadsheets.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p9 TR", "method": "ocr", "confidence": "medium"}
+"jsonLegacy": {
+"cardName": "The Noble Savage",
+"power": "Remove artificial effects",
+"lore": "Return to nature"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p9 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Lonely Smoker",
-"power": "Take damage for solitude",
-"lore": "Isolation tax",
+"power": "Isolation Toxicity. Take damage if you have no allies on Stage.",
+"lore": "Solitude is the biological equivalent of smoking 15 packs of despair a day.",
 "grade": 2,
 "gradeReason": "Niche",
 "artworkPrompt": "Mouse smoking alone on bench dark mood",
-"print": {"cardName": "The Lonely Smoker", "power": "Isolation Toxicity. Take damage if you have no allies on Stage. solitude is the biological equivalent of smoking 15 packs of despair a day.", "lore": "", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p9 BL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Lonely Smoker",
+"power": "Take damage for solitude",
+"lore": "Isolation tax"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p9 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Heel Turn",
-"power": "Switch sides",
-"lore": "Betrayal arc",
+"power": "Betrayal. Switch sides on the Quest. Help the failure condition happen.",
+"lore": "Good guys get cheers. Bad guys get heat. Heat pays the bills.",
 "grade": 1,
 "gradeReason": "Classic move",
 "artworkPrompt": "Snake turning chair wrestling betrayal",
-"print": {"cardName": "The Heel Turn", "power": "Betrayal. Switch sides on the Quest.", "lore": "Help the failure condition happen.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p9 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Heel Turn",
+"power": "Switch sides",
+"lore": "Betrayal arc"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p9 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Bullshit Job",
-"power": "Discard and achieve nothing",
-"lore": "Work without meaning",
+"power": "Busywork. Discard 3 cards to draw 3 cards. Achieve nothing.",
+"lore": "The soul dies a little every Monday. The paycheck arrives every Friday.",
 "grade": 1,
 "gradeReason": "Sharp satire",
 "artworkPrompt": "Sloth at laptop endless loop tired",
-"print": {"cardName": "The Bullshit Job", "power": "Busywork. Discard cards to draw cards. achieve nothing.", "lore": "LATE", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p10 TL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Bullshit Job",
+"power": "Discard and achieve nothing",
+"lore": "Work without meaning"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p10 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Threshold Guardian",
-"power": "Block entry unless cost paid",
-"lore": "Gatekeeping",
+"power": "Gatekeep. Prevent a card from being played unless the player pays a token.",
+"lore": "Prove you belong here. Prove it again. Now fill out this form.",
 "grade": 1,
 "gradeReason": "Strong control",
 "artworkPrompt": "Bulldog guard with clipboard blocking path",
-"print": {"cardName": "The Threshold Guardian", "power": "Gatekeep. Prevent card from being played unless the player pays a token.", "lore": "", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p10 TR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Threshold Guardian",
+"power": "Block entry unless cost paid",
+"lore": "Gatekeeping"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p10 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Cooperative Ape",
-"power": "Make enemies allies",
-"lore": "Friendship engine",
+"power": "Hug. Connect two incompatible cards. They are now friends.",
+"lore": "Survival of the fittest? No. Survival of the friendliest.",
 "grade": 1,
 "gradeReason": "Positive twist",
-"artworkPrompt": "Chimp hugging duck collaboration"
+"artworkPrompt": "Chimp hugging duck collaboration",
+"jsonLegacy": {
+"cardName": "The Cooperative Ape",
+"power": "Make enemies allies",
+"lore": "Friendship engine"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p10 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Zero-Sum Gamer",
-"power": "Success requires others fail",
-"lore": "Scarcity mindset",
+"power": "Win. If another player succeeds, you must make them fail.",
+"lore": "For me to win, you do not necessarily have to lose. But it helps.",
 "grade": 1,
 "gradeReason": "Conflict driver",
 "artworkPrompt": "Dogs fighting over bone rivalry",
-"print": {"cardName": "The Zero-Sum Gamer", "power": "Win. If another player Success, you must make them fail.", "lore": "", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p10 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Zero-Sum Gamer",
+"power": "Success requires others fail",
+"lore": "Scarcity mindset"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p10 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Cognitive Weather",
-"power": "Narrate mood as weather",
-"lore": "Emotion externalized",
+"power": "Forecast. Narrate the table's mood as a weather report.",
+"lore": "Describe, don't prescribe. It is raining. You are not the rain.",
 "grade": 1,
 "gradeReason": "Strong flavor",
 "artworkPrompt": "Frog with storm cloud head forecast",
-"print": {"cardName": "The Cognitive Weather", "power": "Forecast. Narrate the table's mood as a weather report.", "lore": "DO0G", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p11 TL", "method": "ocr", "confidence": "medium"}
+"jsonLegacy": {
+"cardName": "The Cognitive Weather",
+"power": "Narrate mood as weather",
+"lore": "Emotion externalized"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p11 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Deep Fish",
-"power": "30 seconds silence",
-"lore": "Depth thinking",
+"power": "Patience. Wait 30 seconds of silence. The first idea spoken wins +2.",
+"lore": "The small fish are on the surface. The big ideas swim deep. Shut up and wait.",
 "grade": 1,
 "gradeReason": "Unique pause",
 "artworkPrompt": "Deep sea fish glowing in darkness",
-"print": {"cardName": "The Deep Fish", "power": "Patience. Wait 30 seconds of silence. The first idea spoken wins +.", "lore": "The small fish are on the surface. The big ideas swim deep. Shut up and wait.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p11 TR", "method": "ocr", "confidence": "medium"}
+"jsonLegacy": {
+"cardName": "The Deep Fish",
+"power": "30 seconds silence",
+"lore": "Depth thinking"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p11 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Inner Jailer",
-"power": "Guess hidden card",
-"lore": "Self-limitation",
+"power": "Surveillance. Guess a player's hidden card. If right, they discard it.",
+"lore": "You behave because you MIGHT be watched. The jailer is in your head.",
 "grade": 2,
 "gradeReason": "Minor",
 "artworkPrompt": "Figure in prison cell inside mind",
-"print": {"cardName": "The Inner Jailer", "power": "Surveillance. Guess player's hidden card. If right, they discard it.", "lore": "You behave because you be watched. The jailer is in your head.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p11 BL", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "The Inner Jailer",
+"power": "Guess hidden card",
+"lore": "Self-limitation"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p11 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Oxytocin Dealer",
-"power": "Give and receive cards",
-"lore": "Trust economy",
+"power": "Connection. Give another player a card from your hand. Restore their hand size.",
+"lore": "You need it. I got it. First hit is free.",
 "grade": 1,
 "gradeReason": "Social loop",
 "artworkPrompt": "Dog in coat giving heart tokens",
-"print": {"cardName": "The Oxytocin Dealer", "power": "Connection. Give another player a card from your hand. Restore their hand size.", "lore": "You need it. got it. First hit is free.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p11 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Oxytocin Dealer",
+"power": "Give and receive cards",
+"lore": "Trust economy"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p11 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "Blödsinn! (The Whistle)",
-"power": "Call rewrite",
-"lore": "Respect narrative logic",
+"power": "Challenge. Call BS on a story gap. Force a rewrite.",
+"lore": "That's nonsense. That's Humbug. Respect the narrative logic.",
 "grade": 1,
 "gradeReason": "Core mechanic",
 "artworkPrompt": "Duck blowing whistle chaos reset",
-"print": {"cardName": "Blödsinn! (The Whistle)", "power": "That's nonsense.", "lore": "That's Humbug. Respect narrative logic.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p12 TL", "method": "ocr", "confidence": "medium", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "Blödsinn! (The Whistle)",
+"power": "Call rewrite",
+"lore": "Respect narrative logic"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p12 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Rupture",
-"power": "Break contradiction",
-"lore": "Story cracks",
+"power": "Break. Acknowledge a contradiction in the story. It stays unresolved.",
+"lore": "The story is broken. Don't hide it. Look at the crack.",
 "grade": 1,
 "gradeReason": "Strong disruption",
 "artworkPrompt": "Dam breaking water bursting through",
-"print": {"cardName": "The Rupture", "power": "Break. Acknowledge a contradiction", "lore": "Story. It stays unresolved.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p12 TR", "method": "ocr", "confidence": "medium", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Rupture",
+"power": "Break contradiction",
+"lore": "Story cracks"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p12 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Repair",
-"power": "Fix contradiction",
-"lore": "Healing narrative",
+"power": "Fix. Resolve a Rupture. Connect the contradiction.",
+"lore": "The bond is stronger where it broke. If you can fix it.",
 "grade": 1,
 "gradeReason": "Balance tool",
 "artworkPrompt": "Spider repairing web glowing thread",
-"print": {"cardName": "The Repair", "power": "Fix. Resolve Rupture. Connect the contradiction.", "lore": "The bond is stronger where it broke. If you can fix it.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p12 BL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Repair",
+"power": "Fix contradiction",
+"lore": "Healing narrative"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p12 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Smuggler",
-"power": "Hide agenda",
-"lore": "Secret goal",
+"power": "Secret. Keep a hidden agenda. Reveal it at the end for bonus points.",
+"lore": "It's not what you say. It's what you make them repeat.",
 "grade": 2,
 "gradeReason": "Subtle",
 "artworkPrompt": "Hermit crab carrying contraband shell",
-"print": {"cardName": "The Smuggler", "power": "Secret. Keep hidden agenda. Reveal it at the end for bonus points.", "lore": "It's not what you say. It's what you make them repeat.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p12 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Smuggler",
+"power": "Hide agenda",
+"lore": "Secret goal"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p12 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Nightmare Scenario",
-"power": "Describe worst outcome",
-"lore": "Disaster planning",
+"power": "Invert. Describe how to ruin the project completely.",
+"lore": "Optimize for disaster. Now flip it. That's your roadmap.",
 "grade": 1,
 "gradeReason": "Strong driver",
 "artworkPrompt": "Owl watching burning project collapse",
-"print": {"cardName": "The Nightmare Scenario", "power": "Invert. Describe ruin the project completely.", "lore": "", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p13 TL", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Nightmare Scenario",
+"power": "Describe worst outcome",
+"lore": "Disaster planning"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p13 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The 25-Word Reduction",
-"power": "Condense story repeatedly",
-"lore": "Essence remains",
+"power": "Cut. Reduce the Quest to 25 words. Then 10. Then 3.",
+"lore": "Everything else was noise. What survived is the truth.",
 "grade": 1,
 "gradeReason": "Elegant constraint",
-"artworkPrompt": "Goat carving tree into smaller form"
+"artworkPrompt": "Goat carving tree into smaller form",
+"jsonLegacy": {
+"cardName": "The 25-Word Reduction",
+"power": "Condense story repeatedly",
+"lore": "Essence remains"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p13 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Heat Generator",
-"power": "Create discomfort",
-"lore": "Tension fuels story",
+"power": "Friction. Play a card that makes someone uncomfortable.",
+"lore": "If nobody hates it, nobody loves it. Get some heat.",
 "grade": 1,
 "gradeReason": "Excellent",
-"artworkPrompt": "Ant surrounded by flames intensity"
+"artworkPrompt": "Ant surrounded by flames intensity",
+"jsonLegacy": {
+"cardName": "The Heat Generator",
+"power": "Create discomfort",
+"lore": "Tension fuels story"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p13 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Clout Check",
-"power": "Test idea strength",
-"lore": "Credibility pressure",
+"power": "Weight. Does this idea hold up under interrogation? Test it.",
+"lore": "Not authority. Story-credibility. Does the fiction hold weight?",
 "grade": 2,
 "gradeReason": "Situational",
 "artworkPrompt": "Peacock displaying feathers under scrutiny",
-"print": {"cardName": "The Clout Check", "power": "Weight. Does this idea hold up under interrogation?", "lore": "Test it.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p13 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Clout Check",
+"power": "Test idea strength",
+"lore": "Credibility pressure"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p13 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Leviathan",
-"power": "Impose global rule",
-"lore": "State power",
+"power": "State. Impose a rule that restricts everyone.",
+"lore": "We trade freedom for safety. The monster keeps us from biting each other.",
 "grade": 1,
 "gradeReason": "Huge effect",
-"artworkPrompt": "Whale looming over ocean dominating scene"
+"artworkPrompt": "Whale looming over ocean dominating scene",
+"jsonLegacy": {
+"cardName": "The Leviathan",
+"power": "Impose global rule",
+"lore": "State power"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p14 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Algorithm",
-"power": "Predict and enforce pattern",
-"lore": "You have no choice",
+"power": "Predict. You must do exactly what you did last turn.",
+"lore": "If you liked this, you will like that. You have no choice.",
 "grade": 1,
 "gradeReason": "Strong meta",
-"artworkPrompt": "Spider web data network controlling paths"
+"artworkPrompt": "Spider web data network controlling paths",
+"jsonLegacy": {
+"cardName": "The Algorithm",
+"power": "Predict and enforce pattern",
+"lore": "You have no choice"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p14 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Bureaucracy",
-"power": "Nothing happens",
-"lore": "Process as punishment",
+"power": "Delay. Nothing happens this turn. Fill out a form.",
+"lore": "The process is the punishment. The punishment is the product.",
 "grade": 1,
 "gradeReason": "Perfect satire",
 "artworkPrompt": "Paper tentacles endless forms office horror",
-"print": {"cardName": "The Bureaucracy", "power": "Delay. Nothing", "lore": "The Process is the punishment. The punishment is the product.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p14 BL", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "The Bureaucracy",
+"power": "Nothing happens",
+"lore": "Process as punishment"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p14 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "name": "The Market",
-"power": "Random boom or crash",
-"lore": "Irrational system",
+"power": "Fluctuate. Roll the die. 1-3: Crisis. 4-6: Boom.",
+"lore": "Rational exuberance. Irrational despair. The graph only goes to the right.",
 "grade": 1,
 "gradeReason": "Clean chaos",
 "artworkPrompt": "Bulls and bears fighting graph rising",
-"print": {"cardName": "The Market", "power": "Fluctuate. Roll the die. -: Crisis. -6: boom.", "lore": "Rational exuberance. Irrational despair. The graphy/ only goes to the right.", "source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p14 BR", "method": "ocr", "confidence": "low", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "The Market",
+"power": "Random boom or crash",
+"lore": "Irrational system"
+},
+"textSource": {
+"source": "PDF v05 Kreative_Kayfab - creative Hero Journey - ADD web ID.pdf p14 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 }
 ],
 "qa": {
