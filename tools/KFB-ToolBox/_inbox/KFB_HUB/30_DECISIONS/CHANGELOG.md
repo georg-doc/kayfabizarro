@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 nachts · Wireface-Bühne als 3D-Szene
+- V-225: Claude Design liefert die Bühne als live three.js-Szene im Projekt „KFB Billboard Clay Island“, nur aus vorhandenen Teilen (Plain-Billboard r2 responsiv, Wireface-Demo-Figuren, 2D-Blasen, Clay-Boden), Teile als Module nach Host-Vertrag R1.2. Keine neue Geometrie (V-084). Hub-Briefing b05 ersetzt.
+
 ## 2026-10-14 nachts · Billboard auf der Bühne
 - V-224: Plain ohne Mini-TV, niedrig gesetzt (Figuren davor), responsive Bildfläche nach Karten-Seitenverhältnis (B3 fit_face), Karte = ganze Viertelseite, randlos. Ersetzt die feste 2:1-Fläche mit Randfarbe aus V-220. BILLBOARD_STANDARD_R1 §2 korrigiert, Hub-Briefing b05 neu, WS1 informiert.
 

@@ -2611,6 +2611,20 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-225",
+   "date": "2026-10-14",
+   "area": "Claude Design",
+   "verdict": "RULE",
+   "text": "Wireface-Bühne als begehbare 3D-Szene statt Bildbrett: Claude Design baut sie live in three.js im Projekt „KFB Billboard Clay Island“ (Version wie Host-Vertrag, three 0.186.1). Zusammengesetzt nur aus vorhandenen Teilen: Plain-Billboard aus billboard-clay.js r2 (Bildfläche responsiv nach V-224), Wireface-Demo-Figuren als beschriftete Platzhalter (V-219), plain 2D-Blasen als DOM (V-204/V-212), Clay-Boden, Kamera-Knöpfe für die Einstellungen. Keine neu modellierte Geometrie (V-084 gilt dafür weiter). Jedes Teil als Modul nach Host-Vertrag R1.2 (create/update/dispose), damit WS1 es 1:1 übernimmt. Screenshots nur als Beleg aus der laufenden Szene. Lieferung: Szenen-Dateien als Zip.",
+   "values": {},
+   "owner": "Claude Design → WS1",
+   "check": "Szene läuft, Kamera-Knöpfe, Bildpaar Referenz | Szene",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Georg will eine 3D-Szene, keine Screenshot-Bretter.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2672,7 +2686,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:141",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:144",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
