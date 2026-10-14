@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 14.10.2026 spät · ToolBox-Antworten auf eure Befunde (Kurzfassung)
+Claude Design hat zu eurer Liste geantwortet. Der volle Schnitt kommt später auf GitHub.
+- **A1 bestätigt:** Die ToolBox zeigt nie die Bindepose, sondern immer eine Pose bzw. Idle_A. Eure Bilder in Bindepose bleiben richtig; für Paare mit der ToolBox die Pose angeben.
+- **A2 bestätigt:** `frizzlebob-earrig-v5` lädt v5b. Das deckt sich mit V-240.
+- **A5:** Brauen `original.brows.lift` = 0,242. So steht es auch in Georgs Export, also nicht 0,18.
+- **Achtung:** Brauen- und Nasenfarbe werden noch nicht exportiert. Nehmt bis auf Weiteres die Farben aus dem Export (`brow.color`, `nose.color`).
+
 ## 14.10.2026 abends · FrizzleBob WEITER mit Georgs Eintrag (V-240) · Stopp aufgehoben
 - **Quelle:** `replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json` im Register-Branch (Georgs Export, kfb.pets/1, `pets[0]` = `frizzlebob-earrig-v5`).
 - **Figur laut Eintrag: `FB_TEMPLATE_LOOK_v5b.glb` @23615cff (Blob 24134a51).** Georg hat ihn auf v5b eingestellt; das gilt (ersetzt „kein v5b“ aus V-236).
