@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · Pool-Urteil, Opener-Recherche-Inventur
+- V-218: Georgs KEEP/TUNE zu den 15 Pool-Kandidaten; Pool zu dünn und klischeehaft; Inventur der vorhandenen Opener-Recherche (PR #379 u. a.) gestartet. Steuerung hatte die Recherche vor dem Ankreuzen nicht gesichtet.
+
 ## 2026-10-14 · WS1-Antworten, Drift-FAIL, Gesichter
 - V-214 FAIL Wireface-Bühnen-Referenz (Tusche, Platzhalter-Karte, Figuren ohne Eye-Rig, Hex); Regel: keine Figur ohne nachgewiesen animiertes KFB-Eye-Rig.
 - V-215 Host-Vertrag R1.2 angenommen (fiber 9.8.1, Blasen im DOM-Slot #ui-bubbles).

@@ -2513,6 +2513,20 @@
    "applies": "ab F2"
   },
   {
+   "id": "V-218",
+   "date": "2026-10-14",
+   "area": "Dialog",
+   "verdict": "TUNE",
+   "text": "Georgs Urteil zu den 15 Pool-Kandidaten (KFB_TRIPLET_OPENER_POOL_R1): KEEP {title}. · Do you know · Ever tasted · I once met · Let me tell you about · You know the thing with · Did you ever try · What if · Have you heard of. TUNE: Restaurant-Opener („spezifischer, Varianten: Ort bzw. Opener kurz und bildhaft passend zur Karte/Story benennen, bekannte Kontexte anbieten“), Anyone here heard of („Did you hear of … als Standard für Spieler-Ansprache plus Dialogpartner“), Cookie-Beat („Kartenkontext dazu; Cookie + Snickerdoodle evtl. nicht die beste Kombination“). Offen gelassen (Dubletten): Ever heard of, Quick question. Ever heard of, Have you ever heard of. Gesamturteil: Pool zu dünn und klischeehaft; die recherchierten Opener (NotebookLM, TV Tropes, Stand-up-Formen, Grok/Perplexity) fehlen → Inventur der vorhandenen Recherche, danach Pool erweitern.",
+   "values": {},
+   "owner": "Steuerung + Pool-Owner #379",
+   "check": "OPENER_RESEARCH_INVENTORY_R1",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Ein Stand-up-Comedian würde mit diesem Pool von der Bühne gejagt.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2574,7 +2588,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:87",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:109",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
