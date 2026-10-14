@@ -13,18 +13,39 @@ Delivery: source-isolated real 3D review in the existing EyeRig/ToolBox workbenc
 `tools/KFB-ToolBox/eye-actor-studio-v1/thin-clay-lid.v1.mjs` (blob 79eb8abe57bd2671422d037a10fcb575640464dd).
 Original accepted EyeRig v6 eye-placement/profile state must stay unchanged; no automatic consumer migration.
 
-## Source-critical YouTube analysis (TRANSCRIPTS NOT YET RETRIEVED)
+## Source-critical YouTube analysis · TRANSCRIPT A RECEIVED / B PENDING
 
-**Video A** — Jen Abbott / Olde Tinkerer Studio: "How to rig and animate cartoon eyes with Bones in Blender [2.9]".
-Video URL: https://www.youtube.com/watch?v=y3Q3oD7A1kM
-Creator's published written tutorial: https://oldetinkererstudio.com/how-do-you-rig-and-animate-cartoon-eyes-bone-rig-in-blender-3d/
-Verified from the creator's written article (do NOT mislabel as verbatim video transcript):
-1. Distinct eye mesh `eye.R` and upper/lower `eyelid_top.R`, `eyelid_bottom.R`.
-2. Eye target bone; `Track To` with track axis `-Y` and up `Z`. Eye controller position changes gaze.
-3. Lid controller in front of eye; `Copy Rotation` X to both lids; `Invert X` on the lower one for opposing motion.
-4. Mirror .L eye + lid + bones; separate master eye and master lid controllers with per-eye overrides.
-5. Sample animation: keyframe neutral frame 1; gaze move 25; lids shut 35; lids open 45.
-Critical applicability: ***rig-control / motion donor ONLY***. No evidence the bone tutorial solves watertight lid topology, ellipsoidal auto-fit, thin KFB proportions, pupil protrusion, or seamless Claymation.
+### Video A · Jen Abbott / Olde Tinkerer Studio · DIRECT USER-SUPPLIED TIMECODED TRANSCRIPT
+
+**Source:** https://www.youtube.com/watch?v=y3Q3oD7A1kM · "How to rig and animate cartoon eyes with Bones in Blender [2.9]". Georg supplied the English timecoded transcript (0:03–8:57) in chat on 2026-10-14. **Provenance:** user-transcribed/copied transcript; its caption origin (creator-verified vs auto-generated) is not established. Timestamped procedural points below are transcript-grounded, not a direct video-frame inspection. Earlier creator-authored companion article remains independent corroboration: https://oldetinkererstudio.com/how-do-you-rig-and-animate-cartoon-eyes-bone-rig-in-blender-3d/
+
+**Timecoded exact procedural extraction (verified = explicit user-supplied transcript, not visual/video verification):**
+
+| Time | Transcript-grounded step | Blender implementation / relevance | Limit |
+|---|---|---|---|
+| 0:15–0:37 | Name eye `eye.R`, lid objects `eyelid_bottom.R` and `eyelid_top.R`; hide lids temporarily | Three independent **already-present** mesh objects for one eye | NO lid mesh modelling or topology shown |
+| 0:41–1:13 | Enable Rigify add-on; Shift+A single bone; place/scale in front; armature named `eyebone.R` | Eye target/locator | This does not mean KFB must depend on Rigify |
+| 1:19–1:54 | Eye mesh gets `Track To` constraint targeting `eyebone.R`; Track axis negative Y, Up Z; moving locator on X/Z aims eye | Separate gaze targeting; preserve EyeRig v6 gaze owner | Blender-local axis convention; DO NOT copy axis signs blindly to Three.js |
+| 1:57–2:37 | Unhide lids; add lid bone ahead of eye; rotate 90° about X; Ctrl+A apply rotation; `eyelid_bone.R` | Prepare clean local controller orientation | Apply-rotation must be confirmed against actual Blender file transforms |
+| 2:37–3:26 | Top and bottom mesh each add `Copy Rotation` constraint targeting same lid bone; animate/test X rotation | One per-eye closure channel drives both lids | Inputs presume lid meshes already modelled & correctly pivoted |
+| 3:29–3:45 | Bottom-lid `Copy Rotation` sets **Invert X**; repeat X-rotation test | Counter-rotating upper/lower closure | Need contact-aware mapping for KFB, not simply mirrored Euler angles |
+| 3:47–4:02 | Controller bone Y/Z rotation locked, X free | Restrict degree of freedom | Does not solve canthus deformation or sphere-hugging surfaces |
+| 4:06–4:34 | Duplicate meshes+controls and suffix .L; test | Symmetrical first pass with per-eye independence | Later KFB asymmetric eye slots need their own geometry/anchors |
+| 4:59–5:59 | Add single master **Eye Controller** between eye bones; parent individual eyebones to master; each still individually steerable | Shared gaze with independent overrides | Preserve existing EyeRig v6 semantic signals |
+| 6:13–7:14 | Add second master **Eyelid Controller** between the lid controllers, rotate X 90°, apply, parent per-eye lids; individual control remains | Shared Blink + individual L/R offsets | At 7:00–7:07 transcript unexpectedly says "eyebones" in eyelid section — probable caption/narration slip; verify actual Blender viewport before final operational recipe |
+| 7:30–8:37 | Set controller keyframes neutral frame 1, move eyes frame 25, close lids frame 35, reopen frame 45, playback | Minimal reproducible gaze/closure test curve | Keyframes do not prove topology, lack of pupil leaks, clean rendering |
+
+**Transcript normalization / uncertainty:** `track 2` (1:24) is very likely ASR for Blender's `Track To` constraint; `eyelet bone` (3:50) and `eyid` (8:19) refer to eyelid; `blank` (8:50) is likely `blink`. These are interpretations, not verbatim corrections. At 7:00–7:07 check whether the instruction actually parents *eyelid* bones (not eyebones). No frame/image proof was available in this intake.
+
+**What this tutorial demonstrably does NOT establish:**
+- No creation of the upper/lower eyelid mesh, topology, connected rounded rim, bevel, manifoldness, inner/outer shell, or crease-free crown.
+- No auto-fit for oval/ellipsoidal KFB eyes; no compatibility demonstration for varying eyelid thickness across KayKit hosts.
+- No tested no-gap contact line, pupil depth-occlusion, full closure from arbitrary gaze, or side/3⁄4 quality.
+- No guarantee that Rigify armature constraints export as GLTF/Three.js behavior. Adapt **semantic control graph**, not Blender constraint runtime.
+
+**KFB-specific transferable control graph:** authoritative EyeRig v6 gaze target → L/R eye aim; authoritative EyeRig v6 blink/upper/lower channels → L/R per-eye upper/lower lid boundary sweep; optional shared blink + independent left/right overrides. A KFB lid builder must FIRST generate clean, bounded, normals-correct 3D lid volumes around the actual measured eyeball; only then attach motion controls. Counter-rotation alone cannot ensure canthus attachment/contact or wrinkle-free clay topology. The earlier failed `thin-clay-lid.v1.mjs` remains a negative QA fixture.
+
+**Video A evidence status:** `TRANSCRIPT_RECEIVED_TIMECODED`; key procedural transcript extraction **complete**, video-frame comparison **not run**; no claim of modelling method proven.
 
 **Video B** — RG3D Animation Studio: "How to make cartoon oval eyes rigging in Blender 2.8+" (2020-04-09).
 Video URL: https://www.youtube.com/watch?v=hTl825DO-Aw
