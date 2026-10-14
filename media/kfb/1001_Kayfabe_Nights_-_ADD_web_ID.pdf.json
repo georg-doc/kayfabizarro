@@ -34,13 +34,10 @@
       "lore": "Listen up, Marks! History is a Work. Folklore is a Shoot. Grab your scissors, cut the lines, and don't let the plot-holes bite. Stay Fluffy!",
       "gradeReason": "Punchy thesis card, more declaration than action prompt.",
       "artworkPrompt": "Style: pulp scroll. Subject: rabbit and crocodile-suit reading manifesto. Mood: carny pulpit.",
-      "print": {
-        "cardName": "THE MANIFESTO",
-        "power": "",
-        "lore": "Listen up, Marks! History is a Work. Folklore is a Shoot. Grab your scissors, cut the lines, and don't let the plot-holes bite. Stay Fluffy!",
+      "textSource": {
         "source": "PDF v05 1001_Kayfabe_Nights - ADD web ID.pdf p1 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -56,18 +53,19 @@
       "cardNumber": 4,
       "cardName": "WARNING",
       "grade": 2,
-      "power": "WARNING: Contains traces of existential dread, botched spots, and unauthorized magic. Not fluffle for lost souls.",
+      "power": "WARNING: Contains traces of existential dread, botched spots, and unauthorized magic. Not liable for lost souls.",
       "lore": null,
       "gradeReason": "Solid flavor warning; reads as label rather than invitation to act.",
       "artworkPrompt": "Style: hazard-tape poster. Subject: starry void with caution stripes. Mood: ominous funhouse.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "WARNING",
-        "power": "Contains traces of existential dread, botched spots, and unauthorized magic. Not liable for lost souls.",
-        "lore": "",
+        "power": "WARNING: Contains traces of existential dread, botched spots, and unauthorized magic. Not fluffle for lost souls.",
+        "lore": null
+      },
+      "textSource": {
         "source": "PDF v05 1001_Kayfabe_Nights - ADD web ID.pdf p1 BR",
-        "method": "ocr",
-        "confidence": "medium",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -93,16 +91,18 @@
       "cardName": "DUNYAZAD, THE HYPE WOMAN",
       "grade": 1,
       "power": "Ringside Distraction. Sister, tell him the one about the apples! We aren't tapping out tonight!",
-      "lore": "THE VALET: She keeps the heat alive when the main event drags. Power: 90.",
+      "lore": "THE VALET: She keeps the heat alive when the main event drags. Power: 45.",
       "gradeReason": "Tag-team valet move written as a shout-line you'd actually use.",
       "artworkPrompt": "Style: ink-wash. Subject: bull and weasel ringside, shouting cues. Mood: pep-rally chaos.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "DUNYAZAD, THE HYPE WOMAN",
         "power": "Ringside Distraction. Sister, tell him the one about the apples! We aren't tapping out tonight!",
-        "lore": "THE VALET. She keeps the heat alive when the main event drags. 45.",
+        "lore": "THE VALET: She keeps the heat alive when the main event drags. Power: 90."
+      },
+      "textSource": {
         "source": "PDF v05 1001_Kayfabe_Nights - ADD web ID.pdf p2 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -121,7 +121,12 @@
       "power": "The Push. Gains +10 Power for every 'Treasure' card in play.",
       "lore": "Formerly working dark matches in a cave. Now in the Main Event. Power: 20 (+80 w/ Lamp).",
       "gradeReason": "Rising-star arc and rules hook converge into clear play behavior.",
-      "artworkPrompt": "Style: watercolor pulp. Subject: monkey-rookie wrestler with championship-belt aura. Mood: underdog ascent."
+      "artworkPrompt": "Style: watercolor pulp. Subject: monkey-rookie wrestler with championship-belt aura. Mood: underdog ascent.",
+      "textSource": {
+        "source": "PDF v05 1001_Kayfabe_Nights - ADD web ID.pdf p3 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 10,
@@ -140,13 +145,10 @@
       "lore": "Sentient brass. The ultimate Foreign Object. Power: INF.",
       "gradeReason": "Iconic artifact, but mostly card-state effect rather than performance.",
       "artworkPrompt": "Style: gold-leaf ink. Subject: glowing lamp on velvet. Mood: power-object.",
-      "print": {
-        "cardName": "THE WONDERFUL LAMP",
-        "power": "Cosmic Heat. Summons a Genie Token (95 Power). Three wishes, No DQ.",
-        "lore": "Sentient brass. The ultimate Foreign Object. What the FLUFF?!",
+      "textSource": {
         "source": "PDF v05 1001_Kayfabe_Nights - ADD web ID.pdf p3 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -246,7 +248,12 @@
       "power": "Hardcore Valet. Destroys 'Thief' tokens instantly.",
       "lore": "She marked your coffins. The dance ends when the dagger hits. Power: 90.",
       "gradeReason": "Cleaner-of-thieves dance metaphor sells the role on first read.",
-      "artworkPrompt": "Style: dark ink. Subject: ferret-dancer twirling daggers. Mood: lethal grace."
+      "artworkPrompt": "Style: dark ink. Subject: ferret-dancer twirling daggers. Mood: lethal grace.",
+      "textSource": {
+        "source": "PDF v05 1001_Kayfabe_Nights - ADD web ID.pdf p6 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 23,
@@ -409,13 +416,10 @@
       "lore": "Not crazy; just cutting the best promo of her life to avoid the stable. Power: 45.",
       "gradeReason": "Worked-shoot promo as escape gambit — chef-kiss embodiment.",
       "artworkPrompt": "Style: feral ink. Subject: tigress-princess mid-roar in robes. Mood: defiant performance.",
-      "print": {
-        "cardName": "PRINCESS OF BENGAL",
-        "power": "Insanity Promo Cannot be \"Married\" (captured) by Heels.",
-        "lore": "Not crazy; just cutting the best promo of her life to avoid the stable. cut lines",
+      "textSource": {
         "source": "PDF v05 1001_Kayfabe_Nights - ADD web ID.pdf p10 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -467,17 +471,19 @@
       "cardNumber": 46,
       "cardName": "THE TAILOR",
       "grade": 1,
-      "power": "Stitching the Squash. Returns destroyed card as 'Zombie'.",
+      "power": "Stitching the Script. Returns destroyed card as 'Zombie'.",
       "lore": "Just wanted to fix the body so no one would notice. Power: 30.",
       "gradeReason": "Resurrect-the-jobber mechanic with perfect tailor visual gag.",
       "artworkPrompt": "Style: noir ink. Subject: spider-tailor stitching corpse. Mood: macabre seamstress.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "THE TAILOR",
-        "power": "Stitching the Script. Returns destroyed card as \"Zombie\".",
-        "lore": "Just wanted to fix the body so no one would notice. 30",
+        "power": "Stitching the Squash. Returns destroyed card as 'Zombie'.",
+        "lore": "Just wanted to fix the body so no one would notice. Power: 30."
+      },
+      "textSource": {
         "source": "PDF v05 1001_Kayfabe_Nights - ADD web ID.pdf p12 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -497,13 +503,10 @@
       "lore": "The Talker. He saves the day by annoying everyone to death. Power: 25.",
       "gradeReason": "Filibuster-as-finisher demands the player actually keep talking — pure performance.",
       "artworkPrompt": "Style: cartoon ink. Subject: parrot-barber mid-rant in chair. Mood: garrulous siege.",
-      "print": {
-        "cardName": "THE BARBER",
-        "power": "Filibuster. Delays execution phase, by talking forever.",
-        "lore": "The Talker. He saves the day by annoying everyone to death. cut lines",
+      "textSource": {
         "source": "PDF v05 1001_Kayfabe_Nights - ADD web ID.pdf p12 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -591,17 +594,19 @@
       "cardNumber": 58,
       "cardName": "THE MONTREAL SCREWJOB",
       "grade": 1,
-      "power": "Pull Strings. Steals opponent of Title/Artifact without a clean finish.",
-      "lore": "Massive Heat. Unfair reset. The boss wins. Power: Riser!",
+      "power": "Promoter's Fiat. Strips opponent of Title/Artifact without a clean finish.",
+      "lore": "Massive Heat. Unfair reset. The boss wins. Power: Reset",
       "gradeReason": "Real wrestling lore mapped to one move; players will cackle.",
       "artworkPrompt": "Style: ringside ink. Subject: ref grabbing belt while wrestler protests. Mood: betrayed shock.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "THE MONTREAL SCREWJOB",
-        "power": "Promoter's Fiat. Strips opponent of Title/Artifact without a clean finish.",
-        "lore": "Massive Heat. Unfair reset. The boss wins.",
+        "power": "Pull Strings. Steals opponent of Title/Artifact without a clean finish.",
+        "lore": "Massive Heat. Unfair reset. The boss wins. Power: Riser!"
+      },
+      "textSource": {
         "source": "PDF v05 1001_Kayfabe_Nights - ADD web ID.pdf p15 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
