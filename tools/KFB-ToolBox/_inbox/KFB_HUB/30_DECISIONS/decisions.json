@@ -3023,6 +3023,21 @@
    "applies": "später"
   },
   {
+   "id": "V-238",
+   "date": "2026-10-14",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Figuren werden an EINER Stelle geriggt: KFB FrankenStein Composer (WSA-work-Site, PR #355). Die Claude-Design-ToolBox (Production-06/-08) ist als Rigging-Ort stillgelegt, nur noch Spender-Archiv. FrizzleBob v5 als ein Modell, Gesichts-Treiber KFB_NATIVE, mit den von WS1 gepinnten Modulen; vor Georgs Einstellung behoben: Mund/Nase in ¾ vor dem Gesicht, verdeckte Brauen, T-Pose-Schalter, gepinnte Decals, getrennte Kennungen v5/v5b, Lid-Mechanik als Schalter. Speichern = Rezept-Datei auf GitHub (Format frizzlebob-v5.recipe.json), nicht nur localStorage. WS1 liest das Rezept 1:1.",
+   "values": {},
+   "owner": "WSA work (Composer) → WS1",
+   "check": "Bilder vorn/¾/Seite in der Site, Georg urteilt",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Rigging war über ToolBox-Fassungen in Claude Design, localStorage und mehrere Sites verstreut; WS1 baute deshalb mit kaputten Standardwerten.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3085,7 +3100,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:200",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:210",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

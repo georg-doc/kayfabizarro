@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 abends · Ein Rigging-Ort: Composer
+- V-238: FrizzleBob und alle Figuren werden in der FrankenStein-Composer-Site (WSA work) geriggt; Claude-Design-ToolBox nur noch Archiv; Rezept als Datei auf GitHub; WS1 liest 1:1. Hub-Briefing b11 an WSA work.
+
 ## 2026-10-14 abends · Stopp FrizzleBob-Rigging
 - WS1: FrizzleBob-Gesicht in ¾ kaputt (Nase/Mund frei vor dem Gesicht, Auge außerhalb) = Parität mit kaputtem Spender-Stand; Stopp für FB-Ausbau. B1-Vorlagen-Zeile und F1-Lid-Diff freigegeben, Idle_A vorläufig.
 
