@@ -2959,6 +2959,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-234",
+   "date": "2026-10-14",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Triplet-Aufbau: Titel + Konzept (Subjekt) → echte Verknüpfung → LORE-Bedeutung. Die Verknüpfung (because, so, but, yet, until …) stellt einen tatsächlichen logischen Bezug zwischen Konzept und Lore her (Grund, Folge, Gegensatz) und wechselt je nach Karte; sie ist kein Pflicht-„because“ vor einer Spielmechanik (das war der FAIL der 16er-Probe). Beispiel: „Jean-Jacques Rousseau stands for natural goodness, because man is born free, and everywhere he is in chains.“",
+   "values": {},
+   "owner": "WS0 (Skill-Methode) → Triplet-Chat",
+   "check": "Georg urteilt",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ohne Verknüpfung stehen Konzept und Lore unverbunden nebeneinander.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3021,7 +3036,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:179",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:182",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

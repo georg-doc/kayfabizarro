@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 früh · Triplets: Verknüpfung
+- V-234: Titel + Konzept → echte Verknüpfung (because/so/but/yet/until) → Lore-Bedeutung.
+
 ## 2026-10-14 früh · Triplets: Inhalt vor Mechanik
 - V-233: Konzept (benannter POWER-Begriff + LORE-Bedeutung) statt satirischer Spielmechanik; ersetzt V-232 „Mechanik vollständig erhalten“.
 
