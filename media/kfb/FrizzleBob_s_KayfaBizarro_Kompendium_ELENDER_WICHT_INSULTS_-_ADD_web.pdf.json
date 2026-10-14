@@ -11,70 +11,80 @@
     {
       "num": 1,
       "name": "Uncle FrizzleBob",
-      "power": "Master of the Gift: Swap hands when you've been verbally outplayed.",
-      "lore": "He jests, he taunts. Mostly talks in riddles. Mostly practical. KayfaBIZARRO!",
+      "power": "Master of the Gift: Swap hands with any player. Draw 1.",
+      "lore": "He gives, he takes. Mostly takes. The original anti-corporate prankster. KayfaBIZARRO!",
       "grade": 1,
       "gradeReason": "Mascot instigator card—table energy starts the second he enters.",
       "artworkPrompt": "Style: carnival satire comic. Subject: badger showman offering cursed gift. Mood: chaotic host.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Uncle FrizzleBob",
-        "power": "Master of the Gift: Swap hands -",
-        "lore": "with any player. Draw 1. He gives, he takes. Mostly takes. The original anti-corporate prankster.",
+        "power": "Master of the Gift: Swap hands when you've been verbally outplayed.",
+        "lore": "He jests, he taunts. Mostly talks in riddles. Mostly practical. KayfaBIZARRO!"
+      },
+      "textSource": {
         "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p3 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "num": 2,
       "name": "The Schimpfgeist",
-      "power": "Direct Insult: Target player discards 1 card at random. Blödsinn!",
-      "lore": "An insult spirit. It’s practically a portable bad habit of verbal abuse. KayfaHUMBUG!",
+      "power": "Direct Insult: Target player discards 1 card at random. BLÖDSINN!",
+      "lore": "An insult so pure, it's practically spiritual. The ghost of unsaid barbs. KayfaHUMBUG!",
       "grade": 1,
       "gradeReason": "Portable insult ghost is pure ritual ignition and instantly memorable.",
       "artworkPrompt": "Style: ghost satire comic. Subject: shouting insult spirit floating angrily. Mood: disruptive mockery.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Schimpfgeist",
-        "power": "Direct Insult: Target player discards 1 card at random.",
-        "lore": "An insult pure, It’s practically spiritual. The ghost of unsaid barbs. KayfaHUMBUG!",
+        "power": "Direct Insult: Target player discards 1 card at random. Blödsinn!",
+        "lore": "An insult spirit. It’s practically a portable bad habit of verbal abuse. KayfaHUMBUG!"
+      },
+      "printTypo": "Druck: 'Targst player'",
+      "textSource": {
         "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p3 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "num": 3,
       "name": "The Malediction",
-      "power": "The Curse: Target player cannot play “HELP” cards on their next turn. What the FLUFF?!",
-      "lore": "A curse so blight their cooperation fails under KayfaBOGGLE.",
+      "power": "The Curse: Target player cannot play 'HEEL' cards on their next turn. What the FLUFF?!'",
+      "lore": "A curse to blight their corporate climb. May their spreadsheets always error. KayfaBOGGLE!",
       "grade": 1,
       "gradeReason": "Preventing rescue creates immediate social cruelty and perfect table drama.",
       "artworkPrompt": "Style: dark folklore comic. Subject: shadow curse wrapping frightened squirrel. Mood: malicious doom.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Malediction",
-        "power": "The Curse: Target player cannot play 'HEEL' cards on their next turn. What the FLUFF?!",
-        "lore": "A curse to blight their corporate climh. May their spreadsheets always error",
+        "power": "The Curse: Target player cannot play “HELP” cards on their next turn. What the FLUFF?!",
+        "lore": "A curse so blight their cooperation fails under KayfaBOGGLE."
+      },
+      "printTypo": "Druck: 'A corse to blight their corporate climh'; verirrtes Schlusszeichen nach 'FLUFF?!'",
+      "textSource": {
         "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p3 BL",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "num": 4,
       "name": "The Flyte-Master",
-      "power": "Ritual Combat: Challenge target to a dice duel. Winner steals 1 card from loser.",
-      "lore": "A five-step protocol for honorable conclusion. Willingness, verbal agility, audience judgment, escalation, outcome. Stay fluffy!",
+      "power": "Ritual Combat: Challenge target to a dice duel. Winner takes 1 card from loser's hand.",
+      "lore": "A five-step protocol for honorable concession. Willingness, verbal-only, audience judgment, escalation, concession. Stay fluffy!",
       "grade": 1,
       "gradeReason": "This is Kayfabizarro combat doctrine disguised as Viking etiquette.",
       "artworkPrompt": "Style: norse satire comic. Subject: goat poet warrior with feather quill. Mood: ceremonial conflict.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Flyte-Master",
-        "power": "Ritual Combat: Challenge target to a dice duel. Winner takes 1 card from loser's hand.",
-        "lore": "A five-step protocol for honorable conclusion, Willingness, verbal-only, audience judgment, escalation, concession. Stay fluffy!",
+        "power": "Ritual Combat: Challenge target to a dice duel. Winner steals 1 card from loser.",
+        "lore": "A five-step protocol for honorable conclusion. Willingness, verbal agility, audience judgment, escalation, outcome. Stay fluffy!"
+      },
+      "printTypo": "Druck: 'verhal-only'",
+      "textSource": {
         "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p3 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -111,7 +121,13 @@
       "lore": "The only thing worse than an enemy is a friend with an agenda.",
       "grade": 1,
       "gradeReason": "Betrayal mechanics always create stories; this one does it instantly.",
-      "artworkPrompt": "Style: betrayal comic. Subject: snake whispering to trusting rabbit. Mood: quiet treachery."
+      "artworkPrompt": "Style: betrayal comic. Subject: snake whispering to trusting rabbit. Mood: quiet treachery.",
+      "printTypo": "Satzende 'AN ALLY.' vom GW-Signaturlogo teils verdeckt",
+      "textSource": {
+        "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p4 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "num": 9,
@@ -147,7 +163,13 @@
       "lore": "When the universe takes a personal interest in your failure.",
       "grade": 1,
       "gradeReason": "Bad luck as divine vendetta is excellent ritual escalation.",
-      "artworkPrompt": "Style: cosmic satire comic. Subject: cursed cat under angry storm cloud. Mood: celestial spite."
+      "artworkPrompt": "Style: cosmic satire comic. Subject: cursed cat under angry storm cloud. Mood: celestial spite.",
+      "printTypo": "Satzende '(FORCED FAILURE)' vom GW-Signaturlogo teils verdeckt",
+      "textSource": {
+        "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p5 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "num": 13,
@@ -210,7 +232,12 @@
       "lore": "Please. Just… please. The situation has become too stupid for words.",
       "grade": 1,
       "gradeReason": "Conversation deletion is elegant and socially devastating.",
-      "artworkPrompt": "Style: dry humor comic. Subject: poodle politely ending argument. Mood: terminal dismissal."
+      "artworkPrompt": "Style: dry humor comic. Subject: poodle politely ending argument. Mood: terminal dismissal.",
+      "textSource": {
+        "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p7 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "num": 20,
@@ -225,34 +252,38 @@
       "num": 21,
       "name": "Schwein Pfeift (Whistling Pig)",
       "power": "Call “BLÖDSINN!” on a factual claim.",
-      "lore": "If think my pig is whistling. Your claim is scientifically impossible.",
+      "lore": "\"I think my pig is whistling. Your claim is scientifically impossible.\"",
       "grade": 1,
       "gradeReason": "Public nonsense-callout is exactly how ritual escalation begins.",
       "artworkPrompt": "Style: absurd comic. Subject: pig whistling proudly in city square. Mood: impossible confidence.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Schwein Pfeift (Whistling Pig)",
-        "power": "Call \" \" on a factual claim.",
-        "lore": "I think my pig is whistling. Your claim is scientifically impossible.",
+        "power": "Call “BLÖDSINN!” on a factual claim.",
+        "lore": "If think my pig is whistling. Your claim is scientifically impossible."
+      },
+      "textSource": {
         "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p8 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "num": 22,
       "name": "Dummer Dackel (Stupid Dachshund)",
       "power": "Target is entangled/confused.",
-      "lore": "Delinquent. The pet is embarrassing, and by extension, so are you.",
+      "lore": "Berlin logic: The pet is embarrassing, and by extension, so are you.",
       "grade": 2,
       "gradeReason": "Funny insult, but less table-triggering than stronger callouts.",
       "artworkPrompt": "Style: pet satire comic. Subject: tangled dachshund looking guilty. Mood: inherited embarrassment.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Dummer Dackel (Stupid Dachshund)",
         "power": "Target is entangled/confused.",
-        "lore": "Berlin logic: The pet is embarrassing, and by extension, so are you.",
+        "lore": "Delinquent. The pet is embarrassing, and by extension, so are you."
+      },
+      "textSource": {
         "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p8 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -262,7 +293,12 @@
       "lore": "The neighbor who reports you for recycling violations. Pure Swiss enforcement.",
       "grade": 1,
       "gradeReason": "Bureaucratic snitch card creates immediate resentment and excellent comedy.",
-      "artworkPrompt": "Style: neighborhood satire comic. Subject: police dog writing petty ticket. Mood: officious annoyance."
+      "artworkPrompt": "Style: neighborhood satire comic. Subject: police dog writing petty ticket. Mood: officious annoyance.",
+      "textSource": {
+        "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p8 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "num": 24,
@@ -298,7 +334,12 @@
       "lore": "Not just a liar. An infinite, endless source of fabrication.",
       "grade": 1,
       "gradeReason": "Reality inversion is pure Kayfabizarro social combat fuel.",
-      "artworkPrompt": "Style: surreal comic. Subject: rainbow chameleon twisting words into knots. Mood: endless fabrication."
+      "artworkPrompt": "Style: surreal comic. Subject: rainbow chameleon twisting words into knots. Mood: endless fabrication.",
+      "textSource": {
+        "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p9 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "num": 28,
@@ -334,7 +375,12 @@
       "lore": "Insufficient toughness. You are soft in a world that is hard.",
       "grade": 2,
       "gradeReason": "Strong cultural jab, though less explosive than the big finishers.",
-      "artworkPrompt": "Style: blunt comic. Subject: tired greyhound judging complaints. Mood: northern disapproval."
+      "artworkPrompt": "Style: blunt comic. Subject: tired greyhound judging complaints. Mood: northern disapproval.",
+      "textSource": {
+        "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p10 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "num": 32,
@@ -348,11 +394,21 @@
     {
       "num": 33,
       "name": "Bless Your Heart",
-      "power": "Heal target HP, but reduce their Status/Dignity to 0.",
-      "lore": "You are too foolish to know how you foolish you are. I pity you.",
+      "power": "Heal target 1HP, but reduce their Status/Dignity to 0.",
+      "lore": "You are too foolish to know how foolish you are. I pity you.",
       "grade": 1,
       "gradeReason": "Southern politeness as assassination is legendary ritual design.",
-      "artworkPrompt": "Style: southern satire comic. Subject: smiling snake offering fake kindness. Mood: weaponized politeness."
+      "artworkPrompt": "Style: southern satire comic. Subject: smiling snake offering fake kindness. Mood: weaponized politeness.",
+      "jsonLegacy": {
+        "cardName": "Bless Your Heart",
+        "power": "Heal target HP, but reduce their Status/Dignity to 0.",
+        "lore": "You are too foolish to know how you foolish you are. I pity you."
+      },
+      "textSource": {
+        "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p11 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "num": 34,
@@ -376,17 +432,19 @@
       "num": 36,
       "name": "Screen Door on a Submarine",
       "power": "Render a tool/item useless.",
-      "lore": "Precise design failure. Useful somewhere else, just here.",
+      "lore": "Precise design failure. Useful somewhere else, fatal here.",
       "grade": 1,
       "gradeReason": "Calling someone structurally pointless is excellent table cruelty.",
       "artworkPrompt": "Style: absurd engineering comic. Subject: fish staring at useless submarine door. Mood: elegant uselessness.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Screen Door on a Submarine",
         "power": "Render a tool/item useless.",
-        "lore": "Precise design failure. Useful somewhere else, fatal here.",
+        "lore": "Precise design failure. Useful somewhere else, just here."
+      },
+      "textSource": {
         "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p11 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -405,7 +463,12 @@
       "lore": "Focusing not on the orifice, but the output. You are the product.",
       "grade": 1,
       "gradeReason": "Pure existential insult—simple, cruel, unforgettable.",
-      "artworkPrompt": "Style: rude absurd comic. Subject: beetle worshipping giant angry turd. Mood: unapologetic disgust."
+      "artworkPrompt": "Style: rude absurd comic. Subject: beetle worshipping giant angry turd. Mood: unapologetic disgust.",
+      "textSource": {
+        "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p12 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "num": 39,
@@ -438,10 +501,20 @@
       "num": 42,
       "name": "Wolf’s Uncle",
       "power": "Accuse target of destroying social order.",
-      "lore": "Kenning: You are related to that which undoes the world.",
+      "lore": "Kenning: You are related to that which unspools the world.",
       "grade": 2,
       "gradeReason": "Strong poetic accusation, but less immediate activation.",
-      "artworkPrompt": "Style: saga comic. Subject: wolf with raven delivering ancestral insult. Mood: mythic accusation."
+      "artworkPrompt": "Style: saga comic. Subject: wolf with raven delivering ancestral insult. Mood: mythic accusation.",
+      "jsonLegacy": {
+        "cardName": "Wolf’s Uncle",
+        "power": "Accuse target of destroying social order.",
+        "lore": "Kenning: You are related to that which undoes the world."
+      },
+      "textSource": {
+        "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p13 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "num": 43,
@@ -518,35 +591,39 @@
     {
       "num": 51,
       "name": "Imbécil (Clinical)",
-      "power": "Diagnose weakness, ignoring armor.",
-      "lore": "Not just an insult. A clinical diagnosis of mental vacation.",
+      "power": "Diagnose a weakness, ignoring armor.",
+      "lore": "Not just an insult. A clinical diagnosis of mental weakness.",
       "grade": 2,
       "gradeReason": "Sharp diagnosis card, but more explanatory than explosive.",
       "artworkPrompt": "Style: medical satire comic. Subject: donkey doctor examining obvious foolishness. Mood: professional disappointment.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Imbécil (Clinical)",
-        "power": "Diagnose a weakness, ignoring armor.",
-        "lore": "Not just an insult. A clinical diagnosis of mental weakness.",
+        "power": "Diagnose weakness, ignoring armor.",
+        "lore": "Not just an insult. A clinical diagnosis of mental vacation."
+      },
+      "textSource": {
         "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p15 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "num": 52,
       "name": "Gilipollas (Confident Idiot)",
       "power": "Target walks into a trap voluntarily.",
-      "lore": "The confident idiot. He doesn’t know, and that is his tragedy.",
+      "lore": "The confident idiot. He doesn't know, and that is the tragedy.",
       "grade": 1,
       "gradeReason": "Confidence plus stupidity always creates perfect table stories.",
       "artworkPrompt": "Style: blunt comedy comic. Subject: rooster proudly entering obvious trap. Mood: doomed confidence.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Gilipollas (Confident Idiot)",
         "power": "Target walks into a trap voluntarily.",
-        "lore": "The confident idiot. He doesn’t know, and that is the tragedy.",
+        "lore": "The confident idiot. He doesn’t know, and that is his tragedy."
+      },
+      "textSource": {
         "source": "PDF v05 FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf p15 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {

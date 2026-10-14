@@ -32,13 +32,10 @@
       "lore": "I have this load to carry... it hurts my shoulder sadly.",
       "gradeReason": "Sequential self-degradation down to a stone is the Hans in Luck story enacted as a mechanical suicide run — the table watches you dismantle yourself.",
       "artworkPrompt": "Style: engraving. Subject: stone with a tragic face half-buried, a discarded saddle and horseshoe nearby. Mood: cheerful ruin.",
-      "print": {
-        "cardName": "THE LUMP OF SILVER",
-        "power": "Diminishing Returns. Trade this card for a \"then a,\" th, a \"i1 you have nothing but a stone.",
-        "lore": "I have this load to carry... it hurts my shoulder sadly.",
+      "textSource": {
         "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p3 TR",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -138,7 +135,12 @@
       "power": "The Promo. Reveal the highest stat card in the deck. Enrage the current Queen.",
       "lore": "Thou, queen, art the fairest in all this land: But Snowdrop... is lovelier far than thee.",
       "gradeReason": "The promo-as-information-attack is sharp but \"Enrage the current Queen\" requires a designated Queen player — a setup assumption the table must pre-agree.",
-      "artworkPrompt": "Style: gothic portrait. Subject: ornate frame containing a grinning sportscaster face delivering bad news. Mood: unsolicited truth."
+      "artworkPrompt": "Style: gothic portrait. Subject: ornate frame containing a grinning sportscaster face delivering bad news. Mood: unsolicited truth.",
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p6 (Seite mit 4 Karten in einer Reihe, Karte 1 von links)",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 14,
@@ -147,7 +149,12 @@
       "power": "Face Turn. Disguise your \"Rough Voice.\" You count as a \"Mother\" type for one turn.",
       "lore": "The wolf went to a shopkeeper and bought himself a great lump of chalk... and made his voice soft.",
       "gradeReason": "Faction-flipping via voice disguise is conceptually perfect but requires a \"Mother\" type category that needs table definition.",
-      "artworkPrompt": "Style: woodcut police lineup. Subject: wolf swallowing chalk, throat visibly softening, wearing glasses. Mood: unconvincing transformation."
+      "artworkPrompt": "Style: woodcut police lineup. Subject: wolf swallowing chalk, throat visibly softening, wearing glasses. Mood: unconvincing transformation.",
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p6 (Seite mit 4 Karten in einer Reihe, Karte 2 von links)",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 15,
@@ -156,7 +163,12 @@
       "power": "Post-Mortem Commentary. Reveal hidden truths about the \"False Bride.\"",
       "lore": "Alas! alas! if thy mother knew it, Sadly, sadly, would she rue it.",
       "gradeReason": "\"Reveal hidden truths\" has no mechanical specification — what gets revealed, by whom, and to what effect is entirely undefined.",
-      "artworkPrompt": "Style: horror engraving. Subject: severed horse head mounted above a gate, speaking calmly to passersby. Mood: posthumous testimony."
+      "artworkPrompt": "Style: horror engraving. Subject: severed horse head mounted above a gate, speaking calmly to passersby. Mood: posthumous testimony.",
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p6 (Seite mit 4 Karten in einer Reihe, Karte 3 von links)",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 16,
@@ -166,13 +178,10 @@
       "lore": "Kywitt, Kywitt, what a beautiful bird am I!",
       "gradeReason": "Requiring a player to actually sing something repetitive until it causes madness is the most physically committed card in the deck.",
       "artworkPrompt": "Style: glam-metal record sleeve. Subject: small bird at a microphone with a gold chain, eyes rolling back, audience reacting with hands over ears. Mood: compulsory encore.",
-      "print": {
-        "cardName": null,
-        "power": "The Catchphrase. Sing a song so repetitive it causes madness or death.",
-        "lore": "Kywitt, Kywitt, what a beautiful bird am",
-        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p6 BR",
-        "method": "ocr",
-        "confidence": "high"
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p6 (Seite mit 4 Karten in einer Reihe, Karte 4 von links)",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -182,7 +191,12 @@
       "power": "Budget Cuts. Exile two 'Child' cards to save food resources.",
       "lore": "\"You fool! Then we must all four die of hunger.\"",
       "gradeReason": "Abandonment as fiscal policy — the power names the cruelty and gives it an economic rationale that is both accurate and devastating.",
-      "artworkPrompt": "Style: corporate horror engraving. Subject: stepmother in boardroom chair, two small files labeled CHILD 1 and CHILD 2 stamped EXILED. Mood: managerial necessity."
+      "artworkPrompt": "Style: corporate horror engraving. Subject: stepmother in boardroom chair, two small files labeled CHILD 1 and CHILD 2 stamped EXILED. Mood: managerial necessity.",
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p7 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 18,
@@ -218,7 +232,12 @@
       "power": "The Botched Transfer. If you try to move this to a \"Golden Cage,\" you trigger the alarm.",
       "lore": "\"One feather is of no use to me, I must have the whole bird.\"",
       "gradeReason": "Trap-object mechanic is clever — the prize is also a hazard — but \"Golden Cage\" requires a named card type not guaranteed to be in play.",
-      "artworkPrompt": "Style: heist blueprint. Subject: golden bird in a cage surrounded by triggered alarm wires, thief mid-reach. Mood: successful failure."
+      "artworkPrompt": "Style: heist blueprint. Subject: golden bird in a cage surrounded by triggered alarm wires, thief mid-reach. Mood: successful failure.",
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p8 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 22,
@@ -326,7 +345,12 @@
       "power": "The Manager. Summons an 'Iron Army' or a 'Three-Legged Horse' depending on your need.",
       "lore": "My power is great, greater than you think, and I have gold and silver in abundance.",
       "gradeReason": "Both summoned entities — 'Iron Army' and 'Three-Legged Horse' — are undefined concepts; the power requires an infrastructure the deck never establishes.",
-      "artworkPrompt": "Style: dark forest woodcut. Subject: rusted iron giant beckoning from a well, army and limping horse visible behind him. Mood: contingent threat."
+      "artworkPrompt": "Style: dark forest woodcut. Subject: rusted iron giant beckoning from a well, army and limping horse visible behind him. Mood: contingent threat.",
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p11 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 34,
@@ -344,7 +368,12 @@
       "power": "Face Under the Mask. Defeat the 'Dwarf' to reveal true stats.",
       "lore": "You would not feel me between your teeth... take these two wicked girls!",
       "gradeReason": "Conditional reveal on Dwarf-defeat is a strong wrestling mechanic but depends on a Dwarf entity being in play — timing is everything and the table controls none of it.",
-      "artworkPrompt": "Style: wrestling reveal engraving. Subject: bear mid-transformation into a prince, the disguise half-removed, two girls running. Mood: dramatic unmasking."
+      "artworkPrompt": "Style: wrestling reveal engraving. Subject: bear mid-transformation into a prince, the disguise half-removed, two girls running. Mood: dramatic unmasking.",
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p11 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 36,
@@ -353,7 +382,12 @@
       "power": "The Curse. Put the entire 'Castle' faction to sleep for 100 turns.",
       "lore": "She had not been asked to the feast... and set to work to take her revenge.",
       "gradeReason": "Faction-wide sleep for 100 turns is the most dramatic faction nuke in the deck, but requires a Castle faction that is undefined in base Kayfabizarro.",
-      "artworkPrompt": "Style: gothic ball engraving. Subject: fairy crashing a feast, every guest already mid-slump, spinning wheel visible in the corner. Mood: uninvited consequence."
+      "artworkPrompt": "Style: gothic ball engraving. Subject: fairy crashing a feast, every guest already mid-slump, spinning wheel visible in the corner. Mood: uninvited consequence.",
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p11 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 37,
@@ -389,7 +423,12 @@
       "power": "Animal Talk. Understand the gossip of ducks and ants.",
       "lore": "The king never took off the cover to eat of it until he was quite alone.",
       "gradeReason": "\"Understand the gossip of ducks and ants\" is the most charming power description in the deck — the intelligence gathered is both real and absurd.",
-      "artworkPrompt": "Style: naturalist woodcut. Subject: white snake coiled on a platter, surrounded by ducks and ants clearly mid-conversation. Mood: classified waterfowl."
+      "artworkPrompt": "Style: naturalist woodcut. Subject: white snake coiled on a platter, surrounded by ducks and ants clearly mid-conversation. Mood: classified waterfowl.",
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p12 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 41,
@@ -479,7 +518,12 @@
       "power": "Promotional Greed. Demand a Title Shot, then the Company, then Godhood. Return to 'Pigsty' on fail.",
       "lore": "\"My wife Ilsabill, Will have her own will.\"",
       "gradeReason": "Escalating promotion demands with a catastrophic reset to Pigsty is the most sustained narrative arc compressed into a single power — three wishes and a punishment in one sentence.",
-      "artworkPrompt": "Style: wrestling championship hierarchy poster. Subject: woman on a throne, then a larger throne, then clouds, then a pigsty, all connected by arrows. Mood: inevitable regression."
+      "artworkPrompt": "Style: wrestling championship hierarchy poster. Subject: woman on a throne, then a larger throne, then clouds, then a pigsty, all connected by arrows. Mood: inevitable regression.",
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p15 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 51,
@@ -497,7 +541,12 @@
       "power": "The Masked Wrestler. Conceal identity. Cook soup. Reveal 'Golden Dress' later.",
       "lore": "\"I am good for nothing but to be scullion-girl, and to have boots and shoes thrown at my head.\"",
       "gradeReason": "Three-phase strategy in a power is inventive but phase two (\"Cook soup\") has no mechanic and phase three requires a Golden Dress card to pay off.",
-      "artworkPrompt": "Style: wrestling reveal illustration. Subject: scullery girl in fur coat at a stove, golden dress visible folded in the pocket. Mood: long game."
+      "artworkPrompt": "Style: wrestling reveal illustration. Subject: scullery girl in fur coat at a stove, golden dress visible folded in the pocket. Mood: long game.",
+      "textSource": {
+        "source": "PDF v05 GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf p15 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     }
   ],
   "cardCount": 52,
