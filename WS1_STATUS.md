@@ -1,7 +1,34 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§21 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§22 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 22 · 15.10. früh · Georg: „fb passt so“ · V-243 Ruhe-Mund umgesetzt · Palette wartet auf WS0
+
+Gelesen bis V-244 und WS0_TO_WS1 „Präzisierung zu V-243“.
+
+### 22.1 · Georgs Urteil (14.10. nachts, nach §21)
+- Georg zum Nachher-Bild (Augen nach der Drehungs-Korrektur): **„fb passt so. wir bauen gerade die neue toolbox, um das zukünftig sauber zu verdrahten.“** und **„weiter mit der Palette, sobald WS0 antwortet.“**
+- **§20 F-1 ist damit erledigt.** V-244 bestätigt außerdem, dass Georgs Claude-Design-ToolBox der Cut P08 ist. Die Bildpaar-Parität gegen P08 (V-240) war also der richtige Bezug. Der schlechte Eindruck kam vom Einbaufehler aus §21 (gedrehte Figuren), nicht von einem falschen Spender.
+- Weitere FrizzleBob-Arbeit in WS1 entfällt laut eurer Präzisierung (keine Augenlage-, Ganzkörper- oder Export-Belege); Fixes gehören in die neue ToolBox.
+
+### 22.2 · V-243 Ruhe-Mund geschlossen (kfb-planet @0a934cf)
+- **Nur datengetrieben:** Das Rezept hat \ mit Quelle V-243. Der Darsteller hält dann das Decal des Lauts „closed“ aus dem Eintrag, also genau das, was „Zu“ (\) in der ToolBox zeigt. Gezeigt wird es über den Halte-Weg der ToolBox (\).
+  - Nichts ist fest für FrizzleBob im Code.
+  - Ohne Rezeptfeld bleibt der Modellmund wie im Spender.
+  - Nach \ geht der Mund zurück in den Ruhe-Mund, auch nach „!“; der Spender endete dort auf smile.
+- **Befund, bitte im Register berichtigen:** Das Decal **„neutral“ zeigt geschlossene Lippen ohne Zähne.** Zähne zeigt nur **„smile“**, und das ist das eigene Decal des Modellmunds (FB_Mouth_Smile), das in Ruhe erscheint. V-243 sagt „das neutral-Decal zeigt Zähne“; das stimmt für die Dateien nicht. Georgs Eintrag führt \, der Ruhe-Mund ist damit neutral.
+- **Belege** \:
+  - \: Spender-Ruhe (smile, Zähne) | Spiel Ruhe | „Zu“ | mitten im Satz (ah) | nach dem Satz | nach „Na klar!“;
+  - \: Smile | Neutral | M | D;
+  - die Felder je Zustand (parts.mouth, mouthOnModel, m.rest, m.viseme, m.cur, Halt) stehen in der Ausgabe von \.
+- **Test \, 7 Prüfpunkte:** Ruhe aus dem Rezept · keine Zahnpixel in Ruhe und „Zu“ · Sprechen nutzt die Spur · zurück nach Satz und nach „!“ · Spender-Modus zeigt Zähne als Gegenbild.
+- Das Bildpaar gegen P08 läuft jetzt im Modus \ (Modellmund in Ruhe, Modellfarben); er ersetzt \.
+- **Suite 16/16 PASS.**
+
+### 22.3 · Wartet auf WS0
+- **§20 F-2 Bühnen-Palette:** Quelle (palette-roles R2 / world-palettes / BIOMES), Zuordnung Karte → Zone, Himmel ja/nein. Georg: weiter, sobald ihr antwortet.
+- **§20 F-3 Dialogtext für G4** (Triplets gestoppt, Pool r6 fehlt) und **F-4 zweite Besetzung.**
 
 ## 21 · 14.10. nachts · Ein Teil von „FB sieht schlimm aus“ war ein Einbaufehler: Augen saßen auf gedrehten Figuren verdreht (behoben)
 

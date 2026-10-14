@@ -71,6 +71,8 @@ export function createFaceMountActor(options) {
   // partColors: 'export' (Standard, WS0 14.10.: ToolBox exportiert die Farben der Original-Brauen/-Nase noch nicht → brow.color/nose.color aus Georgs Export)
   //             | 'model' (Materialfarbe des Modells = P08-Spender; nur für das Bildpaar gegen den Spender)
   const { recipe, modelUrl, earRig, hairUrl = null, clipsUrl = null, position = [0, 0, 0], yaw = 0, anchorId = null, lang = 'de', partColors = 'export' } = options
+  // mouthRest: Ruhe-Mund; Standard aus dem Rezept (mouth.rest, V-243). null = Modellmund wie im P08-Spender (nur für das Bildpaar gegen den Spender)
+  const mouthRest = 'mouthRest' in options ? options.mouthRest : (recipe.mouth?.rest ?? null)
   const mouthSet = localMouthSet(options.mouthDecals)
   const motion = options.motion === 'idle' ? (recipe.idle?.clip || 'bind') : (options.motion || 'bind')
   const pet = options.pet
@@ -139,6 +141,13 @@ export function createFaceMountActor(options) {
     const m = f.mouth
     if (m && m.p && m.p.visemeMap && m.p.visemeMap.closed === 'm' && m.has && m.has(TB_VISEME_LOOK.closed)) { try { f.set('mouth.visemeMap', { ...m.p.visemeMap, ...TB_VISEME_LOOK }) } catch (e) { /* wie Spender */ } m.setVisemeMap(TB_VISEME_LOOK) }
     f.isSpeaking = () => !!state.lip
+    // Ruhe-Mund aus dem Rezept (V-243: mouth.rest, z. B. "closed"; später schreibt ihn die ToolBox). Gezeigt über den Halte-Weg der ToolBox
+    // (face-mount: mouth.__kfbHold = aktuelles Decal → der Modellmund trägt es auch ohne Sprechen). Ohne Rezeptfeld: Modellmund wie im Spender.
+    const closedKey = m?.p?.visemeMap?.closed || null // nach _closedNeutral, also genau das, was „Zu“ (setViseme('closed')) in der ToolBox zeigt
+    const restKey = mouthRest === 'closed' ? closedKey : null // = Laut „closed“ des Eintrags, wie „Zu“ in der ToolBox (Georgs Eintrag: neutral = geschlossene Lippen, keine Zähne)
+    state.restMouth = restKey && m?.has?.(restKey) ? restKey : null
+    if (mouthRest && !state.restMouth) log('mouth.rest ' + mouthRest + ': kein Decal im Set')
+    holdRest()
     state.clay = new ClayMod.ClayLids(THREE)
     if (hairUrl) {
       try {
@@ -214,11 +223,13 @@ export function createFaceMountActor(options) {
   const EW = { p: new THREE.Vector3(), v: new THREE.Vector3(), w: new THREE.Vector3(), ok: false }
   const earWind = (dt) => { const p = root.getWorldPosition(new THREE.Vector3()); if (EW.ok && dt > 0) EW.v.lerp(p.clone().sub(EW.p).divideScalar(dt), 0.2); else EW.v.set(0, 0, 0); EW.p.copy(p); EW.ok = true; return EW.w.copy(EW.v).negate() }
   // Mundbild-Spur im Spieltakt (Spender: _lipRun mit setTimeout)
+  // Ruhe-Mund halten (V-243): Decal setzen und als Halt markieren; ohne Ruhe-Mund nichts tun (Spender-Verhalten)
+  function holdRest() { const mm = state.face?.mouth, k = state.restMouth; if (!mm || !k) return; mm.setTex(k, false); mm.__kfbHold = k }
   const lipTick = (dt) => {
     const L = state.lip, mm = state.face?.mouth; if (!L || !mm) return
     L.t -= dt * 1000
     while (L.t <= 0) {
-      if (L.i >= L.track.length) { mm.setTex(L.end || mm.rest || 'neutral', false); state.lip = null; return }
+      if (L.i >= L.track.length) { state.lip = null; if (state.restMouth) holdRest(); else mm.setTex(L.end || mm.rest || 'neutral', false); return } // nach dem Satz: Ruhe-Mund (V-243) bzw. Spender-Ende
       const x = L.track[L.i++]; mm.setTex(x.key, true); L.cur = x.key; L.t += x.ms
     }
   }
@@ -252,7 +263,7 @@ export function createFaceMountActor(options) {
     lookAt(nx, ny) { const R = state.face?.rig; if (!R) return; if (nx == null) R.setGazeFollow(false); else { R.setGazeFollow(true); R.pointTo(nx, ny) } },
     blinkNow() { state.face?.rig?.blinkNow?.() },
     earImpulse(k) { state.ears?.impulse(k === 'land' ? { pitch: 2.5 } : { pitch: -1.5 }) }, // P06 _earImpulse
-    status: () => ({ status: state.status, shown: !!state.figure?.visible, partColors: state.partColors ?? null, error: state.error, log: state.log.slice(-8), mouth: state.face?.mouthOnModel ?? null, hair: !!state.hair, ears: state.ears ? [state.ears.L.bones.length, state.ears.R.bones.length] : null, load: state.loadReport ?? null, ao: state.ao ? { baked: !!state.ao.info.baked, darkened: state.ao.info.darkened ?? 0, ms: state.ao.info.ms ?? null } : null }),
+    status: () => ({ status: state.status, shown: !!state.figure?.visible, mouthRest: state.restMouth ?? null, partColors: state.partColors ?? null, error: state.error, log: state.log.slice(-8), mouth: state.face?.mouthOnModel ?? null, hair: !!state.hair, ears: state.ears ? [state.ears.L.bones.length, state.ears.R.bones.length] : null, load: state.loadReport ?? null, ao: state.ao ? { baked: !!state.ao.info.baked, darkened: state.ao.info.darkened ?? 0, ms: state.ao.info.ms ?? null } : null }),
     // gleiche Form wie kaykit-eye-adapter report().eyeFrame (Vektoren gerundet), dazu Eintrag und Mundzustand
     report: () => { const f = state.face; if (!f) return null; const ef = f.rig?.eyeFrame?.(), x = f.export?.() || {}, v = (a) => a.toArray().map((n) => +n.toFixed(4))
       return { parts: x.parts, eye: x.eye, eyeFrame: ef ? { left: v(ef.left), right: v(ef.right), radius: +ef.radius.toFixed(4), unit: +ef.unit.toFixed(4), gen: ef.gen } : null, mouth: f.mouthOnModel ?? null, lip: state.lip?.cur ?? null } },

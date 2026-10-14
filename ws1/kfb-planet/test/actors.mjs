@@ -54,7 +54,7 @@ const contract = {
 }
 
 // --- Teil B · Browser
-const { browser, page, errs } = await openPage('#actortest,debug,view=face,partcolors=model', { viewport: { width: 900, height: 900 } })
+const { browser, page, errs } = await openPage('#actortest,debug,view=face,donor', { viewport: { width: 900, height: 900 } })
 await page.waitForFunction(() => window.__kfbActor && window.__kfbActor.status().status !== 'LOADING' && window.__kfbActor.status().ao?.baked, null, { timeout: 120000 }) // Kontaktschatten fertig
 await page.waitForTimeout(1500)
 await page.evaluate(FREEZE); await page.waitForTimeout(1500) // Augen eingefroren: Aufnahmen wiederholbar (Prüfer 5, Befund 1)
@@ -147,7 +147,7 @@ await browser.close()
 // ¾ und Seite: je eine frische Seite, eingefroren wie die Spender-Aufnahme, Kopfausschnitt gegen test/ref/fb08_donor_{q,side}.png
 const views = {}
 for (const v of ['q', 'side']) {
-  const o = await openPage(`#actortest,debug,view=${v},partcolors=model`, { viewport: { width: 900, height: 900 } })
+  const o = await openPage(`#actortest,debug,view=${v},donor`, { viewport: { width: 900, height: 900 } })
   await o.page.waitForFunction(() => window.__kfbActor && window.__kfbActor.status().status === 'OK' && window.__kfbActor.status().hair && window.__kfbActor.status().ao?.baked, null, { timeout: 120000 }) // Kontaktschatten fertig eingebacken
   await o.page.waitForTimeout(1500); await o.page.evaluate(FREEZE); await o.page.waitForTimeout(2000)
   const shot = await o.page.screenshot(); fs.writeFileSync(`test/out/actors_${v}.png`, shot)
