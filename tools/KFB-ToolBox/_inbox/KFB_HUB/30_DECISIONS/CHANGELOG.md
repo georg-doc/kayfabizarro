@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 abends · Karten-Daten-Standard
+- V-242: kanonischer Kartentext = Druck (am Bild geprüft), jsonLegacy, einheitliche Namen, keine Duplikate, Librarian zeigt Kartenbild + JSON. Agent-Lauf gestartet (data/kfb-card-text-canonical-2026-10-14). Info Georg: Meshy-Inseln und Lord Hunky (Alien auf KayKit-Astronaut-Basis) in /CLAUDE/MeshyModels/, Intake später nach V-230-Muster.
+
 ## 2026-10-14 abends · FrizzleBob aus Georgs Export, ToolBox als WSA-Site
 - V-240: FrizzleBob = Georgs Export (v5b @23615cff), replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json; Knet-Lider aus; WS1 baut 1:1, Stopp aufgehoben.
 - V-241: Claude-Design-ToolBox 1:1 als WSA-Site mit GitHub-Speicherung = der eine Werkzeug-Ort.

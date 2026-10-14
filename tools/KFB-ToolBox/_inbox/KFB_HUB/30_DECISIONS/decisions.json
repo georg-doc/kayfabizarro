@@ -3087,6 +3087,21 @@
    "applies": "nach FrizzleBob"
   },
   {
+   "id": "V-242",
+   "date": "2026-10-14",
+   "area": "Karten",
+   "verdict": "RULE",
+   "text": "Karten-Daten-Standard für alle bestehenden und künftigen Decks: Kanonischer Kartentext = gedruckte Karte (Titel, POWER, LORE), geprüft am Kartenbild; alter JSON-Text bleibt als jsonLegacy, Herkunft als textSource. Einheitliche Feldnamen (cardNumber, cardName, power, lore, artworkPrompt) und Dateinamen, cardCount = Kartenzahl, keine doppelten Nummern oder Titel, Registry-Zuordnung (coverOffset, Seiten) geprüft. Neue Decks laufen durch dieselbe Prüfung, bevor sie genutzt werden. Sichtbar im Asset Librarian: je Karte das Kartenbild + alle JSON-Felder, damit Georg dort kontrollieren kann. Erster Lauf: Branch data/kfb-card-text-canonical-2026-10-14 (Agent).",
+   "values": {},
+   "owner": "WS0 (Daten) · WSA work (Librarian-Ansicht)",
+   "check": "Audit-Bericht + Stichprobe im Librarian",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "656 Karten wichen vom Druck ab, 14 Decks systematisch; Duplikate und uneinheitliche Namen.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3149,7 +3164,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:218",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:221",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
