@@ -25,13 +25,10 @@
       "lore": "Uncle FrizzleBob's epistemic sabotage expansion! No humans, no neutrality, just pure analog financial wrestling!",
       "gradeReason": "Deck intro copy, not a role. Tells you what to think, not who to be.",
       "artworkPrompt": "Style: Pulp conspiracy poster. Subject: FrizzleBob rabbit tearing a dollar bill in half. Mood: Furious glee.",
-      "print": {
-        "cardName": "9/11 Trillions: Follow The Kayfabe-Money!",
-        "power": "Play this to instantly discard the \"Official Narrative\" card from play.",
-        "lore": "Uncle FrizzleBob's epistemic sabotage expansion! No humans,",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p1 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -42,13 +39,10 @@
       "lore": "\"It determines how we proceed with our investigation. 9/11 was a crime, and detectives must identify the perpetrators.\"",
       "gradeReason": "You ARE the detective. One sentence, full role, no manual needed.",
       "artworkPrompt": "Style: Noir detective illustration. Subject: Bloodhound in trenchcoat sniffing a trail of gold coins. Mood: Relentless certainty.",
-      "print": {
-        "cardName": "Rule #1: Follow the Money",
-        "power": "Force your opponent to reveal their hand. Steal all cards with a 'Profit' value.",
-        "lore": "It determines how we proceed with our investigation. 9/11 was a crime,",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p1 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -83,16 +77,18 @@
       "cardName": "The $14 Million Bridge",
       "grade": 1,
       "power": "Leverage 0.4% of your own assets to control a multi-billion dollar empire.",
-      "lore": "Other players only put down $14 million of their own money, financed by GMAC and individual investors.",
+      "lore": "The investors only put down $14 million of their own money, financed by GMAC and individual investors.",
       "gradeReason": "0.4% leverage is immediately playable and outrageous. The ratio alone is the performance.",
       "artworkPrompt": "Style: Wall Street grotesque. Subject: Fat pig in suit balancing a $3.2B gold bar on a $14 matchstick. Mood: Obscene leverage.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The $14 Million Bridge",
         "power": "Leverage 0.4% of your own assets to control a multi-billion dollar empire.",
-        "lore": "THE INVESTORS only put down $14 million of their own money, financed by GMAC and individual investors.",
+        "lore": "Other players only put down $14 million of their own money, financed by GMAC and individual investors."
+      },
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p2 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -102,7 +98,12 @@
       "power": "Double your coverage right before a disaster. If disaster strikes, claim it happened twice.",
       "lore": "The leaseholder insisted on doubling the insurance to $3.55B, demanding courts construe the attacks as two separate events to win $7.1B.",
       "gradeReason": "Insurance double-down is pure villain performance. Instantly embodiable, no notes needed.",
-      "artworkPrompt": "Style: Crooked insurance ad. Subject: Squirrel in suit pointing at two identical fire claims. Mood: Cheerful fraud."
+      "artworkPrompt": "Style: Crooked insurance ad. Subject: Squirrel in suit pointing at two identical fire claims. Mood: Cheerful fraud.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p2 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 8,
@@ -126,35 +127,39 @@
       "cardNumber": 10,
       "cardName": "Silver Stream E-Link",
       "grade": 2,
-      "power": "Execute massive paperless transactions unseen by any other commercial entity on the planet.",
-      "lore": "Marsh was the first financial company on the planet to employ this specific type of paperless transaction technology.",
+      "power": "Execute massive paperless transactions unseen by any other commercial entity on Earth.",
+      "lore": "The first two commercial companies on the planet to employ this specific type of paperless transaction technology.",
       "gradeReason": "The invisible transaction role is there, but E-Link as a name is too technical to snap into immediately.",
       "artworkPrompt": "Style: Retro-tech thriller. Subject: Raccoon vanishing behind a waterfall of digital zeros. Mood: Untraceable velocity.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Silver Stream E-Link",
-        "power": "Execute massive paperless transactions unseen by any other commercial entity on EART.",
-        "lore": "no signal. RE: the first COMMERCIAL COMPANIES on the planet to employ this specific type of paperless transaction technology.",
+        "power": "Execute massive paperless transactions unseen by any other commercial entity on the planet.",
+        "lore": "Marsh was the first financial company on the planet to employ this specific type of paperless transaction technology."
+      },
+      "printTypo": "Druck: 'ON EARTR'",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p3 TR",
-        "method": "ocr",
-        "confidence": "medium",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 11,
       "cardName": "The $10M Anomalies",
       "grade": 2,
-      "power": "Generate phantom purchase orders. If confronted, urge the Feds to look in your own business.",
+      "power": "Generate phantom purchase orders. If confronted, urge the investigator to \"mind their own business.\"",
       "lore": "Severe fiscal anomalies and unnecessary hardware sales led investigators to the heart of the Marsh.com mystery.",
       "gradeReason": "Phantom purchase orders is a great mechanic. The double-redirect power is clever but takes a beat.",
       "artworkPrompt": "Style: Forensic accounting noir. Subject: Fox surrounded by floating receipts stamped VOID. Mood: Gleeful misdirection.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The $10M Anomalies",
-        "power": "Generate phantom purchase orders. If confronted, urge the INVESTIGATOR to \"MIND THEIR own business.",
-        "lore": "Severe fiscal anomalies and unnecessary hardware sales led investigators to the heart of the Marsh.com mystery.",
+        "power": "Generate phantom purchase orders. If confronted, urge the Feds to look in your own business.",
+        "lore": "Severe fiscal anomalies and unnecessary hardware sales led investigators to the heart of the Marsh.com mystery."
+      },
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p3 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -164,7 +169,12 @@
       "power": "Schedule an all-hands meeting in a doomed building, but dial in from home.",
       "lore": "The executive who buried the anomaly inquiry was safe at home, while the IT staff investigating the fraud perished in the conference call.",
       "gradeReason": "Dial in from home while your auditors die — one sentence, full villain costume, zero assembly required.",
-      "artworkPrompt": "Style: Dark domestic satire. Subject: Smug bear on couch with phone, skyscrapers burning through window. Mood: Comfortable distance."
+      "artworkPrompt": "Style: Dark domestic satire. Subject: Smug bear on couch with phone, skyscrapers burning through window. Mood: Comfortable distance.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p3 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 13,
@@ -207,9 +217,19 @@
       "cardName": "The Put Options",
       "grade": 1,
       "power": "Turn a $180K bet into $2.4 million in a single day.",
-      "lore": "More than 2,000 contracts betting against United and American Airlines — 30 times the normal volume. \"Horrific, evil insider trading.\"",
+      "lore": "More than 2,000 contracts betting against United and American Airlines — 90 times the normal volume. \"Horrific, evil insider trading.\"",
       "gradeReason": "$180K to $2.4M in a day. The math IS the performance. Instant table energy.",
-      "artworkPrompt": "Style: Wall Street casino. Subject: Coyote in pinstripe suit raking chips from a crashed airline model. Mood: Audacious avarice."
+      "artworkPrompt": "Style: Wall Street casino. Subject: Coyote in pinstripe suit raking chips from a crashed airline model. Mood: Audacious avarice.",
+      "jsonLegacy": {
+        "cardName": "The Put Options",
+        "power": "Turn a $180K bet into $2.4 million in a single day.",
+        "lore": "More than 2,000 contracts betting against United and American Airlines — 30 times the normal volume. \"Horrific, evil insider trading.\""
+      },
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p5 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 18,
@@ -236,7 +256,12 @@
       "power": "Destroy all potentially responsive records regarding options trading.",
       "lore": "When FOIA researchers asked for the documentary evidence of the pre-9/11 options trading, they were told the records were destroyed.",
       "gradeReason": "You ARE the shredder. One noun, total role. FOIA request denied is the ultimate power move.",
-      "artworkPrompt": "Style: Office horror. Subject: Rat in uniform feeding documents into shredder labeled EVIDENCE. Mood: Bureaucratic obliteration."
+      "artworkPrompt": "Style: Office horror. Subject: Rat in uniform feeding documents into shredder labeled EVIDENCE. Mood: Bureaucratic obliteration.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p5 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 21,
@@ -246,13 +271,10 @@
       "lore": "Wirt D. Walker III bought 56,000 shares of Stratex. The FBI never interviewed him because he had \"no ties to terrorism.\"",
       "gradeReason": "Stock-and-ignore mechanic is real. The proper name Walker III anchors it to history, not immediate embodiment.",
       "artworkPrompt": "Style: Corporate scandal illustration. Subject: Hawk in blazer staring smugly at a soaring stock chart next to airport scanners. Mood: Untouchable privilege.",
-      "print": {
-        "cardName": "The Stratex Spike",
-        "power": "Double your stock value on airport security systems. Ignore all FBI interviews.",
-        "lore": "Wirt D. Walker Ill bought 56,000 shares of Stratex. The FBI never interviewed",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p6 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -263,13 +285,10 @@
       "lore": "The Carlyle Group was meeting in DC with the brother of Osama Bin Laden on the morning of September 11th.",
       "gradeReason": "Breakfast with the enemy's brother on that morning — you ARE the host and you know exactly who you are.",
       "artworkPrompt": "Style: Luxury horror. Subject: Vultures in suits at white-tablecloth breakfast, TV showing smoking towers in background. Mood: Untroubled affluence.",
-      "print": {
-        "cardName": "The Ritz-Carlton Meeting",
-        "power": "Host the enemy's family for a private equity breakfast on the day of the attack.",
-        "lore": "The Carlyle Group was meeting in DC with the brother of Osama Bin Laden on",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p6 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -297,7 +316,12 @@
       "power": "Examine 9.5 million transactions and conclude nothing happened.",
       "lore": "They didn't say insider trading didn't happen. They said \"those who had advanced knowledge didn't trade.\" Begging the question: WHO had knowledge?",
       "gradeReason": "The circular-logic regulator role is great. The LORE analysis is editorial, not pure performance fuel.",
-      "artworkPrompt": "Style: Official absurdism. Subject: Blind horse in SEC uniform stamping CLEARED on a mountain of documents. Mood: Procedural blindness."
+      "artworkPrompt": "Style: Official absurdism. Subject: Blind horse in SEC uniform stamping CLEARED on a mountain of documents. Mood: Procedural blindness.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p7 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 26,
@@ -369,7 +393,12 @@
       "power": "Seize $1.4M in terror funds, then get permanently blocked by your own bosses.",
       "lore": "Agents Wright and Vincent were thwarted from opening a criminal investigation into the very man financing Ptech.",
       "gradeReason": "The blocked-agent role is emotionally clear. Vulgar Betrayal title is strong but the mechanic needs setup.",
-      "artworkPrompt": "Style: Institutional tragedy. Subject: Two bloodhounds straining at leashes held by their own police chief. Mood: Institutional sabotage."
+      "artworkPrompt": "Style: Institutional tragedy. Subject: Two bloodhounds straining at leashes held by their own police chief. Mood: Institutional sabotage.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p9 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 34,
@@ -379,13 +408,10 @@
       "lore": "The multi-millionaire angel investor behind Ptech was later put on a US Treasury terrorist watch list.",
       "gradeReason": "Named character = instant costume. VP ties plus terror funding simultaneously — the split identity is the performance.",
       "artworkPrompt": "Style: Society portrait gone wrong. Subject: Leopard in tux shaking hands with VP while signing terror check behind his back. Mood: Brazen duality.",
-      "print": {
-        "cardName": "Yassin al-Qadi",
-        "power": "Boast ef ties te the Vice President while funding startups and terror simultaneously.",
-        "lore": "The multi-millionaire angel investor behind Ptech was later put",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p9 TR",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -422,7 +448,12 @@
       "power": "Delay a federal raid by two weeks to ensure all evidence is gone.",
       "lore": "When the FBI finally raided Ptech in 2002, the company was given two weeks advanced warning.",
       "gradeReason": "You are whoever tipped them off. Two weeks advance warning is a story you can tell in one breath.",
-      "artworkPrompt": "Style: Spy comedy. Subject: Turtle mailman delivering RAID SCHEDULED letter to office with two-week countdown calendar. Mood: Absurd complicity."
+      "artworkPrompt": "Style: Spy comedy. Subject: Turtle mailman delivering RAID SCHEDULED letter to office with two-week countdown calendar. Mood: Absurd complicity.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p10 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 39,
@@ -486,13 +517,10 @@
       "lore": "Zakheim's former company provided advanced military electronics and remote flight tech to DARPA prior to 9/11.",
       "gradeReason": "Remote flight tech for DARPA is a loaded factual card. Role needs the Zakheim sheet framing to click.",
       "artworkPrompt": "Style: Cold war tech thriller. Subject: Owl engineer holding remote control with paper plane labeled DARPA looping in background. Mood: Plausible deniability.",
-      "print": {
-        "cardName": "SPC International",
-        "power": "Develop remote control systems for airborne vehicles, then market them to the Pentagon.",
-        "lore": "Table is it tech to DARPA prior to electronics and",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p12 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -502,7 +530,12 @@
       "power": "Write a white paper predicting exactly what you need to conquer the world.",
       "lore": "PNAC called for a sweeping transformation of the military, including biological warfare targeting specific genotypes.",
       "gradeReason": "White-paper-as-blueprint role is sharp. The biological genotype detail is the wildest fact and slightly buries the lede.",
-      "artworkPrompt": "Style: Think tank thriller. Subject: Lions in suits presenting a world map with color-coded invasion zones. Mood: Academic menace."
+      "artworkPrompt": "Style: Think tank thriller. Subject: Lions in suits presenting a world map with color-coded invasion zones. Mood: Academic menace.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p12 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 47,
@@ -556,7 +589,13 @@
       "power": "Destroy 3,000 to 4,000 documents on active corporate fraud investigations.",
       "lore": "The SEC occupied floors 11-13 of WTC Building 7, wiping out evidence on Enron and others when it collapsed.",
       "gradeReason": "You are the building. 3,000-4,000 documents — you don't need to explain what happened, the math speaks.",
-      "artworkPrompt": "Style: Evidence room noir. Subject: Filing cabinets labeled ENRON INVESTIGATION tumbling into rubble, Building 7 collapsing behind. Mood: Convenient catastrophe."
+      "artworkPrompt": "Style: Evidence room noir. Subject: Filing cabinets labeled ENRON INVESTIGATION tumbling into rubble, Building 7 collapsing behind. Mood: Convenient catastrophe.",
+      "printTypo": "Druck: 'Ths SEC'",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p13 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 53,
@@ -566,13 +605,10 @@
       "lore": "Rumsfeld's war on the Pentagon bureaucracy was highly successful at losing even more money.",
       "gradeReason": "Scale escalation is staggering. But inflate without a hearing is a situation, not a character to wear.",
       "artworkPrompt": "Style: Congressional absurdism. Subject: Bear rolling a snowball labeled $2.3T down a hill, it becomes $8.5T at the bottom. Mood: Effortless scale.",
-      "print": {
-        "cardName": "The $8.5 Trillion Benchmark",
-        "power": "Inflate the unaccountable money from $2.3T to $8.5T over a decade without a single Congressional hearing.",
-        "lore": "Rumsfeld's war on the Pentagon bureaucracy was highly successful at",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p14 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -600,23 +636,30 @@
       "power": "Completely lose $6 billion in cash in a war zone.",
       "lore": "The US wasted $50 billion and completely lost $6 billion in Iraq. That's more than most countries spend on their entire defense in a year.",
       "gradeReason": "Completely lose $6 billion in cash is peak absurdism. But losing money is passive — the loser-as-role needs more.",
-      "artworkPrompt": "Style: Desert war comedy. Subject: Camel standing next to a crater labeled $6B shrugging at a US general. Mood: Weaponized incompetence."
+      "artworkPrompt": "Style: Desert war comedy. Subject: Camel standing next to a crater labeled $6B shrugging at a US general. Mood: Weaponized incompetence.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p14 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 57,
       "cardName": "The Ultimate Heist",
       "grade": 1,
-      "power": "Combine Insurance, Insider Trading, and Military Fraud to win the pot.",
-      "lore": "Insurance scams, financial fraud, missing money, and evidence destroyed. $8.5 trillion remains to investigate.",
+      "power": "Combine Insurance, Insider Trading, and Military Fraud to win the game.",
+      "lore": "Insurance scams, electronic fraud, missing money, and evidence destroyed. 8.5 trillion reasons to investigate.",
       "gradeReason": "You are the final boss who ran all three scams simultaneously. Full roster, full accountability, full performance.",
       "artworkPrompt": "Style: Final boss splash art. Subject: Three-headed lizard in suit holding insurance policy, stock ticker, and Pentagon budget. Mood: Total systemic control.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Ultimate Heist",
-        "power": "Combine Insurance, Insider Trading, and Military Fraud to win the game.",
-        "lore": "Insurance scams, electronic fraud, missing money, and evidence destroyed. 8.5 trillion reasons to investigate.",
+        "power": "Combine Insurance, Insider Trading, and Military Fraud to win the pot.",
+        "lore": "Insurance scams, financial fraud, missing money, and evidence destroyed. $8.5 trillion remains to investigate."
+      },
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p15 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -627,13 +670,10 @@
       "lore": "The answers to 9/11 are not going to come from the suspects of the crime.",
       "gradeReason": "You ARE the perpetrator writing the investigation. Self-investigation as power move — one sentence, whole costume.",
       "artworkPrompt": "Style: Commission theatre. Subject: Fox presiding over hearing table with all other seats also filled by foxes. Mood: Closed-loop justice.",
-      "print": {
-        "cardName": "The Suspects' Story",
-        "power": "Ask the perpetrators to investigate themselves.",
-        "lore": "The answers to 9/11 are not going to come from",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p15 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -650,9 +690,19 @@
       "cardName": "Uncle FrizzleBob's Verdict",
       "grade": 1,
       "power": "Discard all illusions. Game over.",
-      "lore": "\"They told you 9/11 changed everything. They were right: it made the house infinitely rich. Follow the Kayfabe-Money, kids!\"",
+      "lore": "\"They told you it changed everything. They were right. It made the house infinitely rich. Follow the Kayfabe-Money, kids!\"",
       "gradeReason": "FrizzleBob in the room. Full character, full verdict, maximum table energy. The deck ends where it should.",
-      "artworkPrompt": "Style: Final panel splash. Subject: FrizzleBob rabbit MC standing on a pile of gold coins, pointing at the camera. Mood: Vindicated fury."
+      "artworkPrompt": "Style: Final panel splash. Subject: FrizzleBob rabbit MC standing on a pile of gold coins, pointing at the camera. Mood: Vindicated fury.",
+      "jsonLegacy": {
+        "cardName": "Uncle FrizzleBob's Verdict",
+        "power": "Discard all illusions. Game over.",
+        "lore": "\"They told you 9/11 changed everything. They were right: it made the house infinitely rich. Follow the Kayfabe-Money, kids!\""
+      },
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Money_Trail - 9-11 - ADD web ID.pdf p15 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     }
   ],
   "cardCount": 60,
