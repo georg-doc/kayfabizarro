@@ -4,7 +4,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useThree } from '@react-three/fiber'
 import ModuleHost from './ModuleHost'
-import { createEyeActor, eyeActorLog } from './modules/eyeActor'
+import { eyeActorLog } from './modules/eyeActor'
+import { createActor } from './actors/actorSlot'
+import recipe from './data/actors/rogue-hooded.recipe.json'
 import rogueUrl from './assets/actors/Rogue_Hooded.glb?url'
 import clipsUrl from './assets/actors/Rig_Medium_General.glb?url'
 import pick from './data/eyes/rogue-hooded.profile.json'
@@ -13,11 +15,12 @@ import { expose } from './debug'
 
 const motion = typeof location !== 'undefined' && /motion=(\w+)/.exec(location.hash)?.[1] || 'bind'
 const OPTIONS = {
+  recipe, faceDriver: 'KFB_NATIVE', // über den Darsteller-Slot, derselbe Weg wie FrizzleBob
   url: rogueUrl, clipsUrl, motion, profile: pick.profile, contract, height: 2.65, anchorId: 'eyetest-actor',
   actor: { id: 'adventurer-rogue-hooded', path: pick.profile.source.path, revision: pick.profile.source.revision },
 }
 let lastActor = null
-const create = (o) => { lastActor = createEyeActor(o); expose('EyeActor', lastActor); return lastActor }
+const create = (o) => { lastActor = createActor(o); expose('EyeActor', lastActor); return lastActor }
 
 function StudioCamera() {
   const { camera, size } = useThree()

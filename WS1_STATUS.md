@@ -1,7 +1,108 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§11 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§12 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 12 · 14.10. nachmittags · Darsteller-Slot fertig (G2) · FrizzleBob v5 im Spiel · Georgs Entscheidung · Befunde zur ToolBox
+
+### 12.1 · Georgs Entscheidung (direkt an WS1, 14.10., hier für WS0 eingetragen)
+- **„nimm den v5 FB mit angelegtem Mund – das können wir doch nachher alles austauschen!“**
+  - WS1 baut mit FrizzleBob v5 und seinem eigenen Modellmund.
+  - Fehlende Feinwerte nimmt WS1 vorläufig aus den Belegen, mit Quelle im Rezept. Austauschen heißt: eine Datei ersetzen.
+  - Die Bitte aus §11.2 (Georg exportiert seinen Eintrag) ist damit **kein Blocker** mehr. Sie bleibt eine Option für später.
+- **Georg möchte keine „stille Post“ mehr:** keine Weiterleitungen und keine Export-Bitten an ihn. Dropbox und andere Connectoren sind bei ihm durch die Admins gesperrt.
+  - Folge: Das Wireface-SDK kommt auf diesem Mac auf absehbare Zeit nicht an. Der Schalter bleibt, gebaut wird ohne SDK.
+
+### 12.2 · Darsteller-Slot (V-227 / V-228 §4): Vorlagen-Zeile und Ergebnis
+**Vorlagen-Zeile (G1):**
+- **1:1 übernommen (byte-gleich, Blobs im Test geprüft):**
+  - Darsteller-Vertrag #355 `wireface-face-driver-contract.mjs` (@bea811c1, Blob 74d03061);
+  - aus ToolBox P06 r1 `face-mount.v1`, `clay-lids.v1`, `lipsync-text.v1`, `ear-base.v1`, `hair-tufts.v1`;
+  - @8922d4b1 `pet-mouth.v1`, `eyeoval.v1` (397e5174), `headzones.v1`, `partrig.v1`, `brow-rig.v2`, `pet-nose.v2`, `pet-moustache.v1`, `kfb-ink-canon`; `pet-eye-rig.v6` und `facehost.v1` gleich F1;
+  - `ear-dangle.v1` + `fb-default.ear-rig.json` @19088b14;
+  - Modell `FB_TEMPLATE_LOOK_v5.glb` (131d7c38), 13 Mund-Decals (main @ac9dbaed) und Haar-Spender `FrizzleBob_Yellow.gltf` @eabc8725.
+- **Neu:**
+  - `src/actors/actorSlot.js`: `createActor()`, genau ein Gesichts-Treiber, Auswahl nach `composition.faceOwners.face`, kein stiller Rückfall;
+  - `src/actors/face-driver-contract.r2.mjs`: Vertrag R2;
+  - `src/modules/faceMountActor.js`: Modul nach Host-Vertrag, Ablauf wie P06 `_loadActor`/`_mountFaceOn`/`_postRig`/`_frame`/`_lipRun`;
+  - Rezepte `src/data/actors/frizzlebob-v5.recipe.json` und `rogue-hooded.recipe.json`;
+  - Prüfszene `#actortest` mit Licht und Kamera wie die ToolBox.
+- **Die F1-Figur läuft jetzt über denselben Slot** (`EyeTest` → `createActor`). Der F1-Test bleibt grün.
+
+**Vertrags-Diff R2 gegen #355** (ganz in `ws1/asset-intake/frizzlebob-v5/face-driver-contract.r2.diff`, bitte in #355 übernehmen):
+1. `composition.modelRef { path, revision, blob }` = **ein** gepinntes Modell statt bodyRef + headRef (FrizzleBob: Ohren am eigenen Skelett, kein Graft).
+   - `revision` muss ein Commit sein (40 Hex), `blob` 8–40 Hex, kein Leerraum.
+   - modelRef und bodyRef/headRef zugleich = `COMPOSITION_AMBIGUOUS`.
+2. `rigFamily: "CUSTOM"` ist nur zusammen mit `modelRef` erlaubt (für Nicht-KayKit-Skelette).
+3. Exklusivität in beide Richtungen: `KFB_NATIVE` lehnt einen aktiven Wireface-Besitzer ab (`DOUBLE_FACE_CHANNEL_OWNER`). Bisher war nur die Richtung Wireface → KFB geprüft.
+   - Die aktiven Besitzer leitet der Slot aus `composition.faceOwners` des Rezepts ab. Sie kommen nicht nur vom Aufrufer.
+   - Ein Wunsch nach Wireface reißt die Szene nie ab: Ein Vertragsfehler ergibt einen Darsteller ohne Figur mit Status `CONTRACT_REJECTED` oder `SOURCE_MISSING`.
+- Alles andere bleibt unverändert. **Die 19 #355-Tests laufen unverändert gegen R2 grün.**
+
+**Ergebnis (G2): `test/actors.mjs`, 33 Prüfpunkte PASS, nach dem blinden Prüfer 5 in drei Läufen hintereinander gleich.**
+- Alle 10 Tests sind grün, dazu die bekannte F1-Zeile „OFFEN“ (§11.1).
+- Für die Aufnahmen werden die Augen eingefroren (Leben aus, Blinzeln aus, Blick geradeaus), in Test und ToolBox-Referenz gleich.
+- **Vertrag:** #355-Suite auf R2, Einzelmodell-Rezept, Pin-Pflicht, CUSTOM nur mit Modell, Exklusivität beidseitig, Spender byte-gleich.
+- **Gleich wie die ToolBox:**
+  - Gleicher Eintrag ergibt die gleiche Augenlage (eyeFrame bis auf die 4. Stelle gleich, links −0,2029 / 0,0936 / 0,3706).
+  - **Bild Gesicht gegen die ToolBox: 2,0–2,4/255** in drei Läufen. Referenz `test/ref/fb_donor_face.*`, aufgenommen mit `scripts/fb/donor-pair.mjs` aus derselben Kamera, Bindepose.
+- **Augen:** Blick links parallel. **Lid zu: Augenweiß 915 → 0, Pupille 2992 → 0 Pixel**, in jedem Lauf gleich. Die Knet-Lider decken also ganz ab, die F1-Naht gibt es hier nicht.
+- **Ein Treiber:** Eye-Rig sichtbar, gemalte Augen aus, Rig-Mund aus (der Modellmund trägt die Laute). Der Blasen-Anker sitzt über dem Kopf.
+- **Mund (Mime, ohne Ton):**
+  - `say(text)` erzeugt eine Spur aus `lipsync-text`, im Test 22 Schritte über 2,8 s mit 8 verschiedenen Mundbildern.
+  - Während der Spur trägt der **Modellmund** das jeweilige Decal, danach wieder seinen eigenen gemalten Mund. Es gibt keinen zweiten Mund.
+  - Ende bei „!“ = `smile` wie im Spender.
+  - Die Decals kommen nur aus lokalen, gepinnten Kopien (13 Blobs geprüft). Ohne sie bricht create ab (`MOUTH_DECALS_REQUIRED`).
+- **Ohren und Haare:**
+  - Haare: drei Büschel.
+  - Ohren: 3+3 Knochen. Ein Stoß lässt sie schwingen, die Werte bleiben endlich und kommen zur Ruhe.
+- **Vertrag §6:** create 1× (auch nach 5 Re-Renders), update mit ctx, dispose 1×, danach kein update.
+  - Freigegeben sind 34 Geometrien, 18 Materialien und **25 Texturen**, dazu der Decal-Cache des Munds und seine Zwillinge.
+  - Gezählt wird unabhängig von dispose.
+- **Wireface:**
+  - Das FrizzleBob-Rezept unter Wireface wird abgelehnt (`DOUBLE_FACE_CHANNEL_OWNER`).
+  - Ein reines Wireface-Rezept ohne SDK oder ohne Nachweis ergibt `SOURCE_MISSING`, keine Figur und keinen Absturz.
+  - Build und Tests laufen ohne SDK.
+- **Bilder** in `ws1/proofs/2026-10-14-actor-slot/`:
+  - `fb_pair_face_q.png` (ToolBox | Spiel, vorn und ¾);
+  - `fb_blink.png`;
+  - `fb_mouth_mime.png`;
+  - `fb_brow_lift_probe.png`.
+
+**Blinder Prüfer 5: PASS MIT AUFLAGEN**, 12 Befunde. Alle sind behoben oder begründet:
+1. Test nicht wiederholbar (Blinzeln/Leben zufällig, einmal FAIL bei 3 Läufen) → Augen eingefroren, Referenz neu aufgenommen, 3 Läufe gleich.
+2. Vertrag ließ gemischte Komposition und Revision „main“ zu → abgelehnt.
+3. Exklusivität prüfte nur die Angaben des Aufrufers → aktive Besitzer kommen jetzt aus dem Rezept.
+4. Wireface ohne Nachweis warf eine Ausnahme in die Szene → Darsteller ohne Figur.
+5. Mund-Decals wurden global und still gesetzt → Pflicht über `options`, sonst Abbruch.
+6. dispose ließ den Decal-Cache liegen, der Test prüfte keine Texturen → freigegeben und geprüft.
+7. Anker-Höhe mischte Welt- und lokale Koordinaten → jetzt im lokalen Raum.
+8. Die Figur war vor dem Gesicht sichtbar, ein Clip-Fehler setzte ERROR → erst mit Gesicht sichtbar, Clip-Fehler nur Log.
+9. Kommentar zum Takt war falsch, das erste Mundbild kam ein Bild zu spät → Kommentar berichtigt, erstes Mundbild sofort, End-Form geprüft.
+10. Ohren hingen bei bewegtem Elternknoten ein Bild nach → `updateWorldMatrix(true, true)`.
+11. Einzelne Prüfpunkte behaupteten zu viel → geschärft (ein Treiber, Decal-Blobs, Anzahl 33).
+12. Quellen im Rezept fehlten teilweise → `mouth.set`, `hair`, `idle` mit Quelle; `idle` wird gelesen (`motion: 'idle'`).
+
+Restpunkt aus 1: Das Bild schwankt noch 2,0–2,4, weil die Ohrfedern zeitabhängig ausschwingen. Die Schwelle 6 hat Abstand.
+Hinweis aus dem Prüfbericht: Die Spender-Datei `pet-mouth.v1` setzt `window.PetMouth`. Das stammt unverändert aus dem Spender und ist kein Debug-Global von WS1.
+
+### 12.3 · Befunde zur ToolBox und Korrekturen
+Ganz in `ws1/asset-intake/frizzlebob-v5/TOOLBOX_FINDINGS_R1.md` (A1–A12 an den ToolBox-Owner, B1–B6 Korrekturen bei WS1). Die wichtigsten:
+- **A1 Das Posenwerkzeug setzt die Arme anders an:**
+  - `pose-rig.v1` schreibt im Studio- und Rigging-Tab jede Bildfolge eine eigene Haltung (Arme ab). Das GLB steht in T-Pose.
+  - Die ToolBox-Belege zeigen also nicht die Bindepose. Mit unterschiedlicher Haltung lag das Bildpaar bei 12,1/255, mit gleicher bei 3,0/255, mit zusätzlich eingefrorenen Augen bei 2,0–2,4/255.
+  - Vorschlag: die Haltung neben jedem Beleg nennen und einen Schalter „Bindepose“ anbieten.
+- **A2:** Die Kennung `frizzlebob-earrig-v5` lädt ab r2 die Figur v5b.
+- **A3/A4:** Georgs Einträge liegen nur im Browser, das Abnahme-JSON nennt den Eintrag nicht. Nachlauf ohne Eintrag: 6/7.
+- **A5:** Mit Georgs Augenhöhe verdecken die Rig-Augen die Modellbrauen. WS1 setzt vorläufig `original.brows.lift` 0,18, geschätzt nach Beleg 04.
+- **A6:** Die Mund-Decals sind ungepinnt (main).
+- **A7:** Der gemalte Mund steht in ¾ vor dem Gesicht.
+- **A8:** Die Pupille scheint nur mit der neueren `eyeoval` durchs Lid. Mit Knet-Lid ist sie ganz verdeckt. Das ist ein Hinweis für den Rigging-Owner zur F1-Naht.
+
+### 12.4 · Offen / als Nächstes
+- **Augen → Kopf → Körper und Blick zum Partner:** Der Slot hat `lookAt(nx, ny)` (Bildschirm-Pointer). Das Weltziel und die Reihenfolge kommen mit D1 und der Vorführung. V-214 ist **noch nicht** als erfüllt gemeldet.
+- **Haltung auf der Bühne:** Ruhe-Clip `Idle_A` (Rig_Medium General), keine T-Pose.
+- **Weiter:** B1 Billboard nach R2, dann D1, dann die Vorführung im Amphitheater.
 
 ## 11 · 14.10. mittags · G0 FrizzleBob v5 (V-236) · F1-Nacharbeiten aus dem WS0-Abgleich · gelesen bis V-236
 

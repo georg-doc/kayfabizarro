@@ -1,0 +1,80 @@
+{
+ "parts": {
+  "eyes": "rig",
+  "brows": "original",
+  "nose": "original",
+  "mouth": "original"
+ },
+ "eye": {
+  "anchor": {
+   "dx": 0.455,
+   "dy": 0.21,
+   "ring": 0.255,
+   "track": 0.1
+  },
+  "pupilStyle": "matte-cute",
+  "pupilSize": 0.4,
+  "gloss": 0.85,
+  "lidFit": 0.9,
+  "inset": 0,
+  "converge": 0,
+  "splay": 0,
+  "socket": "surface",
+  "turnL": 0,
+  "turnR": 0,
+  "lashes": {
+   "length": 0,
+   "density": 6,
+   "width": 1
+  },
+  "oval": {
+   "w": 1.06,
+   "h": 1.04,
+   "d": 0.98,
+   "tilt": -25
+  },
+  "sclera": null,
+  "pupil": null
+ },
+ "eyeFrame": {
+  "left": [
+   -0.2029,
+   0.0936,
+   0.3706
+  ],
+  "right": [
+   0.2029,
+   0.0936,
+   0.3706
+  ],
+  "radius": 0.1137,
+  "unit": 0.4459
+ },
+ "actorPos": [
+  0,
+  0,
+  0
+ ],
+ "actorScale": [
+  1,
+  1,
+  1
+ ],
+ "hemi": [
+  "fff4e0",
+  "3a3226",
+  1.25
+ ],
+ "sun": [
+  "ffffff",
+  1.8,
+  [
+   13.42957080740226,
+   25.978684397810827,
+   15.77943801537607
+  ]
+ ],
+ "tone": 0,
+ "mixers": 0,
+ "source": "KFB ToolBox Production-06 Session-Cut 30.09. r1 (main @ac9dbaed, 45 Pr\u00fcfsummen OK), Akteur frizzlebob-earrig-v5 (FB v5 @19088b14), Eintrag = src/data/actors/frizzlebob-v5.recipe.json, Bindepose, Kamera ActorTest.VIEWS.face, scripts/fb/donor-pair.mjs, Augen eingefroren (Leben/Blinzeln aus, Blick fest geradeaus)"
+}
