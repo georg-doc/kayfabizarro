@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · Kopiertexte für Georg auf GitHub
+- replies/PASTE_FOR_GEORG.md: alle Texte zum Weitergeben (WS1, Claude Design, NotebookLM Schritt 1+2) – Georg kann vom anderen Rechner nicht aus dem Chat kopieren.
+
 ## 2026-10-14 · Opener-Recherche-Inventur R1
 - replies/OPENER_RESEARCH_INVENTORY_R1.md: Perplexity-Doc (Drive) mit 43 Operatoren (OP/UP/FW) und 8 Beat-Grammatiken als Hauptquelle; Pool nutzt nur Grok-Recognition-Formen, 5 von 14 sind eine Form; Uptake, Fourth Wall und Beat-Grammatiken fehlen ganz; NotebookLM nie gelesen, Grok-Original fehlt, keine Trope→Opener-Zuordnung, „Did you hear of“ in keiner Quelle. 5 Fragen an Georg.
 
