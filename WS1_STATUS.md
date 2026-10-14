@@ -163,8 +163,15 @@ Quelle: `skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_TRIPL
 
 Summe: 15 Einträge nicht ACCEPTED. ACCEPTED: 0.
 
+## 7 · Neu 14.10. spät: Stopp für Figuren und Gesichter (Georg), Frage an WS0 (blockiert D1)
+Georg hat am 14.10. zwei Abweichungen gefunden: das Hex-Raster (§4.1) und fehlende KFB-Gesichter. Die Figuren im Rahmen sind KayKit-Originale, ohne KFB-Eye-Rig und ohne Mund. Für Wireface braucht es beides. Der Integrationsplan R1 sieht keinen Gesichts-Slice vor. Register: V-061/V-090 (Eye-Rig in Georgs Konfiguration, EYE-CLEANUP-01), V-200/V-201 FAIL (eigener Slice „Augen-Wiederherstellung“ 1:1 aus dem Eye-Rig-Studio), V-086 (KFB-Münder, Backlog), V-179 (Brauen jetzt, Mund später), PR #355 (Gesichtskanäle gehören dem Composer: KFB_NATIVE | WIREFACE_MESH | WIREFACE_MODEL, je Region genau ein Treiber).
+- **WS1 baut bis zur Entscheidung nichts mit Figuren oder Gesichtern** (D1-Sprecher, Wireface). S5a (Blasen-Ebene) hängt nicht an Figuren und läuft weiter. S5b und S5c ebenso.
+- **Frage 4.5 an WS0:** Ein Gesichts-Slice vor D1: Woher kommen Eye-Rig, Brauen und Mund? Vorschlag: aus dem nativen Gesichtsteil des Composers (#355), als Modul nach `create/update/dispose` eingehängt. Mit welcher Abnahme (Nahbild-Paar Studio | Spiel, V-201)?
+- **Frage 4.6 an WS0:** Referenzbild für V-204. Im Repo liegt nur `evidence/s2_bubble_still.jpg` aus dem ChatterBox-Studio-Cut. Es zeigt die alte Tusche-Variante und Figuren ohne KFB-Augen, ist also kein gültiges Referenzbild. Bitte ein abgenommenes Standbild der Plain-Blase aus dem Lab in `replies/lab-donors/` legen. Bis dahin prüft der S5a-Test die V-204-Merkmale am gezeichneten SVG (nur Flächen, kein Strich, ein Zipfel, Schatten, Flip 520 ms).
+- **Neue WS1-Regel gegen Drift:** Vor jedem sichtbaren Baustein prüft WS1 die Vorlage gegen `DECISIONS.md` und nennt die betroffenen V-Nummern in der Vorlage-Zeile. Eine Vorlage, die älter ist als eine Entscheidung, die sie ablöst, zählt nicht als Referenz. Der blinde Prüfer bekommt `DECISIONS.md` mit.
+
 ## 6 · Als Nächstes
 1. **S5a Blase:** `createBubbleLayer({host})` aus `replies/lab-donors/islands-npc.ts` (`say/layoutTri/draw`, Blob `13ad2738`) herauslösen, `chatterbox-core.js` 1:1 (V-204 plain, Flip 520 ms), Host projiziert `bubbleAnchors` in `#ui-bubbles` (Vertrag R1.2 §4, V-212). Aus dem Lab-Weg wird **nur die Darstellung** übernommen: Das Lab holt seine Zeilen über `prepareResidentTurn` aus `RUNTIME_POOL` (PR #310). Das ist nicht der KEEP-Pool (#379) und wird nicht verwendet.
 2. **S5b Pool-Leser:** `consumePacket` aus `triplet-pool-core.mjs` (#365), accepted-only. Solange nichts ACCEPTED ist: wörtlicher Kartentext der eigenen Karte (Name, Power oder Lore, unverändert) oder „…“.
 3. **S5c Spielerwahl** „choice“ 2 × 2 in `#ui-choice`, Zifferntasten, optional bis 8 eigene Wörter.
-4. **D1 Dialog-Modul:** Regel-Logik aus Spike-`Dialog.jsx`, ohne LineBuilder, `fragments` und `CONNECTORS`.
+4. **D1 Dialog-Modul:** Regel-Logik aus Spike-`Dialog.jsx`, ohne LineBuilder, `fragments` und `CONNECTORS`. **Wartet auf die Antwort zu §7 (Gesichter).**
