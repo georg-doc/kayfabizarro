@@ -46,3 +46,21 @@ Use this folder as a standing *inbox* for further selected paid-Meshy outputs: r
 Both stay as immutable masters in `/CLAUDE/MeshyModels/` until independently downloaded and hashed. Existing KFB Landmark / `tools/img2threejs` and Asset Librarian own model acceptance. Later inspect each *actual* GLB in isolation from five viewpoints, compare silhouette/proportions and visual style, inventory geometry/materials, and then decide which version(s) to register/optimize; do not reconstruct a third generic cathedral. The earlier four-tower failure is a useful generation lesson (avoid frontal-only reconstruction ambiguity), **not a stored asset**. Neither binary has yet been transferred to GitHub. This intake is non-blocking for WS1 Wireface/Audio work.
 
 Later gate: `MESHY_COLOGNE_CATHEDRAL_TWO_GOOD_CANDIDATES_ISOLATION_R1`.
+
+
+## 2026-10-14 · New Meshy user decisions · Theatre PASS; Giza Pyramid PASS / TUNE
+
+Georg's explicit creative verdicts: **chunky clay theatre stage = PASS** and **clay Giza pyramid = PASS WITH TUNE LATER**. This is *design acceptance of the Meshy results only*, not 3D runtime/GLB topology/texture/export/Stage/animation acceptance. Do not re-open these design gates or regenerate them by default. No new Meshy credits required for either accepted candidate. Both original GLBs stay in Dropbox as immutable masters.
+
+Confirmed refreshed Dropbox folder (same folder, new share link): https://www.dropbox.com/scl/fo/mo7urz6jzquoru5650ew8/AIgIE5s4c97s5rW4EKpErpI?rlkey=ac8k353qurse3n7br90709h4m&st=lxk1trv4&dl=0
+
+- **THEATRE · PASS:** `Meshy_AI_chunky_theater_stage_1014052630_image-to-3d-texture.glb` — **66,934,864 bytes** — Dropbox file ID `id:KeQLaY5-IIAAAAAAAAmzdg`.
+- Theatre references: `Meshy_AI_chunky_clay_theater_stage.png` (2,402,153 bytes, `id:KeQLaY5-IIAAAAAAAAmzdA`) and `Ornate Miniaturbühne mit Samtvorhängen.png` (2,232,106 bytes, `id:KeQLaY5-IIAAAAAAAAmzdQ`).
+- **GIZA PYRAMID · PASS / TUNE LATER:** `Meshy_AI_clay_giza_pyramid_1014051714_image-to-3d-texture.glb` — **59,648,056 bytes** — Dropbox file ID `id:KeQLaY5-IIAAAAAAAAmzdw`. No claimed exact eye/capstone geometry, rig, animation, or completion of deferred tuning without actual GLB/visual proof.
+- Previously listed Amphitheater and two corrected Cologne Cathedral GLBs remain untouched.
+
+**Routing:** existing KFB Asset Librarian / `media/3D_Assets/MeshyModels/` owns asset identity; existing Theatre Curtain owner owns curtain and its animation; WS1 = Claude Code Workspace 1 is current Wireface integration executor (not a new owner); existing Landmark / `tools/img2threejs` owns pyramid landmark consumption. For Theatre, isolate the real generated stage shell and its openings, then reuse the real KFB curtain as a distinct independently controlled object (no duplicate integrated static curtain pretending to be working KFB cloth). Preserve authentic Card Billboard Plane, EyeRig v6 and KFB Audio ownership. Ongoing WS1 audio bugs are separate; do not promote visual PASS into audio PASS.
+
+**Import:** source-read the GLB, record SHA256, dimensions/node/material/tri counts and 360-degree captures, register one canonical asset, then optionally make separately named optimized runtime derivative. A 2D preview is not evidence of usable stage depth/openings. No binary transfer, optimization or browser QA is asserted by this entry. No second runtime, Hub/public Stage or Live change is authorized merely by this intake.
+
+**One next gate:** `WS1_MESHY_THEATRE_PASS_SOURCE_ISOLATION_AND_CURTAIN_HOST_FIT_01`; pyramid landmark TUNE is deferred, nonblocking, and stays with the existing landmark lane.
