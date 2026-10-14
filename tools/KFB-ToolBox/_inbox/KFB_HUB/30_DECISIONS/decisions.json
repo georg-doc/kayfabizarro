@@ -3176,7 +3176,9 @@
    "check": "Bild-/Clip-Matrix Träger × Figurenart",
    "source": "Georg 15.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-249"
+   ],
    "why": "Figuren sollen sprechend wirken, ohne Tonaufnahmen und ohne Lipsync-Aufwand.",
    "applies": "nach ToolBox-Port"
   },
@@ -3193,6 +3195,21 @@
    "supersedes": null,
    "superseded_by": [],
    "why": "Füße rutschten schon im Referenz-Tempo; M1 brauchte sonst einen eigenen Host.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-249",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Mund-Material: Basis sind die drei vorhandenen KFB-Mund-Decal-Sätze auf GitHub (media/3D_Assets/Textures/FrizzelBob-Mouth_01 · 13, FrizzleBob-FemaleMouth_01 · 13, FrizzleBob-RedMouth_01 · 12), die pet-mouth.v1 schon lädt (ToolBox/Pet-/Frankenstein-Studio). Erster Labortest: diese Sätze auf KayKit-Köpfen und FrizzleBob, mit Tönung je Figur. Die gezeichneten SVG-Münder R1/R2 sind zurückgestellt (Glanzkanten wirken wie Blitzer, Kleinfalten unruhig); behalten wird nur ihre Technik (Anker, Tönung, saubere Wechsel). Neue Stile nur bei Bedarf als ChatGPT-Rasterbogen (alle Formen in einem Bild), dann geschnitten und verankert. Decals auf einen Commit pinnen (A6).",
+   "values": {},
+   "owner": "WSA work (Mund-Labor in der ToolBox-Site) · WS0",
+   "check": "Bildreihe je Satz auf KayKit + FrizzleBob",
+   "source": "Georg 15.10.",
+   "supersedes": "V-247 (Träger b SVG als Hauptweg)",
+   "superseded_by": [],
+   "why": "Die vorhandenen gemalten KFB-Münder sehen besser aus als neu gezeichnete; Georg will nicht selbst zeichnen.",
    "applies": "ab sofort"
   },
   {
@@ -3258,7 +3275,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:262",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:268",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Mund-Material
+- V-249: Basis = drei vorhandene KFB-Mund-Decal-Sätze (männlich, weiblich, rot), erster Labortest auf KayKit + FrizzleBob; SVG-Münder R1/R2 zurückgestellt (Georg: Blitzer, Kleinfalten), nur Technik bleibt; ChatGPT-Rasterbogen optional.
+
 ## 2026-10-15 · SVG-Münder R2
 - replies/MOUTHS_SVG_R2/: Schattierung/Wölbung über SVG-Verläufe (ohne Filter), Varianten Lippe thin/full × Zähne row/gap/none, gebackene PNGs 512×256, R1|R2-Montage FrizzleBob. MVP-Fahrplan MVP-0…4 als Vorschlag im Hub-Plan.
 
