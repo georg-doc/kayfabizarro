@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Kamera, Hub-Urteile
+- V-257: freie Orbit-Kamera (360°, Zoom zum Cursor, Pan, Fokus) + Standard-Blick mit Figuren am Rand, Bühne/Ring davor; feste Kameras nur als Sprungmarken. WS1 informiert.
+- V-258: UFO-Knüppel PASS, Maßstab 8 m, Monitor nicht kleiner, Karte exakte Viertelseite; Münder A/B TUNE (Anker tiefer, Schatten), Typ C.
+
 ## 2026-10-15 · Bildflächen-Modul
 - V-256: Inhalt (Karte, Hypernormalisation, YouTube, Zitate, Farbstimmung) als frei setzbares Embedding, Träger getrennt (B1 nur einer); UFO-Monitor wird Bildschirm-Slot mit ~1,60:1; Billboard im UFO FAIL. WS1 informiert; UFO Phase 1c (Slot + Seitenverhältnis-Varianten) läuft.
 

@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Bühnen-Kamera (V-257)
+- **Frei bewegliche Orbit-Kamera** für Spieler und Zuschauer: 360° drehen, Zoom zum Cursor, Panning, Fokus auf Klick. Ruhig und nicht zu empfindlich (V-026).
+- **Standard-Blick** als Startpunkt: Die Figuren stehen am Rand der Bildfläche (Billboard bzw. später UFO-Monitor), die Bildfläche bleibt frei, davor liegt offene Spielfläche wie eine Bühne oder ein Wrestling-Ring.
+- **`cam=near` bzw. `two`** bleiben als Sprungmarken („Standard“, „nah“), nicht als einzige Option. Der Dialog-Ablauf darf die Kamera nicht festnageln; nach einer Sprungmarke kann der Spieler sie frei weiterbewegen.
+- **Maßstab:** Bühnen groß genug für Bewegung und Cartoon-Rauferei. Das UFO bekommt 8 m pro Einheit; WS0 liefert es mit Bildschirm-Slot.
+- **Vorschlag zur Umsetzung** (Kamera-Controller, Übergang Sprungmarke → frei, Kollision mit Kulisse) bitte als Vorlagen-Zeile in WS1_STATUS. Vorlage: die God-Mode-Kamera aus dem Lab bzw. J17 (V-026).
+
 ## 15.10.2026 · Bildflächen-Modul: Inhalt und Träger trennen (V-256) · wichtig für B1 und D1
 - **Inhalt = ein Embedding-Modul**, frei auf jede 3D-Oberfläche setzbar. Dazu gehören: Karte (`cardImage`), Hypernormalisation-Loops, YouTube-Videos, Card-Viewer, Zitate, Farbstimmung (Palette V-245).
 - **Technik:** Canvas- bzw. Video-Textur auf einer Fläche, HTML/YouTube per CSS3D. Spender: Branch `chatgpt-web/billboard-b2a-css3d-2026-09-24`, Ordner `tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/` (`bb2a-boot.js`, `bb-scene.js`, `wd-donors.js`), dazu `_handover/BILLBOARD_MEDIA_LIVING_2026-09-24.md`. Vor dem Bau bitte eine Vorlagen-Zeile.

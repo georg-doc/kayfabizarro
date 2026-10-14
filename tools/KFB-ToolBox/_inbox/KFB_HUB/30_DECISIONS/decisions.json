@@ -3327,6 +3327,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-257",
+   "date": "2026-10-15",
+   "area": "Kamera",
+   "verdict": "RULE",
+   "text": "Bühnen-Kamera: frei bewegliche Orbit-Kamera für Spieler und Zuschauer – 360° drehen, Zoom zum Cursor, Panning, Fokus auf Klick (God-Mode-Regeln V-026: ruhig, nicht zu empfindlich). Dazu ein Standard-Blick, der die Szene ideal zeigt: Figuren am Rand der Bildfläche (Monitor bzw. Billboard), Bildfläche frei, davor offene Spielfläche wie eine Bühne oder ein Wrestling-Ring. Feste Kamerapositionen nur als Sprungmarken („Standard“, „nah“), nicht als einzige Option. Bühnenmaßstab groß genug für Bewegung und Cartoon-Rauferei (UFO: 8 m pro Einheit).",
+   "values": {},
+   "owner": "WS1",
+   "check": "Orbit/Zoom/Pan im Prüf-Browser + Standard-Blick-Bild",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine feste Kameraposition zur Auswahl überraschte Georg; Szenen sollen frei erkundbar sein und trotzdem einen guten Standard haben.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-258",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "PASS",
+   "text": "UFO Phase 1b: Knüppel-Schnitt PASS; Maßstab 8 m pro Einheit (Platz für Bühnenaktion, Rauferei); Monitorfläche darf nicht kleiner werden, nur auf ~1,60:1 erweitert; Karte = exakte Viertelseite (der Probe-Ausschnitt war falsch); Billboard im UFO FAIL (V-256). Münder: Typ A/B TUNE – Anker tiefer (Lippennaht) mit Luft nach oben, weicher Kontaktschatten; dritter Bogen (Wurst-Lippen) als Typ C.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Phase 1c-Bilder, Münder R2",
+   "source": "Georg 15.10. (Hub)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Hub-Urteile 15.10.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3389,7 +3419,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:300",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:304",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
