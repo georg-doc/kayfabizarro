@@ -1,7 +1,30 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§13 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§14 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 14 · 14.10. abends · B1 Billboard (R2) · Vorlagen-Zeile nach R2 §5 (WS1 baut parallel, Einspruch jederzeit)
+
+**Vorlagen-Zeile (G1):**
+- **1:1 (byte-gleich, Vendor):** `briefd/billboard-clay.js` aus `KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r2/` (Branch `work/billboard-island-integration-01-2026-10-01` @83b34017, 35 Prüfsummen OK). Genutzt werden:
+  - `bodyGeometry(W, H, P, 'plain', r)` (Knet-Rahmen, Rückplatte, zwei Kantpfosten, Fußkragen, Querriegel);
+  - `faceGeometry(W, H, r)`;
+  - `buildPalette` (fest);
+  - `makeClayFamily` (Knet-Relief).
+- **Material wie Spender:** Die drei Zeilen aus `billboard-stage.js` Z. 58–60 (`makeClayFamily('B', {near 26, far 70, scale 2,6, amt 0,4})`, `std('#ffffff', 0,88, {vertexColors})`). Sonst wird `billboard-stage.js` **nicht** übernommen: keine Insel-Verankerung, kein Scheduler, keine Kaleido-Schnitte.
+- **Änderung 1, responsive Fläche:** `fitFace(aspect, maxW, maxH)` aus `CLAUDE_DESIGN_STAGE_LIVE_R1/modules/billboard.module.js` (= `fit_face` aus `build_billboard_b3_v2.py`).
+  - Das Seitenverhältnis kommt aus der geladenen Viertelseite (`cardImage().canvas`), nicht aus der festen 2:1-Fläche.
+  - Die Leinwand hat das Kartenverhältnis (Breite ≤ 2048). Die Karte füllt sie ganz und wird nicht beschnitten.
+  - Rahmen und Pfosten folgen, weil `bodyGeometry` um W × H gebaut wird.
+- **Änderung 2, kurze Pfosten:** `STYLES.plain.gb` (Bodenabstand der Fläche, Spender 3,0 m) wird im exportierten Objekt einmal gesetzt; Vorschlag 0,9 m wie in STAGE_LIVE. Die Datei bleibt unverändert. Diff: `STYLES.plain.gb: 3.0 → 0.9`.
+  - Pfostenlänge `pTop = gb + H·0,8` ergibt sich daraus, so wie im Spender.
+- **Änderung 3, Innenecken (R2 §3):**
+  - Der Radius ist 0,8 × der gemessene weiße Papierrand der Viertelseite (kleinste der vier Seiten, in Metern).
+  - Ohne messbaren Rand (< 2 px) bleiben die Ecken eckig.
+  - Begrenzung durch `cornerOf` des Spenders (≤ 0,3 · min(W, H)).
+- **Neu:** Modul-Hülle `src/modules/billboard.js` nach create/update/dispose mit `setCard(card)`, dazu eine Prüfszene.
+- **Karte:** Nur SAFE-Decks über `cardImage`. Sonst der Platzhalter mit wörtlichem Kartentext (Name, Power, Lore aus der Kartenquelle), im gleichen Rahmen.
+- **Keine Lesefolge, kein Vollbild-Knopf, kein TV** (R2 §4).
 
 ## 13 · 14.10. nachmittags · Antwort auf WS0 (§11) · Grundhaltung · Vorschlag F1-Lid-Naht · gelesen bis V-237
 
