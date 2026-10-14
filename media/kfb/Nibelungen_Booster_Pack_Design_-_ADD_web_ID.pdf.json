@@ -30,17 +30,19 @@
       "cardNumber": 2,
       "cardName": "Loki (The Fox)",
       "grade": 1,
-      "power": "Forced Liquidation: Steal a card from an opponent. If they complain, steal another.",
-      "lore": "He caught the pike, killed the otter, and enslaved the dwarf. Basically, a standard consultant.",
+      "power": "Forced Liquidation: Steal one Item card from an opponent. If they complain, steal another.",
+      "lore": "He caught the pike, killed the otter, and bullied the dwarf. Basically, a standard consultant.",
       "gradeReason": "\"If they complain, steal another\" — you know exactly how to play this character.",
       "artworkPrompt": "Style: medieval illumination. Subject: smug fox in consultant suit stealing from others. Mood: gleefully amoral.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Loki (The Fox)",
-        "power": "Forced Liquidation: Steal Item card from an opponent. If they complain, steal another.",
-        "lore": "He caught the pike, killed the otter, and bullied the dwarf. Basically, a standard consultant.",
+        "power": "Forced Liquidation: Steal a card from an opponent. If they complain, steal another.",
+        "lore": "He caught the pike, killed the otter, and enslaved the dwarf. Basically, a standard consultant."
+      },
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p1 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -57,77 +59,96 @@
       "cardName": "The Curse (The Fine Print)",
       "grade": 1,
       "power": "Bad Ending: Attach to a Hero Card. That Hero dies at the end of the round. No saves.",
-      "lore": "Death to the owner. Joy to no one. Until the gold returns to the water everyone is just renting their life.",
+      "lore": "Death to the owner. Joy to no one. Until the gold returns to the water, everyone is just renting their life.",
       "gradeReason": "\"No saves\" lands like a gavel. The lore is a one-sentence cosmology.",
-      "artworkPrompt": "Style: aged parchment decree. Subject: unrolling scroll with wax skull seal and red fine print. Mood: doomed."
+      "artworkPrompt": "Style: aged parchment decree. Subject: unrolling scroll with wax skull seal and red fine print. Mood: doomed.",
+      "jsonLegacy": {
+        "cardName": "The Curse (The Fine Print)",
+        "power": "Bad Ending: Attach to a Hero Card. That Hero dies at the end of the round. No saves.",
+        "lore": "Death to the owner. Joy to no one. Until the gold returns to the water everyone is just renting their life."
+      },
+      "textSource": {
+        "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p1 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 5,
       "cardName": "Siegfried (The Retriever)",
       "grade": 1,
-      "power": "Main Character Syndrome: You cannot lose a duel unless the opponent is literally a god.",
-      "lore": "Strong enough to kill a dragon. Dumb enough to not check his blind spot. The ultimate himbo.",
+      "power": "Main Character Syndrome: You cannot lose a duel unless the opponent rolls a natural 6.",
+      "lore": "Strong enough to kill a dragon. Dumb enough to not check his back for leaves. The ultimate Himbo.",
       "gradeReason": "\"The ultimate himbo\" + Main Character Syndrome = instant character read at the table.",
       "artworkPrompt": "Style: epic illustration. Subject: buff golden retriever in dragon-scale armor flexing heroically. Mood: obliviously invincible.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Siegfried (The Retriever)",
-        "power": "Pewer: Main Character Syndrome: You cannot lose a duel unless the opponent rolls a natural 6.",
-        "lore": "Strong enough to kill a dragon. Dumb enough to not check his back for leaves. The ultimate himbo.",
+        "power": "Main Character Syndrome: You cannot lose a duel unless the opponent is literally a god.",
+        "lore": "Strong enough to kill a dragon. Dumb enough to not check his blind spot. The ultimate himbo."
+      },
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p2 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 6,
       "cardName": "Dragon Blood (The Juice)",
       "grade": 2,
-      "power": "Thick Skin: Ignore all damage from non-magical weapons. You smell great. You are legally invincible.",
-      "lore": "Bathe in the blood of your enemies — it's great for your skin. Also great for people who don't moisturize.",
+      "power": "Thick Skin: Ignore all damage from non-magical weapons. You smell like sulfur and ego.",
+      "lore": "Bathe in the blood of your enemies. It's great for the pores and makes you legally invincible.",
       "gradeReason": "Strong concept but lore partially obscured at this resolution; power is clear and playable.",
       "artworkPrompt": "Style: vivid fantasy. Subject: golden retriever bathing in black dragon-blood cauldron. Mood: triumphant self-care.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Dragon Blood (The Juice)",
-        "power": "Thick Skin: Ignore all damage from non-magical weapons. You smell like sulfur and ego",
-        "lore": "Bathe in the blood of your enemies it's great for",
+        "power": "Thick Skin: Ignore all damage from non-magical weapons. You smell great. You are legally invincible.",
+        "lore": "Bathe in the blood of your enemies — it's great for your skin. Also great for people who don't moisturize."
+      },
+      "printTypo": "Druck-Schrift: 'froa non-magical'",
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p2 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 7,
       "cardName": "The Linden Leaf (The Target)",
       "grade": 1,
-      "power": "Critical Fall: Play on an opponent's Hero Card. Their Defense drops to 0.",
-      "lore": "One tiny leaf. The giant design flaw. Every great hero hates perfection.",
+      "power": "Critical Fail: Play on an opponent's Siegfried. Their Defense drops to 0.",
+      "lore": "One tiny leaf. One giant design flaw. Proof that nature hates perfection.",
       "gradeReason": "Instant comprehension: you find the one weakness, you drop it, done.",
       "artworkPrompt": "Style: close-up botanical. Subject: tiny leaf on hero's back forming crosshair target. Mood: design flaw revealed.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Linden Leaf (The Target)",
-        "power": "Critical Fail: Play on an opponent's Siegfried. Their Defense drops to 0.",
-        "lore": "One tiny leaf. One giant design flaw. hates perfection.",
+        "power": "Critical Fall: Play on an opponent's Hero Card. Their Defense drops to 0.",
+        "lore": "One tiny leaf. The giant design flaw. Every great hero hates perfection."
+      },
+      "printTypo": "Druck: 'One tiny lesf'",
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p2 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 8,
       "cardName": "Balmung (The Problem Solver)",
       "grade": 1,
-      "power": "Overkill: +4 Attack, but if this kills the target, destroys opponent's weapon card too.",
+      "power": "Overkill: +4 Attack. If you win, destroy the opponent's weapon card too.",
       "lore": "Subtlety is for people who can't cleave an anvil in half.",
       "gradeReason": "\"Subtlety is for people who can't cleave an anvil in half\" — play this card like you mean it.",
       "artworkPrompt": "Style: heroic fantasy. Subject: massive sword splitting anvil in courtyard with sparks flying. Mood: spectacular overkill.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Balmung (The Problem Solver)",
-        "power": "Overkill: +4 Attack. if you win, opponent's weapon card too.",
-        "lore": "Subtlety is for people who can't cleave an anvil in half.",
+        "power": "Overkill: +4 Attack, but if this kills the target, destroys opponent's weapon card too.",
+        "lore": "Subtlety is for people who can't cleave an anvil in half."
+      },
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p2 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -138,14 +159,10 @@
       "lore": "King of Burgundy. Brave leader, as long as someone else is doing the fighting, wooing, and thinking.",
       "gradeReason": "\"Delegate Authority\" is an immediately playable personality: the king who outsources everything.",
       "artworkPrompt": "Style: satirical portrait. Subject: crowned sheep with scepter looking pompous and oblivious. Mood: cowardly dignity.",
-      "print": {
-        "cardName": "Gunther (The Sheep)",
-        "power": "Delegate Authority: When challenged, force another player to fight for you.",
-        "lore": "bone else to done the fighting, wooing, and thinking.",
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p3 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -155,7 +172,13 @@
       "power": "Assist Mode: Add Siegfried's Attack stats to Gunther's roll. Invisible cheating is still cheating.",
       "lore": "Invisibility cloak. Great for wrestling women who are stronger than you without them knowing. Creepy.",
       "gradeReason": "Mechanic requires knowing the Siegfried card link; works but needs table context.",
-      "artworkPrompt": "Style: ghostly medieval. Subject: checkered invisibility cloak floating in stone corridor. Mood: creepy deception."
+      "artworkPrompt": "Style: ghostly medieval. Subject: checkered invisibility cloak floating in stone corridor. Mood: creepy deception.",
+      "printTypo": "Druck: 'Invisible cheating is is still cheating' (Wort doppelt)",
+      "textSource": {
+        "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p3 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 11,
@@ -183,13 +206,10 @@
       "lore": "Queen of Iceland. Throws boulders for fun. Virginity is her power source (allegedly).",
       "gradeReason": "\"Throws boulders for fun\" — instant embodiment. The gatekeeper role plays itself.",
       "artworkPrompt": "Style: Norse warrior. Subject: fierce polar bear queen in armor hurling massive boulder. Mood: formidable and magnificent.",
-      "print": {
-        "cardName": "Brunhild (The Polar Bear)",
-        "power": "R [5] A[6] If they lose, they are eliminated from the game.",
-        "lore": "Queen of Iceland. Throws boulders for fun. F[5] Virginity is her power source (allegedly).",
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p4 TL",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -197,16 +217,18 @@
       "cardName": "The Boulder Throw",
       "grade": 1,
       "power": "Heavy Artillery: Deal 5 damage. If the target is 'Gunther', deal 10.",
-      "lore": "If you can't lift this, don't ask for her hand.",
+      "lore": "If you can't lift this, don't ask for her number.",
       "gradeReason": "\"If target is Gunther, deal 10\" — that conditional triggers immediate roleplay at the table.",
       "artworkPrompt": "Style: action illustration. Subject: massive boulder mid-flight over Viking competition ground. Mood: devastating and inevitable.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Boulder Throw",
-        "power": "[6] Heavy Artillery: Deal 5 damage. If the A [6] target is 'Gunther', deal 10.",
-        "lore": "If you can't lift this, don't ask for her [] number.",
+        "power": "Heavy Artillery: Deal 5 damage. If the target is 'Gunther', deal 10.",
+        "lore": "If you can't lift this, don't ask for her hand."
+      },
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p4 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -217,13 +239,10 @@
       "lore": "It went through the shield, the armor, and the ego. Gunther fainted watching it.",
       "gradeReason": "Strong lore but A-stat obscured at this resolution; mechanic is straightforward removal.",
       "artworkPrompt": "Style: athletic medieval. Subject: massive spear piercing layered shields and armor in competition. Mood: unstoppable force.",
-      "print": {
-        "cardName": "The Spear Toss",
-        "power": "R [4] stats this turn. [5]",
-        "lore": "It went through the shield, the armor, and the ego. F[2] Gunther fainted watching it.",
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p4 BL",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -249,16 +268,18 @@
       "cardName": "The Girdle (The Belt)",
       "grade": 2,
       "power": "Disempower: Target loses all special abilities. Without the belt, the magic is gone.",
-      "lore": "Steal it as a souvenir. Proof of conquest. Also, proof of being a terrible brother-in-law.",
+      "lore": "Siegfried stole it as a souvenir. Proof of conquest. Also, proof of being a terrible brother-in-law.",
       "gradeReason": "Good mechanic, clear role but more inventory move than performance invitation.",
       "artworkPrompt": "Style: ornate medieval. Subject: glowing magical belt on stone pedestal, shadow of thieving hand. Mood: power stripped.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Girdle (The Belt)",
-        "power": "R [2] A [2] abilities. Without the belt, the magic is gone.",
-        "lore": "stole it as a souvenir. Proof of conquest. Also, proof of being a terrible brother-in-law.",
+        "power": "Disempower: Target loses all special abilities. Without the belt, the magic is gone.",
+        "lore": "Steal it as a souvenir. Proof of conquest. Also, proof of being a terrible brother-in-law."
+      },
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p5 TR",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -278,14 +299,10 @@
       "lore": "Once she lost her virginity, she lost her strength. Ancient writers really didn't understand how women work.",
       "gradeReason": "Describes a stat change and invites source commentary — player has nothing to embody or perform.",
       "artworkPrompt": "Style: tragic medieval. Subject: polar bear queen kneeling, power visibly draining away into stone floor. Mood: diminished.",
-      "print": {
-        "cardName": "The Submission",
-        "power": "A [1] Fore:",
-        "lore": "Once she lost her virginity, - she lost her F[1] strength. Ancient writers really didn't understand how women work.",
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p5 BR",
-        "method": "ocr",
-        "confidence": "medium",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -304,7 +321,12 @@
       "power": "Marked for Death: Attach to Siegfried. Attacks against him gain +5 Damage.",
       "lore": "Kriemhild sewed it on to 'protect' him. Hagen used it as a bullseye. Loose lips sink ships.",
       "gradeReason": "\"Loose lips sink ships\" reframes a wife's love as tactical intelligence failure. Devastating.",
-      "artworkPrompt": "Style: ominous medieval. Subject: red cross stitched on golden retriever's back viewed from behind. Mood: betrayal embroidered in."
+      "artworkPrompt": "Style: ominous medieval. Subject: red cross stitched on golden retriever's back viewed from behind. Mood: betrayal embroidered in.",
+      "textSource": {
+        "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p6 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 23,
@@ -329,16 +351,18 @@
       "cardName": "The Spear in the Back",
       "grade": 1,
       "power": "Assassination: Destroy a Hero card that has 'The Cross on the Robe' attached.",
-      "lore": "A coward's blow. But it worked. Honor is for dead people.",
+      "lore": "A coward's blow? Maybe. But it worked. Honor is for dead people.",
       "gradeReason": "\"Honor is for dead people\" — the player knows what they're doing and exactly how to feel about it.",
       "artworkPrompt": "Style: noir medieval. Subject: spear piercing retriever's back at forest spring, blood in water. Mood: treacherous and effective.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Spear in the Back",
-        "power": "R[6] Assassination: Destroy a Hero card that has [6] 'The Cross on the Robe' attached.",
-        "lore": "F[6] Honor is for dead people.",
+        "power": "Assassination: Destroy a Hero card that has 'The Cross on the Robe' attached.",
+        "lore": "A coward's blow. But it worked. Honor is for dead people."
+      },
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p7 TL",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -376,31 +400,29 @@
       "lore": "Enough wealth to buy an army. Or destroy a kingdom. Kriemhild was using it to buy friends.",
       "gradeReason": "Good bribery mechanic; lore explains the card rather than inviting a performance.",
       "artworkPrompt": "Style: fantasy illustration. Subject: mountain of gold, swords, and jewels glowing with cursed light. Mood: corrupting abundance.",
-      "print": {
-        "cardName": "The Treasure Pile",
-        "power": "Bribery: Pay 5 Gold to cancel an attack.",
-        "lore": "",
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p8 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 30,
       "cardName": "The Rhine River",
       "grade": 1,
-      "power": "The Vault: Remove all 'Treasure' cards from play. No one claims the throne.",
+      "power": "The Vault: Remove all 'Treasure' cards from play. No one gets them.",
       "lore": "Hagen sank it all. If he couldn't have it, nobody could. The ultimate gatekeeping.",
       "gradeReason": "\"If he couldn't have it, nobody could\" — pure spite embodied. Drop this card and mean it.",
       "artworkPrompt": "Style: dramatic fantasy. Subject: armored badger dropping treasure chest into dark Rhine river. Mood: spite as final word.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Rhine River",
-        "power": "The Vault: Remove all 'Treasure' card: from play. No one gets them.",
-        "lore": "[] [3] F[3] Hagen sank it all. If he couldn't have it, nobody could. The ultimate gatekeeping.",
+        "power": "The Vault: Remove all 'Treasure' cards from play. No one claims the throne.",
+        "lore": "Hagen sank it all. If he couldn't have it, nobody could. The ultimate gatekeeping."
+      },
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p8 TR",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -420,13 +442,10 @@
       "lore": "As long as one of us lives, the gold remains hidden. Spite is a powerful glue.",
       "gradeReason": "\"Spite is a powerful glue\" — the player adopts the posture of the last man who knows the secret.",
       "artworkPrompt": "Style: dramatic medieval. Subject: badger, sheep, and wolf in circle swearing oath over Rhine riverbank. Mood: binding silence.",
-      "print": {
-        "cardName": "Oath of Silence",
-        "power": "your hand. R[5] A[5] F[5]",
-        "lore": "As long as one of us lives, the gold remains hidden. Spite is a powerful glue.",
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p8 BR",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -442,17 +461,19 @@
       "cardNumber": 34,
       "cardName": "The Invitation",
       "grade": 1,
-      "power": "Force an opponent to move their pieces into a 'Trap' biome. Stay for the massacre.",
-      "lore": "Come for the solstice. Stay for the massacre. Hagen knew it was a trap, but honor's stupid.",
+      "power": "Force an opponent to move their pieces to a 'Trap' location.",
+      "lore": "Come for the solstice. Stay for the massacre. Hagen knew it was a trap, but honor is stupid.",
       "gradeReason": "\"Come for the solstice. Stay for the massacre.\" — deploy this card like you wrote the invitation.",
       "artworkPrompt": "Style: ominous formal. Subject: wax-sealed scroll reading 'Come to the Party!' with skull wax seal. Mood: deadly hospitality.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Invitation",
-        "power": "Force an opponent to move their pieces to a Trap' location.",
-        "lore": "Come for the solstice. Stay for the massacre. Hagen knew it was a trap, but honor is stupid.",
+        "power": "Force an opponent to move their pieces into a 'Trap' biome. Stay for the massacre.",
+        "lore": "Come for the solstice. Stay for the massacre. Hagen knew it was a trap, but honor's stupid."
+      },
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p9 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -487,16 +508,19 @@
       "cardName": "Volker (The Mantis)",
       "grade": 1,
       "power": "Violent Music: Your attacks count as 'Art'. Ignore armor.",
-      "lore": "The Fiddler. He plays a tune that says you want to dance, but also takes your head off. The bard of the apocalypse.",
+      "lore": "The Fiddler. He plays a tune that makes you want to dance, then cuts your head off. The bard of the apocalypse.",
       "gradeReason": "\"Your attacks count as Art\" is a license. The bard of the apocalypse plays this card exactly that way.",
       "artworkPrompt": "Style: baroque action. Subject: mantis fiddler playing violin serenely as battle rages around him. Mood: apocalyptic joy.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Volker (The Mantis)",
         "power": "Violent Music: Your attacks count as 'Art'. Ignore armor.",
-        "lore": "The Fiddler. He plays a tune that aakes yeu want to dance, then cuts your head off. The bard of the apocalypse.",
+        "lore": "The Fiddler. He plays a tune that says you want to dance, but also takes your head off. The bard of the apocalypse."
+      },
+      "printTypo": "Druck-Schrift: 'Vielent', 'armer', 'aakes yeu', 'apecalypse'",
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p10 TR",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -533,7 +557,12 @@
       "power": "Environment Damage: Deal 1 damage to every player at the start of every turn.",
       "lore": "Kriemhild set the hall on fire. She's really committed to this revenge thing.",
       "gradeReason": "Steady damage is satisfying mechanically; \"really committed\" undersells the role available here.",
-      "artworkPrompt": "Style: disaster illustration. Subject: mead-hall roof engulfed in flames, ash and embers falling. Mood: committed and irreversible revenge."
+      "artworkPrompt": "Style: disaster illustration. Subject: mead-hall roof engulfed in flames, ash and embers falling. Mood: committed and irreversible revenge.",
+      "textSource": {
+        "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p11 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 42,
@@ -542,7 +571,12 @@
       "power": "Desperate Measure: Heal full health by drinking the blood of fallen minions.",
       "lore": "\"Drink the blood,\" said Hagen. \"It's better than wine.\" A literal quote. These people are insane.",
       "gradeReason": "\"A literal quote. These people are insane.\" — you play this as both the monster and the narrator.",
-      "artworkPrompt": "Style: grotesque medieval. Subject: badger drinking from goblet of dark red with satisfied grin. Mood: pragmatic insanity."
+      "artworkPrompt": "Style: grotesque medieval. Subject: badger drinking from goblet of dark red with satisfied grin. Mood: pragmatic insanity.",
+      "textSource": {
+        "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p11 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 43,
@@ -597,13 +631,10 @@
       "lore": "Captured by Dietrich. Tied up. The fighting is over. The suffering begins.",
       "gradeReason": "Mechanical endpoint; echoes The Barred Doors — works as narrative echo but not standalone.",
       "artworkPrompt": "Style: grim dungeon. Subject: badger and sheep in chains in stone cell, torch guttering. Mood: story concluded badly.",
-      "print": {
-        "cardName": "The Dungeon",
-        "power": "R[O] Capture: The game ends for these characters. A [0]",
-        "lore": "Captured by Dietrich. Tied up. The fighting is [5] over. The suffering begins.",
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p12 BR",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -628,17 +659,19 @@
       "cardNumber": 51,
       "cardName": "Hagen's Laugh",
       "grade": 1,
-      "power": "Last Word: Even if you lose, the opponent loses 6 points. She has the victory.",
+      "power": "Last Word: Even if you lose, the opponent gets 0 points for the victory.",
       "lore": "Now Gunther is dead, and I am the only one who knows where the gold is. And I'm taking it to hell. You lose.",
       "gradeReason": "\"And I'm taking it to hell. You lose.\" — the greatest mic drop in Germanic literature, mechanized.",
       "artworkPrompt": "Style: defiant villain. Subject: dying badger laughing in golden hall ruins, hand empty, expression triumphant. Mood: nihilism wins.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Hagen's Laugh",
-        "power": "[0] Last Word: Even if you lose, the opponent gets 0 points for the victory. [0]",
-        "lore": "Now Gunther is dead, and I am the only [6] one who knows where the gold is. And I'm taking it to hell. You lose.",
+        "power": "Last Word: Even if you lose, the opponent loses 6 points. She has the victory.",
+        "lore": "Now Gunther is dead, and I am the only one who knows where the gold is. And I'm taking it to hell. You lose."
+      },
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p13 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -646,9 +679,19 @@
       "cardName": "The Mastercut",
       "grade": 1,
       "power": "Sudden Death: Eliminate the winner of the previous duel.",
-      "lore": "Hildebrand couldn't watch a hero like Hagen die at a woman's hand. So he hacked Kriemhild to pieces. Chivalry is weird.",
+      "lore": "Hildebrand couldn't watch a hero like Hagen die by a woman's hand. So he hacked Kriemhild to pieces. Chivalry is weird.",
       "gradeReason": "\"Chivalry is weird\" — the understatement of 1200 CE, attached to a mechanic that eliminates the winner.",
-      "artworkPrompt": "Style: grim aftermath. Subject: old wolf standing over fallen queen looking profoundly disturbed. Mood: chivalry as broken logic."
+      "artworkPrompt": "Style: grim aftermath. Subject: old wolf standing over fallen queen looking profoundly disturbed. Mood: chivalry as broken logic.",
+      "jsonLegacy": {
+        "cardName": "The Mastercut",
+        "power": "Sudden Death: Eliminate the winner of the previous duel.",
+        "lore": "Hildebrand couldn't watch a hero like Hagen die at a woman's hand. So he hacked Kriemhild to pieces. Chivalry is weird."
+      },
+      "textSource": {
+        "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p13 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 53,
@@ -673,43 +716,57 @@
       "cardName": "The Reset Button",
       "grade": 1,
       "power": "New Game: Shuffle all cards and start over. Maybe this time Siegfried wears back armor.",
-      "lore": "The Nibelungen. It never ends. It just reboots.",
+      "lore": "The Nibelungen Not (Distress). It never ends. It just reboots.",
       "gradeReason": "\"Maybe this time Siegfried wears back armor\" — the fourth-wall break doubles as the only possible lesson.",
       "artworkPrompt": "Style: ouroboros fantasy. Subject: serpent dragon in Nibelung armor swallowing its own tail. Mood: eternal reboot.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Reset Button",
         "power": "New Game: Shuffle all cards and start over. Maybe this time Siegfried wears back armor.",
-        "lore": "The Nibelungen Not (Distress). It never ends. It just reboots.",
+        "lore": "The Nibelungen. It never ends. It just reboots."
+      },
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p14 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 56,
       "cardName": "Uncle FrizzleBob (The Author)",
       "grade": 1,
-      "power": "Rule Breaker: Change one rule of the game.",
-      "lore": "I cut this up so you could play with it. Don't look at me like that. You bought the expansion.",
+      "power": "Rule Breaker: Change one rule of the game permanently.",
+      "lore": "I cut this up so you could play with corpses. Don't look at me like that. You bought the expansion.",
       "gradeReason": "\"Don't look at me like that. You bought the expansion.\" — the author card is the ultimate Kayfabizarro move.",
       "artworkPrompt": "Style: meta cartoon. Subject: cartoon rabbit holding scissors over game board grinning at viewer. Mood: fourth-wall fully dissolved.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Uncle FrizzleBob (The Author)",
-        "power": "Change one rule of the game permanently.",
-        "lore": "I cut this up so you could play with corpses. Don't look at me like that. You bought the expansion.",
+        "power": "Rule Breaker: Change one rule of the game.",
+        "lore": "I cut this up so you could play with it. Don't look at me like that. You bought the expansion."
+      },
+      "textSource": {
         "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p14 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 57,
       "cardName": "Toxic Masculinity",
       "grade": 1,
-      "power": "Ego Boost: +8 Attack, but you cannot retreat or heal. Ever.",
+      "power": "Ego Boost: +5 Attack, but you cannot retreat or heal. Ever.",
       "lore": "The driving force of the entire plot. If anyone had just gone to therapy, thousands would be alive.",
       "gradeReason": "This card IS the Nibelungenlied distilled to one mechanic. Cannot retreat or heal. Ever.",
-      "artworkPrompt": "Style: satirical epic. Subject: antlered warrior charging forward ignoring multiple wounds and warnings. Mood: unstoppable self-destruction."
+      "artworkPrompt": "Style: satirical epic. Subject: antlered warrior charging forward ignoring multiple wounds and warnings. Mood: unstoppable self-destruction.",
+      "jsonLegacy": {
+        "cardName": "Toxic Masculinity",
+        "power": "Ego Boost: +8 Attack, but you cannot retreat or heal. Ever.",
+        "lore": "The driving force of the entire plot. If anyone had just gone to therapy, thousands would be alive."
+      },
+      "textSource": {
+        "source": "PDF v05 Nibelungen_Booster_Pack_Design - ADD web ID.pdf p15 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 58,
