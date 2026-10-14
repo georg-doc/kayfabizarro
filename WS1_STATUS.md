@@ -13,17 +13,17 @@ Gelesen bis V-244 und WS0_TO_WS1 „Präzisierung zu V-243“.
 - Weitere FrizzleBob-Arbeit in WS1 entfällt laut eurer Präzisierung (keine Augenlage-, Ganzkörper- oder Export-Belege); Fixes gehören in die neue ToolBox.
 
 ### 22.2 · V-243 Ruhe-Mund geschlossen (kfb-planet @0a934cf)
-- **Nur datengetrieben:** Das Rezept hat \ mit Quelle V-243. Der Darsteller hält dann das Decal des Lauts „closed“ aus dem Eintrag, also genau das, was „Zu“ (\) in der ToolBox zeigt. Gezeigt wird es über den Halte-Weg der ToolBox (\).
+- **Nur datengetrieben:** Das Rezept hat `mouth.rest: "closed"` mit Quelle V-243. Der Darsteller hält dann das Decal des Lauts „closed“ aus dem Eintrag, also genau das, was „Zu“ (`setViseme('closed')`) in der ToolBox zeigt. Gezeigt wird es über den Halte-Weg der ToolBox (`mouth.__kfbHold`).
   - Nichts ist fest für FrizzleBob im Code.
   - Ohne Rezeptfeld bleibt der Modellmund wie im Spender.
-  - Nach \ geht der Mund zurück in den Ruhe-Mund, auch nach „!“; der Spender endete dort auf smile.
-- **Befund, bitte im Register berichtigen:** Das Decal **„neutral“ zeigt geschlossene Lippen ohne Zähne.** Zähne zeigt nur **„smile“**, und das ist das eigene Decal des Modellmunds (FB_Mouth_Smile), das in Ruhe erscheint. V-243 sagt „das neutral-Decal zeigt Zähne“; das stimmt für die Dateien nicht. Georgs Eintrag führt \, der Ruhe-Mund ist damit neutral.
-- **Belege** \:
-  - \: Spender-Ruhe (smile, Zähne) | Spiel Ruhe | „Zu“ | mitten im Satz (ah) | nach dem Satz | nach „Na klar!“;
-  - \: Smile | Neutral | M | D;
-  - die Felder je Zustand (parts.mouth, mouthOnModel, m.rest, m.viseme, m.cur, Halt) stehen in der Ausgabe von \.
-- **Test \, 7 Prüfpunkte:** Ruhe aus dem Rezept · keine Zahnpixel in Ruhe und „Zu“ · Sprechen nutzt die Spur · zurück nach Satz und nach „!“ · Spender-Modus zeigt Zähne als Gegenbild.
-- Das Bildpaar gegen P08 läuft jetzt im Modus \ (Modellmund in Ruhe, Modellfarben); er ersetzt \.
+  - Nach `say()` geht der Mund zurück in den Ruhe-Mund, auch nach „!“; der Spender endete dort auf smile.
+- **Befund, bitte im Register berichtigen:** Das Decal **„neutral“ zeigt geschlossene Lippen ohne Zähne.** Zähne zeigt nur **„smile“**, und das ist das eigene Decal des Modellmunds (FB_Mouth_Smile), das in Ruhe erscheint. V-243 sagt „das neutral-Decal zeigt Zähne“; das stimmt für die Dateien nicht. Georgs Eintrag führt `visemeMap.closed → neutral`, der Ruhe-Mund ist damit neutral.
+- **Belege** `ws1/proofs/2026-10-14-v243/`:
+  - `v243_row.png`: Spender-Ruhe (smile, Zähne) | Spiel Ruhe | „Zu“ | mitten im Satz (ah) | nach dem Satz | nach „Na klar!“;
+  - `decals.png`: Smile | Neutral | M | D;
+  - die Felder je Zustand (parts.mouth, mouthOnModel, m.rest, m.viseme, m.cur, Halt) stehen in der Ausgabe von `test/v243.mjs`.
+- **Test `v243`, 7 Prüfpunkte:** Ruhe aus dem Rezept · keine Zahnpixel in Ruhe und „Zu“ · Sprechen nutzt die Spur · zurück nach Satz und nach „!“ · Spender-Modus zeigt Zähne als Gegenbild.
+- Das Bildpaar gegen P08 läuft jetzt im Modus `#actortest,donor` (Modellmund in Ruhe, Modellfarben); er ersetzt `partcolors=model`.
 - **Suite 16/16 PASS.**
 
 ### 22.3 · Wartet auf WS0
