@@ -3322,7 +3322,9 @@
    "check": "Bildpaare Monitor-Varianten, später laufendes Embedding",
    "source": "Georg 15.10.",
    "supersedes": "V-254 (B1 vor dem Monitor), V-220/V-224 nur noch als Träger-Variante",
-   "superseded_by": [],
+   "superseded_by": [
+    "V-259"
+   ],
    "why": "Das Billboard im UFO war zu dick und nahm den Platz; die Hypernormalisation-Anforderung war von Anfang an ein frei setzbares Embedding.",
    "applies": "ab sofort"
   },
@@ -3354,6 +3356,21 @@
    "supersedes": null,
    "superseded_by": [],
    "why": "Georgs Hub-Urteile 15.10.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-259",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "PASS",
+   "text": "UFO-Bildfläche: PASS für den Monitor als Bildfläche. Keine schwarzen Balken bei Karten → Fassung UP 1,79 (Öffnung oben um 0,35 m erweitert, Karte füllt randlos). Standard-Seitenverhältnis für ALLE Embeddings auf Bildflächen = Kartenformat 1,79:1 (Viertelseite 1117×623, ≈ 16:9), auch Hypernormalisation-Loops und YouTube. Alternative Breitenreduktion (Wand verlängern) nur, falls UP 1,79 nicht trägt. Münder: Standard upperLift 0,35 (Oberlippe hebt sich beim Öffnen leicht, Kiefer öffnet stärker), je Figur im Mund-Labor feinstellbar; Typ B PASS; Typ C TUNE (Strichmund sieht nicht gut aus, Übergänge wirken nicht wie Sprechen).",
+   "values": {},
+   "owner": "WS0 (Asset) · WS1 (Einbau)",
+   "check": "Bildfolge u07, Münder mg03–mg05",
+   "source": "Georg 15.10.",
+   "supersedes": "V-256 (Seitenverhältnis ~1,60)",
+   "superseded_by": [],
+   "why": "Georgs Urteile zu Bildfläche und Mündern.",
    "applies": "ab sofort"
   },
   {
@@ -3419,7 +3436,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:304",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:311",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
