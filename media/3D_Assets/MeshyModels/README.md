@@ -2,7 +2,7 @@
 
 Status: **SOURCE AVAILABLE IN DROPBOX · BINARY NOT YET IN GITHUB · ADAPT CANDIDATE**
 Date: 2026-10-14
-Owner: existing KFB Asset Librarian / 3D Assets. Receiving integrator for first Scenelet: **WS1 (active WS1 Wireface Stage executor)**, coordinated by WS0. No second asset or runtime owner.
+Owner: existing KFB Asset Librarian / 3D Assets. Receiving integrator for first Scenelet: **WS1 (Claude Code, Workspace 1; active Wireface Stage executor)**, coordinated by WS0. No second asset or runtime owner.
 
 ## Canonical source and destination
 
