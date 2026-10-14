@@ -1,7 +1,52 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§12 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§13 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 13 · 14.10. nachmittags · Antwort auf WS0 (§11) · Grundhaltung · Vorschlag F1-Lid-Naht · gelesen bis V-237
+
+**Quittung:** `WS0_TO_WS1.md` (Antwort auf §11) und `DECISIONS.md` bis V-237 gelesen. V-237 (Triplet-Abnahme-UI) betrifft WSA und den Hub, nicht WS1-Code.
+**Hinweis zu Georgs Eintrag:** Georg hat WS1 direkt gesagt, er möchte nicht exportieren oder weiterleiten. Er will v5 mit dem angelegten Mund, die Werte werden später getauscht (§12.1). WS1 fragt ihn deshalb nicht danach. Will WS0 den Export, bitte direkt mit Georg klären.
+
+### 13.1 · Grundhaltung: Befund, betroffene Teile, Vorschlag fürs Spiel
+- **Befund:**
+  - `FB_TEMPLATE_LOOK_v5.glb` (131d7c38) steht in **T-Pose** und hat **keine Clips**.
+  - Die ToolBox P06 zeigt FrizzleBob trotzdem mit hängenden Armen, weil `_studioBones` mit `pose-rig.v1` jede Bildfolge eine Haltung schreibt (Studio- und Rigging-Tab).
+  - Alle ToolBox-Belege (01, 02, 04 und die Rigging-Bilder) zeigen deshalb die Pose-Rig-Haltung, nicht das Modell.
+- **Betroffen:**
+  - FrizzleBob v5 und v5b (gleiches Skelett, KayKit Rig_Medium);
+  - jedes Bildpaar ToolBox | Spiel;
+  - Joyride J17 (eigene Sitzhaltung, nicht geprüft).
+- **Im Spiel:** Die Bindepose wäre die T-Pose, also falsch für die Bühne. Das Spiel spielt den Ruhe-Clip **`Idle_A`** aus `Rig_Medium_General.glb` ab. Das ist derselbe Clip, den die ToolBox als `defaultIdle` für diesen Akteur nennt (P06 Z. 1817). Im Rezept steht er als `idle.clip`, im Code als `motion: 'idle'`.
+- **Belegbild:** `ws1/proofs/2026-10-14-actor-slot/fb_pose_bind_vs_idle.png` (ToolBox mit pose-rig | Spiel Bindepose | Spiel Idle_A).
+- **Vermutung und Vorschlag:**
+  - Ein eigener Ruhe-Clip für FrizzleBob fehlt. KayKit-Idle passt vom Skelett her, ist aber nicht für den Birnenkopf abgestimmt (Kopf und Ohren nicken mit).
+  - Für Abnahmen sollte die ToolBox einen Schalter „Bindepose“ haben und je Beleg die Haltung nennen (TOOLBOX_FINDINGS A1).
+  - Ob auf der Bühne Idle_A gilt oder ein Clip aus der Motion Library, entscheidet WS0 bzw. Georg. Die Prüfbilder des Slots bleiben in Bindepose, damit sie mit der ToolBox vergleichbar sind.
+
+### 13.2 · Vorschlag F1-Lid-Naht (`pupilHiddenWhenClosed`) · Ursache + Diff, bitte freigeben
+- **Ursache:**
+  - `eyeoval.v1` @2bfbe0d (Blob 90c5e44b, Eye-Rig-Studio cloudflare-live) setzt in `seatPupils()` jede Bildfolge den Pupillen-Drehpunkt um `delta` nach vorn (Rogue_Hooded: 0,0059 = 0,056 R), damit die Pupille auf ovalen Augen nicht „verschluckt“ wird.
+  - Die Lidschalen des Eye-Rigs haben den Radius R·1,011 (`lidScale` bei lidFit 0,9), die Pupille R·1,004. Mit dem Vorschub liegt die Pupille vor der geschlossenen Lidschale.
+  - Die ältere Fassung @8922d4b1 (397e5174, ToolBox) hat keinen Vorschub. FrizzleBob mit Knet-Lidern hat das Problem nicht (§12).
+- **Vorschlag (eine Stelle, in der Spender-Datei, erst nach Freigabe):** den Vorschub mit dem Lidschluss ausblenden.
+  ```diff
+   export function seatPupils(rig,p) {
+     if(!rig||!Array.isArray(rig.eyes)||!rig.eyes.length)return {status:'KEIN_RIG'};
+     const q={...DEFAULTS,...(p||{})},R=num(rig._R,0),cap=num(rig._puAng,.35),rows=[];
+  +  const shut=rig._blinkK>=0?Math.sin(Math.min(rig._blinkK,1)*Math.PI):0; // Lidschluss 0…1 wie pet-eye-rig.v6 update()
+     for(const e of rig.eyes){
+       …
+  -    e._pivot.position.set(seat.dir[0]*seat.delta,seat.dir[1]*seat.delta,seat.dir[2]*seat.delta);
+  +    const dl=seat.delta*(1-shut); // beim Zumachen zurück unter die Lidschale
+  +    e._pivot.position.set(seat.dir[0]*dl,seat.dir[1]*dl,seat.dir[2]*dl);
+  ```
+- **Geprüft ohne Änderung am Spender** (Hülle um `rig.update` in der Prüfsitzung, `scripts/f1/seam-proposal.mjs`):
+  - Lid zu: dunkle Pupillen-Pixel **1074 → 139**. Der Rest sind Brauenkanten, keine Pupille.
+  - Offen: **1078 → 1078**, unverändert.
+  - Bild: `ws1/proofs/2026-10-14-f1/f1_seam_proposal.png`.
+- **Grenze:** Lider, die durch einen Ausdruck halb geschlossen sind (müde, wütend), deckt `_blinkK` nicht ab. Dafür bräuchte es die Lidstellung (`e._up.rotation.x`). Das ist ein Folgeschritt, falls gewünscht.
+- **Nach Freigabe** wird die Spender-Datei an dieser einen Stelle geändert. Die Kopie bekommt dann einen neuen Blob, `f1` misst `pupilHiddenWhenClosed` als PASS, und der Diff kommt in den Rigging-Ordner zurück.
 
 ## 12 · 14.10. nachmittags · Darsteller-Slot fertig (G2) · FrizzleBob v5 im Spiel · Georgs Entscheidung · Befunde zur ToolBox
 
