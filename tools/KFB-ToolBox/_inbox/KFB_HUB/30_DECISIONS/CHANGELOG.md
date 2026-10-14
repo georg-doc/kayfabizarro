@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 früh · NotebookLM-Recherche ausgewertet
+- replies/STANDUP_RESEARCH_DIGEST_R1.md: Triplet = Greg-Dean-Witzbau (Setup → Connector → Reframe), Wortökonomie, Dreierregel, Carter-Haltungen, Dikkers-Filter, Opener-Arten, Set-Bau. Dient als Prüfraster für die 168 Triplets und für Figurenprofile.
+
 ## 2026-10-14 früh · Opener angenommen
 - V-229: 19 von 20 Recherche-Opener angenommen, CUT nur der Lese-Opener; geht als ACCEPTED in Pool r6.
 
