@@ -88,7 +88,14 @@
 "lore": "Smaller wrestlers showing surprising strength. Defying the ph[ysics of size].",
 "gradeReason": "Classic underdog trope but mechanics need a read-through to activate fully.",
 "artworkPrompt": "Style: Cartoon action. Subject: Tiny ant hoisting enormous elephant opponent overhead. Mood: Defiant impossible triumph.",
-"print": {"cardName": "The Little Giant", "power": "Can lift characters size 'Large' or 'Huge'. Surprise factor doubles damage.", "lore": "Smaller wrestlers showing surprising strength. Defying the ph", "source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p3 BR", "method": "ocr", "confidence": "high"}
+"print": {
+"cardName": "The Little Giant",
+"power": "Can lift characters size 'Large' or 'Huge'. Surprise factor doubles damage.",
+"lore": "Smaller wrestlers showing surprising strength. Defying the ph",
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p3 BR",
+"method": "ocr",
+"confidence": "high"
+}
 },
 {
 "cardNumber": 9,
@@ -121,11 +128,20 @@
 "cardNumber": 12,
 "cardName": "The Limb Target",
 "grade": 2,
-"power": "Called Shot: Target legs to reduce enemy speed to 0. Target arms to prevent lifting.",
-"lore": "Knowing a shooter required to perform their finisher. Cruel, logical, effective.",
+"power": "Called Shot Target legs to reduce enemy speed to 0. Target arms to prevent lifting.",
+"lore": "Attack the body part required to perform their finisher. Cruel, logical, effective.",
 "gradeReason": "Strategic precision is clear but the wrestling-logic framing takes a moment to click.",
 "artworkPrompt": "Style: Clinical diagram meets action. Subject: Fox wrestler methodically targeting bear's knee. Mood: Cold calculation.",
-"print": {"cardName": "The Limb Target", "power": "Called Shot Target legs to reduce enemy speed to 0. Target arms to prevent lifting.", "lore": "Attack the body part required to perform their finisher. Cruel, logical, effective.", "source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p4 BR", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "The Limb Target",
+"power": "Called Shot: Target legs to reduce enemy speed to 0. Target arms to prevent lifting.",
+"lore": "Knowing a shooter required to perform their finisher. Cruel, logical, effective."
+},
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p4 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 13,
@@ -135,7 +151,12 @@
 "lore": "Slapping the thigh when kicking. A loud sound suggests high impact. It's an audio lie.",
 "gradeReason": "The audio-lie concept is brilliant but 'thigh slap' as a specific technique needs a beat.",
 "artworkPrompt": "Style: Sound-effect comic. Subject: Kangaroo kicker mid-slap with massive SMACK! bubble. Mood: Sound design as violence.",
-"print": {"cardName": "The Thigh Slap", "power": "Add +2 to Damage Perception. The move didn't hurt, but it", "lore": "Slapping the thigh when kicking. A loud sound suggests high impact. It's an audio lie.", "source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p5 TL", "method": "ocr", "confidence": "high"}
+"printTypo": "Druck bricht nach 'The move didn't hurt, but it' ab; Rest 'sounds like it did.' fehlt",
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p5 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 14,
@@ -198,7 +219,12 @@
 "power": "Refuse the \"Lockup.\" Treat the match as a Shoot Fight.",
 "lore": "Rejection of traditional start. A telltale sign of a shooter. No help for inferior opponents.",
 "gradeReason": "'Limp arm' and 'shooter' are deep insider wrestling terms — this one's for the nerds only.",
-"artworkPrompt": "Style: Stern realism. Subject: Wolf wrestler refusing handshake, arms limp, opponent confused. Mood: Cold professional disdain."
+"artworkPrompt": "Style: Stern realism. Subject: Wolf wrestler refusing handshake, arms limp, opponent confused. Mood: Cold professional disdain.",
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p6 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 21,
@@ -225,7 +251,12 @@
 "power": "Use 0 Energy to dodge. Attacks enrage opponent (Opponent attacks blindly).",
 "lore": "Hands in pockets. It looks like a chore. The apathy makes them furious.",
 "gradeReason": "'Hands in pockets. It looks like a chore.' — physical posture directive. Embody immediately.",
-"artworkPrompt": "Style: Slacker chic. Subject: Sloth wrestler dodging attacks with minimal movement, opponent furious. Mood: Effortless infuriating cool."
+"artworkPrompt": "Style: Slacker chic. Subject: Sloth wrestler dodging attacks with minimal movement, opponent furious. Mood: Effortless infuriating cool.",
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p7 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 24,
@@ -249,11 +280,20 @@
 "cardNumber": 26,
 "cardName": "The Victim",
 "grade": 2,
-"power": "Accumulate 'Sympathy' tokens while taking damage. Counter-attack.",
+"power": "Accumulate \"Sympathy' tokens while taking damage. Cannot attack.",
 "lore": "The Ricky Morton role. Isolated and picked apart. You are the bait.",
 "gradeReason": "'Ricky Morton role' needs context but 'You are the bait' saves it.",
 "artworkPrompt": "Style: Pathos cartoon. Subject: Turtle wrestler taking beatings, slowly building sympathy aura. Mood: Patient suffering building to explosion.",
-"print": {"cardName": "The Victim", "power": "Accumulate \"Sympathy' tokens while taking damage. Cannot attack.", "lore": "The Ricky Morton role. Isolated and picked apart. You are the bait.", "source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p8 TR", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "The Victim",
+"power": "Accumulate 'Sympathy' tokens while taking damage. Counter-attack.",
+"lore": "The Ricky Morton role. Isolated and picked apart. You are the bait."
+},
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p8 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 27,
@@ -269,10 +309,19 @@
 "cardName": "The Savant Manager",
 "grade": 1,
 "power": "Reroll any one die per turn. You know the moves better than they do.",
-"lore": "Knowing what to pull off. The backbone. A night off for the opponent.",
+"lore": "Knowing exactly which moves to pull off. The backbone. A night off for the opponent.",
 "gradeReason": "'You know the moves better than they do' — cerebral authority, instant character.",
 "artworkPrompt": "Style: Wise mentor comic. Subject: Owl in suit ringside whispering precise instructions. Mood: Strategic mastermind at work.",
-"print": {"cardName": "The Savant Manager", "power": "Reroll any one die per turn. You know the moves better than they do.", "lore": "Knowing exactly which moves to pull off. The backbone. A night off for the opponent.", "source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p8 BR", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "The Savant Manager",
+"power": "Reroll any one die per turn. You know the moves better than they do.",
+"lore": "Knowing what to pull off. The backbone. A night off for the opponent."
+},
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p8 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 29,
@@ -281,7 +330,12 @@
 "power": "Change Fighting Style mid-match to match Crowd Preference.",
 "lore": "Play up to the crowd. If they want a heel, give them a heel. If they want a clown, honk your nose.",
 "gradeReason": "'If they want a clown, honk your nose' — perfect showman directive. Play for the room.",
-"artworkPrompt": "Style: Showbiz cartoon. Subject: Monkey wrestler reading crowd and transforming mid-move. Mood: Pure audience manipulation."
+"artworkPrompt": "Style: Showbiz cartoon. Subject: Monkey wrestler reading crowd and transforming mid-move. Mood: Pure audience manipulation.",
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p9 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 30,
@@ -299,7 +353,12 @@
 "power": "Pipe in noise. Create artificial \"Heat.\"",
 "lore": "A failed attempt to hide the emptiness. Audio sweetening on a lie.",
 "gradeReason": "Clever media critique — 'audio sweetening on a lie' but needs production knowledge.",
-"artworkPrompt": "Style: Behind-the-scenes comedy. Subject: Chameleons on green screen pretending to be crowd. Mood: Desperate fake atmosphere."
+"artworkPrompt": "Style: Behind-the-scenes comedy. Subject: Chameleons on green screen pretending to be crowd. Mood: Desperate fake atmosphere.",
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p9 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 32,
@@ -315,9 +374,19 @@
 "cardName": "The Shooter",
 "grade": 1,
 "power": "Force opponent to Sell. If they refuse, inflict Real Damage.",
-"lore": "Refusing to respond. Stiff the re-seller. Degrade into a shoot fight.",
+"lore": "Refusing to respond. Stiff the no-seller. Degrade into a shoot fight.",
 "gradeReason": "'Inflict Real Damage' if they refuse — explosive escalation threat. Instant tension.",
-"artworkPrompt": "Style: Tense realism. Subject: Bear wrestler grabbing opponent's collar with dead-serious eyes. Mood: Kayfabe breaking point."
+"artworkPrompt": "Style: Tense realism. Subject: Bear wrestler grabbing opponent's collar with dead-serious eyes. Mood: Kayfabe breaking point.",
+"jsonLegacy": {
+"cardName": "The Shooter",
+"power": "Force opponent to Sell. If they refuse, inflict Real Damage.",
+"lore": "Refusing to respond. Stiff the re-seller. Degrade into a shoot fight."
+},
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p10 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 34,
@@ -434,7 +503,13 @@
 "power": "Improvisation. Change the plan mid-match to suit the flow.",
 "lore": "Calling moves in the ring. A basic outline, filled in with sweat.",
 "gradeReason": "'Calling spots' is insider — 'change the plan mid-match' is clearer but still takes a beat.",
-"artworkPrompt": "Style: Improv action. Subject: Cricket wrestler whispering next move mid-hold to opponent. Mood: Collaborative chaos."
+"artworkPrompt": "Style: Improv action. Subject: Cricket wrestler whispering next move mid-hold to opponent. Mood: Collaborative chaos.",
+"printTypo": "Druck: Feldlabel doppelt ('Power: Power: Improvisation.')",
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p13 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 47,
@@ -461,7 +536,12 @@
 "power": "All moves must be performed facing Left.",
 "lore": "Playing to the crowd watching at home. If the camera didn't see it, it didn't happen.",
 "gradeReason": "TV production concept — 'hard cam' is broadcasting jargon. Too inside the machine.",
-"artworkPrompt": "Style: TV production diagram. Subject: Wrestler adjusting to face single giant camera. Mood: Performance shaped by the lens."
+"artworkPrompt": "Style: TV production diagram. Subject: Wrestler adjusting to face single giant camera. Mood: Performance shaped by the lens.",
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p14 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 50,
@@ -515,7 +595,12 @@
 "power": "Arrest anyone breaking character. Enforce the Lie.",
 "lore": "Protecting the business. Keep the secrets secret, or get fired.",
 "gradeReason": "'Enforce the Lie' — immediate character purpose. Arrest anyone stepping out of fiction.",
-"artworkPrompt": "Style: Noir wrestling. Subject: Cop wrestler handcuffing character-breaker, stern authority. Mood: The fiction is law."
+"artworkPrompt": "Style: Noir wrestling. Subject: Cop wrestler handcuffing character-breaker, stern authority. Mood: The fiction is law.",
+"textSource": {
+"source": "PDF v05 Big_Bad_Brain_Wrestling - ADD web.pdf p15 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 56,
