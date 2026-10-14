@@ -2937,8 +2937,25 @@
    "check": "Georg urteilt 2–3 Karten",
    "source": "Georg 14.10. (via WSA)",
    "supersedes": "V-231 (SELL IT als Wendung)",
-   "superseded_by": [],
+   "superseded_by": [
+    "V-233"
+   ],
    "why": "Mein gespiegelter SELL-IT-Punkt („Wendung am Satzende“) führte zu 16/16 FAIL mit erzwungenen Twists.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-233",
+   "date": "2026-10-14",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Triplet-Gewichtung für neue Spieler: Inhalt vor Spielmechanik. Der Satz macht das Konzept der Karte klar – Titel + der benannte Begriff der POWER (z. B. „Natural Goodness“, „Stasis Loop“, „Point of No Return“) samt sinntragenden Klartext-Teilen + Bedeutung der LORE. Die satirischen Spielmechaniken (Würfel bewegen, abwerfen, ziehen, Effekte entfernen, Zug aussetzen) werden NICHT gesprochen; sie öffnen eine verwirrende Meta-Ebene und bleiben auf der angezeigten Karte bzw. in den Metadaten. Ausnahme nur, wenn die Mechanik selbst das Konzept ist. Weiter gilt: ein Satz, Titel vorn, nichts Erfundenes, keine erzwungene Pointe, ≥ 90 % Kartenwörter.",
+   "values": {},
+   "owner": "WS0 (Skill-Methode) → Triplet-Chat",
+   "check": "Georg urteilt 3 Karten neu",
+   "source": "Georg 14.10.",
+   "supersedes": "V-232 (Mechanik vollständig erhalten)",
+   "superseded_by": [],
+   "why": "Spielmechanik im Satz verwirrt neue Spieler; das Konzept der Karte ist das Interessante.",
    "applies": "ab sofort"
   },
   {
@@ -3004,7 +3021,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:176",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:179",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

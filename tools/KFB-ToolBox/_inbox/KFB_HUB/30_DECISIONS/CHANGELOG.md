@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 früh · Triplets: Inhalt vor Mechanik
+- V-233: Konzept (benannter POWER-Begriff + LORE-Bedeutung) statt satirischer Spielmechanik; ersetzt V-232 „Mechanik vollständig erhalten“.
+
 ## 2026-10-14 früh · Triplet-Methode korrigiert, Eye-Rig-Quelle für WS1
 - V-232: Karte spielen, nicht erklären; keine erzwungene Wendung (ersetzt V-231 SELL IT). 16-Karten-Probe = HUMAN FAIL 16/16.
 - WS1: Live-URL des Eye-Rig-Studios ist tot (Startseite); Quelle = Branch work/hub-ux-v2-masterplan-2026-09-27 @5c3334bd2, Werte-Dateien benannt.
