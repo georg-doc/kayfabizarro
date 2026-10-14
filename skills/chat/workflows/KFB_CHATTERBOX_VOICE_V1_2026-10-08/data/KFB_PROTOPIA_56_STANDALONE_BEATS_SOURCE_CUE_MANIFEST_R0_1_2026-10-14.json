@@ -1,0 +1,3530 @@
+{
+  "schema": "kfb.voice.standalone-deck-script-audition/0.1",
+  "date": "2026-10-14",
+  "status": "EDITORIAL_CANDIDATE_NOT_AUDIO_RENDERED_NOT_CANON",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "pr": 379,
+    "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08"
+  },
+  "deck": {
+    "id": "protopia_web",
+    "title": "Propositum 2040: Forget Utopia, Ignore Dystopia, Embrace Protopia",
+    "registryBlob": "af276a8b941a84a6b1856b9897dca196d1b7760a",
+    "deckCardCount": 56,
+    "sourceJsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+    "originalSourceBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+    "originalPdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+    "all56TitlesPowerLorePopulated": true,
+    "note": "Source Card #53 LORE includes malformed phrase 'bom backed backed'; edited Beat uses the corresponding intact Power clause. Do not overwrite original Card."
+  },
+  "performance": {
+    "performerCandidate": "Uncle FrizzleBob, DRY solo spoken stand-up",
+    "actualVoiceChoice": "UNCAST",
+    "intro": "Welcome, dear Fluffheads!",
+    "outro": "Stay Fluffy!",
+    "introAndOutroPerPart": true,
+    "musicBed": "NONE_REQUESTED",
+    "realSunoMusicSuppressionVerified": false,
+    "sunoStyle": "Solo dry spoken-word stand-up, one clear natural storyteller voice, no singing, no music, no instrumentation, no backing track or chorus; restrained deadpan with natural 0.5–1.5 second pauses between independent Card beats and clear emphasis on each source-derived absurd consequence. Preserve every title exactly.",
+    "structure": "ONE_PHYSICAL_LINE_PER_CARD_BLANK_LINE_AFTER",
+    "bridgesUsed": 0,
+    "deterministicPlaybackFromStoredText": true,
+    "requiredLLMCallsAtPlayback": 0,
+    "voiceClips": [],
+    "audioTimecodes": "NOT_RENDERED"
+  },
+  "quality": {
+    "titleCoverage": "56/56 exact spoken",
+    "powerLexicalAnchorCoverage": "56/56",
+    "loreLexicalAnchorCoverage": "56/56",
+    "informationCoverage": "NOT_HUMAN_AUDITED",
+    "semanticTripletQuality": "NOT_HUMAN_AUDITED",
+    "noUnverifiedNovelClaims": "NOT_HUMAN_AUDITED",
+    "originalTokenRetention90PctGoal": "NOT_PROVEN",
+    "sourceAnchorsNotProofOfFullFidelity": true
+  },
+  "parts": [
+    {
+      "partNumber": 1,
+      "firstCardNumber": 1,
+      "lastCardNumber": 14,
+      "cardCount": 14,
+      "sourceFile": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/KFB_PROTOPIA_56_STANDALONE_SUNO_SPEECH_PART_01_OF_04_2026-10-14.txt",
+      "sourceGitBlob": "523197e76606325f5d8fe52cc2c22d700f85eb17",
+      "lyricsCharacterCount": 2427,
+      "hasIntro": true,
+      "hasOutro": true,
+      "timing": "TEXT_BOUNDARIES_ONLY_NO_RENDERED_AUDIO"
+    },
+    {
+      "partNumber": 2,
+      "firstCardNumber": 15,
+      "lastCardNumber": 28,
+      "cardCount": 14,
+      "sourceFile": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/KFB_PROTOPIA_56_STANDALONE_SUNO_SPEECH_PART_02_OF_04_2026-10-14.txt",
+      "sourceGitBlob": "d7216d45d22e29f2ece7b52192c5a4b4e16a1bce",
+      "lyricsCharacterCount": 2469,
+      "hasIntro": true,
+      "hasOutro": true,
+      "timing": "TEXT_BOUNDARIES_ONLY_NO_RENDERED_AUDIO"
+    },
+    {
+      "partNumber": 3,
+      "firstCardNumber": 29,
+      "lastCardNumber": 42,
+      "cardCount": 14,
+      "sourceFile": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/KFB_PROTOPIA_56_STANDALONE_SUNO_SPEECH_PART_03_OF_04_2026-10-14.txt",
+      "sourceGitBlob": "c99e01f834183de445654ce88e4ad242bf462760",
+      "lyricsCharacterCount": 2394,
+      "hasIntro": true,
+      "hasOutro": true,
+      "timing": "TEXT_BOUNDARIES_ONLY_NO_RENDERED_AUDIO"
+    },
+    {
+      "partNumber": 4,
+      "firstCardNumber": 43,
+      "lastCardNumber": 56,
+      "cardCount": 14,
+      "sourceFile": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/KFB_PROTOPIA_56_STANDALONE_SUNO_SPEECH_PART_04_OF_04_2026-10-14.txt",
+      "sourceGitBlob": "90d58cf09bb9ce37f96934d313c6b3666fdebb23",
+      "lyricsCharacterCount": 2293,
+      "hasIntro": true,
+      "hasOutro": true,
+      "timing": "TEXT_BOUNDARIES_ONLY_NO_RENDERED_AUDIO"
+    }
+  ],
+  "beats": [
+    {
+      "beatId": "protopia_web:1:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 1,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Utopian Mirage",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 2,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "HEARD_OF",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Ever heard of The Utopian Mirage? Skip a turn staring at the clouds and discard a resource into Dystopia; your fictional default rests on somebody else's dystopia.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 87.5,
+            "examples": [
+              "skip",
+              "turn",
+              "staring",
+              "clouds",
+              "discard"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 6,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 83.33,
+            "examples": [
+              "fictional",
+              "default",
+              "somebody",
+              "else's",
+              "dystopia"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 1,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:2:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 2,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Dystopian Apathy",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 2,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Dystopian Apathy freezes the board for a round while you collect three profit tokens from a burning bank: a cautionary tale turned escapism and a disaster capitalism roadmap.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 77.78,
+            "examples": [
+              "board",
+              "freezes",
+              "round",
+              "profit",
+              "tokens"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "cautionary",
+              "tale",
+              "escapism",
+              "disaster",
+              "capitalism"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 2,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:3:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 3,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Extractive Status-Quo",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 2,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DO_YOU_KNOW",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Do you know The Extractive Status-Quo? Steal 1 resource from everyone else to mitigate damage, then call the taking sustainability while the damage continues.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 6,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "steal",
+              "resource",
+              "mitigate",
+              "damage"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 2,
+            "salientTokenOverlapPct": 28.57,
+            "examples": [
+              "sustainability",
+              "damage"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 3,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:4:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 4,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Protopian Process",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 2,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Protopian Process says repair one broken board tile and draw a card: proactive prototyping instead of waiting, with reciprocity as the way to tackle inequities.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 6,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 100,
+            "examples": [
+              "repair",
+              "broken",
+              "board",
+              "tile",
+              "draw"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 44.44,
+            "examples": [
+              "proactive",
+              "prototyping",
+              "inequities",
+              "reciprocity"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 4,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:5:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 5,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Pop Futurist",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 3,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "HEARD_OF",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Ever heard of The Pop Futurist? Instantly silence all critical inquiry cards, then evangelize a singular technology as a magic pill; critical inquiry would only spoil the sales pitch.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 6,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 83.33,
+            "examples": [
+              "instantly",
+              "silence",
+              "critical",
+              "inquiry",
+              "cards"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 55.56,
+            "examples": [
+              "singular",
+              "magic",
+              "pill",
+              "critical",
+              "inquiry"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 5,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:6:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 6,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Academic Gatekeeper",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 3,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Academic Gatekeeper charges an opponent from the Global South 70k tokens just to play, then says you are not a futurist unless you buy their models.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 71.43,
+            "examples": [
+              "opponent",
+              "global",
+              "south",
+              "tokens",
+              "play"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 3,
+            "salientTokenOverlapPct": 37.5,
+            "examples": [
+              "futurist",
+              "unless",
+              "models"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 6,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:7:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 7,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Tech Singularity Savior",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 3,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Tech Singularity Savior destroys 3 worker-ants for one Tech Ego point, selling the very tech-optimism that, in this card's lore, brought us to the absolute brink.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 6,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "worker",
+              "ants",
+              "tech",
+              "point"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 6,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 83.33,
+            "examples": [
+              "tech",
+              "optimism",
+              "brought",
+              "absolute",
+              "brink"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 7,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:8:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 8,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Doom-Monger",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 3,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DO_YOU_KNOW",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Do you know The Doom-Monger? Blast the megaphone until all players lose their next action phase; a binary collapse story does not mobilize society, it produces total inaction.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 8,
+            "salientTokenOverlapPct": 88.89,
+            "examples": [
+              "megaphone",
+              "blast",
+              "players",
+              "lose",
+              "next"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 55.56,
+            "examples": [
+              "binary",
+              "collapse",
+              "society",
+              "total",
+              "inaction"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 8,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:9:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 9,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Disaster Capitalist",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 4,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Disaster Capitalist gains +5 Profit whenever a fire or flood costs another player resources; the world is burning, and the card asks how much profit that suffering makes.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "profit",
+              "another",
+              "player",
+              "fire",
+              "flood"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 3,
+            "salientTokenOverlapPct": 42.86,
+            "examples": [
+              "world",
+              "burning",
+              "profit"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 9,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:10:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 10,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Tokenizing Crypto-Bro",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 4,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "HEARD_OF",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Ever heard of The Tokenizing Crypto-Bro? Convert someone else's free action into a paid micro-transaction, because apparently humans need a financial incentive even to act.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 85.71,
+            "examples": [
+              "convert",
+              "free",
+              "action",
+              "paid",
+              "micro"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 3,
+            "salientTokenOverlapPct": 30,
+            "examples": [
+              "humans",
+              "financial",
+              "incentive"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 10,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:11:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 11,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Philanthro-Capitalist",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 4,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Philanthro-Capitalist manufactures 10 Toxic Waste tokens, donates one to repair a reputation score, and calls fossil fuels plus charity corporate social responsibility.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 60,
+            "examples": [
+              "toxic",
+              "waste",
+              "tokens",
+              "charity",
+              "reputation"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 11,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 45.45,
+            "examples": [
+              "fossil",
+              "fuels",
+              "corporate",
+              "social",
+              "responsibility"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 11,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:12:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 12,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Air Purifier Economy",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 4,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Air Purifier Economy says privatize the commons: pay one token every turn just to draw a card, until only the wealthy can afford to breathe.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 75,
+            "examples": [
+              "privatize",
+              "commons",
+              "token",
+              "turn",
+              "draw"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 6,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "commons",
+              "wealthy",
+              "afford",
+              "breathe"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 12,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:13:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 13,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Long-Termist",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 5,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DO_YOU_KNOW",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Do you know The Long-Termist? Ignore present board damage while banking victory points for imaginary games a billion years away; present climate impacts can wait for imaginary lives.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 12,
+            "salientSharedTokenCount": 10,
+            "salientTokenOverlapPct": 83.33,
+            "examples": [
+              "ignore",
+              "present",
+              "board",
+              "damage",
+              "victory"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 70,
+            "examples": [
+              "present",
+              "climate",
+              "impacts",
+              "imaginary",
+              "lives"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 13,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:14:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 14,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Effective Altruist",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 5,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Effective Altruist sacrifices a low-tier opponent card to fund AI Armageddon research, insisting that is better charity than feeding a starving child.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 62.5,
+            "examples": [
+              "tier",
+              "card",
+              "fund",
+              "armageddon",
+              "research"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 70,
+            "examples": [
+              "armageddon",
+              "research",
+              "better",
+              "charity",
+              "feeding"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 1,
+      "positionInPart": 14,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:15:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 15,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Tech Determinist",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 5,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Tech Determinist deflects all blame because the technology wanted it; the card's lore remembers the specific humans designed it to abuse you.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "blame",
+              "because",
+              "technology",
+              "wanted"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "technology",
+              "specific",
+              "humans",
+              "designed",
+              "abuse"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 1,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:16:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 16,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Semantic Collapser",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 5,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "HEARD_OF",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Ever heard of The Semantic Collapser? Change the definition of every keyword until nothing means anything; it steals good words like long-term before anybody can argue.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 85.71,
+            "examples": [
+              "change",
+              "definition",
+              "keyword",
+              "until",
+              "means"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 70,
+            "examples": [
+              "steals",
+              "good",
+              "words",
+              "long",
+              "term"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 2,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:17:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 17,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Minority World Consumer",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 6,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Minority World Consumer requires ten Earth board-spaces and consumes a hundred times another card's resources, while the poorest are expected to share one planet.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 60,
+            "examples": [
+              "requires",
+              "earth",
+              "board",
+              "spaces",
+              "consumes"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "consumes",
+              "times",
+              "poorest",
+              "requires"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 3,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:18:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 18,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Majority World Pioneer",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 6,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Majority World Pioneer takes 3 damage from climate impacts it did not cause and still gains a Pioneer Solution; the players who contributed the least suffer the worst.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 11,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 54.55,
+            "examples": [
+              "damage",
+              "climate",
+              "impacts",
+              "cause",
+              "pioneer"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "contributed",
+              "least",
+              "climate",
+              "impacts",
+              "suffer"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 4,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:19:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 19,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Predatory Includer",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 6,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Predatory Includer steals the aesthetic of a marginalized card to bypass corporate defenses; that becomes a new face for selling exploitative crypto to vulnerable communities.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 62.5,
+            "examples": [
+              "aesthetic",
+              "marginalized",
+              "card",
+              "bypass",
+              "corporate"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 62.5,
+            "examples": [
+              "marginalized",
+              "exploitative",
+              "crypto",
+              "vulnerable",
+              "communities"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 5,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:20:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 20,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Dead Voter",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 6,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DO_YOU_KNOW",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Do you know The Dead Voter? Cast a vote from the discard pile that fixes today's board state for the unborn; apparently even death does not end the argument over tomorrow.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 77.78,
+            "examples": [
+              "cast",
+              "vote",
+              "discard",
+              "pile",
+              "board"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 2,
+            "salientTokenOverlapPct": 22.22,
+            "examples": [
+              "dead",
+              "unborn"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 6,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:21:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 21,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Disinformation Architect",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 7,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Disinformation Architect scrambles the text on a rule card until nothing is real and everything is possible; confusion itself becomes a tool for geopolitical goals.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 87.5,
+            "examples": [
+              "text",
+              "rule",
+              "card",
+              "nothing",
+              "real"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "nothing",
+              "real",
+              "everything",
+              "possible",
+              "geopolitical"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 7,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:22:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 22,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The QAnon Cultist",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 7,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "HEARD_OF",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Ever heard of The QAnon Cultist? Build a narrative vacuum around broken systems and collect a follower for each one; the lore calls it a brand new religion.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "narrative",
+              "vacuum",
+              "follower",
+              "broken"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 75,
+            "examples": [
+              "brand",
+              "religion",
+              "narrative",
+              "vacuum",
+              "broken"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 8,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:23:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 23,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Elderly Conspiracist",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 7,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Elderly Conspiracist hands out 3 Fake News damage tokens to younger cards; the card blames weak tech literacy for making outrageous conspiracies travel so easily.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "fake",
+              "news",
+              "damage",
+              "tokens",
+              "younger"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "tech",
+              "literacy",
+              "outrageous",
+              "conspiracies"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 9,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:24:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 24,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The VR Fear-Engine",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 7,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The VR Fear-Engine triggers fear for maximum profit with zero imagination points; janky and cheap still wins if fear costs the least imagination.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 11,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 54.55,
+            "examples": [
+              "fear",
+              "maximum",
+              "profit",
+              "zero",
+              "imagination"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "janky",
+              "cheap",
+              "fear",
+              "least",
+              "imagination"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 10,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:25:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 25,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Disability Justice Bear",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 8,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DO_YOU_KNOW",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Do you know The Disability Justice Bear? Center those at the bleeding edge to prevent the next global harm card; its lore says protecting people at the edge of technological and social harm protects everyone.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 11,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 63.64,
+            "examples": [
+              "center",
+              "bleeding",
+              "edge",
+              "next",
+              "global"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 11,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 54.55,
+            "examples": [
+              "those",
+              "edge",
+              "technological",
+              "social",
+              "harm"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 11,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:26:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 26,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Queer Futurist",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 8,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Queer Futurist turns an Either/Or attack into a Plurality resource; divergent perspectives are not merely tolerated but met with actual curiosity, because plurality is survival.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 71.43,
+            "examples": [
+              "plurality",
+              "survival",
+              "either",
+              "attack",
+              "resource"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 75,
+            "examples": [
+              "plurality",
+              "survival",
+              "actual",
+              "curiosity",
+              "divergent"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 12,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:27:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 27,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Indigenous Wisdom Elephant",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 8,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Indigenous Wisdom Elephant reveals the history of a stolen resource and reclaims it for the ecosystem; the lore remembers a narrative species long before that idea became a bestselling book.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "history",
+              "stolen",
+              "resource",
+              "ecosystem"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 11,
+            "salientSharedTokenCount": 3,
+            "salientTokenOverlapPct": 27.27,
+            "examples": [
+              "narrative",
+              "species",
+              "before"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 13,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:28:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 28,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Intersectional Octopus",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 8,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "HEARD_OF",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Ever heard of The Intersectional Octopus? Play 3 action cards when the water rises; lived experience on the ground beats an Ivory Tower PhD at that exact moment.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "lived",
+              "experience",
+              "play",
+              "action",
+              "cards"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 77.78,
+            "examples": [
+              "lived",
+              "experience",
+              "ground",
+              "beats",
+              "ivory"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 2,
+      "positionInPart": 14,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:29:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 29,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Homogenized Default",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 9,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Homogenized Default replaces somebody's unique card with a blank white square, then pretends its own privileged perspective is neutral.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 55.56,
+            "examples": [
+              "unique",
+              "card",
+              "blank",
+              "white",
+              "square"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 55.56,
+            "examples": [
+              "privileged",
+              "white",
+              "perspective",
+              "pretends",
+              "neutral"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 1,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:30:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 30,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Unpaid Minority Consultant",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 9,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Unpaid Minority Consultant decolonizes a project for 0 tokens while the Corporate Expediter takes the credit; the final product does not even name the labor.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 85.71,
+            "examples": [
+              "project",
+              "tokens",
+              "corporate",
+              "expediter",
+              "takes"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 55.56,
+            "examples": [
+              "project",
+              "unpaid",
+              "labor",
+              "final",
+              "product"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 2,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:31:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 31,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Epidemic Denier",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 9,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DO_YOU_KNOW",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Do you know The Epidemic Denier? Ignore pandemic damage, permanently lose all credibility, and still refuse to answer for predicting pandemics were over before COVID hit.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 85.71,
+            "examples": [
+              "ignore",
+              "pandemic",
+              "damage",
+              "permanently",
+              "lose"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "pandemics",
+              "before",
+              "covid",
+              "still",
+              "answer"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 3,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:32:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 32,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Corporate Expediter",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 9,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Corporate Expediter sells 3 toxic assets for double profit under a green veneer; the card calls that a thin veneer of sustainability over selling more stuff.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "green",
+              "veneer",
+              "toxic",
+              "assets",
+              "double"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "stuff",
+              "thin",
+              "veneer",
+              "sustainability"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 4,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:33:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 33,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Proactive Prototyper",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 10,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Proactive Prototyper repairs a card and instantly draws another challenge; the moment anything gets fixed, the lore says there is still more to work on.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 44.44,
+            "examples": [
+              "moment",
+              "card",
+              "challenge",
+              "instantly"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 3,
+            "salientTokenOverlapPct": 37.5,
+            "examples": [
+              "moment",
+              "there",
+              "work"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 5,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:34:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 34,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Regenerative Earthworm",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 10,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "HEARD_OF",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Ever heard of The Regenerative Earthworm? Turn toxic soil into flora by trading two Extractive damage tokens for a regenerative resource: Extractive taking versus Regenerative repair.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 9,
+            "salientTokenOverlapPct": 90,
+            "examples": [
+              "turn",
+              "toxic",
+              "soil",
+              "flora",
+              "extractive"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 62.5,
+            "examples": [
+              "extractive",
+              "taking",
+              "versus",
+              "regenerative",
+              "repair"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 6,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:35:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 35,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "Futures Literacy Library",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 10,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Futures Literacy Library removes a Conspiracy token from every elderly card by educating the board; the lore insists schools and elderly re-education both matter against the conspiracy wave.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 62.5,
+            "examples": [
+              "board",
+              "removes",
+              "conspiracy",
+              "token",
+              "elderly"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 55.56,
+            "examples": [
+              "schools",
+              "elderly",
+              "education",
+              "conspiracy",
+              "wave"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 7,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:36:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 36,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "Radical Imagination",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 10,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Radical Imagination discards the status quo board and builds something fundamentally different from the root; its lore calls that a survival strategy, not another small tweak.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "root",
+              "status",
+              "board",
+              "something",
+              "fundamentally"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 87.5,
+            "examples": [
+              "survival",
+              "strategy",
+              "status",
+              "something",
+              "fundamentally"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 8,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:37:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 37,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Interdisciplinary Weaver",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 11,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DO_YOU_KNOW",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Do you know The Interdisciplinary Weaver? Connect two scientific disciplines to bypass a silo block, because the future is too complex for silos and cross-pollination is how we survive.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 70,
+            "examples": [
+              "cross",
+              "connect",
+              "scientific",
+              "disciplines",
+              "bypass"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 71.43,
+            "examples": [
+              "future",
+              "complex",
+              "silos",
+              "cross",
+              "survive"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 9,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:38:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 38,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Awe & Wonder Generator",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 11,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Awe & Wonder Generator lights up the dark until people voluntarily pay tokens to join a story; they were hungry for stories worth participating in.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 57.14,
+            "examples": [
+              "dark",
+              "voluntarily",
+              "tokens",
+              "story"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 71.43,
+            "examples": [
+              "people",
+              "hungry",
+              "stories",
+              "worth",
+              "participating"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 10,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:39:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 39,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Ministry of Stories",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 11,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Ministry of Stories draws two cards by making climate action as addictive as doomscrolling; the aim is a meaningful story as absorbing as a QAnon wormhole.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 55.56,
+            "examples": [
+              "climate",
+              "action",
+              "addictive",
+              "doomscrolling",
+              "cards"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 44.44,
+            "examples": [
+              "addictive",
+              "qanon",
+              "wormhole",
+              "stories"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 11,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:40:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 40,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Historical Bloodhound",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 11,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Historical Bloodhound makes a Pop Futurist discard their highest-funded failure; the lore says media should hold those future-selling thought-leaders accountable.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 62.5,
+            "examples": [
+              "futurist",
+              "discard",
+              "highest",
+              "funded",
+              "failure"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 13,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 46.15,
+            "examples": [
+              "media",
+              "hold",
+              "thought",
+              "leaders",
+              "accountable"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 12,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:41:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 41,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Narrative Vacuum",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 12,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "HEARD_OF",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Ever heard of The Narrative Vacuum? Say no no no without a hopeful vision and watch nefarious actors fill the resulting power vacuum.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 3,
+            "salientTokenOverlapPct": 42.86,
+            "examples": [
+              "nefarious",
+              "actors",
+              "fill"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 8,
+            "salientTokenOverlapPct": 100,
+            "examples": [
+              "without",
+              "hopeful",
+              "vision",
+              "nefarious",
+              "actors"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 13,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:42:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 42,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Superhero Complex",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 12,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Superhero Complex says wait for a magical savior, do nothing, and automatically trigger Populism; the lore warns what happens when one person is supposed to save everyone.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "wait",
+              "save",
+              "everyone",
+              "nothing",
+              "automatically"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "magical",
+              "person",
+              "save",
+              "populism"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 3,
+      "positionInPart": 14,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:43:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 43,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Eugenic Root",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 12,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Eugenic Root disguises racism as math and burrows into elite futurism; its lore calls out racist, ableist ideas hiding in the founders' assumptions.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "racism",
+              "math",
+              "elite",
+              "futurism"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 11,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 63.64,
+            "examples": [
+              "founders",
+              "elite",
+              "futurism",
+              "racist",
+              "ableist"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 1,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:44:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 44,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Vaccine-Hybrid Myth",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 12,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DO_YOU_KNOW",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Do you know The Vaccine-Hybrid Myth? Spread nineteenth-century paranoia that health upgrades will turn opponents into livestock; the lore recalls old vaccine fears about turning into a cow.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 8,
+            "salientTokenOverlapPct": 80,
+            "examples": [
+              "spread",
+              "century",
+              "paranoia",
+              "opponents",
+              "health"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 2,
+            "salientTokenOverlapPct": 25,
+            "examples": [
+              "century",
+              "turn"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 2,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:45:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 45,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Central Banker",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 13,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Central Banker changes behavior today by lying about what is coming tomorrow; the lore points out that predictions can change their own outcomes.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 11,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 63.64,
+            "examples": [
+              "change",
+              "behavior",
+              "today",
+              "lying",
+              "about"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 11,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 36.36,
+            "examples": [
+              "coming",
+              "change",
+              "behavior",
+              "today"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 3,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:46:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 46,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Expectation Setter",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 13,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Expectation Setter holds the Overton window open so the Hope card cannot be discarded; in that open window, hope actually lives.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 55.56,
+            "examples": [
+              "overton",
+              "open",
+              "hope",
+              "card",
+              "discarded"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "overton",
+              "window",
+              "open",
+              "hope",
+              "actually"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 4,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:47:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 47,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Developing Label",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 13,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Developing Label forces another player to copy a toxic growth model; its lore objects to calling some nations finished while prescribing that same model to everyone else.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "copy",
+              "toxic",
+              "growth",
+              "model"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 11,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 45.45,
+            "examples": [
+              "nations",
+              "finished",
+              "copy",
+              "toxic",
+              "growth"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 5,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:48:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 48,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Magic Pill",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 13,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Magic Pill swallows a microchip, declares a social crisis solved, and loses a turn; the lore warns that no single technology fixes deeply rooted human problems.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 40,
+            "examples": [
+              "microchip",
+              "crisis",
+              "solved",
+              "turn"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 4,
+            "salientTokenOverlapPct": 44.44,
+            "examples": [
+              "single",
+              "technology",
+              "deeply",
+              "rooted"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 6,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:49:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 49,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Radical Hope Activist",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 14,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "HEARD_OF",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Ever heard of The Radical Hope Activist? Defeat any Doomerism card and never skip your turn; in this deck, optimism takes courage and anger against apathy.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 75,
+            "examples": [
+              "courage",
+              "defeat",
+              "doomerism",
+              "card",
+              "skip"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 66.67,
+            "examples": [
+              "optimism",
+              "courage",
+              "anger",
+              "against",
+              "apathy"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 7,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:50:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 50,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Plurality Hive",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 14,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "The Plurality Hive combines 3 divergent cultural cards into an indestructible hive; top-up, not top-down, because divergent perspectives build better solutions.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 75,
+            "examples": [
+              "divergent",
+              "cultural",
+              "cards",
+              "build",
+              "indestructible"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 77.78,
+            "examples": [
+              "down",
+              "better",
+              "solutions",
+              "because",
+              "divergent"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 8,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:51:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 51,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "Accessible Scholarship",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 14,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Accessible Scholarship pays for a Global South player's flight instead of making them pay; the lore wants grants that amplify Global South voices rather than another invoice.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 87.5,
+            "examples": [
+              "grants",
+              "global",
+              "south",
+              "player's",
+              "flight"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 5,
+            "salientTokenOverlapPct": 50,
+            "examples": [
+              "grants",
+              "amplify",
+              "global",
+              "south",
+              "voices"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 9,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:52:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 52,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "The Citizen Engager",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 14,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DO_YOU_KNOW",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Do you know The Citizen Engager? Move beyond the corporate realm and engage all citizens at planetary scale; the lore asks whether this is the future we actually want.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 70,
+            "examples": [
+              "planetary",
+              "scale",
+              "move",
+              "corporate",
+              "realm"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 11,
+            "salientSharedTokenCount": 8,
+            "salientTokenOverlapPct": 72.73,
+            "examples": [
+              "corporate",
+              "realm",
+              "engage",
+              "citizens",
+              "planetary"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 10,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:53:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 53,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "Rule of Action",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 15,
+        "quadrant": "TL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Rule of Action bans passive play: optimism must be backed by calloused hands, and you cannot skip your turn just because pessimism feels easier.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 8,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 87.5,
+            "examples": [
+              "passive",
+              "play",
+              "optimism",
+              "must",
+              "backed"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 10,
+            "salientSharedTokenCount": 8,
+            "salientTokenOverlapPct": 80,
+            "examples": [
+              "pessimism",
+              "optimism",
+              "must",
+              "backed",
+              "action"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 11,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:54:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 54,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "Rule of Plurality",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 15,
+        "quadrant": "TR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Rule of Plurality tells you to trade cards with the margins; no single player can win alone, and winning alone is a dystopian illusion.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 100,
+            "examples": [
+              "trade",
+              "cards",
+              "margins",
+              "winning",
+              "alone"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 6,
+            "salientTokenOverlapPct": 85.71,
+            "examples": [
+              "single",
+              "player",
+              "alone",
+              "trade",
+              "cards"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 12,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:55:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 55,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "Rule of Repair",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 15,
+        "quadrant": "BL",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Rule of Repair weaves shredded corporate documents into a nest, then makes you repair one piece of the board every draw; this game is never finished.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 5,
+            "salientSharedTokenCount": 3,
+            "salientTokenOverlapPct": 60,
+            "examples": [
+              "shredded",
+              "corporate",
+              "nest"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 77.78,
+            "examples": [
+              "draw",
+              "repair",
+              "piece",
+              "board",
+              "game"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 13,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    },
+    {
+      "beatId": "protopia_web:56:standalone-r0-1",
+      "beatVersion": 1,
+      "deckId": "protopia_web",
+      "cardNumber": 56,
+      "cardBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+      "title": "Rule of Epistemic Sabotage",
+      "source": {
+        "jsonPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1_ID.pdf.json",
+        "jsonBlob": "8a8312db50cddf30212439b735d7595d797f793d",
+        "pdfPath": "media/kfb/Kayfabizarro_Protopia_WEB_v1 ID.pdf",
+        "page": 15,
+        "quadrant": "BR",
+        "exactCardCropStatus": "NOT_RENDERED_OR_VERIFIED"
+      },
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "outputMode": "SOURCE_GROUNDED_COMPACT_STANDALONE_EDITORIAL_CANDIDATE",
+      "surfaceText": "Rule of Epistemic Sabotage says flip the table whenever the rules favor the extractive player and rewrite them; its lore repeats the demand: rewrite the rules.",
+      "provenance": {
+        "cardNameUsed": true,
+        "powerUsed": true,
+        "loreUsed": true,
+        "fieldAudit": {
+          "power": {
+            "salientOriginalTokenCount": 7,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 100,
+            "examples": [
+              "flip",
+              "table",
+              "rules",
+              "favor",
+              "extractive"
+            ]
+          },
+          "lore": {
+            "salientOriginalTokenCount": 9,
+            "salientSharedTokenCount": 7,
+            "salientTokenOverlapPct": 77.78,
+            "examples": [
+              "rules",
+              "favor",
+              "extractive",
+              "player",
+              "flip"
+            ]
+          }
+        },
+        "semanticInformationCoverage": "HUMAN_REVIEW_PENDING",
+        "newFactualClaimAudit": "HUMAN_REVIEW_PENDING",
+        "contentSourceType": "FICTIONAL_KFB_CARD_NOT_INDEPENDENT_REAL_WORLD_EVIDENCE"
+      },
+      "partNumber": 4,
+      "positionInPart": 14,
+      "lineBreakAfterBeat": "BLANK_LINE",
+      "bridgeId": null,
+      "voiceClipId": null,
+      "actualAudioTiming": null,
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING"
+    }
+  ],
+  "nextGate": "KFB_PROTOPIA_56_STANDALONE_EDITORIAL_AND_HUMAN_VOICE_REVIEW_R1"
+}
