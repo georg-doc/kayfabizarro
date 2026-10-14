@@ -1,3 +1,20 @@
+## CURRENT REPAIR · 2026-10-14 · Exact attached Georg actor imported on startup
+
+Georg again reported wrong FrizzleBob/missing rigging, supplied two screenshots and a fresh JSON export. Both screenshots inspected directly. Actual attached JSON SHA-256 604449e169dcf522bf6d3d78eb59023ed8ba2de9985fa73141f3ffee79a3873e. Its pets[0] is field-for-field IDENTICAL to the original cut's supplied actor; only document metadata differs. No new rigging values were missing. The Site had never imported that entry on startup and defaulted to Driver Graft. Manual Import also did not switch to a named exported actor before applying its values. These were implementation defects, not a user configuration problem.
+
+Fix: source P08 startup now selects Ear Rig v5 (its explicit source is v5b @23615cff) and hydrates the complete attached entry BEFORE the existing FaceHost/EyeRig mount. Existing saved wrong actor state receives one checksum-versioned migration with a local recovery backup; other actors and scene objects are retained. It awaits the existing hair mount, verifies the actual runtime face/ears/body/lid/hair values via the existing rig exporter against every supplied field, then reveals the canvas. Any missing rig or field mismatch is an explicit error, never a visible default stand-in. A successful import receipt is persisted locally; later edits are not re-overwritten by repeated loading. This is not the future GitHub Save feature.
+
+The original attached bytes are preserved at dist/data/actors/frizzlebob-earrig-v5.georg-2026-10-14.kfb-pets.json and the compatibility equivalent. Import remains supported and now selects a matching known actor BEFORE loading its values. No new face engine, geometry or invented tuning.
+
+Site v7 private deployment succeeded at https://kfb-toolbox.frizzlebob.chatgpt.site/ . Source 801a24fbdea46507ffee39722345e4c8b55ce5b5; deployment appgdep_6acfe0e840fc81918ea453fb4dcccac6; saved version appgprj_6ac2ba44282881919d1a49287a32054e~appgver_c988b8e1ed0c81918136f56bf17cd8fb.
+21/21 targeted data-hydration, exact-byte/hash, source rejection, complete configuration, idempotent migration, negative mismatch and Component syntax checks PASS. The runtime verifier was exercised with test doubles, NOT actual WebGL; screenshot parity and actual post-v7 rendering remain NOT VERIFIED. Earlier 180 source-identity tests do not cover these intentional startup changes and were NOT rerun as an unchanged-entry claim.
+Evidence inputs: user screenshots Bildschirmfoto 2026-10-14 um 22.00.44.png and 22.02.23.png (Library IDs libfile_ce714fd3ec6881918a67d0619e7934bf / libfile_2dfa79978bb8819181f4f75df1601e1f); JSON libfile_e5b7d4aae3748191b7e05756cc8a39ff. Read their supplied scratch copies, not inferred contents.
+Remaining: closed rest-mouth isn't encoded in this unchanged source recipe; V-243 rest/export fix and real GitHub saving remain pending. This import repair does not claim those solved.
+Next one gate: reload root once and inspect the actual configured Ear Rig with successful checksum/field receipt, then front/¾/side source parity and the already-authorized fixes. No manual import or reconfiguration should be needed for this startup.
+No merge or Live promotion.
+
+---
+
 ## CURRENT REPAIR · 2026-10-14 · Driver Graft missing-model URL
 Georg observed SOURCE MISSING at the actual Site: /owners/petstudio-v9/assets/models/FrizzleBob_Yellow.gltf returned 404.
 Cause: vendored original modules use import.meta.url to resolve model assets; the original remote module base was lost. Corrected only non-JavaScript model-origin resolution in ears.v2, headgraft.v1 and frizzlebob.v4a, at root and /production-08/. Model remains referenced remotely, no binary copied or substituted design.

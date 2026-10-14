@@ -1432,11 +1432,29 @@ class Component extends DCLogic {
     let restored = false;
     try { const pre = localStorage.getItem(STORE_KEY + '.pre-selftest'); if (pre != null) { if (pre === '__none__') localStorage.removeItem(STORE_KEY); else localStorage.setItem(STORE_KEY, pre); localStorage.removeItem(STORE_KEY + '.pre-selftest'); console.warn('[toolbox] interrupted self-test · saved workspace put back'); } } catch (e) {}
     try { const s = localStorage.getItem(STORE_KEY); if (s) { const d = JSON.parse(s); if (d.format === 'kfb-toolbox-workspace' && d.id === WS_ID) { this.ws = d; restored = true; } } } catch (e) {}
-    if (!this.ws) this.ws = this._freshWs(this._freshDoc('neutral', null, 'frizzlebob-driver'));
+    if (!this.ws) this.ws = this._freshWs(this._freshDoc('neutral', null, 'frizzlebob-earrig-v5'));
     this.doc = this.ws.scene;
-    await this.rebuild();
-    this.setState({ status: restored ? 'restored' : 'ready', dirty: false, lastSaved: restored ? this.ws.savedAt : null });
-    this.camFull();
+    renderer.domElement.style.visibility = 'hidden';
+    try {
+      const boot = await import('./kfb-lib/actor-bootstrap.v1.js');
+      const actorDoc = await boot.loadActorDocument();
+      if (this.ws.actorImportReceipt?.sha256 !== boot.PROFILE_SHA256) {
+        try { const prior = localStorage.getItem(STORE_KEY); if (prior) localStorage.setItem(STORE_KEY + '.before-georg-import-' + boot.PROFILE_SHA256.slice(0,12), prior); } catch (e) {}
+      }
+      const imported = boot.prepareActorWorkspace(this, actorDoc);
+      await this.rebuild();
+      if (imported) {
+        await boot.verifyActorWorkspace(this, actorDoc);
+        // Persist the import receipt and current recipe as a LOCAL recovery checkpoint, not a GitHub save.
+        try { this.ws.savedAt = new Date().toISOString(); localStorage.setItem(STORE_KEY, JSON.stringify(this.ws)); } catch (e) {}
+      }
+      renderer.domElement.style.visibility = 'visible';
+      this.setState({ status: imported ? 'Georg actor imported' : restored ? 'restored' : 'ready', dirty: false, lastSaved: this.ws.savedAt || null });
+      this.camFull();
+    } catch (e) {
+      this._fail('Georg actor import', './data/actors/frizzlebob-earrig-v5.georg-2026-10-14.kfb-pets.json', e);
+      this.setState({ status: 'SOURCE MISSING · Georg actor import', loading: 0 });
+    }
   }
 
   async _prewarm() {
@@ -3068,7 +3086,7 @@ class Component extends DCLogic {
     rt.face = f; rt.rig = f.rig; rt.mouth = f.mouth; rt.brow = f.brow; rt.nose = f.nose; this._closedNeutral(rt);
     rt.defStyle = 'matte-cute'; rt.defColor = '#f2c93c'; rt.defDx = f.entry.eye.anchor.dx;
     const d0 = rt.dispose; rt.update = (dt) => { this._applyLids(rt); f.update(dt, this.cam); this._postRig(rt); }; rt.dispose = () => { rt._gone = true; try { f.dispose(); } catch (e) {} try { if (rt.hair) rt.hair.dispose(); } catch (e) {} if (d0) d0(); };
-    this._mountHair(rt, fig);
+    rt.hairReady = this._mountHair(rt, fig);
   }
   _faceApiOnGraft(rt, handle, pet) {
     if (!this.FaceMount) return;
@@ -3908,6 +3926,9 @@ class Component extends DCLogic {
     const file = ev.target.files && ev.target.files[0]; if (!file) return;
     let d = null; try { d = JSON.parse(await file.text()); } catch (e) { this.setState({ rigRT: { ok: false, detail: 'Import: not JSON' } }); return; }
     ev.target.value = '';
+    // A known exported actor must select its own model before its rig values are applied.
+    const named = (d.pets || []).find(p => this._rosterEntry(p.id));
+    if (named && named.id !== this._rid()) await this.pickRoster(this._rosterEntry(named.id));
     const rt = this.runtime, F = rt && rt.face; if (!rt) return;
     const pid = rt.kind === 'graft' ? 'graft-driver' : this._rid(), pets = d.pets || (d.eye || d.body || d.ears || d.surface ? [d] : []);
     const pet = pets.find((p) => p.id === pid) || pets.find((p) => p.eye || p.brow || p.mouth || p.body || p.ears || p.surface);

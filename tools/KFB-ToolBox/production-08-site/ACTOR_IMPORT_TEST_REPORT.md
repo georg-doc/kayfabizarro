@@ -1,0 +1,3 @@
+# Exact attached actor import · tests
+
+21/21 targeted checks executed with Node. Actual byte SHA-256 604449e169dcf522bf6d3d78eb59023ed8ba2de9985fa73141f3ffee79a3873e; pets[0] identical to original cut. Tests cover full face snapshot, hair/body/ears/lids/clay hydration, correct selected actor, preservation of other actors/objects, deep copies, removal of conflicting legacy overrides, wrong-model rejection before mutation, checksum-negative document, import receipt, persistence idempotence preserving later user edits, runtime-field-negative control, root/compatibility identity and Component parsing. Runtime fixture uses doubles, no Three/WebGL rendering, image pairs or visual PASS. Browser access remains unavailable. Run scripts/test-actor-import.mjs from this owner.

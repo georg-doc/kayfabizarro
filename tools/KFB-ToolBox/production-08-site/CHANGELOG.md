@@ -12,3 +12,6 @@
 
 ## 2026-10-14 · Driver Graft source missing repair
 - v6 preserves original pinned model origin in three vendored modules (root and compatibility path). Actual source HTTPS bytes verified against Git blob. 7/7 focused and rerun 180/180 checks PASS. Site render unverified; remaining rigging fixes/save still pending.
+
+## 2026-10-14 · Exact Georg actor startup import · v7
+- Supplied attachment entry is identical to original cut's rig recipe. Fixed missing startup application and wrong-actor manual import. Complete recipe hydrates before original mount; checksum/field verification, hair readiness, one-time migration and recovery backup. 21/21 targeted checks; actual WebGL unverified. V-243 rest-mouth/GitHub Save remain pending.
