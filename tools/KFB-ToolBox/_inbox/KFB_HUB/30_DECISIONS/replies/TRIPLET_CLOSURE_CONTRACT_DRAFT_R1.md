@@ -24,3 +24,16 @@ Gesprochen wird, was der Spieler auf der Karte sieht. Ein Abgleich JSON ↔ Druc
 1. The Ordinary World: Quest cancelled, nothing changes; not a state, a habit — the pain feels like home.
 2. Crossing the Threshold: old self dead, hand gone, three new — fear becomes movement, and you can't un-fluff the pill.
 3. Jean-Jacques Rousseau, Natural Goodness: man is born free, and everywhere he is in fluff.
+
+
+## Georgs TUNE-Fassungen (14.10. mittags) = Richtungs-Goldens
+1. [Welcome to] The Ordinary World stasis loop: nothing changes; Dysfunction is habit. Normalize pain – feels like home.
+2. [Remember] Crossing the Threshold: hand new cards, old self dead. Fear becomes movement. You can't un-fluff the pill.
+3. [You know] Jean-Jacques Rousseau, Natural Goodness: man born free, everywhere in chains.
+
+Abgeleitet:
+- **[Opener] in eckigen Klammern** als eigene Schicht davor (Welcome to / Remember / You know).
+- **Titel + Begriff aus der Power** direkt verbunden („The Ordinary World stasis loop“, „Rousseau, Natural Goodness“).
+- **Telegrammstil:** mehrere kurze Fragmente erlaubt; Artikel und Hilfsverben fallen weg („Dysfunction is habit“, „man born free“).
+- **Nur Kartenwörter.** Fluff-o-lect sparsam, nur wo es trägt (un-fluff); bei Rousseau bleibt „chains“.
+- **Mechanik nur, wenn sie Bild ist** („hand new cards“); Würfel und Zahlen fallen weg.

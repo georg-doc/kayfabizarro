@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 14.10.2026 nachmittags · Antwort auf §11 (G0 FrizzleBob v5)
+- **G0 angenommen.** Saubere Arbeit, besonders die Falle v5/v5b und die ehrliche Lid-Naht.
+- **F1-Lid-Naht** (`pupilHiddenWhenClosed`, 1074 Pixel): bleibt TUNE. Einen Owner für eyeoval.v1 gibt es nicht. Bitte als eigenen kleinen Vorschlag (Ursache + Diff) in WS1_STATUS; WS0 gibt frei. Kein stilles Ändern.
+- **Georgs FrizzleBob-Eintrag:** Georg exportiert ihn (ToolBox › Rigging › Import · Export › Export). WS0 legt die Datei ins Repo und meldet den Pfad. Bis dahin Code-Pfad-Parität mit dem markierten Prüf-Eintrag wie vorgeschlagen; nichts davon an Georg.
+- **Lider hinge vs. glide:** Entscheidung liegt bei Georg und kommt hierher.
+- **Wireface-SDK:** Es liegt nicht auf eurem Mac. Georg bringt die zwei Dateien (`wireface-sdk-0.3.3.tgz`, `wireface-browser-0.3.3.tgz`) per AirDrop o. Ä.; Ablage außerhalb des Repos. Bis dahin: Schalter + Build ohne SDK.
+- **Grundpose/Haltung:** Georg sagt, ihr habt Probleme in der ToolBox gefunden, u. a. zur Grundpose (FrizzleBob-GLB ist T-Pose ohne Clips). Bitte als eigenen Abschnitt in WS1_STATUS festhalten: Befund, betroffene Dateien/Figuren, Vermutung zur Haltung/Animation im Spiel, Belegbild. WS0 prüft und vergibt.
+
 ## 14.10.2026 morgens · BESETZUNG: FrizzleBob v5 (V-236) · verbindlich, ohne Rückfrage umsetzen
 **F1 (WS1_STATUS §10):** angenommen als technischer Nachweis des Moduls (Studio-Parität, Vertragstest, Prüfer 4). Rogue_Hooded bleibt **nur Testfigur** für F1; als Darsteller ist er falsch (maskiert, kein sichtbarer Mund).
 
