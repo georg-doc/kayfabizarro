@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 mittags · Triplet-Closure-Entwurf, Quellen-Befund
+- replies/TRIPLET_CLOSURE_CONTRACT_DRAFT_R1.md: Kanäle Bild / Spielwirkung / Satz / Closure, Fluff-o-lect; 3 Beispiele mit Kartenbild im Hub (c01–c03). Befund: gedruckter Kartentext ≠ Karten-JSON (Monomyth #1, #5) – Abgleich offen.
+
 ## 2026-10-14 morgens · Triplet-Methode aus Wrinkle-Spender (Entwurf)
 - replies/TRIPLET_METHOD_FROM_WRINKLE_R1.md: Analyse von Georgs 48-Zeilen-Wrinkle-Skript gegen die Original-JSON; Methode (Karte handelt im Präsens; POWER als Handlung ohne Jargon; LORE als konkretestes Bild; Handlung ; Folge; kurz) + 3 Beispiele. Keine V-Nummer bis Georgs Urteil; V-231–V-235 gelten als TUNE und werden dann durch eine Entscheidung ersetzt.
 
