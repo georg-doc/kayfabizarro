@@ -104,6 +104,12 @@ export function createFaceMountActor(options) {
     state.ears = rigEars(fig, earRig)
     if (state.ears.L.bones.length < 3 || state.ears.R.bones.length < 3) log('Ohrknochen: ' + state.ears.L.bones.length + '+' + state.ears.R.bones.length)
     // Gesicht: ein Besitzer (face-mount.v1)
+    // facehost.v1 richtet den Gesichts-Halter beim Mounten an der WELT aus (Z. 86–92: inverse Kopf-Weltdrehung, dann nur der figur-lokale
+    // Zehen-Winkel). Steht die Figur gedreht, sitzt das Augen-Rig um genau diesen Winkel verdreht am Kopf (Befund M1-Sitzung 14.10.;
+    // Bühne yaw ±0,45 → Augen bei x −0,335/+0,03 statt symmetrisch). Darum: Aufbau mit Weltdrehung 0, die Drehung kommt erst danach.
+    const q0 = root.quaternion.clone(), pq = new THREE.Quaternion()
+    if (root.parent) root.parent.getWorldQuaternion(pq)
+    root.quaternion.copy(pq.invert())
     root.updateWorldMatrix(true, true)
     Mouth.MOUTH_SETS.male = mouthSet // PetMouth liest das Set beim Bauen (in mountFace)
     const f = mountFace({ THREE, M, figure: fig, entry: pet, log }) // P08: face-mount.load(pet) in mountFace; applied/rejected je Feld
@@ -158,6 +164,8 @@ export function createFaceMountActor(options) {
         if (clip) { state.mixer.clipAction(clip, fig).play(); state.mixer.update(0) } else log('Clip fehlt: ' + motion)
       } catch (e) { log('Clip: ' + e.message) }
     }
+    // Aufbau fertig: eigene Drehung zurück, Ohren neu anfangen lassen (sonst liest ear-dangle die Drehung als Ruck)
+    root.quaternion.copy(q0); root.updateWorldMatrix(true, true); state.ears?.L?.reset?.(); state.ears?.R?.reset?.()
     // erst sichtbar, wenn Gesicht, Kontaktschatten und Ruhe-Clip stehen: keine T-Pose und kein ungebackener Kopf im Bild (V-214)
     fig.visible = true
   })().catch((e) => { state.status = 'ERROR'; state.error = String(e?.message || e); log('Fehler: ' + state.error) })

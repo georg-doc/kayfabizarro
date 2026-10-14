@@ -1,7 +1,16 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§20 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§21 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 21 · 14.10. nachts · Ein Teil von „FB sieht schlimm aus“ war ein Einbaufehler: Augen saßen auf gedrehten Figuren verdreht (behoben)
+
+- **Befund (M1-Sitzung):** `facehost.v1` richtet den Gesichts-Halter beim Mounten an der **Welt** aus (Z. 86–92). Auf der Bühne laden die FrizzleBobs mit yaw ±0,45. Gemessen saßen die Augenmitten im Figurenraum bei x −0,335/+0,03 statt symmetrisch ±0,2, also um 26° um den Kopf gedreht. Deshalb stand das hintere Auge am Kopfrand und die Nase vor dem Auge. #actortest und das V-240-Bildpaar laden mit Drehung 0 und zeigen den Fehler nicht.
+- **Korrektur im Slot, Spender unverändert** (kfb-planet @dde5ba2): Der Aufbau läuft mit Weltdrehung 0. Die Drehung kommt erst nach Gesicht, Haaren, Ohren und Kontaktschatten, unmittelbar bevor die Figur sichtbar wird; danach `ears.reset()`, damit kein Ruck entsteht. Beide Figuren tragen das Augen-Rig jetzt identisch (±0,2).
+- **Test** `g4 › eyesSeatedOnRotatedFigures`; Gegenprobe ohne Korrektur FAIL. Suite 15/15 PASS.
+- **Beleg:** `ws1/proofs/2026-10-14-g4/fb_eyes_fix.png` (vorher | nachher links | nachher rechts).
+- **ToolBox-Befund A15** (Vorschlag an den Owner: Figurendrehung in facehost einrechnen).
+- **F-1 aus §20 bleibt offen,** aber kleiner: Ob der Rest des Looks (Blockbrauen, Augenabstand, Nase) Georgs ToolBox-Stand entspricht, lässt sich nur gegen Referenzbilder aus genau dieser ToolBox prüfen. Bitte Georg das Nachher-Bild zeigen und fragen, ob es jetzt seinem FB entspricht. Das ist die schnellste Klärung.
 
 ## 20 · 14.10. nachts · Georg zu G4 · Fragen an WS0 zur Abstimmung (gebündelt)
 
