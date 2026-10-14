@@ -1,5 +1,18 @@
 # KFB Eye Actor Studio v1 · CHANGELOG
 
+## 2026-10-14 · Georg HUMAN FAIL overrides previous thin-clay candidate · tutorial evidence intake
+
+Georg explicitly rejected the previous thin-clay render: broken and torn upper mesh, visible cracks/artefacts, unacceptable surface. Previous 30/30 index-level checks are retained as limited diagnostic evidence only. `thin-clay-lid.v1.mjs` is now a **NEGATIVE FIXTURE**, not a usable eyelid donor; no more repair-loop tuning.
+
+Read both original video references and accessible source evidence. Jen Abbott bone-rig video has a verified creator-written procedural companion (Track To gaze, Copy Rotation upper/lower, inverted lower X, master controllers, blink keys). RG3D oval-eye Blender video metadata/description is accessible, **not its transcript**; exact mechanics remain unverified. Neither requested full video transcript was retrieved, and none was invented.
+
+Prepared `CLAUDE_DESIGN_EYELID_MESH_RECOVERY_BRIEF_2026-10-14.md` with strict transcript provenance gate, original donor isolation, explicit topology/winding/self-intersection/pupil-occlusion checks, and single-eye-first Claude Design route. No new code, visuals, suite, Site, Stage or runtime integration this turn. Eye Actor Studio PR #159 remains donor owner; EyeRig v6 PR #104 receiver.
+
+Next: `EYELID_VIDEO_TRANSCRIPTS_SOURCE_PIN_AND_CLAUDE_DESIGN_INTAKE`. No merge or Live.
+
+---
+
+
 ## 2026-10-14 · Thin-Clay Lid single-eye isolated candidate (TUNE)
 
 New same-owner geometry candidate in `thin-clay-lid.v1.mjs`, 30/30 local Node structural checks; `tests/thin-clay-lid.test.mjs` and `thin-clay-proof.html` source-only + candidate browser fixture. Exact existing `clay-lid.v1.mjs` donor was separately rendered in isolation before the candidate and remains unchanged. Six CPU/VTK mesh views inspected. Full closure conceals the central pupil in that controlled fixture; original donor preset occludes the eye already in neutral.
