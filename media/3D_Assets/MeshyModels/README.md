@@ -35,3 +35,14 @@ Use this folder as a standing *inbox* for further selected paid-Meshy outputs: r
 ## One next gate
 
 `WS1_MESHY_AMPHITHEATER_SOURCE_ISOLATION_AND_SINGLETON_01`: transfer the exact existing 73,029,272-byte GLB from Dropbox to WS1 workspace, visibly inspect it as-is, establish source hash and registration/destination strategy, then return one source-backed integration result. Separate ongoing audio bugs retained.
+
+## 2026-10-14 · Cologne Cathedral · two user-selected good candidates
+
+**User clarification is binding:** BOTH Dropbox GLBs are the corrected, wanted Cologne Cathedral models. An earlier faulty four-tower generation caused by a frontal-only 2D view was **NOT downloaded** and is **NOT present in this folder**. Do not label either listed GLB four-towered, defective or rejected. Do not infer that the later filename alone is a preferred/accepted winner; both are source-available candidates pending actual isolated 3D geometry / style evidence.
+
+- `Meshy_AI_cologne_cathedral_cor_1014035640_image-to-3d-texture.glb` — **96,521,208 bytes**, Dropbox file ID `id:KeQLaY5-IIAAAAAAAAmzaA`.
+- `Meshy_AI_cologne_cathedral_cor_1014035817_image-to-3d-texture.glb` — **92,915,068 bytes**, Dropbox file ID `id:KeQLaY5-IIAAAAAAAAmzZw`.
+
+Both stay as immutable masters in `/CLAUDE/MeshyModels/` until independently downloaded and hashed. Existing KFB Landmark / `tools/img2threejs` and Asset Librarian own model acceptance. Later inspect each *actual* GLB in isolation from five viewpoints, compare silhouette/proportions and visual style, inventory geometry/materials, and then decide which version(s) to register/optimize; do not reconstruct a third generic cathedral. The earlier four-tower failure is a useful generation lesson (avoid frontal-only reconstruction ambiguity), **not a stored asset**. Neither binary has yet been transferred to GitHub. This intake is non-blocking for WS1 Wireface/Audio work.
+
+Later gate: `MESHY_COLOGNE_CATHEDRAL_TWO_GOOD_CANDIDATES_ISOLATION_R1`.
