@@ -2920,8 +2920,25 @@
    "check": "Probe 2 × 8 Karten, Georg urteilt",
    "source": "Georg 13.10. + 14.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-232"
+   ],
    "why": "Vortragszeilen und Zusammenfassungen wurden als Triplets geführt.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-232",
+   "date": "2026-10-14",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Triplet-Methode korrigiert (Georg, über WSA-Briefing WS0_TRIPLET_METHOD_CORRECTION_2026-10-14.md, Branch editorial/kfb-triplets-single-card-r1-2026-10-14): Eine Karte wird gespielt, nicht erklärt. Originaltitel am Satzanfang als Subjekt, POWER und LORE in EINEN natürlichen englischen Satz, Spielmechanik unverändert (Alternativen, Kosten, Bedingungen; „or“ bleibt „or“), Lore-Bedeutung statt eingefügtem Text, keine künstliche Pointe, kein erzwungener Twist, kein „because“-Schluss, nichts Erfundenes. SELL heißt nur: die vorhandene Folge der Karte wird hörbar. 90 % Karteninhalt bleibt Leitplanke, kein Ziel für Prosa. Die 16-Karten-Probe (Monomyth/Help) ist HUMAN FAIL 16/16 (Schema Titel → Mechanik → because → Lore, erzwungene Wendung). Ersetzt V-231 Punkt SELL IT. Nächstes Gate: WS0 passt den Skill an und zeigt 2–3 Karten neben POWER/LORE.",
+   "values": {},
+   "owner": "WS0 (Skill-Methode) → Triplet-Chat",
+   "check": "Georg urteilt 2–3 Karten",
+   "source": "Georg 14.10. (via WSA)",
+   "supersedes": "V-231 (SELL IT als Wendung)",
+   "superseded_by": [],
+   "why": "Mein gespiegelter SELL-IT-Punkt („Wendung am Satzende“) führte zu 16/16 FAIL mit erzwungenen Twists.",
    "applies": "ab sofort"
   },
   {
@@ -2987,7 +3004,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:172",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:176",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
