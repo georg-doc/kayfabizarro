@@ -2954,7 +2954,9 @@
    "check": "Georg urteilt 3 Karten neu",
    "source": "Georg 14.10.",
    "supersedes": "V-232 (Mechanik vollständig erhalten)",
-   "superseded_by": [],
+   "superseded_by": [
+    "V-235"
+   ],
    "why": "Spielmechanik im Satz verwirrt neue Spieler; das Konzept der Karte ist das Interessante.",
    "applies": "ab sofort"
   },
@@ -2969,8 +2971,25 @@
    "check": "Georg urteilt",
    "source": "Georg 14.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-235"
+   ],
    "why": "Ohne Verknüpfung stehen Konzept und Lore unverbunden nebeneinander.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-235",
+   "date": "2026-10-14",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Ein Triplet ist eine Mini-STORY, keine Definition und kein Schulaufsatz – auch ohne Opener. Erzählt (meist Vergangenheit), die Karte bzw. ihre Figur handelt, ein kleiner Bogen vom Konzept zur Lore-Folge (z. B. Glaube → Entdeckung, Schritt → kein Zurück). Verboten sind Definitionsformen wie „X is a …“, „X stands for …“, „X means …“. Erzähl-Kitt (believed, until, kept, turned … into) ist erlaubt, Fakten bleiben aus der Karte. Beispiel-Richtung: „Jean-Jacques Rousseau believed in natural goodness, until he noticed that man is born free, and everywhere he is in chains.“",
+   "values": {},
+   "owner": "WS0 (Skill-Methode) → Triplet-Chat",
+   "check": "Georg urteilt",
+   "source": "Georg 14.10.",
+   "supersedes": "V-233/V-234 (Satzform „is a … because …“)",
+   "superseded_by": [],
+   "why": "Definitionen mit „is a … because …“ klangen nach Schulaufsatz statt nach Erzählung.",
    "applies": "ab sofort"
   },
   {
@@ -3036,7 +3055,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:182",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:185",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
