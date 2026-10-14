@@ -2,6 +2,16 @@
 
 Für jede neue Bau- oder Planungssitzung, besonders WS1 (R3F-Spielrahmen) und den Karten-Dialog. Zusammengefasst aus zwei Wochen Lab-Arbeit: aus dem, was funktioniert hat, und aus den Fails (Post-Mortems R1/R2). Das Register `DECISIONS.md` hat Vorrang.
 
+## CURRENT ADDITIVE QUALITY GATE · 14.10.2026 · GEORG DIRECT FAIL / WS0 V-Nummer ausstehend
+
+For **all KFB character-facing design, Studio/Scenelet, animated NPC and Wireface/Card-performance output**: **NO VERIFIED KFB ANIMATED EYE-RIG = FAIL**. This is a hard source/acceptance gate, not cosmetic tuning, and not waived by old temporary V-202 Original-KayKit eyes.
+
+- Use the actual source-isolated **KFB EyeRig v6** and per-character approved anchored configuration (V-061/V-090; EYE-CLEANUP-01 for approved subset). The V-200/V-201 *Lab eye regressions are FAIL*, not acceptable alternative eyes. Source: Resident Atlas Cut R2 `lib/frizzlegraft/anchored-eyes.v1.js` and `pet-eye-rig.v6.js`. Empty `NoEyes.glb` anchors, original/static KayKit eyes, painted/drawn eyes or guessed Wireface substitute faces do **not** satisfy the KFB EyeRig requirement.
+- Before showing a figure in a positive composite, provide same-camera **source vs stage eye close-up**, plus **visible animation evidence** of gaze/eye tracking left/right, pupil motion, blink and lid color, life/kinetics and eyes→head→body sequencing in talk/reaction; a still alone does not prove motion. Per-actor PASS only, never blanket PASS inferred from a shared rig file.
+- For the same KFB Wireface Stage, a **real landscape KFB PDF quarter-card** (fit, no placeholders/portrait swaps) and the real ink-free **V-204 `Clay pur` bubble** (one `chatterbox-core` DOM renderer; no outline) are simultaneous hard gates.
+- The historical `KFB_CHATTERBOX_STUDIO_CLAUDE_DESIGN_SESSION_CUT_2026-10-05_r2/evidence/s2_bubble_still.jpg` has **ink outline, portrait placeholder-looking card and no verified approved animated EyeRig**; it is **NEGATIVE GOLDEN / FAIL**, NEVER a positive donor. Details: `replies/WIREFACE_STAGE_VISUAL_DONOR_FAIL_2026-10-14.md`.
+- **3/3 real-source proof before Studio composite**. If missing, report unavailable source and do not substitute any fake figure/card/bubble. WS0 owns adding a V-number to `DECISIONS.md` under V-213; this note captures Georg's direct decision now without fabricating a register number.
+
 ## 1 · Bevor gebaut wird
 1. **Vorlage zuerst (V-140).** Vor jedem Teil eine Zeile an die Steuerung:
    - Was gibt es schon? Pfad, Commit.
