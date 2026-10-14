@@ -22,7 +22,10 @@ const cache = { get: () => JSON.parse(localStorage.getItem('kfb-ws1-pool-cache')
 
 let reader = createPoolReader({ deckBlobs: deckBlobs.decks, deckJson, cardSource })
 let loadState = { loading: true, error: null }
+let poolReady = false
+export const isPoolReady = () => poolReady // der Lade-Versuch ist beendet (mit oder ohne Pool)
 export const ready = loadPool({ cache }).then(({ pool, blob, error, cached }) => {
+  poolReady = true
   loadState = { loading: false, error, cached: !!cached }
   if (pool) reader = createPoolReader({ pool, poolBlob: blob, deckBlobs: deckBlobs.decks, deckJson, cardSource })
   return reader

@@ -70,11 +70,15 @@ export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {},
   return {
     status: () => ({ ...status, rejects: status.rejects.slice(-10) }),
     // field: 'cardName' | 'power' | 'lore' – welcher Kartentext gilt, wenn es keine Pool-Zeile gibt
-    async lineFor(card, { field = 'cardName' } = {}) {
+    // excludeOpeners: Opener-IDs, die in diesem Set/Akt/Dialog schon liefen (V-222: keine Variante zweimal). Trifft die Pool-Zeile
+    // einen davon, gilt der wörtliche Kartentext; 'DIRECT' (ohne Opener) ist nie gesperrt.
+    // pool: false = nur wörtlicher Kartentext (z. B. die Antwort im Dialog D1; ein Triplet gibt es je Karte genau einmal, V-231)
+    // excludeBeats: Beat-IDs, die in diesem Dialog schon gesprochen wurden (V-231: ein Triplet je Karte, keine wortgleiche Wiederholung)
+    async lineFor(card, { field = 'cardName', excludeOpeners = null, excludeBeats = null, pool = true } = {}) {
       const src = cardSource ? cardSource(card?.deck?.id, card?.num) : null
       if (!src) return issue({ text: SILENCE, parts: [SILENCE], source: 'SILENCE', card: (card?.deck?.id ?? '?') + '#' + (card?.num ?? '?'), reason: 'CARD_NOT_IN_SOURCE' })
-      const p = await poolLine(card)
-      if (p) return p
+      const p = pool ? await poolLine(card) : null
+      if (p && !(excludeOpeners && p.openerId !== 'DIRECT' && excludeOpeners.has(p.openerId)) && !(excludeBeats && excludeBeats.has(p.beatId))) return p
       const key = field === 'cardName' ? 'name' : field
       const t = typeof src[key] === 'string' ? src[key] : ''
       if (t.trim() && !/^none$/i.test(t.trim())) return issue({ text: t, parts: [t], source: 'CARD', field, card: card.deck.id + '#' + card.num })

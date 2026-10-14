@@ -1,7 +1,105 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§15 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§16 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 16 · 14.10. spät · Amphitheater spieltauglich (V-230) · Bühne · D1 Dialog-Mechanik (FrizzleBob weiter gestoppt)
+
+### 16.1 · Browser-Fassung des Meshy-Amphitheaters (G2)
+- **Datei:** `media/3D_Assets/MeshyModels/browser/kfb-stage-amphitheater-meshy.browser.v1.glb`, **11,7 MB**, SHA-256 `3f79037e…`, Commit `829d551d`.
+  - Der Commit trägt den Tag **`asset/amph-browser-v1`**, damit die gepinnte Adresse auch nach einem Rebase erreichbar bleibt.
+  - Daneben liegt `…v1.SOURCE.json` mit Herkunft und Rezept.
+- **Vorgabe WS0 erfüllt:**
+  - **348.738 Dreiecke** (Master 1,62 Mio.);
+  - Farbe und Normalen 2048² WebP, Metall/Rau 1024² WebP (`EXT_texture_webp`, vom Browser dekodiert);
+  - kein KTX2, keine Meshopt-Kompression.
+  - Werkzeug: `@gltf-transform` 4.5.1, meshoptimizer 1.1.1 und sharp 0.35.5, **exakt gepinnte Dev-Abhängigkeiten**, nur im Skript `scripts/amph/build-browser.mjs`.
+  - Der Neubau aus dem Master ist **bytegleich** (reproduzierbar).
+- **Befund beim Bau:** Die Standard-Vereinfachung wertet nur Positionen. Dabei passten die gebackene Normalen-Textur und die gröberen Flächen nicht mehr zusammen, es entstanden dunkle Schlieren auf den Sitzreihen.
+  - Lösung: meshoptimizer `simplifyWithAttributes` mit Normalen und UV (Gewicht 2/2). Die Schlieren sind weg (Nahansicht 4,5 → 2,4/255).
+  - Die restliche Weichheit am Boden kommt von der vorgegebenen Farbtextur 2048².
+- **Abnahme:** Bildpaar Master | Browser aus den Kameras der Quell-Isolation, 9 Ansichten, mittlere Abweichung **1,3–3,7/255**.
+  - **Bildzeit (M4, wie in der Tabelle): 7,5 → 3,6 ms**, Ladezeit 289 → 73 ms.
+  - Beleg: `ws1/proofs/2026-10-14-amph/` (`amph_master_vs_browser_v1.jpg`, `pair-report.json`, `build-report.json`).
+- **Asset Librarian: eine Kennung** `private:meshy-claymation-amphitheater-master` in `tools/asset_registry/librarian/live/private-asset-live.json`.
+  - Erzeugt mit dem eigenen Werkzeug `private_projection.py project`, geprüft mit `validate-live` → OK.
+  - Inhalt: Master in Georgs Dropbox (SHA-256 `11846848…`, 73 MB); `delivery.runtimeUrl` zeigt auf die Browser-Fassung, dazu `runtimeVariant`/`runtimeSha256`/`runtimeBytes`/`runtimeTag`.
+  - **Bitte WS0 bzw. Librarian-Owner:** Die vier `runtime*`-Felder sind eine Erweiterung des Projektionsformats. Bitte annehmen oder ein anderes Format vorgeben.
+  - Hinweis: Das Repo ist öffentlich. Damit ist die Browser-Fassung öffentlich, das Master nicht. Die Lizenzprüfung steht im Eintrag als offen.
+
+### 16.2 · Bühne `#stage` (Vorbereitung G4)
+- **Modul `amphitheater`** (create/update/dispose):
+  - Es lädt die Browser-Fassung über die gepinnte Adresse und bettet sie nicht in den Einzeldatei-Build ein.
+  - **Maßstab 18,92** (Auslegung „Innenkreis“): Die Bühnenfläche ist nicht rund (Strahltest: Rand hinten 7,1 m, rechts 7,6 m, links 8,1 m, vorn offen). 14 m gelten bis zu den Rängen hinten, die Fläche ist damit ≈ 15,7 m breit. **Bitte bestätigen.**
+  - Bühnenboden bei y = 0 (Messung ± 1 mm). Theater ≈ 36 × 9,3 × 32 m.
+  - **Korrektur zur Quell-Isolation:** Die Unterseite ist nicht offen, sondern eine geschlossene Platte (≈ −0,16 m). Das Knet-Gelände (Relief aus dem Billboard-Spender, Biom-Farbe) liegt bei −0,125 m: Bodenschluss rundum. Die Kameras bleiben über 0,5 m.
+- **Szene:** Billboard R2 hinten auf der Bühnenfläche, ruhiger Two-Shot (eine feste Kamera). Figuren nur als **Platzhalter für die Stellprobe** (F1-Figur Rogue_Hooded mit Eye-Rig, V-214), kein Darsteller.
+- **Leistung: 60 fps** auf Georgs M4 mit Theater, Billboard und zwei Figuren.
+- **Test `stage`, 9 Prüfpunkte:**
+  - Prüfsumme der gepinnten Datei = Registry (Master- und Laufzeit-Variante getrennt);
+  - Budget;
+  - Maßstab und Bodenhöhe;
+  - Bodenschluss;
+  - Kameras über Grund;
+  - Billboard auf der Bühnenfläche;
+  - Karte im Two-Shot frei;
+  - dispose.
+  - Cache nach Prüfsumme, Netzfehler werden zu FAIL.
+- **Blinder Prüfer 7: PASS MIT AUFLAGEN**, 10 Befunde, behoben oder offengelegt:
+  - Registry-Variante;
+  - Tag;
+  - Test ohne Ausnahme;
+  - Maßstab offen;
+  - Unterseite korrigiert;
+  - Abhängigkeiten gepinnt;
+  - simplify abgesichert;
+  - Debug-Name `StageMods` statt `Stage` (der Name war in main.jsx belegt);
+  - Schatten bewusst nur empfangend;
+  - audit-Hinweis: nur Dev-Abhängigkeiten.
+
+### 16.3 · D1 Dialog als Modul (Mechanik, ohne Look)
+- **Modul `dialog`** (create/update/dispose, nur Ports, keine Darstellung). Je Karte:
+  1. Billboard zeigt die Karte;
+  2. Sprecher A (wechselt je Karte) sagt die **Pool-Zeile** der Karte, sonst den **Kartentitel wörtlich**;
+  3. Sprecher B antwortet mit dem **Power-Text wörtlich** (nie Pool: ein Triplet je Karte, V-231);
+  4. Spielerwahl (S5c);
+  5. nächste Karte.
+- **Regeln im Code:**
+  - Opener je Dialog höchstens einmal (V-222, `excludeOpeners`; DIRECT zählt nicht).
+  - Ein Beat je Dialog nur einmal (`excludeBeats`).
+  - Sprechdauer = Mundbild-Spur des Darstellers (mime, V-228). Ohne Mund gilt eine Lesedauer aus der Wortzahl.
+  - Der Zuhörer schaut zum Sprecher.
+  - Zeitgrenzen für Karte, Zeile und Wahl.
+  - Es zählt nur die eigene Wahl.
+  - Ports dürfen werfen.
+  - Der Start wartet auf Pool, Bühne, Karte und Figuren.
+- **Pool-Leser:** neue Optionen `excludeOpeners`, `excludeBeats`, `pool: false`. s5b bleibt grün.
+- **Auf der Bühne** (`#stage,actors=rogue,dialog=n`): Blasen an den Ankern der Sprecher, Kartenwechsel auf dem Billboard, Wahl mit Taste 1 → Zuruf-Blase vorn. Beleg: `ws1/proofs/2026-10-14-stage/d1_dialog_sequence.png`.
+- **Ehrlicher Stand:** Der Live-Pool r5 hat 0 ACCEPTED-Beats.
+  - Auf der Bühne spricht A deshalb immer den Kartentitel.
+  - Den POOL-Weg und „Opener einmal“ belegen nur ausdrücklich markierte Test-Kopien (humanApproval TEST FIXTURE, wie s5b).
+  - Mit Pool r6 wechselt nur `POOL_PATH`/`POOL_REF`.
+- **Tests:** `d1` (17 Prüfpunkte, Node, ohne Netz) und `d1stage` (8, Browser). **Alle 14 Tests grün.**
+- **Blinder Prüfer 8: PASS MIT AUFLAGEN**, 12 Befunde, alle behoben:
+  - Hängestelle ohne Zeilen-Zeitgrenze;
+  - zwei Testlücken;
+  - Start vor dem Pool;
+  - Seiteneffekt beim Import;
+  - fremde Wahl;
+  - werfende Ports;
+  - Überhang;
+  - DIRECT/Beat;
+  - Dialog ohne Figuren;
+  - Billboard-Flackern.
+
+### 16.4 · Offen / als Nächstes
+- **FrizzleBob bleibt gestoppt**, bis die richtige Quelle geklärt ist. Danach tauscht der Darsteller-Slot nur die Rezept-Datei, Bühne und D1 laufen unverändert.
+- **Bitte WS0:**
+  - Maßstab „Innenkreis“ bestätigen;
+  - die Registry-Erweiterung `runtime*` annehmen;
+  - Biom/Kartenzone der Bühne festlegen (§14.4);
+  - Pool r6 melden.
+- **G4** (Vorführung für Georg) erst mit seinem richtigen FrizzleBob.
 
 ## 15 · 14.10. abends · Quittung Stopp FrizzleBob (bis V-239) · F1-Lid-Naht umgesetzt · Hinweis B1-Ecken
 

@@ -88,6 +88,7 @@ export function createBillboard(options = {}) {
 
   // Ergebnis eines überholten Aufrufs: { stale: true } statt der Daten der neueren Karte (Prüfer 6, Befund 6)
   function setCard(card) {
+    if (card && card === state.card && state.info?.source === 'CARD') return Promise.resolve(state.info) // dieselbe Karte steht schon: kein Platzhalter-Flackern
     const tk = ++state.token; state.card = card
     layout(placeholderCanvas(card), 'PLACEHOLDER')
     if (!card || !isCardSafe(card.deck.id, card.num)) return Promise.resolve(state.info)
