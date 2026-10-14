@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 spät · Kartentext kanonisch (Druck)
+- Branch data/kfb-card-text-canonical-2026-10-14 @233efd5: 55 Decks, 698 Karten auf Drucktext umgestellt (alt in jsonLegacy), 593 bestätigt, 19 OPEN (Logo verdeckt Text, Glyphen, falsches Viertel), 37 Titel an den Druck angepasst. 6 Decks mit Nicht-Standard-Feldern (num/name, ohne Nummern, ohne cardCount). Offen: 19 UNSAFE-Decks, Glyphen-Durchgang, ~1.900 Karten ohne textSource, OPEN mit PRINT_HQ-PDFs.
+
 ## 2026-10-14 abends · ToolBox-Quell-Schnitt eingegangen (Wiedervorlage)
 - KFB_TOOLBOX_SOURCE_CUT_2026-10-14_r1 (Production-08) lokal in ~/Dropbox/CLAUDE/, 47/47 Prüfsummen OK. Bestätigt: A1 Grundpose (immer Pose/Idle, nie Bindepose), A2 Kennung v5 lädt v5b, Brauen lift 0,242 (steht so in Georgs Export, V-240). Neu: Export-Etikett „Production-02“, Brauen-/Nasenfarbe werden nicht exportiert. Auf GitHub legen und Port später (Hub-Plan TB-CUT).
 

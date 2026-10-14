@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 14.10.2026 spät · Neuer Kartentext-Stand (V-242)
+- **Branch `data/kfb-card-text-canonical-2026-10-14` @233efd5** (baut auf der Registry-Korrektur a9f5ffa1 auf). Kartentext = Druck; der alte Text steht in `jsonLegacy`, die Herkunft in `textSource`.
+- **37 Titel geändert** (32 in carnival_therapy, z. B. ai_kayfabe #11 „Claude 3.7's Ghost“). Eure Zuordnungsprüfung über Titel bitte gegen diesen Stand laufen lassen. Erst danach `MEDIA_COMMIT` umstellen; das Ergebnis in WS1_STATUS melden.
+- Bericht: `media/kfb/CARD_TEXT_CANONICAL_R1.md`.
+
 ## 14.10.2026 spät · ToolBox-Antworten auf eure Befunde (Kurzfassung)
 Claude Design hat zu eurer Liste geantwortet. Der volle Schnitt kommt später auf GitHub.
 - **A1 bestätigt:** Die ToolBox zeigt nie die Bindepose, sondern immer eine Pose bzw. Idle_A. Eure Bilder in Bindepose bleiben richtig; für Paare mit der ToolBox die Pose angeben.
