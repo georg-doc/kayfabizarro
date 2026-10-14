@@ -231,7 +231,15 @@
       "power": "INTIMIDATE weaker cards.",
       "lore": "Darker and Edgier. When the teen pop sales dip, pivot to \"mature\" angst.",
       "gradeReason": "Power text is too brief. 'Pivot to mature angst' is good but needs context to perform.",
-      "artworkPrompt": "Style: Teen angst cartoon. Subject: Kitten in heavy metal makeup pouting at camera. Mood: Forced darkness."
+      "artworkPrompt": "Style: Teen angst cartoon. Subject: Kitten in heavy metal makeup pouting at camera. Mood: Forced darkness.",
+      "print": {
+        "cardName": "The Edgelord Pivot",
+        "power": "INTIMIDATE weaker cards.",
+        "lore": "Darker and Edgier. When the teen pop",
+        "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p7 BR",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "cardNumber": 25,
@@ -276,7 +284,16 @@
       "power": "AUTOMATIC SUCCESS on performance rolls. Fails if Milli Vanilli rules apply. It's \"augmenting the live experience\".",
       "lore": null,
       "gradeReason": "Milli Vanilli reference is sharp, but lore appears cut/absent in PDF. Incomplete card.",
-      "artworkPrompt": "Style: Puppet cartoon. Subject: Ventriloquist dummy singing onstage, operator hidden in shadows. Mood: Performative deception."
+      "artworkPrompt": "Style: Puppet cartoon. Subject: Ventriloquist dummy singing onstage, operator hidden in shadows. Mood: Performative deception.",
+      "print": {
+        "cardName": "The Lip Sync",
+        "power": "AUTOMATIC SUCCESS on performance rolls. Fails if",
+        "lore": "",
+        "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p9 TL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 30,
@@ -294,7 +311,15 @@
       "power": "DEFLECT criticism. You are immune to 'Cancel Culture' cards this turn.",
       "lore": "Safe Politics. Corporate activism that costs nothing and changes nothing.",
       "gradeReason": "'Corporate activism that costs nothing and changes nothing' — G1 lore, immediately performed.",
-      "artworkPrompt": "Style: Corporate greenwash cartoon. Subject: Weasel in activism t-shirt posing before brand logo. Mood: Hollow solidarity."
+      "artworkPrompt": "Style: Corporate greenwash cartoon. Subject: Weasel in activism t-shirt posing before brand logo. Mood: Hollow solidarity.",
+      "print": {
+        "cardName": "The Virtue Signal",
+        "power": "DEFLECT criticism. You are immune immune toiCancel Culture\" cards this turn.",
+        "lore": "Safe Politics. Corporate activism that costs nothing and changes nothing.",
+        "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p9 BL",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "cardNumber": 32,
@@ -321,7 +346,15 @@
       "power": "DEMAND specific resources. If not met, cancel the gig.",
       "lore": "No brown M&Ms. It's not about the candy, it's about control.",
       "gradeReason": "'No brown M&Ms. It's not about the candy, it's about control.' — iconic, G1 from the gate.",
-      "artworkPrompt": "Style: Diva cartoon. Subject: M&M bowl being inspected for wrong color in ornate dressing room. Mood: Absurd control."
+      "artworkPrompt": "Style: Diva cartoon. Subject: M&M bowl being inspected for wrong color in ornate dressing room. Mood: Absurd control.",
+      "print": {
+        "cardName": "The Rider",
+        "power": "DEMAND specific resources If not met, cancel the gig.",
+        "lore": "No brown M&Ms. It's not about the candy,",
+        "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p10 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 35,

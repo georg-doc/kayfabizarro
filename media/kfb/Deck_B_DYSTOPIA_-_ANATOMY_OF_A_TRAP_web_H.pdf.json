@@ -95,7 +95,16 @@
       "power": null,
       "lore": null,
       "gradeReason": "No POWER/LORE text — fully visual card (elephant spraying LIES/FAKE NEWS/CHAOS). Concept clear, instruction absent.",
-      "artworkPrompt": "Style: chaotic editorial cartoon. Subject: authority elephant spraying firehose of contradictory lies at overwhelmed snail. Mood: designed disorientation."
+      "artworkPrompt": "Style: chaotic editorial cartoon. Subject: authority elephant spraying firehose of contradictory lies at overwhelmed snail. Mood: designed disorientation.",
+      "print": {
+        "cardName": "The Firehose",
+        "power": "IS FAKE NEWS SEE MORE LIES U DISTRACTION FLOOD CHAOS",
+        "lore": "",
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p4 TL",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 10,
@@ -131,7 +140,15 @@
       "power": "Install a voice whose job is to be worried on schedule with camera-ready confidence.",
       "lore": "Confident, media-friendly forecasters are often the least accurate but best choice.",
       "gradeReason": "Character sketch so specific the player inhabits it immediately: worried, scheduled, camera-ready.",
-      "artworkPrompt": "Style: ink caricature. Subject: parrot in pundit suit, perpetually alarmed, perpetually booked. Mood: performative expertise."
+      "artworkPrompt": "Style: ink caricature. Subject: parrot in pundit suit, perpetually alarmed, perpetually booked. Mood: performative expertise.",
+      "print": {
+        "cardName": "The Permanent Pundit",
+        "power": "Install a voice whose job is to be worried on schedule with camera-ready confidence.",
+        "lore": "Confident, media-friendly forecasters are often the least accurate but beat chance.",
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p5 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 14,
@@ -266,7 +283,15 @@
       "power": "When one enemy stops, issue the next; the slot matters, the face does not.",
       "lore": "Propaganda systems maintain a job opening for the enemy that is endlessly refilled.",
       "gradeReason": "The slot matters, not the face. Player is the villain-slot manager. Chilling systemic clarity.",
-      "artworkPrompt": "Style: WANTED poster parody. Subject: villain slot with question-mark face, endless refill queue behind it. Mood: institutional enemy management."
+      "artworkPrompt": "Style: WANTED poster parody. Subject: villain slot with question-mark face, endless refill queue behind it. Mood: institutional enemy management.",
+      "print": {
+        "cardName": "The Rotating Villain",
+        "power": "When one enemy tires, issue the next; the slot matters, the face does not.",
+        "lore": "Propaganda systems maintain a job opening for the enemy that is endlessly refilled.",
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p8 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 29,
@@ -437,7 +462,15 @@
       "power": "A faculty that never decides forgets how to decide.",
       "lore": "Decision follows a use-it-or-lose-it principle; switched off, the habit weakens.",
       "gradeReason": "States what happens to the will — diagnostic description rather than direct performance invitation.",
-      "artworkPrompt": "Style: anatomical satire. Subject: will-muscle shrunken from disuse, decision-pathway overgrown with weeds. Mood: voluntary atrophy."
+      "artworkPrompt": "Style: anatomical satire. Subject: will-muscle shrunken from disuse, decision-pathway overgrown with weeds. Mood: voluntary atrophy.",
+      "print": {
+        "cardName": "The Atrophied Will",
+        "power": "A faculty that never decides forgets how to decide.",
+        "lore": "Decision-making follows a use-it-or-lose-it principle; handed off, the habit weakens.",
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p13 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 48,
@@ -473,7 +506,15 @@
       "power": "Build a fear that no amount of evidence can ever resolve.",
       "lore": "A dread that survives reassuring fact was never actually about the facts.",
       "gradeReason": "Build evidence-proof fear. Player is the unfalsifiable-dread architect. Cold precision.",
-      "artworkPrompt": "Style: gothic editorial. Subject: dread surviving armored against all reassuring facts, vault of the unfalsifiable. Mood: evidence-proof anxiety."
+      "artworkPrompt": "Style: gothic editorial. Subject: dread surviving armored against all reassuring facts, vault of the unfalsifiable. Mood: evidence-proof anxiety.",
+      "print": {
+        "cardName": "The Unfalsifiable Dread",
+        "power": "Build a fear that no amount of evidence can ever calm.",
+        "lore": "A dread that survives every reassuring fact was never actually about the facts.",
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p14 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 52,
@@ -482,7 +523,15 @@
       "power": "Watch whether the story ever resolves; if it only renews, you found the mechanism.",
       "lore": "Tracking if narrative closes is a reliable way to tell reporting from retention.",
       "gradeReason": "Watch for resolution vs. renewal. Player becomes the loop-tester. Counter-intelligence role built in.",
-      "artworkPrompt": "Style: analytical illustration. Subject: ouroboros story renewing without resolving, mechanism labeled for inspection. Mood: diagnostic clarity."
+      "artworkPrompt": "Style: analytical illustration. Subject: ouroboros story renewing without resolving, mechanism labeled for inspection. Mood: diagnostic clarity.",
+      "print": {
+        "cardName": "The Loop Test",
+        "power": "Watch whether the story ever resolves; if it only renews, you found the mechanism.",
+        "lore": "Tracking if a narrative closes is the reliable way to tell reporting from retention.",
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p14 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 53,
@@ -509,7 +558,15 @@
       "power": "Notice that the smallest real action breaks the spell faster than the largest when informed.",
       "lore": "Agency is recovered through physical doing, not through being better informed.",
       "gradeReason": "'Notice' is an observational verb — invites reflection more than immediate embodied performance.",
-      "artworkPrompt": "Style: editorial illustration. Subject: tiny real action cracking vast spell, largest informed idea doing nothing. Mood: unexpected agency."
+      "artworkPrompt": "Style: editorial illustration. Subject: tiny real action cracking vast spell, largest informed idea doing nothing. Mood: unexpected agency.",
+      "print": {
+        "cardName": "The Returned Wheel",
+        "power": "Notice that the smallest real action breaks the spell faster than the largest worry.",
+        "lore": "Agency is recovered through physical doing, not through being better informed.",
+        "source": "PDF v05 Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP web H.pdf p15 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 56,

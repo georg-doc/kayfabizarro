@@ -23,7 +23,16 @@
       "power": "Both players reveal their hands. The one with the weakest card must immediately copy the strongest move.",
       "lore": "We formed an alliance with the intention of betraying each other.",
       "gradeReason": "Betrayal as a mutual contract. Both players know. Both play anyway. Genius.",
-      "artworkPrompt": "Style: ink cartoon. Subject: two frogs shaking hands over a bomb timer. Mood: doomed solidarity."
+      "artworkPrompt": "Style: ink cartoon. Subject: two frogs shaking hands over a bomb timer. Mood: doomed solidarity.",
+      "print": {
+        "cardName": "INEVITABLE MUTUAL BETRAYAL",
+        "power": "Both players reveal their hands. The one with the lowest value loses",
+        "lore": "We formed an alliance with the explicit intent of destroying each other.?",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p2 TL",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 2,
@@ -50,7 +59,16 @@
       "power": "They were only pretending to be your monster to eat your second dessert.",
       "lore": null,
       "gradeReason": "The 'second dessert' lore is delightful but the mechanic needs a table to unlock it.",
-      "artworkPrompt": "Style: ink cartoon. Subject: scheming cat in a monster costume eyeing a cake. Mood: domestic betrayal."
+      "artworkPrompt": "Style: ink cartoon. Subject: scheming cat in a monster costume eyeing a cake. Mood: domestic betrayal.",
+      "print": {
+        "cardName": "FALSE FRIEND",
+        "power": "They were only pretending to like your mixtape to get the nuclear codes.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p2 BR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 5,
@@ -59,7 +77,15 @@
       "power": "Check the bottom card of the deck. If it's a Trap, someone nearby is planning...",
       "lore": "It's not paranoia if the universe is actually out to get you.",
       "gradeReason": "Deck-check mechanic explains itself to death. The raccoon's trash-can energy is wasted on this rules text.",
-      "artworkPrompt": "Style: ink cartoon. Subject: raccoon peering over a trash can rim with binoculars, surrounded by conspiracy notes. Mood: justified anxiety."
+      "artworkPrompt": "Style: ink cartoon. Subject: raccoon peering over a trash can rim with binoculars, surrounded by conspiracy notes. Mood: justified anxiety.",
+      "print": {
+        "cardName": "PROPERLY PARANOID",
+        "power": "Check the bottom card of the deck. If it's a Trap, scream. Keep the card.",
+        "lore": "It's not paranoia if the universe is actually out to get you.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p3 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 6,
@@ -77,7 +103,16 @@
       "power": "I knew you'd turn on me, so I poisoned your snacks three weeks ago.",
       "lore": null,
       "gradeReason": "Pre-emptive poison is a great concept but the card tells you what happened, not what to become.",
-      "artworkPrompt": "Style: ink cartoon. Subject: squirrel handing acorns to another squirrel, one marked with a tiny skull. Mood: cheery premeditation."
+      "artworkPrompt": "Style: ink cartoon. Subject: squirrel handing acorns to another squirrel, one marked with a tiny skull. Mood: cheery premeditation.",
+      "print": {
+        "cardName": "BETRAYAL INSURANCE",
+        "power": "I knew you'd turn on me, so / poisoned your coffee three weeks ago.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p3 BL",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 8,
@@ -95,7 +130,16 @@
       "power": "Challenge the current leader. If you win, congratulations. If you lose, congratulations.",
       "lore": "Standard operating procedure for number twos everywhere.",
       "gradeReason": "Transformers archetype, universal office archetype, win-win framing. Every table has a Starscream.",
-      "artworkPrompt": "Style: ink cartoon. Subject: ambitious eagle in subordinate uniform plotting with a crown visible in its eyes. Mood: barely concealed ambition."
+      "artworkPrompt": "Style: ink cartoon. Subject: ambitious eagle in subordinate uniform plotting with a crown visible in its eyes. Mood: barely concealed ambition.",
+      "print": {
+        "cardName": "THE STARSCREAM",
+        "power": "Challenge the current leader. If you lose, apologize profusely and draw 1 card.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p4 TL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 10,
@@ -113,7 +157,16 @@
       "power": "Take a card from the top of the pile. Put it in your hand and announce: 'I made this.'",
       "lore": "I made this.",
       "gradeReason": "'Put it in your hand and announce: I made this.' This is improv gold. Live it.",
-      "artworkPrompt": "Style: ink cartoon. Subject: magpie presenting someone else's nest as its own to impressed birds. Mood: brazen theft with good PR."
+      "artworkPrompt": "Style: ink cartoon. Subject: magpie presenting someone else's nest as its own to impressed birds. Mood: brazen theft with good PR.",
+      "print": {
+        "cardName": "STEALING THE CREDIT",
+        "power": "Take a card someone else just played. Put it in your score pile. I made this. (",
+        "lore": "I make this).",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p4 BL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 12,
@@ -131,7 +184,15 @@
       "power": "Overthrow the player with the most points. Look at me — I am the leader now.",
       "lore": "Look at me. I am the leader now. Let's get hungry.",
       "gradeReason": "'Look at me — I am the leader now.' That's not a card. That's a personality transplant in one sentence.",
-      "artworkPrompt": "Style: ink cartoon. Subject: lion in torn suit standing on a toppled throne with a crown slightly too large. Mood: triumphant chaos."
+      "artworkPrompt": "Style: ink cartoon. Subject: lion in torn suit standing on a toppled throne with a crown slightly too large. Mood: triumphant chaos.",
+      "print": {
+        "cardName": "THE COUP",
+        "power": "Overthrow the player with the most points. Swap point totals with them.",
+        "lore": "Look at me. I am the Captain now. Until the Lemurs get hungry.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p5 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 14,
@@ -140,7 +201,16 @@
       "power": "Force another player to make a move on your behalf. Dance, little fly. The web is more robust than you think.",
       "lore": "Dance, little fly. The web is more robust than you think.",
       "gradeReason": "You literally make another player your puppet. The spider art + 'dance little fly' seals it.",
-      "artworkPrompt": "Style: ink cartoon. Subject: enormous spider controlling a tiny figure on strings above a card table. Mood: elegant villainy."
+      "artworkPrompt": "Style: ink cartoon. Subject: enormous spider controlling a tiny figure on strings above a card table. Mood: elegant villainy.",
+      "print": {
+        "cardName": "THE PUPPET MASTER",
+        "power": "Force another player to make a move of your choice. Dance, little fly. The web was never about catching you; it was about employment.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p5 TR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 15,
@@ -158,7 +228,16 @@
       "power": "This meeting could have been an email but also wouldn't get to be alone with you.",
       "lore": null,
       "gradeReason": "Office-humour punchline is fine but the betrayal angle is underdeveloped. Weakest crab in the deck.",
-      "artworkPrompt": "Style: ink cartoon. Subject: crabs in business attire around a tiny conference table, one eyeing the exit desperately. Mood: corporate ennui."
+      "artworkPrompt": "Style: ink cartoon. Subject: crabs in business attire around a tiny conference table, one eyeing the exit desperately. Mood: corporate ennui.",
+      "print": {
+        "cardName": "BOARD TO DEATH",
+        "power": "This meeting could have been an email, but then I wouldn't get to eat you.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p5 BR",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 17,
@@ -167,7 +246,15 @@
       "power": "Peek at everyone's hands. Nobody needs to know for another three rounds.",
       "lore": "I'm not digging for worms. I'm digging for dirt.",
       "gradeReason": "'I'm not digging for worms. I'm digging for dirt.' You become the mole. Instant.",
-      "artworkPrompt": "Style: ink cartoon. Subject: mole in a hard hat surrounded by stacks of stolen dossiers underground. Mood: gleeful surveillance."
+      "artworkPrompt": "Style: ink cartoon. Subject: mole in a hard hat surrounded by stacks of stolen dossiers underground. Mood: gleeful surveillance.",
+      "print": {
+        "cardName": "THE MOLE",
+        "power": "Peek at everyone's hand. Reveal one card to the group.",
+        "lore": "I'm not digging for worms. I'm digging for dirt.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p6 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 18,
@@ -176,7 +263,16 @@
       "power": "Play a card that makes someone else win. The bet is: you've already switched sides.",
       "lore": "Pick a side. And then pick a different one.",
       "gradeReason": "The 'you've already switched sides' reveal is a performance instruction. Table immediately understands.",
-      "artworkPrompt": "Style: ink cartoon. Subject: fox wearing two ties, one for each team, showing different cards to different players. Mood: cheerful duplicity."
+      "artworkPrompt": "Style: ink cartoon. Subject: fox wearing two ties, one for each team, showing different cards to different players. Mood: cheerful duplicity.",
+      "print": {
+        "cardName": "DOUBLE AGENT",
+        "power": "Play a card on someone else's turn. It counts as their move, but you choose the target.",
+        "lore": "I'm on your side. And his side. Mostly my side.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p6 TR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 19,
@@ -194,7 +290,16 @@
       "power": "Reports of my death were somewhat exaggerated — to collect the insurance money.",
       "lore": null,
       "gradeReason": "Mark Twain reference is nice but the insurance-fraud mechanic needs more performative scaffolding.",
-      "artworkPrompt": "Style: ink cartoon. Subject: skeleton in a suit presenting a forged death certificate to a stunned insurance agent. Mood: administrative fraud."
+      "artworkPrompt": "Style: ink cartoon. Subject: skeleton in a suit presenting a forged death certificate to a stunned insurance agent. Mood: administrative fraud.",
+      "print": {
+        "cardName": "DEAD PERSON IMPERSONATION",
+        "power": "Reports of my death were greatly exaggerated to collect the insurance money.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p6 BR",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 21,
@@ -203,7 +308,16 @@
       "power": "Give one of your best cards to a player with more than two kids.",
       "lore": "Thanks for the food. Goodbye, home. I'm off to ruin my new kingdom.",
       "gradeReason": "Domestic betrayal with a Shakespearean lore kicker. Works for parents in the room.",
-      "artworkPrompt": "Style: ink cartoon. Subject: young bird leaving a nest with a tiny suitcase, parent birds watching in shock. Mood: ungrateful departure."
+      "artworkPrompt": "Style: ink cartoon. Subject: young bird leaving a nest with a tiny suitcase, parent birds watching in shock. Mood: ungrateful departure.",
+      "print": {
+        "cardName": "BETRAYAL BY OFFSPRING",
+        "power": "Give one of your bad cards to a player with more points (your \"parent\").",
+        "lore": "Thanks for the food, Mom. Now get out of my room/nest/kingdom.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p7 TL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 22,
@@ -212,7 +326,16 @@
       "power": "Hand the 'I would have been a better card' to a player with fewer cards.",
       "lore": "I thought you liked this level. Now I'm going to tell you what I really think.",
       "gradeReason": "Every player who has a parent gets this. Delivery depends on the player who holds it.",
-      "artworkPrompt": "Style: ink cartoon. Subject: disappointed hamster parent holding up a report card with a red F to a cowering offspring. Mood: parental disappointment."
+      "artworkPrompt": "Style: ink cartoon. Subject: disappointed hamster parent holding up a report card with a red F to a cowering offspring. Mood: parental disappointment.",
+      "print": {
+        "cardName": "PARENTAL BETRAYAL",
+        "power": "Sacrifice a lower-value card to save a higher-value card.",
+        "lore": "I brought you into this world, and I can take you out for a snack.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p7 TR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 23,
@@ -230,7 +353,16 @@
       "power": "Force the player who betrays you first to forfeit their gifts.",
       "lore": "It's a special kind of awful.",
       "gradeReason": "GoT resonance works, mechanic is clean, but 'force them to forfeit gifts' is slightly passive.",
-      "artworkPrompt": "Style: ink cartoon. Subject: praying mantis in medieval armour raising a blade against a nearly identical praying mantis. Mood: fratricidal sorrow."
+      "artworkPrompt": "Style: ink cartoon. Subject: praying mantis in medieval armour raising a blade against a nearly identical praying mantis. Mood: fratricidal sorrow.",
+      "print": {
+        "cardName": "KINSLAYING",
+        "power": "the kind that saves on holiday gifts.",
+        "lore": "It's a special kind of evil.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p7 BR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 25,
@@ -239,7 +371,16 @@
       "power": "Surprise! I was working for the enemy. I hope your ex-boyfriend is OK.",
       "lore": null,
       "gradeReason": "Spy-romance trope is legible but the 'ex-boyfriend' kicker needs improv chops to land fully.",
-      "artworkPrompt": "Style: ink cartoon. Subject: glamorous black widow spider removing a tiny spy disguise to reveal an enemy badge. Mood: romantic espionage reveal."
+      "artworkPrompt": "Style: ink cartoon. Subject: glamorous black widow spider removing a tiny spy disguise to reveal an enemy badge. Mood: romantic espionage reveal.",
+      "print": {
+        "cardName": "LOVE-INTEREST TRAITOR",
+        "power": "Surprise! / was working for the Empire/Corporation/ ex-boyfriend all along!",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p8 TL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 26,
@@ -248,7 +389,16 @@
       "power": "It's not love. It's entrapment, predatory mating rituals and a clipboard.",
       "lore": null,
       "gradeReason": "'A clipboard' at the end saves this. The mechanics are explained but the vibe is present.",
-      "artworkPrompt": "Style: ink cartoon. Subject: deep-sea anglerfish with a glowing heart-shaped lure and a hidden clipboard. Mood: clinical seduction."
+      "artworkPrompt": "Style: ink cartoon. Subject: deep-sea anglerfish with a glowing heart-shaped lure and a hidden clipboard. Mood: clinical seduction.",
+      "print": {
+        "cardName": "THE HONEY TRAP",
+        "power": "It's not love. It's bioluminescent predatory bait. Easy mistake.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p8 TR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 27,
@@ -257,7 +407,16 @@
       "power": "I'm with you! Unless you're losing. Good luck, sir.",
       "lore": null,
       "gradeReason": "Describes the archetype cleanly but asks nothing of the player. Wave goodbye and sit down.",
-      "artworkPrompt": "Style: ink cartoon. Subject: penguin in a team scarf walking away as their team loses on a scoreboard. Mood: cheerful abandonment."
+      "artworkPrompt": "Style: ink cartoon. Subject: penguin in a team scarf walking away as their team loses on a scoreboard. Mood: cheerful abandonment.",
+      "print": {
+        "cardName": "FAIR-WEATHER FRIEND",
+        "power": "I'm with you until the end. slightly inconvenient.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p8 BL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 28,
@@ -293,7 +452,15 @@
       "power": "Adopt the customs and identity of the player to your left.",
       "lore": "I find their culture superior. Also, the offering is better here.",
       "gradeReason": "Interesting defection concept but 'adopt the customs' is vague enough to stall a table cold.",
-      "artworkPrompt": "Style: ink cartoon. Subject: pink flamingo wearing another bird species' plumage, blending awkwardly into a flock. Mood: enthusiastic assimilation."
+      "artworkPrompt": "Style: ink cartoon. Subject: pink flamingo wearing another bird species' plumage, blending awkwardly into a flock. Mood: enthusiastic assimilation.",
+      "print": {
+        "cardName": "GOING NATIVE",
+        "power": "Adopt the special ability of the player to your left.",
+        "lore": "I find their culture superior. Also, the shrimp is better here.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p9 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 32,
@@ -302,7 +469,15 @@
       "power": "Help an opponent win a challenge against your own team.",
       "lore": "I welcome our new Kayfabizarro overlords.",
       "gradeReason": "Collaboration-as-betrayal is clear. The Simpsons line seals the historical reference nicely.",
-      "artworkPrompt": "Style: ink cartoon. Subject: fat pig in a militia uniform shaking hands with the opposing general while his own army watches. Mood: collaborative treason."
+      "artworkPrompt": "Style: ink cartoon. Subject: fat pig in a militia uniform shaking hands with the opposing general while his own army watches. Mood: collaborative treason.",
+      "print": {
+        "cardName": "THE QUISLING",
+        "power": "Help an opponent win a challenge against your own team.",
+        "lore": "I welcome our new insect-eating overlords.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p9 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 33,
@@ -311,7 +486,15 @@
       "power": "Give a gift card to an opponent. When they flip it, it explodes into cards.",
       "lore": "Beware of Greeks bearing gifts. Also beware of gift-bearing giant wooden Cats.",
       "gradeReason": "Everyone knows the horse. Everyone plays the gift anyway. That's the joke. That's the game.",
-      "artworkPrompt": "Style: ink cartoon. Subject: enormous wooden cat on wheels being accepted as a gift, tiny armed mice visible through cracks. Mood: ancient grift."
+      "artworkPrompt": "Style: ink cartoon. Subject: enormous wooden cat on wheels being accepted as a gift, tiny armed mice visible through cracks. Mood: ancient grift.",
+      "print": {
+        "cardName": "TROJAN HORSE",
+        "power": "Give a gift card to an opponent. When they flip it, they lose 3 cards.",
+        "lore": "Beware of Greeks bearing gifts. Also beware of Mice bearing giant wooden Cats.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p10 TL",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "cardNumber": 34,
@@ -320,7 +503,15 @@
       "power": "Play a high-value card face down. If someone steals it, they win. Or do they?",
       "lore": "It looked delicious. It tasted like a snapped spine.",
       "gradeReason": "'Or do they?' is doing heavy lifting. The mousetrap mechanic lands but needs theatrical delivery.",
-      "artworkPrompt": "Style: ink cartoon. Subject: enormous mousetrap baited with a glowing trophy card, small paw reaching toward it. Mood: irresistible danger."
+      "artworkPrompt": "Style: ink cartoon. Subject: enormous mousetrap baited with a glowing trophy card, small paw reaching toward it. Mood: irresistible danger.",
+      "print": {
+        "cardName": "LURED INTO A TRAP",
+        "power": "Play a high-value card face down. If someone attacks it, they are eliminated.",
+        "lore": "It looked delicious. It tasted like a snapped spine.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p10 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 35,
@@ -329,7 +520,15 @@
       "power": "Claim an accusation. The accuser must apologize and discard a card.",
       "lore": "Who, me? I'm just a lil' guy. You wouldn't hit a...",
       "gradeReason": "'I'm just a lil' guy' is a perfect meme anchor. Mechanic is punishing and fun.",
-      "artworkPrompt": "Style: ink cartoon. Subject: enormous guilty-faced dog doing puppy eyes while surrounded by chewed furniture. Mood: weaponised innocence."
+      "artworkPrompt": "Style: ink cartoon. Subject: enormous guilty-faced dog doing puppy eyes while surrounded by chewed furniture. Mood: weaponised innocence.",
+      "print": {
+        "cardName": "FALSE INNOCENCE TRICK",
+        "power": "Negate an accusation. The accuser must apologize and discard a card.",
+        "lore": "Who, me? I'm just a lil' guy. You wouldn't hit a '.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p10 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 36,
@@ -338,7 +537,16 @@
       "power": "Call everyone to assemble to your right. The lowest roll is eliminated.",
       "lore": "The Red Wedding was more fun until the catering was expunged.",
       "gradeReason": "Red Wedding reference will make half the table gasp. Elimination mechanic adds genuine table dread.",
-      "artworkPrompt": "Style: ink cartoon. Subject: ravens at a wedding banquet suddenly revealing weapons under their formal wear. Mood: festive massacre."
+      "artworkPrompt": "Style: ink cartoon. Subject: ravens at a wedding banquet suddenly revealing weapons under their formal wear. Mood: festive massacre.",
+      "print": {
+        "cardName": "NASTY PARTY",
+        "power": "Invite all players to roll a die. lowest roll is executed.",
+        "lore": "The Red Wedding was bit much, but the catering was exquisite.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p10 BR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 37,
@@ -347,7 +555,15 @@
       "power": "Select an opponent. Both choose 'Snitch' or 'Silent' simultaneously. Snitch + Silent = Snitch wins. Both Snitch = Both lose.",
       "lore": "If I talk, we all die. If we both talk, we cook.",
       "gradeReason": "Game theory as a live performance. The simultaneous choice moment is the best 10 seconds in this deck.",
-      "artworkPrompt": "Style: ink cartoon. Subject: two skunks in police interview rooms choosing cards simultaneously through a glass wall. Mood: agonising game theory."
+      "artworkPrompt": "Style: ink cartoon. Subject: two skunks in police interview rooms choosing cards simultaneously through a glass wall. Mood: agonising game theory.",
+      "print": {
+        "cardName": "PRISONER'S DILEMMA",
+        "power": "Select an opponent. Both choose \"Snitch\" or \"Silent.\" Snitch/Silent Snitch wins. Both Snitch Both lose.",
+        "lore": "If I talk, I walk. If we both talk, we cook.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p11 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 38,
@@ -356,7 +572,16 @@
       "power": "Appear to lose. Immediately, you win your biggest lost card back.",
       "lore": "White flag? No, that's my tablecloth. I'm going to wipe the floor with you.",
       "gradeReason": "Fake surrender is peak kayfabe. 'That's my tablecloth' is the FrizzleBob line of the deck.",
-      "artworkPrompt": "Style: ink cartoon. Subject: bear waving a white cloth while winking, cards hidden behind its back, winner's grin visible. Mood: strategic humility."
+      "artworkPrompt": "Style: ink cartoon. Subject: bear waving a white cloth while winking, cards hidden behind its back, winner's grin visible. Mood: strategic humility.",
+      "print": {
+        "cardName": "I SURRENDER, SUCKERS!",
+        "power": "Cancel combat. Then, Immediately attack for double damage.",
+        "lore": "White flag? No, that's just a napkin I'm using to wipe the floor with you.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p11 TR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 39,
@@ -365,7 +590,16 @@
       "power": "Standoff situation. No one can make a move until someone acts first. Let's stand here and die of stress.",
       "lore": null,
       "gradeReason": "Mexican standoff energy is great but the 'die of stress' resolution is anticlimactic.",
-      "artworkPrompt": "Style: ink cartoon. Subject: three meerkats in standoff positions each holding a tiny pistol, all sweating profusely. Mood: escalating mutual dread."
+      "artworkPrompt": "Style: ink cartoon. Subject: three meerkats in standoff positions each holding a tiny pistol, all sweating profusely. Mood: escalating mutual dread.",
+      "print": {
+        "cardName": "RASH EQUILIBRIUM",
+        "power": "No one can attack anyone until your next turn. If I move, you shoot. If you shoot, he shoots. Let's just stand here and die of thirst.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p11 BL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 40,
@@ -374,7 +608,15 @@
       "power": "Sacrifice your best card to a rival to win the game on three previous turns.",
       "lore": "I lost the battle to win the war. And the parking spot.",
       "gradeReason": "Sacrifice-to-win is pure chess drama. 'And the parking spot' grounds the cosmic in the mundane perfectly.",
-      "artworkPrompt": "Style: ink cartoon. Subject: owl in chess master pose pushing a queen piece toward an opponent with a knowing smile. Mood: calculated sacrifice."
+      "artworkPrompt": "Style: ink cartoon. Subject: owl in chess master pose pushing a queen piece toward an opponent with a knowing smile. Mood: calculated sacrifice.",
+      "print": {
+        "cardName": "THE GAMBIT",
+        "power": "Sacrifice your best card to automatically win the game in turns (unless you die first).",
+        "lore": "I lost the battle to win the war. And the parking",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p11 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 41,
@@ -392,7 +634,15 @@
       "power": "Offer a card to a player. If they accept, they lose a turn.",
       "lore": "A toast! To your health... or lack thereof.",
       "gradeReason": "Classic poisoned gift mechanic. The toast lore is perfect. Needs a player willing to ham the offer.",
-      "artworkPrompt": "Style: ink cartoon. Subject: elegant cobra in formal wear raising a jewelled goblet with a small skull floating inside. Mood: aristocratic menace."
+      "artworkPrompt": "Style: ink cartoon. Subject: elegant cobra in formal wear raising a jewelled goblet with a small skull floating inside. Mood: aristocratic menace.",
+      "print": {
+        "cardName": "POISONED CHALICE",
+        "power": "Offer a card to a player. If they accept, they die.",
+        "lore": "A toast! To your health... or lack thereof.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p12 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 43,
@@ -401,7 +651,15 @@
       "power": "Secretly cross fingers and cancel a deal you made earlier.",
       "lore": "It doesn't count if my fingers were crossed. International law.",
       "gradeReason": "The 'international law' kicker is funny but the mechanic is retroactive and hard to police at a real table.",
-      "artworkPrompt": "Style: ink cartoon. Subject: grinning monkey sealing a handshake with one hand, other hand behind back with crossed fingers. Mood: legalistic deception."
+      "artworkPrompt": "Style: ink cartoon. Subject: grinning monkey sealing a handshake with one hand, other hand behind back with crossed fingers. Mood: legalistic deception.",
+      "print": {
+        "cardName": "LYING FINGER CROSS",
+        "power": "Retroactively cancel a deal you made last turn.",
+        "lore": "It doesn't count if my digits were intertwined. International law.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p12 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 44,
@@ -410,7 +668,16 @@
       "power": "Communicate secretly. Swap cards under the table.",
       "lore": "How humble, who uses pay-phones anymore, already gone.",
       "gradeReason": "Under-table swap needs physical coordination. The pigeon lore is cute but the action stalls the game.",
-      "artworkPrompt": "Style: ink cartoon. Subject: carrier pigeon in a trench coat handing a card under a table to a surprised player. Mood: analogue espionage."
+      "artworkPrompt": "Style: ink cartoon. Subject: carrier pigeon in a trench coat handing a card under a table to a surprised player. Mood: analogue espionage.",
+      "print": {
+        "cardName": "BURNER PHONE",
+        "power": "Contact player secretly. Swap cards under the table.",
+        "lore": "New number, who dis? Don't answer, I'm already gone.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p12 BR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 45,
@@ -419,7 +686,15 @@
       "power": "Transfer all damage you take this turn to another player.",
       "lore": "It wasn't me! It was the goat! (Also it was me.)",
       "gradeReason": "Parenthetical confession saves this. The mechanic is clean and the goat-with-target art seals it.",
-      "artworkPrompt": "Style: ink cartoon. Subject: goat with a bullseye target painted on it being pointed at by everyone at the table. Mood: designated blame recipient."
+      "artworkPrompt": "Style: ink cartoon. Subject: goat with a bullseye target painted on it being pointed at by everyone at the table. Mood: designated blame recipient.",
+      "print": {
+        "cardName": "THE SCAPEGOAT",
+        "power": "Transfer all damage you take this turn to another player.",
+        "lore": "It wasn't me! It was the guy with the horns! (Wait, I have horns).",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p13 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 46,
@@ -428,7 +703,15 @@
       "power": "Block an attack by discarding a weaker card.",
       "lore": "Their bravery is matched only by their expendability.",
       "gradeReason": "Pure defensive mechanic with commentary. No invitation to perform. The hamsters die anonymously.",
-      "artworkPrompt": "Style: ink cartoon. Subject: line of nervous hamsters in tiny armour marching toward a cannon blast. Mood: cheerful expendability."
+      "artworkPrompt": "Style: ink cartoon. Subject: line of nervous hamsters in tiny armour marching toward a cannon blast. Mood: cheerful expendability.",
+      "print": {
+        "cardName": "CANNON FODDER",
+        "power": "Block an attack by discarding a 'Minion' card.",
+        "lore": "Their bravery is matched only by their expendability.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p13 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 47,
@@ -437,7 +720,15 @@
       "power": "When a player hands you a card you don't like, discard a card from their hand.",
       "lore": "Bad news is a capital offense.",
       "gradeReason": "Punishing-the-bearer energy is satisfying. Works better with theatrical delivery of the discard.",
-      "artworkPrompt": "Style: ink cartoon. Subject: bat messenger in a postal hat being glared at by a furious recipient holding a bill. Mood: bureaucratic violence."
+      "artworkPrompt": "Style: ink cartoon. Subject: bat messenger in a postal hat being glared at by a furious recipient holding a bill. Mood: bureaucratic violence.",
+      "print": {
+        "cardName": "SHOOT THE MESSENGER",
+        "power": "If someone plays a card you don't like, discard a card from their hand.",
+        "lore": "Bad news is a capital offense.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p13 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 48,
@@ -446,7 +737,15 @@
       "power": "Eliminate your own ally's strongest card.",
       "lore": "The job is done. And so are you.",
       "gradeReason": "Glue bottle on the horse is the best visual gag in the deck. Mechanic is cold-blooded and clean.",
-      "artworkPrompt": "Style: ink cartoon. Subject: horse in an office doorway being handed a glue bottle and a 'Thanks for your service' card. Mood: corporate termination."
+      "artworkPrompt": "Style: ink cartoon. Subject: horse in an office doorway being handed a glue bottle and a 'Thanks for your service' card. Mood: corporate termination.",
+      "print": {
+        "cardName": "YOU HAVE OUTLIVED YOUR USEFULNESS",
+        "power": "Eliminate your own ally to gain their strength stats.",
+        "lore": "The job is done. And so are you.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p13 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 49,
@@ -455,7 +754,15 @@
       "power": "Join a team. Betray them immediately for bonus points.",
       "lore": "So. Go Power Rangers. I will win since the opening credits.",
       "gradeReason": "Sentai-trope reference lands for a specific crowd. The 'since the opening credits' line is sharp.",
-      "artworkPrompt": "Style: ink cartoon. Subject: chameleon in a sixth ranger suit already showing the villain badge underneath. Mood: inevitably treacherous heroism."
+      "artworkPrompt": "Style: ink cartoon. Subject: chameleon in a sixth ranger suit already showing the villain badge underneath. Mood: inevitably treacherous heroism.",
+      "print": {
+        "cardName": "SIXTH RANGER TRAITOR",
+        "power": "Join a team. Betray them immediately for bonus points.",
+        "lore": "Go Go Power Traitors! I was evil since the opening credits!",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p14 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 50,
@@ -464,7 +771,15 @@
       "power": "Reveal your hidden allegiance. Discard your hand and draw 5 new cards.",
       "lore": "I wasn't shy. I was consuming my rage.",
       "gradeReason": "Big reveal mechanic is performatively solid. 'Consuming my rage' line is strong character voice.",
-      "artworkPrompt": "Style: ink cartoon. Subject: moth removing a butterfly disguise, dark wings spreading wide, surrounded by shocked admirers. Mood: spectacular villainy."
+      "artworkPrompt": "Style: ink cartoon. Subject: moth removing a butterfly disguise, dark wings spreading wide, surrounded by shocked admirers. Mood: spectacular villainy.",
+      "print": {
+        "cardName": "EVIL ALL ALONG",
+        "power": "Reveal your true form. Discard your hand and draw 5 new cards.",
+        "lore": "I wasn't shy. I was cocooning my rage.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p14 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 51,
@@ -473,7 +788,15 @@
       "power": "Become 'Sleeper' agent. Take control of another player's next turn.",
       "lore": "When you hear the Drumline, be the Prime Minister.",
       "gradeReason": "Sleeper activation + controlling another player's turn is cinema at a card table. Every player wants this.",
-      "artworkPrompt": "Style: ink cartoon. Subject: hypnotised rooster in a suit rising from a chair as another player snaps their fingers. Mood: remote-controlled destiny."
+      "artworkPrompt": "Style: ink cartoon. Subject: hypnotised rooster in a suit rising from a chair as another player snaps their fingers. Mood: remote-controlled destiny.",
+      "print": {
+        "cardName": "MANCHURIAN CANDIDATE",
+        "power": "Activate a 'Sleeper' agent. Take control of another player's next turn.",
+        "lore": "When you hear the word 'Omelette', kill the Prime Minister.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p14 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 52,
@@ -482,7 +805,15 @@
       "power": "When an opponent offers you any card, you must accept it.",
       "lore": "I have morals. But I also really like cards.",
       "gradeReason": "Forced acceptance as a character flaw is clever. 'I also really like cards' is self-aware and funny.",
-      "artworkPrompt": "Style: ink cartoon. Subject: principled-looking pig reaching for a glowing card being dangled by an opponent. Mood: principled corruption."
+      "artworkPrompt": "Style: ink cartoon. Subject: principled-looking pig reaching for a glowing card being dangled by an opponent. Mood: principled corruption.",
+      "print": {
+        "cardName": "THE CORRUPTIBLE",
+        "power": "If an opponent offers you a card, you must their team.",
+        "lore": "I have morals. But I also really like mud.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p14 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 53,
@@ -500,7 +831,15 @@
       "power": "Target a player who wronged you 6 turns ago. Eliminate their strongest card.",
       "lore": "Elephants never forget. And never forgive.",
       "gradeReason": "Six-turn memory requirement is a beautiful mechanic but relies on someone actually tracking the grudge.",
-      "artworkPrompt": "Style: ink cartoon. Subject: elderly elephant with a tiny notebook pointing across a table at a nervous mouse. Mood: slow inevitable reckoning."
+      "artworkPrompt": "Style: ink cartoon. Subject: elderly elephant with a tiny notebook pointing across a table at a nervous mouse. Mood: slow inevitable reckoning.",
+      "print": {
+        "cardName": "THE VENDETTA",
+        "power": "Target a player who hurt you 5 turns ago. Eliminate them.",
+        "lore": "Elephants never forget. And we never forgive.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p15 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 55,
@@ -509,7 +848,15 @@
       "power": "When someone betrays you, immediately steal the card they used to do it.",
       "lore": "We knew it was coming. We waited until after dessert.",
       "gradeReason": "Firefly reference + reactive theft + 'after dessert' dignity = the deck's funniest card. G1 for the line alone.",
-      "artworkPrompt": "Style: ink cartoon. Subject: dinosaur toys reenacting a heist, tiny T-Rex clearly telegraphing betrayal to a resigned stegosaurus. Mood: fondly anticipated catastrophe."
+      "artworkPrompt": "Style: ink cartoon. Subject: dinosaur toys reenacting a heist, tiny T-Rex clearly telegraphing betrayal to a resigned stegosaurus. Mood: fondly anticipated catastrophe.",
+      "print": {
+        "cardName": "CURSE YOUR SUDDEN BUT INEVITABLE BETRAYAL!",
+        "power": "Play When someone betrays you. Shout the card title. Steal their shoes.",
+        "lore": "We knew it was coming. We just hoped it would wait until after dessert.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p15 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 56,
@@ -518,7 +865,15 @@
       "power": "Sacrifice yourself to save another player. Redemption arc!",
       "lore": "I won. But at what cost? ...Fair enough. It was everyone else.",
       "gradeReason": "Redemption arc is the right deck closer. 'Fair enough. It was everyone else.' is perfect FrizzleBob.",
-      "artworkPrompt": "Style: ink cartoon. Subject: donkey pushing another animal out of harm's way, looking satisfied and also somewhat destroyed. Mood: triumphant self-destruction."
+      "artworkPrompt": "Style: ink cartoon. Subject: donkey pushing another animal out of harm's way, looking satisfied and also somewhat destroyed. Mood: triumphant self-destruction.",
+      "print": {
+        "cardName": "REGRETFUL TRAITOR",
+        "power": "Sacrifice yourself to save another player. (Redemption arc).",
+        "lore": "I won. But at what cost? right, the cost was everyone else.",
+        "source": "PDF v05 Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL - ADD web.pdf p15 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     }
   ],
   "cardCount": 56,

@@ -77,7 +77,15 @@
       "power": "Executive Order: Change the turn order. It's good to be the King.",
       "lore": "Travels the sky in a yacht. Has a lion to eat humanity because they stopped clapping.",
       "gradeReason": "CEO who restructures turn order at will — corporate autocrat archetype, instantly embodied.",
-      "artworkPrompt": "Style: Corporate mythology satire. Subject: Sun god in suit on yacht, lion bodyguard behind him. Mood: Regal entitlement."
+      "artworkPrompt": "Style: Corporate mythology satire. Subject: Sun god in suit on yacht, lion bodyguard behind him. Mood: Regal entitlement.",
+      "print": {
+        "cardName": "RA (THE CEO)",
+        "power": "Change the turn order. It's good to be the King.",
+        "lore": "Travels the sky in a yacht. Sent a lion to eat humanity because they stopped clapping.",
+        "source": "PDF v05 Pharaoh_Piledriver - ADD web ID.pdf p3 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 8,
@@ -86,7 +94,15 @@
       "power": "Resurrection Roll: Retrieve one card from your discard pile.",
       "lore": "Moves the sun by treating it like a ball of poop.",
       "gradeReason": "Resurrection mechanic is clear; sun-dung cosmology makes this memorable.",
-      "artworkPrompt": "Style: Mythological absurdism. Subject: Beetle wrestler rolling a glowing sun like dung. Mood: Determined dignity."
+      "artworkPrompt": "Style: Mythological absurdism. Subject: Beetle wrestler rolling a glowing sun like dung. Mood: Determined dignity.",
+      "print": {
+        "cardName": "KHEPRI (THE PUSHER)",
+        "power": "Resurrection Roll: Retrieve one card from the discard pile.",
+        "lore": "Moves the sun by treating it like a ball of poop. It's living.",
+        "source": "PDF v05 Pharaoh_Piledriver - ADD web ID.pdf p3 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 9,
@@ -419,7 +435,16 @@
       "power": null,
       "lore": "The Underworld. Dangerous, full of snakes, and you have to pass 12 gates to leave.",
       "gradeReason": "\"Backstage Area\" for the underworld is brilliant — graveyard-attacks mechanic needs rules context.",
-      "artworkPrompt": "Style: Underworld wrestling venue. Subject: Dark tunnel with 12 gates, dead cards warming up backstage. Mood: Ominous preparation."
+      "artworkPrompt": "Style: Underworld wrestling venue. Subject: Dark tunnel with 12 gates, dead cards warming up backstage. Mood: Ominous preparation.",
+      "print": {
+        "cardName": "THE DUAT (BACKSTAGE AREA)",
+        "power": "The Underworld. Dangerous, full of snakes, and you have to pass 12 gates to leave. Daughter Graveyard cards can attack from here.",
+        "lore": "",
+        "source": "PDF v05 Pharaoh_Piledriver - ADD web ID.pdf p13 TL",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 46,
@@ -437,7 +462,16 @@
       "power": null,
       "lore": "City of the Sun. Where the Ennead holds their board meetings.",
       "gradeReason": "\"Board meetings\" for the divine council is strong; solar-gods-only bonus is a standard buff location.",
-      "artworkPrompt": "Style: Corporate sun city. Subject: Obelisk-ringed city with solar gods in boardroom suits. Mood: Divine bureaucracy."
+      "artworkPrompt": "Style: Corporate sun city. Subject: Obelisk-ringed city with solar gods in boardroom suits. Mood: Divine bureaucracy.",
+      "print": {
+        "cardName": null,
+        "power": "City of the Sun. Where the Ennead holds their board meetings. Daughter Solar gods get +.",
+        "lore": "",
+        "source": "PDF v05 Pharaoh_Piledriver - ADD web ID.pdf p13 BL",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 48,
@@ -446,7 +480,16 @@
       "power": null,
       "lore": "The first solid ground. Everything starts here. King of the Hill rules apply.",
       "gradeReason": "\"King of the Hill rules apply\" — every player knows this. First ground = home advantage, instantly understood.",
-      "artworkPrompt": "Style: Creation mythology wrestling. Subject: First island rising from chaos waters with title belt on the peak. Mood: Ancient origin energy."
+      "artworkPrompt": "Style: Creation mythology wrestling. Subject: First island rising from chaos waters with title belt on the peak. Mood: Ancient origin energy.",
+      "print": {
+        "cardName": "THE PRIMEVAL MOUND (THE RING MAT)",
+        "power": "The first solid ground. Everything starts here. King of the Hill rules apply. Daughter First card played gets \"High Ground\" advantage.",
+        "lore": "",
+        "source": "PDF v05 Pharaoh_Piledriver - ADD web ID.pdf p13 BR",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 49,
@@ -455,7 +498,16 @@
       "power": null,
       "lore": "Set ate salad with Horus's... dressing. A gold disk appeared on his head. Awkward.",
       "gradeReason": "\"Public Humiliation: opponent loses all Cool points\" — the actual myth does the work, no rules needed.",
-      "artworkPrompt": "Style: Mythological cringe comedy. Subject: Set at salad bar with golden disk materializing on head. Mood: Cosmic embarrassment."
+      "artworkPrompt": "Style: Mythological cringe comedy. Subject: Set at salad bar with golden disk materializing on head. Mood: Cosmic embarrassment.",
+      "print": {
+        "cardName": "THE LETTUCE INCIDENT",
+        "power": "Set ate salad with Horus's... dressing. A gold disk appeared on his head. Awkw Daughter Public Humiliation: Opponent loses all \"Cool\" points.",
+        "lore": "",
+        "source": "PDF v05 Pharaoh_Piledriver - ADD web ID.pdf p14 TL",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 50,
@@ -464,7 +516,16 @@
       "power": null,
       "lore": "She thought it was blood. It was dyed beer. The original hangover.",
       "gradeReason": "\"The original hangover\" — Sekhmet gets drunk on fake blood, removes strongest attacker. Myth IS the rule.",
-      "artworkPrompt": "Style: Mythological bar prank. Subject: Lioness goddess passed out in red beer field, strongest fighter card slumping. Mood: Divine overcorrection."
+      "artworkPrompt": "Style: Mythological bar prank. Subject: Lioness goddess passed out in red beer field, strongest fighter card slumping. Mood: Divine overcorrection.",
+      "print": {
+        "cardName": "THE RED BEER TRICK",
+        "power": "She thought it was blood. It was dyed beer. The original hangover. Daughter Forced Sleep: Remove the strongest attacker from play.",
+        "lore": "",
+        "source": "PDF v05 Pharaoh_Piledriver - ADD web ID.pdf p14 TR",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 51,
@@ -473,7 +534,16 @@
       "power": null,
       "lore": "Isis found 13 pieces of Osiris. The fish ate the 14th. Had to make a gold replacement.",
       "gradeReason": "The censored fish visual is the best single gag in the deck; prosthetic +5 mechanic is standard.",
-      "artworkPrompt": "Style: Mythological reconstruction. Subject: Isis with 13 pieces, golden prosthetic glowing, CENSORED fish card nearby. Mood: Pragmatic mythology."
+      "artworkPrompt": "Style: Mythological reconstruction. Subject: Isis with 13 pieces, golden prosthetic glowing, CENSORED fish card nearby. Mood: Pragmatic mythology.",
+      "print": {
+        "cardName": "THE MISSING PIECE",
+        "power": "Isis found 13 pieces of Osiris. The fish ate the 14th. Had to make a gold replacement. Daughter Prosthetic Replace lost limb with gold (+ )",
+        "lore": "",
+        "source": "PDF v05 Pharaoh_Piledriver - ADD web ID.pdf p14 BL",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 52,
@@ -482,7 +552,16 @@
       "power": null,
       "lore": "Nut couldn't give birth in the 360 day year. Thoth won 5 extra days gambling. Loophole!",
       "gradeReason": "\"Loophole!\" is a perfect closing word; extra turn mechanic is standard but mythologically earned.",
-      "artworkPrompt": "Style: Calendar mythology. Subject: Thoth at gambling table winning days from calendar god. Mood: Triumphant technicality."
+      "artworkPrompt": "Style: Calendar mythology. Subject: Thoth at gambling table winning days from calendar god. Mood: Triumphant technicality.",
+      "print": {
+        "cardName": "THE EXTRA 5 DAYS",
+        "power": "Nut couldn't give birth in the 360 day year. Thoth won 5 extra days gambling. Daughter Loophole! Overtime: Take an extra turn.",
+        "lore": "",
+        "source": "PDF v05 Pharaoh_Piledriver - ADD web ID.pdf p14 BR",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     }
   ],
   "cardCount": 52,

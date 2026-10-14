@@ -22,7 +22,15 @@
       "power": "Limit your opponent to playing one single melodic line card per turn.",
       "lore": "From 400 AD to the 14th century, surviving religious music was entirely monophonic vocal chant. Common-practice tonality didn't exist yet.",
       "gradeReason": "Location card with clear function, but player controls not embodies; needs setup.",
-      "artworkPrompt": "Style: Ink-wash Gothic. Subject: Stern monks in medieval scriptorium enforcing one-note singing. Mood: Austere silence."
+      "artworkPrompt": "Style: Ink-wash Gothic. Subject: Stern monks in medieval scriptorium enforcing one-note singing. Mood: Austere silence.",
+      "print": {
+        "cardName": "The Monophonic Monastery",
+        "power": "Limit your opponent to playing one single melodic line card per turn",
+        "lore": "From AD 900 to the 14th century, surviving religious music was entirely monophonic vocal chant. Common-practice tonality didn't exist yet.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p2 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 2,
@@ -58,7 +66,15 @@
       "power": "Pluck your opponent's nerves; this weapon's terraced dynamics cannot be silenced once deployed.",
       "lore": "The stereotypical keyboard instrument of the Baroque era, weaponized by the elite before the piano replaced it.",
       "gradeReason": "Foreign object card with clear function, but the pluck-nerves metaphor needs unpacking at table.",
-      "artworkPrompt": "Style: Baroque still-life grotesque. Subject: Grumpy badger wielding a harpsichord as a weapon mid-match. Mood: Tinny aggression."
+      "artworkPrompt": "Style: Baroque still-life grotesque. Subject: Grumpy badger wielding a harpsichord as a weapon mid-match. Mood: Tinny aggression.",
+      "print": {
+        "cardName": "The Harpsichord",
+        "power": "Pluck your opponent's nerves; this weapon's terraced dynamics cannot be silenced once played.",
+        "lore": "The stereotypical keyboard instrument of the Baroque era, weaponized by the elite before the piano replaced it.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p3 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 6,
@@ -67,7 +83,15 @@
       "power": "Force your opponent to repeat their opening move at the exact end of the match.",
       "lore": "The Classical era developed this dominant structure: create a theme, develop it in the middle, and lazily restate it at the end.",
       "gradeReason": "Structural/mechanical card that explains more than invites; abstract music theory concept.",
-      "artworkPrompt": "Style: Technical diagram parody. Subject: Confused owl drawing ABA diagram in a wrestling ring. Mood: Pedantic bureaucracy."
+      "artworkPrompt": "Style: Technical diagram parody. Subject: Confused owl drawing ABA diagram in a wrestling ring. Mood: Pedantic bureaucracy.",
+      "print": {
+        "cardName": "Sonata Form",
+        "power": "Force your opponent to repeat their opening move at the exact end of the match.",
+        "lore": "Joseph Haydn developed this dominant structure: state a theme, develop it in the middle, and lazily restate it at the end.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p3 TR",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "cardNumber": 7,
@@ -85,7 +109,15 @@
       "power": "Nullify all weird time signature cards; forcefully reset the match rhythm to an insufferably simple 4/4.",
       "lore": "Codified in the Baroque era; Classical and Romantic composers used it almost nothing else, ensuring maximum predictable drudgery.",
       "gradeReason": "Meta-mechanical rule nullifier; requires time signature knowledge to appreciate the insult.",
-      "artworkPrompt": "Style: Bureaucratic memo aesthetic. Subject: Bulldog referee stamping 4/4 on chaotic scoresheet. Mood: Oppressively predictable."
+      "artworkPrompt": "Style: Bureaucratic memo aesthetic. Subject: Bulldog referee stamping 4/4 on chaotic scoresheet. Mood: Oppressively predictable.",
+      "print": {
+        "cardName": "Common Time",
+        "power": "Nullify all weird time signature cards; forcefully reset the match rhythm to an inescapable 4/4.",
+        "lore": "Codified in the Baroque era; Classical and Romantic composers used almost nothing else, ensuring maximum predictable drudgery.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p3 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 9,
@@ -175,7 +207,15 @@
       "power": "Drop a heavenly vocal harmony from the rafters to completely distract the opponent.",
       "lore": "A massive grouping of vocalists utilized to elevate the perceived divine importance and emotional weight of a piece.",
       "gradeReason": "Interference-from-rafters is clear; divine distraction needs a group to sell the full joke.",
-      "artworkPrompt": "Style: Baroque ceiling fresco parody. Subject: Angelic doves descending from rafters while opponent stares dumbstruck. Mood: Overwhelmingly divine interference."
+      "artworkPrompt": "Style: Baroque ceiling fresco parody. Subject: Angelic doves descending from rafters while opponent stares dumbstruck. Mood: Overwhelmingly divine interference.",
+      "print": {
+        "cardName": "Ethereal Choir",
+        "power": "Drop a heavenly vocal harmony from the rafters to completely distract the.",
+        "lore": "A massive gathering of vocalists utilized to elevate the perceived divine importance and emotional weight of a piece.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p6 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 19,
@@ -229,7 +269,15 @@
       "power": "Steal an opponent's signature move and successfully claim you invented it.",
       "lore": "The most famous piece in D minor — which modern musicologists now believe Bach didn't actually compose at all.",
       "gradeReason": "Stolen finisher with historical irony is rich; needs the musicology backstory to hit full comedic force.",
-      "artworkPrompt": "Style: Court drama illustration. Subject: Raccoon performing stolen finisher while pointing at patent certificate. Mood: Confident intellectual theft."
+      "artworkPrompt": "Style: Court drama illustration. Subject: Raccoon performing stolen finisher while pointing at patent certificate. Mood: Confident intellectual theft.",
+      "print": {
+        "cardName": "Toccata and Fugue",
+        "power": "(Stolen Finisher) Steal an opponent's signature move and successfully claim you invented it.",
+        "lore": "The most famous piece in D minor-which many modern musicologists now believe Bach didn't actually compose at all.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p7 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 25,
@@ -238,7 +286,15 @@
       "power": "Humiliate your opponent by perfectly countering their finishing move without looking.",
       "lore": "The defining genius of the Classical Era, pushing homophony and independent secular music to an absolute peak.",
       "gradeReason": "Counter their finisher without looking — child prodigy condescension, immediately performable.",
-      "artworkPrompt": "Style: Wunderkind portrait action scene. Subject: Tiny young fox in powdered wig yawning while effortlessly reversing opponent's finisher. Mood: Effortless genius contempt."
+      "artworkPrompt": "Style: Wunderkind portrait action scene. Subject: Tiny young fox in powdered wig yawning while effortlessly reversing opponent's finisher. Mood: Effortless genius contempt.",
+      "print": {
+        "cardName": "Wolfgang Amadeus Mozart",
+        "power": "Humiliate your opponent by perfectly countering their finishing meve without looking.",
+        "lore": "The defining genius of the Classical Era, pushing homophony and independent secular Prodigies, Brawlers,",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p8 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 26,
@@ -247,7 +303,15 @@
       "power": "Ignore opponent's trash talk entirely; attack with pure, unblockable Romantic fury.",
       "lore": "The pioneer of the Romantic era; his later works, like the Fifth Symphony, forever shattered classical constraints.",
       "gradeReason": "Deaf brawler ignoring trash talk and swinging pure fury — immediately embodied, zero setup.",
-      "artworkPrompt": "Style: Romantic era dramatic painting. Subject: Disheveled deaf bear charging through opponent's screaming trash talk like it's silence. Mood: Unhinged unstoppable fury."
+      "artworkPrompt": "Style: Romantic era dramatic painting. Subject: Disheveled deaf bear charging through opponent's screaming trash talk like it's silence. Mood: Unhinged unstoppable fury.",
+      "print": {
+        "cardName": "Ludwig van Beethoven",
+        "power": "Ignore opponent's trash talk entirely; attack with pure, unblockable Romantic fury.",
+        "lore": "The pioneer ef the Romantic era; his later works, like the Fifth Symphony,",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p8 TR",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "cardNumber": 27,
@@ -274,7 +338,15 @@
       "power": "Extend the match to 15 hours; your opponent quits out of sheer exhaustion.",
       "lore": "Set the standard for epic film music today; he pioneered the Leitmotif to permanently brand his mythological characters into your brain.",
       "gradeReason": "15-hour match until opponent quits — epic megalomaniac energy, immediately hilarious and playable.",
-      "artworkPrompt": "Style: Norse mythology epic poster. Subject: Viking wolf conductor insisting match must continue as opponent collapses from exhaustion. Mood: Magnificent unstoppable ego."
+      "artworkPrompt": "Style: Norse mythology epic poster. Subject: Viking wolf conductor insisting match must continue as opponent collapses from exhaustion. Mood: Magnificent unstoppable ego.",
+      "print": {
+        "cardName": "Richard Wagner",
+        "power": "( Epic Megalomaniac) Extend the match to 15 hours; your opponent quits out of sheer exhaustion.",
+        "lore": "Set the standard for epic film music today; pioneered the Leitmotif to permanently brand his operatic characters into your brain.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p9 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 30,
@@ -283,7 +355,15 @@
       "power": "Fire actual live artillery into the ring; obliterating area-of-effect damage.",
       "lore": "A programmatic Romantic composer who legitimately thought classical music should feature literal cannons in chromatic concert halls.",
       "gradeReason": "Firing actual cannons into the ring — peak absurdist power, embodied instantly with maximum joy.",
-      "artworkPrompt": "Style: 19th-century military pageant. Subject: Euphoric bear conducting cannon fire directly into wrestling ring. Mood: Gloriously excessive destruction."
+      "artworkPrompt": "Style: 19th-century military pageant. Subject: Euphoric bear conducting cannon fire directly into wrestling ring. Mood: Gloriously excessive destruction.",
+      "print": {
+        "cardName": "Pyotr Ilyich Tchaikovsky",
+        "power": "( Cannon-Wielding Madman) Fire actual live artillery into the ring; unblockable area-of-effect damage.",
+        "lore": "A programmatic Romantic composer who legitimately thought classical music should feature live cannons in crowded concert halls.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p9 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 31,
@@ -292,7 +372,15 @@
       "power": "Incite a riot in the crowd; opponent is trampled by adoring swooning elites.",
       "lore": "A 19th-century virtuoso performer who was legitimately treated like a pop star by the swelling European middle classes.",
       "gradeReason": "Rock star inciting crowd riot — opponent trampled by fans, immediately embodied pop-idol energy.",
-      "artworkPrompt": "Style: Rock concert chaos poster. Subject: Magnificent cat in tails at piano while swooning aristocrats mob and trample opponent. Mood: Unhinged celebrity adoration."
+      "artworkPrompt": "Style: Rock concert chaos poster. Subject: Magnificent cat in tails at piano while swooning aristocrats mob and trample opponent. Mood: Unhinged celebrity adoration.",
+      "print": {
+        "cardName": "Franz Liszt",
+        "power": "( Rock Star Heartthrob) Incite a riot in the crowd; opponent is trampled by your swooning fans.",
+        "lore": "A 19th-century virtuoso performer who was legitimately treated like a modern rock star by the swelling European middle classes.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p9 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 32,
@@ -301,7 +389,15 @@
       "power": "Drop the entire brass and percussion section on the opponent's head simultaneously.",
       "lore": "A trope where the orchestra hits its absolute emotional peak; carefully timed to underscore a violently dramatic moment.",
       "gradeReason": "Max-damage finisher is vivid; lore explains the trope more than it invites performance.",
-      "artworkPrompt": "Style: Action blockbuster explosion. Subject: Entire brass section descending from rafters simultaneously onto pinned opponent. Mood: Operatic overwhelming climax."
+      "artworkPrompt": "Style: Action blockbuster explosion. Subject: Entire brass section descending from rafters simultaneously onto pinned opponent. Mood: Operatic overwhelming climax.",
+      "print": {
+        "cardName": "Orchestral Bombing",
+        "power": "(Max Damage Finisher) Drop the entire brass and percussion section on the opponent's head simultaneously.",
+        "lore": "A trope where the orchestra hits its absolute dynamic limit to forcefully underscore a violently dramatic moment.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p9 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 33,
@@ -310,7 +406,15 @@
       "power": "Play 'The Rite of Spring'; the furious audience attacks your opponent for you.",
       "lore": "Shattered social contract; his ballets so jarringly polyrhythmic that audiences literally rioted at the premiere.",
       "gradeReason": "Deploy Rite of Spring, let the angry audience fight for you — riot starter energy, immediately playable.",
-      "artworkPrompt": "Style: Avant-garde ballet poster gone wrong. Subject: Bird in top hat playing violin as rioting crowd swarms screaming opponent. Mood: Gloriously violent avant-garde chaos."
+      "artworkPrompt": "Style: Avant-garde ballet poster gone wrong. Subject: Bird in top hat playing violin as rioting crowd swarms screaming opponent. Mood: Gloriously violent avant-garde chaos.",
+      "print": {
+        "cardName": "Igor Stravinsky",
+        "power": "Play \"The Rite of Spring\": the furious audience attacks your opponent for you.",
+        "lore": "Channeled social turmoil into ballets so jarringly polytonal that audiences literally rioted at the premiere.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p10 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 34,
@@ -319,7 +423,15 @@
       "power": "Do absolutely nothing for 4 minutes and 33 seconds; opponent takes massive psychological damage.",
       "lore": "A 20th-century experimentalist who pushed the definition of musical understanding to its absolute breaking point.",
       "gradeReason": "Do nothing for 4:33 — the ultimate silent protest, immediately performed with a timer and a smirk.",
-      "artworkPrompt": "Style: Zen performance art poster. Subject: Sloth sitting motionless at piano for 4:33 as opponent loses mind. Mood: Devastating peaceful silence."
+      "artworkPrompt": "Style: Zen performance art poster. Subject: Sloth sitting motionless at piano for 4:33 as opponent loses mind. Mood: Devastating peaceful silence.",
+      "print": {
+        "cardName": "John Cage / Minimalism",
+        "power": "Do absolutely nothing for 4 minutes and 33 seconds; opponent takes massive",
+        "lore": "A 20th-century experimentalist who pushed the definition of musical. understanding to its absolute breaking point.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p10 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 35,
@@ -355,7 +467,15 @@
       "power": "Pause the match to improvise up a solo so impressive, completely unblockable.",
       "lore": "Indicated with a simple pause in the score, expecting the performer to improvise their way to glory.",
       "gradeReason": "Improv spot needs a performer willing to genuinely improvise something to earn the payoff.",
-      "artworkPrompt": "Style: Jazz club spotlight. Subject: Monkey with violin stopping wrestling match to solo while everyone watches mesmerized. Mood: Unblockable virtuoso spotlight."
+      "artworkPrompt": "Style: Jazz club spotlight. Subject: Monkey with violin stopping wrestling match to solo while everyone watches mesmerized. Mood: Unblockable virtuoso spotlight.",
+      "print": {
+        "cardName": "The Cadenza",
+        "power": "Pause the match to make up a suitably impressive, completely attack.",
+        "lore": "Indicated with a simple pause in the score, expecting the performer to improvise their way to glory.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p11 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 39,
@@ -364,7 +484,15 @@
       "power": "Play your signature theme song; your opponent will break before you even enter the ring.",
       "lore": "A recurring musical phrase associated with a particular person, place, or idea, heavily installed into our brains by Wagner.",
       "gradeReason": "Strong entrance-theme psychology card; needs a player who knows their own leitmotif to embody Wagner fully.",
-      "artworkPrompt": "Style: Epic film entrance sequence. Subject: Wolf appearing at tunnel entrance while entire arena recognizes signature theme, opponent already visibly shaking. Mood: Psychological predetermined defeat."
+      "artworkPrompt": "Style: Epic film entrance sequence. Subject: Wolf appearing at tunnel entrance while entire arena recognizes signature theme, opponent already visibly shaking. Mood: Psychological predetermined defeat.",
+      "print": {
+        "cardName": "The Leitmotif",
+        "power": "Play your signature theme song mentally break your opponent before you even enter the ring.",
+        "lore": "A recurring musical phrase associated with a particular person, place, or idea, heavily codified into our brains by Wagner.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p11 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 40,
@@ -382,7 +510,15 @@
       "power": "Summon the wrath of a Requiem Mass to instantly drop the temperature in the arena.",
       "lore": "Used to instantly signify impending doom, courtesy of compositions set to Latin by Verdi, Dvorak, and Mozart.",
       "gradeReason": "Requiem-temperature drop needs group willingness to chant dramatically; high ceiling with right group.",
-      "artworkPrompt": "Style: Gothic horror church. Subject: Hooded animals chanting Latin as arena temperature visibly drops and opponent shivers. Mood: Summons inevitable doom."
+      "artworkPrompt": "Style: Gothic horror church. Subject: Hooded animals chanting Latin as arena temperature visibly drops and opponent shivers. Mood: Summons inevitable doom.",
+      "print": {
+        "cardName": "Ominous Latin Chanting",
+        "power": "(Summoning Dark Energy) Summon the wrath of a Requiem Mass to instantly drop the temperature in the arena.",
+        "lore": "Used to instantly signify impending doom, courtesy of compositions set to Latin by Verdi, Dvorak, and Mozart.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p12 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 42,
@@ -400,7 +536,15 @@
       "power": "Fill the front row with cultured elites; their polite applause heals your damage.",
       "lore": "When snobs and aristocrats attend a classical performance solely because it makes them look 'cultured' to their peers.",
       "gradeReason": "Crowd buff via snob patronage; the polite-applause healing mechanic is fun but needs a supportive group.",
-      "artworkPrompt": "Style: Society portrait parody. Subject: Row of monocled animals golf-clapping while referee heals performing swan on stage. Mood: Repressed aristocratic enthusiasm."
+      "artworkPrompt": "Style: Society portrait parody. Subject: Row of monocled animals golf-clapping while referee heals performing swan on stage. Mood: Repressed aristocratic enthusiasm.",
+      "print": {
+        "cardName": "At The Opera Tonight",
+        "power": "(Snobby Crowd Buff) Fill the front row with cultured elites; their polite applause heals your damage.",
+        "lore": "When snobs and snobs attend a classical performance solely because it makes them them look 'cultured' to their peers.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p12 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 44,
@@ -427,7 +571,15 @@
       "power": "Immune to all modern attacks (new); nothing composed before 1820 can hurt you.",
       "lore": "The deeply ingrained pretension that centuries-old music is inherently superior to anything recently composed.",
       "gradeReason": "Gatekeeper's shield describes cultural snobbery well but doesn't give player a character to step into.",
-      "artworkPrompt": "Style: Museum exhibit parody. Subject: Turtle in powdered wig standing behind impenetrable glass case labeled 1820 and Before. Mood: Impenetrable antique snobbery."
+      "artworkPrompt": "Style: Museum exhibit parody. Subject: Turtle in powdered wig standing behind impenetrable glass case labeled 1820 and Before. Mood: Impenetrable antique snobbery.",
+      "print": {
+        "cardName": "True Art is Ancient",
+        "power": "Immune to all modern attacks; only moves invented before 1820 can hurt you.",
+        "lore": "The deeply ingrained pretension that centuries-old music is inherently superior to anything recently composed.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p13 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 47,
@@ -436,7 +588,15 @@
       "power": "Steal your opponent's theme music without paying them any royalties.",
       "lore": "Since the music is well over 100 years old, copyright expired, making it a free buffet for cheap media producers.",
       "gradeReason": "IP theft move with clear comedic logic; lands well for anyone with content-industry awareness.",
-      "artworkPrompt": "Style: Corporate theft parody. Subject: Grinning vulture in suit walking away with stolen entrance theme music score. Mood: Gleeful legally-protected theft."
+      "artworkPrompt": "Style: Corporate theft parody. Subject: Grinning vulture in suit walking away with stolen entrance theme music score. Mood: Gleeful legally-protected theft.",
+      "print": {
+        "cardName": "Public Domain Soundtrack",
+        "power": "(Corporate Theft) Steal your opponent's theme music without paying them any royalties.",
+        "lore": "Since the music is well! over 188 years old, copyright expired, exlet for cea eafree producers.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p13 BL",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "cardNumber": 48,
@@ -445,7 +605,15 @@
       "power": "Force opponent to fight using painful, un-upgraded medieval equipment.",
       "lore": "Painstakingly restoring ancient instruments and demanding composers wear Gorgeous Period Dress to achieve 'authenticity.'",
       "gradeReason": "Pedantic rules lawyer forcing period dress and medieval weapons — immediately embodied with costume and condescension.",
-      "artworkPrompt": "Style: Historical reenactment gone wrong. Subject: Prim academic ferret forcing opponent into full period costume before allowing them to wrestle. Mood: Authenticity-obsessed pedantry."
+      "artworkPrompt": "Style: Historical reenactment gone wrong. Subject: Prim academic ferret forcing opponent into full period costume before allowing them to wrestle. Mood: Authenticity-obsessed pedantry.",
+      "print": {
+        "cardName": "Historically Informed Performance",
+        "power": "(Pedantic Rules Lawyer) Force opponent to fight using painful, un-upgraded medieval equipment.",
+        "lore": "Painstakingly restoring ancient instruments and demanding performers wear Gorgeous Period Dress to achieve \"authenticity.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p13 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 49,
@@ -463,7 +631,16 @@
       "power": "Pit two rival factions against each other while you sneak a pinfall attempt on the enemy with supreme superiority.",
       "lore": "The endless industry argument, completely ignoring that heavily classically-trained musicians play in all styles.",
       "gradeReason": "Faction warfare while sneaking a pin is fun; the meta-commentary lands better with pop-culture context.",
-      "artworkPrompt": "Style: Culture war propaganda poster. Subject: Classical eagle sneaking pin attempt while rock and pop factions brawl obliviously. Mood: Smug opportunist superiority."
+      "artworkPrompt": "Style: Culture war propaganda poster. Subject: Classical eagle sneaking pin attempt while rock and pop factions brawl obliviously. Mood: Smug opportunist superiority.",
+      "print": {
+        "cardName": "Rock is Authentic, Pop is Shallow",
+        "power": "Pit two rival factions against each other while yeu sneak a pinfall. the endless snebby debate over genre superiority,",
+        "lore": "completely ignoring that heavily classically-trained musicians play in all styles.",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p14 TR",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 51,
@@ -517,7 +694,15 @@
       "power": "Tear up the rulebook, pour watercolors on the ring, and declare yourself the winner.",
       "lore": "The Kayfabe is real. The music is BIZZARO. The Kanon is KAYFAB. Stay fluffy, marks!",
       "gradeReason": "Tear up rulebook, pour watercolors, declare winner — peak FrizzleBob, immediate, joyful, definitive.",
-      "artworkPrompt": "Style: Glorious anarchic finale splash. Subject: FrizzleBob rabbit pouring watercolors over entire ring while shredding rulebook, declaring victory. Mood: Triumphant cartoon anarchy."
+      "artworkPrompt": "Style: Glorious anarchic finale splash. Subject: FrizzleBob rabbit pouring watercolors over entire ring while shredding rulebook, declaring victory. Mood: Triumphant cartoon anarchy.",
+      "print": {
+        "cardName": "Uncle FrizzleBob's Master Score",
+        "power": "Tear up the rulebook, pour watercolors on the ring, and declare yourself the winner.",
+        "lore": "The Kayfabe is real. The music is rigged. The Kanon is BIZARRO. Stay fluffy, marks!",
+        "source": "PDF v05 Symphonic_Savagery - ADD web ID.pdf p15 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     }
   ],
   "cardCount": 56,

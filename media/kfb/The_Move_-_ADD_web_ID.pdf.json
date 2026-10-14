@@ -96,7 +96,15 @@
       "power": "Saturates available processing capacity through volume, making navigation more expensive than the decision it informs.",
       "lore": "Navigation requires more effort than most content costs; the destination is reached by fewer than the distribution implies.",
       "gradeReason": "Mechanism is vivid but the performance role of 'the flooder' needs scaffolding to land.",
-      "artworkPrompt": "Style: Overwhelmed editorial desk. Subject: Beaver drowning in documents while trying to find one specific memo. Mood: Volume as weapon, navigation as cost."
+      "artworkPrompt": "Style: Overwhelmed editorial desk. Subject: Beaver drowning in documents while trying to find one specific memo. Mood: Volume as weapon, navigation as cost.",
+      "print": {
+        "cardName": "The Information Flood",
+        "power": "Saturates available processing capacity through volume, making navigation more expensive than the decision it informs.",
+        "lore": "Navigation requires more time than is available; most content goes unread withouf being suppressed. THE FOG MACHINE - the question ai",
+        "source": "PDF v05 The_Move - ADD web ID.pdf p4 TL",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "cardNumber": 10,
@@ -240,7 +248,15 @@
       "power": "Determines which context a fact arrives with before the fact can be examined independently.",
       "lore": "The same event produces distinct public understanding depending on the surrounding material — which is selected.",
       "gradeReason": "The editor who chooses what surrounds the story. Role and move arrive together.",
-      "artworkPrompt": "Style: Editorial room. Subject: Raven editor choosing surrounding photos, story itself unchanged. Mood: Curatorial power, invisible selection."
+      "artworkPrompt": "Style: Editorial room. Subject: Raven editor choosing surrounding photos, story itself unchanged. Mood: Curatorial power, invisible selection.",
+      "print": {
+        "cardName": "The Frame Selection",
+        "power": "Determines which context a fact arrives with before the fact can be examined independently.",
+        "lore": "The same event produces different public understanding depending on the surrounding material - which is selected.",
+        "source": "PDF v05 The_Move - ADD web ID.pdf p8 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 26,
@@ -285,7 +301,15 @@
       "power": "Converts an exceptional condition into the standard through sustained repetition and adaptation.",
       "lore": "After sufficient time, the exception is no longer described as exceptional.",
       "gradeReason": "State change clearly described but needs a performer's hook — who says 'this is normal now'?",
-      "artworkPrompt": "Style: Government standards publication. Subject: EXCEPTIONAL line crossed out, NEW NORMAL line drawn at same level. Mood: Administrative normalization, quiet redefinition."
+      "artworkPrompt": "Style: Government standards publication. Subject: EXCEPTIONAL line crossed out, NEW NORMAL line drawn at same level. Mood: Administrative normalization, quiet redefinition.",
+      "print": {
+        "cardName": "The New Baseline",
+        "power": "Converts an exceptional condition into the standard through sustained duration and adaptation.",
+        "lore": "After sufficient time, the exception is no longer described as exceptional.",
+        "source": "PDF v05 The_Move - ADD web ID.pdf p9 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 31,
@@ -294,7 +318,15 @@
       "power": "Produces explanations that position the current state as the natural or inevitable outcome.",
       "lore": "The trajectory is legible only toward the current position; alternative paths are no longer narrated as having been possible.",
       "gradeReason": "The spin doctor who makes history inevitable. 'It was always going this way' is the entire character.",
-      "artworkPrompt": "Style: Historical documentary aesthetic. Subject: Badger rewriting map arrows to point only where they already went. Mood: Inevitable trajectory, illegible alternatives."
+      "artworkPrompt": "Style: Historical documentary aesthetic. Subject: Badger rewriting map arrows to point only where they already went. Mood: Inevitable trajectory, illegible alternatives.",
+      "print": {
+        "cardName": "The Retroactive Justification",
+        "power": "Produces explanations that position the current state as the natural or inevitable outcome.",
+        "lore": "The trajectory is legible only toward the current position; alternative paths are no longer visible from Hation all along.",
+        "source": "PDF v05 The_Move - ADD web ID.pdf p9 BL",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "cardNumber": 32,
@@ -312,7 +344,16 @@
       "power": "Introduces a sudden cost increase that disrupts established behavior before alternatives can be organized.",
       "lore": "The shock produces rapid adaptation; the adapted state accepts the new cost structure as the baseline.",
       "gradeReason": "SHOCK! CRASH! HIKE! — the card art screams the move. You disrupt behavior before alternatives form.",
-      "artworkPrompt": "Style: Supermarket receipt nightmare. Subject: Fox staring at receipt: SHOCK CRASH HIKE items. Mood: Rapid behavioral disruption, forced adaptation."
+      "artworkPrompt": "Style: Supermarket receipt nightmare. Subject: Fox staring at receipt: SHOCK CRASH HIKE items. Mood: Rapid behavioral disruption, forced adaptation.",
+      "print": {
+        "cardName": "The Price Shock",
+        "power": "Introduces a sudden cost increase",
+        "lore": "The shock produces rapid adaptation I that disrupts established behavior before the adapted state accepts the new cost structure as the baseline.",
+        "source": "PDF v05 The_Move - ADD web ID.pdf p10 TL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "cardNumber": 34,
@@ -366,7 +407,15 @@
       "power": "Produces consequential outcomes through processes whose criteria are inaccessible to those they affect.",
       "lore": "The decision stands; the criteria are proprietary; an appeal is available at significant time and cost.",
       "gradeReason": "Administrative opacity well described — but the role of 'the black box operator' needs more edge.",
-      "artworkPrompt": "Style: Administrative tribunal. Subject: Raccoon receiving verdict from sealed box, APPEAL button visible, line around the building. Mood: Opaque authority, accessible in theory."
+      "artworkPrompt": "Style: Administrative tribunal. Subject: Raccoon receiving verdict from sealed box, APPEAL button visible, line around the building. Mood: Opaque authority, accessible in theory.",
+      "print": {
+        "cardName": "The Black Box Decision",
+        "power": "Produces consequential outcomes through processes whose criteria are whose criteria are inaccessible to those they affect.",
+        "lore": "The decision stands: the criteria are proprietary; an appeal is available at significant time and cost.",
+        "source": "PDF v05 The_Move - ADD web ID.pdf p11 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "cardNumber": 40,
@@ -519,7 +568,15 @@
       "power": "At sufficient scale of internalization, the pattern no longer needs to be performed — it becomes the ambiance.",
       "lore": "The move is complete when it stops being a move and becomes the environment.",
       "gradeReason": "The perfect closer. When the move disappears into reality, the game is over. You know it when you read it.",
-      "artworkPrompt": "Style: Ambiance photography. Subject: FrizzleBob rabbit in normal urban scene, every element quietly labeled with its move. Mood: Structural ubiquity, named at last."
+      "artworkPrompt": "Style: Ambiance photography. Subject: FrizzleBob rabbit in normal urban scene, every element quietly labeled with its move. Mood: Structural ubiquity, named at last.",
+      "print": {
+        "cardName": "The Move Itself",
+        "power": "At sufficient scale of internalization, the pattern no longer needs to be performed - it becomes the ambient condition.",
+        "lore": "The move is complete when it stops being a move and becomes the environment.",
+        "source": "PDF v05 The_Move - ADD web ID.pdf p15 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     }
   ],
   "cardCount": 56,

@@ -10,7 +10,16 @@
       "lore": "To be… or nap.",
       "grade": 2,
       "gradeReason": "Stall mechanic creates tension",
-      "artworkPrompt": "Sad hound under raincloud holding skull melancholic stage lighting"
+      "artworkPrompt": "Sad hound under raincloud holding skull melancholic stage lighting",
+      "print": {
+        "cardName": "Hamlet, the Mopey Hound",
+        "power": "Indecision. Flip a coin. If heads, do nothing. If tails, write a poem about doing nothing.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p2 TL",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Claudius, the Rat King",
@@ -18,7 +27,16 @@
       "lore": "Murder dressed as legitimacy.",
       "grade": 1,
       "gradeReason": "Direct power grab",
-      "artworkPrompt": "Crowned rat clutching scepter atop pile of coins sinister court"
+      "artworkPrompt": "Crowned rat clutching scepter atop pile of coins sinister court",
+      "print": {
+        "cardName": "Claudius, the Rat King",
+        "power": "Usurp. Swap hands with the player who has the most points.",
+        "lore": "brother's Murder. Pray can not. My stronger guilt defeats my strong intent.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p2 TR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Gertrude, the Poodle",
@@ -26,7 +44,16 @@
       "lore": "Comfort over truth.",
       "grade": 2,
       "gradeReason": "Clean denial tool",
-      "artworkPrompt": "Elegant poodle with wine glass turning away from chaos"
+      "artworkPrompt": "Elegant poodle with wine glass turning away from chaos",
+      "print": {
+        "cardName": "Gertrude, the Poodle",
+        "power": "Willful Ignorance. Ignore the effects of the next Action Card played against you.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p2 BL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "The Ghost, the Sheet",
@@ -34,7 +61,16 @@
       "lore": "Remember me.",
       "grade": 1,
       "gradeReason": "Strong pressure",
-      "artworkPrompt": "Floating sheet ghost with chains in blue mist"
+      "artworkPrompt": "Floating sheet ghost with chains in blue mist",
+      "print": {
+        "cardName": "The Ghost, the Sheet",
+        "power": "Haunt. Force an Opponent discard their highest card.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p2 BR",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Polonius, the Parrot",
@@ -42,7 +78,16 @@
       "lore": "Brevity is… optional.",
       "grade": 2,
       "gradeReason": "Table-performance hook",
-      "artworkPrompt": "Parrot on podium behind curtain lecturing endlessly"
+      "artworkPrompt": "Parrot on podium behind curtain lecturing endlessly",
+      "print": {
+        "cardName": "Polonius, the Parrot",
+        "power": "Verbose. Talk uninterrupted for 30 seconds. If anyone interrupts, draw card. &",
+        "lore": "Brevity is soul",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p3 TL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Ophelia, the Otter",
@@ -50,7 +95,15 @@
       "lore": "Sweet drowning of sense.",
       "grade": 2,
       "gradeReason": "Social disruption",
-      "artworkPrompt": "Otter with flowers drifting on water dreamy tragic tone"
+      "artworkPrompt": "Otter with flowers drifting on water dreamy tragic tone",
+      "print": {
+        "cardName": "Ophelia, the Otter",
+        "power": "Distraction. Sing song. Opponents must cover their ears or lose a turn. &",
+        "lore": "Lord, we know not what we may be.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p3 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Laertes, the Gamecock",
@@ -58,7 +111,16 @@
       "lore": "Honor sharpens blades.",
       "grade": 2,
       "gradeReason": "Targeted payoff",
-      "artworkPrompt": "Rooster duelist with rapier lunging aggressively"
+      "artworkPrompt": "Rooster duelist with rapier lunging aggressively",
+      "print": {
+        "cardName": "Laertes, the Gamecock",
+        "power": "Revenge. Deal Double damage to any player who played a \"Hamlet' card.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p3 BL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Horatio, the Retriever",
@@ -66,7 +128,15 @@
       "lore": "Tell my story.",
       "grade": 2,
       "gradeReason": "Meta ending hook",
-      "artworkPrompt": "Loyal dog with notebook observing solemnly"
+      "artworkPrompt": "Loyal dog with notebook observing solemnly",
+      "print": {
+        "cardName": "Horatio, the Retriever",
+        "power": "Witness. If you lose the game, you may narrate winner’s victory to make them feel guilty. &",
+        "lore": "Absent thee from felicity awhile... to Tell my story.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p3 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Yorick, the Prop",
@@ -74,7 +144,16 @@
       "lore": "Alas.",
       "grade": 1,
       "gradeReason": "Theme-aligned purge",
-      "artworkPrompt": "Skull prop on stage spotlight theatrical gloom"
+      "artworkPrompt": "Skull prop on stage spotlight theatrical gloom",
+      "print": {
+        "cardName": "Yorick, the Prop",
+        "power": "Memento Mori. All players must discard all \"Vanity\" cards.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p4 TL",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Rosencrantz & Guildenstern",
@@ -90,7 +169,16 @@
       "lore": "Catch the conscience.",
       "grade": 1,
       "gradeReason": "Reveal pressure",
-      "artworkPrompt": "Mice staging play on cheese stage exposing king"
+      "artworkPrompt": "Mice staging play on cheese stage exposing king",
+      "print": {
+        "cardName": "The Mousetrap Play",
+        "power": "Guilt Trip. Look at an opponent's hand. if they have a \"King\" card,",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p4 BL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "The Poison Cup",
@@ -98,7 +186,15 @@
       "lore": "Drink, drink.",
       "grade": 1,
       "gradeReason": "Hot potato lethal",
-      "artworkPrompt": "Goblet bubbling green fumes ominous banquet"
+      "artworkPrompt": "Goblet bubbling green fumes ominous banquet",
+      "print": {
+        "cardName": "The Poison Cup",
+        "power": "Accidental Death. Pass this card to the left. that player loses HP.",
+        "lore": "Drink, drink! am poison'd.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p4 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Macbeth, the Hyena",
@@ -106,7 +202,16 @@
       "lore": "Vaulting ambition.",
       "grade": 1,
       "gradeReason": "Risk-reward clean",
-      "artworkPrompt": "Hyena with crown eyes wild blood-stained dagger"
+      "artworkPrompt": "Hyena with crown eyes wild blood-stained dagger",
+      "print": {
+        "cardName": "Macbeth, the Hyena",
+        "power": "Ambition. Gain +10 Power, but you cannot sleep (skip your draw phase).",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p5 TL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Lady M, the Sphynx Cat",
@@ -114,7 +219,16 @@
       "lore": "Unsex me.",
       "grade": 1,
       "gradeReason": "Control pivot",
-      "artworkPrompt": "Hairless cat at basin washing blood from paws"
+      "artworkPrompt": "Hairless cat at basin washing blood from paws",
+      "print": {
+        "cardName": "Lady M, the Sphynx Cat",
+        "power": "Coercion. Force another player your choice.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p5 TR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "The Weird Sisters",
@@ -122,7 +236,16 @@
       "lore": "Double, double.",
       "grade": 1,
       "gradeReason": "Setup engine",
-      "artworkPrompt": "Three toads around cauldron brewing glowing potion"
+      "artworkPrompt": "Three toads around cauldron brewing glowing potion",
+      "print": {
+        "cardName": "The Weird Sisters",
+        "power": "Prophecy. Look at the top 3 cards of the deck.",
+        "lore": "Arrange them to screw over your friends.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p5 BL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Banquo, the Ghost Dog",
@@ -130,7 +253,16 @@
       "lore": "Haunting feast.",
       "grade": 2,
       "gradeReason": "Conditional lock",
-      "artworkPrompt": "Ghost dog at banquet table staring silently"
+      "artworkPrompt": "Ghost dog at banquet table staring silently",
+      "print": {
+        "cardName": "Banquo, the Ghost Dog",
+        "power": ", Guilt. player cannot play any actions this turn.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p5 BR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Macduff, the Ram",
@@ -138,7 +270,15 @@
       "lore": "From his mother’s womb untimely ripped.",
       "grade": 1,
       "gradeReason": "Hard counter",
-      "artworkPrompt": "Armored ram charging through storm heroic"
+      "artworkPrompt": "Armored ram charging through storm heroic",
+      "print": {
+        "cardName": "Macduff, the Ram",
+        "power": "Not Born of Woman. Defeat any card with the \"tyrant\" tag automatically.",
+        "lore": "(Courier Prime): Macduff was From his mother’s womb untimely ripped.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p6 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Lady Macduff, the Bird",
@@ -146,7 +286,16 @@
       "lore": "Poor bird.",
       "grade": 2,
       "gradeReason": "Punishes aggression",
-      "artworkPrompt": "Small bird in nest under looming shadow"
+      "artworkPrompt": "Small bird in nest under looming shadow",
+      "print": {
+        "cardName": "Lady Macduff, the Bird",
+        "power": "Innocence. the attacker loses",
+        "lore": "MACDUFF, THE bird",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p6 TR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "The Porter, the Badger",
@@ -154,7 +303,16 @@
       "lore": "Knock, knock.",
       "grade": 3,
       "gradeReason": "Low mechanical impact",
-      "artworkPrompt": "Badger at hell-gate with tankard joking"
+      "artworkPrompt": "Badger at hell-gate with tankard joking",
+      "print": {
+        "cardName": "The Porter, the Badger",
+        "power": "Comic Relief. Pause game.",
+        "lore": "Everyone takes a drink.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p6 BL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Malcolm, the Lamb",
@@ -162,7 +320,15 @@
       "lore": "Order returns.",
       "grade": 1,
       "gradeReason": "Reset engine",
-      "artworkPrompt": "Lamb in armor holding banner hopeful dawn"
+      "artworkPrompt": "Lamb in armor holding banner hopeful dawn",
+      "print": {
+        "cardName": "Malcolm, the Lamb",
+        "power": "Restoration. Shuffle discard pile back into deck. &",
+        "lore": "cut hore",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p6 BR",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "name": "The Air-Drawn Dagger",
@@ -170,7 +336,16 @@
       "lore": "A dagger of the mind.",
       "grade": 1,
       "gradeReason": "Risk drama",
-      "artworkPrompt": "Floating red dagger pointing toward hand smoky vision"
+      "artworkPrompt": "Floating red dagger pointing toward hand smoky vision",
+      "print": {
+        "cardName": "The Air-Drawn Dagger",
+        "power": "Hallucination. Reroll your attack dice. If you fail, you attack yourself.",
+        "lore": "Is this A dagger which see before me, the handle toward my hand?",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p7 TL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Birnam Wood",
@@ -178,7 +353,15 @@
       "lore": "Wood comes to Dunsinane.",
       "grade": 1,
       "gradeReason": "Strong protection",
-      "artworkPrompt": "Forest marching with branches as soldiers"
+      "artworkPrompt": "Forest marching with branches as soldiers",
+      "print": {
+        "cardName": "Birnam Wood",
+        "power": "Camouflage. Your Units cannot be targeted this turn.",
+        "lore": "a Wood comes toward Dunsinane.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p7 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "The Cauldron",
@@ -186,7 +369,16 @@
       "lore": "Charm is firm.",
       "grade": 2,
       "gradeReason": "Combo enabler",
-      "artworkPrompt": "Boiling cauldron with frogs bones fire glow"
+      "artworkPrompt": "Boiling cauldron with frogs bones fire glow",
+      "print": {
+        "cardName": "The Cauldron",
+        "power": "Brew. Sacrifice two weak cards to summon one strong card.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p7 BL",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Sleep",
@@ -194,7 +386,15 @@
       "lore": "Macbeth does murder sleep.",
       "grade": 2,
       "gradeReason": "Tempo denial",
-      "artworkPrompt": "Blood-stained pillow feathers drifting dark room"
+      "artworkPrompt": "Blood-stained pillow feathers drifting dark room",
+      "print": {
+        "cardName": "Sleep",
+        "power": "Insomnia. No players may 'rest' or heal this turn.",
+        "lore": "Macbeth does murder sleep', the innocent",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p7 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Lear, the Old Lion",
@@ -202,7 +402,15 @@
       "lore": "Nothing will come of nothing.",
       "grade": 2,
       "gradeReason": "Volatile swing",
-      "artworkPrompt": "Old lion in storm tearing crown apart"
+      "artworkPrompt": "Old lion in storm tearing crown apart",
+      "print": {
+        "cardName": "Lear, the Old Lion",
+        "power": "Abdicate. Give half your cards to two other players. then scream at them.",
+        "lore": "/ F: 2 come of nothing.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p8 TL",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "name": "The Fool, the Bird",
@@ -210,7 +418,16 @@
       "lore": "Wise fool.",
       "grade": 2,
       "gradeReason": "Info + social",
-      "artworkPrompt": "Colorful bird whispering biting truths on throne"
+      "artworkPrompt": "Colorful bird whispering biting truths on throne",
+      "print": {
+        "cardName": "The Fool, the Bird",
+        "power": "Truth Bomb. Reveal an opponent's hand. mock their strategy.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p8 TR",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Goneril, the Vulture",
@@ -218,7 +435,15 @@
       "lore": "Plague sore.",
       "grade": 2,
       "gradeReason": "Thematic removal",
-      "artworkPrompt": "Vulture looming over map tearing property deed"
+      "artworkPrompt": "Vulture looming over map tearing property deed",
+      "print": {
+        "cardName": "Goneril, the Vulture",
+        "power": "Eviction. Force player to Discard a 'Land' 'Home' card.",
+        "lore": "Plague sore.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p8 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Regan, the Cobra",
@@ -226,7 +451,15 @@
       "lore": "Prescribe us not.",
       "grade": 2,
       "gradeReason": "Chaos control",
-      "artworkPrompt": "Cobra coiled over eyes hissing command"
+      "artworkPrompt": "Cobra coiled over eyes hissing command",
+      "print": {
+        "cardName": "Regan, the Cobra",
+        "power": "Cruelty. Select player. That player is now 'Blind' (plays cards face down).",
+        "lore": "Prescribe us duty.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p8 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Gloucester, the Mole",
@@ -234,7 +467,15 @@
       "lore": "I have no way.",
       "grade": 2,
       "gradeReason": "Swingy tragedy",
-      "artworkPrompt": "Blind mole at cliff edge in storm"
+      "artworkPrompt": "Blind mole at cliff edge in storm",
+      "print": {
+        "cardName": "Gloucester, the Mole",
+        "power": "Despair. Roll die. If -, jump off the cliff (discard",
+        "lore": "I have no way, and therefore want no eyes.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p9 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Edmund, the Fox",
@@ -242,7 +483,15 @@
       "lore": "Now, gods, stand up for bastards.",
       "grade": 1,
       "gradeReason": "Efficient theft",
-      "artworkPrompt": "Fox signing forged letter smug"
+      "artworkPrompt": "Fox signing forged letter smug",
+      "print": {
+        "cardName": "Edmund, the Fox",
+        "power": "Bastard’s Ambition. Swap your lowest card for an opponent’s highest card.",
+        "lore": "Now, gods, stand up for bastards!",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p9 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Edgar, the Mongrel",
@@ -250,7 +499,16 @@
       "lore": "Poor Tom.",
       "grade": 1,
       "gradeReason": "Clean defense",
-      "artworkPrompt": "Ragged dog in disguise wandering heath"
+      "artworkPrompt": "Ragged dog in disguise wandering heath",
+      "print": {
+        "cardName": "Edgar, the Mongrel",
+        "power": "Disguise. You cannot be targeted by attacks this turn.",
+        "lore": "cut here",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p9 BL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Kent, the Bulldog",
@@ -258,7 +516,15 @@
       "lore": "Plain dealing.",
       "grade": 2,
       "gradeReason": "Niche counter",
-      "artworkPrompt": "Bulldog in stocks snarling honest fury"
+      "artworkPrompt": "Bulldog in stocks snarling honest fury",
+      "print": {
+        "cardName": "Kent, the Bulldog",
+        "power": "Bluntness. Cancel a 'flattery' or *persuasion' effect.",
+        "lore": "ler",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p9 BR",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "name": "The Storm",
@@ -266,7 +532,16 @@
       "lore": "Blow, winds.",
       "grade": 1,
       "gradeReason": "Board reset",
-      "artworkPrompt": "Howling storm faces tearing across stage"
+      "artworkPrompt": "Howling storm faces tearing across stage",
+      "print": {
+        "cardName": "The Storm",
+        "power": "Cataclysm All players discard card for every card they hold.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p10 TL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "The Stocks",
@@ -274,7 +549,15 @@
       "lore": "Fortune turns the key.",
       "grade": 2,
       "gradeReason": "Simple control",
-      "artworkPrompt": "Chicken locked in stocks embarrassed"
+      "artworkPrompt": "Chicken locked in stocks embarrassed",
+      "print": {
+        "cardName": "The Stocks",
+        "power": "Humiliation Choose player. They lose their next turn.",
+        "lore": "Fortune, that arrant whore, ne'er turns",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p10 TR",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "name": "The Cliff (Dover)",
@@ -282,7 +565,15 @@
       "lore": "Ten masts at each make not the altitude.",
       "grade": 3,
       "gradeReason": "Weak effect",
-      "artworkPrompt": "Sea cliff with tiny figure surviving fall illusion"
+      "artworkPrompt": "Sea cliff with tiny figure surviving fall illusion",
+      "print": {
+        "cardName": "The Cliff (Dover)",
+        "power": "Placebo.",
+        "lore": "Ten masts at each make not the altitude which thou hast perpendicularly fell.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p10 BL",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "name": "Cordelia, the Dove",
@@ -290,7 +581,15 @@
       "lore": "Love and loss.",
       "grade": 1,
       "gradeReason": "Bold finale",
-      "artworkPrompt": "Lion holding dove sorrowful embrace"
+      "artworkPrompt": "Lion holding dove sorrowful embrace",
+      "print": {
+        "cardName": "Cordelia, the Dove",
+        "power": "Tragic End. Game ends immediately. everyone loses.",
+        "lore": "fluffy",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p10 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Cleopatra, the Peacock-Snake",
@@ -298,7 +597,16 @@
       "lore": "Age cannot wither her.",
       "grade": 2,
       "gradeReason": "Flavorful buff",
-      "artworkPrompt": "Peacock-snake on throne lavish drapery"
+      "artworkPrompt": "Peacock-snake on throne lavish drapery",
+      "print": {
+        "cardName": "Cleopatra, the Peacock-Snake",
+        "power": "",
+        "lore": "Age cannot wither her, nor custom stale her infinite variety.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p11 TL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Antony, the Old War Horse",
@@ -306,7 +614,15 @@
       "lore": "Strumpet’s fool.",
       "grade": 2,
       "gradeReason": "Tradeoff fits",
-      "artworkPrompt": "War horse before map of battles conflicted"
+      "artworkPrompt": "War horse before map of battles conflicted",
+      "print": {
+        "cardName": "Antony, the Old War Horse",
+        "power": "Dotage. Ignore your responsibilities. Lose 5 defense, gain 5 charisma.",
+        "lore": "The triple pillar of the world transform'd into a Strumpet’s fool.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p11 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Octavius, the Shark",
@@ -314,7 +630,16 @@
       "lore": "Law as net.",
       "grade": 1,
       "gradeReason": "Steady drain",
-      "artworkPrompt": "Shark in toga counting coins administrative coldness"
+      "artworkPrompt": "Shark in toga counting coins administrative coldness",
+      "print": {
+        "cardName": "Octavius, the Shark",
+        "power": ", Bureaucracy. Tax other players. Take Gold/Token from each \"He fishes, drinks, and wastes the lamps of night in revel.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p11 BL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Enobarbus, the Fox",
@@ -322,7 +647,16 @@
       "lore": "The barge she sat in…",
       "grade": 1,
       "gradeReason": "Narrative pivot",
-      "artworkPrompt": "Fox with goblet turning away conflicted"
+      "artworkPrompt": "Fox with goblet turning away conflicted",
+      "print": {
+        "cardName": "Enobarbus, the Fox",
+        "power": "Defection. Switch teams/alliances mid-battle.",
+        "lore": "Die of heartbreak later.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p11 BR",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Charmian & Iras",
@@ -330,7 +664,15 @@
       "lore": "Let me be married.",
       "grade": 2,
       "gradeReason": "Skill mini-game",
-      "artworkPrompt": "Two flamingos reading cards mystic"
+      "artworkPrompt": "Two flamingos reading cards mystic",
+      "print": {
+        "cardName": "Charmian & Iras",
+        "power": "Fortune Telling. Predict next card draw. correct, keep it.",
+        "lore": "Let me be married to three kings in forenoon, and widow them al1.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p12 TL",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "name": "Lepidus, the Crocodile",
@@ -338,7 +680,15 @@
       "lore": "What manner o’ thing?",
       "grade": 3,
       "gradeReason": "Intentionally weak",
-      "artworkPrompt": "Crocodile sidelined ignored by others"
+      "artworkPrompt": "Crocodile sidelined ignored by others",
+      "print": {
+        "cardName": "Lepidus, the Crocodile",
+        "power": "Third Wheel. You exist. You do nothing effective. You are Removed from board easily.",
+        "lore": "What manner o' thing?",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p12 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Eros, the Squire",
@@ -346,7 +696,15 @@
       "lore": "Thus do I escape.",
       "grade": 2,
       "gradeReason": "Guard role",
-      "artworkPrompt": "Small squire dog shielding hero with shield"
+      "artworkPrompt": "Small squire dog shielding hero with shield",
+      "print": {
+        "cardName": "Eros, the Squire",
+        "power": "Self-Sacrifice. Take damage intended for your leader.",
+        "lore": "Thus do I escape the sorrow of Antony's death.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p12 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "The Messenger",
@@ -354,7 +712,15 @@
       "lore": "News infects the teller.",
       "grade": 2,
       "gradeReason": "Thematic cost",
-      "artworkPrompt": "Dog courier with letter under storm lightning"
+      "artworkPrompt": "Dog courier with letter under storm lightning",
+      "print": {
+        "cardName": "The Messenger",
+        "power": "Bad News. The bearer of this card Takes damage whenever King/Queen dies.",
+        "lore": "The nature of bad News infects the teller.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p12 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "The Asp",
@@ -362,7 +728,15 @@
       "lore": "Sharp teeth end it.",
       "grade": 1,
       "gradeReason": "Clean exit",
-      "artworkPrompt": "Small snake in basket among figs coiled"
+      "artworkPrompt": "Small snake in basket among figs coiled",
+      "print": {
+        "cardName": "The Asp",
+        "power": "Quick Exit. Remove your character from play without losing points.",
+        "lore": "With thy Sharp teeth life at once untie.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p13 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Naval Battle (Actium)",
@@ -378,7 +752,15 @@
       "lore": "Send word you are dead.",
       "grade": 2,
       "gradeReason": "Stall fortress",
-      "artworkPrompt": "Stone tower sealed doors under siege"
+      "artworkPrompt": "Stone tower sealed doors under siege",
+      "print": {
+        "cardName": "The Monument",
+        "power": "Siege. Cannot be attacked for 2 turns, but you cannot attack either. ¿",
+        "lore": "Lock yourself, and Send word you are dead.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p13 BL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Excessive Wine",
@@ -386,7 +768,15 @@
       "lore": "Clear judgments fall.",
       "grade": 2,
       "gradeReason": "Table reset",
-      "artworkPrompt": "Fountain overflowing wine flooding map"
+      "artworkPrompt": "Fountain overflowing wine flooding map",
+      "print": {
+        "cardName": "Excessive Wine",
+        "power": "Debauchery. All players skip a turn to party. ¿",
+        "lore": "In our own filth drop our Clear judgments.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p13 BR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Mercutio, the Mongoose",
@@ -394,7 +784,15 @@
       "lore": "They have made worms’ meat.",
       "grade": 1,
       "gradeReason": "Dual strike",
-      "artworkPrompt": "Mongoose dueling shadow figure dramatic"
+      "artworkPrompt": "Mongoose dueling shadow figure dramatic",
+      "print": {
+        "cardName": "Mercutio, the Mongoose",
+        "power": "A Plague on Both Houses. Deal Damage two strongest players.",
+        "lore": "They have made worms meat.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p14 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Queen Mab, the Bug",
@@ -402,7 +800,16 @@
       "lore": "Fairy midwife.",
       "grade": 1,
       "gradeReason": "Psych play",
-      "artworkPrompt": "Tiny fairy bug weaving dreams in mindscape"
+      "artworkPrompt": "Tiny fairy bug weaving dreams in mindscape",
+      "print": {
+        "cardName": "Queen Mab, the Bug",
+        "power": "Inception. Plant a false idea (card) in an opponent's hand.",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p14 TR",
+        "method": "ocr",
+        "confidence": "medium",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Dreams",
@@ -410,7 +817,15 @@
       "lore": "Begot of nothing.",
       "grade": 1,
       "gradeReason": "Clean negate",
-      "artworkPrompt": "Pink dream cloud dissolving weapons"
+      "artworkPrompt": "Pink dream cloud dissolving weapons",
+      "print": {
+        "cardName": "Dreams",
+        "power": "Illusion. Cancel an attack; it was just a dream.",
+        "lore": "Begot of nothing but vain fantasy.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p14 BL",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "name": "The Hazel-Nut Chariot",
@@ -418,7 +833,15 @@
       "lore": "Made by a squirrel.",
       "grade": 1,
       "gradeReason": "Recursion",
-      "artworkPrompt": "Squirrel in tiny chariot carrying nut relic"
+      "artworkPrompt": "Squirrel in tiny chariot carrying nut relic",
+      "print": {
+        "cardName": "The Hazel-Nut Chariot",
+        "power": "Transport. Move a card from discard pile to your hand.",
+        "lore": "Made by joiner squirrel or old grub.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p14 BR",
+        "method": "ocr",
+        "confidence": "medium"
+      }
     },
     {
       "name": "Exeunt Omnes",
@@ -426,7 +849,15 @@
       "lore": "The rest is silence.",
       "grade": 1,
       "gradeReason": "Formal ending",
-      "artworkPrompt": "Stage empty with fallen characters lights dim"
+      "artworkPrompt": "Stage empty with fallen characters lights dim",
+      "print": {
+        "cardName": "Exeunt Omnes",
+        "power": "Game Over. The player with the most \"tragedy\" points wins.",
+        "lore": "The rest is silence.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p15 TL",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "Exit, Pursued by a Bear",
@@ -434,7 +865,15 @@
       "lore": "This is the chase.",
       "grade": 1,
       "gradeReason": "Iconic finisher",
-      "artworkPrompt": "Massive bear charging offstage comedic terror"
+      "artworkPrompt": "Massive bear charging offstage comedic terror",
+      "print": {
+        "cardName": "Exit, Pursued by a Bear",
+        "power": "Sudden Death. Eliminate one player instantly. No save.",
+        "lore": "his is the chase... am gone for ever.",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p15 TR",
+        "method": "ocr",
+        "confidence": "high"
+      }
     },
     {
       "name": "The Skull’s Song",
@@ -442,7 +881,16 @@
       "lore": "Could sing once.",
       "grade": 2,
       "gradeReason": "Light recursion",
-      "artworkPrompt": "Singing skull with musical notes eerie"
+      "artworkPrompt": "Singing skull with musical notes eerie",
+      "print": {
+        "cardName": "The Skull’s Song",
+        "power": "Encore. Bring one character back from the dead (Discard pile).",
+        "lore": "",
+        "source": "PDF v05 Uncle_FrizzleBob_s_Tragic_Flaws - shakespeare - ADD web ID.pdf p15 BL",
+        "method": "ocr",
+        "confidence": "low",
+        "splitUncertain": true
+      }
     },
     {
       "name": "Uncle FrizzleBob’s Approval",
