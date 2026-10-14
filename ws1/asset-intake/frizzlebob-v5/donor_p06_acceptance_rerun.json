@@ -1,0 +1,114 @@
+{
+ "rows": [
+  {
+   "id": "5 Legacy unchanged",
+   "ok": true,
+   "info": "placement = unwrapped EyeRig build (max Δ 1.7e-16, float noise of the live head matrix) · pupil pivot on the eye as before"
+  },
+  {
+   "id": "1 Corners in the head",
+   "ok": true,
+   "info": "L out -0.122 R · in -0.122 R · R out -0.122 R · in -0.121 R (skin CharacterTemplate_Head)"
+  },
+  {
+   "id": "2 Shared corners",
+   "ok": true,
+   "info": "max corner gap 0.00e+0 R over open / neutral / half / closed / angry / sad"
+  },
+  {
+   "id": "3 Closed means closed",
+   "ok": true,
+   "info": "0 sclera/pupil rays of 2836 (front + ¾, both eyes, closure 1)"
+  },
+  {
+   "id": "4 Pupil never clips",
+   "ok": true,
+   "info": "min clearance pupil → inner lid 0.0075 R (gap 0.043, 9×9 gaze grid ±track)"
+  },
+  {
+   "id": "6 Mirror",
+   "ok": false,
+   "info": "normal Δ 0.127° · hinge Δ 0.023° · L 31.5° out / 1.1° up · R 31.5° / 1.2°"
+  },
+  {
+   "id": "7 Untouched (ears, brows, nose, mouth)",
+   "ok": true,
+   "info": "eyeFrame Δ 2.8e-16 · brow Δ 2.2e-16 · nose Δ 3.9e-16 · mouth Δ 6.7e-16 · ears live outside the eye rig · brow.turn is Georg's call"
+  }
+ ],
+ "socket": {
+  "on": true,
+  "gen": 11,
+  "R": 0.10834926626086235,
+  "U": 0.44588175415992737,
+  "eyes": [
+   {
+    "sx": -1,
+    "S": [
+     -0.25326083636283886,
+     -0.10834926626086253,
+     0.3805195723488089
+    ],
+    "n": [
+     -0.522124806049083,
+     0.0193407067148318,
+     0.852649766300313
+    ],
+    "n0": [
+     -0.522124806049083,
+     0.0193407067148318,
+     0.852649766300313
+    ],
+    "C": [
+     -0.2396835948511557,
+     -0.10885219859242698,
+     0.3583474179753366
+    ],
+    "hinge": [
+     -0.8528092833913605,
+     0,
+     -0.5222224872231318
+    ],
+    "yawOutDeg": 31.48144996318747,
+    "pitchUpDeg": 1.108209964929649,
+    "extraDeg": 0,
+    "skin": "CharacterTemplate_Head"
+   },
+   {
+    "sx": 1,
+    "S": [
+     0.25326083636283875,
+     -0.1083492662608623,
+     0.3808468308421766
+    ],
+    "n": [
+     0.5217666001768284,
+     0.021523757491260696,
+     0.852816711142184
+    ],
+    "n0": [
+     0.5217666001768284,
+     0.021523757491260696,
+     0.852816711142184
+    ],
+    "C": [
+     0.23969290957357858,
+     -0.10890896626038746,
+     0.3586703352644348
+    ],
+    "hinge": [
+     0.8530143229157817,
+     0,
+     -0.5218875021501573
+    ],
+    "yawOutDeg": 31.458946779899776,
+    "pitchUpDeg": 1.233315702814928,
+    "extraDeg": 0,
+    "skin": "CharacterTemplate_Head"
+   }
+  ]
+ },
+ "hinge": {
+  "clearance": 0.043132065294489735
+ }
+}

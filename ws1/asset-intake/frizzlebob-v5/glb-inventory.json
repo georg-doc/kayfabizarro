@@ -1,0 +1,230 @@
+{
+ "size": [
+  1.943,
+  2.941,
+  1.198
+ ],
+ "min": [
+  -0.971,
+  0,
+  -0.478
+ ],
+ "meshes": [
+  {
+   "name": "CharacterTemplate_ArmLeft",
+   "skinned": true,
+   "parent": "Rig",
+   "mat": [
+    "FB_Yellow"
+   ],
+   "tex": false
+  },
+  {
+   "name": "CharacterTemplate_ArmRight",
+   "skinned": true,
+   "parent": "Rig",
+   "mat": [
+    "FB_Yellow"
+   ],
+   "tex": false
+  },
+  {
+   "name": "CharacterTemplate_Body",
+   "skinned": true,
+   "parent": "Rig",
+   "mat": [
+    "FB_Yellow"
+   ],
+   "tex": false
+  },
+  {
+   "name": "CharacterTemplate_Head",
+   "skinned": true,
+   "parent": "Rig",
+   "mat": [
+    "FB_Yellow"
+   ],
+   "tex": false
+  },
+  {
+   "name": "CharacterTemplate_LegLeft",
+   "skinned": true,
+   "parent": "Rig",
+   "mat": [
+    "FB_Yellow"
+   ],
+   "tex": false
+  },
+  {
+   "name": "CharacterTemplate_LegRight",
+   "skinned": true,
+   "parent": "Rig",
+   "mat": [
+    "FB_Yellow"
+   ],
+   "tex": false
+  },
+  {
+   "name": "FB_Ear_L_v5",
+   "skinned": true,
+   "parent": "Rig",
+   "mat": [
+    "FB_Yellow"
+   ],
+   "tex": false
+  },
+  {
+   "name": "FB_Ear_R_v5",
+   "skinned": true,
+   "parent": "Rig",
+   "mat": [
+    "FB_Yellow"
+   ],
+   "tex": false
+  },
+  {
+   "name": "Carl_Brow_L",
+   "skinned": false,
+   "parent": "head",
+   "mat": [
+    "Carl_Brow"
+   ],
+   "tex": false
+  },
+  {
+   "name": "Carl_Brow_R",
+   "skinned": false,
+   "parent": "head",
+   "mat": [
+    "Carl_Brow"
+   ],
+   "tex": false
+  },
+  {
+   "name": "Carl_Nose",
+   "skinned": false,
+   "parent": "head",
+   "mat": [
+    "Carl_Nose"
+   ],
+   "tex": false
+  },
+  {
+   "name": "FB_Eye_L_1",
+   "skinned": false,
+   "parent": "FB_Eye_L",
+   "mat": [
+    "Black"
+   ],
+   "tex": false
+  },
+  {
+   "name": "FB_Eye_L_2",
+   "skinned": false,
+   "parent": "FB_Eye_L",
+   "mat": [
+    "White"
+   ],
+   "tex": false
+  },
+  {
+   "name": "FB_Eye_L_3",
+   "skinned": false,
+   "parent": "FB_Eye_L",
+   "mat": [
+    "EyeColor"
+   ],
+   "tex": false
+  },
+  {
+   "name": "FB_Eye_R_1",
+   "skinned": false,
+   "parent": "FB_Eye_R",
+   "mat": [
+    "Black"
+   ],
+   "tex": false
+  },
+  {
+   "name": "FB_Eye_R_2",
+   "skinned": false,
+   "parent": "FB_Eye_R",
+   "mat": [
+    "White"
+   ],
+   "tex": false
+  },
+  {
+   "name": "FB_Eye_R_3",
+   "skinned": false,
+   "parent": "FB_Eye_R",
+   "mat": [
+    "EyeColor"
+   ],
+   "tex": false
+  },
+  {
+   "name": "FB_Mouth_Smile",
+   "skinned": false,
+   "parent": "head",
+   "mat": [
+    "FB_Mouth"
+   ],
+   "tex": true
+  }
+ ],
+ "bones": [
+  "root",
+  "control-toe-rolll",
+  "control-heel-rolll",
+  "control-foot-rolll",
+  "heelIKl",
+  "IK-footl",
+  "IK-toel",
+  "control-toe-rollr",
+  "control-heel-rollr",
+  "control-foot-rollr",
+  "heelIKr",
+  "IK-footr",
+  "IK-toer",
+  "elbowIKl",
+  "elbowIKr",
+  "handIKl",
+  "handIKr",
+  "hips",
+  "spine",
+  "chest",
+  "head",
+  "earl1",
+  "earl2",
+  "earl3",
+  "earr1",
+  "earr2",
+  "earr3",
+  "upperarml",
+  "lowerarml",
+  "wristl",
+  "handl",
+  "handslotl",
+  "upperarmr",
+  "lowerarmr",
+  "wristr",
+  "handr",
+  "handslotr",
+  "upperlegl",
+  "lowerlegl",
+  "footl",
+  "toesl",
+  "upperlegr",
+  "lowerlegr",
+  "footr",
+  "toesr",
+  "kneeIKl",
+  "kneeIKr"
+ ],
+ "headBone": [
+  0,
+  1.241,
+  0
+ ]
+}

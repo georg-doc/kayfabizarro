@@ -1,7 +1,42 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§10 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§11 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 11 · 14.10. mittags · G0 FrizzleBob v5 (V-236) · F1-Nacharbeiten aus dem WS0-Abgleich · gelesen bis V-236
+
+**Quittung:** `WS0_TO_WS1.md` (Besetzung FrizzleBob v5), `GEORG_CAST_DIRECTION_FRIZZLEBOB_V5_WS0_TO_WS1_2026-10-14.md`, `WS0_WS1_F1_EYERIG_SOURCE_AND_GATE_RECONCILIATION_2026-10-14.md` und `DECISIONS.md` gelesen bis V-236. Rogue_Hooded bleibt nur F1-Prüffigur. V-235 (Triplet = Mini-Story) betrifft den Pool und nicht WS1-Code.
+
+### 11.1 · F1-Nacharbeiten (Abgleich §2, P0)
+- **Quelle fest gepinnt:** `scripts/f1/serve-studio.sh` holt das Studio jetzt aus Commit `db823766370df932cc8134f21691036924a7d12c` und den Batch-Export aus main `ac9dbaed`. Den Branch-Namen nutzt es nicht mehr.
+  - Commits und Datei-Blobs stehen in der Referenz (`test/ref/f1_studio_rogue_hooded.report.json` → `sourcePins`).
+  - Neu aufgenommen: eyeFrame, controls und faceHost sind identisch mit der alten Referenz, im Bild weicht 1 von 810.000 Pixeln ab.
+- **Lid-Naht ehrlich ausgewiesen:**
+  - `lidsClose` heißt jetzt `lidsCoverSclera`, denn der Punkt prüft nur das Augenweiß.
+  - Neu ist die Messung `seams.pupilHiddenWhenClosed`: Bei geschlossenem Lid bleiben **1074 von 1062** dunklen Pupillen-Pixeln sichtbar. Status **TUNE · Rigging-Owner (eyeoval.v1)**, kein PASS. Der Test meldet es als eigene Zeile „OFFEN“.
+  - Bild: `ws1/proofs/2026-10-14-f1/f1_lid_pupil_seam.png`. Lokal geändert ist nichts.
+- **Profilwerte bleiben wie gespeichert** (kinetics aus, life an). Ein Umschauen im Leerlauf kommt, wenn es gewünscht ist, als eigenes Spiel-Preset im Darsteller-Slot. Georgs Profil wird dafür nicht verändert.
+- Es gelten getrennt `EYE_PROFILE_ACCEPTED` und `SOURCE_EYE_CLEANUP_PENDING`.
+- Alle 9 Tests sind grün, dazu kommt die eine OFFEN-Zeile.
+
+### 11.2 · G0 FrizzleBob v5: Ergebnis
+Bericht: `ws1/asset-intake/frizzlebob-v5/SOURCE_ISOLATION_R1.md`. Bilder liegen in `ws1/proofs/2026-10-14-fb-g0/`.
+- **Modell allein:** `FB_TEMPLATE_LOOK_v5.glb`, Blob `131d7c38` bestätigt, three 0.186.1, ohne Rig. Es hat gemalte Augen, Modellbrauen, Modellnase und einen gemalten Mund. Der Mund steht in ¾ vor dem Gesicht, das ist ein bekannter offener Punkt. Die Haarbüschel kommen erst über `hair-tufts.v1`.
+- **Spender P06 r1 lokal nachgelaufen:** Ohne Georgs Eintrag besteht die Abnahme 1–7 nur **6/7**.
+  - 3 „closed means closed“ ist PASS: Die Ton-Lider decken die Pupille ganz.
+  - 6 „Spiegel“ ist FAIL (0,127° bei Grenze 0,1°), weil der Standard-Anker nicht Georgs Anker ist.
+  - Der 7/7-Beleg vom 30.09. hängt also an Georgs gespeichertem Eintrag.
+- **Mund ist vorhanden:** Modellmund + 13 Laute-Decals (`pet-mouth.v1`) + `lipsync-text.v1` (Text → Mundbild-Spur). Das passt zu „mime, kein TTS“. Kein Platzhalter nötig.
+- **`SOURCE_REQUIRED`:** Georgs FrizzleBob-Eintrag (`kfb.pets/1` mit Augen-, Lid-, Brauen-, Mund-, Ohren- und Oberflächenwerten) liegt nur im localStorage seines Browsers in Claude Design. Joyride J17 hat das ebenfalls festgestellt und eigene Werte gesetzt; WS1 übernimmt diese nicht.
+- **Falle v5/v5b:** Ab Cut r2 lädt die Kennung `frizzlebob-earrig-v5` die Figur **v5b** (23615cff), so in P06 nach FLOPPY-01, in P08 und in J17. Ein später gespeicherter Eintrag kann deshalb auf v5b eingestellt sein.
+- **Bitte (ein Schritt):** Georg exportiert in der ToolBox **Rigging › Import · Export › Export** seinen FrizzleBob-Eintrag. WS0 legt fest, welcher Stand gilt (30.09. auf v5 oder später mit v5-Bestätigung), legt die Datei ins Repo und meldet den Pfad. Erst damit ist eine Abnahme „Georgs FrizzleBob“ möglich.
+- **Lider:** Beleg = `hinge`, Georgs Speicherstand laut LIDS-02 = `glide`. Bitte entscheiden, welche Mechanik gilt. Nur die Entscheidung fehlt, die Werte kommen mit dem Export.
+
+### 11.3 · Weiter ohne zu warten (keine erfundenen Werte)
+- **Darsteller-Slot:** Darsteller-Vertrag für Nicht-KayKit-Figuren, `faceDriver` exklusiv (`KFB_NATIVE` | `WIREFACE_*`), Diff folgt hier.
+- **FrizzleBob-Gesicht:** face-mount mit seinen Modulen 1:1 per Vite-Alias einbinden, wie in F1.
+- **Code-Pfad-Parität Spender | R3F:** läuft mit einem ausdrücklich markierten Prüf-Eintrag (Spender-Standard + `eyes: rig` + Abnahmewerte aus MEASURE.json). Nicht Georgs Look, geht nicht an Georg.
+- **Wireface-SDK:** nicht auf diesem Mac, weil Dropbox fehlt (G0-Verfügbarkeit). Schalter `VITE_WIREFACE=1` und Build ohne SDK bleiben Pflicht.
 
 ## 10 · 14.10. früh · F1 Augen fertig · Registry-Korrektur übernommen · gelesen bis V-234
 

@@ -53,7 +53,7 @@ await page.waitForTimeout(600)
 const after = await page.evaluate(() => ({ log: window.__kfbEyeTestCtl.log(), freed: { g: window.__freedSet.g.size, m: window.__freedSet.m.size } }))
 await page.waitForTimeout(800)
 const later = await page.evaluate(() => window.__kfbEyeTestCtl.log().update)
-fs.mkdirSync('test/out', { recursive: true }); fs.writeFileSync('test/out/f1_front.png', full)
+fs.mkdirSync('test/out', { recursive: true }); fs.writeFileSync('test/out/f1_front.png', full); fs.writeFileSync('test/out/f1_eyes_open.png', open1); fs.writeFileSync('test/out/f1_eyes_shut.png', shut)
 // Bildvergleich gegen Studio-Referenz (gleiche Kamera, 900 × 900) und offen/zu
 const cmp = await page.evaluate(async ([a, b, o, s]) => {
   const load = (u) => new Promise((ok) => { const i = new Image(); i.onload = () => ok(i); i.src = u })
@@ -62,15 +62,17 @@ const cmp = await page.evaluate(async ([a, b, o, s]) => {
   // Augenweiß (Sklera #f3ede2): hell und kaum gesättigt; ein geschlossenes Lid (Hautton) deckt es ab
   const white = (A) => { let n = 0; for (let i = 0; i < A.length; i += 4) { const r = A[i], g = A[i + 1], b = A[i + 2]; if (Math.min(r, g, b) > 215 && Math.max(r, g, b) - Math.min(r, g, b) < 22) n++ } return n }
   const [R, S, O, Z] = await Promise.all([load(a), load(b), load(o), load(s)])
-  const wo = white(px(O, 0, 0, O.width, O.height)), wz = white(px(Z, 0, 0, Z.width, Z.height))
-  return { faceVsStudio: diff(px(R, 250, 90, 400, 260), px(S, 250, 90, 400, 260)), whiteOpen: wo, whiteShut: wz }
+  // Pupille (matte-cute, fast schwarz): sehr dunkel. Bei geschlossenem Lid darf davon nichts sichtbar bleiben (WS0-Abgleich 14.10., P0).
+  const dark = (A) => { let n = 0; for (let i = 0; i < A.length; i += 4) if (Math.max(A[i], A[i + 1], A[i + 2]) < 45) n++; return n }
+  const PO = px(O, 0, 0, O.width, O.height), PZ = px(Z, 0, 0, Z.width, Z.height)
+  return { faceVsStudio: diff(px(R, 250, 90, 400, 260), px(S, 250, 90, 400, 260)), whiteOpen: white(PO), whiteShut: white(PZ), pupilOpen: dark(PO), pupilShut: dark(PZ) }
 }, ['data:image/png;base64,' + full.toString('base64'), 'data:image/png;base64,' + fs.readFileSync('test/ref/f1_studio_front.png').toString('base64'), 'data:image/png;base64,' + open1.toString('base64'), 'data:image/png;base64,' + shut.toString('base64')])
 await browser.close()
 
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b)
 const c = rep?.controls || {}, e = rep?.eyeFrame || {}
 const dxL = pL[0][0] - p0[0][0], dxR = pL[1][0] - p0[1][0]
-process.exit(report('f1 eyes', {
+const code = report('f1 eyes', {
   vendorByteIdentical: vendorBad.length === 0,
   assetsPinned: assetsOk,
   mounted: st.status === 'OK',
@@ -86,7 +88,13 @@ process.exit(report('f1 eyes', {
   contractDisposeOnce: after.log.dispose === 1 && later === after.log.update,
   contractAllFreed: before.geos > 5 && after.freed.g === before.geos && after.freed.m === before.mats,
   gazeParallel: dxL < -0.003 && dxR < -0.003 && Math.abs(dxL - dxR) < Math.max(Math.abs(dxL), Math.abs(dxR)) * 0.5,
-  lidsClose: cmp.whiteOpen > 800 && cmp.whiteShut < cmp.whiteOpen * 0.25, // Augenweiß verschwindet zu mehr als 75 %
+  lidsCoverSclera: cmp.whiteOpen > 800 && cmp.whiteShut < cmp.whiteOpen * 0.25, // Augenweiß verschwindet zu mehr als 75 % (sagt nichts über die Pupille)
   imageMatchesStudio: cmp.faceVsStudio < 6,
   noPageErrors: errs.length === 0,
-}, { contract: { before, after, later }, kinetics: c.kinetics, life: c.life, st: { status: st.status, cleanup: st.cleanup }, eyeFrame: e, dx: [dxL, dxR], cmp, vendorBad, errs }))
+}, { // Offene Naht, kein PASS: Pupille bei geschlossenem Lid. Spenderverhalten (eyeoval.v1 pupilSeatDelta, im Studio gleich),
+  // gehört dem Rigging-Owner; hier nur gemessen und als TUNE ausgewiesen, nicht lokal verbogen.
+  seams: { pupilHiddenWhenClosed: { status: cmp.pupilShut <= cmp.pupilOpen * 0.05 ? 'PASS' : 'TUNE · Rigging-Owner (eyeoval.v1)', pupilOpen: cmp.pupilOpen, pupilShut: cmp.pupilShut } },
+  contract: { before, after, later }, kinetics: c.kinetics, life: c.life, st: { status: st.status, cleanup: st.cleanup }, eyeFrame: e, dx: [dxL, dxR], cmp, vendorBad, errs })
+const pz = cmp.pupilShut <= cmp.pupilOpen * 0.05
+console.log(pz ? 'PASS f1 Naht Pupille bei Lid zu' : `OFFEN f1 Naht Pupille bei Lid zu: ${cmp.pupilShut} von ${cmp.pupilOpen} dunklen Pupillen-Pixeln bleiben sichtbar (TUNE, Rigging-Owner)`)
+process.exit(code)

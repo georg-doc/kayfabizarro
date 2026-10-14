@@ -1,8 +1,9 @@
 // Studio-Referenz aufnehmen (Messwerte + Frontbild). Vorher: zsh scripts/f1/serve-studio.sh (läuft weiter), dann npm run build.
-// Referenz: Georgs Studio aus dem Quellcode (Branch cloudflare-live, lokal ausgeliefert; die öffentliche Route liefert derzeit die Startseite), Batch-Import wie per Hand, Figur wählen, Frontansicht, Bindepose.
+// Referenz: Georgs Studio aus dem Quellcode (fest Commit db823766, lokal ausgeliefert; die öffentliche Route liefert derzeit die Startseite), Batch-Import wie per Hand, Figur wählen, Frontansicht, Bindepose.
 import fs from 'fs'
 import { chromium } from 'playwright'
 const BATCH = 'test/out/eye-rig-medium.batch-1.json' // von scripts/f1/serve-studio.sh bereitgelegt
+const SOURCE = Object.fromEntries(fs.readFileSync('test/out/studio-source.txt', 'utf8').trim().split('\n').map((l) => { const [k, ...v] = l.split(' '); return k === 'blob' ? [v[1], v[0]] : [k, v[0]] })) // Commits + Datei-Blobs
 const b = await chromium.launch({ args: ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist'] })
 const p = await b.newPage({ viewport: { width: 1400, height: 900 } }); const errs = []
 p.on('pageerror', (e) => errs.push(e.message))
@@ -27,6 +28,6 @@ const res = await p.evaluate(() => {
 fs.writeFileSync('test/out/f1_studio_front.png', Buffer.from(res.png.split(',')[1], 'base64'))
 delete res.png
 const full = await p.evaluate(() => window.__EYE_RIG_BATCH.state.eyes.report())
-fs.writeFileSync('test/ref/f1_studio_rogue_hooded.report.json', JSON.stringify({ captured: new Date().toISOString(), source: 'eye-rig-batch app.js @ cloudflare-live (lokal ausgeliefert, scripts/f1/serve-studio.sh), Batch-Import eye-rig-medium.batch-1.json, Figur adventurer-rogue-hooded, Bindepose', eyeFrame: full.eyeFrame, controls: full.controls, faceHost: full.faceHost }, null, 1))
+fs.writeFileSync('test/ref/f1_studio_rogue_hooded.report.json', JSON.stringify({ captured: new Date().toISOString(), source: 'eye-rig-batch app.js @ db823766 (lokal ausgeliefert, scripts/f1/serve-studio.sh), Batch-Import eye-rig-medium.batch-1.json @ ac9dbaed, Figur adventurer-rogue-hooded, Bindepose', sourcePins: SOURCE, eyeFrame: full.eyeFrame, controls: full.controls, faceHost: full.faceHost }, null, 1))
 console.log(JSON.stringify({ ...res, errs: errs.slice(0, 5) }, null, 1))
 await b.close()
