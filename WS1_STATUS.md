@@ -3,7 +3,7 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§14 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
-## 14 · 14.10. abends · B1 Billboard (R2) · Vorlagen-Zeile nach R2 §5 (WS1 baut parallel, Einspruch jederzeit)
+## 14 · 14.10. abends · B1 Billboard (R2) fertig (G2) · Georgs Entscheidungen zu Farbe und Ecken · Vorlagen-Zeile
 
 **Vorlagen-Zeile (G1):**
 - **1:1 (byte-gleich, Vendor):** `briefd/billboard-clay.js` aus `KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r2/` (Branch `work/billboard-island-integration-01-2026-10-01` @83b34017, 35 Prüfsummen OK). Genutzt werden:
@@ -25,6 +25,59 @@ Neueste Einträge oben (§14 ist der neueste). WS0 antwortet im Register-Branch 
 - **Neu:** Modul-Hülle `src/modules/billboard.js` nach create/update/dispose mit `setCard(card)`, dazu eine Prüfszene.
 - **Karte:** Nur SAFE-Decks über `cardImage`. Sonst der Platzhalter mit wörtlichem Kartentext (Name, Power, Lore aus der Kartenquelle), im gleichen Rahmen.
 - **Keine Lesefolge, kein Vollbild-Knopf, kein TV** (R2 §4).
+
+### 14.1 · Georgs Entscheidungen (direkt an WS1, 14.10., bitte als V-Nummer eintragen)
+1. **Farben:** „Die Farben stammen aus der jeweiligen Cartoon-Farbpalette des Bioms / der Insel / der Kartenzone (ähnlich wie in Joyride).“
+   - Umsetzung: `buildPalette(spec, island)` des Spenders mit dem Biom. Die Biome sind die Tabelle `BIOMES` aus `billboard-stage.js` Z. 6–12, als Daten 1:1 übernommen: Senf-Plateau, Moos-Insel, Violett-Mesa, Klinik-Riff, Heroic-Canyon.
+   - Ohne Biom gibt es kein Billboard (`BILLBOARD_BIOME_REQUIRED`).
+   - Der Prüfstandard ist **Moos-Insel** (Rahmen #d97c3a, Pfosten #6f4e37, Boden #9aab62). Das trifft Georgs Referenzbild.
+   - **Bitte WS0:** Welches Biom bzw. welche Kartenzone gilt für die Amphitheater-Bühne (G4), und gibt es eine Zuordnung Kartenzone → Palette (Joyride)? Der Code nimmt jedes Biom-Objekt mit `accent/paper/rock/top`.
+2. **Ecken (ersetzt R2 §3):** „Das Claymation-Billboard muss innen runde Ecken haben, der Card Viewer mit Maske darunter.“
+   - Umsetzung: Der Radius ist immer `STYLES.plain.corner` des Spenders (0,45 m, begrenzt über `cornerOf`).
+   - `faceGeometry(W, H, r)` maskiert die Kartenecken: UV über die volle Box, Bild unverzerrt, nur die Ecken fallen weg.
+   - Die Papierrand-Messung ist damit entfallen. Ergebnis der Messung, zur Dokumentation: Keine von 52 messbaren Viertelseiten hat einen weißen Rand, alle tragen Schnittmarken (`ws1/asset-intake/b1_paper_margins_52_decks.txt`).
+
+### 14.2 · Ergebnis (G2): `test/b1.mjs`, 16 Prüfpunkte PASS, alle 11 Tests grün (plus die bekannte F1-Zeile „OFFEN“)
+- **Vorlage und Stil:** Spender byte-gleich (Blob 5c9f22e1). Stil plain ohne TV-Teile: Oberkante = Rahmenkante, Breite = Rahmen.
+- **Niedrig:** gb 0,9. Die Fläche beginnt 0,9 m über dem Boden, die Oberkante liegt bei 5,34 m (Spender 7,44 m).
+- **Responsiv:** W/H = Seitenverhältnis der Viertelseite, contain in 7 × 5 m. Die Grenzfälle von `fitFace` sind geprüft.
+- **Karte:**
+  - Die Textur ist die Viertelseite aus `cardImage` selbst (1400 × 781 bei res 2800), Pixel für Pixel gleich (Abweichung 0).
+  - Kein Füllrand: Die Fläche füllt die Rahmenöffnung.
+  - Innen runde Ecken (r 0,45), Kartenecken maskiert.
+  - Echte Karte nur aus SAFE-Decks (Prüfkarte forget_utopia #1).
+  - Für ein nicht gesichertes Deck (anti_rules_toolkit) kommt der Platzhalter mit dem ganzen wörtlichen Kartentext. Die Schrift wird verkleinert, nie gekürzt.
+- **Palette aus dem Biom:** Moos-Insel; ein anderes Biom ergibt eine andere Rahmenfarbe.
+- **Two-Shot:** Beide FrizzleBobs stehen seitlich vor der Tafel (x = ±4,2). Bildschirm-Überdeckung Karte ↔ Figuren (mit gespielter Pose): **0**. Die Karte liegt ganz im Bild.
+- **Vertrag §6:** dispose gibt Leinwand-Textur und beide Materialien frei. Die Geometrien gehören dem Cache des Spenders, wie dort.
+- **Bilder** in `ws1/proofs/2026-10-14-b1/`:
+  - `b1_two_shot.png`;
+  - `b1_views.png` (Two-Shot, ¾, nah);
+  - `b1_ref_pair.png` (Georgs Referenz | Stand ¾);
+  - `b1_card_full.png` (rohe Viertelseite | Tafel nah).
+
+### 14.3 · Blinder Prüfer 6: PASS MIT AUFLAGEN, 9 Befunde, alle behoben oder begründet
+1. **Rahmen verdeckte in Schrägansicht einen Kartenstreifen.** Die Fläche lag 0,245 m hinter der geraden Innenwand.
+   - Jetzt liegt sie bei z = 0,285, vor der Wand und hinter der Fase. Prüfpunkt `faceInFrontOfFrameWall`, Bild ¾.
+   - Das ist eine Abweichung vom Spender (dort 0,035) und gehört zur Vorlagen-Zeile.
+2. **Tests prüften zu wenig** → geschärft:
+   - Lage vor der Wand;
+   - Ecke = Scheitel der Spender-Kurve r·√2/4;
+   - Platzhalter-Deck nachweislich nicht SAFE, Text vollständig;
+   - Überdeckung mit gespielter Pose statt Bindepose.
+3. **Speicher:** Die zweite 4-MB-Kopie je Karte ist weg, die Textur zeigt die Quelle direkt.
+   - Offen bleibt der Seiten-Cache von `card-art-2d.js` (res 2800 ≈ 17,5 MB je PDF-Seite, Sitzung).
+   - Vorschlag an deren Owner: Begrenzung (LRU) oder kein Dauer-Cache bei großer Auflösung. Bis dahin ist der Speicher für eine Bühne mit einer Tafel vertretbar.
+4. **Globales `STYLES.plain.gb`:** Wird jetzt einmal beim Laden des Moduls gesetzt, bevor ein Körper gebaut wird. Diff: `3.0 → 0.9`. Andere Nutzer von billboard-clay.js gibt es im Spiel nicht.
+5. **Nach Ladefehler blieb der Platzhalter stehen:** `subscribeRetry` wie bei CardArt, beim Abbau abgemeldet.
+6. **Überholter `setCard`** meldete die neuere Karte → liefert jetzt `{ stale: true }`.
+7. **Platzhalter kürzte Text still** → die Schrift wird verkleinert, bis alles passt.
+8. und 9. Papierrand-Messung und Spec-Konformität: Hinweise. Die Messung ist mit 14.1 Punkt 2 entfallen.
+
+### 14.4 · Offen
+- **Farbe und Biom der Bühne:** siehe 14.1 Punkt 1.
+- **„Die Figuren stehen davor“ (R2 §1):** Die Figuren stehen vor der Tafel, aber seitlich der Karte, damit sie ganz lesbar bleibt. Stehen sie vor der Karte, verdecken sie POWER/LORE (Bild aus dem ersten Lauf). Bitte bestätigen.
+- **Weiter:** D1 Dialog (Pool r5 bis zur Meldung von r6), dann G4 im Amphitheater.
 
 ## 13 · 14.10. nachmittags · Antwort auf WS0 (§11) · Grundhaltung · Vorschlag F1-Lid-Naht · gelesen bis V-237
 

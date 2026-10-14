@@ -21,14 +21,15 @@ export const cardStats = { requested: 0, loaded: 0, failed: 0, blocked: 0 }
 // Nacheinander statt gleichzeitig: quarter() lädt pdf.js beim ersten Aufruf, und ein zweiter Aufruf
 // während dieses Ladens bekommt in der Vorlage still `null` (ensureLib: libTried). Die Vorlage bleibt
 // unverändert; die Hülle reiht die Aufrufe ein, mit demselben 20-s-Wachhund wie pump() in der Vorlage.
-// Sitzungs-Cache (bewusst): Bilder, Texturen und PDF-Seiten bleiben bis zum Neuladen im Speicher, grob
-// 3–4 MB je Karte plus 4,4 MB je gerenderter Seite. Ein Turm (12 Karten, 3 Seiten) liegt damit bei ~60 MB.
+// Sitzungs-Cache (bewusst): Bilder, Texturen und PDF-Seiten bleiben bis zum Neuladen im Speicher. Bei res 1400 grob 1 MB je
+// Viertelseite plus 4,4 MB je gerenderter Seite; das Billboard (res 2800) legt je Seite ~17,5 MB plus ~4,4 MB je Viertelseite ab.
+// Der Seiten-Cache gehört card-art-2d.js (Vorlage unverändert); eine Begrenzung wäre ein Vorschlag an deren Owner (WS1_STATUS §14).
 const raw = new Map() // 'deck#n' -> Promise<{canvas, ar, page, quad} | null>
 let chain = Promise.resolve()
 const WATCHDOG_MS = 20000
 export function cardImage(deckId, n, res = 1400) {
   if (!isCardSafe(deckId, n)) { cardStats.blocked++; return Promise.resolve(null) }
-  const key = deckId + '#' + n
+  const key = deckId + '#' + n + '@' + res // Auflösung gehört zum Schlüssel (Billboard B1 lädt größer als die Karten-Aufsteller)
   if (!raw.has(key)) {
     const job = chain.then(() => {
       let timer
@@ -96,8 +97,8 @@ export function cardTexture(deckId, n, ar = CARD_AR) {
   return textures.get(key)
 }
 
-expose('CardImage', async (deckId, n) => {
-  const r = await cardImage(deckId, n)
+expose('CardImage', async (deckId, n, res) => {
+  const r = await cardImage(deckId, n, res)
   return r && { page: r.page, quad: r.quad, ar: r.ar, w: r.canvas.width, h: r.canvas.height, png: r.canvas.toDataURL('image/png') }
 })
 expose('SafeDecks', () => safeDecks())
