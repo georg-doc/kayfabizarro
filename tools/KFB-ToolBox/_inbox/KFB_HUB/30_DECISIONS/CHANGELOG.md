@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Meshy-Wahl, Mund-Richtung
+- V-246: Mesa B, Library A; Asset-Branch assets/meshy-scenery-2026-10-15.
+- V-247 (TBD): animierte Münder ohne Lipsync; Träger-Matrix (Decal, SVG, Mesh-Deformation, Wireface) × Figurenarten im Mund-Labor der neuen ToolBox-Site.
+
 ## 2026-10-15 früh · Zweite Besetzung
 - Georg: KayKit-Medium-Figur mit seinem Augen-Profil als Gegenüber von FrizzleBob. WS1 legt drei Kandidaten im Two-Shot vor.
 

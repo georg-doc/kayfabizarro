@@ -3151,6 +3151,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-246",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "PASS",
+   "text": "Meshy-Kulissen: Mesa Island = Fassung B (100 k Dreiecke, 4,6 MB), Akashic Library = Fassung A (350 k, 14,7 MB); gltf-transform simplify + 2048 WebP. Asset-Branch assets/meshy-scenery-2026-10-15 (media/3D_Assets/MeshyModels/browser/), Einbau WS1 nach V-230-Muster. Schnee- und Natur-Insel folgen gleich.",
+   "values": {},
+   "owner": "WS1 (Einbau) · WS0 (Aufbereitung)",
+   "check": "Bildvergleich Original|A|B",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Wahl am Vergleichsbild.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-247",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "TBD",
+   "text": "Münder: Ziel sind animierte Münder (Sprech-Animation im Satzrhythmus und Ruhe-/Emotionsformen), KEIN Lipsync. Ein Mund-Treiber, mehrere Träger zum Ausprobieren: (a) vorhandene FrizzleBob-Decals, (b) SVG-Münder mit Grund-Visemen (sauber auf die Mund-Zone des Kopfes gelegt, als saubere Swaps, Farbe je Figur), (c) Mesh-Deformation (Kiefer/Morph, cartooniger Klappmund), (d) Wireface (exklusiv). Testmatrix über alle Figurenarten: KayKit mit/ohne Mund, KayKit mit Foto-/Grafik-Gesicht, Frankensteinings (Pencil u. a.), FrizzleBob. Ort: Mund-Labor in der neuen ToolBox-Site (V-244), nicht im Spiel. Georg wählt je Figurenart am Bild.",
+   "values": {},
+   "owner": "WS0 (Plan) · WSA work (ToolBox-Labor)",
+   "check": "Bild-/Clip-Matrix Träger × Figurenart",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Figuren sollen sprechend wirken, ohne Tonaufnahmen und ohne Lipsync-Aufwand.",
+   "applies": "nach ToolBox-Port"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3213,7 +3243,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:248",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:255",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
