@@ -2910,6 +2910,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-231",
+   "date": "2026-10-14",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Triplet-Regeln (bestätigt): je Karte genau EIN sprechbarer Satz; SHOW IT echter Kartentitel gesprochen; SPIN IT Power sinnvoll auf Lore angewendet (nicht aneinandergereiht, kein Feld weggelassen); SELL IT hörbare Wendung am Satzende aus dem eigenen Kartenmaterial, keine erfundene Pointe; 90–95 % Karteninhalt, Rest nur grammatischer Kitt, nichts Erfundenes; alle drei Felder nachweisbar, sonst NO_TRIPLET; FAIL: Feld fehlt, Zusammenfassung ohne Wendung, wörtlicher Vortrag, mehrere Sätze, Füllsätze; Deck = ganzes Deck; Opener, Brücken, Intro/Outro als spätere eigene Schichten. Ausgabe direkt im Pool-Beat-Format, geprüft mit triplet-pool-core. Prompt: replies/TRIPLET_PLUGIN_UPDATE_PROMPT_R1.md.",
+   "values": {},
+   "owner": "Triplet-Chat (Plugin kfb-triplets) → WS0 (Pool)",
+   "check": "Probe 2 × 8 Karten, Georg urteilt",
+   "source": "Georg 13.10. + 14.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vortragszeilen und Zusammenfassungen wurden als Triplets geführt.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2972,7 +2987,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:166",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:172",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

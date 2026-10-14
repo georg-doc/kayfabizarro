@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 früh · Triplet-Regeln bestätigt
+- V-231: Triplet-Regeln (Show/Spin/Sell, ein Satz, 90–95 % Karteninhalt, Opener später) von Georg bestätigt.
+
 ## 2026-10-14 früh · Registry-Korrektur
 - Branch data/kfb-registry-mapping-fix-2026-10-14 @a9f5ffa1 (neuer MEDIA_COMMIT): 18 Offsets, Einzelfälle, PDF-Namen. Vorhersage 45→58 SAFE; WS1 bestätigt per Audit-Lauf. Offene Sonderfälle im Bericht. Hinweis: tools/asset_registry/decks.py rechnet coverOffset nach Merge selbst nach (würde biological_metropolis zurücksetzen) – vor einem Merge nach main anpassen.
 
