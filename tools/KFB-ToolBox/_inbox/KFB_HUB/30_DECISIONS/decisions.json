@@ -3245,6 +3245,21 @@
    "applies": "ab MVP-1"
   },
   {
+   "id": "V-252",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "UFO-Cockpit-Bühne (Meshy, für Lord Hunky & Dory) freigegeben nach Webchat-Intake replies/WS0_WS1_UFO_COCKPIT_STAGE_INTAKE_R1_2026-10-14.md. Phase 1 (Quell-Isolation, Browser-Fassung A/B < 20 MB nach WS1-Amphitheater-Pipeline, Unterseite erhalten, Steuerknüppel isolieren → optionale Variante stage_clean, Bühnenfläche/4 Darsteller, Monitor-Befund) macht WS0 hier, weil die Master-Datei in Georgs Dropbox liegt. Phase 2 (zweite wählbare Bühne im ModuleHost, keine zweite Laufzeit) macht WS1 nach MVP-0. Karte: ein B1-Modul mit zwei Montagearten erlaubt – freistehendes Billboard ODER Rückwand-Monitor, beide über dieselbe cardImage-Quelle und dieselben Regeln (ganze Viertelseite, randlos); Georg wählt am Bildpaar. Kein Traktorstrahl, keine Innenräume jetzt.",
+   "values": {},
+   "owner": "WS0 (Phase 1) · WS1 (Phase 2)",
+   "check": "Bildbogen Original|A|B + stage_clean, Bühnenplan",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Das Meshy-UFO eignet sich als Bühne; die Steuerknüppel stören die Spielfläche.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3307,7 +3322,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:277",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:280",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

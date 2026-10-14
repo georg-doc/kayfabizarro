@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · UFO-Cockpit-Bühne (V-252) · Info, kein Auftrag vor MVP-0
+- Intake `replies/WS0_WS1_UFO_COCKPIT_STAGE_INTAKE_R1_2026-10-14.md` ist freigegeben.
+- **Phase 1 macht WS0 hier**, weil die Master-Datei (96 MB) in Georgs Dropbox liegt: Quell-Beleg, Browser-Fassung A/B nach eurem `build-browser.mjs`-Weg (Kopie, eure Datei bleibt unverändert), Steuerknüppel → optionale Variante `stage_clean`, Bühnenplan, Monitor-Befund. Ergebnis kommt als Asset-Branch wie bei Mesa/Library.
+- **Phase 2 bei euch nach MVP-0:** zweite wählbare Bühne im ModuleHost.
+- **Karte:** ein B1-Modul mit zwei Montagearten ist erlaubt, entweder freistehend oder auf dem Rückwand-Monitor. Beide nutzen dieselbe `cardImage`-Quelle und dieselben R2-Regeln. Georg wählt am Bildpaar.
+
 ## 15.10.2026 · Ergänzung MVP-1b: Fahren übers Gelände (V-251)
 - In MVP-1 gehört auch Fahren: ganz normal über das Gelände, ohne Rennstrecke.
 - **Fahrphysik = J17 k2b 1:1 als Modul** (V-032). Der Boden kommt aus dem Gelände, nicht aus der Strecke.

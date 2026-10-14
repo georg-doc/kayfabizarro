@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · UFO-Cockpit-Bühne
+- V-252: Webchat-Intake freigegeben; Phase 1 (Quell-Isolation, Browser A/B, Steuerknüppel → stage_clean, Bühnenplan, Monitor) läuft bei WS0; Phase 2 WS1 nach MVP-0; B1 darf freistehend oder auf dem Monitor montiert werden.
+
 ## 2026-10-15 · Fahren in MVP-1
 - V-251: MVP-1b Fahren übers Gelände mit J17-k2b-Physik 1:1, Cicada, Hop; Rennstrecke später.
 
