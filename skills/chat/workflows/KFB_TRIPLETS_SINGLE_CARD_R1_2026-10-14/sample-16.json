@@ -1,0 +1,1450 @@
+{
+  "schema": "kfb.voice.triplet-opener-pool/1",
+  "contentRevision": "sample-r1-2026-10-14",
+  "canonicalDefault": false,
+  "sourcePins": [
+    {
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "path": "media/kfb/Kayfabizarro_Monomyth_Mayhem_WEB_v1.pdf.json",
+      "ref": "ac9dbaed2e5966a537a4bb719e8cd847dcc5e099",
+      "blob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21"
+    },
+    {
+      "deckId": "help_i_am_a_human",
+      "path": "media/kfb/Help_I_Am_A_Human_-_ADD_web.pdf.json",
+      "ref": "ac9dbaed2e5966a537a4bb719e8cd847dcc5e099",
+      "blob": "14bbb1e043470bba1bf7c589163e3682109ea094"
+    }
+  ],
+  "openers": [],
+  "beats": [
+    {
+      "beatId": "kayfabizarro_monomyth_mayhem:1:triplet-r1",
+      "version": 1,
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 1,
+      "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "mode": "COMPACT",
+      "surfaceText": "The Ordinary World cancels any Quest progression this turn because dysfunction is a habit, until the extraordinary seems impossible.",
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "status": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "reviewer": null,
+      "evidence": [
+        {
+          "field": "cardName",
+          "quote": "The Ordinary World",
+          "start": 0,
+          "end": 18,
+          "spoken": "The Ordinary World"
+        },
+        {
+          "field": "power",
+          "quote": "progression",
+          "start": 43,
+          "end": 54,
+          "spoken": "progression"
+        },
+        {
+          "field": "lore",
+          "quote": "extraordinary seems impossible",
+          "start": 82,
+          "end": 112,
+          "spoken": "extraordinary seems impossible"
+        }
+      ],
+      "semanticCoverage": {
+        "power": "Applied: cancel any Quest progression this turn",
+        "lore": "Context: extraordinary seems impossible",
+        "reframe": "until the extraordinary seems impossible.",
+        "humanAcceptance": "PENDING"
+      },
+      "delivery": {
+        "pauseBeforeMs": 300,
+        "pauseAfterMs": 800,
+        "rate": 0.93,
+        "pitch": 1
+      },
+      "contentShare": {
+        "method": "content words from card / all content words",
+        "pct": 100
+      },
+      "slots": {
+        "show": "The Ordinary World",
+        "spin": "cancels any Quest progression this turn because dysfunction is a habit, until the extraordinary seems impossible.",
+        "sell": "until the extraordinary seems impossible."
+      }
+    },
+    {
+      "beatId": "kayfabizarro_monomyth_mayhem:3:triplet-r1",
+      "version": 1,
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 3,
+      "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "mode": "COMPACT",
+      "surfaceText": "Refusal of the Call pauses the Quest for one turn because fear is realistic self-preservation, but the familiar self is terrible at math.",
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "status": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "reviewer": null,
+      "evidence": [
+        {
+          "field": "cardName",
+          "quote": "Refusal of the Call",
+          "start": 0,
+          "end": 19,
+          "spoken": "Refusal of the Call"
+        },
+        {
+          "field": "power",
+          "quote": "Quest",
+          "start": 26,
+          "end": 31,
+          "spoken": "Quest"
+        },
+        {
+          "field": "lore",
+          "quote": "familiar self is terrible at math",
+          "start": 82,
+          "end": 115,
+          "spoken": "familiar self is terrible at math"
+        }
+      ],
+      "semanticCoverage": {
+        "power": "Applied: Pause the Quest for one turn",
+        "lore": "Context: familiar self is terrible at math",
+        "reframe": "but the familiar self is terrible at math.",
+        "humanAcceptance": "PENDING"
+      },
+      "delivery": {
+        "pauseBeforeMs": 300,
+        "pauseAfterMs": 800,
+        "rate": 0.93,
+        "pitch": 1
+      },
+      "contentShare": {
+        "method": "content words from card / all content words",
+        "pct": 92.31
+      },
+      "slots": {
+        "show": "Refusal of the Call",
+        "spin": "pauses the Quest for one turn because fear is realistic self-preservation, but the familiar self is terrible at math.",
+        "sell": "but the familiar self is terrible at math."
+      }
+    },
+    {
+      "beatId": "kayfabizarro_monomyth_mayhem:5:triplet-r1",
+      "version": 1,
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 5,
+      "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "mode": "COMPACT",
+      "surfaceText": "Crossing the Threshold moves the Quest Die +2 and discards your hand because commitment is the moment fear becomes movement, and you can't un-take the step.",
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "status": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "reviewer": null,
+      "evidence": [
+        {
+          "field": "cardName",
+          "quote": "Crossing the Threshold",
+          "start": 0,
+          "end": 22,
+          "spoken": "Crossing the Threshold"
+        },
+        {
+          "field": "power",
+          "quote": "Quest",
+          "start": 25,
+          "end": 30,
+          "spoken": "Quest"
+        },
+        {
+          "field": "lore",
+          "quote": "movement",
+          "start": 38,
+          "end": 46,
+          "spoken": "movement"
+        }
+      ],
+      "semanticCoverage": {
+        "power": "Applied: Move Quest Die +2",
+        "lore": "Context: You can't un-take the step",
+        "reframe": "and you can't un-take the step.",
+        "humanAcceptance": "PENDING"
+      },
+      "delivery": {
+        "pauseBeforeMs": 300,
+        "pauseAfterMs": 800,
+        "rate": 0.93,
+        "pitch": 1
+      },
+      "contentShare": {
+        "method": "content words from card / all content words",
+        "pct": 93.75
+      },
+      "slots": {
+        "show": "Crossing the Threshold",
+        "spin": "moves the Quest Die +2 and discards your hand because commitment is the moment fear becomes movement, and you can't un-take the step.",
+        "sell": "and you can't un-take the step."
+      }
+    },
+    {
+      "beatId": "kayfabizarro_monomyth_mayhem:6:triplet-r1",
+      "version": 1,
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 6,
+      "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "mode": "COMPACT",
+      "surfaceText": "Belly of the Whale discards 1 card from all players with no Quest progress this turn, because you're no longer who you were, not yet who you'll become.",
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "status": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "reviewer": null,
+      "evidence": [
+        {
+          "field": "cardName",
+          "quote": "Belly of the Whale",
+          "start": 0,
+          "end": 18,
+          "spoken": "Belly of the Whale"
+        },
+        {
+          "field": "power",
+          "quote": "progress",
+          "start": 48,
+          "end": 56,
+          "spoken": "progress"
+        },
+        {
+          "field": "lore",
+          "quote": "longer",
+          "start": 18,
+          "end": 24,
+          "spoken": "longer"
+        }
+      ],
+      "semanticCoverage": {
+        "power": "Applied: No Quest progress this turn",
+        "lore": "Context: No longer who you were, not yet who you'll become",
+        "reframe": "not yet who you'll become.",
+        "humanAcceptance": "PENDING"
+      },
+      "delivery": {
+        "pauseBeforeMs": 300,
+        "pauseAfterMs": 800,
+        "rate": 0.93,
+        "pitch": 1
+      },
+      "contentShare": {
+        "method": "content words from card / all content words",
+        "pct": 92.86
+      },
+      "slots": {
+        "show": "Belly of the Whale",
+        "spin": "discards 1 card from all players with no Quest progress this turn, because you're no longer who you were, not yet who you'll become.",
+        "sell": "not yet who you'll become."
+      }
+    },
+    {
+      "beatId": "help_i_am_a_human:6:triplet-r1",
+      "version": 1,
+      "deckId": "help_i_am_a_human",
+      "cardNumber": 6,
+      "cardBlob": "14bbb1e043470bba1bf7c589163e3682109ea094",
+      "mode": "COMPACT",
+      "surfaceText": "OXYTOCIN heals a fractured Stage or lowers the Quest Die by 1, increasing trust and reducing fear, but can cause aggression against outsiders.",
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "status": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "reviewer": null,
+      "evidence": [
+        {
+          "field": "cardName",
+          "quote": "OXYTOCIN",
+          "start": 0,
+          "end": 8,
+          "spoken": "OXYTOCIN"
+        },
+        {
+          "field": "power",
+          "quote": "fractured",
+          "start": 27,
+          "end": 36,
+          "spoken": "fractured"
+        },
+        {
+          "field": "lore",
+          "quote": "aggression against",
+          "start": 50,
+          "end": 68,
+          "spoken": "aggression against"
+        }
+      ],
+      "semanticCoverage": {
+        "power": "Applied: Heal a fractured Stage",
+        "lore": "Context: aggression against",
+        "reframe": "but can cause aggression against outsiders.",
+        "humanAcceptance": "PENDING"
+      },
+      "delivery": {
+        "pauseBeforeMs": 300,
+        "pauseAfterMs": 800,
+        "rate": 0.93,
+        "pitch": 1
+      },
+      "contentShare": {
+        "method": "content words from card / all content words",
+        "pct": 100
+      },
+      "slots": {
+        "show": "OXYTOCIN",
+        "spin": "heals a fractured Stage or lowers the Quest Die by 1, increasing trust and reducing fear, but can cause aggression against outsiders.",
+        "sell": "but can cause aggression against outsiders."
+      }
+    }
+  ],
+  "bridges": [],
+  "sets": [],
+  "sampleRows": [
+    {
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 1,
+      "original": {
+        "cardName": "The Ordinary World",
+        "power": "Stasis Loop. Play this to cancel any Quest progression this turn. Narrate why nothing can change.",
+        "lore": "Dysfunction isn't just a state; it's a habit. We normalize the abnormal until the extraordinary seems impossible."
+      },
+      "result": "TRIPLET",
+      "reason": null,
+      "beat": {
+        "beatId": "kayfabizarro_monomyth_mayhem:1:triplet-r1",
+        "version": 1,
+        "deckId": "kayfabizarro_monomyth_mayhem",
+        "cardNumber": 1,
+        "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+        "mode": "COMPACT",
+        "surfaceText": "The Ordinary World cancels any Quest progression this turn because dysfunction is a habit, until the extraordinary seems impossible.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "The Ordinary World",
+            "start": 0,
+            "end": 18,
+            "spoken": "The Ordinary World"
+          },
+          {
+            "field": "power",
+            "quote": "progression",
+            "start": 43,
+            "end": 54,
+            "spoken": "progression"
+          },
+          {
+            "field": "lore",
+            "quote": "extraordinary seems impossible",
+            "start": 82,
+            "end": 112,
+            "spoken": "extraordinary seems impossible"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: cancel any Quest progression this turn",
+          "lore": "Context: extraordinary seems impossible",
+          "reframe": "until the extraordinary seems impossible.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 100
+        },
+        "slots": {
+          "show": "The Ordinary World",
+          "spin": "cancels any Quest progression this turn because dysfunction is a habit, until the extraordinary seems impossible.",
+          "sell": "until the extraordinary seems impossible."
+        }
+      },
+      "rejectedDraft": null
+    },
+    {
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 2,
+      "original": {
+        "cardName": "The Call to Adventure",
+        "power": "Cognitive Dissonance. Increase Quest Die by +1. Force another player to introduce a conflict that disrupts their current plans.",
+        "lore": "The universe doesn't knock. It throws a brick. The disruption of normalcy is always the beginning."
+      },
+      "result": "NO_TRIPLET",
+      "reason": "CONTENT_SHARE_BELOW_90",
+      "beat": null,
+      "rejectedDraft": {
+        "beatId": "kayfabizarro_monomyth_mayhem:2:triplet-r1",
+        "version": 1,
+        "deckId": "kayfabizarro_monomyth_mayhem",
+        "cardNumber": 2,
+        "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+        "mode": "COMPACT",
+        "surfaceText": "The Call to Adventure increases the Quest Die by +1 and forces another player into conflict, because the universe doesn't knock—it throws a brick.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "The Call to Adventure",
+            "start": 0,
+            "end": 21,
+            "spoken": "The Call to Adventure"
+          },
+          {
+            "field": "power",
+            "quote": "conflict",
+            "start": 84,
+            "end": 92,
+            "spoken": "conflict"
+          },
+          {
+            "field": "lore",
+            "quote": "universe",
+            "start": 4,
+            "end": 12,
+            "spoken": "universe"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: Increase Quest Die by +1",
+          "lore": "Context: It throws a brick",
+          "reframe": "because the universe doesn't knock—it throws a brick.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 85.71
+        },
+        "slots": {
+          "show": "The Call to Adventure",
+          "spin": "increases the Quest Die by +1 and forces another player into conflict, because the universe doesn't knock—it throws a brick.",
+          "sell": "because the universe doesn't knock—it throws a brick."
+        }
+      }
+    },
+    {
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 3,
+      "original": {
+        "cardName": "Refusal of the Call",
+        "power": "Rational Panic. Pause the Quest for one turn. All players must explain why they can't possibly go on the adventure.",
+        "lore": "Fear is realistic self-preservation. Change means death of the familiar self. The familiar self is terrible at math."
+      },
+      "result": "TRIPLET",
+      "reason": null,
+      "beat": {
+        "beatId": "kayfabizarro_monomyth_mayhem:3:triplet-r1",
+        "version": 1,
+        "deckId": "kayfabizarro_monomyth_mayhem",
+        "cardNumber": 3,
+        "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+        "mode": "COMPACT",
+        "surfaceText": "Refusal of the Call pauses the Quest for one turn because fear is realistic self-preservation, but the familiar self is terrible at math.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "Refusal of the Call",
+            "start": 0,
+            "end": 19,
+            "spoken": "Refusal of the Call"
+          },
+          {
+            "field": "power",
+            "quote": "Quest",
+            "start": 26,
+            "end": 31,
+            "spoken": "Quest"
+          },
+          {
+            "field": "lore",
+            "quote": "familiar self is terrible at math",
+            "start": 82,
+            "end": 115,
+            "spoken": "familiar self is terrible at math"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: Pause the Quest for one turn",
+          "lore": "Context: familiar self is terrible at math",
+          "reframe": "but the familiar self is terrible at math.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 92.31
+        },
+        "slots": {
+          "show": "Refusal of the Call",
+          "spin": "pauses the Quest for one turn because fear is realistic self-preservation, but the familiar self is terrible at math.",
+          "sell": "but the familiar self is terrible at math."
+        }
+      },
+      "rejectedDraft": null
+    },
+    {
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 4,
+      "original": {
+        "cardName": "Meeting the Mentor",
+        "power": "External Hard Drive. Draw 2 cards. Give 1 to another player. Wisdom is useless until it's shared.",
+        "lore": "The Mentor cannot go with you. They provide the map, not the legs."
+      },
+      "result": "NO_TRIPLET",
+      "reason": "CONTENT_SHARE_BELOW_90",
+      "beat": null,
+      "rejectedDraft": {
+        "beatId": "kayfabizarro_monomyth_mayhem:4:triplet-r1",
+        "version": 1,
+        "deckId": "kayfabizarro_monomyth_mayhem",
+        "cardNumber": 4,
+        "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+        "mode": "COMPACT",
+        "surfaceText": "Meeting the Mentor draws 2 cards and gives 1 to another player because the Mentor provides the map, not the legs.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "Meeting the Mentor",
+            "start": 0,
+            "end": 18,
+            "spoken": "Meeting the Mentor"
+          },
+          {
+            "field": "power",
+            "quote": "another",
+            "start": 45,
+            "end": 52,
+            "spoken": "another"
+          },
+          {
+            "field": "lore",
+            "quote": "the map, not the legs",
+            "start": 44,
+            "end": 65,
+            "spoken": "the map, not the legs"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: Draw 2 cards",
+          "lore": "Context: the map, not the legs",
+          "reframe": "not the legs.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 83.33
+        },
+        "slots": {
+          "show": "Meeting the Mentor",
+          "spin": "draws 2 cards and gives 1 to another player because the Mentor provides the map, not the legs.",
+          "sell": "not the legs."
+        }
+      }
+    },
+    {
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 5,
+      "original": {
+        "cardName": "Crossing the Threshold",
+        "power": "Point of No Return. Move Quest Die +2. Discard your hand and draw 3 new cards. The old world is gone.",
+        "lore": "Commitment is the moment fear becomes movement. You can't un-take the step."
+      },
+      "result": "TRIPLET",
+      "reason": null,
+      "beat": {
+        "beatId": "kayfabizarro_monomyth_mayhem:5:triplet-r1",
+        "version": 1,
+        "deckId": "kayfabizarro_monomyth_mayhem",
+        "cardNumber": 5,
+        "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+        "mode": "COMPACT",
+        "surfaceText": "Crossing the Threshold moves the Quest Die +2 and discards your hand because commitment is the moment fear becomes movement, and you can't un-take the step.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "Crossing the Threshold",
+            "start": 0,
+            "end": 22,
+            "spoken": "Crossing the Threshold"
+          },
+          {
+            "field": "power",
+            "quote": "Quest",
+            "start": 25,
+            "end": 30,
+            "spoken": "Quest"
+          },
+          {
+            "field": "lore",
+            "quote": "movement",
+            "start": 38,
+            "end": 46,
+            "spoken": "movement"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: Move Quest Die +2",
+          "lore": "Context: You can't un-take the step",
+          "reframe": "and you can't un-take the step.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 93.75
+        },
+        "slots": {
+          "show": "Crossing the Threshold",
+          "spin": "moves the Quest Die +2 and discards your hand because commitment is the moment fear becomes movement, and you can't un-take the step.",
+          "sell": "and you can't un-take the step."
+        }
+      },
+      "rejectedDraft": null
+    },
+    {
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 6,
+      "original": {
+        "cardName": "Belly of the Whale",
+        "power": "Digestion. All players discard 1 card. No Quest progress this turn. Next turn, the Quest Die doubles.",
+        "lore": "Liminal space. No longer who you were, not yet who you'll become."
+      },
+      "result": "TRIPLET",
+      "reason": null,
+      "beat": {
+        "beatId": "kayfabizarro_monomyth_mayhem:6:triplet-r1",
+        "version": 1,
+        "deckId": "kayfabizarro_monomyth_mayhem",
+        "cardNumber": 6,
+        "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+        "mode": "COMPACT",
+        "surfaceText": "Belly of the Whale discards 1 card from all players with no Quest progress this turn, because you're no longer who you were, not yet who you'll become.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "Belly of the Whale",
+            "start": 0,
+            "end": 18,
+            "spoken": "Belly of the Whale"
+          },
+          {
+            "field": "power",
+            "quote": "progress",
+            "start": 48,
+            "end": 56,
+            "spoken": "progress"
+          },
+          {
+            "field": "lore",
+            "quote": "longer",
+            "start": 18,
+            "end": 24,
+            "spoken": "longer"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: No Quest progress this turn",
+          "lore": "Context: No longer who you were, not yet who you'll become",
+          "reframe": "not yet who you'll become.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 92.86
+        },
+        "slots": {
+          "show": "Belly of the Whale",
+          "spin": "discards 1 card from all players with no Quest progress this turn, because you're no longer who you were, not yet who you'll become.",
+          "sell": "not yet who you'll become."
+        }
+      },
+      "rejectedDraft": null
+    },
+    {
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 7,
+      "original": {
+        "cardName": "Road of Trials",
+        "power": "Grindset. Narrate 3 small problems. For each one you 'solve' in the fiction, gain +1 to your next roll.",
+        "lore": "Recovery is practice. The hero who survives the trials is not the hero who entered them."
+      },
+      "result": "NO_TRIPLET",
+      "reason": "CONTENT_SHARE_BELOW_90",
+      "beat": null,
+      "rejectedDraft": {
+        "beatId": "kayfabizarro_monomyth_mayhem:7:triplet-r1",
+        "version": 1,
+        "deckId": "kayfabizarro_monomyth_mayhem",
+        "cardNumber": 7,
+        "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+        "mode": "COMPACT",
+        "surfaceText": "Road of Trials narrates 3 small problems and gains +1 for each solved, because the hero who survives the trials is not the hero who entered them.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "Road of Trials",
+            "start": 0,
+            "end": 14,
+            "spoken": "Road of Trials"
+          },
+          {
+            "field": "power",
+            "quote": "problems",
+            "start": 26,
+            "end": 34,
+            "spoken": "problems"
+          },
+          {
+            "field": "lore",
+            "quote": "hero who survives the trials",
+            "start": 26,
+            "end": 54,
+            "spoken": "hero who survives the trials"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: Narrate 3 small problems",
+          "lore": "Context: hero who survives the trials",
+          "reframe": "because the hero who survives the trials is not the hero who entered them.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 86.67
+        },
+        "slots": {
+          "show": "Road of Trials",
+          "spin": "narrates 3 small problems and gains +1 for each solved, because the hero who survives the trials is not the hero who entered them.",
+          "sell": "because the hero who survives the trials is not the hero who entered them."
+        }
+      }
+    },
+    {
+      "deckId": "kayfabizarro_monomyth_mayhem",
+      "cardNumber": 8,
+      "original": {
+        "cardName": "Meeting the Goddess",
+        "power": "Self-Love Bomb. Narrate a moment of acceptance. Quest Die +1 for every player who agrees you deserve it.",
+        "lore": "The experience of being fully seen. The internal integration of opposites into unconditional love."
+      },
+      "result": "NO_TRIPLET",
+      "reason": "CONTENT_SHARE_BELOW_90",
+      "beat": null,
+      "rejectedDraft": {
+        "beatId": "kayfabizarro_monomyth_mayhem:8:triplet-r1",
+        "version": 1,
+        "deckId": "kayfabizarro_monomyth_mayhem",
+        "cardNumber": 8,
+        "cardBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+        "mode": "COMPACT",
+        "surfaceText": "Meeting the Goddess narrates a moment of acceptance and adds Quest Die +1 for everyone who agrees, until being fully seen becomes unconditional love.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "Meeting the Goddess",
+            "start": 0,
+            "end": 19,
+            "spoken": "Meeting the Goddess"
+          },
+          {
+            "field": "power",
+            "quote": "acceptance",
+            "start": 36,
+            "end": 46,
+            "spoken": "acceptance"
+          },
+          {
+            "field": "lore",
+            "quote": "unconditional love",
+            "start": 79,
+            "end": 97,
+            "spoken": "unconditional love"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: Narrate a moment of acceptance",
+          "lore": "Context: unconditional love",
+          "reframe": "until being fully seen becomes unconditional love.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 75
+        },
+        "slots": {
+          "show": "Meeting the Goddess",
+          "spin": "narrates a moment of acceptance and adds Quest Die +1 for everyone who agrees, until being fully seen becomes unconditional love.",
+          "sell": "until being fully seen becomes unconditional love."
+        }
+      }
+    },
+    {
+      "deckId": "help_i_am_a_human",
+      "cardNumber": 1,
+      "original": {
+        "cardName": "CHARLES DARWIN",
+        "power": "Sympathy Instinct: Play to cancel a \"Selfish\" action.",
+        "lore": "Sympathy will have been increased through natural selection. (Ref: Darwin)"
+      },
+      "result": "NO_TRIPLET",
+      "reason": "NO_CLEAR_FINAL_TURN",
+      "beat": null,
+      "rejectedDraft": {
+        "beatId": "help_i_am_a_human:1:triplet-r1",
+        "version": 1,
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 1,
+        "cardBlob": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "mode": "COMPACT",
+        "surfaceText": "CHARLES DARWIN cancels a Selfish action with Sympathy Instinct because sympathy increased through natural selection.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "CHARLES DARWIN",
+            "start": 0,
+            "end": 14,
+            "spoken": "CHARLES DARWIN"
+          },
+          {
+            "field": "power",
+            "quote": "Selfish",
+            "start": 37,
+            "end": 44,
+            "spoken": "Selfish"
+          },
+          {
+            "field": "lore",
+            "quote": "natural selection",
+            "start": 42,
+            "end": 59,
+            "spoken": "natural selection"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: Selfish",
+          "lore": "Context: natural selection",
+          "reframe": "CHARLES DARWIN cancels a Selfish action with Sympathy Instinct because sympathy increased through natural selection.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 100
+        },
+        "slots": {
+          "show": "CHARLES DARWIN",
+          "spin": "cancels a Selfish action with Sympathy Instinct because sympathy increased through natural selection.",
+          "sell": "CHARLES DARWIN cancels a Selfish action with Sympathy Instinct because sympathy increased through natural selection."
+        }
+      }
+    },
+    {
+      "deckId": "help_i_am_a_human",
+      "cardNumber": 2,
+      "original": {
+        "cardName": "THE SELFISH GENE",
+        "power": "Ego Boost: Gain control of the narrative, but isolate your Actor.",
+        "lore": "We are survival machines—robot vehicles blindly programmed. (Ref: Dawkins)"
+      },
+      "result": "NO_TRIPLET",
+      "reason": "CONTENT_SHARE_BELOW_90",
+      "beat": null,
+      "rejectedDraft": {
+        "beatId": "help_i_am_a_human:2:triplet-r1",
+        "version": 1,
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 2,
+        "cardBlob": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "mode": "COMPACT",
+        "surfaceText": "THE SELFISH GENE gains control of the narrative with Ego Boost, but its survival machine isolates your Actor.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "THE SELFISH GENE",
+            "start": 0,
+            "end": 16,
+            "spoken": "THE SELFISH GENE"
+          },
+          {
+            "field": "power",
+            "quote": "control of the narrative",
+            "start": 16,
+            "end": 40,
+            "spoken": "control of the narrative"
+          },
+          {
+            "field": "lore",
+            "quote": "survival",
+            "start": 7,
+            "end": 15,
+            "spoken": "survival"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: control of the narrative",
+          "lore": "Context: survival machines",
+          "reframe": "but its survival machine isolates your Actor.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 81.82
+        },
+        "slots": {
+          "show": "THE SELFISH GENE",
+          "spin": "gains control of the narrative with Ego Boost, but its survival machine isolates your Actor.",
+          "sell": "but its survival machine isolates your Actor."
+        }
+      }
+    },
+    {
+      "deckId": "help_i_am_a_human",
+      "cardNumber": 3,
+      "original": {
+        "cardName": "LYNN MARGULIS",
+        "power": "Symbiosis: Combine two Scene cards into one stronger card.",
+        "lore": "Life did not take over the globe by combat, but by networking. (Ref: Margulis)"
+      },
+      "result": "NO_TRIPLET",
+      "reason": "CONTENT_SHARE_BELOW_90",
+      "beat": null,
+      "rejectedDraft": {
+        "beatId": "help_i_am_a_human:3:triplet-r1",
+        "version": 1,
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 3,
+        "cardBlob": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "mode": "COMPACT",
+        "surfaceText": "LYNN MARGULIS combines two Scene cards into one stronger card through Symbiosis, because life took over the globe by networking, not combat.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "LYNN MARGULIS",
+            "start": 0,
+            "end": 13,
+            "spoken": "LYNN MARGULIS"
+          },
+          {
+            "field": "power",
+            "quote": "two Scene cards into one stronger card",
+            "start": 19,
+            "end": 57,
+            "spoken": "two Scene cards into one stronger card"
+          },
+          {
+            "field": "lore",
+            "quote": "by networking",
+            "start": 48,
+            "end": 61,
+            "spoken": "by networking"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: two Scene cards into one stronger card",
+          "lore": "Context: by networking",
+          "reframe": "not combat.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 85.71
+        },
+        "slots": {
+          "show": "LYNN MARGULIS",
+          "spin": "combines two Scene cards into one stronger card through Symbiosis, because life took over the globe by networking, not combat.",
+          "sell": "not combat."
+        }
+      }
+    },
+    {
+      "deckId": "help_i_am_a_human",
+      "cardNumber": 4,
+      "original": {
+        "cardName": "SURVIVAL OF THE FRIENDLIEST",
+        "power": "Domestication: Turn an enemy card into an ally.",
+        "lore": "Evolution favors those who can get along. (Ref: Hare & Wrangham)"
+      },
+      "result": "NO_TRIPLET",
+      "reason": "NO_CLEAR_FINAL_TURN",
+      "beat": null,
+      "rejectedDraft": {
+        "beatId": "help_i_am_a_human:4:triplet-r1",
+        "version": 1,
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 4,
+        "cardBlob": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "mode": "COMPACT",
+        "surfaceText": "SURVIVAL OF THE FRIENDLIEST turns an enemy card into an ally by Domestication, because evolution favors those who can get along.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "SURVIVAL OF THE FRIENDLIEST",
+            "start": 0,
+            "end": 27,
+            "spoken": "SURVIVAL OF THE FRIENDLIEST"
+          },
+          {
+            "field": "power",
+            "quote": "enemy card into an ally",
+            "start": 23,
+            "end": 46,
+            "spoken": "enemy card into an ally"
+          },
+          {
+            "field": "lore",
+            "quote": "favors",
+            "start": 10,
+            "end": 16,
+            "spoken": "favors"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: enemy card into an ally",
+          "lore": "Context: Evolution favors those who can get along",
+          "reframe": "because evolution favors those who can get along.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 100
+        },
+        "slots": {
+          "show": "SURVIVAL OF THE FRIENDLIEST",
+          "spin": "turns an enemy card into an ally by Domestication, because evolution favors those who can get along.",
+          "sell": "because evolution favors those who can get along."
+        }
+      }
+    },
+    {
+      "deckId": "help_i_am_a_human",
+      "cardNumber": 5,
+      "original": {
+        "cardName": "MIRROR NEURONS",
+        "power": "Reflection: Copy the Effect/Power of the last card played.",
+        "lore": "Why I feel what you feel. Intuitive communication. (Ref: Bauer)"
+      },
+      "result": "NO_TRIPLET",
+      "reason": "NO_CLEAR_FINAL_TURN",
+      "beat": null,
+      "rejectedDraft": {
+        "beatId": "help_i_am_a_human:5:triplet-r1",
+        "version": 1,
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 5,
+        "cardBlob": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "mode": "COMPACT",
+        "surfaceText": "MIRROR NEURONS copy the Effect or Power of the last card played by Reflection, because I feel what you feel.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "MIRROR NEURONS",
+            "start": 0,
+            "end": 14,
+            "spoken": "MIRROR NEURONS"
+          },
+          {
+            "field": "power",
+            "quote": "last card played",
+            "start": 41,
+            "end": 57,
+            "spoken": "last card played"
+          },
+          {
+            "field": "lore",
+            "quote": "I feel what you feel",
+            "start": 4,
+            "end": 24,
+            "spoken": "I feel what you feel"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: last card played",
+          "lore": "Context: I feel what you feel",
+          "reframe": "because I feel what you feel.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 100
+        },
+        "slots": {
+          "show": "MIRROR NEURONS",
+          "spin": "copy the Effect or Power of the last card played by Reflection, because I feel what you feel.",
+          "sell": "because I feel what you feel."
+        }
+      }
+    },
+    {
+      "deckId": "help_i_am_a_human",
+      "cardNumber": 6,
+      "original": {
+        "cardName": "OXYTOCIN",
+        "power": "The Cuddle Hormone: Heal a fractured Stage or lower the Quest Die by 1.",
+        "lore": "Increases trust, reduces fear. Warning: Can cause aggression against 'outsiders'."
+      },
+      "result": "TRIPLET",
+      "reason": null,
+      "beat": {
+        "beatId": "help_i_am_a_human:6:triplet-r1",
+        "version": 1,
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 6,
+        "cardBlob": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "mode": "COMPACT",
+        "surfaceText": "OXYTOCIN heals a fractured Stage or lowers the Quest Die by 1, increasing trust and reducing fear, but can cause aggression against outsiders.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "OXYTOCIN",
+            "start": 0,
+            "end": 8,
+            "spoken": "OXYTOCIN"
+          },
+          {
+            "field": "power",
+            "quote": "fractured",
+            "start": 27,
+            "end": 36,
+            "spoken": "fractured"
+          },
+          {
+            "field": "lore",
+            "quote": "aggression against",
+            "start": 50,
+            "end": 68,
+            "spoken": "aggression against"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: Heal a fractured Stage",
+          "lore": "Context: aggression against",
+          "reframe": "but can cause aggression against outsiders.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 100
+        },
+        "slots": {
+          "show": "OXYTOCIN",
+          "spin": "heals a fractured Stage or lowers the Quest Die by 1, increasing trust and reducing fear, but can cause aggression against outsiders.",
+          "sell": "but can cause aggression against outsiders."
+        }
+      },
+      "rejectedDraft": null
+    },
+    {
+      "deckId": "help_i_am_a_human",
+      "cardNumber": 7,
+      "original": {
+        "cardName": "THE VAGUS NERVE",
+        "power": "Calm Down: Reset the Quest Die to 3.",
+        "lore": "The wandering nerve of compassion. Stimulate for peace."
+      },
+      "result": "NO_TRIPLET",
+      "reason": "NO_CLEAR_FINAL_TURN",
+      "beat": null,
+      "rejectedDraft": {
+        "beatId": "help_i_am_a_human:7:triplet-r1",
+        "version": 1,
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 7,
+        "cardBlob": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "mode": "COMPACT",
+        "surfaceText": "THE VAGUS NERVE resets the Quest Die to 3 to calm down, because the wandering nerve of compassion is stimulated for peace.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "THE VAGUS NERVE",
+            "start": 0,
+            "end": 15,
+            "spoken": "THE VAGUS NERVE"
+          },
+          {
+            "field": "power",
+            "quote": "Quest Die to 3",
+            "start": 21,
+            "end": 35,
+            "spoken": "Quest Die to 3"
+          },
+          {
+            "field": "lore",
+            "quote": "wandering nerve of compassion",
+            "start": 4,
+            "end": 33,
+            "spoken": "wandering nerve of compassion"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: Quest Die to 3",
+          "lore": "Context: wandering nerve of compassion",
+          "reframe": "because the wandering nerve of compassion is stimulated for peace.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 91.67
+        },
+        "slots": {
+          "show": "THE VAGUS NERVE",
+          "spin": "resets the Quest Die to 3 to calm down, because the wandering nerve of compassion is stimulated for peace.",
+          "sell": "because the wandering nerve of compassion is stimulated for peace."
+        }
+      }
+    },
+    {
+      "deckId": "help_i_am_a_human",
+      "cardNumber": 8,
+      "original": {
+        "cardName": "PAIN CENTER",
+        "power": "Social Reject: Inflict 'Damage' on an Actor who is ignored.",
+        "lore": "Social rejection activates the same brain regions as physical pain. (Ref: Lieberman)"
+      },
+      "result": "NO_TRIPLET",
+      "reason": "NO_CLEAR_FINAL_TURN",
+      "beat": null,
+      "rejectedDraft": {
+        "beatId": "help_i_am_a_human:8:triplet-r1",
+        "version": 1,
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 8,
+        "cardBlob": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "mode": "COMPACT",
+        "surfaceText": "PAIN CENTER inflicts Damage on an ignored Actor through Social Reject, because social rejection activates the same brain regions as physical pain.",
+        "openerId": "DIRECT",
+        "openerVersion": 1,
+        "status": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "reviewer": null,
+        "evidence": [
+          {
+            "field": "cardName",
+            "quote": "PAIN CENTER",
+            "start": 0,
+            "end": 11,
+            "spoken": "PAIN CENTER"
+          },
+          {
+            "field": "power",
+            "quote": "ignored",
+            "start": 51,
+            "end": 58,
+            "spoken": "ignored"
+          },
+          {
+            "field": "lore",
+            "quote": "rejection",
+            "start": 7,
+            "end": 16,
+            "spoken": "rejection"
+          }
+        ],
+        "semanticCoverage": {
+          "power": "Applied: Actor who is ignored",
+          "lore": "Context: Social rejection activates the same brain regions as physical pain",
+          "reframe": "because social rejection activates the same brain regions as physical pain.",
+          "humanAcceptance": "PENDING"
+        },
+        "delivery": {
+          "pauseBeforeMs": 300,
+          "pauseAfterMs": 800,
+          "rate": 0.93,
+          "pitch": 1
+        },
+        "contentShare": {
+          "method": "content words from card / all content words",
+          "pct": 100
+        },
+        "slots": {
+          "show": "PAIN CENTER",
+          "spin": "inflicts Damage on an ignored Actor through Social Reject, because social rejection activates the same brain regions as physical pain.",
+          "sell": "because social rejection activates the same brain regions as physical pain."
+        }
+      }
+    }
+  ],
+  "negativeRegression": [
+    {
+      "name": "1001 Kayfabe Nights #5–7 R1",
+      "expect": "FAIL",
+      "reason": "synopsis and invented cross-card bridge events",
+      "executed": false
+    },
+    {
+      "name": "plain card recital",
+      "expect": "FAIL",
+      "reason": "recital lacks authored causal turn",
+      "executed": false
+    }
+  ]
+}
