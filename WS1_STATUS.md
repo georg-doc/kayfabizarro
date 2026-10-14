@@ -1,7 +1,66 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§9 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§10 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 10 · 14.10. früh · F1 Augen fertig · Registry-Korrektur übernommen · gelesen bis V-234
+
+**Quittung:** `WS0_TO_WS1.md` und `DECISIONS.md` gelesen bis V-234, dazu `ARCHITECTURE_R1.md` und `BILLBOARD_STANDARD_R2.md`.
+
+### 10.1 · Registry-Korrektur (Antwort auf WS0 „bitte Audit gegen a9f5ffa1“)
+- **Audit gelaufen:** OCR-Lauf mit `MEDIA=a9f5ffa1… python3 scripts/audit-mapping.py`. Ergebnis **60 von 78 SAFE, 3097 Karten freigegeben** (Vorhersage WS0: 58). Kein vorher sicheres Deck ging verloren, 15 kamen dazu, darunter nibelungen, 1001_kayfabe_nights, suppressed_book_deck und die 2 vorher fehlenden PDFs.
+- **`MEDIA_COMMIT` umgestellt** auf `a9f5ffa1`. `src/data/mapping-audit.json` und `deck-blobs.json` sind neu, die Rohdaten liegen in `test/audit/`.
+- **Befund zwei Kartenquellen:** Die Korrekturen (Dublette anti_rules_toolkit, Tausch big_bad_brain_wrestling #50/#51, „TRUST LOOP“) stehen nur in den Deck-JSONs unter `media/kfb/`. Die Kartentexte im Spiel (`src/data/cards.json`) stammen aus `registry/assets/v1/decks` @ac9dbae, und dort fehlen sie.
+  - Folge: anti_rules_toolkit und unspoken_systems bleiben UNSAFE (Platzhalter), big_bad_brain_wrestling #50/#51 bleiben gesperrt.
+  - **Bitte:** Welche Quelle gilt für den Kartentext (Game Core R2 §1: „Karten-JSON ist die einzige Quelle der Wahrheit“)? Entweder `registry/assets/v1/decks` nachziehen, oder WS1 baut `cards.json` aus `media/kfb` am `MEDIA_COMMIT`.
+- Die Kartentests hängen nicht mehr am Deck-Turm (Legacy, V-216): feste Karten, unabhängige Referenzen, gesperrte Beispiele aus dem Audit.
+
+### 10.2 · F1 Augen (KFB_NATIVE), Vorlagen-Zeile und Ergebnis
+**Vorlagen-Zeile (G1):**
+- **Gibt es schon:** Georgs Studio „KFB Batch EyeRig Atlas“, `kfb-hub/stage/toolbox/eye-rig-batch/`.
+- **1:1 übernommen (byte-gleich, `src/vendor/eyes/`):**
+  - `lib/kaykit-eye-adapter.v1.js` (mountKayKitEyes) mit `facehost.v1.js`, `pet-eye-rig.v6.js` (853bcf5f) und `eyeoval.v1.js`;
+  - die Augen-Entfernung `medium-source-eye-cleanup.v1.js`, `source-face-cleanup.v1.js`, `donoreyes.v1.js` und `pet-library.v6.js`;
+  - die Hautfarben-Messung `face-color-sampler.v1.js`, dazu der Ausdrucks-Vertrag `kfb-pet-graft-driver.v4.json`.
+  - Die jsDelivr-Imports der Spender zeigen per Vite-Alias auf die lokalen Kopien. Kein Spender ist verändert.
+- **Neu:** nur die Modul-Hülle `src/modules/eyeActor.js` (create/update/dispose, Ablauf wie Studio `app.js loadActor()`) und die Prüfszene `#eyetest` mit Kamera, Licht und Hintergrund wie die Studio-Frontansicht.
+
+**Abweichungen vom WS0-Wortlaut (fachlich begründet, bitte quittieren):**
+1. **Studio-Weg statt `anchored-eyes.v1.js`.**
+   - `anchored-eyes` braucht die NoEyes-Anker aus EYE-CLEANUP-01. Es ignoriert Georgs Profilwerte (dx/dy/converge/splay/inset) und kopiert die Anker-Drehung (`e.quaternion.copy(a.q)`), also die Schiel-Ursache aus V-201.
+   - „1:1 + ohne Drehung + Studio-Werte“ geht nur über den Studio-Weg. ARCHITECTURE_R1 §5 sagt „KFB_NATIVE 1:1 aus dem Eye-Rig-Studio“.
+2. **Studio-Quelle `cloudflare-live` @db823766 statt `work/hub-ux-v2-masterplan` @5c3334bd.**
+   - Die von WS0 genannte Fassung (22.09.) hat 27 Figuren ohne die Adventurers. Rogue_Hooded lädt dort nicht.
+   - `cloudflare-live` (03.10.) hat 55 Figuren, und dort hat Georg das Profil abgenommen (`eyeProfileVisuallyApproved: true`, front, bind).
+   - Geprüft: Augen-Entfernung und Hautfarben-Messung sind in beiden gleich. Der Adapter hat in cloudflare-live nur Zusätze, nämlich deriveSourceAnchorSeed und setRingPreserveCenter. `eyeoval` ist neuer (2bfbe0d statt 5650b6c), mit `pupilSeatDelta` (siehe 10.3 Punkt 2).
+3. **Figur Rogue_Hooded.** Sie ist eines von zwei ADJUSTED_APPROVED-Profilen in `eye-rig-medium.batch-1.json` (das andere ist das Mannequin). Die vier V-090-Figuren haben dort kein abgenommenes Medium-Profil. **Einschränkung:** Die Maske verdeckt den Mund, für F2/Vorführung ist die Figur ungeeignet (Cast-Frage 10.3 Punkt 5).
+
+**Ergebnis (G2):** `test/f1.mjs`, 17 Prüfpunkte PASS, alle 9 Tests grün.
+- Spender und Assets sind byte-gleich, Georgs Profil ist unverändert.
+- **Messwerte (eyeFrame, controls) identisch mit der Studio-Referenz.** Die Referenz kommt aus dem Studio-Quellcode, nach Georgs Batch-Import (`scripts/f1/serve-studio.sh` + `studio-ref.mjs`). Augenlage ±0,2274 / 0,0308 / 0,4402, symmetrisch, keine Anker-Drehung.
+- Bild Gesichtsausschnitt gegen das Studio: mittlere Abweichung 2,4/255.
+- Blick links: beide Augen drehen parallel (−0,40 / −0,42).
+- Lid zu: Augenweiß 2095 → 0 Pixel.
+- **Vertragstest §6:** create 1× (auch nach 5 Re-Renders), update mit ctx, dispose 1×, danach kein update. Alle 14 Geometrien und 6 Materialien von Figur, Eye-Rig und FaceHost sind freigegeben. Blinder Prüfer 4 hatte gefunden, dass dispose das Rig nicht freigab. Behoben.
+- **Bewegtes Paar Studio | R3F:** `ws1/proofs/2026-10-14-f1/f1_pair_motion.png` (front, links, rechts, Lid zu, hoch, zurück); dazu `f1_pair_face.png`, `f1_front.png`, `f1_studio_front.png`. Nachstellen mit `zsh scripts/f1/serve-studio.sh`, dann `node scripts/f1/motion-pair.mjs`.
+
+**Blinder Prüfer 4: PASS MIT AUFLAGEN.** A1 (dispose) und A2 (Vertragstest) sind behoben. A4 (Skripte eingecheckt) ist erledigt. A3 und A5 stehen in 10.3.
+
+### 10.3 · Fragen und Befunde für WS0 (blockieren F1 nicht)
+1. **Kinetik:** In Georgs Profil (und im Studio) steht `kinetics.enabled: false`. WS0 schrieb „Kinetik einschalten“. WS1 lässt Georgs Wert stehen; `setKinetics()` ist im Modul vorhanden. Bitte entscheiden.
+2. **Pupille scheint durch das geschlossene Lid,** in Studio und R3F gleich. Ursache: `eyeoval.v1.js` @2bfbe0d `pupilSeatDelta` schiebt den Pupillen-Drehpunkt um ~0,006 vor, die Pupille (R·1,004) ragt dann über das Lid (R·1,011). Spender-Verhalten. V-214 verlangt „blink (lids, skin-toned)“. Bitte an den Rigging-Owner.
+3. **Kein Umschauen im Leerlauf:** Der neutrale Emote hat `gaze: [0,0]`, damit bleibt der Wander-Zweig aus. Leben gibt es nur über die Lider. Gleich wie im Studio. V-201 („Umschauen, Leben“) ist damit nicht voll erfüllt.
+4. **Augen → Kopf → Körper (V-214)** ist nicht Teil von F1 (das Studio hat es auch nicht). WS1 baut es im Darsteller-Slot/D1 und meldet V-214 bis dahin **nicht** als erfüllt. Blickziele gibt es heute als `lookAt(nx, ny)` (Bildschirm-Pointer des Rigs), noch nicht als Weltziel („Partner links“).
+5. **Cast:** Welche Figuren mit abgenommenem Eye-Rig-Profil und sichtbarem Mund kommen auf die Bühne? Rogue_Hooded hat eine Maske.
+6. **Augen-Entfernung bei Rogue_Hooded:** Im Profil steht `sourceEyeCleanupVisuallyAccepted: false`. Die Entfernung der Original-Augen ist für diese Figur also nicht abgenommen. Sichtbar ist sie sauber (Bild), aber bitte Georg bestätigen lassen.
+7. **Brauen (V-179):** zurückgestellt.
+   - Das Studio hat keine Brauen, Rogue_Hooded hat modellierte Brauen.
+   - `brow-rig.v2` ist ein Federstrich (Tusche-Variante; laut Prüfer gibt es auch eine Tube-Variante), auf dieser Figur gäbe es doppelte Brauen.
+   - ARCHITECTURE_R1 §4 nennt KFB_NATIVE mit Brauen. **Bitte:** Gelten modellierte Brauen, oder kommt `brow-rig.v2` (welche Variante) auf Figuren ohne Brauen? Bis dahin gibt es keine Brauen-Emotes.
+8. **Studio-Adresse:** Die öffentliche Route liefert nur die Startseite. WS1 liefert das Studio für Referenzen aus dem Quellcode aus (`scripts/f1/serve-studio.sh`).
+9. **Ruhe-Blick leicht divergent (Hinweis Prüfer):** `splay` 0,21 und `converge` 0,18 ergeben in Ruhe ≈ 4,3° nach außen. Das sind Georgs Werte, im Studio identisch.
+
+**Als Nächstes:** Darsteller-Slot (V-227: `faceDriver` je Figur, KFB_NATIVE aus F1, Wireface als zweite Quelle), danach B1 Billboard nach R2. Die Meshy-Browser-Fassung (V-230) kommt dazwischen, wenn sie nichts aufhält.
 
 ## 9 · 14.10. nachts · Meshy-Amphitheater (Auftrag Georg, README MeshyModels @708d8fae)
 - **Quell-Isolation R1 fertig:** `ws1/asset-intake/meshy-amphitheater/SOURCE_ISOLATION_R1.md`.
