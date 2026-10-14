@@ -40,13 +40,10 @@
       "lore": "The first ideological professional. He mediates between the human and the divine. He controls the narrative, so he controls the tribe.",
       "gradeReason": "Permanent die-result interpretation — used exactly once, saved for the right moment — is the Shaman's power distilled to one irrevocable action.",
       "artworkPrompt": "Style: shamanic vision art. Subject: owl with antlers holding a glowing die, the number on the face shifting as it watches. Mood: authorized interpretation.",
-      "print": {
-        "cardName": "THE SHAMAN",
-        "power": "Change a [I] to a |5] or vice versa once per game",
-        "lore": "The first ideological professional. He mediates between the human and the divine. He controls the narrative, so he controls the tribe.",
+      "textSource": {
         "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p2 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -74,7 +71,12 @@
       "power": "Written in Stone: Lock a Scene card. It cannot be moved, changed, or covered for 2 turns.",
       "lore": "The political made sacred. Don't question the law, because the sun god wrote it. The first \"Terms of Service\".",
       "gradeReason": "Scene-locking for 2 turns is structurally useful but \"First Terms of Service\" is the deck's best parenthetical and the power doesn't match its wit.",
-      "artworkPrompt": "Style: ancient legal monument. Subject: ram carving rules onto a stone slab, a beetle watching from the corner. Mood: precedent set."
+      "artworkPrompt": "Style: ancient legal monument. Subject: ram carving rules onto a stone slab, a beetle watching from the corner. Mood: precedent set.",
+      "textSource": {
+        "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p3 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 7,
@@ -84,13 +86,10 @@
       "lore": "Knowledge/Power. The priests read the stars and interpret the gods. The first bureaucracy of meaning.",
       "gradeReason": "Arranging the next three cards for personal benefit is priestly power made structural — the future is now administered.",
       "artworkPrompt": "Style: temple astronomical diagram. Subject: vulture in priestly robes adjusting a celestial map, constellation order changing. Mood: curated providence.",
-      "print": {
-        "cardName": "THE HIEROPHANT",
-        "power": "deck. Arrange them in the order that benefits you",
-        "lore": "Knowledge! Power. The priests read the stars and interpret the gods. The first bureaucracy of meaning.",
+      "textSource": {
         "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p3 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -136,7 +135,12 @@
       "power": "Rhetoric: You may lie about your card's stats. If no one calls Blödsinn, the lie becomes true.",
       "lore": "\"Man is the measure of all things. Truth is just what you can convince people of. The first political consultants.\"",
       "gradeReason": "Lying about your card's stats until the table accepts it is the Sophist argument made operational — the table's credulity is the only mechanic that matters.",
-      "artworkPrompt": "Style: marketplace debate. Subject: chameleon in a toga holding a bottle labeled TRUTH SERUM and SNAKE OIL simultaneously. Mood: performative certainty."
+      "artworkPrompt": "Style: marketplace debate. Subject: chameleon in a toga holding a bottle labeled TRUTH SERUM and SNAKE OIL simultaneously. Mood: performative certainty.",
+      "textSource": {
+        "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p4 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 13,
@@ -199,7 +203,12 @@
       "power": "\"Schism: Split the Quest Die into two separate dice. The narrative now has two conflicting goals.\"",
       "lore": "\"Sola Scriptura. You don't need a priest. Democratization of meaning is also fragmentation of meaning.\"",
       "gradeReason": "Splitting one Quest Die into two conflicting goals is the Reformation mechanic — the game now has a schism and the table must negotiate which goal governs.",
-      "artworkPrompt": "Style: Reformation woodcut. Subject: bull nailing a document to a door, the door cracking into two separate paths. Mood: principled fissure."
+      "artworkPrompt": "Style: Reformation woodcut. Subject: bull nailing a document to a door, the door cracking into two separate paths. Mood: principled fissure.",
+      "textSource": {
+        "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p6 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 20,
@@ -289,7 +298,13 @@
       "power": "\"Historical Materialism: Flip the Quest Die to its opposite face (1 becomes 6). Invert the power structure.\"",
       "lore": "\"He changed the questions. History is class struggle. But he didn't solve the problem of power.\"",
       "gradeReason": "Flipping the die to its opposite face is the most structurally honest mechanic in the deck — the inversion is total, immediate, and creates a new problem the lore already names.",
-      "artworkPrompt": "Style: revolutionary woodcut. Subject: beaver at a writing desk, die on the table showing 1, the shadow behind it showing 6. Mood: diagnosed contradiction."
+      "artworkPrompt": "Style: revolutionary woodcut. Subject: beaver at a writing desk, die on the table showing 1, the shadow behind it showing 6. Mood: diagnosed contradiction.",
+      "printTypo": "Ziffer '1' im Druck verformt (ähnelt '3')",
+      "textSource": {
+        "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p9 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 30,
@@ -299,13 +314,10 @@
       "lore": "\"The workers need professionals to lead them. The path from liberation to the Gulag is paved with 'consciousness'.\"",
       "gradeReason": "Playing another player's turn \"because they don't know what's good for them\" is the Vanguard mechanic — the quotes around consciousness are doing load-bearing ideological work.",
       "artworkPrompt": "Style: Soviet propaganda parody. Subject: wolf in a red armband making decisions for a row of badgers who are looking at each other uncertainly. Mood: administered liberation.",
-      "print": {
-        "cardName": "THE VANGUARD PARTY",
-        "power": "i\"Dictatorship of the Proletariat: You make decisions for another player this turn. They \"don't know what's good for them.",
-        "lore": "workers of liberation to the flag is paved with consciousness The path from",
+      "textSource": {
         "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p9 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -315,7 +327,12 @@
       "power": "\"Seize the Means: Take control of a 'Tool' or 'Location' card on the Stage.\"",
       "lore": "\"The weapon of the producer. When the machine stops, you see who really runs it.\"",
       "gradeReason": "Taking control of a Tool or Location is correct but requires those card types to be in play — its power depends on the Stage's contents rather than enacting anything itself.",
-      "artworkPrompt": "Style: labor poster. Subject: badgers with arms crossed in front of a stopped factory, a clock on the wall showing who's actually needed. Mood: withheld productivity."
+      "artworkPrompt": "Style: labor poster. Subject: badgers with arms crossed in front of a stopped factory, a clock on the wall showing who's actually needed. Mood: withheld productivity.",
+      "textSource": {
+        "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p9 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 32,
@@ -351,7 +368,12 @@
       "power": "\"Direct Action: Destroy a Scene card immediately. No voting.\"",
       "lore": "\"Propaganda of the deed. Sometimes you don't debate the wall; you blow it up.\"",
       "gradeReason": "\"No voting\" is the anarchist doctrine made table mechanic — The Social Contract requires unanimous consent; The Molotov requires none.",
-      "artworkPrompt": "Style: direct action illustration. Subject: bombardier beetle hitting a brick wall — the wall mid-explosion, no committee visible. Mood: decisive detonation."
+      "artworkPrompt": "Style: direct action illustration. Subject: bombardier beetle hitting a brick wall — the wall mid-explosion, no committee visible. Mood: decisive detonation.",
+      "textSource": {
+        "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p10 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 36,
@@ -387,7 +409,12 @@
       "power": "\"My Country Right or Wrong: Ignore a logic error or 'Blödsinn' call if it favors you.\"",
       "lore": "\"Benedict Anderson called it an 'Imagined Community.' You will never meet them, but you will kill for them.\"",
       "gradeReason": "Immunity to a Blödsinn call if it favors you is the precise mechanic of motivated patriotic reasoning — the flag exempts you from epistemology this turn.",
-      "artworkPrompt": "Style: eagle patriotic parody. Subject: bald eagle with VR goggles displaying only flags, a logic error visible just outside the frame. Mood: selective truth."
+      "artworkPrompt": "Style: eagle patriotic parody. Subject: bald eagle with VR goggles displaying only flags, a logic error visible just outside the frame. Mood: selective truth.",
+      "textSource": {
+        "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p11 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 40,
@@ -414,7 +441,12 @@
       "power": "Disappear: Place a card in the \"Memory Hole\" (under the table). It never existed.",
       "lore": "The revolution eats its children. Industrialized removal of \"inconvenient\" reality.",
       "gradeReason": "Placing a card under the table so it \"never existed\" is the best physical theatre instruction in the deck — the card is gone and the table must pretend it was always gone.",
-      "artworkPrompt": "Style: Soviet industrial. Subject: polar bear lowering a card through a trapdoor labeled MEMORY HOLE, other cards already not noticing the gap. Mood: industrialized absence."
+      "artworkPrompt": "Style: Soviet industrial. Subject: polar bear lowering a card through a trapdoor labeled MEMORY HOLE, other cards already not noticing the gap. Mood: industrialized absence.",
+      "textSource": {
+        "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p12 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 43,
@@ -495,7 +527,12 @@
       "power": "Viral Replication: Copy the effect of the last card played.",
       "lore": "Self-replicating cultural unit. Weaponized by the Alt-Right, the Left, and cats. Reality is downstream of the JPEG.",
       "gradeReason": "\"Reality is downstream of the JPEG\" is the best lore line on the page — and copying any card's effect without restriction is the meme's power: it doesn't originate, it spreads.",
-      "artworkPrompt": "Style: viral diagram. Subject: smiley-face virus with spider legs replicating identically across the Stage, original source already unidentifiable. Mood: successful mutation."
+      "artworkPrompt": "Style: viral diagram. Subject: smiley-face virus with spider legs replicating identically across the Stage, original source already unidentifiable. Mood: successful mutation.",
+      "textSource": {
+        "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p14 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 52,
@@ -567,7 +604,12 @@
       "power": "Feedback Loop: The pressure on the Quest Die increases by 1 every turn automatically.",
       "lore": "The planet is on fire. Arguing about ideology while the house burns is a luxury.",
       "gradeReason": "Automatic Die pressure increase every turn is the first truly time-bound mechanic in the deck — the Crisis doesn't wait for you to play another card.",
-      "artworkPrompt": "Style: wildfire documentary. Subject: koala on a burning branch, the Die visible in the background ticking upward, ideology cards scattered around. Mood: compounding urgency."
+      "artworkPrompt": "Style: wildfire documentary. Subject: koala on a burning branch, the Die visible in the background ticking upward, ideology cards scattered around. Mood: compounding urgency.",
+      "textSource": {
+        "source": "PDF v05 Ideology_Wrestling - ADD web ID.pdf p16 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 60,

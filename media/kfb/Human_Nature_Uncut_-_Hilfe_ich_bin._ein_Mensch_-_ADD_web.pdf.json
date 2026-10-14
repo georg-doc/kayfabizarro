@@ -20,20 +20,39 @@
 "cardNumber": 1,
 "cardName": "THE MASTER ARCHITECT",
 "grade": 1,
-"power": "Replaces the 'Every Man for Himself' rule with the 'Cooperation Engine.' Building complex life over 4 billion years.",
+"power": "Replaces the 'Every Man for Himself' rule with the 'Cooperation Engine,' building complex life over 4 billion years.",
 "lore": "Evolution is not a solo deathmatch; cooperation is its ultimate master architect.",
 "gradeReason": "You immediately know what to build and how to play it.",
-"artworkPrompt": "Style: naturalist sketch. Subject: beaver drafting a DNA double-helix blueprint. Mood: industrious genius."
+"artworkPrompt": "Style: naturalist sketch. Subject: beaver drafting a DNA double-helix blueprint. Mood: industrious genius.",
+"jsonLegacy": {
+"cardName": "THE MASTER ARCHITECT",
+"power": "Replaces the 'Every Man for Himself' rule with the 'Cooperation Engine.' Building complex life over 4 billion years.",
+"lore": "Evolution is not a solo deathmatch; cooperation is its ultimate master architect."
+},
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p2 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 2,
 "cardName": "THE ULTRA-COOPERATOR",
 "grade": 1,
-"power": "Activates Super-Altruism, Language, and Shared Childcare to out-compete all other solo predators.",
+"power": "Activates Super-Altruism, Language, and Shared Childcare to out-compete solitary apex predators.",
 "lore": "The human animal's true superpower isn't teeth or claws—it's weaponized teamwork.",
 "gradeReason": "Instantly embodies the apex cooperative animal. Zero explanation needed.",
 "artworkPrompt": "Style: action-sketch. Subject: meerkats standing shoulder-to-shoulder radiating light. Mood: triumphant solidarity.",
-"print": {"cardName": "THE ULTRA-COOPERATOR", "power": "Activates Super- Altruism, Language, and Shared Childcare to out-compete solitary apex predators.", "lore": "The human animal's true superpower isn't teeth or claws-it's weaponized teamwork.", "source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p2 TR", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "THE ULTRA-COOPERATOR",
+"power": "Activates Super-Altruism, Language, and Shared Childcare to out-compete all other solo predators.",
+"lore": "The human animal's true superpower isn't teeth or claws—it's weaponized teamwork."
+},
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p2 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 3,
@@ -49,10 +68,19 @@
 "cardName": "THE SOCIAL LIGHTHOUSE",
 "grade": 1,
 "power": "Broadcasts internal emotional data to strangers at the speed of light, bypassing verbal deceit.",
-"lore": "Face evolved as an involuntary beacon to establish instantaneous trust in the wild.",
+"lore": "The face evolved as an involuntary beacon to establish instant trust in the wild.",
 "gradeReason": "Play it and your face becomes the game. Instantly performable.",
 "artworkPrompt": "Style: expressive ink. Subject: chameleon on a stick, face radiating truth-waves. Mood: transparent honesty.",
-"print": {"cardName": "THE SOCIAL LIGHTHOUSE", "power": "Broadcasts internal emotional data to strangers at the speed of light, bypassing verbal deceit.", "lore": "Face evolved as an involuntary beacon to establish instant trust in the wild.", "source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p2 BR", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "THE SOCIAL LIGHTHOUSE",
+"power": "Broadcasts internal emotional data to strangers at the speed of light, bypassing verbal deceit.",
+"lore": "Face evolved as an involuntary beacon to establish instantaneous trust in the wild."
+},
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p2 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 5,
@@ -61,7 +89,12 @@
 "power": "Deals catastrophic cardiovascular and immune damage daily, equivalent to 15 cigarettes, to isolated entities.",
 "lore": "We are biologically tethered; unwanted solitude is lethal to the meat-sack.",
 "gradeReason": "Haunting archetype. You see it, you feel it, you don't need a rule.",
-"artworkPrompt": "Style: melancholy ink. Subject: toad alone smoking in the rain, city lights blurred behind. Mood: existential isolation."
+"artworkPrompt": "Style: melancholy ink. Subject: toad alone smoking in the rain, city lights blurred behind. Mood: existential isolation.",
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p3 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 6,
@@ -79,7 +112,12 @@
 "power": "Deploys a targeted cellular defense matrix that repels physical and psychological pathogens.",
 "lore": "Social support isn't a luxury; it is the frontline of the biological immune system.",
 "gradeReason": "Play it and you hug. Full stop. Immediate embodied action.",
-"artworkPrompt": "Style: warm ink. Subject: large bear enveloping a small creature in a full body hug. Mood: protective warmth."
+"artworkPrompt": "Style: warm ink. Subject: large bear enveloping a small creature in a full body hug. Mood: protective warmth.",
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p3 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 8,
@@ -94,20 +132,39 @@
 "cardNumber": 9,
 "cardName": "THE INNATE COMPASS",
 "grade": 3,
-"power": "Allows pre-verbal infants to instinctively detect and favor 'Helpers' over 'Hinderers.'",
+"power": "Allows pre-verbal infants to instinctively detect and favor \"Helpers\" over \"Hinderers\".",
 "lore": "Morality isn't drilled into us by civilization; it comes pre-installed in the factory settings.",
 "gradeReason": "Describes infant science rather than inviting the player to inhabit a role.",
-"artworkPrompt": "Style: scientific sketch. Subject: fox kit holding a spinning moral compass in tiny paws. Mood: innate certainty."
+"artworkPrompt": "Style: scientific sketch. Subject: fox kit holding a spinning moral compass in tiny paws. Mood: innate certainty.",
+"jsonLegacy": {
+"cardName": "THE INNATE COMPASS",
+"power": "Allows pre-verbal infants to instinctively detect and favor 'Helpers' over 'Hinderers.'",
+"lore": "Morality isn't drilled into us by civilization; it comes pre-installed in the factory settings."
+},
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p4 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 10,
 "cardName": "THE TODDLER'S FAIR SHARE",
 "grade": 1,
-"power": "Overrides childish greed, forcing equal distribution of any co-op mission.",
+"power": "Overrides childish greed, forcing equal distribution of loot after a co-op mission.",
 "lore": "When work is shared, human nature naturally demands an equal split of the rewards.",
 "gradeReason": "Play it and you immediately become the furious toddler demanding fairness. Knockout.",
 "artworkPrompt": "Style: exasperated ink. Subject: kitten slicing a log perfectly in half with tiny axe. Mood: righteous indignation.",
-"print": {"cardName": "THE TODDLER'S FAIR SHARE", "power": "! Overrides Order in the childish greed,! forcing equal distri-bution of loot after a co-op mission.", "lore": "When work is shared, human nature naturally demands an equal split of the rewards.", "source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p4 TR", "method": "ocr", "confidence": "medium"}
+"jsonLegacy": {
+"cardName": "THE TODDLER'S FAIR SHARE",
+"power": "Overrides childish greed, forcing equal distribution of any co-op mission.",
+"lore": "When work is shared, human nature naturally demands an equal split of the rewards."
+},
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p4 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 11,
@@ -123,10 +180,19 @@
 "cardName": "THE HONEST WALLET",
 "grade": 2,
 "power": "The higher the cash value inside the wallet, the higher the probability it gets returned.",
-"lore": "Cynics are wrong; trusting people with high stakes actually triggers their inner honor.",
+"lore": "Cynics are wrong: trusting people with high stakes actually triggers their innate honesty.",
 "gradeReason": "Counterintuitive finding gives it punch, but the mechanic needs unpacking at the table.",
 "artworkPrompt": "Style: noir ink. Subject: raccoon passing back a fat wallet, conscience visible as glowing orb. Mood: unexpected decency.",
-"print": {"cardName": "THE HONEST WALLET", "power": "! The higher the cash value inside the wallet, the higher the probability it gets returned", "lore": "Cynics are wrong: trusting people with high stakes actually triggers their innate honesty.", "source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p4 BR", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "THE HONEST WALLET",
+"power": "The higher the cash value inside the wallet, the higher the probability it gets returned.",
+"lore": "Cynics are wrong; trusting people with high stakes actually triggers their inner honor."
+},
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p4 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 13,
@@ -153,7 +219,12 @@
 "power": "Unleashes lethal aggression—but only when the sacred bonds of the community are threatened.",
 "lore": "Humans lack an innate drive to kill; aggression is a secondary defense mechanism for love.",
 "gradeReason": "Beautiful paradox: the spiky protector. You know exactly who you are at the table.",
-"artworkPrompt": "Style: fierce ink. Subject: porcupine with quills fully raised, tiny duckling sheltered behind. Mood: protective fury."
+"artworkPrompt": "Style: fierce ink. Subject: porcupine with quills fully raised, tiny duckling sheltered behind. Mood: protective fury.",
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p5 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 16,
@@ -277,10 +348,19 @@
 "cardName": "SELF-FULFILLING PROPHECY",
 "grade": 3,
 "power": "Shapes external reality to perfectly match the user's darkest, most cynical internal assumptions.",
-"lore": "Our view of human nature is not just an observation; it is a blueprint we hand others to live out.",
+"lore": "Our view of human nature is not just an observation; it is a blueprint we force others to live out.",
 "gradeReason": "Classic concept but names a phenomenon rather than creating a character to inhabit.",
 "artworkPrompt": "Style: psychological ink. Subject: hedgehog surrounded by spines that form the shape of his own fears. Mood: self-created trap.",
-"print": {"cardName": "SELF-FULFILLING PROPHECY", "power": "Shapes external reality to perfectly match the user's darkest, most cynical internal assumptions.", "lore": "Our view of human nature is not just an observation; it is a blueprint we force others to live out.", "source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p9 TL", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "SELF-FULFILLING PROPHECY",
+"power": "Shapes external reality to perfectly match the user's darkest, most cynical internal assumptions.",
+"lore": "Our view of human nature is not just an observation; it is a blueprint we hand others to live out."
+},
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p9 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 30,
@@ -289,16 +369,31 @@
 "power": "Converts the pursuit of status symbols into chronic, systemic biological inflammation.",
 "lore": "A life dedicated solely to acquiring things is interpreted by the body as a state of constant threat.",
 "gradeReason": "Important science, but biological inflammation as a card mechanic is too clinical to perform.",
-"artworkPrompt": "Style: tense sketch. Subject: crow hunched over bag of gold surrounded by storm clouds. Mood: acquisitive anxiety."
+"artworkPrompt": "Style: tense sketch. Subject: crow hunched over bag of gold surrounded by storm clouds. Mood: acquisitive anxiety.",
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p9 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 31,
 "cardName": "THE EUDAIMONIC ENGINE",
 "grade": 2,
 "power": "Decreases inflammatory genes and boosts immunity through the pursuit of deep, meaningful purpose.",
-"lore": "Hedonic pleasure is fleeting, but a life of meaning changes your very genetic expression.",
+"lore": "Hedonistic pleasure is fleeting, but a life of meaning changes your very genetic expression.",
 "gradeReason": "Great concept, the Greek terminology needs unpacking but meaning vs. pleasure split is clear.",
-"artworkPrompt": "Style: glowing ink. Subject: bees building honeycomb shaped like DNA helix. Mood: purposeful creation."
+"artworkPrompt": "Style: glowing ink. Subject: bees building honeycomb shaped like DNA helix. Mood: purposeful creation.",
+"jsonLegacy": {
+"cardName": "THE EUDAIMONIC ENGINE",
+"power": "Decreases inflammatory genes and boosts immunity through the pursuit of deep, meaningful purpose.",
+"lore": "Hedonic pleasure is fleeting, but a life of meaning changes your very genetic expression."
+},
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p9 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 32,
@@ -307,7 +402,12 @@
 "power": "Forces the observer to mathematically overestimate the selfishness of everyone around them.",
 "lore": "We are systematically blind to the goodness around us; people are vastly more cooperative than we think.",
 "gradeReason": "Strong anti-cynic framing, but phantom needs a moment to click before it drives behavior.",
-"artworkPrompt": "Style: illusion ink. Subject: sheep-monster shadow on wall cast by ordinary rabbit. Mood: imagined threat."
+"artworkPrompt": "Style: illusion ink. Subject: sheep-monster shadow on wall cast by ordinary rabbit. Mood: imagined threat.",
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p9 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 33,
@@ -361,7 +461,12 @@
 "power": "Tricks a hyper-social species into believing there isn't enough to go around, triggering panic protocols.",
 "lore": "Greed is usually a trauma response to the manufactured illusion of scarcity.",
 "gradeReason": "Smart critique, needs the who manufactures it question answered to fully perform.",
-"artworkPrompt": "Style: manipulation sketch. Subject: pelican hoarding fish while others starve around an empty-looking but full sea. Mood: manufactured panic."
+"artworkPrompt": "Style: manipulation sketch. Subject: pelican hoarding fish while others starve around an empty-looking but full sea. Mood: manufactured panic.",
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p11 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 39,
@@ -421,11 +526,20 @@
 "cardNumber": 45,
 "cardName": "THE TRIBAL SHIELD",
 "grade": 2,
-"power": "Generates absolute loyalty and physical protection for those recognized as part of the 'In-Group.' We are capable of immense sacrifice, and the trick to world peace is expanding the definition of 'us.'",
-"lore": null,
+"power": "Generates absolute loyalty and physical protection for those recognized as part of the \"In-Group.\"",
+"lore": "We are capable of immense sacrifice, but the trick to world peace is expanding the definition of \"Us.\"",
 "gradeReason": "Strong protector role, but in-group/out-group tension needs facilitation to perform well.",
 "artworkPrompt": "Style: ancient sketch. Subject: mammoth herd forming protective circle, calves at center. Mood: fierce belonging.",
-"print": {"cardName": "THE TRIBAL SHIELD", "power": "Generates absolute loyalty and physical protection for those recognized as part of the \"In-Group.\" We are capable of immense sacrifice, but the trick to world peace is expanding the definition of \"us.", "lore": "", "source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p13 TL", "method": "ocr", "confidence": "medium", "splitUncertain": true}
+"jsonLegacy": {
+"cardName": "THE TRIBAL SHIELD",
+"power": "Generates absolute loyalty and physical protection for those recognized as part of the 'In-Group.' We are capable of immense sacrifice, and the trick to world peace is expanding the definition of 'us.'",
+"lore": null
+},
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p13 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 46,
@@ -459,9 +573,19 @@
 "cardName": "THE EMPATHY FATIGUE",
 "grade": 1,
 "power": "Drains the user's emotional reserves when exposed to infinite, unactionable global tragedies.",
-"lore": "We evolved to care deeply about a core village of 150 people, not the agonizing suffering of 8 billion.",
+"lore": "We evolved to care deeply about a village of 150 people, not the agonizing suffering of 8 billion.",
 "gradeReason": "Every social media user has lived this. Immediately recognizable, immediately performable collapse.",
-"artworkPrompt": "Style: exhausted ink. Subject: turtle retreating into shell, news headlines swirling outside. Mood: compassion depleted."
+"artworkPrompt": "Style: exhausted ink. Subject: turtle retreating into shell, news headlines swirling outside. Mood: compassion depleted.",
+"jsonLegacy": {
+"cardName": "THE EMPATHY FATIGUE",
+"power": "Drains the user's emotional reserves when exposed to infinite, unactionable global tragedies.",
+"lore": "We evolved to care deeply about a core village of 150 people, not the agonizing suffering of 8 billion."
+},
+"textSource": {
+"source": "PDF v05 Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch - ADD web.pdf p14 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 50,
