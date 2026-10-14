@@ -59,8 +59,11 @@ const cmp = await page.evaluate(async ([a, b, o, s]) => {
   const load = (u) => new Promise((ok) => { const i = new Image(); i.onload = () => ok(i); i.src = u })
   const px = (img, x, y, w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').drawImage(img, x, y, w, h, 0, 0, w, h); return c.getContext('2d').getImageData(0, 0, w, h).data }
   const diff = (A, B) => { let d = 0; for (let i = 0; i < A.length; i += 4) for (let k = 0; k < 3; k++) d += Math.abs(A[i + k] - B[i + k]); return d / (A.length / 4 * 3) }
+  // Augenweiß (Sklera #f3ede2): hell und kaum gesättigt; ein geschlossenes Lid (Hautton) deckt es ab
+  const white = (A) => { let n = 0; for (let i = 0; i < A.length; i += 4) { const r = A[i], g = A[i + 1], b = A[i + 2]; if (Math.min(r, g, b) > 215 && Math.max(r, g, b) - Math.min(r, g, b) < 22) n++ } return n }
   const [R, S, O, Z] = await Promise.all([load(a), load(b), load(o), load(s)])
-  return { faceVsStudio: diff(px(R, 250, 90, 400, 260), px(S, 250, 90, 400, 260)), openVsShut: diff(px(O, 0, 0, O.width, O.height), px(Z, 0, 0, Z.width, Z.height)) }
+  const wo = white(px(O, 0, 0, O.width, O.height)), wz = white(px(Z, 0, 0, Z.width, Z.height))
+  return { faceVsStudio: diff(px(R, 250, 90, 400, 260), px(S, 250, 90, 400, 260)), whiteOpen: wo, whiteShut: wz }
 }, ['data:image/png;base64,' + full.toString('base64'), 'data:image/png;base64,' + fs.readFileSync('test/ref/f1_studio_front.png').toString('base64'), 'data:image/png;base64,' + open1.toString('base64'), 'data:image/png;base64,' + shut.toString('base64')])
 await browser.close()
 
@@ -83,7 +86,7 @@ process.exit(report('f1 eyes', {
   contractDisposeOnce: after.log.dispose === 1 && later === after.log.update,
   contractAllFreed: before.geos > 5 && after.freed.g === before.geos && after.freed.m === before.mats,
   gazeParallel: dxL < -0.003 && dxR < -0.003 && Math.abs(dxL - dxR) < Math.max(Math.abs(dxL), Math.abs(dxR)) * 0.5,
-  lidsClose: cmp.openVsShut > 4,
+  lidsClose: cmp.whiteOpen > 800 && cmp.whiteShut < cmp.whiteOpen * 0.25, // Augenweiß verschwindet zu mehr als 75 %
   imageMatchesStudio: cmp.faceVsStudio < 6,
   noPageErrors: errs.length === 0,
 }, { contract: { before, after, later }, kinetics: c.kinetics, life: c.life, st: { status: st.status, cleanup: st.cleanup }, eyeFrame: e, dx: [dxL, dxR], cmp, vendorBad, errs }))

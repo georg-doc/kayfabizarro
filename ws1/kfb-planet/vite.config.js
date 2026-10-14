@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { viteSingleFile } from 'vite-plugin-singlefile'
 import { fileURLToPath } from 'url'
 
-// F1 · Die Studio-Spender (kfb-hub/stage/toolbox/eye-rig-batch/lib, cloudflare-live) importieren ihre Abhängigkeiten
+// F1 · Die Studio-Spender (kfb-hub/stage/toolbox/eye-rig-batch/lib, Branch cloudflare-live @db823766: die Fassung, die Rogue_Hooded kennt und in der Georg das Profil abgenommen hat) importieren ihre Abhängigkeiten
 // über feste jsDelivr-Adressen. Diese Adressen zeigen hier auf byte-gleiche Kopien in src/vendor/eyes/ (gleiche Pins,
 // gleiche Blobs), damit kein Spender verändert wird und kein Netzzugriff zur Laufzeit nötig ist.
 const V = (f) => fileURLToPath(new URL('./src/vendor/eyes/' + f, import.meta.url))

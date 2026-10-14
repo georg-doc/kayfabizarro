@@ -27,6 +27,6 @@ const res = await p.evaluate(() => {
 fs.writeFileSync('test/out/f1_studio_front.png', Buffer.from(res.png.split(',')[1], 'base64'))
 delete res.png
 const full = await p.evaluate(() => window.__EYE_RIG_BATCH.state.eyes.report())
-fs.writeFileSync('test/ref/f1_studio_rogue_hooded.report.json', JSON.stringify({ captured: new Date().toISOString(), source: 'eye-rig-batch app.js @ cloudflare-live (lokal ausgeliefert), Batch-Import eye-rig-medium.batch-1.json, Figur adventurer-rogue-hooded, Bindepose', eyeFrame: full.eyeFrame, controls: full.controls, faceHost: full.faceHost }, null, 1))
+fs.writeFileSync('test/ref/f1_studio_rogue_hooded.report.json', JSON.stringify({ captured: new Date().toISOString(), source: 'eye-rig-batch app.js @ cloudflare-live (lokal ausgeliefert, scripts/f1/serve-studio.sh), Batch-Import eye-rig-medium.batch-1.json, Figur adventurer-rogue-hooded, Bindepose', eyeFrame: full.eyeFrame, controls: full.controls, faceHost: full.faceHost }, null, 1))
 console.log(JSON.stringify({ ...res, errs: errs.slice(0, 5) }, null, 1))
 await b.close()

@@ -1,6 +1,8 @@
 // F1 · KFB-Figur mit KFB-Eye-Rig (Host-Vertrag R1.2 §2: create(options) -> { object3d, update(dt, ctx), dispose() }).
 // Gesichts-Treiber KFB_NATIVE (V-217/V-227/V-228): das Eye-Rig besitzt Augen, Lider, Pupillen, Blick.
-// Vorlage 1:1 = Georgs Studio „KFB Batch EyeRig Atlas“ (kfb-hub/stage/toolbox/eye-rig-batch, Branch cloudflare-live), Ablauf aus
+// Vorlage 1:1 = Georgs Studio „KFB Batch EyeRig Atlas“ (kfb-hub/stage/toolbox/eye-rig-batch, Branch cloudflare-live @db823766, 03.10.).
+// Nur diese Fassung kennt Rogue_Hooded (55 Figuren); die von WS0 genannte Fassung work/hub-ux-v2-masterplan @5c3334bd (22.09.) hat
+// 27 Figuren ohne Adventurers. Georgs Profil trägt eyeProfileVisuallyApproved: true (front, bind). Ablauf aus
 // app.js loadActor() Z. 935–1000: Figur laden → normalizeActor() (2,65 hoch) → prepareMediumActorCleanup().apply(true) →
 // mountKayKitEyes() (kaykit-eye-adapter.v1.js: facehost.v1 + pet-eye-rig.v6 + eyeoval.v1) → ggf. sampleActorFaceColor().
 // Nicht übernommen (für Rogue_Hooded ohne Wirkung, bei anderen Figuren zu prüfen): applyActorTextureOverride, sourceAnchorSeed/
