@@ -1,0 +1,2209 @@
+{
+  "schema": "kfb.voice.standalone-card-beat-deck-candidates/0.1",
+  "date": "2026-10-14",
+  "status": "SOURCE_COMPLETE_SUNO_R0_UNREVIEWED_NOT_CANONICAL_NOT_DIRECT_AUDIO_SITE_IMPORT",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "pr": 379,
+    "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08",
+    "path": "media/kfb/Help_I_Am_A_Human_-_ADD_web.pdf.json",
+    "deckId": "help_i_am_a_human",
+    "blob": "14bbb1e043470bba1bf7c589163e3682109ea094",
+    "registryBlob": "af276a8b941a84a6b1856b9897dca196d1b7760a",
+    "title": "Hilfe, ich bin ein Mensch! — Human Nature Science Wrestling",
+    "cardCount": 56,
+    "pdf": "Help_I_Am_A_Human - ADD web ID.pdf",
+    "exactCardCropsVerified": false
+  },
+  "production": {
+    "musicIntent": "VOICE_ONLY_DRY",
+    "actualAudioGenerated": false,
+    "sunoRenderingVerified": false,
+    "audioTimingsMeasured": false,
+    "stylePrompt": "Solo English spoken-word stand-up; dry clear characterful narration; no singing; no background instruments, no soundbed; short distinct pauses between cards; let source irony land without extra punchlines.",
+    "intros": [
+      "Welcome, dear Fluffheads!"
+    ],
+    "finalSpoken": "Stay Fluffy!",
+    "standaloneEachBeat": true,
+    "bridgesRequired": false,
+    "causalBridgeIds": [],
+    "wordingRatioOriginalFieldsPct": 100
+  },
+  "content": {
+    "markdownScript": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/KFB_HELP_I_AM_HUMAN_56_CARD_STANDALONE_SUNO_DRY_SOURCE_AND_10_COMPACT_CANDIDATES_R0_2026-10-14.md",
+    "markdownBlob": "dd6ea0987c3dd294f9b544b7528c0a7278eb9522",
+    "sourceType": "FULL_SOURCE_RECITAL_NOT_SEMANTIC_COMEDY_GOLDEN",
+    "contentRevision": "human_nature_56_source_recital_preview_r0_2026_10_14",
+    "approvedSet": false,
+    "acceptedOperatorIds": [],
+    "cards": [
+      {
+        "beatId": "help_i_am_a_human:1:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 1,
+        "originalTitle": "CHARLES DARWIN",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "CHARLES DARWIN. Sympathy Instinct: Play to cancel a \"Selfish\" action. Sympathy will have been increased through natural selection. (Ref: Darwin)",
+        "chapter": 1,
+        "partPosition": 1,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 2,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:1:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:2:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 2,
+        "originalTitle": "THE SELFISH GENE",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DO_YOU_KNOW",
+        "text": "Do you know THE SELFISH GENE? Ego Boost: Gain control of the narrative, but isolate your Actor. We are survival machines—robot vehicles blindly programmed. (Ref: Dawkins)",
+        "chapter": 1,
+        "partPosition": 2,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 2,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:2:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:3:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 3,
+        "originalTitle": "LYNN MARGULIS",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "LYNN MARGULIS. Symbiosis: Combine two Scene cards into one stronger card. Life did not take over the globe by combat, but by networking. (Ref: Margulis)",
+        "chapter": 1,
+        "partPosition": 3,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 2,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:3:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:4:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 4,
+        "originalTitle": "SURVIVAL OF THE FRIENDLIEST",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "SURVIVAL OF THE FRIENDLIEST. Domestication: Turn an enemy card into an ally. Evolution favors those who can get along. (Ref: Hare & Wrangham)",
+        "chapter": 1,
+        "partPosition": 4,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 2,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:4:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:5:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 5,
+        "originalTitle": "MIRROR NEURONS",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "HEARD_OF",
+        "text": "Ever heard of MIRROR NEURONS? Reflection: Copy the Effect/Power of the last card played. Why I feel what you feel. Intuitive communication. (Ref: Bauer)",
+        "chapter": 1,
+        "partPosition": 5,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 3,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:5:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:6:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 6,
+        "originalTitle": "OXYTOCIN",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "OXYTOCIN. The Cuddle Hormone: Heal a fractured Stage or lower the Quest Die by 1. Increases trust, reduces fear. Warning: Can cause aggression against 'outsiders'.",
+        "chapter": 1,
+        "partPosition": 6,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 3,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:6:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:7:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 7,
+        "originalTitle": "THE VAGUS NERVE",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "THE VAGUS NERVE. Calm Down: Reset the Quest Die to 3. The wandering nerve of compassion. Stimulate for peace.",
+        "chapter": 1,
+        "partPosition": 7,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 3,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:7:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:8:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 8,
+        "originalTitle": "PAIN CENTER",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "PAIN CENTER. Social Reject: Inflict 'Damage' on an Actor who is ignored. Social rejection activates the same brain regions as physical pain. (Ref: Lieberman)",
+        "chapter": 1,
+        "partPosition": 8,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 3,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:8:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:9:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 9,
+        "originalTitle": "THOMAS HOBBES",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DO_YOU_KNOW",
+        "text": "Do you know THOMAS HOBBES? Leviathan: Impose strict order. No other player may speak this turn. \"Life is nasty, brutish, and short. War of all against all.\"",
+        "chapter": 1,
+        "partPosition": 9,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 4,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:9:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:10:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 10,
+        "originalTitle": "JEAN-JACQUES ROUSSEAU",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "JEAN-JACQUES ROUSSEAU. Natural Goodness: Remove a 'Corruption' or 'Civilization' effect. \"Man is born free, and everywhere he is in chains.\"",
+        "chapter": 1,
+        "partPosition": 10,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 4,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:10:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:11:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 11,
+        "originalTitle": "RUTGER BREGMAN",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "RUTGER BREGMAN. Humankind: Re-roll the die if the result was cynical/negative. \"Most people, deep down, are pretty decent.\" (Ref: Im Grunde gut)",
+        "chapter": 1,
+        "partPosition": 11,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 4,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:11:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:12:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 12,
+        "originalTitle": "LORD OF THE FLIES",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "HEARD_OF",
+        "text": "Ever heard of LORD OF THE FLIES? Fiction Trap: Create a false conflict. \"A story we tell ourselves. Real kids on islands cooperated. (Ref: Golding vs. Reality)\"",
+        "chapter": 1,
+        "partPosition": 12,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 4,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:12:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:13:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 13,
+        "originalTitle": "MICHAEL TOMASELLO",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "MICHAEL TOMASELLO. Pointing: Reveal a hidden card from another player's hand. \"We cooperate to survive. Shared Intentionality. (Ref: Why We Cooperate)\"",
+        "chapter": 1,
+        "partPosition": 13,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 5,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:13:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:14:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 14,
+        "originalTitle": "THE STAG HUNT",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "THE STAG HUNT. Joint Effort: Works only if another player helps. Effect is doubled. \"I can't catch the stag alone. If I chase the rabbit, we both lose.\"",
+        "chapter": 1,
+        "partPosition": 14,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 5,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:14:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:15:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 15,
+        "originalTitle": "THE FREE RIDER",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "THE FREE RIDER. Exploit: Steal the benefit of the previous player's action. The fear of being suckered. The reason we invented punishment.",
+        "chapter": 1,
+        "partPosition": 15,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 5,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:15:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:16:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 16,
+        "originalTitle": "THE COMMONS",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DO_YOU_KNOW",
+        "text": "Do you know THE COMMONS? Elinor Ostrom: All players draw 1 card. What we share grows, unless we believe the tragedy myth. (Ref: Ostrom)",
+        "chapter": 1,
+        "partPosition": 16,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 5,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:16:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:17:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 17,
+        "originalTitle": "FRANS DE WAAL",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "FRANS DE WAAL. Reconciliation: Restore peace after a conflict scene. \"Empathy is biological, not a choice. The Age of Empathy.\"",
+        "chapter": 1,
+        "partPosition": 17,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 6,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:17:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:18:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 18,
+        "originalTitle": "THE PSYCHOPATH",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "THE PSYCHOPATH. CEO Status: Ignore the negative consequences of a decision. \"1% of people. 4% of CEOs. They know the lyrics but not the music.\"",
+        "chapter": 1,
+        "partPosition": 18,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 6,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:18:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:19:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 19,
+        "originalTitle": "EMOTIONAL CONTAGION",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "HEARD_OF",
+        "text": "Ever heard of EMOTIONAL CONTAGION? Vibe Check: Change the mood of the Stage to match your Actor. \"We catch feelings faster than viruses. (Ref: Christakis)\"",
+        "chapter": 1,
+        "partPosition": 19,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 6,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:19:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:20:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 20,
+        "originalTitle": "VENEER THEORY",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "VENEER THEORY. Cynicism: Negate a \"Good\" act. \"The myth that civilization is just a thin layer over a beast. BLÖDSINN!\"",
+        "chapter": 1,
+        "partPosition": 20,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 6,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:20:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:21:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 21,
+        "originalTitle": "HOMO ECONOMICUS",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "HOMO ECONOMICUS. Rational Fool: Make a decision that benefits only you, lose 1 Friend. A rational utility maximizer who doesn't exist. (Ref: Game Theory)",
+        "chapter": 1,
+        "partPosition": 21,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 7,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:21:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:22:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 22,
+        "originalTitle": "THE FILTER BUBBLE",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "THE FILTER BUBBLE. Echo Chamber: Ignore any card played by a 'Different' species. We only see what the algorithm wants us to see. (Ref: Pariser)",
+        "chapter": 1,
+        "partPosition": 22,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 7,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:22:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:23:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 23,
+        "originalTitle": "LONELINESS",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DO_YOU_KNOW",
+        "text": "Do you know LONELINESS? Health Hazard: -1 to Quest Die. As deadly as 15 cigarettes a day. A biological warning signal.",
+        "chapter": 1,
+        "partPosition": 23,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 7,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:23:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:24:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 24,
+        "originalTitle": "DIGITAL DISTRACTION",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "DIGITAL DISTRACTION. Scroll Doom: Skip your turn to draw a card. We are alone together. Connection without demand. (Ref: Turkle)",
+        "chapter": 1,
+        "partPosition": 24,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 7,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:24:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:25:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 25,
+        "originalTitle": "INTRINSIC MOTIVATION",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "INTRINSIC MOTIVATION. Flow State: Play an extra card if it fits the story perfectly. Doing it because you love it. Rewards can kill this. (Ref: Deci & Ryan)",
+        "chapter": 1,
+        "partPosition": 25,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 8,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:25:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:26:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 26,
+        "originalTitle": "HOMO COOPERATIVUS",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "HEARD_OF",
+        "text": "Ever heard of HOMO COOPERATIVUS? Synergy: +1 to Quest Die for every player who helps. We are designed to work together. (Ref: Sennett)",
+        "chapter": 1,
+        "partPosition": 26,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 8,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:26:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:27:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 27,
+        "originalTitle": "BULLSHIT JOBS",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "BULLSHIT JOBS. Resignation: Discard a card to do nothing. Work that serves no purpose. Soul-destroying. (Ref: Graeber)",
+        "chapter": 1,
+        "partPosition": 27,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 8,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:27:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:28:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 28,
+        "originalTitle": "THE NUDGE",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "THE NUDGE. Choice Arch: Influence the next player's decision without forcing them. Small changes in context can change behavior. (Ref: Thaler)",
+        "chapter": 1,
+        "partPosition": 28,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 8,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:28:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:29:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 29,
+        "originalTitle": "HOMO HAPTICUS",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "HOMO HAPTICUS. Touch: Connect two separated cards. We cannot live without touch. The skin is our social organ. (Ref: Grunwald)",
+        "chapter": 1,
+        "partPosition": 29,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 9,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:29:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:30:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 30,
+        "originalTitle": "RESONANCE",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DO_YOU_KNOW",
+        "text": "Do you know RESONANCE? Hartmut Rosa: Amplify the current 'Vibe'. When the world answers us. Not echo, but answer.",
+        "chapter": 1,
+        "partPosition": 30,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 9,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:30:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:31:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 31,
+        "originalTitle": "SKIN HUNGER",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "SKIN HUNGER. Desperation: Force a connection (play a card on top of another). A biological deficit. We wither without contact.",
+        "chapter": 1,
+        "partPosition": 31,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 9,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:31:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:32:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 32,
+        "originalTitle": "FLOW",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "FLOW. Immersion: The Quest Die cannot be tipped this turn. Total absorption. The ego dissolves. (Ref: Csikszentmihalyi)",
+        "chapter": 1,
+        "partPosition": 32,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 9,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:32:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:33:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 33,
+        "originalTitle": "THE KILLING INHIBITION",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "HEARD_OF",
+        "text": "Ever heard of THE KILLING INHIBITION? Missed Shot: Negate an attack or aggressive move. Most soldiers didn't shoot to kill. We are not natural killers. (Ref: Marshall)",
+        "chapter": 1,
+        "partPosition": 33,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 10,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:33:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:34:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 34,
+        "originalTitle": "THE CHRISTMAS TRUCE",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "THE CHRISTMAS TRUCE. Ceasefire: Pause the Quest Die for one round. When the propaganda failed, they played football. 1914.",
+        "chapter": 2,
+        "partPosition": 1,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 10,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:34:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:35:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 35,
+        "originalTitle": "PROPAGANDA",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "PROPAGANDA. Dehumanize: Turn a 'Friend' card into an 'Enemy'. We need to be lied to in order to kill. (Ref: Bernays)",
+        "chapter": 2,
+        "partPosition": 2,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 10,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:35:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:36:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 36,
+        "originalTitle": "NON-VIOLENT RESISTANCE",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "NON-VIOLENT RESISTANCE. Civil Disobedience: Stop the game flow to change a rule. Power comes from obedience. Withdraw it. (Ref: Gandhi)",
+        "chapter": 2,
+        "partPosition": 3,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 10,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:36:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:37:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 37,
+        "originalTitle": "THE ALPHA MYTH",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DO_YOU_KNOW",
+        "text": "Do you know THE ALPHA MYTH? Debunk: Remove a 'Leader' status. Real alphas are caretakers, not bullies. (Ref: Mech)",
+        "chapter": 2,
+        "partPosition": 4,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 11,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:37:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:38:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 38,
+        "originalTitle": "LEVELING MECHANISM",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "LEVELING MECHANISM. Ridicule: The player with the most cards must discard one. Cutting down the tall poppy. Keeping egos in check. (Ref: Boehm)",
+        "chapter": 2,
+        "partPosition": 5,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 11,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:38:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:39:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 39,
+        "originalTitle": "CORRUPTION OF POWER",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "CORRUPTION OF POWER. Brain Damage: Gain power, but lose Empathy (cannot assist others). Power causes brain damage. It shuts down mirror neurons. (Ref: Keltner)",
+        "chapter": 2,
+        "partPosition": 6,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 11,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:39:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:40:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 40,
+        "originalTitle": "EGALITARIANISM",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "HEARD_OF",
+        "text": "Ever heard of EGALITARIANISM? Round Table: Everyone draws a card. For 95% of human history, we lived as equals. (Ref: Graeber/Wengrow)",
+        "chapter": 2,
+        "partPosition": 7,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 11,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:40:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:41:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 41,
+        "originalTitle": "THE HELPER TODDLER",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "THE HELPER TODDLER. Innate Goodness: Aid another player freely. We help before we can talk. It's not taught, it's there. (Ref: Warneken)",
+        "chapter": 2,
+        "partPosition": 8,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 12,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:41:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:42:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 42,
+        "originalTitle": "ALLOPARENTING",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "ALLOPARENTING. It Takes A Village: Use another player's Skill/Power. Mothers and Others. We share the burden. (Ref: Hrdy)",
+        "chapter": 2,
+        "partPosition": 9,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 12,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:42:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:43:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 43,
+        "originalTitle": "HOMO LUDENS (PLAY)",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "HOMO LUDENS (PLAY). Reset: Clear the Stage (it was just a game). Play is the foundation of culture. It requires trust. (Ref: Huizinga)",
+        "chapter": 2,
+        "partPosition": 10,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 12,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:43:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:44:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 44,
+        "originalTitle": "CONDITIONED SELF",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DO_YOU_KNOW",
+        "text": "Do you know CONDITIONED SELF? Schooling: Force a card to conform to a specific suit/color. We are taught to compete. We are molded. (Ref: Kohn)",
+        "chapter": 2,
+        "partPosition": 11,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 12,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:44:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:45:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 45,
+        "originalTitle": "IMMANUEL KANT",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "IMMANUEL KANT. Categorical Imperative: Establish a Universal Rule for the game. \"The starry sky above me, the moral law within me.\"",
+        "chapter": 2,
+        "partPosition": 12,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 13,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:45:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:46:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 46,
+        "originalTitle": "ERICH FROMM",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "ERICH FROMM. To Be: Immunize an Actor against material loss. \"To Have or To Be? That is the question of sanity.\"",
+        "chapter": 2,
+        "partPosition": 13,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 13,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:46:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:47:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 47,
+        "originalTitle": "MARTIN BUBER",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "HEARD_OF",
+        "text": "Ever heard of MARTIN BUBER? I and Thou: Create an unbreakable bond between two Actors. \"All real living is meeting. No 'It', only 'Thou.'\"",
+        "chapter": 2,
+        "partPosition": 14,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 13,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:47:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:48:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 48,
+        "originalTitle": "HANNAH ARENDT",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "HANNAH ARENDT. Action: Start a new narrative thread (Quest). \"The banality of evil. But also the power of beginning.\"",
+        "chapter": 2,
+        "partPosition": 15,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 13,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:48:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:49:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 49,
+        "originalTitle": "PROTOPIA",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "PROTOPIA. Incremental Gain: +1 to the Die roll. Not Utopia. Just a little bit better than yesterday. (Ref: Kevin Kelly)",
+        "chapter": 2,
+        "partPosition": 16,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 14,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:49:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:50:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 50,
+        "originalTitle": "TEAM HUMAN",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "TEAM HUMAN. Find the Others: Unite all players against the Quest. Being human is a team sport. (Ref: Douglas Rushkoff)",
+        "chapter": 2,
+        "partPosition": 17,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 14,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:50:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:51:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 51,
+        "originalTitle": "SELF-FULFILLING PROPHECY",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DO_YOU_KNOW",
+        "text": "Do you know SELF-FULFILLING PROPHECY? Manifest: If you say it happens, it happens. If we believe we are selfish, we become selfish. Change the story.",
+        "chapter": 2,
+        "partPosition": 18,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 14,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:51:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:52:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 52,
+        "originalTitle": "HOPE",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "HOPE. The Verb: Restart the game if you lose. Hope is a verb with its sleeves rolled up. (Ref: Solnit/Orr)",
+        "chapter": 2,
+        "partPosition": 19,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 14,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:52:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:53:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 53,
+        "originalTitle": "BLÖDSINN! (NONSENSE)",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "BLÖDSINN! (NONSENSE). Interrupt: Cancel the last action. Shout 'BlödsInn!' When the story gets boring or fake, hit the reset button.",
+        "chapter": 2,
+        "partPosition": 20,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 15,
+          "quadrant": "TL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:53:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:54:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 54,
+        "originalTitle": "KAYFABIZARRO",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "HEARD_OF",
+        "text": "Ever heard of KAYFABIZARRO? The Work: Treat the game as real. Overact your next turn. It's fake, but the emotion is real. That's the point.",
+        "chapter": 2,
+        "partPosition": 21,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 15,
+          "quadrant": "TR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:54:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:55:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 55,
+        "originalTitle": "THE SCISSORS",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "THE SCISSORS. Cut: Physically cut a card in half to destroy it forever. The ultimate tool of the DIY anarchist.",
+        "chapter": 2,
+        "partPosition": 22,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 15,
+          "quadrant": "BL",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:55:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      },
+      {
+        "beatId": "help_i_am_a_human:56:source_recital_r0",
+        "deckId": "help_i_am_a_human",
+        "cardNumber": 56,
+        "originalTitle": "THE GLUE STICK",
+        "cardSourceRevision": "14bbb1e043470bba1bf7c589163e3682109ea094",
+        "sourceFieldsUsed": [
+          "cardName",
+          "power",
+          "lore"
+        ],
+        "fullSourceTitleRetained": true,
+        "fullSourcePowerRetained": true,
+        "fullSourceLoreRetained": true,
+        "mode": "FULL_SOURCE_RECITAL",
+        "openerId": "DIRECT",
+        "text": "THE GLUE STICK. Mashup: Stick two cards together permanently. Make connections where there are none.",
+        "chapter": 2,
+        "partPosition": 23,
+        "cutAfter": "BLANK_LINE",
+        "visualRef": {
+          "pdfPath": "Help_I_Am_A_Human - ADD web ID.pdf",
+          "page": 15,
+          "quadrant": "BR",
+          "status": "REGISTRY_GRID_REF_NOT_CARD_CROP_VERIFIED"
+        },
+        "audioCue": {
+          "cueId": "card:56:spoken_beat",
+          "startMs": null,
+          "endMs": null,
+          "clipSha256": null,
+          "status": "TEXT_ONLY_NOT_RENDERED"
+        },
+        "editorReview": "EDITORIAL_CANDIDATE",
+        "humanAcceptance": "PENDING",
+        "accepted": false
+      }
+    ],
+    "chapters": [
+      {
+        "part": 1,
+        "from": 1,
+        "to": 33,
+        "count": 33,
+        "characters": 4779,
+        "cardIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "sourceTextSha": null
+      },
+      {
+        "part": 2,
+        "from": 34,
+        "to": 56,
+        "count": 23,
+        "characters": 3036,
+        "cardIds": [
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56
+        ],
+        "sourceTextSha": null
+      }
+    ]
+  },
+  "review": {
+    "compactShowSpinSellProposals": 10,
+    "compactCandidatesLocation": "same Markdown after Suno parts",
+    "humanDecision": "NOT_GIVEN",
+    "oldHumanFailGoldensUnaffected": true,
+    "scienceClaimsIndependentVerification": "NOT_DONE_USE_INWORLD_AS_CARD_LORE_ONLY"
+  },
+  "consumer": {
+    "currentAudioSiteVersion": 11,
+    "poolSchema": "kfb.voice.triplet-opener-pool/1",
+    "compatibleAsNativePool": false,
+    "reason": "This is a separate versioned text/provenance draft; requires conversion + editorial validation before normal Audio Site import. Never overwrite active r5 pool.",
+    "actualVoiceClipCount": 0,
+    "activeCurrentPoolRevision": "triplet-opener-pool-r5-cookie-tune-v11"
+  },
+  "nextGate": "HUMAN_SOURCE_CUTUP_56_CARD_STANDALONE_TRIPLET_EDITORIAL_SAMPLE_R1"
+}
