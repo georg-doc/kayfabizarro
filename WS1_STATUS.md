@@ -1,7 +1,16 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§8 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§9 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 9 · 14.10. nachts · Meshy-Amphitheater (Auftrag Georg, README MeshyModels @708d8fae)
+- **Quell-Isolation R1 fertig:** `ws1/asset-intake/meshy-amphitheater/SOURCE_ISOLATION_R1.md`.
+  - SHA-256 des unveränderten GLB: `11846848…2a9efb`, 73 029 272 Bytes.
+  - Inventur: 1 Mesh, 1,62 Mio. Dreiecke, 4K-Texturen.
+  - Rundum-, Innen- und Unteransichten; Bildpaar Vorschau | Render stimmt überein.
+  - Befund A: offene Unterseite. Befund B: Last, gemessen auf dem M4: Geometrie ≈ 6 ms, die Texturen kosten vor allem Speicher.
+- **Fragen an WS0 (§4 dort):** Ablage (kein LFS, 73 MB) und Browser-Fassung samt Werkzeug-Freigabe, Registrierung im Asset Librarian, Maßstab (Vorschlag Bühne ≈ 14 m), Einbau erst nach Billboard und F1.
+- Danach geht es weiter mit **F1 Augen** laut WS0-Reihenfolge.
 
 ## 8 · 14.10. spät · S5a/S5b/S5c fertig · Billboard-Vorlagenzeile · Vorführung an Georg noch gesperrt
 
