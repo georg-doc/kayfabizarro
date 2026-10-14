@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Bildflächen-Modul
+- V-256: Inhalt (Karte, Hypernormalisation, YouTube, Zitate, Farbstimmung) als frei setzbares Embedding, Träger getrennt (B1 nur einer); UFO-Monitor wird Bildschirm-Slot mit ~1,60:1; Billboard im UFO FAIL. WS1 informiert; UFO Phase 1c (Slot + Seitenverhältnis-Varianten) läuft.
+
 ## 2026-10-15 · Mund-Bogen-Vorgabe, Meshy-Recherche
 - V-255: replies/MOUTH_SHEET_SPEC_R1.md (4×4, Viseme zuerst, Prompt, Ablauf); dritter GPT-Bogen „Claymation-Mund-Sprite-Sammlung“ (Wurst-Linien-Lippen) gesichtet.
 - replies/MESHY_COMMUNITY_RESEARCH_R1.md: Meshy/Mixamo-Erfahrungen (nicht doppelt riggen, Anhängsel vor Mixamo entfernen, Remesh 10–30 k vor Rig, starre Teile an einen Knochen).

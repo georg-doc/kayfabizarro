@@ -2748,7 +2748,8 @@
    "supersedes": null,
    "superseded_by": [
     "V-223",
-    "V-224"
+    "V-224",
+    "V-256"
    ],
    "why": "Claude Design hatte weder die Hypernormalisation-Engine noch das Plain-Billboard; Karte war aufgeklebt.",
    "applies": "ab sofort"
@@ -2811,7 +2812,9 @@
    "check": "Bild: Karte randlos im Rahmen, Figuren davor",
    "source": "Georg 14.10.",
    "supersedes": "V-220 (Fläche, Rand), V-223 (TV-Knopf offen)",
-   "superseded_by": [],
+   "superseded_by": [
+    "V-256"
+   ],
    "why": "Der TV-Knopf und der Füllrand waren wieder drin; das Billboard stand zu hoch für Figuren davor.",
    "applies": "ab sofort"
   },
@@ -3287,7 +3290,9 @@
    "check": "Einzelbilder nach V-253",
    "source": "Georg 15.10.",
    "supersedes": "V-252 (Karte als Ebene vor dem Monitor, Maßstab 5 m/u)",
-   "superseded_by": [],
+   "superseded_by": [
+    "V-256"
+   ],
    "why": "Georgs Urteil zu UFO-Fassung, Knüppeln, Karte und Maßstab.",
    "applies": "ab sofort"
   },
@@ -3304,6 +3309,21 @@
    "supersedes": null,
    "superseded_by": [],
    "why": "Die ersten drei GPT-Bögen hatten zu viele Spaßformen und fehlende Viseme, unterschiedliche Höhen.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-256",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Bildflächen-Modul statt Billboard-Zwang: Inhalt und Träger sind getrennt. Der Inhalt – Karte (cardImage), Hypernormalisation-Loops, YouTube-Videos, Card-Viewer, Zitate, Farbstimmung – ist EIN modulares Embedding, das auf jede 3D-Oberfläche gesetzt werden kann (Material-/Canvas-/Video-Textur oder HTML per CSS3D, Spender: Branch chatgpt-web/billboard-b2a-css3d-2026-09-24, BILLBOARD_B2A_CSS3D + BILLBOARD_MEDIA_LIVING). Träger: das Knet-Billboard (B1) ist nur EIN Träger; im UFO ist der Träger die Monitorfläche hinter dem 3D-Rahmen (Prototyp für den Einbau außerhalb der Billboards). Das dicke Billboard im UFO ist FAIL. Seitenverhältnis: Monitoröffnung auf das Kartenformat ~1,60:1 anpassen (Kante anheben oder absenken), da Loops und Videos dasselbe Format nutzen.",
+   "values": {},
+   "owner": "WS0 (UFO-Fläche) · WS1 (Modul)",
+   "check": "Bildpaare Monitor-Varianten, später laufendes Embedding",
+   "source": "Georg 15.10.",
+   "supersedes": "V-254 (B1 vor dem Monitor), V-220/V-224 nur noch als Träger-Variante",
+   "superseded_by": [],
+   "why": "Das Billboard im UFO war zu dick und nahm den Platz; die Hypernormalisation-Anforderung war von Anfang an ein frei setzbares Embedding.",
    "applies": "ab sofort"
   },
   {
@@ -3369,7 +3389,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:297",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:300",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

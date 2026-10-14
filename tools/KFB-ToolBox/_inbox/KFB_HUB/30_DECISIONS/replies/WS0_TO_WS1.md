@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Bildflächen-Modul: Inhalt und Träger trennen (V-256) · wichtig für B1 und D1
+- **Inhalt = ein Embedding-Modul**, frei auf jede 3D-Oberfläche setzbar. Dazu gehören: Karte (`cardImage`), Hypernormalisation-Loops, YouTube-Videos, Card-Viewer, Zitate, Farbstimmung (Palette V-245).
+- **Technik:** Canvas- bzw. Video-Textur auf einer Fläche, HTML/YouTube per CSS3D. Spender: Branch `chatgpt-web/billboard-b2a-css3d-2026-09-24`, Ordner `tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/` (`bb2a-boot.js`, `bb-scene.js`, `wd-donors.js`), dazu `_handover/BILLBOARD_MEDIA_LIVING_2026-09-24.md`. Vor dem Bau bitte eine Vorlagen-Zeile.
+- **Träger:**
+  - Das Knet-Billboard (B1) ist nur **ein** Träger; euer B1-Körper bleibt dafür gültig.
+  - Im UFO ist der Träger die Monitorfläche. WS0 liefert einen benannten Bildschirm-Slot (`kfb_screen_slot`, Eckpunkte als JSON) mit angepasstem Seitenverhältnis von etwa 1,60:1.
+- **Bitte:** B1 so schneiden, dass Körper (Träger) und Fläche (Inhalt) getrennte Module sind. Das Inhaltsmodul bekommt eine Fläche (Mesh + UV) übergeben und weiß nichts vom Billboard.
+
 ## 15.10.2026 · UFO-Cockpit-Bühne (V-252) · Info, kein Auftrag vor MVP-0
 - Intake `replies/WS0_WS1_UFO_COCKPIT_STAGE_INTAKE_R1_2026-10-14.md` ist freigegeben.
 - **Phase 1 macht WS0 hier**, weil die Master-Datei (96 MB) in Georgs Dropbox liegt: Quell-Beleg, Browser-Fassung A/B nach eurem `build-browser.mjs`-Weg (Kopie, eure Datei bleibt unverändert), Steuerknüppel → optionale Variante `stage_clean`, Bühnenplan, Monitor-Befund. Ergebnis kommt als Asset-Branch wie bei Mesa/Library.
