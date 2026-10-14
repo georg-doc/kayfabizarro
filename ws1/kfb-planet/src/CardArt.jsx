@@ -6,12 +6,17 @@ export default function CardArt({ card, width = 320 }) {
   const ref = useRef(null)
   const [ok, setOk] = useState(false)
   const epoch = useSyncExternalStore(subscribeRetry, getRetryEpoch)
+  const loaded = useRef(null)
   useEffect(() => {
+    const key = card.deck.id + '#' + card.num + '@' + width
+    if (loaded.current === key) return // neuer Versuch (epoch) betrifft nur Karten ohne Bild
+    loaded.current = null
     let alive = true
     setOk(false)
     cardImage(card.deck.id, card.num).then((img) => {
       const c = ref.current
       if (!alive || !img || !c) return
+      loaded.current = key
       const f = fitCanvas(img.canvas, CARD_AR, Math.round(width * 2))
       c.width = f.width; c.height = f.height
       c.getContext('2d').drawImage(f, 0, 0)

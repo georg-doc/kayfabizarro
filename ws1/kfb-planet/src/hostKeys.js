@@ -2,6 +2,7 @@
 // Bewegung liest ecctrl über drei-KeyboardControls (MOVE_MAP, Falle 3). Alle übrigen Tasten
 // laufen durch genau diesen Router. Module hängen nie eigene Listener an window.
 import { useEffect, useRef } from 'react'
+import { DEBUG } from './debug'
 
 export const MOVE_MAP = [
   { name: 'forward', keys: ['ArrowUp', 'KeyW'] },
@@ -43,4 +44,4 @@ export function useHostKeys(fn, prio = 0) {
   useEffect(() => addHostKeyHandler(ref, prio), [prio])
 }
 export const hostKeyStats = () => ({ installed, handlers: handlers.length, prios: handlers.map((h) => h.prio) })
-if (typeof window !== 'undefined') window.__kfbHostKeys = hostKeyStats
+if (DEBUG) window.__kfbHostKeys = hostKeyStats

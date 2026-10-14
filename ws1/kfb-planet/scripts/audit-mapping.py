@@ -2,10 +2,10 @@
 """Kartenvertrag gegen das gedruckte PDF prüfen, für alle Nicht-MED-Decks des Spielpools.
 Je Deck: PDF laden (MEDIA_COMMIT), mit scripts/audit-mapping.swift (PDFKit + Apple Vision) die Viertel lesen und
 den erkannten Titel mit dem Kartennamen aus src/data/cards.json vergleichen.
-Ergebnis: src/data/mapping-audit.json (Status je Deck) und test/out/audit/<deck>.json (Rohdaten).
+Ergebnis: src/data/mapping-audit.json (Status je Deck) und test/audit/<deck>.json (Rohdaten).
 Aufruf: python3 scripts/audit-mapping.py [deckId ...]   (ohne Argumente: alle Nicht-MED-Decks)
 Braucht: swiftc-Binary test/out/bin/audit-mapping (swiftc -O scripts/audit-mapping.swift -o test/out/bin/audit-mapping)"""
-import json, os, re, subprocess, sys, urllib.parse, urllib.request
+import json, os, re, subprocess, sys, unicodedata, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from difflib import SequenceMatcher
 
@@ -16,18 +16,31 @@ cards = json.load(open('src/data/cards.json'))
 deck_ids = [d[0] for d in cards['decks']]
 names = {}
 for c in cards['cards']: names.setdefault(deck_ids[c[0]], {})[c[1]] = c[2]
-todo = sys.argv[1:] or [d for d in deck_ids if not d.startswith('medkayfab_')]
-os.makedirs('test/out/pdf', exist_ok=True); os.makedirs('test/out/audit', exist_ok=True)
+args = [a for a in sys.argv[1:] if not a.startswith('--')]
+RESCORE = '--rescore' in sys.argv  # vorhandene OCR-Rohdaten test/audit/<deck>.json neu bewerten, ohne PDF/OCR
+todo = args or [d for d in deck_ids if not d.startswith('medkayfab_')]
+os.makedirs('test/out/pdf', exist_ok=True); os.makedirs('test/audit', exist_ok=True)
 
-norm = lambda s: re.sub(r'[^A-Z0-9 ]+', ' ', s.upper().replace('’', "'")).split()
-def match(name, lines):
-    nt = [t for t in norm(name) if len(t) >= 3] or norm(name)
-    if not nt or not lines: return False
-    head = lines[:5]
-    joined = set(t for l in head for t in norm(l))
-    if sum(t in joined for t in nt) / len(nt) >= 0.7: return True
-    nn = ' '.join(norm(name))
-    return any(SequenceMatcher(None, nn, ' '.join(norm(l))).ratio() >= 0.8 for l in head)
+# Je Karte: Der Titel im Viertel muss den eigenen Namen tragen und darf zu keiner anderen Karte des Decks
+# gleich gut oder besser passen (doppelte Namen, Nachbarkarten). Füllwörter zählen nicht; Unicode bleibt erhalten.
+STOP = {'THE', 'A', 'AN', 'OF', 'AND', 'TO', 'IN', 'ON', 'FOR', 'DER', 'DIE', 'DAS', 'UND', 'LE', 'LA'}
+def toks(s): return [t for t in re.split(r'[^\w]+', unicodedata.normalize('NFKC', s).upper().replace('’', "'")) if t]
+def score(name, lines):
+    head = lines[:7]
+    if not head: return 0.0
+    got = set(t for l in head for t in toks(l))
+    nt = [t for t in toks(name) if t not in STOP and len(t) >= 2] or toks(name)
+    if not nt: return 0.0
+    tok = sum(t in got for t in nt) / len(nt)
+    nn = ' '.join(toks(name))
+    seq = max(SequenceMatcher(None, nn, ' '.join(toks(l))).ratio() for l in head)
+    return max(tok, seq)
+def card_ok(n, nm, lines):
+    own = score(nm[n], lines)
+    if own < 0.75: return False
+    other = max((score(nm[m], lines) for m in nm if m != n), default=0)
+    return own > other
+def match(name, lines): return score(name, lines) >= 0.75  # nur für die Verschiebungs-Diagnose
 
 def audit(deck):
     try: return audit1(deck)
@@ -37,29 +50,33 @@ def audit1(deck):
     d = reg.get(deck)
     if not d or not d.get('pdf'): return deck, {'status': 'NO_PDF'}
     off = d['coverOffset'] if d['coverOffset'] is not None else 1
-    pdf = 'test/out/pdf/' + d['pdf']
-    if not os.path.exists(pdf): urllib.request.urlretrieve(base + urllib.parse.quote(d['pdf']), pdf)
     nm = names.get(deck, {})
     count = max(nm) if nm else d['cardCount']
-    raw = json.loads(subprocess.run(['test/out/bin/audit-mapping', pdf, str(off), str(count)], capture_output=True, check=True).stdout)
+    rawp = f'test/audit/{deck}.json'
+    if RESCORE and os.path.exists(rawp):
+        raw = json.load(open(rawp))
+    else:
+        pdf = 'test/out/pdf/' + d['pdf']
+        if not os.path.exists(pdf): urllib.request.urlretrieve(base + urllib.parse.quote(d['pdf']), pdf)
+        raw = json.loads(subprocess.run(['test/out/bin/audit-mapping', pdf, str(off), str(count)], capture_output=True, check=True).stdout)
+        json.dump({'deck': deck, 'coverOffset': off, **raw}, open(rawp, 'w'), ensure_ascii=False)
     ocr = {c['n']: c['text'] for c in raw['cards']}
-    json.dump({'deck': deck, 'coverOffset': off, **raw}, open(f'test/out/audit/{deck}.json', 'w'), ensure_ascii=False)
     readable = [n for n in nm if ocr.get(n)]
     # Verschiebung prüfen: PDF-Viertel n zeigt Karte n+shift?
     score = {s: sum(match(nm[n + s], ocr[n]) for n in readable if (n + s) in nm) for s in range(-8, 9)}
     best = max(score, key=lambda s: (score[s], -abs(s)))
-    ok = score[0]
-    rate = ok / len(readable) if readable else 0
-    wrong = [n for n in readable if not match(nm[n], ocr[n])][:12]
+    okc = sorted(n for n in readable if card_ok(n, nm, ocr[n]))
+    rate = len(okc) / len(readable) if readable else 0
     status = 'SAFE' if readable and len(readable) >= 0.5 * len(nm) and rate >= 0.85 else 'UNSAFE'
-    return deck, {'status': status, 'cards': len(nm), 'readable': len(readable), 'matched': ok, 'rate': round(rate, 3),
+    # Freigabe je Karte: nur Karten mit eindeutig belegtem Titel (unlesbare und zweideutige bleiben gesperrt)
+    return deck, {'status': status, 'cards': len(nm), 'readable': len(readable), 'matched': len(okc), 'rate': round(rate, 3),
                   'bestShift': best, 'bestShiftMatched': score[best], 'coverOffset': off, 'pdfPages': raw['pdfPages'],
-                  'mismatchSample': wrong}
+                  'ok': okc if status == 'SAFE' else [], 'blocked': sorted(set(nm) - set(okc)) if status == 'SAFE' else sorted(nm)}
 
 path = 'src/data/mapping-audit.json'
 prev = json.load(open(path)) if os.path.exists(path) else {'decks': {}}
 prev.update({'schema': 'kfb.ws1.mapping-audit/1', 'media': commit,
-             'method': 'PDFKit-Render (scale 1.5) + Apple Vision OCR je Viertel; Titel gegen cards.json; SAFE = ≥85 % der lesbaren Karten passen bei Verschiebung 0'})
+             'method': 'PDFKit-Render (scale 1.5) + Apple Vision OCR je Viertel; Titel (erste 7 Zeilen, ohne Füllwörter) gegen cards.json; Karte ok = eigener Name ≥0,75 und besser als jede andere Karte des Decks; Deck SAFE = ≥85 % der lesbaren Karten ok; Bilder nur für Karten in ok'})
 with ThreadPoolExecutor(max_workers=3) as ex:
     for deck, r in ex.map(audit, todo):
         prev['decks'][deck] = r

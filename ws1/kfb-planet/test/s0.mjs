@@ -29,10 +29,28 @@ const moveFree = await walk()
 await page.evaluate(() => window.__kfbStore.getState().openDialog({ kind: 'stage', id: 2 }))
 const settled = await settle()
 const moveDialog = await walk()
+// Flug + Dialog: Tasten gehören dem Dialog, die Figur schwebt (blinder Prüfer 2, Befund 3)
+await page.evaluate(() => window.__kfbStore.getState().closeDialog())
+await page.keyboard.press('KeyF'); await page.waitForTimeout(2500)
+const flying = await page.evaluate(() => window.__kfb.flying)
+await page.evaluate(() => window.__kfbStore.getState().openDialog({ kind: 'stage', id: 3 }))
+await page.waitForTimeout(800)
+const fp0 = await page.evaluate(() => window.__kfb.pos)
+await page.keyboard.down('KeyW'); await page.keyboard.down('Space'); await page.waitForTimeout(3000); await page.keyboard.up('KeyW'); await page.keyboard.up('Space')
+const fp1 = await page.evaluate(() => window.__kfb.pos)
+const moveFlyDialog = Math.hypot(fp1[0] - fp0[0], fp1[1] - fp0[1], fp1[2] - fp0[2])
 await browser.close()
+// ohne URL-Schalter: keine Debug-Zugänge (Vertrag §6)
+const plain = await openPage('')
+await plain.page.waitForFunction(() => document.querySelector('canvas[data-engine]'), null, { timeout: 60000 })
+await plain.page.waitForTimeout(3000)
+const leaked = await plain.page.evaluate(() => Object.keys(window).filter((k) => k.startsWith('__kfb')))
+await plain.browser.close()
 process.exit(report('s0 host frame', {
   walksWithoutDialog: moveFree > 0.3,
   standsWithDialog: settled && moveDialog < 0.05,
+  hoversWhenFlyingWithDialog: flying === true && moveFlyDialog < 0.05,
+  noDebugGlobalsWithoutSwitch: leaked.length === 0,
   slotBubbles: a.bubbles === 1, slotChoice: a.choice === 1, oneCanvas: a.canvases === 1,
   routerInstalled: a.keys.installed && a.keys.handlers >= 3,
   ctrlOffAtStartDialog: a.dialog && a.ctrl === false,
@@ -40,4 +58,4 @@ process.exit(report('s0 host frame', {
   ctrlOffWhenDialogOpens: c.dialog && c.ctrl === false,
   escapeClosesViaRouter: !d.dialog && d.ctrl === true,
   noPageErrors: errs.length === 0,
-}, { a, b, c, d, moveFree, moveDialog, errs }))
+}, { a, b, c, d, moveFree, moveDialog, flying, moveFlyDialog, leaked, errs }))

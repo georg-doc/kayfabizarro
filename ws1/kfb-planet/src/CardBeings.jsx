@@ -8,6 +8,7 @@ import { deckColor } from './cards'
 import { useCardTexture } from './useCardTexture'
 import { CARD_AR } from './cardImage'
 import { cardTextureLandscape } from './HexWorld'
+import { DEBUG } from './debug'
 
 function Being({ card, transform, i }) {
   const ref = useRef()
@@ -51,7 +52,7 @@ export default function CardBeings() {
     return out
   }, [planetCards])
   const stage = useMemo(() => stagePosition(), [])
-  if (typeof window !== 'undefined') window.__kfbBeings = placed.map((b) => ({ idx: b.card.idx, name: b.card.name, pos: b.pos.toArray() }))
+  if (DEBUG) window.__kfbBeings = placed.map((b) => ({ idx: b.card.idx, name: b.card.name, pos: b.pos.toArray() }))
 
   useFrame(() => {
     const s = useGame.getState()

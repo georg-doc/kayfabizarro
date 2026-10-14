@@ -12,6 +12,7 @@ import heroUrl from './assets/hero.glb?url'
 import { nearestPlanet, planetById, playerState } from './world'
 import { adapter, SCENE, TOWER } from './scene'
 import { useGame } from './store'
+import { DEBUG } from './debug'
 
 const G = 14 // Schwerkraft-Stärke
 const INFLUENCE = 28 // ab dieser Höhe: Schwerelosigkeit
@@ -122,7 +123,7 @@ export default function Player() {
     const body = h.body
     if (!body) return
     if (!t.current.camInit) { cc.rotatePolarTo(1.05, false); cc.dollyTo(7.5, false); t.current.camInit = true }
-    if (!window.__kfbDebug) window.__kfbDebug = {
+    if (DEBUG && !window.__kfbDebug) window.__kfbDebug = {
       teleport: (x, y, z, fly) => { body.setTranslation({ x, y, z }, true); body.setLinvel({ x: 0, y: 0, z: 0 }, true); useGame.getState().setFlying(!!fly); t.current.flyStart = performance.now() },
       faceToward: (x, z) => { const p = body.translation(); cc.rotateAzimuthTo(Math.atan2(-(x - p.x), -(z - p.z)), false) },
       targets: () => (TOWER ? TOWER.targets.map((q) => ({ kind: q.kind, pos: q.pos.toArray(), name: q.card?.name })) : []),
@@ -143,7 +144,7 @@ export default function Player() {
 
     // Vertrag §3.5: Dialog offen -> Controller aus. Ein abgeschaltetes ecctrl rechnet weder Bremse noch
     // Schwerkraft (Welt-Schwerkraft ist 0), die Figur würde ungebremst weitergleiten. Der Host hält sie an.
-    if (s0().mode === 'play' && s0().dialog && !s0().flying && !assist.current) {
+    if (s0().mode === 'play' && s0().dialog && !assist.current) { // auch im Flug: die Figur schwebt, bis der Dialog zu ist
       body.setLinvel({ x: 0, y: 0, z: 0 }, true); body.setAngvel({ x: 0, y: 0, z: 0 }, true)
     }
 
@@ -164,7 +165,7 @@ export default function Player() {
           const hd = Math.hypot(to.x - from.x, to.z - from.z)
           const yaw = Math.atan2(to.x - from.x, to.z - from.z)
           assist.current = { from, to, t0: performance.now(), dur: 450 + hd * 45, h: 1.1 + Math.max(0, to.y - from.y) * 0.35, rot: new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), yaw) }
-          window.__kfbAssist = { target: tg.kind, to: to.toArray().map((v) => +v.toFixed(1)), from: from.toArray().map((v) => +v.toFixed(1)) }
+          if (DEBUG) window.__kfbAssist = { target: tg.kind, to: to.toArray().map((v) => +v.toFixed(1)), from: from.toArray().map((v) => +v.toFixed(1)) }
           useGame.setState({ assisting: true }); useGame.getState().playEmote('Jump_Idle', 450 + hd * 45)
           jump = false
         }
@@ -190,7 +191,7 @@ export default function Player() {
     s.setPlanetName(adapter.name(pos))
 
     // Flug: eigene, einfache Steuerung (ecctrl pausiert)
-    if (s.flying && s.mode === 'play') {
+    if (s.flying && s.mode === 'play' && !s.dialog) {
       const k = getKeys()
       const fwd = camera.getWorldDirection(v.a)
       const right = v.b.crossVectors(fwd, camera.up).normalize()
@@ -232,7 +233,7 @@ export default function Player() {
       camera.up.lerp(up, 1 - Math.exp(-5 * dt)).normalize()
       cc.setUp(camera.up)
     }
-    window.__kfb = { pos: pos.toArray(), place: adapter.name(pos), flying: s.flying, grounded: h.isOnGround, mode: s.mode, ctrl: controllerOn, assist: !!assist.current, lastPlat: lastPlat.current?.kind }
+    if (DEBUG) window.__kfb = { pos: pos.toArray(), place: adapter.name(pos), flying: s.flying, grounded: h.isOnGround, mode: s.mode, ctrl: controllerOn, assist: !!assist.current, lastPlat: lastPlat.current?.kind }
   })
 
   return (

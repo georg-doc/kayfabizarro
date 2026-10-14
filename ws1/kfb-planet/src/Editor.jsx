@@ -6,6 +6,7 @@ import { useThree } from '@react-three/fiber'
 import { RigidBody, CuboidCollider, CylinderCollider } from '@react-three/rapier'
 import { placeOnSurface, planetById, surfaceR } from './world'
 import { useGame } from './store'
+import { DEBUG } from './debug'
 
 const UP = new THREE.Vector3(0, 1, 0)
 const COLORS = { wall: '#8b7fa3', block: '#c98b5a', pillar: '#e8dcc4' }
@@ -81,7 +82,7 @@ export default function Editor() {
   const gl = useThree((st) => st.gl)
   const camera = useThree((st) => st.camera)
   useEffect(() => {
-    window.__kfbEditor = {
+    if (DEBUG) window.__kfbEditor = {
       gizmoScreen: () => {
         if (!target) return null
         const r = gl.domElement.getBoundingClientRect()

@@ -13,15 +13,20 @@ const ref = (f) => 'data:image/png;base64,' + fs.readFileSync('test/ref/' + f).t
 // Paare: forget_utopia #7 (Karte der Inventur) und die erste Turmkarte bei Seed 4242
 const PAIRS = [
   { deck: 'forget_utopia', n: 7, ref: ref('card_forget_utopia_7.png'), page: 3, quad: 2 },
-  { deck: 'project_gateway_kayfabe', n: 2, ref: ref('card_project_gateway_kayfabe_2.png'), page: 1, quad: 1 },
+  { deck: 'protopia_web', n: 2, ref: ref('card_protopia_web_2.png'), page: 2, quad: 1 },
 ]
-const SEED_TOWER = 'project_gateway_kayfabe'
-// Name gegen Bild: Titel der Referenz, mit Apple Vision gelesen (test/ref/*.json), muss den Kartennamen enthalten.
-// Gleiche Regel wie scripts/audit-mapping.py: ≥70 % der Namenswörter (≥3 Zeichen) in den ersten 5 Zeilen.
-const norm = (s) => s.toUpperCase().replace(/’/g, "'").replace(/[^A-Z0-9 ]+/g, ' ').split(/\s+/).filter(Boolean)
-const titleMatches = (name, lines) => { const nt = norm(name).filter((t) => t.length >= 3); const got = new Set(lines.slice(0, 5).flatMap(norm)); return nt.length > 0 && nt.filter((t) => got.has(t)).length / nt.length >= 0.7 }
+const SEED_TOWER = 'protopia_web'
+// Name gegen Bild: Titel der Referenz, mit Apple Vision gelesen (test/ref/*.json). Regel wie card_ok() in
+// scripts/audit-mapping.py: eigener Name ≥ 0,75 (Wortanteil ohne Füllwörter, sonst Zeichenähnlichkeit) und besser
+// als jeder andere Kartenname des Decks. Die Zeichenähnlichkeit ist hier ein einfacher Bigramm-Dice statt SequenceMatcher.
+const STOP = new Set(['THE', 'A', 'AN', 'OF', 'AND', 'TO', 'IN', 'ON', 'FOR', 'DER', 'DIE', 'DAS', 'UND', 'LE', 'LA'])
+const toks = (s) => s.normalize('NFKC').toUpperCase().replace(/’/g, "'").split(/[^\p{L}\p{N}_]+/u).filter(Boolean)
+const dice = (a, b) => { const bg = (x) => { const m = new Map(); for (let i = 0; i < x.length - 1; i++) { const k = x.slice(i, i + 2); m.set(k, (m.get(k) || 0) + 1) } return m }; const A = bg(a), B = bg(b); let n = 0; for (const [k, v] of A) n += Math.min(v, B.get(k) || 0); const t = Math.max(1, a.length - 1 + b.length - 1); return 2 * n / t }
+const score = (name, lines) => { const head = lines.slice(0, 7); if (!head.length) return 0; const got = new Set(head.flatMap(toks)); let nt = toks(name).filter((t) => !STOP.has(t) && t.length >= 2); if (!nt.length) nt = toks(name); if (!nt.length) return 0; const tok = nt.filter((t) => got.has(t)).length / nt.length; const nn = toks(name).join(' '); const seq = Math.max(...head.map((l) => dice(nn, toks(l).join(' ')))); return Math.max(tok, seq) }
+const deckNames = (deck) => { const di = cards.decks.findIndex((d) => d[0] === deck); return cards.cards.filter((c) => c[0] === di).map((c) => [c[1], c[2]]) }
+const titleMatches = (deck, n, lines) => { const own = score(spikeName(deck, n), lines); const other = Math.max(0, ...deckNames(deck).filter(([m]) => m !== n).map(([, nm]) => score(nm, lines))); return own >= 0.75 && own > other }
 const refMeta = (deck, n) => JSON.parse(fs.readFileSync(`test/ref/card_${deck}_${n}.json`, 'utf8'))
-const imageTitles = PAIRS.map((p) => ({ deck: p.deck, n: p.n, name: spikeName(p.deck, p.n), ocr: refMeta(p.deck, p.n).ocr.slice(0, 5), ok: titleMatches(spikeName(p.deck, p.n), refMeta(p.deck, p.n).ocr) }))
+const imageTitles = PAIRS.map((p) => ({ deck: p.deck, n: p.n, name: spikeName(p.deck, p.n), ocr: refMeta(p.deck, p.n).ocr.slice(0, 5), ok: titleMatches(p.deck, p.n, refMeta(p.deck, p.n).ocr) }))
 
 const { browser, page, errs, warns } = await openPage('#debug,seed=4242')
 await page.waitForFunction(() => window.__kfbCardImage && window.__kfbStore && window.__kfbTower, null, { timeout: 60000 })
@@ -56,7 +61,9 @@ for (const p of pairs.out) if (p.pair) fs.writeFileSync(`test/out/s1_pair_${p.de
 
 // Decks ohne geprüfte Zuordnung (Audit UNSAFE) liefern kein Bild; der Turm (Seed 4242) ist ein SAFE-Deck
 const gate = await page.evaluate(async () => ({
-  blockedNull: (await window.__kfbCardImage('suppressed_book_deck', 13)) === null && (await window.__kfbCardImage('nibelungen_booster_pack_design', 2)) === null,
+  // ganze Decks gesperrt (UNSAFE) und Einzelkarten in SAFE-Decks gesperrt (Funde blinder Prüfer 2)
+  blockedNull: (await Promise.all([['suppressed_book_deck', 13], ['nibelungen_booster_pack_design', 2], ['anti_rules_toolkit', 51], ['big_bad_brain_wrestling', 50], ['big_bad_brain_wrestling', 51], ['romantic_kayfabe', 55]].map(([d, n]) => window.__kfbCardImage(d, n)))).every((r) => r === null),
+  cardGate: [window.__kfbCardSafe('big_bad_brain_wrestling', 49), window.__kfbCardSafe('big_bad_brain_wrestling', 50)],
   safe: window.__kfbSafeDecks(),
   towerDeck: window.__kfbTower()[0].deck.id,
 }))
@@ -87,7 +94,8 @@ process.exit(report('s1 card images', {
   pairsMatchReference: pairs.out.every((p) => p.diff < 14),
   namesMatchJson: pairs.out.every((p) => p.jname && p.jname === spikeName(p.deck, p.n)),
   imageTitleMatchesName: imageTitles.every((t) => t.ok),
-  unsafeDeckGivesNoImage: gate.blockedNull,
+  blockedCardsGiveNoImage: gate.blockedNull,
+  perCardGate: gate.cardGate[0] === true && gate.cardGate[1] === false,
   towerDeckFixedBySeed: gate.towerDeck === SEED_TOWER,
   towerDeckAuditedSafe: gate.safe.includes(gate.towerDeck) && gate.safe.length >= 40,
   towerStageActorRealTextures: stats.loaded >= before + 12 && stats.failed === 0,

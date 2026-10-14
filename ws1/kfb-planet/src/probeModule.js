@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { DEBUG } from './debug'
 // Prüfmodul für den Host-Vertrag: zählt Aufrufe, räumt GPU-Ressourcen auf.
 export const probeLog = { create: 0, update: 0, dispose: 0, lastCtx: null }
 export function createProbe({ color = '#e0475b', pos = [0, 6, 0] } = {}) {
@@ -11,4 +12,4 @@ export function createProbe({ color = '#e0475b', pos = [0, 6, 0] } = {}) {
     dispose() { probeLog.dispose++; geo.dispose(); mat.dispose() },
   }
 }
-if (typeof window !== 'undefined') window.__kfbProbeLog = probeLog
+if (DEBUG) window.__kfbProbeLog = probeLog

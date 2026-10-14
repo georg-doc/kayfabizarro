@@ -1,6 +1,6 @@
 // Hex-Welt: prozedurale Insel aus Hex-Säulen + Deck-Turm (Karten als Plattformen, Hex-Säulen als Plattformer-Übergänge)
 import * as THREE from 'three'
-import { isMappingSafe } from './cardMapping'
+import { isCardSafe } from './cardMapping'
 import { createNoise2D } from 'simplex-noise'
 import { rng } from './world'
 import { DECKS, cardsOfDeck, cardAt } from './cards'
@@ -102,14 +102,16 @@ export function buildGround() {
 // Eine Seite = 4 Karten = eine Etage. Zwischen den Karten Hex-Säulen als Plattformer-Übergänge.
 const PAGES = 3, PER_PAGE = 4
 function pickDeck(r) {
-  const ok = DECKS.map((d, i) => i).filter((i) => !DECKS[i].med && isMappingSafe(DECKS[i].id) && cardsOfDeck(i).length >= PAGES * PER_PAGE + 1)
+  // nur Karten mit geprüftem Bild (cardMapping); ein Turm braucht 12 davon (Karte Nr. 1 = meist Cover, ausgenommen)
+  const safeCount = (i) => cardsOfDeck(i).map(cardAt).filter((c) => c.num > 1 && isCardSafe(DECKS[i].id, c.num)).length
+  const ok = DECKS.map((d, i) => i).filter((i) => !DECKS[i].med && safeCount(i) >= PAGES * PER_PAGE)
   return ok[Math.floor(r() * ok.length)]
 }
 export function buildTower(seed = Date.now() % 100000) {
   const r = rng(seed)
   const di = pickDeck(r)
   const cards = cardsOfDeck(di).map(cardAt).sort((a, b) => a.num - b.num)
-  const playable = cards.filter((c) => c.num > 1).slice(0, PAGES * PER_PAGE) // Nr. 1 ist meist das Deck-Cover
+  const playable = cards.filter((c) => c.num > 1 && isCardSafe(c.deck.id, c.num)).slice(0, PAGES * PER_PAGE) // Nr. 1 ist meist das Deck-Cover
   const cover = cards.find((c) => c.num === 1) || cards[0]
   const RAD = 14, RISE = 2.6, ANG = 0.95
   const targets = [], pieces = []

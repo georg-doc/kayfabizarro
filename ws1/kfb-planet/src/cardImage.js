@@ -4,7 +4,8 @@
 import * as THREE from 'three'
 import './vendor/card-art-2d.js' // 1:1 aus overworld-v13 @main (Blob d14b497e), setzt window.OW_ART
 
-import { MEDIA_COMMIT, isMappingSafe, safeDecks } from './cardMapping'
+import { MEDIA_COMMIT, isCardSafe, safeDecks } from './cardMapping'
+import { expose } from './debug'
 
 // Kartenquelle festgenagelt: media/kfb auf georg-doc/kayfabizarro main @ ac9dbae (index.json Blob af276a8b)
 export { MEDIA_COMMIT }
@@ -26,7 +27,7 @@ const raw = new Map() // 'deck#n' -> Promise<{canvas, ar, page, quad} | null>
 let chain = Promise.resolve()
 const WATCHDOG_MS = 20000
 export function cardImage(deckId, n, res = 1400) {
-  if (!isMappingSafe(deckId)) { cardStats.blocked++; return Promise.resolve(null) }
+  if (!isCardSafe(deckId, n)) { cardStats.blocked++; return Promise.resolve(null) }
   const key = deckId + '#' + n
   if (!raw.has(key)) {
     const job = chain.then(() => {
@@ -39,20 +40,26 @@ export function cardImage(deckId, n, res = 1400) {
     // kein Bild (Wachhund, Netz): nicht für die Sitzung merken; neuer Versuch beim nächsten Aufruf bzw.
     // wenn der Tab wieder sichtbar wird (retryEpoch). Grenze: Scheitert schon der erste pdf.js-Import,
     // bleibt card-art-2d für die Sitzung ohne pdf.js (Vorlage: libTried) – Befund an WS0.
-    job.then((v) => { if (!v) { raw.delete(key); pendingRetry = true } })
+    job.then((v) => { if (!v) { raw.delete(key); scheduleRetry() } })
   }
   return raw.get(key)
 }
 
-// Neuer Versuch nach Fehlschlag, sobald der Tab wieder sichtbar ist (pdf.js rendert über rAF und hängt im Hintergrund).
-let retryEpoch = 0, pendingRetry = false
+// Neuer Versuch nach Fehlschlag: bei sichtbarem Tab nach 10 s, sonst sobald der Tab wieder sichtbar ist
+// (pdf.js rendert über rAF und hängt im Hintergrund). Fertige Karten laden dabei nicht neu (Hooks merken sich den Schlüssel).
+let retryEpoch = 0, pendingRetry = false, retryTimer = 0
+const RETRY_MS = 10000
 const retrySubs = new Set()
 export const getRetryEpoch = () => retryEpoch
 export function subscribeRetry(fn) { retrySubs.add(fn); return () => retrySubs.delete(fn) }
+function bump() { pendingRetry = false; retryTimer = 0; retryEpoch++; for (const fn of retrySubs) fn() }
+function scheduleRetry() {
+  pendingRetry = true
+  if (typeof document === 'undefined' || document.visibilityState !== 'visible' || retryTimer) return
+  retryTimer = setTimeout(bump, RETRY_MS)
+}
 if (typeof document !== 'undefined') document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState !== 'visible' || !pendingRetry) return
-  pendingRetry = false; retryEpoch++
-  for (const fn of retrySubs) fn()
+  if (document.visibilityState === 'visible' && pendingRetry && !retryTimer) bump()
 })
 
 // fit: das ganze Bild sichtbar, Rest Papierfarbe. Nichts wird abgeschnitten.
@@ -77,6 +84,7 @@ export function makeTexture(canvas, anisotropy = 8) {
 const textures = new Map()
 export function cardTexture(deckId, n, ar = CARD_AR) {
   const key = deckId + '#' + n + '@' + ar.toFixed(3)
+  if (!isCardSafe(deckId, n)) return Promise.resolve(null) // gesperrt: zählt in cardImage() als blocked, nicht als failed
   if (!textures.has(key)) {
     cardStats.requested++
     textures.set(key, cardImage(deckId, n).then((img) => {
@@ -88,11 +96,10 @@ export function cardTexture(deckId, n, ar = CARD_AR) {
   return textures.get(key)
 }
 
-if (typeof window !== 'undefined') {
-  window.__kfbCardImage = async (deckId, n) => {
-    const r = await cardImage(deckId, n)
-    return r && { page: r.page, quad: r.quad, ar: r.ar, w: r.canvas.width, h: r.canvas.height, png: r.canvas.toDataURL('image/png') }
-  }
-  window.__kfbSafeDecks = () => safeDecks()
-  window.__kfbCardStats = () => ({ ...cardStats, media: MEDIA_COMMIT, art: window.OW_ART?.version })
-}
+expose('CardImage', async (deckId, n) => {
+  const r = await cardImage(deckId, n)
+  return r && { page: r.page, quad: r.quad, ar: r.ar, w: r.canvas.width, h: r.canvas.height, png: r.canvas.toDataURL('image/png') }
+})
+expose('SafeDecks', () => safeDecks())
+expose('CardSafe', (deckId, n) => isCardSafe(deckId, n))
+expose('CardStats', () => ({ ...cardStats, media: MEDIA_COMMIT, art: typeof window !== 'undefined' ? window.OW_ART?.version : null }))
