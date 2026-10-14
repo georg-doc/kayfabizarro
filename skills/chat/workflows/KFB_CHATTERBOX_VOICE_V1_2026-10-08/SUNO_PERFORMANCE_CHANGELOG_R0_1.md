@@ -1,5 +1,15 @@
 # KFB ChatterBox · Suno Spoken-Music Performance · Additive Changelog
 
+## 2026-10-14 · Protopia 56 source-backed standalone Suno scripts · four parts
+
+- User asked to reuse validated current Triplet/Opener logic for a full original **non-Wrinkle** Deck, standalone cuttable English spoken Card mini-stories, optional short source-suitable Opener, no mandatory Bridges, `Stay Fluffy!` set outro. New `protopia_web` exact original has **56/56 Card Title/POWER/LORE fields**; original blob `8a8312db50cddf30212439b735d7595d797f793d`. Alternative `kayfabizarro_improv_comedy` 60 Deck has source #5 OCR-degraded and #57–59 blanks, so Protopia is selected for honest 56/56 full coverage.
+- Four source-backed editorial spoken-word parts 14+14+14+14 cards, each one physical line per card, blank-line text cuts, own Fluffhead intro/Stay Fluffy outro, 2,427 / 2,469 / 2,394 / 2,293 characters. One 56-card editable master 9,397 chars. No extra Bridge, no fabricated Card field, opener counts DIRECT 38 / HEARD_OF 9 / DO_YOU_KNOW 9; all correspond to already-known neutral patterns.
+- Exact source-locked per-Card event/cue manifest in `data/KFB_PROTOPIA_56_STANDALONE_BEATS_SOURCE_CUE_MANIFEST_R0_1_2026-10-14.json`, source/editor usage notes and report `KFB_PROTOPIA_56_STANDALONE_SUNO_TEST_REPORT_R0_1_2026-10-14.md`. Tested GitHub original source/master/four Parts/manifest/active pool **28/28 structural/provenance checks PASS**, title and at least one salient POWER+LORE lexical anchor 56/56. Measured distinct salient source-term overlap POWER ~68%, LORE ~58% — NOT an independent 90% information-retention/human comedy PASS.
+- Card #53 contains malformed LORE words; did not mutate original and used intact source POWER. Card #56 source includes Stay fluffy, but output uses set outro once for clean finish. No actual Suno/TTS audio/rights, no measured cuts, Card Crop pending, no Audio Site new version or pool import. Protected active v11 r5 Voice pool blob unchanged `dfb5435bc0c913ea48f8f5558f801b293962fbc8`.
+- Current Composer #355 prior head `6d881aa...`; user reports WS1 working locally, no newer commit seen in current PR check. No Cloudflare, new World, merge or Live. Single next gate `KFB_PROTOPIA_56_STANDALONE_EDITORIAL_AND_HUMAN_VOICE_REVIEW_R1`, then only accepted Beats are imported via normal Audio v11 GitHub content reload.
+
+---
+
 
 ## 2026-10-13 · Actual six dry single-card Cookie vocal A/B (no Suno)
 - Six actual eSpeak MP3s and one 77.74s voice-only montage, 3 source-safe original runtime openers × 2 source-retention variants, same synthetic voice/delivery, no added music/soundbed.
