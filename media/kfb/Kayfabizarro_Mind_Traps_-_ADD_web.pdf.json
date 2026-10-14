@@ -10,7 +10,10 @@
   "extractionTool": "cowork_task_v3",
   "RAF": false,
   "gradingMode": "performative",
-  "deckFunction": ["performative", "educational"],
+  "deckFunction": [
+    "performative",
+    "educational"
+  ],
   "seriesId": "kayfabizarro_main",
   "cards": [
     {
@@ -182,7 +185,12 @@
       "power": "Projects pure unshakeable strength so they feel safe unloading their worst secret.",
       "lore": "It's not a soft \"you are safe\", it's a structural \"I am unbreakable.\"",
       "gradeReason": "Armadillo in armor — say it, they unload immediately.",
-      "artworkPrompt": "Style: KFB watercolor grotesque. Subject: Armadillo uncurling calmly from armored ball while secrets float toward it. Mood: Structural unbreakable calm."
+      "artworkPrompt": "Style: KFB watercolor grotesque. Subject: Armadillo uncurling calmly from armored ball while secrets float toward it. Mood: Structural unbreakable calm.",
+      "textSource": {
+        "source": "PDF v05 Kayfabizarro_Mind_Traps - ADD web.pdf p6 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 20,
@@ -200,7 +208,12 @@
       "power": "Hijacks the brain stem while the victim remains entirely blind to its control.",
       "lore": "Moving the feeling to the cortex changes it from a master to a captive you can observe.",
       "gradeReason": "Neuroscience framing needs one beat of translation before it becomes performable.",
-      "artworkPrompt": "Style: KFB watercolor grotesque. Subject: Lizard-brained creature controlling larger body from hidden brain-stem cockpit. Mood: Invisible puppet architecture."
+      "artworkPrompt": "Style: KFB watercolor grotesque. Subject: Lizard-brained creature controlling larger body from hidden brain-stem cockpit. Mood: Invisible puppet architecture.",
+      "textSource": {
+        "source": "PDF v05 Kayfabizarro_Mind_Traps - ADD web.pdf p7 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 22,
@@ -272,7 +285,12 @@
       "power": "RE-FILES A CRIPPLING PANIC ATTACK AS A HEROIC BIOLOGICAL SIGNAL THAT SOMETHING MATTERS.",
       "lore": "SAME PHYSICAL INPUT, BUT A COMPLETELY DIFFERENT BEHAVIORAL PROTOCOL OF ENGAGEMENT.",
       "gradeReason": "Three-word refile of panic into power — speak it, watch the cheetah stop shaking.",
-      "artworkPrompt": "Style: KFB watercolor grotesque. Subject: Cheetah surrounded by coffee cups twitching, snapping into predator stance on hearing the phrase. Mood: Biological reclassification."
+      "artworkPrompt": "Style: KFB watercolor grotesque. Subject: Cheetah surrounded by coffee cups twitching, snapping into predator stance on hearing the phrase. Mood: Biological reclassification.",
+      "textSource": {
+        "source": "PDF v05 Kayfabizarro_Mind_Traps - ADD web.pdf p9 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 30,
@@ -281,7 +299,12 @@
       "power": "RECOGNIZES THEIR HIDDEN STEADINESS AND IMPLIES IT HAS DEEP, MEANINGFUL ROOTS.",
       "lore": "THEY WILL INSTANTLY VOLUNTEER THE REST OF THE STORY AND LOCK THEMSELVES IN.",
       "gradeReason": "Iguana in golden light nods and suddenly can't stop talking — perfect lock-in script.",
-      "artworkPrompt": "Style: KFB watercolor grotesque. Subject: Iguana sitting in sunlight as past narrative floods in visible as glowing roots below. Mood: Rooted recognition."
+      "artworkPrompt": "Style: KFB watercolor grotesque. Subject: Iguana sitting in sunlight as past narrative floods in visible as glowing roots below. Mood: Rooted recognition.",
+      "textSource": {
+        "source": "PDF v05 Kayfabizarro_Mind_Traps - ADD web.pdf p9 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 31,
@@ -452,7 +475,12 @@
       "power": "Extracts absolute loyalty by making recruits volunteer everything without ever asking.",
       "lore": "The Manson/Jonestown logic isn't magic, it's just weaponized presuppositions.",
       "gradeReason": "Cobra in sunglasses — you know exactly which archetype to inhabit and which moves it runs.",
-      "artworkPrompt": "Style: KFB watercolor grotesque. Subject: Cobra in sunglasses receiving devotion from recruits who volunteered it unprompted, arrows pointing to presupposition mechanisms. Mood: Structural extraction of loyalty."
+      "artworkPrompt": "Style: KFB watercolor grotesque. Subject: Cobra in sunglasses receiving devotion from recruits who volunteered it unprompted, arrows pointing to presupposition mechanisms. Mood: Structural extraction of loyalty.",
+      "textSource": {
+        "source": "PDF v05 Kayfabizarro_Mind_Traps - ADD web.pdf p14 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 50,
@@ -519,12 +547,20 @@
     }
   ],
   "cardCount": 56,
-  "gradeDistribution": {"G1": 38, "G2": 18, "G3": 0},
+  "gradeDistribution": {
+    "G1": 38,
+    "G2": 18,
+    "G3": 0
+  },
   "overallScore": 9,
   "verdict": "This is the single most immediately deployable deck in the KFB corpus. The dual-layer architecture — Family cards teaching the move, Spell cards giving you the exact words — is pedagogical genius. 'PROBABLY NOT THE KIND OF PERSON' and 'WHY DIDN'T YOU SAY TWO?' alone justify the buy. Only weakness: the 'Wiring Under the Floorboards' neuroscience page talks about the brain more than it gives you things to do with it. Table-ready: YES.",
   "blurb": "56 psychological influence techniques from Socrates, the FBI, and cult leaders — distilled into cards you can actually speak out loud. For therapists, negotiators, and anyone who's ever needed to open a door that wouldn't budge.",
   "viralScore": 9,
-  "qa": {"readability": 9, "artworkConsistency": 9, "overall": 9},
+  "qa": {
+    "readability": 9,
+    "artworkConsistency": 9,
+    "overall": 9
+  },
   "coverQA": {
     "coverVisual": "4 — FrizzleBob with paintbrush + Animal Cerebrum Blueprint diagram is genuinely witty; chaotic border creatures reinforce the epistemic carnival tone",
     "coverTitle": "5 — '17 KAYFABE-QUESTIONS FROM SOCRATES TO THE FBI' is an instant-read, shareable headline that does everything right",
@@ -537,16 +573,52 @@
   "coverScore": 4.8,
   "fontArtifactCount": 0,
   "notes": "Deck has a clear four-structure taxonomy: (1) Family cards introducing technique clusters, (2) Spell cards giving verbatim incantations, (3) Neuroscience/wiring concept cards, (4) Archetype cards (Four Horsemen). The '17' in the title does not correspond to card count (56) — likely refers to 17 distinct technique categories or a legacy version number. Page 9 spell cards render POWER/LORE in ALL CAPS — preserved verbatim. Lowercase card names on page 12 are intentional: they are casual phrases meant to be spoken conversationally. Page 15 functions as synthesis/closing statement.",
-  "topCards": ["PROBABLY NOT THE KIND OF PERSON.", "WHY DIDN'T YOU SAY TWO?", "WHAT FINALLY MADE IT CLICK?", "THE HOTLINE COUNSELOR", "KAYFABE BINGO"],
-  "worstCards": ["THE UNNAMED EMOTION", "THE OUTMATCHED ROOM"],
+  "topCards": [
+    "PROBABLY NOT THE KIND OF PERSON.",
+    "WHY DIDN'T YOU SAY TWO?",
+    "WHAT FINALLY MADE IT CLICK?",
+    "THE HOTLINE COUNSELOR",
+    "KAYFABE BINGO"
+  ],
+  "worstCards": [
+    "THE UNNAMED EMOTION",
+    "THE OUTMATCHED ROOM"
+  ],
   "todos": {
-    "urgent": ["Clarify the '17' in cover title — deck has 56 cards and more than 17 techniques; could confuse buyers expecting a small deck"],
-    "quickWins": ["The four Spell pages (4, 6, 9, 12) could be extracted as a standalone 'Spell Compendium' mini-deck or printable reference card", "Add page numbers or section tabs — the four-family structure is hard to navigate without landmarks"],
-    "niceToHave": ["Quick-reference single-page 'Spell Sheet' listing all verbatim incantations", "KayfaBINGO variant game mechanic could be extracted from card 54 and played as a meta-game during the session"]
+    "urgent": [
+      "Clarify the '17' in cover title — deck has 56 cards and more than 17 techniques; could confuse buyers expecting a small deck"
+    ],
+    "quickWins": [
+      "The four Spell pages (4, 6, 9, 12) could be extracted as a standalone 'Spell Compendium' mini-deck or printable reference card",
+      "Add page numbers or section tabs — the four-family structure is hard to navigate without landmarks"
+    ],
+    "niceToHave": [
+      "Quick-reference single-page 'Spell Sheet' listing all verbatim incantations",
+      "KayfaBINGO variant game mechanic could be extracted from card 54 and played as a meta-game during the session"
+    ]
   },
-  "hashtags": ["#KayfabizarroMindTraps", "#Kayfabizarro", "#PsychologicalInfluence", "#HackingTheHumanMind", "#SocratesToTheFBI", "#FrizzleBob", "#EpistemicSabotage", "#InfluenceCards"],
+  "hashtags": [
+    "#KayfabizarroMindTraps",
+    "#Kayfabizarro",
+    "#PsychologicalInfluence",
+    "#HackingTheHumanMind",
+    "#SocratesToTheFBI",
+    "#FrizzleBob",
+    "#EpistemicSabotage",
+    "#InfluenceCards"
+  ],
   "genre": "education",
   "bundle": "MEDIA_MEMETICS",
-  "exhibitions": ["workshop", "conference", "improv"],
-  "channels": ["Gumroad", "TikTok", "Substack", "Instagram", "YouTube"]
+  "exhibitions": [
+    "workshop",
+    "conference",
+    "improv"
+  ],
+  "channels": [
+    "Gumroad",
+    "TikTok",
+    "Substack",
+    "Instagram",
+    "YouTube"
+  ]
 }

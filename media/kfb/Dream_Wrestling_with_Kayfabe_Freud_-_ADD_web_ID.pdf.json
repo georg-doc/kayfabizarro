@@ -24,7 +24,13 @@
 "power": "The Basement Flood\nPlay this card to resurrect a discarded Quest Card from the beginning of the game.",
 "lore": "It's not gone. It's just downstairs, lifting weights and waiting for you to fall asleep.",
 "gradeReason": "Resurrection mechanic = pure theater. Players physically dig into discard. Lore hits.",
-"artworkPrompt": "Style: vintage horror comic. Subject: monstrous repressed faces in flooded basement. Mood: lurking, primordial."
+"artworkPrompt": "Style: vintage horror comic. Subject: monstrous repressed faces in flooded basement. Mood: lurking, primordial.",
+"printTypo": "Schreibmaschinen-Schrift ersetzt Glyphen (s→a/e, m→u, z. B. 'reaurrect', 'aaleep'); gemeintes Wort transkribiert",
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p2 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 2,
@@ -40,10 +46,20 @@
 "cardName": "THE CENSOR (Die Zensur)",
 "grade": 1,
 "power": "Redaction.\nInterrupt a player. They must retell their last sentence using a euphemism.",
-"lore": "He keeps at the door. He doesn't let the naked truth into the party.",
+"lore": "The heavy at the door. He doesn't let the naked truth into the party.",
 "gradeReason": "Live interruption + euphemism-on-demand. Table physics in three lines.",
 "artworkPrompt": "Style: pulp comic. Subject: bald censor with TOP SECRET stamp, redacting nude figure. Mood: officious, leering.",
-"print": {"cardName": "THE CENSOR (Die Zensur)", "power": "Redaction. Interrupt a player. They must retell their last sentence using a euphemism", "lore": "The heavy at the door. He doesn't let the naked truth into the party.", "source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p2 BL", "method": "ocr", "confidence": "high"}
+"jsonLegacy": {
+"cardName": "THE CENSOR (Die Zensur)",
+"power": "Redaction.\nInterrupt a player. They must retell their last sentence using a euphemism.",
+"lore": "He keeps at the door. He doesn't let the naked truth into the party."
+},
+"printTypo": "Schreibmaschinen-Schrift ersetzt Glyphen (s→a/e, m→u, z. B. 'reaurrect', 'aaleep'); gemeintes Wort transkribiert",
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p2 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 4,
@@ -79,7 +95,12 @@
 "power": "Goo-Goo Ga-Ga.\nSpeak as your Actor, but with the vocabulary of a 3-year-old.",
 "lore": "When the path forward is blocked, the mind runs backward to the crib.",
 "gradeReason": "Forced regression-voice = instant table laughter. Knockout performative.",
-"artworkPrompt": "Style: charcoal sketch. Subject: adult man in diaper, crying in spotlight. Mood: pathetic, hilarious."
+"artworkPrompt": "Style: charcoal sketch. Subject: adult man in diaper, crying in spotlight. Mood: pathetic, hilarious.",
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p3 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 8,
@@ -106,7 +127,12 @@
 "power": "Tantrum.\nFlip the Quest Die over to its opposite side (1 becomes 6).",
 "lore": "The oldest stuff lies deepest. You are still 4 years old and you want that cookie.",
 "gradeReason": "Quick mechanical flip + invitation to throw a tiny tantrum. Two-second performance.",
-"artworkPrompt": "Style: hidden-under-table. Subject: child kicking from beneath a chair. Mood: infant rage."
+"artworkPrompt": "Style: hidden-under-table. Subject: child kicking from beneath a chair. Mood: infant rage.",
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p4 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 11,
@@ -242,7 +268,11 @@
 "lore": "You've already passed this test years ago. Why are you back here? To prove you're a fraud.",
 "gradeReason": "Live quiz interrupt. Players will sweat. Tablecraft.",
 "artworkPrompt": "Style: anxiety dream sketch. Subject: naked student at unknown test. Mood: paralyzing exposure.",
-"print": {"cardName": "THE EXAMINATION (Der Prüfungstraum)", "power": "Performance Anxiety Ask the active player a trivia question. If they fail, their turn ends.", "lore": "You've already passed this test years ago. Why are you back Everyone looking. here? 1o prove vou re a fraud.", "source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p8 TL", "method": "ocr", "confidence": "medium"}
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p8 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 26,
@@ -269,7 +299,12 @@
 "power": "Absurdity.\nState a fact that is clearly false, but treat it as absolute truth.",
 "lore": "If you dream they are dead, you secretly wished them dead. Don't look at me, Freud said it.",
 "gradeReason": "Generic improv beat. Lore carries it but the mechanic isn't deck-defining.",
-"artworkPrompt": "Style: gothic. Subject: grandmother knitting in rocking chair, slightly translucent. Mood: cozy uncanny."
+"artworkPrompt": "Style: gothic. Subject: grandmother knitting in rocking chair, slightly translucent. Mood: cozy uncanny.",
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p8 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 29,
@@ -303,9 +338,19 @@
 "cardName": "HAMLET (The Modern Oedipus)",
 "grade": 1,
 "power": "Hesitation.\nSkip your turn to think about doing something, but do nothing.",
-"lore": "He couldn't kill the King because he *was* the King in his dream. Analysis paralysis.",
+"lore": "He couldn't kill the King because he *was* the King in his dreams. Analysis paralysis.",
 "gradeReason": "Pass-turn via deliberate paralysis. Forces a beat of theatrical brooding.",
-"artworkPrompt": "Style: ink melodrama. Subject: jester holding skull, frozen mid-thought. Mood: paralyzed pondering."
+"artworkPrompt": "Style: ink melodrama. Subject: jester holding skull, frozen mid-thought. Mood: paralyzed pondering.",
+"jsonLegacy": {
+"cardName": "HAMLET (The Modern Oedipus)",
+"power": "Hesitation.\nSkip your turn to think about doing something, but do nothing.",
+"lore": "He couldn't kill the King because he *was* the King in his dream. Analysis paralysis."
+},
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p9 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 33,
@@ -351,7 +396,11 @@
 "lore": "Lie down. Don't look at me. Just talk until you say something shameful.",
 "gradeReason": "Pure free-association engine. Forces immediate verbal spew. Classic.",
 "artworkPrompt": "Style: Vienna 1900. Subject: empty psychoanalyst's couch with rug. Mood: confessional invitation.",
-"print": {"cardName": "THE COUCH (Die Couch)", "power": "Free Association Say the first word that comes into your head. The next player must start their story with it.", "lore": "about your Lie down. Don't look at mother. me. Just talk until you say something shameful.", "source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p11 TL", "method": "ocr", "confidence": "high"}
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p11 TL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 38,
@@ -360,7 +409,12 @@
 "power": "Block.\nCancel the effect of the last card played.",
 "lore": "If you refuse to talk about it, that's exactly what we need to talk about.",
 "gradeReason": "Counter-card mechanic + meta-Freud lore. Combat-clean.",
-"artworkPrompt": "Style: barricade woodcut. Subject: chairs piled against door. Mood: defiant blockage."
+"artworkPrompt": "Style: barricade woodcut. Subject: chairs piled against door. Mood: defiant blockage.",
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p11 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 39,
@@ -414,7 +468,12 @@
 "power": "Cathexis.\nAdd +1 to the Resonance [R] of any card on the table.",
 "lore": "The fuel of the mind. It has to go somewhere. If you block it, it explodes.",
 "gradeReason": "Quiet buff mechanic. Lore is great but mechanic is plumbing.",
-"artworkPrompt": "Style: alchemical illustration. Subject: red liquid pouring through funnel into glowing vessel. Mood: charged transfer."
+"artworkPrompt": "Style: alchemical illustration. Subject: red liquid pouring through funnel into glowing vessel. Mood: charged transfer.",
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p12 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 45,
@@ -477,7 +536,12 @@
 "power": "Prediction.\nGuess the number of the next die roll. If right, you win the Quest.",
 "lore": "Is it the future? Or did you just wish for it so hard you made it happen?",
 "gradeReason": "Live wager mechanic. Players will commit dramatically. Tablecraft.",
-"artworkPrompt": "Style: carnival mystic. Subject: crystal ball with explosion inside. Mood: foreboding prophecy."
+"artworkPrompt": "Style: carnival mystic. Subject: crystal ball with explosion inside. Mood: foreboding prophecy.",
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p14 BL",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 52,
@@ -486,7 +550,12 @@
 "power": "Control.\nChange the rules of the game for one round. (e.g., \"High rolls lose\").",
 "lore": "I know I am dreaming. Therefore, I am God. Now watch this backflip.",
 "gradeReason": "Rule-rewriting mechanic = god-tier card. Lore is the godhood manifesto.",
-"artworkPrompt": "Style: comic book hero. Subject: caped flyer in pajamas with hammer. Mood: drunk omnipotence."
+"artworkPrompt": "Style: comic book hero. Subject: caped flyer in pajamas with hammer. Mood: drunk omnipotence.",
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p14 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 53,
@@ -505,7 +574,11 @@
 "lore": "The Unconscious has spoken!",
 "gradeReason": "Permanent table-watching rule. Turns every slip into a confession. Brilliant meta-card.",
 "artworkPrompt": "Style: banana peel cartoon. Subject: tongue with bowler hat slipping. Mood: comic Freudian slip.",
-"print": {"cardName": "NEW RULE: THE SLIP", "power": "If a player stumbles! over a word, calls someone the wrong name, or giggles D'OH! MUST DRAW A CARD.", "lore": "nervously: The Unconscious has spoken!", "source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p15 TR", "method": "ocr", "confidence": "medium"}
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p15 TR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 },
 {
 "cardNumber": 55,
@@ -523,7 +596,12 @@
 "power": "Based on the delirious ramblings of S. Freud (1900). Distorted by Uncle FrizzleBob. No liability accepted for sudden realizations of incestuous desires. KayfaBIZARRO!",
 "lore": null,
 "gradeReason": "Credits page. Performs as authorial signoff with proper disclaimer-comedy. Not a game card.",
-"artworkPrompt": "Style: tombstone woodcut. Subject: 'SIGGY 1900-Forever' headstone with dancing rabbit. Mood: irreverent eulogy."
+"artworkPrompt": "Style: tombstone woodcut. Subject: 'SIGGY 1900-Forever' headstone with dancing rabbit. Mood: irreverent eulogy.",
+"textSource": {
+"source": "PDF v05 Dream_Wrestling_with_Kayfabe_Freud - ADD web ID.pdf p15 BR",
+"method": "visual-check",
+"checkedAt": "2026-10-14"
+}
 }
 ],
 "cardCount": 56,
