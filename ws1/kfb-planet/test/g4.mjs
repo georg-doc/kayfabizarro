@@ -1,9 +1,9 @@
-// G4-Vorbereitung · Bildaufbau der Bühne mit FrizzleBob (#stage, cam=near, place=near, 1 Karte): ein deterministischer Prüfpunkt je Eigenschaft.
+// G4 · Bildaufbau der Bühne mit FrizzleBob (#stage ohne cam/place = Standard near, Georg 14.10.; 1 Karte): ein deterministischer Prüfpunkt je Eigenschaft.
 // Figuren im Bild, bevor die erste Zeile kommt · Karte frei von Figuren, Blase und Spielerwahl · Brauen am Kopf (Teilschritte, auch bei wenigen Bildern/s)
 // · Farben der Original-Brauen/-Nase aus Georgs Export (WS0 14.10.).
 import fs from 'fs'
 import { openPage, report } from './_page.mjs'
-const { browser, page, errs } = await openPage('#stage,debug,cam=near,place=near,actors=fb,dialog=1', { viewport: { width: 1280, height: 720 } })
+const { browser, page, errs } = await openPage('#stage,debug,actors=fb,dialog=1', { viewport: { width: 1280, height: 720 } })
 const st = () => page.evaluate(() => window.__kfbStageMods?.dialog?.state())
 const until = async (f, ms = 300000) => { const t0 = Date.now(); while (Date.now() - t0 < ms) { const s = await st(); if (s && f(s)) return s; await page.waitForTimeout(100) } throw new Error('timeout ' + JSON.stringify(await st())) }
 // Bildschirm-Rechtecke (px): Kartenfläche, Figuren (gespielte Pose), Blasen und Spielerwahl (DOM)
@@ -25,6 +25,7 @@ const brows = () => page.evaluate(() => { const S = window.__kfbStageMods; retur
   a.traverse((o) => { if (o.isBone && /^head$/i.test(o.name)) head = o }); const h = head.getWorldPosition(head.position.clone())
   a.traverse((o) => { if (/^Carl_Brow_[LR]$/.test(o.name)) out.push(+o.getWorldPosition(o.position.clone()).sub(h).y.toFixed(3)) }); return out }) })
 const visAtStart = await page.evaluate(() => new Promise((ok) => { const t = setInterval(() => { const S = window.__kfbStageMods, d = S?.dialog; if (d && d.log().length) { clearInterval(t); ok({ first: d.log()[0].type, shown: [S.left.status().shown, S.right.status().shown] }) } }, 20) }))
+const camPos = await page.evaluate(() => window.__kfbStageCamera.position.toArray().map((v) => +v.toFixed(2)))
 await until((s) => s.phase === 'A'); await page.waitForTimeout(500); const rA = await rects(), shA = await shown()
 await until((s) => s.phase === 'CHOICE'); await page.waitForTimeout(700); const rC = await rects()
 fs.mkdirSync('test/out', { recursive: true }); fs.writeFileSync('test/out/g4_test_choice.png', await page.screenshot())
@@ -36,6 +37,7 @@ await browser.close()
 const inter = (P, Q) => !!P && !!Q && Math.min(P[2], Q[2]) > Math.max(P[0], Q[0]) && Math.min(P[3], Q[3]) > Math.max(P[1], Q[1])
 const inView = (R) => R[0] >= 0 && R[1] >= 0 && R[2] <= 1280 && R[3] <= 720
 process.exit(report('g4 framing (near, FrizzleBob)', {
+  defaultIsNear: camPos[0] === 0 && camPos[1] === 2.15 && camPos[2] === 9.2, // ohne cam/place: Kamera near (Georg 14.10.)
   actorsShownBeforeFirstLine: visAtStart.first === 'card' && visAtStart.shown.every((x) => x === true) && shA.every((x) => x === true),
   cardWholeInView: inView(rA.face),
   cardFreeOfActors: !inter(rA.face, rA.left) && !inter(rA.face, rA.right) && inView(rA.left) && inView(rA.right),
@@ -44,4 +46,4 @@ process.exit(report('g4 framing (near, FrizzleBob)', {
   browsStayOnHead: bw.every((a) => a.length === 2 && a.every((y) => y > 0.1 && y < 0.5)), // Braue 0,1–0,5 m über dem Kopfknochen (Ruhe ≈ 0,28)
   partColorsFromExport: pc.every((a) => a.status?.brows === '#17130f' && a.status?.nose === '#e96049' && a.Carl_Nose?.hex === '#e96049' && a.Carl_Brow_L?.hex === '#17130f' && a.Carl_Brow_R?.hex === '#17130f') && pc[0].Carl_Nose.uuid !== pc[1].Carl_Nose.uuid,
   noPageErrors: errs.length === 0,
-}, { pc, visAtStart, shA, rA, rC, bw, errs }))
+}, { camPos, pc, visAtStart, shA, rA, rC, bw, errs }))

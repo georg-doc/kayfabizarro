@@ -1,7 +1,59 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§19 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§20 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 20 · 14.10. nachts · Georg zu G4 · Fragen an WS0 zur Abstimmung (gebündelt)
+
+Georg hat §19 gesehen (14.10.): **„near nehmen, weiter.“** · **„FB ist ja immer noch das falsche/broken rigging, oder? das sieht schlimm aus! jedenfalls nicht meine neue FB v5b json!“** · **„die stage wird dynamisch mit den cartoon-color palette gerendert → vgl. joyride v17“** · **„bitte alle Fragen inkl. Farbpaletten, Triplets, korrekter FB etc. auf GitHub an WS0 zur Abstimmung.“**
+
+**Umgesetzt:** `cam=near` + `place=near` sind jetzt Standard der Bühne (kfb-planet @0098e68). `test/g4.mjs` prüft den Standard ohne Hash-Angaben, `stage`/`d1stage`/`g4` PASS. Sonst nichts gebaut, was eine der folgenden Fragen vorwegnimmt.
+
+Belege: `ws1/proofs/2026-10-14-g4/`, neu sind `fb_three_looks.png`, `g4_faces.png`, `palette_sheet_a.png`, `palette_sheet_b.png` und `palette-probe.json`.
+
+### F-1 · Korrekter FrizzleBob (blockiert G4)
+- **Stand:** Das Spiel zeigt Georgs Export aab8eeb0 (V-240) über die P08-Linie der ToolBox (Cut r1, main @ac9dbaed). Gegen den P08-Spender stimmt das Bild auf 1,2–1,4/255. Das ist **Parität mit P08, nicht mit Georgs ToolBox**.
+- **Bild:** `fb_three_looks.png` zeigt P08-Spender ¾ | WS1-Bühne | Joyride J17. In ¾ sitzt das hintere Auge am Kopfrand, und die Nase (Original-Insel, `parts.nose: original`) erscheint von vorn als Kugel vor dem Auge. Georg erkennt darin nicht seinen FB.
+- **Vermutung:** Der Export stammt aus „KFB ToolBox Production-02 · Rigging“, einer neueren Claude-Design-Fassung, die nicht im Repo liegt (V-241 offen; neue Felder wie clayLids mech „skin“, original.*.yaw/sx und body-shape kennt P08 nicht). Diese Fassung setzt dieselben Werte offenbar anders um.
+- **Was WS1 braucht, eines davon:**
+  - (a) den ToolBox-Cut, der den Export geschrieben hat (Code + Libs), oder
+  - (b) Referenzbilder aus genau dieser ToolBox mit genau diesem Eintrag: vorn, ¾, Seite, Pose angegeben, gleiche Kamera, dazu einmal Lid zu.
+- **Bitte auch klären:** Ist aab8eeb0 (exportiert 14.10. 16:00 UTC) Georgs **neueste** v5b-JSON? Hat er danach neu exportiert, bitte die neue Datei in `replies/actors/`.
+- **Bis dahin:** keine eigenen Werte, keine Werte aus J17.
+- **Euer Gate `FRIZZLEBOB_V240_ASSEMBLED_BINDPOSE_SOURCE_PROOF`:** Ich schlage vor, es bis F-1 zurückzustellen. Sonst entsteht ein sauber gemessenes Ganzkörperbild genau der Figur, die Georg ablehnt. Wenn ihr es trotzdem jetzt wollt, liefere ich es mit dem Hinweis „P08-Lesart, nicht Georg-bestätigt“.
+
+### F-2 · Farbpaletten der Bühne (Georg: dynamisch, Cartoon-Palette, vgl. Joyride)
+- **Befund zu Joyride:** J16 r2 und J17 (`_inbox/KFB Joyride J17 · FB Cabrio`) haben **kein** Palettensystem für Bühne oder Welt; „biome“ kommt dort nur in den Effekt-Profilen vor (`clay-vfx`, `transition-atlas`).
+- **Kandidaten im Repo:**
+  1. **`palette-roles.js`** (KFB Clay Stage R2, 09.10.): „EIN Besitzer für die Rollenzuordnung von Billboards UND Bühne/Vorhang“. Eingang sind drei Stufen [dunkel, mitte, hell] + Akzent aus `world-context.js` / `world-palettes.js` @5b523eb, Auswahl CARDS / BIOME / WORLD. Ausgang sind Rollen: frame, post, stone, wood, ground, skyTop/skyBottom, cloth …
+  2. **`world-palettes.js`** (Travel v25): acht benannte Paletten (cubescape, toybox, bubblegum, mint_pop …), „maximal cartoony“, plus `story`.
+  3. **`BIOMES`** aus `billboard-stage.js` (5 Inseln). Die nutzt B1 heute schon für Rahmen und Pfosten, das Amphitheater nur für den Boden.
+- **Probe (nur Prüf-Browser, kein Spielverhalten):** Die Helligkeit der Meshy-Textur wird auf den Drei-Stufen-Verlauf des Bioms gelegt, die Zeichnung bleibt (`palette_sheet_a.png`, `palette_sheet_b.png`, alle 5 Biome + Original). Das funktioniert, mit den BIOMES-Farben wirkt es aber gedeckt, nicht cartoony; der Himmel bleibt unverändert.
+- **Vorschlag WS1:** `palette-roles.js` R2 als ein Besitzer für Billboard + Amphitheater + Boden + Himmel. Die Stufen kommen aus `world-palettes.js`, gewählt nach der Kartenzone der aktuellen Karte. Die Palette wechselt mit der Karte, also dynamisch.
+- **Bitte entscheiden:**
+  - (a) welche Quelle;
+  - (b) die Zuordnung Deck/Karte → Zone/Palette (gibt es eine Tabelle?);
+  - (c) ob der Himmel mitfärbt;
+  - (d) ob „joyride v17“ etwas anderes meint (z. B. Travel v16/v25 `world-palettes`, Skydome SKY3, Styleguide `01-farbpaletten.jpg`).
+
+### F-3 · Dialogtext: Triplets und Pool
+- **Stand:** Pool r5 hat 0 ACCEPTED. Auf der Bühne sagt Sprecher A deshalb den Kartentitel wörtlich, B den Power-Text, dann folgt die Wahl.
+- Laut `editorial/kfb-triplets-single-card-r1-2026-10-14` gab Georg **16/16 FAIL**, der Ausbau ist gestoppt, dazu Methoden-Korrektur und „English-only Fluff-o-lect player-closure“. Den Branch `data/kfb-dialog-pool` mit r6 gibt es noch nicht.
+- **Bitte:**
+  - (a) Was spricht die G4-Vorführung, solange r6 fehlt: Titel → Power → Wahl (heute) oder etwas anderes?
+  - (b) Wann und wo kommt r6, in welchem Format (Triplet je Karte, V-231)?
+  - (c) Ist die Spielerwahl mit KayfaBINGO/BOGGLE/BONGO/BLÖDSINN + eigenen Wörtern für G4 noch richtig?
+
+### F-4 · Zweite Besetzung
+Derzeit spielt FrizzleBob beide Seiten. Wer steht gegenüber? Bitte Figur + Quelle; eine Wireface-Figur bräuchte das SDK lokal, siehe §12.
+
+### F-5 · Weiter offen (aus §18/§19, unverändert)
+1. Kopf-Blickschicht nach dem Mixer und `lookAt` in Weltkoordinaten (V-214).
+2. Kinetik-Automatik aus dem Controller.
+3. M1-Fußabnahme gegen die Referenz-Rampe statt absolut 4,4 cm.
+4. Kartennummern in kreative_kayfab, carnival_therapy und tragic_flaws wieder mitführen (§19.4).
+
+**Reihenfolge-Vorschlag:** F-1 vor allem anderen; ohne richtigen FrizzleBob zeigt G4 nichts. F-2 und F-3 kann WS1 parallel bauen, sobald entschieden ist.
 
 ## 19 · 14.10. spät · G4-Vorbereitung: Bildaufbau, Brauen-Fehler behoben, V-242 Kartentext, Exportfarben
 

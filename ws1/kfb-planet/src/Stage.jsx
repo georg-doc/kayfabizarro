@@ -1,5 +1,5 @@
 // Bühne im Amphitheater (Vorbereitung G4) hinter dem URL-Schalter #stage: Amphitheater-Modul (V-230) auf Knet-Gelände, Billboard R2 hinten auf
-// der Bühnenfläche, ruhiger Two-Shot (eine feste Kamera, kein Schnitt). Diese Szene ist Host: Kamera, Licht, Himmel; alles andere sind Module.
+// der Bühnenfläche, ruhiger Two-Shot (eine feste Kamera, kein Schnitt; Standard cam=near, Georg 14.10.). Diese Szene ist Host: Kamera, Licht, Himmel; alles andere sind Module.
 // Figuren per Hash: actors=none (Standard) | fb (FrizzleBob nach Georgs Export, V-240; beide Seiten, bis die zweite Besetzung feststeht)
 // | rogue (F1-Prüffigur als Platzhalter für Stellproben, kein Darsteller). Karte: card=<deck>:<n>, Biom: biome=<Name>.
 // Dialog D1 per Hash: dialog=<n> spielt n Karten des Decks der Startkarte ab (Sprechblasen an den Figuren, Spielerwahl am Bildrand).
@@ -34,9 +34,10 @@ const di = DECKS.findIndex((d) => d.id === deckId)
 const CARD = di >= 0 ? cardsOfDeck(di).map(cardAt).find((c) => c.num === +num) || null : null
 const BIOME = BIOMES.find((b) => b.name === decodeURIComponent(/biome=([^,]+)/.exec(hash)?.[1] || '')) || BIOMES[1]
 export const STAGE_CAMS = { two: { pos: [0, 2.7, 12.5], target: [0, 2.4, -3.5] }, wide: { pos: [0, 9, 30], target: [0, 2, -2] }, q: { pos: [9, 3.2, 9], target: [0, 2.2, -3] },
-  // G4-Probe (Bildaufbau): Kamera näher, auf Augenhöhe der Figuren; Stellung per Hash place=near (Figuren vorn, enger)
+  // G4-Bildaufbau (Georg 14.10.: „near nehmen“): Kamera näher, auf Augenhöhe der Figuren, Figuren vor der Tafel. Standard seit §20.
   near: { pos: [0, 2.15, 9.2], target: [0, 2.1, -3.5] } }
-const cam = STAGE_CAMS[/cam=(\w+)/.exec(hash)?.[1]] || STAGE_CAMS.two
+const CAM = STAGE_CAMS[/cam=(\w+)/.exec(hash)?.[1]] ? /cam=(\w+)/.exec(hash)[1] : 'near'
+const cam = STAGE_CAMS[CAM]
 // Publikums-Anker je Kamera: 3,2 m vor der Kamera auf der Blickachse, so tief, dass Blase und Spielerwahl am unteren Bildrand sitzen (NDC y −0,9),
 // nicht über der Karte. Der Anker liegt 1,05 m über playerState.pos (BubbleHost). Für cam=two ergibt das die bisherige Lage (0, 0,6, z − 3,2).
 export const playerPosFor = (c, fov = 38, d = 3.2, ndcY = -0.9) => { const [px, py, pz] = c.pos, [tx, ty, tz] = c.target, L = Math.hypot(tx - px, ty - py, tz - pz), k = d / L
@@ -52,7 +53,8 @@ const mouthDecals = Object.fromEntries(Object.entries(decals).map(([k, v]) => [k
 const pet = georg.pets.find((p) => p.id === fbRecipe.entry.pet)
 const FB = (x, yaw, id) => ({ recipe: fbRecipe, pet, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion: 'idle', position: [x, 0, -1.4], yaw, anchorId: id })
 const MK = /actors=fb/.test(hash) ? FB : ROGUE
-const NEAR = /place=near/.test(hash) // G4-Probe: Figuren vor der Tafel nach vorn und enger, Karte bleibt zwischen ihnen
+// Stellung: place=near (Figuren vor der Tafel, enger; Standard) | place=two (bisherige Stellung hinten). Ohne Angabe folgt sie der Kamera (cam=two → two).
+const NEAR = (/place=(\w+)/.exec(hash)?.[1] || (CAM === 'two' ? 'two' : 'near')) === 'near'
 const L = NEAR ? { ...MK(-3.7, 0.45, 'stage-left'), position: [-3.7, 0, 1.2] } : MK(-4.2, 0.35, 'stage-left'), R = NEAR ? { ...MK(3.7, -0.45, 'stage-right'), position: [3.7, 0, 1.2] } : MK(4.2, -0.35, 'stage-right')
 const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
 const DECK = di >= 0 ? cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num).slice(0, NDIALOG) : []
