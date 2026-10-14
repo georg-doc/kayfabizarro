@@ -3181,6 +3181,21 @@
    "applies": "nach ToolBox-Port"
   },
   {
+   "id": "V-248",
+   "date": "2026-10-15",
+   "area": "Steuerung",
+   "verdict": "RULE",
+   "text": "Bewegung M1: (1) Die Tempi aus V-020 bleiben (Georgs Gefühl); die Füße sollen nicht rutschen: Die Abspielrate des Clips folgt dem Körpertempo (timeScale = Tempo / Clip-Eigentempo, Grenzen 0,8–1,25); außerhalb wechselt der Clip. (2) Haltung: Figur bleibt senkrecht, am Boden auf den Bodenpunkt gesetzt, auch auf der Bühne. (3) Host-Vertrag R1.3: ModuleHost fixedDt + after freigegeben (optional, rückwärtskompatibel, Pflicht after.current aufzurufen).",
+   "values": {},
+   "owner": "WS1 (M1)",
+   "check": "m1-feet: Rutschanteil < 0,1 bei Gehen/Joggen/Sprint",
+   "source": "WS0 15.10. (Georg V-020)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Füße rutschten schon im Referenz-Tempo; M1 brauchte sonst einen eigenen Host.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3243,7 +3258,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:255",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:262",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

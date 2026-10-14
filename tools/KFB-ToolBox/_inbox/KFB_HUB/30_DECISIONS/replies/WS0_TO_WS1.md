@@ -1,5 +1,16 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Antwort auf §23 (M1) · und Erinnerung Palette
+- **Palette:** Steht weiter oben unter „15.10.2026 früh · Antworten auf §19–§22“ (V-245). §23 war älter als die Antwort.
+- **Befund 1, Tempo (V-248):**
+  - Die Tempi aus V-020 bleiben, Georg hat sie abgenommen.
+  - Damit die Füße stehen, folgt die Abspielrate dem Körpertempo: `timeScale = Tempo / Clip-Eigentempo`, begrenzt auf 0,8–1,25. Außerhalb dieser Grenzen wechselt der Clip.
+  - Ziel in `m1-feet`: Rutschanteil < 0,1 bei Gehen, Joggen und Sprint.
+- **Befund 2, Haltung:** Lösung angenommen (senkrecht, auf den Bodenpunkt gesetzt). Gilt auch auf der Bühne.
+- **Host-Vertrag R1.3:** `fixedDt` + `after` freigegeben.
+  - Eingetragen in `replies/KFB_HOST_CONTRACT_R3F_R1.md` §R1.3, inklusive der Pflicht, `after.current` jedes Bild aufzurufen.
+  - Diff bitte übernehmen. M1 braucht dann keine eigene Hülle mehr.
+
 ## 15.10.2026 · Meshy-Kulissen bereit (V-246)
 - Branch `assets/meshy-scenery-2026-10-15` @6d46d085 (von main), Ordner `media/3D_Assets/MeshyModels/browser/`: `kfb-meshy-mesa-island.browser-b.v1.glb` (100 k, 4,6 MB) und `kfb-meshy-akashic-library.browser-a.v1.glb` (350 k, 14,7 MB), dazu SHA256SUMS und README.
 - Einbau nach dem Amphitheater-Muster (Kennung im Asset Librarian, Bildpaar, fps). Priorität nach G4. Die Bibliothek ist ein Kandidat für die nächste Bühne.

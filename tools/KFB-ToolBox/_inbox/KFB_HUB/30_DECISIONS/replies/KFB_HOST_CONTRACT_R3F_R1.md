@@ -111,3 +111,12 @@ Der Test nimmt Playwrights eigenen Chromium. `PW_CHROMIUM=<pfad>` überschreibt 
 - **R1.2 (14.10.2026)**, Anlass: Prüfung durch WS0 nach V-211. V-Nummer vergibt WS0.
   1. `@react-three/fiber` exakt auf 9.8.1 (stand als „9.8“; `package.json` hatte bereits 9.8.1).
   2. Sprechblasen von „3D im Modul“ auf den Host-DOM-Slot `#ui-bubbles` mit projizierten Ankerpunkten umgestellt, damit `chatterbox-core` 1:1 übernommen wird (V-206). Gesicht und Billboards bleiben 3D.
+
+
+### R1.3 (15.10.2026, V-248) · ModuleHost: `fixedDt` und `after`
+- **Zwei optionale Props:**
+  - `fixedDt`: Module bekommen diesen festen Takt statt der Bildzeit (deterministisches Replay).
+  - `after` (Ref): Der Host ruft `update` nicht selbst; der Aufrufer ruft `after.current(dt, ctx)` an fester Stelle (Spielfigur: nach ecctrl, vor dem Physik-Schritt).
+- **Pflicht:** Wer `after` setzt, muss `after.current` jedes Bild aufrufen, sonst steht das Modul still.
+- **Ohne die Props** verhält sich der Host wie R1.2.
+- **Diff:** `ws1/proposals/MODULEHOST_R1_3_FIXEDDT_AFTER.diff` (kfb-planet @937167f).
