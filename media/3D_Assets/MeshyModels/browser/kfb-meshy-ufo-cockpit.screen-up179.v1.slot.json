@@ -1,0 +1,114 @@
+{
+ "file": "kfb-meshy-ufo-cockpit.screen-up179.v1.glb",
+ "bytes": 14114580,
+ "sha256": "16c118b589f4f6bd53e3b9e163f09d81243a012c4ec86990897db1e78088072b",
+ "source": "Meshy UFO cockpit (Georg), Joysticks entfernt (r1b)",
+ "mode": "UP",
+ "targetAspect": 1.793,
+ "extend_d_u": 0.04359,
+ "verticesMoved": 20831,
+ "maxShift_u": 0.04359,
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z, Boden y = −0,188)",
+  "grid": [
+   48,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.292,
+    0.35659,
+    -0.72728
+   ],
+   "topRight": [
+    0.29,
+    0.35659,
+    -0.72752
+   ],
+   "bottomRight": [
+    0.29,
+    0.025,
+    -0.72527
+   ],
+   "bottomLeft": [
+    -0.292,
+    0.025,
+    -0.72502
+   ]
+  },
+  "center_u": [
+   -0.001,
+   0.19079,
+   -0.76609
+  ],
+  "normalAtCenter": [
+   0,
+   0,
+   1
+  ],
+  "chordWidth_u": 0.582,
+  "arcWidth_u": 0.58825,
+  "height_u": 0.33159,
+  "aspect_arc": 1.774,
+  "surface": "z(x,y) = -0.76856 + 0.72474·x² + (-3.02974)·x⁴ + (-0.00804)·clamp(y, 0.029, 0.309) + 0.004",
+  "uv": "u 0→1 links→rechts nach Bogenlänge, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,188)·s, z·s), Bodenmitte = Ursprung; vorläufig s = 8 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Rahmen-Innenkante); der Slot ragt 0,004 u darüber hinaus unter den Rahmen",
+   "corners_u": {
+    "topLeft": [
+     -0.288,
+     0.35259,
+     -0.72778
+    ],
+    "topRight": [
+     0.286,
+     0.35259,
+     -0.72803
+    ],
+    "bottomRight": [
+     0.286,
+     0.029,
+     -0.72578
+    ],
+    "bottomLeft": [
+     -0.288,
+     0.029,
+     -0.72552
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0069,
+    "u1": 0.9932,
+    "v0": 0.0121,
+    "v1": 0.9879
+   }
+  },
+  "corners_m_s8": {
+   "topLeft": [
+    -2.336,
+    4.357,
+    -5.818
+   ],
+   "topRight": [
+    2.32,
+    4.357,
+    -5.82
+   ],
+   "bottomRight": [
+    2.32,
+    1.704,
+    -5.802
+   ],
+   "bottomLeft": [
+    -2.336,
+    1.704,
+    -5.8
+   ]
+  }
+ }
+}
