@@ -37,6 +37,22 @@ await page.evaluate(() => { const rig = window.__kfbEyeActor.debugRig(); rig.__d
 const shut = await page.screenshot({ clip: eyeCrop })
 await page.evaluate(() => { const rig = window.__kfbEyeActor.debugRig(); rig.blink.dur = rig.__dur; rig._blinkK = -1 })
 const full = await page.screenshot()
+// Modulvertrag §6 (Muster test/host.mjs): create 1× auch nach Re-Renders, update bekommt ctx, dispose 1× beim Aushängen,
+// danach kein update; jede Geometrie und jedes Material von Figur, Eye-Rig und FaceHost wird freigegeben (dispose-Ereignis).
+for (let i = 0; i < 5; i++) await page.evaluate(() => window.__kfbEyeTestCtl.rerender())
+await page.waitForTimeout(600)
+const before = await page.evaluate(() => {
+  const parts = window.__kfbEyeActor.debugParts(), geos = new Set(), mats = new Set()
+  for (const p of parts) p.traverse((m) => { if (!m.isMesh) return; geos.add(m.geometry); (Array.isArray(m.material) ? m.material : [m.material]).forEach((x) => x && mats.add(x)) })
+  window.__freedSet = { g: new Set(), m: new Set() } // eindeutig: doppelte Freigabe (Spender räumt Teile selbst) zählt einmal
+  geos.forEach((g) => g.addEventListener('dispose', () => window.__freedSet.g.add(g.uuid))); mats.forEach((x) => x.addEventListener('dispose', () => window.__freedSet.m.add(x.uuid)))
+  return { geos: geos.size, mats: mats.size, log: window.__kfbEyeTestCtl.log() }
+})
+await page.evaluate(() => window.__kfbEyeTestCtl.off())
+await page.waitForTimeout(600)
+const after = await page.evaluate(() => ({ log: window.__kfbEyeTestCtl.log(), freed: { g: window.__freedSet.g.size, m: window.__freedSet.m.size } }))
+await page.waitForTimeout(800)
+const later = await page.evaluate(() => window.__kfbEyeTestCtl.log().update)
 fs.mkdirSync('test/out', { recursive: true }); fs.writeFileSync('test/out/f1_front.png', full)
 // Bildvergleich gegen Studio-Referenz (gleiche Kamera, 900 × 900) und offen/zu
 const cmp = await page.evaluate(async ([a, b, o, s]) => {
@@ -60,9 +76,14 @@ process.exit(report('f1 eyes', {
   controlsEqualStudio: same(c, REF.controls),
   eyeFrameEqualStudio: same(e, REF.eyeFrame),
   symmetricNoAnchorRotation: !!e.left && e.left[0] === -e.right[0] && e.left[1] === e.right[1] && e.left[2] === e.right[2],
-  blinkLifeKineticsOn: !!c.blink && !!c.life && !!c.kinetics && same(c.blink, REF.controls.blink),
+  // Blinzeln, Leben, Kinetik exakt wie Georgs Profil im Studio (Kinetik steht dort auf aus: Abweichung zu WS0-Wortlaut, gemeldet)
+  blinkLifeKineticsAsStudio: same(c.blink, REF.controls.blink) && same(c.life, REF.controls.life) && same(c.kinetics, REF.controls.kinetics) && c.blink?.enabled !== false,
+  contractCreateOnce: before.log.create === 1,
+  contractUpdateGetsCtx: before.log.update > 5 && before.log.lastCtx?.hasCam === true,
+  contractDisposeOnce: after.log.dispose === 1 && later === after.log.update,
+  contractAllFreed: before.geos > 5 && after.freed.g === before.geos && after.freed.m === before.mats,
   gazeParallel: dxL < -0.003 && dxR < -0.003 && Math.abs(dxL - dxR) < Math.max(Math.abs(dxL), Math.abs(dxR)) * 0.5,
   lidsClose: cmp.openVsShut > 4,
   imageMatchesStudio: cmp.faceVsStudio < 6,
   noPageErrors: errs.length === 0,
-}, { st: { status: st.status, cleanup: st.cleanup }, eyeFrame: e, dx: [dxL, dxR], cmp, vendorBad, errs }))
+}, { contract: { before, after, later }, kinetics: c.kinetics, life: c.life, st: { status: st.status, cleanup: st.cleanup }, eyeFrame: e, dx: [dxL, dxR], cmp, vendorBad, errs }))

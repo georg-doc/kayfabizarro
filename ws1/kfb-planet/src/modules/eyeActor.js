@@ -3,6 +3,8 @@
 // Vorlage 1:1 = Georgs Studio „KFB Batch EyeRig Atlas“ (kfb-hub/stage/toolbox/eye-rig-batch, Branch cloudflare-live), Ablauf aus
 // app.js loadActor() Z. 935–1000: Figur laden → normalizeActor() (2,65 hoch) → prepareMediumActorCleanup().apply(true) →
 // mountKayKitEyes() (kaykit-eye-adapter.v1.js: facehost.v1 + pet-eye-rig.v6 + eyeoval.v1) → ggf. sampleActorFaceColor().
+// Nicht übernommen (für Rogue_Hooded ohne Wirkung, bei anderen Figuren zu prüfen): applyActorTextureOverride, sourceAnchorSeed/
+// applyPlacementCandidate (nur bei UNREVIEWED), poseBind (skeleton.pose), setStageLook/markNoClay (Studio-Bühnenlook).
 // Die Anker-Drehung wird NICHT übernommen (V-201): Der Studio-Weg nimmt aus Ankern nur dx/dy/ring, das Eye-Rig blickt geradeaus.
 // Werte = Georgs Profil aus eye-rig-medium.batch-1.json (19.09.), unverändert. Kein React, kein Store (Vertrag §2).
 import * as THREE from 'three'
@@ -35,8 +37,12 @@ function needsAutoFaceColor(profile) {
   return base === '#b58f83'
 }
 
+// Zähler für den Vertragstest (Muster probeModule/test/host.mjs)
+export const eyeActorLog = { create: 0, update: 0, dispose: 0, lastCtx: null, freed: null }
+
 // options: { url, clipsUrl?, motion: 'bind'|Clipname, profile, contract, actor: { id, path, revision }, height, position, yaw, anchorId }
 export function createEyeActor(options) {
+  eyeActorLog.create++
   const { url, clipsUrl = null, motion = 'bind', contract, actor, height = 2.65, position = [0, 0, 0], yaw = 0, anchorId = null } = options
   const profile = JSON.parse(JSON.stringify(options.profile)) // Studio arbeitet auf einer Kopie (ensureProfile)
   const root = new THREE.Group(); root.name = 'eyeActor:' + actor.id
@@ -49,20 +55,23 @@ export function createEyeActor(options) {
     const loader = new GLTFLoader()
     const gltf = await loader.loadAsync(url)
     if (state.disposed) return
-    const figure = gltf.scene; state.figure = figure; root.add(figure)
-    const norm = normalizeActor(figure, height); log(`${actor.id} geladen · ${norm.sourceHeight} → ${height}`)
+    const figure = gltf.scene; state.figure = figure
+    const norm = normalizeActor(figure, height); log(`${actor.id} geladen · ${norm.sourceHeight} → ${height}`) // vor dem Einhängen: Welt = lokal wie im Studio (stageRoot im Ursprung)
+    root.add(figure)
     const cleanup = prepareMediumActorCleanup({ THREE, figure, actor, log }); state.cleanup = cleanup
     const cleanupOk = CLEANUP_READY.includes(cleanup.status); if (cleanupOk) cleanup.apply(true)
     profile.sourceFace = { ...profile.sourceFace, ...JSON.parse(JSON.stringify(cleanup.report || {})) }
     state.mixer = new THREE.AnimationMixer(figure)
     const eyes = await mountKayKitEyes({ THREE, figure, sourceRef: { repo: 'georg-doc/kayfabizarro', path: actor.path, revision: actor.revision }, profile, expressionContract: contract, camera: null, log })
     state.eyes = eyes
+    if (state.disposed) { eyes.dispose(); return }
     if (needsAutoFaceColor(profile)) {
       const fc = sampleActorFaceColor({ THREE, figure, faceHost: eyes.faceHost, anchor: profile.eye?.anchor, preferredHeadMesh: cleanup.report?.headMesh || profile.sourceFace?.headMesh, log })
       if (fc.status === 'OK') { profile.sourceFace.faceColor = fc.color; profile.eye.baseColor = fc.color; eyes.setBaseColor(fc.color) }
     }
     if (clipsUrl && motion !== 'bind') {
       const clips = await loader.loadAsync(clipsUrl)
+      if (state.disposed) return
       const clip = clips.animations.find((c) => c.name === motion)
       if (clip) state.mixer.clipAction(clip, figure).play()
     }
@@ -76,23 +85,34 @@ export function createEyeActor(options) {
     object3d: root,
     bubbleAnchors: anchorId ? [{ id: anchorId, object3d: head, offset: [0, 0, 0] }] : [],
     ready,
-    update(dt) {
+    update(dt, ctx) {
       if (state.disposed) return
+      eyeActorLog.update++; eyeActorLog.lastCtx = { hasCam: !!ctx?.camera, hasPlayer: !!ctx?.player, hasGame: !!ctx?.game }
       state.mixer?.update(dt)
       state.eyes?.update(dt)
     },
     // Blickziel in Bildschirmkoordinaten des Eye-Rigs (−1…1); null = „life“ (Studio-Standard)
     lookAt(nx, ny) { if (!state.eyes) return; if (nx == null) state.eyes.setGazeFollow(false); else { state.eyes.setGazeFollow(true); state.eyes.setPointer(nx, ny) } },
     blinkNow() { state.eyes?.blinkNow() },
+    setLife(patch) { state.eyes?.setLife(patch) },
+    setKinetics(patch) { state.eyes?.setKinetics(patch) },
     expression(id) { return state.eyes?.applyExpression(id) },
     status: () => ({ status: state.status, cleanup: state.cleanupStatus, error: state.error, log: state.log.slice(-8) }),
     report: () => state.eyes?.report() ?? null,
     debugRig: () => state.eyes?.rig ?? null, // nur Prüfungen (Bildpaar Lid geschlossen)
+    debugParts: () => [root, state.eyes?.rig?.rig, state.eyes?.faceHost?.box, state.eyes?.faceHost?.inner].filter(Boolean), // nur Prüfungen (Freigabe)
     dispose() {
+      eyeActorLog.dispose++
       state.disposed = true
-      state.mixer?.stopAllAction()
+      state.mixer?.stopAllAction(); state.mixer?.uncacheRoot(state.figure || root)
+      // Erst alles einsammeln (Figur, Eye-Rig, FaceHost), dann aushängen: pet-eye-rig.v6 dispose() hängt nur aus (Z. 341),
+      // danach wären Rig und FaceHost für root.traverse nicht mehr erreichbar (blinder Prüfer 4, Befund 1).
+      const geos = new Set(), mats = new Set(), texs = new Set()
+      const collect = (o) => o?.traverse?.((m) => { if (!m.isMesh) return; if (m.geometry) geos.add(m.geometry); (Array.isArray(m.material) ? m.material : [m.material]).forEach((mt) => { if (!mt) return; mats.add(mt); for (const k in mt) if (mt[k]?.isTexture) texs.add(mt[k]) }) })
+      collect(root); collect(state.eyes?.rig?.rig); collect(state.eyes?.faceHost?.box); collect(state.eyes?.faceHost?.inner)
       state.eyes?.dispose(); state.cleanup?.dispose?.()
-      root.traverse((o) => { if (o.isMesh) { o.geometry?.dispose(); const ms = Array.isArray(o.material) ? o.material : [o.material]; ms.forEach((m) => { for (const k in m) if (m[k]?.isTexture) m[k].dispose(); m?.dispose?.() }) } })
+      geos.forEach((g) => g.dispose()); texs.forEach((t) => t.dispose()); mats.forEach((m) => m.dispose())
+      eyeActorLog.freed = { geometries: geos.size, materials: mats.size, textures: texs.size }
       root.clear()
     },
   }

@@ -1,10 +1,10 @@
 // F1 · Prüfszene hinter dem URL-Schalter #eyetest (Vertrag §6): Studio-Frontansicht nachgestellt, damit das Bildpaar
 // „Studio | R3F“ aus derselben Kamera entsteht. Kamera, Licht und Hintergrund wie eye-rig-batch app.js Z. 805–825 / setView('front').
 // Diese Szene ist Host: sie besitzt Kamera und Licht; die Figur ist ein Modul über ModuleHost.
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useThree } from '@react-three/fiber'
 import ModuleHost from './ModuleHost'
-import { createEyeActor } from './modules/eyeActor'
+import { createEyeActor, eyeActorLog } from './modules/eyeActor'
 import rogueUrl from './assets/actors/Rogue_Hooded.glb?url'
 import clipsUrl from './assets/actors/Rig_Medium_General.glb?url'
 import pick from './data/eyes/rogue-hooded.profile.json'
@@ -30,6 +30,9 @@ function StudioCamera() {
 
 export default function EyeTest() {
   const ground = useMemo(() => [-Math.PI / 2, 0, 0], [])
+  const [on, setOn] = useState(true)
+  const [, force] = useState(0)
+  useEffect(() => { expose('EyeTestCtl', { off: () => setOn(false), rerender: () => force((n) => n + 1), log: () => ({ ...eyeActorLog }) }) }, [])
   return (
     <>
       <color attach="background" args={['#d8d2c8']} />
@@ -39,7 +42,7 @@ export default function EyeTest() {
       <directionalLight position={[-4, 2.6, 2.2]} intensity={1.2} color={0xffdeda} />
       <directionalLight position={[1.5, 3, -5]} intensity={1.0} color={0xdde7ff} />
       <mesh rotation={ground} position={[0, 0.002, 0]} receiveShadow><circleGeometry args={[2.5, 64]} /><shadowMaterial color={0x382f2a} opacity={0.16} transparent /></mesh>
-      <ModuleHost create={create} options={OPTIONS} />
+      {on && <ModuleHost create={create} options={OPTIONS} />}
     </>
   )
 }
