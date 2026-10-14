@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · FrizzleBob v5b · Roh-GLB-HTML-Vorschau REJECTED
+- Georgs direkter **FAIL**: Ein als FrizzleBob präsentierter HTML-Viewer zeigte nur `FB_TEMPLATE_LOOK_v5b.glb` in Bindepose, **ohne** die aktuelle KFB-EyeRig-/Face-Mount-Komposition nach V-240. Keine gültige positive Meshy-/Screenshotreferenz. `replies/FRIZZLEBOB_V5B_RAW_GLB_VIEWER_FAIL_AND_TRUE_EXPORT_ROUTE_2026-10-14.md` dokumentiert die echte WS1-Kompositionsquelle `createFaceMountActor` + Georgs `kfb.pets/1`-Export und die vorhandenen Original-Bildpaare (Front/¾/Seite, Lidschlag). Nächstes Gate bei WS0→WS1: dieselbe fertige Figur **vollständig in T-/Bindepose** mit realem Gesicht und ganzen Füßen/Ohren rendern; danach optional GLB-Snapshot-/Rig-Bake als getrennten Test, keine zweite Gesichtsimplementierung. Keine Runtime-Änderung/kein PASS durch diese Notiz.
+
 ## 2026-10-14 spät · Kartentext kanonisch (Druck)
 - Branch data/kfb-card-text-canonical-2026-10-14 @233efd5: 55 Decks, 698 Karten auf Drucktext umgestellt (alt in jsonLegacy), 593 bestätigt, 19 OPEN (Logo verdeckt Text, Glyphen, falsches Viertel), 37 Titel an den Druck angepasst. 6 Decks mit Nicht-Standard-Feldern (num/name, ohne Nummern, ohne cardCount). Offen: 19 UNSAFE-Decks, Glyphen-Durchgang, ~1.900 Karten ohne textSource, OPEN mit PRINT_HQ-PDFs.
 
