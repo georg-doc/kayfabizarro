@@ -21,17 +21,20 @@
       "cardNumber": 1,
       "cardName": "The Outer Shell",
       "grade": 1,
-      "power": "Surface Tension. Deflect 1 attack using \"Traits.\" Opponent must address your haircut instead of your core.",
-      "lore": "The psychic economy of the character. The traits, the green shirt, the tan insignia — a delicate shell hiding the rot inside.",
+      "power": "Surface Tension. Deflect 1 attack using \"Traits.\" Opponent must describe your haircut instead of your trauma.",
+      "lore": "The psychic economy of the character. The traits, the green shirt, the insignia. A delicate dance hiding the rot inside.",
       "gradeReason": "Mechanic and metaphor are one — deflect with surface, hide the rot.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: split face mask, smooth exterior / rotten interior. Mood: unsettling calm.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Outer Shell",
-        "power": "Surface Tension. Deflect 1 attack using \"Traits.\" Opponent must describe your haircut instead of your trauma.",
-        "lore": "The psychic economy of the character. the shirt, shaits, the green insignia. a delicate dance hiding the rot inside.",
+        "power": "Surface Tension. Deflect 1 attack using \"Traits.\" Opponent must address your haircut instead of your core.",
+        "lore": "The psychic economy of the character. The traits, the green shirt, the tan insignia — a delicate shell hiding the rot inside."
+      },
+      "printTypo": "Druck: 'PONER', 'dellcate'",
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p1 TL",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -39,16 +42,18 @@
       "cardName": "The Mannerism Twitch",
       "grade": 1,
       "power": "Subconscious Betrayal. Force opponent to reveal a card.",
-      "lore": "Why do you hold your hand like that? To set people at ease? Or to hide the shaking? Multiple humans use the same crutch.",
+      "lore": "Why do you hold your hand like that? To set people at ease? Or to hide the shaking? Multiple values drive the same twitch.",
       "gradeReason": "Body language as forced reveal — you know the betrayal immediately.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: hand gripping syringe, other hand trembling behind back. Mood: nervous concealment.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Mannerism Twitch",
         "power": "Subconscious Betrayal. Force opponent to reveal a card.",
-        "lore": "Why do you hold your hand like that? To set people at ease? Or to hide the shaking? Multiple values drive the same twitch.",
+        "lore": "Why do you hold your hand like that? To set people at ease? Or to hide the shaking? Multiple humans use the same crutch."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p1 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -56,33 +61,38 @@
       "cardName": "The Glowing Core",
       "grade": 1,
       "power": "Value Nuke. Destroy all \"Trait\" cards in play.",
-      "lore": "Honesty. Fidelity. Interconnection. The reason you can't have both the money and the girl.",
+      "lore": "Honesty. Fidelity. Perseverance. The engine room. The reason you can't have both the money and the girl.",
       "gradeReason": "Nuke all surfaces to reveal core values — the deck's entire thesis in one move.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: ribcage opened, glowing VALUES gem inside. Mood: raw exposure.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Glowing Core",
         "power": "Value Nuke. Destroy all \"Trait\" cards in play.",
-        "lore": "Honesty. Fidelity. Perseverance. The engine roon. The reason you can*t have both the money and the girl.",
+        "lore": "Honesty. Fidelity. Interconnection. The reason you can't have both the money and the girl."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p1 BL",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 4,
       "cardName": "The Onion Weep",
       "grade": 1,
-      "power": "Tear Gas. All players skip 1 turn remembering Their \"Glowing Core.\"",
-      "lore": "Push them to the wall. Peel back the layers — the smiles, the costumes — until someone ends in tears.",
+      "power": "Tear Gas. All players skip a turn to process their childhood trauma.",
+      "lore": "Push them to the wall. Peel back the layers until there is nowhere left to hide. It always ends in tears.",
       "gradeReason": "Involuntary emotional interruption — everyone freezes, remembering their truth.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: giant eyeball in jar weeping, onion layers dissolved. Mood: involuntary grief.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Onion Weep",
-        "power": "Tear Gas. All players skip a turn process Their childhood trauma.",
-        "lore": "Push then to the wall. Peel back the layers until there is nowhere left to hide. It always ends in tears.",
+        "power": "Tear Gas. All players skip 1 turn remembering Their \"Glowing Core.\"",
+        "lore": "Push them to the wall. Peel back the layers — the smiles, the costumes — until someone ends in tears."
+      },
+      "printTypo": "Druck: 'Push then', 'ends in tsars'",
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p1 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -98,17 +108,19 @@
       "cardNumber": 6,
       "cardName": "The Ballot Box",
       "grade": 1,
-      "power": "Sociological Warfare. Force opponent to choose between 2 cards. They lose the unchosen one.",
+      "power": "Sociological Warfare. Force opponent to choose between two cards. They lose the unchosen one.",
       "lore": "Man vs. Man. My core value is Equality. Yours is Freedom. Now we have to vote. I can't believe who you are.",
       "gradeReason": "Force the impossible value-choice — the political drama is the mechanic.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: dog in top hat casting vote, burning documents around ballot box. Mood: democracy as combat.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Ballot Box",
-        "power": "Sociological Warfare. Force opponent to choose between two cards. They lose the unchosen one.",
-        "lore": "Man vs. Man. My core value is Equality. Yours is Freedom. Now we have to vote. I can't believe who you are.",
+        "power": "Sociological Warfare. Force opponent to choose between 2 cards. They lose the unchosen one.",
+        "lore": "Man vs. Man. My core value is Equality. Yours is Freedom. Now we have to vote. I can't believe who you are."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p2 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -125,16 +137,19 @@
       "cardName": "The 10,000 Stories",
       "grade": 1,
       "power": "Cliché Storm. Nullify a unique effect by citing a trope.",
-      "lore": "Honesty vs. Specificity. You can't have both. That specific agony? That's the generator for ten thousand stories.",
+      "lore": "Honesty vs. Fidelity. You can't have both. That specific specific agony? That's the generator for ten thousand stories.",
       "gradeReason": "Weaponize the cliché — your private agony is also everyone's story.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: skeleton writing the same story endlessly, ten thousand scrolls stacked. Mood: cosmic repetition.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The 10,000 Stories",
         "power": "Cliché Storm. Nullify a unique effect by citing a trope.",
-        "lore": "Honesty vs. Fidelity. You can't have both. That specific specific agony? That's the generator for ten thousand stories.",
+        "lore": "Honesty vs. Specificity. You can't have both. That specific agony? That's the generator for ten thousand stories."
+      },
+      "printTypo": "Druck: 'That specific specific agony?' (Wort doppelt)",
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p2 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -153,7 +168,12 @@
       "power": "Loyal Dog. Take damage for an ally. Sink with the ship.",
       "lore": "I'm a good faithful friend. I'll support you no matter what. Even if you're wrong. Especially if you're wrong.",
       "gradeReason": "Sink with the ship — loyalty even unto wrongness. You feel the weight instantly.",
-      "artworkPrompt": "Style: Ink wash, parchment. Subject: dog standing on tilting ship deck, water rising, unwilling to leave. Mood: noble catastrophe."
+      "artworkPrompt": "Style: Ink wash, parchment. Subject: dog standing on tilting ship deck, water rising, unwilling to leave. Mood: noble catastrophe.",
+      "textSource": {
+        "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p3 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 11,
@@ -168,17 +188,19 @@
       "cardNumber": 12,
       "cardName": "The Jump Ship",
       "grade": 1,
-      "power": "Abandon Principles. Swap your hand with a discard.",
+      "power": "Abandon Principles. Swap your hand with the discard",
       "lore": "When push comes to shove, something falls by the wayside. You gotta jump. You gotta jump.",
       "gradeReason": "Abandon principles to survive — you know the desperation in your bones.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: rat leaping from sinking ship, MORALS sign drowning behind it. Mood: desperate escape.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Jump Ship",
-        "power": "Abandon Principles. Swap your hand with the discard",
-        "lore": "When push comes to shove, something falls by the wayside. gotta jump. You gotta jump.",
+        "power": "Abandon Principles. Swap your hand with a discard.",
+        "lore": "When push comes to shove, something falls by the wayside. You gotta jump. You gotta jump."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p3 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -303,16 +325,18 @@
       "cardName": "The Fungal Synapse",
       "grade": 1,
       "power": "Wood Wide Web. Look at everyone's hand.",
-      "lore": "Brains down there. Root plans. Making problems. Making decisions. We are not alone.",
+      "lore": "Brains down there. Root plasticity solving problems. Making decisions. We are not alone.",
       "gradeReason": "Wood wide web = see all hands — perfect metaphor-to-mechanic fusion.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: brain-like mushroom network underground, roots scanning all hands above. Mood: invisible omniscience.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Fungal Synapse",
         "power": "Wood Wide Web. Look at everyone's hand.",
-        "lore": "Brains down there. Root plasticity solving problems. Making decisions. We are not alone.",
+        "lore": "Brains down there. Root plans. Making problems. Making decisions. We are not alone."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p7 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -320,16 +344,18 @@
       "cardName": "The Insect Signal",
       "grade": 1,
       "power": "Call the Cavalry. Deal damage equal to the number of cards in your hand.",
-      "lore": "Send out signals to wasps to save you from attack. The forest takes care of its own.",
+      "lore": "Send out signals to wasps to come save us from attack. The forest takes care of its own.",
       "gradeReason": "Bigger hand = harder swarm — the forest-cavalry logic is immediate.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: skull with wasp swarm launching outward from hollow eye. Mood: colony defense.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Insect Signal",
-        "power": "Call the Cavalry. Deal damage equal o the number of cards in your hand.",
-        "lore": "Send out signals to wasps to come save us from attack. The forest takes care of its own.",
+        "power": "Call the Cavalry. Deal damage equal to the number of cards in your hand.",
+        "lore": "Send out signals to wasps to save you from attack. The forest takes care of its own."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p7 BL",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -366,23 +392,31 @@
       "power": "Air Support. Attack any 1 player from any distance.",
       "lore": "The Maple's shower of helicopters. Weaponized seeds remembering the seasons of their childhood.",
       "gradeReason": "Attack from any distance like weaponized maple seeds — childhood memory as long-range assault.",
-      "artworkPrompt": "Style: Ink wash, parchment. Subject: maple seeds spiraling in attack-helicopter formation. Mood: weaponized nostalgia."
+      "artworkPrompt": "Style: Ink wash, parchment. Subject: maple seeds spiraling in attack-helicopter formation. Mood: weaponized nostalgia.",
+      "textSource": {
+        "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p8 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 32,
       "cardName": "The Pencil Dream",
       "grade": 2,
       "power": "Nostalgia Trip. Revert the game state to the previous turn.",
-      "lore": "Rockets. Outlandish cars. Mastered areas. The architecture of an 8-year-old's boredom.",
+      "lore": "Rockets. Outlandish cars. Masted armies. The architecture of an 8-year-old's boredom.",
       "gradeReason": "Revert via childhood memory — charming but mechanic needs the metaphor to arrive.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: child's notebook blueprint of rocket and outlandish car, pencil in foreground. Mood: innocent invention.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Pencil Dream",
         "power": "Nostalgia Trip. Revert the game state to the previous turn.",
-        "lore": "Rockets. Outlandish cars. Mastered armies. The architecture of an 8-year-old's boredom.",
+        "lore": "Rockets. Outlandish cars. Mastered areas. The architecture of an 8-year-old's boredom."
+      },
+      "printTypo": "'Masted armies' so gedruckt (vermutlich 'Massed')",
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p8 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -399,16 +433,18 @@
       "cardName": "The 1,000 Word Cage",
       "grade": 1,
       "power": "Daily Quota. You must discard 3 cards to stay in the game.",
-      "lore": "The discipline. Get the words down. Stay there until it's done. A cage of your own making.",
+      "lore": "The discipline. Get the words out. Stay there until it's done. A cage of your own making.",
       "gradeReason": "Pay to stay in the game — the discipline made punishing. Every writer knows this cage.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: typewriter locked inside birdcage, desk lamp lit, no exit. Mood: productive imprisonment.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The 1,000 Word Cage",
         "power": "Daily Quota. You must discard 3 cards to stay in the game.",
-        "lore": "The discipline. Get the words out. Stay there until it's done. A cage of your own making.",
+        "lore": "The discipline. Get the words down. Stay there until it's done. A cage of your own making."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p9 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -434,16 +470,18 @@
       "cardName": "The Lead Dog",
       "grade": 2,
       "power": "Forward Momentum. Advance the game phase.",
-      "lore": "Language pulls the sled. Diction. Mastery. Syntax. The first dog in the line.",
+      "lore": "Language pulls the sled. Diction, register, syntax. The first dog in the line.",
       "gradeReason": "Advance game phase via language momentum — clear but game-mechanic dependent.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: husky in harness labeled LANGUAGE leading a dogsled forward. Mood: driven momentum.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Lead Dog",
         "power": "Forward Momentum. Advance the game phase.",
-        "lore": "Language pulls the sled. Diction, register, Syntax. The",
+        "lore": "Language pulls the sled. Diction. Mastery. Syntax. The first dog in the line."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p10 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -460,16 +498,18 @@
       "cardName": "The Heavy Sled",
       "grade": 2,
       "power": "Burden of Plot. Slow an opponent down.",
-      "lore": "The concern of crafting. The level granular to high level structure. It's heavy.",
+      "lore": "The concern of crafting. Low level granularity. High level structure. It's heavy.",
       "gradeReason": "Slow with plot burden — the weight is felt but the mechanic is one step removed.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: enormous manuscript stack as sled being dragged through snow. Mood: exhausting necessity.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Heavy Sled",
         "power": "Burden of Plot. Slow an opponent down.",
-        "lore": "The concern of crafting. Low level granularity. high level structure. It's heavy.",
+        "lore": "The concern of crafting. The level granular to high level structure. It's heavy."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p10 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -494,9 +534,19 @@
       "cardName": "The Hook",
       "grade": 1,
       "power": "Artificial Tension. Force an opponent to engage with you.",
-      "lore": "Start high. Artificially high. Drop them in before they know what hit them.",
+      "lore": "Start high. Artificially high. Draw them in before they know what hit them.",
       "gradeReason": "Force engagement = the hook. Mechanics of the opening line as card power.",
-      "artworkPrompt": "Style: Ink wash, parchment. Subject: fishhook through eyeball, narrative line pulled taut. Mood: irresistible capture."
+      "artworkPrompt": "Style: Ink wash, parchment. Subject: fishhook through eyeball, narrative line pulled taut. Mood: irresistible capture.",
+      "jsonLegacy": {
+        "cardName": "The Hook",
+        "power": "Artificial Tension. Force an opponent to engage with you.",
+        "lore": "Start high. Artificially high. Drop them in before they know what hit them."
+      },
+      "textSource": {
+        "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p11 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 42,
@@ -529,17 +579,19 @@
       "cardNumber": 45,
       "cardName": "The Wide Shot",
       "grade": 1,
-      "power": "Cosmic Perspective. Ignore all \"Local\" effects.",
-      "lore": "First there was nothing. Before the litres. Earn the right to tell the local story by starting with the universe.",
+      "power": "Cosmic Perspective. Ignore \"Local\" effects.",
+      "lore": "First there was nothing. Before the stars. Earn the right to tell the local story by starting with the universe.",
       "gradeReason": "Cosmic perspective ignores local — earn the intimate by starting with everything.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: Earth as tiny dot in space with 'You are here' arrow. Mood: vertiginous scale.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Wide Shot",
-        "power": "Cosmic Perspective. Ignore \"Local\" effects.",
-        "lore": "First there was nothing Before the stars. Earn the right to tell the local story by starting with the universe.",
+        "power": "Cosmic Perspective. Ignore all \"Local\" effects.",
+        "lore": "First there was nothing. Before the litres. Earn the right to tell the local story by starting with the universe."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p12 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -547,26 +599,38 @@
       "cardName": "The Micro-Zoom",
       "grade": 2,
       "power": "Granularity. Focus damage on a single target.",
-      "lore": "Look harder. When you are close, look harder. Reality is moving. The detail is the god.",
+      "lore": "Look harder. When you are sure, look harder. Reality is moving. The detail is the god.",
       "gradeReason": "Focus damage = granularity — gorgeous lore but mechanic needs a moment to arrive.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: microscope focused on single burning leaf cell. Mood: obsessive precision.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Micro-Zoom",
         "power": "Granularity. Focus damage on a single target.",
-        "lore": "Look harder. When you are sure, look harder. Reality is moving. The detail is the god.",
+        "lore": "Look harder. When you are close, look harder. Reality is moving. The detail is the god."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p12 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 47,
       "cardName": "The First Sentence",
       "grade": 1,
-      "power": "The Opener. Play this first to gain Initiative.",
-      "lore": "The entire book is in a nutshell. Two houses both alike in dignity. The DNA of the drama.",
+      "power": "The Opener. Play this first to gain initiative.",
+      "lore": "The entire book in a nutshell. 'Two houses both alike in dignity.' The DNA of the drama.",
       "gradeReason": "Play first = initiative — opening line as mechanical advantage. Perfect.",
-      "artworkPrompt": "Style: Ink wash, parchment. Subject: giant key hovering over book's first page, everything unlocking. Mood: portal opening."
+      "artworkPrompt": "Style: Ink wash, parchment. Subject: giant key hovering over book's first page, everything unlocking. Mood: portal opening.",
+      "jsonLegacy": {
+        "cardName": "The First Sentence",
+        "power": "The Opener. Play this first to gain Initiative.",
+        "lore": "The entire book is in a nutshell. Two houses both alike in dignity. The DNA of the drama."
+      },
+      "textSource": {
+        "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p12 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 48,
@@ -591,16 +655,18 @@
       "cardName": "The Stranger Changed",
       "grade": 2,
       "power": "Remote Impact. Affect a player not adjacent to you.",
-      "lore": "I'm studying forestry because of you. Days later — strangers while you sit in the dark.",
+      "lore": "I'm studying forestry because of you. Changing the lives of strangers while you sit in the dark.",
       "gradeReason": "Remote impact = changed by a story — true but takes personal connection to land.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: person in dark room, stranger growing a forest in the distance. Mood: delayed consequence.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Stranger Changed",
         "power": "Remote Impact. Affect a player not adjacent to you.",
-        "lore": "I'm studying forestry because of you. Changing the Lives of strangers while you sit in the dark.",
+        "lore": "I'm studying forestry because of you. Days later — strangers while you sit in the dark."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p13 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -646,13 +712,10 @@
       "lore": "The baroque, fluted, muscular, diamond-shaped, tempestuous verbiage. Too much flavor.",
       "gradeReason": "The card IS an adjective overdose — the lore performs the mechanic in real time.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: reader drowning in swirl of adjective word-clouds. Mood: overwhelming excess.",
-      "print": {
-        "cardName": "Adjective Overdose",
-        "power": "Purple Prose. Confuse opponent. They miss their turn.",
-        "lore": "we diamond-shaped, tempestuous verbiage. Too much flavor.",
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p14 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -704,17 +767,19 @@
       "cardNumber": 60,
       "cardName": "The Golden Rule",
       "grade": 1,
-      "power": "The Objective. Push them to the wall. Make them choose. If they don't cry, you aren't writing hard enough.",
+      "power": "The Objective.",
       "lore": "Push them to the wall. Make them choose. If they don't cry, you aren't writing hard enough.",
       "gradeReason": "The whole deck's thesis in one card — devastating clarity, zero explanation required.",
       "artworkPrompt": "Style: Ink wash, parchment. Subject: PUSH THEM in giant letters on brick wall, cornered figure choosing. Mood: devastating imperative.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Golden Rule",
-        "power": "The Objective Push them to the wall. Make them choose. If they don't cry, you aren't writing hard enough.",
-        "lore": "Push the GOLDEN RULE them",
+        "power": "The Objective. Push them to the wall. Make them choose. If they don't cry, you aren't writing hard enough.",
+        "lore": "Push them to the wall. Make them choose. If they don't cry, you aren't writing hard enough."
+      },
+      "textSource": {
         "source": "PDF v05 Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf p15 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     }
   ],
