@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 abends · Meshy-Kulisse Pilot
+- Mesa Island und Akashic Library als Browser-Fassungen A/B (gltf-transform simplify/meshoptimizer, Texturen 2048 WebP; Blender-Decimate zerstört UVs): Mesa 75→7,6/4,6 MB, Library 184→14,7/8,9 MB; Bildpaare im Hub (m01, m02). Dateien lokal in ~/Dropbox/CLAUDE/MeshyModels/_browser/.
+
 ## 2026-10-14 abends · Claude-Design-Job Triplet-Abnahme-Prototyp
 - Hub-Briefing b12: 2D-Prototyp für die Triplet-Abnahme (Kartenbild, Drucktext, [Opener]+Triplet, Wortmarkierung, PASS/TUNE/FAIL + eigene Fassung, Deck-Liste, JSON-Export kfb.triplet-review/1), Vorlage für die spätere WSA-Site (V-237). Eingabe-Paket in Downloads/KFB_Triplet_Review_Input (3 Druck-Karten + JSON). ToolBox-Quell-Schnitt (V-241) erst nach Georgs Fixes (u. a. Farbregler Brauen/Nase), Aufgabe WS0.
 
