@@ -1,0 +1,28 @@
+{
+  "interface": {
+    "capabilities": [
+      "Interactive"
+    ],
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Make verified one-sentence Triplets for cards 1\u20138 of Monomyth Mayhem; show title, POWER, LORE and contentShare; reject failures as NO_TRIPLET."
+    ],
+    "developerName": "Georg Westphalen",
+    "displayName": "KFB Triplets",
+    "longDescription": "Write standalone source-verified single-card SHOW/SPIN/SELL English utterances. Exact source evidence, no invented content.",
+    "shortDescription": "Verified single-card Triplets"
+  },
+  "name": "kfb-triplets",
+  "version": "0.1.1",
+  "description": "Pinned source-verified single-card Triplets with strict SHOW/SPIN/SELL and auditable source evidence.",
+  "author": {
+    "name": "Georg Westphalen",
+    "email": "georg@cimoc.de"
+  },
+  "keywords": [
+    "triplets",
+    "cards",
+    "KFB"
+  ],
+  "skills": "./skills"
+}
