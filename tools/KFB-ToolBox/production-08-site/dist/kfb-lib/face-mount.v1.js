@@ -498,6 +498,11 @@ export function makeFaceApi({ THREE, M, rig, brow = null, nose = null, moust = n
         if (k === 'style') { if (m.style) m.style(v); return { status: 'OK' }; }
         return m.set({ [k]: v }) || { status: 'OK' };
       }
+      if (head === 'mouth' && k === 'rest') {
+        if (!mouth) return { status:'UNSUPPORTED',reason:'no mouth owner' };
+        const key=mouth.p.visemeMap[v]||v;if(!mouth._key(key))return {status:'UNSUPPORTED',reason:'unknown rest shape'};
+        p.mouth.rest=v;mouth.rest=key;mouth.__kfbHold=null;mouth.viseme=null;mouth.talk(false);mouth.setTex(key,false);return {status:'OK'};
+      }
       if (head === 'mouth' && (k === 'conform' || k === 'edge')) {
         p.mouth[k] = v; if (k === 'conform' && api.conformMouth) api.conformMouth(); if (k === 'edge' && api.setMouthEdge) api.setMouthEdge(v); return { status: 'OK' };
       }
@@ -643,7 +648,9 @@ export function makeFaceApi({ THREE, M, rig, brow = null, nose = null, moust = n
     /* 01.10. (Georg: »Laute · 13 shapes« did nothing on the model mouth): a decal shown on purpose (mouth.__kfbHold = its key, set by
        the ToolBox's Laute row) also counts, as long as it is still the current decal — any other setTex ends the hold by itself. */
     const hold = !!(mouth && mouth.__kfbHold && mouth.cur === mouth.__kfbHold);
-    const spk = !!(mouth && (mouth.talking || mouth.viseme != null || hold || (api.isSpeaking && api.isSpeaking())));
+    const rest = mouth && p.mouth.rest != null && !mouth.talking && mouth.viseme == null && !hold && !(api.isSpeaking && api.isSpeaking());
+    if(rest){const key=mouth.p.visemeMap[p.mouth.rest]||p.mouth.rest;mouth.rest=key;if(mouth.cur!==key)mouth.setTex(key,false);}
+    const spk = !!(mouth && (mouth.talking || mouth.viseme != null || hold || rest || (api.isSpeaking && api.isSpeaking())));
     const onModel = p.parts.mouth === 'original' && !!orig.mouth, want = p.parts.mouth === 'rig';
     if (mouth && mouth.mesh && mouth.mesh.visible !== want) mouth.mesh.visible = want;
     if (onModel) {

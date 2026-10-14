@@ -55,3 +55,10 @@ export async function verifyActorWorkspace(tb,doc) {
  const receipt={actor:ACTOR_ID,sha256:PROFILE_SHA256,source:copy(p.source),fieldMatch:true,importedAt:new Date().toISOString()};
  tb.ws.actorImportReceipt=receipt;globalThis.__kfbActorImportReceipt=receipt;return receipt;
 }
+
+export function migrateRestMouth(ws) {
+ for(const [id,entry] of Object.entries(ws.rigs||{})){
+  entry.mouth=entry.mouth||{};if(entry.mouth.rest==null)entry.mouth.rest='closed';
+  const profile=(ws.actors||{})[id];if(profile){profile.face=profile.face||{};profile.face.mouth={...(profile.face.mouth||{}),rest:entry.mouth.rest};delete profile.face.mouth.viseme;}
+ }
+}

@@ -1,3 +1,9 @@
+## CURRENT USER-AUTHORIZED IMPLEMENTATION · Site v8
+
+Georg's 2026-10-14 follow-up explicitly authorizes repairs after viewing the running Site. The prior blanket statement below that no fix is applied is historical. Rest mouth persistence/original model decal and A1 Studio bind/pose selection are implemented, with targeted code/state tests, visual acceptance pending. Animation Dots direct correction + visibility implemented. A13 export label now Production-08. Known shadow issue #247 remains visually open; current consumer depth integration is a repair candidate. A3 real GitHub Save, A13b colour export and other not specifically listed issues remain pending. Read the current Return and test report. No source-pair PASS fabricated.
+
+---
+
 # P08 issue disposition · V-244
 
 No rigging fix is accepted or applied before Acceptance 1. These are explicit pending actions, not “won't fix” decisions.

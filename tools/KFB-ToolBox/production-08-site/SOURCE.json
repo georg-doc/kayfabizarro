@@ -921,6 +921,15 @@
         "owners/petstudio-v9/studio-v12/frizzlebob.v4a.js"
       ],
       "operation": "Preserve original pinned module origin for model URLs after vendoring; fixes local /owners/.../assets/... 404"
+    },
+    {
+      "files": [
+        "index.html",
+        "kfb-lib/face-mount.v1.js",
+        "kfb-lib/actor-bootstrap.v1.js",
+        "owners/petstudio-v9/studio-v3/pet-mouth.v1.js"
+      ],
+      "operation": "Site v8: persisted rest-mouth field/ready texture, existing-owner Studio pose modes, existing-editor direct IK dot adapter/visibility, fitted caster+receiver shadow depth; intentional behavior changes, not unchanged port claim"
     }
   ],
   "unresolved": [

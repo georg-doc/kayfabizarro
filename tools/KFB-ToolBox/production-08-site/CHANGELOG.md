@@ -15,3 +15,10 @@
 
 ## 2026-10-14 · Exact Georg actor startup import · v7
 - Supplied attachment entry is identical to original cut's rig recipe. Fixed missing startup application and wrong-actor manual import. Complete recipe hydrates before original mount; checksum/field verification, hair readiness, one-time migration and recovery backup. 21/21 targeted checks; actual WebGL unverified. V-243 rest-mouth/GitHub Save remain pending.
+
+## 2026-10-14 · Site v8 behavior repairs
+- Persisted closed rest mouth with original model decal and ready-before-reveal; Production-08 export label.
+- Studio Idle/bind/presets/saved pose selection through existing owners.
+- Dots visibility plus direct paused Animation IK correction drag through existing editor.
+- Existing shadow recipe tightened to actual caster/receiver depth; visual/global issue #247 still pending.
+- 27 new + 21 regression = 48/48 checks PASS; no actual WebGL/screenshot PASS. GitHub Save remains pending.

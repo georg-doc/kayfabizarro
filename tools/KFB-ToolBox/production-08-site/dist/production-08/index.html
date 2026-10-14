@@ -183,6 +183,8 @@
         <span style="width:1px;background:#c9c5bc;margin:3px 2px"></span>
         <span onClick="{{ toggleRigHandles }}" title="Show / hide the drag dots on the face" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer;background:{{ rigHandlesBg }};color:{{ rigHandlesFg }}">Dots</span>
       </sc-if>
+      <sc-if value="{{ showMotionDots }}"><span onClick="{{ toggleMotionDots }}" title="Show / hide hand and foot IK targets; drag a dot to correct this frame" style="height:26px;display:flex;align-items:center;padding:0 10px;border-radius:5px;cursor:pointer;background:{{ motionDotsBg }};color:{{ motionDotsFg }}">Dots</span></sc-if>
+      <sc-if value="{{ showStudioPose }}"><select value="{{ studioPoseValue }}" onChange="{{ onStudioPose }}" title="Studio pose" style="height:26px;max-width:180px;border:1px solid #c9c5bc;border-radius:5px;background:#f6f4ef;font:inherit"><sc-for list="{{ studioPoseOptions }}" as="po" hint-placeholder-count="3"><option value="{{ po.value }}" selected="{{ po.selected }}">{{ po.label }}</option></sc-for></select></sc-if>
       <sc-if value="{{ showHint }}">
         <span style="width:1px;background:#c9c5bc;margin:3px 2px"></span>
         <span title="Left-drag: orbit · right-drag / shift-drag: pan · wheel: zoom · double-click: orbit around point" style="height:26px;display:flex;align-items:center;padding:0 8px;color:#5c6065">Orbit ⓘ</span>
@@ -1307,7 +1309,7 @@ function embeddedGltfToGlb(text, label) {
 }
 
 class Component extends DCLogic {
-  state = { rigFold: (() => { try { return JSON.parse(localStorage.getItem('kfb-toolbox-fold') || '{}') || {}; } catch (e) { return {}; } })(), explain: (() => { try { return localStorage.getItem('kfb-toolbox-explain') === '1'; } catch (e) { return false; } })(), tab: 'studio', section: 'face', rigPart: 'eyes', rigHandles: true, rigMsg: '', rigRT: null, actorPop: false, stagePop: false, clipPop: false, diagOpen: false, actorSearch: '', clipSearch: '',
+  state = { rigFold: (() => { try { return JSON.parse(localStorage.getItem('kfb-toolbox-fold') || '{}') || {}; } catch (e) { return {}; } })(), explain: (() => { try { return localStorage.getItem('kfb-toolbox-explain') === '1'; } catch (e) { return false; } })(), tab: 'studio', section: 'face', rigPart: 'eyes', rigHandles: true, motionHandles: true, rigMsg: '', rigRT: null, actorPop: false, stagePop: false, clipPop: false, diagOpen: false, actorSearch: '', clipSearch: '',
     dirty: false, lastSaved: null, status: 'booting', selId: null, mode: 'translate', snap: true, scope: 'teil', lastDrop: '', failures: [],
     loading: 0, loadingText: '', tests: null, testing: false, tick: 0, ikSel: null, playing: false, poseName: '', labSec: 'clip', locoSel: null, locoMsg: '',
     vw: typeof window !== 'undefined' ? window.innerWidth : 1200, panelOpen: typeof window === 'undefined' || window.innerWidth >= 700,
@@ -1419,6 +1421,7 @@ class Component extends DCLogic {
       this.EDIT.gizmo.size = 0.85; this.EDIT.setOn(true); this.EDIT.onChange(() => this._syncEdit());
       this.EDIT.addClaim((ray) => this._claimHandle(ray));
       this._initEditV2({ camera: cam, scene, controls });
+      this._installMotionDotDrag();
     }
     this._onKey = (e) => this._key(e); window.addEventListener('keydown', this._onKey);
     const loop = () => { this._raf = requestAnimationFrame(loop); this._frame(); };
@@ -1442,11 +1445,17 @@ class Component extends DCLogic {
         try { const prior = localStorage.getItem(STORE_KEY); if (prior) localStorage.setItem(STORE_KEY + '.before-georg-import-' + boot.PROFILE_SHA256.slice(0,12), prior); } catch (e) {}
       }
       const imported = boot.prepareActorWorkspace(this, actorDoc);
+      boot.migrateRestMouth(this.ws);
+      if (typeof this.ws.ui?.motionHandles === 'boolean') this.state.motionHandles = this.ws.ui.motionHandles;
       await this.rebuild();
       if (imported) {
         await boot.verifyActorWorkspace(this, actorDoc);
         // Persist the import receipt and current recipe as a LOCAL recovery checkpoint, not a GitHub save.
         try { this.ws.savedAt = new Date().toISOString(); localStorage.setItem(STORE_KEY, JSON.stringify(this.ws)); } catch (e) {}
+      }
+      if (this.runtime?.face && this.runtime.mouth) {
+        const F=this.runtime.face,m=this.runtime.mouth,rest=F.get('mouth.rest')||'closed';F.set('mouth.rest',rest);
+        if(m.whenReady)await m.whenReady(m.p.visemeMap[rest]||rest);F.update(0,this.cam);
       }
       renderer.domElement.style.visibility = 'visible';
       this.setState({ status: imported ? 'Georg actor imported' : restored ? 'restored' : 'ready', dirty: false, lastSaved: this.ws.savedAt || null });
@@ -1546,6 +1555,7 @@ class Component extends DCLogic {
   _poseOn(rt) { const a = this.ws && this.ws.active[this._rid()]; return !!(rt && rt.pose && a && a.poseOn); }
   _bind(rt) { if (!rt._skels) { rt._skels = []; rt.figure.traverse((n) => { if (n.isSkinnedMesh && n.skeleton && !rt._skels.includes(n.skeleton)) rt._skels.push(n.skeleton); }); } rt._skels.forEach((s) => s.pose()); }
   _studioBones(rt, dt) {
+    if (this.ws?.active?.[this._rid()]?.mode === 'bind') { this._bind(rt); return; }
     if (this._poseOn(rt)) {
       this._bind(rt);
       const d = this._draft(), P = rt.pose;
@@ -1599,7 +1609,7 @@ class Component extends DCLogic {
   }
   _handlesOn() {
     const rt = this.runtime, s = this.state; if (!rt || this._stripping) return false;
-    if (s.tab === 'rig') return false;
+    if (s.tab === 'rig' || s.motionHandles === false) return false;
     if (s.tab === 'studio') return (s.section === 'pose' || s.section === 'fit') && !!this._ik(rt);
     return !!this._ik(rt) && !!this.anim.action && !s.playing && !this.seq;
   }
@@ -1641,10 +1651,26 @@ class Component extends DCLogic {
   pickIK(k) {
     if (String(k).startsWith('face:')) return this.pickFace(k);
     if (!this.EDIT) return;
-    const h = this.handles[k]; this._reseat = true; this._placeHandles();
+    if ((this.state.tab === 'anim' || this.state.tab === 'lib') && this.state.playing) return;
+    const h = this.handles[k]; if (!h || !this._ik(this.runtime)?.[k] && k !== 'grip') return;
+    this.EDIT.setOn(true); this._reseat = true; this._placeHandles();
     this.EDIT.borrow(h, k === 'grip' ? (this._gripMode || 'translate') : 'translate', () => this._handleDrag(k), IK_LABEL[k] || 'Held item');
     if (k === 'grip') { this.EDIT.release(); this.EDIT.borrow(this.runtime.legacy.holder, this._gripMode || 'translate', () => this._gripDrag(), 'Held item'); }
     this.setState({ ikSel: k, selId: null });
+  }
+  _installMotionDotDrag() {
+    const canvas = this.renderer.domElement, T = this.THREE, ray = new T.Raycaster(), ndc = new T.Vector2();
+    const cast = e => { const r = canvas.getBoundingClientRect(); ndc.set((e.clientX-r.left)/r.width*2-1, -(e.clientY-r.top)/r.height*2+1); ray.setFromCamera(ndc,this.cam); };
+    canvas.addEventListener('pointerdown', e => {
+      if (e.button !== 0 || !['anim','lib'].includes(this.state.tab) || !this._handlesOn()) return;
+      cast(e); const h = ray.intersectObjects(IK_KEYS.map(([k])=>this.handles[k]).filter(h=>h?.visible),false)[0]?.object; if (!h) return;
+      this.pickIK(h.userData.ik);
+      this._dotDrag = { pointer:e.pointerId, handle:h, plane:new T.Plane().setFromNormalAndCoplanarPoint(this.cam.getWorldDirection(new T.Vector3()),h.position), offset:h.position.clone().sub(ray.ray.intersectPlane(new T.Plane().setFromNormalAndCoplanarPoint(this.cam.getWorldDirection(new T.Vector3()),h.position),new T.Vector3()) || h.position) };
+      this.controls.enabled=false; canvas.setPointerCapture(e.pointerId); e.preventDefault(); e.stopImmediatePropagation();
+    },true);
+    const end = e => { const d=this._dotDrag;if(!d||d.pointer!==e.pointerId)return;this._dotDrag=null;this.controls.enabled=true;try{canvas.releasePointerCapture(e.pointerId);}catch(_){}e.preventDefault();e.stopImmediatePropagation(); };
+    canvas.addEventListener('pointermove',e=>{const d=this._dotDrag;if(!d||d.pointer!==e.pointerId)return;cast(e);const p=ray.ray.intersectPlane(d.plane,new T.Vector3());if(p){d.handle.position.copy(p.add(d.offset));this._handleDrag(d.handle.userData.ik);}e.preventDefault();e.stopImmediatePropagation();},true);
+    canvas.addEventListener('pointerup',end,true);canvas.addEventListener('pointercancel',end,true);
   }
   closeIK() { if (this.EDIT && this.EDIT.borrowed) this.EDIT.release(); this.setState({ ikSel: null }); }
   _handleDrag(k) {
@@ -2007,7 +2033,7 @@ class Component extends DCLogic {
     const rt = this.runtime; if (!rt) return;
     const e = this._eye(), f = this._actorProf().face || {};
     if (rt.rig && e && !rt.face) { try { rt.rig.setPupilStyle(e.pupilStyle); rt.rig.setBaseColor(parseInt(e.baseColor.slice(1), 16)); rt.rig.setAnchor({ dx: e.dx }); } catch (err) {} }
-    if (rt.mouth && f.mouth) { try { if (f.mouth.set) rt.mouth.setSet(f.mouth.set); if (f.mouth.viseme) rt.mouth.setViseme(f.mouth.viseme); } catch (err) {} }
+    if (rt.mouth && f.mouth) { try { if (f.mouth.set) rt.mouth.setSet(f.mouth.set); if (f.mouth.rest && rt.face) rt.face.set('mouth.rest',f.mouth.rest); else if (f.mouth.viseme) rt.mouth.setViseme(f.mouth.viseme); } catch (err) {} }
     if (f.brow != null && rt.brow && rt.brow.set && !rt.face) try { rt.brow.set({ enabled: f.brow }); } catch (err) {}
     if (f.nose != null && rt.nose && rt.nose.set && !rt.face) try { rt.nose.set({ enabled: f.nose }); } catch (err) {}
   }
@@ -2034,10 +2060,11 @@ class Component extends DCLogic {
     this.forceUpdate();
   }
   /* Studio v18 mouthSel · rest shape = any of the 13 decals (session look, not in the contract — same as v18). */
-  mouthRest(k) { const m = this.runtime && this.runtime.mouth; if (!m) return; m.__kfbHold = null; this._stopVisCycle(); m.talk(false); m.viseme = null; m.rest = k; m.setTex(k, false); this.forceUpdate(); }
+  mouthRest(k) { const rt=this.runtime,m=rt?.mouth;if(!m)return;m.__kfbHold=null;this._stopVisCycle();m.talk(false);m.viseme=null;if(rt.face)this.rigSet('mouth.rest',k);else{m.rest=k;m.setTex(k,false);}this._actorProf().face.mouth={...(this._actorProf().face.mouth||{}),rest:k};this.setState({dirty:true});this._touch(); }
   setViseme(id) {
     const m = this.runtime && this.runtime.mouth; if (!m) return null; this._stopVisCycle();
     m.talk(false); const key = m.setViseme(id);
+    if (id === 'closed' && this.runtime?.face) { this.rigSet('mouth.rest','closed'); this._actorProf().face.mouth={...(this._actorProf().face.mouth||{}),rest:'closed'}; }
     this._setFace({ mouth: { ...((this._actorProf().face || {}).mouth || {}), viseme: id, set: m.set } });
     return key;
   }
@@ -2092,6 +2119,7 @@ class Component extends DCLogic {
   async _enterStudio() {
     const rt = this.runtime; if (!rt || !rt.mixer) return;
     this.anim.action = null;
+    if (this.ws.active[this._rid()]?.mode === 'bind' || this._poseOn(rt)) { rt.mixer.stopAllAction(); this._bind(rt); return; }
     try { await this._play(this._idleRef()); } catch (e) { rt.mixer.stopAllAction(); this._bind(rt); }
   }
   async _enterAnim() {
@@ -2198,8 +2226,16 @@ class Component extends DCLogic {
   }
 
   /* ---------- Pose Profiles ---------- */
+  async setStudioMode(mode) {
+    const rt=this.runtime;if(!rt)return;this.closeIK();
+    if(mode.startsWith('preset:')){this._draft().from=null;this.setPreset(mode.slice(7));this.setPoseOn(true);return;}
+    if(mode.startsWith('saved:')){this.loadPose(mode.slice(6));return;}
+    const rid=this._rid();this.ws.active[rid]={...(this.ws.active[rid]||{}),mode,poseOn:false};
+    if(mode==='bind'){rt.mixer?.stopAllAction();this.anim.action=null;this._bind(rt);}else await this._enterStudio();
+    this.setState({dirty:true});this._touch();
+  }
   setPoseOn(on) {
-    const rid = this._rid(); this.ws.active[rid] = { ...(this.ws.active[rid] || {}), poseOn: on };
+    const rid = this._rid(); this.ws.active[rid] = { ...(this.ws.active[rid] || {}), mode: on ? 'pose' : 'idle', poseOn: on };
     this._draftVer++; if (!on && this.runtime && this.runtime.mixer) this._enterStudio();
     this.setState({ dirty: true }); this._touch();
   }
@@ -2212,14 +2248,14 @@ class Component extends DCLogic {
     const miss = {}; for (const [k] of IK_KEYS) { const t = d.ik[k]; if (t && t.pinned) { const m = this._miss(rt, k, t.pos); miss[k] = m == null ? null : r4(m); } }
     this.ws.poses[id] = { schema: 'kfb.pose-profile/0.1', id, name: nm, actor: rid, rigFamily: rt.rigFamily, solver: 'A · pose-rig.v1 two-bone',
       angles: clone(d.angles), ik: clone(d.ik), measured: { handMiss: miss }, savedAt: new Date().toISOString() };
-    d.from = id; this.ws.active[rid] = { ...(this.ws.active[rid] || {}), poseId: id, poseOn: true };
+    d.from = id; this.ws.active[rid] = { ...(this.ws.active[rid] || {}), poseId: id, mode: 'pose', poseOn: true };
     this.setState({ poseName: '' }); this.save();
     return this.ws.poses[id];
   }
   loadPose(id) {
     const p = this.ws.poses[id]; if (!p) return; const rid = this._rid();
     this.drafts[rid] = { angles: clone(p.angles), ik: clone(p.ik || {}), from: id };
-    this.ws.active[rid] = { ...(this.ws.active[rid] || {}), poseId: id, poseOn: true }; this._draftVer++; this._reseat = true;
+    this.ws.active[rid] = { ...(this.ws.active[rid] || {}), poseId: id, mode: 'pose', poseOn: true }; this._draftVer++; this._reseat = true;
     this.setState({ dirty: true }); this._touch();
   }
   delPose(id) { delete this.ws.poses[id]; for (const a of Object.values(this.ws.active)) if (a.poseId === id) a.poseId = null; for (const d of Object.values(this.drafts)) if (d.from === id) d.from = null; this.setState({ dirty: true }); this._touch(); }
@@ -2460,7 +2496,8 @@ class Component extends DCLogic {
   /* ---------- persistence ---------- */
   save() {
     if (!this.ws) return; this._earSaved = null;
-    this._updateAll(); this.ws.savedAt = new Date().toISOString(); this.ws.ui = { tab: this.state.tab, section: this.state.section };
+    if (this.runtime?.face) { this.ws.rigs=this.ws.rigs||{}; this.ws.rigs[this._rid()]=this.runtime.face.export(); }
+    this._updateAll(); this.ws.savedAt = new Date().toISOString(); this.ws.ui = { tab: this.state.tab, section: this.state.section, motionHandles: this.state.motionHandles !== false };
     const out = clone(this.ws); out.scene.objects.forEach((o) => { delete o._graft; delete o._clip; });
     localStorage.setItem(STORE_KEY, JSON.stringify(out));
     this.setState({ dirty: false, lastSaved: this.ws.savedAt, status: 'saved' });
@@ -3246,7 +3283,12 @@ class Component extends DCLogic {
     const texel = (2 * r) / sun.shadow.mapSize.x, c = sph.center;
     const cc = right.clone().multiplyScalar(Math.round(c.dot(right) / texel) * texel).addScaledVector(up, Math.round(c.dot(up) / texel) * texel).addScaledVector(fwd, c.dot(fwd));
     const dist = r + 30; sun.position.copy(cc).addScaledVector(Ld, dist); sun.target.position.copy(cc); sun.target.updateMatrixWorld();
-    const cam = sun.shadow.camera; if (cam.right !== r || Math.abs(cam.far - (dist + r + 30)) > 1e-6) { Object.assign(cam, { left: -r, right: r, top: r, bottom: -r, near: 0.1, far: dist + r + 30 }); cam.updateProjectionMatrix(); }
+    let minDepth=Infinity,maxDepth=-Infinity;
+    const depthOf=p=>{const d=dist+cc.clone().sub(p).dot(Ld);minDepth=Math.min(minDepth,d);maxDepth=Math.max(maxDepth,d);};
+    for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z]){const p=new T.Vector3(x,y,z);depthOf(p);if(Ld.y>0.01&&y>=0)depthOf(p.clone().addScaledVector(Ld,-y/Ld.y));}
+    const margin=Math.max(texel*4,r*0.02),near=Math.max(0.01,minDepth-margin),far=Math.max(near+0.1,maxDepth+margin);
+    const cam = sun.shadow.camera; Object.assign(cam,{left:-r,right:r,top:r,bottom:-r,near,far});cam.updateProjectionMatrix();
+    this._shadowReceipt={recipe:'tools/KFB-ToolBox/docs/LESSONS_SHADOWS.md',texel,near,far,normalBias:texel*1.5};
     sun.shadow.normalBias = texel * 1.5; sun.shadow.bias = -0.00015;
   }
   _lidsCfg() { const p = this._actorProf(); if (!p.lids) p.lids = { u: 0, l: 0, s: 0, du: 0, dl: 0, ds: 0 }; return p.lids; }
@@ -3892,14 +3934,14 @@ class Component extends DCLogic {
     if (rt.kind === 'graft') {
       const doc = clone(this.contract), i = doc.pets.findIndex((p) => p.id === 'graft-driver');
       doc.pets[i] = { ...doc.pets[i], ...entry, ...this._surfExport() };
-      doc.meta = { ...(doc.meta || {}), exportedBy: 'KFB ToolBox Production-02 · Rigging', exportedAt: at, reader: SRC.graftMount + '#mountGraft @' + PIN.slice(0, 8) };
+      doc.meta = { ...(doc.meta || {}), exportedBy: 'KFB ToolBox Production-08 · Rigging', exportedAt: at, reader: SRC.graftMount + '#mountGraft @' + PIN.slice(0, 8) };
       return doc;
     }
     const PR = this._actorProf();
     if (rt.kind === 'pet') {
       const cp = { id: rid, name: r.label, kind: 'cube-pet', module: 'EyeRig', source: { set: 'animals', char: r.petId, reader: 'kfb-lib/face-mount.v1.js#mountPetFace' }, ...entry,
         ...(PR.lids ? { lids: { schema: 'kfb.eyerig-lids/0.1', ...PR.lids } } : {}), ...(PR.clay ? { clayLids: { schema: 'kfb.clay-lids/0.1', donor: 'PR #159 upper-lid-volume.v1', ...PR.clay } } : {}), ...(PR.emotes ? { emotes: { schema: 'kfb.emotes-own/0.1', ...PR.emotes } } : {}), ...this._surfExport() };
-      return { schema: 'kfb.pets/1', version: 1, meta: { exportedBy: 'KFB ToolBox Production-02 · Rigging', exportedAt: at, fields: 'graft-mount.v1 face field names; brow.turn/pitch, mouth.yaw/slope, eye.blink/life are read by face-mount.v1' },
+      return { schema: 'kfb.pets/1', version: 1, meta: { exportedBy: 'KFB ToolBox Production-08 · Rigging', exportedAt: at, fields: 'graft-mount.v1 face field names; brow.turn/pitch, mouth.yaw/slope, eye.blink/life are read by face-mount.v1' },
         eyeRig: (this.contract && this.contract.eyeRig) || null, pets: [cp] };
     }
     const pet = { id: rid, name: r.label, kind: 'biped', module: 'FaceHost', variant: 'earrig-v5',
@@ -3907,7 +3949,7 @@ class Component extends DCLogic {
       ...(rt.hair ? { hair: rt.hair.export() } : {}), ...(rt.body && rt.body.status === 'OK' ? { body: { schema: 'kfb.body-shape/0.1', reader: 'kfb-lib/body-shape.v1.js', ...rt.body.params } } : {}), ...(rt.ears && this._actorProf().ears ? { ears: { ...JSON.parse(JSON.stringify(this._actorProf().ears)), schema: 'kfb.ear-rig.v0#tuning', reader: EAR.dir + EAR.mod + ' @' + EAR.pin.slice(0, 8) } } : {}), ...(this._actorProf().lids ? { lids: { schema: 'kfb.eyerig-lids/0.1', ...this._actorProf().lids } } : {}),
       ...(this._actorProf().clay ? { clayLids: { schema: 'kfb.clay-lids/0.1', donor: 'PR #159 upper-lid-volume.v1', ...this._actorProf().clay } } : {}),
       ...(this._actorProf().emotes ? { emotes: { schema: 'kfb.emotes-own/0.1', ...this._actorProf().emotes } } : {}), ...this._surfExport() };
-    return { schema: 'kfb.pets/1', version: 1, meta: { exportedBy: 'KFB ToolBox Production-02 · Rigging', exportedAt: at,
+    return { schema: 'kfb.pets/1', version: 1, meta: { exportedBy: 'KFB ToolBox Production-08 · Rigging', exportedAt: at,
       fields: 'eye · brow · nose · moustache · mouth · color use the graft-mount.v1 names; parts + original are face-mount.v1 fields' },
       eyeRig: (this.contract && this.contract.eyeRig) || null, face: (this.contract && this.contract.face) || null, mouth: (this.contract && this.contract.mouth) || null, pets: [pet] };
   }
@@ -5148,6 +5190,12 @@ class Component extends DCLogic {
       setMove: () => this.setMode('translate'), setRotate: () => this.setMode('rotate'), setScale: () => this.setMode('scale'),
       drop: () => this.drop(), toggleSnap: () => this._menu('grid'), resetSel: () => this.resetSel(),
       studioHint: s.section === 'pose' && hasPoseOwner ? 'Click a dot to pose' : 'Click to select',
+      showMotionDots: ['studio','anim','lib'].includes(s.tab), motionDotsBg: onoff(s.motionHandles !== false).bg, motionDotsFg: onoff(s.motionHandles !== false).fg,
+      toggleMotionDots: () => { this.closeIK(); this.setState({motionHandles:s.motionHandles === false}); this.ws.ui={...(this.ws.ui||{}),motionHandles:s.motionHandles === false}; },
+      showStudioPose: s.tab === 'studio',
+      studioPoseValue: ws?.active?.[this._rid()]?.mode === 'bind' ? 'bind' : poseOn ? (d?.from ? 'saved:'+d.from : 'preset:'+(d?.angles.preset||'stand')) : 'idle',
+      studioPoseOptions: [{value:'idle',label:'Idle'},{value:'bind',label:'T-pose · bind'}].concat(Object.entries(this.PoseMod?.PRESETS||{}).map(([key,p])=>({value:'preset:'+key,label:p.label})),poses.map(p=>({value:'saved:'+p.id,label:p.name}))).map(p=>({...p,selected:p.value===(ws?.active?.[this._rid()]?.mode==='bind'?'bind':poseOn?(d?.from?'saved:'+d.from:'preset:'+(d?.angles.preset||'stand')):'idle')})),
+      onStudioPose: ev => this.setStudioMode(ev.target.value),
       camFull: () => this.camFull(), camFace: () => this.camFace(), camBody: () => this.camBody(), zoomIn: () => this.zoom(0.85), zoomOut: () => this.zoom(1.18),
       // ik menu
       ikLabel: ikSel ? (IK_LABEL[ikSel] || 'Held item') : '', ikSub, ikIsGrip: ikSel === 'grip',
@@ -5171,7 +5219,7 @@ class Component extends DCLogic {
       noseBg: onoff(rt && rt.face ? rt.face.entry.parts.nose !== 'off' : face.nose !== false).bg, noseFg: onoff(rt && rt.face ? rt.face.entry.parts.nose !== 'off' : face.nose !== false).fg,
       hasFaceRig: !!(rt && rt.face), goRig: () => this.setTab('rig'),
       toggleBrow: () => (rt && rt.face ? this._rigToggle('brows') : this._setFace({ brow: face.brow === false })), toggleNose: () => (rt && rt.face ? this._rigToggle('nose') : this._setFace({ nose: face.nose === false })),
-      visemeRows: (this.MouthMod ? this.MouthMod.VISEMES : [['closed', 'Zu'], ['open', 'Offen'], ['wide', 'Breit'], ['round', 'Rund'], ['smile', 'Lächeln']]).map(([id, l]) => ({ label: l, ...onoff(rt && rt.mouth && !rt.mouth.talking && rt.mouth.viseme === id), pick: () => this.setViseme(id) })),
+      visemeRows: (this.MouthMod ? this.MouthMod.VISEMES : [['closed', 'Zu'], ['open', 'Offen'], ['wide', 'Breit'], ['round', 'Rund'], ['smile', 'Lächeln']]).map(([id, l]) => ({ label: l, ...onoff(rt && rt.mouth && !rt.mouth.talking && (rt.mouth.viseme === id || id === 'closed' && !rt.mouth.viseme && rt.face?.get('mouth.rest') === 'closed')), pick: () => this.setViseme(id) })),
       mouthSetRows: [['male', 'Male'], ['female', 'Female'], ['red', 'Red lips']].map(([id, l]) => ({ label: l, ...onoff(rt && rt.mouth && rt.mouth.set === id), pick: () => { if (rt && rt.mouth) { rt.mouth.setSet(id); this._setFace({ mouth: { ...(face.mouth || {}), set: id } }); } } })),
       ...(() => { const m = rt && rt.mouth, id = m && m.viseme; if (!m || !id || !m.p || !m.p.visemeMap || !this.MouthMod) return { hasVisShape: false, visShapeName: '', visShapeValue: '', visShapeOpts: [], onVisShape: () => {} };
         const nm = ((this.MouthMod.VISEMES.find((x) => x[0] === id)) || [id, id])[1], keys = ['smile', 'neutral', 'm', 'd', 's', 'ee', 'uh', 'ah', 'oh', 'r', 'f', 'woo', 'l'].filter((k) => m.has(k));

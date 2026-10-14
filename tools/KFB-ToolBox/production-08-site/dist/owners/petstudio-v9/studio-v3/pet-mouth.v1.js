@@ -165,14 +165,19 @@ export class PetMouth {
     if (this.tex[name]) return this.tex[name];
     const T = this.THREE;
     if (!this._loader) { this._loader = new T.TextureLoader(); this._loader.setCrossOrigin('anonymous'); }
+    this._texReady = this._texReady || {}; let resolveReady, rejectReady;
+    this._texReady[name] = new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});
+    this._texReady[name].catch(()=>{}); // Unused warm-load errors remain local; the chosen rest shape is awaited explicitly.
     const t = this._loader.load(this._base + this._files[name], (tx) => {
       tx.colorSpace = T.SRGBColorSpace;
       if (name === 'neutral' && tx.image && tx.image.height) { this._asp = tx.image.width / tx.image.height; this._applyScale(); }
-    });
+      resolveReady(tx);
+    }, undefined, error => rejectReady(error || new Error('Mouth texture failed: '+name)));
     t.anisotropy = 4;
     this.tex[name] = t;
     return t;
   }
+  async whenReady(name) { name=this._key(name); if(!name)throw Error('Unknown mouth texture');this._loadTex(name);if(this._texReady?.[name])await this._texReady[name];return this.tex[name]; }
   build() {
     const T = this.THREE;
     this.dispose();
