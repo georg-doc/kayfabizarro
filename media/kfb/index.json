@@ -14,7 +14,7 @@
     ],
     "page": "coverOffset + 1 + floor((cardNumber-1)/4)",
     "quadrant": "(cardNumber-1) % 4",
-    "note": "coverOffset=1 => Seite 1 = Cover, Karten ab Seite 2. v4 schneidet ohne weissen Gutter (m=0), Ink-Edge bleibt."
+    "note": "coverOffset = Zahl der Seiten vor der ersten Kartenseite (0 = Karten ab Seite 1, 1 = Seite 1 Cover, 2 = zwei Vorseiten). coverOffset=1 => Seite 1 = Cover, Karten ab Seite 2. v4 schneidet ohne weissen Gutter (m=0), Ink-Edge bleibt."
   },
   "keyMap": {
     "n": "cardNumber",
@@ -30,8 +30,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 15,
+      "coverOffset": 0,
       "pdf": "1001_Kayfabe_Nights - ADD web ID.pdf",
       "data": "1001_Kayfabe_Nights_-_ADD_web_ID.pdf.json"
     },
@@ -62,7 +62,7 @@
       "title": "The Anti-Rules Manifesto",
       "role": null,
       "gameMode": "KFB",
-      "cardCount": 57,
+      "cardCount": 56,
       "pages": 16,
       "coverOffset": 1,
       "pdf": "Anti-Rules_Toolkit - ADD web ID.pdf",
@@ -107,8 +107,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 15,
+      "coverOffset": 0,
       "pdf": "Cosmic_Grift_-_Dark_Journalism - ADD web ID.pdf",
       "data": "Cosmic_Grift_-_Dark_Journalism_-_ADD_web_ID.pdf.json"
     },
@@ -173,8 +173,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 15,
+      "coverOffset": 0,
       "pdf": "Epistemic_Sabotage_LET_AI_READ_YOUR_COMIC_v1 - ADD web.pdf",
       "data": "Epistemic_Sabotage_LET_AI_READ_YOUR_COMIC_v1_-_ADD_web.pdf.json"
     },
@@ -184,8 +184,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 15,
+      "coverOffset": 0,
       "pdf": "Federal_Kayfabe - ADD web ID.pdf",
       "data": "Federal_Kayfabe_-_ADD_web.pdf.json"
     },
@@ -206,8 +206,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 18,
+      "coverOffset": 2,
       "pdf": "FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS - ADD web ID.pdf",
       "data": "FrizzleBob_s_KayfaBizarro_Kompendium_ELENDER_WICHT_INSULTS_-_ADD_web.pdf.json"
     },
@@ -228,8 +228,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 52,
-      "pages": 14,
-      "coverOffset": 1,
+      "pages": 16,
+      "coverOffset": 2,
       "pdf": "GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02 - ADD web ID.pdf",
       "data": "GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02_-_ADD_web.pdf.json"
     },
@@ -239,8 +239,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 56,
-      "pages": 15,
-      "coverOffset": 1,
+      "pages": 18,
+      "coverOffset": 2,
       "pdf": "Help_I_Am_A_Human - ADD web ID.pdf",
       "data": "Help_I_Am_A_Human_-_ADD_web.pdf.json"
     },
@@ -272,8 +272,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 15,
+      "coverOffset": 0,
       "pdf": "Jung_and_Shinn_A_Guide_to_Cosmic_Cringe - ADD web ID.pdf",
       "data": "Jung_and_Shinn_A_Guide_to_Cosmic_Cringe_-_ADD_web.pdf.json"
     },
@@ -316,8 +316,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 15,
+      "coverOffset": 0,
       "pdf": "Kayfabizarro_Improv_Comedy_WEB_v1 ID.pdf",
       "data": "Kayfabizarro_Improv_Comedy_WEB_v1.pdf.json"
     },
@@ -371,8 +371,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 15,
+      "coverOffset": 0,
       "pdf": "Kayfabizarro_Pulitzer_Punk_WEB_v1 ID.pdf",
       "data": "Kayfabizarro_Pulitzer_Punk_WEB_v1.pdf.json"
     },
@@ -382,8 +382,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 15,
+      "coverOffset": 0,
       "pdf": "Kayfabizarro_Reality_Redrawn_WEB_v1 ID.pdf",
       "data": "Kayfabizarro_Reality_Redrawn_WEB_v1_ID.pdf.json"
     },
@@ -1031,8 +1031,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 13,
+      "coverOffset": 0,
       "pdf": "Museum_of_Modern_Mess - ADD web crop01-13.pdf",
       "data": "Museum_of_Modern_Mess_-_ADD_web.pdf.json"
     },
@@ -1042,8 +1042,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 15,
+      "coverOffset": 0,
       "pdf": "Nibelungen_Booster_Pack_Design - ADD web ID.pdf",
       "data": "Nibelungen_Booster_Pack_Design_-_ADD_web_ID.pdf.json"
     },
@@ -1088,7 +1088,7 @@
       "cardCount": 56,
       "pages": 15,
       "coverOffset": 1,
-      "pdf": "Plato's_Dungeon_Raid - Hero Set 01 - ADD web.pdf",
+      "pdf": "Plato’s_Dungeon_Raid - Hero Set 01 - ADD web.pdf",
       "data": "Plato_s_Dungeon_Raid_-_Hero_Set_01_-_ADD_web.pdf.json"
     },
     {
@@ -1185,8 +1185,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 60,
-      "pages": 16,
-      "coverOffset": 1,
+      "pages": 15,
+      "coverOffset": 0,
       "pdf": "Shadow_Monopoly_Blackrock,_Vanguard_&_Co - ADD web ID.pdf",
       "data": "Shadow_Monopoly_Blackrock__Vanguard___Co_-_ADD_web_ID.pdf.json"
     },
@@ -1219,7 +1219,7 @@
       "gameMode": "KFB",
       "cardCount": 20,
       "pages": 8,
-      "coverOffset": 1,
+      "coverOffset": 2,
       "pdf": "Suppressed_Book_Deck_-_ADD web ID.pdf",
       "data": "Suppressed_Book_Deck_-_ADD_web_ID.pdf.json"
     },
@@ -1263,7 +1263,7 @@
       "gameMode": "KFB",
       "cardCount": 32,
       "pages": 9,
-      "coverOffset": 1,
+      "coverOffset": 0,
       "pdf": "The_Biological_Metropolis - ADD web ID.pdf",
       "data": "The_Biological_Metropolis_-_ADD_web_ID.pdf.json"
     },
@@ -1273,8 +1273,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 36,
-      "pages": 10,
-      "coverOffset": 1,
+      "pages": 9,
+      "coverOffset": 0,
       "pdf": "The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf",
       "data": "The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch_-_ADD_web.pdf.json"
     },
@@ -1284,8 +1284,8 @@
       "role": null,
       "gameMode": "KFB",
       "cardCount": 48,
-      "pages": 13,
-      "coverOffset": 1,
+      "pages": 12,
+      "coverOffset": 0,
       "pdf": "The_Carnival_of_Unsolved_Problems - THERAPY - ADD web ID.pdf",
       "data": "The_Carnival_of_Unsolved_Problems_-_THERAPY_-_ADD_web.pdf.json"
     },
@@ -1374,7 +1374,7 @@
       "cardCount": 56,
       "pages": 15,
       "coverOffset": 1,
-      "pdf": "Uncle_FrizzleBob's_Kayfabizarro_-_Geopolitical_Thrillers_and_Conspiracy_Theories - ADD web ID.pdf",
+      "pdf": "Uncle_FrizzleBob’s_Kayfabizarro_-_Geopolitical_Thrillers_and_Conspiracy_Theories - ADD web ID.pdf",
       "data": "Uncle_FrizzleBob_s_Kayfabizarro_-_Geopolitical_Thrillers_and_Conspiracy_Theories_-_ADD_web_ID.pdf.json"
     },
     {
