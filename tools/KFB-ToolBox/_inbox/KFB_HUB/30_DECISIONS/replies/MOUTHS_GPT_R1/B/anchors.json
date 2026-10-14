@@ -1,0 +1,691 @@
+{
+ "design": "B",
+ "note": "Design B: Zahnluecke/Hasenzaehne, expressiver",
+ "source": "media/3D_Assets/Textures/FrizzleBob-Mouths_PNGs (sheet2.png)",
+ "canvas": [
+  512,
+  512
+ ],
+ "scale": "1.0 = native GPT sheet pixels (relative scale untouched)",
+ "anchor": {
+  "x": 256,
+  "y": 112,
+  "rule": "x = horizontal bbox centre of the mouth. y: OPEN shapes put their upper-lip top edge (median over the central 16% of columns) on anchor.y = upper-lip top of closed, so the upper lip stays under the nose and the jaw opens downward. CLOSED shapes (anchor_mode seam) put their lip line on the lip line of closed (anchor.y + seam_offset).",
+  "seam_offset": 54
+ },
+ "upperLift": {
+  "value_baked": 0.0,
+  "tested": [
+   0.0,
+   0.15
+  ],
+  "rule": "dy = -upperLift * extra_height_px, extra = max(0, h_shape - h_closed) measured from the upper-lip top (centre) to the lowest point; 0 for closed shapes. The upper lip rises by that share of the extra opening height, the rest goes down. PNGs are baked at 0; apply dy in the engine (lift_dy_px lists 0.15)."
+ },
+ "closed_height_px": 137,
+ "closed_width_px": 309,
+ "squash": {
+  "factor": 0.8,
+  "applied_when": "height_ratio_to_closed >= 1.8",
+  "pivot": "upper-lip top (stays fixed)"
+ },
+ "mouths": [
+  {
+   "id": "closed",
+   "file": "closed.png",
+   "trim": "trim/closed.png",
+   "use_as": "X rest / MBP",
+   "talk_core": true,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    96,
+    96
+   ],
+   "bbox_canvas": [
+    101,
+    101,
+    309,
+    137
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    309,
+    137
+   ],
+   "height_ratio_to_closed": 1.0,
+   "width_ratio_to_closed": 1.0,
+   "anchor_mode": "seam",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 166,
+   "extra_height_px": 0.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -0.0
+   },
+   "sheet_bbox": [
+    35,
+    141,
+    309,
+    137
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "smile_closed",
+   "file": "smile_closed.png",
+   "trim": "trim/smile_closed.png",
+   "use_as": "reaction: smile closed",
+   "talk_core": false,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    94,
+    86
+   ],
+   "bbox_canvas": [
+    99,
+    91,
+    314,
+    169
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    314,
+    169
+   ],
+   "height_ratio_to_closed": 1.234,
+   "width_ratio_to_closed": 1.016,
+   "anchor_mode": "seam",
+   "anchor_dy": 15.0,
+   "upper_lip_top_canvas": 127.0,
+   "seam_canvas": 166,
+   "extra_height_px": 0.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -0.0
+   },
+   "sheet_bbox": [
+    392,
+    130,
+    314,
+    169
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "smile_teeth",
+   "file": "smile_teeth.png",
+   "trim": "trim/smile_teeth.png",
+   "use_as": "reaction: grin gap teeth",
+   "talk_core": false,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    94,
+    93
+   ],
+   "bbox_canvas": [
+    100,
+    98,
+    311,
+    152
+   ],
+   "bbox_trim": [
+    6,
+    5,
+    311,
+    152
+   ],
+   "height_ratio_to_closed": 1.109,
+   "width_ratio_to_closed": 1.006,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 152,
+   "extra_height_px": 12.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -1.8
+   },
+   "sheet_bbox": [
+    748,
+    140,
+    311,
+    152
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "laugh",
+   "file": "laugh.png",
+   "trim": "trim/laugh.png",
+   "use_as": "reaction: laugh",
+   "talk_core": false,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    85,
+    97
+   ],
+   "bbox_canvas": [
+    90,
+    102,
+    332,
+    222
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    332,
+    222
+   ],
+   "height_ratio_to_closed": 1.62,
+   "width_ratio_to_closed": 1.074,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 213,
+   "extra_height_px": 86.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -12.9
+   },
+   "sheet_bbox": [
+    1098,
+    107,
+    332,
+    222
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "scream",
+   "file": "scream.png",
+   "trim": "trim/scream.png",
+   "use_as": "reaction: scream / D extreme",
+   "talk_core": true,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    100,
+    101
+   ],
+   "bbox_canvas": [
+    105,
+    106,
+    303,
+    300
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    303,
+    300
+   ],
+   "height_ratio_to_closed": 2.19,
+   "width_ratio_to_closed": 0.981,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 257,
+   "extra_height_px": 168.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -25.2
+   },
+   "sheet_bbox": [
+    31,
+    387,
+    303,
+    300
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "oh",
+   "file": "oh.png",
+   "trim": "trim/oh.png",
+   "use_as": "E+F round ring (one shape for OH and OO)",
+   "talk_core": true,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    144,
+    105
+   ],
+   "bbox_canvas": [
+    149,
+    110,
+    213,
+    236
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    213,
+    236
+   ],
+   "height_ratio_to_closed": 1.723,
+   "width_ratio_to_closed": 0.689,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 227,
+   "extra_height_px": 108.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -16.2
+   },
+   "sheet_bbox": [
+    444,
+    429,
+    213,
+    236
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "small_open",
+   "file": "small_open.png",
+   "trim": "trim/small_open.png",
+   "use_as": "X/C slit open",
+   "talk_core": true,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    100,
+    116
+   ],
+   "bbox_canvas": [
+    106,
+    121,
+    300,
+    110
+   ],
+   "bbox_trim": [
+    6,
+    5,
+    300,
+    110
+   ],
+   "height_ratio_to_closed": 0.803,
+   "width_ratio_to_closed": 0.971,
+   "anchor_mode": "seam",
+   "anchor_dy": 12.0,
+   "upper_lip_top_canvas": 124.0,
+   "seam_canvas": 166,
+   "extra_height_px": 0.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -0.0
+   },
+   "sheet_bbox": [
+    751,
+    498,
+    300,
+    110
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "ah",
+   "file": "ah.png",
+   "trim": "trim/ah.png",
+   "use_as": "C/D talk open (teeth + tongue)",
+   "talk_core": true,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    102,
+    104
+   ],
+   "bbox_canvas": [
+    107,
+    109,
+    297,
+    223
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    297,
+    223
+   ],
+   "height_ratio_to_closed": 1.628,
+   "width_ratio_to_closed": 0.961,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 203,
+   "extra_height_px": 94.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -14.1
+   },
+   "sheet_bbox": [
+    1118,
+    436,
+    297,
+    223
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "grit",
+   "file": "grit.png",
+   "trim": "trim/grit.png",
+   "use_as": "B EE/S (clenched teeth)",
+   "talk_core": true,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    85,
+    96
+   ],
+   "bbox_canvas": [
+    90,
+    101,
+    332,
+    193
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    332,
+    193
+   ],
+   "height_ratio_to_closed": 1.409,
+   "width_ratio_to_closed": 1.074,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 156,
+   "extra_height_px": 56.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -8.4
+   },
+   "sheet_bbox": [
+    18,
+    778,
+    332,
+    193
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "tongue_out",
+   "file": "tongue_out.png",
+   "trim": "trim/tongue_out.png",
+   "use_as": "reaction: tongue out (L/TH stand-in at best)",
+   "talk_core": false,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    114,
+    105
+   ],
+   "bbox_canvas": [
+    119,
+    110,
+    274,
+    260
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    274,
+    260
+   ],
+   "height_ratio_to_closed": 1.898,
+   "width_ratio_to_closed": 0.887,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 217,
+   "extra_height_px": 132.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -19.8
+   },
+   "sheet_bbox": [
+    407,
+    745,
+    274,
+    260
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "grimace",
+   "file": "grimace.png",
+   "trim": "trim/grimace.png",
+   "use_as": "reaction: grimace / lip bite",
+   "talk_core": false,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    90,
+    94
+   ],
+   "bbox_canvas": [
+    95,
+    99,
+    321,
+    207
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    321,
+    207
+   ],
+   "height_ratio_to_closed": 1.511,
+   "width_ratio_to_closed": 1.039,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 151,
+   "extra_height_px": 68.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -10.2
+   },
+   "sheet_bbox": [
+    742,
+    758,
+    321,
+    207
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "smirk",
+   "file": "smirk.png",
+   "trim": "trim/smirk.png",
+   "use_as": "reaction: smirk (asymmetric)",
+   "talk_core": false,
+   "variant_of": null,
+   "squash_y": 1.0,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    102,
+    62
+   ],
+   "bbox_canvas": [
+    107,
+    67,
+    298,
+    233
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    298,
+    233
+   ],
+   "height_ratio_to_closed": 1.701,
+   "width_ratio_to_closed": 0.964,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 197,
+   "extra_height_px": 61.5,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -9.2
+   },
+   "sheet_bbox": [
+    1117,
+    753,
+    298,
+    233
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "scream_sq80",
+   "file": "scream_sq80.png",
+   "trim": null,
+   "use_as": "reaction: scream / D extreme",
+   "talk_core": true,
+   "variant_of": "scream",
+   "squash_y": 0.8,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    100,
+    103
+   ],
+   "bbox_canvas": [
+    105,
+    107,
+    303,
+    240
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    303,
+    300
+   ],
+   "height_ratio_to_closed": 1.752,
+   "width_ratio_to_closed": 0.981,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 228,
+   "extra_height_px": 109.2,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -16.4
+   },
+   "sheet_bbox": [
+    31,
+    387,
+    303,
+    300
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "tongue_out_sq80",
+   "file": "tongue_out_sq80.png",
+   "trim": null,
+   "use_as": "reaction: tongue out (L/TH stand-in at best)",
+   "talk_core": false,
+   "variant_of": "tongue_out",
+   "squash_y": 0.8,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    114,
+    106
+   ],
+   "bbox_canvas": [
+    119,
+    110,
+    274,
+    208
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    274,
+    260
+   ],
+   "height_ratio_to_closed": 1.518,
+   "width_ratio_to_closed": 0.887,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 196,
+   "extra_height_px": 80.4,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -12.1
+   },
+   "sheet_bbox": [
+    407,
+    745,
+    274,
+    260
+   ],
+   "red_px_outside": 0
+  }
+ ]
+}

@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · UFO Phase 1b
+- Knüppel abgeschnitten (Skript cut-joysticks.mjs, auf A und Master), A_nojoy 398 860 Dreiecke/14,1 MB; Maßstäbe 4,5/6/8 m pro Einheit mit FrizzleBob v5b + KayKit (Empfehlung 6 m); B1-Billboard mit Querformat-Karte vor dem Monitor. Erste Abnahme im neuen Format (Einzelbilder, Bildfolge im Hub: u04–u06).
+
 ## 2026-10-15 · Abnahme-Format, UFO-Urteil
 - V-253: keine Kontaktbögen/Spalten mehr; Einzelbilder groß, Hub zeigt Bildfolgen in voller Breite mit Blättern (Hub v6).
 - V-254: UFO A; zwei Knüppel abschneiden; B1-Billboard (Querformat) vor den Monitor; UFO größer skalieren, mit echten Figuren belegen.
