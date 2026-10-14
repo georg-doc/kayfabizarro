@@ -1,6 +1,6 @@
 {
   "schema": "kfb.asset-private-live.v1",
-  "revision": "2026-10-14.r4-ws1-meshy-amphitheater",
+  "revision": "2026-10-14.r5-ws1-meshy-amphitheater-runtime-variant",
   "updatedAt": "2026-10-14T16:40:00+02:00",
   "assets": [
     {
@@ -67,7 +67,11 @@
       "delivery": {
         "previewStatus": "READY",
         "previewUrl": null,
-        "runtimeUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/829d551d5cf45eb2fe18ce7a532e37ba7282005a/media/3D_Assets/MeshyModels/browser/kfb-stage-amphitheater-meshy.browser.v1.glb"
+        "runtimeUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/829d551d5cf45eb2fe18ce7a532e37ba7282005a/media/3D_Assets/MeshyModels/browser/kfb-stage-amphitheater-meshy.browser.v1.glb",
+        "runtimeVariant": "kfb-stage-amphitheater-meshy-browser-v1",
+        "runtimeSha256": "3f79037e51ab3a745243aae6ffb40aba3670226a960199b36a02e45d05051dd4",
+        "runtimeBytes": 11669748,
+        "runtimeTag": "asset/amph-browser-v1"
       },
       "folder": "private://production-inbox",
       "format": "glb",
