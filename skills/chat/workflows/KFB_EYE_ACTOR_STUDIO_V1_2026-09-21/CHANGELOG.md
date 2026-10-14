@@ -3,7 +3,7 @@
 
 ## 2026-10-14 · Video A transcript analyzed; Video B awaited
 
-Received Georg's exact timecoded text for `y3Q3oD7A1kM` (0:03–8:57); committed a timed 13-row procedure and uncertainty classification to the existing Claude-Design mesh recovery brief. Evidence: independently movable gaze controller using `Track To` -Y / Z; top/bottom pre-existing lid meshes copy X rotation from a lid bone, lower inverted; Y/Z rotation locks; paired master eye/lid controls; neutral frame 1, gaze 25, closed 35, reopened 45. Critical exclusion: **the video teaches rigging, not mesh construction**, and cannot fix prior human-rejected lid tears. ASR uncertainty at 7:03: "eyebones" in eyelid master section. Video B not yet transcribed. No runtime/source edits, test executions, browser/site publish, merge or Live.
+Received Georg's exact timecoded text for `y3Q3oD7A1kM` (0:03–8:57); committed a timed 11-step procedure and uncertainty classification to the existing Claude-Design mesh recovery brief. Evidence: independently movable gaze controller using `Track To` -Y / Z; top/bottom pre-existing lid meshes copy X rotation from a lid bone, lower inverted; Y/Z rotation locks; paired master eye/lid controls; neutral frame 1, gaze 25, closed 35, reopened 45. Critical exclusion: **the video teaches rigging, not mesh construction**, and cannot fix prior human-rejected lid tears. ASR uncertainty at 7:03: "eyebones" in eyelid master section. Video B not yet transcribed. No runtime/source edits, test executions, browser/site publish, merge or Live.
 
 Next gate: `EYELID_VIDEO_B_TRANSCRIPT_INTAKE_THEN_CLAUDE_DESIGN`.
 
