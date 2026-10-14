@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · Billboard-Standard
+- V-220: replies/BILLBOARD_STANDARD_R1.md – Plain-Billboard (World Billboard Clay01 r2), Karte in die Bildfläche eingesetzt, Hypernormalisation-Engine (START_HERE + H13), ein Scheduler. An WS1 (WS0_TO_WS1.md) und für Claude Design.
+
 ## 2026-10-14 · Kopiertexte für Georg auf GitHub
 - replies/PASTE_FOR_GEORG.md: alle Texte zum Weitergeben (WS1, Claude Design, NotebookLM Schritt 1+2) – Georg kann vom anderen Rechner nicht aus dem Chat kopieren.
 

@@ -1,0 +1,29 @@
+# Billboard-Standard R1 · Hypernormalisation + Plain-Billboard (14.10.2026, V-220)
+
+Dies ist der verbindliche Standard für jedes Billboard und jede Karte auf einem Billboard, in der Wireface-Bühne, im Spiel und in Claude-Design-Entwürfen. Nichts davon wird nachgebaut; es wird übernommen (V-206).
+
+## 1 · Körper: World Billboard Clay01, Variante `plain`
+- **Quelle:** Branch `work/billboard-island-integration-01-2026-10-01`, Ordner `tools/KFB-ToolBox/_inbox/KFB_WORLD_BILLBOARD_CLAY01_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r2/`. Die Variante r1 liegt auch auf main.
+  - `KFB Billboard Clay Island.dc.html`: die Design-Vorlage (Claude Design);
+  - `briefd/billboard-clay.js`, `briefd/billboard-stage.js`: Körper und Bühne;
+  - `billboard.embed-spec.v1.json`: Einbau-Vertrag (Schema `kfb.billboard-embed-spec/1`).
+- **Status laut RETURN r2:** `DESIGN_DONOR_APPROVED_TUNE`.
+  - Körperstile `plain` und `tv` (flacher Cartoon-Fernseher auf zwei Säulen), daneben `highway`.
+  - Runde Innenecken für alle Stile (`faceCornerM`).
+- **Für KFB gilt `bodyStyle: "plain"`.** Knet-Körper, keine Tusche-Outline (passend zu V-204).
+
+## 2 · Karte im Billboard: eingesetzt, nicht aufgeklebt
+- **Bildfläche (face):** 12 × 6 m, Seitenverhältnis 2:1, als CanvasTexture mit 1024 × 512 px, mit runden Innenecken.
+- **Die Karte wird in die Bildfläche gesetzt.**
+  - Sie ist Inhalt der CanvasTexture bzw. des Content-Modus, nicht ein zweites Objekt davor.
+  - Die Karte kommt als Querformat-Viertelseite über `cardImage(deckId, n)` und wird `fit` eingepasst, vollständig und unbeschnitten.
+  - Rand bzw. Hintergrund der Fläche stammt aus der Insel- bzw. Kartenpalette.
+- **Nicht erlaubt:** eine Karte als flaches Rechteck vor dem Billboard, ein Hochformat-Aufsteller oder eine Platzhalterkarte (siehe `WIREFACE_STAGE_VISUAL_DONOR_FAIL_2026-10-14.md`).
+
+## 3 · Engine: Hypernormalisation
+- **Planungs-Wahrheit:** Branch `planning/billboard-quote-hypernorm-curator-2026-10-04`, `skills/chat/workflows/KFB_BILLBOARD_QUOTE_HYPERNORMALISATION_2026-10-04/START_HERE.md` (dazu RETURN.md, TEST_PLAN.md, QUOTE_POOL_SCHEMA.json).
+- **Bild-Besitzer: H13 Kaleidoscope** (main): `tools/KFB-ToolBox/_inbox/KFB Billboard Kaleidoscope H13/kfb-collage-session-2026-09-30/KFB Billboard Kaleidoscope H13.dc.html`, mit `00_ONBOARDING.md`, `DOKU_H5-H13.md` und `HANDOVER_WSA.md`.
+  - H13 ist eingefroren. Arbeit daran nur durch Übernahme bzw. eine H14-Ableitung.
+- **Ablauf:** Karte bzw. Welt wählt ein kuratiertes Zitat. Es wird als Hypernormalisation-Lesefolge abgespielt, dann folgen Quelle, FrizzleQuestion und optional eine Reflexion. Ein Knet-TV-Knopf unter dem Billboard öffnet die Vollbild-Lesefassung, ohne neu zu starten.
+- **Genau ein `BillboardScheduler.tick()`**, kein zweiter Renderer, keine zweite Kamera, keine zweite Bildschleife. Audio ist Verbraucher des KFB-Audio-Vertrags.
+- **Laut RETURN 07.10. ist noch kein Zitat für die Laufzeit freigegeben.** Bis dahin nur freigegebene Inhalte bzw. Karteninhalt.

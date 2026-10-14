@@ -2541,6 +2541,20 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-220",
+   "date": "2026-10-14",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Billboard-Standard (replies/BILLBOARD_STANDARD_R1.md): Körper = World Billboard Clay01 r2 in der Variante plain (DESIGN_DONOR_APPROVED_TUNE, runde Innenecken, keine Tusche); Karte wird in die 12 × 6 m-Bildfläche (2:1, CanvasTexture 1024 × 512) eingesetzt, als Querformat-Viertelseite über cardImage, fit, vollständig – nie als davor geklebtes Rechteck oder Hochformat-Aufsteller. Engine = Hypernormalisation nach START_HERE (planning/billboard-quote-hypernorm-curator-2026-10-04) mit H13 Kaleidoscope als Bild-Besitzer und genau einem BillboardScheduler. Gilt für Wireface-Bühne, Spiel (WS1) und Claude Design.",
+   "values": {},
+   "owner": "WS1 + Claude Design",
+   "check": "Bildpaar Standard | Stand",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Claude Design hatte weder die Hypernormalisation-Engine noch das Plain-Billboard; Karte war aufgeklebt.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2602,7 +2616,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:112",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:121",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
