@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#c9c4bd}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"/kfb-planet/node_modules/three/build/three.module.js","three/addons/":"/kfb-planet/node_modules/three/examples/jsm/"}}</script></head><body>
+<script type="module">
+// Quell-Isolation Meshy-Amphitheater: Original-GLB unverändert laden, neutrale Beleuchtung, feste Kamerapositionen.
+import * as THREE from 'three'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+const W = 1536, H = 864
+const r = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); r.setSize(W, H); r.setPixelRatio(1); r.outputColorSpace = THREE.SRGBColorSpace; r.toneMapping = THREE.ACESFilmicToneMapping
+document.body.appendChild(r.domElement)
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#c9c4bd')
+scene.add(new THREE.HemisphereLight('#ffffff', '#8a7a66', 1.6))
+const sun = new THREE.DirectionalLight('#fff4e0', 2.2); sun.position.set(2, 4, 3); scene.add(sun)
+const cam = new THREE.PerspectiveCamera(35, W / H, 0.001, 100)
+let model = null, info = null
+window.load = async (url) => {
+  const t0 = performance.now()
+  const g = await new GLTFLoader().loadAsync(url)
+  model = g.scene; scene.add(model)
+  const box = new THREE.Box3().setFromObject(model), size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3())
+  let tris = 0, maps = []; model.traverse((o) => { if (o.isMesh) { tris += o.geometry.index ? o.geometry.index.count / 3 : o.geometry.attributes.position.count / 3; const m = o.material; maps = ['map', 'normalMap', 'roughnessMap', 'metalnessMap'].map((k) => [k, m[k] ? m[k].image.width + '×' + m[k].image.height : null]) } })
+  info = { ms: Math.round(performance.now() - t0), size: size.toArray(), center: c.toArray(), tris, maps, gl: r.info.memory }
+  return info
+}
+// Ansicht: Azimut (Grad, 0 = +Z), Elevation (Grad), Abstand (× Größe), Ziel-Versatz
+window.view = (az, el, dist = 1.6, ty = 0, fov = 35) => {
+  const box = new THREE.Box3().setFromObject(model), c = box.getCenter(new THREE.Vector3()), R = box.getSize(new THREE.Vector3()).length() / 2
+  const a = THREE.MathUtils.degToRad(az), e = THREE.MathUtils.degToRad(el)
+  cam.fov = fov; cam.updateProjectionMatrix()
+  cam.position.set(c.x + Math.sin(a) * Math.cos(e) * R * dist, c.y + Math.sin(e) * R * dist, c.z + Math.cos(a) * Math.cos(e) * R * dist)
+  cam.lookAt(c.x, c.y + ty * R, c.z); r.render(scene, cam); return r.domElement.toDataURL('image/jpeg', 0.9)
+}
+// Innenansicht: Augenhöhe auf der Bühnenfläche, Blick in Richtung az
+window.inside = (az, h = 0.03, fov = 70) => {
+  const box = new THREE.Box3().setFromObject(model), c = box.getCenter(new THREE.Vector3())
+  const a = THREE.MathUtils.degToRad(az); cam.fov = fov; cam.updateProjectionMatrix()
+  cam.position.set(c.x, box.min.y + h, c.z); cam.lookAt(c.x + Math.sin(a), box.min.y + h + 0.05, c.z + Math.cos(a)); r.render(scene, cam); return r.domElement.toDataURL('image/jpeg', 0.9)
+}
+window.ready = true
+</script></body></html>

@@ -1,0 +1,139 @@
+{
+ "magic": "glTF",
+ "ver": 2,
+ "len": 73029272,
+ "generator": "pygltflib@v1.16.5",
+ "gltf": "2.0",
+ "extensionsUsed": [],
+ "extensionsRequired": [],
+ "scenes": 1,
+ "nodes": [
+  {
+   "mesh": 0,
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ]
+  }
+ ],
+ "meshes": 1,
+ "prims": [
+  {
+   "mode": 4,
+   "verts": 861843,
+   "tris": 1622044,
+   "attrs": [
+    "POSITION",
+    "NORMAL",
+    "TEXCOORD_0"
+   ],
+   "material": 0,
+   "min": [
+    -0.9522969722747803,
+    -0.2468400001525879,
+    -0.8495579957962036
+   ],
+   "max": [
+    0.950721025466919,
+    0.24269999563694,
+    0.8518750071525574
+   ]
+  }
+ ],
+ "totals": {
+  "verts": 861843,
+  "tris": 1622044
+ },
+ "materials": [
+  {
+   "base": 0,
+   "baseFactor": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "mr": 1,
+   "metal": 1,
+   "rough": 1,
+   "normal": 2,
+   "doubleSided": true,
+   "alpha": "OPAQUE",
+   "ext": []
+  }
+ ],
+ "textures": [
+  {
+   "sampler": 0,
+   "source": 0
+  },
+  {
+   "sampler": 1,
+   "source": 1
+  },
+  {
+   "sampler": 2,
+   "source": 2
+  }
+ ],
+ "images": [
+  {
+   "i": 0,
+   "mime": "image/jpeg",
+   "bytes": 14097732,
+   "w": 4096,
+   "h": 4096
+  },
+  {
+   "i": 1,
+   "mime": "image/jpeg",
+   "bytes": 1912607,
+   "w": 2048,
+   "h": 2048
+  },
+  {
+   "i": 2,
+   "mime": "image/jpeg",
+   "bytes": 9973112,
+   "w": 4096,
+   "h": 4096
+  }
+ ],
+ "samplers": [
+  {
+   "magFilter": 9729,
+   "minFilter": 9987,
+   "wrapS": 10497,
+   "wrapT": 10497
+  },
+  {
+   "magFilter": 9729,
+   "minFilter": 9987,
+   "wrapS": 10497,
+   "wrapT": 10497
+  },
+  {
+   "magFilter": 9729,
+   "minFilter": 9987,
+   "wrapS": 10497,
+   "wrapT": 10497
+  }
+ ],
+ "animations": 0,
+ "skins": 0,
+ "binBytes": 73026956
+}
