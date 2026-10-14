@@ -91,7 +91,7 @@ Outcome: one intact, visually convincing compact upper+lower Claymation eyelid s
 - Claude Design outputs source cut and 3D evidence plus concise recipient contract to the SAME EyeRig owner. If source/geometry cannot be viewed in real 3D, report BLOCKED; do not claim pass from synthetic illustrations.
 
 ## Execution limits / Return
-Current operation is RESEARCH/BRIEF PREPARED only; no Claude Design run launched; no tutorial transcripts yet; no new browser tests or new runtime claim.
+Current operation is RESEARCH/BRIEF PREPARED only; no Claude Design run launched; VIDEO A timecoded transcript received from Georg and analyzed; VIDEO B transcript still pending; no new browser tests or runtime claim.
 Store eventual result under the existing PR #159 donor branch; receiving EyeRig-v6 PR #104 adopts only following independent 3D visual PASS and export parity.
 Do not merge, change profiles, promote Live, or create Cloudflare Stage.
 Exactly one next gate: `EYELID_VIDEO_TRANSCRIPTS_SOURCE_PIN_AND_CLAUDE_DESIGN_INTAKE`.
