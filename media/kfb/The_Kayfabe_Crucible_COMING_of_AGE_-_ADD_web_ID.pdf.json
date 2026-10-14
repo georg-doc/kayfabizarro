@@ -20,18 +20,20 @@
       "cardNumber": 1,
       "cardName": "The Blanket of Innocence",
       "grade": 1,
-      "power": "Block 1 attack, but permanently reduce your Max Health.",
-      "lore": "The illusion of safety only delays the beating. Innocence must be sacrificed to gain wisdom. To refuse is to remain a victim.",
+      "power": "Block 1 attack, but permanently reduce your Max Health. The illusion of safety only delays the beating.",
+      "lore": "Innocence must be sacrificed to gain wisdom. To refuse is to remain a victim.",
       "gradeReason": "Protection-as-trap is instantly embodied. No explanation needed.",
       "artworkPrompt": "Style: ink-wash cartoon. Subject: small puppy hiding under torn blanket while giant bear looms. Mood: false security.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Blanket of Innocence",
         "power": "Block 1 attack, but permanently reduce your Max Health.",
-        "lore": "he illusion of safety only delays the beating. Welcome To the Ring of S",
+        "lore": "The illusion of safety only delays the beating. Innocence must be sacrificed to gain wisdom. To refuse is to remain a victim."
+      },
+      "printTypo": "Druck: 'delaya the beating'; der Satz steht im Druck vor dem LORE-Label (also im POWER-Block)",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p2 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -48,16 +50,18 @@
       "cardName": "The Mask of the Gimmick",
       "grade": 2,
       "power": "Ignore all ring effects this turn. You cannot attack.",
-      "lore": "The Mask is a survival mechanism that worked once, and is now your trap.",
+      "lore": "The gimmick is a survival mechanism that worked once, and is now your trap.",
       "gradeReason": "Sharp concept but wrestling 'gimmick' frame gates the instant read slightly.",
       "artworkPrompt": "Style: ink-wash cartoon. Subject: masked character frozen mid-ring while fire burns around them. Mood: trapped by persona.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Mask of the Gimmick",
         "power": "Ignore all ring effects this turn. You cannot attack.",
-        "lore": "The gimmick is a survival mechanism that worked once, and is now your trap.",
+        "lore": "The Mask is a survival mechanism that worked once, and is now your trap."
+      },
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p2 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -77,14 +81,10 @@
       "lore": "You aren't discovering the world. You are being formed by it, violently.",
       "gradeReason": "Literary reference (Bildungsroman) gates it; lore lands hard for those who catch it.",
       "artworkPrompt": "Style: ink-wash cartoon. Subject: young hound being flung across ring by older competitors. Mood: violent formation.",
-      "print": {
-        "cardName": "The Classic Bildungs-Rumble",
-        "power": "Discard your Naivety tokens to gain Responsibility buffs.",
-        "lore": "",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p3 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -95,14 +95,10 @@
       "lore": "The system knows best. That is the lie. Resistance is your only moral duty.",
       "gradeReason": "Instantly puts player in YA resistance mode. Every teenager knows this cage.",
       "artworkPrompt": "Style: ink-wash cartoon. Subject: raccoon in dystopian arena surrounded by oppression tokens glowing red. Mood: righteous fury.",
-      "print": {
-        "cardName": "The YA Dystopian Cage Match",
-        "power": "Deal damage equal to the number of Oppression tokens on the board.",
-        "lore": "Same brutal destruction of your worldview.",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p3 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -229,7 +225,12 @@
       "power": "If you have no Allies on the board, gain +5 Base Attack.",
       "lore": "The terrifying reality of individual survival. Nobody is coming to save you.",
       "gradeReason": "Nobody is coming to save you. Full stop. Plays itself.",
-      "artworkPrompt": "Style: ink-wash cartoon. Subject: lone figure walking spotlight entrance tunnel, empty arena, no cheering. Mood: brutal solitude."
+      "artworkPrompt": "Style: ink-wash cartoon. Subject: lone figure walking spotlight entrance tunnel, empty arena, no cheering. Mood: brutal solitude.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p6 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 21,
@@ -266,13 +267,10 @@
       "lore": "You must overcome BOTH the need for comfort and the refusal of responsibility.",
       "gradeReason": "Truby screenwriting reference is opaque; lore states the formula without making you feel it.",
       "artworkPrompt": "Style: ink-wash cartoon. Subject: raccoon discarding comfort blanket and shield simultaneously, leveling up. Mood: double overcoming.",
-      "print": {
-        "cardName": "The Truby Two-Step",
-        "power": "alragon's tvwet pounted on buty, both animals of this Discard 2 Weakness.. cards to permanently upgrade your Base Stats.",
-        "lore": "You must overcome BOTH the need for comfort and the refusal of responsibility.",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p7 BR",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -354,7 +352,12 @@
       "power": "Reveal your hand to your opponent. Gain 1 Trust token immediately.",
       "lore": "Simplistic, trusting, authority-blind. You speak the words they gave you.",
       "gradeReason": "You speak the words they gave you. Every player remembers performing this. G1 anchor.",
-      "artworkPrompt": "Style: ink-wash cartoon. Subject: golden retriever puppy at microphone reciting from script, crowd applauding. Mood: innocent compliance."
+      "artworkPrompt": "Style: ink-wash cartoon. Subject: golden retriever puppy at microphone reciting from script, crowd applauding. Mood: innocent compliance.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p10 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 34,
@@ -373,13 +376,11 @@
       "lore": "Splintered, contradictory transition. The old voice is dead; the new one isn't born.",
       "gradeReason": "Transition limbo is sharp; card has a label error ('LOWER' instead of 'LORE') — production issue.",
       "artworkPrompt": "Style: ink-wash cartoon. Subject: chameleon mid-color-change at microphone, words fragmenting around them. Mood: voice in transit.",
-      "print": {
-        "cardName": "The Phase 3 Stuttering Shoot",
-        "power": "Discard a card to cancel an opponent's card, but end your turn immediately. cancel an opponent's card, the new: turn.",
-        "lore": "Splintered, contradictory transition. The old voice is dead; the new one isn't born.",
+      "printTypo": "Druck enthält zusätzlich eine verstümmelte Doppelzeile ('LOWER: Discard a card to cancel an opponent's card, the new; turn.')",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p10 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -399,13 +400,10 @@
       "lore": "Physical maturation wildly outpaces psychoical readiness. The body becomes a trap.",
       "gradeReason": "Mechanic-lore match is excellent; 'psychoical' is a visible typo that undercuts the card.",
       "artworkPrompt": "Style: ink-wash cartoon. Subject: teenage bear massively overmuscled, swinging wildly at random targets. Mood: body outrunning mind.",
-      "print": {
-        "cardName": "The Roid-Rage Growth Spurt",
-        "power": "+5 Attack, What the but you lose control?! of your target (roll a die to select).",
-        "lore": "Physical maturation wildly outpaces psychoical readiness. The body becomes a trap.",
+      "textSource": {
         "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p11 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -433,7 +431,13 @@
       "power": "Swap a character from your Bench with your Active character.",
       "lore": "The physical threshold of psychological change. You cannot return to the locker room.",
       "gradeReason": "Wrestling fans recognize Gorilla Position instantly. Threshold-of-no-return is poetic G1.",
-      "artworkPrompt": "Style: ink-wash cartoon. Subject: gorilla standing at curtain threshold, reaching back to pull waiting character forward, no return path. Mood: threshold crossing."
+      "artworkPrompt": "Style: ink-wash cartoon. Subject: gorilla standing at curtain threshold, reaching back to pull waiting character forward, no return path. Mood: threshold crossing.",
+      "printTypo": "Text steht im Druck zweimal (Karte und Fußzeile der Seite), Fußzeile mit Zusatz 'to purendor.'",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p11 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 41,
@@ -460,7 +464,12 @@
       "power": "Draw 5 cards, then instantly discard them all.",
       "lore": "SIN: Instant wisdom without incremental pain. Real growth is paid in installments.",
       "gradeReason": "Draw 5, discard all — the mechanic IS the SIN. No explanation needed. Perfect.",
-      "artworkPrompt": "Style: ink-wash cartoon. Subject: character surrounded by light bulbs that all shatter instantly, hands empty. Mood: hollow epiphany."
+      "artworkPrompt": "Style: ink-wash cartoon. Subject: character surrounded by light bulbs that all shatter instantly, hands empty. Mood: hollow epiphany.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p12 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 44,
@@ -505,7 +514,12 @@
       "power": "Game Over. Tally your remaining Trauma tokens to calculate your final identity score.",
       "lore": "Tension resolved. The illusion is dead. Now, who the hell are you?",
       "gradeReason": "Who the hell are you? Perfect closer. No embellishment needed.",
-      "artworkPrompt": "Style: ink-wash cartoon. Subject: lone animal in empty arena after match, folding chair in spotlight, scoreboard blank. Mood: empty arrival."
+      "artworkPrompt": "Style: ink-wash cartoon. Subject: lone animal in empty arena after match, folding chair in spotlight, scoreboard blank. Mood: empty arrival.",
+      "textSource": {
+        "source": "PDF v05 The_Kayfabe_Crucible_COMING_of_AGE - ADD web ID.pdf p13 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     }
   ],
   "cardCount": 48,
