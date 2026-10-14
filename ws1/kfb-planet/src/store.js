@@ -33,6 +33,8 @@ export const useGame = create((set, get) => ({
   near: null,
   dialog: { kind: 'start', id: 1 },
   emote: null,
+  choice: null,                          // offene Spielerwahl { id } (S5c), Ergebnis in lastChoice
+  lastChoice: null,
   speech: null,                          // letzte Sprechblase als Ereignis { id, anchor, line, kind, color } (S5a/S5b)
   assisting: false,
   setNear: (near) => { const o = get().near; if ((o?.type || null) !== (near?.type || null) || o?.card?.idx !== near?.card?.idx) set({ near }) },
@@ -48,6 +50,10 @@ export const useGame = create((set, get) => ({
   setStoryMode: (storyMode) => set({ storyMode }),
   flashStage: () => set({ stageFlash: performance.now() }),
   // line: Zeile aus dem Pool-Leser (poolReader.lineFor); andere Objekte zeigt der Host als „…“ (Vertrag §5)
+  openChoice: () => set({ choice: { id: (get().choice?.id || get().lastChoice?.choiceId || 0) + 1 } }),
+  closeChoice: () => set({ choice: null }),
+  // result: { id: 'bingo'|'boggle'|'bongo'|'bloedsinn', label } oder { id: 'own', text }
+  choose: (result) => set({ lastChoice: { ...result, choiceId: get().choice?.id ?? 0 }, choice: null }),
   say: (anchor, line, kind = 'speech', color) => set({ speech: { id: (get().speech?.id || 0) + 1, anchor, line, kind, color } }),
   playEmote: (name, ms = 1600) => { const e = { name, t: performance.now() }; set({ emote: e }); setTimeout(() => get().emote === e && set({ emote: null }), ms) },
 

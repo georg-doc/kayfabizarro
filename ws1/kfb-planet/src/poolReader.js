@@ -71,5 +71,14 @@ export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {},
   }
 }
 
+// Spielerwahl (S5c): feste Zurufe aus dem Studio-Vertrag oder bis zu 8 eigene Wörter des Spielers. Beides ist
+// kein vom Spiel erzeugter Text; der Host zeigt es als Sprechblase der Spielfigur.
+export const ZURUF_LABELS = ['KayfaBINGO!', 'KayfaBOGGLE?', 'KayfaBONGO!', 'BLÖDSINN!']
+export function zurufLine(label) { return ZURUF_LABELS.includes(label) ? issue({ text: label, parts: [label], source: 'ZURUF' }) : null }
+export function playerLine(text) {
+  const t = String(text || '').replace(/\s+/g, ' ').trim(); const n = t ? t.split(' ').length : 0
+  return n >= 1 && n <= 8 ? issue({ text: t, parts: [t], source: 'PLAYER' }) : null
+}
+
 // Nur für Tests mit URL-Schalter (#debug/#hosttest): ausdrücklich markierte Prüf-Zeile, nie im Spiel.
 export const testLine = (parts) => issue({ text: parts.join(' / '), parts, source: 'TEST' })

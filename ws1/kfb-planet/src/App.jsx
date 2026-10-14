@@ -13,6 +13,7 @@ import HexWorld from './HexWorld'
 import { SCENE } from './scene'
 import ModuleHost from './ModuleHost'
 import BubbleHost from './BubbleHost'
+import ChoiceHost from './ChoiceHost'
 import { MOVE_MAP } from './hostKeys'
 import { createProbe } from './probeModule'
 import { useState, useEffect } from 'react'
@@ -51,6 +52,7 @@ export default function App() {
               {location.hash.includes('hosttest') && <HostTest />}
               <StageShow />
               <BubbleHost />
+              <ChoiceHost />
               <Player />
             </Physics>
           </Suspense>

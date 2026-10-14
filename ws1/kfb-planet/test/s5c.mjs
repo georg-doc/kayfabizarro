@@ -1,0 +1,66 @@
+// S5c Spielerwahl · Host-Vertrag R1.2 §4, Studio-Vertrag „Zurufe (Player)“: 2 × 2, Labels/Tasten fix, ≥ 44 px,
+// Stempel 420 ms, optional bis 8 eigene Wörter. Plain ohne Tusche (V-204/V-214). Controller aus bei offener Wahl (§3.5).
+import fs from 'fs'
+import { openPage, report } from './_page.mjs'
+fs.mkdirSync('test/out', { recursive: true })
+const { browser, page, errs } = await openPage('#debug,seed=4242')
+await page.waitForFunction(() => window.__kfbChoice && window.__kfbStore && window.__kfb, null, { timeout: 90000 })
+await page.evaluate(() => window.__kfbStore.getState().closeDialog())
+await page.waitForTimeout(2500)
+const bubbleTexts = () => page.evaluate(() => window.__kfbBubbles().filter((b) => b.anchor === 'player').map((b) => b.text))
+
+await page.evaluate(() => window.__kfbChoice.open())
+await page.waitForTimeout(400)
+const ui = await page.evaluate(() => {
+  const el = document.querySelector('#ui-choice [data-kind="choice"]')
+  const btns = [...el.querySelectorAll('[data-key]')].map((b) => { const r = b.getBoundingClientRect(); const cs = getComputedStyle(b); const badge = getComputedStyle(b.firstElementChild); return { key: b.dataset.key, label: b.lastElementChild.textContent, color: getComputedStyle(b.lastElementChild).color, font: getComputedStyle(b.lastElementChild).fontFamily, h: r.height, x: Math.round(r.x), y: Math.round(r.y), border: cs.borderTopWidth + ' ' + cs.borderTopStyle, badgeBorder: badge.borderTopWidth + ' ' + badge.borderTopStyle, badgeBg: badge.backgroundColor } })
+  const paths = [...el.querySelectorAll('svg path')].map((p) => p.getAttribute('stroke'))
+  return { btns, paths, inSlot: !!el.closest('#ui-choice'), ctrl: window.__kfb.ctrl }
+})
+await page.screenshot({ path: 'test/out/s5c_choice.png' })
+// Figur steht bei offener Wahl
+const p0 = await page.evaluate(() => window.__kfb.pos); await page.keyboard.down('KeyW'); await page.waitForTimeout(1500); await page.keyboard.up('KeyW'); const p1 = await page.evaluate(() => window.__kfb.pos)
+const moveWithChoice = Math.hypot(p1[0] - p0[0], p1[2] - p0[2])
+// Taste 3 -> Stempel, nach 420 ms zu, Ergebnis + Spielerblase
+await page.keyboard.press('Digit3')
+await page.waitForTimeout(150)
+const mid = await page.evaluate(() => ({ open: window.__kfbChoice.isOpen(), pickedScale: document.querySelector('#ui-choice [data-key="3"]')?.style.transform, otherOpacity: document.querySelector('#ui-choice [data-key="1"]')?.style.opacity }))
+await page.waitForTimeout(500)
+const after = await page.evaluate(() => ({ open: window.__kfbChoice.isOpen(), last: window.__kfbChoice.last(), ctrl: window.__kfb.ctrl }))
+await page.waitForTimeout(300)
+const zurufBubble = await bubbleTexts()
+// eigene Wörter: 9 Wörter abgelehnt, 5 Wörter angenommen; Ziffern im Feld wählen nichts
+await page.evaluate(() => window.__kfbChoice.open())
+await page.waitForTimeout(300)
+await page.click('#ui-choice [data-own]')
+await page.keyboard.type('one two three four five six seven eight nine 4')
+await page.keyboard.press('Enter')
+await page.waitForTimeout(600)
+const nineRejected = await page.evaluate(() => window.__kfbChoice.isOpen())
+await page.fill('#ui-choice [data-own]', '')
+await page.keyboard.type('I want my cookie back')
+await page.keyboard.press('Enter')
+await page.waitForTimeout(700)
+const own = await page.evaluate(() => ({ open: window.__kfbChoice.isOpen(), last: window.__kfbChoice.last() }))
+await page.waitForTimeout(300)
+const ownBubble = await bubbleTexts()
+await browser.close()
+
+const want = [['1', 'KayfaBINGO!'], ['2', 'KayfaBOGGLE?'], ['3', 'KayfaBONGO!'], ['4', 'BLÖDSINN!']]
+process.exit(report('s5c choice', {
+  inHostSlot: ui.inSlot,
+  labelsAndKeysExact: JSON.stringify(ui.btns.map((b) => [b.key, b.label])) === JSON.stringify(want),
+  twoByTwo: ui.btns[0].y === ui.btns[1].y && ui.btns[2].y === ui.btns[3].y && ui.btns[0].x === ui.btns[2].x && ui.btns[0].y < ui.btns[2].y,
+  targets44: ui.btns.every((b) => b.h >= 44),
+  // V-204 „maximal lesbar“: dunkle Schrift in Shantell (eine kaputte Inline-Formatierung ließ die helle Spike-Vorgabe durch)
+  labelsReadable: ui.btns.every((b) => b.color === 'rgb(31, 26, 20)' && /Shantell Sans/.test(b.font)),
+  noInk: ui.paths.every((s) => s === null) && ui.btns.every((b) => /^0px|none/.test(b.border) && /^0px|none/.test(b.badgeBorder)),
+  controllerOffWhileOpen: ui.ctrl === false && moveWithChoice < 0.05,
+  stampBeforeClose: mid.open === true && /scale\(1\.03\)/.test(mid.pickedScale || '') && mid.otherOpacity === '0.15',
+  closesAfterStamp: after.open === false && after.last?.id === 'bongo' && after.ctrl === true,
+  zurufBecomesPlayerBubble: zurufBubble.includes('KayfaBONGO!'),
+  moreThan8WordsRejected: nineRejected === true,
+  ownWordsAccepted: own.open === false && own.last?.id === 'own' && own.last?.text === 'I want my cookie back',
+  ownWordsBecomePlayerBubble: ownBubble.includes('I want my cookie back'),
+  noPageErrors: errs.length === 0,
+}, { ui, moveWithChoice, mid, after, zurufBubble, nineRejected, own, ownBubble, errs }))

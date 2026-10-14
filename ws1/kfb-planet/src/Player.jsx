@@ -69,7 +69,7 @@ export default function Player() {
   const flying = useGame((s) => s.flying)
   const buildFocus = useGame((s) => s.buildFocus)
   const assisting = useGame((s) => s.assisting)
-  const dialogOpen = useGame((s) => !!s.dialog)
+  const dialogOpen = useGame((s) => !!s.dialog || !!s.choice) // offene Spielerwahl zählt als Dialog (§3.5)
   const controllerOn = mode === 'play' && !flying && !assisting && !dialogOpen
   const [, getKeys] = useKeyboardControls()
   const t = useRef({ flyStart: 0, upLerp: new THREE.Vector3(0, 1, 0), wasBuild: false })
@@ -84,7 +84,7 @@ export default function Player() {
   // Tasten: F = abheben/landen, R = zurück zum Start
   useHostKeys((e) => {
       const s = useGame.getState()
-      if (s.mode !== 'play' || s.dialog || !ecctrl.current) return
+      if (s.mode !== 'play' || s.dialog || s.choice || !ecctrl.current) return
       const body = ecctrl.current.body
       if (!body) return
       if (e.code === ACTION_KEYS.fly) {
@@ -144,11 +144,11 @@ export default function Player() {
 
     // Vertrag §3.5: Dialog offen -> Controller aus. Ein abgeschaltetes ecctrl rechnet weder Bremse noch
     // Schwerkraft (Welt-Schwerkraft ist 0), die Figur würde ungebremst weitergleiten. Der Host hält sie an.
-    if (s0().mode === 'play' && s0().dialog && !assist.current) { // auch im Flug: die Figur schwebt, bis der Dialog zu ist
+    if (s0().mode === 'play' && (s0().dialog || s0().choice) && !assist.current) { // auch im Flug: die Figur schwebt, bis der Dialog zu ist
       body.setLinvel({ x: 0, y: 0, z: 0 }, true); body.setAngvel({ x: 0, y: 0, z: 0 }, true)
     }
 
-    if (s0().mode === 'play' && !s0().flying && !s0().dialog && !assist.current) {
+    if (s0().mode === 'play' && !s0().flying && !s0().dialog && !s0().choice && !assist.current) {
       const k = getKeys()
       let jump = k.jump
       const pressed = k.jump && !jumpWas.current
@@ -191,7 +191,7 @@ export default function Player() {
     s.setPlanetName(adapter.name(pos))
 
     // Flug: eigene, einfache Steuerung (ecctrl pausiert)
-    if (s.flying && s.mode === 'play' && !s.dialog) {
+    if (s.flying && s.mode === 'play' && !s.dialog && !s.choice) {
       const k = getKeys()
       const fwd = camera.getWorldDirection(v.a)
       const right = v.b.crossVectors(fwd, camera.up).normalize()
