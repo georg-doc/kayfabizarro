@@ -53,9 +53,15 @@ const mouthDecals = Object.fromEntries(Object.entries(decals).map(([k, v]) => [k
 const pet = georg.pets.find((p) => p.id === fbRecipe.entry.pet)
 const FB = (x, yaw, id) => ({ recipe: fbRecipe, pet, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion: 'idle', position: [x, 0, -1.4], yaw, anchorId: id })
 const MK = /actors=fb/.test(hash) ? FB : ROGUE
+// Marken der Figuren je Stellung (Bühnenmitte = Ursprung, +z zum Publikum): near = G4-Standard vor der Tafel (Georg 14.10.), two = bisherige Stellung
+export const STAGE_MARKS = Object.freeze({
+  near: Object.freeze({ left: Object.freeze({ x: -3.7, z: 1.2, yaw: 0.45 }), right: Object.freeze({ x: 3.7, z: 1.2, yaw: -0.45 }) }),
+  two: Object.freeze({ left: Object.freeze({ x: -4.2, z: -1.4, yaw: 0.35 }), right: Object.freeze({ x: 4.2, z: -1.4, yaw: -0.35 }) }),
+})
 // Stellung: place=near (Figuren vor der Tafel, enger; Standard) | place=two (bisherige Stellung hinten). Ohne Angabe folgt sie der Kamera (cam=two → two).
 const NEAR = (/place=(\w+)/.exec(hash)?.[1] || (CAM === 'two' ? 'two' : 'near')) === 'near'
-const L = NEAR ? { ...MK(-3.7, 0.45, 'stage-left'), position: [-3.7, 0, 1.2] } : MK(-4.2, 0.35, 'stage-left'), R = NEAR ? { ...MK(3.7, -0.45, 'stage-right'), position: [3.7, 0, 1.2] } : MK(4.2, -0.35, 'stage-right')
+const at = (m, id) => ({ ...MK(m.x, m.yaw, id), position: [m.x, 0, m.z] }), MARKS = STAGE_MARKS[NEAR ? 'near' : 'two']
+const L = at(MARKS.left, 'stage-left'), R = at(MARKS.right, 'stage-right')
 const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
 const DECK = di >= 0 ? cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num).slice(0, NDIALOG) : []
 const mods = {}

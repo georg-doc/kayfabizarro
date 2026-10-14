@@ -1,7 +1,31 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§22 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§23 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 23 · 15.10. früh · M1-Zwischenstand (Bewegung, eigene Sitzung) · Befunde für WS0 · Vertragsvorschlag ModuleHost
+
+Quelle: M1-Sitzung, Branch `m1/bewegung` im eigenen Worktree. Noch nicht gemergt; Merge, Suite und Prüfer übernimmt WS1, wenn M1 fertig ist.
+
+- **Stand M1:**
+  - Der blinde Prüfer M1 gab FAIL mit 23 Befunden; alle sind abgearbeitet, ein zweiter Prüfer läuft.
+  - Einzeln grün: m1-contract, m1-move (60 und 120 Hz), m1-eyes (echte Pupillen + Kopfknochen), m1-scene.
+  - Bench bei dpr 2: 59,9 Bilder/s.
+- **Befund 1, Tempo (bitte entscheiden, deckt sich mit dem Tempo-Konflikt J14/Coworker in KAYKIT_NATIVE_BASELINE_01):** Die LOCO-Tempi lassen schon **ohne** Controller rutschen. Rutschanteil gegenüber dem Körpertempo, gemessen mit demselben ActorAnimator auf v5b (`test/m1-feet.mjs`):
+
+  | Clip | LOCO-Tempo | Rutschanteil |
+  |---|---|---|
+  | Walking_B | 0,98 | 0,59 |
+  | Running_B (Sprint) | 5,255 | 0,40 |
+  | Rennen | – | 0,03 |
+
+  Das Spiel liegt exakt auf dieser Referenz, die Einbindung fügt nichts hinzu. **Frage an WS0:** Tempo an den Clip anpassen (Füße stehen) oder LOCO-Tempo behalten (Füße rutschen)?
+- **Befund 2, Haltung:** ecctrl kippt die Kapsel über `autoBalance`; eine starr angehängte Figur pendelt mit. In der Luft hängen die Füße 0,2 m (FLOAT) unter der Kapsel. In M1 gelöst: Die Figur bleibt senkrecht und wird am Boden auf den Bodenpunkt gesetzt. Gilt auch für jede spätere Laufszene auf der Bühne.
+- **Vertragsvorschlag Host R1.2 → bitte freigeben oder ablehnen:** zwei optionale Props für `ModuleHost`, damit M1 keinen eigenen Host braucht (V-206):
+  - `fixedDt`: Die Module bekommen diesen festen Takt statt der Bildzeit.
+  - `after` (Ref): Der Host ruft das Update an einer festen Stelle auf, bei der Spielfigur nach ecctrl und vor dem Physik-Schritt; sonst hinkt die Animation einen Schritt nach.
+  - Den Diff legt die M1-Sitzung vor; ohne Freigabe bleibt der Vertrag unverändert.
+- **WS1 erledigt:** `STAGE_MARKS` (Marken near/two) aus `Stage.jsx` exportiert (kfb-planet @937167f), damit M1 nichts abschreibt; Stellungen unverändert, stage/d1stage/g4 PASS. `test:m1` kommt mit dem Merge in die Suite.
 
 ## 22 · 15.10. früh · Georg: „fb passt so“ · V-243 Ruhe-Mund umgesetzt · Palette wartet auf WS0
 
