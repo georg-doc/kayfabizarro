@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Münder R2, UFO Bildschirmfläche
+- replies/MOUTHS_GPT_R2/: Typen A/B/C, Anker auf Lippennaht, Kontaktschatten, ≤ 1,7×, upperLift 0,3/0,4; Hub mg03–mg05.
+- UFO Phase 1c: Bildschirm-Slot kfb_screen_slot (eigenes Material, UV 0–1, Ecken-JSON), Varianten KEEP 2,07 / UP 1,60 / DOWN 1,60 / UP 1,79; echte Viertelseite = 1,79:1 (nicht 1,60, Korrektur zu V-256); Hub u07.
+
 ## 2026-10-15 · Kamera, Hub-Urteile
 - V-257: freie Orbit-Kamera (360°, Zoom zum Cursor, Pan, Fokus) + Standard-Blick mit Figuren am Rand, Bühne/Ring davor; feste Kameras nur als Sprungmarken. WS1 informiert.
 - V-258: UFO-Knüppel PASS, Maßstab 8 m, Monitor nicht kleiner, Karte exakte Viertelseite; Münder A/B TUNE (Anker tiefer, Schatten), Typ C.
