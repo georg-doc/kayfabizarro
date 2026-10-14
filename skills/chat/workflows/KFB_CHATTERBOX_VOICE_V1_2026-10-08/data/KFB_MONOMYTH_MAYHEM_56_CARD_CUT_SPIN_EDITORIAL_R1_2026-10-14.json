@@ -1,0 +1,1019 @@
+{
+  "schema": "kfb.voice.deck-standalone-cut-spin-candidate/1",
+  "deckId": "kayfabizarro_monomyth_mayhem",
+  "deckTitle": "Monomyth Mayhem",
+  "sourcePath": "media/kfb/Kayfabizarro_Monomyth_Mayhem_WEB_v1.pdf.json",
+  "originalGitBlob": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+  "cardCount": 56,
+  "sourceCompleteCardCount": 56,
+  "generatedCardBeatCount": 56,
+  "authoringMethod": "LLM_EDITORIAL_SOURCE_ADAPTATION_NOT_ACCEPTED_DETERMINISTIC_RUNTIME",
+  "status": "EDITORIAL_CANDIDATE_ALL_NOT_ACCEPTED",
+  "singleLinePerBeat": true,
+  "blankLineSeparator": true,
+  "bridgesUsed": 0,
+  "openerRule": "DIRECT per card except first source-qualified HEARD_OF; avoid repetitive questions",
+  "sourceFidelityGate": "Original title mandatory; Power and Lore included in candidate semantics but independent card-by-card editorial critique pending; no 90% claim",
+  "rows": [
+    {
+      "cardNumber": 1,
+      "cardId": "kayfabizarro_monomyth_mayhem:1",
+      "originalTitle": "The Ordinary World",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Stasis Loop. Play this to cancel any Quest progression this turn. Narrate why nothing can change.",
+        "lore": "Dysfunction isn't just a state; it's a habit. We normalize the abnormal until the extraordinary seems impossible."
+      },
+      "spokenLine": "The Ordinary World cancels all Quest progress for a turn and demands an explanation of why nothing can change; dysfunction has become such a habit that the extraordinary seems impossible.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 2,
+      "cardId": "kayfabizarro_monomyth_mayhem:2",
+      "originalTitle": "The Call to Adventure",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Cognitive Dissonance. Increase Quest Die by +1. Force another player to introduce a conflict that disrupts their current plans.",
+        "lore": "The universe doesn't knock. It throws a brick. The disruption of normalcy is always the beginning."
+      },
+      "spokenLine": "Ever heard of The Call to Adventure? Raise the Quest Die by one and make another player introduce a conflict that wrecks their plans; the universe doesn't knock, it throws a brick.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "HEARD_OF",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 3,
+      "cardId": "kayfabizarro_monomyth_mayhem:3",
+      "originalTitle": "Refusal of the Call",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Rational Panic. Pause the Quest for one turn. All players must explain why they can't possibly go on the adventure.",
+        "lore": "Fear is realistic self-preservation. Change means death of the familiar self. The familiar self is terrible at math."
+      },
+      "spokenLine": "Refusal of the Call pauses the Quest for one turn so everyone can explain why they can't go; fear calls that self-preservation, and the familiar self is terrible at math.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 4,
+      "cardId": "kayfabizarro_monomyth_mayhem:4",
+      "originalTitle": "Meeting the Mentor",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "External Hard Drive. Draw 2 cards. Give 1 to another player. Wisdom is useless until it's shared.",
+        "lore": "The Mentor cannot go with you. They provide the map, not the legs."
+      },
+      "spokenLine": "Meeting the Mentor lets you draw two cards and give one away; wisdom only works when shared, because the Mentor gives you the map, not the legs.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 5,
+      "cardId": "kayfabizarro_monomyth_mayhem:5",
+      "originalTitle": "Crossing the Threshold",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Point of No Return. Move Quest Die +2. Discard your hand and draw 3 new cards. The old world is gone.",
+        "lore": "Commitment is the moment fear becomes movement. You can't un-take the step."
+      },
+      "spokenLine": "Crossing the Threshold moves the Quest Die two forward, discards your hand and draws three; the old world is gone, because commitment makes fear into movement and you cannot un-take the step.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 6,
+      "cardId": "kayfabizarro_monomyth_mayhem:6",
+      "originalTitle": "Belly of the Whale",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Digestion. All players discard 1 card. No Quest progress this turn. Next turn, the Quest Die doubles.",
+        "lore": "Liminal space. No longer who you were, not yet who you'll become."
+      },
+      "spokenLine": "Belly of the Whale makes everybody discard a card and suspends Quest progress for a turn before doubling the Quest Die; you're no longer who you were and not yet who you'll become.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 7,
+      "cardId": "kayfabizarro_monomyth_mayhem:7",
+      "originalTitle": "Road of Trials",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Grindset. Narrate 3 small problems. For each one you 'solve' in the fiction, gain +1 to your next roll.",
+        "lore": "Recovery is practice. The hero who survives the trials is not the hero who entered them."
+      },
+      "spokenLine": "Road of Trials asks for three small problems, adding one to your next roll for every fictional solution; recovery is practice, and the survivor isn't the hero who started.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 8,
+      "cardId": "kayfabizarro_monomyth_mayhem:8",
+      "originalTitle": "Meeting the Goddess",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Self-Love Bomb. Narrate a moment of acceptance. Quest Die +1 for every player who agrees you deserve it.",
+        "lore": "The experience of being fully seen. The internal integration of opposites into unconditional love."
+      },
+      "spokenLine": "Meeting the Goddess asks you to narrate acceptance and adds one to the Quest Die for every player who agrees you deserve it; being fully seen means accepting the opposites within.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 9,
+      "cardId": "kayfabizarro_monomyth_mayhem:9",
+      "originalTitle": "Woman as Temptress",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Regression Pull. Tempt another player to discard a 'Safety' card. If they do, they gain a reward but lose 2 on the Quest Die.",
+        "lore": "The siren song of comfort. The familiar cage feels safer than the unknown field."
+      },
+      "spokenLine": "Woman as Temptress persuades another player to discard a Safety card for a reward, but takes two off the Quest Die; the familiar cage feels safer than the unknown field.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 10,
+      "cardId": "kayfabizarro_monomyth_mayhem:10",
+      "originalTitle": "Atonement with the Father",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Daddy Issues. Identify an Authority Card on the Stage. Destroy it or Integrate it. Both options work differently.",
+        "lore": "Confront the source of authority. Kill the internal 'should' to find the authentic 'want.'"
+      },
+      "spokenLine": "Atonement with the Father confronts an Authority card: destroy it or integrate it, with different results; to find the authentic 'want,' you must face the internal 'should.'",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 11,
+      "cardId": "kayfabizarro_monomyth_mayhem:11",
+      "originalTitle": "Apotheosis",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Ego Death. Discard your Actor Marker. You are now a Formlessness. You may intervene in any scene as a nameless force.",
+        "lore": "The caterpillar is liquid. The butterfly is inevitable."
+      },
+      "spokenLine": "Apotheosis discards your Actor Marker and lets you intervene in any scene as a nameless force; the caterpillar is liquid, and the butterfly is inevitable.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 12,
+      "cardId": "kayfabizarro_monomyth_mayhem:12",
+      "originalTitle": "The Ultimate Boon",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "The Elixir. Gain a permanent 'Treasure' token. Use it once to auto-succeed on any Quest roll.",
+        "lore": "Integration of the lesson. It's not the object, it's the internal shift the object represents."
+      },
+      "spokenLine": "The Ultimate Boon gives you a permanent Treasure token for one automatic Quest success; the Elixir isn't the object but the internal shift it represents.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 13,
+      "cardId": "kayfabizarro_monomyth_mayhem:13",
+      "originalTitle": "Refusal of the Return",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Stay in Narnia. You may choose to end the game for your Actor here. They do not return. They transcend.",
+        "lore": "Why go back to the mundane when you've touched the transcendent? The ordinary world is terrible by comparison."
+      },
+      "spokenLine": "Refusal of the Return lets your Actor end the game without coming back; after touching the transcendent, the ordinary world looks terrible by comparison.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 14,
+      "cardId": "kayfabizarro_monomyth_mayhem:14",
+      "originalTitle": "The Magic Flight",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Escape Velocity. End the Quest immediately. Roll a D6. Even: You keep the Boon. Odd: The Boon is lost in transit.",
+        "lore": "Old patterns don't release easily. The ego will chase you to the threshold."
+      },
+      "spokenLine": "The Magic Flight ends the Quest and rolls a die: even keeps the Boon, odd loses it in transit; old patterns won't release you, and the ego follows to the threshold.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 15,
+      "cardId": "kayfabizarro_monomyth_mayhem:15",
+      "originalTitle": "Rescue from Without",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Intervention. Play this on another player who is stuck. You automatically provide the next card they need.",
+        "lore": "You can't do it all alone. Community is necessary. Independence is a trauma response."
+      },
+      "spokenLine": "Rescue from Without supplies a stuck player with the next card they need automatically; you cannot do it alone, because community matters and independence can be a trauma response.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 16,
+      "cardId": "kayfabizarro_monomyth_mayhem:16",
+      "originalTitle": "Crossing the Return Threshold",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Re-Entry Shock. Draw 1 card for yourself, give 1 to a neighbor. The gift must be explained in character.",
+        "lore": "The hardest stage. Can you maintain your transformation while re-entering the old context?"
+      },
+      "spokenLine": "Crossing the Return Threshold gives one drawn card to you and another to a neighbor, with the gift explained in character; the hard part is staying changed back in the old context.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 17,
+      "cardId": "kayfabizarro_monomyth_mayhem:17",
+      "originalTitle": "Master of Two Worlds",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Code Switch. You may play cards from the Discard Pile as if they were in your hand for this turn.",
+        "lore": "No split between 'spiritual' and 'mundane.' You are whole. You are both."
+      },
+      "spokenLine": "Master of Two Worlds plays cards from the Discard Pile as though they're in your hand; spiritual and mundane no longer split you, because you're both.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 18,
+      "cardId": "kayfabizarro_monomyth_mayhem:18",
+      "originalTitle": "Freedom to Live",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Zen Mode. Your Actor becomes a Mentor. You cannot lose. You just vibe.",
+        "lore": "Freedom from the tyranny of fear. You're alive. That's enough."
+      },
+      "spokenLine": "Freedom to Live turns your Actor into a Mentor who cannot lose and can just vibe; free of the tyranny of fear, you're alive and that's enough.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 19,
+      "cardId": "kayfabizarro_monomyth_mayhem:19",
+      "originalTitle": "The Anti-Journey",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Tragedy of Stagnation. Cancel a 'Call to Adventure.' Nothing happens. The story ends before it begins.",
+        "lore": "Many refuse the call until they die. This is not a moral failure, it is a statistical reality."
+      },
+      "spokenLine": "The Anti-Journey cancels a Call to Adventure so nothing happens and the story ends before it begins; refusing the call until death isn't a moral failure, just a statistical reality.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 20,
+      "cardId": "kayfabizarro_monomyth_mayhem:20",
+      "originalTitle": "The Circular Journey",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Eternal Recurrence. Reset the Quest Die to [3]. Start the exact same story over, but you know it now.",
+        "lore": "The spiral goes up. Or down. But it definitely goes around."
+      },
+      "spokenLine": "The Circular Journey resets the Quest Die to three and starts exactly the same story with the knowledge you kept; the spiral goes up or down, but it definitely goes around.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 21,
+      "cardId": "kayfabizarro_monomyth_mayhem:21",
+      "originalTitle": "The Hero",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Main Character Energy. You may re-roll the Quest Die once per turn.",
+        "lore": "The one who transforms. The ego vehicle. Often confused, usually earnest, always the protagonist."
+      },
+      "spokenLine": "The Hero rerolls the Quest Die once each turn; the transforming ego vehicle is often confused, usually earnest and always sure it's the main character.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 22,
+      "cardId": "kayfabizarro_monomyth_mayhem:22",
+      "originalTitle": "The Shadow",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Projection. Force another player to face a negative consequence you were supposed to face.",
+        "lore": "The dark mirror. The antagonist is just the part of you that you haven't accepted yet."
+      },
+      "spokenLine": "The Shadow makes another player face the negative consequence meant for you; the antagonist is the part of yourself you haven't accepted yet.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 23,
+      "cardId": "kayfabizarro_monomyth_mayhem:23",
+      "originalTitle": "The Shapeshifter",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Trust Issues. Change the 'Suit' or 'Type' of any card on the Stage.",
+        "lore": "Loyalty is ambiguous. Keeps the hero off-balance. Is it love or is it strategy?"
+      },
+      "spokenLine": "The Shapeshifter changes the Suit or Type of a card on Stage; with loyalty this ambiguous, is it love or strategy?",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 24,
+      "cardId": "kayfabizarro_monomyth_mayhem:24",
+      "originalTitle": "The Herald",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Wake Up Call. Play immediately when a Quest ends to start a new one automatically.",
+        "lore": "Brings the Call. The Inciting Incident personified. Annoying, but structurally necessary."
+      },
+      "spokenLine": "The Herald automatically starts a fresh Quest when the last one ends; this Wake Up Call is annoying, but structurally necessary.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 25,
+      "cardId": "kayfabizarro_monomyth_mayhem:25",
+      "originalTitle": "Threshold Guardian",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Gatekeeping. Block a player from playing a card on the Stage unless they justify it in character.",
+        "lore": "Tests the hero's resolve. If you can't get past the doorman, you don't get in."
+      },
+      "spokenLine": "Threshold Guardian blocks another player's Stage card until they justify it in character; if you can't get past the doorman, you don't get in.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 26,
+      "cardId": "kayfabizarro_monomyth_mayhem:26",
+      "originalTitle": "The Trickster",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Chaos Agent. Swap the hands of two players. Laugh.",
+        "lore": "Disrupts the status quo. Reveals truth through absurdity. Also, very annoying at parties."
+      },
+      "spokenLine": "The Trickster swaps the hands of two players and laughs; chaos upsets the status quo, reveals truth through absurdity and gets very annoying at parties.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 27,
+      "cardId": "kayfabizarro_monomyth_mayhem:27",
+      "originalTitle": "The Ally",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Emotional Support. Add +1 to any die roll made by another player.",
+        "lore": "You need a Samwise. Someone to carry the load when you can't."
+      },
+      "spokenLine": "The Ally adds one to someone else's die roll; everyone needs a Samwise to carry the load when they can't.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 28,
+      "cardId": "kayfabizarro_monomyth_mayhem:28",
+      "originalTitle": "The Failed Journey",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "The Bad Ending. Collapse the Quest immediately. No one gets a Boon.",
+        "lore": "The Ordeal can break you. Trauma can win. Not all stories have happy endings."
+      },
+      "spokenLine": "The Failed Journey collapses the Quest so nobody gets a Boon; an ordeal can break you, trauma can win and not every story gets a happy ending.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 29,
+      "cardId": "kayfabizarro_monomyth_mayhem:29",
+      "originalTitle": "Quest Die",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Pressure Cooker. Use this card to set the limits [1] and [6]. If it tips, the reality breaks.",
+        "lore": "Chaos is a valid game state. If the die tips, the reality breaks."
+      },
+      "spokenLine": "Quest Die sets its limits to one and six; if the die tips, reality breaks, because chaos is a valid game state.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 30,
+      "cardId": "kayfabizarro_monomyth_mayhem:30",
+      "originalTitle": "BLÖDSINN!",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Nonsense Check. Play anytime. Force the narrator to pause, clarify, and fix a logic failure. Then laugh.",
+        "lore": "'It is not an accusation. It is a reset button. Laughter breaks nothing.'"
+      },
+      "spokenLine": "BLÖDSINN! stops the narrator to clarify and fix a logic failure, then laugh; it's a reset button, not an accusation, and laughter breaks nothing.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 31,
+      "cardId": "kayfabizarro_monomyth_mayhem:31",
+      "originalTitle": "Kayfabe",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Suspension of Disbelief. Treat a lie as truth for the rest of the game.",
+        "lore": "The portrayal of staged events as real. We are all working the gimmick."
+      },
+      "spokenLine": "Kayfabe treats a lie as truth for the rest of the game; staged events become real when everybody works the gimmick.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 32,
+      "cardId": "kayfabizarro_monomyth_mayhem:32",
+      "originalTitle": "Uncle FrizzleBob",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "The Author. Change one rule of the game for this turn only.",
+        "lore": "'I didn't finish this game. That part's yours. Stay fluffy.'"
+      },
+      "spokenLine": "Uncle FrizzleBob can change one game rule for a single turn; he didn't finish this game, because that part's yours.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 33,
+      "cardId": "kayfabizarro_monomyth_mayhem:33",
+      "originalTitle": "Mood — Fearful",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Paralysis. You cannot initiate a Quest. You can only react.",
+        "lore": "The cave you fear to enter holds the treasure. But the cave is very dark."
+      },
+      "spokenLine": "Mood — Fearful stops you from starting a Quest and leaves you only reacting; the cave you fear holds the treasure, but the cave is very dark.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 34,
+      "cardId": "kayfabizarro_monomyth_mayhem:34",
+      "originalTitle": "Mood — Reckless",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Leeroy Jenkins. You must play the first card you touch. No thinking allowed.",
+        "lore": "Action without thought. Sometimes it's bravery, sometimes it's a wall."
+      },
+      "spokenLine": "Mood — Reckless forces you to play the first card you touch without thinking; sometimes that's bravery, sometimes it's a wall.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 35,
+      "cardId": "kayfabizarro_monomyth_mayhem:35",
+      "originalTitle": "Mood — Grieving",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Heavy Heart. You cannot win a Boon this turn.",
+        "lore": "Loss is the price of love. The only way out is through."
+      },
+      "spokenLine": "Mood — Grieving means you cannot win a Boon this turn; loss is the price of love, and the only way out is through.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 36,
+      "cardId": "kayfabizarro_monomyth_mayhem:36",
+      "originalTitle": "Mood — Manic",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Zoomies. Play 2 cards in one turn. Speak twice as fast.",
+        "lore": "Energy without direction. A brilliant disaster."
+      },
+      "spokenLine": "Mood — Manic lets you play two cards in one turn and speak twice as fast; that's energy without direction, a brilliant disaster.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 37,
+      "cardId": "kayfabizarro_monomyth_mayhem:37",
+      "originalTitle": "Engineering",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Structure. You may rearrange the order of the Scenes on the Stage.",
+        "lore": "'If it's stupid but it works, it's still stupid, but at least it works.'"
+      },
+      "spokenLine": "Engineering rearranges the Scenes on Stage; if it's stupid but it works, it's still stupid, but at least it works.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 38,
+      "cardId": "kayfabizarro_monomyth_mayhem:38",
+      "originalTitle": "Swordplay",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Cut. Remove an unwanted card from the Stage.",
+        "lore": "'Sometimes the Gordian Knot just needs a sharp edge.'"
+      },
+      "spokenLine": "Swordplay cuts an unwanted card out of the Stage; sometimes the Gordian Knot needs a sharp edge.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 39,
+      "cardId": "kayfabizarro_monomyth_mayhem:39",
+      "originalTitle": "Diplomacy",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Chill. Prevent a 'Kayfa-BOOM' (Quest Collapse) by negotiating the Die back into safe range.",
+        "lore": "'The art of telling someone to go to hell in such a way that they look forward to the trip.'"
+      },
+      "spokenLine": "Diplomacy negotiates the Quest Die back into a safe range before Kayfa-BOOM; the art is telling someone to go to hell so nicely they look forward to the trip.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 40,
+      "cardId": "kayfabizarro_monomyth_mayhem:40",
+      "originalTitle": "Thievery",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Yoink. Steal a card from another player's hand.",
+        "lore": "'Property is theft. Theft is also theft. It's complicated.'"
+      },
+      "spokenLine": "Thievery steals a card from somebody else's hand; property is theft, theft is also theft, and it's complicated.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 41,
+      "cardId": "kayfabizarro_monomyth_mayhem:41",
+      "originalTitle": "Timeline Shift",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Retcon. Undo the last turn completely. It never happened.",
+        "lore": "The past is fluid. Memory is a creative act."
+      },
+      "spokenLine": "Timeline Shift undoes the last turn completely so it never happened; the past is fluid and memory is a creative act.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 42,
+      "cardId": "kayfabizarro_monomyth_mayhem:42",
+      "originalTitle": "The Tenth Art",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Edit. Change the text on a Quest card.",
+        "lore": "Reality is a draft. Feel free to mark it up."
+      },
+      "spokenLine": "The Tenth Art edits the text of a Quest card; reality is a draft, so mark it up.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 43,
+      "cardId": "kayfabizarro_monomyth_mayhem:43",
+      "originalTitle": "Multiverse",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Parallel Play. Start a second Quest alongside the first one. Run them simultaneously.",
+        "lore": "Why settle for one disaster when you can have infinite disasters?"
+      },
+      "spokenLine": "Multiverse starts a second Quest alongside the first and runs them together; why settle for one disaster when you could have infinite disasters?",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 44,
+      "cardId": "kayfabizarro_monomyth_mayhem:44",
+      "originalTitle": "Fractal Narrative",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Zoom In. Play a card *inside* another card (place it underneath). It is a story within the story.",
+        "lore": "The spiral goes down. Every story contains a smaller story waiting to unspool."
+      },
+      "spokenLine": "Fractal Narrative plays one card underneath another, a story inside a story; the spiral goes down, because every story contains a smaller one.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 45,
+      "cardId": "kayfabizarro_monomyth_mayhem:45",
+      "originalTitle": "The Sword",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Decisive Action. +2 to Quest Die. Resolves conflict violently.",
+        "lore": "The symbol of power. Use it to cut the cord."
+      },
+      "spokenLine": "The Sword adds two to the Quest Die and resolves conflict violently; as a symbol of power, it cuts the cord.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 46,
+      "cardId": "kayfabizarro_monomyth_mayhem:46",
+      "originalTitle": "The Mirror",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Reflection. Copy the effect of the last card played.",
+        "lore": "Self-knowledge is the most dangerous weapon of all."
+      },
+      "spokenLine": "The Mirror copies the last card's effect; self-knowledge is the most dangerous weapon of all.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 47,
+      "cardId": "kayfabizarro_monomyth_mayhem:47",
+      "originalTitle": "The Key",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Access. Bypass a 'Threshold Guardian' without discarding.",
+        "lore": "Opens doors. Also opens wounds. Be careful."
+      },
+      "spokenLine": "The Key bypasses a Threshold Guardian without discarding; it opens doors and wounds, so be careful.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 48,
+      "cardId": "kayfabizarro_monomyth_mayhem:48",
+      "originalTitle": "The Compass",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Direction. Look at the top 3 cards of the deck. Arrange them.",
+        "lore": "It doesn't tell you where to go, only where you are."
+      },
+      "spokenLine": "The Compass peeks at the deck's top three cards and arranges them; it won't tell you where to go, only where you are.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 49,
+      "cardId": "kayfabizarro_monomyth_mayhem:49",
+      "originalTitle": "[BLANK] — 1",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Create. Draw your own artifact here.",
+        "lore": "The map is unfinished. That part's yours."
+      },
+      "spokenLine": "[BLANK] — 1 lets you draw your own artifact; the map is unfinished and that part is yours.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 50,
+      "cardId": "kayfabizarro_monomyth_mayhem:50",
+      "originalTitle": "[BLANK] — 2",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Create. Draw your own artifact here.",
+        "lore": "Fill the void before it fills you."
+      },
+      "spokenLine": "[BLANK] — 2 lets you draw your own artifact; fill the void before it fills you.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 51,
+      "cardId": "kayfabizarro_monomyth_mayhem:51",
+      "originalTitle": "King Kayfabian",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "The Judge. Resolve any dispute at the table. Your word is law.",
+        "lore": "Authority as performance. Someone has to wear the crown."
+      },
+      "spokenLine": "King Kayfabian resolves any table dispute because his word is law; authority is performance, and someone has to wear the crown.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 52,
+      "cardId": "kayfabizarro_monomyth_mayhem:52",
+      "originalTitle": "The Black Helicopter",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "Game Over. The game ends immediately. Everyone loses? Everyone wins? Scramble the data.",
+        "lore": "They found us. Scramble the data."
+      },
+      "spokenLine": "The Black Helicopter ends the game immediately and scrambles the data; they found us, and it's not even clear whether everyone loses or wins.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 53,
+      "cardId": "kayfabizarro_monomyth_mayhem:53",
+      "originalTitle": "How to Use This Deck",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "[INSTRUCTIONS] PRINT on thick paper. CUT along the lines. MIX with your other Kayfabizarro cards.",
+        "lore": "Do not eat the cards. Unless necessary for the plot."
+      },
+      "spokenLine": "How to Use This Deck says print on thick paper, cut the lines and mix with your other Kayfabizarro cards; don't eat the cards unless the plot requires it.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 54,
+      "cardId": "kayfabizarro_monomyth_mayhem:54",
+      "originalTitle": "The License",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "[APPROVED BY NOBODY] CC BY-NC-SA 4.0. Steal this culture. Remix it. Do not sell it without asking.",
+        "lore": "Copyright is a psyop."
+      },
+      "spokenLine": "The License says CC BY-NC-SA 4.0: remix the culture but ask before selling it; according to the card, copyright is a psyop.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 55,
+      "cardId": "kayfabizarro_monomyth_mayhem:55",
+      "originalTitle": "QR Code (Lore)",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "[SCAN ME] Scan for: Extended Essays, Deep Dives, and The Infinite Backrooms.",
+        "lore": "The truth is online. Or maybe it's a rickroll."
+      },
+      "spokenLine": "QR Code (Lore) invites you to scan for extended essays, deep dives and Infinite Backrooms; the truth is online, unless it's a rickroll.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    },
+    {
+      "cardNumber": 56,
+      "cardId": "kayfabizarro_monomyth_mayhem:56",
+      "originalTitle": "Card Back Design",
+      "sourceRevision": "5ef6057e322c42ff1dbe786f0670dc2abe20ca21",
+      "source": {
+        "power": "[CARD BACK] Stay Fluffy. / Use this card as a coaster.",
+        "lore": "Stay Fluffy."
+      },
+      "spokenLine": "Card Back Design prints Stay Fluffy on the back or uses the card as a coaster; either way, Stay Fluffy.",
+      "reviewStatus": "EDITORIAL_CANDIDATE",
+      "humanAcceptance": "PENDING",
+      "semanticCoverageStatus": "UNREVIEWED",
+      "openerType": "DIRECT",
+      "bridgeAfter": "NO_EDGE",
+      "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
+    }
+  ],
+  "partitions": [
+    {
+      "part": 1,
+      "from": 1,
+      "to": 18,
+      "title": "The Journey",
+      "charCount": 3156
+    },
+    {
+      "part": 2,
+      "from": 19,
+      "to": 36,
+      "title": "The Cast and the Repeating Trap",
+      "charCount": 2564
+    },
+    {
+      "part": 3,
+      "from": 37,
+      "to": 56,
+      "title": "Rules, Tools, and Exit Signs",
+      "charCount": 2475
+    }
+  ],
+  "lexicalWarning": [
+    {
+      "n": 16,
+      "fieldLexicalRate": 27,
+      "shared": 6,
+      "total": 22
+    }
+  ],
+  "delivery": {
+    "language": "English",
+    "mode": "SPOKEN_WORD",
+    "voice": "DRY_CLEAN_PREFERRED",
+    "bed": "NONE",
+    "actualClipProduced": false,
+    "measuredCueTiming": false,
+    "stageIntroOnce": true,
+    "ending": "Stay Fluffy!"
+  },
+  "negativeGuarantees": [
+    "No source deck card skipped",
+    "No Power/Lore filled in from artwork prompts",
+    "No original source mutation",
+    "Not automatically canonical",
+    "No audio site feed mutation"
+  ]
+}
