@@ -14,6 +14,7 @@ import { SCENE } from './scene'
 import ModuleHost from './ModuleHost'
 import BubbleHost from './BubbleHost'
 import ChoiceHost from './ChoiceHost'
+import EyeTest from './EyeTest'
 import { MOVE_MAP } from './hostKeys'
 import { createProbe } from './probeModule'
 import { useState, useEffect } from 'react'
@@ -28,10 +29,12 @@ function HostTest() {
 
 export default function App() {
   const debug = typeof location !== 'undefined' && location.hash.includes('debug')
+  const eyetest = typeof location !== 'undefined' && location.hash.includes('eyetest') // F1-Prüfszene: Studio-Bühne statt Welt, im selben Canvas
   return (
     <>
       <KeyboardControls map={MOVE_MAP}>
-        <Canvas shadows dpr={[1, 1.75]} camera={{ fov: 55, near: 0.1, far: 2000, position: [0, 30, 12] }}>
+        <Canvas shadows dpr={eyetest ? 1 : [1, 1.75]} gl={eyetest ? { toneMappingExposure: 1.05 } : undefined} camera={{ fov: 55, near: 0.1, far: 2000, position: [0, 30, 12] }}>
+          {eyetest ? <Suspense fallback={null}><EyeTest /></Suspense> : <>
           {SCENE === 'planets' ? <>
             <color attach="background" args={['#1b1633']} />
             <fog attach="fog" args={['#1b1633', 90, 260]} />
@@ -56,10 +59,11 @@ export default function App() {
               <Player />
             </Physics>
           </Suspense>
+          </>}
         </Canvas>
       </KeyboardControls>
-      <Hud />
-      <Dialog />
+      {!eyetest && <Hud />}
+      {!eyetest && <Dialog />}
     </>
   )
 }

@@ -1,0 +1,76 @@
+{
+ "captured": "2026-10-14T04:07:39.951Z",
+ "source": "eye-rig-batch app.js @ cloudflare-live (lokal ausgeliefert), Batch-Import eye-rig-medium.batch-1.json, Figur adventurer-rogue-hooded, Bindepose",
+ "eyeFrame": {
+  "left": [
+   -0.2274,
+   0.0308,
+   0.4402
+  ],
+  "right": [
+   0.2274,
+   0.0308,
+   0.4402
+  ],
+  "radius": 0.1048,
+  "unit": 0.6848,
+  "gen": 3
+ },
+ "controls": {
+  "anchor": {
+   "dx": 0.225,
+   "dy": 0.045,
+   "ring": 0.153,
+   "track": 0.15
+  },
+  "pupilStyle": "matte-cute",
+  "pupilSize": 0.34,
+  "gloss": 0.1,
+  "inset": 1.22,
+  "lidFit": 0.9,
+  "converge": 0.18,
+  "splay": 0.21,
+  "baseColor": "#fbe2ce",
+  "lidColorMode": "face-base-darkened",
+  "oval": {
+   "w": 1,
+   "h": 1,
+   "d": 1,
+   "tilt": 0
+  },
+  "blink": {
+   "minGap": 2.5,
+   "maxGap": 6.5,
+   "dur": 0.12
+  },
+  "life": {
+   "on": true,
+   "wander": 0.09,
+   "tremor": 0.045
+  },
+  "kinetics": {
+   "enabled": false,
+   "gain": 1,
+   "a": 0,
+   "c": 0,
+   "j": 0
+  }
+ },
+ "faceHost": {
+  "status": "OK",
+  "schema": "kfb.facehost/0.1",
+  "head": "head",
+  "facing": "Zehen",
+  "yaw": 0,
+  "headSize": [
+   1.274,
+   1.37,
+   1.34
+  ],
+  "headVerts": 1358,
+  "totalVerts": 5909,
+  "materials": [
+   "rogue (1358)"
+  ]
+ }
+}

@@ -3,9 +3,9 @@ import { chromium } from 'playwright'
 import path from 'path'
 import fs from 'fs'
 const CHROMIUM = process.env.PW_CHROMIUM || (fs.existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined)
-export async function openPage(hash = '', { log = false } = {}) {
+export async function openPage(hash = '', { log = false, viewport = { width: 1280, height: 800 } } = {}) {
   const browser = await chromium.launch({ executablePath: CHROMIUM, args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] })
-  const page = await browser.newPage({ viewport: { width: 1280, height: 800 } })
+  const page = await browser.newPage({ viewport })
   const errs = [], warns = []
   page.on('pageerror', (e) => errs.push(e.message))
   // Warnungen der Kartenkette zählen als Befund (Wachhund, pdf.js nicht erreichbar, Registry)

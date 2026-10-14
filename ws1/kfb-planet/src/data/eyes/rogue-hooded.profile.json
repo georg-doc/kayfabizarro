@@ -1,0 +1,361 @@
+{
+ "schema": "kfb.ws1.eye-profile-pick/1",
+ "source": {
+  "repo": "georg-doc/kayfabizarro",
+  "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/eye-rig/eye-rig-medium.batch-1.json",
+  "note": "Georg-Export 19.09., Profil unverändert"
+ },
+ "profile": {
+  "schema": "kfb.eye-profile/0.1-candidate",
+  "actorId": "adventurer-rogue-hooded",
+  "source": {
+   "repo": "georg-doc/kayfabizarro",
+   "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Rogue_Hooded.glb",
+   "revision": "f9dd7a64c4ae0907b8752717861eba065e557d9d"
+  },
+  "rigClass": "Rig_Medium",
+  "faceHost": {
+   "status": "OK",
+   "headBone": "head",
+   "headSize": [
+    1.274,
+    1.37,
+    1.34
+   ],
+   "facingSource": "Zehen"
+  },
+  "sourceFace": {
+   "headMesh": "RogueHooded_Head",
+   "expectedConnectedComponents": null,
+   "connectedComponents": 9,
+   "eyeComponents": [],
+   "pairConfidence": 0.7,
+   "femaleOuterLashCandidate": "UNRESOLVED_GENERIC",
+   "removalMode": "mirrored-front-pair",
+   "guard": "head-named skinned mesh + mirrored equal-triangle front pair",
+   "status": "AUTO_CANDIDATE_GENERIC",
+   "faceColor": "#fbe2ce",
+   "faceColorSource": "runtime-head-texture-sample",
+   "schema": "kfb.source-face-report/0.1-candidate",
+   "eyeCandidates": [
+    {
+     "component": "AUTO_PAIR",
+     "triangles": 138,
+     "x": [
+      -0.195,
+      0.195
+     ],
+     "z": 0.39,
+     "size": [
+      0.124,
+      0.126,
+      0.108
+     ]
+    }
+   ],
+   "components": [],
+   "componentDiagnostic": {
+    "status": "OFF",
+    "selected": null
+   },
+   "sourceMeasuredSeed": null,
+   "genericDetector": {
+    "schema": "kfb.donoreyes/0.1",
+    "status": "OK",
+    "islands": 9,
+    "report": {
+     "tris": 138,
+     "z": 0.39,
+     "x": [
+      -0.195,
+      0.195
+     ],
+     "size": [
+      0.124,
+      0.126,
+      0.108
+     ]
+    },
+    "candidates": [
+     {
+      "tris": 69,
+      "z": 0.39
+     },
+     {
+      "tris": 108,
+      "z": 0.375
+     }
+    ]
+   },
+   "actorId": "adventurer-rogue-hooded",
+   "alternatives": []
+  },
+  "eyeRigSource": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "expressionSource": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+   "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+   "blob": "f202a1c2f1670ab6045176af6621c94041124e76"
+  },
+  "eye": {
+   "anchor": {
+    "dx": 0.225,
+    "dy": 0.045,
+    "ring": 0.153,
+    "track": 0.15
+   },
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.34,
+   "gloss": 0.1,
+   "inset": 1.22,
+   "lidFit": 0.9,
+   "converge": 0.18,
+   "splay": 0.21,
+   "baseColor": "#fbe2ce",
+   "lidColorMode": "face-base-darkened",
+   "oval": {
+    "w": 1,
+    "h": 1,
+    "d": 1,
+    "tilt": 0
+   },
+   "trackingMode": "life",
+   "fixedGaze": [
+    0,
+    0
+   ]
+  },
+  "blink": {
+   "minGap": 2.5,
+   "maxGap": 6.5,
+   "dur": 0.12
+  },
+  "life": {
+   "on": true,
+   "wander": 0.09,
+   "tremor": 0.045
+  },
+  "kinetics": {
+   "enabled": false,
+   "gain": 1,
+   "a": 0,
+   "c": 0,
+   "j": 0
+  },
+  "status": "ADJUSTED_APPROVED",
+  "evidence": {
+   "camera": "front",
+   "motionClip": "bind",
+   "sourceEyeCleanupVisuallyAccepted": false,
+   "eyeProfileVisuallyApproved": true,
+   "faceColorSample": {
+    "schema": "kfb.face-color-sampler/0.1-candidate",
+    "status": "OK",
+    "headMesh": "RogueHooded_Head",
+    "color": "#fbe2ce",
+    "rgb": [
+     246,
+     193,
+     157
+    ],
+    "sampleCount": 14,
+    "samples": [
+     {
+      "uv": [
+       0.1953,
+       0.1258
+      ],
+      "rgb": [
+       155,
+       90,
+       69
+      ]
+     },
+     {
+      "uv": [
+       0.1952,
+       0.1223
+      ],
+      "rgb": [
+       156,
+       91,
+       69
+      ]
+     },
+     {
+      "uv": [
+       0.0736,
+       0.1272
+      ],
+      "rgb": [
+       246,
+       192,
+       155
+      ]
+     },
+     {
+      "uv": [
+       0.0801,
+       0.1191
+      ],
+      "rgb": [
+       246,
+       193,
+       157
+      ]
+     },
+     {
+      "uv": [
+       0.0672,
+       0.1191
+      ],
+      "rgb": [
+       246,
+       193,
+       157
+      ]
+     },
+     {
+      "uv": [
+       0.0778,
+       0.111
+      ],
+      "rgb": [
+       246,
+       194,
+       158
+      ]
+     },
+     {
+      "uv": [
+       0.0695,
+       0.111
+      ],
+      "rgb": [
+       246,
+       194,
+       158
+      ]
+     },
+     {
+      "uv": [
+       0.1952,
+       0.1239
+      ],
+      "rgb": [
+       155,
+       90,
+       69
+      ]
+     },
+     {
+      "uv": [
+       0.0513,
+       0.1056
+      ],
+      "rgb": [
+       246,
+       194,
+       159
+      ]
+     },
+     {
+      "uv": [
+       0.0514,
+       0.1272
+      ],
+      "rgb": [
+       246,
+       192,
+       155
+      ]
+     },
+     {
+      "uv": [
+       0.0578,
+       0.1191
+      ],
+      "rgb": [
+       246,
+       193,
+       157
+      ]
+     },
+     {
+      "uv": [
+       0.0449,
+       0.1191
+      ],
+      "rgb": [
+       246,
+       193,
+       157
+      ]
+     },
+     {
+      "uv": [
+       0.0555,
+       0.111
+      ],
+      "rgb": [
+       246,
+       194,
+       158
+      ]
+     },
+     {
+      "uv": [
+       0.1974,
+       0.1238
+      ],
+      "rgb": [
+       155,
+       90,
+       69
+      ]
+     }
+    ],
+    "source": "head-texture-around-eye-host"
+   }
+  },
+  "calibration": {
+   "schema": "kfb.eye-medium-calibration/0.1-candidate",
+   "classSeed": "./rig-medium-default.v0.json",
+   "authoringDefaultSource": "Georg screenshot / browser tuning 2026-09-19",
+   "authoringDefault": {
+    "dx": 0.295,
+    "dy": 0.045,
+    "ring": 0.153,
+    "track": 0.15,
+    "pupilSize": 0.34,
+    "inset": 0.4,
+    "lidFit": 0.9,
+    "converge": 0.18,
+    "splay": 0,
+    "gloss": 0.1
+   },
+   "sourceMeasuredPlacementPolicy": "EXPLICIT_SUGGESTION_ONLY_NEVER_AUTO_APPLY",
+   "inheritance": [
+    "rigClass",
+    "character",
+    "session"
+   ],
+   "status": "AUTHORING_DEFAULT_REFERENCE"
+  },
+  "reviewState": "ADJUSTED_APPROVED",
+  "inheritance": {
+   "order": [
+    "rigClass",
+    "character",
+    "session"
+   ],
+   "rigClass": "Rig_Medium",
+   "classSeed": "data/rig-medium-default.v0.json",
+   "characterId": "adventurer-rogue-hooded",
+   "sessionAdjusted": false
+  }
+ }
+}
