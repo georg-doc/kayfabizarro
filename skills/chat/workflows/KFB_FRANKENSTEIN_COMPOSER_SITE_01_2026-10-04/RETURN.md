@@ -1,3 +1,9 @@
+## 2026-10-14 · Meshy AI Dropbox intake / BSA1 Amphitheater singleton (ADDITIVE, NOT IMPORTED)
+
+Georg confirmed **BSA1 is the currently working WS1 Wireface Stage integrator**, with ongoing separate **audio bugs**. He authorized a standing inbound rule: new larger Meshy AI models go first to `/CLAUDE/MeshyModels/` Dropbox shared folder, then source-verified/optimized assets are to be registered under `media/3D_Assets/MeshyModels/` in existing KFB GitHub/Asset Librarian ownership. Source/contract: `media/3D_Assets/MeshyModels/README.md` (on this PR). Initial Amphitheater GLB is 73,029,272 bytes plus 2,093,325-byte source image, Dropbox metadata checked. **Binary still only Dropbox; no GitHub GLB, import or browser proof.** BSA1 should ingest exactly once as scene shell around existing original Wireface Stage and existing authentic KFB Claymation landscape Billboard Plane, keeping EyeRig v6, ChatterBox, Audio owners unchanged. Audio bugs neither fixed nor waived by a visual import. No new renderer/Stage host, no fork, merge or Live. Next gate: `BSA1_MESHY_AMPHITHEATER_SOURCE_ISOLATION_AND_SINGLETON_01`; apply independently of ongoing audio repair.
+
+---
+
 ## 2026-10-13 · CLAUDE CODE R2 EXECUTION PACKET · PLAN GO / CARD BUILD NO-GO
 
 **Additive test milestone:** In addition to the Composer readiness 15/15 PASS, the **actual Audio-owner `consumePacket()`** was executed on the real exported v11 packet: **3/3 PASS** — ordinary default rejects preview, explicitly permitted preview reads one candidate/zero clips/one PDF-page ref, and simply changing `preview:false` still rejects unaccepted opener. Test source and exact blob receipts: `CLAUDE_WIREFACE_THEATRE_AUDIO_V11_READINESS_TEST_REPORT_R2_2026-10-13.md`. This is code-path safety evidence, NOT human audio, crop or Wireface SDK acceptance.
