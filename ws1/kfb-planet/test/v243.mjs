@@ -23,14 +23,14 @@ async function run(hash, shots) {
   await page.waitForFunction(() => window.__kfbActor?.status().status === 'OK' && window.__kfbActor.status().shown, null, { timeout: 180000 })
   await page.evaluate(() => { const R = window.__kfbActor.debugRig(); R.setLife({ on: false }); R._blinkK = -1; R._blinkT = 1e9; window.__kfbActor.debugFace().set('brow.life.on', false) }); await page.waitForTimeout(1200)
   const clip = await mouthClip(page), out = {}
-  for (const [name, act, wait] of shots) { if (act) await page.evaluate((t) => window.__kfbActor.say(t), act); if (wait) await page.waitForFunction(wait, null, { timeout: 30000, polling: 'raf' }); const st = await state(page); if (!act || !wait) await page.waitForTimeout(250)
+  for (const [name, act, wait] of shots) { if (act) await page.evaluate((t) => window.__kfbActor.say(t), act); const h = wait ? await page.waitForFunction(wait, null, { timeout: 30000, polling: 'raf' }) : null; const st = { ...(await state(page)), ...(h ? (await h.jsonValue()) || {} : {}) }; // Zustand im selben Schritt wie die Warte-Bedingung (unter Last springt der Laut sonst weiter) if (!act || !wait) await page.waitForTimeout(250)
     const png = await page.screenshot({ clip }); fs.writeFileSync(`test/out/v243/${name}.png`, png); out[name] = { ...st, ...(await teeth(page, png)) } }
   await browser.close(); return { out, errs, clip }
 }
 const game = await run('#actortest,debug,view=face', [
   ['1_ruhe', null, null],
   ['2_zu', null, null], // „Zu“ = Ruhe-Mund aus dem Rezept (die ToolBox-Wahl „Zu“ wird nicht exportiert, V-243); gleicher Zustand, eigens belegt
-  ['3_mitten', 'Hallo, ich bin FrizzleBob und rede gerade ziemlich lange weiter', () => window.__kfbActor.speaking() && ['ah', 'oh', 'ee'].includes(window.__kfbActor.debugFace().mouth.cur)], // Vokal: offener Mund (Pausen zeigen „neutral“)
+  ['3_mitten', 'Hallo, ich bin FrizzleBob und rede gerade ziemlich lange weiter', () => { const A = window.__kfbActor, m = A.debugFace().mouth; return A.speaking() && ['ah', 'oh', 'ee'].includes(m.cur) ? { speaking: true, cur: m.cur, mouthOnModel: A.status().mouth } : false }], // Vokal: offener Mund (Pausen zeigen „neutral“)
   ['4_nach_satz', null, () => !window.__kfbActor.speaking()],
   ['5_nach_ausruf', 'Na klar!', () => !window.__kfbActor.speaking()],
 ])

@@ -4,7 +4,9 @@
 // | rogue (F1-Prüffigur als Platzhalter für Stellproben, kein Darsteller). Karte: card=<deck>:<n>, Biom: biome=<Name>.
 // Dialog D1 per Hash: dialog=<n> spielt n Karten des Decks der Startkarte ab (Sprechblasen an den Figuren, Spielerwahl am Bildrand).
 import { useEffect, useMemo } from 'react'
-import { useThree } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
+import * as THREE from 'three'
+import { stagePaletteFor, FADE_S } from './stagePalette'
 import ModuleHost from './ModuleHost'
 import { createAmphitheater, amphLog } from './modules/amphitheater'
 import { createBillboard, BIOMES } from './modules/billboard'
@@ -44,8 +46,20 @@ export const playerPosFor = (c, fov = 38, d = 3.2, ndcY = -0.9) => { const [px, 
   return [px + (tx - px) * k, py + (ty - py) * k + ndcY * d * Math.tan((fov / 2) * Math.PI / 180) - 1.05, pz + (tz - pz) * k] }
 const PLAYER_POS = playerPosFor(cam)
 const ACTORS = ['none', 'fb', 'rogue'].includes(/actors=(\w+)/.exec(hash)?.[1]) ? /actors=(\w+)/.exec(hash)[1] : 'none' // unbekannter Wert → keine Figuren (Prüfer 9, Befund 7)
-const AMPH = { biome: BIOME }
-const BB = { card: CARD, biome: BIOME, maxW: 7, maxH: 5, position: [0, 0, -3.5] }
+// Bühnen-Palette (V-245): nach der Karte (Deck-Genre → Cartoon-Palette → Rollen), Hash palette=<Kennung>|biome zum Vergleichen (Bildbogen)
+const PAL_OVERRIDE = /palette=(\w+)/.exec(hash)?.[1] || null
+const palFor = (card) => stagePaletteFor(card, { override: PAL_OVERRIDE, biome: BIOME })
+const PAL0 = palFor(CARD)
+const AMPH = { biome: BIOME, palette: PAL0?.amph || null }
+const BB = { card: CARD, biome: BIOME, palette: PAL0, maxW: 7, maxH: 5, position: [0, 0, -3.5] }
+const palState = { current: PAL0, log: [] } // aktuelle Palette der Bühne + Wechsel-Protokoll (Prüfung)
+// Palette der Karte auf Billboard, Amphitheater und Himmel legen (weich, außer beim ersten Bild)
+function applyPalette(card, fadeS = FADE_S) {
+  const p = palFor(card); if (!p || p.key === palState.current?.key) return palState.current // gleiche Palette und gleicher Akzent: kein Wechsel
+  palState.current = p; palState.log.push({ card: card ? card.deck.id + '#' + card.num : null, id: p.id, via: p.via, storyMode: p.storyMode })
+  mods.billboard?.setPalette?.(p, fadeS); mods.amph?.setPalette?.(p.amph, fadeS); sky.set(p.sky, fadeS)
+  return p
+}
 const ROGUE = (x, yaw, id) => ({ recipe: rogueRecipe, faceDriver: 'KFB_NATIVE', url: rogueUrl, clipsUrl, motion: 'Idle_A', profile: pick.profile, contract, height: 2.0,
   actor: { id: 'adventurer-rogue-hooded', path: pick.profile.source.path, revision: pick.profile.source.revision }, position: [x, 0, -1.4], yaw, anchorId: id })
 const decals = import.meta.glob('./assets/actors/fb-mouth/*.png', { eager: true, query: '?url', import: 'default' })
@@ -69,7 +83,7 @@ const mods = {}
 const DIALOG = {
   cards: DECK,
   get reader() { return getReader() },
-  billboard: { setCard: (c) => mods.billboard.setCard(c) },
+  billboard: { setCard: (c) => { applyPalette(c); return mods.billboard.setCard(c) } }, // Kartenwechsel = Palettenwechsel (V-245)
   actors: { get left() { return mods.left }, get right() { return mods.right } },
   say: (anchor, line) => useGame.getState().say(anchor, line),
   openChoice: () => { useGame.getState().openChoice(); return useGame.getState().choice?.id ?? null },
@@ -81,6 +95,22 @@ const mk = (k, f) => (o) => { mods[k] = f(o); expose('StageMods', mods); return 
 const makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makeL = mk('left', createActor), makeR = mk('right', createActor)
 const makeDialog = (o) => { const d = createDialog({ ...o, reader: { lineFor: (...a) => o.reader.lineFor(...a), silence: () => o.reader.silence() } }); mods.dialog = d; expose('StageMods', mods); return d }
 
+// Himmel (V-245, färbt mit): Kuppel mit Verlauf skyBottom → skyTop aus den Rollen; Nebel = skyBottom. Wechsel weich (V-011).
+const sky = (() => {
+  const top = new THREE.Color(PAL0?.sky.top || '#bcd7ea'), bottom = new THREE.Color(PAL0?.sky.bottom || '#bcd7ea'), F = { on: false, t: 0, dur: 0, a: null, b: null }
+  const mat = new THREE.ShaderMaterial({ side: THREE.BackSide, depthWrite: false, fog: false, uniforms: { top: { value: top }, bottom: { value: bottom } },
+    vertexShader: 'varying float h; void main(){ h = normalize(position).y; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+    fragmentShader: 'uniform vec3 top; uniform vec3 bottom; varying float h; void main(){ gl_FragColor = vec4(mix(bottom, top, smoothstep(-0.02, 0.55, h)), 1.0); }' })
+  const mesh = new THREE.Mesh(new THREE.SphereGeometry(400, 32, 16), mat); mesh.name = 'sky'; mesh.renderOrder = -1
+  return { mesh, top, bottom, state: () => ({ top: '#' + top.getHexString(), bottom: '#' + bottom.getHexString(), fading: F.on }),
+    set(sk, fadeS) { const b = { top: new THREE.Color(sk.top), bottom: new THREE.Color(sk.bottom) }; if (!(fadeS > 0)) { top.copy(b.top); bottom.copy(b.bottom); F.on = false; return } Object.assign(F, { on: true, t: 0, dur: fadeS, a: { top: top.clone(), bottom: bottom.clone() }, b }) },
+    step(dt) { if (!F.on) return; F.t = Math.min(F.dur, F.t + dt); const u = F.t / F.dur, k = u * u * (3 - 2 * u); top.copy(F.a.top).lerp(F.b.top, k); bottom.copy(F.a.bottom).lerp(F.b.bottom, k); if (u >= 1) F.on = false } }
+})()
+function Sky() {
+  useFrame((st, dt) => { sky.step(Math.min(dt, 0.1)); sky.mesh.position.copy(st.camera.position); if (st.scene.fog) st.scene.fog.color.copy(sky.bottom) })
+  return <primitive object={sky.mesh} />
+}
+
 function Cam() {
   const { camera, size } = useThree()
   useEffect(() => { camera.fov = 38; camera.near = 0.1; camera.far = 600; camera.position.fromArray(cam.pos); camera.lookAt(...cam.target); camera.updateProjectionMatrix(); expose('StageCamera', camera) }, [camera, size])
@@ -91,14 +121,15 @@ export default function Stage() {
   // Die Spielerwahl der Bühne: Zurufe des Publikums erscheinen als Blase vorn am Bildrand (Anker „player“ vor der Kamera).
   // Nur solange die Bühne steht; beim Abbau zurück (Prüfer 8, Befund 6: kein Seiteneffekt beim Import).
   useEffect(() => { const prev = playerState.pos.clone(); playerState.pos.set(...PLAYER_POS); return () => { playerState.pos.copy(prev) } }, [])
-  useEffect(() => { expose('StageCtl', { log: () => ({ amph: { ...amphLog } }), biome: BIOME, card: CARD, cams: STAGE_CAMS, deck: DECK }) }, [])
+  useEffect(() => { expose('StageCtl', { log: () => ({ amph: { ...amphLog } }), biome: BIOME, card: CARD, cams: STAGE_CAMS, deck: DECK, palette: () => palState.current, palLog: () => palState.log.slice(), sky: () => sky.state(), applyPalette }) }, [])
   // Ergebnis der Spielerwahl → Dialog (Store-Ereignis lastChoice)
   useEffect(() => useGame.subscribe((s, p) => { if (s.lastChoice && s.lastChoice !== p.lastChoice) mods.dialog?.onChoice(s.lastChoice) }), [])
   const sun = useMemo(() => [18, 30, 22], [])
   return (
     <>
-      <color attach="background" args={['#bcd7ea']} />
-      <fog attach="fog" args={['#bcd7ea', 80, 260]} />
+      <color attach="background" args={[PAL0?.sky.bottom || '#bcd7ea']} />
+      <fog attach="fog" args={[PAL0?.sky.bottom || '#bcd7ea', 80, 260]} />
+      <Sky />
       <Cam />
       <hemisphereLight args={[0xfff4e0, 0x3a3226, 1.25]} />
       <directionalLight position={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-25} shadow-camera-right={25} shadow-camera-top={25} shadow-camera-bottom={-25} shadow-bias={-0.0002} />

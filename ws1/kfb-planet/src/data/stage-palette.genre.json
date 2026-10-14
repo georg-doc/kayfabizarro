@@ -1,0 +1,32 @@
+{
+ "schema": "kfb.stage-palette.genre/1",
+ "status": "VORSCHLAG WS1 (V-245) – Georg urteilt am Bildbogen",
+ "source": "Paletten = NAMED_PALETTES aus world-palettes.js @5b523eb (Travel v25); Rollen = palette-roles.js R2",
+ "rule": "genre[0] des Decks (klein), sonst bundle über bundleToGenre; unbekannt → Rückfall Biom der Bühne (BIOMES)",
+ "genreToPalette": {
+  "satire": "cubescape", "meta": "cubescape", "art": "cubescape", "craft": "cubescape",
+  "comedy": "bubblegum",
+  "education": "toybox", "economics": "toybox",
+  "futures": "mint_pop", "medical": "mint_pop",
+  "narrative": "sunset_arcade", "literature": "sunset_arcade",
+  "conspiracy": "grape_soda", "esoteric": "grape_soda",
+  "psychology": "seafoam", "philosophy": "seafoam",
+  "history": "ember", "mythology": "ember", "politics": "ember"
+ },
+ "bundleToGenre": {
+  "education": "education", "conspiracy_theory": "conspiracy", "comedy": "comedy", "media_memetics": "satire", "narrative": "narrative",
+  "history": "history", "military_history": "history", "scifi": "futures", "mind_games": "psychology", "art_creativity": "art",
+  "philosophy_theory": "philosophy", "power_systems": "politics", "human_condition": "psychology", "culture_comics": "comedy",
+  "creative_engine": "craft", "meta_systems": "meta"
+ },
+ "why": {
+  "cubescape": "reines CMY, maximal cartoony – Satire, Meta, Kunst",
+  "bubblegum": "Pink/Koralle/Creme, knallig – Comedy",
+  "toybox": "Primärfarben-Spielzeug – Bildung, Ökonomie",
+  "mint_pop": "Türkis/Limette – Zukunft, Medizin (MED-Decks liegen außerhalb des Kernspiels)",
+  "sunset_arcade": "Violett/Orange/Gold, warm – Erzählung, Literatur",
+  "grape_soda": "Indigo/Magenta/Cyan, kühl – Verschwörung, Esoterik",
+  "seafoam": "Tiefblau/Aqua/Sand, ruhig – Psychologie, Philosophie",
+  "ember": "Schwarzrot/Glut/Butter, dramatisch – Geschichte, Mythos, Politik"
+ }
+}

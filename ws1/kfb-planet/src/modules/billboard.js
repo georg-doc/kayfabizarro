@@ -11,7 +11,8 @@
 //   3. Innenecken (Georg 14.10., ersetzt R2 §3): Der Knet-Rahmen hat IMMER runde Innenecken, Radius = STYLES.plain.corner des Spenders
 //      (0,45 m, über cornerOf ≤ 0,3 · min(W, H)); die Karte liegt darunter mit Maske (faceGeometry mit Radius: UV über die volle Box,
 //      Bild unverzerrt, nur die Ecken fallen weg – Spender-Verhalten).
-//   4. Farben (Georg 14.10.): aus der Cartoon-Palette des Bioms / der Insel / der Kartenzone über buildPalette(spec, island) des Spenders;
+//   4. Farben (Georg 14.10., V-245): Rollen frame/trim/post aus palette-roles.js R2 je Karte (stagePalette.js) über buildPalette(fixed) des Spenders,
+//      Rückfall: Cartoon-Palette des Bioms über buildPalette(spec, island);
 //      die Biome sind die Tabelle BIOMES aus billboard-stage.js Z. 6–12 (Daten 1:1, das Stage-Modul selbst wird nicht übernommen).
 // Nicht übernommen: Insel-Anker, BillboardScheduler, Kaleido-Schnitte, TV-Stil (R2 §1, §4). Keine Lesefolge bis zu freigegebenen Zitaten.
 import * as THREE from 'three'
@@ -55,15 +56,20 @@ export function placeholderCanvas(card) {
 
 export const billboardLog = { create: 0, update: 0, dispose: 0, freed: null }
 
-// options: { card, biome (Objekt wie BIOMES) | biomeName, maxW = 7, maxH = 5, position, yaw }
+// options: { card, palette (stagePaletteFor(...), V-245) | biome (Objekt wie BIOMES, Rückfall) | biomeName, maxW = 7, maxH = 5, position, yaw }
+// palette: Rahmen/Zierleiste/Pfosten/Boden aus den Rollen von palette-roles.js R2 (stagePalette.js); setPalette(p, fadeS) wechselt weich (V-011).
 export function createBillboard(options = {}) {
   const { maxW = 7, maxH = 5, position = [0, 0, 0], yaw = 0 } = options
   const fam = makeClayFamily('B', { uClayNear: { value: 26 }, uClayFar: { value: 70 }, uClayScale: { value: 2.6 }, uClayAmt: { value: 0.4 } })
   const bodyMat = fam.std('#ffffff', 0.88, { vertexColors: true })
   const biome = options.biome || biomeByName(options.biomeName) || null
-  if (!biome) throw new Error('BILLBOARD_BIOME_REQUIRED: Palette kommt aus Biom/Insel/Kartenzone (options.biome oder biomeName)')
+  if (!biome && !options.palette) throw new Error('BILLBOARD_BIOME_REQUIRED: Palette kommt aus Biom/Insel/Kartenzone (options.palette, options.biome oder biomeName)')
   billboardLog.create++ // erst nach der Prüfung: ein abgelehnter Aufruf erzeugt nichts
-  const P = buildPalette({ biomePalette: { mode: 'island-biome' } }, { biome })
+  // Spender-Palette: aus den Bühnen-Rollen (fixed, Farben = Rollen) oder aus dem Biom (island-biome, wie bisher)
+  const palOf = (sp) => buildPalette({ biomePalette: { mode: 'fixed', name: sp.id, colors: sp.billboard } }, null)
+  let P = options.palette ? palOf(options.palette) : buildPalette({ biomePalette: { mode: 'island-biome' } }, { biome })
+  let palName = options.palette ? options.palette.id : biome.name
+  const fade = { from: null, to: null, own: null, t: 0, dur: 0 } // Überblendung: Farbwerte zwischen zwei Cache-Geometrien, in einer eigenen Kopie
   const g = new THREE.Group(); g.name = 'billboard-plain'; g.position.fromArray(position); g.rotation.y = yaw
   const body = new THREE.Mesh(undefined, bodyMat); body.name = 'body'; body.castShadow = body.receiveShadow = true; g.add(body)
   // Die Textur zeigt die Quelle direkt (Viertelseite aus cardImage bzw. Platzhalter): keine Kopie, kein Skalieren, kein Beschnitt
@@ -78,11 +84,12 @@ export function createBillboard(options = {}) {
     const src = fit2048(src0), aspect = src.width / src.height, { w: W, h: H } = fitFace(aspect, maxW, maxH), cw = src.width, ch = src.height
     if (tex.image !== src) { const t = new THREE.CanvasTexture(src); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; tex.dispose(); tex = t; faceMat.map = t; faceMat.needsUpdate = true } // ganze Viertelseite, randlos
     const r = Math.max(0, Math.min(STYLES.plain.corner, Math.min(W, H) * 0.3)) // cornerOf des Spenders mit faceCornerM = STYLES.plain.corner
+    endFade(); state.dims = { W, H, r }
     body.geometry = bodyGeometry(W, H, P, 'plain', r) // geteilter Cache des Spenders, nicht freigeben
     face.geometry = faceGeometry(W, H, r)
     face.position.set(0, STYLES.plain.gb + H / 2, FACE_Z)
     tex.needsUpdate = true
-    state.info = { source, W: +W.toFixed(4), H: +H.toFixed(4), aspect: +aspect.toFixed(4), gb: STYLES.plain.gb, cornerR: +r.toFixed(4), palette: { biome: biome.name, frame: P.frame, trim: P.trim, post: P.post }, canvas: [cw, ch],
+    state.info = { source, W: +W.toFixed(4), H: +H.toFixed(4), aspect: +aspect.toFixed(4), gb: STYLES.plain.gb, cornerR: +r.toFixed(4), palette: { biome: palName, frame: P.frame, trim: P.trim, post: P.post }, canvas: [cw, ch],
       top: +(STYLES.plain.gb + H + 0.45 + 0.08).toFixed(3), faceCenter: [0, STYLES.plain.gb + H / 2, FACE_Z], fontScale: src.__fontScale ?? null, card: state.card ? state.card.deck.id + '#' + state.card.num : null }
   }
 
@@ -98,6 +105,25 @@ export function createBillboard(options = {}) {
       return state.info
     })
   }
+  function endFade() { if (!fade.own) return; body.geometry = fade.to; fade.own.dispose(); fade.own = null }
+  // Palette wechseln: Ziel-Geometrie aus dem Cache, Farben über fadeS Sekunden überblenden (gleiche Topologie, nur Farbwerte)
+  function setPalette(sp, fadeS = 0) {
+    const P2 = palOf(sp); palName = sp.id
+    if (state.info) state.info.palette = { biome: palName, frame: P2.frame, trim: P2.trim, post: P2.post }
+    if (!state.dims) { P = P2; return }
+    const { W, H, r } = state.dims; endFade()
+    const A = body.geometry, B = bodyGeometry(W, H, P2, 'plain', r); P = P2
+    if (!(fadeS > 0) || A === B || !A.attributes.color || A.attributes.color.count !== B.attributes.color.count) { body.geometry = B; return }
+    fade.from = A; fade.to = B; fade.own = B.clone(); fade.t = 0; fade.dur = fadeS
+    fade.own.attributes.color.array.set(A.attributes.color.array); fade.own.attributes.color.needsUpdate = true; body.geometry = fade.own
+  }
+  function stepFade(dt) {
+    if (!fade.own) return
+    fade.t = Math.min(fade.dur, fade.t + dt); const u = fade.t / fade.dur, k = u * u * (3 - 2 * u) // weich ein- und ausblenden
+    const a = fade.from.attributes.color.array, b = fade.to.attributes.color.array, o = fade.own.attributes.color.array
+    for (let i = 0; i < o.length; i++) o[i] = a[i] + (b[i] - a[i]) * k
+    fade.own.attributes.color.needsUpdate = true; if (u >= 1) endFade()
+  }
   // Neuer Versuch nach Ladefehler (Wachhund, Netz): derselbe Takt wie CardArt/useCardTexture (Prüfer 6, Befund 5)
   const offRetry = subscribeRetry(() => { const c = state.card; if (!state.disposed && c && state.info?.source === 'PLACEHOLDER' && isCardSafe(c.deck.id, c.num)) setCard(c) })
   const ready = setCard(options.card || null)
@@ -106,11 +132,13 @@ export function createBillboard(options = {}) {
     object3d: g,
     ready,
     setCard,
+    setPalette,
+    fading: () => !!fade.own,
     info: () => state.info,
-    update() { billboardLog.update++ }, // ruhend: kein Takt, keine Lesefolge (R2 §4)
+    update(dt) { billboardLog.update++; stepFade(dt || 0) }, // ruhend bis auf die Paletten-Überblendung: kein Takt, keine Lesefolge (R2 §4)
     dispose() {
       billboardLog.dispose++; state.disposed = true; offRetry()
-      tex.dispose(); faceMat.dispose(); bodyMat.dispose() // Geometrien gehören dem Cache von billboard-clay.js (wie im Spender)
+      endFade(); tex.dispose(); faceMat.dispose(); bodyMat.dispose() // Geometrien gehören dem Cache von billboard-clay.js (wie im Spender); die Überblend-Kopie ist eigen
       billboardLog.freed = { textures: 1, materials: 2 }
       g.clear()
     },

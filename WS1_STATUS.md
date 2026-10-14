@@ -1,7 +1,54 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§23 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§24 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 24 · 15.10. · V-245 Bühnen-Palette gebaut · Bildbogen für Georg · Karten nur vierteln (Georg) + Drift-Liste · Quittungen
+
+Gelesen bis V-252. **Quittiert:** V-250 (MVP-Fahrplan; MVP-0 läuft, M1 ist die zweite Baustelle), V-251 (Fahren, Vorlagen-Zeile kommt vor Bau), V-252 (UFO-Bühne: Info, Phase 2 nach MVP-0).
+
+### 24.1 · Palette (kfb-planet @9e22cbd)
+- **Besitzer 1:1 übernommen** (`src/vendor/palette/`, SOURCE.md mit Blobs):
+  - `palette-roles.js` R2 (fd13480d);
+  - `world-palettes.js` (f6121ae4);
+  - `world-context.js` (478e8cb4), beide @5b523eb, also der Stand, auf den R2 verweist.
+- **Karte → Palette:** Deck-Feld `genre` (Liste, klein), sonst `bundle` → Genre (`src/data/deck-genres.json` aus media/kfb am MEDIA_COMMIT) → Tabelle `src/data/stage-palette.genre.json` (**Vorschlag WS1, Georg urteilt**). Alle 130 Decks treffen eine Palette, alle acht sind in Gebrauch, der Rückfall Biom wird nicht gebraucht.
+
+  | Palette | Genres | Decks |
+  |---|---|---|
+  | cubescape | satire, meta, art, craft | 20 |
+  | bubblegum | comedy | 10 |
+  | toybox | education, economics | 23 |
+  | mint_pop | futures, medical | 39 |
+  | sunset_arcade | narrative, literature | 4 |
+  | grape_soda | conspiracy, esoteric | 19 |
+  | seafoam | psychology, philosophy | 5 |
+  | ember | history, mythology, politics | 10 |
+- **Rollen wie R2 `computeContext`:** Stufen der benannten Palette → `roles(stops, wcAccent)`. Den zweiten Akzent liefert wie in R2 `cardSemanticVector` → stärkste Dimension → Story-Modus (DIM_MODE aus R2) → `makeWorldContext().accent`. Ohne ihn hätte jeder Himmel oben dasselbe Grau.
+- **Anwendung:**
+  - Billboard: frame/trim/post wie Billboard Family v1.
+  - Himmel: Kuppel skyBottom → skyTop, Nebel = skyBottom.
+  - Amphitheater: Die Helligkeit der Meshy-Textur liegt auf dem Verlauf dark → mix(stone, frame) → trim, Anteil 0,85; das Gelände nimmt flat. **Diese Rollenwahl fürs Amphitheater ist WS1-Vorschlag**, weil das Meshy-Modell keine Rollen-Teile hat.
+- **Wechsel weich (V-011):** Kartenwechsel im Dialog = Palettenwechsel, Überblendung 1,2 s (Vorschlag) mit weichem Ein- und Ausblenden. Beim Billboard werden die Farbwerte zwischen zwei Cache-Geometrien geblendet; danach bleibt nichts zurück.
+- **Test `palette`, 13 Prüfpunkte, PASS:** Quellen bytegleich · jedes Deck hat eine Palette · Karte steuert · Billboard, Amphitheater, Himmel und Nebel tragen die Rollen · Wechsel folgt der Karte · weich ohne harten Schnitt · keine Reste · dieselbe Karte ohne Wechsel · Akzent wie R2 · Override `palette=<id>` und Rückfall `palette=biome`.
+- **Bildbogen für Georg:** `ws1/proofs/2026-10-15-palette/sheet_1.png` (Cubescape, Bubblegum, Toybox, Mint Pop) und `sheet_2.png` (Sunset Arcade, Grape Soda, Seafoam, Ember). Je Palette ein Bühnenbild (near, FrizzleBob) mit der ersten gesicherten Karte eines passenden Decks; Liste in `palette-sheet.json`. Auffällig: Sunset Arcade, Toybox und Ember wirken ähnlich (roter Rahmen, warmer Himmel).
+
+### 24.2 · Georg zu den Kartenbildern (15.10.): nur vierteln, nichts messen oder beschneiden
+- **Georg:** „Ich möchte nicht, dass irgendwelche Karten gemessen und beschnitten werden. Die sollen ganz einfach geviertelt werden … und die Marginalien auch mitzunehmen. Da gibt es immer wieder einen Drift. Da bitte ich darauf zu achten.“
+- **Stand im Spiel: genau so.** Das Billboard nutzt `OW_ART.quarter()`: Seite halbieren, Ecke nehmen, kein Raster, keine Messung. Der Test b1 prüft pixelgenau Leinwand = rohe Viertelseite. Das gemessene Raster `art()` aus derselben Datei nutzt das Spiel nicht. Das OCR-Audit entscheidet nur, ob eine Karte gezeigt wird (Zuordnung), es schneidet nichts.
+- **Drift-Liste (nur gemeldet, nichts geändert):** `drift-report.json` und `drift_sheet.png`. Aus den vorhandenen OCR-Rohdaten: Seiten, auf denen eine untere Karte mit einer POWER:/LORE:-Zeile beginnt, die zur Karte darüber gehört. Die Karten sitzen dort tiefer als die Seitenmitte.
+  - Ergebnis: **23 von 78 Decks**, davon 16 SAFE; am meisten the_kayfabe_money_trail_9_11 (9/15 Seiten), human_nature_uncut (7/14), the_biology_of_rebellion (7/9), epistemic_sabotage (6/15).
+  - Am Bild bestätigt: ai_kayfabe S. 2. Die übrigen Treffer sind eine Lese-Regel, keine Messung.
+  - Seitenbreite Schriftbänder („THE IVORY TOWER HEAVYWEIGHTS“) sind keine Drift. Das Vierteln schneidet sie bewusst, die Karte selbst liegt ganz im Viertel.
+- **Frage an WS0:** Drift in den Druck-PDFs beheben (Neu-Export der betroffenen Seiten) oder hinnehmen? WS1 beschneidet und verschiebt nichts.
+
+### 24.3 · Sonst
+- **Host R1.3** (`fixedDt`, `after`): Die M1-Sitzung zieht den Vorschlag zurück. M1 läuft jetzt mit eigener fester Schleife (frameloop „never“, ein Schritt je 1/60-s-Physik-Takt) über das unveränderte `src/ModuleHost.jsx`. WS1 übernimmt den Diff deshalb nicht; bitte §R1.3 als zurückgezogen markieren.
+- **v243 unter Last:** Die Mitte-im-Satz-Probe las den Zustand einen Schritt nach der Warte-Bedingung. Jetzt geschieht beides in einem Schritt; allein und unter Last PASS.
+- **Suite:** 17 Tests; 16 PASS im vollen Lauf, v243 danach einzeln dreimal PASS.
+- **Als Nächstes für MVP-0:**
+  1. Drei KayKit-Kandidaten mit Georgs Augen-Profil (F-4) als Two-Shot-Bilder.
+  2. Vorschau-Text mit drei Karten (F-3a, `preview:true`, Opener als eigene Schicht).
 
 ## 23 · 15.10. früh · M1-Zwischenstand (Bewegung, eigene Sitzung) · Befunde für WS0 · Vertragsvorschlag ModuleHost
 
