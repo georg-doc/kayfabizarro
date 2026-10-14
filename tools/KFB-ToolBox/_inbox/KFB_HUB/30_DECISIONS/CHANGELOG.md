@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 früh · Triplet-Regeln gespiegelt, Plugin-Prompt
+- replies/TRIPLET_PLUGIN_UPDATE_PROMPT_R1.md: Regeln aus Georgs Korrektur 13.10. (Show/Spin/Sell, ein Satz, alle drei Felder) + 14.10. (90–95 % Karteninhalt, kein Vortrag, Opener später). Ausgabe direkt im Pool-Beat-Format. Pool r6 NICHT hochgeladen (Georg 14.10.); „Hilfe, ich bin ein Mensch!“ war Vortrag, nicht Triplets.
+
 ## 2026-10-14 früh · NotebookLM-Recherche ausgewertet
 - replies/STANDUP_RESEARCH_DIGEST_R1.md: Triplet = Greg-Dean-Witzbau (Setup → Connector → Reframe), Wortökonomie, Dreierregel, Carter-Haltungen, Dikkers-Filter, Opener-Arten, Set-Bau. Dient als Prüfraster für die 168 Triplets und für Figurenprofile.
 
