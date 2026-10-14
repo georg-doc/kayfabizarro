@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 früh · Opener angenommen
+- V-229: 19 von 20 Recherche-Opener angenommen, CUT nur der Lese-Opener; geht als ACCEPTED in Pool r6.
+
 ## 2026-10-14 früh · Architektur R1
 - V-228: `ARCHITECTURE_R1.md` = eine Karte (Schichten/Zuständige, eine Quelle je Teil, ein Weg für Dialog-Inhalt, ein Gesichts-Treiber je Figur, Abnahme G0–G5, kritischer Pfad, abgelöste Dokumente). Grundlage: unabhängiges Architektur-Audit. V-225 zurückgenommen (Laufzeit nur WS1). `replies/BILLBOARD_STANDARD_R2.md` ersetzt R1. Register zeigt jetzt bei abgelösten Einträgen den Nachfolger. Archiv-Kopf auf START_HERE_STEERING, INDEX/10_SSOT, Integrationsplan R1, PASTE_FOR_GEORG, Wireface-Stage-Briefs. Host-Vertrag-Kopf und WORKING_RULES-Kopf korrigiert.
 - Daten-Aufträge laufen: Registry-Korrektur (`data/kfb-registry-mapping-fix-2026-10-14`), Pool r6 mit Import der drei 56er-Sets (`data/kfb-dialog-pool`).

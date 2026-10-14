@@ -2880,6 +2880,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-229",
+   "date": "2026-10-14",
+   "area": "Dialog",
+   "verdict": "PASS",
+   "text": "Opener-Kandidaten aus der Recherche: 19 von 20 angenommen (Did you hear of, Anyway, Which brings us to, Meanwhile elsewhere, No wait, Before we continue, Here is something nobody asked for, This one has a rule, Nobody warned us about, The thing about, You would think … makes sense, Everyone agrees, Not a metaphor, I used to believe (Bühnenfiktion), You with the card in your hand, You played (nur wenn gespielt), I am performing … the card does not care, The deck insists on, … whether you like it or not). CUT: Opener über Text-Erstellung oder Lesen („Reading this out of order?“). Wird als ACCEPTED in Pool r6 geschrieben.",
+   "values": {},
+   "owner": "WS0 (Pool)",
+   "check": "Pool r6 validiert",
+   "source": "Georg 14.10. Chat",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Pool war zu dünn und klischeehaft (V-218).",
+   "applies": "sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2942,7 +2957,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:154",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:157",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
