@@ -15,7 +15,7 @@ let model = null, info = null
 window.load = async (url) => {
   const t0 = performance.now()
   const g = await new GLTFLoader().loadAsync(url)
-  model = g.scene; scene.add(model)
+  model = g.scene; scene.add(model); window.__model = model; window.__scene = scene; window.__r = r; window.__cam = cam
   const box = new THREE.Box3().setFromObject(model), size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3())
   let tris = 0, maps = []; model.traverse((o) => { if (o.isMesh) { tris += o.geometry.index ? o.geometry.index.count / 3 : o.geometry.attributes.position.count / 3; const m = o.material; maps = ['map', 'normalMap', 'roughnessMap', 'metalnessMap'].map((k) => [k, m[k] ? m[k].image.width + '×' + m[k].image.height : null]) } })
   info = { ms: Math.round(performance.now() - t0), size: size.toArray(), center: c.toArray(), tris, maps, gl: r.info.memory }
@@ -37,3 +37,24 @@ window.inside = (az, h = 0.03, fov = 70) => {
 }
 window.ready = true
 </script></body></html>
+<script type="module">
+// Messung: Bildzeit über 120 Frames Rundflug; Varianten nur im Speicher (Original-Datei bleibt unverändert)
+import * as THREE from 'three'
+window.variant = async (kind) => {
+  const scene = window.__scene, model = window.__model
+  model.traverse((o) => { if (!o.isMesh) return; const m = o.material; if (!m.__orig) m.__orig = { map: m.map, normalMap: m.normalMap, roughnessMap: m.roughnessMap, metalnessMap: m.metalnessMap }
+    const O = m.__orig
+    const shrink = (t, s) => { if (!t) return null; const c = document.createElement('canvas'); c.width = c.height = s; c.getContext('2d').drawImage(t.image, 0, 0, s, s); const n = new THREE.CanvasTexture(c); n.colorSpace = t.colorSpace; n.flipY = t.flipY; n.wrapS = t.wrapS; n.wrapT = t.wrapT; return n }
+    if (kind === 'orig') Object.assign(m, O)
+    if (kind === 'tex1k') Object.assign(m, { map: shrink(O.map, 1024), normalMap: shrink(O.normalMap, 1024), roughnessMap: shrink(O.roughnessMap, 512), metalnessMap: null })
+    if (kind === 'notex') Object.assign(m, { map: null, normalMap: null, roughnessMap: null, metalnessMap: null })
+    m.needsUpdate = true })
+}
+window.bench = async (frames = 120) => {
+  const r = window.__r, cam = window.__cam, scene = window.__scene, model = window.__model
+  const box = new THREE.Box3().setFromObject(model), c = box.getCenter(new THREE.Vector3()), R = box.getSize(new THREE.Vector3()).length() / 2
+  const gl = r.getContext(); const t = []; const px = new Uint8Array(4)
+  for (let i = 0; i < frames + 10; i++) { const a = i / frames * Math.PI * 2; cam.position.set(c.x + Math.sin(a) * R * 1.6, c.y + R * 0.9, c.z + Math.cos(a) * R * 1.6); cam.lookAt(c); const t0 = performance.now(); r.render(scene, cam); gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px); if (i >= 10) t.push(performance.now() - t0) }
+  t.sort((x, y) => x - y); return { median: +t[t.length >> 1].toFixed(2), p95: +t[Math.floor(t.length * 0.95)].toFixed(2), tex: r.info.memory.textures, renderer: gl.getParameter(gl.getExtension('WEBGL_debug_renderer_info')?.UNMASKED_RENDERER_WEBGL ?? gl.RENDERER) }
+}
+</script>

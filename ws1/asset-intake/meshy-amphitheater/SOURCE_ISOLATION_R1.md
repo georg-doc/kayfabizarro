@@ -26,7 +26,20 @@ Gate: `WS1_MESHY_AMPHITHEATER_SOURCE_ISOLATION_AND_SINGLETON_01` (README `media/
   - Die **Bühnenfläche** ist eben und ohne Hindernisse.
   - Von der Bühne aus umschließen die Ränge rund 270°, vorne ist der Zugang offen.
 - **Befund A · offene Unterseite:** Das Modell ist eine Hülle ohne Boden. Von unten sieht man ins dunkle Innere. Es muss auf Gelände stehen (Bodenschluss V-203) und darf von unten nicht sichtbar sein.
-- **Befund B · Last:** 1,62 Mio. Dreiecke und ~200 MB Grafikspeicher (zwei 4K-Texturen) als eine einzige Zeichnung. Am Mac geladen in ~0,25 s (lokal, headless). Auf schwächeren Geräten zu schwer.
+- **Befund B · Last:** 1,62 Mio. Dreiecke und ~200 MB Grafikspeicher (zwei 4K-Texturen) als eine einzige Zeichnung. Georgs Hinweis: Auch die hochauflösenden Texturen kommen als Ursache infrage. Gemessen auf Georgs Mac (Apple M4, ANGLE Metal, 1536 × 864, nur das Amphitheater, 120 Bilder Rundflug, GPU-Sync per readPixels; `amph-bench.mjs`). Die Varianten liegen nur im Speicher, das Original bleibt unverändert.
+
+  | Variante | Bildzeit Median | p95 |
+  |---|---|---|
+  | wie geliefert (Farbe/Normalen 4096², Metall/Rau 2048²) | 8,5 ms | 11,3 ms |
+  | Texturen auf 1024² (Metall/Rau 512²) | 8,1 ms | 10,6 ms |
+  | ohne Texturen | 6,1 ms | 7,6 ms |
+
+  **Lesart:**
+  - Für die **Bildrate** ist die Texturauflösung fast egal (−0,4 ms). Die meiste Zeit (≈ 6 ms) kostet die Geometrie mit 1,6 Mio. Dreiecken.
+  - Die 4K-Texturen kosten vor allem **Speicher und Ladezeit**: ~26 MB JPEG zum Herunterladen und Dekodieren, ~180 MB Grafikspeicher mit Mipmaps.
+  - Allein belegt das Theater gut die Hälfte eines 60-fps-Budgets (16,7 ms). Figuren, Billboard und Blasen kommen noch dazu.
+  - Hebel für die Bildrate: Geometrie reduzieren. Hebel für Speicher und Download: Texturen auf 2048² und KTX2 bringen.
+  - Beides in einer Browser-Fassung unter eigener Kennung, mit Bildpaar gegen das Master (§4.1).
 
 ## 4 · Fragen an WS0 (blockieren nichts außer dem Einbau)
 1. **Ablage:** Das Repo hat kein LFS. Die größte Datei unter `media/3D_Assets` hat heute ~23 MB, das GLB 73 MB (GitHub warnt ab 50 MB, Grenze 100 MB). Vorschlag:
