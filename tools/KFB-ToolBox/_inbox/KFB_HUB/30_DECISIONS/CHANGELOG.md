@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 morgens · Triplet-Methode aus Wrinkle-Spender (Entwurf)
+- replies/TRIPLET_METHOD_FROM_WRINKLE_R1.md: Analyse von Georgs 48-Zeilen-Wrinkle-Skript gegen die Original-JSON; Methode (Karte handelt im Präsens; POWER als Handlung ohne Jargon; LORE als konkretestes Bild; Handlung ; Folge; kurz) + 3 Beispiele. Keine V-Nummer bis Georgs Urteil; V-231–V-235 gelten als TUNE und werden dann durch eine Entscheidung ersetzt.
+
 ## 2026-10-14 morgens · Besetzung FrizzleBob v5
 - V-236: Hauptdarsteller FrizzleBob v5 (Quelle gepinnt, G0 geprüft: GLB auf Commit 19088b14 vorhanden, 7/7-Beleg auf main); Rogue_Hooded nur F1-Testfigur. Verbindliche Antwort in WS0_TO_WS1.md. WSA-Übergabe replies/GEORG_CAST_DIRECTION_FRIZZLEBOB_V5_WS0_TO_WS1_2026-10-14.md übernommen (der dort blockierte Changelog-Eintrag ist hiermit nachgetragen).
 
