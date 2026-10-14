@@ -3033,9 +3033,26 @@
    "check": "Bilder vorn/¾/Seite in der Site, Georg urteilt",
    "source": "Georg 14.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-239"
+   ],
    "why": "Rigging war über ToolBox-Fassungen in Claude Design, localStorage und mehrere Sites verstreut; WS1 baute deshalb mit kaputten Standardwerten.",
    "applies": "ab sofort"
+  },
+  {
+   "id": "V-239",
+   "date": "2026-10-14",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "V-238 zurückgenommen: Die FrankenStein-Composer-Site ist kein gültiger Rigging-Ort (Georg: „total broken“, alle Modelle falsch, nichts mit dem Eye-Rig-Studio zu tun). Gültige, von Georg abgenommene Rigging-Quelle ist nur das Eye-Rig-Studio (KFB Batch EyeRig Atlas, PR #104; KayKit Medium 27, Large 4, Legacy; Georgs Profile). FrizzleBob ist dort NICHT enthalten. WS0 hatte den Composer ohne Sichtprüfung vorgeschlagen (G0-Verstoß).",
+   "values": {},
+   "owner": "WS0",
+   "check": "-",
+   "source": "Georg 14.10.",
+   "supersedes": "V-238",
+   "superseded_by": [],
+   "why": "Vorschlag ohne Prüfung; die Site zeigt falsche Modelle.",
+   "applies": "sofort"
   },
   {
    "id": "V-084",
@@ -3100,7 +3117,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:210",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:213",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

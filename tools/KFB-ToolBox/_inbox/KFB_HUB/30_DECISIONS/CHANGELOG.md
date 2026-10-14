@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 abends · V-238 zurückgenommen
+- V-239: Composer-Site kein Rigging-Ort (Georg: total broken). Gültig nur das Eye-Rig-Studio; FrizzleBob dort nicht enthalten. Hub-Briefing b11 zurückgezogen.
+
 ## 2026-10-14 abends · Ein Rigging-Ort: Composer
 - V-238: FrizzleBob und alle Figuren werden in der FrankenStein-Composer-Site (WSA work) geriggt; Claude-Design-ToolBox nur noch Archiv; Rezept als Datei auf GitHub; WS1 liest 1:1. Hub-Briefing b11 an WSA work.
 

@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 14.10.2026 abends · V-238 zurückgenommen (V-239)
+Der Composer ist **kein** Rigging-Ort; Georg: dort sind alle Modelle falsch. Gültige Rigging-Quelle bleibt das Eye-Rig-Studio (euer F1-Weg). FrizzleBob ist dort nicht enthalten. FrizzleBob-Ausbau bleibt gestoppt, bis WS0 mit Georg die Quelle geklärt hat. B1 läuft weiter.
+
 ## 14.10.2026 abends · FrizzleBob-Werte kommen aus dem Composer (V-238)
 Rigging-Ort ist ab jetzt nur die FrankenStein-Composer-Site (WSA work, #355). Dort wird FrizzleBob v5 mit euren gepinnten Modulen repariert (Mund/Nase ¾, Brauen, Pose-Schalter, Pins, v5/v5b) und von Georg eingestellt. Gespeichert wird ein Rezept auf GitHub im Format eures `frizzlebob-v5.recipe.json`. WS1 übernimmt es dann 1:1. Bis dahin FrizzleBob-Ausbau gestoppt (siehe oben). Eure TOOLBOX_FINDINGS_R1 sind die Mängelliste dafür. Der Vertrag R2 (modelRef, CUSTOM, beidseitige Exklusivität) geht ebenfalls an den Composer.
 
