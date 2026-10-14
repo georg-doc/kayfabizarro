@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 14.10.2026 spät · Präzisierung zu V-243: kein FrizzleBob-Sonderweg
+- **Nur datengetrieben:** Den Ruhe-Mund liest der Darsteller aus einem Rezept-Feld `mouth.rest` (z. B. `"closed"` → das Decal für geschlossene Lippen). Den Wert setzt bis auf Weiteres euer Rezept mit Quelle „V-243“. Später schreibt ihn die ToolBox selbst. Nichts fest im Code für FrizzleBob.
+- **Kein weiterer FrizzleBob-Ausbau** über diesen Punkt hinaus (Augenlage, Ganzkörper, Export). Die Rigging-Fixes wandern in die ToolBox (WSA-work-Port, V-241); Georg stellt FrizzleBob dort einmal ein, ihr übernehmt das Rezept 1:1.
+- Weiter wie geplant mit B1, D1 und der Bühne.
+
 ## 14.10.2026 spät · FrizzleBob: Mund zu, Augenlage, Ganzkörper (V-243) · freigegeben
 Grundlage: `replies/FRIZZLEBOB_V240_CLOSED_MOUTH_AND_FACE_VISUAL_FAIL_2026-10-14.md` und `…_RAW_GLB_VIEWER_FAIL_AND_TRUE_EXPORT_ROUTE_2026-10-14.md` (Georg FAIL).
 - **G0 erledigt (WS0):** Im ToolBox-Schnitt P08 ist „Zu“ (`setViseme('closed')` bzw. `mouthRest`) nur eine Live-Vorschau. Sie wird nicht gespeichert und nicht exportiert. Der Export im Schnitt ist identisch mit V-240 (16:00). Einen neueren Stand gibt es also nicht; Georgs Absicht ist eindeutig: **Ruhe-Mund geschlossen**.
