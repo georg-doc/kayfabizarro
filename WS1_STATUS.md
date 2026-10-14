@@ -1,7 +1,43 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§17 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§18 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 18 · 14.10. abends · G0 M1 „Bewegung mit FrizzleBob v5b“: PASS (nur Prüfung, kein Bau)
+
+Briefing: `ws1/briefs/BRIEF_WS1_M1_BEWEGUNG_R1.md` (§17.2; V-Nummer fehlt noch). Geprüft von der M1-Sitzung im eigenen Worktree (Branch `m1/bewegung` @da2c194, Skripte `scripts/m1/g0-bones.mjs`, `g0-weights-rootmotion.mjs`, `g0-foot-creep.mjs`; Clips in `~/kfb-ws1/intake/loco/`).
+
+1. **Skelett:** v5b-Skin mit 47 Gelenken:
+   - 23 Rig_Medium-Deform-Knochen, namensgleich;
+   - 18 IK-/Control-Knochen ohne Gewicht;
+   - 6 Ohrknochen (ear-dangle).
+   - Bindepose gegen MovementBasic/Advanced/General: höchstens 0,03° Abweichung, Knochenlängen 0,0 %.
+   - **LOCO-Clips passen direkt, ein Retarget ist nicht nötig.** Kein Clip treibt Ohrknochen, also kein Konflikt mit ear-dangle.
+2. **Clips:** KayKit Character Animations 1.1 @378b2093.
+   - Walking_B 1,067 s, Running_A/B 0,8 s, Jump_Start/Idle/Land 0,6/1,067/0,667, dazu Jump_Full_Short/Long.
+   - Alle laufen am Platz.
+   - Die Werte decken sich mit LOCO in `anim.mjs` (cloudflare-live @e21e4904).
+3. **Fußtest (Kriechen bei LOCO-Tempo):**
+   - Messung: Walking_B 9,3 cm, Running_A 1,1 cm, Running_B 6,8 cm.
+   - Referenz-Mannequin (`KAYKIT_NATIVE_BASELINE_01`): 9,5 / 2,8 / 12,7 cm.
+   - Das Skelett überträgt sich also 1:1, es gibt keine neue Rutschquelle.
+   - **Aber:** Die Handover-Abnahme §6 (≤ 4,4 cm) erreicht selbst die Referenz nur ohne Fersen-Zehen-Abrollen.
+   - **Vorschlag für Abnahme #1:** Kriechen ≤ Referenz-Rampe (`ramp_slip.json`, gleiche Methode) plus bewegtes Bildpaar gegen KAYKIT_LOCO_RAMP_02, statt absolut 4,4 cm.
+   - Anlaufen und Anhalten (10 bzw. 19 cm) bleiben die Schwachstelle; vorgeschlagen ist Anhalten auf Fußkontakt.
+4. **Maßstab:** FrizzleBob steht mit 0,947368 (P08 CLASS_K). Weltgeschwindigkeit = LOCO-Tempo × 0,947: Gehen 0,928, Rennen 3,129, Sprint 4,978 m/s. Ohne diese Umrechnung rutschen die Füße um 5,6 %.
+5. **Flug:** Es gibt keinen Flug-Clip (General, MovementBasic/Advanced, Special, Simulation geprüft). Vorschlag laut Briefing:
+   - Jump_Idle als Schleife plus Körperneigung nach Tempo und Kurve;
+   - Abheben mit Jump_Start, Landen mit Jump_Land.
+   - Georg entscheidet am Bild.
+6. **Kinetik:** Eye-Rig v6 hat sie standardmäßig an, P08 speist sie aber nie automatisch, und Georgs Export hat keinen Eintrag. In M1 bleibt sie aus. Eine Automatik aus dem Controller (Bremsen, Kurve, Fall) wäre neues Verhalten → **WS0/Georg entscheiden.**
+7. **Blick Augen → Kopf → Körper (V-214):**
+   - Der Slot bietet `lookAt(nx, ny)` und `blinkNow`; eine Kopfdrehung hat der Spender nicht.
+   - Nötig wäre eine kleine Schicht nach dem Mixer (begrenztes Gieren/Nicken des Kopfknochens).
+   - **Bitte WS0 bestätigen**, dazu: Soll der Slot ein `lookAt`-Ziel in Weltkoordinaten bekommen?
+   - Der Ohren-Wind (−Geschwindigkeit) ist vorhanden und greift beim Laufen von selbst.
+8. **Nicht geprüft:** bewegtes Bildpaar beim Gehen und Rennen (Browser-Lauf). Das wird der erste Schritt beim Bau.
+
+**Stand:** G0 PASS, kein Stopp. Gebaut wird erst nach Bestätigung durch WS0/Georg. Wer M1 baut, entscheidet Georg (M1-Sitzung im eigenen Worktree oder diese Sitzung).
 
 ## 17 · 14.10. abends · FrizzleBob nach Georgs Export fertig (V-240) · Briefing M1 „Bewegung“ eingegangen · G0 M1 beginnt · gelesen bis V-242
 
