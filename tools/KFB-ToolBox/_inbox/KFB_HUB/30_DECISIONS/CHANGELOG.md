@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Abnahme-Format, UFO-Urteil
+- V-253: keine Kontaktbögen/Spalten mehr; Einzelbilder groß, Hub zeigt Bildfolgen in voller Breite mit Blättern (Hub v6).
+- V-254: UFO A; zwei Knüppel abschneiden; B1-Billboard (Querformat) vor den Monitor; UFO größer skalieren, mit echten Figuren belegen.
+
 ## 2026-10-15 · UFO Phase 1 fertig
 - Master SHA-256 60ef25fa…, 2,3 Mio. Dreiecke, ein Teil; A 400 k/14,1 MB/1,4 ms (empfohlen), B 300 k/11,1 MB. Steuerknüppel verschmolzen (kein stage_clean; schmaler Hals, Schnitt möglich). Monitor in zerstückelter Textur → Karte als Ebene davor. Bühnenplan L1/L2, Kameras C0–C3. Dateien ~/Dropbox/CLAUDE/MeshyModels/_browser/ufo/; drei Fragen im Hub (u01–u03).
 

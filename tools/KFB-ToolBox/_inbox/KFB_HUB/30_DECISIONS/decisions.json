@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-14",
+ "updated": "2026-10-15",
  "entries": [
   {
    "id": "V-001",
@@ -3255,8 +3255,40 @@
    "check": "Bildbogen Original|A|B + stage_clean, Bühnenplan",
    "source": "Georg 15.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-254"
+   ],
    "why": "Das Meshy-UFO eignet sich als Bühne; die Steuerknüppel stören die Spielfläche.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-253",
+   "date": "2026-10-15",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Abnahme-Format: Keine Kontaktbögen, Spalten- oder Rasteransichten mehr für Georgs Urteil. Jede Ansicht ist ein eigenes großes Querformat-Bild (mind. 1600 px breit, Text darin groß lesbar), Vergleiche höchstens als Paar nebeneinander (Original | Neu) oder als zwei Bilder hintereinander. Im Hub als Bildfolge (slides) in voller Breite mit Blättern und Vollbild. Gilt für alle Agenten und Sitzungen, die Georg Bilder vorlegen.",
+   "values": {},
+   "owner": "alle",
+   "check": "WS0 prüft vor Vorlage",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kontaktbögen in Spalten waren nicht lesbar; Abnahmen damit unmöglich.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-254",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "UFO-Bühne: Fassung A (400 k, 14,1 MB). Die zwei Steuerknüppel vorn sauber abschneiden (schmaler Hals), Rest bleibt; bei Bedarf später eine Kuppel darüber. Karte: unser B1-Billboard (Querformat-Viertelseite, randlos, R2) vor den Rückmonitor setzen und in die Szene einbauen – der Monitor hat etwa Billboard-Maße; keine Hochkant-Karte. Maßstab: UFO größer bzw. Figuren relativ kleiner – Figuren müssen sich bewegen können und zur Größe der Armaturen passen; Maßstab aus Armaturenhöhe/Knüppelgriff ableiten und mit echten Figuren (FrizzleBob, KayKit) belegen.",
+   "values": {},
+   "owner": "WS0 (Phase 1b) · WS1 (Einbau)",
+   "check": "Einzelbilder nach V-253",
+   "source": "Georg 15.10.",
+   "supersedes": "V-252 (Karte als Ebene vor dem Monitor, Maßstab 5 m/u)",
+   "superseded_by": [],
+   "why": "Georgs Urteil zu UFO-Fassung, Knüppeln, Karte und Maßstab.",
    "applies": "ab sofort"
   },
   {
@@ -3322,7 +3354,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:280",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:287",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
