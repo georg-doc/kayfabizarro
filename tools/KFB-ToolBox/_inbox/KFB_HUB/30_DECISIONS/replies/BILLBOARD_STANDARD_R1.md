@@ -35,3 +35,11 @@ Im r2-Quellpaket steht `billboard.embed-spec.v1.json` noch auf `bodyStyle: "high
 - Ruhebild ist die eingesetzte Karte; `kaleido-cuts` bzw. H13 läuft nur während der Hypernormalisation-Lesefolge.
 - **Stand Hypernormalisation:** Das Owner-START_HERE sagt `IMPLEMENTATION NOT STARTED`, und es gibt keine freigegebenen Laufzeit-Zitate. Der Design-Vertrag ist also noch keine funktionierende Engine.
 - **TV-Knopf:** laut START_HERE „unterhalb des Billboards“. Abweichungen (z. B. ein kleiner Fernseher vor dem Pfosten) beurteilt WS0 am Bild. Es gibt nie einen zweiten Scheduler und keine zweite Medienlogik.
+
+## 5 · Georgs Referenzbild (V-223, 14.10. spät)
+`REFS_BILLBOARD/PLAIN_BILLBOARD_REFERENCE_GEORG_2026-10-14.webp`, aus dem Claude-Design-Projekt „KFB Billboard Clay Island“, Variante Plain, K1 v8 Golden.
+- Knet-Rahmen mit runden Innenecken auf zwei Pfosten.
+- Der Inhalt ist eine in die Fläche integrierte Collage (Hypernormalisation). Keine reingeklebten Bildchen.
+- Eine Karte wird genauso integriert, als Teil der Fläche bzw. der Lesefolge.
+- Unfertige Varianten im Claude-Design-Projekt sind **kein** freigegebener Standard.
+- **TV-Knopf:** vorerst nicht nötig, Entscheidung später.

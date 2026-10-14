@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 spät · Opener-Antworten, Plain-Billboard-Referenz
+- V-222: Orts-Szenen je nach Figur; heard-of-Varianten bleiben, nie mehrfach in einem Set (Rotation/Cooldown).
+- V-223: Georgs Plain-Billboard-Screenshot ist die Referenz (integrierte Collage, keine aufgeklebten Bilder, Karte integriert); unfertige Claude-Design-Varianten sind kein Standard; TV-Knopf vorerst nicht nötig.
+
 ## 2026-10-14 spät · KFB Production Hub
 - V-221: Artifact „KFB Production Hub“ (gleiche URL wie das frühere Steuerpult) mit Stand, Fragen mit Bildern, Briefings mit Kopier-Knopf (WS1, Claude Design inkl. R2-Rückmeldung, NotebookLM 1+2), nächsten Schritten, Referenzbildern. Ersetzt Drive-Doc und PASTE_FOR_GEORG.
 

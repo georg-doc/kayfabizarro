@@ -2569,6 +2569,34 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-222",
+   "date": "2026-10-14",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Opener-Antworten: (1) Orts-Szenen („I went to …“, „The other day …“) je nach Figur – frei als Bühnenfiktion oder nur Orte von der Karte, festgelegt im Figurenprofil. (2) Die „heard of“-Varianten bleiben als Varianten gegen repetitive Muster, dürfen aber in einem Set, Akt oder Dialog nie mehrfach vorkommen (Rotation bzw. Cooldown-Regel im Pool-Leser).",
+   "values": {},
+   "owner": "Pool-Owner #379 + WS1 S5b",
+   "check": "Pool-Test ohne Wiederholung im Set",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Varianz ohne Wiederholung; Figuren unterscheiden sich im Umgang mit Fiktion.",
+   "applies": "ab S5b"
+  },
+  {
+   "id": "V-223",
+   "date": "2026-10-14",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Referenz Plain-Billboard = Georgs Screenshot aus dem Claude-Design-Projekt „KFB Billboard Clay Island“ (Variante Plain, K1 v8 Golden): Knet-Rahmen mit runden Innenecken auf zwei Pfosten, Inhalt als in die Bildfläche integrierte Collage bzw. Hypernormalisation – keine reingeklebten Bildchen. Eine Karte wird genauso integriert (Teil der Bildfläche bzw. der Lesefolge). Unfertige Varianten im Claude-Design-Projekt gelten nicht als freigegebener Standard. TV-Knopf vorerst nicht nötig (später entscheiden). Beleg: replies/REFS_BILLBOARD/PLAIN_BILLBOARD_REFERENCE_GEORG_2026-10-14.webp.",
+   "values": {},
+   "owner": "Claude Design + WS1",
+   "check": "Bildpaar Referenz | Stand",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Bastel-Billboards mit aufgeklebten Bildern sind nicht akzeptabel.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2630,7 +2658,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:134",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:138",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
