@@ -23,7 +23,8 @@ const hash = typeof location !== 'undefined' ? location.hash : ''
 export const VIEWS = { face: { pos: [0, 1.62, 2.9], target: [0, 1.5, 0] }, full: { pos: [0, 1.7, 8.2], target: [0, 1.3, 0] }, q: { pos: [2.05, 1.62, 2.05], target: [0, 1.5, 0] }, side: { pos: [2.9, 1.62, 0], target: [0, 1.5, 0] } }
 const view = VIEWS[/view=(\w+)/.exec(hash)?.[1]] || VIEWS.face
 const motion = /motion=(\w+)/.exec(hash)?.[1] || 'bind'
-const OPTIONS = { recipe, pet, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion, anchorId: 'actortest-fb' }
+const partColors = /partcolors=model/.test(hash) ? 'model' : 'export' // Bildpaar gegen den P08-Spender: Modellfarben (WS0 14.10.: im Spiel Exportfarben)
+const OPTIONS = { recipe, pet, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion, partColors, anchorId: 'actortest-fb' }
 let last = null
 const create = (o) => { last = createActor(o); expose('Actor', last); return last }
 

@@ -54,7 +54,7 @@ const contract = {
 }
 
 // --- Teil B · Browser
-const { browser, page, errs } = await openPage('#actortest,debug,view=face', { viewport: { width: 900, height: 900 } })
+const { browser, page, errs } = await openPage('#actortest,debug,view=face,partcolors=model', { viewport: { width: 900, height: 900 } })
 await page.waitForFunction(() => window.__kfbActor && window.__kfbActor.status().status !== 'LOADING' && window.__kfbActor.status().ao?.baked, null, { timeout: 120000 }) // Kontaktschatten fertig
 await page.waitForTimeout(1500)
 await page.evaluate(FREEZE); await page.waitForTimeout(1500) // Augen eingefroren: Aufnahmen wiederholbar (Prüfer 5, Befund 1)
@@ -97,6 +97,16 @@ const ears = await page.evaluate(async () => {
   const q1 = q(); const moved = q1.some((x, i) => x.some((v, k) => Math.abs(v - q0[i][k]) > 1e-3)); await wait(4000)
   const q2 = q(); const settled = q2.every((x, i) => x.every((v, k) => Math.abs(v - q0[i][k]) < 0.02)); return { bones: b.length, moved, settled, finite: q1.flat().every(Number.isFinite) }
 })
+// Lange Bilder (≈ 4 Bilder/s, wie die Bühne headless): Augen- und Brauen-Leben an, 40 × update(0,25) synchron. Pupillen bleiben im Auge,
+// Brauen bei ihrer Grundlage (G4-Vorprobe 14.10.: ohne Teilschritte schwang die Pupillen-Feder auf, Brauen landeten auf der Brust)
+const slow = await page.evaluate(() => {
+  const A = window.__kfbActor, R = A.debugRig(), F = A.debugFace(); 
+  const items = F.orig?.brows?.items || [], y0 = items.map((it) => it.host.position.y), dev = () => Math.max(0, ...items.map((it, i) => Math.abs(it.host.position.y - y0[i]))) // Bezug: Braue ohne Leben (Georgs Hub eingerechnet)
+  R.setLife({ on: true }); R.setGazeFollow(false); F.set('brow.life.on', true)
+  let px = 0, by = 0; for (let i = 0; i < 40; i++) { A.update(0.25, {}); px = Math.max(px, ...R.eyes.map((e) => Math.hypot(e._px, e._py))); by = Math.max(by, dev()) }
+  return { brows: items.length, pxMax: +px.toFixed(4), limit: +R._max.toFixed(4), browDev: +by.toFixed(4), eyeR: +R.eyeFrame().radius.toFixed(4) }
+})
+await page.evaluate(FREEZE)
 // Vertrag §6
 for (let i = 0; i < 5; i++) await page.evaluate(() => window.__kfbActorTestCtl.rerender())
 await page.waitForTimeout(500)
@@ -137,7 +147,7 @@ await browser.close()
 // ¾ und Seite: je eine frische Seite, eingefroren wie die Spender-Aufnahme, Kopfausschnitt gegen test/ref/fb08_donor_{q,side}.png
 const views = {}
 for (const v of ['q', 'side']) {
-  const o = await openPage(`#actortest,debug,view=${v}`, { viewport: { width: 900, height: 900 } })
+  const o = await openPage(`#actortest,debug,view=${v},partcolors=model`, { viewport: { width: 900, height: 900 } })
   await o.page.waitForFunction(() => window.__kfbActor && window.__kfbActor.status().status === 'OK' && window.__kfbActor.status().hair && window.__kfbActor.status().ao?.baked, null, { timeout: 120000 }) // Kontaktschatten fertig eingebacken
   await o.page.waitForTimeout(1500); await o.page.evaluate(FREEZE); await o.page.waitForTimeout(2000)
   const shot = await o.page.screenshot(); fs.writeFileSync(`test/out/actors_${v}.png`, shot)
@@ -169,6 +179,7 @@ process.exit(report('actors slot + FrizzleBob (Georg, v5b)', {
   pupilHiddenWhenClosed: cmp.pupilOpen > 300 && cmp.pupilShut <= cmp.pupilOpen * 0.05,
   mouthMimeTrack: mouth.keys > 10 && mouth.shapes.length >= 5 && mouth.decalOnModel,
   mouthBackToOwn: mouth.endMouth === 'own' && mouth.ownBack && mouth.speaking === false && mouth.endShapeOnRig === 'smile', // „!“ → Ende smile (wie Spender), Modellmund wieder eigen
+  slowFramesStable: slow.brows === 2 && slow.pxMax <= slow.limit * 1.05 && slow.browDev < slow.eyeR * 0.6, // Pupille im Auge; Braue ≤ 0,6 Augenradien um ihre Lage ohne Leben (Spielraum des Brauen-Lebens ≈ 0,5 R)
   earsSwingAndSettle: ears.bones === 6 && ears.moved && ears.finite && ears.settled,
   contractCreateOnce: before.log.create === 1,
   contractUpdateGetsCtx: before.log.update > 5 && before.log.lastCtx?.hasCam === true,
@@ -178,4 +189,4 @@ process.exit(report('actors slot + FrizzleBob (Georg, v5b)', {
   wirefaceWithoutSdkNoFigure: wf.b[0] === 'SOURCE_MISSING' && wf.b[1] === 0 && wf.b[2] === 'WIREFACE_MESH' && wf.c[0] === 'SOURCE_MISSING' && wf.c[1] === 0,
   localDecalsRequired: /MOUTH_DECALS_REQUIRED/.test(wf.noDecals),
   noPageErrors: errs.length === 0,
-}, { views, drv, st, eyeFrame: rep?.eyeFrame, cmp, mouth, ears, contract: { before, after, later }, wf, dx: [dxL, dxR], errs }))
+}, { slow, views, drv, st, eyeFrame: rep?.eyeFrame, cmp, mouth, ears, contract: { before, after, later }, wf, dx: [dxL, dxR], errs }))

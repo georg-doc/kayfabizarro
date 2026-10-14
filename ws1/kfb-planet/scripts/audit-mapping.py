@@ -26,7 +26,11 @@ if NAMES == 'media':  # Kartennamen aus den Deck-JSONs am geprüften Registry-St
         if not rd or not rd.get('data'): continue
         try:
             dj = json.load(urllib.request.urlopen(base + urllib.parse.quote(rd['data'])))
-            names[d] = {int(c['cardNumber']): c['cardName'] for c in dj.get('cards', []) if str(c.get('cardNumber', '')).isdigit()}
+            # V-242: drei Decks führen `num`/`name` statt cardNumber/cardName (CARD_TEXT_CANONICAL_R1, Spalte Struktur); kreative_kayfab hat keine Nummern
+            num = lambda c: str(c.get('cardNumber', c.get('num', ''))); nm = lambda c: c.get('cardName') or c.get('name')
+            cs = dj.get('cards', [])
+            if any(num(c).isdigit() for c in cs): names[d] = {int(num(c)): nm(c) for c in cs if num(c).isdigit() and nm(c)}
+            else: names[d] = {i + 1: nm(c) for i, c in enumerate(cs) if nm(c)}  # Deck ganz ohne Nummern: Listenplatz = Kartennummer (geprüft 156/156 gegen jsonLegacy ↔ Registry)
         except Exception as e: print('names', d, e)
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 RESCORE = '--rescore' in sys.argv  # vorhandene OCR-Rohdaten test/audit/<deck>.json neu bewerten, ohne PDF/OCR

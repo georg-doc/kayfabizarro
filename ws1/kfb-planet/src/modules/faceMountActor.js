@@ -61,12 +61,16 @@ function localMouthSet(urlsByFile) {
   return { ...MALE0, base: '', files }
 }
 
+// Teilschritt des Gesichts (s) und Obergrenze je Bild: bis 0,4 s Bildzeit bleibt jeder Schritt ≤ 1/30 s; darüber wird der Schritt länger, nie mehr Arbeit
+export const FACE_STEP = 1 / 30, FACE_MAX_STEPS = 12
 export const faceActorLog = { create: 0, update: 0, dispose: 0, lastCtx: null, freed: null }
 
 // options: { recipe, pet (Georgs kfb.pets/1-Eintrag), modelUrl, earRig, mouthDecals: {Dateiname: Adresse}, hairUrl?, clipsUrl?, motion: 'bind'|'idle'|Clipname, position, yaw, anchorId, lang }
 export function createFaceMountActor(options) {
   faceActorLog.create++
-  const { recipe, modelUrl, earRig, hairUrl = null, clipsUrl = null, position = [0, 0, 0], yaw = 0, anchorId = null, lang = 'de' } = options
+  // partColors: 'export' (Standard, WS0 14.10.: ToolBox exportiert die Farben der Original-Brauen/-Nase noch nicht → brow.color/nose.color aus Georgs Export)
+  //             | 'model' (Materialfarbe des Modells = P08-Spender; nur für das Bildpaar gegen den Spender)
+  const { recipe, modelUrl, earRig, hairUrl = null, clipsUrl = null, position = [0, 0, 0], yaw = 0, anchorId = null, lang = 'de', partColors = 'export' } = options
   const mouthSet = localMouthSet(options.mouthDecals)
   const motion = options.motion === 'idle' ? (recipe.idle?.clip || 'bind') : (options.motion || 'bind')
   const pet = options.pet
@@ -105,6 +109,13 @@ export function createFaceMountActor(options) {
     const f = mountFace({ THREE, M, figure: fig, entry: pet, log }) // P08: face-mount.load(pet) in mountFace; applied/rejected je Feld
     if (f.status !== 'OK') { inner.remove(fig); throw new Error('face-mount: ' + (f.reason || f.status)) }
     state.loadReport = { applied: (f.applied || []).length, rejected: (f.rejected || []).slice() }
+    // Farben der Original-Teile aus dem Export (WS0 14.10.); je Figur eigenes Material, damit nichts zwischen Darstellern geteilt wird
+    state.partColors = {}
+    if (partColors === 'export') for (const [part, key] of [['brows', 'brow'], ['nose', 'nose']]) {
+      const hex = pet[key]?.color; if (pet.parts?.[part] !== 'original' || typeof hex !== 'string') continue
+      for (const it of f.orig?.[part]?.items || []) { const m = it.mesh; if (!m?.material?.color) continue; if (!m.userData.ownMat) { m.material = m.material.clone(); m.userData.ownMat = true } m.material.color.set(hex) }
+      state.partColors[part] = hex
+    }
     // P08 Z. 1901–1903 + _mouthNoShadow
     fig.traverse((n) => { if (!n.isMesh) return; const mt = n.material, thin = !!(n.userData.petOverlay || (mt && (mt.isShaderMaterial || (mt.transparent && (mt.opacity == null || mt.opacity < 0.98))))); n.castShadow = !thin; n.receiveShadow = !(mt && mt.isShaderMaterial) })
     fig.traverse((n) => { if (n.isMesh && /(^|[^a-z])ears?([^a-z]|$)/i.test(n.name || '')) n.castShadow = false }) // _earCast (aus)
@@ -118,7 +129,6 @@ export function createFaceMountActor(options) {
       state.ao = AOMod.makeContactAO(THREE, root, { occluders: faceParts }); aoDone = state.ao.bake() // Parameter = DEFAULTS der ToolBox
     } catch (e) { log('contact-ao: ' + e.message) }
     state.face = f
-    fig.visible = true
     // _closedNeutral
     const m = f.mouth
     if (m && m.p && m.p.visemeMap && m.p.visemeMap.closed === 'm' && m.has && m.has(TB_VISEME_LOOK.closed)) { try { f.set('mouth.visemeMap', { ...m.p.visemeMap, ...TB_VISEME_LOOK }) } catch (e) { /* wie Spender */ } m.setVisemeMap(TB_VISEME_LOOK) }
@@ -145,9 +155,11 @@ export function createFaceMountActor(options) {
         const clips = await loader.loadAsync(clipsUrl)
         if (state.disposed) return
         const clip = clips.animations.find((c) => c.name === motion)
-        if (clip) state.mixer.clipAction(clip, fig).play(); else log('Clip fehlt: ' + motion)
+        if (clip) { state.mixer.clipAction(clip, fig).play(); state.mixer.update(0) } else log('Clip fehlt: ' + motion)
       } catch (e) { log('Clip: ' + e.message) }
     }
+    // erst sichtbar, wenn Gesicht, Kontaktschatten und Ruhe-Clip stehen: keine T-Pose und kein ungebackener Kopf im Bild (V-214)
+    fig.visible = true
   })().catch((e) => { state.status = 'ERROR'; state.error = String(e?.message || e); log('Fehler: ' + state.error) })
 
   // P08 _applyEars (Z. 2653–2690), 1:1: dangle → Steifigkeit, Pose, Lage/Drehung des Ohr-Basisknochens (Längen in Ohrlängen, Achsen im Kopfraum)
@@ -213,7 +225,9 @@ export function createFaceMountActor(options) {
       faceActorLog.update++; faceActorLog.lastCtx = { hasCam: !!ctx?.camera, hasPlayer: !!ctx?.player, hasGame: !!ctx?.game }
       state.mixer?.update(dt)
       const f = state.face
-      if (f) { lipTick(dt); applyLids(); f.update(dt, ctx?.camera || null); postRig() }
+      // Gesicht in Teilschritten ≤ FACE_STEP: die Pupillen-Feder der Augen-Lib rechnet explizit und schwingt bei langen Bildern auf (bei ≈ 5 Bildern/s
+      // auf der Bühne wuchs _px je Bild um ×2,3, die Brauen folgen dem Blick und flogen davon). ear-dangle teilt selbst (P.substep), der Mixer braucht es nicht.
+      if (f) { const n = Math.min(FACE_MAX_STEPS, Math.max(1, Math.ceil(dt / FACE_STEP))), h = dt / n; for (let i = 0; i < n; i++) { lipTick(h); applyLids(); f.update(h, ctx?.camera || null); postRig() } }
       if (state.ears) { root.updateWorldMatrix(true, true); state.ears.update(dt, { wind: earWind(dt) }) }
     },
     // Text → Mundbild-Spur ohne Ton („mime“, V-228 §4). Gibt die Spur zurück.
@@ -230,7 +244,7 @@ export function createFaceMountActor(options) {
     lookAt(nx, ny) { const R = state.face?.rig; if (!R) return; if (nx == null) R.setGazeFollow(false); else { R.setGazeFollow(true); R.pointTo(nx, ny) } },
     blinkNow() { state.face?.rig?.blinkNow?.() },
     earImpulse(k) { state.ears?.impulse(k === 'land' ? { pitch: 2.5 } : { pitch: -1.5 }) }, // P06 _earImpulse
-    status: () => ({ status: state.status, error: state.error, log: state.log.slice(-8), mouth: state.face?.mouthOnModel ?? null, hair: !!state.hair, ears: state.ears ? [state.ears.L.bones.length, state.ears.R.bones.length] : null, load: state.loadReport ?? null, ao: state.ao ? { baked: !!state.ao.info.baked, darkened: state.ao.info.darkened ?? 0, ms: state.ao.info.ms ?? null } : null }),
+    status: () => ({ status: state.status, shown: !!state.figure?.visible, partColors: state.partColors ?? null, error: state.error, log: state.log.slice(-8), mouth: state.face?.mouthOnModel ?? null, hair: !!state.hair, ears: state.ears ? [state.ears.L.bones.length, state.ears.R.bones.length] : null, load: state.loadReport ?? null, ao: state.ao ? { baked: !!state.ao.info.baked, darkened: state.ao.info.darkened ?? 0, ms: state.ao.info.ms ?? null } : null }),
     // gleiche Form wie kaykit-eye-adapter report().eyeFrame (Vektoren gerundet), dazu Eintrag und Mundzustand
     report: () => { const f = state.face; if (!f) return null; const ef = f.rig?.eyeFrame?.(), x = f.export?.() || {}, v = (a) => a.toArray().map((n) => +n.toFixed(4))
       return { parts: x.parts, eye: x.eye, eyeFrame: ef ? { left: v(ef.left), right: v(ef.right), radius: +ef.radius.toFixed(4), unit: +ef.unit.toFixed(4), gen: ef.gen } : null, mouth: f.mouthOnModel ?? null, lip: state.lip?.cur ?? null } },

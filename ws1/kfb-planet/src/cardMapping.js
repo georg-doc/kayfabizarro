@@ -2,7 +2,7 @@
 // Ohne three, ohne DOM. Festgenagelt auf denselben Stand wie die Bilder (MEDIA_COMMIT).
 import audit from './data/mapping-audit.json'
 
-export const MEDIA_COMMIT = 'a9f5ffa1484f510d2fbfb04bf3204546ef7dc867' // Registry-Korrektur R1 (Branch data/kfb-registry-mapping-fix-2026-10-14), Audit 60/78 SAFE
+export const MEDIA_COMMIT = '233efd533869e70cc2b2c87205e34b5e47e125b7' // Kartentext kanonisch = Druck (V-242, Branch data/kfb-card-text-canonical-2026-10-14, auf a9f5ffa1), Audit 60/78 SAFE, 3142 Karten
 
 // Ob die Zuordnung Karte -> Viertelseite stimmt, steht nicht in der Registry. Sie ist je Deck geprüft:
 // scripts/audit-mapping.py liest jede Viertelseite mit Apple Vision und vergleicht den Titel mit dem Kartennamen.

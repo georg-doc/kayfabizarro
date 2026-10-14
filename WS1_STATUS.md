@@ -1,7 +1,64 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§18 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§19 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 19 · 14.10. spät · G4-Vorbereitung: Bildaufbau, Brauen-Fehler behoben, V-242 Kartentext, Exportfarben
+
+Gelesen bis WS0_TO_WS1 „14.10. spät · Neuer Kartentext-Stand (V-242)“ und „ToolBox-Antworten“. Code `ws1/kfb-planet` = kfb-planet @63680ab (drei Commits auf f2e3709). Suite 15/15 PASS, zweimal hintereinander. Neu dabei ist `test/g4.mjs`. Belege: `ws1/proofs/2026-10-14-g4/`.
+
+### 19.1 · G4-Bildaufbau (Vorschlag, Entscheidung WS0)
+- **`cam=near`:** Kamera bei (0; 2,15; 9,2), Blick auf (0; 2,1; −3,5), fov 38, etwa auf Augenhöhe der Figuren.
+- **`place=near`:** FrizzleBobs bei x ±3,7, z 1,2, Drehung ±0,45, also vor der Tafel.
+- **Wirkung:** Die Karte ist ganz lesbar zwischen beiden Figuren, die Figuren erscheinen etwa doppelt so groß wie im bisherigen Two-Shot. Bildbogen `g4_sheet.png` (Zeile A · Antwort B · Spielerwahl) und `g4_vs_two.png` (bisher | Vorschlag).
+- Standard bleibt `cam=two`, bis WS0 entscheidet.
+- **Test g4** (ein Prüfpunkt je Eigenschaft):
+  - Figuren im Bild vor der ersten Zeile;
+  - Karte ganz im Bild;
+  - Karte frei von Figuren, Sprechblase und Spielerwahl;
+  - Brauen am Kopf nach 8 s Leben;
+  - Farben der Original-Teile aus dem Export.
+  - Gegenprobe ohne die Korrekturen aus 19.3: 2 FAIL.
+
+### 19.2 · Fehler gefunden und behoben: Brauen landeten auf der Brust (ToolBox-Befund A13)
+- **Bild:** Mit Idle_A auf der Bühne rutschten die Brauen nach etwa 30 s vom Kopf, eine stand am Ende auf der Brust. Im Einzeltest #actortest war alles richtig.
+- **Ursache:** Die Pupillen-Feder in `pet-eye-rig.v6.js` (Z. 331, Feder 150, Dämpfung 13) rechnet einen einfachen Schritt je Bild. Auf der Bühne laufen headless nur ≈ 5 Bilder/s (dt ≈ 0,2 s). Ab etwa 0,15 s schwingt die Feder auf: `_px` wuchs je Bild um das 2,3-Fache (gemessen bis 77, Grenze 0,045). `browLife` hebt die Brauen mit dem Blick (`gaze`), also flogen sie mit.
+- **Korrektur im Host, Libs unverändert:** `faceMountActor.update` rechnet das Gesicht in Teilschritten ≤ 1/30 s (`FACE_STEP`, höchstens 12 je Bild). ear-dangle teilt schon selbst, der Mixer braucht es nicht. Bei 60 Bildern/s bleibt es ein Schritt.
+- **Test** `actors › slowFramesStable`: 40 × update(0,25) mit Augen- und Brauen-Leben. Pupille 0,0375 bei Grenze 0,0446, Braue 0,02 m um ihre Lage. Gegenprobe ohne Teilschritte: 6·10³⁹, FAIL.
+- Betrifft auch die ToolBox auf schwachen Geräten bzw. in Hintergrund-Tabs → `TOOLBOX_FINDINGS_R1.md` A13.
+
+### 19.3 · Zwei kleinere Korrekturen aus derselben Probe
+1. **FrizzleBob erscheint erst, wenn Gesicht, Kontaktschatten und Ruhe-Clip stehen** (vorher kurz in T-Pose). Neu: `status().shown`. Der Dialog wartet darauf; vorher kam die erste Zeile, bevor die Figuren zu sehen waren.
+2. **Publikums-Anker je Kamera** (`playerPosFor`): Spielerwahl und Zuruf sitzen am unteren Bildrand (NDC −0,9). Für `cam=two` ergibt das die bisherige Lage; bei `cam=near` lag die Wahl vorher über dem Power-Text der Karte.
+
+### 19.4 · V-242 Kartentext = Druck: Zuordnung geprüft, `MEDIA_COMMIT` umgestellt
+- **Audit** gegen `data/kfb-card-text-canonical-2026-10-14` @233efd5. Die PDFs und `index.json` sind gegenüber a9f5ffa1 unverändert, deshalb wurden die vorhandenen OCR-Rohdaten neu bewertet (`--rescore`), mit den Titeln aus media/kfb (`NAMES=media`).
+- **Ergebnis: 60/78 SAFE wie bisher, kein Deck verloren, freigegebene Karten 3097 → 3142.** Rohdaten: `v242_audit_233efd5.json` und zum Vergleich `v242_audit_a9f5ffa1_medianames.json`.
+- **Zwei Stolpersteine im Format, im Skript abgefangen:**
+  - ai_kayfabe, brain_flipper und frizzlebob_s_kompendium führen `num`/`name` statt cardNumber/cardName.
+  - kreative_kayfab, carnival_therapy und tragic_flaws haben **gar keine Kartennummern** mehr. Dort gilt Listenplatz = Kartennummer, geprüft 156/156 über `jsonLegacy.cardName` gegen die Registry-Nummer.
+  - Ohne diese Abfangung fielen die drei Decks auf 0 Treffer.
+  - **Bitte an WS0:** Kartennummern in diesen Decks wieder mitführen.
+- **`MEDIA_COMMIT` = 233efd5.**
+- **Spieltext neu gebaut:** `src/data/cards.json` kommt jetzt aus media/kfb @233efd5 (`scripts/build-cards-media.py`), Deckliste und -reihenfolge unverändert. Damit beantwortet V-242 meine Frage aus §10.1.
+  - Vorher stand der Spieltext auf Registry ac9dbae und wich vom Druck ab: 46 Titel, 511 Power-, 558 Lore-Texte, darunter die anti_rules_toolkit-Verschiebung #51–56.
+  - Jetzt 6816 Karten (vorher 6789), keine doppelten Schlüssel.
+  - Die Sprechblasen sagen damit, was auf der Tafel gedruckt steht.
+
+### 19.5 · Farben der Original-Brauen und -Nase aus Georgs Export (WS0 14.10.)
+- **Brauen:** Modell und Export haben beide #17130f, es ändert sich also nichts.
+- **Nase:** vorher Modellfarbe #b0131e, jetzt `nose.color` #e96049 aus dem Export. Je Figur ein eigenes Material.
+- Das Bildpaar gegen den P08-Spender läuft mit Modellfarben (`partcolors=model`) und bleibt bei 1,2–1,4/255. Die Abweichung steht im Rezept unter `moduleDeviations` und als Befund A14.
+- **A5:** Wir nutzen lift 0,242 aus dem Export (V-240). Der vorläufige Wert 0,18 aus §12 ist nicht mehr in Gebrauch.
+
+### 19.6 · Offen für G4 (WS0)
+1. **Bildaufbau:** `near` (Vorschlag) oder `two`?
+2. **Biom bzw. Kartenzone der Bühne:** Derzeit steht Moos-Insel als Testvorgabe. Davon hängen Rahmen- und Bodenfarbe ab.
+3. **Zweite Besetzung:** Derzeit spielt FrizzleBob beide Seiten.
+4. **Pool r6:** Mit r5 (0 ACCEPTED) sagt Sprecher A den Kartentitel wörtlich (`source CARD`), nicht eine Pool-Zeile. Für die Vorführung wäre r6 nötig, sonst ist der Dialog nur „Titel → Power-Text → Wahl“.
+5. Weiter offen aus §18: Kopf-Blickschicht und Welt-`lookAt`, Kinetik-Automatik, M1-Fußabnahme gegen die Referenz-Rampe.
+
+**Zusammenarbeit:** Die M1-Sitzung baut im eigenen Worktree (`m1/bewegung`) und ruft nur `actor.update(dt)` auf. Sie übernimmt 28025ac und die folgenden Commits. Volle Suiten laufen abgesprochen, nur eine Sitzung zur Zeit.
 
 ## 18 · 14.10. abends · G0 M1 „Bewegung mit FrizzleBob v5b“: PASS (nur Prüfung, kein Bau)
 

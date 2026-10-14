@@ -33,8 +33,15 @@ const [deckId, num] = (/card=([\w]+):(\d+)/.exec(hash) || [0, 'forget_utopia', '
 const di = DECKS.findIndex((d) => d.id === deckId)
 const CARD = di >= 0 ? cardsOfDeck(di).map(cardAt).find((c) => c.num === +num) || null : null
 const BIOME = BIOMES.find((b) => b.name === decodeURIComponent(/biome=([^,]+)/.exec(hash)?.[1] || '')) || BIOMES[1]
-export const STAGE_CAMS = { two: { pos: [0, 2.7, 12.5], target: [0, 2.4, -3.5] }, wide: { pos: [0, 9, 30], target: [0, 2, -2] }, q: { pos: [9, 3.2, 9], target: [0, 2.2, -3] } }
+export const STAGE_CAMS = { two: { pos: [0, 2.7, 12.5], target: [0, 2.4, -3.5] }, wide: { pos: [0, 9, 30], target: [0, 2, -2] }, q: { pos: [9, 3.2, 9], target: [0, 2.2, -3] },
+  // G4-Probe (Bildaufbau): Kamera näher, auf Augenhöhe der Figuren; Stellung per Hash place=near (Figuren vorn, enger)
+  near: { pos: [0, 2.15, 9.2], target: [0, 2.1, -3.5] } }
 const cam = STAGE_CAMS[/cam=(\w+)/.exec(hash)?.[1]] || STAGE_CAMS.two
+// Publikums-Anker je Kamera: 3,2 m vor der Kamera auf der Blickachse, so tief, dass Blase und Spielerwahl am unteren Bildrand sitzen (NDC y −0,9),
+// nicht über der Karte. Der Anker liegt 1,05 m über playerState.pos (BubbleHost). Für cam=two ergibt das die bisherige Lage (0, 0,6, z − 3,2).
+export const playerPosFor = (c, fov = 38, d = 3.2, ndcY = -0.9) => { const [px, py, pz] = c.pos, [tx, ty, tz] = c.target, L = Math.hypot(tx - px, ty - py, tz - pz), k = d / L
+  return [px + (tx - px) * k, py + (ty - py) * k + ndcY * d * Math.tan((fov / 2) * Math.PI / 180) - 1.05, pz + (tz - pz) * k] }
+const PLAYER_POS = playerPosFor(cam)
 const ACTORS = ['none', 'fb', 'rogue'].includes(/actors=(\w+)/.exec(hash)?.[1]) ? /actors=(\w+)/.exec(hash)[1] : 'none' // unbekannter Wert → keine Figuren (Prüfer 9, Befund 7)
 const AMPH = { biome: BIOME }
 const BB = { card: CARD, biome: BIOME, maxW: 7, maxH: 5, position: [0, 0, -3.5] }
@@ -45,7 +52,8 @@ const mouthDecals = Object.fromEntries(Object.entries(decals).map(([k, v]) => [k
 const pet = georg.pets.find((p) => p.id === fbRecipe.entry.pet)
 const FB = (x, yaw, id) => ({ recipe: fbRecipe, pet, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion: 'idle', position: [x, 0, -1.4], yaw, anchorId: id })
 const MK = /actors=fb/.test(hash) ? FB : ROGUE
-const L = MK(-4.2, 0.35, 'stage-left'), R = MK(4.2, -0.35, 'stage-right')
+const NEAR = /place=near/.test(hash) // G4-Probe: Figuren vor der Tafel nach vorn und enger, Karte bleibt zwischen ihnen
+const L = NEAR ? { ...MK(-3.7, 0.45, 'stage-left'), position: [-3.7, 0, 1.2] } : MK(-4.2, 0.35, 'stage-left'), R = NEAR ? { ...MK(3.7, -0.45, 'stage-right'), position: [3.7, 0, 1.2] } : MK(4.2, -0.35, 'stage-right')
 const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
 const DECK = di >= 0 ? cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num).slice(0, NDIALOG) : []
 const mods = {}
@@ -58,7 +66,8 @@ const DIALOG = {
   say: (anchor, line) => useGame.getState().say(anchor, line),
   openChoice: () => { useGame.getState().openChoice(); return useGame.getState().choice?.id ?? null },
   closeChoice: () => useGame.getState().closeChoice(),
-  isReady: () => isPoolReady() && mods.amph?.status().status === 'OK' && mods.billboard?.info()?.source === 'CARD' && (ACTORS === 'none' || (mods.left?.status().status === 'OK' && mods.right?.status().status === 'OK')),
+  // Figuren bereit = geladen UND im Bild (FrizzleBob erscheint erst nach Kontaktschatten + Ruhe-Clip; G4-Vorprobe: erste Zeile kam vor der Figur)
+  isReady: () => isPoolReady() && mods.amph?.status().status === 'OK' && mods.billboard?.info()?.source === 'CARD' && (ACTORS === 'none' || [mods.left, mods.right].every((a) => a?.status().status === 'OK' && a.status().shown !== false)),
 }
 const mk = (k, f) => (o) => { mods[k] = f(o); expose('StageMods', mods); return mods[k] }
 const makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makeL = mk('left', createActor), makeR = mk('right', createActor)
@@ -73,7 +82,7 @@ function Cam() {
 export default function Stage() {
   // Die Spielerwahl der Bühne: Zurufe des Publikums erscheinen als Blase vorn am Bildrand (Anker „player“ vor der Kamera).
   // Nur solange die Bühne steht; beim Abbau zurück (Prüfer 8, Befund 6: kein Seiteneffekt beim Import).
-  useEffect(() => { const prev = playerState.pos.clone(); playerState.pos.set(0, 0.6, cam.pos[2] - 3.2); return () => { playerState.pos.copy(prev) } }, [])
+  useEffect(() => { const prev = playerState.pos.clone(); playerState.pos.set(...PLAYER_POS); return () => { playerState.pos.copy(prev) } }, [])
   useEffect(() => { expose('StageCtl', { log: () => ({ amph: { ...amphLog } }), biome: BIOME, card: CARD, cams: STAGE_CAMS, deck: DECK }) }, [])
   // Ergebnis der Spielerwahl → Dialog (Store-Ereignis lastChoice)
   useEffect(() => useGame.subscribe((s, p) => { if (s.lastChoice && s.lastChoice !== p.lastChoice) mods.dialog?.onChoice(s.lastChoice) }), [])

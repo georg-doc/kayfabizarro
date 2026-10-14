@@ -45,6 +45,7 @@
   "Export-Kennung 'KFB ToolBox Production-02 · Rigging' schreibt jeder Cut (P08 Z. 3845–3860); welche Fassung Georg nutzt, klärt WS0 (V-241).",
   "Ohren: Export nennt ear-dangle @19088b14 (PR #214, 6bb4531a); P08 lädt kfb-lib/ear-dangle d7ad94a2 (FLOPPY-01), ohne die neuen Felder bit-gleich (FLOPPY-01 Abnahme 1). Gebaut gegen d7ad94a2 wie P08.",
   "Ladeweg: mountFace mit dem Eintrag (= P08 nach dem Neuladen, _mountFaceOn(saved)), nicht der Einmal-Weg rigImport; im Bildpaar ohne sichtbaren Unterschied.",
-  "Kontaktschatten in der Bindepose gebacken (P08: Pose-Rig-Haltung, Standard-Eintrag); body-shape, pose-rig nicht übernommen (body = neutral)."
+  "Kontaktschatten in der Bindepose gebacken (P08: Pose-Rig-Haltung, Standard-Eintrag); body-shape, pose-rig nicht übernommen (body = neutral).",
+  "Farben der Original-Brauen/-Nase aus Georgs Export (brow.color #17130f, nose.color #e96049): WS0 14.10. (ToolBox exportiert sie noch nicht). Nase weicht damit vom P08-Spender ab (Modellfarbe #b0131e); das Bildpaar gegen den Spender läuft mit partColors 'model'."
  ]
 }
