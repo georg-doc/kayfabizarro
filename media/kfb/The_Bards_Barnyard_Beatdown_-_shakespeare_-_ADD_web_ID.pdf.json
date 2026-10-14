@@ -97,16 +97,18 @@
       "cardName": "The Rib-Breaker",
       "grade": 1,
       "power": "THE FALL: Flip a coin. If heads, opponent loses 3 Ribs (HP).",
-      "lore": "He that escapes not without some shaky limb shall acquit him well.",
+      "lore": "He that escapes me without some shaky limb shall acquit him well.",
       "gradeReason": "Wrestler who breaks ribs with a coin flip. Name + mechanic = instant embodiment.",
       "artworkPrompt": "Style: vintage wrestling poster. Subject: bear in Victorian wrestling stance. Mood: gleeful brutality.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Rib-Breaker",
         "power": "THE FALL: Flip a coin. If heads, opponent loses 3 Ribs (HP).",
-        "lore": "He that escapes me without some shaky limb shall acquit him well.",
+        "lore": "He that escapes not without some shaky limb shall acquit him well."
+      },
+      "textSource": {
         "source": "PDF v05 The_Bards_Barnyard_Beatdown - shakespeare - ADD web ID.pdf p2 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -197,7 +199,12 @@
       "power": "TRUE LABORER: Earn 1 gold token per turn.",
       "lore": "I am a true laborer: I earn that I eat, get that I wear.",
       "gradeReason": "Economy card. Honest archetype but purely mechanical — honest work, boring card.",
-      "artworkPrompt": "Style: rustic woodcut. Subject: ram with a shepherd's crook in a meadow. Mood: steadfast simplicity."
+      "artworkPrompt": "Style: rustic woodcut. Subject: ram with a shepherd's crook in a meadow. Mood: steadfast simplicity.",
+      "textSource": {
+        "source": "PDF v05 The_Bards_Barnyard_Beatdown - shakespeare - ADD web ID.pdf p4 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 12,
@@ -296,32 +303,49 @@
       "power": "VIXEN: Bonus damage against taller opponents.",
       "lore": "Though she be but little, she is fierce.",
       "gradeReason": "One word, one mechanic, one character. Shortest fiercest card in the deck.",
-      "artworkPrompt": "Style: action manga. Subject: small tabby cat mid-leap with claws extended. Mood: fierce compact fury."
+      "artworkPrompt": "Style: action manga. Subject: small tabby cat mid-leap with claws extended. Mood: fierce compact fury.",
+      "textSource": {
+        "source": "PDF v05 The_Bards_Barnyard_Beatdown - shakespeare - ADD web ID.pdf p7 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 23,
       "cardName": "The Purple Flower",
       "grade": 1,
       "power": "CUPID'S FLOWER: Attach to any card; that card must defend the next card played, regardless of team.",
-      "lore": "The juice of it on sleeping eye-lids said.",
+      "lore": "The juice of it on sleeping eye-lids laid.",
       "gradeReason": "Love potion that corrupts team allegiance. Mechanic IS the flower's power. Table chaos guaranteed.",
-      "artworkPrompt": "Style: botanical illustration gone wrong. Subject: glowing purple pansy with a human face. Mood: dreamy menace."
+      "artworkPrompt": "Style: botanical illustration gone wrong. Subject: glowing purple pansy with a human face. Mood: dreamy menace.",
+      "jsonLegacy": {
+        "cardName": "The Purple Flower",
+        "power": "CUPID'S FLOWER: Attach to any card; that card must defend the next card played, regardless of team.",
+        "lore": "The juice of it on sleeping eye-lids said."
+      },
+      "textSource": {
+        "source": "PDF v05 The_Bards_Barnyard_Beatdown - shakespeare - ADD web ID.pdf p7 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 24,
       "cardName": "The Moon",
       "grade": 3,
-      "power": "WANING: All moon effects end at the end of the turn.",
+      "power": "WANING: All magic effects end at the end of the turn.",
       "lore": "This dog, my dog.",
       "gradeReason": "Rules clarification card disguised as a character. 'The Moon' is Starveling with a lantern but this is just a timer reset.",
       "artworkPrompt": "Style: folk illustration. Subject: old dog holding a paper lantern in moonlight. Mood: weary pageantry.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Moon",
-        "power": "WANING: All magic effects end at the end of the turn.",
-        "lore": "This dog, my dog.",
+        "power": "WANING: All moon effects end at the end of the turn.",
+        "lore": "This dog, my dog."
+      },
+      "textSource": {
         "source": "PDF v05 The_Bards_Barnyard_Beatdown - shakespeare - ADD web ID.pdf p7 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -376,7 +400,12 @@
       "power": "GOOD OLD MAN: Support Dogberry; adds +1 confusion to the board.",
       "lore": "A good old man, sir; he will be talking.",
       "gradeReason": "Pure sidekick card — only matters if The Constable is already in play. Context-dependent.",
-      "artworkPrompt": "Style: character study. Subject: elderly chihuahua in watchman's coat nodding along. Mood: oblivious agreement."
+      "artworkPrompt": "Style: character study. Subject: elderly chihuahua in watchman's coat nodding along. Mood: oblivious agreement.",
+      "textSource": {
+        "source": "PDF v05 The_Bards_Barnyard_Beatdown - shakespeare - ADD web ID.pdf p9 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 31,
@@ -385,7 +414,12 @@
       "power": "DIE TO LIVE: Remove from play for 1 round; return fully healed.",
       "lore": "One Hero died defiled, but I do live.",
       "gradeReason": "Fake death mechanic is smart but Hero is more victim than performer — reactive not active.",
-      "artworkPrompt": "Style: Pre-Raphaelite. Subject: swan in wedding veil lying across a tomb. Mood: tragic purity."
+      "artworkPrompt": "Style: Pre-Raphaelite. Subject: swan in wedding veil lying across a tomb. Mood: tragic purity.",
+      "textSource": {
+        "source": "PDF v05 The_Bards_Barnyard_Beatdown - shakespeare - ADD web ID.pdf p9 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 32,
@@ -493,7 +527,12 @@
       "power": "ANCIENT DAMNATION: Delay delivery of a message/item by 1 turn.",
       "lore": "Lord, how my head aches!",
       "gradeReason": "Message delay is mechanically accurate to the Nurse's fatal role — but not a performance invitation.",
-      "artworkPrompt": "Style: Victorian domestic scene. Subject: goose in nurse's uniform waddling with a sealed letter. Mood: oblivious delay."
+      "artworkPrompt": "Style: Victorian domestic scene. Subject: goose in nurse's uniform waddling with a sealed letter. Mood: oblivious delay.",
+      "textSource": {
+        "source": "PDF v05 The_Bards_Barnyard_Beatdown - shakespeare - ADD web ID.pdf p12 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 44,
@@ -565,7 +604,13 @@
       "power": "EAVESDROPPING: Look at top card of opponent's deck before they draw.",
       "lore": null,
       "gradeReason": "Spying on opponent's next card IS the overhearing plot of Much Ado. Location as active performance.",
-      "artworkPrompt": "Style: garden maze illustration. Subject: walled orchard with marked hiding alcoves. Mood: conspiratorial intimacy."
+      "artworkPrompt": "Style: garden maze illustration. Subject: walled orchard with marked hiding alcoves. Mood: conspiratorial intimacy.",
+      "printTypo": "Lore-Feld im Druck mit unlesbarem Schein-Text ('The expreme copping derls to the show.'); Lore bleibt leer",
+      "textSource": {
+        "source": "PDF v05 The_Bards_Barnyard_Beatdown - shakespeare - ADD web ID.pdf p14 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 52,
@@ -599,9 +644,19 @@
       "cardName": "The Mask",
       "grade": 1,
       "power": "MISTAKEN IDENTITY: Redirect a targeted attack to an adjacent card.",
-      "lore": null,
+      "lore": "PROP DEPT.",
       "gradeReason": "Wearing a mask to misdirect attacks IS the masquerade. Prop that performs its own function.",
-      "artworkPrompt": "Style: Venetian still life. Subject: ornate mask on a velvet cushion with ribbons. Mood: beautiful deception."
+      "artworkPrompt": "Style: Venetian still life. Subject: ornate mask on a velvet cushion with ribbons. Mood: beautiful deception.",
+      "jsonLegacy": {
+        "cardName": "The Mask",
+        "power": "MISTAKEN IDENTITY: Redirect a targeted attack to an adjacent card.",
+        "lore": null
+      },
+      "textSource": {
+        "source": "PDF v05 The_Bards_Barnyard_Beatdown - shakespeare - ADD web ID.pdf p15 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 56,
