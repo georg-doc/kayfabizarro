@@ -1,5 +1,15 @@
 # KFB Eye Actor Studio v1 · RETURN
 
+
+## SOURCE EVIDENCE UPDATE · 2026-10-14 · VIDEO A TRANSCRIPT RECEIVED
+
+Georg supplied the English timecoded (0:03–8:57) transcript for Jen Abbott's Blender cartoon eye-rig tutorial `y3Q3oD7A1kM`. Exact 13-row sequence and cautions are recorded in `CLAUDE_DESIGN_EYELID_MESH_RECOVERY_BRIEF_2026-10-14.md`: separate already-modelled eye/top/bottom objects; gaze `Track To` (-Y / Z); `Copy Rotation` X to both lids with `Invert X` on lower; lock Y/Z rotation; mirrored .L set; shared eye and lid master controllers; keyframes 1 / 25 / 35 / 45. Caption ambiguities ("Track 2"; "eyebones" at 7:03 during eyelid master parenting) explicitly flagged. **No eyelid mesh modelling/topology is demonstrated** and Blender's bone constraints are NOT adopted as a second KFB runtime. Source was user-provided timecoded text; origin as manual/auto captions not verified. Video B `hTl825DO-Aw` transcript **STILL PENDING**.
+
+The prior Thin-Clay HUMAN VISUAL FAIL remains binding. No new mesh, source donor promotion, visual review, browser test, Site publication, merge or Live. Existing PR #159 donor owner + EyeRig v6 PR #104 consumer ownership unchanged. One next gate: `EYELID_VIDEO_B_TRANSCRIPT_INTAKE_THEN_CLAUDE_DESIGN`.
+
+---
+
+
 ## HUMAN OVERRIDE · 2026-10-14 · THIN-CLAY GEOMETRY VISUAL FAIL
 
 Georg has **REJECTED** the rendered `thin-clay-lid.v1.mjs` candidate: severe mesh destruction, visible cracks/tear edges and broken top surface. This overrides the earlier `SOURCE-ISOLATED CANDIDATE` presentation and any optimistic statement about geometry quality. The 30/30 structural checks only exercised narrow mesh-index invariants and **did not** prove usable/watertight-looking geometry; local central-pupil pixel counts do not certify full lid/iris/gaze occlusion. Candidate is preserved **NEGATIVE DONOR ONLY**, excluded from EyeRig-v6 actor consumption, tuning and Site integration. Do not repeat failed procedural patch loops.
