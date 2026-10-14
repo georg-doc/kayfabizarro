@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · ChatGPT-Münder aufbereitet
+- replies/MOUTHS_GPT_R1/: Georgs zwei GPT-Bögen geschnitten, gesäubert, verankert (upperLift), Sprech-/Reaktions-Clips, Höhen-Check auf FrizzleBob. A = Sprech-Set, B = Reaktions-Set; fehlend F/V, L/TH (B auch Oo); Sprünge zwischen small_open→ah und bei oo. Hub v7 spielt Videos in Bildfolgen (mg01, mg02).
+
 ## 2026-10-15 · UFO Phase 1b
 - Knüppel abgeschnitten (Skript cut-joysticks.mjs, auf A und Master), A_nojoy 398 860 Dreiecke/14,1 MB; Maßstäbe 4,5/6/8 m pro Einheit mit FrizzleBob v5b + KayKit (Empfehlung 6 m); B1-Billboard mit Querformat-Karte vor dem Monitor. Erste Abnahme im neuen Format (Einzelbilder, Bildfolge im Hub: u04–u06).
 

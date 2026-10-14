@@ -36,9 +36,9 @@ TALK_CORE = {'A': ['closed', 'small_open', 'ah', 'oh', 'oo', 'teeth_small', 'ee_
 CANVAS = (512, 512)          # native pixel scale of the GPT sheets (no resampling)
 ANCHOR = (256, 112)          # canvas point = mouth centre-x / upper-lip top edge (closed)
 SQUASH = 0.8                 # vertical squash for too-tall shapes
-TALL_RATIO = 1.8
+TALL_RATIO = {'A': 1.8, 'B': 1.7}   # height / closed above which a _sq80 variant is made (B: less room on the face)
 # closed shapes anchor by the LIP LINE (seam) of `closed`; all others by the upper-lip top of `closed`
-CLOSED_FAMILY = {'A': ['closed', 'smile_closed', 'mbp'], 'B': ['closed', 'smile_closed', 'small_open']}             # height / closed height above which a _sq80 variant is made
+CLOSED_FAMILY = {'A': ['closed', 'smile_closed', 'mbp'], 'B': ['closed', 'smile_closed', 'small_open']}
 
 
 def cut_sheet(path):
@@ -152,7 +152,7 @@ def main():
             base = mid.replace('_sq80', '')
             m = ms[base]; sq = mid.endswith('_sq80')
             ratio = m['bbox'][3] / hc
-            if sq and ratio < TALL_RATIO: continue
+            if sq and ratio < TALL_RATIO[d]: continue
             sy = SQUASH if sq else 1.0
             mode = 'seam' if base in CLOSED_FAMILY[d] else 'upper_lip_top'
             dy0 = (seam_rel_closed - (m['seam'] - m['top'])) if mode == 'seam' else 0.0
@@ -191,13 +191,13 @@ def main():
                                      'upper lip stays under the nose and the jaw opens downward. CLOSED shapes '
                                      '(anchor_mode seam) put their lip line on the lip line of closed (anchor.y + seam_offset).',
                                 seam_offset=int(seam_rel_closed)),
-                    upperLift=dict(value_baked=0.0, tested=[0.0, 0.15],
+                    upperLift=dict(value=0.0, value_baked=0.0, range=[0.0, 1.0], tested=[0.0, 0.15],
                                    rule='dy = -upperLift * extra_height_px, extra = max(0, h_shape - h_closed) measured from '
                                         'the upper-lip top (centre) to the lowest point; 0 for closed shapes. The upper lip rises by that share '
                                         'of the extra opening height, the rest goes down. PNGs are baked at 0; apply dy '
                                         'in the engine (lift_dy_px lists 0.15).'),
                     closed_height_px=hc, closed_width_px=ms['closed']['bbox'][2],
-                    squash=dict(factor=SQUASH, applied_when=f'height_ratio_to_closed >= {TALL_RATIO}',
+                    squash=dict(factor=SQUASH, applied_when=f'height_ratio_to_closed >= {TALL_RATIO[d]}',
                                 pivot='upper-lip top (stays fixed)'),
                     mouths=entries)
         with open(os.path.join(od, 'anchors.json'), 'w') as f:

@@ -117,8 +117,11 @@ class FB:
         self.ay = self.old['cy'] * Z - ch / 2 * self.s
         self.ax = self.old['cx'] * Z
 
-    def frame(self, im, size, orig=False):
-        """face crop of `size`, mouth centred horizontally, anchor at ~52% height"""
+    def frame(self, im, size, orig=False, zoom=1.0, ypos=0.56):
+        """face crop of `size`, mouth centred horizontally, anchor at `ypos` of the height; zoom<1 shows more face"""
+        if zoom != 1.0:
+            big = self.frame(im, (int(size[0] / zoom), int(size[1] / zoom)), orig, 1.0, ypos)
+            return big.resize(size, Image.LANCZOS)
         base = (self.bigorig if orig else self.big).copy()
         if im is not None:
             s = im.resize((max(1, int(im.width * self.s)), max(1, int(im.height * self.s))), Image.LANCZOS)
@@ -126,7 +129,7 @@ class FB:
             s = s.filter(ImageFilter.GaussianBlur(0.4))
             base.alpha_composite(s, (int(round(self.ax - 256 * self.s)), int(round(self.ay - 112 * self.s))))
         cx, cy = self.ax, self.ay
-        x0 = int(cx - size[0] / 2); y0 = int(cy - size[1] * 0.56)
+        x0 = int(cx - size[0] / 2); y0 = int(cy - size[1] * ypos)
         crop = Image.new('RGBA', size, (217, 210, 198, 255))
         crop.alpha_composite(base, (-x0, -y0))
         return crop
@@ -145,7 +148,7 @@ def save(img, name):
 # ---------------------------------------------------------------- review stills
 def still_ids(d, meta, by, imgs, ids, n, title):
     img = Image.new('RGB', (W, H), BG_PAGE)
-    header(img, title, f"Design {d}: saubere PNGs, Anker = Oberlippe oben (gestrichelt). Originalgrößen. Höhe = × closed.")
+    header(img, title, f"Anker: offen = Oberlippe oben (gestrichelt), geschlossen = Lippenlinie von closed. Originalgrößen.")
     pw, ph = 620, 440
     for k, mid in enumerate(ids):
         c, r = k % 3, k // 3
@@ -200,7 +203,7 @@ def still_heights(d, meta, by, imgs, tall, fb=None):
                 dr = ImageDraw.Draw(p); yl = oy + int((112 + hc) * 0.95)
                 for xx in range(0, pw, 22): dr.line((xx, yl, xx + 11, yl), fill=(150, 90, 70), width=3)
             else:
-                p = fb.frame(imgs[var], (pw, ph - 58))
+                p = fb.frame(imgs[var], (pw, ph - 58), zoom=0.5, ypos=0.42)
             img.paste(p.convert('RGB'), (x, y))
             rat = by[var]['height_ratio_to_closed']
             ImageDraw.Draw(img).text((x + 8, y + ph - 54), f"{var}  ·  {rat:.2f}× closed", font=f(34, True), fill=INK)
@@ -292,7 +295,7 @@ REACT = {'A': [('closed', 8), ('smile_closed', 12), ('smile_teeth', 12), ('close
                ('oo', 10), ('mbp', 10), ('closed', 8)],
          'B': [('closed', 8), ('smile_closed', 12), ('smile_teeth', 12), ('laugh', 12), ('scream', 12), ('scream_sq80', 12),
                ('grit', 10), ('grimace', 12), ('smirk', 12), ('tongue_out', 12), ('closed', 8)]}
-TALL = {'A': ['ah', 'oh', 'surprised_tall'], 'B': ['scream', 'tongue_out']}
+TALL = {'A': ['ah', 'oh', 'surprised_tall'], 'B': ['scream', 'tongue_out', 'oh']}
 OVER = {'A': ['closed', 'small_open', 'ah', 'oh', 'oo', 'teeth_small', 'ee_wide', 'th_tongue', 'mbp'],
         'B': ['closed', 'small_open', 'ah', 'oh', 'grit']}
 SHEET = {'A': 'sheet1.png', 'B': 'sheet2.png'}

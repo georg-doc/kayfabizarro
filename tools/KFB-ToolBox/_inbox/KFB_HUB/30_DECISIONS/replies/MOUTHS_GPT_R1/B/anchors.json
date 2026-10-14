@@ -14,7 +14,12 @@
   "seam_offset": 54
  },
  "upperLift": {
+  "value": 0.0,
   "value_baked": 0.0,
+  "range": [
+   0.0,
+   1.0
+  ],
   "tested": [
    0.0,
    0.15
@@ -25,7 +30,7 @@
  "closed_width_px": 309,
  "squash": {
   "factor": 0.8,
-  "applied_when": "height_ratio_to_closed >= 1.8",
+  "applied_when": "height_ratio_to_closed >= 1.7",
   "pivot": "upper-lip top (stays fixed)"
  },
  "mouths": [
@@ -641,6 +646,53 @@
    "red_px_outside": 0
   },
   {
+   "id": "oh_sq80",
+   "file": "oh_sq80.png",
+   "trim": null,
+   "use_as": "E+F round ring (one shape for OH and OO)",
+   "talk_core": true,
+   "variant_of": "oh",
+   "squash_y": 0.8,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    144,
+    106
+   ],
+   "bbox_canvas": [
+    149,
+    110,
+    213,
+    189
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    213,
+    236
+   ],
+   "height_ratio_to_closed": 1.378,
+   "width_ratio_to_closed": 0.689,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 204,
+   "extra_height_px": 61.2,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -9.2
+   },
+   "sheet_bbox": [
+    444,
+    429,
+    213,
+    236
+   ],
+   "red_px_outside": 0
+  },
+  {
    "id": "tongue_out_sq80",
    "file": "tongue_out_sq80.png",
    "trim": null,
@@ -684,6 +736,53 @@
     745,
     274,
     260
+   ],
+   "red_px_outside": 0
+  },
+  {
+   "id": "smirk_sq80",
+   "file": "smirk_sq80.png",
+   "trim": null,
+   "use_as": "reaction: smirk (asymmetric)",
+   "talk_core": false,
+   "variant_of": "smirk",
+   "squash_y": 0.8,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    102,
+    72
+   ],
+   "bbox_canvas": [
+    107,
+    76,
+    298,
+    186
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    298,
+    233
+   ],
+   "height_ratio_to_closed": 1.361,
+   "width_ratio_to_closed": 0.964,
+   "anchor_mode": "upper_lip_top",
+   "anchor_dy": 0.0,
+   "upper_lip_top_canvas": 112.0,
+   "seam_canvas": 180,
+   "extra_height_px": 24.0,
+   "lift_dy_px": {
+    "0": 0,
+    "0.15": -3.6
+   },
+   "sheet_bbox": [
+    1117,
+    753,
+    298,
+    233
    ],
    "red_px_outside": 0
   }

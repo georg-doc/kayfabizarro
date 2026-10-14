@@ -1,0 +1,312 @@
+{
+ "fb_old_mouth": {
+  "cx": 219.5,
+  "cy": 281.5,
+  "w": 91.0,
+  "h": 25.0
+ },
+ "jumps": {
+  "A_talk_lift0": [
+   {
+    "swap": "closed->small_open",
+    "d_upper": 0.0,
+    "d_cx": -0.5,
+    "d_width": -11,
+    "d_bottom": 38.0
+   },
+   {
+    "swap": "small_open->ah",
+    "d_upper": 0.0,
+    "d_cx": 0.0,
+    "d_width": -12,
+    "d_bottom": 101.0
+   },
+   {
+    "swap": "ah->oh",
+    "d_upper": 0.0,
+    "d_cx": 0.5,
+    "d_width": -55,
+    "d_bottom": -2.0
+   },
+   {
+    "swap": "oh->small_open",
+    "d_upper": 0.0,
+    "d_cx": -0.5,
+    "d_width": 67,
+    "d_bottom": -99.0
+   },
+   {
+    "swap": "small_open->closed",
+    "d_upper": 0.0,
+    "d_cx": 0.5,
+    "d_width": 11,
+    "d_bottom": -38.0
+   },
+   {
+    "swap": "closed->teeth_small",
+    "d_upper": 0.0,
+    "d_cx": 0.0,
+    "d_width": 0,
+    "d_bottom": 44.0
+   },
+   {
+    "swap": "teeth_small->ee_wide",
+    "d_upper": 0.0,
+    "d_cx": 0.0,
+    "d_width": -2,
+    "d_bottom": 19.0
+   },
+   {
+    "swap": "ee_wide->th_tongue",
+    "d_upper": 0.0,
+    "d_cx": 0.0,
+    "d_width": -12,
+    "d_bottom": 24.0
+   },
+   {
+    "swap": "th_tongue->oo",
+    "d_upper": 0.0,
+    "d_cx": 0.0,
+    "d_width": -132,
+    "d_bottom": -43.0
+   },
+   {
+    "swap": "oo->small_open",
+    "d_upper": 0.0,
+    "d_cx": -0.5,
+    "d_width": 135,
+    "d_bottom": -6.0
+   },
+   {
+    "swap": "small_open->mbp",
+    "d_upper": -19.0,
+    "d_cx": 0.0,
+    "d_width": -24,
+    "d_bottom": -33.0
+   },
+   {
+    "swap": "mbp->closed",
+    "d_upper": 19.0,
+    "d_cx": 0.5,
+    "d_width": 35,
+    "d_bottom": -5.0
+   }
+  ],
+  "A_talk_lift015": [
+   {
+    "swap": "closed->small_open",
+    "d_upper": -5.7,
+    "d_cx": -0.5,
+    "d_width": -11,
+    "d_bottom": 32.3
+   },
+   {
+    "swap": "small_open->ah",
+    "d_upper": -15.1,
+    "d_cx": 0.0,
+    "d_width": -12,
+    "d_bottom": 85.8
+   },
+   {
+    "swap": "ah->oh",
+    "d_upper": 0.2,
+    "d_cx": 0.5,
+    "d_width": -55,
+    "d_bottom": -1.8
+   },
+   {
+    "swap": "oh->small_open",
+    "d_upper": 14.9,
+    "d_cx": -0.5,
+    "d_width": 67,
+    "d_bottom": -84.1
+   },
+   {
+    "swap": "small_open->closed",
+    "d_upper": 5.7,
+    "d_cx": 0.5,
+    "d_width": 11,
+    "d_bottom": -32.3
+   },
+   {
+    "swap": "closed->teeth_small",
+    "d_upper": -6.6,
+    "d_cx": 0.0,
+    "d_width": 0,
+    "d_bottom": 37.4
+   },
+   {
+    "swap": "teeth_small->ee_wide",
+    "d_upper": -2.9,
+    "d_cx": 0.0,
+    "d_width": -2,
+    "d_bottom": 16.2
+   },
+   {
+    "swap": "ee_wide->th_tongue",
+    "d_upper": -3.6,
+    "d_cx": 0.0,
+    "d_width": -12,
+    "d_bottom": 20.4
+   },
+   {
+    "swap": "th_tongue->oo",
+    "d_upper": 6.5,
+    "d_cx": 0.0,
+    "d_width": -132,
+    "d_bottom": -36.6
+   },
+   {
+    "swap": "oo->small_open",
+    "d_upper": 0.9,
+    "d_cx": -0.5,
+    "d_width": 135,
+    "d_bottom": -5.1
+   },
+   {
+    "swap": "small_open->mbp",
+    "d_upper": -13.3,
+    "d_cx": 0.0,
+    "d_width": -24,
+    "d_bottom": -27.3
+   },
+   {
+    "swap": "mbp->closed",
+    "d_upper": 19.0,
+    "d_cx": 0.5,
+    "d_width": 35,
+    "d_bottom": -5.0
+   }
+  ],
+  "B_talk_lift0": [
+   {
+    "swap": "closed->small_open",
+    "d_upper": 12.0,
+    "d_cx": 0.5,
+    "d_width": -9,
+    "d_bottom": -7.0
+   },
+   {
+    "swap": "small_open->ah",
+    "d_upper": -12.0,
+    "d_cx": -0.5,
+    "d_width": -3,
+    "d_bottom": 101.0
+   },
+   {
+    "swap": "ah->oh",
+    "d_upper": 0.0,
+    "d_cx": 0.0,
+    "d_width": -84,
+    "d_bottom": 14.0
+   },
+   {
+    "swap": "oh->small_open",
+    "d_upper": 12.0,
+    "d_cx": 0.5,
+    "d_width": 87,
+    "d_bottom": -115.0
+   },
+   {
+    "swap": "small_open->closed",
+    "d_upper": -12.0,
+    "d_cx": -0.5,
+    "d_width": 9,
+    "d_bottom": 7.0
+   },
+   {
+    "swap": "closed->grit",
+    "d_upper": 0.0,
+    "d_cx": 0.5,
+    "d_width": 23,
+    "d_bottom": 56.0
+   },
+   {
+    "swap": "grit->ah",
+    "d_upper": 0.0,
+    "d_cx": -0.5,
+    "d_width": -35,
+    "d_bottom": 38.0
+   },
+   {
+    "swap": "ah->small_open",
+    "d_upper": 12.0,
+    "d_cx": 0.5,
+    "d_width": 3,
+    "d_bottom": -101.0
+   },
+   {
+    "swap": "small_open->closed",
+    "d_upper": -12.0,
+    "d_cx": -0.5,
+    "d_width": 9,
+    "d_bottom": 7.0
+   }
+  ],
+  "B_talk_lift015": [
+   {
+    "swap": "closed->small_open",
+    "d_upper": 12.0,
+    "d_cx": 0.5,
+    "d_width": -9,
+    "d_bottom": -7.0
+   },
+   {
+    "swap": "small_open->ah",
+    "d_upper": -26.1,
+    "d_cx": -0.5,
+    "d_width": -3,
+    "d_bottom": 86.9
+   },
+   {
+    "swap": "ah->oh",
+    "d_upper": -2.1,
+    "d_cx": 0.0,
+    "d_width": -84,
+    "d_bottom": 11.9
+   },
+   {
+    "swap": "oh->small_open",
+    "d_upper": 28.2,
+    "d_cx": 0.5,
+    "d_width": 87,
+    "d_bottom": -98.8
+   },
+   {
+    "swap": "small_open->closed",
+    "d_upper": -12.0,
+    "d_cx": -0.5,
+    "d_width": 9,
+    "d_bottom": 7.0
+   },
+   {
+    "swap": "closed->grit",
+    "d_upper": -8.4,
+    "d_cx": 0.5,
+    "d_width": 23,
+    "d_bottom": 47.6
+   },
+   {
+    "swap": "grit->ah",
+    "d_upper": -5.7,
+    "d_cx": -0.5,
+    "d_width": -35,
+    "d_bottom": 32.3
+   },
+   {
+    "swap": "ah->small_open",
+    "d_upper": 26.1,
+    "d_cx": 0.5,
+    "d_width": 3,
+    "d_bottom": -86.9
+   },
+   {
+    "swap": "small_open->closed",
+    "d_upper": -12.0,
+    "d_cx": -0.5,
+    "d_width": 9,
+    "d_bottom": 7.0
+   }
+  ]
+ }
+}
