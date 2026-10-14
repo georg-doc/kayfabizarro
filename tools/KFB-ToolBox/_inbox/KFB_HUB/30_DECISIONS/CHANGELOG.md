@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · MVP-Fahrplan
+- V-250: MVP-0 Dialog-Szene → MVP-1 Welt-Hülle → MVP-2 God-Mode v1 → MVP-3 Veröffentlichen → MVP-4 Combat-Arena; an WS1 übergeben.
+
 ## 2026-10-14 spät · UFO Cockpit Stage · Meshy source-gated intake für WS0/WS1
 - `replies/WS0_WS1_UFO_COCKPIT_STAGE_INTAKE_R1_2026-10-14.md`: Georg übernimmt das offene Clay-UFO-Cockpit als **zweite potenzielle KFB-Dialogbühne**. Exakter Master Dropbox `/CLAUDE/MeshyModels/ufo_cockpit_stage.glb`, 96.191.364 Bytes verifiziert (Dropbox-Hash, SHA-256/GLB-Inventur ausstehend); Screenshot nennt 2.301.904 Dreiecke (nicht unabhängig ausgelesen). Freigegebene Designrichtung: Ring, Rückwand-Monitor, Mittelkonsole, Luke, modellierte Unterseite behalten; vordere Joysticks störend, erst geometrisch isolieren und reversibel ausblendbare Stage-Variante prüfen, keine Meshy-Neugenerierung. WS1 wiederverwendet Amphitheater-Conversion-Pipeline nach neuer Master-SHA/G1, normal/UV-aware Vereinfachung, 2048/1024 WebP und echte Master|Browser-Ansichten inkl. Unterseite. Rear Screen nur nach WS0-Autorisierung als Variante der **einen** KFB-Kartenquelle/Billboard R2; kein zweiter Renderer, kein beam/Portal-Slice, keine parallele Runtime. **Nur Intake**: keine Master-Binäranalyse, Konvertierung, Bühne oder Site abgenommen. Nächstes Gate: WS0 Quell-Isolation + Browser-A/B bei WS1 autorisieren.
 

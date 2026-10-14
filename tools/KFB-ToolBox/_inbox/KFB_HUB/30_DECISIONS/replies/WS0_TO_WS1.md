@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · MVP-Fahrplan (V-250) · bitte quittieren
+1. **MVP-0 Dialog-Szene spielbar** (läuft): Amphitheater, FrizzleBob + KayKit-Gegenüber (drei Kandidaten an WS0), B1 Billboard, Blasen, Spielerwahl, Paletten (V-245), Vorschau-Text (drei Karten). Abschluss: G4 an WS0, dann Georg im Spiel.
+2. **MVP-1 Welt-Hülle:** eine begehbare Insel aus den Meshy-Kulissen (Mesa B, Bibliothek A; Schnee/Natur folgen), Laufen/Springen aus M1 (V-248), Kamera, NPC-Begegnungen an Billboards. Vorschlag zum Inselaufbau (Maßstab, Übergänge ohne harte Kanten V-011, Bodenschluss V-203) zuerst als Plan in WS1_STATUS.
+3. **MVP-2 God-Mode v1:** Platzieren/Drehen/Skalieren aus dem Asset Librarian, Undo, Welt als `kfb.world/1`-Datei (Vorschlag in `replies/WORLD_CONTRACT_R1.md`, `WORLDBUILDER_MODULE_MAP_R1.md`), Umschalten Spiel ↔ God-Mode (Kamera V-026). Vorlagen-Zeile vor Bau.
+4. **MVP-3 Veröffentlichen:** Build als Site mit Versionen; WS0 klärt Ziel und Weg mit WSA work.
+5. **MVP-4 Combat-Arena:** Destruction-Mech, KayKit-Mündungsfeuer (groß/Rakete, klein/Gatling, cartoonig im Schusstakt), Zerstörungs-Ebene, Flugmodus (V-024). Bausteine aus `KFB Combat Arena/` (v2) prüfen und als Module übernehmen. Nicht vor MVP-1.
+Höchstens zwei Baustellen gleichzeitig (V-005). M1 läuft als zweite.
+
 ## 15.10.2026 · Antwort auf §23 (M1) · und Erinnerung Palette
 - **Palette:** Steht weiter oben unter „15.10.2026 früh · Antworten auf §19–§22“ (V-245). §23 war älter als die Antwort.
 - **Befund 1, Tempo (V-248):**

@@ -3213,6 +3213,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-250",
+   "date": "2026-10-15",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "MVP-Fahrplan (ohne Rennstrecke): MVP-0 Dialog-Szene spielbar (Amphitheater, FrizzleBob + KayKit-Gegenüber, Billboard mit Karte, Blasen, Spielerwahl, Paletten, Vorschau-Text) → MVP-1 Welt-Hülle (begehbare Insel aus Meshy-Inseln + Bibliothek, Laufen/Springen M1, Kamera, NPC-Begegnungen an Billboards) → MVP-2 God-Mode v1 (Librarian-Assets platzieren/drehen/skalieren, Undo, Welt als kfb.world/1-Datei auf GitHub, Umschalten Spiel/God-Mode) → MVP-3 Veröffentlichen als Site mit Versionen, je Release Georgs PASS → MVP-4 Combat-Arena (Destruction-Mech, KayKit-Mündungsfeuer groß/Rakete und klein/Gatling cartoonig im Schusstakt, Zerstörungs-Ebene, Flugmodus Doppel-Leertaste; Bausteine aus Combat Arena v2 übernehmen). Schätzung bis veröffentlichter Welt mit God-Mode 3–5 Wochen. Höchstens zwei Baustellen gleichzeitig (V-005).",
+   "values": {},
+   "owner": "WS1 (Bau) · WS0 (Steuerung)",
+   "check": "Georg je Schritt im Spiel",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ziel: eine spielbare, veröffentlichte Welt mit God-Mode, die schrittweise wächst.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3275,7 +3290,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:268",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:271",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
