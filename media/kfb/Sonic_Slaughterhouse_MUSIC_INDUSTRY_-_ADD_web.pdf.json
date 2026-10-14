@@ -69,7 +69,12 @@
       "power": "START the game on Level 3. Talent is optional; lineage is mandatory.",
       "lore": "An industry plant with roots in the boardroom. Born on third base, thinks they hit a triple.",
       "gradeReason": "Universal archetype. 'Born on third base, thinks they hit a triple' is a G1 lore line.",
-      "artworkPrompt": "Style: Gilded cartoon. Subject: Peacock hatching from golden egg on boardroom throne. Mood: Entitled arrogance."
+      "artworkPrompt": "Style: Gilded cartoon. Subject: Peacock hatching from golden egg on boardroom throne. Mood: Entitled arrogance.",
+      "textSource": {
+        "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p3 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 7,
@@ -114,7 +119,12 @@
       "power": "PREDICT the next card. If it matches the formula, double its effect.",
       "lore": "The Scorpion Algorithm: Optimizing art until it is perfectly flat and universally tolerated.",
       "gradeReason": "Strong concept but abstract mechanism. 'Scorpion Algorithm' name needs unpacking.",
-      "artworkPrompt": "Style: Digital horror cartoon. Subject: Giant spider in server rack predicting music charts. Mood: Cold optimization."
+      "artworkPrompt": "Style: Digital horror cartoon. Subject: Giant spider in server rack predicting music charts. Mood: Cold optimization.",
+      "textSource": {
+        "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p4 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 12,
@@ -168,7 +178,12 @@
       "power": "SACRIFICE the rest of your hand to play this one card.",
       "lore": "Killer vs. Filler. Two minutes of hooks, forty minutes of contractual obligation.",
       "gradeReason": "Dramatic sacrifice mechanic mirrors real-career stakes. Lore is perfectly biting.",
-      "artworkPrompt": "Style: Golden egg cartoon. Subject: Gleaming golden single on pedestal surrounded by discarded filler tracks. Mood: Pyrrhic victory."
+      "artworkPrompt": "Style: Golden egg cartoon. Subject: Gleaming golden single on pedestal surrounded by discarded filler tracks. Mood: Pyrrhic victory.",
+      "textSource": {
+        "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p6 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 18,
@@ -232,13 +247,10 @@
       "lore": "Darker and Edgier. When the teen pop sales dip, pivot to \"mature\" angst.",
       "gradeReason": "Power text is too brief. 'Pivot to mature angst' is good but needs context to perform.",
       "artworkPrompt": "Style: Teen angst cartoon. Subject: Kitten in heavy metal makeup pouting at camera. Mood: Forced darkness.",
-      "print": {
-        "cardName": "The Edgelord Pivot",
-        "power": "INTIMIDATE weaker cards.",
-        "lore": "Darker and Edgier. When the teen pop",
+      "textSource": {
         "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p7 BR",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -275,24 +287,31 @@
       "power": "BIND a fan to your card. They cannot leave play but drain your energy.",
       "lore": "They think they know you. They think they own you.",
       "gradeReason": "'They think they know you. They think they own you.' — two lines, complete performance.",
-      "artworkPrompt": "Style: Surveillance cartoon. Subject: Giant eye-shaped fan account orbiting pop star's bedroom window. Mood: Parasitic intimacy."
+      "artworkPrompt": "Style: Surveillance cartoon. Subject: Giant eye-shaped fan account orbiting pop star's bedroom window. Mood: Parasitic intimacy.",
+      "textSource": {
+        "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p8 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 29,
       "cardName": "The Lip Sync",
       "grade": 2,
-      "power": "AUTOMATIC SUCCESS on performance rolls. Fails if Milli Vanilli rules apply. It's \"augmenting the live experience\".",
+      "power": "AUTOMATIC SUCCESS on performance rolls. Fails if Milli Vanilli rules apply. It's not fraud, it's \"augmenting the live experience\".",
       "lore": null,
       "gradeReason": "Milli Vanilli reference is sharp, but lore appears cut/absent in PDF. Incomplete card.",
       "artworkPrompt": "Style: Puppet cartoon. Subject: Ventriloquist dummy singing onstage, operator hidden in shadows. Mood: Performative deception.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Lip Sync",
-        "power": "AUTOMATIC SUCCESS on performance rolls. Fails if",
-        "lore": "",
+        "power": "AUTOMATIC SUCCESS on performance rolls. Fails if Milli Vanilli rules apply. It's \"augmenting the live experience\".",
+        "lore": null
+      },
+      "printTypo": "Karte hat nur einen Textblock (kein eigenes Lore-Feld)",
+      "textSource": {
         "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p9 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -302,7 +321,12 @@
       "power": "REVEAL an opponent's hand. Gain hype from the exposure.",
       "lore": "There is no such thing as an accidental tape leak. Everything is a rollout.",
       "gradeReason": "REVEAL mechanic is clear. Lore is sharp but tells rather than invites.",
-      "artworkPrompt": "Style: Rat pack cartoon. Subject: Rats with cameras mobbing celebrity at staged scandal. Mood: Orchestrated exposure."
+      "artworkPrompt": "Style: Rat pack cartoon. Subject: Rats with cameras mobbing celebrity at staged scandal. Mood: Orchestrated exposure.",
+      "textSource": {
+        "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p9 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 31,
@@ -312,13 +336,11 @@
       "lore": "Safe Politics. Corporate activism that costs nothing and changes nothing.",
       "gradeReason": "'Corporate activism that costs nothing and changes nothing' — G1 lore, immediately performed.",
       "artworkPrompt": "Style: Corporate greenwash cartoon. Subject: Weasel in activism t-shirt posing before brand logo. Mood: Hollow solidarity.",
-      "print": {
-        "cardName": "The Virtue Signal",
-        "power": "DEFLECT criticism. You are immune immune toiCancel Culture\" cards this turn.",
-        "lore": "Safe Politics. Corporate activism that costs nothing and changes nothing.",
+      "printTypo": "Druck: 'You are immune You are immune to \"Cancel Culture\"' (Satzteil doppelt)",
+      "textSource": {
         "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p9 BL",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -328,7 +350,12 @@
       "power": "REMOVE a 'Controversy' token from your artist.",
       "lore": "PR Crisis Team. Burying the bodies so the show can go on.",
       "gradeReason": "PR mechanic is clear. 'Burying the bodies' is good but slightly mechanical.",
-      "artworkPrompt": "Style: Crisis PR cartoon. Subject: Suited warthogs shoveling dirt under red carpet. Mood: Institutional cover-up."
+      "artworkPrompt": "Style: Crisis PR cartoon. Subject: Suited warthogs shoveling dirt under red carpet. Mood: Institutional cover-up.",
+      "textSource": {
+        "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p9 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 33,
@@ -347,13 +374,10 @@
       "lore": "No brown M&Ms. It's not about the candy, it's about control.",
       "gradeReason": "'No brown M&Ms. It's not about the candy, it's about control.' — iconic, G1 from the gate.",
       "artworkPrompt": "Style: Diva cartoon. Subject: M&M bowl being inspected for wrong color in ornate dressing room. Mood: Absurd control.",
-      "print": {
-        "cardName": "The Rider",
-        "power": "DEMAND specific resources If not met, cancel the gig.",
-        "lore": "No brown M&Ms. It's not about the candy,",
+      "textSource": {
         "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p10 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -552,7 +576,12 @@
       "power": "RESET the game to zero. Start over, but this time, do it yourself.",
       "lore": "Raw Soul. It sounds terrible. It sounds perfect.",
       "gradeReason": "'It sounds terrible. It sounds perfect.' — best closer in the corpus. RESET is earned.",
-      "artworkPrompt": "Style: Raw energy cartoon. Subject: Cassette labeled THE RESISTANCE glowing alone in darkness. Mood: Raw defiant hope."
+      "artworkPrompt": "Style: Raw energy cartoon. Subject: Cassette labeled THE RESISTANCE glowing alone in darkness. Mood: Raw defiant hope.",
+      "textSource": {
+        "source": "PDF v05 Sonic_Slaughterhouse_MUSIC_INDUSTRY - ADD web.pdf p15 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     }
   ],
   "cardCount": 56,
