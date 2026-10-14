@@ -6,7 +6,7 @@
 import fs from 'fs'
 import { openPage, report } from './_page.mjs'
 fs.mkdirSync('test/out', { recursive: true })
-const { browser, page, errs } = await openPage('#hosttest,seed=4242')
+const { browser, page, errs } = await openPage('#hosttest')
 await page.waitForFunction(() => window.__kfbAnchors && window.__kfbStore && window.__kfb && window.__kfbProbeLog?.update > 3, null, { timeout: 90000 })
 await page.evaluate(() => window.__kfbStore.getState().closeDialog())
 await page.waitForTimeout(1500)
@@ -49,7 +49,7 @@ const forged = (await list()).find((b) => b.anchor === 'forged')
 const zurufAtNpc = (await list()).find((b) => b.anchor === 'npc')
 await page.waitForFunction(() => !window.__kfbPool().loading, null, { timeout: 30000 }).catch(() => {})
 const pool = await page.evaluate(() => window.__kfbPool())
-const cardLine = await page.evaluate(async () => { const c = window.__kfbTower()[0]; return { ...(await window.__kfbLineFor(c, 'cardName')), name: c.name } })
+const cardLine = await page.evaluate(async () => { const c = window.__kfbCard('forget_utopia', 7); return { ...(await window.__kfbLineFor(c, 'cardName')), name: c.name } })
 // 4 · Modul-Anker: ModuleHost meldet 'probe' an und beim Aushängen ab
 await page.evaluate(() => window.__kfbHostTest.off())
 await page.waitForTimeout(800)

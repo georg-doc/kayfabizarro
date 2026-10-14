@@ -2,7 +2,7 @@
 // Ohne three, ohne DOM. Festgenagelt auf denselben Stand wie die Bilder (MEDIA_COMMIT).
 import audit from './data/mapping-audit.json'
 
-export const MEDIA_COMMIT = 'ac9dbaed2e5966a537a4bb719e8cd847dcc5e099'
+export const MEDIA_COMMIT = 'a9f5ffa1484f510d2fbfb04bf3204546ef7dc867' // Registry-Korrektur R1 (Branch data/kfb-registry-mapping-fix-2026-10-14), Audit 60/78 SAFE
 
 // Ob die Zuordnung Karte -> Viertelseite stimmt, steht nicht in der Registry. Sie ist je Deck geprüft:
 // scripts/audit-mapping.py liest jede Viertelseite mit Apple Vision und vergleicht den Titel mit dem Kartennamen.

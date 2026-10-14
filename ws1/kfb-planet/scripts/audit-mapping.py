@@ -9,17 +9,29 @@ import json, os, re, subprocess, sys, unicodedata, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from difflib import SequenceMatcher
 
-commit = re.search(r"MEDIA_COMMIT = '([0-9a-f]{40})'", open('src/cardMapping.js').read()).group(1)
+# MEDIA=<commit> prüft einen anderen Registry-Stand; OUT=<datei> und RAW=<ordner> trennen die Ergebnisse vom Spielstand.
+# NAMES=media vergleicht mit den Kartennamen aus den Deck-JSONs in media/kfb (statt src/data/cards.json).
+commit = os.environ.get('MEDIA') or re.search(r"MEDIA_COMMIT = '([0-9a-f]{40})'", open('src/cardMapping.js').read()).group(1)
+RAW = os.environ.get('RAW', 'test/audit'); OUT = os.environ.get('OUT', 'src/data/mapping-audit.json'); NAMES = os.environ.get('NAMES', 'cards')
 base = f'https://raw.githubusercontent.com/georg-doc/kayfabizarro/{commit}/media/kfb/'
 reg = {d['packId']: d for d in json.load(urllib.request.urlopen(base + 'index.json'))['decks']}
 cards = json.load(open('src/data/cards.json'))
 deck_ids = [d[0] for d in cards['decks']]
 names = {}
 for c in cards['cards']: names.setdefault(deck_ids[c[0]], {})[c[1]] = c[2]
+if NAMES == 'media':  # Kartennamen aus den Deck-JSONs am geprüften Registry-Stand
+    names = {}
+    for d in deck_ids:
+        rd = reg.get(d)
+        if not rd or not rd.get('data'): continue
+        try:
+            dj = json.load(urllib.request.urlopen(base + urllib.parse.quote(rd['data'])))
+            names[d] = {int(c['cardNumber']): c['cardName'] for c in dj.get('cards', []) if str(c.get('cardNumber', '')).isdigit()}
+        except Exception as e: print('names', d, e)
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 RESCORE = '--rescore' in sys.argv  # vorhandene OCR-Rohdaten test/audit/<deck>.json neu bewerten, ohne PDF/OCR
 todo = args or [d for d in deck_ids if not d.startswith('medkayfab_')]
-os.makedirs('test/out/pdf', exist_ok=True); os.makedirs('test/audit', exist_ok=True)
+os.makedirs('test/out/pdf', exist_ok=True); os.makedirs(RAW, exist_ok=True)
 
 # Je Karte: Der Titel im Viertel muss den eigenen Namen tragen und darf zu keiner anderen Karte des Decks
 # gleich gut oder besser passen (doppelte Namen, Nachbarkarten). Füllwörter zählen nicht; Unicode bleibt erhalten.
@@ -52,7 +64,7 @@ def audit1(deck):
     off = d['coverOffset'] if d['coverOffset'] is not None else 1
     nm = names.get(deck, {})
     count = max(nm) if nm else d['cardCount']
-    rawp = f'test/audit/{deck}.json'
+    rawp = f'{RAW}/{deck}.json'
     if RESCORE and os.path.exists(rawp):
         raw = json.load(open(rawp))
     else:
@@ -73,7 +85,7 @@ def audit1(deck):
                   'bestShift': best, 'bestShiftMatched': score[best], 'coverOffset': off, 'pdfPages': raw['pdfPages'],
                   'ok': okc if status == 'SAFE' else [], 'blocked': sorted(set(nm) - set(okc)) if status == 'SAFE' else sorted(nm)}
 
-path = 'src/data/mapping-audit.json'
+path = OUT
 prev = json.load(open(path)) if os.path.exists(path) else {'decks': {}}
 prev.update({'schema': 'kfb.ws1.mapping-audit/1', 'media': commit,
              'method': 'PDFKit-Render (scale 1.5) + Apple Vision OCR je Viertel; Titel (erste 7 Zeilen, ohne Füllwörter) gegen cards.json; Karte ok = eigener Name ≥0,75 und besser als jede andere Karte des Decks; Deck SAFE = ≥85 % der lesbaren Karten ok; Bilder nur für Karten in ok'})

@@ -1,4 +1,4 @@
-// S1 Kartenbilder · cardImage(deckId, n) über card-art-2d (1:1). Deterministisch über #seed=4242 (fester Turm).
+// S1 Kartenbilder · cardImage(deckId, n) über card-art-2d (1:1). Feste Karten, ohne Turm (der Deck-Turm ist Legacy, V-216).
 // Bildpaare gegen unabhängige Referenzen (macOS PDFKit, scripts/make-ref.py), nicht gegen pdf.js selbst.
 // Braucht Netz (raw.githubusercontent, jsDelivr).
 import fs from 'fs'
@@ -10,12 +10,18 @@ const blob = crypto.createHash('sha1').update(Buffer.concat([Buffer.from(`blob $
 const cards = JSON.parse(fs.readFileSync('src/data/cards.json', 'utf8'))
 const spikeName = (deck, n) => { const di = cards.decks.findIndex((d) => d[0] === deck); return cards.cards.find((c) => c[0] === di && c[1] === n)?.[2] }
 const ref = (f) => 'data:image/png;base64,' + fs.readFileSync('test/ref/' + f).toString('base64')
-// Paare: forget_utopia #7 (Karte der Inventur) und die erste Turmkarte bei Seed 4242
+const PP_PAGE = JSON.parse(fs.readFileSync('test/ref/card_plot_pusher_posse_2.json', 'utf8')).page // aus make-ref.py (Registry am MEDIA_COMMIT)
+// Paare: forget_utopia #7 (Karte der Inventur) und plot_pusher_posse #2 (zweites, unabhängig gewähltes Deck)
 const PAIRS = [
   { deck: 'forget_utopia', n: 7, ref: ref('card_forget_utopia_7.png'), page: 3, quad: 2 },
-  { deck: 'protopia_web', n: 2, ref: ref('card_protopia_web_2.png'), page: 2, quad: 1 },
+  { deck: 'plot_pusher_posse', n: 2, ref: ref('card_plot_pusher_posse_2.png'), page: PP_PAGE, quad: 1 },
 ]
-const SEED_TOWER = 'protopia_web'
+// gesperrte Beispiele aus dem Audit: eine Karte eines UNSAFE-Decks und eine einzeln gesperrte Karte eines SAFE-Decks
+const AUDIT = JSON.parse(fs.readFileSync('src/data/mapping-audit.json', 'utf8')).decks
+const unsafeDeck = Object.keys(AUDIT).find((k) => AUDIT[k].status === 'UNSAFE' && (AUDIT[k].blocked || []).length)
+const safeWithBlock = Object.keys(AUDIT).find((k) => AUDIT[k].status === 'SAFE' && (AUDIT[k].blocked || []).length)
+const BLOCKED = [[unsafeDeck, AUDIT[unsafeDeck].blocked[0]], [safeWithBlock, AUDIT[safeWithBlock].blocked[0]]]
+const OKCARD = [safeWithBlock, AUDIT[safeWithBlock].ok[0]]
 // Name gegen Bild: Titel der Referenz, mit Apple Vision gelesen (test/ref/*.json). Regel wie card_ok() in
 // scripts/audit-mapping.py: eigener Name ≥ 0,75 (Wortanteil ohne Füllwörter, sonst Zeichenähnlichkeit) und besser
 // als jeder andere Kartenname des Decks. Die Zeichenähnlichkeit ist hier ein einfacher Bigramm-Dice statt SequenceMatcher.
@@ -28,8 +34,8 @@ const titleMatches = (deck, n, lines) => { const own = score(spikeName(deck, n),
 const refMeta = (deck, n) => JSON.parse(fs.readFileSync(`test/ref/card_${deck}_${n}.json`, 'utf8'))
 const imageTitles = PAIRS.map((p) => ({ deck: p.deck, n: p.n, name: spikeName(p.deck, p.n), ocr: refMeta(p.deck, p.n).ocr.slice(0, 5), ok: titleMatches(p.deck, p.n, refMeta(p.deck, p.n).ocr) }))
 
-const { browser, page, errs, warns } = await openPage('#debug,seed=4242')
-await page.waitForFunction(() => window.__kfbCardImage && window.__kfbStore && window.__kfbTower, null, { timeout: 60000 })
+const { browser, page, errs, warns } = await openPage('#debug')
+await page.waitForFunction(() => window.__kfbCardImage && window.__kfbStore && window.__kfbCard, null, { timeout: 60000 })
 
 const pairs = await page.evaluate(async (list) => {
   const load = (u) => new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = u })
@@ -59,26 +65,25 @@ const pairs = await page.evaluate(async (list) => {
 }, PAIRS)
 for (const p of pairs.out) if (p.pair) fs.writeFileSync(`test/out/s1_pair_${p.deck}_${p.n}.png`, Buffer.from(p.pair.split(',')[1], 'base64'))
 
-// Decks ohne geprüfte Zuordnung (Audit UNSAFE) liefern kein Bild; der Turm (Seed 4242) ist ein SAFE-Deck
-const gate = await page.evaluate(async () => ({
-  // ganze Decks gesperrt (UNSAFE) und Einzelkarten in SAFE-Decks gesperrt (Funde blinder Prüfer 2)
-  blockedNull: (await Promise.all([['suppressed_book_deck', 13], ['nibelungen_booster_pack_design', 2], ['anti_rules_toolkit', 51], ['big_bad_brain_wrestling', 50], ['big_bad_brain_wrestling', 51], ['romantic_kayfabe', 55]].map(([d, n]) => window.__kfbCardImage(d, n)))).every((r) => r === null),
-  cardGate: [window.__kfbCardSafe('big_bad_brain_wrestling', 49), window.__kfbCardSafe('big_bad_brain_wrestling', 50)],
+// Gesperrte Karten liefern kein Bild, freigegebene schon (Freigabe je Karte)
+const gate = await page.evaluate(async ([blocked, okc]) => ({
+  blockedNull: (await Promise.all(blocked.map(([d, n]) => window.__kfbCardImage(d, n)))).every((r) => r === null),
+  cardGate: [window.__kfbCardSafe(okc[0], okc[1]), window.__kfbCardSafe(blocked[1][0], blocked[1][1])],
   safe: window.__kfbSafeDecks(),
-  towerDeck: window.__kfbTower()[0].deck.id,
-}))
+}), [BLOCKED, OKCARD])
 
-// Turm freispielen (12), Bühne mit drei Szenen + Quest, Actor setzen, Sammlung im DOM
+// Sammlung, Actor-Abzeichen und Bühnen-Aufsteller mit festen, freigegebenen Karten (kein Turm)
 const before = await page.evaluate(() => window.__kfbCardStats().loaded)
-const staged = await page.evaluate(() => {
+const fixed = [['forget_utopia', 7], ['forget_utopia', 8], ['forget_utopia', 9], ['forget_utopia', 10], ['plot_pusher_posse', 2]]
+const staged = await page.evaluate((fixed) => {
   const s = window.__kfbStore.getState(); s.closeDialog()
-  const tower = window.__kfbTower()
-  for (const c of tower) s.collect(c)
-  s.setActor(tower[0])
-  s.setEpisode({ quest: tower[11], die: 1, stage: [tower[8], tower[9], tower[10]], transcript: [], finale: false, turn: 0 })
-  return tower.map((c) => c.deck.id + '#' + c.num)
-})
-await page.waitForFunction((n) => window.__kfbCardStats().loaded >= n, before + 12, { timeout: 180000 }).catch(() => {})
+  const cs = fixed.map(([d, n]) => window.__kfbCard(d, n))
+  for (const c of cs) s.collect(c)
+  s.setActor(cs[0])
+  s.setEpisode({ quest: cs[4], die: 1, stage: [cs[1], cs[2], cs[3]], transcript: [], finale: false, turn: 0 })
+  return cs.map((c) => c.deck.id + '#' + c.num)
+}, fixed)
+await page.waitForFunction((n) => window.__kfbCardStats().loaded >= n, before + 3, { timeout: 180000 }).catch(() => {})
 await page.waitForFunction(() => document.querySelector('.chip .card-art.ok'), null, { timeout: 60000 }).catch(() => {})
 const stats = await page.evaluate(() => ({ ...window.__kfbCardStats(), chipArt: !!document.querySelector('.chip .card-art.ok') }))
 await page.screenshot({ path: 'test/out/s1_scene.png' })
@@ -96,10 +101,9 @@ process.exit(report('s1 card images', {
   imageTitleMatchesName: imageTitles.every((t) => t.ok),
   blockedCardsGiveNoImage: gate.blockedNull,
   perCardGate: gate.cardGate[0] === true && gate.cardGate[1] === false,
-  towerDeckFixedBySeed: gate.towerDeck === SEED_TOWER,
-  towerDeckAuditedSafe: gate.safe.includes(gate.towerDeck) && gate.safe.length >= 40,
-  towerStageActorRealTextures: stats.loaded >= before + 12 && stats.failed === 0,
+  auditSafeDecks: gate.safe.length >= 55,
+  stageActorRealTextures: stats.loaded >= before + 3 && stats.failed === 0,
   collectionShowsArt: stats.chipArt,
   noCardWarnings: warns.length === 0,
   noPageErrors: errs.length === 0,
-}, { blob, pairs: pairs.out.map(({ pair, ...p }) => p), imageTitles, gate: { ...gate, safe: gate.safe.length }, staged, stats, warns, errs }))
+}, { blob, pairs: pairs.out.map(({ pair, ...p }) => p), imageTitles, gate: { ...gate, safe: gate.safe.length, BLOCKED, OKCARD }, staged, stats, warns, errs }))

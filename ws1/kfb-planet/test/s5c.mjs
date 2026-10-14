@@ -3,7 +3,7 @@
 import fs from 'fs'
 import { openPage, report } from './_page.mjs'
 fs.mkdirSync('test/out', { recursive: true })
-const { browser, page, errs } = await openPage('#debug,seed=4242')
+const { browser, page, errs } = await openPage('#debug')
 await page.waitForFunction(() => window.__kfbChoice && window.__kfbStore && window.__kfb, null, { timeout: 90000 })
 await page.evaluate(() => window.__kfbStore.getState().closeDialog())
 await page.waitForTimeout(2500)

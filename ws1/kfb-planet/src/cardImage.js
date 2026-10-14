@@ -7,7 +7,7 @@ import './vendor/card-art-2d.js' // 1:1 aus overworld-v13 @main (Blob d14b497e),
 import { MEDIA_COMMIT, isCardSafe, safeDecks } from './cardMapping'
 import { expose } from './debug'
 
-// Kartenquelle festgenagelt: media/kfb auf georg-doc/kayfabizarro main @ ac9dbae (index.json Blob af276a8b)
+// Kartenquelle festgenagelt: media/kfb am MEDIA_COMMIT (cardMapping.js; seit 14.10. Registry-Korrektur R1 @ a9f5ffa1)
 export { MEDIA_COMMIT }
 const MEDIA_BASE = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${MEDIA_COMMIT}/media/kfb/`
 // card-art-2d liest die Deck-Basis über window.OW_SRC.kfb('') (Vertrag der Vorlage)
