@@ -1,5 +1,21 @@
 # KFB Eye Actor Studio v1 · RETURN
 
+## HUMAN OVERRIDE · 2026-10-14 · THIN-CLAY GEOMETRY VISUAL FAIL
+
+Georg has **REJECTED** the rendered `thin-clay-lid.v1.mjs` candidate: severe mesh destruction, visible cracks/tear edges and broken top surface. This overrides the earlier `SOURCE-ISOLATED CANDIDATE` presentation and any optimistic statement about geometry quality. The 30/30 structural checks only exercised narrow mesh-index invariants and **did not** prove usable/watertight-looking geometry; local central-pupil pixel counts do not certify full lid/iris/gaze occlusion. Candidate is preserved **NEGATIVE DONOR ONLY**, excluded from EyeRig-v6 actor consumption, tuning and Site integration. Do not repeat failed procedural patch loops.
+
+Technical recovery direction: Claude Design should independently inspect actual original `clay-lid.v1.mjs` and `upper-lid-volume.v1.mjs`, the current eye geometry SSOT and both tutorial sources before designing a cleaner shared-shell lid. Full timecoded transcripts of the two requested tutorials have **not** been retrieved; the Jen Abbott creator-written tutorial was checked, and the RG3D video description only. Do **not** equate either with a verbatim transcript.
+
+Source-backed transcript intake, failure analysis, strict topology / animation / QA assignment:
+`skills/chat/workflows/KFB_EYE_ACTOR_STUDIO_V1_2026-09-21/CLAUDE_DESIGN_EYELID_MESH_RECOVERY_BRIEF_2026-10-14.md` (prepared and source read back).
+
+**Status:** HUMAN VISUAL FAIL · RESEARCH/BRIEF PREPARED · NO CLAUDE DESIGN RUN · NO NEW TEST EXECUTION/SCREENSHOTS · NO SITE/STAGE.
+**Owner:** Eye Actor Studio PR #159 geometry donor; ToolBox / EyeRig v6 PR #104 receiving owner. No second runtime or profile edits.
+**One next gate:** `EYELID_VIDEO_TRANSCRIPTS_SOURCE_PIN_AND_CLAUDE_DESIGN_INTAKE`. Gather/verify video captions or timecoded evidence, then run the design build source-first. No merge/Live.
+
+---
+
+
 ## CURRENT ADDITIVE · 2026-10-14 · THIN_CLAY_LID_SINGLE_EYE_PROOF · SOURCE-ISOLATED CANDIDATE
 
 **Scope:** bounded geometry proof inside existing Eye Actor Studio donor owner / Draft PR #159; KFB ToolBox / EyeRig v6 / Batch PR #104 remains the *receiving* rig/profile owner. No replacement EyeRig, actor cleanup change, profile mutation, second face driver, merge or Live.
