@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB Eye Actor · thin clay lid isolation</title>
+<style>body{margin:0;background:#eae7e0;color:#29241e;font:15px system-ui,sans-serif}main{max-width:860px;margin:24px auto;padding:0 16px}h1{font-size:22px}canvas{display:block;width:100%;aspect-ratio:1.7;background:#eae5dc;border-radius:12px}section{display:flex;flex-wrap:wrap;gap:20px;padding:16px 0}label{font-size:14px}input,select{vertical-align:middle}p{color:#6b645d}</style>
+<main><h1>KFB Thin-Clay Lid · isolated 3D source comparison</h1><p>Original PR #159 clay-lid donor vs same-owner shared-shell candidate. No character host, profile edits or Stage publication.</p>
+<canvas id="scene" width="960" height="580"></canvas>
+<section><label>Source <select id="source"><option value="candidate">Thin-clay candidate</option><option value="donor">Original clay-lid.v1.mjs</option></select></label>
+<label>Blink <input type="range" id="blink" min="0" max="1" step=".01" value="0"></label>
+<label>Thickness <input type="range" id="thick" min=".04" max=".20" step=".005" value=".085"></label>
+<label>View <select id="view"><option value="0">Front</option><option value=".65">3/4</option><option value="1.25">Side</option></select></label></section>
+<p id="status" role="status"></p></main>
+<script type="module">
+import {thinClayLidMeshData} from './thin-clay-lid.v1.mjs';
+import {clayLidGeometry} from './clay-lid.v1.mjs';
+const $=id=>document.getElementById(id),gl=$('scene').getContext('webgl2',{antialias:true,preserveDrawingBuffer:true});
+if(!gl){$('status').textContent='WebGL2 unavailable: no preview PASS';throw Error('WebGL2 missing')}
+const vs=`#version 300 es
+in vec3 p;in vec3 color;uniform mat4 mvp;out vec3 c;out vec3 world;
+void main(){c=color;world=p;gl_Position=mvp*vec4(p,1.);}`;
+const fs=`#version 300 es
+precision highp float;in vec3 c;in vec3 world;out vec4 outColor;
+void main(){vec3 normal=normalize(cross(dFdx(world),dFdy(world)));float light=.68+.32*abs(dot(normal,normalize(vec3(-.45,.72,.82))));outColor=vec4(c*light,1.);}`;
+function shader(type,s){const q=gl.createShader(type);gl.shaderSource(q,s);gl.compileShader(q);if(!gl.getShaderParameter(q,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(q));return q}
+const program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,vs));gl.attachShader(program,shader(gl.FRAGMENT_SHADER,fs));gl.linkProgram(program);
+if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program));
+gl.useProgram(program);const loc={p:gl.getAttribLocation(program,'p'),c:gl.getAttribLocation(program,'color'),m:gl.getUniformLocation(program,'mvp')};
+const vb=gl.createBuffer(),cb=gl.createBuffer(),ib=gl.createBuffer();gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);
+function sphere(r=1){const p=[],i=[],N=48,M=80;for(let y=0;y<=N;y++)for(let x=0;x<=M;x++){const lat=Math.PI*y/N,lon=2*Math.PI*x/M;p.push(r*Math.sin(lat)*Math.cos(lon),r*Math.cos(lat),r*Math.sin(lat)*Math.sin(lon))}
+for(let y=0;y<N;y++)for(let x=0;x<M;x++){const a=y*(M+1)+x,b=a+M+1;i.push(a,b,a+1,b,b+1,a+1)}return {positions:new Float32Array(p),indices:new Uint32Array(i)}}
+function disk(r,offset){const p=[0,0,1+offset],i=[],N=64;for(let j=0;j<=N;j++){const a=j/N*2*Math.PI,x=r*Math.cos(a),y=r*Math.sin(a);p.push(x,y,Math.sqrt(1-x*x-y*y)+offset);if(j<N)i.push(0,j+1,j+2)}return {positions:new Float32Array(p),indices:new Uint32Array(i)}}
+function multiply(a,b){const v=new Float32Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++)for(let k=0;k<4;k++)v[c*4+r]+=a[k*4+r]*b[c*4+k];return v}
+function mat(yaw){const canvas=$('scene'),aspect=canvas.width/canvas.height,f=1/Math.tan(.57/2),cs=Math.cos(yaw),sn=Math.sin(yaw);
+const proj=new Float32Array([f/aspect,0,0,0,0,f,0,0,0,0,-1.02,-1,0,0,-.202,0]),mv=new Float32Array([cs,0,-sn,0,0,1,0,0,sn,0,cs,0,0,-0.01,-4.3,1]);return multiply(proj,mv)}
+function draw(obj,c){const p=obj.positions,i=obj.indices,rgb=new Float32Array(p.length);for(let j=0;j<rgb.length;j+=3){rgb[j]=c[0];rgb[j+1]=c[1];rgb[j+2]=c[2]}
+gl.bindBuffer(gl.ARRAY_BUFFER,vb);gl.bufferData(gl.ARRAY_BUFFER,p,gl.DYNAMIC_DRAW);gl.enableVertexAttribArray(loc.p);gl.vertexAttribPointer(loc.p,3,gl.FLOAT,false,0,0);
+gl.bindBuffer(gl.ARRAY_BUFFER,cb);gl.bufferData(gl.ARRAY_BUFFER,rgb,gl.DYNAMIC_DRAW);gl.enableVertexAttribArray(loc.c);gl.vertexAttribPointer(loc.c,3,gl.FLOAT,false,0,0);
+gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,i,gl.DYNAMIC_DRAW);gl.drawElements(gl.TRIANGLES,i.length,gl.UNSIGNED_INT,0)}
+class StubGeometry{setAttribute(_,a){this.vertices=a.array}setIndex(i){this.index=new Uint32Array(i)}computeVertexNormals(){}computeBoundingSphere(){}}
+class StubAttribute{constructor(a){this.array=new Float32Array(a)}}
+const donorTHREE={BufferGeometry:StubGeometry,Float32BufferAttribute:StubAttribute};
+function original(upper){const g=clayLidGeometry(donorTHREE,{upper});return{positions:g.vertices,indices:g.index}}
+function render(){const donor=$('source').value==='donor',blink=+$('blink').value,thickness=+$('thick').value,view=+$('view').value;
+gl.viewport(0,0,960,580);gl.clearColor(.91,.89,.855,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.uniformMatrix4fv(loc.m,false,mat(view));
+draw(sphere(1),[.97,.96,.92]);draw(disk(.245,.008),[.19,.47,.28]);draw(disk(.115,.013),[.055,.052,.057]);
+for(const upper of [true,false])draw(donor?original(upper):thinClayLidMeshData({upper,blink,thickness}),[.83,.59,.22]);
+$('blink').disabled=donor;$('thick').disabled=donor;$('status').textContent=donor?'SOURCE ONLY · unchanged original geometry; no animated blink in this fixture':'CANDIDATE · blink '+Math.round(blink*100)+'% · thickness '+thickness.toFixed(3)+' · not visually approved';window.__thinClayProof={rendered:true,donor,blink,thickness,view}}
+for(const id of ['source','blink','thick','view'])$(id).addEventListener('input',render);
+const q=new URLSearchParams(location.search);for(const id of ['source','blink','thick','view'])if(q.has(id))$(id).value=q.get(id);render();
+</script></html>
