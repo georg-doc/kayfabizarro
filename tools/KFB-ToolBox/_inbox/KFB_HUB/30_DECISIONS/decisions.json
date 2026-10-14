@@ -2625,6 +2625,20 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-226",
+   "date": "2026-10-14",
+   "area": "Claude Design",
+   "verdict": "FAIL",
+   "text": "Wireface Stage live R1 (Zip „KFB Wireface Stage R2“): keine Figuren, nur leere Aufsteller mit Bild-Ablage; Auto-Schnitt springt standardmäßig zwischen Billboard und Figuren. Ursache bei WS0: V-219/V-225 verlangten Wireface-Demo-Figuren, die Claude Design nie hatte (SDK nur mit Konto, lokal nirgends vorhanden) – Auftrag ohne Verfügbarkeitsprüfung. Regel: WS0 prüft vor jedem Auftrag, dass jedes verlangte Teil beim Empfänger tatsächlich vorliegt. Brauchbar bleiben ggf. Billboard- und Blasen-Modul (nach WS0-Prüfung).",
+   "values": {},
+   "owner": "WS0",
+   "check": "Bühne nur mit echten Figuren; ruhige Einstellung ohne Auto-Schnitt",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Statt Figuren kamen leere Aufsteller, und die Kamera sprang hin und her.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2686,7 +2700,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:144",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:147",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

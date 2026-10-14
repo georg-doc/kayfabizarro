@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 nachts · Wireface Stage live R1 = FAIL
+- V-226: keine Figuren (Wireface-SDK lag Claude Design nie vor; WS0-Briefing-Fehler), Auto-Schnitt springt. Neue Regel: Verfügbarkeit jedes verlangten Teils vor dem Auftrag prüfen.
+
 ## 2026-10-14 nachts · Wireface-Bühne als 3D-Szene
 - V-225: Claude Design liefert die Bühne als live three.js-Szene im Projekt „KFB Billboard Clay Island“, nur aus vorhandenen Teilen (Plain-Billboard r2 responsiv, Wireface-Demo-Figuren, 2D-Blasen, Clay-Boden), Teile als Module nach Host-Vertrag R1.2. Keine neue Geometrie (V-084). Hub-Briefing b05 ersetzt.
 
