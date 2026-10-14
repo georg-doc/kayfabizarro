@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 abends · Stopp FrizzleBob-Rigging
+- WS1: FrizzleBob-Gesicht in ¾ kaputt (Nase/Mund frei vor dem Gesicht, Auge außerhalb) = Parität mit kaputtem Spender-Stand; Stopp für FB-Ausbau. B1-Vorlagen-Zeile und F1-Lid-Diff freigegeben, Idle_A vorläufig.
+
 ## 2026-10-14 nachmittags · Georgs Triplet-TUNEs, Antwort WS1 §11
 - Georgs drei TUNE-Fassungen als Richtungs-Goldens in TRIPLET_CLOSURE_CONTRACT_DRAFT_R1.md ([Opener] + Titel+Begriff + Telegrammstil, nur Kartenwörter).
 - WS0_TO_WS1: G0 FrizzleBob angenommen; Export von Georgs FrizzleBob-Eintrag, Lider hinge/glide und SDK-Übergabe offen bei Georg; Grundpose-Befund bitte dokumentieren.

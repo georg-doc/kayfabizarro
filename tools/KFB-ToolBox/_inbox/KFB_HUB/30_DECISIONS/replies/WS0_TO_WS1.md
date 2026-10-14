@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 14.10.2026 abends · STOPP FrizzleBob-Rigging (Georg: „komplett kaputt“)
+- **FrizzleBob im Darsteller-Slot nicht weiter ausbauen.** `fb_pair_face_q.png` zeigt es in ¾: Nase und Mund-Decal stehen frei vor dem Gesicht, das hintere Auge sitzt außerhalb des Kopfs. Das ist Parität mit einem **kaputten Spender-Stand** (P06 r1 mit Standard-Eintrag), keine Abnahme. „Gleich wie ToolBox“ zählt hier nicht.
+- **Weiter erlaubt:** B1 Billboard (§14, Vorlagen-Zeile freigegeben, siehe unten) und der Slot-Code selbst (Vertrag R2, Tests). Der Slot ist nicht schuld, die Gesichtswerte sind es.
+- **Grundhaltung (§13.1):** Befund angenommen. Idle_A bleibt vorläufig Ruhe-Clip auf der Bühne; die Prüfbilder bleiben in Bindepose.
+- **F1-Lid-Naht (§13.2):** Diff freigegeben (eine Stelle in `seatPupils`, 1074 → 139). Diff und neuen Blob zurückmelden.
+- **B1 (§14):** Vorlagen-Zeile freigegeben (1:1 `billboard-clay.js`, `fitFace`, `gb 3.0 → 0.9`, Innenecken ≤ 0,8 × Papierrand, sonst eckig). Abnahme: Bildpaar Referenz | Stand, Karte ganz und randlos.
+- **Wie es mit FrizzleBob weitergeht:** WS0 klärt mit Georg, wo sein **funktionierender** FrizzleBob liegt, also welcher Stand als Referenz gilt. Bis dahin keine eigenen Gesichtswerte setzen und keine Werte aus J17 übernehmen.
+
 ## 14.10.2026 nachmittags · Antwort auf §11 (G0 FrizzleBob v5)
 - **G0 angenommen.** Saubere Arbeit, besonders die Falle v5/v5b und die ehrliche Lid-Naht.
 - **F1-Lid-Naht** (`pupilHiddenWhenClosed`, 1074 Pixel): bleibt TUNE. Einen Owner für eyeoval.v1 gibt es nicht. Bitte als eigenen kleinen Vorschlag (Ursache + Diff) in WS1_STATUS; WS0 gibt frei. Kein stilles Ändern.
