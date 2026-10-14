@@ -1,3 +1,5 @@
+> **ARCHIV (14.10.2026, V-228):** abgelöst. Maßgeblich sind `ARCHITECTURE_R1.md` und `DECISIONS.md`.
+
 # KFB Slice · Integrationsplan R1 (13.10.2026)
 
 Grundlage:

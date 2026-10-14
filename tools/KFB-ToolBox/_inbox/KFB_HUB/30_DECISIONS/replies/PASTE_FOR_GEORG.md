@@ -1,3 +1,5 @@
+> **ARCHIV (14.10.2026, V-228):** abgelöst. Maßgeblich sind `ARCHITECTURE_R1.md` und `DECISIONS.md`.
+
 # Texte zum Kopieren für Georg (neueste oben)
 
 > **VERALTET (14.10. spät):** Übergabetexte gibt WS0 nur noch als Block im Chat. Diese Datei wird nicht mehr gepflegt; aktuell gelten die Briefings im Register mit V-219/V-220.

@@ -1,3 +1,5 @@
+> **ARCHIV (14.10.2026, V-228):** abgelöst. Maßgeblich sind `ARCHITECTURE_R1.md` und `DECISIONS.md`.
+
 # KFB Wireface Stage · VISUAL DONOR FAIL / ANTI-DRIFT LOCK · 2026-10-14
 
 **User-direct review: FAIL · THREE BLOCKING DESIGN ERRORS.** This is a new source-backed rejection and mandatory brief correction, NOT a new V-number; WS0 owns decision numbering (V-213). It supersedes earlier assistant descriptions calling the screenshot a positive authentic plain bubble donor. Repo: `georg-doc/kayfabizarro`; decision branch: `docs/kfb-decisions-register-2026-10-11`. Outcome owner: WS0/Design intake; implementation receiver WS1 only after accepted design.

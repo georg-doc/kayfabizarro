@@ -1,3 +1,5 @@
+> **ARCHIV (14.10.2026, V-228):** abgelöst. Maßgeblich sind `ARCHITECTURE_R1.md` und `DECISIONS.md`.
+
 # START HERE · KFB Steuerung (für jede Sitzung: Claude Code, WSA, Blender-Coworker, Webchats)
 
 **Neu 14.10.:** Arbeitsregeln, die sich bewährt haben, für jede neue Sitzung: `KFB_WORKING_RULES_R1.md`.

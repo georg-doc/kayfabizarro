@@ -1,3 +1,5 @@
+> **ARCHIV (14.10.2026, V-228):** abgelöst. Maßgeblich sind `ARCHITECTURE_R1.md` und `DECISIONS.md`.
+
 # CLAUDE DESIGN · KFB Wireface Card Stage · GITHUB COLD START R1
 
 > **WS0-NACHTRAG 14.10. spät (hat Vorrang vor allem darunter):**

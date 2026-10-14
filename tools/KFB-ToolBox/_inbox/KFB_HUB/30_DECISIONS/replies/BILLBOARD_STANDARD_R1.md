@@ -1,3 +1,5 @@
+> **ARCHIV (14.10.2026, V-228):** ersetzt durch `replies/BILLBOARD_STANDARD_R2.md`.
+
 # Billboard-Standard R1 · Hypernormalisation + Plain-Billboard (14.10.2026, V-220)
 
 Dies ist der verbindliche Standard für jedes Billboard und jede Karte auf einem Billboard, in der Wireface-Bühne, im Spiel und in Claude-Design-Entwürfen. Nichts davon wird nachgebaut; es wird übernommen (V-206).

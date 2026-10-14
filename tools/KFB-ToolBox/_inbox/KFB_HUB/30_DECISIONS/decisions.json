@@ -13,6 +13,7 @@
    "check": "Vorlage-zuerst-Zeile je Teil",
    "source": "docs/MVP1_DONOR_AND_MODEL_MAP_R1.md §0",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Nachbauten haben Abgenommenes verloren und Fehler doppelt gebaut (Post-Mortem Stufe 1).",
    "applies": "sofort, jede Sitzung"
   },
@@ -27,6 +28,7 @@
    "check": "Plan R1 §0",
    "source": "docs/KFB_WORLDBUILDER_PLAN_R1.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "LLM-Gestaltung scheitert an Komposition und Raum; Georgs Geschmack ist der Maßstab, Werkzeuge können wir.",
    "applies": "ab Plan R1"
   },
@@ -41,6 +43,7 @@
    "check": "tools/parity + Bericht listet ungeprüfte V-Nummern",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Entscheidungen gingen in Fließtext verloren; der Ordner 30_DECISIONS war vereinbart und blieb leer.",
    "applies": "ab 11.10."
   },
@@ -55,6 +58,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Ein Agent meldete „kein Zitat“ trotz PASS-Spalte; schlechtes Briefing kostete Tokens und Vertrauen.",
    "applies": "jede Recherche"
   },
@@ -69,6 +73,7 @@
    "check": "Plan R1",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Zu viele parallele Baustellen, keine wurde fertig.",
    "applies": "ab Plan R1"
   },
@@ -83,6 +88,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Ein Blender-Lauf blähte sich auf 71 GB auf und füllte die Platte.",
    "applies": "jeder schwere Lauf"
   },
@@ -97,6 +103,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Git- bzw. CI-Rückfragen überfordern und frustrieren; tiefe Pfade sind im Finder nicht klickbar.",
    "applies": "immer"
   },
@@ -111,6 +118,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "17 % des Limits verbrannt ohne sichtbaren Fortschritt.",
    "applies": "ab 11.10."
   },
@@ -125,6 +133,7 @@
    "check": "jede Antwort mit neuer Vorgabe nennt die V-Nummer",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Damit kein Design und keine Entscheidung mehr verloren geht; Living Doc statt Chat-Gedächtnis.",
    "applies": "ab 11.10., jede Antwort"
   },
@@ -139,6 +148,7 @@
    "check": "Bildvergleich gegen J17 pictures/chase-*.jpg",
    "source": "docs/POSTMORTEM_JOYRIDE_REGRESS_R1.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Joyride war gesetzt; eng gestellte Frage („nur Physik“) führte zum Regress auf RKIT-Platten.",
    "applies": "sofort; Phase C Rückgrat"
   },
@@ -153,6 +163,7 @@
    "check": "Q8/Fugen-Test",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Sichtbare Nähte bzw. Geisterlinien waren der häufigste Bildfehler.",
    "applies": "immer"
   },
@@ -167,6 +178,7 @@
    "check": "Bild",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Handgebauter Diorama-Look statt CAD; Materialmix macht es lebendig.",
    "applies": "immer"
   },
@@ -181,6 +193,7 @@
    "check": "Bild",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Bildgenerierung zeigt Ideale, die nicht 1:1 baubar sind; Kritiker-Schleifen zum Nachbilden sind teuer.",
    "applies": "ab 10.10."
   },
@@ -195,6 +208,7 @@
    "check": "Vorschau-Bühne = Demo-Insel; ?rkit=1 nur Debug",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Test-Hub-Reste wirken wie Bastelarbeit und verfälschen jede Abnahme.",
    "applies": "ab 10.10., jede Vorschau"
   },
@@ -209,6 +223,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Elemente ohne Geschichte wirken beliebig (Mittelalter-Generik).",
    "applies": "immer"
   },
@@ -227,6 +242,7 @@
    "check": "parity: gait",
    "source": "docs/critic/lab-stage2/2026-10-10_08/REPORT.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Gehen als Standard war zu langsam; Georgs dokumentierte Werte aus game_r5.",
    "applies": "ab Probe 6"
   },
@@ -241,6 +257,7 @@
    "check": "parity: beide Einstiege",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Zwei Pfade (walk.ts vs. Travel-Core) erzeugten den Regress im Spiel.",
    "applies": "ab B0"
   },
@@ -255,6 +272,7 @@
    "check": "parity: mouse-steer",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Vertrautes Schema; Georg will WoW-Gefühl.",
    "applies": "ab B0"
   },
@@ -269,6 +287,7 @@
    "check": "parity: jumps",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Sprünge müssen zum Bewegungszustand passen.",
    "applies": "ab B0"
   },
@@ -283,6 +302,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Flug kommt später; Taste wird freigehalten.",
    "applies": "später"
   },
@@ -297,6 +317,7 @@
    "check": "parity: camera",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Orientierung und Komfort wie in WoW.",
    "applies": "ab B0"
   },
@@ -311,6 +332,7 @@
    "check": "parity: camera-calm ≤ 0,05 lab/Frame",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Orbit ruckelte, Zoom zu empfindlich.",
    "applies": "ab B0"
   },
@@ -325,6 +347,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Figur muss sichtbar bleiben.",
    "applies": "ab Stufe 2"
   },
@@ -339,6 +362,7 @@
    "check": "parity: default car",
    "source": "Masterplan §3",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Cabrio bringt Ein-/Ausstieg, Lenkrad und Kamera-Komplexität ohne MVP-Gewinn.",
    "applies": "MVP-1"
   },
@@ -353,6 +377,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Details später; erst Environment sauber.",
    "applies": "MVP-1"
   },
@@ -367,6 +392,7 @@
    "check": "md5 k2b",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Abgenommenes Fahrgefühl; Bordstein-Stöße sagten nichts aus.",
    "applies": "ab Probe 6"
   },
@@ -381,6 +407,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Cartoon-Qualität kommt nach der Grundstruktur.",
    "applies": "später"
   },
@@ -395,6 +422,7 @@
    "check": "Bild + md5 vendor",
    "source": "docs/critic/lab-hud/2026-10-10_01/",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Das gestaltete HUD mit Rucksack existierte schon; Joyride-HUD wäre Rückschritt.",
    "applies": "ab Phase A"
   },
@@ -409,6 +437,7 @@
    "check": "parity: no-debug",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Cleanes Interface statt Messdaten im Spiel.",
    "applies": "ab Phase A"
   },
@@ -423,6 +452,7 @@
    "check": "Bericht",
    "source": "docs/critic/lab-sound/2026-10-10_01/",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Klang je Insel und Radio als Spielgefühl; Radio als Rucksack-Gegenstand ist Weltlogik.",
    "applies": "ab Phase A"
   },
@@ -437,6 +467,7 @@
    "check": "Bild",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Skalierbar für tausende Karten.",
    "applies": "ab Phase A"
   },
@@ -451,6 +482,7 @@
    "check": "Bild",
    "source": "docs/critic/lab-sky/2026-10-10_01/",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Tag-Nacht-Grundlage; Abend braucht Feintuning.",
    "applies": "ab Phase A"
   },
@@ -465,6 +497,7 @@
    "check": "Schema kfb.island-theme/1",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Farben, Licht und Klang gehören zusammen und sollen generierbar sein.",
    "applies": "ab Phase A, Generator in F"
   },
@@ -479,6 +512,7 @@
    "check": "Bild",
    "source": "donors/kfb-island-kit-r2-2026-10-08/STATUS.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Gut funktionierender Slice, nicht wieder verlieren.",
    "applies": "Phase B+"
   },
@@ -493,6 +527,7 @@
    "check": "parity: clay-profile",
    "source": "docs/BASELINE_ACCEPTED_R1.md §4",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Figur zu grob, Umgebung ohne Knete – Drift gegen den Kanon.",
    "applies": "Phase B"
   },
@@ -507,6 +542,7 @@
    "check": "parity: scale",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Figuren-Proportionen sind festgelegt; Welt passt sich an.",
    "applies": "immer"
   },
@@ -521,6 +557,7 @@
    "check": "Kontaktbogen + Tabelle",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Qualitätskontrolle für Knete, Augen, Licht je Figurenklasse.",
    "applies": "Phase B2"
   },
@@ -535,6 +572,7 @@
    "check": "Regler-Inventur",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Frühere Ports verloren Regler (z. B. Viseme).",
    "applies": "Phase H"
   },
@@ -549,6 +587,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "KayKit, Tiny Treats und Quaternius passen zum Cartoon-Look, Kenney ist generischer.",
    "applies": "immer"
   },
@@ -563,6 +602,7 @@
    "check": "Push-Prüfung",
    "source": "docs/KFB_PROJEKTKONTEXT.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Lizenz bzw. EULA.",
    "applies": "immer"
   },
@@ -577,6 +617,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Georg will keine Klick-Aufträge für reine Asset-Merges.",
    "applies": "immer"
   },
@@ -591,6 +632,9 @@
    "check": "Spiel lädt lokal (public/private-audio); Löschung erst nach Nachweis",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [
+    "V-087"
+   ],
    "why": "Gekaufte Musik darf nicht öffentlich liegen, muss aber im Spiel und auf der GPT-Site laufen.",
    "applies": "sofort"
   },
@@ -605,6 +649,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Studieren und nutzen statt umbauen; Town ist Georgs eigene Insel.",
    "applies": "ab 10.10."
   },
@@ -619,6 +664,7 @@
    "check": "Plan F",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Georg gestaltet selbst schneller und besser.",
    "applies": "Phase F"
   },
@@ -633,6 +679,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Spielmechanik Fluff, später.",
    "applies": "nach F"
   },
@@ -647,6 +694,7 @@
    "check": "ungeprüft",
    "source": "Chat Steuer-Sitzung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Chill-&-Fun-Interaktion, später.",
    "applies": "nach F"
   },
@@ -661,6 +709,7 @@
    "check": "Plan",
    "source": "Georg Checkliste 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Comic-Storytelling-Kern von KFB (Tenth Art); Vorlagen: Overworld v13 Blasen-Formen und Bubble-Fixtures, Comic-Baukasten.",
    "applies": "mit ChatterBox bzw. Stimmen-Phase"
   },
@@ -675,6 +724,7 @@
    "check": "Plan H",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Lesbarere Cartoon-Gesichter; eine Figuren-Karte als einzige Quelle für Aussehen, Augen, Mund und Stimme.",
    "applies": "Backlog, mit Studio-Übernahme H"
   },
@@ -689,6 +739,7 @@
    "check": "Spiel lädt lokal",
    "source": "Georg 11.10.",
    "supersedes": "V-073 Weg (a)",
+   "superseded_by": [],
    "why": "Georg will keine neuen Repos und keinen Aufwand jetzt; Ablage-Aufräumen später gebündelt.",
    "applies": "ab 11.10."
   },
@@ -703,6 +754,7 @@
    "check": "tools/parity (B0: game 10/10, hub 9/9)",
    "source": "docs/critic/lab-parity/2026-10-11_B0/REPORT.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Gemessene Werte zu V-020–V-026, damit sie nicht wieder abrutschen.",
    "applies": "ab B0"
   },
@@ -717,6 +769,7 @@
    "check": "Bild",
    "source": "docs/critic/lab-almanac/2026-10-11_02/REPORT.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Welt-Reiter brauchen eine eindeutige Zuordnung; Deck-Rollen passen zu den Welten.",
    "applies": "ab Almanach R2"
   },
@@ -731,6 +784,7 @@
    "check": "Kontaktbogen B2",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Zwei Abnahmen widersprachen sich; die jüngere spiegelt Georgs aktuellen Stand.",
    "applies": "ab B2"
   },
@@ -745,6 +799,7 @@
    "check": "Plan",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Die Unity-Inseln bleiben vorerst, wie sie sind (V-080); ein späterer Angleich an den KFB-Look ist offen.",
    "applies": "später"
   },
@@ -759,6 +814,7 @@
    "check": "Standbilder je Effekt",
    "source": "Georg 11.10.; docs/critic/lab-sky/2026-10-10_01/REPORT.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Lichtstimmung lebt von Wetter- und Himmelseffekten; die Vorlagen existieren schon.",
    "applies": "nach B2 als A10"
   },
@@ -773,6 +829,7 @@
    "check": "Plan",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Spielerische Himmelsphänomene, später.",
    "applies": "später"
   },
@@ -787,6 +844,7 @@
    "check": "Plan F",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Konzepte existieren; Georg baut Inseln selbst im Editor.",
    "applies": "Phase F"
   },
@@ -801,6 +859,7 @@
    "check": "A/B-Standbilder",
    "source": "Webchat-Update 10.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Bande und Gehweg laufen sonst räumlich aneinander vorbei; erst sehen, dann tunen.",
    "applies": "Phase C"
   },
@@ -815,6 +874,7 @@
    "check": "Standbild Nacht",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Nachtstimmung mit Fokus auf den Spieler wie in TinySkies.",
    "applies": "A10"
   },
@@ -829,6 +889,7 @@
    "check": "Standbilder A10",
    "source": "Steuerung 11.10. nach Georgs Klärung (V-096)",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Nachts Fokus auf den Spieler wie in TinySkies; Aurora war in der Spielkamera nicht sichtbar.",
    "applies": "A10"
   },
@@ -843,6 +904,7 @@
    "check": "Vorlage-zuerst-Zeile Phase C",
    "source": "Georg 11.10.; KFB Organ-Attraktion C2/",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Dort ist „Inseln im Raum plus Strecke plus Tunnel“ schon gelöst; nicht neu erfinden.",
    "applies": "Phase C bis E"
   },
@@ -857,6 +919,7 @@
    "check": "Plan E",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Tunnel sind in den Organ-Inseln schon gelöst und passen zu Gebirgsinseln; Paternoster als spielerische Variante.",
    "applies": "Phase C bis E, Paternoster später"
   },
@@ -871,6 +934,7 @@
    "check": "Standbild je Style",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Die Tunnel-Looks sind in Joyride schon gestaltet und abgenommen; nicht neu erfinden.",
    "applies": "Phase C bis E"
   },
@@ -885,6 +949,7 @@
    "check": "Standbild Dämmerung",
    "source": "docs/critic/lab-sky/2026-10-11_A10/REPORT.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Der statische Dome passte im Zyklus nicht zur Tageszeit; ein harter Wechsel verletzt V-011.",
    "applies": "ab A10"
   },
@@ -899,6 +964,7 @@
    "check": "Gleichstand-Bild gegen chase-curve/straight/tunnel",
    "source": "docs/PHASE_C_DONORS_R1.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Goldstandard heißt J17 so, wie es gebaut und abgenommen ist; der Gleichstand-Test gegen chase-curve.jpg ginge mit oranger Fahrbahn nie auf.",
    "applies": "ab Phase C1"
   },
@@ -913,6 +979,7 @@
    "check": "parity + Gleichstand je Schritt",
    "source": "docs/PHASE_C_DONORS_R1.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Vorlage zuerst und Goldstandard zuerst: erst sehen (C0), dann J17 1:1 (C1), erst danach Neues (C4) – so kein Nachbau ohne Freigabe.",
    "applies": "Phase C"
   },
@@ -927,6 +994,7 @@
    "check": "Standbild beim Einbau (C3/E)",
    "source": "docs/critic/lab-track/2026-10-11_C0/REPORT.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Weiche Überlappung entspricht V-011 (keine harten Schnitte); A übergibt an fast einem Punkt.",
    "applies": "ab Einbau Stadt-Anschluss"
   },
@@ -941,6 +1009,7 @@
    "check": "Standbild gegen Blatt beim Einbau",
    "source": "docs/golden/candidates/prison-maze_2026-10-11/",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Mauern bzw. Labyrinthe brauchen einen festen Baukasten mit Rastermaß; Skins erlauben Themen-Inseln ohne Neubau.",
    "applies": "Phase D/F"
   },
@@ -955,6 +1024,7 @@
    "check": "Standbild Seitenansicht gegen Scholle v7",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Angeklebte Unterseiten widersprechen der Weltlogik: Inseln sind Schollen der zersprengten Erde, kein Sockel mit Deko.",
    "applies": "sofort; Phase D/F/G"
   },
@@ -969,6 +1039,7 @@
    "check": "tools/parity",
    "source": "docs/critic/lab-track/2026-10-11_C1a/REPORT.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Headless lief der Hub mit 12–17 fps; der 50-ms-Schrittdeckel verlangsamte die Simulation und ließ Checks zufällig kippen. Sim-Zeit trennt Logik von Rechnerlast, Leistung wird trotzdem gemessen.",
    "applies": "ab C1a"
   },
@@ -983,6 +1054,7 @@
    "check": "Standbild gegen Blatt beim Biom-Einbau",
    "source": "docs/golden/candidates/dystopia-vulkan_2026-10-11/",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Dystopia hatte bisher nur Palette und Pflanzenliste aus R2D; jetzt gibt es ein Bild für Formen, Glut-Licht und Nachthimmel.",
    "applies": "Phase D/F/G"
   },
@@ -997,6 +1069,7 @@
    "check": "Blatt + parity + Leistung vorher/nachher",
    "source": "Steuerung 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Georg will die alte FAIL-Welt nicht mehr sehen; O1 hat Inseln, Tunnel und Ring schon gelöst, J17 den Look – beides 1:1 statt Neubau.",
    "applies": "ab C1b/C3"
   },
@@ -1011,6 +1084,7 @@
    "check": "Standbild gegen Blatt bei C4 bzw. Phase D",
    "source": "docs/golden/candidates/protopia-makerspace_2026-10-11/",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Erstes Bild, das zeigt, wie die Strecke auf einer Insel ankommt und weiterläuft; bisher gab es nur Tunnel bzw. Docks (O1).",
    "applies": "C4, Phase D/E"
   },
@@ -1025,6 +1099,7 @@
    "check": "Inselmenge als Daten austauschbar",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Organe passen inhaltlich zu Medizin-Themen; die Hauptwelt bekommt die StreakByte-Inseln und eigene KFB-Inseln.",
    "applies": "ab Phase D/E"
   },
@@ -1039,6 +1114,7 @@
    "check": "je Organ: offene Kanten 0, nicht-mannigfaltig 0, Durchblick-Test, Standbild je Portal-Style + Innenansicht",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Die Organ-Tunnel sind nach Tuning sauber gebohrt, aber ohne Portal, Innenleben und Licht; genau das hat Joyride gestaltet.",
    "applies": "ab C3"
   },
@@ -1053,6 +1129,7 @@
    "check": "wie V-112 + Standbild je Ebene",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Gleiche Qualitätsregel überall; Parkhaus-Rampen verbinden Strecke und Inselebenen ohne Paternoster.",
    "applies": "C4, Phase E/F"
   },
@@ -1067,6 +1144,7 @@
    "check": "V-112-Prüfungen + Bauzeit je Tunnel",
    "source": "Steuerung 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "TC1-Teile (0,3–2,5 m) sind feiner als das Organ-Feld (2,8–3,6 m Zellen); SDF-Vereinigung würde den TC1-Look wegschmelzen. manifold-3d garantiert geschlossene Ausgabe.",
    "applies": "ab C3"
   },
@@ -1081,6 +1159,7 @@
    "check": "fps 3 Kameras + Gleichstand",
    "source": "Steuerung 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Hero-≤-350 brachte nichts und sprang sichtbar (Light ist eine andere Form); der Knete-Shader füllt den Bildschirm. Ehrliche Schranke statt unfairem Vergleich, Look bleibt.",
    "applies": "ab C3"
   },
@@ -1095,6 +1174,7 @@
    "check": "Topologie-Prüfung + Abstandsmaß + Standbilder",
    "source": "Steuerung 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Die O1-Körper haben nicht-mannigfaltige Kanten (Herz 151); ohne geschlossene Körper ist Georgs Pflicht „keine Löcher, keine Hacks“ nicht erfüllbar. Gleiches Feld = gleiche Form.",
    "applies": "ab C3"
   },
@@ -1109,6 +1189,7 @@
    "check": "GitHub-Stand = lokaler Stand (Kopf-V-Nummer gleich)",
    "source": "Blender-Review NOTE_TO_STEERING_SESSION_R1 §1.1",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Blender-Review: Plan R1 und aktueller Projektstand waren für andere Sitzungen unsichtbar, GitHub-Register endete bei V-084 – „jede Sitzung baut ihre Welt“ drohte erneut.",
    "applies": "sofort"
   },
@@ -1123,6 +1204,7 @@
    "check": "Vorlagen-Zeile C4",
    "source": "Blender-Review §1.3, §1.7; Postmortem Joyride §4.2",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Die alte Besitzer-Tabelle schlug den Look-Satz und führte zum Joyride-Regress; RKIT-P2 hätte ihn wiederholt.",
    "applies": "sofort"
   },
@@ -1137,6 +1219,7 @@
    "check": "Blatt K1+K2, Georg-Wahl",
    "source": "Blender-Review §1.2, §3",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Nach V-084 fehlte ein Lieferant für Golden-Referenzen; Ursache „Bauen aus Text statt Bild“ blieb offen.",
    "applies": "ab 11.10."
   },
@@ -1151,6 +1234,7 @@
    "check": "-",
    "source": "planning/kfb-fluff-crafting-almanac-ideation-2026-10-09 Router 11.10.; planning/kfb-g4-stairs-reference-2026-10-10 @5047ba3",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Zwei Planungs-Systeme drifteten: Georg-Entscheidungen standen nur in WSA-Returns.",
    "applies": "sofort"
   },
@@ -1165,6 +1249,7 @@
    "check": "K2-Maßprüfung",
    "source": "Blender-Review §1.6",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Greybox ist in Metern gebaut; ohne K2 und Track-Core-Anschluss würde sie eine zweite Maß- bzw. Sockel-Logik einführen.",
    "applies": "nach MVP-1"
   },
@@ -1179,6 +1264,7 @@
    "check": "WSA-Returns verweisen auf V-Nummern",
    "source": "Georg 11.10.: „Plan R1 gilt, gib WSA die Startseite“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Zwei Planungs-Systeme mit verschiedenen Toren führen zu Drift; ein Plan, ein Register.",
    "applies": "sofort"
   },
@@ -1193,6 +1279,7 @@
    "check": "-",
    "source": "blender-mcp/island-form-kit-01-2026-10-11 @6e1dd5a; Georg 11.10.: „war ein fail“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Flache grüne Platte auf glattem Kegel, ausgefranste Öffnungen, Wurzeln wie Stoßzähne: wieder aus Text bzw. Regeln generiert statt aus echten Vorbildern.",
    "applies": "sofort"
   },
@@ -1207,6 +1294,7 @@
    "check": "-",
    "source": "replies/WSA_ACK_V122_AND_SCENE_FAIL_2026-10-11.md; planning/kfb-fluff-crafting-almanac-ideation-2026-10-09 @2cf76e4",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Asset-Sammlung ohne Architektur, Geschichte und Übergänge; Georg will so etwas nicht mehr sehen.",
    "applies": "sofort"
   },
@@ -1221,6 +1309,7 @@
    "check": "qcheck + Fahrtest-Runde + 2 Kritiker-Berichte",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Strecke ist das Rückgrat; zwei getrennte Blicke (Technik und Design) verhindern, dass ein technischer PASS einen Look-FAIL verdeckt (V-124).",
    "applies": "ab C1b/C3"
   },
@@ -1235,6 +1324,7 @@
    "check": "Fahrtest mit je einem Retro- und KayKit-Auto",
    "source": "Georg 11.10.: „ohne cabrio, reg. retro & kaykit cars erstmal reicht“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Bestätigt V-030; das J17-Original fährt ein Cabrio, das darf nicht durch die 1:1-Übernahme ins Lab rutschen.",
    "applies": "ab C1b/C3"
   },
@@ -1249,6 +1339,7 @@
    "check": "Kritiker-Briefing markiert Organe als Platzhalter",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Organe sind inhaltlich MED-Stoff und brauchen eigenes Nachmodellieren; Aufwand jetzt gehört in Strecke und Module.",
    "applies": "sofort"
   },
@@ -1263,6 +1354,7 @@
    "check": "Liste Effekt → Quelle; Fahrt mit Ton; fps",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Das Fahrgefühl entsteht erst mit Ton und Effekten; Joyride hat beides schon gestaltet.",
    "applies": "mit C1b/C3 bzw. direkt danach"
   },
@@ -1277,6 +1369,7 @@
    "check": "Fahrt mit Suno-Radio + SFX im Mitschnitt",
    "source": "Georg 11.10.: „vor allem meine suno tunes will ich fahren hören – cozy tunes sind eher islands“; „und die racer SFX, drohnen etc“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Fahren und Insel-Leben haben verschiedene Stimmungen; die Roadtrip-Tracks wurden dafür gemacht.",
    "applies": "mit V-128"
   },
@@ -1291,6 +1384,7 @@
    "check": "Blatt im tc1-looks.v3-Raster neben der Referenz",
    "source": "Georg 11.10.: „die joyride tunnel-eingänge (4 varianten, inkl. rechteck!) hatten tunnel-spezifische ein- und ausgänge -> die fehlen!“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Der Feld-Ansatz hat die gestalteten TC1-Portale weggelassen; die Bau-Sitzung hielt das Rechteckprofil fälschlich für nicht vorhanden.",
    "applies": "sofort"
   },
@@ -1305,6 +1399,7 @@
    "check": "Fahrt mit Drone-Bett",
    "source": "Georg 11.10.: „aktuelles soundbed passt sonst so erstmal (ich meinte den rollercoaster, können wir aber nachziehen)“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Missverständnis aufgelöst: Die Bau-Sitzung suchte Flug-Drohnen; gemeint war das Drone-Klangbett aus dem RollerCoaster.",
    "applies": "später"
   },
@@ -1319,6 +1414,7 @@
    "check": "Standbild Fahrt mit Himmel",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Der Kritiker fand den leeren Taghimmel unpassend für „cosmic roadtrip“.",
    "applies": "nach V-130/C4"
   },
@@ -1333,6 +1429,7 @@
    "check": "Fahrtest Landungen 3/3",
    "source": "Georg 11.10.: „ja“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Sprünge sind Teil des Spaßes und landen sauber.",
    "applies": "sofort"
   },
@@ -1347,6 +1444,7 @@
    "check": "Modul-Katalog + Naht-Prüfung je Teil",
    "source": "Georg 11.10.: „alle fehlenden track teile sollen konsistent und nahtlos einbaubar und modular gebaut werden“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Einzelteile ohne gemeinsame Schnittstellen erzeugen Nähte und Nachbauten.",
    "applies": "ab C4"
   },
@@ -1361,6 +1459,7 @@
    "check": "-",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Zweites Mal (nach V-106), dass Bildblätter die Inselbasis verfälschen.",
    "applies": "sofort"
   },
@@ -1375,6 +1474,7 @@
    "check": "offen 0 / nicht-mannigfaltig 0 je Insel",
    "source": "Georg 11.10.: „geschlossene insel“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Blender R2 fragte nach Block-Bauweise (M1); Georg bleibt bei geschlossenen Körpern.",
    "applies": "sofort"
   },
@@ -1389,6 +1489,7 @@
    "check": "Mitschnitt ohne Klick",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Klicks zerstören das „chill“-Gefühl.",
    "applies": "sofort"
   },
@@ -1403,6 +1504,7 @@
    "check": "Standbild bay_from_hex vorher/nachher",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Aussteigen und zu Fuß weiter ist ein Stadt-Moment; Orange gehört zur Bande, nicht zur Gehfläche.",
    "applies": "vor C4c"
   },
@@ -1417,6 +1519,7 @@
    "check": "Standbild Übergang neben J14/J17",
    "source": "Georg 11.10.: „der track- -> strasse übergang ist doch in joyride schon vorhanden!!!“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Ich habe RKITs „fehlt, Georgs Entwurf nötig“ ungeprüft weitergegeben; die Vorlage lag seit C0 auf dem Tisch.",
    "applies": "sofort"
   },
@@ -1431,6 +1534,7 @@
    "check": "Such-Protokoll in jeder Fehlt-Meldung",
    "source": "Georg 11.10.: „use what works“!!",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Zweimal an einem Tag (Rechteckprofil, Track→Straße) wurde Vorhandenes als fehlend gemeldet und ungeprüft an Georg gegeben.",
    "applies": "sofort"
   },
@@ -1445,6 +1549,7 @@
    "check": "Validator 15 Fälle PASS; Import in E/F",
    "source": "replies/STEERING_REPLY_WSA_SCHEMA_R1.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Georg will Beziehungen importierbar; ein Vertrag statt zweitem Editor bzw. zweiter Weg-Geometrie. Lab-src wird von zwei Strängen berührt.",
    "applies": "Phase E/F"
   },
@@ -1459,6 +1564,7 @@
    "check": "Blatt R3 neben IB1–IB3 + blinder Kritiker",
    "source": "replies/BRIEF_BLENDER_INSELBODEN_R3.md",
    "supersedes": null,
+   "superseded_by": [],
    "why": "M1 und Bildblätter verleiteten zu Klötzen; Georg liefert jetzt gezielte Bilder für die Basis-Logik.",
    "applies": "sofort"
   },
@@ -1473,6 +1579,7 @@
    "check": "test-turnaround + Kreisel M/S/L unverändert",
    "source": "Steuerung 11.10. nach RKIT-Messung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Die feste Grenze 2,05 (Renn-Hülle) war für 4-m-Weltstraßen nie erfüllbar und widersprach der Kreuzungsprüfung; mit Marge bleibt echter Abstand.",
    "applies": "ab Track Core 0.16.2"
   },
@@ -1487,6 +1594,7 @@
    "check": "Modul-Katalog-Abgleich + Standbild Kreisel",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Georg zeigt erstmals das ganze Baukasten-Prinzip mit Anschluss-Modulen in einem Blatt; passt zu V-134.",
    "applies": "ab C4/E"
   },
@@ -1501,6 +1609,7 @@
    "check": "je Modul beide Skins grün, Graph gleich",
    "source": "Georg 11.10.: „ich brauche beide … als skins einplanen – gleiche logik später für eisenbahn/rollercoaster“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Gleiche Fahrlogik, verschiedene Welten; ein Baukasten statt Parallel-Familien.",
    "applies": "ab Wendeschleife"
   },
@@ -1515,6 +1624,7 @@
    "check": "Such-Protokoll in der Skin-Zeile",
    "source": "Georg 11.10. (Frage nach Bau-Logik-Recherche); Bestand gefunden",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Use what works: Die Kabel-Track-/Reddit-Ableitung und die Schichtung existieren schon in Track Core und S4; neu recherchieren hieße Doppelarbeit.",
    "applies": "sofort"
   },
@@ -1529,6 +1639,7 @@
    "check": "Modul-Katalog-Abgleich je Blatt",
    "source": "Georg 11.10.; Straße/Bord und Cosmic-Highway-Skin folgen",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Erstmals ein vollständiger Modul-Katalog als Bild; macht V-134/V-145 prüfbar.",
    "applies": "ab jetzt"
   },
@@ -1543,6 +1654,7 @@
    "check": "Liste „uneindeutig“ je Bild in der Vorlagen-Zeile",
    "source": "Georg 11.10.: „wenn irgend etwas uneindeutig ist: nachfragen und details anfordern – NICHT selbst ausdenken & schlampig basteln“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Generierte Bilder enthalten oft unlogische Details; Erfinden führte zu Bastelarbeit (V-124, V-135).",
    "applies": "sofort"
   },
@@ -1557,6 +1669,7 @@
    "check": "Modul-Katalog-Abgleich + Liste uneindeutig",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Vervollständigt den Katalog um Stadt mit Bordstein, Land und den Cosmic-Highway-Skin.",
    "applies": "ab jetzt"
   },
@@ -1571,6 +1684,7 @@
    "check": "Katalog-Einträge je Antwort",
    "source": "Georg 11.10.: „passt soweit“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Uneindeutige Bildstellen geklärt statt erfunden (V-148).",
    "applies": "ab jetzt"
   },
@@ -1585,6 +1699,7 @@
    "check": "Fahrtest mit assist-Standard",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Spielgefühl vor Simulation; schwerere Modi bleiben möglich.",
    "applies": "immer"
   },
@@ -1599,6 +1714,7 @@
    "check": "Katalog-Abgleich + Liste uneindeutig",
    "source": "Georg 11.10.: „alle cars können schotter oder sonstige tracks fahren – es ist alles ein baukasten/system mit skins“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Ein System statt Fahrzeug-Sonderfälle; Berg-, Land- und Pfad-Module vervollständigen den Katalog, Fußwege werden ein eigener Skin.",
    "applies": "ab jetzt"
   },
@@ -1613,6 +1729,7 @@
    "check": "Fahrtest mit Hatchback",
    "source": "RKIT_CAR_WIDTHS_R1.md; Steuerung 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Einzel-Strecken verzerrte den Hatchback auf 3,26 Breite und hätte Land-Kreisel rot gemacht.",
    "applies": "ab nächstem Lab-Schritt"
   },
@@ -1627,6 +1744,7 @@
    "check": "Katalog-Einträge je Antwort",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Alle uneindeutigen Stellen geklärt, damit RKIT ohne Erfinden weiterbauen kann.",
    "applies": "ab jetzt"
   },
@@ -1641,6 +1759,7 @@
    "check": "Vorlagen-Zeile trail",
    "source": "Steuerung 11.10. nach RKIT-Frage C",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Ein Besitzer je Sache (V-002, V-041): Georg legt Wege im Editor an, der Core prüft und baut Teile.",
    "applies": "ab trail"
   },
@@ -1655,6 +1774,7 @@
    "check": "Standbild Tunnel im echten Inselkörper (Bank B)",
    "source": "Georg 11.10.: „tunnel ist PASS, allerdings ist der berg … noch schlecht und unpassend modelliert“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Der Prüfhügel ist ein Platzhalter; Tunnel sollen durch glaubwürdige Berge führen.",
    "applies": "Bank B / Phase D"
   },
@@ -1669,6 +1789,7 @@
    "check": "Messung Schrittlänge je Gangart + Fußtest",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Trittsteine müssen zur echten Schrittlänge der Figuren passen, sonst stolpert die Animation.",
    "applies": "trail"
   },
@@ -1683,6 +1804,7 @@
    "check": "trailChecks walk_grade",
    "source": "Georg 11.10.: „12 % passt“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Bequem begehbar, steiler wird Treppe.",
    "applies": "trail"
   },
@@ -1697,6 +1819,7 @@
    "check": "fps-Angabe in jedem Fuß-/Fahrtest-Bericht",
    "source": "Bau-Sitzung 11.10. (Selbstkorrektur), Steuerung",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Ein Test unter Last hat ein Loch übersprungen; Ergebnisse müssen von der Bildrate unabhängig gültig sein.",
    "applies": "sofort"
   },
@@ -1711,6 +1834,7 @@
    "check": "Treppen-Fußtest walk/jog/sprint ohne Hüpfer",
    "source": "Steuerung 11.10. nach V-157-Treppentest",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Use what works: Die Treppe passt sich der abgenommenen Fortbewegung an; Gold-Vorlage bleibt unberührt.",
    "applies": "trail"
   },
@@ -1725,6 +1849,7 @@
    "check": "Fahrtest Ein-/Ausfädeln ≥ 50 fps",
    "source": "Steuerung 11.10. (C4c)",
    "supersedes": null,
+   "superseded_by": [],
    "why": "k2b fährt nur einen Strom; für Ausfahrten braucht es eine Übergabe, chill & fun ohne Extra-Taste.",
    "applies": "ab C4c"
   },
@@ -1739,6 +1864,7 @@
    "check": "später Standbild",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Technik steht, Gestaltung des Inselkörpers bleibt die Schwachstelle.",
    "applies": "später"
   },
@@ -1753,6 +1879,7 @@
    "check": "Standbild Cosmic-Skin gegen CO1/CO2",
    "source": "Georg 11.10.: „Cosmic-Look: ok … zu viel halluzinierte Elemente, aber ggf. hilfreich für style, colors & vibe“",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Cosmic-Look geklärt über Bilder statt Text.",
    "applies": "bei Cosmic-Skin"
   },
@@ -1767,6 +1894,7 @@
    "check": "Standbild Mesa-Insel gegen ME1/ME2",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Neue Themen-Insel mit starker Basis-Referenz.",
    "applies": "Phase D/F"
   },
@@ -1781,6 +1909,7 @@
    "check": "-",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Steinbögen gehören thematisch zu Antike-Inseln.",
    "applies": "später"
   },
@@ -1795,6 +1924,7 @@
    "check": "Standard-URL = letzte Lieferung",
    "source": "Georg 11.10. (Live-Test)",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Georg testet live; halbfertige Stände kosten Vertrauen und Zeit.",
    "applies": "sofort"
   },
@@ -1809,6 +1939,7 @@
    "check": "Blatt M01–M03 gegen CC1, dann J1",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Klare modulare Vorlage für Blender; prozedurale Inselkörper überzeugten dreimal nicht.",
    "applies": "ab jetzt"
   },
@@ -1823,6 +1954,7 @@
    "check": "Q5/Q9 + Nahbild jedes Abschlusses",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Die zerrissenen offenen Banden zeigen, was passiert, wenn Abschlüsse nicht gebaut werden.",
    "applies": "sofort"
   },
@@ -1837,6 +1969,7 @@
    "check": "Kamera-Clip-/Sicht-Test in Spiralen",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "In engen Spiralen sieht man den Wagen nicht, weil die Kamera in der Etage darüber hängt.",
    "applies": "ab nächstem Core-Schritt"
   },
@@ -1851,6 +1984,7 @@
    "check": "Kamera-Test im niedrigen Tunnel",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Niedrige Stollen sollen fahrbar bleiben, ohne dass die Kamera in der Decke steckt.",
    "applies": "später (Minen-Tunnel)"
   },
@@ -1865,6 +1999,7 @@
    "check": "je Punkt Abnahme laut Audit §7",
    "source": "Steuerung 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Audit belegt die Ursachen der Live-Befunde; feste Reihenfolge statt Einzelreaktionen.",
    "applies": "ab jetzt"
   },
@@ -1879,6 +2014,7 @@
    "check": "Fahrt-Standbilder je Skin",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Tempogefühl entsteht durch wiederkehrende Elemente am Rand; je Welt im passenden Stil.",
    "applies": "Phase C/E"
   },
@@ -1893,6 +2029,7 @@
    "check": "Standbild Billboard über Zufahrt",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Inhalte (Zitate, Decks) gehören lesbar an ruhige Stellen und Insel-Eingänge.",
    "applies": "Phase D/E"
   },
@@ -1907,6 +2044,7 @@
    "check": "Style Guide v0.2 übernimmt",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Offene Stil-Fragen aus dem Style Guide geklärt.",
    "applies": "ab jetzt"
   },
@@ -1921,6 +2059,7 @@
    "check": "Messwerte + Standbild-Serie",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Damit Rhythmus-Abstände und Billboards messbar statt geschätzt gebaut werden.",
    "applies": "ab jetzt"
   },
@@ -1935,6 +2074,7 @@
    "check": "README mit Halluzinations-Liste",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Neue Insel-Referenz mit Strecken-Integration; Stil passt, Details teils erfunden.",
    "applies": "ab jetzt"
   },
@@ -1949,6 +2089,7 @@
    "check": "MOTION_GUIDE_R1.md",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Figuren sollen expressiv cartoonig spielen; erst Konzept auf Bestand, dann Bau.",
    "applies": "ab jetzt"
   },
@@ -1963,6 +2104,7 @@
    "check": "WSA-Gegenprüfung R1",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Gleiches Modell prüft sich selbst nicht unabhängig; Gegenprüfung erst am reparierten Stand sinnvoll.",
    "applies": "nach V-171 Punkt 1–3"
   },
@@ -1977,6 +2119,7 @@
    "check": "MOTION_GUIDE_R1 v0.2",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Damit Figuren-Acting auf Bestand gebaut werden kann.",
    "applies": "ab jetzt"
   },
@@ -1991,6 +2134,7 @@
    "check": "Sturz-Demo",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Squash proportional zur Aktion (Motion Matrix); Stürze brauchen sichtbaren Aufprall.",
    "applies": "ab jetzt"
   },
@@ -2005,6 +2149,7 @@
    "check": "MOTION_GUIDE_R1 §3f",
    "source": "Georg 11.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Begriff aus dem Motion-Auftrag geklärt; Grundlage für Acting-Anlässe.",
    "applies": "ab jetzt"
   },
@@ -2019,6 +2164,7 @@
    "check": "Machbarkeits-Notiz",
    "source": "Georg 12.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Nutzt vorhandenen Baukasten für Tunnel, Minen und Themenstrecken.",
    "applies": "nach V-171 Punkt 1–3"
   },
@@ -2033,6 +2179,7 @@
    "check": "C4c Standard + Parity",
    "source": "Georg 12.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Banden waren der größte sichtbare Fehler; gut genug für jetzt, Konzept später.",
    "applies": "ab jetzt"
   },
@@ -2047,6 +2194,7 @@
    "check": "-",
    "source": "Georg 12.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Georg: der ewige Lizenz- und Public-Check kostet Zeit und Nerven; alles ist längst geklärt.",
    "applies": "ab jetzt"
   },
@@ -2061,6 +2209,7 @@
    "check": "Kamera-Messung camera.ts",
    "source": "Steuerung 12.10. (Absicht Georg 11.10.)",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Machbarkeits-Agent Dungeon fand den Einheiten-Widerspruch; 5,8 lab wäre unter der Kamera.",
    "applies": "ab jetzt"
   },
@@ -2075,6 +2224,7 @@
    "check": "Kontaktbögen",
    "source": "Georg 24.09. (nachgetragen 12.10.)",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Bestehende Abnahme war nicht im Register.",
    "applies": "seit 24.09."
   },
@@ -2089,6 +2239,7 @@
    "check": "Performance-Proof",
    "source": "Georg 12.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Reproduzierbare, prüfbare NPC-Choreografie auf Bestand statt neuer Engine.",
    "applies": "nach Dungeon-POC"
   },
@@ -2103,6 +2254,7 @@
    "check": "replies/WORLDBUILDER_MODULE_MAP_R1.md",
    "source": "Georg 12.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Editor, Spieler und Maker sollen dieselben Module nutzen; Bestand zuerst (V-140).",
    "applies": "ab jetzt"
   },
@@ -2117,6 +2269,9 @@
    "check": "Seite live",
    "source": "Georg 12.10.",
    "supersedes": null,
+   "superseded_by": [
+    "V-221"
+   ],
    "why": "Georg soll offene Urteile an einem Ort klicken statt im Chat suchen.",
    "applies": "ab jetzt"
   },
@@ -2131,6 +2286,7 @@
    "check": "Hash-Gleichheit 3 Läufe",
    "source": "Steuerung 12.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Ursache falscher PASS: ein Sim-Schritt pro Bild mit Wanduhr-dt; Replay macht Tests maschinenunabhängig.",
    "applies": "ab S6"
   },
@@ -2145,6 +2301,10 @@
    "check": "Hub-Bereich live",
    "source": "Georg 12.10.",
    "supersedes": null,
+   "superseded_by": [
+    "V-221",
+    "V-228"
+   ],
    "why": "Georg will alles zentral in seinem ChatGPT-Production-Hub.",
    "applies": "ab jetzt"
   },
@@ -2159,6 +2319,7 @@
    "check": "-",
    "source": "Georg 12.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Aufräumen und Reihenfolge geklärt.",
    "applies": "ab jetzt"
   },
@@ -2173,6 +2334,7 @@
    "check": "POC Schritt 2",
    "source": "Georg 12.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Dungeon als Baukasten für alle Lagen.",
    "applies": "ab POC Schritt 2"
   },
@@ -2187,6 +2349,7 @@
    "check": "Vertrag kfb.world/1",
    "source": "Georg 12.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Verwechslung God-Mode und Maker ausgeräumt; Hex ist Legacy.",
    "applies": "ab jetzt"
   },
@@ -2201,6 +2364,7 @@
    "check": "nächster Proof",
    "source": "Georg 12.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Zweifel liest sich nicht; Georg konnte v1/v2 auf den Kontaktbögen nicht beurteilen.",
    "applies": "ab jetzt"
   },
@@ -2215,6 +2379,7 @@
    "check": "-",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Aufwand steht in keinem Verhältnis; später mit dem Strecken-Konzept.",
    "applies": "geparkt bis Konzept-TUNE"
   },
@@ -2229,6 +2394,7 @@
    "check": "Vertrag kfb.world/1 R2",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Georg: je flexibler und offener, desto besser; erst muss er selbst spielen können.",
    "applies": "Architektur jetzt, Bau nach MVP"
   },
@@ -2243,6 +2409,7 @@
    "check": "Parity mit flk Standard",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Ursache dynres-Pendeln behoben.",
    "applies": "ab jetzt"
   },
@@ -2257,6 +2424,7 @@
    "check": "Fußtests + Georg spielt",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Georg will endlich spielen; Grundsteuerung muss stimmen.",
    "applies": "sofort, vor S5"
   },
@@ -2271,6 +2439,7 @@
    "check": "Nahbild-Vergleich gegen Abnahme",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Abgenommene Augen gingen im Spiel verloren (Regress).",
    "applies": "im Spielbarkeits-Slice"
   },
@@ -2285,6 +2454,7 @@
    "check": "Paar Studio | Spiel",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Zweimal falsche Augen geliefert; Georg ist es leid.",
    "applies": "Slice nach S5"
   },
@@ -2299,6 +2469,7 @@
    "check": "Georg spielt die Szene",
    "source": "Steuerung 13.10. (Georg: weitermachen, nichts verlieren, keine Schwundversion)",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Zwei Wochen Breite ohne spürbares Spiel; fünf Fails durch Integration und Übergaben.",
    "applies": "ab jetzt"
   },
@@ -2313,6 +2484,7 @@
    "check": "Nahbild Rad/Boden + Prop/Boden",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Schwebendes Auto mit versetztem Schatten wirkt billig.",
    "applies": "in V-202"
   },
@@ -2327,6 +2499,7 @@
    "check": "Standbild Blase über NPC",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Lesbarkeit vor Comic-Tusche; doppelte Pfeilspitzen störten.",
    "applies": "ab V-202"
   },
@@ -2341,6 +2514,7 @@
    "check": "Bildpaar J17 | Zweig",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Steuerung hat die Knubbel bei der Prüfung übersehen; Regress gegenüber J17.",
    "applies": "sofort"
   },
@@ -2355,6 +2529,7 @@
    "check": "Bildpaare je Stück",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Wiederholte Regresse durch Nachbau „nach Vorlage“ und halbfertige Lieferungen.",
    "applies": "ab sofort"
   },
@@ -2369,6 +2544,7 @@
    "check": "Byte-Vergleich J17 + Abzweig PondLand",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "J17 ist das einzige fertige, abgenommene, spaßige Teil; Erweitern statt Nachbauen.",
    "applies": "ab sofort"
   },
@@ -2383,6 +2559,7 @@
    "check": "-",
    "source": "Georg 13.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Mehr Wert durch Karten-Dialog-Modul; React nur im getrennten Slice; eine Wahrheit.",
    "applies": "ab sofort"
   },
@@ -2397,6 +2574,7 @@
    "check": "-",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Lab-Prototyp nicht spielbar, Racetrack-Design nicht erhaltenswert, J17 selbst war buggy; Mehrwert liegt im Karten-Dialog.",
    "applies": "ab sofort"
   },
@@ -2411,6 +2589,7 @@
    "check": "Spec R1",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Baukasten-Idee bleibt, aber nach dem Fokus Karten-Dialog; Lehren nicht verlieren.",
    "applies": "nach Karten-Dialog-MVP"
   },
@@ -2425,6 +2604,7 @@
    "check": "test:host PASS auf Georgs Mac",
    "source": "Steuerung 14.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Ein Rahmen mit festen Versionen und Modulvertrag verhindert die Nahtstellen-Fails.",
    "applies": "ab WS1-Start"
   },
@@ -2439,6 +2619,7 @@
    "check": "Bildpaar Blase Lab | R3F",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Lesbare 2D-Blasen sind abgenommen; 3D-Blasen wären ein Nachbau.",
    "applies": "ab Host-Vertrag R1.2"
   },
@@ -2453,6 +2634,7 @@
    "check": "-",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Jede Absprache lief über Georg; jetzt direkt über GitHub.",
    "applies": "ab sofort"
   },
@@ -2467,6 +2649,7 @@
    "check": "Bewegtes Paar Studio | Stand",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Wiederholter Drift: Tusche, Platzhalter-Karte, Figuren ohne Augen, Hex.",
    "applies": "sofort"
   },
@@ -2481,6 +2664,7 @@
    "check": "test:host PASS",
    "source": "Steuerung 14.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Widerspruch Sprechblasen aufgelöst, Versionen exakt.",
    "applies": "ab WS1 S5a"
   },
@@ -2495,6 +2679,9 @@
    "check": "replies/WS0_TO_WS1.md",
    "source": "Steuerung 14.10.",
    "supersedes": null,
+   "superseded_by": [
+    "V-228"
+   ],
    "why": "WS1 braucht Entscheidungen, um ohne Drift weiterzubauen.",
    "applies": "sofort"
   },
@@ -2509,6 +2696,9 @@
    "check": "A/B-Paar Native | Wireface",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [
+    "V-228"
+   ],
    "why": "Sprechende Figuren nicht neu erfinden; klare Besitzer je Gesichtsregion.",
    "applies": "ab F2"
   },
@@ -2523,6 +2713,7 @@
    "check": "OPENER_RESEARCH_INVENTORY_R1",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Ein Stand-up-Comedian würde mit diesem Pool von der Bühne gejagt.",
    "applies": "ab sofort"
   },
@@ -2537,6 +2728,10 @@
    "check": "-",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [
+    "V-227",
+    "V-228"
+   ],
    "why": "Design soll nicht auf die Augen warten; Wireface-Figuren statt halbgarer Püppchen.",
    "applies": "ab sofort"
   },
@@ -2551,6 +2746,10 @@
    "check": "Bildpaar Standard | Stand",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [
+    "V-223",
+    "V-224"
+   ],
    "why": "Claude Design hatte weder die Hypernormalisation-Engine noch das Plain-Billboard; Karte war aufgeklebt.",
    "applies": "ab sofort"
   },
@@ -2564,7 +2763,8 @@
    "owner": "WS0",
    "check": "Hub live",
    "source": "Georg 14.10.",
-   "supersedes": null,
+   "supersedes": "V-191, V-189",
+   "superseded_by": [],
    "why": "Alles lag fragmentiert und wurde falsch verdrahtet; Georg will einen Ort.",
    "applies": "ab sofort"
   },
@@ -2579,6 +2779,7 @@
    "check": "Pool-Test ohne Wiederholung im Set",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Varianz ohne Wiederholung; Figuren unterscheiden sich im Umgang mit Fiktion.",
    "applies": "ab S5b"
   },
@@ -2592,7 +2793,10 @@
    "owner": "Claude Design + WS1",
    "check": "Bildpaar Referenz | Stand",
    "source": "Georg 14.10.",
-   "supersedes": null,
+   "supersedes": "V-220 (Teile)",
+   "superseded_by": [
+    "V-224"
+   ],
    "why": "Bastel-Billboards mit aufgeklebten Bildern sind nicht akzeptabel.",
    "applies": "ab sofort"
   },
@@ -2606,7 +2810,8 @@
    "owner": "Claude Design + WS1",
    "check": "Bild: Karte randlos im Rahmen, Figuren davor",
    "source": "Georg 14.10.",
-   "supersedes": null,
+   "supersedes": "V-220 (Fläche, Rand), V-223 (TV-Knopf offen)",
+   "superseded_by": [],
    "why": "Der TV-Knopf und der Füllrand waren wieder drin; das Billboard stand zu hoch für Figuren davor.",
    "applies": "ab sofort"
   },
@@ -2621,6 +2826,9 @@
    "check": "Szene läuft, Kamera-Knöpfe, Bildpaar Referenz | Szene",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [
+    "V-228"
+   ],
    "why": "Georg will eine 3D-Szene, keine Screenshot-Bretter.",
    "applies": "ab sofort"
   },
@@ -2635,6 +2843,9 @@
    "check": "Bühne nur mit echten Figuren; ruhige Einstellung ohne Auto-Schnitt",
    "source": "Georg 14.10.",
    "supersedes": null,
+   "superseded_by": [
+    "V-227"
+   ],
    "why": "Statt Figuren kamen leere Aufsteller, und die Kamera sprang hin und her.",
    "applies": "ab sofort"
   },
@@ -2648,8 +2859,24 @@
    "owner": "WS1 (Spiel) + Claude Design (Bühne)",
    "check": "beide Quellen auf derselben Bühne",
    "source": "Georg 14.10.",
-   "supersedes": null,
+   "supersedes": "V-219, V-226 (Ursache)",
+   "superseded_by": [],
    "why": "Georg will beide Figurenquellen und offen für weitere.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-228",
+   "date": "2026-10-14",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Architektur R1 (ARCHITECTURE_R1.md) ist die eine Karte: Daten verwaltet WS0 (schreibt Georgs Urteile in Registry und Pool), alle Laufzeit baut nur WS1, Claude Design liefert nur Design (Bilder, Specs, Werte, Look-Sandbox), Georg urteilt im Hub. Eine Quelle je Teil (Tabelle §2), ein Weg für Dialog-Inhalt (Autor → Import-Skript → Pool-Kandidat → Hub-Urteil → ACCEPTED im Pool → WS1 liest feste Revision), Gesicht: je Figur genau ein Treiber für das ganze Gesicht (KFB_NATIVE oder WIREFACE exklusiv, wie #355-Code), Abnahme G0 Verfügbarkeit → G1 Vorlagen-Zeile → G2 Test + Bildpaar → G3 WS0 → G4 Szene → G5 Georg. Billboard: BILLBOARD_STANDARD_R2. Abgelöste Dokumente: §7.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Architektur-Audit 14.10. (unabhängiger Agent)",
+   "source": "Georg 14.10. („Struktur“)",
+   "supersedes": "V-225, V-217 (Mischbetrieb Augen/Mund), V-219, V-191, V-216 Punkt 4 (Registry-Owner)",
+   "superseded_by": [],
+   "why": "Doppelbau, Rollen ohne Sitzung und Urteile, die nie in den Daten ankamen, führten zu Serien-FAILs.",
    "applies": "ab sofort"
   },
   {
@@ -2663,6 +2890,7 @@
    "check": "-",
    "source": "docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/",
    "supersedes": null,
+   "superseded_by": [],
    "why": "Prozedurale Primitive können keine Claymation; Regress.",
    "applies": "ab 10.10."
   }
@@ -2714,7 +2942,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:150",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:154",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
