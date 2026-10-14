@@ -23,13 +23,11 @@
       "lore": "DISCLOSURE EVENT: Force another player to reveal their hidden agenda (or hand). If they refuse, the aliens take their turn.",
       "gradeReason": "You already know this character. They live in your neighbor's garage. Table-ready.",
       "artworkPrompt": "Style: Conspiracy corkboard. Subject: Owl detective connecting dots under UFO. Mood: Paranoid revelation.",
-      "print": {
-        "cardName": "Behold a Pale Horse",
-        "power": "Aliens are real, Aliens are real, HIV was a test, and the Illuminati run the DMV. Everything is a dot waiting to be connected.",
-        "lore": "DISCLOSURE EVENT: Force another player to reveal their hidden agenda (or hand). If they refuse, the aliens! take their turn.",
+      "printTypo": "Druck: 'Aliens are real,' steht doppelt am Textanfang",
+      "textSource": {
         "source": "PDF v05 Suppressed_Book_Deck_-_ADD web ID.pdf p3 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -37,9 +35,19 @@
       "cardName": "The Synagogue of Satan",
       "grade": 1,
       "power": "A timeline of how a secret high council of 'Luciferian' elites supposedly rented out world history.",
-      "lore": "SHADOW COUNCIL: You may change the Quest Die result by +1/-1 by claiming 'we paid for this outcome.'",
+      "lore": "SHADOW COUNCIL: You may change the Quest Die result by +1/-1 by claiming \"we paid for this outcome.\"",
       "gradeReason": "SHADOW COUNCIL forces someone to confess the conspiracy. Brutal. Instant kayfabe.",
-      "artworkPrompt": "Style: Gothic cartoon. Subject: Octopus in top hat controlling puppet world map. Mood: Ominous conspiracy."
+      "artworkPrompt": "Style: Gothic cartoon. Subject: Octopus in top hat controlling puppet world map. Mood: Ominous conspiracy.",
+      "jsonLegacy": {
+        "cardName": "The Synagogue of Satan",
+        "power": "A timeline of how a secret high council of 'Luciferian' elites supposedly rented out world history.",
+        "lore": "SHADOW COUNCIL: You may change the Quest Die result by +1/-1 by claiming 'we paid for this outcome.'"
+      },
+      "textSource": {
+        "source": "PDF v05 Suppressed_Book_Deck_-_ADD web ID.pdf p3 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 3,
@@ -48,23 +56,30 @@
       "power": "From Rome to the Fed: a thesis that usury is the chain and debt is the cage. Lincoln knew too much.",
       "lore": "INFLATION: Add a card to the Ring that does nothing but increase the 'cost' (difficulty) for everyone else.",
       "gradeReason": "Rome-to-Fed thesis is solid but needs a villain to embody. Descriptive, not quite performative.",
-      "artworkPrompt": "Style: Vintage editorial. Subject: Eagle clutching chains made of gold coins over Capitol dome. Mood: Sinister control."
+      "artworkPrompt": "Style: Vintage editorial. Subject: Eagle clutching chains made of gold coins over Capitol dome. Mood: Sinister control.",
+      "textSource": {
+        "source": "PDF v05 Suppressed_Book_Deck_-_ADD web ID.pdf p3 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 4,
       "cardName": "Atlantis, Edda, and Bible",
       "grade": 2,
-      "power": "200,000 years of Germanic culture, supposedly stolen and sunk. Jesus was Aryan? Everyone that in the pot too.",
+      "power": "200,000 years of Germanic culture, supposedly stolen and sunk. Jesus was Aryan? Sure, throw that in the pot too.",
       "lore": "MYTHIC REWRITE: Rename an existing location in the Ring to 'Atlantis.' It is now considered 'Lost' and cannot be targeted.",
       "gradeReason": "Font artifact garbled the power text. Mythic premise works; execution is half-eaten by the renderer.",
       "artworkPrompt": "Style: Ancient map illumination. Subject: Viking ship sinking toward sunken city glowing below waves. Mood: Lost civilizations.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Atlantis, Edda, and Bible",
-        "power": "200,000 years of Germanic culture, supposedly stolen and sunk. Jesus was Aryan? Sure, throw that in the pot too.",
-        "lore": "MYTHIC REWRITE: Rename an existing location in the Ring to 'Atlantis.' It is now considered 'Lost' and cannot be targeted.",
+        "power": "200,000 years of Germanic culture, supposedly stolen and sunk. Jesus was Aryan? Everyone that in the pot too.",
+        "lore": "MYTHIC REWRITE: Rename an existing location in the Ring to 'Atlantis.' It is now considered 'Lost' and cannot be targeted."
+      },
+      "textSource": {
         "source": "PDF v05 Suppressed_Book_Deck_-_ADD web ID.pdf p3 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -170,10 +185,20 @@
       "cardNumber": 16,
       "cardName": "Fahrenheit 451",
       "grade": 1,
-      "power": "A book about burning books that gets burned for being about burning books. The irony burns at 451 degrees.",
+      "power": "A book about burning books that gets banned for being about burning books. The irony burns at 451 degrees.",
       "lore": "MEMORY HOLE: Burn (remove) one card from the game permanently. It is never mentioned again.",
       "gradeReason": "A book about burning books gets burned. MEMORY HOLE erases a card forever. G1 perfection.",
-      "artworkPrompt": "Style: Self-consuming irony poster. Subject: Firefly burning stack of books, top book labeled Fahrenheit 451. Mood: Recursive prohibition."
+      "artworkPrompt": "Style: Self-consuming irony poster. Subject: Firefly burning stack of books, top book labeled Fahrenheit 451. Mood: Recursive prohibition.",
+      "jsonLegacy": {
+        "cardName": "Fahrenheit 451",
+        "power": "A book about burning books that gets burned for being about burning books. The irony burns at 451 degrees.",
+        "lore": "MEMORY HOLE: Burn (remove) one card from the game permanently. It is never mentioned again."
+      },
+      "textSource": {
+        "source": "PDF v05 Suppressed_Book_Deck_-_ADD web ID.pdf p6 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 17,
@@ -206,17 +231,19 @@
       "cardNumber": 20,
       "cardName": "Shams Al-Ma'arif",
       "grade": 2,
-      "power": "The Sun of Knowledge. An ancient grimoire of names and numbers. Sufi wisdom or black magic? Don't read it.",
+      "power": "The Sun of Knowledge. An ancient grimoire of names and numbers. Sufi wisdom or black magic? Don't read it aloud.",
       "lore": "DJINN SUMMONING: Roll a D6. On a 6, you win the current conflict instantly. On a 1, you lose your Actor card.",
       "gradeReason": "High-stakes DJINN SUMMONING is compelling. Obscure enough to need a brief at table before performance lands.",
       "artworkPrompt": "Style: Islamic manuscript illumination parody. Subject: Black cat summoning djinn from glowing Arabic text grimoire. Mood: Ancient forbidden power.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Shams Al-Ma'arif",
-        "power": "Special Elite The Sun of Knowledge. An ancient grimoire of names and numbers. Suti wisdom or black magic? Don't read it aloud.",
-        "lore": "DJINN SUMMONING: Roll a D6. On a 6, you win the current conflict instantly. On a 1, you lose your Actor card.",
+        "power": "The Sun of Knowledge. An ancient grimoire of names and numbers. Sufi wisdom or black magic? Don't read it.",
+        "lore": "DJINN SUMMONING: Roll a D6. On a 6, you win the current conflict instantly. On a 1, you lose your Actor card."
+      },
+      "textSource": {
         "source": "PDF v05 Suppressed_Book_Deck_-_ADD web ID.pdf p7 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     }
   ],
