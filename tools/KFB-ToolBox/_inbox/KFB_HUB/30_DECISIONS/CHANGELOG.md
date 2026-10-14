@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 früh · Antworten an WS1 (Palette, Dialog-Vorschau)
+- V-245: Bühnen-Palette palette-roles R2 + world-palettes, dynamisch nach Deck-Genre, Himmel mit, weich; Korrektur neutral-Decal. WS1: G4-Vorschau mit Georgs drei Fassungen (preview), Pool r6 erst nach Plugin + Prüfwerkzeug, Spielerwahl bleibt, F-5 Blickschicht frei; zweite Besetzung offen bei Georg.
+
 ## 2026-10-14 spät · ToolBox-Port an WSA work
 - V-244: ToolBox-Schnitt P08 in replies/TOOLBOX_SOURCE_CUT_2026-10-14_r1/ (47/47 OK); WSA work portiert 1:1 als Site, behebt die Mängelliste dort, speichert Riggings als Datei auf GitHub und plant die Verbindung mit dem FrankenStein-Composer. Hub-Briefing b13.
 

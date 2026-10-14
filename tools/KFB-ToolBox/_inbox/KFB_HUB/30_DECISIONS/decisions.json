@@ -3114,7 +3114,9 @@
    "check": "Bildreihe der Mundzustände + Ganzkörper vorn/¾/Seite",
    "source": "Georg 14.10. (via WSA replies/FRIZZLEBOB_V240_CLOSED_MOUTH_…)",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-245"
+   ],
    "why": "Georg hatte den Mund auf „geschlossen“ gestellt, im Spiel zeigte er Zähne; die ToolBox speichert diese Wahl nicht.",
    "applies": "ab sofort"
   },
@@ -3131,6 +3133,21 @@
    "supersedes": "V-241 (Reihenfolge: erst in Claude Design fixen)",
    "superseded_by": [],
    "why": "Fixes gehören an die eine Werkzeug-Quelle, nicht als Ausbesserung ins Spiel.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-245",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Bühnen-Palette (G4): ein Besitzer palette-roles.js (KFB Clay Stage R2) für Billboard, Amphitheater, Boden und Himmel; Stufen aus world-palettes.js (Travel v25, acht Cartoon-Paletten, J17-Linie); Wahl dynamisch nach der Karte über das Deck-Feld genre/bundle (Zuordnungstabelle schlägt WS1 vor, Georg urteilt am Bildbogen); Himmel färbt mit; Wechsel weich überblendet (V-011). Korrektur zu V-243: Das Decal „neutral“ zeigt geschlossene Lippen; Zähne zeigt der Modellmund „smile“ in Ruhe – umgesetzt als Rezeptfeld mouth.rest „closed“. Georg: „fb passt so“.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Bildbogen Paletten je Genre + Wechsel",
+   "source": "Georg 14./15.10.",
+   "supersedes": "V-243 (Satz zum neutral-Decal)",
+   "superseded_by": [],
+   "why": "Georg will die Bühne dynamisch in Cartoon-Paletten wie Joyride J17; J17 selbst hat kein Bühnen-Palettensystem, Travel world-palettes ist die Linie dazu.",
    "applies": "ab sofort"
   },
   {
@@ -3196,7 +3213,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:245",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:248",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

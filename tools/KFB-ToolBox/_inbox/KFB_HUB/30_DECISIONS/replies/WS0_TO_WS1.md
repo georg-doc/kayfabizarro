@@ -1,5 +1,32 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 früh · Antworten auf §19–§22 (gebündelt) · gelesen bis V-245 bitte quittieren
+**FrizzleBob:** F-1 erledigt (Georg: „fb passt so“). V-243 umgesetzt; den Satz zum neutral-Decal hat WS0 berichtigt (V-245). Das Gate `FRIZZLEBOB_V240_ASSEMBLED_BINDPOSE_SOURCE_PROOF` entfällt in WS1; Ganzkörper und Export kommen über die neue ToolBox-Site (V-244).
+
+**F-2 Palette (V-245), entschieden:**
+- (a) **Besitzer `palette-roles.js` R2.** Er versorgt Billboard, Amphitheater, Boden und Himmel. Die Stufen kommen aus `world-palettes.js` (Travel v25, acht Cartoon-Paletten). Das ist die Linie, die Georg mit „Joyride v17“ meint (d). BIOMES nur noch als Rückfall.
+- (b) **Zuordnung dynamisch nach Karte über das Deck-Feld `genre` bzw. `bundle`** (Werte uneinheitlich: EDUCATION/education, CONSPIRACY_THEORY/conspiracy, satire/COMEDY …). Ihr schlagt eine Tabelle Genre → Palette vor und legt einen Bildbogen bei: je Palette ein Bühnenbild mit einer passenden Karte. Georg urteilt am Bogen.
+- (c) **Himmel färbt mit.**
+- **Wechsel weich überblenden** (V-011).
+
+**F-3 Dialogtext:**
+- (a) **Für G4 Vorschau mit drei Karten** und Georgs eigenen Fassungen, als Vorschau gekennzeichnet (Packet `preview:true`, nicht ACCEPTED). Der Opener steht als eigene Schicht davor:
+  - Monomyth #1: „[Welcome to] The Ordinary World stasis loop: nothing changes; Dysfunction is habit. Normalize pain – feels like home.“
+  - Monomyth #5: „[Remember] Crossing the Threshold: hand new cards, old self dead. Fear becomes movement. You can't un-fluff the pill.“
+  - Help I Am A Human #10: „[You know] Jean-Jacques Rousseau, Natural Goodness: man born free, everywhere in chains.“
+  - Kartentext = Druck (@233efd5).
+  - Ist eine der Karten nicht SAFE, zeigt das Billboard den Platzhalter mit Drucktext.
+- (b) **Pool r6 kommt erst mit sauberen Triplets.** Das Plugin wird nach der neuen Methode (Closure, Fluff-o-lect, Georgs Fassungen als Richtung) angepasst; abgenommen wird in einem Prüfwerkzeug (V-237). Format bleibt kfb.voice.triplet-opener-pool/1, Opener als eigene Schicht. Termin offen. Bis dahin Vorschau wie (a).
+- (c) **Spielerwahl** KayfaBINGO/BOGGLE/BONGO/BLÖDSINN + eigene Wörter: bleibt für G4.
+
+**F-4 zweite Besetzung:** Klärt WS0 mit Georg; Antwort folgt hier. Bis dahin spielt FrizzleBob beide Seiten, nur im Prüf-Browser.
+
+**F-5:** Kopf-Blickschicht nach dem Mixer und `lookAt` in Weltkoordinaten ist freigegeben (V-214). Kinetik-Automatik und M1-Fußabnahme kommen nach G4.
+
+**19.1:** `cam=near` + `place=near` als Standard bestätigt (Georg: „near nehmen“).
+
+**19.x Kartennummern:** Die Decks ohne Nummern bzw. mit `num`/`name` (ai_kayfabe, brain_flipper, kompendium, kreative_kayfab, carnival_therapy, tragic_flaws_shakespeare) normalisiert WS0 als nächsten Datenschritt (V-242).
+
 ## 14.10.2026 spät · Präzisierung zu V-243: kein FrizzleBob-Sonderweg
 - **Nur datengetrieben:** Den Ruhe-Mund liest der Darsteller aus einem Rezept-Feld `mouth.rest` (z. B. `"closed"` → das Decal für geschlossene Lippen). Den Wert setzt bis auf Weiteres euer Rezept mit Quelle „V-243“. Später schreibt ihn die ToolBox selbst. Nichts fest im Code für FrizzleBob.
 - **Kein weiterer FrizzleBob-Ausbau** über diesen Punkt hinaus (Augenlage, Ganzkörper, Export). Die Rigging-Fixes wandern in die ToolBox (WSA-work-Port, V-241); Georg stellt FrizzleBob dort einmal ein, ihr übernehmt das Rezept 1:1.
