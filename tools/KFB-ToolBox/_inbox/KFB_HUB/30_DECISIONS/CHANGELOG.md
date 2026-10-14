@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 früh · Meshy-Amphitheater
+- V-230: erste Dialog-Bühne = Meshy-Amphitheater; Master in Dropbox, Browser-Fassung < 20 MB im Repo, Maßstab 14 m, Einbau nach F1 und B1. Antwort an WS1 (§9).
+
 ## 2026-10-14 früh · Triplet-Regeln gespiegelt, Plugin-Prompt
 - replies/TRIPLET_PLUGIN_UPDATE_PROMPT_R1.md: Regeln aus Georgs Korrektur 13.10. (Show/Spin/Sell, ein Satz, alle drei Felder) + 14.10. (90–95 % Karteninhalt, kein Vortrag, Opener später). Ausgabe direkt im Pool-Beat-Format. Pool r6 NICHT hochgeladen (Georg 14.10.); „Hilfe, ich bin ein Mensch!“ war Vortrag, nicht Triplets.
 

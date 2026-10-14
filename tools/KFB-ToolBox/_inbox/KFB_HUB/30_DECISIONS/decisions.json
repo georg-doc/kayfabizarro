@@ -2895,6 +2895,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-230",
+   "date": "2026-10-14",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Meshy-Amphitheater (Georgs Meshy-Abo, Master 73 MB in Dropbox /CLAUDE/MeshyModels/, SHA-256 11846848…2a9efb) wird die erste Dialog-Bühne statt Hex bzw. Platzhalter-Boden. Master bleibt in der Dropbox, ins Repo nur eine Browser-Fassung unter eigener Kennung: Geometrie auf ≈ 300–400 Tsd. Dreiecke, Texturen 2048² WebP (Metall/Rau 1024²), Ziel < 20 MB, ohne neuen Laufzeit-Decoder; Werkzeug @gltf-transform/cli als gepinnte Dev-Abhängigkeit freigegeben (Build/Tests ohne es weiter grün). Abnahme: Bildpaar Master | Browser-Fassung aus gleichen Kameras + Bildzeit-Messung. Maßstab Bühnenfläche ≈ 14 m (bestätigt, Prüfung im Two-Shot). Offene Unterseite: steht auf Clay-Gelände mit Bodenschluss (V-203), Kamera nie darunter. Eine Asset-Kennung im Asset Librarian, eingetragen von WS1 im Intake-Slice, WS0 prüft. Einbau erst nach F1 und B1.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Bildpaar + fps",
+   "source": "Georg 14.10. (Meshy-Auftrag)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eigenes Bühnenmodell aus Meshy statt Hex-Kulisse; 73 MB und 1,6 Mio. Dreiecke sind für den Browser zu schwer.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2957,7 +2972,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:157",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:166",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
