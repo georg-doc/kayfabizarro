@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · Wireface-Demo-Figuren als Platzhalter
+- V-219: Claude Design nutzt Wireface-Theatre-Demo-Figuren als beschriftete Platzhalter; nie KayKit ohne/mit Standardaugen; fertige Figuren aus WS1 F1+F2. Abhängigkeiten: Claude Design und WS1 S5a–c warten auf niemanden, nur D1 wartet auf F1.
+
 ## 2026-10-14 · Pool-Urteil, Opener-Recherche-Inventur
 - V-218: Georgs KEEP/TUNE zu den 15 Pool-Kandidaten; Pool zu dünn und klischeehaft; Inventur der vorhandenen Opener-Recherche (PR #379 u. a.) gestartet. Steuerung hatte die Recherche vor dem Ankreuzen nicht gesichtet.
 

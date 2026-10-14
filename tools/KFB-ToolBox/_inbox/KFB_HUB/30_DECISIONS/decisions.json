@@ -2527,6 +2527,20 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-219",
+   "date": "2026-10-14",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Für Claude-Design-Entwürfe der Wireface-Bühne dürfen die originalen Wireface-Theatre-Demo-Figuren als deutlich beschriftete Platzhalter („Wireface demo stand-in“) verwendet werden (echte animierte Gesichter vom Gesichts-Spender). Nie KayKit-Figuren ohne Augen oder mit Standardaugen (V-214). Die fertige Bühne bekommt die echten KFB-Figuren: KFB-Körper + KFB-Eye-Rig (F1) + Wireface-Mund (F2) von WS1. Claude Design wartet auf niemanden; nur das Dialog-Modul D1 wartet auf F1.",
+   "values": {},
+   "owner": "Claude Design + WS1",
+   "check": "-",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Design soll nicht auf die Augen warten; Wireface-Figuren statt halbgarer Püppchen.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2588,7 +2602,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:109",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:112",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
