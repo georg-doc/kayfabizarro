@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · WS1 F1 EyeRig · Briefing-/Quellenparität und G3-Prüfung
+- `replies/WS0_WS1_F1_EYERIG_SOURCE_AND_GATE_RECONCILIATION_2026-10-14.md` – GitHub-Quellen-Audit zu WS1 `WS1_STATUS.md` §10, tatsächlichem `eyeActor.js`, F1-Vertragstest, Original-Profil und einem visuell eingesehenen Studio|R3F-Gesichtspaar. WS1 meldet F1 **17 Checks PASS / 9 Tests grün**, nicht hier erneut ausgeführt; **G2 belegt, G3 WS0 offen**. Relevante Briefing-Widersprüche: WS0s Studioquelle 22.09. ohne Rogue_Hooded versus profilrelevante `cloudflare-live`-Fassung **bei Commit db823766**; `serve-studio.sh` nutzt noch einen beweglichen Branch und muss reproduzierbar gepinnt werden; Kinetik ist im genehmigten Profil **aus**, darf nicht aufgrund WS0-Wortlaut eingeschaltet werden; Test `Lid zu` zählt nur Augenweiß (2095 → 0), während die Pupille durchscheint → separater Rigging-Defekt/testen; `sourceEyeCleanupVisuallyAccepted:false` ist nicht dasselbe wie `eyeProfileVisuallyApproved:true`; Rogue_Hooded hat Maske und ist kein F2-Mund-Cast; Brauen nicht doppeln; Welt-Blick/eyes→head→body erst Darsteller-Slot. **V-228 ist SSOT**: KFB_NATIVE und WIREFACE-Gesichtstreiber sind exklusiv, älterer EyeRig+Wireface-Mund-Mischbetrieb ist abgelöst. Kein Runtime-Patch oder neues V-Urteil durch Auditor; WS0 schreibt eine supersedierende F1-Antwort in `WS0_TO_WS1.md`, hält G3 korrekt offen und führt WS1 über Darsteller-Slot → B1 → D1 weiter.
+
 ## 2026-10-14 früh · Triplets: Verknüpfung
 - V-234: Titel + Konzept → echte Verknüpfung (because/so/but/yet/until) → Lore-Bedeutung.
 
