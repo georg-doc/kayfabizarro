@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 nachts · Figuren-Slot quellen-offen
+- V-227: KFB-Figuren, Wireface-Cast und beliebige GLB mit Wireface-Gesicht über eine Darsteller-Schnittstelle; ein Gesichts-Treiber je Figur; SDK lokal (Georgs Konto); Kamera ruhig, kein Auto-Schnitt. Hub-Briefing b05 (Claude Design) und WS0_TO_WS1 aktualisiert.
+
 ## 2026-10-14 nachts · Wireface Stage live R1 = FAIL
 - V-226: keine Figuren (Wireface-SDK lag Claude Design nie vor; WS0-Briefing-Fehler), Auto-Schnitt springt. Neue Regel: Verfügbarkeit jedes verlangten Teils vor dem Auftrag prüfen.
 

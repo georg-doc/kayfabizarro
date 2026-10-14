@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@400;700&display=swap" rel="stylesheet">
+<script src="./vendor/chatterbox/chatterbox-core.js"></script>
+<style>html,body{margin:0;height:100%;background:#1d1d1b;color:#f4f3f0;overflow:hidden}a{color:#f6e3c8}a:hover{color:#fff}</style>
+</helmet>
+<div style="position:fixed;inset:0;display:flex;flex-direction:column;font-family:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+  <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:#1d1d1b;border-bottom:1px solid #3a3935;flex-wrap:wrap">
+    <b style="font-size:14px;white-space:nowrap">KFB Wireface Stage · live</b>
+    <span style="font:12px ui-monospace,Menlo,monospace;color:#b5b1a8;white-space:nowrap">three 0.186.1 · Clay01 r2 plain · PROPOSED</span>
+    <span style="flex:1"></span>
+    <span style="font:12px ui-monospace,Menlo,monospace;color:#9fd38a;white-space:nowrap">{{ status }}</span>
+  </div>
+  <div ref="{{ stageRef }}" style="position:relative;flex:1;min-height:0;background:#2a2926"></div>
+  <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#1d1d1b;border-top:1px solid #3a3935;flex-wrap:wrap">
+    <sc-for list="{{ shotBtns }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.pick }}" style="padding:7px 12px;border-radius:6px;border:1px solid #f6e3c8;background:{{ o.bg }};color:{{ o.fg }};font:600 13px system-ui,sans-serif;cursor:pointer;white-space:nowrap">{{ o.label }}</button></sc-for>
+    <button onClick="{{ toggleAuto }}" style="padding:7px 12px;border-radius:6px;border:1px solid #f6e3c8;background:{{ autoBg }};color:{{ autoFg }};font:600 13px system-ui,sans-serif;cursor:pointer;white-space:nowrap">Auto-Schnitt</button>
+    <span style="width:10px"></span>
+    <sc-for list="{{ aspectBtns }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="padding:7px 12px;border-radius:6px;border:1px solid #f6e3c8;background:{{ o.bg }};color:{{ o.fg }};font:600 13px system-ui,sans-serif;cursor:pointer;white-space:nowrap">{{ o.label }}</button></sc-for>
+    <span style="width:10px"></span>
+    <button onClick="{{ restart }}" style="padding:7px 12px;border-radius:6px;border:1px solid #f6e3c8;background:transparent;color:#f6e3c8;font:600 13px system-ui,sans-serif;cursor:pointer;white-space:nowrap">Neu starten</button>
+    <button onClick="{{ togglePause }}" style="padding:7px 12px;border-radius:6px;border:1px solid #f6e3c8;background:transparent;color:#f6e3c8;font:600 13px system-ui,sans-serif;cursor:pointer;white-space:nowrap">{{ pauseLabel }}</button>
+    <button onClick="{{ toggleCorner }}" title="V-220 runde Innenecken schneiden die Kartenecken an" style="padding:7px 12px;border-radius:6px;border:1px solid #f6e3c8;background:{{ cornerBg }};color:{{ cornerFg }};font:600 13px system-ui,sans-serif;cursor:pointer;white-space:nowrap">Ecken rund</button>
+    <span style="flex:1"></span>
+    <span style="font:12px ui-monospace,Menlo,monospace;color:#b5b1a8">Standbild der Wireface-Demo-Figur auf die linke (A) oder rechte (B) Bildhälfte ziehen.</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { info: null, shot: 'two', aspect: '16:9', auto: true, paused: false, corner: false, err: null };
+  stageRef = React.createRef();
+  componentDidMount() {
+    import(new URL('modules/host.js', document.baseURI).href)
+      .then(m => m.mount(this.stageRef.current, { onInfo: i => { this._i = i; } }))
+      .then(api => { this.api = api; window.__wfstage = api; this._t = setInterval(() => this._i && this.setState({ info: this._i, shot: this._i.shot }), 250); })
+      .catch(e => { console.error(e); this.setState({ err: String(e && e.message || e) }); });
+  }
+  componentWillUnmount() { clearInterval(this._t); this.api && this.api.dispose(); }
+  renderVals() {
+    const s = this.state, i = s.info, on = v => ({ bg: v ? '#f6e3c8' : 'transparent', fg: v ? '#1d1d1b' : '#f6e3c8' });
+    const SH = [['two', 'Two-Shot'], ['a', 'A nah'], ['b', 'B reagiert'], ['insert', 'Karten-Insert']];
+    return {
+      stageRef: this.stageRef,
+      status: s.err ? 'FEHLER: ' + s.err : i ? `${i.phase} · ${i.shot} · t ${i.t}/${i.end} s · ${i.fps} fps · ${i.calls} Draw · Fläche ${i.face} (Karte ${i.cardAspect}) · ${i.sdk}` : 'Bühne lädt…',
+      shotBtns: SH.map(([id, label]) => ({ label, ...on(s.shot === id), pick: () => { this.api && this.api.setShot(id); this.setState({ shot: id, auto: false }); } })),
+      ...(() => { const a = on(s.auto); return { autoBg: a.bg, autoFg: a.fg }; })(),
+      toggleAuto: () => { const v = !s.auto; this.api && this.api.setAuto(v); this.setState({ auto: v }); },
+      aspectBtns: ['16:9', '9:16'].map(id => ({ label: id, ...on(s.aspect === id), pick: () => { this.api && this.api.setAspect(id); this.setState({ aspect: id }); } })),
+      restart: () => { this.api && this.api.restart(); },
+      pauseLabel: s.paused ? 'Weiter' : 'Pause',
+      togglePause: () => { const v = !s.paused; this.api && this.api.pause(v); this.setState({ paused: v }); },
+      ...(() => { const c = on(s.corner); return { cornerBg: c.bg, cornerFg: c.fg }; })(),
+      toggleCorner: () => { const v = !s.corner; this.api && this.api.setCorner(v ? 0.45 : 0); this.setState({ corner: v }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -2639,6 +2639,20 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-227",
+   "date": "2026-10-14",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Figuren-Slot quellen-offen, maximale Flexibilität (nicht nur KFB): eine Darsteller-Schnittstelle für (a) KFB-Figuren = Körper + KFB-Eye-Rig (V-214), (b) Wireface-Cast (SDK buildCharacter, 11 Figuren), (c) beliebiges glTF/GLB mit Wireface-Gesicht (attachFace/ModelFace), später weitere. Je Figur genau ein Gesichts-Treiber (V-217). Fremdfiguren bringen eigene animierte Augen mit, nie augenlos oder starr. Wireface-SDK: Georg lädt es mit seinem Konto herunter (wireface.dev, Personal-Lizenz); es bleibt lokal und kommt in kein öffentliches Repo. Bühnen-Kamera startet ruhig im Two-Shot, kein Auto-Schnitt als Standard.",
+   "values": {},
+   "owner": "WS1 (Spiel) + Claude Design (Bühne)",
+   "check": "beide Quellen auf derselben Bühne",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "why": "Georg will beide Figurenquellen und offen für weitere.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -2700,7 +2714,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:147",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:150",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
