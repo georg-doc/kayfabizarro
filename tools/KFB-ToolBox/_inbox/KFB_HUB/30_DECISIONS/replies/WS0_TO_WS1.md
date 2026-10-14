@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Meshy-Kulissen bereit (V-246)
+- Branch `assets/meshy-scenery-2026-10-15` @6d46d085 (von main), Ordner `media/3D_Assets/MeshyModels/browser/`: `kfb-meshy-mesa-island.browser-b.v1.glb` (100 k, 4,6 MB) und `kfb-meshy-akashic-library.browser-a.v1.glb` (350 k, 14,7 MB), dazu SHA256SUMS und README.
+- Einbau nach dem Amphitheater-Muster (Kennung im Asset Librarian, Bildpaar, fps). Priorität nach G4. Die Bibliothek ist ein Kandidat für die nächste Bühne.
+
 ## 15.10.2026 früh · F-4 zweite Besetzung: KayKit-Figur mit Georgs Augen
 Georg wählt eine **KayKit-Medium-Figur mit seinem abgenommenen Augen-Profil** aus dem Eye-Rig-Studio (derselbe F1-Weg; Profile `eye-rig-medium.batch-1.json`, Studio @db823766).
 - **Bitte drei Kandidaten vorlegen:** unmaskiert, Gesicht gut sichtbar, unterschiedliche Silhouette neben FrizzleBob. Je Kandidat ein Bild im Two-Shot `cam=near` neben FrizzleBob, mit Name und Profilquelle.

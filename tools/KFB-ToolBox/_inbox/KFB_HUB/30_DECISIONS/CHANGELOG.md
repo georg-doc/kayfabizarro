@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Meshy-Kulissen auf GitHub, SVG-Mundsatz R1
+- Asset-Branch assets/meshy-scenery-2026-10-15 @6d46d085 (Mesa B, Library A); WS1 informiert.
+- replies/MOUTHS_SVG_R1/: 12 SVG-Mundformen (tönbare Lippe, Anker 128,64), Kontaktbogen, Sprech-Zyklus, 2D-Montage FrizzleBob; KayKit nur Platzhalter (kein unmaskierter KayKit-Render vorhanden). Im Hub zur Abnahme.
+
 ## 2026-10-15 · Meshy-Wahl, Mund-Richtung
 - V-246: Mesa B, Library A; Asset-Branch assets/meshy-scenery-2026-10-15.
 - V-247 (TBD): animierte Münder ohne Lipsync; Träger-Matrix (Decal, SVG, Mesh-Deformation, Wireface) × Figurenarten im Mund-Labor der neuen ToolBox-Site.
