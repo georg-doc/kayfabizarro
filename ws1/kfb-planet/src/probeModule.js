@@ -8,6 +8,7 @@ export function createProbe({ color = '#e0475b', pos = [0, 6, 0] } = {}) {
   const mesh = new THREE.Mesh(geo, mat); mesh.position.fromArray(pos)
   return {
     object3d: mesh,
+    bubbleAnchors: [{ id: 'probe', object3d: mesh, offset: [0, 0.9, 0] }],
     update(dt, ctx) { probeLog.update++; probeLog.lastCtx = { hasCam: !!ctx.camera, hasPlayer: !!ctx.player, hasGame: !!ctx.game }; mesh.rotation.y += dt },
     dispose() { probeLog.dispose++; geo.dispose(); mat.dispose() },
   }

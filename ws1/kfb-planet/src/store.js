@@ -33,6 +33,7 @@ export const useGame = create((set, get) => ({
   near: null,
   dialog: { kind: 'start', id: 1 },
   emote: null,
+  speech: null,                          // letzte Sprechblase als Ereignis { id, anchor, parts, kind, color } (S5a)
   assisting: false,
   setNear: (near) => { const o = get().near; if ((o?.type || null) !== (near?.type || null) || o?.card?.idx !== near?.card?.idx) set({ near }) },
   openDialog: (dialog) => set({ dialog }),
@@ -46,6 +47,7 @@ export const useGame = create((set, get) => ({
   patchEpisode: (patch) => set({ episode: { ...get().episode, ...patch } }),
   setStoryMode: (storyMode) => set({ storyMode }),
   flashStage: () => set({ stageFlash: performance.now() }),
+  say: (anchor, parts, kind = 'speech', color) => set({ speech: { id: (get().speech?.id || 0) + 1, anchor, parts, kind, color } }),
   playEmote: (name, ms = 1600) => { const e = { name, t: performance.now() }; set({ emote: e }); setTimeout(() => get().emote === e && set({ emote: null }), ms) },
 
   mode: 'play', // 'play' | 'build'

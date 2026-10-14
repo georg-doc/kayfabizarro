@@ -10,9 +10,10 @@
     "test:static": "node test/contract-static.mjs",
     "test:deps": "node test/deps.mjs",
     "test:s0": "node test/s0.mjs",
-    "test": "node test/contract-static.mjs && node test/deps.mjs && node test/host.mjs && node test/s0.mjs && node test/s1.mjs && node test/s1-view.mjs",
+    "test": "node test/contract-static.mjs && node test/deps.mjs && node test/host.mjs && node test/s0.mjs && node test/s1.mjs && node test/s1-view.mjs && node test/s5a.mjs",
     "test:s1": "node test/s1.mjs",
-    "test:s1view": "node test/s1-view.mjs"
+    "test:s1view": "node test/s1-view.mjs",
+    "test:s5a": "node test/s5a.mjs"
   },
   "keywords": [],
   "author": "",

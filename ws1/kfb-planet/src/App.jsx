@@ -12,6 +12,7 @@ import StageShow from './StageShow'
 import HexWorld from './HexWorld'
 import { SCENE } from './scene'
 import ModuleHost from './ModuleHost'
+import BubbleHost from './BubbleHost'
 import { MOVE_MAP } from './hostKeys'
 import { createProbe } from './probeModule'
 import { useState, useEffect } from 'react'
@@ -49,6 +50,7 @@ export default function App() {
               {SCENE === 'planets' ? <><Planets /><Editor /><CardBeings /></> : <HexWorld />}
               {location.hash.includes('hosttest') && <HostTest />}
               <StageShow />
+              <BubbleHost />
               <Player />
             </Physics>
           </Suspense>
