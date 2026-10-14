@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 spät · KFB Production Hub
+- V-221: Artifact „KFB Production Hub“ (gleiche URL wie das frühere Steuerpult) mit Stand, Fragen mit Bildern, Briefings mit Kopier-Knopf (WS1, Claude Design inkl. R2-Rückmeldung, NotebookLM 1+2), nächsten Schritten, Referenzbildern. Ersetzt Drive-Doc und PASTE_FOR_GEORG.
+
 ## 2026-10-14 spät · Routing-Audit von WSA umgesetzt
 - WS0-Nachtrag in WIREFACE_STAGE_CLAUDE_DESIGN_BRIEF und COLD_START: V-219 (Wireface-Platzhalter ohne Eye-Rig-Gate für die Design-Studie) und V-220 (Billboard-Standard) haben Vorrang. BILLBOARD_STANDARD §4: Spender-Standardwerte (highway, faceCornerM 0, kaleido-cuts) nicht übernehmen, Hypernormalisation noch nicht implementiert, TV-Knopf-Abweichung beurteilt WS0 am Bild. Host-Vertrag-Kopf: Besitzer WS0. PASTE_FOR_GEORG als veraltet markiert.
 - Claude Design Board R2 gemeldet; Dateien noch nicht auf GitHub (Claude Design kann nicht schreiben).
