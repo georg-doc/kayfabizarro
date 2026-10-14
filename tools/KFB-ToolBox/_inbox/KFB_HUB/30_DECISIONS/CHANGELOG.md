@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Rigging-Analyse, UFO auf GitHub
+- Meshy-Rigging untersucht (FrizzleBob repariert mit Faustkugeln, Lord-Hunky-Ursachen, Polygon-Test, Vollrig vs. Frankenstein); drei Fragen im Production Hub (rg01–rg03), Empfehlung WS0: Frankenstein als Standard, noch ohne V-Nummer.
+- UFO-Cockpit UP 1,79 mit `kfb_screen_slot` auf `assets/meshy-ufo-cockpit-2026-10-15` (V-259); WS1-Notiz ergänzt.
+
 ## 2026-10-15 · Bildfläche 1,79, Münder-Urteile
 - V-259: UFO-Monitor UP 1,79 (randlos), Embedding-Standard 1,79:1; upperLift 0,35 als Standard; Typ B PASS, Typ C TUNE.
 

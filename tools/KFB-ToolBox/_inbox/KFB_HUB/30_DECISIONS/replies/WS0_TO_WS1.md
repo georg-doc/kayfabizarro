@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · UFO-Cockpit mit Bildfläche liegt bereit (V-259) · Einbau nach MVP-0
+- **Branch** `assets/meshy-ufo-cockpit-2026-10-15` @b9a46d1c, Ordner `media/3D_Assets/MeshyModels/browser/`: `kfb-meshy-ufo-cockpit.screen-up179.v1.glb` (14,1 MB, ohne Steuerknüppel) und `….slot.json`.
+- **Bildfläche** = Mesh/Node `kfb_screen_slot` (gewölbt, unlit Platzhalter). Das Bildflächen-Modul (V-256) setzt Inhalte darauf; kein Billboard davor. Ecken, Flächenformel, UV (flipY = false) und die sichtbare Öffnung stehen im slot.json.
+- **Maß:** 8 m pro Einheit (V-257), Bodenmitte = Ursprung. Embedding-Standard 1,79:1; Karten passen das Embedding an ihr Format an, ohne schwarze Ränder (V-259).
+- **Reihenfolge:** erst die Dialog-Szene (MVP-0), dann Einbau mit Vorlagen-Zeile in WS1_STATUS.
+
 ## 15.10.2026 · Bühnen-Kamera (V-257)
 - **Frei bewegliche Orbit-Kamera** für Spieler und Zuschauer: 360° drehen, Zoom zum Cursor, Panning, Fokus auf Klick. Ruhig und nicht zu empfindlich (V-026).
 - **Standard-Blick** als Startpunkt: Die Figuren stehen am Rand der Bildfläche (Billboard bzw. später UFO-Monitor), die Bildfläche bleibt frei, davor liegt offene Spielfläche wie eine Bühne oder ein Wrestling-Ring.
