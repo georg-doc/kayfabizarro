@@ -24,7 +24,12 @@
       "power": "Force opponent to reveal their character's greatest strength. It instantly triggers your character's worst flaw.",
       "lore": "Attraction is no accident. It's a collision. Strengths and weaknesses must violently clash to create the narrative spark.",
       "gradeReason": "Strength-reveals-flaw mechanic is instantly embodied. You know exactly what to write.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Punk raccoon and elegant swan colliding mid-air, sparks flying. Mood: Magnetic chaos."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Punk raccoon and elegant swan colliding mid-air, sparks flying. Mood: Magnetic chaos.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p2 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 2,
@@ -33,7 +38,12 @@
       "power": "Attach to a wounded fighter. Their weakness becomes your healing potential, generating +3 Chemistry Tokens.",
       "lore": "You don't complete me, you fix my specific psychological damage. No friction structure? No drama. Just decoration.",
       "gradeReason": "Wound-as-healing-vector is a specific, playable move. Not decorative — weaponized.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Bandaged goat leaning on a limping fox, both holding each other up. Mood: Tender dependency."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Bandaged goat leaning on a limping fox, both holding each other up. Mood: Tender dependency.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p2 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 3,
@@ -42,7 +52,12 @@
       "power": "Play when both players discard a card. Bind both characters to the exact same past trauma.",
       "lore": "The ultimate resonance point. They suffer the same damage, but developed opposite false survival mechanisms.",
       "gradeReason": "Same trauma, opposite coping — that's a writeable scene immediately. Perfect resonance mechanic.",
-      "artworkPrompt": "Style: Ink with blood-red watercolor. Subject: Two wolves with identical scars facing opposite directions. Mood: Devastating symmetry."
+      "artworkPrompt": "Style: Ink with blood-red watercolor. Subject: Two wolves with identical scars facing opposite directions. Mood: Devastating symmetry.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p2 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 4,
@@ -51,7 +66,12 @@
       "power": "Trap Card. Discard any couple that looks 'perfectly matched' on paper. They take 5 Boredom Damage.",
       "lore": "Perfection is the enemy of the Love Epic. If they don't challenge each other existentially, tear up the script.",
       "gradeReason": "'5 Boredom Damage' for the perfect couple is comedy and craft doctrine in one move.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Two identical golden retrievers in matching outfits, flat smiles, surrounding rubble. Mood: Polished catastrophe."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Two identical golden retrievers in matching outfits, flat smiles, surrounding rubble. Mood: Polished catastrophe.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p2 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 5,
@@ -60,32 +80,49 @@
       "power": "Discard all your Defense shields. Gain the \"True Love\" win condition.",
       "lore": "The Contemporary Romance thesis. You cannot be loved until you drop the mask. It's an ethical bloodbath. (Architects Daughter)",
       "gradeReason": "Clear thesis but 'ethical bloodbath' lore is more slogan than instruction. Still playable.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Armadillo shedding its shell in open field, completely exposed. Mood: Terrified liberation."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Armadillo shedding its shell in open field, completely exposed. Mood: Terrified liberation.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p3 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 6,
       "cardName": "Forgiveness Over Revenge",
       "grade": 2,
       "power": "Cancel an enemy's attack, but you must permanently discard your highest-damage weapon.",
-      "lore": "The Second-Chance Mandate. To rebuild trust, you must abandon the safety of your grudges. (Architects Daughter)",
+      "lore": "The Second-Chance mandate. To rebuild trust, you must abandon the safety of your grudges. (Architects Daughter)",
       "gradeReason": "Permanent weapon sacrifice as cost of forgiveness is solid. 'Second-Chance Mandate' slightly label-y.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Bear lowering a club, a fox handing back a stolen item. Mood: Costly peace."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Bear lowering a club, a fox handing back a stolen item. Mood: Costly peace.",
+      "jsonLegacy": {
+        "cardName": "Forgiveness Over Revenge",
+        "power": "Cancel an enemy's attack, but you must permanently discard your highest-damage weapon.",
+        "lore": "The Second-Chance Mandate. To rebuild trust, you must abandon the safety of your grudges. (Architects Daughter)"
+      },
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p3 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 7,
       "cardName": "Authenticity Over Facade",
       "grade": 1,
       "power": "Expose all hidden cards in your opponent's hand. The most embarrassing one becomes their core identity.",
-      "lore": "The RomCom Imperative. The most embarrassing, pants-down moment of one's life becomes their core identity. (Architects Daughter)",
+      "lore": "The RomCom imperative. The most embarrassing, pants-down moment is the only honest one. (Architects Daughter)",
       "gradeReason": "'Most embarrassing card becomes core identity' — players instantly know the scene to write.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Chameleon caught mid-color-change, all camouflage failing simultaneously. Mood: Mortified revelation.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Authenticity Over Facade",
         "power": "Expose all hidden cards in your opponent's hand. The most embarrassing one becomes their core identity.",
-        "lore": "The RomCom Imperative. The most embarrassing, pants-down moment is the only honest one. (Architects Daughter)",
+        "lore": "The RomCom Imperative. The most embarrassing, pants-down moment of one's life becomes their core identity. (Architects Daughter)"
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p3 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -95,7 +132,12 @@
       "power": "Destroy the current Arena. The lovers survive, but society is discarded.",
       "lore": "Historical and Paranormal law. Individual love over collective expectation. The world burns, the heart beats. (Architects Daughter)",
       "gradeReason": "'The world burns, the heart beats' — best lore line on this page. Immediate dramatic instruction.",
-      "artworkPrompt": "Style: Ink with fire-orange watercolor. Subject: Two lovers running from a crumbling palace, holding hands. Mood: Glorious arson."
+      "artworkPrompt": "Style: Ink with fire-orange watercolor. Subject: Two lovers running from a crumbling palace, holding hands. Mood: Glorious arson.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p3 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 9,
@@ -105,31 +147,29 @@
       "lore": null,
       "gradeReason": "Power/lore text partially obscured by visual at reading resolution. Hamster-treadmill concept is descriptive, not immediately performative.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Two hamsters on separate treadmills, glancing at each other exhaustedly. Mood: Modern romantic paralysis.",
-      "print": {
-        "cardName": "The Contemporary Grind",
-        "power": "Welcome to the Thunderd Where modern mammals go to su",
-        "lore": "",
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p4 TL",
-        "method": "ocr",
-        "confidence": "medium",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 10,
       "cardName": "The RomCom Slapstick",
       "grade": 2,
-      "power": "Convert an opponent's quirky points into Humor tokens.",
-      "lore": "Humor as a valve for the fear of love. Don't use slapstick as decoration—use it to completely expose a character's core flaw.",
+      "power": "Convert an opponent's Dignity points into Humor tokens.",
+      "lore": "Humor as a valve for the fear of love. Don't use slapstick as decoration—use it to completely expose the character's core flaw.",
       "gradeReason": "Good doctrine but 'quirky points → Humor tokens' is abstract without context. Lore saves it.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Pelican slipping on a banana peel, papers flying, another animal watching in mortified attraction. Mood: Farcical yearning.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The RomCom Slapstick",
-        "power": "Convert an opponent's Dignity points into Humor tokens.",
-        "lore": "Humor as a valve for the fear of love. Don't use slapstick as decoration-use it to completely expose the character's core flaw.",
+        "power": "Convert an opponent's quirky points into Humor tokens.",
+        "lore": "Humor as a valve for the fear of love. Don't use slapstick as decoration—use it to completely expose a character's core flaw."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p4 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -139,40 +179,50 @@
       "power": "Block all communication. Can only be resolved by character growth, not a simple text message.",
       "lore": "No artificial drama! True misunderstandings must grow logically out of the characters' false protection mechanisms.",
       "gradeReason": "'Can only be resolved by character growth, not a text message' — brilliant rule. Immediately functional.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Owl and cat facing opposite walls, STATIC speech bubble between them. Mood: Excruciating proximity."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Owl and cat facing opposite walls, STATIC speech bubble between them. Mood: Excruciating proximity.",
+      "printTypo": "Druck: 'No artificial drama!' als 'dramal' gesetzt",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p4 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 12,
       "cardName": "The Comedy Shield",
       "grade": 1,
       "power": "Ignore all Emotional Damage this turn, but your character makes zero progress toward intimacy.",
-      "lore": "Jokes are armor. The witty banter isn't just fun, it's a desperate tactic to avoid being truly vulnerable.",
+      "lore": "Jokes are armor. The witty banter isn't just fun, it's a desperate tactic to avoid being truly perceived.",
       "gradeReason": "Zero intimacy progress as cost of humor armor — perfect mechanic for the comic-deflector character type.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Hyena holding a comedic mask as shield, arrows bouncing off, heart locked behind. Mood: Defensive hilarity.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Comedy Shield",
         "power": "Ignore all Emotional Damage this turn, but your character makes zero progress toward intimacy.",
-        "lore": "Jokes are armor. The witty banter isn't just fun, it's a desperate tactic to avoid being truly perceived.",
+        "lore": "Jokes are armor. The witty banter isn't just fun, it's a desperate tactic to avoid being truly vulnerable."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p4 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 13,
       "cardName": "The Historical Cage",
       "grade": 2,
-      "power": "Lock a character's actions to 'Society Rules'. They cannot attack directly.",
-      "lore": "Dialogue that sounds ironical but hits modern emotional truth. Societal constraint is the physical architecture of the cage.",
+      "power": "Lock a character's actions to \"Society Rules\". They cannot attack directly.",
+      "lore": "Dialogue that sounds historical but hits modern emotional truth. Societal constraint is the physical architecture of the cage.",
       "gradeReason": "Solid historical romance mechanic. 'Societal constraint as physical architecture' is good but slightly academic.",
       "artworkPrompt": "Style: Ink with sepia watercolor. Subject: Badger in Victorian dress trapped in an ornate gilded cage. Mood: Constrained longing.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Historical Cage",
-        "power": "Lock a character's actions to \"Society Rules\". They cannot attack directly.",
-        "lore": "Dialogue that sounds historical but hits modern emotional truth. Societal constraint is the physical architecture of the cage.",
+        "power": "Lock a character's actions to 'Society Rules'. They cannot attack directly.",
+        "lore": "Dialogue that sounds ironical but hits modern emotional truth. Societal constraint is the physical architecture of the cage."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p5 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -182,7 +232,12 @@
       "power": "The player with higher Power must voluntarily reduce their stats to zero to allow the romance to progress.",
       "lore": "Power imbalance requires sacrifice. The stronger entity must intentionally weaken themselves, or it's just a power-fantasy, not a romance.",
       "gradeReason": "Stronger entity must self-weaken — immediately playable rule for vampire/demon/supernatural romance.",
-      "artworkPrompt": "Style: Ink with purple watercolor. Subject: Massive wolf deliberately kneeling before a small rabbit, fangs retracted. Mood: Chosen vulnerability."
+      "artworkPrompt": "Style: Ink with purple watercolor. Subject: Massive wolf deliberately kneeling before a small rabbit, fangs retracted. Mood: Chosen vulnerability.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p5 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 15,
@@ -191,7 +246,12 @@
       "power": "Resurrect a discarded relationship, but pay double the initial emotional cost.",
       "lore": "The second chance must be more expensive than the first. The characters must risk infinitely more this time.",
       "gradeReason": "Double cost mechanic is perfect — instantly tells writers the second chance must hurt more than the first.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Dog and troll holding a cracked vase together, both visibly terrified. Mood: Costly resurrection."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Dog and troll holding a cracked vase together, both visibly terrified. Mood: Costly resurrection.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p5 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 16,
@@ -200,7 +260,12 @@
       "power": "Convert Trauma tokens into Attraction. Highly unstable.",
       "lore": "Sex as a power struggle, healing, or destruction. Morally risky, but legitimate if the trauma is followed to its darkest consequence.",
       "gradeReason": "Trauma-to-Attraction conversion is interesting. 'Highly unstable' and 'morally risky' hedges slightly.",
-      "artworkPrompt": "Style: Ink with dark watercolor. Subject: Two shadowy panthers circling each other in a stone dungeon. Mood: Dangerous magnetism."
+      "artworkPrompt": "Style: Ink with dark watercolor. Subject: Two shadowy panthers circling each other in a stone dungeon. Mood: Dangerous magnetism.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p5 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 17,
@@ -209,7 +274,12 @@
       "power": "High competence in the outer world, zero defense in the love arena.",
       "lore": "Hero: Highly competent externally, totally vulnerable in love. Must learn: \"I am enough, even without the mask.\"",
       "gradeReason": "The character brief in nine words: 'High competence outside, zero defense in love.' Instantly embodied.",
-      "artworkPrompt": "Style: Ink with Komika Axis lettering. Subject: Regal lion in business suit, heart exposed through chest. Mood: Armored and naked simultaneously."
+      "artworkPrompt": "Style: Ink with Komika Axis lettering. Subject: Regal lion in business suit, heart exposed through chest. Mood: Armored and naked simultaneously.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p6 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 18,
@@ -218,23 +288,30 @@
       "power": "Perfectly targets the Protagonist's specific psychological wound.",
       "lore": "Complementary perfection. Must have their own wound (fear of commitment, false loyalty) or they are just a prop.",
       "gradeReason": "Good functional definition. 'Or they are just a prop' is the key warning. Slightly functional rather than inviting.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Sheep with a hidden scar, looking directly at a lion off-frame. Mood: Targeted tenderness."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Sheep with a hidden scar, looking directly at a lion off-frame. Mood: Targeted tenderness.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p6 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 19,
       "cardName": "The Blocker (The Safe Choice)",
       "grade": 2,
       "power": "Tempts the Protagonist with safety. Delays the HEA indefinitely.",
-      "lore": "The Ex, the Career, the Society. Never a pure villain—they inevitably create the temptation of safety over the terrifying work of true love.",
+      "lore": "The Ex, the Career, the Society. Never a pure villain—they represent the temptation of safety over the terrifying work of true love.",
       "gradeReason": "Solid antagonist brief. 'Never a pure villain' is crucial doctrine. Lore is more explanatory than performative.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Walrus in expensive suit gesturing to a comfortable sofa, protagonist wavering. Mood: Seductive mediocrity.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Blocker (The Safe Choice)",
         "power": "Tempts the Protagonist with safety. Delays the HEA indefinitely.",
-        "lore": "The Ex, the Career, the Society. Never a pure villain-they represent the temptation of safety over the terrifying work of true love.",
+        "lore": "The Ex, the Career, the Society. Never a pure villain—they inevitably create the temptation of safety over the terrifying work of true love."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p6 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -242,16 +319,18 @@
       "cardName": "The Mentor / Truth-Teller",
       "grade": 1,
       "power": "Forces a player to read their character's hidden flaw out loud.",
-      "lore": "Not just comic relief, the mirror, telling the protagonist the brutal truth they desperately refuse to hear.",
+      "lore": "Not just comic relief. They are the mirror, telling the protagonist the brutal truth they desperately refuse to hear.",
       "gradeReason": "'Forces a player to read their character's hidden flaw out loud' — literally performative. Table gold.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Wise tortoise holding a mirror to a reluctant rabbit's face. Mood: Uncomfortable clarity.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Mentor / Truth-Teller",
-        "power": "/ - in Architects Daughter Forces a player to read their character's hidden flaw out loud.",
-        "lore": "Not just comic relief. They are the mirror, telling the protagonist the brutal truth they desperately refuse to hear.",
+        "power": "Forces a player to read their character's hidden flaw out loud.",
+        "lore": "Not just comic relief, the mirror, telling the protagonist the brutal truth they desperately refuse to hear."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p6 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -262,13 +341,10 @@
       "lore": "Rhetorical sparring. Shows intelligence and attraction simultaneously. A power dynamic where neither side surrenders.",
       "gradeReason": "Neither wins, tension builds — mechanically captures flirting perfectly. Zero-sum until it isn't.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Two foxes crossing verbal swords, both smirking, neither yielding. Mood: Electric standoff.",
-      "print": {
-        "cardName": "The Flirt Duel",
-        "power": "Both players draw a card. Neither wins completely. Tension increases by +2.",
-        "lore": "Rhetorical sparring. Shows intelligence and attraction simultaneously.",
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p7 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -279,14 +355,10 @@
       "lore": "The hardest debate to write. Conflict born from colliding, equally legitimate moral values. Nobody is screaming; everyone is bleeding.",
       "gradeReason": "'Nobody is screaming; everyone is bleeding' — instant masterclass in conflict writing.",
       "artworkPrompt": "Style: Ink with storm-grey watercolor. Subject: Two rams locking horns on a cliff edge, both dignified. Mood: Devastating mutual rightness.",
-      "print": {
-        "cardName": "The Valid Conflict",
-        "power": "Play when both characters are right. No black-and-white villains allowed.",
-        "lore": "",
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p7 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -296,7 +368,12 @@
       "power": "Silence all inner monologues. Force characters to rely entirely on physical micro-expressions.",
       "lore": "The moment the fight drops. Fewer words, more pauses. The character stops performing and simply is.",
       "gradeReason": "No inner monologue, only micro-expressions — immediately tells the writer exactly what to write.",
-      "artworkPrompt": "Style: Ink with soft watercolor. Subject: Two animals sitting in silence, watching each other breathe, broken hearts visible. Mood: Naked stillness."
+      "artworkPrompt": "Style: Ink with soft watercolor. Subject: Two animals sitting in silence, watching each other breathe, broken hearts visible. Mood: Naked stillness.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p7 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 24,
@@ -305,74 +382,87 @@
       "power": "Expose the opponent's core wound and instantly heal it with exact, terrifying precision.",
       "lore": "No clichés! The speech proves one thing: that you have truly, deeply seen the specific damage of the other person.",
       "gradeReason": "'Exact, terrifying precision' — this is the entire standard for the airport speech. Writers know their job.",
-      "artworkPrompt": "Style: Ink with golden watercolor. Subject: Peacock mid-declaration, feathers fully open, opponent visibly disarmed. Mood: Surgical tenderness."
+      "artworkPrompt": "Style: Ink with golden watercolor. Subject: Peacock mid-declaration, feathers fully open, opponent visibly disarmed. Mood: Surgical tenderness.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p7 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 25,
       "cardName": "The Power Shift",
       "grade": 1,
-      "power": "Transfer Dominance from one character to the other. Creates new Vulnerability.",
+      "power": "Transfer Dominance from one character to the other, creating Vulnerability.",
       "lore": "Erotica rule #1: Show the shift. Dominance to equality to surrender. Physical details are merely tools for emotional truth.",
       "gradeReason": "Dominance transfer as vulnerability creation — clean, embodied, writeable immediately.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Badger and squirrel on a seesaw, midpoint of crossing. Mood: Suspended power exchange.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Power Shift",
-        "power": "Dominance from one character to the other, creating Vulnerability.",
-        "lore": "Erotica rule #1: Show the shift. Dominance to equality to surrender. Physical details are merely tools for emotional truth.",
+        "power": "Transfer Dominance from one character to the other. Creates new Vulnerability.",
+        "lore": "Erotica rule #1: Show the shift. Dominance to equality to surrender. Physical details are merely tools for emotional truth."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p8 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 26,
       "cardName": "The Barrier Breaker",
       "grade": 1,
-      "power": "Smash one psychological barrier, immediately replace it with a new emotional vulnerability.",
-      "lore": "Erotica rule #2: Intimacy as an act of bravery, capitulation, a transgression of limits.",
+      "power": "Smash one psychological barrier. Immediately replace it with a new emotional vulnerability.",
+      "lore": "Erotica rule #2: Break the wall. Intimacy as an act of bravery, a capitulation, a transgression of limits.",
       "gradeReason": "Break one barrier, gain a new vulnerability — perfect ratchet mechanic. Intimacy escalates correctly.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Rhinoceros charging through a stone wall, exposing a fragile interior. Mood: Cathartic breach.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Barrier Breaker",
-        "power": "Smash one psychological barrier immediately replace it with a new emotional vulnerability.",
-        "lore": "Erotica rule #2: Break the wall. Intimacy as an act of bravery, a capitulation, a transgression of limits.",
+        "power": "Smash one psychological barrier, immediately replace it with a new emotional vulnerability.",
+        "lore": "Erotica rule #2: Intimacy as an act of bravery, capitulation, a transgression of limits."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p8 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 27,
       "cardName": "The Consequence of Closeness",
       "grade": 1,
-      "power": "After intimacy, generate a massive new internal conflict based on the characters' flaws.",
+      "power": "After intimacy, generate a massive new internal conflict based on the fear of binding.",
       "lore": "Erotica rule #3: Closeness breeds terror. Intimacy inevitably creates the fear of loss. That fear is your next plot point.",
       "gradeReason": "'Fear of loss is your next plot point' — perfect instruction. Writers know exactly where to go post-scene.",
       "artworkPrompt": "Style: Ink with warm then cold watercolor. Subject: Hedgehog curled protectively after emerging from another's embrace. Mood: Post-intimacy panic.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Consequence of Closeness",
-        "power": "After intimacy, generate a massive new internal conflict based on the fear of binding.",
-        "lore": "Erotica rule #3: Closeness breeds terror. Intimacy inevitably creates the fear of loss. That fear is your next plot point.",
+        "power": "After intimacy, generate a massive new internal conflict based on the characters' flaws.",
+        "lore": "Erotica rule #3: Closeness breeds terror. Intimacy inevitably creates the fear of loss. That fear is your next plot point."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p8 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 28,
       "cardName": "The Erotic Retreat",
       "grade": 2,
-      "power": "The character gains Distance but takes Healing Damage.",
+      "power": "The character gains Distance but takes heavy Regret damage.",
       "lore": "Write from vulnerability, not performance. If it's just pornography with a plot, Uncle FrizzleBob disqualifies you.",
       "gradeReason": "'FrizzleBob disqualifies you' is funny but Distance + Healing Damage mechanic needs token context.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Octopus retreating into shadow while trailing glowing ink. Mood: Necessary withdrawal.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Erotic Retreat",
-        "power": "The character gains Distance but takes heavy Regret Damage.",
-        "lore": "Write from vulnerability, not performance. If it's just pornography with a plot, Uncle FrizzleBob disqualifies you.",
+        "power": "The character gains Distance but takes Healing Damage.",
+        "lore": "Write from vulnerability, not performance. If it's just pornography with a plot, Uncle FrizzleBob disqualifies you."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p8 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -383,13 +473,10 @@
       "lore": "The realm of the everyday. No grand ballrooms to hide in, just the terrifying vulnerability of making coffee.",
       "gradeReason": "'Terrifying vulnerability of making coffee' — specific, writeable scene. Not metaphor, actual location.",
       "artworkPrompt": "Style: Ink with morning watercolor. Subject: Raccoon and cat making coffee in a tiny kitchen, no escape route. Mood: Claustrophobic domesticity.",
-      "print": {
-        "cardName": "The Intimate Kitchen",
-        "power": "Remove all protective distance. Characters must confront each other's mundane reality.",
-        "lore": "The realm of the everyday. No grand ballrooms to hide in, just",
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p9 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -400,23 +487,31 @@
       "lore": "Architecture as a weapon. The physical space must map the exact tension axis of the relationship.",
       "gradeReason": "'Map the exact tension axis' is slightly academic. Strong concept but craft-lecture tone.",
       "artworkPrompt": "Style: Ink with baroque watercolor. Subject: Two characters dancing formally in a grand ballroom, whispering intimately. Mood: Public facade, private fire.",
-      "print": {
-        "cardName": "The Palace of Contrasts",
-        "power": "Pit public expectation directly against private desire.",
-        "lore": "Architecture as a weapon. The physical space must map the exact",
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p9 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 31,
       "cardName": "Seasonal Overheating",
       "grade": 1,
-      "power": "Apply \"Summer\" modifier: Maximum intensity, zero patience.",
+      "power": "Apply 'Summer' modifier: Maximum intensity, zero patience.",
       "lore": "Spring is hope, winter is isolation, fall is maturity. Summer is pure, suffocating escalation. The weather is your feelings.",
       "gradeReason": "'Maximum intensity, zero patience' — apply it. Immediately deployable seasonal modifier.",
-      "artworkPrompt": "Style: Ink with scorched orange watercolor. Subject: Lizard on hot pavement mid-argument with iguana. Mood: Heat-amplified emotional crisis."
+      "artworkPrompt": "Style: Ink with scorched orange watercolor. Subject: Lizard on hot pavement mid-argument with iguana. Mood: Heat-amplified emotional crisis.",
+      "jsonLegacy": {
+        "cardName": "Seasonal Overheating",
+        "power": "Apply \"Summer\" modifier: Maximum intensity, zero patience.",
+        "lore": "Spring is hope, winter is isolation, fall is maturity. Summer is pure, suffocating escalation. The weather is your feelings."
+      },
+      "printTypo": "Druck: öffnendes einfaches und schließendes doppeltes Anführungszeichen ('Summer\")",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p9 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 32,
@@ -425,7 +520,12 @@
       "power": "Manifest societal constraints as literal, impassable geography.",
       "lore": "In Historical and Gothic, the house is the enemy. The social rules are built directly into the bricks.",
       "gradeReason": "Good doctrine for Gothic/historical writers but 'impassable geography' is abstract to new writers.",
-      "artworkPrompt": "Style: Ink with gothic watercolor. Subject: Koala navigating labyrinthine stone stairs with locked doors. Mood: Architecturally imprisoned."
+      "artworkPrompt": "Style: Ink with gothic watercolor. Subject: Koala navigating labyrinthine stone stairs with locked doors. Mood: Architecturally imprisoned.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p9 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 33,
@@ -435,13 +535,10 @@
       "lore": "Not just cute—fated. This encounter MUST force this specific character to face this specific opponent.",
       "gradeReason": "'MUST force this specific character to face this specific opponent' — plot test in one sentence.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Badger and raccoon colliding at a crossroads, grocery bags exploding. Mood: Fated disaster.",
-      "print": {
-        "cardName": "ACT I: THE MEET-CUTE COLLISION",
-        "power": "Trigger an inevitable encounter that exploits both characters' core flaws simultaneously.",
-        "lore": "Not just cute-fated. This encounter MUST force this specific",
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p10 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -452,30 +549,29 @@
       "lore": "The midpoint shift. The realization that continuing this relationship will require destroying their old identity.",
       "gradeReason": "'Continuing requires destroying their old identity' — exact midpoint instruction. Writers know what scene to write.",
       "artworkPrompt": "Style: Ink with grey watercolor. Subject: Frog at a crossroads in rain, looking at a crumbling bridge. Mood: Irreversible threshold.",
-      "print": {
-        "cardName": "BLACK MOMENT I: THE DOUBT",
-        "power": "Force the characters to question if the emotional risk is worth the inevitable pain.",
-        "lore": "The midpoint shift. The realization that continuing this relationship",
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p10 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 35,
       "cardName": "BLACK MOMENT II: THE RUIN",
       "grade": 1,
-      "power": "Reactivate the original trauma. The false protection mechanism falls catastrophically.",
-      "lore": "The darkest hour. The false protection mechanism falls catastrophically. The trauma is real, and the loss feels permanent.",
+      "power": "Reactivate the original trauma. The relationship is seemingly destroyed forever.",
+      "lore": "The darkest hour. The false protection mechanism fails catastrophically. The trauma is real, and the loss feels permanent.",
       "gradeReason": "'The loss feels permanent' — three-word instruction for the writer. Darkest moment rendered as mechanic.",
       "artworkPrompt": "Style: Ink with black watercolor. Subject: All the gathered pieces of a life scattered in rubble. Mood: Earned devastation.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "BLACK MOMENT II: THE RUIN",
-        "power": "Reactivate the original trauma. The relationship is seemingly destroyed forever.",
-        "lore": "The darkest hour. The false protection mechanism falls catastrophically. The trauma is real, and the loss feels permanent.",
+        "power": "Reactivate the original trauma. The false protection mechanism falls catastrophically.",
+        "lore": "The darkest hour. The false protection mechanism falls catastrophically. The trauma is real, and the loss feels permanent."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p10 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -483,16 +579,18 @@
       "cardName": "THE GRAND GESTURE ACTION",
       "grade": 1,
       "power": "Sacrifice your ego to provide exactly what the other character needs, not what they want.",
-      "lore": "Anti-Cliché Rule: Help instead of a speech. Heal the exact wound, nothing else.",
+      "lore": "Anti-Cliché Rule: Help instead of roses. Silence instead of a speech. Heal the exact wound, nothing else.",
       "gradeReason": "'What they need, not what they want' — immediately writeable. Anti-airport-speech doctrine in one rule.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Frog carrying a lamp into the other character's darkness — no roses, just light. Mood: Surgical selflessness.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "THE GRAND GESTURE ACTION",
         "power": "Sacrifice your ego to provide exactly what the other character needs, not what they want.",
-        "lore": "Anti-Cliché Rule: Help instead of roses. illence instead of a speech. Heal the exact wound, nothing else.",
+        "lore": "Anti-Cliché Rule: Help instead of a speech. Heal the exact wound, nothing else."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p10 BR",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -502,23 +600,30 @@
       "power": "Win the game. Can only be played if both core flaws have been actively sacrificed.",
       "lore": "A Happy Ending isn't given, it's extracted from your flaws. It is the dramaturgical reward for learning vulnerability.",
       "gradeReason": "'Can only be played if both core flaws have been actively sacrificed' — the entire Happy Ending doctrine.",
-      "artworkPrompt": "Style: Ink with golden watercolor. Subject: Two scarred animals standing together on a summit, wounds visible, smiling. Mood: Earned triumph."
+      "artworkPrompt": "Style: Ink with golden watercolor. Subject: Two scarred animals standing together on a summit, wounds visible, smiling. Mood: Earned triumph.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p11 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 38,
       "cardName": "The HFN (Happy For Now)",
       "grade": 2,
-      "power": "A temporary victory. You succeed today, but the future remains uncertain.",
-      "lore": "Equally valid as an HEA. It doesn't have to be eternal. It just has to be morally earned in this specific moment.",
+      "power": "A temporary victory. You survive today, but the future remains unwritten.",
+      "lore": "Equally valid as an HEA. It doesn't have to be eternal, it just has to be morally earned in this specific moment.",
       "gradeReason": "Valid distinction but lore is definitional. Slightly explanatory compared to HEA's perfect mechanic.",
       "artworkPrompt": "Style: Ink with bittersweet watercolor. Subject: Two animals sharing a warm meal, storm clouds gathering outside. Mood: Present-tense joy.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The HFN (Happy For Now)",
-        "power": "A temporary victory. You survive today, but the future remains unwritten.",
-        "lore": "Equally valid as an HEA. It doesn't have to be eternal, It just has to be morally earned in this specific moment.",
+        "power": "A temporary victory. You succeed today, but the future remains uncertain.",
+        "lore": "Equally valid as an HEA. It doesn't have to be eternal. It just has to be morally earned in this specific moment."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p11 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -526,16 +631,18 @@
       "cardName": "The Public Sacrifice",
       "grade": 1,
       "power": "Destroy your public reputation to prove your private loyalty.",
-      "lore": "The external proof of change. The final barricade falls. Of your pride and the person. Pick one.",
+      "lore": "The external proof of change. You cannot keep your pride and the person. Pick one.",
       "gradeReason": "'Of your pride and the person. Pick one.' — perfect closing line. Players know the choice.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Peacock stripping his feathers in a crowded plaza to defend a sparrow. Mood: Public humiliation as love declaration.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Public Sacrifice",
         "power": "Destroy your public reputation to prove your private loyalty.",
-        "lore": "The external proof of change. You cannot keep your pride and the person. Pick one",
+        "lore": "The external proof of change. The final barricade falls. Of your pride and the person. Pick one."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p11 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -545,7 +652,12 @@
       "power": "Reveal the ultimate truth. Healing begins, but shields are gone forever.",
       "lore": "The internal proof of change. The final barricade falls. The lie is dead, long live the terrifying truth.",
       "gradeReason": "'Shields are gone forever' — the cost is clear and permanent. Exactly what resolution demands.",
-      "artworkPrompt": "Style: Ink with soft watercolor. Subject: Wolf whispering into another's ear in a dark tunnel, both exhaling. Mood: Terrifying honesty."
+      "artworkPrompt": "Style: Ink with soft watercolor. Subject: Wolf whispering into another's ear in a dark tunnel, both exhaling. Mood: Terrifying honesty.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p11 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 41,
@@ -554,7 +666,12 @@
       "power": "TRAP! If a meeting could happen to anyone, it means nothing. Discard encounter.",
       "lore": "Slop symptom: The encounter is cute but arbitrary. Cure: Derive the meeting entirely from the characters' core flaws.",
       "gradeReason": "'If it could happen to anyone, it means nothing' — one sentence test for every meet-cute ever written.",
-      "artworkPrompt": "Style: Ink with red X watercolor. Subject: Robot and person bumping into each other generically, referee throwing red flag. Mood: Generic disqualified."
+      "artworkPrompt": "Style: Ink with red X watercolor. Subject: Robot and person bumping into each other generically, referee throwing red flag. Mood: Generic disqualified.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p12 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 42,
@@ -563,7 +680,12 @@
       "power": "TRAP! A kiss does not fix systemic psychological damage.",
       "lore": "Slop symptom: A physical act resolves a conflict that didn't earn a resolution. Cure: Every solution must cost something.",
       "gradeReason": "'A kiss does not fix systemic psychological damage' — eleven words, entire writing seminar.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Referee blowing whistle as two animals kiss, clipboard showing unresolved issues. Mood: Romantically disqualified."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Referee blowing whistle as two animals kiss, clipboard showing unresolved issues. Mood: Romantically disqualified.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p12 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 43,
@@ -572,7 +694,12 @@
       "power": "TRAP! Zero conflict means zero story. Both players fall asleep.",
       "lore": "Slop symptom: Both are too competent, too kind, too agreeable. Cure: Build the Love Map and mash their trigger points!",
       "gradeReason": "'Both players fall asleep' — the joke is the rule. Perfect.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Two identical sheep holding hands and snoring simultaneously. Mood: Weaponized boredom."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Two identical sheep holding hands and snoring simultaneously. Mood: Weaponized boredom.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p12 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 44,
@@ -581,7 +708,12 @@
       "power": "TRAP! If the rival is just there to cause jealousy, the tension is fake.",
       "lore": "Slop symptom: The Ex is purely a villain. Cure: The third party needs their own logic and legitimacy, or the choice has no weight.",
       "gradeReason": "'Tension is fake' — instantly diagnostic. Writers know how to fix it.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: 2D cardboard cutout villain with 'RIVAL' label, protagonist sees through it. Mood: Structural embarrassment."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: 2D cardboard cutout villain with 'RIVAL' label, protagonist sees through it. Mood: Structural embarrassment.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p12 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 45,
@@ -590,7 +722,12 @@
       "power": "TRAP! Playing the grand declaration before doing the emotional labor causes instant failure.",
       "lore": "Slop symptom: The declaration is too big, too soon. Cure: Emotional escalation in microscopic steps. Save the speech for the climax.",
       "gradeReason": "'Grand declaration before emotional labor causes instant failure' — sequence is everything. Perfect gate.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Bear holding roses at a first date being shown the door. Mood: Premature sincerity."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Bear holding roses at a first date being shown the door. Mood: Premature sincerity.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p13 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 46,
@@ -599,7 +736,12 @@
       "power": "TRAP! If the conflict can be solved with one normal sentence, it's garbage.",
       "lore": "Slop symptom: Artificial silence. Cure: They cannot communicate because they don't know themselves yet, not because they dropped their phone.",
       "gradeReason": "'Not because they dropped their phone' — hilarious, specific, and exactly the rule.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Ostrich refusing to look up, holding a phone, obvious solution ignored. Mood: Manufactured silence."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Ostrich refusing to look up, holding a phone, obvious solution ignored. Mood: Manufactured silence.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p13 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 47,
@@ -608,23 +750,30 @@
       "power": "TRAP! Mentioning a dark past once and forgetting it is a storytelling felony.",
       "lore": "Slop symptom: Trauma as romantic backstory jewelry. Cure: The wound MUST be actively weaponized against them at Black Moment 2.",
       "gradeReason": "'Storytelling felony' is FrizzleBob at peak. 'Must be weaponized at Black Moment 2' is exact prescription.",
-      "artworkPrompt": "Style: Ink with handcuff watercolor. Subject: Cat wearing trauma as decorative necklace, referee writing ticket. Mood: Narrative crime scene."
+      "artworkPrompt": "Style: Ink with handcuff watercolor. Subject: Cat wearing trauma as decorative necklace, referee writing ticket. Mood: Narrative crime scene.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p13 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 48,
       "cardName": "The Stockholm Sunset Slop",
       "grade": 1,
       "power": "TRAP! Pretty scenery does not excuse toxic, unexamined power dynamics.",
-      "lore": "Stop substituting sunsets for psychological depth!! Every location must reflect the relationship dynamic, or it gets deleted.",
+      "lore": "Stop substituting sunsets for psychological depth! Every location must mirror the relationship dynamic, or it gets deleted.",
       "gradeReason": "'Pretty scenery does not excuse toxic power dynamics' — FrizzleBob's aesthetic manifesto in one card.",
       "artworkPrompt": "Style: Ink with watercolor. Subject: Gorgeous sunset backdrop with crossed-out sign, two animals with unhealthy dynamics. Mood: Beautiful and disqualified.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Stockholm Sunset Slop",
         "power": "TRAP! Pretty scenery does not excuse toxic, unexamined power dynamics.",
-        "lore": "Stop substituting sunsets for psychological depth! Every location must mirror the relationship dynamic, or it gets deleted.",
+        "lore": "Stop substituting sunsets for psychological depth!! Every location must reflect the relationship dynamic, or it gets deleted."
+      },
+      "textSource": {
         "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p13 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -634,7 +783,12 @@
       "power": "Fuel the engine with broken expectations, silence, and misread signals.",
       "lore": "The pull between what they desperately want and what they are terrified to ask for.",
       "gradeReason": "Definitional card — names what tension is. Lore is accurate but explanatory rather than instructional.",
-      "artworkPrompt": "Style: Ink with stretched watercolor. Subject: Two birds pulling a rubber band between them, trembling. Mood: Taut anticipation."
+      "artworkPrompt": "Style: Ink with stretched watercolor. Subject: Two birds pulling a rubber band between them, trembling. Mood: Taut anticipation.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p14 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 50,
@@ -643,7 +797,12 @@
       "power": "The wager is everything. Win love, or permanently lose the self.",
       "lore": "If they fail, they don't just stay single. They are condemned to live forever within their own fatal flaw.",
       "gradeReason": "'Condemned to live forever within their own fatal flaw' — that is stakes. Players feel it immediately.",
-      "artworkPrompt": "Style: Ink with void-black watercolor. Subject: Character on a scale, love on one side, the abyss on the other. Mood: Existential wager."
+      "artworkPrompt": "Style: Ink with void-black watercolor. Subject: Character on a scale, love on one side, the abyss on the other. Mood: Existential wager.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p14 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 51,
@@ -652,7 +811,12 @@
       "power": "Flip the paradigm. Expose that vulnerability is the ultimate armor.",
       "lore": "The paradigm shift. The realization that exposing the soft underbelly is the only true show of strength.",
       "gradeReason": "Correct doctrine but 'flip the paradigm' is abstract. Lore says the same thing twice.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Wolf turning armor inside-out, soft lining exposed, glowing. Mood: Strength through exposure."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Wolf turning armor inside-out, soft lining exposed, glowing. Mood: Strength through exposure.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p14 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 52,
@@ -661,24 +825,30 @@
       "power": "Multiply attraction by the exact factor of their absolute incompatibility.",
       "lore": "The cosmic joke. They are drawn to the exact person engineered to destroy their carefully curated bullshit.",
       "gradeReason": "'Engineered to destroy their carefully curated bullshit' — the entire romantic premise in one clause.",
-      "artworkPrompt": "Style: Ink with cosmic watercolor. Subject: Cat and dog magnetically drawn together against visible warning signs. Mood: Cosmically inevitable disaster."
+      "artworkPrompt": "Style: Ink with cosmic watercolor. Subject: Cat and dog magnetically drawn together against visible warning signs. Mood: Cosmically inevitable disaster.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p14 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 53,
       "cardName": "Mythic Gravity",
       "grade": 2,
       "power": "Elevate the relationship from a personal crush to a universal human thesis.",
-      "lore": "The Love Epic. Two individuals reflecting the universal mythic hunger for connection against the void.",
+      "lore": "The Love Epic. Two individuals reflecting the universal, mythic hunger for connection against the void.",
       "gradeReason": "'Universal human thesis' is abstract. The aspiration is clear but hard to embody without examples.",
       "artworkPrompt": "Style: Ink with cosmic watercolor. Subject: Two small beetles beneath a galaxy, reaching toward each other. Mood: Cosmic intimacy.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Mythic Gravity",
-        "power": "the Grand Epic",
-        "lore": "Love The Two-Weakness Principle",
-        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p15 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "power": "Elevate the relationship from a personal crush to a universal human thesis.",
+        "lore": "The Love Epic. Two individuals reflecting the universal mythic hunger for connection against the void."
+      },
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p15 (Seite mit 4 Karten in einer Reihe, Karte 1 von links)",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -688,7 +858,12 @@
       "power": "Combine two broken things to create an unbreakable structure.",
       "lore": "Neither is whole alone. Their specific weaknesses interlock to create a structure stronger than perfection.",
       "gradeReason": "'Two broken things, unbreakable together' — the entire anti-Hallmark thesis. Instantly embodied.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Two cracked vessels fitting together perfectly, light pouring through the joins. Mood: Kintsugi romance."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Two cracked vessels fitting together perfectly, light pouring through the joins. Mood: Kintsugi romance.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p15 (Seite mit 4 Karten in einer Reihe, Karte 2 von links)",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 55,
@@ -697,23 +872,30 @@
       "power": "Transformation achieved. The character can finally exist without their armor.",
       "lore": "The question was never \"Will they get together?\" It was always \"Can they mutate enough to survive the connection?\"",
       "gradeReason": "'Can they mutate enough to survive the connection?' — the best definition of romance arc transformation in the deck.",
-      "artworkPrompt": "Style: Ink with watercolor. Subject: Armored creature standing free, shed shell behind it, partner beside. Mood: Achieved transformation."
+      "artworkPrompt": "Style: Ink with watercolor. Subject: Armored creature standing free, shed shell behind it, partner beside. Mood: Achieved transformation.",
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p15 (Seite mit 4 Karten in einer Reihe, Karte 3 von links)",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 56,
       "cardName": "Moral Revelation",
       "grade": 1,
-      "power": "The match ends. The Kayfabe drops. The truth emerges.",
+      "power": "The match ends. The Kayfabe drops. The truth remains.",
       "lore": "Truby's logic fulfilled: Moral Revelation → Moral Choice → Consequence. The Happy Ending is the ultimate moral laboratory.",
       "gradeReason": "'The Kayfabe drops. The truth emerges.' — perfect closing card. The deck eats its own framing.",
       "artworkPrompt": "Style: Ink with dawn watercolor. Subject: Two silhouettes without costumes, standing in light, revealed. Mood: Truth after performance.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Moral Revelation",
-        "power": "The match ends. The Kayfabe drops. The truth remains.",
-        "lore": "Truby's logic fulfilled: Moral Revelation → Moral Choice → Consequence. The Happy Ending is the ultimate moral laboratory.",
-        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p15 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "power": "The match ends. The Kayfabe drops. The truth emerges.",
+        "lore": "Truby's logic fulfilled: Moral Revelation → Moral Choice → Consequence. The Happy Ending is the ultimate moral laboratory."
+      },
+      "textSource": {
+        "source": "PDF v05 Romantic_Kayfabe - ADD web ID.pdf p15 (Seite mit 4 Karten in einer Reihe, Karte 4 von links)",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     }
   ],
