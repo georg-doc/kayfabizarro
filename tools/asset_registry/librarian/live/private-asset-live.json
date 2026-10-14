@@ -1,7 +1,7 @@
 {
   "schema": "kfb.asset-private-live.v1",
-  "revision": "2026-10-09.r3-data-only-verified",
-  "updatedAt": "2026-10-09T01:40:00+02:00",
+  "revision": "2026-10-14.r4-ws1-meshy-amphitheater",
+  "updatedAt": "2026-10-14T16:40:00+02:00",
   "assets": [
     {
       "schema": "kfb.asset-private-projection.v1",
@@ -55,6 +55,53 @@
         "loopClass": "UNKNOWN",
         "runtimeStatus": "INTAKE_ONLY"
       }
+    },
+    {
+      "artist": "Meshy AI (image-to-3d), Auftrag Georg",
+      "assetId": "private:meshy-claymation-amphitheater-master",
+      "assetKey": "meshy-claymation-amphitheater-master",
+      "collection": "MeshyModels",
+      "collectionPath": "MeshyModels",
+      "creditText": "Meshy AI Claymation Amphitheater, Master unverändert in Georgs Dropbox; Browser-Fassung v1 im Repo (V-230)",
+      "creditUrl": null,
+      "delivery": {
+        "previewStatus": "READY",
+        "previewUrl": null,
+        "runtimeUrl": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/829d551d5cf45eb2fe18ce7a532e37ba7282005a/media/3D_Assets/MeshyModels/browser/kfb-stage-amphitheater-meshy.browser.v1.glb"
+      },
+      "folder": "private://production-inbox",
+      "format": "glb",
+      "integrity": {
+        "sha256": "11846848465efb0f119bf2ab27290787cdbb2c63f55773915d1dca38952a9efb"
+      },
+      "kind": "model-3d",
+      "license": {
+        "label": "KFB-eigenes Material (Meshy-Erzeugnis, Auftrag Georg) · Lizenzprüfung WS0"
+      },
+      "name": "Meshy Claymation Amphitheater · Master",
+      "packId": "private-production-inbox",
+      "path": "private://meshy-claymation-amphitheater-master",
+      "provenance": {
+        "identity": "private-metadata-projection",
+        "intakeId": "ws1-meshy-amphitheater-2026-10-14",
+        "kind": "curated-intake"
+      },
+      "root": "private://production-inbox",
+      "schema": "kfb.asset-private-projection.v1",
+      "sizeBytes": 73029272,
+      "source": {
+        "assetKey": "meshy-claymation-amphitheater-master",
+        "owner": "Georg (Dropbox /CLAUDE/MeshyModels)",
+        "private": true,
+        "visibility": "PRIVATE"
+      },
+      "tags": [
+        "amphitheater",
+        "master",
+        "meshy",
+        "stage",
+        "v-230"
+      ]
     }
   ]
 }

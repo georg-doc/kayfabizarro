@@ -1,0 +1,83 @@
+{
+ "master": {
+  "info": {
+   "ms": 211,
+   "tris": 1622044,
+   "maps": [
+    [
+     "map",
+     "4096×4096"
+    ],
+    [
+     "normalMap",
+     "4096×4096"
+    ],
+    [
+     "roughnessMap",
+     "2048×2048"
+    ],
+    [
+     "metalnessMap",
+     "2048×2048"
+    ]
+   ],
+   "size": [
+    1.9030179977416992,
+    0.4895399957895279,
+    1.701433002948761
+   ]
+  },
+  "bench": {
+   "median": 7.5,
+   "p95": 9,
+   "tex": 4,
+   "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
+  }
+ },
+ "browser": {
+  "info": {
+   "ms": 65,
+   "tris": 348738,
+   "maps": [
+    [
+     "map",
+     "2048×2048"
+    ],
+    [
+     "normalMap",
+     "2048×2048"
+    ],
+    [
+     "roughnessMap",
+     "1024×1024"
+    ],
+    [
+     "metalnessMap",
+     "1024×1024"
+    ]
+   ],
+   "size": [
+    1.9023749828338623,
+    0.4893199950456619,
+    1.7009109854698181
+   ]
+  },
+  "bench": {
+   "median": 3.6,
+   "p95": 4.1,
+   "tex": 4,
+   "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
+  }
+ },
+ "diff": {
+  "orbit_az000": 1.87,
+  "orbit_az090": 1.73,
+  "orbit_az180": 1.67,
+  "orbit_az270": 1.58,
+  "low_az000": 1.27,
+  "top": 2.43,
+  "inside_az000": 1.56,
+  "inside_az180": 3.06,
+  "detail_az000": 3.66
+ }
+}

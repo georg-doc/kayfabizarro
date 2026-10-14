@@ -1,0 +1,45 @@
+{
+ "master": {
+  "sha256": "11846848465efb0f119bf2ab27290787cdbb2c63f55773915d1dca38952a9efb",
+  "tris": 1622044
+ },
+ "browser": {
+  "file": "kfb-stage-amphitheater-meshy.browser.v1.glb",
+  "bytes": 11669748,
+  "sha256": "3f79037e51ab3a745243aae6ffb40aba3670226a960199b36a02e45d05051dd4",
+  "tris": 348738,
+  "verts": 203153,
+  "textures": [
+   {
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 783606
+   },
+   {
+    "mime": "image/webp",
+    "size": [
+     1024,
+     1024
+    ],
+    "bytes": 49588
+   },
+   {
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 149038
+   }
+  ]
+ },
+ "params": {
+  "ratio": 0.215,
+  "error": 0.01,
+  "quality": 86,
+  "tool": "@gltf-transform 4.5.1"
+ }
+}
