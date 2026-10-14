@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 abends · FrizzleBob aus Georgs Export, ToolBox als WSA-Site
+- V-240: FrizzleBob = Georgs Export (v5b @23615cff), replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json; Knet-Lider aus; WS1 baut 1:1, Stopp aufgehoben.
+- V-241: Claude-Design-ToolBox 1:1 als WSA-Site mit GitHub-Speicherung = der eine Werkzeug-Ort.
+- Drucktext-Abgleich fertig: Branch data/kfb-card-print-text-2026-10-14 @7da0a70, 59 Decks, 3264 Karten: 2443 gleich, 656 abweichend (14 Decks systematisch), 163 unsicher; print-Blöcke neben den Originalfeldern.
+
 ## 2026-10-14 abends · V-238 zurückgenommen
 - V-239: Composer-Site kein Rigging-Ort (Georg: total broken). Gültig nur das Eye-Rig-Studio; FrizzleBob dort nicht enthalten. Hub-Briefing b11 zurückgezogen.
 

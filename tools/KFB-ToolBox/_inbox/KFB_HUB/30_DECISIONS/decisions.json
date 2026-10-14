@@ -3003,7 +3003,9 @@
    "check": "G0 Quell-Isolation FrizzleBob v5, dann Darsteller-Slot",
    "source": "Georg 14.10. (via WSA, replies/GEORG_CAST_DIRECTION_FRIZZLEBOB_V5_WS0_TO_WS1_2026-10-14.md)",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-240"
+   ],
    "why": "WS1 hatte Rogue_Hooded (maskiert) als Darsteller; für Sprechen braucht es ein sichtbares Gesicht und die KFB-Hauptfigur.",
    "applies": "ab sofort"
   },
@@ -3053,6 +3055,36 @@
    "superseded_by": [],
    "why": "Vorschlag ohne Prüfung; die Site zeigt falsche Modelle.",
    "applies": "sofort"
+  },
+  {
+   "id": "V-240",
+   "date": "2026-10-14",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "FrizzleBob = Georgs eigener Export aus der Claude-Design-ToolBox (Export-Kennung „KFB ToolBox Production-02 · Rigging“, 14.10. 16:00): replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json (kfb.pets/1). Figur laut Export FB_TEMPLATE_LOOK_v5b.glb @23615cff (Blob 24134a51) – also v5b, so wie Georg ihn eingestellt hat; ersetzt „kein v5b“ aus V-236. Knet-Lider aus (clayLids.on false), Eye-Rig-Lider; die Knet-Lid-Konstruktion klärt Georg separat (Blender-Logik), sie hält nichts auf. WS1 baut 1:1 nach diesem Eintrag, keine eigenen Werte; Abnahme Bildpaar ToolBox | Spiel (vorn, ¾, Seite) mit genau diesem Eintrag.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Bildpaar vorn/¾/Seite",
+   "source": "Georg 14.10.",
+   "supersedes": "V-236 (v5 statt v5b, vorläufige Werte)",
+   "superseded_by": [],
+   "why": "Nur Georgs eigener Eintrag zeigt seinen FrizzleBob; alle Standardwerte waren kaputt.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-241",
+   "date": "2026-10-14",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Die Claude-Design-ToolBox, in der Georg tatsächlich arbeitet, wird 1:1 als WSA-work-Site übernommen: gleicher Code-Pfad (V-206), aber Speichern als Datei auf GitHub statt nur localStorage. Danach ist sie der EINE Werkzeug-Ort (Rigging, Augen, Gesicht); Eye-Rig-Studio-Profile, FrankenStein Composer und weitere ToolBox-Fassungen werden darin aufgelöst bzw. archiviert. Zuerst: G0 – welche Claude-Design-Fassung Georg nutzt (Export nennt Production-02) und vollständiger Quell-Export daraus.",
+   "values": {},
+   "owner": "WSA work (Bau) · WS0 (Auftrag)",
+   "check": "Georgs Export-Datei lädt in der Site identisch (Bildpaar)",
+   "source": "Georg 14.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die verstreuten ToolBox-, Studio- und Composer-Fassungen sind dysfunktional; nur die Claude-Design-ToolBox funktioniert für Georg.",
+   "applies": "nach FrizzleBob"
   },
   {
    "id": "V-084",
@@ -3117,7 +3149,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:213",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:218",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
@@ -3265,6 +3297,66 @@
    "source": "KFB Billboard Kaleidoscope H13/kfb-collage-session-2026-09-30/HANDOVER_WSA.md:33",
    "part": "",
    "georg": "Kompaktes Review-Paket: genauer PR/Head, tatsächlich gelaufene Tests, sichtbarer Beleg, offene Punkte, **ein** nächstes Gate. Bericht im Format `SOURCE / DECISI"
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/RETURN.md:114",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: **FAIL**. v6 ist schlechter als vorher: Knubbel an der Spitze, Würste, grauer Kantenring, Körper stößt an der Straße durch. Die Geometrie wu"
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/RETURN.md:124",
+   "part": "",
+   "georg": "- OPEN: GEORG ACCEPTANCE der Form. Noch nicht in der Insel. Oberseite ohne Gelände. Knete-Material (v10) fehlt noch in der Bank."
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/RETURN.md:127",
+   "part": "",
+   "georg": "- GEORG ACCEPTANCE: FAIL („da stimmt keine einzige Variante“)."
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:3",
+   "part": "",
+   "georg": "Format: SOURCE / DECISION / IMPLEMENTATION / TESTED RESULT / EXPORT / PUBLIC DEPLOYMENT / GEORG ACCEPTANCE / OPEN"
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:8",
+   "part": "Oberseite, ein Mesh, Farb- und Maskenkarte 1024²",
+   "georg": "Richtung gut"
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:9",
+   "part": "Straße aus Track Core 0.8.1, Straßenbett, Bordkante, Brüstung",
+   "georg": "gut"
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:11",
+   "part": "5 Biome (Burg, Utopia, Dystopia, Protopia, Schnee): Palette, Pflanzen, Gelände, ",
+   "georg": "Biome-Logik gut"
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:12",
+   "part": "Schnee bis zur Kante, kein Rand-Wall",
+   "georg": "offen"
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:13",
+   "part": "Landmarken (Hexagon Pack) ohne Verformung",
+   "georg": "„cool, aber zu eckig, passt nicht zum Knet-Look“"
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:14",
+   "part": "Platzierung Bäume (nicht auf Straße, nicht im Bach)",
+   "georg": "offen"
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:15",
+   "part": "**Unterseite v2–v6**",
+   "georg": "**FAIL**"
+  },
+  {
+   "source": "Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/3D ASSETS/BLENDER MCP/ISLAND_FORM_KIT_01_2026-10-11/src_copy/STATUS.md:16",
+   "part": "Wasser, Bach, Wasserfall",
+   "georg": "zurückgestellt"
   },
   {
    "source": "_kfb_checkin/router/CHANGELOG.md:278",

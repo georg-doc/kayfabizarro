@@ -1,213 +1,57 @@
 # KFB Island Worldbuilder · Projektstand
 
-Laufendes Statusdokument, Besitzer: Bau-Sitzung (Lab). Neueste Einträge oben. Maßgeblich sind `KFB_HUB/30_DECISIONS/DECISIONS.md` (V-Nummern), `docs/KFB_WORLDBUILDER_PLAN_R1.md` (Slices §5) und diese Datei.
+Laufendes Statusdokument. Wird nach jedem größeren Schritt fortgeschrieben. Neueste Einträge oben.
 
-## Aktuell (13.10.)
-
-- **Standardansicht (5192, `?hub=1&play=game`):** Organ-Ring-Welt mit C4c: Ausfahrt, Platzstraße mit Zebra und Pollern, Rückweg, Einfädelung; Auto parkt in der Haltebucht (V-183). Vorheriger Stand mit `?c4c=0`.
-- **Fertig zuletzt:** C4c-Banden-Enden v2 (V-183 PASS) · V-183-Folgen (S1): Auto in der Bucht + k2b-Band dort verbreitert, Blocklinie an der Bucht, Zebra 3 Balken, Knet-Zwickel zwischen den Strängen an beiden Nasen, Bucht-Ende ohne Strich-Reste und ohne Farbkante.
-- **Steht zur Prüfung (V-202/203/204):** erste Spielszene hinter `?islands=1` — PondLand + Forest an der verlängerten C4c-Schleife, Original-NPCs mit ChatterBox-Triplets (Clay-pur-Blasen), Inselmusik, Bodenkontakt Auto/Props/NPCs. Steuerung prüft, dann spielt Georg. Ruhen bis Georg gespielt hat: S6, Editor, Dungeon, Ladezeit-Rest, Rhythmus, Licht, Augen-Slice. Früher geplant: S5 Speicher → S6 deterministische Tests (Replay-Harness, `replies/REPLAY_HARNESS_SPEC_R1.md`, V-190) + Git; erst danach S7 Licht und S8 Rhythmus (Kamera-Maximum = Durchfahrtshöhe, V-185). Hex-Raster ist Legacy (V-192): nichts Neues darauf.
-- **Augen (V-201 FAIL, 13.10.):** V-200-Stand bleibt eingecheckt; eigener Slice „Augen-Wiederherstellung“ nach S5: Eye-Rig-Studio 1:1 mit Georgs Presets, Konvergenz-Richtung, v6-Kinetik / Leben / Blinzeln / Blickziele, Abnahme als Nahbild-Paar Studio | Spiel.
-- **Offen bei Georg:** großes konzeptionelles TUNE der Banden (V-183, später) · Tunnel-im-Feld-Prototyp (wartet auf OK).
-
-## Lieferungen 11.–13.10. (neueste oben)
-
-**Lieferung 13.10. · V-202 erste Spielszene + V-203 Bodenkontakt + V-204 Blasen:** `docs/critic/lab-track/2026-10-13_V202/REPORT.md` — Abnahmefahrt Ring → A → B → Ring mit Aussteigen, Sprechen, Gehen auf die Insel PASS bei 59–60 fps; offene Kanten 0/0 mit und ohne Inseln; Parity PASS; Fahr- und Fußtests wie V-199.
-
-**Lieferung 13.10. · S5 Speicher (V-171 Punkt 4, abgeschlossen nach V-202) + V-199 + V-198:** `docs/critic/lab-track/2026-10-13_mem/REPORT.md`, `…/2026-10-13_V199/REPORT.md` — manifold-WASM kalt 2 647 → 381 MB, HUD-Rucksack-Miniatur als Bild (+13 fps bei 1280 × 800, Spiel mit HUD 60 fps), Checks aus dem Cache; V-199 Strafen / Einsteigen / Hügel / Hüpfer PASS; flk Standard. V-200 Augen gebaut, V-201 FAIL (Slice geparkt, Such-Protokoll `docs/concepts/EYE_RESTORE_SEARCH_R1.md`).
-
-**Lieferung 13.10. · S2 Flackern + S3 Ladezeit (V-171 Punkte 2 und 3):** `docs/critic/lab-track/2026-10-13_load/REPORT.md` — Ladezeit 48,2 → 7,0 s (frischer Browser) / 6,7 s (Neuladen) über inhaltsadressierten Ergebnis-Cache (1017/1017 Meshes byte-gleich) + Lab-Inseln im Organ-Modus aus; warm ≤ 5 s noch nicht. Flacker-Paket hinter `?flk=1` (dynres ein Schritt, LOD-Hysterese, Rippe nah, near 1,0, polygonOffset), Gate PASS mit und ohne; Prüfungen alle PASS bei 60 fps.
-
-**Lieferung 12.10. · V-183 C4c-Folgen + C4c Standardansicht:** `docs/critic/lab-track/2026-10-11_C4c/v183/` (REPORT-Abschnitt V-183) — offene Kanten 0/0, Parity incl. Check 11 PASS, Teil 0 PASS, Fußtests 6/6 und Platz PASS bei 60 fps, Fahrtest 2 Autos × 6 Läufe (Exit mit Assist 0,8 ohne Treffer).
-
-**Lieferung 12.10. · C4c Banden-Enden v2 (V-168, V-183 PASS):** `docs/critic/lab-track/2026-10-11_C4c/` (REPORT, `C4C_ENDEN_BLATT_v2.jpg`) — Strang je Seite geteilt (LAB PATCH K, J17-strangCap) + Kopf auf dem Wulst-Ende; Bucht-Befund, Bucht-Ende ohne Strich-Reste.
-
-**Lieferung 11.10. · C4c Aus-/Auffahrt (V-171 Punkt 1, v1):** Track Core 0.16.9 `compileGraph`, Weichen-Wechsel im k2b-Rahmen (V-161), Ausstattung (Gore, Nasen, Pfeile, Zebra, RKIT-Poller), Parity-Check 11 (offene Kanten).
-
-**Lieferung 11.10. · C4b Track Core 0.16.8 in der Organ-Welt:** `docs/critic/lab-track/2026-10-11_C4b/` — LAB PATCH 15 Alias (`?core=012` Rollback), Teil 0 bitgleich (21 124 Proben Δ 0, Rezept gleich), Fahrtest rundengleich, Fußtest + Parity bei 60 fps PASS.
-
-**Lieferung 11.10. · V-157/V-160 Treppen-Fußtest:** `docs/critic/lab-track/2026-10-11_V157-stairs/` — Auto-Hüpfer des Walkers begrenzt Treppen; minTread gemessen (0,30 → 1,3 · 0,22 → 0,889), RKIT v2-Anker (0.16.8) ohne Hüpfer.
-
-**Lieferung 11.10. · V-130 Bank B (V-156) Tunnel im echten Inselkörper:** `docs/critic/lab-track/2026-10-11_V130-bankB/` (REPORT, BANK_B_BLATT mit CR3/IB2/IB3) — `?host=berg[&size=M|L]`, ein Feld/levelSet: Erdmasse + Scholle-Profil + Loben, Fels verschmolzen, Moos, Schnee, Voreinschnitt mit Felsstirn; M stone_arch/mine + L geschlossen (0/0, 1 Komp.); M-Proportion als Abstand benannt.
-
-**Lieferung 11.10. · V-138 TUNE (Gehweg-Ende organisch, Tropfen plastisch):** `docs/critic/lab-track/2026-10-11_V138-tune/` (REPORT, V138_TUNE_BLATT) — Knet-Zungen + lose Kantensteine am Ende, gewölbte Kleckse; Nebenbefund Bord-Fuge (falsches Fußtest-PASS unter Last) per LAB PATCH G2 geschlossen; Fußtest + Parity bei 60 fps PASS.
-
-**Lieferung 11.10. · V-153 KayKit-Faktor + Hatchback-Test:** `docs/critic/lab-track/2026-10-11_V153-cars/` — ein Kit-Faktor (Sedan), Hatchback 5,40 × 2,80, Cicada-BODY im Lab richtig; Fahrtest 3 Autos × 4 Läufe sauber, Fußtest 6/6. Parity hub/organ PASS, game C4 0,054–0,062 unter Last (Notiz).
-
-**Lieferung 11.10. · V-157 Gangwerte Medium-Rig:** `docs/critic/lab-track/2026-10-11_V157-gait/` (GAIT_V157.md, gait_v157.json) — Schritt walk 0,561 / jog 2,034 / sprint 2,483 lab, Sprungweite 2,71 / 4,93, stepMax 0,885; Treppen-Fußtest folgt an trailStairs.
-
-**Lieferung 11.10. · V-138 Hex-Haltebucht mit RKIT-Bürgersteig:** `docs/critic/lab-track/2026-10-11_V138/` (REPORT, V138_BLATT, foot_test, parity). Bord, Gehweg und Kantensteine aus RKIT `hex_b7.parts.glb`, Knet-Schüttung zur Hex-Insel (Lauf 4,4 m), Kachel-Kerbe gefüllt. Fußtest 6/6, Parity PASS nach Wiederholung unter Last (Swap ~17,5 / 18,4 GB).
-
-**Lieferung 11.10. · C1b+C3 Runde 2:** `docs/critic/lab-track/2026-10-11_C1b-C3-r2/` — Mündungs-Ringspalt geschlossen (O1 bohrt nicht mehr, TC1 schneidet, Stirnfläche per manifold-3d), Tunnel-Licht wie J17, Q5-Kehlen, J17-Markierungen M2, Platzhalter-Material. V-112 PASS (4 Styles), Fahrtest/Dock/Parity PASS, V-115 Mitte/Übersicht PASS, nah 27–33 fps grenzwertig.
-
-**Lieferung 11.10. · C1b+C3 Strecken-Welt + TC1-Tunnel (generisch) + Fahrtest:** `docs/critic/lab-track/2026-10-11_C1b-C3/` (REPORT, MODULES, REFS, qcheck.json, drive_test.json). V-112 PASS (4 Styles), Fahrtest + Dock PASS, Parity PASS, **V-115 FAIL (Mitte 16,7 fps; Platzhalter-Material bringt 35/59/56 fps, Entscheidung offen)**.
-
-## Rollen (Stand 12.10.)
+## Rollen (seit 2026-10-08)
 
 | Wer | Was |
 | --- | --- |
-| Claude Code, Steuer-Sitzung | Konzept, Register, Briefings, Prüfung; legt Georg die Lieferungen vor |
-| Claude Code, Bau-Sitzung (Lab) | dieses Lab auf 5192: Strecke, C4c, Technik-Slices S1–S3, S5–S9; Besitzer dieser Datei |
-| Claude Code, RKIT-Sitzung | Straßenbaukasten RKIT R3 und Track Core; **pausiert** (Budget), Lab steht auf Track Core 0.16.9 |
-| Motion-Agent / Dungeon-POC-Agent | S12 NPC Performance Proof / S11 Dungeon-POC (eigene Ports, nie 5180/5192; beenden nur eigene PIDs) |
-| Blender-Coworker | S10 Coconino-Mesas, Inselboden (headless + Watchdog, ≥ 40 GB frei) |
-| Claude Design | Formen und HUD (Natur-Kit, Wasser, Pyramide, Unterseite; HUD R3) |
-| WSA | MVP-Integration; Gegenprüfung des Audits (S4, V-178) |
+| Claude Code, Steuer-Sitzung | Konzept, Integration, Prüfung; dieses Lab; Briefings; Zusammenführen der Ergebnisse |
+| Claude Code, RKIT-Sitzung | Straßenbaukasten RKIT R3 in Blender (Profile, Andock-Bauteile, T/Y/X-Kreuzungen im Track Core) |
+| Blender-Coworker (Mac mini) | Bewohner, Rigging, Animationen, NPC-Activities |
+| Claude Design | Formen: Natur-Kit, Wasser, Pyramide, Unterseite (`deliveries/KFB_ISLAND_KIT_R1.zip`) |
+| WSA | MVP-Integration in WB2 nach `docs/SPEC_PLACEMENT_GRAMMAR_R1.md` |
 
-## Stand 11.10. spät (Steuerung) · historisch
+## Parallele Stränge (Stand 2026-10-08, von Georg eingebracht)
 
-*Stand 12.10. überholt:* Banden **PASS** (V-183, nicht mehr FAIL) · C4c ist Standardansicht (V-183) · WSA-Lichtstudie C abgenommen (Lichtvergleich = Slice S7) · Architektur-Audit geliefert (`replies/AUDIT_ARCH_R1.md`, V-171) · Tunnel-Berge entschieden (V-174) · Haltebucht entschieden (V-183).
+- **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
+- **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
 
-**Fertig:** C1a J17 1:1 · C1b+C3 Organ-Ring-Welt (Organe = Platzhalter) · Fahrtest echt (k2b, 3 Autos, bildratenunabhängig) · VFX/SFX + Suno-Radio (Klick behoben, PASS) · V-130 Tunnel-Portale PASS · Bank B Tunnel im Inselberg TUNE 5–6/10 · C4a Haltebucht + RKIT-Bürgersteig (TUNE nachgebessert, Urteil offen) · C4b Track Core 0.16.9 · Track-Core-Skins/Module/trail/DIRT/Poller (RKIT) · Register bis V-168 auf GitHub, Lab-Code-Schnappschuss `sync/lab-snapshot-2026-10-11`.
+## Doppel-Review MVP-Slice: nicht bestanden, Mängelliste (2026-10-11)
 
-**Läuft:** C4c erste Aus-/Auffahrt (Live-Test: Banden FAIL → Reparatur zuerst; Standardansicht nur geprüfter Stand V-166), danach Flackern, Ladezeit (Vorab-Backen). Blender R4 Coconino-Mesas (wartet auf Blender-Start). WSA Licht-Studie C. Architektur-Audit (extern) läuft.
+Prüflauf nach `_inbox/BRIEFING_Review_KFB_World_Lab.md`: Prüfer A (Technik, Messung) und Prüfer B (blinde Art-Direction-Instanz), dazu Blindlese-Test bei 24 px und blinder Paarvergleich gegen ein Kartenbild. Ablage `docs/critic/lab-mvp-slice/2026-10-11_review01/` (`report.md`, `blindtests.md`, `measurements.json`, 74 Bilder). Kalibrierszene vorab pixelgenau. Browser: Headless Chrome 155 (Playwright, Metal, M4), Browser pane für Interaktion.
 
-**Offen bei Georg:** Haltebucht-Urteil · Tunnel-Berge ≥ L.
+- **Ergebnis:** nicht bestanden. Prüfer B Mittel 6,4 (Claymation 7,0, Diorama 6,0, Farbe 7,0, Tusche 6,5, Kamera 5,5). Paarvergleich gegen die Karte zweimal „Nein“, erster Grund jeweils die fehlende Tuschelinie. Blindlese: Insel, Landmarke, Weg, Wasser tragen; Bewohner, Autos, Requisiten werden zu Flecken.
+- **Reproduziert:** Verbund 4 Inseln 120 Calls / 261 k Dreiecke (Kit) bzw. 158 / 483 k (alt), deckt sich mit dem Eintrag vom 08.10. Tor 2 (Verbund) lief damit zum ersten Mal als Prüfung.
+- **Nicht angefassen (A und B einig):** Inselmaterial und Scholle, Mumien, Pyramide, Messschnittstelle `__kfb`, Straßenbett-Naht (T1 0, T2 244/244), Determinismus des Geländes (0 abweichende Pixel in zwei Läufen).
+- **Lizenz (A-01, P0 im Bericht):** bekannt, **nach dem MVP**, hier außerhalb des Umfangs (Georg 12.10.). Bleibt im Bericht stehen, wandert nicht in die Slice-Planung.
 
-## C4a Hex-Zugang geliefert, V-130 Vorlage gesendet (11.10. nachmittags)
+**Mängelliste (ohne Lizenz), nach Priorität:**
 
-**C4a:** Die Haltebucht B7 (Track Core 0.16.1) ist im J17-Querschnitt eingebaut (LAB PATCH G). Die Gehfläche ist repariert.
-- Fußtest 6/6, parity PASS.
-- Ordner: `docs/critic/lab-track/2026-10-11_C4a/`.
-- Danach folgen C4b (Ring auf 0.16.1) und C4c (EXIT/ENTRY).
+| Prio | Befund | Beleg | Vorschlag | Aufwand |
+| --- | --- | --- | --- | --- |
+| P1 | **Bodenkontakt:** jedes Gebäude steht konstruktiv 0,07 über dem Pad (`placeBuilding`: `max(height, base + 0.07)`); Autos (6 lang, Pad 3) hängen am Hang bis 0,31 in der Luft; Fußpunkt an vier Orten definiert | `measurements.json ground_contact`; `G_nah_kit__orbit_-12_3.5_142…png` | eine Fußpunkt-Funktion im Feld für Gebäude, Bewohner, alte und neue Natur; Pad aus Standfläche | M |
+| P1 | **Fehlende Assets sind unsichtbar:** Vite antwortet auf fehlende Dateien mit 200 + HTML; die PSD-Texturen der Autos fehlen ohne 404. „Konsolenfehler null“ beweist nichts | `curl /assets/nix/gibtsnicht.png` → 200 text/html | `appType: 'mpa'` oder 404-Middleware für `/assets/*`; dann Lauf wiederholen | S |
+| P1 | **Mobil nicht gebaut:** Panel deckt 74 % bei 375 × 812, Canvas 750 × 1624 bei dpr 2, Schattenkarte 4096², keine Touch-Gesten | `measurements.json mobile` | Mobil-Profil im Wirt (pixelRatio ≤ 1,5, Schatten 2048², Panel als Leiste), Touch-Orbit | M |
+| P1 | **Kamerasatz im Verbund kaputt:** `under` steht in der Pyramideninsel, `canyon-ref` von einer Palme verdeckt, `bucht-ref` mit Fremdobjekten; Presets stammen aus der Zeit vor der Pyramideninsel | `B1_verbund_kit__under.png`, `…canyon-ref.png`, `…bucht-ref.png` | Presets aus Position und Radius rechnen, Verdeckung per Raycast prüfen | S |
+| P1 | **Kein Wirt, kein Modulvertrag:** sechs Einstiege mit je eigenem Renderer, Licht, Farbraum, Zeitbasis; keine Fähigkeits-Anmeldung, keine Parameter-Deklaration mit `rebuild` | `grep "new THREE.WebGLRenderer" src` → 6 | Wirt aus `main.ts` herauslösen, `__kfb.capabilities`, Parametertabelle mit `rebuild` | M |
+| P1 | **Tusche-Kanon fehlt:** kein Konturpass, `kfb-ink-canon.js` weder importiert noch nachgebaut | `blindtests.md` §B | Kanon importieren (nicht nachbauen), als Post-Pass oder Rückseiten-Hülle am Wirt; Bildpaar mit und ohne Linie blind prüfen | M |
+| P1 (B) | **Kit-Vegetation Canyon facettiert ohne Dellen, Mühlrad ebenso;** kein Rand, Horizont, Nebel, Fülllicht; Bucht und Pyramide fast gleiche Palette; Glanz auf Fahrzeugen | B-Tabelle in `report.md` §4.2 | Dellen-Normalmap je Objektklasse skaliert; Nebel in Himmelfarbe, kühles Fülllicht; Bucht-Palette kippen; Fahrzeuge matt | S–M |
+| P2 | **Zierschicht nicht deterministisch:** Animationsphase und Blinzeln aus `Math.random` | `D_diff_A1_A2__pyramide-ref.png` (789 Pixel, nur Mumien) | `rng(seed)` mit Bewohner-ID; Lint gegen `Math.random`/`Date.now` außerhalb des Editors | S |
+| P2 | **Erster Materialwechsel ruckelt:** 83,5 ms schlechtester Frame; synchroner Geometrie-Neubau; kein `renderer.compile` | `measurements.json first_material_change` | `renderer.compile` nach Boot; Palettenwechsel ohne Delaunay-Neubau | S/M |
+| P2 | **Startkonfiguration** `.claude/launch.json` im Lab zeigt auf `/Users/georgv.westphalen/…` | `ls` → nicht vorhanden | `$HOME` oder löschen; die Konfiguration eine Ebene höher ist die richtige | S |
+| P2 | **Glanz und Glas:** Chrom `metalness 0.8`, Glas transparent, Scheinwerfer emissiv, Wasser `roughness 0.35` | `island.ts:35–38` | alles auf Knet-Profile | S |
+| P2 | **Zwei Farbquellen:** `PALETTES` und `ENV_ROLES` setzen nebeneinander | `terrain.ts:426` | `ENV_ROLES` einzige Quelle (Masterplan §7) | M |
+| P2 | **Draw Calls im Verbund:** 120 (Kit) bzw. 158 (alt), Hälfte Schattenpass | `measurements.json gate2` | alte Natur abschalten, Schattenwerfer begrenzen, Bewohner-Materialien teilen | M |
+| P2 | **Keine Tageszeit** (`__kfb.setTime` → null), nur eine Lichtsituation prüfbar | – | Tageszeit als Wirt-Parameter, zwei Presets für den Kritiker | M |
+| P2 (B) | Identische Instanzen ohne Streuung; zwei Wassermaterialien; Hub-Straße läuft über den Rand; gezackte Schattenkanten; Hochformat schneidet Inseln an | `report.md` §4.2 | siehe dort | S |
+| P3 | `THREE.Clock` deprecated; Kennzeichen-Text „CICADA“/„911“ aus der Auto-Textur; Wolken fehlen in der Übersicht | – | `THREE.Timer`; Entscheidung Text; Wolken als Maßstabssignal | S |
 
-**V-130:** Georgs Urteil zum Tunnel-Prototyp ist TUNE. Es fehlen die Portal-Bausätze aller vier Looks; das Profil Bogen/Rechteck soll eine eigene Eigenschaft werden.
-- Prüfkörper: TC1-Knethügel auf einer Prüfbank und eine MVP-Insel über den Adapter.
-- Vorlage: `docs/concepts/V130_PORTALE_VORLAGE_R1.md`; wartet auf Freigabe.
+**Folge für die Planung:** Die Punkte sind keine Einzelreparaturen, sondern Symptome von drei fehlenden Verträgen (Wirt, Fußpunkt, Kamerasatz). Was davon im Schnappschuss vom 11.10. noch gilt, prüft die Steuerung; die Lebensschicht (Bewohner, Triplets, Lean Memory) steht als Phasen I bis K in `docs/KFB_LEBENSSCHICHT_PLAN_R1.md` (Vorschlag, Anhang an Plan R1).
 
-**V-131:** Georgs „Drohnen“ sind die Klang-Drones aus RollerCoaster v11. Sie kommen später mit eigener Vorlagen-Zeile.
+**Geprüfter Stand:** Dieser Review lief auf der Dropbox-Kopie des Mac mini, Code vom 08. bis 10.10. ohne `src/island/r2d/`, ohne HUD, Audio, `recipe.ts`, `composition.ts`. Der GitHub-Schnappschuss `sync/lab-snapshot-2026-10-11` ist weiter. Befunde zu Kamerasatz, Wirt und Draw Calls können dort überholt sein; Fußpunkt, 404-Maskierung, Zierschicht-Determinismus, Mobil und Tusche sind strukturell und vermutlich noch offen. Lizenzzeile oben: nach V-184 nicht mehr berichtet.
 
-## V-128/V-129 VFX/SFX + Suno-Radio im FAHREN, Nebelkosten, M2-Zone, C4-Vorlage (11.10. mittags)
-
-**Nebelkosten:** Die Horizont-Probe rechnet auf der CPU aus dem Kuppelbild.
-- Das GPU-Zurücklesen hat auch asynchron 105–250 ms angehalten (Korrektur im REPORT).
-- Jetzt: kein Stillstand, parity Check 4 in Organ ruhig.
-- Ordner: `docs/critic/lab-track/2026-10-11_perf-fog/`.
-
-**M2:** Die J17-Streckenzone `bio −1` ist Standard: weiße Randlinie 0,6 m, keine Mittellinie, kein Zebra.
-- Der alte Stand bleibt über `?m2zone=city` abrufbar.
-- Ordner: `…/2026-10-11_m2-zone/`.
-
-**VFX/SFX** (`src/audio/race-audio.ts`, `src/play/race-fx.ts`, `audio-owner.ts`):
-- Enthalten: Motor, Jingles, Kontakt-Engine, Kenney-Einzelklänge, Tunnel-Hall, Knet-Partikel und Banden-Wackeln.
-- Das Suno-Radio übernimmt beim Fahren mit 2,5 s Übergang.
-- Kosten im Rauschen.
-- Mitschnitt mit Ton (41 s): `…/2026-10-11_vfx-sfx/FAHRT_MIT_TON_720p.mp4`.
-
-**C4-Vorlage:** `docs/concepts/C4_VORLAGE_R1.md`, an die Steuerung geschickt.
-- C4a: Hex-Zugang über die Haltebucht B7 (Track Core 0.16.1).
-- C4b: Ring auf 0.16.1 heben.
-- C4c: EXIT/ENTRY am Hex-Hub.
-
-## Prototyp „Tunnel im Feld“ geliefert (11.10., Steuerung Konzept C1b_C3 R1 (a)) · wartet auf Georgs OK
-
-**Prototyp:** Hirn + race_tube hinter `?tunnelField=hirn`. Kein Ausrollen vor Georgs OK.
-- Bericht und Bild: `docs/critic/lab-track/2026-10-11_tunnel-field-proto/REPORT.md` + `PROTOTYP_BLATT.jpg`.
-
-**Messwerte:**
-- Körper geschlossen: offen 0, Mehrfachkanten 0 (Hero + Light).
-- Q1: 0 schwebende Teile.
-- Durchsicht: 0 Fehltreffer.
-- Q3: Freiraum 1,49 m.
-- Q5: längste Kette 19,6 m.
-- Parity: PASS.
-
-**Danach (nach OK):** Rechteckring stone_rect/mine · J17-Tageslicht · M2-Zone track · VFX/SFX · C4.
-
-## Stand 11.10. abends (nach Blender-Review, gilt vor „Übergabepunkt“)
-
-**Maßgeblich:** `KFB_HUB/30_DECISIONS/DECISIONS.md` (V-001…V-121) + `docs/KFB_WORLDBUILDER_PLAN_R1.md` + diese Datei. Abgelöst: siehe V-117 bzw. `START_HERE_STEERING.md` im Register-Ordner. Spiegel auf GitHub: Branch `docs/kfb-decisions-register-2026-10-11`, wird bei jeder Register-Änderung mitgeschoben.
-
-**Fertig (11.10.):** A10 TinySkies-Effekte + AUTO-Skydome-Überblendung (V-092, V-101) · C0 Übergang A/B → B (V-104) · C1a J17 1:1 als Lab-Seite, Squash .12/.18/.06 + Schienen-Kamera im FAHREN, Parity grün mit Sim-Zeit-Checks (V-107) · Fahrbahn schieferblau + orange Banden (V-102 PASS).
-
-**Läuft:** C1b+C3 neue Standard-Welt (V-109): O1-v7-Ring-Modus + Organ-Inseln + Hex-Hub, J17-Look, Spawn Farmer auf Hex-Insel, alte RKIT-Welt nur `?rkit=1`. Tunnel V-112–V-116 (TC1-Portal + Innenschale + Licht in O1-Bohrung, manifold-3d, levelSet-Vernetzung, Prüfungen offen/nicht-mannigfaltig/Durchblick). Leistung V-115 (≥ 30 fps; Nahband Standard, Stufenwechsel mit Dither).
-
-**Danach:** C2 (Track Core 0.16 → v5) · C4 Ausfahrt auf Inselboden (V-110, V-113, Track-Core-EXIT/ENTRY V-118; Wendeschleife fehlt im Track Core) · C5 · Phase D.
-
-**Referenzen von Georg (11.10.):** Gefängnis-Mauer-Baukasten mit Skins (V-105), Inselboden der Bildblätter TUNE (V-106), Dystopia (V-108), Protopia + Maker Space mit Strecken-Anschluss (V-110), Organe später für MED-Welten (V-111). Ablage `docs/golden/candidates/…`.
-
-**Offen bei Georg:** siehe `KFB_HUB/30_DECISIONS/REVIEW_STEUERUNG_R1.md` (Steuer-Entscheidungen zur Durchsicht + Konflikt mit WSA-Router „Vier-Insel-A/B einziges Tor / Open World R4 STOP“).
-
-## Stand 11.10. (Übergabepunkt)
-
-- **Maßgeblich:** `KFB_HUB/30_DECISIONS/DECISIONS.md` (V-001 … V-100, Warum/Wann, additiver CHANGELOG; Generator `build_decisions.py`), Plan `docs/KFB_WORLDBUILDER_PLAN_R1.md`, Lab-`CLAUDE.md`, `tools/parity` (Pflicht vor jeder Lieferung).
-- **Erledigt:** Phase A (HUD R3 + Rucksack, Klang/Radio, Himmel/Licht/Paletten, Almanach R2), B0 (ein Gangschema, WoW-Steuerung/-Kamera, Sprünge; parity grün), B2 Figuren-Auswahl (67 Figuren, V-090-Augen, Figuren-Knete RA2 fine), B+ Wasser (fluid.js, ?stage=lake).
-- **Läuft:** A10 TinySkies-Effekte (Regen, Flare, Zyklus, Aurora-Elevation, Lichtkreis V-097) → Lieferung mit Standbildern; danach Phase C Joyride-Rückgrat (Vorlagen: J16/J17, track-look v5, Track Core 0.16.1, Organ-Inseln v4 `~/Dropbox/CLAUDE/KFB Organ-Inseln + race track v4+/` (V-098), Tunnel-Anschluss V-099, Joyride-Tunnel-Styles V-100, Übergangs-Research V-095); Umgebungs-Knete V-053 dort mitnehmen.
-- **Offen bei Georg:** Cozy Tunes Ablage später (V-087); WSA-Studie (privates Screenshot-ZIP ja/nein); Treppe von WSA (`wsa/kfb-g4-stairs-form-design-r3-2026-10-11`) ansehen, wenn gemeldet.
-
-## Phase B gestartet (11.10.)
-
-- **B0, Regress:** Georg im Spiel (?play=game): WASD/QE bewegen scheinbar nur die Kamera, Bewegung ruckelig, Laufen ist nicht Joggen. Fix plus erster automatischer Gleichstand-Test (`tools/parity/`: W → Running_A ≈ 1,40 H/s, Shift → Running_B, Sprünge).
-- **Steuerung und Kamera, WoW-Schema (Georg 11.10., verbindlich):**
-  - Ohne Maustaste A/D drehen, Q/E strafen. RMB: Maus lenkt die Figur, A/D strafen. LMB: nur Kamera orbitieren. Beide Tasten: vorwärts.
-  - Spielmodus: Zoom per Rad bzw. Touchpad (normalisiert, gedämpft) von weit bis Ich-Perspektive (Figur ausblenden). Träges Recenter hinter die Figur bei Bewegung; im Stand bleibt die Blickrichtung. Default-Position per Slider (Rollercoaster-Vorlage) innerhalb der Zoom-Grenzen.
-  - God-Mode: Zoom zum Cursor, nicht zu empfindlich. Orbit-Ruckeln beseitigen (geglätteter Arm, gefilterte Kollision, ruhiges Ziel).
-  - Ein Gangschema: walk.ts stillgelegt, beide Spiel-Adressen über den J17-Travel-Core.
-- **Sprünge (Georg):** Leertaste im Stand = Sprung auf der Stelle, Leertaste aus dem Joggen = Sprung vorwärts, **Shift+Leertaste aus dem Sprint = Weitsprung** (KayKit-Animationspaket). Doppel-Leertaste reserviert für Flug-Modus bzw. Jetpack (WoW-Logik, schon gemessen), später.
-- **Almanach (Georg):** Fächer rechts, senkrecht gerade nach unten. Für tausende Karten zeigt der Fächer die letzten N (≈ 7) plus „+N“; Klick öffnet ein Overlay mit Deck- bzw. Welt-Reitern und einem Raster der Viertel → Viewer.
-
-## Phase A abgeschlossen (10.10. Nacht)
-
-- A5 HUD R3 mit Rucksack (`docs/critic/lab-hud/2026-10-10_01/`), A6 Klang ohne Video (`lab-sound/2026-10-10_01/`), A8+9 Himmel/Licht/Joyride-Paletten am Insel-Thema (`lab-sky/2026-10-10_01/`; Abend zu orange bzw. dunkel → TUNE), A7 Almanach-Fächer mit Viewer (`lab-almanac/2026-10-10_01/`).
-- Spiel-Adresse `?play=game` (PondLand). RKIT-Hub nur noch über `?rkit=1`. Laufzeit offline bis auf die HUD-R3-Item-Modelle. Wolken CC BY 3.0 (Jarlan Perez), Credit nötig.
-- Bau-Sitzung steht. Nächstes laut Plan: B (Gleichstand plus B2 Figuren-Auswahl, B+ Wasser) bzw. C (Joyride-Rückgrat), nach Georgs Wahl.
-
-## Stand vor Georgs Pause (10.10. Nacht)
-
-- A5 HUD R3 inklusive Rucksack geliefert (`docs/critic/lab-hud/2026-10-10_01/`), A6 Klang läuft, A7/A8 warten.
-- Georg: In Vorschauen keine RKIT-Test-Hub-Reste mehr (quergestellte Teilbanden, flacher Asphalt, Gehwegplatten, nicht-Joyride-Muster). Vorschau-Bühne = StreakByte-Demo-Insel; RKIT-Hub nur über `?rkit=1`.
-- Nach der Pause: Mechanismus gegen Verlust von Georgs Vorgaben besprechen (Vorgaben-Register wörtlich, an Baseline-Tests gekoppelt).
-
-## Plan R1 gültig: `docs/KFB_WORLDBUILDER_PLAN_R1.md` (10.10. spät)
-
-Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand → C Joyride-Rückgrat → D Archipel im Raum → E Strecken-Editor → F Insel-Editor mit Insel-Thema (`kfb.island-theme/1`: 6er-Palette aus Joyride plus zwei abgeleiteten Schemata, Licht, Klang, Biom, Story-Tint) → G prozedurale Inseln. Offen: Cozy-Tunes-Lizenz (öffentlich auf main), private Screenshots an WSA.
-
-## Neuer Kurs: Joyride-Rückgrat, dann Editor (10.10. spät, Georg)
-
-- **Joyride J17 ist Goldstandard für den Gesamt-Look** (Strecke, Banden, orange Fahrbahn, Cartoon-Deformer, Kamera, Paletten). Postmortem `docs/POSTMORTEM_JOYRIDE_REGRESS_R1.md`; Masterplan §7 korrigiert; Baseline-Block `look.joyride-gold`.
-- Reihenfolge: (1) Joyride-Rückgrat 1:1, (2) die 8 StreakByte-Demo-Inseln im Raum (unverändert; keine davon ist KFB Town, die baut Georg selbst), (3) Strecken-Editor mit Auf- und Abfahrten, (4) God-Mode-Insel-Editor (Terrain, Asset-Librarian-Overlay mit KayKit, Tiny Treats und Quaternius, Resident-Atlas-Inline-Editor mit Snap und Ground, Muster-Pinsel).
-- Bau-Sitzung: Vorlagen-Inventur (nur lesend) → `docs/BACKBONE_EDITOR_DONORS_R1.md`; plus 32 Screenshots der Demo-Inseln (lokal, lizenziert).
-- **Sicherer Integrations-Slice (Georg-Freigabe):** HUD R3 von Claude Design unverändert übernehmen (Knet-Look später), Funktionen nach J17-HUD (Modus-Schalter, Minikarte, Tacho, Radio) plus Schalter Spiel ↔ God-Mode, keine Debug-Werte im Spiel; Audio-Bed je Insel heuristisch zugeordnet, kompaktes diegetisches Radio mit Cozy-Tunes und Ticker. Bau-Sitzung: erst Vorlage-zuerst-Zeile, dann Bau.
-- WSA: großer Studienauftrag Szene, Biom und Licht (`deliveries/BRIEF_WSA_SCENE_STUDY_R1.md`, Branch `wsa/kfb-scene-study-2026-10-10`): KayKit-Creator-Videos, Mystery-of-the-Month-GIFs (Patreon), 8 Inseln über privates ZIP, Licht, Joyride-Goldblatt → `scene-rules.json`. Treppen-Test zurückgestellt (nie gestartet).
-
-## Stopp und Neuplanung (10.10. spät, Georg: „regressiver Failure-Loop“)
-
-- Steuerung gesteht zu: reaktive Mini-Aufträge statt Plan, Abgenommenes wird nachgebaut statt 1:1 übernommen, zu viele Baustellen gleichzeitig. Vorschlag an Georg: Schritt 0 Einfrieren; Schritt 1 Liste „Abgenommener Bestand“ (Version, Abnahme, Werte, Lab-Stand, Frage nach der besten Basis); Schritt 2 Gleichstand 1:1 mit Beweisbild; Schritt 3 neue Gestaltung, höchstens zwei Baustellen. Wartet auf Georgs OK und seine Nennung der am weitesten integrierten Builds.
-- Quaternius-Studie fertig (`docs/research/quaternius-megakit-study_2026-10-10/`): CC0; 27 Fels-Modelle (Rock_Big ×2, Rock_Medium ×4, Kiesel, Wegsteine) im Lab unter `public/assets/env/quaternius-megakit-pro/`. Kein Fels-Shader, kein Moos als Geometrie, keine komponierten Beispielszenen. Übertragbare Regeln: Bodenfarbe am Fuß, 3–21 % versenkt, Flächen-Hierarchie, Helligkeit vom Fuß zur Krone, Bewuchs an jeder Fels-Boden-Kante. Eingang für Schritt 3.
-
-## Probe 6 abgenommen (10.10. spät)
-
-- Georg: Tempo „passt so erstmal“. W = Jog (Running_A, 1,40 H/s), Shift = Sprint (Running_B ×1,3, 2,22 H/s), Strg = Gehen; kein Start-Hüpfer. Auto bleibt vor dem Bordstein (Band = Bordfläche − halbe Autobreite − 0,15).
-- Backlog: Cartoon-Prinzipien Anticipation, Impact und Recovery (Nachfedern nach dem Hop); Hut-Artefakte vorerst hinnehmen, vielleicht später metanarrativ nutzen. Georg will im Spiel urteilen → Spiel-URL und Leistungsprobe (Ruckeln: Aufnahme oder Laufzeit?) bei der Bau-Sitzung.
-- Quaternius MegaKit PRO + Source (von Georg gekauft) in der Studie (`docs/research/quaternius-megakit-study_2026-10-10/`); Fels-Runde 4 wartet darauf.
-
-## Reißleine Claude Design (10.10. spät)
-
-- **Town-Massemodell R1 von Claude Design: FAIL** (Georg: „Regress“, „sprachlos“). Postmortem und brauchbare Reste (`plan-geometry.js`, Burg-Platz 44 × 39 × 41) unter `docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/`. Ursachen laut Claude Design selbst: Streu-Primitive statt geformter Masse, zehn Bauteile in einem Lauf, Eigenbau statt Bestand (Track Core, KayKit-Figuren, Scholle v7), Zahlen statt Hinsehen.
-- **Folge (Steuerung):** Claude Design baut keine 3D-Geometrie mehr für KFB, höchstens 2D-Lagepläne. Insel- und Bauteil-Look entsteht im Lab aus Bestand (KayKit/Tiny Treats/Quaternius) plus `moss-cap.ts`, mit Webchat-Bildern als Stil-Richtung; Teile isoliert neben Vorbild, erst dann Szene.
-- PR #387 (KayKit/Tiny-Treats-Vervollständigung, Holiday Bits, Charming-Kitchen-Fix) gemergt `dccf75c`. Preferred Pool (MVP-1-Bewohner) bei der Bau-Sitzung; Quaternius Stylized Nature MegaKit wird geladen.
-
-## Georg-Entscheidungen 10.10. abends: Auto, Bild-Vorlagen, Brücken-Test 2
-
-- **Messung 06 Kritiker 5,57 (Runde 2, Stopp):** technische Fixes Staub, Absprung/Landung an der Tür, Kamera-Drehrate, Blob-Schatten; danach Video an Georg, kein dritter Kritiker.
-- **Auto MVP-1:** geschlossenes Retro-Auto, Figur beim Fahren unsichtbar; Cabrio-Port (Sitz-Gates bestanden) eingefroren hinter `car=cabrio`, post-MVP. Bau-Sitzung: J17-Hop ohne T-Pose für den Cicada, Kamera nicht durchs Auto.
-- **G4-Blatt „STONE BRIDGE 01“** (Webchat) aus Quarantäne, Stil-Richtung: `docs/golden/candidates/G4_stone_bridge_sheet_webchat_r1.webp`. Briefing Webchat §7a „bauarm“ + Teileliste.
-- **img2threejs bridge02** gestartet (Georg „ja“): Blatt als Vorlage, Keilsteinring, Sockelfelsen, Graskappe, Pfeiler mit Laternen, Pflaster, flache Fahrbahn, ≤ 40 k Dreiecke → `tools/img2threejs-tests/bridge02/`.
-- G1/G4-Originale (Town R1/R2, Protopia, Fels-Mood, Brückenblatt) auf GitHub-Branch `assets/kfb-mvp1-concept-originals-2026-10-10` (SHA256 3/3 geprüft), lokal `docs/golden/candidates/`; für Claude Design (Town-Massemodell K1–K3, Burg-Stellvertreter 44 × 39 × 41 lab).
-- **Ein-/Aussteigen abgenommen als Arbeitsstand** (Georg: „etwa 30 % einer sauberen Cartoon-Animation … so nehmen, bevor wir uns verkünsteln“; Rückfall: Überblenden auf Tastendruck). Fokus jetzt Environment. Masterplan §3b/§5 angepasst (Dither statt Sicht-Loch fürs Auto, 0,15-s-Regel nur freies Laufen/Fahren, Cabrio post-MVP).
-- **Fels-Bausatz-Test R1** (`docs/critic/lab-env/rock-kit_2026-10-10_01/`, Modul `src/environment/rock-kit.ts`, 8,9 k Dreiecke): Teile funktionieren (Bruchflächen, Rollenfarben), Gesamtform nicht. 7 schmale Säulen statt breiter Pyramide aus 12–15 Blöcken, Moos wirkt wie flache Platten statt Knet-Polster, Büschel spitz statt Rosetten, Varianten kaum unterscheidbar. Steuerung ~4/10. Befund: echter Kenney rock_largeA ist ein flacher Brocken, die „Kenney-Referenz“ auf dem Blatt ist erfunden. Georg entscheidet über Runde 3.
-- **Fels-Blätter 1 + 2** (Kenney rock_largeA im Knetstil, Webchat) auf dem Asset-Branch und unter `docs/golden/candidates/`; Georgs Favorit: Blatt 1. Quellbasiert, deshalb direkter Weg: Kenney-Fels (CC0) plus Moos-Kappen plus Büschel.
-- **WSA-Treppen-Test:** Rückfragen geklärt (Briefing R1b: Basis `3c42bf7`, nur WSA-Branch, 2 Runden, Stufenmaß, Scorecard, Stil-Referenzen).
-- **bridge02 Ergebnis:** 36,8 k Dreiecke, 2 von 3 Runden. Bogenring (15 Keilsteine + Schlussstein) und Steinblöcke treffen das Blatt. Sockelfelsen (Raster), Graskappe (Balken) und Laternen (zu klein) nicht; Wand zwischen Ring und Brüstung zu hoch. Eigene Wertung 5/10. Vorschlag: Ring und Blöcke als Bausatz übernehmen, Felsen und Gras aus dem Insel-Look (G1) teilen statt je Bauteil neu erfinden, Laternen aus der Bibliothek.
-
-## Stufe 2 · sichtbarer Fahrer, Messung 04 (2026-10-10)
-
-- Probe 01 (Messung 03) an Georg; offen bei ihm: Fahrgefühl-Zahlen und Inselrand (a/b/c).
-- Messung 04 (`docs/critic/lab-stage2/2026-10-10_04/`): erste Figuren-Karte `public/cards/farmer_a.card.json` (seat), Hüfte auf Sitz 0,000 H, Figurdrehung 0°.
-- Auto: **B offenes Cartoon-Cabrio** (K2-Größe bleibt) von der Steuerung vorläufig freigegeben, Georg kann widersprechen; A hätte ×1,56 gebraucht, Fahrer trotzdem unsichtbar.
-- Auflage B: gebauter Abschluss an der Schnittlinie (Wulst/Türkappe mit Wandstärke), geschlossene Kabine, Scheibenstummel, Lenkrad; Vorlage-zuerst-Zeile vor Modellierung.
-- Blinder Kritiker Messung 04: 5,0, nicht bestanden (Runde 1), Mängel in `CRITIC_VERDICT.md`, an Bau-Sitzung als Pflicht für die Cabrio-Lieferung.
-- **Update:** Vorlage zuerst ergab das gebaute KFB-Cabrio aus J17 (`KFB_CVP1_cabrio.glb` r2 @93abbf22, FB-CAR-01: Türen mit Wandstärke, Kabine, Scheibenrahmen, Lenkrad). Freigegeben als MVP-1-Auto statt des aufgeschnittenen Cicada. Gates: Hände am Kranz ≤ 0,03 H (J17-IK-FAIL nicht übernehmen), Hüfte ≤ 0,02 H, keine Durchdringung, Dach offen, Maße gegen Spur und Bande, VENDOR.md mit md5. Variante B zurückgestellt.
+**Zwei Wahrheiten entdeckt (2026-10-12):** Die GitHub-Fassung dieses Dokuments auf `sync/lab-rkit-2026-10-09` (Commit `cbbc4be5`, 2026-10-10 12:04 UTC, andere Maschine) enthielt zwei Einträge vom 10.10. („Kurswechsel finden statt bauen“, „erste Kritiker-Läufe“) sowie `POSTMORTEM_MVP1_STAGE1_R1.md` und `MVP1_DONOR_AND_MODEL_MAP_R1.md`, die in der Dropbox-Fassung fehlten. Sie sind unten nachgetragen und die beiden Dokumente nach `docs/` kopiert. Der Hub-Zeiger nennt Dropbox als SSOT, geschrieben wurde aber in der GitHub-Arbeitskopie. Regel ab jetzt: Projektstand wird in der Dropbox geschrieben und nach GitHub gespiegelt, nie umgekehrt. Die Stufe-1-Läufe 02/03 (`src/island/r2d/*`) liegen auf keinem Branch des Repos; der Code ist nur in der Arbeitskopie der anderen Maschine. Der Review vom 11.10. prüfte deshalb den Stand ohne R2D-Port.
 
 ## Kurswechsel „finden statt bauen“, img2threejs-Brücke (2026-10-10)
 
@@ -255,7 +99,7 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 
 ## MVP-Plan abgeschlossen (2026-10-09)
 
-- **Masterplan R2.1** (`docs/retired/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md`) ist abgeschlossen. Georg-Entscheide:
+- **Masterplan R2.1** (`docs/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md`) ist abgeschlossen. Georg-Entscheide:
   - **MVP-1 „Town + Protopia“ zuerst**, danach MVP-2 (Dystopia, Utopia, Flug, volles Audio);
   - Inselgrößen Town ≈ 40 × 40 MC, Satelliten 20–28 MC;
   - Sitz-Schicht im Lab über die Figuren-Karte;
@@ -310,7 +154,7 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 
 ## Vorbereitung Stufe 1 (2026-10-09, vor Georgs Reset)
 
-- **Bauplan:** `docs/retired/STAGE1_R2D_PORT_PLAN.md`. Zuordnung R2D → Lab-Module (`src/island/r2d/`), `planFromSpec` aus Editor-Umriss und RKIT-Straßenbett, `IslandField` bleibt als Fassade (gezählte Aufrufer), S1 statt kfbLayer, Scholle v7 statt `buildBody`, eine Farbquelle `ENV_ROLES`. Dazu Reihenfolge in 8 Schritten, harte Regeln, Risiken.
+- **Bauplan:** `docs/STAGE1_R2D_PORT_PLAN.md`. Zuordnung R2D → Lab-Module (`src/island/r2d/`), `planFromSpec` aus Editor-Umriss und RKIT-Straßenbett, `IslandField` bleibt als Fassade (gezählte Aufrufer), S1 statt kfbLayer, Scholle v7 statt `buildBody`, eine Farbquelle `ENV_ROLES`. Dazu Reihenfolge in 8 Schritten, harte Regeln, Risiken.
 - **Kritiker-Protokoll:** `docs/QA_CRITIC_PROTOCOL_R1.md` (blind, Kamerasätze, neue Inselkriterien G1–G7, Schema `verdict.json`, Auftragsvorlage, Bericht).
 - **Satelliten:** Lageplan auf die MVP-Welt umgestellt (Environment), Stufe nach dem MVP. Abenteuer auf 02 Fluss-Camp + 08 Holzhacker-Hütte.
 - **Infrastruktur nach dem MVP** im Masterplan-Backlog (Georg: bis dahin pragmatisch; Track Core bleibt privat, `RKIT-R3/private/` wird nie synchronisiert).
@@ -380,7 +224,7 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 
 ## Masterplan R2 und NotebookLM-Paket (2026-10-09)
 
-- **Masterplan R2:** `docs/retired/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md` löst den R1-Plan ab. Neu sind die Grundsätze §0, Stufe 0 (Konzept-Gates), die zwei Randfamilien (Bord, Joyride-Bande), der Sprenkel-Befund, der Asset Librarian v10 und der Recherche-Anschluss.
+- **Masterplan R2:** `docs/KFB_MASTERPLAN_MVP_DRIVE_LOOP_R2.md` löst den R1-Plan ab. Neu sind die Grundsätze §0, Stufe 0 (Konzept-Gates), die zwei Randfamilien (Bord, Joyride-Bande), der Sprenkel-Befund, der Asset Librarian v10 und der Recherche-Anschluss.
 - **Neue Regeldateien:** `docs/ETHERINGTON_REGELN_IN_ZAHLEN_R1.md` (Arbeitsfassung, wird über Recherche P3 geprüft); §01 „keine harten Schnitte“ in beiden QA-Regelwerken; Darstellungsregel (3D-Render mit Profilschnitt) im Übergangs-Regelwerk §1.
 - **NotebookLM-Upload:** `deliveries/NOTEBOOKLM_UPLOAD/`, ein flacher Ordner zum Hochladen mit 28 einzelnen Markdown-Dateien (eine je SSOT-Dokument, nummeriert) und 18 Bildern. Er wird erzeugt mit `python3 tools/build-notebooklm.py` (keine zweite Ablage; nach Änderungen neu bauen). Georg: keine Bündel-Dateien, kein Lies-mich.
   - **Neue SSOT-Dateien:** `docs/KFB_PROJEKTKONTEXT.md`, `docs/KFB_GLOSSAR.md`, `docs/KFB_TECHNIK_UND_SCHNITTSTELLEN_R1.md`, `docs/KFB_PAINPOINTS_UND_BLINDSPOTS_R1.md`, `docs/notebooklm/KFB_DEEP_RESEARCH_PROMPTS_R1.md`, v5-Renders in `docs/feedback/`.
@@ -413,7 +257,7 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 
 ## MVP-Slice „Drive Loop“ R1 (Plan, 2026-10-08 nachts)
 
-- Plan: `docs/retired/MVP_DRIVE_LOOP_R1_PLAN.md`. Heimat ist das Lab, später GPT-Site per Work-Job, GitHub bleibt SSOT-Hub.
+- Plan: `docs/MVP_DRIVE_LOOP_R1_PLAN.md`. Heimat ist das Lab, später GPT-Site per Work-Job, GitHub bleibt SSOT-Hub.
 - **Welt:** KFB Town groß in der Mitte mit Ringstraße an der Inselkante, Auffahrten zu Dystopia, Utopia und Protopia in verschiedenen Höhen, Rennstücke (Looping, Sprung) in den Zwischenräumen, Rand-Rhythmus aus der Geschichte je Insel.
 - **Fahren:** Retro Cars + J17-Cabrio mit FrizzleBob; den Drehfehler um die eigene Achse vor Stufe 2 beheben.
 - **4 Stufen:** Grundlage → Ring → Loop → Klang + Gefühl, jede mit harten Regeln, blindem Kritiker und Georg.
@@ -523,11 +367,6 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 - **Zeiten:** GPU-Timer in Headless Chrome streuen stark. Stabil über alle Läufe ist nur, dass Natur und Gelände oben den größten Grenzanteil haben. Belastbare Millisekunden gibt es nur im echten Chrome über den Perf-Monitor.
 - **Folgerung:** Die selbstgebaute Vegetation ist 60 % der Dreiecke. Abhilfe ist der Ersatz durch das Claude-Design- oder KayKit-Kit, ohnehin geplant, plus Instancing. Schnelle Hilfe: Kugelsegmente senken, kleine Büsche nicht in die Schattenkarte.
 
-## Parallele Stränge (Stand 08.10., historisch)
-
-- **Strang A · AI Game Art Academy:** 3D AI Classroom (MIT, React Three Fiber) nur als UX- und Architektur-Vorbild; alte Cube Academy nur als Lektions-Donor. Living Document v0.4. Nicht Teil dieses Labs.
-- **Strang B · KFB 3D Technology & Workflow Research:** WebGL Studio, TSL Node Editor, three-inspect, ShaderPass als Werkzeug-Donoren für Material, Clay, Performance, Debugging. Doku auf `georg-doc/kayfabizarro`, Branch `planning/hybrid-baked-clay-texture-architecture-2026-10-07` (Head `7416cfff38b9`), Main-Router `ca7295d1e92a`. Nächstes Gate: **KFB Surface Lab · Inspector Donor Proof 01** (three-inspect an echten KFB-Materialien, isoliert).
-
 ## Stand 2026-10-08
 
 - **Inseln:** Umriss-Editor, Joyride-Paletten + Wüste, gemessene Unterseiten-Regel (`docs/ISLAND_ANATOMY_RULES.md`), Clay-Look der Unterseite, runde Grasnarbe, Wege mit ausgeformten Enden und Randanschluss.
@@ -537,7 +376,7 @@ Phasen A (läuft: HUD mit Rucksack, Klang, Almanach, Licht) → B Gleichstand �
 - **Schatten:** globaler Saum-Fix (FrontSide, normalBias 1,2 × Texel).
 - **Originale:** StreakByte-Inseln als Vergleich, in Joyride-Farben mit Clay.
 
-## Offen (Stand 08.10., historisch · aktuell: Plan R1 §5 und „Aktuell“ oben)
+## Offen
 
 - Natur → Environment Kit R1: E1 + E2 erledigt (siehe oben); E3–E6 offen. Pyramide, Wasser, Unterseiten-Zapfen → Claude Design (Brief verschickt, Teil A entfällt).
 - Gebäude-Maßstab gegen Figur (Türen) vor MVP klären.

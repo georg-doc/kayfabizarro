@@ -47,3 +47,7 @@ Es war nie **eine** Linie, sondern drei verschiedene Fehler mit demselben Ausseh
 3. **Vorlage vor dem Port prüfen:** Jede Vorlage bekommt einen Port-Test auf Bild-Ebene (gleiche Kamera, gleiche Insel), bevor wir darauf aufbauen.
 4. **Georgs Vorlagen-Grafiken:** helfen, wenn sie das **Aussehen** eines Elements zeigen (z. B. eine Skizze „so sieht eine gute Inselkante bzw. Brückenwurzel aus“). Sie werden dann Teil der Golden-Referenzen. Du musst sie aber nicht zeichnen: Claude Design legt Entwürfe vor, du wählst aus.
 5. **Steuerung:** Ich sehe jedes Bild selbst in voller Größe an und gebe keine Kritiker-Forderung weiter, ohne sie gegen frühere Entscheidungen zu prüfen.
+
+---
+
+*Kopie aus GitHub `sync/lab-rkit-2026-10-09` (Commit `cbbc4be5`), in die Dropbox-Fassung nachgetragen am 2026-10-12.*

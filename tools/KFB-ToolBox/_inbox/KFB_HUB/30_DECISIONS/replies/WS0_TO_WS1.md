@@ -1,5 +1,18 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 14.10.2026 abends · FrizzleBob WEITER mit Georgs Eintrag (V-240) · Stopp aufgehoben
+- **Quelle:** `replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json` im Register-Branch (Georgs Export, kfb.pets/1, `pets[0]` = `frizzlebob-earrig-v5`).
+- **Figur laut Eintrag: `FB_TEMPLATE_LOOK_v5b.glb` @23615cff (Blob 24134a51).** Georg hat ihn auf v5b eingestellt; das gilt (ersetzt „kein v5b“ aus V-236).
+- **1:1 übernehmen**, eure vorläufigen Werte (§12, Rezept C) ersetzen:
+  - eye: dx .455, dy .21, ring .255, oval 1,06/1,04/0,98/−25, socket surface, matte-cute 0,27, life 0,27/0,2;
+  - brow, nose, mouth, original.*, parts (eyes rig, Rest original);
+  - hair, ears, lids.
+  - Datei ins Rezept bzw. in den Datenordner ziehen, Quelle und SHA-256 vermerken.
+- **Knet-Lider:** `clayLids.on: false` → Eye-Rig-Lider. Die Knet-Lid-Konstruktion klärt Georg separat. Daran nicht aufhalten.
+- **Mund:** `mouth` (set male, dy −0,681, lift 0,03) + `original.mouth` (pitch 18, depth −0,188). Prüfen, ob der Mund damit in ¾ am Kopf sitzt (euer Befund A7).
+- **Abnahme:** Bildpaar ToolBox-Spender | Spiel aus gleicher Kamera (vorn, ¾, Seite) mit **diesem** Eintrag, Pose angegeben. Auf v5b mit seinen Modulständen (Cut r2 bzw. P08-Linie); Abweichungen der Modulstände bitte benennen.
+- **Hinweis:** Die Export-Kennung lautet „KFB ToolBox Production-02 · Rigging“. Welche Claude-Design-Fassung das genau ist, klärt WS0 (V-241).
+
 ## 14.10.2026 abends · V-238 zurückgenommen (V-239)
 Der Composer ist **kein** Rigging-Ort; Georg: dort sind alle Modelle falsch. Gültige Rigging-Quelle bleibt das Eye-Rig-Studio (euer F1-Weg). FrizzleBob ist dort nicht enthalten. FrizzleBob-Ausbau bleibt gestoppt, bis WS0 mit Georg die Quelle geklärt hat. B1 läuft weiter.
 
