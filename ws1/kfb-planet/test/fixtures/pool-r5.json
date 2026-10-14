@@ -1,0 +1,384 @@
+{
+  "schema": "kfb.voice.triplet-opener-pool/1",
+  "contentRevision": "triplet-opener-pool-r5-cookie-tune-v11",
+  "canonicalDefault": false,
+  "status": "EDITORIAL_CANDIDATE_PREVIEW",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "pr": 379,
+    "branch": "planning/kfb-chatterbox-voice-layer-v1-2026-10-08"
+  },
+  "openers": [
+    {
+      "openerId": "DIRECT",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "{title}.",
+      "sourceClass": "SOURCE_NEUTRAL",
+      "requiredEvidence": [],
+      "performerFiction": false,
+      "status": "EDITORIAL_CANDIDATE",
+      "enabled": true,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "HEARD_OF",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "Ever heard of {title}?",
+      "sourceClass": "SOURCE_NEUTRAL",
+      "requiredEvidence": [],
+      "performerFiction": false,
+      "status": "EDITORIAL_CANDIDATE",
+      "enabled": true,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "DO_YOU_KNOW",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "Do you know {title}?",
+      "sourceClass": "SOURCE_NEUTRAL",
+      "requiredEvidence": [],
+      "performerFiction": false,
+      "status": "EDITORIAL_CANDIDATE",
+      "enabled": true,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "EVER_TASTED",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "Ever tasted {title}?",
+      "sourceClass": "FOOD",
+      "requiredEvidence": [
+        "FOOD_SOURCE_EVIDENCE"
+      ],
+      "performerFiction": false,
+      "status": "EDITORIAL_CANDIDATE",
+      "enabled": true,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "I_ONCE_MET",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "I once met {title}.",
+      "sourceClass": "PERSON",
+      "requiredEvidence": [
+        "PERSON_SOURCE_CLASS",
+        "APPROVED_REFERENT_PRONOUN",
+        "EXPLICIT_PERFORMER_FICTION_OPT_IN"
+      ],
+      "performerFiction": true,
+      "status": "EDITORIAL_CANDIDATE",
+      "enabled": true,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "RESTAURANT_ORDERED",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "I went to a restaurant and ordered {title}.",
+      "sourceClass": "FOOD",
+      "requiredEvidence": [
+        "FOOD_SOURCE_EVIDENCE",
+        "EXPLICIT_PERFORMER_FICTION_OPT_IN"
+      ],
+      "performerFiction": true,
+      "status": "EDITORIAL_CANDIDATE",
+      "enabled": true,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "ANYONE_HEARD_OF",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "Anyone here heard of {title}?",
+      "sourceClass": "SOURCE_NEUTRAL",
+      "requiredEvidence": [],
+      "performerFiction": false,
+      "status": "PROPOSED",
+      "enabled": false,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "LET_ME_TELL_YOU_ABOUT",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "Let me tell you about {title}.",
+      "sourceClass": "SOURCE_NEUTRAL",
+      "requiredEvidence": [],
+      "performerFiction": false,
+      "status": "PROPOSED",
+      "enabled": false,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "QUICK_QUESTION",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "Quick question. Ever heard of {title}?",
+      "sourceClass": "SOURCE_NEUTRAL",
+      "requiredEvidence": [],
+      "performerFiction": false,
+      "status": "PROPOSED",
+      "enabled": false,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "YOU_KNOW_THE_THING_WITH",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "You know the thing with {title}?",
+      "sourceClass": "SOURCE_NEUTRAL",
+      "requiredEvidence": [],
+      "performerFiction": false,
+      "status": "PROPOSED",
+      "enabled": false,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "DID_YOU_EVER_TRY",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "Did you ever try {title}?",
+      "sourceClass": "ACTION",
+      "requiredEvidence": [
+        "CURATED_POWER_ACTION_FRAGMENT",
+        "VERIFIED_GRAMMATICAL_OBJECT",
+        "SPECIFIC_SOURCE_MECHANISM"
+      ],
+      "performerFiction": false,
+      "status": "PROPOSED",
+      "enabled": false,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "WHAT_IF",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "What if {title}?",
+      "sourceClass": "CONDITION",
+      "requiredEvidence": [
+        "SOURCED_CONDITION",
+        "SOURCED_CONSEQUENCE",
+        "GRAMMATICAL_RECIPE"
+      ],
+      "performerFiction": false,
+      "status": "PROPOSED",
+      "enabled": false,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    },
+    {
+      "openerId": "HAVE_YOU_HEARD",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "Have you heard of {title}?",
+      "sourceClass": "SOURCE_NEUTRAL",
+      "requiredEvidence": [],
+      "performerFiction": false,
+      "status": "PROPOSED",
+      "enabled": false,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf",
+        "note": "New editorial source-neutral variation of HEARD_OF; not an implemented donor quote."
+      },
+      "history": []
+    },
+    {
+      "openerId": "EVER_HEARD_BEFORE",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "Have you ever heard of {title}?",
+      "sourceClass": "SOURCE_NEUTRAL",
+      "requiredEvidence": [],
+      "performerFiction": false,
+      "status": "PROPOSED",
+      "enabled": false,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf",
+        "note": "New authored rhetorical source-neutral variation; not an implemented donor quote."
+      },
+      "history": []
+    }
+  ],
+  "beats": [
+    {
+      "beatId": "wrinkle_rumble:10:compact",
+      "version": 3,
+      "deckId": "wrinkle_rumble",
+      "cardNumber": 10,
+      "cardBlob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+      "mode": "COMPACT",
+      "surfaceText": "The Cookie of Causality restarts the war over a snickerdoodle at Turn One, but keeps all the damage.",
+      "status": "EDITORIAL_CANDIDATE",
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "humanAcceptance": "PENDING",
+      "evidence": [
+        {
+          "field": "cardName",
+          "quote": "The Cookie of Causality",
+          "start": 0,
+          "end": 23,
+          "spoken": "The Cookie of Causality"
+        },
+        {
+          "field": "power",
+          "quote": "Restart",
+          "start": 19,
+          "end": 26,
+          "spoken": "restarts"
+        },
+        {
+          "field": "lore",
+          "quote": "The war",
+          "start": 0,
+          "end": 7,
+          "spoken": "the war"
+        },
+        {
+          "field": "lore",
+          "quote": "a snickerdoodle",
+          "start": 60,
+          "end": 75,
+          "spoken": "a snickerdoodle"
+        },
+        {
+          "field": "power",
+          "quote": "Turn 1",
+          "start": 41,
+          "end": 47,
+          "spoken": "Turn One"
+        },
+        {
+          "field": "power",
+          "quote": "Keep all damage",
+          "start": 49,
+          "end": 64,
+          "spoken": "keeps all the damage"
+        }
+      ],
+      "semanticCoverage": {
+        "power": "Restart game from Turn 1, keep damage",
+        "lore": "War started over a snickerdoodle",
+        "reframe": "Restarting war does not erase damage",
+        "newClaims": "No new Card facts; source-anchored interpretation pending review",
+        "humanAcceptance": "PENDING",
+        "editorialReview": "Version3 content-only tune of independently source-reviewed v2: clause order and pause changed for audition, title/Power/Lore evidence unchanged; human listening and revision3 review pending."
+      },
+      "speaker": {
+        "id": "lorekeeper"
+      },
+      "delivery": {
+        "pauseBeforeMs": 300,
+        "pauseAfterMs": 900,
+        "rate": 0.93,
+        "pitch": 1,
+        "emphasis": "keeps all the damage"
+      },
+      "performerFictionApproval": false,
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "history": [
+        {
+          "version": 1,
+          "status": "REVIEWED",
+          "reviewer": "Independent source critic /root/pool_critic_guard",
+          "surfaceText": "The Cookie of Causality restarts the war over a snickerdoodle at Turn One, but keeps all the damage."
+        },
+        {
+          "version": 2,
+          "status": "REVIEWED",
+          "reviewer": "Independent source critic /root/pool_critic_guard",
+          "surfaceText": "The Cookie of Causality restarts the war at Turn One over a snickerdoodle, but keeps all the damage."
+        }
+      ]
+    }
+  ],
+  "bridges": [],
+  "sets": [],
+  "negativeGoldens": [
+    "POSTMORTEM_KFB_TRIPLETS_1001_NIGHTS_SOURCE_BRIDGE_SEMANTIC_FAIL_2026-10-13.md",
+    "POSTMORTEM_TRIPLETS_R1_SHOW_IT_POWER_LORE_OMISSION_2026-10-13.md"
+  ]
+}

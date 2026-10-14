@@ -11,7 +11,7 @@ await page.waitForFunction(() => window.__kfbAnchors && window.__kfbStore && win
 await page.evaluate(() => window.__kfbStore.getState().closeDialog())
 await page.waitForTimeout(1500)
 const ids0 = await page.evaluate(() => window.__kfbAnchors.ids())
-const say = (anchor, parts, kind = 'speech', color = '#e6b53a') => page.evaluate(([a, p, k, c]) => window.__kfbStore.getState().say(a, p, k, c), [anchor, parts, kind, color])
+const say = (anchor, parts, kind = 'speech', color = '#e6b53a') => page.evaluate(([a, p, k, c]) => window.__kfbSayTest(a, p, k, c), [anchor, parts, kind, color])
 const list = () => page.evaluate(() => window.__kfbBubbles())
 
 // 1 · sichtbarer Anker vor der Kamera, Triplet mit drei Teilen
@@ -42,6 +42,13 @@ await say('behind', ['…'], 'thought'); await say('outside', ['…'], 'thought'
 await page.waitForTimeout(600)
 const L3 = await list()
 const thought = await page.evaluate(() => { const el = [...document.querySelectorAll('#ui-bubbles [data-kind]')].find((e) => e.dataset.speaker === 'behind'); return { flips: [...el.querySelectorAll('[data-part]')].reduce((n, d) => n + d.getAnimations().length, 0) } })
+// 3b · Vertrag §5 im Host: eine nicht vom Pool-Leser ausgegebene Zeile wird zu „…“ (Denkblase); Pool-Status geladen
+await page.evaluate(() => { window.__kfbAnchors.ahead('forged', 9, -2.5, 0); window.__kfbSayForged('forged', 'Erfundener Satz') })
+await page.waitForTimeout(300)
+const forged = (await list()).find((b) => b.anchor === 'forged')
+await page.waitForFunction(() => !window.__kfbPool().loading, null, { timeout: 30000 }).catch(() => {})
+const pool = await page.evaluate(() => window.__kfbPool())
+const cardLine = await page.evaluate(async () => { const c = window.__kfbTower()[0]; return { ...(await window.__kfbLineFor(c, 'cardName')), name: c.name } })
 // 4 · Modul-Anker: ModuleHost meldet 'probe' an und beim Aushängen ab
 await page.evaluate(() => window.__kfbHostTest.off())
 await page.waitForTimeout(800)
@@ -79,8 +86,11 @@ process.exit(report('s5a bubble layer', {
   noReactRenderOnMove: r1 === r0,
   hiddenBehindCamera: L3.find((b) => b.anchor === 'behind')?.shown === false,
   hiddenOutsideImage: L3.find((b) => b.anchor === 'outside')?.shown === false,
+  forgedLineBecomesSilence: forged?.text === '…' && forged?.kind === 'thought',
+  livePoolLoaded: pool.loaded === true && /^[0-9a-f]{40}$/.test(pool.blob || '') && pool.contentRevision != null,
+  noAcceptedSoCardText: pool.acceptedBeats > 0 || (cardLine.source === 'CARD' && cardLine.text === cardLine.name),
   moduleAnchorRegistered: ids0.includes('probe') && ids0.includes('player'),
   moduleAnchorUnregistered: !ids1.includes('probe'),
   lifetimeEnds: !L5.find((b) => b.anchor === 'front'),
   noPageErrors: errs.length === 0,
-}, { look, t0, t1, r0, r1, ids0, ids1, L3: L3.map((b) => [b.anchor, b.shown]), L5: L5.map((b) => b.anchor), errs }))
+}, { pool, cardLine, forged: forged && { text: forged.text, kind: forged.kind }, look, t0, t1, r0, r1, ids0, ids1, L3: L3.map((b) => [b.anchor, b.shown]), L5: L5.map((b) => b.anchor), errs }))

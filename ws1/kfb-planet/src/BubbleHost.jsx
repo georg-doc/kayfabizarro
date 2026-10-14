@@ -7,7 +7,9 @@ import { createBubbleLayer } from './bubbleLayer'
 import { anchorAt, anchorIds, registerAnchor } from './bubbleAnchors'
 import { playerState } from './world'
 import { useGame } from './store'
-import { expose } from './debug'
+import { DEBUG, expose } from './debug'
+import { isIssuedLine, SILENCE } from './dialogText'
+import { testLine } from './poolReader'
 
 const PLAYER_ANCHOR = { id: 'player', position: playerState.pos, offset: [0, 2.0, 0] }
 
@@ -21,10 +23,19 @@ export default function BubbleHost() {
     layer.current = L
     const offPlayer = registerAnchor(PLAYER_ANCHOR)
     // Ereignis aus dem Store -> Blase (kein Re-Render der Komponente)
-    const unsub = useGame.subscribe((s, prev) => { if (s.speech && s.speech !== prev.speech) L.show(s.speech.anchor, s.speech.parts, s.speech.kind, s.speech.color) })
+    // Vertrag §5: nur Zeilen aus dem Pool-Leser (POOL, CARD, SILENCE; TEST nur mit Debug-Schalter). Alles andere -> „…“
+    const unsub = useGame.subscribe((s, prev) => {
+      if (!s.speech || s.speech === prev.speech) return
+      const { anchor, line, kind, color } = s.speech
+      const ok = isIssuedLine(line) && (line.source !== 'TEST' || DEBUG)
+      if (!ok) { console.warn('[bubble] Zeile ohne geprüfte Quelle verworfen'); L.show(anchor, [SILENCE], 'thought', color); return }
+      L.show(anchor, line.parts, line.source === 'SILENCE' ? 'thought' : kind, color)
+    })
     const test = { set: new Map() }
     expose('Bubbles', () => L.list())
     expose('BubbleRenders', () => renders.current)
+    expose('SayTest', (anchor, parts, kind, color) => useGame.getState().say(anchor, testLine(parts), kind, color))
+    expose('SayForged', (anchor, text) => useGame.getState().say(anchor, { text, parts: [text], source: 'POOL' }))
     expose('Anchors', {
       ids: anchorIds,
       // Debug: Testanker an fester Weltposition bzw. relativ zur Kamera (vorwärts, rechts, hoch)
