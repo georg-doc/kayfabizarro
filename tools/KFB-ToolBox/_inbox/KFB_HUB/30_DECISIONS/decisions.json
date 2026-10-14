@@ -3082,7 +3082,9 @@
    "check": "Georgs Export-Datei lädt in der Site identisch (Bildpaar)",
    "source": "Georg 14.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-244"
+   ],
    "why": "Die verstreuten ToolBox-, Studio- und Composer-Fassungen sind dysfunktional; nur die Claude-Design-ToolBox funktioniert für Georg.",
    "applies": "nach FrizzleBob"
   },
@@ -3114,6 +3116,21 @@
    "supersedes": null,
    "superseded_by": [],
    "why": "Georg hatte den Mund auf „geschlossen“ gestellt, im Spiel zeigte er Zähne; die ToolBox speichert diese Wahl nicht.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-244",
+   "date": "2026-10-14",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "ToolBox-Port jetzt: WSA work baut die KFB ToolBox 1:1 aus dem Claude-Design-Schnitt P08 (replies/TOOLBOX_SOURCE_CUT_2026-10-14_r1/, 47/47 Prüfsummen) als WSA-Site und behebt die Mängel dort: Ruhe-Mund „Zu“ speichern/exportieren (V-243), Brauen-/Nasenfarbe exportieren, Bindepose-Schalter, Export-Etikett, getrennte Kennungen v5/v5b, Decals gepinnt, Speichern als Datei auf GitHub (kfb.pets/1) für alle Riggings. Dazu ein PLAN (kein Bau) zur Verbindung mit dem FrankenStein-Composer (V-239: derzeit broken). Claude Design bleibt Rigging-Ort nur bis zur Abnahme der Site.",
+   "values": {},
+   "owner": "WSA work · WS0 prüft",
+   "check": "Georgs Export lädt in der Site identisch (Bildpaar), dann Georg",
+   "source": "Georg 14.10.",
+   "supersedes": "V-241 (Reihenfolge: erst in Claude Design fixen)",
+   "superseded_by": [],
+   "why": "Fixes gehören an die eine Werkzeug-Quelle, nicht als Ausbesserung ins Spiel.",
    "applies": "ab sofort"
   },
   {
@@ -3179,7 +3196,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:236",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:245",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

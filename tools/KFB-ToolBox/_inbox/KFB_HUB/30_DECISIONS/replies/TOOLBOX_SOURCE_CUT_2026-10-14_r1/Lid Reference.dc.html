@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;height:100%;background:#e9e6df;font-family:'Space Grotesk',system-ui,sans-serif;color:#1f2022} a{color:#7a4d0d} a:hover{color:#b8781c}</style>
+</helmet>
+<div style="height:100vh;display:flex;flex-direction:column;background:#e9e6df">
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;padding:14px 20px;border-bottom:1px solid #d3cfc6">
+    <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+      <div style="font-size:20px;font-weight:600">Lider · Referenz</div>
+      <div style="font-size:13px;color:#5c6065;text-wrap:pretty">Drei Cartoon-Aufbauten, sechs Ausdrücke. Zeig auf die Spalte, die stimmt.</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:18px;margin-left:auto;font-size:13px">
+      <div style="display:flex;align-items:center;gap:6px"><span style="color:#5c6065">Ansicht</span>
+        <span onClick="{{ setFront }}" style="padding:6px 12px;border-radius:6px;cursor:pointer;background:{{ frontBg }};color:{{ frontFg }}">Front</span>
+        <span onClick="{{ setThree }}" style="padding:6px 12px;border-radius:6px;cursor:pointer;background:{{ threeBg }};color:{{ threeFg }}">¾</span></div>
+      <div style="display:flex;align-items:center;gap:6px"><span style="color:#5c6065">Lid-Achse</span>
+        <span onClick="{{ setHead }}" style="padding:6px 12px;border-radius:6px;cursor:pointer;background:{{ headBg }};color:{{ headFg }}">Kopf</span>
+        <span onClick="{{ setEye }}" style="padding:6px 12px;border-radius:6px;cursor:pointer;background:{{ eyeBg }};color:{{ eyeFg }}">Auge (wie ToolBox jetzt)</span></div>
+      <div style="display:flex;align-items:center;gap:6px"><span style="color:#5c6065">Blinzeln</span>
+        <span onClick="{{ toggleBlink }}" style="padding:6px 12px;border-radius:6px;cursor:pointer;background:{{ blinkBg }};color:{{ blinkFg }}">{{ blinkLabel }}</span></div>
+    </div>
+  </div>
+  <div style="flex:1;min-height:0;position:relative">
+    <div id="lidref-host" style="position:absolute;inset:0"></div>
+    <div id="lidref-grid" style="position:absolute;inset:0;display:grid;grid-template-columns:96px repeat(3,minmax(0,1fr));grid-template-rows:auto repeat(6,minmax(0,1fr));pointer-events:none">
+      <div></div>
+      <div style="padding:10px 12px;display:flex;flex-direction:column;gap:2px;border-left:1px solid #d3cfc6"><span style="font-weight:600;font-size:15px">A · Haut-Lid</span><span style="font-size:12px;color:#5c6065">Auge halb im Kopf, Lid wächst aus der Haut</span></div>
+      <div style="padding:10px 12px;display:flex;flex-direction:column;gap:2px;border-left:1px solid #d3cfc6"><span style="font-weight:600;font-size:15px">B · Kuppel-Lid</span><span style="font-size:12px;color:#5c6065">Auge steht raus wie bei FB, Lid als Kuppel</span></div>
+      <div style="padding:10px 12px;display:flex;flex-direction:column;gap:2px;border-left:1px solid #d3cfc6"><span style="font-weight:600;font-size:15px">C · Augenhöhle</span><span style="font-size:12px;color:#5c6065">Auge tief, Hautrand um die Öffnung</span></div>
+      <div style="padding:10px 12px;font-size:13px;font-weight:500;border-top:1px solid #d3cfc6;display:flex;align-items:center">Neutral</div>
+      <div data-cell="0,0" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="0,1" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="0,2" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div>
+      <div style="padding:10px 12px;font-size:13px;font-weight:500;border-top:1px solid #d3cfc6;display:flex;align-items:center">Müde</div>
+      <div data-cell="1,0" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="1,1" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="1,2" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div>
+      <div style="padding:10px 12px;font-size:13px;font-weight:500;border-top:1px solid #d3cfc6;display:flex;align-items:center">Zu</div>
+      <div data-cell="2,0" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="2,1" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="2,2" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div>
+      <div style="padding:10px 12px;font-size:13px;font-weight:500;border-top:1px solid #d3cfc6;display:flex;align-items:center">Böse</div>
+      <div data-cell="3,0" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="3,1" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="3,2" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div>
+      <div style="padding:10px 12px;font-size:13px;font-weight:500;border-top:1px solid #d3cfc6;display:flex;align-items:center">Traurig</div>
+      <div data-cell="4,0" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="4,1" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="4,2" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div>
+      <div style="padding:10px 12px;font-size:13px;font-weight:500;border-top:1px solid #d3cfc6;display:flex;align-items:center">Fröhlich</div>
+      <div data-cell="5,0" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="5,1" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div><div data-cell="5,2" style="border-left:1px solid #d3cfc6;border-top:1px solid #d3cfc6"></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const RAD = Math.PI / 180, RB = 0.27, HEAD = [1, 1.08, 0.95];
+/* columns: sink = share of the ball inside the head · th = lid inner/outer radius × ball */
+const STYLES = [{ sink: 0.5, th: [1.025, 1.1] }, { sink: 0.18, th: [1.025, 1.1] }, { sink: 0.62, th: [1.02, 1.07], socket: true }];
+/* rows: U = upper lid front edge latitude (°), L = lower lid front edge latitude below (°), s = slant (+ inner corner down) */
+const STATES = [{ U: 50, L: 48, s: 0 }, { U: 14, L: 42, s: 0 }, { U: -3, L: -3, s: 0 }, { U: 26, L: 40, s: 18 }, { U: 32, L: 46, s: -16 }, { U: 42, L: 12, s: 0 }];
+class Component extends DCLogic {
+  state = { view: 'front', frame: 'head', blink: true };
+  componentDidMount() { this._init().catch((e) => console.error(e)); }
+  componentWillUnmount() { this._dead = true; cancelAnimationFrame(this._raf); if (this._ro) this._ro.disconnect(); if (this.R) { this.R.dispose(); this.R.domElement.remove(); } }
+  async _init() {
+    const T = this.T = await import('https://unpkg.com/three@0.160.0/build/three.module.js'); if (this._dead) return;
+    const host = document.getElementById('lidref-host'), grid = document.getElementById('lidref-grid'); this._host = host;
+    const R = this.R = new T.WebGLRenderer({ antialias: true }); R.setPixelRatio(Math.min(2, window.devicePixelRatio || 1)); R.setScissorTest(true); R.outputColorSpace = T.SRGBColorSpace;
+    R.domElement.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block'; host.appendChild(R.domElement);
+    const S = this.S = new T.Scene(); S.background = new T.Color('#e9e6df');
+    S.add(new T.HemisphereLight(0xffffff, 0x8a7a5a, 1.1)); const d = new T.DirectionalLight(0xffffff, 2); d.position.set(2, 4, 5); S.add(d); const f = new T.DirectionalLight(0xffffff, 0.6); f.position.set(-3, 1, 2); S.add(f);
+    this.cam = new T.PerspectiveCamera(24, 1, 0.1, 50);
+    this.mats = { skin: new T.MeshStandardMaterial({ color: '#e8b830', roughness: 0.8 }), skinIn: new T.MeshStandardMaterial({ color: '#c99a1e', roughness: 0.9, side: T.BackSide }), ball: new T.MeshStandardMaterial({ color: '#f2efe8', roughness: 0.35 }), pupil: new T.MeshStandardMaterial({ color: '#141414', roughness: 0.3 }) };
+    this.rigs = STYLES.map((st, i) => this._rig(st, (i - 1) * 5));
+    this._cells = [...grid.querySelectorAll('[data-cell]')];
+    const fit = () => { const r = host.getBoundingClientRect(); R.setSize(Math.max(1, r.width), Math.max(1, r.height), false); }; fit();
+    this._ro = new ResizeObserver(fit); this._ro.observe(host);
+    const loop = (t) => { if (this._dead) return; this._raf = requestAnimationFrame(loop); this._draw(t / 1000); }; this._raf = requestAnimationFrame(loop);
+  }
+  /* one lid = concentric half shell round the ball (outer skin + inner side + rounded rim along the edge). Upper and lower share the
+     hinge axis, so both corners meet in every state; the edge is always a clean circle on the ball. */
+  _lid(st, lower) {
+    const T = this.T, g = new T.Group(), [ri0, ro0] = st.th, k = lower ? 0.994 : 1, ri = RB * ri0 * k, ro = RB * ro0 * k, t0 = lower ? Math.PI / 2 : 0;
+    g.add(new T.Mesh(new T.SphereGeometry(ro, 64, 24, 0, Math.PI * 2, t0, Math.PI / 2), this.mats.skin));
+    g.add(new T.Mesh(new T.SphereGeometry(ri, 64, 24, 0, Math.PI * 2, t0, Math.PI / 2), this.mats.skinIn));
+    const rim = new T.Mesh(new T.TorusGeometry((ri + ro) / 2, (ro - ri) / 2, 14, 96), this.mats.skin); rim.rotation.x = Math.PI / 2; g.add(rim);
+    return g;
+  }
+  _rig(st, x) {
+    const T = this.T, g = new T.Group(); g.position.x = x; this.S.add(g);
+    const head = new T.Mesh(new T.SphereGeometry(1, 96, 64), this.mats.skin); head.scale.set(...HEAD); g.add(head);
+    const eyes = [];
+    for (const side of [-1, 1]) {
+      const yaw = 22 * RAD * side, pitch = 14 * RAD, dir = new T.Vector3(Math.sin(yaw) * Math.cos(pitch), Math.sin(pitch), Math.cos(yaw) * Math.cos(pitch));
+      const tt = 1 / Math.hypot(dir.x / HEAD[0], dir.y / HEAD[1], dir.z / HEAD[2]), surf = dir.clone().multiplyScalar(tt), c = surf.clone().addScaledVector(dir, RB * (1 - 2 * st.sink));
+      const ball = new T.Mesh(new T.SphereGeometry(RB, 64, 40), this.mats.ball); ball.position.copy(c); g.add(ball);
+      const pu = new T.Mesh(new T.SphereGeometry(RB * 1.004, 40, 12, 0, Math.PI * 2, 0, 0.4), this.mats.pupil); pu.rotation.x = Math.PI / 2; pu.rotation.y = -side * 4 * RAD; ball.add(pu);
+      const F = new T.Group(); F.position.copy(c); F.rotation.order = 'YXZ'; g.add(F);
+      const upWrap = new T.Group(), up = this._lid(st, false), lo = this._lid(st, true); upWrap.add(up); F.add(upWrap); F.add(lo);
+      if (st.socket) { const ring = new T.Mesh(new T.TorusGeometry(RB * 1.02, 0.045, 16, 96), this.mats.skin); ring.position.copy(surf).addScaledVector(dir, -0.015); g.add(ring); g.updateMatrixWorld(true); ring.lookAt(g.localToWorld(surf.clone().add(dir))); }
+      eyes.push({ side, yaw, pitch, F, upWrap, up, lo });
+    }
+    return { g, eyes };
+  }
+  _pose(rig, s, b) {
+    const eyeFrame = this.state.frame === 'eye';
+    for (const e of rig.eyes) {
+      e.F.rotation.set(eyeFrame ? -e.pitch : 0, eyeFrame ? e.yaw : 0, 0);
+      const U = s.U + (-3 - s.U) * b, L = s.L + (-3 - s.L) * b;
+      e.up.rotation.x = -U * RAD; e.lo.rotation.x = L * RAD; e.upWrap.rotation.z = e.side * s.s * (1 - b) * RAD;
+    }
+  }
+  _draw(t) {
+    const T = this.T, R = this.R, hr = this._host.getBoundingClientRect(); if (!hr.width) return;
+    let b = 0; if (this.state.blink) { const ph = t % 3.4; b = ph < 0.08 ? ph / 0.08 : ph < 0.2 ? 1 - (ph - 0.08) / 0.12 : 0; b = b * b * (3 - 2 * b); }
+    R.setScissorTest(false); R.setViewport(0, 0, hr.width, hr.height); R.setClearColor('#e9e6df'); R.clear(); R.setScissorTest(true);
+    const q = this.state.view === 'three' ? 35 * RAD : 0, dist = 3.4;
+    for (const el of this._cells) {
+      const r = el.getBoundingClientRect(), w = r.width - 1, h = r.height - 1; if (w < 4 || h < 4) continue;
+      const [row, col] = el.getAttribute('data-cell').split(',').map(Number), rig = this.rigs[col];
+      this.rigs.forEach((rr, i) => { rr.g.visible = i === col; });
+      this._pose(rig, STATES[row], row === 2 ? 0 : b);
+      const x = r.left - hr.left + 1, y = hr.height - (r.top - hr.top) - r.height;
+      R.setViewport(x, y, w, h); R.setScissor(x, y, w, h);
+      const asp = w / h, needH = Math.max(0.95, 1.9 / asp), tg = new T.Vector3(rig.g.position.x + Math.sin(q) * 0.25, 0.24, 0.6 * Math.cos(q));
+      this.cam.aspect = asp; this.cam.fov = 2 * Math.atan(needH / 2 / dist) / RAD; this.cam.position.set(tg.x + dist * Math.sin(q), tg.y + 0.08, tg.z + dist * Math.cos(q)); this.cam.lookAt(tg); this.cam.updateProjectionMatrix();
+      R.render(this.S, this.cam);
+    }
+  }
+  renderVals() {
+    const s = this.state, on = (v) => (v ? '#1f2022' : '#f4f2ed'), fg = (v) => (v ? '#efece6' : '#1f2022');
+    return {
+      setFront: () => this.setState({ view: 'front' }), setThree: () => this.setState({ view: 'three' }),
+      setHead: () => this.setState({ frame: 'head' }), setEye: () => this.setState({ frame: 'eye' }), toggleBlink: () => this.setState({ blink: !s.blink }),
+      frontBg: on(s.view === 'front'), frontFg: fg(s.view === 'front'), threeBg: on(s.view === 'three'), threeFg: fg(s.view === 'three'),
+      headBg: on(s.frame === 'head'), headFg: fg(s.frame === 'head'), eyeBg: on(s.frame === 'eye'), eyeFg: fg(s.frame === 'eye'),
+      blinkBg: on(s.blink), blinkFg: fg(s.blink), blinkLabel: s.blink ? 'an' : 'aus',
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 spät · ToolBox-Port an WSA work
+- V-244: ToolBox-Schnitt P08 in replies/TOOLBOX_SOURCE_CUT_2026-10-14_r1/ (47/47 OK); WSA work portiert 1:1 als Site, behebt die Mängelliste dort, speichert Riggings als Datei auf GitHub und plant die Verbindung mit dem FrankenStein-Composer. Hub-Briefing b13.
+
 ## 2026-10-14 spät · FrizzleBob Mund zu (V-243)
 - G0: ToolBox speichert „Zu“ nicht (nur Vorschau); Export identisch mit V-240. WS1 freigegeben: Ruhe-Mund geschlossen (vorhandenes Decal), Zustände belegen, Augenlage gegen ToolBox, Ganzkörper-Beleg in Bindepose. ToolBox-Fixliste (TB-CUT) ergänzt: Ruhe-Mund speichern/exportieren.
 
