@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Mund-Bogen-Vorgabe, Meshy-Recherche
+- V-255: replies/MOUTH_SHEET_SPEC_R1.md (4×4, Viseme zuerst, Prompt, Ablauf); dritter GPT-Bogen „Claymation-Mund-Sprite-Sammlung“ (Wurst-Linien-Lippen) gesichtet.
+- replies/MESHY_COMMUNITY_RESEARCH_R1.md: Meshy/Mixamo-Erfahrungen (nicht doppelt riggen, Anhängsel vor Mixamo entfernen, Remesh 10–30 k vor Rig, starre Teile an einen Knochen).
+
 ## 2026-10-15 · ChatGPT-Münder aufbereitet
 - replies/MOUTHS_GPT_R1/: Georgs zwei GPT-Bögen geschnitten, gesäubert, verankert (upperLift), Sprech-/Reaktions-Clips, Höhen-Check auf FrizzleBob. A = Sprech-Set, B = Reaktions-Set; fehlend F/V, L/TH (B auch Oo); Sprünge zwischen small_open→ah und bei oo. Hub v7 spielt Videos in Bildfolgen (mg01, mg02).
 

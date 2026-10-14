@@ -3292,6 +3292,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-255",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Mund-Bögen nach fester Vorgabe (replies/MOUTH_SHEET_SPEC_R1.md): 4×4-Raster mit Sprech-Visemen zuerst (rest, mbp, small/mid open, ah, ee, oh, oo, fv, l_th, smile closed/open) und wenigen Reaktionen (sad, surprised, grumpy, signature), keine Spaßformen (Zunge raus, Lippenbiss); gemeinsame Oberlippen-Höhe, gleiche Breite, höchstens 1,7× Höhe, grüner Hintergrund; Varianten über Lippe/Zähne/Farbe. Automatische Aufbereitung mit cut_align.py. Später als ChatGPT-Plugin bzw. GPT mit dieser Vorgabe.",
+   "values": {},
+   "owner": "Georg (Generierung) · WS0 (Aufbereitung)",
+   "check": "Bildfolge + Sprech-Clip im Hub",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die ersten drei GPT-Bögen hatten zu viele Spaßformen und fehlende Viseme, unterschiedliche Höhen.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3354,7 +3369,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:287",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:297",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
