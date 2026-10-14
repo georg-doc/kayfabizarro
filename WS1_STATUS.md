@@ -1,7 +1,21 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§14 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§15 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 15 · 14.10. abends · Quittung Stopp FrizzleBob (bis V-239) · F1-Lid-Naht umgesetzt · Hinweis B1-Ecken
+
+**Quittung:** `WS0_TO_WS1.md` bis V-239 gelesen.
+- **FrizzleBob-Ausbau gestoppt.** WS1 setzt keine eigenen Gesichtswerte, übernimmt nichts aus J17 und testet keine Mundbewegung an FrizzleBob.
+- Der Slot-Code (Vertrag R2, `createActor`, Tests) bleibt, ebenso das Rezept-Format für den späteren richtigen Eintrag.
+- Georg hat WS1 dasselbe direkt gesagt: Gesicht „total off“, er rekonstruiert das Rigging.
+
+**F1-Lid-Naht (freigegeben):**
+- `src/vendor/eyes/eyeoval.v1.js`, eine Stelle in `seatPupils`. Blob **90c5e44b → 55b9dbb9**. Diff: `ws1/asset-intake/eyeoval-seam.r1.diff` (zurück an die Rigging-Quelle).
+- `test/f1.mjs` prüft jetzt `pupilHiddenWhenClosed` als PASS: Pupillen-Pixel bei Lid zu **920 → 0**. Gezählt wird nur neutrales Schwarz, Brauen und Schatten nicht.
+- Studio-Bild unverändert 2,4/255. Alle 11 Tests grün, keine OFFEN-Zeile mehr.
+
+**Hinweis B1:** Die freigegebene Vorlagen-Zeile sagt „Innenecken ≤ 0,8 × Papierrand, sonst eckig“. Georg hat danach direkt entschieden: **innen immer rund, Karte mit Maske darunter**, Farben aus der Biom-Palette (§14.1). Umgesetzt ist Georgs Fassung. Bitte als V-Nummer eintragen bzw. widersprechen.
 
 ## 14 · 14.10. abends · B1 Billboard (R2) fertig (G2) · Georgs Entscheidungen zu Farbe und Ecken · Vorlagen-Zeile
 

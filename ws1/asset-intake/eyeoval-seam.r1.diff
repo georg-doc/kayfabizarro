@@ -1,0 +1,20 @@
+diff --git a/src/vendor/eyes/eyeoval.v1.js b/src/vendor/eyes/eyeoval.v1.js
+index 90c5e44..55b9dbb 100644
+--- a/src/vendor/eyes/eyeoval.v1.js
++++ b/src/vendor/eyes/eyeoval.v1.js
+@@ -65,12 +65,14 @@ export function pupilSeatDelta({ R, w=1, h=1, d=1, rx=0, ry=0, cap=0.35, clearan
+ export function seatPupils(rig,p) {
+   if(!rig||!Array.isArray(rig.eyes)||!rig.eyes.length)return {status:'KEIN_RIG'};
+   const q={...DEFAULTS,...(p||{})},R=num(rig._R,0),cap=num(rig._puAng,.35),rows=[];
++  const shut=rig._blinkK>=0?Math.sin(Math.min(rig._blinkK,1)*Math.PI):0; // Lidschluss 0…1 wie pet-eye-rig.v6 update() (WS1 F1-Naht, WS0-Freigabe 14.10.)
+   for(const e of rig.eyes){
+     if(!e?._pivot?.position)continue;
+     if(e._pivot.scale)e._pivot.scale.set(1,1,1);
+     const rx=num(e._pivot.rotation?.x,0),ry=num(e._pivot.rotation?.y,0);
+     const seat=pupilSeatDelta({R,w:q.w,h:q.h,d:q.d,rx,ry,cap});
+-    e._pivot.position.set(seat.dir[0]*seat.delta,seat.dir[1]*seat.delta,seat.dir[2]*seat.delta);
++    const dl=seat.delta*(1-shut); // beim Zumachen zurück unter die Lidschale
++    e._pivot.position.set(seat.dir[0]*dl,seat.dir[1]*dl,seat.dir[2]*dl);
+     rows.push({sx:e._sx,delta:seat.delta,dir:seat.dir,planeNormal:seat.planeNormal,cap:seat.cap});
+   }
+   return {status:'OK',rows,pupilScaleIndependent:true};

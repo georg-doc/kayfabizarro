@@ -8,7 +8,7 @@ import { openPage, report } from './_page.mjs'
 const blob = (f) => { const b = fs.readFileSync(f); return crypto.createHash('sha1').update(Buffer.concat([Buffer.from(`blob ${b.length}\0`), b])).digest('hex') }
 const VENDOR = {
   'pet-eye-rig.v6.js': '853bcf5fb090dd6564fda8bc83d0b4cb527e6b26', 'facehost.v1.js': '38ec7770f5fccf3aca93ee234f94b801d527d415',
-  'eyeoval.v1.js': '90c5e44b17bbb59b1cc26dc5dc943f1091cd5b3b', 'donoreyes.v1.js': 'b0b46bdca058e0feb3dbe18b7067b3d30e625395',
+  'eyeoval.v1.js': '55b9dbb9bb74b662c96d61c3261643e9fd181c55', // Spender 90c5e44b + freigegebene Lid-Naht (WS0 14.10., Diff in WS1_STATUS §15) 'donoreyes.v1.js': 'b0b46bdca058e0feb3dbe18b7067b3d30e625395',
   'pet-library.v6.js': '45d0679127740adaa83f57027e2de41e0e778c4b', 'kaykit-eye-adapter.v1.js': 'f09b39bbd1e56597907fcb17e38fb15262da9036',
   'medium-source-eye-cleanup.v1.js': 'c66a08e9f36b2ea7946ebe8b4289e25eb7a1f607', 'source-face-cleanup.v1.js': '7c0404b7dfaa3f6db44366a90dd1226848d49e15',
   'face-color-sampler.v1.js': '7155595290f8d46bfec789cc50ce0ed2e0e7be5b',
@@ -63,7 +63,8 @@ const cmp = await page.evaluate(async ([a, b, o, s]) => {
   const white = (A) => { let n = 0; for (let i = 0; i < A.length; i += 4) { const r = A[i], g = A[i + 1], b = A[i + 2]; if (Math.min(r, g, b) > 215 && Math.max(r, g, b) - Math.min(r, g, b) < 22) n++ } return n }
   const [R, S, O, Z] = await Promise.all([load(a), load(b), load(o), load(s)])
   // Pupille (matte-cute, fast schwarz): sehr dunkel. Bei geschlossenem Lid darf davon nichts sichtbar bleiben (WS0-Abgleich 14.10., P0).
-  const dark = (A) => { let n = 0; for (let i = 0; i < A.length; i += 4) if (Math.max(A[i], A[i + 1], A[i + 2]) < 45) n++; return n }
+  // Pupille = neutrales Schwarz; Brauen/Lidschatten sind dunkel, aber farbig und zählen nicht
+  const dark = (A) => { let n = 0; for (let i = 0; i < A.length; i += 4) { const mx = Math.max(A[i], A[i + 1], A[i + 2]), mn = Math.min(A[i], A[i + 1], A[i + 2]); if (mx < 45 && mx - mn < 10) n++ } return n }
   const PO = px(O, 0, 0, O.width, O.height), PZ = px(Z, 0, 0, Z.width, Z.height)
   return { faceVsStudio: diff(px(R, 250, 90, 400, 260), px(S, 250, 90, 400, 260)), whiteOpen: white(PO), whiteShut: white(PZ), pupilOpen: dark(PO), pupilShut: dark(PZ) }
 }, ['data:image/png;base64,' + full.toString('base64'), 'data:image/png;base64,' + fs.readFileSync('test/ref/f1_studio_front.png').toString('base64'), 'data:image/png;base64,' + open1.toString('base64'), 'data:image/png;base64,' + shut.toString('base64')])
@@ -90,11 +91,8 @@ const code = report('f1 eyes', {
   gazeParallel: dxL < -0.003 && dxR < -0.003 && Math.abs(dxL - dxR) < Math.max(Math.abs(dxL), Math.abs(dxR)) * 0.5,
   lidsCoverSclera: cmp.whiteOpen > 800 && cmp.whiteShut < cmp.whiteOpen * 0.25, // Augenweiß verschwindet zu mehr als 75 % (sagt nichts über die Pupille)
   imageMatchesStudio: cmp.faceVsStudio < 6,
+  pupilHiddenWhenClosed: cmp.pupilOpen > 300 && cmp.pupilShut <= cmp.pupilOpen * 0.05, // nach freigegebener Lid-Naht (eyeoval seatPupils)
   noPageErrors: errs.length === 0,
-}, { // Offene Naht, kein PASS: Pupille bei geschlossenem Lid. Spenderverhalten (eyeoval.v1 pupilSeatDelta, im Studio gleich),
-  // gehört dem Rigging-Owner; hier nur gemessen und als TUNE ausgewiesen, nicht lokal verbogen.
-  seams: { pupilHiddenWhenClosed: { status: cmp.pupilShut <= cmp.pupilOpen * 0.05 ? 'PASS' : 'TUNE · Rigging-Owner (eyeoval.v1)', pupilOpen: cmp.pupilOpen, pupilShut: cmp.pupilShut } },
+}, {
   contract: { before, after, later }, kinetics: c.kinetics, life: c.life, st: { status: st.status, cleanup: st.cleanup }, eyeFrame: e, dx: [dxL, dxR], cmp, vendorBad, errs })
-const pz = cmp.pupilShut <= cmp.pupilOpen * 0.05
-console.log(pz ? 'PASS f1 Naht Pupille bei Lid zu' : `OFFEN f1 Naht Pupille bei Lid zu: ${cmp.pupilShut} von ${cmp.pupilOpen} dunklen Pupillen-Pixeln bleiben sichtbar (TUNE, Rigging-Owner)`)
 process.exit(code)
