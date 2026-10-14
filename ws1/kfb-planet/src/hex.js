@@ -1,5 +1,6 @@
 // Hex-Welt: prozedurale Insel aus Hex-Säulen + Deck-Turm (Karten als Plattformen, Hex-Säulen als Plattformer-Übergänge)
 import * as THREE from 'three'
+import { isMappingSafe } from './cardMapping'
 import { createNoise2D } from 'simplex-noise'
 import { rng } from './world'
 import { DECKS, cardsOfDeck, cardAt } from './cards'
@@ -101,7 +102,7 @@ export function buildGround() {
 // Eine Seite = 4 Karten = eine Etage. Zwischen den Karten Hex-Säulen als Plattformer-Übergänge.
 const PAGES = 3, PER_PAGE = 4
 function pickDeck(r) {
-  const ok = DECKS.map((d, i) => i).filter((i) => !DECKS[i].med && cardsOfDeck(i).length >= PAGES * PER_PAGE + 1)
+  const ok = DECKS.map((d, i) => i).filter((i) => !DECKS[i].med && isMappingSafe(DECKS[i].id) && cardsOfDeck(i).length >= PAGES * PER_PAGE + 1)
   return ok[Math.floor(r() * ok.length)]
 }
 export function buildTower(seed = Date.now() % 100000) {

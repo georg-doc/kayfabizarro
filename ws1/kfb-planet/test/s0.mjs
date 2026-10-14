@@ -20,8 +20,19 @@ const c = await page.evaluate(() => ({ dialog: !!window.__kfbStore.getState().di
 await page.keyboard.press('Escape')
 await page.waitForFunction(() => window.__kfb.ctrl === true, null, { timeout: 30000 }).catch(() => {})
 const d = await page.evaluate(() => ({ dialog: !!window.__kfbStore.getState().dialog, ctrl: window.__kfb.ctrl }))
+// Gegenprobe Bewegung: W 4 s halten, einmal ohne, einmal mit offenem Dialog (unabhängig von __kfb.ctrl)
+const walk = async () => { const p0 = await page.evaluate(() => window.__kfb.pos); await page.keyboard.down('KeyW'); await page.waitForTimeout(4000); await page.keyboard.up('KeyW'); await page.waitForTimeout(500); const p1 = await page.evaluate(() => window.__kfb.pos); return Math.hypot(p1[0] - p0[0], p1[2] - p0[2]) }
+await page.waitForTimeout(3000) // Figur gelandet
+// nach dem Loslassen gleitet die Figur noch einige Meter aus: warten, bis sie steht (< 2 cm/s)
+const settle = async () => { for (let i = 0; i < 20; i++) { const a = await page.evaluate(() => window.__kfb.pos); await page.waitForTimeout(1000); const b = await page.evaluate(() => window.__kfb.pos); if (Math.hypot(b[0] - a[0], b[2] - a[2]) < 0.02) return true } return false }
+const moveFree = await walk()
+await page.evaluate(() => window.__kfbStore.getState().openDialog({ kind: 'stage', id: 2 }))
+const settled = await settle()
+const moveDialog = await walk()
 await browser.close()
 process.exit(report('s0 host frame', {
+  walksWithoutDialog: moveFree > 0.3,
+  standsWithDialog: settled && moveDialog < 0.05,
   slotBubbles: a.bubbles === 1, slotChoice: a.choice === 1, oneCanvas: a.canvases === 1,
   routerInstalled: a.keys.installed && a.keys.handlers >= 3,
   ctrlOffAtStartDialog: a.dialog && a.ctrl === false,
@@ -29,4 +40,4 @@ process.exit(report('s0 host frame', {
   ctrlOffWhenDialogOpens: c.dialog && c.ctrl === false,
   escapeClosesViaRouter: !d.dialog && d.ctrl === true,
   noPageErrors: errs.length === 0,
-}, { a, b, c, d, errs }))
+}, { a, b, c, d, moveFree, moveDialog, errs }))

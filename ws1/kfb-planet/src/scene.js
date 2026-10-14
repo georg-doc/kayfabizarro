@@ -7,7 +7,9 @@ export const SCENE = typeof location !== 'undefined' && location.hash.includes('
 export const G = 14
 const INFLUENCE = 28
 const FOOT = 1.0
-export const TOWER = SCENE === 'hex' ? buildTower() : null
+// Debug-Schalter #seed=N: fester Turm für deterministische Tests (Vertrag §6); sonst zufällig
+const SEED = typeof location !== 'undefined' && /seed=(\d+)/.exec(location.hash)
+export const TOWER = SCENE === 'hex' ? (SEED ? buildTower(Number(SEED[1])) : buildTower()) : null
 
 const planets = {
   gravity(pos, out) {

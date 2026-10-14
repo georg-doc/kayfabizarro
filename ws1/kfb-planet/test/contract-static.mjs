@@ -21,6 +21,8 @@ const keyListeners = files.filter((p) => /addEventListener\(\s*['"]key(down|up)[
 const globals = new Set()
 for (const p of files) for (const m of read(p).matchAll(/window\.(__\w+)/g)) globals.add(m[1])
 const nonKfb = [...globals].filter((g) => !g.startsWith('__kfb'))
+// Ausnahme (kein Debug-Zugang, sondern Vertrag der Vorlage card-art-2d): window.OW_SRC (setzt die Hülle) und window.OW_ART (setzt die Vorlage)
+const owUsers = files.filter((p) => /window\.OW_(SRC|ART)\s*=/.test(read(p)))
 const app = read('src/App.jsx')
 process.exit(report('contract-static', {
   modulesFound: modules.length >= 1,
@@ -28,8 +30,10 @@ process.exit(report('contract-static', {
   modulesNoStore: bad.store.length === 0,
   modulesNoGlobalState: bad.globalState.length === 0,
   modulesNoWindowListener: bad.windowListener.length === 0,
+  // ein eigener keydown-Listener (Router); zur Laufzeit kommt drei-KeyboardControls für die Bewegung dazu (Vertrag Falle 3)
   oneKeyListener: keyListeners.length === 1 && keyListeners[0].endsWith('hostKeys.js'),
+  owGlobalsOnlyInCardImage: owUsers.length === 1 && owUsers[0].endsWith('cardImage.js'),
   debugOnlyKfbGlobals: nonKfb.length === 0,
   fixedTimeStep: /timeStep=\{1 \/ 60\}/.test(app) && !/vary/.test(app),
   oneCanvas: (app.match(/<Canvas/g) || []).length === 1,
-}, { modules, bad, keyListeners, nonKfb }))
+}, { modules, bad, keyListeners, nonKfb, owUsers }))

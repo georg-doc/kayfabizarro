@@ -1,10 +1,11 @@
 // S1 · Kartenbild im DOM (Dialog, Sammlung): dieselbe Quelle cardImage(deckId, n), fit, ohne Tusche.
-import { useEffect, useRef, useState } from 'react'
-import { cardImage, fitCanvas, CARD_AR } from './cardImage'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
+import { cardImage, fitCanvas, CARD_AR, getRetryEpoch, subscribeRetry } from './cardImage'
 
 export default function CardArt({ card, width = 320 }) {
   const ref = useRef(null)
   const [ok, setOk] = useState(false)
+  const epoch = useSyncExternalStore(subscribeRetry, getRetryEpoch)
   useEffect(() => {
     let alive = true
     setOk(false)
@@ -17,6 +18,6 @@ export default function CardArt({ card, width = 320 }) {
       setOk(true)
     })
     return () => { alive = false }
-  }, [card, width])
+  }, [card, width, epoch])
   return <canvas ref={ref} className={'card-art' + (ok ? ' ok' : '')} data-card={card.deck.id + '#' + card.num} style={{ width, aspectRatio: String(CARD_AR) }} />
 }

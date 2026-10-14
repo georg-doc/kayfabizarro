@@ -9,33 +9,6 @@ import { useCardTexture } from './useCardTexture'
 import { CARD_AR } from './cardImage'
 import { cardTextureLandscape } from './HexWorld'
 
-function wrap(ctx, text, x, y, maxW, lh, maxLines) {
-  const words = text.split(/\s+/); let line = ''; let n = 0
-  for (const w of words) {
-    const t = line ? line + ' ' + w : w
-    if (ctx.measureText(t).width > maxW && line) { ctx.fillText(line, x, y); y += lh; line = w; if (++n >= maxLines - 1) break } else line = t
-  }
-  if (line) ctx.fillText(n >= maxLines - 1 && words.length ? line + '…' : line, x, y)
-}
-
-export function cardTexture(card) {
-  const c = document.createElement('canvas'); c.width = 256; c.height = 360
-  const g = c.getContext('2d')
-  g.fillStyle = '#fbf3e2'; g.fillRect(0, 0, 256, 360)
-  g.fillStyle = deckColor(card.deck.id); g.fillRect(10, 10, 236, 340)
-  g.fillStyle = '#fbf3e2'; g.fillRect(20, 92, 216, 248)
-  g.fillStyle = '#2a2040'; g.textAlign = 'center'
-  g.font = 'bold 22px Nunito, system-ui, sans-serif'; wrap(g, card.name.toUpperCase(), 128, 42, 220, 24, 2)
-  g.font = '15px Nunito, system-ui, sans-serif'; g.textAlign = 'left'
-  wrap(g, card.power, 30, 118, 196, 18, 6)
-  g.font = 'italic 14px Nunito, system-ui, sans-serif'; g.fillStyle = '#5b4d74'
-  wrap(g, card.lore, 30, 238, 196, 17, 5)
-  g.font = '11px Nunito, system-ui, sans-serif'; g.fillStyle = '#2a2040'; g.textAlign = 'center'
-  wrap(g, card.deck.title, 128, 352, 230, 12, 1)
-  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4
-  return t
-}
-
 function Being({ card, transform, i }) {
   const ref = useRef()
   const tex = useCardTexture(card, { placeholder: cardTextureLandscape })
