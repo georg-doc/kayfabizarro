@@ -21,16 +21,18 @@
       "cardName": "Uncle FrizzleBob's Kayfabizarro Komik Kult Kards",
       "grade": 1,
       "power": "Smashes through the fourth wall to deliver epistemic sabotage directly to the prefrontal cortex.",
-      "lore": "The truth isn't hidden in textbooks—it's scribbled in the margins by the people they kicked out of the room.",
+      "lore": "The truth isn't found in textbooks; it's scribbled in the margins by the people they locked out of the room.",
       "gradeReason": "FrizzleBob in full costume — the fourth wall is already rubble before you read the lore.",
       "artworkPrompt": "Style: ink comics. Subject: cartoon rabbit bursting through brick wall, textbooks flying. Mood: gleeful chaos.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Uncle FrizzleBob's Kayfabizarro Komik Kult Kards",
         "power": "Smashes through the fourth wall to deliver epistemic sabotage directly to the prefrontal cortex.",
-        "lore": "The truth isn't found in textbooks; it's scribbled in the margins by the people they locked out of the room.",
+        "lore": "The truth isn't hidden in textbooks—it's scribbled in the margins by the people they kicked out of the room."
+      },
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p1 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -40,7 +42,12 @@
       "power": "Dictates the mechanics: Cut on the dotted lines, build your deck, and trust no authority.",
       "lore": "A game is just a reality you willingly consent to—choose yours carefully.",
       "gradeReason": "Explains how to play. Sharp lore but the power is pure instruction, zero performance invitation.",
-      "artworkPrompt": "Style: instructional diagram, hand-drawn. Subject: giant scissors cutting dotted lines around rule text. Mood: subversive bureaucracy."
+      "artworkPrompt": "Style: instructional diagram, hand-drawn. Subject: giant scissors cutting dotted lines around rule text. Mood: subversive bureaucracy.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p1 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 3,
@@ -49,23 +56,30 @@
       "power": "Forces the player to observe the margins where the real story is hiding.",
       "lore": "If you're only looking at the center, you're missing the punchline.",
       "gradeReason": "Directs attention rather than inviting embodiment — cerebral but not yet fully performative.",
-      "artworkPrompt": "Style: dense Wimmelwelt illustration. Subject: packed crowd scene, tiny subversive figures in margins. Mood: hidden truths everywhere."
+      "artworkPrompt": "Style: dense Wimmelwelt illustration. Subject: packed crowd scene, tiny subversive figures in margins. Mood: hidden truths everywhere.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p1 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 4,
       "cardName": "Hilfe, ich bin ein Mensch!",
       "grade": 1,
-      "power": "Initiates the Human Nature expansion pack, activating all psychology and anthropology discounts.",
+      "power": "Initiates the Human Nature expansion pack, activating all psychology and anthropology artifacts.",
       "lore": "The ultimate cosmic joke: Being biologically wired for love in a society built for spreadsheets.",
       "gradeReason": "Lands instantly — every player at the table has lived this joke and will not recover.",
       "artworkPrompt": "Style: expressive ink. Subject: bewildered human in business suit surrounded by neurons and spreadsheets. Mood: existential comedy.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Hilfe, ich bin ein Mensch!",
-        "power": "Initiates the Human Nature expansion pack, activating all psychology and anthropology artifacts.",
-        "lore": "The ultimate cosmic joke: Being biologically wired for love in a society What the built for spreadsheets.",
+        "power": "Initiates the Human Nature expansion pack, activating all psychology and anthropology discounts.",
+        "lore": "The ultimate cosmic joke: Being biologically wired for love in a society built for spreadsheets."
+      },
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p1 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -76,14 +90,10 @@
       "lore": "Darwin knew cooperation wasn't evolution's enemy, but its main engine—sympathetic communities flourish best.",
       "gradeReason": "Clear mechanic, solid reframe of Darwin mythology — needs the share-an-example beat to land.",
       "artworkPrompt": "Style: Victorian naturalist engraving. Subject: Darwin surrounded by cooperating animals, sharing food. Mood: warm revisionism.",
-      "print": {
-        "cardName": "Charles Darwin – Der kooperative Vorfahre",
-        "power": "When played, all players share one example of cooperation, adding [A+1] to the Stage.",
-        "lore": "",
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p2 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -94,14 +104,10 @@
       "lore": "Life conquered the globe not by combat, but through microscopic networking and cellular fusion.",
       "gradeReason": "Mechanic is elegant but the card name reads academic — merger action does the embodiment work.",
       "artworkPrompt": "Style: scientific illustration, dramatic. Subject: octopus-like scientist merging cellular structures under microscope. Mood: cooperative conquest.",
-      "print": {
-        "cardName": "Lynn Margulis – Die Endosymbiontin",
-        "power": "Merges two cards on the Stage into a single, dominant entity with combined effects.",
-        "lore": "of the Friendliest d deeply interconnected networking events.",
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p2 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -111,7 +117,12 @@
       "power": "Allows you to copy the dice value of a player who helped you; reciprocity becomes your shield.",
       "lore": "Even among pure egoists, the mathematical certainty is that Tit for Tat cooperation wins the long game.",
       "gradeReason": "Tit for Tat scrawled right on the art — player becomes the strategy before reading the rules.",
-      "artworkPrompt": "Style: hand-scrawled diagram. Subject: fox with mirrored handwritten Tit-for-Tat notes, dice reflected. Mood: calculated cooperation."
+      "artworkPrompt": "Style: hand-scrawled diagram. Subject: fox with mirrored handwritten Tit-for-Tat notes, dice reflected. Mood: calculated cooperation.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p2 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 8,
@@ -120,24 +131,31 @@
       "power": "Synthesizes the board: cancels all active competitive multipliers and resets the baseline to cooperative.",
       "lore": "The Alpha Male myth is a statistical rounding error in an otherwise cooperative biosphere.",
       "gradeReason": "Lore is a precision strike — mechanic is functional and clear but board-reset is abstract.",
-      "artworkPrompt": "Style: scientific diagram, arrows. Subject: graph showing combat-to-cooperation shift, micro vs macro scale. Mood: paradigm shift."
+      "artworkPrompt": "Style: scientific diagram, arrows. Subject: graph showing combat-to-cooperation shift, micro vs macro scale. Mood: paradigm shift.",
+      "printTypo": "Satzende vom GW-Logo verdeckt ('biosphe…')",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p2 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 9,
       "cardName": "Joachim Bauer – Der Spiegelneuron-Entdecker",
       "grade": 2,
       "power": "Mirrors another player's emotion, granting both [A+1]; failing to mirror costs [A-1].",
-      "lore": "Mirror neurons mean we are biologically designed for social resonance; we literally feel what others feel.",
+      "lore": "Mirror neurons ensure we are biologically designed for social resonance; we literally feel what others feel.",
       "gradeReason": "Mirroring mechanic is genuinely performative — held back only by the academic German subtitle density.",
       "artworkPrompt": "Style: surrealist ink. Subject: two elephants facing each other, neural pathways visible between them. Mood: involuntary empathy.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Joachim Bauer – Der Spiegelneuron-Entdecker",
         "power": "Mirrors another player's emotion, granting both [A+1]; failing to mirror costs [A-1].",
-        "lore": "",
+        "lore": "Mirror neurons mean we are biologically designed for social resonance; we literally feel what others feel."
+      },
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p3 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -148,14 +166,10 @@
       "lore": "Social pain is real pain—rejection activates the exact same brain regions as physical injury.",
       "gradeReason": "Broken-leg / broken-heart diagram clinches it — the lore makes the table go quiet.",
       "artworkPrompt": "Style: medical diagram, emotional. Subject: brain scan showing rejection pain = physical pain, two EKG lines. Mood: scientific tenderness.",
-      "print": {
-        "cardName": "Matthew Lieberman – Der Soziale-Schmerz-Forscher",
-        "power": "Punishes isolation with [F-2], but rewards reconnection immediately with [A+2].",
-        "lore": "in of the Pack d actually causes biological trauma.",
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p3 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -165,7 +179,12 @@
       "power": "Marks a player as isolated, aggressively increasing their Fragility [F+2] every turn until they reconnect.",
       "lore": "Chronic loneliness destroys the immune system and acts as a biological hunger signal for connection.",
       "gradeReason": "Mechanically the loneliest card in the deck — lore is solid, mechanic does the work.",
-      "artworkPrompt": "Style: melancholy ink. Subject: lone penguin in urban setting, biological fragility meter rising. Mood: tender alarm."
+      "artworkPrompt": "Style: melancholy ink. Subject: lone penguin in urban setting, biological fragility meter rising. Mood: tender alarm.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p3 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 12,
@@ -174,7 +193,13 @@
       "power": "Reveals hidden emotional states, allowing players to bypass logical defenses for one round.",
       "lore": "We are not thinking machines that feel; we are feeling machines that occasionally think.",
       "gradeReason": "One of the deck's sharpest lines — the inversion lands as a total worldview flip.",
-      "artworkPrompt": "Style: circuit diagram meets anatomy. Subject: brain wired as rejection sensor feeding pain gland, bypassing logic. Mood: radical empathy."
+      "artworkPrompt": "Style: circuit diagram meets anatomy. Subject: brain wired as rejection sensor feeding pain gland, bypassing logic. Mood: radical empathy.",
+      "printTypo": "Letztes Wort vom GW-Logo verdeckt ('occasionally t…')",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p3 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 13,
@@ -183,7 +208,12 @@
       "power": "Morality functions automatically this round; trust replaces all dice rolls and calculation.",
       "lore": "Morality isn't trained into us by society—toddlers help instinctively before they can even speak.",
       "gradeReason": "Toddler-morality insight is Grade 1 material; the mechanic-as-rule-suspension reads too abstract.",
-      "artworkPrompt": "Style: naturalist sketch. Subject: tiny child and chimp sharing food, reaching past bars. Mood: pre-verbal goodness."
+      "artworkPrompt": "Style: naturalist sketch. Subject: tiny child and chimp sharing food, reaching past bars. Mood: pre-verbal goodness.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p4 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 14,
@@ -192,7 +222,12 @@
       "power": "Sacrifice [A-1] to violently reduce an offender's Rivalry by [R-2]; justice demands a price.",
       "lore": "We would rather burn our own resources than let an unfair actor walk away unpunished.",
       "gradeReason": "Every player has done this in a boardgame — recognition is instant and slightly uncomfortable.",
-      "artworkPrompt": "Style: dramatic engraving. Subject: gorilla burning gold coins while staring down an opponent. Mood: righteous spite."
+      "artworkPrompt": "Style: dramatic engraving. Subject: gorilla burning gold coins while staring down an opponent. Mood: righteous spite.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p4 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 15,
@@ -201,7 +236,12 @@
       "power": "Triggers post-conflict reconciliation, restoring [A+2] to both parties and erasing conflict memory.",
       "lore": "Empathy, consolation, and justice aren't human inventions; they are ancient evolutionary inheritances.",
       "gradeReason": "Reconciliation is clear and warm — lore is correct but lands slightly soft as performance invitation.",
-      "artworkPrompt": "Style: naturalist compassion. Subject: two chimps in post-fight hug, researcher observing quietly. Mood: ancient warmth."
+      "artworkPrompt": "Style: naturalist compassion. Subject: two chimps in post-fight hug, researcher observing quietly. Mood: ancient warmth.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p4 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 16,
@@ -210,24 +250,30 @@
       "power": "Rebalances the Stage by redistributing hoarded resources equally among all active players.",
       "lore": "True justice is a biological reflex, part nurturing hug, part spiteful rejection of the greedy.",
       "gradeReason": "Scales diagram is clean, lore has the right voltage — the redistribution mechanic is functional.",
-      "artworkPrompt": "Style: balance diagram. Subject: scales weighing instinctive help vs calculated punishment. Mood: evolutionary justice."
+      "artworkPrompt": "Style: balance diagram. Subject: scales weighing instinctive help vs calculated punishment. Mood: evolutionary justice.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p4 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 17,
       "cardName": "Adam Smith – Der missverstandene Ökonom",
       "grade": 1,
       "power": "Grants [A+2] if you consider others' welfare before your own; penalizes ignorance with [F-1].",
-      "lore": "The prophet of capitalism actually believed human nature was deeply rooted in empathy; a fact history conveniently forgot.",
+      "lore": "The prophet of capitalism actually believed human nature was deeply rooted in empathy, a fact history conveniently forgot.",
       "gradeReason": "The misread-prophet twist is a political time bomb — 'history conveniently forgot' lands like a dropped wrench.",
       "artworkPrompt": "Style: vintage book cover parody. Subject: deer in spectacles holding Wealth of Nations, Theory of Moral Sentiments visible. Mood: ironic vindication.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Adam Smith – Der missverstandene Ökonom",
         "power": "Grants [A+2] if you consider others' welfare before your own; penalizes ignorance with [F-1].",
-        "lore": "The Homo Oeconomic Dissecting the most dangerous fictional",
+        "lore": "The prophet of capitalism actually believed human nature was deeply rooted in empathy; a fact history conveniently forgot."
+      },
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p5 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -238,14 +284,10 @@
       "lore": "By reducing all human behavior to a cost-benefit analysis, he built a perfect model of a sociopath.",
       "gradeReason": "'A perfect model of a sociopath' — this is what a knockout line sounds like.",
       "artworkPrompt": "Style: corporate gothic. Subject: hamster economist with calculator replacing heart, cost-benefit charts everywhere. Mood: clinical horror.",
-      "print": {
-        "cardName": "Gary Becker – Der Homo Oeconomicus Architekt",
-        "power": "Turns all actions into transactions; buys cooperation with [R+2], but permanently halves all trust effects.",
-        "lore": "",
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p5 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -255,7 +297,12 @@
       "power": "Challenges any selfish nature assumption; if debunked, all players gain [A+1] and [F-1].",
       "lore": "Most cynical proofs of human evil are fabricated myths—deep down, humanity is aggressively decent.",
       "gradeReason": "'Aggressively decent' is a gem — the mechanic 'challenges' is too passive to fully earn Grade 1.",
-      "artworkPrompt": "Style: rebellious nonfiction. Subject: journalist dismantling Lord of the Flies myth with evidence files. Mood: optimistic insurgency."
+      "artworkPrompt": "Style: rebellious nonfiction. Subject: journalist dismantling Lord of the Flies myth with evidence files. Mood: optimistic insurgency.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p5 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 20,
@@ -264,7 +311,12 @@
       "power": "Disables all purely transactional or selfish multipliers on the board for three consecutive rounds.",
       "lore": "We built an entire global economic system for a species that doesn't actually exist.",
       "gradeReason": "The best line in the deck. Full stop. Three-round disable is a bold mechanic that earns it.",
-      "artworkPrompt": "Style: satirical diagram. Subject: Homo Oeconomicus autopsy on table — missing heart, social cortex, biological empathy. Mood: deadpan horror."
+      "artworkPrompt": "Style: satirical diagram. Subject: Homo Oeconomicus autopsy on table — missing heart, social cortex, biological empathy. Mood: deadpan horror.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p5 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 21,
@@ -274,13 +326,10 @@
       "lore": "True altruism exists. We don't just help to feel good; we help because genuine empathy compels action.",
       "gradeReason": "Loss-for-gain mechanic is clever but the embodiment invite is carried by the lore, not the card name.",
       "artworkPrompt": "Style: surreal generosity. Subject: dolphin opening treasure chest for others, ripple effect cascading outward. Mood: selfless abundance.",
-      "print": {
-        "cardName": "C. Daniel Batson – Der Empathie-Experimentator",
-        "power": "Lose [A-1] to give another [A+2]; if they pay it forward, you reap a massive [F-2] reward.",
-        "lore": "True altruism exists. We don't just help to feel good; we help",
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p6 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -291,23 +340,30 @@
       "lore": "We are born helpers; toddlers will drop everything to assist a stranger without any promise of a reward.",
       "gradeReason": "Describes a rule rather than inviting embodiment — weakest performance invitation in the deck.",
       "artworkPrompt": "Style: warm naturalist sketch. Subject: toddler and puppy instinctively helping fallen bird. Mood: innocent compulsion.",
-      "print": {
-        "cardName": "Felix Warneken – Der Kleinkind-Helfer-Forscher",
-        "power": "The first helpful action in a round automatically succeeds without a dice roll; purity bypasses calculation.",
-        "lore": "We are born helpers; toddlers will drop everything to assist",
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p6 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 23,
       "cardName": "Jorge Moll – Der Großzügigkeits-Neurowissenschaftler",
       "grade": 1,
-      "power": "Give away a card to trigger your brain's reward center; immediately gain [A+2] and [F-1].",
+      "power": "Give away a card to trigger your brain's reward center: immediately gain [A+2] and [F-1].",
       "lore": "Evolution hardwired generosity to the same neurological pleasure centers as food and sex.",
       "gradeReason": "Give-a-card = instant dopamine = perfect mechanical embodiment. Lore closes the loop hard.",
-      "artworkPrompt": "Style: neuroscience meets baroque. Subject: glowing brain scan on skull, giving hand radiating reward signals. Mood: biological ecstasy."
+      "artworkPrompt": "Style: neuroscience meets baroque. Subject: glowing brain scan on skull, giving hand radiating reward signals. Mood: biological ecstasy.",
+      "jsonLegacy": {
+        "cardName": "Jorge Moll – Der Großzügigkeits-Neurowissenschaftler",
+        "power": "Give away a card to trigger your brain's reward center; immediately gain [A+2] and [F-1].",
+        "lore": "Evolution hardwired generosity to the same neurological pleasure centers as food and sex."
+      },
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p6 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 24,
@@ -316,7 +372,12 @@
       "power": "Any altruistic action taken this round doubles in power and creates a cascading benefit to the next player.",
       "lore": "Selflessness isn't a sacrifice; it is the most sophisticated dopamine hack in evolutionary history.",
       "gradeReason": "Strong closing line — cascade mechanic is functionally elegant but the loop diagram is abstract.",
-      "artworkPrompt": "Style: flow diagram. Subject: see-need-feel empathy-help-brain glows cycle, biological feedback loop. Mood: virtuous cascade."
+      "artworkPrompt": "Style: flow diagram. Subject: see-need-feel empathy-help-brain glows cycle, biological feedback loop. Mood: virtuous cascade.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p6 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 25,
@@ -326,32 +387,29 @@
       "lore": "The Overjustification Effect: paying someone to do what they love is the fastest way to kill their passion.",
       "gradeReason": "Advantage-if-genuine / disadvantage-if-bribed is mechanical poetry that forces the player to know themselves.",
       "artworkPrompt": "Style: dual-panel contrast. Subject: raccoon building tower for joy vs raccoon building it for coins, second raccoon slumping. Mood: corrupted passion.",
-      "print": {
-        "cardName": "Edward Deci – Der Intrinsische-Motivation-Forscher",
-        "power": "Roll with advantage if acting from genuine interest; roll with disadvantage if bribed.",
-        "lore": "the Zoo's Ill",
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p7 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 26,
       "cardName": "Dan Ariely – Der Irrationale-Anreize-Aufklärer",
       "grade": 2,
-      "power": "If offered a massive reward [R+2], you choke under pressure: roll twice and take the worse result.",
+      "power": "If offered a massive reward [R+3], you choke under pressure: roll twice and take the worse result.",
       "lore": "The rational market is a joke; huge financial bonuses reliably cause performance-destroying panic.",
       "gradeReason": "Choke mechanic is funny and memorable — card name is a mouthful that slows the table.",
       "artworkPrompt": "Style: economic satire. Subject: crow with money bag choking at critical moment, two bad dice showing. Mood: performance panic.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Dan Ariely – Der Irrationale-Anreize-Aufklärer",
-        "power": "If offered a massive reward [R+3], you choke under pressure: roll twice and take the worse result.",
-        "lore": "problem reliably makes everyone stupid.",
+        "power": "If offered a massive reward [R+2], you choke under pressure: roll twice and take the worse result.",
+        "lore": "The rational market is a joke; huge financial bonuses reliably cause performance-destroying panic."
+      },
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p7 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -361,7 +419,12 @@
       "power": "Monetizing any cooperative action this round degrades all [A] values by 1.",
       "lore": "Motivation Crowding Theory: putting a price tag on a civic duty destroys the moral desire to do it.",
       "gradeReason": "'Motivation Crowding Theory' in lore breaks immersion — mechanic is sharper than the academic framing.",
-      "artworkPrompt": "Style: dark urban sketch. Subject: panda selling social norm badges on street corner, crowd losing interest. Mood: corrupted civic spirit."
+      "artworkPrompt": "Style: dark urban sketch. Subject: panda selling social norm badges on street corner, crowd losing interest. Mood: corrupted civic spirit.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p7 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 28,
@@ -370,16 +433,31 @@
       "power": "Strips all financial and external reward buffs from the Stage, forcing players to rely purely on base stats.",
       "lore": "Carrots and sticks are for donkeys; meaning and autonomy are for living beings.",
       "gradeReason": "Best SYNTHESIS line after Egoism Autopsy — the strip-buffs mechanic is bold and perfectly matched.",
-      "artworkPrompt": "Style: economics chart on fire. Subject: intrinsic vs extrinsic graph, money line dropping into fire, joy line rising. Mood: liberation economics."
+      "artworkPrompt": "Style: economics chart on fire. Subject: intrinsic vs extrinsic graph, money line dropping into fire, joy line rising. Mood: liberation economics.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p7 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 29,
       "cardName": "Shoshana Zuboff – Die Überwachungskapitalismus-Analystin",
       "grade": 2,
-      "power": "Reveals all hidden tech influences for one round; choose to resist [R+1] or tragically comply [A-1].",
+      "power": "Reveals all hidden tech influences for one round; choose to resist [R+2] or tragically comply [A-1].",
       "lore": "Surveillance capitalism doesn't want your money—it wants to mine your behavior, predict your future, and sell it.",
       "gradeReason": "Resist-or-comply binary is smart game design — the card name is longer than most tweets.",
-      "artworkPrompt": "Style: corporate surveillance aesthetic. Subject: octopus tech-entity in server room, data streams as tentacles. Mood: digital extraction."
+      "artworkPrompt": "Style: corporate surveillance aesthetic. Subject: octopus tech-entity in server room, data streams as tentacles. Mood: digital extraction.",
+      "jsonLegacy": {
+        "cardName": "Shoshana Zuboff – Die Überwachungskapitalismus-Analystin",
+        "power": "Reveals all hidden tech influences for one round; choose to resist [R+1] or tragically comply [A-1].",
+        "lore": "Surveillance capitalism doesn't want your money—it wants to mine your behavior, predict your future, and sell it."
+      },
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p8 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 30,
@@ -389,13 +467,10 @@
       "lore": "Since 2010, the invisible umbilical cord to our screens has been silently mass-producing loneliness and anxiety.",
       "gradeReason": "'Invisible umbilical cord' is vivid — mechanic is blunt and effective but passive.",
       "artworkPrompt": "Style: melancholy documentary. Subject: giraffe staring into phone, umbilical cord connecting to screen, loneliness meter rising. Mood: silent epidemic.",
-      "print": {
-        "cardName": "Jean M. Twenge – Die Smartphone-Generationen-Forscherin",
-        "power": "Every screen-based artifact on the Stage actively increases Fragility [F+1] for all players.. Since 2010, the in",
-        "lore": "Since 2010, the invisible umbilical cord to our screens has been silently mass-producing loneliness and anxiety.",
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p8 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -405,7 +480,12 @@
       "power": "Pushing yourself beyond limits [R+4] causes immediate burnout, draining [F-3].",
       "lore": "We are no longer exploited by cruel masters; we are the cheerful, self-optimizing architects of our own burnout.",
       "gradeReason": "'Cheerful, self-optimizing architects of our own burnout' — Byung-Chul Han's entire philosophy in 14 words.",
-      "artworkPrompt": "Style: hamster-wheel existentialism. Subject: panda in hamster wheel, smiling while burning, self-built cage. Mood: voluntary exhaustion."
+      "artworkPrompt": "Style: hamster-wheel existentialism. Subject: panda in hamster wheel, smiling while burning, self-built cage. Mood: voluntary exhaustion.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p8 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 32,
@@ -414,7 +494,12 @@
       "power": "Traps all players in an algorithmic feedback loop, restricting moves until a Disconnect action is taken.",
       "lore": "The modern world is a beautifully designed Skinner box, and we are paying a monthly subscription to stay inside.",
       "gradeReason": "'Paying a monthly subscription to stay inside a Skinner box' — darkest laugh in the deck.",
-      "artworkPrompt": "Style: algorithmic diagram. Subject: attention extraction-induce anxiety-sell solution-demand optimization loop, Skinner box aesthetic. Mood: beautiful trap."
+      "artworkPrompt": "Style: algorithmic diagram. Subject: attention extraction-induce anxiety-sell solution-demand optimization loop, Skinner box aesthetic. Mood: beautiful trap.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p8 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 33,
@@ -423,41 +508,49 @@
       "power": "Reframes any failed roll as learning, banking an [A+2] bonus for your next related action.",
       "lore": "The belief that you are unfinished is infinitely more powerful than the belief that you are gifted.",
       "gradeReason": "Solid reframe mechanic — concept is slightly overexposed culturally, which dulls the shock edge.",
-      "artworkPrompt": "Style: growth metaphor. Subject: elephant teaching cow to build tower, failure blocks becoming steps. Mood: unfinished optimism."
+      "artworkPrompt": "Style: growth metaphor. Subject: elephant teaching cow to build tower, failure blocks becoming steps. Mood: unfinished optimism.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p9 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 34,
       "cardName": "Robert Rosenthal – Der Pygmalion-Effekt-Entdecker",
       "grade": 2,
-      "power": "Declare a positive expectation about another player; if they believe it, both gain [A+1] and [F-1].",
+      "power": "Declare a positive expectation about another player; if they believe it, both gain [A+2] and [F-1].",
       "lore": "The Pygmalion Effect: Our expectations of others literally alter their reality and capabilities.",
       "gradeReason": "Declare-an-expectation is genuinely performative — requires buy-in from two players to fully activate.",
       "artworkPrompt": "Style: mythic realism. Subject: turtle teacher expecting dragon; dragon emerging from expectation bubble. Mood: self-fulfilling prophecy.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Robert Rosenthal – Der Pygmalion-Effekt-Entdecker",
-        "power": "gotiable if you know how to redraw the lines.",
-        "lore": "The Pygmalion Effect: Our expectations of others literally alter their reality and capabilities.",
+        "power": "Declare a positive expectation about another player; if they believe it, both gain [A+1] and [F-1].",
+        "lore": "The Pygmalion Effect: Our expectations of others literally alter their reality and capabilities."
+      },
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p9 TR",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
       "cardNumber": 35,
       "cardName": "Martin Seligman – Der Gelernte-Hilflosigkeit-Forscher",
       "grade": 1,
-      "power": "Use a past failure token to prevent a current collapse. Learned resilience is the ultimate shield.",
+      "power": "Consume a past failure token to prevent a current collapse. Learned resilience is the ultimate shield.",
       "lore": "Helplessness can be learned, but so can optimism—hope is a muscle that must be violently exercised.",
       "gradeReason": "'Hope is a muscle that must be violently exercised' — this card leaves a bruise.",
       "artworkPrompt": "Style: liberation sketch. Subject: lion breaking out of old cage frame using past scars as tools. Mood: earned optimism.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "Martin Seligman – Der Gelernte-Hilflosigkeit-Forscher",
-        "power": "Consume a past failure token to prevent a current collapse. Learned resilience is the ultimate shield.",
-        "lore": "Helplessness can be learned, but so can optimism-hope is a muscle that must be violently exercised.",
+        "power": "Use a past failure token to prevent a current collapse. Learned resilience is the ultimate shield.",
+        "lore": "Helplessness can be learned, but so can optimism—hope is a muscle that must be violently exercised."
+      },
+      "textSource": {
         "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p9 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -467,7 +560,12 @@
       "power": "Notice one missed detail on the Stage to completely reinterpret its meaning, shifting the game context.",
       "lore": "Mindfulness isn't meditation; it is the radical, reality-bending power of simply paying attention to the present.",
       "gradeReason": "Good closer — the reframe on mindfulness works, but the territory is well-trodden culturally.",
-      "artworkPrompt": "Style: perception shift. Subject: cardboard box seen as cage / fighter jet / cat depending on observer angle. Mood: reality negotiation."
+      "artworkPrompt": "Style: perception shift. Subject: cardboard box seen as cage / fighter jet / cat depending on observer angle. Mood: reality negotiation.",
+      "textSource": {
+        "source": "PDF v05 The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch - ADD web.pdf p9 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     }
   ],
   "cardCount": 36,
