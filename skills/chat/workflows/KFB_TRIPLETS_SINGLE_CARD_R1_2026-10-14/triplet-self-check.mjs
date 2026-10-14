@@ -7,7 +7,7 @@ const stop=new Set('a an the of to for by in on at with from and or but because 
 const tokens=s=>(String(s).toLowerCase().match(/[\p{L}\p{N}]+(?:['’][\p{L}\p{N}]+)*/gu)||[]).filter(x=>!stop.has(x));
 const norm=x=>x.replace(/['’]s$/,'').replace(/(ing|ed|es|s)$/,'');
 function ownCheck(beat,card){const e=[];const t=beat.surfaceText;
-if(!t.includes(card.cardName))e.push('TITLE_MISSING');
+if(!t.startsWith(card.cardName+' '))e.push('V231_TITLE_NOT_FIRST_SUBJECT');
 if((t.match(/[.!?](?:\s|$)/g)||[]).length!==1)e.push('SENTENCE_COUNT');
 if(!['cardName','power','lore'].every(f=>typeof card[f]==='string'&&card[f].trim()))e.push('SOURCE_MISSING');
 if(!beat.evidence || !['cardName','power','lore'].every(f=>beat.evidence.some(x=>x.field===f&&card[f].slice(x.start,x.end)===x.quote&&t.includes(x.spoken))))e.push('EVIDENCE');
@@ -17,6 +17,6 @@ if(t===card.cardName+'. '+card.power+' '+card.lore||t.includes(card.power)&&t.in
 if(!beat.slots||!['show','spin','sell'].every(s=>t.includes(beat.slots[s])))e.push('SLOTS');
 if(!beat.semanticCoverage?.reframe?.trim())e.push('TURN_ABSENT');
 return e;}
-for(const row of p.sampleRows){if(!row.beat)continue;try{validateBeat(row.beat,row.original,{deckId:row.deckId,cardBlob:row.beat.cardBlob});const errs=ownCheck(row.beat,row.original);if(errs.length)reasons.push({id:row.beat.beatId,errors:errs});else checked++;}catch(e){reasons.push({id:row.beat.beatId,errors:[String(e.message)]});}}
+for(const row of p.sampleRows){if(!row.beat)continue;try{validateBeat(row.beat,{...row.original,cardNumber:row.cardNumber},{deckId:row.deckId,cardBlob:row.beat.cardBlob});const errs=ownCheck(row.beat,row.original);if(errs.length)reasons.push({id:row.beat.beatId,errors:errs});else checked++;}catch(e){reasons.push({id:row.beat.beatId,errors:[String(e.message)]});}}
 const negative=[{kind:'recital',result:ownCheck({...p.beats[0],surfaceText:p.sampleRows[0].original.cardName+'. '+p.sampleRows[0].original.power+' '+p.sampleRows[0].original.lore},p.sampleRows[0].original)},{kind:'1001 Nights #5-7 R1',result:'PENDING_EXACT_R1_FIXTURE'}];
 console.log(JSON.stringify({checked,failed:reasons.length,reasons,negative},null,2));if(reasons.length)process.exitCode=1;
