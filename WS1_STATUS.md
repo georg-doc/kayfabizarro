@@ -14,7 +14,7 @@ Belege: `ws1/proofs/2026-10-14-g4/`, neu sind `fb_three_looks.png`, `g4_faces.pn
 ### F-1 · Korrekter FrizzleBob (blockiert G4)
 - **Stand:** Das Spiel zeigt Georgs Export aab8eeb0 (V-240) über die P08-Linie der ToolBox (Cut r1, main @ac9dbaed). Gegen den P08-Spender stimmt das Bild auf 1,2–1,4/255. Das ist **Parität mit P08, nicht mit Georgs ToolBox**.
 - **Bild:** `fb_three_looks.png` zeigt P08-Spender ¾ | WS1-Bühne | Joyride J17. In ¾ sitzt das hintere Auge am Kopfrand, und die Nase (Original-Insel, `parts.nose: original`) erscheint von vorn als Kugel vor dem Auge. Georg erkennt darin nicht seinen FB.
-- **Vermutung:** Der Export stammt aus „KFB ToolBox Production-02 · Rigging“, einer neueren Claude-Design-Fassung, die nicht im Repo liegt (V-241 offen; neue Felder wie clayLids mech „skin“, original.*.yaw/sx und body-shape kennt P08 nicht). Diese Fassung setzt dieselben Werte offenbar anders um.
+- **Vermutung:** Den Export schrieb eine neuere Claude-Design-Fassung als P08, die nicht im Repo liegt (V-241 offen). Beleg sind Felder, die P08 nicht kennt (clayLids mech „skin“, skinFrame, original.*.yaw/sx, body-shape). Die Kennung „Production-02 · Rigging“ beweist nichts, die schreibt jeder Cut (§17). Gesucht über alle Branches: Es liegen nur die Cuts Production-02 vom 26./27.09. im Register-Branch, beide älter als P08. Diese Fassung setzt dieselben Werte offenbar anders um.
 - **Was WS1 braucht, eines davon:**
   - (a) den ToolBox-Cut, der den Export geschrieben hat (Code + Libs), oder
   - (b) Referenzbilder aus genau dieser ToolBox mit genau diesem Eintrag: vorn, ¾, Seite, Pose angegeben, gleiche Kamera, dazu einmal Lid zu.
