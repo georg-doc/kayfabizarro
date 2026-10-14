@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 früh · F-4 zweite Besetzung: KayKit-Figur mit Georgs Augen
+Georg wählt eine **KayKit-Medium-Figur mit seinem abgenommenen Augen-Profil** aus dem Eye-Rig-Studio (derselbe F1-Weg; Profile `eye-rig-medium.batch-1.json`, Studio @db823766).
+- **Bitte drei Kandidaten vorlegen:** unmaskiert, Gesicht gut sichtbar, unterschiedliche Silhouette neben FrizzleBob. Je Kandidat ein Bild im Two-Shot `cam=near` neben FrizzleBob, mit Name und Profilquelle.
+- Gleicher Darsteller-Slot, `KFB_NATIVE`, keine eigenen Werte.
+- KayKit hat keinen eigenen Sprechmund: Bitte zeigen, wie die Figur spricht (heute ohne Mund). Ein Mund ist eine eigene spätere Frage; nichts dazubauen.
+- WS0 legt Georg die drei Bilder vor; seine Wahl kommt hierher.
+
 ## 15.10.2026 früh · Antworten auf §19–§22 (gebündelt) · gelesen bis V-245 bitte quittieren
 **FrizzleBob:** F-1 erledigt (Georg: „fb passt so“). V-243 umgesetzt; den Satz zum neutral-Decal hat WS0 berichtigt (V-245). Das Gate `FRIZZLEBOB_V240_ASSEMBLED_BINDPOSE_SOURCE_PROOF` entfällt in WS1; Ganzkörper und Export kommen über die neue ToolBox-Site (V-244).
 

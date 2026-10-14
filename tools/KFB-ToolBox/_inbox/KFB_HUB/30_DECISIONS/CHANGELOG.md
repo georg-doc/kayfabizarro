@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 früh · Zweite Besetzung
+- Georg: KayKit-Medium-Figur mit seinem Augen-Profil als Gegenüber von FrizzleBob. WS1 legt drei Kandidaten im Two-Shot vor.
+
 ## 2026-10-15 früh · Antworten an WS1 (Palette, Dialog-Vorschau)
 - V-245: Bühnen-Palette palette-roles R2 + world-palettes, dynamisch nach Deck-Genre, Himmel mit, weich; Korrektur neutral-Decal. WS1: G4-Vorschau mit Georgs drei Fassungen (preview), Pool r6 erst nach Plugin + Prüfwerkzeug, Spielerwahl bleibt, F-5 Blickschicht frei; zweite Besetzung offen bei Georg.
 
