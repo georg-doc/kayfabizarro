@@ -1,5 +1,12 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 · WS1-Antworten, Drift-FAIL, Gesichter
+- V-214 FAIL Wireface-Bühnen-Referenz (Tusche, Platzhalter-Karte, Figuren ohne Eye-Rig, Hex); Regel: keine Figur ohne nachgewiesen animiertes KFB-Eye-Rig.
+- V-215 Host-Vertrag R1.2 angenommen (fiber 9.8.1, Blasen im DOM-Slot #ui-bubbles).
+- V-216 Antworten an WS1 (replies/WS0_TO_WS1.md): Hex nur Legacy-Testkulisse, organischer Clay-Boden; cardImage = Host-Dienst; Gesichts-Slices F1 Augen (Studio 1:1, Anker-Drehung nicht übernehmen) vor F2 Mund (Wireface); Registry-Korrektur eigener Auftrag; V-204-Referenzbild in replies/lab-donors/.
+- V-217 Gesichts-Performance-Schicht: Wireface bevorzugt, TalkingHead/wawa-lipsync als Referenz bzw. Fallback, je Region ein Treiber, Phasen A–D.
+- 15 Pool-Kandidaten (KFB_TRIPLET_OPENER_POOL_R1) zum Ankreuzen im Steuerpult.
+
 ## 2026-10-14 · Georg FAIL · KFB EyeRig, Plain Bubble und Querformat-Karte · Anti-Drift-Sperre
 - Direkte Georg-Kritik: Das als positives ChatterBox-Beispiel verlinkte `evidence/s2_bubble_still.jpg` ist **FAIL**: Ink-Outline (`Clay`, nicht `Clay pur`), aufrechte Hochformat-/Platzhalterkarte und keine nachweislich korrekten/animierbaren KFB-EyeRig-Augen. Bildpixelselbstprüfung bestätigt Ink-Contour und stehende schmale Karte; Augen des Cast sind kein nachgewiesenes KFB-Rig. Die Quelle wird **NEGATIVE GOLDEN — NEVER POSITIVE DONOR**.
 - Neues Failure-/Recovery-Brief `replies/WIREFACE_STAGE_VISUAL_DONOR_FAIL_2026-10-14.md`; Claude-Design-Kaltstart und Detailbrief vor dem nächsten Cut korrigiert; `KFB_WORKING_RULES_R1.md` um **HARD FAIL** ergänzt: alle darstellenden Figuren brauchen belegte, **funktionierende und animierte KFB EyeRig v6** (geprüfte Anker-/Pupillen-/Lider-/Blick-Konfiguration; V-061/V-090; V-200/V-201 NEGATIVE), **keine KayKit-Default-/statischen-/aufgemalten Augen**. Für positive Studio-Szene ist **3/3 PASS** zwingend: V-204 inkfreie DOM-Plain-Blase, echte landscape KFB-PDF-Viertelkarte, isolierter animierter KFB EyeRig. Standbild beweist keine Animation.

@@ -16,8 +16,10 @@ PARENT=$(git rev-parse gh/$BR); git read-tree $PARENT
 LAST=$(git log --format=%H -1 --grep='docs(steering)' gh/$BR)
 if [[ -n "$LAST" ]]; then
   git show "gh/${BR}:${BASE}/CHANGELOG.md" > /tmp/kfb_remote_changelog.md 2>/dev/null && python3 "$H/merge_changelog.py" "$H/CHANGELOG.md" /tmp/kfb_remote_changelog.md
-  for f in $(git diff --name-only "$LAST" "gh/$BR" -- "$BASE/replies" "$BASE/lab-docs"); do
-    rel=${f#$BASE/}; [[ "$rel" == lab-docs/* ]] && continue
+  for f in $(git diff --name-only "$LAST" "gh/$BR" -- "$BASE"); do
+    rel=${f#$BASE/}
+    case "$rel" in lab-docs/*|CHANGELOG.md|DECISIONS.md|decisions.json|build_decisions.py|sync_github.sh|merge_changelog.py) continue;; esac
+    mkdir -p "$H/${rel:h}"
     git show "gh/${BR}:${f}" > "$H/$rel" 2>/dev/null && echo "pulled $rel"
   done
 fi

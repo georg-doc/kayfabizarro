@@ -1,6 +1,6 @@
-# KFB Host-Vertrag R1.1 · R3F als Spielrahmen (14.10.2026)
+# KFB Host-Vertrag R1.2 · R3F als Spielrahmen (14.10.2026)
 
-Ein Autor: Web-Chat (Planung). WS1 übernimmt ihn 1:1. Änderungen nur additiv, mit V-Nummer. Es gelten V-209, V-206 und `KFB_WORKING_RULES_R1.md`.
+Ein Autor: Web-Chat (Planung). WS1 übernimmt ihn 1:1. Änderungen nur additiv, mit V-Nummer (R1.1 = V-211). Es gelten V-209, V-206 und `KFB_WORKING_RULES_R1.md`.
 
 ## 1 · Rahmen
 - **Ein Spielrahmen: React Three Fiber.** Kein zweiter Renderer, kein zweites `<canvas>`, kein Vanilla-Parallelweg.
@@ -9,7 +9,7 @@ Ein Autor: Web-Chat (Planung). WS1 übernimmt ihn 1:1. Änderungen nur additiv, 
   | Paket | Version |
   |---|---|
   | three | 0.186.1 |
-  | @react-three/fiber | 9.8 |
+  | @react-three/fiber | 9.8.1 |
   | @react-three/drei | 10.7.9 |
   | @react-three/rapier | 2.2.0 (React-Hülle) |
   | @dimforge/rapier3d-compat | 0.19.2 (Physik-Kern) |
@@ -57,7 +57,12 @@ create(options) -> { object3d, update(dt, ctx), dispose() }
 
 ## 4 · Eingabe und UI
 - Der Host legt **eine** Tastatur-Map fest. Module hängen keine eigenen Listener an `window`, sie bekommen Eingaben über `options` bzw. Callbacks.
-- **Sprechblasen und Billboards** (Wireface, V-204 plain) sind 3D-Objekte im Modul.
+- **Wireface-Gesicht und Billboards** sind 3D-Objekte im Modul.
+- **Sprechblasen sind DOM im Host-Slot `#ui-bubbles`** (seit R1.2). Die fertige Blase aus `chatterbox-core` (V-204 plain, Flip-Reveal 520 ms) wird 1:1 übernommen und nicht als 3D-Blase nachgebaut (V-206).
+  - Das Modul liefert nur Ankerpunkte: optionales Feld `bubbleAnchors: [{ id, object3d, offset: [x, y, z] }]` im Rückgabeobjekt von `create`.
+  - Der Host projiziert die Anker pro Frame auf den Bildschirm (`Vector3.project(camera)`) und setzt die Position der Blase direkt per `style.transform`, ohne React-State (Falle 2).
+  - Liegt ein Anker hinter der Kamera oder außerhalb des Bildes, wird die Blase ausgeblendet.
+  - Den Text der Blase setzt der Host aus dem Store, nach §5 (nur Pool oder Karte, sonst „…“).
 - **Die Spielerwahl** („choice“ 2 × 2, Zifferntasten, optional bis 8 eigene Wörter) ist ein DOM-Overlay im festen Host-Slot `#ui-choice`.
 
 ## 5 · Inhalt
@@ -102,3 +107,6 @@ Der Test nimmt Playwrights eigenen Chromium. `PW_CHROMIUM=<pfad>` überschreibt 
   3. Zeilenzahl von `ModuleHost` aus dem Vertrag entfernt.
   4. Abschnitt „Lokal ausführen (Mac)“ ergänzt.
   - Erneut geprüft: `npm ls` zeigt eine Instanz three 0.186.1 und eine rapier3d-compat 0.19.2. `test/host.mjs` liefert PASS.
+- **R1.2 (14.10.2026)**, Anlass: Prüfung durch WS0 nach V-211. V-Nummer vergibt WS0.
+  1. `@react-three/fiber` exakt auf 9.8.1 (stand als „9.8“; `package.json` hatte bereits 9.8.1).
+  2. Sprechblasen von „3D im Modul“ auf den Host-DOM-Slot `#ui-bubbles` mit projizierten Ankerpunkten umgestellt, damit `chatterbox-core` 1:1 übernommen wird (V-206). Gesicht und Billboards bleiben 3D.
