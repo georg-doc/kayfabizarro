@@ -24,7 +24,10 @@ Quelle: M1-Sitzung, Branch `m1/bewegung` im eigenen Worktree. Noch nicht gemergt
 - **Vertragsvorschlag Host R1.2 → bitte freigeben oder ablehnen:** zwei optionale Props für `ModuleHost`, damit M1 keinen eigenen Host braucht (V-206):
   - `fixedDt`: Die Module bekommen diesen festen Takt statt der Bildzeit.
   - `after` (Ref): Der Host ruft das Update an einer festen Stelle auf, bei der Spielfigur nach ecctrl und vor dem Physik-Schritt; sonst hinkt die Animation einen Schritt nach.
-  - Den Diff legt die M1-Sitzung vor; ohne Freigabe bleibt der Vertrag unverändert.
+  - **Diff:** `ws1/proposals/MODULEHOST_R1_3_FIXEDDT_AFTER.diff` (gegen kfb-planet @937167f, `git apply --check` sauber). Ohne die neuen Props verhält sich die Hülle wie bisher, alle bestehenden Aufrufe bleiben gleich.
+  - **Begründung (gemessen in m1-move):** Ohne `after` läuft das Update der Spielfigur vor ecctrl; die Animation sieht das Tempo vor dem Antrieb und hinkt einen Schritt nach. Ohne `fixedDt` bekommen die Module im Replay die Bildzeit statt des Physik-Takts, das Replay ist dann nicht deterministisch.
+  - **Hinweis WS1:** Mit `after` ruft die Hülle `update` nicht mehr selbst. Ruft der Aufrufer `after.current` nicht, steht das Modul still. Das gehört ausdrücklich in den Vertrag.
+  - Ohne Freigabe bleibt der Vertrag unverändert, und M1 behält seine eigene Hülle.
 - **WS1 erledigt:** `STAGE_MARKS` (Marken near/two) aus `Stage.jsx` exportiert (kfb-planet @937167f), damit M1 nichts abschreibt; Stellungen unverändert, stage/d1stage/g4 PASS. `test:m1` kommt mit dem Merge in die Suite.
 
 ## 22 · 15.10. früh · Georg: „fb passt so“ · V-243 Ruhe-Mund umgesetzt · Palette wartet auf WS0

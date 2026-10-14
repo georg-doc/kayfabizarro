@@ -1,0 +1,26 @@
+--- a/src/ModuleHost.jsx	2026-10-14 23:22:01
++++ b/src/ModuleHost.jsx	2026-10-14 23:22:01
+@@ -8,7 +8,10 @@
+ import { useGame } from './store'
+ import { registerAnchor } from './bubbleAnchors'
+ 
+-export default function ModuleHost({ create, options }) {
++// Optional (Vorschlag M1, Vertrag R1.2 → R1.3, WS0-Freigabe nötig): fixedDt – Module bekommen diesen Takt statt der Bildzeit (Replay);
++// after (Ref) – die Hülle ruft update NICHT selbst, sondern legt es in after.current; der Aufrufer ruft es an fester Stelle (z. B. Spielfigur
++// nach ecctrl, vor dem Physik-Schritt). Ohne beide Props verhält sich die Hülle wie bisher.
++export default function ModuleHost({ create, options, fixedDt = null, after = null }) {
+   // options MUSS stabil sein (useMemo oder Konstante), sonst entsteht das Modul bei jedem Render neu.
+   const mod = useMemo(() => create(options), [create, options])
+   useEffect(() => {
+@@ -17,8 +20,8 @@
+     return () => { offs.forEach((off) => off()); mod.dispose() }
+   }, [mod])
+   const camera = useThree((s) => s.camera)
+-  useFrame((_, dt) => {
+-    mod.update(Math.min(dt, 0.1), { camera, player: playerState.pos, game: useGame.getState() })
+-  })
++  const run = (dt) => mod.update(fixedDt ?? Math.min(dt, 0.1), { camera, player: playerState.pos, game: useGame.getState() })
++  useEffect(() => { if (!after) return undefined; after.current = run; return () => { if (after.current === run) after.current = null } })
++  useFrame((_, dt) => { if (!after) run(dt) })
+   return <primitive object={mod.object3d} />
+ }
