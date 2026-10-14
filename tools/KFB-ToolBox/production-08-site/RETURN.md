@@ -1,3 +1,15 @@
+## CURRENT REPAIR · 2026-10-14 · Driver Graft missing-model URL
+Georg observed SOURCE MISSING at the actual Site: /owners/petstudio-v9/assets/models/FrizzleBob_Yellow.gltf returned 404.
+Cause: vendored original modules use import.meta.url to resolve model assets; the original remote module base was lost. Corrected only non-JavaScript model-origin resolution in ears.v2, headgraft.v1 and frizzlebob.v4a, at root and /production-08/. Model remains referenced remotely, no binary copied or substituted design.
+Source URL: https://raw.githubusercontent.com/georg-doc/kayfabizarro/8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/assets/models/FrizzleBob_Yellow.gltf
+G0: actual tree blob e0a757ece30accabc4c61f1ad11751b15bd06974; actual HTTPS download succeeds and hashes to that exact Git blob. GLTF embeds its buffer and has no external images. The unused Yellow_Gun path is absent at this original source commit; inherited optional gun variant remains SOURCE_REQUIRED, not an invented replacement.
+7/7 focused syntax/root+compatibility-identity checks PASS. Updated source-identity checker rerun: 180/180 PASS. No WebGL PASS.
+Private Site v6 deployed at https://kfb-toolbox.frizzlebob.chatgpt.site/ ; source eb58059114da126e4b0b97f78de4f8579b0c2758; deployment appgdep_6acfdee1fe788191a0faa1c0477c8172.
+Actual Site render after repair NOT VERIFIED here. Reload the page. Other V-244 fixes, exact Georg profile parity and GitHub saving remain pending. Default actor is still source P08 Driver Graft until saved Georg entry is imported; it is not the configured FrizzleBob Ear Rig.
+Next gate: actual Site opens without this error, then continue source parity/authorized work. No merge/Live.
+
+---
+
 ## CURRENT CORRECTION · 2026-10-14 · Georg: ToolBox means the actual P08 tool
 
 Georg rejected keeping the unrelated link overview as the ToolBox homepage. The root now serves the actual Production-08 authoring UI directly, using the exact candidate index and complete same-origin support, kfb-lib, owners and data directories. No redirect, iframe, redesign or second Site. Root overview JSON removed. /production-08/ retained as compatibility only. Earlier text below saying root router remains unchanged is SUPERSEDED.

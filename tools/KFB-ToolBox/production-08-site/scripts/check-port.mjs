@@ -31,8 +31,11 @@ check('Three remains 0.160.0',im.imports.three==='https://unpkg.com/three@0.160.
 check('owner module redirects preserve pinned path',Object.entries(im.imports).filter(([k])=>k.includes('kayfabizarro')).length===2);
 for(const r of lock.records.filter(x=>x.local)){
  const source=spawnSync('git',['show',r.commit+':'+r.path],{cwd:repo,encoding:'utf8'});
- const expected=source.stdout.replaceAll('/kayfabizarro/main/','/kayfabizarro/'+lock.sourceHead+'/').replaceAll('/kayfabizarro@main/','/kayfabizarro@'+lock.sourceHead+'/');
- check('owner code unchanged except asset freeze: '+r.local,source.status===0&&fs.readFileSync(path.join(candidate,r.local),'utf8')===expected);
+ let expected=source.stdout.replaceAll('/kayfabizarro/main/','/kayfabizarro/'+lock.sourceHead+'/').replaceAll('/kayfabizarro@main/','/kayfabizarro@'+lock.sourceHead+'/');
+ const raw='https://raw.githubusercontent.com/georg-doc/kayfabizarro/'+r.commit+'/';
+ if(r.local==='owners/frizzlegraft-v1/ears.v2.js'||r.local==='owners/frizzlegraft-v1/headgraft.v1.js')expected=expected.replace("new URL('../petstudio-v9/assets/models/FrizzleBob_Yellow.gltf', import.meta.url).href",JSON.stringify(raw+'tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/assets/models/FrizzleBob_Yellow.gltf'));
+ if(r.local==='owners/petstudio-v9/studio-v12/frizzlebob.v4a.js')expected=expected.replace('new URL(local, import.meta.url).href','new URL(local, '+JSON.stringify(raw+r.path)+').href');
+ check('owner code identity with explicit URL adaptations: '+r.local,source.status===0&&fs.readFileSync(path.join(candidate,r.local),'utf8')===expected);
 }
 const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(d=>d.isDirectory()?walk(path.join(dir,d.name)):[path.join(dir,d.name)]);
 for(const f of walk(candidate).filter(x=>x.endsWith('.js'))){

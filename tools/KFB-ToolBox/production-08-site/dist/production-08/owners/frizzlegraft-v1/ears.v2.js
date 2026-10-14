@@ -21,7 +21,7 @@
  * EIGENTUM: Geometrie und Federn der Ohren. Weder Figur noch Gesicht werden angefaßt.
  */
 export const SCHEMA = 'kfb.ears/0.2';
-const FB_URL = new URL('../petstudio-v9/assets/models/FrizzleBob_Yellow.gltf', import.meta.url).href;
+const FB_URL = "https://raw.githubusercontent.com/georg-doc/kayfabizarro/8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/assets/models/FrizzleBob_Yellow.gltf";
 
 let _cache = null;
 async function donor(loader) {

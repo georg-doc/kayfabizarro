@@ -44,7 +44,7 @@
  * zeichnet ein Auge.
  */
 export const SCHEMA = 'kfb.headgraft/0.1';
-const FB_URL = new URL('../petstudio-v9/assets/models/FrizzleBob_Yellow.gltf', import.meta.url).href;
+const FB_URL = "https://raw.githubusercontent.com/georg-doc/kayfabizarro/8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/assets/models/FrizzleBob_Yellow.gltf";
 
 let _cache = null;
 async function donor(loader) {

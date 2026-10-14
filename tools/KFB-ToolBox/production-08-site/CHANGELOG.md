@@ -9,3 +9,6 @@
 
 ## 2026-10-14 · Georg root correction
 - Site v5 root directly opens actual P08 authoring UI; unrelated link overview removed. Same Site/owner/audience. 8/8 root/dependency checks. No new visual acceptance or rigging-fix claim.
+
+## 2026-10-14 · Driver Graft source missing repair
+- v6 preserves original pinned model origin in three vendored modules (root and compatibility path). Actual source HTTPS bytes verified against Git blob. 7/7 focused and rerun 180/180 checks PASS. Site render unverified; remaining rigging fixes/save still pending.

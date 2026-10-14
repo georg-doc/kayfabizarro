@@ -886,6 +886,13 @@
       "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/assets/models/FrizzleBob_Yellow.gltf",
       "blob": "e0a757ece30accabc4c61f1ad11751b15bd06974",
       "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/eabc87255ee3da6283f9d438390454d70e9d2e55/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/assets/models/FrizzleBob_Yellow.gltf"
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e",
+      "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/assets/models/FrizzleBob_Yellow.gltf",
+      "blob": "e0a757ece30accabc4c61f1ad11751b15bd06974",
+      "verification": "actual HTTPS fetch succeeded; downloaded Git blob matches; embedded buffer/no external images"
     }
   ],
   "portChanges": [
@@ -906,6 +913,14 @@
     {
       "file": "kfb-lib/body-surface.v2.js",
       "operation": "use source-proven fingerprint texture by pinned URL"
+    },
+    {
+      "files": [
+        "owners/frizzlegraft-v1/ears.v2.js",
+        "owners/frizzlegraft-v1/headgraft.v1.js",
+        "owners/petstudio-v9/studio-v12/frizzlebob.v4a.js"
+      ],
+      "operation": "Preserve original pinned module origin for model URLs after vendoring; fixes local /owners/.../assets/... 404"
     }
   ],
   "unresolved": [

@@ -133,7 +133,7 @@ export default class FrizzleBob {
     let gltf = this.gltfCache.get(variant);
     if (!gltf) {
       const local = SPEC.yellowFiles[variant] || SPEC.yellowFiles.plain;
-      try { gltf = await this.loader.loadAsync(new URL(local, import.meta.url).href); gltf.userData = { source: 'yellow-asset', url: local }; }
+      try { gltf = await this.loader.loadAsync(new URL(local, "https://raw.githubusercontent.com/georg-doc/kayfabizarro/8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e/tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/frizzlebob.v4a.js").href); gltf.userData = { source: 'yellow-asset', url: local }; }
       catch (e) { this.log('yellow asset unreachable (' + local + ') — Kenney RAW + tint instead'); gltf = await this.loader.loadAsync(this.assets.raw(path)); gltf.userData = { source: 'kenney-raw', url: path }; if (this.tintTarget == null) this.tintOn = true; }
       this.gltfCache.set(variant, gltf);
     }
