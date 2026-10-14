@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 abends · Claude-Design-Job Triplet-Abnahme-Prototyp
+- Hub-Briefing b12: 2D-Prototyp für die Triplet-Abnahme (Kartenbild, Drucktext, [Opener]+Triplet, Wortmarkierung, PASS/TUNE/FAIL + eigene Fassung, Deck-Liste, JSON-Export kfb.triplet-review/1), Vorlage für die spätere WSA-Site (V-237). Eingabe-Paket in Downloads/KFB_Triplet_Review_Input (3 Druck-Karten + JSON). ToolBox-Quell-Schnitt (V-241) erst nach Georgs Fixes (u. a. Farbregler Brauen/Nase), Aufgabe WS0.
+
 ## 2026-10-14 abends · Karten-Daten-Standard
 - V-242: kanonischer Kartentext = Druck (am Bild geprüft), jsonLegacy, einheitliche Namen, keine Duplikate, Librarian zeigt Kartenbild + JSON. Agent-Lauf gestartet (data/kfb-card-text-canonical-2026-10-14). Info Georg: Meshy-Inseln und Lord Hunky (Alien auf KayKit-Astronaut-Basis) in /CLAUDE/MeshyModels/, Intake später nach V-230-Muster.
 
