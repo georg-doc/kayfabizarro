@@ -94,16 +94,18 @@
       "cardName": "The Information Flood",
       "grade": 2,
       "power": "Saturates available processing capacity through volume, making navigation more expensive than the decision it informs.",
-      "lore": "Navigation requires more effort than most content costs; the destination is reached by fewer than the distribution implies.",
+      "lore": "Navigation requires more time than is available; most content goes unread without being suppressed.",
       "gradeReason": "Mechanism is vivid but the performance role of 'the flooder' needs scaffolding to land.",
       "artworkPrompt": "Style: Overwhelmed editorial desk. Subject: Beaver drowning in documents while trying to find one specific memo. Mood: Volume as weapon, navigation as cost.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Information Flood",
         "power": "Saturates available processing capacity through volume, making navigation more expensive than the decision it informs.",
-        "lore": "Navigation requires more time than is available; most content goes unread withouf being suppressed. THE FOG MACHINE - the question ai",
+        "lore": "Navigation requires more effort than most content costs; the destination is reached by fewer than the distribution implies."
+      },
+      "textSource": {
         "source": "PDF v05 The_Move - ADD web ID.pdf p4 TL",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -111,9 +113,19 @@
       "cardName": "The Contradiction Field",
       "grade": 2,
       "power": "Places credentialed opposing voices on each contested question until no stable factual baseline holds.",
-      "lore": "For each position, peer-reviewed counter-information is available at identical distribution.",
+      "lore": "For each expert position, a peer-reviewed counter-position is available at identical distribution.",
       "gradeReason": "Concept sharp but 'produce a contradiction field' needs a specific domain to perform.",
-      "artworkPrompt": "Style: Academic debate visual. Subject: Two parrots at podiums citing each other's sources in opposite directions. Mood: Peer-reviewed impasse, credentialed standoff."
+      "artworkPrompt": "Style: Academic debate visual. Subject: Two parrots at podiums citing each other's sources in opposite directions. Mood: Peer-reviewed impasse, credentialed standoff.",
+      "jsonLegacy": {
+        "cardName": "The Contradiction Field",
+        "power": "Places credentialed opposing voices on each contested question until no stable factual baseline holds.",
+        "lore": "For each position, peer-reviewed counter-information is available at identical distribution."
+      },
+      "textSource": {
+        "source": "PDF v05 The_Move - ADD web ID.pdf p4 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 11,
@@ -131,7 +143,13 @@
       "power": "Converts unresolvable information load into passive acceptance of the default already in place.",
       "lore": "After sufficient exposure to contradictory authoritative claims, people stop choosing and accept what is already there.",
       "gradeReason": "STANDARD DEFAULT OPTION — ACCEPT ALL DEFAULTS. The sloth knows exactly what to do.",
-      "artworkPrompt": "Style: Consumer UX design. Subject: Sloth before infinite form, checkboxes pre-ticked ACCEPT ALL DEFAULTS. Mood: Exhausted consent, manufactured passivity."
+      "artworkPrompt": "Style: Consumer UX design. Subject: Sloth before infinite form, checkboxes pre-ticked ACCEPT ALL DEFAULTS. Mood: Exhausted consent, manufactured passivity.",
+      "printTypo": "Lore-Ende vom GW-Signaturlogo verdeckt ('accept what is alr…')",
+      "textSource": {
+        "source": "PDF v05 The_Move - ADD web ID.pdf p4 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 13,
@@ -246,16 +264,18 @@
       "cardName": "The Frame Selection",
       "grade": 1,
       "power": "Determines which context a fact arrives with before the fact can be examined independently.",
-      "lore": "The same event produces distinct public understanding depending on the surrounding material — which is selected.",
+      "lore": "The same event produces different public understanding depending on the surrounding material — which is selected.",
       "gradeReason": "The editor who chooses what surrounds the story. Role and move arrive together.",
       "artworkPrompt": "Style: Editorial room. Subject: Raven editor choosing surrounding photos, story itself unchanged. Mood: Curatorial power, invisible selection.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Frame Selection",
         "power": "Determines which context a fact arrives with before the fact can be examined independently.",
-        "lore": "The same event produces different public understanding depending on the surrounding material - which is selected.",
+        "lore": "The same event produces distinct public understanding depending on the surrounding material — which is selected."
+      },
+      "textSource": {
         "source": "PDF v05 The_Move - ADD web ID.pdf p8 TL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -298,17 +318,19 @@
       "cardNumber": 30,
       "cardName": "The New Baseline",
       "grade": 2,
-      "power": "Converts an exceptional condition into the standard through sustained repetition and adaptation.",
-      "lore": "After sufficient time, the exception is no longer described as exceptional.",
+      "power": "Converts an exceptional condition into the standard through sustained duration and adaptation.",
+      "lore": "After sufficient time, the exceptional condition is no longer described as exceptional.",
       "gradeReason": "State change clearly described but needs a performer's hook — who says 'this is normal now'?",
       "artworkPrompt": "Style: Government standards publication. Subject: EXCEPTIONAL line crossed out, NEW NORMAL line drawn at same level. Mood: Administrative normalization, quiet redefinition.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The New Baseline",
-        "power": "Converts an exceptional condition into the standard through sustained duration and adaptation.",
-        "lore": "After sufficient time, the exception is no longer described as exceptional.",
+        "power": "Converts an exceptional condition into the standard through sustained repetition and adaptation.",
+        "lore": "After sufficient time, the exception is no longer described as exceptional."
+      },
+      "textSource": {
         "source": "PDF v05 The_Move - ADD web ID.pdf p9 TR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -316,16 +338,19 @@
       "cardName": "The Retroactive Justification",
       "grade": 1,
       "power": "Produces explanations that position the current state as the natural or inevitable outcome.",
-      "lore": "The trajectory is legible only toward the current position; alternative paths are no longer narrated as having been possible.",
+      "lore": "The trajectory is legible only toward the current position; alternative paths are no longer visible from Hation all along.",
       "gradeReason": "The spin doctor who makes history inevitable. 'It was always going this way' is the entire character.",
       "artworkPrompt": "Style: Historical documentary aesthetic. Subject: Badger rewriting map arrows to point only where they already went. Mood: Inevitable trajectory, illegible alternatives.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Retroactive Justification",
         "power": "Produces explanations that position the current state as the natural or inevitable outcome.",
-        "lore": "The trajectory is legible only toward the current position; alternative paths are no longer visible from Hation all along.",
+        "lore": "The trajectory is legible only toward the current position; alternative paths are no longer narrated as having been possible."
+      },
+      "printTypo": "Satzende im Druck verstümmelt ('visible from Hation all along'); wörtlich übernommen",
+      "textSource": {
         "source": "PDF v05 The_Move - ADD web ID.pdf p9 BL",
-        "method": "ocr",
-        "confidence": "medium"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -335,7 +360,12 @@
       "power": "Converts sufficient duration into apparent permanence, and apparent permanence into natural fact.",
       "lore": "Those who arrived after the shift describe the current state as normal. Those who arrived before it are fewer.",
       "gradeReason": "'Those who remember the before are fewer now.' Devastating and immediately playable.",
-      "artworkPrompt": "Style: Generational photograph. Subject: Young animals explaining to elders that this is how it has always been. Mood: Demographic replacement of memory, normalized reality."
+      "artworkPrompt": "Style: Generational photograph. Subject: Young animals explaining to elders that this is how it has always been. Mood: Demographic replacement of memory, normalized reality.",
+      "textSource": {
+        "source": "PDF v05 The_Move - ADD web ID.pdf p9 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 33,
@@ -345,14 +375,10 @@
       "lore": "The shock produces rapid adaptation; the adapted state accepts the new cost structure as the baseline.",
       "gradeReason": "SHOCK! CRASH! HIKE! — the card art screams the move. You disrupt behavior before alternatives form.",
       "artworkPrompt": "Style: Supermarket receipt nightmare. Subject: Fox staring at receipt: SHOCK CRASH HIKE items. Mood: Rapid behavioral disruption, forced adaptation.",
-      "print": {
-        "cardName": "The Price Shock",
-        "power": "Introduces a sudden cost increase",
-        "lore": "The shock produces rapid adaptation I that disrupts established behavior before the adapted state accepts the new cost structure as the baseline.",
+      "textSource": {
         "source": "PDF v05 The_Move - ADD web ID.pdf p10 TL",
-        "method": "ocr",
-        "confidence": "low",
-        "splitUncertain": true
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -408,13 +434,10 @@
       "lore": "The decision stands; the criteria are proprietary; an appeal is available at significant time and cost.",
       "gradeReason": "Administrative opacity well described — but the role of 'the black box operator' needs more edge.",
       "artworkPrompt": "Style: Administrative tribunal. Subject: Raccoon receiving verdict from sealed box, APPEAL button visible, line around the building. Mood: Opaque authority, accessible in theory.",
-      "print": {
-        "cardName": "The Black Box Decision",
-        "power": "Produces consequential outcomes through processes whose criteria are whose criteria are inaccessible to those they affect.",
-        "lore": "The decision stands: the criteria are proprietary; an appeal is available at significant time and cost.",
+      "textSource": {
         "source": "PDF v05 The_Move - ADD web ID.pdf p11 BL",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     },
     {
@@ -556,26 +579,38 @@
       "cardNumber": 55,
       "cardName": "The Complexity Shield",
       "grade": 1,
-      "power": "Uses the genuine complexity of systems to make pattern description appear naive or incomplete.",
+      "power": "Uses the genuine complexity of systems to make pattern description appear naïve or incomplete.",
       "lore": "The system is genuinely complex; what it consistently produces is not.",
       "gradeReason": "The academic who deploys real complexity to hide a simple output. Immediately embodiable expert-obfuscator.",
-      "artworkPrompt": "Style: Academic chalkboard. Subject: Beaver in lab coat filling board with equations — behind: simple arrow going one direction. Mood: Genuine complexity, deliberately deployed."
+      "artworkPrompt": "Style: Academic chalkboard. Subject: Beaver in lab coat filling board with equations — behind: simple arrow going one direction. Mood: Genuine complexity, deliberately deployed.",
+      "jsonLegacy": {
+        "cardName": "The Complexity Shield",
+        "power": "Uses the genuine complexity of systems to make pattern description appear naive or incomplete.",
+        "lore": "The system is genuinely complex; what it consistently produces is not."
+      },
+      "textSource": {
+        "source": "PDF v05 The_Move - ADD web ID.pdf p15 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
+      }
     },
     {
       "cardNumber": 56,
       "cardName": "The Move Itself",
       "grade": 1,
-      "power": "At sufficient scale of internalization, the pattern no longer needs to be performed — it becomes the ambiance.",
+      "power": "At sufficient scale of internalization, the pattern no longer needs to be performed — it becomes the ambient condition.",
       "lore": "The move is complete when it stops being a move and becomes the environment.",
       "gradeReason": "The perfect closer. When the move disappears into reality, the game is over. You know it when you read it.",
       "artworkPrompt": "Style: Ambiance photography. Subject: FrizzleBob rabbit in normal urban scene, every element quietly labeled with its move. Mood: Structural ubiquity, named at last.",
-      "print": {
+      "jsonLegacy": {
         "cardName": "The Move Itself",
-        "power": "At sufficient scale of internalization, the pattern no longer needs to be performed - it becomes the ambient condition.",
-        "lore": "The move is complete when it stops being a move and becomes the environment.",
+        "power": "At sufficient scale of internalization, the pattern no longer needs to be performed — it becomes the ambiance.",
+        "lore": "The move is complete when it stops being a move and becomes the environment."
+      },
+      "textSource": {
         "source": "PDF v05 The_Move - ADD web ID.pdf p15 BR",
-        "method": "ocr",
-        "confidence": "high"
+        "method": "visual-check",
+        "checkedAt": "2026-10-14"
       }
     }
   ],
