@@ -1,7 +1,32 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§24 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§25 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 25 · 15.10. · F-4 zweite Besetzung: drei KayKit-Kandidaten mit Georgs Augen-Profil (Bilder für Georg)
+
+**Bilder für Georg:** `ws1/proofs/2026-10-15-cast/`
+- `cast_sheet.png`: je Kandidat ein Two-Shot `cam=near` neben FrizzleBob, Karte im Billboard, Palette nach Karte.
+- `cast_speak_sheet.png`: dieselben beim Sprechen.
+- Einzelbilder `stage_<id>.png` und `speak_<id>.png`.
+- Vorauswahl aus sechs unmaskierten Figuren: `lineup_full.png`, `lineup_face.png`.
+
+| # | Kandidat | Quelle (Modell) | Profil | Silhouette neben FrizzleBob |
+|---|---|---|---|---|
+| 1 | **Mage** | KayKit Adventurers 2.0 FREE `Characters/gltf/Mage.glb` @f9dd7a64 (Blob 66eac745) | `adventurer-mage`, AUTO_CANDIDATE, Paar-Sicherheit 0,7 | hoch, Spitzhut, Violett |
+| 2 | **Barbarian** | dto. `Barbarian.glb` (Blob d06efc99) | `adventurer-barbarian`, AUTO_CANDIDATE, 0,7 | breit, Bärenfell-Mütze, Bart, Braun/Grau |
+| 3 | **GothGirl** | KayKit Mystery Series 6 `GothGirl/characters/GothGirl.glb` @29c7500b (Blob b56f67e4) | `gothgirl`, AUTO_CANDIDATE, **1,0** (sauberste Augen-Quelle im Batch) | schmal, schwarzes Haar, Grau/Schwarz |
+
+- **Profilquelle:** `eye-rig-medium.batch-1.json` @ac9dbaed (Georgs Export 19.09.), Eintrag je Figur unverändert, F1-Weg (`kaykit-eye-adapter`, `pet-eye-rig.v6`, Studio @db823766).
+  - **Ehrlich gesagt:** Im Batch sind nur Rogue_Hooded (maskiert) und Mannequin (gesichtslos) ADJUSTED_APPROVED. Alle anderen sind AUTO_CANDIDATE: Georgs Klassen-Standard (Browser-Tuning 19.09.) plus automatisch gemessener Anker je Figur.
+  - „Georgs Augen“ heißt hier also Klassen-Standard, nicht ein je Figur nachgestelltes Profil. Wählt Georg eine Figur, wäre ein Feinschliff im Studio der nächste Schritt (seine Sache, keine WS1-Werte).
+- **Nicht gewählt:** Knight (Helm rahmt das Gesicht), Ranger und Rogue (gleicher Körperbau wie die anderen Adventurers). Weitere Batch-Figuren (Witch, Cleric, Lorekeeper, Farmer, Caveman, Protagonists, Vampire …) können als Ersatz nachgereicht werden.
+- **Maßstab:** Gleicher Klassen-Faktor wie FrizzleBob (0,947368, P08 CLASS_K; beide Rig_Medium, Knochenlängen gleich laut §18). Keine Höhen-Normierung, damit Hut oder Mütze die Figur nicht verkleinern. Neue Option `classScale` im F1-Darsteller; ohne sie bleibt die bisherige Höhen-Normierung (Studio-Parität F1 unverändert).
+- **Sprechen ohne Mund (F-4):** KayKit hat keinen Sprechmund. Die Figur spricht heute nur über die Blase an ihrem Anker `stage-right`, das Gesicht bewegt sich nicht (Augen-Leben läuft). Es ist nichts dazugebaut.
+- **Befund und Korrektur, wie §21 auch im F1-Weg:** `eyeActor` montierte die Augen auf der schon gedrehten Figur (Bühne rechts yaw −0,45). Die Augen saßen verdreht und wirkten zugekniffen. Jetzt Aufbau mit Weltdrehung 0, Drehung danach. Gegenprobe: Test FAIL ohne Korrektur.
+- **Test `cast`, 6 Prüfpunkte, PASS:** Quellen gepinnt (GLB-Blob = Rezept, Profil = Batch-Eintrag bytegleich) · geladen mit Augen · Augen symmetrisch auf der gedrehten Figur · Klassen-Faktor wie FrizzleBob · spricht per Blase · keine Seitenfehler.
+- **Stand Code:** kfb-planet @d8a20ca, lokal. Die volle Suite läuft erst nach der laufenden Gesamtrunde der M1-Sitzung (abgesprochen); danach Code-Spiegel nach `ws1/kfb-planet` und Nachtrag hier.
+- **Bitte an WS0:** Die Bilder Georg vorlegen; seine Wahl hierher.
 
 ## 24 · 15.10. · V-245 Bühnen-Palette gebaut · Bildbogen für Georg · Karten nur vierteln (Georg) + Drift-Liste · Quittungen
 
