@@ -6,3 +6,6 @@
 - 180/180 source/syntax checks; browser/runtime/visual/GitHub-save NOT RUN.
 - Composer connection plan delivered, no Composer build.
 - Acceptance 1 pending; Step 2/3 remain pending. No merge/Cloudflare/Live.
+
+## 2026-10-14 · Georg root correction
+- Site v5 root directly opens actual P08 authoring UI; unrelated link overview removed. Same Site/owner/audience. 8/8 root/dependency checks. No new visual acceptance or rigging-fix claim.

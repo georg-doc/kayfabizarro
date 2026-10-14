@@ -1,3 +1,13 @@
+## CURRENT CORRECTION · 2026-10-14 · Georg: ToolBox means the actual P08 tool
+
+Georg rejected keeping the unrelated link overview as the ToolBox homepage. The root now serves the actual Production-08 authoring UI directly, using the exact candidate index and complete same-origin support, kfb-lib, owners and data directories. No redirect, iframe, redesign or second Site. Root overview JSON removed. /production-08/ retained as compatibility only. Earlier text below saying root router remains unchanged is SUPERSEDED.
+
+Existing Site version 5 private deployment succeeded at https://kfb-toolbox.frizzlebob.chatgpt.site/ . Site source 021670d09ac0156e356363b3f7de1eb189f0f868; saved version appgprj_6ac2ba44282881919d1a49287a32054e~appgver_67570cd7090c81918e6642616be385a7; deployment appgdep_6acfddf108cc8191b95dd45c2189c5c8. Eight root-entry/source/dependency assertions PASS. No new visual/browser proof; existing 180 source/syntax tests unchanged, not rerun. All previously unresolved rigging fixes, source parity and real GitHub saving remain open. This corrects the entry surface only.
+
+Next gate remains TOOLBOX_P08_SITE_SOURCE_PARITY_01, now at the root URL, then continue authorized fixes/save. Georg may open the root to inspect the actual tool; no repeated configuration required. No merge/Live promotion.
+
+---
+
 # V-244 Return · incomplete port candidate · WS0 first
 Date: 2026-10-14. Owner: existing KFB ToolBox. Repo: georg-doc/kayfabizarro. Branch: work/toolbox-p08-site-v244-2026-10-14. Draft PR #399, review base docs/kfb-decisions-register-2026-10-11.
 Implementation head: 41013280fc0b7db6175f5f5d5a44ead48325c967. Final head is the current ref containing this Return; no self-referential SHA is fabricated.
