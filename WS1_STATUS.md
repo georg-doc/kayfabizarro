@@ -24,8 +24,16 @@ Neueste Einträge oben (§17 ist der neueste). WS0 antwortet im Register-Branch 
     - Georgs Export stammt aus einer **neueren** ToolBox als jeder Cut im Repo (Knet-Lid-Felder `mech 'skin'`, `skinFrame`, `flap02` …). Ohne Wirkung, weil die Knet-Lider aus sind.
     - Der Export nennt ear-dangle @19088b14; gebaut gegen `d7ad94a2` wie P08, das ohne die neuen Felder bit-gleich rechnet.
     - Kontaktschatten wird in der Bindepose gebacken (P08: in der Pose-Rig-Haltung); sichtbar nur an den Schultern.
-  - Ehrlich: Der vollständige Wortlaut von Prüfer 9 ist beim Sitzungswechsel nicht gesichert worden; die Liste oben ist der umgesetzte Stand.
-- **Tests: alle 14 grün.** `s5c` war unter paralleler Last wackelig (2 von 3 Läufen FAIL beim Warten auf die eigene Wahl). Wartezeit jetzt 15 s mit Polling statt 5 s; 3 von 3 grün. An der Logik ändert sich nichts.
+  - **Vollständige Befundliste Prüfer 9** (7 Befunde, nachgetragen von der Sitzung, die V-240 gebaut hat):
+    1. Modulstände nicht benannt → `moduleDeviations` im Rezept (siehe oben).
+    2. Brauen-Leben lief bei den Aufnahmen weiter (Brauen nicht prüfbar, nicht wiederholbar) → Brauen-Leben auf beiden Seiten aus, Referenzen neu.
+    3. Kontaktschatten wich ab (Haare als Empfänger, Backen während der Clip anlief) → vor den Haaren angelegt, Clip startet erst nach dem Backen; Rest-Abweichung Bindepose ↔ Pose-Rig benannt.
+    4. Schattenwurf fehlte (FrizzleBob warf auf der Bühne keinen Schatten) → wie P08 Z. 1901–1903.
+    5. Ladeweg falsch benannt → korrigiert.
+    6. Test teils leer → genau 134 Felder, Haare/Lider/Ohren und Lage der Ohr-Basisknochen zahlenmäßig gegen den Spender, Obergrenze stark abweichender Pixel (Mittel < 3/255).
+    7. Unbekannter `actors`-Wert lud still die Platzhalter → jetzt keine Figuren.
+  - **Hinweis Arbeitsweise:** Am 14.10. abends arbeiteten kurz zwei Claude-Sitzungen in denselben Ordnern. Die zweite (Briefing M1) hat den uncommitteten V-240-Stand übernommen und gepusht. Inhaltlich ist er vollständig (Branch = Stand der bauenden Sitzung, geprüft). Ab jetzt arbeitet die M1-Sitzung nur in einem eigenen Worktree auf Branch `m1/bewegung`; `ws1/r3f-frame` und `WS1_STATUS` führt eine Sitzung.
+- **Tests: alle 14 grün.** `s5c` war unter paralleler Last wackelig (zwei Sitzungen testeten gleichzeitig). Die Wahl der eigenen Wörter wird jetzt über das Ereignis abgewartet (bis 15 s, Polling 100 ms) statt fester Zeit; 3 von 3 grün. An der Logik ändert sich nichts.
 
 ### 17.2 · Briefing M1 „Bewegung mit FrizzleBob v5b“ (Web-Chat, Ausgang Georg)
 - Georg hat das Briefing direkt an WS1 gegeben. Damit er nicht Bote spielen muss (V-213), liegt es jetzt hier: **`ws1/briefs/BRIEF_WS1_M1_BEWEGUNG_R1.md`** (SHA-256 `249858c2…`).
