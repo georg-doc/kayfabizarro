@@ -1,6 +1,6 @@
 {
   "name": "kfb-triplets",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Pinned source-verified single-card Triplets with strict SHOW/SPIN/SELL and auditable source evidence.",
   "author": {
     "name": "Georg Westphalen",
@@ -21,7 +21,7 @@
         ],
         "category": "Productivity",
         "defaultPrompt": [
-          "Make verified one-sentence Triplets for cards 1\u20138 of Monomyth Mayhem; show title, POWER, LORE and contentShare; reject failures as NO_TRIPLET."
+          "Make verified one-sentence Triplets for cards 1–8 of Monomyth Mayhem; show title, POWER, LORE and contentShare; reject failures as NO_TRIPLET."
         ],
         "developerName": "Georg Westphalen",
         "displayName": "KFB Triplets",
