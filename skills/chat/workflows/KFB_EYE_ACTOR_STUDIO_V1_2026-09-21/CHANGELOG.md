@@ -1,5 +1,15 @@
 # KFB Eye Actor Studio v1 · CHANGELOG
 
+## 2026-10-14 · Thin-Clay Lid single-eye isolated candidate (TUNE)
+
+New same-owner geometry candidate in `thin-clay-lid.v1.mjs`, 30/30 local Node structural checks; `tests/thin-clay-lid.test.mjs` and `thin-clay-proof.html` source-only + candidate browser fixture. Exact existing `clay-lid.v1.mjs` donor was separately rendered in isolation before the candidate and remains unchanged. Six CPU/VTK mesh views inspected. Full closure conceals the central pupil in that controlled fixture; original donor preset occludes the eye already in neutral.
+
+Upper side/rear shell seam still visibly rough after two non-improving tuning passes. **NOT HUMAN VISUAL PASS; NOT INTEGRATED.** Headless Chromium/WebGL failed at GPU init, so browser/Site QA not run, no Site publication, no Cloudflare Stage, no character/FrizzleBob profile change. Repo remains `georg-doc/kayfabizarro`, PR #159, geometry owner Eye Actor Studio; ToolBox/EyeRig v6 PR #104 is only the future receiving consumer.
+
+Next single gate: `EAS1_THIN_CLAY_ISOLATED_BROWSER_AND_UPPER_SEAM_REVIEW` (retain existing EAS1-MOTION-1 motion A/B review separately).
+
+---
+
 ## 2026-09-21 · EAS1-A/B/C/D working candidate
 
 Created fresh branch from main@66d6d96b5e8f6ef8fb06a0888baa70d822fb9a69.
