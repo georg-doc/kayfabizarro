@@ -2993,6 +2993,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-236",
+   "date": "2026-10-14",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Besetzung erste Dialog-Bühne: Hauptdarsteller FrizzleBob v5 (FB_TEMPLATE_LOOK_v5.glb, Blob 131d7c38, Commit 19088b14, Branch chat/fb-ear-rig-v5-2026-09-25, Pfad tools/KFB-ToolBox/ear-rig/glb/; Ohren-Rig fb-default.ear-rig.json; Augen-/Lid-Beleg 7/7 PASS 30.09. in KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/evidence/acceptance_1-7_frizzlebob-earrig-v5.json). Nicht v5b stillschweigend einsetzen. Rogue_Hooded bleibt nur technische F1-Testfigur; ein maskierter Charakter spricht nicht. Gesicht: genau ein Treiber (KFB_NATIVE aus FrizzleBobs eigenem Quellstapel), keine Rogue-Werte übernehmen, keine neue Gesichts-Engine. Fehlende Teile (z. B. Mund) als SOURCE_REQUIRED melden, nie Platzhalter.",
+   "values": {},
+   "owner": "WS1",
+   "check": "G0 Quell-Isolation FrizzleBob v5, dann Darsteller-Slot",
+   "source": "Georg 14.10. (via WSA, replies/GEORG_CAST_DIRECTION_FRIZZLEBOB_V5_WS0_TO_WS1_2026-10-14.md)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS1 hatte Rogue_Hooded (maskiert) als Darsteller; für Sprechen braucht es ein sichtbares Gesicht und die KFB-Hauptfigur.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3055,7 +3070,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:185",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:191",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 morgens · Besetzung FrizzleBob v5
+- V-236: Hauptdarsteller FrizzleBob v5 (Quelle gepinnt, G0 geprüft: GLB auf Commit 19088b14 vorhanden, 7/7-Beleg auf main); Rogue_Hooded nur F1-Testfigur. Verbindliche Antwort in WS0_TO_WS1.md. WSA-Übergabe replies/GEORG_CAST_DIRECTION_FRIZZLEBOB_V5_WS0_TO_WS1_2026-10-14.md übernommen (der dort blockierte Changelog-Eintrag ist hiermit nachgetragen).
+
 ## 2026-10-14 früh · Triplets: Story statt Definition
 - V-235: Mini-Story mit kleinem Bogen, keine Definitionsform.
 
