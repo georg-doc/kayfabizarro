@@ -3,9 +3,7 @@
 **Quelle:** NotebookLM-Bericht „The Architecture of Stand-Up Comedy“, als zweiter Tab im Drive-Doc `1w9dRLIK5rnO1nnv8K3VVxd4i8k2eWat0-YG9gzZwUuc` (32 Belege). Es ist eine allgemeine Handwerks-Recherche (Schritt 1). Der KFB-spezifische Bericht (Schritt 2, Opener mit `{title}`, Tropes-Tabelle) liegt nicht vor.
 
 ## Was davon für KFB gilt
-1. **Triplet = Greg-Dean-Witzbau.**
-   - Subjekt (Setup, baut eine stille Annahme) → Connector (ein Element mit zwei Lesarten) → Reframe (Neudeutung, „2nd Story“).
-   - Daraus folgt die Prüffrage je Triplet: Hat es einen echten Connector mit zwei Lesarten, und dreht der Reframe ihn um?
+1. **Abgrenzung (Georg 14.10.):** Ein KFB-Triplet ist **kein** Witz nach Greg Dean. Es ist eine Mikro-Story je Karte, ein Satz zu 90–95 % aus Titel, Power und Lore (Plugin kfb-triplets), mit einem Stand-up-Opener als Kontext. „Connector“ heißt dort nur die grammatische Verbindung im Satz. Die Witz-Theorie unten ist Handwerks-Hintergrund für Opener, Set-Bau und Figuren, **kein Prüfraster für Triplets**.
 2. **Wortökonomie:**
    - Kein überflüssiges Wort vor der Pointe.
    - Das „funny word“ steht am Satzende.
@@ -28,5 +26,5 @@
    - „Hammock“: ungetestetes Material zwischen zwei starken Beats. Gilt für die Reihenfolge der Karten in einem Dialog-Set.
 
 ## Verwendung
-- **Prüfung der 168 Triplets:** Vor Georg markiert WS0 je Beat die Punkte 1–2 (Connector vorhanden, Pointe am Ende, keine Füllwörter). Georg sieht pro Deck eine Liste mit diesen Markierungen.
+- **Prüfung der Triplets:** nach Quellentreue (Anteil wörtlicher Kartenwörter, keine erfundenen Behauptungen) und passendem Opener. Nicht nach Pointe.
 - **Figurenprofil:** Haltung (4) und bevorzugte Filter (5) als Felder, sobald die Figuren-Profile entstehen.
