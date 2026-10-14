@@ -9,9 +9,10 @@ import { playerState } from './world'
 import { useGame } from './store'
 import { DEBUG, expose } from './debug'
 import { isIssuedLine, SILENCE } from './dialogText'
-import { testLine } from './poolReader'
+import { testLine, zurufLine } from './poolReader'
 
-const PLAYER_ANCHOR = { id: 'player', position: playerState.pos, offset: [0, 2.0, 0] }
+// Kopf-Oberkante der Spielfigur: playerState.pos ist die Körpermitte; +1,05 m liegt knapp über dem Kopf (gemessen am Bildschirm)
+const PLAYER_ANCHOR = { id: 'player', position: playerState.pos, offset: [0, 1.05, 0] }
 
 export default function BubbleHost() {
   const layer = useRef(null)
@@ -27,7 +28,7 @@ export default function BubbleHost() {
     const unsub = useGame.subscribe((s, prev) => {
       if (!s.speech || s.speech === prev.speech) return
       const { anchor, line, kind, color } = s.speech
-      const ok = isIssuedLine(line) && (line.source !== 'TEST' || DEBUG)
+      const ok = isIssuedLine(line) && (line.source !== 'TEST' || DEBUG) && (!line.speaker || line.speaker === anchor)
       if (!ok) { console.warn('[bubble] Zeile ohne geprüfte Quelle verworfen'); L.show(anchor, [SILENCE], 'thought', color); return }
       L.show(anchor, line.parts, line.source === 'SILENCE' ? 'thought' : kind, color)
     })
@@ -35,6 +36,7 @@ export default function BubbleHost() {
     expose('Bubbles', () => L.list())
     expose('BubbleRenders', () => renders.current)
     expose('SayTest', (anchor, parts, kind, color) => useGame.getState().say(anchor, testLine(parts), kind, color))
+    expose('SayZuruf', (anchor, label) => useGame.getState().say(anchor, zurufLine(label)))
     expose('SayForged', (anchor, text) => useGame.getState().say(anchor, { text, parts: [text], source: 'POOL' }))
     expose('Anchors', {
       ids: anchorIds,

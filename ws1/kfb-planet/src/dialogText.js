@@ -4,6 +4,7 @@ import { createPoolReader, loadPool, isIssuedLine, SILENCE } from './poolReader'
 import deckBlobs from './data/deck-blobs.json'
 import { MEDIA_COMMIT } from './cardMapping'
 import { DEBUG, expose } from './debug'
+import data from './data/cards.json'
 
 const deckCache = new Map()
 const deckJson = (deckId) => {
@@ -13,11 +14,17 @@ const deckJson = (deckId) => {
   return deckCache.get(deckId)
 }
 
-let reader = createPoolReader({ deckBlobs: deckBlobs.decks, deckJson })
+// Kartenquelle: src/data/cards.json (Registry @ ac9dbae, Texte wörtlich), Schlüssel deckId#Nummer
+const byKey = new Map()
+data.cards.forEach(([d, num, name, power, lore]) => byKey.set(data.decks[d][0] + '#' + num, { name, power, lore }))
+const cardSource = (deckId, num) => byKey.get(deckId + '#' + num) || null
+const cache = { get: () => JSON.parse(localStorage.getItem('kfb-ws1-pool-cache') || 'null'), set: (v) => localStorage.setItem('kfb-ws1-pool-cache', JSON.stringify(v)) }
+
+let reader = createPoolReader({ deckBlobs: deckBlobs.decks, deckJson, cardSource })
 let loadState = { loading: true, error: null }
-export const ready = loadPool().then(({ pool, blob, error }) => {
-  loadState = { loading: false, error }
-  if (pool) reader = createPoolReader({ pool, poolBlob: blob, deckBlobs: deckBlobs.decks, deckJson })
+export const ready = loadPool({ cache }).then(({ pool, blob, error, cached }) => {
+  loadState = { loading: false, error, cached: !!cached }
+  if (pool) reader = createPoolReader({ pool, poolBlob: blob, deckBlobs: deckBlobs.decks, deckJson, cardSource })
   return reader
 })
 export const getReader = () => reader

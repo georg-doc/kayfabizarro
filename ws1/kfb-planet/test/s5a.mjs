@@ -43,9 +43,10 @@ await page.waitForTimeout(600)
 const L3 = await list()
 const thought = await page.evaluate(() => { const el = [...document.querySelectorAll('#ui-bubbles [data-kind]')].find((e) => e.dataset.speaker === 'behind'); return { flips: [...el.querySelectorAll('[data-part]')].reduce((n, d) => n + d.getAnimations().length, 0) } })
 // 3b · Vertrag §5 im Host: eine nicht vom Pool-Leser ausgegebene Zeile wird zu „…“ (Denkblase); Pool-Status geladen
-await page.evaluate(() => { window.__kfbAnchors.ahead('forged', 9, -2.5, 0); window.__kfbSayForged('forged', 'Erfundener Satz') })
+await page.evaluate(() => { window.__kfbAnchors.ahead('forged', 9, -2.5, 0); window.__kfbSayForged('forged', 'Erfundener Satz'); window.__kfbAnchors.ahead('npc', 9, 2.5, 1.5); window.__kfbSayZuruf('npc', 'KayfaBINGO!') })
 await page.waitForTimeout(300)
 const forged = (await list()).find((b) => b.anchor === 'forged')
+const zurufAtNpc = (await list()).find((b) => b.anchor === 'npc')
 await page.waitForFunction(() => !window.__kfbPool().loading, null, { timeout: 30000 }).catch(() => {})
 const pool = await page.evaluate(() => window.__kfbPool())
 const cardLine = await page.evaluate(async () => { const c = window.__kfbTower()[0]; return { ...(await window.__kfbLineFor(c, 'cardName')), name: c.name } })
@@ -86,6 +87,7 @@ process.exit(report('s5a bubble layer', {
   noReactRenderOnMove: r1 === r0,
   hiddenBehindCamera: L3.find((b) => b.anchor === 'behind')?.shown === false,
   hiddenOutsideImage: L3.find((b) => b.anchor === 'outside')?.shown === false,
+  playerLineOnlyAtPlayer: zurufAtNpc?.text === '…' && zurufAtNpc?.kind === 'thought',
   forgedLineBecomesSilence: forged?.text === '…' && forged?.kind === 'thought',
   livePoolLoaded: pool.loaded === true && /^[0-9a-f]{40}$/.test(pool.blob || '') && pool.contentRevision != null,
   noAcceptedSoCardText: pool.acceptedBeats > 0 || (cardLine.source === 'CARD' && cardLine.text === cardLine.name),

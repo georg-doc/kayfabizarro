@@ -25,48 +25,8 @@ export function cardsOfDeck(di) {
   return out
 }
 
-const words = (s) => s.trim().split(/\s+/).filter(Boolean).length
-const clean = (s) => s.trim().replace(/^[“"'(]+|[”"')]+$/g, '').replace(/[.;:!?,]+$/, '').trim()
+// fragments/pickFragments/CONNECTORS (Spike) entfernt: Ausschnitte und Verbinder erzeugten Triplets/Brücken (Vertrag §5).
 
-// Zerlegt Power und Lore in wörtliche Stücke (Satzzeichen, längere Sätze an Kommas/Gedankenstrichen)
-export function fragments(card) {
-  const out = []
-  const push = (text, from) => {
-    const t = clean(text)
-    const w = words(t)
-    if (/^power:?\s*\d+$/i.test(t) || /^\d+$/.test(t)) return
-    if (w >= 2 && w <= 16 && !out.some((o) => o.text.toLowerCase() === t.toLowerCase())) out.push({ text: t, from })
-  }
-  const split = (txt, from) => {
-    let s = txt
-    const colon = s.indexOf(':')
-    if (colon > 0 && colon < 40) { push(s.slice(0, colon), from); s = s.slice(colon + 1) }
-    for (const sent of s.split(/(?<=[.!?;])\s+/)) {
-      const w = words(sent)
-      if (w <= 16) push(sent, from)
-      if (w > 9) for (const part of sent.split(/,\s+|\s+[—–-]\s+/)) if (words(part) >= 3) push(part, from)
-    }
-  }
-  split(card.power, 'power')
-  split(card.lore, 'lore')
-  return out
-}
-
-// 2–3 Optionen: möglichst eine aus Power, eine aus Lore, kurz bevorzugt. only = 'power' | 'lore' filtert.
-export function pickFragments(card, n = 3, rand = Math.random, only = null) {
-  let all = fragments(card)
-  if (only) { const f = all.filter((x) => x.from === only); if (f.length) all = f }
-  if (all.length <= n) return all
-  const byFrom = (f) => all.filter((x) => x.from === f)
-  const pick = []
-  for (const f of ['power', 'lore']) { const l = byFrom(f); if (l.length) pick.push(l[Math.floor(rand() * l.length)]) }
-  const rest = all.filter((x) => !pick.includes(x)).sort((a, b) => words(a.text) - words(b.text))
-  while (pick.length < n && rest.length) pick.push(rest.splice(Math.floor(rand() * Math.min(3, rest.length)), 1)[0])
-  return pick.slice(0, n)
-}
-
-export const CONNECTORS = ['but', 'therefore', 'and then', 'unless', 'meanwhile', 'which means']
-// Story-Mode-Würfel (Freestyle Rules v18-4 §3). Farben sind PLATZHALTER, bis Georgs Farbkodierung vorliegt.
 export const STORY_MODES = [
   { n: 1, name: 'Tragic', de: 'Tragisch', hint: 'Loss is real. Push forward anyway.', color: '#5b7bd5' },
   { n: 2, name: 'Comic', de: 'Komisch', hint: "Things go wrong. It's your fault. Play the gap.", color: '#f2c94c' },

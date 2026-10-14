@@ -21,7 +21,7 @@ export const ACTION_KEYS = {
 }
 
 // Rangfolge: wer zuerst gefragt wird. Wer die Taste nutzt, ruft e.preventDefault(); dann ist Schluss.
-export const PRIO = { choice: 30, dialog: 20, editor: 15, player: 10 }
+export const PRIO = { playerChoice: 35, choice: 30, dialog: 20, editor: 15, player: 10 } // playerChoice = S5c, choice = Spike-Dialog-Auswahlen
 
 const handlers = []
 let installed = false

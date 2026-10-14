@@ -15,18 +15,27 @@ export const POOL_URL = `https://api.github.com/repos/georg-doc/kayfabizarro/con
 export const SILENCE = '…'
 
 const issued = new WeakSet()
-const issue = (line) => { issued.add(line); return Object.freeze(line) }
+// tief einfrieren: auch parts ist danach unveränderlich (blinder Prüfer 3, Befund 4)
+const issue = (line) => { if (line.parts) Object.freeze(line.parts); Object.freeze(line); issued.add(line); return line }
 export const isIssuedLine = (line) => !!line && typeof line === 'object' && issued.has(line)
 
 // Pool laden: Base64 dekodieren, Schema prüfen, Blob-SHA getrennt von contentRevision festhalten.
-export async function loadPool({ fetchImpl = fetch, url = POOL_URL } = {}) {
+// cache: { get(): {sha, content, t} | null, set(v) } – überbrückt die Abruf-Grenze der Contents API (60/h ohne Anmeldung).
+// Ein frischer Abruf (< maxAgeMs) wird ohne Netz genutzt; scheitert der Abruf, gilt ein älterer Cache-Stand (< 24 h), markiert als cached.
+export async function loadPool({ fetchImpl = fetch, url = POOL_URL, cache = null, maxAgeMs = 10 * 60 * 1000, now = Date.now } = {}) {
+  const decode = (j) => validatePool(JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(j.content.replace(/\s/g, '')), (c) => c.charCodeAt(0)))))
+  let hit = null
+  try { hit = cache?.get() || null } catch (e) { hit = null }
+  if (hit && now() - hit.t < maxAgeMs) { try { return { pool: decode(hit), blob: hit.sha, error: null, cached: true } } catch (e) { hit = null } }
   try {
     const r = await fetchImpl(url, { headers: { Accept: 'application/vnd.github+json' } })
-    if (!r.ok) return { pool: null, blob: null, error: 'HTTP ' + r.status }
+    if (!r.ok) {
+      if (hit && now() - hit.t < 24 * 3600 * 1000) { try { return { pool: decode(hit), blob: hit.sha, error: 'HTTP ' + r.status, cached: true } } catch (e) { /* weiter */ } }
+      return { pool: null, blob: null, error: 'HTTP ' + r.status }
+    }
     const j = await r.json()
-    const bin = Uint8Array.from(atob(j.content.replace(/\s/g, '')), (c) => c.charCodeAt(0))
-    const pool = validatePool(JSON.parse(new TextDecoder().decode(bin)))
-    return { pool, blob: j.sha, error: null }
+    try { cache?.set({ sha: j.sha, content: j.content, t: now() }) } catch (e) { /* ohne Cache weiter */ }
+    return { pool: decode(j), blob: j.sha, error: null, cached: false }
   } catch (e) { return { pool: null, blob: null, error: String(e.message || e) } }
 }
 
@@ -35,7 +44,9 @@ const normDeck = (deck) => ({ ...deck, cards: (deck.cards || []).map((c) => ({ .
 
 // pool: validierter Pool oder null · poolBlob: SHA des Pool-Blobs · deckBlobs: src/data/deck-blobs.json (decks)
 // deckJson(deckId) -> Promise<Deck-JSON am MEDIA_COMMIT> (nur gebraucht, wenn ein ACCEPTED-Beat für die Karte existiert)
-export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {}, deckJson = null } = {}) {
+// cardSource(deckId, num) -> { name, power, lore } aus der Kartenquelle oder null. Kartentext kommt NUR von dort, nie aus dem
+// übergebenen Objekt (blinder Prüfer 3, Befund 5).
+export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {}, deckJson = null, cardSource = null } = {}) {
   const status = { schema: POOL_SCHEMA, loaded: !!pool, contentRevision: pool?.contentRevision ?? null, blob: poolBlob,
     acceptedBeats: pool ? pool.beats.filter((b) => b.status === 'ACCEPTED').length : 0,
     acceptedOpeners: pool ? pool.openers.filter((o) => o.status === 'ACCEPTED').length : 0, rejects: [] }
@@ -60,10 +71,12 @@ export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {},
     status: () => ({ ...status, rejects: status.rejects.slice(-10) }),
     // field: 'cardName' | 'power' | 'lore' – welcher Kartentext gilt, wenn es keine Pool-Zeile gibt
     async lineFor(card, { field = 'cardName' } = {}) {
+      const src = cardSource ? cardSource(card?.deck?.id, card?.num) : null
+      if (!src) return issue({ text: SILENCE, parts: [SILENCE], source: 'SILENCE', card: (card?.deck?.id ?? '?') + '#' + (card?.num ?? '?'), reason: 'CARD_NOT_IN_SOURCE' })
       const p = await poolLine(card)
       if (p) return p
       const key = field === 'cardName' ? 'name' : field
-      const t = typeof card[key] === 'string' ? card[key] : ''
+      const t = typeof src[key] === 'string' ? src[key] : ''
       if (t.trim() && !/^none$/i.test(t.trim())) return issue({ text: t, parts: [t], source: 'CARD', field, card: card.deck.id + '#' + card.num })
       return issue({ text: SILENCE, parts: [SILENCE], source: 'SILENCE', card: card.deck.id + '#' + card.num })
     },
@@ -74,10 +87,11 @@ export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {},
 // Spielerwahl (S5c): feste Zurufe aus dem Studio-Vertrag oder bis zu 8 eigene Wörter des Spielers. Beides ist
 // kein vom Spiel erzeugter Text; der Host zeigt es als Sprechblase der Spielfigur.
 export const ZURUF_LABELS = ['KayfaBINGO!', 'KayfaBOGGLE?', 'KayfaBONGO!', 'BLÖDSINN!']
-export function zurufLine(label) { return ZURUF_LABELS.includes(label) ? issue({ text: label, parts: [label], source: 'ZURUF' }) : null }
+// speaker 'player': der Host zeigt diese Zeilen nur am Anker der Spielfigur (Befund 6)
+export function zurufLine(label) { return ZURUF_LABELS.includes(label) ? issue({ text: label, parts: [label], source: 'ZURUF', speaker: 'player' }) : null }
 export function playerLine(text) {
   const t = String(text || '').replace(/\s+/g, ' ').trim(); const n = t ? t.split(' ').length : 0
-  return n >= 1 && n <= 8 ? issue({ text: t, parts: [t], source: 'PLAYER' }) : null
+  return n >= 1 && n <= 8 ? issue({ text: t, parts: [t], source: 'PLAYER', speaker: 'player' }) : null
 }
 
 // Nur für Tests mit URL-Schalter (#debug/#hosttest): ausdrücklich markierte Prüf-Zeile, nie im Spiel.

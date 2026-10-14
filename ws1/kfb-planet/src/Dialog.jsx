@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import CardArt from './CardArt'
 import { useHostKeys, PRIO, ACTION_KEYS } from './hostKeys'
 import { useGame } from './store'
-import { randomCard, pickFragments, CONNECTORS, STORY_MODES, deckColor } from './cards'
+import { randomCard, STORY_MODES, deckColor } from './cards'
 
 const SELL_MOVES = [['Hit_A', 'Treffer verkaufen'], ['Death_A', 'Dramatisch umfallen'], ['Cheer', 'Triumph posen'], ['Spellcast_Long', 'Beschwören']]
 const ACTS = { 1: 'Akt I · Intro', 2: 'Akt I · Intro', 3: 'Akt II · Konflikt', 4: 'Akt II · Konflikt', 5: 'Ordeal', 6: 'Finale' }
@@ -50,8 +50,10 @@ function Ritual({ card, role, onDone }) {
   const { playEmote, flashStage, storyMode } = useGame()
   const [step, setStep] = useState('show')
   const [res, setRes] = useState({})
-  const claims = useMemo(() => pickFragments(card, 3, Math.random, 'lore'), [card])
-  const powers = useMemo(() => pickFragments(card, 3, Math.random, 'power'), [card])
+  // Vertrag §5: Kartentext wörtlich und unverändert (Spike: zugeschnittene Ausschnitte); leere Felder fallen weg
+  const verbatim = (t) => (typeof t === 'string' && t.trim() && !/^none$/i.test(t.trim()) ? [{ text: t }] : [])
+  const claims = useMemo(() => verbatim(card.lore), [card])
+  const powers = useMemo(() => verbatim(card.power), [card])
   useEffect(() => { flashStage(); playEmote('Interact') }, [card])
   const head = <div className="dialog-head">Intro-Ritual · {role} <ModeBadge mode={storyMode} /></div>
   if (step === 'show') return (
@@ -89,47 +91,8 @@ function Ritual({ card, role, onDone }) {
   return null
 }
 
-// ---------- Eine Erzählzeile: Stück aus Karte A · Fuge · Stück aus Karte B ----------
-function LineBuilder({ from, targets, label, onDone }) {
-  const [step, setStep] = useState('a')
-  const [cur, setCur] = useState({})
-  const [own, setOwn] = useState('')
-  const aOpts = useMemo(() => pickFragments(from), [from])
-  const target = cur.target || (targets.length === 1 ? targets[0] : null)
-  const bOpts = useMemo(() => (target ? pickFragments(target.card) : []), [target?.card?.idx])
-  const preview = <div className="tline pending"><span className="tbeat">{label}</span><span>{cur.a ? <span className="frag">{cur.a}</span> : <i>…</i>} {cur.c && <b>{cur.c}</b>}</span></div>
-  if (step === 'a') return (
-    <>{preview}
-      <div className="ask">Als <b>{from.name}</b> beginnst du mit:</div>
-      <Choices options={[...aOpts.map((f) => ({ label: `„${f.text}“`, f })), { label: '… (Schnitt, keine Verbindung)', cut: true }]}
-        onPick={(o) => o.cut ? onDone({ kind: 'line', beat: label, cut: true }) : (setCur({ a: o.f.text }), setStep('c'))} />
-    </>)
-  if (step === 'c') {
-    const pick = (c, custom) => { setCur({ ...cur, c, custom }); setStep(targets.length > 1 ? 't' : 'b') }
-    return (
-      <>{preview}
-        <div className="ask">Die Fuge:</div>
-        <Choices options={CONNECTORS.map((c) => ({ label: c.toUpperCase(), c }))} onPick={(o) => pick(o.c, false)} />
-        <form className="own" onSubmit={(e) => { e.preventDefault(); const t = own.trim(); if (t) pick(t.split(/\s+/).slice(0, 8).join(' '), true) }}>
-          <label htmlFor="own-conn">oder eigene Fuge (max. 8 Wörter):</label>
-          <input id="own-conn" value={own} maxLength={60} onChange={(e) => setOwn(e.target.value)} placeholder="z. B. and nobody noticed" />
-          <button type="submit">Enter</button>
-        </form>
-      </>)
-  }
-  if (step === 't') return (
-    <>{preview}
-      <div className="ask">…hinüber zu welcher Karte?</div>
-      <Choices options={targets.map((t) => ({ label: `${t.label}: ${t.card.name}`, t }))} onPick={(o) => { setCur({ ...cur, target: o.t }); setStep('b') }} />
-    </>)
-  if (step === 'b') return (
-    <>{preview}
-      <div className="ask">…und landet bei <b>{target.card.name}</b>:</div>
-      <Choices options={bOpts.map((f) => ({ label: `„${f.text}“`, f }))}
-        onPick={(o) => onDone({ kind: 'line', beat: label, a: cur.a, c: cur.c, custom: cur.custom, b: o.f.text, to: target.card.name })} />
-    </>)
-  return null
-}
+// Spike-LineBuilder (Kartenstück · Verbinder · Kartenstück) entfernt: Das Spiel erzeugt keine Triplets und keine
+// Brücken (Vertrag §5, Game Core R2 §0). Erzählt wird ab D1 über Pool-Zeilen; bis dahin ist jede Zeile ein Schnitt („…“).
 
 function Transcript({ entries }) {
   const ref = useRef(null)
@@ -255,7 +218,7 @@ function StageTurn() {
       <div className="dialog wide">{modeHead}
         <div className="dialog-head">Erzähl in der Ich-Form als {actor.name}. Die Quest muss spürbar sein.</div>
         <Transcript entries={[...ep2.transcript.slice(-4), ...lines]} />
-        <LineBuilder key={k} {...plan[k]} onDone={(l) => { const nl = [...lines, l]; setLines(nl); if (nl.length === plan.length) { log(nl); setPhase('move') } }} />
+        <Choices options={[{ label: '… (Schnitt, keine Verbindung)' }]} onPick={() => { const nl = plan.map((p) => ({ kind: 'line', beat: p.label, cut: true })); setLines(nl); log(nl); setPhase('move') }} />
       </div>)
   }
 

@@ -1,8 +1,10 @@
 // S5a · Sprechblasen-Ebene (Host-Vertrag R1.2 §4, V-204, V-212): genau ein Blasen-Renderer.
 // Herausgelöst aus dem Lab `src/world/organ/islands-npc.ts` (Blob 13ad2738, register-branch replies/lab-donors/):
 // layoutTri(), say(), draw() (dort Z. 76–102) und die Blasen-Platzierung aus update() (Z. 160–176) – hier unverändert
-// bis auf drei Stellen: (1) ohne TypeScript-Typen, (2) eine Blase hängt an einer Anker-ID statt an einem NPC,
-// (3) liegt der Anker außerhalb des Bildes, wird die Blase ausgeblendet (Vertrag §4) statt an den Rand gedrückt.
+// bis auf diese Stellen: (1) ohne TypeScript-Typen, (2) eine Blase hängt an einer Anker-ID statt an einem NPC, (3) liegt der
+// Anker außerhalb des Bildes, wird die Blase ausgeblendet (Vertrag §4) statt an den Rand gedrückt, (4) Wurzel ist der Host-Slot
+// #ui-bubbles statt eines eigenen fixed-Overlays, (5) die Sprecherfarbe kommt vom Aufrufer (Lab: ORIGINAL[npc.id].color),
+// (6) Form/Schichten liegen in bubbleBodySvg(), damit die Spielerwahl denselben Körper nutzt.
 // Formen und Layout: chatterbox-core.js (cbs-core 0.1) 1:1. Look V-204: „Clay pur“, keine Tusche, eine Form, ein Zipfel, weicher Schatten.
 // Kein React, kein Store: Positionen setzt update() direkt per style.transform (Falle 2).
 import * as THREE from 'three'
@@ -13,6 +15,15 @@ export const BUBBLE_LIFE = 7.5
 const INK = '#1f1a14'
 const mix = (a, b, t) => { const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)); const A = p(a), B = p(b); return '#' + A.map((v, i) => Math.round(v * (1 - t) + B[i] * t).toString(16).padStart(2, '0')).join('') }
 const DEFS = '<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="kfbWallShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#1a0f05" stop-opacity=".32"/></linearGradient><filter id="kfbSoftShadow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><pattern id="kfbDotsWarm" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.3" fill="#b38a55"/></pattern><linearGradient id="kfbFaceShade" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".34"/><stop offset=".48" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#2a1a0c" stop-opacity=".14"/></linearGradient><radialGradient id="kfbFade" cx="0.8" cy="0.86" r="0.8"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#000000"/></radialGradient><mask id="kfbCornerMask" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#kfbFade)"/></mask></defs></svg>'
+
+// Ein Blasenkörper für alle Blasenarten (V-212): Form und Schichten aus islands-npc.ts draw() (Z. 90–93), unverändert.
+// Auch die Spielerwahl (choiceLayer) zeichnet ihren Körper hierüber.
+export function bubbleBodySvg(M, w, h, hlx, hly, col, kind, seed) {
+  const C = window.KFB_CB
+  let d, dots = ''; if (kind === 'thought') { d = C.thoughtPath(M, w, h, seed); dots = C.thinkDots(M, w, h, hlx, hly, seed) } else d = C.roundRectPath(M, w, h, Math.min(14, Math.round(h * 0.3)), seed, hlx, hly, 16, 12)
+  const full = dots ? d + ' ' + dots : d, face = mix('#fbf2df', col, 0.2), layers = [{ d: full, fill: face }, ...C.clayFront(full)]
+  return layers.map((l) => `<path d="${l.d}" fill="${l.fill ?? 'none'}"${l.stroke ? ` stroke="${l.stroke}" stroke-width="${l.sw}" stroke-linejoin="round" stroke-miterlimit="6" stroke-linecap="round"` : ''}${l.tf ? ` transform="${l.tf}"` : ''}${l.op != null ? ` opacity="${l.op}"` : ''}${l.filter ? ` filter="${l.filter}"` : ''}${l.mask ? ` mask="${l.mask}"` : ''}/>`).join('')
+}
 
 // host: das Element des Host-Slots #ui-bubbles. Liefert show() / update() / dispose().
 export function createBubbleLayer({ host }) {
@@ -42,9 +53,7 @@ export function createBubbleLayer({ host }) {
   // ---- 1:1 islands-npc.ts draw()
   const draw = (b, L, M, col, kind, id, hl) => {
     const w = L.w, h = L.h, seed = C.hash(b.el.dataset.text + kind) % 9999, hlx = hl ? hl[0] : M + w / 2, hly = hl ? hl[1] : M + h + 30
-    let d, dots = ''; if (kind === 'thought') { d = C.thoughtPath(M, w, h, seed); dots = C.thinkDots(M, w, h, hlx, hly, seed) } else d = C.roundRectPath(M, w, h, Math.min(14, Math.round(h * 0.3)), seed, hlx, hly, 16, 12)
-    const full = dots ? d + ' ' + dots : d, face = mix('#fbf2df', col, 0.2), layers = [{ d: full, fill: face }, ...C.clayFront(full)]
-    const svg = layers.map((l) => `<path d="${l.d}" fill="${l.fill ?? 'none'}"${l.stroke ? ` stroke="${l.stroke}" stroke-width="${l.sw}" stroke-linejoin="round" stroke-miterlimit="6" stroke-linecap="round"` : ''}${l.tf ? ` transform="${l.tf}"` : ''}${l.op != null ? ` opacity="${l.op}"` : ''}${l.filter ? ` filter="${l.filter}"` : ''}${l.mask ? ` mask="${l.mask}"` : ''}/>`).join('')
+    const svg = bubbleBodySvg(M, w, h, hlx, hly, col, kind, seed)
     const txt = L.lines.map((ln) => `<div data-part="${ln.part}" style="white-space:pre;text-align:center;margin-top:${ln.mt}px;transform-origin:50% 0">${ln.text.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</div>`).join('')
     if (hl) { b.el.querySelector('svg').innerHTML = svg; b.hl = [hlx, hly]; return }
     b.el.innerHTML = `<div style="position:absolute;inset:0;transform-origin:${Math.round(hlx)}px ${Math.round(hly)}px;filter:drop-shadow(0 3px 5px rgba(42,26,12,.28))"><svg width="${w + 2 * M}" height="${h + 2 * M}" style="position:absolute;left:0;top:0;overflow:visible">${svg}</svg><div style="position:absolute;left:${M}px;top:${M}px;width:${w}px;height:${h}px;padding:${L.padY}px ${L.padX}px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:'Shantell Sans','Comic Sans MS',cursive;font-size:${L.fs}px;line-height:${L.lh};color:${INK}">${txt}</div></div>`

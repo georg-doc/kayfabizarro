@@ -18,6 +18,12 @@ const ui = await page.evaluate(() => {
   return { btns, paths, inSlot: !!el.closest('#ui-choice'), ctrl: window.__kfb.ctrl }
 })
 await page.screenshot({ path: 'test/out/s5c_choice.png' })
+// Zipfel zeigt auf den Player-Anker; Lage folgt, wenn sich die Kamera bewegt (Mausrad-Zoom, Wahl bleibt offen)
+const tailOf = () => page.evaluate(() => { const t = window.__kfbChoice.tail(), a = window.__kfbChoice.anchor(); return { tip: t && [t.at[0] - t.M + t.hl[0], t.at[1] - t.M + t.hl[1]], a, at: t?.at } })
+const tA = await tailOf()
+await page.mouse.move(640, 500); for (let i = 0; i < 6; i++) { await page.mouse.wheel(0, 240); await page.waitForTimeout(120) }
+await page.waitForTimeout(2500)
+const tB = await tailOf()
 // Figur steht bei offener Wahl
 const p0 = await page.evaluate(() => window.__kfb.pos); await page.keyboard.down('KeyW'); await page.waitForTimeout(1500); await page.keyboard.up('KeyW'); const p1 = await page.evaluate(() => window.__kfb.pos)
 const moveWithChoice = Math.hypot(p1[0] - p0[0], p1[2] - p0[2])
@@ -52,6 +58,8 @@ process.exit(report('s5c choice', {
   labelsAndKeysExact: JSON.stringify(ui.btns.map((b) => [b.key, b.label])) === JSON.stringify(want),
   twoByTwo: ui.btns[0].y === ui.btns[1].y && ui.btns[2].y === ui.btns[3].y && ui.btns[0].x === ui.btns[2].x && ui.btns[0].y < ui.btns[2].y,
   targets44: ui.btns.every((b) => b.h >= 44),
+  tailPointsAtPlayer: !!tA.tip && !!tA.a && Math.abs(tA.tip[0] - tA.a[0]) < 40 && tA.a[1] - tA.tip[1] < 70 && tA.a[1] - tA.tip[1] > -5,
+  followsPlayer: !!tB.at && !!tB.a && Math.abs(tB.a[1] - tA.a[1]) > 5 && Math.abs(tB.at[1] - tA.at[1]) > 5 && Math.abs(tB.tip[1] - tB.a[1]) < 70,
   // V-204 „maximal lesbar“: dunkle Schrift in Shantell (eine kaputte Inline-Formatierung ließ die helle Spike-Vorgabe durch)
   labelsReadable: ui.btns.every((b) => b.color === 'rgb(31, 26, 20)' && /Shantell Sans/.test(b.font)),
   noInk: ui.paths.every((s) => s === null) && ui.btns.every((b) => /^0px|none/.test(b.border) && /^0px|none/.test(b.badgeBorder)),
@@ -63,4 +71,4 @@ process.exit(report('s5c choice', {
   ownWordsAccepted: own.open === false && own.last?.id === 'own' && own.last?.text === 'I want my cookie back',
   ownWordsBecomePlayerBubble: ownBubble.includes('I want my cookie back'),
   noPageErrors: errs.length === 0,
-}, { ui, moveWithChoice, mid, after, zurufBubble, nineRejected, own, ownBubble, errs }))
+}, { tA, tB, ui, moveWithChoice, mid, after, zurufBubble, nineRejected, own, ownBubble, errs }))
