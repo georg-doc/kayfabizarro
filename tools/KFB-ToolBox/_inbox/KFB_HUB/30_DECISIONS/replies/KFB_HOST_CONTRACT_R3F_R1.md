@@ -1,4 +1,5 @@
-# KFB Host-Vertrag R1.2 · R3F als Spielrahmen (14.10.2026)
+# KFB Host-Vertrag R1.2 · R3F als Spielrahmen (14.10.2026) 
+> Besitzer ab V-213/V-215: WS0 (Steuer-Sitzung). Der Satz „Ein Autor: Web-Chat“ unten ist historisch.
 
 Ein Autor: Web-Chat (Planung). WS1 übernimmt ihn 1:1. Änderungen nur additiv, mit V-Nummer (R1.1 = V-211). Es gelten V-209, V-206 und `KFB_WORKING_RULES_R1.md`.
 

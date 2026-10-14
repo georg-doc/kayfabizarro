@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-14 spät · Routing-Audit von WSA umgesetzt
+- WS0-Nachtrag in WIREFACE_STAGE_CLAUDE_DESIGN_BRIEF und COLD_START: V-219 (Wireface-Platzhalter ohne Eye-Rig-Gate für die Design-Studie) und V-220 (Billboard-Standard) haben Vorrang. BILLBOARD_STANDARD §4: Spender-Standardwerte (highway, faceCornerM 0, kaleido-cuts) nicht übernehmen, Hypernormalisation noch nicht implementiert, TV-Knopf-Abweichung beurteilt WS0 am Bild. Host-Vertrag-Kopf: Besitzer WS0. PASTE_FOR_GEORG als veraltet markiert.
+- Claude Design Board R2 gemeldet; Dateien noch nicht auf GitHub (Claude Design kann nicht schreiben).
+
 ## 2026-10-14 · Claude Design Board R2 · vorläufiger Report-Intake, keine Bildabnahme
 - `replies/WS0_CLAUDE_DESIGN_BOARD_R2_INTAKE_2026-10-14.md`: Georg hat Claude Designs R2-Status als Text übergeben. Das echte `WIREFACE_STAGE_DESIGN_R2_2026-10-14.md`, `CHANGELOG_LINE.txt` und die revidierten Bilder sind **nicht im GitHub-Register** oder den erreichbaren Projektdateien nachweisbar. R2 meldet r2/plain-Billboard, eingesetzte landscape-Karte, TV-Miniatur am rechten Pfosten, sechs Lesefolgen-Frames, korrigierte Close-ups/Labels/UI; **alles noch ungesichtet/ungeprüft**. Inhaltliche Risiken: unspezifische FrizzleQuestion aus anderem Beispiel passt nicht zu Card 7; POWER-Text ist kein freigegebenes Hypernormalisation-Zitat; TV-Miniatur mit eigener Inhaltsanzeige könnte vom gemäß V-220 unter der Fläche vorgesehenen Knopf und Single-Scheduler-Vertrag abweichen. Fehlende Original-Wireface-Demofiguren nur als V-219-Stand-ins, spätere KFB-EyeRig-F1/F2-Gates bleiben. R2 bleibt `SOURCE_PACKAGE_MISSING · VISUAL_QA_PENDING · NOT_ACCEPTED`; keine V-Nummer/Runtime-Änderung. Nächstes Gate: echter R2-Export samt Bildern → unabhängige WS0-Bild-/Quellenprüfung.
 

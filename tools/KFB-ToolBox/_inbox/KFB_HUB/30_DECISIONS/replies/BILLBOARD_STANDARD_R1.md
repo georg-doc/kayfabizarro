@@ -27,3 +27,11 @@ Dies ist der verbindliche Standard für jedes Billboard und jede Karte auf einem
 - **Ablauf:** Karte bzw. Welt wählt ein kuratiertes Zitat. Es wird als Hypernormalisation-Lesefolge abgespielt, dann folgen Quelle, FrizzleQuestion und optional eine Reflexion. Ein Knet-TV-Knopf unter dem Billboard öffnet die Vollbild-Lesefassung, ohne neu zu starten.
 - **Genau ein `BillboardScheduler.tick()`**, kein zweiter Renderer, keine zweite Kamera, keine zweite Bildschleife. Audio ist Verbraucher des KFB-Audio-Vertrags.
 - **Laut RETURN 07.10. ist noch kein Zitat für die Laufzeit freigegeben.** Bis dahin nur freigegebene Inhalte bzw. Karteninhalt.
+
+## 4 · Spender-Standardwerte nicht ungeprüft übernehmen
+Im r2-Quellpaket steht `billboard.embed-spec.v1.json` noch auf `bodyStyle: "highway"`, `faceCornerM: 0`, `contentMode: "kaleido-cuts"`. Das sind Beispielwerte des Spenders, nicht der KFB-Zielzustand. Für das KFB-Karten-Billboard gilt:
+- `bodyStyle: "plain"`.
+- `faceCornerM` größer als 0: die runden Innenecken aus r2. Den Wert übernimmt der Ausführende aus der r2-Stilvorgabe und meldet ihn in seiner Vorlagen-Zeile.
+- Ruhebild ist die eingesetzte Karte; `kaleido-cuts` bzw. H13 läuft nur während der Hypernormalisation-Lesefolge.
+- **Stand Hypernormalisation:** Das Owner-START_HERE sagt `IMPLEMENTATION NOT STARTED`, und es gibt keine freigegebenen Laufzeit-Zitate. Der Design-Vertrag ist also noch keine funktionierende Engine.
+- **TV-Knopf:** laut START_HERE „unterhalb des Billboards“. Abweichungen (z. B. ein kleiner Fernseher vor dem Pfosten) beurteilt WS0 am Bild. Es gibt nie einen zweiten Scheduler und keine zweite Medienlogik.

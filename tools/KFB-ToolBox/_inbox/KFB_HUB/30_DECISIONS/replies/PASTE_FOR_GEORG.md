@@ -1,5 +1,7 @@
 # Texte zum Kopieren für Georg (neueste oben)
 
+> **VERALTET (14.10. spät):** Übergabetexte gibt WS0 nur noch als Block im Chat. Diese Datei wird nicht mehr gepflegt; aktuell gelten die Briefings im Register mit V-219/V-220.
+
 Hier liegen alle Texte, die Georg an andere Sitzungen weitergibt (WS1, Claude Design, NotebookLM, Web-Chats), damit er sie auf jedem Rechner direkt von GitHub kopieren kann.
 
 ---

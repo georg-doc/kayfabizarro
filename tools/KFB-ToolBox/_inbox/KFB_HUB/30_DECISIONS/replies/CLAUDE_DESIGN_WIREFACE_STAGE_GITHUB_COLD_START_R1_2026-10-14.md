@@ -1,4 +1,10 @@
 # CLAUDE DESIGN · KFB Wireface Card Stage · GITHUB COLD START R1
+
+> **WS0-NACHTRAG 14.10. spät (hat Vorrang vor allem darunter):**
+> - **V-219:** Für diese Design-Studie dürfen die originalen Wireface-Theatre-Demo-Figuren als beschriftete Platzhalter („Wireface demo stand-in“) verwendet werden. Das animierte KFB-Eye-Rig ist dafür **keine** Voraussetzung. Die strenge Augen-Abnahme (V-214, 3/3-Beweis) gilt für die fertige KFB-Integration durch WS1 (F1 Augen, F2 Mund), nicht für diese Studie.
+> - **V-220:** Das Billboard folgt `BILLBOARD_STANDARD_R1.md`: World Billboard Clay01 **r2**, `bodyStyle: plain`, runde Innenecken, Karte **in** die 12 × 6 m-Bildfläche (2:1) eingesetzt, Hypernormalisation-Engine mit H13. Ältere Hinweise auf Clay01 r1 oder frei kombinierbare Rahmen gelten nicht mehr. Die Beispielwerte im Spender-`billboard.embed-spec.v1.json` (`highway`, `faceCornerM: 0`, `kaleido-cuts`) sind **nicht** der Zielzustand; siehe dort §4.
+> - **Karten-Rückfall:** Die Laufzeit darf belegten Kartentext zeigen. Ein Design zeigt nie eine Platzhalterkarte im Billboard.
+
 **Stand:** 2026-10-14 · **Arbeitsmodus:** DESIGN ONLY / source-backed 2D visual design, **not** an implementation or runtime.  
 **Repository:** `georg-doc/kayfabizarro` · **Owner/Steuerung:** WS0 / KFB decisions register · **Branch:** `docs/kfb-decisions-register-2026-10-11`.  
 **Single outcome:** The first source-faithful **KFB Studio Card-Dialogue Stage design** with Joyride J17 cartoon/Clay K2 look, real KFB palette/seed vocabulary, authentic card billboard, and 2D plain ChatterBox bubble, composed in **9:16 and 16:9**. Later variants reuse the same visual grammar.  
