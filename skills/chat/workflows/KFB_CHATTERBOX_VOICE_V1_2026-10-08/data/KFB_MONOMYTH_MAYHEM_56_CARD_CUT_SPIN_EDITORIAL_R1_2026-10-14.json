@@ -12,7 +12,7 @@
   "singleLinePerBeat": true,
   "blankLineSeparator": true,
   "bridgesUsed": 0,
-  "openerRule": "DIRECT per card except first source-qualified HEARD_OF; avoid repetitive questions",
+  "openerRule": "Source-neutral DIRECT base, HEARD_OF and DO_YOU_KNOW selectively at #2/#5/#9/#13/#20/#24/#29/#36/#43/#48; no fiction or obligatory bridge.",
   "sourceFidelityGate": "Original title mandatory; Power and Lore included in candidate semantics but independent card-by-card editorial critique pending; no 90% claim",
   "rows": [
     {
@@ -92,11 +92,11 @@
         "power": "Point of No Return. Move Quest Die +2. Discard your hand and draw 3 new cards. The old world is gone.",
         "lore": "Commitment is the moment fear becomes movement. You can't un-take the step."
       },
-      "spokenLine": "Crossing the Threshold moves the Quest Die two forward, discards your hand and draws three; the old world is gone, because commitment makes fear into movement and you cannot un-take the step.",
+      "spokenLine": "Do you know Crossing the Threshold? Move the Quest Die two forward, discard your hand and draw three; the old world is gone, because commitment makes fear into movement and you cannot un-take the step.",
       "reviewStatus": "EDITORIAL_CANDIDATE",
       "humanAcceptance": "PENDING",
       "semanticCoverageStatus": "UNREVIEWED",
-      "openerType": "DIRECT",
+      "openerType": "DO_YOU_KNOW",
       "bridgeAfter": "NO_EDGE",
       "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
     },
@@ -160,11 +160,11 @@
         "power": "Regression Pull. Tempt another player to discard a 'Safety' card. If they do, they gain a reward but lose 2 on the Quest Die.",
         "lore": "The siren song of comfort. The familiar cage feels safer than the unknown field."
       },
-      "spokenLine": "Woman as Temptress persuades another player to discard a Safety card for a reward, but takes two off the Quest Die; the familiar cage feels safer than the unknown field.",
+      "spokenLine": "Ever heard of Woman as Temptress? Tempt another player to discard a Safety card for a reward, but take two off the Quest Die; the familiar cage feels safer than the unknown field.",
       "reviewStatus": "EDITORIAL_CANDIDATE",
       "humanAcceptance": "PENDING",
       "semanticCoverageStatus": "UNREVIEWED",
-      "openerType": "DIRECT",
+      "openerType": "HEARD_OF",
       "bridgeAfter": "NO_EDGE",
       "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
     },
@@ -228,11 +228,11 @@
         "power": "Stay in Narnia. You may choose to end the game for your Actor here. They do not return. They transcend.",
         "lore": "Why go back to the mundane when you've touched the transcendent? The ordinary world is terrible by comparison."
       },
-      "spokenLine": "Refusal of the Return lets your Actor end the game without coming back; after touching the transcendent, the ordinary world looks terrible by comparison.",
+      "spokenLine": "Do you know Refusal of the Return? Your Actor may end the game without coming back; after touching the transcendent, the ordinary world looks terrible by comparison.",
       "reviewStatus": "EDITORIAL_CANDIDATE",
       "humanAcceptance": "PENDING",
       "semanticCoverageStatus": "UNREVIEWED",
-      "openerType": "DIRECT",
+      "openerType": "DO_YOU_KNOW",
       "bridgeAfter": "NO_EDGE",
       "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
     },
@@ -347,11 +347,11 @@
         "power": "Eternal Recurrence. Reset the Quest Die to [3]. Start the exact same story over, but you know it now.",
         "lore": "The spiral goes up. Or down. But it definitely goes around."
       },
-      "spokenLine": "The Circular Journey resets the Quest Die to three and starts exactly the same story with the knowledge you kept; the spiral goes up or down, but it definitely goes around.",
+      "spokenLine": "Ever heard of The Circular Journey? Reset the Quest Die to three and start exactly the same story with the knowledge you kept; the spiral goes up or down, but it definitely goes around.",
       "reviewStatus": "EDITORIAL_CANDIDATE",
       "humanAcceptance": "PENDING",
       "semanticCoverageStatus": "UNREVIEWED",
-      "openerType": "DIRECT",
+      "openerType": "HEARD_OF",
       "bridgeAfter": "NO_EDGE",
       "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
     },
@@ -415,11 +415,11 @@
         "power": "Wake Up Call. Play immediately when a Quest ends to start a new one automatically.",
         "lore": "Brings the Call. The Inciting Incident personified. Annoying, but structurally necessary."
       },
-      "spokenLine": "The Herald automatically starts a fresh Quest when the last one ends; this Wake Up Call is annoying, but structurally necessary.",
+      "spokenLine": "Do you know The Herald? It automatically starts a fresh Quest when the last one ends; this Wake Up Call is annoying, but structurally necessary.",
       "reviewStatus": "EDITORIAL_CANDIDATE",
       "humanAcceptance": "PENDING",
       "semanticCoverageStatus": "UNREVIEWED",
-      "openerType": "DIRECT",
+      "openerType": "DO_YOU_KNOW",
       "bridgeAfter": "NO_EDGE",
       "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
     },
@@ -500,11 +500,11 @@
         "power": "Pressure Cooker. Use this card to set the limits [1] and [6]. If it tips, the reality breaks.",
         "lore": "Chaos is a valid game state. If the die tips, the reality breaks."
       },
-      "spokenLine": "Quest Die sets its limits to one and six; if the die tips, reality breaks, because chaos is a valid game state.",
+      "spokenLine": "Ever heard of Quest Die? Set its limits to one and six; if the die tips, reality breaks, because chaos is a valid game state.",
       "reviewStatus": "EDITORIAL_CANDIDATE",
       "humanAcceptance": "PENDING",
       "semanticCoverageStatus": "UNREVIEWED",
-      "openerType": "DIRECT",
+      "openerType": "HEARD_OF",
       "bridgeAfter": "NO_EDGE",
       "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
     },
@@ -619,11 +619,11 @@
         "power": "Zoomies. Play 2 cards in one turn. Speak twice as fast.",
         "lore": "Energy without direction. A brilliant disaster."
       },
-      "spokenLine": "Mood — Manic lets you play two cards in one turn and speak twice as fast; that's energy without direction, a brilliant disaster.",
+      "spokenLine": "Do you know Mood — Manic? Play two cards in one turn and speak twice as fast; that's energy without direction, a brilliant disaster.",
       "reviewStatus": "EDITORIAL_CANDIDATE",
       "humanAcceptance": "PENDING",
       "semanticCoverageStatus": "UNREVIEWED",
-      "openerType": "DIRECT",
+      "openerType": "DO_YOU_KNOW",
       "bridgeAfter": "NO_EDGE",
       "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
     },
@@ -738,11 +738,11 @@
         "power": "Parallel Play. Start a second Quest alongside the first one. Run them simultaneously.",
         "lore": "Why settle for one disaster when you can have infinite disasters?"
       },
-      "spokenLine": "Multiverse starts a second Quest alongside the first and runs them together; why settle for one disaster when you could have infinite disasters?",
+      "spokenLine": "Ever heard of Multiverse? Start a second Quest alongside the first and run them together; why settle for one disaster when you could have infinite disasters?",
       "reviewStatus": "EDITORIAL_CANDIDATE",
       "humanAcceptance": "PENDING",
       "semanticCoverageStatus": "UNREVIEWED",
-      "openerType": "DIRECT",
+      "openerType": "HEARD_OF",
       "bridgeAfter": "NO_EDGE",
       "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
     },
@@ -823,11 +823,11 @@
         "power": "Direction. Look at the top 3 cards of the deck. Arrange them.",
         "lore": "It doesn't tell you where to go, only where you are."
       },
-      "spokenLine": "The Compass peeks at the deck's top three cards and arranges them; it won't tell you where to go, only where you are.",
+      "spokenLine": "Do you know The Compass? Peek at the deck's top three cards and arrange them; it won't tell you where to go, only where you are.",
       "reviewStatus": "EDITORIAL_CANDIDATE",
       "humanAcceptance": "PENDING",
       "semanticCoverageStatus": "UNREVIEWED",
-      "openerType": "DIRECT",
+      "openerType": "DO_YOU_KNOW",
       "bridgeAfter": "NO_EDGE",
       "sourceEditRisk": "AUTHOR_ADAPTED_NEEDS_EDITORIAL_COMPARISON"
     },
