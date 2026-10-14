@@ -1,5 +1,26 @@
 # KFB Eye Actor Studio v1 · RETURN
 
+## CURRENT ADDITIVE · 2026-10-14 · THIN_CLAY_LID_SINGLE_EYE_PROOF · SOURCE-ISOLATED CANDIDATE
+
+**Scope:** bounded geometry proof inside existing Eye Actor Studio donor owner / Draft PR #159; KFB ToolBox / EyeRig v6 / Batch PR #104 remains the *receiving* rig/profile owner. No replacement EyeRig, actor cleanup change, profile mutation, second face driver, merge or Live.
+
+**Base:** current `clay-lid.v1.mjs` exact source blob `30201095b2f686ba3a78b8512e7cee37d07e30b7` (source-only isolation). The unmodified donor's default `upper=.56π, lower=.44π` overlaps in neutral, visibly occluding the pupil in the isolated VTK baseline. Existing `upper-lid-volume.v1.mjs` remains preserved.
+
+**Candidate files:**
+- `tools/KFB-ToolBox/eye-actor-studio-v1/thin-clay-lid.v1.mjs` — shared eye sphere / paired geometric clay shells, integrated rounded margin, independent upper/lower positions controlled by blink, thickness 0.085 eye radius; optional Three BufferGeometry adapter.
+- `tools/KFB-ToolBox/eye-actor-studio-v1/tests/thin-clay-lid.test.mjs` — 30 structural assertions across open / half / closed, upper and lower (including index edge-manifold and closure overlap).
+- `tools/KFB-ToolBox/eye-actor-studio-v1/thin-clay-proof.html` — explicit source-isolation WebGL2 fixture importing the actual `clay-lid.v1.mjs` donor and candidate. **Not browser-verified or published.**
+
+**Executed local QA:** `node` geometry tests **30/30 PASS**; six CPU/VTK off-screen render views inspected (actual 3D mesh data: donor neutral, candidate neutral/half/closed/front/3⁄4); image-pixel QA: neutral pupil dark component 4640 px (76×76), closed 0 dark connected components ≥8 px in central 350×300 ROI; iris region neutral >0, closed=0. These are only local fixture results. The current PR source was read back after creation. No GitHub Actions suite rerun; no Stage or Site/browser verification. Headless Chromium WebGL initialisation failed (GPU EGL / SWANGLE), so record as **BROWSER UNVERIFIED**, not success.
+
+**Known unresolved defect:** a conspicuous seam/crease along upper rear/side clay shell persists in the local 3D renders. Two non-improving visual smoothing passes ended; preserve this candidate, do not keep repair-looping or integrate it into approved actor profiles. Visual morphology is **TUNE / NOT HUMAN ACCEPTED**, even though closed-lid pupil masking and topological structure pass. Pupil radial test models an inset surface patch; protruding/independently animated pupils need separate negative QA. No FrizzleBob v5 head fit, KayKit character integration, motion-parity, or source-cleanup acceptance is claimed.
+
+**Delivery:** owning GPT Site remains `https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/`; **not updated**. Site-capable publisher needed for actual browser render of isolated original/candidate. No Cloudflare route required for this read-only proof.
+
+**One next gate:** `EAS1_THIN_CLAY_ISOLATED_BROWSER_AND_UPPER_SEAM_REVIEW` — run the existing fixture in a real Site-capable browser, independently inspect upper seam + neutral + full pupil occlusion; repair only the smallest proven seam in the existing geometry owner before any EyeRig v6 consumer adoption. Preserve the previously open EAS1-MOTION-1 comparison.
+
+---
+
 **Date:** 2026-09-21  
 **Status:** TECHNICAL BROWSER PASS · HOST MATRIX PASS · CARTOONSTYLE SKILL WIRED · RABBIT-EAR CANDIDATE PASS · GPT WORKBENCH · PUBLIC NOT VERIFIED · HUMAN GATE OPEN  
 **Repo:** `georg-doc/kayfabizarro`  
