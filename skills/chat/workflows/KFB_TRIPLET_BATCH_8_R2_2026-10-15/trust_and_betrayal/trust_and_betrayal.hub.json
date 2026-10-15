@@ -1,0 +1,731 @@
+[
+  {
+    "cardNumber": 1,
+    "card": {
+      "name": "Inevitable Mutual Betrayal",
+      "power": "Both players reveal their hands. The one with the lowest value loses everything. If tied, you both lose.",
+      "lore": "We formed an alliance with the explicit intent of destroying each other. Why are you surprised?",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Inevitable Mutual Betrayal",
+    "opener": "",
+    "line": "Inevitable Mutual Betrayal, Lowest value loses everything",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 2,
+    "card": {
+      "name": "In the Back",
+      "power": "Play only when an opponent leaves the room. Steal their best card.",
+      "lore": "Cowards live longer. It's simple biology.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "In the Back",
+    "opener": "Remember",
+    "line": "In the Back, Steal best card when opponent leaves; cowards live longer.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 3,
+    "card": {
+      "name": "The Oath-Breaker",
+      "power": "Cancel any \"Promise\" or \"Alliance\" made in the last 3 turns. Take 2 chips from the victim.",
+      "lore": "Words are wind. Contracts are paper. Paper burns.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Oath-Breaker",
+    "opener": "",
+    "line": "The Oath-Breaker, Cancel Promise or Alliance; words wind, paper burns.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 4,
+    "card": {
+      "name": "False Friend",
+      "power": "Look at an opponent's hand. Tell them you love them. Discard their highest card.",
+      "lore": "They were only pretending to like your mixtape to get the nuclear codes.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "False Friend",
+    "opener": "",
+    "line": "False Friend, Opponent's highest card discarded",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 5,
+    "card": {
+      "name": "Properly Paranoid",
+      "power": "Check the bottom card of the deck. If it's a Trap, scream. Keep the card.",
+      "lore": "It's not paranoia if the universe is actually out to get you.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Properly Paranoid",
+    "opener": "You know",
+    "line": "Properly Paranoid, Check bottom card; universe actually out to get you.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 6,
+    "card": {
+      "name": "Spies Are Despicable",
+      "power": "Look at the top 3 cards of the deck. Put them back in the worst possible order.",
+      "lore": "We hate them for lying. We pay them for the truth. We shoot them for receipt.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Spies Are Despicable",
+    "opener": "",
+    "line": "Spies Are Despicable, Worst possible order; hate spies for lying, pay for truth.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 7,
+    "card": {
+      "name": "Betrayal Insurance",
+      "power": "If a player steals from you, you may immediately steal two items from them.",
+      "lore": "I knew you'd turn on me, so I poisoned your coffee three weeks ago.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Betrayal Insurance",
+    "opener": "",
+    "line": "Betrayal Insurance, If player steals from you, steal two items",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 8,
+    "card": {
+      "name": "Chronic Backstabbing Disorder",
+      "power": "You MUST betray an ally this turn. If you have no ally, betray yourself (discard 2 cards).",
+      "lore": "It's a compulsion. Like sneezing, but with more knives.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Chronic Backstabbing Disorder",
+    "opener": "What if",
+    "line": "Chronic Backstabbing Disorder, MUST betray ally",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 9,
+    "card": {
+      "name": "The Starscream",
+      "power": "Challenge the current leader. If you lose, apologize profusely and draw 1 card.",
+      "lore": "Standard operating procedure: Grovel to the face, plot against the back.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Starscream",
+    "opener": "",
+    "line": "The Starscream, Challenge leader, apologize on loss",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 10,
+    "card": {
+      "name": "The Yes-Man",
+      "power": "Copy the action of the player to your right. Do it worse.",
+      "lore": "I agree with whatever you just said, sir, especially the part that contradicts what you said yesterday.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Yes-Man",
+    "opener": "",
+    "line": "The Yes-Man, Copy action, do it worse; agree with what you said yesterday.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 11,
+    "card": {
+      "name": "Stealing the Credit",
+      "power": "Take a card someone else just played. Put it in your score pile. It's yours now.",
+      "lore": "I made this. (I did not make this).",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Stealing the Credit",
+    "opener": "Anyway",
+    "line": "Stealing the Credit, Take card someone else played",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 12,
+    "card": {
+      "name": "Bastard Understudy",
+      "power": "If a player is eliminated, take their seat and their hand.",
+      "lore": "Break a leg. Seriously. I have a crowbar.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Bastard Understudy",
+    "opener": "",
+    "line": "Bastard Understudy, Eliminated player, take seat and hand; break a leg, crowbar.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 13,
+    "card": {
+      "name": "The Coup",
+      "power": "Overthrow the player with the most points. Swap point totals with them.",
+      "lore": "Look at me. I am the Captain now. Until the Lemurs get hungry.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Coup",
+    "opener": "",
+    "line": "The Coup, Overthrow player with most points; Captain now until Lemurs hungry.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 14,
+    "card": {
+      "name": "The Puppet Master",
+      "power": "Force another player to make a move of your choice.",
+      "lore": "Dance, little fly. The web was never about catching you; it was about employment.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Puppet Master",
+    "opener": "No wait",
+    "line": "The Puppet Master, Force another player's move",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 15,
+    "card": {
+      "name": "I Can Rule Alone",
+      "power": "Break an alliance. Take all shared resources. Lose 1 turn because you are now lonely.",
+      "lore": "The partnership is dissolved. Also, you are dissolved.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "I Can Rule Alone",
+    "opener": "",
+    "line": "I Can Rule Alone, Break alliance, shared resources",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 16,
+    "card": {
+      "name": "Board to Death",
+      "power": "Call a meeting. Everyone gives you 1 card. If they refuse, they lose 1 life.",
+      "lore": "This meeting could have been an email, but then I wouldn't get to eat you.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Board to Death",
+    "opener": "",
+    "line": "Board to Death, Meeting: everyone gives card; email, but then eat you.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 17,
+    "card": {
+      "name": "The Mole",
+      "power": "Peek at everyone's hand. Reveal one card to the group.",
+      "lore": "I'm not digging for worms. I'm digging for dirt.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Mole",
+    "opener": "Before we continue",
+    "line": "The Mole, Peek at everyone's hand; digging for dirt, not worms.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 18,
+    "card": {
+      "name": "Double Agent",
+      "power": "Play a card on someone else's turn. It counts as their move, but you choose the target.",
+      "lore": "I'm on your side. And his side. Mostly my side.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Double Agent",
+    "opener": "",
+    "line": "Double Agent, Play on someone else's turn; their move, your target; mostly my side.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 19,
+    "card": {
+      "name": "The Stool Pigeon",
+      "power": "Name a card. If an opponent has it, they must discard it.",
+      "lore": "I sing like a bird. Specifically, a bird who wants a plea deal.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Stool Pigeon",
+    "opener": "",
+    "line": "The Stool Pigeon, Name card, opponent discards; sing like bird for plea deal.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 20,
+    "card": {
+      "name": "Dead Person Impersonation",
+      "power": "Retrieve a card from the discard pile (the graveyard). Play it immediately.",
+      "lore": "Reports of my death were greatly exaggerated to collect the insurance money.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Dead Person Impersonation",
+    "opener": "Not a metaphor",
+    "line": "Dead Person Impersonation, Retrieve graveyard card",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 21,
+    "card": {
+      "name": "Betrayal by Offspring",
+      "power": "Give one of your bad cards to a player with more points (your \"parent\").",
+      "lore": "Thanks for the food, Mom. Now get out of my room/nest/kingdom.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Betrayal by Offspring",
+    "opener": "",
+    "line": "Betrayal by Offspring, Bad card to parent; thanks food Mom, now out of kingdom.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 22,
+    "card": {
+      "name": "Parental Betrayal",
+      "power": "Sacrifice a lower-value card to save a higher-value card.",
+      "lore": "I brought you into this world, and I can take you out for a snack.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Parental Betrayal",
+    "opener": "",
+    "line": "Parental Betrayal, Sacrifice lower card for higher; brought you into world, snack.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 23,
+    "card": {
+      "name": "Not Actually His Child",
+      "power": "Reveal a secret. Force a player to swap their hand with the deck.",
+      "lore": "He has your eyes. But he has the milkman's beak.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Not Actually His Child",
+    "opener": "The thing about",
+    "line": "Not Actually His Child, Reveal secret, swap hand with deck; milkman's beak.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 24,
+    "card": {
+      "name": "Kinslaying",
+      "power": "Eliminate a player who belongs to the same 'faction' or 'suit' as you.",
+      "lore": "It's a special kind of evil. The kind that saves on holiday gifts.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Kinslaying",
+    "opener": "",
+    "line": "Kinslaying, Same faction eliminated; evil saves on holiday gifts.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 25,
+    "card": {
+      "name": "Love-Interest Traitor",
+      "power": "If an opponent helps you, steal half their points next turn.",
+      "lore": "Surprise! I was working for the Empire/Corporation/Ex-Boyfriend all along!",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Love-Interest Traitor",
+    "opener": "",
+    "line": "Love-Interest Traitor, Opponent helps, steal points; working for Empire all along.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 26,
+    "card": {
+      "name": "The Honey Trap",
+      "power": "Force a player to attack you. Reflect the damage back to them.",
+      "lore": "It's not love. It's bioluminescent predatory bait. Easy mistake.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Honey Trap",
+    "opener": "Everyone agrees",
+    "line": "The Honey Trap, Force attack, reflect damage",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 27,
+    "card": {
+      "name": "Fair-Weather Friend",
+      "power": "Abandon an ally during a challenge. You gain 2 points; they lose 2.",
+      "lore": "I'm with you until the end. Or until it gets slightly inconvenient.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Fair-Weather Friend",
+    "opener": "",
+    "line": "Fair-Weather Friend, Abandon ally for points; with you until slightly inconvenient.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 28,
+    "card": {
+      "name": "Mistaken for Betrayal",
+      "power": "Play a card that looks like an attack but actually heals someone.",
+      "lore": "I was trying to save you! Why are you hitting me with a newspaper?",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Mistaken for Betrayal",
+    "opener": "",
+    "line": "Mistaken for Betrayal, Attack looks like healing; why hitting with newspaper?",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 29,
+    "card": {
+      "name": "Face-Heel Turn",
+      "power": "Switch from \"Good\" to \"Evil.\" All your healing cards become damage cards.",
+      "lore": "Being a good boy was boring. I want to chew the furniture.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Face-Heel Turn",
+    "opener": "Have you heard of",
+    "line": "Face-Heel Turn, Good to Evil, healing into damage; chew furniture.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 30,
+    "card": {
+      "name": "Heel-Face Turn",
+      "power": "Switch from 'Evil' to 'Good': All your Damage cards become healing cards.",
+      "lore": null,
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": null,
+    "opener": "",
+    "line": null,
+    "inTrack": false,
+    "reason": "OPEN_NO_LORE_SOURCE"
+  },
+  {
+    "cardNumber": 31,
+    "card": {
+      "name": "Going Native",
+      "power": "Adopt the special ability of the player to your left.",
+      "lore": "I find their culture superior. Also, the shrimp is better here.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Going Native",
+    "opener": "",
+    "line": "Going Native, Adopt ability of player to left; shrimp better here.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 32,
+    "card": {
+      "name": "The Quisling",
+      "power": "Help an opponent win a challenge against your own team.",
+      "lore": "I welcome our new insect-eating overlords.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Quisling",
+    "opener": "",
+    "line": "The Quisling, Help opponent against own team; new insect-eating overlords.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 33,
+    "card": {
+      "name": "Trojan Horse",
+      "power": "Give a gift card to an opponent. When they flip it, they lose 3 cards.",
+      "lore": "Beware of Greeks bearing gifts. Also beware of Mice bearing giant wooden Cats.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Trojan Horse",
+    "opener": "Let me tell you about",
+    "line": "Trojan Horse, Gift card, opponent loses cards; Greeks bearing gifts, wooden Cats.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 34,
+    "card": {
+      "name": "Lured Into a Trap",
+      "power": "Play a high-value card face down. If someone attacks it, they are eliminated.",
+      "lore": "It looked delicious. It tasted like a snapped spine.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Lured Into a Trap",
+    "opener": "",
+    "line": "Lured Into a Trap, High-value card face down; looked delicious, snapped spine.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 35,
+    "card": {
+      "name": "False Innocence Trick",
+      "power": "Negate an accusation. The accuser must apologize and discard a card.",
+      "lore": "Who, me? I'm just a lil' guy. You wouldn't hit a lil' guy.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "False Innocence Trick",
+    "opener": "",
+    "line": "False Innocence Trick, Negate accusation; who me, just a lil' guy.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 36,
+    "card": {
+      "name": "Nasty Party",
+      "power": "Invite all players to roll a die. Lowest roll is executed.",
+      "lore": "The Red Wedding was a bit much, but the catering was exquisite.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Nasty Party",
+    "opener": "This one has a rule",
+    "line": "Nasty Party, Lowest roll executed; Red Wedding catering exquisite.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 37,
+    "card": {
+      "name": "Prisoner's Dilemma",
+      "power": "Select an opponent. Both choose \"Snitch\" or \"Silent.\" Snitch/Silent = Snitch wins big. Both Snitch = Both lose.",
+      "lore": "If I talk, I walk. If we both talk, we cook.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Prisoner's Dilemma",
+    "opener": "",
+    "line": "Prisoner's Dilemma, Snitch or Silent; if both talk, we cook.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 38,
+    "card": {
+      "name": "I Surrender, Suckers!",
+      "power": "Cancel combat. Then, immediately attack for double damage.",
+      "lore": "White flag? No, that's just a napkin I'm using to wipe the floor with you.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "I Surrender, Suckers!",
+    "opener": "",
+    "line": "I Surrender, Suckers!, Cancel combat, then double damage; white flag, just napkin.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 39,
+    "card": {
+      "name": "Rash Equilibrium",
+      "power": "No one can attack anyone until your next turn.",
+      "lore": "If I move, you shoot. If you shoot, he shoots. Let's just stand here and die of thirst.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Rash Equilibrium",
+    "opener": "Nobody warned us about",
+    "line": "Rash Equilibrium, No attacks until next turn; stand here and die of thirst.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 40,
+    "card": {
+      "name": "The Gambit",
+      "power": "Sacrifice your best card to automatically win the game in 3 turns (unless you die first).",
+      "lore": "I lost the battle to win the war. And the parking space.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Gambit",
+    "opener": "",
+    "line": "The Gambit, Sacrifice best card to win unless die first",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 41,
+    "card": {
+      "name": "Thirty Pieces of Silver",
+      "power": "Sell out an ally for 5 resource tokens.",
+      "lore": "The price of loyalty is surprisingly affordable in this economy.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Thirty Pieces of Silver",
+    "opener": "",
+    "line": "Thirty Pieces of Silver, Sell ally for resource tokens",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 42,
+    "card": {
+      "name": "Poisoned Chalice",
+      "power": "Offer a card to a player. If they accept, they die.",
+      "lore": "A toast! To your health... or lack thereof.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Poisoned Chalice",
+    "opener": "The deck insists on",
+    "line": "Poisoned Chalice, Offer card, accept and die; toast to health or lack.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 43,
+    "card": {
+      "name": "Lying Finger Cross",
+      "power": "Retroactively cancel a deal you made last turn.",
+      "lore": "It doesn't count if my digits were intertwined. International law.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Lying Finger Cross",
+    "opener": "",
+    "line": "Lying Finger Cross, Retroactively cancel deal",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 44,
+    "card": {
+      "name": "Burner Phone",
+      "power": "Contact a player secretly. Swap cards under the table.",
+      "lore": "New number, who dis? Don't answer, I'm already gone.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Burner Phone",
+    "opener": "",
+    "line": "Burner Phone, Secret contact, swap cards; new number, already gone.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 45,
+    "card": {
+      "name": "The Scapegoat",
+      "power": "Transfer all damage you take this turn to another player.",
+      "lore": "It wasn't me! It was the guy with the horns! (Wait, I have horns).",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Scapegoat",
+    "opener": "Which brings us to",
+    "line": "The Scapegoat, Transfer damage to another player; guy with horns, I have horns.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 46,
+    "card": {
+      "name": "Cannon Fodder",
+      "power": "Block an attack by discarding a 'Minion' card.",
+      "lore": "Their bravery is matched only by their expendability.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Cannon Fodder",
+    "opener": "",
+    "line": "Cannon Fodder, Discard Minion to block; bravery matched by expendability.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 47,
+    "card": {
+      "name": "Shoot the Messenger",
+      "power": "If someone plays a card you don't like, discard a card from their hand.",
+      "lore": "Bad news is a capital offense.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Shoot the Messenger",
+    "opener": "",
+    "line": "Shoot the Messenger, Discard card from their hand; bad news capital offense.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 48,
+    "card": {
+      "name": "You Have Outlived Your Usefulness",
+      "power": "Eliminate your own ally to gain their strength stats.",
+      "lore": "The job is done. And so are you.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "You Have Outlived Your Usefulness",
+    "opener": "Do you know",
+    "line": "You Have Outlived Your Usefulness, Eliminate own ally for strength",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 49,
+    "card": {
+      "name": "Sixth Ranger Traitor",
+      "power": "Join a team. Betray them immediately for bonus points.",
+      "lore": "Go Go Power Traitors! I was evil since the opening credits!",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Sixth Ranger Traitor",
+    "opener": "",
+    "line": "Sixth Ranger Traitor, Join team, betray immediately; evil since opening credits.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 50,
+    "card": {
+      "name": "Evil All Along",
+      "power": "Reveal your true form. Discard your hand and draw 5 new cards.",
+      "lore": "I wasn't shy. I was cocooning my rage.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Evil All Along",
+    "opener": "",
+    "line": "Evil All Along, True form revealed, new hand; cocooning rage.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 51,
+    "card": {
+      "name": "Manchurian Candidate",
+      "power": "Activate a 'Sleeper' agent. Take control of another player's next turn.",
+      "lore": "When you hear the word 'Omelette', kill the Prime Minister.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Manchurian Candidate",
+    "opener": "Did you hear of",
+    "line": "Manchurian Candidate, Activate Sleeper, control next turn",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 52,
+    "card": {
+      "name": "The Corruptible",
+      "power": "If an opponent offers you a card, you must join their team.",
+      "lore": "I have morals. But I also really like mud.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Corruptible",
+    "opener": "",
+    "line": "The Corruptible, Join opponent's team for card; morals and mud.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 53,
+    "card": {
+      "name": "Et Tu, Brute?",
+      "power": "If your best friend attacks you, they instantly win. You die of heartbreak.",
+      "lore": "Then fall, Fido.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Et Tu, Brute?",
+    "opener": "",
+    "line": "Et Tu, Brute?, Best friend attack wins, heartbreak; then fall Fido.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 54,
+    "card": {
+      "name": "The Vendetta",
+      "power": "Target a player who hurt you 5 turns ago. Eliminate them.",
+      "lore": "Elephants never forget. And we never forgive.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "The Vendetta",
+    "opener": "Welcome to",
+    "line": "The Vendetta, Target player who hurt you 5 turns ago; elephants never forget.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 55,
+    "card": {
+      "name": "Curse Your Sudden but Inevitable Betrayal!",
+      "power": "Play when someone betrays you. Shout the card title. Steal their shoes.",
+      "lore": "We knew it was coming. We just hoped it would wait until after dessert.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Curse Your Sudden but Inevitable Betrayal!",
+    "opener": "",
+    "line": "Curse Your Sudden but Inevitable Betrayal!, Betrayed, shout title, steal shoes",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 56,
+    "card": {
+      "name": "Regretful Traitor",
+      "power": "Sacrifice yourself to save another player. (Redemption Arc).",
+      "lore": "I won. But at what cost? Oh right, the cost was everyone else.",
+      "source": "GitHub printed eade4aec blob e4ae4951c85ff2e97de563960570739690cc7966"
+    },
+    "spokenTitle": "Regretful Traitor",
+    "opener": "",
+    "line": "Regretful Traitor, Sacrifice yourself to save another; I won, at what cost?",
+    "inTrack": true
+  }
+]
