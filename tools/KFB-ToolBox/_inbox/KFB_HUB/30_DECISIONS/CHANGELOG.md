@@ -1,5 +1,11 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Urteile Hub-Runde
+- V-266 Triplet-Sets R2 PASS (ohne Meta-Karten), ersetzt V-231–V-235; nächstes Deck Hilfe, ich bin ein Mensch!
+- V-267 Frankenstein-Körper auf FrizzleBobs Rig_Medium-Größe; Georgs Augen-Rigs aus Claude Design folgen.
+- V-268 Displays ohne Sockel (schwebend/an der Wand); Comic-Diorama PASS; Utopia TUNE.
+- V-269 GothGirl als zweite Figur. V-270 Paletten TUNE (Joyride-Harmonien + Story-Tint). V-271 Kartentitel-Versalien zentral vereinheitlichen.
+
 ## 2026-10-15 · Erste ganze Triplet-Sets
 - replies/TRIPLET_SETS_R2/: Monomyth Mayhem (56) und Philosophy (68) als Suno-Sprechtext + Take-Liste, Prüfung 0 FAIL; Hub zeigt sie in neuer Deck-Ansicht (tr01, tr02) mit Download.
 

@@ -1,12 +1,14 @@
 # Triplet-Set · Vorgabe R2 (15.10.2026) – ganzes Deck als Sprechtext
 
-**Status:** Arbeitsvorgabe von WS0 auf Basis von Georgs Richtungs-Goldens (14.10.) und des Closure-Vertrags (`TRIPLET_CLOSURE_CONTRACT_DRAFT_R1.md`). Wird nach Georgs Urteil über das erste ganze Deck zur Regel; sie ersetzt dann V-231 bis V-235.
+**Status:** Regel seit V-266 (Georg 15.10.: Monomyth Mayhem und Philosophy PASS); ersetzt V-231 bis V-235.
 **Prüfskript:** `replies/triplet_set_check.py <deck.json> <set.csv>` (Exit 0 = alle Kartenzeilen PASS).
 
 ## Quelle
 - Kartentext = **gedruckte Karte** (V-242): Branch `data/kfb-card-text-canonical-2026-10-14` @233efd5, `media/kfb/<Deck>.pdf.json`, Felder `cardName`, `power`, `lore`.
 - Nie `jsonLegacy`, `artworkPrompt`, `grade`, `gradeReason` oder Marketingtext.
 - Karten mit Status OPEN (Text nicht sicher lesbar) bekommen keine Zeile; sie werden im Bericht gelistet.
+- **Meta-Karten ohne Spielinhalt** (BLANK, Anleitung/How to Use, Lizenz, QR-Code, Kartenrückseite u. ä.) bekommen keine Zeile (V-266); im Bericht listen.
+- **Titel in normaler Groß-/Kleinschreibung** sprechen und schreiben, nie in Versalien (V-271), auch wenn die Karte sie in Versalien druckt.
 
 ## Eine Kartenzeile
 - **Titel vorn**, verschmolzen mit dem Begriff aus der POWER: „The Ordinary World stasis loop“, „Jean-Jacques Rousseau, Natural Goodness“.

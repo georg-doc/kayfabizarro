@@ -2924,7 +2924,8 @@
    "source": "Georg 13.10. + 14.10.",
    "supersedes": null,
    "superseded_by": [
-    "V-232"
+    "V-232",
+    "V-266"
    ],
    "why": "Vortragszeilen und Zusammenfassungen wurden als Triplets geführt.",
    "applies": "ab sofort"
@@ -2941,7 +2942,8 @@
    "source": "Georg 14.10. (via WSA)",
    "supersedes": "V-231 (SELL IT als Wendung)",
    "superseded_by": [
-    "V-233"
+    "V-233",
+    "V-266"
    ],
    "why": "Mein gespiegelter SELL-IT-Punkt („Wendung am Satzende“) führte zu 16/16 FAIL mit erzwungenen Twists.",
    "applies": "ab sofort"
@@ -2958,7 +2960,8 @@
    "source": "Georg 14.10.",
    "supersedes": "V-232 (Mechanik vollständig erhalten)",
    "superseded_by": [
-    "V-235"
+    "V-235",
+    "V-266"
    ],
    "why": "Spielmechanik im Satz verwirrt neue Spieler; das Konzept der Karte ist das Interessante.",
    "applies": "ab sofort"
@@ -2975,7 +2978,8 @@
    "source": "Georg 14.10.",
    "supersedes": null,
    "superseded_by": [
-    "V-235"
+    "V-235",
+    "V-266"
    ],
    "why": "Ohne Verknüpfung stehen Konzept und Lore unverbunden nebeneinander.",
    "applies": "ab sofort"
@@ -2991,7 +2995,9 @@
    "check": "Georg urteilt",
    "source": "Georg 14.10.",
    "supersedes": "V-233/V-234 (Satzform „is a … because …“)",
-   "superseded_by": [],
+   "superseded_by": [
+    "V-266"
+   ],
    "why": "Definitionen mit „is a … because …“ klangen nach Schulaufsatz statt nach Erzählung.",
    "applies": "ab sofort"
   },
@@ -3464,6 +3470,96 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-266",
+   "date": "2026-10-15",
+   "area": "Dialog",
+   "verdict": "PASS",
+   "text": "Triplet-Sets nach replies/TRIPLET_SET_SPEC_R2.md: Monomyth Mayhem PASS (ohne Meta-Karten), Philosophy PASS. Die Vorgabe R2 (Titel + Power-Begriff vorn, Telegramm-Fragmente nur aus Kartenwörtern, höchstens ein Fluff-Wort, Opener aus dem Pool je einmal pro Set, Intro „Welcome to <Deck>.“, Outro „Stay Fluffy!“, eine Zeile = ein Take) ist damit die Triplet-Regel. Meta-Karten ohne Spielinhalt (BLANK, Anleitung, Lizenz, QR-Code, Rückseite) bekommen keine Zeile. Prüfskript replies/triplet_set_check.py ist Pflicht. Plugin-Auftrag an WSA (Hub b14) jetzt frei. Nächstes Deck: Hilfe, ich bin ein Mensch!",
+   "values": {},
+   "owner": "WS0 (Sets) → WSA (Plugin)",
+   "check": "Hub tr01/tr02, Deck-Ansicht",
+   "source": "Georg 15.10.",
+   "supersedes": "V-231, V-232, V-233, V-234, V-235",
+   "superseded_by": [],
+   "why": "Beide Decks abgenommen; eine Regel statt fünf Teilregeln.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-267",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "Frankenstein-Probe Hanky und Dory: Alle Körper sollen dieselbe Rig_Medium-Größe haben wie FrizzleBob (der KayKit-Astronaut war kleiner). Augen-Rigs für Hunky und Dory hat Georg schon in Claude Design gebaut; sein Export folgt und ist die Quelle für die Gesichter (ToolBox übernimmt ihn).",
+   "values": {},
+   "owner": "WS0 (Körper) → WSA ToolBox",
+   "check": "Größenvergleich neu",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gleiche Klasse, gleiche Größe; Georgs Augen-Rigs existieren schon.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-268",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Displays vor Diorama-Flächen (präzisiert V-265): ohne Sockel, möglichst raumsparend – schwebend bzw. an der Wand befestigt direkt vor der Fläche. Comic-Broadcast-Diorama PASS (Browser A 17,7 MB, Karte im schlichten Holzrahmen über dem Zeichentisch, 3,8 m pro Einheit). Utopia TUNE: Display ohne Sockel an die Monitorwand.",
+   "values": {},
+   "owner": "WS0 (Asset) → WS1",
+   "check": "Hub ut01, cb01",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Sockel kosten Bühnenplatz.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-269",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "PASS",
+   "text": "Zweite Figur der Dialog-Szene (F-4): GothGirl (KayKit Mystery Series 6, Profil gothgirl).",
+   "values": {},
+   "owner": "WS1",
+   "check": "Hub ws1-cast-f4",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Wahl aus drei Kandidaten.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-270",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "TUNE",
+   "text": "Bühnen-Paletten (V-245): Nicht nur Farbstimmungen. Vorbild sind die Joyride-Paletten (canyon, bucht, otown in track-look.v5 WORLDS bzw. Lab src/palettes.ts): harmonische Paletten mit Akzenten, Rollen für alle Teile. Dazu als Tint die Story-Modes, definiert über das Fluff-Farbschema (V-051 storyTint). WS1 prüft das Paletten-Konzept und schlägt die Zuordnung neu vor.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Bildfolge je Palette",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Paletten sind Harmonie-Systeme, keine Stimmungsfarben.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-271",
+   "date": "2026-10-15",
+   "area": "Karten",
+   "verdict": "RULE",
+   "text": "Kartentitel in Versalien (z. B. „JEAN-JACQUES ROUSSEAU“) werden zentral in den Kartendaten vereinheitlicht (normale Groß-/Kleinschreibung), nicht in einzelnen Workstreams. Gedruckte Schreibweise bleibt als eigenes Feld erhalten. WS1 korrigiert nichts selbst.",
+   "values": {},
+   "owner": "WS0 (Daten)",
+   "check": "Liste der geänderten Titel",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Versalien irritieren im Schriftsatz und dürfen nicht je Workstream anders korrigiert werden.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3526,7 +3622,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:330",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:336",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Georgs Urteile: Besetzung, Paletten, Kartentitel (V-269–V-271)
+- **Zweite Figur (F-4): GothGirl** (V-269). Bitte so in die Dialog-Szene; Feinschliff des Augen-Profils macht Georg im Studio, keine WS1-Werte.
+- **Paletten (V-270): TUNE.** Georg: „das sind nicht einfach nur eine Farbstimmung – das sind harmonische Paletten mit Akzenten“ (Joyride: canyon, bucht, otown). Quellen:
+  - Joyride-Paletten 1:1: `track-look.v5.js` WORLDS (J17-Spender) bzw. Lab `src/palettes.ts` (Rollen für sky, top, hill, sand, rim, under, rock, tower, leaf, trunk, cloud, water, path, Straße/Strecke/Strang).
+  - Regel V-051 und Lab-Plan `KFB_WORLDBUILDER_PLAN_R1.md` (Schema `kfb.island-theme/1`): Sechser-Palette + Rollen; **storyTint** = leichte Einfärbung je Story-Mode (High-/Low-Vibrational-Fluff) über dem Grundthema, nie statt ihm.
+  - Bitte das Paletten-Konzept daran prüfen und einen neuen Vorschlag als Vorlagen-Zeile machen: Rollen für alle Bühnenteile (nicht nur Rahmen und Himmel), Akzente, Story-Mode-Tint aus dem Fluff-Farbschema; Bildfolge je Palette nach V-253.
+- **Kartentitel in Versalien (V-271):** WS0 vereinheitlicht sie zentral in den Kartendaten (eigener Daten-Branch, Meldung folgt). Bitte nichts selbst umschreiben.
+- **Bühnen:** Comic-Broadcast-Diorama PASS (V-268), Utopia folgt nach einem kleinen Fix (Display ohne Sockel an der Wand). Assets kommen gesammelt auf einen Asset-Branch; Einbau nach MVP-0.
+
 ## 15.10.2026 · Antworten auf §24–§26 · Bibliothek (V-264)
 - **Vorlagen-Zeile V-256 (Bildflächen-Modul): freigegeben**, mit zwei Korrekturen:
   1. Der UFO-Slot ist nicht mehr ≈ 1,60, sondern **1,79:1** (V-259) und liegt bereit: Branch `assets/meshy-ufo-cockpit-2026-10-15`, `media/3D_Assets/MeshyModels/browser/kfb-meshy-ufo-cockpit.screen-up179.v1.slot.json`. Karten füllen ihn randlos. Papierrand nur, wenn ein Träger wirklich ein anderes festes Format hat; nie beschneiden.
