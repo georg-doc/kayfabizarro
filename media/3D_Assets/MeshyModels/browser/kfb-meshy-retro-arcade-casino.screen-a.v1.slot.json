@@ -1,0 +1,198 @@
+{
+ "file": "~/Dropbox/CLAUDE/MeshyModels/_browser/retro_arcade_casino/RetroArcadeCasino_A_screen.glb",
+ "bytes": 15781316,
+ "sha256": "427831e02fa6f19714cd62b552480907d5cc5dd1c32546f9fdcb9bc3bf8c6495",
+ "source": "~/Dropbox/CLAUDE/MeshyModels/_browser/retro_arcade_casino/RetroArcadeCasino_A_faithful.glb",
+ "mode": "FRONT_DISPLAY (V-265/V-268: Billboard über dem Neon-Schild GALAXY GAMBLERS CLUB, Schild bleibt ganz sichtbar; Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_chrome (Clay-Chrom #BFC4CA, rough 0,35, metal 0, schlicht; Streben gleiches Material)",
+  "bezel_u": 0.011,
+  "bezel_m": 0.093,
+  "depth_u": 0.019,
+  "outer_u": {
+   "x": [
+    -0.116,
+    0.466
+   ],
+   "y": [
+    0.445,
+    0.7793
+   ],
+   "cardBottom_y": 0.456,
+   "z": [
+    -0.548,
+    -0.529
+   ],
+   "note": "lokale Rahmenkoordinaten vor der Drehung (yaw um Pivot)"
+  },
+  "mount": "ohne Sockel und ohne Stützen zum Boden (V-268): Unterkante knapp über der Sternspitze des Neon-Schilds, 2 schlanke Chrom-Streben stehen hinter dem Schild auf der Rückwand-Krone (y 0,337) und halten die Rückplatte; Rahmen schlank (0,16 m tief), zur Standardkamera gedreht (yaw -2,4°)",
+  "inlay": "Neon-Band (Clay-Pink #E0559F wie die GALAXY-Buchstaben) mittig auf der Lünette, 4 Eck-Knöpfe; kein Leuchten (WS1-Licht)"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z, Hallenboden y ≈ −0,336, Galerie y ≈ +0,006)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.10775,
+    0.77133,
+    -0.55235
+   ],
+   "topRight": [
+    0.45775,
+    0.77133,
+    -0.52865
+   ],
+   "bottomRight": [
+    0.45775,
+    0.453,
+    -0.52865
+   ],
+   "bottomLeft": [
+    -0.10775,
+    0.453,
+    -0.55235
+   ]
+  },
+  "center_u": [
+   0.175,
+   0.61216,
+   -0.5405
+  ],
+  "normalAtCenter": [
+   -0.04188,
+   0,
+   0.99912
+  ],
+  "chordWidth_u": 0.566,
+  "arcWidth_u": 0.566,
+  "height_u": 0.31833,
+  "aspect_arc": 1.7781,
+  "surface": "eben, Normale [-0.04188,0,0.99912] (yaw -2.4°), Ebene durch center_u",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,336)·s, z·s), Ursprung = Modellmitte auf Hallenboden-Höhe; s = 8.5 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     -0.10475,
+     0.76833,
+     -0.55223
+    ],
+    "topRight": [
+     0.45475,
+     0.76833,
+     -0.52877
+    ],
+    "bottomRight": [
+     0.45475,
+     0.456,
+     -0.52877
+    ],
+    "bottomLeft": [
+     -0.10475,
+     0.456,
+     -0.55223
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0053,
+    "u1": 0.9947,
+    "v0": 0.0094,
+    "v1": 0.9906
+   }
+  },
+  "corners_m_note": "Schlüsselname corners_m_s5p5 aus dem Utopia-Format beibehalten; Werte hier mit s = 8.5 m/u",
+  "corners_m_s5p5": {
+   "topLeft": [
+    -0.89,
+    9.387,
+    -4.694
+   ],
+   "topRight": [
+    3.865,
+    9.387,
+    -4.495
+   ],
+   "bottomRight": [
+    3.865,
+    6.732,
+    -4.495
+   ],
+   "bottomLeft": [
+    -0.89,
+    6.732,
+    -4.694
+   ]
+  },
+  "visibleSize_m": [
+   4.76,
+   2.65
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   0.05,
+   0.8,
+   2.5
+  ],
+  "target": [
+   0.05,
+   0.02,
+   -0.05
+  ],
+  "fovV_deg": 40,
+  "note": "Blick leicht erhöht von vorn: Schachbrett-Halle mit Stern-Mosaik vorn, runde Bar Mitte, rote Treppen links, Galerie mit Automaten rechts, Neon-Schild GALAXY GAMBLERS CLUB mit Billboard darüber hinten"
+ },
+ "scale_m_per_u": 8.5,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "figures": {
+  "floorY_u": -0.336,
+  "positions_u": [
+   [
+    -0.3,
+    0.34
+   ],
+   [
+    0.0,
+    0.36
+   ]
+  ],
+  "heights_m": [
+   1.8,
+   2.0
+  ],
+  "stageZone_u_xz": [
+   [
+    -0.56,
+    0.16
+   ],
+   [
+    0.24,
+    0.16
+   ],
+   [
+    0.24,
+    0.56
+   ],
+   [
+    -0.26,
+    0.56
+   ],
+   [
+    -0.56,
+    0.36
+   ]
+  ]
+ }
+}

@@ -1,0 +1,196 @@
+{
+ "file": "~/Dropbox/CLAUDE/MeshyModels/_browser/utopia_stage/UtopiaStage_A_screen.v2.glb",
+ "bytes": 15684492,
+ "sha256": "cdc1e14da5124fb77b6fdecff731445f8fb2c009aa60162a6e97a5f9adf43bf4",
+ "source": "~/Dropbox/CLAUDE/MeshyModels/_browser/utopia_stage/UtopiaStage_A_faithful.glb",
+ "mode": "FRONT_DISPLAY v2 (V-309: raumsparend direkt vor dem Diorama-Monitor, schwebend, ohne Sockel; Monitor-Fuß verdeckt; Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_clay (Clay Pfirsich #EDB38F, rough 0,78 – wie v1)",
+  "bezel_u": 0.013,
+  "bezel_m": 0.071,
+  "depth_u": 0.019,
+  "outer_u": {
+   "x": [
+    -0.565,
+    0.225
+   ],
+   "y": [
+    0.066,
+    0.5181
+   ],
+   "cardBottom_y": 0.079,
+   "z": [
+    -0.776,
+    -0.757
+   ]
+  },
+  "mount": "ohne Sockel (V-268): 2 verdeckte Halter hinter der Rückplatte zur blauen Monitorfläche (z −0,826); Display schwebt 0,05 m über dem Galerieboden und steht nur 0,24 m vor der Monitor-Vorderkante z −0,80 (v1: 0,26 m); überdeckt Monitor samt Fuß-Leiste, Seitensäulen bleiben frei; oben 0,35 m über der Monitor-Oberkante (v1: 0,83 m)"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z, Hauptboden y = −0,405)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.555,
+    0.5081,
+    -0.7685
+   ],
+   "topRight": [
+    0.215,
+    0.5081,
+    -0.7685
+   ],
+   "bottomRight": [
+    0.215,
+    0.076,
+    -0.7685
+   ],
+   "bottomLeft": [
+    -0.555,
+    0.076,
+    -0.7685
+   ]
+  },
+  "center_u": [
+   -0.17,
+   0.29205,
+   -0.7685
+  ],
+  "normalAtCenter": [
+   0,
+   0,
+   1
+  ],
+  "chordWidth_u": 0.77,
+  "arcWidth_u": 0.77,
+  "height_u": 0.4321,
+  "aspect_arc": 1.782,
+  "surface": "eben: z = -0.7685",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,405)·s, z·s), Bodenmitte = Ursprung; s = 5.5 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     -0.552,
+     0.5051,
+     -0.7685
+    ],
+    "topRight": [
+     0.212,
+     0.5051,
+     -0.7685
+    ],
+    "bottomRight": [
+     0.212,
+     0.079,
+     -0.7685
+    ],
+    "bottomLeft": [
+     -0.552,
+     0.079,
+     -0.7685
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0039,
+    "u1": 0.9961,
+    "v0": 0.0069,
+    "v1": 0.9931
+   }
+  },
+  "corners_m_note": "Schlüsselname corners_m_s5p5 aus dem Utopia-Format beibehalten; Werte hier mit s = 5.5 m/u",
+  "corners_m_s5p5": {
+   "topLeft": [
+    -3.036,
+    5.006,
+    -4.227
+   ],
+   "topRight": [
+    1.166,
+    5.006,
+    -4.227
+   ],
+   "bottomRight": [
+    1.166,
+    2.662,
+    -4.227
+   ],
+   "bottomLeft": [
+    -3.036,
+    2.662,
+    -4.227
+   ]
+  },
+  "visibleSize_m": [
+   4.2,
+   2.34
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   0,
+   0.16,
+   1.85
+  ],
+  "target": [
+   -0.12,
+   0,
+   -0.3
+  ],
+  "fovV_deg": 40,
+  "note": "wie v1: Figuren auf der freien Fläche vor der Galerie; Display direkt vor dem Monitor auf der Galerie, Seitensäulen frei"
+ },
+ "scale_m_per_u": 5.5,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "version": 2,
+ "supersedes": "kfb_screen_slot_utopia.json (v1: Display 0,41 m über dem Galerieboden vor dem Monitor, Monitor-Fuß darunter sichtbar; bleibt unverändert liegen)",
+ "decision": "V-309 (Georg 15.10.): „ist da eine basis unter dem billboard? → möglichst raumsparend vor das diorama-display hängen (schwebend/an wand befestigt)“",
+ "figures": {
+  "floorY_u": -0.405,
+  "positions_u": [
+   [
+    -0.28,
+    0.22
+   ],
+   [
+    -0.12,
+    0.28
+   ]
+  ],
+  "heights_m": [
+   1.8,
+   2.0
+  ],
+  "stageZone_u_xz": [
+   [
+    -0.4,
+    -0.2
+   ],
+   [
+    0.2,
+    -0.2
+   ],
+   [
+    0.35,
+    0.55
+   ],
+   [
+    -0.55,
+    0.55
+   ]
+  ]
+ },
+ "placement": "Standard (Arbeitshypothese); Georg verschiebt Displays später im God-Mode"
+}
