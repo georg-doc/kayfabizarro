@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Displays im God-Mode frei platzierbar (V-287)
+- Karten-Displays/Billboards sind Objekte wie Residents und Librarian-Props: im God-Mode (MVP-2) verschieben, drehen, skalieren – proportional mit festem Format 1,79:1, vom kleinen Monitor bis zur Stadionleinwand. Gespeichert in `kfb.world/1`.
+- **Folge für den Bau jetzt:** Display = eigenes Objekt (Rahmen-Familie je Bühne + `kfb_screen_slot`), nicht mit dem Bühnen-GLB verschmolzen. Die `*_screen.glb` von WS0 enthalten Slot/Rahmen nur als Start-Platzierung; beim Einbau Rahmen + Slot als eigenes Objekt laden und die Position aus dem Slot-JSON als Standardwert nehmen. Auch das Amphitheater-Billboard ist nur Arbeitshypothese.
+
 ## 15.10.2026 · Farben: Meshy-Bühnen nur leicht tönen (V-286)
 - **Georg:** Meshy-Bühnen nur leicht tönen; die Palette wirkt auf Rahmen und Requisiten. Konkret: Die Rollen-Umfärbung der Amphitheater-Textur (stone/paved, Anteil 0,85) zurücknehmen auf eine leichte Tönung (Vorschlag: höchstens ~15–20 %, Textur bleibt lesbar). Die volle Palette (sechs harmonische Farben mit Rollen) gehört auf Billboard-/Display-Rahmen, Pfosten, Requisiten, Fluff, Himmel und Licht.
 - **Farbkonzept wird konsolidiert:** WS0 schreibt `replies/COLOR_CONCEPT_R1.md` + `kfb-color-concept.r1.json` (Welt-Paletten, Story-Modes, Fluff-Farben je Story-Mode, dunkle und sattere Variante) als einzige Farbquelle. Bis dahin an den Farben nichts Neues bauen; nur die Tönung zurücknehmen, als Vorlagen-Zeile mit Bildpaar vorher | nachher.

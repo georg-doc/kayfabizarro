@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Displays frei platzierbar
+- V-287: Displays im God-Mode frei platzier-/skalierbar (proportional 1,79:1); jetzige Platzierungen = Standardwerte; Display als eigenes Objekt.
+
 ## 2026-10-15 · Farben: Meshy nur tönen
 - V-286: Meshy-Bühnen nur leicht tönen, volle Palette auf Rahmen, Requisiten, Fluff, Himmel, Licht; Farbkonzept-Konsolidierung läuft (COLOR_CONCEPT_R1).
 

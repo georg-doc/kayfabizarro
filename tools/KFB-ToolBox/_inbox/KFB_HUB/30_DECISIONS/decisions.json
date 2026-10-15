@@ -3789,6 +3789,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-287",
+   "date": "2026-10-15",
+   "area": "Editor",
+   "verdict": "RULE",
+   "text": "Karten-Displays/Billboards sind im God-Mode frei platzier- und skalierbar wie Residents und Librarian-Props (In-Place-3D-Editor, MVP-2): verschieben, drehen, skalieren – in der Regel proportional mit festem Kartenformat 1,79:1, vom kleinen Monitor bis zur Stadionleinwand. Unsere Platzierungen je Bühne sind nur die erste Arbeitshypothese (Standardwerte), auch beim Amphitheater (Platzaufteilung dort nicht gut). Technik: Display = eigenes platzierbares Objekt (Rahmen-Familie + kfb_screen_slot), nicht ins Bühnen-GLB eingebacken; die Slot-JSONs liefern nur die Start-Platzierung, gespeichert wird in der Welt-Datei (kfb.world/1).",
+   "values": {},
+   "owner": "WS1 (God-Mode) · WS0 (Daten)",
+   "check": "Display im Editor verschieben/skalieren",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg setzt Szenen selbst am besten; feste Platzierungen erzeugen Probleme wie beim Rolltor.",
+   "applies": "MVP-2"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3851,7 +3866,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:430",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:433",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
