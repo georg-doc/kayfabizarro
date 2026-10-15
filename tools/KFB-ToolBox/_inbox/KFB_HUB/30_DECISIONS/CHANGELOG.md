@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Orc TUNE 3
+- Orc Brute: gleiches Metall-Lenkrad wie FB (2,1-fach, sonst stoßen die Fäuste zusammen), Kranz in beiden Fäusten in allen 90 Bildern, Haltung wie FB; Hub kt05. Welt-Struktur-Frage (Inseln vs. offene Welt, >100 Decks) in Klärung.
+
 ## 2026-10-15 · Displays frei platzierbar
 - V-287: Displays im God-Mode frei platzier-/skalierbar (proportional 1,79:1); jetzige Platzierungen = Standardwerte; Display als eigenes Objekt.
 
