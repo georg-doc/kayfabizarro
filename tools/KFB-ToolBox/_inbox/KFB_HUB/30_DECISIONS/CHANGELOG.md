@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Farbharmonie-Modell
+- V-293: MOOD_SKY-Story-Paletten FAIL, Story-Mode-Grundfarben zu dunkel; Harmonie-Modell aus Joyride (OKLCH-Regeln + Generator, Nachweis per J17-Nachbau) in Arbeit. Minispiel-Konzepte (v0.3–v0.7) auf planning/kfb-fluff-crafting-almanac-ideation-2026-10-09 gefunden.
+
 ## 2026-10-15 · Fluff-Farben gefunden
 - Quelle Fluff-Crafting-Konzept v0.3 (Planungs-Branch 09.10.) + Lab-Review: 12 Sorten = 6 Story-Modes × High/Low, 6 Grundfarben = Story-Mode-Farben, Alchemie High+Low → neutrale Rohmasse. Vorschlag High = satt, Low = dunkel (Hub col02).
 
