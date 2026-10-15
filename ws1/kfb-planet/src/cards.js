@@ -8,7 +8,7 @@ const PLAY = []
 const isBlank = (c) => /^[—–-]?\s*blank card\s*#/i.test(c[2]) || /^\s*\[.*\]\s*$/.test(c[3]) || /^\s*\[.*\]\s*$/.test(c[4])
 for (let i = 0; i < data.cards.length; i++) if (!DECKS[data.cards[i][0]].med && !isBlank(data.cards[i])) PLAY.push(i)
 const PLAY_DECKS = DECKS.map((d, i) => i).filter((i) => !DECKS[i].med)
-export const SOURCE_COMMIT = 'a71de421' // Kartentext = Druck (V-242), Titel normal geschrieben (V-271), media/kfb, gebaut mit scripts/build-cards-media.py
+export const SOURCE_COMMIT = '52adc8f1' // Kartentext = Druck (V-242), Titel normal geschrieben (V-271), media/kfb, gebaut mit scripts/build-cards-media.py
 
 export function cardAt(i) {
   const [d, num, name, power, lore] = data.cards[i]

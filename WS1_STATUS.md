@@ -1,7 +1,43 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§33 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§34 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 34 · 15.10. morgens · V-270 Bühnen-Paletten gebaut · Push Orbit-Kamera und Daten-Pin
+
+### 34.1 · V-270 · Paletten als Harmonie-Systeme (kfb-planet @12b9a47, ganze Testreihe 22/22 PASS)
+- **Quellen 1:1** (`src/vendor/palette/SOURCE.md`):
+  - `island-palettes.js` = Lab `src/palettes.ts` @64ae61fe7 (Blob f8f57d76), nur die Typen entfernt; alle 352 Farbwerte gleich und in gleicher Reihenfolge.
+  - `storymode.v4.js` = Register-Branch `replies/donors/storymode.v4.js` (Blob 58a79133), bytegleich.
+  - `world-palettes.js` und die Rollen-Formeln aus `palette-roles.js` sind nicht mehr Farbquelle der Bühne; `world-context.js` liefert weiter den Story-Modus der Karte (wie R2).
+- **Rollen je Bühnenteil (wie §28.2):**
+  - Himmel `sky` → `cloud`, Nebel = `cloud`;
+  - Gelände `ground[1]`;
+  - Amphitheater: senkrechte Flächen auf dem Verlauf `stone`, waagrechte auf `paved`. Getrennt wird nach der Flächen-Normale in Weltkoordinaten (weicher Übergang n.y 0,55–0,8), Anteil 0,85 über der Meshy-Textur, die Zeichnung bleibt;
+  - Billboard: Rahmen `accent[0]`, Zierleiste `accent[2]`, Pfosten `bark[1]`.
+- **Story-Tint:** 12 % zum `accent` des Story-Modus der Karte, als gerade sRGB-Mischung, also höchstens 12 % des Abstands je Farbkanal. `mix` aus palette-roles mischt linear-hell und hätte bei 12 % deutlich stärker gewirkt. Test `storyTintAtMost15` prüft die Grenze.
+- **Genre-Tabelle wie §28.2:** alle 130 Decks bekommen eine Palette, alle sechs Paletten kommen vor (protopia 48, kfb_town 24, otown 20, canyon 19, bucht 10, wueste 9). Rückfall `kfb_town`.
+- **Vergleich:** `palette=<Insel>` erzwingt eine Palette, `plain` schaltet den Tint ab.
+- **Test `palette` V-270, 13/13 PASS:**
+  - Rollen = Lab-Daten (bucht ohne Tint);
+  - Karte → Palette;
+  - Billboard, Amphitheater (Wand/Boden), Himmel und Nebel tragen die Rollen;
+  - Wechsel weich (V-011), ohne Reste;
+  - gleiche Karte, kein Wechsel.
+- **Befund aus den Lab-Daten:** canyon und kfb_town haben dieselbe Akzent-Familie (`#f2b632 / #ef5a22 / #c4441a`), deshalb sind beide Rahmen goldgelb. Das ist kein Fehler im Einbau; falls Georg das unterscheiden will, ist es eine Daten-Entscheidung (WS0/Lab).
+- **Bilder für Georg** (`ws1/proofs/2026-10-15-palette-v270/`, je 1920 × 1080 mit großer Beschriftung):
+  - `1_otown` … `6_protopia`, je Palette eine passende gesicherte Karte, Besetzung FB | GothGirl;
+  - `7_paar_alt_neu` = dieselbe Karte aus derselben Kamera, links V-245, rechts V-270.
+  - **Georg urteilt.**
+
+### 34.2 · Gepusht
+- Daten-Pin 52adc8f1 (§33.2), V-257 Orbit-Kamera (§33.2) und V-270 (§34.1).
+- Vorher lief die ganze Testreihe: 22/22 PASS, darunter `orbit` 8/8 und `palette` 13/13.
+
+### 34.3 · Als Nächstes
+- Nach Georgs Urteil die Paletten feinstellen.
+- Danach MVP-0: Die Dialog-Szene wählt bevorzugt Karten von drift-freien Seiten (§28.1).
+- Meshy-Bühnen (V-281) erst nach MVP-0, je Bühne eine Vorlagen-Zeile.
 
 ## 33 · 15.10. nachts · M1 Tempo-Messung berichtigt: Sprint-Konflikt entfällt · Daten-Pin 52adc8f1 · V-257 Orbit-Kamera (lokal)
 

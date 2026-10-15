@@ -24,11 +24,13 @@ export const AMPH_SCALE = (STAGE.diameterM / 2) / STAGE.floorR
 
 export const amphLog = { create: 0, update: 0, dispose: 0, freed: null }
 
-// Palette (V-245): options.palette = stagePaletteFor(...).amph trägt { c0, c1, c2, ground }. Die Helligkeit der Meshy-Textur wird auf den
-// Drei-Stufen-Verlauf c0 (Fugen) → c1 (Stein) → c2 (Kanten) gelegt (Anteil PAL_AMT), die Zeichnung bleibt; das Gelände nimmt ground.
-// setPalette(amph, fadeS) wechselt weich (V-011). Ohne Palette: Originaltextur, Gelände aus dem Biom (wie bisher).
+// Palette (V-270): options.palette = stagePaletteFor(...).amph trägt { wall: [3], floor: [3], ground } (Verläufe dunkel → hell).
+// Die Helligkeit der Meshy-Textur wird auf einen Drei-Stufen-Verlauf gelegt (Anteil PAL_AMT), die Zeichnung bleibt. Welcher Verlauf, entscheidet die
+// Flächen-Normale in Weltkoordinaten: senkrechte Flächen (Ränge, Mauern, Bögen) nehmen wall = stone, waagrechte (Bühnenboden, Stufen-Oberseiten)
+// floor = paved; Übergang weich zwischen n.y 0,55 und 0,8. Das Gelände nimmt ground. setPalette(amph, fadeS) wechselt weich (V-011).
+// Ohne Palette: Originaltextur, Gelände aus dem Biom (wie bisher).
 export const PAL_AMT = 0.85
-// options: { url = AMPH_URL, biome (für die Geländefarbe), palette (V-245), groundR = 70 }
+// options: { url = AMPH_URL, biome (für die Geländefarbe), palette (V-270), groundR = 70 }
 export function createAmphitheater(options = {}) {
   amphLog.create++
   const { url = AMPH_URL, biome = null, groundR = 70, palette = null } = options
@@ -37,31 +39,38 @@ export function createAmphitheater(options = {}) {
   const fam = makeClayFamily('G', { uClayNear: { value: 30 }, uClayFar: { value: 90 }, uClayScale: { value: 1.4 }, uClayAmt: { value: 0.45 } }, { oct: 2, near: true, stick: false })
   const groundMat = fam.std(palette?.ground || biome?.top || '#9aab62', 0.95)
   // Paletten-Uniforms: gemeinsam für alle Modell-Materialien; Überblendung lerpt sie (und die Geländefarbe) von → nach
-  const PU = { c0: { value: new THREE.Color(palette?.c0 || '#000') }, c1: { value: new THREE.Color(palette?.c1 || '#000') }, c2: { value: new THREE.Color(palette?.c2 || '#000') }, amt: { value: palette ? PAL_AMT : 0 } }
+  const KEYS = ['w0', 'w1', 'w2', 'f0', 'f1', 'f2']
+  const cols = (pa) => (pa ? [...pa.wall, ...pa.floor] : Array(6).fill('#000000'))
+  const PU = { amt: { value: palette ? PAL_AMT : 0 } }; cols(palette).forEach((c, i) => { PU[KEYS[i]] = { value: new THREE.Color(c) } })
   const fade = { on: false, t: 0, dur: 0, from: null, to: null }
   const inject = (m) => {
     m.onBeforeCompile = (sh) => {
-      Object.assign(sh.uniforms, { pc0: PU.c0, pc1: PU.c1, pc2: PU.c2, pamt: PU.amt })
-      sh.fragmentShader = 'uniform vec3 pc0; uniform vec3 pc1; uniform vec3 pc2; uniform float pamt;\n' + sh.fragmentShader.replace('#include <map_fragment>', `#include <map_fragment>
+      for (const k of KEYS) sh.uniforms['p' + k] = PU[k]; sh.uniforms.pamt = PU.amt
+      sh.vertexShader = 'varying vec3 vKfbWN;\n' + sh.vertexShader.replace('#include <defaultnormal_vertex>', `#include <defaultnormal_vertex>
+  vKfbWN = normalize(mat3(modelMatrix) * objectNormal);`)
+      sh.fragmentShader = 'uniform vec3 pw0; uniform vec3 pw1; uniform vec3 pw2; uniform vec3 pf0; uniform vec3 pf1; uniform vec3 pf2; uniform float pamt; varying vec3 vKfbWN;\n' + sh.fragmentShader.replace('#include <map_fragment>', `#include <map_fragment>
   { float L = clamp((dot(diffuseColor.rgb, vec3(0.2126, 0.7152, 0.0722)) - 0.04) / 0.45, 0.0, 1.0);
-    vec3 ramp = L < 0.5 ? mix(pc0, pc1, L * 2.0) : mix(pc1, pc2, (L - 0.5) * 2.0);
+    vec3 wall = L < 0.5 ? mix(pw0, pw1, L * 2.0) : mix(pw1, pw2, (L - 0.5) * 2.0);
+    vec3 flo = L < 0.5 ? mix(pf0, pf1, L * 2.0) : mix(pf1, pf2, (L - 0.5) * 2.0);
+    vec3 ramp = mix(wall, flo, smoothstep(0.55, 0.8, normalize(vKfbWN).y));
     diffuseColor.rgb = mix(diffuseColor.rgb, ramp, pamt); }`)
     }
-    m.customProgramCacheKey = () => 'kfb-amph-palette'; m.needsUpdate = true
+    m.customProgramCacheKey = () => 'kfb-amph-palette-v270'; m.needsUpdate = true
   }
-  const snap = () => ({ c0: PU.c0.value.clone(), c1: PU.c1.value.clone(), c2: PU.c2.value.clone(), amt: PU.amt.value, ground: groundMat.color.clone() })
+  const snap = () => ({ c: KEYS.map((k) => PU[k].value.clone()), amt: PU.amt.value, ground: groundMat.color.clone() })
+  const plain = (pa) => ({ wall: [...pa.wall], floor: [...pa.floor], ground: pa.ground })
   function setPalette(pa, fadeS = 0) {
-    const to = { c0: new THREE.Color(pa.c0), c1: new THREE.Color(pa.c1), c2: new THREE.Color(pa.c2), amt: PAL_AMT, ground: new THREE.Color(pa.ground) }
-    state.palette = { c0: pa.c0, c1: pa.c1, c2: pa.c2, ground: pa.ground }
+    const to = { c: cols(pa).map((x) => new THREE.Color(x)), amt: PAL_AMT, ground: new THREE.Color(pa.ground) }
+    state.palette = plain(pa)
     if (!(fadeS > 0)) { fade.on = false; apply(to, to, 1); return }
     Object.assign(fade, { on: true, t: 0, dur: fadeS, from: snap(), to })
   }
-  function apply(a, b, k) { for (const n of ['c0', 'c1', 'c2']) PU[n].value.copy(a[n]).lerp(b[n], k); PU.amt.value = a.amt + (b.amt - a.amt) * k; groundMat.color.copy(a.ground).lerp(b.ground, k) }
+  function apply(a, b, k) { KEYS.forEach((n, i) => PU[n].value.copy(a.c[i]).lerp(b.c[i], k)); PU.amt.value = a.amt + (b.amt - a.amt) * k; groundMat.color.copy(a.ground).lerp(b.ground, k) }
   function stepFade(dt) { if (!fade.on) return; fade.t = Math.min(fade.dur, fade.t + dt); const u = fade.t / fade.dur; apply(fade.from, fade.to, u * u * (3 - 2 * u)); if (u >= 1) fade.on = false }
   const ground = new THREE.Mesh(new THREE.CircleGeometry(groundR, 96), groundMat); ground.name = 'clay-ground'
   ground.rotation.x = -Math.PI / 2; ground.position.y = (STAGE.minY - STAGE.floorY) * s + 0.11 // −0,125 m: über der Bodenplatte (≈ −0,16), unter der Bühnenfläche
   ground.receiveShadow = true; root.add(ground)
-  const state = { model: null, status: 'LOADING', error: null, disposed: false, info: null, palette: palette ? { c0: palette.c0, c1: palette.c1, c2: palette.c2, ground: palette.ground } : null }
+  const state = { model: null, status: 'LOADING', error: null, disposed: false, info: null, palette: palette ? plain(palette) : null }
   const ready = new GLTFLoader().loadAsync(url).then((g) => {
     if (state.disposed) return null
     const m = g.scene; m.name = 'amphitheater-model'

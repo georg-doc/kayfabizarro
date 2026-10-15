@@ -11,7 +11,7 @@
 //   3. Innenecken (Georg 14.10., ersetzt R2 §3): Der Knet-Rahmen hat IMMER runde Innenecken, Radius = STYLES.plain.corner des Spenders
 //      (0,45 m, über cornerOf ≤ 0,3 · min(W, H)); die Karte liegt darunter mit Maske (faceGeometry mit Radius: UV über die volle Box,
 //      Bild unverzerrt, nur die Ecken fallen weg – Spender-Verhalten).
-//   4. Farben (Georg 14.10., V-245): Rollen frame/trim/post aus palette-roles.js R2 je Karte (stagePalette.js) über buildPalette(fixed) des Spenders,
+//   4. Farben (Georg 14.10., V-245 → V-270): Rollen frame/trim/post aus der Insel-Palette je Karte (stagePalette.js) über buildPalette(fixed) des Spenders,
 //      Rückfall: Cartoon-Palette des Bioms über buildPalette(spec, island);
 //      die Biome sind die Tabelle BIOMES aus billboard-stage.js Z. 6–12 (Daten 1:1, das Stage-Modul selbst wird nicht übernommen).
 // Nicht übernommen: Insel-Anker, BillboardScheduler, Kaleido-Schnitte, TV-Stil (R2 §1, §4). Keine Lesefolge bis zu freigegebenen Zitaten.
@@ -40,8 +40,8 @@ export const billboardLog = { create: 0, update: 0, dispose: 0, freed: null }
 // V-256 · Träger: Knet-Körper + Bildfläche (Rundrechteck-Maske, Größe nach fitFace) + Palette. Der Inhalt ist ein eigenes Modul (surfaceContent.js),
 // das nur die Fläche kennt: Er setzt die Textur und meldet sein Seitenverhältnis über surface.fit(); der Träger formt danach Rahmen und Fläche.
 // Nach außen bleibt alles wie vor dem Schnitt (setCard, info, ready, setPalette), damit Dialog, Bühne und Prüfungen unverändert laufen.
-// options: { card, content? (Inhalt, Standard createCardContent()), palette (stagePaletteFor(...), V-245) | biome (Objekt wie BIOMES, Rückfall) | biomeName, maxW = 7, maxH = 5, position, yaw }
-// palette: Rahmen/Zierleiste/Pfosten/Boden aus den Rollen von palette-roles.js R2 (stagePalette.js); setPalette(p, fadeS) wechselt weich (V-011).
+// options: { card, content? (Inhalt, Standard createCardContent()), palette (stagePaletteFor(...), V-270) | biome (Objekt wie BIOMES, Rückfall) | biomeName, maxW = 7, maxH = 5, position, yaw }
+// palette: Rahmen/Zierleiste/Pfosten/Boden aus den ENV_ROLES der Insel-Palette (stagePalette.js); setPalette(p, fadeS) wechselt weich (V-011).
 export function createBillboard(options = {}) {
   const { maxW = 7, maxH = 5, position = [0, 0, 0], yaw = 0 } = options
   const fam = makeClayFamily('B', { uClayNear: { value: 26 }, uClayFar: { value: 70 }, uClayScale: { value: 2.6 }, uClayAmt: { value: 0.4 } })

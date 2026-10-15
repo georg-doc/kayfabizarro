@@ -2,7 +2,7 @@
 // Ohne three, ohne DOM. Festgenagelt auf denselben Stand wie die Bilder (MEDIA_COMMIT).
 import audit from './data/mapping-audit.json'
 
-export const MEDIA_COMMIT = 'a71de421c379f57b79725507e2e6aee437976b09' // Kartentitel normal geschrieben (V-271, Branch data/kfb-registry-title-case-2026-10-15, auf 233efd5 Druck-Kanon V-242), Audit 60/78 SAFE, 3142 Karten
+export const MEDIA_COMMIT = '52adc8f139a08eb0ea4735e56415ba8056948a6a' // Generator-Fix anti_rules_toolkit (trailingPages, Branch data/kfb-registry-generator-offset-2026-10-15, auf a71de421 Titel normal V-271), Audit 60/78 SAFE, 3142 Karten; anti_rules weiter UNSAFE (OCR 44/56)
 
 // Ob die Zuordnung Karte -> Viertelseite stimmt, steht nicht in der Registry. Sie ist je Deck geprüft:
 // scripts/audit-mapping.py liest jede Viertelseite mit Apple Vision und vergleicht den Titel mit dem Kartennamen.

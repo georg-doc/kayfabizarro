@@ -6,6 +6,7 @@
 import { useEffect, useMemo } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { stagePaletteFor, FADE_S } from './stagePalette'
 import ModuleHost from './ModuleHost'
 import { createAmphitheater, amphLog } from './modules/amphitheater'
@@ -55,9 +56,10 @@ export const playerPosFor = (c, fov = 38, d = 3.2, ndcY = -0.9) => { const [px, 
   return [px + (tx - px) * k, py + (ty - py) * k + ndcY * d * Math.tan((fov / 2) * Math.PI / 180) - 1.05, pz + (tz - pz) * k] }
 const PLAYER_POS = playerPosFor(cam)
 const ACTORS = ['none', 'fb', 'rogue'].includes(/actors=(\w+)/.exec(hash)?.[1]) ? /actors=(\w+)/.exec(hash)[1] : 'none' // unbekannter Wert → keine Figuren (Prüfer 9, Befund 7)
-// Bühnen-Palette (V-245): nach der Karte (Deck-Genre → Cartoon-Palette → Rollen), Hash palette=<Kennung>|biome zum Vergleichen (Bildbogen)
+// Bühnen-Palette (V-270): nach der Karte (Deck-Genre → Insel-Palette → Rollen, Story-Tint), Hash palette=<Insel> zum Vergleichen, plain = ohne Tint (Bildpaar)
 const PAL_OVERRIDE = /palette=(\w+)/.exec(hash)?.[1] || null
-const palFor = (card) => stagePaletteFor(card, { override: PAL_OVERRIDE, biome: BIOME })
+const PAL_PLAIN = /(^|,)plain(,|$)/.test(hash.replace(/^#/, ''))
+const palFor = (card) => stagePaletteFor(card, { override: PAL_OVERRIDE, noTint: PAL_PLAIN })
 const PAL0 = palFor(CARD)
 const AMPH = { biome: BIOME, palette: PAL0?.amph || null }
 const MESHY_OPTS = SCENE ? { stage: SCENE, scale: SCENE_S } : null
@@ -116,7 +118,7 @@ const mods = {}
 const DIALOG = {
   cards: DECK,
   get reader() { return getReader() },
-  billboard: { setCard: (c) => { applyPalette(c); return mods.billboard.setCard(c) } }, // Kartenwechsel = Palettenwechsel (V-245)
+  billboard: { setCard: (c) => { applyPalette(c); return mods.billboard.setCard(c) } }, // Kartenwechsel = Palettenwechsel (V-245/V-270)
   actors: { get left() { return mods.left }, get right() { return mods.right } },
   say: (anchor, line) => useGame.getState().say(anchor, line),
   openChoice: () => { useGame.getState().openChoice(); return useGame.getState().choice?.id ?? null },
@@ -148,9 +150,45 @@ function Sky() {
   return <primitive object={sky.mesh} />
 }
 
+// V-257 Bühnen-Kamera: frei bewegliche Orbit-Kamera (360° drehen, Zoom zum Cursor, Panning, Fokus per Doppelklick), ruhig nach V-026
+// (geglättet, nicht zu empfindlich), nie unter 0,5 m (V-203). Feste Blicke nur als Sprungmarken: „Standard“ = Standard-Blick der Bühne, „Nah“ = 40 % näher.
+export const ORBIT = Object.freeze({ damping: 0.08, rotate: 0.45, zoom: 0.5, pan: 0.6, minDist: 2, maxDist: 60, minY: 0.5, glideS: 0.8 })
+const camMarks = () => { const p = new THREE.Vector3(...cam.pos), t = new THREE.Vector3(...cam.target); return { standard: { pos: p, target: t }, nah: { pos: t.clone().lerp(p, 0.6), target: t.clone() } } }
 function Cam() {
-  const { camera, size } = useThree()
-  useEffect(() => { camera.fov = cam.fov || 38; camera.near = 0.1; camera.far = 600; camera.position.fromArray(cam.pos); camera.lookAt(...cam.target); camera.updateProjectionMatrix(); expose('StageCamera', camera) }, [camera, size])
+  const { camera, gl, scene, size } = useThree()
+  const ctl = useMemo(() => {
+    const c = new OrbitControls(camera, gl.domElement)
+    Object.assign(c, { enableDamping: true, dampingFactor: ORBIT.damping, rotateSpeed: ORBIT.rotate, zoomSpeed: ORBIT.zoom, panSpeed: ORBIT.pan, zoomToCursor: true, screenSpacePanning: true, minDistance: ORBIT.minDist, maxDistance: ORBIT.maxDist, maxPolarAngle: Math.PI * 0.55 }) // knapp unter die Waagrechte erlaubt (Standard-Blick ist fast waagrecht); den Boden schützt minY
+    return c
+  }, [camera, gl])
+  const glide = useMemo(() => ({ on: false, t: 0, a: null, b: null }), [])
+  // Sprungmarke: weich hingleiten (Kamera und Ziel), kein Schnitt
+  // Restschwung der Dämpfung vor dem Gleiten verbrauchen (sonst verschiebt er den Blick nach dem Ankommen); während des Gleitens ohne Dämpfung
+  const startGlide = (b) => { ctl.enableDamping = false; ctl.update(); Object.assign(glide, { on: true, t: 0, a: { pos: camera.position.clone(), target: ctl.target.clone() }, b }) }
+  const jump = (name) => { const m = camMarks()[name]; if (m) startGlide(m) }
+  useEffect(() => { camera.fov = cam.fov || 38; camera.near = 0.1; camera.far = 600; camera.position.fromArray(cam.pos); ctl.target.fromArray(cam.target); camera.lookAt(ctl.target); camera.updateProjectionMatrix(); ctl.update(); expose('StageCamera', camera) }, [camera, ctl])
+  useEffect(() => { camera.aspect = size.width / size.height; camera.updateProjectionMatrix() }, [camera, size])
+  // Fokus auf Klick (V-257): Doppelklick setzt das Orbit-Ziel weich auf den getroffenen Punkt
+  useEffect(() => {
+    const ray = new THREE.Raycaster(), v = new THREE.Vector2()
+    const onDbl = (e) => { const r = gl.domElement.getBoundingClientRect(); v.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(v, camera)
+      const hit = ray.intersectObjects(scene.children, true).find((h) => h.object.visible && h.object.name !== 'sky'); if (!hit) return
+      startGlide({ pos: camera.position.clone().add(hit.point.clone().sub(ctl.target)), target: hit.point.clone() }) }
+    gl.domElement.addEventListener('dblclick', onDbl); return () => gl.domElement.removeEventListener('dblclick', onDbl)
+  }, [gl, camera, scene, ctl, glide])
+  useEffect(() => { // Sprungmarken als kleine Knöpfe oben rechts
+    const box = document.createElement('div'); box.id = 'kfb-cam-marks'
+    box.style.cssText = 'position:fixed;right:16px;top:14px;display:flex;gap:8px;z-index:9000'
+    for (const [k, label] of [['standard', 'Standard'], ['nah', 'Nah']]) { const b = document.createElement('button'); b.dataset.mark = k; b.textContent = label
+      b.style.cssText = 'padding:6px 12px;border:0;border-radius:10px;background:rgba(40,28,16,.72);color:#ffe9b8;font:600 14px/1.2 system-ui,sans-serif;cursor:pointer'; b.onclick = () => jump(k); box.appendChild(b) }
+    document.body.appendChild(box); expose('StageOrbit', { controls: ctl, jump, marks: camMarks, glide: () => glide.on }); return () => { box.remove(); ctl.dispose() }
+  }, [ctl])
+  useFrame((_, dt) => {
+    if (glide.on) { glide.t = Math.min(ORBIT.glideS, glide.t + Math.min(dt, 0.1)); const u = glide.t / ORBIT.glideS, k = u * u * (3 - 2 * u)
+      camera.position.lerpVectors(glide.a.pos, glide.b.pos, k); ctl.target.lerpVectors(glide.a.target, glide.b.target, k); if (u >= 1) { glide.on = false; ctl.update(); ctl.enableDamping = true } }
+    ctl.update()
+    if (camera.position.y < ORBIT.minY) camera.position.y = ORBIT.minY // nie unter das Gelände (V-203)
+  })
   return null
 }
 

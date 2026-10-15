@@ -1,19 +1,20 @@
-// V-245 · Bühnen-Palette: Karte → Deck-Genre → benannte Cartoon-Palette (world-palettes.js) → Rollen (palette-roles.js R2, EIN Besitzer)
-// → Anwendung auf Billboard, Amphitheater, Boden und Himmel. Ohne three, ohne DOM.
-// Was hier steht und nicht im Besitzer: (1) die Zuordnung Genre → Palette (Vorschlag WS1, data/stage-palette.genre.json, Georg urteilt am
-// Bildbogen); (2) welche Rollen das Amphitheater trägt (das Meshy-Modell hat keine Rollen-Teile wie der Clay-Stage-Kit; seine Helligkeit
-// wird auf einen Drei-Stufen-Verlauf aus Rollen gelegt). Billboard und Himmel nutzen die Rollen so wie Clay Stage R2 (frame/trim/post, skyTop/skyBottom).
-import { NAMED_PALETTES } from './vendor/palette/world-palettes.js'
-import { roles, mix, DEFAULT_ACCENT } from './vendor/palette/palette-roles.js'
+// V-270 · Bühnen-Paletten als Harmonie-Systeme: Karte → Deck-Genre → Insel-Palette (Lab palettes.ts, Joyride-Linie) → Rollen je Bühnenteil
+// (ENV_ROLES: accent, stone, paved, ground, bark …) → Story-Tint aus dem Fluff-Farbschema (storymode.v4.js), höchstens ~15 % über der Palette.
+// Ohne three, ohne DOM. Die Zuordnung Genre → Palette ist Vorschlag WS1 (data/stage-palette.genre.json), Georg urteilt an den Einzelbildern.
+// Ersetzt die Stimmungs-Stufen aus V-245 (world-palettes/palette-roles); der Story-Modus der Karte kommt weiter aus world-context wie in R2.
+import { PALETTES, ENV_ROLES } from './vendor/palette/island-palettes.js'
+import { MODES } from './vendor/palette/storymode.v4.js'
 import { cardSemanticVector, makeWorldContext } from './vendor/palette/world-context.js'
 import TABLE from './data/stage-palette.genre.json'
 import GENRES from './data/deck-genres.json'
 
-const hex = (c) => '#' + c.map((v) => Math.max(0, Math.min(255, Math.round(v * 255))).toString(16).padStart(2, '0')).join('')
-export const PALETTE_IDS = NAMED_PALETTES.map((p) => p.id)
-export const FADE_S = 1.2 // weicher Wechsel (V-011); Dauer = Vorschlag WS1
+export const PALETTE_IDS = Object.keys(PALETTES)
+export const FADE_S = 1.2 // weicher Wechsel (V-011)
+export const TINT_K = 0.12 // Story-Tint: Anteil des Modus-Akzents (WS0: höchstens ~15 %)
+// Tint als gerade Mischung der sRGB-Werte: 12 % sind 12 % des Abstands je Kanal (mix aus palette-roles mischt linear-hell und wirkt dadurch stärker)
+const lerpHex = (a, b, k) => '#' + [1, 3, 5].map((i) => Math.round(parseInt(a.slice(i, i + 2), 16) * (1 - k) + parseInt(b.slice(i, i + 2), 16) * k).toString(16).padStart(2, '0')).join('')
 
-// Palette eines Decks: genre[0] (bekannt) → Tabelle; sonst bundle → Genre → Tabelle; sonst null (Rückfall Biom)
+// Palette eines Decks: genre[0] (bekannt) → Tabelle; sonst bundle → Genre → Tabelle; sonst null
 export function paletteForDeck(deckId) {
   const d = GENRES.decks[deckId]; if (!d) return { id: null, via: 'kein Deck-Eintrag' }
   for (const g of d.genre) if (TABLE.genreToPalette[g]) return { id: TABLE.genreToPalette[g], via: 'genre ' + g }
@@ -22,35 +23,29 @@ export function paletteForDeck(deckId) {
   return { id: null, via: 'genre/bundle unbekannt' }
 }
 
-// Zweiter Akzent (wcAccent) wie Clay Stage R2 computeContext (stage.js Z. 146–154): Kartenvektor → stärkste Dimension → Story-Modus
-// (DIM_MODE, in R2 „aus H13 übernommen, Vorschlag, nicht Kanon“) → makeWorldContext(...).accent. Er färbt u. a. skyTop, accent2, column.
+// Story-Modus der Karte wie Clay Stage R2 computeContext: Kartenvektor → stärkste Dimension → Modus (DIM_MODE aus R2)
 const DIM_MODE = { melancholy: 'tragic', humor: 'comic', chaos: 'absurd', power: 'heroic', wonder: 'mystical', threat: 'forbidden', lore: 'mystical', name: 'heroic' }
-export function cardAccent(card) {
-  if (!card) return { accent: DEFAULT_ACCENT, storyMode: null }
-  const c = { cardName: card.name || '', power: card.power || '', lore: card.lore || '' } // Spielkarte → Feldnamen des Deck-JSON
+export function cardStoryMode(card) {
+  if (!card) return null
+  const c = { cardName: card.name || '', power: card.power || '', lore: card.lore || '' }
   const vec = cardSemanticVector(c, GENRES.decks[card.deck?.id]?.role || null), top = Object.keys(vec).sort((a, b) => vec[b] - vec[a])[0]
-  const wc = makeWorldContext({ cardTriplet: { current: c }, storyMode: DIM_MODE[top] || 'heroic', seeds: ['kfb-billboard', 'b-1'] }) // Seeds wie R2 (biomeSeed b-1)
-  return { accent: wc.accent, storyMode: wc.storyModeName || wc.storyMode }
+  return makeWorldContext({ cardTriplet: { current: c }, storyMode: DIM_MODE[top] || 'heroic', seeds: ['kfb-billboard', 'b-1'] }).storyMode
 }
 
-// Stufen [dunkel, mitte, hell] aus einem Biom (Rückfall, BIOMES aus billboard-stage.js): Fels in Straße, Fels, Oberfläche in Papier
-const biomeStops = (b) => [mix(b.rock, b.road, 0.55), b.rock, mix(b.top, b.paper, 0.45)]
-
-// options: { override: Paletten-Kennung oder 'biome', biome (Rückfall) }
-export function stagePaletteFor(card, { override = null, biome = null } = {}) {
+// options: { override: Paletten-Kennung, noTint: true (Bildpaar ohne Tint) }
+export function stagePaletteFor(card, { override = null, noTint = false } = {}) {
   let id = null, via = null
-  if (override && override !== 'biome' && PALETTE_IDS.includes(override)) { id = override; via = 'override' }
-  else if (!override && card?.deck?.id) ({ id, via } = paletteForDeck(card.deck.id))
-  const named = id && NAMED_PALETTES.find((p) => p.id === id)
-  const stops = named ? named.stops.map(hex) : biome ? biomeStops(biome) : null
-  if (!stops) return null
-  const { accent, storyMode } = cardAccent(card)
-  const R = roles(stops, accent, false)
-  const pid = id || 'biome:' + (biome?.name || '?')
+  if (override && PALETTE_IDS.includes(override)) { id = override; via = 'override' }
+  else if (card?.deck?.id) ({ id, via } = paletteForDeck(card.deck.id))
+  if (!id) { id = TABLE.fallback; via = (via ? via + ' → ' : '') + 'Rückfall ' + TABLE.fallback }
+  const P = PALETTES[id], E = ENV_ROLES[id]
+  const story = cardStoryMode(card), M = MODES.find((m) => m.id === story) || null
+  const t = (hex) => (M && !noTint ? lerpHex(hex, M.accent, TINT_K) : hex)
+  const ramp = (three) => [t(three[2]), t(three[1]), t(three[0])] // ENV_ROLES hell → dunkel; Verlauf dunkel → hell
   return {
-    id: pid, key: pid + '|' + accent, via: via || 'Rückfall Biom', storyMode, wcAccent: accent, stops, roles: R,
-    billboard: { frame: R.frame, trim: R.trim, post: R.post, ground: R.flat }, // wie Billboard Family v1 / Clay Stage R2
-    amph: { c0: R.dark, c1: mix(R.stone, R.frame, 0.5), c2: R.trim, ground: R.flat }, // Steinzeichnung: Fugen dunkel, Stein in Palettenmitte, Kanten hell
-    sky: { top: R.skyTop, bottom: R.skyBottom },
+    id, key: id + '|' + (story || '-') + (noTint ? '|plain' : ''), via, storyMode: story, tint: M && !noTint ? M.accent : null, palette: P, env: E,
+    billboard: { frame: t(E.accent[0]), trim: t(E.accent[2]), post: t(E.bark[1]), ground: t(E.ground[1]) }, // Rollen wie Vorlagen-Zeile §28.2: Rahmen accent[0], Leiste accent[2], Pfosten Rinde
+    amph: { wall: ramp(E.stone), floor: ramp(E.paved), ground: t(E.ground[1]) }, // senkrecht Stein, waagrecht Pflaster (Normalen-Kriterium im Shader)
+    sky: { top: t(P.sky), bottom: t(P.cloud) },
   }
 }
