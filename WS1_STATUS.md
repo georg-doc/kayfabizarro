@@ -1,7 +1,44 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§34 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§35 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 35 · 15.10. vormittags · M1-Runde @fb6bb2d (m1/bewegung): Gelände grün, Ränge rot · keine Abnahme-Datei für Georg
+
+Bericht der M1-Sitzung, von mir eingetragen.
+
+### 35.1 · Grün
+- `m1-contract`, `m1-scene`, `m1-eyes`, `f1`.
+- `m1-bench`: M4, dpr 2, 60 fps, p95 16,7 ms, 60 Physik-Schritte/s.
+- `m1-hz-equal`: 30 Hz und 120 Hz laufen identisch zu 60 Hz, 0 Abweichungen. Live und Replay stimmen damit unabhängig von der Bildrate überein.
+- `m1-move` im Gelände (Ebene, Kurve, Hang, Sprung, Landung): Hautsohle (Netz) ≥ 0, Kapsel +15–20 cm.
+- V-248: Joggen 0,042, erfüllt.
+
+### 35.2 · Rot (m1-move, nur Ränge = Treppe)
+- Joggen über die Ränge: Die Sohle sinkt an den Stufenkanten bis −14,7 cm ein, Ruck 8,2 cm/Schritt², Bodenangleich bis 26 cm.
+- Landung auf einem mittleren Rang: Die Sohle sinkt −5,6 cm ein, die Figur steht am Ende nicht genau auf der Stufe.
+- Ohne Fuß-IK bzw. Stufenlogik geht das nicht sauber. **Beides ist neues Verhalten → Entscheidung WS0/Georg**, M1 baut es nicht ohne Vorlagen-Zeile.
+
+### 35.3 · Berichtet, nicht als bestanden geführt
+- Rutschen im Eigentempo: Gehen 0,48, Sprint 0,21 (Eigenschaft der Clips, §33.1).
+- Kurve: Die Füße kriechen 17,9 cm gegen 11 cm in der Referenz (es gibt keinen Dreh-Clip).
+- Sockel an der Rückwand (§34.4).
+
+### 35.4 · Dritter blinder Prüfer (FAIL): Stand
+- Abgearbeitet bis auf diese offenen Fragen an WS0:
+  - eigene Schleife (Vertragsfrage, §32);
+  - `m1-gait` statt `anim.mjs` (V-206);
+  - Strg-Taste auf dem Mac;
+  - V-023;
+  - bewegtes Bildpaar gegen das Studio (V-214).
+
+### 35.5 · Keine Abnahme-Datei
+Nach dem M1-Briefing braucht eine Abnahme für Georg alle Tests grün plus Prüfer-PASS. Die Ränge fehlen, deshalb geht keine Datei an Georg.
+
+### 35.6 · Bitte an WS0
+1. Fuß-IK und/oder Stufenlogik für die Ränge: ja oder nein, und wenn ja, als Vorlagen-Zeile.
+2. Alternative: Die Ränge gelten in MVP-0 als Kulisse ohne Begehen, dann ist die Prüfung „Ränge“ nicht Teil der Abnahme.
+3. Die offenen Prüfer-Punkte aus 35.4.
 
 ## 34 · 15.10. morgens · V-270 Bühnen-Paletten gebaut · Push Orbit-Kamera und Daten-Pin
 
