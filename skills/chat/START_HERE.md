@@ -1,3 +1,13 @@
+## DOCUMENTATION-ONLY RECOVERY ROUTE · 2026-10-15 · POST-MVP FLUFF & MINIGAMES
+
+Georg requested restoration of the historical Fluff/minigame thread so **Claude Code's CURRENT Island Worldbuilder Lab** and fresh chats can recover it. The complete original v0.3–v0.7.1 documents are source-present on a **non-main** planning branch; this was a discoverability defect, not lost prose.
+
+**Read-first source bridge:** `skills/chat/recovery/KFB_POSTMVP_MINIGAMES_FLUFF_SOURCE_RECOVERY_2026-10-15.md` (documentation-only recovery PR; do not treat as current main until human merge). It links all original blobs, the prior Claude Code Lab `REVIEW_POSTMVP_CONCEPTS_ARCH_FIT_R1.md`, new Lab runtime-owner correction, and the deferred P0–P4 planning sequence. **Existing Lab/Drive Loop MVP and acceptance gates take precedence; the new mini-mechanics are NOT part of its next MVP.** The old WB2 R4 STOP applies to the old WB2 candidate, not an automatic assessment of the new Lab. Verify current Lab PR/head/SSOT and actual game state before acting.
+
+No mini-game implementation, new Site/Stage/Hub route, Card/economy runtime, or MVP gate is authorized by this recovery router. Single deferred follow-up: `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` only after playable MVP and Georg's explicit go-ahead. The public KFB/MED GPT-Site consolidation remains PARKED.
+
+---
+
 ## CURRENT ADDITIVE DECISION · 2026-10-12 · WORLD MONUMENTS01 CLAUDE DESIGN PASS / TUNE LATER
 
 Georg has accepted the uploaded **WORLD MONUMENTS01 Claude Design session cut r1** as **PASS · TUNE LATER** for the next Claude Code / WSA implementation intake.
