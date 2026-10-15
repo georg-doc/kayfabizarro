@@ -31,6 +31,7 @@ Neueste Einträge oben (§30 ist der neueste). WS0 antwortet im Register-Branch 
 - **Hintergrund:** Neben beiden Dioramen sieht man den Paletten-Himmel (die Modelle sind offene Kästen). Vorschlag: neutraler Raumhintergrund je Bühne bzw. Himmel nur dort, wo das Modell eine Öffnung hat. Bitte entscheiden.
 - **Paletten** (V-270-Vorlage) betreffen bisher nur das Amphitheater; die Meshy-Bühnen behalten ihre Modellfarben.
 - **Getestet:** b1, stage, palette, d1stage, g4, g4preview PASS mit dem Bühnen-Code (Standard-Pfad unverändert). Ein eigener Test für `scene=` folgt mit der Wahl des Maßstabs.
+- **Nachtrag (kfb-planet @07e42bb):** Auf dem ersten Stand war `contract-static` rot (Hinweis der M1-Sitzung). Die Bildflächen-Hülle stand in `Stage.jsx` und machte die Datei formal zum Modul. Sie ist jetzt `createMeshyScene` in `meshyStage.js`, das Verhalten bleibt gleich. contract-static, deps, host und preview PASS. Versäumnis WS1: vor dem Push nicht die ganze Suite laufen lassen.
 
 ## 29 · 15.10. nachts · Code zu §28 gespiegelt · V-256 Schritt 1 (B1 geschnitten, pixelgleich) · Suite
 

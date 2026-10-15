@@ -12,8 +12,7 @@ import { createAmphitheater, amphLog } from './modules/amphitheater'
 import { createBillboard, BIOMES } from './modules/billboard'
 import { createActor } from './actors/actorSlot'
 import { createDialog } from './modules/dialog'
-import { createMeshyStage, MESHY_STAGES, stageCamera } from './modules/meshyStage'
-import { createCardContent } from './modules/surfaceContent'
+import { createMeshyScene, MESHY_STAGES, stageCamera } from './modules/meshyStage'
 import BubbleHost from './BubbleHost'
 import ChoiceHost from './ChoiceHost'
 import { getReader, isPoolReady, PREVIEW } from './dialogText'
@@ -128,17 +127,8 @@ const DIALOG = {
 }
 function billboardReady() { const i = mods.billboard?.info(); if (!i) return false; const c = DECK[0] || CARD; return i.source === 'CARD' || (i.source === 'PLACEHOLDER' && !!c && !isCardSafe(c.deck.id, c.num)) }
 const mk = (k, f) => (o) => { mods[k] = f(o); expose('StageMods', mods); return mods[k] }
-// Meshy-Bühne: Modul `amph` (Bühne) + Bildflächen-Inhalt auf ihrem Slot; nach außen wie das Billboard (setCard/info), damit Dialog und Prüfungen gleich bleiben
-const makeMeshy = (o) => {
-  const st = createMeshyStage(o), content = createCardContent()
-  const screen = { object3d: new THREE.Group(), content, setPalette() {}, fading: () => false, update() {}, dispose() {},
-    info: () => { const i = content.current(); return i ? { ...i, carrier: 'meshy-slot:' + st.stage.id } : null },
-    setCard: (c) => st.ready.then(() => { content.attach(st.surface); return content.setCard(c) }) }
-  screen.ready = screen.setCard(CARD)
-  mods.amph = st; mods.billboard = screen; expose('StageMods', mods)
-  const dispose0 = st.dispose; st.dispose = () => { content.dispose(); dispose0() }
-  return st
-}
+// Meshy-Bühne: Bühnen-Modul mit Bildflächen-Inhalt auf ihrem Slot (meshyStage.createMeshyScene); `amph` = Bühne, `billboard` = Bildfläche wie beim Billboard
+const makeMeshy = (o) => { const { stage, screen } = createMeshyScene({ ...o, card: CARD }); mods.amph = stage; mods.billboard = screen; expose('StageMods', mods); return stage }
 const makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makeL = mk('left', createActor), makeR = mk('right', createActor)
 const makeDialog = (o) => { const d = createDialog({ ...o, reader: { lineFor: (...a) => o.reader.lineFor(...a), silence: () => o.reader.silence() } }); mods.dialog = d; expose('StageMods', mods); return d }
 

@@ -6,6 +6,7 @@
 // Erste Bühnen (Vorschau, Georg 15.10.): Comic-Broadcast (PASS V-268) und Utopia-Bühne (Fix nach TUNE, Abnahme offen).
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { createCardContent } from './surfaceContent'
 import comicSlot from '../data/stages/kfb-meshy-comic-broadcast.screen-a.v1.slot.json'
 import utopiaSlot from '../data/stages/kfb-meshy-utopia-stage.screen-a.v1.slot.json'
 
@@ -70,4 +71,16 @@ export function createMeshyStage(options = {}) {
       root.clear()
     },
   }
+}
+
+// Bühne + Bildflächen-Inhalt zusammen (für den Host): `screen` spricht wie das Billboard (setCard, info, ready, setPalette, fading),
+// damit Dialog, Palette und Prüfungen gleich bleiben. Der Inhalt wird erst nach dem Laden auf die Fläche gesetzt; dispose der Bühne gibt ihn mit frei.
+export function createMeshyScene({ stage: id, scale = null, card = null }) {
+  const stage = createMeshyStage({ stage: id, scale }), content = createCardContent()
+  const screen = { object3d: new THREE.Group(), content, setPalette() {}, fading: () => false, update() {}, dispose() {},
+    info: () => { const i = content.current(); return i ? { ...i, carrier: 'meshy-slot:' + stage.stage.id } : null },
+    setCard: (c) => stage.ready.then(() => { content.attach(stage.surface); return content.setCard(c) }) }
+  screen.ready = screen.setCard(card)
+  const dispose0 = stage.dispose; stage.dispose = () => { content.dispose(); dispose0() }
+  return { stage, screen }
 }
