@@ -1,0 +1,782 @@
+[
+  {
+    "cardNumber": 1,
+    "card": {
+      "name": "Andvari (The Mole)",
+      "power": "Asset Freeze: Target player cannot draw cards next turn. They are auditing their hoard.",
+      "lore": "He sat on the gold until Loki squeezed him like a stress ball. It's not hoarding if you're underground.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Andvari",
+    "opener": "",
+    "line": "Andvari, Asset Freeze: auditing hoard; Loki squeezed him like stress ball.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 2,
+    "card": {
+      "name": "Loki (The Fox)",
+      "power": "Forced Liquidation: Steal one Item card from an opponent. If they complain, steal another.",
+      "lore": "He caught the pike, killed the otter, and bullied the dwarf. Basically, a standard consultant.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Loki",
+    "opener": "Remember",
+    "line": "Loki, Forced Liquidation: steal Item; pike, otter, dwarf, standard consultant.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 3,
+    "card": {
+      "name": "The Ring (The Loop)",
+      "power": "Compound Interest: The holder gains +2 Attack but must discard a card every turn. The debt always wins.",
+      "lore": "Andvaranaut. It breeds gold, but it eats owners. The ultimate pyramid scheme.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Ring",
+    "opener": "",
+    "line": "The Ring, Compound Interest: gold breeds, eats owners; debt always wins.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 4,
+    "card": {
+      "name": "The Curse (The Fine Print)",
+      "power": "Bad Ending: Attach to a Hero Card. That Hero dies at the end of the round. No saves.",
+      "lore": "Death to the owner. Joy to no one. Until the gold returns to the water, everyone is just renting their life.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Curse",
+    "opener": "",
+    "line": "The Curse, Bad Ending: Hero dies; death to owner, everyone renting life.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 5,
+    "card": {
+      "name": "Siegfried (The Retriever)",
+      "power": "Main Character Syndrome: You cannot lose a duel unless the opponent rolls a natural 6.",
+      "lore": "Strong enough to kill a dragon. Dumb enough to not check his back for leaves. The ultimate Himbo.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Siegfried",
+    "opener": "You know",
+    "line": "Siegfried, Main Character Syndrome: dragon killed; leaves on back",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 6,
+    "card": {
+      "name": "Dragon Blood (The Juice)",
+      "power": "Thick Skin: Ignore all damage from non-magical weapons. You smell like sulfur and ego.",
+      "lore": "Bathe in the blood of your enemies. It's great for the pores and makes you legally invincible.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Dragon Blood",
+    "opener": "",
+    "line": "Dragon Blood, Thick Skin: ignore damage; sulfur and ego, legally invincible.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 7,
+    "card": {
+      "name": "The Linden Leaf (The Target)",
+      "power": "Critical Fail: Play on an opponent's Siegfried. Their Defense drops to 0.",
+      "lore": "One tiny leaf. One giant design flaw. Proof that nature hates perfection.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Linden Leaf",
+    "opener": "",
+    "line": "The Linden Leaf, Critical Fail: Siegfried Defense drops to 0",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 8,
+    "card": {
+      "name": "Balmung (The Problem Solver)",
+      "power": "Overkill: +4 Attack. If you win, destroy the opponent's weapon card too.",
+      "lore": "Subtlety is for people who can't cleave an anvil in half.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Balmung",
+    "opener": "What if",
+    "line": "Balmung, Overkill: destroy weapon too; cleave anvil in half.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 9,
+    "card": {
+      "name": "Gunther (The Sheep)",
+      "power": "Delegate Authority: When challenged, force another player to fight for you.",
+      "lore": "King of Burgundy. Brave leader, as long as someone else is doing the fighting, wooing, and thinking.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Gunther",
+    "opener": "",
+    "line": "Gunther, Delegate Authority: another player fights",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 10,
+    "card": {
+      "name": "Tarnkappe (The Ghost Mode)",
+      "power": "Assist Mode: Add Siegfried's Attack stats to Gunther's roll. Invisible cheating is still cheating.",
+      "lore": "Invisibility cloak. Great for wrestling women who are stronger than you without them knowing. Creepy.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Tarnkappe",
+    "opener": "",
+    "line": "Tarnkappe, Assist Mode: invisible cheating; wrestling women stronger than you.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 11,
+    "card": {
+      "name": "The Proxy Wooing (Catfishing)",
+      "power": "Identity Theft: Swap hand cards with another player. Claim it was a misunderstanding.",
+      "lore": "He stands there, she fights him. He takes the credit. The original deepfake technology.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Proxy Wooing",
+    "opener": "Anyway",
+    "line": "The Proxy Wooing, Identity Theft: swap hands, claim misunderstanding",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 12,
+    "card": {
+      "name": "The Boat to Iceland",
+      "power": "Travel Montage: Skip a turn to draw 3 cards.",
+      "lore": "A long voyage to find a woman who can kill you with a pebble. Men are idiots.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Boat to Iceland",
+    "opener": "",
+    "line": "The Boat to Iceland, Travel Montage: skip turn, draw cards",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 13,
+    "card": {
+      "name": "Brunhild (The Polar Bear)",
+      "power": "Gatekeeper: Challenge an incoming player. If they lose, they are eliminated from the game.",
+      "lore": "Queen of Iceland. Throws boulders for fun. Virginity is her power source (allegedly).",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Brunhild",
+    "opener": "",
+    "line": "Brunhild, Gatekeeper: challenge incoming player; Queen throws boulders for fun.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 14,
+    "card": {
+      "name": "The Boulder Throw",
+      "power": "Heavy Artillery: Deal 5 damage. If the target is 'Gunther', deal 10.",
+      "lore": "If you can't lift this, don't ask for her number.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Boulder Throw",
+    "opener": "No wait",
+    "line": "The Boulder Throw, Heavy Artillery: Gunther, 10 damage",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 15,
+    "card": {
+      "name": "The Spear Toss",
+      "power": "Shield Breaker: Ignore opponent's Defense stats this turn.",
+      "lore": "It went through the shield, the armor, and the ego. Gunther fainted watching it.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Spear Toss",
+    "opener": "",
+    "line": "The Spear Toss, Shield Breaker: ignore Defense",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 16,
+    "card": {
+      "name": "The Wall-Hook (Suspension)",
+      "power": "Time Out: Suspend an opponent's Hero card for one round. They cannot act.",
+      "lore": "She tied the King up and hung him on the wall until morning. The most honest interaction in the whole saga.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Wall-Hook",
+    "opener": "",
+    "line": "The Wall-Hook, Time Out: Hero cannot act; King hung on wall until morning.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 17,
+    "card": {
+      "name": "The Wrestling Match",
+      "power": "Tag Team: Play this card to double your Attack for one turn, then lose 2 Health.",
+      "lore": "The lights went out, and the 'King' suddenly got very strong. Kayfabe at its finest.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Wrestling Match",
+    "opener": "Before we continue",
+    "line": "The Wrestling Match, Tag Team: double Attack, lose Health",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 18,
+    "card": {
+      "name": "The Girdle (The Belt)",
+      "power": "Disempower: Target loses all special abilities. Without the belt, the magic is gone.",
+      "lore": "Siegfried stole it as a souvenir. Proof of conquest. Also, proof of being a terrible brother-in-law.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Girdle",
+    "opener": "",
+    "line": "The Girdle, Disempower: special abilities gone",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 19,
+    "card": {
+      "name": "The Ring of Tears",
+      "power": "Evidence: Reveal this card to start a war between two players.",
+      "lore": "He gave the other woman's ring to his wife. Rookie mistake. Tactical suicide.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Ring of Tears",
+    "opener": "",
+    "line": "The Ring of Tears, Evidence: ring starts war; Rookie mistake, tactical suicide.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 20,
+    "card": {
+      "name": "The Submission",
+      "power": "Depower: Change Brunhild's stats to 1/1/1.",
+      "lore": "Once she lost her virginity, she lost her strength. Ancient writers really didn't understand how women work.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Submission",
+    "opener": "Not a metaphor",
+    "line": "The Submission, Depower: Brunhild lost her strength",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 21,
+    "card": {
+      "name": "Hagen (The Badger)",
+      "power": "Pragmatism: Cancel any 'Magic' or 'Lore' effect played against you. Reality checks hurt.",
+      "lore": "He's not a villain. He's the only guy in the story who actually does his job. Digs holes, buries bodies.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Hagen",
+    "opener": "",
+    "line": "Hagen, Pragmatism: cancel Magic or Lore; buries bodies, does his job.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 22,
+    "card": {
+      "name": "The Cross on the Robe",
+      "power": "Marked for Death: Attach to Siegfried. Attacks against him gain +5 Damage.",
+      "lore": "Kriemhild sewed it on to 'protect' him. Hagen used it as a bullseye. Loose lips sink ships.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Cross on the Robe",
+    "opener": "",
+    "line": "The Cross on the Robe, Marked for Death: robe cross used as bullseye, protect",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 23,
+    "card": {
+      "name": "The False War Alarm",
+      "power": "Distraction: Force opponents to tap out/rest their strongest card for a turn.",
+      "lore": "A fake invasion to get the hero out of the house. The oldest trick in the book.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The False War Alarm",
+    "opener": "The thing about",
+    "line": "The False War Alarm, Distraction: fake invasion, hero out of house",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 24,
+    "card": {
+      "name": "The Spring (The Water Cooler)",
+      "power": "Ambush Location: +3 Attack if played in a 'Forest' biome.",
+      "lore": "We're just going for a run. Take a drink. Don't worry about your weapon. Or your back.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Spring",
+    "opener": "",
+    "line": "The Spring, Ambush Location: Forest; drink at spring, don't worry about back.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 25,
+    "card": {
+      "name": "The Spear in the Back",
+      "power": "Assassination: Destroy a Hero card that has 'The Cross on the Robe' attached.",
+      "lore": "A coward's blow? Maybe. But it worked. Honor is for dead people.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Spear in the Back",
+    "opener": "",
+    "line": "The Spear in the Back, Assassination: destroy Hero with Cross on Robe",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 26,
+    "card": {
+      "name": "The Corpse at the Door",
+      "power": "Trauma: Target opponent must discard their hand due to grief.",
+      "lore": "Hagen had him dumped right at Kriemhild's door. That's not just murder; that's sending a message.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Corpse at the Door",
+    "opener": "Everyone agrees",
+    "line": "The Corpse at the Door, Trauma: discard hand due grief; corpse dumped at door.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 27,
+    "card": {
+      "name": "The Grief (Screaming Poodle)",
+      "power": "Vengeance Oath: Gain a 'Grudge' token. Each token adds +1 Attack in future rounds.",
+      "lore": "The cry woke the whole castle. A poodle scorned is a demon born.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Grief",
+    "opener": "",
+    "line": "The Grief, Vengeance Oath: Grudge tokens; poodle scorned, demon born.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 28,
+    "card": {
+      "name": "The Cover-Up",
+      "power": "Denial: Negate a 'Truth' card.",
+      "lore": "It was robbers. In the woods. Very tragic. Now, let's talk about inheritance.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Cover-Up",
+    "opener": "",
+    "line": "The Cover-Up, Denial: negate Truth; robbers in woods, talk inheritance.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 29,
+    "card": {
+      "name": "The Treasure Pile",
+      "power": "Bribery: Pay 5 Gold to cancel an attack.",
+      "lore": "Enough wealth to buy an army. Or destroy a kingdom. Kriemhild was using it to buy friends.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Treasure Pile",
+    "opener": "Have you heard of",
+    "line": "The Treasure Pile, Bribery: pay gold cancel attack; wealth buys friends.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 30,
+    "card": {
+      "name": "The Rhine River",
+      "power": "The Vault: Remove all 'Treasure' cards from play. No one gets them.",
+      "lore": "Hagen sank it all. If he couldn't have it, nobody could. The ultimate gatekeeping.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Rhine River",
+    "opener": "",
+    "line": "The Rhine River, The Vault: Treasure removed; Hagen sank all, nobody gets them.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 31,
+    "card": {
+      "name": "The Empty Hole",
+      "power": "Economic Crash: All players lose 50% of their points.",
+      "lore": "Where is the gold? Ask the fish. The first major liquidity crisis in German history.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Empty Hole",
+    "opener": "",
+    "line": "The Empty Hole, Economic Crash: Where is gold? Ask fish; liquidity crisis.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 32,
+    "card": {
+      "name": "Oath of Silence",
+      "power": "Omerta: You cannot be forced to reveal your hand.",
+      "lore": "As long as one of us lives, the gold remains hidden. Spite is a powerful glue.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Oath of Silence",
+    "opener": "Let me tell you about",
+    "line": "Oath of Silence, Omerta: hand hidden; gold remains hidden, spite powerful glue.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 33,
+    "card": {
+      "name": "Etzel (The Ox)",
+      "power": "Horde Command: Summon 3 'Hun' tokens (1/1/1) to fight for you.",
+      "lore": "Attila. Mighty King. Scourge of God. Doesn't realize he's just a weapon in his new wife's purse.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Etzel",
+    "opener": "",
+    "line": "Etzel, Horde Command: Hun tokens; King weapon in wife's purse.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 34,
+    "card": {
+      "name": "The Invitation",
+      "power": "Force an opponent to move their pieces to a 'Trap' location.",
+      "lore": "Come for the solstice. Stay for the massacre. Hagen knew it was a trap, but honor is stupid.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Invitation",
+    "opener": "",
+    "line": "The Invitation, Trap Location: solstice invitation, stay for massacre.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 35,
+    "card": {
+      "name": "The Journey East",
+      "power": "Point of No Return: Once played, you cannot retreat. Fight or die.",
+      "lore": "They crossed the Danube and smashed the boat. One way ticket to hell.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Journey East",
+    "opener": "This one has a rule",
+    "line": "The Journey East, Point of No Return: no retreat; Danube crossed, boat smashed.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 36,
+    "card": {
+      "name": "The Prophecy (Mermaids)",
+      "power": "Spoiler Alert: Look at the top 3 cards of the deck. Keep the worst one.",
+      "lore": "Only the chaplain returns alive. Everyone else is meat. Hagen tried to drown the chaplain to prove them wrong. He failed.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Prophecy",
+    "opener": "",
+    "line": "The Prophecy, Spoiler Alert: worst card; chaplain returns, everyone else meat.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 37,
+    "card": {
+      "name": "The Banquet Table",
+      "power": "Tension: No attacks this turn, but double damage next turn.",
+      "lore": "Eat with your helmet on. Drink with your left hand. Don't mention the gold.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Banquet Table",
+    "opener": "",
+    "line": "The Banquet Table, Tension: no attacks, next double damage; helmet at table.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 38,
+    "card": {
+      "name": "Volker (The Mantis)",
+      "power": "Violent Music: Your attacks count as 'Art'. Ignore armor.",
+      "lore": "The Fiddler. He plays a tune that makes you want to dance, then cuts your head off. The bard of the apocalypse.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Volker",
+    "opener": "Nobody warned us about",
+    "line": "Volker, Violent Music: attacks Art, ignore armor; dance then head off.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 39,
+    "card": {
+      "name": "The Severed Head (Appetizer)",
+      "power": "First Blood: Start the combat phase immediately.",
+      "lore": "Hagen chopped the kid's head off into the queen's lap. The diplomatic talks have concluded.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Severed Head",
+    "opener": "",
+    "line": "The Severed Head, First Blood: combat immediately; kid's head in queen's lap.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 40,
+    "card": {
+      "name": "The Barred Doors",
+      "power": "Lockdown: No one leaves the room. The round ends when only one player remains.",
+      "lore": "You're not locked in to fight them. You're locked in with them. The suffering begins.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Barred Doors",
+    "opener": "",
+    "line": "The Barred Doors, Lockdown: no one leaves, suffering begins.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 41,
+    "card": {
+      "name": "The Burning Roof",
+      "power": "Environment Damage: Deal 1 damage to every player at the start of every turn.",
+      "lore": "Kriemhild set the hall on fire. She's really committed to this revenge thing.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Burning Roof",
+    "opener": "The deck insists on",
+    "line": "The Burning Roof, Environment Damage: hall on fire",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 42,
+    "card": {
+      "name": "The Thirst (Blood Wine)",
+      "power": "Desperate Measure: Heal full health by drinking the blood of fallen minions.",
+      "lore": "\"Drink the blood,\" said Hagen. \"It's better than wine.\" A literal quote. These people are insane.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Thirst",
+    "opener": "",
+    "line": "The Thirst, Desperate Measure: heal by drinking blood; better than wine.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 43,
+    "card": {
+      "name": "The Shield-Wall",
+      "power": "Bunker: Invulnerable to fire damage for 2 turns.",
+      "lore": "Stand by the wall. Let the roof fall in the middle. Tactical positioning in an oven.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Shield-Wall",
+    "opener": "",
+    "line": "The Shield-Wall, Bunker: invulnerable to fire; tactical positioning in oven.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 44,
+    "card": {
+      "name": "Staircase of Bodies",
+      "power": "High Ground: +2 Defense. You are standing on your mistakes.",
+      "lore": "They threw 7,000 bodies down the stairs. Cleaning service is going to quit.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Staircase of Bodies",
+    "opener": "Which brings us to",
+    "line": "Staircase of Bodies, High Ground: standing on mistakes; bodies down stairs.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 45,
+    "card": {
+      "name": "Dietrich von Bern (The Lion)",
+      "power": "The Reluctant Hero: Starts passive. If attacked, destroys the attacker instantly.",
+      "lore": "He didn't want to fight. But then you killed all his friends. Now the Lion is awake.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Dietrich von Bern",
+    "opener": "",
+    "line": "Dietrich von Bern, The Reluctant Hero: attacked, destroys attacker; Lion awake.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 46,
+    "card": {
+      "name": "Hildebrand (The Old Wolf)",
+      "power": "Veteran Instinct: Reroll any failed die.",
+      "lore": "Master of arms. Too old for this nonsense, but too loyal to leave.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Hildebrand",
+    "opener": "",
+    "line": "Hildebrand, Veteran Instinct: reroll failed die; too old, too loyal.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 47,
+    "card": {
+      "name": "Rüdiger (The Dog)",
+      "power": "Moral Conflict: Choose: Fight and die, or Refuse and die.",
+      "lore": "The tragic hero. Forced to fight his friends because he promised a woman a favor. Be careful what you promise.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Rüdiger",
+    "opener": "Do you know",
+    "line": "Rüdiger, Moral Conflict: fight and die or refuse and die; promise a favor.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 48,
+    "card": {
+      "name": "The Dungeon",
+      "power": "Capture: The game ends for these characters. Move to execution phase.",
+      "lore": "Captured by Dietrich. Tied up. The fighting is over. The suffering begins.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Dungeon",
+    "opener": "",
+    "line": "The Dungeon, Capture: execution phase; fighting over, suffering begins.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 49,
+    "card": {
+      "name": "Gunther's Head",
+      "power": "Proof: Discard this card to force Hagen to speak. (Spoiler: He won't.)",
+      "lore": "She cut off her brother's head to make a point. The point being: She has lost her mind.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Gunther's Head",
+    "opener": "",
+    "line": "Gunther's Head, Proof: force Hagen to speak; he won't, brother's head cut off.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 50,
+    "card": {
+      "name": "Balmung Reclaimed",
+      "power": "Execution: Kill a defenseless prisoner. Gain no Honor.",
+      "lore": "She took the sword from Hagen. The sword her husband owned. Poetic justice, written in blood.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Balmung Reclaimed",
+    "opener": "Did you hear of",
+    "line": "Balmung Reclaimed, Execution: defenseless prisoner, no Honor",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 51,
+    "card": {
+      "name": "Hagen's Laugh",
+      "power": "Last Word: Even if you lose, the opponent gets 0 points for the victory.",
+      "lore": "Now Gunther is dead, and I am the only one who knows where the gold is. And I'm taking it to hell. You lose.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Hagen's Laugh",
+    "opener": "",
+    "line": "Hagen's Laugh, Last Word: opponent gets 0 points",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 52,
+    "card": {
+      "name": "The Mastercut",
+      "power": "Sudden Death: Eliminate the winner of the previous duel.",
+      "lore": "Hildebrand couldn't watch a hero like Hagen die by a woman's hand. So he hacked Kriemhild to pieces. Chivalry is weird.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Mastercut",
+    "opener": "",
+    "line": "The Mastercut, Sudden Death: eliminate winner; Chivalry is weird.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 53,
+    "card": {
+      "name": "The Survivors",
+      "power": "Mourning: Skip 3 turns. Contemplate existence.",
+      "lore": "King Etzel and Dietrich wept. For friends and foes. A lot of crying for a heavy metal album cover.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Survivors",
+    "opener": "Welcome to",
+    "line": "The Survivors, Mourning: skip turns",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 54,
+    "card": {
+      "name": "The Moral (There Isn't One)",
+      "power": "Nullify: Cancel the entire game. No one wins.",
+      "lore": "What did we learn? Don't steal gold. Don't trust badgers. And family reunions suck.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Moral",
+    "opener": "",
+    "line": "The Moral, Nullify: no one wins; don't steal gold, don't trust badgers.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 55,
+    "card": {
+      "name": "The Reset Button",
+      "power": "New Game: Shuffle all cards and start over. Maybe this time Siegfried wears back armor.",
+      "lore": "The Nibelungen Not (Distress). It never ends. It just reboots.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The Reset Button",
+    "opener": "",
+    "line": "The Reset Button, New Game: shuffle and start over; never ends, reboots.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 56,
+    "card": {
+      "name": "Uncle FrizzleBob (The Author)",
+      "power": "Rule Breaker: Change one rule of the game permanently.",
+      "lore": "I cut this up so you could play with corpses. Don't look at me like that. You bought the expansion.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Uncle FrizzleBob",
+    "opener": "Meanwhile elsewhere",
+    "line": "Uncle FrizzleBob, Rule Breaker: change rule permanently",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 57,
+    "card": {
+      "name": "Toxic Masculinity",
+      "power": "Ego Boost: +5 Attack, but you cannot retreat or heal. Ever.",
+      "lore": "The driving force of the entire plot. If anyone had just gone to therapy, thousands would be alive.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Toxic Masculinity",
+    "opener": "",
+    "line": "Toxic Masculinity, Ego Boost: cannot retreat or heal",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 58,
+    "card": {
+      "name": "Plot Armor",
+      "power": "Narrative Necessity: You cannot die until act 5.",
+      "lore": "Why didn't they shoot him earlier? Because the script said no.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Plot Armor",
+    "opener": "",
+    "line": "Plot Armor, Narrative Necessity: cannot die until act 5; script said no.",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 59,
+    "card": {
+      "name": "Germanic Depression",
+      "power": "Weltschmerz: All players lose 1 morale token.",
+      "lore": "It's not about winning. It's about enduring the inevitable doom with a stoic face.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "Germanic Depression",
+    "opener": "I used to believe",
+    "line": "Germanic Depression, Weltschmerz: all players lose morale token",
+    "inTrack": true
+  },
+  {
+    "cardNumber": 60,
+    "card": {
+      "name": "The McGuffin",
+      "power": "Wildcard: Assign any value to this card.",
+      "lore": "Is it the Gold? The Ring? The Belt? Doesn't matter. It's just the thing that makes people kill each other.",
+      "source": "GitHub canonical @eade4aec blob 1d5d0aaac4a221263f06b7310a627b9ddf86f73b"
+    },
+    "spokenTitle": "The McGuffin",
+    "opener": "",
+    "line": "The McGuffin, Wildcard: any value; gold, ring, belt, people kill each other.",
+    "inTrack": true
+  }
+]
