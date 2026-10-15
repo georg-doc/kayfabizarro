@@ -1,0 +1,2820 @@
+{
+  "schema": "kfb.triplet-opener-candidates-r3/1",
+  "authority": "GEORG_SHORTLIST_REVIEW_ONLY",
+  "active": false,
+  "baselineApprovedLiterals": [
+    {
+      "literal": "Welcome to",
+      "charCost": 10,
+      "speechAct": "DECLARATION_OR_STANCE",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "Remember",
+      "charCost": 8,
+      "speechAct": "DECLARATION_OR_STANCE",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "You know",
+      "charCost": 8,
+      "speechAct": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+      "family": "know"
+    },
+    {
+      "literal": "Do you know",
+      "charCost": 11,
+      "speechAct": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+      "family": "know"
+    },
+    {
+      "literal": "Ever tasted",
+      "charCost": 11,
+      "speechAct": "CARD_ACTION_OR_TARGET",
+      "family": "try"
+    },
+    {
+      "literal": "I once met",
+      "charCost": 10,
+      "speechAct": "CARD_ACTION_OR_TARGET",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "Let me tell you about",
+      "charCost": 21,
+      "speechAct": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "You know the thing with",
+      "charCost": 23,
+      "speechAct": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+      "family": "know"
+    },
+    {
+      "literal": "Did you ever try",
+      "charCost": 16,
+      "speechAct": "CARD_ACTION_OR_TARGET",
+      "family": "try"
+    },
+    {
+      "literal": "What if",
+      "charCost": 7,
+      "speechAct": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "Have you heard of",
+      "charCost": 17,
+      "speechAct": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+      "family": "heard"
+    },
+    {
+      "literal": "Did you hear of",
+      "charCost": 15,
+      "speechAct": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+      "family": "heard"
+    },
+    {
+      "literal": "Anyway",
+      "charCost": 6,
+      "speechAct": "DISCOURSE_TRANSITION",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "Which brings us to",
+      "charCost": 18,
+      "speechAct": "DISCOURSE_TRANSITION",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "Meanwhile elsewhere",
+      "charCost": 19,
+      "speechAct": "DISCOURSE_TRANSITION",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "No wait",
+      "charCost": 7,
+      "speechAct": "DISCOURSE_TRANSITION",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "Before we continue",
+      "charCost": 18,
+      "speechAct": "DISCOURSE_TRANSITION",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "Here is something nobody asked for",
+      "charCost": 34,
+      "speechAct": "CARD_ACTION_OR_TARGET",
+      "family": "thing"
+    },
+    {
+      "literal": "This one has a rule",
+      "charCost": 19,
+      "speechAct": "DECLARATION_OR_STANCE",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "Nobody warned us about",
+      "charCost": 22,
+      "speechAct": "DECLARATION_OR_STANCE",
+      "family": "nobody"
+    },
+    {
+      "literal": "The thing about",
+      "charCost": 15,
+      "speechAct": "DECLARATION_OR_STANCE",
+      "family": "thing"
+    },
+    {
+      "literal": "Everyone agrees",
+      "charCost": 15,
+      "speechAct": "DECLARATION_OR_STANCE",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "Not a metaphor",
+      "charCost": 14,
+      "speechAct": "CARD_ACTION_OR_TARGET",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "I used to believe",
+      "charCost": 17,
+      "speechAct": "DECLARATION_OR_STANCE",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "You with the card in your hand",
+      "charCost": 30,
+      "speechAct": "CARD_ACTION_OR_TARGET",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "You played",
+      "charCost": 10,
+      "speechAct": "CARD_ACTION_OR_TARGET",
+      "family": "UNGROUPED_BY_R2"
+    },
+    {
+      "literal": "The deck insists on",
+      "charCost": 19,
+      "speechAct": "CARD_ACTION_OR_TARGET",
+      "family": "UNGROUPED_BY_R2"
+    }
+  ],
+  "baselineCount": 27,
+  "rawAudit": [
+    {
+      "id": "OPR3_001",
+      "literal": "I read a book about",
+      "family": "READ_TEXT",
+      "characterCost": 19,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_002",
+      "literal": "A footnote mentioned",
+      "family": "READ_TEXT",
+      "characterCost": 20,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_003",
+      "literal": "The manual warned about",
+      "family": "READ_TEXT",
+      "characterCost": 23,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_004",
+      "literal": "The book was called",
+      "family": "READ_TEXT",
+      "characterCost": 19,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_005",
+      "literal": "I found this in a novel:",
+      "family": "READ_TEXT",
+      "characterCost": 24,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_006",
+      "literal": "One chapter was titled",
+      "family": "READ_TEXT",
+      "characterCost": 22,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_007",
+      "literal": "I saw a film about",
+      "family": "FILM_SCREEN",
+      "characterCost": 18,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_008",
+      "literal": "The newsreel showed",
+      "family": "FILM_SCREEN",
+      "characterCost": 19,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_009",
+      "literal": "An old movie featured",
+      "family": "FILM_SCREEN",
+      "characterCost": 21,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_010",
+      "literal": "I watched a documentary on",
+      "family": "FILM_SCREEN",
+      "characterCost": 26,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "HIGH",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_011",
+      "literal": "On the cinema poster:",
+      "family": "FILM_SCREEN",
+      "characterCost": 21,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_012",
+      "literal": "I saw a painting of",
+      "family": "ART_ENCOUNTER",
+      "characterCost": 19,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_013",
+      "literal": "A sketch in the gallery:",
+      "family": "ART_ENCOUNTER",
+      "characterCost": 24,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_014",
+      "literal": "The exhibit was labelled",
+      "family": "ART_ENCOUNTER",
+      "characterCost": 24,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_015",
+      "literal": "In the museum catalogue:",
+      "family": "ART_ENCOUNTER",
+      "characterCost": 24,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_016",
+      "literal": "A cartoon on the wall:",
+      "family": "ART_ENCOUNTER",
+      "characterCost": 22,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_017",
+      "literal": "A friend told me about",
+      "family": "MEETING_DIALOGUE",
+      "characterCost": 22,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_018",
+      "literal": "I met someone discussing",
+      "family": "MEETING_DIALOGUE",
+      "characterCost": 24,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_019",
+      "literal": "My neighbor mentioned",
+      "family": "MEETING_DIALOGUE",
+      "characterCost": 21,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_020",
+      "literal": "A stranger asked about",
+      "family": "MEETING_DIALOGUE",
+      "characterCost": 22,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_021",
+      "literal": "My cousin called it",
+      "family": "MEETING_DIALOGUE",
+      "characterCost": 19,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_022",
+      "literal": "An old friend said:",
+      "family": "MEETING_DIALOGUE",
+      "characterCost": 19,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_023",
+      "literal": "I heard a rumor about",
+      "family": "RUMOR_OVERHEARD",
+      "characterCost": 21,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_024",
+      "literal": "Someone whispered about",
+      "family": "RUMOR_OVERHEARD",
+      "characterCost": 23,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_025",
+      "literal": "An overheard argument:",
+      "family": "RUMOR_OVERHEARD",
+      "characterCost": 22,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_026",
+      "literal": "Around here they say:",
+      "family": "RUMOR_OVERHEARD",
+      "characterCost": 21,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_027",
+      "literal": "A voice on the radio:",
+      "family": "RUMOR_OVERHEARD",
+      "characterCost": 21,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_028",
+      "literal": "My diary says:",
+      "family": "PERSONAL_WRITING",
+      "characterCost": 14,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_029",
+      "literal": "Someone wrote in my diary:",
+      "family": "PERSONAL_WRITING",
+      "characterCost": 26,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_030",
+      "literal": "In my old sketchbook:",
+      "family": "PERSONAL_WRITING",
+      "characterCost": 21,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_031",
+      "literal": "On my poetry-album page:",
+      "family": "PERSONAL_WRITING",
+      "characterCost": 24,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_032",
+      "literal": "I once wrote about",
+      "family": "PERSONAL_WRITING",
+      "characterCost": 18,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_033",
+      "literal": "My notebook is marked",
+      "family": "PERSONAL_WRITING",
+      "characterCost": 21,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_034",
+      "literal": "A note under my door:",
+      "family": "FOUND_EPHEMERA",
+      "characterCost": 21,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_035",
+      "literal": "I found this scrap:",
+      "family": "FOUND_EPHEMERA",
+      "characterCost": 19,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_036",
+      "literal": "On the back of a napkin:",
+      "family": "FOUND_EPHEMERA",
+      "characterCost": 24,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_037",
+      "literal": "An envelope was marked",
+      "family": "FOUND_EPHEMERA",
+      "characterCost": 22,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_038",
+      "literal": "A receipt in my pocket:",
+      "family": "FOUND_EPHEMERA",
+      "characterCost": 23,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_039",
+      "literal": "Inside an abandoned notebook:",
+      "family": "FOUND_EPHEMERA",
+      "characterCost": 29,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_040",
+      "literal": "An official statement read:",
+      "family": "OFFICIAL_VOICE",
+      "characterCost": 27,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "HIGH",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_041",
+      "literal": "The meeting minutes say:",
+      "family": "OFFICIAL_VOICE",
+      "characterCost": 24,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_042",
+      "literal": "A politician once claimed:",
+      "family": "OFFICIAL_VOICE",
+      "characterCost": 26,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "HIGH",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_043",
+      "literal": "The press release insisted:",
+      "family": "OFFICIAL_VOICE",
+      "characterCost": 27,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "HIGH",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_044",
+      "literal": "A campaign poster promised:",
+      "family": "OFFICIAL_VOICE",
+      "characterCost": 27,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "HIGH",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_045",
+      "literal": "I think I remember",
+      "family": "MEMORY_DREAM",
+      "characterCost": 18,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_046",
+      "literal": "I dreamed about",
+      "family": "MEMORY_DREAM",
+      "characterCost": 15,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_047",
+      "literal": "In last night's dream:",
+      "family": "MEMORY_DREAM",
+      "characterCost": 22,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_048",
+      "literal": "My memory says:",
+      "family": "MEMORY_DREAM",
+      "characterCost": 15,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_049",
+      "literal": "Or did I imagine",
+      "family": "MEMORY_DREAM",
+      "characterCost": 16,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_050",
+      "literal": "Backstage someone muttered:",
+      "family": "STAGE_AUDIENCE",
+      "characterCost": 27,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_051",
+      "literal": "A heckler shouted:",
+      "family": "STAGE_AUDIENCE",
+      "characterCost": 18,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_052",
+      "literal": "At rehearsal I heard:",
+      "family": "STAGE_AUDIENCE",
+      "characterCost": 21,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_053",
+      "literal": "The announcer whispered:",
+      "family": "STAGE_AUDIENCE",
+      "characterCost": 24,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_054",
+      "literal": "An actor's cue card:",
+      "family": "STAGE_AUDIENCE",
+      "characterCost": 20,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_055",
+      "literal": "A box was labelled",
+      "family": "OBJECT_LABEL",
+      "characterCost": 18,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_056",
+      "literal": "The map was marked",
+      "family": "OBJECT_LABEL",
+      "characterCost": 18,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_057",
+      "literal": "A scratched sign read:",
+      "family": "OBJECT_LABEL",
+      "characterCost": 22,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_058",
+      "literal": "On the price tag:",
+      "family": "OBJECT_LABEL",
+      "characterCost": 17,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_059",
+      "literal": "The ledger listed",
+      "family": "OBJECT_LABEL",
+      "characterCost": 17,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_060",
+      "literal": "On the museum ticket:",
+      "family": "OBJECT_LABEL",
+      "characterCost": 21,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_061",
+      "literal": "My aunt used to say:",
+      "family": "ORAL_HISTORY",
+      "characterCost": 20,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_062",
+      "literal": "An old witness recalled",
+      "family": "ORAL_HISTORY",
+      "characterCost": 23,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "HIGH",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_063",
+      "literal": "Someone swore they'd seen",
+      "family": "ORAL_HISTORY",
+      "characterCost": 25,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "HIGH",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_064",
+      "literal": "A tale begins with",
+      "family": "ORAL_HISTORY",
+      "characterCost": 18,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_065",
+      "literal": "My teacher once mentioned",
+      "family": "ORAL_HISTORY",
+      "characterCost": 25,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_066",
+      "literal": "A corrupted transcript said:",
+      "family": "TECH_MEDIA",
+      "characterCost": 28,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_067",
+      "literal": "The help file stated:",
+      "family": "TECH_MEDIA",
+      "characterCost": 21,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_068",
+      "literal": "The machine's log read:",
+      "family": "TECH_MEDIA",
+      "characterCost": 23,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_069",
+      "literal": "An error message warned:",
+      "family": "TECH_MEDIA",
+      "characterCost": 24,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "TUNE_OR_HOLD",
+      "note": "Attribution claim, niche phrase or strained semantic collision; never auto-enable."
+    },
+    {
+      "id": "OPR3_070",
+      "literal": "Wait, look at",
+      "family": "INTERRUPTION_CALLBACK",
+      "characterCost": 13,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_071",
+      "literal": "And this reminded me of",
+      "family": "INTERRUPTION_CALLBACK",
+      "characterCost": 23,
+      "grammaticalRisk": "DIRECT_TITLE_REQUIRED",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_072",
+      "literal": "One more note:",
+      "family": "INTERRUPTION_CALLBACK",
+      "characterCost": 14,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_073",
+      "literal": "The next page says:",
+      "family": "INTERRUPTION_CALLBACK",
+      "characterCost": 19,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    },
+    {
+      "id": "OPR3_074",
+      "literal": "But the margin reads:",
+      "family": "INTERRUPTION_CALLBACK",
+      "characterCost": 21,
+      "grammaticalRisk": "QUOTED_FRAGMENT_CREDIBILITY",
+      "risk": "LOW",
+      "reviewRecommendation": "EVALUATE",
+      "note": "Requires named-card semantic match; not automatically licensed."
+    }
+  ],
+  "curatedCount": 64,
+  "curatedFamilies": [
+    "READ_TEXT",
+    "FILM_SCREEN",
+    "ART_ENCOUNTER",
+    "MEETING_DIALOGUE",
+    "RUMOR_OVERHEARD",
+    "PERSONAL_WRITING",
+    "FOUND_EPHEMERA",
+    "OFFICIAL_VOICE",
+    "MEMORY_DREAM",
+    "STAGE_AUDIENCE",
+    "OBJECT_LABEL",
+    "ORAL_HISTORY",
+    "TECH_MEDIA",
+    "INTERRUPTION_CALLBACK",
+    "LETTER_POST",
+    "SCHOOLROOM",
+    "WALL_GRAFFITI",
+    "TRAVEL_SIGN",
+    "MARKET_STALL",
+    "CASE_FILE"
+  ],
+  "noRuntimeLLM": true,
+  "compose": "opener + ' ' + canonicalTriplet",
+  "trackLimitCharacters": 5000,
+  "familyMinDistanceLines": 10,
+  "oneLiteralPerTrack": true,
+  "sources": [
+    {
+      "id": "SRC-PRAGMATICS",
+      "url": "https://plato.stanford.edu/entries/implicature/",
+      "finding": "Conversational implicature: short contextual frame licenses inference but does not prove a new fact."
+    },
+    {
+      "id": "SRC-STORY",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0378216614000812",
+      "finding": "Conversation analysis: story preface projects stance and sets recipient expectations."
+    },
+    {
+      "id": "SRC-FOLKLORE",
+      "url": "https://wwws.loc.gov/folklife/guide/storytelling.html",
+      "finding": "Oral forms include myths, rumors, interviews, notes, family experience, manuscripts."
+    },
+    {
+      "id": "SRC-SKETCHBOOK",
+      "url": "https://www.aaa.si.edu/exhibitions/visual-thinking-sketchbooks",
+      "finding": "Sketchbooks and notebooks function as visual notes, observations and fragmentary material records."
+    },
+    {
+      "id": "SRC-CLOSURE",
+      "url": "https://arxiv.org/abs/1611.05118",
+      "finding": "Comics gutters ask readers to infer unstated connections; here used only as an analogy for elliptical narration."
+    },
+    {
+      "id": "SRC-CUTUP",
+      "url": "https://www.briongysin.com/cut-ups/",
+      "finding": "Cut-up reorders text; KFB may transpose the collage feeling but must NOT cut and rearrange authoritative card Triplets."
+    },
+    {
+      "id": "SRC-ORALHIST",
+      "url": "https://siarchives.si.edu/history/how-do-oral-history",
+      "finding": "Oral testimony is situated recollection; staged reminiscence must never masquerade as documented primary source."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "OPR3_001",
+      "literal": "I read a book about",
+      "family": "READ_TEXT",
+      "frame": "read text",
+      "cardClassAllowed": [
+        "IDEA",
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "INSTITUTION"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 19,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 20,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_002",
+      "literal": "A footnote mentioned",
+      "family": "READ_TEXT",
+      "frame": "read text",
+      "cardClassAllowed": [
+        "IDEA",
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "INSTITUTION",
+        "TEXT"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 20,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 21,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_005",
+      "literal": "I found this in a novel:",
+      "family": "READ_TEXT",
+      "frame": "read text",
+      "cardClassAllowed": [
+        "IDEA",
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "INSTITUTION",
+        "TEXT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 24,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 25,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_007",
+      "literal": "I saw a film about",
+      "family": "FILM_SCREEN",
+      "frame": "film screen",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "OBJECT",
+        "SCENE",
+        "MEDIA"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 18,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 19,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_011",
+      "literal": "On the cinema poster:",
+      "family": "FILM_SCREEN",
+      "frame": "film screen",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "OBJECT",
+        "SCENE",
+        "MEDIA"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 21,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 22,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_012",
+      "literal": "I saw a painting of",
+      "family": "ART_ENCOUNTER",
+      "frame": "art encounter",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 19,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 20,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_013",
+      "literal": "A sketch in the gallery:",
+      "family": "ART_ENCOUNTER",
+      "frame": "art encounter",
+      "cardClassAllowed": [
+        "PERSON",
+        "PLACE",
+        "OBJECT",
+        "SCENE",
+        "EVENT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 24,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 25,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_016",
+      "literal": "A cartoon on the wall:",
+      "family": "ART_ENCOUNTER",
+      "frame": "art encounter",
+      "cardClassAllowed": [
+        "PERSON",
+        "PLACE",
+        "OBJECT",
+        "SCENE",
+        "EVENT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 22,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 23,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_017",
+      "literal": "A friend told me about",
+      "family": "MEETING_DIALOGUE",
+      "frame": "meeting dialogue",
+      "cardClassAllowed": [
+        "PERSON",
+        "IDEA",
+        "EVENT",
+        "OBJECT",
+        "SYSTEM",
+        "INSTITUTION"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 22,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 23,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_019",
+      "literal": "My neighbor mentioned",
+      "family": "MEETING_DIALOGUE",
+      "frame": "meeting dialogue",
+      "cardClassAllowed": [
+        "PERSON",
+        "IDEA",
+        "EVENT",
+        "OBJECT",
+        "SYSTEM",
+        "INSTITUTION"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 21,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 22,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_020",
+      "literal": "A stranger asked about",
+      "family": "MEETING_DIALOGUE",
+      "frame": "meeting dialogue",
+      "cardClassAllowed": [
+        "PERSON",
+        "IDEA",
+        "EVENT"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 22,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 23,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_022",
+      "literal": "An old friend said:",
+      "family": "MEETING_DIALOGUE",
+      "frame": "meeting dialogue",
+      "cardClassAllowed": [
+        "PERSON",
+        "IDEA",
+        "EVENT",
+        "OBJECT",
+        "SYSTEM",
+        "INSTITUTION"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "HIGH",
+      "spokenCharacterCost": 19,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 20,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION_ONLY; BLOCK_REAL_ATTRIBUTION",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "TUNE_RISK",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_023",
+      "literal": "I heard a rumor about",
+      "family": "RUMOR_OVERHEARD",
+      "frame": "rumor overheard",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "SYSTEM",
+        "INSTITUTION"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 21,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 22,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_025",
+      "literal": "An overheard argument:",
+      "family": "RUMOR_OVERHEARD",
+      "frame": "rumor overheard",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "SYSTEM",
+        "INSTITUTION"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 22,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 23,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_027",
+      "literal": "A voice on the radio:",
+      "family": "RUMOR_OVERHEARD",
+      "frame": "rumor overheard",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "SYSTEM",
+        "INSTITUTION"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "HIGH",
+      "spokenCharacterCost": 21,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 22,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION_ONLY; BLOCK_REAL_ATTRIBUTION",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "TUNE_RISK",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_028",
+      "literal": "My diary says:",
+      "family": "PERSONAL_WRITING",
+      "frame": "personal writing",
+      "cardClassAllowed": [
+        "IDEA",
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "SCENE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 14,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 15,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_029",
+      "literal": "Someone wrote in my diary:",
+      "family": "PERSONAL_WRITING",
+      "frame": "personal writing",
+      "cardClassAllowed": [
+        "IDEA",
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "SCENE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 26,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 27,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_030",
+      "literal": "In my old sketchbook:",
+      "family": "PERSONAL_WRITING",
+      "frame": "personal writing",
+      "cardClassAllowed": [
+        "IDEA",
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "SCENE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 21,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 22,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_032",
+      "literal": "I once wrote about",
+      "family": "PERSONAL_WRITING",
+      "frame": "personal writing",
+      "cardClassAllowed": [
+        "IDEA",
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "SCENE"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 18,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 19,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_034",
+      "literal": "A note under my door:",
+      "family": "FOUND_EPHEMERA",
+      "frame": "found ephemera",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "OBJECT",
+        "TEXT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 21,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 22,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_035",
+      "literal": "I found this scrap:",
+      "family": "FOUND_EPHEMERA",
+      "frame": "found ephemera",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "OBJECT",
+        "TEXT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 19,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 20,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_036",
+      "literal": "On the back of a napkin:",
+      "family": "FOUND_EPHEMERA",
+      "frame": "found ephemera",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "OBJECT",
+        "TEXT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 24,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 25,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_037",
+      "literal": "An envelope was marked",
+      "family": "FOUND_EPHEMERA",
+      "frame": "found ephemera",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "TEXT"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 22,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 23,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_038",
+      "literal": "A receipt in my pocket:",
+      "family": "FOUND_EPHEMERA",
+      "frame": "found ephemera",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "OBJECT",
+        "TEXT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 23,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 24,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_041",
+      "literal": "The meeting minutes say:",
+      "family": "OFFICIAL_VOICE",
+      "frame": "official voice",
+      "cardClassAllowed": [
+        "INSTITUTION",
+        "EVENT",
+        "IDEA",
+        "SYSTEM"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "HIGH",
+      "spokenCharacterCost": 24,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 25,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION_ONLY; BLOCK_REAL_ATTRIBUTION",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "TUNE_RISK",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_045",
+      "literal": "I think I remember",
+      "family": "MEMORY_DREAM",
+      "frame": "memory dream",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "IDEA",
+        "PLACE"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 18,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 19,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_046",
+      "literal": "I dreamed about",
+      "family": "MEMORY_DREAM",
+      "frame": "memory dream",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "IDEA",
+        "PLACE"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 15,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 16,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_047",
+      "literal": "In last night's dream:",
+      "family": "MEMORY_DREAM",
+      "frame": "memory dream",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "IDEA",
+        "PLACE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 22,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 23,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_048",
+      "literal": "My memory says:",
+      "family": "MEMORY_DREAM",
+      "frame": "memory dream",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "IDEA",
+        "PLACE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 15,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 16,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_050",
+      "literal": "Backstage someone muttered:",
+      "family": "STAGE_AUDIENCE",
+      "frame": "stage audience",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "IDEA",
+        "SCENE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 27,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 28,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_051",
+      "literal": "A heckler shouted:",
+      "family": "STAGE_AUDIENCE",
+      "frame": "stage audience",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "IDEA",
+        "SCENE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "HIGH",
+      "spokenCharacterCost": 18,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 19,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION_ONLY; BLOCK_REAL_ATTRIBUTION",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "TUNE_RISK",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_052",
+      "literal": "At rehearsal I heard:",
+      "family": "STAGE_AUDIENCE",
+      "frame": "stage audience",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "IDEA",
+        "SCENE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 21,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 22,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_054",
+      "literal": "An actor's cue card:",
+      "family": "STAGE_AUDIENCE",
+      "frame": "stage audience",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "IDEA",
+        "SCENE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "HIGH",
+      "spokenCharacterCost": 20,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 21,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION_ONLY; BLOCK_REAL_ATTRIBUTION",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "TUNE_RISK",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_055",
+      "literal": "A box was labelled",
+      "family": "OBJECT_LABEL",
+      "frame": "object label",
+      "cardClassAllowed": [
+        "OBJECT"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 18,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 19,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_056",
+      "literal": "The map was marked",
+      "family": "OBJECT_LABEL",
+      "frame": "object label",
+      "cardClassAllowed": [
+        "PLACE",
+        "OBJECT"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 18,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 19,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_057",
+      "literal": "A scratched sign read:",
+      "family": "OBJECT_LABEL",
+      "frame": "object label",
+      "cardClassAllowed": [
+        "OBJECT",
+        "PLACE",
+        "TEXT",
+        "MEDIA"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 22,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 23,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_058",
+      "literal": "On the price tag:",
+      "family": "OBJECT_LABEL",
+      "frame": "object label",
+      "cardClassAllowed": [
+        "OBJECT",
+        "PLACE",
+        "TEXT",
+        "MEDIA"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 17,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 18,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_061",
+      "literal": "My aunt used to say:",
+      "family": "ORAL_HISTORY",
+      "frame": "oral history",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 20,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 21,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_064",
+      "literal": "A tale begins with",
+      "family": "ORAL_HISTORY",
+      "frame": "oral history",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 18,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 19,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_065",
+      "literal": "My teacher once mentioned",
+      "family": "ORAL_HISTORY",
+      "frame": "oral history",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 25,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 26,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_067",
+      "literal": "The help file stated:",
+      "family": "TECH_MEDIA",
+      "frame": "tech media",
+      "cardClassAllowed": [
+        "SYSTEM",
+        "IDEA",
+        "OBJECT",
+        "EVENT",
+        "MEDIA"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 21,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 22,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_070",
+      "literal": "Wait, look at",
+      "family": "INTERRUPTION_CALLBACK",
+      "frame": "interruption callback",
+      "cardClassAllowed": [
+        "PERSON",
+        "IDEA",
+        "EVENT",
+        "OBJECT",
+        "PLACE",
+        "SYSTEM"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 13,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 14,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_072",
+      "literal": "One more note:",
+      "family": "INTERRUPTION_CALLBACK",
+      "frame": "interruption callback",
+      "cardClassAllowed": [
+        "PERSON",
+        "IDEA",
+        "EVENT",
+        "OBJECT",
+        "PLACE",
+        "SYSTEM"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 14,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 15,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "OPR3_074",
+      "literal": "But the margin reads:",
+      "family": "INTERRUPTION_CALLBACK",
+      "frame": "interruption callback",
+      "cardClassAllowed": [
+        "PERSON",
+        "IDEA",
+        "EVENT",
+        "OBJECT",
+        "PLACE",
+        "SYSTEM"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 21,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 22,
+      "sourceOrigin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-STORY",
+        "SRC-PRAGMATICS"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_001",
+      "literal": "A library copy mentioned",
+      "family": "READ_TEXT",
+      "frame": "read text",
+      "cardClassAllowed": [
+        "IDEA",
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "INSTITUTION",
+        "TEXT"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 24,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 25,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_004",
+      "literal": "In the closing credits:",
+      "family": "FILM_SCREEN",
+      "frame": "film screen",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "OBJECT",
+        "SCENE",
+        "MEDIA"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 23,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 24,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_007",
+      "literal": "Beneath the portrait:",
+      "family": "ART_ENCOUNTER",
+      "frame": "art encounter",
+      "cardClassAllowed": [
+        "PERSON",
+        "PLACE",
+        "OBJECT",
+        "SCENE",
+        "EVENT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 21,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 22,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_010",
+      "literal": "At lunch, someone brought up",
+      "family": "MEETING_DIALOGUE",
+      "frame": "meeting dialogue",
+      "cardClassAllowed": [
+        "PERSON",
+        "IDEA",
+        "EVENT",
+        "OBJECT",
+        "SYSTEM",
+        "INSTITUTION"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 28,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 29,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_014",
+      "literal": "A table nearby was talking about",
+      "family": "RUMOR_OVERHEARD",
+      "frame": "rumor overheard",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "SYSTEM",
+        "INSTITUTION"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 32,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 33,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_019",
+      "literal": "I found a note saying:",
+      "family": "FOUND_EPHEMERA",
+      "frame": "found ephemera",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "OBJECT",
+        "TEXT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 22,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 23,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_020",
+      "literal": "On a torn postcard:",
+      "family": "FOUND_EPHEMERA",
+      "frame": "found ephemera",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "OBJECT",
+        "TEXT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 19,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 20,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_022",
+      "literal": "On the committee agenda:",
+      "family": "OFFICIAL_VOICE",
+      "frame": "official voice",
+      "cardClassAllowed": [
+        "INSTITUTION",
+        "EVENT",
+        "IDEA",
+        "SYSTEM"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 24,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 25,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_026",
+      "literal": "The dream began with",
+      "family": "MEMORY_DREAM",
+      "frame": "memory dream",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "IDEA",
+        "PLACE"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 20,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 21,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_028",
+      "literal": "From the back row:",
+      "family": "STAGE_AUDIENCE",
+      "frame": "stage audience",
+      "cardClassAllowed": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "IDEA",
+        "SCENE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 18,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 19,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_031",
+      "literal": "On the old ticket:",
+      "family": "OBJECT_LABEL",
+      "frame": "object label",
+      "cardClassAllowed": [
+        "OBJECT",
+        "MEDIA",
+        "PLACE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 18,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 19,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_034",
+      "literal": "Granddad's version went:",
+      "family": "ORAL_HISTORY",
+      "frame": "oral history",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 24,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 25,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_037",
+      "literal": "At the end of the tape:",
+      "family": "TECH_MEDIA",
+      "frame": "tech media",
+      "cardClassAllowed": [
+        "SYSTEM",
+        "IDEA",
+        "OBJECT",
+        "EVENT",
+        "MEDIA"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 23,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 24,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_040",
+      "literal": "Hold that thought:",
+      "family": "INTERRUPTION_CALLBACK",
+      "frame": "interruption callback",
+      "cardClassAllowed": [
+        "PERSON",
+        "IDEA",
+        "EVENT",
+        "OBJECT",
+        "PLACE",
+        "SYSTEM"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 18,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 19,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_043",
+      "literal": "An unsigned letter said:",
+      "family": "LETTER_POST",
+      "frame": "letter post",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "OBJECT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 24,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 25,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_046",
+      "literal": "On the blackboard:",
+      "family": "SCHOOLROOM",
+      "frame": "schoolroom",
+      "cardClassAllowed": [
+        "PERSON",
+        "IDEA",
+        "EVENT",
+        "OBJECT",
+        "MYTH"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 18,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 19,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_049",
+      "literal": "Someone scratched into the wall:",
+      "family": "WALL_GRAFFITI",
+      "frame": "wall graffiti",
+      "cardClassAllowed": [
+        "PERSON",
+        "IDEA",
+        "EVENT",
+        "OBJECT",
+        "PLACE"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 32,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 33,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_052",
+      "literal": "On the station sign:",
+      "family": "TRAVEL_SIGN",
+      "frame": "travel sign",
+      "cardClassAllowed": [
+        "PLACE",
+        "OBJECT",
+        "EVENT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 20,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 21,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_055",
+      "literal": "The auction lot was called",
+      "family": "MARKET_STALL",
+      "frame": "market stall",
+      "cardClassAllowed": [
+        "OBJECT",
+        "MEDIA",
+        "FOOD"
+      ],
+      "syntacticJoin": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "risk": "LOW",
+      "spokenCharacterCost": 26,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 27,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION; NOT_EVIDENCE",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "CANDIDATE_SECOND_PASS",
+      "automaticEligibility": false
+    },
+    {
+      "id": "NEW_058",
+      "literal": "Inside the case file:",
+      "family": "CASE_FILE",
+      "frame": "case file",
+      "cardClassAllowed": [
+        "PERSON",
+        "EVENT",
+        "OBJECT"
+      ],
+      "syntacticJoin": "COLON_FRAME",
+      "performerFiction": true,
+      "risk": "HIGH",
+      "spokenCharacterCost": 21,
+      "separatorCost": 1,
+      "totalOpenerOverhead": 22,
+      "sourceOrigin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "grammaticalCompatibility": "Requires an attested title-first Triplet; no noun/verb repair or article insertion",
+      "attributionPolicy": "PERFORMER_FICTION_ONLY; BLOCK_REAL_ATTRIBUTION",
+      "reviewStatus": "PROPOSED",
+      "proposedStatus": "SHORTLIST_FIRST",
+      "automaticEligibility": false
+    }
+  ]
+}

@@ -1,0 +1,2628 @@
+{
+  "schema": "kfb.triplet-opener-raw-r3/1",
+  "sourceSeedBlob": "d9c9fa7bceac781ffebb1d0efb52d123073713f9",
+  "total": 134,
+  "sourceTypes": {
+    "preparedSeed": 74,
+    "newOriginal": 60
+  },
+  "families": [
+    "READ_TEXT",
+    "FILM_SCREEN",
+    "ART_ENCOUNTER",
+    "MEETING_DIALOGUE",
+    "RUMOR_OVERHEARD",
+    "PERSONAL_WRITING",
+    "FOUND_EPHEMERA",
+    "OFFICIAL_VOICE",
+    "MEMORY_DREAM",
+    "STAGE_AUDIENCE",
+    "OBJECT_LABEL",
+    "ORAL_HISTORY",
+    "TECH_MEDIA",
+    "INTERRUPTION_CALLBACK",
+    "LETTER_POST",
+    "SCHOOLROOM",
+    "WALL_GRAFFITI",
+    "TRAVEL_SIGN",
+    "MARKET_STALL",
+    "CASE_FILE"
+  ],
+  "externalResearchIsPatternInspirationNotQuotedDialog": true,
+  "candidates": [
+    {
+      "id": "OPR3_001",
+      "literal": "I read a book about",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_002",
+      "literal": "A footnote mentioned",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 20,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_003",
+      "literal": "The manual warned about",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_004",
+      "literal": "The book was called",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_005",
+      "literal": "I found this in a novel:",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_006",
+      "literal": "One chapter was titled",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_007",
+      "literal": "I saw a film about",
+      "family": "FILM_SCREEN",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "PLACE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_008",
+      "literal": "The newsreel showed",
+      "family": "FILM_SCREEN",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "PLACE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_009",
+      "literal": "An old movie featured",
+      "family": "FILM_SCREEN",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "PLACE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_010",
+      "literal": "I watched a documentary on",
+      "family": "FILM_SCREEN",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "PLACE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 26,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_011",
+      "literal": "On the cinema poster:",
+      "family": "FILM_SCREEN",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_012",
+      "literal": "I saw a painting of",
+      "family": "ART_ENCOUNTER",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_013",
+      "literal": "A sketch in the gallery:",
+      "family": "ART_ENCOUNTER",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_014",
+      "literal": "The exhibit was labelled",
+      "family": "ART_ENCOUNTER",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_015",
+      "literal": "In the museum catalogue:",
+      "family": "ART_ENCOUNTER",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_016",
+      "literal": "A cartoon on the wall:",
+      "family": "ART_ENCOUNTER",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_017",
+      "literal": "A friend told me about",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_018",
+      "literal": "I met someone discussing",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_019",
+      "literal": "My neighbor mentioned",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_020",
+      "literal": "A stranger asked about",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_021",
+      "literal": "My cousin called it",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_022",
+      "literal": "An old friend said:",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_023",
+      "literal": "I heard a rumor about",
+      "family": "RUMOR_OVERHEARD",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_024",
+      "literal": "Someone whispered about",
+      "family": "RUMOR_OVERHEARD",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_025",
+      "literal": "An overheard argument:",
+      "family": "RUMOR_OVERHEARD",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_026",
+      "literal": "Around here they say:",
+      "family": "RUMOR_OVERHEARD",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_027",
+      "literal": "A voice on the radio:",
+      "family": "RUMOR_OVERHEARD",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_028",
+      "literal": "My diary says:",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 14,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_029",
+      "literal": "Someone wrote in my diary:",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 26,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_030",
+      "literal": "In my old sketchbook:",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_031",
+      "literal": "On my poetry-album page:",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_032",
+      "literal": "I once wrote about",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_033",
+      "literal": "My notebook is marked",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_034",
+      "literal": "A note under my door:",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_035",
+      "literal": "I found this scrap:",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_036",
+      "literal": "On the back of a napkin:",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_037",
+      "literal": "An envelope was marked",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_038",
+      "literal": "A receipt in my pocket:",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_039",
+      "literal": "Inside an abandoned notebook:",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 29,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_040",
+      "literal": "An official statement read:",
+      "family": "OFFICIAL_VOICE",
+      "semanticClass": [
+        "EVENT",
+        "SYSTEM",
+        "INSTITUTION",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 27,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_041",
+      "literal": "The meeting minutes say:",
+      "family": "OFFICIAL_VOICE",
+      "semanticClass": [
+        "EVENT",
+        "SYSTEM",
+        "INSTITUTION",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_042",
+      "literal": "A politician once claimed:",
+      "family": "OFFICIAL_VOICE",
+      "semanticClass": [
+        "EVENT",
+        "SYSTEM",
+        "INSTITUTION",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 26,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_043",
+      "literal": "The press release insisted:",
+      "family": "OFFICIAL_VOICE",
+      "semanticClass": [
+        "EVENT",
+        "SYSTEM",
+        "INSTITUTION",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 27,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_044",
+      "literal": "A campaign poster promised:",
+      "family": "OFFICIAL_VOICE",
+      "semanticClass": [
+        "EVENT",
+        "SYSTEM",
+        "INSTITUTION",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 27,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_045",
+      "literal": "I think I remember",
+      "family": "MEMORY_DREAM",
+      "semanticClass": [
+        "PERSON",
+        "PLACE",
+        "SCENE",
+        "OBJECT",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_046",
+      "literal": "I dreamed about",
+      "family": "MEMORY_DREAM",
+      "semanticClass": [
+        "PERSON",
+        "PLACE",
+        "SCENE",
+        "OBJECT",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 15,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_047",
+      "literal": "In last night's dream:",
+      "family": "MEMORY_DREAM",
+      "semanticClass": [
+        "PERSON",
+        "PLACE",
+        "SCENE",
+        "OBJECT",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_048",
+      "literal": "My memory says:",
+      "family": "MEMORY_DREAM",
+      "semanticClass": [
+        "PERSON",
+        "PLACE",
+        "SCENE",
+        "OBJECT",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 15,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_049",
+      "literal": "Or did I imagine",
+      "family": "MEMORY_DREAM",
+      "semanticClass": [
+        "PERSON",
+        "PLACE",
+        "SCENE",
+        "OBJECT",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 16,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_050",
+      "literal": "Backstage someone muttered:",
+      "family": "STAGE_AUDIENCE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "CONCEPT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 27,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_051",
+      "literal": "A heckler shouted:",
+      "family": "STAGE_AUDIENCE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "CONCEPT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_052",
+      "literal": "At rehearsal I heard:",
+      "family": "STAGE_AUDIENCE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "CONCEPT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_053",
+      "literal": "The announcer whispered:",
+      "family": "STAGE_AUDIENCE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "CONCEPT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_054",
+      "literal": "An actor's cue card:",
+      "family": "STAGE_AUDIENCE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "CONCEPT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 20,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_055",
+      "literal": "A box was labelled",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_056",
+      "literal": "The map was marked",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_057",
+      "literal": "A scratched sign read:",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_058",
+      "literal": "On the price tag:",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 17,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_059",
+      "literal": "The ledger listed",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 17,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_060",
+      "literal": "On the museum ticket:",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_061",
+      "literal": "My aunt used to say:",
+      "family": "ORAL_HISTORY",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 20,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_062",
+      "literal": "An old witness recalled",
+      "family": "ORAL_HISTORY",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_063",
+      "literal": "Someone swore they'd seen",
+      "family": "ORAL_HISTORY",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 25,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_064",
+      "literal": "A tale begins with",
+      "family": "ORAL_HISTORY",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_065",
+      "literal": "My teacher once mentioned",
+      "family": "ORAL_HISTORY",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 25,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_066",
+      "literal": "A corrupted transcript said:",
+      "family": "TECH_MEDIA",
+      "semanticClass": [
+        "SYSTEM",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 28,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_067",
+      "literal": "The help file stated:",
+      "family": "TECH_MEDIA",
+      "semanticClass": [
+        "SYSTEM",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_068",
+      "literal": "The machine's log read:",
+      "family": "TECH_MEDIA",
+      "semanticClass": [
+        "SYSTEM",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_069",
+      "literal": "An error message warned:",
+      "family": "TECH_MEDIA",
+      "semanticClass": [
+        "SYSTEM",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_070",
+      "literal": "Wait, look at",
+      "family": "INTERRUPTION_CALLBACK",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 13,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_071",
+      "literal": "And this reminded me of",
+      "family": "INTERRUPTION_CALLBACK",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_072",
+      "literal": "One more note:",
+      "family": "INTERRUPTION_CALLBACK",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 14,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_073",
+      "literal": "The next page says:",
+      "family": "INTERRUPTION_CALLBACK",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "OPR3_074",
+      "literal": "But the margin reads:",
+      "family": "INTERRUPTION_CALLBACK",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch.",
+      "origin": "ORIGINAL_PREPARED_SEED",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ]
+    },
+    {
+      "id": "NEW_001",
+      "literal": "A library copy mentioned",
+      "family": "READ_TEXT",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 24,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_002",
+      "literal": "In the book's index:",
+      "family": "READ_TEXT",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 20,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_003",
+      "literal": "A chapter heading read:",
+      "family": "READ_TEXT",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 23,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_004",
+      "literal": "In the closing credits:",
+      "family": "FILM_SCREEN",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 23,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_005",
+      "literal": "On the cinema marquee:",
+      "family": "FILM_SCREEN",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 22,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_006",
+      "literal": "One frame showed",
+      "family": "FILM_SCREEN",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 16,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_007",
+      "literal": "Beneath the portrait:",
+      "family": "ART_ENCOUNTER",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 21,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_008",
+      "literal": "The drawing was titled",
+      "family": "ART_ENCOUNTER",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 22,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_009",
+      "literal": "I saw a mural of",
+      "family": "ART_ENCOUNTER",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 16,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_010",
+      "literal": "At lunch, someone brought up",
+      "family": "MEETING_DIALOGUE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 28,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_011",
+      "literal": "My barber asked about",
+      "family": "MEETING_DIALOGUE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 21,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_012",
+      "literal": "An old classmate mentioned",
+      "family": "MEETING_DIALOGUE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 26,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_013",
+      "literal": "Through the wall, I heard:",
+      "family": "RUMOR_OVERHEARD",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 26,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_014",
+      "literal": "A table nearby was talking about",
+      "family": "RUMOR_OVERHEARD",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 32,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_015",
+      "literal": "The gossip went:",
+      "family": "RUMOR_OVERHEARD",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 16,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_016",
+      "literal": "In the margin, I wrote:",
+      "family": "PERSONAL_WRITING",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 23,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_017",
+      "literal": "My school notebook says:",
+      "family": "PERSONAL_WRITING",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 24,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_018",
+      "literal": "I found it in my handwriting:",
+      "family": "PERSONAL_WRITING",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 29,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_019",
+      "literal": "I found a note saying:",
+      "family": "FOUND_EPHEMERA",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 22,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_020",
+      "literal": "On a torn postcard:",
+      "family": "FOUND_EPHEMERA",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 19,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_021",
+      "literal": "The scrap just said:",
+      "family": "FOUND_EPHEMERA",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 20,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_022",
+      "literal": "On the committee agenda:",
+      "family": "OFFICIAL_VOICE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 24,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_023",
+      "literal": "The public notice read:",
+      "family": "OFFICIAL_VOICE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 23,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_024",
+      "literal": "A clerk read aloud:",
+      "family": "OFFICIAL_VOICE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 19,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_025",
+      "literal": "I could've sworn it was",
+      "family": "MEMORY_DREAM",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 23,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_026",
+      "literal": "The dream began with",
+      "family": "MEMORY_DREAM",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 20,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_027",
+      "literal": "I half remember",
+      "family": "MEMORY_DREAM",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 15,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_028",
+      "literal": "From the back row:",
+      "family": "STAGE_AUDIENCE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 18,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_029",
+      "literal": "On the rehearsal board:",
+      "family": "STAGE_AUDIENCE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 23,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_030",
+      "literal": "Somebody missed their cue:",
+      "family": "STAGE_AUDIENCE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 26,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_031",
+      "literal": "On the old ticket:",
+      "family": "OBJECT_LABEL",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 18,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_032",
+      "literal": "The shipping label said:",
+      "family": "OBJECT_LABEL",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 24,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_033",
+      "literal": "Under the glass dome:",
+      "family": "OBJECT_LABEL",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 21,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_034",
+      "literal": "Granddad's version went:",
+      "family": "ORAL_HISTORY",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 24,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_035",
+      "literal": "The fireside tale began with",
+      "family": "ORAL_HISTORY",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 28,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_036",
+      "literal": "An old legend mentions",
+      "family": "ORAL_HISTORY",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 22,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_037",
+      "literal": "At the end of the tape:",
+      "family": "TECH_MEDIA",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 23,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_038",
+      "literal": "On the answering machine:",
+      "family": "TECH_MEDIA",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 25,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_039",
+      "literal": "The subtitle said:",
+      "family": "TECH_MEDIA",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 18,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_040",
+      "literal": "Hold that thought:",
+      "family": "INTERRUPTION_CALLBACK",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 18,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_041",
+      "literal": "No, read the next line:",
+      "family": "INTERRUPTION_CALLBACK",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 23,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_042",
+      "literal": "And in the footnotes:",
+      "family": "INTERRUPTION_CALLBACK",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 21,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_043",
+      "literal": "An unsigned letter said:",
+      "family": "LETTER_POST",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 24,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_044",
+      "literal": "The postcard mentioned",
+      "family": "LETTER_POST",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 22,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_045",
+      "literal": "A letter began:",
+      "family": "LETTER_POST",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 15,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_046",
+      "literal": "On the blackboard:",
+      "family": "SCHOOLROOM",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 18,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_047",
+      "literal": "The lesson was about",
+      "family": "SCHOOLROOM",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 20,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_048",
+      "literal": "In the exam margin:",
+      "family": "SCHOOLROOM",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 19,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_049",
+      "literal": "Someone scratched into the wall:",
+      "family": "WALL_GRAFFITI",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 32,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_050",
+      "literal": "The graffiti read:",
+      "family": "WALL_GRAFFITI",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 18,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_051",
+      "literal": "Above the doorway:",
+      "family": "WALL_GRAFFITI",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 18,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_052",
+      "literal": "On the station sign:",
+      "family": "TRAVEL_SIGN",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 20,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_053",
+      "literal": "The roadside sign said:",
+      "family": "TRAVEL_SIGN",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 23,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_054",
+      "literal": "Printed on the ferry ticket:",
+      "family": "TRAVEL_SIGN",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 28,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_055",
+      "literal": "The auction lot was called",
+      "family": "MARKET_STALL",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 26,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_056",
+      "literal": "At the flea market:",
+      "family": "MARKET_STALL",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 19,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_057",
+      "literal": "The vendor was selling",
+      "family": "MARKET_STALL",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 22,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_058",
+      "literal": "Inside the case file:",
+      "family": "CASE_FILE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 21,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_059",
+      "literal": "The evidence bag read:",
+      "family": "CASE_FILE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 22,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    },
+    {
+      "id": "NEW_060",
+      "literal": "A courtroom exhibit:",
+      "family": "CASE_FILE",
+      "origin": "ORIGINAL_NEW_R1_RESEARCH",
+      "sourcePattern": "SITUATION_ANALOGY",
+      "sourceRefs": [
+        "SRC-PRAGMATICS",
+        "SRC-STORY"
+      ],
+      "charCost": 20,
+      "reviewStatus": "RAW_NOT_APPROVED"
+    }
+  ]
+}
