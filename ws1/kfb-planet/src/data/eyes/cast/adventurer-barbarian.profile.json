@@ -1,0 +1,401 @@
+{
+ "schema": "kfb.ws1.eye-profile-pick/1",
+ "source": {
+  "repo": "georg-doc/kayfabizarro",
+  "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/eye-rig/eye-rig-medium.batch-1.json",
+  "commit": "ac9dbaed2e5966a537a4bb719e8cd847dcc5e099",
+  "note": "Georg-Export 19.09., Profil unverändert"
+ },
+ "profile": {
+  "schema": "kfb.eye-profile/0.1-candidate",
+  "actorId": "adventurer-barbarian",
+  "source": {
+   "repo": "georg-doc/kayfabizarro",
+   "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Barbarian.glb",
+   "revision": "f9dd7a64c4ae0907b8752717861eba065e557d9d"
+  },
+  "rigClass": "Rig_Medium",
+  "faceHost": {
+   "status": "OK",
+   "headBone": "head",
+   "headSize": [
+    1.226,
+    1.396,
+    1.397
+   ],
+   "facingSource": "Zehen"
+  },
+  "sourceFace": {
+   "headMesh": "Barbarian_Head",
+   "expectedConnectedComponents": null,
+   "connectedComponents": 8,
+   "eyeComponents": [],
+   "pairConfidence": 0.7,
+   "femaleOuterLashCandidate": "UNRESOLVED_GENERIC",
+   "removalMode": "mirrored-front-pair",
+   "guard": "head-named skinned mesh + mirrored equal-triangle front pair",
+   "status": "AUTO_CANDIDATE_GENERIC",
+   "faceColor": "#fbe2ce",
+   "faceColorSource": "runtime-head-texture-sample",
+   "schema": "kfb.source-face-report/0.1-candidate",
+   "eyeCandidates": [
+    {
+     "component": "AUTO_PAIR",
+     "triangles": 132,
+     "x": [
+      0.188,
+      -0.188
+     ],
+     "z": 0.402,
+     "size": [
+      0.1,
+      0.126,
+      0.085
+     ]
+    }
+   ],
+   "components": [],
+   "componentDiagnostic": {
+    "status": "OFF",
+    "selected": null
+   },
+   "sourceMeasuredSeed": null,
+   "genericDetector": {
+    "schema": "kfb.donoreyes/0.1",
+    "status": "OK",
+    "islands": 8,
+    "report": {
+     "tris": 132,
+     "z": 0.402,
+     "x": [
+      0.188,
+      -0.188
+     ],
+     "size": [
+      0.1,
+      0.126,
+      0.085
+     ]
+    },
+    "candidates": [
+     {
+      "tris": 66,
+      "z": 0.402
+     },
+     {
+      "tris": 94,
+      "z": 0.363
+     },
+     {
+      "tris": 56,
+      "z": -0.018
+     }
+    ]
+   },
+   "actorId": "adventurer-barbarian",
+   "alternatives": []
+  },
+  "eyeRigSource": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "expressionSource": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+   "revision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+   "blob": "f202a1c2f1670ab6045176af6621c94041124e76"
+  },
+  "eye": {
+   "anchor": {
+    "dx": 0.35,
+    "dy": -0.205,
+    "ring": 0.17,
+    "track": 0.15
+   },
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.24,
+   "gloss": 0.1,
+   "inset": 2.3911304347826086,
+   "lidFit": 0.9,
+   "converge": -0.21,
+   "splay": 0,
+   "baseColor": "#fbe2ce",
+   "lidColorMode": "face-base-darkened",
+   "oval": {
+    "w": 1,
+    "h": 1,
+    "d": 1,
+    "tilt": 0
+   },
+   "trackingMode": "life",
+   "fixedGaze": [
+    0,
+    0
+   ]
+  },
+  "blink": {
+   "minGap": 2.5,
+   "maxGap": 6.5,
+   "dur": 0.12
+  },
+  "life": {
+   "on": true,
+   "wander": 0.09,
+   "tremor": 0.045
+  },
+  "kinetics": {
+   "enabled": false,
+   "gain": 1,
+   "a": 0,
+   "c": 0,
+   "j": 0
+  },
+  "status": "AUTO_CANDIDATE",
+  "evidence": {
+   "camera": "front",
+   "motionClip": "bind",
+   "sourceEyeCleanupVisuallyAccepted": false,
+   "eyeProfileVisuallyApproved": false,
+   "faceColorSample": {
+    "schema": "kfb.face-color-sampler/0.1-candidate",
+    "status": "OK",
+    "headMesh": "Barbarian_Head",
+    "color": "#fbe2ce",
+    "rgb": [
+     246,
+     194,
+     158
+    ],
+    "sampleCount": 14,
+    "samples": [
+     {
+      "uv": [
+       0.0367,
+       0.1122
+      ],
+      "rgb": [
+       246,
+       194,
+       158
+      ]
+     },
+     {
+      "uv": [
+       0.0367,
+       0.1078
+      ],
+      "rgb": [
+       246,
+       194,
+       159
+      ]
+     },
+     {
+      "uv": [
+       0.1607,
+       0.0707
+      ],
+      "rgb": [
+       160,
+       153,
+       147
+      ]
+     },
+     {
+      "uv": [
+       0.1541,
+       0.0653
+      ],
+      "rgb": [
+       161,
+       154,
+       148
+      ]
+     },
+     {
+      "uv": [
+       0.044,
+       0.1187
+      ],
+      "rgb": [
+       246,
+       193,
+       157
+      ]
+     },
+     {
+      "uv": [
+       0.0319,
+       0.1122
+      ],
+      "rgb": [
+       246,
+       194,
+       158
+      ]
+     },
+     {
+      "uv": [
+       0.0414,
+       0.1122
+      ],
+      "rgb": [
+       246,
+       194,
+       158
+      ]
+     },
+     {
+      "uv": [
+       0.0701,
+       0.1122
+      ],
+      "rgb": [
+       246,
+       194,
+       158
+      ]
+     },
+     {
+      "uv": [
+       0.0701,
+       0.1078
+      ],
+      "rgb": [
+       246,
+       194,
+       159
+      ]
+     },
+     {
+      "uv": [
+       0.1913,
+       0.0707
+      ],
+      "rgb": [
+       160,
+       153,
+       147
+      ]
+     },
+     {
+      "uv": [
+       0.0627,
+       0.1187
+      ],
+      "rgb": [
+       246,
+       193,
+       157
+      ]
+     },
+     {
+      "uv": [
+       0.1979,
+       0.0653
+      ],
+      "rgb": [
+       161,
+       154,
+       148
+      ]
+     },
+     {
+      "uv": [
+       0.0653,
+       0.1122
+      ],
+      "rgb": [
+       246,
+       194,
+       158
+      ]
+     },
+     {
+      "uv": [
+       0.0749,
+       0.1122
+      ],
+      "rgb": [
+       246,
+       194,
+       158
+      ]
+     }
+    ],
+    "source": "head-texture-around-eye-host"
+   }
+  },
+  "calibration": {
+   "schema": "kfb.eye-medium-calibration/0.1-candidate",
+   "classSeed": "./rig-medium-default.v0.json",
+   "authoringDefaultSource": "Georg screenshot / browser tuning 2026-09-19",
+   "authoringDefault": {
+    "dx": 0.295,
+    "dy": 0.045,
+    "ring": 0.153,
+    "track": 0.15,
+    "pupilSize": 0.34,
+    "inset": 0.4,
+    "lidFit": 0.9,
+    "converge": 0.18,
+    "splay": 0,
+    "gloss": 0.1
+   },
+   "sourceMeasuredPlacementPolicy": "EXPLICIT_SUGGESTION_ONLY_NEVER_AUTO_APPLY",
+   "inheritance": [
+    "rigClass",
+    "character",
+    "session"
+   ],
+   "status": "AUTHORING_DEFAULT_REFERENCE"
+  },
+  "reviewState": "ADJUSTED",
+  "inheritance": {
+   "order": [
+    "rigClass",
+    "character",
+    "session"
+   ],
+   "rigClass": "Rig_Medium",
+   "classSeed": "data/rig-medium-default.v0.json",
+   "characterId": "adventurer-barbarian",
+   "sessionAdjusted": false
+  }
+ },
+ "classDefault": {
+  "source": "Georg screenshot / browser tuning 2026-09-19",
+  "eye": {
+   "anchor": {
+    "dx": 0.295,
+    "dy": 0.045,
+    "ring": 0.153,
+    "track": 0.15
+   },
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.34,
+   "gloss": 0.1,
+   "inset": 0.4,
+   "lidFit": 0.9,
+   "converge": 0.18,
+   "splay": 0,
+   "trackingMode": "life",
+   "fixedGaze": [
+    0,
+    0
+   ],
+   "oval": {
+    "w": 1,
+    "h": 1,
+    "d": 1,
+    "tilt": 0
+   },
+   "lidColorMode": "face-base-darkened"
+  }
+ },
+ "inheritanceOrder": [
+  "rigClass",
+  "character",
+  "session"
+ ]
+}

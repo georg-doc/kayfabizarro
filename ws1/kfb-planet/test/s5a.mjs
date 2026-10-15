@@ -54,8 +54,9 @@ const cardLine = await page.evaluate(async () => { const c = window.__kfbCard('f
 await page.evaluate(() => window.__kfbHostTest.off())
 await page.waitForTimeout(800)
 const ids1 = await page.evaluate(() => window.__kfbAnchors.ids())
-// 5 · Lebensdauer 7,5 s + 0,25 s Ausblenden
-await page.waitForTimeout(6500)
+// 5 · Lebensdauer 7,5 s + 0,25 s Ausblenden. Die Blase zählt Spielzeit (Host-Takt ≤ 0,1 s je Bild): bei wenigen Bildern/s läuft sie langsamer als
+// die Wanduhr. Darum warten, bis sie weg ist (höchstens 40 s), statt fest 6,5 s (FAIL nur unter Last bei 3 Bildern/s, 15.10.)
+await page.waitForFunction(() => ![...document.querySelectorAll('#ui-bubbles [data-kind]')].some((e) => e.dataset.speaker === 'front'), null, { timeout: 40000 }).catch(() => {})
 const L5 = await list()
 await browser.close()
 

@@ -32,10 +32,12 @@ const pL = await pupils()
 await page.evaluate(() => window.__kfbEyeActor.lookAt(null))
 // Lidschlag: in der Mitte gehalten, Lider müssen sichtbar zugehen (Bildvergleich Augenbereich offen vs. zu)
 const eyeCrop = { x: 300, y: 170, width: 300, height: 110 }
+// Offen-Bild ohne zufälligen Lidschlag: Auto-Blinzeln anhalten und den Blick zur Ruhe kommen lassen (unter Last fiel das Bild sonst ins Blinzeln)
+await page.evaluate(() => { const rig = window.__kfbEyeActor.debugRig(); rig._blinkK = -1; rig.__blinkT = rig._blinkT; rig._blinkT = 1e9 }); await page.waitForTimeout(700)
 const open1 = await page.screenshot({ clip: eyeCrop })
 await page.evaluate(() => { const rig = window.__kfbEyeActor.debugRig(); rig.__dur = rig.blink.dur; rig.blink.dur = 1e6; rig._blinkK = 0.5 }); await page.waitForTimeout(400)
 const shut = await page.screenshot({ clip: eyeCrop })
-await page.evaluate(() => { const rig = window.__kfbEyeActor.debugRig(); rig.blink.dur = rig.__dur; rig._blinkK = -1 })
+await page.evaluate(() => { const rig = window.__kfbEyeActor.debugRig(); rig.blink.dur = rig.__dur; rig._blinkK = -1; rig._blinkT = rig.__blinkT ?? 0 })
 const full = await page.screenshot()
 // Modulvertrag §6 (Muster test/host.mjs): create 1× auch nach Re-Renders, update bekommt ctx, dispose 1× beim Aushängen,
 // danach kein update; jede Geometrie und jedes Material von Figur, Eye-Rig und FaceHost wird freigegeben (dispose-Ereignis).

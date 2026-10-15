@@ -67,6 +67,21 @@ const mouthDecals = Object.fromEntries(Object.entries(decals).map(([k, v]) => [k
 const pet = georg.pets.find((p) => p.id === fbRecipe.entry.pet)
 const FB = (x, yaw, id) => ({ recipe: fbRecipe, pet, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion: 'idle', position: [x, 0, -1.4], yaw, anchorId: id })
 const MK = /actors=fb/.test(hash) ? FB : ROGUE
+// Zweite Besetzung (F-4): cast=<actorId> stellt rechts eine KayKit-Figur mit ihrem Profil aus Georgs Batch auf (F1-Weg, kaykit-eye-adapter).
+// Kandidaten: scripts/cast/build-cast.py (Profil-Auszug, Rezept, GLB-Kopie). KayKit hat keinen Sprechmund: sie spricht heute nur per Blase.
+const castProfiles = import.meta.glob('./data/eyes/cast/*.profile.json', { eager: true, import: 'default' })
+const castRecipes = import.meta.glob('./data/actors/cast/*.recipe.json', { eager: true, import: 'default' })
+const castGlbs = import.meta.glob('./assets/actors/cast/*.glb', { eager: true, query: '?url', import: 'default' })
+export const CAST_IDS = Object.keys(castRecipes).map((k) => k.split('/').pop().replace('.recipe.json', ''))
+const CAST_ID = CAST_IDS.includes(/cast=([\w-]+)/.exec(hash)?.[1]) ? /cast=([\w-]+)/.exec(hash)[1] : null
+const KAYKIT = (id) => {
+  const recipe = castRecipes[`./data/actors/cast/${id}.recipe.json`], pickC = castProfiles[`./data/eyes/cast/${id}.profile.json`], ref = recipe.composition.modelRef
+  const url = castGlbs[`./assets/actors/cast/${ref.path.split('/').pop()}`]
+  return (x, yaw, anchorId) => ({ recipe, faceDriver: 'KFB_NATIVE', url, clipsUrl, motion: 'Idle_A', profile: pickC.profile, contract, classScale: fbRecipe.stage.scale, // gleicher Klassen-Faktor wie FrizzleBob (Rig_Medium, P08 CLASS_K 0,947)
+   
+    actor: { id, path: ref.path, revision: ref.revision }, position: [x, 0, -1.4], yaw, anchorId })
+}
+const MKR = CAST_ID ? KAYKIT(CAST_ID) : MK
 // Marken der Figuren je Stellung (Bühnenmitte = Ursprung, +z zum Publikum): near = G4-Standard vor der Tafel (Georg 14.10.), two = bisherige Stellung
 export const STAGE_MARKS = Object.freeze({
   near: Object.freeze({ left: Object.freeze({ x: -3.7, z: 1.2, yaw: 0.45 }), right: Object.freeze({ x: 3.7, z: 1.2, yaw: -0.45 }) }),
@@ -74,8 +89,8 @@ export const STAGE_MARKS = Object.freeze({
 })
 // Stellung: place=near (Figuren vor der Tafel, enger; Standard) | place=two (bisherige Stellung hinten). Ohne Angabe folgt sie der Kamera (cam=two → two).
 const NEAR = (/place=(\w+)/.exec(hash)?.[1] || (CAM === 'two' ? 'two' : 'near')) === 'near'
-const at = (m, id) => ({ ...MK(m.x, m.yaw, id), position: [m.x, 0, m.z] }), MARKS = STAGE_MARKS[NEAR ? 'near' : 'two']
-const L = at(MARKS.left, 'stage-left'), R = at(MARKS.right, 'stage-right')
+const at = (mk, m, id) => ({ ...mk(m.x, m.yaw, id), position: [m.x, 0, m.z] }), MARKS = STAGE_MARKS[NEAR ? 'near' : 'two']
+const L = at(MK, MARKS.left, 'stage-left'), R = at(MKR, MARKS.right, 'stage-right')
 const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
 const DECK = di >= 0 ? cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num).slice(0, NDIALOG) : []
 const mods = {}

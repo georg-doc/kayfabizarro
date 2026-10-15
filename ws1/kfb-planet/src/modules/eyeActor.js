@@ -14,19 +14,21 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { mountKayKitEyes } from '../vendor/eyes/kaykit-eye-adapter.v1.js'
 import { prepareMediumActorCleanup } from '../vendor/eyes/medium-source-eye-cleanup.v1.js'
 import { sampleActorFaceColor } from '../vendor/eyes/face-color-sampler.v1.js'
+import { FACE_STEP, FACE_MAX_STEPS } from './faceMountActor'
 
 const CLEANUP_READY = ['AUTO_CANDIDATE', 'SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE', 'AUTO_CANDIDATE_GENERIC'] // app.js Z. 959
 
 // app.js normalizeActor(), unverändert bis auf den Parameter height (Studio: fest 2,65)
-function normalizeActor(figure, height) {
+// classScale (optional): fester Klassen-Faktor statt Höhen-Normierung – gleiche Skelettklasse, gleicher Maßstab (Rig_Medium wie FrizzleBob, CLASS_K)
+function normalizeActor(figure, height, classScale = null) {
   figure.updateMatrixWorld(true)
   const box = new THREE.Box3().setFromObject(figure), size = box.getSize(new THREE.Vector3())
-  const scale = height / Math.max(0.001, size.y)
+  const scale = classScale ?? height / Math.max(0.001, size.y)
   figure.scale.multiplyScalar(scale); figure.updateMatrixWorld(true)
   const b2 = new THREE.Box3().setFromObject(figure), center = b2.getCenter(new THREE.Vector3())
   figure.position.x -= center.x; figure.position.z -= center.z; figure.position.y -= b2.min.y
   figure.updateMatrixWorld(true)
-  return { sourceHeight: +size.y.toFixed(3), scale: +scale.toFixed(5) }
+  return { sourceHeight: +size.y.toFixed(3), scale: +scale.toFixed(5), height: +(size.y * scale).toFixed(3) }
 }
 // app.js needsAutoFaceColor(), unverändert
 function needsAutoFaceColor(profile) {
@@ -42,10 +44,10 @@ function needsAutoFaceColor(profile) {
 // Zähler für den Vertragstest (Muster probeModule/test/host.mjs)
 export const eyeActorLog = { create: 0, update: 0, dispose: 0, lastCtx: null, freed: null }
 
-// options: { url, clipsUrl?, motion: 'bind'|Clipname, profile, contract, actor: { id, path, revision }, height, position, yaw, anchorId }
+// options: { url, clipsUrl?, motion: 'bind'|Clipname, profile, contract, actor: { id, path, revision }, height | classScale, position, yaw, anchorId }
 export function createEyeActor(options) {
   eyeActorLog.create++
-  const { url, clipsUrl = null, motion = 'bind', contract, actor, height = 2.65, position = [0, 0, 0], yaw = 0, anchorId = null } = options
+  const { url, clipsUrl = null, motion = 'bind', contract, actor, height = 2.65, classScale = null, position = [0, 0, 0], yaw = 0, anchorId = null } = options
   const profile = JSON.parse(JSON.stringify(options.profile)) // Studio arbeitet auf einer Kopie (ensureProfile)
   const root = new THREE.Group(); root.name = 'eyeActor:' + actor.id
   root.position.fromArray(position); root.rotation.y = yaw
@@ -58,7 +60,11 @@ export function createEyeActor(options) {
     const gltf = await loader.loadAsync(url)
     if (state.disposed) return
     const figure = gltf.scene; state.figure = figure
-    const norm = normalizeActor(figure, height); log(`${actor.id} geladen · ${norm.sourceHeight} → ${height}`) // vor dem Einhängen: Welt = lokal wie im Studio (stageRoot im Ursprung)
+    const norm = normalizeActor(figure, height, classScale); state.height = norm.height; log(`${actor.id} geladen · ${norm.sourceHeight} → ${norm.height}${classScale ? ' (Klassen-Faktor ' + classScale + ')' : ''}`) // vor dem Einhängen: Welt = lokal wie im Studio (stageRoot im Ursprung)
+    // Aufbau mit Weltdrehung 0 (wie faceMountActor, ToolBox-Befund A15): der Gesichts-Halter richtet sich beim Mounten an der Welt aus;
+    // eine gedrehte Figur trüge das Augen-Rig sonst um ihren Winkel verdreht. Die eigene Drehung kommt erst nach dem Aufbau zurück.
+    const q0 = root.quaternion.clone(), pq = new THREE.Quaternion(); if (root.parent) root.parent.getWorldQuaternion(pq)
+    root.quaternion.copy(pq.invert()); root.updateWorldMatrix(true, true)
     root.add(figure)
     const cleanup = prepareMediumActorCleanup({ THREE, figure, actor, log }); state.cleanup = cleanup
     const cleanupOk = CLEANUP_READY.includes(cleanup.status); if (cleanupOk) cleanup.apply(true)
@@ -77,8 +83,9 @@ export function createEyeActor(options) {
       const clip = clips.animations.find((c) => c.name === motion)
       if (clip) state.mixer.clipAction(clip, figure).play()
     }
+    root.quaternion.copy(q0); root.updateWorldMatrix(true, true) // Aufbau fertig: eigene Drehung zurück
     // Blasen-Anker knapp über dem Kopf (Figur steht auf y = 0, Höhe = height)
-    head.position.set(0, height * 1.02, 0)
+    head.position.set(0, (state.height ?? height) * 1.02, 0)
     state.status = eyes.eyeFrame() ? 'OK' : 'EYES_MISSING'
     state.cleanupStatus = cleanup.status
   })().catch((e) => { state.status = 'ERROR'; state.error = String(e?.message || e); log('Fehler: ' + state.error) })
@@ -91,7 +98,9 @@ export function createEyeActor(options) {
       if (state.disposed) return
       eyeActorLog.update++; eyeActorLog.lastCtx = { hasCam: !!ctx?.camera, hasPlayer: !!ctx?.player, hasGame: !!ctx?.game }
       state.mixer?.update(dt)
-      state.eyes?.update(dt)
+      // Augen in Teilschritten ≤ FACE_STEP wie faceMountActor (ToolBox-Befund A13): die Pupillen-Feder von pet-eye-rig.v6 schwingt bei langen
+      // Bildern auf; auf der Bühne standen die Pupillen nach einem Blickwechsel außerhalb des Auges (_px −0,174 bei Grenze 0,111, weiße Augen).
+      if (state.eyes) { const n = Math.min(FACE_MAX_STEPS, Math.max(1, Math.ceil(dt / FACE_STEP))), h = dt / n; for (let i = 0; i < n; i++) state.eyes.update(h) }
     },
     // Blickziel in Bildschirmkoordinaten des Eye-Rigs (−1…1); null = „life“ (Studio-Standard)
     lookAt(nx, ny) { if (!state.eyes) return; if (nx == null) state.eyes.setGazeFollow(false); else { state.eyes.setGazeFollow(true); state.eyes.setPointer(nx, ny) } },

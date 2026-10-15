@@ -1,0 +1,22 @@
+{
+ "schema": "kfb.actor-recipe/0.2-candidate",
+ "primaryFormat": "kfb.pets/1",
+ "source": {
+  "selectedId": "adventurer-barbarian",
+  "rigFamily": "Rig_Medium",
+  "label": "Barbarian (Kandidat zweite Besetzung, F-4)"
+ },
+ "composition": {
+  "modelRef": {
+   "path": "media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Barbarian.glb",
+   "revision": "f9dd7a64c4ae0907b8752717861eba065e557d9d",
+   "blob": "d06efc99"
+  },
+  "faceOwners": {
+   "face": "lib/kaykit-eye-adapter.v1.js",
+   "eye": "pet-eye-rig.v6",
+   "mouth": "keiner (KayKit ohne Sprechmund; Mund ist eine spätere Frage, F-4)"
+  }
+ },
+ "profile": "src/data/eyes/cast/adventurer-barbarian.profile.json (AUTO_CANDIDATE, Batch @ac9dbaed)"
+}

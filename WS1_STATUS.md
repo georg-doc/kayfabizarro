@@ -1,7 +1,58 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§25 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§26 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 26 · 15.10. · Gelesen bis V-256 · Bilder nach V-253 neu · Code F-4 gespiegelt · Vorlagen-Zeile V-256 (Bildflächen-Modul)
+
+**Quittiert:**
+- V-253: Abnahme-Format.
+- V-254: UFO-Urteil, für WS1 erst Phase 2.
+- V-255: Mund-Bögen; WS1 baut nichts daran, bis ein Set freigegeben ist.
+- V-256: Bildflächen-Modul.
+
+### 26.1 · Bilder für Georg nach V-253 (ersetzen die Bildbögen aus §24/§25)
+Jede Ansicht ist ein eigenes Querformat-Bild 1920 × 1080 mit großer Beschriftung im Bild, ohne Raster. Erzeugt mit `scripts/present/shots.mjs` (Liste → Einzelbilder).
+- `ws1/proofs/2026-10-15-present/cast/`: je Kandidat zwei Bilder.
+  - `1a_adventurer-mage.png` (steht neben FrizzleBob) und `1b_…_spricht.png` (Antwort-Blase rechts);
+  - dasselbe für 2 Barbarian und 3 GothGirl.
+- `ws1/proofs/2026-10-15-present/palette/`: `01_cubescape.png` … `08_ember.png`, je Palette ein Bühnenbild mit Genre-Liste und Beispielkarte in der Beschriftung.
+- Die Bildbögen `sheet_1/2.png`, `cast_sheet.png` und `cast_speak_sheet.png` bleiben nur als Arbeitsbelege für WS0, nicht für Georg.
+
+### 26.2 · Code F-4 gespiegelt (kfb-planet @4c42344)
+- **Neu:** `test/cast.mjs`; `eyeActor` mit Aufbau bei Weltdrehung 0 und Option `classScale`.
+- **Befund in den Sprech-Bildern:** Die KayKit-Pupillen standen nach dem Blickwechsel außerhalb des Auges (weiße Augen; `_px` −0,174 bei Grenze 0,111). Ursache ist dieselbe Pupillen-Feder wie A13. `eyeActor` rechnet die Augen jetzt in Teilschritten wie `faceMountActor`, und der Test `cast` prüft die Pupillen im Dialog. Die Sprech-Bilder sind danach neu erzeugt.
+- **Rechner unter Last:** Load 10–15 durch Firefox, Claude-App und WindowServer; headless nur ≈ 3 Bilder/s. Drei Tests mit fester Wanduhr-Wartezeit fielen dadurch:
+  - f1: das Lid-offen-Bild landete im Zufalls-Blinzeln;
+  - s5a: die Blasen-Lebensdauer zählt Spielzeit;
+  - s5c: das Stempel-Fenster beträgt 420 ms.
+  Alle drei warten jetzt auf den Zustand statt auf die Uhr; die Prüfung selbst ist gleich streng. Danach je zweimal PASS unter derselben Last.
+- **Volle Suite:** 16/18 PASS im Gesamtlauf mit dem jetzigen Code; s5a und s5c danach korrigiert und einzeln grün. Die f1-Abweichung in der M1-Runde hatte dieselbe Ursache.
+
+### 26.3 · Vorlagen-Zeile V-256 · Bildflächen-Modul (Inhalt und Träger getrennt) – bitte freigeben
+- **Spender (1:1, was übernommen wird):** Branch `chatgpt-web/billboard-b2a-css3d-2026-09-24` @07da4adf, `tools/KFB-ToolBox/_handover/BILLBOARD_B2A_CSS3D_2026-09-24/bb2a-boot.js` (HUMAN_ACCEPTED 24.09., PR #199). Muster nach three `examples/css3d_youtube.html` (r160 @d04539a7): `CSS3DRenderer + CSS3DObject + iframe + Blocker`.
+  - Übernommen werden die Funktionen `createInlineVideo`, `syncInlineVideoTransform` (Weltlage der Fläche kopieren, Größe = Fläche, nur von vorn sichtbar über Flächen-Normale · Kamera), `setVideoBlock` (Iframe gesperrt, solange die Kamera gezogen wird) und `show/hideInlineVideo` (`about:blank` beim Verlassen).
+  - `bb-scene.js` (Kenney-Körper) wird **nicht** übernommen; unser Träger bleibt der B1-Knetkörper.
+- **Schnitt in zwei Module (Host-Vertrag R1.2, je `create → {object3d, update, dispose}`):**
+  1. **Träger** `billboard` (B1-Körper, unverändert in Form, Farbe und Palette).
+     - Er stellt eine Fläche bereit: `surface = { mesh, uv, width, height }`; die Maske mit runden Innenecken bleibt Sache des Trägers.
+     - Er kennt den Inhalt nicht.
+     - `fitToAspect(ar)` passt seinen Rahmen an (R2 „responsiv“, wie heute fitFace).
+  2. **Inhalt** `surfaceContent` mit Arten `card` (`cardImage`, Viertelseite ganz, nichts beschnitten), `video` (YouTube per CSS3D), `loop` (Video-Textur), `quote`, `palette` (Farbstimmung).
+     - Er bekommt eine Fläche übergeben und weiß nichts vom Billboard: Canvas- bzw. Video-Textur auf `mesh.material.map`; CSS3D-Ebene an der Weltlage von `mesh`.
+     - Er meldet sein Seitenverhältnis. Ein Träger mit freiem Format passt sich an (B1); ein Träger mit festem Format (UFO-Slot ≈ 1,60) zeigt die Karte ganz mit Papierrand, nie beschnitten (Georg 15.10.: nur vierteln, nichts beschneiden).
+  3. **UFO-Träger** `screenSlot`: Fläche aus WS0s `kfb_screen_slot` (Eckpunkte als JSON) → Mesh + UV. Kommt, wenn WS0 den Slot liefert (Phase 1c).
+- **Host-Zusatz:** Eine CSS3D-Ebene über dem WebGL-Canvas (eigener `CSS3DRenderer` im Host, gleiche Kamera). Das ist nötig für `video`; ohne `video` entsteht keine CSS3D-Ebene.
+- **Was gleich bleibt:**
+  - B1-Optik und -Tests (b1, stage, palette, g4) laufen unverändert weiter; der Dialog ruft weiter `setCard`, intern ist das Inhalt `card`.
+  - Palette (V-245) färbt den Träger; Inhalt `palette` ist nur die Farbstimmung auf der Fläche selbst.
+- **Reihenfolge:**
+  1. B1 schneiden (Träger + Inhalt `card`), ohne sichtbare Änderung; Bildpaar vorher | nachher pixelgleich.
+  2. Inhalt `video` (CSS3D) mit der Spender-Prüfung (vorn klickbar, hinten verborgen, Blocker beim Ziehen, Entladen beim Wechsel).
+  3. UFO-Slot nach Lieferung durch WS0.
+- **Abnahme:** je Schritt Einzelbilder nach V-253, ein Prüfpunkt je Eigenschaft.
+- **Georg 15.10. (für TUNE später):** „die 3D billboards/displays zur jeweiligen szene anpassen: gemauerter Rahmen im Amphitheater · in UFO integrierter Monitor · antiker Holzrahmen in der Akashic Library (gerade bei Meshy) · … etc.“ Der Schnitt passt dazu: je Szene ein eigener Träger, der Inhalt bleibt ein Modul. Nach dem Schnitt kommen die Träger-Varianten als eigene Vorlagen-Zeilen.
+- **Offene Frage an WS0:** Zitate und Hypernormalisation-Loops brauchen eine Quelle (Pool bzw. Video-Dateien mit Rechten). Bis dahin bauen wir nur `card` und `video`.
 
 ## 25 · 15.10. · F-4 zweite Besetzung: drei KayKit-Kandidaten mit Georgs Augen-Profil (Bilder für Georg)
 
