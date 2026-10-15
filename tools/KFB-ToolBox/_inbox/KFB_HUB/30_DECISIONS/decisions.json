@@ -3449,6 +3449,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-265",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Kartenfläche vor einer Fläche, die vom Maß nicht passt (z. B. Utopia-Monitor): nicht quetschen und die Öffnung nicht umschneiden, sondern ein Display DAVOR setzen, bewusst überlagernd: größer als die Fläche dahinter, oben überstehend, wirkt wie ein hoher, großer Monitor; Rahmen schlank (nicht dick), Ränder sauber eingefasst (keine Restfläche seitlich sichtbar). Karte 1,79:1 füllt das Display randlos. Figuren-Anordnung der Standardkamera bleibt (V-257). Gilt für alle Bühnen.",
+   "values": {},
+   "owner": "WS0 (Asset-Vorschlag) → WS1",
+   "check": "Bild aus der Standardkamera mit echter Karte",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eingequetschte Karten wirken klein und angeklebt; ein großer überstehender Monitor liest sich als Teil der Bühne.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3511,7 +3526,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:323",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:330",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

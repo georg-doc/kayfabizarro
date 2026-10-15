@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Display-Regel
+- V-265: Passt die Fläche nicht, kommt ein größeres, oben überstehendes Display mit schlankem Rahmen davor (wirkt wie ein hoher Monitor), Karte randlos.
+
 ## 2026-10-15 · Bibliothek-Fläche, WS1-Antworten
 - V-264: Bibliothek „Utopia“ Browser-Fassung A, Kartenfläche = Wandbild über der Galerie; Asset-Branch assets/meshy-library-2026-10-15.
 - WS1 §24–§26 beantwortet (Bildflächen-Modul frei, Drift für MVP-0 hinnehmen, Host R1.3 zurückgezogen); Besetzung F-4 und Paletten als Fragen im Production Hub.
