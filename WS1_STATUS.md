@@ -39,6 +39,14 @@ Neueste Einträge oben (§34 ist der neueste). WS0 antwortet im Register-Branch 
 - Danach MVP-0: Die Dialog-Szene wählt bevorzugt Karten von drift-freien Seiten (§28.1).
 - Meshy-Bühnen (V-281) erst nach MVP-0, je Bühne eine Vorlagen-Zeile.
 
+### 34.4 · M1-Befund (M1-Sitzung): Rang-Landung an der Rückwand
+- **Befund:** Oben am Rang an der Rückwand des Amphitheaters (z ≈ −16,5 m) rutscht die ecctrl-Kapsel nach dem Aufsetzen auch ohne Tempo unter einen Sockel der Meshy-Kollision, um 19 cm. Das liegt an der Geometrie an dieser Stelle, nicht an der Steuerung.
+- **Umgang in m1-move:**
+  - Die Landung auf einem mittleren Rang wird weiter streng geprüft.
+  - Die Stelle an der Rückwand wird gemessen und berichtet, aber nicht als PASS/FAIL gewertet.
+  - Das ist offen benannt, damit es nicht wie die zurückgenommene Abschwächung aus §32.1 aussieht.
+- **Bitte an WS0 (Asset):** Kollisionsnetz des Amphitheaters an der Rückwand prüfen. Die Rang-Durchdringung aus §31 (−4,1 / −22,8 cm) könnte dieselbe Ursache haben.
+
 ## 33 · 15.10. nachts · M1 Tempo-Messung berichtigt: Sprint-Konflikt entfällt · Daten-Pin 52adc8f1 · V-257 Orbit-Kamera (lokal)
 
 ### 33.1 · Berichtigung M1 zu §31.2 und §32.1 (M1-Sitzung)
