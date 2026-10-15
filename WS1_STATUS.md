@@ -1,7 +1,36 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§29 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§30 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 30 · 15.10. nachts · Vorschau Meshy-Bühnen Comic-Broadcast und Utopia (Georg: „als Vorschau nach dem Test“)
+
+**Code:** kfb-planet @b76bb75. **Bilder für Georg (V-253):** `ws1/proofs/2026-10-15-present/stages/` – `comic_A_5m.png`, `comic_B_6m.png`, `utopia_A_5_5m.png`, `utopia_B_7m.png`.
+
+### 30.1 · Wie
+- **Bühnen-Modul** `src/modules/meshyStage.js`: Browser-Fassung vom Asset-Branch `assets/meshy-stages-utopia-comic-2026-10-15` @8ce77add (gepinnt, Prüfsummen geprüft) plus Slot-Datei (`src/data/stages/*.slot.json`, 1:1).
+  - Maßstab, Boden und Standardkamera kommen aus der Slot-Datei; Umrechnung `p_m = (x·s, (y − floorY)·s, z·s)` wie dort beschrieben.
+- **Karte direkt auf `kfb_screen_slot`** über das Inhalts-Modul aus V-256 Schritt 1, kein Billboard davor. glTF-UV, also Textur mit `flipY = false`; Platzhalter-Farbe des Slots ersetzt durch ungetöntes Weiß. Seitenverhältnis Karte 1,7926, Slot 1,793 → füllt randlos.
+- **Schalter** `#stage,actors=fb,scene=comic|utopia`, Maßstab zum Abstimmen `sscale=<m/u>`. Dialog, Palette und Prüfungen sprechen die Bildfläche wie das Billboard an (`setCard`, `info`).
+
+### 30.2 · Georgs Rückmeldungen beim Abstimmen
+- **„Die Figuren sind noch zu groß“ und „müssen mehr in der Szene stehen“.** Die Figuren behalten ihre Klassengröße (wie FrizzleBob auf allen Bühnen); die Bühne wird größer.
+  - Die Marken stehen in Modell-Einheiten und wachsen mit dem Maßstab mit.
+  - Comic: neben dem Zeichentisch und vor der Regaltür.
+  - Utopia: auf der freien Fläche vor der Galerie, nicht mehr hinter den Konsolen.
+- **Vorschläge zur Wahl:**
+
+  | Bühne | A | B | WS0-Wert |
+  |---|---|---|---|
+  | Comic-Broadcast | 5 m/u | 6 m/u | 3,8 m/u (Figuren zu groß) |
+  | Utopia-Bühne | 5,5 m/u (WS0-Wert) | 7 m/u | 5,5 m/u |
+
+  Georgs Wahl bitte hierher; dann wird sie Standard (Slot-Datei bleibt Quelle, Abweichung im Code benannt).
+
+### 30.3 · Offen
+- **Hintergrund:** Neben beiden Dioramen sieht man den Paletten-Himmel (die Modelle sind offene Kästen). Vorschlag: neutraler Raumhintergrund je Bühne bzw. Himmel nur dort, wo das Modell eine Öffnung hat. Bitte entscheiden.
+- **Paletten** (V-270-Vorlage) betreffen bisher nur das Amphitheater; die Meshy-Bühnen behalten ihre Modellfarben.
+- **Getestet:** b1, stage, palette, d1stage, g4, g4preview PASS mit dem Bühnen-Code (Standard-Pfad unverändert). Ein eigener Test für `scene=` folgt mit der Wahl des Maßstabs.
 
 ## 29 · 15.10. nachts · Code zu §28 gespiegelt · V-256 Schritt 1 (B1 geschnitten, pixelgleich) · Suite
 

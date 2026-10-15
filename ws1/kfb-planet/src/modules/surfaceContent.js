@@ -29,15 +29,17 @@ export function placeholderCanvas(card) {
 
 // createCardContent({ card? }) → { kind, attach(surface), setCard(card) → Promise<info|{stale}>, current(), dispose() }
 // surface.fit({ aspect, source, canvas: [w, h], fontScale, card }) wird nach jedem Bildwechsel gerufen und liefert die Träger-Info zurück.
+// surface.flipY === false: Fläche mit glTF-UV (Bildfläche im Meshy-Modell), Textur ohne Umkehr; das Billboard nutzt die three-Voreinstellung.
 export function createCardContent() {
   const state = { card: null, token: 0, info: null, disposed: false, surface: null, tex: null }
   const fit2048 = (src) => { if (src.width <= 2048) return src; const c = document.createElement('canvas'); c.width = 2048; c.height = Math.round(2048 * src.height / src.width); c.getContext('2d').drawImage(src, 0, 0, c.width, c.height); return c }
   // Die Textur zeigt die Quelle direkt (Viertelseite aus cardImage bzw. Platzhalter): keine Kopie, kein Skalieren, kein Beschnitt
   // (Prüfer 6, Befund 3: eine zweite 4-MB-Kopie je Karte entfällt). Viertelseiten über 2048 px würden verkleinert kopiert.
+  // flipY = false nur für glTF-UV der Bildfläche im Modell (Slot-Datei: flipY = false)
   function show(src0, source) {
     const S = state.surface; if (!S) return null
     const src = fit2048(src0), mat = S.mesh.material
-    if (!state.tex || state.tex.image !== src) { const t = new THREE.CanvasTexture(src); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; state.tex?.dispose(); state.tex = t; mat.map = t; mat.needsUpdate = true } // ganze Viertelseite, randlos
+    if (!state.tex || state.tex.image !== src) { const t = new THREE.CanvasTexture(src); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; if (S.flipY === false) t.flipY = false; state.tex?.dispose(); state.tex = t; mat.map = t; mat.needsUpdate = true } // ganze Viertelseite, randlos
     state.info = S.fit({ aspect: src.width / src.height, source, canvas: [src.width, src.height], fontScale: src.__fontScale ?? null, card: state.card ? state.card.deck.id + '#' + state.card.num : null })
     state.tex.needsUpdate = true
     return state.info

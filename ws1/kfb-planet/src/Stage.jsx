@@ -12,6 +12,8 @@ import { createAmphitheater, amphLog } from './modules/amphitheater'
 import { createBillboard, BIOMES } from './modules/billboard'
 import { createActor } from './actors/actorSlot'
 import { createDialog } from './modules/dialog'
+import { createMeshyStage, MESHY_STAGES, stageCamera } from './modules/meshyStage'
+import { createCardContent } from './modules/surfaceContent'
 import BubbleHost from './BubbleHost'
 import ChoiceHost from './ChoiceHost'
 import { getReader, isPoolReady, PREVIEW } from './dialogText'
@@ -43,7 +45,11 @@ export const STAGE_CAMS = { two: { pos: [0, 2.7, 12.5], target: [0, 2.4, -3.5] }
   // G4-Bildaufbau (Georg 14.10.: „near nehmen“): Kamera näher, auf Augenhöhe der Figuren, Figuren vor der Tafel. Standard seit §20.
   near: { pos: [0, 2.15, 9.2], target: [0, 2.1, -3.5] } }
 const CAM = STAGE_CAMS[/cam=(\w+)/.exec(hash)?.[1]] ? /cam=(\w+)/.exec(hash)[1] : 'near'
-const cam = STAGE_CAMS[CAM]
+// Meshy-Bühne statt Amphitheater (Vorschau, Georg 15.10.): scene=comic | utopia. Kamera aus der Slot-Datei (WS0), Karte auf der Bildfläche im Modell.
+const SCENE = MESHY_STAGES[/scene=(\w+)/.exec(hash)?.[1]] ? /scene=(\w+)/.exec(hash)[1] : null
+const SCENE_S = SCENE ? (+(/sscale=([\d.]+)/.exec(hash)?.[1]) || MESHY_STAGES[SCENE].s) : null // Abstimmen per sscale=<m/u>; Standard = Slot-Datei (WS0)
+const SCENE_CAM = SCENE ? stageCamera(MESHY_STAGES[SCENE], SCENE_S) : null
+const cam = SCENE_CAM || STAGE_CAMS[CAM]
 // Publikums-Anker je Kamera: 3,2 m vor der Kamera auf der Blickachse, so tief, dass Blase und Spielerwahl am unteren Bildrand sitzen (NDC y −0,9),
 // nicht über der Karte. Der Anker liegt 1,05 m über playerState.pos (BubbleHost). Für cam=two ergibt das die bisherige Lage (0, 0,6, z − 3,2).
 export const playerPosFor = (c, fov = 38, d = 3.2, ndcY = -0.9) => { const [px, py, pz] = c.pos, [tx, ty, tz] = c.target, L = Math.hypot(tx - px, ty - py, tz - pz), k = d / L
@@ -55,6 +61,7 @@ const PAL_OVERRIDE = /palette=(\w+)/.exec(hash)?.[1] || null
 const palFor = (card) => stagePaletteFor(card, { override: PAL_OVERRIDE, biome: BIOME })
 const PAL0 = palFor(CARD)
 const AMPH = { biome: BIOME, palette: PAL0?.amph || null }
+const MESHY_OPTS = SCENE ? { stage: SCENE, scale: SCENE_S } : null
 const BB = { card: CARD, biome: BIOME, palette: PAL0, maxW: 7, maxH: 5, position: [0, 0, -3.5] }
 const palState = { current: PAL0, log: [] } // aktuelle Palette der Bühne + Wechsel-Protokoll (Prüfung)
 // Palette der Karte auf Billboard, Amphitheater und Himmel legen (weich, außer beim ersten Bild)
@@ -89,13 +96,19 @@ const KAYKIT = (id) => {
 }
 const MKR = CAST_ID ? KAYKIT(CAST_ID) : MK
 // Marken der Figuren je Stellung (Bühnenmitte = Ursprung, +z zum Publikum): near = G4-Standard vor der Tafel (Georg 14.10.), two = bisherige Stellung
+// Marken je Meshy-Bühne in Modell-Einheiten u (skalieren mit dem Bühnen-Maßstab mit): freie Fläche vor der Kartenwand laut Kamera-Notiz der Slot-Datei
+export const SCENE_MARKS = Object.freeze({
+  comic: Object.freeze({ left: Object.freeze({ x: -0.58, z: -0.22, yaw: 0.35 }), right: Object.freeze({ x: 0.14, z: -0.28, yaw: -0.35 }) }),
+  utopia: Object.freeze({ left: Object.freeze({ x: -0.3, z: 0.08, yaw: 0.35 }), right: Object.freeze({ x: 0.2, z: 0.08, yaw: -0.35 }) }),
+})
+const sceneMark = (m) => ({ ...m, x: m.x * SCENE_S, z: m.z * SCENE_S })
 export const STAGE_MARKS = Object.freeze({
   near: Object.freeze({ left: Object.freeze({ x: -3.7, z: 1.2, yaw: 0.45 }), right: Object.freeze({ x: 3.7, z: 1.2, yaw: -0.45 }) }),
   two: Object.freeze({ left: Object.freeze({ x: -4.2, z: -1.4, yaw: 0.35 }), right: Object.freeze({ x: 4.2, z: -1.4, yaw: -0.35 }) }),
 })
 // Stellung: place=near (Figuren vor der Tafel, enger; Standard) | place=two (bisherige Stellung hinten). Ohne Angabe folgt sie der Kamera (cam=two → two).
 const NEAR = (/place=(\w+)/.exec(hash)?.[1] || (CAM === 'two' ? 'two' : 'near')) === 'near'
-const at = (mk, m, id) => ({ ...mk(m.x, m.yaw, id), position: [m.x, 0, m.z] }), MARKS = STAGE_MARKS[NEAR ? 'near' : 'two']
+const at = (mk, m, id) => ({ ...mk(m.x, m.yaw, id), position: [m.x, 0, m.z] }), MARKS = SCENE ? { left: sceneMark(SCENE_MARKS[SCENE].left), right: sceneMark(SCENE_MARKS[SCENE].right) } : STAGE_MARKS[NEAR ? 'near' : 'two']
 const L = at(MK, MARKS.left, 'stage-left'), R = at(MKR, MARKS.right, 'stage-right')
 const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : PREVIEW_CARDS ? PREVIEW_CARDS.length : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
 const DECK = PREVIEW_CARDS || (di >= 0 ? cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num).slice(0, NDIALOG) : [])
@@ -115,6 +128,17 @@ const DIALOG = {
 }
 function billboardReady() { const i = mods.billboard?.info(); if (!i) return false; const c = DECK[0] || CARD; return i.source === 'CARD' || (i.source === 'PLACEHOLDER' && !!c && !isCardSafe(c.deck.id, c.num)) }
 const mk = (k, f) => (o) => { mods[k] = f(o); expose('StageMods', mods); return mods[k] }
+// Meshy-Bühne: Modul `amph` (Bühne) + Bildflächen-Inhalt auf ihrem Slot; nach außen wie das Billboard (setCard/info), damit Dialog und Prüfungen gleich bleiben
+const makeMeshy = (o) => {
+  const st = createMeshyStage(o), content = createCardContent()
+  const screen = { object3d: new THREE.Group(), content, setPalette() {}, fading: () => false, update() {}, dispose() {},
+    info: () => { const i = content.current(); return i ? { ...i, carrier: 'meshy-slot:' + st.stage.id } : null },
+    setCard: (c) => st.ready.then(() => { content.attach(st.surface); return content.setCard(c) }) }
+  screen.ready = screen.setCard(CARD)
+  mods.amph = st; mods.billboard = screen; expose('StageMods', mods)
+  const dispose0 = st.dispose; st.dispose = () => { content.dispose(); dispose0() }
+  return st
+}
 const makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makeL = mk('left', createActor), makeR = mk('right', createActor)
 const makeDialog = (o) => { const d = createDialog({ ...o, reader: { lineFor: (...a) => o.reader.lineFor(...a), silence: () => o.reader.silence() } }); mods.dialog = d; expose('StageMods', mods); return d }
 
@@ -136,7 +160,7 @@ function Sky() {
 
 function Cam() {
   const { camera, size } = useThree()
-  useEffect(() => { camera.fov = 38; camera.near = 0.1; camera.far = 600; camera.position.fromArray(cam.pos); camera.lookAt(...cam.target); camera.updateProjectionMatrix(); expose('StageCamera', camera) }, [camera, size])
+  useEffect(() => { camera.fov = cam.fov || 38; camera.near = 0.1; camera.far = 600; camera.position.fromArray(cam.pos); camera.lookAt(...cam.target); camera.updateProjectionMatrix(); expose('StageCamera', camera) }, [camera, size])
   return null
 }
 
@@ -160,8 +184,8 @@ export default function Stage() {
       <Cam />
       <hemisphereLight args={[0xfff4e0, 0x3a3226, 1.25]} />
       <directionalLight position={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-25} shadow-camera-right={25} shadow-camera-top={25} shadow-camera-bottom={-25} shadow-bias={-0.0002} />
-      <ModuleHost create={makeAmph} options={AMPH} />
-      <ModuleHost create={makeBB} options={BB} />
+      {SCENE ? <ModuleHost create={makeMeshy} options={MESHY_OPTS} /> : <ModuleHost create={makeAmph} options={AMPH} />}
+      {!SCENE && <ModuleHost create={makeBB} options={BB} />}
       {ACTORS !== 'none' && <ModuleHost create={makeL} options={L} />}
       {ACTORS !== 'none' && <ModuleHost create={makeR} options={R} />}
       {NDIALOG > 0 && <ModuleHost create={makeDialog} options={DIALOG} />}
