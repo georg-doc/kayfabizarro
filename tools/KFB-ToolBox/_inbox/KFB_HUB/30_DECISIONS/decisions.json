@@ -3575,6 +3575,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-273",
+   "date": "2026-10-15",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Meshy-Fahrzeuge als fahrbare Karts: erstes Modell Badewannen-Kart (Georg, MeshyModels). Aufbereitung wie die KayKit-Autos in J17 (Donor-Format): Browser-Fassung, Räder als eigene Knoten mit Drehpunkt in der Nabe, Hebel und Turbine als eigene Teile (Hebel = Motor-/Turbinensteuerung, so in der Welt erklärt), Sitz-Anker für Rig_Medium und Rig_Large (Monstrosity, Orc Brute), Lenkrad-Anker. Lenkrad als eigenes 3D-Requisit (Knet, schwarz-metallisch oder passend koloriert) in den Fäusten; Mixamo-„Driving“-Animation als Fahrbewegung. Fahren zuerst zwischen den Schaubühnen bzw. auf Joyride-Gelände mit der J17-Fahrphysik (V-251), Rennstrecke später.",
+   "values": {},
+   "owner": "WS0 (Asset) → WS1 (MVP-1b)",
+   "check": "Explosionsbild, Figur sitzend mit Lenkrad",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Meshy liefert passende Fahrzeuge; mit KayKit-Aufbau sind sie wie die J17-Autos fahrbar.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3637,7 +3652,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:352",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:358",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
