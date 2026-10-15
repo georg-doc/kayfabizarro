@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Erste ganze Triplet-Sets
+- replies/TRIPLET_SETS_R2/: Monomyth Mayhem (56) und Philosophy (68) als Suno-Sprechtext + Take-Liste, Prüfung 0 FAIL; Hub zeigt sie in neuer Deck-Ansicht (tr01, tr02) mit Download.
+
 ## 2026-10-15 · Triplet-Sets R2
 - Vorgabe replies/TRIPLET_SET_SPEC_R2.md und Prüfskript replies/triplet_set_check.py (nur Kartenwörter, Opener einmal pro Set, Intro + „Stay Fluffy!“, eine Zeile = ein Take); Georgs drei Goldens bestehen die Prüfung. Erste ganze Decks (Monomyth Mayhem, Philosophy) in Arbeit; Plugin-Auftrag an WSA (b14) liegt im Hub und geht nach Georgs Urteil raus.
 
