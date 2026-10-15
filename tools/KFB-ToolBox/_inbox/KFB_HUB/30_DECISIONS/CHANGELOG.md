@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Kart TUNE 2, Dystopia neu, Montage-Regel, Stimmen
+- Kart TUNE 2 (Mitte 0 cm / 50 %, Hände 0 cm in 150 Bildern, Licht = WS1-Bühne, 0,005 % überstrahlt) als Hub kt04.
+- Dystopia-Frage neu in klaren Worten (dy02: A oben vor dem Billboard | B unten vor dem Rolltor); Grundregel Karten-Display mit Seitenansichten aller Bühnen (mt01).
+- Stimmen: Wireface hat keine eigene Sprachausgabe (nur Lippen zu beliebigem Audio, Demo-Stimmen = feste Clips bzw. Gemini Live); Vorschlag Hörvergleich Gemini-TTS | Kokoro für Triplets je Figur, Suno-Songs als Präsentations-Feature.
+
 ## 2026-10-15 · WS1 §33–§35
 - V-283: Ränge in MVP-0 Kulisse ohne Begehen, Fuß-IK später; WS0 liefert Kollisionsnetz Amphitheater. Paletten V-270 als Hub-Frage pal02; Dystopia-Frage wird mit Bildern neu gestellt (Georg: unklar formuliert).
 
