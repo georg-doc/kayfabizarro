@@ -50,6 +50,18 @@
 
 ---
 
+## CURRENT ADDENDUM · 2026-10-15 · Playmation Fluff/Card Pickup R0.4
+
+**Georg clarification confirmed & extended:** automatic, tactile Fluff orbs bounce/settle in reachable Medium-Rig pickup height across cartoon blast Fishing/Earth Mining/Farm/Wood Harvest. Larger real Cards/Props/Power-ups stay readable and respond differently: Fluff touch → once-only Wallet credit; canonical Card touch → source PDF/real Card Reveal, `OK / KayfaBINGO!` confirms acquisition and Almanac fly-in; `KayfaBOGGLE?` explains original source Card/item or playful `Trickfisch`/Fluff, `KayfaBONGO!` defers/leaves, optional `BLÖDSINN!` challenges a source claim without deleting item. Unique props show real Asset previews/optional Bag claim, effects/Power-ups only owner-backed. No extra XP or invented Card/Voice/Physics owner.
+
+**Actual verified donors:** `tools/KFB-ToolBox/_inbox/KFB WhackMan v1-1/WHACKMAN_SESSION_2026-09-22/wm-gate-c.js` main blob `79116eef1922b49b1faf4a464c03158d12bbcf34` has measured `baseX/baseY/baseZ`, ballistics, squash/bounce/shrink, collision acceptance over XZ only and **PrototypePete Rig_Legacy**. WhackMan is a partial presentation donor **not a Medium-Rig pickup runtime**. `overworld/docs/MASTERPLAN_overworld.md` blob `5b36e8a0ef91fa2b4464122a02130776c23c623c` already documents 2D `WIN→Card Context→OK→Almanac` where collection occurs on OK. Current Lab K2 H scale and old Fluff v0.7.1 receipt/Social Call specs re-read; visuals and real current Game integration are UNKNOWN.
+
+**New source document:** [KFB Pickup Fluff, Cards, Living Loot & Social Calls R0.4](./KFB_PICKUP_FLUFF_CARD_LOOT_SOCIAL_CALLS_R0_4_2026-10-15.md), initial verified GitHub blob `095a8cac360940a3d69babe91c26419dea74a804`, **15/15 static source/contract checks PASS**. R0.4 is additively linked in source bridge; no current Lab runtime, World, HUD, MediaSurface or PlayerSave edits; no visual donor-isolation or browser tests. Same PR #400, Draft/unmerged; original old documents unchanged.
+
+**One next gate remains:** `CLAUDE_CODE_RECOVERY_INTAKE_CONFIRMATION` for Claude Code's current owning Lab session. Deferred later source/owner audit `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` only after playable core and explicit Georg authorization. No merge/Live, Site, Hub routing or new acceptance matrix.
+
+---
+
 ## Exact changed files
 1. `skills/chat/recovery/KFB_POSTMVP_MINIGAMES_FLUFF_SOURCE_RECOVERY_2026-10-15.md` — full five-source map, brief concept reconstruction and Claude Code cold-start/read guidance. Verified blob `c689d13a4602f633d4bd7221063c220e3e8e3c2c`; source-only QA **14/14** static checks.
 2. `skills/chat/START_HERE.md` — *additive* first-paragraph index to this recovery; existing October 12/8 decisions retained. Verified blob `1dcb0f98ba6236cce39e8536b113528a10cb52cd`.
