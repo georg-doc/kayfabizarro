@@ -34,7 +34,8 @@
 
 ## Set-Aufbau (Suno-Sprechtext, ohne Musik aufnehmbar)
 1. `[Spoken Word]`
-2. Pro Set: Intro „Welcome to <Decktitel>.“ (nur der Decktitel, kein erfundener Slogan), dann die Kartenzeilen des Sets in Kartennummer-Reihenfolge, dann „Stay Fluffy!“.
+2. Pro Set: **Intro** (kein Opener und nicht jedes Mal „Welcome to“, V-276), dann die Kartenzeilen des Sets in Kartennummer-Reihenfolge, dann **Outro „Stay Fluffy!“**.
+   - Intro = eine kurze Moderations-Zeile (6–15 Wörter) aus dem **gedruckten** Deck-Material: Decktitel, Untertitel/Cover-Tagline, gedruckte Seiten-Slogans, dazu als Teaser 2–3 Kartentitel des Sets. Kein Marketingtext, keine erfundenen Fakten oder Slogans. Jedes Set eines Decks hat ein anderes Intro.
 3. **Jede Karte = genau eine Zeile.** Keine Steuer-Tags wie [Break] zwischen den Zeilen; nur `[Spoken Word]` oben.
 - **Eine Zeile = ein Take.** Jede Zeile steht für sich, damit sie einzeln aufgenommen und geschnitten werden kann. Übergänge wie „That attracts …“ gibt es nur als Opener aus dem Pool, keine frei erfundenen Brücken.
 

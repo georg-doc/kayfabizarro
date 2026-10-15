@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Intro statt Opener am Set-Anfang
+- V-276: Set = Intro (aus gedrucktem Deck-Material, je Set verschieden) + Zeilen mit Openern + Outro „Stay Fluffy!“.
+
 ## 2026-10-15 · Verdichtungs-Regel
 - V-275: Triplets im Comic-Sprechstil verdichten (Artikel, Hilfsverben, Füller weg; nur streichen); zusammen mit Opener je Zeile, Sets mit eigenem Intro/Outro, ohne Klammern. Test an den drei Sets läuft.
 

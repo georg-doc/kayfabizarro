@@ -3620,6 +3620,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-276",
+   "date": "2026-10-15",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Set-Rahmen: Jedes Set beginnt mit einem INTRO (kein Opener, nicht jedes Mal „Welcome to“ – das war nur ein Opener-Beispiel und läuft sich tot) und endet mit dem OUTRO „Stay Fluffy!“. Intro aus gedrucktem Deck-Material (Decktitel, Cover-Tagline, Seiten-Slogans) plus Teaser von 2–3 Kartentiteln des Sets, je Set verschieden. „Welcome to“ bleibt als normaler Zeilen-Opener erlaubt.",
+   "values": {},
+   "owner": "WS0 → WSA-Plugin",
+   "check": "Suno-Sets neu",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gleiche Einstiege nutzen sich ab; ein Intro moderiert das Set an.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3682,7 +3697,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:369",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:375",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
