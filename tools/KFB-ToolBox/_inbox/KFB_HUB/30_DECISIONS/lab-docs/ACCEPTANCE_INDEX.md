@@ -10,10 +10,12 @@ Quelle: alle STATUS/RETURN/CHANGELOG/PROJECT_STATE/TEST_REPORT/HANDOVER-Dateien 
 | `_to_delete/_github_upload_2026-09-26/gh_kfz/skills/chat/CHANGELOG.md:293` |  | Add `ANTI_SLOP_VISUAL_BRIEF_GUARDRAILS.md` and the bounded Claude Design brief under `workflows/KFB_HUB_UI_V2_2026-09-19/`. Future briefs must prove each source |
 | `_to_delete/_github_upload_2026-09-26/gh_kfz/skills/chat/CHANGELOG.md:791` |  | - Georg acceptance OPEN |
 | `_to_delete/_github_upload_2026-09-26/gh_kfz/skills/chat/CHANGELOG.md:825` |  | Georg acceptance remains OPEN. No merge or consumer integration. |
+| `MeshyModels/KFB Meshy Rig Proof R1/kfb-alien-session-2026-10-15/HANDOVER_WS0.md:3` |  | Von Claude Design, 15.10.2026. Claude Design pusht nicht; Integration, Tests, Versionsverwaltung macht WS0 / Web Lead. Behauptungen getrennt nach `SOURCE / DECI |
+| `MeshyModels/KFB Meshy Rig Proof R1/kfb-alien-session-2026-10-15/HANDOVER_WS0.md:61` |  | / GEORG ACCEPTANCE / Ranger PASS mit Tune (R3), Dory PASS · Rig Proof R1 und Meshy Rig R1 offen / |
 | `KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/HANDOVER.md:95` |  | / GEORG ACCEPTANCE / R2 „passt so mit TUNE für später" (09.10.2026) / |
 | `KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/code/KFB_Clay_Stage_R1/RETURN.md:39` |  | / GEORG ACCEPTANCE / OPEN / |
 | `KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/code/KFB_Clay_Stage_R2/RETURN.md:42` |  | / GEORG ACCEPTANCE / OPEN / |
-| `KFB_HUB/30_DECISIONS/CHANGELOG.md:466` |  | - Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen |
+| `KFB_HUB/30_DECISIONS/CHANGELOG.md:470` |  | - Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:3` |  | Format: SOURCE / DECISION / IMPLEMENTATION / TESTED RESULT / EXPORT / PUBLIC DEPLOYMENT / GEORG ACCEPTANCE / OPEN |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:8` | Oberseite, ein Mesh, Farb- und Maskenkarte 1024² | Richtung gut |
 | `KFB World Core R2D v0 Insel + KFB Scholle Bench v7/kfb-r2d-session-2026-10-03/STATUS.md:9` | Straße aus Track Core 0.8.1, Straßenbett, Bordkante, Brüstung | gut |

@@ -1,5 +1,13 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Alien-Köpfe, Performance, Münder, Goblin-Bank
+- V-296: Claude-Design-Kopf isolieren → KayKit-Astronaut (Frankenstein); Dangle je Augenstiel/Antenne mit eigener Steifigkeit; Augen wie alle EyeRigs.
+- V-297: zuerst Lidschluss (Knet-Lider) + emotionale Pupillen/Lider für NPC-Choreografien; schwebende Brauen später.
+- V-298: Performance = Einzelclips getimt zum Beat + 3–4 Dance-Moves je Deck aus der Motion Library.
+- V-299: Münder Lord Hunky = Typ B, Lady Dory = Typ A (MOUTHS_GPT_R2).
+- V-300 (TBD): Goblin-Bank-Diorama als Bühne; Georgs Panoptikum-Zelle + Labyrinth-Generator + Gizmo-Wände in der Planung.
+- Strut Walk: in Motion Library v7 vorhanden (kfb_locomotion_strut_walking_a/_b, Rig_Medium/Large); GitHub-main hat nur v01.
+
 ## 2026-10-15 · Harmonie-Modell fertig, Konzepte im Hub
 - COLOR_HARMONY_R1 fertig: eine OKLCH-Regel (Boden = Grundton, Strecke +90° warm, Blickfang gegenüber, Laub grün/herbstlich, Himmel = Laub +90°, Platte gelb, Straße #3d4a60); J17-Nachbau mittleres ΔE 0,023–0,027; Generator fromHue/fromColors/fromStoryMode/random. Hub-Frage col04 offen (noch keine V-Nummer).
 - Konzepte gesichert: replies/CONCEPTS_FLUFF_MINIGAMES_R1/ (11 Quelldateien byte-genau, OVERVIEW mit 13 Widersprüchen) und replies/META_NARRATIVE_R1.md (Quelle/Georg/offen markiert).

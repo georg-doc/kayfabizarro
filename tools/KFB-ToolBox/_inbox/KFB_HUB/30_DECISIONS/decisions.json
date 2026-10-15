@@ -3926,6 +3926,81 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-296",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Lord Hunky und Lady Dory: Kopf aus Claude Designs Reparatur (Paket KFB Meshy Rig Proof R1, Ranger R3 PASS mit Tune, Dory PASS) isolieren und auf den KayKit-Astronauten setzen (Frankenstein, V-260); die Stiel- bzw. Antennenform darf auch neu gebaut werden. Alle Augenstiele und Antennen bekommen Dangle mit eigener Materialsteifigkeit je Teil (wie die Hasenohren; Augenstiel ≠ Antenne). Augen funktionieren genauso wie die übrigen Augen-Rigs (EyeRig v6, Vertrag v4). Claude Designs Körper-Rig-Versuch (rig.js) und das Meshy-Vollrig für die Aliens entfallen.",
+   "values": {},
+   "owner": "WS0 (Asset-Probe) → WSA ToolBox / WS1",
+   "check": "Bildreihe + Videos Idle/Walk/Strut, Dangle je Teil",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Körper ist mit Frankenstein gelöst; Claude Designs Wert liegt im Kopf und in den Augen.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-297",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Augen-Priorität bei Lord Hunky und Lady Dory: zuerst sauberer Lidschluss mit den neuen Knet-Lidern und animierbare Pupillen bzw. Lider für emotionale Ausdrücke, nutzbar in NPC-Choreografien zusammen mit Körperbewegungen, Gesten und Posen (Performance vor den Bildflächen). Schwebende, balkige Augenbrauen über dem Auge (bei Dory kleiner, dünner, schmaler) sind ein späterer Zusatz.",
+   "values": {},
+   "owner": "WS0 → WSA ToolBox",
+   "check": "Ausdrucksreihe neutral/froh/wütend/traurig/überrascht + Blinzeln",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ausdruck trägt die Performance; Brauen sind Zugabe.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-298",
+   "date": "2026-10-15",
+   "area": "Performance",
+   "verdict": "RULE",
+   "text": "NPC-Performance zur Musik: einzelne Animationen getimt zum Beat abspielen statt durchgehender Choreografie. Je Deck bzw. Performance drei bis vier Dance-Moves aus der Motion Library, passend zu Deck, Thema und Diorama, dazu emotionale Ausdrücke (Augen, Brauen, Lider, Pupillen) und die neuen Münder.",
+   "values": {},
+   "owner": "WS0 (Auswahl je Deck) → WS1 (Abspielen)",
+   "check": "eine Deck-Performance als Probe",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Getimte Einzelclips passen zur Musik und sind billig zu bauen.",
+   "applies": "ab Performance-Probe"
+  },
+  {
+   "id": "V-299",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Münder der Aliens aus den neuen Mund-Sätzen (MOUTHS_GPT_R2): Lord Hunky = Typ B (schräger, ausdrucksstarker Cartoon-Mund), Lady Dory = Typ A (runde Lippen, weiblicher). upperLift 0,35 (V-259). Direkt an der Frankenstein-Probe ausprobieren.",
+   "values": {},
+   "owner": "WS0 (Probe) → WSA Mund-Labor",
+   "check": "Frontbild mit Mund je Figur",
+   "source": "Georg 15.10. (Version 2 bzw. Version 1 = Typ B bzw. A, Deutung WS0)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Mund-Charakter unterscheidet die beiden Aliens auf einen Blick.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-300",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "TBD",
+   "text": "Neue Dioramen: Goblin-Bank (Meshy, als Bühne aufbereiten wie STAGES_BATCH_R1). Georg baut eine Gefängniszelle als Panoptikum; sie soll mit der Maze-Idee, dem Labyrinth-Generator und Gizmo-Wänden zusammen genutzt werden (Anschluss an V-105/V-120 Gefängnis-Labyrinth und Konzepte v0.8/v0.9). Der Gizmo-Gedanke bleibt Teil der Planung.",
+   "values": {},
+   "owner": "WS0 (Bühne, Planung)",
+   "check": "Bühnenbilder Goblin-Bank; Panoptikum folgt von Georg",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gefängnis, Labyrinth und Gizmo-Wände sind ein zusammenhängender Strang.",
+   "applies": "Planung"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3973,6 +4048,16 @@
    "georg": "Georg acceptance remains OPEN. No merge or consumer integration."
   },
   {
+   "source": "MeshyModels/KFB Meshy Rig Proof R1/kfb-alien-session-2026-10-15/HANDOVER_WS0.md:3",
+   "part": "",
+   "georg": "Von Claude Design, 15.10.2026. Claude Design pusht nicht; Integration, Tests, Versionsverwaltung macht WS0 / Web Lead. Behauptungen getrennt nach `SOURCE / DECI"
+  },
+  {
+   "source": "MeshyModels/KFB Meshy Rig Proof R1/kfb-alien-session-2026-10-15/HANDOVER_WS0.md:61",
+   "part": "",
+   "georg": "/ GEORG ACCEPTANCE / Ranger PASS mit Tune (R3), Dory PASS · Rig Proof R1 und Meshy Rig R1 offen /"
+  },
+  {
    "source": "KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/HANDOVER.md:95",
    "part": "",
    "georg": "/ GEORG ACCEPTANCE / R2 „passt so mit TUNE für später\" (09.10.2026) /"
@@ -3988,7 +4073,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:466",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:470",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
