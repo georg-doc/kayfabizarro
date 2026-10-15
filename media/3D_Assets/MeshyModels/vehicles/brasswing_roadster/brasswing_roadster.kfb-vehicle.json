@@ -1,0 +1,202 @@
+{
+ "schema": "kfb.vehicle-asset/0.1",
+ "id": "brasswing_roadster",
+ "decision": "V-311",
+ "date": "2026-10-15",
+ "status": "CANDIDATE · asset + data only (WS1 builds runtime)",
+ "entryMode": "hop-in-hidden",
+ "entry_note": "Character jumps from kfb_entry to kfb_driver_hidden and is hidden (no visible seated driver, no steering-wheel/IK layer)",
+ "name_de": "01 Messing-Coupé",
+ "meshy_name": "Brasswing Roadster",
+ "class": "racer",
+ "locomotion": "hover",
+ "cockpit": "closed",
+ "files": {
+  "browser": "brasswing_roadster_browser.glb",
+  "check_image": "brasswing_roadster_anker_pruefbild.jpg",
+  "receipt": "brasswing_roadster_receipt.json",
+  "source": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Brasswing_Roadster_1015142809_texture.glb (unchanged, sha256 25788cb96005ee7f0e955d984f5fadcb16f7b68d009a4908983a331de30fe9b1)"
+ },
+ "donor_format": {
+  "ref": "bathtub_kart.kfb-vehicle.json (V-273): KayKit car frame, glTF +Z forward, +X = car left, +Y up; wheel spin about local X",
+  "physics": "WS1: Rapier + ecctrl EcctrlVehicle (ShapeCastWheel). Hover: no wheels; use the 4 kfb_hover_* points as thrust/ray origins (or invisible ShapeCast wheels at those points with ride height)."
+ },
+ "frame": {
+  "forward": "+Z",
+  "left": "+X",
+  "up": "+Y",
+  "origin": "ground below the bbox centre",
+  "source_front": "Meshy -X (rotated +90 deg about Y)"
+ },
+ "units": {
+  "glb_unit": "1 KayKit rig unit (figures load 1:1)",
+  "m_per_unit": 0.616381042,
+  "scale_factor_rig_per_meshy_unit": 2.95,
+  "note": "V-311 scale: racers 2.950, haulers 3.835 rig per Meshy unit (Meshy exports are normalised to 1.9 units length)"
+ },
+ "dimensions": {
+  "length": [
+   5.6059,
+   3.455
+  ],
+  "width": [
+   2.6606,
+   1.64
+  ],
+  "height": [
+   1.3676,
+   0.843
+  ],
+  "belly_clearance_centre": [
+   0,
+   0.0
+  ],
+  "pairs": "[rig units, metres]"
+ },
+ "nodes": {
+  "brasswing_roadster": "root, body mesh (single fused mesh, 1 material)",
+  "kfb_entry": "empty, ground point beside the door / cockpit side (left, +X)",
+  "kfb_driver_hidden": "empty, cockpit centre where the character is hidden",
+  "kfb_camera_follow": "empty, suggested chase-camera position (target in anchors)",
+  "kfb_hover_<FL|FR|RL|RR>": "empty, hover thrust point on the hull underside"
+ },
+ "anchors": {
+  "kfb_driver_hidden": {
+   "pos": [
+    0,
+    0.6242,
+    -0.294
+   ],
+   "note": "cockpit centre; character root hidden here (scale 0 / visible=false) while driving"
+  },
+  "kfb_entry": {
+   "pos": [
+    1.2299,
+    0,
+    -0.294
+   ],
+   "side": "left (+X)",
+   "note": "ground point beside the door/cockpit side; hop-in arc ends at kfb_driver_hidden"
+  },
+  "kfb_hover_FL": {
+   "pos": [
+    0.6497,
+    0.0004,
+    1.794
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_FR": {
+   "pos": [
+    -0.6497,
+    0.0004,
+    1.794
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RL": {
+   "pos": [
+    0.6787,
+    0.0004,
+    -1.794
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RR": {
+   "pos": [
+    -0.6787,
+    0.5562,
+    -1.794
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_camera_follow": {
+   "pos": [
+    0,
+    2.71,
+    -7.008
+   ],
+   "target": [
+    0,
+    0.752,
+    0
+   ],
+   "note": "suggested chase camera (scaled from bathtub kart 0,3.4,-9 → 0,1.8,-0.5)"
+  }
+ },
+ "collision_hints": {
+  "aabb": [
+   [
+    -1.3316,
+    0,
+    -2.803
+   ],
+   [
+    1.329,
+    1.3676,
+    2.8029
+   ]
+  ],
+  "body_box": {
+   "center": [
+    0,
+    0.6838,
+    -0.0
+   ],
+   "half_extents": [
+    1.1175,
+    0.6154,
+    2.6908
+   ],
+   "note": "rough box (wings/fins/exhausts excluded by the 0.42/0.48 factors)"
+  },
+  "ground_contact_y": 0.0
+ },
+ "known_limits": [
+  "Very low body (0.84 m): roof below FB shoulder; hide the figure fully",
+  "Hover pods fused into the body (no separate thruster parts)"
+ ],
+ "render_path": {
+  "lighting": "WS1 stage: NoToneMapping, sRGB output, Hemisphere 0xfff4e0/0x3a3226 1.25 + sun 1.8, no env map",
+  "three": "r170 GLTFLoader, EXT_texture_webp"
+ },
+ "hover": {
+  "FL": {
+   "node": "kfb_hover_FL",
+   "pos": [
+    0.6497,
+    0.0004,
+    1.794
+   ],
+   "underside_clearance": 0.0004
+  },
+  "FR": {
+   "node": "kfb_hover_FR",
+   "pos": [
+    -0.6497,
+    0.0004,
+    1.794
+   ],
+   "underside_clearance": 0.0004
+  },
+  "RL": {
+   "node": "kfb_hover_RL",
+   "pos": [
+    0.6787,
+    0.0004,
+    -1.794
+   ],
+   "underside_clearance": 0.0004
+  },
+  "RR": {
+   "node": "kfb_hover_RR",
+   "pos": [
+    -0.6787,
+    0.5562,
+    -1.794
+   ],
+   "underside_clearance": 0.5562
+  }
+ },
+ "hover_note": "Underside is (near) flat on y=0 in the Meshy export; ride height is a runtime value (suggest 0.35-0.6 rig)"
+}

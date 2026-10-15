@@ -1,0 +1,268 @@
+{
+ "schema": "kfb.vehicle-asset/0.1",
+ "id": "jetbound_roadster",
+ "decision": "V-311",
+ "date": "2026-10-15",
+ "status": "CANDIDATE · asset + data only (WS1 builds runtime)",
+ "entryMode": "hop-in-hidden",
+ "entry_note": "Character jumps from kfb_entry to kfb_driver_hidden and is hidden (no visible seated driver, no steering-wheel/IK layer)",
+ "name_de": "08 Düsen-Limousine",
+ "meshy_name": "Jetbound Roadster",
+ "class": "racer",
+ "locomotion": "wheels",
+ "cockpit": "closed",
+ "files": {
+  "browser": "jetbound_roadster_browser.glb",
+  "check_image": "jetbound_roadster_anker_pruefbild.jpg",
+  "receipt": "jetbound_roadster_receipt.json",
+  "source": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Jetbound_Roadster_1015142654_texture.glb (unchanged, sha256 5c6447c03c8379a4d06805caf5dbf45039fec85118d1a86ce9e7d343af9b1d3a)"
+ },
+ "donor_format": {
+  "ref": "bathtub_kart.kfb-vehicle.json (V-273): KayKit car frame, glTF +Z forward, +X = car left, +Y up; wheel spin about local X",
+  "physics": "WS1: Rapier + ecctrl EcctrlVehicle (ShapeCastWheel). Wheels are fused into the body (single Meshy island, not cleanly cuttable): use invisible physics wheels at the kfb_wheel_* hub anchors; no wheel meshes to spin/steer."
+ },
+ "frame": {
+  "forward": "+Z",
+  "left": "+X",
+  "up": "+Y",
+  "origin": "ground below the midpoint of the two axles",
+  "source_front": "Meshy -X (rotated +90 deg about Y)"
+ },
+ "units": {
+  "glb_unit": "1 KayKit rig unit (figures load 1:1)",
+  "m_per_unit": 0.616381042,
+  "scale_factor_rig_per_meshy_unit": 2.95,
+  "note": "V-311 scale: racers 2.950, haulers 3.835 rig per Meshy unit (Meshy exports are normalised to 1.9 units length)"
+ },
+ "dimensions": {
+  "length": [
+   5.5987,
+   3.451
+  ],
+  "width": [
+   2.7776,
+   1.712
+  ],
+  "height": [
+   2.3639,
+   1.457
+  ],
+  "belly_clearance_centre": [
+   0.036,
+   0.022
+  ],
+  "pairs": "[rig units, metres]",
+  "wheelbase": [
+   3.127,
+   1.927
+  ],
+  "track_front": [
+   2.4282,
+   1.497
+  ],
+  "track_rear": [
+   2.4444,
+   1.507
+  ],
+  "wheel_radius": [
+   0.354,
+   0.218
+  ]
+ },
+ "nodes": {
+  "jetbound_roadster": "root, body mesh (single fused mesh, 1 material)",
+  "kfb_entry": "empty, ground point beside the door / cockpit side (left, +X)",
+  "kfb_driver_hidden": "empty, cockpit centre where the character is hidden",
+  "kfb_camera_follow": "empty, suggested chase-camera position (target in anchors)",
+  "kfb_wheel_<FL|FR|RL|RR>": "EMPTY hub anchor (no mesh), origin = hub centre, spin axis local +X, steer axis local +Y (front pair); extras kfb_fused=true, kfb_radius"
+ },
+ "anchors": {
+  "kfb_driver_hidden": {
+   "pos": [
+    0,
+    1.015,
+    0.2065
+   ],
+   "note": "cockpit centre; character root hidden here (scale 0 / visible=false) while driving"
+  },
+  "kfb_entry": {
+   "pos": [
+    1.4512,
+    0,
+    0.2065
+   ],
+   "side": "left (+X)",
+   "note": "ground point beside the door/cockpit side; hop-in arc ends at kfb_driver_hidden"
+  },
+  "kfb_wheel_FL": {
+   "pos": [
+    1.2133,
+    0.3542,
+    1.5635
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_FR": {
+   "pos": [
+    -1.2149,
+    0.3542,
+    1.5635
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_RL": {
+   "pos": [
+    1.2202,
+    0.3542,
+    -1.5635
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_RR": {
+   "pos": [
+    -1.2242,
+    0.3542,
+    -1.5635
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_camera_follow": {
+   "pos": [
+    0,
+    3.957,
+    -7.002
+   ],
+   "target": [
+    0,
+    1.301,
+    0
+   ],
+   "note": "suggested chase camera (scaled from bathtub kart 0,3.4,-9 → 0,1.8,-0.5)"
+  }
+ },
+ "collision_hints": {
+  "aabb": [
+   [
+    -1.3896,
+    0.0006,
+    -2.9438
+   ],
+   [
+    1.388,
+    2.3639,
+    2.6549
+   ]
+  ],
+  "body_box": {
+   "center": [
+    0,
+    1.182,
+    -0.1444
+   ],
+   "half_extents": [
+    1.1666,
+    1.0638,
+    2.6874
+   ],
+   "note": "rough box (wings/fins/exhausts excluded by the 0.42/0.48 factors)"
+  },
+  "ground_contact_y": 0.0,
+  "wheel_cylinders": {
+   "FL": {
+    "center": [
+     1.2133,
+     0.3542,
+     1.5635
+    ],
+    "radius": 0.354,
+    "width": 0.177,
+    "axis": "X"
+   },
+   "FR": {
+    "center": [
+     -1.2149,
+     0.3542,
+     1.5635
+    ],
+    "radius": 0.354,
+    "width": 0.177,
+    "axis": "X"
+   },
+   "RL": {
+    "center": [
+     1.2202,
+     0.3542,
+     -1.5635
+    ],
+    "radius": 0.354,
+    "width": 0.177,
+    "axis": "X"
+   },
+   "RR": {
+    "center": [
+     -1.2242,
+     0.3542,
+     -1.5635
+    ],
+    "radius": 0.354,
+    "width": 0.177,
+    "axis": "X"
+   }
+  }
+ },
+ "known_limits": [
+  "Four tyres sit behind fender skirts, fused into body (not cuttable cleanly): invisible physics wheels + hub anchors",
+  "Antennas thin"
+ ],
+ "render_path": {
+  "lighting": "WS1 stage: NoToneMapping, sRGB output, Hemisphere 0xfff4e0/0x3a3226 1.25 + sun 1.8, no env map",
+  "three": "r170 GLTFLoader, EXT_texture_webp"
+ },
+ "wheels": {
+  "FL": {
+   "node": "kfb_wheel_FL",
+   "hub_glTF": [
+    1.2133,
+    0.3542,
+    1.5635
+   ],
+   "radius": 0.354,
+   "fused": true
+  },
+  "FR": {
+   "node": "kfb_wheel_FR",
+   "hub_glTF": [
+    -1.2149,
+    0.3542,
+    1.5635
+   ],
+   "radius": 0.354,
+   "fused": true
+  },
+  "RL": {
+   "node": "kfb_wheel_RL",
+   "hub_glTF": [
+    1.2202,
+    0.3542,
+    -1.5635
+   ],
+   "radius": 0.354,
+   "fused": true
+  },
+  "RR": {
+   "node": "kfb_wheel_RR",
+   "hub_glTF": [
+    -1.2242,
+    0.3542,
+    -1.5635
+   ],
+   "radius": 0.354,
+   "fused": true
+  }
+ },
+ "wheel_split": {
+  "attempted": true,
+  "result": "not split",
+  "reason": "source is ONE connected island (3D scan-like Meshy mesh); wheel surfaces merge into arches/skirts/struts, no clean cut boundary. Per V-273 addendum: keep fused, WS1 uses invisible physics wheels + these hub anchors."
+ }
+}

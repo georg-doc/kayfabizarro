@@ -1,0 +1,161 @@
+{
+ "source": {
+  "path": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Rustfire_Interceptor_1015142922_texture.glb",
+  "bytes": 152313868,
+  "sha256": "8f4847dbbe0541c99b451eaa27fccc84b946c2a89aa7b001ed3efe045270ec1d",
+  "tris": 2922376,
+  "islands": 1,
+  "unchanged": true
+ },
+ "browser": {
+  "file": "rustfire_interceptor_browser.glb",
+  "bytes": 5372380,
+  "sha256": "1194ca5159438707dcae978fdcf6223d50bf1eaa1a70c40aa3a315a1111dd453",
+  "tris": 99786,
+  "verts": 82259,
+  "simplify": [
+   {
+    "trisIn": 2922376,
+    "trisOut": 99786,
+    "error": 0.014349
+   }
+  ],
+  "textures": [
+   {
+    "slot": "base",
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 913806
+   },
+   {
+    "slot": "metalRough",
+    "mime": "image/webp",
+    "size": [
+     1024,
+     1024
+    ],
+    "bytes": 209722
+   },
+   {
+    "slot": "normal",
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 416630
+   }
+  ]
+ },
+ "params": {
+  "target_tris": 100000,
+  "error": 0.02,
+  "quality": 86,
+  "weights": {
+   "normal": 2,
+   "uv": 2
+  },
+  "options": [
+   "Permissive"
+  ],
+  "tool": "@gltf-transform 4.5.1 \u00b7 meshoptimizer 1.1.1 \u00b7 sharp 0.35.5"
+ },
+ "frame": {
+  "F": 2.95,
+  "T": [
+   0,
+   0.925695250928402,
+   -0.08112500000000007
+  ],
+  "meshy_front": "-X",
+  "bboxMeshy": [
+   [
+    -0.9518970251083374,
+    -0.3137950003147125,
+    -0.4081389904022217
+   ],
+   [
+    0.9395670294761658,
+    0.3350810110569,
+    0.40710899233818054
+   ]
+  ],
+  "cx": -0.027500000000000024,
+  "cz": 0,
+  "ymin": -0.3137950003147125
+ },
+ "meas": {
+  "front": {
+   "outerL": 0.3802340030670166,
+   "outerR": -0.3806549906730652
+  },
+  "rear": {
+   "outerL": 0.3800399899482727,
+   "outerR": -0.380405992269516
+  }
+ },
+ "cabinHalfW": 0.36428800225257874,
+ "decision": "V-311",
+ "date": "2026-10-15",
+ "belly": {
+  "aabb": [
+   [
+    -1.2005,
+    0.0025,
+    -2.8513
+   ],
+   [
+    1.2004,
+    1.9125,
+    2.7268
+   ]
+  ],
+  "belly_clearance": 0.129,
+  "contact_bins": 9,
+  "bins": [
+   0.56,
+   0.28,
+   0.29,
+   0.26,
+   0.25,
+   0.2,
+   0.21,
+   0.02,
+   0,
+   0.01,
+   0.02,
+   0.1,
+   0.01,
+   0.04,
+   0.07,
+   0.07,
+   0.07,
+   0.07,
+   0.07,
+   0.07,
+   0.09,
+   0.07,
+   0.08,
+   0.07,
+   0.09,
+   0.1,
+   0.08,
+   0.13,
+   0.13,
+   0.06,
+   0,
+   0.01,
+   0.01,
+   0.07,
+   0.23,
+   0.18,
+   0.17,
+   0.13,
+   0.16,
+   0.19
+  ]
+ }
+}

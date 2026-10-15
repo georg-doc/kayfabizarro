@@ -1,0 +1,269 @@
+{
+ "schema": "kfb.vehicle-asset/0.1",
+ "id": "rustwing_hauler",
+ "decision": "V-311",
+ "date": "2026-10-15",
+ "status": "CANDIDATE · asset + data only (WS1 builds runtime)",
+ "entryMode": "hop-in-hidden",
+ "entry_note": "Character jumps from kfb_entry to kfb_driver_hidden and is hidden (no visible seated driver, no steering-wheel/IK layer)",
+ "name_de": "12 Rost-Laster",
+ "meshy_name": "Rustwing Hauler",
+ "class": "hauler",
+ "locomotion": "wheels",
+ "cockpit": "closed",
+ "files": {
+  "browser": "rustwing_hauler_browser.glb",
+  "check_image": "rustwing_hauler_anker_pruefbild.jpg",
+  "receipt": "rustwing_hauler_receipt.json",
+  "source": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Rustwing_Hauler_1015144030_texture.glb (unchanged, sha256 d9b9e12cc318a6ed1cee7a295ae2b544b244979ac3e41bea4e1b824f7c387c4d)"
+ },
+ "donor_format": {
+  "ref": "bathtub_kart.kfb-vehicle.json (V-273): KayKit car frame, glTF +Z forward, +X = car left, +Y up; wheel spin about local X",
+  "physics": "WS1: Rapier + ecctrl EcctrlVehicle (ShapeCastWheel). Wheels are fused into the body (single Meshy island, not cleanly cuttable): use invisible physics wheels at the kfb_wheel_* hub anchors; no wheel meshes to spin/steer."
+ },
+ "frame": {
+  "forward": "+Z",
+  "left": "+X",
+  "up": "+Y",
+  "origin": "ground below the midpoint of the two axles",
+  "source_front": "Meshy -X (rotated +90 deg about Y)"
+ },
+ "units": {
+  "glb_unit": "1 KayKit rig unit (figures load 1:1)",
+  "m_per_unit": 0.616381042,
+  "scale_factor_rig_per_meshy_unit": 3.835,
+  "note": "V-311 scale: racers 2.950, haulers 3.835 rig per Meshy unit (Meshy exports are normalised to 1.9 units length)"
+ },
+ "dimensions": {
+  "length": [
+   7.2958,
+   4.497
+  ],
+  "width": [
+   4.348,
+   2.68
+  ],
+  "height": [
+   3.4459,
+   2.124
+  ],
+  "belly_clearance_centre": [
+   0.054,
+   0.033
+  ],
+  "pairs": "[rig units, metres]",
+  "wheelbase": [
+   3.183,
+   1.962
+  ],
+  "track_front": [
+   3.4536,
+   2.129
+  ],
+  "track_rear": [
+   3.4333,
+   2.116
+  ],
+  "wheel_radius": [
+   0.9472,
+   0.584
+  ]
+ },
+ "nodes": {
+  "rustwing_hauler": "root, body mesh (single fused mesh, 1 material)",
+  "kfb_entry": "empty, ground point beside the door / cockpit side (left, +X)",
+  "kfb_driver_hidden": "empty, cockpit centre where the character is hidden",
+  "kfb_camera_follow": "empty, suggested chase-camera position (target in anchors)",
+  "kfb_wheel_<FL|FR|RL|RR>": "EMPTY hub anchor (no mesh), origin = hub centre, spin axis local +X, steer axis local +Y (front pair); extras kfb_fused=true, kfb_radius"
+ },
+ "anchors": {
+  "kfb_driver_hidden": {
+   "pos": [
+    0,
+    1.9054,
+    0.326
+   ],
+   "note": "cockpit centre; character root hidden here (scale 0 / visible=false) while driving"
+  },
+  "kfb_entry": {
+   "pos": [
+    2.2098,
+    0,
+    0.326
+   ],
+   "side": "left (+X)",
+   "note": "ground point beside the door/cockpit side; hop-in arc ends at kfb_driver_hidden"
+  },
+  "kfb_wheel_FL": {
+   "pos": [
+    1.7269,
+    0.9466,
+    1.5915
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_FR": {
+   "pos": [
+    -1.7267,
+    0.9466,
+    1.5915
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_RL": {
+   "pos": [
+    1.7168,
+    0.9466,
+    -1.5915
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_RR": {
+   "pos": [
+    -1.7165,
+    0.9466,
+    -1.5915
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_camera_follow": {
+   "pos": [
+    0,
+    5.307,
+    -9.126
+   ],
+   "target": [
+    0,
+    1.895,
+    0
+   ],
+   "note": "suggested chase camera (scaled from bathtub kart 0,3.4,-9 → 0,1.8,-0.5)"
+  }
+ },
+ "collision_hints": {
+  "aabb": [
+   [
+    -2.1753,
+    0.0001,
+    -3.7031
+   ],
+   [
+    2.1727,
+    3.4459,
+    3.5927
+   ]
+  ],
+  "body_box": {
+   "center": [
+    0,
+    1.7229,
+    -0.0552
+   ],
+   "half_extents": [
+    1.8262,
+    1.5507,
+    3.502
+   ],
+   "note": "rough box (wings/fins/exhausts excluded by the 0.42/0.48 factors)"
+  },
+  "ground_contact_y": 0.0,
+  "wheel_cylinders": {
+   "FL": {
+    "center": [
+     1.7269,
+     0.9466,
+     1.5915
+    ],
+    "radius": 0.9472,
+    "width": 0.4736,
+    "axis": "X"
+   },
+   "FR": {
+    "center": [
+     -1.7267,
+     0.9466,
+     1.5915
+    ],
+    "radius": 0.9472,
+    "width": 0.4736,
+    "axis": "X"
+   },
+   "RL": {
+    "center": [
+     1.7168,
+     0.9466,
+     -1.5915
+    ],
+    "radius": 0.9472,
+    "width": 0.4736,
+    "axis": "X"
+   },
+   "RR": {
+    "center": [
+     -1.7165,
+     0.9466,
+     -1.5915
+    ],
+    "radius": 0.9472,
+    "width": 0.4736,
+    "axis": "X"
+   }
+  }
+ },
+ "known_limits": [
+  "Four big disc wheels half-covered by armour, fused: invisible physics wheels + hub anchors",
+  "Tall (2.12 m); large hauler scale (F_hauler)",
+  "Simplified with meshopt Permissive"
+ ],
+ "render_path": {
+  "lighting": "WS1 stage: NoToneMapping, sRGB output, Hemisphere 0xfff4e0/0x3a3226 1.25 + sun 1.8, no env map",
+  "three": "r170 GLTFLoader, EXT_texture_webp"
+ },
+ "wheels": {
+  "FL": {
+   "node": "kfb_wheel_FL",
+   "hub_glTF": [
+    1.7269,
+    0.9466,
+    1.5915
+   ],
+   "radius": 0.9472,
+   "fused": true
+  },
+  "FR": {
+   "node": "kfb_wheel_FR",
+   "hub_glTF": [
+    -1.7267,
+    0.9466,
+    1.5915
+   ],
+   "radius": 0.9472,
+   "fused": true
+  },
+  "RL": {
+   "node": "kfb_wheel_RL",
+   "hub_glTF": [
+    1.7168,
+    0.9466,
+    -1.5915
+   ],
+   "radius": 0.9472,
+   "fused": true
+  },
+  "RR": {
+   "node": "kfb_wheel_RR",
+   "hub_glTF": [
+    -1.7165,
+    0.9466,
+    -1.5915
+   ],
+   "radius": 0.9472,
+   "fused": true
+  }
+ },
+ "wheel_split": {
+  "attempted": true,
+  "result": "not split",
+  "reason": "source is ONE connected island (3D scan-like Meshy mesh); wheel surfaces merge into arches/skirts/struts, no clean cut boundary. Per V-273 addendum: keep fused, WS1 uses invisible physics wheels + these hub anchors."
+ }
+}

@@ -1,0 +1,149 @@
+{
+ "source": {
+  "path": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Iron_Phantom_Hovercar_1015142903_texture.glb",
+  "bytes": 135089216,
+  "sha256": "b5cc8d1feff682175c8e1600a3939d098757a8cc50417f68df8a0574f024dfad",
+  "tris": 3034002,
+  "islands": 1,
+  "unchanged": true
+ },
+ "browser": {
+  "file": "iron_phantom_hovercar_browser.glb",
+  "bytes": 3455524,
+  "sha256": "b9fc0061c0d311a8d7562684251f39b20c53ed65b5e9b8259a040136ebe3297d",
+  "tris": 100000,
+  "verts": 58578,
+  "simplify": [
+   {
+    "trisIn": 3034002,
+    "trisOut": 100000,
+    "error": 0.002846
+   }
+  ],
+  "textures": [
+   {
+    "slot": "base",
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 643516
+   },
+   {
+    "slot": "metalRough",
+    "mime": "image/webp",
+    "size": [
+     1024,
+     1024
+    ],
+    "bytes": 101028
+   },
+   {
+    "slot": "normal",
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 234180
+   }
+  ]
+ },
+ "params": {
+  "target_tris": 100000,
+  "error": 0.02,
+  "quality": 86,
+  "weights": {
+   "normal": 2,
+   "uv": 2
+  },
+  "tool": "@gltf-transform 4.5.1 \u00b7 meshoptimizer 1.1.1 \u00b7 sharp 0.35.5"
+ },
+ "frame": {
+  "F": 2.95,
+  "T": [
+   0,
+   0.7258091688156129,
+   0.0014823660254478456
+  ],
+  "meshy_front": "-X",
+  "bboxMeshy": [
+   [
+    -0.95073401927948,
+    -0.24603700637817383,
+    -0.3508729934692383
+   ],
+   [
+    0.9517390131950378,
+    0.2482990026473999,
+    0.3505299985408783
+   ]
+  ],
+  "cx": 0.0005024969577789307,
+  "cz": 0,
+  "ymin": -0.24603700637817383
+ },
+ "meas": {},
+ "cabinHalfW": 0.3224770128726959,
+ "decision": "V-311",
+ "date": "2026-10-15",
+ "belly": {
+  "aabb": [
+   [
+    -1.0348,
+    0.0001,
+    -2.806
+   ],
+   [
+    1.0338,
+    1.4579,
+    2.8031
+   ]
+  ],
+  "belly_clearance": 0.03,
+  "contact_bins": 26,
+  "bins": [
+   0.44,
+   0.2,
+   0.18,
+   0.12,
+   0.08,
+   0.06,
+   0.04,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.03,
+   0.02,
+   0.02,
+   0.03,
+   0.04,
+   0.04,
+   0.05,
+   0.06,
+   0.06,
+   0.02,
+   0,
+   0,
+   0.03,
+   0.06,
+   0.07,
+   0.07,
+   0.07,
+   0.07
+  ]
+ }
+}

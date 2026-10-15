@@ -1,0 +1,202 @@
+{
+ "schema": "kfb.vehicle-asset/0.1",
+ "id": "crimson_thunderjet",
+ "decision": "V-311",
+ "date": "2026-10-15",
+ "status": "CANDIDATE · asset + data only (WS1 builds runtime)",
+ "entryMode": "hop-in-hidden",
+ "entry_note": "Character jumps from kfb_entry to kfb_driver_hidden and is hidden (no visible seated driver, no steering-wheel/IK layer)",
+ "name_de": "03 Donner-Jet",
+ "meshy_name": "Crimson Thunderjet",
+ "class": "racer",
+ "locomotion": "hover",
+ "cockpit": "open",
+ "files": {
+  "browser": "crimson_thunderjet_browser.glb",
+  "check_image": "crimson_thunderjet_anker_pruefbild.jpg",
+  "receipt": "crimson_thunderjet_receipt.json",
+  "source": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Crimson_Thunderjet_1015062652_texture.glb (unchanged, sha256 87b855f64f8ad3d27ea11214f382eb5d376b0f0563d773f34408847427064c25)"
+ },
+ "donor_format": {
+  "ref": "bathtub_kart.kfb-vehicle.json (V-273): KayKit car frame, glTF +Z forward, +X = car left, +Y up; wheel spin about local X",
+  "physics": "WS1: Rapier + ecctrl EcctrlVehicle (ShapeCastWheel). Hover: no wheels; use the 4 kfb_hover_* points as thrust/ray origins (or invisible ShapeCast wheels at those points with ride height)."
+ },
+ "frame": {
+  "forward": "+Z",
+  "left": "+X",
+  "up": "+Y",
+  "origin": "ground below the bbox centre",
+  "source_front": "Meshy -X (rotated +90 deg about Y)"
+ },
+ "units": {
+  "glb_unit": "1 KayKit rig unit (figures load 1:1)",
+  "m_per_unit": 0.616381042,
+  "scale_factor_rig_per_meshy_unit": 2.95,
+  "note": "V-311 scale: racers 2.950, haulers 3.835 rig per Meshy unit (Meshy exports are normalised to 1.9 units length)"
+ },
+ "dimensions": {
+  "length": [
+   5.5993,
+   3.451
+  ],
+  "width": [
+   2.4557,
+   1.514
+  ],
+  "height": [
+   1.8452,
+   1.137
+  ],
+  "belly_clearance_centre": [
+   0,
+   0.0
+  ],
+  "pairs": "[rig units, metres]"
+ },
+ "nodes": {
+  "crimson_thunderjet": "root, body mesh (single fused mesh, 1 material)",
+  "kfb_entry": "empty, ground point beside the door / cockpit side (left, +X)",
+  "kfb_driver_hidden": "empty, cockpit centre where the character is hidden",
+  "kfb_camera_follow": "empty, suggested chase-camera position (target in anchors)",
+  "kfb_hover_<FL|FR|RL|RR>": "empty, hover thrust point on the hull underside"
+ },
+ "anchors": {
+  "kfb_driver_hidden": {
+   "pos": [
+    0,
+    0.9289,
+    -0.74
+   ],
+   "note": "cockpit centre; character root hidden here (scale 0 / visible=false) while driving"
+  },
+  "kfb_entry": {
+   "pos": [
+    1.4155,
+    0,
+    -0.74
+   ],
+   "side": "left (+X)",
+   "note": "ground point beside the door/cockpit side; hop-in arc ends at kfb_driver_hidden"
+  },
+  "kfb_hover_FL": {
+   "pos": [
+    0.6492,
+    0.4192,
+    1.793
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_FR": {
+   "pos": [
+    -0.6492,
+    0.421,
+    1.793
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RL": {
+   "pos": [
+    0.7371,
+    0.2767,
+    -1.793
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RR": {
+   "pos": [
+    -0.7371,
+    0.2767,
+    -1.793
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_camera_follow": {
+   "pos": [
+    0,
+    3.308,
+    -7.004
+   ],
+   "target": [
+    0,
+    1.015,
+    0
+   ],
+   "note": "suggested chase camera (scaled from bathtub kart 0,3.4,-9 → 0,1.8,-0.5)"
+  }
+ },
+ "collision_hints": {
+  "aabb": [
+   [
+    -1.2304,
+    0,
+    -2.8015
+   ],
+   [
+    1.2253,
+    1.8452,
+    2.7978
+   ]
+  ],
+  "body_box": {
+   "center": [
+    0,
+    0.9226,
+    -0.0018
+   ],
+   "half_extents": [
+    1.0314,
+    0.8303,
+    2.6877
+   ],
+   "note": "rough box (wings/fins/exhausts excluded by the 0.42/0.48 factors)"
+  },
+  "ground_contact_y": 0.0
+ },
+ "known_limits": [
+  "OPEN cockpit (roadster): seat + roll hoop visible; hop-in-hidden shows an empty seat; conflicts with Georg 15.10. \"ohne Cabrio-Situation\"",
+  "Front turbine intake fused (spin only via shader/decal)"
+ ],
+ "render_path": {
+  "lighting": "WS1 stage: NoToneMapping, sRGB output, Hemisphere 0xfff4e0/0x3a3226 1.25 + sun 1.8, no env map",
+  "three": "r170 GLTFLoader, EXT_texture_webp"
+ },
+ "hover": {
+  "FL": {
+   "node": "kfb_hover_FL",
+   "pos": [
+    0.6492,
+    0.4192,
+    1.793
+   ],
+   "underside_clearance": 0.4192
+  },
+  "FR": {
+   "node": "kfb_hover_FR",
+   "pos": [
+    -0.6492,
+    0.421,
+    1.793
+   ],
+   "underside_clearance": 0.421
+  },
+  "RL": {
+   "node": "kfb_hover_RL",
+   "pos": [
+    0.7371,
+    0.2767,
+    -1.793
+   ],
+   "underside_clearance": 0.2767
+  },
+  "RR": {
+   "node": "kfb_hover_RR",
+   "pos": [
+    -0.7371,
+    0.2767,
+    -1.793
+   ],
+   "underside_clearance": 0.2767
+  }
+ },
+ "hover_note": "Underside is (near) flat on y=0 in the Meshy export; ride height is a runtime value (suggest 0.35-0.6 rig)"
+}

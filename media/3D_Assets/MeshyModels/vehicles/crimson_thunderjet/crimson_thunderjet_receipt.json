@@ -1,0 +1,149 @@
+{
+ "source": {
+  "path": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Crimson_Thunderjet_1015062652_texture.glb",
+  "bytes": 68279320,
+  "sha256": "87b855f64f8ad3d27ea11214f382eb5d376b0f0563d773f34408847427064c25",
+  "tris": 701588,
+  "islands": 1,
+  "unchanged": true
+ },
+ "browser": {
+  "file": "crimson_thunderjet_browser.glb",
+  "bytes": 3610340,
+  "sha256": "b13d5bb6f2546da2acb3e1e98b5e46a208bb8697e2385140852e54cab54e245b",
+  "tris": 100000,
+  "verts": 62005,
+  "simplify": [
+   {
+    "trisIn": 701588,
+    "trisOut": 100000,
+    "error": 0.004143
+   }
+  ],
+  "textures": [
+   {
+    "slot": "base",
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 631808
+   },
+   {
+    "slot": "metalRough",
+    "mime": "image/webp",
+    "size": [
+     1024,
+     1024
+    ],
+    "bytes": 139926
+   },
+   {
+    "slot": "normal",
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 252184
+   }
+  ]
+ },
+ "params": {
+  "target_tris": 100000,
+  "error": 0.02,
+  "quality": 86,
+  "weights": {
+   "normal": 2,
+   "uv": 2
+  },
+  "tool": "@gltf-transform 4.5.1 \u00b7 meshoptimizer 1.1.1 \u00b7 sharp 0.35.5"
+ },
+ "frame": {
+  "F": 2.95,
+  "T": [
+   0,
+   0.9289225906133652,
+   -0.0025074765086174015
+  ],
+  "meshy_front": "-X",
+  "bboxMeshy": [
+   [
+    -0.9505259990692139,
+    -0.31488901376724243,
+    -0.4171299934387207
+   ],
+   [
+    0.948826014995575,
+    0.31095799803733826,
+    0.4153609871864319
+   ]
+  ],
+  "cx": -0.000849992036819458,
+  "cz": 0,
+  "ymin": -0.31488901376724243
+ },
+ "meas": {},
+ "cabinHalfW": 0.35984501242637634,
+ "decision": "V-311",
+ "date": "2026-10-15",
+ "belly": {
+  "aabb": [
+   [
+    -1.2304,
+    0,
+    -2.8015
+   ],
+   [
+    1.2253,
+    1.8452,
+    2.7978
+   ]
+  ],
+  "belly_clearance": 0,
+  "contact_bins": 6,
+  "bins": [
+   0.56,
+   0.49,
+   0.22,
+   0.2,
+   0.18,
+   0.16,
+   0.14,
+   0.08,
+   0.07,
+   0.07,
+   0.07,
+   0.07,
+   0.08,
+   0.07,
+   0.01,
+   0,
+   0,
+   0,
+   0.01,
+   0.01,
+   0.08,
+   0.08,
+   0.08,
+   0.08,
+   0.08,
+   0.08,
+   0.08,
+   0.08,
+   0.08,
+   0.08,
+   0.08,
+   0.08,
+   0.06,
+   0.06,
+   0.06,
+   0.06,
+   0.06,
+   0.08,
+   0.24,
+   0.35
+  ]
+ }
+}

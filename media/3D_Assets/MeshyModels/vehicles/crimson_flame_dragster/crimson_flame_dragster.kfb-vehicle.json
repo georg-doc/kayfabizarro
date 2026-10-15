@@ -1,0 +1,201 @@
+{
+ "schema": "kfb.vehicle-asset/0.1",
+ "id": "crimson_flame_dragster",
+ "decision": "V-311",
+ "date": "2026-10-15",
+ "status": "CANDIDATE · asset + data only (WS1 builds runtime)",
+ "entryMode": "hop-in-hidden",
+ "entry_note": "Character jumps from kfb_entry to kfb_driver_hidden and is hidden (no visible seated driver, no steering-wheel/IK layer)",
+ "name_de": "02 Flammen-Dragster",
+ "meshy_name": "Crimson Flame Dragste",
+ "class": "racer",
+ "locomotion": "hover",
+ "cockpit": "closed",
+ "files": {
+  "browser": "crimson_flame_dragster_browser.glb",
+  "check_image": "crimson_flame_dragster_anker_pruefbild.jpg",
+  "receipt": "crimson_flame_dragster_receipt.json",
+  "source": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Crimson_Flame_Dragste_1015142616_texture.glb (unchanged, sha256 f67558ec4bec6171412bb3afdca6b08d65da1b81008d3ab83422e23231d2b262)"
+ },
+ "donor_format": {
+  "ref": "bathtub_kart.kfb-vehicle.json (V-273): KayKit car frame, glTF +Z forward, +X = car left, +Y up; wheel spin about local X",
+  "physics": "WS1: Rapier + ecctrl EcctrlVehicle (ShapeCastWheel). Hover: no wheels; use the 4 kfb_hover_* points as thrust/ray origins (or invisible ShapeCast wheels at those points with ride height)."
+ },
+ "frame": {
+  "forward": "+Z",
+  "left": "+X",
+  "up": "+Y",
+  "origin": "ground below the bbox centre",
+  "source_front": "Meshy -X (rotated +90 deg about Y)"
+ },
+ "units": {
+  "glb_unit": "1 KayKit rig unit (figures load 1:1)",
+  "m_per_unit": 0.616381042,
+  "scale_factor_rig_per_meshy_unit": 2.95,
+  "note": "V-311 scale: racers 2.950, haulers 3.835 rig per Meshy unit (Meshy exports are normalised to 1.9 units length)"
+ },
+ "dimensions": {
+  "length": [
+   5.6028,
+   3.453
+  ],
+  "width": [
+   3.1511,
+   1.942
+  ],
+  "height": [
+   1.9263,
+   1.187
+  ],
+  "belly_clearance_centre": [
+   0.268,
+   0.165
+  ],
+  "pairs": "[rig units, metres]"
+ },
+ "nodes": {
+  "crimson_flame_dragster": "root, body mesh (single fused mesh, 1 material)",
+  "kfb_entry": "empty, ground point beside the door / cockpit side (left, +X)",
+  "kfb_driver_hidden": "empty, cockpit centre where the character is hidden",
+  "kfb_camera_follow": "empty, suggested chase-camera position (target in anchors)",
+  "kfb_hover_<FL|FR|RL|RR>": "empty, hover thrust point on the hull underside"
+ },
+ "anchors": {
+  "kfb_driver_hidden": {
+   "pos": [
+    0,
+    1.0544,
+    -0.1502
+   ],
+   "note": "cockpit centre; character root hidden here (scale 0 / visible=false) while driving"
+  },
+  "kfb_entry": {
+   "pos": [
+    1.5963,
+    0,
+    -0.1502
+   ],
+   "side": "left (+X)",
+   "note": "ground point beside the door/cockpit side; hop-in arc ends at kfb_driver_hidden"
+  },
+  "kfb_hover_FL": {
+   "pos": [
+    0.9049,
+    0,
+    1.793
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_FR": {
+   "pos": [
+    -0.9049,
+    0,
+    1.793
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RL": {
+   "pos": [
+    0.9394,
+    0.1421,
+    -1.793
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RR": {
+   "pos": [
+    -0.9394,
+    0.1422,
+    -1.793
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_camera_follow": {
+   "pos": [
+    0,
+    3.408,
+    -7.004
+   ],
+   "target": [
+    0,
+    1.06,
+    0
+   ],
+   "note": "suggested chase camera (scaled from bathtub kart 0,3.4,-9 → 0,1.8,-0.5)"
+  }
+ },
+ "collision_hints": {
+  "aabb": [
+   [
+    -1.5774,
+    0.0008,
+    -2.8014
+   ],
+   [
+    1.5737,
+    1.9263,
+    2.8014
+   ]
+  ],
+  "body_box": {
+   "center": [
+    0,
+    0.9631,
+    0.0
+   ],
+   "half_extents": [
+    1.3235,
+    0.8668,
+    2.6893
+   ],
+   "note": "rough box (wings/fins/exhausts excluded by the 0.42/0.48 factors)"
+  },
+  "ground_contact_y": 0.0
+ },
+ "known_limits": [
+  "Rear jet nozzles + side exhausts fused (VFX origin = hover/exhaust anchors only)"
+ ],
+ "render_path": {
+  "lighting": "WS1 stage: NoToneMapping, sRGB output, Hemisphere 0xfff4e0/0x3a3226 1.25 + sun 1.8, no env map",
+  "three": "r170 GLTFLoader, EXT_texture_webp"
+ },
+ "hover": {
+  "FL": {
+   "node": "kfb_hover_FL",
+   "pos": [
+    0.9049,
+    0,
+    1.793
+   ],
+   "underside_clearance": 0
+  },
+  "FR": {
+   "node": "kfb_hover_FR",
+   "pos": [
+    -0.9049,
+    0,
+    1.793
+   ],
+   "underside_clearance": 0
+  },
+  "RL": {
+   "node": "kfb_hover_RL",
+   "pos": [
+    0.9394,
+    0.1421,
+    -1.793
+   ],
+   "underside_clearance": 0.1421
+  },
+  "RR": {
+   "node": "kfb_hover_RR",
+   "pos": [
+    -0.9394,
+    0.1422,
+    -1.793
+   ],
+   "underside_clearance": 0.1422
+  }
+ },
+ "hover_note": "Underside is (near) flat on y=0 in the Meshy export; ride height is a runtime value (suggest 0.35-0.6 rig)"
+}

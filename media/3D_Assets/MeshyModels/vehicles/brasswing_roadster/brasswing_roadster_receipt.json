@@ -1,0 +1,149 @@
+{
+ "source": {
+  "path": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Brasswing_Roadster_1015142809_texture.glb",
+  "bytes": 82624092,
+  "sha256": "25788cb96005ee7f0e955d984f5fadcb16f7b68d009a4908983a331de30fe9b1",
+  "tris": 930460,
+  "islands": 1,
+  "unchanged": true
+ },
+ "browser": {
+  "file": "brasswing_roadster_browser.glb",
+  "bytes": 3955780,
+  "sha256": "0f937a963ef9ee6e6c88ef83bc05da910e9bb7b12f29194f96a68b48feed60f3",
+  "tris": 99992,
+  "verts": 65323,
+  "simplify": [
+   {
+    "trisIn": 930460,
+    "trisOut": 99992,
+    "error": 0.003088
+   }
+  ],
+  "textures": [
+   {
+    "slot": "base",
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 827508
+   },
+   {
+    "slot": "metalRough",
+    "mime": "image/webp",
+    "size": [
+     1024,
+     1024
+    ],
+    "bytes": 116592
+   },
+   {
+    "slot": "normal",
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 319118
+   }
+  ]
+ },
+ "params": {
+  "target_tris": 100000,
+  "error": 0.02,
+  "quality": 86,
+  "weights": {
+   "normal": 2,
+   "uv": 2
+  },
+  "tool": "@gltf-transform 4.5.1 \u00b7 meshoptimizer 1.1.1 \u00b7 sharp 0.35.5"
+ },
+ "frame": {
+  "F": 2.95,
+  "T": [
+   0,
+   0.6832258947193623,
+   0.0009837895631790161
+  ],
+  "meshy_front": "-X",
+  "bboxMeshy": [
+   [
+    -0.9498580098152161,
+    -0.2316019982099533,
+    -0.4514920115470886
+   ],
+   [
+    0.9505249857902527,
+    0.23199200630187988,
+    0.4505949914455414
+   ]
+  ],
+  "cx": 0.00033348798751831055,
+  "cz": 0,
+  "ymin": -0.2316019982099533
+ },
+ "meas": {},
+ "cabinHalfW": 0.2969000041484833,
+ "decision": "V-311",
+ "date": "2026-10-15",
+ "belly": {
+  "aabb": [
+   [
+    -1.3316,
+    0,
+    -2.803
+   ],
+   [
+    1.329,
+    1.3676,
+    2.8029
+   ]
+  ],
+  "belly_clearance": 0,
+  "contact_bins": 40,
+  "bins": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ }
+}
