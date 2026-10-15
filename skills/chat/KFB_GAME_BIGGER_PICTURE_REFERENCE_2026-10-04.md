@@ -228,3 +228,14 @@ No new NPC humor engine, ChatterBox approval, added MVP-0 scope, global V-number
 **Comic mechanism:** sincere claim → attractive pattern or evidence jump → optional real question → self-revealing contradiction or source lookup → reader-owned inference/continued play. The funny Resident can revise, keep role-playing or suspend judgment without a universal wink or automatically validating the original claim. This complements R1.3 life joy, R1.4 authentic complaint and R1.5 Homer-like near-self-diagnosis.
 
 **Production and player freedom:** preserve real Card/Deck provenance and WS0's editorial dialogue control, existing ChatterBox and current WS1 R3F stage, without creating a second narrative authority, political-belief database, source ranking HUD, new V-number or MVP feature gate. `PULL, DON'T GATE` remains the governing design principle. One current next WS0 gate stays `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.
+
+
+### R1.7 · Georg: Joyful Fallibility & Playing with Explanations (15 Oct 2026)
+
+KFB Residents may delightedly share an extravagant explanation and, when questioned, freely admit it is an **improbable but entertaining story**. Their intrinsic joy lies in exploring possible worlds and connections with others, and in laughing at their own mistaken assumptions—not in possessing a single unquestionable Truth. The character's philosophical mask and worldview are lenses for performance, not total personal identities.
+
+**Three levels remain distinct:** established event/source; interpretation or hypothesis with varying evidence; overt fiction or imaginative tale. Every narrative may be encountered, discussed and satirized; not all allegations are equally supported. The player's free role is to ask, investigate, challenge, enjoy, reject, suspend judgment or walk on. The Socratic dialogue/elenchus and its possibility of aporia are useful *method donors*: fruitful questions need not supply one compulsory conclusion. Source: https://plato.stanford.edu/entries/socrates/ .
+
+**Reader-owned Closure:** the resident can expose their own unjustified inferential leap and still love the dramatic invention. Visual pop-up facades, physical gags, authentic KFB Card and character acting may reveal the missing bridge without a lecture. No covert viewpoint conversion, NPC ideological scoring, new claims promoted into Card canon or compulsory gullible/skeptical persona.
+
+Full WS0 owner record: replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md section R1.7. Earlier R1.3 life joy and R1.6 historical evidence classifications stay authoritative. This is not WS1 implementation or a new gate. The sole next WS0 intake remains WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT.
