@@ -61,3 +61,18 @@ Public research references: https://plato.stanford.edu/entries/heidegger/ ; http
 **Evidence status:** documentation and exact GitHub branch/file readbacks only; zero player scene renders, world state/life simulation, actual 3D repair choreography, browser, performance or live Site proof. No separate runtime owner, WS1 patch, merge, new V-number or promotion.
 
 **One next gate (unchanged): `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`**. WS0 may carry this corrected joyful role/repair dramaturgy into the already open #404 authentic Card/Billboard/Meshy lighting/metatheatre comparison. Full repair-gameplay integration needs a separate later owner-approved implementation and actual visual/interaction proof.
+
+
+---
+
+## R1.4 Return addendum · 2026-10-15 · Complaint and joyful recommitment
+**GEORG CREATIVE REFINEMENT CAPTURED, NO NEW RUNTIME OR ASSIGNMENT.** R1.3 life-affirming continuity remains the canonical correction of R1.2's mistaken audience-dependence. R1.4 adds the Resident's legitimate ability to lament, complain, feel exhausted, express resentment or momentarily reject their lot **without ceasing to take pleasure, pride and purpose in that flawed role at another moment**. Not every Resident must resume, be healed, make a joke, forget past harm or expose their trauma. Self-awareness and self-deprecation may show through a distinct reaction, a tiny mime/gesture or one accepted existing dialogue beat; occasional fourth-wall distance is authored, not a universal NPC catchphrase.
+
+**Evidence-based conceptual connection:** Epictetus, `Enchiridion` §17 compares life to playing the assigned part well, while §5 differentiates events from judgments. This does **not** imply Stoics required positive thinking, insisted roles were always freely chosen or condoned injustice. KFB adds genuine grumbling, tragicomic failure, specific role-pride and choice as its own play grammar.
+Sources: https://epictetus-enchiridion.org/en/chapters/enchiridion/17/ ; https://plato.stanford.edu/entries/epictetus/ ; https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0237%3Atext%3Denc%3Achapter%3D5 .
+
+**Existing WS0 files:** `replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md` (R1.4 appendix; R1–R1.3 intact), `skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md` (global editorial summary), this Return, and additive WS0 CHANGELOG where available. Existing issue #404 remains the single open WS0 lighting/metatheatre intake. No new V-number, PR, independent Stage, dialogue pool change or UI/runtime owner.
+
+**Actual checks:** exact intended GitHub branch head and edited source file readbacks, structural source/contract checks only; no executed WS1 scene, resident acting/browser test, visual design acceptance or source-isolated donor render. No claim that these fictional Resident reactions already run.
+
+**One next gate remains `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.** WS0 may use one source-backed complaint→context shift→owned self-awareness/choice example as editorial guidance to the current two-actor Card/Billboard lighting stage if useful, without manufacturing a second MVP feature gate.
