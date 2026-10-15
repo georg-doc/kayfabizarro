@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Antworten auf §27/§28 · Paletten-Vorlage frei · Fluff-Farbschema gefunden
+- **Vorlagen-Zeile V-270 (Paletten als Harmonie-Systeme): freigegeben** wie beschrieben (Lab `palettes.ts`/`ENV_ROLES` 1:1, Rollen je Bühnenteil, Normalen-Kriterium waagrecht/senkrecht, Genre-Tabelle als Vorschlag). Georg urteilt an den sechs Einzelbildern plus Bildpaar alt | neu.
+- **Story-Tint-Quelle (Fluff-Farbschema):** `storymode.v4.js` – die sechs Story-Modes als Farbräume, gemessen aus der gedruckten Story-Mode-Tabelle (kayfabizarro.pages.dev #kfb), mit `base`/`accent` je Modus, `deep`/`light` abgeleitet, weicher Übergang 1,4 s. Liegt jetzt auf dem Register-Branch unter `replies/donors/storymode.v4.js` (Original: KFB Shader Duo Tone v1 / kfb-bg-shader-kit 2026-09-02). Daten 1:1 übernehmen, Tint höchstens ~15 % über der Palette.
+- **Daten-Pin:** bitte von @a71de421 auf **@52adc8f1** (Generator-Fix, `anti_rules_toolkit` jetzt verified, alle anderen Decks bytegleich). Danach darf Anti-Rules gezeigt werden, wenn das OCR-Audit es als SAFE führt.
+- **Gedankenstrich in der Blase (§27.2/4):** Schriftfrage, Text bleibt; nicht ändern.
+
 ## 15.10.2026 · Kartentitel vereinheitlicht (V-271) · neuer Daten-Pin
 - **Branch** `data/kfb-card-title-case-2026-10-15` @eade4aec (Parent @233efd5): 1503 Titel in 44 Decks von Versalien auf normale Schreibweise, z. B. „Jean-Jacques Rousseau“; Akronyme bleiben groß. Die Druck-Schreibweise steht in `cardNamePrint`. Liste alt → neu: `media/kfb/CARD_TITLE_CASE_R1.md`.
 - **Bitte Karten-Daten auf @eade4aec pinnen** (statt @233efd5). Systeme, die über den Titel zuordnen, müssen den neuen Titel nehmen; `cardNamePrint` nur für Abgleich mit dem Kartenbild.

@@ -3652,6 +3652,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-278",
+   "date": "2026-10-15",
+   "area": "Dialog",
+   "verdict": "PASS",
+   "text": "Suno-Test: Die Deck-Tracks funktionieren mit Musik hervorragend; Spoken Word auch, aber besser ohne „Wrestling-Promo“ im Style. Georgs Styles: (1) Rockabilly-Doo-Wop (Philosophy 152 BPM, Hilfe ich bin ein Mensch 168 BPM, female): „Rockabilly doo-wop, tape slapback echo; baritone saxophone punches and tambourine marking a firm backbeat; deep, gritty male baritone, fast-talking deadpan with precise diction and sudden accelerations; loping triplet sway“. (2) Jazz-Funk (Monomyth 110 BPM): „Jazz-funk, midtempo pulse; solo male voice in dry, deadpan, jagged stop-start narration with meta-ironic noir-cartoon theatricality; close-mic room intimacy, 1970s broadcast mono tape saturation; a cappella modular space shaped by vocal call-and-response stabs, ending in a loopable refrain“. Negativ-Tags (-music, -instruments, -audience) je nach Ziel weglassen. Später Varianten male/female, young/old.",
+   "values": {},
+   "owner": "Georg (Suno) · WS0 (Texte)",
+   "check": "Hub b16, drei Suno-Tracks",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Tracks tragen; Styles festhalten, damit weitere Decks gleich klingen.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-279",
+   "date": "2026-10-15",
+   "area": "Dialog",
+   "verdict": "TBD",
+   "text": "Deck-Songs als Spiel- und Marketing-Element: Hat ein NPC ein Deck komplett, fragt er (Chat-Dialog, nicht zwingend vertont), ob er „sein Deck performen“ soll – Belohnungs-Song mit dem ganzen Deck als Sammelanreiz. Text karaoke-artig über den Karten bzw. im Spiel (Transkript mit Zeitmarken), Gesicht mit Wireface oder Foto-Gesichtern. Dazu prüfen: Lead-Vocal-Stem isolieren und je Karte schneiden (Zeitmarken in takes.csv). Auch außerhalb des Spiels fürs Deck-Marketing.",
+   "values": {},
+   "owner": "WS0 (Konzept, Schnitt-Test) → WS1 später",
+   "check": "Schnitt-Test an einem Stem",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein ganzes Deck als Song ist Belohnung, Sammelanreiz und Marketing zugleich.",
+   "applies": "später"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3714,7 +3744,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:378",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:388",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

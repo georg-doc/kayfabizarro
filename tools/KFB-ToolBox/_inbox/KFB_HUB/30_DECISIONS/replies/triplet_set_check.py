@@ -17,6 +17,11 @@ OPENERS = ["Welcome to", "Remember", "You know", "Do you know", "Ever tasted", "
            "Which brings us to", "Meanwhile elsewhere", "No wait", "Before we continue", "Here is something nobody asked for",
            "This one has a rule", "Nobody warned us about", "The thing about", "Everyone agrees", "Not a metaphor",
            "I used to believe", "You with the card in your hand", "You played", "The deck insists on"]
+# Opener-Familien (V-280): Varianten derselben Familie in einem Track nur mit mindestens FAMILY_GAP Zeilen Abstand.
+FAMILIES = {"heard": ["Did you hear of", "Have you heard of"], "know": ["You know", "Do you know", "You know the thing with"],
+            "try": ["Did you ever try", "Ever tasted"], "nobody": ["Nobody warned us about", "Here is something nobody asked for"],
+            "thing": ["The thing about", "You know the thing with"]}
+FAMILY_GAP = 10
 SUFFIXES = ("'s", "s'", "ies", "es", "s", "ed", "d", "ing", "ly", "er", "est", "n't")
 WORD = re.compile(r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)*")
 
@@ -61,6 +66,12 @@ def main(deck_path, set_path):
                 print(f"{row['line_no']:>3} FAIL opener nicht im Pool: {op}"); fail += 1
             if op in seen_openers:
                 print(f"{row['line_no']:>3} FAIL opener doppelt (schon Zeile {seen_openers[op]}): {op}"); fail += 1
+            ln = int(row["line_no"])
+            for fam, members in FAMILIES.items():
+                if op in members:
+                    for other, oln in seen_openers.items():
+                        if other != op and other in members and ln - int(oln) < FAMILY_GAP:
+                            print(f"{row['line_no']:>3} FAIL Opener-Familie „{fam}“ zu nah an Zeile {oln} ({other})"); fail += 1
             seen_openers[op] = row["line_no"]
         if kind != "card":
             print(f"{row['line_no']:>3} {kind.upper():5} {line}")

@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Suno-Styles, Deck-Songs, WS1-Antworten
+- V-278 Suno-Tracks PASS mit Georgs zwei Styles (Rockabilly-Doo-Wop, Jazz-Funk), Spoken Word ohne Wrestling-Promo. V-279 (TBD) Deck-Songs als NPC-Belohnung/Marketing, Karaoke-Text, Stem-Schnitt je Karte.
+- WS1: Paletten-Vorlage V-270 frei; Story-Tint-Quelle storymode.v4.js (replies/donors); Daten-Pin @52adc8f1. Wrinkle-Rumble-Track in Arbeit.
+
 ## 2026-10-15 · Badewannen-Kart vorbereitet
 - Kart-Asset fertig (MeshyModels/_browser/bathtub_kart): 7,3 MB, J10/J17-Fahrzeugformat (Räder, Lenkung, Turbinen-Glow, Hebel, Sitz/Lenkrad Medium+Large, Klappknoten + Glow für Flugmodus), Lenkrad-Requisit in 2 Varianten, Driving-Clip aus Motion-Bibliothek; Hub kt01/kt02.
 

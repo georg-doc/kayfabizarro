@@ -29,6 +29,7 @@
 ## Opener (eigene Schicht)
 - Nur aus dem freigegebenen Pool (V-218 KEEP, V-229, dazu Georgs „Welcome to / Remember / You know“). Die Liste steht im Prüfskript (`OPENERS`).
 - **Ein Deck = ein Suno-Track** unter 5000 Zeichen inklusive Intro und Outro (V-277: jeder Song kostet einen Download-Credit). Jeder Opener höchstens einmal pro Track; so viele Zeilen mit Opener, wie das Zeichenbudget erlaubt (Ziel mindestens ein Drittel, gleichmäßig verteilt, kurze Opener bevorzugt).
+- **Kein Opener wiederholt sich in einem Track.** Varianten derselben Familie (z. B. „Did you hear of“ / „Have you heard of“, „You know“ / „Do you know“) nur mit mindestens 10 Zeilen Abstand (V-280); die Familien stehen im Prüfskript.
 - Der Opener muss grammatisch und inhaltlich zur Karte passen: „I once met“ nur vor Personen, „Ever tasted“ nur vor Essbarem, „You played“ nur, wenn die Karte gespielt wird.
 
 ## Set-Aufbau (Suno-Sprechtext, ohne Musik aufnehmbar)
