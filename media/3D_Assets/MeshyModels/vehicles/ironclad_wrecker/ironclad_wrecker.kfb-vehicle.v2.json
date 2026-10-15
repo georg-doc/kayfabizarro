@@ -1,0 +1,329 @@
+{
+ "schema": "kfb.vehicle-asset/0.2",
+ "id": "ironclad_wrecker",
+ "decision": "V-311 v2 (Georg 15.10.: cars bigger so FB plausibly fits; one size for medium rigs)",
+ "date": "2026-10-15",
+ "status": "CANDIDATE · asset + data only (WS1 builds runtime)",
+ "entryMode": "hop-in-hidden",
+ "entry_note": "Character jumps from kfb_entry to kfb_driver_hidden and is hidden (no visible seated driver, no steering-wheel/IK layer)",
+ "name_de": "07 Abschlepp-Koloss",
+ "meshy_name": "Ironclad Wrecker",
+ "class": "hauler",
+ "locomotion": "wheels",
+ "cockpit": "closed",
+ "files": {
+  "browser": "ironclad_wrecker_browser.v2.glb",
+  "check_image": "ironclad_wrecker_anker_pruefbild.jpg (v1 scale; anchor layout identical, all positions x1.92)",
+  "receipt": "ironclad_wrecker_receipt.json",
+  "source": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Ironclad_Wrecker_1015142846_texture.glb (unchanged, sha256 0df85c42988d0272a455b6c5eda88a0682b4598a02c9e1bcb4b37570184c60c8)",
+  "browser_v1": "ironclad_wrecker_browser.glb"
+ },
+ "donor_format": {
+  "ref": "bathtub_kart.kfb-vehicle.json (V-273): KayKit car frame, glTF +Z forward, +X = car left, +Y up; wheel spin about local X",
+  "physics": "WS1: Rapier + ecctrl EcctrlVehicle (ShapeCastWheel). Wheels are fused into the body (single Meshy island, not cleanly cuttable): use invisible physics wheels at the kfb_wheel_* hub anchors; no wheel meshes to spin/steer."
+ },
+ "frame": {
+  "forward": "+Z",
+  "left": "+X",
+  "up": "+Y",
+  "origin": "ground below the midpoint of the two axles",
+  "source_front": "Meshy -X (rotated +90 deg about Y)"
+ },
+ "units": {
+  "glb_unit": "1 KayKit rig unit (figures load 1:1)",
+  "m_per_unit": 0.616381042,
+  "scale_factor_rig_per_meshy_unit": 7.3632,
+  "note": "V-311 v2 scale: racers 5.664, haulers 7.363 rig per Meshy unit (= v1 x 1.92; haulers keep their extra x1.3)"
+ },
+ "dimensions": {
+  "length": [
+   14.0131,
+   8.637
+  ],
+  "width": [
+   5.3526,
+   3.299
+  ],
+  "height": [
+   5.1852,
+   3.196
+  ],
+  "belly_clearance_centre": [
+   0.0288,
+   0.018
+  ],
+  "pairs": "[rig units, metres]",
+  "wheelbase": [
+   7.9523,
+   4.902
+  ],
+  "track_front": [
+   4.6295,
+   2.854
+  ],
+  "track_rear": [
+   4.8376,
+   2.982
+  ],
+  "wheel_radius": [
+   1.2518,
+   0.772
+  ]
+ },
+ "nodes": {
+  "ironclad_wrecker": "root, body mesh (single fused mesh, 1 material)",
+  "kfb_entry": "empty, ground point beside the door / cockpit side (left, +X)",
+  "kfb_driver_hidden": "empty, cockpit centre where the character is hidden",
+  "kfb_camera_follow": "empty, suggested chase-camera position (target in anchors)",
+  "kfb_wheel_<FL|FR|RL|RR>": "EMPTY hub anchor (no mesh), origin = hub centre, spin axis local +X, steer axis local +Y (front pair); extras kfb_fused=true, kfb_radius"
+ },
+ "anchors": {
+  "kfb_driver_hidden": {
+   "pos": [
+    0.0,
+    2.5162,
+    0.8099
+   ],
+   "note": "cockpit centre; character root hidden here (scale 0 / visible=false) while driving"
+  },
+  "kfb_entry": {
+   "pos": [
+    3.0545,
+    0.0,
+    0.8099
+   ],
+   "side": "left (+X)",
+   "note": "ground point beside the door/cockpit side; hop-in arc ends at kfb_driver_hidden"
+  },
+  "kfb_wheel_FL": {
+   "pos": [
+    2.3113,
+    1.2497,
+    3.9761
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_FR": {
+   "pos": [
+    -2.3182,
+    1.2497,
+    3.9761
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_RL": {
+   "pos": [
+    2.4154,
+    1.2497,
+    -3.9761
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_wheel_RR": {
+   "pos": [
+    -2.4223,
+    1.2497,
+    -3.9761
+   ],
+   "note": "EMPTY hub anchor (wheel geometry fused into the body); spin axis local X, steer axis local Y (front)"
+  },
+  "kfb_camera_follow": {
+   "pos": [
+    0.0,
+    8.4115,
+    -17.5258
+   ],
+   "target": [
+    0.0,
+    2.857,
+    0.0
+   ],
+   "note": "suggested chase camera (scaled from bathtub kart 0,3.4,-9 → 0,1.8,-0.5)"
+  }
+ },
+ "collision_hints": {
+  "aabb": [
+   [
+    -2.6799,
+    0.0019,
+    -8.0319
+   ],
+   [
+    2.6726,
+    5.1852,
+    5.9812
+   ]
+  ],
+  "body_box": {
+   "center": [
+    0.0,
+    2.5926,
+    -1.0253
+   ],
+   "half_extents": [
+    2.2481,
+    2.3334,
+    6.7263
+   ],
+   "note": "rough box (wings/fins/exhausts excluded by the 0.42/0.48 factors)"
+  },
+  "ground_contact_y": 0.0,
+  "wheel_cylinders": {
+   "FL": {
+    "center": [
+     2.3113,
+     1.2497,
+     3.9761
+    ],
+    "radius": 1.2518,
+    "width": 0.6259,
+    "axis": "X"
+   },
+   "FR": {
+    "center": [
+     -2.3182,
+     1.2497,
+     3.9761
+    ],
+    "radius": 1.2518,
+    "width": 0.6259,
+    "axis": "X"
+   },
+   "RL": {
+    "center": [
+     2.4154,
+     1.2497,
+     -3.9761
+    ],
+    "radius": 1.2518,
+    "width": 0.6259,
+    "axis": "X"
+   },
+   "RR": {
+    "center": [
+     -2.4223,
+     1.2497,
+     -3.9761
+    ],
+    "radius": 1.2518,
+    "width": 0.6259,
+    "axis": "X"
+   }
+  }
+ },
+ "known_limits": [
+  "Grille lettering MACK (trademark): overpaint before public use -> v2: overpainted (stickers_v2)",
+  "Crane arm + hook fused into the body (no rig)",
+  "Wheels fully enclosed by arch covers (fused): invisible physics wheels + hub anchors only",
+  "Large hauler scale (F_hauler)"
+ ],
+ "render_path": {
+  "lighting": "WS1 stage: NoToneMapping, sRGB output, Hemisphere 0xfff4e0/0x3a3226 1.25 + sun 1.8, no env map",
+  "three": "r170 GLTFLoader, EXT_texture_webp"
+ },
+ "wheels": {
+  "FL": {
+   "node": "kfb_wheel_FL",
+   "hub_glTF": [
+    2.3113,
+    1.2497,
+    3.9761
+   ],
+   "radius": 1.2518,
+   "fused": true
+  },
+  "FR": {
+   "node": "kfb_wheel_FR",
+   "hub_glTF": [
+    -2.3182,
+    1.2497,
+    3.9761
+   ],
+   "radius": 1.2518,
+   "fused": true
+  },
+  "RL": {
+   "node": "kfb_wheel_RL",
+   "hub_glTF": [
+    2.4154,
+    1.2497,
+    -3.9761
+   ],
+   "radius": 1.2518,
+   "fused": true
+  },
+  "RR": {
+   "node": "kfb_wheel_RR",
+   "hub_glTF": [
+    -2.4223,
+    1.2497,
+    -3.9761
+   ],
+   "radius": 1.2518,
+   "fused": true
+  }
+ },
+ "wheel_split": {
+  "attempted": true,
+  "result": "not split",
+  "reason": "source is ONE connected island (3D scan-like Meshy mesh); wheel surfaces merge into arches/skirts/struts, no clean cut boundary. Per V-273 addendum: keep fused, WS1 uses invisible physics wheels + these hub anchors."
+ },
+ "version": "v2",
+ "rigClassScale": {
+  "medium": 1.0,
+  "large": 1.33,
+  "note": "medium = this file (FrizzleBob v5b / Rig_Medium seated fits the closed 02 cabin). large = PROPOSAL only: Orc Brute (Rig_Large) needs the car x1.33 larger again, measured the same way in 02 (smallest x2.545 of v1, 2.545/1.920 = 1.326, rounded up)"
+ },
+ "seat_fit": {
+  "reference_vehicle": "crimson_flame_dragster",
+  "figure": "FB_TEMPLATE_LOOK_v5b.glb (Rig_Medium, ears included)",
+  "pose": "KayKit Character Animations 1.1 · Rig_Medium_Simulation.glb · Sit_Chair_Idle @1.0 s",
+  "placement": "pelvis x/z on kfb_driver_hidden, facing +Z; lowest foot on the hull floor (raycast down from kfb_driver_hidden)",
+  "method": "three.js Raycaster against the 100k-tri browser hull: head+ears up, shoulders +-X, hips down; inside = first hit is an exit face",
+  "criteria": "head/ears >= 5 cm below roof, shoulders inside side walls, hips above floor",
+  "smallest_factor_vs_v1": 1.911,
+  "chosen_factor_vs_v1": 1.92,
+  "margins_at_chosen_in_02": {
+   "roof_over_head_ears": [
+    0.0948,
+    0.058
+   ],
+   "shoulder_wall_left": [
+    1.1879,
+    0.732
+   ],
+   "shoulder_wall_right": [
+    1.2017,
+    0.741
+   ],
+   "hips_over_floor": [
+    0.2162,
+    0.133
+   ],
+   "pairs": "[rig units, metres]"
+  },
+  "note": "same factor applied to all 11 racers (relative sizes kept); only 02 is guaranteed by measurement, other cabins were not fitted individually"
+ },
+ "stickers_v2": {
+  "method": "logo areas projected from ortho views onto the mesh and repainted in UV space (base colour WebP 2048; normal flattened, metal/rough levelled under the patch)",
+  "regions": [
+   {
+    "what": "MACK grille plate",
+    "fill": "darkcore",
+    "rgb": [
+     76,
+     77,
+     74
+    ]
+   }
+  ]
+ },
+ "v2_build": {
+  "from": "v1 browser GLB rescaled x1.92 about the ground origin (geometry, UVs, simplification identical to v1)",
+  "bytes": 5422748,
+  "sha256": "b5accf3f49212b89007ac15ccdfdeb3dffa64c40c7070d59cd6c3c910bd87326",
+  "tris": 119990,
+  "v1_sha256": "f02c2bcd24f10892496f4d677f12e121b890e3a99ddb2fb11e76e27bcae67aa7",
+  "textures_replaced": "ironclad_wrecker_base_v2_sticker.webp + ironclad_wrecker_normal_v2_sticker.webp + ironclad_wrecker_mr_v2_sticker.webp"
+ }
+}

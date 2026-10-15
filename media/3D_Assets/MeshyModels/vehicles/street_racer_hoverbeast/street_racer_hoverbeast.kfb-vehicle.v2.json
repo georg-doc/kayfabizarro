@@ -1,0 +1,270 @@
+{
+ "schema": "kfb.vehicle-asset/0.2",
+ "id": "street_racer_hoverbeast",
+ "decision": "V-311 v2 (Georg 15.10.: cars bigger so FB plausibly fits; one size for medium rigs)",
+ "date": "2026-10-15",
+ "status": "CANDIDATE · asset + data only (WS1 builds runtime)",
+ "entryMode": "hop-in-hidden",
+ "entry_note": "Character jumps from kfb_entry to kfb_driver_hidden and is hidden (no visible seated driver, no steering-wheel/IK layer)",
+ "name_de": "13 Straßen-Biest",
+ "meshy_name": "Street Racer Hoverbea",
+ "class": "racer",
+ "locomotion": "hover",
+ "cockpit": "closed",
+ "files": {
+  "browser": "street_racer_hoverbeast_browser.v2.glb",
+  "check_image": "street_racer_hoverbeast_anker_pruefbild.jpg (v1 scale; anchor layout identical, all positions x1.92)",
+  "receipt": "street_racer_hoverbeast_receipt.json",
+  "source": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Street_Racer_Hoverbea_1015142840_texture.glb (unchanged, sha256 3ee37c2c3e8374aa03f583e4c427cf8543c088e389cd61b41423decb7fa7fcc5)",
+  "browser_v1": "street_racer_hoverbeast_browser.glb"
+ },
+ "donor_format": {
+  "ref": "bathtub_kart.kfb-vehicle.json (V-273): KayKit car frame, glTF +Z forward, +X = car left, +Y up; wheel spin about local X",
+  "physics": "WS1: Rapier + ecctrl EcctrlVehicle (ShapeCastWheel). Hover: no wheels; use the 4 kfb_hover_* points as thrust/ray origins (or invisible ShapeCast wheels at those points with ride height)."
+ },
+ "frame": {
+  "forward": "+Z",
+  "left": "+X",
+  "up": "+Y",
+  "origin": "ground below the bbox centre",
+  "source_front": "Meshy -X (rotated +90 deg about Y)"
+ },
+ "units": {
+  "glb_unit": "1 KayKit rig unit (figures load 1:1)",
+  "m_per_unit": 0.616381042,
+  "scale_factor_rig_per_meshy_unit": 5.664,
+  "note": "V-311 v2 scale: racers 5.664, haulers 7.363 rig per Meshy unit (= v1 x 1.92; haulers keep their extra x1.3)"
+ },
+ "dimensions": {
+  "length": [
+   10.7697,
+   6.638
+  ],
+  "width": [
+   8.9702,
+   5.529
+  ],
+  "height": [
+   3.3615,
+   2.072
+  ],
+  "belly_clearance_centre": [
+   0.3187,
+   0.196
+  ],
+  "pairs": "[rig units, metres]"
+ },
+ "nodes": {
+  "street_racer_hoverbeast": "root, body mesh (single fused mesh, 1 material)",
+  "kfb_entry": "empty, ground point beside the door / cockpit side (left, +X)",
+  "kfb_driver_hidden": "empty, cockpit centre where the character is hidden",
+  "kfb_camera_follow": "empty, suggested chase-camera position (target in anchors)",
+  "kfb_hover_<FL|FR|RL|RR>": "empty, hover thrust point on the hull underside"
+ },
+ "anchors": {
+  "kfb_driver_hidden": {
+   "pos": [
+    0.0,
+    1.6854,
+    0.6747
+   ],
+   "note": "cockpit centre; character root hidden here (scale 0 / visible=false) while driving"
+  },
+  "kfb_entry": {
+   "pos": [
+    4.8958,
+    0.0,
+    0.6747
+   ],
+   "side": "left (+X)",
+   "note": "ground point beside the door/cockpit side; hop-in arc ends at kfb_driver_hidden"
+  },
+  "kfb_hover_FL": {
+   "pos": [
+    1.4114,
+    0.0,
+    3.4474
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_FR": {
+   "pos": [
+    -1.4114,
+    0.0,
+    3.4474
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RL": {
+   "pos": [
+    1.53,
+    0.3924,
+    -3.4474
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RR": {
+   "pos": [
+    -1.53,
+    0.3926,
+    -3.4474
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_camera_follow": {
+   "pos": [
+    0.0,
+    6.1229,
+    -13.4669
+   ],
+   "target": [
+    0.0,
+    1.849,
+    0.0
+   ],
+   "note": "suggested chase camera (scaled from bathtub kart 0,3.4,-9 → 0,1.8,-0.5)"
+  }
+ },
+ "collision_hints": {
+  "aabb": [
+   [
+    -4.487,
+    0.0015,
+    -5.3835
+   ],
+   [
+    4.4832,
+    3.3615,
+    5.3862
+   ]
+  ],
+  "body_box": {
+   "center": [
+    0.0,
+    1.6808,
+    0.0013
+   ],
+   "half_extents": [
+    3.7674,
+    1.5128,
+    5.1694
+   ],
+   "note": "rough box (wings/fins/exhausts excluded by the 0.42/0.48 factors)"
+  },
+  "ground_contact_y": 0.0
+ },
+ "known_limits": [
+  "Texture stickers incl. \"SPEED RACER\" on the roof (trademark-ish) + fantasy brands: check/overpaint before public use -> v2: overpainted (stickers_v2)",
+  "Wide wings (2.9 m) - widest racer"
+ ],
+ "render_path": {
+  "lighting": "WS1 stage: NoToneMapping, sRGB output, Hemisphere 0xfff4e0/0x3a3226 1.25 + sun 1.8, no env map",
+  "three": "r170 GLTFLoader, EXT_texture_webp"
+ },
+ "hover": {
+  "FL": {
+   "node": "kfb_hover_FL",
+   "pos": [
+    1.4114,
+    0.0,
+    3.4474
+   ],
+   "underside_clearance": 0.0
+  },
+  "FR": {
+   "node": "kfb_hover_FR",
+   "pos": [
+    -1.4114,
+    0.0,
+    3.4474
+   ],
+   "underside_clearance": 0.0
+  },
+  "RL": {
+   "node": "kfb_hover_RL",
+   "pos": [
+    1.53,
+    0.3924,
+    -3.4474
+   ],
+   "underside_clearance": 0.3924
+  },
+  "RR": {
+   "node": "kfb_hover_RR",
+   "pos": [
+    -1.53,
+    0.3926,
+    -3.4474
+   ],
+   "underside_clearance": 0.3926
+  }
+ },
+ "hover_note": "Underside is (near) flat on y=0 in the Meshy export; ride height is a runtime value (suggest 0.67-1.15 rig)",
+ "version": "v2",
+ "rigClassScale": {
+  "medium": 1.0,
+  "large": 1.33,
+  "note": "medium = this file (FrizzleBob v5b / Rig_Medium seated fits the closed 02 cabin). large = PROPOSAL only: Orc Brute (Rig_Large) needs the car x1.33 larger again, measured the same way in 02 (smallest x2.545 of v1, 2.545/1.920 = 1.326, rounded up)"
+ },
+ "seat_fit": {
+  "reference_vehicle": "crimson_flame_dragster",
+  "figure": "FB_TEMPLATE_LOOK_v5b.glb (Rig_Medium, ears included)",
+  "pose": "KayKit Character Animations 1.1 · Rig_Medium_Simulation.glb · Sit_Chair_Idle @1.0 s",
+  "placement": "pelvis x/z on kfb_driver_hidden, facing +Z; lowest foot on the hull floor (raycast down from kfb_driver_hidden)",
+  "method": "three.js Raycaster against the 100k-tri browser hull: head+ears up, shoulders +-X, hips down; inside = first hit is an exit face",
+  "criteria": "head/ears >= 5 cm below roof, shoulders inside side walls, hips above floor",
+  "smallest_factor_vs_v1": 1.911,
+  "chosen_factor_vs_v1": 1.92,
+  "margins_at_chosen_in_02": {
+   "roof_over_head_ears": [
+    0.0948,
+    0.058
+   ],
+   "shoulder_wall_left": [
+    1.1879,
+    0.732
+   ],
+   "shoulder_wall_right": [
+    1.2017,
+    0.741
+   ],
+   "hips_over_floor": [
+    0.2162,
+    0.133
+   ],
+   "pairs": "[rig units, metres]"
+  },
+  "note": "same factor applied to all 11 racers (relative sizes kept); only 02 is guaranteed by measurement, other cabins were not fitted individually"
+ },
+ "stickers_v2": {
+  "method": "logo areas projected from ortho views onto the mesh and repainted in UV space (base colour WebP 2048; normal flattened, metal/rough levelled under the patch)",
+  "regions": [
+   {
+    "what": "SPEED RACER roof decal",
+    "fill": "ring",
+    "rgb": [
+     125,
+     63,
+     60
+    ]
+   },
+   {
+    "what": "KFB round sticker",
+    "fill": "sticker",
+    "rgb": [
+     125,
+     63,
+     60
+    ]
+   }
+  ]
+ },
+ "v2_build": {
+  "from": "v1 browser GLB rescaled x1.92 about the ground origin (geometry, UVs, simplification identical to v1)",
+  "bytes": 5482684,
+  "sha256": "fac0ae6b6146c03b27f2b92b8e8657f758d5fcac329bd74868d53570e99ab58f",
+  "tris": 99954,
+  "v1_sha256": "7a4f5fb60e176def94f331ab8200c9cc8da4dff58a3506ef132fff7bf8ecb6da",
+  "textures_replaced": "street_racer_hoverbeast_base_v2_sticker.webp + street_racer_hoverbeast_normal_v2_sticker.webp + street_racer_hoverbeast_mr_v2_sticker.webp"
+ }
+}

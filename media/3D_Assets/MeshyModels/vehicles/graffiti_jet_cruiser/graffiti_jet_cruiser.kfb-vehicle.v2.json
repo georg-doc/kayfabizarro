@@ -1,0 +1,342 @@
+{
+ "schema": "kfb.vehicle-asset/0.2",
+ "id": "graffiti_jet_cruiser",
+ "decision": "V-311 v2 (Georg 15.10.: cars bigger so FB plausibly fits; one size for medium rigs)",
+ "date": "2026-10-15",
+ "status": "CANDIDATE · asset + data only (WS1 builds runtime)",
+ "entryMode": "hop-in-hidden",
+ "entry_note": "Character jumps from kfb_entry to kfb_driver_hidden and is hidden (no visible seated driver, no steering-wheel/IK layer)",
+ "name_de": "04 Graffiti-Kreuzer",
+ "meshy_name": "Graffiti Jet Cruiser",
+ "class": "racer",
+ "locomotion": "hover",
+ "cockpit": "closed",
+ "files": {
+  "browser": "graffiti_jet_cruiser_browser.v2.glb",
+  "check_image": "graffiti_jet_cruiser_anker_pruefbild.jpg (v1 scale; anchor layout identical, all positions x1.92)",
+  "receipt": "graffiti_jet_cruiser_receipt.json",
+  "source": "~/Dropbox/CLAUDE/MeshyModels/KFB DieselPunk Vehicles/Meshy_AI_Graffiti_Jet_Cruiser_1015142835_texture.glb (unchanged, sha256 3d3e9d562eaa8caafac47b2bf31d0de6d55ff159b275ab75bb0b3f41271119af)",
+  "browser_v1": "graffiti_jet_cruiser_browser.glb"
+ },
+ "donor_format": {
+  "ref": "bathtub_kart.kfb-vehicle.json (V-273): KayKit car frame, glTF +Z forward, +X = car left, +Y up; wheel spin about local X",
+  "physics": "WS1: Rapier + ecctrl EcctrlVehicle (ShapeCastWheel). Hover: no wheels; use the 4 kfb_hover_* points as thrust/ray origins (or invisible ShapeCast wheels at those points with ride height)."
+ },
+ "frame": {
+  "forward": "+Z",
+  "left": "+X",
+  "up": "+Y",
+  "origin": "ground below the bbox centre",
+  "source_front": "Meshy -X (rotated +90 deg about Y)"
+ },
+ "units": {
+  "glb_unit": "1 KayKit rig unit (figures load 1:1)",
+  "m_per_unit": 0.616381042,
+  "scale_factor_rig_per_meshy_unit": 5.664,
+  "note": "V-311 v2 scale: racers 5.664, haulers 7.363 rig per Meshy unit (= v1 x 1.92; haulers keep their extra x1.3)"
+ },
+ "dimensions": {
+  "length": [
+   10.78,
+   6.645
+  ],
+  "width": [
+   7.1403,
+   4.401
+  ],
+  "height": [
+   3.2051,
+   1.976
+  ],
+  "belly_clearance_centre": [
+   0.025,
+   0.015
+  ],
+  "pairs": "[rig units, metres]"
+ },
+ "nodes": {
+  "graffiti_jet_cruiser": "root, body mesh (single fused mesh, 1 material)",
+  "kfb_entry": "empty, ground point beside the door / cockpit side (left, +X)",
+  "kfb_driver_hidden": "empty, cockpit centre where the character is hidden",
+  "kfb_camera_follow": "empty, suggested chase-camera position (target in anchors)",
+  "kfb_hover_<FL|FR|RL|RR>": "empty, hover thrust point on the hull underside"
+ },
+ "anchors": {
+  "kfb_driver_hidden": {
+   "pos": [
+    0.0,
+    1.756,
+    0.5633
+   ],
+   "note": "cockpit centre; character root hidden here (scale 0 / visible=false) while driving"
+  },
+  "kfb_entry": {
+   "pos": [
+    2.5475,
+    0.0,
+    0.5633
+   ],
+   "side": "left (+X)",
+   "note": "ground point beside the door/cockpit side; hop-in arc ends at kfb_driver_hidden"
+  },
+  "kfb_hover_FL": {
+   "pos": [
+    1.9092,
+    0.0042,
+    3.4504
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_FR": {
+   "pos": [
+    -1.9092,
+    0.0019,
+    3.4504
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RL": {
+   "pos": [
+    2.1446,
+    0.3535,
+    -3.4504
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_hover_RR": {
+   "pos": [
+    -2.1446,
+    0.3398,
+    -3.4504
+   ],
+   "note": "hover thrust point on the hull underside; ray down for ride height"
+  },
+  "kfb_camera_follow": {
+   "pos": [
+    0.0,
+    5.927,
+    -13.4784
+   ],
+   "target": [
+    0.0,
+    1.7626,
+    0.0
+   ],
+   "note": "suggested chase camera (scaled from bathtub kart 0,3.4,-9 → 0,1.8,-0.5)"
+  }
+ },
+ "collision_hints": {
+  "aabb": [
+   [
+    -3.5718,
+    0.0,
+    -5.3891
+   ],
+   [
+    3.5685,
+    3.2051,
+    5.391
+   ]
+  ],
+  "body_box": {
+   "center": [
+    0.0,
+    1.6026,
+    0.001
+   ],
+   "half_extents": [
+    2.9988,
+    1.4423,
+    5.1744
+   ],
+   "note": "rough box (wings/fins/exhausts excluded by the 0.42/0.48 factors)"
+  },
+  "ground_contact_y": 0.0
+ },
+ "known_limits": [
+  "Texture carries real brand logos (Monster Energy, Pirelli, Brembo, Puma): overpaint/retexture before any public use -> v2: overpainted (stickers_v2)",
+  "Side fins thin; tips may clip on tight walls"
+ ],
+ "render_path": {
+  "lighting": "WS1 stage: NoToneMapping, sRGB output, Hemisphere 0xfff4e0/0x3a3226 1.25 + sun 1.8, no env map",
+  "three": "r170 GLTFLoader, EXT_texture_webp"
+ },
+ "hover": {
+  "FL": {
+   "node": "kfb_hover_FL",
+   "pos": [
+    1.9092,
+    0.0042,
+    3.4504
+   ],
+   "underside_clearance": 0.0042
+  },
+  "FR": {
+   "node": "kfb_hover_FR",
+   "pos": [
+    -1.9092,
+    0.0019,
+    3.4504
+   ],
+   "underside_clearance": 0.0019
+  },
+  "RL": {
+   "node": "kfb_hover_RL",
+   "pos": [
+    2.1446,
+    0.3535,
+    -3.4504
+   ],
+   "underside_clearance": 0.3535
+  },
+  "RR": {
+   "node": "kfb_hover_RR",
+   "pos": [
+    -2.1446,
+    0.3398,
+    -3.4504
+   ],
+   "underside_clearance": 0.3398
+  }
+ },
+ "hover_note": "Underside is (near) flat on y=0 in the Meshy export; ride height is a runtime value (suggest 0.67-1.15 rig)",
+ "version": "v2",
+ "rigClassScale": {
+  "medium": 1.0,
+  "large": 1.33,
+  "note": "medium = this file (FrizzleBob v5b / Rig_Medium seated fits the closed 02 cabin). large = PROPOSAL only: Orc Brute (Rig_Large) needs the car x1.33 larger again, measured the same way in 02 (smallest x2.545 of v1, 2.545/1.920 = 1.326, rounded up)"
+ },
+ "seat_fit": {
+  "reference_vehicle": "crimson_flame_dragster",
+  "figure": "FB_TEMPLATE_LOOK_v5b.glb (Rig_Medium, ears included)",
+  "pose": "KayKit Character Animations 1.1 · Rig_Medium_Simulation.glb · Sit_Chair_Idle @1.0 s",
+  "placement": "pelvis x/z on kfb_driver_hidden, facing +Z; lowest foot on the hull floor (raycast down from kfb_driver_hidden)",
+  "method": "three.js Raycaster against the 100k-tri browser hull: head+ears up, shoulders +-X, hips down; inside = first hit is an exit face",
+  "criteria": "head/ears >= 5 cm below roof, shoulders inside side walls, hips above floor",
+  "smallest_factor_vs_v1": 1.911,
+  "chosen_factor_vs_v1": 1.92,
+  "margins_at_chosen_in_02": {
+   "roof_over_head_ears": [
+    0.0948,
+    0.058
+   ],
+   "shoulder_wall_left": [
+    1.1879,
+    0.732
+   ],
+   "shoulder_wall_right": [
+    1.2017,
+    0.741
+   ],
+   "hips_over_floor": [
+    0.2162,
+    0.133
+   ],
+   "pairs": "[rig units, metres]"
+  },
+  "note": "same factor applied to all 11 racers (relative sizes kept); only 02 is guaranteed by measurement, other cabins were not fitted individually"
+ },
+ "stickers_v2": {
+  "method": "logo areas projected from ortho views onto the mesh and repainted in UV space (base colour WebP 2048; normal flattened, metal/rough levelled under the patch)",
+  "regions": [
+   {
+    "what": "Monster Energy + Pirelli/Brembo small",
+    "fill": "ring",
+    "rgb": [
+     38,
+     81,
+     134
+    ]
+   },
+   {
+    "what": "Brembo, Pirelli, Puma",
+    "fill": "ring",
+    "rgb": [
+     44,
+     85,
+     139
+    ]
+   },
+   {
+    "what": "Pirelli + Monster text/claw",
+    "fill": "ring",
+    "rgb": [
+     41,
+     89,
+     153
+    ]
+   },
+   {
+    "what": "Brembo (+ shadowed Pirelli/Puma)",
+    "fill": "ring",
+    "rgb": [
+     44,
+     86,
+     140
+    ]
+   },
+   {
+    "what": "Brembo + Monster strip hood left",
+    "fill": "ring",
+    "rgb": [
+     46,
+     92,
+     154
+    ]
+   },
+   {
+    "what": "Brembo + Monster claw hood right",
+    "fill": "ring",
+    "rgb": [
+     46,
+     92,
+     154
+    ]
+   },
+   {
+    "what": "Monster claw on hood scoop",
+    "fill": "ring",
+    "rgb": [
+     43,
+     91,
+     153
+    ]
+   },
+   {
+    "what": "logo strip at hood front",
+    "fill": "ring",
+    "rgb": [
+     39,
+     85,
+     147
+    ]
+   },
+   {
+    "what": "Pirelli tag wing right",
+    "fill": "ring",
+    "rgb": [
+     55,
+     59,
+     66
+    ]
+   },
+   {
+    "what": "Pirelli tag wing left",
+    "fill": "ring",
+    "rgb": [
+     58,
+     61,
+     68
+    ]
+   }
+  ]
+ },
+ "v2_build": {
+  "from": "v1 browser GLB rescaled x1.92 about the ground origin (geometry, UVs, simplification identical to v1)",
+  "bytes": 4737288,
+  "sha256": "7960786705c9ee92460938f199cece1dfbdb2921ceca2b65fd5d19e948449f20",
+  "tris": 99962,
+  "v1_sha256": "9653830711e45d75ab9830c7c02086eb3f4779b2ca26d805104d42c37c3a65b9",
+  "textures_replaced": "graffiti_jet_cruiser_base_v2_sticker.webp + graffiti_jet_cruiser_normal_v2_sticker.webp + graffiti_jet_cruiser_mr_v2_sticker.webp"
+ }
+}
