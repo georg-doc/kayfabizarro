@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Spiel-Dramaturgie, Welt-Konzept
+- V-288: Grund zu reisen → Reisen macht Spaß → Begegnung als Höhepunkt. V-289 (TBD): Welt-Struktur A/B/C, Konzept replies/WORLD_CONCEPT_R1.md. Kokoro-Hörproben im Hub (vo01).
+
 ## 2026-10-15 · Orc TUNE 3
 - Orc Brute: gleiches Metall-Lenkrad wie FB (2,1-fach, sonst stoßen die Fäuste zusammen), Kranz in beiden Fäusten in allen 90 Bildern, Haltung wie FB; Hub kt05. Welt-Struktur-Frage (Inseln vs. offene Welt, >100 Decks) in Klärung.
 

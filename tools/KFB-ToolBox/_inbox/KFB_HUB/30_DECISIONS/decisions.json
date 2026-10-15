@@ -3804,6 +3804,36 @@
    "applies": "MVP-2"
   },
   {
+   "id": "V-288",
+   "date": "2026-10-15",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Dramaturgie des Game Loops (Chill-and-Fun): (1) ein Grund zu reisen (Decks, Karten, Missionen des Spielers, z. B. Botengang), (2) das Reisen selbst macht Spaß (Fahrzeug und/oder Flug), (3) die Begegnung am Diorama ist der Höhepunkt. Alle Welt-Entscheidungen dienen diesem Ablauf.",
+   "values": {},
+   "owner": "alle",
+   "check": "Spielprobe MVP-1",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Reisen braucht Grund und Spaß, die Begegnung trägt.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-289",
+   "date": "2026-10-15",
+   "area": "Welt",
+   "verdict": "TBD",
+   "text": "Welt-Struktur für 130+ Decks offen: A Zonen-Welten mit Hub (Racetrack/Portale), B dynamische Welt um den Spieler (Player-Grid, nächstes Diorama nach Missions-Kontext in Reise-Entfernung), C Mischform (Zonen nach Genre, innen dynamisch). Konzept replies/WORLD_CONCEPT_R1.md; Georg entscheidet. Vorbild Tiny Skies (gerundeter Horizont).",
+   "values": {},
+   "owner": "Georg",
+   "check": "Entscheidung im Hub",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "130+ Decks sprengen eine durchgehende Welt; Struktur muss Reisedauer steuern.",
+   "applies": "vor MVP-1"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3866,7 +3896,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:433",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:439",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
