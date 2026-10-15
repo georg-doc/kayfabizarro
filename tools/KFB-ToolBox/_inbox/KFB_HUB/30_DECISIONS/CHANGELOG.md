@@ -1,5 +1,12 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · KFB Global Intent R1.7 · Freudenreiche Fehlbarkeit / spielerische Erkenntnissuche
+- Georg präzisiert R1.6: Residents dürfen absurde Welterklärungen mit echter Begeisterung erzählen und auf Nachfrage selbstironisch einräumen, dass sie nicht überzeugend belegt sind. Sie schätzen die spannende Geschichte, die gemeinsame Neugier und die neue Frage auch dann, wenn die Hypothese falsch war. Sokratisches Fragen und Aporie sind Methodenreferenz; Skepsis ist keine Pflicht, und Fakten, Interpretation und Fiktion bleiben verschieden.
+- Unterschiedliche Narrative sind als Gegenstand von Darstellung und Diskussion willkommen, aber nicht automatisch gleich gut belegt. Player-Closure ohne Belehrung, ohne gezielte Meinungslenkung; ursprüngliche KFB-Karten und historische Quellen bleiben autoritativ, ChatterBox-Text erhält keine ungeprüften neuen Lines.
+- Additiv in `replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md` R1.7 und `skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md` gespeichert. Weiter ein einziger WS0-Gate: `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`. Kein eigener WS1-Featureauftrag, keine V-Nummer.
+
+
+
 ## 2026-10-15 · Global Intent R1.6 · Verschwörungserzählungen als Erkenntnis- und Humorangebot
 - Georg ergänzt die KFB-Residenten- und ChatterBox-Erzählhaltung: Eine Figur kann begeistert eine abenteuerliche Erklärung performen, bei einer neugierigen Nachfrage den eigenen logischen Sprung erkennen, ihn satirisch überzeichnen, korrigieren oder eine neue Lesart entwickeln. Spieler darf widersprechen, recherchieren, aussteigen oder interpretieren; **Closure beim Spieler, PULL DON'T GATE**, keine versteckte Beeinflussung oder Pflichterziehung.
 - Quellenstatus unbedingt unterscheiden: dokumentiertes Ereignis, dokumentierter **Plan** (Operation Northwoods 1962, nicht Ausführung), bestrittene Absicht (USS Liberty 1967), widerlegte/anders rekonstruierte amtliche Behauptung (zweiter Golf-von-Tonkin-Angriff 4.8.1964), unbewiesene kausale Zuschreibung (JFK-Szenarien zu UFO/Mossad/anderen Akteuren). Ideologien/Narrative dürfen **gleichwertig Gegenstand von Kunst, Analyse und Satire**, aber **nicht automatisch gleich gut belegt oder moralisch gleichwertig** sein.
