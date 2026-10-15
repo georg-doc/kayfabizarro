@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Neue Bühnen: Goblin-Bank + Gefängnis-Panoptikum (V-300/V-301) · Atlantis folgt
+- **Branch** `assets/meshy-stages-goblin-prison-2026-10-15` @48b0f492 (Parent main), unter `media/3D_Assets/MeshyModels/browser/`:
+  - `kfb-meshy-goblin-bank.screen-a.v1.glb` + `.slot.json` – 5 m/u, Karte als Kurstafel über der Galerie (Messing-Knetrahmen, 4,2 × 2,3 m), Kampf in der Schalterhalle vor dem Tresor (~4,2 × 3,2 m), Treppe 14 × 0,20 m (42°) begehbar, besser Rampen-Kollider. Feine helle Säume an Schreibtisch-/Teppichkanten kommen aus der Vereinfachung.
+  - `kfb-meshy-prison-panopticon.screen-a.v1.glb` + `.slot.json` – 12 m/u, Karte als Propaganda-Schirm der Wärter unter der Wachturm-Krone (Rost-Eisen, 5,0 × 2,8 m), Hof Ø ≈ 13 m, Kampf ≈ 30 m² vor dem Brunnen, Treppe 32 × 0,21 m (31°) begehbar. Für später (Gizmo-Labyrinth, V-301): Anschluss vorn 7,8 m offen, Schaltpult-Platz oben auf dem Turm (Messwerte im Receipt, lokal bei WS0).
+- Slot-JSON im UFO-Format mit Standardkamera; Display = eigenes Objekt, Position aus dem Slot nur als Standardwert (V-287). Georgs Abnahme der Platzierung offen (Hub gb01, pr01) – Einbau nach MVP-0 als je eine Vorlagen-Zeile.
+- **Atlantis** (Hidden-History-Decks) wird gerade gleich aufbereitet und folgt auf eigenem Branch.
+
 ## 15.10.2026 · Farbkonzept R1 liegt vor (Entwurf) · alte Fahrbahn-/Bandenfarben
 - **Einzige Farbquelle (Entwurf, Georg klärt Lücken):** `replies/COLOR_CONCEPT_R1.md` + `replies/kfb-color-concept.r1.json` (Werte 1:1 aus Quellen mit Blob/Commit). Bitte lesen; noch nichts umbauen außer der Tönung nach V-286.
 - **Sofort korrigierbar (Register V-102/V-174):** Fahrbahn `#3d4a60` statt `#545e7a`, Banden/Randstrang `#ef5a22` statt rot-weiß (rot-weiß nur Kerbs). Das Farbkonzept fand die alten Werte in eurem Lab-Stand.
