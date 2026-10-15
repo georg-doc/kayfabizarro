@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Kart-Sitz zurück, Licht-Regel
+- V-282: Kart-Sitz zweiter Durchgang TUNE (nicht mittig, Hände nicht am Lenkrad, überstrahlt); Prüfbilder künftig mit dem Licht des Spiels und Histogramm-Prüfung.
+
 ## 2026-10-15 · Bühnen-Batch fertig
 - Theater, Giza, Akashic, Mesa, Nature, Snow mit Slot + Rahmen (STAGES_BATCH_R1.md), Köln-Komposition (Dom 1014035640 + Roncalliplatz + Leinwand 20 × 11 m, Museum Ludwig/Philharmonie als Platzhalter, OSM aus lokalem Auszug, Meshy-Prompts). Hub st01 (Batch) und st02 (Köln-Maßstab).
 

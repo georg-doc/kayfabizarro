@@ -3712,6 +3712,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-282",
+   "date": "2026-10-15",
+   "area": "Fahren",
+   "verdict": "TUNE",
+   "text": "Badewannen-Kart Sitz zweiter Durchgang: buggy – FrizzleBob sitzt nicht mittig (zu weit außen), hält das Lenkrad nicht richtig, Modell überstrahlt. Korrektur: Hüfte auf der Mittellinie und in der Mitte der Wanne mit eigener Knet-Lehne, Hände nachweislich am Kranz (Abstand je Bild gemessen), Licht = Lichtsetup und Tonemapping des Spiels (WS1-Bühne bzw. J17), Prüfung per Helligkeits-Histogramm. Allgemein: Prüfbilder für Georg nutzen das Licht des Spiels, keine eigenen Lichter; überstrahlte Bilder gehen nicht raus.",
+   "values": {},
+   "owner": "WS0 (Asset, Prüfbilder)",
+   "check": "Messwerte + Bilder",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Prüfbilder müssen zeigen, was das Spiel zeigt.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3774,7 +3789,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:400",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:416",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
