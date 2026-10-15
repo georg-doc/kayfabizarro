@@ -1,0 +1,7 @@
+# Epistemic Sabotage: Let AI Read Your Comic — R2 batch handoff
+New independent card authoring from registry packId epistemic_sabotage, printed title-case source @eade4aec9c9faaea785602537768f86180434331, blob ecdf9489cebb6a3eb649d0867659d892bb733b7d. No legacy artworkPrompt, grade, marketing or analysis fields used.
+- **60/60 playable lines**, no OPEN/meta exclusions; single track **4,296 characters**, 20 approved one-time openers, 62 untimed cue rows. No Suno upload, music, audio, website or runtime work.
+- Checker-equivalent JS source-vocabulary/grammar/stemming audit against pinned 60 cards returned **60 PASS / 0 FAIL**, after 12 out-of-source lexical choices were repaired. Exact original Python checker on the real deck+CSV **NOT RUN**; check.txt discloses this. Not approved for recording before WS0's independent audit.
+- Intro drawn from printed registry title and card titles #3 and #49, without separately opening original PDF cover pixels. CSV intro_source reports this limitation.
+- Semantic watch: #3 receptive machine instead of replacing an artist; #25 reader's head; #54 closure between boxes; #58 editorial erasure; #60 own reading machines. Word membership does not prove original meaning intact. WS0 still to compare all lines to POWER/LORE.
+**One next gate:** WS0 runs exact Python against canonical source and takes CSV, verifies opener families/limits and every semantic compression; then human listening/recording decision. No PR, merge or Live.
