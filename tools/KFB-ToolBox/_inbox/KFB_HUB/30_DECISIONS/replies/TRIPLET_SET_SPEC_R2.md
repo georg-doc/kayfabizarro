@@ -9,10 +9,12 @@
 - Karten mit Status OPEN (Text nicht sicher lesbar) bekommen keine Zeile; sie werden im Bericht gelistet.
 - **Meta-Karten ohne Spielinhalt** (BLANK, Anleitung/How to Use, Lizenz, QR-Code, Kartenrückseite u. ä.) bekommen keine Zeile (V-266); im Bericht listen.
 - **Titel in normaler Groß-/Kleinschreibung** sprechen und schreiben, nie in Versalien (V-271), auch wenn die Karte sie in Versalien druckt.
+- **Klammern im Titel werden nicht gesprochen** („Homo Ludens (Play)“ → „Homo Ludens“). Im Sprechtext stehen nie Klammern.
 
 ## Eine Kartenzeile
 - **Titel vorn**, verschmolzen mit dem Begriff aus der POWER: „The Ordinary World stasis loop“, „Jean-Jacques Rousseau, Natural Goodness“.
-- Danach kurze **Telegramm-Fragmente** aus der Karte. Artikel und Hilfsverben dürfen wegfallen („man born free“, „old self dead“).
+- Danach kurze **Telegramm-Fragmente** aus der Karte.
+- **Verdichten im Comic-Sprechstil (V-275):** Füllwörter weglassen, solange der Sinn bleibt – Artikel, Hilfsverben/Kopula, leere Füller („Force a card“ → „Force card“, „Clear the Stage“ → „Clear Stage“, „just a game“ → „just game“, „man born free“, „old self dead“). Verneinungen, tragende Zahlen und Namen bleiben; der Kartentitel behält seine eigenen Artikel; Opener werden nicht verdichtet. Nur streichen, nie ergänzen.
 - **Nur Wörter der Karte.** Erlaubt sind Grammatik (Endungen, Pronomen, Artikel, „and/but/so“, Satzzeichen), Weglassen und sparsam ein Fluff-o-lect-Wort („un-fluff“), höchstens eines pro Zeile.
 - Nicht erlaubt sind neue Verben, Bilder, Ereignisse oder Erklärungen.
 - **Mechanik nur, wenn sie ein Bild ist** („hand new cards“). Würfelwerte, Zahlen und Regel-Etiketten fallen weg.
@@ -26,18 +28,18 @@
 
 ## Opener (eigene Schicht)
 - Nur aus dem freigegebenen Pool (V-218 KEEP, V-229, dazu Georgs „Welcome to / Remember / You know“). Die Liste steht im Prüfskript (`OPENERS`).
-- **Jeder Opener höchstens einmal pro Set** (V-222). Nicht jede Zeile braucht einen; etwa jede zweite bis dritte Zeile, wie im Wrinkle-Rumble-Spender.
+- **Jede Kartenzeile hat einen Opener** (Georg 15.10.), und **jeder Opener höchstens einmal pro Set** (V-222).
+- Deshalb wird ein Deck in mehrere **Sets** geteilt (je höchstens so viele Karten, wie passende Opener da sind, meist 14–20). Ein Set = ein Suno-Track = eigenes Intro + Zeilen + „Stay Fluffy!“.
 - Der Opener muss grammatisch und inhaltlich zur Karte passen: „I once met“ nur vor Personen, „Ever tasted“ nur vor Essbarem, „You played“ nur, wenn die Karte gespielt wird.
 
 ## Set-Aufbau (Suno-Sprechtext, ohne Musik aufnehmbar)
 1. `[Spoken Word]`
-2. Intro: „Welcome to <Decktitel>.“ (nur der Decktitel, kein erfundener Slogan).
-3. Alle Kartenzeilen in Kartennummer-Reihenfolge. Nach je etwa 8 Zeilen eine Leerzeile als Atem- bzw. Schnittpause.
-4. Outro: „Stay Fluffy!“
+2. Pro Set: Intro „Welcome to <Decktitel>.“ (nur der Decktitel, kein erfundener Slogan), dann die Kartenzeilen des Sets in Kartennummer-Reihenfolge, dann „Stay Fluffy!“.
+3. **Jede Karte = genau eine Zeile.** Keine Steuer-Tags wie [Break] zwischen den Zeilen; nur `[Spoken Word]` oben.
 - **Eine Zeile = ein Take.** Jede Zeile steht für sich, damit sie einzeln aufgenommen und geschnitten werden kann. Übergänge wie „That attracts …“ gibt es nur als Opener aus dem Pool, keine frei erfundenen Brücken.
 
 ## Ausgabe je Deck
-- `<deckId>.suno.txt`: der Sprechtext wie oben.
-- `<deckId>.takes.csv`: `line_no, kind, card_number, card_title, opener, triplet, spoken_text, start_seconds, end_seconds, sync_status` (`spoken_text` = Opener + Triplet; Zeiten leer, `sync_status` = `UNTIMED_AWAIT_REAL_AUDIO`). Dieselbe Form wie der Wrinkle-Cue-Sheet.
+- `<deckId>.set<N>.suno.txt`: ein Suno-Text je Set (`[Spoken Word]`, Intro, Kartenzeilen, „Stay Fluffy!“; unter 3000 Zeichen).
+- `<deckId>.takes.csv`: `set, line_no, kind, card_number, card_title, opener, triplet, spoken_text, start_seconds, end_seconds, sync_status` (`spoken_text` = Opener + Triplet; Zeiten leer, `sync_status` = `UNTIMED_AWAIT_REAL_AUDIO`). Jedes Set hat eigene intro- und outro-Zeilen.
 - `<deckId>.check.txt`: Ausgabe des Prüfskripts (muss 0 FAIL zeigen).
 - Bericht: Anzahl Zeilen, ausgelassene OPEN-Karten, benutzte Opener.

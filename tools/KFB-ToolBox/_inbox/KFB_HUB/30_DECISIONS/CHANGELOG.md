@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Generator-Fix Anti-Rules, Suno-Sets im Umbau
+- Registry-Generator: optionales Feld trailingPages (nur anti_rules_toolkit), Deck jetzt verified, alle anderen bytegleich (data/kfb-registry-generator-offset-2026-10-15 @52adc8f1); WS1-Pin @52adc8f1.
+- Georg: Suno-Teile falsch (Mittelteile ohne Intro/„Stay Fluffy!“, zu wenige Opener, Klammern im Titel). Vorgabe R2 ergänzt: jede Zeile mit Opener, Deck in Sets geteilt (Opener je Set einmal), jedes Set eigenes Intro + Outro, keine Klammern, keine [Break]-Tags; Prüfskript prüft das. Umbau der drei Sets läuft.
+
 ## 2026-10-15 · Briefings aufgeräumt, Suno-Karten
 - Hub: erledigte Briefings eingeklappt (b01–b14 done); b15 jetzt Forget Utopia statt Wrinkle Rumble (Georg: Wrinkle ist durch); b16 Suno-Style, b17–b25 Lyrics-Teile der drei abgenommenen Sets (je ≤ 2,8 k Zeichen, [Break] zwischen Blöcken). Generator-Fix für anti_rules_toolkit läuft.
 

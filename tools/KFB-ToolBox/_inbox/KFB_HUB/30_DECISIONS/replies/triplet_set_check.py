@@ -2,7 +2,7 @@
 """KFB Triplet-Set-Prüfung (TRIPLET_SET_SPEC_R2): nur Kartenwörter + Grammatik + Opener + sparsam Fluff.
 
 Aufruf: python3 triplet_set_check.py <deck.json> <set.csv>
-set.csv Spalten: line_no,kind,card_number,opener,triplet   (kind = intro | card | outro)
+set.csv Spalten: line_no,kind,card_number,opener,triplet[,set]   (kind = intro | card | outro; set = Set-Nummer, Opener gelten je Set)
 Ausgabe: je Zeile PASS/FAIL mit fremden Wörtern; Exit 1, wenn eine Kartenzeile FAIL ist.
 """
 import csv, json, re, sys
@@ -47,8 +47,14 @@ def main(deck_path, set_path):
     title_v = vocab(deck.get("deckTitle", ""))
     fail = 0
     seen_openers = {}
+    cur_set = None
     for row in csv.DictReader(open(set_path, newline="")):
         kind, line = row["kind"], row["triplet"].strip()
+        if (row.get("set") or "") != cur_set:
+            cur_set = row.get("set") or ""
+            seen_openers = {}
+        if "(" in line or ")" in line:
+            print(f"{row['line_no']:>3} FAIL Klammer im Sprechtext: {line}"); fail += 1
         op = (row.get("opener") or "").strip()
         if op:
             if op not in OPENERS:
@@ -70,7 +76,8 @@ def main(deck_path, set_path):
             if tl in GRAMMAR or (stems(t) & allowed):
                 continue
             foreign.append(t)
-        core = re.sub(r"^the\s+", "", name.strip().lower())
+        core = re.sub(r"\s*\([^)]*\)", "", name.strip().lower())
+        core = re.sub(r"^the\s+", "", core)
         title_ok = core[:12] in line.lower()
         ok = not foreign and fluff <= 1 and title_ok
         fail += 0 if ok else 1
