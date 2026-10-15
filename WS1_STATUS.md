@@ -32,6 +32,9 @@ Gemessene Eigentempi der KayKit-Clips auf FrizzleBob v5b (Maßstab 0,947, 240 Hz
 3. **Gehen (Strg+W):** Kein KayKit-Geh-Clip erreicht einen Rutschanteil < 0,1, auch nicht im eigenen Tempo; die Clips rutschen in sich. Die V-248-Abnahme „< 0,1 bei Gehen“ ist mit diesen Clips nicht erreichbar. Optionen: andere Geh-Clips (z. B. Mixamo) oder Abnahme für Gehen lockern.
 - **Vorläufig in M1, bis WS0 entscheidet:** W = Joggen Running_A, Shift = Sprint 4,88 m/s mit dem am wenigsten rutschenden Clip am Grenzrand (ausdrücklich vorläufig), Strg+W = Gehen mit Walking_B im Eigentempo 1,58 m/s.
 
+- **Nachtrag M1 (@f5ccd83, Gang-Mischer, Referenzmessung):** Rutschanteil Joggen 3,08 m/s → **0,024 (V-248 erfüllt)**; Sprint 4,88 m/s → 0,147 (Running_B ×0,8 in der Lücke); Gehen 1,58 m/s → 0,283 (Walking_B rutscht schon im Eigentempo). Sprint und Gehen bleiben Konflikte für WS0.
+- **Taste:** `MOVE_MAP` hat jetzt `walk` = Strg (Diff der M1-Sitzung, kfb-planet @41c3bd2); s0 und s5c PASS. s5c wartete bisher nur auf das Schließen der Wahl, nicht auf die Rückgabe der Steuerung; das ist jetzt behoben.
+
 ### 31.3 · Hinweis WS1 zu Strg+W (V-020)
 Unter Windows und Linux schließt **Strg+W den Browser-Tab**, und eine Seite kann das nicht verhindern. Auf Georgs Mac ist es harmlos (dort schließt Cmd+W). Für MVP-3 (Veröffentlichen) bitte eine Ausweichtaste oder einen Umschalter vorsehen. Die Belegung bleibt bis dahin wie V-020.
 

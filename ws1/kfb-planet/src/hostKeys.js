@@ -11,6 +11,8 @@ export const MOVE_MAP = [
   { name: 'rightward', keys: ['ArrowRight', 'KeyD'] },
   { name: 'jump', keys: ['Space'] },
   { name: 'run', keys: ['Shift'] },
+  // Gehen (V-020: Strg+W = Gehen). Achtung: Strg+W schließt unter Windows/Linux den Tab (nicht abfangbar) – für MVP-3 eine andere Taste wählen (WS1_STATUS §31.3)
+  { name: 'walk', keys: ['ControlLeft', 'ControlRight'] },
 ]
 
 // Aktionstasten, an einer Stelle festgelegt (e.code bzw. Ziffern 1–9 für Auswahlen).

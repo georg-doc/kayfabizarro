@@ -35,7 +35,7 @@ await page.evaluate(() => { window.__stamp = null; const root = document.querySe
 await page.keyboard.press('Digit3')
 await page.waitForFunction(() => !!window.__stamp, null, { timeout: 5000 }).catch(() => {})
 const mid = await page.evaluate(() => window.__stamp || { open: null })
-await page.waitForFunction(() => !window.__kfbChoice.isOpen(), null, { timeout: 5000 }).catch(() => {}) // Stempel zu (420 ms Wanduhr)
+await page.waitForFunction(() => !window.__kfbChoice.isOpen() && window.__kfb?.ctrl === true, null, { timeout: 5000 }).catch(() => {}) // Stempel zu (420 ms Wanduhr) und Steuerung zurück (__kfb wird je Bild geschrieben)
 const after = await page.evaluate(() => ({ open: window.__kfbChoice.isOpen(), last: window.__kfbChoice.last(), ctrl: window.__kfb.ctrl }))
 await page.waitForTimeout(300)
 const zurufBubble = await bubbleTexts()
