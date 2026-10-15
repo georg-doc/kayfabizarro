@@ -211,3 +211,55 @@ A source-true two-character KFB Card/Billboard encounter stays on the current ac
 - WS0 remains the sole canon/V-number/priority authority; WS1 remains the actual runtime/scene owner; the pending lighting/metatheatre assignment is still the **single next gate**.
 
 **One next gate unchanged: \`WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT\`.** WS0 may treat the player-as-co-performer framing and one role-inverted card encounter as creative acceptance guidance in the existing live WS1 scene, without scheduling a new psychology/sentience/retention subsystem.
+
+
+---
+
+## R1.3 · GEORG CANONICAL CREATIVE CORRECTION · 2026-10-15 · Joyful Being-in-the-World, Vita Activa and Circle of Life
+
+**Priority: EXPLICIT CORRECTION OF THE R1.2 “AUDIENCE-DEPENDENT EXISTENCE” CLAIM, not merely another possible interpretation.** All previous history remains in this additive ledger, but R1.3 overrides the affected R1.2 sentences. **DO NOT RETELL THIS as “NPCs exist only while the player enjoys them”, “their continued existence is tied to the player's mood, return or login”, “the player keeps them alive”, “NPCs are happy because they must please the player”, or any FOMO/game-retention dependency.** Those were an incorrect interpretation of Georg's creative intent.
+
+### A. Correct ontological relation — existence and joy before the audience
+The KFB KayKit/KFB residents exist **as persons inside the fiction** with their own biography, role, meaningful work, joy, frustrations, relationships and offscreen/world continuity. They are not contingent on a player's arbitrary choice. The player's visit or return is **a happy occasion to enact, share, contest and celebrate** their own cosmic roles — not the condition of the characters' continued being.
+
+Their delight derives from **being-in-the-world, doing what they do, embracing or humorously reflecting their own sometimes deeply dysfunctional character mask**. An Orc, Evil Mage, Trickster, Graveyard revenant, Toy Soldier, resident builder or socially awkward authority can find joy and a sense of vocation in inhabiting that part with full Kayfabe conviction. They welcome a returning player as a fellow participant in a game they are already energetically playing. The character can challenge, oppose, annoy or even mock the player; a compelling encounter does not mean unconditional friendliness.
+
+**Corrected guiding maxim:** *“The player does not sustain their existence; the player joins their celebration of it.”* (editorial formulation, not a verbatim Georg quotation)
+**A second concise line:** *“They were already alive in their world. The player arrives in time for another performance.”* (editorial formulation)
+
+A specific Resident might have a *diegetic belief* about cosmic soul-casting, a destined job or a metaphysical theatre, but there is no universal software-lifecycle threat, no player-sanctioned creation/annihilation, no instant resurrection obligation and no global coercion to keep acting. Existing source-established Academy/Fluff lore remains distinct from what each Resident is authorized to know.
+
+### B. Philosophical alignment with explicit differences
+- **Martin Heidegger — Dasein / In-der-Welt-sein / Geworfenheit and Entwurf**: a person finds themselves already in a situation, history and possibility-space not fully chosen and can take a stance toward their own being. Source: Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/entries/heidegger/ . **Caveat:** Heidegger's thrownness itself is *not* equivalent to cheerfulness, a chosen soul prebirth or an already established KFB reincarnation law. KFB's joyful affirmation is its own creative transformation of the existential framing.
+- **Hannah Arendt — Vita activa**: **labor / work / action**, which differ: repetitive activity that sustains life; construction of a shared world; action among plural people through which who one is becomes manifest. Source: Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/entries/arendt/ . In KFB, the joyful builder/repair crew and recurring work cycle illuminate *work and maintenance*; friendly rivalries, stage participation, surprise and resident relationships illuminate *action*. **Do not reduce Arendt's whole theory to a mechanical build-destroy labor loop**. Plurality and the unpredictable arrival of another participant matter.
+- **G. W. F. Hegel — reciprocal recognition / social self-consciousness**: the player, Orc, builder, adversary and community confer social meaning through encounter and recognition, but a resident's ontological right to exist is **not at the mercy of a single player's appreciation**. Source: Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/entries/hegel/ . This is a selective KFB editorial use, not an assertion that Hegel proposed comic game loops.
+- Earlier **Marx/Charaktermasken, Gabriel/Sinnfelder, Warburg/gute Nachbarschaft** still supply distinct roles, contextual meaning and associative encounters, not a blended doctrine. The KFB-specific gain is affirmative agency, committed performance and comic hospitality despite failure.
+
+### C. The Doozers analogy — rebuilding is a joyful contribution
+The source analog is Jim Henson's **Fraggle Rock Doozers**: they enthusiastically construct elaborate structures that Fraggles eat, making room and occasion to build anew. This is a *story/design donor*, not an assertion the KFB Freddies are Doozers or a permission to copy character IP. Reference/context: https://muppet.fandom.com/wiki/Doozers and https://en.wikipedia.org/wiki/Fraggle_Rock . The symbiosis is **not a threat to exist until somebody destroys something**, and is not an excuse to trap the player in a repetitive extraction loop.
+
+**KFB Circle of Life (proposed native story/scene grammar):**
+- A world-state is a **living place**, with authored structure, residents, scars, repair practices, meaningful use and ongoing routines.
+- Player or in-world events may damage, dismantle, rearrange or consume structures; not every building must be destructible and an act of aggression is not automatically rewarded or called beneficial.
+- The dedicated KFB builder/repair Residents (Georg's Doozer-like crews, exact asset identity/source to be pinned by WS0) **enjoy building and repairing as activities in their own right**. They make visible improvements with tools/materials/choreography, not an invisible teleported reset or a pure respawn switch.
+- The rebuilt structure can bear visible history, patches, a changed relation, small variation, improved utility or a Resident memory of who helped, broke or rebuilt it. Meaningful persistence and world truth remain owned by existing World/Build-Destroy-Repair and Resident/Memory systems.
+- A player returning for a Dungeon run may find the same delighted, committed skeleton performing the next haunting; the cycle evokes festive recurring play, with combat and consequences still meaningful in fiction. No universal joy assumption for victims, and not every skeleton needs to enjoy being defeated.
+- Rebuilding, tending, staging, fighting, resting and celebrating together form **one convivial circle of life**. The world is active *between* player encounters; the player is a welcome collaborator/visitor rather than its existential life support.
+
+### D. Fluff, laughter, and a deeply humane multiverse
+KFB may present **Fluff** as a thematic expression of human surplus, imagination, solidarity, curiosity, joy, care and courage, with the source-authorized lore intact. Do **not** invent a literal new “happiness score”, assign Fluff as automatic payment per kill or claim official cosmology equates every destruction with good. The residents' enjoyment of their particular work is a **character/story quality**, not compulsory optimization of engagement metrics.
+
+The aim is an affirmative but unsentimental **Universe in a Nutshell**: existential absurdity, social masks, genuine moral disagreement, setbacks, comic repetition, play with contradictions and delight in life coexist. This is not a cozy flower show, moral erasure or the sanitization of cruelty, but a radically *life-affirming* form of meta-theatre. Player critical thinking and comic Closure emerge from actively seeing and interpreting these contradictions.
+
+### E. One compact KFB scene test (narrative editorial proposal)
+1. **Before arrival / during absence:** a source-backed skeleton patrols the graveyard; nearby builders proudly complete visible repairs after an earlier world event. Their lives and small histories have continued (without pretending to execute a simulated real-time process on a paused client). Same source-true Card and actual stage host remain authoritative.
+2. **Player returns:** delighted but not servile response. Skeleton enthusiastically resumes its authored haunting/encounter; builders appreciate the chance to build or show their repair — without issuing manipulative pleas, mandatory quest prompts, or falsely rewarding damage.
+3. **After event:** one resident self-deprecatingly remarks on another predictable failure *only if authentic source-approved dialogue exists*; a silent gesture/physical gag also counts. Consequences and relation/memory remain intact.
+4. **Return again:** a repaired prop, a different scenic paper-facade/light mood and familiar cast invite a fresh perspective. Player may observe, help, refuse, fight, avoid or leave; no pressure to log back in.
+
+### F. Practical direction and anti-drift rule
+**For all future design summaries, player-facing writing, source briefs and character authoring, R1.3 supersedes the audience-survival framing in R1.2.** The older sentence remains visible solely as **superseded archival history**, not as acceptable copy to reuse. *Do not make a Resident's ontological survival contingent on the player's engagement, mood, subscription, sessions, victories or destruction of the set.*
+
+Respect existing WS0 architecture V-228 and role boundaries. This is a creative correction within the same current Global Intent document and sibling Bigger Picture, NOT a request for a second WS1 runtime, global soul system, new loop owner, game-teleport respawn mechanic, new V-number or scheduling change.
+
+**Exactly one next gate remains \`WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT\`.** WS0 may route *joyful autonomous performance + visible repair* as narrative guidance inside the next actual source-backed Card/Billboard/Meshy/lighting stage comparison. A later gameplay repair cycle needs its own owner-authorized slice and independently verified source, physics and memory evidence.
