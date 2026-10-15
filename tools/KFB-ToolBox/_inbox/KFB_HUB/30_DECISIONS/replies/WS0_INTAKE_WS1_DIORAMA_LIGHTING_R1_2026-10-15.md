@@ -42,3 +42,17 @@ Georg korrigiert den alten Webchat-Recherchepfad PR #403: keine Blockierung durc
 3. **V-Nummer nur durch WS0**; DECISIONS und CHANGLELOG bleiben unangetastet bis WS0 tatsächlich entscheidet.
 
 **Ein nächstes Gate:** `WS0_LIGHTING_SLICE_ASSIGNMENT`: WS0 registriert/priorisiert und sendet einen knappen, bereits quellenbasierten Integrationsauftrag an WS1. Georg muss dafür heute nichts zusätzlich abnehmen.
+
+
+---
+
+## Additiver Georg-Konzeptauftrag · 15.10.2026 · METATHEATRE / POP-UP / CUT-UP
+**Nicht neues Produkt, nicht neue V-Nummer durch Webchat.** Zur bereits angemeldeten Licht-Kalibrierung gehört als **optionaler, produktiver Erweiterungspilot** die Kombination aus echter spielbarer Clay/Meshy-Bühne, echter KFB-Karte und Figuren **mit sichtbar handgebautem 2.5D-Kulissensystem**: gestaffelte Pappfassaden, gemalte Schatten, Silhouetten, Miniaturen, Pop-up-Mechanik, theatrales Backstage-Reveal und gewollt surreale Props. Historische Methoden: `Caligari` (expressionistische gemalte Kulissen), `Metropolis` (Miniaturen/optische Komposition), Lugosis `Dracula` (theatralisches Gothic-Entrée), Brecht (offene Bühnenmechanik) und Multiplane-Animation (Parallaxe). Die Traditionen sind getrennt, ihr **methodischer Zusammenbau** ist die kreative Idee.
+
+Das Modell-Mismatching bleibt ausdrücklich erlaubt, wenn szenisch motiviert, physisch plausibel beleuchtet und durch Reaktionen der Figuren/World-Lore begründet. Die Hauptkarte bleibt original und vollständig. Bestehendes WS1-R3F-Host, StageOrbitCam, `BILLBOARD_STANDARD_R2` und V-305-Palette (V-286 Meshy-Tönung 18 %) bleiben exklusiv. Keine zweite Kameralogik, kein neuer globaler Light Writer oder Cutout-Renderer. Das aktuelle Realtime-Game bleibt spielbar; Kulissen dürfen beim bewusst inszenierten Kameraschwenk ihre Rückseite offenbaren.
+
+**Quellen und technischer Vorlagenplan:** `replies/WS0_METATHEATRE_POPUP_DIORAMA_INTAKE_R1_2026-10-15.md` auf diesem Register-Branch. Source-Status klar getrennt: KFB Clay Curtain R2, StoryMap Pop-up, 2D Animation Studio Cutout-Planes und Card Motion PR #402 = Donor/Vorschläge; keine direkte WS1-Integration daraus behauptet.
+
+**Prüfbarer kleinster Pilot:** In derselben zweifigurigen Original-Card/Billboard-Szene mit demselben Tages-/Nachtlicht einen echten gestaffelten Kulissen-/Fassaden-Donor zuerst isolieren, dann in Front/Orbit/Seitenansicht mit erhaltener Karten-/Face-Lesbarkeit vergleichen; die absichtliche Rückseiten-Enthüllung ist ein dramaturgisches Signal, kein Fehler. Der vollständige Meshy-Bühnenkatalog bleibt unverändert später, sofern WS0 nicht aktiv umpriorisiert.
+
+**Korrigiertes einziges nächstes Gate:** `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`. WS0 entscheidet, ob diese Ergänzung gemeinsam mit dem bestehenden Lichtpilot in den aktiven WS1-Fortschritt passt, vergeben wird nur durch WS0 inklusive eventueller V-Nummer. Der vorherige Gate-Name `WS0_LIGHTING_SLICE_ASSIGNMENT` ist als historischer Eingang durch diese Erweiterung ersetzt, nicht als zweite parallele Aufgabe.
