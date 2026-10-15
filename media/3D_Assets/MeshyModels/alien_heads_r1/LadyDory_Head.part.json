@@ -1,0 +1,693 @@
+{
+ "schema": "kfb.headpart/1",
+ "id": "LadyDory_Head",
+ "figure": "Lady Dory",
+ "glb": "LadyDory_Head.part.glb",
+ "glbBytes": 3343292,
+ "glbSha256": "4fa6e7cdb6a6a19aafd83287fea3a5036612b3c64993a14f2948cbf15a134a99",
+ "frame": {
+  "name": "L",
+  "origin": "Mitte der Halsschnitt-Schleife (wo der Kopf in den Kragen geht)",
+  "up": "+Y",
+  "forward": "+Z",
+  "units": "m",
+  "scale": "S = Meshy-GLB-Raum, in dem Claude Design gemessen hat (r1-Montage war S × 1.4291)",
+  "fromS": "L = S − neckBase.centre_S (nur Verschiebung, keine Drehung, keine Skalierung)"
+ },
+ "nodes": {
+  "root": "LadyDory_Head",
+  "rig": "LadyDory_HeadRig",
+  "mesh": "LadyDory_Head_mesh",
+  "rigidJoint": "head_part",
+  "joints": [
+   "head_part",
+   "eyestalk.c",
+   "antenna.r",
+   "antenna.l"
+  ],
+  "anchors": [
+   "KFB_Eye_C_anchor",
+   "KFB_Mouth_anchor"
+  ],
+  "threeNames": "GLTFLoader entfernt Punkte aus Knotennamen (PropertyBinding.sanitizeNodeName): eyestalk.l → eyestalkl, antenna.r → antennar"
+ },
+ "skeleton": {
+  "head_part": {
+   "head_L": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "tail_L": [
+    0.0,
+    0.25,
+    -0.0
+   ],
+   "parent": null
+  },
+  "eyestalk.c": {
+   "head_L": [
+    0.00061,
+    0.4638,
+    0.00336
+   ],
+   "tail_L": [
+    -0.03102,
+    0.72464,
+    -0.00679
+   ],
+   "parent": "head_part"
+  },
+  "antenna.r": {
+   "head_L": [
+    -0.2656,
+    0.39664,
+    0.02099
+   ],
+   "tail_L": [
+    -0.4235,
+    0.73737,
+    -0.00059
+   ],
+   "parent": "head_part"
+  },
+  "antenna.l": {
+   "head_L": [
+    0.27303,
+    0.3907,
+    0.01416
+   ],
+   "tail_L": [
+    0.42817,
+    0.74937,
+    -0.00123
+   ],
+   "parent": "head_part"
+  }
+ },
+ "mesh": {
+  "tris": 59940,
+  "verts": 30606,
+  "materials": [
+   "LadyDory_Head_Clay",
+   "LadyDory_Sockel_C_Clay",
+   "LadyDory_Mund_Clay"
+  ],
+  "bbox": [
+   [
+    -0.46440503001213074,
+    3.159046173095703e-06,
+    -0.3311748802661896
+   ],
+   [
+    0.46369001269340515,
+    0.8808138966560364,
+    0.3653767704963684
+   ]
+  ],
+  "textures": "Basisfarbe + Normalmap 2048², WebP (EXT_texture_webp, required); Sockel/Mund/Lippen einfarbig",
+  "attributes": "_CLAYSEED (Knet-Seed 7 auf den neuen Teilen, Meshy-Teil 0), Normalen = Claude Designs eigene (Mund-Flicken mit WS0-Normalen-Korrektur aus r1)",
+  "baked": [
+   "Meshy-Netz mit ausgeblendetem alten Auge/Sockel (repair.cutParts, Halsebene + Union-Find)",
+   "Halskante rund gezogen (fit.roundOpening)",
+   "Hals-Loft (fit.neckLoft)",
+   "Kugelschale + Rollrand (fit.socket)",
+   "Lippen-Flicken (fit.lipsFind + mouthPatch)",
+   "Knet-Seed 7 als Vertex-Attribut _clayseed (nur die neuen Teile; Meshy-Netz trägt in Claude Design ebenfalls keinen Seed)"
+  ],
+  "notBaked": [
+   "Augen (EyeRig v6, live)",
+   "Hände (KayKit-Körper hat eigene)",
+   "clay-material v10 Shader (Laufzeit; GLB trägt Standard-PBR: Meshy-Textur 2048 + Normalmap, Teile einfarbig)"
+  ],
+  "compression": "keine (kein Draco/Meshopt nötig zum Laden); simplify nicht angewandt"
+ },
+ "neckBase": {
+  "centre": [
+   0,
+   0,
+   0
+  ],
+  "centre_S": [
+   -0.0,
+   0.105,
+   -0.01725
+  ],
+  "plane": "y = 0 (waagrechter Schnitt, Ebene ±0.0 mm)",
+  "radius": 0.15165,
+  "ellipse": {
+   "rx": 0.15297,
+   "rz": 0.14691
+  },
+  "loopVerts": 315,
+  "open": true,
+  "cut": "wie _frankenstein_poc/fk_head.py: Schweißen 1e-5, Ebene y_S = 0.105, Anzugreste (Sättigung < 0,18 & Hell > 0,55) bis +0,12, lose Teile < 1500 Punkte"
+ },
+ "eyes": [
+  {
+   "side": "C",
+   "anchorNode": "KFB_Eye_C_anchor",
+   "bone": "eyestalk.c",
+   "cdKey": "eyeL",
+   "pos": [
+    -0.03102,
+    0.72464,
+    -0.00679
+   ],
+   "quat": [
+    -0.03096,
+    0.14135,
+    0,
+    0.98948
+   ],
+   "scale": 1,
+   "R": 0.15406,
+   "gaze": [
+    0.27972,
+    0.06127,
+    0.95813
+   ],
+   "socket": {
+    "centre": [
+     -0.03102,
+     0.72464,
+     -0.00679
+    ],
+    "shellRadius": 0.15621,
+    "open_deg": 58,
+    "rollRim": 0.01155,
+    "colour": "#fb650e",
+    "neckPlane": [
+     0.00752,
+     0.57245,
+     -0.01048
+    ],
+    "neckAxis": [
+     -0.1492,
+     0.93308,
+     0.32727
+    ],
+    "neckAt_R": 1.26
+   }
+  }
+ ],
+ "eyeRig": {
+  "owner": "EyeRig v6 (nie nachbauen, Projektregel 4)",
+  "module": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "lastChangeCommit": "f6e1a57d2580e2d35bd842c042d4673671a1b7c4",
+   "origin_main": "dccf75cabd222d951380693d84ab88053ee7e519",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26",
+   "sha256": "3129bb7b08b40565ea9bd0c44e65ae8442780a3aa5e99ac519740a84341ca9a3",
+   "note": "identisch mit raw @main (remote e082405) am 15.10. geprüft"
+  },
+  "contract": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+   "lastChangeCommit": "f6e1a57d2580e2d35bd842c042d4673671a1b7c4",
+   "blob": "f202a1c2f1670ab6045176af6621c94041124e76",
+   "sha256": "a24db2de1d400ff8e0f2a83fe92e875309b6d29c9ed7fb15881a50a5245ab6c2"
+  },
+  "host": {
+   "space": "L = Wurzel des Kopfteils (Knoten LadyDory_Head). EyeRig-Wirt = Gruppe direkt unter der Wurzel, ohne eigene Matrix.",
+   "proxy": {
+    "name": "body",
+    "box": [
+     [
+      -0.33915,
+      0.21109,
+      -0.27794
+     ],
+     [
+      0.27711,
+      1.23818,
+      0.03019
+     ]
+    ],
+    "note": "unsichtbarer Quader »body« wie Claude Design app.js buildEyes: Höhe 2U legt R = U·ring fest"
+   },
+   "lidColour": "#fb650e",
+   "lidMaterial": "Lider: makeMat → Knete »figure« in der Sockelfarbe (Claude Design); ohne Knet-Shader MeshStandardMaterial(color, roughness 0,85)"
+  },
+  "options": {
+   "anchor": {
+    "dx": 0,
+    "dy": 0,
+    "ring": 0.3,
+    "track": 0.1
+   },
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.4,
+   "inset": 0,
+   "lidFit": 0.9,
+   "gloss": 0.1,
+   "converge": 0,
+   "baseColor": "#fca840",
+   "blink": {
+    "minGap": 2.5,
+    "maxGap": 6.5,
+    "dur": 0.12
+   },
+   "lashes": {
+    "length": 0,
+    "density": 6,
+    "width": 1
+   }
+  },
+  "afterBuild": {
+   "place": "e.position = pos_S, e.scale = scale_S, e.rotation.y = ±splay (Regler opt.splay = 0°); Auge 0 Blick auf gaze_S drehen, Auge 1 unsichtbar",
+   "emote": {
+    "lidUpper": -0.4,
+    "lidLower": 0,
+    "slant": 0,
+    "pupil": "normal",
+    "gaze": [
+     0,
+     0
+    ]
+   },
+   "life": {
+    "on": true,
+    "wander": 0.09,
+    "tremor": 0.045
+   }
+  },
+  "lidFitNote": "Lady Dory: lidFit 0.9 (Vertragsvorgabe). Mit 0 lagen die Lider 9,3 mm ausserhalb der engen Schale (Doppelrand), mit 1 schien die Pupille beim Blinzeln durch.",
+  "place": "nach rig.build(): eye[i].position = eyes[i].pos, eye[i].scale = eyes[i].scale, rotation.y = 0; Lady Dory: eye[0] auf gaze drehen (setFromUnitVectors(+Z, gaze)), eye[1].visible = false"
+ },
+ "dangle": {
+  "runtime": {
+   "module": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-06/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/kfb-lib/ear-dangle.v1.js",
+   "class": "DangleChain",
+   "lastChangeCommit": "1c888c488f0d6f8f1be03b8d8df92f682a981ddb",
+   "blob": "d7ad94a299d23fe8853ca3100c4294f01007a7e0",
+   "sha256": "3d7626bbb07667d7236bfdbbd7732db917d124880552ebbedfdb04f33a2b0046",
+   "note": "FrizzleBob-Ohren-Dangle (FB-EARS-FLOPPY-01), unverändert geladen; J17 nutzt dieselbe Datei als gepinnte Kopie"
+  },
+  "parts": [
+   {
+    "id": "antenna.r",
+    "kind": "antenna",
+    "bone": "antenna.r",
+    "stiffness": [
+     26
+    ],
+    "damping": [
+     3.2
+    ],
+    "maxDeg": [
+     32
+    ],
+    "inertia": 0.02,
+    "spin": 0.06,
+    "bob": 4,
+    "bobHz": 0.8,
+    "elastic": 0,
+    "gravity": 0,
+    "eyeFollows": false,
+    "eyeIndex": null,
+    "pivot": [
+     -0.2656,
+     0.39664,
+     0.02099
+    ],
+    "axisX": [
+     0.13541,
+     0,
+     -0.99079
+    ],
+    "axisZ": [
+     -0.89748,
+     -0.42366,
+     -0.12265
+    ],
+    "along": [
+     -0.41976,
+     0.90582,
+     -0.05737
+    ],
+    "length": 0.37615,
+    "weightedVerts": 6766
+   },
+   {
+    "id": "antenna.l",
+    "kind": "antenna",
+    "bone": "antenna.l",
+    "stiffness": [
+     26
+    ],
+    "damping": [
+     3.2
+    ],
+    "maxDeg": [
+     32
+    ],
+    "inertia": 0.02,
+    "spin": 0.06,
+    "bob": 4,
+    "bobHz": 0.8,
+    "elastic": 0,
+    "gravity": 0,
+    "eyeFollows": false,
+    "eyeIndex": null,
+    "pivot": [
+     0.27303,
+     0.39069,
+     0.01416
+    ],
+    "axisX": [
+     0.09868,
+     0,
+     0.99512
+    ],
+    "axisZ": [
+     0.91264,
+     -0.39863,
+     -0.0905
+    ],
+    "along": [
+     0.39668,
+     0.91711,
+     -0.03934
+    ],
+    "length": 0.39109,
+    "weightedVerts": 6843
+   },
+   {
+    "id": "eyestalk.c",
+    "kind": "stalk",
+    "bone": "eyestalk.c",
+    "stiffness": [
+     45
+    ],
+    "damping": [
+     5.5
+    ],
+    "maxDeg": [
+     18
+    ],
+    "inertia": 0.016,
+    "spin": 0.05,
+    "bob": 2.5,
+    "bobHz": 0.55,
+    "elastic": 0,
+    "gravity": 0,
+    "eyeFollows": true,
+    "eyeIndex": 1,
+    "pivot": [
+     0.00061,
+     0.4638,
+     0.00336
+    ],
+    "axisX": [
+     1,
+     0,
+     0
+    ],
+    "axisZ": [
+     0,
+     -0.09979,
+     -0.99476
+    ],
+    "along": [
+     0,
+     0.99476,
+     -0.09979
+    ],
+    "length": 0.10831,
+    "weightedVerts": 7280
+   }
+  ],
+  "eyeFollow": "Auge folgt seinem Stielknochen: qd = bone.quaternion · q0⁻¹; eye.position = pivot + qd·(eyes[i].pos − pivot); eye.quaternion = qd · Ruhe-Quaternion (wie Claude Design app.js dangleApply)",
+  "skin": "Kopf starr auf head_part (Gewicht 1 − w), w = Claude-Design-Biegegewicht auf dem Stiel-/Antennenknochen; Schale folgt starr"
+ },
+ "mouth": {
+  "set": "MOUTHS_GPT_R2 Typ A (runde Lippen)",
+  "setId": "MOUTHS_GPT_R2/A",
+  "path": "vendor/mouths/A/",
+  "source": "KFB_HUB/30_DECISIONS/replies/MOUTHS_GPT_R2/A (main: media/3D_Assets/Textures/FrizzleBob-Mouths_PNGs)",
+  "upperLift": 0.35,
+  "upperLiftNote": "in die PNGs gebacken (V-259 Standard)",
+  "canvasAnchor": [
+   256,
+   220
+  ],
+  "default": "smile_closed",
+  "emoteMap": {
+   "neutral": "smile_closed",
+   "happy": "smile_teeth",
+   "angry": "ee_wide",
+   "sad": "mbp",
+   "surprised": "surprised_tall",
+   "blink": "smile_closed"
+  },
+  "centre": [
+   0.03425,
+   0.24828,
+   0.36326
+  ],
+  "normal": [
+   0.1137,
+   0.1056,
+   0.9879
+  ],
+  "up": [
+   0,
+   1,
+   0
+  ],
+  "anchorNode": "KFB_Mouth_anchor",
+  "bone": "head_part",
+  "width": 0.24069,
+  "widthRule": "geschlossener Mund breit = Flickenbreite × 0.62 (Wert aus r1, in den Massstab S umgerechnet)",
+  "placement": "Lippen-Flicken von Claude Design (liegt im unteren Drittel)",
+  "patchCentre_CD": [
+   0.03425,
+   0.24828,
+   0.36312
+  ],
+  "decal": "DecalGeometry auf das Kopfnetz in Ruhepose; Grösse = width · Weltmassstab · canvas[0] / closed_width_px (anchors.json); Mitte um (canvas[1]/2 − anchor.y)/canvas[1] · Grösse nach unten versetzt; Ausrichtung: Projektionsrichtung = −normal, oben = up",
+  "note": "Auf Claude Designs Lippen-Flicken (liegt im unteren Drittel des sichtbaren Kopfes); deckt dort auch die feine Falte unter dem Flicken."
+ },
+ "neckRing": {
+  "enabled": false,
+  "radius": 0.1656,
+  "ellipse": {
+   "rx": 0.167,
+   "rz": 0.1609
+  },
+  "tube": 0.056,
+  "y": 0.0,
+  "colour": "#e76138",
+  "note": "Wulst aus r1/_frankenstein_poc (dort am Brustknochen und zu weit vorn). Standard AUS: der Kopf steckt im Kragen des Anzugs. Nur für Körper ohne eigenen Kragen."
+ },
+ "eyebrowsLater": {
+  "status": "nicht gebaut (Georg 15.10.: später)",
+  "attach": "schwebend über dem Auge, Kind von eyestalk.c, kleiner und dünner",
+  "hint": "EyeRig v6 eyeFrame() liefert Augenlage + Radius als öffentlichen Anker für Brauen",
+  "points": [
+   {
+    "bone": "eyestalk.c",
+    "pos": [
+     -0.03102,
+     0.928,
+     0.03173
+    ],
+    "radius": 0.15406,
+    "size": "klein und dünn",
+    "rule": "Vorschlag: Augenmitte + (0, 1,32 R, 0,25 R); genaue Lage liefert EyeRig v6 eyeFrame() zur Laufzeit"
+   }
+  ]
+ },
+ "defaultFit": {
+  "spaceRanger": {
+   "body": "KayKit Space Ranger, Rig_Medium (SpaceRanger.glb)",
+   "bodySource": {
+    "repo": "kayfabizarro-publish",
+    "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2024 - Space Ranger/character/SpaceRanger.glb",
+    "origin_main": "dccf75cabd222d951380693d84ab88053ee7e519",
+    "lastChangeCommit": "52083d8ca06ed3ce8be7f04bdb9bb2d482667541",
+    "blob": "bdc8efb8e09787f82a098b6175e8c228b3de8a12",
+    "sha256": "302f8aef4af43d0fb00abe8f7a237fbdf5baed356c8c11efe5e038f3177ca854"
+   },
+   "hideBodyNodes": [
+    "SpaceRanger_Head"
+   ],
+   "attachBone": "head",
+   "frame": "Kopfknochen lokal (Rig_Medium head in Ruhe = glTF-Achsen ohne Drehung, Ursprung Welt (0, 1.24143, 0))",
+   "scale": 0.751,
+   "position": [
+    0.0,
+    -0.1315,
+    0.01614
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "meaning": "part.root unter den Kopfknochen hängen: root.position = position, root.scale = scale (gleichmässig), keine Drehung",
+   "worldScale_vs_r1": 0.5255,
+   "rule": "Lord Hunky: groesste Skala, bei der die Halsschnitt-Schleife noch 8 mm innerhalb der Aussenkante des weissen Kragens liegt; Lady Dory: derselbe Faktor gegenueber r1 (Groessenverhaeltnis der Figuren bleibt). Hals-Ebene so tief wie noetig, mindestens 20 mm unter der tiefsten Innenkante (vorn), bis die Oeffnung rundum >= 3 mm ueberdeckt ist.",
+   "sinkBelowLowestInnerEdge_m": 0.055,
+   "scaleRange": {
+    "minNoGap": 0.5,
+    "maxNeckBaseInsideCollar": 1.181,
+    "headFullyInsideRoll": null,
+    "note": "bei derselben Position. Unter minNoGap öffnet sich ein Spalt zur Kragenöffnung; über maxNeckBaseInsideCollar sitzt der Halsschnitt auf statt im Kragen."
+   },
+   "checks_mm": {
+    "openingCoveredMin": 36.1,
+    "neckBaseToOuterEdgeMin": 73.8,
+    "headOverlapsRollTop": 152.13,
+    "note": "openingCoveredMin > 0: Kopfoberfläche liegt auf Höhe der Kragen-Innenkante rundum ausserhalb der Öffnung (kein Loch). headOverlapsRollTop: so weit legt sich der Kopf an der engsten Stelle über den Kragenwulst."
+   },
+   "mouth": {
+    "centre_L": [
+     0.03425,
+     0.24828,
+     0.36326
+    ],
+    "centre_headBone": [
+     0.02572,
+     0.05496,
+     0.28895
+    ],
+    "height_above_collarRidgeFront_m": 0.097,
+    "width_m_world": 0.1808,
+    "rule": "Lippen-Flicken von Claude Design (liegt im unteren Drittel)"
+   },
+   "collar": {
+    "frame": "head bone local (Rig_Medium head, rest; glTF axes: +Y up, +Z forward; origin = head bone head, world y 1.24143)",
+    "openingCentre_hb": [
+     0.0,
+     -0.0289,
+     0.0161
+    ],
+    "innerEdge": {
+     "note": "white collar meets the grey bowl = narrowest opening",
+     "rx": 0.1169,
+     "rzFront": 0.1409,
+     "rzBack": 0.1409,
+     "rMin": 0.117,
+     "rMax": 0.1479,
+     "yFront": -0.0765,
+     "ySide": 0.0038,
+     "yBack": -0.0366,
+     "yMin": -0.0765,
+     "yMax": 0.0044
+    },
+    "ridge": {
+     "note": "top of the white roll",
+     "rMin": 0.1474,
+     "rMax": 0.1822,
+     "yFront": -0.042,
+     "ySide": 0.0437,
+     "yBack": -0.0029
+    },
+    "ridgeOuter": {
+     "rMin": 0.1786,
+     "rMax": 0.2124
+    },
+    "outerEdge": {
+     "note": "white collar meets the orange suit",
+     "rMin": 0.1887,
+     "rMax": 0.2116,
+     "yFront": -0.1228,
+     "ySide": 0.0076
+    }
+   },
+   "sizes_m": {
+    "craniumWidth": 0.5987,
+    "craniumWidth_r1": 1.1393,
+    "crownAboveRidge": 0.2589,
+    "totalHeightFromNeckBase": 0.6615,
+    "totalWidth": 0.697,
+    "topWorldY": 1.7714,
+    "r1_scale_ratio": 0.5255
+   },
+   "frizzleBob": {
+    "source": "FB_TEMPLATE_LOOK_v5b.glb (lokal, KFB-Pin 93abbf22, nicht auf main), CharacterTemplate_Head auf demselben Rig_Medium",
+    "sha256": "0675942b99cae8d507bc7855cb9730e955fa66e5c0a8767a618c68986b772694",
+    "width": 1.006,
+    "height": 0.941,
+    "depth": 0.956,
+    "topWorldY": 2.157,
+    "earTipWorldY": 2.941
+   },
+   "status": "Vorschlag (gemessen), Georg stellt im Studio ein"
+  }
+ },
+ "sources": {
+  "meshyHead": {
+   "file": "Meshy_AI_female_clay_alien_ran_1014181632_image-to-3d-texture.glb",
+   "bytes": 34549292,
+   "sha256": "a33cc97df29090ca7665e6da68d644acdd7dbcb6cf74d87f02d15cfa734de87a"
+  },
+  "r1Assembly": {
+   "blend": "_frankenstein_eyes_r1/_work/dory_frankeneyes.blend",
+   "blendSha256": "5224cb7054223b350e2036d8c2f9df47f0019e1d8b00f33a9b7db36a017ba614",
+   "glb": "_frankenstein_eyes_r1/LadyDory_FrankenEyes_RigMedium.glb",
+   "glbSha256": "52f20b57f44a1965254f4c179e42d15e6431395e4bd040052565d4752de66a97",
+   "mount": "_frankenstein_eyes_r1/LadyDory_eyes.kfb-mount.json",
+   "mountSha256": "e1e0469778746ed85369b82667d2b23ed56822cbaf126e5322520589424f8418",
+   "note": "Kopfnetz, Gewichte, Normalen und Stielknochen 1:1 aus der r1-Montage übernommen; nur verschoben und auf S zurückskaliert"
+  },
+  "claudeDesign": {
+   "package": "KFB Meshy Rig Proof R1/kfb-alien-session-2026-10-15",
+   "files": {
+    "KFB_Alien_Ranger_R1/app.js": "ecfd641214373a36cb8b80f62865bde7222f6571625aabf52b0e8dbb5c81c17c",
+    "KFB_Alien_Ranger_R1/fit.js": "1824036d0ebd03b1b583e4fdade6dd956062b0b2265c741ee2053024e76e17e1",
+    "KFB_Alien_Ranger_R1/repair.js": "b6ffea2eb9a6d30bc438fac37e01b7f7d2b8da4b0d3702ccd02035c78f3e7636",
+    "KFB_Island_Kit_R1/kit/clay.js": "b82f88583f049a7bcb48d60f8503bb3230ec6a856ac87ccaa96db4da03c3404c",
+    "KFB_R2D_S0/bench.js": "5dbae1cf2f73450e4c577ff2264416a1d0a3c00ad08be97c633bde716702ea05"
+   }
+  },
+  "frankensteinProof": {
+   "glb": "_frankenstein_poc/LadyDory_Frankenstein_RigMedium.glb",
+   "sha256": "7e3793f174eb98a1fda6f3539f9856dd111142cbb97c5c6b5e8e4bb506c254e7"
+  },
+  "eyeRig": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "lastChangeCommit": "f6e1a57d2580e2d35bd842c042d4673671a1b7c4",
+   "origin_main": "dccf75cabd222d951380693d84ab88053ee7e519",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26",
+   "sha256": "3129bb7b08b40565ea9bd0c44e65ae8442780a3aa5e99ac519740a84341ca9a3",
+   "note": "identisch mit raw @main (remote e082405) am 15.10. geprüft"
+  },
+  "contract": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+   "lastChangeCommit": "f6e1a57d2580e2d35bd842c042d4673671a1b7c4",
+   "blob": "f202a1c2f1670ab6045176af6621c94041124e76",
+   "sha256": "a24db2de1d400ff8e0f2a83fe92e875309b6d29c9ed7fb15881a50a5245ab6c2"
+  },
+  "dangle": {
+   "module": "tools/KFB-ToolBox/_inbox/KFB ToolBox Production-06/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r2/kfb-lib/ear-dangle.v1.js",
+   "class": "DangleChain",
+   "lastChangeCommit": "1c888c488f0d6f8f1be03b8d8df92f682a981ddb",
+   "blob": "d7ad94a299d23fe8853ca3100c4294f01007a7e0",
+   "sha256": "3d7626bbb07667d7236bfdbbd7732db917d124880552ebbedfdb04f33a2b0046",
+   "note": "FrizzleBob-Ohren-Dangle (FB-EARS-FLOPPY-01), unverändert geladen; J17 nutzt dieselbe Datei als gepinnte Kopie"
+  },
+  "repo": {
+   "name": "kayfabizarro-publish",
+   "origin_main": "dccf75cabd222d951380693d84ab88053ee7e519"
+  }
+ },
+ "measuredVsAssumed": {
+  "measured": [
+   "Halsschnitt-Schleife (Mitte, Radien, plan)",
+   "Kragen des Anzugs (Innenkante, Wulst, Aussenkante je Richtung, aus Textur weiss/grau/orange)",
+   "Skala-Bereich und Überdeckung je Richtung",
+   "FrizzleBob-Kopfmasse",
+   "Mundhöhe nach Regel, Oberflächenpunkt und Normale"
+  ],
+  "assumed": [
+   "Regel für den Standard-Massstab (siehe defaultFit.spaceRanger.rule)",
+   "Mund im unteren Drittel der sichtbaren Kopfhöhe",
+   "Brauen-Punkte (Vorschlag)",
+   "Wulst-Parameter neckRing (aus r1, AUS)"
+  ]
+ },
+ "created": "2026-10-15 WS0"
+}
