@@ -28,3 +28,8 @@ No second Asset Registry/WorldBuilder/runtime, no replacement UI/theme/branding.
 
 ## Exactly one next gate
 **WSA Work G0:** In the existing Asset Librarian viewer, render and isolate one real Quaternius Nature source, capture true source PNG pixels with source SHA and native bbox; prove those image bytes can reach the intended image-job route. After G0, integrate provider and UI through existing Site, test and publish only with human authorization. Never claim the current private plugin is a live one-click generator.
+
+
+## Additive visual-review update · 2026-10-15 · Panopticon mood concept
+
+Georg explicitly judged the preceding panopticon prison diorama **FAIL**: sterile floor and stage, no believable traces of use, tally marks mistakenly painted on hanging banners. Retain the useful chunky retro-sci-fi control panels; do not smooth the failure away. The next original image (new generation, not a patch to the rejected image) is **MOOD_ONLY / UNREVIEWED** and itself contains extra unwanted textual slogans and over-detailed props; it is **not Meshy-ready or a Golden**. The review and exact local image hashes are recorded in [PANOPTICON_DIORAMA_FAIL_REVIEW_2026-10-15.md](PANOPTICON_DIORAMA_FAIL_REVIEW_2026-10-15.md). Generated PNGs were **not** uploaded to GitHub, nor was any Site/Stage revised; this is a chat visual-feedback checkpoint, not a G0 source proof. The original Librarian source/pixel integration G0 remains unchanged. For this concept alone, next gate: a simpler, inhabited, asymmetrical three-deep-cell cutaway image without fake banners/slogans, for Georg PASS/TUNE/FAIL before spending Meshy credits.
