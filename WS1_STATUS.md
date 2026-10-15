@@ -1,7 +1,36 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§32 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§33 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 33 · 15.10. nachts · M1 Tempo-Messung berichtigt: Sprint-Konflikt entfällt · Daten-Pin 52adc8f1 · V-257 Orbit-Kamera (lokal)
+
+### 33.1 · Berichtigung M1 zu §31.2 und §32.1 (M1-Sitzung)
+- **Messung neu:** Eigentempo jetzt über Ferse und Ballen aus dem Netz statt über Knochen-Ursprünge (`src/modules/m1-sole.js`, `scripts/m1/clip-speed.mjs`). Ergebnis auf FrizzleBob: **Walking_B 1,12 · Running_A 3,24 · Running_B 5,08 m/s**, nahe an der Motion-SSOT LOCO (0,93 / 3,13 / 4,98 m/s auf FB).
+- **Damit liegen alle V-020-Tempi in den V-248-Grenzen:**
+  - Joggen 3,08 m/s = Running_A × 0,95;
+  - Sprint 4,88 m/s = Running_B × 0,96;
+  - Gehen 1,12 m/s = Walking_B × 1,0.
+  - **Der Sprint-Konflikt aus §31.2 (Optionen a/b/c) entfällt**, die Tabelle in §31.2 ist überholt.
+- **Rest-Befund für WS0:** Selbst im Eigentempo rutschen in der Referenz ohne Controller **Sprint (Anteil 0,21) und Gehen (0,47)**, Joggen nur 0,039. Das ist eine Eigenschaft der KayKit-Clips: Der Standfuß wandert nicht gleichmäßig nach hinten. Messmethode in `test/m1-feet.mjs`. Die V-248-Abnahme „< 0,1 bei Gehen und Sprint“ ist mit diesen Clips nicht erreichbar → bitte Clip-Wahl oder Abnahme entscheiden.
+- **Aus Prüfer M1-3 umgesetzt (M1-Sitzung):**
+  - ecctrl läuft immer; Flug, Halten und Gehtempo greifen im selben Schritt (Live = Replay auch bei mehreren Schritten je Bild);
+  - freie Kamera im Dialog (V-257, eigene Steuerung in #m1);
+  - Bodenangleich wird beim Teleport zurückgesetzt;
+  - strenge Rang-Prüfung wieder drin;
+  - toter `anim.mjs` in M1 entfernt.
+
+### 33.2 · WS1
+- **Daten-Pin 52adc8f1** (lokal kfb-planet @d2bbe34): nur `trailingPages: 1` für anti_rules_toolkit neu, alle anderen Decks bytegleich, Audit unverändert 60/78/3142.
+  - **anti_rules_toolkit bleibt UNSAFE:** OCR 44/56 Titel = 0,786 < 0,85. Ursachen sind seitenbreite Titel („SYMPTOMS O“ | „F CERTAINTY“) und die Drift aus §24.2; die Seitenzuordnung selbst war schon richtig.
+  - Nach WS0s Regel wird es deshalb noch nicht gezeigt.
+- **V-257 Orbit-Kamera auf der Bühne** (lokal kfb-planet @e6529ce, Test `orbit` 9/9 PASS):
+  - OrbitControls mit Glättung (Dämpfung 0,08), Zoom zum Cursor, Panning, Fokus per Doppelklick (weiches Gleiten);
+  - nie unter 0,5 m (V-203);
+  - Sprungmarken als Knöpfe oben rechts: „Standard“ (Standard-Blick der Bühne) und „Nah“ (40 % näher), weich angefahren, Restschwung vorher verbraucht.
+  - Der Standard-Blick bleibt `near` bzw. die Slot-Kamera der Meshy-Bühnen.
+  - Push folgt nach den Bühnen-Tests (g4, stage, d1stage, g4preview, palette), sobald die M1-Runde den Browser freigibt.
+- **Als Nächstes:** V-270 Paletten (freigegeben) mit Story-Tint aus `storymode.v4.js`.
 
 ## 32 · 15.10. nachts · Gelesen bis V-281 · M1-Berichtigung (dritter blinder Prüfer FAIL) · Arbeitsplan WS1
 
