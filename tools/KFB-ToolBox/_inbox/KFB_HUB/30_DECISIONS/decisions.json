@@ -4155,7 +4155,9 @@
    "check": "Draufsicht mit Mittellinien + 3/4 + Seite + Video je Fahrer",
    "source": "Georg 15.10.",
    "supersedes": "V-307 (Umsetzung R4)",
-   "superseded_by": [],
+   "superseded_by": [
+    "V-320"
+   ],
    "why": "Sechs Runden ohne Abnahme-Raster: jede Runde flickte nur die letzte Kritik.",
    "applies": "ab sofort"
   },
@@ -4230,7 +4232,9 @@
    "check": "Schnittbild FB im Dragster + Größenvergleich v2",
    "source": "Georg 15.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-321"
+   ],
    "why": "Hineinhüpfen ist nur glaubhaft, wenn die Figur ins Auto passen könnte.",
    "applies": "M2"
   },
@@ -4293,6 +4297,81 @@
    "superseded_by": [],
    "why": "Reisen und Begegnungen brauchen Inhalt zwischen den Dioramen.",
    "applies": "Planung"
+  },
+  {
+   "id": "V-320",
+   "date": "2026-10-15",
+   "area": "Fahren",
+   "verdict": "PASS",
+   "text": "Badewannen-Kart R5 PASS (Hub kt06): beide Fahrer in Längs- und Quermitte, Kart-Schalensitz aus dem J17-Sitz in Tub-Materialsprache (Emaille, Türkis, Messing), Lehne 28°, Fäuste am Kranz, keine Durchdringung; Orc mit kartScale 1,04.",
+   "values": {},
+   "owner": "WS0 (Asset) → WS1",
+   "check": "Hub kt06",
+   "source": "Georg 15.10.",
+   "supersedes": "V-310 (Fix-Auftrag erfüllt)",
+   "superseded_by": [],
+   "why": "Raster zuerst hat in einer Runde geschafft, was sechs Flick-Runden nicht schafften.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-321",
+   "date": "2026-10-15",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Racer-Größe: etwas kleiner als die Ohren-Passung – die Ohren dürfen im Auto umknicken (Hub dv02). Standard für Medium-Rigs ≈ ×1,5 gegenüber v1 statt ×1,92; Größe bleibt Laufzeit-Regler.",
+   "values": {},
+   "owner": "WS0 (Asset v3) → WS1",
+   "check": "Größenvergleich v3",
+   "source": "Georg 15.10.",
+   "supersedes": "V-315 (Faktor ×1,92)",
+   "superseded_by": [],
+   "why": "Cartoon-Ohren dürfen knicken; riesige Autos wirken falsch neben den Figuren.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-322",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Bühnen v2 PASS (Hub st03), Ausnahme Retro-Arcade: das Billboard kommt VOR das Galaxy-Neonschild (verdeckt es), nicht darüber. Grüne Ruinen und Alien-Werkstatt PASS (st04).",
+   "values": {},
+   "owner": "WS0 (Asset) → WS1",
+   "check": "Arcade-Bild v3",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Karte ist der Star der Bühne, auch vor einem Wahrzeichen.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-323",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Meshy-Community (Hub cm01): Marmor-Terrassen und Portal-Ruine werden Bühnen, Grüne Ruinen bleibt dabei; der Ödland-Käfer wird Fahrzeug (Car).",
+   "values": {},
+   "owner": "WS0 (Bühnen, Fahrzeug-Intake) → WS1",
+   "check": "Bühnenbilder + Fahrzeug",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gute freie Modelle direkt nutzen statt neu generieren.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-324",
+   "date": "2026-10-15",
+   "area": "Dialog",
+   "verdict": "PASS",
+   "text": "Stimmen-Besetzung R1 PASS (Hub vo02): FrizzleBob am_michael, GothGirl bf_emma, Lord Hunky onyx60+george40, Lady Dory isabella60+bella40, Orc fenrir50+lewis50, Georg-Chronist bm_daniel, 28 KayKit-Nebenfiguren laut voice_casting.r1.json. Aussprache-Liste (Rousseau, Blödsinn, Kayfabizarro, deutsches Intro) folgt.",
+   "values": {},
+   "owner": "WS0 → WS1 (Einbau Stimmen)",
+   "check": "Hub vo02",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Jede Figur hat jetzt eine feste, unterscheidbare Stimme.",
+   "applies": "ab sofort"
   },
   {
    "id": "V-084",
@@ -4367,7 +4446,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:542",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:559",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

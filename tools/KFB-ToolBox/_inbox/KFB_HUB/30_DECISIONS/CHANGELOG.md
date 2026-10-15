@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Hub-Antworten Abend
+- V-320 Kart R5 PASS · V-321 Racer kleiner (Ohren knicken, ≈ ×1,5) · V-322 Arcade-Billboard vor das Neonschild, st04 PASS · V-323 Marmor-Terrassen + Portal-Ruine als Bühnen, Ödland-Käfer als Fahrzeug · V-324 Stimmen-Besetzung PASS.
+
 ## 2026-10-15 · Triplet-Batch 8: WS0-Intake + v2
 - Batch 8 (editorial/kfb-triplets-eight-decks-r2-2026-10-15 @31639721): Python-Checker 445/445 PASS, semantisch 193 TUNE + 1 FAIL (Caps, nackte Etiketten, Opener-Satzzeichen, Intros, Trust #28 verdreht). WS0 hat alle Fixes + 37 eigene Lesefixes eingesetzt → TRIPLET_SETS_R2/<deckId>.v2.* (8 × 0 FAIL, alle < 5000 Zeichen). Hub-Briefings b36–b43 (Suno-Texte zum Aufnehmen).
 - Batch-9-Briefing b35 um Lehren aus Batch 8 ergänzt.
