@@ -90,6 +90,12 @@ New additive [Deck Homebases & Card Progression R0.2](./KFB_DECK_HOMEBASE_COLLEC
 
 First *later* focused proof: one genuine Diorama and Resident, one authentic Deck and **three real Card acquisitions** (ordinary pickup, source activity, Resident/Courier) → true PDF/Almanac slots and save/reload → curator reaction. No current Lab DoD/PR/Stage scope change, no automatic merge, no new gate. Existing next step remains `CLAUDE_CODE_RECOVERY_INTAKE_CONFIRMATION`; only then is the deferred Fluff source/owner audit eligible after playable MVP and Georg approval.
 
+## 3C. Homebase Return Stone + real 3D POI Compass (2026-10-15)
+
+New additive [Homebase Return Stone / spatial 3D POI Compass R0.3](./KFB_HOME_RETURN_STONE_POI_3D_COMPASS_R0_3_2026-10-15.md) captures Georg's quest/courier idea. The current HUD R3 source `kfb-hud.js` has only a CSS 2D needle with `setHeading` and island name for walk; Overworld `hud-v7.js` has a 2D **single-target** arrow to a zone/tavern. Existing Lab God Mode §5 already envisages a Backpack **Taschenportal** to visited/known locations. R0.3 proposes one attuned Homebase anchor stored in future `PlayerSave`, owner-validated return/landing/vehicle continuity, and a genuine 3D GLB/mesh pointer inside the **same** KFB HUD renderer across Walk/Drive/Flight. A single player-pinned / quest / known Card clue target resolves via valid World/Track/Portal next leg; direction, honest distance and accessible proximity color are display only. No invented route length, no duplicated Nav/World/Teleport owner, no new current MVP requirement or requirement to bypass fun travel. Source object isolation and actual PlayerSave/World-portal owner are still UNKNOWN until Lab accepts them.
+
+**Same single immediate recovery gate**: `CLAUDE_CODE_RECOVERY_INTAKE_CONFIRMATION`; the further `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` remains deferred post-playable-MVP, post-Georg-authorisation. This R0.3 is a design source, not a second active integration job.
+
 ## 4. Scope / single recovery outcome / what Claude Code should do next
 
 **Completed by this recovery:** one permanent, discoverable **source bridge** and a draft PR on a branch based on current main, without changing the running Lab. It should contain links to *every original* and the Lab's earlier compatibility verdict and provide a cold-chat entry.
