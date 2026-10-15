@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Plugin-Test Forget Utopia
+- WSA-Plugin hat Forget Utopia selbst geschrieben (@c415aa6b): Python-Prüfung durch WS0 – 56/56 Kartenwörter PASS, 2 FAIL Opener-Familie, 2 Tracks (5488 Zeichen) statt einem, 25 % Opener. Korrektur-Briefing b30 (ein Track < 5000, V-280, ≥ 1/3 Opener, Intro). Kart-TUNE (tiefer, mittig sitzen, Bank als Lehne, Orc Brute) läuft.
+
 ## 2026-10-15 · Wrinkle-Rumble-Track
 - wrinkle_rumble.suno.txt (48 Karten, 4886 Zeichen, 24 Opener, Intro vom gedruckten Cover, 0 FAIL inkl. V-280); Hub b29. Stem-Schnitt-Test (ffmpeg + Whisper, von Georg freigegeben) läuft.
 
