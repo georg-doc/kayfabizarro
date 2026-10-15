@@ -76,3 +76,23 @@ Sources: https://epictetus-enchiridion.org/en/chapters/enchiridion/17/ ; https:/
 **Actual checks:** exact intended GitHub branch head and edited source file readbacks, structural source/contract checks only; no executed WS1 scene, resident acting/browser test, visual design acceptance or source-isolated donor render. No claim that these fictional Resident reactions already run.
 
 **One next gate remains `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.** WS0 may use one source-backed complaint→context shift→owned self-awareness/choice example as editorial guidance to the current two-actor Card/Billboard lighting stage if useful, without manufacturing a second MVP feature gate.
+
+
+---
+
+## R1.5 Return addendum · 2026-10-15 · Homer mechanism donor / Closure in the reader
+**Outcome: additively persisted GEORG GLOBAL INTENT (research/editorial, not gameplay).** R1.4 made grief and genuine complaint compatible with self-aware joyful cosmic role. R1.5 adds a proven comic timing/device reference: Homer Simpson's self-incriminating complaint about problems of stupid people in `The Simpsons` S18 E20 `Stop, or My Dog Will Shoot!`; and “It's funny 'cause it's true” as an independently recurring line spoken in episodes by both Homer and Fat Tony. Source references are in the canonical R1.5 section. Both are **mechanism references, not reusable KFB lines or proprietary art**.
+
+**Transferred principle:** a Resident may sincerely complain, accidentally reveal their own failure cause, then miss or partly see the conclusion and keep acting; the player performs the missing interpretive Closure. Recognition-based humour reflects recognizable contradictions, not objective proof of factual claims. This is neither a universal NPC ignorance setting nor a mandatory gag; specific Resident voice, facial acting, context, props, silence and optional relationship memory stay authoritative.
+
+**Current owner sources:**
+- `replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md`, R1.4 and R1.5 appended with previous R1–R1.3 preserved;
+- `skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md`, R1.5 global pointer;
+- `CHANGELOG.md`, newest-first additive R1.4–R1.5 line in WS0 register;
+- this Return, append-only.
+
+**QA at this milestone:** exact GitHub branch head and file readbacks; source excerpts/attributions validated via Simpsons S18 transcript/IMDb/Wikiquote, and repeated “It's funny 'cause it's true” appearance annotated without a unique-character misattribution. Static doc contract checks only. No generated/altered original Card, production ChatterBox dialogue pool, Resident runtime/Stage, browser, film clip, CI integration tests, publication or Georg visual PASS.
+
+**Owner** WS0 steering / decisions register branch `docs/kfb-decisions-register-2026-10-11`; WS1 remains single R3F stage owner; no new V-number, new Issue, independent engine or M2 reprioritization.
+
+**Exactly one next gate (unchanged): `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.** Only if useful WS0 can annotate the same real two-performer Card/Billboard lighting/physical-stage pilot with one true complaint→revelation→viewer-inference example, without demanding a second narrative integration gate.
