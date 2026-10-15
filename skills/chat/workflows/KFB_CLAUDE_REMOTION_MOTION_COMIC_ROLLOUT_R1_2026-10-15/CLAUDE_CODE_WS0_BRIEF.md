@@ -1,3 +1,5 @@
+> **R2 CURRENT ROUTE:** Interactive card-motion viewer pilot replaces the video-first next gate of this R1 historical brief. See `INTERACTIVE_MOTION_RECIPES_R2.md`. Current gate: `CLAUDE_CODE_WS0_REAL_SOURCE_INTERACTIVE_CARD_MOTION_PILOT_R2`. MP4/16:9/9:16 video is downstream optional. Existing WS0 v5 ownership and no-runtime/Stage/Live rules remain.
+
 # Claude Code / WS0 Intake · Real Four-Card Motion Comic R1
 
 **Execution mode:** NEXT GATE BRIEF · NOT AUTHORIZATION TO RUN OR SHIP IN THIS RESEARCH SLICE  
