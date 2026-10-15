@@ -3866,6 +3866,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-292",
+   "date": "2026-10-15",
+   "area": "Farben",
+   "verdict": "RULE",
+   "text": "Story-Mode-Farben kanonisch von kayfabizarro.pages.dev (#kfb, CSS): je Modus eine dunkle (Text, --m-N) und eine satte Farbe (--w-*): Tragic #34576b/#3e6a83, Comic #5e6f33/#7a8d4a, Absurd #b8901c/#e9c14a (Ocker/Gold, nicht Magenta), Heroic #b35e22/#d97c3a, Mystical #5b4470/#6b4e7d, Forbidden #8f3a60/#a64670. Dazu Ruf-Farben (Bingo #4f6029, Bongo #8a6f3e, Boggle #5a6b76, Blödsinn #b8361f). In kfb-color-concept.r1.json (storyModesWebsite).",
+   "values": {},
+   "owner": "alle",
+   "check": "Abgleich mit der Website",
+   "source": "Georg 15.10. (Quelle genannt)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Website ist die gedruckte Referenz der Story-Modes.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3928,7 +3943,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:445",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:451",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

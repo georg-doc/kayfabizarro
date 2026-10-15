@@ -1267,5 +1267,47 @@
    "sky": "Himmel hell und wenig bunt (L 0,78–0,84, C 0,06–0,08)",
    "leaf": "Laub uneinheitlich (canyon ≈ Gegenfarbe, bucht +43°, otown −124°); leaf[2] = Blüten-/Akzentton"
   }
+ },
+ "storyModesWebsite": {
+  "source": "https://kayfabizarro.pages.dev/#kfb (CSS :root, gelesen 15.10.2026 von WS0)",
+  "note": "Je Story-Mode zwei Farben der Website: dark = Textfarbe (--m-N), saturated = satte Modusfarbe (--w-*, als Kachelgrund mit 16–20 % Deckkraft). Bestätigt Absurd = Ocker/Gold (nicht Magenta). storymode.v4 accent stimmt mit dark praktisch überein.",
+  "modes": {
+   "tragic": {
+    "dark": "#34576b",
+    "saturated": "#3e6a83"
+   },
+   "comic": {
+    "dark": "#5e6f33",
+    "saturated": "#7a8d4a"
+   },
+   "absurd": {
+    "dark": "#b8901c",
+    "saturated": "#e9c14a"
+   },
+   "heroic": {
+    "dark": "#b35e22",
+    "saturated": "#d97c3a"
+   },
+   "mystical": {
+    "dark": "#5b4470",
+    "saturated": "#6b4e7d"
+   },
+   "forbidden": {
+    "dark": "#8f3a60",
+    "saturated": "#a64670"
+   }
+  },
+  "extra": {
+   "blood": "#c2412c",
+   "calls": {
+    "bingo": "#4f6029",
+    "bongo": "#8a6f3e",
+    "boggle": "#5a6b76",
+    "blodsinn": "#b8361f"
+   },
+   "paper": "#f3ead3",
+   "ink": "#1f1a14",
+   "accent": "#b8361f"
+  }
  }
 }

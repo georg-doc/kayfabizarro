@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Story-Mode-Farben von der Website
+- V-292: Story-Modes je dunkel + satt aus kayfabizarro.pages.dev (Absurd = Ocker/Gold); Farbkonzept und JSON ergänzt; Hub col01 beantwortet.
+
 ## 2026-10-15 · Farbkonzept R1
 - replies/COLOR_CONCEPT_R1.md + kfb-color-concept.r1.json (Quellen 1:1, Widersprüche, Lücken G-1–G-8); Hub col01 (Absurd Ocker/Magenta) und col02 (Fluff-Farben, dunkle/sattere Variante). Game Loop: Herstellen von Karten aus Fluff-Kombination (Alchemie/Hexe).
 

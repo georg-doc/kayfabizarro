@@ -256,3 +256,20 @@ Repo `georg-doc/kayfabizarro`, lokale Kopie `~/KFB_GitHub_sync` (nur `git show`/
 - **G-6 Stärke der sanften Tönung auf Meshy-Texturen:** Gibt es einen Wert? Im Bestand steht nur der Story-Tint 12 % (Grenze ~15 %).
 - **G-7 Joyride-Farbvariationen:** J17 hat genau drei Welten (canyon, bucht, otown); weitere Varianten je Palette gibt es im Bestand nicht. Sind die Lab-Ableitungen (wueste, kfb_town, protopia) gemeint, oder sollen Varianten gewürfelt werden? Sollen canyon und kfb_town eigene Akzente bekommen?
 - **G-8 Story-Mode-Palette mit sechs Farben:** Es gibt je Modus nur base/accent (+ deep/light/line) bzw. drei `STORY_PALETTES`-Stufen. Wie soll der Story-Mode „differenziert“ wirken: Tönung je Rolle (z. B. Akzent stärker, Boden schwächer) oder eigene Rollen?
+
+
+## Nachtrag 15.10. · Story-Mode-Farben von der Website (Georg: „hier die story modes“)
+Quelle: https://kayfabizarro.pages.dev/#kfb, CSS-Variablen der Seite. Je Modus gibt es dort eine **dunkle** Farbe (Text, `--m-N`) und eine **satte** Farbe (`--w-*`). Das ist für die Story-Modes die gesuchte dunkle und sattere Variante.
+
+| Modus | dunkel | satt |
+|---|---|---|
+| Tragic | #34576b | #3e6a83 |
+| Comic | #5e6f33 | #7a8d4a |
+| Absurd | #b8901c | #e9c14a |
+| Heroic | #b35e22 | #d97c3a |
+| Mystical | #5b4470 | #6b4e7d |
+| Forbidden | #8f3a60 | #a64670 |
+
+- **G-3 gelöst:** Absurd ist Ocker bzw. Gold, nicht Magenta. `world-context.js` („Rules Print v4“) ist hier überholt.
+- **G-2 teilweise gelöst:** Für die Story-Modes ist die dunkle und die satte Variante damit gegeben. Für die Insel-Paletten bleibt die Frage offen. Vorschlag: dasselbe Verhältnis wie auf der Website anwenden, also aus der Palettenfarbe eine dunkle Textstufe und eine satte Leuchtstufe ableiten.
+- **Fluff-Farben (G-1):** stehen nicht auf der Website. Naheliegend wäre, dass die Fluff-Sorte den Story-Mode trägt (satte Farbe für das Fell, dunkle für die Kontur). Das ist ein Vorschlag und braucht Georgs Bestätigung.
