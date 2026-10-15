@@ -1,7 +1,39 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§30 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§31 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 31 · 15.10. nachts · M1-Zwischenstand (Bewegung, eigene Sitzung) · drei Befunde zur Entscheidung (V-248)
+
+Quelle: M1-Sitzung, Branch `m1/bewegung` @0504819, eigener Worktree; Messskripte dort (`scripts/m1/clip-speed.mjs` u. a.). Noch nicht gemergt.
+
+- **Grün:** m1-contract, m1-scene, m1-eyes, m1-bench (M4, dpr 2: 60 Bilder/s, p95 ≤ 20 ms, 60 Physik-Schritte/s), f1.
+- **Rot:** m1-move nur bei `ranksNoPenetration` und `landRanksNoPenetration`.
+
+### 31.1 · Befund Ränge (Darstellung, keine Kollision)
+Auf den Amphitheater-Rängen taucht die Sohle beim Steigen in die nächste Stufe. Mit dem Bodenangleich der schwingenden Sohle sind es noch **−4,1 cm** (vorher −10,8 cm). Bei der Landung auf einer Rangkante sind es **−22,8 cm**; die Kapsel bleibt +8,5 cm über der Oberfläche. Weiter senken lässt sich das nur mit **Fuß-IK**; das wäre neues Verhalten und ist nicht gebaut. **Bitte entscheiden:** Fuß-IK für M1 (eigene Vorlagen-Zeile), oder hinnehmen bzw. Ränge als Laufweg sperren?
+
+### 31.2 · Befund Tempo (V-248: timeScale-Grenzen 0,8–1,25)
+Gemessene Eigentempi der KayKit-Clips auf FrizzleBob v5b (Maßstab 0,947, 240 Hz, Rutschanteil nur bei gleichem Kontaktknochen):
+
+| Clip | Eigentempo | Rutschanteil schon im Eigentempo |
+|---|---|---|
+| Walking_A | 0,62 m/s | 0,13 |
+| Walking_B | 1,58 m/s | 0,24 |
+| Walking_C | 0,46 m/s | 0,20 |
+| Running_A | 3,16 m/s | 0,03 |
+| Running_B | 7,32 m/s | 0,007 |
+
+1. **Joggen (W) passt:** V-020 1,40 H/s ≈ 3,08 m/s = Running_A × 0,97.
+2. **Sprint (Shift+W) passt in keinen Clip:** V-020 2,22 H/s ≈ 4,88 m/s. Running_A reicht bis 3,95 m/s (×1,25), Running_B beginnt bei 5,86 m/s (×0,8). Optionen:
+   - (a) Sprint auf ≥ 5,86 m/s anheben;
+   - (b) Sprint auf ≤ 3,95 m/s senken;
+   - (c) für Running_B die Grenze auf 0,67 erweitern (Rutschanteil rechnerisch ≈ 0,2).
+3. **Gehen (Strg+W):** Kein KayKit-Geh-Clip erreicht einen Rutschanteil < 0,1, auch nicht im eigenen Tempo; die Clips rutschen in sich. Die V-248-Abnahme „< 0,1 bei Gehen“ ist mit diesen Clips nicht erreichbar. Optionen: andere Geh-Clips (z. B. Mixamo) oder Abnahme für Gehen lockern.
+- **Vorläufig in M1, bis WS0 entscheidet:** W = Joggen Running_A, Shift = Sprint 4,88 m/s mit dem am wenigsten rutschenden Clip am Grenzrand (ausdrücklich vorläufig), Strg+W = Gehen mit Walking_B im Eigentempo 1,58 m/s.
+
+### 31.3 · Hinweis WS1 zu Strg+W (V-020)
+Unter Windows und Linux schließt **Strg+W den Browser-Tab**, und eine Seite kann das nicht verhindern. Auf Georgs Mac ist es harmlos (dort schließt Cmd+W). Für MVP-3 (Veröffentlichen) bitte eine Ausweichtaste oder einen Umschalter vorsehen. Die Belegung bleibt bis dahin wie V-020.
 
 ## 30 · 15.10. nachts · Vorschau Meshy-Bühnen Comic-Broadcast und Utopia (Georg: „als Vorschau nach dem Test“)
 
