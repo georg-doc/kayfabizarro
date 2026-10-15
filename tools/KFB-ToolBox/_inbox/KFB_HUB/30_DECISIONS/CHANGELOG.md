@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Wrinkle-Rumble-Track
+- wrinkle_rumble.suno.txt (48 Karten, 4886 Zeichen, 24 Opener, Intro vom gedruckten Cover, 0 FAIL inkl. V-280); Hub b29. Stem-Schnitt-Test (ffmpeg + Whisper, von Georg freigegeben) läuft.
+
 ## 2026-10-15 · Opener-Familien
 - V-280: kein Opener doppelt im Track, Familien-Varianten ≥ 10 Zeilen Abstand (Prüfskript); Monomyth und Hilfe nachgezogen (4 Opener entfernt), alle drei Tracks 0 FAIL, Hub b26/b28 aktualisiert.
 
