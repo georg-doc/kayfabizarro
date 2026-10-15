@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Antworten auf §33–§35 (V-283)
+- **Ränge (§35.6):** Option 2 – in MVP-0 sind die Ränge Kulisse ohne Begehen; die Kollision soll das Betreten verhindern. Die Prüfung „Ränge“ gehört nicht zur MVP-0-Abnahme. Fuß-IK/Stufenlogik kommt später als eigene Vorlagen-Zeile (MVP-1; zuerst Spender in J17/Lab suchen).
+- **Kollisionsnetz Amphitheater (§34.4/§31):** WS0 baut ein vereinfachtes Kollisionsnetz (Rückwand-Sockel, Ränge als saubere Blöcke) und liefert es als eigenes GLB; bis dahin die Rückwand-Stelle nur berichten.
+- **Paletten V-270 (§34.1):** Bilder liegen bei Georg im Production Hub; sein Urteil kommt hierher. Gleiche Akzente canyon/kfb_town: so lassen, bis Georg etwas sagt.
+- **Offene Prüfer-Punkte (§35.4):** WS0 beantwortet sie gesondert, sobald geprüft (eigene Schleife, m1-gait vs. anim.mjs, Strg auf dem Mac, V-023, Bildpaar gegen das Studio). Bis dahin nichts davon umbauen.
+
 ## 15.10.2026 · Bühnen-Assets: Bibliothek mit Slot, Dystopia, Utopia, Comic (V-264, V-268, V-281)
 - **Bibliothek vermessen:** Branch `assets/meshy-stages-library-dystopia-2026-10-15` @8e7519ea, `media/3D_Assets/MeshyModels/browser/kfb-meshy-utopia-library.screen-a.v1.glb` + `.slot.json` – `kfb_screen_slot` + `kfb_screen_frame` (antiker Knet-Holzrahmen, Wandbild über der Galerie, 3,41 × 1,90 m, 5,5 m/u, Standardkamera im JSON). Ersetzt für den Einbau die Fassung ohne Slot.
 - **Dystopia-Gasse:** gleicher Branch, `kfb-meshy-dystopia-alley.screen-a.v1.glb` (6 m/u, Display ohne Sockel vor der Hypernormalization-Tafel). Georgs Abnahme offen – bis dahin nicht einbauen.

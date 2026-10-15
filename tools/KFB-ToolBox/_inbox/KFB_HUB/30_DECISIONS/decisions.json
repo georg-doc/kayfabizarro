@@ -3727,6 +3727,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-283",
+   "date": "2026-10-15",
+   "area": "Steuerung",
+   "verdict": "RULE",
+   "text": "M1-Bewegung im Amphitheater (WS1 §35): Für MVP-0 sind die Ränge Kulisse ohne Begehen (Kollision verhindert Betreten, Prüfung „Ränge“ nicht Teil der MVP-0-Abnahme). Fuß-IK bzw. Stufenlogik kommt später als eigene Vorlagen-Zeile (MVP-1, Spender zuerst: J17/Lab). WS0 liefert ein vereinfachtes Kollisionsnetz für das Amphitheater (Rückwand-Sockel −19 cm, Rang-Durchdringung).",
+   "values": {},
+   "owner": "WS1 (M1) · WS0 (Kollisionsnetz)",
+   "check": "m1-move ohne Ränge grün",
+   "source": "WS0 15.10. (technisch, im Rahmen von V-250)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "MVP-0 ist die Dialog-Szene; begehbare Ränge brauchen neues Verhalten.",
+   "applies": "MVP-0"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3789,7 +3804,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:416",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:419",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

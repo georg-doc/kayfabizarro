@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · WS1 §33–§35
+- V-283: Ränge in MVP-0 Kulisse ohne Begehen, Fuß-IK später; WS0 liefert Kollisionsnetz Amphitheater. Paletten V-270 als Hub-Frage pal02; Dystopia-Frage wird mit Bildern neu gestellt (Georg: unklar formuliert).
+
 ## 2026-10-15 · Kart-Sitz zurück, Licht-Regel
 - V-282: Kart-Sitz zweiter Durchgang TUNE (nicht mittig, Hände nicht am Lenkrad, überstrahlt); Prüfbilder künftig mit dem Licht des Spiels und Histogramm-Prüfung.
 

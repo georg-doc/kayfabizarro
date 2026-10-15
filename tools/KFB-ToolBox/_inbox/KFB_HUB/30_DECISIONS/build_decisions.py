@@ -260,6 +260,7 @@ d('V-279','2026-10-15','Dialog','TBD','Deck-Songs als Spiel- und Marketing-Eleme
 d('V-280','2026-10-15','Dialog','RULE','Opener im Track: Keiner der Karten-Opener wiederholt sich in einem Track; Varianten derselben Familie (z. B. „Did you hear of“ / „Have you heard of“) nur mit mindestens 10 Zeilen Abstand. Prüfskript prüft das. Dazu als Idee (zu V-279): Karten und Story-Beats eines Tracks zu einer Beispiel-Case-Fabulation verknüpfen und mit Karaoke-Ebene zeigen.', 'WS0 → WSA-Plugin', 'Prüfskript, Tracks', 'Georg 15.10.')
 d('V-281','2026-10-15','Bühne','RULE','Alle vorhandenen Meshy-Modelle werden Bühnen mit derselben Strecke (Browser-Fassung, Kartenfläche kfb_screen_slot + passender Rahmen, Maßstab, Standardkamera, Slot-JSON): Dystopia-Gasse (neu, Karte auf dem eingebauten Hypernormalization-Billboard), Theater-Bühne, Giza-Pyramide, Kölner Dom (bessere Fassung), Akashic Library, Mesa Island, Nature- und Snow-Insel. Bibliothek „Utopia“ bekommt Slot und Rahmen im Modell (WS1 braucht die Vermessung).', 'WS0 (Assets) → WS1', 'Bild je Bühne aus der Standardkamera', 'Georg 15.10.')
 d('V-282','2026-10-15','Fahren','TUNE','Badewannen-Kart Sitz zweiter Durchgang: buggy – FrizzleBob sitzt nicht mittig (zu weit außen), hält das Lenkrad nicht richtig, Modell überstrahlt. Korrektur: Hüfte auf der Mittellinie und in der Mitte der Wanne mit eigener Knet-Lehne, Hände nachweislich am Kranz (Abstand je Bild gemessen), Licht = Lichtsetup und Tonemapping des Spiels (WS1-Bühne bzw. J17), Prüfung per Helligkeits-Histogramm. Allgemein: Prüfbilder für Georg nutzen das Licht des Spiels, keine eigenen Lichter; überstrahlte Bilder gehen nicht raus.', 'WS0 (Asset, Prüfbilder)', 'Messwerte + Bilder', 'Georg 15.10.')
+d('V-283','2026-10-15','Steuerung','RULE','M1-Bewegung im Amphitheater (WS1 §35): Für MVP-0 sind die Ränge Kulisse ohne Begehen (Kollision verhindert Betreten, Prüfung „Ränge“ nicht Teil der MVP-0-Abnahme). Fuß-IK bzw. Stufenlogik kommt später als eigene Vorlagen-Zeile (MVP-1, Spender zuerst: J17/Lab). WS0 liefert ein vereinfachtes Kollisionsnetz für das Amphitheater (Rückwand-Sockel −19 cm, Rang-Durchdringung).', 'WS1 (M1) · WS0 (Kollisionsnetz)', 'm1-move ohne Ränge grün', 'WS0 15.10. (technisch, im Rahmen von V-250)')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -508,6 +509,7 @@ WHY = {
  'V-280':('Wiederholte Einstiege nutzen sich ab; Familien brauchen Abstand.','ab sofort'),
  'V-281':('Jede Meshy-Bühne gleich aufbereitet ist sofort für WS1 nutzbar.','ab sofort'),
  'V-282':('Prüfbilder müssen zeigen, was das Spiel zeigt.','ab sofort'),
+ 'V-283':('MVP-0 ist die Dialog-Szene; begehbare Ränge brauchen neues Verhalten.','MVP-0'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 SUP = {}
