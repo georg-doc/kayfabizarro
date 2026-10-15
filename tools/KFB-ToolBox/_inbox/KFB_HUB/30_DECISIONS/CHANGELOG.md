@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Alle Meshy-Bühnen
+- V-281: Dystopia-Gasse, Theater, Giza, Kölner Dom, Akashic Library, Mesa, Nature, Snow als Bühnen in Arbeit; Bibliothek bekommt Slot im Modell.
+
 ## 2026-10-15 · Plugin-Test Forget Utopia
 - WSA-Plugin hat Forget Utopia selbst geschrieben (@c415aa6b): Python-Prüfung durch WS0 – 56/56 Kartenwörter PASS, 2 FAIL Opener-Familie, 2 Tracks (5488 Zeichen) statt einem, 25 % Opener. Korrektur-Briefing b30 (ein Track < 5000, V-280, ≥ 1/3 Opener, Intro). Kart-TUNE (tiefer, mittig sitzen, Bank als Lehne, Orc Brute) läuft.
 

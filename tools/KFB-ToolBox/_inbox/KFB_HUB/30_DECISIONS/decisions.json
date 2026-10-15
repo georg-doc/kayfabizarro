@@ -3697,6 +3697,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-281",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Alle vorhandenen Meshy-Modelle werden Bühnen mit derselben Strecke (Browser-Fassung, Kartenfläche kfb_screen_slot + passender Rahmen, Maßstab, Standardkamera, Slot-JSON): Dystopia-Gasse (neu, Karte auf dem eingebauten Hypernormalization-Billboard), Theater-Bühne, Giza-Pyramide, Kölner Dom (bessere Fassung), Akashic Library, Mesa Island, Nature- und Snow-Insel. Bibliothek „Utopia“ bekommt Slot und Rahmen im Modell (WS1 braucht die Vermessung).",
+   "values": {},
+   "owner": "WS0 (Assets) → WS1",
+   "check": "Bild je Bühne aus der Standardkamera",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Jede Meshy-Bühne gleich aufbereitet ist sofort für WS1 nutzbar.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3759,7 +3774,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:391",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:400",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
