@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Bildflächen-Träger je Bühne (V-262), Frankenstein-Standard (V-260/V-261)
+- **Amphitheater:** Das Billboard bekommt einen Knet-gemauerten Rahmen passend zu Torbögen und Mauerwerk (Georg hatte das schon angesprochen). Inhalt weiter über das Bildflächen-Modul (V-256), 1,79:1. Vorschlag bitte als Vorlagen-Zeile.
+- **Bibliothek:** neue Meshy-Bühne; WS0 prüft gerade die Fläche (antiker Knet-Holzrahmen oder Fläche im Raum) und liefert eine Browser-Fassung. Erst danach einbauen.
+- **Figuren:** Meshy-Figuren kommen künftig als Frankenstein (KayKit-Körper + Meshy-Kopf am Kopfknochen). WS0 baut gerade die Probe Hanky und Dory auf dem KayKit-Astronauten; das Gesicht entsteht in der WSA-ToolBox. Für MVP-0 nichts ändern.
+
 ## 15.10.2026 · UFO-Cockpit mit Bildfläche liegt bereit (V-259) · Einbau nach MVP-0
 - **Branch** `assets/meshy-ufo-cockpit-2026-10-15` @b9a46d1c, Ordner `media/3D_Assets/MeshyModels/browser/`: `kfb-meshy-ufo-cockpit.screen-up179.v1.glb` (14,1 MB, ohne Steuerknüppel) und `….slot.json`.
 - **Bildfläche** = Mesh/Node `kfb_screen_slot` (gewölbt, unlit Platzhalter). Das Bildflächen-Modul (V-256) setzt Inhalte darauf; kein Billboard davor. Ecken, Flächenformel, UV (flipY = false) und die sichtbare Öffnung stehen im slot.json.

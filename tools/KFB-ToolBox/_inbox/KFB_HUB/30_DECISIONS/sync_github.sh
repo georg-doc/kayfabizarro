@@ -13,7 +13,7 @@ BASE=tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS
 export GIT_INDEX_FILE=$(mktemp -t kfbidx); rm -f $GIT_INDEX_FILE
 PARENT=$(git rev-parse gh/$BR); git read-tree $PARENT
 # Pull-before-push guard: keep changes other sessions (WSA, WS1) pushed since the last steering commit.
-LAST=$(git log --format=%H -1 --grep='docs(steering)' gh/$BR)
+LAST=$(git log --format=%H -1 -E --grep='^(docs\(steering\)|WS0:)' gh/$BR)
 if [[ -n "$LAST" ]]; then
   git show "gh/${BR}:${BASE}/CHANGELOG.md" > /tmp/kfb_remote_changelog.md 2>/dev/null && python3 "$H/merge_changelog.py" "$H/CHANGELOG.md" /tmp/kfb_remote_changelog.md
   for f in $(git diff --name-only "$LAST" "gh/$BR" -- "$BASE"); do
