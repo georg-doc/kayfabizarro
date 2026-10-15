@@ -15,7 +15,7 @@ const cache = new Map(), deckJson = (d) => { if (!cache.has(d)) cache.set(d, fet
 const CARDS = P.sets[0].orderedBeatIds.map((id) => { const [d, n] = id.split(':'); return { deck: { id: d }, num: +n } })
 const EXPECT = [['Welcome to', 'The Ordinary World stasis loop: nothing changes; Dysfunction is habit. Normalize pain – feels like home.'],
   ['Remember', "Crossing the Threshold: hand new cards, old self dead. Fear becomes movement. You can't un-fluff the pill."],
-  ['You know', 'JEAN-JACQUES ROUSSEAU, Natural Goodness: man born free, everywhere in chains.']]
+  ['You know', 'Jean-Jacques Rousseau, Natural Goodness: man born free, everywhere in chains.']]
 
 let poolOk = false; try { validatePool(P); poolOk = true } catch (e) { poolOk = false }
 const plain = createPoolReader({ deckBlobs: BLOBS.decks, deckJson, cardSource: src })

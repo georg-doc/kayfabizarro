@@ -1,7 +1,27 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§28 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§29 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 29 · 15.10. nachts · Code zu §28 gespiegelt · V-256 Schritt 1 (B1 geschnitten, pixelgleich) · Suite
+
+**Code:** kfb-planet @8eeb33f, gespiegelt nach `ws1/kfb-planet`. Enthält §28.1 (V-269 GothGirl Standard, V-271 Daten-Pin a71de421, Vorschau Rousseau normal) und V-256 Schritt 1.
+
+### 29.1 · V-256 Schritt 1: B1 in Träger und Inhalt geschnitten
+- **Inhalt** `src/modules/surfaceContent.js` (Art `card`): Viertelseite aus `cardImage` bzw. Platzhalter mit Drucktext, Wachhund-Neuversuch, veraltete Aufrufe → `{{ stale }}`. Er bekommt eine Fläche `{{ mesh, fit(meta), flipY? }}` und kennt keinen Träger.
+- **Träger** `billboard.js`: Knet-Körper, Bildfläche mit runder Maske, Palette und Überblendung; formt sich nach `fit(meta)`. Nach außen unverändert (`setCard`, `info`, `ready`, `setPalette`).
+- **Bildpaar vorher | nachher** (V-253: Paar erlaubt), `ws1/proofs/2026-10-15-split/`:
+  - `pair_card.png`: Karte forget_utopia #1, **pixelgleich** (mittlere Abweichung 0, 0 Pixel über 40).
+  - `pair_placeholder.png`: Platzhalter-Karte. Billboard-Bereich pixelgleich (0 abweichende Pixel in der Bildmitte); Unterschiede nur an den beiden Figuren, deren Ruhe-Clip zwischen den Aufnahmen weiterlief.
+- **Nächste Schritte laut Freigabe:** Inhalt `video` (CSS3D), dann Bildflächen-Träger der Meshy-Bühnen (UFO-Slot 1,79:1).
+
+### 29.2 · Suite
+- Gesamtlauf auf dem Stand von §28 + Schnitt: **19/20 PASS**.
+- `actors` FAIL nur bei `earsSwingAndSettle`, unter Last (load ≈ 11): Die Ohren-Ruhe wartete fest 4 s Wanduhr, die Federn rechnen in Spielzeit. Der Test wartet jetzt auf den Zustand (gleich streng); danach `actors` PASS.
+- Vorher war ein Gesamtlauf bei load 35 nicht verwertbar und wurde abgebrochen (Georgs Chrome/Firefox; danach geschlossen).
+
+### 29.3 · Als Nächstes (Georg 15.10.)
+Vorschau der Meshy-Bühnen **Comic-Broadcast** und danach **Utopia-Bühne**: allgemeines Bühnen-Modul aus den Slot-Dateien (Maßstab, Boden, Standardkamera), Karte über das Inhalts-Modul direkt auf `kfb_screen_slot`. Bericht folgt in §30.
 
 ## 28 · 15.10. · Gelesen bis V-274 · V-269 GothGirl Standard · V-271 Daten auf a71de421 · Vorlagen-Zeile V-270 (Paletten neu)
 

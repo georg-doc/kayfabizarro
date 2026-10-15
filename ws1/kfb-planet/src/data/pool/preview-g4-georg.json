@@ -1,6 +1,6 @@
 {
  "schema": "kfb.voice.triplet-opener-pool/1",
- "contentRevision": "g4-preview-georg-2026-10-15-r1",
+ "contentRevision": "g4-preview-georg-2026-10-15-r2",
  "canonicalDefault": false,
  "status": "PREVIEW",
  "preview": true,
@@ -75,7 +75,7 @@
    "version": 1,
    "deckId": "kayfabizarro_monomyth_mayhem",
    "cardNumber": 1,
-   "cardBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c",
+   "cardBlob": "175c441703ef2fcbdab0aa5211e3e96ddfeebb70",
    "mode": "COMPACT",
    "surfaceText": "The Ordinary World stasis loop: nothing changes; Dysfunction is habit. Normalize pain – feels like home.",
    "status": "EDITORIAL_CANDIDATE",
@@ -154,15 +154,14 @@
    "performerFictionApproval": false,
    "openerId": "georg-welcome-to",
    "openerVersion": 1,
-   "history": [],
-   "titleNote": null
+   "history": []
   },
   {
    "beatId": "kayfabizarro_monomyth_mayhem:5:georg-preview",
    "version": 1,
    "deckId": "kayfabizarro_monomyth_mayhem",
    "cardNumber": 5,
-   "cardBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c",
+   "cardBlob": "175c441703ef2fcbdab0aa5211e3e96ddfeebb70",
    "mode": "COMPACT",
    "surfaceText": "Crossing the Threshold: hand new cards, old self dead. Fear becomes movement. You can't un-fluff the pill.",
    "status": "EDITORIAL_CANDIDATE",
@@ -227,17 +226,16 @@
    "performerFictionApproval": false,
    "openerId": "georg-remember",
    "openerVersion": 1,
-   "history": [],
-   "titleNote": null
+   "history": []
   },
   {
    "beatId": "help_i_am_a_human:10:georg-preview",
    "version": 1,
    "deckId": "help_i_am_a_human",
    "cardNumber": 10,
-   "cardBlob": "f0891ffa5df74679b94ecdcaf2c6c7fdeb899453",
+   "cardBlob": "bd00037b53945d4a650609037b9d9f9986474b66",
    "mode": "COMPACT",
-   "surfaceText": "JEAN-JACQUES ROUSSEAU, Natural Goodness: man born free, everywhere in chains.",
+   "surfaceText": "Jean-Jacques Rousseau, Natural Goodness: man born free, everywhere in chains.",
    "status": "EDITORIAL_CANDIDATE",
    "owner": "Georg (Fassung) · WS1 (Einbau)",
    "reviewer": null,
@@ -245,10 +243,10 @@
    "evidence": [
     {
      "field": "cardName",
-     "quote": "JEAN-JACQUES ROUSSEAU",
+     "quote": "Jean-Jacques Rousseau",
      "start": 0,
      "end": 21,
-     "spoken": "JEAN-JACQUES ROUSSEAU"
+     "spoken": "Jean-Jacques Rousseau"
     },
     {
      "field": "power",
@@ -293,8 +291,7 @@
    "performerFictionApproval": false,
    "openerId": "georg-you-know",
    "openerVersion": 1,
-   "history": [],
-   "titleNote": "Titel in Druck-Schreibweise (Vertrag: Titel wörtlich); Georg schrieb „Jean-Jacques Rousseau“"
+   "history": []
   }
  ],
  "bridges": [],

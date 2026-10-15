@@ -60,6 +60,7 @@ export function createEyeActor(options) {
     const gltf = await loader.loadAsync(url)
     if (state.disposed) return
     const figure = gltf.scene; state.figure = figure
+    figure.visible = false // erst sichtbar, wenn Augen und Ruhe-Clip stehen (wie faceMountActor, V-214): keine T-Pose, keine Spender-Augen im Bild
     const norm = normalizeActor(figure, height, classScale); state.height = norm.height; log(`${actor.id} geladen · ${norm.sourceHeight} → ${norm.height}${classScale ? ' (Klassen-Faktor ' + classScale + ')' : ''}`) // vor dem Einhängen: Welt = lokal wie im Studio (stageRoot im Ursprung)
     // Aufbau mit Weltdrehung 0 (wie faceMountActor, ToolBox-Befund A15): der Gesichts-Halter richtet sich beim Mounten an der Welt aus;
     // eine gedrehte Figur trüge das Augen-Rig sonst um ihren Winkel verdreht. Die eigene Drehung kommt erst nach dem Aufbau zurück.
@@ -81,12 +82,13 @@ export function createEyeActor(options) {
       const clips = await loader.loadAsync(clipsUrl)
       if (state.disposed) return
       const clip = clips.animations.find((c) => c.name === motion)
-      if (clip) state.mixer.clipAction(clip, figure).play()
+      if (clip) { state.mixer.clipAction(clip, figure).play(); state.mixer.update(0) }
     }
     root.quaternion.copy(q0); root.updateWorldMatrix(true, true) // Aufbau fertig: eigene Drehung zurück
     // Blasen-Anker knapp über dem Kopf (Figur steht auf y = 0, Höhe = height)
     head.position.set(0, (state.height ?? height) * 1.02, 0)
     state.status = eyes.eyeFrame() ? 'OK' : 'EYES_MISSING'
+    figure.visible = true
     state.cleanupStatus = cleanup.status
   })().catch((e) => { state.status = 'ERROR'; state.error = String(e?.message || e); log('Fehler: ' + state.error) })
 
@@ -108,7 +110,7 @@ export function createEyeActor(options) {
     setLife(patch) { state.eyes?.setLife(patch) },
     setKinetics(patch) { state.eyes?.setKinetics(patch) },
     expression(id) { return state.eyes?.applyExpression(id) },
-    status: () => ({ status: state.status, cleanup: state.cleanupStatus, error: state.error, log: state.log.slice(-8) }),
+    status: () => ({ status: state.status, shown: !!state.figure?.visible, cleanup: state.cleanupStatus, error: state.error, log: state.log.slice(-8) }),
     report: () => state.eyes?.report() ?? null,
     debugRig: () => state.eyes?.rig ?? null, // nur Prüfungen (Bildpaar Lid geschlossen)
     debugParts: () => [root, state.eyes?.rig?.rig, state.eyes?.faceHost?.box, state.eyes?.faceHost?.inner].filter(Boolean), // nur Prüfungen (Freigabe)

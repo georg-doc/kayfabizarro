@@ -94,8 +94,12 @@ const mouth = await page.evaluate(async () => {
 const ears = await page.evaluate(async () => {
   const A = window.__kfbActor, wait = (ms) => new Promise((r) => setTimeout(r, ms)); const b = []; A.object3d.traverse((o) => { if (o.isBone && /^ear[._]?[lr][._]?[123]$/i.test(o.name)) b.push(o) }) // GLTFLoader entfernt die Punkte (earl1)
   const q = () => b.map((o) => o.quaternion.toArray()); const q0 = q(); A.earImpulse('land'); await wait(250)
-  const q1 = q(); const moved = q1.some((x, i) => x.some((v, k) => Math.abs(v - q0[i][k]) > 1e-3)); await wait(4000)
-  const q2 = q(); const settled = q2.every((x, i) => x.every((v, k) => Math.abs(v - q0[i][k]) < 0.02)); return { bones: b.length, moved, settled, finite: q1.flat().every(Number.isFinite) }
+  const q1 = q(); const moved = q1.some((x, i) => x.some((v, k) => Math.abs(v - q0[i][k]) > 1e-3))
+  // zur Ruhe kommen: warten, bis die Ohren wieder bei q0 sind (höchstens 20 s). Die Federn rechnen in Spielzeit; bei wenigen Bildern/s
+  // reichten feste 4 s Wanduhr nicht (FAIL nur unter Last, 15.10.). Die Prüfung selbst ist gleich streng (Abweichung < 0,02).
+  const calm = () => q().every((x, i) => x.every((v, k) => Math.abs(v - q0[i][k]) < 0.02))
+  for (let t0 = performance.now(); performance.now() - t0 < 20000 && !calm();) await wait(200)
+  const settled = calm(); return { bones: b.length, moved, settled, finite: q1.flat().every(Number.isFinite) }
 })
 // Lange Bilder (≈ 4 Bilder/s, wie die Bühne headless): Augen- und Brauen-Leben an, 40 × update(0,25) synchron. Pupillen bleiben im Auge,
 // Brauen bei ihrer Grundlage (G4-Vorprobe 14.10.: ohne Teilschritte schwang die Pupillen-Feder auf, Brauen landeten auf der Brust)

@@ -18,7 +18,7 @@ const deckJson = (deckId) => {
   return deckCache.get(deckId)
 }
 
-// Kartenquelle: src/data/cards.json (Kartentext = Druck, media/kfb @233efd5, V-242; Texte wörtlich), Schlüssel deckId#Nummer
+// Kartenquelle: src/data/cards.json (Kartentext = Druck V-242, Titel normal V-271, media/kfb @a71de421; Texte wörtlich), Schlüssel deckId#Nummer
 const byKey = new Map()
 data.cards.forEach(([d, num, name, power, lore]) => byKey.set(data.decks[d][0] + '#' + num, { name, power, lore }))
 const cardSource = (deckId, num) => byKey.get(deckId + '#' + num) || null

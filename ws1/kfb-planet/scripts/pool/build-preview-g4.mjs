@@ -11,7 +11,7 @@ const C = JSON.parse(fs.readFileSync('src/data/cards.json', 'utf8')), ids = C.de
 const BLOBS = JSON.parse(fs.readFileSync('src/data/deck-blobs.json', 'utf8'))
 const card = (d, n) => { const c = C.cards.find((x) => ids[x[0]] === d && x[1] === n); return { cardNumber: n, cardName: c[2], power: c[3], lore: c[4] } }
 
-// Georgs Zeilen (Opener getrennt). Titel in Druck-Schreibweise, wo der Druck ihn anders schreibt (Vertrag: Titel wörtlich, case-sensitiv).
+// Georgs Zeilen (Opener getrennt), wörtlich. Titel seit V-271 normal geschrieben (Kartendaten @a71de421), also wie bei Georg.
 // spans: [Feld, Zitat auf der Karte, gesprochen in der Zeile]
 const ITEMS = [
   { deck: 'kayfabizarro_monomyth_mayhem', n: 1, opener: 'Welcome to', georg: 'The Ordinary World stasis loop: nothing changes; Dysfunction is habit. Normalize pain – feels like home.',
@@ -22,8 +22,8 @@ const ITEMS = [
     spans: [['cardName', 'Crossing the Threshold', 'Crossing the Threshold'], ['power', 'new cards', 'new cards'], ['power', 'The old self is dead', 'old self dead'],
       ['lore', 'fear becomes movement', 'Fear becomes movement'], ['lore', 'the pill', 'the pill']],
     coverage: { power: 'neue Hand, das alte Selbst ist tot', lore: 'Angst wird Bewegung, die Pille ist nicht zurückzunehmen', reframe: 'un-take → un-fluff (Georgs Wortspiel)' } },
-  { deck: 'help_i_am_a_human', n: 10, opener: 'You know', georg: 'Jean-Jacques Rousseau, Natural Goodness: man born free, everywhere in chains.', titleAsPrint: true,
-    spans: [['cardName', 'JEAN-JACQUES ROUSSEAU', 'JEAN-JACQUES ROUSSEAU'], ['power', 'Natural Goodness', 'Natural Goodness'], ['lore', 'Man is born free', 'man born free'],
+  { deck: 'help_i_am_a_human', n: 10, opener: 'You know', georg: 'Jean-Jacques Rousseau, Natural Goodness: man born free, everywhere in chains.',
+    spans: [['cardName', 'Jean-Jacques Rousseau', 'Jean-Jacques Rousseau'], ['power', 'Natural Goodness', 'Natural Goodness'], ['lore', 'Man is born free', 'man born free'],
       ['lore', 'everywhere he is in chains', 'everywhere in chains']],
     coverage: { power: 'Natural Goodness', lore: 'frei geboren, überall in Ketten', reframe: 'Rousseau als Karte' } },
 ]
@@ -31,7 +31,7 @@ const slug = (s) => s.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '
 const openers = [], beats = [], report = []
 for (const it of ITEMS) {
   const c = card(it.deck, it.n), meta = BLOBS.decks[it.deck]
-  let surface = it.georg; if (it.titleAsPrint) surface = surface.replace(/^Jean-Jacques Rousseau/, c.cardName)
+  const surface = it.georg
   const oid = 'georg-' + slug(it.opener)
   if (!openers.find((o) => o.openerId === oid)) openers.push({ openerId: oid, version: 1, kind: 'OPENER', pattern: it.opener + ' {title}', sourceClass: 'SOURCE_NEUTRAL', requiredEvidence: [], performerFiction: false,
     status: 'EDITORIAL_CANDIDATE', enabled: true, owner: 'Georg (Fassung) · WS1 (Einbau, Vorschau F-3a)', reviewer: null, source: { path: SRC.path, revision: SRC.revision }, history: [] })
@@ -41,10 +41,10 @@ for (const it of ITEMS) {
     status: 'EDITORIAL_CANDIDATE', owner: 'Georg (Fassung) · WS1 (Einbau)', reviewer: null, humanAcceptance: 'PENDING', evidence,
     semanticCoverage: { ...it.coverage, newClaims: 'keine neuen Kartenfakten; Georgs eigene Fassung', humanAcceptance: 'PENDING', editorialReview: 'Vorschau für G4 (F-3a), nicht ACCEPTED' },
     speaker: { id: 'stage' }, delivery: { pauseBeforeMs: 300, pauseAfterMs: 800, rate: 1, pitch: 1, emphasis: 'Georg-Fassung' }, performerFictionApproval: false,
-    openerId: oid, openerVersion: 1, history: [], titleNote: it.titleAsPrint ? 'Titel in Druck-Schreibweise (Vertrag: Titel wörtlich); Georg schrieb „Jean-Jacques Rousseau“' : null })
+    openerId: oid, openerVersion: 1, history: [] })
   report.push([it.deck + '#' + it.n, it.opener, surface])
 }
-const pool = { schema: POOL_SCHEMA, contentRevision: 'g4-preview-georg-2026-10-15-r1', canonicalDefault: false, status: 'PREVIEW', preview: true,
+const pool = { schema: POOL_SCHEMA, contentRevision: 'g4-preview-georg-2026-10-15-r2', canonicalDefault: false, status: 'PREVIEW', preview: true,
   owner: { repo: 'georg-doc/kayfabizarro', note: 'WS1 Vorschau F-3a; Pool r6 kommt erst mit sauberen Triplets (WS0 F-3b)' }, source: SRC,
   openers, beats, bridges: [], sets: [{ setId: 'g4-preview', orderedBeatIds: beats.map((b) => b.beatId), note: 'Reihenfolge der G4-Vorschau' }] }
 validatePool(pool)

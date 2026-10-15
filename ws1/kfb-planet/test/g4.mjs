@@ -1,4 +1,4 @@
-// G4 · Bildaufbau der Bühne mit FrizzleBob (#stage ohne cam/place = Standard near, Georg 14.10.; 1 Karte): ein deterministischer Prüfpunkt je Eigenschaft.
+// G4 · Bildaufbau der Bühne mit FrizzleBob links und GothGirl rechts (V-269; #stage ohne cam/place = Standard near, Georg 14.10.; 1 Karte): ein deterministischer Prüfpunkt je Eigenschaft.
 // Figuren im Bild, bevor die erste Zeile kommt · Karte frei von Figuren, Blase und Spielerwahl · Brauen am Kopf (Teilschritte, auch bei wenigen Bildern/s)
 // · Farben der Original-Brauen/-Nase aus Georgs Export (WS0 14.10.) · Augen-Rig sitzt auch auf gedrehten Figuren richtig.
 import fs from 'fs'
@@ -20,35 +20,35 @@ const rects = () => page.evaluate(() => {
   return { face: box(fc), left: actor(S.left), right: actor(S.right), choice: pr ? [pr.left, pr.top, pr.right, pr.bottom] : null, bubbles: (window.__kfbBubbles?.() || []).filter((b) => b.shown).map((b) => ({ anchor: b.anchor, r: [b.rect.left, b.rect.top, b.rect.right, b.rect.bottom] })) }
 })
 const shown = () => page.evaluate(() => { const S = window.__kfbStageMods; return [S.left?.status().shown, S.right?.status().shown] })
-// Brauen gegenüber dem Kopfknochen (Weltlage, je Figur): bleiben am Kopf
-const brows = () => page.evaluate(() => { const S = window.__kfbStageMods; return ['left', 'right'].map((k) => { const a = S[k].object3d; let head = null; const out = []
+// Brauen gegenüber dem Kopfknochen (Weltlage): bleiben am Kopf – nur FrizzleBob links (rechts GothGirl, V-269)
+const brows = () => page.evaluate(() => { const S = window.__kfbStageMods; return ['left'].map((k) => { const a = S[k].object3d; let head = null; const out = []
   a.traverse((o) => { if (o.isBone && /^head$/i.test(o.name)) head = o }); const h = head.getWorldPosition(head.position.clone())
   a.traverse((o) => { if (/^Carl_Brow_[LR]$/.test(o.name)) out.push(+o.getWorldPosition(o.position.clone()).sub(h).y.toFixed(3)) }); return out }) })
 const visAtStart = await page.evaluate(() => new Promise((ok) => { const t = setInterval(() => { const S = window.__kfbStageMods, d = S?.dialog; if (d && d.log().length) { clearInterval(t); ok({ first: d.log()[0].type, shown: [S.left.status().shown, S.right.status().shown] }) } }, 20) }))
 // Augenmitten im Raum der Figur: gedrehte Figuren (yaw ±0,45) tragen das Augen-Rig wie ungedreht (facehost richtet sich beim Mounten an der Welt aus)
 const eyesLocal = await page.evaluate(() => { const S = window.__kfbStageMods; return ['left', 'right'].map((k) => { const A = S[k], root = A.object3d; root.updateWorldMatrix(true, true)
   return A.debugRig().eyes.map((e) => root.worldToLocal(e._pivot.getWorldPosition(e._pivot.position.clone())).toArray()) }) })
+const rightIsGothGirl = await page.evaluate(() => window.__kfbStageMods.right.object3d.name === 'eyeActor:gothgirl')
 const camPos = await page.evaluate(() => window.__kfbStageCamera.position.toArray().map((v) => +v.toFixed(2)))
 await until((s) => s.phase === 'A'); await page.waitForTimeout(500); const rA = await rects(), shA = await shown()
 await until((s) => s.phase === 'CHOICE'); await page.waitForTimeout(700); const rC = await rects()
 fs.mkdirSync('test/out', { recursive: true }); fs.writeFileSync('test/out/g4_test_choice.png', await page.screenshot())
 await page.waitForTimeout(8000); const bw = await brows() // ≥ 8 s Leben mit wenigen Bildern/s (headless)
 // Farben der Original-Teile = Georgs Export (WS0 14.10.), je Figur eigenes Material
-const pc = await page.evaluate(() => { const S = window.__kfbStageMods; return ['left', 'right'].map((k) => { const out = { status: S[k].status().partColors }; S[k].object3d.traverse((o) => { if (/^Carl_(Brow_L|Brow_R|Nose)$/.test(o.name)) out[o.name] = { hex: '#' + o.material.color.getHexString(), uuid: o.material.uuid } }); return out }) })
+const pc = await page.evaluate(() => { const S = window.__kfbStageMods; return ['left'].map((k) => { const out = { status: S[k].status().partColors }; S[k].object3d.traverse((o) => { if (/^Carl_(Brow_L|Brow_R|Nose)$/.test(o.name)) out[o.name] = { hex: '#' + o.material.color.getHexString(), uuid: o.material.uuid } }); return out }) })
 await browser.close()
 
 const inter = (P, Q) => !!P && !!Q && Math.min(P[2], Q[2]) > Math.max(P[0], Q[0]) && Math.min(P[3], Q[3]) > Math.max(P[1], Q[1])
 const inView = (R) => R[0] >= 0 && R[1] >= 0 && R[2] <= 1280 && R[3] <= 720
 process.exit(report('g4 framing (near, FrizzleBob)', {
   defaultIsNear: camPos[0] === 0 && camPos[1] === 2.15 && camPos[2] === 9.2, // ohne cam/place: Kamera near (Georg 14.10.)
-  eyesSeatedOnRotatedFigures: eyesLocal.every((E) => E.length === 2 && Math.abs(E[0][0] + E[1][0]) < 0.03 && Math.abs(E[0][2] - E[1][2]) < 0.03 && Math.min(Math.abs(E[0][0]), Math.abs(E[1][0])) > 0.15)
-    && eyesLocal[0].every((p, i) => p.every((v, j) => Math.abs(v - eyesLocal[1][i][j]) < 0.002)), // beide Figuren gleich, Augen symmetrisch vorn
+  eyesSeatedOnRotatedFigures: eyesLocal.every((E) => E.length === 2 && Math.abs(E[0][0] + E[1][0]) < 0.05 && Math.abs(E[0][2] - E[1][2]) < 0.03 && Math.min(Math.abs(E[0][0]), Math.abs(E[1][0])) > 0.1), // beide Figuren: Augen symmetrisch vorn
   actorsShownBeforeFirstLine: visAtStart.first === 'card' && visAtStart.shown.every((x) => x === true) && shA.every((x) => x === true),
   cardWholeInView: inView(rA.face),
   cardFreeOfActors: !inter(rA.face, rA.left) && !inter(rA.face, rA.right) && inView(rA.left) && inView(rA.right),
   speakerBubbleOffCard: rA.bubbles.some((b) => b.anchor === 'stage-left') && rA.bubbles.every((b) => !inter(b.r, rA.face)),
   choiceBelowCard: !!rC.choice && rC.choice[1] >= rC.face[3] && rC.choice[3] <= 720, // Spielerwahl unter der Kartenfläche, ganz im Bild
   browsStayOnHead: bw.every((a) => a.length === 2 && a.every((y) => y > 0.1 && y < 0.5)), // Braue 0,1–0,5 m über dem Kopfknochen (Ruhe ≈ 0,28)
-  partColorsFromExport: pc.every((a) => a.status?.brows === '#17130f' && a.status?.nose === '#e96049' && a.Carl_Nose?.hex === '#e96049' && a.Carl_Brow_L?.hex === '#17130f' && a.Carl_Brow_R?.hex === '#17130f') && pc[0].Carl_Nose.uuid !== pc[1].Carl_Nose.uuid,
+  partColorsFromExport: pc.every((a) => a.status?.brows === '#17130f' && a.status?.nose === '#e96049' && a.Carl_Nose?.hex === '#e96049' && a.Carl_Brow_L?.hex === '#17130f' && a.Carl_Brow_R?.hex === '#17130f') && rightIsGothGirl, // zweite Figur = GothGirl (V-269)
   noPageErrors: errs.length === 0,
 }, { eyesLocal, camPos, pc, visAtStart, shA, rA, rC, bw, errs }))

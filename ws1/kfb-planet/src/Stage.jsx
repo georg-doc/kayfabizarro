@@ -1,6 +1,6 @@
 // Bühne im Amphitheater (Vorbereitung G4) hinter dem URL-Schalter #stage: Amphitheater-Modul (V-230) auf Knet-Gelände, Billboard R2 hinten auf
 // der Bühnenfläche, ruhiger Two-Shot (eine feste Kamera, kein Schnitt; Standard cam=near, Georg 14.10.). Diese Szene ist Host: Kamera, Licht, Himmel; alles andere sind Module.
-// Figuren per Hash: actors=none (Standard) | fb (FrizzleBob nach Georgs Export, V-240; beide Seiten, bis die zweite Besetzung feststeht)
+// Figuren per Hash: actors=none (Standard) | fb (FrizzleBob nach Georgs Export, V-240, links; rechts GothGirl V-269, cast=fb für beidseitig FrizzleBob)
 // | rogue (F1-Prüffigur als Platzhalter für Stellproben, kein Darsteller). Karte: card=<deck>:<n>, Biom: biome=<Name>.
 // Dialog D1 per Hash: dialog=<n> spielt n Karten des Decks der Startkarte ab (Sprechblasen an den Figuren, Spielerwahl am Bildrand).
 import { useEffect, useMemo } from 'react'
@@ -77,7 +77,9 @@ const castProfiles = import.meta.glob('./data/eyes/cast/*.profile.json', { eager
 const castRecipes = import.meta.glob('./data/actors/cast/*.recipe.json', { eager: true, import: 'default' })
 const castGlbs = import.meta.glob('./assets/actors/cast/*.glb', { eager: true, query: '?url', import: 'default' })
 export const CAST_IDS = Object.keys(castRecipes).map((k) => k.split('/').pop().replace('.recipe.json', ''))
-const CAST_ID = CAST_IDS.includes(/cast=([\w-]+)/.exec(hash)?.[1]) ? /cast=([\w-]+)/.exec(hash)[1] : null
+// Standard (V-269, Georg 15.10.): rechts GothGirl, sobald FrizzleBob links steht; cast=<id> wählt einen anderen Kandidaten, cast=fb lässt FrizzleBob beidseitig
+const CAST_ARG = /cast=([\w-]+)/.exec(hash)?.[1] || null
+const CAST_ID = CAST_ARG === 'fb' ? null : CAST_IDS.includes(CAST_ARG) ? CAST_ARG : /actors=fb/.test(hash) ? 'gothgirl' : null
 const KAYKIT = (id) => {
   const recipe = castRecipes[`./data/actors/cast/${id}.recipe.json`], pickC = castProfiles[`./data/eyes/cast/${id}.profile.json`], ref = recipe.composition.modelRef
   const url = castGlbs[`./assets/actors/cast/${ref.path.split('/').pop()}`]
