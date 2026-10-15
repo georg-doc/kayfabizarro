@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Stem-Schnitt Philosophy
+- faster-whisper (medium.en) + ffmpeg im venv ~/.kfb-audio-venv (Georg freigegeben); Philosophy 01d: 68/68 Karten + Intro/Outro erkannt und je Karte geschnitten (Stimme, Mix, Stem-Summe), Wort-Zeitdatei fürs Karaoke; KFB_HUB/40_AUDIO/philosophy_01d/; Hub au01 mit Hörproben (Hub-Folien jetzt mit Ton).
+
 ## 2026-10-15 · Bibliothek-Slot, Dystopia
 - Bibliothek mit kfb_screen_slot (Wandbild 0,22 m angehoben, Pflanze verdeckt nicht mehr) und Dystopia-Gasse auf assets/meshy-stages-library-dystopia-2026-10-15 @8e7519ea; Hub dy01; WS1-Notiz.
 
