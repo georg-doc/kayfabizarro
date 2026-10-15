@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Briefings aufgeräumt, Suno-Karten
+- Hub: erledigte Briefings eingeklappt (b01–b14 done); b15 jetzt Forget Utopia statt Wrinkle Rumble (Georg: Wrinkle ist durch); b16 Suno-Style, b17–b25 Lyrics-Teile der drei abgenommenen Sets (je ≤ 2,8 k Zeichen, [Break] zwischen Blöcken). Generator-Fix für anti_rules_toolkit läuft.
+
 ## 2026-10-15 · Registry neu, Flugmodus-Idee
 - Registry aus den Kartendaten neu erzeugt (data/kfb-registry-title-case-2026-10-15 @a71de421, Repo-Generator, 6984/6984 Titel gleich); anti_rules_toolkit vorerst unverified (Offset 2, Generator-Erweiterung offen). WS1 auf Pin @a71de421.
 - V-274 (TBD): Flugmodus fürs Badewannen-Kart – Räder klappen flach nach unten, Glow in der Nabe (Georgs Referenzbild); Asset bekommt Klapp-Drehpunkte.
