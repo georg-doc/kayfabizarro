@@ -273,3 +273,23 @@ Quelle: https://kayfabizarro.pages.dev/#kfb, CSS-Variablen der Seite. Je Modus g
 - **G-3 gelöst:** Absurd ist Ocker bzw. Gold, nicht Magenta. `world-context.js` („Rules Print v4“) ist hier überholt.
 - **G-2 teilweise gelöst:** Für die Story-Modes ist die dunkle und die satte Variante damit gegeben. Für die Insel-Paletten bleibt die Frage offen. Vorschlag: dasselbe Verhältnis wie auf der Website anwenden, also aus der Palettenfarbe eine dunkle Textstufe und eine satte Leuchtstufe ableiten.
 - **Fluff-Farben (G-1):** stehen nicht auf der Website. Naheliegend wäre, dass die Fluff-Sorte den Story-Mode trägt (satte Farbe für das Fell, dunkle für die Kontur). Das ist ein Vorschlag und braucht Georgs Bestätigung.
+
+
+## Nachtrag 15.10. · Fluff-Farben gefunden (Planungs-Branch)
+**Quelle:** `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`, `skills/chat/KFB_FLUFF_CRAFTING_ALMANAC_LAYER_CONCEPT_V0_3_2026-10-09.md` (Blob 950f11df), übernommen in der Lab-Review `docs/REVIEW_POSTMVP_CONCEPTS_ARCH_FIT_R1.md` („Entschieden: Fluff-Farben = D6-Farben als Akzent-Rollen in ENV_ROLES, keine zweite Palette“).
+
+- **12 Fluff-Sorten:** 6 Story-Modes (D6) × High/Low-Vibrational, dabei 6 Grundfarben, nämlich die Story-Mode-Farben.
+- **High:** springiger, lebendiger, heller und glatter. **Low:** sichtbar dichter, dunkler und stärker geknetet. Lesbar auch über D6-Symbol und +/− Form, nicht nur über Farbe.
+- **Alchemie:** High und Low desselben Modus ergeben eine neutrale Rohmasse. Das ist ein Zwischenprodukt, keine siebte Farbe. Kein offener 12×12-Umwandlungsgraph, dafür 6 Farb-Trichter in der Mini-Fabrik.
+- **Gleiche Warnung wie bei uns:** Absurd in Magenta (Travel world-context) ist eine Abweichung, die Regel-Website gilt.
+
+**Vorschlag WS0 (Georg bestätigt):** Die dunkle und die sattere Variante sind genau die Fluff-Polarität.
+- **High-Fluff** = satte Farbe des Modus (Website `--w-*`).
+- **Low-Fluff** = dunkle Farbe des Modus (Website `--m-*` bzw. Druck-Tinte).
+- **Neutrale Rohmasse:** helles Papier bzw. Panel-Ton.
+
+**Noch zu klären:** Drei Quellen nennen leicht verschiedene „kanonische“ Tinten:
+- Druck v4: Tragic `#3e6a83`, Absurd `#8a6d12`, Mystical `#6b4e7d`;
+- Website: `#34576b`, `#b8901c` bzw. Ziffer `#8a6a16`, `#5b4470`.
+
+Die Website-Satt-Werte entsprechen teils den Druck-Tinten (zum Beispiel Tragic `#3e6a83`). WS0-Vorschlag: Website als Referenz (V-292), Druck v4 als Panel-Ton.

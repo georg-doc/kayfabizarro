@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Fluff-Farben gefunden
+- Quelle Fluff-Crafting-Konzept v0.3 (Planungs-Branch 09.10.) + Lab-Review: 12 Sorten = 6 Story-Modes × High/Low, 6 Grundfarben = Story-Mode-Farben, Alchemie High+Low → neutrale Rohmasse. Vorschlag High = satt, Low = dunkel (Hub col02).
+
 ## 2026-10-15 · Story-Mode-Farben von der Website
 - V-292: Story-Modes je dunkel + satt aus kayfabizarro.pages.dev (Absurd = Ocker/Gold); Farbkonzept und JSON ergänzt; Hub col01 beantwortet.
 
