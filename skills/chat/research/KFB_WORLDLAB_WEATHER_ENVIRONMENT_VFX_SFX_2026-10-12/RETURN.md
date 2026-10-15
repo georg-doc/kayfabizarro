@@ -88,3 +88,12 @@ Georg clarified that decorative **potted** Wobbleflora and **ground-rooted** Wob
 Original S19 register grammar is already implemented in `plant-pattern.js` with 3–10 loud motifs, biome palettes and contrast gates; the proposed 3–5 enlarged hero motifs and calm secondary registers are **visual trial candidates**, not code changes or PASS. Existing `plant-recipe.js` only builds containers; potless variant is a separate future receiving-owner adapter, **NOT BUILT**. Native rig/EyeRig remain current donors. No rendered source isolation, browser QA, asset import, new Stage/Site, merge/Live or R4/R5.
 
 **World Lab single parent gate unchanged:** KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT. Distinct optional Plant Lab next gate: PPL POT-MACRO SOURCE A/B, when separately authorized.
+
+
+## 2026-10-15 · Explicit GitHub re-check-in for Claude Code / WSA
+
+Georg requested another GitHub push because the prior handoff did not appear to be visible. Verified explanation: this packet **was pushed to GitHub** in the open Draft PR #389 and source branch, but `CLAUDE_CODE_WSA_INTAKE_2026-10-12.md` **was not on main** at this check. Main was not updated, and **NO MERGE** was performed. The existing PR also contains later Plant Prop/Wobbleflora work that is left intact and unclassified here.
+
+New additive entrypoint: `CLAUDE_CODE_WSA_GITHUB_INTAKE_CHECKIN_2026-10-15.md` in this project root; its source write/readback was verified at commit `5dcb26da93a637308e856dcc3adaa0661c922f6a`. Claude Code and Work/WSA must explicitly open **the PR branch**, not assume default `main` contains it. The read-first chain, status and single gate are restated there without duplicating source assets or creating a second owner.
+
+This was a GitHub metadata/document handoff check only: no new runtime tests, audio listening, render screenshots, asset downloads, new Stage/Site, or human product acceptance. Continue at the one existing **KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT** only under separate receiving execution authority. Exact final branch head is verified after this Return write; do not infer it from the older hashes quoted above.
