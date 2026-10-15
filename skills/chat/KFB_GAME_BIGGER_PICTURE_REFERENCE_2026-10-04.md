@@ -160,3 +160,13 @@ New Card contexts, Gabriel-like fields of sense, Warburgian unexpected neighbors
 The game aims for a **chill-and-fun, revisitable, voluntary** return loop: encounter → role/friction → optional alternative reading/agency → meaningful choice or re-commitment → consequence → relationship/memory. Silence and refusal remain valid. Preserve \`PULL, DON'T GATE\`; no morality scoring, psychological diagnostic mechanics or compulsive grind.
 
 Application to the current existing two-performer Card/Billboard/Metatheatre slice remains a **proposal for WS0**, with exactly one current next gate \`WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT\`; this pointer adds neither a WS1 runtime writer nor a blocking feature requirement.
+
+
+### R1.1 addendum · 2026-10-15 · joyful cosmic casting, after-hours truce and dissonant resonance
+**GEORG'S GLOBAL CREATIVE INTENT**, elaborated at current WS0 canonical research file:
+\`tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md\` (R1.1, additive).
+Residents may be **astonishingly lucid about their own defects, projections, destructive role patterns and possible exits** yet delight in the serious *performance* of precisely their eccentric tragicomic part. A Kayfabe character can regard this as a chosen cosmic job, immortal-soul casting, assigned role or their own metaphysical belief: this is not yet an obligatory literal metaphysics for all Residents. Active combat/dungeon/authority scenes and convivial off-duty party or campfire scenes can show the *same real resident* with different perspectives, without making the action unreal or cancelling responsibility and consequences. Self-deprecation is character-specific, not canned therapy speech or generic winking at the audience.
+
+**“Cognitive dissonance is the resonance space of Kayfabe Bizarro.”** This is an editorial formulation of Georg's creative premise, not a psychiatric definition. Keep contradictory readings playable; ask the player's own closure to do part of the narrative work. Empathy for imperfect performers is not exoneration of harmful acts. Residents' shared cosmic belonging does not oblige friendship, absolution or universal meta-lore knowledge.
+
+Use existing KFB Resident Identity/Affect/Activity/Relationships, ChatterBox, Card and Lean Memory owners; no universal immortality schema, new NPC-runner or extra MVP blocker. Current WS0 lighting/metatheatre intake and its sole next assignment gate remain unchanged.
