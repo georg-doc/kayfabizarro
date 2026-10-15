@@ -44,11 +44,42 @@ The compass is an **actual 3D geometric object/pointer** with KFB-authentic clay
 
 Motion/navigation:
 - Rotate the 3D pointer smoothly according to the **relative bearing** `targetBearing - playerHeading` around correct world-up, using current camera/player mode conventions; old CSS `setHeading` was north-facing only. Handle 360° wrap with shortest angular path/damping to avoid full spin/oscillation.
-- A separate view may tilt/show vertical climb/drop for Flight or different-level islands, but the primary card/quest arrow should remain understandable and uncluttered at walking and driving camera angles.
+- **FLIGHT MUST show full 3D elevation:** the actual arrow mesh tilts strongly and unambiguously **UP or DOWN** according to the vertical component toward the next reachable waypoint. It is not sufficient to rotate horizontally, add a color cue, or use a flat 2D arrow. While Walk/Drive keep a calm primarily horizontal readable view, Flight is mandatory full 3D azimuth + elevation; see binding addendum below.
 - Show **one target name + relevant distance**, and optionally short `via Portal/bridge` text; no triple compass arrows or quest-marker clutter. Never show measured route length if only 3D straight-line distance is known: label `straight-line ~m` or suppress until owner route distance is available. No invented ETA. Distinguish `remaining to next waypoint` from `total trip`.
 - **Proximity color**: distant = calm/cool/darker KFB Material role, approaching = more saturated/warm, reached = soft pulse/settle and an honest Arrival receipt. Example distance bands are TUNABLE by local scale and route type, not hardcoded `100/50/10 m`. Color is **an additional cue** alongside remaining distance, animation/text and shape for accessibility. Do not reuse canonical D6 story-mode hue as distance/health meanings or make Low Fluff = danger. Theme responds through owner Material Roles, avoids off-brand neon/gradient gloss. Color state can remain calm or neutral if target unavailable/unknown.
 - Update in `walk/drive/fly` using the same underlying `TargetNavigationState`; adapt HUD arrangement, keep Driver road focus/visibility and reasonable scale. Current donor only displayed Compass in walk; **the route adapter intentionally extends access across modes** without cloning HUD modules.
 - On arrival, handoff to the *existing* interaction/quest owner. A marked Card can still require physical pickup/delivery; simply walking close, visual sparkle or color transition cannot silently complete a quest or mint a Card.
+
+### Flight-mode binding clarification — real pitch, not a decorative 3D arrow (Georg 2026-10-15)
+
+**Author decision:** In `fly`, the **same actual source-verified KFB clay 3D quest arrow** MUST turn in **yaw/azimuth** AND visually incline in **pitch/elevation**. When a target or next route waypoint is above the player, the point visibly **leans up**; when below, visibly **leans down**; near directly above/below the pointer may approach a vertical pose. This is a required post-MVP flight acceptance property, no optional polish. Do not substitute a 2D North needle, a mere purple/green proximity state, a vertical text arrow alone, or a flying camera tilt for the actual 3D needle motion.
+
+**Illustrative math/coordinate contract (not a live API):**
+```text
+target = World/Navigation owner resolves *next reachable waypoint*,
+         not an inaccessible final Card / inside a sealed mountain
+p = PlayerWorldPosition in the SAME World/Instance coordinate frame
+q = targetWorldPosition in that frame
+d = q - p
+horizontal = hypot(d.x, d.z)
+yawWorld = atan2(d.x, d.z)
+pitchWorld = atan2(d.y, max(hypot(d.x, d.z), epsilon))
+relativeYaw = wrapShortest(yawWorld - player/vehicle navigation heading)
+HUD arrow orientation = yawAroundWorldUp(relativeYaw)
+                      + pitchAroundNeedleLocalRight(pitchWorld)
+                      (sign depends on the verified 3D model's forward axis)
+slantRange = sqrt(d.x²+d.y²+d.z²) // only if straight-line distance is labeled
+heightDelta = d.y               // Δ↑ or Δ↓, player-relative
+```
+- **Keep a legible miniature horizon/reference ring**: pitch zero points along it; up/down motion is evident without needing to read labels. A tiny `UP / DOWN` or `↑ / ↓` indicator and `Δ height` (from known coordinates only) complement the 3D rotation for color-blindness, touch UI, reduced motion and steep view angles. Do not force constantly spinning or giant airborne arrows.
+- **Be precise about reference frames:** normalize source `WorldInstance` and player coordinates through the single World owner **before** computing a direction; avoid mixing island-local meters, global World units, camera-space pixels, or following the ship's bank/roll. Player/vehicle heading governs yaw relative to travel; the **world vertical** governs elevation so camera orbit, pitch and roll don't falsely flip arrow direction. If rendering an overlay mesh, correctly project the 3D orientation into the existing HUD owner's viewport without creating a second camera/renderer/input owner.
+- **Handle flight extremes:** if horizontal distance approaches zero, retain the previous stable yaw, tilt toward ±90° as justified and signal `DIRECTLY ABOVE / BELOW` rather than jitter. If total distance tends to zero, switch to `ARRIVED` and settle; don't divide by zero. Smooth yaw through ±180° with shortest rotation and smooth pitch without hiding a real sign change. Respond to a changing altitude smoothly; don't treat flight altitude as irrelevant to distance.
+- **Waypoints and truth:** when the ultimate Card is in another WorldInstance or behind a blocked threshold, show the 3D direction/height to **the route owner's next valid crossing / landing / portal / transition anchor**; name the eventual destination separately. If no valid route/coordinate transform is resolved, display `route unknown` rather than aim at an imaginary floating target. Distinguish straight-line distance, remaining route length, and vertical difference; no invented distance or ETA.
+- **All movement modes share one target:** `walk` and `drive` may use lower-profile yaw-oriented pointer; `fly` activates pitch and an elevated HUD placement/contrast that remains readable at speed and during ascend/descend. Any eventual Low-G/Zero-G profile uses the same 3D geometry and navigation truth, not a new flight or nav system. HUD color warming as approach is optional and secondary to physical pointing.
+
+**Required future source-isolated proof fixtures (not tests run here):** (1) valid waypoint far level ahead = pitch ~0°; (2) same horizontal range but 30° above = clearly nose-up; (3) 30° below = nose-down; (4) virtually straight overhead/beneath = ±near-vertical without yaw instability; (5) behind-right with camera orbit/vehicle banking = correct relative yaw and unchanged true elevation; (6) distant Card behind mountain = arrow aims at reachable portal/crest before Card; (7) ascent/descend through target altitude = continuous pitch crossing zero; (8) Walk→Drive→Flight→Walk preserves single target and no camera/Audio/PlayerSave mutation. Verify in the **actual game camera** with a source-faithful 3D object, not only unit-test angle logs or rotated CSS.
+
+This clarification changes **only** the planned `fly` compass behavior. It does **not** update the currently-running Island Lab, its acceptance matrix, the current 2D HUD, or the existing named `CLAUDE_CODE_RECOVERY_INTAKE_CONFIRMATION` and deferred `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` gates.
 
 ### Two surfaces, one target truth
 - **HUD 3D Compass** (always one active objective, optional quiet/hidden state) = small readable relative direction + distance + context.
