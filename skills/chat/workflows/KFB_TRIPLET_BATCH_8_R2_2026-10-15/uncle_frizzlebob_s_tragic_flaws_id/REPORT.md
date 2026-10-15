@@ -1,0 +1,7 @@
+# Uncle FrizzleBob's Tragic Flaws — correct packId R2 handoff
+Requested **uncle_frizzlebob_s_tragic_flaws_id**, NOT `uncle_frizzlebob_s_tragic_flaws_shakespeare`; registry data path happens to include shakespeare, but this is the ID-marked source. Original title-case branch @eade4aec9c9faaea785602537768f86180434331, Git blob 30d05fa4f89bc25f402bcd435eac29784ac194b0; registry @52adc8f1.
+- **56/56 spoken cards**, 0 skips. Single track **4,383 characters**, 19 distinct opener uses, 58 separate CSV takes including intro/outro, all UNTIMED_AWAIT_REAL_AUDIO.
+- New independently authored poetic Shakespeare-based card fragments only, no reference set replay. Initial 10 unsourced word forms corrected. Checker-equivalent JS lexical audit on pinned 56 cards: **56 PASS, 0 FAIL**; exact original Python checker against real files NOT RUN, so not final technical PASS. `.check.txt` discloses status.
+- Intro uses indexed deck title and printed card names #1 #13 #25 #37 #50, not a verified PDF cover screenshot; the cue-sheet intro_source names the limitation.
+- Semantic watch for WS0: #5 Polonius, #17 Macduff, #27 Goneril, #49 Mercutio and #55 Skull Song; archaic contractions kept only if drawn from cards. #56 contains an in-card Stay Fluffy phrase as source prose; the separate outro is also required.
+One next gate: WS0 exact Python real-deck run, complete semantic read-through, then Georg's recording acceptance. No audio, PR/merge or Site.
