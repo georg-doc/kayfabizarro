@@ -57,3 +57,13 @@
 - Added `CLAUDE_CODE_WSA_GITHUB_INTAKE_CHECKIN_2026-10-15.md` as a direct entrypoint and explicit explanation of branch-only persistence; the new file was written and read back with exact contents at `5dcb26da93a637308e856dcc3adaa0661c922f6a`.
 - Original full Claude Code/WSA brief, Florence audit and 25-source inventory preserved unchanged. Other parallel research files on PR #389 not edited/accepted by this checkpoint.
 - Next gate unchanged: **KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT**. No implementation, merge, new public Stage/Site, or new GitHub runtime owner.
+
+## 2026-10-15 · Bounded source-isolation Gate executed · original SKY3, VFX-01, KFB Audio
+
+- Georg authorized continuation of the three-scenario gate. The existing research owner/branch/PR #389 was reused. Additive source-only browser fixture `source-audit/{index.html,audit.mjs,proof.mjs,audio-proof.mjs}`; two GitHub Actions proof workflows. Production owner modules unchanged.
+- Real weather/VFX Chromium evidence: **18/18 PASS** on PR run `38785952718`; identical fixture also green at latest tested source head `e2266499a7b15a2b630f03f2121c7714d4adc69c` (run `38786984611`). Original SKY3 EnvHost/Travel rain + original Kenney whitePuff00 isolated; exact Git source blob pins, three screenshot artifacts.
+- Real CC0 OGA rain (`Ylmir`, `Rain OGG.zip`) fetched inside CI only, 550049 B, SHA-256 `4f659f68cf5219007d0bb0969a1862491ceee4057fda4c491c6001e8608fa2cb`. Original `AUDIO-CAL-01` in existing KFB Audio owner played rain as a temporary test-bed source through one AudioContext; real decoded sound, voice duck/recover, continuous music and ambience mute. Run `38786984218`: **13/13 PASS**.
+- Earlier audio attempts retained: optional `ffprobe` missing (fixed in test workflow only), test mute wait < existing smooth envelope (fixed in test wait only). No changes to production audio owner.
+- Source-audit results persisted as `SOURCE_AUDIT_TEST_REPORT_2026-10-15.md` and `SOURCE_AUDIT_RESULT_2026-10-15.json`. Both screenshots and Audio Calibration state opened and inspected; genuine headless browser evidence, not target-GPU or human visual/audio acceptance.
+- **31/31** technical browser/source checks across independent suites. No new Sky/FX/Audio runtime, no asset imported into KFB media, no full-world/Clay render, no human listening, no published Site or formal Cloudflare Stage, no merge/Live.
+- **Exactly one next gate:** real KFB Clay-context side-by-side for original smoke donor and a human speech-duck/rain listening audition before adoptability or any World integration.
