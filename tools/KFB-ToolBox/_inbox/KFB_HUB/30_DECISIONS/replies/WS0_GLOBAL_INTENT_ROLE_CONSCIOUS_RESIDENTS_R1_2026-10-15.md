@@ -441,3 +441,20 @@ All actual presentable lines must come through WS0-controlled current Card/KEEP 
 - The metatheatre+lighting issue #404 remains the only current receiving WS0 intake; using one comic overinterpretation as a narrative comparison is at WS0's discretion and not a new required MVP-0 feature.
 
 **One next gate unchanged: `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.** WS0 can consider a single real Card/source-backed foil with a visible self-rebuttal as optional creative guidance in the existing source-true 2-character scene; broader politics/geopolitics cards and dialogue curation require actual WS0-owned source/editorial review, not silent runtime adoption.
+
+
+---
+
+## R1.7 · Georg: Spielerische Wahrheitssuche und freudige Fehlbarkeit (15.10.2026)
+
+**Kreative Präzisierung von R1.6, kein zusätzlicher Runtime-Auftrag oder neuer Kanontext für NPCs.** Ein KFB-Resident darf eine noch so abenteuerliche Theorie begeistert vertreten und auf Nachfrage bereitwillig zugeben, dass sie absurd oder unzureichend belegt ist. Als Erzählung kann sie trotzdem reizvoll sein und neue Fragen, Bildnachbarschaften und Begegnungen ermöglichen. Die Freude liegt im gemeinsamen Erkunden, nicht im Besitz der endgültigen Wahrheit.
+
+**Drei unterscheidbare Ebenen:** (1) belegte historische Fakten und echte Quellen, (2) Interpretationen/Hypothesen mit unterschiedlicher Beleglage, (3) offen erfundene Geschichten und absurde Bühnenfiktionen. Alle drei können erzählerisch nebeneinanderstehen, dürfen aber nicht als gleich gut belegt ausgegeben werden. Eine gute Geschichte ist kein Beweis; eine widerlegte Behauptung wird durch ihre Komik nicht wahr.
+
+**Sokratische Anknüpfung:** Im philosophischen Dialog werden Prämissen erfragt, Widersprüche sichtbar und gegebenenfalls eine offene Frage (Aporie) zugelassen. Diese Methode ist eine kreative Analogie, kein Auftrag, sämtliche Erkenntnis anzuzweifeln. Referenzen: https://plato.stanford.edu/entries/socrates/ und https://plato.stanford.edu/entries/plato-ethics-shorter/ .
+
+**KFB-Szenenidee:** Ein Resident zeigt begeistert eine auf Pappkulissen montierte Verbindungskarte. Der Spieler fragt nach dem fehlenden Beleg. Die Figur räumt mit Selbstironie ein, dass gerade die wichtigste Verbindung erfunden wurde, freut sich aber über eine nun bessere Frage. Eine abfallende Kulissenstütze könnte den Denksprung körperlich sichtbar machen. Der Spieler zieht selbst den Schluss (Closure), darf zustimmen, widersprechen, recherchieren oder weitergehen. Keine generischen Bekenntnisse, keine Copy-Paste-NPC-Pointe.
+
+**Humaner Kern:** Figuren dürfen sich über eigene Denkfehler freuen, ihre Charaktermaske bejahen, streiten, spotten und andere Perspektiven kennenlernen, ohne alle Meinungen als wahr oder unbedenklich zu behandeln. Unterschiedliche Weltanschauungen sind gleichberechtigt als *Gegenstand einer Begegnung*, nicht gleichwertig als Tatsachenbehauptung. Der Spieler wird nicht in eine gewünschte politische Sicht gedrängt.
+
+**Owner/Gate:** WS0 besitzt Karten-/Text-/Quellenprüfung; WS1 bleibt alleiniger R3F-Laufzeit-Owner. Dieser Zusatz ist eine optionale redaktionelle Hilfe zur aktuellen Zwei-Figuren-/Card-/Billboard-Szene, keine neue Dialogengine, keine V-Nummer, kein Gameplay-System. R1.3–R1.6 bleiben unverändert. Einziger nächster Gate: WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT.
