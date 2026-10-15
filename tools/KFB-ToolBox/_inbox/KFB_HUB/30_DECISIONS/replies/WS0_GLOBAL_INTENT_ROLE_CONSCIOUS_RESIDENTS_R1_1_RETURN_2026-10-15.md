@@ -96,3 +96,20 @@ Sources: https://epictetus-enchiridion.org/en/chapters/enchiridion/17/ ; https:/
 **Owner** WS0 steering / decisions register branch `docs/kfb-decisions-register-2026-10-11`; WS1 remains single R3F stage owner; no new V-number, new Issue, independent engine or M2 reprioritization.
 
 **Exactly one next gate (unchanged): `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.** Only if useful WS0 can annotate the same real two-performer Card/Billboard lighting/physical-stage pilot with one true complaint→revelation→viewer-inference example, without demanding a second narrative integration gate.
+
+
+---
+
+## R1.6 Return addendum · Georg, 2026-10-15 · Cognitive dissonance and playful evidence inquiry
+
+**Outcome: source-backed creative direction saved additively, not implemented.** Georg expands role-conscious NPC humor into performative, often self-aware conspiracy and ideological interpretations. The Resident may love a dramatic explanation and then willingly examine or parody its causal leap. The player receives a curious, funny and optionally researchable inquiry, **not** covert persuasion, a compulsory skeptical lesson, automatic equality of factual support or an ideological label. Original KFB humor follows claim → self-exposing overinterpretation → meaningful optional counter-question → reader/player closure. The method can use the same two-person Card/Billboard/Clay stage and existing ChatterBox/Resident-Life consumer without any new writer.
+
+**Research facts verified at editorial checkpoint:** Northwoods March 1962 was a real US Joint Chiefs proposal for manufactured Cuba pretexts, not evidence of implementation (National Security Archive original memo); NSA historical research found that the alleged second Gulf of Tonkin attack of 4 August 1964 did not occur, unlike the 2 August incident; Israeli forces did attack USS Liberty 8 June 1967, and the explanation of intent remains disputed with documented US intelligence criticism of errors; Warren Commission and House Select Committee assessments of JFK differ in important respects but specific UFO/Mossad/etc. killer/motive links have not thereby been substantiated. NARA has ongoing publicly released archival material, which is not itself proof of any particular motive theory.
+
+**Archival provenance:** https://nsarchive.gwu.edu/CMC-60/joint-chiefs-pretexts-to-invade-Cuba-1962 ; https://nsarchive2.gwu.edu/NSAEBB/NSAEBB132/press20051201.htm ; https://www.history.navy.mil/content/history/nhhc/browse-by-topic/wars-conflicts-and-operations/middle-east/six-day-war-liberty.html ; https://history.state.gov/historicaldocuments/frus1964-68v19/d317 ; https://www.archives.gov/research/jfk/warren-commission-report/chapter-1 ; https://www.archives.gov/research/jfk/select-committee-report/summary.html ; https://www.archives.gov/research/jfk/release-2025 .
+
+**GitHub changed source:** WS0 Global Intent original R1→R1.5 sections preserved; R1.6 added claim/provenance ladder, source-verified examples, dialogue/dramaturgy and anti-drift rules. KFB Bigger Picture updated as single-source global pointer. WS0 additively changed changelog and Issue #404 links will be noted after verification. No KFB Card/KEEP pool line, new NPC data, 3D source objects, Runtime owner, Site, PR merge or new V-number.
+
+**Actual tests:** exact GitHub branch head and intended file readbacks plus static R1.6 document/source-contract checks only. Zero 3D/Browser/Performance/WS1 implementation/human scene acceptance evidence.
+
+**One next gate unchanged:** `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`. WS0 may elect ONE source-original humorous inference gap in its current two-performer Card/Billboard metatheatre and lighting pilot, while broader political/historical Card curation remains in WS0 editorial authority and never silently auto-activates.
