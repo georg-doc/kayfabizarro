@@ -249,6 +249,7 @@ d('V-268','2026-10-15','Bühne','RULE','Displays vor Diorama-Flächen (präzisie
 d('V-269','2026-10-15','Figuren','PASS','Zweite Figur der Dialog-Szene (F-4): GothGirl (KayKit Mystery Series 6, Profil gothgirl).', 'WS1', 'Hub ws1-cast-f4', 'Georg 15.10.')
 d('V-270','2026-10-15','Bühne','TUNE','Bühnen-Paletten (V-245): Nicht nur Farbstimmungen. Vorbild sind die Joyride-Paletten (canyon, bucht, otown in track-look.v5 WORLDS bzw. Lab src/palettes.ts): harmonische Paletten mit Akzenten, Rollen für alle Teile. Dazu als Tint die Story-Modes, definiert über das Fluff-Farbschema (V-051 storyTint). WS1 prüft das Paletten-Konzept und schlägt die Zuordnung neu vor.', 'WS1', 'Bildfolge je Palette', 'Georg 15.10.')
 d('V-271','2026-10-15','Karten','RULE','Kartentitel in Versalien (z. B. „JEAN-JACQUES ROUSSEAU“) werden zentral in den Kartendaten vereinheitlicht (normale Groß-/Kleinschreibung), nicht in einzelnen Workstreams. Gedruckte Schreibweise bleibt als eigenes Feld erhalten. WS1 korrigiert nichts selbst.', 'WS0 (Daten)', 'Liste der geänderten Titel', 'Georg 15.10.')
+d('V-272','2026-10-15','Dialog','PASS','Triplet-Set „Hilfe, ich bin ein Mensch!“ PASS (56 Zeilen, Rousseau-Golden, Titel normal, deutsches Intro und „Blödsinn!“ bleiben). Frankenstein-Größe: Skelette von FrizzleBob, Hanky und Dory identisch, nichts skaliert – passt (schließt die Größenfrage aus V-267). Grenzfälle der Titel-Normalisierung (Et Tu, Brute?; Homo Ludens; ALL-in Alice; kyrillische Titel; Yes, and) bleiben so; Registry-Kopien werden aus den Kartendaten neu erzeugt.', 'WS0', 'Hub tr03, fr02', 'Georg 15.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -486,6 +487,7 @@ WHY = {
  'V-269':('Georgs Wahl aus drei Kandidaten.','ab sofort'),
  'V-270':('Paletten sind Harmonie-Systeme, keine Stimmungsfarben.','ab sofort'),
  'V-271':('Versalien irritieren im Schriftsatz und dürfen nicht je Workstream anders korrigiert werden.','ab sofort'),
+ 'V-272':('Drittes Deck abgenommen; Größe nachgemessen statt geschätzt.','ab sofort'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 SUP = {}

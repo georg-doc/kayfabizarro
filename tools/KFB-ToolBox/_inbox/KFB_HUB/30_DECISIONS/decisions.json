@@ -3560,6 +3560,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-272",
+   "date": "2026-10-15",
+   "area": "Dialog",
+   "verdict": "PASS",
+   "text": "Triplet-Set „Hilfe, ich bin ein Mensch!“ PASS (56 Zeilen, Rousseau-Golden, Titel normal, deutsches Intro und „Blödsinn!“ bleiben). Frankenstein-Größe: Skelette von FrizzleBob, Hanky und Dory identisch, nichts skaliert – passt (schließt die Größenfrage aus V-267). Grenzfälle der Titel-Normalisierung (Et Tu, Brute?; Homo Ludens; ALL-in Alice; kyrillische Titel; Yes, and) bleiben so; Registry-Kopien werden aus den Kartendaten neu erzeugt.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Hub tr03, fr02",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Drittes Deck abgenommen; Größe nachgemessen statt geschätzt.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3622,7 +3637,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:336",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:352",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

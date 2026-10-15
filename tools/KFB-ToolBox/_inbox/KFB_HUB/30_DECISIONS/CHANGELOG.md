@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Drittes Set abgenommen
+- V-272: Hilfe, ich bin ein Mensch! PASS; Frankenstein-Größe passt; Titel-Grenzfälle bleiben; Registry-Neuerzeugung läuft.
+
 ## 2026-10-15 · Kartentitel vereinheitlicht
 - V-271 umgesetzt: data/kfb-card-title-case-2026-10-15 @eade4aec, 1503 Titel in 44 Decks, `cardNamePrint` = Druck; Registry-Kopien (registry/assets/v1) noch neu zu erzeugen. Triplet-Vorgabe und WS1 auf den neuen Pin umgestellt.
 
