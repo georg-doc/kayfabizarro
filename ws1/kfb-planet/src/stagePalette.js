@@ -32,8 +32,10 @@ export function cardStoryMode(card) {
   return makeWorldContext({ cardTriplet: { current: c }, storyMode: DIM_MODE[top] || 'heroic', seeds: ['kfb-billboard', 'b-1'] }).storyMode
 }
 
-// options: { override: Paletten-Kennung, noTint: true (Bildpaar ohne Tint) }
-export function stagePaletteFor(card, { override = null, noTint = false } = {}) {
+// Variante B (Georg 15.10., §36): jede Rolle auf ein eigenes Bühnenteil wie Joyride setWorld (table = top, hill, tower, strang, trunk, path, sky, cloud)
+// statt einer Rollenfamilie fürs ganze Amphitheater. amph.mode 'b': cols = [tower0, tower1, hill0, hill1, sand, rock] (Bedeutung im Amphitheater-Shader).
+// options: { override: Paletten-Kennung, noTint: true (Bildpaar ohne Tint), variant: 'a' | 'b' }
+export function stagePaletteFor(card, { override = null, noTint = false, variant = 'a' } = {}) {
   let id = null, via = null
   if (override && PALETTE_IDS.includes(override)) { id = override; via = 'override' }
   else if (card?.deck?.id) ({ id, via } = paletteForDeck(card.deck.id))
@@ -42,6 +44,12 @@ export function stagePaletteFor(card, { override = null, noTint = false } = {}) 
   const story = cardStoryMode(card), M = MODES.find((m) => m.id === story) || null
   const t = (hex) => (M && !noTint ? lerpHex(hex, M.accent, TINT_K) : hex)
   const ramp = (three) => [t(three[2]), t(three[1]), t(three[0])] // ENV_ROLES hell → dunkel; Verlauf dunkel → hell
+  if (variant === 'b') return {
+    id, key: id + '|' + (story || '-') + (noTint ? '|plain' : '') + '|b', via, variant, storyMode: story, tint: M && !noTint ? M.accent : null, palette: P, env: E,
+    billboard: { frame: t(P.strang), trim: t(P.path), post: t(P.trunk), ground: t(P.hill[1]) }, // pad (Joyride-Pfeile) fehlt im Lab: Leiste = path (hell)
+    amph: { mode: 'b', cols: [P.tower[0], P.tower[1], P.hill[0], P.hill[1], P.sand, P.rock].map(t), ground: t(P.top) }, // Bühnenboden sand (hebt sich von den Rängen ab), Gelände = Tisch der Insel
+    sky: { top: t(P.sky), bottom: t(P.cloud) },
+  }
   return {
     id, key: id + '|' + (story || '-') + (noTint ? '|plain' : ''), via, storyMode: story, tint: M && !noTint ? M.accent : null, palette: P, env: E,
     billboard: { frame: t(E.accent[0]), trim: t(E.accent[2]), post: t(E.bark[1]), ground: t(E.ground[1]) }, // Rollen wie Vorlagen-Zeile §28.2: Rahmen accent[0], Leiste accent[2], Pfosten Rinde

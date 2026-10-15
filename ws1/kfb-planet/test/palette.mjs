@@ -35,6 +35,10 @@ await page.evaluate(() => window.__kfbStageCtl.applyPalette({ deck: { id: 'cosmi
 await browser.close()
 // 3 · Override ohne Tint: Rollen = Lab-Daten 1:1 (bucht)
 const o1 = await openPage('#stage,debug,actors=none,palette=bucht,plain', { viewport: { width: 640, height: 360 } }); await ready(o1.page); const ov = await look(o1.page); await o1.browser.close()
+// 4 · Variante B (§36): jede Rolle auf ihrem Bühnenteil wie Joyride (otown ohne Tint)
+const o2 = await openPage('#stage,debug,actors=none,palette=otown,plain,palv=b', { viewport: { width: 640, height: 360 } }); await ready(o2.page)
+const vb = await o2.page.evaluate(() => { const S = window.__kfbStageMods, p = window.__kfbStageCtl.palette(); return { variant: p.variant, P: { tower: p.palette.tower, hill: p.palette.hill, sand: p.palette.sand, rock: p.palette.rock, top: p.palette.top, strang: p.palette.strang, trunk: p.palette.trunk, path: p.palette.path }, amphPal: S.amph.status().palette, bbPal: S.billboard.info().palette } })
+await o2.browser.close()
 
 const dist = (x, y) => x.reduce((s, v, i) => s + Math.abs(v - y[i]), 0)
 const rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16))
@@ -55,5 +59,7 @@ process.exit(report('palette V-270', {
   changeIsSoft: mid.fading === true && dist(mid.bodyMean, a.bodyMean) > 0.002 && dist(mid.bodyMean, b.bodyMean) > 0.002 && mid.sky.bottom !== a.sky.bottom && mid.sky.bottom !== b.sky.bottom, // dazwischen, kein harter Schnitt (V-011)
   fadeLeavesNothing: b.fading === false && b.cachedBody === true,
   sameCardNoChange: log2 === 1,
-  noPageErrors: errs.length === 0 && o1.errs.length === 0,
-}, { a: { id: a.id, via: a.via, storyMode: a.storyMode, tint: a.tint, billboard: a.billboard, amph: a.amph }, b: { id: b.id, storyMode: b.storyMode }, log, ov: { id: ov.id, billboard: ov.billboard, amph: ov.amph }, errs }))
+  variantBRolePerPart: vb.variant === 'b' && vb.amphPal.mode === 'b' && same(vb.amphPal.cols, [vb.P.tower[0], vb.P.tower[1], vb.P.hill[0], vb.P.hill[1], vb.P.sand, vb.P.rock]) && vb.amphPal.ground === vb.P.top
+    && vb.bbPal.frame === vb.P.strang && vb.bbPal.post === vb.P.trunk && vb.bbPal.trim === vb.P.path && vb.P.strang === '#e9b53b', // otown strang = Joyride WORLDS 1:1
+  noPageErrors: errs.length === 0 && o1.errs.length === 0 && o2.errs.length === 0,
+}, { vb, a: { id: a.id, via: a.via, storyMode: a.storyMode, tint: a.tint, billboard: a.billboard, amph: a.amph }, b: { id: b.id, storyMode: b.storyMode }, log, ov: { id: ov.id, billboard: ov.billboard, amph: ov.amph }, errs }))

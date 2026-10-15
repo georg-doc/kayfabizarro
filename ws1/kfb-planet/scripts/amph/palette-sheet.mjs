@@ -1,10 +1,11 @@
 // V-270 · Abnahme-Bilder für Georg (V-253): je Insel-Palette ein eigenes Bühnenbild 1920 × 1080 (#stage, near, Besetzung FB | GothGirl)
 // mit einer passenden Karte und großer Beschriftung im Bild. Karte = erste gesicherte Karte (mapping-audit „ok“) des ersten SAFE-Decks,
 // dessen Genre auf die Palette zeigt (Tabelle stage-palette.genre.json). Der Story-Tint folgt dieser Karte.
-// node scripts/amph/palette-sheet.mjs [out-ordner]
+// node scripts/amph/palette-sheet.mjs [out-ordner] [zusatz-hash, z. B. palv=b,plain] [beschriftung]
 import fs from 'fs'
 import { openPage } from '../../test/_page.mjs'
 const OUT = process.argv[2] || 'test/out/palette-sheet'; fs.mkdirSync(OUT, { recursive: true })
+const HX = process.argv[3] ? ',' + process.argv[3] : '', LABEL = process.argv[4] || ''
 const T = JSON.parse(fs.readFileSync('src/data/stage-palette.genre.json', 'utf8')), G = JSON.parse(fs.readFileSync('src/data/deck-genres.json', 'utf8')).decks
 const A = JSON.parse(fs.readFileSync('src/data/mapping-audit.json', 'utf8')), AD = A.decks || A
 const C = JSON.parse(fs.readFileSync('src/data/cards.json', 'utf8')), ids = C.decks.map((d) => d[0])
@@ -27,12 +28,12 @@ export async function caption(page, title, sub) {
 const rows = []
 for (const [i, pal] of PALS.entries()) {
   const k = pick(pal); if (!k) { rows.push({ pal, missing: true }); continue }
-  const { browser, page, errs } = await openPage(`#stage,debug,actors=fb,card=${k.deck}:${k.n}`, { viewport: { width: 1920, height: 1080 } })
+  const { browser, page, errs } = await openPage(`#stage,debug,actors=fb,card=${k.deck}:${k.n}${HX}`, { viewport: { width: 1920, height: 1080 } })
   await page.waitForFunction(() => { const S = window.__kfbStageMods; return S?.amph?.status().status === 'OK' && S?.billboard?.info()?.source === 'CARD' && S.left?.status().shown && S.right?.status().shown !== false }, null, { timeout: 300000 })
   await page.waitForTimeout(2000)
   const info = await page.evaluate(() => { const p = window.__kfbStageCtl.palette(); return { id: p.id, via: p.via, storyMode: p.storyMode, tint: p.tint, billboard: p.billboard, amph: p.amph, sky: p.sky } })
-  await caption(page, `${i + 1}/6 · Palette ${NAMES[pal]}`, `Karte „${k.name}“ (${k.deck} #${k.n}) · Genre ${k.genre} · Story-Modus ${info.storyMode || '–'}, Tint 12 %`)
-  await page.waitForTimeout(150)
+  await caption(page, `${i + 1}/6 · ${LABEL ? LABEL + ' · ' : ''}Palette ${NAMES[pal]}`, `Karte „${k.name}“ (${k.deck} #${k.n}) · Genre ${k.genre} · ` + (info.tint ? `Story-Modus ${info.storyMode || '–'}, Tint 12 %` : 'ohne Story-Tint (reine Palette)'))
+  await page.evaluate(() => document.getElementById('kfb-cam-marks')?.style.setProperty('display', 'none')); await page.waitForTimeout(150)
   const file = `${OUT}/${i + 1}_${pal}.png`; fs.writeFileSync(file, await page.screenshot())
   rows.push({ pal, ...k, ...info, file, errs: errs.length }); await browser.close()
 }

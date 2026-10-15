@@ -30,6 +30,10 @@ export const amphLog = { create: 0, update: 0, dispose: 0, freed: null }
 // floor = paved; Übergang weich zwischen n.y 0,55 und 0,8. Das Gelände nimmt ground. setPalette(amph, fadeS) wechselt weich (V-011).
 // Ohne Palette: Originaltextur, Gelände aus dem Biom (wie bisher).
 export const PAL_AMT = 0.85
+// Variante B (§36): Bühnenteile nach Weltlage (Meter, Bühnenmitte = Ursprung, Bühnenboden y = 0), vermessen mit scripts/amph/band-probe.mjs.
+// Oberhalb yArch = Torbögen und Mauerkrone (tower), innerhalb stageR und waagrecht = Bühnenboden (sand), dazwischen Sitzreihen in Höhenbändern
+// der Höhe rowH ab y0 (hill[0]/hill[1] im Wechsel). Farbe = Rolle, Helligkeit der Meshy-Textur formt sie (0,6 … 1,15).
+export const AMPH_BANDS = Object.freeze({ yArch: 4.55, y0: 0.05, rowH: 0.71, stageR: 7.3 }) // Tritte bei ≈ 0,7 · 1,4 · 2,1 · 2,8 · 3,55 · 4,4 m: je Band ein Setzstein mit seinem Tritt
 // options: { url = AMPH_URL, biome (für die Geländefarbe), palette (V-270), groundR = 70 }
 export function createAmphitheater(options = {}) {
   amphLog.create++
@@ -40,28 +44,37 @@ export function createAmphitheater(options = {}) {
   const groundMat = fam.std(palette?.ground || biome?.top || '#9aab62', 0.95)
   // Paletten-Uniforms: gemeinsam für alle Modell-Materialien; Überblendung lerpt sie (und die Geländefarbe) von → nach
   const KEYS = ['w0', 'w1', 'w2', 'f0', 'f1', 'f2']
-  const cols = (pa) => (pa ? [...pa.wall, ...pa.floor] : Array(6).fill('#000000'))
-  const PU = { amt: { value: palette ? PAL_AMT : 0 } }; cols(palette).forEach((c, i) => { PU[KEYS[i]] = { value: new THREE.Color(c) } })
+  const cols = (pa) => (pa ? pa.cols || [...pa.wall, ...pa.floor] : Array(6).fill('#000000')) // A: Wand- und Boden-Verlauf · B: tower0, tower1, hill0, hill1, top, rock
+  const PU = { amt: { value: palette ? PAL_AMT : 0 }, mode: { value: palette?.mode === 'b' ? 1 : 0 } }; cols(palette).forEach((c, i) => { PU[KEYS[i]] = { value: new THREE.Color(c) } })
   const fade = { on: false, t: 0, dur: 0, from: null, to: null }
   const inject = (m) => {
     m.onBeforeCompile = (sh) => {
-      for (const k of KEYS) sh.uniforms['p' + k] = PU[k]; sh.uniforms.pamt = PU.amt
-      sh.vertexShader = 'varying vec3 vKfbWN;\n' + sh.vertexShader.replace('#include <defaultnormal_vertex>', `#include <defaultnormal_vertex>
-  vKfbWN = normalize(mat3(modelMatrix) * objectNormal);`)
-      sh.fragmentShader = 'uniform vec3 pw0; uniform vec3 pw1; uniform vec3 pw2; uniform vec3 pf0; uniform vec3 pf1; uniform vec3 pf2; uniform float pamt; varying vec3 vKfbWN;\n' + sh.fragmentShader.replace('#include <map_fragment>', `#include <map_fragment>
+      for (const k of KEYS) sh.uniforms['p' + k] = PU[k]; sh.uniforms.pamt = PU.amt; sh.uniforms.pmode = PU.mode
+      sh.uniforms.pband = { value: [AMPH_BANDS.yArch, AMPH_BANDS.y0, AMPH_BANDS.rowH, AMPH_BANDS.stageR] }
+      sh.vertexShader = 'varying vec3 vKfbWN; varying vec3 vKfbWP;\n' + sh.vertexShader.replace('#include <defaultnormal_vertex>', `#include <defaultnormal_vertex>
+  vKfbWN = normalize(mat3(modelMatrix) * objectNormal);`).replace('#include <project_vertex>', `#include <project_vertex>
+  vKfbWP = (modelMatrix * vec4(transformed, 1.0)).xyz;`)
+      sh.fragmentShader = 'uniform vec3 pw0; uniform vec3 pw1; uniform vec3 pw2; uniform vec3 pf0; uniform vec3 pf1; uniform vec3 pf2; uniform float pamt; uniform float pmode; uniform float pband[4]; varying vec3 vKfbWN; varying vec3 vKfbWP;\n' + sh.fragmentShader.replace('#include <map_fragment>', `#include <map_fragment>
   { float L = clamp((dot(diffuseColor.rgb, vec3(0.2126, 0.7152, 0.0722)) - 0.04) / 0.45, 0.0, 1.0);
     vec3 wall = L < 0.5 ? mix(pw0, pw1, L * 2.0) : mix(pw1, pw2, (L - 0.5) * 2.0);
     vec3 flo = L < 0.5 ? mix(pf0, pf1, L * 2.0) : mix(pf1, pf2, (L - 0.5) * 2.0);
-    vec3 ramp = mix(wall, flo, smoothstep(0.55, 0.8, normalize(vKfbWN).y));
+    float up = normalize(vKfbWN).y;
+    vec3 ramp = mix(wall, flo, smoothstep(0.55, 0.8, up));
+    if (pmode > 0.5) { // Variante B: Rolle je Bühnenteil (pw0 tower0, pw1 tower1, pw2 hill0, pf0 hill1, pf1 sand, pf2 rock)
+      vec3 base; float r = length(vKfbWP.xz);
+      if (vKfbWP.y > pband[0]) base = up > 0.6 ? pw1 : pw0;
+      else if (r < pband[3] && up > 0.5) base = pf1;
+      else base = mod(floor((vKfbWP.y - pband[1]) / pband[2]), 2.0) < 1.0 ? pw2 : pf0;
+      ramp = base * mix(0.6, 1.15, L); }
     diffuseColor.rgb = mix(diffuseColor.rgb, ramp, pamt); }`)
     }
-    m.customProgramCacheKey = () => 'kfb-amph-palette-v270'; m.needsUpdate = true
+    m.customProgramCacheKey = () => 'kfb-amph-palette-v270b'; m.needsUpdate = true
   }
   const snap = () => ({ c: KEYS.map((k) => PU[k].value.clone()), amt: PU.amt.value, ground: groundMat.color.clone() })
-  const plain = (pa) => ({ wall: [...pa.wall], floor: [...pa.floor], ground: pa.ground })
+  const plain = (pa) => (pa.mode === 'b' ? { mode: 'b', cols: [...pa.cols], ground: pa.ground } : { wall: [...pa.wall], floor: [...pa.floor], ground: pa.ground })
   function setPalette(pa, fadeS = 0) {
     const to = { c: cols(pa).map((x) => new THREE.Color(x)), amt: PAL_AMT, ground: new THREE.Color(pa.ground) }
-    state.palette = plain(pa)
+    state.palette = plain(pa); PU.mode.value = pa.mode === 'b' ? 1 : 0
     if (!(fadeS > 0)) { fade.on = false; apply(to, to, 1); return }
     Object.assign(fade, { on: true, t: 0, dur: fadeS, from: snap(), to })
   }

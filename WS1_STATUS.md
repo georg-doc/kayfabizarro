@@ -1,7 +1,30 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§36 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§37 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 37 · 15.10. mittags · V-270 Variante B gebaut (Rolle je Bühnenteil) · Bilder für Georg
+
+- **kfb-planet @44afcfa**, Hash `palv=b`. Der Standard bleibt Variante A, bis Georg wählt. Die ganze Testreihe ist grün, **21/21 PASS**.
+- **Berichtigung:** In §34 stand „22/22“; die Testreihe hat 21 Tests.
+- **Umsetzung von §36.3:**
+  - Das Amphitheater ist nach Weltlage geteilt, vermessen mit `scripts/amph/band-probe.mjs`: Tritte bei ≈ 0,7 · 1,4 · 2,1 · 2,8 · 3,55 · 4,4 m.
+  - Oberhalb 4,55 m liegen Bögen und Mauerkrone: `tower[0]` senkrecht, `tower[1]` waagrecht.
+  - Innerhalb 7,3 m und waagrecht liegt der Bühnenboden: `sand`. Mit `top` ging er in den Rängen unter.
+  - Dazwischen liegen die Sitzreihen, `hill[0]`/`hill[1]` im Wechsel; je Band ein Setzstein mit seinem Tritt (0,71 m ab 0,05 m).
+  - Die Helligkeit der Meshy-Textur formt die Rollenfarbe (0,6 … 1,15).
+  - Gelände `top`, Billboard-Rahmen `strang`, Pfosten `trunk`, Leiste `path` (das Joyride-`pad` fehlt im Lab).
+  - Himmel `sky` → `cloud`.
+  - Ohne Tint, bis §36.4 beantwortet ist.
+- **Test `palette`:** neue Prüfung `variantBRolePerPart` (otown: Rollen = Lab-Daten, Rahmen `#e9b53b` = Joyride `WORLDS` 1:1).
+- **Bilder** (`ws1/proofs/2026-10-15-palette-v270b/`, je 1920 × 1080):
+  - sechs Paletten;
+  - `7_paar_bisher_B` (bisher | B, dieselbe Karte und Kamera).
+- **Befund aus den Lab-Daten:**
+  - canyon, wueste, kfb_town und protopia haben denselben orangeroten `strang`, also denselben Rahmen;
+  - wueste liegt fast ganz im Sand- und Braunbereich.
+  - Wenn Georg die Paletten deutlicher getrennt will, ist das eine Daten-Entscheidung bei WS0/Lab.
+- **Offen:** Georgs Urteil A oder B bzw. Rollen tauschen; WS0-Antworten zu §36.4 (Story-Mode-Paletten mit ≥ 6 Farben, Joyride-Farbvariationen).
 
 ## 36 · 15.10. · Georgs Urteil zu V-270: „eine Tönung, keine Palette“ · Variante B · Fragen an WS0
 

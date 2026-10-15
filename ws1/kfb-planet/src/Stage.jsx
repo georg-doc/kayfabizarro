@@ -59,7 +59,8 @@ const ACTORS = ['none', 'fb', 'rogue'].includes(/actors=(\w+)/.exec(hash)?.[1]) 
 // Bühnen-Palette (V-270): nach der Karte (Deck-Genre → Insel-Palette → Rollen, Story-Tint), Hash palette=<Insel> zum Vergleichen, plain = ohne Tint (Bildpaar)
 const PAL_OVERRIDE = /palette=(\w+)/.exec(hash)?.[1] || null
 const PAL_PLAIN = /(^|,)plain(,|$)/.test(hash.replace(/^#/, ''))
-const palFor = (card) => stagePaletteFor(card, { override: PAL_OVERRIDE, noTint: PAL_PLAIN })
+const PAL_VARIANT = /palv=b/.test(hash) ? 'b' : 'a' // Variante B (§36): Rolle je Bühnenteil wie Joyride
+const palFor = (card) => stagePaletteFor(card, { override: PAL_OVERRIDE, noTint: PAL_PLAIN, variant: PAL_VARIANT })
 const PAL0 = palFor(CARD)
 const AMPH = { biome: BIOME, palette: PAL0?.amph || null }
 const MESHY_OPTS = SCENE ? { stage: SCENE, scale: SCENE_S } : null
