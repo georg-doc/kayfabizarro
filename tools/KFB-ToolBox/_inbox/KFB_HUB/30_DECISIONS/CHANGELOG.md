@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · ToolBox v8 abgenommen
+- V-263: KFB ToolBox Site v8 PASS (Georg); Gesichter der Frankenstein-Probe entstehen dort, nicht in Claude Design.
+
 ## 2026-10-15 · Frankenstein-Standard, Probe Hanky und Dory, Bühnen-Rahmen
 - V-260: Frankenstein (KayKit-Körper + Meshy-Kopf) ist Standard für Meshy-Figuren; Meshy-Köpfe künftig blank.
 - V-261: Probe Hanky und Dory auf dem KayKit-Astronauten mit Teal-Blau bzw. Orange-Rot, Augen-Rig mit Einzel-Stielaugen, Knet-Lider, neue Münder; danach Kleidung für FrizzleBob v5b.

@@ -3419,6 +3419,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-263",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "PASS",
+   "text": "KFB ToolBox Site v8 (WSA work, PR #399, Head facbf3d2): Georgs Bedien- und Bildprüfung „sieht gut aus“ (geschlossener Ruhe-Mund gespeichert und exportiert, Studio-Posen, Dots/IK-Ziehen, Schatten). Die WSA-ToolBox ist damit der Rigging-Ort für Gesichter (V-238/V-244); dort entstehen auch die Gesichter der Frankenstein-Probe Hanky und Dory (V-261). Claude Design baut keine Figuren (V-228).",
+   "values": {},
+   "owner": "WSA work",
+   "check": "Georgs Prüfung in der Site",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Port der ToolBox abgenommen; ein Rigging-Ort statt verstreuter Fassungen.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3481,7 +3496,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:320",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:323",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
