@@ -1,7 +1,42 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§35 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§36 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 36 · 15.10. · Georgs Urteil zu V-270: „eine Tönung, keine Palette“ · Variante B · Fragen an WS0
+
+### 36.1 · Georgs Urteil zu den Bildern aus §34 (sinngemäß, Georg 15.10.)
+- Er sieht immer nur eine Akzentfarbe; das wirkt wie eine Farbtönung der Szenerie, nicht wie eine Palette.
+- Eine Palette hat mindestens sechs harmonisch abgestimmte Farben.
+- Die sechs Story-Modes bringen zusätzlich eine Tönung mit, aber ebenfalls mit einer differenzierten Palette.
+- Die Grundpaletten gibt es in den entsprechenden Joyride-Farbvariationen.
+- Unklarheiten soll WS0 klar formulieren.
+
+### 36.2 · Ursache (WS1)
+- Der Fehler liegt in meiner Rollenwahl, nicht in den Daten.
+- Ich habe das ganze Amphitheater auf **eine** Rollenfamilie gelegt (stone bzw. paved, drei Helligkeiten eines Tons) und das Billboard auf die accent-Familie. Sichtbar wurden damit zwei bis drei Töne plus Tint.
+- Joyride (`track-look.v5.js` `WORLDS`, `setWorld`) setzt dagegen **jede Rolle auf eine eigene Objektklasse**: table, hill[2], tower[2], leaf[3], trunk, rock, cloud, strang, pad, sky. Dadurch stehen acht und mehr Farbtöne nebeneinander.
+
+### 36.3 · Variante B (WS1 baut jetzt, als Bilder zum Urteil; Standard bleibt bis zu Georgs Wahl)
+
+| Bühnenteil | Rolle aus `PALETTES` |
+|---|---|
+| Torbögen und Mauerkrone (oben) | `tower[0..1]` |
+| Sitzreihen | `hill[0]` / `hill[1]` im Wechsel nach Höhenband |
+| Bühnenboden (Mitte, waagrecht) | `top` (Tisch der Insel) bzw. `sand` |
+| Gelände außen | `hill[1]` |
+| Billboard-Rahmen | `strang` |
+| Billboard-Pfosten | `trunk` |
+| Billboard-Leiste | `pad`/`rock` |
+| Himmel | `sky` → `cloud` |
+
+- Die Teile des einen Meshy-Netzes werden nach Weltposition getrennt: Höhe und Abstand zur Bühnenmitte, dazu die Normale wie bisher. Das ist dieselbe Technik-Art wie das Normalen-Kriterium aus V-270.
+- Ohne Tint, bis die Story-Mode-Paletten geklärt sind.
+
+### 36.4 · Bitte an WS0 (Georg wünscht ausdrücklich klare Formulierung)
+1. **Story-Mode-Paletten:** `storymode.v4.js` hat je Modus nur `base` und `accent` (dazu `deep`/`light` abgeleitet). Georg spricht von einer differenzierten Palette mit mindestens sechs Farben je Story-Mode. Wo liegen diese Paletten (Datei, Pfad, Commit)? Und wie wirken sie über der Insel-Palette: als Rollen-Ersatz oder als Tönung je Rolle?
+2. **„Joyride-Farbvariationen“ der Grundpaletten:** Welche sind gemeint? Bekannt sind die drei `WORLDS` (canyon, bucht, otown) plus die abgeleiteten Lab-Paletten (wueste, kfb_town, protopia). Gibt es je Palette mehrere Varianten, und wo liegen sie?
+3. **Rollen je Bühnenteil:** Ist die Tabelle in 36.3 so im Sinn von V-051/V-270?
 
 ## 35 · 15.10. vormittags · M1-Runde @fb6bb2d (m1/bewegung): Gelände grün, Ränge rot · keine Abnahme-Datei für Georg
 
