@@ -5,6 +5,10 @@ import deckBlobs from './data/deck-blobs.json'
 import { MEDIA_COMMIT } from './cardMapping'
 import { DEBUG, expose } from './debug'
 import data from './data/cards.json'
+import previewG4 from './data/pool/preview-g4-georg.json'
+
+// Vorschau-Text (F-3a): nur mit ausdrücklichem Schalter #…,preview=g4; sonst nie (kein Standard, nicht ACCEPTED)
+export const PREVIEW = typeof location !== 'undefined' && /(^|[#,])preview=g4(,|$)/.test(location.hash) ? previewG4 : null
 
 const deckCache = new Map()
 const deckJson = (deckId) => {
@@ -20,14 +24,14 @@ data.cards.forEach(([d, num, name, power, lore]) => byKey.set(data.decks[d][0] +
 const cardSource = (deckId, num) => byKey.get(deckId + '#' + num) || null
 const cache = { get: () => JSON.parse(localStorage.getItem('kfb-ws1-pool-cache') || 'null'), set: (v) => localStorage.setItem('kfb-ws1-pool-cache', JSON.stringify(v)) }
 
-let reader = createPoolReader({ deckBlobs: deckBlobs.decks, deckJson, cardSource })
+let reader = createPoolReader({ deckBlobs: deckBlobs.decks, deckJson, cardSource, preview: PREVIEW })
 let loadState = { loading: true, error: null }
 let poolReady = false
 export const isPoolReady = () => poolReady // der Lade-Versuch ist beendet (mit oder ohne Pool)
 export const ready = loadPool({ cache }).then(({ pool, blob, error, cached }) => {
   poolReady = true
   loadState = { loading: false, error, cached: !!cached }
-  if (pool) reader = createPoolReader({ pool, poolBlob: blob, deckBlobs: deckBlobs.decks, deckJson, cardSource })
+  if (pool) reader = createPoolReader({ pool, poolBlob: blob, deckBlobs: deckBlobs.decks, deckJson, cardSource, preview: PREVIEW })
   return reader
 })
 export const getReader = () => reader

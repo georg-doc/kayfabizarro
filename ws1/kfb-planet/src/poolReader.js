@@ -2,6 +2,8 @@
 // Daten-Modul: reine Funktionen, kein three, kein React, kein Store. Text für eine Blase kommt nur aus
 //   1. POOL  – einem ACCEPTED-Beat mit ACCEPTED-Opener, über makePacket(preview:false) + consumePacket() aus
 //             triplet-pool-core.mjs 1:1 (derselbe Code-Pfad wie die Audio-Site v11), oder
+//   1b. PREVIEW – nur mit ausdrücklich übergebenem Vorschau-Pool (F-3a, G4): Georgs Fassungen über makePacket(preview:true) +
+//             consumePacket(preview:true), derselbe Kern; Opener als eigene Schicht (erster Teil der Blase). Nie ACCEPTED, nie Standard.
 //   2. CARD  – dem wörtlichen Kartentext der eigenen Karte (Name, Power oder Lore, unverändert, nichts kombiniert), sonst
 //   3. SILENCE – „…“.
 // Das Spiel erzeugt keine Triplets und keine Brücken. Jede ausgegebene Zeile wird registriert; der Host zeigt nur
@@ -46,10 +48,11 @@ const normDeck = (deck) => ({ ...deck, cards: (deck.cards || []).map((c) => ({ .
 // deckJson(deckId) -> Promise<Deck-JSON am MEDIA_COMMIT> (nur gebraucht, wenn ein ACCEPTED-Beat für die Karte existiert)
 // cardSource(deckId, num) -> { name, power, lore } aus der Kartenquelle oder null. Kartentext kommt NUR von dort, nie aus dem
 // übergebenen Objekt (blinder Prüfer 3, Befund 5).
-export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {}, deckJson = null, cardSource = null } = {}) {
+export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {}, deckJson = null, cardSource = null, preview = null } = {}) {
   const status = { schema: POOL_SCHEMA, loaded: !!pool, contentRevision: pool?.contentRevision ?? null, blob: poolBlob,
     acceptedBeats: pool ? pool.beats.filter((b) => b.status === 'ACCEPTED').length : 0,
-    acceptedOpeners: pool ? pool.openers.filter((o) => o.status === 'ACCEPTED').length : 0, rejects: [] }
+    acceptedOpeners: pool ? pool.openers.filter((o) => o.status === 'ACCEPTED').length : 0, rejects: [],
+    preview: preview ? { contentRevision: preview.contentRevision, beats: preview.beats.length } : null }
 
   async function poolLine(card) {
     if (!pool || !deckJson) return null
@@ -67,6 +70,24 @@ export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {},
     } catch (e) { status.rejects.push({ card: card.deck.id + '#' + card.num, reason: String(e.message || e) }); return null }
   }
 
+  // Vorschau-Zeile (F-3a): gleicher Kern, preview:true auf beiden Seiten; Opener-Text = Muster ohne {title} (eigene Schicht)
+  async function previewLine(card) {
+    if (!preview || !deckJson) return null
+    const beat = preview.beats.find((b) => b.deckId === card.deck.id && b.cardNumber === card.num)
+    if (!beat) return null
+    const meta = deckBlobs[card.deck.id]
+    if (!meta) { status.rejects.push({ card: card.deck.id + '#' + card.num, reason: 'DECK_BLOB_UNKNOWN' }); return null }
+    try {
+      const deck = normDeck(await deckJson(card.deck.id))
+      const packet = makePacket({ pool: preview, meta: { deckId: card.deck.id, cardBlob: meta.blob, pdfPath: meta.pdf, coverOffset: meta.coverOffset ?? 1 },
+        deck, beats: { [card.num]: beat }, selection: [card.num], preview: true, contentBlob: null, registryBlob: null })
+      const b = consumePacket(packet, { preview: true }).beats[0], o = packet.Openers.find((x) => x.openerId === b.openerId)
+      const lead = o ? o.pattern.replace('{title}', '').trim() : ''
+      return issue({ text: (lead ? lead + ' ' : '') + b.surfaceText, parts: lead ? [lead, b.surfaceText] : [b.surfaceText], source: 'PREVIEW', preview: true,
+        beatId: b.beatId, beatVersion: b.version, openerId: b.openerId, openerVersion: b.openerVersion, contentRevision: preview.contentRevision, card: card.deck.id + '#' + card.num })
+    } catch (e) { status.rejects.push({ card: card.deck.id + '#' + card.num, reason: 'PREVIEW ' + String(e.message || e) }); return null }
+  }
+
   return {
     status: () => ({ ...status, rejects: status.rejects.slice(-10) }),
     // field: 'cardName' | 'power' | 'lore' – welcher Kartentext gilt, wenn es keine Pool-Zeile gibt
@@ -77,7 +98,7 @@ export function createPoolReader({ pool = null, poolBlob = null, deckBlobs = {},
     async lineFor(card, { field = 'cardName', excludeOpeners = null, excludeBeats = null, pool = true } = {}) {
       const src = cardSource ? cardSource(card?.deck?.id, card?.num) : null
       if (!src) return issue({ text: SILENCE, parts: [SILENCE], source: 'SILENCE', card: (card?.deck?.id ?? '?') + '#' + (card?.num ?? '?'), reason: 'CARD_NOT_IN_SOURCE' })
-      const p = pool ? await poolLine(card) : null
+      const p = pool ? ((await previewLine(card)) || (await poolLine(card))) : null // Vorschau nur, wenn ein Vorschau-Pool übergeben wurde
       if (p && !(excludeOpeners && p.openerId !== 'DIRECT' && excludeOpeners.has(p.openerId)) && !(excludeBeats && excludeBeats.has(p.beatId))) return p
       const key = field === 'cardName' ? 'name' : field
       const t = typeof src[key] === 'string' ? src[key] : ''

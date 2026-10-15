@@ -1,7 +1,33 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§26 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§27 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 27 · 15.10. · F-3a Vorschau-Text G4 gebaut (drei Karten, Georgs Fassungen, Opener als eigene Schicht)
+
+**Code:** kfb-planet @4fe7766. **Bilder für Georg (V-253):** `ws1/proofs/2026-10-15-present/preview/`
+- `1_monomyth_1_georg.png`: Zeile A mit „Welcome to“;
+- `1b_monomyth_1_antwort.png`: Antwort B aus dem Druck;
+- `2_monomyth_5_georg.png`: „Remember“;
+- `3_help_10_georg.png`: „You know“.
+
+### 27.1 · Wie
+- **Vorschau-Pool** `src/data/pool/preview-g4-georg.json` im Format `kfb.voice.triplet-opener-pool/1`: `preview: true`, `canonicalDefault: false`, alle Beats und Opener auf EDITORIAL_CANDIDATE (nicht ACCEPTED). Quelle der Fassungen: WS0_TO_WS1 @80e6c655 (F-3a). Erzeugt mit `scripts/pool/build-preview-g4.mjs` und mit dem Pool-Kern 1:1 geprüft (`validatePool`, `makePacket(preview:true)`, `consumePacket(preview:true)`; ohne `preview` lehnt der Kern ab).
+  - **Belegstellen** aus dem Drucktext gesucht, nicht gesetzt: Jede zitierte Stelle steht wörtlich auf der Karte (start/end), jede gesprochene Stelle wörtlich in Georgs Zeile. Zum Beispiel „Stasis Loop“, „nothing changes“, „habit“, „normalize the pain“ → „Normalize pain“, „fear becomes movement“, „the pill“, „Natural Goodness“, „Man is born free“ → „man born free“.
+- **Opener als eigene Schicht:** je Beat ein eigener Opener-Datensatz (`georg-welcome-to`, `georg-remember`, `georg-you-know`, Muster „Welcome to {title}“ usw., SOURCE_NEUTRAL). Die Blase zeigt ihn als ersten Teil, Georgs Zeile als zweiten. Opener-Sperre je Dialog (V-222) greift; ein schon benutzter Opener fällt auf den Kartentitel zurück.
+- **Nur mit Schalter** `#stage,…,preview=g4`: Dann spielt die Bühne die drei Karten in Georgs Reihenfolge, und eine Kennzeichnung „Vorschau-Text · Georgs Fassungen · nicht abgenommen“ steht im Bild. Ohne Schalter erscheint nie eine Vorschau-Zeile (Test).
+- **Ablauf je Karte:** Sprecher A sagt Georgs Fassung, Sprecher B den Power-Text wörtlich aus dem Druck, dann die Spielerwahl (KayfaBINGO/BOGGLE/BONGO/BLÖDSINN + eigene Wörter, F-3c). Keine der drei Karten ist gesichert (Monomyth-Deck UNSAFE, Help I Am A Human #10 nicht in `ok`), daher zeigt das Billboard den Platzhalter mit Drucktext, wie in F-3a vorgesehen.
+
+### 27.2 · Befunde
+1. **Titel wörtlich (Vertrag):** Der Kern verlangt den Kartentitel wortgleich und mit Groß- und Kleinschreibung. Der Druck schreibt „JEAN-JACQUES ROUSSEAU“, Georg „Jean-Jacques Rousseau“. Die Zeile nutzt die Druck-Schreibweise und ist im Beat vermerkt. **Georg 15.10.: „Rousseau so lassen“** – entschieden, keine Änderung an Karte oder Vertrag.
+2. **Versäumnis WS1 bei V-242, behoben:** `src/data/deck-blobs.json` stand noch auf a9f5ffa1, während Bilder und Text schon auf 233efd5 liefen. Jede Pool-Zeile wäre mit `BEAT_SOURCE_REVISION_CONFLICT` abgelehnt worden; bei r5 (0 ACCEPTED) fiel das nicht auf. Neu erzeugt; Test `preview` prüft jetzt `deck-blobs.media == MEDIA_COMMIT`.
+3. **Dialogstart mit ungesicherten Karten:** Die Bühne wartete auf ein echtes Kartenbild und begann bei Platzhalter-Karten nie. Jetzt gilt: Platzhalter ist bereit, wenn die erste Karte nicht gesichert ist.
+4. **Kleinigkeit in der Blase:** Der Gedankenstrich „–“ in Georgs Zeile 1 erscheint als „--“. Das ist die Zeichenform der Blasenschrift (Shantell Sans); im Code wird nichts ersetzt, der Text ist unverändert. Falls Georg das stört: Schrift-Frage, keine Text-Frage.
+
+### 27.3 · Tests
+- `preview` (9 Prüfpunkte, ohne Browser, gegen die echten Deck-JSONs am MEDIA_COMMIT) PASS.
+- `g4preview` (9 Prüfpunkte auf der Bühne: Reihenfolge, Georgs Fassung mit Opener-Teil, Antwort aus dem Druck, Platzhalter, drei Wahlen bis zum Ende, Kennzeichnung, Gegenprobe ohne Schalter) PASS.
+- Volle Suite: **20/20 PASS** (contract-static … g4preview), allein auf dem Rechner.
 
 ## 26 · 15.10. · Gelesen bis V-256 · Bilder nach V-253 neu · Code F-4 gespiegelt · Vorlagen-Zeile V-256 (Bildflächen-Modul)
 

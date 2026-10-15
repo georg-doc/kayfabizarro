@@ -14,10 +14,11 @@ import { createActor } from './actors/actorSlot'
 import { createDialog } from './modules/dialog'
 import BubbleHost from './BubbleHost'
 import ChoiceHost from './ChoiceHost'
-import { getReader, isPoolReady } from './dialogText'
+import { getReader, isPoolReady, PREVIEW } from './dialogText'
 import { useGame } from './store'
 import { playerState } from './world'
 import { DECKS, cardAt, cardsOfDeck } from './cards'
+import { isCardSafe } from './cardMapping'
 import rogueUrl from './assets/actors/Rogue_Hooded.glb?url'
 import clipsUrl from './assets/actors/Rig_Medium_General.glb?url'
 import pick from './data/eyes/rogue-hooded.profile.json'
@@ -33,7 +34,10 @@ import { expose } from './debug'
 const hash = typeof location !== 'undefined' ? location.hash : ''
 const [deckId, num] = (/card=([\w]+):(\d+)/.exec(hash) || [0, 'forget_utopia', '1']).slice(1)
 const di = DECKS.findIndex((d) => d.id === deckId)
-const CARD = di >= 0 ? cardsOfDeck(di).map(cardAt).find((c) => c.num === +num) || null : null
+const findCard = (d, n) => { const i = DECKS.findIndex((x) => x.id === d); return i >= 0 ? cardsOfDeck(i).map(cardAt).find((c) => c.num === n) || null : null }
+// Vorschau-Text G4 (F-3a, Schalter preview=g4): die drei Karten in Georgs Reihenfolge aus dem Vorschau-Pool (sets[0]); sonst wie bisher
+export const PREVIEW_CARDS = PREVIEW ? PREVIEW.sets[0].orderedBeatIds.map((id) => { const [d, n] = id.split(':'); return findCard(d, +n) }).filter(Boolean) : null
+const CARD = PREVIEW_CARDS?.[0] || (di >= 0 ? cardsOfDeck(di).map(cardAt).find((c) => c.num === +num) || null : null)
 const BIOME = BIOMES.find((b) => b.name === decodeURIComponent(/biome=([^,]+)/.exec(hash)?.[1] || '')) || BIOMES[1]
 export const STAGE_CAMS = { two: { pos: [0, 2.7, 12.5], target: [0, 2.4, -3.5] }, wide: { pos: [0, 9, 30], target: [0, 2, -2] }, q: { pos: [9, 3.2, 9], target: [0, 2.2, -3] },
   // G4-Bildaufbau (Georg 14.10.: „near nehmen“): Kamera näher, auf Augenhöhe der Figuren, Figuren vor der Tafel. Standard seit §20.
@@ -91,8 +95,8 @@ export const STAGE_MARKS = Object.freeze({
 const NEAR = (/place=(\w+)/.exec(hash)?.[1] || (CAM === 'two' ? 'two' : 'near')) === 'near'
 const at = (mk, m, id) => ({ ...mk(m.x, m.yaw, id), position: [m.x, 0, m.z] }), MARKS = STAGE_MARKS[NEAR ? 'near' : 'two']
 const L = at(MK, MARKS.left, 'stage-left'), R = at(MKR, MARKS.right, 'stage-right')
-const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
-const DECK = di >= 0 ? cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num).slice(0, NDIALOG) : []
+const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : PREVIEW_CARDS ? PREVIEW_CARDS.length : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
+const DECK = PREVIEW_CARDS || (di >= 0 ? cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num).slice(0, NDIALOG) : [])
 const mods = {}
 // Ports des Dialogs: werden beim Aufruf aufgelöst (die Module entstehen nacheinander über ModuleHost)
 const DIALOG = {
@@ -104,8 +108,10 @@ const DIALOG = {
   openChoice: () => { useGame.getState().openChoice(); return useGame.getState().choice?.id ?? null },
   closeChoice: () => useGame.getState().closeChoice(),
   // Figuren bereit = geladen UND im Bild (FrizzleBob erscheint erst nach Kontaktschatten + Ruhe-Clip; G4-Vorprobe: erste Zeile kam vor der Figur)
-  isReady: () => isPoolReady() && mods.amph?.status().status === 'OK' && mods.billboard?.info()?.source === 'CARD' && (ACTORS === 'none' || [mods.left, mods.right].every((a) => a?.status().status === 'OK' && a.status().shown !== false)),
+  // Billboard bereit = echtes Kartenbild, oder Platzhalter mit Drucktext, wenn die Karte nicht gesichert ist (F-3a: so gewollt, sonst begänne der Dialog nie)
+  isReady: () => isPoolReady() && mods.amph?.status().status === 'OK' && billboardReady() && (ACTORS === 'none' || [mods.left, mods.right].every((a) => a?.status().status === 'OK' && a.status().shown !== false)),
 }
+function billboardReady() { const i = mods.billboard?.info(); if (!i) return false; const c = DECK[0] || CARD; return i.source === 'CARD' || (i.source === 'PLACEHOLDER' && !!c && !isCardSafe(c.deck.id, c.num)) }
 const mk = (k, f) => (o) => { mods[k] = f(o); expose('StageMods', mods); return mods[k] }
 const makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makeL = mk('left', createActor), makeR = mk('right', createActor)
 const makeDialog = (o) => { const d = createDialog({ ...o, reader: { lineFor: (...a) => o.reader.lineFor(...a), silence: () => o.reader.silence() } }); mods.dialog = d; expose('StageMods', mods); return d }
@@ -136,6 +142,10 @@ export default function Stage() {
   // Die Spielerwahl der Bühne: Zurufe des Publikums erscheinen als Blase vorn am Bildrand (Anker „player“ vor der Kamera).
   // Nur solange die Bühne steht; beim Abbau zurück (Prüfer 8, Befund 6: kein Seiteneffekt beim Import).
   useEffect(() => { const prev = playerState.pos.clone(); playerState.pos.set(...PLAYER_POS); return () => { playerState.pos.copy(prev) } }, [])
+  // Kennzeichnung der Vorschau im Bild (F-3a: nicht ACCEPTED)
+  useEffect(() => { if (!PREVIEW) return undefined; const d = document.createElement('div'); d.id = 'kfb-preview-badge'
+    d.style.cssText = 'position:fixed;left:16px;top:14px;padding:6px 12px;border-radius:10px;background:rgba(40,28,16,.72);color:#ffe9b8;font:600 15px/1.2 system-ui,sans-serif;z-index:9000;pointer-events:none'
+    d.textContent = 'Vorschau-Text · Georgs Fassungen · nicht abgenommen'; document.body.appendChild(d); return () => d.remove() }, [])
   useEffect(() => { expose('StageCtl', { log: () => ({ amph: { ...amphLog } }), biome: BIOME, card: CARD, cams: STAGE_CAMS, deck: DECK, palette: () => palState.current, palLog: () => palState.log.slice(), sky: () => sky.state(), applyPalette }) }, [])
   // Ergebnis der Spielerwahl → Dialog (Store-Ereignis lastChoice)
   useEffect(() => useGame.subscribe((s, p) => { if (s.lastChoice && s.lastChoice !== p.lastChoice) mods.dialog?.onChoice(s.lastChoice) }), [])
