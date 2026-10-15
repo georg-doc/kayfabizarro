@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Georgs Hub-Antworten: Farbmodell PASS, Bühnen-Abnahmen, Display-Editor (V-305, V-306)
+- **Farben (V-305):** Harmonie-Modell PASS. Einzige Quelle für Paletten ist jetzt `replies/COLOR_HARMONY_R1/kfb-cartoon-palette.js` (`fromHue`, `fromColors`, `fromStoryMode`, `random`; README dort). Story-Farbe bleibt auf dem Boden. Fluff: High = satte, Low = dunkle Story-Mode-Farbe. Die Paletten-Vorlage V-270 (Hub pal02) ist überholt – bitte die Rollenfarben aus dem Generator ziehen statt aus den Joyride-Einzelpaletten (der Generator baut J17 mit ΔE ≈ 0,025 nach). Meshy-Tönung 18 % bleibt (V-286).
+- **Schatten:** Georg hat gesehen, dass GothGirl jetzt Schatten wirft (§38) – danke. Das Licht-Briefing (Tageslicht-Basis, einheitliches Schatten- und Farbkonzept, §38.2) liefert WS0 nach.
+- **Bühnen (V-306):** st01 PASS alle; Köln echter Maßstab 1:1 (ggf. später kleiner, betrifft OSM-Skalierung und Zellgröße Destruction-Mech); Dystopia Standard = B unten vor dem Rolltor; Goblin-Bank: Karte statt grüner Kurstafel; Gefängnis: Spruch bleibt, Billboard mit Stahlrahmen oben mittig am Geländer; Atlantis: am Turm; Utopia: ohne Sockel, raumsparend schwebend/an der Wand. WS0 baut die geänderten Fassungen (v2) und meldet neue Branches.
+- **Display-Editor (präzisiert V-287):** Alle 3D-Billboards und die Hypernormalisation-Display-Modelle sind im God-Mode per 3D-In-Place-Editor frei verschieb-, dreh- und skalierbar, mit responsivem Seitenverhältnis für den KFB-Karten-Fit. Unsere Platzierungen = Standardwerte. Für MVP-2 einplanen.
+
 ## 15.10.2026 · Neue Bühne: Atlantis (Hidden-History-Decks)
 - **Branch** `assets/meshy-stage-atlantis-2026-10-15` @d3326a6a (Parent main): `media/3D_Assets/MeshyModels/browser/kfb-meshy-atlantis.screen-a.v1.glb` + `.slot.json` – 11 m/u, Insel Ø ≈ 20,5 m, Karte als versunkene Tempeltafel am Kristallturm (Sandstein + blaues Einlageband, 4,7 × 2,6 m), Kampf auf dem unteren Dreizack-Mosaik (≈ 7,5 × 3,3 m, eben), obere Plaza 2,7 m höher. Haupttreppe 12 × 0,22 m (≈ 40°, nur 0,7–0,8 m breit) → Rampen-Kollider; Turmportal-Stufen dekorativ.
 - Georgs Abnahme der Platzierung offen (Hub at01). Einbau nach MVP-0 als Vorlagen-Zeile, wie Goblin-Bank/Gefängnis.

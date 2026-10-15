@@ -1,5 +1,12 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Hub-Antworten: Farben, Bühnen, Kart, Stimmen
+- V-305: Harmonie-Modell PASS (Story-Farbe auf dem Boden), Fluff High satt / Low dunkel PASS; ersetzt V-270 (pal02 überholt).
+- V-306: Bühnen-Abnahmen (st01 PASS alle, Köln 1:1, Dystopia B, Bank statt Kurstafel, Gefängnis Stahlrahmen oben mittig am Geländer, Atlantis am Turm, Utopia ohne Sockel); alle Displays im God-Mode per In-Place-Editor mit responsivem Karten-Seitenverhältnis.
+- V-307: Kart TUNE – Kart-Cockpit-Sitzhaltung, Sitz weg, Arme gestreckter.
+- V-308: Kokoro PASS (FB am_michael, GothGirl bf_emma); Besetzung je Figur + Suno weitere Decks.
+- V-309: Retro-Arcade-Casino als Bühne.
+
 ## 2026-10-15 · Kopf-Einzelteile + WSA-Briefing, Atlantis-Bühne
 - Branch assets/kfb-alien-head-parts-2026-10-15 @82791728: Lord Hunky / Lady Dory als Kopf-Teile (kfb.headpart/1), Vorschlags-Passung Space Ranger (Hals rundum im Kragen; Kopf dadurch ≈ halbe FrizzleBob-Breite → Studio-Regler „Hals verjüngen“ vorgeschlagen). Hub-Briefing b31 an WSA (ToolBox-Studio, V-304).
 - Branch assets/meshy-stage-atlantis-2026-10-15 @d3326a6a (Hub at01); assets/meshy-stages-goblin-prison-2026-10-15 @48b0f492 (Hub gb01, pr01).

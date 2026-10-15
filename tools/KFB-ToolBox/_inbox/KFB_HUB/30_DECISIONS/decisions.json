@@ -3543,7 +3543,8 @@
    "source": "Georg 15.10.",
    "supersedes": null,
    "superseded_by": [
-    "V-286"
+    "V-286",
+    "V-305"
    ],
    "why": "Paletten sind Harmonie-Systeme, keine Stimmungsfarben.",
    "applies": "ab sofort"
@@ -3756,7 +3757,9 @@
    "check": "Orc 3/4, Seite, Video",
    "source": "Georg 15.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-307"
+   ],
    "why": "FB passt; Large-Fahrer braucht eigene Feinarbeit.",
    "applies": "ab sofort"
   },
@@ -4063,6 +4066,81 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-305",
+   "date": "2026-10-15",
+   "area": "Farben",
+   "verdict": "PASS",
+   "text": "Farb-Harmonie-Modell COLOR_HARMONY_R1 PASS (Hub col04): eine OKLCH-Regel – Boden trägt den Grundton, Strecke +90° warm, Blickfang gegenüber im Candy-Band, Laub natürlich grün bzw. herbstlich bei grünem Boden, Himmel = Laub +90°, Landeplatte gelb, Straße #3d4a60; Generator kfb-cartoon-palette.js (fromHue, fromColors, fromStoryMode, random); J17-Nachbau mittleres ΔE 0,023–0,027. Story-Farbe bleibt auf dem Boden. Fluff-Farben PASS (Hub col02): High-Fluff in der satten, Low-Fluff in der dunklen Story-Mode-Farbe. Ersetzt die Paletten-Vorlage V-270 (Hub pal02 überholt).",
+   "values": {},
+   "owner": "WS0 (Modell) → WS1 (Einbau)",
+   "check": "Hub col04/col02",
+   "source": "Georg 15.10.",
+   "supersedes": "V-270 (Bühnenfarben aus Joyride-Paletten je Rolle)",
+   "superseded_by": [],
+   "why": "Eine Regel statt Einzelpaletten; Joyride ist damit reproduzierbar.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-306",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Bühnen-Abnahme (Hub): Stage-Batch PASS alle (st01); Regel hängt/steht/schwebt so (mt01); Köln echter Maßstab 1:1, ggf. später etwas kleiner (betrifft OSM-Skalierung und Zellgröße des Destruction-Mech-POC) (st02); Dystopia: B unten vor dem Rolltor als Standard (dy02); Goblin-Bank: Karte statt der grünen Kurstafel links (gb01); Gefängnis: Spruch behalten, Billboard mit Stahlrahmen oben mittig, auf dem Geländer befestigt (pr01); Atlantis: Tafel am Turm lassen (at01); Utopia TUNE: kein Sockel unter dem Billboard, raumsparend vor das Diorama hängen (schwebend bzw. an der Wand) (ut01). Alle 3D-Billboards und Hypernormalisation-Display-Modelle sind im God-Mode per 3D-In-Place-Editor frei platzier- und skalierbar, mit responsivem Seitenverhältnis für den KFB-Karten-Fit (präzisiert V-287); die gesetzten Platzierungen sind die Standardwerte.",
+   "values": {},
+   "owner": "WS0 (Assets) → WS1 (Einbau, God-Mode MVP-2)",
+   "check": "Hub st01/st02/mt01/dy02/gb01/pr01/at01/ut01",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Platzierungen sind Startwerte, Georg setzt im God-Mode nach.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-307",
+   "date": "2026-10-15",
+   "area": "Fahren",
+   "verdict": "TUNE",
+   "text": "Badewannen-Kart (kt05): Sitz wirkt unpassend; Orc und FrizzleBob sollen nicht gerade bzw. aufrecht sitzen, sondern in Kart-Cockpit-Sitzposition (zurückgelehnt, Beine nach vorn); der störende Sitz kann weg, um Platz zu schaffen; Arme etwas mehr gestreckt am Lenkrad.",
+   "values": {},
+   "owner": "WS0 (Asset)",
+   "check": "FB + Orc 3/4, Seite, Video",
+   "source": "Georg 15.10.",
+   "supersedes": "V-284 (Sitzhaltung)",
+   "superseded_by": [],
+   "why": "Kart-Figuren müssen nach Kart aussehen, nicht nach Bürostuhl.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-308",
+   "date": "2026-10-15",
+   "area": "Dialog",
+   "verdict": "PASS",
+   "text": "Kokoro-Stimmen PASS (vo01, „super, weiter so“): FrizzleBob = am_michael, GothGirl = bf_emma. Kokoro v1.0 lokal bleibt die Stimmquelle für Triplets (vorab erzeugt, V-285). Nächster Schritt: Stimmen-Besetzung je Figur (Character Mapping) aus 28 englischen Stimmen plus Mischstimmen; Suno-Schiene mit weiteren Decks über das Triplet-Plugin fortsetzen, parallel mit Kokoro testen.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Besetzungsliste + Hörprobe",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kokoro klingt gut genug und kostet nichts pro Zeile.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-309",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Neues Meshy-Diorama Retro-Arcade-Casino „Galaxy Gamblers Club“ als Bühne aufbereiten (wie STAGES_BATCH_R1); Georgs Vorschlag: Billboard über der Galaxy-Neon-Reklame.",
+   "values": {},
+   "owner": "WS0 (Bühne) → WS1",
+   "check": "Bühnenbilder + Hub-Frage",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Jedes neue Diorama wird gleich aufbereitet.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4135,7 +4213,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:495",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:506",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
