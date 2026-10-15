@@ -3374,6 +3374,51 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-260",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Frankenstein als Standard für Meshy-Figuren: KayKit-Körper (Rig_Medium-Familie) plus Meshy-Kopf starr am Kopfknochen; alle KFB-Clips laufen nativ, Gesicht über face-mount.v1 bzw. RIG_FAMILIES (Augen, Lider, Münder aus dem KFB-Satz). Meshy-Köpfe künftig „blank“ erzeugen (ohne gemalte Augen und Mund). Meshy-Vollrig nur für Figuren, die nicht in einen KayKit-Körper passen. Grundlage: Rigging-Analyse (MeshyModels/_rig_analysis, Hub rg01–rg03): Ruckeln stammt aus Meshys Clips, nicht aus dem Mesh; Anzug-Dehnung kommt von Meshys Gewichten.",
+   "values": {},
+   "owner": "WS0 (Asset) · WSA ToolBox (Gesicht) · WS1 (Einbau)",
+   "check": "Hub rg03, Bildpaar Vollrig | Frankenstein",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Rigging-Analyse: Frankenstein ist schneller, glatter und passt zum KFB-Gesicht.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-261",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Frankenstein-Probe (Proof of Concept): Köpfe von Lord Hunky („Hanky“) und Dory auf den KayKit-Astronauten (Space Ranger, Kauf-Asset, nur lokal bzw. privat). Raumanzug mit Farbakzenten: Hanky Teal-Blau, Dory Orange-Rot. Dann KFB-Augen-Rig inklusive Einzel-Augen-Stiel-Rig (Hanky), die neuen Knet-Augendeckel und die neuen Münder (V-249/V-259). Ziel: Schaufenster für Frankenstein und Augen-Rig. Danach FrizzleBob: aktuelle Fassung v5b bekommt Kleidung; Vorbild ist das Outfit des Meshy-FrizzleBob (Shirt, Hose, Schuhe), Teile werden isoliert und auf den gelben Hasenkörper übertragen; Kandidaten sucht Georg auch im Asset Librarian.",
+   "values": {},
+   "owner": "WS0 (Körper, Kopf, Farben) → WSA ToolBox (Gesicht) → WS1",
+   "check": "Bildfolge vorn, ¾, Seite, Gehen",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will ein Schaufenster für Frankenstein und das Augen-Rig; FrizzleBob wirkt neben den anderen nackt.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-262",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Bildflächen-Träger passend zur Bühne (präzisiert V-256): Amphitheater = Billboard mit Knet-gemauertem Rahmen passend zu Torbögen und Mauerwerk; UFO = Monitor (V-259); neue Meshy-Bibliothek (MeshyModels/Utopia, Georg 15.10.) als weitere Bühne mit freier Seite: dort entweder ein schmuckvoller, antiker Knet-Holzrahmen oder eine Fläche innerhalb der Bibliothek mit guter Kameraposition. WS0 prüft die Bibliothek und schlägt die Fläche vor; Seitenverhältnis 1,79:1.",
+   "values": {},
+   "owner": "WS0 (Prüfung, Asset) → WS1",
+   "check": "Bildvorschlag Bibliothek mit Fläche",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Jede Bühne braucht einen Rahmen aus ihrem eigenen Material, keine Einheits-Tafel.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3436,7 +3481,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:311",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:320",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

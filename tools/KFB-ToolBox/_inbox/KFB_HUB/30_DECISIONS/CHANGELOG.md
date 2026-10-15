@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Frankenstein-Standard, Probe Hanky und Dory, Bühnen-Rahmen
+- V-260: Frankenstein (KayKit-Körper + Meshy-Kopf) ist Standard für Meshy-Figuren; Meshy-Köpfe künftig blank.
+- V-261: Probe Hanky und Dory auf dem KayKit-Astronauten mit Teal-Blau bzw. Orange-Rot, Augen-Rig mit Einzel-Stielaugen, Knet-Lider, neue Münder; danach Kleidung für FrizzleBob v5b.
+- V-262: Bildflächen-Träger je Bühne (Amphitheater gemauert, UFO Monitor, Bibliothek Holzrahmen oder Fläche im Raum).
+
 ## 2026-10-15 · Rigging-Analyse, UFO auf GitHub
 - Meshy-Rigging untersucht (FrizzleBob repariert mit Faustkugeln, Lord-Hunky-Ursachen, Polygon-Test, Vollrig vs. Frankenstein); drei Fragen im Production Hub (rg01–rg03), Empfehlung WS0: Frankenstein als Standard, noch ohne V-Nummer.
 - UFO-Cockpit UP 1,79 mit `kfb_screen_slot` auf `assets/meshy-ufo-cockpit-2026-10-15` (V-259); WS1-Notiz ergänzt.
