@@ -10,6 +10,7 @@
 | **Zerstörung** | Mit dem Destruction-Mech zellenweise Strukturen bzw. Gebäude zerlegen; darunter liegen Karten, die frei werden und eingesammelt werden. | Combat-Destruction-Mech-Slice als POC (V-209, V-250 MVP-4); Zerstörung mit Nachwachsen (V-083) |
 | **Fluff-Ernte** | Fluff wächst an Bäumen bzw. auf Farmen, fällt bei Wind herunter, springt, wird im Vorbeilaufen aufgesammelt; manche Fluffs tragen eine Karte. | Fluff-Ernte (Memory kfb-fluff-harvest), Fluff-Zonen (V-082) |
 | **Sprengen und Dynamitfischen** | Mit einer Cartoon-Bombe Terrain sprengen oder im Teich Dynamit fischen; dabei werden Fluff-Zonen und Karten freigelegt. | V-082 (Mine/Terrain graben, Angeln), Cartoon-Prinzipien (V-033) |
+| **Herstellen (Auftragsarbeit)** | Fehlende Karten selbst fertigen: Fluff ernten und aus einer bestimmten Fluff-Kombination in einem einfachen Minispiel die Karte herstellen (Auftrag eines NPC). Erzählt über das Alchemie-/Hexen-Narrativ (Georg): Hexe bzw. Alchemist braut aus Fluff die Karte. | Fluff-Crafting-Almanach (WSA-Planung `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09`, V-122), Fluff-Ernte |
 | **Minispiele** | Kurze Spiele an einem Ort (Rennen, Geschicklichkeit, Karten-Duell) mit Karte als Preis. | offen |
 | **Funde unterwegs** | Karten liegen sichtbar in der Landschaft, etwa an Rampen oder auf Hügeln, und belohnen die freie Fahrt. | V-290 (freie Fahrt) |
 

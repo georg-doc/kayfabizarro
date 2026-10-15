@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Farbkonzept R1 liegt vor (Entwurf) · alte Fahrbahn-/Bandenfarben
+- **Einzige Farbquelle (Entwurf, Georg klärt Lücken):** `replies/COLOR_CONCEPT_R1.md` + `replies/kfb-color-concept.r1.json` (Werte 1:1 aus Quellen mit Blob/Commit). Bitte lesen; noch nichts umbauen außer der Tönung nach V-286.
+- **Sofort korrigierbar (Register V-102/V-174):** Fahrbahn `#3d4a60` statt `#545e7a`, Banden/Randstrang `#ef5a22` statt rot-weiß (rot-weiß nur Kerbs). Das Farbkonzept fand die alten Werte in eurem Lab-Stand.
+- **Offen bei Georg:** Story-Mode Absurd (Ocker oder Magenta), Fluff-Farben je Story-Mode, Regel für dunkle/sattere Variante, Stärke der Meshy-Tönung.
+
 ## 15.10.2026 · Reisen: freie Fahrt übers Gelände (V-290), Dramaturgie (V-288), Welt offen (V-289)
 - **Dramaturgie:** Grund zu reisen → Reisen macht Spaß → Begegnung am Diorama als Höhepunkt (V-288).
 - **Fahren (V-290, ersetzt die feste Vorgabe J17 k2b aus V-251):** rasante Cartoon-Fahrt mit plausibler Physik direkt übers Gelände, Hügel als Rampen, Überschlag erlaubt und Selbstaufrichten, kein Racetrack nötig. Bitte für MVP-1 eine Vorlagen-Zeile: J17-k2b-Fahrgefühl vs. Fahrzeug-Controller im R3F/Rapier-Rahmen auf einem Testgelände (Hügel, Rampe, Überschlag), Messwerte + kurzes Fahrvideo; Vorschlag, welcher schneller und zuverlässiger ist. Fahrzeug für die Probe: Badewannen-Kart (WS0, folgt auf Asset-Branch) oder Cicada.

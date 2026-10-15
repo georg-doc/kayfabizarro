@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Farbkonzept R1
+- replies/COLOR_CONCEPT_R1.md + kfb-color-concept.r1.json (Quellen 1:1, Widersprüche, Lücken G-1–G-8); Hub col01 (Absurd Ocker/Magenta) und col02 (Fluff-Farben, dunkle/sattere Variante). Game Loop: Herstellen von Karten aus Fluff-Kombination (Alchemie/Hexe).
+
 ## 2026-10-15 · Game Loop R1
 - Entwurf replies/GAME_LOOP_R1.md: Kartenquellen (Botengang, Mech-Zerstörung zellenweise, Fluff-Ernte, Sprengen/Dynamitfischen, Minispiele, Funde), Abgabe in der Hauptstadt mit wachsender Belohnung, drei Loop-Varianten, offene Fragen; Georg entscheidet.
 

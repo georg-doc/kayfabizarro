@@ -1,0 +1,1271 @@
+{
+ "schema": "kfb.color-concept/1",
+ "version": "R1",
+ "date": "2026-10-15",
+ "owner": "WS0 (Datenhoheit)",
+ "status": "Konsolidierung vorhandener Quellen. Keine erfundenen Farben. Werte 1:1 kopiert; Felder mit 'computedWith' sind mit der Formel der Quelle gerechnet, nicht frei gewählt.",
+ "register": [
+  "V-010",
+  "V-011",
+  "V-051",
+  "V-102",
+  "V-174",
+  "V-245",
+  "V-270",
+  "V-286"
+ ],
+ "doc": "KFB_HUB/30_DECISIONS/replies/COLOR_CONCEPT_R1.md",
+ "applicationRule_V286": {
+  "source": "KFB_HUB/30_DECISIONS/DECISIONS.md V-286 (Georg 15.10.)",
+  "meshyPaintedTexture": "nur leichte Tönung (Welt-Palette bzw. Story-Mode als sanfte Färbung), Textur bleibt lesbar",
+  "ownBuilds": [
+   "Rahmen/Displays",
+   "Requisiten",
+   "Fluff",
+   "Himmel",
+   "Licht",
+   "Figuren-Akzente"
+  ],
+  "ownBuildsGet": "volle Palette: sechs harmonische Farben mit Rollen + dunkle und sattere Variante",
+  "supersedes": "V-270 (Rollen auf der Meshy-Textur des Amphitheaters)"
+ },
+ "layer1_worldPalettes": {
+  "rule": "V-051: Insel-Thema = Sechser-Palette aus Joyride (canyon, bucht, otown + Ableitungen) + Licht + Klang + Biom + Story-Tint. V-010/V-102: J17 Goldstandard.",
+  "joyrideWorlds": {
+   "source": {
+    "path": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/src/world/organ/vendor/j17/lab-track/track-look.v5.js",
+    "export": "WORLDS",
+    "gitBlob": "7c0d248391c3eaf1887a0afc97ee02b25f6dec85",
+    "repo": "georg-doc/kayfabizarro main@e082405ee tools/KFB-ToolBox/_inbox/KFB_JOYRIDE_J14_CLAUDE_DESIGN_SESSION_CUT_2026-09-30_r1/lab-track/track-look.v5.js (bytegleich)",
+    "note": "WORLDS ist in allen drei track-look.v5.js-Fassungen im Repo identisch; J17 (JOYRIDE_J17_2026-10-01) hat genau diese drei Welten."
+   },
+   "status": "canonical",
+   "values": {
+    "canyon": {
+     "name": "A · Claybound-Canyon",
+     "short": "Claybound pur: oranger Strang auf violettem Tisch, schieferblaue Fahrbahn, orange Tafeltürme, grüne Kugelbäume, gelbe Boost-Pfeile.",
+     "sky": "#96bede",
+     "roadStreet": "#566680",
+     "roadTrack": "#3d4a60",
+     "strang": "#ef5a22",
+     "table": "#8b68c7",
+     "hill": [
+      "#a582d9",
+      "#7b5bb8"
+     ],
+     "tower": [
+      "#ef5a22",
+      "#e8743a"
+     ],
+     "leaf": [
+      "#1f7a3e",
+      "#2f8a45",
+      "#cdc666"
+     ],
+     "trunk": "#8a5a3a",
+     "rock": "#e2d0bc",
+     "cloud": "#e2d0bc",
+     "pad": "#f2b632",
+     "kart": [
+      "#f2b632",
+      "#5983ac",
+      "#e2d0bc"
+     ]
+    },
+    "bucht": {
+     "name": "B · Bikini-Bucht",
+     "short": "Unterwasser-Strand: korallenroter Strang auf Sand, Aqua-Dünen, violette Korallentürme, Tangbäume mit rosa Blüten, zitronengelbe Pfeile.",
+     "sky": "#8fd6ec",
+     "roadStreet": "#5f7f9a",
+     "roadTrack": "#3e5d7c",
+     "strang": "#f2708a",
+     "table": "#f0cf7e",
+     "hill": [
+      "#5cc3bf",
+      "#46adb2"
+     ],
+     "tower": [
+      "#9a6fd0",
+      "#b08ae0"
+     ],
+     "leaf": [
+      "#8fcf45",
+      "#5fb84a",
+      "#f7a1c4"
+     ],
+     "trunk": "#c9895a",
+     "rock": "#9a6fd0",
+     "cloud": "#fff4e2",
+     "pad": "#f7d23c",
+     "kart": [
+      "#f7d23c",
+      "#9a6fd0",
+      "#fff4e2"
+     ]
+    },
+    "otown": {
+     "name": "C · O-Town",
+     "short": "Schräge Vorstadt: senfgelber Strang auf Petrol, magentafarbene Wackeltürme, orange Baumkronen auf lila Stämmen, Mintgrün als Himmel.",
+     "sky": "#a8d8b9",
+     "roadStreet": "#6a6e8f",
+     "roadTrack": "#4a4d6e",
+     "strang": "#e9b53b",
+     "table": "#3aa596",
+     "hill": [
+      "#2f8f83",
+      "#4cb5a5"
+     ],
+     "tower": [
+      "#c9508f",
+      "#e0679f"
+     ],
+     "leaf": [
+      "#f08a2c",
+      "#f5b041",
+      "#c9508f"
+     ],
+     "trunk": "#6b4a8a",
+     "rock": "#e0679f",
+     "cloud": "#f3ead8",
+     "pad": "#fff06a",
+     "kart": [
+      "#fff06a",
+      "#6b4a8a",
+      "#f08a2c"
+     ]
+    }
+   }
+  },
+  "islandPalettes": {
+   "source": {
+    "path": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/src/palettes.ts",
+    "export": "PALETTES",
+    "localGitHash": "44d9f5f9a28ff7d80ce9678549ed47cca597b703",
+    "repoSnapshot": "gh/sync/lab-snapshot-2026-10-11 @64ae61fe7 blob f8f57d7612968412887b3488a0b2dbed8ded7f12 (PALETTES/ENV_ROLES identisch, ASPHALT/BANDE dort noch vor V-174)"
+   },
+   "status": "canonical (canyon/bucht/otown = Joyride 1:1; wueste/kfb_town/protopia = abgeleitet laut note)",
+   "values": {
+    "canyon": {
+     "id": "canyon",
+     "name": "A · Claybound-Canyon",
+     "note": "Joyride A: oranger Strang auf violettem Tisch, orange Tafeltürme, grüne Kugelbäume",
+     "sky": "#96bede",
+     "top": "#8b68c7",
+     "top2": "#9877d0",
+     "hill": [
+      "#a582d9",
+      "#7b5bb8"
+     ],
+     "sand": "#e2d0bc",
+     "rim": "#7b5bb8",
+     "under": [
+      "#5e4294",
+      "#e8743a",
+      "#d0602e",
+      "#a8482a"
+     ],
+     "rock": "#e2d0bc",
+     "tower": [
+      "#ef5a22",
+      "#e8743a"
+     ],
+     "leaf": [
+      "#1f7a3e",
+      "#2f8a45",
+      "#cdc666"
+     ],
+     "trunk": "#8a5a3a",
+     "cloud": "#e2d0bc",
+     "water": "#5983ac",
+     "path": "#e9d8c0",
+     "roadStreet": "#566680",
+     "roadTrack": "#3d4a60",
+     "strang": "#ef5a22"
+    },
+    "bucht": {
+     "id": "bucht",
+     "name": "B · Bikini-Bucht",
+     "note": "Joyride B: Sand, Aqua-Dünen, violette Korallentürme, Tangbäume mit rosa Blüten",
+     "sky": "#8fd6ec",
+     "top": "#f0cf7e",
+     "top2": "#f4d98f",
+     "hill": [
+      "#5cc3bf",
+      "#46adb2"
+     ],
+     "sand": "#fbe8b4",
+     "rim": "#e3bc66",
+     "under": [
+      "#d9a85c",
+      "#c9895a",
+      "#b0724a",
+      "#8e5a40"
+     ],
+     "rock": "#9a6fd0",
+     "tower": [
+      "#9a6fd0",
+      "#b08ae0"
+     ],
+     "leaf": [
+      "#8fcf45",
+      "#5fb84a",
+      "#f7a1c4"
+     ],
+     "trunk": "#c9895a",
+     "cloud": "#fff4e2",
+     "water": "#3fc4d4",
+     "path": "#fff1d2",
+     "roadStreet": "#5f7f9a",
+     "roadTrack": "#3e5d7c",
+     "strang": "#f2708a"
+    },
+    "otown": {
+     "id": "otown",
+     "name": "C · O-Town",
+     "note": "Joyride C: Petrol-Boden, magentafarbene Wackeltürme, orange Kronen auf lila Stämmen, Mintgrün als Himmel",
+     "sky": "#a8d8b9",
+     "top": "#3aa596",
+     "top2": "#45b2a2",
+     "hill": [
+      "#2f8f83",
+      "#4cb5a5"
+     ],
+     "sand": "#f3ead8",
+     "rim": "#2f8f83",
+     "under": [
+      "#277a70",
+      "#6b4a8a",
+      "#5a3c78",
+      "#462e60"
+     ],
+     "rock": "#e0679f",
+     "tower": [
+      "#c9508f",
+      "#e0679f"
+     ],
+     "leaf": [
+      "#f08a2c",
+      "#f5b041",
+      "#c9508f"
+     ],
+     "trunk": "#6b4a8a",
+     "cloud": "#f3ead8",
+     "water": "#5f7f9a",
+     "path": "#f3e6c8",
+     "roadStreet": "#6a6e8f",
+     "roadTrack": "#4a4d6e",
+     "strang": "#e9b53b"
+    },
+    "wueste": {
+     "id": "wueste",
+     "name": "D · Pyramiden-Wüste",
+     "note": "abgeleitet aus Joyride (Canyon-Orange + Bucht-Sand): Sanddünen, Sandstein-Pyramide, Oasen-Türkis, Palmen",
+     "sky": "#9fd0e6",
+     "top": "#eac47c",
+     "top2": "#f1d08c",
+     "hill": [
+      "#ddaa60",
+      "#cf9650"
+     ],
+     "sand": "#f7e2ad",
+     "rim": "#d6a455",
+     "under": [
+      "#c98d4a",
+      "#bb763d",
+      "#9f6034",
+      "#7d4729"
+     ],
+     "rock": "#e9b46e",
+     "tower": [
+      "#f0c46f",
+      "#dba553"
+     ],
+     "leaf": [
+      "#5fb04a",
+      "#3f9142",
+      "#ef7a4f"
+     ],
+     "trunk": "#a8713f",
+     "cloud": "#fff4e2",
+     "water": "#34bccb",
+     "path": "#c8955a",
+     "roadStreet": "#7a6f8f",
+     "roadTrack": "#5a4f6e",
+     "strang": "#ef5a22"
+    },
+    "kfb_town": {
+     "id": "kfb_town",
+     "name": "KFB Town (R2C burg)",
+     "note": "R2D v0 Biom „Burg“ (hex-archipel.r2c.js PAL.burg): sattes Wiesengrün, Pflaster aus hellem Kalkstein, Erde und Fels warmbraun",
+     "sky": "#96bede",
+     "top": "#7cba48",
+     "top2": "#86c452",
+     "hill": [
+      "#6fae40",
+      "#6aa83c"
+     ],
+     "sand": "#e3c98f",
+     "rim": "#5f9a38",
+     "under": [
+      "#8f6040",
+      "#7a5236",
+      "#6e4630",
+      "#5a3a28"
+     ],
+     "rock": "#9b6b4a",
+     "tower": [
+      "#e8dcc6",
+      "#cfc0a4"
+     ],
+     "leaf": [
+      "#2a8a45",
+      "#3a9a55",
+      "#e0da80"
+     ],
+     "trunk": "#8a5a3a",
+     "cloud": "#fff4e2",
+     "water": "#5aa6d6",
+     "path": "#e8dcc6",
+     "roadStreet": "#566680",
+     "roadTrack": "#3d4a60",
+     "strang": "#ef5a22"
+    },
+    "protopia": {
+     "id": "protopia",
+     "name": "Protopia (R2C protopia)",
+     "note": "R2D v0 Biom „Protopia“ (hex-archipel.r2c.js PAL.protopia): Bergwiese gelbgrün, Ocker-Sand, rotbrauner Fels",
+     "sky": "#96bede",
+     "top": "#6aae3a",
+     "top2": "#88b840",
+     "hill": [
+      "#5f9f34",
+      "#58932f"
+     ],
+     "sand": "#d9b04a",
+     "rim": "#58932f",
+     "under": [
+      "#8a5634",
+      "#764628",
+      "#643a22",
+      "#52301c"
+     ],
+     "rock": "#8a5634",
+     "tower": [
+      "#e6d3a8",
+      "#c9b07a"
+     ],
+     "leaf": [
+      "#4f8f2f",
+      "#5fa03a",
+      "#f2c94c"
+     ],
+     "trunk": "#7a4a2a",
+     "cloud": "#fff4e2",
+     "water": "#4fa3c9",
+     "path": "#e6d3a8",
+     "roadStreet": "#5f6f7a",
+     "roadTrack": "#45525c",
+     "strang": "#ef5a22"
+    }
+   }
+  },
+  "envRoles": {
+   "source": {
+    "path": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/src/palettes.ts",
+    "export": "ENV_ROLES + ASPHALT_DEFAULT + MASONRY_DEFAULT + BANDE_DEFAULT"
+   },
+   "rule": "STYLE_GUIDE_3D_R1 §4: Farbe läuft nur über Rollen; QA_RULEBOOK_ENVIRONMENT_R1 §0b Punkt 4 (Farb-Grammatik). Töne je Rolle [hell, mitte, dunkel].",
+   "status": "canonical",
+   "values": {
+    "wueste": {
+     "why": {
+      "ground": "Sand der Insel (top, top2)",
+      "grass": "Trockengras: Sand + Ocker, leicht oliv",
+      "stone": "Sandstein-Ocker aus Dünen und Pyramide (hill, rock)",
+      "bark": "Palmstamm: warmes Braun (trunk)",
+      "leaf": "Palmen-Oliv bis Grün (leaf 0/1)",
+      "bloom": "Kaktusblüte Koralle (leaf 2)",
+      "water": "Oasentürkis (water)",
+      "accent": "Pyramidenspitze hell + Koralle für Requisiten"
+     },
+     "ground": [
+      "#f1d08c",
+      "#eac47c",
+      "#d6a455"
+     ],
+     "grass": [
+      "#e3cf86",
+      "#c9b46a",
+      "#a99550"
+     ],
+     "stone": [
+      "#f0c98a",
+      "#e2aa62",
+      "#c48a4a"
+     ],
+     "bark": [
+      "#c08a55",
+      "#a8713f",
+      "#7d5230"
+     ],
+     "leaf": [
+      "#7cc05a",
+      "#5fb04a",
+      "#3f9142"
+     ],
+     "bloom": [
+      "#f59a74",
+      "#ef7a4f",
+      "#c95a35"
+     ],
+     "water": [
+      "#5fd0db",
+      "#34bccb",
+      "#1f95a6"
+     ],
+     "accent": [
+      "#f8dc98",
+      "#ef7a4f",
+      "#c95a35"
+     ],
+     "sand": [
+      "#fbecc4",
+      "#f7e2ad",
+      "#e0c48a"
+     ],
+     "paved": [
+      "#d8a872",
+      "#c8955a",
+      "#a87a44"
+     ],
+     "earth": [
+      "#c98d4a",
+      "#bb763d",
+      "#9f6034"
+     ]
+    },
+    "canyon": {
+     "why": {
+      "ground": "Violetter Tisch (top, hill)",
+      "grass": "Laubgrün entsättigt, Richtung Tisch-Violett verschoben (liest als Gras, fügt sich in den Boden)",
+      "stone": "Orange Canyonfels aus Unterseite und Tafeltürmen (under 1–2, tower), wie Claybound",
+      "bark": "Rinde Braun (trunk)",
+      "leaf": "Kugelkronen Waldgrün (leaf 0/1)",
+      "bloom": "Lime-Gelb (leaf 2)",
+      "water": "Teich Schieferblau (water)",
+      "accent": "Strang-Orange: Mühlrad, Requisiten"
+     },
+     "ground": [
+      "#a582d9",
+      "#8b68c7",
+      "#7b5bb8"
+     ],
+     "grass": [
+      "#8aa486",
+      "#6e8a6a",
+      "#566e58"
+     ],
+     "stone": [
+      "#f0955a",
+      "#e8743a",
+      "#c45a2c"
+     ],
+     "bark": [
+      "#a6704a",
+      "#8a5a3a",
+      "#64402a"
+     ],
+     "leaf": [
+      "#3a9a55",
+      "#2f8a45",
+      "#1f7a3e"
+     ],
+     "bloom": [
+      "#e0da80",
+      "#cdc666",
+      "#a8a048"
+     ],
+     "water": [
+      "#7aa0c4",
+      "#5983ac",
+      "#3f6690"
+     ],
+     "accent": [
+      "#f2b632",
+      "#ef5a22",
+      "#c4441a"
+     ],
+     "sand": [
+      "#ece0cf",
+      "#e2d0bc",
+      "#c9b49c"
+     ],
+     "paved": [
+      "#f1e4d0",
+      "#e9d8c0",
+      "#d0bca0"
+     ],
+     "earth": [
+      "#e8743a",
+      "#d0602e",
+      "#a8482a"
+     ]
+    },
+    "bucht": {
+     "why": {
+      "ground": "Sand (top, sand)",
+      "grass": "Dünengras: Sand + Aqua-Hauch",
+      "stone": "Strandstein: warmer Ocker aus der Unterseite (under 1–2)",
+      "bark": "Stamm Sandbraun (trunk)",
+      "leaf": "Lime-Grün (leaf 0/1)",
+      "bloom": "Tangblüten Rosa (leaf 2)",
+      "water": "Lagune Aqua (water)",
+      "accent": "Korallen-Violett (rock, tower): nur Akzent und Requisit, nicht Fels"
+     },
+     "ground": [
+      "#fbe8b4",
+      "#f0cf7e",
+      "#e3bc66"
+     ],
+     "grass": [
+      "#dfe0a0",
+      "#c4cf86",
+      "#9fb46a"
+     ],
+     "stone": [
+      "#e0b080",
+      "#c9895a",
+      "#a06a45"
+     ],
+     "bark": [
+      "#dca070",
+      "#c9895a",
+      "#a06a45"
+     ],
+     "leaf": [
+      "#a8dc60",
+      "#8fcf45",
+      "#5fb84a"
+     ],
+     "bloom": [
+      "#fbc0d8",
+      "#f7a1c4",
+      "#e07aa6"
+     ],
+     "water": [
+      "#6fd8e4",
+      "#3fc4d4",
+      "#2aa0b2"
+     ],
+     "accent": [
+      "#b08ae0",
+      "#9a6fd0",
+      "#7a52b0"
+     ],
+     "sand": [
+      "#fdf2d2",
+      "#fbe8b4",
+      "#e8cf90"
+     ],
+     "paved": [
+      "#fff6e2",
+      "#fff1d2",
+      "#e8d6b0"
+     ],
+     "earth": [
+      "#c9895a",
+      "#b0724a",
+      "#8e5a40"
+     ]
+    },
+    "otown": {
+     "why": {
+      "ground": "Petrol (top, hill)",
+      "grass": "Petrol heller, Richtung Mint",
+      "stone": "Schiefer: Lila-Grau aus der Unterseite (under 2–3), entsättigt",
+      "bark": "Lila Stämme (trunk = Unterseiten-Lila)",
+      "leaf": "Herbstkronen Orange (leaf 0/1)",
+      "bloom": "Magenta (leaf 2)",
+      "water": "Taubenblau (water)",
+      "accent": "Magenta der Wackeltürme (tower, rock): nur Akzent und Requisit"
+     },
+     "ground": [
+      "#45b2a2",
+      "#3aa596",
+      "#2f8f83"
+     ],
+     "grass": [
+      "#6cc6ae",
+      "#4fb39e",
+      "#3a9a88"
+     ],
+     "stone": [
+      "#8e80a6",
+      "#74688e",
+      "#584e72"
+     ],
+     "bark": [
+      "#83619f",
+      "#6b4a8a",
+      "#4f3568"
+     ],
+     "leaf": [
+      "#f5b041",
+      "#f08a2c",
+      "#d06a1c"
+     ],
+     "bloom": [
+      "#e07ab0",
+      "#c9508f",
+      "#a03a72"
+     ],
+     "water": [
+      "#7f9fba",
+      "#5f7f9a",
+      "#46627c"
+     ],
+     "accent": [
+      "#f08ab8",
+      "#e0679f",
+      "#c9508f"
+     ],
+     "sand": [
+      "#f8f1e4",
+      "#f3ead8",
+      "#dccfb6"
+     ],
+     "paved": [
+      "#f8eed8",
+      "#f3e6c8",
+      "#d8c8a4"
+     ],
+     "earth": [
+      "#6b4a8a",
+      "#5a3c78",
+      "#462e60"
+     ]
+    },
+    "kfb_town": {
+     "why": {
+      "ground": "Wiese der Burg-Anhöhe (R2C burg grass, grass2 hell, hill dunkel)",
+      "grass": "Grasbüschel: Wiese heller, Lippe dunkler (R2C lip)",
+      "stone": "Burgfels: heller warmer Kalkstein (Steinbruch für Burg und Mauern; R2C paved verwandt), damit Wand und Fels sich von der Erde abheben",
+      "bark": "Rinde Braun",
+      "leaf": "Laub Waldgrün (R2C LEAF burg)",
+      "bloom": "Lime-Gelb",
+      "water": "Teichblau (R2C water)",
+      "accent": "Burg-Rot aus dem Strang",
+      "sand": "Bankett und Ufer: Weg-Sand (R2C sand)",
+      "paved": "Pflaster der Stadt: heller Kalkstein (R2C paved)",
+      "earth": "Erde unter der Grasnarbe: Braun aus dem Fels, dunkler"
+     },
+     "ground": [
+      "#86c452",
+      "#7cba48",
+      "#6aa83c"
+     ],
+     "grass": [
+      "#8cc95a",
+      "#6fae40",
+      "#5f9a38"
+     ],
+     "stone": [
+      "#d2c3a4",
+      "#b8a684",
+      "#93805f"
+     ],
+     "bark": [
+      "#a6704a",
+      "#8a5a3a",
+      "#64402a"
+     ],
+     "leaf": [
+      "#3a9a55",
+      "#2a8a45",
+      "#1f7a3e"
+     ],
+     "bloom": [
+      "#e0da80",
+      "#cdc666",
+      "#a8a048"
+     ],
+     "water": [
+      "#7cbce2",
+      "#5aa6d6",
+      "#3f86b8"
+     ],
+     "accent": [
+      "#f2b632",
+      "#ef5a22",
+      "#c4441a"
+     ],
+     "sand": [
+      "#ecd7a6",
+      "#e3c98f",
+      "#c9ad72"
+     ],
+     "paved": [
+      "#f1e8d6",
+      "#e8dcc6",
+      "#cfc0a4"
+     ],
+     "earth": [
+      "#a8754f",
+      "#8f6040",
+      "#6e4630"
+     ]
+    },
+    "protopia": {
+     "why": {
+      "ground": "Bergwiese (R2C protopia grass, grass2 hell, hill dunkel)",
+      "grass": "Grasbüschel: Wiese heller, Lippe dunkler (R2C lip)",
+      "stone": "Grauer Bergfels der jungen Gipfel (R2C rock war braun wie die Erde und las sich nicht als Fels)",
+      "bark": "Rinde Braun",
+      "leaf": "Laub Grün (R2C LEAF protopia)",
+      "bloom": "Ocker-Gelb",
+      "water": "Bergsee-Blau (R2C water)",
+      "accent": "Werkstatt-Orange",
+      "sand": "Ocker-Sand am Bankett und Ufer (R2C sand)",
+      "paved": "Pflaster: heller Sandstein (R2C paved)",
+      "earth": "Erde unter der Grasnarbe: Rotbraun aus dem Fels, dunkler"
+     },
+     "ground": [
+      "#88b840",
+      "#6aae3a",
+      "#5f9f34"
+     ],
+     "grass": [
+      "#94c450",
+      "#6aae3a",
+      "#58932f"
+     ],
+     "stone": [
+      "#a7a097",
+      "#857d73",
+      "#645d56"
+     ],
+     "bark": [
+      "#946040",
+      "#7a4a2a",
+      "#5a361e"
+     ],
+     "leaf": [
+      "#6fae48",
+      "#5fa03a",
+      "#4f8f2f"
+     ],
+     "bloom": [
+      "#f5d870",
+      "#f2c94c",
+      "#d0a830"
+     ],
+     "water": [
+      "#74bede",
+      "#4fa3c9",
+      "#3a84a8"
+     ],
+     "accent": [
+      "#f5a050",
+      "#e8742a",
+      "#c05a1c"
+     ],
+     "sand": [
+      "#e6c46a",
+      "#d9b04a",
+      "#b8923a"
+     ],
+     "paved": [
+      "#f0e2c0",
+      "#e6d3a8",
+      "#c9b48a"
+     ],
+     "earth": [
+      "#9a6a48",
+      "#7e5236",
+      "#5e3c26"
+     ]
+    }
+   },
+   "ASPHALT_DEFAULT": [
+    "#4a5770",
+    "#3d4a60",
+    "#323d50"
+   ],
+   "MASONRY_DEFAULT": [
+    "#e6d5b7",
+    "#dccdb9",
+    "#d2bc9a",
+    "#b49d7e"
+   ],
+   "BANDE_DEFAULT": {
+    "bande_rot": "#ef5a22",
+    "bande_weiss": "#ef5a22"
+   },
+   "note": "ASPHALT/BANDE nach V-174 (lokaler Lab-Stand). WS1 hat die Werte vor V-174 vendored: ASPHALT ['#636d8a','#545e7a','#454e66'], BANDE rot '#d73d30' / weiss '#eee9dc' (veraltet)."
+  },
+  "sixCombo_islandThemes": {
+   "source": {
+    "path": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/public/themes/island-themes.json",
+    "schema": "kfb.island-theme/1",
+    "localGitHash": "659fb62ca15a58cb7c5e3c8f89a273c6a19548ad"
+   },
+   "status": "derived (Auszug aus WORLDS: sky, ground, hill, accent, road, strang + cloud); Generator und storyTint: Phase F, nicht gebaut",
+   "values": {
+    "canyon": {
+     "sky": "#96bede",
+     "ground": "#8b68c7",
+     "hill": "#a582d9",
+     "accent": "#ef5a22",
+     "road": "#3d4a60",
+     "strang": "#ef5a22",
+     "cloud": "#e2d0bc",
+     "skyHueShift": 18.1
+    },
+    "bucht": {
+     "sky": "#8fd6ec",
+     "ground": "#f0cf7e",
+     "hill": "#5cc3bf",
+     "accent": "#9a6fd0",
+     "road": "#3e5d7c",
+     "strang": "#f2708a",
+     "cloud": "#fff4e2",
+     "skyHueShift": 5.6
+    },
+    "otown": {
+     "sky": "#a8d8b9",
+     "ground": "#3aa596",
+     "hill": "#2f8f83",
+     "accent": "#c9508f",
+     "road": "#4a4d6e",
+     "strang": "#e9b53b",
+     "cloud": "#f3ead8",
+     "skyHueShift": -47.3
+    }
+   }
+  }
+ },
+ "layer2_storyModes": {
+  "rule": "V-051 / Plan R1 §2: storyTint = leichte Einfärbung je Story-Mode über dem Grundthema, nie statt ihm. V-270: Story-Modes als Tint. V-286: auf Meshy-Texturen nur sanft.",
+  "canonicalForTint": {
+   "source": {
+    "path": "~/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/donors/storymode.v4.js",
+    "gitBlob": "58a79133e83d77537903dadbfde8703995e1551e",
+    "original": "~/Dropbox/CLAUDE/KFB FrankenStein Lab + Models/KFB Shader Duo Tone v1/kfb-bg-shader-kit_2026-09-02/storymode.v4.js (md5 c11e87cf, alle 12 Kopien in Dropbox identisch)",
+    "repo": "gh/docs/kfb-decisions-register-2026-10-11 @e33ed9951 und gh/ws1-r3f-frame @980467bf5 ws1/kfb-planet/src/vendor/palette/storymode.v4.js (gleicher Blob)"
+   },
+   "provenance": "base = Kachelfläche, accent = Modusname, pixelweise aus der Story-Mode-Tabelle auf kayfabizarro.pages.dev gemessen (laut Dateikopf)",
+   "formulas": {
+    "space": "sRGB 0..1, lineare Mischung der Gamma-Werte",
+    "deep": "mix(base, accent, 0.62)",
+    "light": "mix(base, accent, 0.14)",
+    "line": "mix(accent, #000000, 0.42)",
+    "transition": "1400 ms, smoothstep"
+   },
+   "status": "canonical für Tint (WS1 nutzt es); siehe Konflikt ABSURD",
+   "computedWith": "paletteOf() aus storymode.v4.js",
+   "values": [
+    {
+     "id": "tragic",
+     "face": 1,
+     "label": "Tragic",
+     "rule": "Loss is real. Push forward anyway.",
+     "base": "#dadacb",
+     "accent": "#34566b",
+     "deep": "#73888f",
+     "light": "#c3c8be",
+     "line": "#1e323e"
+    },
+    {
+     "id": "comic",
+     "face": 2,
+     "label": "Comic",
+     "rule": "Things go wrong. It's your fault. Play the gap.",
+     "base": "#e3dfc2",
+     "accent": "#5d7033",
+     "deep": "#909a69",
+     "light": "#d0cfae",
+     "line": "#36411e"
+    },
+    {
+     "id": "absurd",
+     "face": 3,
+     "label": "Absurd",
+     "rule": "The impossible is normal. Don't explain it.",
+     "base": "#f5e6be",
+     "accent": "#b8901d",
+     "deep": "#cfb15a",
+     "light": "#ecdaa7",
+     "line": "#6b5411"
+    },
+    {
+     "id": "heroic",
+     "face": 4,
+     "label": "Heroic",
+     "rule": "Your Actor is right for this moment. Play the peak.",
+     "base": "#f1ddc0",
+     "accent": "#b25e23",
+     "deep": "#ca8e5f",
+     "light": "#e8cbaa",
+     "line": "#673714"
+    },
+    {
+     "id": "mystical",
+     "face": 5,
+     "label": "Mystical",
+     "rule": "Something's happening beneath the surface.",
+     "base": "#e1d6ca",
+     "accent": "#5c4470",
+     "deep": "#8f7b92",
+     "light": "#cec2bd",
+     "line": "#352741"
+    },
+    {
+     "id": "forbidden",
+     "face": 6,
+     "label": "Forbidden",
+     "rule": "Cross the line the story's been avoiding. Sell it.",
+     "base": "#e9d5c7",
+     "accent": "#8e3a60",
+     "deep": "#b17587",
+     "light": "#dcbfb9",
+     "line": "#522238"
+    }
+   ]
+  },
+  "competingSet_rulesPrintV4": {
+   "source": {
+    "path": "travel/KFB Travel Combat v25/terrain-v25/world-context.js",
+    "repo": "georg-doc/kayfabizarro main@e082405ee, eingeführt 7d6a8496e",
+    "gitBlob": "478e8cb4a53ea15e5c51833fa30554224e581815",
+    "alsoAt": "gh/ws1-r3f-frame ws1/kfb-planet/src/vendor/palette/world-context.js (gleicher Blob)"
+   },
+   "provenance": "laut Kommentar: 'KFB Rules Print v4 canon (09_MODE_COLORS_canonical, 1:1 with rollercoaster-ride MODES)'; STORY_PALETTES = 'SSOT mirror of MOOD_SKY / FRACTAL_PALETTES'",
+   "formulas": {
+    "glowOf": "HSL: s' = min(1, s*1.55+0.12), l' = min(0.74, l*1.3+0.3) (aus ink; 'ink lifted into a legible neon')"
+   },
+   "status": "konkurrierend; ABSURD widerspricht storymode.v4 (Magenta statt Ocker). Entscheidung Georg.",
+   "computedWith": "glowOf() aus world-context.js",
+   "values": [
+    {
+     "key": "tragic",
+     "n": 1,
+     "ink": "#3e6a83",
+     "panel": "#dbe4e9",
+     "glowOfInk": "#90c9e9",
+     "stops": [
+      "#0f1a29",
+      "#3d6b8c",
+      "#9ebdd1"
+     ],
+     "stopsRgb01": [
+      [
+       0.06,
+       0.1,
+       0.16
+      ],
+      [
+       0.24,
+       0.42,
+       0.55
+      ],
+      [
+       0.62,
+       0.74,
+       0.82
+      ]
+     ]
+    },
+    {
+     "key": "comic",
+     "n": 2,
+     "ink": "#5e6f33",
+     "panel": "#e3e9d3",
+     "glowOfInk": "#cce983",
+     "stops": [
+      "#242e0f",
+      "#85a833",
+      "#f0eb9e"
+     ],
+     "stopsRgb01": [
+      [
+       0.14,
+       0.18,
+       0.06
+      ],
+      [
+       0.52,
+       0.66,
+       0.2
+      ],
+      [
+       0.94,
+       0.92,
+       0.62
+      ]
+     ]
+    },
+    {
+     "key": "absurd",
+     "n": 3,
+     "ink": "#9a4f86",
+     "panel": "#efe0ec",
+     "glowOfInk": "#e694d0",
+     "stops": [
+      "#291a05",
+      "#d9339e",
+      "#29b8a8"
+     ],
+     "stopsRgb01": [
+      [
+       0.16,
+       0.1,
+       0.02
+      ],
+      [
+       0.85,
+       0.2,
+       0.62
+      ],
+      [
+       0.16,
+       0.72,
+       0.66
+      ]
+     ]
+    },
+    {
+     "key": "heroic",
+     "n": 4,
+     "ink": "#b5642a",
+     "panel": "#f0e2d2",
+     "glowOfInk": "#ffb27a",
+     "stops": [
+      "#240d05",
+      "#db6b1f",
+      "#ffdb85"
+     ],
+     "stopsRgb01": [
+      [
+       0.14,
+       0.05,
+       0.02
+      ],
+      [
+       0.86,
+       0.42,
+       0.12
+      ],
+      [
+       1,
+       0.86,
+       0.52
+      ]
+     ]
+    },
+    {
+     "key": "mystical",
+     "n": 5,
+     "ink": "#6b4f9c",
+     "panel": "#e6dff0",
+     "glowOfInk": "#b193e6",
+     "stops": [
+      "#140a24",
+      "#855cb8",
+      "#d6c7f0"
+     ],
+     "stopsRgb01": [
+      [
+       0.08,
+       0.04,
+       0.14
+      ],
+      [
+       0.52,
+       0.36,
+       0.72
+      ],
+      [
+       0.84,
+       0.78,
+       0.94
+      ]
+     ]
+    },
+    {
+     "key": "forbidden",
+     "n": 6,
+     "ink": "#8f3a5f",
+     "panel": "#efdbe2",
+     "glowOfInk": "#f089b6",
+     "stops": [
+      "#1a030d",
+      "#b81433",
+      "#f03d85"
+     ],
+     "stopsRgb01": [
+      [
+       0.1,
+       0.01,
+       0.05
+      ],
+      [
+       0.72,
+       0.08,
+       0.2
+      ],
+      [
+       0.94,
+       0.24,
+       0.52
+      ]
+     ]
+    }
+   ]
+  }
+ },
+ "layer3_fluff": {
+  "status": "Kein Fluff-Farbschema mit Werten gefunden (Suche nicht vollständig, siehe Lücke G-1). Es gibt nur Regeltexte, die sich widersprechen; keine Farbwerte je Fluff-Sorte oder je Story-Mode.",
+  "mappingByStoryMode": null,
+  "ruleTexts": [
+   {
+    "source": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/docs/KFB_WORLDBUILDER_PLAN_R1.md §2",
+    "text": "storyTint: leichte Einfärbung je Story-Mode (High- bzw. Low-Vibrational-Fluff), über dem Grundthema der Insel, nie statt ihm."
+   },
+   {
+    "source": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/docs/KFB_WORLDBUILDER_PLAN_R1.md §2b",
+    "text": "Baum anklicken → Fluff-Kügelchen: erst eine bunte Mischung als Cartoon-Akzent, bewusst auffällig, auch außerhalb der Insel-Palette; Wirkung der Farben bzw. Alchemie kommt später."
+   },
+   {
+    "source": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/docs/SPEC_ENVIRONMENT_KIT_R1.md §13",
+    "text": "Bunte Fluff-Kugeln in der Biom-Farbe (Farb-Grammatik, Rolle Blüte bzw. Akzent)."
+   },
+   {
+    "source": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/docs/ENV_ERZAEHLRASTER_R1.md",
+    "text": "Fluff-Farbe aus der Biom-Zeile (Akzent der Farb-Grammatik), keine Verläufe; Rezept fluff: { colour: 'accent' }; Wüste: Farbe aus ENV_ROLES.wueste (Akzent)."
+   },
+   {
+    "source": "KFB_HUB/30_DECISIONS/DECISIONS.md V-270",
+    "text": "Story-Modes als Tint, definiert über das Fluff-Farbschema (V-051 storyTint)."
+   },
+   {
+    "source": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/docs/story/KFB_FOUR_ISLAND_STORY_RECOVERY_2026-10-08.md",
+    "text": "High-/Low-Vibrational-Fluff als Story-Sprache (Low = erntbar / Academy-UFO-Abfluss, High = emergentes Wachstum / Bau); keine Farben."
+   },
+   {
+    "source": "ws1/r3f-frame WS1_STATUS.md §28.2",
+    "text": "WS1: 'Quelle fehlt: Das Fluff-Farbschema steht nicht im Lab-Schnappschuss.'"
+   }
+  ],
+  "currentDataFallback": {
+   "rule": "bis zur Klärung: Fluff-Kugel = ENV_ROLES[palette].accent (laut SPEC_ENVIRONMENT_KIT §13 / ENV_ERZAEHLRASTER); Werte siehe layer1_worldPalettes.envRoles",
+   "status": "Regel aus Lab-Spec, nicht vom Register bestätigt (V-082 Fluff-Zonen TBD)"
+  }
+ },
+ "layer4_variants": {
+  "status": "Keine KFB-Regel 'dunkle + sattere Variante je Palettenfarbe' gefunden. Vorhanden sind nur die folgenden Formeln/Daten.",
+  "found": [
+   {
+    "name": "ENV_ROLES Töne [hell, mitte, dunkel]",
+    "source": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/src/palettes.ts",
+    "kind": "dunkel (Daten, handgesetzt)",
+    "formula": null,
+    "measured": "WS0-Messung über 66 Dreier-Rollen (OKLCH): dunkel = mitte − ΔL 0,04…0,12 (Mittel 0,09), Farbton ±9°, Buntheit 0,78…1,42× (Median 0,94). Beschreibung, keine Regel."
+   },
+   {
+    "name": "ASPHALT ±12 %",
+    "source": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/src/palettes.ts (Kommentar zu ASPHALT_DEFAULT)",
+    "kind": "hell/dunkel",
+    "formula": "hell/dunkel ±12 % um #3d4a60 (Werte siehe ASPHALT_DEFAULT)"
+   },
+   {
+    "name": "storymode deep/light/line",
+    "source": "replies/donors/storymode.v4.js",
+    "kind": "dunkel (line) + Zwischenstufen",
+    "formula": "deep = mix(base,accent,0.62); light = mix(base,accent,0.14); line = mix(accent,#000,0.42)"
+   },
+   {
+    "name": "glowOf",
+    "source": "travel/KFB Travel Combat v25/terrain-v25/world-context.js",
+    "kind": "sattere/leuchtende Variante",
+    "formula": "HSL s' = min(1, s*1.55+0.12); l' = min(0.74, l*1.3+0.3)"
+   },
+   {
+    "name": "palette-roles (Clay Stage R2)",
+    "source": "tools/KFB-ToolBox/_inbox/KFB Clay Stage + Curtain R2 - KFB Billboards Hypernormalisation+Quotes/kfb-clay-stage-session-2026-10-09/code/KFB_Clay_Stage_R2/palette-roles.js blob fd13480d",
+    "kind": "dunkel",
+    "formula": "Mischung im linearen Raum: dark = mix(d,#1f1a14,0.3); clothHem = mix(m,d,0.62); valanceDark = mix(m,d,0.6); portalEdge = mix(accent,d,0.45); stain = mix(m,#2b2018,0.4)"
+   },
+   {
+    "name": "Cologne makePalette",
+    "source": "tools/KFB-ToolBox/_inbox/KFB Cologne Race Option C-2/lab-v9/cologne-palette.v1.js blob 38246785",
+    "kind": "Stimmung je Palette",
+    "formula": "OKLCH: chromaMood 0,84…1,24 (× Buntheit aller Rollen), lightMood −0,035…+0,035 (+L aller Rollen); Gamut-Rücknahme senkt nur C"
+   },
+   {
+    "name": "Cel-Shading-Konzept (historisch)",
+    "source": "~/Dropbox/CLAUDE/Frizzlebob fractal almanac BRIEFING anchor v2/3D TableDiorama KFB + PET Editor + PDF VIewer/ROLLERCOASTER/KFB RollerCoasterComic Ride v8 - FULL EXPORT/v6/docs/deep_specs/04_CEL_SHADING_shadow_lighting.md (21.07.)",
+    "kind": "Schatten-Ton",
+    "formula": "2–3 harte Bänder; Schatten nicht schwarz: dunklere Grundfarbe + Hauch Story-Mode-Ink; Rim-Licht = Story-Mode-Ink. Keine Zahlen."
+   },
+   {
+    "name": "Harmonisieren Material vs. Licht",
+    "source": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/src/sky/vendor/travel/globe-v13/sky-presets.js (Georg 30.8.)",
+    "kind": "Regel",
+    "formula": "Material: Farbton KFB, Sättigung und Helligkeit aus der Quelle. Licht (z. B. Gischt) nicht harmonisieren: Farbe kommt von der Lichtquelle."
+   }
+  ]
+ },
+ "generator": {
+  "status": "Nicht gebaut im Lab (island-theme.ts: 'palette 6-combo + storyTint follow in Phase F'). Einzige lauffähige Harmonie-Rechnung im Bestand: cologne-palette.v1.js (OKLCH-Drehung der Familien).",
+  "rule": "V-051; Plan R1 §2 (Generator: zufällig harmonisch oder aus 2–3 vorgegebenen Farben ergänzen; Harmonie-Regeln aus den Joyride-Kombinationen ableiten); SPEC_WORLDBUILDER_GODMODE_VISION_R1 §3.3 (Würfeln, Ableiten, Ergebnis immer ENV_ROLES).",
+  "cologneSchemes": {
+   "source": "tools/KFB-ToolBox/_inbox/KFB Cologne Race Option C-2/lab-v9/cologne-palette.v1.js (main@e082405ee, blob 38246785ec2c9089737b2a195673a3ad4c07bdf8)",
+   "schema": "kfb-palette/v1",
+   "space": "OKLCH",
+   "SCHEMES_degreesToBaseHue": {
+    "analog": [
+     0,
+     26,
+     -32,
+     54
+    ],
+    "komplementaer": [
+     0,
+     176,
+     22,
+     -158
+    ],
+    "triade": [
+     0,
+     118,
+     -124,
+     34
+    ],
+    "split": [
+     0,
+     152,
+     -148,
+     26
+    ],
+    "tetrade": [
+     0,
+     88,
+     178,
+     -92
+    ]
+   },
+   "zones": "surface(anchor 0), water(0), structure(1), sky(2), markings(3, nur Gelb..Orange −12°/+30°), accent(3), city(1)",
+   "withinFamily": "Winkelabstand innerhalb der Familie × 0,8; L und C der gemessenen Anker bleiben; chromaMood/lightMood je Palette einmal"
+  },
+  "joyrideDerivedObservations_WS0": {
+   "status": "abgeleitet (WS0-Messung in OKLCH aus WORLDS), kein Register-Wert, Vorschlag zur Prüfung",
+   "groundFamily": "table + hill[0] + hill[1] = ein Farbton (±3°), hill hell/dunkel um table",
+   "strangVsGround": "Strang ≈ eine Vierteldrehung vom Boden (canyon +100°, bucht −78°, otown −98°), buntester Ton (C 0,145–0,195)",
+   "landmarkTower": "canyon = Strangfarbe; bucht/otown ≈ Gegenfarbe zum Boden (−145°, +169°)",
+   "pad": "Boost/Pad immer Gelb (h 82–103°), sehr hell (L 0,81–0,94)",
+   "road": "Fahrbahn immer gedämpftes Schieferblau (h 249–280°, L 0,41–0,47, C ≤ 0,062)",
+   "sky": "Himmel hell und wenig bunt (L 0,78–0,84, C 0,06–0,08)",
+   "leaf": "Laub uneinheitlich (canyon ≈ Gegenfarbe, bucht +43°, otown −124°); leaf[2] = Blüten-/Akzentton"
+  }
+ }
+}
