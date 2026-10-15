@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Aliens als fertige ToolBox-Figuren
+- V-317: Lord Hunky / Lady Dory fertig zusammengebaut ins ToolBox-Dropdown wie FB v5b, kleine Regler (Kopfgröße/-versatz, Hals verjüngen, Dangle); Hub-Briefing b31 zurückgestellt, neues folgt mit den Dateien.
+
 ## 2026-10-15 · Erstes Auto, Größe, Cabrio später
 - V-315: Flammen-Dragster zuerst; Autos größer (Medium-Faktor gemessen, Large hochskaliert); Logos pragmatisch überkleben.
 - V-316 (TBD): FB im Cabrio später, Ohren flattern, Kopf/Schulter neigen, Hände am Lenkrad.

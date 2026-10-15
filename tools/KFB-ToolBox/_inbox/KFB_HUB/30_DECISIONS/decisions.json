@@ -4061,7 +4061,9 @@
    "check": "Georg setzt Lord Hunky im Studio zusammen",
    "source": "Georg 15.10.",
    "supersedes": "V-296 (Zusammenbau als WS0-Asset-Probe)",
-   "superseded_by": [],
+   "superseded_by": [
+    "V-317"
+   ],
    "why": "Georg platziert Teile selbst schneller und genauer als jede Runde Probe-Renders.",
    "applies": "ab sofort"
   },
@@ -4248,6 +4250,21 @@
    "applies": "nach M2"
   },
   {
+   "id": "V-317",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Lord Hunky und Lady Dory kommen als fertig zusammengebaute Figuren in die KFB ToolBox v8 (WSA, Rigging-Ort V-263), im Figuren-Dropdown wie FrizzleBob v5b: Astronauten-Körper mit Farbakzenten + Claude-Design-Kopf (Vorschlags-Passung im Kragen), Augen EyeRig v6, Mund B bzw. A, Dangle je Stiel/Antenne. Georg stellt dort fein ein, riggt und sieht Animationen mit Expressions, Talk-Animationen und neuen Mündern. Zusätzlich nur kleine Regler in der ToolBox: Kopfgröße, Kopfversatz, Hals verjüngen, Dangle-Steifigkeit je Teil. Kein eigener Kopfteil-Modus jetzt; der FrankenStein-Composer (V-239 broken) wird dafür nicht wiederbelebt, ein allgemeines Kopf-auf-Körper-Werkzeug bleibt späterer Plan (V-244).",
+   "values": {},
+   "owner": "WS0 (Zusammenbau) → WSA ToolBox (Dropdown + Regler)",
+   "check": "Georg wählt Lord Hunky im Dropdown und stellt ein",
+   "source": "Georg 15.10. (Vorschlag WS0 auf seine Rückfrage)",
+   "supersedes": "V-304 (Kopfteil-Modus im Studio); Grundsatz Georg setzt selbst, Abnahme live bleibt",
+   "superseded_by": [],
+   "why": "Fertige Figuren im bestehenden, abgenommenen Werkzeug sind schneller als ein neuer Modus oder ein kaputtes Werkzeug.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4320,7 +4337,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:532",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:535",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
