@@ -98,6 +98,14 @@ New additive [Homebase Return Stone / spatial 3D POI Compass R0.3](./KFB_HOME_RE
 
 **Same single immediate recovery gate**: `CLAUDE_CODE_RECOVERY_INTAKE_CONFIRMATION`; the further `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` remains deferred post-playable-MVP, post-Georg-authorisation. This R0.3 is a design source, not a second active integration job.
 
+## 3D. Playmation Pickup / Fluff Orbs / Canon Card & Living Loot R0.4 (2026-10-15)
+
+New additive [KFB Pickup, Fluff/Card Hero Reveal & Social Calls R0.4](./KFB_PICKUP_FLUFF_CARD_LOOT_SOCIAL_CALLS_R0_4_2026-10-15.md) source-recovers Georg's desired **bouncing/settling pickup orbs and contact collection at comfortable Medium-Rig height** as shared gameplay presentation after Fishing/Cartoon Blast, Earth Blast, mine or farm. The **real WhackMan source** `wm-gate-c.js` includes measured canonical rest anchors, rising/falling ballistic pickup bounces, squash and shrink-flight; but the donor uses `Rig_Legacy` + XZ-only pickup and cannot be copied as a Medium-Rig/Flight collision engine. Its physics/motion grammar can be ported only after isolation and accepted World/Player collision source. The **older digital Overworld Card Acquisition** already had `WIN → source-Card reveal → OK → Almanac`, with Card only added on OK; canonical PDF source and `deckId+cardNumber` remain authoritative.
+
+**Four pickup tiers:** common D6 High/Low Fluff automatically collects on a valid player walk-through; true Cards show real PDF Hero Reveal and `OK / KayfaBINGO!` then Almanac once; unusual Props present compact source-backed 3D render with `KayfaBOGGLE?` explain, `KayfaBONGO!` pass, optional `BLÖDSINN!` question a dubious claim (not delete); power-ups activate only via their real effect owner. Preserve plain accessible `Take / Ask / Leave / Challenge` labels and tabletop-call distinction. No forced modal during Drive/Flight; keep protected offers in Recent Finds or World until handled. Persistent offered/claimed DropRefs, single Wallet/Item/Card owners, no duplicate grants and no mandatory gameplay in current MVP. This is a *design document*, not an adopted source 3D renderer or accepted pickup loop.
+
+**Next gate unchanged:** `CLAUDE_CODE_RECOVERY_INTAKE_CONFIRMATION`; subsequent actual `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` only after playable core and explicit Georg authorization.
+
 ## 4. Scope / single recovery outcome / what Claude Code should do next
 
 **Completed by this recovery:** one permanent, discoverable **source bridge** and a draft PR on a branch based on current main, without changing the running Lab. It should contain links to *every original* and the Lab's earlier compatibility verdict and provide a cold-chat entry.
