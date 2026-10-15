@@ -4173,6 +4173,21 @@
    "applies": "Planung"
   },
   {
+   "id": "V-312",
+   "date": "2026-10-15",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Prüfstrategie verschlankt (Georg: Vollcode-Lektüre durch blinde Prüfer mit ~280k Token plus ~35 min Browser je Runde, mehrfach wiederholt, beim jetzigen Spielstand unsinnig und Token-Verschwendung – Planungsfehler, ausgelöst durch WS0s Abnahme-Kette G3 „blinder Prüfer bei sichtbaren Teilen“). Neu für WS1: (1) Abnahme-Raster je Aufgabe aus Georgs Vorgaben (messbar, mit fester Bildserie) statt offener Prüfung; (2) WS1 prüft selbst nur den Diff: die geänderten Module plus ein kurzer Browser-Rauchtest mit fester Kamera-/Bildserie (Ziel ≤ 5 min, keine Vollcode-Lektüre); (3) Regress-Tests bleiben automatisch; (4) blinder Prüfer bzw. Gegenprüfer nur einmal je Meilenstein-Ende (MVP-Abnahme) und nur auf Diff und Bildserie; (5) Georg urteilt an Bildern bzw. live, das ist das eigentliche Tor. Kein Nachbauen auf Prüfer-Hinweise ohne WS0-Freigabe, wenn der Punkt nicht im Raster steht. Token-Budget je Runde im WS1_STATUS ausweisen.",
+   "values": {},
+   "owner": "WS0 → WS1",
+   "check": "nächste WS1-Runde: Token und Minuten je Runde",
+   "source": "Georg 15.10.",
+   "supersedes": "ARCHITECTURE_R1 G3 (blinder Prüfer je sichtbarem Teil), KFB_WORKING_RULES Nr. 10 je Runde",
+   "superseded_by": [],
+   "why": "Prüfaufwand muss zum Reifegrad passen; Georgs Auge ist das Tor, nicht ein Prüfer, der den ganzen Code liest.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4245,7 +4260,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:518",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:521",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

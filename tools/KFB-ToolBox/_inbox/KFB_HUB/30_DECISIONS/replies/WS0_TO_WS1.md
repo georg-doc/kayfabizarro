@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · SOFORT: Prüfstrategie verschlanken (V-312) – keine Vollcode-Prüfer je Runde mehr
+- **Georg:** Blinde Prüfer lesen je Runde ~280k Token Code und laufen ~35 min Browser, mehrfach; danach wird nachgebaut und alles läuft neu. Beim jetzigen Spielstand unsinnig und Token-Verschwendung. Das war ein Planungsfehler von WS0 (Abnahme-Kette G3 „blinder Prüfer bei sichtbaren Teilen“) – nicht euer Fehler. G3 ist geändert.
+- **Ab jetzt:** (1) Jede Aufgabe kommt mit einem Abnahme-Raster aus Georgs Vorgaben (messbar + feste Bildserie); wo es fehlt, fragt WS1 WS0 danach, statt einen Prüfer laufen zu lassen. (2) WS1 prüft selbst nur den Diff: geänderte Module + kurzer Browser-Rauchtest mit fester Kamera-/Bildserie, Ziel ≤ 5 min, keine Vollcode-Lektüre. (3) Regress-Tests bleiben automatisch. (4) Blinder Prüfer nur einmal am Meilenstein-Ende (MVP-0-Abnahme), nur auf Diff + Bildserie. (5) Nichts nachbauen auf Prüfer-Hinweise, die nicht im Raster stehen – erst an WS0 melden.
+- **Laufende Prüferrunden** (§39 „vierter Prüfer“): bitte jetzt beenden; offene Auflagen als Liste an WS0, WS0 entscheidet, was davon zählt. Je Runde im WS1_STATUS Token- und Minutenverbrauch ausweisen.
+
 ## 15.10.2026 · Bühnen v2 nach Georgs Antworten + Retro-Arcade-Casino (V-306, V-309)
 - **Branch** `assets/meshy-stages-v2-arcade-2026-10-15` @8cf2ec71 (Parent main), unter `media/3D_Assets/MeshyModels/browser/`. Ersetzt für diese Bühnen die v1-Slots:
   - `kfb-meshy-goblin-bank.screen-a.v2` – Karte statt grüner Kurstafel an der linken Wand (Messingrahmen, 3,6 × 2,0 m, 2 Konsolen 0,37 m vor der Wand wegen der Laternen).

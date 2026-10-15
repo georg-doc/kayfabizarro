@@ -37,7 +37,7 @@ For **all KFB character-facing design, Studio/Scenelet, animated NPC and Wirefac
 9. **Regress-Wächter:** Jede von Georg abgenommene Eigenschaft (Steuerung, Augen, Look) bekommt einen Test. Was keinen Test hat, bricht beim nächsten Umbau.
 
 ## 3 · Kritik von außen
-10. **Blinder Kritiker bzw. Art Director:** ein getrennter Agent ohne Chatverlauf, nur mit Ziel, Pfaden und Referenzbildern. Er fand Fehler, die die Bausitzung übersah, zum Beispiel beim Portal-Konzept (FAIL → Konzept → PASS, V-130).
+10. **Blinder Kritiker bzw. Art Director** (seit V-312 nur einmal je Meilenstein-Ende und nur auf den Diff bzw. die Bildserie, nie Vollcode-Lektüre je Runde): ein getrennter Agent ohne Chatverlauf, nur mit Ziel, Pfaden und Referenzbildern. Er fand Fehler, die die Bausitzung übersah, zum Beispiel beim Portal-Konzept (FAIL → Konzept → PASS, V-130).
 11. **Externes Architektur-Audit** (`replies/AUDIT_ARCH_R1.md`) fand die echten Ursachen für Ladezeit (48 → 7 s) und Flackern. Wiederholen, sobald ein neuer Rahmen steht.
 12. **Echte Unabhängigkeit:** ein anderes Modell bzw. ein anderer Anbieter (WSA, ChatGPT, Fable) prüft gegen. Es bekommt nur den Branch-Link und die Fragen, keine Schlussfolgerungen der Steuerung (V-178).
 

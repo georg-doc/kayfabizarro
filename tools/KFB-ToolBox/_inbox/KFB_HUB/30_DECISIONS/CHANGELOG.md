@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Prüfstrategie verschlankt
+- V-312: keine blinden Vollcode-Prüfer je Runde; Abnahme-Raster + Diff-Selbstprüfung ≤ 5 min; Prüfer nur am Meilenstein-Ende; ARCHITECTURE_R1 G3 und WORKING_RULES Nr. 10 angepasst; WS1-Notiz SOFORT.
+
 ## 2026-10-15 · Kart R4 FAIL, Dieselpunk-Racer
 - V-310: Kart-Sitz R4 FAIL (nicht mittig, Sitz undesignt); Fix nur mit messbarem Abnahme-Raster, WS0 prüft vor Vorlage.
 - V-311: 18 Dieselpunk-Racer als Hineinhüpf-Autos (TBD), Intake läuft.

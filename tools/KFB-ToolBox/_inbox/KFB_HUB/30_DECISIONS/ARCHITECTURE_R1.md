@@ -45,7 +45,7 @@ Ein Urteil gilt erst, wenn es in den Daten steht. Ein Eintrag nur im Register re
 - **G0 Verfügbarkeit:** Jedes verlangte Teil steht mit Pfad bzw. Commit im Auftrag und ist beim Empfänger nachweislich vorhanden.
 - **G1 Vorlagen-Zeile:** was 1:1 übernommen wird, was neu ist und warum.
 - **G2 Modultest + Bildpaar** gegen eine unabhängige Referenz.
-- **G3 WS0-Prüfung**, bei sichtbaren Teilen mit blindem Prüfer.
+- **G3 WS0-Prüfung**, schlank (V-312): Abnahme-Raster aus Georgs Vorgaben + feste Bildserie; WS0 prüft selbst. Blinder Prüfer nur noch einmal je Meilenstein-Ende (MVP-Abnahme), nie je Runde.
 - **G4 Szene:** Das Teil läuft in der WS1-Bühne.
 - **G5 Georg.**
 
