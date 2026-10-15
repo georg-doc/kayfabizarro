@@ -216,3 +216,15 @@ This complements **R1.4 authentic lament** (grief, irritation, complaint can be 
 `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md` §R1.5.
 
 No new NPC humor engine, ChatterBox approval, added MVP-0 scope, global V-number or alternative writer. Single WS0 gate unchanged: `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.
+
+
+### R1.6 addendum · 2026-10-15 · Epistemic Kayfabe and voluntary inquiry
+
+**Georg's creative direction:** Residents may theatrically defend inventive conspiracy/ideological interpretations, delight in the possibility of further twists and occasionally expose their own weak inferences, source-selection biases and cognitive dissonance with deadpan or self-deprecating humour. A player can ask if the character actually believes it, seek original documents, encounter a contrary Resident or freely leave. **Closure and assessment belong to the player**; no compulsory historical lesson, political conversion, “doubt-seeding” manipulation or ideological profiling.
+
+**Necessary distinction:** conflicting human narratives are equally available for **artistic inquiry** but **not equally substantiated**. Keep documented actions separate from documented but unexecuted proposals, disputed intentions, unverified hidden-motive theories, satire and refuted claims. This is especially important for `Operation Northwoods` (1962 proposal, not proof of execution), `Gulf of Tonkin` (false second-attack narrative in 1964 NSA historical review), `USS Liberty` (1967 documented attack; disputes about intent), `JFK` (different historical investigative assessments; a specific UFO-files, Mossad or other motive allegation is NOT established by simply pointing to those real events). Source-verification references and the narrative encounter method are recorded in the owning WS0 R1.6 chapter:
+`tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md`.
+
+**Comic mechanism:** sincere claim → attractive pattern or evidence jump → optional real question → self-revealing contradiction or source lookup → reader-owned inference/continued play. The funny Resident can revise, keep role-playing or suspend judgment without a universal wink or automatically validating the original claim. This complements R1.3 life joy, R1.4 authentic complaint and R1.5 Homer-like near-self-diagnosis.
+
+**Production and player freedom:** preserve real Card/Deck provenance and WS0's editorial dialogue control, existing ChatterBox and current WS1 R3F stage, without creating a second narrative authority, political-belief database, source ranking HUD, new V-number or MVP feature gate. `PULL, DON'T GATE` remains the governing design principle. One current next WS0 gate stays `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.
