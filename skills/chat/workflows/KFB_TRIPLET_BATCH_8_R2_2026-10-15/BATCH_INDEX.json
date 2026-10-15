@@ -1,0 +1,215 @@
+{
+  "schema": "kfb.triplet-eight-deck-batch-r2/1",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "editorial/kfb-triplets-eight-decks-r2-2026-10-15",
+  "sourceRef": "eade4aec9c9faaea785602537768f86180434331",
+  "registryRef": "52adc8f1",
+  "spec": "TRIPLET_SET_SPEC_R2.md",
+  "checker": "triplet_set_check.py",
+  "totals": {
+    "decks": 8,
+    "sourceCards": 448,
+    "spokenCards": 445,
+    "skippedCards": 3,
+    "openers": 148,
+    "takes": 461,
+    "oneTrackPerDeck": true,
+    "tracksUnder5000": 8,
+    "checkerEquivalentLexicalFailures": 0,
+    "exactPythonRealDeckRuns": 0,
+    "humanAccepted": 0
+  },
+  "decks": [
+    {
+      "deckId": "cosmic_grift_dark_journalism",
+      "printedTitle": "Cosmic Grift – Dark Journalism",
+      "sunoSongTitle": "KFB Cosmic Grift – Dark Journalism [cosmic_grift_dark_journalism] v1",
+      "sourceCards": 60,
+      "spokenLines": 60,
+      "characters": 4403,
+      "openers": 20,
+      "takes": 62,
+      "skipped": [],
+      "sourceBlob": "1acad08c6125885533f64915dae09c773db806ce",
+      "files": [
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/cosmic_grift_dark_journalism/cosmic_grift_dark_journalism.suno.txt",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/cosmic_grift_dark_journalism/cosmic_grift_dark_journalism.takes.csv",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/cosmic_grift_dark_journalism/cosmic_grift_dark_journalism.hub.json",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/cosmic_grift_dark_journalism/cosmic_grift_dark_journalism.check.txt"
+      ],
+      "report": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/cosmic_grift_dark_journalism/REPORT.md",
+      "status": "EDITORIAL_CANDIDATE_WS0_REVIEW_REQUIRED",
+      "lexicalEquivalentFails": 0,
+      "exactPythonChecker": "NOT_RUN",
+      "pdfCoverPixels": "NOT_VERIFIED"
+    },
+    {
+      "deckId": "pharaoh_piledriver",
+      "printedTitle": "Pharaoh Piledriver",
+      "sunoSongTitle": "KFB Pharaoh Piledriver [pharaoh_piledriver] v1",
+      "sourceCards": 52,
+      "spokenLines": 51,
+      "characters": 4167,
+      "openers": 17,
+      "takes": 53,
+      "skipped": [
+        46
+      ],
+      "sourceBlob": "0c5c226e3e9e1d83413d56f2c4b8fbd5321649cc",
+      "files": [
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/pharaoh_piledriver/pharaoh_piledriver.suno.txt",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/pharaoh_piledriver/pharaoh_piledriver.takes.csv",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/pharaoh_piledriver/pharaoh_piledriver.hub.json",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/pharaoh_piledriver/pharaoh_piledriver.check.txt"
+      ],
+      "report": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/pharaoh_piledriver/REPORT.md",
+      "status": "EDITORIAL_CANDIDATE_WS0_REVIEW_REQUIRED",
+      "lexicalEquivalentFails": 0,
+      "exactPythonChecker": "NOT_RUN",
+      "pdfCoverPixels": "NOT_VERIFIED"
+    },
+    {
+      "deckId": "kayfabizarro_monopolies_manipulation_murder_vol",
+      "printedTitle": "Monopolies, Manipulation & Murder Vol. II",
+      "sunoSongTitle": "KFB Monopolies, Manipulation & Murder Vol. II [kayfabizarro_monopolies_manipulation_murder_vol] v1",
+      "sourceCards": 56,
+      "spokenLines": 55,
+      "characters": 4018,
+      "openers": 18,
+      "takes": 57,
+      "skipped": [
+        44
+      ],
+      "sourceBlob": "a0eca9871e02178b146f1e977b07281dda26510b",
+      "files": [
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.suno.txt",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.takes.csv",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.hub.json",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.check.txt"
+      ],
+      "report": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/kayfabizarro_monopolies_manipulation_murder_vol/REPORT.md",
+      "status": "EDITORIAL_CANDIDATE_WS0_REVIEW_REQUIRED",
+      "lexicalEquivalentFails": 0,
+      "exactPythonChecker": "NOT_RUN",
+      "pdfCoverPixels": "NOT_VERIFIED"
+    },
+    {
+      "deckId": "observation_underground",
+      "printedTitle": "Observation Underground — ADD",
+      "sunoSongTitle": "KFB Observation Underground — ADD [observation_underground] v1",
+      "sourceCards": 48,
+      "spokenLines": 48,
+      "characters": 3583,
+      "openers": 16,
+      "takes": 50,
+      "skipped": [],
+      "sourceBlob": "04d1afd7f437d746ef2b1ee6769d60643f94f159",
+      "files": [
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/observation_underground/observation_underground.suno.txt",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/observation_underground/observation_underground.takes.csv",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/observation_underground/observation_underground.hub.json",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/observation_underground/observation_underground.check.txt"
+      ],
+      "report": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/observation_underground/REPORT.md",
+      "status": "EDITORIAL_CANDIDATE_WS0_REVIEW_REQUIRED",
+      "lexicalEquivalentFails": 0,
+      "exactPythonChecker": "NOT_RUN",
+      "pdfCoverPixels": "NOT_VERIFIED"
+    },
+    {
+      "deckId": "trust_and_betrayal",
+      "printedTitle": "Trust & Betrayal — The 'Trust Me, Bro' Edition",
+      "sunoSongTitle": "KFB Trust & Betrayal — The 'Trust Me, Bro' Edition [trust_and_betrayal] v1",
+      "sourceCards": 56,
+      "spokenLines": 55,
+      "characters": 4201,
+      "openers": 18,
+      "takes": 57,
+      "skipped": [
+        30
+      ],
+      "sourceBlob": "e4ae4951c85ff2e97de563960570739690cc7966",
+      "files": [
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/trust_and_betrayal/trust_and_betrayal.suno.txt",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/trust_and_betrayal/trust_and_betrayal.takes.csv",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/trust_and_betrayal/trust_and_betrayal.hub.json",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/trust_and_betrayal/trust_and_betrayal.check.txt"
+      ],
+      "report": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/trust_and_betrayal/REPORT.md",
+      "status": "EDITORIAL_CANDIDATE_WS0_REVIEW_REQUIRED",
+      "lexicalEquivalentFails": 0,
+      "exactPythonChecker": "NOT_RUN",
+      "pdfCoverPixels": "NOT_VERIFIED"
+    },
+    {
+      "deckId": "nibelungen_booster_pack_design",
+      "printedTitle": "Nibelungen Booster Pack",
+      "sunoSongTitle": "KFB Nibelungen Booster Pack [nibelungen_booster_pack_design] v1",
+      "sourceCards": 60,
+      "spokenLines": 60,
+      "characters": 4590,
+      "openers": 20,
+      "takes": 62,
+      "skipped": [],
+      "sourceBlob": "1d5d0aaac4a221263f06b7310a627b9ddf86f73b",
+      "files": [
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/nibelungen_booster_pack_design/nibelungen_booster_pack_design.suno.txt",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/nibelungen_booster_pack_design/nibelungen_booster_pack_design.takes.csv",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/nibelungen_booster_pack_design/nibelungen_booster_pack_design.hub.json",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/nibelungen_booster_pack_design/nibelungen_booster_pack_design.check.txt"
+      ],
+      "report": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/nibelungen_booster_pack_design/REPORT.md",
+      "status": "EDITORIAL_CANDIDATE_WS0_REVIEW_REQUIRED",
+      "lexicalEquivalentFails": 0,
+      "exactPythonChecker": "NOT_RUN",
+      "pdfCoverPixels": "NOT_VERIFIED"
+    },
+    {
+      "deckId": "uncle_frizzlebob_s_tragic_flaws_id",
+      "printedTitle": "Uncle FrizzleBob's Tragic Flaws",
+      "sunoSongTitle": "KFB Uncle FrizzleBob's Tragic Flaws [uncle_frizzlebob_s_tragic_flaws_id] v1",
+      "sourceCards": 56,
+      "spokenLines": 56,
+      "characters": 4383,
+      "openers": 19,
+      "takes": 58,
+      "skipped": [],
+      "sourceBlob": "30d05fa4f89bc25f402bcd435eac29784ac194b0",
+      "files": [
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/uncle_frizzlebob_s_tragic_flaws_id/uncle_frizzlebob_s_tragic_flaws_id.suno.txt",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/uncle_frizzlebob_s_tragic_flaws_id/uncle_frizzlebob_s_tragic_flaws_id.takes.csv",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/uncle_frizzlebob_s_tragic_flaws_id/uncle_frizzlebob_s_tragic_flaws_id.hub.json",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/uncle_frizzlebob_s_tragic_flaws_id/uncle_frizzlebob_s_tragic_flaws_id.check.txt"
+      ],
+      "report": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/uncle_frizzlebob_s_tragic_flaws_id/REPORT.md",
+      "status": "EDITORIAL_CANDIDATE_WS0_REVIEW_REQUIRED",
+      "lexicalEquivalentFails": 0,
+      "exactPythonChecker": "NOT_RUN",
+      "pdfCoverPixels": "NOT_VERIFIED"
+    },
+    {
+      "deckId": "epistemic_sabotage",
+      "printedTitle": "Epistemic Sabotage: Let AI Read Your Comic",
+      "sunoSongTitle": "KFB Epistemic Sabotage: Let AI Read Your Comic [epistemic_sabotage] v1",
+      "sourceCards": 60,
+      "spokenLines": 60,
+      "characters": 4296,
+      "openers": 20,
+      "takes": 62,
+      "skipped": [],
+      "sourceBlob": "ecdf9489cebb6a3eb649d0867659d892bb733b7d",
+      "files": [
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/epistemic_sabotage/epistemic_sabotage.suno.txt",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/epistemic_sabotage/epistemic_sabotage.takes.csv",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/epistemic_sabotage/epistemic_sabotage.hub.json",
+        "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/epistemic_sabotage/epistemic_sabotage.check.txt"
+      ],
+      "report": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/epistemic_sabotage/REPORT.md",
+      "status": "EDITORIAL_CANDIDATE_WS0_REVIEW_REQUIRED",
+      "lexicalEquivalentFails": 0,
+      "exactPythonChecker": "NOT_RUN",
+      "pdfCoverPixels": "NOT_VERIFIED"
+    }
+  ],
+  "acceptance": "WS0_PENDING_EXACT_PYTHON_AND_SEMANTIC_REVIEW; PRINTED_PDF_INTRO_PAGES_NOT_VISUALLY_VERIFIED"
+}
