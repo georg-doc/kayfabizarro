@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Meshy-Community, Umgebung um Dioramen
+- V-318: CC0-Modelle aus der Meshy-Community als Quelle; Intake 14 Modelle, Verdant Ruins + Alien-Werkstatt als Bühnen.
+- V-319 (TBD): Umgebung um das Diorama mit Begegnungen, Minispielen, Kämpfen, Fluff; Graveyard-Diorama + KayKit-Halloween-Requisiten.
+
 ## 2026-10-15 · Alien-Figuren für die ToolBox geliefert
 - Branch assets/kfb-alien-figures-toolbox-2026-10-15 @ae86206b: LordHunky/LadyDory_RigMedium.toolbox.glb + kfb.pets/1-Rezepte (Regler headScale/headOffset/neckTaper, Startwert Kopf 1,0), Mund-Sätze A/B, Referenz-Lader. Kopf starr (0,000 mm), Kragen rundum geschlossen. Hub-Briefing b34 an WSA (ersetzt b31).
 

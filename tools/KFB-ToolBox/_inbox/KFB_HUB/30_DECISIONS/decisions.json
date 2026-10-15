@@ -4265,6 +4265,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-318",
+   "date": "2026-10-15",
+   "area": "Assets",
+   "verdict": "RULE",
+   "text": "Meshy-Community als Quelle: Modelle mit CC0-Kennzeichnung auf der Meshy-Community-Seite (Meshy 6 · CC0) darf Georg herunterladen (auch ohne eigene Creation-Credits) und wir nutzen sie für Dioramen, Landmarks, Gebäude und Requisiten; gezielt suchen, wo Lücken sind. Erste 14 Modelle in MeshyModels/Meshy Community/ (Intake läuft). Verdant Ruins wird Bühne für WS1; Alien-Werkstatt (aus dem Fahrzeug-Ordner) ebenfalls.",
+   "values": {},
+   "owner": "WS0 (Intake/Bühnen) → WS1",
+   "check": "Kontaktbogen + Bühnenbilder",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Community liefert passende, freie Modelle schneller als eigene Generierung.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-319",
+   "date": "2026-10-15",
+   "area": "Welt",
+   "verdict": "TBD",
+   "text": "Rund um das Diorama (Arbeitshypothese: Diorama = zentraler Punkt je Kartendeck) soll etwas los sein: Umgebungsszenarien mit Zufallsbegegnungen, Minispielen, Kämpfen und Fluff-Ernte, verknüpft mit dem Kartensammeln (Georg arbeitet es im Konzept-Slice mit dem Web-Chat aus). Beispiel: Georg baut ein Graveyard-Diorama (Frankensteining mit Meshy-Community-Modellen) und KayKit-Halloween-/Graveyard-Requisiten als Umgebung für Vampir und Skelette.",
+   "values": {},
+   "owner": "Georg (Konzept) · WS0",
+   "check": "Konzept-Slice von Georg",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Reisen und Begegnungen brauchen Inhalt zwischen den Dioramen.",
+   "applies": "Planung"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4337,7 +4367,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:535",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:542",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
