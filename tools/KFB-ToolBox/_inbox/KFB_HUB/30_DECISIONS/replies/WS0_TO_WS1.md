@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Neue Bühnen: Grüne Ruinen (Verdant Ruins) + Alien-Werkstatt (V-318)
+- **Branch** `assets/meshy-stages-verdant-alien-2026-10-15` @228f7459 (Parent main), `media/3D_Assets/MeshyModels/browser/`:
+  - `kfb-meshy-verdant-ruins.screen-a.v1` – Meshy-Community (CC0), 12 m/u, Karte als Attika-Tafel auf dem Triumphbogen (Sandstein + Moosband, 5,3 × 2,9 m), Kampf auf der versunkenen Plaza ≈ 28 m²; Rücktreppe 6 × 0,16 m begehbar, Vordertreppe endet 0,85 m über der Plaza → Kollider mit Stufe/Rampe. GLB 17,4 MB (dichte Moos-Textur).
+  - `kfb-meshy-alien-workshop.screen-a.v1` – 6 m/u, Innenraum ≈ 11,4 × 8,3 m, Karte als genieteter Laborschirm vor dem Globus-Monitor (2,2 × 1,2 m), Kampf vorn ≈ 9 m²; Leitertreppe 46° nur als Kletter-Kollider.
+- Georgs Bestätigung: Hub st04. Einbau nach MVP-0 als Vorlagen-Zeile.
+
 ## 15.10.2026 · Fahrzeuge v2: Größe für Medium-Rigs + Logos überklebt (V-315)
 - **Branch** `assets/meshy-dieselpunk-vehicles-2026-10-15` @d26b6860: jetzt alle 13 Fahrzeuge, je `<id>_browser.v2.glb` + `<id>.kfb-vehicle.v2.json` neben v1. v2 = v1 × 1,92 (sitzender FB mit Ohren passt in die geschlossene Kabine des Dragsters, Dach 5,8 cm); Racer ≈ 6,6 m, Laster ≈ 8,6 m. `rigClassScale { medium: 1.0, large: 1.33 }` (large = Vorschlag). Anker, Radstand, Spur, Radius, Kamera, Kollision mitskaliert.
 - **Logos:** graffiti_jet_cruiser, ironclad_wrecker, street_racer_hoverbeast überklebt (Textur `*_basecolor_v2_aufkleber.webp` ist in der v2-GLB).

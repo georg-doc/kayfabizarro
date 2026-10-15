@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Meshy-Community R1
+- Intake 14 Modelle (Kontaktbogen, Einordnung) + Bühnen Grüne Ruinen und Alien-Werkstatt, Branch @228f7459. Hub st04 (Kartenplatz) und cm01 (nächste Bühnen).
+
 ## 2026-10-15 · Fahrzeuge v2
 - Alle 13 Fahrzeuge ×1,92 (FB mit Ohren passt in den Dragster), Logos überklebt; Branch @d26b6860; Hub dv02 (Größe so oder kleiner).
 
