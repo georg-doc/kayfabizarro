@@ -263,3 +263,57 @@ The aim is an affirmative but unsentimental **Universe in a Nutshell**: existent
 Respect existing WS0 architecture V-228 and role boundaries. This is a creative correction within the same current Global Intent document and sibling Bigger Picture, NOT a request for a second WS1 runtime, global soul system, new loop owner, game-teleport respawn mechanic, new V-number or scheduling change.
 
 **Exactly one next gate remains \`WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT\`.** WS0 may route *joyful autonomous performance + visible repair* as narrative guidance inside the next actual source-backed Card/Billboard/Meshy/lighting stage comparison. A later gameplay repair cycle needs its own owner-authorized slice and independently verified source, physics and memory evidence.
+
+
+---
+
+## R1.4 · Georg Creative Intent · 2026-10-15 · The right to lament, self-aware failure and stoic-comic reprise
+
+**Status:** Georg's explicit conceptual refinement of current R1.3 life-affirming cosmology; **no new V-number, runtime gate, mandatory character reaction, or accepted dialogue line**. All earlier Global Intent remains unless explicitly superseded by R1.3. This addition makes *room for actual suffering, complaint and mood changes* inside sincere affection for one's role.
+
+### A. No compulsory happiness — subjective complaint is real
+KFB characters are entitled to complain, grumble, lament, feel irritated, resent the weather, blame bad luck, fight their circumstances, temporarily lose motivation, react bitterly to failure, and remain frustrated during an encounter. The emotion is **not a disguised joke or evidence their love of existence is fake**. Resident individuality emerges from being able to hold contradictory feelings in different beats and contexts.
+
+The same Orc may wholeheartedly curse the dungeon run at the instant of defeat and later laugh affectionately about the predictability of the result, prepare for tomorrow's encounter and bring fresh ingenuity to it. A Graveyard skeleton can be weary of its night shift and nonetheless take pride in haunting; a Doozer-like builder may curse the latest fallen wall before enjoying the craftsmanship of repairing it. Some Residents may take longer to recover, decline an encounter, change a habit or remain angry; the whole world is not forced into instant cheerful closure.
+
+**Key creative rule:** *Complaint may be entirely genuine; later affirmation need not invalidate the complaint. The role remains loved without demanding that every minute of it be pleasant.*
+
+### B. Epictetus supplies an especially exact stage metaphor
+**Epictetus, Enchiridion / Handbook §17:** the human is an actor in a play whose role and circumstances may be assigned; the performer is responsible for playing the given part well. Direct text/review: https://epictetus-enchiridion.org/en/chapters/enchiridion/17/ ; scholarly overview updated 2025: https://plato.stanford.edu/entries/epictetus/ .
+
+**Enchiridion §5:** external events and our judgments of them are distinguished; critical reflection can reappraise the same predicament without altering its physical facts. Primary-text translation at Tufts Perseus: https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0237%3Atext%3Denc%3Achapter%3D5 .
+
+The stoic analogy is **not** a mandate to smile through harm, surrender one's agency, attribute real structural injury solely to attitude, or believe all roles were freely chosen. Epictetus distinguishes assigned part from quality of performance; KFB creatively overlays conviction, explicit comic awareness, embodied failure, irony and the occasional fourth-wall awareness. Stoic moral development is neither emotional anesthesia nor a proof that a character never complains. The SEP explicitly notes that Epictetus is not advocating being “unfeeling like a statue” and recognizes meaningful appropriate feelings. KFB's comedy and joyful reprise are **its own authored variation**, not a falsely attributed Stoic doctrine.
+
+### C. Staged rhythm: grief/irritation → different angle → owned laughter → re-entry
+A small **editorial beat grammar**, not a four-state gameplay machine:
+1. **Actual obstruction / failure:** a setback to what the resident is trying sincerely to achieve. Visible action, stage blocking, costume, role and relationship matter. A genuine exasperated reaction or complaint can land here.
+2. **Shift in situation / relationship:** another resident, a different card, off-duty gathering, absurd pop-up facade, a changed light/semantic field or an unexpected visitor exposes an alternative perspective. No requirement that the NPC narrate their private psychology.
+3. **Self-aware inflection:** one character-specific glance, dry observation, embarrassed admission, sardonically accurate quip or even an affectionate silent shrug signals recognition of their personal failure pattern. The fourth wall may briefly become perceptible where dramaturgically justified, without a generic “I'm an NPC” gag or repeated cosmic exposition.
+4. **Unforced continuation or departure:** the same person chooses to recommit energetically, take a rest, improvise, help another, change a small tactic, protest again or refuse. The event leaves an appropriate consequence in existing world state and social memory. **R1.3 remains authoritative:** their existence, friendship or intrinsic life-joy does not depend on player attention.
+
+This beat grammar creates **character recognition and return value** without mandatory therapeutic resolutions, automatic self-healing, imposed positivity or one predetermined lesson. The player is invited to infer the model for their own setbacks rather than being instructed to emulate a stoic sage.
+
+### D. Satire versus suffering: character-specific balance
+- A complaint should identify a **specific authored inconvenience or contradiction**, not filler grumbling. The failure loop must have a real repeated cause, a recognizable skill/weakness and scene consequence.
+- Don't ridicule trauma itself. When a resident's biography establishes a trauma or recurring wound, humor can emerge from their authored relationship to their own coping style; it does not excuse cruelty or force them to disclose or laugh at their injuries. Different residents differ in ability and willingness to self-deprecate.
+- A “villain on duty / person at campfire” duality remains possible, but a reflective joke after work **does not absolve** violence against others or cancel a survivor's memory. An offended counterpart may refuse to laugh.
+- Jokes may be verbal, spatial/visual, physically choreographed in the Keaton/Chaplin tradition, silent, or depend on another character's deadpan reading. Vary the timing and semantic field to avoid repetitive canned lines and uniform fourth-wall breaks.
+- Residents can openly know/celebrate their cosmic Kayfabe task **without knowing all of the Academy, Fluff cosmology or developer interface**. Choosing a role, accepting a role, resenting and affirming a role are distinct possibilities.
+
+### E. Example for a future source-accurate performance comparison (not canon)
+**Beat A:** a real authored Orc gets defeated by an adventurer and curses the unfairness of how reliably the situation goes against it.
+**Beat B:** later, by a campfire, the same Orc watches a builder struggle with another repeatedly repaired stage wall; both notice the comedy in their different kinds of stubbornness.
+**Beat C:** one little physical action or dry *approved source-pool* line makes clear that the Orc recognizes its own performance and cares about doing it well, even when it complains.
+**Beat D:** next visit, the Orc returns to its role with a new tactic; perhaps the builder has visibly repaired the wall differently. Preserve the real Card, chosen original cast, situation, world/repair and Lean Memory rather than fabricating exact dialogue or fresh actor metadata.
+
+In a real pilot, content must come from current accepted card/dialogue/cast sources; no invented lines, NPC trauma stories or fake Stage screenshot. Two properly timed acts may accomplish the intent; **not all four beats need to be shown or spoken**.
+
+### F. Global Intent acceptance questions, not new software requirements
+- Can a Resident express an authentic negative emotion and later affirm their life **without a contradiction being rewritten into a cure**?
+- Is the turn toward self-awareness identifiable through a scene-specific gesture, choice or brief credible line, *without stock psychology/exposition*?
+- Does the player retain agency to participate, help, disagree, watch or leave? Is a complaint not a coercive player-retention request?
+- Do existing Resident identity, current source-approved dialogue, actor performance, relationship/memory, Card and Stage ownership remain single-sourced?
+- Does a failed role remain meaningful and lived-in, and do material/social consequences survive even if the character finds them funny?
+
+**Single current WS0 next gate remains `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.** If WS0 decides the existing two-actor KFB Card/Billboard+light pilot benefits from a complaint→self-awareness→reprise beat, it is editorial guidance for that **same** sourced stage. This concept does not authorize a new Resident AI system, a new therapy/failure-score mechanic, a new WS1 runtime milestone or a mandatory fourth-wall feature.
