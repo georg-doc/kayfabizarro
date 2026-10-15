@@ -20,6 +20,16 @@
 
 ---
 
+## CURRENT ADDENDUM · 2026-10-15 · Deck Homebase progression R0.2
+
+**New authored proposal:** [KFB Deck Homebase & Card Progression R0.2](./KFB_DECK_HOMEBASE_COLLECTION_PROGRESSION_R0_2_2026-10-15.md) committed on **existing Draft PR #400**. Real registry source `registry/assets/v1/decks/index.json` blob `b1399317c33fbd6ff17a622da68c684207bd5b4c` has **130 registered deck IDs, 6,985 cards and variable Deck sizes** (79 × 56). A source-backed Diorama can be a themed Homebase with Resident, visible 1..N PDF-album/provenance, scattered easy Card pickups, Fishing/Farm/Blast/Courier/social/Travel encounter routes, progression milestones/optional source-validated vehicle/prop/recipe and a **full-world finale**, not just an unconfirmed MP3. Collection order is flexible; progress is a derived actual Card count, not another XP economy. Current R2 Triplet editorial candidates are not automatically published/QA-accepted songs, so completion cannot depend on absent audio.
+
+**First future proof:** one original Diorama+Resident, authentic Deck and three source CardRefs via ordinary pickup, one accepted source activity, one social/Courier event; show actual Card crops, masked album, Almanac receipts and save/reload, then a real curator reaction. No current MVP/World/Stage/runtime/MediaSurface changes. Current CLAUDE_CODE_RECOVERY_INTAKE_CONFIRMATION gate remains unacknowledged; later MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT requires playable core and Georg approval.
+
+**Evidence:** actual GitHub source/Registry read, authored R0.2 concept blob `517e06369bee5af237bb2a271c43d17c9d823005`, static coverage **16/16 PASS**. Actual visuals, Song audio QA, game reward save/reload, released site and gameplay tests **0**. No auto-merge.
+
+---
+
 ## Exact changed files
 1. `skills/chat/recovery/KFB_POSTMVP_MINIGAMES_FLUFF_SOURCE_RECOVERY_2026-10-15.md` — full five-source map, brief concept reconstruction and Claude Code cold-start/read guidance. Verified blob `c689d13a4602f633d4bd7221063c220e3e8e3c2c`; source-only QA **14/14** static checks.
 2. `skills/chat/START_HERE.md` — *additive* first-paragraph index to this recovery; existing October 12/8 decisions retained. Verified blob `1dcb0f98ba6236cce39e8536b113528a10cb52cd`.
