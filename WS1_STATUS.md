@@ -1,7 +1,63 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§37 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§38 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 38 · 15.10. mittags · V-286 umgesetzt (18 %, Georg: passt) · drift-freie Karten im Dialog · Schatten für alle Figuren · Bitte um Licht-Briefing
+
+### 38.1 · Umgesetzt (kfb-planet @a3744f0, ganze Testreihe 22/22 PASS, mit neuem Test `drift`)
+- **V-286 · Meshy-Bühne nur sanft tönen:**
+  - Die Amphitheater-Textur wird nicht mehr zu 85 % umgefärbt, sondern zu 18 % getönt (`PAL_AMT`).
+  - **Georg 15.10.: „18 % passt so“** → bitte als Zahl für G-6 (Farbkonzept R1) eintragen.
+  - Rahmen, Pfosten und Himmel tragen weiter die volle Palette.
+  - Bildpaar vorher | nachher: `ws1/proofs/2026-10-15-v286/paar_vorher_nachher.png`.
+- **Variante B (§37)** bleibt nur als Vergleichs-Hash `palv=b`, nicht Standard. Ihre Rollen-Umfärbung der Meshy-Textur ist durch V-286 überholt. Auf eigenen Bauteilen (Rahmen = `strang`) wird erst umgebaut, wenn das Farbkonzept R1 steht.
+- **Georg zu Farben (15.10.):** WS0 rekonstruiert Paletten und Zuordnung; bis dahin „nehmen wir das jetzt mal so“, Einzelheiten der Einfärbung später.
+- **Drift-freie Karten (WS0 zu §24.2):**
+  - `src/data/drift-cards.json` (23 Decks, 376 Karten auf Drift-Seiten; erzeugt aus Drift-Bericht und OCR-Seiten, gepinnt auf 52adc8f1) und `cardDrift.preferDriftFree()`.
+  - Die Dialog-Szene nimmt ab der Startkarte zuerst drift-freie Karten, Drift-Karten nur zum Auffüllen. Die ausdrücklich gewählte Startkarte bleibt vorn, die Vorschau behält Georgs Reihenfolge.
+  - Test `drift`: z. B. academic_anarchy ab #27 → 27, 28, 41–44.
+- **Schatten (Georg 15.10.: „irritierend, dass FrizzleBob einen Schatten hat und GothGirl nicht“):**
+  - Die KayKit-Figuren werfen jetzt Schatten auf den Boden nach derselben Regel wie FB (`eyeActor`). Test `cast` prüft `castsShadowLikeFrizzleBob`.
+  - Empfangen bleibt bei KayKit aus wie im Studio: Mit Eigenschatten im Gesicht fiel der Bildvergleich mit dem Studio (f1 `faceVsStudio` 2,4 → 13,6, Grenze 6). FB empfängt Schatten (P08-Spender). Diese Ungleichheit gehört ins Lichtkonzept (38.2 Punkt 3).
+  - Der Kontaktschatten `contact-ao` (P08, auf FB abgestimmt) bleibt FB-eigen. Ob KayKit-Figuren ihn auch bekommen, gehört ins Lichtkonzept (38.2).
+
+- **Hinweis Netz:** Ein Lauf der ganzen Testreihe braucht ≈ 27 Abfragen der GitHub-API (Pool, Registry); ohne Anmeldung sind 60 pro Stunde erlaubt. Um 12:06 war das Kontingent erschöpft (s5a: HTTP 403). Kein Code-Fehler; bei mehreren Läufen pro Stunde (zwei Sitzungen) beachten.
+
+### 38.2 · Bitte an WS0: Licht-Briefing (Georg 15.10.)
+- **Georg:** Er möchte ein einheitliches Beleuchtungs- und Schattenkonzept, dazu ein Farbkonzept, das mit Lichtstimmung und Tageszeit variiert. Dazu gab es eine intensive YouTube-Recherche, wie die Tageslicht-Situation als Basis genommen wird. Wenn das nicht eindeutig im Briefing steht, soll WS0 ein klares Briefing nachliefern.
+- **Was WS1 gefunden hat:**
+  - V-050 (Licht-Profile Tag/Abend/Nacht/Innen aus SKY3, Abend TUNE);
+  - V-092, V-101 (TinySkies-Tageszeiten, Tageslauf mit Überblendung);
+  - V-132 (day-night einziger Licht- und Nebel-Schreiber);
+  - Farbkonzept R1 §2.1 (Licht kommt von der Lichtquelle, Story-Mode darf tönen, nicht ersetzen);
+  - `replies/WSA_LIGHT_STUDY_C_R1.md` + `light-presets.json` (11.10.): J17-Tag aus dem Code – Sonne `#fff4e6`/2,9, Hemi `#eef4fa`/`#9a8a78`/1,05, Gegenlicht `#ffe6d6`/0,6, ACES, Sonne ≈ 49° hoch, Azimut −53°; Abend-Kandidat E50; KayKit-Godot-Tutorial (Ambient 0,75) als einzige ausgewertete YouTube-Quelle. Alles als Vorschlag, **nicht von Georg angenommen**.
+- **WS1 heute:** Die Bühne hat ein eigenes, provisorisches Licht (Hemi `#fff4e0`/`#3a3226` 1,25, Sonne 1,8 aus (18, 30, 22), Schattenkarte 2048), kein Tageslauf.
+- **Bitte klar festlegen:**
+  1. Basis-Tageslicht für Bühnen und Welt: J17-Tag aus der Lichtstudie oder etwas anderes? Und wo liegt die YouTube-Recherche, die Georg meint (Datei/Pfad)?
+  2. Tageszeiten: welche (Tag/Abend/Nacht/Innen?), wer schreibt sie (day-night/SKY3 aus dem Lab als Spender?), Übergang.
+  3. Schatten für alle Figuren und Requisiten: Sonnenschatten plus Kontaktschatten für alle (contact-ao auch für KayKit, V-203)? Stärke und Weichheit.
+  4. Zusammenspiel mit Palette und Story-Mode: Was tönt das Licht, was die Materialien (Farbkonzept R1 §2.1)?
+  5. Bis dahin baut WS1 am Licht nichts Neues; das jetzige Bühnenlicht bleibt.
+
+### 38.3 · M1 setzt V-283 um (M1-Sitzung, lokal m1/bewegung @ee24b69, nicht gepusht)
+- **Ränge als Kulisse:** Um die Ränge steht ein unsichtbarer Zaun, nur in der Physik: innen r 7,2 m, außen 19 m, Stirnseiten bei ±150°, Höhe bis 420 m.
+- Landung, Bodenangleich, Kamera und die ecctrl-Bodenstrahlen sehen den Zaun nicht (`ecctrl.excludeRay`).
+- **Abdeckung** gegen die Höhenkarte geprüft (`scripts/m1/rank-fence.mjs`): 9224 von 9439 Rang-Zellen liegen im Zaun. Draußen bleibt nur die Kante vor der Bühne (z ≥ 8 m).
+- **`m1-move` prüft jetzt das Abhalten statt des Begehens:**
+  - zu Fuß und mit Sprung von der Bühne;
+  - vom Flügel;
+  - im Flug von der Bühne;
+  - von außen hinter der Rückwand.
+  - Gelandet wird auf Bühne bzw. Gelände.
+- Die Stelle an der Rückwand (§34.4) ist hinter dem Zaun nicht mehr erreichbar. Sie bleibt gemeldet, bis das Kollisionsnetz von WS0 kommt.
+- Prüfer-Punkte (§35.4): nichts umgebaut.
+- **Rückfrage an WS0 (Zaunhöhe):**
+  - **Warum 420 m:** Ein Zaun nur bis zur Mauerkrone (≈ 8–10 m; die Rückwand reicht bis 9 m) erlaubt das Überfliegen. Dann kann man aber von oben auf einem Rang landen, und das wäre wieder „Betreten“.
+  - **(a)** wie jetzt: hoher Zaun, kein Überfliegen der Ränge, Code unverändert.
+  - **(b)** Zaun bis ≈ 10 m plus die Regel „über den Rängen keine Landung, F ohne Wirkung“. Das ist neues Flugverhalten im post-Handler, klein, aber neu.
+  - **(c)** auf das Kollisionsnetz von WS0 warten, das die Frage neu stellt.
+  - Bis zur Antwort bleibt (a). Geändert würde nur eine Konstante (`RANK_FENCE.top` in `src/m1/m1Host.js`), bei (b) dazu die Regel.
 
 ## 37 · 15.10. mittags · V-270 Variante B gebaut (Rolle je Bühnenteil) · Bilder für Georg
 

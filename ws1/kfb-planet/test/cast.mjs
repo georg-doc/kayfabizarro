@@ -23,7 +23,9 @@ for (const id of IDS) {
   const m = await page.evaluate(() => { const R = window.__kfbStageMods.right, root = R.object3d; root.updateWorldMatrix(true, true)
     let fig = null; root.traverse((o) => { if (!fig && o.isObject3D && o.children.some((c) => c.isSkinnedMesh || c.isBone)) fig = o })
     const sc = []; let o = null; root.traverse((x) => { if (x.type === 'Group' && x.parent === root && x.scale.x !== 1) o = x }); root.children.forEach((c) => sc.push(+c.scale.x.toFixed(5)))
-    return { status: R.status().status, cleanup: R.status().cleanup, yaw: +root.rotation.y.toFixed(3), childScales: sc,
+    // Schatten wie FB (Georg 15.10.): Körper-Netze der Figur werfen Schatten, links (FB) und rechts (Kandidat) nach derselben Regel
+    const sh = (r) => { let body = 0, cast = 0; r.traverse((x) => { if (x.isSkinnedMesh && !x.material?.isShaderMaterial) { body++; if (x.castShadow) cast++ } }); return [cast, body] }
+    return { shadows: { right: sh(root), left: sh(window.__kfbStageMods.left.object3d) }, status: R.status().status, cleanup: R.status().cleanup, yaw: +root.rotation.y.toFixed(3), childScales: sc,
       eyes: R.debugRig().eyes.map((e) => { const p = e._pivot || e.group; return root.worldToLocal(p.getWorldPosition(p.position.clone())).toArray() }) } })
   const ph = () => page.evaluate(() => window.__kfbStageMods?.dialog?.state()?.phase)
   for (let t0 = Date.now(); Date.now() - t0 < 240000 && (await ph()) !== 'B';) await page.waitForTimeout(150)
@@ -42,5 +44,6 @@ process.exit(report('cast F-4 (drei KayKit-Kandidaten)', {
   classScaleLikeFrizzleBob: ok((r) => r.childScales.some((s) => Math.abs(s - fbScale) < 1e-4)),
   speaksByBubbleWithoutMouth: ok((r) => r.bub.includes('stage-right')),
   pupilsStayInEyeInDialog: ok((r) => r.pupil.px <= r.pupil.max * 1.05),
+  castsShadowLikeFrizzleBob: ok((r) => r.shadows.right[1] > 0 && r.shadows.right[0] === r.shadows.right[1] && r.shadows.left[0] > 0),
   noPageErrors: ok((r) => r.errs === 0),
 }, { res, fbScale }))

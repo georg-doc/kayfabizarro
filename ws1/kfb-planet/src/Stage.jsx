@@ -8,6 +8,7 @@ import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { stagePaletteFor, FADE_S } from './stagePalette'
+import { preferDriftFree } from './cardDrift'
 import ModuleHost from './ModuleHost'
 import { createAmphitheater, amphLog } from './modules/amphitheater'
 import { createBillboard, BIOMES } from './modules/billboard'
@@ -113,7 +114,8 @@ const NEAR = (/place=(\w+)/.exec(hash)?.[1] || (CAM === 'two' ? 'two' : 'near'))
 const at = (mk, m, id) => ({ ...mk(m.x, m.yaw, id), position: [m.x, 0, m.z] }), MARKS = SCENE ? { left: sceneMark(SCENE_MARKS[SCENE].left), right: sceneMark(SCENE_MARKS[SCENE].right) } : STAGE_MARKS[NEAR ? 'near' : 'two']
 const L = at(MK, MARKS.left, 'stage-left'), R = at(MKR, MARKS.right, 'stage-right')
 const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : PREVIEW_CARDS ? PREVIEW_CARDS.length : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
-const DECK = PREVIEW_CARDS || (di >= 0 ? cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num).slice(0, NDIALOG) : [])
+// Dialog-Karten ab der Startkarte; drift-freie Seiten bevorzugt (WS0 zu §24.2, Auswahl statt Beschnitt), die Vorschau behält Georgs Reihenfolge
+const DECK = PREVIEW_CARDS || (di >= 0 ? preferDriftFree(cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num), NDIALOG) : [])
 const mods = {}
 // Ports des Dialogs: werden beim Aufruf aufgelöst (die Module entstehen nacheinander über ModuleHost)
 const DIALOG = {

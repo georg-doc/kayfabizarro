@@ -85,6 +85,10 @@ export function createEyeActor(options) {
       if (clip) { state.mixer.clipAction(clip, figure).play(); state.mixer.update(0) }
     }
     root.quaternion.copy(q0); root.updateWorldMatrix(true, true) // Aufbau fertig: eigene Drehung zurück
+    // Schattenwurf auf den Boden wie faceMountActor (Georg 15.10.: GothGirl ohne Schatten neben FB irritiert): feste Teile werfen Schatten,
+    // dünne bzw. durchscheinende Teile und Shader-Materialien (Augen-Rig) nicht. Empfangen bleibt aus wie im Studio: Eigenschatten im Gesicht
+    // brach den Bildvergleich mit dem Studio (f1 faceVsStudio 2,4 → 13,6). Kontaktschatten (contact-ao, auf FB abgestimmt) bleibt FB-eigen.
+    figure.traverse((n) => { if (!n.isMesh) return; const mt = n.material, thin = !!(n.userData.petOverlay || (mt && (mt.isShaderMaterial || (mt.transparent && (mt.opacity == null || mt.opacity < 0.98))))); n.castShadow = !thin })
     // Blasen-Anker knapp über dem Kopf (Figur steht auf y = 0, Höhe = height)
     head.position.set(0, (state.height ?? height) * 1.02, 0)
     state.status = eyes.eyeFrame() ? 'OK' : 'EYES_MISSING'

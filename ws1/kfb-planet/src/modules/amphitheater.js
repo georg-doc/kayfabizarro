@@ -29,7 +29,9 @@ export const amphLog = { create: 0, update: 0, dispose: 0, freed: null }
 // Flächen-Normale in Weltkoordinaten: senkrechte Flächen (Ränge, Mauern, Bögen) nehmen wall = stone, waagrechte (Bühnenboden, Stufen-Oberseiten)
 // floor = paved; Übergang weich zwischen n.y 0,55 und 0,8. Das Gelände nimmt ground. setPalette(amph, fadeS) wechselt weich (V-011).
 // Ohne Palette: Originaltextur, Gelände aus dem Biom (wie bisher).
-export const PAL_AMT = 0.85
+// V-286 (Georg 15.10.): gemalte Meshy-Texturen nur sanft tönen, Textur bleibt lesbar; die volle Palette tragen Rahmen, Requisiten, Himmel.
+// Vorher 0,85 (Rollen-Umfärbung V-270). WS0-Vorschlag höchstens ~15–20 %; die genaue Stärke ist offen bei Georg (Farbkonzept R1, G-6).
+export const PAL_AMT = 0.18
 // Variante B (§36): Bühnenteile nach Weltlage (Meter, Bühnenmitte = Ursprung, Bühnenboden y = 0), vermessen mit scripts/amph/band-probe.mjs.
 // Oberhalb yArch = Torbögen und Mauerkrone (tower), innerhalb stageR und waagrecht = Bühnenboden (sand), dazwischen Sitzreihen in Höhenbändern
 // der Höhe rowH ab y0 (hill[0]/hill[1] im Wechsel). Farbe = Rolle, Helligkeit der Meshy-Textur formt sie (0,6 … 1,15).
