@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Verdichtungs-Regel
+- V-275: Triplets im Comic-Sprechstil verdichten (Artikel, Hilfsverben, Füller weg; nur streichen); zusammen mit Opener je Zeile, Sets mit eigenem Intro/Outro, ohne Klammern. Test an den drei Sets läuft.
+
 ## 2026-10-15 · Generator-Fix Anti-Rules, Suno-Sets im Umbau
 - Registry-Generator: optionales Feld trailingPages (nur anti_rules_toolkit), Deck jetzt verified, alle anderen bytegleich (data/kfb-registry-generator-offset-2026-10-15 @52adc8f1); WS1-Pin @52adc8f1.
 - Georg: Suno-Teile falsch (Mittelteile ohne Intro/„Stay Fluffy!“, zu wenige Opener, Klammern im Titel). Vorgabe R2 ergänzt: jede Zeile mit Opener, Deck in Sets geteilt (Opener je Set einmal), jedes Set eigenes Intro + Outro, keine Klammern, keine [Break]-Tags; Prüfskript prüft das. Umbau der drei Sets läuft.

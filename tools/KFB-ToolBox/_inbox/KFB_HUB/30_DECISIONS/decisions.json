@@ -3605,6 +3605,21 @@
    "applies": "später"
   },
   {
+   "id": "V-275",
+   "date": "2026-10-15",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Triplet-Verdichtung im Comic-Sprechstil: Füllwörter weglassen, solange der Sinn bleibt (Artikel, Hilfsverben/Kopula, leere Füller), wie in Georgs Goldens („Force a card“ → „Force card“, „Clear the Stage“ → „Clear Stage“, „just a game“ → „just game“). Verneinungen, tragende Zahlen, Namen und der Kartentitel bleiben; Opener werden nicht verdichtet; nur streichen, nie ergänzen. Dazu (Georg 15.10.): jede Kartenzeile mit Opener, Deck in Sets geteilt (Opener je Set einmal), jedes Set eigenes Intro und „Stay Fluffy!“, keine Klammern im Sprechtext. Test an den drei abgenommenen Sets.",
+   "values": {},
+   "owner": "WS0 → WSA-Plugin",
+   "check": "Suno-Sets neu, Vorher/Nachher-Beispiele",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kürzer klingt mehr nach Comic-Performer als nach Kartentext-Vortrag.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3667,7 +3682,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:358",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:369",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
