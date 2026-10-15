@@ -4001,6 +4001,36 @@
    "applies": "Planung"
   },
   {
+   "id": "V-301",
+   "date": "2026-10-15",
+   "area": "Gizmo",
+   "verdict": "RULE",
+   "text": "Gizmo-Labyrinth (Georg 15.10., Strang gesichert in replies/GIZMO_MAZE_RECOVERY_R1.md): Gefängnis-Labyrinth aus Gizmo-Wänden = hochgezogenes Terrain mit Wandtextur (PLAN v0.9 „walls grow from terrain“); ein Zinnsoldat bzw. Chief Warden baut das Labyrinth am Schaltpult per Knopfdruck um (Sisyphos-, kafkaesker Krazy-Kat-Gefängniszustand; Vorlage Franquin, Labyrinth-Gefängnisplanet). Generator rund und eckig (Incompetech Maze Generator CC0 als Kandidat, Code erst prüfen; eigener Backtracker eckig/polar existiert in der Greybox). Gizmos sind zugleich Editor-Feature (God-Mode): Wände, Natur, auch Strecken-Stücke als Gizmo. Georgs Panoptikum-Zelle wird angeschlossen.",
+   "values": {},
+   "owner": "WS0 (Plan) → WS1 (Laufzeit) / Blender-Lane (Gizmos)",
+   "check": "Umbau-Animation per Knopf als Probe",
+   "source": "Georg 15.10.; planning/track-gizmo-pilot-2026-10-12 (KFB-Stunt-Car-Race PR #43); PLAN v0.9 @2b81e9fec",
+   "supersedes": "Zurückstellung des Labyrinth-Gizmos vom 12.10.",
+   "superseded_by": [],
+   "why": "Das Labyrinth ist selbst die Pointe: Es baut sich um, man entkommt nie.",
+   "applies": "Planung"
+  },
+  {
+   "id": "V-302",
+   "date": "2026-10-15",
+   "area": "Gizmo",
+   "verdict": "RULE",
+   "text": "Aus Planungs-Branch übernommen (von Georg am 12.10. akzeptiert, bisher ohne V-Nummer): Vier-Schichten-Architektur Geometrie-Gizmo → Mesh-Familie → Material/Textur → Scatter; Mauer-Skins W1 Lehm-Stein und W2 Sci-Fi auf dem Labyrinth-Graphen; Natur-Gizmos N1–N7. Quelle skills/chat/research/KFB_SKIN_STACK_WALL_TRACK_NATURE_V0_1_2026-10-12.md.",
+   "values": {},
+   "owner": "Steuerung (Abgleich)",
+   "check": "-",
+   "source": "planning/kfb-skin-stack-nature-intake-2026-10-12 @e7c8c31b",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Form, Netz, Material und Streuung getrennt halten macht Gizmos wiederverwendbar.",
+   "applies": "Planung"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4073,7 +4103,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:470",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:486",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

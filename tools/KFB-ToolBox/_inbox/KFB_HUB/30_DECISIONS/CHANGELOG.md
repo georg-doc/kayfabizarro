@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Gizmo-Labyrinth gefunden
+- V-301: Gizmo-Wände = hochgezogenes Terrain mit Wandtextur, Warden-Knopf baut das Labyrinth um, Generator rund/eckig, Gizmos auch als Editor-Feature; Comic-Vorlage Franquin. Quellen in replies/GIZMO_MAZE_RECOVERY_R1.md.
+- V-302: Vier-Schichten-Gizmo-Architektur vom 12.10. nachgetragen.
+
 ## 2026-10-15 · FrankenEyes R1, Goblin-Bank-Bühne
 - MeshyModels/_frankenstein_eyes_r1/: Claude-Design-Köpfe (app.js unverändert) gebacken auf Frankenstein-Körper; EyeRig v6 live (Emotes, Blick), Dangle je Stiel/Antenne über ear-dangle.v1 (Stiel 45/5,5, Antenne 26/3,2), Mund B (Hunky) / A (Dory) als Decal; Dory lidFit 0,9. TUNE: Fußrutschen Walking_A ~8 cm, Halsring-Saum, Falte unter Dorys Mund. Hub fe01.
 - MeshyModels/_browser/goblin_bank/: A 432k/15,3 MB, B 200k, 5 m/u, Karte als Kurstafel über der Galerie (Messingrahmen). Hub gb01.
