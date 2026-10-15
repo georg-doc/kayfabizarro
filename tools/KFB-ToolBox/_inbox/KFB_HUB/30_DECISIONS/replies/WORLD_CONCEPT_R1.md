@@ -61,7 +61,7 @@ Alles Weitere dient diesem Ablauf.
 1. Struktur: A, B oder C.
 2. Form einer Zonen-Welt: kleiner Planet mit gerundetem Horizont oder flache Insel im Himmel.
 3. Reisen im MVP: zuerst Fahren, zuerst Fliegen oder beides.
-5. Woher die Landmarks kommen: Meshy, KayKit oder Georg im God-Mode.
+4. Woher die Landmarks kommen: Meshy, KayKit oder Georg im God-Mode.
 
 ## 6 · MVP-Weg (unverändert klein, V-250)
 - **MVP-0:** Dialog-Szene.
@@ -69,3 +69,22 @@ Alles Weitere dient diesem Ablauf.
 - **MVP-2:** God-Mode.
 - **MVP-3:** Veröffentlichen als Site.
 - **MVP-4:** Combat-Arena und Flug.
+
+## 7 · Nachtrag Georg 15.10.: „Eine Welt = ein Deck“ (fraktal-holografisch)
+**Scope:** 130 Decks, oft mehrere zum selben Thema (zum Beispiel fünf Philosophie-Decks). Jede Benennung braucht deshalb die exakte Deck-Kennung (V-291).
+
+### D · Deck-Welten mit Hauptstadt (Gedankenmodell, nicht entschieden)
+- **Jedes Deck ist eine eigene kleine Welt.** Das Diorama ist ihre Hauptstadt, der Signature-Hub. Dort werden die verlorenen Karten gesammelt.
+- **Die Karten sind verstreut:**
+  - bei NPCs, auch in anderen Deck-Welten (das ergibt Botengänge zwischen den Welten);
+  - in Minispielen;
+  - als Funde unterwegs.
+- **Zwischen Deck-Welten:** Portal bzw. Kayfabe-Übergang. Die Welt darf sich immer wieder neu zusammensetzen. Weil alles Kayfabe ist, ist das erzählerisch gedeckt. Technisch heißt das: Deck-Welten werden um den Spieler geladen (wie B), die Lage ergibt sich aus der Mission.
+- **Belohnung muss mitwachsen.** Ein Song erst nach 56 Karten ist zu wenig. Deshalb sichtbarer Fortschritt pro Karte:
+  - Die Hauptstadt wird mit jeder Karte lebendiger: Licht, Bewohner, Musik-Schichten, Farbe.
+  - Etwa alle 8 Karten gibt es einen Meilenstein, zum Beispiel ein Bewohner performt diese Karten als Triplet-Strophe.
+  - Ist das Deck komplett, folgt der ganze Song als Performance plus eine Freischaltung (Portal, Fahrzeug-Skin, Landmark, Deck im Almanach).
+- **Orientierung über 130 Welten:** Cluster nach Thema bzw. Palette als „Sternbilder“. Je Cluster gibt es ein großes Landmark, im Hub eine Karte bzw. einen Almanach mit allen Deck-Welten.
+
+### Was davon spielmechanisch trägt, ist offen
+Georg hat noch keine klare Richtung. Bevor gebaut wird, sollten wir den Sammel- und Belohnungs-Loop auf einer Seite durchspielen: Woher kommen die Karten? Was passiert bei Abgabe? Wie lang ist ein Botengang? Was ist die Belohnung pro Schritt? MVP-1 testet davon nur den kleinsten Kern: eine Karte bei NPC A holen, zu NPC B bringen, das Diorama reagiert sichtbar.

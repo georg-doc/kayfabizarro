@@ -268,6 +268,7 @@ d('V-287','2026-10-15','Editor','RULE','Karten-Displays/Billboards sind im God-M
 d('V-288','2026-10-15','Spiel','RULE','Dramaturgie des Game Loops (Chill-and-Fun): (1) ein Grund zu reisen (Decks, Karten, Missionen des Spielers, z. B. Botengang), (2) das Reisen selbst macht Spaß (Fahrzeug und/oder Flug), (3) die Begegnung am Diorama ist der Höhepunkt. Alle Welt-Entscheidungen dienen diesem Ablauf.', 'alle', 'Spielprobe MVP-1', 'Georg 15.10.')
 d('V-289','2026-10-15','Welt','TBD','Welt-Struktur für 130+ Decks offen: A Zonen-Welten mit Hub (Racetrack/Portale), B dynamische Welt um den Spieler (Player-Grid, nächstes Diorama nach Missions-Kontext in Reise-Entfernung), C Mischform (Zonen nach Genre, innen dynamisch). Konzept replies/WORLD_CONCEPT_R1.md; Georg entscheidet. Vorbild Tiny Skies (gerundeter Horizont).', 'Georg', 'Entscheidung im Hub', 'Georg 15.10.')
 d('V-290','2026-10-15','Fahren','RULE','Reisen = rasante, freie Fahrt übers Gelände mit Cartoon-Fahrzeug und plausibler Physik (Chill-and-Fun, viel Hilfe); Hügel und Berge sind Rampen, Überschläge erlaubt, danach weiterfahren (Selbstaufrichten); Rampen setzt Georg oder modelliert sie aus dem Terrain. Kein Racetrack als Voraussetzung; Track-Bausteine nur als Requisiten für Straßen-Situationen. Technik: was schnell und zuverlässig funktioniert – WS1 vergleicht per Vorlagen-Zeile J17-k2b-Fahrgefühl (V-251) und den Fahrzeug-Controller im R3F/Rapier-Rahmen auf Gelände (inkl. Überschlag) und schlägt einen vor; Georg urteilt an der Fahrprobe.', 'WS1', 'Fahrprobe auf Gelände mit Überschlag', 'Georg 15.10.', supersedes='V-251 (Fahrphysik fest J17 k2b)')
+d('V-291','2026-10-15','Daten','RULE','Benennung immer mit exakter Deck-Kennung: Jeder Song, jede Audio- und Text-Datei, jede Hub-Karte und jeder Track trägt die deckId (packId aus media/kfb/index.json) und den gedruckten Decktitel – nie nur ein Thema wie „Philosophy“ (es gibt mehrere Philosophie-Decks: kayfabizarro_philosophy, kayfabizarros_ontological_hazards, philosopher_dungeon_raid, platos_dungeon_raid_*). Empfehlung für Suno-Titel: „KFB <Decktitel> [deckId] <Version>“. Bestehende Dateien umbenannt (40_AUDIO/kayfabizarro_philosophy__suno_01d, Hub-Karten).', 'alle', 'Dateinamen enthalten deckId', 'Georg 15.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -524,6 +525,7 @@ WHY = {
  'V-288':('Reisen braucht Grund und Spaß, die Begegnung trägt.','ab sofort'),
  'V-289':('130+ Decks sprengen eine durchgehende Welt; Struktur muss Reisedauer steuern.','vor MVP-1'),
  'V-290':('Open-World-Gefühl entsteht durch freie Fahrt, nicht durch eine Strecke.','MVP-1'),
+ 'V-291':('Themen-Namen sind mehrdeutig; nur die deckId ordnet eindeutig zu.','ab sofort'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 SUP = {}

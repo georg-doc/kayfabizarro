@@ -3851,6 +3851,21 @@
    "applies": "MVP-1"
   },
   {
+   "id": "V-291",
+   "date": "2026-10-15",
+   "area": "Daten",
+   "verdict": "RULE",
+   "text": "Benennung immer mit exakter Deck-Kennung: Jeder Song, jede Audio- und Text-Datei, jede Hub-Karte und jeder Track trägt die deckId (packId aus media/kfb/index.json) und den gedruckten Decktitel – nie nur ein Thema wie „Philosophy“ (es gibt mehrere Philosophie-Decks: kayfabizarro_philosophy, kayfabizarros_ontological_hazards, philosopher_dungeon_raid, platos_dungeon_raid_*). Empfehlung für Suno-Titel: „KFB <Decktitel> [deckId] <Version>“. Bestehende Dateien umbenannt (40_AUDIO/kayfabizarro_philosophy__suno_01d, Hub-Karten).",
+   "values": {},
+   "owner": "alle",
+   "check": "Dateinamen enthalten deckId",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Themen-Namen sind mehrdeutig; nur die deckId ordnet eindeutig zu.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3913,7 +3928,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:442",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:445",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
