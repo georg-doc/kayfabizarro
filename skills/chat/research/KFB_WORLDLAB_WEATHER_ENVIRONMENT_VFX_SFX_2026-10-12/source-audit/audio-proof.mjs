@@ -50,7 +50,8 @@ try{
     const slider=page.locator('input[data-bus="ambience"]');
     check('Original ambience bus slider exists',await slider.count()===1);
     await slider.fill('0');
-    await page.waitForTimeout(800);
+    // Existing owner uses setTargetAtTime(tau=.38s); allow >6 time constants before asserting near-silence.
+    await page.waitForTimeout(2500);
     const mute=await page.evaluate(()=>window.__KFB_AUDIO_CAL__.snapshot());
     check('Original audio owner ambience mute drops gain',mute.gains.ambienceBus<0.01,mute.gains.ambienceBus);
     check('No browser source errors',report.errors.length===0,report.errors);
