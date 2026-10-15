@@ -3540,7 +3540,9 @@
    "check": "Bildfolge je Palette",
    "source": "Georg 15.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-286"
+   ],
    "why": "Paletten sind Harmonie-Systeme, keine Stimmungsfarben.",
    "applies": "ab sofort"
   },
@@ -3772,6 +3774,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-286",
+   "date": "2026-10-15",
+   "area": "Farben",
+   "verdict": "RULE",
+   "text": "Meshy-Bühnen mit fertig gemalter Textur werden nur leicht getönt (Welt-Palette bzw. Story-Mode als sanfte Färbung, Textur bleibt lesbar); die volle Palette (sechs harmonische Farben mit Rollen, dunkle und sattere Variante) wirkt auf alles, was wir selbst bauen: Rahmen/Displays, Requisiten, Fluff, Himmel, Licht, Figuren-Akzente. Farbkonzept wird in replies/COLOR_CONCEPT_R1.md + kfb-color-concept.r1.json als einzige Farbquelle konsolidiert.",
+   "values": {},
+   "owner": "WS0 (Konzept) → WS1, Lab",
+   "check": "Bildpaar Bühne vorher | nachher",
+   "source": "Georg 15.10.",
+   "supersedes": "V-270 (Rollen auf der Meshy-Textur des Amphitheaters)",
+   "superseded_by": [],
+   "why": "Gemalte Meshy-Texturen vertragen keine Sechser-Umfärbung; Palette wirkt dort, wo wir die Teile bauen.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3834,7 +3851,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:427",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:430",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

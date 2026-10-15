@@ -263,6 +263,7 @@ d('V-282','2026-10-15','Fahren','TUNE','Badewannen-Kart Sitz zweiter Durchgang: 
 d('V-283','2026-10-15','Steuerung','RULE','M1-Bewegung im Amphitheater (WS1 §35): Für MVP-0 sind die Ränge Kulisse ohne Begehen (Kollision verhindert Betreten, Prüfung „Ränge“ nicht Teil der MVP-0-Abnahme). Fuß-IK bzw. Stufenlogik kommt später als eigene Vorlagen-Zeile (MVP-1, Spender zuerst: J17/Lab). WS0 liefert ein vereinfachtes Kollisionsnetz für das Amphitheater (Rückwand-Sockel −19 cm, Rang-Durchdringung).', 'WS1 (M1) · WS0 (Kollisionsnetz)', 'm1-move ohne Ränge grün', 'WS0 15.10. (technisch, im Rahmen von V-250)')
 d('V-284','2026-10-15','Fahren','TUNE','Badewannen-Kart: FrizzleBob als Fahrer PASS (mittig, Hände am Lenkrad, Licht wie im Spiel). Orc Brute TUNE: anderes Lenkrad als FB und hält es nicht richtig; Position und Haltung falsch → gleiches Lenkrad wie FB (skaliert), Fäuste umschließen den Kranz, Fahrhaltung wie FB.', 'WS0 (Asset)', 'Orc 3/4, Seite, Video', 'Georg 15.10.')
 d('V-285','2026-10-15','Dialog','RULE','Stimmen für Triplets: Suno-Deck-Songs bleiben Präsentations-/Belohnungs-Feature (V-279); einzelne Triplets im Dialog bekommen je Figur eine eigene Stimme als vorab erzeugte Einzeldateien (keine Sprachausgabe zur Laufzeit), Lippen über Wireface (listenTo). Hörvergleich R1: Kokoro lokal (Download von Georg freigegeben) und ElevenLabs per API (Georg hat Credits; Schlüssel legt Georg selbst ab, WS0 gibt keine Schlüssel ein). Georg probiert zusätzlich HeyGen (Stimme isolieren, ggf. Video mit KayKit-Figuren als Avatare).', 'WS0 (Test) → WS1 später', 'Hörproben im Hub', 'Georg 15.10.')
+d('V-286','2026-10-15','Farben','RULE','Meshy-Bühnen mit fertig gemalter Textur werden nur leicht getönt (Welt-Palette bzw. Story-Mode als sanfte Färbung, Textur bleibt lesbar); die volle Palette (sechs harmonische Farben mit Rollen, dunkle und sattere Variante) wirkt auf alles, was wir selbst bauen: Rahmen/Displays, Requisiten, Fluff, Himmel, Licht, Figuren-Akzente. Farbkonzept wird in replies/COLOR_CONCEPT_R1.md + kfb-color-concept.r1.json als einzige Farbquelle konsolidiert.', 'WS0 (Konzept) → WS1, Lab', 'Bildpaar Bühne vorher | nachher', 'Georg 15.10.', supersedes='V-270 (Rollen auf der Meshy-Textur des Amphitheaters)')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -514,6 +515,7 @@ WHY = {
  'V-283':('MVP-0 ist die Dialog-Szene; begehbare Ränge brauchen neues Verhalten.','MVP-0'),
  'V-284':('FB passt; Large-Fahrer braucht eigene Feinarbeit.','ab sofort'),
  'V-285':('Ein Suno-Song ist eine Stimme pro Deck; Dialoge brauchen eine Stimme pro Figur.','ab sofort'),
+ 'V-286':('Gemalte Meshy-Texturen vertragen keine Sechser-Umfärbung; Palette wirkt dort, wo wir die Teile bauen.','ab sofort'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 SUP = {}

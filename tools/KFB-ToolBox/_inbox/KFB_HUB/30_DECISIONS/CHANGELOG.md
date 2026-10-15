@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Farben: Meshy nur tönen
+- V-286: Meshy-Bühnen nur leicht tönen, volle Palette auf Rahmen, Requisiten, Fluff, Himmel, Licht; Farbkonzept-Konsolidierung läuft (COLOR_CONCEPT_R1).
+
 ## 2026-10-15 · Kart FB PASS, Stimmen-Test
 - V-284: FB im Kart PASS, Orc TUNE (gleiches Lenkrad, Griff, Haltung). V-285: Triplet-Stimmen je Figur als Einzeldateien; Hörvergleich Kokoro (installiert mit Georgs OK) + ElevenLabs (falls Schlüssel abgelegt) läuft.
 

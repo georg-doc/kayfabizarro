@@ -1,5 +1,9 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Farben: Meshy-Bühnen nur leicht tönen (V-286)
+- **Georg:** Meshy-Bühnen nur leicht tönen; die Palette wirkt auf Rahmen und Requisiten. Konkret: Die Rollen-Umfärbung der Amphitheater-Textur (stone/paved, Anteil 0,85) zurücknehmen auf eine leichte Tönung (Vorschlag: höchstens ~15–20 %, Textur bleibt lesbar). Die volle Palette (sechs harmonische Farben mit Rollen) gehört auf Billboard-/Display-Rahmen, Pfosten, Requisiten, Fluff, Himmel und Licht.
+- **Farbkonzept wird konsolidiert:** WS0 schreibt `replies/COLOR_CONCEPT_R1.md` + `kfb-color-concept.r1.json` (Welt-Paletten, Story-Modes, Fluff-Farben je Story-Mode, dunkle und sattere Variante) als einzige Farbquelle. Bis dahin an den Farben nichts Neues bauen; nur die Tönung zurücknehmen, als Vorlagen-Zeile mit Bildpaar vorher | nachher.
+
 ## 15.10.2026 · Antworten auf §33–§35 (V-283)
 - **Ränge (§35.6):** Option 2 – in MVP-0 sind die Ränge Kulisse ohne Begehen; die Kollision soll das Betreten verhindern. Die Prüfung „Ränge“ gehört nicht zur MVP-0-Abnahme. Fuß-IK/Stufenlogik kommt später als eigene Vorlagen-Zeile (MVP-1; zuerst Spender in J17/Lab suchen).
 - **Kollisionsnetz Amphitheater (§34.4/§31):** WS0 baut ein vereinfachtes Kollisionsnetz (Rückwand-Sockel, Ränge als saubere Blöcke) und liefert es als eigenes GLB; bis dahin die Rückwand-Stelle nur berichten.
