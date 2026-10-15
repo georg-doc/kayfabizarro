@@ -1,0 +1,1609 @@
+# Kartentitel: Versalien → Titelschreibung – R1 (15.10.2026)
+
+Entscheidung **V-271** (Georg, 15.10.): Kartentitel, die im Druck in Versalien stehen (z. B. „JEAN-JACQUES ROUSSEAU“), werden zentral in den Kartendaten in normale Titelschreibung gebracht. Die gedruckte Schreibweise bleibt im eigenen Feld erhalten. Kein Workstream korrigiert lokal.
+
+Basis: `data/kfb-card-text-canonical-2026-10-14` @ `233efd5` (`CARD_TEXT_CANONICAL_R1.md`). Bearbeitet: `media/kfb/*.pdf.json` (130 Deck-Dateien laut `index.json`).
+
+## Ergebnis
+
+- **1503 Kartentitel** normalisiert in **44 Decks**.
+  - 1372 Titel ganz in Versalien (keine Kleinbuchstaben bei ≥ 4 Buchstaben).
+  - 131 Titel mit Versalien-Haupttitel und schon gemischtem Zusatz, z. B. „THE UNCONSCIOUS (Das Unbewusste)“, „SYNTHESIS – The Evolution Matrix“. Nur die Versalien-Wörter wurden umgestellt, gemischte Wörter blieben unverändert.
+- 4 Versalien-Titel bleiben unverändert, weil sie ganz aus Akronymen bestehen: `programming_the_whole_child` #27 USAID, #40 OECD / PISA, #41 UNESCO; `project_gateway_kayfabe` #53 COINTELPRO. Sie bekommen kein `cardNamePrint`.
+- `deckTitle` wurde nicht geändert. Deck-Titel mit Versalien-Wörtern (nur gemeldet): `ignore_dystopia` „IGNORE DYSTOPIA — Anatomy of a Trap (Deck B)“, `embrace_protopia` „Protopia Sketchbook — Deck C: EMBRACE“, `kayfabizarro_1_morale_ethics` „… KAYFABIZARRO Komik Kards …“, `kayfabizarro_improv_comedy` „The Great Kayfabe Improv Komedy SKETCHBOOK“, `the_move_1` „THE MOVE: A Field Guide to Managed Reactions“, `the_importance_of_being_kayfab_earnest` „Oscar Wilde's Importance of KAYFAB-EARNEST“. Kein Deck-Titel ist ganz in Versalien.
+
+## Format
+
+- `cardName` (bzw. `name` bei Decks mit `num`/`name`) = Titelschreibung.
+- Neues Feld **`cardNamePrint`** = gedruckte Versalien-Schreibweise, Zeichen für Zeichen wie vorher im JSON. Es steht direkt hinter `cardName`/`name`. Der Feldname ist in allen Decks gleich, auch dort, wo der Titel `name` heißt.
+- Sonst nichts geändert: Einrückung und Zeilenstil jeder Datei bleiben, wie sie waren (Einfügen an der Textstelle, keine Neuserialisierung). Geprüft: Jede Datei parst, und das Ergebnis ist bis auf die zwei Felder gleich dem Original (auch die Reihenfolge der Schlüssel). `jsonLegacy.cardName` (Vorwerte aus R1) bleibt unberührt.
+
+## Regel
+
+1. Jedes Wort wird groß begonnen, der Rest klein.
+2. Kleine Wörter bleiben klein, außer am Titelanfang, nach Doppelpunkt/Gedankenstrich und am Anfang einer Klammer oder eines Zitats: a, an, the, of, and, or, in, on, at, to, for, by, with, vs/vs., dazu but, nor, as. Auch am Titelende bleiben sie klein („Yes, and“).
+3. Bindestrich-Namen: jeder Teil groß (Jean-Jacques, Meet-Cute, X-Acto). Kleine Wörter im Bindestrich-Wort klein, wie die Kartentexte es schreiben: „Alz-the-Eraser“, „Tug-o-War“, „Million-to-One“, „Griffin-ish“.
+4. Apostroph: Endung klein (Toddler's, Didn't, Ironworkers'); O'/D' + Name groß (O'Brien); sonst klein nach dem Apostroph (Ma'at, Ja'far).
+5. Akronyme/Initialen bleiben groß: AI, DNA, ATP, CEO, VIP, VR, QR, ROI, FBI, NSA, DARPA, FOIA, UAP, SWIFT, COVID, CO2, MK(-Ultra), ID, OS, BRCA, APC, VHL, NF-1, NPH, IBD, FSH, LH, Punkt-Initialen (W.O.W., U.N., W.H.O., P.C., B.L.E., S.E.L.) und römische Zahlen (I, II, XII). In Medizin-Decks bleiben Fach-Akronyme in gemischten Titeln groß (AML, CLL, CML, MYC, RAS, PD-L1, 5-FU, CD20, P53 wie im Deck).
+6. Namenspartikel klein im Namen: de, van, von, al- … („Frans de Waal“, „Harun al-Rashid“).
+7. Schreibweise aus den Kartentexten übernommen, wo der Name dort gemischt steht: FrizzleBob, BlackRock, PayPal, DiGeorge, iCloud.
+8. Lateinische Artnamen: Gattung groß, Art klein („Plasmodium falciparum“).
+9. Kyrillische Titel: russische Satzschreibung (nur erstes Wort groß).
+10. Schreibfehler/Eigenheiten des Drucks bleiben (z. B. „Princeesses“, „Rumplestiltskin“, „Sokrates“, „Deja Vu“ ohne Akzente). Hier wird nur die Groß-/Kleinschreibung geändert.
+
+## Je Deck
+
+| Deck | Datei | Feld | Karten | ganz Versalien | Versalien-Haupttitel | gesamt |
+|---|---|---|---:|---:|---:|---:|
+| `ideology_wrestling` | `Ideology_Wrestling_-_ADD_web.pdf.json` | `cardName` | 68 | 68 | 0 | 68 |
+| `jung_and_shinn_a_guide_to_cosmic_cringe` | `Jung_and_Shinn_A_Guide_to_Cosmic_Cringe_-_ADD_web.pdf.json` | `cardName` | 60 | 60 | 0 | 60 |
+| `reality_redrawn` | `Kayfabizarro_Reality_Redrawn_WEB_v1_ID.pdf.json` | `cardName` | 60 | 60 | 0 | 60 |
+| `1001_kayfabe_nights` | `1001_Kayfabe_Nights_-_ADD_web_ID.pdf.json` | `cardName` | 60 | 59 | 0 | 59 |
+| `medkayfab_oncology` | `MedKayfab_Oncology_-_ADD_web.pdf.json` | `cardName` | 60 | 19 | 40 | 59 |
+| `programming_the_whole_child` | `Programming_the_Whole_Child_-_ADD_web_ID.pdf.json` | `cardName` | 60 | 57 | 0 | 57 |
+| `academic_anarchy_intellectual` | `Academic_Anarchy_-_INTELLECTUAL_ADD_web_ID.pdf.json` | `cardName` | 56 | 56 | 0 | 56 |
+| `cinematic_kayfabizarro_2` | `Cinematic_Kayfabizarro__2__-_ADD_web.pdf.json` | `cardName` | 56 | 56 | 0 | 56 |
+| `help_i_am_a_human` | `Help_I_Am_A_Human_-_ADD_web.pdf.json` | `cardName` | 56 | 56 | 0 | 56 |
+| `human_nature_uncut_hilfe_ich_bin_ein_mensch` | `Human_Nature_Uncut_-_Hilfe_ich_bin._ein_Mensch_-_ADD_web.pdf.json` | `cardName` | 56 | 56 | 0 | 56 |
+| `kosmik_kayfabizarro_sci_fi_space_opera` | `KOSMIK_KAYFABIZARRO_-_SCI-FI_SPACE_OPERA_long_dark_II_-_ADD_web.pdf.json` | `cardName` | 56 | 40 | 16 | 56 |
+| `plot_pusher_posse` | `Plot_Pusher_Posse_-_ADD_web_ID.pdf.json` | `cardName` | 56 | 56 | 0 | 56 |
+| `shadow_monopoly_blackrock_vanguard_co` | `Shadow_Monopoly_Blackrock__Vanguard___Co_-_ADD_web_ID.pdf.json` | `cardName` | 60 | 56 | 0 | 56 |
+| `trust_and_betrayal` | `Uncle_FrizzleBobs_Kayfabizarro_Kards_TRUST_&_BETRAYAL_-_ADD_web.pdf.json` | `cardName` | 56 | 56 | 0 | 56 |
+| `unspoken_systems_kayfabizarro_meta_deck_01` | `Unspoken_Systems_-_Kayfabizarro_Meta_Deck_01_-_ADD_web.pdf.json` | `cardName` | 56 | 55 | 1 | 56 |
+| `the_uruk_rumble` | `The_Uruk_Rumble_-_ADD_web_ID.pdf.json` | `cardName` | 54 | 53 | 1 | 54 |
+| `deep_state_plumbing` | `Deep_State_Plumbing_-_ADD_web_ID.pdf.json` | `cardName` | 52 | 52 | 0 | 52 |
+| `grimms_kayfabe_legends_expansion_set_02` | `GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02_-_ADD_web.pdf.json` | `cardName` | 52 | 52 | 0 | 52 |
+| `mind_traps` | `Kayfabizarro_Mind_Traps_-_ADD_web.pdf.json` | `cardName` | 56 | 52 | 0 | 52 |
+| `pharaoh_piledriver` | `Pharaoh_Piledriver_-_ADD_web_ID.pdf.json` | `cardName` | 52 | 52 | 0 | 52 |
+| `dream_wrestling_with_kayfabe_freud` | `Dream_Wrestling_with_Kayfabe_Freud_-_ADD_web_ID.pdf.json` | `cardName` | 56 | 8 | 43 | 51 |
+| `shadow_politics` | `Kayfabizarro_ShadowPolitics_WEB_v1_ID.pdf.json` | `cardName` | 48 | 48 | 0 | 48 |
+| `sonic_warfare_music_history_01` | `SONIC_WARFARE_Music_History_01_-_ADD_web_ID.pdf.json` | `cardName` | 48 | 41 | 6 | 47 |
+| `observation_underground` | `Observation_Underground_-_ADD_web.pdf.json` | `cardName` | 48 | 38 | 5 | 43 |
+| `the_biological_metropolis` | `The_Biological_Metropolis_-_ADD_web_ID.pdf.json` | `cardName` | 32 | 32 | 0 | 32 |
+| `medkayfab_geriatrics` | `MedKayfab_Geriatrics_-_ADD_web.pdf.json` | `cardName` | 56 | 28 | 0 | 28 |
+| `medkayfab_internal_medicine` | `MedKayfab_Internal_Medicine_-_ADD_web.pdf.json` | `cardName` | 56 | 24 | 0 | 24 |
+| `philosopher_dungeon_raid` | `Philosopher_Dungeon_Raid_ADD_web_RE.pdf.json` | `cardName` | 20 | 20 | 0 | 20 |
+| `secret_spy_suplexes` | `Secret_Spy_Suplexes_-_ADD_web_ID.pdf.json` | `cardName` | 56 | 16 | 0 | 16 |
+| `sonic_slaughterhouse` | `Sonic_Slaughterhouse_MUSIC_INDUSTRY_-_ADD_web.pdf.json` | `cardName` | 56 | 11 | 1 | 12 |
+| `medkayfab_differential_diagnosis` | `MedKayfab_DIfferential_Diagnosis_-_ADD_web.pdf.json` | `cardName` | 56 | 8 | 0 | 8 |
+| `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc` | `The_Biology_of_Rebellion_-_Hilfe,_ich_bin_ein_Mensch_-_ADD_web.pdf.json` | `cardName` | 36 | 0 | 8 | 8 |
+| `medkayfab_endocrinology` | `MedKayfab_Endocrinology_-_ADD_web.pdf.json` | `cardName` | 56 | 2 | 3 | 5 |
+| `medkayfab_obstetrics_gynaecology` | `MedKayfab_Obstetrics_Gynaecology_-_ADD_web.pdf.json` | `cardName` | 56 | 4 | 0 | 4 |
+| `medkayfab_pathology` | `MedKayfab_Pathology_-_ADD_web.pdf.json` | `cardName` | 56 | 0 | 4 | 4 |
+| `medkayfab_tropical_medicine` | `MedKayfab_Tropical_Medicine_-_ADD_web.pdf.json` | `cardName` | 56 | 4 | 0 | 4 |
+| `medkayfab_genetics` | `Medkayfab_Genetics_-_ADD_web.pdf.json` | `cardName` | 56 | 4 | 0 | 4 |
+| `project_gateway_kayfabe` | `Project_GATEWAY_Kayfabe_-_ADD_web_ID.pdf.json` | `cardName` | 60 | 4 | 0 | 4 |
+| `romantic_kayfabe` | `Romantic_Kayfabe_-_ADD_web.pdf.json` | `cardName` | 56 | 4 | 0 | 4 |
+| `kayfabizarro_monomyth_mayhem` | `Kayfabizarro_Monomyth_Mayhem_WEB_v1.pdf.json` | `cardName` | 56 | 3 | 0 | 3 |
+| `kayfabizarro_improv_comedy` | `Kayfabizarro_Improv_Comedy_WEB_v1.pdf.json` | `cardName` | 60 | 0 | 2 | 2 |
+| `ignore_dystopia` | `Deck_B_DYSTOPIA_-_ANATOMY_OF_A_TRAP_web_H.pdf.json` | `cardName` | 56 | 1 | 0 | 1 |
+| `embrace_protopia` | `Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json` | `cardName` | 56 | 1 | 0 | 1 |
+| `medkayfab_dentistry` | `MedKayfab_Dentistry_-_ADD_web.pdf.json` | `cardName` | 56 | 0 | 1 | 1 |
+| **gesamt** | | | | **1372** | **131** | **1503** |
+
+## Unsichere Fälle
+
+- `project_gateway_kayfabe` #37–40 (kyrillisch): russische Satzschreibung gewählt („Хилл 611“, „Воронежские гиганты“, „Медуза“, „Ядерный переопределитель“). Englische Titelschreibung wäre ebenfalls möglich.
+- `trust_and_betrayal` #53 „Et Tu, Brute?“: Titelschreibung; als Zitat schreibt man meist „Et tu, Brute?“.
+- `unspoken_systems_kayfabizarro_meta_deck_01` #19 „Yes, and“ / #22 „No, but“: Impro-Formeln, kleine Wörter am Ende klein. In Impro-Büchern steht oft „Yes, And“.
+- `help_i_am_a_human` / `ideology_wrestling` / `human_nature_uncut…`: „Homo Economicus“, „Homo Ludens (Play)“, „Homo Cooperativus“, „Homo Hapticus“, „Homo Oeconomicus“: zweites Wort groß (Titelstil); wissenschaftlich wäre es klein.
+- `plot_pusher_posse` #24 „Diabolus ex Machina“: „ex“ klein (lateinische Wendung, wie „Deus ex Machina“).
+- `medkayfab_tropical_medicine` #1/#2: „Plasmodium falciparum“, „Plasmodium vivax/ovale“ (Artname klein).
+- `medkayfab_oncology` #16 „ALL-in Alice“: Wortspiel ALL (akute lymphatische Leukämie) + „all-in“; ALL bleibt groß. #2 „The P53 Police Bulldog“: P53 wie im Deck-Text (Fachschreibweise wäre p53).
+- `medkayfab_endocrinology` #13/#16/#37 „Graves / Hypo / Sulfo the …“ umgestellt (Figurennamen). Bewusst groß gelassen (Akronym oder Merkwort): „APGAR-Scribe“, „ZEBRA-the-Distraction“, „VINDICATE-the-Master-Tool“, „TORCH-…“, „NEWS-…“, „FAST-…“, „ESKAPE-…“, „SIRNA-…“.
+- `1001_kayfabe_nights` #5–7 „Shahryār, the Destroyer“: Beiname nach Komma mit kleinem „the“ (wie „Sinbad the Sailor“).
+- `deep_state_plumbing` #16 „The SWIFT Operator“ (Bankennetz SWIFT, laut Lore). `observation_underground` #41 „Graphene OS“ (Produkt heißt GrapheneOS; Leerzeichen wie gedruckt).
+- `kayfabizarro_improv_comedy` #1 „The Great Kayfabe Improv Komedy SKETCHBOOK“ nicht geändert: spiegelt den Deck-Titel, der unverändert bleibt.
+- `human_nature_uncut…` #14 „Tug-o-War“ und `pharaoh_piledriver` #38 „The Griffin-ish“: kleine Bindestrich-Teile.
+
+## Nicht Teil dieser Runde
+
+- `registry/assets/v1/decks/*.json` und `registry/assets/v1/decks/cards.jsonl` enthalten Kopien der Titel in Versalien. Sie wurden nicht geändert und müssen aus den Kartendaten neu erzeugt werden.
+
+## Liste alt → neu
+
+Bei Decks ohne Kartennummer ist # die Position im JSON (1-basiert).
+
+- `1001_kayfabe_nights` #2: THE MANIFESTO → The Manifesto
+- `1001_kayfabe_nights` #3: RULES: THE METER → Rules: The Meter
+- `1001_kayfabe_nights` #4: WARNING → Warning
+- `1001_kayfabe_nights` #5: SHAHRYĀR, THE DESTROYER → Shahryār, the Destroyer
+- `1001_kayfabe_nights` #6: SCHEHERAZADE, THE UNENDING → Scheherazade, the Unending
+- `1001_kayfabe_nights` #7: DUNYAZAD, THE HYPE WOMAN → Dunyazad, the Hype Woman
+- `1001_kayfabe_nights` #8: THE GRAND VIZIER → The Grand Vizier
+- `1001_kayfabe_nights` #9: ALADDIN (THE NEW BREED) → Aladdin (The New Breed)
+- `1001_kayfabe_nights` #10: THE AFRICAN SORCERER → The African Sorcerer
+- `1001_kayfabe_nights` #11: THE WONDERFUL LAMP → The Wonderful Lamp
+- `1001_kayfabe_nights` #12: PRINCESS BADROULBADOUR → Princess Badroulbadour
+- `1001_kayfabe_nights` #13: SINBAD THE SAILOR → Sinbad the Sailor
+- `1001_kayfabe_nights` #14: THE ISLAND-WHALE → The Island-Whale
+- `1001_kayfabe_nights` #15: THE GIANT ROC → The Giant Roc
+- `1001_kayfabe_nights` #16: THE DIAMOND VALLEY → The Diamond Valley
+- `1001_kayfabe_nights` #17: THE BLACK GIANT → The Black Giant
+- `1001_kayfabe_nights` #18: THE OLD MAN OF THE SEA → The Old Man of the Sea
+- `1001_kayfabe_nights` #19: THE GOURD OF WINE → The Gourd of Wine
+- `1001_kayfabe_nights` #20: THE SHIPWRECK → The Shipwreck
+- `1001_kayfabe_nights` #21: ALI BABA → Ali Baba
+- `1001_kayfabe_nights` #22: MORGIANA → Morgiana
+- `1001_kayfabe_nights` #23: CASSIM → Cassim
+- `1001_kayfabe_nights` #24: THE MAGIC CAVE → The Magic Cave
+- `1001_kayfabe_nights` #25: THE CAPTAIN OF THIEVES → The Captain of Thieves
+- `1001_kayfabe_nights` #26: THE 39 GRUNTS → The 39 Grunts
+- `1001_kayfabe_nights` #27: THE MARKED DOOR → The Marked Door
+- `1001_kayfabe_nights` #28: THE OIL JAR → The Oil Jar
+- `1001_kayfabe_nights` #29: THE KING OF BRASS → The King of Brass
+- `1001_kayfabe_nights` #30: THE BRASS HORSEMAN → The Brass Horseman
+- `1001_kayfabe_nights` #31: THE MUMMIFIED QUEEN → The Mummified Queen
+- `1001_kayfabe_nights` #32: THE SEVEN TABLETS → The Seven Tablets
+- `1001_kayfabe_nights` #33: THE PETRIFIED MARKET → The Petrified Market
+- `1001_kayfabe_nights` #34: SOLOMON'S VESSEL → Solomon's Vessel
+- `1001_kayfabe_nights` #35: THE HOWLING EFREET → The Howling Efreet
+- `1001_kayfabe_nights` #36: THE TOWER LURE → The Tower Lure
+- `1001_kayfabe_nights` #37: PRINCE QAMAR → Prince Qamar
+- `1001_kayfabe_nights` #38: THE EBONY HORSE → The Ebony Horse
+- `1001_kayfabe_nights` #39: THE INDIAN SAGE → The Indian Sage
+- `1001_kayfabe_nights` #40: PRINCESS OF BENGAL → Princess of Bengal
+- `1001_kayfabe_nights` #41: ABU HASAN → Abu Hasan
+- `1001_kayfabe_nights` #42: THE GREAT FART → The Great Fart
+- `1001_kayfabe_nights` #43: THE HUNCHBACK → The Hunchback
+- `1001_kayfabe_nights` #44: THE FISHBONE → The Fishbone
+- `1001_kayfabe_nights` #45: THE JEWISH PHYSICIAN → The Jewish Physician
+- `1001_kayfabe_nights` #46: THE TAILOR → The Tailor
+- `1001_kayfabe_nights` #47: THE STEWARD → The Steward
+- `1001_kayfabe_nights` #48: THE BARBER → The Barber
+- `1001_kayfabe_nights` #49: HARUN AL-RASHID → Harun al-Rashid
+- `1001_kayfabe_nights` #50: JA'FAR AL-BARMAKI → Ja'far al-Barmaki
+- `1001_kayfabe_nights` #51: ABU NUWAS → Abu Nuwas
+- `1001_kayfabe_nights` #52: MASRUR THE EXECUTIONER → Masrur the Executioner
+- `1001_kayfabe_nights` #53: THE LOCKED CHEST → The Locked Chest
+- `1001_kayfabe_nights` #54: THE MISSING APPLE → The Missing Apple
+- `1001_kayfabe_nights` #55: THE JEALOUS HUSBAND → The Jealous Husband
+- `1001_kayfabe_nights` #56: THE SLAVE → The Slave
+- `1001_kayfabe_nights` #57: SUSPENSION OF DISBELIEF → Suspension of Disbelief
+- `1001_kayfabe_nights` #58: THE MONTREAL SCREWJOB → The Montreal Screwjob
+- `1001_kayfabe_nights` #59: THE CLIFFHANGER → The Cliffhanger
+- `1001_kayfabe_nights` #60: KAYFABIZARRO MASK → Kayfabizarro Mask
+- `academic_anarchy_intellectual` #1: ABSENT-MINDED PROFESSOR → Absent-Minded Professor
+- `academic_anarchy_intellectual` #2: INSUFFERABLE GENIUS → Insufferable Genius
+- `academic_anarchy_intellectual` #3: THE PROFESSOR → The Professor
+- `academic_anarchy_intellectual` #4: GENTLEMAN AND A SCHOLAR → Gentleman and a Scholar
+- `academic_anarchy_intellectual` #5: THE CHESSMASTER → The Chessmaster
+- `academic_anarchy_intellectual` #6: MAGNIFICENT BASTARD → Magnificent Bastard
+- `academic_anarchy_intellectual` #7: GUILE HERO → Guile Hero
+- `academic_anarchy_intellectual` #8: SNEAKY SPIDER → Sneaky Spider
+- `academic_anarchy_intellectual` #9: BOOK DUMB → Book Dumb
+- `academic_anarchy_intellectual` #10: STREET SMART → Street Smart
+- `academic_anarchy_intellectual` #11: IMPROVISATIONAL INGENUITY → Improvisational Ingenuity
+- `academic_anarchy_intellectual` #12: CUNNING LIKE A FOX → Cunning Like a Fox
+- `academic_anarchy_intellectual` #13: EVIL GENIUS → Evil Genius
+- `academic_anarchy_intellectual` #14: SCIENCE-RELATED MEMETIC DISORDER → Science-Related Memetic Disorder
+- `academic_anarchy_intellectual` #15: OMNIDISCIPLINARY SCIENTIST → Omnidisciplinary Scientist
+- `academic_anarchy_intellectual` #16: LOON WITH A HEART OF GOLD → Loon with a Heart of Gold
+- `academic_anarchy_intellectual` #17: GADGETEER GENIUS → Gadgeteer Genius
+- `academic_anarchy_intellectual` #18: TECHNO WIZARD → Techno Wizard
+- `academic_anarchy_intellectual` #19: STEAMPUNK GADGETEERS → Steampunk Gadgeteers
+- `academic_anarchy_intellectual` #20: INVENTOR OF THE MUNDANE → Inventor of the Mundane
+- `academic_anarchy_intellectual` #21: IDIOT SAVANT → Idiot Savant
+- `academic_anarchy_intellectual` #22: DITZY GENIUS → Ditzy Genius
+- `academic_anarchy_intellectual` #23: BRILLIANT, BUT LAZY → Brilliant, but Lazy
+- `academic_anarchy_intellectual` #24: OBFUSCATING STUPIDITY → Obfuscating Stupidity
+- `academic_anarchy_intellectual` #25: ARTIFICIAL INTELLIGENCE → Artificial Intelligence
+- `academic_anarchy_intellectual` #26: ROBOT MASTER → Robot Master
+- `academic_anarchy_intellectual` #27: ROBOTS THINK FASTER → Robots Think Faster
+- `academic_anarchy_intellectual` #28: ALTERNATIVE TURING TEST → Alternative Turing Test
+- `academic_anarchy_intellectual` #29: CHILD PRODIGY → Child Prodigy
+- `academic_anarchy_intellectual` #30: BRAINY BABY → Brainy Baby
+- `academic_anarchy_intellectual` #31: ACTING YOUR INTELLECTUAL AGE → Acting Your Intellectual Age
+- `academic_anarchy_intellectual` #32: TEEN GENIUS → Teen Genius
+- `academic_anarchy_intellectual` #33: BADASS BOOKWORM → Badass Bookworm
+- `academic_anarchy_intellectual` #34: GENIUS BRUISER → Genius Bruiser
+- `academic_anarchy_intellectual` #35: MINORED IN ASS-KICKING → Minored in Ass-Kicking
+- `academic_anarchy_intellectual` #36: TEMPERATE BERSERKER → Temperate Berserker
+- `academic_anarchy_intellectual` #37: INTELLECTUAL ANIMAL → Intellectual Animal
+- `academic_anarchy_intellectual` #38: ERUDITE ORANGUTAN → Erudite Orangutan
+- `academic_anarchy_intellectual` #39: CLEVER CROWS → Clever Crows
+- `academic_anarchy_intellectual` #40: RESOURCEFUL RODENT → Resourceful Rodent
+- `academic_anarchy_intellectual` #41: SMART PEOPLE WEAR GLASSES → Smart People Wear Glasses
+- `academic_anarchy_intellectual` #42: BLUE MEANS SMART ONE → Blue Means Smart One
+- `academic_anarchy_intellectual` #43: MORTARBOARD OF INTELLIGENCE → Mortarboard of Intelligence
+- `academic_anarchy_intellectual` #44: GOATEE OF INTELLECT → Goatee of Intellect
+- `academic_anarchy_intellectual` #45: THE PHILOSOPHER → The Philosopher
+- `academic_anarchy_intellectual` #46: DEADPAN SNARKER → Deadpan Snarker
+- `academic_anarchy_intellectual` #47: THE SPOCK → The Spock
+- `academic_anarchy_intellectual` #48: NERVES OF STEEL → Nerves of Steel
+- `academic_anarchy_intellectual` #49: THE OMNISCIENT → The Omniscient
+- `academic_anarchy_intellectual` #50: SUPER-INTELLIGENCE → Super-Intelligence
+- `academic_anarchy_intellectual` #51: IMMORTAL GENIUS → Immortal Genius
+- `academic_anarchy_intellectual` #52: PRESCIENCE BY ANALYSIS → Prescience by Analysis
+- `academic_anarchy_intellectual` #53: VIEWERS ARE GENIUSES → Viewers Are Geniuses
+- `academic_anarchy_intellectual` #54: GENRE SAVVY → Genre Savvy
+- `academic_anarchy_intellectual` #55: ADAPTATIONAL INTELLIGENCE → Adaptational Intelligence
+- `academic_anarchy_intellectual` #56: SUDDEN INTELLIGENCE → Sudden Intelligence
+- `cinematic_kayfabizarro_2` #1: THE DECENNIAL ORACLE → The Decennial Oracle
+- `cinematic_kayfabizarro_2` #2: THE DIRECTOR'S CUT → The Director's Cut
+- `cinematic_kayfabizarro_2` #3: THE HERD CONSENSUS → The Herd Consensus
+- `cinematic_kayfabizarro_2` #4: THE REGIONAL BIAS → The Regional Bias
+- `cinematic_kayfabizarro_2` #5: CITIZEN SLED-DOG → Citizen Sled-Dog
+- `cinematic_kayfabizarro_2` #6: SPIRAL PIGEON → Spiral Pigeon
+- `cinematic_kayfabizarro_2` #7: POTATO-PEELING POODLE → Potato-Peeling Poodle
+- `cinematic_kayfabizarro_2` #8: BICYCLE-THIEF FOX → Bicycle-Thief Fox
+- `cinematic_kayfabizarro_2` #9: MONOLITH MACAQUE → Monolith Macaque
+- `cinematic_kayfabizarro_2` #10: TOKYO TURTLE STORY → Tokyo Turtle Story
+- `cinematic_kayfabizarro_2` #11: SEVEN MACAQUES → Seven Macaques
+- `cinematic_kayfabizarro_2` #12: 8½ OCTO-AUTEUR → 8½ Octo-Auteur
+- `cinematic_kayfabizarro_2` #13: WIND-BLOWN PIG → Wind-Blown Pig
+- `cinematic_kayfabizarro_2` #14: MAFIA PUG → Mafia Pug
+- `cinematic_kayfabizarro_2` #15: GALACTIC PENGUIN → Galactic Penguin
+- `cinematic_kayfabizarro_2` #16: SINKING HIPPO → Sinking Hippo
+- `cinematic_kayfabizarro_2` #17: POSSESSED CHIHUAHUA → Possessed Chihuahua
+- `cinematic_kayfabizarro_2` #18: HARD-DYING HOUND → Hard-Dying Hound
+- `cinematic_kayfabizarro_2` #19: HOT SAXOPHONE HYENA → Hot Saxophone Hyena
+- `cinematic_kayfabizarro_2` #20: WOODEN WOODPECKER → Wooden Woodpecker
+- `cinematic_kayfabizarro_2` #21: RULES OF THE GAME ROOSTER → Rules of the Game Rooster
+- `cinematic_kayfabizarro_2` #22: NOSFERATU BAT → Nosferatu Bat
+- `cinematic_kayfabizarro_2` #23: POTEMKIN PELICAN → Potemkin Pelican
+- `cinematic_kayfabizarro_2` #24: CAMERA-EYE CHAMELEON → Camera-Eye Chameleon
+- `cinematic_kayfabizarro_2` #25: STAGECOACH STALLION → Stagecoach Stallion
+- `cinematic_kayfabizarro_2` #26: REPLICANT RACCOON → Replicant Raccoon
+- `cinematic_kayfabizarro_2` #27: BROKEBACK BOVINE → Brokeback Bovine
+- `cinematic_kayfabizarro_2` #28: SHAWSHANK SEAGULL → Shawshank Seagull
+- `cinematic_kayfabizarro_2` #29: PATHER PANCHALI TIGER → Pather Panchali Tiger
+- `cinematic_kayfabizarro_2` #30: SPRING TOWN PANDA → Spring Town Panda
+- `cinematic_kayfabizarro_2` #31: HOUSEMAID CAT → Housemaid Cat
+- `cinematic_kayfabizarro_2` #32: HONG KONG ACTION DRAGON → Hong Kong Action Dragon
+- `cinematic_kayfabizarro_2` #33: UNDERDEVELOPMENT IGUANA → Underdevelopment Iguana
+- `cinematic_kayfabizarro_2` #34: RED LIGHT ARMADILLO → Red Light Armadillo
+- `cinematic_kayfabizarro_2` #35: PRISONER LLAMA → Prisoner Llama
+- `cinematic_kayfabizarro_2` #36: PANCHO VILLA VULTURE → Pancho Villa Vulture
+- `cinematic_kayfabizarro_2` #37: HANGING ROCK KANGAROO → Hanging Rock Kangaroo
+- `cinematic_kayfabizarro_2` #38: ONCE WERE WOMBATS → Once Were Wombats
+- `cinematic_kayfabizarro_2` #39: THIRD MAN BULLDOG → Third Man Bulldog
+- `cinematic_kayfabizarro_2` #40: HOLY GRAIL PARROT → Holy Grail Parrot
+- `cinematic_kayfabizarro_2` #41: MARKETA LAZAROVA LYNX → Marketa Lazarova Lynx
+- `cinematic_kayfabizarro_2` #42: TEDDY BEAR BOAR → Teddy Bear Boar
+- `cinematic_kayfabizarro_2` #43: ROUND-UP WOLF → Round-Up Wolf
+- `cinematic_kayfabizarro_2` #44: COME AND SEE BEAR → Come and See Bear
+- `cinematic_kayfabizarro_2` #45: IRANIAN DEER → Iranian Deer
+- `cinematic_kayfabizarro_2` #46: NIGHT COUNTING CAMEL → Night Counting Camel
+- `cinematic_kayfabizarro_2` #47: HALFON HILL SLOTH → Halfon Hill Sloth
+- `cinematic_kayfabizarro_2` #48: DRY SUMMER TORTOISE → Dry Summer Tortoise
+- `cinematic_kayfabizarro_2` #49: PHANTOM CARRIAGE REINDEER → Phantom Carriage Reindeer
+- `cinematic_kayfabizarro_2` #50: UNKNOWN MOOSE → Unknown Moose
+- `cinematic_kayfabizarro_2` #51: NATURE PUFFIN → Nature Puffin
+- `cinematic_kayfabizarro_2` #52: FLICKERING WALRUS → Flickering Walrus
+- `cinematic_kayfabizarro_2` #53: THE BALLOT BOX BADGER → The Ballot Box Badger
+- `cinematic_kayfabizarro_2` #54: THE RETROSPECTIVE RAT → The Retrospective Rat
+- `cinematic_kayfabizarro_2` #55: THE GENRE PIGEONHOLE → The Genre Pigeonhole
+- `cinematic_kayfabizarro_2` #56: THE WIKIPEDIA WEASEL → The Wikipedia Weasel
+- `ignore_dystopia` #56: THE CORE QUESTION → The Core Question
+- `embrace_protopia` #56: THE CORE QUESTION → The Core Question
+- `deep_state_plumbing` #1: THE VENETIAN LION → The Venetian Lion
+- `deep_state_plumbing` #2: THE VATICAN BANKER → The Vatican Banker
+- `deep_state_plumbing` #3: THE BLACK NOBILITY → The Black Nobility
+- `deep_state_plumbing` #4: THE REMEMBRANCER → The Remembrancer
+- `deep_state_plumbing` #5: THE EMPIRE BUILDER → The Empire Builder
+- `deep_state_plumbing` #6: THE COUNCIL → The Council
+- `deep_state_plumbing` #7: THE TAX-EXEMPT PHILANTHROPIST → The Tax-Exempt Philanthropist
+- `deep_state_plumbing` #8: THE PAPERCLIP SCIENTIST → The Paperclip Scientist
+- `deep_state_plumbing` #9: THE DIRECTOR → The Director
+- `deep_state_plumbing` #10: THE MK-ULTRA DOCTOR → The MK-Ultra Doctor
+- `deep_state_plumbing` #11: THE GLADIO OPERATOR → The Gladio Operator
+- `deep_state_plumbing` #12: THE MOCKINGBIRD → The Mockingbird
+- `deep_state_plumbing` #13: THE CENTRAL BANKER → The Central Banker
+- `deep_state_plumbing` #14: THE TOWER OF BASEL → The Tower of Basel
+- `deep_state_plumbing` #15: THE AUDIT HAWK → The Audit Hawk
+- `deep_state_plumbing` #16: THE SWIFT OPERATOR → The SWIFT Operator
+- `deep_state_plumbing` #17: THE TEXAS OIL STEER → The Texas Oil Steer
+- `deep_state_plumbing` #18: THE TRIANGULATOR → The Triangulator
+- `deep_state_plumbing` #19: THE BLACK SHEEP PRINCE → The Black Sheep Prince
+- `deep_state_plumbing` #20: THE REVOLVING DOOR → The Revolving Door
+- `deep_state_plumbing` #21: THE FINANCIER SPIDER → The Financier Spider
+- `deep_state_plumbing` #22: THE SOCIALITE HANDLER → The Socialite Handler
+- `deep_state_plumbing` #23: THE HONEY TRAP → The Honey Trap
+- `deep_state_plumbing` #24: THE SWEETHEART DEAL → The Sweetheart Deal
+- `deep_state_plumbing` #25: THE PAYPAL MEERKAT → The PayPal Meerkat
+- `deep_state_plumbing` #26: THE PALANTIR → The Palantir
+- `deep_state_plumbing` #27: THE BLACK BOX ALGO → The Black Box Algo
+- `deep_state_plumbing` #28: THE GREAT RESETTER → The Great Resetter
+- `deep_state_plumbing` #29: THE UAP WHISTLEBLOWER → The UAP Whistleblower
+- `deep_state_plumbing` #30: THE ANTARCTIC PENGUIN → The Antarctic Penguin
+- `deep_state_plumbing` #31: THE BREAKAWAY CIV → The Breakaway Civ
+- `deep_state_plumbing` #32: THE PSYOP → The Psyop
+- `deep_state_plumbing` #33: THE BLACK SWAN → The Black Swan
+- `deep_state_plumbing` #34: THE DEMOLITION → The Demolition
+- `deep_state_plumbing` #35: THE PANDEMIC SIMULATION → The Pandemic Simulation
+- `deep_state_plumbing` #36: THE MAGIC BULLET → The Magic Bullet
+- `deep_state_plumbing` #37: THE CONSPIRACY BOARD → The Conspiracy Board
+- `deep_state_plumbing` #38: THE INDIE JOURNALIST → The Indie Journalist
+- `deep_state_plumbing` #39: THE FOIA REQUEST → The FOIA Request
+- `deep_state_plumbing` #40: THE MEME WARRIOR → The Meme Warrior
+- `deep_state_plumbing` #41: LAWFARE → Lawfare
+- `deep_state_plumbing` #42: THE ALGORITHM → The Algorithm
+- `deep_state_plumbing` #43: THE LIMITED HANGOUT → The Limited Hangout
+- `deep_state_plumbing` #44: THE NUDGE UNIT → The Nudge Unit
+- `deep_state_plumbing` #45: THE EGREGORE → The Egregore
+- `deep_state_plumbing` #46: THE PANOPTICON → The Panopticon
+- `deep_state_plumbing` #47: THE MOLOCH → The Moloch
+- `deep_state_plumbing` #48: THE OVERTON WINDOW → The Overton Window
+- `deep_state_plumbing` #49: TRANSHUMANISM → Transhumanism
+- `deep_state_plumbing` #50: THE SOCIAL CREDIT SCORE → The Social Credit Score
+- `deep_state_plumbing` #51: THE BUNKER → The Bunker
+- `deep_state_plumbing` #52: THE SINGULARITY → The Singularity
+- `dream_wrestling_with_kayfabe_freud` #1: THE UNCONSCIOUS (Das Unbewusste) → The Unconscious (Das Unbewusste)
+- `dream_wrestling_with_kayfabe_freud` #2: THE PRECONSCIOUS (Vorbewusst) → The Preconscious (Vorbewusst)
+- `dream_wrestling_with_kayfabe_freud` #3: THE CENSOR (Die Zensur) → The Censor (Die Zensur)
+- `dream_wrestling_with_kayfabe_freud` #4: THE WISH (Der Wunsch) → The Wish (Der Wunsch)
+- `dream_wrestling_with_kayfabe_freud` #5: CONDENSATION (Verdichtung) → Condensation (Verdichtung)
+- `dream_wrestling_with_kayfabe_freud` #6: DISPLACEMENT (Verschiebung) → Displacement (Verschiebung)
+- `dream_wrestling_with_kayfabe_freud` #7: REGRESSION (Regredieren) → Regression (Regredieren)
+- `dream_wrestling_with_kayfabe_freud` #8: SECONDARY REVISION (Sekundäre Bearbeitung) → Secondary Revision (Sekundäre Bearbeitung)
+- `dream_wrestling_with_kayfabe_freud` #9: DAY RESIDUE (Tagesreste) → Day Residue (Tagesreste)
+- `dream_wrestling_with_kayfabe_freud` #10: INFANTILE MATERIAL (Das Infantile) → Infantile Material (Das Infantile)
+- `dream_wrestling_with_kayfabe_freud` #11: SOMATIC STIMULUS (Leibreiz) → Somatic Stimulus (Leibreiz)
+- `dream_wrestling_with_kayfabe_freud` #12: THE ALARM CLOCK (Der Wecker) → The Alarm Clock (Der Wecker)
+- `dream_wrestling_with_kayfabe_freud` #14: THE STAIRCASE (Die Treppe) → The Staircase (Die Treppe)
+- `dream_wrestling_with_kayfabe_freud` #16: THE WOOD (Das Holz) → The Wood (Das Holz)
+- `dream_wrestling_with_kayfabe_freud` #17: THE TOOTH EXTRACTOR (Zahnreiz) → The Tooth Extractor (Zahnreiz)
+- `dream_wrestling_with_kayfabe_freud` #18: THE FLYING MACHINE (Das Flugwerk) → The Flying Machine (Das Flugwerk)
+- `dream_wrestling_with_kayfabe_freud` #19: THE FALL (Der Sturz) → The Fall (Der Sturz)
+- `dream_wrestling_with_kayfabe_freud` #20: THE VERMIN (Das Ungeziefer) → The Vermin (Das Ungeziefer)
+- `dream_wrestling_with_kayfabe_freud` #21: THE EMPEROR (Der Kaiser) → The Emperor (Der Kaiser)
+- `dream_wrestling_with_kayfabe_freud` #22: THE QUEEN (Die Königin) → The Queen (Die Königin)
+- `dream_wrestling_with_kayfabe_freud` #23: THE INTRUDER (Der Eindringling) → The Intruder (Der Eindringling)
+- `dream_wrestling_with_kayfabe_freud` #24: THE DOUBLE (Der Doppelgänger) → The Double (Der Doppelgänger)
+- `dream_wrestling_with_kayfabe_freud` #25: THE EXAMINATION (Der Prüfungstraum) → The Examination (Der Prüfungstraum)
+- `dream_wrestling_with_kayfabe_freud` #26: PUBLIC NAKEDNESS (Die Nacktheit) → Public Nakedness (Die Nacktheit)
+- `dream_wrestling_with_kayfabe_freud` #27: THE PARALYSIS (Die Hemmung) → The Paralysis (Die Hemmung)
+- `dream_wrestling_with_kayfabe_freud` #28: THE DEAD RELATIVE (Der tote Verwandte) → The Dead Relative (Der tote Verwandte)
+- `dream_wrestling_with_kayfabe_freud` #29: OEDIPUS REX → Oedipus Rex
+- `dream_wrestling_with_kayfabe_freud` #30: THE SPHINX → The Sphinx
+- `dream_wrestling_with_kayfabe_freud` #31: THE CROSSROADS → The Crossroads
+- `dream_wrestling_with_kayfabe_freud` #32: HAMLET (The Modern Oedipus) → Hamlet (The Modern Oedipus)
+- `dream_wrestling_with_kayfabe_freud` #33: OVERDETERMINATION (Überdeterminierung) → Overdetermination (Überdeterminierung)
+- `dream_wrestling_with_kayfabe_freud` #34: REPRESENTABILITY (Darstellbarkeit) → Representability (Darstellbarkeit)
+- `dream_wrestling_with_kayfabe_freud` #35: OPPOSITES (Gegensinn) → Opposites (Gegensinn)
+- `dream_wrestling_with_kayfabe_freud` #36: THE REBUS (Der Bilderrätsel) → The Rebus (Der Bilderrätsel)
+- `dream_wrestling_with_kayfabe_freud` #37: THE COUCH (Die Couch) → The Couch (Die Couch)
+- `dream_wrestling_with_kayfabe_freud` #38: RESISTANCE (Widerstand) → Resistance (Widerstand)
+- `dream_wrestling_with_kayfabe_freud` #39: TRANSFERENCE (Übertragung) → Transference (Übertragung)
+- `dream_wrestling_with_kayfabe_freud` #40: THE INTERPRETATION / DETECTIVE (Die Deutung) → The Interpretation / Detective (Die Deutung)
+- `dream_wrestling_with_kayfabe_freud` #43: THE SUPER-EGO (Über-Ich) → The Super-Ego (Über-Ich)
+- `dream_wrestling_with_kayfabe_freud` #44: PSYCHIC ENERGY (Libido) → Psychic Energy (Libido)
+- `dream_wrestling_with_kayfabe_freud` #46: THE NAVEL (Der Nabel des Traums) → The Navel (Der Nabel des Traums)
+- `dream_wrestling_with_kayfabe_freud` #47: MORNING AMNESIA (Das Vergessen) → Morning Amnesia (Das Vergessen)
+- `dream_wrestling_with_kayfabe_freud` #48: THE NOTEBOOK (Das Notizbuch) → The Notebook (Das Notizbuch)
+- `dream_wrestling_with_kayfabe_freud` #49: TELEPATHY (Telepathie) → Telepathy (Telepathie)
+- `dream_wrestling_with_kayfabe_freud` #50: DEJA VU → Deja Vu
+- `dream_wrestling_with_kayfabe_freud` #51: THE PROPHETIC DREAM (Wahrtraum) → The Prophetic Dream (Wahrtraum)
+- `dream_wrestling_with_kayfabe_freud` #52: LUCIDITY (Der Klartraum) → Lucidity (Der Klartraum)
+- `dream_wrestling_with_kayfabe_freud` #53: HOW TO USE THIS DECK → How to Use This Deck
+- `dream_wrestling_with_kayfabe_freud` #54: NEW RULE: THE SLIP → New Rule: The Slip
+- `dream_wrestling_with_kayfabe_freud` #55: NEW RULE: THE SYMBOL → New Rule: The Symbol
+- `dream_wrestling_with_kayfabe_freud` #56: CREDITS & BLAME → Credits & Blame
+- `grimms_kayfabe_legends_expansion_set_02` #1: THE GOLDEN GOOSE → The Golden Goose
+- `grimms_kayfabe_legends_expansion_set_02` #2: THE LUMP OF SILVER → The Lump of Silver
+- `grimms_kayfabe_legends_expansion_set_02` #3: THE STRAW, COAL, & BEAN → The Straw, Coal, & Bean
+- `grimms_kayfabe_legends_expansion_set_02` #4: THE TURNIP → The Turnip
+- `grimms_kayfabe_legends_expansion_set_02` #5: THE MILLSTONE → The Millstone
+- `grimms_kayfabe_legends_expansion_set_02` #6: THE SEVEN-FLY GIRDLE → The Seven-Fly Girdle
+- `grimms_kayfabe_legends_expansion_set_02` #7: THE POISON COMB → The Poison Comb
+- `grimms_kayfabe_legends_expansion_set_02` #8: THE AXE & ANVIL → The Axe & Anvil
+- `grimms_kayfabe_legends_expansion_set_02` #9: THE BREMEN PYRAMID → The Bremen Pyramid
+- `grimms_kayfabe_legends_expansion_set_02` #10: THE SEVEN KIDS → The Seven Kids
+- `grimms_kayfabe_legends_expansion_set_02` #11: THE ANTS & DUCKS → The Ants & Ducks
+- `grimms_kayfabe_legends_expansion_set_02` #12: THE TWELVE PRINCEESSES → The Twelve Princeesses
+- `grimms_kayfabe_legends_expansion_set_02` #13: THE TALKING MIRROR → The Talking Mirror
+- `grimms_kayfabe_legends_expansion_set_02` #14: THE CHALK → The Chalk
+- `grimms_kayfabe_legends_expansion_set_02` #15: FALADA'S HEAD → Falada's Head
+- `grimms_kayfabe_legends_expansion_set_02` #16: THE JUNIPER BIRD → The Juniper Bird
+- `grimms_kayfabe_legends_expansion_set_02` #17: THE WICKED STEPMOTHER → The Wicked Stepmother
+- `grimms_kayfabe_legends_expansion_set_02` #18: THE FALSE BRIDE → The False Bride
+- `grimms_kayfabe_legends_expansion_set_02` #19: RUMPELSTILTSKIN → Rumpelstiltskin
+- `grimms_kayfabe_legends_expansion_set_02` #20: THE CAT OF KEHREWIT → The Cat of Kehrewit
+- `grimms_kayfabe_legends_expansion_set_02` #21: THE GOLDEN BIRD → The Golden Bird
+- `grimms_kayfabe_legends_expansion_set_02` #22: THE WATER OF LIFE → The Water of Life
+- `grimms_kayfabe_legends_expansion_set_02` #23: THE WISHING CLOAK → The Wishing Cloak
+- `grimms_kayfabe_legends_expansion_set_02` #24: THE TABLE, ASS, & STICK → The Table, Ass, & Stick
+- `grimms_kayfabe_legends_expansion_set_02` #25: THE GINGERBREAD CAGE → The Gingerbread Cage
+- `grimms_kayfabe_legends_expansion_set_02` #26: THE WITCH'S OVEN → The Witch's Oven
+- `grimms_kayfabe_legends_expansion_set_02` #27: THE GLASS MOUNTAIN → The Glass Mountain
+- `grimms_kayfabe_legends_expansion_set_02` #28: THE BARREL OF NAILS → The Barrel of Nails
+- `grimms_kayfabe_legends_expansion_set_02` #29: DOCTOR KNOWALL → Doctor Knowall
+- `grimms_kayfabe_legends_expansion_set_02` #30: CLEVER ELSIE → Clever Elsie
+- `grimms_kayfabe_legends_expansion_set_02` #31: THE THREE LANGUAGES → The Three Languages
+- `grimms_kayfabe_legends_expansion_set_02` #32: HANS'S LOGIC → Hans's Logic
+- `grimms_kayfabe_legends_expansion_set_02` #33: IRON HANS → Iron Hans
+- `grimms_kayfabe_legends_expansion_set_02` #34: THE GIANT → The Giant
+- `grimms_kayfabe_legends_expansion_set_02` #35: THE BEAR PRINCE → The Bear Prince
+- `grimms_kayfabe_legends_expansion_set_02` #36: THE THIRTEENTH FAIRY → The Thirteenth Fairy
+- `grimms_kayfabe_legends_expansion_set_02` #37: THE SALAD (BAD) → The Salad (Bad)
+- `grimms_kayfabe_legends_expansion_set_02` #38: THE BLUE LIGHT → The Blue Light
+- `grimms_kayfabe_legends_expansion_set_02` #39: RAMPION → Rampion
+- `grimms_kayfabe_legends_expansion_set_02` #40: THE WHITE SNAKE → The White Snake
+- `grimms_kayfabe_legends_expansion_set_02` #41: THE GOLDEN HAIR → The Golden Hair
+- `grimms_kayfabe_legends_expansion_set_02` #42: THE HAZEL TREE → The Hazel Tree
+- `grimms_kayfabe_legends_expansion_set_02` #43: THE SEVERED HEEL → The Severed Heel
+- `grimms_kayfabe_legends_expansion_set_02` #44: THE PEAS IN ASHES → The Peas in Ashes
+- `grimms_kayfabe_legends_expansion_set_02` #45: THE MAGIC WAND → The Magic Wand
+- `grimms_kayfabe_legends_expansion_set_02` #46: THE DROPS OF BLOOD → The Drops of Blood
+- `grimms_kayfabe_legends_expansion_set_02` #47: THE SACK OF WISDOM → The Sack of Wisdom
+- `grimms_kayfabe_legends_expansion_set_02` #48: THE WISHING RING → The Wishing Ring
+- `grimms_kayfabe_legends_expansion_set_02` #49: RAPUNZEL'S BRAID → Rapunzel's Braid
+- `grimms_kayfabe_legends_expansion_set_02` #50: THE FISHERMAN'S WIFE → The Fisherman's Wife
+- `grimms_kayfabe_legends_expansion_set_02` #51: SLEEPING BEAUTY → Sleeping Beauty
+- `grimms_kayfabe_legends_expansion_set_02` #52: CAT-SKIN → Cat-Skin
+- `help_i_am_a_human` #1: CHARLES DARWIN → Charles Darwin
+- `help_i_am_a_human` #2: THE SELFISH GENE → The Selfish Gene
+- `help_i_am_a_human` #3: LYNN MARGULIS → Lynn Margulis
+- `help_i_am_a_human` #4: SURVIVAL OF THE FRIENDLIEST → Survival of the Friendliest
+- `help_i_am_a_human` #5: MIRROR NEURONS → Mirror Neurons
+- `help_i_am_a_human` #6: OXYTOCIN → Oxytocin
+- `help_i_am_a_human` #7: THE VAGUS NERVE → The Vagus Nerve
+- `help_i_am_a_human` #8: PAIN CENTER → Pain Center
+- `help_i_am_a_human` #9: THOMAS HOBBES → Thomas Hobbes
+- `help_i_am_a_human` #10: JEAN-JACQUES ROUSSEAU → Jean-Jacques Rousseau
+- `help_i_am_a_human` #11: RUTGER BREGMAN → Rutger Bregman
+- `help_i_am_a_human` #12: LORD OF THE FLIES → Lord of the Flies
+- `help_i_am_a_human` #13: MICHAEL TOMASELLO → Michael Tomasello
+- `help_i_am_a_human` #14: THE STAG HUNT → The Stag Hunt
+- `help_i_am_a_human` #15: THE FREE RIDER → The Free Rider
+- `help_i_am_a_human` #16: THE COMMONS → The Commons
+- `help_i_am_a_human` #17: FRANS DE WAAL → Frans de Waal
+- `help_i_am_a_human` #18: THE PSYCHOPATH → The Psychopath
+- `help_i_am_a_human` #19: EMOTIONAL CONTAGION → Emotional Contagion
+- `help_i_am_a_human` #20: VENEER THEORY → Veneer Theory
+- `help_i_am_a_human` #21: HOMO ECONOMICUS → Homo Economicus
+- `help_i_am_a_human` #22: THE FILTER BUBBLE → The Filter Bubble
+- `help_i_am_a_human` #23: LONELINESS → Loneliness
+- `help_i_am_a_human` #24: DIGITAL DISTRACTION → Digital Distraction
+- `help_i_am_a_human` #25: INTRINSIC MOTIVATION → Intrinsic Motivation
+- `help_i_am_a_human` #26: HOMO COOPERATIVUS → Homo Cooperativus
+- `help_i_am_a_human` #27: BULLSHIT JOBS → Bullshit Jobs
+- `help_i_am_a_human` #28: THE NUDGE → The Nudge
+- `help_i_am_a_human` #29: HOMO HAPTICUS → Homo Hapticus
+- `help_i_am_a_human` #30: RESONANCE → Resonance
+- `help_i_am_a_human` #31: SKIN HUNGER → Skin Hunger
+- `help_i_am_a_human` #32: FLOW → Flow
+- `help_i_am_a_human` #33: THE KILLING INHIBITION → The Killing Inhibition
+- `help_i_am_a_human` #34: THE CHRISTMAS TRUCE → The Christmas Truce
+- `help_i_am_a_human` #35: PROPAGANDA → Propaganda
+- `help_i_am_a_human` #36: NON-VIOLENT RESISTANCE → Non-Violent Resistance
+- `help_i_am_a_human` #37: THE ALPHA MYTH → The Alpha Myth
+- `help_i_am_a_human` #38: LEVELING MECHANISM → Leveling Mechanism
+- `help_i_am_a_human` #39: CORRUPTION OF POWER → Corruption of Power
+- `help_i_am_a_human` #40: EGALITARIANISM → Egalitarianism
+- `help_i_am_a_human` #41: THE HELPER TODDLER → The Helper Toddler
+- `help_i_am_a_human` #42: ALLOPARENTING → Alloparenting
+- `help_i_am_a_human` #43: HOMO LUDENS (PLAY) → Homo Ludens (Play)
+- `help_i_am_a_human` #44: CONDITIONED SELF → Conditioned Self
+- `help_i_am_a_human` #45: IMMANUEL KANT → Immanuel Kant
+- `help_i_am_a_human` #46: ERICH FROMM → Erich Fromm
+- `help_i_am_a_human` #47: MARTIN BUBER → Martin Buber
+- `help_i_am_a_human` #48: HANNAH ARENDT → Hannah Arendt
+- `help_i_am_a_human` #49: PROTOPIA → Protopia
+- `help_i_am_a_human` #50: TEAM HUMAN → Team Human
+- `help_i_am_a_human` #51: SELF-FULFILLING PROPHECY → Self-Fulfilling Prophecy
+- `help_i_am_a_human` #52: HOPE → Hope
+- `help_i_am_a_human` #53: BLÖDSINN! (NONSENSE) → Blödsinn! (Nonsense)
+- `help_i_am_a_human` #54: KAYFABIZARRO → Kayfabizarro
+- `help_i_am_a_human` #55: THE SCISSORS → The Scissors
+- `help_i_am_a_human` #56: THE GLUE STICK → The Glue Stick
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #1: THE MASTER ARCHITECT → The Master Architect
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #2: THE ULTRA-COOPERATOR → The Ultra-Cooperator
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #3: ALLOPARENTING DAYCARE → Alloparenting Daycare
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #4: THE SOCIAL LIGHTHOUSE → The Social Lighthouse
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #5: THE LONELINESS SMOKER → The Loneliness Smoker
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #6: THE TRUST ELIXIR → The Trust Elixir
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #7: THE IMMUNE-BOOSTING HUG → The Immune-Boosting Hug
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #8: THE MICRO-ENCOUNTER → The Micro-Encounter
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #9: THE INNATE COMPASS → The Innate Compass
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #10: THE TODDLER'S FAIR SHARE → The Toddler's Fair Share
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #11: INEQUALITY AVERSION → Inequality Aversion
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #12: THE HONEST WALLET → The Honest Wallet
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #13: HOMO OECONOMICUS → Homo Oeconomicus
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #14: THE TIPPING POINT TUG-O-WAR → The Tipping Point Tug-o-War
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #15: THE DEFENSIVE PORCUPINE → The Defensive Porcupine
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #16: THE HESITANT SOLDIER → The Hesitant Soldier
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #17: THE DOPAMINE GIVER → The Dopamine Giver
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #18: ALTRUISTIC RIPPLE EFFECT → Altruistic Ripple Effect
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #19: THE EMPATHIC RESCUER → The Empathic Rescuer
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #20: THE OBEDIENCE BREAKER → The Obedience Breaker
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #21: THE INNATE EXPLORER → The Innate Explorer
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #22: THE EXTRINSIC CORRUPTOR → The Extrinsic Corruptor
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #23: THE BLOOD MONEY PARADOX → The Blood Money Paradox
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #24: THE BULLSHIT JOB → The Bullshit Job
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #25: THE WEALTH BLINDFOLD → The Wealth Blindfold
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #26: THE MULTITASKING DRUNKARD → The Multitasking Drunkard
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #27: THE SMARTPHONE WALL → The Smartphone Wall
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #28: NATURE'S ANTIDOTE → Nature's Antidote
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #29: SELF-FULFILLING PROPHECY → Self-Fulfilling Prophecy
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #30: THE MATERIALISTIC STRESSOR → The Materialistic Stressor
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #31: THE EUDAIMONIC ENGINE → The Eudaimonic Engine
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #32: THE PHANTOM EGOIST → The Phantom Egoist
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #33: THE POSITIVE LABEL → The Positive Label
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #34: THE HARD SLAP → The Hard Slap
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #35: THE RECOGNITION STARVATION → The Recognition Starvation
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #36: THE COMMUNITY ILLUSION → The Community Illusion
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #37: THE EMPATHY MIRROR → The Empathy Mirror
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #38: THE ARTIFICIAL SCARCITY → The Artificial Scarcity
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #39: THE TIT-FOR-TAT TANGO → The Tit-for-Tat Tango
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #40: THE ULTIMATUM ENFORCER → The Ultimatum Enforcer
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #41: THE MEANING MAKER → The Meaning Maker
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #42: THE CYNIC'S DELUSION → The Cynic's Delusion
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #43: THE FOUR-BILLION-YEAR DRAFT → The Four-Billion-Year Draft
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #44: THE FLUFFY ANARCHIST → The Fluffy Anarchist
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #45: THE TRIBAL SHIELD → The Tribal Shield
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #46: THE GOSSIP NETWORK → The Gossip Network
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #47: THE STATUS TREADMILL → The Status Treadmill
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #48: THE EYE OF THE JUDGE → The Eye of the Judge
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #49: THE EMPATHY FATIGUE → The Empathy Fatigue
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #50: THE INTRINSIC FLAME → The Intrinsic Flame
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #51: THE ZERO-SUM GOBLIN → The Zero-Sum Goblin
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #52: THE PRO-SOCIAL GAMBLE → The Pro-Social Gamble
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #53: THE VULNERABILITY LOOP → The Vulnerability Loop
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #54: THE OPTIMIST'S REBELLION → The Optimist's Rebellion
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #55: THE VILLAGE HEARTH → The Village Hearth
+- `human_nature_uncut_hilfe_ich_bin_ein_mensch` #56: THE BLANK CARD → The Blank Card
+- `ideology_wrestling` #1: THE CAVE MYTH → The Cave Myth
+- `ideology_wrestling` #2: THE TRIBE → The Tribe
+- `ideology_wrestling` #3: THE SHAMAN → The Shaman
+- `ideology_wrestling` #4: THE TABOO → The Taboo
+- `ideology_wrestling` #5: THE PHARAOH → The Pharaoh
+- `ideology_wrestling` #6: HAMMURABI'S CODE → Hammurabi's Code
+- `ideology_wrestling` #7: THE HIEROPHANT → The Hierophant
+- `ideology_wrestling` #8: THE SCAPEGOAT → The Scapegoat
+- `ideology_wrestling` #9: SOCRATES → Socrates
+- `ideology_wrestling` #10: PLATO'S CAVE → Plato's Cave
+- `ideology_wrestling` #11: THE STOIC → The Stoic
+- `ideology_wrestling` #12: THE SOPHIST → The Sophist
+- `ideology_wrestling` #13: DIVINE RIGHT → Divine Right
+- `ideology_wrestling` #14: THE INQUISITION → The Inquisition
+- `ideology_wrestling` #15: ORIGINAL SIN → Original Sin
+- `ideology_wrestling` #16: THE SERF → The Serf
+- `ideology_wrestling` #17: THE PRINTING PRESS → The Printing Press
+- `ideology_wrestling` #18: MACHIAVELLI → Machiavelli
+- `ideology_wrestling` #19: MARTIN LUTHER → Martin Luther
+- `ideology_wrestling` #20: THE HUMANIST → The Humanist
+- `ideology_wrestling` #21: THE GUILLOTINE → The Guillotine
+- `ideology_wrestling` #22: THE SOCIAL CONTRACT → The Social Contract
+- `ideology_wrestling` #23: THE RATIONALIST → The Rationalist
+- `ideology_wrestling` #24: THE SOVEREIGN INDIVIDUAL → The Sovereign Individual
+- `ideology_wrestling` #25: THE INVISIBLE HAND → The Invisible Hand
+- `ideology_wrestling` #26: THE FACTORY → The Factory
+- `ideology_wrestling` #27: THE CORPORATION → The Corporation
+- `ideology_wrestling` #28: HOMO ECONOMICUS → Homo Economicus
+- `ideology_wrestling` #29: KARL MARX → Karl Marx
+- `ideology_wrestling` #30: THE VANGUARD PARTY → The Vanguard Party
+- `ideology_wrestling` #31: THE STRIKE → The Strike
+- `ideology_wrestling` #32: ALIENATION → Alienation
+- `ideology_wrestling` #33: THE BLACK FLAG → The Black Flag
+- `ideology_wrestling` #34: MUTUAL AID → Mutual Aid
+- `ideology_wrestling` #35: THE MOLOTOV → The Molotov
+- `ideology_wrestling` #36: THE COMMUNE → The Commune
+- `ideology_wrestling` #37: THE FLAG → The Flag
+- `ideology_wrestling` #38: THE BORDER → The Border
+- `ideology_wrestling` #39: THE PATRIOT → The Patriot
+- `ideology_wrestling` #40: COLONIALISM → Colonialism
+- `ideology_wrestling` #41: BIG BROTHER → Big Brother
+- `ideology_wrestling` #42: THE GULAG → The Gulag
+- `ideology_wrestling` #43: THE SHOW TRIAL → The Show Trial
+- `ideology_wrestling` #44: DOUBLETHINK → Doublethink
+- `ideology_wrestling` #45: THE MARKET FUNDAMENTALIST → The Market Fundamentalist
+- `ideology_wrestling` #46: THE TECHNOCRAT → The Technocrat
+- `ideology_wrestling` #47: THE SHOCK DOCTRINE → The Shock Doctrine
+- `ideology_wrestling` #48: THE PRIVATIZER → The Privatizer
+- `ideology_wrestling` #49: THE FILTER BUBBLE → The Filter Bubble
+- `ideology_wrestling` #50: THE TROLL → The Troll
+- `ideology_wrestling` #51: THE MEME → The Meme
+- `ideology_wrestling` #52: THE CANCEL MOB → The Cancel Mob
+- `ideology_wrestling` #53: SURVEILLANCE CAPITALISM → Surveillance Capitalism
+- `ideology_wrestling` #54: THE ALGORITHM → The Algorithm
+- `ideology_wrestling` #55: THE INFLUENCER → The Influencer
+- `ideology_wrestling` #56: THE ATTENTION ECONOMY → The Attention Economy
+- `ideology_wrestling` #57: THE CYBORG → The Cyborg
+- `ideology_wrestling` #58: THE AI SINGULARITY → The AI Singularity
+- `ideology_wrestling` #59: THE CLIMATE CRISIS → The Climate Crisis
+- `ideology_wrestling` #60: THE PREPPER → The Prepper
+- `ideology_wrestling` #61: THE COMMONS → The Commons
+- `ideology_wrestling` #62: OPEN SOURCE → Open Source
+- `ideology_wrestling` #63: PROTOPIA → Protopia
+- `ideology_wrestling` #64: EPISTEMIC HUMILITY → Epistemic Humility
+- `ideology_wrestling` #65: UNCLE FRIZZLEBOB → Uncle FrizzleBob
+- `ideology_wrestling` #66: THE SCISSORS → The Scissors
+- `ideology_wrestling` #67: BLÖDSINN! BUTTON → Blödsinn! Button
+- `ideology_wrestling` #68: THE KAYFABIZARRO DIE → The Kayfabizarro Die
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #1: THE OLD-FASHIONED CHAT → The Old-Fashioned Chat
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #2: THE PERSONA → The Persona
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #3: THE COUNTERFEIT FACE → The Counterfeit Face
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #4: THE EXTROVERT → The Extrovert
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #5: THE MOTHER-FEAR → The Mother-Fear
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #6: THE FATHER-IMAGO → The Father-Imago
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #7: THE JEALOUS COLLEAGUE → The Jealous Colleague
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #8: THE UNCONSCIOUS WIFE → The Unconscious Wife
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #9: THE SPOKEN WORD → The Spoken Word
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #10: THE LIBIDO → The Libido
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #11: THE BOOMERANG → The Boomerang
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #12: THE WISH-FULFILMENT → The Wish-Fulfilment
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #13: THE MAGIC PURSE → The Magic Purse
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #14: THE BORING FINGER → The Boring Finger
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #15: THE INVISIBLE LADDER → The Invisible Ladder
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #16: THE FIRE-STICK → The Fire-Stick
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #17: THE HOARDER → The Hoarder
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #18: THE INTROVERT → The Introvert
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #19: THE RESENTMENT RECORD → The Resentment Record
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #20: THE CRYPTOMNESIA → The Cryptomnesia
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #21: THE SHADOW → The Shadow
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #22: THE GIANT OF DOUBT → The Giant of Doubt
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #23: THE TERRIBLE MOTHER → The Terrible Mother
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #24: THE ARMY OF ALIENS → The Army of Aliens
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #25: THE HERO (SUN-GOD) → The Hero (Sun-God)
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #26: THE ANIMA → The Anima
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #27: THE FALSE LAW → The False Law
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #28: THE DEMON-WOMAN → The Demon-Woman
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #29: THE SPLIT MIND → The Split Mind
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #30: THE NEGATIVE CAPABILITY → The Negative Capability
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #31: THE SCHIZOPHRENIC SUN → The Schizophrenic Sun
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #32: THE $50,000 DOLLAR PANIC → The $50,000 Dollar Panic
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #33: THE DIVINE DESIGN → The Divine Design
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #34: THE MANDALA → The Mandala
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #35: THE PERFECT SQUARE → The Perfect Square
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #36: THE TRANSCENDENT FUNCTION → The Transcendent Function
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #37: THE NON-RESISTANT WATER → The Non-Resistant Water
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #38: THE REBIRTH → The Rebirth
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #39: THE GOLDEN LINK → The Golden Link
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #40: THE SACRIFICE → The Sacrifice
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #41: THE BLANKETS → The Blankets
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #42: THE DITCHES → The Ditches
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #43: THE KEY → The Key
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #44: THE KNOTS → The Knots
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #45: THE ASS → The Ass
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #46: THE GREEN SNAKE → The Green Snake
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #47: THE WHALE → The Whale
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #48: THE STORK → The Stork
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #49: BLÖDSINN! → Blödsinn!
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #50: NEW-FASHIONED CHAT → New-Fashioned Chat
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #51: GLOSSOLALIA → Glossolalia
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #52: KARMA → Karma
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #53: THE FLOOD → The Flood
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #54: THE HARVEST → The Harvest
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #55: THE EARTHQUAKE → The Earthquake
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #56: THE FIRE → The Fire
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #57: ENANTIODROMIA → Enantiodromia
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #58: THE GAME COMPLETED → The Game Completed
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #59: APOCALYPSE → Apocalypse
+- `jung_and_shinn_a_guide_to_cosmic_cringe` #60: THE RESURRECTION → The Resurrection
+- `kosmik_kayfabizarro_sci_fi_space_opera` #1: THE NEEDLE (Scout) → The Needle (Scout)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #2: THE WHISPER (Vael Variant) → The Whisper (Vael Variant)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #3: THE FANG (Ossian Variant) → The Fang (Ossian Variant)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #4: THE ARROW (Courier) → The Arrow (Courier)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #5: THE HAULER (Freighter) → The Hauler (Freighter)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #6: THE LANCE (Escort) → The Lance (Escort)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #7: THE REAVER (Ossian Lance) → The Reaver (Ossian Lance)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #8: COMMERCE PROTECTOR (Dreshkai Lance) → Commerce Protector (Dreshkai Lance)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #9: THE THRONE (Capital Ship) → The Throne (Capital Ship)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #10: WARLORD-CLASS (Ossian Throne) → Warlord-Class (Ossian Throne)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #11: THE WORLD (Ark) → The World (Ark)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #12: THE SHADOW (Ghost Ship) → The Shadow (Ghost Ship)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #13: THE CRADLE WORLD → The Cradle World
+- `kosmik_kayfabizarro_sci_fi_space_opera` #14: THE FORGE WORLD → The Forge World
+- `kosmik_kayfabizarro_sci_fi_space_opera` #15: THE TOMB WORLD → The Tomb World
+- `kosmik_kayfabizarro_sci_fi_space_opera` #16: THE BLOOM WORLD → The Bloom World
+- `kosmik_kayfabizarro_sci_fi_space_opera` #17: THE VOID STATION → The Void Station
+- `kosmik_kayfabizarro_sci_fi_space_opera` #18: THE ANOMALY WORLD → The Anomaly World
+- `kosmik_kayfabizarro_sci_fi_space_opera` #19: OVERLAPPING CLAIM (Diplomatic Zone) → Overlapping Claim (Diplomatic Zone)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #20: THE IRONWORKERS' COMPACT (Historical Site) → The Ironworkers' Compact (Historical Site)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #21: FIRST CONTACT → First Contact
+- `kosmik_kayfabizarro_sci_fi_space_opera` #22: THE RETRIEVAL → The Retrieval
+- `kosmik_kayfabizarro_sci_fi_space_opera` #23: THE LONG SURVEY → The Long Survey
+- `kosmik_kayfabizarro_sci_fi_space_opera` #24: THE INTERVENTION → The Intervention
+- `kosmik_kayfabizarro_sci_fi_space_opera` #25: THE BLOCKADE RUN → The Blockade Run
+- `kosmik_kayfabizarro_sci_fi_space_opera` #26: DEEP FRONTIER MISSION → Deep Frontier Mission
+- `kosmik_kayfabizarro_sci_fi_space_opera` #27: THE MISSING SURVEY TEAM → The Missing Survey Team
+- `kosmik_kayfabizarro_sci_fi_space_opera` #28: THE CLASSIFIED BRIEFING → The Classified Briefing
+- `kosmik_kayfabizarro_sci_fi_space_opera` #29: STABLE TRANSIT POINT → Stable Transit Point
+- `kosmik_kayfabizarro_sci_fi_space_opera` #30: BREATHING GATE → Breathing Gate
+- `kosmik_kayfabizarro_sci_fi_space_opera` #31: EVENT SCAR → Event Scar
+- `kosmik_kayfabizarro_sci_fi_space_opera` #32: THE SINGING SYSTEMS → The Singing Systems
+- `kosmik_kayfabizarro_sci_fi_space_opera` #33: THE DRIFT → The Drift
+- `kosmik_kayfabizarro_sci_fi_space_opera` #34: THE RESONANCE → The Resonance
+- `kosmik_kayfabizarro_sci_fi_space_opera` #35: GREY MIGRATION → Grey Migration
+- `kosmik_kayfabizarro_sci_fi_space_opera` #36: THE MEMORY WORLDS → The Memory Worlds
+- `kosmik_kayfabizarro_sci_fi_space_opera` #37: THE FOLD DRIVE → The Fold Drive
+- `kosmik_kayfabizarro_sci_fi_space_opera` #38: ENTANGLEMENT NETWORK → Entanglement Network
+- `kosmik_kayfabizarro_sci_fi_space_opera` #39: BIOTIC INTEGRATION → Biotic Integration
+- `kosmik_kayfabizarro_sci_fi_space_opera` #40: SORN ARCHIVIST PROCESS → Sorn Archivist Process
+- `kosmik_kayfabizarro_sci_fi_space_opera` #41: PRIOR-ARCHITECTURE (Reverse Engineering) → Prior-Architecture (Reverse Engineering)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #42: CONSCIOUSNESS TRANSFER → Consciousness Transfer
+- `kosmik_kayfabizarro_sci_fi_space_opera` #43: STELLAR ENGINEERING → Stellar Engineering
+- `kosmik_kayfabizarro_sci_fi_space_opera` #44: THE MEMORY TECHNOLOGY → The Memory Technology
+- `kosmik_kayfabizarro_sci_fi_space_opera` #45: DRESHKAI COMMUNION → Dreshkai Communion
+- `kosmik_kayfabizarro_sci_fi_space_opera` #46: OSSIAN HEGEMONY → Ossian Hegemony
+- `kosmik_kayfabizarro_sci_fi_space_opera` #47: THE VAEL → The Vael
+- `kosmik_kayfabizarro_sci_fi_space_opera` #48: THE SORN → The Sorn
+- `kosmik_kayfabizarro_sci_fi_space_opera` #49: THE UNBOUND → The Unbound
+- `kosmik_kayfabizarro_sci_fi_space_opera` #50: THE MYCEL VERDANCY → The Mycel Verdancy
+- `kosmik_kayfabizarro_sci_fi_space_opera` #51: THE PRIOR (Ancient Builders) → The Prior (Ancient Builders)
+- `kosmik_kayfabizarro_sci_fi_space_opera` #52: THE FRUITING BODIES → The Fruiting Bodies
+- `kosmik_kayfabizarro_sci_fi_space_opera` #53: THE RESONANCE ARRAYS → The Resonance Arrays
+- `kosmik_kayfabizarro_sci_fi_space_opera` #54: GALACTIC CORE OBSERVATORY → Galactic Core Observatory
+- `kosmik_kayfabizarro_sci_fi_space_opera` #55: THE VAEL'S DEEP ARCHIVE → The Vael's Deep Archive
+- `kosmik_kayfabizarro_sci_fi_space_opera` #56: THE THIRTY-THOUSAND-YEAR NOTE → The Thirty-Thousand-Year Note
+- `kayfabizarro_improv_comedy` #46: SPACE JUMP (Freeze!) → Space Jump (Freeze!)
+- `kayfabizarro_improv_comedy` #49: OBJECTION! (Yes, But...) → Objection! (Yes, But...)
+- `mind_traps` #1: THE DISCOVERY → The Discovery
+- `mind_traps` #2: THE ARCHITECTURE → The Architecture
+- `mind_traps` #3: THE CONDITION CREATOR → The Condition Creator
+- `mind_traps` #4: THE INNER POLICE FORCE → The Inner Police Force
+- `mind_traps` #5: THE REVERSAL → The Reversal
+- `mind_traps` #6: THE IMPOSSIBLE QUESTION → The Impossible Question
+- `mind_traps` #7: THE PRESUPPOSITION → The Presupposition
+- `mind_traps` #8: RUMPLESTILTSKIN EFFECT → Rumplestiltskin Effect
+- `mind_traps` #9: WHY DIDN'T YOU SAY TWO? → Why Didn't You Say Two?
+- `mind_traps` #10: WHAT WOULD NEED TO BE TRUE... ? → What Would Need to Be True... ?
+- `mind_traps` #11: JUST ONE THING STANDING IN THE WAY. → Just One Thing Standing in the Way.
+- `mind_traps` #12: WHAT FINALLY MADE IT CLICK? → What Finally Made It Click?
+- `mind_traps` #13: THE LABEL → The Label
+- `mind_traps` #14: PREFRAMING → Preframing
+- `mind_traps` #15: THE WITNESS → The Witness
+- `mind_traps` #16: VOLUNTARY CONFESSION → Voluntary Confession
+- `mind_traps` #17: SOUNDS LIKE HURT. → Sounds Like Hurt.
+- `mind_traps` #18: NOBODY'S EVER SAID THAT OUT LOUD TO YOU. → Nobody's Ever Said That Out Loud to You.
+- `mind_traps` #19: I CAN HANDLE IT. → I Can Handle It.
+- `mind_traps` #20: HARDEST TO SAY. → Hardest to Say.
+- `mind_traps` #21: THE UNNAMED EMOTION → The Unnamed Emotion
+- `mind_traps` #22: THE MICRO COLLAPSE → The Micro Collapse
+- `mind_traps` #23: DEFAULT MODE NETWORK → Default Mode Network
+- `mind_traps` #24: THE PERMISSION → The Permission
+- `mind_traps` #25: THE REFRAME → The Reframe
+- `mind_traps` #26: IDENTITY CONFIRMATION → Identity Confirmation
+- `mind_traps` #27: ACCUSATION INVERSION → Accusation Inversion
+- `mind_traps` #28: THE GAP → The Gap
+- `mind_traps` #29: THAT'S JUST READINESS. → That's Just Readiness.
+- `mind_traps` #30: HAS THAT ALWAYS BEEN A THING? → Has That Always Been a Thing?
+- `mind_traps` #31: PROBABLY NOT THE KIND OF PERSON. → Probably Not the Kind of Person.
+- `mind_traps` #32: SURPRISED YOU'RE STILL THINKING ABOUT THIS. → Surprised You're Still Thinking About This.
+- `mind_traps` #33: THE DISAGREEMENT TRAP → The Disagreement Trap
+- `mind_traps` #34: DIMINISHED IDENTITY → Diminished Identity
+- `mind_traps` #35: THE UNCLOSABLE LOOP → The Unclosable Loop
+- `mind_traps` #36: THE LOCK (DEEPEST VALUES) → The Lock (Deepest Values)
+- `mind_traps` #37: THE CONSPIRACY → The Conspiracy
+- `mind_traps` #38: THE INSTALLATION → The Installation
+- `mind_traps` #39: REGRESSION → Regression
+- `mind_traps` #40: FATE ACCOMPLI → Fate Accompli
+- `mind_traps` #45: THE EXIT SEAL → The Exit Seal
+- `mind_traps` #46: IDENTITY VS. LOGISTICS → Identity vs. Logistics
+- `mind_traps` #47: THE COST OF SILENCE → The Cost of Silence
+- `mind_traps` #48: THE OUTMATCHED ROOM → The Outmatched Room
+- `mind_traps` #49: THE CULT LEADER → The Cult Leader
+- `mind_traps` #50: THE HOTLINE COUNSELOR → The Hotline Counselor
+- `mind_traps` #51: THE FBI NEGOTIATOR → The FBI Negotiator
+- `mind_traps` #52: THE SOCRATIC PHILOSOPHER → The Socratic Philosopher
+- `mind_traps` #53: EPISTEMIC SABOTAGE → Epistemic Sabotage
+- `mind_traps` #54: KAYFABE BINGO → Kayfabe Bingo
+- `mind_traps` #55: PERSUASION VS. INFLUENCE → Persuasion vs. Influence
+- `mind_traps` #56: THE NAKED BRAIN → The Naked Brain
+- `kayfabizarro_monomyth_mayhem` #30: BLÖDSINN! → Blödsinn!
+- `kayfabizarro_monomyth_mayhem` #49: [BLANK] — 1 → [Blank] — 1
+- `kayfabizarro_monomyth_mayhem` #50: [BLANK] — 2 → [Blank] — 2
+- `reality_redrawn` #1: UNCLE FRIZZLEBOB → Uncle FrizzleBob
+- `reality_redrawn` #2: KANTIAN NOUMENA → Kantian Noumena
+- `reality_redrawn` #3: THE PHENOMENA GOGGLES → The Phenomena Goggles
+- `reality_redrawn` #4: KAYFABE REALITY WRESTLING → Kayfabe Reality Wrestling
+- `reality_redrawn` #5: THE MERCHANT CARTEL → The Merchant Cartel
+- `reality_redrawn` #6: THE PAPER RECEIPT → The Paper Receipt
+- `reality_redrawn` #7: THE PEASANT BANK RUN → The Peasant Bank Run
+- `reality_redrawn` #8: THE DEFAULTING KING → The Defaulting King
+- `reality_redrawn` #9: THE FRACTIONAL WEASEL → The Fractional Weasel
+- `reality_redrawn` #10: THE INFRASTRUCTURE PRINTER → The Infrastructure Printer
+- `reality_redrawn` #11: THE POVERTY ENFORCER → The Poverty Enforcer
+- `reality_redrawn` #12: THE ABUNDANT DUMPSTER → The Abundant Dumpster
+- `reality_redrawn` #13: THE COLLECTIVE FEAST → The Collective Feast
+- `reality_redrawn` #14: THE DEBT OF MURDER → The Debt of Murder
+- `reality_redrawn` #15: THE EXILE → The Exile
+- `reality_redrawn` #16: THE MODERN HOARDER → The Modern Hoarder
+- `reality_redrawn` #17: THE WHIMSICAL GODS → The Whimsical Gods
+- `reality_redrawn` #18: THE HUBRIS TRAP → The Hubris Trap
+- `reality_redrawn` #19: EUDAIMONIA → Eudaimonia
+- `reality_redrawn` #20: THE COLLECTIVE ACTION THREAT → The Collective Action Threat
+- `reality_redrawn` #21: THE BIOLOGICAL MACHINE → The Biological Machine
+- `reality_redrawn` #22: THE GUILT-RIDDEN INDIVIDUAL → The Guilt-Ridden Individual
+- `reality_redrawn` #23: THE PSYCHIATRIST SNAKE → The Psychiatrist Snake
+- `reality_redrawn` #24: THE FORBIDDEN CURE → The Forbidden Cure
+- `reality_redrawn` #25: THE ECONOMIC CRISIS → The Economic Crisis
+- `reality_redrawn` #26: THE PERPETUAL WAR → The Perpetual War
+- `reality_redrawn` #27: THE W.O.W. GRIND → The W.O.W. Grind
+- `reality_redrawn` #28: THE POWERLESS GAMER → The Powerless Gamer
+- `reality_redrawn` #29: THE SPARTAN CHILD-BEATER → The Spartan Child-Beater
+- `reality_redrawn` #30: THE AZTEC SACRIFICE PREP → The Aztec Sacrifice Prep
+- `reality_redrawn` #31: THE PRUSSIAN MILITARY MODEL → The Prussian Military Model
+- `reality_redrawn` #32: THE SEPARATED PARENT → The Separated Parent
+- `reality_redrawn` #33: THE OMNISCIENT TEACHER → The Omniscient Teacher
+- `reality_redrawn` #34: THE APPRENTICE'S FLOOR → The Apprentice's Floor
+- `reality_redrawn` #35: THE HARVARD ILLUSION → The Harvard Illusion
+- `reality_redrawn` #36: THE QUESTIONING STUDENT → The Questioning Student
+- `reality_redrawn` #37: THE FALSE MEMORY OF HISTORY → The False Memory of History
+- `reality_redrawn` #38: MOTHER NATION → Mother Nation
+- `reality_redrawn` #39: THE ALCHEMY OF POWER → The Alchemy of Power
+- `reality_redrawn` #40: THE UNINTENTIONAL MATRIX → The Unintentional Matrix
+- `reality_redrawn` #41: THE MONOTHEISTIC SOURCE → The Monotheistic Source
+- `reality_redrawn` #42: THE INVENTED INDIVIDUAL → The Invented Individual
+- `reality_redrawn` #43: THE ONE TRUE BANK → The One True Bank
+- `reality_redrawn` #44: THE LIBERATED MIND → The Liberated Mind
+- `reality_redrawn` #45: THE X-ACTO BLADE OF TRUTH → The X-Acto Blade of Truth
+- `reality_redrawn` #46: THE MASKING TAPE OF SOLIDARITY → The Masking Tape of Solidarity
+- `reality_redrawn` #47: THE SPILLED INK OF CHAOS → The Spilled Ink of Chaos
+- `reality_redrawn` #48: THE XEROX MACHINE OF REBELLION → The Xerox Machine of Rebellion
+- `reality_redrawn` #49: THE SKETCHBOOK UNDERGROUND → The Sketchbook Underground
+- `reality_redrawn` #50: THE PASTE-UP MANIFESTO → The Paste-Up Manifesto
+- `reality_redrawn` #51: THE LIBRARY CARD → The Library Card
+- `reality_redrawn` #52: THE MARGINALIA INVASION → The Marginalia Invasion
+- `reality_redrawn` #53: THE REBELLIOUS FEAST → The Rebellious Feast
+- `reality_redrawn` #54: THE MUDDY PAWS → The Muddy Paws
+- `reality_redrawn` #55: THE UNSOLICITED QUESTION → The Unsolicited Question
+- `reality_redrawn` #56: THE JOYOUS NOISE → The Joyous Noise
+- `reality_redrawn` #57: FRIZZLEBOB'S LEFT EAR → FrizzleBob's Left Ear
+- `reality_redrawn` #58: FRIZZLEBOB'S RIGHT FOOT → FrizzleBob's Right Foot
+- `reality_redrawn` #59: THE BIZARRO BINGO CARD → The Bizarro Bingo Card
+- `reality_redrawn` #60: THE BLANK POSTCARD → The Blank Postcard
+- `shadow_politics` #1: THE COLD MONSTER → The Cold Monster
+- `shadow_politics` #2: PLURALISM SIMULATOR → Pluralism Simulator
+- `shadow_politics` #3: THE PUBLIC-PRIVATE PARASITE → The Public-Private Parasite
+- `shadow_politics` #4: THE BUREAUCRATIC LABYRINTH → The Bureaucratic Labyrinth
+- `shadow_politics` #5: THE POVERTY TRAP → The Poverty Trap
+- `shadow_politics` #6: CLOUD RENT-SEEKER → Cloud Rent-Seeker
+- `shadow_politics` #7: THE INFLATION INCINERATOR → The Inflation Incinerator
+- `shadow_politics` #8: THE SUSTAINABILITY SHAKEDOWN → The Sustainability Shakedown
+- `shadow_politics` #9: THE INFANTILIZATION BARRAGE → The Infantilization Barrage
+- `shadow_politics` #10: THE TRIGGER EVENT → The Trigger Event
+- `shadow_politics` #11: CIVILIAN PROXY-FORCE → Civilian Proxy-Force
+- `shadow_politics` #12: THE SPALT-PILZ → The Spalt-Pilz
+- `shadow_politics` #13: THE BIO-SECURITY DOCTRINE → The Bio-Security Doctrine
+- `shadow_politics` #14: THE NUREMBERG GHOST → The Nuremberg Ghost
+- `shadow_politics` #15: MK-MIND MELTER → MK-Mind Melter
+- `shadow_politics` #16: OPERATION WHITECOAT → Operation Whitecoat
+- `shadow_politics` #17: THE SYPHILIS SYRINGE → The Syphilis Syringe
+- `shadow_politics` #18: THE NERVE GAS CLOUD → The Nerve Gas Cloud
+- `shadow_politics` #19: THE FALLOUT PIG → The Fallout Pig
+- `shadow_politics` #20: THE SPACE DOSE TEST → The Space Dose Test
+- `shadow_politics` #21: THE EUGENICS BOARD → The Eugenics Board
+- `shadow_politics` #22: THE CLIMATE ALIBI → The Climate Alibi
+- `shadow_politics` #23: REPLACEMENT MIGRATION → Replacement Migration
+- `shadow_politics` #24: THE CULTURAL WEDGE → The Cultural Wedge
+- `shadow_politics` #25: THE ALGORITHM ENFORCER → The Algorithm Enforcer
+- `shadow_politics` #26: THE DIGITAL ID COLLAR → The Digital ID Collar
+- `shadow_politics` #27: THE SURVEILLANCE CAR → The Surveillance Car
+- `shadow_politics` #28: THE NUMBED CONSUMER → The Numbed Consumer
+- `shadow_politics` #29: THE OBEDIENCE PARADE → The Obedience Parade
+- `shadow_politics` #30: THE BURNOUT BADGER → The Burnout Badger
+- `shadow_politics` #31: THE PHARMA-FINANCIAL COMPLEX → The Pharma-Financial Complex
+- `shadow_politics` #32: THE ILLUSION OF SAFETY → The Illusion of Safety
+- `shadow_politics` #33: THE BANKING CARTEL → The Banking Cartel
+- `shadow_politics` #34: THE SMILING DESPOT → The Smiling Despot
+- `shadow_politics` #35: THE ELITE PHILANTHROPIST → The Elite Philanthropist
+- `shadow_politics` #36: THE CRISIS ARCHITECT → The Crisis Architect
+- `shadow_politics` #37: THE TIPPING POINT → The Tipping Point
+- `shadow_politics` #38: THE MISTGABEL MOB → The Mistgabel Mob
+- `shadow_politics` #39: THE GRAND AWAKENING → The Grand Awakening
+- `shadow_politics` #40: THE SYSTEMIC ROT → The Systemic Rot
+- `shadow_politics` #41: THE WEAPON OF HUMOR → The Weapon of Humor
+- `shadow_politics` #42: THE SELF-SOVEREIGN → The Self-Sovereign
+- `shadow_politics` #43: THE UTOPIA ARCHITECT → The Utopia Architect
+- `shadow_politics` #44: THE FREE WILL ANOMALY → The Free Will Anomaly
+- `shadow_politics` #45: RULES OF ENGAGEMENT → Rules of Engagement
+- `shadow_politics` #46: EPISTEMIC SABOTAGE → Epistemic Sabotage
+- `shadow_politics` #47: THE BLANK SLATE → The Blank Slate
+- `shadow_politics` #48: UNCLE FRIZZLEBOB'S BLESSING → Uncle FrizzleBob's Blessing
+- `medkayfab_differential_diagnosis` #1: PREVAL-THE-PRIOR → Preval-the-Prior
+- `medkayfab_differential_diagnosis` #2: PATHOG-THE-PIVOTER → Pathog-the-Pivoter
+- `medkayfab_differential_diagnosis` #3: SENSI-THE-SCREEN → Sensi-the-Screen
+- `medkayfab_differential_diagnosis` #4: SPECI-THE-SNIPER → Speci-the-Sniper
+- `medkayfab_differential_diagnosis` #5: RED-FLAG-REGGIE → Red-Flag-Reggie
+- `medkayfab_differential_diagnosis` #6: VINDICATE-THE-MNEMO → Vindicate-the-Mnemo
+- `medkayfab_differential_diagnosis` #7: ZE-THE-ZEBRA → Ze-the-Zebra
+- `medkayfab_differential_diagnosis` #8: OCCAM-THE-RAZOR → Occam-the-Razor
+- `medkayfab_dentistry` #56: THE ORAL ARENA QUESTS (The Synthesis) → The Oral Arena Quests (The Synthesis)
+- `medkayfab_endocrinology` #13: GRAVES the Impersonator → Graves the Impersonator
+- `medkayfab_endocrinology` #14: NODULE NORMAN → Nodule Norman
+- `medkayfab_endocrinology` #15: THYROID STORM TOM → Thyroid Storm Tom
+- `medkayfab_endocrinology` #16: HYPO the Hypothyroid Drug → Hypo the Hypothyroid Drug
+- `medkayfab_endocrinology` #37: SULFO the Sulfonylurea → Sulfo the Sulfonylurea
+- `medkayfab_geriatrics` #1: FRAILTY-FIONA → Frailty-Fiona
+- `medkayfab_geriatrics` #2: SARCOPENIA-THE-WITHER → Sarcopenia-the-Wither
+- `medkayfab_geriatrics` #3: HOMEOSTENOS-THE-LIMIT → Homeostenos-the-Limit
+- `medkayfab_geriatrics` #4: MULTI-MORB-MAX → Multi-Morb-Max
+- `medkayfab_geriatrics` #5: PHIL-THE-POLYPHARMACY → Phil-the-Polypharmacy
+- `medkayfab_geriatrics` #6: BEERS-THE-BLACKLIST → Beers-the-Blacklist
+- `medkayfab_geriatrics` #7: ANTICHOL-THE-FOG → Antichol-the-Fog
+- `medkayfab_geriatrics` #8: DE-PRESCRIBE-DAN → De-Prescribe-Dan
+- `medkayfab_geriatrics` #9: DAZE-THE-DELIRIUM → Daze-the-Delirium
+- `medkayfab_geriatrics` #10: ALZ-THE-ERASER → Alz-the-Eraser
+- `medkayfab_geriatrics` #11: LEWY-THE-HALLUCINATOR → Lewy-the-Hallucinator
+- `medkayfab_geriatrics` #12: NPH-THE-WALKER → NPH-the-Walker
+- `medkayfab_geriatrics` #13: OTTO-THE-ORTHOSTATIC → Otto-the-Orthostatic
+- `medkayfab_geriatrics` #14: HILDA-THE-HIP-SNAP → Hilda-the-Hip-Snap
+- `medkayfab_geriatrics` #15: GET-UP-AND-GO-GABE → Get-Up-and-Go-Gabe
+- `medkayfab_geriatrics` #16: PETE-THE-PRESSURE-SORE → Pete-the-Pressure-Sore
+- `medkayfab_geriatrics` #17: IAN-THE-INCONTINENT → Ian-the-Incontinent
+- `medkayfab_geriatrics` #18: SLOTH-THE-SLOW-GUT → Sloth-the-Slow-Gut
+- `medkayfab_geriatrics` #19: DYSPHAGIA-DOT → Dysphagia-Dot
+- `medkayfab_geriatrics` #20: MALNUTRI-MOLLY → Malnutri-Molly
+- `medkayfab_geriatrics` #21: PRESBY-THE-DEAF → Presby-the-Deaf
+- `medkayfab_geriatrics` #22: CLOUD-THE-CATARACT → Cloud-the-Cataract
+- `medkayfab_geriatrics` #23: GLAUCOMA-THE-THIEF → Glaucoma-the-Thief
+- `medkayfab_geriatrics` #24: VERTIGO-THE-VORTEX → Vertigo-the-Vortex
+- `medkayfab_geriatrics` #25: CHRONIC-PAIN-PAUL → Chronic-Pain-Paul
+- `medkayfab_geriatrics` #26: SLEEP-THE-SABOTEUR → Sleep-the-Saboteur
+- `medkayfab_geriatrics` #27: DEPRESSION-THE-DARK → Depression-the-Dark
+- `medkayfab_geriatrics` #28: SOCIAL-SOLO-SAM → Social-Solo-Sam
+- `medkayfab_internal_medicine` #1: PUMP-FAIL-PELICAN → Pump-Fail-Pelican
+- `medkayfab_internal_medicine` #2: RHYTHM-RIOT-RACCOON → Rhythm-Riot-Raccoon
+- `medkayfab_internal_medicine` #3: SQUEEZE-STALL-SHARK → Squeeze-Stall-Shark
+- `medkayfab_internal_medicine` #4: VALVE-LEAK-VULTURE → Valve-Leak-Vulture
+- `medkayfab_internal_medicine` #5: OBSTRUCT-THE-OX → Obstruct-the-Ox
+- `medkayfab_internal_medicine` #6: SPASM-THE-SPIDER → Spasm-the-Spider
+- `medkayfab_internal_medicine` #7: CLOT-THE-COBRA → Clot-the-Cobra
+- `medkayfab_internal_medicine` #8: MONI-THE-MUCK-MONSTER → Moni-the-Muck-Monster
+- `medkayfab_internal_medicine` #9: SWEET-THE-SUGAR-BEAR → Sweet-the-Sugar-Bear
+- `medkayfab_internal_medicine` #10: THYROID-THE-THROTTLE-TOAD → Thyroid-the-Throttle-Toad
+- `medkayfab_internal_medicine` #11: CORTI-THE-CRUSH-CAMEL → Corti-the-Crush-Camel
+- `medkayfab_internal_medicine` #12: CALCI-THE-BONE-BAT → Calci-the-Bone-Bat
+- `medkayfab_internal_medicine` #13: KREA-THE-CLOG-CRAB → Krea-the-Clog-Crab
+- `medkayfab_internal_medicine` #14: SODIUM-THE-SALT-SEAL → Sodium-the-Salt-Seal
+- `medkayfab_internal_medicine` #15: POTASS-THE-SPARK-PYTHON → Potass-the-Spark-Python
+- `medkayfab_internal_medicine` #16: BICARB-THE-BUFFER-BEAVER → Bicarb-the-Buffer-Beaver
+- `medkayfab_internal_medicine` #17: CIRRHO-THE-SCAR-SNAKE → Cirrho-the-Scar-Snake
+- `medkayfab_internal_medicine` #18: ULCER-THE-ANT-ACID → Ulcer-the-Ant-Acid
+- `medkayfab_internal_medicine` #19: IBD-THE-INTERNAL-FIRE → IBD-the-Internal-Fire
+- `medkayfab_internal_medicine` #20: PANCRE-THE-SELF-EATER → Pancre-the-Self-Eater
+- `medkayfab_internal_medicine` #21: ANEMI-THE-PALE-PANDA → Anemi-the-Pale-Panda
+- `medkayfab_internal_medicine` #22: CLOT-THE-KRAKEN → Clot-the-Kraken
+- `medkayfab_internal_medicine` #23: LYMPHO-THE-LUMP-LYNX → Lympho-the-Lump-Lynx
+- `medkayfab_internal_medicine` #24: BLAST-THE-MARROW-THIEF → Blast-the-Marrow-Thief
+- `medkayfab_obstetrics_gynaecology` #1: ESTRO-STELLA → Estro-Stella
+- `medkayfab_obstetrics_gynaecology` #2: PROGEST-PAUL → Progest-Paul
+- `medkayfab_obstetrics_gynaecology` #3: FSH-FLASH → FSH-Flash
+- `medkayfab_obstetrics_gynaecology` #4: LH-LARRY → LH-Larry
+- `medkayfab_oncology` #1: GORDON THE GORILLA (Self-Sufficiency) → Gordon the Gorilla (Self-Sufficiency)
+- `medkayfab_oncology` #2: THE P53 POLICE BULLDOG (Tumor Suppressor) → The P53 Police Bulldog (Tumor Suppressor)
+- `medkayfab_oncology` #3: ANGIOGENESIS ANNIE (The Road Builder) → Angiogenesis Annie (The Road Builder)
+- `medkayfab_oncology` #4: TELOMERASE TERRY (The Eternal Wrestler) → Telomerase Terry (The Eternal Wrestler)
+- `medkayfab_oncology` #5: METASTASIS MAX (The Wanderer) → Metastasis Max (The Wanderer)
+- `medkayfab_oncology` #6: Rb THE GATEKEEPER (The G1/S Referee) → Rb the Gatekeeper (The G1/S Referee)
+- `medkayfab_oncology` #8: WARBURG WALLY (The Glycolysis Junkie) → Warburg Wally (The Glycolysis Junkie)
+- `medkayfab_oncology` #9: PD-L1 PETER (The Invisibility Cloak) → PD-L1 Peter (The Invisibility Cloak)
+- `medkayfab_oncology` #10: RAS THE ROGUE (The Broken Switch) → RAS the Rogue (The Broken Switch)
+- `medkayfab_oncology` #11: MYC THE MEGAPHONE (The Amplifier) → MYC the Megaphone (The Amplifier)
+- `medkayfab_oncology` #12: BRCA BRENDA (The DNA Repairwoman) → BRCA Brenda (The DNA Repairwoman)
+- `medkayfab_oncology` #13: APC THE TRASH COMPACTOR → APC the Trash Compactor
+- `medkayfab_oncology` #14: VHL THE SNORKEL → VHL the Snorkel
+- `medkayfab_oncology` #15: NF-1 THE BRAKEMAN → NF-1 the Brakeman
+- `medkayfab_oncology` #16: ALL-IN ALICE (Acute Lymphoblastic Leukemia) → ALL-in Alice (Acute Lymphoblastic Leukemia)
+- `medkayfab_oncology` #17: AML ARCHIE (Acute Myeloid Leukemia) → AML Archie (Acute Myeloid Leukemia)
+- `medkayfab_oncology` #18: CLL LARRY (Chronic Lymphocytic Leukemia) → CLL Larry (Chronic Lymphocytic Leukemia)
+- `medkayfab_oncology` #19: CML CHARLIE (Chronic Myeloid Leukemia) → CML Charlie (Chronic Myeloid Leukemia)
+- `medkayfab_oncology` #20: BURKITT'S BARRY (The Starry Night) → Burkitt's Barry (The Starry Night)
+- `medkayfab_oncology` #21: HODGKIN'S HARRY → Hodgkin's Harry
+- `medkayfab_oncology` #22: FOLLICULAR FIONA → Follicular Fiona
+- `medkayfab_oncology` #23: MANTLE CELL MANNY → Mantle Cell Manny
+- `medkayfab_oncology` #24: MARGINAL ZONE MIKE → Marginal Zone Mike
+- `medkayfab_oncology` #25: MULTIPLE MYELOMA MONTY (The Bone-Cracker) → Multiple Myeloma Monty (The Bone-Cracker)
+- `medkayfab_oncology` #26: WALDENSTROM WALLY → Waldenstrom Wally
+- `medkayfab_oncology` #27: POLYCYTHEMIA PAUL → Polycythemia Paul
+- `medkayfab_oncology` #28: ESSENTIAL TOBY (Thrombocythemia) → Essential Toby (Thrombocythemia)
+- `medkayfab_oncology` #29: MYELOFIBROSIS MAX → Myelofibrosis Max
+- `medkayfab_oncology` #30: HAIRY CELL HARRY → Hairy Cell Harry
+- `medkayfab_oncology` #31: SMALL-CELL SAM (The Neuroendocrine Ninja) → Small-Cell Sam (The Neuroendocrine Ninja)
+- `medkayfab_oncology` #32: RENAL CELL REX (The Polycythemia King) → Renal Cell Rex (The Polycythemia King)
+- `medkayfab_oncology` #33: PANCREATIC PETE (The Silent Assassin) → Pancreatic Pete (The Silent Assassin)
+- `medkayfab_oncology` #34: SQUAMOUS SID → Squamous Sid
+- `medkayfab_oncology` #35: ADENO ADDIE → Adeno Addie
+- `medkayfab_oncology` #36: COLON CAL (The Apple-Core) → Colon Cal (The Apple-Core)
+- `medkayfab_oncology` #37: HEPATOCELLULAR HERB → Hepatocellular Herb
+- `medkayfab_oncology` #38: GLIOBLASTOMA GUS (The Butterfly Glioma) → Glioblastoma Gus (The Butterfly Glioma)
+- `medkayfab_oncology` #39: TERATOMA TERRY (The 'Monster' Tumor) → Teratoma Terry (The 'Monster' Tumor)
+- `medkayfab_oncology` #40: SEMINOMA SAM → Seminoma Sam
+- `medkayfab_oncology` #41: CHORIOCARCINOMA CORY → Choriocarcinoma Cory
+- `medkayfab_oncology` #42: BRCA BRENDA'S OVARIAN COUSIN → BRCA Brenda's Ovarian Cousin
+- `medkayfab_oncology` #43: PHEOCHROMOCYTOMA PHIL (The 10% Tumor) → Pheochromocytoma Phil (The 10% Tumor)
+- `medkayfab_oncology` #44: GASTRIC GARY → Gastric Gary
+- `medkayfab_oncology` #45: MELANOMA MEL (The Evolving Leopard) → Melanoma Mel (The Evolving Leopard)
+- `medkayfab_oncology` #46: CISPLATIN SID (The Platinum Hammer) → Cisplatin Sid (The Platinum Hammer)
+- `medkayfab_oncology` #47: DOXORUBICIN DOT (The Red Devil) → Doxorubicin Dot (The Red Devil)
+- `medkayfab_oncology` #48: VINCRISTINE VINNY (The Nerve-Stripper) → Vincristine Vinny (The Nerve-Stripper)
+- `medkayfab_oncology` #49: CYCLOPHOSPHAMIDE CY (The Bladder-Burner) → Cyclophosphamide Cy (The Bladder-Burner)
+- `medkayfab_oncology` #50: METHOTREXATE MATT (The Folate Thief) → Methotrexate Matt (The Folate Thief)
+- `medkayfab_oncology` #51: 5-FU FRED (The Pyrimidine Pirate) → 5-FU Fred (The Pyrimidine Pirate)
+- `medkayfab_oncology` #52: IMATINIB IZZY → Imatinib Izzy
+- `medkayfab_oncology` #53: TRASTUZUMAB TRICIA (Herceptin) → Trastuzumab Tricia (Herceptin)
+- `medkayfab_oncology` #54: PEMBROLIZUMAB PENNY (The Checkpoint Sniper) → Pembrolizumab Penny (The Checkpoint Sniper)
+- `medkayfab_oncology` #55: RITUXIMAB RICHIE (The CD20 Eraser) → Rituximab Richie (The CD20 Eraser)
+- `medkayfab_oncology` #56: BLEOMYCIN BEN (The Lung Scar-er) → Bleomycin Ben (The Lung Scar-er)
+- `medkayfab_oncology` #57: TAMOXIFEN TAMMY (The Estrogen Switch) → Tamoxifen Tammy (The Estrogen Switch)
+- `medkayfab_oncology` #58: ANASTROZOLE ANA (The Aromatase Stopper) → Anastrozole Ana (The Aromatase Stopper)
+- `medkayfab_oncology` #59: ETOPOSIDE ED (The Topo-II Tangler) → Etoposide Ed (The Topo-II Tangler)
+- `medkayfab_oncology` #60: THE ONCOLOGY ATTENDING (Master Synthesis) → The Oncology Attending (Master Synthesis)
+- `medkayfab_pathology` #13: LIVOR-THE-LIVID (Post-Mortem Lividity) → Livor-the-Livid (Post-Mortem Lividity)
+- `medkayfab_pathology` #14: RIGOR-THE-STIFF (Rigor Mortis) → Rigor-the-Stiff (Rigor Mortis)
+- `medkayfab_pathology` #15: ALGOR-THE-COLD (Post-Mortem Cooling) → Algor-the-Cold (Post-Mortem Cooling)
+- `medkayfab_pathology` #16: PUTREFACTION-PAUL (The Decomposer) → Putrefaction-Paul (The Decomposer)
+- `medkayfab_tropical_medicine` #1: FALCI-THE-KILLER (PLASMODIUM FALCIPARUM) → Falci-the-Killer (Plasmodium falciparum)
+- `medkayfab_tropical_medicine` #2: VIVAX-THE-LURKER (PLASMODIUM VIVAX/OVALE) → Vivax-the-Lurker (Plasmodium vivax/ovale)
+- `medkayfab_tropical_medicine` #3: ARTESU-THE-HAMMER (ARTESUNATE) → Artesu-the-Hammer (Artesunate)
+- `medkayfab_tropical_medicine` #4: QUININE-THE-BITTER (QUININE) → Quinine-the-Bitter (Quinine)
+- `medkayfab_genetics` #5: TRISOMY-THE-THREE → Trisomy-the-Three
+- `medkayfab_genetics` #6: TURNER-THE-SINGLE-X → Turner-the-Single-X
+- `medkayfab_genetics` #7: KLINE-THE-EXTRA-X → Kline-the-Extra-X
+- `medkayfab_genetics` #8: DIGEORGE-THE-DELETER → DiGeorge-the-Deleter
+- `observation_underground` #1: UNCLE FRIZZLEBOB → Uncle FrizzleBob
+- `observation_underground` #2: OBSERVATIONSÖKONOMIE (The Attention Economy) → Observationsökonomie (The Attention Economy)
+- `observation_underground` #3: DIE TASCHENSPION (The Pocket Spy) → Die Taschenspion (The Pocket Spy)
+- `observation_underground` #4: THE MEDIA MATRIX → The Media Matrix
+- `observation_underground` #5: SMARTPHONE-AKNE (Smartphone Acne) → Smartphone-Akne (Smartphone Acne)
+- `observation_underground` #6: VIDEO-SCHULTER & HANDY-NACKEN → Video-Schulter & Handy-Nacken
+- `observation_underground` #11: THE DOPAMINE DRIP → The Dopamine Drip
+- `observation_underground` #12: THE 72-MILLION-POINT CHILD → The 72-Million-Point Child
+- `observation_underground` #13: THE G-SEARCHER → The G-Searcher
+- `observation_underground` #14: THE APPLE-DEITY → The Apple-Deity
+- `observation_underground` #15: THE 52,000 FACEBOOK ENTRIES → The 52,000 Facebook Entries
+- `observation_underground` #16: CAMBRIDGE ANALYTICA GHOST → Cambridge Analytica Ghost
+- `observation_underground` #17: FACE ID INFRARED SWEEPER → Face ID Infrared Sweeper
+- `observation_underground` #18: SIRI THE EAVESDROPPER → Siri the Eavesdropper
+- `observation_underground` #19: ATTENTION-SENSITIVE CAM → Attention-Sensitive Cam
+- `observation_underground` #20: NEURAL HASHING (Client Side Scanning) → Neural Hashing (Client Side Scanning)
+- `observation_underground` #21: THE iCLOUD TRAP → The iCloud Trap
+- `observation_underground` #22: THE DELETED PHOTO → The Deleted Photo
+- `observation_underground` #23: MICROSOFT'S RECALL → Microsoft's Recall
+- `observation_underground` #24: THE TRANSCRIPT FILE → The Transcript File
+- `observation_underground` #25: GEOFENCING COLLAR → Geofencing Collar
+- `observation_underground` #26: CO2-BUDGETING → CO2-Budgeting
+- `observation_underground` #27: SOCIAL CREDIT SYSTEM → Social Credit System
+- `observation_underground` #28: PROGRAMMABLE DIGITAL CURRENCY → Programmable Digital Currency
+- `observation_underground` #29: B.L.E. MESH NETWORK → B.L.E. Mesh Network
+- `observation_underground` #30: THE CONTACT-TRACING KRAKEN → The Contact-Tracing Kraken
+- `observation_underground` #31: MALWARE OVER-THE-AIR → Malware Over-the-Air
+- `observation_underground` #32: SMARTDUST FREQUENCY → Smartdust Frequency
+- `observation_underground` #33: DARPA'S TOY → DARPA's Toy
+- `observation_underground` #35: NSA SURVEILLANCE BACKDOOR → NSA Surveillance Backdoor
+- `observation_underground` #36: GOOGLE PLAY PROTECT → Google Play Protect
+- `observation_underground` #37: THE DUMB-PHONE → The Dumb-Phone
+- `observation_underground` #38: THE MURENA FAIRPHONE → The Murena Fairphone
+- `observation_underground` #39: THE VOLLA PHONE → The Volla Phone
+- `observation_underground` #40: THE REMOVABLE BATTERY → The Removable Battery
+- `observation_underground` #41: GRAPHENE OS → Graphene OS
+- `observation_underground` #42: F-DROID REPOSITORY → F-Droid Repository
+- `observation_underground` #43: THE AURORA STORE → The Aurora Store
+- `observation_underground` #44: THE UNWANTED APPS → The Unwanted Apps
+- `observation_underground` #45: THE OFFLINE P.C. → The Offline P.C.
+- `observation_underground` #46: THE PRIVACY ACADEMY → The Privacy Academy
+- `observation_underground` #47: TACTICAL FLIGHT MODE → Tactical Flight Mode
+- `observation_underground` #48: ESCAPING THE MATRIX → Escaping the Matrix
+- `pharaoh_piledriver` #1: ATUM (THE SOLIPSIST) → Atum (The Solipsist)
+- `pharaoh_piledriver` #2: NUN (THE SOUP) → Nun (The Soup)
+- `pharaoh_piledriver` #3: SHU (THE AIRHEAD) → Shu (The Airhead)
+- `pharaoh_piledriver` #4: TEFNUT (THE SPITTER) → Tefnut (The Spitter)
+- `pharaoh_piledriver` #5: GEB (THE FLOOR) → Geb (The Floor)
+- `pharaoh_piledriver` #6: NUT (THE CEILING) → Nut (The Ceiling)
+- `pharaoh_piledriver` #7: RA (THE CEO) → Ra (The CEO)
+- `pharaoh_piledriver` #8: KHEPRI (THE PUSHER) → Khepri (The Pusher)
+- `pharaoh_piledriver` #9: OSIRIS (THE ZOMBIE CHAMP) → Osiris (The Zombie Champ)
+- `pharaoh_piledriver` #10: ISIS (THE FIXER) → Isis (The Fixer)
+- `pharaoh_piledriver` #11: SET (THE HEEL) → Set (The Heel)
+- `pharaoh_piledriver` #12: HORUS (THE GOLDEN BOY) → Horus (The Golden Boy)
+- `pharaoh_piledriver` #13: ANUBIS (THE BOUNCER) → Anubis (The Bouncer)
+- `pharaoh_piledriver` #14: MA'AT (THE RULEBOOK) → Ma'at (The Rulebook)
+- `pharaoh_piledriver` #15: AMMIT (THE DISPOSAL UNIT) → Ammit (The Disposal Unit)
+- `pharaoh_piledriver` #16: THOTH (THE SCOREKEEPER) → Thoth (The Scorekeeper)
+- `pharaoh_piledriver` #17: SEKHMET (THE DRUNK TANK) → Sekhmet (The Drunk Tank)
+- `pharaoh_piledriver` #18: BASTET (THE HOUSE CAT) → Bastet (The House Cat)
+- `pharaoh_piledriver` #19: MONTU (THE RAGING BULL) → Montu (The Raging Bull)
+- `pharaoh_piledriver` #20: SHEZMU (THE PRESSER) → Shezmu (The Presser)
+- `pharaoh_piledriver` #21: SOBEK (THE TEETH) → Sobek (The Teeth)
+- `pharaoh_piledriver` #22: TAWARET (THE HEAVY HITTER) → Tawaret (The Heavy Hitter)
+- `pharaoh_piledriver` #23: KHNUM (THE POTTER) → Khnum (The Potter)
+- `pharaoh_piledriver` #24: HAPI (THE FLOOD) → Hapi (The Flood)
+- `pharaoh_piledriver` #25: BES (THE MASCOT) → Bes (The Mascot)
+- `pharaoh_piledriver` #26: MEDJED (THE SHEET) → Medjed (The Sheet)
+- `pharaoh_piledriver` #27: BABI (THE ALPHA) → Babi (The Alpha)
+- `pharaoh_piledriver` #28: SERKET (THE STINGER) → Serket (The Stinger)
+- `pharaoh_piledriver` #29: THE SOLAR BARQUE (TOUR BUS) → The Solar Barque (Tour Bus)
+- `pharaoh_piledriver` #30: THE SCALES OF JUSTICE (THE REF'S TOOL) → The Scales of Justice (The Ref's Tool)
+- `pharaoh_piledriver` #31: THE CROOK & FLAIL (TITLE BELTS) → The Crook & Flail (Title Belts)
+- `pharaoh_piledriver` #32: THE EYE OF RA (HEAT RAY) → The Eye of Ra (Heat Ray)
+- `pharaoh_piledriver` #33: SESHAT (THE ARCHITECT) → Seshat (The Architect)
+- `pharaoh_piledriver` #34: PTAH (THE CREATOR) → Ptah (The Creator)
+- `pharaoh_piledriver` #35: IMHOTEP (THE ASCENDED FAN) → Imhotep (The Ascended Fan)
+- `pharaoh_piledriver` #36: NEITH (THE WEAVER) → Neith (The Weaver)
+- `pharaoh_piledriver` #37: APEP (THE GLITCH) → Apep (The Glitch)
+- `pharaoh_piledriver` #38: THE AKHEKH (THE GRIFFIN-ISH) → The Akhekh (The Griffin-ish)
+- `pharaoh_piledriver` #39: SEVEN SCORPIONS (THE POSSE) → Seven Scorpions (The Posse)
+- `pharaoh_piledriver` #40: THE RED CLOUD (STORM FRONT) → The Red Cloud (Storm Front)
+- `pharaoh_piledriver` #41: NEKHBET (SOUTH) → Nekhbet (South)
+- `pharaoh_piledriver` #42: WADJET (NORTH) → Wadjet (North)
+- `pharaoh_piledriver` #43: SHAI (DESTINY) → Shai (Destiny)
+- `pharaoh_piledriver` #44: RENENUTET (THE NURSE) → Renenutet (The Nurse)
+- `pharaoh_piledriver` #45: THE DUAT (BACKSTAGE AREA) → The Duat (Backstage Area)
+- `pharaoh_piledriver` #46: THE FIELD OF REEDS (VIP LOUNGE) → The Field of Reeds (VIP Lounge)
+- `pharaoh_piledriver` #47: HELIOPOLIS (THE MAIN STAGE) → Heliopolis (The Main Stage)
+- `pharaoh_piledriver` #48: THE PRIMEVAL MOUND (THE RING MAT) → The Primeval Mound (The Ring Mat)
+- `pharaoh_piledriver` #49: THE LETTUCE INCIDENT → The Lettuce Incident
+- `pharaoh_piledriver` #50: THE RED BEER TRICK → The Red Beer Trick
+- `pharaoh_piledriver` #51: THE MISSING PIECE → The Missing Piece
+- `pharaoh_piledriver` #52: THE EXTRA 5 DAYS → The Extra 5 Days
+- `philosopher_dungeon_raid` #1: NIETZSCHE → Nietzsche
+- `philosopher_dungeon_raid` #2: HANNAH ARENDT → Hannah Arendt
+- `philosopher_dungeon_raid` #3: SOKRATES → Sokrates
+- `philosopher_dungeon_raid` #4: DIOGENES → Diogenes
+- `philosopher_dungeon_raid` #5: PLATO → Plato
+- `philosopher_dungeon_raid` #6: BOSS: THE LAST MAN → Boss: The Last Man
+- `philosopher_dungeon_raid` #7: THE COMFORT TRAP → The Comfort Trap
+- `philosopher_dungeon_raid` #8: THE TECHNOCRAT → The Technocrat
+- `philosopher_dungeon_raid` #9: THE DATA PRIEST → The Data Priest
+- `philosopher_dungeon_raid` #10: THE MORAL APOSTLE → The Moral Apostle
+- `philosopher_dungeon_raid` #11: THE PHILOSOPHER'S STONE → The Philosopher's Stone
+- `philosopher_dungeon_raid` #12: THE MASKED STAGE → The Masked Stage
+- `philosopher_dungeon_raid` #13: THE FORMS ENGINE → The Forms Engine
+- `philosopher_dungeon_raid` #14: THE GOOD → The Good
+- `philosopher_dungeon_raid` #15: ETERNAL PLANNING → Eternal Planning
+- `philosopher_dungeon_raid` #16: FRIZZLEBOB THE GREY THINKER → FrizzleBob the Grey Thinker
+- `philosopher_dungeon_raid` #17: THE PEBBLE → The Pebble
+- `philosopher_dungeon_raid` #18: THE UNSENT LETTER → The Unsent Letter
+- `philosopher_dungeon_raid` #19: THE BROKEN COMPASS → The Broken Compass
+- `philosopher_dungeon_raid` #20: THE MIRROR OF ITHAKA → The Mirror of Ithaka
+- `plot_pusher_posse` #1: THE DRAMA RULE → The Drama Rule
+- `plot_pusher_posse` #2: CHANDLER'S WALK-IN → Chandler's Walk-in
+- `plot_pusher_posse` #3: THE CONFLICT BALL → The Conflict Ball
+- `plot_pusher_posse` #4: MURPHY'S BULLET → Murphy's Bullet
+- `plot_pusher_posse` #5: POOR COMMS → Poor Comms
+- `plot_pusher_posse` #6: THE IDIOT BALL → The Idiot Ball
+- `plot_pusher_posse` #7: WRONG NAME OUTBURST → Wrong Name Outburst
+- `plot_pusher_posse` #8: THE OPEN DOOR → The Open Door
+- `plot_pusher_posse` #9: BELLIGERENT TENSION → Belligerent Tension
+- `plot_pusher_posse` #10: DISPOSABLE SIDEKICK → Disposable Sidekick
+- `plot_pusher_posse` #11: CUSTODY BATTLE → Custody Battle
+- `plot_pusher_posse` #12: THE SECRET BABY → The Secret Baby
+- `plot_pusher_posse` #13: DRAMATIC THUNDER → Dramatic Thunder
+- `plot_pusher_posse` #14: THE LOCKED ROOM → The Locked Room
+- `plot_pusher_posse` #15: THE RICKETY BRIDGE → The Rickety Bridge
+- `plot_pusher_posse` #16: DRAMATIC WIND → Dramatic Wind
+- `plot_pusher_posse` #17: CHEKHOV'S BLASTER → Chekhov's Blaster
+- `plot_pusher_posse` #18: THE ONE BULLET → The One Bullet
+- `plot_pusher_posse` #19: SHATTERED GLASS → Shattered Glass
+- `plot_pusher_posse` #20: THE MASK → The Mask
+- `plot_pusher_posse` #21: MILLION-TO-ONE → Million-to-One
+- `plot_pusher_posse` #22: FINAGLE'S LAW → Finagle's Law
+- `plot_pusher_posse` #23: TICKING CLOCK → Ticking Clock
+- `plot_pusher_posse` #24: DIABOLUS EX MACHINA → Diabolus ex Machina
+- `plot_pusher_posse` #25: GUN STRUGGLE → Gun Struggle
+- `plot_pusher_posse` #26: FLESH WOUND → Flesh Wound
+- `plot_pusher_posse` #27: BLADE LOCK → Blade Lock
+- `plot_pusher_posse` #28: DISASTER DOMINOES → Disaster Dominoes
+- `plot_pusher_posse` #29: THE HAND WAVE → The Hand Wave
+- `plot_pusher_posse` #30: RETCON RAY → Retcon Ray
+- `plot_pusher_posse` #31: SEQUEL HOOK → Sequel Hook
+- `plot_pusher_posse` #32: CLIFFHANGER → Cliffhanger
+- `plot_pusher_posse` #33: ANGST UPGRADE → Angst Upgrade
+- `plot_pusher_posse` #34: BREAK-UP → Break-Up
+- `plot_pusher_posse` #35: ANYONE CAN DIE → Anyone Can Die
+- `plot_pusher_posse` #36: TEAR JERKER → Tear Jerker
+- `plot_pusher_posse` #37: FALSE INNOCENCE → False Innocence
+- `plot_pusher_posse` #38: SHAME ACCUSATION → Shame Accusation
+- `plot_pusher_posse` #39: SMOKING GUN CONTROL → Smoking Gun Control
+- `plot_pusher_posse` #40: EMERGING FROM SHADOWS → Emerging From Shadows
+- `plot_pusher_posse` #41: STRONG AS NEEDED → Strong as Needed
+- `plot_pusher_posse` #42: WORLD OF HAM → World of Ham
+- `plot_pusher_posse` #43: UNSCIENTIFIC SCIENCE → Unscientific Science
+- `plot_pusher_posse` #44: OUT-OF-CHARACTER → Out-of-Character
+- `plot_pusher_posse` #45: DELAYED FINALE → Delayed Finale
+- `plot_pusher_posse` #46: REMEMBERED TOO LATE → Remembered Too Late
+- `plot_pusher_posse` #47: JUST EAT GILLIGAN → Just Eat Gilligan
+- `plot_pusher_posse` #48: THE HOPE SPOT → The Hope Spot
+- `plot_pusher_posse` #49: EVIL WINS ONCE → Evil Wins Once
+- `plot_pusher_posse` #50: OUT OF FRYING PAN → Out of Frying Pan
+- `plot_pusher_posse` #51: CAN'T THWART STAGE 1 → Can't Thwart Stage 1
+- `plot_pusher_posse` #52: RISING CONFLICT → Rising Conflict
+- `plot_pusher_posse` #53: WHY NOT SHOOT? → Why Not Shoot?
+- `plot_pusher_posse` #54: THE MONOLOGUE → The Monologue
+- `plot_pusher_posse` #55: TEMPTING FATE → Tempting Fate
+- `plot_pusher_posse` #56: IDENTITY CONCEALMENT → Identity Concealment
+- `programming_the_whole_child` #1: THE WEAVER → The Weaver
+- `programming_the_whole_child` #2: THE PHILANTHRO-VAMPIRE → The Philanthro-Vampire
+- `programming_the_whole_child` #3: THE OIL BARON GHOST → The Oil Baron Ghost
+- `programming_the_whole_child` #4: THE SOCIAL ENGINEER → The Social Engineer
+- `programming_the_whole_child` #5: THE DATA MERCHANT → The Data Merchant
+- `programming_the_whole_child` #6: THE ROI SHARK → The ROI Shark
+- `programming_the_whole_child` #7: THE CONSULTANT → The Consultant
+- `programming_the_whole_child` #8: THE UNSEEN HAND → The Unseen Hand
+- `programming_the_whole_child` #9: S.E.L. (THE WORM) → S.E.L. (The Worm)
+- `programming_the_whole_child` #10: THE WHOLE CHILD → The Whole Child
+- `programming_the_whole_child` #11: RESILIENCE → Resilience
+- `programming_the_whole_child` #12: EQUITY → Equity
+- `programming_the_whole_child` #13: OBEDIENCE SCHOOL → Obedience School
+- `programming_the_whole_child` #14: THE DATA MINER → The Data Miner
+- `programming_the_whole_child` #15: THE COUNSELOR → The Counselor
+- `programming_the_whole_child` #16: THE 2030 AGENDA → The 2030 Agenda
+- `programming_the_whole_child` #17: THE SMART WATCH → The Smart Watch
+- `programming_the_whole_child` #18: THE VR HEADSET → The VR Headset
+- `programming_the_whole_child` #19: THE BIOMETRIC SCANNER → The Biometric Scanner
+- `programming_the_whole_child` #20: THE DIGITAL ID → The Digital ID
+- `programming_the_whole_child` #21: THE SCOREKEEPER → The Scorekeeper
+- `programming_the_whole_child` #22: THE 'BAD' BADGE → The 'Bad' Badge
+- `programming_the_whole_child` #23: THE GLOBAL CITIZEN → The Global Citizen
+- `programming_the_whole_child` #24: THE LIFELONG LEARNER → The Lifelong Learner
+- `programming_the_whole_child` #25: THE DEPT OF ED → The Dept of Ed
+- `programming_the_whole_child` #26: THE MANDATE → The Mandate
+- `programming_the_whole_child` #28: THE CENSUS → The Census
+- `programming_the_whole_child` #29: THE MERGED MIND → The Merged Mind
+- `programming_the_whole_child` #30: THE EMOTION POLICE → The Emotion Police
+- `programming_the_whole_child` #31: THE EMPTY SHELL → The Empty Shell
+- `programming_the_whole_child` #32: THE NEW NORMAL → The New Normal
+- `programming_the_whole_child` #33: THE HOMESCHOOLER → The Homeschooler
+- `programming_the_whole_child` #34: CASH IS KING → Cash Is King
+- `programming_the_whole_child` #35: LOCAL ROOTS → Local Roots
+- `programming_the_whole_child` #36: THE NON-COMPLIER → The Non-Complier
+- `programming_the_whole_child` #37: PANORAMA EDUCATION → Panorama Education
+- `programming_the_whole_child` #38: SECOND STEP → Second Step
+- `programming_the_whole_child` #39: THE HECKMAN EQUATION → The Heckman Equation
+- `programming_the_whole_child` #42: THE WORLD BANK → The World Bank
+- `programming_the_whole_child` #43: THALES → Thales
+- `programming_the_whole_child` #44: THE 'PEN' LICENSE → The 'Pen' License
+- `programming_the_whole_child` #45: GRADUALISM → Gradualism
+- `programming_the_whole_child` #46: DIALECTIC → Dialectic
+- `programming_the_whole_child` #47: SEMANTIC DECEPTION → Semantic Deception
+- `programming_the_whole_child` #48: THE NUDGE → The Nudge
+- `programming_the_whole_child` #49: THE COLLABORATIVE → The Collaborative
+- `programming_the_whole_child` #50: NEUROPHILOSOPHY → Neurophilosophy
+- `programming_the_whole_child` #51: MINDFULNESS APP → Mindfulness App
+- `programming_the_whole_child` #52: THE AWAKENED CAMPUS → The Awakened Campus
+- `programming_the_whole_child` #53: COVID RELIEF FUNDS → COVID Relief Funds
+- `programming_the_whole_child` #54: THE LOCKDOWN → The Lockdown
+- `programming_the_whole_child` #55: THE MASK → The Mask
+- `programming_the_whole_child` #56: THE VAX PASSPORT → The Vax Passport
+- `programming_the_whole_child` #57: THE GLITCH → The Glitch
+- `programming_the_whole_child` #58: THE SABOTEUR → The Saboteur
+- `programming_the_whole_child` #59: THE REALITY CHECK → The Reality Check
+- `programming_the_whole_child` #60: UNCLE FRIZZLEBOB → Uncle FrizzleBob
+- `project_gateway_kayfabe` #37: ХИЛЛ 611 → Хилл 611
+- `project_gateway_kayfabe` #38: ВОРОНЕЖСКИЕ ГИГАНТЫ → Воронежские гиганты
+- `project_gateway_kayfabe` #39: МЕДУЗА → Медуза
+- `project_gateway_kayfabe` #40: ЯДЕРНЫЙ ПЕРЕОПРЕДЕЛИТЕЛЬ → Ядерный переопределитель
+- `romantic_kayfabe` #33: ACT I: THE MEET-CUTE COLLISION → Act I: The Meet-Cute Collision
+- `romantic_kayfabe` #34: BLACK MOMENT I: THE DOUBT → Black Moment I: The Doubt
+- `romantic_kayfabe` #35: BLACK MOMENT II: THE RUIN → Black Moment II: The Ruin
+- `romantic_kayfabe` #36: THE GRAND GESTURE ACTION → The Grand Gesture Action
+- `sonic_warfare_music_history_01` #1: DESTROY THIS DECK → Destroy This Deck
+- `sonic_warfare_music_history_01` #2: PICK YOUR ACTOR → Pick Your Actor
+- `sonic_warfare_music_history_01` #3: BUILD THE STAGE → Build the Stage
+- `sonic_warfare_music_history_01` #4: THE QUEST DIE → The Quest Die
+- `sonic_warfare_music_history_01` #5: THE BONE FLUTE → The Bone Flute
+- `sonic_warfare_music_history_01` #6: THE WAR DRUM → The War Drum
+- `sonic_warfare_music_history_01` #7: THE SHAMAN → The Shaman
+- `sonic_warfare_music_history_01` #8: THE ECHO → The Echo
+- `sonic_warfare_music_history_01` #9: GREGORIAN CHANT → Gregorian Chant
+- `sonic_warfare_music_history_01` #10: THE TRITONUS (DIABOLUS) → The Tritonus (Diabolus)
+- `sonic_warfare_music_history_01` #11: THE PIPE ORGAN → The Pipe Organ
+- `sonic_warfare_music_history_01` #12: HILDEGARD'S VISION → Hildegard's Vision
+- `sonic_warfare_music_history_01` #13: THE FUGUE → The Fugue
+- `sonic_warfare_music_history_01` #14: THE DEAF COMPOSER → The Deaf Composer
+- `sonic_warfare_music_history_01` #15: THE LEITMOTIF → The Leitmotif
+- `sonic_warfare_music_history_01` #16: BAYREUTH (TOTAL ART) → Bayreuth (Total Art)
+- `sonic_warfare_music_history_01` #17: THE CROSSROADS → The Crossroads
+- `sonic_warfare_music_history_01` #18: THE 27 CLUB → The 27 Club
+- `sonic_warfare_music_history_01` #19: THE 12-BAR LOOP → The 12-Bar Loop
+- `sonic_warfare_music_history_01` #20: THE BLUE NOTE → The Blue Note
+- `sonic_warfare_music_history_01` #21: THE TURNED BACK → The Turned Back
+- `sonic_warfare_music_history_01` #22: LOVE SUPREME → Love Supreme
+- `sonic_warfare_music_history_01` #23: THE IMPROVISER → The Improviser
+- `sonic_warfare_music_history_01` #24: THE SESSION → The Session
+- `sonic_warfare_music_history_01` #25: PAYOLA → Payola
+- `sonic_warfare_music_history_01` #26: THE TEEN IDOL → The Teen Idol
+- `sonic_warfare_music_history_01` #27: THE COVER VERSION → The Cover Version
+- `sonic_warfare_music_history_01` #29: THE AMEN BREAK → The Amen Break
+- `sonic_warfare_music_history_01` #30: THE SAMPLER → The Sampler
+- `sonic_warfare_music_history_01` #31: THE CRATE DIGGER → The Crate Digger
+- `sonic_warfare_music_history_01` #32: COPYRIGHT BOT → Copyright Bot
+- `sonic_warfare_music_history_01` #33: THE ALGORITHM → The Algorithm
+- `sonic_warfare_music_history_01` #34: LOUDNESS WAR → Loudness War
+- `sonic_warfare_music_history_01` #35: THE PLAYLIST → The Playlist
+- `sonic_warfare_music_history_01` #36: RETENTION RATE → Retention Rate
+- `sonic_warfare_music_history_01` #37: 440 Hz (STANDARD) → 440 Hz (Standard)
+- `sonic_warfare_music_history_01` #38: 432 Hz (NATURAL) → 432 Hz (Natural)
+- `sonic_warfare_music_history_01` #39: LAUREL CANYON → Laurel Canyon
+- `sonic_warfare_music_history_01` #40: BACKMASKING → Backmasking
+- `sonic_warfare_music_history_01` #41: THE HOSPITAL BED → The Hospital Bed
+- `sonic_warfare_music_history_01` #42: THE RESPECT → The Respect
+- `sonic_warfare_music_history_01` #43: THE CHAMELEON → The Chameleon
+- `sonic_warfare_music_history_01` #44: THE SILENCE → The Silence
+- `sonic_warfare_music_history_01` #45: QUEST - The Perfect Song → Quest - The Perfect Song
+- `sonic_warfare_music_history_01` #46: QUEST - The Record Deal → Quest - The Record Deal
+- `sonic_warfare_music_history_01` #47: QUEST - The Festival → Quest - The Festival
+- `sonic_warfare_music_history_01` #48: QUEST - The Earworm → Quest - The Earworm
+- `secret_spy_suplexes` #41: STATE VS. INDIVIDUAL → State vs. Individual
+- `secret_spy_suplexes` #42: IDEOLOGY VS. MORALITY → Ideology vs. Morality
+- `secret_spy_suplexes` #43: LOYALTY VS. SURVIVAL → Loyalty vs. Survival
+- `secret_spy_suplexes` #44: THE ULTIMATE CHOICE → The Ultimate Choice
+- `secret_spy_suplexes` #45: THE SYSTEMIC FATALIST → The Systemic Fatalist
+- `secret_spy_suplexes` #46: THE RAIN-SOAKED ALLEY → The Rain-Soaked Alley
+- `secret_spy_suplexes` #47: THE DIRTY HANDS → The Dirty Hands
+- `secret_spy_suplexes` #48: THE INESCAPABLE TRAP → The Inescapable Trap
+- `secret_spy_suplexes` #49: THE VOLUNTARY SPY → The Voluntary Spy
+- `secret_spy_suplexes` #50: THE PLATFORM ARCHITECT → The Platform Architect
+- `secret_spy_suplexes` #51: THE MONETIZED SECRET → The Monetized Secret
+- `secret_spy_suplexes` #52: THE PROFILE → The Profile
+- `secret_spy_suplexes` #53: EPISTEMIC SABOTAGE → Epistemic Sabotage
+- `secret_spy_suplexes` #54: CUT-AND-PASTE LOGIC → Cut-and-Paste Logic
+- `secret_spy_suplexes` #55: THE RULEBREAKER → The Rulebreaker
+- `secret_spy_suplexes` #56: THE ABSURD TRUTH → The Absurd Truth
+- `shadow_monopoly_blackrock_vanguard_co` #5: THE CRIMSON COLA BEAR → The Crimson Cola Bear
+- `shadow_monopoly_blackrock_vanguard_co` #6: THE AZURE PEPSI HOUND → The Azure Pepsi Hound
+- `shadow_monopoly_blackrock_vanguard_co` #7: THE PROCESSED TROUGH → The Processed Trough
+- `shadow_monopoly_blackrock_vanguard_co` #8: THE BAYER-SANTO LOCUST → The Bayer-Santo Locust
+- `shadow_monopoly_blackrock_vanguard_co` #9: THE META-IGUANA → The Meta-Iguana
+- `shadow_monopoly_blackrock_vanguard_co` #10: THE GOOGLE-OWL → The Google-Owl
+- `shadow_monopoly_blackrock_vanguard_co` #11: THE APPLE-SNAKE → The Apple-Snake
+- `shadow_monopoly_blackrock_vanguard_co` #12: THE MICRO-SOFT MOTH → The Micro-Soft Moth
+- `shadow_monopoly_blackrock_vanguard_co` #13: THE AIR-BED-BUG → The Air-Bed-Bug
+- `shadow_monopoly_blackrock_vanguard_co` #14: THE SKY-SCANNER HAWK → The Sky-Scanner Hawk
+- `shadow_monopoly_blackrock_vanguard_co` #15: THE BOEING ALBATROSS → The Boeing Albatross
+- `shadow_monopoly_blackrock_vanguard_co` #16: THE TRIP-ADVISOR TOAD → The Trip-Advisor Toad
+- `shadow_monopoly_blackrock_vanguard_co` #17: THE OIL-SQUID → The Oil-Squid
+- `shadow_monopoly_blackrock_vanguard_co` #18: THE MINING MOLE → The Mining Mole
+- `shadow_monopoly_blackrock_vanguard_co` #19: THE TEXTILE TARANTULA → The Textile Tarantula
+- `shadow_monopoly_blackrock_vanguard_co` #20: THE PHARMA-VIPER → The Pharma-Viper
+- `shadow_monopoly_blackrock_vanguard_co` #21: THE BLACKROCK VULTURE → The BlackRock Vulture
+- `shadow_monopoly_blackrock_vanguard_co` #22: THE VANGUARD KRAKEN → The Vanguard Kraken
+- `shadow_monopoly_blackrock_vanguard_co` #23: THE STATE STREET WOLF → The State Street Wolf
+- `shadow_monopoly_blackrock_vanguard_co` #24: THE BERKSHIRE BOAR → The Berkshire Boar
+- `shadow_monopoly_blackrock_vanguard_co` #25: LARRY THE FINK-BIRD → Larry the Fink-Bird
+- `shadow_monopoly_blackrock_vanguard_co` #26: THE HAMSTER WHEEL OF POWER → The Hamster Wheel of Power
+- `shadow_monopoly_blackrock_vanguard_co` #27: THE ALADDIN CHAMELEON → The Aladdin Chameleon
+- `shadow_monopoly_blackrock_vanguard_co` #28: THE BUNDESBANK BAT → The Bundesbank Bat
+- `shadow_monopoly_blackrock_vanguard_co` #29: THE TAX-FREE VAULT → The Tax-Free Vault
+- `shadow_monopoly_blackrock_vanguard_co` #30: THE GATES HYENA → The Gates Hyena
+- `shadow_monopoly_blackrock_vanguard_co` #31: THE SOROS OWL → The Soros Owl
+- `shadow_monopoly_blackrock_vanguard_co` #32: THE W.H.O. PIGGYBANK → The W.H.O. Piggybank
+- `shadow_monopoly_blackrock_vanguard_co` #33: THE DISNEY-VIACOM MOUSE-TRAP → The Disney-Viacom Mouse-Trap
+- `shadow_monopoly_blackrock_vanguard_co` #34: THE REUTERS WOODPECKER → The Reuters Woodpecker
+- `shadow_monopoly_blackrock_vanguard_co` #35: THE PROJECT SYNDICATE SPIDER → The Project Syndicate Spider
+- `shadow_monopoly_blackrock_vanguard_co` #36: THE FACT-CHECKER FERRET → The Fact-Checker Ferret
+- `shadow_monopoly_blackrock_vanguard_co` #37: THE DAVOS MOUNTAIN GOAT → The Davos Mountain Goat
+- `shadow_monopoly_blackrock_vanguard_co` #38: THE KLAUS-SCHWAB MOLE-RAT → The Klaus-Schwab Mole-Rat
+- `shadow_monopoly_blackrock_vanguard_co` #39: THE BUILD-BACK-BETTER BEAVER → The Build-Back-Better Beaver
+- `shadow_monopoly_blackrock_vanguard_co` #40: THE 2030 SHEEPLE → The 2030 Sheeple
+- `shadow_monopoly_blackrock_vanguard_co` #41: EVENT 201 → Event 201
+- `shadow_monopoly_blackrock_vanguard_co` #42: THE FEAR TACTICIAN → The Fear Tactician
+- `shadow_monopoly_blackrock_vanguard_co` #43: THE 2012 KOCH-BAT → The 2012 Koch-Bat
+- `shadow_monopoly_blackrock_vanguard_co` #44: THE VIP FOOTBALLER → The VIP Footballer
+- `shadow_monopoly_blackrock_vanguard_co` #45: THE U.N. TROJAN HORSE → The U.N. Trojan Horse
+- `shadow_monopoly_blackrock_vanguard_co` #46: THE DOOMSDAY CHICKEN → The Doomsday Chicken
+- `shadow_monopoly_blackrock_vanguard_co` #47: THE DIGITAL ID COLLAR → The Digital ID Collar
+- `shadow_monopoly_blackrock_vanguard_co` #48: THE GLOBAL LEVIATHAN → The Global Leviathan
+- `shadow_monopoly_blackrock_vanguard_co` #49: THE MIDDLE-CLASS NUTCRACKER → The Middle-Class Nutcracker
+- `shadow_monopoly_blackrock_vanguard_co` #50: THE BANK BAIL-IN BEAR → The Bank Bail-in Bear
+- `shadow_monopoly_blackrock_vanguard_co` #51: THE CASH BONFIRE → The Cash Bonfire
+- `shadow_monopoly_blackrock_vanguard_co` #52: THE ASSET VACUUM → The Asset Vacuum
+- `shadow_monopoly_blackrock_vanguard_co` #53: THE TESLA PIGEON → The Tesla Pigeon
+- `shadow_monopoly_blackrock_vanguard_co` #54: THE RIFE-BAT → The Rife-Bat
+- `shadow_monopoly_blackrock_vanguard_co` #55: THE HEMP-CAR TORTOISE → The Hemp-Car Tortoise
+- `shadow_monopoly_blackrock_vanguard_co` #56: THE GREAT AWAKENING BEAR → The Great Awakening Bear
+- `shadow_monopoly_blackrock_vanguard_co` #57: THE TIN-FOIL FOX → The Tin-Foil Fox
+- `shadow_monopoly_blackrock_vanguard_co` #58: THE 0.001% BLOODLINE DRAGON → The 0.001% Bloodline Dragon
+- `shadow_monopoly_blackrock_vanguard_co` #59: THE BLACKMAIL VAULT → The Blackmail Vault
+- `shadow_monopoly_blackrock_vanguard_co` #60: UNCLE FRIZZLEBOB'S SCISSORS → Uncle FrizzleBob's Scissors
+- `sonic_slaughterhouse` #1: THE 360 DEAL → The 360 Deal
+- `sonic_slaughterhouse` #2: THE NAIVE PRODIGY → The Naive Prodigy
+- `sonic_slaughterhouse` #3: THE SHARK MANAGER → The Shark Manager
+- `sonic_slaughterhouse` #4: THE FINE PRINT → The Fine Print
+- `sonic_slaughterhouse` #9: THE SUIT (The Meddler) → The Suit (The Meddler)
+- `sonic_slaughterhouse` #10: THE FOCUS GROUP → The Focus Group
+- `sonic_slaughterhouse` #11: THE ALGORITHM → The Algorithm
+- `sonic_slaughterhouse` #12: THE GENRE SWAP → The Genre Swap
+- `sonic_slaughterhouse` #17: THE HIT SINGLE → The Hit Single
+- `sonic_slaughterhouse` #18: THE SAMPLE CLEARANCE → The Sample Clearance
+- `sonic_slaughterhouse` #19: THE LOUDNESS WAR → The Loudness War
+- `sonic_slaughterhouse` #20: THE SOPHOMORE SLUMP → The Sophomore Slump
+- `the_biological_metropolis` #1: THE CITY INSIDE → The City Inside
+- `the_biological_metropolis` #2: THE CITIZEN → The Citizen
+- `the_biological_metropolis` #3: THE MANUAL → The Manual
+- `the_biological_metropolis` #4: THE JOURNEY → The Journey
+- `the_biological_metropolis` #5: THE HEART → The Heart
+- `the_biological_metropolis` #6: THE BRAIN → The Brain
+- `the_biological_metropolis` #7: THE LUNGS → The Lungs
+- `the_biological_metropolis` #8: THE KIDNEYS → The Kidneys
+- `the_biological_metropolis` #9: THE LIVER → The Liver
+- `the_biological_metropolis` #10: THE GUT → The Gut
+- `the_biological_metropolis` #11: THE IMMUNE SYSTEM → The Immune System
+- `the_biological_metropolis` #12: THE ENDOCRINE SYSTEM → The Endocrine System
+- `the_biological_metropolis` #13: ATP SYNTHESIS → ATP Synthesis
+- `the_biological_metropolis` #14: NEUROTRANSMISSION → Neurotransmission
+- `the_biological_metropolis` #15: DNA REPLICATION → DNA Replication
+- `the_biological_metropolis` #16: PROTEIN FOLDING → Protein Folding
+- `the_biological_metropolis` #17: INFLAMMATION → Inflammation
+- `the_biological_metropolis` #18: CANCER → Cancer
+- `the_biological_metropolis` #19: AUTOIMMUNE → Autoimmune
+- `the_biological_metropolis` #20: THE AGING THYMUS → The Aging Thymus
+- `the_biological_metropolis` #21: ANDREAS VESALIUS → Andreas Vesalius
+- `the_biological_metropolis` #22: WILLIAM HARVEY → William Harvey
+- `the_biological_metropolis` #23: IGNAZ SEMMELWEIS → Ignaz Semmelweis
+- `the_biological_metropolis` #24: THE SEMMELWEIS PROBLEM → The Semmelweis Problem
+- `the_biological_metropolis` #25: THE SKELETON FACTORY → The Skeleton Factory
+- `the_biological_metropolis` #26: THE BLIND EYE → The Blind Eye
+- `the_biological_metropolis` #27: THE RIVER BODY → The River Body
+- `the_biological_metropolis` #28: THE NIGHT SHIFT → The Night Shift
+- `the_biological_metropolis` #29: THE STAGE → The Stage
+- `the_biological_metropolis` #30: THE HUMORALIST → The Humoralist
+- `the_biological_metropolis` #31: THE CORTISOL ARCHITECT → The Cortisol Architect
+- `the_biological_metropolis` #32: THE SCOREKEEPER → The Scorekeeper
+- `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc` #8: SYNTHESIS – The Evolution Matrix → Synthesis – The Evolution Matrix
+- `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc` #12: SYNTHESIS – The Empathy Circuit → Synthesis – The Empathy Circuit
+- `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc` #16: SYNTHESIS – The Scales of Fairness → Synthesis – The Scales of Fairness
+- `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc` #20: SYNTHESIS – The Egoism Autopsy → Synthesis – The Egoism Autopsy
+- `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc` #24: SYNTHESIS – The Generosity Loop → Synthesis – The Generosity Loop
+- `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc` #28: SYNTHESIS – The Motivation Spectrum → Synthesis – The Motivation Spectrum
+- `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc` #32: SYNTHESIS – The Surveillance Cage → Synthesis – The Surveillance Cage
+- `the_biology_of_rebellion_hilfe_ich_bin_ein_mensc` #36: SYNTHESIS – The Reality Redraw → Synthesis – The Reality Redraw
+- `the_uruk_rumble` #1: GILGAMESH "THE KING" → Gilgamesh "The King"
+- `the_uruk_rumble` #2: ENKIDU "THE BEAST" → Enkidu "The Beast"
+- `the_uruk_rumble` #3: URUK "THE ARENA" → Uruk "The Arena"
+- `the_uruk_rumble` #4: THE 12 TABLETS → The 12 Tablets
+- `the_uruk_rumble` #5: SHAMHAT "THE VALET" → Shamhat "The Valet"
+- `the_uruk_rumble` #6: NINSUN "THE MOMAGER" → Ninsun "The Momager"
+- `the_uruk_rumble` #7: ENLIL "THE BOOKER" → Enlil "The Booker"
+- `the_uruk_rumble` #8: SHAMASH "THE REF" → Shamash "The Ref"
+- `the_uruk_rumble` #9: ISHTAR "THE DIVA" → Ishtar "The Diva"
+- `the_uruk_rumble` #10: THE ROAST (RADISH CURE) → The Roast (Radish Cure)
+- `the_uruk_rumble` #11: BULL OF HEAVEN "GUGALANNA" → Bull of Heaven "Gugalanna"
+- `the_uruk_rumble` #12: THE HAUNCH THROW → The Haunch Throw
+- `the_uruk_rumble` #13: THE CEDAR FOREST → The Cedar Forest
+- `the_uruk_rumble` #14: HUMBABA "THE JOBBER" → Humbaba "The Jobber"
+- `the_uruk_rumble` #15: THE 13 WINDS → The 13 Winds
+- `the_uruk_rumble` #16: "KILL HIM ALREADY!" → "Kill Him Already!"
+- `the_uruk_rumble` #17: 120lb DAGGERS (BFS) → 120lb Daggers (BFS)
+- `the_uruk_rumble` #18: THE HAIRCUT → The Haircut
+- `the_uruk_rumble` #19: DOOR BUILDING → Door Building
+- `the_uruk_rumble` #20: THE SHARED DREAM → The Shared Dream
+- `the_uruk_rumble` #21: THE COUNCIL'S VOTE → The Council's Vote
+- `the_uruk_rumble` #22: SOAP OPERA DISEASE → Soap Opera Disease
+- `the_uruk_rumble` #23: THE MAGGOT → The Maggot
+- `the_uruk_rumble` #24: THE GOLDEN STATUE → The Golden Statue
+- `the_uruk_rumble` #25: LION SKIN HOODIE → Lion Skin Hoodie
+- `the_uruk_rumble` #26: MORTALITY PHOBIA → Mortality Phobia
+- `the_uruk_rumble` #27: THE STEPPE → The Steppe
+- `the_uruk_rumble` #28: MAYFLY PHILOSOPHY → Mayfly Philosophy
+- `the_uruk_rumble` #29: MOUNT MASHU → Mount Mashu
+- `the_uruk_rumble` #30: SCORPION PEOPLE → Scorpion People
+- `the_uruk_rumble` #31: THE SUN TUNNEL → The Sun Tunnel
+- `the_uruk_rumble` #32: GARDEN OF GEMS → Garden of Gems
+- `the_uruk_rumble` #33: SIDURI "THE BARMAID" → Siduri "The Barmaid"
+- `the_uruk_rumble` #34: URSHANABI "THE FERRYMAN" → Urshanabi "The Ferryman"
+- `the_uruk_rumble` #35: THE STONE THINGS → The Stone Things
+- `the_uruk_rumble` #36: 120 PUNTING POLES → 120 Punting Poles
+- `the_uruk_rumble` #37: UTNAPISHTIM "THE FARAWAY" → Utnapishtim "The Faraway"
+- `the_uruk_rumble` #38: THE GREAT FLOOD → The Great Flood
+- `the_uruk_rumble` #39: THE CUBE BOAT → The Cube Boat
+- `the_uruk_rumble` #40: THE SLEEP CHALLENGE → The Sleep Challenge
+- `the_uruk_rumble` #41: THE MOLDY LOAVES → The Moldy Loaves
+- `the_uruk_rumble` #42: THE PLANT OF HEARTBEAT → The Plant of Heartbeat
+- `the_uruk_rumble` #43: THE BATHING SPOT → The Bathing Spot
+- `the_uruk_rumble` #44: THE SERPENT → The Serpent
+- `the_uruk_rumble` #45: RETURN TO URUK → Return to Uruk
+- `the_uruk_rumble` #46: THE BRICKWORK → The Brickwork
+- `the_uruk_rumble` #47: THE SECRET BOX → The Secret Box
+- `the_uruk_rumble` #48: THE MORAL → The Moral
+- `the_uruk_rumble` #49: TABLET XII "THE RETCON" → Tablet XII "The Retcon"
+- `the_uruk_rumble` #50: PUKKU AND MIKKU → Pukku and Mikku
+- `the_uruk_rumble` #51: RULES OF THE DEAD → Rules of the Dead
+- `the_uruk_rumble` #52: THE GHOST → The Ghost
+- `the_uruk_rumble` #53: ETANA'S EAGLE RIDES → Etana's Eagle Rides
+- `the_uruk_rumble` #54: ADAPA'S FISH SNACK, DON'T EAT THE BREAD! → Adapa's Fish Snack, Don't Eat the Bread!
+- `trust_and_betrayal` #1: INEVITABLE MUTUAL BETRAYAL → Inevitable Mutual Betrayal
+- `trust_and_betrayal` #2: IN THE BACK → In the Back
+- `trust_and_betrayal` #3: THE OATH-BREAKER → The Oath-Breaker
+- `trust_and_betrayal` #4: FALSE FRIEND → False Friend
+- `trust_and_betrayal` #5: PROPERLY PARANOID → Properly Paranoid
+- `trust_and_betrayal` #6: SPIES ARE DESPICABLE → Spies Are Despicable
+- `trust_and_betrayal` #7: BETRAYAL INSURANCE → Betrayal Insurance
+- `trust_and_betrayal` #8: CHRONIC BACKSTABBING DISORDER → Chronic Backstabbing Disorder
+- `trust_and_betrayal` #9: THE STARSCREAM → The Starscream
+- `trust_and_betrayal` #10: THE YES-MAN → The Yes-Man
+- `trust_and_betrayal` #11: STEALING THE CREDIT → Stealing the Credit
+- `trust_and_betrayal` #12: BASTARD UNDERSTUDY → Bastard Understudy
+- `trust_and_betrayal` #13: THE COUP → The Coup
+- `trust_and_betrayal` #14: THE PUPPET MASTER → The Puppet Master
+- `trust_and_betrayal` #15: I CAN RULE ALONE → I Can Rule Alone
+- `trust_and_betrayal` #16: BOARD TO DEATH → Board to Death
+- `trust_and_betrayal` #17: THE MOLE → The Mole
+- `trust_and_betrayal` #18: DOUBLE AGENT → Double Agent
+- `trust_and_betrayal` #19: THE STOOL PIGEON → The Stool Pigeon
+- `trust_and_betrayal` #20: DEAD PERSON IMPERSONATION → Dead Person Impersonation
+- `trust_and_betrayal` #21: BETRAYAL BY OFFSPRING → Betrayal by Offspring
+- `trust_and_betrayal` #22: PARENTAL BETRAYAL → Parental Betrayal
+- `trust_and_betrayal` #23: NOT ACTUALLY HIS CHILD → Not Actually His Child
+- `trust_and_betrayal` #24: KINSLAYING → Kinslaying
+- `trust_and_betrayal` #25: LOVE-INTEREST TRAITOR → Love-Interest Traitor
+- `trust_and_betrayal` #26: THE HONEY TRAP → The Honey Trap
+- `trust_and_betrayal` #27: FAIR-WEATHER FRIEND → Fair-Weather Friend
+- `trust_and_betrayal` #28: MISTAKEN FOR BETRAYAL → Mistaken for Betrayal
+- `trust_and_betrayal` #29: FACE-HEEL TURN → Face-Heel Turn
+- `trust_and_betrayal` #30: HEEL-FACE TURN → Heel-Face Turn
+- `trust_and_betrayal` #31: GOING NATIVE → Going Native
+- `trust_and_betrayal` #32: THE QUISLING → The Quisling
+- `trust_and_betrayal` #33: TROJAN HORSE → Trojan Horse
+- `trust_and_betrayal` #34: LURED INTO A TRAP → Lured Into a Trap
+- `trust_and_betrayal` #35: FALSE INNOCENCE TRICK → False Innocence Trick
+- `trust_and_betrayal` #36: NASTY PARTY → Nasty Party
+- `trust_and_betrayal` #37: PRISONER'S DILEMMA → Prisoner's Dilemma
+- `trust_and_betrayal` #38: I SURRENDER, SUCKERS! → I Surrender, Suckers!
+- `trust_and_betrayal` #39: RASH EQUILIBRIUM → Rash Equilibrium
+- `trust_and_betrayal` #40: THE GAMBIT → The Gambit
+- `trust_and_betrayal` #41: THIRTY PIECES OF SILVER → Thirty Pieces of Silver
+- `trust_and_betrayal` #42: POISONED CHALICE → Poisoned Chalice
+- `trust_and_betrayal` #43: LYING FINGER CROSS → Lying Finger Cross
+- `trust_and_betrayal` #44: BURNER PHONE → Burner Phone
+- `trust_and_betrayal` #45: THE SCAPEGOAT → The Scapegoat
+- `trust_and_betrayal` #46: CANNON FODDER → Cannon Fodder
+- `trust_and_betrayal` #47: SHOOT THE MESSENGER → Shoot the Messenger
+- `trust_and_betrayal` #48: YOU HAVE OUTLIVED YOUR USEFULNESS → You Have Outlived Your Usefulness
+- `trust_and_betrayal` #49: SIXTH RANGER TRAITOR → Sixth Ranger Traitor
+- `trust_and_betrayal` #50: EVIL ALL ALONG → Evil All Along
+- `trust_and_betrayal` #51: MANCHURIAN CANDIDATE → Manchurian Candidate
+- `trust_and_betrayal` #52: THE CORRUPTIBLE → The Corruptible
+- `trust_and_betrayal` #53: ET TU, BRUTE? → Et Tu, Brute?
+- `trust_and_betrayal` #54: THE VENDETTA → The Vendetta
+- `trust_and_betrayal` #55: CURSE YOUR SUDDEN BUT INEVITABLE BETRAYAL! → Curse Your Sudden but Inevitable Betrayal!
+- `trust_and_betrayal` #56: REGRETFUL TRAITOR → Regretful Traitor
+- `unspoken_systems_kayfabizarro_meta_deck_01` #1: THE VERSION → The Version
+- `unspoken_systems_kayfabizarro_meta_deck_01` #2: RETCON → Retcon
+- `unspoken_systems_kayfabizarro_meta_deck_01` #3: MEMORY DRIFT → Memory Drift
+- `unspoken_systems_kayfabizarro_meta_deck_01` #4: WHAT HAPPENED? → What Happened?
+- `unspoken_systems_kayfabizarro_meta_deck_01` #5: BLÖDSINN! → Blödsinn!
+- `unspoken_systems_kayfabizarro_meta_deck_01` #6: FRAME CONTROL → Frame Control
+- `unspoken_systems_kayfabizarro_meta_deck_01` #7: CONSENSUS → Consensus
+- `unspoken_systems_kayfabizarro_meta_deck_01` #8: THE WITNESS → The Witness
+- `unspoken_systems_kayfabizarro_meta_deck_01` #9: THE OUTLIER → The Outlier
+- `unspoken_systems_kayfabizarro_meta_deck_01` #10: STATUS LEAK → Status Leak
+- `unspoken_systems_kayfabizarro_meta_deck_01` #11: INVISIBLE AGREEMENT → Invisible Agreement
+- `unspoken_systems_kayfabizarro_meta_deck_01` #12: POLITE FICTION → Polite Fiction
+- `unspoken_systems_kayfabizarro_meta_deck_01` #13: THE AUDIENCE → The Audience
+- `unspoken_systems_kayfabizarro_meta_deck_01` #14: SIDE CONVERSATION → Side Conversation
+- `unspoken_systems_kayfabizarro_meta_deck_01` #15: THE ATTENDING → The Attending
+- `unspoken_systems_kayfabizarro_meta_deck_01` #16: GOOD NEIGHBOR → Good Neighbor
+- `unspoken_systems_kayfabizarro_meta_deck_01` #17: THE QUEST → The Quest
+- `unspoken_systems_kayfabizarro_meta_deck_01` #18: THE STAGE → The Stage
+- `unspoken_systems_kayfabizarro_meta_deck_01` #19: YES, AND → Yes, and
+- `unspoken_systems_kayfabizarro_meta_deck_01` #20: ESCALATION → Escalation
+- `unspoken_systems_kayfabizarro_meta_deck_01` #21: CHARACTER SWITCH → Character Switch
+- `unspoken_systems_kayfabizarro_meta_deck_01` #22: NO, BUT → No, but
+- `unspoken_systems_kayfabizarro_meta_deck_01` #23: RESET → Reset
+- `unspoken_systems_kayfabizarro_meta_deck_01` #24: THE FINALE → The Finale
+- `unspoken_systems_kayfabizarro_meta_deck_01` #25: TRYHARD ENERGY → Tryhard Energy
+- `unspoken_systems_kayfabizarro_meta_deck_01` #26: JOKE WITHOUT STAKE → Joke Without Stake
+- `unspoken_systems_kayfabizarro_meta_deck_01` #27: DEAD SCENE → Dead Scene
+- `unspoken_systems_kayfabizarro_meta_deck_01` #28: FORCED ENDING → Forced Ending
+- `unspoken_systems_kayfabizarro_meta_deck_01` #29: OVEREXPLAINING → Overexplaining
+- `unspoken_systems_kayfabizarro_meta_deck_01` #30: RULE LAWYER → Rule Lawyer
+- `unspoken_systems_kayfabizarro_meta_deck_01` #31: SILENCE → Silence
+- `unspoken_systems_kayfabizarro_meta_deck_01` #32: META COLLAPSE → Meta Collapse
+- `unspoken_systems_kayfabizarro_meta_deck_01` #33: AMBIVALENCE → Ambivalence
+- `unspoken_systems_kayfabizarro_meta_deck_01` #34: PARADOX ENGINE → Paradox Engine
+- `unspoken_systems_kayfabizarro_meta_deck_01` #35: DOUBLE BIND → Double Bind
+- `unspoken_systems_kayfabizarro_meta_deck_01` #36: SIGNAL vs NOISE → Signal vs Noise
+- `unspoken_systems_kayfabizarro_meta_deck_01` #37: MEANING AS PERFORMANCE → Meaning as Performance
+- `unspoken_systems_kayfabizarro_meta_deck_01` #38: TRUST LOOP → Trust Loop
+- `unspoken_systems_kayfabizarro_meta_deck_01` #39: FICTION THAT WORKS → Fiction That Works
+- `unspoken_systems_kayfabizarro_meta_deck_01` #40: THE GAP → The Gap
+- `unspoken_systems_kayfabizarro_meta_deck_01` #41: KING KAYFABIAN → King Kayfabian
+- `unspoken_systems_kayfabizarro_meta_deck_01` #42: THE SYSTEM → The System
+- `unspoken_systems_kayfabizarro_meta_deck_01` #43: THE PATIENT → The Patient
+- `unspoken_systems_kayfabizarro_meta_deck_01` #44: THE INTERN → The Intern
+- `unspoken_systems_kayfabizarro_meta_deck_01` #45: THE ANIMAL → The Animal
+- `unspoken_systems_kayfabizarro_meta_deck_01` #46: THE NARRATOR → The Narrator
+- `unspoken_systems_kayfabizarro_meta_deck_01` #47: THE OBSERVER → The Observer
+- `unspoken_systems_kayfabizarro_meta_deck_01` #48: UNCLE FRIZZLEBOB → Uncle FrizzleBob
+- `unspoken_systems_kayfabizarro_meta_deck_01` #49: THIS IS ENOUGH → This Is Enough
+- `unspoken_systems_kayfabizarro_meta_deck_01` #50: PLAY AGAIN → Play Again
+- `unspoken_systems_kayfabizarro_meta_deck_01` #51: YOU MISSED SOMETHING → You Missed Something
+- `unspoken_systems_kayfabizarro_meta_deck_01` #52: THE QR → The QR
+- `unspoken_systems_kayfabizarro_meta_deck_01` #53: START HERE → Start Here
+- `unspoken_systems_kayfabizarro_meta_deck_01` #54: THE HUB → The Hub
+- `unspoken_systems_kayfabizarro_meta_deck_01` #55: TAKE THIS WITH YOU → Take This with You
+- `unspoken_systems_kayfabizarro_meta_deck_01` #56: DON'T EXPLAIN THIS → Don't Explain This
