@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · FrankenEyes als Live-Seite, Gefängnis-Diorama
+- FrankenEyes-Vorschau als Artifact (https://claude.ai/artifact/JSMbg8SK9NyjzdqNxAnmMo), läuft ohne lokalen Server; GLBs als JS-Module eingebettet.
+- Neues Meshy-Diorama Gefängnis-Panoptikum (Meshy_AI_Dystopian_Prison_Dior_1015122335) wird als Bühne aufbereitet (V-300/V-301). Atlantis/Hidden-History-Diorama kündigt Georg an.
+
 ## 2026-10-15 · Gizmo-Labyrinth gefunden
 - V-301: Gizmo-Wände = hochgezogenes Terrain mit Wandtextur, Warden-Knopf baut das Labyrinth um, Generator rund/eckig, Gizmos auch als Editor-Feature; Comic-Vorlage Franquin. Quellen in replies/GIZMO_MAZE_RECOVERY_R1.md.
 - V-302: Vier-Schichten-Gizmo-Architektur vom 12.10. nachgetragen.
