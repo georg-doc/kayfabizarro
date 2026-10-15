@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Kart-Sitz, Köln-Bühne
+- Kart TUNE: Kissen, Bank als Lehne, tiefer/weiter vorn; Fahrer über WS1-Darsteller-Slot mit echtem Augen-Rig (FB Export 14.10., Orc Brute Profil PASS 01.10. aus eye-rig-large.batch); Hub kt03.
+- Köln: Dom mit Roncalliplatz, großer Leinwand und Museum Ludwig / Philharmonie (OSM nur für Lage, Gebäude als Platzhalter + Meshy-Prompts) im Bühnen-Batch.
+
 ## 2026-10-15 · Alle Meshy-Bühnen
 - V-281: Dystopia-Gasse, Theater, Giza, Kölner Dom, Akashic Library, Mesa, Nature, Snow als Bühnen in Arbeit; Bibliothek bekommt Slot im Modell.
 
