@@ -4,9 +4,8 @@
 // | rogue (F1-Prüffigur als Platzhalter für Stellproben, kein Darsteller). Karte: card=<deck>:<n>, Biom: biome=<Name>.
 // Dialog D1 per Hash: dialog=<n> spielt n Karten des Decks der Startkarte ab (Sprechblasen an den Figuren, Spielerwahl am Bildrand).
 import { useEffect, useMemo } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { stagePaletteFor, FADE_S } from './stagePalette'
 import { preferDriftFree } from './cardDrift'
 import ModuleHost from './ModuleHost'
@@ -22,17 +21,10 @@ import { useGame } from './store'
 import { playerState } from './world'
 import { DECKS, cardAt, cardsOfDeck } from './cards'
 import { isCardSafe } from './cardMapping'
-import rogueUrl from './assets/actors/Rogue_Hooded.glb?url'
-import clipsUrl from './assets/actors/Rig_Medium_General.glb?url'
-import pick from './data/eyes/rogue-hooded.profile.json'
-import contract from './data/eyes/kfb-pet-graft-driver.v4.json'
-import rogueRecipe from './data/actors/rogue-hooded.recipe.json'
-import fbUrl from './assets/actors/FB_TEMPLATE_LOOK_v5b.glb?url'
-import hairUrl from './assets/actors/fb-hair/FrizzleBob_Yellow.gltf?url'
-import fbRecipe from './data/actors/frizzlebob-v5b.recipe.json'
-import georg from './data/actors/frizzlebob.georg-2026-10-14.kfb-pets.json'
-import earRig from './data/actors/fb-default.ear-rig.json'
 import { expose } from './debug'
+import { ROGUE, FB, KAYKIT, CAST_IDS } from './actors/stageCast'
+import { StageOrbitCam, ORBIT } from './StageOrbitCam'
+export { ORBIT } // Prüfungen lesen die Kamera-Werte wie bisher über Stage
 
 const hash = typeof location !== 'undefined' ? location.hash : ''
 const [deckId, num] = (/card=([\w]+):(\d+)/.exec(hash) || [0, 'forget_utopia', '1']).slice(1)
@@ -74,29 +66,11 @@ function applyPalette(card, fadeS = FADE_S) {
   mods.billboard?.setPalette?.(p, fadeS); mods.amph?.setPalette?.(p.amph, fadeS); sky.set(p.sky, fadeS)
   return p
 }
-const ROGUE = (x, yaw, id) => ({ recipe: rogueRecipe, faceDriver: 'KFB_NATIVE', url: rogueUrl, clipsUrl, motion: 'Idle_A', profile: pick.profile, contract, height: 2.0,
-  actor: { id: 'adventurer-rogue-hooded', path: pick.profile.source.path, revision: pick.profile.source.revision }, position: [x, 0, -1.4], yaw, anchorId: id })
-const decals = import.meta.glob('./assets/actors/fb-mouth/*.png', { eager: true, query: '?url', import: 'default' })
-const mouthDecals = Object.fromEntries(Object.entries(decals).map(([k, v]) => [k.split('/').pop(), v]))
-const pet = georg.pets.find((p) => p.id === fbRecipe.entry.pet)
-const FB = (x, yaw, id) => ({ recipe: fbRecipe, pet, faceDriver: 'KFB_NATIVE', modelUrl: fbUrl, earRig, mouthDecals, hairUrl, clipsUrl, motion: 'idle', position: [x, 0, -1.4], yaw, anchorId: id })
 const MK = /actors=fb/.test(hash) ? FB : ROGUE
-// Zweite Besetzung (F-4): cast=<actorId> stellt rechts eine KayKit-Figur mit ihrem Profil aus Georgs Batch auf (F1-Weg, kaykit-eye-adapter).
-// Kandidaten: scripts/cast/build-cast.py (Profil-Auszug, Rezept, GLB-Kopie). KayKit hat keinen Sprechmund: sie spricht heute nur per Blase.
-const castProfiles = import.meta.glob('./data/eyes/cast/*.profile.json', { eager: true, import: 'default' })
-const castRecipes = import.meta.glob('./data/actors/cast/*.recipe.json', { eager: true, import: 'default' })
-const castGlbs = import.meta.glob('./assets/actors/cast/*.glb', { eager: true, query: '?url', import: 'default' })
-export const CAST_IDS = Object.keys(castRecipes).map((k) => k.split('/').pop().replace('.recipe.json', ''))
 // Standard (V-269, Georg 15.10.): rechts GothGirl, sobald FrizzleBob links steht; cast=<id> wählt einen anderen Kandidaten, cast=fb lässt FrizzleBob beidseitig
+export { CAST_IDS } // für Prüfungen und Skripte wie bisher
 const CAST_ARG = /cast=([\w-]+)/.exec(hash)?.[1] || null
 const CAST_ID = CAST_ARG === 'fb' ? null : CAST_IDS.includes(CAST_ARG) ? CAST_ARG : /actors=fb/.test(hash) ? 'gothgirl' : null
-const KAYKIT = (id) => {
-  const recipe = castRecipes[`./data/actors/cast/${id}.recipe.json`], pickC = castProfiles[`./data/eyes/cast/${id}.profile.json`], ref = recipe.composition.modelRef
-  const url = castGlbs[`./assets/actors/cast/${ref.path.split('/').pop()}`]
-  return (x, yaw, anchorId) => ({ recipe, faceDriver: 'KFB_NATIVE', url, clipsUrl, motion: 'Idle_A', profile: pickC.profile, contract, classScale: fbRecipe.stage.scale, // gleicher Klassen-Faktor wie FrizzleBob (Rig_Medium, P08 CLASS_K 0,947)
-   
-    actor: { id, path: ref.path, revision: ref.revision }, position: [x, 0, -1.4], yaw, anchorId })
-}
 const MKR = CAST_ID ? KAYKIT(CAST_ID) : MK
 // Marken der Figuren je Stellung (Bühnenmitte = Ursprung, +z zum Publikum): near = G4-Standard vor der Tafel (Georg 14.10.), two = bisherige Stellung
 // Marken je Meshy-Bühne in Modell-Einheiten u (skalieren mit dem Bühnen-Maßstab mit): freie Fläche vor der Kartenwand laut Kamera-Notiz der Slot-Datei
@@ -153,47 +127,6 @@ function Sky() {
   return <primitive object={sky.mesh} />
 }
 
-// V-257 Bühnen-Kamera: frei bewegliche Orbit-Kamera (360° drehen, Zoom zum Cursor, Panning, Fokus per Doppelklick), ruhig nach V-026
-// (geglättet, nicht zu empfindlich), nie unter 0,5 m (V-203). Feste Blicke nur als Sprungmarken: „Standard“ = Standard-Blick der Bühne, „Nah“ = 40 % näher.
-export const ORBIT = Object.freeze({ damping: 0.08, rotate: 0.45, zoom: 0.5, pan: 0.6, minDist: 2, maxDist: 60, minY: 0.5, glideS: 0.8 })
-const camMarks = () => { const p = new THREE.Vector3(...cam.pos), t = new THREE.Vector3(...cam.target); return { standard: { pos: p, target: t }, nah: { pos: t.clone().lerp(p, 0.6), target: t.clone() } } }
-function Cam() {
-  const { camera, gl, scene, size } = useThree()
-  const ctl = useMemo(() => {
-    const c = new OrbitControls(camera, gl.domElement)
-    Object.assign(c, { enableDamping: true, dampingFactor: ORBIT.damping, rotateSpeed: ORBIT.rotate, zoomSpeed: ORBIT.zoom, panSpeed: ORBIT.pan, zoomToCursor: true, screenSpacePanning: true, minDistance: ORBIT.minDist, maxDistance: ORBIT.maxDist, maxPolarAngle: Math.PI * 0.55 }) // knapp unter die Waagrechte erlaubt (Standard-Blick ist fast waagrecht); den Boden schützt minY
-    return c
-  }, [camera, gl])
-  const glide = useMemo(() => ({ on: false, t: 0, a: null, b: null }), [])
-  // Sprungmarke: weich hingleiten (Kamera und Ziel), kein Schnitt
-  // Restschwung der Dämpfung vor dem Gleiten verbrauchen (sonst verschiebt er den Blick nach dem Ankommen); während des Gleitens ohne Dämpfung
-  const startGlide = (b) => { ctl.enableDamping = false; ctl.update(); Object.assign(glide, { on: true, t: 0, a: { pos: camera.position.clone(), target: ctl.target.clone() }, b }) }
-  const jump = (name) => { const m = camMarks()[name]; if (m) startGlide(m) }
-  useEffect(() => { camera.fov = cam.fov || 38; camera.near = 0.1; camera.far = 600; camera.position.fromArray(cam.pos); ctl.target.fromArray(cam.target); camera.lookAt(ctl.target); camera.updateProjectionMatrix(); ctl.update(); expose('StageCamera', camera) }, [camera, ctl])
-  useEffect(() => { camera.aspect = size.width / size.height; camera.updateProjectionMatrix() }, [camera, size])
-  // Fokus auf Klick (V-257): Doppelklick setzt das Orbit-Ziel weich auf den getroffenen Punkt
-  useEffect(() => {
-    const ray = new THREE.Raycaster(), v = new THREE.Vector2()
-    const onDbl = (e) => { const r = gl.domElement.getBoundingClientRect(); v.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(v, camera)
-      const hit = ray.intersectObjects(scene.children, true).find((h) => h.object.visible && h.object.name !== 'sky'); if (!hit) return
-      startGlide({ pos: camera.position.clone().add(hit.point.clone().sub(ctl.target)), target: hit.point.clone() }) }
-    gl.domElement.addEventListener('dblclick', onDbl); return () => gl.domElement.removeEventListener('dblclick', onDbl)
-  }, [gl, camera, scene, ctl, glide])
-  useEffect(() => { // Sprungmarken als kleine Knöpfe oben rechts
-    const box = document.createElement('div'); box.id = 'kfb-cam-marks'
-    box.style.cssText = 'position:fixed;right:16px;top:14px;display:flex;gap:8px;z-index:9000'
-    for (const [k, label] of [['standard', 'Standard'], ['nah', 'Nah']]) { const b = document.createElement('button'); b.dataset.mark = k; b.textContent = label
-      b.style.cssText = 'padding:6px 12px;border:0;border-radius:10px;background:rgba(40,28,16,.72);color:#ffe9b8;font:600 14px/1.2 system-ui,sans-serif;cursor:pointer'; b.onclick = () => jump(k); box.appendChild(b) }
-    document.body.appendChild(box); expose('StageOrbit', { controls: ctl, jump, marks: camMarks, glide: () => glide.on }); return () => { box.remove(); ctl.dispose() }
-  }, [ctl])
-  useFrame((_, dt) => {
-    if (glide.on) { glide.t = Math.min(ORBIT.glideS, glide.t + Math.min(dt, 0.1)); const u = glide.t / ORBIT.glideS, k = u * u * (3 - 2 * u)
-      camera.position.lerpVectors(glide.a.pos, glide.b.pos, k); ctl.target.lerpVectors(glide.a.target, glide.b.target, k); if (u >= 1) { glide.on = false; ctl.update(); ctl.enableDamping = true } }
-    ctl.update()
-    if (camera.position.y < ORBIT.minY) camera.position.y = ORBIT.minY // nie unter das Gelände (V-203)
-  })
-  return null
-}
 
 export default function Stage() {
   // Die Spielerwahl der Bühne: Zurufe des Publikums erscheinen als Blase vorn am Bildrand (Anker „player“ vor der Kamera).
@@ -212,7 +145,7 @@ export default function Stage() {
       <color attach="background" args={[PAL0?.sky.bottom || '#bcd7ea']} />
       <fog attach="fog" args={[PAL0?.sky.bottom || '#bcd7ea', 80, 260]} />
       <Sky />
-      <Cam />
+      <StageOrbitCam view={cam} />
       <hemisphereLight args={[0xfff4e0, 0x3a3226, 1.25]} />
       <directionalLight position={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-25} shadow-camera-right={25} shadow-camera-top={25} shadow-camera-bottom={-25} shadow-bias={-0.0002} />
       {SCENE ? <ModuleHost create={makeMeshy} options={MESHY_OPTS} /> : <ModuleHost create={makeAmph} options={AMPH} />}

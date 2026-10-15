@@ -1,7 +1,60 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§38 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§39 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 39 · 15.10. nachmittags · M1: Ränge als Kulisse grün, vierter blinder Prüfer PASS MIT AUFLAGEN · Kamera und Besetzung als gemeinsame Module
+
+### 39.1 · M1-Runde @17d32fa (M1-Sitzung, lokal m1/bewegung, nicht gepusht): 10/10 grün
+- Grün: rank-fence, contract, move @60/@120/@30, hz-equal, scene, eyes, bench (59,9 fps, p95 16,7 ms, dpr 2) und f1.
+- **Zaun-Werte @60:**
+  - zu Fuß von der Bühne: hält bei r 6,65, hebt sich 4 cm;
+  - vom Flügel: gleitet am Zaun entlang nach vorn;
+  - Flug über der Bühne: landet auf der Bühne;
+  - Flug von hinten: landet auf dem Gelände bei r 19,3.
+  - In keinem Fall endet die Figur im Zaunbereich.
+- Im ersten Durchlauf war m1-move rot. Ursache war nur der Test: Er startete im Dialog-Auslöser (z −3), und der Dialog fror die Figur ein. Jetzt startet er bei z −6,4, und der Dialog wird nach der Bühnenlandung beendet.
+- V-248 unverändert: Joggen 0,042, Gehen 0,48, Sprint 0,21.
+
+### 39.2 · Vierter blinder Prüfer (nur Code): **PASS MIT AUFLAGEN**
+- **Nachgerechnet und in Ordnung:**
+  - Zaun dicht (Mittellinie lückenlos, Wand überall ≥ 0,30 m, Drehung und Ecken stimmen);
+  - Filter korrekt (castRay-Prädikat, `ecctrl.excludeRay` in allen drei Bodenabfragen);
+  - Dialog-Auslöser, Marken und Billboard bleiben frei;
+  - Befunde des dritten Prüfers nachprüfbar behoben.
+- **Auflagen, die die M1-Sitzung abarbeitet:**
+  - A1: Innengrenze des Zauns je Winkel aus der Höhenkarte (erste Stufe − 0,1 m). Der Kreis bei r 7,2 sperrt ≈ 29 m² ebenen Bühnenboden.
+  - A2: Stirnseiten außen auf ≈ 154° (14 Zellen Flügelspitze lagen draußen), dazu SHA-Pin der GLB im Prüfskript.
+  - A3: Abhalte-Tests trennschärfer machen: Kontakt je Abschnitt, Sprung nachweisen, Shift-Flug mit 30 m/s, Schalter `nofence` für den Gegenlauf, Rückwand-Messwert wieder berichten.
+  - A4: Neuer Test für den Spielerweg: von START über den vorderen Ring springen, Dialog, wieder hinaus.
+  - A5 (V-269): Partner in M1 ist GothGirl statt eines zweiten FB, über `src/actors/stageCast.js` (39.3).
+  - A6: main einmergen und die Bühnen-Orbit-Kamera übernehmen statt eines zweiten Wegs (V-206), über `src/StageOrbitCam.jsx` (39.3).
+
+### 39.3 · WS1: Kamera und Besetzung als gemeinsame Module (kfb-planet @a65185e, ganze Testreihe 22/22 PASS)
+- Aus Stage.jsx herausgelöst, Werte und Ablauf unverändert. Damit nutzt die M1-Szene dieselben Bausteine und lädt Stage.jsx (Hash-Auswertung, Bühnenaufbau) nicht mit.
+- **`src/StageOrbitCam.jsx`:** `StageOrbitCam({ view, active = true })`, `ORBIT`.
+  - `active=false`: Steuerung aus, Knöpfe verborgen, kein update, Kamera wird nicht angefasst.
+  - Beim Einschalten gleitet die Kamera von der aktuellen Lage zum Startblick.
+  - Für M1: ecctrl-Folgekamera außerhalb des Dialogs, Orbit im Dialog.
+- **`src/actors/stageCast.js`:** `FB`, `ROGUE`, `KAYKIT(id)`, `CAST_IDS`. Optionen für `createActor`, ohne Hash und ohne Bühnenzustand.
+
+### 39.3b · M1 nach den Auflagen (M1-Sitzung, lokal @58eba04, noch ungetestet)
+- **Zaun:** Die Innengrenze folgt je 2,5° der ersten Stufe (minus 5 cm): hinten ≈ 6,9 m, seitlich ≈ 8 m, Flügel ≈ 9,3 m. Die Stirnseiten laufen schräg bis 156°.
+- **Kollider:** Prismen mit Gehrung statt Quadern, dicht ohne Überstand; Außen- und Stirnseite 2 m dick.
+- **Prüfskript:** kein Bühnenboden mehr im Zaun, höchstens 27 cm Abstand vom Zaun zur Stufe, SHA-Pin der GLB.
+- **Neue und erweiterte Tests:**
+  - neuer Test `m1-fence`: Kontakt je Abschnitt, Sprung nachgewiesen, schneller Flug gegen Außen- und Stirnwand;
+  - Rückwand als INFO-Bericht;
+  - `m1-scene`: Spielerweg von START mit Sprung über den Ring.
+- Ergebnis folgt nach der M1-Runde.
+
+### 39.4 · Fragen an WS0 (aus dem Prüferbericht)
+- (a) Zählt der vordere Ring (0,79 m hoch, r 9,5–10,5) als Rang? Heute kommt man von START nur per Sprung auf die Bühne (Gelände −0,125, also 0,9 m Stufe).
+- (b) Braucht das Kollisionsnetz von WS0 eine Rampe oder Öffnung, damit man die Bühne zu Fuß ohne Sprung erreicht?
+- (c) Zaunhöhe (§38.3): Der Prüfer hält Variante (b) für natürlicher (V-288: „Reisen macht Spaß, Flug“). Kein FAIL-Grund; bis zur Antwort bleibt (a).
+- (d) V-248: Gehen 0,48 und Sprint 0,21 sind nur berichtet (§33.1 offen), die Kurve ebenfalls (0,139, Referenz 0,05).
+- (e) Harter Halt beim Aufsetzen nach Flug (Ruck 11–21 cm): Der Grund dafür, die Rangkante, ist mit V-283 weg. Dämpfen statt Nullsetzen wäre neues Verhalten, deshalb bleibt es bis zur Antwort.
+- (f) V-257 im M1-Dialog ist nach dem Merge über `StageOrbitCam` erfüllt; was danach noch fehlt, meldet die M1-Sitzung.
 
 ## 38 · 15.10. mittags · V-286 umgesetzt (18 %, Georg: passt) · drift-freie Karten im Dialog · Schatten für alle Figuren · Bitte um Licht-Briefing
 
