@@ -139,10 +139,10 @@
       "cardNumber": 12,
       "deckId": "big_bad_brain_wrestling",
       "grade": 2,
-      "lore": "Knowing a shooter required to perform their finisher. Cruel, logical, effective.",
+      "lore": "Attack the body part required to perform their finisher. Cruel, logical, effective.",
       "mappingVerified": true,
       "page": 4,
-      "power": "Called Shot: Target legs to reduce enemy speed to 0. Target arms to prevent lifting.",
+      "power": "Called Shot Target legs to reduce enemy speed to 0. Target arms to prevent lifting.",
       "quadrant": 3,
       "sourcePosition": 12
     },
@@ -310,7 +310,7 @@
       "lore": "The Ricky Morton role. Isolated and picked apart. You are the bait.",
       "mappingVerified": true,
       "page": 8,
-      "power": "Accumulate 'Sympathy' tokens while taking damage. Counter-attack.",
+      "power": "Accumulate \"Sympathy' tokens while taking damage. Cannot attack.",
       "quadrant": 1,
       "sourcePosition": 26
     },
@@ -331,7 +331,7 @@
       "cardNumber": 28,
       "deckId": "big_bad_brain_wrestling",
       "grade": 1,
-      "lore": "Knowing what to pull off. The backbone. A night off for the opponent.",
+      "lore": "Knowing exactly which moves to pull off. The backbone. A night off for the opponent.",
       "mappingVerified": true,
       "page": 8,
       "power": "Reroll any one die per turn. You know the moves better than they do.",
@@ -391,7 +391,7 @@
       "cardNumber": 33,
       "deckId": "big_bad_brain_wrestling",
       "grade": 1,
-      "lore": "Refusing to respond. Stiff the re-seller. Degrade into a shoot fight.",
+      "lore": "Refusing to respond. Stiff the no-seller. Degrade into a shoot fight.",
       "mappingVerified": true,
       "page": 10,
       "power": "Force opponent to Sell. If they refuse, inflict Real Damage.",
@@ -591,26 +591,26 @@
       "sourcePosition": 49
     },
     {
-      "cardName": "The Ring Post",
-      "cardNumber": 50,
-      "deckId": "big_bad_brain_wrestling",
-      "grade": 2,
-      "lore": "Smashed into the post. The hardest object in the building.",
-      "mappingVerified": true,
-      "page": 14,
-      "power": "Unforgiving Steel. If you miss a charge, you take max damage.",
-      "quadrant": 1,
-      "sourcePosition": 50
-    },
-    {
       "cardName": "The Steel Steps",
-      "cardNumber": 51,
+      "cardNumber": 50,
       "deckId": "big_bad_brain_wrestling",
       "grade": 2,
       "lore": "Brawling and hardcore techniques. Weaponized furniture.",
       "mappingVerified": true,
       "page": 14,
       "power": "+2 Damage. Counts as 'Environment' not 'Weapon' (usually).",
+      "quadrant": 1,
+      "sourcePosition": 50
+    },
+    {
+      "cardName": "The Ring Post",
+      "cardNumber": 51,
+      "deckId": "big_bad_brain_wrestling",
+      "grade": 2,
+      "lore": "Smashed into the post. The hardest object in the building.",
+      "mappingVerified": true,
+      "page": 14,
+      "power": "Unforgiving Steel. If you miss a charge, you take max damage.",
       "quadrant": 2,
       "sourcePosition": 51
     },
@@ -693,7 +693,7 @@
         "path": "media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json",
         "provenance": "manifest-explicit",
         "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json",
-        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/073b79c3fb4052f7f4691976663ffc0c9449f7f3/media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/eade4aec9c9faaea785602537768f86180434331/media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json",
         "sourceField": "data"
       }
     ],
@@ -705,7 +705,7 @@
         "path": "media/kfb/Big_Bad_Brain_Wrestling - ADD web.pdf",
         "provenance": "manifest-explicit",
         "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/kfb/Big_Bad_Brain_Wrestling%20-%20ADD%20web.pdf",
-        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/073b79c3fb4052f7f4691976663ffc0c9449f7f3/media/kfb/Big_Bad_Brain_Wrestling%20-%20ADD%20web.pdf",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/eade4aec9c9faaea785602537768f86180434331/media/kfb/Big_Bad_Brain_Wrestling%20-%20ADD%20web.pdf",
         "sourceField": "pdf"
       }
     ],
@@ -716,7 +716,7 @@
   "schema": "kfb.asset-deck.v2",
   "schemaStatus": "canonical",
   "sets": [],
-  "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3",
+  "sourceCommit": "eade4aec9c9faaea785602537768f86180434331",
   "sourceRegistry": {
     "path": "media/kfb/index.json",
     "provenance": "manifest-explicit",
