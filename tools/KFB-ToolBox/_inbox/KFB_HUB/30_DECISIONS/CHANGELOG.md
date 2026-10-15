@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · FrankenEyes FAIL, Zusammenbau ins ToolBox-Studio
+- V-303: FrankenEyes R1 als Zusammenbau FAIL (Kopf zu groß, nicht im Anzugkragen, Halskrause mit Lücke, Mund zu tief); Augen-Einfassung, Dangle, Münder als Teile PASS.
+- V-304: Zusammenbau im ToolBox-Frankenstein-Studio (WSA), Kopf als Einzelteil, Georg platziert selbst; WS0 liefert Teile; Abnahmen nur live in der Site.
+- Atlantis-Diorama (Meshy_AI_Atlantis_Claymation_S_1015124355) wird als Bühne aufbereitet.
+
 ## 2026-10-15 · FrankenEyes als Live-Seite, Gefängnis-Diorama
 - FrankenEyes-Vorschau als Artifact (https://claude.ai/artifact/JSMbg8SK9NyjzdqNxAnmMo), läuft ohne lokalen Server; GLBs als JS-Module eingebettet.
 - Neues Meshy-Diorama Gefängnis-Panoptikum (Meshy_AI_Dystopian_Prison_Dior_1015122335) wird als Bühne aufbereitet (V-300/V-301). Atlantis/Hidden-History-Diorama kündigt Georg an.

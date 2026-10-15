@@ -3936,7 +3936,9 @@
    "check": "Bildreihe + Videos Idle/Walk/Strut, Dangle je Teil",
    "source": "Georg 15.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-304"
+   ],
    "why": "Der Körper ist mit Frankenstein gelöst; Claude Designs Wert liegt im Kopf und in den Augen.",
    "applies": "ab sofort"
   },
@@ -4031,6 +4033,36 @@
    "applies": "Planung"
   },
   {
+   "id": "V-303",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "FrankenEyes R1 (MeshyModels/_frankenstein_eyes_r1) als Zusammenbau FAIL: Kopf zu groß, sitzt nicht sauber im Kragen des Raumanzugs, zusätzliche Halskrause zu weit vorn mit Lücke hinten, Mund viel zu tief; Abnahme über Vorschau mit Start-Befehl bzw. Startanleitung ist für Georg nicht praktikabel und schlampig. PASS als Teile: Augen-Einfassung (Claude-Design-Sockel), Dangle je Stiel/Antenne, Münder grundsätzlich (wenn sauber eingefasst und orientiert).",
+   "values": {},
+   "owner": "WS0",
+   "check": "-",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Zusammenbau ohne Georgs Hand und ohne Kragen-Passung bleibt halbgar.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-304",
+   "date": "2026-10-15",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Frankenstein-Figuren werden im Frankenstein-Studio der KFB ToolBox (WSA, V-263) zusammengesetzt: der Kopf ist ein einzelnes Teil; Georg platziert, skaliert und dreht Kopf, Mund, Augen-Anker und optionale Halskrause selbst wie im Studio und speichert das Ergebnis. WS0 liefert nur saubere Teile (Kopf-Teil-GLB + kfb.headpart/1-JSON mit Vorschlags-Passung) auf einem Asset-Branch. Abnahmen laufen live in der Site (ToolBox bzw. Spiel), nie über lokale Server, Start-Befehle oder Vorschau-Seiten mit Anleitung.",
+   "values": {},
+   "owner": "WS0 (Teile) → WSA ToolBox (Studio)",
+   "check": "Georg setzt Lord Hunky im Studio zusammen",
+   "source": "Georg 15.10.",
+   "supersedes": "V-296 (Zusammenbau als WS0-Asset-Probe)",
+   "superseded_by": [],
+   "why": "Georg platziert Teile selbst schneller und genauer als jede Runde Probe-Renders.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4103,7 +4135,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:486",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:495",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
