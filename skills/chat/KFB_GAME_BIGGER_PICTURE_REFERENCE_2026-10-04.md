@@ -239,3 +239,10 @@ KFB Residents may delightedly share an extravagant explanation and, when questio
 **Reader-owned Closure:** the resident can expose their own unjustified inferential leap and still love the dramatic invention. Visual pop-up facades, physical gags, authentic KFB Card and character acting may reveal the missing bridge without a lecture. No covert viewpoint conversion, NPC ideological scoring, new claims promoted into Card canon or compulsory gullible/skeptical persona.
 
 Full WS0 owner record: replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md section R1.7. Earlier R1.3 life joy and R1.6 historical evidence classifications stay authoritative. This is not WS1 implementation or a new gate. The sole next WS0 intake remains WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT.
+
+
+### R1.8 Georg correction · 2026-10-15 · Open narrative and QR source exploration
+
+Earlier R1.6/R1.7 suggestions to visibly classify or label disputed narratives **are superseded as player-facing design**. No predefined truth-status badges, mandatory warnings or verdict panels are part of KFB's creative North Star. A Card, Resident or staged scene invites interpretation and curiosity. Optional QR links give readers access to original documents, relevant historical sources, contrasting materials and further reading without dictating a conclusion. The underlying source must still be accurately reproduced; a citation does not automatically prove every narrative connection. Creative play and careful sourcing coexist.
+
+Reuse existing canonical PDF/Card/Registry identity, Almanac provenance and established Brain-Food/source-link routes; find the real QR-Index owner and verified URL before planning integration. No additional QR runtime, no new mandatory MVP gate and no WS1 owner change. Full owning correction: `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md` R1.8. One existing gate stays `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.
