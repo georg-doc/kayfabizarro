@@ -317,3 +317,54 @@ In a real pilot, content must come from current accepted card/dialogue/cast sour
 - Does a failed role remain meaningful and lived-in, and do material/social consequences survive even if the character finds them funny?
 
 **Single current WS0 next gate remains `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.** If WS0 decides the existing two-actor KFB Card/Billboard+light pilot benefits from a complaint→self-awareness→reprise beat, it is editorial guidance for that **same** sourced stage. This concept does not authorize a new Resident AI system, a new therapy/failure-score mechanic, a new WS1 runtime milestone or a mandatory fourth-wall feature.
+
+
+---
+
+## R1.5 · Georg creative extension · 2026-10-15 · Homer-esque self-diagnosing irony and reader-owned Closure
+
+**Status: GEORG GLOBAL INTENT / CHARACTER-WRITING TECHNIQUE REFERENCE, not dialogue canon, a new authored Resident voice, a universal gag formula, new V-number, extra milestone or gameplay implementation.** This additive technique follows R1.4's genuine lament and R1.3's joy without player-dependent existence.
+
+### A. Two verified Simpsons source cases — distinct comedic mechanisms
+**Source 1: Homer Simpson, The Simpsons, S18 E20, “Stop, or My Dog Will Shoot!” (2007).** His question, **“How come things that happen to stupid people keep happening to me?”**, is supported by the episode transcript, IMDb and Wikiquote.
+- Episode/script: https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s18e20&tv-show=the-simpsons
+- https://www.imdb.com/title/tt0918869/quotes/
+- https://en.wikiquote.org/wiki/The_Simpsons/Season_18
+
+**Transferable structure: self-incriminating complaint.** The character supplies the diagnostic premise of their situation while externalizing its cause. The audience completes the unstated inference: the explanation is embedded in the question, but the speaker hasn't integrated it. This is **partial lucidity and motivated blindness simultaneously**, not proof the speaker genuinely grasps every dimension of their failure loop.
+
+**Source 2: “It's funny 'cause it's true.”** Recurs in The Simpsons. Episode/attribution discussions document **Fat Tony** in “Bart the Murderer” (S3 E4, 1991) and **Homer** in “Lisa the Greek” (S3 E14, 1992). The phrase should not be attributed exclusively to Homer without specifying the occasion. References: https://www.imdb.com/title/tt0701060/quotes/ ; https://www.fanboysanonymous.com/2015/08/simpsons-quotes-i-always-say.html ; Homer clip https://www.youtube.com/watch?v=8DYje57V_BY .
+
+**Transferable structure: recognition-based humor.** The reader laughs because a contradiction, emotional habit or social pattern feels recognizable beneath the exaggeration. This is an **artistic sense of recognizability**, not evidence that whatever position a joke expresses is objectively true, morally valid or scientifically established. No satire quote becomes a justification for unverified real-world claims.
+
+These original quotes are *attributed research examples only*. Do not replicate Simpsons lines, persona, visual identity, proprietary character assets or unique catchphrases in published KFB dialogue. Develop original KFB Residents' own source/voice/approved lines and distinctive physical acting.
+
+### B. The KFB comic mechanism: self-knowledge leaking through the wrong conclusion
+Proposed formal diagnostic vocabulary for writers (not a runtime state machine):
+
+1. **Claim / grievance:** the Resident earnestly describes a repeated frustration, externalizes blame or declares a resolution.
+2. **Self-exposing detail:** their wording, own behavior, prop arrangement or contradictory action reveals a piece of the cause or habitual pattern to the viewer.
+3. **Missed or displaced inference:** the Resident continues, changes subject, re-commits to a familiar strategy or has one fleeting expression of awareness without arriving at a full solution.
+4. **Closure resides with reader/player:** neither an omniscient narrator, ChatterBox voice nor another NPC has to spell out the insult, verdict or moral. A second character may respond with silence, glance, practical help or an earned counterposition, **not obligatory explanatory correction**.
+5. **Repeatability with difference:** future encounter shifts the context (another Card, Warburgian neighbor, Arendtian activity, social relation, time, stage/pop-up backdrop) or consequence. The familiar flaw persists but the scene does **not** simply reuse the same line or diagnosis.
+
+This supports **R1.4 complaint / genuine emotion + R1.3 role-enjoyment**: the speaker may complain sincerely, glimpse their own causal role and then enthusiastically continue the cosmic task. Not all Resident awareness needs to remain naive or unintegrated; other characters can make a genuine change or understand themselves unusually well. Character-specific levels and rhythms are essential.
+
+### C. A source-correct stage use case (editorial illustration only)
+A fictional, not-yet-canon skeleton caretaker blames the Graveyard's disorder on every adventurer who passes through, while accidentally using their own ritual shovel to knock over a freshly repaired sign. The caretaker complains, notices the outcome briefly, and earnestly sets the sign upright with excessive pride; the player sees the causality without a punchline from another speaker.
+
+Later the same source-owned stage could show a different relationship to the mistake: a builder wordlessly lends the skeleton a proper prop; an off-duty scene reveals that both recognize the foolishness, but the haunting and repairs remain meaningful. Exact KFB card art, resident/rig/backstory, line pool, world destruction state and lighting must be original and verified before any actual implementation. This illustrative gag **does not assert an accepted new skeleton character or dialogue**.
+
+A Homer-derived comedic *mechanism* can be expressed by props, timing, reaction shots, a Card insert, a pop-up façade mishap, an improvised gesture, or a single carefully selected line. This matters for **Buster Keaton/Chaplin physical comedy and KFB mixed 2.5D/3D theatre**, not only verbal jokes.
+
+### D. Distinguish reader closure from character omniscience
+An audience completing the inference does not require every NPC to be unaware of their limitations. The inhabitant may be deeply role-conscious in one context and sincerely blind in another, as people are. “This is funny because it is recognizable” is **a player inference**, not an NPC's mandatory script. A narrative should sometimes allow the character to notice, learn, protest, change or refuse too.
+
+If a self-awareness joke produces only patronizing mockery of the character, redundant exposition, a forced “stupid” label, an excuse for institutional violence, or a one-off gag unrelated to their life, it does **not** meet KFB's tragicomic, humane Global Intent. The audience should be able to laugh **with** imperfect characters as well as recognizing their flaws, without being required to adopt the resident's position.
+
+### E. Production-safe adoption and next gate
+This is **an optional authoring/checking lens**, not a new pool of approved opener literals, NPC lines, voices or new global `FailureLoopEngine`. Use existing approved Card, ChatterBox/Triplet, Resident identity/Affect/relationship, actor performance, Lean Memory and source-authentic stage donors. No quote copying into KEEP or automatic dialogue generation.
+
+**Possible future reviewer questions:** Does the action make the implied inference legible without a lecture? Does the Resident preserve dignity, an authentic local emotion and coherent role? Is the joke specifically theirs rather than interchangeable? Can the player perceive meaning, disagree or just keep playing? Is the next encounter substantively different while respecting memory? None require new blocking tests in MVP-0.
+
+**Exactly one next gate remains `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.** WS0 can use *one* self-exposing complaint or prop gag as editorial guidance when reviewing its existing two-performer Card/Billboard lighting/physical-stage pilot, but this addendum does not prioritize, expand or independently authorize WS1 work.
