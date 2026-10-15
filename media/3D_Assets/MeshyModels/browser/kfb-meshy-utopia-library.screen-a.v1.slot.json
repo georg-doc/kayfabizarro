@@ -1,0 +1,166 @@
+{
+ "file": "kfb-meshy-utopia-library.screen-a.v1.glb",
+ "bytes": 18165308,
+ "sha256": "c7b06f94f9f82acf2b66b227245f0d04c87ae3c925c66f9119b3f891535a03e1",
+ "source": "~/Dropbox/CLAUDE/MeshyModels/_browser/library_utopia/UtopiaLibrary_A_faithful.glb",
+ "mode": "WALL_PICTURE (V-262/V-264/V-265/V-268: Holzrahmen an der Rückwand, Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "materials": [
+   "kfb_screen_frame_wood (Clay-Holz #6B4B2F (linear 0,15/0,075/0,03), rough 0,7)",
+   "kfb_screen_frame_gold (Goldocker, Perlstab/Rosetten/Kartusche)"
+  ],
+  "bezel_u": 0.016,
+  "bezel_m": 0.088,
+  "depth_u": 0.035,
+  "outer_u": {
+   "x": [
+    -0.496,
+    0.156
+   ],
+   "y": [
+    0.1791,
+    0.6895
+   ],
+   "z": [
+    -0.534,
+    -0.499
+   ]
+  },
+  "crest": {
+   "note": "Halbbogen-Kartusche, verdeckt die Fahnenstange",
+   "center_x": -0.155,
+   "rx": 0.19,
+   "ry": 0.115,
+   "base_y": 0.5505
+  },
+  "mount": "an der Rückwand (z ≈ −0,59) mit 2 verdeckten Haltern, kein Sockel (V-268)"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z, Boden y = −0,432)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.483,
+    0.54389,
+    -0.512
+   ],
+   "topRight": [
+    0.143,
+    0.54389,
+    -0.512
+   ],
+   "bottomRight": [
+    0.143,
+    0.19211,
+    -0.512
+   ],
+   "bottomLeft": [
+    -0.483,
+    0.19211,
+    -0.512
+   ]
+  },
+  "center_u": [
+   -0.17,
+   0.368,
+   -0.512
+  ],
+  "normalAtCenter": [
+   0,
+   0,
+   1
+  ],
+  "chordWidth_u": 0.626,
+  "arcWidth_u": 0.626,
+  "height_u": 0.35179,
+  "aspect_arc": 1.7795,
+  "surface": "eben: z = -0.512",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,432)·s, z·s), Bodenmitte = Ursprung; s = 5.5 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     -0.48,
+     0.54089,
+     -0.512
+    ],
+    "topRight": [
+     0.14,
+     0.54089,
+     -0.512
+    ],
+    "bottomRight": [
+     0.14,
+     0.19511,
+     -0.512
+    ],
+    "bottomLeft": [
+     -0.48,
+     0.19511,
+     -0.512
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0048,
+    "u1": 0.9952,
+    "v0": 0.0085,
+    "v1": 0.9915
+   }
+  },
+  "corners_m_s5p5": {
+   "topLeft": [
+    -2.64,
+    5.351,
+    -2.816
+   ],
+   "topRight": [
+    0.77,
+    5.351,
+    -2.816
+   ],
+   "bottomRight": [
+    0.77,
+    3.449,
+    -2.816
+   ],
+   "bottomLeft": [
+    -2.64,
+    3.449,
+    -2.816
+   ]
+  },
+  "visibleSize_m": [
+   3.41,
+   1.9
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   -0.12,
+   0.0,
+   1.85
+  ],
+  "target": [
+   -0.14,
+   -0.06,
+   -0.2
+  ],
+  "fovV_deg": 40,
+  "note": "Figuren auf dem Teppich vor der Galerie, Wandbild frei über Geländer und Efeuranke"
+ },
+ "scale_m_per_u": 5.5,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "change": "2026-10-15: Bild samt Rahmen/Bekrönung um 0,040 u (≈ 0,22 m) angehoben, Mitte y 0,328 → 0,368 (0,1 m reichte nicht, Efeuranke verdeckte noch die unterste Textzeile)"
+}
