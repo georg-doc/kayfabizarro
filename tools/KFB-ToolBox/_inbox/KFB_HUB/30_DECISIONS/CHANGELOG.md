@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Kartentitel vereinheitlicht
+- V-271 umgesetzt: data/kfb-card-title-case-2026-10-15 @eade4aec, 1503 Titel in 44 Decks, `cardNamePrint` = Druck; Registry-Kopien (registry/assets/v1) noch neu zu erzeugen. Triplet-Vorgabe und WS1 auf den neuen Pin umgestellt.
+
 ## 2026-10-15 · Drittes Triplet-Set, Bühnen-Assets
 - help_i_am_a_human (56 Zeilen, Rousseau-Golden wörtlich, Titel normal geschrieben) in replies/TRIPLET_SETS_R2, Hub tr03; Monomyth ohne Meta-Karten neu (50 Zeilen).
 - Asset-Branch assets/meshy-stages-utopia-comic-2026-10-15 (Comic-Diorama PASS, Utopia mit Wand-Display, Abnahme offen); Frankenstein-Größe nachgemessen: Skelette identisch, nichts skaliert (Hub fr02).

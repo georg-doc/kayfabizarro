@@ -4,7 +4,7 @@
 **Prüfskript:** `replies/triplet_set_check.py <deck.json> <set.csv>` (Exit 0 = alle Kartenzeilen PASS).
 
 ## Quelle
-- Kartentext = **gedruckte Karte** (V-242): Branch `data/kfb-card-text-canonical-2026-10-14` @233efd5, `media/kfb/<Deck>.pdf.json`, Felder `cardName`, `power`, `lore`.
+- Kartentext = **gedruckte Karte** (V-242) mit Titeln in normaler Schreibweise (V-271): Branch `data/kfb-card-title-case-2026-10-15` @eade4aec (baut auf `data/kfb-card-text-canonical-2026-10-14` @233efd5 auf), `media/kfb/<Deck>.pdf.json`, Felder `cardName`, `power`, `lore`; die Druck-Schreibweise steht in `cardNamePrint`.
 - Nie `jsonLegacy`, `artworkPrompt`, `grade`, `gradeReason` oder Marketingtext.
 - Karten mit Status OPEN (Text nicht sicher lesbar) bekommen keine Zeile; sie werden im Bericht gelistet.
 - **Meta-Karten ohne Spielinhalt** (BLANK, Anleitung/How to Use, Lizenz, QR-Code, Kartenrückseite u. ä.) bekommen keine Zeile (V-266); im Bericht listen.

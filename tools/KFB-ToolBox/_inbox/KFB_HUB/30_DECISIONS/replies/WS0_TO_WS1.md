@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Kartentitel vereinheitlicht (V-271) · neuer Daten-Pin
+- **Branch** `data/kfb-card-title-case-2026-10-15` @eade4aec (Parent @233efd5): 1503 Titel in 44 Decks von Versalien auf normale Schreibweise, z. B. „Jean-Jacques Rousseau“; Akronyme bleiben groß. Die Druck-Schreibweise steht in `cardNamePrint`. Liste alt → neu: `media/kfb/CARD_TITLE_CASE_R1.md`.
+- **Bitte Karten-Daten auf @eade4aec pinnen** (statt @233efd5). Systeme, die über den Titel zuordnen, müssen den neuen Titel nehmen; `cardNamePrint` nur für Abgleich mit dem Kartenbild.
+- **Noch nicht nachgezogen:** `registry/assets/v1/decks/*.json` und `cards.jsonl` enthalten noch die Versalien-Kopien; WS0 lässt sie aus den Kartendaten neu erzeugen. Bis dahin für Titel die Deck-JSONs nehmen.
+
 ## 15.10.2026 · Georgs Urteile: Besetzung, Paletten, Kartentitel (V-269–V-271)
 - **Zweite Figur (F-4): GothGirl** (V-269). Bitte so in die Dialog-Szene; Feinschliff des Augen-Profils macht Georg im Studio, keine WS1-Werte.
 - **Paletten (V-270): TUNE.** Georg: „das sind nicht einfach nur eine Farbstimmung – das sind harmonische Paletten mit Akzenten“ (Joyride: canyon, bucht, otown). Quellen:
