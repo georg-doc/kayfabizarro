@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Triplet-Sets R2
+- Vorgabe replies/TRIPLET_SET_SPEC_R2.md und Prüfskript replies/triplet_set_check.py (nur Kartenwörter, Opener einmal pro Set, Intro + „Stay Fluffy!“, eine Zeile = ein Take); Georgs drei Goldens bestehen die Prüfung. Erste ganze Decks (Monomyth Mayhem, Philosophy) in Arbeit; Plugin-Auftrag an WSA (b14) liegt im Hub und geht nach Georgs Urteil raus.
+
 ## 2026-10-15 · Display-Regel
 - V-265: Passt die Fläche nicht, kommt ein größeres, oben überstehendes Display mit schlankem Rahmen davor (wirkt wie ein hoher Monitor), Karte randlos.
 
