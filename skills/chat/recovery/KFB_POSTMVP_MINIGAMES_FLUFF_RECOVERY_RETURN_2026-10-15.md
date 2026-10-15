@@ -42,6 +42,14 @@
 
 ---
 
+## CURRENT ADDENDUM · 2026-10-15 · Flight 3D compass pitch mandatory
+
+**Georg's explicit correction:** In Flight, the KFB 3D quest arrow must physically and visibly lean **UP/DOWN**, not only show an azimuth/flat north-rose or changing proximity color. Updated *existing* [R0.3 Home Return Stone / 3D POI Compass concept](./KFB_HOME_RETURN_STONE_POI_3D_COMPASS_R0_3_2026-10-15.md), source blob `44e575114ac8246de4fad3c93300295c5ee3cc25`, to make pitch/elevation **mandatory**. World-owner resolves the first reachable POI/transition waypoint; same-coordinate-frame delta gives relative yaw + true world-vertical elevation (via `atan2(dy,hypot(dx,dz))`). Real 3D source mesh remains on the **one existing HUD renderer**; horizon ring, height-delta UP/DOWN and true waypoint distance provide non-color cues. Near-vertical targets, camera bank/orbit, wrap/smoothing, and altitude crossover have explicit later visual proof fixtures; no 2D CSS substitute passes flight acceptance.
+
+**Checks:** numeric angle-contract fixture 6/6 PASS (level, +30°, -30°, ±90° vertical, altitude-sign cross), 11/11 static source/contract assertions PASS after aligning two assertion strings to exact Markdown wording (**17/17 total source/math**, NOT 3D visual QA). Exact branch head and intended R0.3 source/index read backs passed; no actual GLB, current Lab flight HUD build, real World POI, savegame or deployed Game/Site was tested. Original `CLAUDE_CODE_RECOVERY_INTAKE_CONFIRMATION` handoff still awaits acknowledgement; future `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` only with explicit approval after playable MVP. **No current MVP/owner change, no merge/Live.**
+
+---
+
 ## Exact changed files
 1. `skills/chat/recovery/KFB_POSTMVP_MINIGAMES_FLUFF_SOURCE_RECOVERY_2026-10-15.md` — full five-source map, brief concept reconstruction and Claude Code cold-start/read guidance. Verified blob `c689d13a4602f633d4bd7221063c220e3e8e3c2c`; source-only QA **14/14** static checks.
 2. `skills/chat/START_HERE.md` — *additive* first-paragraph index to this recovery; existing October 12/8 decisions retained. Verified blob `1dcb0f98ba6236cce39e8536b113528a10cb52cd`.
