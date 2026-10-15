@@ -25,3 +25,10 @@
 Existing 27 opener strings, R2 checker, kfb-triplets v0.2.1, eight draft tracks, audio owner, WS0 approval authority unchanged. Fictional performance frames (books, films, diarists, politicians, museum placards, rumors) must never be relabeled as real quotations, card facts or sourced historical evidence. Do not automatically adopt new examples in a runtime or add a new performance owner.
 
 **One next gate:** `GEORG_OPENER_R3_SHORTLIST_REVIEW` after a dedicated new Webchat completes cited external research, grammar/semantic sampling and actual deterministic schedule tests. WS0 adopts only human-approved candidates in a subsequent authorized code slice.
+
+## Verified Production Control Site persistence (additive)
+Three research/briefing files were saved in the existing authenticated KFB Production Control Site Inbox under workflow `KFB-TRIPLET-OPENER-RESEARCH-R1` and **all three were independently read back**:
+- `DEEP_DIVE_WEBCHAT_BRIEF.md`: Site file `8d77e740-bb33-4eef-a4ae-78cafd243880`, SHA-256 `416698e24c7b33d80b098b04350860d29be41dcc4c1ef2beccb52d712c95c3b7`.
+- `PASTE_FOR_NEW_WEBCHAT.md`: Site file `2e8bcdfc-a79e-4872-9264-5004616b0e67`, SHA-256 `0823b6b23dacc57c0d6e555fd42353fcf419ea606f957864ab15f1bd25ac1c9f`.
+- `SEED_FRAMES_UNAPPROVED.json`: Site file `2a590038-bc2a-4483-b859-63ea2366d21c`, SHA-256 `cddc475c2fa157b16449653d78c63db0aca48ed6d6609aaa90931899712274f2`.
+This is authenticated **Site Inbox persistence**, NOT a new or updated public Site route, Cloudflare deployment, active checker change, or KFB Hub publication. Site content and file metadata were actually returned by authenticated reads; no public URL was asserted.
