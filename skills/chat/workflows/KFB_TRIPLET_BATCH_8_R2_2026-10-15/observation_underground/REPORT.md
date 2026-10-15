@@ -1,0 +1,7 @@
+# Observation Underground — R2 full-deck editorial handoff
+Newly authored exact packId observation_underground from canonical printed title-case source @eade4aec9c9faaea785602537768f86180434331, media/kfb/Observation_Underground_-_ADD_web.pdf.json, blob 04d1afd7f437d746ef2b1ee6769d60643f94f159; registry @52adc8f1.
+- **48/48 spoken card takes, 0 skips**; one track **3,583 characters**, 16 distinct opener uses (every third playable card), 50 CSV rows including intro and outro, UNTIMED_AWAIT_REAL_AUDIO, no audio uploaded.
+- Checker-equivalent lexical/stemming implementation against the pinned deck: **48 PASS / 0 FAIL**, after 10 preliminary out-of-source inflections fixed. **Exact Python checker was not run against real JSON and CSV** due to connector/container isolation; the check file states this. No WS0/human semantic acceptance is claimed.
+- Intro words are from indexed printed deck title and the original titles #1 #3 #4. PDF cover-page pixels not independently inspected; `intro_source` discloses this.
+- Semantic watch: cards #12, #17, #21 and #32 present surveillance and biological claims strictly as card fiction; compression must not be treated as source verification of those claims. #3 and #5 preserve their German original titles. The actual R2 read-through gate remains WS0's.
+Next one gate: WS0 runs exact Python checker and independently checks full 48-line meaning. No PR/merge/Live or new plugin.
