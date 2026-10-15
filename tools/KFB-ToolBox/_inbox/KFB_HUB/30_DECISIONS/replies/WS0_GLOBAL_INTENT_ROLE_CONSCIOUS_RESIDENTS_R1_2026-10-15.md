@@ -368,3 +368,76 @@ This is **an optional authoring/checking lens**, not a new pool of approved open
 **Possible future reviewer questions:** Does the action make the implied inference legible without a lecture? Does the Resident preserve dignity, an authentic local emotion and coherent role? Is the joke specifically theirs rather than interchangeable? Can the player perceive meaning, disagree or just keep playing? Is the next encounter substantively different while respecting memory? None require new blocking tests in MVP-0.
 
 **Exactly one next gate remains `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.** WS0 can use *one* self-exposing complaint or prop gag as editorial guidance when reviewing its existing two-performer Card/Billboard lighting/physical-stage pilot, but this addendum does not prioritize, expand or independently authorize WS1 work.
+
+
+---
+
+## R1.6 · Georg Global Intent addendum · 2026-10-15 · Epistemic Kayfabe, competing explanations and playful self-rebuttal
+
+**STATUS: GEORG CREATIVE CONCEPT + VERIFIED HISTORICAL RESEARCH REFERENCES.** This is an additive editorial technique, NOT an authorized runtime, factual allegation, canon NPC speech, persuasion campaign, or new WS0 V-number. Earlier R1.3 life-affirming Resident continuity and R1.4–R1.5 genuine complaint/reader-owned Closure remain binding. Speech-recognition glitches in Georg's input are corrected by context rather than treated as new franchise names or source documents.
+
+### A. Core dramatic opportunity
+Residents may be **delighted by the imaginative room** opened by speculative links, detective theories, political mythologies, grand explanatory schemes and new contradictory evidence. A resident can enthusiastically *perform* one story, sincerely argue it, know that it is incomplete, partly observe their own cognitive blind spot and then gleefully improvise a radically different frame. The character's metatheatrical self-awareness can occasionally let them ask: *“Do I really believe this? How much of it is my role, and what can I actually support?”*
+
+**The player's inference is the punchline and the educational invitation.** KFB provides puzzles, collisions between viewpoints, evidence/provenance access and visible consequences. It does not require the player to agree with the resident, adopt a political position, mock a designated ideological identity or complete a compulsory skeptical-education tutorial. One version of an argument may be very funny without being historically true; another may be well supported despite sounding implausible.
+
+**Crucial distinction:** multiple narratives are equally eligible as **objects of inquiry, artistic critique and fictional representation**. They are NOT automatically equal in historical evidence, factual credibility, moral impact or attribution of responsibility. Critical thinking includes accepting when the evidence genuinely supports a conclusion, rather than reflexively doubting everything. Do not imply that all official accounts are wrong or all conspiracy theories are plausible.
+
+### B. Source and claim ladder (editorial QA vocabulary; no new UI badges/state owner)
+1. **DOCUMENTED_EVENT** — primary documents and multiple credible sources establish an event. A real covert action may fall here. Name precise event/date and distinguish the document itself from interpretations of it.
+2. **DOCUMENTED_PROPOSAL / INTENT** — a plan or allegation is recorded but execution or result is NOT established. Showing a plan never proves it happened.
+3. **DISPUTED_INTERPRETATION** — the event is established, but intention, responsibility or some details remain contested; identify evidence and disagreement with date and provenance.
+4. **UNSUPPORTED_SPECULATION** — a suggested causal linkage, perpetrator, hidden motive or explanatory conspiracy is missing sufficient evidence. Its presence beside a documented event does not upgrade it.
+5. **FICTIONAL / CHARACTER BELIEF / SATIRE** — a playful theory, deliberate unreliable narrator, alternate world rule or explicitly invented relation. The reader may enjoy it but should not be misled into mistaking it for a finding.
+6. **REFUTED OR MISLEADING CLAIM** — available credible evidence weighs against it, or it incorrectly merges two incidents/time periods or treats a proposal as execution. Humor should not silently launder these into historical fact.
+
+These are **authoring and provenance review classifications only**, not a mandatory visible verdict system, a political ideology ranking, a new global `EvidenceEngine`, or a self-declared scientific truth arbiter. Whenever data comes from actual original KFB Cards, retain their identity and record the specific document/claim being used. Source documents are not proof of every inferential story attached to them.
+
+### C. Concrete source-verified anchors; accurate limits
+**Operation Northwoods, 13 March 1962** — the Joint Chiefs memorandum `Justification for US Military Intervention in Cuba` proposes manufactured incidents or deceptive pretexts, including scenarios involving aircraft/ships, to justify intervention. This proves a **real documented proposal**, NOT that all scenarios were implemented or that it explains JFK's assassination. Original research/archival transcript:
+https://nsarchive.gwu.edu/CMC-60/joint-chiefs-pretexts-to-invade-Cuba-1962
+
+**Gulf of Tonkin, 2 and 4 August 1964** — an actual 2 August encounter is distinct from the purported 4 August second attack. Declassified NSA historian Robert Hanyok's SIGINT investigation indicates the supposed second attack did not occur, with inaccurate/misinterpreted intelligence used in US official justification. Distinguish an established historical finding from any unrelated plot alleged by a fictional Resident:
+https://nsarchive2.gwu.edu/NSAEBB/NSAEBB132/press20051201.htm
+https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/cryptologic-histories/spartans_in_darkness.pdf
+
+**USS Liberty, 8 June 1967** — Israeli aircraft and torpedo boats attacked a US intelligence ship, killing 34 US personnel; **the attack is documented**, while intentions and interpretations of identification errors remain disputed. Israeli inquiry called it an error; a 1967 CIA memorandum assessed gross negligence while finding no evidence of a deliberate attack against a known American ship. Some survivors and later interpretations contest the mistaken-identity explanation; distinguish their reports from adjudicated facts and do not minimize casualties. Historical/archival sources:
+https://www.history.navy.mil/content/history/nhhc/browse-by-topic/wars-conflicts-and-operations/middle-east/six-day-war-liberty.html
+https://history.state.gov/historicaldocuments/frus1964-68v19/d317
+
+**John F. Kennedy assassination, 22 November 1963** — Warren Commission concluded Oswald acted alone; the later House Select Committee on Assassinations (1979) considered conspiracy probable but identified no other gunman or conspiracy extent, with important grounds debated. Its own findings found no evidence establishing groups including Soviet/Cuban governments or anti-Castro Cuban groups *as groups*. New release of documents does not automatically validate a motive/perpetrator scenario. **Specific UFO-files, Israeli-government, Mossad or other named-group motive theories are not substantiated by the cited official findings**; do NOT represent as equivalent alternatives, accuse whole ethnic/religious populations by association, or present proximity between real geopolitical tensions and an unsolved/contested question as causal proof.
+https://www.archives.gov/research/jfk/warren-commission-report/chapter-1
+https://www.archives.gov/research/jfk/select-committee-report/summary.html
+https://www.archives.gov/research/jfk/release-2025
+
+**Epistemic trap to dramatize:** `“Northwoods existed as a proposal”` (evidence) → `“therefore every later suspicious incident was a Northwoods operation”` (unsupported leap). Or `“the USS Liberty attack took place”` (established) → `“therefore one specific additional assassination theory is correct”` (unsupported leap). The character may enthusiastically try the jump; the spectator should have a fair way to identify its missing bridge. Avoid conspiracy-vocabulary-only “look how crazy this is” sneering; the documented sources are substantive.
+
+### D. Narrative choreography: affectionate self-undermining, not propaganda laundering
+**Proposed editorial beats, not fixed production lines:**
+1. **A real dossier/card/source comes into view:** an archival fragment, institution's narrative, resident's source-backed claim, or explicitly fictional in-world clue.
+2. **Role-bound overreading:** a committed conspiracy-collecting character connects it to their personal theory, perhaps already acknowledging how beautiful the pattern looks. Their investment is psychologically/comedically plausible, not an authorial endorsement.
+3. **An honest question:** the player (optionally) or a foil asks about evidence, alternative explanations, missing causal mechanism, inconvenient contradictions or how the claim might be falsified.
+4. **An authentic self-exposure:** the theorist briefly reveals the role of curiosity, pattern-seeking, reputation, desire for a better story, ideological identity or professional Kayfabe obligation. They can revise, double down, parody their own leap, remain angry or accept uncertainty, character-dependently.
+5. **Audience closure:** no mandatory narrator says “and this proves that you should believe X.” Leave relevant source/provenance or contrary testimony discoverable. An optional in-world task might involve finding original source, asking another NPC, sorting a mistaken date or discovering that an item is merely a proposal. The reward is a fresh perspective or a true encounter, not automatic conversion.
+6. **Next context, new twist:** the resident may enjoy a fresh theory after learning the earlier one failed; meaningful memory acknowledges the correction. The persona stays delightfully creative without pretending the disproven claim is now fact.
+
+Do not turn this into a hidden political attitude-change engine, manipulative “plant doubt” sequence or predetermined conversion workflow. The audience's right to **confirm, reject or suspend judgment** is fundamental. Offer evidence openly; let irony, actual historical complexity and mutually contradictory roles work without coerced dissent.
+
+### E. Three scene-writing examples — original KFB PROPOSALS, not approved dialogue pool
+**Scene A: Northwoods cabinet (fictional Resident, documented file).** The Resident triumphantly presents a declassified plan; another character asks whether the plan was ever carried out. The excited archivist has prepared seven theories about the question but overlooked the distinction between a drafted memo and an executed event. Their enthusiasm survives the correction; a brief prop/facial reaction makes the joke, not an omniscient fact popup.
+
+**Scene B: Stage switch / model city.** Two Residents recite competing historical interpretations while the backdrop itself swaps from glossy official press room to cardboard conspiracy-map diorama. The real Card stays uncut and the original sources remain referenceable; the stage visualizes *how narrative frame changes emotional effect*, not how the facts change. A baffled Resident can notice that the map's “connecting string” is tied to their own sleeve.
+
+**Scene C: The evidence courier.** A player may carry a dated source note between two NPCs with incompatible interpretations. The next Resident genuinely updates one claim, defends another and invites a different question; the player can leave, challenge the reasoning or ignore both. The assignment should not force the player to repeat an unsupported allegation as an established fact or perform a loyalty pledge.
+
+All actual presentable lines must come through WS0-controlled current Card/KEEP dialogue editorial approval. Do not generate or adopt real-world allegations as improv dialogue that appears archival/authentic by default.
+
+### F. KFB fit / production reuse guard
+- **Previous R1.3** (Resident joy independent of player's login), **R1.4** (genuine complaint), **R1.5** (Homer-like self-exposing premise and reader-owned Closure) stand. Worldview performance is a *character variant*, not the automatic cognition of every NPC or compulsory satirical twist in every encounter.
+- Retain `PULL, DON'T GATE`: a source link, real Card, source-book shelf, optional neighbor or alternative interpretation is better than a compulsory fact quiz. Critical inquiry is invitation, not indoctrination, humiliating ideological scoring or performative skepticism.
+- Use Warburg's good-neighbour interpretive shift and Gabriel's semantic framing as **creative perspectives only**, not mechanisms proving unverified linkage. Role masks can be institutionally assigned or willingly embraced, without every named character knowing the Academy's lore.
+- Keep source-based real card art/number/provenance, original Cast/ChatterBox/Triplet and owner-selected scene/StageOrbitCam. No second light/camera/renderer, no new global political belief database, no personalization by a player's inferred ideology.
+- Source checks and archive hyperlinks are research evidence; **no current WS1 browser scene, runtime dialogue, 3D prop or player test exists for this R1.6**.
+- The metatheatre+lighting issue #404 remains the only current receiving WS0 intake; using one comic overinterpretation as a narrative comparison is at WS0's discretion and not a new required MVP-0 feature.
+
+**One next gate unchanged: `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.** WS0 can consider a single real Card/source-backed foil with a visible self-rebuttal as optional creative guidance in the existing source-true 2-character scene; broader politics/geopolitics cards and dialogue curation require actual WS0-owned source/editorial review, not silent runtime adoption.
