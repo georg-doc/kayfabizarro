@@ -1,7 +1,106 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§39 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§40 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 40 · 15.10. · Dioramen als Bühnen: Aufteilung WS1/M1 und Bühnen-Deskriptor (Vorschlag) · M1-Runde
+
+### 40.1 · Georg: neue Dioramen als Szenarien mit Billboard
+Gemeint sind Goblin-Bank, Gefängnis-Panoptikum, Bibliothek, UFO, Comic, Utopia, Dystopia und Atlantis. Das Display ist jeweils ins Modell eingebaut. Einbau laut WS0 nach MVP-0, je Bühne eine Vorlagen-Zeile (V-281, V-287, V-300/V-301, Atlantis @d3326a6a).
+
+### 40.2 · Aufteilung, damit nichts doppelt entsteht
+- **WS1 (Bühnen-Seite):** Display bzw. Slot als eigenes Objekt (V-287), Bildflächen-Modul (V-256), Rahmen-Familie je Bühne (V-262), Paletten (V-270/V-286), Bühnenkamera (V-257, `StageOrbitCam`).
+- **M1-Sitzung (Begehbarkeit in der Welt):** Kollision, Rampen-Kollider, Kulissen-Zäune wie bei den Rängen, Spielerweg, Dialog-Auslöser je Bühne.
+
+### 40.3 · Schnittstelle: `kfb.stage-descriptor/1` (Vorschlag, gebaut wird nach MVP-0)
+Je Diorama gibt es eine Datei `src/data/stages/<id>.stage.json`. Sie baut WS0s Slot-JSON nicht nach, sondern verweist darauf:
+
+```json
+{
+  "schema": "kfb.stage-descriptor/1",
+  "id": "goblin-bank",
+  "slot": "kfb-meshy-goblin-bank.screen-a.v1.slot.json",
+  "marks": { "left": { "x": 0, "z": 0, "yaw": 0.35 }, "right": { "x": 0, "z": 0, "yaw": -0.35 } },
+  "display": { "frame": "<Rahmen-Familie>", "override": null },
+  "collision": { "fences": [], "ramps": [], "walkable": null, "triggers": [] }
+}
+```
+
+- **`slot`** (WS0-Format, unverändert): GLB, SHA, Maßstab, floorY, `kfb_screen_slot` und Rahmen, Standardkamera.
+- **`marks`**: Standplätze der Figuren in Modelleinheiten, wie heute `SCENE_MARKS` (WS1).
+- **`display`**: Rahmen-Familie je Bühne. Die Position kommt aus dem Slot als Standardwert, God-Mode kann sie später überschreiben (V-287) (WS1).
+- **`collision`** (M1-Sitzung):
+  - `fences`: Grundriss-Vieleck in Modelleinheiten, gemessen wie bei den Rängen aus der Höhenkarte, mit Prüfskript;
+  - `ramps`: je Treppe ein Rampen-Kollider `{ from, to, width }` (Goblin-Bank 42°, Gefängnis 31°, Atlantis ≈ 40°);
+  - `walkable`: optional ein vereinfachtes Kollisions-GLB von WS0 statt des Meshy-Trimesh;
+  - `triggers`: Dialog-Auslöser `{ center, r, leaveR }`.
+- **Bitte an WS0:** Passt der Schnitt? Dann bringt die Vorlagen-Zeile je Bühne nach MVP-0 einen ausgefüllten Deskriptor mit Bild aus der Standardkamera.
+
+### 40.4 · M1-Runde @cdd53c4 (M1-Sitzung, lokal, nicht gepusht): 11/11 grün plus INFO
+- **Grün:** rank-fence, contract, move @60/@120/@30, hz-equal, fence, scene, eyes, bench (59,9 fps, p95 16,7 ms, 1,9 ms je Schritt, dpr 2), f1.
+- **`m1-fence`:**
+  - zu Fuß aus sieben Richtungen (zwei mit Sprung) und von außen: Zaun jedes Mal berührt, nie im Zaun, ≥ 35 cm Abstand, Dialog nie ausgelöst;
+  - Flug innen und außen: 40 cm Abstand;
+  - 30 m/s gegen Außen- bzw. Stirnwand: steht bzw. gleitet ab, kein Durchtunneln.
+- **Fund und Fix:** Die eigene Fluggeschwindigkeit kannte keine Kontakte: bei 15 m/s 18 cm in der Wand, bei 30 m/s ganz durch den Zaun. Jetzt gibt es `flyClip` (castShape je Schritt, der Anteil in die Wand wird gekürzt, der Rest gleitet). In rapier-compat 0.19 zeigt `normal1` aus dem Hindernis heraus; gemessen mit `scripts/m1/probe-fly.mjs`.
+- **`m1-scene`:**
+  - GothGirl ist Partnerin (über `stageCast`);
+  - `StageOrbitCam` ist im Dialog aktiv;
+  - Spielerweg von START: zwei Sprünge hinein, Dialog, ein Sprung hinaus.
+- **INFO Rückwand ohne Zaun:** Die Kapsel sinkt bis −18,6 cm ein. Das ist der Abnahmewert für WS0s Kollisionsnetz.
+- V-248 unverändert: Joggen 0,042, Gehen 0,48, Sprint 0,21.
+
+### 40.5 · Fünfter blinder Prüfer @cdd53c4: **PASS MIT AUFLAGEN** für den Code, noch nicht reif für Georg
+- Von Prüfer 4 behoben: 1, 2, 3, 4 (knapp), 5, 8, 10, 11, 12. Teilweise: 9 (Kamera-Übergabe springt). Bei WS0: 6, 7, 13, vorderer Ring bzw. Rampe.
+- **Neu, bei der M1-Sitzung:**
+  - N3: Reibung Zaun/Kapsel negativ, der Sprung am Zaun steigt 2,59 m statt ≈ 2,16 m;
+  - N4: Außenbogen r 19 sperrt an den Flügeln ≈ 100 m² freies Gras → Außenprofil aus der Höhenkarte;
+  - N5: FB-Optionen doppelt zu `stageCast.FB` (V-206);
+  - N6: Testgrenzen am Messwert, Gegenlauf mit `nofence`;
+  - N7: Normalen-Annahme dokumentieren und testen;
+  - N8: Kontext für GothGirl im Vertragstest;
+  - N9/N14: Kommentare;
+  - N10: Tastenliste ohne Strg-Gehen und Dialog-Kamera;
+  - N11: Commit-Stempel im Log;
+  - N12: kleine Prüflücken;
+  - N13: Man läuft durch GothGirl und das Billboard.
+- **Bei WS1 (N1/N2), erledigt:**
+  - Problem: Die Kamera sprang beim Wechsel Dialog ↔ Laufen (≈ 25° Gier, Bildfeld 38° ↔ 55° hart), und bis zum React-Commit schrieben zwei Steuerungen die Kamera.
+  - `StageOrbitCam` nimmt jetzt `ref`: `{ setActive(on) }` wirkt synchron im selben Schritt, dazu `target()` und `jump(name, fov?)`.
+  - Beim Einschalten wird das Bildfeld über `ORBIT.glideS` überblendet.
+  - `test/orbit` prüft Aus (Kamera unberührt) und Ein (Bildfeld überblendet, Endlage Standardmarke). kfb-planet @cce73aa, ganze Testreihe 22/22 PASS.
+- **Bei WS0 offen** (Prüfer: Georgs Abnahme 1 bleibt rot, solange V-248 für Gehen und Sprint offen ist): V-248 Gehen/Sprint, vorderer Ring bzw. Rampe, harter Halt beim Aufsetzen, Zaunhöhe, bewegtes Bildpaar Studio | M1 (V-214).
+- **Nachtrag (M1-Sitzung, lokal):**
+  - gegen die ref-API gebaut, mit neuem Test `m1-handover` (Replay je Schritt: kein Schritt mit mehr als 20 % der Gesamtänderung, im Dialog steht die Kamera still bei 38°, Endstände 38°/55°);
+  - N3–N14 eingebaut: Zaun aus Tortenstücken mit gemessenem Außenprofil (freies Gras im Zaun 13 m² statt 184 m²), Reibung `Max`, Kollider für Billboard und GothGirl, Spieler aus `stageCast.FB`, Tastenliste vollständig, Commit-Stempel, Gegenlauf ohne Zaun.
+  - Die Runde folgt.
+- **M1 wird erst nach dem neuen Endstand der M1-Sitzung nach main gemergt.**
+
+### 40.6 · Bitte an WS0: Auslieferweg für Abnahmen (V-303/V-304)
+- V-304: Abnahmen laufen „live in der Site (ToolBox bzw. Spiel), nie über lokale Server, Start-Befehle oder Vorschau-Seiten mit Anleitung“.
+- WS1 hat Georg bisher nur Bilder geliefert (1920 × 1080, V-253), nie einen lauffähigen Stand. `dist/index.html` ist eine Einzeldatei (Doppelklick), fällt aber unter V-303/V-304. WS1 darf nicht live deployen.
+- **Frage:**
+  1. Wohin werden kfb-planet bzw. M1 gebaut und gehostet, z. B. eine Pages-Vorschau des Branches `ws1/r3f-frame` unter kayfabizarro.pages.dev?
+  2. Wer richtet das ein?
+  3. Gilt für WS1 dann „Push = Vorschau-URL“, und darf WS1 Georg diese URL zur Abnahme geben?
+- Bis dahin geht keine Datei an Georg.
+
+### 40.7 · V-305 Farb-Harmonie-Modell: Vorschlag für den Einbau (Vorlagen-Zeile, bitte freigeben)
+- Gelesen: `replies/COLOR_HARMONY_R1/` (README, `kfb-cartoon-palette.js`, results.json). V-305 ersetzt die Vorlage V-270; der Einbau liegt bei WS1.
+- **Vorschlag:**
+  1. `kfb-cartoon-palette.js` 1:1 vendoren (Blob in SOURCE.md).
+  2. Eingabe je Karte: der Story-Mode der Karte (wie heute über world-context) → `fromStoryMode(id, 0)`; die Story-Farbe liegt auf dem Boden (V-305).
+     - **Alternative:** Deck-Welt bzw. Genre → Boden-Farbton → `fromHue`, und der Story-Mode nur als Tönung.
+     - **Bitte entscheiden.**
+  3. Rollen auf eigene Bauteile (V-286):
+     - Rahmen = `strang`, Pfosten = `trunk`, Leiste = `pad` bzw. `cloud`;
+     - Himmel = `sky` → `cloud`;
+     - Gelände = `top`;
+     - Fluff (später) High = Variante satt, Low = dunkel (V-305).
+     - Die Meshy-Textur bleibt bei 18 % Tönung zum Boden-Farbton.
+  4. `stagePalette.js`, Test `palette` und SOURCE.md werden umgestellt. `island-palettes.js` und die Genre-Tabelle entfallen, Variante B (`palv=b`) auch.
+  5. Ergebnis als Bilder: je Story-Mode ein Einzelbild plus Bildpaar heute | V-305.
+- Bis zur Freigabe baut WS1 nichts davon.
 
 ## 39 · 15.10. nachmittags · M1: Ränge als Kulisse grün, vierter blinder Prüfer PASS MIT AUFLAGEN · Kamera und Besetzung als gemeinsame Module
 
