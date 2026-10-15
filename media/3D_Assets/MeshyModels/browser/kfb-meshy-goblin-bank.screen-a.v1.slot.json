@@ -1,0 +1,200 @@
+{
+ "file": "~/Dropbox/CLAUDE/MeshyModels/_browser/goblin_bank/GoblinBank_A_screen.glb",
+ "bytes": 15405652,
+ "sha256": "2d6f7e317f4eedd0c9d8e08a85788c863c3abb29c44bdcb22ae69592be64a9d6",
+ "source": "~/Dropbox/CLAUDE/MeshyModels/_browser/goblin_bank/GoblinBank_A_faithful.glb",
+ "mode": "FRONT_DISPLAY (V-265/V-268: Kurstafel hängt an der Wandkrone über der Galerie, ragt oben über die Rückwand; Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_brass (Clay-Messing #CFA14F wie Geländer und Tresorring der Bank, rough 0,5, metal 0, schlicht)",
+  "bezel_u": 0.012,
+  "bezel_m": 0.06,
+  "depth_u": 0.02,
+  "outer_u": {
+   "x": [
+    -0.432,
+    0.432
+   ],
+   "y": [
+    0.478,
+    0.9705
+   ],
+   "cardBottom_y": 0.49,
+   "z": [
+    -0.43,
+    -0.41
+   ]
+  },
+  "mount": "ohne Sockel (V-268): hängt senkrecht über der Galerie-Brüstung, 2 schmale Messing-Konsolen hinten auf der Wandkrone (von vorn verdeckt); Unterkante 2,1 m über dem Galerieboden (Galerie bleibt begehbar), Schließfachwand und Lampen bleiben aus der Standardkamera sichtbar; obere Hälfte ragt über die Rückwand hinaus"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z, Schalterhallen-Boden y ≈ −0,49)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.423,
+    0.96149,
+    -0.4215
+   ],
+   "topRight": [
+    0.423,
+    0.96149,
+    -0.4215
+   ],
+   "bottomRight": [
+    0.423,
+    0.487,
+    -0.4215
+   ],
+   "bottomLeft": [
+    -0.423,
+    0.487,
+    -0.4215
+   ]
+  },
+  "center_u": [
+   0,
+   0.72424,
+   -0.4215
+  ],
+  "normalAtCenter": [
+   0,
+   0,
+   1
+  ],
+  "chordWidth_u": 0.846,
+  "arcWidth_u": 0.846,
+  "height_u": 0.47449,
+  "aspect_arc": 1.783,
+  "surface": "eben: z = -0.4215",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,49)·s, z·s), Ursprung = Modellmitte auf Hallenboden-Höhe; s = 5 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     -0.42,
+     0.95849,
+     -0.4215
+    ],
+    "topRight": [
+     0.42,
+     0.95849,
+     -0.4215
+    ],
+    "bottomRight": [
+     0.42,
+     0.49,
+     -0.4215
+    ],
+    "bottomLeft": [
+     -0.42,
+     0.49,
+     -0.4215
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0035,
+    "u1": 0.9965,
+    "v0": 0.0063,
+    "v1": 0.9937
+   }
+  },
+  "corners_m_note": "Schlüsselname corners_m_s5p5 aus dem Utopia-Format beibehalten; Werte hier mit s = 5 m/u",
+  "corners_m_s5p5": {
+   "topLeft": [
+    -2.1,
+    7.242,
+    -2.107
+   ],
+   "topRight": [
+    2.1,
+    7.242,
+    -2.107
+   ],
+   "bottomRight": [
+    2.1,
+    4.9,
+    -2.107
+   ],
+   "bottomLeft": [
+    -2.1,
+    4.9,
+    -2.107
+   ]
+  },
+  "visibleSize_m": [
+   4.2,
+   2.34
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   0.08,
+   0.78,
+   2.85
+  ],
+  "target": [
+   0.08,
+   0.06,
+   0.0
+  ],
+  "fovV_deg": 40,
+  "note": "Blick leicht erhöht von vorn in die Schalterhalle: Figuren links/rechts neben dem Bankier-Schreibtisch vor dem Tresor, Kurstafel über der Galerie voll sichtbar, Schließfachwand und Lampen frei"
+ },
+ "scale_m_per_u": 5,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "figures": {
+  "floorY_u": -0.49,
+  "positions_u": [
+   [
+    -0.27,
+    0.3
+   ],
+   [
+    0.42,
+    0.28
+   ]
+  ],
+  "heights_m": [
+   1.8,
+   2.0
+  ],
+  "stageZone_u_xz": [
+   [
+    -0.32,
+    -0.3
+   ],
+   [
+    0.24,
+    -0.3
+   ],
+   [
+    0.3,
+    -0.06
+   ],
+   [
+    0.52,
+    0.06
+   ],
+   [
+    0.52,
+    0.33
+   ],
+   [
+    -0.32,
+    0.33
+   ]
+  ]
+ }
+}

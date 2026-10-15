@@ -1,0 +1,217 @@
+{
+ "file": "~/Dropbox/CLAUDE/MeshyModels/_browser/prison_panopticon/PrisonPanopticon_A_screen.glb",
+ "bytes": 15463828,
+ "sha256": "909a340da1bc67dc6c6a3f3a2879f2327108b57612fcbb83328c51360d18748f",
+ "source": "~/Dropbox/CLAUDE/MeshyModels/_browser/prison_panopticon/PrisonPanopticon_A_faithful.glb",
+ "mode": "FRONT_DISPLAY (V-265/V-268: Propaganda-Schirm der Wärter, hängt vor dem Wachturm-Schaft unter dem Kronenkranz und ersetzt die gemalte Parole „A KINDER PRISON A PLANET“; Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_rust_iron (Clay-Eisen rostig #6C4C3B wie Rohre und Geländerpfosten des Gefängnisses, rough 0,7, metal 0, schlicht)",
+  "bezel_u": 0.013,
+  "bezel_m": 0.156,
+  "depth_u": 0.02,
+  "outer_u": {
+   "x": [
+    0.4274,
+    0.8734
+   ],
+   "y": [
+    -0.0222,
+    0.238
+   ],
+   "cardBottom_y": -0.0092,
+   "z": [
+    0.2094,
+    0.2294
+   ],
+   "note": "lokale Rahmenkoordinaten vor der Drehung (yaw um Pivot)"
+  },
+  "mount": "ohne Sockel (V-268): hängt an 2 kurzen genieteten Eisen-Laschen unter dem Kronenkranz des Wachturms, 0,6 m vor dem Turmschaft; Rahmen ragt links und rechts über den Schaft hinaus (V-265, schlank, 0,24 m tief); Suchscheinwerfer und Turmkrone darüber, „R“ und „MORE PLUFF LESS PRESSURE“ darunter, Hof und Zellen bleiben frei; zur Standardkamera gedreht (yaw −14°)"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z, Hofboden y ≈ −0,415 (Gefälle −0,385 hinten … −0,43 vorne))",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    0.44373,
+    0.22804,
+    0.16637
+   ],
+   "topRight": [
+    0.85707,
+    0.22804,
+    0.26943
+   ],
+   "bottomRight": [
+    0.85707,
+    -0.0122,
+    0.26943
+   ],
+   "bottomLeft": [
+    0.44373,
+    -0.0122,
+    0.16637
+   ]
+  },
+  "center_u": [
+   0.6504,
+   0.10792,
+   0.2179
+  ],
+  "normalAtCenter": [
+   -0.24192,
+   0,
+   0.9703
+  ],
+  "chordWidth_u": 0.426,
+  "arcWidth_u": 0.426,
+  "height_u": 0.24024,
+  "aspect_arc": 1.7732,
+  "surface": "eben, Normale [-0.24192,0,0.9703] (yaw -14°), Ebene durch center_u",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,415)·s, z·s), Ursprung = Modellmitte auf Hofboden-Höhe; s = 12 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     0.44664,
+     0.22504,
+     0.1671
+    ],
+    "topRight": [
+     0.85416,
+     0.22504,
+     0.2687
+    ],
+    "bottomRight": [
+     0.85416,
+     -0.0092,
+     0.2687
+    ],
+    "bottomLeft": [
+     0.44664,
+     -0.0092,
+     0.1671
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.007,
+    "u1": 0.993,
+    "v0": 0.0125,
+    "v1": 0.9875
+   }
+  },
+  "corners_m_note": "Schlüsselname corners_m_s5p5 aus dem Utopia-Format beibehalten; Werte hier mit s = 12 m/u",
+  "corners_m_s5p5": {
+   "topLeft": [
+    5.36,
+    7.681,
+    2.005
+   ],
+   "topRight": [
+    10.25,
+    7.681,
+    3.224
+   ],
+   "bottomRight": [
+    10.25,
+    4.87,
+    3.224
+   ],
+   "bottomLeft": [
+    5.36,
+    4.87,
+    2.005
+   ]
+  },
+  "visibleSize_m": [
+   5.04,
+   2.81
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   0.04,
+   0.62,
+   2.3
+  ],
+  "target": [
+   0.12,
+   -0.13,
+   0.0
+  ],
+  "fovV_deg": 40,
+  "note": "Blick leicht erhöht von vorn in den offenen Hof: Figuren vor dem Abfluss-Brunnen, Wachturm mit Scheinwerfer und Propaganda-Schirm rechts voll sichtbar, Zellen-Obergeschoss, Galerie und Treppe frei"
+ },
+ "scale_m_per_u": 12,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "figures": {
+  "floorY_u": -0.415,
+  "positions_u": [
+   [
+    -0.24,
+    0.36
+   ],
+   [
+    0.06,
+    0.4
+   ]
+  ],
+  "heights_m": [
+   1.8,
+   2.0
+  ],
+  "stageZone_u_xz": [
+   [
+    -0.45,
+    0.12
+   ],
+   [
+    -0.13,
+    0.15
+   ],
+   [
+    0.0,
+    0.2
+   ],
+   [
+    0.15,
+    0.17
+   ],
+   [
+    0.17,
+    0.27
+   ],
+   [
+    0.15,
+    0.45
+   ],
+   [
+    0.15,
+    0.56
+   ],
+   [
+    -0.22,
+    0.56
+   ],
+   [
+    -0.32,
+    0.42
+   ],
+   [
+    -0.45,
+    0.3
+   ]
+  ]
+ }
+}
