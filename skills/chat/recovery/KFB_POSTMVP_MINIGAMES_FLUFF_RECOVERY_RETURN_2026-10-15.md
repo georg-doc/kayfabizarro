@@ -8,6 +8,18 @@
 **Base main at creation:** `e082405ee54455feac8cf6e0a5f8101053b7c72e`.  
 **Evidence checkpoint head before this Return:** `684e44bbd1801d381deeda8473830eaa5b826ac3` (final branch head must be fetched again after Return write).
 
+## CURRENT ADDENDUM · 2026-10-15 · Water Harvest design R0.1
+
+**Georg continuation:** "top! dann los" meant proceed with post-recovery ideation and first small source-backed Minigame concept. Added `skills/chat/recovery/KFB_WATER_HARVEST_MICROGAME_FIRST_PROOF_DESIGN_R0_1_2026-10-15.md` on the **same PR #400 branch**, not on the Lab's active game branch. This selects a **post-MVP visual first-proof candidate**: one genuine pond, source Clown cartoon bomb, elastic water/ripple, clay-smoke, organic seeded scatter and reachable Fluff/fish/strange source props, contrasted with Quiet Fishing using the seven source `Rig_Medium_Tools` clips. Both consume ONE future authoritative `ResourceActivity / ActivityResult` and a canonical Bag/Wallet/Score/Card+Almanac path. No separate water shader, no physics, Combat, AudioContext or Loot runtime. The v0.3–v0.7.1 original long sources remain immutable references.
+
+**Source contract evidence:** `registry/resources/v1/motions.jsonl` confirms seven fishing clips; `tools/resident_atlas_s6/data/cast.js` confirms KayKit `clown_bomb.gltf` and Farmer crop props; KFB VFX-01 and StoryMap radial ripple are candidates only. Current Lab `src/island/spec.ts` / `src/main.ts` and its planned `SPEC_WORLDBUILDER_GODMODE_VISION_R1.md` distinguish WorldRecipe from future `nodes[]` and PlayerSave. No currently accepted pond, Water impulse adapter, rod, fish model, PlayerSave, Fluff Wallet or true runtime item grant was proven in this run.
+
+**Measured work this continuation:** exact new Water design file committed and read back, recovery index updated/read back, Markdown code references normalized, PR #400 text updated and remains OPEN/DRAFT/NOT MERGED. Textual source and owner checks only; **0** source-object visual isolation, actual browser/gameplay, animator rig/grip, material/shader runtime, save/reload, Site/Stage or human Claude Code acknowledgement.
+
+**Next gate unchanged:** `CLAUDE_CODE_RECOVERY_INTAKE_CONFIRMATION` for the **current Lab Claude Code controller** to read the PR, source files and current project head; then continue the active MVP without scope creep. Conditional only after playable core plus Georg approval: `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` and choose ONE genuine small visual/gameplay proof.
+
+---
+
 ## Exact changed files
 1. `skills/chat/recovery/KFB_POSTMVP_MINIGAMES_FLUFF_SOURCE_RECOVERY_2026-10-15.md` — full five-source map, brief concept reconstruction and Claude Code cold-start/read guidance. Verified blob `c689d13a4602f633d4bd7221063c220e3e8e3c2c`; source-only QA **14/14** static checks.
 2. `skills/chat/START_HERE.md` — *additive* first-paragraph index to this recovery; existing October 12/8 decisions retained. Verified blob `1dcb0f98ba6236cce39e8536b113528a10cb52cd`.
