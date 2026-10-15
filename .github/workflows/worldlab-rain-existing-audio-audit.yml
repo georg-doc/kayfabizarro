@@ -1,0 +1,68 @@
+name: KFB World Lab Existing Audio CC0 Rain Audit
+on:
+  pull_request:
+    paths:
+      - 'skills/chat/research/KFB_WORLDLAB_WEATHER_ENVIRONMENT_VFX_SFX_2026-10-12/source-audit/audio-proof.mjs'
+      - '.github/workflows/worldlab-rain-existing-audio-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audio-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            skills/chat/research/KFB_WORLDLAB_WEATHER_ENVIRONMENT_VFX_SFX_2026-10-12/source-audit/audio-proof.mjs
+            kfb-hub/stage/audio-calibration
+            media/3D_Assets/Audio/Environment
+            media/3D_Assets/Audio/KFB Racer/KFB_V8_Load_Loop_10s_48k.wav
+            media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactMetal_medium_002.ogg
+            media/3D_Assets/Audio/Other/applause.wav
+            media/3D_Assets/Audio/Match Three
+            media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Orcish_Street_Corner_Jam_2026-09-23T021322.mp3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test dependencies
+        run: |
+          npm install --no-save --no-package-lock playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Verify existing audio owner script syntax
+        run: |
+          node --check kfb-hub/stage/audio-calibration/audio-calibration.js
+          node --check skills/chat/research/KFB_WORLDLAB_WEATHER_ENVIRONMENT_VFX_SFX_2026-10-12/source-audit/audio-proof.mjs
+      - name: Fetch OpenGameArt CC0 rain source for CI only
+        run: |
+          mkdir -p /tmp/kfb-cc0-rain media/3D_Assets/Audio/Environment
+          if curl --fail --location --silent --show-error --retry 2 --connect-timeout 20 --max-time 90 'https://opengameart.org/sites/default/files/Rain%20OGG.zip' -o /tmp/kfb-cc0-rain.zip; then
+            unzip -oq /tmp/kfb-cc0-rain.zip -d /tmp/kfb-cc0-rain
+            RAIN_FILE=$(find /tmp/kfb-cc0-rain -type f -iname '*.ogg' | LC_ALL=C sort | head -n 1)
+            if [ -n "$RAIN_FILE" ]; then
+              cp "$RAIN_FILE" media/3D_Assets/Audio/Environment/_source_audit_cc0_rain.ogg
+              sha256sum media/3D_Assets/Audio/Environment/_source_audit_cc0_rain.ogg
+              ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 media/3D_Assets/Audio/Environment/_source_audit_cc0_rain.ogg
+            else
+              echo 'SOURCE_REQUIRED: ZIP contained no .ogg'
+            fi
+          else
+            echo 'SOURCE_REQUIRED: OpenGameArt archive could not be retrieved; do not substitute generated rain audio'
+          fi
+      - name: Exercise original KFB AudioContext, duck and mute
+        env:
+          KFB_SOURCE_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          python3 -m http.server 8766 --bind 127.0.0.1 > /tmp/kfb-rain-audio-http.log 2>&1 &
+          sleep 3
+          node skills/chat/research/KFB_WORLDLAB_WEATHER_ENVIRONMENT_VFX_SFX_2026-10-12/source-audit/audio-proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-worldlab-cc0-rain-existing-mixer
+          path: kfb-worldlab-audio-rain-evidence/
+          if-no-files-found: warn
+          retention-days: 21
