@@ -84,6 +84,12 @@ Georg's follow-up "top! dann los" authorizes **planning the first reusable minig
 
 **Do not widen the immediate recovery gate:** the single next handoff remains `CLAUDE_CODE_RECOVERY_INTAKE_CONFIRMATION` and the later existing `MINIGAME_FLUFF_SOURCE_AND_OWNER_AUDIT` is deferred.
 
+## 3B. Deck Homebases / Open-World Card collection (2026-10-15)
+
+New additive [Deck Homebases & Card Progression R0.2](./KFB_DECK_HOMEBASE_COLLECTION_PROGRESSION_R0_2_2026-10-15.md) captures Georg's open-world collectible loop: each source-backed Diorama can become a Deck's recognisable Homebase with a purposeful Resident/curator, authentic Card/PDF contact sheet, POIs, easy pickups, optional Fishing/Farm/Blast/Courier/Combat/Race finds, staged rewards (recipes, source-validated vehicles and outfits) and a real final world celebration or Triplet performance **only if audio is actually approved**. The catalog currently has **130 Deck identities / 6,985 Cards, heterogenous sizes** (56 is common, not universal). Card order is *visible* but discovery need not follow strict #1→#56: preserve Chill & Fun, avoid a 56-step quest treadmill. Source PDF/Deck card identity and PlayerSave/Almanac provenance are one truth; progress is a derived count, **not new XP**. Source Triplet R2 editorial texts are not proof of a published complete song.
+
+First *later* focused proof: one genuine Diorama and Resident, one authentic Deck and **three real Card acquisitions** (ordinary pickup, source activity, Resident/Courier) → true PDF/Almanac slots and save/reload → curator reaction. No current Lab DoD/PR/Stage scope change, no automatic merge, no new gate. Existing next step remains `CLAUDE_CODE_RECOVERY_INTAKE_CONFIRMATION`; only then is the deferred Fluff source/owner audit eligible after playable MVP and Georg approval.
+
 ## 4. Scope / single recovery outcome / what Claude Code should do next
 
 **Completed by this recovery:** one permanent, discoverable **source bridge** and a draft PR on a branch based on current main, without changing the running Lab. It should contain links to *every original* and the Lab's earlier compatibility verdict and provide a cold-chat entry.
