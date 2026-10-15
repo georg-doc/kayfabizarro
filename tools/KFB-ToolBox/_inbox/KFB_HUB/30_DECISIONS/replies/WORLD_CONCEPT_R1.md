@@ -20,14 +20,20 @@ Alles Weitere dient diesem Ablauf.
   - Landmarks, damit man Decks und Welten aus der Ferne erkennt.
 - **Vorbild für das Gefühl:** Tiny Skies, also eine kleine Welt mit gerundetem Horizont, offen, aber überschaubar.
 
+## 2b · Reisen = freie Fahrt übers Gelände (V-290, Georg 15.10.)
+- Kein Racetrack als Voraussetzung. Eine rasante Fahrt mit einem Cartoon-Fahrzeug und überzeugender, plausibler Physik direkt übers Gelände.
+- Hügel und Berge sind die Rampen. Überschläge sind erlaubt, danach geht es weiter. Zusätzliche Rampen setzt Georg in die Landschaft oder modelliert sie aus dem Terrain.
+- Track-Bausteine sind höchstens Requisiten für Straßen-Situationen, nicht das Wegenetz.
+- Leitlinie: was schnell und zuverlässig funktioniert und Open-World-Gefühl vermittelt.
+
 ## 3 · Optionen für die Struktur
 
 ### A · Zonen-Welten mit Hub
 - **Zonen:** sechs kleine runde Welten, eine je Paletten-Genre, mit je etwa 15–25 Deck-Dioramen.
-- **Hub:** KFB Town bzw. die Joyride-Platte. Von dort führen Racetrack und Portale in die Zonen, freigeschaltete Portale sind die Schnellreise.
+- **Hub:** KFB Town bzw. die Joyride-Platte. Von dort führen Portale bzw. freie Fahrt übers Gelände in die Zonen, freigeschaltete Portale sind die Schnellreise.
 - **Abstände:** setzt Georg im God-Mode.
 - **Plus:** klar, gut planbar, Landmarks wirken.
-- **Minus:** feste Wege, zwischen Hub und Zone braucht es den Racetrack.
+- **Minus:** feste Abstände; zwischen Hub und Zone braucht es Portale oder lange Fahrten.
 
 ### B · Dynamische Welt um den Spieler (Player-Grid)
 - **Aufbau:** Die Landschaft wird um den Spieler herum erzeugt und geladen.
@@ -42,7 +48,7 @@ Alles Weitere dient diesem Ablauf.
   - Die Landschaft lädt um den Spieler.
   - Die Dioramen der Zone stehen auf einem Ring bzw. einer Route.
   - Die nächste Mission legt das Ziel in eine gute Reiseentfernung.
-- **Zwischen den Zonen:** Racetrack-Fahrt oder Portal.
+- **Zwischen den Zonen:** freie Fahrt bzw. Flug übers Gelände oder Portal.
 - **Sonderwelten** (Organe/MED, Mech-Arena, schwebende Inseln) hängen per Portal dran.
 
 ## 4 · Dioramen in der Landschaft
@@ -55,7 +61,6 @@ Alles Weitere dient diesem Ablauf.
 1. Struktur: A, B oder C.
 2. Form einer Zonen-Welt: kleiner Planet mit gerundetem Horizont oder flache Insel im Himmel.
 3. Reisen im MVP: zuerst Fahren, zuerst Fliegen oder beides.
-4. Racetrack schon im MVP oder erst Portale.
 5. Woher die Landmarks kommen: Meshy, KayKit oder Georg im God-Mode.
 
 ## 6 · MVP-Weg (unverändert klein, V-250)

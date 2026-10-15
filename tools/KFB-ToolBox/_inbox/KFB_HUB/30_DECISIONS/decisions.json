@@ -3249,7 +3249,9 @@
    "check": "Fahrprobe auf der Insel, Georg",
    "source": "Georg 15.10.",
    "supersedes": "V-250 (MVP-1 ohne Fahren)",
-   "superseded_by": [],
+   "superseded_by": [
+    "V-290"
+   ],
    "why": "Fahrphysik und Auto sind schon abgenommen; Fahren über Gelände braucht keine Strecke.",
    "applies": "ab MVP-1"
   },
@@ -3834,6 +3836,21 @@
    "applies": "vor MVP-1"
   },
   {
+   "id": "V-290",
+   "date": "2026-10-15",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Reisen = rasante, freie Fahrt übers Gelände mit Cartoon-Fahrzeug und plausibler Physik (Chill-and-Fun, viel Hilfe); Hügel und Berge sind Rampen, Überschläge erlaubt, danach weiterfahren (Selbstaufrichten); Rampen setzt Georg oder modelliert sie aus dem Terrain. Kein Racetrack als Voraussetzung; Track-Bausteine nur als Requisiten für Straßen-Situationen. Technik: was schnell und zuverlässig funktioniert – WS1 vergleicht per Vorlagen-Zeile J17-k2b-Fahrgefühl (V-251) und den Fahrzeug-Controller im R3F/Rapier-Rahmen auf Gelände (inkl. Überschlag) und schlägt einen vor; Georg urteilt an der Fahrprobe.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Fahrprobe auf Gelände mit Überschlag",
+   "source": "Georg 15.10.",
+   "supersedes": "V-251 (Fahrphysik fest J17 k2b)",
+   "superseded_by": [],
+   "why": "Open-World-Gefühl entsteht durch freie Fahrt, nicht durch eine Strecke.",
+   "applies": "MVP-1"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3896,7 +3913,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:439",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:442",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

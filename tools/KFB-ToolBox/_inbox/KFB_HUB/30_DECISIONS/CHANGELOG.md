@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Freie Fahrt
+- V-290: Reisen = freie Cartoon-Fahrt übers Gelände mit Überschlag, kein Racetrack nötig; WS1 vergleicht J17-k2b und R3F/Rapier-Fahrzeug. Welt-Konzept angepasst; Hub-Frage w01.
+
 ## 2026-10-15 · Spiel-Dramaturgie, Welt-Konzept
 - V-288: Grund zu reisen → Reisen macht Spaß → Begegnung als Höhepunkt. V-289 (TBD): Welt-Struktur A/B/C, Konzept replies/WORLD_CONCEPT_R1.md. Kokoro-Hörproben im Hub (vo01).
 

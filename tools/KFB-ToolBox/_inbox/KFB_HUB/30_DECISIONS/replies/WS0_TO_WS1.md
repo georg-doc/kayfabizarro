@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Reisen: freie Fahrt übers Gelände (V-290), Dramaturgie (V-288), Welt offen (V-289)
+- **Dramaturgie:** Grund zu reisen → Reisen macht Spaß → Begegnung am Diorama als Höhepunkt (V-288).
+- **Fahren (V-290, ersetzt die feste Vorgabe J17 k2b aus V-251):** rasante Cartoon-Fahrt mit plausibler Physik direkt übers Gelände, Hügel als Rampen, Überschlag erlaubt und Selbstaufrichten, kein Racetrack nötig. Bitte für MVP-1 eine Vorlagen-Zeile: J17-k2b-Fahrgefühl vs. Fahrzeug-Controller im R3F/Rapier-Rahmen auf einem Testgelände (Hügel, Rampe, Überschlag), Messwerte + kurzes Fahrvideo; Vorschlag, welcher schneller und zuverlässiger ist. Fahrzeug für die Probe: Badewannen-Kart (WS0, folgt auf Asset-Branch) oder Cicada.
+- **Welt-Struktur (V-289):** offen, Konzept `replies/WORLD_CONCEPT_R1.md`; nichts dazu bauen, bis Georg entscheidet.
+
 ## 15.10.2026 · Displays im God-Mode frei platzierbar (V-287)
 - Karten-Displays/Billboards sind Objekte wie Residents und Librarian-Props: im God-Mode (MVP-2) verschieben, drehen, skalieren – proportional mit festem Format 1,79:1, vom kleinen Monitor bis zur Stadionleinwand. Gespeichert in `kfb.world/1`.
 - **Folge für den Bau jetzt:** Display = eigenes Objekt (Rahmen-Familie je Bühne + `kfb_screen_slot`), nicht mit dem Bühnen-GLB verschmolzen. Die `*_screen.glb` von WS0 enthalten Slot/Rahmen nur als Start-Platzierung; beim Einbau Rahmen + Slot als eigenes Objekt laden und die Position aus dem Slot-JSON als Standardwert nehmen. Auch das Amphitheater-Billboard ist nur Arbeitshypothese.
