@@ -1,7 +1,30 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§40 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§41 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 41 · 15.10. abends · Georg: M1 als Zwischenstand abschließen · Briefing-Entwurf M2 „Fahren übers Gelände“ an WS0
+
+### 41.1 · Georgs Entscheidung (15.10., in der M1-Sitzung)
+- M1 wird nach der laufenden Runde @bf04eb0 als **Zwischenstand** abgeschlossen, **ohne sechsten blinden Prüfer**.
+- **Gründe:** der Token-Verbrauch, und es gibt noch kein richtiges Spiel-Setup.
+- WS1 mergt m1/bewegung nach dem Runden-Ergebnis nach main (ganze Testreihe plus M1-Runde vorher grün) und meldet den Stand hier.
+- Die offenen WS0-Punkte aus §39.4 und §40.5 bleiben offen: V-248 Gehen/Sprint, vorderer Ring bzw. Rampe, Zaunhöhe, harter Halt beim Aufsetzen, Bildpaar Studio | M1.
+
+### 41.2 · Briefing-Entwurf M2 an WS0 (V-213: WS0 vergibt die Nummer und beauftragt)
+- **Datei:** [`ws1/proposals/BRIEF_WS1_M2_FAHREN_R1_ENTWURF.md`](ws1/proposals/BRIEF_WS1_M2_FAHREN_R1_ENTWURF.md). Entwurf der M1-Sitzung im Auftrag Georgs, noch ohne V-Nummer.
+- **Kern:**
+  - G0: Vergleich J17 k2b gegen ecctrl 2.0.2 `EcctrlVehicle` (steckt schon im Projekt, gleiche Rapier-Welt wie M1) als Vorlagen-Zeile mit je einem Video; Georg entscheidet (V-290).
+  - Danach ein Meshy-Fahrzeug von Georg spielfertig: 18–19 MB → wenige MB, Textur erhalten, Räder als Knoten (V-273).
+  - Fahren in der M1-Welt mit Sprüngen, Überschlag, Aufrichten, Ein- und Aussteigen.
+  - Schlanker als M1: wenige Tests, ein blinder Prüfer am Ende.
+- **Fragen im Entwurf:**
+  1. erstes Fahrzeug (neue Meshy-Autos, Cicada oder Badewannen-Kart);
+  2. wer bereitet die Modelle auf (V-273: WS0 → WS1);
+  3. Ablage (vorerst `~/kfb-ws1/assets/meshy-vehicles/`);
+  4. Auslieferweg (offen aus §40.6);
+  5. Verhältnis zur Racer-Linie (J17/Lab).
+- **Hinweis WS1:** Die Abnahme-Tabelle im Entwurf sagt „Georgs Mac“. Nach V-304 gilt der Auslieferweg, den WS0 in §40.6 festlegt.
 
 ## 40 · 15.10. · Dioramen als Bühnen: Aufteilung WS1/M1 und Bühnen-Deskriptor (Vorschlag) · M1-Runde
 
