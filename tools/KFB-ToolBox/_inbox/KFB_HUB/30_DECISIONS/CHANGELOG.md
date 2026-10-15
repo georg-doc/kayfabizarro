@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Zonen-Hypothese, Konzepte sichern
+- V-294: Zone = Diorama + Umland (2–4 min Autofahrt), Zonen-Song sammeln, Minispiele → Fluff + Karten, UFO von Hanky & Dory als TARDIS-Hub, Spieler wird entführt. Minispiel-/Fluff-Konzepte und Metanarrativ werden in den KFB_HUB geholt.
+
 ## 2026-10-15 · Farbharmonie-Modell
 - V-293: MOOD_SKY-Story-Paletten FAIL, Story-Mode-Grundfarben zu dunkel; Harmonie-Modell aus Joyride (OKLCH-Regeln + Generator, Nachweis per J17-Nachbau) in Arbeit. Minispiel-Konzepte (v0.3–v0.7) auf planning/kfb-fluff-crafting-almanac-ideation-2026-10-09 gefunden.
 
