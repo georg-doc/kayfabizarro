@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Bühnen v2 + Retro-Arcade
+- Branch assets/meshy-stages-v2-arcade-2026-10-15 @8cf2ec71: Goblin-Bank v2, Gefängnis v2, Utopia v2, Retro-Arcade-Casino v1. Hub st03.
+
 ## 2026-10-15 · Stimmen-Besetzung R1, nächste Suno-Decks
 - replies/VOICE_CASTING_R1.md + voice_casting.r1.json: 28 englische Kokoro-Stimmen + Mischstimmen (in kokoro-onnx 0.4.7 geprüft) + Tempo; Hauptbesetzung FB am_michael, GothGirl bf_emma, Lord Hunky onyx60+george40, Lady Dory isabella60+bella40, Orc fenrir50+lewis50, Georg-Chronist bm_daniel; 28 KayKit-Nebenfiguren besetzt; 34 Hörproben in 40_AUDIO/voice_casting_r1. Hub vo02.
 - Kokoro-Decktest help_i_am_a_human 5:22, 58/58 Zeilen; Aussprache offen (Rousseau, Blödsinn, Kayfabizarro, deutsches Intro).

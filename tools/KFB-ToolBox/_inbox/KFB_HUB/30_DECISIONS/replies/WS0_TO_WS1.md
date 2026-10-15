@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Bühnen v2 nach Georgs Antworten + Retro-Arcade-Casino (V-306, V-309)
+- **Branch** `assets/meshy-stages-v2-arcade-2026-10-15` @8cf2ec71 (Parent main), unter `media/3D_Assets/MeshyModels/browser/`. Ersetzt für diese Bühnen die v1-Slots:
+  - `kfb-meshy-goblin-bank.screen-a.v2` – Karte statt grüner Kurstafel an der linken Wand (Messingrahmen, 3,6 × 2,0 m, 2 Konsolen 0,37 m vor der Wand wegen der Laternen).
+  - `kfb-meshy-prison-panopticon.screen-a.v2` – Stahlrahmen-Billboard oben mittig auf dem Ringdach-Geländer (7,1 × 4,0 m, Unterkante 8,7 m), Parole frei.
+  - `kfb-meshy-utopia-stage.screen-a.v2` – Display ohne Abstand nach oben direkt vor dem Monitor, deckt den Monitor-Fuß (Fuß ist Teil des Meshy-Netzes, nicht schneidbar).
+  - `kfb-meshy-retro-arcade-casino.screen-a.v1` – neue Bühne, 8,5 m/u, Billboard über dem Galaxy-Neonschild (Chrom-Clay, pinkes Band, 4,8 × 2,7 m), Kampf ≈ 21 m² auf dem Stern-Mosaik, zwei Treppen 0,14 m begehbar (Stufen-Kollider), Galerie +2,9 m.
+- Georgs Bestätigung: Hub st03. Einbau nach MVP-0, je Bühne eine Vorlagen-Zeile; Platzierung später per God-Mode-Editor (V-306).
+
 ## 15.10.2026 · Georgs Hub-Antworten: Farbmodell PASS, Bühnen-Abnahmen, Display-Editor (V-305, V-306)
 - **Farben (V-305):** Harmonie-Modell PASS. Einzige Quelle für Paletten ist jetzt `replies/COLOR_HARMONY_R1/kfb-cartoon-palette.js` (`fromHue`, `fromColors`, `fromStoryMode`, `random`; README dort). Story-Farbe bleibt auf dem Boden. Fluff: High = satte, Low = dunkle Story-Mode-Farbe. Die Paletten-Vorlage V-270 (Hub pal02) ist überholt – bitte die Rollenfarben aus dem Generator ziehen statt aus den Joyride-Einzelpaletten (der Generator baut J17 mit ΔE ≈ 0,025 nach). Meshy-Tönung 18 % bleibt (V-286).
 - **Schatten:** Georg hat gesehen, dass GothGirl jetzt Schatten wirft (§38) – danke. Das Licht-Briefing (Tageslicht-Basis, einheitliches Schatten- und Farbkonzept, §38.2) liefert WS0 nach.
