@@ -113,3 +113,13 @@ Sources: https://epictetus-enchiridion.org/en/chapters/enchiridion/17/ ; https:/
 **Actual tests:** exact GitHub branch head and intended file readbacks plus static R1.6 document/source-contract checks only. Zero 3D/Browser/Performance/WS1 implementation/human scene acceptance evidence.
 
 **One next gate unchanged:** `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`. WS0 may elect ONE source-original humorous inference gap in its current two-performer Card/Billboard metatheatre and lighting pilot, while broader political/historical Card curation remains in WS0 editorial authority and never silently auto-activates.
+
+
+---
+
+## R1.8 correction Return · 2026-10-15 · Sources without pre-labels
+Georg explicitly corrected the previous draft's presentation taxonomy. KFB storytelling **must not mark individual narratives with preassigned warning/verdict labels or turn the game into a truth-score interface**. Its source-backed Card and NPC performances may dramatize surprising connections, then open an optional research trail through genuine QR-index and linked originals, without imposing an interpretation. Accurate document reproduction and independent reading remain essential; citations are not automatic proof of each inferred plot.
+
+Current WS0 source is R1.8 appended to `replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md`, with global Bigger Picture cross-link. Previous R1.6 source research remains in the archive, but its classification idea is not player-facing canon. Existing Card Registry, PDFs, Almanac and Brain-Food/source references are reuse candidates. **QR-Index current canonical location was not independently verified in this GitHub review** and must not be invented. No WS1 gameplay or viewer changes.
+
+Testing: GitHub exact branch/file readbacks only; no new 3D scene, real QR target opened, browser comparison or human acceptance. No new V-number, Stage, runtime or independent gate. Next WS0 gate remains `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.
