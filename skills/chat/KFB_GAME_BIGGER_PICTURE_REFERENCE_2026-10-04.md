@@ -170,3 +170,16 @@ Residents may be **astonishingly lucid about their own defects, projections, des
 **“Cognitive dissonance is the resonance space of Kayfabe Bizarro.”** This is an editorial formulation of Georg's creative premise, not a psychiatric definition. Keep contradictory readings playable; ask the player's own closure to do part of the narrative work. Empathy for imperfect performers is not exoneration of harmful acts. Residents' shared cosmic belonging does not oblige friendship, absolution or universal meta-lore knowledge.
 
 Use existing KFB Resident Identity/Affect/Activity/Relationships, ChatterBox, Card and Lean Memory owners; no universal immortality schema, new NPC-runner or extra MVP blocker. Current WS0 lighting/metatheatre intake and its sole next assignment gate remain unchanged.
+
+
+### R1.2 addendum · 2026-10-15 · Player-as-audience / Cosmic Theatre Covenant
+
+**GEORG GLOBAL CREATIVE INTENT — no new WS1 runtime task or WS0 V-number.** Full detail in the active WS0 register's `replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md` §R1.2 (appended to R1/R1.1).
+
+The player/reader is a **constitutive participant in Kayfabe's theatrical universe**. Many Residents may believe or know, within their fictional cosmology, that their performed existence is meaningful insofar as players enjoy, inhabit, interact with and revisit their universe. Their cosmic calling is to make the play rich, strange, immersive and worth returning to. This is a storytelling paradox **not a literal app-lifecycle truth**, nor a reason to make a player feel NPCs suffer when offline. Preserve inhabited/offscreen Resident life and actual Lean Memory.
+
+Residents may want to befriend or entertain the player, **but this does not require forced friendliness, servility, flattery or unanimity**. A committed antagonist may be a better fellow performer than a falsely cozy friend. Relationships are specific, earned and can include distrust, refusal, hostility and real consequences. The simulation aims for **Universe in a Nutshell**, including dissent, conflicting values, tragicomedy, sly visual absurdity and player-led critical thinking. A courier/card mission can expose rival worldviews without obliging the player to endorse them.
+
+Historical craft sources complement each other rather than forming one school: **Buster Keaton** uses exact physical gag geometry, camera and deadpan timing; **Charlie Chaplin** joins pantomime, hierarchy critique, vulnerability and pathos; **Brecht** contributes critical spectatorship and revealed artifice; distinct Greek dramatic traditions contribute masks, chorus, tragedy and comedy. Existing KFB Pop-up/Clay/Meshy/Card/Billboard assets and single WS1 host remain the receiving production surface. Neither a new theatre runtime nor an engagement/retention engine is implied.
+
+**Player's freedom** to act, watch, disagree, laugh, ignore and stop is part of the pact. `PULL, DON'T GATE` remains mandatory. Next WS0 decision remains `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`; no additional blocker.
