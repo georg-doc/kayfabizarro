@@ -3682,6 +3682,21 @@
    "applies": "später"
   },
   {
+   "id": "V-280",
+   "date": "2026-10-15",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Opener im Track: Keiner der Karten-Opener wiederholt sich in einem Track; Varianten derselben Familie (z. B. „Did you hear of“ / „Have you heard of“) nur mit mindestens 10 Zeilen Abstand. Prüfskript prüft das. Dazu als Idee (zu V-279): Karten und Story-Beats eines Tracks zu einer Beispiel-Case-Fabulation verknüpfen und mit Karaoke-Ebene zeigen.",
+   "values": {},
+   "owner": "WS0 → WSA-Plugin",
+   "check": "Prüfskript, Tracks",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Wiederholte Einstiege nutzen sich ab; Familien brauchen Abstand.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3744,7 +3759,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:388",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:391",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

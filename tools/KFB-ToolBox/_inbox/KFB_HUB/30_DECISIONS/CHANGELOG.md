@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Opener-Familien
+- V-280: kein Opener doppelt im Track, Familien-Varianten ≥ 10 Zeilen Abstand (Prüfskript); Monomyth und Hilfe nachgezogen (4 Opener entfernt), alle drei Tracks 0 FAIL, Hub b26/b28 aktualisiert.
+
 ## 2026-10-15 · Suno-Styles, Deck-Songs, WS1-Antworten
 - V-278 Suno-Tracks PASS mit Georgs zwei Styles (Rockabilly-Doo-Wop, Jazz-Funk), Spoken Word ohne Wrestling-Promo. V-279 (TBD) Deck-Songs als NPC-Belohnung/Marketing, Karaoke-Text, Stem-Schnitt je Karte.
 - WS1: Paletten-Vorlage V-270 frei; Story-Tint-Quelle storymode.v4.js (replies/donors); Daten-Pin @52adc8f1. Wrinkle-Rumble-Track in Arbeit.
