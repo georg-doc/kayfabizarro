@@ -56,7 +56,8 @@ export function oklchToHex(L, C, h) {
 export function deltaE(a, b) { const p = hexToOklab(a), q = hexToOklab(b); return Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2]); }
 
 export function mulberry32(seed) {
-  let a = (seed >>> 0) || 1;
+  let a = (seed >>> 0) ^ 0x9e3779b9;   // Seed mischen (murmur3-Finalizer): Nachbar-Seeds ≠ Nachbar-Farben
+  a ^= a >>> 16; a = Math.imul(a, 0x85ebca6b); a ^= a >>> 13; a = Math.imul(a, 0xc2b2ae35); a ^= a >>> 16; a = (a >>> 0) || 1;
   return () => { a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
 }
 
@@ -67,6 +68,7 @@ export const MODEL = {
   warmBand: [0, 90], warmCentre: 45, warmPull: 0.30,       // Strang: immer warm, 30 % zur Orange-Mitte gezogen
   candyCentre: 350, candyPull: 0.40, monoDist: 35,         // Wahrzeichen: 40 % zum Bonbon-Zentrum; < 35° am Strang → monochrom (Canyon)
   greenGround: [105, 215],                                  // Boden grün/türkis → Herbstlaub
+  warmGround: [340, 110],                                   // warme Böden (Rot–Orange–Gelb) ruhiger: C ≤ 0,11 (wie Bucht-Sand)
   strandBand: [65, 110],                                    // Boden gelb/sand → heller Strand-Boden (Bucht)
   leafGreen: 143, leafAutumn: 66, leafSplit: 5,             // Laubtöne; hell/dunkel ±5° (hell Richtung Gelb)
   skyFromLeaf: 90, trunkFromLeaf: -105, strandHillFromSky: -30, waterTisch: 247, bloomMix: 0.75,
@@ -83,7 +85,7 @@ export const MODEL = {
     waterTisch: 0.59, waterStrand: 0.76,
     greenLeafBelowGround: 0.06, strandLeafBelowGround: 0.13,
   },
-  C: { popMax: 0.195, popRel: 0.92, towerMax: 0.17, towerRel: 0.90, groundMax: 0.14, groundRel: 0.85, strandGround: 0.11,
+  C: { popMax: 0.195, popRel: 0.92, towerMax: 0.17, towerRel: 0.90, groundMax: 0.14, groundWarmMax: 0.11, groundRel: 0.85, strandGround: 0.11,
     leafMax: 0.175, leafRel: 0.85, sky: 0.068, water: 0.066, waterStrand: 0.11, cream: 0.028, path: 0.042, sand: 0.03,
     earth: 0.10, earthMono: 0.155, bloom: 0.12, hillStrand: 0.095, padRel: 0.92 },
   road: { track: '#3d4a60', streetDL: 0.10 },   // V-102 / V-174 fest
@@ -95,10 +97,10 @@ export const MODEL = {
 // Harmonie-Schemata: Winkel von Strang und Wahrzeichen zum Boden (Seite des Strangs wählt die Warm-Regel)
 export const SCHEMES = {
   joyride:   { label: 'Joyride (Quadrat-Teil)', strang: 90, tower: 180 },   // aus J17 gemessen
-  komplementaer: { label: 'Komplementär', strang: 180, tower: 150 },
-  split:     { label: 'Split-Komplementär', strang: 150, tower: 210 },
-  triade:    { label: 'Triade', strang: 120, tower: 240 },
-  analog:    { label: 'Analog', strang: 45, tower: 90 },
+  komplementaer: { label: 'Komplementär', strang: 180, tower: 150, candyPull: 0.2 },
+  split:     { label: 'Split-Komplementär', strang: 150, tower: 210, candyPull: 0.2 },
+  triade:    { label: 'Triade', strang: 120, tower: 240, candyPull: 0.2 },
+  analog:    { label: 'Analog', strang: 40, tower: -40, candyPull: 0.2 },   // Wahrzeichen auf der anderen Seite des Bodens
 };
 const SCHEME_WEIGHTS = [['joyride', 4], ['komplementaer', 2], ['split', 2], ['triade', 2], ['analog', 1]];
 
@@ -147,10 +149,11 @@ function build(hues, opts = {}) {
   // Wahrzeichen: Schema-Winkel auf der Seite des Strangs, zum Bonbon-Zentrum gezogen; zu nah am Strang → monochrom
   let t = hues.t, mono = false;
   if (t == null) {
-    const side = hues._side ?? 1;
-    const raw = scheme.tower === 180 ? wrap(g + 180) : wrap(g + side * scheme.tower);
-    t = wrap(raw + M.candyPull * dHue(M.candyCentre, raw) + jit());
-    if (Math.abs(dHue(t, s)) < M.monoDist) { t = s; mono = true; }
+    const side = hues._side ?? 1, j = jit();
+    const cp = scheme.candyPull ?? M.candyPull, pull = raw => wrap(raw + cp * dHue(M.candyCentre, raw) + j);
+    t = pull(wrap(g + side * scheme.tower));
+    if (Math.abs(dHue(t, s)) < M.monoDist) t = pull(wrap(g - side * scheme.tower));   // andere Seite versuchen (bei 180° dieselbe)
+    if (Math.abs(dHue(t, s)) < M.monoDist) { t = s; mono = true; }                   // sonst monochrom (Canyon)
   } else mono = Math.abs(dHue(t, s)) < 8;
   // Laub: Grün, außer der Boden ist grün/türkis → Herbst-Orange (vom Strang weggeschoben, wenn zu nah)
   let leafH = hues.leaf, autumn = false;
@@ -167,7 +170,7 @@ function build(hues, opts = {}) {
 
   const L = M.L, C = M.C, cm = mood.cMul, dl = mood.dL;
   // Boden-Familie
-  const ground = strand ? tone(L.strandGround + dl, C.strandGround * cm, g, 0.75) : tone(lin2(L.ground, cusp(g).L) + dl, C.groundMax * cm, g, C.groundRel);
+  const ground = strand ? tone(L.strandGround + dl, C.strandGround * cm, g, 0.75) : tone(lin2(L.ground, cusp(g).L) + dl, (inBand(g, M.warmGround) ? C.groundWarmMax : C.groundMax) * cm, g, C.groundRel);
   const top2 = shift(ground, 0.045, 0.93, 1);
   let hillLight, hillDark, rim, under0;
   const sky = tone(lin2(L.sky, cusp(skyH).L) + dl * 0.5, C.sky * cm, skyH);

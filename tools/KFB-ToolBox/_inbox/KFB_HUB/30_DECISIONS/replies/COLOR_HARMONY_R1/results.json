@@ -1,0 +1,5745 @@
+{
+ "schema": "kfb.color-harmony-results/1",
+ "date": "2026-10-15",
+ "model": {
+  "version": "kfb-cartoon-palette/1",
+  "warmBand": [
+   0,
+   90
+  ],
+  "warmCentre": 45,
+  "warmPull": 0.3,
+  "candyCentre": 350,
+  "candyPull": 0.4,
+  "monoDist": 35,
+  "greenGround": [
+   105,
+   215
+  ],
+  "warmGround": [
+   340,
+   110
+  ],
+  "strandBand": [
+   65,
+   110
+  ],
+  "leafGreen": 143,
+  "leafAutumn": 66,
+  "leafSplit": 5,
+  "skyFromLeaf": 90,
+  "trunkFromLeaf": -105,
+  "strandHillFromSky": -30,
+  "waterTisch": 247,
+  "bloomMix": 0.75,
+  "padHue": 92,
+  "padMinGap": 20,
+  "L": {
+   "pop": [
+    0.37,
+    0.5
+   ],
+   "tower": [
+    0.44,
+    0.3
+   ],
+   "ground": [
+    0.55,
+    0.12
+   ],
+   "strandGround": 0.87,
+   "sky": [
+    0.55,
+    0.33
+   ],
+   "cream": 0.93,
+   "path": 0.93,
+   "sandTisch": 0.9,
+   "earth": [
+    0.68,
+    0.61,
+    0.52
+   ],
+   "earthAutumn": [
+    0.47,
+    0.42,
+    0.35
+   ],
+   "waterTisch": 0.59,
+   "waterStrand": 0.76,
+   "greenLeafBelowGround": 0.06,
+   "strandLeafBelowGround": 0.13
+  },
+  "C": {
+   "popMax": 0.195,
+   "popRel": 0.92,
+   "towerMax": 0.17,
+   "towerRel": 0.9,
+   "groundMax": 0.14,
+   "groundWarmMax": 0.11,
+   "groundRel": 0.85,
+   "strandGround": 0.11,
+   "leafMax": 0.175,
+   "leafRel": 0.85,
+   "sky": 0.068,
+   "water": 0.066,
+   "waterStrand": 0.11,
+   "cream": 0.028,
+   "path": 0.042,
+   "sand": 0.03,
+   "earth": 0.1,
+   "earthMono": 0.155,
+   "bloom": 0.12,
+   "hillStrand": 0.095,
+   "padRel": 0.92
+  },
+  "road": {
+   "track": "#3d4a60",
+   "streetDL": 0.1
+  },
+  "ladder": {
+   "lightDL": 0.07,
+   "lightC": 0.95,
+   "darkDL": -0.09,
+   "darkC": 1
+  },
+  "variant": {
+   "dunkelDL": -0.17,
+   "dunkelC": 0.85,
+   "sattDL": 0.06,
+   "sattYellowDL": 0.06,
+   "sattC": 1.15
+  }
+ },
+ "j17": {
+  "canyon": {
+   "label": "A · Claybound-Canyon",
+   "anchorHue": 298.981,
+   "hues": {
+    "ground": 299,
+    "strang": 33.8,
+    "tower": 33.8,
+    "leaf": 143,
+    "sky": 233,
+    "trunk": 38,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "monochrom",
+    "laub": "gruen"
+   },
+   "meanDE": 0.024,
+   "maxDE": 0.063,
+   "meanDE_ohneFahrbahn": 0.027,
+   "under005": 23,
+   "roles": 25,
+   "perRole": {
+    "sky": {
+     "original": "#96bede",
+     "regel": "#91c5e2",
+     "dE": 0.018
+    },
+    "top": {
+     "original": "#8b68c7",
+     "regel": "#916fcd",
+     "dE": 0.021
+    },
+    "top2": {
+     "original": "#9877d0",
+     "regel": "#9f7fd6",
+     "dE": 0.024
+    },
+    "hillLight": {
+     "original": "#a582d9",
+     "regel": "#a585dc",
+     "dE": 0.008
+    },
+    "hillDark": {
+     "original": "#7b5bb8",
+     "regel": "#805fbb",
+     "dE": 0.014
+    },
+    "sand": {
+     "original": "#e2d0bc",
+     "regel": "#e9dcc8",
+     "dE": 0.033
+    },
+    "rim": {
+     "original": "#7b5bb8",
+     "regel": "#805fbb",
+     "dE": 0.014
+    },
+    "under0": {
+     "original": "#5e4294",
+     "regel": "#67489a",
+     "dE": 0.024
+    },
+    "earth1": {
+     "original": "#e8743a",
+     "regel": "#e7714c",
+     "dE": 0.02
+    },
+    "earth2": {
+     "original": "#d0602e",
+     "regel": "#cd5c40",
+     "dE": 0.022
+    },
+    "earth3": {
+     "original": "#a8482a",
+     "regel": "#a74635",
+     "dE": 0.014
+    },
+    "rock": {
+     "original": "#e2d0bc",
+     "regel": "#e9dcc8",
+     "dE": 0.033
+    },
+    "tower0": {
+     "original": "#ef5a22",
+     "regel": "#f86a4c",
+     "dE": 0.044
+    },
+    "tower1": {
+     "original": "#e8743a",
+     "regel": "#f57c51",
+     "dE": 0.036
+    },
+    "leafLight": {
+     "original": "#2f8a45",
+     "regel": "#49922b",
+     "dE": 0.044
+    },
+    "leafDark": {
+     "original": "#1f7a3e",
+     "regel": "#277c3b",
+     "dE": 0.009
+    },
+    "bloom": {
+     "original": "#cdc666",
+     "regel": "#cac665",
+     "dE": 0.005
+    },
+    "trunk": {
+     "original": "#8a5a3a",
+     "regel": "#8a583e",
+     "dE": 0.009
+    },
+    "cloud": {
+     "original": "#e2d0bc",
+     "regel": "#f2e6d3",
+     "dE": 0.063
+    },
+    "water": {
+     "original": "#5983ac",
+     "regel": "#5d81a3",
+     "dE": 0.014
+    },
+    "path": {
+     "original": "#e9d8c0",
+     "regel": "#f5e6c9",
+     "dE": 0.04
+    },
+    "roadStreet": {
+     "original": "#566680",
+     "regel": "#566680",
+     "dE": 0
+    },
+    "roadTrack": {
+     "original": "#3d4a60",
+     "regel": "#3d4a60",
+     "dE": 0
+    },
+    "strang": {
+     "original": "#ef5a22",
+     "regel": "#f86a4c",
+     "dE": 0.044
+    },
+    "pad": {
+     "original": "#f2b632",
+     "regel": "#f7cd36",
+     "dE": 0.058
+    }
+   },
+   "palette": {
+    "schema": "kfb-cartoon-palette/1",
+    "scheme": "joyride",
+    "seed": 0,
+    "hues": {
+     "ground": 299,
+     "strang": 33.8,
+     "tower": 33.8,
+     "leaf": 143,
+     "sky": 233,
+     "trunk": 38,
+     "pad": 92
+    },
+    "mode": {
+     "boden": "tisch",
+     "wahrzeichen": "monochrom",
+     "laub": "gruen"
+    },
+    "mood": {
+     "dL": 0,
+     "cMul": 1
+    },
+    "roles": {
+     "sky": "#91c5e2",
+     "top": "#916fcd",
+     "top2": "#9f7fd6",
+     "hill": [
+      "#a585dc",
+      "#805fbb"
+     ],
+     "sand": "#e9dcc8",
+     "rim": "#805fbb",
+     "under": [
+      "#67489a",
+      "#e7714c",
+      "#cd5c40",
+      "#a74635"
+     ],
+     "rock": "#e9dcc8",
+     "tower": [
+      "#f86a4c",
+      "#f57c51"
+     ],
+     "leaf": [
+      "#277c3b",
+      "#49922b",
+      "#cac665"
+     ],
+     "trunk": "#8a583e",
+     "cloud": "#f2e6d3",
+     "water": "#5d81a3",
+     "path": "#f5e6c9",
+     "roadStreet": "#566680",
+     "roadTrack": "#3d4a60",
+     "strang": "#f86a4c",
+     "pad": "#f7cd36"
+    },
+    "flat": {
+     "sky": "#91c5e2",
+     "top": "#916fcd",
+     "top2": "#9f7fd6",
+     "hillLight": "#a585dc",
+     "hillDark": "#805fbb",
+     "sand": "#e9dcc8",
+     "rim": "#805fbb",
+     "under0": "#67489a",
+     "earth1": "#e7714c",
+     "earth2": "#cd5c40",
+     "earth3": "#a74635",
+     "rock": "#e9dcc8",
+     "tower0": "#f86a4c",
+     "tower1": "#f57c51",
+     "leafLight": "#49922b",
+     "leafDark": "#277c3b",
+     "leafMid": "#2b892a",
+     "bloom": "#cac665",
+     "trunk": "#8a583e",
+     "cloud": "#f2e6d3",
+     "water": "#5d81a3",
+     "path": "#f5e6c9",
+     "roadStreet": "#566680",
+     "roadTrack": "#3d4a60",
+     "strang": "#f86a4c",
+     "pad": "#f7cd36"
+    },
+    "envRoles": {
+     "ground": [
+      "#9f7fd6",
+      "#916fcd",
+      "#805fbb"
+     ],
+     "grass": [
+      "#76a1e6",
+      "#5f8bd3",
+      "#456fb5"
+     ],
+     "stone": [
+      "#c48777",
+      "#af7161",
+      "#925748"
+     ],
+     "bark": [
+      "#9f6d54",
+      "#8a583e",
+      "#6f3f25"
+     ],
+     "leaf": [
+      "#49922b",
+      "#2b892a",
+      "#277c3b"
+     ],
+     "bloom": [
+      "#e0dd82",
+      "#cac665",
+      "#adaa48"
+     ],
+     "water": [
+      "#7396b7",
+      "#5d81a3",
+      "#436787"
+     ],
+     "accent": [
+      "#ff9076",
+      "#f86a4c",
+      "#d84d2f"
+     ],
+     "sand": [
+      "#fff4e1",
+      "#e9dcc8",
+      "#cbbfac"
+     ],
+     "paved": [
+      "#fff8e9",
+      "#f5e6c9",
+      "#d8c9ac"
+     ],
+     "earth": [
+      "#e7714c",
+      "#cd5c40",
+      "#a74635"
+     ],
+     "asphalt": [
+      "#505d73",
+      "#3d4a60",
+      "#263247"
+     ],
+     "landmark": [
+      "#ff9076",
+      "#f86a4c",
+      "#d84d2f"
+     ],
+     "sky": [
+      "#aadbf7",
+      "#91c5e2",
+      "#75a9c5"
+     ]
+    },
+    "variants": {
+     "strang": {
+      "mitte": "#f86a4c",
+      "dunkel": "#b24027",
+      "satt": "#fd8b72"
+     },
+     "tower": {
+      "mitte": "#f86a4c",
+      "dunkel": "#b24027",
+      "satt": "#fd8b72"
+     },
+     "pad": {
+      "mitte": "#f7cd36",
+      "dunkel": "#ba9812",
+      "satt": "#fff7de"
+     },
+     "bloom": {
+      "mitte": "#cac665",
+      "dunkel": "#939041",
+      "satt": "#ece774"
+     },
+     "leaf": {
+      "mitte": "#2b892a",
+      "dunkel": "#005404",
+      "satt": "#2c9f2d"
+     },
+     "ground": {
+      "mitte": "#916fcd",
+      "dunkel": "#5e428c",
+      "satt": "#a67deb"
+     }
+    },
+    "source": {
+     "type": "hue",
+     "h": 298.98148837666264
+    }
+   },
+   "analyseOriginal": {
+    "groundHue": 299,
+    "rows": {
+     "sky": {
+      "hex": "#96bede",
+      "L": 0.784,
+      "C": 0.063,
+      "h": 242.7,
+      "dhGround": -56.3,
+      "relC": 0.52,
+      "cuspL": 0.7,
+      "stufe": "hell",
+      "buntheit": "ruhe"
+     },
+     "top": {
+      "hex": "#8b68c7",
+      "L": 0.594,
+      "C": 0.143,
+      "h": 299,
+      "dhGround": 0,
+      "relC": 0.55,
+      "cuspL": 0.55,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "top2": {
+      "hex": "#9877d0",
+      "L": 0.638,
+      "C": 0.133,
+      "h": 299.7,
+      "dhGround": 0.7,
+      "relC": 0.58,
+      "cuspL": 0.55,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "hill0": {
+      "hex": "#a582d9",
+      "L": 0.674,
+      "C": 0.13,
+      "h": 301.6,
+      "dhGround": 2.6,
+      "relC": 0.62,
+      "cuspL": 0.56,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "hill1": {
+      "hex": "#7b5bb8",
+      "L": 0.547,
+      "C": 0.142,
+      "h": 297.4,
+      "dhGround": -1.6,
+      "relC": 0.49,
+      "cuspL": 0.54,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "sand": {
+      "hex": "#e2d0bc",
+      "L": 0.867,
+      "C": 0.034,
+      "h": 70.3,
+      "dhGround": 131.3,
+      "relC": 0.33,
+      "cuspL": 0.79,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "rim": {
+      "hex": "#7b5bb8",
+      "L": 0.547,
+      "C": 0.142,
+      "h": 297.4,
+      "dhGround": -1.6,
+      "relC": 0.49,
+      "cuspL": 0.54,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "under0": {
+      "hex": "#5e4294",
+      "L": 0.451,
+      "C": 0.13,
+      "h": 296.6,
+      "dhGround": -2.4,
+      "relC": 0.53,
+      "cuspL": 0.54,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "under1": {
+      "hex": "#e8743a",
+      "L": 0.684,
+      "C": 0.16,
+      "h": 45,
+      "dhGround": 106,
+      "relC": 0.82,
+      "cuspL": 0.7,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "under2": {
+      "hex": "#d0602e",
+      "L": 0.619,
+      "C": 0.155,
+      "h": 42.6,
+      "dhGround": 103.6,
+      "relC": 0.84,
+      "cuspL": 0.69,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "under3": {
+      "hex": "#a8482a",
+      "L": 0.522,
+      "C": 0.134,
+      "h": 37.7,
+      "dhGround": 98.7,
+      "relC": 0.78,
+      "cuspL": 0.67,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "rock": {
+      "hex": "#e2d0bc",
+      "L": 0.867,
+      "C": 0.034,
+      "h": 70.3,
+      "dhGround": 131.3,
+      "relC": 0.33,
+      "cuspL": 0.79,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "tower0": {
+      "hex": "#ef5a22",
+      "L": 0.657,
+      "C": 0.195,
+      "h": 38.7,
+      "dhGround": 99.7,
+      "relC": 0.92,
+      "cuspL": 0.67,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "tower1": {
+      "hex": "#e8743a",
+      "L": 0.684,
+      "C": 0.16,
+      "h": 45,
+      "dhGround": 106,
+      "relC": 0.82,
+      "cuspL": 0.7,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "leaf0": {
+      "hex": "#1f7a3e",
+      "L": 0.512,
+      "C": 0.125,
+      "h": 150.3,
+      "dhGround": -148.7,
+      "relC": 0.89,
+      "cuspL": 0.87,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "leaf1": {
+      "hex": "#2f8a45",
+      "L": 0.563,
+      "C": 0.135,
+      "h": 148.2,
+      "dhGround": -150.7,
+      "relC": 0.83,
+      "cuspL": 0.87,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "leaf2": {
+      "hex": "#cdc666",
+      "L": 0.812,
+      "C": 0.119,
+      "h": 105,
+      "dhGround": 166,
+      "relC": 0.69,
+      "cuspL": 0.93,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "trunk": {
+      "hex": "#8a5a3a",
+      "L": 0.513,
+      "C": 0.078,
+      "h": 53.8,
+      "dhGround": 114.8,
+      "relC": 0.61,
+      "cuspL": 0.73,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "cloud": {
+      "hex": "#e2d0bc",
+      "L": 0.867,
+      "C": 0.034,
+      "h": 70.3,
+      "dhGround": 131.3,
+      "relC": 0.33,
+      "cuspL": 0.79,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "water": {
+      "hex": "#5983ac",
+      "L": 0.596,
+      "C": 0.078,
+      "h": 248.7,
+      "dhGround": -50.3,
+      "relC": 0.48,
+      "cuspL": 0.67,
+      "stufe": "mitte",
+      "buntheit": "ruhe"
+     },
+     "path": {
+      "hex": "#e9d8c0",
+      "L": 0.89,
+      "C": 0.037,
+      "h": 76.6,
+      "dhGround": 137.6,
+      "relC": 0.39,
+      "cuspL": 0.81,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "roadStreet": {
+      "hex": "#566680",
+      "L": 0.507,
+      "C": 0.046,
+      "h": 260,
+      "dhGround": -39,
+      "relC": 0.22,
+      "cuspL": 0.57,
+      "stufe": "dunkel",
+      "buntheit": "neutral"
+     },
+     "roadTrack": {
+      "hex": "#3d4a60",
+      "L": 0.407,
+      "C": 0.041,
+      "h": 260.8,
+      "dhGround": -38.2,
+      "relC": 0.23,
+      "cuspL": 0.56,
+      "stufe": "dunkel",
+      "buntheit": "neutral"
+     },
+     "strang": {
+      "hex": "#ef5a22",
+      "L": 0.657,
+      "C": 0.195,
+      "h": 38.7,
+      "dhGround": 99.7,
+      "relC": 0.92,
+      "cuspL": 0.67,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "pad": {
+      "hex": "#f2b632",
+      "L": 0.811,
+      "C": 0.153,
+      "h": 82.1,
+      "dhGround": 143.1,
+      "relC": 0.92,
+      "cuspL": 0.83,
+      "stufe": "hell",
+      "buntheit": "pop"
+     }
+    }
+   }
+  },
+  "bucht": {
+   "label": "B · Bikini-Bucht",
+   "anchorHue": 87.988,
+   "hues": {
+    "ground": 88,
+    "strang": 12.1,
+    "tower": 300.8,
+    "leaf": 143,
+    "sky": 233,
+    "trunk": 38,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "strand",
+    "wahrzeichen": "eigen",
+    "laub": "gruen"
+   },
+   "meanDE": 0.027,
+   "maxDE": 0.077,
+   "meanDE_ohneFahrbahn": 0.023,
+   "under005": 22,
+   "roles": 25,
+   "perRole": {
+    "sky": {
+     "original": "#8fd6ec",
+     "regel": "#91c5e2",
+     "dE": 0.044
+    },
+    "top": {
+     "original": "#f0cf7e",
+     "regel": "#f2d07d",
+     "dE": 0.004
+    },
+    "top2": {
+     "original": "#f4d98f",
+     "regel": "#fee092",
+     "dE": 0.024
+    },
+    "hillLight": {
+     "original": "#5cc3bf",
+     "regel": "#5dc3cc",
+     "dE": 0.019
+    },
+    "hillDark": {
+     "original": "#46adb2",
+     "regel": "#46acbb",
+     "dE": 0.015
+    },
+    "sand": {
+     "original": "#fbe8b4",
+     "regel": "#fae7b3",
+     "dE": 0.003
+    },
+    "rim": {
+     "original": "#e3bc66",
+     "regel": "#e4bb62",
+     "dE": 0.004
+    },
+    "under0": {
+     "original": "#d9a85c",
+     "regel": "#d8a85c",
+     "dE": 0.002
+    },
+    "earth1": {
+     "original": "#c9895a",
+     "regel": "#ce826b",
+     "dE": 0.033
+    },
+    "earth2": {
+     "original": "#b0724a",
+     "regel": "#b56d5b",
+     "dE": 0.03
+    },
+    "earth3": {
+     "original": "#8e5a40",
+     "regel": "#935649",
+     "dE": 0.021
+    },
+    "rock": {
+     "original": "#9a6fd0",
+     "regel": "#aa7ce7",
+     "dE": 0.051
+    },
+    "tower0": {
+     "original": "#9a6fd0",
+     "regel": "#9465d6",
+     "dE": 0.03
+    },
+    "tower1": {
+     "original": "#b08ae0",
+     "regel": "#aa7ce7",
+     "dE": 0.04
+    },
+    "leafLight": {
+     "original": "#8fcf45",
+     "regel": "#7acf59",
+     "dE": 0.024
+    },
+    "leafDark": {
+     "original": "#5fb84a",
+     "regel": "#3fbc5d",
+     "dE": 0.024
+    },
+    "bloom": {
+     "original": "#f7a1c4",
+     "regel": "#fa9dc3",
+     "dE": 0.01
+    },
+    "trunk": {
+     "original": "#c9895a",
+     "regel": "#ce826b",
+     "dE": 0.033
+    },
+    "cloud": {
+     "original": "#fff4e2",
+     "regel": "#f2e6d3",
+     "dE": 0.042
+    },
+    "water": {
+     "original": "#3fc4d4",
+     "regel": "#48c5d4",
+     "dE": 0.006
+    },
+    "path": {
+     "original": "#fff1d2",
+     "regel": "#f5e6c9",
+     "dE": 0.032
+    },
+    "roadStreet": {
+     "original": "#5f7f9a",
+     "regel": "#566680",
+     "dE": 0.077
+    },
+    "roadTrack": {
+     "original": "#3e5d7c",
+     "regel": "#3d4a60",
+     "dE": 0.065
+    },
+    "strang": {
+     "original": "#f2708a",
+     "regel": "#f85e7b",
+     "dE": 0.034
+    },
+    "pad": {
+     "original": "#f7d23c",
+     "regel": "#f7cd36",
+     "dE": 0.012
+    }
+   },
+   "palette": {
+    "schema": "kfb-cartoon-palette/1",
+    "scheme": "joyride",
+    "seed": 0,
+    "hues": {
+     "ground": 88,
+     "strang": 12.1,
+     "tower": 300.8,
+     "leaf": 143,
+     "sky": 233,
+     "trunk": 38,
+     "pad": 92
+    },
+    "mode": {
+     "boden": "strand",
+     "wahrzeichen": "eigen",
+     "laub": "gruen"
+    },
+    "mood": {
+     "dL": 0,
+     "cMul": 1
+    },
+    "roles": {
+     "sky": "#91c5e2",
+     "top": "#f2d07d",
+     "top2": "#fee092",
+     "hill": [
+      "#5dc3cc",
+      "#46acbb"
+     ],
+     "sand": "#fae7b3",
+     "rim": "#e4bb62",
+     "under": [
+      "#d8a85c",
+      "#ce826b",
+      "#b56d5b",
+      "#935649"
+     ],
+     "rock": "#aa7ce7",
+     "tower": [
+      "#9465d6",
+      "#aa7ce7"
+     ],
+     "leaf": [
+      "#3fbc5d",
+      "#7acf59",
+      "#fa9dc3"
+     ],
+     "trunk": "#ce826b",
+     "cloud": "#f2e6d3",
+     "water": "#48c5d4",
+     "path": "#f5e6c9",
+     "roadStreet": "#566680",
+     "roadTrack": "#3d4a60",
+     "strang": "#f85e7b",
+     "pad": "#f7cd36"
+    },
+    "flat": {
+     "sky": "#91c5e2",
+     "top": "#f2d07d",
+     "top2": "#fee092",
+     "hillLight": "#5dc3cc",
+     "hillDark": "#46acbb",
+     "sand": "#fae7b3",
+     "rim": "#e4bb62",
+     "under0": "#d8a85c",
+     "earth1": "#ce826b",
+     "earth2": "#b56d5b",
+     "earth3": "#935649",
+     "rock": "#aa7ce7",
+     "tower0": "#9465d6",
+     "tower1": "#aa7ce7",
+     "leafLight": "#7acf59",
+     "leafDark": "#3fbc5d",
+     "leafMid": "#5ec65b",
+     "bloom": "#fa9dc3",
+     "trunk": "#ce826b",
+     "cloud": "#f2e6d3",
+     "water": "#48c5d4",
+     "path": "#f5e6c9",
+     "roadStreet": "#566680",
+     "roadTrack": "#3d4a60",
+     "strang": "#f85e7b",
+     "pad": "#f7cd36"
+    },
+    "envRoles": {
+     "ground": [
+      "#fee092",
+      "#f2d07d",
+      "#e4bb62"
+     ],
+     "grass": [
+      "#fef5af",
+      "#e7dd94",
+      "#cac078"
+     ],
+     "stone": [
+      "#b58e83",
+      "#a0786e",
+      "#855e54"
+     ],
+     "bark": [
+      "#e39982",
+      "#ce826b",
+      "#b06750"
+     ],
+     "leaf": [
+      "#7acf59",
+      "#5ec65b",
+      "#3fbc5d"
+     ],
+     "bloom": [
+      "#ffbfd7",
+      "#fa9dc3",
+      "#db81a6"
+     ],
+     "water": [
+      "#6adbea",
+      "#48c5d4",
+      "#1ca8b7"
+     ],
+     "accent": [
+      "#ff8698",
+      "#f85e7b",
+      "#d83f61"
+     ],
+     "sand": [
+      "#fff8e6",
+      "#fae7b3",
+      "#dcc996"
+     ],
+     "paved": [
+      "#fff8e9",
+      "#f5e6c9",
+      "#d8c9ac"
+     ],
+     "earth": [
+      "#ce826b",
+      "#b56d5b",
+      "#935649"
+     ],
+     "asphalt": [
+      "#505d73",
+      "#3d4a60",
+      "#263247"
+     ],
+     "landmark": [
+      "#a97cea",
+      "#9465d6",
+      "#7a49b8"
+     ],
+     "sky": [
+      "#aadbf7",
+      "#91c5e2",
+      "#75a9c5"
+     ]
+    },
+    "variants": {
+     "strang": {
+      "mitte": "#f85e7b",
+      "dunkel": "#b1344f",
+      "satt": "#fd8294"
+     },
+     "tower": {
+      "mitte": "#9465d6",
+      "dunkel": "#603893",
+      "satt": "#aa71f7"
+     },
+     "pad": {
+      "mitte": "#f7cd36",
+      "dunkel": "#ba9812",
+      "satt": "#fff7de"
+     },
+     "bloom": {
+      "mitte": "#fa9dc3",
+      "dunkel": "#b96e8d",
+      "satt": "#febbd4"
+     },
+     "leaf": {
+      "mitte": "#5ec65b",
+      "dunkel": "#378d35",
+      "satt": "#61dd5e"
+     },
+     "ground": {
+      "mitte": "#f2d07d",
+      "dunkel": "#b79b57",
+      "satt": "#fff7e5"
+     }
+    },
+    "source": {
+     "type": "hue",
+     "h": 87.98838048281334
+    }
+   },
+   "analyseOriginal": {
+    "groundHue": 88,
+    "rows": {
+     "sky": {
+      "hex": "#8fd6ec",
+      "L": 0.837,
+      "C": 0.077,
+      "h": 219.4,
+      "dhGround": 131.4,
+      "relC": 0.64,
+      "cuspL": 0.8,
+      "stufe": "hell",
+      "buntheit": "ruhe"
+     },
+     "top": {
+      "hex": "#f0cf7e",
+      "L": 0.865,
+      "C": 0.107,
+      "h": 88,
+      "dhGround": 0,
+      "relC": 0.66,
+      "cuspL": 0.85,
+      "stufe": "creme",
+      "buntheit": "feld"
+     },
+     "top2": {
+      "hex": "#f4d98f",
+      "L": 0.891,
+      "C": 0.098,
+      "h": 90.2,
+      "dhGround": 2.2,
+      "relC": 0.69,
+      "cuspL": 0.86,
+      "stufe": "creme",
+      "buntheit": "feld"
+     },
+     "hill0": {
+      "hex": "#5cc3bf",
+      "L": 0.755,
+      "C": 0.096,
+      "h": 191.9,
+      "dhGround": 103.9,
+      "relC": 0.74,
+      "cuspL": 0.9,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "hill1": {
+      "hex": "#46adb2",
+      "L": 0.69,
+      "C": 0.094,
+      "h": 199.7,
+      "dhGround": 111.7,
+      "relC": 0.8,
+      "cuspL": 0.88,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "sand": {
+      "hex": "#fbe8b4",
+      "L": 0.934,
+      "C": 0.07,
+      "h": 90.3,
+      "dhGround": 2.4,
+      "relC": 0.82,
+      "cuspL": 0.86,
+      "stufe": "creme",
+      "buntheit": "ruhe"
+     },
+     "rim": {
+      "hex": "#e3bc66",
+      "L": 0.812,
+      "C": 0.114,
+      "h": 85.4,
+      "dhGround": -2.6,
+      "relC": 0.69,
+      "cuspL": 0.84,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "under0": {
+      "hex": "#d9a85c",
+      "L": 0.761,
+      "C": 0.11,
+      "h": 76.8,
+      "dhGround": -11.2,
+      "relC": 0.69,
+      "cuspL": 0.81,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "under1": {
+      "hex": "#c9895a",
+      "L": 0.684,
+      "C": 0.1,
+      "h": 56.4,
+      "dhGround": -31.6,
+      "relC": 0.6,
+      "cuspL": 0.74,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "under2": {
+      "hex": "#b0724a",
+      "L": 0.609,
+      "C": 0.096,
+      "h": 52.8,
+      "dhGround": -35.2,
+      "relC": 0.62,
+      "cuspL": 0.73,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "under3": {
+      "hex": "#8e5a40",
+      "L": 0.519,
+      "C": 0.079,
+      "h": 47,
+      "dhGround": -40.9,
+      "relC": 0.55,
+      "cuspL": 0.71,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "rock": {
+      "hex": "#9a6fd0",
+      "L": 0.626,
+      "C": 0.147,
+      "h": 302.9,
+      "dhGround": -145.1,
+      "relC": 0.59,
+      "cuspL": 0.56,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "tower0": {
+      "hex": "#9a6fd0",
+      "L": 0.626,
+      "C": 0.147,
+      "h": 302.9,
+      "dhGround": -145.1,
+      "relC": 0.59,
+      "cuspL": 0.56,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "tower1": {
+      "hex": "#b08ae0",
+      "L": 0.702,
+      "C": 0.128,
+      "h": 303.6,
+      "dhGround": -144.4,
+      "relC": 0.67,
+      "cuspL": 0.57,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "leaf0": {
+      "hex": "#8fcf45",
+      "L": 0.784,
+      "C": 0.18,
+      "h": 130.9,
+      "dhGround": 43,
+      "relC": 0.84,
+      "cuspL": 0.9,
+      "stufe": "hell",
+      "buntheit": "pop"
+     },
+     "leaf1": {
+      "hex": "#5fb84a",
+      "L": 0.703,
+      "C": 0.171,
+      "h": 139.9,
+      "dhGround": 52,
+      "relC": 0.75,
+      "cuspL": 0.87,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "leaf2": {
+      "hex": "#f7a1c4",
+      "L": 0.804,
+      "C": 0.11,
+      "h": 353.8,
+      "dhGround": -94.1,
+      "relC": 0.86,
+      "cuspL": 0.65,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "trunk": {
+      "hex": "#c9895a",
+      "L": 0.684,
+      "C": 0.1,
+      "h": 56.4,
+      "dhGround": -31.6,
+      "relC": 0.6,
+      "cuspL": 0.74,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "cloud": {
+      "hex": "#fff4e2",
+      "L": 0.971,
+      "C": 0.026,
+      "h": 80.3,
+      "dhGround": -7.7,
+      "relC": 1,
+      "cuspL": 0.82,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "water": {
+      "hex": "#3fc4d4",
+      "L": 0.756,
+      "C": 0.114,
+      "h": 206.7,
+      "dhGround": 118.7,
+      "relC": 0.88,
+      "cuspL": 0.85,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "path": {
+      "hex": "#fff1d2",
+      "L": 0.961,
+      "C": 0.043,
+      "h": 86.6,
+      "dhGround": -1.4,
+      "relC": 1,
+      "cuspL": 0.85,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "roadStreet": {
+      "hex": "#5f7f9a",
+      "L": 0.582,
+      "C": 0.055,
+      "h": 244.4,
+      "dhGround": 156.4,
+      "relC": 0.38,
+      "cuspL": 0.7,
+      "stufe": "mitte",
+      "buntheit": "ruhe"
+     },
+     "roadTrack": {
+      "hex": "#3e5d7c",
+      "L": 0.468,
+      "C": 0.062,
+      "h": 249.3,
+      "dhGround": 161.3,
+      "relC": 0.48,
+      "cuspL": 0.67,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "strang": {
+      "hex": "#f2708a",
+      "L": 0.707,
+      "C": 0.161,
+      "h": 9.7,
+      "dhGround": -78.3,
+      "relC": 0.84,
+      "cuspL": 0.64,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "pad": {
+      "hex": "#f7d23c",
+      "L": 0.871,
+      "C": 0.162,
+      "h": 94.4,
+      "dhGround": 6.4,
+      "relC": 0.91,
+      "cuspL": 0.88,
+      "stufe": "creme",
+      "buntheit": "pop"
+     }
+    }
+   }
+  },
+  "otown": {
+   "label": "C · O-Town",
+   "anchorHue": 182.161,
+   "hues": {
+    "ground": 182.2,
+    "strang": 78,
+    "tower": 357.3,
+    "leaf": 66,
+    "sky": 156,
+    "trunk": 321,
+    "pad": 98
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "herbst"
+   },
+   "meanDE": 0.023,
+   "maxDE": 0.058,
+   "meanDE_ohneFahrbahn": 0.021,
+   "under005": 24,
+   "roles": 25,
+   "perRole": {
+    "sky": {
+     "original": "#a8d8b9",
+     "regel": "#a7d8b8",
+     "dE": 0.002
+    },
+    "top": {
+     "original": "#3aa596",
+     "regel": "#39a596",
+     "dE": 0.001
+    },
+    "top2": {
+     "original": "#45b2a2",
+     "regel": "#52b2a5",
+     "dE": 0.011
+    },
+    "hillLight": {
+     "original": "#4cb5a5",
+     "regel": "#5ab8ab",
+     "dE": 0.017
+    },
+    "hillDark": {
+     "original": "#2f8f83",
+     "regel": "#229484",
+     "dE": 0.015
+    },
+    "sand": {
+     "original": "#f3ead8",
+     "regel": "#e9dcc8",
+     "dE": 0.04
+    },
+    "rim": {
+     "original": "#2f8f83",
+     "regel": "#229484",
+     "dE": 0.015
+    },
+    "under0": {
+     "original": "#277a70",
+     "regel": "#03796c",
+     "dE": 0.016
+    },
+    "earth1": {
+     "original": "#6b4a8a",
+     "regel": "#74467d",
+     "dE": 0.026
+    },
+    "earth2": {
+     "original": "#5a3c78",
+     "regel": "#633a6f",
+     "dE": 0.022
+    },
+    "earth3": {
+     "original": "#462e60",
+     "regel": "#4b2b59",
+     "dE": 0.016
+    },
+    "rock": {
+     "original": "#e0679f",
+     "regel": "#ec719f",
+     "dE": 0.033
+    },
+    "tower0": {
+     "original": "#c9508f",
+     "regel": "#d7568b",
+     "dE": 0.033
+    },
+    "tower1": {
+     "original": "#e0679f",
+     "regel": "#ec719f",
+     "dE": 0.033
+    },
+    "leafLight": {
+     "original": "#f5b041",
+     "regel": "#f5aa42",
+     "dE": 0.015
+    },
+    "leafDark": {
+     "original": "#f08a2c",
+     "regel": "#e58e39",
+     "dE": 0.019
+    },
+    "bloom": {
+     "original": "#c9508f",
+     "regel": "#d7568b",
+     "dE": 0.033
+    },
+    "trunk": {
+     "original": "#6b4a8a",
+     "regel": "#74467d",
+     "dE": 0.026
+    },
+    "cloud": {
+     "original": "#f3ead8",
+     "regel": "#f2e6d3",
+     "dE": 0.011
+    },
+    "water": {
+     "original": "#5f7f9a",
+     "regel": "#5d81a3",
+     "dE": 0.014
+    },
+    "path": {
+     "original": "#f3e6c8",
+     "regel": "#f5e6c9",
+     "dE": 0.003
+    },
+    "roadStreet": {
+     "original": "#6a6e8f",
+     "regel": "#566680",
+     "dE": 0.044
+    },
+    "roadTrack": {
+     "original": "#4a4d6e",
+     "regel": "#3d4a60",
+     "dE": 0.032
+    },
+    "strang": {
+     "original": "#e9b53b",
+     "regel": "#eba92e",
+     "dE": 0.028
+    },
+    "pad": {
+     "original": "#fff06a",
+     "regel": "#f8da39",
+     "dE": 0.058
+    }
+   },
+   "palette": {
+    "schema": "kfb-cartoon-palette/1",
+    "scheme": "joyride",
+    "seed": 0,
+    "hues": {
+     "ground": 182.2,
+     "strang": 78,
+     "tower": 357.3,
+     "leaf": 66,
+     "sky": 156,
+     "trunk": 321,
+     "pad": 98
+    },
+    "mode": {
+     "boden": "tisch",
+     "wahrzeichen": "eigen",
+     "laub": "herbst"
+    },
+    "mood": {
+     "dL": 0,
+     "cMul": 1
+    },
+    "roles": {
+     "sky": "#a7d8b8",
+     "top": "#39a596",
+     "top2": "#52b2a5",
+     "hill": [
+      "#5ab8ab",
+      "#229484"
+     ],
+     "sand": "#e9dcc8",
+     "rim": "#229484",
+     "under": [
+      "#03796c",
+      "#74467d",
+      "#633a6f",
+      "#4b2b59"
+     ],
+     "rock": "#ec719f",
+     "tower": [
+      "#d7568b",
+      "#ec719f"
+     ],
+     "leaf": [
+      "#e58e39",
+      "#f5aa42",
+      "#d7568b"
+     ],
+     "trunk": "#74467d",
+     "cloud": "#f2e6d3",
+     "water": "#5d81a3",
+     "path": "#f5e6c9",
+     "roadStreet": "#566680",
+     "roadTrack": "#3d4a60",
+     "strang": "#eba92e",
+     "pad": "#f8da39"
+    },
+    "flat": {
+     "sky": "#a7d8b8",
+     "top": "#39a596",
+     "top2": "#52b2a5",
+     "hillLight": "#5ab8ab",
+     "hillDark": "#229484",
+     "sand": "#e9dcc8",
+     "rim": "#229484",
+     "under0": "#03796c",
+     "earth1": "#74467d",
+     "earth2": "#633a6f",
+     "earth3": "#4b2b59",
+     "rock": "#ec719f",
+     "tower0": "#d7568b",
+     "tower1": "#ec719f",
+     "leafLight": "#f5aa42",
+     "leafDark": "#e58e39",
+     "leafMid": "#ed9c3e",
+     "bloom": "#d7568b",
+     "trunk": "#74467d",
+     "cloud": "#f2e6d3",
+     "water": "#5d81a3",
+     "path": "#f5e6c9",
+     "roadStreet": "#566680",
+     "roadTrack": "#3d4a60",
+     "strang": "#eba92e",
+     "pad": "#f8da39"
+    },
+    "envRoles": {
+     "ground": [
+      "#52b2a5",
+      "#39a596",
+      "#229484"
+     ],
+     "grass": [
+      "#75bea8",
+      "#5ba992",
+      "#3e8d77"
+     ],
+     "stone": [
+      "#6d5773",
+      "#594460",
+      "#412c47"
+     ],
+     "bark": [
+      "#885b90",
+      "#74467d",
+      "#5a2e62"
+     ],
+     "leaf": [
+      "#f5aa42",
+      "#ed9c3e",
+      "#e58e39"
+     ],
+     "bloom": [
+      "#ec70a1",
+      "#d7568b",
+      "#b83971"
+     ],
+     "water": [
+      "#7396b7",
+      "#5d81a3",
+      "#436787"
+     ],
+     "accent": [
+      "#ffc159",
+      "#eba92e",
+      "#cb8e00"
+     ],
+     "sand": [
+      "#fff4e1",
+      "#e9dcc8",
+      "#cbbfac"
+     ],
+     "paved": [
+      "#fff8e9",
+      "#f5e6c9",
+      "#d8c9ac"
+     ],
+     "earth": [
+      "#74467d",
+      "#633a6f",
+      "#4b2b59"
+     ],
+     "asphalt": [
+      "#505d73",
+      "#3d4a60",
+      "#263247"
+     ],
+     "landmark": [
+      "#ec70a1",
+      "#d7568b",
+      "#b83971"
+     ],
+     "sky": [
+      "#bfefcf",
+      "#a7d8b8",
+      "#8bbb9c"
+     ]
+    },
+    "variants": {
+     "strang": {
+      "mitte": "#eba92e",
+      "dunkel": "#ac7700",
+      "satt": "#fecb7a"
+     },
+     "tower": {
+      "mitte": "#d7568b",
+      "dunkel": "#942c5a",
+      "satt": "#f65d9e"
+     },
+     "pad": {
+      "mitte": "#f8da39",
+      "dunkel": "#bca417",
+      "satt": "#fff9dd"
+     },
+     "bloom": {
+      "mitte": "#d7568b",
+      "dunkel": "#942c5a",
+      "satt": "#f65d9e"
+     },
+     "leaf": {
+      "mitte": "#ed9c3e",
+      "dunkel": "#ad6c19",
+      "satt": "#fdb66a"
+     },
+     "ground": {
+      "mitte": "#39a596",
+      "dunkel": "#096f63",
+      "satt": "#36bba9"
+     }
+    },
+    "source": {
+     "type": "hue",
+     "h": 182.1614820668101
+    }
+   },
+   "analyseOriginal": {
+    "groundHue": 182.2,
+    "rows": {
+     "sky": {
+      "hex": "#a8d8b9",
+      "L": 0.84,
+      "C": 0.066,
+      "h": 156.4,
+      "dhGround": -25.8,
+      "relC": 0.33,
+      "cuspL": 0.88,
+      "stufe": "hell",
+      "buntheit": "ruhe"
+     },
+     "top": {
+      "hex": "#3aa596",
+      "L": 0.657,
+      "C": 0.099,
+      "h": 182.2,
+      "dhGround": 0,
+      "relC": 0.84,
+      "cuspL": 0.89,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "top2": {
+      "hex": "#45b2a2",
+      "L": 0.697,
+      "C": 0.102,
+      "h": 181.9,
+      "dhGround": -0.2,
+      "relC": 0.82,
+      "cuspL": 0.89,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "hill0": {
+      "hex": "#2f8f83",
+      "L": 0.591,
+      "C": 0.09,
+      "h": 183.4,
+      "dhGround": 1.2,
+      "relC": 0.86,
+      "cuspL": 0.9,
+      "stufe": "mitte",
+      "buntheit": "ruhe"
+     },
+     "hill1": {
+      "hex": "#4cb5a5",
+      "L": 0.707,
+      "C": 0.1,
+      "h": 181.8,
+      "dhGround": -0.4,
+      "relC": 0.79,
+      "cuspL": 0.89,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "sand": {
+      "hex": "#f3ead8",
+      "L": 0.939,
+      "C": 0.026,
+      "h": 84.6,
+      "dhGround": -97.6,
+      "relC": 0.4,
+      "cuspL": 0.84,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "rim": {
+      "hex": "#2f8f83",
+      "L": 0.591,
+      "C": 0.09,
+      "h": 183.4,
+      "dhGround": 1.2,
+      "relC": 0.86,
+      "cuspL": 0.9,
+      "stufe": "mitte",
+      "buntheit": "ruhe"
+     },
+     "under0": {
+      "hex": "#277a70",
+      "L": 0.527,
+      "C": 0.08,
+      "h": 183.8,
+      "dhGround": 1.6,
+      "relC": 0.85,
+      "cuspL": 0.9,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "under1": {
+      "hex": "#6b4a8a",
+      "L": 0.473,
+      "C": 0.106,
+      "h": 306.6,
+      "dhGround": 124.4,
+      "relC": 0.43,
+      "cuspL": 0.58,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "under2": {
+      "hex": "#5a3c78",
+      "L": 0.418,
+      "C": 0.101,
+      "h": 305.5,
+      "dhGround": 123.4,
+      "relC": 0.47,
+      "cuspL": 0.58,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "under3": {
+      "hex": "#462e60",
+      "L": 0.354,
+      "C": 0.088,
+      "h": 304.5,
+      "dhGround": 122.3,
+      "relC": 0.47,
+      "cuspL": 0.57,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "rock": {
+      "hex": "#e0679f",
+      "L": 0.676,
+      "C": 0.162,
+      "h": 353.3,
+      "dhGround": 171.2,
+      "relC": 0.65,
+      "cuspL": 0.65,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "tower0": {
+      "hex": "#c9508f",
+      "L": 0.608,
+      "C": 0.167,
+      "h": 350.9,
+      "dhGround": 168.7,
+      "relC": 0.66,
+      "cuspL": 0.66,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "tower1": {
+      "hex": "#e0679f",
+      "L": 0.676,
+      "C": 0.162,
+      "h": 353.3,
+      "dhGround": 171.2,
+      "relC": 0.65,
+      "cuspL": 0.65,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "leaf0": {
+      "hex": "#f08a2c",
+      "L": 0.729,
+      "C": 0.159,
+      "h": 57.6,
+      "dhGround": -124.5,
+      "relC": 0.91,
+      "cuspL": 0.75,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "leaf1": {
+      "hex": "#f5b041",
+      "L": 0.804,
+      "C": 0.146,
+      "h": 75.3,
+      "dhGround": -106.9,
+      "relC": 0.86,
+      "cuspL": 0.81,
+      "stufe": "hell",
+      "buntheit": "pop"
+     },
+     "leaf2": {
+      "hex": "#c9508f",
+      "L": 0.608,
+      "C": 0.167,
+      "h": 350.9,
+      "dhGround": 168.7,
+      "relC": 0.66,
+      "cuspL": 0.66,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "trunk": {
+      "hex": "#6b4a8a",
+      "L": 0.473,
+      "C": 0.106,
+      "h": 306.6,
+      "dhGround": 124.4,
+      "relC": 0.43,
+      "cuspL": 0.58,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "cloud": {
+      "hex": "#f3ead8",
+      "L": 0.939,
+      "C": 0.026,
+      "h": 84.6,
+      "dhGround": -97.6,
+      "relC": 0.4,
+      "cuspL": 0.84,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "water": {
+      "hex": "#5f7f9a",
+      "L": 0.582,
+      "C": 0.055,
+      "h": 244.4,
+      "dhGround": 62.2,
+      "relC": 0.38,
+      "cuspL": 0.7,
+      "stufe": "mitte",
+      "buntheit": "ruhe"
+     },
+     "path": {
+      "hex": "#f3e6c8",
+      "L": 0.928,
+      "C": 0.042,
+      "h": 87.4,
+      "dhGround": -94.8,
+      "relC": 0.5,
+      "cuspL": 0.85,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "roadStreet": {
+      "hex": "#6a6e8f",
+      "L": 0.547,
+      "C": 0.052,
+      "h": 279.2,
+      "dhGround": 97,
+      "relC": 0.2,
+      "cuspL": 0.49,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "roadTrack": {
+      "hex": "#4a4d6e",
+      "L": 0.432,
+      "C": 0.055,
+      "h": 279.8,
+      "dhGround": 97.7,
+      "relC": 0.21,
+      "cuspL": 0.49,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "strang": {
+      "hex": "#e9b53b",
+      "L": 0.8,
+      "C": 0.145,
+      "h": 84.4,
+      "dhGround": -97.7,
+      "relC": 0.88,
+      "cuspL": 0.84,
+      "stufe": "hell",
+      "buntheit": "pop"
+     },
+     "pad": {
+      "hex": "#fff06a",
+      "L": 0.942,
+      "C": 0.154,
+      "h": 103,
+      "dhGround": -79.2,
+      "relC": 1,
+      "cuspL": 0.92,
+      "stufe": "creme",
+      "buntheit": "pop"
+     }
+    }
+   }
+  }
+ },
+ "storyModes": {
+  "tragic": {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "joyride",
+   "seed": 0,
+   "hues": {
+    "ground": 234.8,
+    "strang": 348.9,
+    "tower": 28.9,
+    "leaf": 143,
+    "sky": 233,
+    "trunk": 38,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "gruen"
+   },
+   "mood": {
+    "dL": 0,
+    "cMul": 1
+   },
+   "roles": {
+    "sky": "#91c5e2",
+    "top": "#3596c7",
+    "top2": "#4fa3d2",
+    "hill": [
+     "#57aad8",
+     "#1a86b5"
+    ],
+    "sand": "#e9dcc8",
+    "rim": "#1a86b5",
+    "under": [
+     "#006b96",
+     "#ce826b",
+     "#b56d5b",
+     "#935649"
+    ],
+    "rock": "#f07361",
+    "tower": [
+     "#dc5749",
+     "#f07361"
+    ],
+    "leaf": [
+     "#2a843f",
+     "#4e9a2e",
+     "#fc9cbc"
+    ],
+    "trunk": "#ce826b",
+    "cloud": "#f2e6d3",
+    "water": "#5d81a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f262b2",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#91c5e2",
+    "top": "#3596c7",
+    "top2": "#4fa3d2",
+    "hillLight": "#57aad8",
+    "hillDark": "#1a86b5",
+    "sand": "#e9dcc8",
+    "rim": "#1a86b5",
+    "under0": "#006b96",
+    "earth1": "#ce826b",
+    "earth2": "#b56d5b",
+    "earth3": "#935649",
+    "rock": "#f07361",
+    "tower0": "#dc5749",
+    "tower1": "#f07361",
+    "leafLight": "#4e9a2e",
+    "leafDark": "#2a843f",
+    "leafMid": "#2e912d",
+    "bloom": "#fc9cbc",
+    "trunk": "#ce826b",
+    "cloud": "#f2e6d3",
+    "water": "#5d81a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f262b2",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#4fa3d2",
+     "#3596c7",
+     "#1a86b5"
+    ],
+    "grass": [
+     "#58b7c9",
+     "#38a1b4",
+     "#088698"
+    ],
+    "stone": [
+     "#b58e83",
+     "#a0786e",
+     "#855e54"
+    ],
+    "bark": [
+     "#e39982",
+     "#ce826b",
+     "#b06750"
+    ],
+    "leaf": [
+     "#4e9a2e",
+     "#2e912d",
+     "#2a843f"
+    ],
+    "bloom": [
+     "#ffc0d3",
+     "#fc9cbc",
+     "#dd80a0"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#ff85c5",
+     "#f262b2",
+     "#d24496"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#ce826b",
+     "#b56d5b",
+     "#935649"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#f17161",
+     "#dc5749",
+     "#bd392e"
+    ],
+    "sky": [
+     "#aadbf7",
+     "#91c5e2",
+     "#75a9c5"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f262b2",
+     "dunkel": "#ad387b",
+     "satt": "#fd80c2"
+    },
+    "tower": {
+     "mitte": "#dc5749",
+     "dunkel": "#982c23",
+     "satt": "#fc5f4f"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#fc9cbc",
+     "dunkel": "#bb6e88",
+     "satt": "#febcd0"
+    },
+    "leaf": {
+     "mitte": "#2e912d",
+     "dunkel": "#005b05",
+     "satt": "#2ea72f"
+    },
+    "ground": {
+     "mitte": "#3596c7",
+     "dunkel": "#056289",
+     "satt": "#32aae4"
+    }
+   },
+   "source": {
+    "type": "storyMode",
+    "id": "tragic",
+    "label": "Tragic",
+    "hue": 234.8,
+    "storyDunkel": "#34576b",
+    "storySatt": "#3e6a83"
+   },
+   "lightness": {
+    "websiteDunkelL": 0.439,
+    "websiteSattL": 0.503,
+    "spielBodenL": 0.639,
+    "spielStrangL": 0.701
+   }
+  },
+  "comic": {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "joyride",
+   "seed": 0,
+   "hues": {
+    "ground": 122.4,
+    "strang": 36.2,
+    "tower": 321.4,
+    "leaf": 66,
+    "sky": 156,
+    "trunk": 321,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "herbst"
+   },
+   "mood": {
+    "dL": 0,
+    "cMul": 1
+   },
+   "roles": {
+    "sky": "#a7d8b8",
+    "top": "#84a033",
+    "top2": "#91ad4e",
+    "hill": [
+     "#97b455",
+     "#768e1a"
+    ],
+    "sand": "#e9dcc8",
+    "rim": "#768e1a",
+    "under": [
+     "#5d7403",
+     "#74467d",
+     "#633a6f",
+     "#4b2b59"
+    ],
+    "rock": "#ce7bd9",
+    "tower": [
+     "#b963c8",
+     "#ce7bd9"
+    ],
+    "leaf": [
+     "#e58e39",
+     "#f5aa42",
+     "#b963c8"
+    ],
+    "trunk": "#74467d",
+    "cloud": "#f2e6d3",
+    "water": "#5d81a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f86e49",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#a7d8b8",
+    "top": "#84a033",
+    "top2": "#91ad4e",
+    "hillLight": "#97b455",
+    "hillDark": "#768e1a",
+    "sand": "#e9dcc8",
+    "rim": "#768e1a",
+    "under0": "#5d7403",
+    "earth1": "#74467d",
+    "earth2": "#633a6f",
+    "earth3": "#4b2b59",
+    "rock": "#ce7bd9",
+    "tower0": "#b963c8",
+    "tower1": "#ce7bd9",
+    "leafLight": "#f5aa42",
+    "leafDark": "#e58e39",
+    "leafMid": "#ed9c3e",
+    "bloom": "#b963c8",
+    "trunk": "#74467d",
+    "cloud": "#f2e6d3",
+    "water": "#5d81a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f86e49",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#91ad4e",
+     "#84a033",
+     "#768e1a"
+    ],
+    "grass": [
+     "#9bbc6e",
+     "#85a654",
+     "#6a8a38"
+    ],
+    "stone": [
+     "#6d5773",
+     "#594460",
+     "#412c47"
+    ],
+    "bark": [
+     "#885b90",
+     "#74467d",
+     "#5a2e62"
+    ],
+    "leaf": [
+     "#f5aa42",
+     "#ed9c3e",
+     "#e58e39"
+    ],
+    "bloom": [
+     "#cd7bdc",
+     "#b963c8",
+     "#9c47aa"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#ff9375",
+     "#f86e49",
+     "#d8512b"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#74467d",
+     "#633a6f",
+     "#4b2b59"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#cd7bdc",
+     "#b963c8",
+     "#9c47aa"
+    ],
+    "sky": [
+     "#bfefcf",
+     "#a7d8b8",
+     "#8bbb9c"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f86e49",
+     "dunkel": "#b24324",
+     "satt": "#fd8f71"
+    },
+    "tower": {
+     "mitte": "#b963c8",
+     "dunkel": "#7d3889",
+     "satt": "#d36de5"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#b963c8",
+     "dunkel": "#7d3889",
+     "satt": "#d36de5"
+    },
+    "leaf": {
+     "mitte": "#ed9c3e",
+     "dunkel": "#ad6c19",
+     "satt": "#fdb66a"
+    },
+    "ground": {
+     "mitte": "#84a033",
+     "dunkel": "#566b08",
+     "satt": "#98b835"
+    }
+   },
+   "source": {
+    "type": "storyMode",
+    "id": "comic",
+    "label": "Comic",
+    "hue": 122.4,
+    "storyDunkel": "#5e6f33",
+    "storySatt": "#7a8d4a"
+   },
+   "lightness": {
+    "websiteDunkelL": 0.513,
+    "websiteSattL": 0.612,
+    "spielBodenL": 0.663,
+    "spielStrangL": 0.7
+   }
+  },
+  "absurd": {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "joyride",
+   "seed": 0,
+   "hues": {
+    "ground": 88.8,
+    "strang": 12.6,
+    "tower": 301.3,
+    "leaf": 143,
+    "sky": 233,
+    "trunk": 38,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "strand",
+    "wahrzeichen": "eigen",
+    "laub": "gruen"
+   },
+   "mood": {
+    "dL": 0,
+    "cMul": 1
+   },
+   "roles": {
+    "sky": "#91c5e2",
+    "top": "#f2d17d",
+    "top2": "#fee092",
+    "hill": [
+     "#5dc3cc",
+     "#46acbb"
+    ],
+    "sand": "#f9e7b3",
+    "rim": "#e3bb62",
+    "under": [
+     "#d8a85b",
+     "#ce826b",
+     "#b56d5b",
+     "#935649"
+    ],
+    "rock": "#aa7ce7",
+    "tower": [
+     "#9564d6",
+     "#aa7ce7"
+    ],
+    "leaf": [
+     "#3fbc5d",
+     "#7acf59",
+     "#fb9dc2"
+    ],
+    "trunk": "#ce826b",
+    "cloud": "#f2e6d3",
+    "water": "#48c5d4",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f85e7a",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#91c5e2",
+    "top": "#f2d17d",
+    "top2": "#fee092",
+    "hillLight": "#5dc3cc",
+    "hillDark": "#46acbb",
+    "sand": "#f9e7b3",
+    "rim": "#e3bb62",
+    "under0": "#d8a85b",
+    "earth1": "#ce826b",
+    "earth2": "#b56d5b",
+    "earth3": "#935649",
+    "rock": "#aa7ce7",
+    "tower0": "#9564d6",
+    "tower1": "#aa7ce7",
+    "leafLight": "#7acf59",
+    "leafDark": "#3fbc5d",
+    "leafMid": "#5ec65b",
+    "bloom": "#fb9dc2",
+    "trunk": "#ce826b",
+    "cloud": "#f2e6d3",
+    "water": "#48c5d4",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f85e7a",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#fee092",
+     "#f2d17d",
+     "#e3bb62"
+    ],
+    "grass": [
+     "#fdf5af",
+     "#e6de95",
+     "#c9c078"
+    ],
+    "stone": [
+     "#b58e83",
+     "#a0786e",
+     "#855e54"
+    ],
+    "bark": [
+     "#e39982",
+     "#ce826b",
+     "#b06750"
+    ],
+    "leaf": [
+     "#7acf59",
+     "#5ec65b",
+     "#3fbc5d"
+    ],
+    "bloom": [
+     "#ffbfd7",
+     "#fb9dc2",
+     "#dc81a5"
+    ],
+    "water": [
+     "#6adbea",
+     "#48c5d4",
+     "#1ca8b7"
+    ],
+    "accent": [
+     "#ff8697",
+     "#f85e7a",
+     "#d83f60"
+    ],
+    "sand": [
+     "#fff8e5",
+     "#f9e7b3",
+     "#dcc996"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#ce826b",
+     "#b56d5b",
+     "#935649"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#a97cea",
+     "#9564d6",
+     "#7a49b8"
+    ],
+    "sky": [
+     "#aadbf7",
+     "#91c5e2",
+     "#75a9c5"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f85e7a",
+     "dunkel": "#b1344e",
+     "satt": "#fd8293"
+    },
+    "tower": {
+     "mitte": "#9564d6",
+     "dunkel": "#613893",
+     "satt": "#aa70f7"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#fb9dc2",
+     "dunkel": "#b96e8c",
+     "satt": "#febbd4"
+    },
+    "leaf": {
+     "mitte": "#5ec65b",
+     "dunkel": "#378d35",
+     "satt": "#61dd5e"
+    },
+    "ground": {
+     "mitte": "#f2d17d",
+     "dunkel": "#b69b57",
+     "satt": "#fff8e6"
+    }
+   },
+   "source": {
+    "type": "storyMode",
+    "id": "absurd",
+    "label": "Absurd",
+    "hue": 88.8,
+    "storyDunkel": "#b8901c",
+    "storySatt": "#e9c14a"
+   },
+   "lightness": {
+    "websiteDunkelL": 0.673,
+    "websiteSattL": 0.825,
+    "spielBodenL": 0.871,
+    "spielStrangL": 0.688
+   }
+  },
+  "heroic": {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "joyride",
+   "seed": 0,
+   "hues": {
+    "ground": 52.2,
+    "strang": 347.1,
+    "tower": 279.3,
+    "leaf": 143,
+    "sky": 233,
+    "trunk": 38,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "gruen"
+   },
+   "mood": {
+    "dL": 0,
+    "cMul": 1
+   },
+   "roles": {
+    "sky": "#91c5e2",
+    "top": "#bf7749",
+    "top2": "#cb875b",
+    "hill": [
+     "#d18d62",
+     "#ae6639"
+    ],
+    "sand": "#e9dcc8",
+    "rim": "#ae6639",
+    "under": [
+     "#8f5025",
+     "#ce826b",
+     "#b56d5b",
+     "#935649"
+    ],
+    "rock": "#8182ef",
+    "tower": [
+     "#6a6bde",
+     "#8182ef"
+    ],
+    "leaf": [
+     "#29843f",
+     "#4d992d",
+     "#eaa1e2"
+    ],
+    "trunk": "#ce826b",
+    "cloud": "#f2e6d3",
+    "water": "#5d81a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f163b6",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#91c5e2",
+    "top": "#bf7749",
+    "top2": "#cb875b",
+    "hillLight": "#d18d62",
+    "hillDark": "#ae6639",
+    "sand": "#e9dcc8",
+    "rim": "#ae6639",
+    "under0": "#8f5025",
+    "earth1": "#ce826b",
+    "earth2": "#b56d5b",
+    "earth3": "#935649",
+    "rock": "#8182ef",
+    "tower0": "#6a6bde",
+    "tower1": "#8182ef",
+    "leafLight": "#4d992d",
+    "leafDark": "#29843f",
+    "leafMid": "#2e912d",
+    "bloom": "#eaa1e2",
+    "trunk": "#ce826b",
+    "cloud": "#f2e6d3",
+    "water": "#5d81a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f163b6",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#cb875b",
+     "#bf7749",
+     "#ae6639"
+    ],
+    "grass": [
+     "#c89f66",
+     "#b3894c",
+     "#976e31"
+    ],
+    "stone": [
+     "#b58e83",
+     "#a0786e",
+     "#855e54"
+    ],
+    "bark": [
+     "#e39982",
+     "#ce826b",
+     "#b06750"
+    ],
+    "leaf": [
+     "#4d992d",
+     "#2e912d",
+     "#29843f"
+    ],
+    "bloom": [
+     "#ffb9f8",
+     "#eaa1e2",
+     "#cc85c5"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#ff84c9",
+     "#f163b6",
+     "#d1459a"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#ce826b",
+     "#b56d5b",
+     "#935649"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#7e83f1",
+     "#6a6bde",
+     "#5250bf"
+    ],
+    "sky": [
+     "#aadbf7",
+     "#91c5e2",
+     "#75a9c5"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f163b6",
+     "dunkel": "#ac397e",
+     "satt": "#fd80c6"
+    },
+    "tower": {
+     "mitte": "#6a6bde",
+     "dunkel": "#3f3d98",
+     "satt": "#7a7bfc"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#eaa1e2",
+     "dunkel": "#ac72a6",
+     "satt": "#feb4f6"
+    },
+    "leaf": {
+     "mitte": "#2e912d",
+     "dunkel": "#005b05",
+     "satt": "#2ea62f"
+    },
+    "ground": {
+     "mitte": "#bf7749",
+     "dunkel": "#824923",
+     "satt": "#db854e"
+    }
+   },
+   "source": {
+    "type": "storyMode",
+    "id": "heroic",
+    "label": "Heroic",
+    "hue": 52.2,
+    "storyDunkel": "#b35e22",
+    "storySatt": "#d97c3a"
+   },
+   "lightness": {
+    "websiteDunkelL": 0.573,
+    "websiteSattL": 0.677,
+    "spielBodenL": 0.637,
+    "spielStrangL": 0.702
+   }
+  },
+  "mystical": {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "joyride",
+   "seed": 0,
+   "hues": {
+    "ground": 309.6,
+    "strang": 41.3,
+    "tower": 41.3,
+    "leaf": 143,
+    "sky": 233,
+    "trunk": 38,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "monochrom",
+    "laub": "gruen"
+   },
+   "mood": {
+    "dL": 0,
+    "cMul": 1
+   },
+   "roles": {
+    "sky": "#91c5e2",
+    "top": "#a06cc5",
+    "top2": "#ad7ccf",
+    "hill": [
+     "#b382d5",
+     "#8e5cb4"
+    ],
+    "sand": "#e9dcc8",
+    "rim": "#8e5cb4",
+    "under": [
+     "#744694",
+     "#e7714c",
+     "#cd5c40",
+     "#a74635"
+    ],
+    "rock": "#e9dcc8",
+    "tower": [
+     "#f97743",
+     "#f88545"
+    ],
+    "leaf": [
+     "#277e3c",
+     "#4a942c",
+     "#cac665"
+    ],
+    "trunk": "#8a583e",
+    "cloud": "#f2e6d3",
+    "water": "#5d81a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f97743",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#91c5e2",
+    "top": "#a06cc5",
+    "top2": "#ad7ccf",
+    "hillLight": "#b382d5",
+    "hillDark": "#8e5cb4",
+    "sand": "#e9dcc8",
+    "rim": "#8e5cb4",
+    "under0": "#744694",
+    "earth1": "#e7714c",
+    "earth2": "#cd5c40",
+    "earth3": "#a74635",
+    "rock": "#e9dcc8",
+    "tower0": "#f97743",
+    "tower1": "#f88545",
+    "leafLight": "#4a942c",
+    "leafDark": "#277e3c",
+    "leafMid": "#2c8b2b",
+    "bloom": "#cac665",
+    "trunk": "#8a583e",
+    "cloud": "#f2e6d3",
+    "water": "#5d81a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f97743",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#ad7ccf",
+     "#a06cc5",
+     "#8e5cb4"
+    ],
+    "grass": [
+     "#849fe9",
+     "#6d89d5",
+     "#546eb7"
+    ],
+    "stone": [
+     "#c48777",
+     "#af7161",
+     "#925748"
+    ],
+    "bark": [
+     "#9f6d54",
+     "#8a583e",
+     "#6f3f25"
+    ],
+    "leaf": [
+     "#4a942c",
+     "#2c8b2b",
+     "#277e3c"
+    ],
+    "bloom": [
+     "#e0dd82",
+     "#cac665",
+     "#adaa48"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#ff9a74",
+     "#f97743",
+     "#d95a22"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#e7714c",
+     "#cd5c40",
+     "#a74635"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#ff9a74",
+     "#f97743",
+     "#d95a22"
+    ],
+    "sky": [
+     "#aadbf7",
+     "#91c5e2",
+     "#75a9c5"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f97743",
+     "dunkel": "#b34b1e",
+     "satt": "#fd966f"
+    },
+    "tower": {
+     "mitte": "#f97743",
+     "dunkel": "#b34b1e",
+     "satt": "#fd966f"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#cac665",
+     "dunkel": "#939041",
+     "satt": "#ece774"
+    },
+    "leaf": {
+     "mitte": "#2c8b2b",
+     "dunkel": "#005604",
+     "satt": "#2da12d"
+    },
+    "ground": {
+     "mitte": "#a06cc5",
+     "dunkel": "#694087",
+     "satt": "#b779e2"
+    }
+   },
+   "source": {
+    "type": "storyMode",
+    "id": "mystical",
+    "label": "Mystical",
+    "hue": 309.6,
+    "storyDunkel": "#5b4470",
+    "storySatt": "#6b4e7d"
+   },
+   "lightness": {
+    "websiteDunkelL": 0.43,
+    "websiteSattL": 0.474,
+    "spielBodenL": 0.621,
+    "spielStrangL": 0.714
+   }
+  },
+  "forbidden": {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "joyride",
+   "seed": 0,
+   "hues": {
+    "ground": 355.1,
+    "strang": 73,
+    "tower": 245,
+    "leaf": 143,
+    "sky": 233,
+    "trunk": 38,
+    "pad": 93
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "gruen"
+   },
+   "mood": {
+    "dL": 0,
+    "cMul": 1
+   },
+   "roles": {
+    "sky": "#91c5e2",
+    "top": "#bc6b8c",
+    "top2": "#c87b98",
+    "hill": [
+     "#ce819e",
+     "#aa5b7d"
+    ],
+    "sand": "#e9dcc8",
+    "rim": "#aa5b7d",
+    "under": [
+     "#8b4563",
+     "#ce826b",
+     "#b56d5b",
+     "#935649"
+    ],
+    "rock": "#52abf3",
+    "tower": [
+     "#2a95e1",
+     "#52abf3"
+    ],
+    "leaf": [
+     "#28813e",
+     "#4c962c",
+     "#bac76a"
+    ],
+    "trunk": "#ce826b",
+    "cloud": "#f2e6d3",
+    "water": "#5d81a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#eea32d",
+    "pad": "#f7cf37"
+   },
+   "flat": {
+    "sky": "#91c5e2",
+    "top": "#bc6b8c",
+    "top2": "#c87b98",
+    "hillLight": "#ce819e",
+    "hillDark": "#aa5b7d",
+    "sand": "#e9dcc8",
+    "rim": "#aa5b7d",
+    "under0": "#8b4563",
+    "earth1": "#ce826b",
+    "earth2": "#b56d5b",
+    "earth3": "#935649",
+    "rock": "#52abf3",
+    "tower0": "#2a95e1",
+    "tower1": "#52abf3",
+    "leafLight": "#4c962c",
+    "leafDark": "#28813e",
+    "leafMid": "#2d8d2c",
+    "bloom": "#bac76a",
+    "trunk": "#ce826b",
+    "cloud": "#f2e6d3",
+    "water": "#5d81a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#eea32d",
+    "pad": "#f7cf37"
+   },
+   "envRoles": {
+    "ground": [
+     "#c87b98",
+     "#bc6b8c",
+     "#aa5b7d"
+    ],
+    "grass": [
+     "#d68f81",
+     "#c1796a",
+     "#a35e51"
+    ],
+    "stone": [
+     "#b58e83",
+     "#a0786e",
+     "#855e54"
+    ],
+    "bark": [
+     "#e39982",
+     "#ce826b",
+     "#b06750"
+    ],
+    "leaf": [
+     "#4c962c",
+     "#2d8d2c",
+     "#28813e"
+    ],
+    "bloom": [
+     "#d0de85",
+     "#bac76a",
+     "#9eab4d"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#ffbc60",
+     "#eea32d",
+     "#cd8800"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#ce826b",
+     "#b56d5b",
+     "#935649"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#4dabf5",
+     "#2a95e1",
+     "#0079bf"
+    ],
+    "sky": [
+     "#aadbf7",
+     "#91c5e2",
+     "#75a9c5"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#eea32d",
+     "dunkel": "#ae7200",
+     "satt": "#fec273"
+    },
+    "tower": {
+     "mitte": "#2a95e1",
+     "dunkel": "#00619b",
+     "satt": "#32a8fc"
+    },
+    "pad": {
+     "mitte": "#f7cf37",
+     "dunkel": "#ba9a13",
+     "satt": "#fff9e4"
+    },
+    "bloom": {
+     "mitte": "#bac76a",
+     "dunkel": "#869144",
+     "satt": "#d4e474"
+    },
+    "leaf": {
+     "mitte": "#2d8d2c",
+     "dunkel": "#005804",
+     "satt": "#2ea32e"
+    },
+    "ground": {
+     "mitte": "#bc6b8c",
+     "dunkel": "#7f3f5a",
+     "satt": "#d7789f"
+    }
+   },
+   "source": {
+    "type": "storyMode",
+    "id": "forbidden",
+    "label": "Forbidden",
+    "hue": 355.1,
+    "storyDunkel": "#8f3a60",
+    "storySatt": "#a64670"
+   },
+   "lightness": {
+    "websiteDunkelL": 0.476,
+    "websiteSattL": 0.533,
+    "spielBodenL": 0.628,
+    "spielStrangL": 0.771
+   }
+  }
+ },
+ "random": [
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "komplementaer",
+   "seed": 1,
+   "hues": {
+    "ground": 188,
+    "strang": 17.9,
+    "tower": 17.9,
+    "leaf": 62.2,
+    "sky": 152.2,
+    "trunk": 317.2,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "monochrom",
+    "laub": "herbst"
+   },
+   "mood": {
+    "dL": 0.016,
+    "cMul": 1.061
+   },
+   "roles": {
+    "sky": "#aadbb6",
+    "top": "#3baaa2",
+    "top2": "#55b7b0",
+    "hill": [
+     "#5dbdb6",
+     "#249990"
+    ],
+    "sand": "#eadeca",
+    "rim": "#249990",
+    "under": [
+     "#067e77",
+     "#83389b",
+     "#702c8d",
+     "#562073"
+    ],
+    "rock": "#eadeca",
+    "tower": [
+     "#f86a75",
+     "#f97874"
+    ],
+    "leaf": [
+     "#e78939",
+     "#f5a648",
+     "#cfcc63"
+    ],
+    "trunk": "#522b52",
+    "cloud": "#f3e8d5",
+    "water": "#5f86aa",
+    "path": "#f7e8ca",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f86a75",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#aadbb6",
+    "top": "#3baaa2",
+    "top2": "#55b7b0",
+    "hillLight": "#5dbdb6",
+    "hillDark": "#249990",
+    "sand": "#eadeca",
+    "rim": "#249990",
+    "under0": "#067e77",
+    "earth1": "#83389b",
+    "earth2": "#702c8d",
+    "earth3": "#562073",
+    "rock": "#eadeca",
+    "tower0": "#f86a75",
+    "tower1": "#f97874",
+    "leafLight": "#f5a648",
+    "leafDark": "#e78939",
+    "leafMid": "#ef973d",
+    "bloom": "#cfcc63",
+    "trunk": "#522b52",
+    "cloud": "#f3e8d5",
+    "water": "#5f86aa",
+    "path": "#f7e8ca",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f86a75",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#55b7b0",
+     "#3baaa2",
+     "#249990"
+    ],
+    "grass": [
+     "#78c3b1",
+     "#5dae9b",
+     "#409280"
+    ],
+    "stone": [
+     "#765686",
+     "#634273",
+     "#4a2959"
+    ],
+    "bark": [
+     "#653f65",
+     "#522b52",
+     "#39143a"
+    ],
+    "leaf": [
+     "#f5a648",
+     "#ef973d",
+     "#e78939"
+    ],
+    "bloom": [
+     "#e6e280",
+     "#cfcc63",
+     "#b3af45"
+    ],
+    "water": [
+     "#769bbe",
+     "#5f86aa",
+     "#466c8e"
+    ],
+    "accent": [
+     "#ff8f94",
+     "#f86a75",
+     "#d84c5b"
+    ],
+    "sand": [
+     "#fff5e6",
+     "#eadeca",
+     "#cdc1ad"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f7e8ca",
+     "#d9caae"
+    ],
+    "earth": [
+     "#83389b",
+     "#702c8d",
+     "#562073"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#ff8f94",
+     "#f86a75",
+     "#d84c5b"
+    ],
+    "sky": [
+     "#c2f1ce",
+     "#aadbb6",
+     "#8ebe9a"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f86a75",
+     "dunkel": "#b23f4b",
+     "satt": "#fd8b91"
+    },
+    "tower": {
+     "mitte": "#f86a75",
+     "dunkel": "#b23f4b",
+     "satt": "#fd8b91"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#cfcc63",
+     "dunkel": "#99953f",
+     "satt": "#f2ed70"
+    },
+    "leaf": {
+     "mitte": "#ef973d",
+     "dunkel": "#ae6718",
+     "satt": "#fdaf66"
+    },
+    "ground": {
+     "mitte": "#3baaa2",
+     "dunkel": "#0d746d",
+     "satt": "#37c0b6"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 1
+   }
+  },
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "split",
+   "seed": 2,
+   "hues": {
+    "ground": 205.6,
+    "strang": 46.7,
+    "tower": 358,
+    "leaf": 65.4,
+    "sky": 155.4,
+    "trunk": 320.4,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "herbst"
+   },
+   "mood": {
+    "dL": -0.008,
+    "cMul": 0.936
+   },
+   "roles": {
+    "sky": "#a9d6b8",
+    "top": "#379ea9",
+    "top2": "#51abb6",
+    "hill": [
+     "#58b1bc",
+     "#1e8d97"
+    ],
+    "sand": "#e8dcc8",
+    "rim": "#1e8d97",
+    "under": [
+     "#00727c",
+     "#704679",
+     "#5f3a6b",
+     "#472a55"
+    ],
+    "rock": "#e5729b",
+    "tower": [
+     "#d15888",
+     "#e5729b"
+    ],
+    "leaf": [
+     "#e58d39",
+     "#f5a942",
+     "#d15888"
+    ],
+    "trunk": "#704679",
+    "cloud": "#f1e5d3",
+    "water": "#5d7f9e",
+    "path": "#f4e5c8",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f97b33",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#a9d6b8",
+    "top": "#379ea9",
+    "top2": "#51abb6",
+    "hillLight": "#58b1bc",
+    "hillDark": "#1e8d97",
+    "sand": "#e8dcc8",
+    "rim": "#1e8d97",
+    "under0": "#00727c",
+    "earth1": "#704679",
+    "earth2": "#5f3a6b",
+    "earth3": "#472a55",
+    "rock": "#e5729b",
+    "tower0": "#d15888",
+    "tower1": "#e5729b",
+    "leafLight": "#f5a942",
+    "leafDark": "#e58d39",
+    "leafMid": "#ed9b3e",
+    "bloom": "#d15888",
+    "trunk": "#704679",
+    "cloud": "#f1e5d3",
+    "water": "#5d7f9e",
+    "path": "#f4e5c8",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f97b33",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#51abb6",
+     "#379ea9",
+     "#1e8d97"
+    ],
+    "grass": [
+     "#6db9b4",
+     "#53a49e",
+     "#358883"
+    ],
+    "stone": [
+     "#695670",
+     "#56425d",
+     "#3e2b44"
+    ],
+    "bark": [
+     "#835b8c",
+     "#704679",
+     "#562d5e"
+    ],
+    "leaf": [
+     "#f5a942",
+     "#ed9b3e",
+     "#e58d39"
+    ],
+    "bloom": [
+     "#e6719d",
+     "#d15888",
+     "#b23c6d"
+    ],
+    "water": [
+     "#7394b2",
+     "#5d7f9e",
+     "#446482"
+    ],
+    "accent": [
+     "#ff9d6d",
+     "#f97b33",
+     "#d95e00"
+    ],
+    "sand": [
+     "#fff3df",
+     "#e8dcc8",
+     "#cabeab"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f4e5c8",
+     "#d7c8ab"
+    ],
+    "earth": [
+     "#704679",
+     "#5f3a6b",
+     "#472a55"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#e6719d",
+     "#d15888",
+     "#b23c6d"
+    ],
+    "sky": [
+     "#c1eccf",
+     "#a9d6b8",
+     "#8db99b"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f97b33",
+     "dunkel": "#b34e09",
+     "satt": "#fd9967"
+    },
+    "tower": {
+     "mitte": "#d15888",
+     "dunkel": "#8f2e57",
+     "satt": "#ef619a"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#d15888",
+     "dunkel": "#8f2e57",
+     "satt": "#ef619a"
+    },
+    "leaf": {
+     "mitte": "#ed9b3e",
+     "dunkel": "#ad6b19",
+     "satt": "#fdb569"
+    },
+    "ground": {
+     "mitte": "#379ea9",
+     "dunkel": "#066972",
+     "satt": "#34b3c0"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 2
+   }
+  },
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "joyride",
+   "seed": 3,
+   "hues": {
+    "ground": 59.7,
+    "strang": 353.3,
+    "tower": 282,
+    "leaf": 146.4,
+    "sky": 236.4,
+    "trunk": 41.4,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "gruen"
+   },
+   "mood": {
+    "dL": -0.004,
+    "cMul": 0.983
+   },
+   "roles": {
+    "sky": "#92c2e0",
+    "top": "#bb7a42",
+    "top2": "#c68a56",
+    "hill": [
+     "#cc905d",
+     "#aa6932"
+    ],
+    "sand": "#e8dcc8",
+    "rim": "#aa6932",
+    "under": [
+     "#8b531e",
+     "#cb8267",
+     "#b36d57",
+     "#915546"
+    ],
+    "rock": "#8581eb",
+    "tower": [
+     "#6f6ada",
+     "#8581eb"
+    ],
+    "leaf": [
+     "#298349",
+     "#3b9c2e",
+     "#ec9fda"
+    ],
+    "trunk": "#cb8267",
+    "cloud": "#f1e6d3",
+    "water": "#5c80a1",
+    "path": "#f5e6c8",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f160a6",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#92c2e0",
+    "top": "#bb7a42",
+    "top2": "#c68a56",
+    "hillLight": "#cc905d",
+    "hillDark": "#aa6932",
+    "sand": "#e8dcc8",
+    "rim": "#aa6932",
+    "under0": "#8b531e",
+    "earth1": "#cb8267",
+    "earth2": "#b36d57",
+    "earth3": "#915546",
+    "rock": "#8581eb",
+    "tower0": "#6f6ada",
+    "tower1": "#8581eb",
+    "leafLight": "#3b9c2e",
+    "leafDark": "#298349",
+    "leafMid": "#2e903f",
+    "bloom": "#ec9fda",
+    "trunk": "#cb8267",
+    "cloud": "#f1e6d3",
+    "water": "#5c80a1",
+    "path": "#f5e6c8",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f160a6",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#c68a56",
+     "#bb7a42",
+     "#aa6932"
+    ],
+    "grass": [
+     "#c3a166",
+     "#ae8b4c",
+     "#927030"
+    ],
+    "stone": [
+     "#b38d81",
+     "#9e786b",
+     "#835e52"
+    ],
+    "bark": [
+     "#e0997e",
+     "#cb8267",
+     "#ad674d"
+    ],
+    "leaf": [
+     "#3b9c2e",
+     "#2e903f",
+     "#298349"
+    ],
+    "bloom": [
+     "#ffb9ee",
+     "#ec9fda",
+     "#ce83bd"
+    ],
+    "water": [
+     "#7395b5",
+     "#5c80a1",
+     "#436685"
+    ],
+    "accent": [
+     "#ff82bb",
+     "#f160a6",
+     "#d2428a"
+    ],
+    "sand": [
+     "#fff3e0",
+     "#e8dcc8",
+     "#cbbfab"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c8",
+     "#d7c8ac"
+    ],
+    "earth": [
+     "#cb8267",
+     "#b36d57",
+     "#915546"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#8381ee",
+     "#6f6ada",
+     "#574ebc"
+    ],
+    "sky": [
+     "#aad8f6",
+     "#92c2e0",
+     "#76a5c3"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f160a6",
+     "dunkel": "#ac3671",
+     "satt": "#fd7eb8"
+    },
+    "tower": {
+     "mitte": "#6f6ada",
+     "dunkel": "#433b95",
+     "satt": "#7f78fc"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#ec9fda",
+     "dunkel": "#ae70a0",
+     "satt": "#feb4ec"
+    },
+    "leaf": {
+     "mitte": "#2e903f",
+     "dunkel": "#005a1a",
+     "satt": "#2ea545"
+    },
+    "ground": {
+     "mitte": "#bb7a42",
+     "dunkel": "#7f4c1d",
+     "satt": "#d58946"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 3
+   }
+  },
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "split",
+   "seed": 4,
+   "hues": {
+    "ground": 242.7,
+    "strang": 34.6,
+    "tower": 34.6,
+    "leaf": 145.6,
+    "sky": 235.6,
+    "trunk": 40.6,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "monochrom",
+    "laub": "gruen"
+   },
+   "mood": {
+    "dL": 0.011,
+    "cMul": 0.966
+   },
+   "roles": {
+    "sky": "#94c4e2",
+    "top": "#3595d7",
+    "top2": "#50a3e2",
+    "hill": [
+     "#58a9e7",
+     "#1885c4"
+    ],
+    "sand": "#eaddc9",
+    "rim": "#1885c4",
+    "under": [
+     "#006ba4",
+     "#e7774e",
+     "#ce6241",
+     "#a94c36"
+    ],
+    "rock": "#eaddc9",
+    "tower": [
+     "#f97354",
+     "#f78257"
+    ],
+    "leaf": [
+     "#2b8648",
+     "#439e31",
+     "#cdca6d"
+    ],
+    "trunk": "#8c5c41",
+    "cloud": "#f3e7d5",
+    "water": "#6184a5",
+    "path": "#f6e7ca",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f97354",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#94c4e2",
+    "top": "#3595d7",
+    "top2": "#50a3e2",
+    "hillLight": "#58a9e7",
+    "hillDark": "#1885c4",
+    "sand": "#eaddc9",
+    "rim": "#1885c4",
+    "under0": "#006ba4",
+    "earth1": "#e7774e",
+    "earth2": "#ce6241",
+    "earth3": "#a94c36",
+    "rock": "#eaddc9",
+    "tower0": "#f97354",
+    "tower1": "#f78257",
+    "leafLight": "#439e31",
+    "leafDark": "#2b8648",
+    "leafMid": "#2f933d",
+    "bloom": "#cdca6d",
+    "trunk": "#8c5c41",
+    "cloud": "#f3e7d5",
+    "water": "#6184a5",
+    "path": "#f6e7ca",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f97354",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#50a3e2",
+     "#3595d7",
+     "#1885c4"
+    ],
+    "grass": [
+     "#4bb9d6",
+     "#22a4c1",
+     "#0087a1"
+    ],
+    "stone": [
+     "#c58b7a",
+     "#b17563",
+     "#945b4a"
+    ],
+    "bark": [
+     "#a07157",
+     "#8c5c41",
+     "#714328"
+    ],
+    "leaf": [
+     "#439e31",
+     "#2f933d",
+     "#2b8648"
+    ],
+    "bloom": [
+     "#e3e089",
+     "#cdca6d",
+     "#b0ad50"
+    ],
+    "water": [
+     "#789ab9",
+     "#6184a5",
+     "#486a89"
+    ],
+    "accent": [
+     "#ff977e",
+     "#f97354",
+     "#d95638"
+    ],
+    "sand": [
+     "#fff5e4",
+     "#eaddc9",
+     "#ccc0ad"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f6e7ca",
+     "#d9caad"
+    ],
+    "earth": [
+     "#e7774e",
+     "#ce6241",
+     "#a94c36"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#ff977e",
+     "#f97354",
+     "#d95638"
+    ],
+    "sky": [
+     "#addbf7",
+     "#94c4e2",
+     "#79a8c5"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f97354",
+     "dunkel": "#b3482f",
+     "satt": "#fd9379"
+    },
+    "tower": {
+     "mitte": "#f97354",
+     "dunkel": "#b3482f",
+     "satt": "#fd9379"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#cdca6d",
+     "dunkel": "#969448",
+     "satt": "#efeb7c"
+    },
+    "leaf": {
+     "mitte": "#2f933d",
+     "dunkel": "#005d18",
+     "satt": "#2fa842"
+    },
+    "ground": {
+     "mitte": "#3595d7",
+     "dunkel": "#066296",
+     "satt": "#32a9f6"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 4
+   }
+  },
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "joyride",
+   "seed": 5,
+   "hues": {
+    "ground": 126.1,
+    "strang": 36.7,
+    "tower": 328.6,
+    "leaf": 60.1,
+    "sky": 150.1,
+    "trunk": 315.1,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "herbst"
+   },
+   "mood": {
+    "dL": -0.01,
+    "cMul": 0.948
+   },
+   "roles": {
+    "sky": "#abd5b3",
+    "top": "#7b9d3a",
+    "top2": "#88ab52",
+    "hill": [
+     "#8eb15a",
+     "#6d8c25"
+    ],
+    "sand": "#e8dbc7",
+    "rim": "#6d8c25",
+    "under": [
+     "#557212",
+     "#6c467c",
+     "#5b3a6e",
+     "#442b57"
+    ],
+    "rock": "#d47cce",
+    "tower": [
+     "#bf64bc",
+     "#d47cce"
+    ],
+    "leaf": [
+     "#e88638",
+     "#f5a44b",
+     "#bf64bc"
+    ],
+    "trunk": "#6c467c",
+    "cloud": "#f1e5d3",
+    "water": "#5c7e9e",
+    "path": "#f4e5c8",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f86a41",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#abd5b3",
+    "top": "#7b9d3a",
+    "top2": "#88ab52",
+    "hillLight": "#8eb15a",
+    "hillDark": "#6d8c25",
+    "sand": "#e8dbc7",
+    "rim": "#6d8c25",
+    "under0": "#557212",
+    "earth1": "#6c467c",
+    "earth2": "#5b3a6e",
+    "earth3": "#442b57",
+    "rock": "#d47cce",
+    "tower0": "#bf64bc",
+    "tower1": "#d47cce",
+    "leafLight": "#f5a44b",
+    "leafDark": "#e88638",
+    "leafMid": "#f0943c",
+    "bloom": "#bf64bc",
+    "trunk": "#6c467c",
+    "cloud": "#f1e5d3",
+    "water": "#5c7e9e",
+    "path": "#f4e5c8",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f86a41",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#88ab52",
+     "#7b9d3a",
+     "#6d8c25"
+    ],
+    "grass": [
+     "#94b96f",
+     "#7ea357",
+     "#63883b"
+    ],
+    "stone": [
+     "#675672",
+     "#54425e",
+     "#3b2b46"
+    ],
+    "bark": [
+     "#7f5b90",
+     "#6c467c",
+     "#522e62"
+    ],
+    "leaf": [
+     "#f5a44b",
+     "#f0943c",
+     "#e88638"
+    ],
+    "bloom": [
+     "#d47cd0",
+     "#bf64bc",
+     "#a2489f"
+    ],
+    "water": [
+     "#7293b2",
+     "#5c7e9e",
+     "#436482"
+    ],
+    "accent": [
+     "#ff8f6f",
+     "#f86a41",
+     "#d84c20"
+    ],
+    "sand": [
+     "#fef3df",
+     "#e8dbc7",
+     "#cabeab"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f4e5c8",
+     "#d7c8ab"
+    ],
+    "earth": [
+     "#6c467c",
+     "#5b3a6e",
+     "#442b57"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#d47cd0",
+     "#bf64bc",
+     "#a2489f"
+    ],
+    "sky": [
+     "#c3ebca",
+     "#abd5b3",
+     "#8fb897"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f86a41",
+     "dunkel": "#b13f1c",
+     "satt": "#fd8b6a"
+    },
+    "tower": {
+     "mitte": "#bf64bc",
+     "dunkel": "#823980",
+     "satt": "#da6ed7"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#bf64bc",
+     "dunkel": "#823980",
+     "satt": "#da6ed7"
+    },
+    "leaf": {
+     "mitte": "#f0943c",
+     "dunkel": "#af6517",
+     "satt": "#fdab64"
+    },
+    "ground": {
+     "mitte": "#7b9d3a",
+     "dunkel": "#4e6813",
+     "satt": "#8cb43d"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 5
+   }
+  },
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "komplementaer",
+   "seed": 6,
+   "hues": {
+    "ground": 138,
+    "strang": 341.6,
+    "tower": 305.6,
+    "leaf": 70,
+    "sky": 160,
+    "trunk": 325,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "herbst"
+   },
+   "mood": {
+    "dL": 0.018,
+    "cMul": 1.015
+   },
+   "roles": {
+    "sky": "#a7dcbf",
+    "top": "#68aa50",
+    "top2": "#77b865",
+    "hill": [
+     "#7ebe6c",
+     "#5a993c"
+    ],
+    "sand": "#eadeca",
+    "rim": "#5a993c",
+    "under": [
+     "#437e2c",
+     "#7c4a7f",
+     "#6b3e72",
+     "#522f5c"
+    ],
+    "rock": "#b981ec",
+    "tower": [
+     "#a369db",
+     "#b981ec"
+    ],
+    "leaf": [
+     "#e3933a",
+     "#f3af43",
+     "#a369db"
+    ],
+    "trunk": "#7c4a7f",
+    "cloud": "#f4e8d5",
+    "water": "#6287a9",
+    "path": "#f7e8cb",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f46ac9",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#a7dcbf",
+    "top": "#68aa50",
+    "top2": "#77b865",
+    "hillLight": "#7ebe6c",
+    "hillDark": "#5a993c",
+    "sand": "#eadeca",
+    "rim": "#5a993c",
+    "under0": "#437e2c",
+    "earth1": "#7c4a7f",
+    "earth2": "#6b3e72",
+    "earth3": "#522f5c",
+    "rock": "#b981ec",
+    "tower0": "#a369db",
+    "tower1": "#b981ec",
+    "leafLight": "#f3af43",
+    "leafDark": "#e3933a",
+    "leafMid": "#eba13f",
+    "bloom": "#a369db",
+    "trunk": "#7c4a7f",
+    "cloud": "#f4e8d5",
+    "water": "#6287a9",
+    "path": "#f7e8cb",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f46ac9",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#77b865",
+     "#68aa50",
+     "#5a993c"
+    ],
+    "grass": [
+     "#8cc47d",
+     "#74af64",
+     "#59924a"
+    ],
+    "stone": [
+     "#745c77",
+     "#604864",
+     "#47304b"
+    ],
+    "bark": [
+     "#905f93",
+     "#7c4a7f",
+     "#623165"
+    ],
+    "leaf": [
+     "#f3af43",
+     "#eba13f",
+     "#e3933a"
+    ],
+    "bloom": [
+     "#b881ef",
+     "#a369db",
+     "#884dbd"
+    ],
+    "water": [
+     "#789cbd",
+     "#6287a9",
+     "#486c8d"
+    ],
+    "accent": [
+     "#ff90d9",
+     "#f46ac9",
+     "#d54dac"
+    ],
+    "sand": [
+     "#fff6e7",
+     "#eadeca",
+     "#cdc1ad"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f7e8cb",
+     "#d9cbae"
+    ],
+    "earth": [
+     "#7c4a7f",
+     "#6b3e72",
+     "#522f5c"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#b881ef",
+     "#a369db",
+     "#884dbd"
+    ],
+    "sky": [
+     "#c0f3d6",
+     "#a7dcbf",
+     "#8bbfa2"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f46ac9",
+     "dunkel": "#b0418e",
+     "satt": "#fd8bd6"
+    },
+    "tower": {
+     "mitte": "#a369db",
+     "dunkel": "#6d3d98",
+     "satt": "#ba74fc"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#a369db",
+     "dunkel": "#6d3d98",
+     "satt": "#ba74fc"
+    },
+    "leaf": {
+     "mitte": "#eba13f",
+     "dunkel": "#ab701b",
+     "satt": "#febd70"
+    },
+    "ground": {
+     "mitte": "#68aa50",
+     "dunkel": "#3e742a",
+     "satt": "#72c054"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 6
+   }
+  },
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "komplementaer",
+   "seed": 7,
+   "hues": {
+    "ground": 170.4,
+    "strang": 6.1,
+    "tower": 326.5,
+    "leaf": 69.6,
+    "sky": 159.6,
+    "trunk": 324.6,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "herbst"
+   },
+   "mood": {
+    "dL": 0.002,
+    "cMul": 1.034
+   },
+   "roles": {
+    "sky": "#a4dabb",
+    "top": "#39a788",
+    "top2": "#52b497",
+    "hill": [
+     "#5aba9e",
+     "#249676"
+    ],
+    "sand": "#e9ddc9",
+    "rim": "#249676",
+    "under": [
+     "#037b60",
+     "#78457b",
+     "#66396e",
+     "#4e2a58"
+    ],
+    "rock": "#da7cd8",
+    "tower": [
+     "#c463c7",
+     "#da7cd8"
+    ],
+    "leaf": [
+     "#e3933a",
+     "#f4af43",
+     "#c463c7"
+    ],
+    "trunk": "#78457b",
+    "cloud": "#f2e6d4",
+    "water": "#5c82a5",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f85e8a",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#a4dabb",
+    "top": "#39a788",
+    "top2": "#52b497",
+    "hillLight": "#5aba9e",
+    "hillDark": "#249676",
+    "sand": "#e9ddc9",
+    "rim": "#249676",
+    "under0": "#037b60",
+    "earth1": "#78457b",
+    "earth2": "#66396e",
+    "earth3": "#4e2a58",
+    "rock": "#da7cd8",
+    "tower0": "#c463c7",
+    "tower1": "#da7cd8",
+    "leafLight": "#f4af43",
+    "leafDark": "#e3933a",
+    "leafMid": "#eca13f",
+    "bloom": "#c463c7",
+    "trunk": "#78457b",
+    "cloud": "#f2e6d4",
+    "water": "#5c82a5",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f85e8a",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#52b497",
+     "#39a788",
+     "#249676"
+    ],
+    "grass": [
+     "#76c09e",
+     "#5caa88",
+     "#3f8e6d"
+    ],
+    "stone": [
+     "#6f5773",
+     "#5c4460",
+     "#432c47"
+    ],
+    "bark": [
+     "#8c5a8f",
+     "#78457b",
+     "#5d2c61"
+    ],
+    "leaf": [
+     "#f4af43",
+     "#eca13f",
+     "#e3933a"
+    ],
+    "bloom": [
+     "#d97bdb",
+     "#c463c7",
+     "#a746aa"
+    ],
+    "water": [
+     "#7397b9",
+     "#5c82a5",
+     "#436789"
+    ],
+    "accent": [
+     "#ff87a4",
+     "#f85e8a",
+     "#d83f6f"
+    ],
+    "sand": [
+     "#fff4e2",
+     "#e9ddc9",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#78457b",
+     "#66396e",
+     "#4e2a58"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#d97bdb",
+     "#c463c7",
+     "#a746aa"
+    ],
+    "sky": [
+     "#bcf0d3",
+     "#a4dabb",
+     "#88bd9f"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f85e8a",
+     "dunkel": "#b1355b",
+     "satt": "#fd83a0"
+    },
+    "tower": {
+     "mitte": "#c463c7",
+     "dunkel": "#873889",
+     "satt": "#e06ce3"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#c463c7",
+     "dunkel": "#873889",
+     "satt": "#e06ce3"
+    },
+    "leaf": {
+     "mitte": "#eca13f",
+     "dunkel": "#ac701b",
+     "satt": "#febd70"
+    },
+    "ground": {
+     "mitte": "#39a788",
+     "dunkel": "#097158",
+     "satt": "#36bd99"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 7
+   }
+  },
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "komplementaer",
+   "seed": 8,
+   "hues": {
+    "ground": 163.1,
+    "strang": 357.9,
+    "tower": 316.9,
+    "leaf": 71.8,
+    "sky": 161.8,
+    "trunk": 326.8,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "herbst"
+   },
+   "mood": {
+    "dL": 0.001,
+    "cMul": 0.995
+   },
+   "roles": {
+    "sky": "#a4d9be",
+    "top": "#39a87c",
+    "top2": "#51b58c",
+    "hill": [
+     "#59bb93",
+     "#24976a"
+    ],
+    "sand": "#e9dcc8",
+    "rim": "#24976a",
+    "under": [
+     "#037b55",
+     "#784578",
+     "#66396b",
+     "#4e2a55"
+    ],
+    "rock": "#c67cdd",
+    "tower": [
+     "#b163cc",
+     "#c67cdd"
+    ],
+    "leaf": [
+     "#e2963b",
+     "#f2b144",
+     "#b163cc"
+    ],
+    "trunk": "#784578",
+    "cloud": "#f2e6d4",
+    "water": "#5d82a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f65e9d",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#a4d9be",
+    "top": "#39a87c",
+    "top2": "#51b58c",
+    "hillLight": "#59bb93",
+    "hillDark": "#24976a",
+    "sand": "#e9dcc8",
+    "rim": "#24976a",
+    "under0": "#037b55",
+    "earth1": "#784578",
+    "earth2": "#66396b",
+    "earth3": "#4e2a55",
+    "rock": "#c67cdd",
+    "tower0": "#b163cc",
+    "tower1": "#c67cdd",
+    "leafLight": "#f2b144",
+    "leafDark": "#e2963b",
+    "leafMid": "#eaa33f",
+    "bloom": "#b163cc",
+    "trunk": "#784578",
+    "cloud": "#f2e6d4",
+    "water": "#5d82a3",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f65e9d",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#51b58c",
+     "#39a87c",
+     "#24976a"
+    ],
+    "grass": [
+     "#75c096",
+     "#5bab7f",
+     "#3f8f65"
+    ],
+    "stone": [
+     "#6f5771",
+     "#5c435e",
+     "#432c45"
+    ],
+    "bark": [
+     "#8c5b8c",
+     "#784578",
+     "#5d2d5e"
+    ],
+    "leaf": [
+     "#f2b144",
+     "#eaa33f",
+     "#e2963b"
+    ],
+    "bloom": [
+     "#c67be0",
+     "#b163cc",
+     "#9548ae"
+    ],
+    "water": [
+     "#7497b7",
+     "#5d82a3",
+     "#446787"
+    ],
+    "accent": [
+     "#ff86b3",
+     "#f65e9d",
+     "#d64082"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#784578",
+     "#66396b",
+     "#4e2a55"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#c67be0",
+     "#b163cc",
+     "#9548ae"
+    ],
+    "sky": [
+     "#bcf0d5",
+     "#a4d9be",
+     "#88bca1"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f65e9d",
+     "dunkel": "#b0356a",
+     "satt": "#fd81b0"
+    },
+    "tower": {
+     "mitte": "#b163cc",
+     "dunkel": "#77388c",
+     "satt": "#ca6ee9"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#b163cc",
+     "dunkel": "#77388c",
+     "satt": "#ca6ee9"
+    },
+    "leaf": {
+     "mitte": "#eaa33f",
+     "dunkel": "#ab721b",
+     "satt": "#fec072"
+    },
+    "ground": {
+     "mitte": "#39a87c",
+     "dunkel": "#09714f",
+     "satt": "#36be8a"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 8
+   }
+  },
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "analog",
+   "seed": 9,
+   "hues": {
+    "ground": 350.6,
+    "strang": 35.3,
+    "tower": 313.3,
+    "leaf": 141.8,
+    "sky": 231.8,
+    "trunk": 36.8,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "gruen"
+   },
+   "mood": {
+    "dL": -0.005,
+    "cMul": 0.938
+   },
+   "roles": {
+    "sky": "#93c4df",
+    "top": "#b66c8f",
+    "top2": "#c27c9b",
+    "hill": [
+     "#c982a2",
+     "#a45c80"
+    ],
+    "sand": "#e8dcc8",
+    "rim": "#a45c80",
+    "under": [
+     "#864766",
+     "#c9826d",
+     "#b16d5d",
+     "#90554b"
+    ],
+    "rock": "#bc7cda",
+    "tower": [
+     "#a764c8",
+     "#bc7cda"
+    ],
+    "leaf": [
+     "#287f39",
+     "#50942c",
+     "#fc9ea5"
+    ],
+    "trunk": "#c9826d",
+    "cloud": "#f1e6d3",
+    "water": "#5e809f",
+    "path": "#f5e6c8",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f86945",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#93c4df",
+    "top": "#b66c8f",
+    "top2": "#c27c9b",
+    "hillLight": "#c982a2",
+    "hillDark": "#a45c80",
+    "sand": "#e8dcc8",
+    "rim": "#a45c80",
+    "under0": "#864766",
+    "earth1": "#c9826d",
+    "earth2": "#b16d5d",
+    "earth3": "#90554b",
+    "rock": "#bc7cda",
+    "tower0": "#a764c8",
+    "tower1": "#bc7cda",
+    "leafLight": "#50942c",
+    "leafDark": "#287f39",
+    "leafMid": "#318c28",
+    "bloom": "#fc9ea5",
+    "trunk": "#c9826d",
+    "cloud": "#f1e6d3",
+    "water": "#5e809f",
+    "path": "#f5e6c8",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f86945",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#c27c9b",
+     "#b66c8f",
+     "#a45c80"
+    ],
+    "grass": [
+     "#d28f85",
+     "#bd796f",
+     "#a05e55"
+    ],
+    "stone": [
+     "#b28d84",
+     "#9d776e",
+     "#825d55"
+    ],
+    "bark": [
+     "#de9984",
+     "#c9826d",
+     "#ac6753"
+    ],
+    "leaf": [
+     "#50942c",
+     "#318c28",
+     "#287f39"
+    ],
+    "bloom": [
+     "#ffc0c3",
+     "#fc9ea5",
+     "#dd8289"
+    ],
+    "water": [
+     "#7495b3",
+     "#5e809f",
+     "#446583"
+    ],
+    "accent": [
+     "#ff8f72",
+     "#f86945",
+     "#d84c27"
+    ],
+    "sand": [
+     "#fff3e0",
+     "#e8dcc8",
+     "#cbbfab"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c8",
+     "#d7c8ac"
+    ],
+    "earth": [
+     "#c9826d",
+     "#b16d5d",
+     "#90554b"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#bb7cdc",
+     "#a764c8",
+     "#8b49ab"
+    ],
+    "sky": [
+     "#abdbf4",
+     "#93c4df",
+     "#77a8c1"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f86945",
+     "dunkel": "#b13f21",
+     "satt": "#fd8a6d"
+    },
+    "tower": {
+     "mitte": "#a764c8",
+     "dunkel": "#6f3989",
+     "satt": "#bf70e6"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#fc9ea5",
+     "dunkel": "#ba6f75",
+     "satt": "#febbbf"
+    },
+    "leaf": {
+     "mitte": "#318c28",
+     "dunkel": "#075600",
+     "satt": "#34a129"
+    },
+    "ground": {
+     "mitte": "#b66c8f",
+     "dunkel": "#7a405d",
+     "satt": "#d079a3"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 9
+   }
+  },
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "analog",
+   "seed": 10,
+   "hues": {
+    "ground": 339.5,
+    "strang": 25.4,
+    "tower": 314.1,
+    "leaf": 140.8,
+    "sky": 230.8,
+    "trunk": 35.8,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "gruen"
+   },
+   "mood": {
+    "dL": -0.001,
+    "cMul": 1.068
+   },
+   "roles": {
+    "sky": "#8dc7e4",
+    "top": "#c261a6",
+    "top2": "#cf72b1",
+    "hill": [
+     "#d578b7",
+     "#af5096"
+    ],
+    "sand": "#e9dcc8",
+    "rim": "#af5096",
+    "under": [
+     "#913b79",
+     "#d17f69",
+     "#b86a5a",
+     "#965349"
+    ],
+    "rock": "#c378e3",
+    "tower": [
+     "#ae5fd2",
+     "#c378e3"
+    ],
+    "leaf": [
+     "#288236",
+     "#55952c",
+     "#ff9caf"
+    ],
+    "trunk": "#d17f69",
+    "cloud": "#f2e6d3",
+    "water": "#5a81a5",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f85f5a",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#8dc7e4",
+    "top": "#c261a6",
+    "top2": "#cf72b1",
+    "hillLight": "#d578b7",
+    "hillDark": "#af5096",
+    "sand": "#e9dcc8",
+    "rim": "#af5096",
+    "under0": "#913b79",
+    "earth1": "#d17f69",
+    "earth2": "#b86a5a",
+    "earth3": "#965349",
+    "rock": "#c378e3",
+    "tower0": "#ae5fd2",
+    "tower1": "#c378e3",
+    "leafLight": "#55952c",
+    "leafDark": "#288236",
+    "leafMid": "#388d28",
+    "bloom": "#ff9caf",
+    "trunk": "#d17f69",
+    "cloud": "#f2e6d3",
+    "water": "#5a81a5",
+    "path": "#f5e6c9",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f85f5a",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#cf72b1",
+     "#c261a6",
+     "#af5096"
+    ],
+    "grass": [
+     "#e68484",
+     "#d16d6e",
+     "#b35154"
+    ],
+    "stone": [
+     "#b78c83",
+     "#a2776d",
+     "#865d54"
+    ],
+    "bark": [
+     "#e69681",
+     "#d17f69",
+     "#b3644f"
+    ],
+    "leaf": [
+     "#55952c",
+     "#388d28",
+     "#288236"
+    ],
+    "bloom": [
+     "#ffc1cb",
+     "#ff9caf",
+     "#e08093"
+    ],
+    "water": [
+     "#7196b9",
+     "#5a81a5",
+     "#406789"
+    ],
+    "accent": [
+     "#ff877e",
+     "#f85f5a",
+     "#d8413f"
+    ],
+    "sand": [
+     "#fff3e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d7c9ac"
+    ],
+    "earth": [
+     "#d17f69",
+     "#b86a5a",
+     "#965349"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#c377e6",
+     "#ae5fd2",
+     "#9243b4"
+    ],
+    "sky": [
+     "#a6ddf9",
+     "#8dc7e4",
+     "#71aac7"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f85f5a",
+     "dunkel": "#b13534",
+     "satt": "#fd827a"
+    },
+    "tower": {
+     "mitte": "#ae5fd2",
+     "dunkel": "#743491",
+     "satt": "#c769f1"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#ff9caf",
+     "dunkel": "#bd6e7d",
+     "satt": "#febcc7"
+    },
+    "leaf": {
+     "mitte": "#388d28",
+     "dunkel": "#115700",
+     "satt": "#3da229"
+    },
+    "ground": {
+     "mitte": "#c261a6",
+     "dunkel": "#84366f",
+     "satt": "#de6bbd"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 10
+   }
+  },
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "split",
+   "seed": 11,
+   "hues": {
+    "ground": 220.8,
+    "strang": 58.4,
+    "tower": 6.3,
+    "leaf": 145.1,
+    "sky": 235.1,
+    "trunk": 40.1,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "tisch",
+    "wahrzeichen": "eigen",
+    "laub": "gruen"
+   },
+   "mood": {
+    "dL": 0.007,
+    "cMul": 1.069
+   },
+   "roles": {
+    "sky": "#8fc5e5",
+    "top": "#379ebb",
+    "top2": "#52abc8",
+    "hill": [
+     "#5ab1ce",
+     "#1e8da9"
+    ],
+    "sand": "#e9ddc9",
+    "rim": "#1e8da9",
+    "under": [
+     "#02728c",
+     "#d38367",
+     "#ba6e57",
+     "#985647"
+    ],
+    "rock": "#f66e8f",
+    "tower": [
+     "#e2517b",
+     "#f66e8f"
+    ],
+    "leaf": [
+     "#2b8848",
+     "#45a02f",
+     "#ffa77f"
+    ],
+    "trunk": "#d38367",
+    "cloud": "#f3e7d4",
+    "water": "#5c83a8",
+    "path": "#f6e7ca",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f9912d",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#8fc5e5",
+    "top": "#379ebb",
+    "top2": "#52abc8",
+    "hillLight": "#5ab1ce",
+    "hillDark": "#1e8da9",
+    "sand": "#e9ddc9",
+    "rim": "#1e8da9",
+    "under0": "#02728c",
+    "earth1": "#d38367",
+    "earth2": "#ba6e57",
+    "earth3": "#985647",
+    "rock": "#f66e8f",
+    "tower0": "#e2517b",
+    "tower1": "#f66e8f",
+    "leafLight": "#45a02f",
+    "leafDark": "#2b8848",
+    "leafMid": "#30953c",
+    "bloom": "#ffa77f",
+    "trunk": "#d38367",
+    "cloud": "#f3e7d4",
+    "water": "#5c83a8",
+    "path": "#f6e7ca",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f9912d",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#52abc8",
+     "#379ebb",
+     "#1e8da9"
+    ],
+    "grass": [
+     "#68bbc1",
+     "#4ba6ac",
+     "#2b8a90"
+    ],
+    "stone": [
+     "#b98f83",
+     "#a47a6d",
+     "#885f53"
+    ],
+    "bark": [
+     "#e89a7f",
+     "#d38367",
+     "#b5684d"
+    ],
+    "leaf": [
+     "#45a02f",
+     "#30953c",
+     "#2b8848"
+    ],
+    "bloom": [
+     "#ffc9b0",
+     "#ffa77f",
+     "#e08b63"
+    ],
+    "water": [
+     "#7399bc",
+     "#5c83a8",
+     "#43698c"
+    ],
+    "accent": [
+     "#ffb173",
+     "#f9912d",
+     "#d87600"
+    ],
+    "sand": [
+     "#fff4e3",
+     "#e9ddc9",
+     "#ccc0ac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f6e7ca",
+     "#d8caad"
+    ],
+    "earth": [
+     "#d38367",
+     "#ba6e57",
+     "#985647"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#f76c90",
+     "#e2517b",
+     "#c23261"
+    ],
+    "sky": [
+     "#a8dcfb",
+     "#8fc5e5",
+     "#73a9c8"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f9912d",
+     "dunkel": "#b66200",
+     "satt": "#fdad6d"
+    },
+    "tower": {
+     "mitte": "#e2517b",
+     "dunkel": "#9c274d",
+     "satt": "#fd5e8b"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#ffa77f",
+     "dunkel": "#bd7757",
+     "satt": "#fec5ab"
+    },
+    "leaf": {
+     "mitte": "#30953c",
+     "dunkel": "#005f16",
+     "satt": "#30ab40"
+    },
+    "ground": {
+     "mitte": "#379ebb",
+     "dunkel": "#086980",
+     "satt": "#34b3d5"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 11
+   }
+  },
+  {
+   "schema": "kfb-cartoon-palette/1",
+   "scheme": "joyride",
+   "seed": 12,
+   "hues": {
+    "ground": 91.4,
+    "strang": 13.5,
+    "tower": 305.9,
+    "leaf": 139.2,
+    "sky": 229.2,
+    "trunk": 34.2,
+    "pad": 92
+   },
+   "mode": {
+    "boden": "strand",
+    "wahrzeichen": "eigen",
+    "laub": "gruen"
+   },
+   "mood": {
+    "dL": -0.007,
+    "cMul": 1.072
+   },
+   "roles": {
+    "sky": "#8cc7e3",
+    "top": "#eecf73",
+    "top2": "#fadf89",
+    "hill": [
+     "#51c2c7",
+     "#37abb7"
+    ],
+    "sand": "#f5e5b1",
+    "rim": "#e0ba57",
+    "under": [
+     "#d6a650",
+     "#cf7d69",
+     "#b7685a",
+     "#945149"
+    ],
+    "rock": "#b377e7",
+    "tower": [
+     "#9d5ed7",
+     "#b377e7"
+    ],
+    "leaf": [
+     "#41ba49",
+     "#7ecc41",
+     "#fd97bd"
+    ],
+    "trunk": "#cf7d69",
+    "cloud": "#f1e6d3",
+    "water": "#32c4d0",
+    "path": "#f5e5c8",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f85975",
+    "pad": "#f7cd36"
+   },
+   "flat": {
+    "sky": "#8cc7e3",
+    "top": "#eecf73",
+    "top2": "#fadf89",
+    "hillLight": "#51c2c7",
+    "hillDark": "#37abb7",
+    "sand": "#f5e5b1",
+    "rim": "#e0ba57",
+    "under0": "#d6a650",
+    "earth1": "#cf7d69",
+    "earth2": "#b7685a",
+    "earth3": "#945149",
+    "rock": "#b377e7",
+    "tower0": "#9d5ed7",
+    "tower1": "#b377e7",
+    "leafLight": "#7ecc41",
+    "leafDark": "#41ba49",
+    "leafMid": "#62c345",
+    "bloom": "#fd97bd",
+    "trunk": "#cf7d69",
+    "cloud": "#f1e6d3",
+    "water": "#32c4d0",
+    "path": "#f5e5c8",
+    "roadStreet": "#566680",
+    "roadTrack": "#3d4a60",
+    "strang": "#f85975",
+    "pad": "#f7cd36"
+   },
+   "envRoles": {
+    "ground": [
+     "#fadf89",
+     "#eecf73",
+     "#e0ba57"
+    ],
+    "grass": [
+     "#f9f4a8",
+     "#e3dc8d",
+     "#c6bf71"
+    ],
+    "stone": [
+     "#b58a82",
+     "#a1756c",
+     "#855b53"
+    ],
+    "bark": [
+     "#e49481",
+     "#cf7d69",
+     "#b1624f"
+    ],
+    "leaf": [
+     "#7ecc41",
+     "#62c345",
+     "#41ba49"
+    ],
+    "bloom": [
+     "#ffbcd3",
+     "#fd97bd",
+     "#de7ba1"
+    ],
+    "water": [
+     "#5bdae5",
+     "#32c4d0",
+     "#00a7b2"
+    ],
+    "accent": [
+     "#ff8292",
+     "#f85975",
+     "#d8395b"
+    ],
+    "sand": [
+     "#fff9e3",
+     "#f5e5b1",
+     "#d7c894"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e5c8",
+     "#d7c8ab"
+    ],
+    "earth": [
+     "#cf7d69",
+     "#b7685a",
+     "#945149"
+    ],
+    "asphalt": [
+     "#505d73",
+     "#3d4a60",
+     "#263247"
+    ],
+    "landmark": [
+     "#b276ea",
+     "#9d5ed7",
+     "#8242b9"
+    ],
+    "sky": [
+     "#a5ddf9",
+     "#8cc7e3",
+     "#70aac6"
+    ]
+   },
+   "variants": {
+    "strang": {
+     "mitte": "#f85975",
+     "dunkel": "#b02f4a",
+     "satt": "#fd7e8e"
+    },
+    "tower": {
+     "mitte": "#9d5ed7",
+     "dunkel": "#673293",
+     "satt": "#b469f7"
+    },
+    "pad": {
+     "mitte": "#f7cd36",
+     "dunkel": "#ba9812",
+     "satt": "#fff7de"
+    },
+    "bloom": {
+     "mitte": "#fd97bd",
+     "dunkel": "#bb6a88",
+     "satt": "#feb8d0"
+    },
+    "leaf": {
+     "mitte": "#62c345",
+     "dunkel": "#3b8a20",
+     "satt": "#67db42"
+    },
+    "ground": {
+     "mitte": "#eecf73",
+     "dunkel": "#b39a4e",
+     "satt": "#fff7e1"
+    }
+   },
+   "source": {
+    "type": "random",
+    "seed": 12
+   }
+  }
+ ],
+ "fromColorsDemo": {
+  "schema": "kfb-cartoon-palette/1",
+  "scheme": "joyride",
+  "seed": 0,
+  "hues": {
+   "ground": 182.2,
+   "strang": 84.4,
+   "tower": 357.3,
+   "leaf": 66,
+   "sky": 156,
+   "trunk": 321,
+   "pad": 104.4
+  },
+  "mode": {
+   "boden": "tisch",
+   "wahrzeichen": "eigen",
+   "laub": "herbst"
+  },
+  "mood": {
+   "dL": 0,
+   "cMul": 1
+  },
+  "roles": {
+   "sky": "#a7d8b8",
+   "top": "#3aa596",
+   "top2": "#52b2a5",
+   "hill": [
+    "#5ab8ab",
+    "#229484"
+   ],
+   "sand": "#e9dcc8",
+   "rim": "#229484",
+   "under": [
+    "#03796c",
+    "#74467d",
+    "#633a6f",
+    "#4b2b59"
+   ],
+   "rock": "#ec719f",
+   "tower": [
+    "#d7568b",
+    "#ec719f"
+   ],
+   "leaf": [
+    "#e58e39",
+    "#f5aa42",
+    "#d7568b"
+   ],
+   "trunk": "#74467d",
+   "cloud": "#f2e6d3",
+   "water": "#5d81a3",
+   "path": "#f5e6c9",
+   "roadStreet": "#566680",
+   "roadTrack": "#3d4a60",
+   "strang": "#e9b53b",
+   "pad": "#f8ea3c"
+  },
+  "flat": {
+   "sky": "#a7d8b8",
+   "top": "#3aa596",
+   "top2": "#52b2a5",
+   "hillLight": "#5ab8ab",
+   "hillDark": "#229484",
+   "sand": "#e9dcc8",
+   "rim": "#229484",
+   "under0": "#03796c",
+   "earth1": "#74467d",
+   "earth2": "#633a6f",
+   "earth3": "#4b2b59",
+   "rock": "#ec719f",
+   "tower0": "#d7568b",
+   "tower1": "#ec719f",
+   "leafLight": "#f5aa42",
+   "leafDark": "#e58e39",
+   "leafMid": "#ed9c3e",
+   "bloom": "#d7568b",
+   "trunk": "#74467d",
+   "cloud": "#f2e6d3",
+   "water": "#5d81a3",
+   "path": "#f5e6c9",
+   "roadStreet": "#566680",
+   "roadTrack": "#3d4a60",
+   "strang": "#e9b53b",
+   "pad": "#f8ea3c"
+  },
+  "envRoles": {
+   "ground": [
+    "#52b2a5",
+    "#3aa596",
+    "#229484"
+   ],
+   "grass": [
+    "#75bea8",
+    "#5ba992",
+    "#3e8d77"
+   ],
+   "stone": [
+    "#6d5773",
+    "#594460",
+    "#412c47"
+   ],
+   "bark": [
+    "#885b90",
+    "#74467d",
+    "#5a2e62"
+   ],
+   "leaf": [
+    "#f5aa42",
+    "#ed9c3e",
+    "#e58e39"
+   ],
+   "bloom": [
+    "#ec70a1",
+    "#d7568b",
+    "#b83971"
+   ],
+   "water": [
+    "#7396b7",
+    "#5d81a3",
+    "#436787"
+   ],
+   "accent": [
+    "#fecc5f",
+    "#e9b53b",
+    "#cb9804"
+   ],
+   "sand": [
+    "#fff4e1",
+    "#e9dcc8",
+    "#cbbfac"
+   ],
+   "paved": [
+    "#fff8e9",
+    "#f5e6c9",
+    "#d8c9ac"
+   ],
+   "earth": [
+    "#74467d",
+    "#633a6f",
+    "#4b2b59"
+   ],
+   "asphalt": [
+    "#505d73",
+    "#3d4a60",
+    "#263247"
+   ],
+   "landmark": [
+    "#ec70a1",
+    "#d7568b",
+    "#b83971"
+   ],
+   "sky": [
+    "#bfefcf",
+    "#a7d8b8",
+    "#8bbb9c"
+   ]
+  },
+  "variants": {
+   "strang": {
+    "mitte": "#e9b53b",
+    "dunkel": "#ac8216",
+    "satt": "#feda90"
+   },
+   "tower": {
+    "mitte": "#d7568b",
+    "dunkel": "#942c5a",
+    "satt": "#f65d9e"
+   },
+   "pad": {
+    "mitte": "#f8ea3c",
+    "dunkel": "#beb21d",
+    "satt": "#fffcca"
+   },
+   "bloom": {
+    "mitte": "#d7568b",
+    "dunkel": "#942c5a",
+    "satt": "#f65d9e"
+   },
+   "leaf": {
+    "mitte": "#ed9c3e",
+    "dunkel": "#ad6c19",
+    "satt": "#fdb66a"
+   },
+   "ground": {
+    "mitte": "#3aa596",
+    "dunkel": "#0c6f63",
+    "satt": "#38bba9"
+   }
+  },
+  "source": {
+   "type": "colors",
+   "colors": [
+    "#3aa596",
+    "#e9b53b"
+   ],
+   "assigned": {
+    "top": "#3aa596",
+    "strang": "#e9b53b"
+   }
+  }
+ }
+}

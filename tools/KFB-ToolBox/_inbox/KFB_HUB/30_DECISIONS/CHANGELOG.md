@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Harmonie-Modell fertig, Konzepte im Hub
+- COLOR_HARMONY_R1 fertig: eine OKLCH-Regel (Boden = Grundton, Strecke +90° warm, Blickfang gegenüber, Laub grün/herbstlich, Himmel = Laub +90°, Platte gelb, Straße #3d4a60); J17-Nachbau mittleres ΔE 0,023–0,027; Generator fromHue/fromColors/fromStoryMode/random. Hub-Frage col04 offen (noch keine V-Nummer).
+- Konzepte gesichert: replies/CONCEPTS_FLUFF_MINIGAMES_R1/ (11 Quelldateien byte-genau, OVERVIEW mit 13 Widersprüchen) und replies/META_NARRATIVE_R1.md (Quelle/Georg/offen markiert).
+
 ## 2026-10-15 · Namen Lord Hunky, Lady Dory
 - V-295: Lord Hunky (mit U) und Lady Dory; „Hanky“ war ein Hörfehler – Register, Dateien (_frankenstein_poc) und Hub-Karten korrigiert.
 
