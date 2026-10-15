@@ -3615,7 +3615,9 @@
    "check": "Suno-Sets neu, Vorher/Nachher-Beispiele",
    "source": "Georg 15.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-277"
+   ],
    "why": "Kürzer klingt mehr nach Comic-Performer als nach Kartentext-Vortrag.",
    "applies": "ab sofort"
   },
@@ -3632,6 +3634,21 @@
    "supersedes": null,
    "superseded_by": [],
    "why": "Gleiche Einstiege nutzen sich ab; ein Intro moderiert das Set an.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-277",
+   "date": "2026-10-15",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Suno-Format: ein Deck = ein Suno-Track unter 5000 Zeichen inklusive Intro und Outro, weil jeder Song einen Download-Credit kostet (Georg hat 60). Leerzeile zwischen allen Beats, damit jeder Beat sauber ausgeschnitten werden kann. Dafür hart verdichten (V-275); jeder Opener höchstens einmal pro Track, so viele Opener wie das Budget erlaubt. Nur wenn ein Deck nicht passt: zwei Tracks.",
+   "values": {},
+   "owner": "WS0 → WSA-Plugin",
+   "check": "Zeichenzahl je Deck",
+   "source": "Georg 15.10.",
+   "supersedes": "V-275 (Opener auf jeder Zeile, Sets je Opener-Pool)",
+   "superseded_by": [],
+   "why": "Ein Credit pro Deck statt mehrerer Teile; Leerzeilen machen Beats schneidbar.",
    "applies": "ab sofort"
   },
   {
@@ -3697,7 +3714,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:375",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:378",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

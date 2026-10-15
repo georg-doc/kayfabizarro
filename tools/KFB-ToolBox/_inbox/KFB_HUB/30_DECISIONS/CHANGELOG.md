@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Ein Deck = ein Suno-Track
+- V-277: < 5000 Zeichen pro Deck inkl. Intro/Outro, Leerzeile zwischen allen Beats, harte Verdichtung, Opener so viele wie das Budget erlaubt (je Track einmal); ersetzt die Set-Teilung.
+
 ## 2026-10-15 · Intro statt Opener am Set-Anfang
 - V-276: Set = Intro (aus gedrucktem Deck-Material, je Set verschieden) + Zeilen mit Openern + Outro „Stay Fluffy!“.
 
