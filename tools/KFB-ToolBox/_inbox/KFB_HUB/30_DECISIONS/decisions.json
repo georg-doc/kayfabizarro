@@ -3434,6 +3434,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-264",
+   "date": "2026-10-15",
+   "area": "Bühne",
+   "verdict": "PASS",
+   "text": "Bibliothek „Utopia“ (Meshy, Georg 15.10.): Browser-Fassung A (500 k Dreiecke, 17,9 MB, 3,1 ms/Bild; B 8,0 MB nur Fallback). Maßstab 5,5 m pro Einheit (Stufe 0,18 m, Tür 2,3 m, Galerie 2,45 m), Kampffläche ca. 7,2 × 5,5 m. Kartenfläche = Wandbild über der Galerie an der Rückwand, 3,4 × 1,9 m, 1,79:1, Mitte (−0,17 / 0,328 / −0,525) u, Blick +Z; verdeckt die Fahne mit kaputter Meshy-Schrift (obere Fahnenstange ausblenden oder Rahmen etwas größer). Standardkamera Position (−0,12 / 0 / 1,85), Ziel (−0,14 / −0,06 / −0,20), 40° vertikal; Figuren am unteren Bildrand, Teppich als Bühne (V-257). Prunkrahmen rechts verworfen (steht an der Modellkante, kleiner).",
+   "values": {},
+   "owner": "WS0 (Asset) → WS1 (Einbau nach MVP-0)",
+   "check": "Hub lb01, Bild Kandidat B",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Größte Fläche, verdeckt den Texturfehler, Figuren-Anordnung wie V-257.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",

@@ -1,5 +1,16 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Antworten auf §24–§26 · Bibliothek (V-264)
+- **Vorlagen-Zeile V-256 (Bildflächen-Modul): freigegeben**, mit zwei Korrekturen:
+  1. Der UFO-Slot ist nicht mehr ≈ 1,60, sondern **1,79:1** (V-259) und liegt bereit: Branch `assets/meshy-ufo-cockpit-2026-10-15`, `media/3D_Assets/MeshyModels/browser/kfb-meshy-ufo-cockpit.screen-up179.v1.slot.json`. Karten füllen ihn randlos. Papierrand nur, wenn ein Träger wirklich ein anderes festes Format hat; nie beschneiden.
+  2. Die Träger-Varianten stehen jetzt in V-262 (Amphitheater gemauert, UFO Monitor, Bibliothek Wandbild) und kommen nach dem Schnitt als eigene Vorlagen-Zeilen.
+  - Reihenfolge (B1 schneiden pixelgleich → `video` → UFO-Slot) und CSS3D-Ebene im Host: so umsetzen.
+- **Zitate und Hypernormalisation-Loops:** Richtig, vorerst nur `card` und `video`. Quellen (kuratierter Zitat-Pool, Loop-Dateien mit Rechten) liefert WS0 später mit eigener Vorlagen-Zeile.
+- **Drift (§24.2):** Für MVP-0 hinnehmen. Die Dialog-Szene wählt bevorzugt Karten von drift-freien Seiten (Auswahl, nicht Beschnitt). Ein Neu-Export der betroffenen Seiten geht in WS0s Daten-Rückstand.
+- **Host R1.3:** als zurückgezogen markiert in `replies/KFB_HOST_CONTRACT_R3F_R1.md`.
+- **Besetzung F-4 und Paletten:** Georg hat beide als Einzelbilder im Production Hub. Seine Wahl kommt hierher.
+- **Bibliothek (V-264):** Branch `assets/meshy-library-2026-10-15` @63f9e73b, `kfb-meshy-utopia-library.browser-a.v1.glb` (17,9 MB) + `….stage.json`. Maßstab 5,5 m pro Einheit; Kartenfläche = Wandbild über der Galerie (3,4 × 1,9 m), Standardkamera im stage.json. Einbau nach MVP-0.
+
 ## 15.10.2026 · Bildflächen-Träger je Bühne (V-262), Frankenstein-Standard (V-260/V-261)
 - **Amphitheater:** Das Billboard bekommt einen Knet-gemauerten Rahmen passend zu Torbögen und Mauerwerk (Georg hatte das schon angesprochen). Inhalt weiter über das Bildflächen-Modul (V-256), 1,79:1. Vorschlag bitte als Vorlagen-Zeile.
 - **Bibliothek:** neue Meshy-Bühne; WS0 prüft gerade die Fläche (antiker Knet-Holzrahmen oder Fläche im Raum) und liefert eine Browser-Fassung. Erst danach einbauen.

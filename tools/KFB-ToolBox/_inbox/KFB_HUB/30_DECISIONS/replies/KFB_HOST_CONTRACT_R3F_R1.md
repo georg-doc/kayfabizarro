@@ -113,7 +113,7 @@ Der Test nimmt Playwrights eigenen Chromium. `PW_CHROMIUM=<pfad>` überschreibt 
   2. Sprechblasen von „3D im Modul“ auf den Host-DOM-Slot `#ui-bubbles` mit projizierten Ankerpunkten umgestellt, damit `chatterbox-core` 1:1 übernommen wird (V-206). Gesicht und Billboards bleiben 3D.
 
 
-### R1.3 (15.10.2026, V-248) · ModuleHost: `fixedDt` und `after`
+### R1.3 (15.10.2026, V-248) · ModuleHost: `fixedDt` und `after` · **ZURÜCKGEZOGEN** (WS1 §24.3: M1 läuft mit eigener fester Schleife über den unveränderten ModuleHost; Diff nicht übernommen)
 - **Zwei optionale Props:**
   - `fixedDt`: Module bekommen diesen festen Takt statt der Bildzeit (deterministisches Replay).
   - `after` (Ref): Der Host ruft `update` nicht selbst; der Aufrufer ruft `after.current(dt, ctx)` an fester Stelle (Spielfigur: nach ecctrl, vor dem Physik-Schritt).
