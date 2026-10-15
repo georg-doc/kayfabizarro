@@ -7,3 +7,8 @@
 - [Test report](TEST_REPORT_R1.md) 14/14 plugin archive static PASS; plugin Creator current release re-read; no actual Site or MCP image generation.
 - Newer historical concept upload branch discovered `assets/kfb-mvp1-concept-originals-2026-10-10@37115cc1359ee0a7bf356207ae056f8c8ed4cd10`; do not duplicate unmerged image bytes or treat them as main.
 - Next **one** G0: isolate one true Quaternius Nature donor source mesh/PNG in current Site viewer with hash/bit-proven pixel receipt. No site deployment performed, no PR or Live.
+
+## 2026-10-15 · Panopticon mood-only concept FAIL / negative regression
+- Georg rejected a preceding sterile panopticon clay diorama as **FAIL**: empty/clean floor, no lived-in story and semantically wrong prisoner tally marks on banners. Chunky retro-sci-fi panels/installations remain a useful design motif.
+- Review file: [PANOPTICON_DIORAMA_FAIL_REVIEW_2026-10-15.md](PANOPTICON_DIORAMA_FAIL_REVIEW_2026-10-15.md). No human approval, 3D source/model proof, GitHub PNG upload, external Meshy test, or Site deployment.
+- Fresh image generation was conducted for visual exploration; resulting output **MOOD_ONLY / UNREVIEWED**, with noted unwanted fake text and small-detail clutter. Two local generated PNG file names + SHA256 preserved as provenance only. No more same-seam cosmetic patches; next concept starts from spatial needs and narrative use, then human PASS/TUNE/FAIL.
