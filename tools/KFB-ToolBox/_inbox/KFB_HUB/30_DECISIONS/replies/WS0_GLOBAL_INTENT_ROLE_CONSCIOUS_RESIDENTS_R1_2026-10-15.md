@@ -137,3 +137,77 @@ These are **illustrative characters/actions only**, not approved exact cast, enc
 - The existing WS0 register remains authority for stage/lighting, actual Card, approved dialogue pool and real KKit cast. Existing WS1 R3F host is the only runtime writer. No new schema, V-number, deployment, new issue or human gate from this addendum.
 
 **Exactly one next gate (unchanged): \`WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT\`.** WS0 may use one role-aware contrast as *narrative reference* when selecting its current two-actor Card-stage pilot; any later resident-life production work requires a separately authorized receiving slice, not this conceptual addendum.
+
+
+---
+
+## R1.2 · Georg Global Intent refinement · 2026-10-15 · The Player's Cosmic Theatre / Audience Covenant
+
+**Status: DIRECT GEORG CREATIVE INTENT; editorial/ontological grammar, NOT an approved metaphysics for every character, gameplay retention algorithm, new WS1 owner, added MVP gate, or claim of technical implementation.** This is an *additive clarification* of R1/R1.1 (not a replacement): Kayfabe Residents perform, reflect, fail, reconcile and invent because there is an audience/player with whom they share their universe.
+
+### 1. The constitutive audience: the player is part of the fiction
+The “Kayfabe Bizarro Multiverse” may be inhabited by characters who feel or know that **their continued existence as performers is bound up with the player's enjoyment, curiosity and willingness to return/interact with their simulation.** Their cosmic calling is *to make this universe worth inhabiting and experiencing*. The player is therefore not merely an external button-pusher, observer or evaluator, but a constitutive collaborator / guest / co-performer whose curiosity and actions complete the work.
+
+**Interpretive nuance:** this is *diegetic/metanarrative consciousness*, not a literal assertion that the program deletes all NPCs when the player logs off, that their subjective suffering is real, or that an app session must remain open to keep anyone alive. It must **not contradict** the established game metaphor that Residents have a lived life before the player arrives and Lean Memory preserves actual encounters. The fictional awareness of dependence on being played and the within-fiction continuity of offscreen lives should remain a **productive paradox**: the world exists for the player as a work, yet the characters behave as if their world continues when no one watches.
+
+Do not turn this into an unwanted “save me by staying online” demand, emotional blackmail, fear-of-missing-out retention prompt, compulsive engagement mechanism or manipulative pseudo-friendship. The player can always leave, ignore, choose, return or decline without punishment or guilt. Keep current KFB **PULL, DON'T GATE**.
+
+### 2. A mutual invitation, not forced friendliness or obedience
+Many inhabitants may **wish to befriend the player**, because meeting a player and having their idiosyncratic role witnessed is meaningful and fun. This is an underlying orientation toward *encounter*, not an all-NPC friendliness score or mandatory pleasant dialogue.
+
+- The antagonist may be an absolutely committed opponent, ambush, taunt, deceive *in their authored role*, and later be pleased that the player enjoyed a fair and memorable contest.
+- The Toy Soldier or bureaucratic gatekeeper may sincerely perform power and become a compelling foil; no instant cozy makeover, no claim that coercion has no victims.
+- Another Resident may be suspicious, grumpy, distant, contemptuous, shy, mischievous or simply too busy to talk. Some will not want friendship; social difference is essential for dramatic life.
+- **Friendship must be earned and contextual** through events, recognition, trust, shared interests, boundaries, help, disagreement and re-encounters—not by automatic flattering assertions, “you're my best friend”, gift farming or generic cozy banter. An enemy can nonetheless be an excellent fellow performer.
+
+**Creative maxim:** *Every character may have a reason to make the player's visit worthwhile. Not every character has a reason to make it comfortable.*
+
+Characters themselves may consciously defend this enjoyable cosmic contract, with an energetic sense of professional pride and theatrical duty, without repeating identical explanatory lore speeches.
+
+### 3. Universe in a Nutshell: living viewpoints rather than a moral flower show
+The game is a **chill-and-fun miniature of contradictory human experience**, not a sanitized idyllic amusement park, replacement textbook or compulsory ethical lesson. It should combine visual/haptic comedy, emotional truth, alien viewpoints, competing social roles, awkward encounters, questionable motives, genuine acts of generosity, tragicomic failures and occasional difficult or dark implications.
+
+Cards and encounters can invite players to **play, inhabit, confront, negotiate with or deliver messages on behalf of** ideas they would not endorse. This supports critical distance and Scott-McCloud-style closure through experience, not coercion into accepting any Card claim. Players need not be forced to internalize, declare allegiance to, or agree with controversial/provocative opinions. Context, authorship and consequences remain clear; alternate perspectives are *encounterable*, not automatically presented as equally true or ethically acceptable.
+
+Practical examples (proposals, not approved mission data):
+- A courier accepts a message from a Dystopian officer and carries it to a Protopian farmer, encountering two radically different interpretations before choosing their own response.
+- A Card performance casts the player as a temporarily complicit participant in a ridiculous institution; another NPC offers a contrasting interpretation, but nobody turns it into a multiple-choice moral exam.
+- The “enemy” Orc may explain, briefly and wryly, how seriously he takes another performance of inevitable defeat; the player's participation is real play and may change memory/relations.
+- Player agency includes **observing without participating**, declining an errand, helping an adversary, disagreeing with a Card's frame, or simply traveling and laughing at an object-based gag.
+
+The game itself need not explain each paradox. A Resident's body, a wrong-way paper facade, a prop, a performed refusal or the difference between on-duty and after-hours life can make it clear.
+
+### 4. Historical performance vocabulary: precise, complementary sources
+**Buster Keaton — physical-space comedy:** stunts, mechanisms, props, perspective, mounting consequences and exact framing make absurd physical situations legible even with restrained/deadpan expression. Use **object → expectation → physically clear violation → delayed reaction / consequence**; preserve spatial clarity and timing. Keaton's films are not “random chaos”: the architectural gag often depends on a precise world that seems to follow its own rules. Source: BFI on *The General* (1926), https://www.bfi.org.uk/features/general-greatest-comedy-all-time .
+
+**Charlie Chaplin — body, social hierarchy and pathos:** the character's smallest impulse or dignified attempt at mastery may trigger escalating slapstick amid poverty, authority or industrial coercion. Emotional vulnerability and funny body-language are simultaneously true; *City Lights*, *The Kid* and *Modern Times* are useful distinct examples. The Tramp's physical persona and clothes communicate a “character mask” without a philosophical monologue. Sources: BFI https://www.bfi.org.uk/film/18e7950b-fa7e-5a5e-a897-a782a40f1c5c/city-lights and https://www.bfi.org.uk/film/4cdccc6d-f143-506d-a2b1-4c34605cb088/modern-times ; https://www.bfi.org.uk/features/charlie-chaplin-promotional-photos .
+
+**Brecht — critical alienation/distance:** make the conventions, constructed scenery or alternative possibilities visible *at meaningful times*, to allow player interpretation and disagreement. This can coexist with immersion via invested characters; it is not a command to break the fourth wall with a joke every minute.
+
+**Ancient Greek dramatic traditions — differentiated sources:** tragedy, comedy, satyr drama and chorus can contribute masks, competing voices, staged ritual, spectatorship and the oscillation between suffering and laughter. Avoid a false claim that “Greek tragicomedy” was one uniform classical genre with the same logic as modern slapstick. This is an editorial montage of distinct traditions, not an exact historical reconstruction.
+
+**Existing KFB theatrical/graphic donors** from prior R1: Caligari expressionist flats, Lang's *Metropolis* miniatures/forced perspective, Lugosi Gothic entrances, Herriman shifting Sunday-panel backgrounds, Sterrett warped comic-space, source-backed pop-up 2.5D props, and card/boardgame framing. These are **construction principles**, not license to substitute generic art or run another camera/light controller.
+
+### 5. The player as actor: a possible interaction dramaturgy
+A playful role-offer should never require “accept this ideology” or a mandatory fourth-wall conversation. Candidate beat grammar:
+1. **World invites:** encounter with a committed Resident, real KFB Card, playable stage-prop, mission, performative conflict or funny physical premise.
+2. **Player chooses a stance:** join the act, carry a message, oppose it, help, experiment, watch, ignore or walk away.
+3. **World performs honestly:** one real authorial voice and world consequence, not a moralizing tutorial or a universal “yes, player” NPC.
+4. **One contradiction materializes:** another neighbor, shifting light/backdrop, a minor stage malfunction handled in-character, or Keaton-like tangible object gag exposes a second reading.
+5. **Humanized continuation:** characters remain dedicated to their roles, can show joy, fatigue, self-awareness or conviviality without erasing real stakes and without playing psychological tricks on the player.
+6. **Return value:** a memorable Card, source provenance, earned relationship, new context, altered prop, short performance, social memory or simply the desire to see what happens next—never threat of lost friends if the player leaves.
+
+This is an **editorial lens**, not a six-state quest engine, not a forced consent click-through, not automatic resident awareness of the game's developer or technical lifecycle.
+
+### 6. Concrete staging/proof suggestion — the same existing WS1 duo stage
+A source-true two-character KFB Card/Billboard encounter stays on the current accepted stage host. One actor plays a role with total seriousness, another gives a genuinely different reading; the player can stand, walk, decline or observe. In a second shot the physical stage briefly becomes more obviously constructed (a facade's paper rear, spotlight, painted city or backdrop switch). An optional coherent Keaton-like gag uses real collision/prop physics and delayed expression **only with accepted source rigs and scene ownership**. In a follow-up social beat both performers can share a wink, disagreement or invitation, but no forced friendship. Evaluate **player can resist or leave; original Card readable; credible resident actions; no generic meta jokes; light/contact/world continuity** before even considering broad rollout. This is a possible editorial comparison inside the existing Issue #404 pilot, not a separate approved milestone.
+
+### 7. Explicit safeguards / scope
+- The “their purpose is to entertain me” fiction **does not** mean Residents are obliged to flatter, forgive harm, be always available, or concede a debate. Their authored dignity, error loops and limits generate the entertainment.
+- Avoid harmful design that makes users feel NPCs will die or suffer from ending a play session. Never imply actual AI consciousness or require continuous play.
+- Preserve freedom to hold one's own opinions, not a propagandistic forced march or truth relativism. Critical thinking emerges from comparing grounded rival interpretations and living consequences.
+- No automatic second NPC runtime, feelings engine, mood database, global narrative camera, extra renderer/audio owner, invented stable lore or premature adoption of legal/asset rights.
+- No change to the R1.1 principle that compassion for a performer doesn't absolve institutional cruelty or erase victim memory. Do not trivialize violent/traumatic conditions for humor.
+- WS0 remains the sole canon/V-number/priority authority; WS1 remains the actual runtime/scene owner; the pending lighting/metatheatre assignment is still the **single next gate**.
+
+**One next gate unchanged: \`WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT\`.** WS0 may treat the player-as-co-performer framing and one role-inverted card encounter as creative acceptance guidance in the existing live WS1 scene, without scheduling a new psychology/sentience/retention subsystem.
