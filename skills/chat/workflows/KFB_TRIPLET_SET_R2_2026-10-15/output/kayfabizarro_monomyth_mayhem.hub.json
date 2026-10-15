@@ -1,0 +1,711 @@
+{
+  "schema": "kfb.triplet-set-r2/1",
+  "deckId": "kayfabizarro_monomyth_mayhem",
+  "deckTitle": "Monomyth Mayhem",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "data/kfb-card-text-canonical-2026-10-14",
+    "commit": "233efd533869e70cc2b2c87205e34b5e47e125b7",
+    "path": "media/kfb/Kayfabizarro_Monomyth_Mayhem_WEB_v1.pdf.json",
+    "blob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+  },
+  "provenance": "Deterministic replay of WS0 R2 reference set, not an independently authored new composition",
+  "cardCount": 56,
+  "spokenCardCount": 50,
+  "skipped": [
+    {
+      "cardNumber": 49,
+      "cardName": "[BLANK] — 1",
+      "status": "SKIPPED_META",
+      "reason": "Printed meta/production card, not a playable spoken take"
+    },
+    {
+      "cardNumber": 50,
+      "cardName": "[BLANK] — 2",
+      "status": "SKIPPED_META",
+      "reason": "Printed meta/production card, not a playable spoken take"
+    },
+    {
+      "cardNumber": 53,
+      "cardName": "How to Use This Deck",
+      "status": "SKIPPED_META",
+      "reason": "Printed meta/production card, not a playable spoken take"
+    },
+    {
+      "cardNumber": 54,
+      "cardName": "The License",
+      "status": "SKIPPED_META",
+      "reason": "Printed meta/production card, not a playable spoken take"
+    },
+    {
+      "cardNumber": 55,
+      "cardName": "QR Code (Lore)",
+      "status": "SKIPPED_META",
+      "reason": "Printed meta/production card, not a playable spoken take"
+    },
+    {
+      "cardNumber": 56,
+      "cardName": "Card Back Design",
+      "status": "SKIPPED_META",
+      "reason": "Printed meta/production card, not a playable spoken take"
+    }
+  ],
+  "lines": [
+    {
+      "cardNumber": 1,
+      "card": {
+        "name": "The Ordinary World",
+        "power": "Stasis Loop. Play this to cancel any Quest progression this turn. Narrate why nothing changes.",
+        "lore": "Dysfunction isn't just a state; it's a habit. We normalize the pain until it feels like home.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Welcome to",
+      "line": "The Ordinary World stasis loop: nothing changes; Dysfunction is habit. Normalize pain – feels like home.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 2,
+      "card": {
+        "name": "The Call to Adventure",
+        "power": "Cognitive Dissonance. Increase Quest Die by +1. Force another player to introduce a crisis that ruins their current plans.",
+        "lore": "The universe doesn't knock. It throws a brick. The disruption of the status quo is not a request.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "The Call to Adventure, Cognitive Dissonance: the universe doesn't knock. It throws a brick. Not a request.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 3,
+      "card": {
+        "name": "Refusal of the Call",
+        "power": "Rational Panic. Pause the Quest for one turn. All players must explain why they are too busy/tired/scared to save the world.",
+        "lore": "Fear is realistic self-preservation. Change means death of the current identity. The ego fights to stay small.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "You know",
+      "line": "Refusal of the Call, Rational Panic: too busy, tired, scared to save the world. The ego fights to stay small.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 4,
+      "card": {
+        "name": "Meeting the Mentor",
+        "power": "External Hard Drive. Draw 2 cards. Give 1 to another player. Wisdom is useless unless you give it away.",
+        "lore": "The Mentor cannot go with you. They provide the map, not the legs. If they stay too long, they become a crutch.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Meeting the Mentor, External Hard Drive: wisdom is useless unless you give it away. The map, not the legs.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 5,
+      "card": {
+        "name": "Crossing the Threshold",
+        "power": "Point of No Return. Move Quest Die +2. Discard your hand and draw 3 new cards. The old self is dead.",
+        "lore": "Commitment is the moment fear becomes movement. You can't un-take the pill.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Remember",
+      "line": "Crossing the Threshold: hand new cards, old self dead. Fear becomes movement. You can't un-fluff the pill.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 6,
+      "card": {
+        "name": "Belly of the Whale",
+        "power": "Digestion. All players discard 1 card. No Quest progress this turn. Next turn, progress is doubled.",
+        "lore": "Liminal space. No longer who you were, not yet who you'll become. Transformation requires dissolution.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Belly of the Whale, Digestion: liminal space. No longer who you were, not yet who you'll become.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 7,
+      "card": {
+        "name": "Road of Trials",
+        "power": "Grindset. Narrate 3 small problems. For each one you 'solve' in the story, draw 1 card.",
+        "lore": "Recovery is practice. The hero who survives the trials is not the same animal who started them.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Before we continue",
+      "line": "Road of Trials grindset: recovery is practice; the hero who survives is not the same animal.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 8,
+      "card": {
+        "name": "Meeting the Goddess",
+        "power": "Self-Love Bomb. Narrate a moment of acceptance. Quest Die +1 for every player who nods in agreement.",
+        "lore": "The experience of being fully seen. The internal integration of the anima. Bliss is a valid game state.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Meeting the Goddess, Self-Love Bomb: a moment of acceptance, being fully seen. Bliss is a valid game state.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 9,
+      "card": {
+        "name": "Woman as Temptress",
+        "power": "Regression Pull. Tempt another player to discard a 'Safety' card. If they do, Quest Die -1.",
+        "lore": "The siren song of comfort. The familiar cage feels safer than the unfamiliar freedom.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Woman as Temptress, Regression Pull: the siren song of comfort. The familiar cage feels safer than the unfamiliar freedom.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 10,
+      "card": {
+        "name": "Atonement with the Father",
+        "power": "Daddy Issues. Identify an Authority Card on stage. Destroy it or Integrate it (take into hand).",
+        "lore": "Confront the source of authority. Kill the internal 'should' to claim your own values.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Atonement with the Father, Daddy Issues: destroy it or integrate it. Kill the internal should, claim your own values.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 11,
+      "card": {
+        "name": "Apotheosis",
+        "power": "Ego Death. Discard your Actor Marker. You are now a flonsiousness. You may intervene in any story without being present.",
+        "lore": "The caterpillar is liquid. The butterfly is inevitable. Self-actualization is messy.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Not a metaphor",
+      "line": "Apotheosis. Ego Death. You are now a flonsiousness; the caterpillar is liquid, the butterfly inevitable.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 12,
+      "card": {
+        "name": "The Ultimate Boon",
+        "power": "The Elixir. Gain a permanent 'Treasure' token. Use it once to auto-succeed a Quest Die roll.",
+        "lore": "Integration of the lesson. It's not the object, it's the internal transformation externalized.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Ever tasted",
+      "line": "The Ultimate Boon, the Elixir? Not the object; the internal transformation, externalized.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 13,
+      "card": {
+        "name": "Refusal of the Return",
+        "power": "Stay in Narnia. You may choose to end the game for your Actor here. They do not return. They stay in the magic.",
+        "lore": "Why go back to the mundane when you've touched the transcendent? The old life feels too small.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Refusal of the Return, Stay in Narnia: they stay in the magic. The old life feels too small.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 14,
+      "card": {
+        "name": "The Magic Flight",
+        "power": "Escape Velocity. End the Quest immediately. Roll a D6. Even: You keep the Boon. Odd: You lose it on the way home.",
+        "lore": "Old patterns don't release easily. The ego will chase you to reclaim what was surrendered.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "The Magic Flight, Escape Velocity: keep the Boon, or lose it on the way home. The ego will chase you.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 15,
+      "card": {
+        "name": "Rescue from Without",
+        "power": "Intervention. Play this on another player who is stuck. You automatically fix their current narrative problem.",
+        "lore": "You can't do it all alone. Community is necessary; Independence is a trauma response.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "You played",
+      "line": "Rescue from Without, Intervention: you can't do it all alone. Independence is a trauma response.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 16,
+      "card": {
+        "name": "Crossing the Return Threshold",
+        "power": "Re-Entry Shock. Draw 1 card for yourself, give 1 to a neighbor. The gift must be shared to be kept.",
+        "lore": "The hardest stage. Can you maintain your transformation while living in the world that shaped your old self?",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Which brings us to",
+      "line": "Crossing the Return Threshold, Re-Entry Shock: the hardest stage. The gift must be shared to be kept.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 17,
+      "card": {
+        "name": "Master of Two Worlds",
+        "power": "Code Switch. You may play cards from the Discard Pile as if they were in your hand.",
+        "lore": "No split between 'spiritual' and 'mundane.' You are whole. You are amphibious.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Master of Two Worlds, Code Switch: no split between spiritual and mundane. You are whole. You are amphibious.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 18,
+      "card": {
+        "name": "Freedom to Live",
+        "power": "Zen Mode. Your Actor becomes a Mentor. You cannot lose. You just vibe.",
+        "lore": "Freedom from the tyranny of fear. You're alive. That's enough.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Have you heard of",
+      "line": "Freedom to Live, Zen Mode? You cannot lose. You just vibe. You're alive; that's enough.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 19,
+      "card": {
+        "name": "The Anti-Journey",
+        "power": "Tragedy of Stagnation. Cancel a 'Call to Adventure.' Nothing happens. The story ends in quiet desperation.",
+        "lore": "Many refuse the call until they die. This is not a moral failure, but a tragedy of fear winning.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "The Anti-Journey, Tragedy of Stagnation: nothing happens; the story ends in quiet desperation. Fear winning.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 20,
+      "card": {
+        "name": "The Circular Journey",
+        "power": "Eternal Recurrence. Reset the Quest Die to [3]. Start the exact same story over, but with different adjectives.",
+        "lore": "The spiral goes up. Or down. But it definitely goes around.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "The deck insists on",
+      "line": "The Circular Journey, Eternal Recurrence: same story over, different adjectives. Up. Or down. But definitely around.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 21,
+      "card": {
+        "name": "The Hero",
+        "power": "Main Character Energy. You may re-roll the Quest Die once per turn.",
+        "lore": "The one who transforms. The ego vehicle. Often confused, usually reluctant.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Do you know",
+      "line": "The Hero, Main Character Energy? The ego vehicle. Often confused, usually reluctant.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 22,
+      "card": {
+        "name": "The Shadow",
+        "power": "Projection. Force another player to face a negative consequence you avoided.",
+        "lore": "The dark mirror. The antagonist is just the part of you that you locked in the basement.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Let me tell you about",
+      "line": "The Shadow, Projection: the dark mirror. Just the part of you that you locked in the basement.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 23,
+      "card": {
+        "name": "The Shapeshifter",
+        "power": "Trust Issues. Change the 'Suit' or 'Type' of any card on the Stage.",
+        "lore": "Loyalty is ambiguous. Keeps the hero off-balance. Is it love or is it a trap?",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "The Shapeshifter, Trust Issues: loyalty is ambiguous. Is it love or is it a trap?",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 24,
+      "card": {
+        "name": "The Herald",
+        "power": "Wake Up Call. Play immediately when a Quest ends to start a new one instantly.",
+        "lore": "Brings the Call. The Inciting Incident personified. Annoying, but necessary.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Did you hear of",
+      "line": "The Herald, Wake Up Call? A Quest ends, a new one starts instantly. Annoying, but necessary.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 25,
+      "card": {
+        "name": "Threshold Guardian",
+        "power": "Gatekeeping. Block a player from playing a card on the Stage unless they discard a card from hand.",
+        "lore": "Tests the hero's resolve. If you can't get past the doorman, you can't face the boss.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "This one has a rule",
+      "line": "Threshold Guardian gatekeeping. Can't get past the doorman, can't face the boss.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 26,
+      "card": {
+        "name": "The Trickster",
+        "power": "Chaos Agent. Swap the hands of two players. Laugh.",
+        "lore": "Disrupts the status quo. Reveals truth through absurdity. Also, comic relief.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "The thing about",
+      "line": "The Trickster, Chaos Agent: swap the hands of two players. Laugh. Truth through absurdity.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 27,
+      "card": {
+        "name": "The Ally",
+        "power": "Emotional Support. Add +1 to any die roll made by another player.",
+        "lore": "You need a Samwise. Someone to carry the load when you can't.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "The Ally, Emotional Support: you need a Samwise. Someone to carry the load when you can't.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 28,
+      "card": {
+        "name": "The Failed Journey",
+        "power": "The Bad Ending. Collapse the Quest immediately. No one gets a Boon.",
+        "lore": "The Ordeal can break you. Trauma can win. Not all stories have happy endings.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "The Failed Journey, the Bad Ending: no one gets a Boon. Trauma can win. Not all stories have happy endings.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 29,
+      "card": {
+        "name": "Quest Die",
+        "power": "Pressure Cooker. Use this card to set the limits [1] and [6]. If it tips, scream 'Kayfa-BOOM!'",
+        "lore": "Chaos is a valid game state. If the die tips, the reality breaks.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Quest Die pressure cooker: if it tips, scream Kayfa-BOOM! The reality breaks.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 30,
+      "card": {
+        "name": "BLÖDSINN!",
+        "power": "Nonsense Check. Play anytime. Force the narrator to pause, clarify, and fix a plot hole.",
+        "lore": "'It is not an accusation. It is a reset button. Laughter breaks nothing.'",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "BLÖDSINN! Nonsense check: pause, clarify, fix a plot hole. Not an accusation; a reset button.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 31,
+      "card": {
+        "name": "Kayfabe",
+        "power": "Suspension of Disbelief. Treat a lie as truth for the rest of the game.",
+        "lore": "The portrayal of staged events as real. We are all working the gimmick.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Everyone agrees",
+      "line": "Kayfabe. Suspension of Disbelief. Treat a lie as truth; we are all working the gimmick.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 32,
+      "card": {
+        "name": "Uncle FrizzleBob",
+        "power": "The Author. Change one rule of the game for this turn only.",
+        "lore": "'I didn't finish this game. That part's yours. Stay fluffy.'",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "I once met",
+      "line": "Uncle FrizzleBob, the Author: one rule, this turn only. I didn't finish this game. That part's yours.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 33,
+      "card": {
+        "name": "Mood — Fearful",
+        "power": "Paralysis. You cannot initiate a Quest. You can only react.",
+        "lore": "The cave you fear to enter holds the treasure. But the cave is also dark and scary.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Mood — Fearful, Paralysis: you can only react. The cave you fear to enter holds the treasure.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 34,
+      "card": {
+        "name": "Mood — Reckless",
+        "power": "Leeroy Jenkins. You must play the first card you touch. No thinking allowed.",
+        "lore": "Action without thought. Sometimes it's bravery, sometimes it's a death wish.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Mood — Reckless, Leeroy Jenkins: play the first card you touch, no thinking allowed. Sometimes bravery, sometimes a death wish.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 35,
+      "card": {
+        "name": "Mood — Grieving",
+        "power": "Heavy Heart. You cannot win a Boon this turn.",
+        "lore": "Loss is the price of love. The only way out is through.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Mood — Grieving, Heavy Heart: loss is the price of love. The only way out is through.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 36,
+      "card": {
+        "name": "Mood — Manic",
+        "power": "Zoomies. Play 2 cards in one turn. Speak twice as fast.",
+        "lore": "Energy without direction. A brilliant disaster.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Mood — Manic zoomies: speak twice as fast. Energy without direction, a brilliant disaster.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 37,
+      "card": {
+        "name": "Engineering",
+        "power": "Structure. You may rearrange the order of the Scenes on the Stage.",
+        "lore": "'If it's stupid but it works, it's still stupid, but at least it works.'",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Engineering, Structure: rearrange the Scenes. If it's stupid but it works, it's still stupid, but at least it works.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 38,
+      "card": {
+        "name": "Swordplay",
+        "power": "Cut. Remove an unwanted card from the Stage.",
+        "lore": "'Sometimes the Gordian Knot just needs a sharp edge.'",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Did you ever try",
+      "line": "Swordplay, Cut? Remove an unwanted card. Sometimes the Gordian Knot just needs a sharp edge.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 39,
+      "card": {
+        "name": "Diplomacy",
+        "power": "Chill. Prevent a 'Kayfa-BOOM' (Quest Collapse) by negotiating the Die back to [3].",
+        "lore": "'The art of telling someone to go to hell in such a way that they ask for directions.'",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Diplomacy, Chill: telling someone to go to hell in such a way that they ask for directions.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 40,
+      "card": {
+        "name": "Thievery",
+        "power": "Yoink. Steal a card from another player's hand.",
+        "lore": "'Property is theft. Theft is also theft. It's complicated.'",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "You with the card in your hand",
+      "line": "Thievery, Yoink: steal a card. Property is theft. Theft is also theft.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 41,
+      "card": {
+        "name": "Timeline Shift",
+        "power": "Retcon. Undo the last turn completely. It never happened.",
+        "lore": "The past is fluid. Memory is a creative act.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "No wait",
+      "line": "Timeline Shift retcon: undo the last turn. It never happened. The past is fluid.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 42,
+      "card": {
+        "name": "The Tenth Art",
+        "power": "Edit. Change the text on a Quest card.",
+        "lore": "Reality is a draft. Feel free to mark it up.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "The Tenth Art, Edit: reality is a draft. Feel free to mark it up.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 43,
+      "card": {
+        "name": "Multiverse",
+        "power": "Parallel Play. Start a second Quest alongside the first one. Run them simultaneously.",
+        "lore": "Why settle for one disaster when you can have infinite disasters?",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Meanwhile elsewhere",
+      "line": "Multiverse, Parallel Play: why settle for one disaster when you can have infinite disasters?",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 44,
+      "card": {
+        "name": "Fractal Narrative",
+        "power": "Zoom In. Play a card *inside* another card (place it underneath). It is now a subplot.",
+        "lore": "The spiral goes down. Every story contains a smaller story waiting to get out.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "Fractal Narrative, Zoom In: a card inside another card. Every story contains a smaller story waiting to get out.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 45,
+      "card": {
+        "name": "The Sword",
+        "power": "Decisive Action. +2 to Quest Die. Resolves conflict violently.",
+        "lore": "The symbol of power. Use it to cut the cord.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "The Sword, Decisive Action: resolves conflict violently. Use it to cut the cord.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 46,
+      "card": {
+        "name": "The Mirror",
+        "power": "Reflection. Copy the effect of the last card played.",
+        "lore": "Self-knowledge is the most dangerous weapon of all.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "You know the thing with",
+      "line": "The Mirror, Reflection: copy the last card's effect. Self-knowledge, the most dangerous weapon of all.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 47,
+      "card": {
+        "name": "The Key",
+        "power": "Access. Bypass a 'Threshold Guardian' without discarding.",
+        "lore": "Opens doors. Also opens wounds. Be careful.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "The Key, Access: bypass a Threshold Guardian. Opens doors. Also opens wounds. Be careful.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 48,
+      "card": {
+        "name": "The Compass",
+        "power": "Direction. Look at the top 3 cards of the deck. Arrange them.",
+        "lore": "It doesn't tell you where to go, only where you are.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "The Compass, Direction: it doesn't tell you where to go, only where you are.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 51,
+      "card": {
+        "name": "King Kayfabian",
+        "power": "The Judge. Resolve any dispute at the table. Your word is law.",
+        "lore": "Authority as performance. Someone has to wear the crown.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "",
+      "line": "King Kayfabian, the Judge: your word is law. Authority as performance; someone has to wear the crown.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    },
+    {
+      "cardNumber": 52,
+      "card": {
+        "name": "The Black Helicopter",
+        "power": "Game Over. The game ends immediately. Everyone loses? Everyone wins?",
+        "lore": "They found us. Scramble the data.",
+        "source": "PDF v05 print text (canonical @233efd5)"
+      },
+      "opener": "Nobody warned us about",
+      "line": "The Black Helicopter, Game Over: everyone loses? Everyone wins? They found us. Scramble the data.",
+      "reviewStatus": "WS0_REFERENCE_REUSED_NOT_PLUGIN_AUTHORED",
+      "sourceBlob": "98e3b9ac8a555ef456ba49bd7f46fc7529e89c3c"
+    }
+  ],
+  "recording": {
+    "status": "UNTIMED_AWAIT_REAL_AUDIO",
+    "music": false,
+    "recorded": false
+  },
+  "humanAcceptance": "No new human review claimed; consult individual WS0/Georg verdicts before promotion"
+}
