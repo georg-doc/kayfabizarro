@@ -35,3 +35,13 @@ Real KayKit creator daylight/night/indoor Godot samples require actual pictures/
 
 ## Exactly one next gate
 **OWNER-ACCEPTED_EXISTING-HOST_LOOK_CALIBRATION_INTAKE** — the existing World/Travel Integrator, only when current Four-Island visual direction permits it, selects the existing accepted environment host and genuine asset sources for first F0 original-donor isolation and F1 same-camera 3-mood comparison. No new shader pipeline or world construction. No merge or public promotion.
+
+
+---
+
+## 2026-10-15 · ROUTING CORRECTION (GEORG) — ACTIVE WS0/WS1 SUPERSEDES PREVIOUS GATE
+**Authoritative current product is the WS0-reviewed active WS1 R3F MVP Card/Billboard/Meshy diorama slice, not the historical World R4/Four-Island STOP route.** The earlier “owner-accepted existing host calibration intake only after Four-Island A/B” NEXT GATE **is superseded for the active WS1 product**. Keep the historic R4 note only as negative project history, not as a blocker on WS1.
+
+Current steering SSOT: `georg-doc/kayfabizarro`, branch `docs/kfb-decisions-register-2026-10-11`, `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/ARCHITECTURE_R1.md` (V-228), `DECISIONS.md`, `replies/WS0_TO_WS1.md`, `replies/WSA_LIGHT_STUDY_C_R1.md` and `replies/COLOR_HARMONY_R1/kfb-cartoon-palette.js` (V-305 approved single palette source). Active WS1 handoff `WS1_STATUS.md` on `ws1/r3f-frame` §§40–42.
+
+**WS0 request already filed:** [WS0 intake issue #404](https://github.com/georg-doc/kayfabizarro/issues/404); additively recorded directly in WS0 registry as `replies/WS0_INTAKE_WS1_DIORAMA_LIGHTING_R1_2026-10-15.md`. The next gate for this *corrected intake* is **WS0_LIGHTING_SLICE_ASSIGNMENT**: WS0 chooses milestone/V-number, delivers a source-first single-host brief to active WS1, initially for existing 2-performer Card/Billboard scene. Whole Meshy stage catalog remains after MVP-0 unless WS0 revises it. This research PR #403 remains optional donor evidence, not an execution branch or policy authority. No new runtime/build/Stage performed here.
