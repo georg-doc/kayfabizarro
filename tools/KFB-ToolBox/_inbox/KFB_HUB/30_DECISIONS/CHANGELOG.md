@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Fahrzeuge v2
+- Alle 13 Fahrzeuge ×1,92 (FB mit Ohren passt in den Dragster), Logos überklebt; Branch @d26b6860; Hub dv02 (Größe so oder kleiner).
+
 ## 2026-10-15 · Kart R5 nach Raster
 - MeshyModels/_browser/bathtub_kart/seating_r5: G1–G8 PASS für FB und Orc (Becken mittig ±1,6 %, J17-Sitz SeatL als Kart-Schale in Tub-Materialsprache, Lehne 28°, Fäuste 120/120, keine Durchdringung, Orc kartScale 1,04). Hub kt06.
 

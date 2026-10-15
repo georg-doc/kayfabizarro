@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Fahrzeuge v2: Größe für Medium-Rigs + Logos überklebt (V-315)
+- **Branch** `assets/meshy-dieselpunk-vehicles-2026-10-15` @d26b6860: jetzt alle 13 Fahrzeuge, je `<id>_browser.v2.glb` + `<id>.kfb-vehicle.v2.json` neben v1. v2 = v1 × 1,92 (sitzender FB mit Ohren passt in die geschlossene Kabine des Dragsters, Dach 5,8 cm); Racer ≈ 6,6 m, Laster ≈ 8,6 m. `rigClassScale { medium: 1.0, large: 1.33 }` (large = Vorschlag). Anker, Radstand, Spur, Radius, Kamera, Kollision mitskaliert.
+- **Logos:** graffiti_jet_cruiser, ironclad_wrecker, street_racer_hoverbeast überklebt (Textur `*_basecolor_v2_aufkleber.webp` ist in der v2-GLB).
+- **Bitte:** Fahrzeuggröße als Laufzeit-Regler (Georg urteilt beim Fahren; Hub dv02: evtl. ~×1,5, wenn Ohren knicken dürfen). Erstes Auto bleibt crimson_flame_dragster.
+
 ## 15.10.2026 · M2: erstes Auto = Flammen-Dragster, Autos werden größer (V-315) · Cabrio später (V-316)
 - **Erstes Auto:** `crimson_flame_dragster` (Georg, Hub dv01). Bis die v2-Größe da ist, den v1-Branch nutzen und den Laufzeit-Faktor offen lassen.
 - **Größe:** Georg: Autos größer, damit FB plausibel hineinpasst. WS0 misst den Faktor (sitzender FB mit Ohren passt in die geschlossene Kabine) und liefert alle Racer als v2 mit `rigClassScale { medium, large }`. Bis dahin bitte Größe als Laufzeit-Faktor je Rig-Klasse vorsehen.
