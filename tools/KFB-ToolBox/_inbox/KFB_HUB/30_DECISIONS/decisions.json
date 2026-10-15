@@ -3742,6 +3742,36 @@
    "applies": "MVP-0"
   },
   {
+   "id": "V-284",
+   "date": "2026-10-15",
+   "area": "Fahren",
+   "verdict": "TUNE",
+   "text": "Badewannen-Kart: FrizzleBob als Fahrer PASS (mittig, Hände am Lenkrad, Licht wie im Spiel). Orc Brute TUNE: anderes Lenkrad als FB und hält es nicht richtig; Position und Haltung falsch → gleiches Lenkrad wie FB (skaliert), Fäuste umschließen den Kranz, Fahrhaltung wie FB.",
+   "values": {},
+   "owner": "WS0 (Asset)",
+   "check": "Orc 3/4, Seite, Video",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "FB passt; Large-Fahrer braucht eigene Feinarbeit.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-285",
+   "date": "2026-10-15",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Stimmen für Triplets: Suno-Deck-Songs bleiben Präsentations-/Belohnungs-Feature (V-279); einzelne Triplets im Dialog bekommen je Figur eine eigene Stimme als vorab erzeugte Einzeldateien (keine Sprachausgabe zur Laufzeit), Lippen über Wireface (listenTo). Hörvergleich R1: Kokoro lokal (Download von Georg freigegeben) und ElevenLabs per API (Georg hat Credits; Schlüssel legt Georg selbst ab, WS0 gibt keine Schlüssel ein). Georg probiert zusätzlich HeyGen (Stimme isolieren, ggf. Video mit KayKit-Figuren als Avatare).",
+   "values": {},
+   "owner": "WS0 (Test) → WS1 später",
+   "check": "Hörproben im Hub",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Suno-Song ist eine Stimme pro Deck; Dialoge brauchen eine Stimme pro Figur.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -3804,7 +3834,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:419",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:427",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

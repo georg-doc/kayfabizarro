@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Kart FB PASS, Stimmen-Test
+- V-284: FB im Kart PASS, Orc TUNE (gleiches Lenkrad, Griff, Haltung). V-285: Triplet-Stimmen je Figur als Einzeldateien; Hörvergleich Kokoro (installiert mit Georgs OK) + ElevenLabs (falls Schlüssel abgelegt) läuft.
+
 ## 2026-10-15 · Kart TUNE 2, Dystopia neu, Montage-Regel, Stimmen
 - Kart TUNE 2 (Mitte 0 cm / 50 %, Hände 0 cm in 150 Bildern, Licht = WS1-Bühne, 0,005 % überstrahlt) als Hub kt04.
 - Dystopia-Frage neu in klaren Worten (dy02: A oben vor dem Billboard | B unten vor dem Rolltor); Grundregel Karten-Display mit Seitenansichten aller Bühnen (mt01).
