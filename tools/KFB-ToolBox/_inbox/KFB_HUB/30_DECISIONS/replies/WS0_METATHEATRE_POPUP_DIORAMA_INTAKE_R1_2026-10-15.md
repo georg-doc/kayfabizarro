@@ -84,3 +84,16 @@ A `pop-up standee` is an **authorable stage asset** in the existing Asset Librar
 - **No new mandatory MVP feature or extra blocking human approval.** The historical and visual findings are a response to Georg's concept idea, not proof that WS1 implemented them.
 
 **Single next gate remains `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`**, now with Herriman/Sterrett comic-world continuity and a source-backed playable pop-up standee as optional pilot ingredients. WS0 chooses exactly one donor and scheduling inside the existing issue #404 work, assigns a V-number only if it decides to canonize the direction.
+
+
+---
+
+## Global Intent companion · Georg 15.10.2026 · Role-conscious residents
+The stage's falseness and the actor's capacity to **knowingly enact or question a character mask** are one narrative design, not two separate effects. Source-backed global statement and existing KFB reuse map:
+\`replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md\`.
+Current global reference pointer on this WS0 branch:
+\`skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md\` (additive intent; old text preserved).
+
+A comic backdrop shift can reframe the same Resident's social duty, tragicomic habit and relationship without resetting Card, actor identity, memory or scripted beat. An NPC who knowingly continues a role should not automatically become a breaking-the-fourth-wall joke or self-help narrator. **Production criterion:** source-correct character keeps acting; stage/neighbor/Card changes the audience's understanding; any counter-role choice remains authored, optional and consequential.
+
+**Single next gate unchanged:** \`WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT\`. WS0 owns whether any role-aware example is useful in the selected current pilot and does not thereby open a second Resident runtime milestone.
