@@ -1,0 +1,100 @@
+{
+  "schema": "kfb.worldlab.weather-vfx-sfx-source-audit/0.1",
+  "date": "2026-10-15",
+  "status": "BOUNDED_TECHNICAL_SOURCE_AUDIT_PASS__HUMAN_VISUAL_LISTEN_AND_CLAY_GATE_OPEN",
+  "owner": "Existing SKY3/Travel EnvironmentHost + VFX-01 + KFB Audio calibration; no new runtime",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "research/kfb-worldlab-weather-environment-vfx-sfx-2026-10-12",
+  "sourceRevision": "e2266499a7b15a2b630f03f2121c7714d4adc69c",
+  "CI": {
+    "weatherAndVfx": {
+      "runId": 38786984611,
+      "jobId": 116601406945,
+      "result": "SUCCESS",
+      "assertions": {
+        "pass": 18,
+        "total": 18
+      },
+      "sourceEvidenceArtifact": {
+        "runId": 38785952718,
+        "artifactId": 11997472633,
+        "uploadedSHA256": "f7092d1f00ebd4188842c00d95c0014d9f7cf7a4dbb77bbb6f7116dd51b54c36"
+      },
+      "screenshots": [
+        "source-dry.png",
+        "source-rain.png",
+        "source-vfx-isolated.png"
+      ],
+      "browser": "Chromium+SwiftShader, Three r184, 1280x900, not target GPU"
+    },
+    "rainSFX": {
+      "runId": 38786984218,
+      "jobId": 116601396362,
+      "artifactId": 11998403026,
+      "uploadedSHA256": "b5f062b0f5b8320fd34256c77a16f33a6ece628a5d2434897b8217a75af20fb6",
+      "result": "SUCCESS",
+      "assertions": {
+        "pass": 13,
+        "total": 13
+      },
+      "browser": "Chromium, original AUDIO-CAL-01 v1",
+      "sourceAsset": {
+        "url": "https://opengameart.org/content/rain-loopable",
+        "archive": "Rain OGG.zip",
+        "archiveMember": "first lexicographically sorted .ogg in archive, exact name not retained",
+        "author": "Ylmir",
+        "license": "CC0 on exact source item",
+        "assetBytes": 550049,
+        "assetSha256": "4f659f68cf5219007d0bb0969a1862491ceee4057fda4c491c6001e8608fa2cb",
+        "temporaryInCIOnly": true,
+        "importedToKfbSource": false
+      },
+      "audioContextCount": 1,
+      "duck": {
+        "open": 0.7086,
+        "voice": 0.5148,
+        "recovered": 0.7715,
+        "muted": 0.0012
+      },
+      "musicTime": {
+        "before": 0.9085,
+        "duck": 2.0148,
+        "recovered": 3.4868,
+        "muted": 5.9995
+      },
+      "loadErrors": 0,
+      "browserErrors": 0,
+      "screenshot": "rain-via-existing-audio-duck.png"
+    }
+  },
+  "ownerInvariants": {
+    "noNewEnvironmentHost": true,
+    "noNewVfxRuntime": true,
+    "noNewAudioContext": true,
+    "noWorldBuilderRuntimeTouched": true,
+    "noAssetVendoring": true,
+    "noMerge": true,
+    "noStagePublishing": true
+  },
+  "qaLimits": {
+    "clayContextNotRun": true,
+    "humanVisualGateNotRun": true,
+    "humanListeningNotRun": true,
+    "targetGPUPerformanceNotRun": true,
+    "wholeWorldIntegrationNotRun": true,
+    "pixelIdenticalRainNotClaimed": true
+  },
+  "priorFailureEvidence": [
+    {
+      "runId": 38786483239,
+      "reason": "optional ffprobe unavailable in runner, rain archive download and extraction succeeded",
+      "repair": "optional ffprobe check made non-blocking"
+    },
+    {
+      "runId": 38786684686,
+      "reason": "audio mute asserted before existing 0.38s smoothing converged",
+      "repair": "waited 2.5s (more than six time constants), existing mixer untouched"
+    }
+  ],
+  "nextGate": "SOURCE-ISOLATED CLAY VFX COMPARISON + CC0 RAIN HUMAN LISTENING (existing owners only)"
+}
