@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Deck-Songs auf GitHub, Karten-Clips
+- Branch assets/kfb-deck-songs-2026-10-15 @7403d5ad: media/3D_Assets/Sounds/kfb_deck_songs/ (wrinkle_rumble 01a weiblich 180 BPM, help_i_am_a_human 01e, kayfabizarro_monomyth_mayhem 01c, kayfabizarro_philosophy 01d) mit Mix, Stems (deckId-Präfix), meta.json, Karaoke-SRT; jukebox.json +4 Titel. Merge nach main offen (direkter Push auf main von der Sicherheitsprüfung blockiert, GitHub-Connector offline). Asset Librarian registriert mp3 nach Merge automatisch (Workflow); Zusatzfelder bpm/deckId/Stem-Bezug = Vorschlag build.py an Tool-Besitzer.
+- Karten-Clips: 40_AUDIO/<deckId>__suno_<ver>/ für Wrinkle (50/50 Zeilen), HIAH (58/58), Monomyth (52/52); Philosophy um SRT ergänzt. Abweichungen (doppeltes Outro, von Suno ergänzte Opener, fehlende Wörter) in den RETURN.md.
+- WS0-Technikentscheide: Outro-Clips behalten beide „Stay Fluffy“; Karten-Clips bleiben im KFB_HUB (nicht im Repo); HIAH-Video nicht hochgeladen.
+
 ## 2026-10-15 · Hub-Antworten Abend
 - V-320 Kart R5 PASS · V-321 Racer kleiner (Ohren knicken, ≈ ×1,5) · V-322 Arcade-Billboard vor das Neonschild, st04 PASS · V-323 Marmor-Terrassen + Portal-Ruine als Bühnen, Ödland-Käfer als Fahrzeug · V-324 Stimmen-Besetzung PASS.
 
