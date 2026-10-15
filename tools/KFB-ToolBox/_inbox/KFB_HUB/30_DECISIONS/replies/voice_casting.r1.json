@@ -1,0 +1,892 @@
+{
+ "schema": "kfb.voice-casting/1",
+ "version": "r1",
+ "date": "2026-10-15",
+ "register": "V-308 (Kokoro PASS), V-285 (vorab erzeugt, keine Laufzeit-TTS)",
+ "engine": {
+  "name": "Kokoro-82M v1.0 ONNX",
+  "package": "kokoro-onnx 0.4.7 (Python 3.9, patched)",
+  "venv": "~/.kfb-audio-venv",
+  "voices": "~/.kfb-tts-models/kokoro-v1.0/voices-v1.0.bin",
+  "sampleRate": 24000
+ },
+ "voiceCount": {
+  "englishBase": 28,
+  "otherLanguageBase": 26,
+  "totalBase": 54,
+  "note": "28 englische Grundstimmen (US/UK). Die 26 Stimmen fuer es/fr/hi/it/ja/pt/zh sprechen Englisch verstaendlich mit Akzent-Timbre (Whisper-Abgleich 21/26 = 1,0; im_nicola, zf_xiaobei, zf_xiaoni, zf_xiaoxiao, zm_yunxi 0,92-0,97); Reserve fuer Aliens/Exoten, Klang von Georg ungeprueft.",
+  "blend": "Gewichtete Summe zweier Stil-Vektoren (510x1x256) -> beliebig viele Zwischenstimmen; in kokoro-onnx 0.4.7 getestet (create(voice=ndarray)).",
+  "blendProof": "_scripts/audition_r1.json: 3 Mischungen, Whisper 1,0; Grundton liegt zwischen den Eltern (bm_george 146 Hz + am_onyx 89 Hz -> 60:40 = 118 Hz; am_michael 125 + am_onyx 89 -> 50:50 = 107 Hz).",
+  "speed": "Tempo 0.8-1.2 je Figur als dritte Achse."
+ },
+ "rules": [
+  "Hauptfiguren teilen keine Grundstimme, auch nicht als Mischanteil.",
+  "Reservierte Stimmen (Hauptfiguren) tauchen bei Nebenfiguren nicht auf.",
+  "Keine zwei Figuren mit gleicher Stimme und gleichem Tempo.",
+  "Sprache folgt dem staerkeren Mischanteil (b* -> en-gb, sonst en-us)."
+ ],
+ "reservedForMain": [
+  "af_bella",
+  "am_fenrir",
+  "am_michael",
+  "am_onyx",
+  "bf_emma",
+  "bf_isabella",
+  "bm_daniel",
+  "bm_george",
+  "bm_lewis"
+ ],
+ "unusedEnglishVoices": [
+  "af_jessica",
+  "af_nova"
+ ],
+ "figures": [
+  {
+   "n": 1,
+   "figureId": "frizzlebob",
+   "name": "FrizzleBob",
+   "tier": "main",
+   "rigClass": "Medium (Rig_Medium, v5b)",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "am_michael",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "am_michael",
+   "speed": 1.0,
+   "lang": "en-us",
+   "reason": "Georg PASS V-308; flachste Melodie der hellen US-Männerstimmen, trockener Stand-up-Ton.",
+   "goldenLine": {
+    "text": "You with the card in your hand, Kayfabizarro, the Work: it's fake, but emotion is real.",
+    "source": "TRIPLET_SETS_R2/help_i_am_a_human #55"
+   },
+   "file": "besetzung_r1_01_frizzlebob__am-michael.wav"
+  },
+  {
+   "n": 2,
+   "figureId": "gothgirl",
+   "name": "GothGirl",
+   "tier": "main",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "bf_emma",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "bf_emma",
+   "speed": 0.95,
+   "lang": "en-gb",
+   "reason": "Georg PASS V-308; sehr flache Melodie (2,2 Halbtöne), britisch, trocken.",
+   "goldenLine": {
+    "text": "The Virtual Trap, Curated Illusion: chasing likes, totally empty inside.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_philosophy #56"
+   },
+   "file": "besetzung_r1_02_gothgirl__bf-emma.wav"
+  },
+  {
+   "n": 3,
+   "figureId": "lord_hunky",
+   "name": "Lord Hunky",
+   "tier": "main",
+   "rigClass": "Medium (KayKit-Astronaut + Alien-Kopf, V-304)",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "am_onyx",
+     "weight": 0.6
+    },
+    {
+     "voice": "bm_george",
+     "weight": 0.4
+    }
+   ],
+   "voiceSpec": "am_onyx60+bm_george40",
+   "speed": 0.92,
+   "lang": "en-us",
+   "reason": "Tiefste Stimme im Set (am_onyx, 89 Hz) mit britischer Würde von bm_george: Außerirdischer Oberherr, der als Realitäts-Hausmeister gelangweilt durchsagt.",
+   "goldenLine": {
+    "text": "This is Lord Hunky. Your reality is scheduled for cleaning. Please keep your hands inside the universe.",
+    "source": "Testzeile WS0 (kein Kartentext)"
+   },
+   "file": "besetzung_r1_03_lord_hunky__am-onyx60+bm-george40.wav"
+  },
+  {
+   "n": 4,
+   "figureId": "lady_dory",
+   "name": "Lady Dory",
+   "tier": "main",
+   "rigClass": "Medium (KayKit-Astronaut + Alien-Kopf, V-304)",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "bf_isabella",
+     "weight": 0.6
+    },
+    {
+     "voice": "af_bella",
+     "weight": 0.4
+    }
+   ],
+   "voiceSpec": "bf_isabella60+af_bella40",
+   "speed": 0.93,
+   "lang": "en-gb",
+   "reason": "Hell, flach und vornehm (bf_isabella) mit der saubersten Klangqualität (af_bella): ehemalige High-Society-Partnerin.",
+   "goldenLine": {
+    "text": "Lady Dory here, darling. I have seen better parties at the end of the world, and I hosted most of them.",
+    "source": "Testzeile WS0 (kein Kartentext)"
+   },
+   "file": "besetzung_r1_04_lady_dory__bf-isabella60+af-bella40.wav"
+  },
+  {
+   "n": 5,
+   "figureId": "orc_brute",
+   "name": "Orc Brute",
+   "tier": "main",
+   "rigClass": "Large",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "am_fenrir",
+     "weight": 0.5
+    },
+    {
+     "voice": "bm_lewis",
+     "weight": 0.5
+    }
+   ],
+   "voiceSpec": "am_fenrir50+bm_lewis50",
+   "speed": 0.85,
+   "lang": "en-us",
+   "reason": "Ausdrucksstärkste Männerstimme (am_fenrir) plus tiefer britischer Grund (bm_lewis), langsamer: großer, lauter Schläger.",
+   "goldenLine": {
+    "text": "The Stag Hunt, Joint Effort: if I chase rabbit, we both lose.",
+    "source": "TRIPLET_SETS_R2/help_i_am_a_human #15"
+   },
+   "file": "besetzung_r1_05_orc_brute__am-fenrir50+bm-lewis50.wav"
+  },
+  {
+   "n": 6,
+   "figureId": "georg_chronicler",
+   "name": "Georg (Chronist, Loriot-deadpan)",
+   "tier": "main",
+   "rigClass": "keine Figur (Erzähler/Marketing)",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "bm_daniel",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "bm_daniel",
+   "speed": 0.95,
+   "lang": "en-gb",
+   "reason": "Flach (2,5 Halbtöne), dunkel, britisch-gesetzt: Loriot-Würde ohne Pointe in der Stimme.",
+   "goldenLine": {
+    "text": "The Compass, Direction: doesn't tell you where to go, only where you are.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #48"
+   },
+   "file": "besetzung_r1_06_georg_chronicler__bm-daniel.wav"
+  },
+  {
+   "n": 7,
+   "figureId": "clown",
+   "name": "Clown",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "am_puck",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "am_puck",
+   "speed": 1.1,
+   "lang": "en-us",
+   "reason": "Hellste, cartoonigste US-Männerstimme, etwas schneller.",
+   "goldenLine": {
+    "text": "Mood — Manic zoomies: speak twice as fast. Energy without direction, brilliant disaster.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #36"
+   },
+   "file": "besetzung_r1_07_clown__am-puck.wav"
+  },
+  {
+   "n": 8,
+   "figureId": "toy-soldier",
+   "name": "Toy Soldier",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "am_eric",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "am_eric",
+   "speed": 1.08,
+   "lang": "en-us",
+   "reason": "Höchste Männerstimme, knapp und zackig.",
+   "goldenLine": {
+    "text": "The Sword, Decisive Action: resolves conflict violently. Use it to cut cord.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #45"
+   },
+   "file": "besetzung_r1_08_toy-soldier__am-eric.wav"
+  },
+  {
+   "n": 9,
+   "figureId": "farmer-a",
+   "name": "Farmer A",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "am_adam",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "am_adam",
+   "speed": 0.95,
+   "lang": "en-us",
+   "reason": "Bodenständige mittlere US-Männerstimme.",
+   "goldenLine": {
+    "text": "Engineering, Structure: if it's stupid but works, still stupid, but at least it works.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #37"
+   },
+   "file": "besetzung_r1_09_farmer-a__am-adam.wav"
+  },
+  {
+   "n": 10,
+   "figureId": "farmer-b",
+   "name": "Farmer B",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "af_kore",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "af_kore",
+   "speed": 0.98,
+   "lang": "en-us",
+   "reason": "Warme, lebhafte US-Frauenstimme.",
+   "goldenLine": {
+    "text": "The Ally, Emotional Support: you need Samwise. Someone to carry load when you can't.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #27"
+   },
+   "file": "besetzung_r1_10_farmer-b__af-kore.wav"
+  },
+  {
+   "n": 11,
+   "figureId": "caveman",
+   "name": "Caveman",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "am_santa",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "am_santa",
+   "speed": 0.88,
+   "lang": "en-us",
+   "reason": "Rau-gemütlich, langsamer.",
+   "goldenLine": {
+    "text": "The Garbage Kingdom, Scavenge: nanny throws you out, you become King of Dump.",
+    "source": "TRIPLET_SETS_R2/wrinkle_rumble #29"
+   },
+   "file": "besetzung_r1_11_caveman__am-santa.wav"
+  },
+  {
+   "n": 12,
+   "figureId": "lorekeeper",
+   "name": "Lorekeeper",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "bm_fable",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "bm_fable",
+   "speed": 0.92,
+   "lang": "en-gb",
+   "reason": "Britischer Erzähler mit hellem Klang.",
+   "goldenLine": {
+    "text": "Fractal Narrative, Zoom In: card inside another card. Every story contains smaller story waiting to get out.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #44"
+   },
+   "file": "besetzung_r1_12_lorekeeper__bm-fable.wav"
+  },
+  {
+   "n": 13,
+   "figureId": "witch",
+   "name": "Witch",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "bf_alice",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "bf_alice",
+   "speed": 1.02,
+   "lang": "en-gb",
+   "reason": "Höchste, beweglichste britische Frauenstimme.",
+   "goldenLine": {
+    "text": "The Fountain of Old: bathroom breaks double. Drink deep, feel your bones liquefy.",
+    "source": "TRIPLET_SETS_R2/wrinkle_rumble #41"
+   },
+   "file": "besetzung_r1_13_witch__bf-alice.wav"
+  },
+  {
+   "n": 14,
+   "figureId": "avian",
+   "name": "Avian",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "af_sky",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "af_sky",
+   "speed": 1.12,
+   "lang": "en-us",
+   "reason": "Leichte US-Frauenstimme, schnell wie ein Vogel.",
+   "goldenLine": {
+    "text": "Did you hear of The Proboscis of Doom, Eavesdrop? You will hear every insult whispered by youth.",
+    "source": "TRIPLET_SETS_R2/wrinkle_rumble #1"
+   },
+   "file": "besetzung_r1_14_avian__af-sky.wav"
+  },
+  {
+   "n": 15,
+   "figureId": "skeleton-warrior",
+   "name": "Skeleton Warrior",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "am_echo",
+     "weight": 0.7
+    },
+    {
+     "voice": "am_adam",
+     "weight": 0.3
+    }
+   ],
+   "voiceSpec": "am_echo70+am_adam30",
+   "speed": 0.95,
+   "lang": "en-us",
+   "reason": "Skelett-Familie teilt den hohlen am_echo-Kern; Krieger mit mehr Körper.",
+   "goldenLine": {
+    "text": "The Wheelchair Joust: chivalry isn't dead, just on life support and very angry.",
+    "source": "TRIPLET_SETS_R2/wrinkle_rumble #14"
+   },
+   "file": "besetzung_r1_15_skeleton-warrior__am-echo70+am-adam30.wav"
+  },
+  {
+   "n": 16,
+   "figureId": "skeleton-rogue",
+   "name": "Skeleton Rogue",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "am_echo",
+     "weight": 0.5
+    },
+    {
+     "voice": "am_puck",
+     "weight": 0.5
+    }
+   ],
+   "voiceSpec": "am_echo50+am_puck50",
+   "speed": 1.05,
+   "lang": "en-us",
+   "reason": "Skelett-Kern plus Frechheit von am_puck.",
+   "goldenLine": {
+    "text": "You with the card in your hand, Thievery, Yoink: steal card. Property is theft. Theft also theft.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #40"
+   },
+   "file": "besetzung_r1_16_skeleton-rogue__am-echo50+am-puck50.wav"
+  },
+  {
+   "n": 17,
+   "figureId": "skeleton-mage",
+   "name": "Skeleton Mage",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "bm_fable",
+     "weight": 0.6
+    },
+    {
+     "voice": "am_echo",
+     "weight": 0.4
+    }
+   ],
+   "voiceSpec": "bm_fable60+am_echo40",
+   "speed": 0.9,
+   "lang": "en-gb",
+   "reason": "Skelett-Kern, britisch-gelehrt.",
+   "goldenLine": {
+    "text": "The Unkillable Consciousness, Subjective Immortality: never perceive death.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_philosophy #39"
+   },
+   "file": "besetzung_r1_17_skeleton-mage__bm-fable60+am-echo40.wav"
+  },
+  {
+   "n": 18,
+   "figureId": "skeleton-minion",
+   "name": "Skeleton Minion",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "am_echo",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "am_echo",
+   "speed": 1.15,
+   "lang": "en-us",
+   "reason": "Reiner Skelett-Kern, eilig.",
+   "goldenLine": {
+    "text": "Before we continue, The Skeleton of Waiter, Hold Music: Madame Foster just finishing up. In craft aisle for three decades.",
+    "source": "TRIPLET_SETS_R2/wrinkle_rumble #17"
+   },
+   "file": "besetzung_r1_18_skeleton-minion__am-echo.wav"
+  },
+  {
+   "n": 19,
+   "figureId": "ultra-turbo-hero-man",
+   "name": "Ultra Turbo Hero Man",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "am_liam",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "am_liam",
+   "speed": 1.05,
+   "lang": "en-us",
+   "reason": "Junge, eifrige US-Heldenstimme.",
+   "goldenLine": {
+    "text": "Do you know The Hero, Main Character Energy? Ego vehicle. Often confused, usually reluctant.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #21"
+   },
+   "file": "besetzung_r1_19_ultra-turbo-hero-man__am-liam.wav"
+  },
+  {
+   "n": 20,
+   "figureId": "cleric",
+   "name": "Cleric",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "af_aoede",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "af_aoede",
+   "speed": 0.95,
+   "lang": "en-us",
+   "reason": "Ruhige, dunkle Frauenstimme.",
+   "goldenLine": {
+    "text": "Crossing the Return Threshold, Re-Entry Shock: hardest stage. Gift must be shared to be kept.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #16"
+   },
+   "file": "besetzung_r1_20_cleric__af-aoede.wav"
+  },
+  {
+   "n": 21,
+   "figureId": "animatronic-normal",
+   "name": "Animatronic",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "af_alloy",
+     "weight": 0.5
+    },
+    {
+     "voice": "am_liam",
+     "weight": 0.5
+    }
+   ],
+   "voiceSpec": "af_alloy50+am_liam50",
+   "speed": 1.0,
+   "lang": "en-us",
+   "reason": "Frau/Mann 50:50 klingt leicht unwirklich: Maschine.",
+   "goldenLine": {
+    "text": "The Turing Faker, Empathy Simulation: just behavior.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_philosophy #44"
+   },
+   "file": "besetzung_r1_21_animatronic-normal__af-alloy50+am-liam50.wav"
+  },
+  {
+   "n": 22,
+   "figureId": "animatronic-creepy",
+   "name": "Animatronic Creepy",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "af_nicole",
+     "weight": 0.5
+    },
+    {
+     "voice": "am_santa",
+     "weight": 0.5
+    }
+   ],
+   "voiceSpec": "af_nicole50+am_santa50",
+   "speed": 0.88,
+   "lang": "en-us",
+   "reason": "Hauchig plus rau, langsam: unheimliche Maschine.",
+   "goldenLine": {
+    "text": "I once met The Empty Shell, Dead Inside: says Ouch. Nobody home.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_philosophy #41"
+   },
+   "file": "besetzung_r1_22_animatronic-creepy__af-nicole50+am-santa50.wav"
+  },
+  {
+   "n": 23,
+   "figureId": "action-figure",
+   "name": "Action Figure",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "am_liam",
+     "weight": 0.6
+    },
+    {
+     "voice": "am_eric",
+     "weight": 0.4
+    }
+   ],
+   "voiceSpec": "am_liam60+am_eric40",
+   "speed": 1.1,
+   "lang": "en-us",
+   "reason": "Werbespot-Held, schnell.",
+   "goldenLine": {
+    "text": "Everyone agrees: Kayfabe. Suspension of Disbelief. Treat lie as truth; we are all working gimmick.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #31"
+   },
+   "file": "besetzung_r1_23_action-figure__am-liam60+am-eric40.wav"
+  },
+  {
+   "n": 24,
+   "figureId": "magical-girl",
+   "name": "Magical Girl",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "af_heart",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "af_heart",
+   "speed": 1.08,
+   "lang": "en-us",
+   "reason": "Beste Klangqualität im Set, hell und warm.",
+   "goldenLine": {
+    "text": "Meeting the Goddess, Self-Love Bomb: fully seen. Bliss valid game state.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #8"
+   },
+   "file": "besetzung_r1_24_magical-girl__af-heart.wav"
+  },
+  {
+   "n": 25,
+   "figureId": "monster",
+   "name": "Monster",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "am_adam",
+     "weight": 0.6
+    },
+    {
+     "voice": "am_santa",
+     "weight": 0.4
+    }
+   ],
+   "voiceSpec": "am_adam60+am_santa40",
+   "speed": 0.92,
+   "lang": "en-us",
+   "reason": "Mittlere Männerstimme mit rauem Anteil.",
+   "goldenLine": {
+    "text": "The Intolerant Bully-Bear, Bad Faith Actor: attacks for free.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_philosophy #61"
+   },
+   "file": "besetzung_r1_25_monster__am-adam60+am-santa40.wav"
+  },
+  {
+   "n": 26,
+   "figureId": "ninja",
+   "name": "Ninja",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "af_nicole",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "af_nicole",
+   "speed": 1.0,
+   "lang": "en-us",
+   "reason": "Flachste Stimme im Set, gehaucht: Flüstern im Schatten.",
+   "goldenLine": {
+    "text": "Let me tell you about The Shadow, Projection: dark mirror. Part of you that you locked in basement.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #22"
+   },
+   "file": "besetzung_r1_26_ninja__af-nicole.wav"
+  },
+  {
+   "n": 27,
+   "figureId": "protagonist-a",
+   "name": "Protagonist A",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "af_sarah",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "af_sarah",
+   "speed": 1.0,
+   "lang": "en-us",
+   "reason": "Klare, neutrale US-Frauenstimme.",
+   "goldenLine": {
+    "text": "The Call to Adventure, Cognitive Dissonance: universe doesn't knock. Throws brick.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #2"
+   },
+   "file": "besetzung_r1_27_protagonist-a__af-sarah.wav"
+  },
+  {
+   "n": 28,
+   "figureId": "protagonist-b",
+   "name": "Protagonist B",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "am_adam",
+     "weight": 0.5
+    },
+    {
+     "voice": "am_liam",
+     "weight": 0.5
+    }
+   ],
+   "voiceSpec": "am_adam50+am_liam50",
+   "speed": 1.0,
+   "lang": "en-us",
+   "reason": "Neutrale junge US-Männerstimme.",
+   "goldenLine": {
+    "text": "You know Refusal of the Call, Rational Panic: too busy to save world. Ego fights to stay small.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #3"
+   },
+   "file": "besetzung_r1_28_protagonist-b__am-adam50+am-liam50.wav"
+  },
+  {
+   "n": 29,
+   "figureId": "werewolf-wolf",
+   "name": "Werewolf",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "am_puck",
+     "weight": 0.6
+    },
+    {
+     "voice": "am_santa",
+     "weight": 0.4
+    }
+   ],
+   "voiceSpec": "am_puck60+am_santa40",
+   "speed": 0.95,
+   "lang": "en-us",
+   "reason": "Hell mit rauem Unterton: halb Mensch, halb Tier.",
+   "goldenLine": {
+    "text": "Belly of the Whale, Digestion: no longer who you were, not yet who you'll become.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #6"
+   },
+   "file": "besetzung_r1_29_werewolf-wolf__am-puck60+am-santa40.wav"
+  },
+  {
+   "n": 30,
+   "figureId": "driver",
+   "name": "Driver",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "base",
+   "components": [
+    {
+     "voice": "af_river",
+     "weight": 1.0
+    }
+   ],
+   "voiceSpec": "af_river",
+   "speed": 1.08,
+   "lang": "en-us",
+   "reason": "Flache, kühle US-Frauenstimme, zügig.",
+   "goldenLine": {
+    "text": "The Magic Flight, Escape Velocity: keep Boon, or lose it on way home.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #14"
+   },
+   "file": "besetzung_r1_30_driver__af-river.wav"
+  },
+  {
+   "n": 31,
+   "figureId": "vampire",
+   "name": "Vampire",
+   "tier": "support",
+   "rigClass": "Medium",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "bm_fable",
+     "weight": 0.6
+    },
+    {
+     "voice": "bf_lily",
+     "weight": 0.4
+    }
+   ],
+   "voiceSpec": "bm_fable60+bf_lily40",
+   "speed": 0.88,
+   "lang": "en-gb",
+   "reason": "Britisch-theatralisch, androgyn, langsam.",
+   "goldenLine": {
+    "text": "The Empty Dance Floor, Nostalgia: music stopped forty years ago, but feet keep moving.",
+    "source": "TRIPLET_SETS_R2/wrinkle_rumble #34"
+   },
+   "file": "besetzung_r1_31_vampire__bm-fable60+bf-lily40.wav"
+  },
+  {
+   "n": 32,
+   "figureId": "monstrosity",
+   "name": "Monstrosity",
+   "tier": "support",
+   "rigClass": "Large",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "am_santa",
+     "weight": 0.7
+    },
+    {
+     "voice": "am_echo",
+     "weight": 0.3
+    }
+   ],
+   "voiceSpec": "am_santa70+am_echo30",
+   "speed": 0.82,
+   "lang": "en-us",
+   "reason": "Rau und hohl, am langsamsten.",
+   "goldenLine": {
+    "text": "What if The Glitch-Beast, Chaos, shuffles all discard piles into new deck? It hurts to exist.",
+    "source": "TRIPLET_SETS_R2/wrinkle_rumble #45"
+   },
+   "file": "besetzung_r1_32_monstrosity__am-santa70+am-echo30.wav"
+  },
+  {
+   "n": 33,
+   "figureId": "black-knight",
+   "name": "Black Knight",
+   "tier": "support",
+   "rigClass": "Large",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "am_adam",
+     "weight": 0.5
+    },
+    {
+     "voice": "bm_fable",
+     "weight": 0.5
+    }
+   ],
+   "voiceSpec": "am_adam50+bm_fable50",
+   "speed": 0.9,
+   "lang": "en-us",
+   "reason": "Halb US, halb britisch, gemessen: Ritter unter Helm.",
+   "goldenLine": {
+    "text": "This one has a rule: Threshold Guardian gatekeeping. Can't get past doorman, can't face boss.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_monomyth_mayhem #25"
+   },
+   "file": "besetzung_r1_33_black-knight__am-adam50+bm-fable50.wav"
+  },
+  {
+   "n": 34,
+   "figureId": "demon-lord",
+   "name": "Demon Lord",
+   "tier": "support",
+   "rigClass": "Large",
+   "voiceType": "blend",
+   "components": [
+    {
+     "voice": "am_santa",
+     "weight": 0.5
+    },
+    {
+     "voice": "bm_fable",
+     "weight": 0.5
+    }
+   ],
+   "voiceSpec": "am_santa50+bm_fable50",
+   "speed": 0.85,
+   "lang": "en-us",
+   "reason": "Rau plus britische Herrschaft, langsam.",
+   "goldenLine": {
+    "text": "The Digital God-Toad, Retroactive Blackmail: punish anyone who didn't help.",
+    "source": "TRIPLET_SETS_R2/kayfabizarro_philosophy #29"
+   },
+   "file": "besetzung_r1_34_demon-lord__am-santa50+bm-fable50.wav"
+  }
+ ],
+ "audio": "~/Dropbox/CLAUDE/KFB_HUB/40_AUDIO/voice_casting_r1/ (WAV 24 kHz 16 bit mono, Spitze -2 dBFS, + MP3)"
+}

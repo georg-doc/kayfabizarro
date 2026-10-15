@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Stimmen-Besetzung R1, nächste Suno-Decks
+- replies/VOICE_CASTING_R1.md + voice_casting.r1.json: 28 englische Kokoro-Stimmen + Mischstimmen (in kokoro-onnx 0.4.7 geprüft) + Tempo; Hauptbesetzung FB am_michael, GothGirl bf_emma, Lord Hunky onyx60+george40, Lady Dory isabella60+bella40, Orc fenrir50+lewis50, Georg-Chronist bm_daniel; 28 KayKit-Nebenfiguren besetzt; 34 Hörproben in 40_AUDIO/voice_casting_r1. Hub vo02.
+- Kokoro-Decktest help_i_am_a_human 5:22, 58/58 Zeilen; Aussprache offen (Rousseau, Blödsinn, Kayfabizarro, deutsches Intro).
+- replies/SUNO_NEXT_DECKS_R1.md: 8 Decks zu den Bühnen (cosmic_grift_dark_journalism, pharaoh_piledriver, kayfabizarro_monopolies_manipulation_murder_vol, observation_underground, trust_and_betrayal, nibelungen_booster_pack_design, uncle_frizzlebob_s_tragic_flaws_id, epistemic_sabotage); Hub-Briefing b32.
+
 ## 2026-10-15 · Hub-Antworten: Farben, Bühnen, Kart, Stimmen
 - V-305: Harmonie-Modell PASS (Story-Farbe auf dem Boden), Fluff High satt / Low dunkel PASS; ersetzt V-270 (pal02 überholt).
 - V-306: Bühnen-Abnahmen (st01 PASS alle, Köln 1:1, Dystopia B, Bank statt Kurstafel, Gefängnis Stahlrahmen oben mittig am Geländer, Atlantis am Turm, Utopia ohne Sockel); alle Displays im God-Mode per In-Place-Editor mit responsivem Karten-Seitenverhältnis.
