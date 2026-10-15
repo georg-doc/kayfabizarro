@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Kopf-Einzelteile + WSA-Briefing, Atlantis-Bühne
+- Branch assets/kfb-alien-head-parts-2026-10-15 @82791728: Lord Hunky / Lady Dory als Kopf-Teile (kfb.headpart/1), Vorschlags-Passung Space Ranger (Hals rundum im Kragen; Kopf dadurch ≈ halbe FrizzleBob-Breite → Studio-Regler „Hals verjüngen“ vorgeschlagen). Hub-Briefing b31 an WSA (ToolBox-Studio, V-304).
+- Branch assets/meshy-stage-atlantis-2026-10-15 @d3326a6a (Hub at01); assets/meshy-stages-goblin-prison-2026-10-15 @48b0f492 (Hub gb01, pr01).
+
 ## 2026-10-15 · FrankenEyes FAIL, Zusammenbau ins ToolBox-Studio
 - V-303: FrankenEyes R1 als Zusammenbau FAIL (Kopf zu groß, nicht im Anzugkragen, Halskrause mit Lücke, Mund zu tief); Augen-Einfassung, Dangle, Münder als Teile PASS.
 - V-304: Zusammenbau im ToolBox-Frankenstein-Studio (WSA), Kopf als Einzelteil, Georg platziert selbst; WS0 liefert Teile; Abnahmen nur live in der Site.
