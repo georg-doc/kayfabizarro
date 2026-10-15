@@ -196,7 +196,13 @@ def build_decks(
         measured_offset = pdf_pages - card_sheets if pdf_pages is not None and card_count else None
         mapping_verified = measured_offset in {0, 1}
         cover_offset = measured_offset if mapping_verified else raw.get("coverOffset")
-        cover_status = "measured" if mapping_verified else "unverified"
+        # Optional manifest field: non-card pages after the last card sheet (e.g. a back page).
+        # The page count only measures leading + trailing extra pages together, so a declared
+        # coverOffset is accepted when it closes that sum exactly.
+        trailing = raw.get("trailingPages")
+        if not mapping_verified and measured_offset is not None and type(trailing) is int and type(cover_offset) is int:
+            mapping_verified = trailing >= 0 and cover_offset >= 0 and cover_offset + trailing == measured_offset
+        cover_status = ("measured" if measured_offset in {0, 1} else "manifest-checked") if mapping_verified else "unverified"
         for card in cards:
             number = card["cardNumber"]
             page = int(cover_offset) + 1 + ((number - 1) // 4) if mapping_verified else None
