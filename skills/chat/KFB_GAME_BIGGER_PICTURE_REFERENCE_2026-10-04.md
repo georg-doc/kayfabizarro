@@ -205,3 +205,14 @@ No additional runtime, V-number or gate. The single current WS0 lighting/metathe
 **Storytelling application, not runtime schema:** resident acts sincerely → meets genuine failure and complains → changed scene/Card/relationship offers a new interpretation → resident may laugh at themself, resume, rest, resist or change course. Timing, bodily performance and a small specific line can carry this better than an all-NPC therapy speech. The player can watch, join, leave, disagree and interpret, preserving `PULL, DON'T GATE` and R1.3's intrinsic resident life. Full source-backed addendum: `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md` §R1.4.
 
 No added V-number, psychology manager, gameplay acceptance blocker, new cast/lore claim or WS1 implementation authorization. Same next WS0 gate: `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.
+
+
+### R1.5 creative authoring tool · 2026-10-15 · Self-exposing irony / reader-owned Closure
+**Georg additionally chooses Homer Simpson as a *comic method donor*, not a persona or dialogue source to transplant into KFB.** Two distinct Simpsons examples were traced: Homer’s 2007 episode `Stop, or My Dog Will Shoot!` complaint (“How come things that happen to stupid people keep happening to me?”), and “It's funny 'cause it's true,” spoken in different Simpsons scenes including Fat Tony and Homer. The first is an **unintended self-diagnosis**: the character includes the explanation in their grievance but misses the inference; the second expresses **recognition** of a familiar behavioral/social pattern beneath exaggeration. Both are reference only, never canonical KFB lines, permission to copy proprietary art or proof a statement is factually accurate.
+
+**In KFB, the audience/player supplies the comic inference.** Resident-specific complaint or misattributed blame + a revealing visual act/detail + an unforced missed or partially glimpsed conclusion = an opportunity for Scott-McCloud-style Closure without a narrator explaining the joke, a universal “stupid NPC” label, moralizing correction or therapeutic exposition. The Resident can be self-aware in one situation and sincerely blind to an aspect of their own loop in another; the contrast need not be resolved. Physical prop comedy, expression, silence and staged comic-frame changes are equally valid.
+
+This complements **R1.4 authentic lament** (grief, irritation, complaint can be real), **R1.3 joyful autonomous role-affirmation** (characters don't exist at player's mercy) and the earlier cosmological/metatheatrical narrative. Full source/provenance and guardrails:
+`tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md` §R1.5.
+
+No new NPC humor engine, ChatterBox approval, added MVP-0 scope, global V-number or alternative writer. Single WS0 gate unchanged: `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.
