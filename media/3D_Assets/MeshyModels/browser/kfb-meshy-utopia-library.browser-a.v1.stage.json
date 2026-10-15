@@ -1,0 +1,188 @@
+{
+ "file": "kfb-meshy-utopia-library.browser-a.v1.glb",
+ "decision": "V-264",
+ "A": {
+  "bytes": 17937264,
+  "sha256": "5b2c8a5344f7ef6b97f1946676ef0f45523cd48169dfe749031292f8cf2149fe",
+  "tris": 499992,
+  "verts": 326009,
+  "textures": [
+   {
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 1050908
+   },
+   {
+    "mime": "image/webp",
+    "size": [
+     1024,
+     1024
+    ],
+    "bytes": 125252
+   },
+   {
+    "mime": "image/webp",
+    "size": [
+     2048,
+     2048
+    ],
+    "bytes": 327144
+   }
+  ],
+  "params": {
+   "ratio": 0.1167,
+   "error": 0.01,
+   "quality": 86,
+   "weights": {
+    "normal": 2,
+    "uv": 2
+   },
+   "tool": "@gltf-transform 4.5.1 · meshoptimizer 1.1.1 · sharp 0.35.5 (exakt gepinnt)"
+  },
+  "nonManifoldEdges": 116,
+  "components": 1,
+  "three": {
+   "tris": 500000,
+   "median_ms": 3.1,
+   "p95_ms": 3.9
+  }
+ },
+ "stage": {
+  "floorY": -0.432,
+  "floor_open_u": {
+   "x": [
+    -0.72,
+    0.6
+   ],
+   "z": [
+    -0.38,
+    0.62
+   ]
+  },
+  "rug_u": {
+   "x": [
+    -0.57,
+    0.43
+   ],
+   "z": [
+    -0.1,
+    0.53
+   ]
+  },
+  "gallery_floorY": 0.044,
+  "gallery_underside": 0.009,
+  "stair_steps": 14,
+  "riser_u": 0.032,
+  "door_left_wall_height_u": 0.42,
+  "metres_per_unit": 5.5,
+  "range": [
+   5.0,
+   6.0
+  ],
+  "check_at_5p5": {
+   "stufe_m": 0.18,
+   "tuer_m": 2.3,
+   "unter_galerie_m": 2.45,
+   "boden_m": "7,2 x 5,5",
+   "teppich_m": "5,5 x 3,5",
+   "figur_1p9m_u": 0.345
+  },
+  "candidates": {
+   "a": {
+    "display": {
+     "c": [
+      0.47,
+      -0.14930000000000002,
+      0.3
+     ],
+     "yaw": -30,
+     "w": 0.44,
+     "border": 0.04,
+     "legs": true,
+     "crest": true
+    },
+    "card_aspect": 1.793,
+    "figs": [
+     {
+      "p": [
+       -0.04,
+       0.3
+      ],
+      "h": 1.8,
+      "face": 100
+     },
+     {
+      "p": [
+       0.11,
+       0.36
+      ],
+      "h": 2,
+      "face": -80
+     }
+    ],
+    "camera": {
+     "pos": [
+      -0.5,
+      0.02,
+      1.75
+     ],
+     "target": [
+      0.2,
+      -0.2,
+      0.26
+     ],
+     "fov": 35
+    }
+   },
+   "b": {
+    "display": {
+     "c": [
+      -0.17,
+      0.32789999999999997,
+      -0.525
+     ],
+     "yaw": 0,
+     "w": 0.62,
+     "border": 0.022,
+     "legs": false,
+     "crest": false
+    },
+    "card_aspect": 1.793,
+    "figs": [
+     {
+      "p": [
+       -0.38,
+       0.02
+      ],
+      "h": 1.8,
+      "face": 80
+     },
+     {
+      "p": [
+       -0.22,
+       0.1
+      ],
+      "h": 2,
+      "face": -100
+     }
+    ],
+    "camera": {
+     "pos": [
+      -0.12,
+      0,
+      1.85
+     ],
+     "target": [
+      -0.14,
+      -0.06,
+      -0.2
+     ],
+     "fov": 40
+    }
+   }
+  }
+ }
+}
