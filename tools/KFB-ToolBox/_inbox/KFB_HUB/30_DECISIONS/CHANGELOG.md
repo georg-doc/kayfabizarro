@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Namen Lord Hunky, Lady Dory
+- V-295: Lord Hunky (mit U) und Lady Dory; „Hanky“ war ein Hörfehler – Register, Dateien (_frankenstein_poc) und Hub-Karten korrigiert.
+
 ## 2026-10-15 · Zonen-Hypothese, Konzepte sichern
 - V-294: Zone = Diorama + Umland (2–4 min Autofahrt), Zonen-Song sammeln, Minispiele → Fluff + Karten, UFO von Hanky & Dory als TARDIS-Hub, Spieler wird entführt. Minispiel-/Fluff-Konzepte und Metanarrativ werden in den KFB_HUB geholt.
 
