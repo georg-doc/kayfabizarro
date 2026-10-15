@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Game Loop R1
+- Entwurf replies/GAME_LOOP_R1.md: Kartenquellen (Botengang, Mech-Zerstörung zellenweise, Fluff-Ernte, Sprengen/Dynamitfischen, Minispiele, Funde), Abgabe in der Hauptstadt mit wachsender Belohnung, drei Loop-Varianten, offene Fragen; Georg entscheidet.
+
 ## 2026-10-15 · Benennung, Deck-Welten
 - V-291: überall exakte deckId + gedruckter Decktitel (Audio-Ordner und Hub-Karten umbenannt). Welt-Konzept Nachtrag §7 „Eine Welt = ein Deck“ mit Hauptstadt-Diorama, verstreuten Karten, wachsender Belohnung (offen).
 
