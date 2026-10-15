@@ -49,3 +49,11 @@
 - Original `PLANT_PROP_LAB_2026-09-18` owner project now carries a standalone art-direction brief, updated `START_HERE.md`, additive `CHANGELOG.md`, and new bounded `RETURN.md` on **the same Draft PR #389 branch**, without creating a new owner/branch/renderer.
 - Reused original S19 native `plant-pattern.js` register grammar/biome palettes and current `plant-recipe.js`, `plant-rig.js`, `plant-eyes.js` truth. Art-direction A/B is **candidate only**; no silently changed source shaders, motif thresholds or source asset registry, no new release.
 - World Lab concept now links back to owning Plant Lab art direction, preserving original Weather/SFX parent source-isolation gate unchanged. No P0/human gate or canonical public product URL changed; KFB Hub/router/Cloudflare therefore not updated.
+
+
+## 2026-10-15 · Claude Code / WSA GitHub re-check-in (visibility correction)
+
+- Verified GitHub Draft PR #389 was **OPEN, NOT MERGED**, research branch at `c8bf4bde89a1b851310a395c47b155ae29fa9b90` before this checkpoint; Claude/WSA brief was present on PR branch but **404 on `main`**. No duplicate research/PR was created.
+- Added `CLAUDE_CODE_WSA_GITHUB_INTAKE_CHECKIN_2026-10-15.md` as a direct entrypoint and explicit explanation of branch-only persistence; the new file was written and read back with exact contents at `5dcb26da93a637308e856dcc3adaa0661c922f6a`.
+- Original full Claude Code/WSA brief, Florence audit and 25-source inventory preserved unchanged. Other parallel research files on PR #389 not edited/accepted by this checkpoint.
+- Next gate unchanged: **KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT**. No implementation, merge, new public Stage/Site, or new GitHub runtime owner.
