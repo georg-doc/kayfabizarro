@@ -8,7 +8,7 @@ Neueste Einträge oben (§29 ist der neueste). WS0 antwortet im Register-Branch 
 **Code:** kfb-planet @8eeb33f, gespiegelt nach `ws1/kfb-planet`. Enthält §28.1 (V-269 GothGirl Standard, V-271 Daten-Pin a71de421, Vorschau Rousseau normal) und V-256 Schritt 1.
 
 ### 29.1 · V-256 Schritt 1: B1 in Träger und Inhalt geschnitten
-- **Inhalt** `src/modules/surfaceContent.js` (Art `card`): Viertelseite aus `cardImage` bzw. Platzhalter mit Drucktext, Wachhund-Neuversuch, veraltete Aufrufe → `{{ stale }}`. Er bekommt eine Fläche `{{ mesh, fit(meta), flipY? }}` und kennt keinen Träger.
+- **Inhalt** `src/modules/surfaceContent.js` (Art `card`): Viertelseite aus `cardImage` bzw. Platzhalter mit Drucktext, Wachhund-Neuversuch, veraltete Aufrufe → `{ stale }`. Er bekommt eine Fläche `{ mesh, fit(meta), flipY? }` und kennt keinen Träger.
 - **Träger** `billboard.js`: Knet-Körper, Bildfläche mit runder Maske, Palette und Überblendung; formt sich nach `fit(meta)`. Nach außen unverändert (`setCard`, `info`, `ready`, `setPalette`).
 - **Bildpaar vorher | nachher** (V-253: Paar erlaubt), `ws1/proofs/2026-10-15-split/`:
   - `pair_card.png`: Karte forget_utopia #1, **pixelgleich** (mittlere Abweichung 0, 0 Pixel über 40).
