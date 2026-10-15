@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alien Figures Proof</title>
+<style>html,body{margin:0;background:#d9d4ca;overflow:hidden;font:13px system-ui}#msg{position:fixed;left:8px;top:6px;color:#333}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+</head><body><div id="msg">lädt …</div>
+<script type="module">
+/* WS0 · Alien Figures ToolBox R1 · reference loader + proof.
+   Loads <Name>_RigMedium.toolbox.glb (body + Rig_Medium + head part in ONE skin) and its kfb.pets/1 recipe,
+   builds EyeRig v6 on the anchors, one DangleChain per stalk/antenna, the mouth decal from the mouth set,
+   applies the tunables (headScale, headOffset, neckTaper) every frame, plays a Rig_Medium clip.
+   ?fig=hunky|dory|all &clip=Idle_A|Walking_A &t=sec &view=vorn|seite|dreiviertel|kragen_hinten|kragen_vorn|vergleich
+   &scale=<headScale> &taper=<0..1|auto> &measure=1 (head rigidity + collar coverage over the clip) */
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js';
+const Q = new URLSearchParams(location.search);
+{ let a = 7; Math.random = () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const ER = await import('../../_alien_head_parts_r1/vendor/pet-eye-rig.v6.js');   // identical (sha256) to the ToolBox kfb-lib copy
+const ED = await import('../../_alien_head_parts_r1/vendor/ear-dangle.v1.js');    // identical (sha256) to the ToolBox kfb-lib copy
+const SAN = n => THREE.PropertyBinding.sanitizeNodeName(n);
+const FIGS = { hunky: { glb: '../LordHunky_RigMedium.toolbox.glb', recipe: '../lordhunky-headpart-r1.ws0-2026-10-15.kfb-pets.json' },
+               dory:  { glb: '../LadyDory_RigMedium.toolbox.glb',  recipe: '../ladydory-headpart-r1.ws0-2026-10-15.kfb-pets.json' } };
+const W = +Q.get('w') || 1600, H = +Q.get('h') || 900;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H); renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.NoToneMapping;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#d9d4ca');
+scene.add(new THREE.HemisphereLight(0xfff4e0, 0x3a3226, 1.25));                    // WS1 stage light
+const sun = new THREE.DirectionalLight(0xffffff, 1.8); sun.position.set(2.2, 4.6, 3.4); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, { left: -3, right: 3, top: 3.2, bottom: -1.2, near: 0.5, far: 14 }); sun.shadow.camera.updateProjectionMatrix(); sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.02;
+scene.add(sun, sun.target);
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.MeshStandardMaterial({ color: '#c7c0b2', roughness: 1 }));
+ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+const cam = new THREE.PerspectiveCamera(26, W / H, 0.02, 60);
+const loader = new GLTFLoader(), tl = new THREE.TextureLoader();
+const job = window.__job = { done: false, err: null, log: [] };
+const log = s => { job.log.push(s); document.getElementById('msg').textContent = s; };
+
+/* ================= the figure loader (what the ToolBox kind "headpart" does) ================= */
+async function loadFigure(key) {
+  const F = FIGS[key];
+  const [gltf, doc] = await Promise.all([loader.loadAsync(F.glb), fetch(F.recipe).then(r => r.json())]);
+  const pet = doc.pets[0], hp = pet.headPart, fig = gltf.scene;
+  const bones = {}; fig.traverse(o => { if (o.isBone) bones[o.name] = o; if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false; } });
+  const root = fig.getObjectByName(SAN(hp.root)), rigid = fig.getObjectByName(SAN(hp.rigidJoint)), headMeshNode = fig.getObjectByName(SAN(hp.mesh));
+  const headMeshes = []; headMeshNode.traverse(o => { if (o.isMesh) headMeshes.push(o); });
+  const T = hp.tunables, tun = { headScale: T.headScale.value, headOffset: T.headOffset.value.slice(), neckTaper: T.neckTaper.value };
+  const applyTunables = () => {                              // every frame, after mixer.update and after any skeleton.pose()
+    root.position.set(...tun.headOffset); root.scale.setScalar(tun.headScale);
+    for (const m of headMeshes) { const i = m.morphTargetDictionary && m.morphTargetDictionary.neckTaper; if (i != null) m.morphTargetInfluences[i] = tun.neckTaper; }
+  };
+  return { key, fig, doc, pet, hp, bones, root, rigid, headMeshes, tun, applyTunables, clips: [] };
+}
+function buildEyes(f) {
+  const { pet, root } = f, E = pet.eyeHost, o = pet.eye, box = E.proxy.box;
+  const host = new THREE.Group(); host.name = 'KFB_EyeHost'; root.add(host);                 // frame L
+  const pg = new THREE.BoxGeometry(box[1][0] - box[0][0], box[1][1] - box[0][1], box[1][2] - box[0][2]);
+  pg.translate((box[0][0] + box[1][0]) / 2, (box[0][1] + box[1][1]) / 2, (box[0][2] + box[1][2]) / 2);
+  const proxy = new THREE.Mesh(pg, new THREE.MeshBasicMaterial({ visible: false })); proxy.name = E.proxy.name; host.add(proxy); host.updateMatrixWorld(true);
+  const rig = new ER.EyeRig({ THREE, inner: host, o: { makeMat: () => new THREE.MeshStandardMaterial({ color: E.lidColour, roughness: 0.85 }) } },
+    { anchor: { ...o.anchor }, pupilStyle: o.pupilStyle, pupilSize: o.pupilSize, inset: o.inset, lidFit: o.lidFit, gloss: o.gloss,
+      converge: o.converge, baseColor: parseInt(o.baseColor.slice(1), 16), blink: { ...o.blink }, lashes: { ...o.lashes } });
+  const byKey = Object.fromEntries(pet.eyes.map(e => [e.cdKey, e])), one = pet.eyes.length === 1;
+  const place = () => { if (!rig.eyes) return;
+    ['eyeL', 'eyeR'].forEach((k, i) => { const q = byKey[k] || pet.eyes[0], e = rig.eyes[i]; e.position.set(...q.pos); e.scale.setScalar(q.scale); e.rotation.y = 0; });
+    if (one) { rig.eyes[0].quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), new THREE.Vector3(...pet.eyes[0].gaze)); rig.eyes[1].visible = false; } };
+  const b0 = rig.build.bind(rig); rig.build = (...a) => { const r = b0(...a); place(); return r; };
+  rig.build(); rig.applyEmote(E.afterBuild.emote); rig.setLife({ ...E.afterBuild.life, on: false });
+  return { rig, host, one, eyeQ0: rig.eyes.map(e => e.quaternion.clone()) };
+}
+function buildDangle(f) {
+  return f.pet.dangle.parts.map(p => { const b = f.bones[SAN(p.bone)];
+    const dc = new ED.DangleChain([b], { side: /\.r$/.test(p.bone) ? 'R' : 'L', params: { stiffness: p.stiffness, damping: p.damping, maxDeg: p.maxDeg, inertia: p.inertia, spin: p.spin, elastic: p.elastic, bob: p.bob, bobHz: p.bobHz } });
+    return { p, b, dc, q0: b.quaternion.clone() }; });
+}
+function dangleStep(f, dt) {
+  for (const c of f.chains) { c.dc.update(dt, {});
+    if (c.p.eyeIndex == null || !f.eyes.rig.eyes) continue;
+    const i = f.eyes.one ? 0 : c.p.eyeIndex, q = c.b.quaternion.clone().multiply(c.q0.clone().invert()), e = f.eyes.rig.eyes[i];
+    const E = (f.pet.eyes.find(x => x.bone === c.p.bone) || f.pet.eyes[0]).pos, piv = new THREE.Vector3(...c.p.pivot);
+    e.position.set(...E).sub(piv).applyQuaternion(q).add(piv); e.quaternion.copy(q).multiply(f.eyes.eyeQ0[i]); }
+}
+async function buildMouth(f) {
+  const ms = f.pet.mouth, an = await fetch('../' + ms.path + 'anchors.json').then(r => r.json());
+  const t = await tl.loadAsync('../' + ms.path + ms.default + '.png'); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
+  f.fig.updateMatrixWorld(true);
+  const R = f.root, ws = R.getWorldScale(new THREE.Vector3()).x, size = ms.width * ws * an.canvas[0] / an.closed_width_px;
+  const n = new THREE.Vector3(...ms.normal).transformDirection(R.matrixWorld), up0 = new THREE.Vector3(...ms.up).transformDirection(R.matrixWorld);
+  const x = new THREE.Vector3().crossVectors(up0, n).normalize(), y = new THREE.Vector3().crossVectors(n, x);
+  const rot = new THREE.Euler().setFromRotationMatrix(new THREE.Matrix4().makeBasis(x, y, n));
+  const ctr = new THREE.Vector3(...ms.centre).applyMatrix4(R.matrixWorld).addScaledVector(y, -(an.canvas[1] / 2 - an.anchor.y) / an.canvas[1] * size);
+  const mat = new THREE.MeshStandardMaterial({ map: t, transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -4, polygonOffsetUnits: -4, roughness: 0.75, alphaTest: 0.02 });
+  const hb = f.rigid, grp = new THREE.Group(); grp.name = 'KFB_Mouth'; grp.matrixAutoUpdate = false; grp.matrix.copy(hb.matrixWorld.clone().invert()); hb.add(grp);
+  for (const m of f.headMeshes) { const g = new DecalGeometry(m, ctr, rot, new THREE.Vector3(size, size, 0.3 * ws)); if (!g.attributes.position.count) continue; const dm = new THREE.Mesh(g, mat); dm.renderOrder = 2; grp.add(dm); }
+  return { size };
+}
+/* ================= proof driver ================= */
+const clipsCache = {};
+async function clip(name) {
+  const file = /Walk|Run|Jump/.test(name) ? 'src/Rig_Medium_MovementBasic.glb' : 'src/Rig_Medium_General.glb';
+  if (!clipsCache[file]) clipsCache[file] = await loader.loadAsync(file);
+  return clipsCache[file].animations.find(a => a.name === name);
+}
+function stepFig(f, dt) { f.mixer.update(dt); f.applyTunables(); f.fig.updateMatrixWorld(true); dangleStep(f, dt); f.eyes.rig.update && f.eyes.rig.update(dt); }
+
+/* head rigidity + collar coverage, all in the head-bone frame */
+function measureSetup(f) {
+  const head = f.bones['head'], body = f.fig.getObjectByName('SpaceRanger_Body');
+  const v = new THREE.Vector3(), inv = new THREE.Matrix4();
+  f.fig.updateMatrixWorld(true); inv.copy(head.matrixWorld).invert();
+  // rigid head vertices (all weight on head_part), every 23rd
+  const rig = []; const hpIdx = m => m.skeleton.bones.indexOf(f.rigid);
+  for (const m of f.headMeshes) { const si = m.geometry.attributes.skinIndex, sw = m.geometry.attributes.skinWeight, k = hpIdx(m);
+    for (let i = 0; i < si.count; i += 23) { let w = 0; for (let j = 0; j < 4; j++) if (si.getComponent(i, j) === k) w += sw.getComponent(i, j);
+      if (w > 0.999) { m.getVertexPosition(i, v); v.applyMatrix4(m.matrixWorld).applyMatrix4(inv); rig.push({ m, i, p0: v.clone() }); } } }
+  // collar inner edge: per 10° bin the innermost body vertex above y_hb = -0.10 (radius from opening centre)
+  const oc = new THREE.Vector2(0, 0.0161), bins = {};
+  const bp = body.geometry.attributes.position;
+  for (let i = 0; i < bp.count; i++) { body.getVertexPosition(i, v); v.applyMatrix4(body.matrixWorld).applyMatrix4(inv);
+    if (v.y < -0.10 || v.y > 0.06) continue; const dx = v.x - oc.x, dz = v.z - oc.y, r = Math.hypot(dx, dz); if (r < 0.08 || r > 0.16) continue;   // opening only (inner edge r 0.117-0.148); the outer roll is not the opening
+    const b = Math.floor((Math.atan2(dx, dz) * 180 / Math.PI + 180) / 10) % 36; if (!bins[b] || r < bins[b].r) bins[b] = { i, r, y: v.y }; }
+  const edge = Object.entries(bins).map(([b, e]) => ({ b: +b, ...e }));
+  return { head, body, rig, edge, oc };
+}
+function headRadiusAt(f, inv, az, y, oc) {   // outer radius of the head surface around the opening axis at azimuth az (deg) and height y (head-bone frame)
+  const v = new THREE.Vector3(); let best = -1;
+  for (const m of f.headMeshes) { const p = m.geometry.attributes.position;
+    for (let i = 0; i < p.count; i++) { m.getVertexPosition(i, v); v.applyMatrix4(m.matrixWorld).applyMatrix4(inv);
+      if (Math.abs(v.y - y) > 0.012) continue; const dx = v.x - oc.x, dz = v.z - oc.y, a = Math.atan2(dx, dz) * 180 / Math.PI;
+      let d = Math.abs(((a - az + 540) % 360) - 180); if (d > 6) continue; best = Math.max(best, Math.hypot(dx, dz)); } }
+  return best;
+}
+function measureFrame(f, S) {
+  const v = new THREE.Vector3(), inv = new THREE.Matrix4().copy(S.head.matrixWorld).invert();
+  let rigMax = 0; for (const r of S.rig) { r.m.getVertexPosition(r.i, v); v.applyMatrix4(r.m.matrixWorld).applyMatrix4(inv); rigMax = Math.max(rigMax, v.distanceTo(r.p0)); }
+  let covMin = Infinity, covAz = null; const edgeNow = [];
+  for (const e of S.edge) { S.body.getVertexPosition(e.i, v); v.applyMatrix4(S.body.matrixWorld).applyMatrix4(inv);
+    const dx = v.x - S.oc.x, dz = v.z - S.oc.y, r = Math.hypot(dx, dz), az = Math.atan2(dx, dz) * 180 / Math.PI;
+    const rh = headRadiusAt(f, inv, az, v.y, S.oc); const c = rh - r; edgeNow.push({ az: +az.toFixed(0), y: +v.y.toFixed(3), r: +r.toFixed(3), rh: +rh.toFixed(3) });
+    if (c < covMin) { covMin = c; covAz = az; } }
+  return { rigidMaxMm: +(rigMax * 1000).toFixed(3), coverMinMm: +(covMin * 1000).toFixed(1), coverMinAz: +covAz.toFixed(0), edge: edgeNow };
+}
+try {
+  const figKey = Q.get('fig') || 'hunky', view = Q.get('view') || 'vorn', clipName = Q.get('clip') || 'Idle_A', T0 = +(Q.get('t') || 0.4);
+  const keys = figKey === 'all' ? ['hunky', 'dory'] : [figKey]; const figs = window.__figs = [];
+  for (const [i, k] of keys.entries()) {
+    const f = await loadFigure(k);
+    if (Q.get('scale')) f.tun.headScale = +Q.get('scale');
+    if (Q.get('taper')) { const a = f.hp.tunables.neckTaper.auto, kk = f.hp.tunables.neckTaper.kAtOne;
+      f.tun.neckTaper = Q.get('taper') === 'auto' ? Math.min(1, Math.max(0, (1 - a.maxScaleWithoutTaper / f.tun.headScale) / (1 - kk))) : +Q.get('taper'); }
+    f.applyTunables(); f.fig.updateMatrixWorld(true);
+    f.eyes = buildEyes(f); f.chains = buildDangle(f); f.mouth = await buildMouth(f);
+    f.mixer = new THREE.AnimationMixer(f.fig); f.mixer.clipAction(await clip(clipName)).play();
+    if (figKey === 'all') f.fig.position.x = (i - 0.5) * 1.6 + 0.6;
+    scene.add(f.fig); figs.push(f);
+  }
+  let fb = null;
+  if (view === 'vergleich') { const g = await loader.loadAsync('src/FB_TEMPLATE_LOOK_v5b.glb'); fb = g.scene; fb.traverse(o => { if (o.isMesh) { o.castShadow = true; o.frustumCulled = false; } });
+    fb.position.x = -1.45; scene.add(fb); const mx = new THREE.AnimationMixer(fb); mx.clipAction(await clip(clipName)).play(); mx.setTime(T0); }
+  const info = { figs: [] };
+  if (Q.get('measure')) {
+    for (const f of figs) {
+      f.mixer.setTime(0); f.applyTunables(); f.fig.updateMatrixWorld(true);
+      // rest reference: bind pose
+      f.fig.traverse(o => { if (o.isSkinnedMesh) o.skeleton.pose(); }); f.applyTunables(); f.fig.updateMatrixWorld(true);
+      const S = measureSetup(f), rest = measureFrame(f, S);
+      const dur = f.mixer._actions[0].getClip().duration, rows = []; let worst = { coverMinMm: Infinity }, rigMax = 0;
+      f.mixer.setTime(0);
+      for (let k = 0; k <= 24; k++) { const t = dur * k / 24; f.mixer.setTime(t); f.applyTunables(); f.fig.updateMatrixWorld(true);
+        const m = measureFrame(f, S); rows.push({ t: +t.toFixed(3), rigidMaxMm: m.rigidMaxMm, coverMinMm: m.coverMinMm, coverMinAz: m.coverMinAz });
+        rigMax = Math.max(rigMax, m.rigidMaxMm); if (m.coverMinMm < worst.coverMinMm) worst = { t: +t.toFixed(3), ...m }; }
+      info.figs.push({ fig: f.key, clip: clipName, headScale: f.tun.headScale, neckTaper: f.tun.neckTaper, rigidVerts: S.rig.length, edgeBins: S.edge.length,
+        restCoverMinMm: rest.coverMinMm, restCoverAz: rest.coverMinAz, rigidMaxMm: rigMax, worst: { t: worst.t, coverMinMm: worst.coverMinMm, coverMinAz: worst.coverMinAz }, rows,
+        worstEdge: worst.edge, restEdge: rest.edge });
+    }
+    job.info = info; log('measured'); job.done = true;
+  } else {
+    // simulate from t=0 so the dangle state is real at T0
+    const dt = 1 / 60, n = Math.round(T0 / dt);
+    for (const f of figs) { f.mixer.setTime(0); f.applyTunables(); f.fig.updateMatrixWorld(true); for (let k = 0; k < n; k++) stepFig(f, dt); }
+    scene.updateMatrixWorld(true);
+    const f = figs[0], hb = f.bones['head'], hw = hb.getWorldPosition(new THREE.Vector3()), hips = f.bones['hips'].getWorldPosition(new THREE.Vector3());
+    const cx = figKey === 'all' ? 0 : hips.x, cz = figKey === 'all' ? 0 : hips.z;
+    const look = (t, az, el, r) => { const d = r / Math.tan(cam.fov * Math.PI / 360), a = az * Math.PI / 180, e = el * Math.PI / 180;
+      cam.position.set(t.x + d * Math.sin(a) * Math.cos(e), t.y + d * Math.sin(e), t.z + d * Math.cos(a) * Math.cos(e)); cam.lookAt(t); cam.updateProjectionMatrix(); };
+    if (view === 'vorn') look(new THREE.Vector3(cx, 0.95, cz), 0, 4, 1.05);
+    if (view === 'seite') look(new THREE.Vector3(cx, 0.95, cz), 90, 4, 1.05);
+    if (view === 'dreiviertel') look(new THREE.Vector3(cx, 0.95, cz), 35, 6, 1.05);
+    if (view === 'kragen_hinten') look(new THREE.Vector3(hw.x, hw.y - 0.02, hw.z), 180, 28, 0.36);
+    if (view === 'kragen_vorn') look(new THREE.Vector3(hw.x, hw.y - 0.04, hw.z + 0.05), 0, 14, 0.34);
+    if (view === 'kragen_seite') look(new THREE.Vector3(hw.x, hw.y - 0.03, hw.z), 90, 12, 0.36);
+    if (view === 'hals_dreiviertel') look(new THREE.Vector3(hw.x, hw.y - 0.02, hw.z), 35, 10, 0.5);
+    if (view === 'gesicht') look(new THREE.Vector3(hw.x, hw.y + 0.2, hw.z + 0.1), 15, 5, 0.5);
+    if (view === 'vergleich') { cam.fov = 22; look(new THREE.Vector3(-0.1, 1.3, 0), 0, 3, 2.3); }
+    renderer.render(scene, cam);
+    info.figs = figs.map(g => ({ fig: g.key, clip: clipName, t: T0, headScale: g.tun.headScale, neckTaper: g.tun.neckTaper, mouthSize: +g.mouth.size.toFixed(4),
+      eyes: g.eyes.rig.eyes.length, chains: g.chains.length, rootWorld: g.root.getWorldPosition(new THREE.Vector3()).toArray().map(v => +v.toFixed(4)),
+      rootScale: +g.root.getWorldScale(new THREE.Vector3()).x.toFixed(4), morph: g.headMeshes.map(m => m.morphTargetDictionary && m.morphTargetDictionary.neckTaper) }));
+    job.info = info; document.getElementById('msg').style.display = 'none'; renderer.render(scene, cam); job.done = true;
+  }
+} catch (e) { job.err = String(e && e.stack || e); log('FEHLER ' + job.err); }
+</script></body></html>
