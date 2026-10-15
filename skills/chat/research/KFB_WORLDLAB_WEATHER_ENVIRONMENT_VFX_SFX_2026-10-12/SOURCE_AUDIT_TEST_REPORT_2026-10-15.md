@@ -50,3 +50,31 @@ One exact existing `createEnvironmentHost` with `setShell('tiny')`, `setWeather`
 
 ## One next gate
 Complete the **existing-owner CC0 rain audio-mix proof** and then assess the combined three-scenario source-isolation evidence without converting documentation/CI into game acceptance.
+
+## Additive final evidence · 2026-10-15 · Existing KFB Audio + actual CC0 rain
+
+**Supersedes the earlier B=NOT_RUN checkpoint above; the earlier checkpoint is retained as history.**
+
+**Actual outcome:** A original SKY3 dry/rain/dry = PASS; C original Kenney sprite source isolation = PASS; B **real CC0 rain file through KFB Audio's original calibration mixer, voice duck, recovery and mute** = TECHNICAL PASS. No claim of product sound quality, Clay visual compatibility or target-device performance.
+
+### Exact audio run
+- KFB Audio workflow: https://github.com/georg-doc/kayfabizarro/actions/runs/38786984218
+- Tested branch source revision: `e2266499a7b15a2b630f03f2121c7714d4adc69c`
+- Audio job `116601396362` **SUCCESS · 13/13 PASS**.
+- Artifact: https://github.com/georg-doc/kayfabizarro/actions/runs/38786984218/artifacts/11998403026
+- Artifact SHA-256 `b5f062b0f5b8320fd34256c77a16f33a6ece628a5d2434897b8217a75af20fb6`; files `results.json`, `rain-via-existing-audio-duck.png`.
+- Repeated Weather/VFX source run at same branch head: https://github.com/georg-doc/kayfabizarro/actions/runs/38786984611 · **SUCCESS**. Its 18/18 assertion counts are from original browser run `38785952718`; the repeated head run was successful.
+- CC0 rain source item: https://opengameart.org/content/rain-loopable; **Ylmir**; file from `Rain OGG.zip` downloaded **only inside ephemeral CI**, first sorted OGG member; source original exact member filename was not retained, identity fixed by **SHA-256 `4f659f68cf5219007d0bb0969a1862491ceee4057fda4c491c6001e8608fa2cb` · 550049 bytes**. No copy checked into GitHub media or asset registry; consumer rights/licensing recheck before production intake.
+- Existing production-code source `kfb-hub/stage/audio-calibration/audio-calibration.js` unchanged; its SOURCE.json was intercepted **only in test browser memory** to route existing GLOBAL_BED/wind input to temporary CC0 rain.
+- `AudioContext` count 1, loops 3, decoded-buffer loadErrors 0, browser errors 0; background music timeline kept advancing.
+- Existing ambience gain: open `0.7086` → voice-duck `0.5148` → recovered `0.7715` → existing ambience slider mute `0.0012`.
+- The prior optional `ffprobe` CLI absence (runner exit 127) was made non-blocking; then a test-only 0.8-second mute measurement incorrectly asserted the owner's smooth 0.38-second `setTargetAtTime` before it settled. Raising the test wait to 2.5 seconds (no owner source change) passed. Both predecessor failures remain traceable in Actions, and the repair outcomes improved.
+
+### Boundary and missing work
+- **31/31** total real browser/source assertions across two suites, not a single 31-case whole-world product test.
+- Screenshots actually captured and inspected; they show SKY3 atmosphere with/without rain, original VFX sprite isolated and the original Audio Calibration interface in ducked state. These do not prove Clay integration, visually approved style or a user-listened rain sound.
+- No authored world scene or resident, no target GPU, no deployment, no Site/Stage, no audio asset import/merge/Live.
+- No independent fresh-context human product critic was run. Existing scripted CI is measurement evidence only.
+- New machine-readable summary: `SOURCE_AUDIT_RESULT_2026-10-15.json` (both exact run/asset IDs).
+
+**Exactly one remaining productive gate:** show the *same original source FX* next to an actual existing KFB Clay scene and conduct one human listening audition of the CC0 rain with speech duck/mute. Do not invent a new world or audio owner.
