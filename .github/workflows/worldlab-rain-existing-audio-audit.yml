@@ -45,7 +45,11 @@ jobs:
             if [ -n "$RAIN_FILE" ]; then
               cp "$RAIN_FILE" media/3D_Assets/Audio/Environment/_source_audit_cc0_rain.ogg
               sha256sum media/3D_Assets/Audio/Environment/_source_audit_cc0_rain.ogg
-              ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 media/3D_Assets/Audio/Environment/_source_audit_cc0_rain.ogg
+              if command -v ffprobe >/dev/null 2>&1; then
+                ffprobe -v error -show_entries format=duration,size -of default=noprint_wrappers=1 media/3D_Assets/Audio/Environment/_source_audit_cc0_rain.ogg
+              else
+                echo 'OPTIONAL_FFPROBE_UNAVAILABLE: Chromium decoding proof is authoritative for this slice'
+              fi
             else
               echo 'SOURCE_REQUIRED: ZIP contained no .ogg'
             fi
