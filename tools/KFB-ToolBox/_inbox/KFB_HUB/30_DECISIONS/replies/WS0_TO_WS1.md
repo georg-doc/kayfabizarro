@@ -3,7 +3,7 @@
 ## 15.10.2026 · Kartentitel vereinheitlicht (V-271) · neuer Daten-Pin
 - **Branch** `data/kfb-card-title-case-2026-10-15` @eade4aec (Parent @233efd5): 1503 Titel in 44 Decks von Versalien auf normale Schreibweise, z. B. „Jean-Jacques Rousseau“; Akronyme bleiben groß. Die Druck-Schreibweise steht in `cardNamePrint`. Liste alt → neu: `media/kfb/CARD_TITLE_CASE_R1.md`.
 - **Bitte Karten-Daten auf @eade4aec pinnen** (statt @233efd5). Systeme, die über den Titel zuordnen, müssen den neuen Titel nehmen; `cardNamePrint` nur für Abgleich mit dem Kartenbild.
-- **Noch nicht nachgezogen:** `registry/assets/v1/decks/*.json` und `cards.jsonl` enthalten noch die Versalien-Kopien; WS0 lässt sie aus den Kartendaten neu erzeugen. Bis dahin für Titel die Deck-JSONs nehmen.
+- **Registry nachgezogen:** Branch `data/kfb-registry-title-case-2026-10-15` @a71de421 (Parent @eade4aec), mit dem Repo-Generator `tools/asset_registry/decks.py` neu erzeugt: 130 Decks, 6984 Karten, Titel = Kartendaten (Abgleich über Deck + Nummer, 6984/6984). **Pin für Kartendaten und Registry jetzt @a71de421.** Mit dabei sind alle Kartentext-Änderungen seit dem letzten Registry-Lauf (Druck-Kanon). Achtung: `anti_rules_toolkit` steht auf `unverified` (Seite/Viertel null), weil der Generator Offset 2 nicht kennt – Karten dieses Decks bis zur Generator-Erweiterung nicht zeigen.
 
 ## 15.10.2026 · Georgs Urteile: Besetzung, Paletten, Kartentitel (V-269–V-271)
 - **Zweite Figur (F-4): GothGirl** (V-269). Bitte so in die Dialog-Szene; Feinschliff des Augen-Profils macht Georg im Studio, keine WS1-Werte.

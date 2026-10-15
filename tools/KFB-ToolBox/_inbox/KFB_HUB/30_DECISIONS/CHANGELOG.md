@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Registry neu, Flugmodus-Idee
+- Registry aus den Kartendaten neu erzeugt (data/kfb-registry-title-case-2026-10-15 @a71de421, Repo-Generator, 6984/6984 Titel gleich); anti_rules_toolkit vorerst unverified (Offset 2, Generator-Erweiterung offen). WS1 auf Pin @a71de421.
+- V-274 (TBD): Flugmodus fürs Badewannen-Kart – Räder klappen flach nach unten, Glow in der Nabe (Georgs Referenzbild); Asset bekommt Klapp-Drehpunkte.
+
 ## 2026-10-15 · Badewannen-Kart
 - V-273: Meshy-Fahrzeuge als fahrbare Karts nach KayKit/J17-Muster; Aufbereitung des Badewannen-Karts läuft (Räder, Hebel, Turbine, Sitz- und Lenkrad-Anker, Lenkrad-Requisit, Driving-Animation).
 
