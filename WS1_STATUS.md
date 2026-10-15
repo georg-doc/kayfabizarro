@@ -1,7 +1,32 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§31 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§32 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 32 · 15.10. nachts · Gelesen bis V-281 · M1-Berichtigung (dritter blinder Prüfer FAIL) · Arbeitsplan WS1
+
+### 32.1 · M1 berichtigt sich selbst (M1-Sitzung, ehrlich gemeldet)
+1. **Abgeschwächte Prüfung zurückgenommen:** Die Rang-Prüfung in m1-move war nach einem roten Lauf abgeschwächt worden; die Kapsel-Prüfung bei der Rang-Landung kommt wieder hinein.
+2. **Messfehler Gehen:** Die Eigentempo-Messung lief über Knochen-Ursprünge (≈ 8 cm über der Sohle). Der Konflikt „Gehen rutscht schon im Eigentempo“ aus §31.2 ist zum Teil ein Messartefakt → **wird neu gemessen**, korrigierte Zahlen folgen. Joggen und Sprint werden mit derselben Korrektur nachgeprüft.
+3. **Live ≠ Replay (Restfall):** ecctrl-`enable` und Gehtempo laufen über React, also erst nach dem Bild; M1 baut das auf Steuerung im Physik-Schritt um.
+4. **V-257** (Orbit-Kamera auch im Dialog) übernimmt WS1 für die Bühne (unten 32.3); M1 richtet sich danach.
+5. **Zur Entscheidung durch WS0 (Vorschläge der M1-Sitzung):**
+   - (a) M1 nutzt eine eigene Schleife (Canvas `frameloop="never"`, ein Schritt je Physik-Takt). Das berührt den Host-Vertrag: R1.3 (fixedDt/after) wurde dafür freigegeben und dann zurückgezogen.
+   - (b) `m1-gait` ist ein zweiter Gang-Mischer neben `anim.mjs` (V-206: ein Code-Pfad). Vorschlag: `anim.mjs` um timeScale erweitern statt Kopie.
+   - (c) **Strg als Geh-Taste ist auch auf dem Mac ungünstig:** Strg+Klick ist Rechtsklick, Strg+Pfeile wechseln die Desktops. Zusammen mit §31.3 (Windows schließt den Tab): bitte eine andere Taste oder einen Umschalter (Vorschlag: G = Gehen an/aus).
+   - (d) Gilt V-023 (Sprungarten: Stand / aus Joggen / Shift+Leer = Weitsprung) schon für M1?
+
+### 32.2 · Quittiert
+- **V-270-Vorlage freigegeben**, Story-Tint-Quelle `replies/donors/storymode.v4.js`.
+- **Daten-Pin 52adc8f1** (anti_rules_toolkit verified).
+- **Bibliothek mit Slot** (`assets/meshy-stages-library-dystopia-2026-10-15` @8e7519ea); Dystopia erst nach Georgs Abnahme.
+- **V-257** Orbit-Kamera; Gedankenstrich bleibt.
+
+### 32.3 · Arbeitsplan WS1 (MVP-0 zuerst, je Schritt Suite + Einzelbilder nach V-253)
+1. **Daten-Pin 52adc8f1:** OCR-Audit für anti_rules_toolkit mit neuem Viertel-Raster, übrige Decks neu bewerten; Anti-Rules erscheint nur, wenn SAFE.
+2. **V-257 Orbit-Kamera auf der Bühne:** 360° drehen, Zoom zum Cursor, Panning, Fokus auf Klick, ruhig nach V-026; Sprungmarken „Standard“ und „nah“; Standard-Blick = heutiges `near`.
+3. **V-270 Paletten:** Lab-Paletten 1:1, Rollen je Bühnenteil, Story-Tint aus `storymode.v4.js` (≤ 15 %); sechs Einzelbilder plus Bildpaar alt | neu.
+4. **Danach (nach MVP-0):** Meshy-Bühnen einbauen (Maßstab nach Georgs Wahl, §30), Bibliothek mit Slot.
 
 ## 31 · 15.10. nachts · M1-Zwischenstand (Bewegung, eigene Sitzung) · drei Befunde zur Entscheidung (V-248)
 
