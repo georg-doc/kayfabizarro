@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Suno-Tracks je Deck
+- Drei Sets nach V-275–V-277 neu: ein Track je Deck (Monomyth 4530, Philosophy 4982, Hilfe 4459 Zeichen), Intro aus gedrucktem Cover, Leerzeile zwischen Beats, verdichtet, Opener 23/20/25, Klammern raus, Titel normal geschrieben; Prüfung 0 FAIL. Hub b26–b28 (b17–b25 erledigt).
+
 ## 2026-10-15 · Ein Deck = ein Suno-Track
 - V-277: < 5000 Zeichen pro Deck inkl. Intro/Outro, Leerzeile zwischen allen Beats, harte Verdichtung, Opener so viele wie das Budget erlaubt (je Track einmal); ersetzt die Set-Teilung.
 
