@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Erstes Auto, Größe, Cabrio später
+- V-315: Flammen-Dragster zuerst; Autos größer (Medium-Faktor gemessen, Large hochskaliert); Logos pragmatisch überkleben.
+- V-316 (TBD): FB im Cabrio später, Ohren flattern, Kopf/Schulter neigen, Hände am Lenkrad.
+
 ## 2026-10-15 · Dieselpunk-Fahrzeuge Intake
 - 18 Modelle: 13 Fahrzeuge, 5 Requisiten/Diorama (Alien-Werkstatt → Bühnen-Pipeline). Branch assets/meshy-dieselpunk-vehicles-2026-10-15 @9f5c0f48 mit 10 Fahrzeugen (3 mit Markenlogos zurückgehalten). Räder verschmolzen → Naben-Anker. Hub dv01.
 

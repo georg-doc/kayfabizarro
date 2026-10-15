@@ -4218,6 +4218,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-315",
+   "date": "2026-10-15",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Erstes Hineinhüpf-Auto für M2: 02 Flammen-Dragster (crimson_flame_dragster) (Hub dv01). Die Autos müssen größer sein, damit FrizzleBob plausibel hineinpasst: eine gemeinsame Größe für Medium-Rigs (gemessener Faktor: sitzender FB mit Ohren passt in die geschlossene Kabine), Large-Rigs (Orc Brute) ggf. passend hochskaliert (rigClassScale). Markenlogos auf Texturen (04, 07, 13) pragmatisch mit einem Aufkleber überdecken, ohne großen Aufwand; im Zweifel ein anderes Modell nehmen – es gibt genug Auswahl.",
+   "values": {},
+   "owner": "WS0 (Asset v2) → WS1 (M2)",
+   "check": "Schnittbild FB im Dragster + Größenvergleich v2",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Hineinhüpfen ist nur glaubhaft, wenn die Figur ins Auto passen könnte.",
+   "applies": "M2"
+  },
+  {
+   "id": "V-316",
+   "date": "2026-10-15",
+   "area": "Fahren",
+   "verdict": "TBD",
+   "text": "Später (nicht M2): FrizzleBob sichtbar im Dieselpunk-Cabrio (03 Donner-Jet) wie im Joyride-Cabrio J17. Der Fahrer bewegt sich wenig; lesbar für den Spieler sind flatternde Ohren sowie Kopf und Schultern, die sich in Kurven leicht zur Seite neigen; die Hände halten möglichst Kontakt zum Lenkrad. Wenig Platz im Cabrio → das Lenkrad des Modells nutzen, wenn es passt, statt eines eigenen. Fahrzeugphysik dabei sauber.",
+   "values": {},
+   "owner": "WS1 (später) · WS0 (Asset)",
+   "check": "Fahrvideo FB im Cabrio",
+   "source": "Georg 15.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Lesbare Fahrer-Bewegung entsteht über Ohren und Neigung, nicht über Ganzkörper-Animation.",
+   "applies": "nach M2"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4290,7 +4320,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:525",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:532",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

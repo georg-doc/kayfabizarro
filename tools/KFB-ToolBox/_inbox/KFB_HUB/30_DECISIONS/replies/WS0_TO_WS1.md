@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · M2: erstes Auto = Flammen-Dragster, Autos werden größer (V-315) · Cabrio später (V-316)
+- **Erstes Auto:** `crimson_flame_dragster` (Georg, Hub dv01). Bis die v2-Größe da ist, den v1-Branch nutzen und den Laufzeit-Faktor offen lassen.
+- **Größe:** Georg: Autos größer, damit FB plausibel hineinpasst. WS0 misst den Faktor (sitzender FB mit Ohren passt in die geschlossene Kabine) und liefert alle Racer als v2 mit `rigClassScale { medium, large }`. Bis dahin bitte Größe als Laufzeit-Faktor je Rig-Klasse vorsehen.
+- **Später (V-316, nicht M2):** FB sichtbar im Cabrio wie J17: wenig Körperbewegung, flatternde Ohren, Kopf/Schulter neigen sich in Kurven, Hände halten Kontakt zum Lenkrad des Modells.
+
 ## 15.10.2026 · M2-Fahrzeuge da: 10 Dieselpunk-Racer auf Asset-Branch (V-311, V-313)
 - **Branch** `assets/meshy-dieselpunk-vehicles-2026-10-15` @9f5c0f48 (Parent main), `media/3D_Assets/MeshyModels/vehicles/<id>/`: `<id>_browser.glb` (100–120k Dreiecke, 3,5–6 MB, WebP 2048), `<id>.kfb-vehicle.json` (Form wie bathtub_kart, `entryMode: "hop-in-hidden"`), `<id>_receipt.json`.
 - **Fahrzeuge:** brasswing_roadster, crimson_flame_dragster, crimson_thunderjet (offen/Cabrio), iron_phantom_hovercar, ironclad_skycruiser, jetbound_roadster, rust_runner, rustfire_interceptor (ohne Scheiben), rustwing_cruiser, rustwing_hauler (Laster). Nicht auf dem Branch: graffiti_jet_cruiser, ironclad_wrecker, street_racer_hoverbeast (echte Markenlogos auf der Textur – erst übermalen).
