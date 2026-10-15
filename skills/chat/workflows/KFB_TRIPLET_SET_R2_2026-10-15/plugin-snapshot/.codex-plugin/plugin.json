@@ -1,0 +1,28 @@
+{
+  "author": {
+    "email": "georg@cimoc.de",
+    "name": "Georg Westphalen"
+  },
+  "description": "Complete source-pinned KFB spoken-word Triplet deck sets with deterministic openers and checker R2.",
+  "interface": {
+    "capabilities": [
+      "Interactive"
+    ],
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Prepare a complete source-faithful spoken-word Triplet set for Monomyth Mayhem with four export files."
+    ],
+    "developerName": "Georg Westphalen",
+    "displayName": "KFB Triplets",
+    "longDescription": "Author source-pinned KFB cards as clean spoken-word sets for individual takes, with checker R2 and no music.",
+    "shortDescription": "Whole-deck spoken-word Triplets"
+  },
+  "keywords": [
+    "triplets",
+    "cards",
+    "KFB"
+  ],
+  "name": "kfb-triplets",
+  "skills": "./skills",
+  "version": "0.2.1"
+}
