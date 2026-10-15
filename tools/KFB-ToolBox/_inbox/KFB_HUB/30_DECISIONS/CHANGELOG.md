@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Triplet-Plugin v0.2.1
+- WSA chat: kfb-triplets v0.2.1 auf editorial/kfb-triplets-set-r2-2026-10-15 @180ee49d; Prüfskript 1:1 übernommen, Monomyth-Ausgabe ist aber eine bytegleiche Wiedergabe der WS0-Referenz (ehrlich gemeldet) – kein eigener Generierungstest. Nächster Schritt (Hub b15): Plugin erzeugt Wrinkle Rumble selbst, echter Python-Check, WS0 liest vor Georg.
+
 ## 2026-10-15 · Drittes Set abgenommen
 - V-272: Hilfe, ich bin ein Mensch! PASS; Frankenstein-Größe passt; Titel-Grenzfälle bleiben; Registry-Neuerzeugung läuft.
 
