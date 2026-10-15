@@ -1,7 +1,65 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§27 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§28 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 28 · 15.10. · Gelesen bis V-274 · V-269 GothGirl Standard · V-271 Daten auf a71de421 · Vorlagen-Zeile V-270 (Paletten neu)
+
+**Code:** kfb-planet @5bf545e (lokal; Spiegel nach ws1/kfb-planet folgt nach der vollen Suite). **Suite:** läuft nach der laufenden M1-Runde (abgesprochen); Nachtrag hier.
+
+### 28.1 · Umgesetzt
+- **V-269 GothGirl:** Mit `actors=fb` steht rechts GothGirl (Profil gothgirl, Klassen-Faktor wie FrizzleBob); `cast=<id>` wählt einen anderen Kandidaten, `cast=fb` stellt FrizzleBob beidseitig.
+  - Der F1-Darsteller erscheint jetzt wie FrizzleBob erst, wenn Augen und Ruhe-Clip stehen (keine T-Pose, keine Spender-Augen im Bild), und meldet `status().shown`.
+  - `g4` prüft die neue Standard-Besetzung.
+- **V-271 Kartendaten-Pin a71de421:** `MEDIA_COMMIT` umgestellt; `cards.json`, `deck-blobs.json` und `deck-genres.json` neu erzeugt.
+  - Audit neu bewertet: unverändert 60/78 SAFE, 3142 Karten; Titel-Schreibweise ändert die OCR-Zuordnung nicht.
+  - `anti_rules_toolkit` bleibt UNSAFE, also werden keine Karten aus diesem Deck gezeigt (wie verlangt).
+  - Vorschau-Zeile Rousseau jetzt in Georgs Schreibweise „Jean-Jacques Rousseau“ (V-272 „Titel normal“; damit ist der Vermerk aus §27.2 hinfällig).
+- **Quittiert:**
+  - V-264 bis V-268 (Bühnen, Displays ohne Sockel; Einbau nach MVP-0);
+  - V-272 (HIAH PASS, Größe gleich);
+  - V-273/V-274 (Karts, später);
+  - Freigabe V-256 mit UFO-Slot 1,79:1. Schnitt B1 (pixelgleich) folgt.
+  - Drift: Die Dialog-Szene bevorzugt Karten von drift-freien Seiten. Das baue ich mit der Kartenauswahl des Dialogs ein; die G4-Vorschau hat feste Karten.
+
+### 28.2 · Vorlagen-Zeile V-270 · Bühnen-Paletten als Harmonie-Systeme (bitte freigeben)
+- **Quelle (1:1 Daten, Zahlen unverändert):** Lab `tools/KFB-ToolBox/_inbox/KFB Island Worldbuilder Lab/src/palettes.ts` @64ae61fe7 (Lab-Schnappschuss 11.10.).
+  - `PALETTES`: sechs Insel-Paletten. canyon, bucht und otown sind Joyride 1:1 aus `track-look.v5.js` `WORLDS` (J14-Schnitt, Blob 7c0d2483); wueste, kfb_town und protopia sind abgeleitet.
+  - Rollen je Palette: sky, top/top2, hill[2], sand, rim, under[4], rock, tower[2], leaf[3], trunk, cloud, water, path, road/strang.
+  - `ENV_ROLES` (Farb-Grammatik je Palette): ground, grass, stone, bark, leaf, bloom, water, **accent** (eine Akzent-Familie zum Wahrzeichen), sand, paved, earth, asphalt, masonry (je drei bis vier Töne hell → dunkel, mit `why` je Rolle).
+  - Regel V-051 / `KFB_WORLDBUILDER_PLAN_R1.md` (`kfb.island-theme/1`): Sechser-Palette plus Rollen; storyTint nur als leichte Einfärbung über dem Grundthema.
+- **Was sich gegenüber V-245 ändert:**
+  - `world-palettes.js` (Stimmungs-Stufen) und `palette-roles.js` (aus drei Stufen abgeleitet) werden nicht mehr Farbquelle der Bühne; `palette-roles` bleibt höchstens Formel-Vorlage für Lichter und Birnen.
+  - Quelle ist die Insel-Palette mit ihren benannten Rollen.
+- **Rollen für alle Bühnenteile (Vorschlag, Georg urteilt am Bild):**
+
+  | Bühnenteil | Rolle |
+  |---|---|
+  | Himmel | `sky` → `cloud` (Verlauf) |
+  | Gelände um das Theater | `ground[0..2]` |
+  | Ränge, Mauern, Bögen (senkrechte Flächen) | `stone[0..2]` bzw. `masonry`, Helligkeit der Meshy-Textur auf diese Stufen |
+  | Bühnenboden und Stufen-Oberseiten (waagrechte Flächen, nach Flächen-Normale) | `paved` bzw. `sand` |
+  | Billboard-Rahmen | `accent[0]` |
+  | Pfosten | `bark` bzw. `trunk` |
+  | Zierleiste | `accent[2]` bzw. `cloud` |
+  | Akzente (später Requisiten, Fahnen, Birnen) | `accent` und `bloom` |
+
+  Waagrecht und senkrecht trennt ein Normalen-Kriterium im Shader (eine Textur, zwei Rollen); das ist die einzige neue Technik.
+- **Story-Tint (V-051 storyTint):** Eine leichte Einfärbung (höchstens etwa 15 %) aller Bühnenteile und des Himmels je Story-Mode der Karte (High- bzw. Low-Vibrational-Fluff), über der Palette, nie statt ihr. **Quelle fehlt:** Das Fluff-Farbschema steht nicht im Lab-Schnappschuss. Bitte Pfad bzw. Datei nennen; bis dahin kein Tint.
+- **Karte → Palette (Vorschlag, ersetzt die Achter-Tabelle):**
+
+  | Palette | Genres |
+  |---|---|
+  | otown (schräge Vorstadt) | satire, meta, art, craft |
+  | bucht | comedy |
+  | canyon | conspiracy, esoteric |
+  | wueste (Pyramiden) | history, mythology |
+  | kfb_town (Burg) | politics, economics, education |
+  | protopia (Bergwiese) | futures, medical, psychology, philosophy, narrative, literature |
+
+  Gleiche Regel genre[0] → bundle → Rückfall.
+- **Wechsel weich** wie gehabt (V-011).
+- **Abnahme:** je Palette ein Einzelbild 1920 × 1080 nach V-253 (sechs Bilder, Beispielkarte je Palette), dazu ein Bildpaar alt (V-245) | neu für eine Karte. Test: Rollen je Bühnenteil, Quelle bytegleich zum Lab-Stand, Wechsel weich.
 
 ## 27 · 15.10. · F-3a Vorschau-Text G4 gebaut (drei Karten, Georgs Fassungen, Opener als eigene Schicht)
 
