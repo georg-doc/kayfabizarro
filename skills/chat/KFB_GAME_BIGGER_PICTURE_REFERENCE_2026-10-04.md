@@ -144,3 +144,19 @@ The current Golden Journey is the first integrated example of this philosophy:
 
 This reference should be read before major KFB game/world/dialogue/progression decisions.
 It does not create a new runtime, rules engine, canon owner or content database.
+
+
+---
+
+## Additive Georg Global Intent · 2026-10-15 · Role-conscious inhabitants and Kayfabe agency
+
+**GEORG CREATIVE DIRECTION / GLOBAL PRODUCT INTENT; not a new runtime contract, V-number or mandatory MVP gate.** Full source-backed concept record:
+\`tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md\` on the active WS0 decision-register branch. Current WS0 \`ARCHITECTURE_R1.md\`, \`DECISIONS.md\` and actual WS1 Status govern implementation.
+
+KFB Residents are not just automated behavior loops and are not didactic mouthpieces. They can know their **social mask, vocation, actor/wrestler Kayfabe role and recurring tragicomic faults** while retaining lived biography, strengths, relationships, weaknesses and purpose inside the fiction. A Resident may see other choices and sometimes enact them, but deliberately return to the role for duty, enjoyment, belonging or identity. Role-consciousness **does not imply universal Academy/Fluff lore awareness**, generic fourth-wall jokes, confessions, compulsory redemption or universal trauma labels.
+
+New Card contexts, Gabriel-like fields of sense, Warburgian unexpected neighbors, changing staged backdrops or a surprising relationship can invite a **different reading of the same person** without identity resets. Marxian social role, wrestling Kayfabe, Gabriel's ontology and Warburg's arrangement are distinct theories/techniques brought into KFB as editorial lenses, not asserted equivalents.
+
+The game aims for a **chill-and-fun, revisitable, voluntary** return loop: encounter → role/friction → optional alternative reading/agency → meaningful choice or re-commitment → consequence → relationship/memory. Silence and refusal remain valid. Preserve \`PULL, DON'T GATE\`; no morality scoring, psychological diagnostic mechanics or compulsive grind.
+
+Application to the current existing two-performer Card/Billboard/Metatheatre slice remains a **proposal for WS0**, with exactly one current next gate \`WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT\`; this pointer adds neither a WS1 runtime writer nor a blocking feature requirement.
