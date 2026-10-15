@@ -76,3 +76,64 @@ Current WS0 `GAME_LOOP_R1.md` and `WORLD_CONCEPT_R1.md` are **OPEN proposals**; 
 WS0 alone can add a V-number, route a targeted later narrative pilot or incorporate this wording into the canonical Bigger Picture. This document alone is not an acceptance, a new social-stat schema, an instruction to retune M1/M2, or permission to edit WS1.
 
 **One next gate (retained current WS0 queue): `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`.** WS0 should link this Global Intent as narrative acceptance *guidance* when choosing the current scene pilot, without turning this philosophical note into a second parallel runtime assignment.
+
+
+---
+
+## R1.1 · Georg creative refinement · 2026-10-15 · Joyful fate, self-aware failure, cosmic casting and convivial opponents
+
+**Source class:** Georg's direct Global Intent clarification, not a WS0-assigned V-number, not newly proven live behavior or license to fabricate specific individual Resident backstories. **It sharpens R1:** residents are not merely *capable* of recognizing their role eventually. Across many authored encounters they can already see their own recurring mistakes, quirks, externalizations, projections, relational/communication spirals and role contradictions with startling clarity. They can comment on these with dry, self-deprecating, sometimes savage good humour — while inhabiting the mask with wholehearted seriousness and playfulness rather than cynical detachment.
+
+### A. Ontological frame: chosen, assigned, celebrated
+The KFB universe may be experienced as a **cosmic casting**. A figure may imagine, believe, recall or in individual authored lore actually have chosen *this* role for their immortal soul: the recurring Orc, the restless Graveyard skeleton, the toy soldier, the unsuccessful schemer, the obsessive banker, the hopeful farmer. The cosmic job matters to them precisely because their flaws, hardships, compulsions, embarrassment and minor triumphs constitute *their* part of the ensemble.
+
+**Do not assert a universal reincarnation/soul-selection fact about every inhabitant until Georg/WS0 settles that metaphysical rule.** Preserve plural interpretations: willingly selected role, inherited/assigned position, imposed institution, job enjoyed despite cost, or a Resident's personal myth about why they do it. Being capable of stepping out does not imply every character can instantly escape every material condition, war, hierarchy, compulsion or trauma. Role knowledge, agency, circumstance and consent remain distinct.
+
+**Guiding thesis:** *They know the part is absurd. They still play it with their whole heart.* They can be simultaneously conscious of their role and emotionally committed to it. Neither a naive NPC trapped in code nor a smug actor mocking the set.
+
+### B. Two equally true social registers
+**In character / on duty:** the Orc hurls himself into another hopeless battle; the undead skeleton haunts its cemetery; a toy soldier embodies the petty, procedural banality of authority; the banker sincerely worships his ledgers. They act in-world and accept real scene stakes and consequences. Combat, fear, solidarity, injury, coercion and responsibility are not fake merely because the performance has Kayfabe form.
+
+**Between performances / off duty:** opponents can share a beer or campfire, repair props, compare defeats, dance together, tell embarrassing stories, acknowledge their pattern and celebrate being cast in the same improbable universe. The Orc may be proud of his spectacular incompetence and the survivor genuinely tired of fighting; the skeleton may happily discuss the miserable logistics of undeath without an NPC “I'm dead LOL” gag. One Resident can recognize another as a fellow performer without agreeing with or excusing their on-duty behavior.
+
+This need **not** look like a clean game-wide ON/OFF switch. A mask may leak into private life; after-hours camaraderie can coexist with resentment and exhaustion. A character might never clock out, might refuse the truce, or might privately be more ruthless than the publicly theatrical version. Author different thresholds of awareness, voluntariness and humour rather than one universal sitcom cast.
+
+### C. Self-awareness is not rehabilitation, nor absolution
+Georg's intended **reconciliatory** attitude is toward human imperfection and the comic dignity of bearing one's failures without pomposity. A character can love their own ridiculous predicament and laugh at a trauma-tinted habit; that is their distinctive perspective, **not a claim that harm is harmless or that actual trauma is funny by default**. Do not psycho-diagnose every quirk. Where biography clearly establishes trauma, portray it as authored history, not shorthand to excuse violence or control.
+
+A toy soldier embodying the *banality of evil* can self-knowingly enact routine cruelty as an institutionally produced role. In an off-duty scene, he might also show warmth, humour or loyalty; that tension must **increase**, not erase, the player's ability to see that others were hurt. Compassion for the performer does not automatically absolve the action. Victims and other Residents retain independent perspectives, refusal rights, consequence and memory. There is no required redemptive moral ending and no convenient “only acting” defence.
+
+### D. Cognitive dissonance as Kayfabe's resonance space
+Proposed KFB formulation of Georg's existing maxim:
+**“Cognitive dissonance is the resonance space of Kayfabe Bizarro.”**
+This is a *creative metaphor*, not a clinical definition of cognitive dissonance or a requirement to resolve every contradiction.
+
+The same person can be enemy and convivial neighbour, socially scripted and personally aware, shamefully fallible and sincerely joyful, inhabit a hand-built backdrop and behave as if it is real, play the same failure loop and still see an exit. The audience need not sign up for the character's explanation: the **simultaneous tension** invites Comic Closure and personal interpretation.
+
+The scene must offer a *felt* contradiction — action, reaction, rhythm, scenery, relationship, accumulated memory — not just a speech announcing that contradiction exists. Never force every Resident to say “I know my own failures,” “we are all actors,” “our cosmic assignment,” etc. Generic writerly meta-jokes destroy the very conviction that makes the tension work.
+
+### E. Situational perspective shift: the same character in several semantic fields
+Reuse rather than replace the existing identity/Affect/Activity/Relationship/PerformanceCue and existing ChatterBox/Lean Memory axes. For an authored Resident, editorial questions:
+1. **Role on stage:** who do others expect me to be, what do I do, and what is my real investment?
+2. **Fault loop:** what exactly do I repeat (specific action/trigger and motive), what does it cost, what do I enjoy or secretly defend about it?
+3. **Reflective aperture:** which alternate encounter/Card/“good neighbour” makes that loop legible even to me?
+4. **Self-deprecation style:** brief sardonic observation, delighted exaggeration, embarrassed pause, or silent unforced gesture — character-specific, with no template catchphrase.
+5. **Off-duty relation:** with whom can I lower the mask, laugh, contest a result, repair the set, form a truce or remain hostile?
+6. **Agency and consequence:** can I improvise, choose to keep playing, refuse, rest or change a small act? Does my choice leave a believable trace in someone else's relationship or event memory?
+
+These are **authored dramaturgy prompts, not fields to add to every NPC's runtime schema**. A resident can be highly role-aware without knowing the Academy's full story, the player UI or all other Residents' histories.
+
+### F. Small scenic test concept: Orc vs toy soldier, then after hours
+**Beat 1, public:** the source-true Orc mob re-enacts a losing skirmish in front of a Card/billboard; a toy soldier conscientiously applies a stupid order. Lighting and set may be exaggerated, but physical consequences/other actors still matter.
+**Beat 2, after duty:** same original actors in the same source-backed diorama with one motivated night lamp or campfire; one offhand comment or gesture reveals they each know their own failure spiral. No mass confession, generic “NPC” joke or moral lesson. They can enjoy their parts, yet genuinely disagree about the soldier's actions.
+**Beat 3, return:** a new Card/biome or dawn backdrop changes what the player notices; next morning the roles resume with one remembered relationship beat. No automatic permanent conversion, no resetting identity or dialogue/history and no forced reconciliation. Player may join, listen, leave or hold a contrary judgment.
+
+These are **illustrative characters/actions only**, not approved exact cast, encounter, animation, Card mapping, text pool line or gameplay reward.
+
+### G. Quality guard / relation to current production
+- Preserve **Conviction + Reflectiveness + Joy + Cost** together. Avoid a facile “everyone is friends because it was theatre” retcon. Avoid treating the cast's ritual suffering as a compulsion engine for the player. The experience is repeatable because meetings are interesting, funny and meaningfully revisitable, not because progress is withheld.
+- Writing/acting outputs: no canned fourth-wall gag, therapeutic speech, generic self-deprecation, repetitive snark, “secretly good villain” trope, or automatic forgiveness. Let the Resident demonstrate both competence and defects through specific activity, expression, timing and relationships.
+- This extends the ongoing WS0 Global Intent and the already filed metatheatre/light intake #404; it does **not** widen the active WS1 MVP into fully simulated psyche, immortality or faction after-hours AI.
+- The existing WS0 register remains authority for stage/lighting, actual Card, approved dialogue pool and real KKit cast. Existing WS1 R3F host is the only runtime writer. No new schema, V-number, deployment, new issue or human gate from this addendum.
+
+**Exactly one next gate (unchanged): \`WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT\`.** WS0 may use one role-aware contrast as *narrative reference* when selecting its current two-actor Card-stage pilot; any later resident-life production work requires a separately authorized receiving slice, not this conceptual addendum.
