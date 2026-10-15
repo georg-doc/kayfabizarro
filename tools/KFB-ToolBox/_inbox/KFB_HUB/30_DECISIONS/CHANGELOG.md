@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Bühnen-Batch fertig
+- Theater, Giza, Akashic, Mesa, Nature, Snow mit Slot + Rahmen (STAGES_BATCH_R1.md), Köln-Komposition (Dom 1014035640 + Roncalliplatz + Leinwand 20 × 11 m, Museum Ludwig/Philharmonie als Platzhalter, OSM aus lokalem Auszug, Meshy-Prompts). Hub st01 (Batch) und st02 (Köln-Maßstab).
+
 ## 2026-10-15 · Stem-Schnitt Philosophy
 - faster-whisper (medium.en) + ffmpeg im venv ~/.kfb-audio-venv (Georg freigegeben); Philosophy 01d: 68/68 Karten + Intro/Outro erkannt und je Karte geschnitten (Stimme, Mix, Stem-Summe), Wort-Zeitdatei fürs Karaoke; KFB_HUB/40_AUDIO/philosophy_01d/; Hub au01 mit Hörproben (Hub-Folien jetzt mit Ton).
 
