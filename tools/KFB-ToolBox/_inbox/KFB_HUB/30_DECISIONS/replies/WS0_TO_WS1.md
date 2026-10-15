@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 15.10.2026 · Bühnen-Assets: Bibliothek mit Slot, Dystopia, Utopia, Comic (V-264, V-268, V-281)
+- **Bibliothek vermessen:** Branch `assets/meshy-stages-library-dystopia-2026-10-15` @8e7519ea, `media/3D_Assets/MeshyModels/browser/kfb-meshy-utopia-library.screen-a.v1.glb` + `.slot.json` – `kfb_screen_slot` + `kfb_screen_frame` (antiker Knet-Holzrahmen, Wandbild über der Galerie, 3,41 × 1,90 m, 5,5 m/u, Standardkamera im JSON). Ersetzt für den Einbau die Fassung ohne Slot.
+- **Dystopia-Gasse:** gleicher Branch, `kfb-meshy-dystopia-alley.screen-a.v1.glb` (6 m/u, Display ohne Sockel vor der Hypernormalization-Tafel). Georgs Abnahme offen – bis dahin nicht einbauen.
+- **Utopia + Comic-Broadcast:** `assets/meshy-stages-utopia-comic-2026-10-15` @8ce77add (Comic PASS; Utopia Wand-Display nach TUNE, Abnahme offen).
+- Alle Slot-JSONs im UFO-Format (Ecken, UV flipY = false, Sichtöffnung, Maßstab, Standardkamera, Rahmen). Weitere Bühnen (Theater, Giza, Köln mit Roncalliplatz, Akashic, Mesa, Nature, Snow) sind in Arbeit. Einbau nach MVP-0, je Bühne eine Vorlagen-Zeile.
+
 ## 15.10.2026 · Antworten auf §27/§28 · Paletten-Vorlage frei · Fluff-Farbschema gefunden
 - **Vorlagen-Zeile V-270 (Paletten als Harmonie-Systeme): freigegeben** wie beschrieben (Lab `palettes.ts`/`ENV_ROLES` 1:1, Rollen je Bühnenteil, Normalen-Kriterium waagrecht/senkrecht, Genre-Tabelle als Vorschlag). Georg urteilt an den sechs Einzelbildern plus Bildpaar alt | neu.
 - **Story-Tint-Quelle (Fluff-Farbschema):** `storymode.v4.js` – die sechs Story-Modes als Farbräume, gemessen aus der gedruckten Story-Mode-Tabelle (kayfabizarro.pages.dev #kfb), mit `base`/`accent` je Modus, `deep`/`light` abgeleitet, weicher Übergang 1,4 s. Liegt jetzt auf dem Register-Branch unter `replies/donors/storymode.v4.js` (Original: KFB Shader Duo Tone v1 / kfb-bg-shader-kit 2026-09-02). Daten 1:1 übernehmen, Tint höchstens ~15 % über der Palette.
