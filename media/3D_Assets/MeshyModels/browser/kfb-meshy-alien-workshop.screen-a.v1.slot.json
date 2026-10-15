@@ -1,0 +1,206 @@
+{
+ "file": "~/Dropbox/CLAUDE/MeshyModels/_browser/alien_workshop/AlienWorkshop_A_screen.glb",
+ "bytes": 15409504,
+ "sha256": "aaaae31165770f676a75ac9bfc07139b51513c07f40d00fefb8aed98695750dd",
+ "source": "awA.glb",
+ "mode": "FRONT_DISPLAY (V-265/V-268: genieteter Labor-Bildschirm vor dem Globus-/DNA-Monitor der rechten Rückwand, etwas größer als der Monitor; Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_rivet_metal (Clay-Gussmetall #5C6168 wie der Monitorrahmen, rough 0,55, metal 0; 8 Nieten + 2 Laschen gleiches Material)",
+  "bezel_u": 0.012,
+  "bezel_m": 0.072,
+  "depth_u": 0.021,
+  "outer_u": {
+   "x": [
+    0.248,
+    0.632
+   ],
+   "y": [
+    0.123,
+    0.3478
+   ],
+   "cardBottom_y": 0.135,
+   "z": [
+    -0.287,
+    -0.266
+   ],
+   "note": "lokale Rahmenkoordinaten vor der Drehung (yaw um Pivot)"
+  },
+  "mount": "ohne Sockel und ohne Stützen zum Boden (V-268): hängt an 2 genieteten Laschen am Rahmen des Meshy-Monitors, Rückplatte 0,01 m vor dem Monitorrahmen, bündig zur Monitorfläche gedreht (yaw -41,7°); Oberkante unter dem Deckenring",
+  "inlay": "Türkis-Band (Clay-Türkis #3E9C96 wie die Monitor-Grafiken) mittig auf der Lünette, 4 Eck-Knöpfe; kein Leuchten (WS1-Licht)"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z = offene Schnittseite, Werkstattboden y ≈ −0,408, Galerie y ≈ +0,035)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    0.30337,
+    0.33878,
+    -0.39474
+   ],
+   "topRight": [
+    0.57663,
+    0.33878,
+    -0.15126
+   ],
+   "bottomRight": [
+    0.57663,
+    0.132,
+    -0.15126
+   ],
+   "bottomLeft": [
+    0.30337,
+    0.132,
+    -0.39474
+   ]
+  },
+  "center_u": [
+   0.44,
+   0.23539,
+   -0.273
+  ],
+  "normalAtCenter": [
+   -0.66523,
+   0,
+   0.74664
+  ],
+  "chordWidth_u": 0.366,
+  "arcWidth_u": 0.366,
+  "height_u": 0.20678,
+  "aspect_arc": 1.77,
+  "surface": "eben, Normale [-0.66523,0,0.74664] (yaw -41.7°), Ebene durch center_u",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,408)·s, z·s), Ursprung = Modellmitte (Boden liegt 0,408 u unter dem Ursprung); s = 6 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     0.30561,
+     0.33578,
+     -0.39274
+    ],
+    "topRight": [
+     0.57439,
+     0.33578,
+     -0.15326
+    ],
+    "bottomRight": [
+     0.57439,
+     0.135,
+     -0.15326
+    ],
+    "bottomLeft": [
+     0.30561,
+     0.135,
+     -0.39274
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0082,
+    "u1": 0.9918,
+    "v0": 0.0145,
+    "v1": 0.9855
+   }
+  },
+  "corners_m_note": "Schlüsselname corners_m_s5p5 aus dem Utopia-Format beibehalten; Werte hier mit s = 6 m/u",
+  "corners_m_s5p5": {
+   "topLeft": [
+    1.834,
+    4.463,
+    -2.356
+   ],
+   "topRight": [
+    3.446,
+    4.463,
+    -0.92
+   ],
+   "bottomRight": [
+    3.446,
+    3.258,
+    -0.92
+   ],
+   "bottomLeft": [
+    1.834,
+    3.258,
+    -2.356
+   ]
+  },
+  "visibleSize_m": [
+   2.16,
+   1.2
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   0.0,
+   0.5,
+   2.0
+  ],
+  "target": [
+   0.03,
+   -0.08,
+   -0.1
+  ],
+  "fovV_deg": 40,
+  "note": "Standardkamera frontal in den offenen Schnitt der Werkstatt (Bühne in Modell-Einheiten, three.js PerspectiveCamera, fov vertikal)"
+ },
+ "scale_m_per_u": 6,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "figures": {
+  "floorY_u": -0.408,
+  "positions_u": [
+   [
+    -0.02,
+    0.42
+   ],
+   [
+    0.17,
+    0.44
+   ]
+  ],
+  "heights_m": [
+   1.8,
+   2.0
+  ],
+  "stageZone_u_xz": [
+   [
+    -0.2,
+    0.27
+   ],
+   [
+    0.42,
+    0.27
+   ],
+   [
+    0.45,
+    0.5
+   ],
+   [
+    0.3,
+    0.62
+   ],
+   [
+    -0.4,
+    0.61
+   ],
+   [
+    -0.56,
+    0.49
+   ],
+   [
+    -0.22,
+    0.46
+   ]
+  ]
+ }
+}

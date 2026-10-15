@@ -1,0 +1,201 @@
+{
+ "file": "~/Dropbox/CLAUDE/MeshyModels/_browser/verdant_ruins/VerdantRuins_A_screen.glb",
+ "bytes": 17376076,
+ "sha256": "b668a45b4285156d0d999b7b29a46c3eb5b972b9265a5788880c9e5e63fe7022",
+ "source": "vrA.glb",
+ "mode": "FRONT_DISPLAY (V-265/V-268: Attika-Tafel auf der Krone des Triumphbogens, Bogen + Durchblick bleiben frei; Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_sandstone (Clay-Sandstein verwittert #B3A283, rough 0,92, metal 0; Steinblock 0,48 m tief)",
+  "bezel_u": 0.016,
+  "bezel_m": 0.192,
+  "depth_u": 0.04,
+  "outer_u": {
+   "x": [
+    -0.276,
+    0.196
+   ],
+   "y": [
+    0.357,
+    0.6344
+   ],
+   "cardBottom_y": 0.373,
+   "z": [
+    -0.762,
+    -0.722
+   ]
+  },
+  "mount": "ohne Sockel und ohne Stützen zum Boden (V-268): die Tafel liegt wie die Inschrift-Attika eines Triumphbogens direkt auf den Moospolstern der Bogenkrone (y 0,36), 0,26 m hinter der Bogen-Vorderkante; Steinblock 0,48 m tief; frontal zur Standardkamera (yaw 0,0°)",
+  "inlay": "Moos-Band (Clay-Moosgrün #737F3E wie die Moospolster auf dem Bogen) mittig auf der Lünette, 4 Eck-Steine; kein Leuchten (WS1-Licht)"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z, zentrale Plaza y ≈ −0,142, obere Terrasse am Bogen y ≈ −0,072)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.263,
+    0.6214,
+    -0.7335
+   ],
+   "topRight": [
+    0.183,
+    0.6214,
+    -0.7335
+   ],
+   "bottomRight": [
+    0.183,
+    0.37,
+    -0.7335
+   ],
+   "bottomLeft": [
+    -0.263,
+    0.37,
+    -0.7335
+   ]
+  },
+  "center_u": [
+   -0.04,
+   0.4957,
+   -0.7335
+  ],
+  "normalAtCenter": [
+   0,
+   0,
+   1
+  ],
+  "chordWidth_u": 0.446,
+  "arcWidth_u": 0.446,
+  "height_u": 0.2514,
+  "aspect_arc": 1.7741,
+  "surface": "eben: z = -0.7335",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,142)·s, z·s), Ursprung = Modellmitte (Plaza liegt 0,142 u unter dem Ursprung); s = 12 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     -0.26,
+     0.6184,
+     -0.7335
+    ],
+    "topRight": [
+     0.18,
+     0.6184,
+     -0.7335
+    ],
+    "bottomRight": [
+     0.18,
+     0.373,
+     -0.7335
+    ],
+    "bottomLeft": [
+     -0.26,
+     0.373,
+     -0.7335
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0067,
+    "u1": 0.9933,
+    "v0": 0.0119,
+    "v1": 0.9881
+   }
+  },
+  "corners_m_note": "Schlüsselname corners_m_s5p5 aus dem Utopia-Format beibehalten; Werte hier mit s = 12 m/u",
+  "corners_m_s5p5": {
+   "topLeft": [
+    -3.12,
+    9.125,
+    -8.802
+   ],
+   "topRight": [
+    2.16,
+    9.125,
+    -8.802
+   ],
+   "bottomRight": [
+    2.16,
+    6.18,
+    -8.802
+   ],
+   "bottomLeft": [
+    -3.12,
+    6.18,
+    -8.802
+   ]
+  },
+  "visibleSize_m": [
+   5.28,
+   2.94
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   -0.02,
+   0.62,
+   2.15
+  ],
+  "target": [
+   -0.02,
+   0.04,
+   -0.12
+  ],
+  "fovV_deg": 40,
+  "note": "Standardkamera frontal auf Plaza und Triumphbogen (Bühne in Modell-Einheiten, three.js PerspectiveCamera, fov vertikal)"
+ },
+ "scale_m_per_u": 12,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "figures": {
+  "floorY_u": -0.142,
+  "positions_u": [
+   [
+    -0.07,
+    0.03
+   ],
+   [
+    0.09,
+    0.0
+   ]
+  ],
+  "heights_m": [
+   1.8,
+   2.0
+  ],
+  "stageZone_u_xz": [
+   [
+    -0.16,
+    -0.23
+   ],
+   [
+    0.11,
+    -0.23
+   ],
+   [
+    0.25,
+    -0.04
+   ],
+   [
+    0.11,
+    0.26
+   ],
+   [
+    -0.2,
+    0.26
+   ],
+   [
+    -0.24,
+    -0.04
+   ]
+  ]
+ }
+}
