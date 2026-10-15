@@ -1,0 +1,2050 @@
+{
+  "schema": "kfb.opener-r3-test-results/1",
+  "date": "2026-10-15",
+  "status": "RESEARCH_SIMULATION_NOT_HUMAN_APPROVED",
+  "sources": {
+    "r2CheckerBlob": "095846ba2896a83d1b8747066978e7f05b6d7164",
+    "eightDeckBranch": "editorial/kfb-triplets-eight-decks-r2-2026-10-15",
+    "sourceTakesSHA": {
+      "cosmic_grift_dark_journalism": "b03f86cdd00566116e151e253a9718aa53e4b320",
+      "pharaoh_piledriver": "529608023fe37df4abc3a885ccd957f7a78b1f2b",
+      "observation_underground": "85320089becda5516d9c8199bf0e30ae7cdce7ea",
+      "nibelungen_booster_pack_design": "32123144fe55310cecfb9ca52494be4bd56b180d"
+    }
+  },
+  "tests": {
+    "positiveCompositions": 24,
+    "negativeRejections": 24,
+    "positiveClassPass": 24,
+    "negativeClassPass": 24,
+    "simulations": 8,
+    "scenarios": 4,
+    "budgetPass": 8,
+    "noLiteralRepeatPass": 8,
+    "strictFamilyGapOnR3Pass": 4,
+    "simulatedCards": 432,
+    "issues": []
+  },
+  "positiveExamples": [
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 2,
+      "cardTitle": "The UFO File",
+      "cardClass": "OBJECT",
+      "id": "NEW_043",
+      "literal": "An unsigned letter said:",
+      "family": "LETTER_POST",
+      "sourceTriplet": "The UFO File, INITIATIVE: File commands military-industrial complex",
+      "spokenText": "An unsigned letter said: The UFO File, INITIATIVE: File commands military-industrial complex",
+      "openerOverhead": 25,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/cosmic_grift_dark_journalism/cosmic_grift_dark_journalism.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 7,
+      "cardTitle": "The TUAOI Firestone",
+      "cardClass": "OBJECT",
+      "id": "OPR3_057",
+      "literal": "A scratched sign read:",
+      "family": "OBJECT_LABEL",
+      "sourceTriplet": "The TUAOI Firestone, OVERCHARGE: infinite energy, cataclysmic flood",
+      "spokenText": "A scratched sign read: The TUAOI Firestone, OVERCHARGE: infinite energy, cataclysmic flood",
+      "openerOverhead": 23,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/cosmic_grift_dark_journalism/cosmic_grift_dark_journalism.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 9,
+      "cardTitle": "High Priest Rata",
+      "cardClass": "PERSON",
+      "id": "OPR3_017",
+      "literal": "A friend told me about",
+      "family": "MEETING_DIALOGUE",
+      "sourceTriplet": "High Priest Rata, FORESIGHT: opponent's hand",
+      "spokenText": "A friend told me about High Priest Rata, FORESIGHT: opponent's hand",
+      "openerOverhead": 23,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/cosmic_grift_dark_journalism/cosmic_grift_dark_journalism.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 11,
+      "cardTitle": "Hall of Records",
+      "cardClass": "PLACE",
+      "id": "OPR3_007",
+      "literal": "I saw a film about",
+      "family": "FILM_SCREEN",
+      "sourceTriplet": "Hall of Records, HOARD: knowledge cannot be destroyed",
+      "spokenText": "I saw a film about Hall of Records, HOARD: knowledge cannot be destroyed",
+      "openerOverhead": 19,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/cosmic_grift_dark_journalism/cosmic_grift_dark_journalism.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 14,
+      "cardTitle": "Hermetic Order of the Golden Dawn",
+      "cardClass": "INSTITUTION",
+      "id": "OPR3_023",
+      "literal": "I heard a rumor about",
+      "family": "RUMOR_OVERHEARD",
+      "sourceTriplet": "Hermetic Order of the Golden Dawn, RITUAL: summon entity",
+      "spokenText": "I heard a rumor about Hermetic Order of the Golden Dawn, RITUAL: summon entity",
+      "openerOverhead": 22,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/cosmic_grift_dark_journalism/cosmic_grift_dark_journalism.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 23,
+      "cardTitle": "1947 Moonchild Ritual",
+      "cardClass": "EVENT",
+      "id": "OPR3_028",
+      "literal": "My diary says:",
+      "family": "PERSONAL_WRITING",
+      "sourceTriplet": "1947 Moonchild Ritual, THE RIP: board rules altered, UFO sightings",
+      "spokenText": "My diary says: 1947 Moonchild Ritual, THE RIP: board rules altered, UFO sightings",
+      "openerOverhead": 15,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/cosmic_grift_dark_journalism/cosmic_grift_dark_journalism.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 1,
+      "cardTitle": "Atum",
+      "cardClass": "PERSON",
+      "id": "OPR3_046",
+      "literal": "I dreamed about",
+      "family": "MEMORY_DREAM",
+      "sourceTriplet": "Atum, Autogenesis: new rule from thin air; ultimate freelancer, no union dues.",
+      "spokenText": "I dreamed about Atum, Autogenesis: new rule from thin air; ultimate freelancer, no union dues.",
+      "openerOverhead": 16,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/pharaoh_piledriver/pharaoh_piledriver.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 7,
+      "cardTitle": "Ra",
+      "cardClass": "PERSON",
+      "id": "OPR3_012",
+      "literal": "I saw a painting of",
+      "family": "ART_ENCOUNTER",
+      "sourceTriplet": "Ra, Executive Order: change turn order; sky yacht, humanity stopped clapping.",
+      "spokenText": "I saw a painting of Ra, Executive Order: change turn order; sky yacht, humanity stopped clapping.",
+      "openerOverhead": 20,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/pharaoh_piledriver/pharaoh_piledriver.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 13,
+      "cardTitle": "Anubis",
+      "cardClass": "PERSON",
+      "id": "OPR3_045",
+      "literal": "I think I remember",
+      "family": "MEMORY_DREAM",
+      "sourceTriplet": "Anubis, Weighing Scale: heavy heart, no club; card value guessed.",
+      "spokenText": "I think I remember Anubis, Weighing Scale: heavy heart, no club; card value guessed.",
+      "openerOverhead": 19,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/pharaoh_piledriver/pharaoh_piledriver.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 29,
+      "cardTitle": "The Solar Barque",
+      "cardClass": "OBJECT",
+      "id": "OPR3_057",
+      "literal": "A scratched sign read:",
+      "family": "OBJECT_LABEL",
+      "sourceTriplet": "The Solar Barque, Night Travel: skip opponent's turn; millions of years, zero maintenance.",
+      "spokenText": "A scratched sign read: The Solar Barque, Night Travel: skip opponent's turn; millions of years, zero maintenance.",
+      "openerOverhead": 23,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/pharaoh_piledriver/pharaoh_piledriver.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 45,
+      "cardTitle": "The Duat",
+      "cardClass": "PLACE",
+      "id": "OPR3_007",
+      "literal": "I saw a film about",
+      "family": "FILM_SCREEN",
+      "sourceTriplet": "The Duat, Graveyard cards attack; Underworld snakes, 12 gates to leave.",
+      "spokenText": "I saw a film about The Duat, Graveyard cards attack; Underworld snakes, 12 gates to leave.",
+      "openerOverhead": 19,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/pharaoh_piledriver/pharaoh_piledriver.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 49,
+      "cardTitle": "The Lettuce Incident",
+      "cardClass": "EVENT",
+      "id": "NEW_019",
+      "literal": "I found a note saying:",
+      "family": "FOUND_EPHEMERA",
+      "sourceTriplet": "The Lettuce Incident, Public Humiliation: opponent loses all Cool points",
+      "spokenText": "I found a note saying: The Lettuce Incident, Public Humiliation: opponent loses all Cool points",
+      "openerOverhead": 23,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/pharaoh_piledriver/pharaoh_piledriver.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 1,
+      "cardTitle": "Uncle FrizzleBob",
+      "cardClass": "PERSON",
+      "id": "OPR3_017",
+      "literal": "A friend told me about",
+      "family": "MEETING_DIALOGUE",
+      "sourceTriplet": "Uncle FrizzleBob, Narrative Sabotage: dispels techno-scenic illusions",
+      "spokenText": "A friend told me about Uncle FrizzleBob, Narrative Sabotage: dispels techno-scenic illusions",
+      "openerOverhead": 23,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/observation_underground/observation_underground.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 4,
+      "cardTitle": "The Media Matrix",
+      "cardClass": "SYSTEM",
+      "id": "OPR3_023",
+      "literal": "I heard a rumor about",
+      "family": "RUMOR_OVERHEARD",
+      "sourceTriplet": "The Media Matrix, Infinite scroll doom loop",
+      "spokenText": "I heard a rumor about The Media Matrix, Infinite scroll doom loop",
+      "openerOverhead": 22,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/observation_underground/observation_underground.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 15,
+      "cardTitle": "The 52,000 Facebook Entries",
+      "cardClass": "OBJECT",
+      "id": "OPR3_028",
+      "literal": "My diary says:",
+      "family": "PERSONAL_WRITING",
+      "sourceTriplet": "The 52,000 Facebook Entries, Sells deepest neuroses",
+      "spokenText": "My diary says: The 52,000 Facebook Entries, Sells deepest neuroses",
+      "openerOverhead": 15,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/observation_underground/observation_underground.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 24,
+      "cardTitle": "The Transcript File",
+      "cardClass": "OBJECT",
+      "id": "OPR3_034",
+      "literal": "A note under my door:",
+      "family": "FOUND_EPHEMERA",
+      "sourceTriplet": "The Transcript File, Legal loopholes bypassed; audio into text, Checkmate privacy.",
+      "spokenText": "A note under my door: The Transcript File, Legal loopholes bypassed; audio into text, Checkmate privacy.",
+      "openerOverhead": 22,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/observation_underground/observation_underground.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 27,
+      "cardTitle": "Social Credit System",
+      "cardClass": "SYSTEM",
+      "id": "OPR3_072",
+      "literal": "One more note:",
+      "family": "INTERRUPTION_CALLBACK",
+      "sourceTriplet": "Social Credit System, Cancels digital existence",
+      "spokenText": "One more note: Social Credit System, Cancels digital existence",
+      "openerOverhead": 15,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/observation_underground/observation_underground.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 40,
+      "cardTitle": "The Removable Battery",
+      "cardClass": "OBJECT",
+      "id": "OPR3_036",
+      "literal": "On the back of a napkin:",
+      "family": "FOUND_EPHEMERA",
+      "sourceTriplet": "The Removable Battery, True Stealth Mode; only guarantee device isn't recording.",
+      "spokenText": "On the back of a napkin: The Removable Battery, True Stealth Mode; only guarantee device isn't recording.",
+      "openerOverhead": 25,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/observation_underground/observation_underground.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 2,
+      "cardTitle": "Loki",
+      "cardClass": "PERSON",
+      "id": "OPR3_017",
+      "literal": "A friend told me about",
+      "family": "MEETING_DIALOGUE",
+      "sourceTriplet": "Loki, Forced Liquidation: steal Item; pike, otter, dwarf, standard consultant.",
+      "spokenText": "A friend told me about Loki, Forced Liquidation: steal Item; pike, otter, dwarf, standard consultant.",
+      "openerOverhead": 23,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/nibelungen_booster_pack_design/nibelungen_booster_pack_design.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 3,
+      "cardTitle": "The Ring",
+      "cardClass": "OBJECT",
+      "id": "OPR3_057",
+      "literal": "A scratched sign read:",
+      "family": "OBJECT_LABEL",
+      "sourceTriplet": "The Ring, Compound Interest: gold breeds, eats owners; debt always wins.",
+      "spokenText": "A scratched sign read: The Ring, Compound Interest: gold breeds, eats owners; debt always wins.",
+      "openerOverhead": 23,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/nibelungen_booster_pack_design/nibelungen_booster_pack_design.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 5,
+      "cardTitle": "Siegfried",
+      "cardClass": "PERSON",
+      "id": "OPR3_012",
+      "literal": "I saw a painting of",
+      "family": "ART_ENCOUNTER",
+      "sourceTriplet": "Siegfried, Main Character Syndrome: dragon killed; leaves on back",
+      "spokenText": "I saw a painting of Siegfried, Main Character Syndrome: dragon killed; leaves on back",
+      "openerOverhead": 20,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/nibelungen_booster_pack_design/nibelungen_booster_pack_design.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 23,
+      "cardTitle": "The False War Alarm",
+      "cardClass": "EVENT",
+      "id": "OPR3_051",
+      "literal": "A heckler shouted:",
+      "family": "STAGE_AUDIENCE",
+      "sourceTriplet": "The False War Alarm, Distraction: fake invasion, hero out of house",
+      "spokenText": "A heckler shouted: The False War Alarm, Distraction: fake invasion, hero out of house",
+      "openerOverhead": 19,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/nibelungen_booster_pack_design/nibelungen_booster_pack_design.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "HIGH"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 30,
+      "cardTitle": "The Rhine River",
+      "cardClass": "PLACE",
+      "id": "OPR3_007",
+      "literal": "I saw a film about",
+      "family": "FILM_SCREEN",
+      "sourceTriplet": "The Rhine River, The Vault: Treasure removed; Hagen sank all, nobody gets them.",
+      "spokenText": "I saw a film about The Rhine River, The Vault: Treasure removed; Hagen sank all, nobody gets them.",
+      "openerOverhead": 19,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/nibelungen_booster_pack_design/nibelungen_booster_pack_design.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 55,
+      "cardTitle": "The Reset Button",
+      "cardClass": "OBJECT",
+      "id": "NEW_019",
+      "literal": "I found a note saying:",
+      "family": "FOUND_EPHEMERA",
+      "sourceTriplet": "The Reset Button, New Game: shuffle and start over; never ends, reboots.",
+      "spokenText": "I found a note saying: The Reset Button, New Game: shuffle and start over; never ends, reboots.",
+      "openerOverhead": 23,
+      "sourceCSV": "skills/chat/workflows/KFB_TRIPLET_BATCH_8_R2_2026-10-15/nibelungen_booster_pack_design/nibelungen_booster_pack_design.takes.csv",
+      "decision": "GRAMMAR_COMPATIBLE_EDITORIAL_CANDIDATE_NOT_PASS",
+      "risk": "LOW"
+    }
+  ],
+  "negativeExamples": [
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 2,
+      "cardClass": "OBJECT",
+      "openerId": "OPR3_061",
+      "rejectedText": "My aunt used to say: The UFO File, INITIATIVE: File commands military-industrial complex",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 7,
+      "cardClass": "OBJECT",
+      "openerId": "OPR3_061",
+      "rejectedText": "My aunt used to say: The TUAOI Firestone, OVERCHARGE: infinite energy, cataclysmic flood",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 9,
+      "cardClass": "PERSON",
+      "openerId": "OPR3_056",
+      "rejectedText": "The map was marked High Priest Rata, FORESIGHT: opponent's hand",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PLACE",
+        "OBJECT"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 11,
+      "cardClass": "PLACE",
+      "openerId": "OPR3_034",
+      "rejectedText": "A note under my door: Hall of Records, HOARD: knowledge cannot be destroyed",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "OBJECT",
+        "TEXT"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 14,
+      "cardClass": "INSTITUTION",
+      "openerId": "OPR3_012",
+      "rejectedText": "I saw a painting of Hermetic Order of the Golden Dawn, RITUAL: summon entity",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "cosmic_grift_dark_journalism",
+      "cardNumber": 23,
+      "cardClass": "EVENT",
+      "openerId": "OPR3_012",
+      "rejectedText": "I saw a painting of 1947 Moonchild Ritual, THE RIP: board rules altered, UFO sightings",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 1,
+      "cardClass": "PERSON",
+      "openerId": "OPR3_056",
+      "rejectedText": "The map was marked Atum, Autogenesis: new rule from thin air; ultimate freelancer, no union dues.",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PLACE",
+        "OBJECT"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 7,
+      "cardClass": "PERSON",
+      "openerId": "OPR3_056",
+      "rejectedText": "The map was marked Ra, Executive Order: change turn order; sky yacht, humanity stopped clapping.",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PLACE",
+        "OBJECT"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 13,
+      "cardClass": "PERSON",
+      "openerId": "OPR3_056",
+      "rejectedText": "The map was marked Anubis, Weighing Scale: heavy heart, no club; card value guessed.",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PLACE",
+        "OBJECT"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 29,
+      "cardClass": "OBJECT",
+      "openerId": "OPR3_061",
+      "rejectedText": "My aunt used to say: The Solar Barque, Night Travel: skip opponent's turn; millions of years, zero maintenance.",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 45,
+      "cardClass": "PLACE",
+      "openerId": "OPR3_034",
+      "rejectedText": "A note under my door: The Duat, Graveyard cards attack; Underworld snakes, 12 gates to leave.",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "OBJECT",
+        "TEXT"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "pharaoh_piledriver",
+      "cardNumber": 49,
+      "cardClass": "EVENT",
+      "openerId": "OPR3_012",
+      "rejectedText": "I saw a painting of The Lettuce Incident, Public Humiliation: opponent loses all Cool points",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 1,
+      "cardClass": "PERSON",
+      "openerId": "OPR3_056",
+      "rejectedText": "The map was marked Uncle FrizzleBob, Narrative Sabotage: dispels techno-scenic illusions",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PLACE",
+        "OBJECT"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 4,
+      "cardClass": "SYSTEM",
+      "openerId": "OPR3_007",
+      "rejectedText": "I saw a film about The Media Matrix, Infinite scroll doom loop",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "OBJECT",
+        "SCENE",
+        "MEDIA"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 15,
+      "cardClass": "OBJECT",
+      "openerId": "OPR3_061",
+      "rejectedText": "My aunt used to say: The 52,000 Facebook Entries, Sells deepest neuroses",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 24,
+      "cardClass": "OBJECT",
+      "openerId": "OPR3_061",
+      "rejectedText": "My aunt used to say: The Transcript File, Legal loopholes bypassed; audio into text, Checkmate privacy.",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 27,
+      "cardClass": "SYSTEM",
+      "openerId": "OPR3_007",
+      "rejectedText": "I saw a film about Social Credit System, Cancels digital existence",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "OBJECT",
+        "SCENE",
+        "MEDIA"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "observation_underground",
+      "cardNumber": 40,
+      "cardClass": "OBJECT",
+      "openerId": "OPR3_061",
+      "rejectedText": "My aunt used to say: The Removable Battery, True Stealth Mode; only guarantee device isn't recording.",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 2,
+      "cardClass": "PERSON",
+      "openerId": "OPR3_056",
+      "rejectedText": "The map was marked Loki, Forced Liquidation: steal Item; pike, otter, dwarf, standard consultant.",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PLACE",
+        "OBJECT"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 3,
+      "cardClass": "OBJECT",
+      "openerId": "OPR3_061",
+      "rejectedText": "My aunt used to say: The Ring, Compound Interest: gold breeds, eats owners; debt always wins.",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 5,
+      "cardClass": "PERSON",
+      "openerId": "OPR3_056",
+      "rejectedText": "The map was marked Siegfried, Main Character Syndrome: dragon killed; leaves on back",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PLACE",
+        "OBJECT"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 23,
+      "cardClass": "EVENT",
+      "openerId": "OPR3_012",
+      "rejectedText": "I saw a painting of The False War Alarm, Distraction: fake invasion, hero out of house",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 30,
+      "cardClass": "PLACE",
+      "openerId": "OPR3_034",
+      "rejectedText": "A note under my door: The Rhine River, The Vault: Treasure removed; Hagen sank all, nobody gets them.",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "IDEA",
+        "OBJECT",
+        "TEXT"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "deck": "nibelungen_booster_pack_design",
+      "cardNumber": 55,
+      "cardClass": "OBJECT",
+      "openerId": "OPR3_061",
+      "rejectedText": "My aunt used to say: The Reset Button, New Game: shuffle and start over; never ends, reboots.",
+      "reason": "SEMANTIC_CLASS_MISMATCH",
+      "allowed": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "MYTH"
+      ],
+      "decision": "REJECT"
+    }
+  ],
+  "simulations": [
+    {
+      "mode": "R2",
+      "deck": "observation_underground",
+      "cards": 48,
+      "selectedCount": 16,
+      "distinctLiterals": 16,
+      "distinctFamilies": 4,
+      "distinctStorySituations": 1,
+      "overheadCharacters": 218,
+      "meanOpenerOverhead": 13.63,
+      "trackCharacters": 3560,
+      "baselineNoOpenerCharacters": 3342,
+      "budgetHeadroom": 1439,
+      "sunoFormattingExact": true,
+      "selected": [
+        {
+          "index": 2,
+          "cardNumber": 2,
+          "id": "R2/Anyway",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "SYSTEM",
+          "chars": 7
+        },
+        {
+          "index": 5,
+          "cardNumber": 5,
+          "id": "R2/What if",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "OBJECT",
+          "chars": 8
+        },
+        {
+          "index": 8,
+          "cardNumber": 8,
+          "id": "R2/Remember",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "SYSTEM",
+          "chars": 9
+        },
+        {
+          "index": 11,
+          "cardNumber": 11,
+          "id": "R2/Not a metaphor",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "SYSTEM",
+          "chars": 15
+        },
+        {
+          "index": 14,
+          "cardNumber": 14,
+          "id": "R2/No wait",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "PERSON",
+          "chars": 8
+        },
+        {
+          "index": 17,
+          "cardNumber": 17,
+          "id": "R2/You know",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "OBJECT",
+          "chars": 9
+        },
+        {
+          "index": 20,
+          "cardNumber": 20,
+          "id": "R2/Welcome to",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "SYSTEM",
+          "chars": 11
+        },
+        {
+          "index": 23,
+          "cardNumber": 23,
+          "id": "R2/Did you hear of",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "SYSTEM",
+          "chars": 16
+        },
+        {
+          "index": 26,
+          "cardNumber": 26,
+          "id": "R2/Everyone agrees",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "SYSTEM",
+          "chars": 16
+        },
+        {
+          "index": 29,
+          "cardNumber": 29,
+          "id": "R2/Do you know",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "SYSTEM",
+          "chars": 12
+        },
+        {
+          "index": 32,
+          "cardNumber": 32,
+          "id": "R2/The thing about",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "SYSTEM",
+          "chars": 16
+        },
+        {
+          "index": 35,
+          "cardNumber": 35,
+          "id": "R2/Have you heard of",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "SYSTEM",
+          "chars": 18
+        },
+        {
+          "index": 38,
+          "cardNumber": 38,
+          "id": "R2/Did you ever try",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "OBJECT",
+          "chars": 17
+        },
+        {
+          "index": 41,
+          "cardNumber": 41,
+          "id": "R2/I used to believe",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "SYSTEM",
+          "chars": 18
+        },
+        {
+          "index": 44,
+          "cardNumber": 44,
+          "id": "R2/Before we continue",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "OBJECT",
+          "chars": 19
+        },
+        {
+          "index": 47,
+          "cardNumber": 47,
+          "id": "R2/Which brings us to",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "SYSTEM",
+          "chars": 19
+        }
+      ],
+      "preview": "[Spoken Word]\n\nObservation Underground — ADD: Uncle FrizzleBob, Die Taschenspion, The Media Matrix.\n\nUncle FrizzleBob, Narrative Sabotage: dispels techno-scenic illusions\n\nAnyway Observationsökonomie, Extracts lifespan daily\n\nDie Taschenspion, Pocket infiltrated, soul uploaded to Cloud\n\nThe Media Matrix, Infinite scroll doom loop\n\nWhat if Smartphone-Akne, Charisma reduced, Wrist Shame; Petri dishes willingl"
+    },
+    {
+      "mode": "R3",
+      "deck": "observation_underground",
+      "cards": 48,
+      "selectedCount": 16,
+      "distinctLiterals": 16,
+      "distinctFamilies": 10,
+      "distinctStorySituations": 10,
+      "overheadCharacters": 347,
+      "meanOpenerOverhead": 21.69,
+      "trackCharacters": 3689,
+      "baselineNoOpenerCharacters": 3342,
+      "budgetHeadroom": 1310,
+      "sunoFormattingExact": true,
+      "selected": [
+        {
+          "index": 2,
+          "cardNumber": 2,
+          "id": "OPR3_023",
+          "family": "RUMOR_OVERHEARD",
+          "cardClass": "SYSTEM",
+          "chars": 22
+        },
+        {
+          "index": 5,
+          "cardNumber": 5,
+          "id": "OPR3_028",
+          "family": "PERSONAL_WRITING",
+          "cardClass": "OBJECT",
+          "chars": 15
+        },
+        {
+          "index": 8,
+          "cardNumber": 8,
+          "id": "OPR3_017",
+          "family": "MEETING_DIALOGUE",
+          "cardClass": "SYSTEM",
+          "chars": 23
+        },
+        {
+          "index": 11,
+          "cardNumber": 11,
+          "id": "OPR3_072",
+          "family": "INTERRUPTION_CALLBACK",
+          "cardClass": "SYSTEM",
+          "chars": 15
+        },
+        {
+          "index": 14,
+          "cardNumber": 14,
+          "id": "NEW_028",
+          "family": "STAGE_AUDIENCE",
+          "cardClass": "PERSON",
+          "chars": 19
+        },
+        {
+          "index": 17,
+          "cardNumber": 17,
+          "id": "NEW_058",
+          "family": "CASE_FILE",
+          "cardClass": "OBJECT",
+          "chars": 22
+        },
+        {
+          "index": 20,
+          "cardNumber": 20,
+          "id": "OPR3_067",
+          "family": "TECH_MEDIA",
+          "cardClass": "SYSTEM",
+          "chars": 22
+        },
+        {
+          "index": 23,
+          "cardNumber": 23,
+          "id": "NEW_022",
+          "family": "OFFICIAL_VOICE",
+          "cardClass": "SYSTEM",
+          "chars": 25
+        },
+        {
+          "index": 26,
+          "cardNumber": 26,
+          "id": "NEW_040",
+          "family": "INTERRUPTION_CALLBACK",
+          "cardClass": "SYSTEM",
+          "chars": 19
+        },
+        {
+          "index": 29,
+          "cardNumber": 29,
+          "id": "OPR3_025",
+          "family": "RUMOR_OVERHEARD",
+          "cardClass": "SYSTEM",
+          "chars": 23
+        },
+        {
+          "index": 32,
+          "cardNumber": 32,
+          "id": "NEW_037",
+          "family": "TECH_MEDIA",
+          "cardClass": "SYSTEM",
+          "chars": 24
+        },
+        {
+          "index": 35,
+          "cardNumber": 35,
+          "id": "OPR3_019",
+          "family": "MEETING_DIALOGUE",
+          "cardClass": "SYSTEM",
+          "chars": 22
+        },
+        {
+          "index": 38,
+          "cardNumber": 38,
+          "id": "OPR3_034",
+          "family": "FOUND_EPHEMERA",
+          "cardClass": "OBJECT",
+          "chars": 22
+        },
+        {
+          "index": 41,
+          "cardNumber": 41,
+          "id": "OPR3_074",
+          "family": "INTERRUPTION_CALLBACK",
+          "cardClass": "SYSTEM",
+          "chars": 22
+        },
+        {
+          "index": 44,
+          "cardNumber": 44,
+          "id": "OPR3_057",
+          "family": "OBJECT_LABEL",
+          "cardClass": "OBJECT",
+          "chars": 23
+        },
+        {
+          "index": 47,
+          "cardNumber": 47,
+          "id": "NEW_010",
+          "family": "MEETING_DIALOGUE",
+          "cardClass": "SYSTEM",
+          "chars": 29
+        }
+      ],
+      "preview": "[Spoken Word]\n\nObservation Underground — ADD: Uncle FrizzleBob, Die Taschenspion, The Media Matrix.\n\nUncle FrizzleBob, Narrative Sabotage: dispels techno-scenic illusions\n\nI heard a rumor about Observationsökonomie, Extracts lifespan daily\n\nDie Taschenspion, Pocket infiltrated, soul uploaded to Cloud\n\nThe Media Matrix, Infinite scroll doom loop\n\nMy diary says: Smartphone-Akne, Charisma reduced, Wrist Shame;"
+    },
+    {
+      "mode": "R2",
+      "deck": "cosmic_grift_dark_journalism",
+      "cards": 52,
+      "selectedCount": 17,
+      "distinctLiterals": 17,
+      "distinctFamilies": 4,
+      "distinctStorySituations": 2,
+      "overheadCharacters": 229,
+      "meanOpenerOverhead": 13.47,
+      "trackCharacters": 3807,
+      "baselineNoOpenerCharacters": 3578,
+      "budgetHeadroom": 1192,
+      "sunoFormattingExact": true,
+      "selected": [
+        {
+          "index": 2,
+          "cardNumber": 2,
+          "id": "R2/Anyway",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "OBJECT",
+          "chars": 7
+        },
+        {
+          "index": 5,
+          "cardNumber": 5,
+          "id": "R2/What if",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "INSTITUTION",
+          "chars": 8
+        },
+        {
+          "index": 8,
+          "cardNumber": 8,
+          "id": "R2/Remember",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "OBJECT",
+          "chars": 9
+        },
+        {
+          "index": 11,
+          "cardNumber": 11,
+          "id": "R2/Not a metaphor",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "PLACE",
+          "chars": 15
+        },
+        {
+          "index": 14,
+          "cardNumber": 14,
+          "id": "R2/No wait",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "INSTITUTION",
+          "chars": 8
+        },
+        {
+          "index": 17,
+          "cardNumber": 17,
+          "id": "R2/You know",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "PERSON",
+          "chars": 9
+        },
+        {
+          "index": 20,
+          "cardNumber": 20,
+          "id": "R2/Welcome to",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "SYSTEM",
+          "chars": 11
+        },
+        {
+          "index": 23,
+          "cardNumber": 23,
+          "id": "R2/Did you hear of",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "EVENT",
+          "chars": 16
+        },
+        {
+          "index": 26,
+          "cardNumber": 26,
+          "id": "R2/Everyone agrees",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "OBJECT",
+          "chars": 16
+        },
+        {
+          "index": 29,
+          "cardNumber": 29,
+          "id": "R2/I once met",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "PERSON",
+          "chars": 11
+        },
+        {
+          "index": 32,
+          "cardNumber": 32,
+          "id": "R2/Do you know",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "SYSTEM",
+          "chars": 12
+        },
+        {
+          "index": 35,
+          "cardNumber": 35,
+          "id": "R2/The thing about",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "PERSON",
+          "chars": 16
+        },
+        {
+          "index": 38,
+          "cardNumber": 38,
+          "id": "R2/Have you heard of",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "PERSON",
+          "chars": 18
+        },
+        {
+          "index": 41,
+          "cardNumber": 41,
+          "id": "R2/I used to believe",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "SYSTEM",
+          "chars": 18
+        },
+        {
+          "index": 44,
+          "cardNumber": 44,
+          "id": "R2/Did you ever try",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "OBJECT",
+          "chars": 17
+        },
+        {
+          "index": 47,
+          "cardNumber": 47,
+          "id": "R2/Before we continue",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "SYSTEM",
+          "chars": 19
+        },
+        {
+          "index": 50,
+          "cardNumber": 50,
+          "id": "R2/Which brings us to",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "INSTITUTION",
+          "chars": 19
+        }
+      ],
+      "preview": "[Spoken Word]\n\nCosmic Grift – Dark Journalism. The UFO File. The Belial Group. Majestic 12.\n\nWelcome to the Cosmic Grift! PASSIVE: narratives into comedic fodder\n\nAnyway The UFO File, INITIATIVE: File commands military-industrial complex\n\nCOG: The Shadow Rules, SURVIVAL: ignore rules and keep wealth tokens\n\nProfessor Scott's Deep State, EXTRACTION: siphon Truth Tokens without noticing\n\nWhat if The Amelius G"
+    },
+    {
+      "mode": "R3",
+      "deck": "cosmic_grift_dark_journalism",
+      "cards": 52,
+      "selectedCount": 17,
+      "distinctLiterals": 17,
+      "distinctFamilies": 16,
+      "distinctStorySituations": 16,
+      "overheadCharacters": 352,
+      "meanOpenerOverhead": 20.71,
+      "trackCharacters": 3930,
+      "baselineNoOpenerCharacters": 3578,
+      "budgetHeadroom": 1069,
+      "sunoFormattingExact": true,
+      "selected": [
+        {
+          "index": 2,
+          "cardNumber": 2,
+          "id": "OPR3_028",
+          "family": "PERSONAL_WRITING",
+          "cardClass": "OBJECT",
+          "chars": 15
+        },
+        {
+          "index": 5,
+          "cardNumber": 5,
+          "id": "OPR3_001",
+          "family": "READ_TEXT",
+          "cardClass": "INSTITUTION",
+          "chars": 20
+        },
+        {
+          "index": 8,
+          "cardNumber": 8,
+          "id": "NEW_028",
+          "family": "STAGE_AUDIENCE",
+          "cardClass": "OBJECT",
+          "chars": 19
+        },
+        {
+          "index": 11,
+          "cardNumber": 11,
+          "id": "OPR3_061",
+          "family": "ORAL_HISTORY",
+          "cardClass": "PLACE",
+          "chars": 21
+        },
+        {
+          "index": 14,
+          "cardNumber": 14,
+          "id": "OPR3_023",
+          "family": "RUMOR_OVERHEARD",
+          "cardClass": "INSTITUTION",
+          "chars": 22
+        },
+        {
+          "index": 17,
+          "cardNumber": 17,
+          "id": "NEW_058",
+          "family": "CASE_FILE",
+          "cardClass": "PERSON",
+          "chars": 22
+        },
+        {
+          "index": 20,
+          "cardNumber": 20,
+          "id": "OPR3_017",
+          "family": "MEETING_DIALOGUE",
+          "cardClass": "SYSTEM",
+          "chars": 23
+        },
+        {
+          "index": 23,
+          "cardNumber": 23,
+          "id": "OPR3_034",
+          "family": "FOUND_EPHEMERA",
+          "cardClass": "EVENT",
+          "chars": 22
+        },
+        {
+          "index": 26,
+          "cardNumber": 26,
+          "id": "OPR3_057",
+          "family": "OBJECT_LABEL",
+          "cardClass": "OBJECT",
+          "chars": 23
+        },
+        {
+          "index": 29,
+          "cardNumber": 29,
+          "id": "NEW_043",
+          "family": "LETTER_POST",
+          "cardClass": "PERSON",
+          "chars": 25
+        },
+        {
+          "index": 32,
+          "cardNumber": 32,
+          "id": "OPR3_072",
+          "family": "INTERRUPTION_CALLBACK",
+          "cardClass": "SYSTEM",
+          "chars": 15
+        },
+        {
+          "index": 35,
+          "cardNumber": 35,
+          "id": "OPR3_046",
+          "family": "MEMORY_DREAM",
+          "cardClass": "PERSON",
+          "chars": 16
+        },
+        {
+          "index": 38,
+          "cardNumber": 38,
+          "id": "OPR3_007",
+          "family": "FILM_SCREEN",
+          "cardClass": "PERSON",
+          "chars": 19
+        },
+        {
+          "index": 41,
+          "cardNumber": 41,
+          "id": "OPR3_067",
+          "family": "TECH_MEDIA",
+          "cardClass": "SYSTEM",
+          "chars": 22
+        },
+        {
+          "index": 44,
+          "cardNumber": 44,
+          "id": "OPR3_012",
+          "family": "ART_ENCOUNTER",
+          "cardClass": "OBJECT",
+          "chars": 20
+        },
+        {
+          "index": 47,
+          "cardNumber": 47,
+          "id": "NEW_022",
+          "family": "OFFICIAL_VOICE",
+          "cardClass": "SYSTEM",
+          "chars": 25
+        },
+        {
+          "index": 50,
+          "cardNumber": 50,
+          "id": "OPR3_025",
+          "family": "RUMOR_OVERHEARD",
+          "cardClass": "INSTITUTION",
+          "chars": 23
+        }
+      ],
+      "preview": "[Spoken Word]\n\nCosmic Grift – Dark Journalism. The UFO File. The Belial Group. Majestic 12.\n\nWelcome to the Cosmic Grift! PASSIVE: narratives into comedic fodder\n\nMy diary says: The UFO File, INITIATIVE: File commands military-industrial complex\n\nCOG: The Shadow Rules, SURVIVAL: ignore rules and keep wealth tokens\n\nProfessor Scott's Deep State, EXTRACTION: siphon Truth Tokens without noticing\n\nI read a book"
+    },
+    {
+      "mode": "R2",
+      "deck": "nibelungen_booster_pack_design",
+      "cards": 56,
+      "selectedCount": 19,
+      "distinctLiterals": 19,
+      "distinctFamilies": 4,
+      "distinctStorySituations": 2,
+      "overheadCharacters": 269,
+      "meanOpenerOverhead": 14.16,
+      "trackCharacters": 4282,
+      "baselineNoOpenerCharacters": 4013,
+      "budgetHeadroom": 717,
+      "sunoFormattingExact": true,
+      "selected": [
+        {
+          "index": 2,
+          "cardNumber": 2,
+          "id": "R2/Anyway",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "PERSON",
+          "chars": 7
+        },
+        {
+          "index": 5,
+          "cardNumber": 5,
+          "id": "R2/What if",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "PERSON",
+          "chars": 8
+        },
+        {
+          "index": 8,
+          "cardNumber": 8,
+          "id": "R2/Remember",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "OBJECT",
+          "chars": 9
+        },
+        {
+          "index": 11,
+          "cardNumber": 11,
+          "id": "R2/Not a metaphor",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "EVENT",
+          "chars": 15
+        },
+        {
+          "index": 14,
+          "cardNumber": 14,
+          "id": "R2/No wait",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "EVENT",
+          "chars": 8
+        },
+        {
+          "index": 17,
+          "cardNumber": 17,
+          "id": "R2/You know",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "EVENT",
+          "chars": 9
+        },
+        {
+          "index": 20,
+          "cardNumber": 20,
+          "id": "R2/Did you hear of",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "EVENT",
+          "chars": 16
+        },
+        {
+          "index": 23,
+          "cardNumber": 23,
+          "id": "R2/Everyone agrees",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "EVENT",
+          "chars": 16
+        },
+        {
+          "index": 26,
+          "cardNumber": 26,
+          "id": "R2/The thing about",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "OBJECT",
+          "chars": 16
+        },
+        {
+          "index": 29,
+          "cardNumber": 29,
+          "id": "R2/Do you know",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "OBJECT",
+          "chars": 12
+        },
+        {
+          "index": 32,
+          "cardNumber": 32,
+          "id": "R2/Welcome to",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "IDEA",
+          "chars": 11
+        },
+        {
+          "index": 35,
+          "cardNumber": 35,
+          "id": "R2/Did you ever try",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "EVENT",
+          "chars": 17
+        },
+        {
+          "index": 38,
+          "cardNumber": 38,
+          "id": "R2/I once met",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "PERSON",
+          "chars": 11
+        },
+        {
+          "index": 41,
+          "cardNumber": 41,
+          "id": "R2/Have you heard of",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "OBJECT",
+          "chars": 18
+        },
+        {
+          "index": 44,
+          "cardNumber": 44,
+          "id": "R2/I used to believe",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "EVENT",
+          "chars": 18
+        },
+        {
+          "index": 47,
+          "cardNumber": 47,
+          "id": "R2/Before we continue",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "PERSON",
+          "chars": 19
+        },
+        {
+          "index": 50,
+          "cardNumber": 50,
+          "id": "R2/Which brings us to",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "OBJECT",
+          "chars": 19
+        },
+        {
+          "index": 53,
+          "cardNumber": 53,
+          "id": "R2/Meanwhile elsewhere",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "IDEA",
+          "chars": 20
+        },
+        {
+          "index": 56,
+          "cardNumber": 56,
+          "id": "R2/The deck insists on",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "PERSON",
+          "chars": 20
+        }
+      ],
+      "preview": "[Spoken Word]\n\nNibelungen Booster Pack: Siegfried, Brunhild, Hagen, The Ring, The Curse.\n\nAndvari, Asset Freeze: auditing hoard; Loki squeezed him like stress ball.\n\nAnyway Loki, Forced Liquidation: steal Item; pike, otter, dwarf, standard consultant.\n\nThe Ring, Compound Interest: gold breeds, eats owners; debt always wins.\n\nThe Curse, Bad Ending: Hero dies; death to owner, everyone renting life.\n\nWhat if S"
+    },
+    {
+      "mode": "R3",
+      "deck": "nibelungen_booster_pack_design",
+      "cards": 56,
+      "selectedCount": 19,
+      "distinctLiterals": 19,
+      "distinctFamilies": 18,
+      "distinctStorySituations": 18,
+      "overheadCharacters": 400,
+      "meanOpenerOverhead": 21.05,
+      "trackCharacters": 4413,
+      "baselineNoOpenerCharacters": 4013,
+      "budgetHeadroom": 586,
+      "sunoFormattingExact": true,
+      "selected": [
+        {
+          "index": 2,
+          "cardNumber": 2,
+          "id": "OPR3_028",
+          "family": "PERSONAL_WRITING",
+          "cardClass": "PERSON",
+          "chars": 15
+        },
+        {
+          "index": 5,
+          "cardNumber": 5,
+          "id": "NEW_028",
+          "family": "STAGE_AUDIENCE",
+          "cardClass": "PERSON",
+          "chars": 19
+        },
+        {
+          "index": 8,
+          "cardNumber": 8,
+          "id": "NEW_058",
+          "family": "CASE_FILE",
+          "cardClass": "OBJECT",
+          "chars": 22
+        },
+        {
+          "index": 11,
+          "cardNumber": 11,
+          "id": "OPR3_061",
+          "family": "ORAL_HISTORY",
+          "cardClass": "EVENT",
+          "chars": 21
+        },
+        {
+          "index": 14,
+          "cardNumber": 14,
+          "id": "OPR3_034",
+          "family": "FOUND_EPHEMERA",
+          "cardClass": "EVENT",
+          "chars": 22
+        },
+        {
+          "index": 17,
+          "cardNumber": 17,
+          "id": "NEW_043",
+          "family": "LETTER_POST",
+          "cardClass": "EVENT",
+          "chars": 25
+        },
+        {
+          "index": 20,
+          "cardNumber": 20,
+          "id": "OPR3_046",
+          "family": "MEMORY_DREAM",
+          "cardClass": "EVENT",
+          "chars": 16
+        },
+        {
+          "index": 23,
+          "cardNumber": 23,
+          "id": "OPR3_007",
+          "family": "FILM_SCREEN",
+          "cardClass": "EVENT",
+          "chars": 19
+        },
+        {
+          "index": 26,
+          "cardNumber": 26,
+          "id": "OPR3_057",
+          "family": "OBJECT_LABEL",
+          "cardClass": "OBJECT",
+          "chars": 23
+        },
+        {
+          "index": 29,
+          "cardNumber": 29,
+          "id": "OPR3_001",
+          "family": "READ_TEXT",
+          "cardClass": "OBJECT",
+          "chars": 20
+        },
+        {
+          "index": 32,
+          "cardNumber": 32,
+          "id": "OPR3_023",
+          "family": "RUMOR_OVERHEARD",
+          "cardClass": "IDEA",
+          "chars": 22
+        },
+        {
+          "index": 35,
+          "cardNumber": 35,
+          "id": "NEW_049",
+          "family": "WALL_GRAFFITI",
+          "cardClass": "EVENT",
+          "chars": 33
+        },
+        {
+          "index": 38,
+          "cardNumber": 38,
+          "id": "OPR3_012",
+          "family": "ART_ENCOUNTER",
+          "cardClass": "PERSON",
+          "chars": 20
+        },
+        {
+          "index": 41,
+          "cardNumber": 41,
+          "id": "OPR3_017",
+          "family": "MEETING_DIALOGUE",
+          "cardClass": "OBJECT",
+          "chars": 23
+        },
+        {
+          "index": 44,
+          "cardNumber": 44,
+          "id": "OPR3_072",
+          "family": "INTERRUPTION_CALLBACK",
+          "cardClass": "EVENT",
+          "chars": 15
+        },
+        {
+          "index": 47,
+          "cardNumber": 47,
+          "id": "NEW_046",
+          "family": "SCHOOLROOM",
+          "cardClass": "PERSON",
+          "chars": 19
+        },
+        {
+          "index": 50,
+          "cardNumber": 50,
+          "id": "NEW_052",
+          "family": "TRAVEL_SIGN",
+          "cardClass": "OBJECT",
+          "chars": 21
+        },
+        {
+          "index": 53,
+          "cardNumber": 53,
+          "id": "OPR3_067",
+          "family": "TECH_MEDIA",
+          "cardClass": "IDEA",
+          "chars": 22
+        },
+        {
+          "index": 56,
+          "cardNumber": 56,
+          "id": "NEW_019",
+          "family": "FOUND_EPHEMERA",
+          "cardClass": "PERSON",
+          "chars": 23
+        }
+      ],
+      "preview": "[Spoken Word]\n\nNibelungen Booster Pack: Siegfried, Brunhild, Hagen, The Ring, The Curse.\n\nAndvari, Asset Freeze: auditing hoard; Loki squeezed him like stress ball.\n\nMy diary says: Loki, Forced Liquidation: steal Item; pike, otter, dwarf, standard consultant.\n\nThe Ring, Compound Interest: gold breeds, eats owners; debt always wins.\n\nThe Curse, Bad Ending: Hero dies; death to owner, everyone renting life.\n\nF"
+    },
+    {
+      "mode": "R2",
+      "deck": "cosmic_grift_dark_journalism",
+      "cards": 60,
+      "selectedCount": 20,
+      "distinctLiterals": 20,
+      "distinctFamilies": 4,
+      "distinctStorySituations": 2,
+      "overheadCharacters": 289,
+      "meanOpenerOverhead": 14.45,
+      "trackCharacters": 4373,
+      "baselineNoOpenerCharacters": 4084,
+      "budgetHeadroom": 626,
+      "sunoFormattingExact": true,
+      "selected": [
+        {
+          "index": 2,
+          "cardNumber": 2,
+          "id": "R2/Anyway",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "OBJECT",
+          "chars": 7
+        },
+        {
+          "index": 5,
+          "cardNumber": 5,
+          "id": "R2/What if",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "INSTITUTION",
+          "chars": 8
+        },
+        {
+          "index": 8,
+          "cardNumber": 8,
+          "id": "R2/Remember",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "OBJECT",
+          "chars": 9
+        },
+        {
+          "index": 11,
+          "cardNumber": 11,
+          "id": "R2/Not a metaphor",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "PLACE",
+          "chars": 15
+        },
+        {
+          "index": 14,
+          "cardNumber": 14,
+          "id": "R2/No wait",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "INSTITUTION",
+          "chars": 8
+        },
+        {
+          "index": 17,
+          "cardNumber": 17,
+          "id": "R2/You know",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "PERSON",
+          "chars": 9
+        },
+        {
+          "index": 20,
+          "cardNumber": 20,
+          "id": "R2/Welcome to",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "SYSTEM",
+          "chars": 11
+        },
+        {
+          "index": 23,
+          "cardNumber": 23,
+          "id": "R2/Did you hear of",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "EVENT",
+          "chars": 16
+        },
+        {
+          "index": 26,
+          "cardNumber": 26,
+          "id": "R2/Everyone agrees",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "OBJECT",
+          "chars": 16
+        },
+        {
+          "index": 29,
+          "cardNumber": 29,
+          "id": "R2/I once met",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "PERSON",
+          "chars": 11
+        },
+        {
+          "index": 32,
+          "cardNumber": 32,
+          "id": "R2/Do you know",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "SYSTEM",
+          "chars": 12
+        },
+        {
+          "index": 35,
+          "cardNumber": 35,
+          "id": "R2/The thing about",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "PERSON",
+          "chars": 16
+        },
+        {
+          "index": 38,
+          "cardNumber": 38,
+          "id": "R2/Have you heard of",
+          "family": "DIRECT_ADDRESS_QUESTION_OR_PROMPT",
+          "cardClass": "PERSON",
+          "chars": 18
+        },
+        {
+          "index": 41,
+          "cardNumber": 41,
+          "id": "R2/I used to believe",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "SYSTEM",
+          "chars": 18
+        },
+        {
+          "index": 44,
+          "cardNumber": 44,
+          "id": "R2/Did you ever try",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "OBJECT",
+          "chars": 17
+        },
+        {
+          "index": 47,
+          "cardNumber": 47,
+          "id": "R2/Before we continue",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "SYSTEM",
+          "chars": 19
+        },
+        {
+          "index": 50,
+          "cardNumber": 50,
+          "id": "R2/Which brings us to",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "INSTITUTION",
+          "chars": 19
+        },
+        {
+          "index": 53,
+          "cardNumber": 53,
+          "id": "R2/Meanwhile elsewhere",
+          "family": "DISCOURSE_TRANSITION",
+          "cardClass": "PERSON",
+          "chars": 20
+        },
+        {
+          "index": 56,
+          "cardNumber": 56,
+          "id": "R2/The deck insists on",
+          "family": "CARD_ACTION_OR_TARGET",
+          "cardClass": "INSTITUTION",
+          "chars": 20
+        },
+        {
+          "index": 59,
+          "cardNumber": 59,
+          "id": "R2/This one has a rule",
+          "family": "DECLARATION_OR_STANCE",
+          "cardClass": "OBJECT",
+          "chars": 20
+        }
+      ],
+      "preview": "[Spoken Word]\n\nCosmic Grift – Dark Journalism. The UFO File. The Belial Group. Majestic 12.\n\nWelcome to the Cosmic Grift! PASSIVE: narratives into comedic fodder\n\nAnyway The UFO File, INITIATIVE: File commands military-industrial complex\n\nCOG: The Shadow Rules, SURVIVAL: ignore rules and keep wealth tokens\n\nProfessor Scott's Deep State, EXTRACTION: siphon Truth Tokens without noticing\n\nWhat if The Amelius G"
+    },
+    {
+      "mode": "R3",
+      "deck": "cosmic_grift_dark_journalism",
+      "cards": 60,
+      "selectedCount": 20,
+      "distinctLiterals": 20,
+      "distinctFamilies": 18,
+      "distinctStorySituations": 18,
+      "overheadCharacters": 429,
+      "meanOpenerOverhead": 21.45,
+      "trackCharacters": 4513,
+      "baselineNoOpenerCharacters": 4084,
+      "budgetHeadroom": 486,
+      "sunoFormattingExact": true,
+      "selected": [
+        {
+          "index": 2,
+          "cardNumber": 2,
+          "id": "OPR3_028",
+          "family": "PERSONAL_WRITING",
+          "cardClass": "OBJECT",
+          "chars": 15
+        },
+        {
+          "index": 5,
+          "cardNumber": 5,
+          "id": "OPR3_001",
+          "family": "READ_TEXT",
+          "cardClass": "INSTITUTION",
+          "chars": 20
+        },
+        {
+          "index": 8,
+          "cardNumber": 8,
+          "id": "NEW_028",
+          "family": "STAGE_AUDIENCE",
+          "cardClass": "OBJECT",
+          "chars": 19
+        },
+        {
+          "index": 11,
+          "cardNumber": 11,
+          "id": "OPR3_061",
+          "family": "ORAL_HISTORY",
+          "cardClass": "PLACE",
+          "chars": 21
+        },
+        {
+          "index": 14,
+          "cardNumber": 14,
+          "id": "OPR3_023",
+          "family": "RUMOR_OVERHEARD",
+          "cardClass": "INSTITUTION",
+          "chars": 22
+        },
+        {
+          "index": 17,
+          "cardNumber": 17,
+          "id": "NEW_058",
+          "family": "CASE_FILE",
+          "cardClass": "PERSON",
+          "chars": 22
+        },
+        {
+          "index": 20,
+          "cardNumber": 20,
+          "id": "OPR3_017",
+          "family": "MEETING_DIALOGUE",
+          "cardClass": "SYSTEM",
+          "chars": 23
+        },
+        {
+          "index": 23,
+          "cardNumber": 23,
+          "id": "OPR3_034",
+          "family": "FOUND_EPHEMERA",
+          "cardClass": "EVENT",
+          "chars": 22
+        },
+        {
+          "index": 26,
+          "cardNumber": 26,
+          "id": "OPR3_057",
+          "family": "OBJECT_LABEL",
+          "cardClass": "OBJECT",
+          "chars": 23
+        },
+        {
+          "index": 29,
+          "cardNumber": 29,
+          "id": "NEW_043",
+          "family": "LETTER_POST",
+          "cardClass": "PERSON",
+          "chars": 25
+        },
+        {
+          "index": 32,
+          "cardNumber": 32,
+          "id": "OPR3_072",
+          "family": "INTERRUPTION_CALLBACK",
+          "cardClass": "SYSTEM",
+          "chars": 15
+        },
+        {
+          "index": 35,
+          "cardNumber": 35,
+          "id": "OPR3_046",
+          "family": "MEMORY_DREAM",
+          "cardClass": "PERSON",
+          "chars": 16
+        },
+        {
+          "index": 38,
+          "cardNumber": 38,
+          "id": "OPR3_007",
+          "family": "FILM_SCREEN",
+          "cardClass": "PERSON",
+          "chars": 19
+        },
+        {
+          "index": 41,
+          "cardNumber": 41,
+          "id": "OPR3_067",
+          "family": "TECH_MEDIA",
+          "cardClass": "SYSTEM",
+          "chars": 22
+        },
+        {
+          "index": 44,
+          "cardNumber": 44,
+          "id": "OPR3_012",
+          "family": "ART_ENCOUNTER",
+          "cardClass": "OBJECT",
+          "chars": 20
+        },
+        {
+          "index": 47,
+          "cardNumber": 47,
+          "id": "NEW_022",
+          "family": "OFFICIAL_VOICE",
+          "cardClass": "SYSTEM",
+          "chars": 25
+        },
+        {
+          "index": 50,
+          "cardNumber": 50,
+          "id": "OPR3_025",
+          "family": "RUMOR_OVERHEARD",
+          "cardClass": "INSTITUTION",
+          "chars": 23
+        },
+        {
+          "index": 53,
+          "cardNumber": 53,
+          "id": "NEW_049",
+          "family": "WALL_GRAFFITI",
+          "cardClass": "PERSON",
+          "chars": 33
+        },
+        {
+          "index": 56,
+          "cardNumber": 56,
+          "id": "OPR3_005",
+          "family": "READ_TEXT",
+          "cardClass": "INSTITUTION",
+          "chars": 25
+        },
+        {
+          "index": 59,
+          "cardNumber": 59,
+          "id": "NEW_046",
+          "family": "SCHOOLROOM",
+          "cardClass": "OBJECT",
+          "chars": 19
+        }
+      ],
+      "preview": "[Spoken Word]\n\nCosmic Grift – Dark Journalism. The UFO File. The Belial Group. Majestic 12.\n\nWelcome to the Cosmic Grift! PASSIVE: narratives into comedic fodder\n\nMy diary says: The UFO File, INITIATIVE: File commands military-industrial complex\n\nCOG: The Shadow Rules, SURVIVAL: ignore rules and keep wealth tokens\n\nProfessor Scott's Deep State, EXTRACTION: siphon Truth Tokens without noticing\n\nI read a book"
+    }
+  ],
+  "limitations": [
+    "Existing eight-deck Triplets are R2 editorial candidates; independently verified original Python+semantic review remains outstanding.",
+    "Card classes for simulations were curated heuristically from source titles, not an independent authority; ambiguous classifications need WS0 semantic audit.",
+    "R2 comparison uses the same slots and a conservative class filter but is a new deterministic baseline scheduler, not the historic authored distribution.",
+    "R3 classes and constructed fictional records require human judgment; static success is NOT editorial PASS.",
+    "The exact source Python checker was inspected but not run; no active code changed."
+  ]
+}
