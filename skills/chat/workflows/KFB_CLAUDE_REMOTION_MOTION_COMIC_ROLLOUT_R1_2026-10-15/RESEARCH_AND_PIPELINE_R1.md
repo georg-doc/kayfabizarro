@@ -1,3 +1,9 @@
+> **CURRENT ADDITIVE R2 DIRECTION · 2026-10-15 · INTERACTIVE FIRST**  
+> Georg added a reusable interactive animation construction kit for deck shuffle, flip, fan, slide, PDF panel reveals, billboards, other KFB display surfaces, game cutscenes and optional social/video. The **canonical current planning specification is [INTERACTIVE_MOTION_RECIPES_R2.md](./INTERACTIVE_MOTION_RECIPES_R2.md)**, which supersedes the **video-first** priority and old video acceptance gate below, without deleting this R1 research. Existing WS0 v5 is the first implementation receiver; KFB original CardStack v1, Living Illustration and Billboard/H13 are mandatory source donors. **MP4 is an optional downstream export**, not the first product gate.  
+> Current one gate: `CLAUDE_CODE_WS0_REAL_SOURCE_INTERACTIVE_CARD_MOTION_PILOT_R2`.
+
+---
+
 # KFB · Claude Code + Remotion · Motion-Comic / Card-Deck / Music-Rollout R1
 
 **Status:** RESEARCH + AUTHORING BRIEF ONLY · UNAPPROVED TECH ADOPTION · NO VIDEO RENDER / RUNTIME WRITE  
