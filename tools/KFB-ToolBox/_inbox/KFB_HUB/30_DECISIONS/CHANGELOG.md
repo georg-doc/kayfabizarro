@@ -1,5 +1,12 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Georg Global Intent: Rollenbewusste Residents / Kayfabe Agency (WS0-Intake, keine V-Nummer)
+- Georg präzisiert das KFB Bigger Picture: KayKit/KFB-Bewohner sind sich ihrer sozialen Charaktermaske, Bühnen-/Wrestling-Kayfabe-Rolle, biografischen Fehler-Loops, Stärken und möglichen Alternativen bewusst, können ihre Rolle jedoch bewusst weiter spielen. Kontextwechsel (Gabriel Sinnfelder), ungewöhnliche Nachbarschaft (Warburg), Card/Story, Pop-up-Kulisse und Licht können eine neue Lesart derselben Figur erzeugen. Tragikomik, Sarkasmus und versöhnliche Selbstironie ohne erzwungene NPC-Meta-Gags, Moralprüfung, Trauma-Diagnose oder ständigen Rollenbruch.
+- Additive ausführliche Konzeptquelle: `replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md`; Verweis in `skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md` auf diesem WS0-Branch und bei Metatheatre-/Lighting-Intake [#404](https://github.com/georg-doc/kayfabizarro/issues/404). Rollenbewusst ≠ allwissend über Academy/Fluff; bestehende Resident-/ChatterBox-/Memory-/World-Owner bleiben intakt. **Konzept festgehalten, keine neue WS1-Implementierung, keine V-Nummer.**
+- Einziger nächster WS0-Gate bleibt `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT` im aktiven MVP; der Global-Intent ist Guidance, kein zweiter Feature-Gate.
+
+
+
 ## 2026-10-15 · Mund-Bogen-Plugin · V-255 Kompatibilitätsprüfung R1
 - `replies/KFB_MOUTH_SHEET_PLUGIN_PREFLIGHT_R1_2026-10-15.md`: die Wiederverwendungslinie für einen privaten „KFB Mouth Sheet Maker“ ist **bereits durch V-255** festgelegt: 4×4 = 16 benannte Sprech-/Emotionsformen, derselbe Figuren-/Mund-Owner (WSA ToolBox). Echter technischer Gate-Konflikt: die vorhandenen `MOUTHS_GPT_R1/R2/_tools/cut_align.py` verarbeiten **4×3 mit 12 Komponenten und vorhandenem Alpha**, nicht 4×4 auf Chroma-Grün; R2 hat aber nachweisbar brauchbare Alpha-Säuberung, 512²-PNGs, Anker, upperLift 0,35 und Review-Clips. Keine neue Visem-Matrix erfinden: Rhubarb (6+3) und Meta (15) nur als Mapping-Benchmarks. Nächste begrenzte Aktion: **V-255 4×4-Chroma/Alpha-Adapter** zu R2 mit einem kompletten 16-Slot-Pilot, unabhängigem PNG-/Animationsnachweis vor jeder Plugin-Veröffentlichung. Noch kein Plugin/Runtime oder neuer V-Beschluss.
 
