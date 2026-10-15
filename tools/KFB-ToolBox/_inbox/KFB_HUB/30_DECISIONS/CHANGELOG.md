@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Kart R5 nach Raster
+- MeshyModels/_browser/bathtub_kart/seating_r5: G1–G8 PASS für FB und Orc (Becken mittig ±1,6 %, J17-Sitz SeatL als Kart-Schale in Tub-Materialsprache, Lehne 28°, Fäuste 120/120, keine Durchdringung, Orc kartScale 1,04). Hub kt06.
+
 ## 2026-10-15 · Meshy-Community, Umgebung um Dioramen
 - V-318: CC0-Modelle aus der Meshy-Community als Quelle; Intake 14 Modelle, Verdant Ruins + Alien-Werkstatt als Bühnen.
 - V-319 (TBD): Umgebung um das Diorama mit Begegnungen, Minispielen, Kämpfen, Fluff; Graveyard-Diorama + KayKit-Halloween-Requisiten.
