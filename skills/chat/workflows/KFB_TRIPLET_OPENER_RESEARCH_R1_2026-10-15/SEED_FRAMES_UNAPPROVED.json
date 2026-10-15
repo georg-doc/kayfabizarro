@@ -1,0 +1,1465 @@
+{
+  "schema": "kfb.voice.opener-research-seeds/1",
+  "status": "RESEARCH_ONLY_NOT_APPROVED",
+  "source": "New original seed frames prompted by Georg 2026-10-15, not externally researched",
+  "existingApprovedOpeners": 27,
+  "existingChecker": "triplet_set_check.py @095846ba2896a83d1b8747066978e7f05b6d7164",
+  "rules": [
+    "Do not append to live OPENERS automatically.",
+    "Keep one canonical card Triplet; opener is separate framing.",
+    "Concatenate literal plus space plus unchanged Triplet, run grammatical/semantic check.",
+    "Fictional narrative frames must not be represented as factual quotations.",
+    "Run budget, syntax, human and source checks before promotion."
+  ],
+  "counts": {
+    "total": 74,
+    "families": 14,
+    "highAttributionRisk": 7
+  },
+  "entries": [
+    {
+      "id": "OPR3_001",
+      "literal": "I read a book about",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_002",
+      "literal": "A footnote mentioned",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 20,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_003",
+      "literal": "The manual warned about",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_004",
+      "literal": "The book was called",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_005",
+      "literal": "I found this in a novel:",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_006",
+      "literal": "One chapter was titled",
+      "family": "READ_TEXT",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_007",
+      "literal": "I saw a film about",
+      "family": "FILM_SCREEN",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "PLACE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_008",
+      "literal": "The newsreel showed",
+      "family": "FILM_SCREEN",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "PLACE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_009",
+      "literal": "An old movie featured",
+      "family": "FILM_SCREEN",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "PLACE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_010",
+      "literal": "I watched a documentary on",
+      "family": "FILM_SCREEN",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "PLACE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 26,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source."
+    },
+    {
+      "id": "OPR3_011",
+      "literal": "On the cinema poster:",
+      "family": "FILM_SCREEN",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_012",
+      "literal": "I saw a painting of",
+      "family": "ART_ENCOUNTER",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_013",
+      "literal": "A sketch in the gallery:",
+      "family": "ART_ENCOUNTER",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_014",
+      "literal": "The exhibit was labelled",
+      "family": "ART_ENCOUNTER",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE",
+        "EVENT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_015",
+      "literal": "In the museum catalogue:",
+      "family": "ART_ENCOUNTER",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_016",
+      "literal": "A cartoon on the wall:",
+      "family": "ART_ENCOUNTER",
+      "semanticClass": [
+        "PERSON",
+        "OBJECT",
+        "PLACE",
+        "SCENE",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_017",
+      "literal": "A friend told me about",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_018",
+      "literal": "I met someone discussing",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_019",
+      "literal": "My neighbor mentioned",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_020",
+      "literal": "A stranger asked about",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_021",
+      "literal": "My cousin called it",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_022",
+      "literal": "An old friend said:",
+      "family": "MEETING_DIALOGUE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "OBJECT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_023",
+      "literal": "I heard a rumor about",
+      "family": "RUMOR_OVERHEARD",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_024",
+      "literal": "Someone whispered about",
+      "family": "RUMOR_OVERHEARD",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_025",
+      "literal": "An overheard argument:",
+      "family": "RUMOR_OVERHEARD",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_026",
+      "literal": "Around here they say:",
+      "family": "RUMOR_OVERHEARD",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_027",
+      "literal": "A voice on the radio:",
+      "family": "RUMOR_OVERHEARD",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "CONCEPT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_028",
+      "literal": "My diary says:",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 14,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_029",
+      "literal": "Someone wrote in my diary:",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 26,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_030",
+      "literal": "In my old sketchbook:",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_031",
+      "literal": "On my poetry-album page:",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_032",
+      "literal": "I once wrote about",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_033",
+      "literal": "My notebook is marked",
+      "family": "PERSONAL_WRITING",
+      "semanticClass": [
+        "PERSON",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT",
+        "SCENE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_034",
+      "literal": "A note under my door:",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_035",
+      "literal": "I found this scrap:",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_036",
+      "literal": "On the back of a napkin:",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_037",
+      "literal": "An envelope was marked",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_038",
+      "literal": "A receipt in my pocket:",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_039",
+      "literal": "Inside an abandoned notebook:",
+      "family": "FOUND_EPHEMERA",
+      "semanticClass": [
+        "OBJECT",
+        "CONCEPT",
+        "EVENT",
+        "PERSON",
+        "PLACE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 29,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_040",
+      "literal": "An official statement read:",
+      "family": "OFFICIAL_VOICE",
+      "semanticClass": [
+        "EVENT",
+        "SYSTEM",
+        "INSTITUTION",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 27,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source."
+    },
+    {
+      "id": "OPR3_041",
+      "literal": "The meeting minutes say:",
+      "family": "OFFICIAL_VOICE",
+      "semanticClass": [
+        "EVENT",
+        "SYSTEM",
+        "INSTITUTION",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_042",
+      "literal": "A politician once claimed:",
+      "family": "OFFICIAL_VOICE",
+      "semanticClass": [
+        "EVENT",
+        "SYSTEM",
+        "INSTITUTION",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 26,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source."
+    },
+    {
+      "id": "OPR3_043",
+      "literal": "The press release insisted:",
+      "family": "OFFICIAL_VOICE",
+      "semanticClass": [
+        "EVENT",
+        "SYSTEM",
+        "INSTITUTION",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 27,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source."
+    },
+    {
+      "id": "OPR3_044",
+      "literal": "A campaign poster promised:",
+      "family": "OFFICIAL_VOICE",
+      "semanticClass": [
+        "EVENT",
+        "SYSTEM",
+        "INSTITUTION",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 27,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source."
+    },
+    {
+      "id": "OPR3_045",
+      "literal": "I think I remember",
+      "family": "MEMORY_DREAM",
+      "semanticClass": [
+        "PERSON",
+        "PLACE",
+        "SCENE",
+        "OBJECT",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_046",
+      "literal": "I dreamed about",
+      "family": "MEMORY_DREAM",
+      "semanticClass": [
+        "PERSON",
+        "PLACE",
+        "SCENE",
+        "OBJECT",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 15,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_047",
+      "literal": "In last night's dream:",
+      "family": "MEMORY_DREAM",
+      "semanticClass": [
+        "PERSON",
+        "PLACE",
+        "SCENE",
+        "OBJECT",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_048",
+      "literal": "My memory says:",
+      "family": "MEMORY_DREAM",
+      "semanticClass": [
+        "PERSON",
+        "PLACE",
+        "SCENE",
+        "OBJECT",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 15,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_049",
+      "literal": "Or did I imagine",
+      "family": "MEMORY_DREAM",
+      "semanticClass": [
+        "PERSON",
+        "PLACE",
+        "SCENE",
+        "OBJECT",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 16,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_050",
+      "literal": "Backstage someone muttered:",
+      "family": "STAGE_AUDIENCE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "CONCEPT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 27,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_051",
+      "literal": "A heckler shouted:",
+      "family": "STAGE_AUDIENCE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "CONCEPT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_052",
+      "literal": "At rehearsal I heard:",
+      "family": "STAGE_AUDIENCE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "CONCEPT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_053",
+      "literal": "The announcer whispered:",
+      "family": "STAGE_AUDIENCE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "CONCEPT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_054",
+      "literal": "An actor's cue card:",
+      "family": "STAGE_AUDIENCE",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "OBJECT",
+        "CONCEPT",
+        "SCENE"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 20,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_055",
+      "literal": "A box was labelled",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_056",
+      "literal": "The map was marked",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_057",
+      "literal": "A scratched sign read:",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 22,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_058",
+      "literal": "On the price tag:",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 17,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_059",
+      "literal": "The ledger listed",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 17,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_060",
+      "literal": "On the museum ticket:",
+      "family": "OBJECT_LABEL",
+      "semanticClass": [
+        "OBJECT",
+        "PLACE",
+        "CONCEPT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_061",
+      "literal": "My aunt used to say:",
+      "family": "ORAL_HISTORY",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "CONCEPT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 20,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_062",
+      "literal": "An old witness recalled",
+      "family": "ORAL_HISTORY",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source."
+    },
+    {
+      "id": "OPR3_063",
+      "literal": "Someone swore they'd seen",
+      "family": "ORAL_HISTORY",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "HIGH",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 25,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Fictionalized voice frame: never imply a real verified quotation, documentary or historical source."
+    },
+    {
+      "id": "OPR3_064",
+      "literal": "A tale begins with",
+      "family": "ORAL_HISTORY",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 18,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_065",
+      "literal": "My teacher once mentioned",
+      "family": "ORAL_HISTORY",
+      "semanticClass": [
+        "PERSON",
+        "EVENT",
+        "PLACE",
+        "CONCEPT"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 25,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Treat any encounter/remembered testimony as performer fiction, not documentary proof."
+    },
+    {
+      "id": "OPR3_066",
+      "literal": "A corrupted transcript said:",
+      "family": "TECH_MEDIA",
+      "semanticClass": [
+        "SYSTEM",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 28,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_067",
+      "literal": "The help file stated:",
+      "family": "TECH_MEDIA",
+      "semanticClass": [
+        "SYSTEM",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_068",
+      "literal": "The machine's log read:",
+      "family": "TECH_MEDIA",
+      "semanticClass": [
+        "SYSTEM",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_069",
+      "literal": "An error message warned:",
+      "family": "TECH_MEDIA",
+      "semanticClass": [
+        "SYSTEM",
+        "CONCEPT",
+        "OBJECT",
+        "EVENT"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 24,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_070",
+      "literal": "Wait, look at",
+      "family": "INTERRUPTION_CALLBACK",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 13,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_071",
+      "literal": "And this reminded me of",
+      "family": "INTERRUPTION_CALLBACK",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "DIRECT_PREFIX",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 23,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_072",
+      "literal": "One more note:",
+      "family": "INTERRUPTION_CALLBACK",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 14,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_073",
+      "literal": "The next page says:",
+      "family": "INTERRUPTION_CALLBACK",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 19,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    },
+    {
+      "id": "OPR3_074",
+      "literal": "But the margin reads:",
+      "family": "INTERRUPTION_CALLBACK",
+      "semanticClass": [
+        "CONCEPT",
+        "PERSON",
+        "OBJECT",
+        "EVENT",
+        "SYSTEM"
+      ],
+      "join": "COLON_FRAME",
+      "performerFiction": true,
+      "attributionRisk": "LOW",
+      "fictionalNarratorFrame": true,
+      "spokenCharacterCost": 21,
+      "reviewStatus": "PROPOSED",
+      "automaticEligibility": false,
+      "notes": "Must read naturally before exact title-first canonical Triplet; reject semantic mismatch."
+    }
+  ]
+}
