@@ -18,6 +18,7 @@ import EyeTest from './EyeTest'
 import ActorTest from './ActorTest'
 import StageTest from './StageTest'
 import Stage from './Stage'
+import M1World from './m1/M1World'
 import { MOVE_MAP } from './hostKeys'
 import { createProbe } from './probeModule'
 import { useState, useEffect } from 'react'
@@ -32,15 +33,16 @@ function HostTest() {
 
 export default function App() {
   const debug = typeof location !== 'undefined' && location.hash.includes('debug')
+  const m1 = typeof location !== 'undefined' && /#m1(,|$)/.test(location.hash) // M1 Bewegung mit FrizzleBob v5b (offene Welt, Amphitheater), im selben Canvas
   const stage = typeof location !== 'undefined' && /#stage(,|$)/.test(location.hash) // Amphitheater-Bühne (G4-Vorbereitung), im selben Canvas
   const stagetest = typeof location !== 'undefined' && location.hash.includes('stagetest') // B1-Prüfszene: Billboard + zwei Darsteller, im selben Canvas
-  const actortest = stage || stagetest || (typeof location !== 'undefined' && location.hash.includes('actortest')) // Darsteller-Slot-Prüfszene (ToolBox-Licht), im selben Canvas
+  const actortest = m1 || stage || stagetest || (typeof location !== 'undefined' && location.hash.includes('actortest')) // Darsteller-Slot-Prüfszene (ToolBox-Licht), im selben Canvas
   const eyetest = actortest || (typeof location !== 'undefined' && location.hash.includes('eyetest')) // F1-Prüfszene: Studio-Bühne statt Welt, im selben Canvas
   return (
     <>
       <KeyboardControls map={MOVE_MAP}>
-        <Canvas shadows dpr={eyetest ? 1 : [1, 1.75]} flat={actortest} gl={eyetest && !actortest ? { toneMappingExposure: 1.05 } : undefined} camera={{ fov: 55, near: 0.1, far: 2000, position: [0, 30, 12] }}>
-          {stage ? <Suspense fallback={null}><Stage /></Suspense> : stagetest ? <Suspense fallback={null}><StageTest /></Suspense> : actortest ? <Suspense fallback={null}><ActorTest /></Suspense> : eyetest ? <Suspense fallback={null}><EyeTest /></Suspense> : <>
+        <Canvas frameloop={m1 ? 'never' : 'always'} shadows dpr={m1 ? [1, 2] : eyetest ? 1 : [1, 1.75]} flat={actortest} gl={eyetest && !actortest ? { toneMappingExposure: 1.05 } : undefined} camera={{ fov: 55, near: 0.1, far: 2000, position: [0, 30, 12] }}>
+          {m1 ? <Suspense fallback={null}><M1World /></Suspense> : stage ? <Suspense fallback={null}><Stage /></Suspense> : stagetest ? <Suspense fallback={null}><StageTest /></Suspense> : actortest ? <Suspense fallback={null}><ActorTest /></Suspense> : eyetest ? <Suspense fallback={null}><EyeTest /></Suspense> : <>
           {SCENE === 'planets' ? <>
             <color attach="background" args={['#1b1633']} />
             <fog attach="fog" args={['#1b1633', 90, 260]} />

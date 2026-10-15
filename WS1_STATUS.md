@@ -1,7 +1,41 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§41 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§42 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 42 · 15.10. abends · M1 als Zwischenstand nach main gemergt (Georg) · alles grün
+
+### 42.1 · Merge
+- m1/bewegung @cc1ded7 mit `--no-ff` nach main: kfb-planet **@08463eb**, konfliktfrei.
+- **Was neu in main ist:**
+  - M1-Welt (`#m1`): Laufen, Springen und Fliegen mit ecctrl, eigene Schleife (Vertragsfrage §32 weiter offen).
+  - Ränge als Kulisse: Zaun aus Tortenstücken mit gemessenem Außenprofil (V-283).
+  - `flyClip`: Flug gleitet an Wänden.
+  - Dialog mit GothGirl (`stageCast`) und `StageOrbitCam` (ref-Griff, Übergabe ohne Schnitt).
+  - Tastenliste vollständig.
+- **Prüflauf auf main @08463eb** (frisch gebaut, 0 geänderte Dateien):
+  - ganze Testreihe **22/22 PASS**;
+  - M1-Runde **14/14 PASS**: rank-fence, contract, move @60/@120/@30, hz-equal, fence, fence-Gegenlauf, scene, handover, eyes, bench, f1.
+- **Zaun-Kennwerte:**
+  - Bühnenboden im Zaun 0 m²;
+  - größter Abstand Zaun → Stufe 0,23 m;
+  - Kollider ohne Lücke, ohne zu dünne Stelle, ohne Überstand;
+  - freies Gelände im Zaun 13,2 m² statt vorher 184 m² (Nischen, die ein radialer Grundriss nicht auslassen kann).
+- **Gegenlauf ohne Zaun:** 6 von 7 Fußwegen und beide schnellen Flüge geraten in die Ränge. Der Zaun ist also wirksam.
+- **INFO Rückwand ohne Zaun:** Die Kapsel sinkt bis −18,6 cm ein (z −16,5), unverändert. Das ist der Abnahmewert für WS0s Kollisionsnetz.
+- V-248 unverändert: Joggen 0,042, Gehen 0,48, Sprint 0,21.
+
+### 42.2 · Zwischenstand, nicht abgenommen (Georg 15.10., §41.1)
+- Kein sechster blinder Prüfer. Prüfer 5 gab PASS MIT AUFLAGEN; die Auflagen N1–N14 sind erledigt.
+- **Bei WS0 offen:**
+  - V-248 Gehen und Sprint (Clip-Eigenschaft, §33.1);
+  - vorderer Ring bzw. Rampe zur Bühne (§39.4 a/b);
+  - harter Halt beim Aufsetzen (§39.4 e);
+  - Zaunhöhe (§38.3, a/b/c);
+  - bewegtes Bildpaar Studio | M1 (V-214);
+  - Prüfer-Punkte eigene Schleife, m1-gait vs. anim.mjs, Strg auf dem Mac, V-023 (§35.4);
+  - Auslieferweg (§40.6).
+- Keine Datei an Georg, bis der Auslieferweg entschieden ist.
 
 ## 41 · 15.10. abends · Georg: M1 als Zwischenstand abschließen · Briefing-Entwurf M2 „Fahren übers Gelände“ an WS0
 
