@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { createEnvironmentHost } from '../../../../tools/KFB-ToolBox/_inbox/KFB Skydome Gates SKY3/KFB_SKYDOME_SKY3_SESSION_CUT_2026-10-01_r1/lab-sky/env-host.v3.js';
+import { createEnvironmentHost } from '../../../../../tools/KFB-ToolBox/_inbox/KFB Skydome Gates SKY3/KFB_SKYDOME_SKY3_SESSION_CUT_2026-10-01_r1/lab-sky/env-host.v3.js';
 
 const canvas=document.getElementById('sky-canvas'), panel=document.getElementById('sky-state'), status=document.getElementById('status');
 const exposure={ready:false,error:null,source:{sky:'SKY3 env-host.v3.js',vfx:'whitePuff00.png',audio:'ambient_wind.wav'},steps:0};
