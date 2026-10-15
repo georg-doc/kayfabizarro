@@ -458,3 +458,16 @@ All actual presentable lines must come through WS0-controlled current Card/KEEP 
 **Humaner Kern:** Figuren dürfen sich über eigene Denkfehler freuen, ihre Charaktermaske bejahen, streiten, spotten und andere Perspektiven kennenlernen, ohne alle Meinungen als wahr oder unbedenklich zu behandeln. Unterschiedliche Weltanschauungen sind gleichberechtigt als *Gegenstand einer Begegnung*, nicht gleichwertig als Tatsachenbehauptung. Der Spieler wird nicht in eine gewünschte politische Sicht gedrängt.
 
 **Owner/Gate:** WS0 besitzt Karten-/Text-/Quellenprüfung; WS1 bleibt alleiniger R3F-Laufzeit-Owner. Dieser Zusatz ist eine optionale redaktionelle Hilfe zur aktuellen Zwei-Figuren-/Card-/Billboard-Szene, keine neue Dialogengine, keine V-Nummer, kein Gameplay-System. R1.3–R1.6 bleiben unverändert. Einziger nächster Gate: WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT.
+
+
+---
+
+## R1.8 · Georg-Korrektur · 15.10.2026 · Narrative Freiheit und Quellenvertiefung
+
+**Verbindliche redaktionelle Präzisierung für KFB:** Die vorangegangenen Klassifikationsvorschläge in R1.6/R1.7 sind **keine freigegebene spielerseitige Darstellungsregel**. Einzelne Erzählungen werden weder auf Karten noch in Dialogen mit vorgefertigten Wahrheits-Etiketten oder Warnplaketten versehen. Der Witz, die Mehrdeutigkeit und die Closure sollen aus der Aufführung selbst entstehen.
+
+**Positiver Weg:** Originale KFB-Karten, Residentenrollen und überraschende Verbindungen eröffnen einen ergebnisoffenen Denk- und Erzählraum. Spieler können nachfragen, widersprechen, vergleichen oder weiterspielen. Optional führen QR-Verweise von der Karte zu tatsächlich vorhandenen Originaldokumenten, weiterführenden Belegen und unterschiedlichen Quellensichten, sodass die Leser eigenständig weiterforschen können. Die Schönheit einer Geschichte ersetzt keinen Beleg; **die Quelle wird zugänglich gemacht, ohne dass KFB die Schlussfolgerung vorschreibt**.
+
+**Bestehende Infrastruktur zuerst:** Kartenidentität über PDF, Registry und Almanach unverändert; bestehende Brain-Food-/Quellenlink-Vorhaben wiederverwenden. Eine aktuelle kanonische URL oder Implementierung des genannten QR-Index wurde in der bisherigen GitHub-Suche **nicht verifiziert**; WS0 muss diese Quelle zunächst auffinden und pinnen. Keine erfundenen Links, zweite QR-Datenbank oder neue Runtime.
+
+**Owner und Grenze:** WS0 betreut Redaktion, Originalquellen und Autorisierung; WS1 bleibt bestehender R3F-Szenenowner. R1.8 ersetzt die Etikettierungsanmutung der vorangegangenen Abschnitte, nicht deren historische Recherche. Weiter nur ein nächster Gate: WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT.
