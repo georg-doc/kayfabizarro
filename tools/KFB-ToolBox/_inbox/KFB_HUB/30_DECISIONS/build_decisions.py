@@ -287,6 +287,8 @@ d('V-306','2026-10-15','Bühne','RULE','Bühnen-Abnahme (Hub): Stage-Batch PASS 
 d('V-307','2026-10-15','Fahren','TUNE','Badewannen-Kart (kt05): Sitz wirkt unpassend; Orc und FrizzleBob sollen nicht gerade bzw. aufrecht sitzen, sondern in Kart-Cockpit-Sitzposition (zurückgelehnt, Beine nach vorn); der störende Sitz kann weg, um Platz zu schaffen; Arme etwas mehr gestreckt am Lenkrad.', 'WS0 (Asset)', 'FB + Orc 3/4, Seite, Video', 'Georg 15.10.', supersedes='V-284 (Sitzhaltung)')
 d('V-308','2026-10-15','Dialog','PASS','Kokoro-Stimmen PASS (vo01, „super, weiter so“): FrizzleBob = am_michael, GothGirl = bf_emma. Kokoro v1.0 lokal bleibt die Stimmquelle für Triplets (vorab erzeugt, V-285). Nächster Schritt: Stimmen-Besetzung je Figur (Character Mapping) aus 28 englischen Stimmen plus Mischstimmen; Suno-Schiene mit weiteren Decks über das Triplet-Plugin fortsetzen, parallel mit Kokoro testen.', 'WS0', 'Besetzungsliste + Hörprobe', 'Georg 15.10.')
 d('V-309','2026-10-15','Bühne','RULE','Neues Meshy-Diorama Retro-Arcade-Casino „Galaxy Gamblers Club“ als Bühne aufbereiten (wie STAGES_BATCH_R1); Georgs Vorschlag: Billboard über der Galaxy-Neon-Reklame.', 'WS0 (Bühne) → WS1', 'Bühnenbilder + Hub-Frage', 'Georg 15.10.')
+d('V-310','2026-10-15','Fahren','FAIL','Badewannen-Kart Sitz R4 FAIL (sechste Runde): Sitz sieht schlecht aus, nicht designt, passt nicht zum Modell; Orc sitzt hinten in den Armaturen, FrizzleBob ganz hinten – Vorgabe war: beide in der Mitte des Gefährts, Kart-Situation. Arbeitsweise FAIL: geflickschustert statt nach klarer Vorgabe. Neue Regel für den Fix: zuerst messbares Abnahme-Raster (Becken in Längs- und Quermitte der Wanne, designter Kart-Schalensitz aus Spender in Tub-Materialsprache, Rücken an der Lehne, Hände am Kranz, keine Durchdringung, Draufsicht mit Mittellinien als Nachweis), WS0 prüft das Raster selbst, erst dann geht ein Bild an Georg. Georg kann die Position später auch selbst im 3D-In-Place-Editor setzen.', 'WS0', 'Draufsicht mit Mittellinien + 3/4 + Seite + Video je Fahrer', 'Georg 15.10.', supersedes='V-307 (Umsetzung R4)')
+d('V-311','2026-10-15','Fahren','TBD','Dieselpunk-Racer: 18 Meshy-Fahrzeugmodelle (Meshy-Collection „Dieselpunk Flightworks“, lokal MeshyModels/KFB DieselPunk Vehicles) als Autos, in die die Figuren einfach hineinhüpfen – keine Cabrio-Sitzsituation (Fahrer verschwindet im Fahrzeug). Könnte die Badewanne als Hauptfahrzeug ablösen; die Badewanne wird trotzdem sauber fertig gemacht (V-310). Intake: Kontaktbogen, Einordnung, Browser-Fassungen, Einstiegspunkt.', 'WS0 (Intake) → WS1', 'Kontaktbogen + Auswahl durch Georg', 'Georg 15.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -562,6 +564,8 @@ WHY = {
  'V-307':('Kart-Figuren müssen nach Kart aussehen, nicht nach Bürostuhl.','ab sofort'),
  'V-308':('Kokoro klingt gut genug und kostet nichts pro Zeile.','ab sofort'),
  'V-309':('Jedes neue Diorama wird gleich aufbereitet.','ab sofort'),
+ 'V-310':('Sechs Runden ohne Abnahme-Raster: jede Runde flickte nur die letzte Kritik.','ab sofort'),
+ 'V-311':('Hineinhüpfen spart die ganze Sitz- und Lenkrad-Pose.','Planung'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 SUP = {}

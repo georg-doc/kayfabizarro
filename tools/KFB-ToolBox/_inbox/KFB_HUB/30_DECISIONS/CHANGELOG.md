@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Kart R4 FAIL, Dieselpunk-Racer
+- V-310: Kart-Sitz R4 FAIL (nicht mittig, Sitz undesignt); Fix nur mit messbarem Abnahme-Raster, WS0 prüft vor Vorlage.
+- V-311: 18 Dieselpunk-Racer als Hineinhüpf-Autos (TBD), Intake läuft.
+
 ## 2026-10-15 · Bühnen v2 + Retro-Arcade
 - Branch assets/meshy-stages-v2-arcade-2026-10-15 @8cf2ec71: Goblin-Bank v2, Gefängnis v2, Utopia v2, Retro-Arcade-Casino v1. Hub st03.
 
