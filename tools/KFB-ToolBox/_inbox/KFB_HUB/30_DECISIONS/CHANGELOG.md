@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Dieselpunk-Fahrzeuge Intake
+- 18 Modelle: 13 Fahrzeuge, 5 Requisiten/Diorama (Alien-Werkstatt → Bühnen-Pipeline). Branch assets/meshy-dieselpunk-vehicles-2026-10-15 @9f5c0f48 mit 10 Fahrzeugen (3 mit Markenlogos zurückgehalten). Räder verschmolzen → Naben-Anker. Hub dv01.
+
 ## 2026-10-15 · M2 Fahren freigegeben, Auslieferweg
 - V-313: WS1-Entwurf M2 freigegeben mit Ergänzungen (replies/BRIEF_WS1_M2_FAHREN_R1.md).
 - V-314: Abnahmen über Branch-Vorschau https://ws1-preview.kayfabizarro.pages.dev/.
