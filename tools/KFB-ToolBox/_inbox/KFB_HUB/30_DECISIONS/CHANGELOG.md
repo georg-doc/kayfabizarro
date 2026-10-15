@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Triplet-Batch 8: WS0-Intake + v2
+- Batch 8 (editorial/kfb-triplets-eight-decks-r2-2026-10-15 @31639721): Python-Checker 445/445 PASS, semantisch 193 TUNE + 1 FAIL (Caps, nackte Etiketten, Opener-Satzzeichen, Intros, Trust #28 verdreht). WS0 hat alle Fixes + 37 eigene Lesefixes eingesetzt → TRIPLET_SETS_R2/<deckId>.v2.* (8 × 0 FAIL, alle < 5000 Zeichen). Hub-Briefings b36–b43 (Suno-Texte zum Aufnehmen).
+- Batch-9-Briefing b35 um Lehren aus Batch 8 ergänzt.
+- Datenfehler offen: pharaoh_piledriver #46 power null (gedruckt: Heal all damage at end of turn), trust_and_betrayal #30 power nicht gedruckt, cosmic #20 Lore abgeschnitten, observation #3 Titel Die/The Taschenspion.
+
 ## 2026-10-15 · Meshy-Community R1
 - Intake 14 Modelle (Kontaktbogen, Einordnung) + Bühnen Grüne Ruinen und Alien-Werkstatt, Branch @228f7459. Hub st04 (Kartenplatz) und cm01 (nächste Bühnen).
 
