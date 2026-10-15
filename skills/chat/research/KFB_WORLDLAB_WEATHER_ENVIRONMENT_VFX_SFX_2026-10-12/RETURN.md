@@ -97,3 +97,26 @@ Georg requested another GitHub push because the prior handoff did not appear to 
 New additive entrypoint: `CLAUDE_CODE_WSA_GITHUB_INTAKE_CHECKIN_2026-10-15.md` in this project root; its source write/readback was verified at commit `5dcb26da93a637308e856dcc3adaa0661c922f6a`. Claude Code and Work/WSA must explicitly open **the PR branch**, not assume default `main` contains it. The read-first chain, status and single gate are restated there without duplicating source assets or creating a second owner.
 
 This was a GitHub metadata/document handoff check only: no new runtime tests, audio listening, render screenshots, asset downloads, new Stage/Site, or human product acceptance. Continue at the one existing **KFB WEATHER/SFX THREE-SCENARIO SOURCE-ISOLATION AUDIT** only under separate receiving execution authority. Exact final branch head is verified after this Return write; do not infer it from the older hashes quoted above.
+
+## Additive result · 2026-10-15 · Three-scenario technical source-isolation Gate executed
+
+Georg explicitly authorized proceeding with the next test gate. Result: **A original SKY3 dry→rain→dry PASS**, **B real CC0 rain decoded/mixed/voice-ducked/muted in existing KFB Audio calibration PASS**, **C original VFX-01 Kenney smoke frame isolated and displayed PASS**. **31/31 technical checks** across two real Playwright/Chromium GitHub CI suites; separate **visual Clay compatibility and human sound quality NOT_RUN**.
+
+**Read-first evidence:**
+- `SOURCE_AUDIT_TEST_REPORT_2026-10-15.md` — actual numbers, screenshots, errors and caveats.
+- `SOURCE_AUDIT_RESULT_2026-10-15.json` — machine-readable SHA, workflow/artifact paths and deferred gates.
+- `source-audit/index.html`, `audit.mjs`, `proof.mjs`, `audio-proof.mjs` — nonproduction developer fixtures using the **real pinned owner files**.
+- `.github/workflows/worldlab-weather-vfx-source-audit.yml` and `worldlab-rain-existing-audio-audit.yml` — test jobs only.
+
+**Actual browser results and evidence (both source code tests at `e2266499a7b15a2b630f03f2121c7714d4adc69c`):**
+- SKY3/FX run: https://github.com/georg-doc/kayfabizarro/actions/runs/38786984611 (SUCCESS; original detailed 18/18 and screenshot artifact https://github.com/georg-doc/kayfabizarro/actions/runs/38785952718/artifacts/11997472633).
+- CC0 rain audio: https://github.com/georg-doc/kayfabizarro/actions/runs/38786984218 (SUCCESS 13/13; screenshot/results artifact https://github.com/georg-doc/kayfabizarro/actions/runs/38786984218/artifacts/11998403026).
+- CC0 rain source only used temporarily in CI, unchanged source asset library: `Rain OGG.zip` from https://opengameart.org/content/rain-loopable, author Ylmir; selected 550049-byte OGG SHA-256 `4f659f68cf5219007d0bb0969a1862491ceee4057fda4c491c6001e8608fa2cb`; archive filename member still needs a final production intake record.
+- Actual gain evidence: ambiance `0.7086` → during voice `0.5148` → recovered `0.7715` → muted `0.0012`, with **one AudioContext**, continuous music.
+- Rain source is visually active with 49 streaks at weight `0.8369399167510666`; returns to 0. Numeric intensity replay is deterministic, **sprite particle placement is NOT** (original unseeded `Math.random`). No pixel-exact/target-device FPS claim.
+
+**Preserved boundaries:** WorldBuilder R4 = STOPPED / F-R39 FAIL / NO MVP, current four-island A/B human gate unaffected. SKY3/Travel lighting/weather, VFX-01 and KFB Audio remain authoritative. No replacement owner, placeholder branding, imported texture/sound, Stage/Site publish, PR merge or Live promotion. The branch PR #389 also contains earlier independent Plant Prop/Wobbleflora additions; those were left unchanged by this test.
+
+**Deferred:** real Clay scene/context comparison with isolated original Kenney smoke; one actual human ear check of rain vs spoken voice; exact CC0 downloaded member rights/attribution if vendored, speaker/device performance and actual in-game integration. Browser scripts/CI cannot grant Georg product PASS.
+
+**One next gate:** **SOURCE-ISOLATED CLAY VFX COMPARISON + CC0 RAIN HUMAN LISTENING**, executed using the existing KFB Sky/VFX/Audio owners before asset adoption. No further automatic WorldBuilder changes.
