@@ -4188,6 +4188,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-313",
+   "date": "2026-10-15",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Auftrag M2 „Fahren übers Gelände“ an WS1 nach WS1-Entwurf (ws1/proposals/BRIEF_WS1_M2_FAHREN_R1_ENTWURF.md @8e4ec6fb), freigegeben mit WS0-Ergänzungen (replies/BRIEF_WS1_M2_FAHREN_R1.md): G0-Vergleich J17 k2b gegen ecctrl EcctrlVehicle (Rapier, ShapeCastWheel) mit Platzhalter sofort, Georg entscheidet am Fahren; erstes Fahrzeug ein Dieselpunk-Racer zum Hineinhüpfen (V-311), Asset von WS0 (V-273: Räder als Knoten mit Naben-Drehpunkt, Anker entry/driver_hidden/camera); M2 ist die eine Fahrzeug-Steuerung des Spiels, k2b nur Vergleich; viel Fahrhilfe als ein Tuning-Objekt; schlank prüfen (V-312), Abnahme-Raster mit Selbstaufrichten < 2 s, 0 Durchfahrten in 20 Replays, 60 fps Median.",
+   "values": {},
+   "owner": "WS1 (Bau) · WS0 (Fahrzeug-Assets)",
+   "check": "Vorschau-URL + Videos",
+   "source": "Georg 15.10. (mit WS1 besprochen)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Freie Fahrt braucht genau eine Fahrzeug-Steuerung in derselben Physik wie Laufen und Fliegen.",
+   "applies": "M2"
+  },
+  {
+   "id": "V-314",
+   "date": "2026-10-15",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Auslieferweg für Abnahmen (WS1 §40.6): Cloudflare Pages baut jeden Branch als Vorschau unter https://<branch-slug>.kayfabizarro.pages.dev/. WS1 legt lauffähige Stände als statisches Bundle auf den eigenen Branch ws1/preview (nur Bundle, index.html in der Wurzel) → feste Adresse https://ws1-preview.kayfabizarro.pages.dev/. Pages liefert media/2D_Assets, media/3D_Assets, .md/.fbx/.zip nicht aus, Dateien höchstens 25 MiB → Assets ins Bundle kopieren. Push = Vorschau-URL; WS1 darf sie Georg geben, WS0 stellt sie in den Production Hub; kein Merge nach main. Gilt für M1-Zwischenstand und alle weiteren Abnahmen (erfüllt V-304: live, ohne Start-Befehle).",
+   "values": {},
+   "owner": "WS1 · WS0",
+   "check": "erste Vorschau-URL lädt auf Georgs Mac",
+   "source": "WS0 15.10. (Frage WS1 §40.6)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg kann nur Links öffnen; Branch-Vorschauen gibt es schon kostenlos.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4260,7 +4290,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:521",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:525",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
