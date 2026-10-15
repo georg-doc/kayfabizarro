@@ -1,0 +1,201 @@
+{
+ "file": "~/Dropbox/CLAUDE/MeshyModels/_browser/atlantis/Atlantis_A_screen.glb",
+ "bytes": 15755264,
+ "sha256": "7b1e93f71bf5693acbc5af54826059236b5ca2af52672aa398b580da6e40855b",
+ "source": "~/Dropbox/CLAUDE/MeshyModels/_browser/atlantis/Atlantis_A_faithful.glb",
+ "mode": "FRONT_DISPLAY (V-265/V-268: versunkene Tempeltafel, in die Front des Kristallturms eingesetzt – vor Augen-Emblem und Wellenfries, unter dem Kronenkranz; Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_sandstone (Clay-Sandstein verwittert #BFA888 wie Säulen und Plattenränder von Atlantis, rough 0,85, metal 0, schlicht)",
+  "bezel_u": 0.016,
+  "bezel_m": 0.176,
+  "depth_u": 0.02,
+  "outer_u": {
+   "x": [
+    -0.151,
+    0.311
+   ],
+   "y": [
+    -0.016,
+    0.2558
+   ],
+   "cardBottom_y": 0,
+   "z": [
+    -0.3135,
+    -0.2935
+   ]
+  },
+  "mount": "ohne Sockel (V-268): flach an der Turmfront eingesetzt (Rückplatte 0,03 m vor den Turm-Pilastern), Unterkante auf Höhe der Bogenscheitel über dem Kristall-Portal; Rahmen ragt links und rechts über den achteckigen Turm hinaus (V-265, schlank, 0,22 m tief); Kristall mit Krallenkranz darüber, leuchtendes Portal und Plaza darunter bleiben frei; frontal zur Standardkamera (yaw 0°)",
+  "inlay": "blaues Einlage-Band (Clay #2C5C86 wie das Trident-Mosaik) mittig auf der Lünette, 4 Eck-Steine"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z, untere Trident-Plaza y ≈ −0,368, obere Plaza y ≈ −0,123)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.138,
+    0.24282,
+    -0.305
+   ],
+   "topRight": [
+    0.298,
+    0.24282,
+    -0.305
+   ],
+   "bottomRight": [
+    0.298,
+    -0.003,
+    -0.305
+   ],
+   "bottomLeft": [
+    -0.138,
+    -0.003,
+    -0.305
+   ]
+  },
+  "center_u": [
+   0.08,
+   0.11991,
+   -0.305
+  ],
+  "normalAtCenter": [
+   0,
+   0,
+   1
+  ],
+  "chordWidth_u": 0.436,
+  "arcWidth_u": 0.436,
+  "height_u": 0.24582,
+  "aspect_arc": 1.7736,
+  "surface": "eben: z = -0.305",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,368)·s, z·s), Ursprung = Inselmitte auf Höhe der unteren Plaza; s = 11 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     -0.135,
+     0.23982,
+     -0.305
+    ],
+    "topRight": [
+     0.295,
+     0.23982,
+     -0.305
+    ],
+    "bottomRight": [
+     0.295,
+     0,
+     -0.305
+    ],
+    "bottomLeft": [
+     -0.135,
+     0,
+     -0.305
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0069,
+    "u1": 0.9931,
+    "v0": 0.0122,
+    "v1": 0.9878
+   }
+  },
+  "corners_m_note": "Schlüsselname corners_m_s5p5 aus dem Utopia-Format beibehalten; Werte hier mit s = 11 m/u",
+  "corners_m_s5p5": {
+   "topLeft": [
+    -1.485,
+    6.686,
+    -3.355
+   ],
+   "topRight": [
+    3.245,
+    6.686,
+    -3.355
+   ],
+   "bottomRight": [
+    3.245,
+    4.048,
+    -3.355
+   ],
+   "bottomLeft": [
+    -1.485,
+    4.048,
+    -3.355
+   ]
+  },
+  "visibleSize_m": [
+   4.73,
+   2.64
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   0.0,
+   0.62,
+   2.15
+  ],
+  "target": [
+   0.06,
+   -0.14,
+   0.0
+  ],
+  "fovV_deg": 40,
+  "note": "Blick leicht erhöht von vorn über die untere Trident-Plaza: Figuren auf dem Mosaik, Treppe und obere Plaza dahinter, Kristallturm mit Tempeltafel mittig, Kristall frei, Poseidon-Kopf links, Augen-Grotte rechts"
+ },
+ "scale_m_per_u": 11,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "figures": {
+  "floorY_u": -0.368,
+  "positions_u": [
+   [
+    -0.05,
+    0.45
+   ],
+   [
+    0.17,
+    0.47
+   ]
+  ],
+  "heights_m": [
+   1.8,
+   2.0
+  ],
+  "stageZone_u_xz": [
+   [
+    -0.25,
+    0.3
+   ],
+   [
+    0.35,
+    0.3
+   ],
+   [
+    0.39,
+    0.45
+   ],
+   [
+    0.34,
+    0.6
+   ],
+   [
+    -0.22,
+    0.6
+   ],
+   [
+    -0.29,
+    0.45
+   ]
+  ]
+ }
+}
