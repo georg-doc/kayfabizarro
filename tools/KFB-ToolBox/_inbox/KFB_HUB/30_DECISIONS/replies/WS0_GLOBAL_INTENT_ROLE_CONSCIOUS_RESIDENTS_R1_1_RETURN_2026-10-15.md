@@ -40,3 +40,24 @@ Buster Keaton's geometrically precise deadpan spatial comedy, Chaplin's embodied
 **Actual tests:** GitHub exact branch head and changed document readbacks; source text contract checks only. No scene, actor, playwright, 3D visual comparison, performance, Site or Stage verification. No attempt to merge or promote Live.
 
 **One next gate unchanged:** `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`. WS0 chooses if any actor/player-responsive moment is useful for the current authentic two-actor Card/Billboard lighting/scene pilot. The conceptual addendum alone does not authorize a new Resident-feature backlog.
+
+
+---
+
+## R1.3 CORRECTION RETURN · Georg, 15 October 2026 · the joy of being and rebuilding
+
+**Supersedes one mistaken R1.2 claim:** KFB Residents do **not** depend for their continued fictional existence on the player's enjoyment, attention, presence, mood or online session. Any R1.2 description of such dependence in this archived document is incorrect as canon and must not be reused. **The resident's life, duties, attachments and chosen/or inherited tragicomic mask already matter.** Player return is a happy occasion to enact and share a role the resident intrinsically enjoys, not a survival condition.
+
+**Georg's affirmative Global Intent:** an Orc, Mage, Trickster, Graveyard skeleton or toy soldier may seriously, lovingly and humorously perform their own flawed cosmic role; the player joins the performance. KFB builder/repair crews find intrinsic purpose and delight in visibly repairing or rebuilding after destruction, evoking the *Fraggle Rock* Doozers as a technique reference. The resulting cycle is **life/build/meet/play/possibly destroy/repair/remember/celebrate**, not an extraction grind, invisible instant reset or player duty to keep the characters alive.
+
+**Intellectual lenses, carefully distinct:** Heidegger Dasein/Geworfenheit and situated possibilities; Arendt `vita activa` = labor, world-making work and plural action; Hegel mutual recognition. They are not claims Heidegger taught inevitable joy, Arendt endorsed a gameplay work treadmill or Hegel granted an individual audience total ontological power. Authorial KFB-specific optimism is the creative synthesis. Preserve real resident freedom, character-specific agency and consequence, non-obligatory friendship and players' free option to log off or decline a quest.
+
+**Current updated source:**
+- `replies/WS0_GLOBAL_INTENT_ROLE_CONSCIOUS_RESIDENTS_R1_2026-10-15.md` R1.3 append (canonical correction of preceding R1.2);
+- `skills/chat/KFB_GAME_BIGGER_PICTURE_REFERENCE_2026-10-04.md` R1.3 corrective appendix;
+- this owner Return R1.3 appended without removing historical material.
+Public research references: https://plato.stanford.edu/entries/heidegger/ ; https://plato.stanford.edu/entries/arendt/ ; https://plato.stanford.edu/entries/hegel/ ; https://muppet.fandom.com/wiki/Doozers .
+
+**Evidence status:** documentation and exact GitHub branch/file readbacks only; zero player scene renders, world state/life simulation, actual 3D repair choreography, browser, performance or live Site proof. No separate runtime owner, WS1 patch, merge, new V-number or promotion.
+
+**One next gate (unchanged): `WS0_LIGHTING_AND_METATHEATRE_SLICE_ASSIGNMENT`**. WS0 may carry this corrected joyful role/repair dramaturgy into the already open #404 authentic Card/Billboard/Meshy lighting/metatheatre comparison. Full repair-gameplay integration needs a separate later owner-approved implementation and actual visual/interaction proof.
