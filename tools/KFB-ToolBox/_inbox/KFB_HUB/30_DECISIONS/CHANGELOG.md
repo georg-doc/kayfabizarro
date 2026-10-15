@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-15 · Alien-Figuren für die ToolBox geliefert
+- Branch assets/kfb-alien-figures-toolbox-2026-10-15 @ae86206b: LordHunky/LadyDory_RigMedium.toolbox.glb + kfb.pets/1-Rezepte (Regler headScale/headOffset/neckTaper, Startwert Kopf 1,0), Mund-Sätze A/B, Referenz-Lader. Kopf starr (0,000 mm), Kragen rundum geschlossen. Hub-Briefing b34 an WSA (ersetzt b31).
+
 ## 2026-10-15 · Aliens als fertige ToolBox-Figuren
 - V-317: Lord Hunky / Lady Dory fertig zusammengebaut ins ToolBox-Dropdown wie FB v5b, kleine Regler (Kopfgröße/-versatz, Hals verjüngen, Dangle); Hub-Briefing b31 zurückgestellt, neues folgt mit den Dateien.
 
