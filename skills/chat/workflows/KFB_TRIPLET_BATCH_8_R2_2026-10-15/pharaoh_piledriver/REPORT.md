@@ -1,0 +1,7 @@
+# Pharaoh Piledriver — Triplet Set R2 editorial handoff
+Source: media/kfb/Pharaoh_Piledriver_-_ADD_web_ID.pdf.json pinned data/kfb-card-title-case-2026-10-15 @eade4aec9c9faaea785602537768f86180434331, Git blob 0c5c226e3e9e1d83413d56f2c4b8fbd5321649cc; registry @52adc8f1. Independently authored 2026-10-15 on branch editorial/kfb-triplets-eight-decks-r2-2026-10-15.
+- **51/52 played**, #46 The Field of Reeds skipped OPEN_NO_POWER_SOURCE (power null; no invented mechanic). No other silent skips.
+- **One track 4,167 characters**, 53 rows including one intro and one outro; 17 unique approved openers. Timings blank: UNTIMED_AWAIT_REAL_AUDIO. No audio generated or uploaded.
+- Checker-equivalent JS lexical/inflection audit using the R2 Python vocabulary constants against pinned real source: **51 PASS / 0 FAIL**; eight first-pass foreign-word issues repaired. **Exact Python checker against real JSON+CSV NOT RUN**; the check file clearly labels this limit. No editorial approval or PDF pixel check asserted.
+- Intro uses printed registry title and printed card titles #1 #2 #7 #9 #11 #12; exact PDF cover page layout was not inspected, as flagged by intro_source.
+- Semantic watch: #6 sky mother eats sun; #9 undead champion still scores; #21 Sobek's river-zone discard; #39 seven attacks; #46 missing source POWER. All must be checked by WS0 with the actual card. One next gate WS0 exact Python checker plus complete semantic read-through. No PR/merge/live.
