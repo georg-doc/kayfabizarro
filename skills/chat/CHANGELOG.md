@@ -1,3 +1,10 @@
+## 2026-10-16 · MKUltra/MKDELTA R2A opened original FOIA records (documentation only)
+- Added `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/R2A_FOIA_PRIMARY_SOURCE_DEEP_DIVE_2026-10-16.md` and verified exact original scans: 1952 ARTICHOKE, 1954 Subproject 35, 1955 TSS 17 proposed methods, 1963 MKUltra/MKDELTA Inspector General; also read official 2026 House testimony by Kinzer and O'Neill and opening of Ginexi's statement.
+- Important distinctions: **MKDELTA is documented** in 1963 as operational-control codename, whereas **Project Monarch remains an uncorroborated claimed program**; internal agency success and research ambitions do not establish reliable personality programming. 1954 memo proposes a CIA $125k contribution; separate 1977 $375k claim remains to reconcile from source.
+- O'Neill's claim about original 1953 West correspondence, 1956 study and altered 1977 version is flagged **testimony about missing-to-us source objects**, NOT direct-source verified. Its original manuscripts are the next provenance gate.
+- Additive ledger S01–S26, card topic hypotheses 24 not activated, source/document quality checks **8/8 PASS**, targeted original PDF pages visually inspected **15**. No executable code, site/Stage/browser tests, merge or Live promotion.
+- Retained same original research branch and Draft PR #408; next **R2B** exact West source pair/1977 version, Cameron/Subproject 68 direct originals and independent Desmet comparison.
+
 ## 2026-10-16 · MKUltra research expanded into collective psychology (additive R1)
 - Georg added three exact source URLs: Frank Höfer's *Der programmierte Mensch* (ISBN 9783982914107) and YouTube IDs `yx8AWx_sOl4` / `llSgrF8h9AU`, plus Mattias Desmet's Mass Formation theory. Same existing research owner/branch and Draft PR #408, no parallel project.
 - New `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md`; extended existing BRIEF, SOURCE_LEDGER S09–S18, CARDWAY_IDEAS and TEST_REPORT. Added 6 research-only mass-psychology topic prompts; future dedicated deck is **proposal, not activation**.
