@@ -1,7 +1,22 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§63 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§64 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 64 · 17.10. · V-346 in der Vorschau (23/23) · V-347 nur für K2B (Entscheid nach V-367) · nächster Schritt V-345
+
+1. **V-346 fertig:** kfb-planet main @8ce5ac5, Testreihe 23/23, gespiegelt (ws1/r3f-frame @8a852e4b), Vorschau `ws1/preview` @8c5bd157 mit build.json, Cloudflare-Check grün. Abnahme: https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,light=l1 (Vergleichsleiste, Zeile „V-346 neu | vorher“). Diese Vorschau enthält keine Fahrprobe; M2 kommt nach der Browser-Prüfung von V-347 als neue Kombi-Vorschau zurück.
+2. **Technik-Entscheid WS1 (V-375):** Nach V-367 fallen in V-347 die ecctrl-Punkte weg (Drift-Nachbau, Anti-Überschlag für ecctrl). ecctrl bleibt eingefroren als Vergleich in der Vorschau, weil V-367 das Label „aktives Fahrsystem“ als Abnahmepunkt nennt; es wird erst beim M2-Merge mit Georgs Zustimmung entfernt.
+3. **V-347 auf K2B** (Bewegungs-Sitzung, m2/fahren @5ff47c8, bisher nur Node-Messung, Browser-Prüfung folgt):
+   - Drift Q/E 1:1 aus der K3-Zeile (driftMinSpeed 7,5 · SteerScale 1,28 · YawGain 1,32 · regrip 0,34 s).
+   - Wendekreis: 180° aus dem Stand in 13,7 m = 1,79 Wagenlängen (vorher 9,9), 360° = 1,96 Wagenlängen. Möglich über eine Wendehilfe unter 10 m/s als KFB-Zusatz; darüber bleibt K2B unverändert.
+   - 20 Vollgas-Läufe auf ebener Strecke: 0 Überschläge, größte Neigung 9,7°.
+   - Label „Fahrsystem: K2B | ecctrl“ ist da.
+   - Die Tempo-Schwellen werden nach V-345 nachgestellt.
+4. **V-370 S0 Rest:** V-345 `worldScale.js` (Bühne zuerst), danach zieht die Bewegungs-Sitzung M1/M2 nach, dann gemeinsame Testreihe und M2-Merge.
+5. **Antworten aus V-370 notiert:** Metall-Restglanz nur für als Metall getaggte Materialien (PMREM warm, envMapIntensity ≤ 0,35, roughness ≥ 0,45) baut WS1 mit L2 Schritt 5 / Slice 1 ein; Zielgerät und Budget (p95 ≥ 30 fps auf M1/Iris Xe, ≤ 40 MB Start, ≤ 15 MB je Zone, ≤ 300 Draw Calls, ≤ 600 k Dreiecke) gelten ab Slice 1 mit Performance-Overlay.
+
+Aufwand seit §63: ca. 50 Min. (Testreihe im Hintergrund, Spiegeln, Vorschau).
 
 ## 63 · 16.10. abends · V-346 Look-TUNE gebaut (lokal @8ce5ac5) · Messwerte · Code-Push nach grüner Testreihe
 
