@@ -74,3 +74,11 @@ It reconciles the current routing for:
 - The KayfaBizarros Orc Band POC.
 
 The recovery chat performs sanity/onboarding only, then executes exactly one selected lane.
+
+
+## 2026-10-16 · V-332 Alien Headpart Recovery
+
+- [`V332_ALIEN_HEADPART_RECOVERY_2026-10-16/CHANGELOG.md`](V332_ALIEN_HEADPART_RECOVERY_2026-10-16/CHANGELOG.md) — additives Change Log; WIP, no live promotion.
+- [`V332_ALIEN_HEADPART_RECOVERY_2026-10-16/POSTMORTEM.md`](V332_ALIEN_HEADPART_RECOVERY_2026-10-16/POSTMORTEM.md) — binding no-runtime-mesh-hacks rule and recovery gates.
+- [`V332_ALIEN_HEADPART_RECOVERY_2026-10-16/BLENDER_MCP_HANDOFF.md`](V332_ALIEN_HEADPART_RECOVERY_2026-10-16/BLENDER_MCP_HANDOFF.md) — asset repair brief for Lady Dory, Lord Hunky and Orc Brute.
+- [`V332_ALIEN_HEADPART_RECOVERY_2026-10-16/ADR_TOOLBOX_VS_FRANKENSTEINING_STUDIO.md`](V332_ALIEN_HEADPART_RECOVERY_2026-10-16/ADR_TOOLBOX_VS_FRANKENSTEINING_STUDIO.md) — WS0 discussion: one ToolBox front door, Blender as structural asset owner, no Composer revival.
