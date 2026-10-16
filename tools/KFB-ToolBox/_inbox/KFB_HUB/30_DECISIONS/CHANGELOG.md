@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-354: Suno v4 – kein Refrain, eine Solo-Stimme je Style (V-278 als Vorlage), leichter wortloser Doo-Wop erlaubt, tanzbar; korrigiert V-350.
 - Stunt-Spender-Karte R1 (replies/STUNT_DONOR_MAP_R1.md) an WS1: 11 Spender, keiner abgenommen, Anti-Roll nirgends gebaut; M3 Assisted Stunt nach Recherche.
 - V-353: Aliens r4 TUNE angenommen → WSA work ToolBox-Einbau (Hub b61); WS0 analysiert Space-Ranger-Kopfdrehung.
 - V-352: Web-Chat-Recherche Cartoon-Racer (Hub b60). Aliens r4 (Kopf ohne Hals auf der Halskrause) gepusht @6ecf8577, Hub-Frage aliens-r4-seat.

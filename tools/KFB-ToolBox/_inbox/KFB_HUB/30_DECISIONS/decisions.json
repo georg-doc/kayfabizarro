@@ -4811,6 +4811,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-354",
+   "date": "2026-10-16",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Suno-Format v4, korrigiert V-350 (Georg 16.10.: „in die falsche Richtung korrigiert“): (1) KEIN zusätzlicher Refrain, keine Song-Abschnitte mit neuem Text – nur [Spoken Word], Intro, Kartenzeilen, Outro. (2) Style nach Georgs Vorlage V-278: Genre + Produktion + Instrumente + GENAU EINE Solo-Stimme (Geschlecht/Alter wechselt zwischen Tracks, nicht innerhalb), keine MC/Sänger-Trennung im Prompt, damit sich die Stimme als Lead-Stem isolieren lässt; ein leichter, wortloser Doo-Wop-Background wie im Rockabilly-Beispiel ist erlaubt. (3) Tanzbar/groovy bleibt (V-350 Punkt 3). (4) Eigene Intros je Deck und verschiedene Opener der ersten Karte bleiben (V-350 Punkt 1). Tracks v4: Pharaoh, Epistemic, Trust (Hub b52/b53/b55), Alternativ-Styles b56.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Georg hört",
+   "source": "Georg 16.10.: „unterschiedliche Sänger … soll nicht der Fall sein … leichter Doo-Wop-Chorus … Stimme isolieren … keine zusätzlichen Refrains“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Lead-Stimme muss als Stem isolierbar bleiben (Karaoke, Schnitt je Karte); Georgs eigene Styles sind die Vorlage.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4883,7 +4898,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:677",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:679",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
