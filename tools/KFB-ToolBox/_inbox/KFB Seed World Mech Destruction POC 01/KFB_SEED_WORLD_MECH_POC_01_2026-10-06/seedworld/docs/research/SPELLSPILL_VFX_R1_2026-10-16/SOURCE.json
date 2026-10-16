@@ -148,7 +148,7 @@
     "contactSheetVisuallyInspected": true,
     "originalShaderSourceFound": false
   },
-  "nextGate": "KFB SEED WORLD SOURCE FX VISIBILITY / CASCADE PERFORMANCE EVIDENCE REVIEW",
+  "nextGate": "KFB SEED WORLD SATURATED HYBRID FX VISUAL BUDGET + TARGET-GPU REVIEW",
   "existingVfxCatalog": {
     "status": "EXACT_SOURCE_FOUND_AND_REUSED_AS_REFERENCE_ONLY",
     "originalHandoff": {
@@ -229,7 +229,7 @@
     "sourceDocument": "VISUAL_SOURCE_PROOF.md"
   },
   "fxAbImplementation": {
-    "state": "RUN_SUCCESS_UNREVIEWED_EVIDENCE",
+    "state": "TECHNICAL_CI_PASS_50_OF_50__STYLE_AND_TARGET_GPU_OPEN",
     "mode": "DEVELOPER_FIXTURE_ONLY__NO_PRODUCTION_INTEGRATION",
     "sourceDir": "tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/",
     "workflow": ".github/workflows/kfb-seedworld-source-fx-ab.yml",
@@ -278,12 +278,18 @@
       "status": "completed",
       "conclusion": "success",
       "changes": "Actual smoke-centered camera; 5x original 3D and 6.5x 2D source-scale display adapters, original 3D+2D isolation screenshots, accurate hybrid offsets; same damage",
-      "budgetGuard": "No further optional VFX repairs until one latest run checked"
+      "budgetGuard": "No further optional VFX repairs until one latest run checked",
+      "artifactId": 12058220353,
+      "checks": "50/50",
+      "screenshots": 14,
+      "sourceHead": "6c2214da5844b50fb9a1f952fd339040a332e2f9",
+      "result": "FX_AB_R1_FINAL_RESULT.json"
     },
     "targetGpuMeasured": false,
     "kfbGoldenAccepted": false,
     "gameplayCodeModified": false,
     "worldR5Authorised": false,
-    "evidenceFile": "FX_AB_R1_EVIDENCE.md"
+    "evidenceFile": "FX_AB_R1_EVIDENCE.md",
+    "clayGoldenAccepted": false
   }
 }
