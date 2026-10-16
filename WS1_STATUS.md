@@ -1,7 +1,56 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§47 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§48 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 48 · 16.10. · L2 Schritt 1 + 2 (V-340): Look A | B, Licht-Identität je Figur, Knet-Material · Bildpaare · Frage Orc Brute
+
+### 48.1 · Gebaut (kfb-planet @c1a45f6, ganze Testreihe 23/23, Test `light` jetzt mit L2-Prüfungen)
+- **Schritt 1 · Look B (`look=b`, nur mit `light=l1`):** Keine zweite Palette; B verschiebt die L1-Werte in OKLCH (Rechenart V-305):
+  - Sonne Richtung 50° und etwas satter;
+  - Bodenreflex (Hemi-Boden) Terrakotta/Ocker;
+  - Gegenlicht kühl violett (Gegenakzent);
+  - Himmel oben Richtung Koralle, unten Richtung Ocker.
+  - Alle Zielwinkel und Anteile sind WS1-Vorschlag. Sonnenstärke und -richtung bleiben wie A.
+  - `look=a` = L1 genau.
+- **Schritt 1 · Licht-Identität je Figur** (`LIGHT_INTENT` in `stageLight.js`, Modul `actorRim`): Daten statt Lichter.
+  - Randlicht (Fresnel) im Material: FB warm #ffb066, GothGirl violett #a98bff.
+  - Aktiv mit `look=a|b`; Gesichter bleiben gleichmäßig (Rand nur an der Silhouette).
+  - Story-Mode-Hinweise (`STORY_INTENT`) liegen bereit für den späteren Würfel (V-342).
+- **Schritt 2 · Knet-Material** (`clay=1`, Modul `clayLook`): K1/H0-Golden `clay-material.v8` mit Profil `figure` (clay-profiles.v2), 1:1 vendored (`src/vendor/clay/SOURCE.md` mit Blobs und Begründung).
+  - **Warum v8 statt v10:** SSOT „K1/H0 = sichtbare Goldlinie, v10 erst nach bewiesenem Gleichstand“.
+  - Nur Material, keine Netzänderung (V-336, SSOT „Characters“).
+  - Der Kopf bekommt ein sanftes Profil (WS1-Vorschlag: weniger Striche, Abdrücke, Dellen), damit Gesichter lesbar bleiben.
+  - Augen-Rig, Lider, Brauen, Nase, Bart und Mund bleiben unberührt.
+  - Die Fingerabdruck-Karte des Pakets ist nicht übernommen (Lizenz ungeprüft); Rückfall auf die Relief-Textur wie im Katalog.
+- **`clay=all`:** auch FB auf Knet, nur zum Vergleich (siehe 48.3).
+- **Test `light`, neue Prüfungen:**
+  - B wärmer bei gleicher Sonne;
+  - Randlicht an beiden Figuren, nur mit `look`;
+  - Karte A | B unverändert;
+  - Knet: KayKit-Körper und -Kopf umgestellt, Gesichtsteile nicht; mit `clay=all` auch FB-Körper;
+  - G8: alle Knet-Materialien Metall 0, Rauheit ≥ 0,3.
+
+### 48.2 · Bilder (`ws1/proofs/2026-10-16-l2/`, Vorschau @fe54e8bf)
+- `paar_{amph,goblin,atlantis}_{day,gold,night}.png` = Look A | B je Bühne und Stimmung, plus Amphitheater 9:16.
+- `paar_clay_kaykit.png` = ohne | mit Knet (KayKit).
+- `paar_clay_fb.png` = FB wie abgenommen | FB auch mit Knet.
+- Live: `https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,dialog=6,light=l1,tod=gold,look=b,clay=1` (`clay=all` für FB mit Knet; `scene=goblin|atlantis`).
+
+### 48.3 · Raster G6–G9 (selbst gemessen bzw. am Bild)
+| Punkt | Stand |
+|---|---|
+| G6 Look B warm, ein kühler Gegenakzent | erfüllt am Bild: Himmel Koralle/Ocker, Bodenreflex warm, Gegenlicht violett. Die Bodenfarbe aus der Bühne (`edgePalette`, V-342) kommt mit dem Blender-Lauf. |
+| G7 Randlicht sichtbar, Gesichter gleichmäßig | erfüllt am Bild; GothGirls violetter Rand ist deutlich, FBs warmer Rand dezent. |
+| G8 kein Plastik- oder Metallglanz | Knet-Materialien gemessen Metall 0, Rauheit ≥ 0,3 (Test). Die Fahrzeuge folgen mit Schritt 3. |
+| G9 eine Materialfamilie | **offen, Georg entscheidet:** Mit `clay=1` trägt GothGirl Knet, FB sein abgenommenes ToolBox-Material (glatter); mit `clay=all` beide Knet. |
+
+### 48.4 · Schritt 3 (Aufstellung) und Frage an WS0
+- **Plan:** eigene kleine Szene `#lineup`, weil 14 Fahrzeuge à ≈ 5 m nicht auf die 14-m-Bühne passen.
+  - Fahrzeuge v3 von `assets/meshy-arcade3-marble-vehicles3-2026-10-16` @9bd8e037, Maßstab über `units.m_per_unit` und FB-Rig-Höhe (2,94 Rig = 1,81 m);
+  - Knet-Material mit Profil `vehicle` (nur Material), Tag/Gold/Nacht, feste Kameramarken.
+- **Frage:** Den **Orc Brute** (Rig_Large) finde ich in main nicht unter diesem Namen; es gibt nur `GLB_mini_dungeon/character-orc.glb` und Skelett-Figuren aus BoardGameBits. Bitte Pfad und Commit nennen (Rezept bzw. Profil wie bei den KayKit-Kandidaten?). Bis dahin stellt WS1 die 14 Fahrzeuge plus FB auf.
+- **Aufwand:** etwa 1,5 h Arbeitszeit, zwei Bildreihen und ein Lauf der ganzen Testreihe.
 
 ## 47 · 16.10. · L1 Licht (V-329) gebaut, hinter `light=l1` · Bildreihe · Messwerte G1–G5
 
