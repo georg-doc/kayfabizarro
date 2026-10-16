@@ -4481,6 +4481,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-332",
+   "date": "2026-10-16",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Aliens in der ToolBox (Rebriefing zu b34, Hub b47): (1) Augensockel = die in den Kopf eingebackene Sockelschale aus FrankenEyes R1 (Radius 1,10 R, Öffnung 58°, gerollter Rand); Lider = EyeRig-v6-Lidschalen innen, die unter den Rand gleiten; keine ToolBox-Lidklappen oder Knet-Lider über dem Auge bei Kopfteil-Figuren (Rezept lids.use=false, clayLids.on=false, Referenzbilder reference/). Das Wort „Knet-Augendeckel“ in V-297 meint diese Lidschalen. (2) Dangle-Seite kommt aus dangle.parts[].side im Rezept, nie aus dem bereinigten Knotennamen (eyestalk.r → eyestalkr); Ruhe-Pose symmetrisch ≤ 2°. (3) Münder sind Pflicht ab dem ersten Bild: Hunky GPT B, Dory GPT A, Mund-Dropdown aus mouth_sets.manifest.json (8 Sätze), clay_neutral_r3 tönbar. Ursache der Abweichung: WS0-Briefing b34 ohne Referenzbild und ohne ausdrückliches Klappen-Verbot, Rezept trug FB-Lid-Felder.",
+   "values": {},
+   "owner": "WSA work",
+   "check": "nächster WSA-Bericht",
+   "source": "Georg 16.10.: „zwei Klappen … statt sockelmäßig eingefasst“, „rechter Augenstiel … unnatürlicher Knick“, „komplett ohne Münder“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Abgenommene Optik muss als Bild + Verbot im Briefing stehen, sonst baut der Empfänger aus vorhandenen Bausteinen etwas Ähnliches.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4553,7 +4568,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:627",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:631",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

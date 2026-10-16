@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · Alien-Rebriefing
+- V-332: Augensockel statt Klappen, Dangle-Seite explizit (rechter Augenstiel knickte), Münder Pflicht; Rezepte auf assets/kfb-alien-figures-toolbox-2026-10-15 @9b1917ad (mit reference/), Hub-Briefing b47 an WSA work.
+- Fahrzeuge v3 (×1,5) + Ödland-Käfer (mit Vogel, hop-in-hidden) fertig gebaut, noch nicht gepusht.
+
 ## 2026-10-16 · Arcade/Marmor PASS, WS1-Fragen beantwortet
 - V-330: Arcade v3 + Marmor-Terrassen PASS; Branch @2633f354 (mit Fahrzeugen v3).
 - V-331: alle offenen WS1-Punkte §32–§42 beantwortet (V-305-Einbau frei, Rampe statt Kollisionsnetz, Zaun a, V-248 nicht blockierend, Abdämpfen, G-Taste, Deskriptor frei).

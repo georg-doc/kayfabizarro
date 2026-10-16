@@ -16,11 +16,14 @@ OPENERS = ["Welcome to", "Remember", "You know", "Do you know", "Ever tasted", "
            "You know the thing with", "Did you ever try", "What if", "Have you heard of", "Did you hear of", "Anyway",
            "Which brings us to", "Meanwhile elsewhere", "No wait", "Before we continue", "Here is something nobody asked for",
            "This one has a rule", "Nobody warned us about", "The thing about", "Everyone agrees", "Not a metaphor",
-           "I used to believe", "You with the card in your hand", "You played", "The deck insists on"]
+           "I used to believe", "You with the card in your hand", "You played", "The deck insists on",
+           # V-325 (Georg 16.10.): anekdotische Opener
+           "A friend told me about", "I read a book about", "Someone wrote in my diary", "I found a note saying", "My diary says"]
 # Opener-Familien (V-280): Varianten derselben Familie in einem Track nur mit mindestens FAMILY_GAP Zeilen Abstand.
 FAMILIES = {"heard": ["Did you hear of", "Have you heard of"], "know": ["You know", "Do you know", "You know the thing with"],
             "try": ["Did you ever try", "Ever tasted"], "nobody": ["Nobody warned us about", "Here is something nobody asked for"],
-            "thing": ["The thing about", "You know the thing with"]}
+            "thing": ["The thing about", "You know the thing with"],
+            "anecdote": ["A friend told me about", "I read a book about", "Someone wrote in my diary", "I found a note saying", "My diary says"]}
 FAMILY_GAP = 10
 SUFFIXES = ("'s", "s'", "ies", "es", "s", "ed", "d", "ing", "ly", "er", "est", "n't")
 WORD = re.compile(r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)*")
