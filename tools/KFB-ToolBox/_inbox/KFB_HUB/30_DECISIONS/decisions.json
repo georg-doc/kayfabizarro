@@ -4751,6 +4751,21 @@
    "applies": "nach Aliens-PASS"
   },
   {
+   "id": "V-350",
+   "date": "2026-10-16",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Suno-Format v3 (Georg 16.10.): (1) Intro je Deck einzigartig, Decktitel eingebaut, Fluff-o-lect-Anrede variiert (nicht jedes Mal „Evening, fluffheads“), kein Applaus/Dank; zwei Tracks dürfen nicht wie Varianten voneinander beginnen – auch der Opener der ersten Karte ist je Track verschieden („You with the card in your hand“ höchstens einmal pro Batch). (2) Song-Aufbau mit Abschnitten: [Intro] gesprochen, [Verse] Kartenzeilen, gesungener [Chorus] aus Decktitel + gedrucktem Slogan + Fluff-o-lect (voll beim ersten Mal, danach Tag + erste Zeile), [Break] statt Stille vor der Krise, [Outro] „Stay Fluffy!“. (3) Styles tanzbar und groovy (≈ 95–128 bpm, auch DnB), breite Stil-Vielfalt, performt statt Chill/Smoky-Jazz. (4) Stimmen wechseln je Track: männlich, weiblich, Duett, Gang-Vocals – nicht immer androgyn. Kartenzeilen bleiben bytegleich; Opener werden zugunsten des Refrains ausgedünnt. Erste Tracks v3: Pharaoh, Epistemic, Trust (Hub b52/b53/b55), Alternativ-Styles b56. Löst die Style-Vorgaben aus V-339/V-344 ab (Intro-Teil von V-344 bleibt gültig).",
+   "values": {},
+   "owner": "WS0",
+   "check": "Georg hört",
+   "source": "Georg 16.10.: „Intro … wiederholt sich auch You with the Card“, „Styles … zu lahm … nicht tanzbar“, „kein Singen und kein Chorus“, „immer androgyne Stimmen … läuft sich tot“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Songs sollen performt und getanzt werden; ein Refrain und wechselnde Stimmen machen aus Kartenlisten echte Tracks.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4823,7 +4838,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:671",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:672",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
