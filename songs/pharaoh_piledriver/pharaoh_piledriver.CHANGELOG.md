@@ -7,3 +7,6 @@
 - Follow-up normal-case title repair: 13 card titles. Card package keeps unverified source page and illustration flags explicit.
 - Source checked against 22 historical intros for literal line duplicates (0 hits). Static file assertions 24/24 PASS; Python validator only synthetic expected outcomes 2/2.
 - Independent blind review 0 run, scores PENDING, `wr5` not generated. Human Georg PASS not asserted.
+
+## 2026-10-16 · STYLE B vocabulary clean-up
+- Removed geographic story-context descriptor from the strictly musical STYLE B; unchanged song words, 3,883 characters, still two styles. Source-only corrective check; no audio tests.

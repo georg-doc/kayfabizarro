@@ -7,7 +7,7 @@
 - Song files: `songs/pharaoh_piledriver/{pharaoh_piledriver.cards.json,pharaoh_piledriver.songlines.json,pharaoh_piledriver.wr4.suno.txt,pharaoh_piledriver.style.txt,pharaoh_piledriver.dossier.md,pharaoh_piledriver.blindreview.md,pharaoh_piledriver.TEST_REPORT.md}`; this RETURN and CHANGELOG are additive handoff files.
 
 ## Actual output and evidence
-- 52/52 registry cards and songLines, 13 consecutive four-card page stanzas, **3,883** Unicode characters including newlines, two exclusively musical STYLE options.
+- 52/52 registry cards and songLines, 13 consecutive four-card page stanzas, **3,883** Unicode characters including newlines, two exclusively musical STYLE options; STYLE B geographic reference scrubbed in final vocabulary check.
 - Static file validation **24/24 PASS** against GitHub readbacks, 22/22 older intros inspected, 0 exact reused new intro lines. Bundled Python validator positive/negative **2/2 fixture outcomes** only, NOT run on full song bundle.
 - Printed PDF pictures inspected in this session **0**; PDF motif source isolation **NOT RUN**, **0/52 images verified**. Existing registry pages null; page grouping from preliminary WS0 dossier, not fresh PDF proof.
 - Blind reviewer **NOT RUN**. Song/stand-up/faithfulness scores: **PENDING / PENDING / PENDING**. No author self-scores masquerading as independent. One feedback-based revision `wr5` **PENDING**. Georg hearing/approval **PENDING**.
