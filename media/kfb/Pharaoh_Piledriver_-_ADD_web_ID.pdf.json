@@ -522,10 +522,19 @@
       "cardName": "The Field of Reeds (VIP Lounge)",
       "cardNamePrint": "THE FIELD OF REEDS (VIP LOUNGE)",
       "grade": 2,
-      "power": null,
+      "power": "Heal all damage at end of turn.",
       "lore": "Aaru. The goal. It's just like Earth but you don't have to pay taxes.",
       "gradeReason": "\"No taxes\" is the greatest afterlife perk description; heal-per-turn mechanic is straightforward.",
-      "artworkPrompt": "Style: Paradise mythology. Subject: Golden reed fields with lounging gods, no tax forms in sight. Mood: Earned relaxation."
+      "artworkPrompt": "Style: Paradise mythology. Subject: Golden reed fields with lounging gods, no tax forms in sight. Mood: Earned relaxation.",
+      "jsonLegacy": {
+        "power": null
+      },
+      "printTypo": "Druck zeigt den Schriftnamen 'Architects Daughter' als Feldlabel (Layout-Artefakt); Power als 'EFFECT:'",
+      "textSource": {
+        "source": "PDF v05 Pharaoh_Piledriver - ADD web ID.pdf p13 TR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-16"
+      }
     },
     {
       "cardNumber": 47,

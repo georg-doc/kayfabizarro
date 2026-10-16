@@ -22,10 +22,19 @@
       "cardName": "Uncle FrizzleBob",
       "cardNamePrint": "UNCLE FRIZZLEBOB",
       "grade": 1,
-      "power": "Narrative Sabotage. Dispels techno-scenic illusions in a 5-mile radius.",
-      "lore": "The layout anarchist who sees through the Kayfabe. He's here to ruin Big Tech's meticulously curated PR with a sloppy bucket of watercolour ink.",
+      "power": "Narrative Sabotage. Dispels technocratic illusions in a 5-mile radius.",
+      "lore": "The layout anarchist who sees through the Kayfabe. He's here to ruin Big Tech's meticulously curated PR with a sloppy bucket of watercolor truth.",
       "gradeReason": "Meta-card identity is instant. You are already him.",
-      "artworkPrompt": "Style: Kayfabizarro ink. Subject: anarchist rabbit flinging watercolor at tech billboard. Mood: gleeful sabotage."
+      "artworkPrompt": "Style: Kayfabizarro ink. Subject: anarchist rabbit flinging watercolor at tech billboard. Mood: gleeful sabotage.",
+      "jsonLegacy": {
+        "power": "Narrative Sabotage. Dispels techno-scenic illusions in a 5-mile radius.",
+        "lore": "The layout anarchist who sees through the Kayfabe. He's here to ruin Big Tech's meticulously curated PR with a sloppy bucket of watercolour ink."
+      },
+      "textSource": {
+        "source": "PDF v05 Observation_Underground - ADD web.pdf p1 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-16"
+      }
     },
     {
       "cardNumber": 2,
@@ -39,23 +48,41 @@
     },
     {
       "cardNumber": 3,
-      "cardName": "Die Taschenspion (The Pocket Spy)",
-      "cardNamePrint": "DIE TASCHENSPION (The Pocket Spy)",
+      "cardName": "The Taschenspion (The Pocket Spy)",
+      "cardNamePrint": "THE TASCHENSPION (The Pocket Spy)",
       "grade": 1,
       "power": "Infiltrates the user's pocket. Automatically uploads your soul to the Cloud.",
       "lore": "Irrefutably the most successful voluntary tracking bug in human history. You pay a premium to carry your own prison warden.",
       "gradeReason": "'You carry your own prison warden' is immediate, visceral, embody-ready.",
-      "artworkPrompt": "Style: Kayfabizarro noir. Subject: smartphone with prison bars visible through glass screen. Mood: cozy surveillance horror."
+      "artworkPrompt": "Style: Kayfabizarro noir. Subject: smartphone with prison bars visible through glass screen. Mood: cozy surveillance horror.",
+      "jsonLegacy": {
+        "cardName": "Die Taschenspion (The Pocket Spy)",
+        "cardNamePrint": "DIE TASCHENSPION (The Pocket Spy)"
+      },
+      "textSource": {
+        "source": "PDF v05 Observation_Underground - ADD web.pdf p1 BL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-16"
+      }
     },
     {
       "cardNumber": 4,
       "cardName": "The Media Matrix",
       "cardNamePrint": "THE MEDIA MATRIX",
       "grade": 2,
-      "power": "Triggers infinite scroll doom loop. Disables critical thinking.",
-      "lore": "Over 8.92 billion captive animals staring into glowing rectangles, entirely cut off from the analog mud of reality.",
+      "power": "Triggers infinite scroll loop. Disables critical thinking.",
+      "lore": "Over 6.92 billion captive animals staring into glowing rectangles, entirely cut off from the analog mud of reality.",
       "gradeReason": "Doom loop framing is vivid but describes state rather than inviting performance.",
-      "artworkPrompt": "Style: Kayfabizarro satirical. Subject: rows of animals hypnotized by glowing rectangles in dark cave. Mood: bleak comedy."
+      "artworkPrompt": "Style: Kayfabizarro satirical. Subject: rows of animals hypnotized by glowing rectangles in dark cave. Mood: bleak comedy.",
+      "jsonLegacy": {
+        "power": "Triggers infinite scroll doom loop. Disables critical thinking.",
+        "lore": "Over 8.92 billion captive animals staring into glowing rectangles, entirely cut off from the analog mud of reality."
+      },
+      "textSource": {
+        "source": "PDF v05 Observation_Underground - ADD web.pdf p1 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-16"
+      }
     },
     {
       "cardNumber": 5,
@@ -339,9 +366,17 @@
       "cardNamePrint": "DARPA'S TOY",
       "grade": 1,
       "power": "Rebrands weapons of war as consumer luxury items.",
-      "lore": "GPS, touchscreens, Siri, Internet—all funded by US military budgets. The ultimate weapon for covert population attack, sold as a lifestyle gadget.",
+      "lore": "GPS, touchscreens, Siri, internet—all funded by US military budgets. The ideal weapon for covert population attacks, sold as a lifestyle gadget.",
       "gradeReason": "You ARE DARPA every time you flex your gadget. Immediate and devastatingly playable.",
-      "artworkPrompt": "Style: Kayfabizarro military consumer. Subject: army general handing branded lifestyle phone to smiling shopper. Mood: patriotic surveillance comedy."
+      "artworkPrompt": "Style: Kayfabizarro military consumer. Subject: army general handing branded lifestyle phone to smiling shopper. Mood: patriotic surveillance comedy.",
+      "jsonLegacy": {
+        "lore": "GPS, touchscreens, Siri, Internet—all funded by US military budgets. The ultimate weapon for covert population attack, sold as a lifestyle gadget."
+      },
+      "textSource": {
+        "source": "PDF v05 Observation_Underground - ADD web.pdf p9 TL",
+        "method": "visual-check",
+        "checkedAt": "2026-10-16"
+      }
     },
     {
       "cardNumber": 34,
@@ -368,9 +403,18 @@
       "cardNamePrint": "GOOGLE PLAY PROTECT",
       "grade": 2,
       "power": "Deletes unapproved apps from your device automatically.",
-      "lore": "Masquerading as malware protection, it's the perfect tool to make independent media apps and crypto-wallets off every phone on earth.",
+      "lore": "Masquerading as malware protection, it's the perfect tool to nuke independent media apps and crypto-wallets off every phone on earth.",
       "gradeReason": "Corporate mask-wearing is clear but card is descriptive; needs a performer to activate the irony.",
-      "artworkPrompt": "Style: Kayfabizarro wolf sheep. Subject: gorilla in security vest deleting pirate flag apps while smiling. Mood: helpful elimination."
+      "artworkPrompt": "Style: Kayfabizarro wolf sheep. Subject: gorilla in security vest deleting pirate flag apps while smiling. Mood: helpful elimination.",
+      "jsonLegacy": {
+        "lore": "Masquerading as malware protection, it's the perfect tool to make independent media apps and crypto-wallets off every phone on earth."
+      },
+      "printTypo": "Druck zeigt 'spps' statt 'apps' in der POWER",
+      "textSource": {
+        "source": "PDF v05 Observation_Underground - ADD web.pdf p9 BR",
+        "method": "visual-check",
+        "checkedAt": "2026-10-16"
+      }
     },
     {
       "cardNumber": 37,
