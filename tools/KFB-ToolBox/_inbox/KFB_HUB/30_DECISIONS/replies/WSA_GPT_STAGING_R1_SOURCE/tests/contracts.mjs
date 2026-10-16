@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {validBuild,localHash,testSummary} from '../lib/links.ts';
+const b={schema:'kfb.ws1-build/1',commit:'source-label',date:'2026-10-17T00:35:00+02:00',notes:'Original',tests:{passed:23,total:23},links:{stage:'https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb',car:null}};
+let count=0;function check(fn){fn();count++}
+check(()=>assert.equal(validBuild(b).entry,'index.html'));
+check(()=>assert.equal(validBuild({...b,tests:'23/23'}).tests,'23/23'));
+check(()=>assert.equal(validBuild({...b,tests:[true,{status:'PASS'},{passed:true}]}).tests.length,3));
+check(()=>assert.throws(()=>validBuild({...b,tests:'0/0'})));
+check(()=>assert.throws(()=>validBuild({...b,tests:{passed:22,total:23}})));
+check(()=>assert.throws(()=>validBuild({...b,tests:[true,false]})));
+check(()=>assert.throws(()=>validBuild({...b,tests:[]})));
+check(()=>assert.throws(()=>validBuild({...b,links:null})));
+check(()=>assert.throws(()=>validBuild({...b,entry:'../../index.html'})));
+check(()=>assert.equal(validBuild({...b,entry:'dist/index.html'}).entry,'dist/index.html'));
+check(()=>assert.equal(localHash(b.links.stage),'#stage,actors=fb'));
+check(()=>assert.equal(localHash('#m1'),'#m1'));
+check(()=>assert.equal(localHash(null),null));
+check(()=>assert.equal(localHash('https://evil.example/#stage'),null));
+check(()=>assert.deepEqual(testSummary([{status:'failed'},{success:true}]),{passed:1,total:2}));
+console.log(`${count}/${count} contract checks PASS`);
