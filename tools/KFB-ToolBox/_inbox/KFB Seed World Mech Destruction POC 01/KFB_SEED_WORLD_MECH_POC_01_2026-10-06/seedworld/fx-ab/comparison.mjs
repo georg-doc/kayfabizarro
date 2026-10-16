@@ -15,7 +15,8 @@ const ambient=new THREE.HemisphereLight('#e8eef2','#8a7a60',1.15), sun=new THREE
 sun.position.set(90,160,60);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);
 Object.assign(sun.shadow.camera,{left:-95,right:95,top:95,bottom:-95,near:1,far:420});sun.shadow.normalBias=.6;
 scene.add(ambient,sun,sun.target);
-let world,destruct,dust,alpha,texture,loadOk=false,target=null;
+let world,destruct,dust,clayOverlay,alpha,texture,loadOk=false,target=null;
+let isolationState=null;
 const sourceDustInstances=[];
 let baselinePixels=null;
 const seeded=(initial)=>{let s=initial>>>0;return()=>{s^=s<<13;s^=s>>>17;s^=s<<5;return(s>>>0)/4294967296}};
@@ -24,17 +25,39 @@ const q=(v,p)=>{if(!v.length)return null;const s=[...v].sort((a,b)=>a-b);return 
 const M=new THREE.Matrix4(),P=new THREE.Vector3(),R=new THREE.Quaternion(),S=new THREE.Vector3(),C=new THREE.Color();
 function smokeVisibility(mode){
  const count=out.originalDustCount;
- if(mode==='none'){dust.visible=false;alpha.visible=false;alpha.count=0;}
- if(mode==='a'){dust.visible=true;dust.count=count;alpha.visible=false;alpha.count=0;}
- if(mode==='b'){dust.visible=false;alpha.visible=true;alpha.count=count;}
- if(mode==='c'){dust.visible=count>0;dust.count=Math.min(9,count);alpha.visible=true;alpha.count=Math.max(0,count-9);}
- if(mode==='b'||mode==='c'){
-   const from=mode==='c'?Math.min(9,count):0;
-   for(let i=from;i<count;i++){const x=sourceDustInstances[i];M.compose(x.p,camera.quaternion,new THREE.Vector3(x.s.x*1.85,x.s.y*1.85,1));alpha.setMatrixAt(i-from,M);}
+ // Source instance transforms are sampled once from the actual POC; only these display copies change.
+ dust.visible=false;
+ clayOverlay.visible=mode==='a'||mode==='c';
+ clayOverlay.count=mode==='a'?count:mode==='c'?Math.min(9,count):0;
+ for(let i=0;i<clayOverlay.count;i++){
+   const x=sourceDustInstances[i];M.compose(x.p,x.q,new THREE.Vector3(x.s.x*5,x.s.y*5,x.s.z*5));clayOverlay.setMatrixAt(i,M);
+   clayOverlay.setColorAt(i,x.color);
+ }
+ if(clayOverlay.count){clayOverlay.instanceMatrix.needsUpdate=true;clayOverlay.instanceColor.needsUpdate=true;}
+ alpha.visible=mode==='b'||mode==='c';
+ const from=mode==='c'?Math.min(9,count):0;
+ alpha.count=alpha.visible?count-from:0;
+ if(alpha.visible){
+   for(let i=from;i<count;i++){const x=sourceDustInstances[i];M.compose(x.p,camera.quaternion,new THREE.Vector3(x.s.x*6.5,x.s.y*6.5,1));alpha.setMatrixAt(i-from,M);}
    alpha.instanceMatrix.needsUpdate=true;
  }
- out.variant=mode; $$('#info').textContent=JSON.stringify({variant:mode,scenario,originalDust:count,drawn3D:dust.visible?dust.count:0,drawn2D:alpha.visible?alpha.count:0,damage:out.damageEvidence},null,2);
+ out.variant=mode;
+ $$('#info').textContent=JSON.stringify({variant:mode,scenario,originalDust:count,drawn3D:clayOverlay.visible?clayOverlay.count:0,drawn2D:alpha.visible?alpha.count:0,damage:out.damageEvidence},null,2);
 }
+out.isolate=(mode)=>{
+ if(!out.ready||!['a','b'].includes(mode))throw Error('source isolation must use actual loaded source');
+ if(isolationState)throw Error('source already isolated');
+ isolationState={background:scene.background,world:world.root.visible,sourceMeshes:destruct.meshes.map(m=>m.visible),variant:out.variant};
+ world.root.visible=false;for(const m of destruct.meshes)m.visible=false;
+ scene.background=new THREE.Color('#4f4b45');smokeVisibility(mode);renderer.render(scene,camera);
+ return {mode,actualPOC3D:clayOverlay.count,actualBrackeys2D:alpha.count};
+};
+out.restoreIsolation=()=>{
+ if(!isolationState)return false;
+ scene.background=isolationState.background;world.root.visible=isolationState.world;
+ destruct.meshes.forEach((m,i)=>m.visible=isolationState.sourceMeshes[i]);
+ const prev=isolationState.variant;isolationState=null;smokeVisibility(prev);renderer.render(scene,camera);return true;
+};
 async function build(){
  const mat=clayMaterial();
  // Exact same source material as the POC; it is the documented clay_floor_001 stand-in, NOT canonical K1/H0/K2 Golden.
@@ -42,13 +65,15 @@ async function build(){
  world=createWorld({scene,seed,material:mat,budgetMs:8,useWorker:true});
  const prev=Math.random;Math.random=seeded(0x4b4642);
  try{destruct=createDestruct({scene,world,material:mat,winGeo:geomFrom(proto('win')),doorGeo:geomFrom(proto('door'))})}finally{Math.random=prev}
- dust=destruct.meshes.find(x=>x===destruct.meshes[6]);
+ dust=destruct.meshes[6];
  if(!dust || !dust.isInstancedMesh || dust.geometry.type!=='IcosahedronGeometry')throw Error('actual source 3D dust instance missing');
+ clayOverlay=new THREE.InstancedMesh(dust.geometry,dust.material,CAPS.dust);
+ clayOverlay.count=0;clayOverlay.visible=false;clayOverlay.frustumCulled=false;clayOverlay.name='test-only-scaled-original-source-clay-lobes';scene.add(clayOverlay);
  const mask=$$('#mask-original');await new Promise((resolve,reject)=>{if(mask.complete)return mask.naturalWidth?resolve():reject(Error('image empty'));mask.onload=resolve;mask.onerror=()=>reject(Error('source mask missing'))});
  texture=await new THREE.TextureLoader().loadAsync(out.source.mask);texture.colorSpace=THREE.SRGBColorSpace;
  if(!mask.naturalWidth||texture.image.width!==mask.naturalWidth)throw Error('real mask mismatch');
  loadOk=true;
- alpha=new THREE.InstancedMesh(new THREE.PlaneGeometry(1,1),new THREE.MeshBasicMaterial({map:texture,color:'#a39b8b',transparent:true,opacity:0.8,depthWrite:false,side:THREE.DoubleSide,alphaTest:0.025,fog:true}),CAPS.dust);
+ alpha=new THREE.InstancedMesh(new THREE.PlaneGeometry(1,1),new THREE.MeshBasicMaterial({map:texture,color:'#8f867f',transparent:true,opacity:0.96,depthWrite:false,side:THREE.DoubleSide,alphaTest:0.015,fog:true}),CAPS.dust);
  alpha.count=0;alpha.visible=false;alpha.renderOrder=20;alpha.frustumCulled=false;alpha.name='original-KFB-smoke-03-alpha-adapter';scene.add(alpha);
  const timeout=performance.now()+70000;
  while(performance.now()<timeout){
@@ -86,7 +111,7 @@ async function build(){
  let sum=new THREE.Vector3(),num=0;
  for(let i=0;i<cnt;i++){
    dustMesh.getMatrixAt(i,M);M.decompose(P,R,S);
-   sourceDustInstances.push({p:P.clone(),s:S.clone()});
+   const originColor=new THREE.Color();dustMesh.getColorAt(i,originColor);sourceDustInstances.push({p:P.clone(),q:R.clone(),s:S.clone(),color:originColor});
    if(i>=Math.max(0,cnt-70)){sum.add(P);num++;}
  }
  if(num){sum.divideScalar(num);const k=scenario==='single'?1:scenario==='four'?1.25:1.7;camera.position.set(sum.x+13*k,sum.y+21*k,sum.z+16*k);camera.lookAt(sum);camera.updateMatrixWorld();out.smokeCenter=sum.toArray();}
@@ -116,7 +141,7 @@ out.measure=async(mode,frames=38)=>{
  let visible=null;
  if(mode==='none')baselinePixels=px.slice();
  else if(baselinePixels){let changed=0,checked=0,delta=0;for(let i=0;i<px.length;i+=16){const d=(Math.abs(px[i]-baselinePixels[i])+Math.abs(px[i+1]-baselinePixels[i+1])+Math.abs(px[i+2]-baselinePixels[i+2]))/3;delta+=d;if(d>8)changed++;checked++;}visible={changedPercent:+(100*changed/checked).toFixed(3),meanDifference:+(delta/checked).toFixed(3),samplePixels:checked};}
- const result={variant:mode,scenario,frames,sourceDust:out.originalDustCount,pixelDiffVsNoSmoke:visible,visual3D:dust.visible?dust.count:0,visual2D:alpha.visible?alpha.count:0,renderSubmitMs:{p50:q(renderMs,.5),p95:q(renderMs,.95),p99:q(renderMs,.99)},rafIntervalMs:{p50:q(intervalMs,.5),p95:q(intervalMs,.95),p99:q(intervalMs,.99)},callsAvg:Math.round(calls/frames),trisMax:tris,rendererInfo:{geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures},damageEvidence:out.damageEvidence,engine:'headless fixture, real source POC, not target GPU'};
+ const result={variant:mode,scenario,frames,sourceDust:out.originalDustCount,pixelDiffVsNoSmoke:visible,visual3D:clayOverlay.visible?clayOverlay.count:0,visual2D:alpha.visible?alpha.count:0,renderSubmitMs:{p50:q(renderMs,.5),p95:q(renderMs,.95),p99:q(renderMs,.99)},rafIntervalMs:{p50:q(intervalMs,.5),p95:q(intervalMs,.95),p99:q(intervalMs,.99)},callsAvg:Math.round(calls/frames),trisMax:tris,rendererInfo:{geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures},damageEvidence:out.damageEvidence,engine:'headless fixture, real source POC, not target GPU'};
  out.lastResult=result;return result;
 };
 for(const button of document.querySelectorAll('[data-mode]'))button.onclick=()=>out.measure(button.dataset.mode,20).catch(e=>$$('#info').textContent=e.message);
