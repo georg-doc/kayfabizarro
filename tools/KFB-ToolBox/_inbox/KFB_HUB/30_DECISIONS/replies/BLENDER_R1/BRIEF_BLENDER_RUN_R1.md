@@ -37,5 +37,10 @@ Ears, antennae and eye stalks are future **actors**: they will show surprise, jo
 2. **Blender part (this run):** every appendage gets a clean bone chain with consistent names (`ear.l/r.01–03`, `antenna.l/r.01–02`, `eyestalk.l/r/c.01–02`), rest pose straight and symmetric, root weights soft so a bend never tears the mesh.
 3. **Recipe/ToolBox part (later, WSA work, after this run returns):** each `dangle.parts[]` entry carries `type: ear | antenna | eyestalk` and `side`; the ToolBox reads one profile table by type (values above) and lets Georg tune per figure. Later the same parts get named expression poses (perk, droop, flick, twitch, asymmetric) that the choreography layer (V-298) can call. Not in this run.
 
+## E · Diorama edges: stone kit + edge data (V-341)
+For WS1's terrain integration (L2 step 4):
+1. **Clay stone kit:** 7–9 small stones/pebbles, hand-shaped clay forms (flattened, chipped, slightly asymmetric – no eggs, no spheres), 300–800 tris each, clean normals, pivot at the base, one material with a tintable base colour + the clay detail normal. Proof: a turntable sheet next to a FrizzleBob for scale.
+2. **Edge data per Meshy stage** (all stages on GitHub): `footprint` polygon (outline of the base where it meets y = 0) and `edgePalette` (3–5 colours sampled from the base texture in a ring 0–0.5 m above the ground), written into each stage's slot/descriptor JSON. Proof: top view with the polygon and colour swatches.
+
 ## D · Order and report
-A (Dory → Hunky → Orc) → B1 → C2 → B2 if time. Report in German into `replies/WS0_BLENDER_RUN_R1_REPORT.md` with paths, commit, numbers and the proof images; Hub entries only after I have checked every image.
+A (Dory → Hunky → Orc) → B1 → C2 → E → B2 if time. Report in German into `replies/WS0_BLENDER_RUN_R1_REPORT.md` with paths, commit, numbers and the proof images; Hub entries only after I have checked every image.

@@ -1,6 +1,6 @@
 # Briefing WS1 · Look run L2 · warm diorama light, clay look for figures and vehicles, dieselpunk lineup
 
-WS0 → WS1 · 16.10.2026 · V-340 (extends V-329 light L1; does not replace it). One long run in three steps, measured by you against the grid, **no reviewer rounds in between** (V-312). Do not reset M1 TUNE / M2; this runs alongside or right after, your call in WS1_STATUS.
+WS0 → WS1 · 16.10.2026 · V-340 (extends V-329 light L1; does not replace it). One long run in four steps, measured by you against the grid, **no reviewer rounds in between** (V-312). Do not reset M1 TUNE / M2; this runs alongside or right after, your call in WS1_STATUS.
 
 ## 0. Sources (all exist)
 Register branch `docs/kfb-decisions-register-2026-10-11`, folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`:
@@ -24,6 +24,16 @@ Georg wants everything in the handmade clay look; KayKit default materials and M
 ## 3. Step 3 · Dieselpunk lineup
 A lineup scene on one stage: all 14 vehicles + FrizzleBob + Orc Brute at the v3 scale, in day / golden hour / night, same camera marks. The M2 hop-in car (02 Flammen-Dragster) keeps working; ears may fold inside (V-321).
 
+## 3b. Step 4 · Dioramas grow out of the terrain (Georg 16.10., V-341)
+Today the Meshy dioramas look placed on top. They must grow out of the ground; no hard cuts at any transition (standing rule).
+**Story first:** the diorama is the oldest piece of this place; the land around it was shaped by the same clay and weather, so stones and soil from its base have crumbled and rolled outward over time. That is why the transition stones exist and why they get smaller and fewer the further away they lie.
+1. **Organic terrain, not hand-modelled:** a heightfield around each diorama footprint, seeded: a skirt that meets the diorama base height without a step, rolling into low dunes / soft hills (low-frequency noise, gentle slopes). Georg only nudges it in God-Mode, he does not sculpt it.
+2. **Colour transition:** terrain colour at the footprint ring = colours sampled from the diorama base (WS0 delivers them per stage, see below), fading over 3–8 m into the zone ground colour of V-305. Same clay surface as the terrain.
+3. **Transition stones:** small clay stones in the diorama's own base colours from WS0's stone kit (not uniform eggs): clusters instead of rows, largest near the diorama, 30–60 % sunk into the ground (rocks sit deep, never balanced on top), random rotation and scale, every stone touching the ground.
+4. **Clay relief over the dioramas without changing colour:** a tiling clay detail normal (thumb prints, modelling marks), applied triplanar in world space at low strength, plus roughness; albedo untouched. Visible up close, invisible in the long shot.
+5. **Large dents:** first measure what they are – render one stage with the normal map off and once with flat albedo. Large forms are mesh (the browser GLBs keep ~436k of 2.8M master triangles); smeared medium relief comes from the 2048 normal map or from shading painted into the albedo. Then lower the normal strength where it smears, let the detail normal carry the close-up, and for close-up stages use `A_faithful`.
+**WS0 delivers per stage** (stage descriptor `kfb.stage-descriptor/1`): `footprint` polygon of the base, `edgePalette` (3–5 sampled base colours), and the clay stone kit GLB (Blender run, b51 §E).
+
 ## 4. Acceptance grid (measure yourself; numbers in WS1_STATUS)
 - G1 eyes, mouth, bubble, card edges and marginalia readable in every mood (L1).
 - G2 no floating figures (contact shadows), < 0.1 % clipped figure pixels.
@@ -34,6 +44,10 @@ A lineup scene on one stage: all 14 vehicles + FrizzleBob + Orc Brute at the v3 
 - G7 rim identity visible on FB and GothGirl, faces still evenly lit.
 - G8 no plastic or metal gloss on figures or vehicles (no specular hotspot brighter than the lit albedo).
 - G9 FB, KayKit figure and one vehicle side by side read as one material family.
+- G11 terrain meets every diorama base without a visible step (≤ 2 cm in ≥ 95 % of ring samples) or crease (> 25°).
+- G12 terrain colour at the ring within ΔE 0.05 (OKLab) of the stage's edgePalette, smooth fade to the zone ground.
+- G13 transition stones: 20–60 per stage, ≥ 5 shapes, size gradient outward, 30–60 % sunk, no floating, no rows.
+- G14 clay detail overlay: albedo unchanged (mean ΔE ≤ 0.01), relief visible at the face camera, no moiré in the long shot.
 - G10 lineup: all 14 vehicles + FB + Orc at correct relative size (size sheet), three moods.
 
 ## 5. Delivery

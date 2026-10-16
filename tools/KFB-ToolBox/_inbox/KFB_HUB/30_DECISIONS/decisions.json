@@ -4616,6 +4616,21 @@
    "applies": "nach M1 TUNE bzw. parallel"
   },
   {
+   "id": "V-341",
+   "date": "2026-10-16",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Dioramen wachsen aus dem Terrain (Georg 16.10.): keine aufgesetzten Bühnen. Organisches, geseedetes Terrain (Dünen, weiche Hügel) trifft die Diorama-Basis ohne Stufe; Farbe am Rand aus der Basis gesampelt (edgePalette) und weich in den Zonenboden überblendet; Übergangssteine aus einem Knet-Steine-Kit in den Diorama-Farben, gruppiert, tief eingesunken, nach außen kleiner – Story: Erde und Steine der alten Bühne sind über die Zeit ausgewaschen. Knet-Relief per triplanarer Detail-Normal-Map über die Dioramen, Albedo unverändert. Große Dellen: erst messen (Mesh vs. Normal-Map vs. gemalte Schattierung), dann Normal-Stärke senken bzw. A_faithful für Nahaufnahmen. WS1 = L2 Schritt 4 (G11–G14), WS0 = Steine-Kit + footprint/edgePalette je Bühne (Blender-Lauf b51 §E).",
+   "values": {},
+   "owner": "WS1 · WS0",
+   "check": "Raster G11–G14 + Bildserie Übergang",
+   "source": "Georg 16.10.: „nicht draufgesetzt wirken“, „Sanddünen, modellierte Hügel“, „nicht so lieblos wie Eier dahin geklopst“, „Claymation-Textur drüberlegen, ohne die Farbe zu verändern“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Übergänge entscheiden, ob die Welt als ein Diorama wirkt; die Steine-Fails kamen von Eier-Formen ohne Einbettung.",
+   "applies": "mit L2"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4688,7 +4703,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:652",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:653",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
