@@ -126,6 +126,10 @@
           <button type="button" data-stage-look="neutral" class="tool active" title="Original source geometry and neutral shadow floor">Neutral</button>
           <button type="button" data-stage-look="clay" class="tool" title="Resident Atlas K1/H0 clay form + clay_floor_001; AO off">Clay K1</button>
         </div>
+        <div id="normanPresentationModes" class="toolbar-group norman-modes" aria-label="Norman source comparison" hidden>
+          <button id="normanSourceOnlyBtn" type="button" class="tool" data-norman-presentation="source">Norman · Source only</button>
+          <button id="normanFaceCandidateBtn" type="button" class="tool active" data-norman-presentation="candidate">Norman · Face candidate</button>
+        </div>
         <div class="toolbar-group">
           <button id="captureBtn" type="button" class="tool">Capture PNG</button>
           <button id="qaCaptureBtn" type="button" class="tool">QA 4-view</button>
@@ -148,7 +152,7 @@
       <div class="compare-strip">
         <label class="switchline">
           <input id="cleanupToggle" type="checkbox" checked>
-          <span>Hide verified source eyes</span>
+          <span id="cleanupToggleText">Hide verified source eyes</span>
         </label>
         <label class="switchline">
           <input id="eyeRigToggle" type="checkbox" checked>
@@ -181,6 +185,33 @@
         </div>
         <span id="reviewStatus" class="badge candidate">AUTO_CANDIDATE</span>
       </div>
+
+      <details id="normanFacePanel" class="norman-face-panel" open hidden>
+        <summary>Norman · open-design face</summary>
+        <div id="normanDesignStatus" class="micro-status norman-design-status">OPEN DESIGN · tune, compare, then approve</div>
+        <div class="norman-source-note">Exact KayKit Prototype Dummy source. Original painted eyes + mouth are removed only in the reversible candidate view. EyeRig v6, BrowRig v2 and the source-pinned yellow cartoon mouth stay individually tunable.</div>
+        <div class="norman-color-grid">
+          <label>Eye/lid base <input id="normanLidBaseColor" type="color" value="#e4b53c"></label>
+          <label>Block brow <input id="normanBrowColor" type="color" value="#9b741f"></label>
+        </div>
+        <span class="eyebrow mode-label">BLOCK BROWS · BrowRig v2</span>
+        <div class="control-grid">
+          <label>Thickness <output data-norman-out="thickness"></output><input data-norman-param="thickness" type="range" min="0" max="3" step="0.01"></label>
+          <label>Length <output data-norman-out="length"></output><input data-norman-param="length" type="range" min="0" max="1" step="0.01"></label>
+          <label>Height <output data-norman-out="height"></output><input data-norman-param="height" type="range" min="0" max="1" step="0.01"></label>
+          <label>Lift <output data-norman-out="lift"></output><input data-norman-param="lift" type="range" min="-1" max="3" step="0.01"></label>
+        </div>
+        <span class="eyebrow mode-label">YELLOW CARTOON MOUTH · 20 source forms</span>
+        <label class="select-label" for="normanMouthForm">Form</label>
+        <select id="normanMouthForm" class="select-control"></select>
+        <div class="control-grid">
+          <label>X <output data-norman-out="x"></output><input data-norman-param="x" type="range" min="-3" max="3" step="0.02"></label>
+          <label>Y <output data-norman-out="y"></output><input data-norman-param="y" type="range" min="-6" max="1" step="0.02"></label>
+          <label>Width <output data-norman-out="width"></output><input data-norman-param="width" type="range" min="1" max="8" step="0.02"></label>
+          <label>Depth <output data-norman-out="depth"></output><input data-norman-param="depth" type="range" min="-1" max="1" step="0.01"></label>
+        </div>
+        <div class="micro-status">Default is a deliberately provisional crash-test-dummy interpretation. Norman's character design is not fixed.</div>
+      </details>
 
       <details open>
         <summary>Appearance / source palette</summary>
