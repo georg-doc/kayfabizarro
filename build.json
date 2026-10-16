@@ -1,0 +1,13 @@
+{
+  "schema": "kfb.ws1-build/1",
+  "commit": "kfb-planet main@987422a + merge m2/fahren@00b86ea (Vorschau-Kombi, nicht gemergt)",
+  "date": "2026-10-16T19:15:00+02:00",
+  "tests": { "suite": "npm test", "passed": 23, "total": 23 },
+  "links": {
+    "stage": "https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,light=l1",
+    "m1": "https://ws1-preview.kayfabizarro.pages.dev/#m1",
+    "car": "https://ws1-preview.kayfabizarro.pages.dev/#m1,car",
+    "lineup": "https://ws1-preview.kayfabizarro.pages.dev/#stage,light=l1,lineup=1"
+  },
+  "notes": "Fahrprobe k2b mit Sonne über stageLight.followShadow (Schatten folgt dem Auto, texel-gerastet), L1-Tageslicht; Bühne L1/L2 mit Vergleichsleiste. M2 nicht in main (Georg entscheidet)."
+}
