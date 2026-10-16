@@ -1,5 +1,27 @@
 # RETURN · MKUltra / Monarch → KFB Cardway Research R1 · 2026-10-16
 
+## ADDITIVE RETURN · R2B Guantánamo / SERE / Battle Lab · 2026-10-16
+**Outcome:** Added an **evidence-led Guantánamo research strand** inside the EXISTING MKUltra/Monarch/Mass Formation editorial research branch and Draft PR #408; no new project, runtime, accepted deck, Stage, Hub publication or merge. The original West/Cameron/Desmet research tracks remain open, not overwritten.
+
+**Named document:** `R2B_GUANTANAMO_SERE_BATTLE_LAB_2026-10-16.md`. New sources/lead rows S27–S39 appended to `SOURCE_LEDGER.md`; six noncanonical new source-granular cards appended to `CARDWAY_IDEAS.md`; `TEST_REPORT.md` appended. Existing R1 and R2A files and content are preserved. KFB router/changelog carry a short R2B recovery pointer after closure.
+
+**Primary documentary findings:**
+- The original Senate Armed Services Committee investigation, 2008 S. Prt. 110-54, **chapter III officially titled Guantanamo Bay as a “Battle Lab” for New Interrogation Techniques** (printed p38). This is a named research subject in a congressional finding, not by itself a determination of controlled experimentation.
+- Original Senate executive summary PDF (19pp) scanned image indices 2,3,10,17 examined: senior requests to reverse-engineer JPRA/SERE, DoD policy approval, Navy legal objections and Senate conclusions about abuse.
+- Draft JTF-GTMO **SERE interrogation SOP**, 10 Dec 2002, primary PDF index 0 examined; subsequent SERE instructors' **after-action report**, 15 Jan 2003, index 0 examined (approx. 24 interrogators trained 29 Dec–4 Jan, documented Biderman principles).
+- Original **signed Rumsfeld action memo** approved specified DoD technique categories on 2 Dec 2002, image index 0 checked; NOT indiscriminate blanket approval of all categories.
+- DOJ/FBI Inspector General May 2008 original agency summary reviewed: more than 1000 FBI employees surveyed across GTMO, Afghanistan, Iraq; more than 300 reported witnessing **or hearing about** harsh methods. The report also records agency objections and does NOT establish wholesale FBI complicity.
+- TIME 2005 describes leaked original ~84-page interrogation log for Mohammed al-Qahtani ('Detainee 063'), but **actual complete log NOT read**; Susan Crawford's 2009 firsthand decision-making account described torture/medical harms through Washington Post interview, not independent clinical original.
+- Clinical role BSCT referenced in Senate report and NEJM (full NEJM article paywall/403). 2010 PHR *Experiments in Torture* argues **possible** human-subject experiments in **CIA detention**, not that GTMO was demonstrated to run MKUltra successor experiments. Full PHR paper not page-read.
+- Important boundary: CIA's black-site detention program in 2014 SSCI findings is related but NOT the same detention/command chain as DoD GTMO. Historical KUBARK/MKUltra similarities do not establish a personnel, budget or program continuity in this chapter; same caution applies to Project Monarch.
+
+**Tests actually performed:** 8/8 R2B static source/provenance assertions PASS, 7 original PDF pages visually inspected across 4 original government document families. **S01–S39 = 39 source/lead records**, not 39 complete audited documents. **30 KFB unapproved topic/card hypotheses**, no cards built or deployed. 0 code/unit/game/browser/Stage tests; Site/Cloudflare: none. Do not claim any source beyond those inspected.
+
+**Unresolved:** Original 84-page leak and full BSCT SOP remain unread; the Senate full report PDF was too large to inspect by the web renderer, its public index/title and accessible summary checked; 438-page DOJ OIG and 30-page PHR paper require deeper targeted original-page review; physicians' involvement in interrogation vs formal human experimentation is not resolved. Two user-submitted YouTube videos remain uninspected. West 1953/1956 historical originals, Cameron/68 and Desmet model remain distinct pending original-source review.
+
+**Exactly one next gate:** R2C SOURCE-LINEAGE AND MEDICAL-PROVENANCE CROSS-CHECK: BSCT SOP / Detainee 063 actual log, PHR source footnotes versus CIA/DOD originals and 2014 SSCI findings, with West/Cameron/Desmet original tracks maintained. No deck implementation, no Stage or merge.
+
+
 ## ADDITIVE R2A RETURN · 2026-10-16 · Original CIA FOIA document inspection
 **Completed this phase:** A real original-document R2A, while retaining R1 historical, Monarch, Höfer, video and Desmet context. New readable file: `R2A_FOIA_PRIMARY_SOURCE_DEEP_DIVE_2026-10-16.md`. Existing `SOURCE_LEDGER.md` extended S19–S26 (26 total source/lead IDs), `CARDWAY_IDEAS.md` with 6 R2A archival prompts, `TEST_REPORT.md` with exact evidence checks.
 
