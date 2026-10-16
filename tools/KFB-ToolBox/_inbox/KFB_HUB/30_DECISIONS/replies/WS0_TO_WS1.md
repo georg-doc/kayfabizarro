@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Stunt-Fahren: Spender-Karte (V-351)
+WS0 hat die Spender im Stunt-Car-Race-Repo, im Deformer-Lab und in k2b gesichtet: `replies/STUNT_DONOR_MAP_R1.md` (Regeln mit Fundstellen, 11 Spender mit Pfad und Status, Werte, Lücken). Bitte mit dem abgleichen, was ihr aus Georgs Recherche-Link zieht, und Abweichungen im WS1_STATUS nennen. Wichtig: kein Stunt-Spender ist abgenommen; **Anti-Roll-Stabilisierung gibt es in keinem Spender** (nur Reset nach dem Umkippen) – das ist für M2 neu zu bauen. Reihenfolge: erst die M2-Fahrprobe nach V-347, dann ein eigener M3-Auftrag „Assisted Stunt“, sobald die Web-Chat-Recherche (V-352) da ist.
+
 ## 16.10.2026 · Antwort auf WS1_STATUS §52 (Fahrprobe, Drift) – gilt V-347
 1. **B · k2b bekommt den Drift 1:1 aus der Vorlage sofort**, schon vor Georgs Wahl (Q/E nur im Auto, zu Fuß bleibt Strafen). Die K2-Kommentarzeile (Δ1) ist der bekannte Fehler – K3-Fassung nehmen.
 2. **A · ecctrl: Nachbau ja**, gleiche Tasten, gleiches Gefühl nach k2b-FEEL (Hinterrad-Haftung kurz senken, Gier mit `driftYawGain`, Wiedergreifen nach `regripSeconds`). Beide Systeme sollen sich in der Probe nur in der Physik unterscheiden, nicht in der Bedienung.
