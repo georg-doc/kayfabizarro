@@ -1,0 +1,205 @@
+{
+ "file": "~/Dropbox/CLAUDE/MeshyModels/_browser/goblin_bank/GoblinBank_A_screen.v2.glb",
+ "bytes": 15452888,
+ "sha256": "31e6a513078f679f311d89caaf1ca692c44a041c66f3afafafcbba5d8da317eb",
+ "source": "~/Dropbox/CLAUDE/MeshyModels/_browser/goblin_bank/GoblinBank_A_faithful.glb",
+ "mode": "FRONT_DISPLAY v2 (V-306/V-265: Karte ersetzt die grüne Kurstafel an der linken Wand, gleiche Lage und Neigung (yaw 78,3°), Rahmen überdeckt die alte Tafel ganz; Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_brass (Clay-Messing #CFA14F wie der Rahmen der alten Kurstafel, Geländer und Tresorring, rough 0,5, metal 0; 8 Messing-Nieten wie an der alten Tafel)",
+  "bezel_u": 0.014,
+  "bezel_m": 0.07,
+  "depth_u": 0.02,
+  "outer_u": {
+   "x": [
+    -1.1068,
+    -0.3562
+   ],
+   "y": [
+    -0.087,
+    0.344
+   ],
+   "cardBottom_y": -0.073,
+   "z": [
+    0.264,
+    0.284
+   ],
+   "note": "lokale Rahmenkoordinaten vor der Drehung (yaw um Pivot)"
+  },
+  "mount": "ohne Sockel (V-268): hängt an 2 Messing-Konsolen an der linken Wand, 0,37 m vor der alten Tafel (vor den beiden Wandlaternen), Rahmen ragt rundum über die alte Tafel samt Messingrahmen (V-265, 0,10 m tief); Kronen-Aufsatz der alten Tafel ragt oben als Zier heraus"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z, Schalterhallen-Boden y ≈ −0,49)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.70365,
+    0.33301,
+    0.59019
+   ],
+   "topRight": [
+    -0.55589,
+    0.33301,
+    -0.12328
+   ],
+   "bottomRight": [
+    -0.55589,
+    -0.076,
+    -0.12328
+   ],
+   "bottomLeft": [
+    -0.70365,
+    -0.076,
+    0.59019
+   ]
+  },
+  "center_u": [
+   -0.62977,
+   0.12851,
+   0.23346
+  ],
+  "normalAtCenter": [
+   0.97922,
+   0,
+   0.20279
+  ],
+  "chordWidth_u": 0.7286,
+  "arcWidth_u": 0.7286,
+  "height_u": 0.40901,
+  "aspect_arc": 1.7814,
+  "surface": "eben, Normale [0.97922,0,0.20279] (yaw 78.3°), Ebene durch center_u",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,49)·s, z·s), Ursprung = Modellmitte auf Hallenboden-Höhe; s = 5 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     -0.70304,
+     0.33001,
+     0.58725
+    ],
+    "topRight": [
+     -0.5565,
+     0.33001,
+     -0.12034
+    ],
+    "bottomRight": [
+     -0.5565,
+     -0.073,
+     -0.12034
+    ],
+    "bottomLeft": [
+     -0.70304,
+     -0.073,
+     0.58725
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0041,
+    "u1": 0.9959,
+    "v0": 0.0073,
+    "v1": 0.9927
+   }
+  },
+  "corners_m_note": "Schlüsselname corners_m_s5p5 aus dem Utopia-Format beibehalten; Werte hier mit s = 5 m/u",
+  "corners_m_s5p5": {
+   "topLeft": [
+    -3.515,
+    4.1,
+    2.936
+   ],
+   "topRight": [
+    -2.783,
+    4.1,
+    -0.602
+   ],
+   "bottomRight": [
+    -2.783,
+    2.085,
+    -0.602
+   ],
+   "bottomLeft": [
+    -3.515,
+    2.085,
+    2.936
+   ]
+  },
+  "visibleSize_m": [
+   3.61,
+   2.02
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   0.08,
+   0.78,
+   2.85
+  ],
+  "target": [
+   0.08,
+   0.06,
+   0.0
+  ],
+  "fovV_deg": 40,
+  "note": "wie v1: Blick leicht erhöht von vorn in die Schalterhalle; Display jetzt links an der Wand (schräg, yaw 78,3°), Rückwand über der Galerie frei"
+ },
+ "scale_m_per_u": 5,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "version": 2,
+ "supersedes": "kfb_screen_slot_goblin_bank.json (v1: Kurstafel über der Galerie, bleibt unverändert liegen)",
+ "decision": "V-306 (Georg 15.10.): Karte statt der grünen Kurstafel an der linken Wand",
+ "figures": {
+  "floorY_u": -0.49,
+  "positions_u": [
+   [
+    -0.27,
+    0.3
+   ],
+   [
+    0.42,
+    0.28
+   ]
+  ],
+  "heights_m": [
+   1.8,
+   2.0
+  ],
+  "stageZone_u_xz": [
+   [
+    -0.32,
+    -0.3
+   ],
+   [
+    0.24,
+    -0.3
+   ],
+   [
+    0.3,
+    -0.06
+   ],
+   [
+    0.52,
+    0.06
+   ],
+   [
+    0.52,
+    0.33
+   ],
+   [
+    -0.32,
+    0.33
+   ]
+  ]
+ },
+ "placement": "Standard (Arbeitshypothese); Georg verschiebt Displays später im God-Mode"
+}

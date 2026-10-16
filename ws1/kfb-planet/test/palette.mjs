@@ -54,7 +54,7 @@ process.exit(report('palette V-270', {
   skyAndFogWearRoles: a.sky.top === a.skyP.top && a.sky.bottom === a.skyP.bottom && a.fog === a.skyP.bottom,
   rolesAreLabData: ov.id === 'bucht' && ov.via === 'override' && ov.tint === null && ov.billboard.frame === ov.env.accent[0] && ov.billboard.trim === ov.env.accent[2] && ov.billboard.post === ov.env.bark[1]
     && same(ov.amph.wall, rev(ov.env.stone)) && same(ov.amph.floor, rev(ov.env.paved)) && ov.amph.ground === ov.env.ground[1] && ov.billboard.frame === '#b08ae0', // bucht accent[0] aus palettes.ts
-  storyTintAtMost15: !!a.storyMode && /^#[0-9a-f]{6}$/.test(a.tint) && tintOk(a.billboard.frame, a.env.accent[0], a.tint) && tintOk(a.amph.wall[1], a.env.stone[1], a.tint) && a.billboard.frame !== a.env.accent[0],
+  noStoryTintFromCard: a.storyMode === null && a.tint === null && a.billboard.frame === a.env.accent[0], // Georg 16.10./V-342: Karte hat keinen Story-Mode, kein Tint ohne Würfel
   changeFollowsCard: b.id === 'canyon' && log.length === 1 && log[0].id === 'canyon' && b.bbPal.frame === b.billboard.frame && same(b.amphPal.wall, b.amph.wall) && b.sky.top === b.skyP.top,
   changeIsSoft: mid.fading === true && dist(mid.bodyMean, a.bodyMean) > 0.002 && dist(mid.bodyMean, b.bodyMean) > 0.002 && mid.sky.bottom !== a.sky.bottom && mid.sky.bottom !== b.sky.bottom, // dazwischen, kein harter Schnitt (V-011)
   fadeLeavesNothing: b.fading === false && b.cachedBody === true,

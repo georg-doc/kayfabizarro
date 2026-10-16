@@ -4,7 +4,6 @@
 // Ersetzt die Stimmungs-Stufen aus V-245 (world-palettes/palette-roles); der Story-Modus der Karte kommt weiter aus world-context wie in R2.
 import { PALETTES, ENV_ROLES } from './vendor/palette/island-palettes.js'
 import { MODES } from './vendor/palette/storymode.v4.js'
-import { cardSemanticVector, makeWorldContext } from './vendor/palette/world-context.js'
 import TABLE from './data/stage-palette.genre.json'
 import GENRES from './data/deck-genres.json'
 
@@ -23,25 +22,19 @@ export function paletteForDeck(deckId) {
   return { id: null, via: 'genre/bundle unbekannt' }
 }
 
-// Story-Modus der Karte wie Clay Stage R2 computeContext: Kartenvektor → stärkste Dimension → Modus (DIM_MODE aus R2)
-const DIM_MODE = { melancholy: 'tragic', humor: 'comic', chaos: 'absurd', power: 'heroic', wonder: 'mystical', threat: 'forbidden', lore: 'mystical', name: 'heroic' }
-export function cardStoryMode(card) {
-  if (!card) return null
-  const c = { cardName: card.name || '', power: card.power || '', lore: card.lore || '' }
-  const vec = cardSemanticVector(c, GENRES.decks[card.deck?.id]?.role || null), top = Object.keys(vec).sort((a, b) => vec[b] - vec[a])[0]
-  return makeWorldContext({ cardTriplet: { current: c }, storyMode: DIM_MODE[top] || 'heroic', seeds: ['kfb-billboard', 'b-1'] }).storyMode
-}
-
+// Story-Mode (Georg 16.10., V-342): Die Karte hat keinen Story-Mode; er wird im Spiel mit einem W6 gewürfelt und ist Spielzustand.
+// Die frühere Ableitung aus dem Kartentext (world-context/computeContext, Erbe aus R2) ist entfernt. Getönt wird nur, wenn der Aufrufer einen
+// gewürfelten Modus übergibt (options.storyMode); bis zum Würfel (HUD R4) gibt es keinen Story-Tint. Bodenfarbe kommt künftig aus der Bühne (edgePalette).
 // Variante B (Georg 15.10., §36): jede Rolle auf ein eigenes Bühnenteil wie Joyride setWorld (table = top, hill, tower, strang, trunk, path, sky, cloud)
 // statt einer Rollenfamilie fürs ganze Amphitheater. amph.mode 'b': cols = [tower0, tower1, hill0, hill1, sand, rock] (Bedeutung im Amphitheater-Shader).
-// options: { override: Paletten-Kennung, noTint: true (Bildpaar ohne Tint), variant: 'a' | 'b' }
-export function stagePaletteFor(card, { override = null, noTint = false, variant = 'a' } = {}) {
+// options: { override: Paletten-Kennung, noTint: true (Bildpaar ohne Tint), variant: 'a' | 'b', storyMode: gewürfelter Modus oder null }
+export function stagePaletteFor(card, { override = null, noTint = false, variant = 'a', storyMode = null } = {}) {
   let id = null, via = null
   if (override && PALETTE_IDS.includes(override)) { id = override; via = 'override' }
   else if (card?.deck?.id) ({ id, via } = paletteForDeck(card.deck.id))
   if (!id) { id = TABLE.fallback; via = (via ? via + ' → ' : '') + 'Rückfall ' + TABLE.fallback }
   const P = PALETTES[id], E = ENV_ROLES[id]
-  const story = cardStoryMode(card), M = MODES.find((m) => m.id === story) || null
+  const story = storyMode || null, M = MODES.find((m) => m.id === story) || null
   const t = (hex) => (M && !noTint ? lerpHex(hex, M.accent, TINT_K) : hex)
   const ramp = (three) => [t(three[2]), t(three[1]), t(three[0])] // ENV_ROLES hell → dunkel; Verlauf dunkel → hell
   if (variant === 'b') return {

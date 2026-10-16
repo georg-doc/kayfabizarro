@@ -4,7 +4,7 @@
 // | rogue (F1-Prüffigur als Platzhalter für Stellproben, kein Darsteller). Karte: card=<deck>:<n>, Biom: biome=<Name>.
 // Dialog D1 per Hash: dialog=<n> spielt n Karten des Decks der Startkarte ab (Sprechblasen an den Figuren, Spielerwahl am Bildrand).
 import { useEffect, useMemo } from 'react'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { stagePaletteFor, FADE_S } from './stagePalette'
 import { preferDriftFree } from './cardDrift'
@@ -24,6 +24,9 @@ import { isCardSafe } from './cardMapping'
 import { expose } from './debug'
 import { ROGUE, FB, KAYKIT, CAST_IDS } from './actors/stageCast'
 import { StageOrbitCam, ORBIT } from './StageOrbitCam'
+import { lightAt, parseTod, skyAtTod } from './stageLight'
+import { createContactBlobs } from './modules/contactBlob'
+import { createPracticals } from './modules/practicals'
 export { ORBIT } // Prüfungen lesen die Kamera-Werte wie bisher über Stage
 
 const hash = typeof location !== 'undefined' ? location.hash : ''
@@ -38,7 +41,7 @@ export const STAGE_CAMS = { two: { pos: [0, 2.7, 12.5], target: [0, 2.4, -3.5] }
   // G4-Bildaufbau (Georg 14.10.: „near nehmen“): Kamera näher, auf Augenhöhe der Figuren, Figuren vor der Tafel. Standard seit §20.
   near: { pos: [0, 2.15, 9.2], target: [0, 2.1, -3.5] } }
 const CAM = STAGE_CAMS[/cam=(\w+)/.exec(hash)?.[1]] ? /cam=(\w+)/.exec(hash)[1] : 'near'
-// Meshy-Bühne statt Amphitheater (Vorschau, Georg 15.10.): scene=comic | utopia. Kamera aus der Slot-Datei (WS0), Karte auf der Bildfläche im Modell.
+// Meshy-Bühne statt Amphitheater (Vorschau, Georg 15.10.): scene=comic | utopia | goblin | atlantis (L1-Probebühnen). Kamera aus der Slot-Datei (WS0), Karte auf der Bildfläche im Modell.
 const SCENE = MESHY_STAGES[/scene=(\w+)/.exec(hash)?.[1]] ? /scene=(\w+)/.exec(hash)[1] : null
 const SCENE_S = SCENE ? (+(/sscale=([\d.]+)/.exec(hash)?.[1]) || MESHY_STAGES[SCENE].s) : null // Abstimmen per sscale=<m/u>; Standard = Slot-Datei (WS0)
 const SCENE_CAM = SCENE ? stageCamera(MESHY_STAGES[SCENE], SCENE_S) : null
@@ -78,6 +81,9 @@ const MKR = CAST_ID ? KAYKIT(CAST_ID) : MK
 export const SCENE_MARKS = Object.freeze({
   comic: Object.freeze({ left: Object.freeze({ x: -0.58, z: -0.22, yaw: 0.35 }), right: Object.freeze({ x: 0.14, z: -0.28, yaw: -0.35 }) }),
   utopia: Object.freeze({ left: Object.freeze({ x: -0.3, z: 0.08, yaw: 0.35 }), right: Object.freeze({ x: 0.2, z: 0.08, yaw: -0.35 }) }),
+  // ab den v2-Slots liefert WS0 die Figuren-Plätze selbst (slot.figures.positions_u, [x, z] in u); Blickwinkel wie bei den übrigen Bühnen
+  ...Object.fromEntries(['goblin', 'atlantis'].map((id) => { const [a, b] = MESHY_STAGES[id].slot.figures.positions_u
+    return [id, Object.freeze({ left: Object.freeze({ x: a[0], z: a[1], yaw: 0.35 }), right: Object.freeze({ x: b[0], z: b[1], yaw: -0.35 }) })] })),
 })
 const sceneMark = (m) => ({ ...m, x: m.x * SCENE_S, z: m.z * SCENE_S })
 export const STAGE_MARKS = Object.freeze({
@@ -121,16 +127,55 @@ const makeDialog = (o) => { const d = createDialog({ ...o, reader: { lineFor: (.
 // Himmel (V-245, färbt mit): Kuppel mit Verlauf skyBottom → skyTop aus den Rollen; Nebel = skyBottom. Wechsel weich (V-011).
 const sky = (() => {
   const top = new THREE.Color(PAL0?.sky.top || '#bcd7ea'), bottom = new THREE.Color(PAL0?.sky.bottom || '#bcd7ea'), F = { on: false, t: 0, dur: 0, a: null, b: null }
-  const mat = new THREE.ShaderMaterial({ side: THREE.BackSide, depthWrite: false, fog: false, uniforms: { top: { value: top }, bottom: { value: bottom } },
+  const viewTop = top.clone(), viewBottom = bottom.clone() // angezeigte Farben: Palette (top/bottom) × Tageszeit (L1); ohne L1 gleich der Palette
+  const mat = new THREE.ShaderMaterial({ side: THREE.BackSide, depthWrite: false, fog: false, uniforms: { top: { value: viewTop }, bottom: { value: viewBottom } },
     vertexShader: 'varying float h; void main(){ h = normalize(position).y; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
     fragmentShader: 'uniform vec3 top; uniform vec3 bottom; varying float h; void main(){ gl_FragColor = vec4(mix(bottom, top, smoothstep(-0.02, 0.55, h)), 1.0); }' })
   const mesh = new THREE.Mesh(new THREE.SphereGeometry(400, 32, 16), mat); mesh.name = 'sky'; mesh.renderOrder = -1
-  return { mesh, top, bottom, state: () => ({ top: '#' + top.getHexString(), bottom: '#' + bottom.getHexString(), fading: F.on }),
+  return { mesh, top, bottom, viewTop, viewBottom, state: () => ({ top: '#' + top.getHexString(), bottom: '#' + bottom.getHexString(), fading: F.on }),
     set(sk, fadeS) { const b = { top: new THREE.Color(sk.top), bottom: new THREE.Color(sk.bottom) }; if (!(fadeS > 0)) { top.copy(b.top); bottom.copy(b.bottom); F.on = false; return } Object.assign(F, { on: true, t: 0, dur: fadeS, a: { top: top.clone(), bottom: bottom.clone() }, b }) },
-    step(dt) { if (!F.on) return; F.t = Math.min(F.dur, F.t + dt); const u = F.t / F.dur, k = u * u * (3 - 2 * u); top.copy(F.a.top).lerp(F.b.top, k); bottom.copy(F.a.bottom).lerp(F.b.bottom, k); if (u >= 1) F.on = false } }
+    step(dt) { if (F.on) { F.t = Math.min(F.dur, F.t + dt); const u = F.t / F.dur, k = u * u * (3 - 2 * u); top.copy(F.a.top).lerp(F.b.top, k); bottom.copy(F.a.bottom).lerp(F.b.bottom, k); if (u >= 1) F.on = false }
+      if (L1) { viewTop.set(skyAtTod('#' + top.getHexString(), lightState.tod)); viewBottom.set(skyAtTod('#' + bottom.getHexString(), lightState.tod)) } else { viewTop.copy(top); viewBottom.copy(bottom) } } }
 })()
+// L1 (V-329) · Licht-Schreiber hinter light=l1: der einzige Ort, der Sonne, Hemisphäre, Gegenlicht und Tonemapping setzt. Werte aus stageLight.js
+// (J17-Tag, E50-Gold, Story-Nacht), timeOfDay über tod=day|gold|night|0..1. Nur die Sonne wirft Schatten, enger Frustum um die Spielfläche
+// (±12 m, 2048² → ≈ 1,2 cm je Texel, Ziel fest im Bühnenmittelpunkt, daher kein Nachrasten nötig). Ausgabe ACES wie J17; die Kartenfläche ist toneMapped: false.
+// Kontaktschatten (V-203, Spender Lab contact-blob.ts) als eigenes Modul unter jeder Figur (modules/contactBlob.js); FB behält zusätzlich seinen contact-ao.
+const L1 = /(^|[#,])light=l1(,|$)/.test(hash)
+export const lightState = { tod: parseTod(hash), current: null }
+const L1_TM = /tm=none/.test(hash) ? 'none' : 'aces' // Bildpaar ACES | ohne (V-342 Punkt 6); Georg wählt
+const BLOBS = { targets: () => [mods.left, mods.right] }
+const makeBlobs = (o) => { const m = createContactBlobs(o); mods.blobs = m; return m }
+// Lokale Lichter der Bühne aus ihrem Deskriptor (kfb.stage-descriptor/1, practicals[] in u → Meter wie die Slot-Umrechnung); nachts voll, tags fast aus
+const DESCRIPTORS = import.meta.glob('./data/stages/*.stage.json', { eager: true, import: 'default' })
+const stageDesc = SCENE ? DESCRIPTORS[`./data/stages/${SCENE}.stage.json`] || null : null
+const toMeters = (u) => [u[0] * SCENE_S, (u[1] - MESHY_STAGES[SCENE].floorY) * SCENE_S, u[2] * SCENE_S]
+const PRACT = { practicals: (stageDesc?.practicals || []).map((p) => ({ ...p, pos: toMeters(p.pos) })), weight: () => Math.pow(1 - lightState.tod, 1.5), actors: () => [mods.left, mods.right] }
+const makePract = (o) => { const m = createPracticals(o); mods.practicals = m; return m }
+function LightRigL1() {
+  const { gl } = useThree()
+  const sunRef = useMemo(() => ({ sun: null, back: null, hemi: null }), [])
+  useEffect(() => { const prev = gl.toneMapping; gl.toneMapping = L1_TM === 'none' ? THREE.NoToneMapping : THREE.ACESFilmicToneMapping
+    expose('StageLight', { state: lightState, set: (t) => { lightState.tod = t }, info: () => lightState.current })
+    return () => { gl.toneMapping = prev } }, [gl])
+  useFrame(() => {
+    const L = lightAt(lightState.tod), { sun, back, hemi } = sunRef; if (!sun || !back || !hemi) return
+    const d = L.sunDir, R = 40
+    sun.position.set(d[0] * R, d[1] * R, d[2] * R); sun.color.set(L.sun); sun.intensity = L.sunI
+    back.position.set(-d[0] * R, Math.max(6, d[1] * R * 0.5), -d[2] * R); back.color.set(L.back); back.intensity = L.backI
+    hemi.color.set(L.hemiSky); hemi.groundColor.set(L.hemiGround); hemi.intensity = L.hemiI
+    lightState.current = { tm: L1_TM, tod: L.tod, sun: L.sun, sunI: +L.sunI.toFixed(3), hemiI: +L.hemiI.toFixed(3), backI: +L.backI.toFixed(3), elev: +L.elev.toFixed(2), az: +L.az.toFixed(2) }
+  })
+  return <>
+    <hemisphereLight ref={(o) => { sunRef.hemi = o }} />
+    <directionalLight ref={(o) => { sunRef.sun = o }} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-12} shadow-camera-right={12} shadow-camera-top={12} shadow-camera-bottom={-12} shadow-camera-near={1} shadow-camera-far={90} shadow-bias={-0.0002} shadow-normalBias={0.02} />
+    <directionalLight ref={(o) => { sunRef.back = o }} />
+  </>
+}
+
+// Nebel folgt der gezeigten Horizontfarbe (L1 Regel 3): viewBottom = Palette × Tageszeit
 function Sky() {
-  useFrame((st, dt) => { sky.step(Math.min(dt, 0.1)); sky.mesh.position.copy(st.camera.position); if (st.scene.fog) st.scene.fog.color.copy(sky.bottom) })
+  useFrame((st, dt) => { sky.step(Math.min(dt, 0.1)); sky.mesh.position.copy(st.camera.position); if (st.scene.fog) st.scene.fog.color.copy(sky.viewBottom) })
   return <primitive object={sky.mesh} />
 }
 
@@ -153,11 +198,15 @@ export default function Stage() {
       <fog attach="fog" args={[PAL0?.sky.bottom || '#bcd7ea', 80, 260]} />
       <Sky />
       <StageOrbitCam view={CAM_VIEW} />
-      <hemisphereLight args={[0xfff4e0, 0x3a3226, 1.25]} />
-      <directionalLight position={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-25} shadow-camera-right={25} shadow-camera-top={25} shadow-camera-bottom={-25} shadow-bias={-0.0002} />
+      {L1 ? <LightRigL1 /> : <>
+        <hemisphereLight args={[0xfff4e0, 0x3a3226, 1.25]} />
+        <directionalLight position={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-25} shadow-camera-right={25} shadow-camera-top={25} shadow-camera-bottom={-25} shadow-bias={-0.0002} />
+      </>}
       {SCENE ? <ModuleHost create={makeMeshy} options={MESHY_OPTS} /> : <ModuleHost create={makeAmph} options={AMPH} />}
       {!SCENE && <ModuleHost create={makeBB} options={BB} />}
       {ACTORS !== 'none' && <ModuleHost create={makeL} options={L} />}
+      {L1 && ACTORS !== 'none' && <ModuleHost create={makeBlobs} options={BLOBS} />}
+      {L1 && <ModuleHost create={makePract} options={PRACT} />}
       {ACTORS !== 'none' && <ModuleHost create={makeR} options={R} />}
       {NDIALOG > 0 && <ModuleHost create={makeDialog} options={DIALOG} />}
       {NDIALOG > 0 && <BubbleHost />}

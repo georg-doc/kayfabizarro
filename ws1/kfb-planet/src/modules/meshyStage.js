@@ -9,13 +9,21 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { createCardContent } from './surfaceContent'
 import comicSlot from '../data/stages/kfb-meshy-comic-broadcast.screen-a.v1.slot.json'
 import utopiaSlot from '../data/stages/kfb-meshy-utopia-stage.screen-a.v1.slot.json'
+import goblinSlot from '../data/stages/kfb-meshy-goblin-bank.screen-a.v2.slot.json'
+import atlantisSlot from '../data/stages/kfb-meshy-atlantis.screen-a.v1.slot.json'
 
+// Gepinnte Asset-Commits je Bühne (WS0-Asset-Branches); die GLB liegt unter media/3D_Assets/MeshyModels/browser/<Repo-Dateiname>
 const ASSET_COMMIT = '8ce77addef0fce73216ba4f1704dcfcc7ee6149a' // Branch assets/meshy-stages-utopia-comic-2026-10-15
-const raw = (file) => `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${ASSET_COMMIT}/media/3D_Assets/MeshyModels/browser/${file}`
+const ASSET_V2 = '8cf2ec71279c62ebc6b7fc2975282b0f3300b25b' // Branch assets/meshy-stages-v2-arcade-2026-10-15 (Goblin-Bank v2, V-306)
+const ASSET_ATLANTIS = 'd3326a6ad997fbfdd2267b6d38702bb2ddb00712' // Branch assets/meshy-stage-atlantis-2026-10-15
+const raw = (file, commit = ASSET_COMMIT) => `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${commit}/media/3D_Assets/MeshyModels/browser/${file}`
 // Bodenhöhe aus der Umrechnungs-Vorschrift der Slot-Datei („(y + 0,491)“) – keine eigene Zahl
 const floorOf = (slot) => -parseFloat(/\(y \+ ([\d.,]+)\)/.exec(slot.slot.stageTransform)[1].replace(',', '.'))
-const stageOf = (id, slot) => ({ id, url: raw(slot.file), sha256: slot.sha256, bytes: slot.bytes, slot, s: slot.scale_m_per_u, floorY: floorOf(slot) })
-export const MESHY_STAGES = Object.freeze({ comic: stageOf('comic', comicSlot), utopia: stageOf('utopia', utopiaSlot) })
+// repoFile: Dateiname im Repo, wenn die Slot-Datei einen lokalen WS0-Pfad nennt (ab v2: „~/Dropbox/…“)
+const stageOf = (id, slot, commit, repoFile = null) => ({ id, url: raw(repoFile || slot.file, commit), sha256: slot.sha256, bytes: slot.bytes, slot, s: slot.scale_m_per_u, floorY: floorOf(slot) })
+// L1 (V-329): Goblin-Bank v2 und Atlantis als Licht-Probebühnen dazu
+export const MESHY_STAGES = Object.freeze({ comic: stageOf('comic', comicSlot), utopia: stageOf('utopia', utopiaSlot),
+  goblin: stageOf('goblin', goblinSlot, ASSET_V2, 'kfb-meshy-goblin-bank.screen-a.v2.glb'), atlantis: stageOf('atlantis', atlantisSlot, ASSET_ATLANTIS, 'kfb-meshy-atlantis.screen-a.v1.glb') })
 export const meshyLog = { create: 0, update: 0, dispose: 0, freed: null }
 
 // Standardkamera der Slot-Datei in Bühnenmetern
@@ -25,7 +33,7 @@ export function stageCamera(st, sOverride = null) {
   return { pos: m(c.pos), target: m(c.target), fov: c.fovV_deg, note: c.note }
 }
 
-// options: { stage: 'comic' | 'utopia', scale? (m/u, Abstimm-Wert statt Slot-Datei) }
+// options: { stage: 'comic' | 'utopia' | 'goblin' | 'atlantis', scale? (m/u, Abstimm-Wert statt Slot-Datei) }
 export function createMeshyStage(options = {}) {
   const st0 = MESHY_STAGES[options.stage], st = st0 && options.scale ? { ...st0, s: options.scale } : st0
   if (!st) throw new Error('MESHY_STAGE_UNKNOWN: ' + options.stage)
