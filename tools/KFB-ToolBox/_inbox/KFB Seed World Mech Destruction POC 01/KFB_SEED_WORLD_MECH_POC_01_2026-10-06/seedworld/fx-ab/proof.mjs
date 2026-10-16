@@ -20,6 +20,16 @@ try{
    check(scenario+' real 3D source dust and 2D original mask',state.isolated?.threeGeometry==='IcosahedronGeometry'&&state.isolated?.alphaNaturalWidth>0&&state.isolated?.dustInstanceCount>0,state.isolated);
    check(scenario+' source explosion count',state.damage.events==={single:1,four:4,block:12}[scenario],state.damage);
    check(scenario+' actual source visual and gameplay event split',state.damage.promoted>=0&&state.damage.smoke>0&&state.damage.cellsLost>=0&&state.damage.debris>=0,state.damage);
+   if(scenario==='single'){
+     const isoA=await page.evaluate(()=>window.__KFB_SPELLSPILL_FX_AB__.isolate('a'));
+     check('original 3D source alone rendered',isoA.actualPOC3D>0&&isoA.actualBrackeys2D===0,isoA);
+     await page.screenshot({path:path.join(outDir,'isolated-source-3d.png'),fullPage:true});
+     await page.evaluate(()=>window.__KFB_SPELLSPILL_FX_AB__.restoreIsolation());
+     const isoB=await page.evaluate(()=>window.__KFB_SPELLSPILL_FX_AB__.isolate('b'));
+     check('original 2D Brackeys mask alone rendered',isoB.actualPOC3D===0&&isoB.actualBrackeys2D>0,isoB);
+     await page.screenshot({path:path.join(outDir,'isolated-source-2d.png'),fullPage:true});
+     await page.evaluate(()=>window.__KFB_SPELLSPILL_FX_AB__.restoreIsolation());
+   }
    const rows=[];
    for(const variant of ['none','a','b','c']){
     const metric=await page.evaluate(v=>window.__KFB_SPELLSPILL_FX_AB__.measure(v,30),variant);
