@@ -148,7 +148,7 @@
     "contactSheetVisuallyInspected": true,
     "originalShaderSourceFound": false
   },
-  "nextGate": "KFB SEED WORLD BLOCK-DESTRUCTION HYBRID FX SOURCE-ISOLATION + PERFORMANCE A/B",
+  "nextGate": "KFB SEED WORLD SOURCE FX VISIBILITY / CASCADE PERFORMANCE EVIDENCE REVIEW",
   "existingVfxCatalog": {
     "status": "EXACT_SOURCE_FOUND_AND_REUSED_AS_REFERENCE_ONLY",
     "originalHandoff": {
@@ -227,5 +227,63 @@
     "originalImagesVendored": false,
     "summary": "Warm parchment diorama, gray smoke, orange blast, angular brown shards, teal waterfall/foam, pale cream vortex; shader origin still unknown",
     "sourceDocument": "VISUAL_SOURCE_PROOF.md"
+  },
+  "fxAbImplementation": {
+    "state": "RUN_SUCCESS_UNREVIEWED_EVIDENCE",
+    "mode": "DEVELOPER_FIXTURE_ONLY__NO_PRODUCTION_INTEGRATION",
+    "sourceDir": "tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/",
+    "workflow": ".github/workflows/kfb-seedworld-source-fx-ab.yml",
+    "variant": [
+      "no-smoke",
+      "original-POC-3D",
+      "Brackeys-original-alpha-2D",
+      "hybrid-original-3D-and-2D"
+    ],
+    "scenarios": [
+      "single",
+      "four",
+      "block"
+    ],
+    "sourceMaskPath": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_03_a.png",
+    "sourceMaskGitBlob": "7cbc81b89d58671748e819f5f9756d5fbe53a477",
+    "earliestCI": {
+      "runId": 38924108695,
+      "status": "SUCCESS",
+      "technicalChecks": "39/39",
+      "screenshotCount": 12,
+      "artifactId": 12056735381,
+      "visualReadability": "FAIL_LOW_VISIBLE_PIXEL_DELTA",
+      "block": {
+        "cellsLost": 137,
+        "smokePoolActive": 200,
+        "vfxPeak": 584,
+        "sourceVfxCapacity": 584,
+        "cascades": 0,
+        "baseTriangles": 1008164,
+        "original3dTriangles": 1024164,
+        "original2dTriangles": 1008964,
+        "hybridTriangles": 1009648
+      },
+      "sourceOnlyRenderer": "CI SwiftShader, huge rAF gaps, no valid GPU performance ranking"
+    },
+    "visualGate": {
+      "runId": 38925577044,
+      "status": "FAIL",
+      "technicalChecks": "13/14",
+      "reason": "single 2D alpha visible changed pixels 0.008% vs minimum 0.04%",
+      "artifactId": 12056821556
+    },
+    "finalBoundedRepair": {
+      "runId": 38926541781,
+      "status": "completed",
+      "conclusion": "success",
+      "changes": "Actual smoke-centered camera; 5x original 3D and 6.5x 2D source-scale display adapters, original 3D+2D isolation screenshots, accurate hybrid offsets; same damage",
+      "budgetGuard": "No further optional VFX repairs until one latest run checked"
+    },
+    "targetGpuMeasured": false,
+    "kfbGoldenAccepted": false,
+    "gameplayCodeModified": false,
+    "worldR5Authorised": false,
+    "evidenceFile": "FX_AB_R1_EVIDENCE.md"
   }
 }
