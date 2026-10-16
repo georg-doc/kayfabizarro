@@ -4931,6 +4931,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-362",
+   "date": "2026-10-16",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Suno-Style-Prompts sind rein musikalisch (Georg 16.10.): Genre, Produktion, Instrumente, Groove, Tempo, Tonart/Stimmung und genau eine Stimme mit musikalischer Vortragsweise. Das Deck fließt nur über Stimmung und Charakter der Musik ein (z. B. frech, trotzig, düster, verspielt), nie über Story- oder Comic-Requisiten, Rollenbilder oder Meta-Kontexte (verboten z. B. „pencil-scratch shaker“, „art-school lecturer“, „stand-up comedian“). Was Suno nicht als Klang umsetzen kann, ist Anti-Information und erzeugt inhaltlichen Drift. Das Storytelling bleibt im Lyrics-Feld.",
+   "values": {},
+   "owner": "WS0 (Style-Prompts)",
+   "check": "jedes Style-Wort ist als Klang/Spielweise hörbar",
+   "source": "Georg 16.10.: „das Bleeding … darf nur auf der musikalischen Ebene passieren … Pencil-Scratching, das ist überhaupt gar keine gute Idee“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Nicht-musikalische Requisiten im Style sind für Suno Anti-Information und ziehen den Song inhaltlich weg.",
+   "applies": "ab sofort, jeder Style-Prompt"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5003,7 +5018,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:687",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:688",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
