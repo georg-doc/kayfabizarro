@@ -1,7 +1,58 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§58 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§59 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 59 · 16.10. · Georgs Wunschliste VFX-Slice (Speedlines, Partikel, Düsen-Glow, Flugmodus) · Vorschlag mit WS1-Kommentaren · Bitte an WS0
+
+**Georg (16.10.):** Was an Visual Effects schon da ist, soll in einer eigenen Slice zusammenkommen:
+- Speedlines bzw. Beschleunigungs- und Tunneleffekte;
+- Partikel (Rauchwölkchen, aufgewirbelte Erde je Terraintyp);
+- **Glow bzw. Antrieb an den großen Düsen** der Dieselpunk-Fahrzeuge („kontraintuitiv, dass die Engines gar keinen Glow haben“), möglichst einheitlich statt je Fahrzeug;
+- später **Flugmodus**: Doppel-Leertaste (400 ms, V-024/V-179), Räder klappen um, Antigrav-Antrieb sichtbar (V-274).
+- Georg stimmt das mit WS0 ab und bittet um WS1-Kommentare zu Ausführung, Umsetzbarkeit und Einbau.
+
+### 59.1 · Bestand (gefunden)
+- **`kfb-flight-vfx.js`** (main: `tools/KFB-ToolBox/_inbox/KFB HUD Flight Board - Flight VFX/KFB_HUD_FLIGHT_SESSION_CUT_2026-10-09_r1/hud-flight/`):
+  - **Speedlines** (Spindel-Shader, Ring-Logik, Port TinySkies SpeedLines.ts über Travel Combat v25);
+  - **Speed-Trails** (Contrails, 72 Stützpunkte, warmes Creme, weißer Kern ab Vollgas; Anker frei wählbar);
+  - **Düsen** (`nozzles: [{ object, offset, dir }]`) mit Glow;
+  - **Puffs** (Abheben, Landen);
+  - **Skim** (Emission an der Oberfläche unter dem Fahrzeug in zwei Fahnen = Staub bzw. Erde);
+  - Knet-Glow-Material, feste Obergrenzen `VFX_CAPS { lines 32, trailPts 72, jet 64, puff 40, skim 240 }`;
+  - Schnittstelle `vfx.update(dt, speedKmh, thrust01)`, `hoverPose`, `FLIGHT_IDLE`.
+- **Fahrzeug-Deformer und Zwei-Rad** (§55.1), Clay-VFX der Resident/ToolBox (SSOT „Clay particles and cartoon VFX“).
+- **Ereignisse aus der Fahrphysik** (§56.1): `railImpact`, `landing`, Signale `speed/longAccel/lateral/bank/drift`.
+
+### 59.2 · Vorschlag VFX-Slice V1 (nach dem k2b-Grundfahren, eigene Vorlagen-Zeile)
+1. **Speedlines und Speed-Trails 1:1 aus `kfb-flight-vfx.js`.**
+   - Antrieb: `speed`, `longAccel` (Beschleunigungs-Schub), im Tunnel bzw. bei Boost stärker.
+   - *Umsetzbarkeit:* hoch, fertig und mit Obergrenzen. *Kosten:* gering (ein Draw je Band bzw. Ring).
+2. **Staub, Erde und Rauch je Terraintyp:** `Skim` aus dem Modul, Farbe und Körnung je Terraintyp aus dem Höhenfeld bzw. Biom (Gras → Erdkrumen grün-braun, Sand → Staub hell, Fels → grauer Rauch).
+   - Auslöser: Raddrehung bzw. Schlupf, Drift, `landing` (Puff), `railImpact` (Knet-Brocken).
+   - *Umsetzbarkeit:* hoch; die Terrain-Zuordnung braucht eine kleine Tabelle Terraintyp → Partikelprofil (WS0 bzw. Biom-Daten).
+3. **Düsen-Glow einheitlich:** **eine** Lösung über Daten statt Code je Fahrzeug.
+   - WS0 trägt je Fahrzeug Anker `kfb_thrust_*` ins GLB bzw. in `kfb-vehicle.json` (Position, Richtung, Radius, Typ jet/turbine/exhaust); einmalig im Blender-Lauf, wie heute schon `kfb_wheel_*`, `kfb_entry`.
+   - Ein generisches Modul setzt an jeden Anker Düse plus Glow plus Hitzeflimmern bzw. Partikel aus `kfb-flight-vfx.js` (`nozzles`), Stärke aus Gas (`thrust01`).
+   - *Umsetzbarkeit:* hoch, sobald die Anker da sind; ohne Anker nur Raten (unsauber).
+   - *Hover-Fahrzeuge* (`iron_phantom_hovercar`, `street_racer_hoverbeast`) haben schon `kfb_hover_*`-Anker; dort kann der Glow sofort sitzen.
+4. **Flugmodus mit umklappenden Rädern (V-274), später:**
+   - *Einschränkung:* Bei den Dieselpunk-Rad-Fahrzeugen sind die Räder mit der Karosserie verschmolzen (WS0 V-311: `kfb_fused`); echtes Umklappen braucht getrennte Rad-Netze mit Drehpunkt (Asset-Arbeit je Fahrzeug).
+   - *Pragmatisch:* Beim Abheben erscheinen an den `kfb_wheel_*`-Ankern **Antigrav-Glow-Scheiben** nach unten (wie V-274 „Glow unter den umgeklappten Rädern“), dazu Takeoff-Puff und `hoverPose`. Umklappen nur dort, wo WS0 getrennte Räder liefert (Badewannen-Kart).
+   - Auslöser: Doppel-Leertaste 400 ms wie zu Fuß (M1 T3).
+5. **Kamera bei Stunts** (Georg §56.2: Auto beim Schleudern auch von der Seite zeigen): eigener Punkt im kommenden Fahrphysik-Briefing.
+
+### 59.3 · Reihenfolge-Vorschlag
+1. M2-Grundfahren (Schatten, Kontakt, Aufprall);
+2. VFX V1 Punkte 1 + 2 (sofort aus Bestand);
+3. Punkt 3, sobald WS0 die `kfb_thrust_*`-Anker liefert;
+4. Punkt 4 mit dem Flugmodus;
+5. Audio-Bett (§58) parallel zu 2, sobald die Quellen da sind.
+
+### 59.4 · Bitte an WS0
+- Die Slice als Vorlagen-Zeile planen (V-001 erfüllt durch `kfb-flight-vfx.js`).
+- `kfb_thrust_*`-Anker für alle 14 Fahrzeuge in den Blender-Lauf aufnehmen.
+- Terraintyp → Partikelprofil festlegen.
 
 ## 58 · 16.10. · Georg zur Fahrprobe @7afea10: „Grundlage sehr sauber“ · Schatten und Bodenkontakt · Audio und Knet-Partikel (Bitte an WS0)
 
