@@ -206,7 +206,7 @@ export async function mountNormanCompanionFace({THREE,eyes,profile,mouthCatalog,
 
   const forms=new Map((mouthCatalog?.forms||[]).map((f)=>[f.id,f]));
   const textureCache=new Map();
-  let sourceImagePromise=null,mouthStatus='PENDING',lastGen=-1,lastForm=null,visible=true;
+  let sourceImagePromise=null,mouthStatus='PENDING',lastGen=-1,lastForm=null,expressionForm=null,visible=true;
 
   const ensureSourceImage=()=>{
     if(!sourceImagePromise)sourceImagePromise=loadImage(mouthCatalog?.source?.sourceUrl);
@@ -226,8 +226,9 @@ export async function mountNormanCompanionFace({THREE,eyes,profile,mouthCatalog,
   const syncFrame=()=>{
     const f=getEyeFrame();if(!f)return false;
     if(f.parent&&mouthMesh.parent!==f.parent){mouthMesh.removeFromParent();f.parent.add(mouthMesh);}
-    const form=forms.get(mouth.form)||forms.get('closed');
-    const aspect=textureCache.get(mouth.form)?.aspect || ((form?.bbox?.[2]||1)/(form?.bbox?.[3]||1));
+    const formId=expressionForm||mouth.form;
+    const form=forms.get(formId)||forms.get('closed');
+    const aspect=textureCache.get(formId)?.aspect || ((form?.bbox?.[2]||1)/(form?.bbox?.[3]||1));
     const cx=(f.left.x+f.right.x)/2 + (mouth.x||0)*f.radius;
     const cy=(f.left.y+f.right.y)/2 + (mouth.y||0)*f.radius;
     const skinZ=probeSurfaceZ(THREE,f,cx,cy);
@@ -240,22 +241,27 @@ export async function mountNormanCompanionFace({THREE,eyes,profile,mouthCatalog,
     lastGen=f.gen||0;
     return true;
   };
-  const setMouth=async(patch={})=>{
-    const previous=mouth.form;
-    Object.assign(mouth,patch||{});
-    if(!forms.has(mouth.form))mouth.form=previous&&forms.has(previous)?previous:'closed';
-    if(mouth.form!==lastForm || !mouthMaterial.map){
+  const showForm=async(id)=>{
+    const formId=forms.has(id)?id:'closed';
+    if(formId!==lastForm || !mouthMaterial.map){
       try{
-        const rec=await textureFor(mouth.form);
+        const rec=await textureFor(formId);
         mouthMaterial.map=rec.texture;mouthMaterial.needsUpdate=true;
-        lastForm=mouth.form;mouthStatus='OK';
+        lastForm=formId;mouthStatus='OK';
       }catch(err){
         mouthStatus='ERROR';
         log(`Norman mouth source · ${err.message}`);
       }
     }
     syncFrame();
-    return {status:mouthStatus,...clone(mouth)};
+    return {status:mouthStatus,displayForm:formId,...clone(mouth)};
+  };
+  const setMouth=async(patch={})=>{
+    const previous=mouth.form;
+    Object.assign(mouth,patch||{});
+    if(!forms.has(mouth.form))mouth.form=previous&&forms.has(previous)?previous:'closed';
+    if(Object.prototype.hasOwnProperty.call(patch,'form'))expressionForm=null;
+    return showForm(expressionForm||mouth.form);
   };
   const setBrow=(patch={})=>{
     const check=brow.set(patch);
@@ -266,7 +272,8 @@ export async function mountNormanCompanionFace({THREE,eyes,profile,mouthCatalog,
   const applyExpression=(name)=>{
     const map=expressionMap[name]||{};
     if(map.brow)brow.expression(map.brow);
-    if(map.mouth)setMouth({form:map.mouth}).catch((err)=>log(`Norman expression mouth · ${err.message}`));
+    expressionForm=map.mouth&&forms.has(map.mouth)?map.mouth:null;
+    showForm(expressionForm||mouth.form).catch((err)=>log(`Norman expression mouth · ${err.message}`));
     markOverlay(brow.mesh);
   };
   const setVisible=(on)=>{
@@ -303,7 +310,7 @@ export async function mountNormanCompanionFace({THREE,eyes,profile,mouthCatalog,
       status:'DESIGN_TUNE',
       visualCanon:'OPEN_DESIGN',
       brow:{status:brow.last?.status||'OK',params:clone(brow.params),frame:brow.frame?clone(brow.frame):null},
-      mouth:{status:mouthStatus,...clone(mouth),formCount:forms.size,sourceRevision:mouthCatalog?.source?.revision||null,sourceBlob:mouthCatalog?.source?.blob||null},
+      mouth:{status:mouthStatus,...clone(mouth),displayForm:expressionForm||mouth.form,formCount:forms.size,sourceRevision:mouthCatalog?.source?.revision||null,sourceBlob:mouthCatalog?.source?.blob||null},
       visible
     }),
     dispose(){
