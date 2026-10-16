@@ -4706,6 +4706,21 @@
    "applies": "nächste Runde"
   },
   {
+   "id": "V-347",
+   "date": "2026-10-16",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "M2-Fahrgefühl (Georg 16.10., noch kein Urteil über die Engine): (1) Drift wie in Joyride („Tokyo Drift“): Q/E = Drift links/rechts, analog zum Strafen beim Gehen (V-022); Spender = J17-k2b-Drift (driftMinSpeed, driftSteerScale, regripSeconds …, kfb-drive.k2b.js). (2) A/D = Lenken mit engem Wendekreis, man muss das Auto auf kleiner Fläche umdrehen können. (3) ecctrl überschlägt sich zu leicht, besonders bei hohem Tempo: Überschlag nur bei großen Sprüngen/harten Stößen, sonst Roll-Stabilisierung (tiefer Schwerpunkt, Anti-Roll), Selbstaufrichten bleibt. (4) In der Vorschau sichtbar anzeigen, welches Fahr-System aktiv ist, plus Tastenliste im Info-Symbol. Danach neue Fahrprobe ecctrl | k2b mit gleicher Tastenbelegung.",
+   "values": {},
+   "owner": "WS1 (M2-Sitzung)",
+   "check": "neue Fahrprobe, Raster G0 + Drift/Wendekreis/Überschlag",
+   "source": "Georg 16.10.: „keine Driftfahrt … Tokyo-Drift … Q und E“, „A und D … nicht zu weiten Wendekreis“, „überschlägt sich zu leicht … noch kein Urteil über die Engine“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Das Joyride-Fahrgefühl (Drift, Wenden) ist Teil der Vorlage; ecctrl-Überschläge sind Abstimmung, kein Systemurteil.",
+   "applies": "vor der nächsten Fahrprobe"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4778,7 +4793,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:664",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:665",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

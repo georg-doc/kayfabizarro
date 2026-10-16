@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · M2 Fahrgefühl: Drift, Wendekreis, Überschläge – V-347
+Georg (noch kein Urteil über die Engine):
+1. **Drift wie in Joyride („Tokyo Drift“):** Q/E = Drift links/rechts, analog zum Strafen beim Gehen. Spender: die k2b-Drift aus J17 (`kfb-drive.k2b.js`: `driftMinSpeed 7.5`, `driftSteerScale 1.28`, `driftDampingScale 0.28`, `driftKickScale`, `driftYawGain`, `regripSeconds 0.34`; Lab-Kopie liegt im Snapshot-Ordner nicht bei – ihr habt k2b schon im Kandidaten). Bei ecctrl die gleiche Logik als Seitenschub/Grip-Abbau nachbilden.
+2. **A/D = Lenken mit engem Wendekreis:** Das Auto muss sich auf kleiner Fläche umdrehen lassen (Ziel: Wenden auf ≈ 2 Wagenlängen bei Schritttempo; Wert bitte messen und nennen).
+3. **ecctrl überschlägt sich zu leicht, besonders bei hohem Tempo:** tiefer Schwerpunkt bzw. Anti-Roll, Überschlag nur bei großen Sprüngen/harten Stößen; Selbstaufrichten bleibt.
+4. **Orientierung in der Vorschau:** oben klein anzeigen, welches Fahr-System aktiv ist (ecctrl | k2b), Tastenliste im Info-Symbol (W/S, A/D, Q/E Drift, Leertaste, Shift, C, R).
+5. Dann neue Fahrprobe mit **gleicher Tastenbelegung** für beide Systeme; Raster G0 plus: Drift auslösbar und wieder fangbar, Wendekreis gemessen, 0 Überschläge bei Vollgas auf ebener Strecke in 20 Läufen.
+
 ## 16.10.2026 · Georgs Look-Urteile – V-346 (TUNE, bitte in einem Schritt)
 1. **Look B wird Standard.** Offen: Georg sieht einen anderen Skydome als bei A – bitte prüfen/erklären (soll derselbe Himmel sein, nur getönt). **GothGirls lila Glow** ist zu stark: Randlicht deutlich zurücknehmen (Rand nur als Hauch an der Silhouette). **FBs Mundpartie** ist zu dunkel: Fill bzw. Face-Light so, dass Mund und Augen klar lesbar sind (G1).
 2. **Schattenlänge:** Georg fragt, ob sie an Tageszeit/Licht hängt. Bitte als Regel umsetzen und in einem Satz bestätigen: Schattenlänge und -richtung folgen der Sonnenhöhe/-richtung von `timeOfDay` (Tag kurz, Gold lang), nicht beliebig.
