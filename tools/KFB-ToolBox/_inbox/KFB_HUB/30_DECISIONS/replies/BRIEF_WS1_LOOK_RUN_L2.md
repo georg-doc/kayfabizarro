@@ -1,6 +1,6 @@
 # Briefing WS1 · Look run L2 · warm diorama light, clay look for figures and vehicles, dieselpunk lineup
 
-WS0 → WS1 · 16.10.2026 · V-340 (extends V-329 light L1; does not replace it). One long run in four steps, measured by you against the grid, **no reviewer rounds in between** (V-312). Do not reset M1 TUNE / M2; this runs alongside or right after, your call in WS1_STATUS.
+WS0 → WS1 · 16.10.2026 · V-340 (extends V-329 light L1; does not replace it). One long run in five steps, measured by you against the grid, **no reviewer rounds in between** (V-312). Do not reset M1 TUNE / M2; this runs alongside or right after, your call in WS1_STATUS.
 
 ## 0. Sources (all exist)
 Register branch `docs/kfb-decisions-register-2026-10-11`, folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`:
@@ -33,6 +33,14 @@ Today the Meshy dioramas look placed on top. They must grow out of the ground; n
 4. **Clay relief over the dioramas without changing colour:** a tiling clay detail normal (thumb prints, modelling marks), applied triplanar in world space at low strength, plus roughness; albedo untouched. Visible up close, invisible in the long shot.
 5. **Large dents:** first measure what they are – render one stage with the normal map off and once with flat albedo. Large forms are mesh (the browser GLBs keep ~436k of 2.8M master triangles); smeared medium relief comes from the 2048 normal map or from shading painted into the albedo. Then lower the normal strength where it smears, let the detail normal carry the close-up, and for close-up stages use `A_faithful`.
 **WS0 delivers per stage** (stage descriptor `kfb.stage-descriptor/1`): `footprint` polygon of the base, `edgePalette` (3–5 sampled base colours), and the clay stone kit GLB (Blender run, b51 §E).
+
+## 3c. Step 5 · One look for all layers (V-355, Georg GO 16.10.)
+Figures, Meshy stages and terrain must read as one clay diorama, not three layers. Order: fix the cheapest seam first (tonemapping bypass, rim/Fresnel, face fill) before new shaders; no new runtime owner, no extra light writer, no VFX before the comparison passes.
+1. **Lighting/exposure:** look B default (V-346), one exposure for all; GothGirl rim only a trace, FB face/mouth fill without washing the body, no overexposed clay; shadows follow `timeOfDay`. Show the ACES / ground `toneMapped:false` trial explicitly – if the bypass puts the ground in a different exposure space, drop it.
+2. **Materials:** Meshy albedo stays original (WS0 delivers de-lit L1/L2 variants of Goblin Bank v2 and Atlantis – base colour only, colours kept); calibrated roughness, clamp plastic/metal highlights; one UV-free clay micro-normal/roughness (triplanar world space for static scenery, rest space for skinned figures; faces and painted windows protected) at the same metre scale on figures, stages and terrain.
+3. **Shared environment:** tint, haze/fog and ambient from the stage's `edgePalette`; actor hemisphere ground = stage colour; sky ≠ ground with a horizon.
+4. **Contact:** step 4 terrain skirt + stones, actor contact shadows, one sun direction.
+**Acceptance packet (same camera, look B gold + day, 16:9 and 9:16):** (A) current V-346 baseline | (B) runtime fixes 1+3 | (C) B + WS0 de-lit textures + clay detail + terrain step 4 – each with FB, GothGirl, Goblin Bank v2, terrain and the real card; toggles for rim, practicals, tonemapping, clay normal. Numbers: mean OKLab L and chroma per layer (figures / stage / terrain) in the same frame, deviation ≤ 15 %; < 0.1 % clipped figure pixels; card pixels unchanged; eyes/mouth readable. The numbers guide, Georg judges the images.
 
 ## 4. Acceptance grid (measure yourself; numbers in WS1_STATUS)
 - G1 eyes, mouth, bubble, card edges and marginalia readable in every mood (L1).

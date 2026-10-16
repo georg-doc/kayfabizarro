@@ -4830,7 +4830,7 @@
    "date": "2026-10-16",
    "area": "Look",
    "verdict": "RULE",
-   "text": "Ein Look für alle Schichten (Georg 16.10.: Terrain, Dioramen und Figuren wirken wie getrennte Schichten in Farbe, Textur und Licht). WS0-Befund am Vorschaubild Goblin Bank: (1) Meshy-Texturen tragen eingemaltes Licht/AO/Schatten, darüber kommt Echtzeitlicht → Dioramen dunkel und matschig, Figuren nur mit Echtzeitlicht hell und sauber; (2) Wertebereich und Sättigung weichen stark ab (Diorama gedecktes Braun, FB reines Gelb); (3) kein Boden um die Dioramen, Hintergrund einfarbig → Ausschneide-Effekt; (4) unterschiedliche Oberflächen (Knete auf Figuren, Meshy-PBR auf Dioramen, glatter Boden) und Detail-Frequenzen; (5) Figuren bekommen kein Umgebungslicht aus dem Diorama. Regel: ein gemeinsamer Look-Vertrag – Meshy-Texturen offline entlichten/normieren (WS0-Pipeline, Farben bleiben), gemeinsame Tönung/Haze/Ambient für alle Schichten aus der Bühnen-Palette (edgePalette), gemeinsame Knet-Detail-Normal für Figuren, Dioramen und Terrain, Terrain-Einbettung (V-341), Figuren-Umgebungslicht aus der Bühne; messbar über Helligkeit/Buntheit je Schicht.",
+   "text": "Ein Look für alle Schichten (Georg 16.10.: Terrain, Dioramen und Figuren wirken wie getrennte Schichten in Farbe, Textur und Licht). WS0-Befund am Vorschaubild Goblin Bank: (1) Meshy-Texturen tragen eingemaltes Licht/AO/Schatten, darüber kommt Echtzeitlicht → Dioramen dunkel und matschig, Figuren nur mit Echtzeitlicht hell und sauber; (2) Wertebereich und Sättigung weichen stark ab (Diorama gedecktes Braun, FB reines Gelb); (3) kein Boden um die Dioramen, Hintergrund einfarbig → Ausschneide-Effekt; (4) unterschiedliche Oberflächen (Knete auf Figuren, Meshy-PBR auf Dioramen, glatter Boden) und Detail-Frequenzen; (5) Figuren bekommen kein Umgebungslicht aus dem Diorama. Regel: ein gemeinsamer Look-Vertrag – Meshy-Texturen offline entlichten/normieren (WS0-Pipeline, Farben bleiben), gemeinsame Tönung/Haze/Ambient für alle Schichten aus der Bühnen-Palette (edgePalette), gemeinsame Knet-Detail-Normal für Figuren, Dioramen und Terrain, Terrain-Einbettung (V-341), Figuren-Umgebungslicht aus der Bühne; messbar über Helligkeit/Buntheit je Schicht. Georg GO 16.10. für die Methode (Web-Chat-Diagnose WS0_SPELLSPILL_LOOK_COHESION_DIAG_R1, SpellSpill-VFX nur Bildreferenz): A/B/C-Vergleich derselben Szene als L2 Schritt 5, keine VFX vor bestandenem Vergleich.",
    "values": {},
    "owner": "WS0 (Textur-Normierung) · WS1 (Laufzeit, L2 Schritt 5)",
    "check": "Bildpaar vorher/nachher + Histogramm je Schicht",
@@ -4928,7 +4928,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:681",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:682",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
