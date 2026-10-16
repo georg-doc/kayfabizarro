@@ -1,7 +1,29 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§43 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§44 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 44 · 16.10. · Georg spielt die Vorschau: M1-Steuerung weicht vom Register ab · Kamera „Nah“ · Dioramen ins Gelände
+
+### 44.1 · Georgs Feedback (16.10., Vorschau @24309fd2)
+- **Gut:** Die Grundbewegung ist „schon nicht schlecht“; Bodenbewegung, Beschleunigung und Präsentation sind „eigentlich okay“ bzw. „ganz brauchbar“.
+- **Steuerung nicht wie vereinbart:**
+  - **V-022 (WoW-Schema):** Drehen mit A/D fehlt, Q/E (strafen) fehlt. M1 bewegt kamerarelativ mit WASD.
+  - **V-023:** Sprünge je Zustand fehlen (war offene M1-Frage §35.4).
+  - **V-024 + V-179 (5):** Abheben per Doppel-Leertaste im 400-ms-Fenster; M1 nutzt F.
+  - **Flug:** Die Steuerung ist „komplett nicht richtig gesetzt, man fliegt ganz komisch herum“, und es ruckelt beim Fliegen sehr stark. „Sehr überarbeitungswürdig.“
+  - „Teilweise ist auch die Logik noch nicht richtig umgesetzt“ (nicht näher benannt).
+- **Sicht:** „Da liegt noch einiges an Paletten drüber, sodass man das nicht komplett sehen kann.“ WS1 fragt nach, ob die Einblendungen (Tastenliste, Knöpfe) gemeint sind.
+- **Gelände:** Die Dioramen sollen besser ins Gelände eingefasst werden, damit sie nicht aufgesetzt wirken.
+- **Kamera:** In der Nahaufnahme sitzt die Kamera zu tief; die Karte steht gerade noch am oberen Rand, statt intuitiv in der Bildmitte.
+
+### 44.2 · Zuordnung und Vorschlag
+- **M1-TUNE Steuerung (M1-Sitzung):**
+  - V-022/V-023/V-024 nach Vorlage (V-001): WoW-Schema und Flug aus dem J17-Travel-Core des Labs übernehmen (V-024: „schon gemessen“), den Fehler aus V-199 (Q/E nur mit Vorwärts) nicht mitnehmen.
+  - Ruckeln im Flug erst messen (Frametime Flug gegen Boden), dann beheben.
+  - **Vorschlag:** vor M2 weiter, weil das Fahren auf derselben Eingabe aufbaut. Bitte Reihenfolge bestätigen und ein Abnahme-Raster nennen (V-312).
+- **Kamera „Nah“ (WS1, `StageOrbitCam`):** Die Marke zielt heute auf die Standard-Zielhöhe (≈ 2,1 m), die Karte sitzt höher (Mitte ≈ 2,85 m). Neu bekommt „Nah“ die Kartenmitte als Ziel und zentriert sie.
+- **Dioramen ins Gelände einfassen (WS0/Lab):** Gestaltungsfrage an Gelände und Assets, z. B. Geländeanschluss, Sockel-Übergang, Bewuchs. Bitte als eigene Vorlage bzw. Asset-Aufgabe einplanen; WS1 baut nichts dazu ohne Vorlage.
 
 ## 43 · 16.10. · Georg: Story-Mode ist ein Würfelwurf, keine Karteneigenschaft · Licht L1 (V-329) gelesen: Rückmeldung und `practicals[]`-Format · Vorschau ws1/preview
 
