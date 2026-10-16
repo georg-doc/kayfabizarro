@@ -1,7 +1,21 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§57 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§58 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 58 · 16.10. · Georg zur Fahrprobe @7afea10: „Grundlage sehr sauber“ · Schatten und Bodenkontakt · Audio und Knet-Partikel (Bitte an WS0)
+
+- **Georg (16.10.):** „Fühlt sich schon sehr gut an, die Fahrphysik ist super, die Grundlage ist sehr sauber.“
+- **Offen, M1/M2-Sitzung jetzt:**
+  1. **Schatten:** Beim Wegfahren verschwindet der Schatten, wird geklippt, erscheint wieder; extrem pixelig.
+     - Ursache: Das Schatten-Frustum steht fest um den Start.
+     - Lösung nach L1-Regel 4: enges, **dem Ziel folgendes**, texel-gerastetes PCFSoft-Frustum.
+  2. **FrizzleBob schwebt:** In der M1-Welt fehlt der Kontaktschatten bzw. Bodenkontakt → dasselbe Modul `createContactBlobs` (V-203) wie auf der Bühne, kein zweiter Weg.
+  3. **Aufprall an FrizzleBob:** Das Auto prallt zu weit zurück; weniger Rückstoß an Figuren als an Wänden, cartoonig feinabgestimmt.
+  4. **Sprünge:** wirken gut; Urteil erst mit sauberem Schatten.
+- **Neu, Bitte an WS0** (Quellen und Vorlagen-Zeile):
+  - **Audio-Bett:** Motor- und Drohnen-Sounds aus der Audio-Site (Beschleunigung, Gangwechsel, Aufprall, Landung). Welche Quellen und Lizenzen, welches Format?
+  - **Knet-Partikel beim Fahren** wie in Joyride: Erde und Rauchwolken bei Terrainkontakt, Landung und Drift, **je Terraintyp**. Vorlage: Joyride-VFX bzw. Resident/ToolBox-Clay-VFX (SSOT „Clay particles and cartoon VFX“). Andockstelle sind die Ereignisse aus §56.1.
 
 ## 57 · 16.10. · Georg zum Auslieferweg: Cloudflare eigentlich ad acta (Timeouts) · Ziel GPT-Site · Bitte an WS0
 
