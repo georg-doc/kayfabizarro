@@ -1,0 +1,225 @@
+{
+ "file": "~/Dropbox/CLAUDE/MeshyModels/_browser/marble_terraces/MarbleTerraces_A_screen.glb",
+ "bytes": 16596220,
+ "sha256": "42e66cc5b398d4bf35cbb05e68f62dae9c6ec1071d167ec693c65333465ffd88",
+ "source": "MarbleTerraces_A_faithful.glb",
+ "mode": "FRONT_DISPLAY (V-265/V-268: Altartafel in der hinteren Statuen-Nische, Bogenkrone + Kolonnade bleiben frei; Statue der linken Nische bleibt; Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_marble (Clay-Marmor weiß #E8E1D6, rough 0,75, metal 0; Tafel 0,6 m tief)",
+  "bezel_u": 0.026,
+  "bezel_m": 0.39,
+  "depth_u": 0.04,
+  "outer_u": {
+   "x": [
+    -0.366,
+    0.366
+   ],
+   "y": [
+    -0.042,
+    0.3893
+   ],
+   "cardBottom_y": -0.016,
+   "z": [
+    -0.711,
+    -0.671
+   ]
+  },
+  "mount": "ohne Sockel und ohne Stützen (V-268): die Marmortafel steht in der hinteren Statuen-Nische, 0,07 m über dem Boden der oberen Plaza, direkt vor den Pilaster-Füßen des Bogens (0,03 m Luft); verdeckt die hintere Statue ganz, die Bogenkrone mit Goldornament bleibt darüber sichtbar; frontal zur Standardkamera (yaw 0,0°)",
+  "inlay": "meerblaues Band (Clay-Meerblau #2E8C9E, eine Spur dunkler als die türkisen Bänder der Kolonnade) mittig auf der Lünette, 4 Eck-Steine; kein Leuchten (WS1-Licht)"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z = Meer, untere Terrasse y ≈ −0,305, Achteck-Plaza y ≈ −0,152, obere Plazas y ≈ −0,045)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.343,
+    0.36625,
+    -0.6825
+   ],
+   "topRight": [
+    0.343,
+    0.36625,
+    -0.6825
+   ],
+   "bottomRight": [
+    0.343,
+    -0.019,
+    -0.6825
+   ],
+   "bottomLeft": [
+    -0.343,
+    -0.019,
+    -0.6825
+   ]
+  },
+  "center_u": [
+   0,
+   0.17363,
+   -0.6825
+  ],
+  "normalAtCenter": [
+   0,
+   0,
+   1
+  ],
+  "chordWidth_u": 0.686,
+  "arcWidth_u": 0.686,
+  "height_u": 0.38525,
+  "aspect_arc": 1.7806,
+  "surface": "eben: z = -0.6825",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,305)·s, z·s), Ursprung = Modellmitte (untere Terrasse liegt 0,305 u unter dem Ursprung); s = 15 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     -0.34,
+     0.36325,
+     -0.6825
+    ],
+    "topRight": [
+     0.34,
+     0.36325,
+     -0.6825
+    ],
+    "bottomRight": [
+     0.34,
+     -0.016,
+     -0.6825
+    ],
+    "bottomLeft": [
+     -0.34,
+     -0.016,
+     -0.6825
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0044,
+    "u1": 0.9956,
+    "v0": 0.0078,
+    "v1": 0.9922
+   }
+  },
+  "corners_m_note": "Schlüsselname corners_m_s5p5 aus dem Utopia-Format beibehalten; Werte hier mit s = 15 m/u",
+  "corners_m_s5p5": {
+   "topLeft": [
+    -5.1,
+    10.024,
+    -10.238
+   ],
+   "topRight": [
+    5.1,
+    10.024,
+    -10.238
+   ],
+   "bottomRight": [
+    5.1,
+    4.335,
+    -10.238
+   ],
+   "bottomLeft": [
+    -5.1,
+    4.335,
+    -10.238
+   ]
+  },
+  "visibleSize_m": [
+   10.2,
+   5.69
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   0,
+   0.75,
+   2.3
+  ],
+  "target": [
+   0,
+   -0.02,
+   -0.15
+  ],
+  "fovV_deg": 40,
+  "note": "Standardkamera frontal vom Meer auf alle drei Ebenen, Altartafel und linke Statuen-Nische (Bühne in Modell-Einheiten, three.js PerspectiveCamera, fov vertikal)"
+ },
+ "scale_m_per_u": 15,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "figures": {
+  "floorY_u": -0.042,
+  "positions_u": [
+   [
+    -0.69,
+    -0.09
+   ],
+   [
+    -0.53,
+    -0.11
+   ]
+  ],
+  "heights_m": [
+   1.8,
+   2.0
+  ],
+  "stageZone_u_xz": [
+   [
+    -0.385,
+    -0.1
+   ],
+   [
+    -0.416,
+    0.015
+   ],
+   [
+    -0.5,
+    0.099
+   ],
+   [
+    -0.615,
+    0.13
+   ],
+   [
+    -0.73,
+    0.099
+   ],
+   [
+    -0.814,
+    0.015
+   ],
+   [
+    -0.845,
+    -0.1
+   ],
+   [
+    -0.814,
+    -0.215
+   ],
+   [
+    -0.73,
+    -0.299
+   ],
+   [
+    -0.615,
+    -0.33
+   ],
+   [
+    -0.5,
+    -0.299
+   ],
+   [
+    -0.416,
+    -0.215
+   ]
+  ]
+ }
+}

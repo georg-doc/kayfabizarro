@@ -1,0 +1,226 @@
+{
+ "file": "~/Dropbox/CLAUDE/MeshyModels/_browser/retro_arcade_casino/RetroArcadeCasino_A_screen.v3.glb",
+ "bytes": 15757708,
+ "sha256": "8fbf8d334c6fbfa83508c5f28d2e8aa9640069c51f876afb854f5b64cbe1d4a9",
+ "source": "~/Dropbox/CLAUDE/MeshyModels/_browser/retro_arcade_casino/RetroArcadeCasino_A_faithful.glb",
+ "mode": "FRONT_DISPLAY v3 (V-322 auf V-265/V-268): Billboard VOR dem Neon-Schild GALAXY GAMBLERS CLUB – verdeckt das Schild ganz, sitzt auf der Rückwand an der Stelle des Schilds; Modell unverändert",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_chrome (Clay-Chrom #BFC4CA, rough 0,35, metal 0, schlicht; Laschen gleiches Material)",
+  "bezel_u": 0.011,
+  "bezel_m": 0.093,
+  "depth_u": 0.019,
+  "outer_u": {
+   "x": [
+    -0.0865,
+    0.5355
+   ],
+   "y": [
+    0.1037,
+    0.4603
+   ],
+   "cardBottom_y": 0.1147,
+   "z": [
+    -0.481,
+    -0.462
+   ]
+  },
+  "mount": "flach vor dem Neon-Schild auf der Rückwand, ohne Sockel, ohne Streben, ohne Stützen (V-268): Rückplatte 0,03 m vor der Schildfront, 2 verdeckte Chrom-Laschen hinter der Rückplatte am Schild; Rahmen schlank (0,16 m tief), frontal wie das Schild (yaw 0°); Rahmen ragt über das Schild (V-265): links/rechts je 0.29 m, unten 0.27 m, oben 0.27 m",
+  "inlay": "Neon-Band (Clay-Pink #E0559F wie die GALAXY-Buchstaben) mittig auf der Lünette, 4 Eck-Knöpfe; kein Leuchten (WS1-Licht)",
+  "coversSign": {
+   "sign_u": {
+    "x": [
+     -0.052,
+     0.501
+    ],
+    "y": [
+     0.136,
+     0.428
+    ],
+    "front_z": -0.484
+   },
+   "overhang_m": {
+    "left": 0.293,
+    "right": 0.293,
+    "bottom": 0.275,
+    "top": 0.275
+   },
+   "card_over_sign_m": {
+    "left": 0.2,
+    "right": 0.2,
+    "bottom": 0.181,
+    "top": 0.181
+   }
+  }
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z, Hallenboden y ≈ −0,336, Galerie y ≈ +0,006)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.0785,
+    0.45233,
+    -0.4735
+   ],
+   "topRight": [
+    0.5275,
+    0.45233,
+    -0.4735
+   ],
+   "bottomRight": [
+    0.5275,
+    0.1117,
+    -0.4735
+   ],
+   "bottomLeft": [
+    -0.0785,
+    0.1117,
+    -0.4735
+   ]
+  },
+  "center_u": [
+   0.2245,
+   0.28202,
+   -0.4735
+  ],
+  "normalAtCenter": [
+   0,
+   0,
+   1
+  ],
+  "chordWidth_u": 0.606,
+  "arcWidth_u": 0.606,
+  "height_u": 0.34063,
+  "aspect_arc": 1.779,
+  "surface": "eben: z = -0.4735",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,336)·s, z·s), Ursprung = Modellmitte auf Hallenboden-Höhe; s = 8.5 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     -0.0755,
+     0.44933,
+     -0.4735
+    ],
+    "topRight": [
+     0.5245,
+     0.44933,
+     -0.4735
+    ],
+    "bottomRight": [
+     0.5245,
+     0.1147,
+     -0.4735
+    ],
+    "bottomLeft": [
+     -0.0755,
+     0.1147,
+     -0.4735
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.005,
+    "u1": 0.995,
+    "v0": 0.0088,
+    "v1": 0.9912
+   }
+  },
+  "corners_m_note": "Schlüsselname corners_m_s5p5 aus dem Utopia-Format beibehalten; Werte hier mit s = 8.5 m/u",
+  "corners_m_s5p5": {
+   "topLeft": [
+    -0.642,
+    6.675,
+    -4.025
+   ],
+   "topRight": [
+    4.458,
+    6.675,
+    -4.025
+   ],
+   "bottomRight": [
+    4.458,
+    3.831,
+    -4.025
+   ],
+   "bottomLeft": [
+    -0.642,
+    3.831,
+    -4.025
+   ]
+  },
+  "visibleSize_m": [
+   5.1,
+   2.84
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   0.05,
+   0.8,
+   2.5
+  ],
+  "target": [
+   0.05,
+   0.02,
+   -0.05
+  ],
+  "fovV_deg": 40,
+  "note": "Blick leicht erhöht von vorn: Schachbrett-Halle mit Stern-Mosaik vorn, runde Bar Mitte, rote Treppen links, Galerie mit Automaten rechts, Billboard v3 hinten flach vor dem Neon-Schild (Schild verdeckt)"
+ },
+ "scale_m_per_u": 8.5,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "version": 3,
+ "supersedes": "kfb_screen_slot_retro_arcade_casino.json (v1, Billboard über dem Schild; bleibt unverändert liegen)",
+ "decision": "V-322 (Georg 15.10.: Billboard nicht über, sondern VOR das Neonschild, das dadurch verdeckt wird)",
+ "figures": {
+  "floorY_u": -0.336,
+  "positions_u": [
+   [
+    -0.3,
+    0.34
+   ],
+   [
+    0.0,
+    0.36
+   ]
+  ],
+  "heights_m": [
+   1.8,
+   2.0
+  ],
+  "stageZone_u_xz": [
+   [
+    -0.56,
+    0.16
+   ],
+   [
+    0.24,
+    0.16
+   ],
+   [
+    0.24,
+    0.56
+   ],
+   [
+    -0.26,
+    0.56
+   ],
+   [
+    -0.56,
+    0.36
+   ]
+  ]
+ },
+ "placement": "Standard (Arbeitshypothese); Georg verschiebt Displays später im God-Mode"
+}
