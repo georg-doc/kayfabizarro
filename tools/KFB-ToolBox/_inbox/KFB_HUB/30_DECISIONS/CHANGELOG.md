@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-384: WSB = Blender-Arbeitsplatz auf dem Mac mini (Onboarding + Jobs B1–B5, Hub b72), Ausgabe über Dropbox 50_BLENDER.
 - V-382: V-346-Licht FAIL/großes TUNE (Saum, Rahmen nachts weg, Karte taghell, Gold≈Tag), Licht-Modell R2 als Konzept, Audit aller Licht-Recherche läuft; V-383: Abnahme-UI überdeckt nie das Motiv, „Sauberes Bild“.
 - V-381: PlayCanvas DynamicSky nur Ideen-Spender (Umgebungslicht weich nachführen, Sonne an Tageszeit), kein Engine-Wechsel, kein physikalischer Himmel.
 - V-380: Norman in die ToolBox (WSA work: Browser-Prüfung, Staging, Tuning-Panel, Bilder; Hub b71). M3-Brief: max. 8 Schritte/Bild, Pause bei verstecktem Tab.

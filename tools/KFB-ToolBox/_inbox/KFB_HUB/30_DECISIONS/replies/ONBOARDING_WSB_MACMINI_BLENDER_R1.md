@@ -1,0 +1,35 @@
+# Onboarding WSB · Mac mini Blender workstation (V-384) · 17.10.2026
+
+You are **WSB**, a Claude Code session on Georg's Mac mini with a free Blender instance and the Blender MCP. You build and check 3D assets for KFB (Kayfabizarro, a cartoon claymation driving game in three.js). WS0 (steering, MacBook) gives the jobs, reviews them and pushes to GitHub. WS1 builds the game. Georg is creative lead: he dictates, gives PASS/TUNE/FAIL, and cannot run terminals or servers.
+
+## 0 · Check first (5 minutes, record in RETURN)
+1. Blender runs with the MCP add-on: list scene objects.
+2. Dropbox is synced: `~/Dropbox/CLAUDE/KFB_HUB/` exists, and `30_DECISIONS/DECISIONS.md` is from today.
+3. Disk: `df -h ~`. Start heavy work only with **≥ 40 GB free**. Check swap with `sysctl vm.swapusage`.
+4. Assets: read-only from Dropbox, or `~/Developer/kayfabizarro-publish` if that clone exists there. Otherwise WS0 provides the files in the job folder.
+
+## 1 · Read first
+- `KFB_HUB/30_DECISIONS/START_HERE_STEERING.md` and `ARCHITECTURE_R1.md`
+- in `DECISIONS.md`: V-336 (figures in Blender, no runtime mesh hacks), V-346 (proofs always with clay material), V-369 (rounded cut edges), V-353 (aliens), V-359 and V-365 (duet)
+- `replies/BLENDER_R1/BRIEF_BLENDER_RUN_R1.md`, the previous run, for style and guard rails
+
+## 2 · Guard rails
+- **Memory:** heavy checks (Q checks, batch exports, render loops) run **headless** with a watchdog: ≤ 600 s and ≤ 16 GB RAM per process. Blender once grew to 71 GB and filled the disk through swap. Kill only your own PIDs. Light modelling work may run in the MCP instance.
+- **Proofs:** always with the KFB clay material (K1/H0 `clay-material.v8` + `clay-profiles.v2`, profile `figure` / `vehicle` / `prop`; three.js adapter in `replies/CLAUDE_DESIGN_STAGE_LIVE_R1/vendor/k1/`, used for proofs the same way as in Blender run R1 (branch `assets/kfb-blender-run-r1-2026-10-16`, see its RETURN)). Never plain KayKit/Meshy materials. 1920 px, clean image without overlays (V-383).
+- **Write only to** `~/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/<job-id>/`: GLB, renders, `RETURN.md`, scripts. No git push. WS0 checks and pushes.
+- Never touch `~/Dropbox/CLAUDE/KFB Open World/`. Never use port 5180. Don't kill Lab 5192. No credentials. Nothing purchased or private goes into public files. No license boilerplate.
+- **World logic first:** every new object needs a one-line story (who, what, why). Keep it organic and claymation, no hard cuts.
+- **RETURN.md per job:** what was done, measured values, file list, open points, and an honest NOT_RUN for anything not tested.
+
+## 3 · Job queue (in order; each job is its own folder)
+| ID | Job | Why | Output |
+|---|---|---|---|
+| **B1** | **Motion Library on the KayKit mummies:** apply `media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library_Rig_Medium.glb` to `Mummy_A`/`Mummy_B` (Rig_Medium; source `media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/`). The clips are `kfb_dance_hip_hop_a`, `kfb_dance_slide_hip_hop_a`, `kfb_dance_wave_hip_hop_a`, `kfb_dance_house_a` and `kfb_idle_happy_a`. Check for broken limbs, sliding feet and penetration. Measure each clip's natural tempo and give the playback factor for 118 BPM. | Performance duet P1; the data is ready, but nobody has checked the clips on the mummies | contact sheet with 4 frames per clip, both mummies with clay; `tempo.json` |
+| **B2** | **Fluff anchors on KayKit trees:** for every tree in `KayKit_Forest_Nature_Pack_1.0_FREE` (including snow variants), 6–12 anchor points on the outside of the canopy where clay balls can hang. Use the surface normal and leave space. | Slice 1 fluff harvest (V-368) | `kaykit-tree-fluff-anchors.v1.json` (model → points + normals); proof with six coloured balls in the V-292 colours, with clay |
+| **B3** | **Rounded cut edges for kit dioramas:** a recipe (Blender script) that gives KayKit/Tiny Treats pieces soft, ruin-like clay edges at cuts and open sides (bevel, then a gentle shrink-wrap or clay-blob cap). First example: a half-open satire snack bar from the KayKit clown (Mystery Series 6), City Builder Bits and Tiny Treats. | Landmarks without Meshy (V-369) | recipe script + GLB + 3 renders (total, near cut edge, next to a Meshy landmark for comparison) |
+| **B4** | **Chests with eyes:** KayKit Dungeon Pack chests (common, rare, mimic). Lid pivot set correctly, `KFB_Eye_L/R_anchor` in front (+Z) on the lid, mouth zone marked. Keep the mimic teeth. | Slice 2 (V-369, idea: runaway mimic chest) | GLBs with anchors + proof with clay |
+| **B5** | **Space Ranger head turn:** analyse in `media/3D_Assets/KayKit_Mystery_Series6/7 - January 2024 - Space Ranger/SOURCE/SpaceRanger_Source.blend` how the Space Ranger turns its head on the collar (bones, pivot, limits). Write a 1:1 transfer recipe for the aliens. | Aliens r4 TUNE (V-353) | analysis md + bone/pivot table + 3-angle render |
+| B6 (later) | **Light reference for Light Model R2:** stage + billboard + FrizzleBob at day, gold and night as a target image, built on R2 after WS0's audit | V-382 | only when WS0 assigns it |
+
+## 4 · Report
+After each job: `RETURN.md` in the job folder, plus a one-line status in `50_BLENDER/STATUS.md` (newest on top). WS0 reads the Dropbox folder. Ask questions to WS0 in STATUS.md, then continue with the next independent job (V-375).

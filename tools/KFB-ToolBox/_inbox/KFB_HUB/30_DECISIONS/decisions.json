@@ -5267,6 +5267,21 @@
    "applies": "jede Vorschau und Staging-Seite"
   },
   {
+   "id": "V-384",
+   "date": "2026-10-17",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Neue Sitzung WSB auf dem Mac mini als Blender-Arbeitsplatz (freie Blender-Instanz mit MCP): Onboarding replies/ONBOARDING_WSB_MACMINI_BLENDER_R1.md (Hub b72). Ausgabe nur nach KFB_HUB/50_BLENDER/<job>/ (Dropbox), kein Git-Push – WS0 prüft und pusht. Guard rails: schwere Läufe headless mit Watchdog (≤ 600 s, ≤ 16 GB, ≥ 40 GB frei), Beweise mit Clay, Geschichte vor dem Bau. Jobs: B1 Motion Library auf KayKit-Mumien (P1), B2 Fluff-Anker an KayKit-Bäumen (Slice 1), B3 runde Schnittkanten-Rezept + Satire-Imbiss (V-369), B4 Truhen mit Augen-Ankern (Slice 2), B5 Space-Ranger-Kopfdrehung (V-353), B6 Licht-Referenz R2 erst nach Audit.",
+   "values": {},
+   "owner": "WSB · WS0 (Review, Push)",
+   "check": "RETURN.md je Job, STATUS.md",
+   "source": "Georg 17.10.: „Onboarding für den Mac Mini … Blender MCP Jobs“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Mac mini hat eine freie Blender-Instanz, während WS1 auf dem anderen Rechner Tests fährt.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5339,7 +5354,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:707",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:708",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
