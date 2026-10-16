@@ -1,7 +1,48 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§48 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§49 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 49 · 16.10. · L2 Schritt 3 (V-340): Aufstellung aller 14 Fahrzeuge · Maßstab-Befund · G10
+
+### 49.1 · Gebaut (kfb-planet @c1a45f6 → @365f993, ganze Testreihe 23/23; eigener Test `npm run test:lineup` PASS)
+- `lineup=1` (Modul `vehicleLineup`): alle 14 Fahrzeuge v3 von `assets/meshy-arcade3-marble-vehicles3-2026-10-16` @9bd8e037 (13 Racer bzw. Laster plus `wasteland_beetle`).
+  - Aufbau: zwei Reihen à 7, Front zur Kamera, FB und GothGirl vorn, eigene Fläche statt Amphitheater (14 × ≈ 5 m passen nicht auf die 14-m-Bühne).
+  - Licht L1 und Look B wie gehabt.
+  - Mit `clay=1` stellen die Fahrzeuge auf K1/H0-Knet v8 Profil `vehicle` um, nur das Material (V-336).
+- **Maßstab:** Die GLBs sind in KayKit-Rig-Einheiten; Umrechnung = gemessene FB-Höhe / 2,94 Rig (WS0-Maß V-311).
+- Test `lineup` (lädt ≈ 65 MB, deshalb nicht in `npm test`) prüft:
+  - 14 geladen;
+  - Dragster : FB = 2,857 (Größenblatt 8,404/2,94 = 2,859);
+  - Laster : FB = 3,722 (10,944/2,94 = 3,722);
+  - Fahrzeug-Materialien Knet, Metall 0, Rauheit ≥ 0,3 (G8);
+  - keine Seitenfehler.
+
+### 49.2 · Bilder (`ws1/proofs/2026-10-16-l2-lineup/`, Vorschau @c8e2f1b0)
+- `lineup_{day,gold,night}_clay_{16x9,9x16}.png` und `paar_lineup_clay.png` (Meshy-Material | Knet).
+- Live: `https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,lineup=1,light=l1,tod=gold,look=b,clay=1`
+
+### 49.3 · Raster
+| Punkt | Stand |
+|---|---|
+| G10 alle 14 + FB in richtiger relativer Größe, drei Stimmungen | erfüllt für 14 Fahrzeuge + FB + GothGirl (Test und Bilder). **Orc Brute fehlt** (Quelle offen, §48.4). |
+| G8 Fahrzeuge ohne Glanz | gemessen: Knet-Materialien Metall 0, Rauheit ≥ 0,3. |
+| G9 eine Materialfamilie | Fahrzeuge und GothGirl in Knet, FB nach Georgs Wahl (§48.3). |
+| G5 Kosten Schritt 2 | im App-Browser noch nicht gemessen (14 Fahrzeuge sind ein Extremfall, nicht die Spielszene). |
+
+### 49.4 · Befund Maßstab (bitte an WS0 und M2)
+- Auf der WS1-Bühne ist FB **2,79 m** hoch (gemessen, Maßstab 0,948 m/Rig); WS0 rechnet mit 1,81 m (0,616 m/Rig). Die WS1-Welt ist damit ≈ 1,54 × größer als WS0-Meter.
+  - Das Amphitheater (14 m Bühnen-Ø) und die Meshy-Slots sind in WS1-Metern gesetzt.
+- Die Verhältnisse zwischen Figuren, Fahrzeugen und Bühnen stimmen, nur die absoluten Meter weichen ab. Wichtig für M2-Physik (Tempo, Radradius, Schwerkraft) und für V-020-Tempi.
+- **Bitte entscheiden:** WS1-Welt auf WS0-Meter umstellen (Figuren × 0,65) oder WS0-Maße mit Faktor 1,54 lesen?
+
+### 49.5 · Stand L2
+- Schritt 1–3 gebaut, Bilder für Georg.
+- Offen:
+  - Georgs Wahl (ACES | ohne, Look A | B, FB mit Knet ja/nein);
+  - Orc Brute;
+  - `practicals` und `edgePalette` von WS0;
+  - Schritt 4 Gelände (V-341).
 
 ## 48 · 16.10. · L2 Schritt 1 + 2 (V-340): Look A | B, Licht-Identität je Figur, Knet-Material · Bildpaare · Frage Orc Brute
 
