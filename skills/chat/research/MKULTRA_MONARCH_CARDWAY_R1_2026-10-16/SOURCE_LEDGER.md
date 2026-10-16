@@ -45,3 +45,23 @@ F. KFB editorial: historically grounded cards, contested-claim cards, institutio
 - Every new historical claim gets: quote/paraphrase, document title, URL/ID, exact page/section, publication/release distinctions and contrary evidence if located.
 - Do not fill unavailable Monarch evidence with the destructive-archives premise.
 - No independent review of the full O'Brien/Phillips book, long hearing, full Cameron patient cases or all declassified documents was completed in R1.
+
+
+## ADDITIVE SOURCE REGISTER · 2026-10-16 · Societal psychology and new user links
+See `SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md` for context, limits and connections. The original S01–S08 entries remain unchanged.
+
+| ID | Kind | Verified source / exact URL | What was inspected / status |
+| --- | --- | --- | --- |
+| S09 | Book: publisher + catalog, not book text | Frank Höfer, *Der programmierte Mensch: Wie Geheimdienste, Konzerne und KI unseren Geist vermessen* (2026), ISBN 9783982914107. https://www.nuovisoshop.de/products/der-programmierte-mensch ; user URL https://www.isbn.de/buch/9783982914107/der-programmierte-mensch | Publisher synopsis and 350-page format verified; original book **not read**. Distinguish historical fact from author's inferred continuity. |
+| S10 | Author's direct account | Mattias Desmet, *The Psychology of Totalitarianism*, 2022 essay: https://words.mattiasdesmet.org/p/the-psychology-of-totalitarianism | Source for Desmet's own mass-formation theory, not independent experimental proof. |
+| S11 | Direct reply to critique | Desmet, *Am I an expert in Mass Formation or a Trojan Horse?* (2022): https://words.mattiasdesmet.org/p/am-i-an-expert-in-mass-formation | Author describes both emergent and intentionally amplified variants; debate with Breggin. |
+| S12 | Scholarly criticism | Existenz editorial/review discussion: https://www.existenz.us/volumes/Vol.15-2Wautischer.html | Critiques historical interpretations, cited data and methodological foundations. Reviews not treated as disproof of all group psychology. |
+| S13 | Empirical synthesis | Tannenbaum et al., fear-appeal meta-analysis (2015): https://pmc.ncbi.nlm.nih.gov/articles/PMC5789790/ | 127 articles, 248 samples, N=27,372; persuasion effects in bounded experiments, not a universal mass-control finding. |
+| S14 | Peer-reviewed social identity theory | Reicher, Spears & Postmes, *A Social Identity Model of Deindividuation Phenomena* (1995): https://research.rug.nl/en/publications/a-social-identity-model-of-deindividuation-phenomena/ | Competing social-identity framework, group norm salience rather than assumption of mindless crowds. |
+| S15 | Digital influence research | Mathur, Mayer & Kshirsagar (2021), *What Makes a Dark Pattern... Dark?*: https://arxiv.org/abs/2101.04843 | Framework for interface manipulation research, not archival MKUltra continuity. |
+| S16 | Official contemporary congressional lead | U.S. House Oversight, *Mind Control and Accountability: Uncovering the Truth of the CIA's MKULTRA Project*, held 2026-06-30: https://oversight.house.gov/hearing/mind-control-and-accountability-uncovering-the-truth-of-the-cias-mkultra-project/ | Official hearing/witness page verified; individual testimonies not read. |
+| S17 | Supplied video · metadata missing | https://www.youtube.com/watch?v=yx8AWx_sOl4 | URL preserved exactly. Title/transcript and content not verified (fetch throttled). |
+| S18 | Supplied video · metadata missing | https://www.youtube.com/watch?v=llSgrF8h9AU | URL preserved exactly. Title/transcript and content not verified (cache miss). |
+
+### Distinct evidentiary test for societal claims
+A social mechanism can be experimentally documented without proving that it was deliberately used in a given event. The existence of a historical clandestine program (MKUltra) neither establishes the alleged separate Project Monarch nor an organizational lineage to modern digital platforms. Desmet's broad explanation of totalitarianism, specific observational studies, interpretation of collective behavior and motives of individual actors require different methods of verification.
