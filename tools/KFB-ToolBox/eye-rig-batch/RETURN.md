@@ -2051,3 +2051,61 @@ Active priority after Medium recovery:
 Open the old Stage in the same browser profile → Export Batch → compare against the durable 40-profile export → persist/import the newest proven state.
 
 Do not infer missing approvals from the older Site state.
+
+
+## 2026-10-17 · CURRENT RETURN · NORMAN PROTOTYPE DUMMY · OPEN-DESIGN HANDOFF
+
+### SOURCE
+- repo: `georg-doc/kayfabizarro`
+- branch: `toolbox/eye-rig-batch-2026-09-18`
+- draft PR: **#104 · OPEN · UNMERGED**
+- tested implementation head: `e6283eacf0000fa7ccc8e15c14b9fa1b67f88343`
+- WS0 handoff: `docs/WS0_HANDOFF_NORMAN_2026-10-17.md`
+- detailed design/evidence note: `docs/NORMAN_PROTOTYPE_DUMMY_2026-10-17.md`
+
+### PRODUCT DECISION
+Norman's character design is **not fixed**.
+
+The KayKit Prototype Dummy implementation is an editable `OPEN_DESIGN / DESIGN_TUNE` starting point only. The old brown visual is not binding. Combat-target / alien-test-subject intent remains presentation metadata; no second Combat or character runtime was introduced.
+
+### IMPLEMENTATION
+Inside the existing unified Batch EyeRig Atlas only:
+- Medium catalog expanded **55 → 56** with `Norman · Prototype Dummy`;
+- exact `Dummy.glb` source pinned at `fe9d95e…` / blob `295357f6…`;
+- source-only vs face-candidate compare;
+- reversible painted-face texture cleanup using existing `texclean.js`;
+- EyeRig v6 with tunable dark-yellow lid base;
+- BrowRig v2 block-brow candidate with color / thickness / length / height / lift;
+- source-pinned 20-form yellow cartoon/clay mouth with form / X / Y / width / depth controls;
+- existing storage owner remains `kfb.toolbox.eye-rig-batch.v0`.
+
+### TESTS / EVIDENCE
+- focused source/contract checks: **40/40 PASS**;
+- JS syntax: **3/3 PASS**;
+- exact GLB parse: Rig_Medium / 23 joints / 0 embedded animations / one material / one texture;
+- cleanup geometry preflight: **5/5 PASS**;
+- source painted-eye band: 82 source triangles;
+- source painted-mouth band: 230 source triangles;
+- cleanup union: 294/734 head triangles = 40.05%.
+
+Not claimed:
+- full historical static suite on this head: **NOT_RUN**;
+- Norman browser/WebGL proof: **NOT_RUN**;
+- Norman Site publication: **NOT_RUN**;
+- new screenshots from the integrated runtime: **NONE**.
+
+### SITE / WS0 HANDOFF
+Requested fine-tuning surface:
+`https://kfb-toolbox.frizzlebob.chatgpt.site/`
+
+Existing dedicated EyeRig Site:
+`https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/`
+
+Current Webchat cannot publish/update GPT Sites. WS0 / Site-capable WSA should reuse the existing ToolBox + unified EyeRig owner and verify the exact published revision. Do not create a second Norman runtime or replacement Site.
+
+### EXACTLY ONE NEXT GATE
+**NORMAN_TOOLBOX_SITE_FINE_TUNE_01**
+
+Browser proof must show **Source only first**, then **Face candidate**, then Georg chooses **TUNE / APPROVE / REJECT**.
+
+No merge, Live promotion or Combat integration before that gate.
