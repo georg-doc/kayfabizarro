@@ -47,3 +47,22 @@ export function parseTod(hash) {
   const m = /tod=([\w.]+)/.exec(hash || ''); if (!m) return 1
   return m[1] in TOD_NAMES ? TOD_NAMES[m[1]] : Math.min(1, Math.max(0, parseFloat(m[1]) || 1))
 }
+
+// L2 Schritt 1 (V-340) · Look B „warmer Krazy-Kat-Grundton“ neben A (= L1 genau). Keine zweite Palette: B verschiebt nur Farbtöne der vorhandenen
+// Werte in OKLCH (V-305-Rechenart). Sonne wärmer (Farbton Richtung 50°, Buntheit +0,03), Bodenreflex Terrakotta/Ocker (Hemi-Boden Richtung 45°, satter),
+// Gegenlicht als kühler Gegenakzent (Richtung Violett 290°), Himmel oben Richtung Koralle (30°), unten Richtung Ocker (75°), je höchstens 70 % des Wegs.
+// Alle Zielwinkel und Anteile sind WS1-Vorschlag (PROPOSED), Georg urteilt am Bildpaar A | B.
+const shiftTo = (hex, target, k, dC = 0, Lmul = 1) => { const c = hexToOklch(hex); const h = c.h + -dHue(c.h, target) * k; return oklchToHex(c.L * Lmul, Math.max(0, c.C + dC), h) }
+export function lookB(L) {
+  return { ...L, sun: shiftTo(L.sun, 50, 0.7, 0.03), hemiGround: shiftTo(L.hemiGround, 45, 0.8, 0.05), hemiSky: shiftTo(L.hemiSky, 60, 0.35, 0.01), back: shiftTo(L.back, 290, 0.8, 0.04) }
+}
+export function skyLookB(top, bottom) { return { top: shiftTo(top, 30, 0.7, 0.03), bottom: shiftTo(bottom, 75, 0.7, 0.02) } }
+// Licht-Identität je Figur (L2 Schritt 1, Georg-Absicht §2): Daten, keine zusätzlichen Lichter. rimColor/rimStrength = Randlicht im Material,
+// fillTint = Tönung des Figuren-Fills (Pool-Licht nachts), keyBias warm|cool, priority. Startprofile nach V-340: FB warm heroisch, GothGirl violett mystisch.
+export const LIGHT_INTENT = Object.freeze({
+  frizzlebob: { rimColor: '#ffb066', rimStrength: 0.55, fillTint: '#ffd9a8', keyBias: 'warm', priority: 1 },
+  gothgirl: { rimColor: '#a98bff', rimStrength: 0.5, fillTint: '#d8c8ff', keyBias: 'cool', priority: 2 },
+  default: { rimColor: '#ffe2c0', rimStrength: 0.35, fillTint: '#ffe6cc', keyBias: 'warm', priority: 3 },
+})
+// Story-Mode-Voreinstellungen für später (gewürfelt, V-342): nur Hinweise für Rand und Fill, nie der ganze Boden
+export const STORY_INTENT = Object.freeze({ tragic: { fillTint: '#9fb8d6' }, heroic: { rimColor: '#ffb066', keyBias: 'warm' }, mystical: { rimColor: '#a98bff' }, forbidden: { rimColor: '#c4507f' }, comic: { rimColor: '#e9e36a' }, absurd: { rimColor: '#e9c14a' } })

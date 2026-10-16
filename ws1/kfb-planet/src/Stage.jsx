@@ -24,7 +24,9 @@ import { isCardSafe } from './cardMapping'
 import { expose } from './debug'
 import { ROGUE, FB, KAYKIT, CAST_IDS } from './actors/stageCast'
 import { StageOrbitCam, ORBIT } from './StageOrbitCam'
-import { lightAt, parseTod, skyAtTod } from './stageLight'
+import { lightAt, parseTod, skyAtTod, lookB, skyLookB, LIGHT_INTENT } from './stageLight'
+import { createActorRim } from './modules/actorRim'
+import { createClayLook } from './modules/clayLook'
 import { createContactBlobs } from './modules/contactBlob'
 import { createPracticals } from './modules/practicals'
 export { ORBIT } // Prüfungen lesen die Kamera-Werte wie bisher über Stage
@@ -135,7 +137,8 @@ const sky = (() => {
   return { mesh, top, bottom, viewTop, viewBottom, state: () => ({ top: '#' + top.getHexString(), bottom: '#' + bottom.getHexString(), fading: F.on }),
     set(sk, fadeS) { const b = { top: new THREE.Color(sk.top), bottom: new THREE.Color(sk.bottom) }; if (!(fadeS > 0)) { top.copy(b.top); bottom.copy(b.bottom); F.on = false; return } Object.assign(F, { on: true, t: 0, dur: fadeS, a: { top: top.clone(), bottom: bottom.clone() }, b }) },
     step(dt) { if (F.on) { F.t = Math.min(F.dur, F.t + dt); const u = F.t / F.dur, k = u * u * (3 - 2 * u); top.copy(F.a.top).lerp(F.b.top, k); bottom.copy(F.a.bottom).lerp(F.b.bottom, k); if (u >= 1) F.on = false }
-      if (L1) { viewTop.set(skyAtTod('#' + top.getHexString(), lightState.tod)); viewBottom.set(skyAtTod('#' + bottom.getHexString(), lightState.tod)) } else { viewTop.copy(top); viewBottom.copy(bottom) } } }
+      if (L1) { const b = LOOK === 'b' ? skyLookB('#' + top.getHexString(), '#' + bottom.getHexString()) : { top: '#' + top.getHexString(), bottom: '#' + bottom.getHexString() }
+        viewTop.set(skyAtTod(b.top, lightState.tod)); viewBottom.set(skyAtTod(b.bottom, lightState.tod)) } else { viewTop.copy(top); viewBottom.copy(bottom) } } }
 })()
 // L1 (V-329) · Licht-Schreiber hinter light=l1: der einzige Ort, der Sonne, Hemisphäre, Gegenlicht und Tonemapping setzt. Werte aus stageLight.js
 // (J17-Tag, E50-Gold, Story-Nacht), timeOfDay über tod=day|gold|night|0..1. Nur die Sonne wirft Schatten, enger Frustum um die Spielfläche
@@ -144,6 +147,15 @@ const sky = (() => {
 const L1 = /(^|[#,])light=l1(,|$)/.test(hash)
 export const lightState = { tod: parseTod(hash), current: null }
 const L1_TM = /tm=none/.test(hash) ? 'none' : 'aces' // Bildpaar ACES | ohne (V-342 Punkt 6); Georg wählt
+// L2 Schritt 1 (V-340): look=a (L1 genau) | look=b (warmer Krazy-Kat-Grundton); mit look=… ist auch die Licht-Identität je Figur (Randlicht) an
+const LOOK = L1 && /look=b/.test(hash) ? 'b' : 'a', RIM = L1 && /look=[ab]/.test(hash)
+const RIMS = { targets: () => [{ module: mods.left, intent: LIGHT_INTENT.frizzlebob }, { module: mods.right, intent: LIGHT_INTENT[CAST_ID] || LIGHT_INTENT.default }] }
+const makeRim = (o) => { const m = createActorRim(o); mods.rim = m; return m }
+// L2 Schritt 2 (V-340): clay=1 stellt KayKit-Figuren auf das K1/H0-Knet-Material (Profil figure) um; FB behält sein abgenommenes ToolBox-Material.
+// clay=all stellt zum Vergleich auch FB um (G9 „eine Materialfamilie“; Georg entscheidet am Bildpaar)
+const CLAY = /(^|[#,])clay=(1|all)(,|$)/.test(hash), CLAY_FB = /(^|[#,])clay=all(,|$)/.test(hash)
+const CLAYS = { targets: () => [...(CLAY_FB ? [mods.left] : []), ...(CAST_ID ? [mods.right] : [])], profile: 'figure' }
+const makeClay = (o) => { const m = createClayLook(o); mods.clay = m; return m }
 const BLOBS = { targets: () => [mods.left, mods.right] }
 const makeBlobs = (o) => { const m = createContactBlobs(o); mods.blobs = m; return m }
 // Lokale Lichter der Bühne aus ihrem Deskriptor (kfb.stage-descriptor/1, practicals[] in u → Meter wie die Slot-Umrechnung); nachts voll, tags fast aus
@@ -159,12 +171,12 @@ function LightRigL1() {
     expose('StageLight', { state: lightState, set: (t) => { lightState.tod = t }, info: () => lightState.current })
     return () => { gl.toneMapping = prev } }, [gl])
   useFrame(() => {
-    const L = lightAt(lightState.tod), { sun, back, hemi } = sunRef; if (!sun || !back || !hemi) return
+    const L0 = lightAt(lightState.tod), L = LOOK === 'b' ? { ...lookB(L0), sunDir: L0.sunDir, tod: L0.tod, elev: L0.elev, az: L0.az } : L0, { sun, back, hemi } = sunRef; if (!sun || !back || !hemi) return
     const d = L.sunDir, R = 40
     sun.position.set(d[0] * R, d[1] * R, d[2] * R); sun.color.set(L.sun); sun.intensity = L.sunI
     back.position.set(-d[0] * R, Math.max(6, d[1] * R * 0.5), -d[2] * R); back.color.set(L.back); back.intensity = L.backI
     hemi.color.set(L.hemiSky); hemi.groundColor.set(L.hemiGround); hemi.intensity = L.hemiI
-    lightState.current = { tm: L1_TM, tod: L.tod, sun: L.sun, sunI: +L.sunI.toFixed(3), hemiI: +L.hemiI.toFixed(3), backI: +L.backI.toFixed(3), elev: +L.elev.toFixed(2), az: +L.az.toFixed(2) }
+    lightState.current = { look: LOOK, rim: RIM, tm: L1_TM, tod: L.tod, hemiGround: L.hemiGround, back: L.back, sun: L.sun, sunI: +L.sunI.toFixed(3), hemiI: +L.hemiI.toFixed(3), backI: +L.backI.toFixed(3), elev: +L.elev.toFixed(2), az: +L.az.toFixed(2) }
   })
   return <>
     <hemisphereLight ref={(o) => { sunRef.hemi = o }} />
@@ -207,6 +219,8 @@ export default function Stage() {
       {ACTORS !== 'none' && <ModuleHost create={makeL} options={L} />}
       {L1 && ACTORS !== 'none' && <ModuleHost create={makeBlobs} options={BLOBS} />}
       {L1 && <ModuleHost create={makePract} options={PRACT} />}
+      {CLAY && ACTORS !== 'none' && <ModuleHost create={makeClay} options={CLAYS} />}
+      {RIM && ACTORS !== 'none' && <ModuleHost create={makeRim} options={RIMS} />}
       {ACTORS !== 'none' && <ModuleHost create={makeR} options={R} />}
       {NDIALOG > 0 && <ModuleHost create={makeDialog} options={DIALOG} />}
       {NDIALOG > 0 && <BubbleHost />}
