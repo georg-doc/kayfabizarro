@@ -1,5 +1,26 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Antworten auf WS1_STATUS §58–§59 (VFX-Slice, Audio, Partikel) – V-357
+1. **VFX-Slice V1** als Vorlagen-Zeile freigegeben (V-001 durch `kfb-flight-vfx.js`), Reihenfolge wie §59.3 (Georg bestätigt): M2-Grundfahren → Speedlines/Trails + Staub/Erde/Rauch → Düsen-Glow → Antigrav/Flug → Audio parallel. KISS: **ein** Antriebs-Effekt für alle Fahrzeuge, Antigrav an vier Punkten aus `kfb_wheel_*` bzw. `kfb_hover_*`, keine Modelländerung. Gemeinsames VFX-Budget wie euer Vorschlag (feste Obergrenzen je Familie wie `VFX_CAPS`, ein Partikel-Pool, Instancing, keine neuen Lichter, Leuchten nur über Material/additive Sprites) – gilt auch für spätere Destruction-/Waffen-Effekte.
+2. **Düsen-Anker: (b) Klick-Werkzeug in der Vorschau** (Raycast → Punkt + Normale → JSON), weil Georg damit selbst gestaltet (V-002/V-306) und es für Waffen-Aufsätze wiederverwendbar ist. Format bestätigt, GLB bleibt unverändert:
+```json
+{ "schema": "kfb.vehicle-thrust/1", "vehicle": "crimson_flame_dragster", "space": "glb",
+  "points": [ { "id": "jet_l", "pos": [x,y,z], "dir": [x,y,z], "radius": 0.18, "type": "jet|turbine|exhaust|antigrav" } ] }
+```
+   WS0 legt die Dateien nach Georgs Klicks unter `media/3D_Assets/MeshyModels/vehicles/<id>/<id>.kfb-vehicle-thrust.json` ab.
+3. **Terraintyp → Partikelprofil** (Farben aus der Bühnen-/Biom-Palette V-305, nicht fest):
+| Terrain | Partikel | Farbe | Auslöser |
+|---|---|---|---|
+| Gras/Wiese | Erdkrumen + Grashalm-Knetstückchen | Boden-Rolle dunkel + Laub | Schlupf, Drift, Landung |
+| Sand/Wüste | heller Staub, weiche Wolke | Boden-Rolle hell | Fahrt > 40 % Tempo, Drift, Landung |
+| Fels/Stein | graue Rauchwölkchen + kleine Splitter | Fels-Grau der Bühne | Landung, Aufprall |
+| Erde/Lehm/Ton | ockerfarbene Knetbrocken | Boden-Rolle | Schlupf, Drift |
+| Schnee | weiße Puffs | Weiß mit Himmelston | Fahrt, Landung |
+| Straße/Platten | kaum Staub, nur Reifenrauch bei Drift | neutrales Grau | Drift |
+   Spender für Form und Bewegung: `clay-vfx.v1.js` + `clay-particle-profiles.v1.json` auf main (`tools/KFB-ToolBox/_inbox/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/lab-vfx/` bzw. Joyride-Schnitt `…/JOYRIDE_SESSION_2026-09-29/code/lab-vfx/`), Andockstelle eure Ereignisse aus §56.1.
+4. **Audio-Bett (§58):** Quellen auf main, Inventar `skills/chat/workflows/KFB_AUDIO_SOUNDSCAPE_BASELINE_V1_2026-09-24/INVENTORY_AND_ARCHITECTURE.md`. Motor zuerst aus `media/3D_Assets/Audio/KFB Racer/` (`KFB_Steampunk_SciFi_Engine_Idle_Loop_12s_48k.wav`, `…_Throttle_8s_48k.wav`, eigene Erzeugung), Reifen `media/3D_Assets/Audio/ElevenLabs Audio/Seamless_car_tire_ro_…mp3`, Drohne/Antigrav `media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/engineCircular_*.ogg` bzw. `spaceEngineLarge_*.ogg` (CC0). Ein AudioContext (V-042), Pitch/Volumen aus `speed`/`thrust01`, Aufprall/Landung aus den Ereignissen. Formate wie vorhanden (wav/mp3/ogg), für die Auslieferung nach ogg/mp3 wandeln.
+5. **§58 Punkte 1–3** (Schatten folgt dem Ziel, Kontaktschatten in M1 über `createContactBlobs`, weniger Rückstoß an Figuren als an Wänden): einverstanden, so umsetzen.
+
 ## 16.10.2026 · L2 Schritt 5 präzisiert (V-355, Georg GO)
 Schritt 5 steht jetzt im Briefing `replies/BRIEF_WS1_LOOK_RUN_L2.md` (Hub b57) mit Reihenfolge, Abnahmepaket A | B | C und Messwerten; Grundlage ist zusätzlich die Web-Chat-Diagnose `replies/WS0_SPELLSPILL_LOOK_COHESION_DIAG_R1_2026-10-16.md` (SpellSpill nur als Bildreferenz). Billigste Naht zuerst (Tonemapping-Bypass, Rim/Fresnel, Gesichtslicht), keine VFX vor bestandenem Vergleich. WS0 baut gerade die entlichteten Texturen (Goblin Bank v2, Atlantis) für Variante C.
 

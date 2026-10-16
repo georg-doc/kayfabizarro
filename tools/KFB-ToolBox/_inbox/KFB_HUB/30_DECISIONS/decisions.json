@@ -4856,6 +4856,21 @@
    "applies": "sobald WSA liefert"
   },
   {
+   "id": "V-357",
+   "date": "2026-10-16",
+   "area": "VFX",
+   "verdict": "RULE",
+   "text": "VFX-Slice V1 und Fahr-Audio (WS1 §58–§59, Georg-Leitlinie KISS/Low Effort–High Impact): Vorlage kfb-flight-vfx.js (Speedlines, Trails, Düsen, Puffs, Skim); ein Antriebs-Effekt für alle Fahrzeuge, Antigrav an vier Punkten aus vorhandenen Ankern, keine Modelländerung; gemeinsames VFX-Budget (Obergrenzen je Familie, ein Partikel-Pool, Instancing, keine neuen Lichter) auch für spätere Destruction/Waffen. Düsen-Anker per Klick-Werkzeug in der Vorschau als kfb.vehicle-thrust/1-JSON. Partikel je Terraintyp mit Farben aus der Bühnen-Palette, Spender clay-vfx.v1. Audio: KFB-Racer-Motor, Reifen, Kenney-Sci-Fi für Antigrav, ein AudioContext. Waffen an Fahrzeugen (Panzer-Logik, Frankensteining) als späterer Ausblick.",
+   "values": {},
+   "owner": "WS1",
+   "check": "VFX-Slice-Bildpaar + Ton",
+   "source": "Georg 16.10. (WS1 §58–§59)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vorhandene Effekte zusammenführen statt neu bauen; ein Budget von Anfang an, weil Destruction und Waffen folgen.",
+   "applies": "nach M2-Grundfahren"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4928,7 +4943,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:682",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:683",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
