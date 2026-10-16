@@ -4946,6 +4946,36 @@
    "applies": "ab sofort, jeder Style-Prompt"
   },
   {
+   "id": "V-363",
+   "date": "2026-10-16",
+   "area": "Architektur",
+   "verdict": "TBD",
+   "text": "Deck-Dossier als Architektur vorsehen (Georg 16.10., Ausblick, noch nicht bauen): Je Deck werden Verdichtungsstufen strukturiert erfasst: L0 Quellen/Brainfood, L1 Essay(s), L2 gedrucktes Deck + Gumroad-Download, L3 Karten, L4 Songs/Performance, Kanäle (Substack). Jede Stufe trägt derivedFrom. Die Daten kommen als Erweiterung in die vorhandene registry/assets/v1/decks/<deckId>.json, kein zweites System. Eine Seite pro Deck mit Anker-Links (#essay, #song, #card-<n>, #sources, #download) und Spiel-Einstieg; Spender für die Leseseite ist FrizzleBob/index.html. Download ist frei, unabhängig vom Sammelfortschritt. Rolle: Marketing und Onboarding. Almanach-Deck-Ansicht im Spiel später (WS1), Look später (Claude Design).",
+   "values": {},
+   "owner": "WS0 (Datenmodell) · WS1 (Almanach später) · Claude Design (Look später)",
+   "check": "Schema-Entwurf gegen Epistemic Sabotage",
+   "source": "replies/DECK_DOSSIER_ARCHITECTURE_R1.md · Georg 16.10.: „verschiedene Verdichtungsstufen … von der Architektur her schon mal vorsehen“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Essays, Quellen, Songs und Decks sind Verdichtungen desselben Themas; ohne Datenmodell landen sie verstreut (Substack, Gumroad, Repo).",
+   "applies": "als Architektur jetzt, Bau später"
+  },
+  {
+   "id": "V-364",
+   "date": "2026-10-16",
+   "area": "Dialog",
+   "verdict": "TUNE",
+   "text": "Epistemic-Sabotage-Song Take 05 (123 BPM, Stems, Georgs eigene Intro-Fassung und Electro-Swing-Style) funktioniert schon ganz gut; vor weiteren Songs kommt ein Redaktionslauf. (1) Kartentexte dürfen für den Song eine redaktionelle Song-Fassung bekommen (Feld songLine je Karte, Karte selbst bleibt kanonisch), z. B. „Leichte Sprache“ auf Deutsch funktioniert im englischen Song nicht. (2) Das Intro wird sauber nach Georgs Take-05-Form gebaut: Decktitel + Kernthese („Let AI read your comic – not draw it!“), „Welcome to Uncle FrizzleBob’s Kayfa-Bizarro Comic Card Karaoke!“, kurze Tagline, Meta-Message-Zeile.",
+   "values": {},
+   "owner": "WS0 (Redaktion)",
+   "check": "Georg hört",
+   "source": "media/3D_Assets/Sounds/kfb_deck_songs/epistemic_sabotage__suno_05/ · replies/OPENER_ARC_R2/epistemic_sabotage.take05.final.*",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Wörtliche Kartentexte und deutsche Fachbegriffe brechen im englischen Song; Georgs eigene Intro-Fassung trägt.",
+   "applies": "ab nächstem Song"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5018,7 +5048,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:688",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:689",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
