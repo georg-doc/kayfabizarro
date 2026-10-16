@@ -82,3 +82,19 @@ Read `SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md` and S09–S18 in `SOURCE_LEDGE
 - **`Two Different Manuscripts?`** / O'Neill 2026 testimony (S24): a **reporter's claim of two discrepant versions**, one 1956 study and a shortened version in 1977. Keep both actual originals as required unverified sources; the archive comparison is an investigative Quest, not a factually resolved card. Testimony pages indices 5–6.
 
 These **six new candidate prompts** are additive to 12 initial MKUltra seeds and six earlier mass-psychology prompts (24 total provisional prompts, zero accepted decks/cards). Do not create/render the actual deck or reclassify the existing Gateway/Iceberg contents. Possible path: `One Sixth of a Hospital` → `The Inspector's Risk` → `Two Different Manuscripts?` to compare financing, internal oversight, and later dispute over evidence. Adjacency makes hypotheses visible without supplying proof of alleged later programs.
+
+
+## R2B · Guantánamo institutional causality / editorial hypotheses · 2026-10-16
+Read `R2B_GUANTANAMO_SERE_BATTLE_LAB_2026-10-16.md` and source S27–S39. **Research-only concepts; 0 cards produced/accepted.** These supplement, not overwrite, the 24 earlier provisional card topics.
+
+Six further potential documents-as-play encounters:
+1. **The Training Reversal** (S28–30): SERE resistance to unlawful interrogations becomes candidate advice for performing interrogation. The record explicitly documents reverse-engineering in 2002, not proven lineage to MKUltra.
+2. **Battle Lab** (S27): Actual title of U.S. Senate chapter III, 2008 report. A report's title becomes an invitation to inspect whether field innovation, policy trial, controlled research or genuine human experimentation was involved; these are not synonyms.
+3. **The Behavioral Consultant** (S27,S35): Who is the clinician's client: patient, command, interrogator? BSCT's relationship with detainee care must be documented, not invented.
+4. **Detainee 063** (S33–34): The leaked log, internal medical observations, official response, Crawford's subsequent judgment, evidentiary use of coerced accounts. No dramatic reenactment of the victim's suffering is required.
+5. **The Approved Margin** (S31): Handwritten approval of limited technique categories versus compliance warnings and a subsequent rescission. The power of an administrative annotation is concrete, not abstract.
+6. **The File That Leaked** (S32–33): A leak becomes a competing historical record alongside FBI objections, oversight and official institutional self-defenses. Audit original-log authenticity and FOIA provenance.
+
+Possible chain to explore: `The Training Reversal` → `The Approved Margin` → `The Behavioral Consultant` → `Detainee 063` → `The File That Leaked` → `Battle Lab`. This is a **source/decision trail**, not a conspiracy diagram alleging unproven centralized or continuing conduct.
+
+Total to date: 12 R1 MKUltra + 6 social psychology + 6 R2A CIA file + 6 R2B GTMO = **30 distinct unapproved editorial prompts**, accepted or published 0. Reuse extant KFB Gateway cards/Conspiracy Iceberg schema and keep a separate evidence/quote layer. Do not create a standalone Guantánamo deck before source audit and user editorial approval.
