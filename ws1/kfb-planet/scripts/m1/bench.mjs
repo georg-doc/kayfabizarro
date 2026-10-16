@@ -20,8 +20,10 @@ out.fly = await measure()
 out.flyCheck = await p.evaluate(() => ({ flying: window.__kfbM1.player().flying(), feetY: +window.__kfbM1.feet()[1].toFixed(1) }))
 await p.evaluate(() => window.__kfbM1.input(null))
 out.info = await p.evaluate(() => { const s = window.__kfbM1.status(); return { pos: s.pos, terrain: s.terrain, amphTris: s.amphTris } })
-console.log(JSON.stringify(out)); await b.close()
+await b.close(); console.log(JSON.stringify(out))
 // Grenzen: Bildschirm-Bilder ≥ 58/s (Median), p95 ≤ 20 ms, Physik-/Logik-Schritte ≥ 58/s (eigene Schleife, ein Durchlauf je Schritt)
-const ok = ['stand', 'run', 'fly'].every((k) => out[k].fps >= 58 && out[k].p95 <= 20 && out[k].stepsPerSec >= 58) && out.flyCheck.flying
+// T4 (V-342): Flug p95 ≤ 20 ms und ≤ 1,2 × Boden (Laufen)
+out.t4 = { flyP95: out.fly.p95, groundP95: out.run.p95, ratio: +(out.fly.p95 / out.run.p95).toFixed(2) }
+const ok = ['stand', 'run', 'fly'].every((k) => out[k].fps >= 58 && out[k].p95 <= 20 && out[k].stepsPerSec >= 58) && out.flyCheck.flying && out.t4.ratio <= 1.2
 console.log(ok ? 'PASS m1-bench' : 'FAIL m1-bench')
 process.exit(ok ? 0 : 1)

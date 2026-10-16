@@ -25,7 +25,7 @@ import M1Loop from './M1Loop'
 import M1Player, { FOOT, START, M1INPUT, M1MOVE, M1BOUNDS, M1CAM } from './M1Player'
 import { STAGE_CAMS, STAGE_MARKS } from '../Stage'
 import { M1CLOCK, STEP } from './m1Clock'
-import { trimeshOf, amphModelOf, worldPosOf, trackDialog, keyList, rankFence, FENCE_TAG } from './m1Host'
+import { trimeshOf, amphModelOf, worldPosOf, trackDialog, keyList, rankFence, FENCE_TAG, rampVerts } from './m1Host'
 import { createSky, skyLog } from '../modules/m1-sky'
 import { createTerrain, TERRAIN, terrainLog } from '../modules/m1-terrain'
 import { createAmphitheater, amphLog } from '../modules/amphitheater'
@@ -111,6 +111,7 @@ const NOFENCE = DEBUG && /(^|[#,])nofence(,|$)/.test(hash)
 // Reibung am Zaun: ecctrl-Kapsel hat −0,5; mit „Average“ ergäbe das −0,25 (negative Reibung hebt die Figur an der Wand, Prüfer M1-5 Befund N3) →
 // „Max“ mit 0 = reibungsfrei gleiten
 const FENCE = rankFence() // Ränge = Kulisse (V-283): Zaun nur für die Physik, unsichtbar, Strahlen schauen vorbei (isFence)
+const RAMP = rampVerts() // unsichtbare Rampe zur Bühne (V-331): Strahlen sehen sie (man läuft darauf)
 function Colliders({ ready }) {
   const terr = useMemo(() => mods.terrain?.colliderData(), [])
   const amph = useMemo(() => (ready ? trimeshOf(amphModelOf(mods.amph)) : null), [ready])
@@ -126,6 +127,7 @@ function Colliders({ ready }) {
       {terr && <RigidBody type="fixed" colliders={false} name="m1-terrain"><TrimeshCollider args={[terr.vertices, terr.indices]} /></RigidBody>}
       {amph && <RigidBody type="fixed" colliders={false} name="m1-amph"><TrimeshCollider args={[amph.vertices, amph.indices]} /></RigidBody>}
       {bb && <RigidBody type="fixed" colliders={false} name="m1-billboard" position={bb.c}><CuboidCollider args={bb.h} /></RigidBody>}
+      <RigidBody type="fixed" colliders={false} name="m1-ramp"><ConvexHullCollider args={[RAMP]} /></RigidBody>
       <RigidBody type="fixed" colliders={false} name="m1-partner" position={[MARK.right[0], 1, MARK.right[1]]}><CylinderCollider args={[1, 0.35]} /></RigidBody>
       {!NOFENCE && <RigidBody type="fixed" colliders={false} name={FENCE_TAG} userData={{ tag: FENCE_TAG, ecctrl: { excludeRay: true } }}>{FENCE.map((c, i) => <ConvexHullCollider key={i} args={[c.verts]} friction={0} frictionCombineRule={CoefficientCombineRule.Max} />)}</RigidBody>}
     </>

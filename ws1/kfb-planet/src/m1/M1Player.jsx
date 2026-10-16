@@ -16,7 +16,7 @@ import { useHostKeys, PRIO, ACTION_KEYS } from '../hostKeys'
 import { playerState } from '../world'
 import ModuleHost from '../ModuleHost'
 import { createLocoActor } from '../modules/m1-locoActor'
-import { STEP } from './m1Clock'
+import { STEP, interpTrack } from './m1Clock'
 import { TERRAIN, terrainHeight } from '../modules/m1-terrain'
 import { isFence } from './m1Host'
 
@@ -30,7 +30,7 @@ export const M1SPRING = Object.freeze({ springK: 400, dampingC: 30 })
 export const M1TURN = Object.freeze({ autoBalanceSpringOnY: 0.06, autoBalanceDampingOnY: 0.018 })
 // Tempi in m/s (Welt) nach V-020/V-248 (H = Klassenhöhe 2,2 m): W = Joggen 1,40 H/s = 3,08 · Shift+W = Sprint 2,22 H/s = 4,88 · Strg+W = Gehen =
 // Eigentempo Walking_B auf FB 1,12. Alle innerhalb 0,8–1,25 ihres Clips (m1-gait); die Abspielrate folgt dem Tempo.
-export const M1MOVE = Object.freeze({ walk: 1.12, jog: 3.08, run: 4.884, flySlow: 15, flyFast: 30, flyLift: 9, jumpVel: 6.5, landRay: 0.8, flyMinSteps: 54 })
+export const M1MOVE = Object.freeze({ walk: 1.12, jog: 3.08, run: 4.884, flySlow: 15, flyFast: 30, flyLift: 9, jumpVel: 6.5, landRay: 0.8, flyMinSteps: 54, landDamp: 0.15 })
 // Welt: Laufen endet am Fuß des Randwalls (hillR + 8 m), Fliegen am Netzrand (R − 25 m) und in 400 m Höhe; unter y −20 m zurück zum Start.
 export const M1BOUNDS = Object.freeze({ walkR: TERRAIN.hillR + 8, flyR: TERRAIN.R - 25, flyMaxY: 400, fallY: -20 })
 // Kamera: nie unter das Gelände, nie in Theater-Wänden (Strahl Ziel → Kamera), Polarwinkel ≤ 1,45 rad. Standard-Neigung 1,15 rad, Brennweite 55°.
@@ -62,6 +62,7 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
   const v = useMemo(() => ({ a: new THREE.Vector3(), b: new THREE.Vector3(), c: new THREE.Vector3(), gaze: new THREE.Vector3(), q: new THREE.Quaternion() }), [])
   const keys = () => (M1INPUT.override ? { ...NOKEYS, ...M1INPUT.override } : getKeys())
   const mod = useRef(null)
+  useEffect(() => (holder.current ? interpTrack(holder.current) : undefined), []) // Figur-Halter: Bild-Interpolation (M1Loop)
   // ein Strahl je Zweck, wiederverwendet (Prüfer M1-4, Befund 12: mehrere Strahlen je Schritt)
   const R = useMemo(() => ({ down: new rapier.Ray({ x: 0, y: 0, z: 0 }, { x: 0, y: -1, z: 0 }), cam: new rapier.Ray({ x: 0, y: 0, z: 0 }, { x: 0, y: 0, z: -1 }) }), [rapier])
   const ray = (from, len) => { const r = R.down; r.origin.x = from.x; r.origin.y = from.y; r.origin.z = from.z; return world.castRay(r, len, true, undefined, undefined, undefined, ecctrl.current?.body, notFence) }
@@ -118,7 +119,7 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
     const b = ecctrl.current?.body; if (!b) return
     b.setTranslation({ x: p[0], y: p[1], z: p[2] }, true); b.setLinvel({ x: 0, y: 0, z: 0 }, true); b.setAngvel({ x: 0, y: 0, z: 0 }, true)
     if (yaw != null) b.setRotation(new THREE.Quaternion().setFromAxisAngle(UP, yaw), true)
-    S.current.lift = 0 // Bodenangleich gilt für die alte Stelle nicht (Prüfer M1-3, Befund 11)
+    S.current.lift = 0; S.current.landDamp = null // Bodenangleich und Landungs-Abdämpfen gelten für die alte Stelle nicht (Prüfer M1-3, Befund 11)
     if (S.current.frozen) { S.current.hold = { x: p[0], y: p[1], z: p[2] }; b.setGravityScale(0, true) } // eingefroren: diese Lage halten
   }
   useImperativeHandle(ref, () => ({
@@ -145,6 +146,7 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
   useHostKeys((e) => {
     if (!active || S.current.frozen || !ecctrl.current || e.repeat) return
     if (e.code === ACTION_KEYS.fly) { setFlying(!S.current.flying); e.preventDefault() }
+    if (e.code === 'KeyG') { S.current.walkToggle = !S.current.walkToggle; e.preventDefault() } // Gehen ein/aus (V-331)
     if (e.code === ACTION_KEYS.reset) { setFlying(false); teleport(START, START_YAW); e.preventDefault() }
   }, PRIO.player)
   useEffect(() => { cam.current?.dollyTo(view.flying ? M1CAM.distFly : M1CAM.dist, true); S.current.camWant = view.flying ? M1CAM.distFly : M1CAM.dist }, [view.flying])
@@ -202,7 +204,9 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
       } }
     if (free && !S.current.flying) {
       const k = keys()
-      S.current.walk = !!k.walk && !k.run // Strg = Gehen: ecctrl kennt nur Gehen/Rennen – sein Gehtempo ist Joggen, Gehen begrenzt post
+      // Gehen (V-331 Punkt 7): G schaltet um (auf dem Mac ist Strg belegt); Tests setzen walk über M1INPUT. ecctrl kennt nur Gehen/Rennen – sein
+      // Gehtempo ist Joggen, Gehen begrenzt post. Shift (Sprint) hat Vorrang.
+      S.current.walk = (S.current.walkToggle || (!!M1INPUT.override && !!k.walk)) && !k.run
       h.setMovement({ forward: k.forward, backward: k.backward, leftward: k.leftward, rightward: k.rightward, run: k.run, jump: k.jump })
     } else h.setMovement(NOKEYS)
   }
@@ -218,6 +222,9 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
       if (S.current.hold) body.setTranslation(S.current.hold, true)
     } else if (!S.current.flying) {
       if (S.current.walk) { const lv = body.linvel(), hs = Math.hypot(lv.x, lv.z); if (hs > M1MOVE.walk) { const c = M1MOVE.walk / hs; body.setLinvel({ x: lv.x * c, y: lv.y, z: lv.z * c }, true) } }
+      // weiches Aufsetzen nach dem Flug (V-331 Punkt 6, ≈ 0,15 s): das Resttempo der Landung blendet in das Tempo von ecctrl über, statt hart auf 0
+      const L = S.current.landDamp
+      if (L) { L.t += STEP; const k = Math.min(1, L.t / M1MOVE.landDamp), lv = body.linvel(); body.setLinvel({ x: L.x * (1 - k) + lv.x * k, y: lv.y, z: L.z * (1 - k) + lv.z * k }, true); if (k >= 1) S.current.landDamp = null }
     } else {
       // Flug: eigene einfache Steuerung wie im Spike (Kamera-Richtung, Leertaste = hoch, Shift = schnell). Die Standard-Neigung der Folgekamera
       // zählt als waagrecht (sonst zieht W immer abwärts); steiler nach unten schauen = sinken. Überschreibt ecctrls Impulse dieses Schritts.
@@ -242,9 +249,11 @@ const M1Player = forwardRef(function M1Player({ actorOptions, clipUrls, active =
       S.current.flySteps++
       if (S.current.flySteps > M1MOVE.flyMinSteps && nv.y <= 0.5 && Math.hypot(pos.x, pos.z) <= M1BOUNDS.walkR) {
         const hit = ray(pos, FOOT + M1MOVE.landRay)
-        // Aufsetzen = Anhalten (waagrecht 0): Mit Resttempo schob sich die Kapsel nach der Landung auf den Rängen unter eine überstehende Stufenkante
-        // (Sonde probe-landranks: −19 cm). Weiterlaufen geht sofort mit der Eingabe.
-        if (hit) { body.setLinvel({ x: 0, y: Math.max(nv.y, -3), z: 0 }, true); body.setGravityScale(1, true); setFlying(false) }
+        // Aufsetzen: Sinken auf ≤ 3 m/s; das waagrechte Resttempo wird über landDamp (≈ 0,15 s) weich abgebaut (V-331 Punkt 6). Der frühere harte Halt
+        // war nur wegen der Rangkante nötig – die Ränge sind seit V-283 gesperrt.
+        // Flugtempo (15–30 m/s) nie auf den Boden mitnehmen: höchstens Sprinttempo, sonst pflügt die Kapsel in den Hang (m1-move landTerrain: −11 cm)
+        if (hit) { const hs = Math.hypot(nv.x, nv.z), c = hs > M1MOVE.run ? M1MOVE.run / hs : 1, lx = nv.x * c, lz = nv.z * c
+          body.setLinvel({ x: lx, y: Math.max(nv.y, -3), z: lz }, true); body.setGravityScale(1, true); setFlying(false); S.current.landDamp = { t: 0, x: lx, z: lz } }
       }
     }
     // Kamera folgt; nie unter das Gelände, nie hinter eine Theater-Wand (Strahl vom Ziel zur Kamera auf alle Kollider). Im Dialog führt der Host.

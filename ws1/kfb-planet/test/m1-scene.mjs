@@ -67,9 +67,8 @@ const afterLanding = await wait(() => window.__kfbM1.state.phase === 'dialog', 1
 const landedGrounded = await page.evaluate(() => { const f = window.__kfbM1.feet(); return Math.abs(f[1]) < 0.08 })
 await page.keyboard.press('Escape'); await wait(() => window.__kfbM1.state.phase === 'free', 15000)
 // Spielerweg (Prüfer M1-4, Befund 3): von START zu Fuß auf die Bühne und wieder hinaus – ohne Teleport. Vorn liegt der Ring des Theaters (0,79 m über
-// der Bühne, ≈ 0,9 m über dem Gelände, r 9,5–10,5); die ebenen Durchgänge der Ränge liegen hinter dem Zaun (V-283). Heute geht es daher nur mit Sprung
-// (Rampe/Öffnung: Frage an WS0). Joggen nach −Z, vor dem Ring springen (höchstens 3 Versuche) → Dialog; Escape; nach +Z hinaus, über den Ring
-// springen → Abklingen gelöscht (r > 9,5).
+// der Bühne, ≈ 0,9 m über dem Gelände, r 9,5–10,5); seit V-331 liegt auf der START-Achse eine unsichtbare Rampe darüber. Joggen nach −Z ohne Sprung
+// → Dialog; Escape; nach +Z hinaus über die Rampe → Abklingen gelöscht (r > 9,5).
 await page.evaluate(() => { window.__kfbM1.player().teleport([...window.__kfbM1.start], Math.PI) }); await steps(60)
 const path = await page.evaluate(async () => {
   const M = window.__kfbM1, C = M.clock, P = M.player(), cam = P.camera(), raf = () => new Promise((r) => requestAnimationFrame(r))
@@ -84,7 +83,7 @@ const path = await page.evaluate(async () => {
     }
     M.input(null); return { jumps, steps: C.steps - t0, end: M.feet().map((v) => +v.toFixed(2)), minR: +minR.toFixed(2) }
   }
-  const inn = await run(-1, (f) => f[2] < 12.4 && f[2] > 9.6, () => M.state.phase === 'dialog', 1500)
+  const inn = await run(-1, () => false, () => M.state.phase === 'dialog', 1500)
   inn.dialog = M.state.phase === 'dialog'
   return inn
 })
@@ -97,8 +96,7 @@ const pathOut = await page.evaluate(async () => {
   let jumps = 0, last = -999; const t0 = C.steps
   while (C.steps - t0 < 1500 && M.feet()[2] < 14) {
     const f = M.feet(), h = P.handle(), r = Math.hypot(f[0], f[2])
-    if (h?.isOnGround && r > 7.6 && r < 9.6 && jumps < 3 && C.steps - last > 45) { jumps++; last = C.steps }
-    M.input({ forward: true, jump: C.steps - last < 4 }); await raf()
+    M.input({ forward: true, leftward: f[0] < -0.4 }); await raf() // von der linken Marke schräg zur Rampe (x ≈ 0; Kamera nach +Z: links = +X)
   }
   M.input(null)
   return { jumps, cooldown0, cooldown: M.state.cooldown, phase: M.state.phase, end: M.feet().map((v) => +v.toFixed(2)) }
@@ -130,8 +128,8 @@ process.exit(report('m1-scene', {
   escapeEndsDialog: escaped,
   noDialogWhileAirborne: airborneNoDialog,
   dialogAfterLandingOnStage: afterLanding && landedGrounded,
-  // Spielerweg ohne Teleport (Befund 3): zu Fuß mit Sprung über den Ring auf die Bühne → Dialog → hinaus → Abklingen gelöscht
-  walkFromStartStartsDialog: path.dialog === true && path.jumps >= 1,
+  // Spielerweg ohne Teleport (Befund 3, V-331): zu Fuß über die Rampe auf die Bühne → Dialog → hinaus → Abklingen gelöscht
+  walkFromStartStartsDialog: path.dialog === true && path.jumps === 0, // über die Rampe, ohne Sprung (V-331)
   walkOutClearsCooldown: pathEscaped && pathOut.cooldown0 === true && pathOut.cooldown === false && pathOut.phase === 'free' && pathOut.end[2] >= 14,
   noPageErrors: errs.length === 0,
 }, { atChoice: { dialog: atChoice.dialog, ready: atChoice.ready }, before: { phase: before.phase }, inDialog: { camera: inDialog.camera, pos: inDialog.pos, dialog: inDialog.dialog }, after: { camera: after.camera, pos: after.pos, lastDialog: dlog, events: dEvents, moved, camMoved }, env, path, pathOut, orbitIn, orbitOut, errs: errs.slice(0, 3) }))

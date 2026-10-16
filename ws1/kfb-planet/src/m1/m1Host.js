@@ -27,14 +27,21 @@ export function trackDialog(d, holder) {
   return d
 }
 
-// Tastenliste (Briefing: „eine Datei mit der Tastenliste“; V-020 Strg = gehen, V-257 Dialog-Kamera, Prüfer M1-5 Befund N10): kleines Feld unten links, Host-DOM außerhalb des Canvas. toggle() blendet um (Taste H).
+// Tastenliste (Briefing: „eine Datei mit der Tastenliste“; V-020 Strg = gehen, V-257 Dialog-Kamera). Georg 16.10.: nicht dauerhaft über dem Bild,
+// sondern ein dezentes Info-Symbol unten links; die Liste erscheint erst beim Klick (oder H) und schließt beim zweiten Klick. Kein HUD – das liefert
+// Georg nach (fraktaler Almanach). Host-DOM außerhalb des Canvas.
 export function keyList() {
-  if (typeof document === 'undefined') return { remove() {}, toggle() {} }
+  if (typeof document === 'undefined') return { remove() {}, toggle() {}, shown: () => false }
+  const box = document.createElement('div'); box.id = 'm1-keys-box'; box.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:5'
+  const btn = document.createElement('button'); btn.id = 'm1-keys-info'; btn.type = 'button'; btn.textContent = 'i'; btn.title = 'Tasten'; btn.setAttribute('aria-label', 'Tasten anzeigen')
+  btn.style.cssText = "width:30px;height:30px;border-radius:50%;border:0;background:rgba(255,250,240,.55);color:#1f1a14;font:italic 700 16px/30px Georgia,serif;cursor:pointer;opacity:.75;box-shadow:0 1px 4px rgba(42,26,12,.25)"
   const el = document.createElement('div'); el.id = 'm1-keys'
-  el.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:5;padding:10px 12px;border-radius:12px;background:rgba(255,250,240,.88);color:#1f1a14;font:14px/1.45 'Shantell Sans',system-ui,sans-serif;box-shadow:0 3px 8px rgba(42,26,12,.25);pointer-events:none;max-width:320px"
-  el.innerHTML = '<b>FrizzleBob · Bewegung</b><br>W A S D · joggen &nbsp;·&nbsp; Shift · sprinten &nbsp;·&nbsp; Strg · gehen<br>Leertaste · springen<br>F · abheben / landen<br>&nbsp;&nbsp;im Flug: W A S D · Leertaste hoch · Shift schnell · Kamera steiler nach unten = sinken<br>Maus ziehen · Kamera &nbsp;·&nbsp; Rad · Abstand<br>R · zurück zum Start &nbsp;·&nbsp; H · diese Liste<br>Bühne: über die Kante vorn springen, dann hinein · Dialog (1–4 wählen, Esc beendet)<br>&nbsp;&nbsp;im Dialog: ziehen · drehen, Rad · Zoom zum Zeiger, rechte Taste · verschieben, Doppelklick · Fokus, Knöpfe Standard / Nah'
-  document.body.appendChild(el)
-  return { remove: () => el.remove(), toggle: () => { el.style.display = el.style.display === 'none' ? '' : 'none' }, shown: () => el.style.display !== 'none' }
+  el.style.cssText = "display:none;position:absolute;left:0;bottom:38px;padding:10px 12px;border-radius:12px;background:rgba(255,250,240,.92);color:#1f1a14;font:14px/1.45 'Shantell Sans',system-ui,sans-serif;box-shadow:0 3px 8px rgba(42,26,12,.25);width:320px"
+  el.innerHTML = '<b>FrizzleBob · Bewegung</b><br>W A S D · joggen &nbsp;·&nbsp; Shift · sprinten &nbsp;·&nbsp; G · gehen ein/aus<br>Leertaste · springen<br>F · abheben / landen<br>&nbsp;&nbsp;im Flug: W A S D · Leertaste hoch · Shift schnell · Kamera steiler nach unten = sinken<br>Maus ziehen · Kamera &nbsp;·&nbsp; Rad · Abstand<br>R · zurück zum Start &nbsp;·&nbsp; H · diese Liste<br>Bühne: vorn über die Rampe hinein · Dialog (1–4 wählen, Esc beendet)<br>&nbsp;&nbsp;im Dialog: ziehen · drehen, Rad · Zoom zum Zeiger, rechte Taste · verschieben, Doppelklick · Fokus, Knöpfe Standard / Nah'
+  const toggle = () => { const on = el.style.display === 'none'; el.style.display = on ? '' : 'none'; btn.style.opacity = on ? '1' : '.75' }
+  btn.addEventListener('click', (e) => { e.stopPropagation(); toggle(); btn.blur() })
+  box.append(el, btn); document.body.appendChild(box)
+  return { remove: () => box.remove(), toggle, shown: () => el.style.display !== 'none' }
 }
 
 // Ränge = Kulisse ohne Begehen (V-283, WS0 15.10.: „die Kollision soll das Betreten verhindern“; Fuß-IK/Stufen erst MVP-1). Bis das vereinfachte
@@ -58,6 +65,11 @@ const D2R = Math.PI / 180
 const lerpProfile = (P, lim, step, a) => { const d = a / D2R; if (Math.abs(d) > lim + 1e-9) return null; const u = (d + lim) / step, i = Math.min(P.length - 2, Math.floor(u)), k = u - i; return P[i] + (P[i + 1] - P[i]) * k }
 export const rankInnerR = (a, F = RANK_FENCE, P = RANK_PROFILE) => lerpProfile(P, F.a0Deg, F.profileStep, a)
 export const rankOuterR = (a, F = RANK_FENCE, Q = RANK_PROFILE_OUT) => lerpProfile(Q, F.capDeg, F.profileStep, a)
+// Rampe zur Bühne (V-331 Punkt 3): unsichtbarer Kollider über den vorderen Ring auf der START-Achse (x = 0), 3 m breit. Ring vermessen (Höhenkarte,
+// 16.10.): z 9,5–10,6, oben 0,79 m; draußen Gelände −0,125, drinnen Bühnenboden 0. Profil (z, y): außen hinauf 14,2 → 10,6 (≈ 14°), oben flach 1 cm
+// über dem Ring bis 9,4, innen hinab bis 6,8 (≈ 17°, außerhalb des Dialog-Auslösers r < 6,2). Ein konvexes Prisma (Unterseite unter Boden und Gelände).
+export const STAGE_RAMP = Object.freeze({ halfW: 1.5, profile: [[14.2, -0.125], [10.6, 0.8], [9.4, 0.8], [6.8, 0], [6.8, -0.4], [14.2, -0.4]] })
+export const rampVerts = (R = STAGE_RAMP) => new Float32Array(R.profile.flatMap(([z, y]) => [-R.halfW, y, z, R.halfW, y, z]))
 // Abstand eines Punkts (x, z) zur Zaunfläche (Grundriss-Kante), positiv außerhalb des gesperrten Bereichs, negativ darin (Tests)
 export function rankFenceClear(x, z, O = OUTLINE) {
   const P = O.pts; let d = Infinity
