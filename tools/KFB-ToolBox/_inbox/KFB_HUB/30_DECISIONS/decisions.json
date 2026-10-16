@@ -4991,6 +4991,21 @@
    "applies": "ab Pharaoh 01a"
   },
   {
+   "id": "V-366",
+   "date": "2026-10-16",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Suno-Intros ohne feste Formel (Georg 16.10.), korrigiert V-364 Punkt 2: Georgs Take-05-Intro ist keine Vorlage. „Meta-Message“ war nur eine Notlösung für einen Deck-Fehler (Epistemic-Karte 1 „Uncle FrizzleBob’s Meta-Cover“ hätte als Cover gerendert werden sollen) – es gibt keine Meta-Message, die Karten sprechen für sich. Kein doppeltes „Uncle FrizzleBob“ im Intro. „Comic Card Karaoke“ heißt: Man singt die Karten zum Track mit; es ist ein spielerisches Versatzstück, das frei und je Song anders eingebaut wird, nie als gleichlautende Begrüßungszeile. Der Writer’s Room prüft Intros gegen Wiederholungsmuster über alle Songs hinweg.",
+   "values": "V-364",
+   "owner": "WS0 (Writer’s Room)",
+   "check": "Intro-Vergleich über alle Songs: keine gleichlautende Zeile, kein Meta-Message, FrizzleBob höchstens einmal",
+   "source": "Georg 16.10.: „auf gar keinen Fall … ein Standard-Pattern … es gibt keine Meta-Message, sondern die Karten sprechen für sich … spielerisches Versatzstück“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Aus einer Einzelkorrektur wurde ein repetitives Muster, das genau der Writer’s Room verhindern sollte.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5063,7 +5078,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:692",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:693",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

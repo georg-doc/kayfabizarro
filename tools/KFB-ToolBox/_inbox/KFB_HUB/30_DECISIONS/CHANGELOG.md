@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-366: keine Intro-Formel, keine Meta-Message, FrizzleBob nicht doppelt, Karaoke = Mitsing-Versatzstück; Pharaoh/Trust-Intros neu (wr3, Hub b52/b55 v9); Deck-Fehler Epistemic Karte 1 „Meta-Cover“ notiert.
 - V-365: anders klingende Stimme = derselbe Charakter (Unschärfe ok); Pharaoh-Stimmen-Aufteilung steht.
 - Deck-Songs eingecheckt: Epistemic Take 05 (123 BPM, 12 Stems, SRT 62/62) und Pharaoh 01a (118 BPM, Duett, 57/57 Zeilen, voices.json + beats.json für V-359); Branch pharaoh baut auf epistemic auf, PR wartet auf Georgs Klick.
 - Writer’s Room Pharaoh + Trust (V-361/V-364): Dossier, Blind-Review (Pharaoh 5/6/7, Trust 6/6.5/6), wr2 mit songLines (14 bzw. 25) in Hub b52/b55; b53 Epistemic erledigt (Take 05).
