@@ -1,5 +1,12 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · Georg Creative Intake · warmes Krazy-Kat-Licht, 6 Fluff, Actor-Clay/Eye
+- **Neue Gestaltungsrichtung (noch nicht neuer Lighting-Beschluss):** Herriman/Krazy-Kat-artiges warmes Orange/Rot/Coral als bevorzugte Grundstimmung; sechs StoryMode-Farben aus bestehender V-305-Palette; jeder Resident erhält ein source-verankertes Licht-Acting-Profil, **keine eigene permanente Schattenlampe**. Vorhandener **WS0-Lichtauftrag V-329 L1** bleibt führend (ein R3F-Host, Sonne als Schattenwerfer, Pool von 4–6 lokalen schattenlosen Lichtern). Aktuelle V-305/V-331 StoryMode-Farbe auf dem Boden nur nach explizitem WS0-Look-Vergleich ändern.
+- **Späterer UI/Game-Entwurf:** sechs kleine farbige Fluff-HUD-Punkte, cartoonige World→HUD-Bounce-Pickup-Animation, High/Low erhalten; sechs Kugelfarben → echte ausgewählte KFB-Karte via Hexe/Alchemie und optional D6 sind **offene Varianten**, keine festgeschriebene Währung oder aktuelle HUD-Anweisung. Character-JSONs sollen zentral auf vorhandenen KFB Clay Golden, originalen EyeRig/Face-Owner und Lore-/Prompt-Referenzen zeigen; vorgeschlagene Fluff-Affinitäten/Stage-Licht-Cues brauchen Owner-Audit.
+- [Vollständiger Intake](replies/WS0_KRAZY_KAT_LIGHT_FLUFF_ACTOR_INTENT_R1_2026-10-16.md) und [Return](replies/WS0_KRAZY_KAT_LIGHT_FLUFF_ACTOR_RETURN_R1_2026-10-16.md). Intake-MD wurde bytegleich im **authentifizierten KFB Production Control Site Inbox** gesichert und zurückgelesen; **keine public Site-Veröffentlichung / Runtime-Abnahme**. Ein nächster WS0-Gate: `WS0_L1_WARM_DEFAULT_AND_CHARACTER_LOOK_TRIAGE`.
+
+
+
 ## 2026-10-16 · Figuren-Bau neu, Musikvideo
 - V-338: Blender-Lauf R1 für 17.10. (Hub b51): Alien/Orc-Reparatur, FB-Meshy-Ohren als v5c, Steifigkeit je Anhängsel-Typ als Grundlage für Ears as Actors.
 - V-336: Rigging/Frankensteining jetzt WS0 mit Blender MCP, ToolBox nur Integration; Laufzeit-Mesh-Hacks verboten; Frankensteining Studio verabschiedet (WSA-Postmortem + Blender-Handoff auf feat/headpart-v332-acceptance-2026-10-16).
