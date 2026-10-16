@@ -1,0 +1,128 @@
+{
+  "schema": "kfb.deck-song.v1",
+  "deckId": "pharaoh_piledriver",
+  "printedTitle": "Pharaoh Piledriver",
+  "version": "01a",
+  "id": "pharaoh_piledriver__suno_01a",
+  "sunoTitle": "KFB Pharaoh Piledriver [pharaoh_piledriver] 01a",
+  "sunoTitleOriginal": "KFB Pharaoh Piledriver [pharaoh_piledriver] - Refrain + tanzbar",
+  "sourceFolderName": "KFB Pharaoh Piledriver [pharaoh_piledriver] - Refrain + tanzbar Stems (118BPM)",
+  "bpm": 118,
+  "voice": "male+female duet",
+  "voiceSource": "OPENER_ARC_R2 styles_v3.json pharaoh_piledriver: verses deep raspy male MC, chorus female gang vocals; measured on the stems: verses male, intro + chorus + outro female, intro 'Pharaoh Piledriver' male",
+  "style": "Egyptian desert funk-rap, 118 bpm, four-on-the-floor kick, slap bass, darbuka and riq grooves, oud riffs, punchy horn stabs, synth brass. Verses: deep raspy male MC, rhythmic spoken flow riding the beat. Chorus: big chantable female gang vocals, wrestling-entrance energy. Danceable and punchy, short instrumental break mid-song.",
+  "styleSource": "OPENER_ARC_R2 styles_v3.json key pharaoh_piledriver (Suno format v3, Georg 16.10.); style 118 bpm = Suno folder 118BPM = drum-stem beat grid 118.000",
+  "durationSeconds": 301.6,
+  "mix": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/pharaoh_piledriver__suno_01a.mp3",
+  "files": [
+    {
+      "path": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/pharaoh_piledriver__suno_01a.mp3",
+      "role": "mix",
+      "sourceName": "KFB Pharaoh Piledriver [pharaoh_piledriver] - Refrain + tanzbar.mp3",
+      "sha256": "9492fe4dc2fc0af551195a5b352ab161fd628437a26dcf7581373040e2cf4d24",
+      "sizeBytes": 6839554,
+      "durationSeconds": 301.6
+    },
+    {
+      "path": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/stems/pharaoh_piledriver__suno_01a__00_lead_vocals.mp3",
+      "role": "stem",
+      "stemIndex": 0,
+      "instrument": "Lead Vocals",
+      "sourceName": "0 Lead Vocals.mp3",
+      "sha256": "6633afdd087ca875e088e831d32a17f04a78c38574e7e3f5a8410af38bfa6149",
+      "sizeBytes": 6184460,
+      "durationSeconds": 300.96
+    },
+    {
+      "path": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/stems/pharaoh_piledriver__suno_01a__01_backing_vocals.mp3",
+      "role": "stem",
+      "stemIndex": 1,
+      "instrument": "Backing Vocals",
+      "sourceName": "1 Backing Vocals.mp3",
+      "sha256": "6ad812f47aff37a351019d93de1cc14caa4a58512e6cda6bd2b5760b8726c6df",
+      "sizeBytes": 5447972,
+      "durationSeconds": 300.96
+    },
+    {
+      "path": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/stems/pharaoh_piledriver__suno_01a__02_drums.mp3",
+      "role": "stem",
+      "stemIndex": 2,
+      "instrument": "Drums",
+      "sourceName": "2 Drums.mp3",
+      "sha256": "7d362f8d7db2f26681fbaf7d0944a77c94d973c853088636b6b85aeb1167f5c2",
+      "sizeBytes": 6695156,
+      "durationSeconds": 300.96
+    },
+    {
+      "path": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/stems/pharaoh_piledriver__suno_01a__03_bass.mp3",
+      "role": "stem",
+      "stemIndex": 3,
+      "instrument": "Bass",
+      "sourceName": "3 Bass.mp3",
+      "sha256": "517aa4b42c492e0df3231261121eee4e0df5e03180c988657137395e8c8f6e17",
+      "sizeBytes": 4971092,
+      "durationSeconds": 300.96
+    },
+    {
+      "path": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/stems/pharaoh_piledriver__suno_01a__04_guitar.mp3",
+      "role": "stem",
+      "stemIndex": 4,
+      "instrument": "Guitar",
+      "sourceName": "4 Guitar.mp3",
+      "sha256": "13dcb98faa29644697b5999e07518398e54f96540462c5ee2fabf03c499e77a4",
+      "sizeBytes": 6202604,
+      "durationSeconds": 300.96
+    },
+    {
+      "path": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/stems/pharaoh_piledriver__suno_01a__05_keyboard.mp3",
+      "role": "stem",
+      "stemIndex": 5,
+      "instrument": "Keyboard",
+      "sourceName": "5 Keyboard.mp3",
+      "sha256": "27c02dddab3b010c4da173d66e3cbe137ab20f559e1d65cf38c793e40e83f1ff",
+      "sizeBytes": 6234716,
+      "durationSeconds": 300.96
+    },
+    {
+      "path": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/stems/pharaoh_piledriver__suno_01a__06_percussion.mp3",
+      "role": "stem",
+      "stemIndex": 6,
+      "instrument": "Percussion",
+      "sourceName": "6 Percussion.mp3",
+      "sha256": "d2374d4cd1938bc7cb0257087b3093492adc98acb456fc03886b8da21ef60c71",
+      "sizeBytes": 6861068,
+      "durationSeconds": 300.96
+    },
+    {
+      "path": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/stems/pharaoh_piledriver__suno_01a__07_synth.mp3",
+      "role": "stem",
+      "stemIndex": 7,
+      "instrument": "Synth",
+      "sourceName": "7 Synth.mp3",
+      "sha256": "091ef388bbbe0ce0f0663c385773d6f51451cd70393b49864f9a84f337da3b8b",
+      "sizeBytes": 6334988,
+      "durationSeconds": 300.96
+    },
+    {
+      "path": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/stems/pharaoh_piledriver__suno_01a__08_other.mp3",
+      "role": "stem",
+      "stemIndex": 8,
+      "instrument": "Other",
+      "sourceName": "8 Other.mp3",
+      "sha256": "9752f6e0f225d1364aedaf529521194e011178f8b21d7ce5658add194da6c45e",
+      "sizeBytes": 6735428,
+      "durationSeconds": 300.96
+    },
+    {
+      "path": "media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/stems/pharaoh_piledriver__suno_01a__09_brass.mp3",
+      "role": "stem",
+      "stemIndex": 9,
+      "instrument": "Brass",
+      "sourceName": "9 Brass.mp3",
+      "sha256": "1895912591db4fb134527457ea6c7a171e70295bfcba13b280497eae678e25f6",
+      "sizeBytes": 4000244,
+      "durationSeconds": 300.96
+    }
+  ],
+  "notIncluded": []
+}
