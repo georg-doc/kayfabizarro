@@ -148,7 +148,7 @@
     "contactSheetVisuallyInspected": true,
     "originalShaderSourceFound": false
   },
-  "nextGate": "KFB SEED WORLD HYBRID FX READABILITY + TARGET-DEVICE REVIEW",
+  "nextGate": "KFB SEED WORLD PLANAR DEBRIS + CLAY/SMOKE VISUAL MOTION / TARGET-GPU REVIEW",
   "existingVfxCatalog": {
     "status": "EXACT_SOURCE_FOUND_AND_REUSED_AS_REFERENCE_ONLY",
     "originalHandoff": {
@@ -345,5 +345,90 @@
       "no new physics/FX/damage writer"
     ],
     "evidence": "FX_BUDGET_R2_EVIDENCE_2026-10-16.md"
+  },
+  "fxShardsR3": {
+    "schema": "kfb.seedworld.real-source-angular-planar-shards/0.1",
+    "status": "TECHNICAL_CI_PASS_24_OF_24__VISUAL_TUNE_TARGET_GPU_NOT_RUN",
+    "sourceRevision": "e5a1ab8065d0bda9affedf4aef1b5ef5352b63aa",
+    "ci": {
+      "runId": 38947639843,
+      "jobId": 117130707892,
+      "conclusion": "SUCCESS",
+      "passed": 24,
+      "total": 24,
+      "artifactId": 12067137321,
+      "zipSha256": "710f969add9985e4c3261c952930bf6a8da1eebf6410fdfd3f13537fb43d7c52",
+      "screenshots": 6,
+      "rows": 4
+    },
+    "precedingFalseGreen": {
+      "runId": 38947275597,
+      "meaning": "ran stale R2 budget-proof.mjs: 16/16 NOT new shard evidence",
+      "repaired": true
+    },
+    "source": {
+      "rockets": 12,
+      "cellsLost": 90,
+      "cascades": 2,
+      "dynamicDebris": 178,
+      "sourceChips": 320,
+      "dust": 195,
+      "sourceVfxPeak": 584
+    },
+    "readability": {
+      "D": {
+        "clay3D": 3,
+        "alpha2D": 11,
+        "pixelPct": 0.415
+      },
+      "E": {
+        "clay3D": 2,
+        "alpha2D": 48,
+        "pixelPct": 1.078
+      },
+      "F": {
+        "clay3D": 2,
+        "alpha2D": 48,
+        "pixelPct": 11.066
+      }
+    },
+    "debrisCompare": {
+      "E": {
+        "original3D": 178,
+        "original3DChips": 320,
+        "sceneTriangles": 797294,
+        "drawCalls": 145,
+        "softwareRenderSubmitP95Ms": 3.9
+      },
+      "F": {
+        "originalNear3D": 12,
+        "planarLargeShards": 166,
+        "planarSmallChips": 320,
+        "planarTrianglesPerInstance": 3,
+        "sceneTriangles": 748800,
+        "drawCalls": 143,
+        "softwareRenderSubmitP95Ms": 4.7
+      },
+      "absoluteSceneTrianglesSaved": 48494,
+      "sceneTrianglesSavedPercent": 6.08,
+      "hardwareGpuFpsWinClaimed": false
+    },
+    "qa": {
+      "actualSourceIsolationScreenshots": true,
+      "sourceInstancingUnchanged": true,
+      "damageImmutable": true,
+      "visualStyleApproved": false,
+      "animationReviewed": false,
+      "targetMacGpuMeasured": false,
+      "priorR2BaselineRetained": true
+    },
+    "sourcePaths": [
+      "seedworld/sw-destruct.js",
+      "seedworld/fx-ab/comparison.mjs",
+      "seedworld/fx-ab/shard-proof.mjs",
+      ".github/workflows/kfb-seedworld-source-fx-ab.yml"
+    ],
+    "evidenceFile": "FX_SHARDS_R3_EVIDENCE_2026-10-16.md",
+    "nextGate": "KFB SEED WORLD PLANAR DEBRIS + CLAY/SMOKE VISUAL MOTION / TARGET-GPU REVIEW"
   }
 }
