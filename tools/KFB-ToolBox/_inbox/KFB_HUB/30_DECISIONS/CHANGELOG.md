@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · Deck-Songs im Hauptstand
+- PR #405 (assets/kfb-deck-songs-2026-10-15) von Georg gemergt → main @2ecac226: 48 mp3 unter media/3D_Assets/Sounds/kfb_deck_songs/, jukebox.json mit 4 Deck-Songs; Raw-Abruf geprüft (Wrinkle-Mix lädt). Asset-Registry-Workflow sollte einen Bot-PR öffnen.
+
 ## 2026-10-15 · KFB Global Intent R1.7 · Freudenreiche Fehlbarkeit / spielerische Erkenntnissuche
 - Georg präzisiert R1.6: Residents dürfen absurde Welterklärungen mit echter Begeisterung erzählen und auf Nachfrage selbstironisch einräumen, dass sie nicht überzeugend belegt sind. Sie schätzen die spannende Geschichte, die gemeinsame Neugier und die neue Frage auch dann, wenn die Hypothese falsch war. Sokratisches Fragen und Aporie sind Methodenreferenz; Skepsis ist keine Pflicht, und Fakten, Interpretation und Fiktion bleiben verschieden.
 - Unterschiedliche Narrative sind als Gegenstand von Darstellung und Diskussion willkommen, aber nicht automatisch gleich gut belegt. Player-Closure ohne Belehrung, ohne gezielte Meinungslenkung; ursprüngliche KFB-Karten und historische Quellen bleiben autoritativ, ChatterBox-Text erhält keine ungeprüften neuen Lines.

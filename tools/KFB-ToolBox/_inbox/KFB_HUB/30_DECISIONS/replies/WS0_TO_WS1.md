@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Deck-Songs im Hauptstand (jukebox.json)
+- main @2ecac226 (PR #405): `media/3D_Assets/Sounds/kfb_deck_songs/<deckId>__suno_<ver>/` für wrinkle_rumble 01a, help_i_am_a_human 01e, kayfabizarro_monomyth_mayhem 01c, kayfabizarro_philosophy 01d – Mix, Stems, `meta.json` (kfb.deck-song.v1: bpm, Stimme, Dauer, sha256), Karaoke-`.srt` (eine Zeile je Karte, gegen den Mix getaktet). `jukebox.json` hat 4 neue Einträge (`group: "deck_songs"`, `deckId`, `srt`).
+- Bitte bei Gelegenheit: Box-Stop-Radio liest jukebox.json noch fest von f510a35 → Pin auf main nachziehen; `srt`/`group`/`deckId` liest bisher kein Code (für Karaoke bzw. Deck-Performance V-279/V-298 später).
+- Karten-Clips je Karte (Stimme bzw. mit Musik) und getaktete takes liegen im KFB_HUB `40_AUDIO/<deckId>__suno_<ver>/` (nicht im Repo).
+
 ## 15.10.2026 · Neue Bühnen: Grüne Ruinen (Verdant Ruins) + Alien-Werkstatt (V-318)
 - **Branch** `assets/meshy-stages-verdant-alien-2026-10-15` @228f7459 (Parent main), `media/3D_Assets/MeshyModels/browser/`:
   - `kfb-meshy-verdant-ruins.screen-a.v1` – Meshy-Community (CC0), 12 m/u, Karte als Attika-Tafel auf dem Triumphbogen (Sandstein + Moosband, 5,3 × 2,9 m), Kampf auf der versunkenen Plaza ≈ 28 m²; Rücktreppe 6 × 0,16 m begehbar, Vordertreppe endet 0,85 m über der Plaza → Kollider mit Stufe/Rampe. GLB 17,4 MB (dichte Moos-Textur).
