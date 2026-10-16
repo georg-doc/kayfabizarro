@@ -1,6 +1,6 @@
 # KFB Architektur R1 (V-228)
 
-Stand 14.10.2026. **Diese Seite ist die eine Karte**: wer was baut, wo die Wahrheit liegt, in welcher Reihenfolge abgenommen wird. Ältere Strukturtexte zählen nur noch, wenn sie hier genannt sind.
+Stand 14.10.2026, §6 aktualisiert 16.10. **Diese Seite ist die eine Karte**: wer was baut, wo die Wahrheit liegt, in welcher Reihenfolge abgenommen wird. Ältere Strukturtexte zählen nur noch, wenn sie hier genannt sind.
 
 ## 1 · Schichten und Zuständige
 | Schicht | Inhalt | Zuständig |
@@ -51,17 +51,13 @@ Ein Urteil gilt erst, wenn es in den Daten steht. Ein Eintrag nur im Register re
 
 Nichts geht an Georg, das nicht G4 bestanden hat.
 
-## 6 · Kritischer Pfad bis zur vorführbaren Szene
-1. **F1 Augen:** WS1, KFB_NATIVE 1:1 aus dem Eye-Rig-Studio.
-2. **Darsteller-Slot:** WS1. Wireface als zweite Quelle hinter einem Schalter.
-3. **B1 Billboard:** WS1, nach BILLBOARD_STANDARD_R2.
-4. **D1 Dialog:** WS1, liest Pool r6.
-
-Parallel dazu:
-- **Pool r6:** WS0 und Georgs Urteile.
-- **Registry-Korrektur:** Daten-Auftrag.
-
-Danach die Vorführung, auf einem kompakten Clay-Boden mit ruhigem Two-Shot.
+## 6 · Kritischer Pfad (Stand 16.10., V-342; die Schrittliste im Hub „steps“ zeigt denselben Stand)
+Erledigt und in MVP-0 aufgegangen: Host, Kartenbilder, Blasen, Pool-Leser, KFB-Augen, Billboard, Dialog. MVP-0 läuft auf `ws1-preview`.
+1. **M1 TUNE** (WS1, M1-Sitzung): WoW-Steuerung, Sprünge, Flug per Doppel-Leertaste, Raster T1–T6 (V-342). Danach **M2 Fahren** (Dragster, V-315).
+2. **L1 Licht** (WS1, Owner-Sitzung, V-329), dann **L2 Look-Lauf** (V-340/341): warmer Look B, Licht-Identität, ein Knet-Material, Fahrzeug-Aufstellung, Dioramen im Terrain. Bodenfarbe aus der Bühne (`edgePalette`), Story-Mode erst mit dem W6-Wurf.
+3. **WS0 Blender-Lauf R1** (V-336/338/341): Alien-/Orc-Reparatur, FB-Ohren v5c, Bone-Ketten + Steifigkeit, Steine-Kit, `footprint`/`edgePalette`/`practicals` je Bühne. Liefert die Eingaben für L2 Schritt 4 und für die Aliens in der ToolBox (WSA work).
+4. **Claude Design HUD R4** (V-333–335, 340): Look für HUD, Ziel-Pfeil, Radialmenü, Fluff-Pips; WS1 baut erst nach der Design-Lieferung.
+Parallel: Musikvideo R1 (WSV, V-337), Suno arc2 (V-339), Karten-Kanon (Daten).
 
 ## 7 · Abgelöste Dokumente (nur noch Archiv)
 - `START_HERE_STEERING.md`, `KFB_HUB/INDEX.md`, `KFB_HUB/10_SSOT/`;
