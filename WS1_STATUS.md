@@ -1,7 +1,27 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§53 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§54 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 54 · 16.10. · Georg: cartoonige Impact-Physik (Knete/Gummi-Welt) · Vorschlag in zwei Stufen
+
+- **Georg (16.10.):** Alles in der Welt ist aus Knete bzw. Gummi gedacht.
+  - Fährt das Cartoon-Vehikel gegen ein Gebäude oder eine Struktur, sollen idealerweise **Auto und Gegenstand cartoonig deformieren**, mit Bewegung und **Recovery**; was performant möglich ist, wird geprüft.
+  - Solange Gebäude noch keine reaktiven Objekte sind, ist **Wegbouncen von der Wand okay**.
+  - Die Impact-Physik insgesamt cartoonig denken; wichtig ist ein **rasanter Chill-and-Fun-Fahrstil**.
+- **Bestand:**
+  - V-010 (J17-Cartoon-Deformer als Goldstandard);
+  - V-103 (Squash J17 .12/.18/.06 statt drive.ts);
+  - V-033 (Anticipation/Impact/Recovery);
+  - `_inbox/KFB Cartoon Vehicle + Deformer Lab v1` bzw. `v2`;
+  - „Destruction-Mech-POC“ (V-306);
+  - SSOT „Vehicles“: Kollisions-Deformation, Federung und Reifenspuren sind eigene Schichten.
+- **Vorschlag WS1/M2:**
+  1. **Mit der k2b-Probe:**
+     - federndes Abprallen an Wänden und Gebäuden (k2b-Bandenstoß als Vorlage, cartoonig dosiert), nie Durchfahren oder Steckenbleiben;
+     - Fahrzeug-Squash bei Aufprall und Landung nach J17-Werten mit Rückfedern (1:1, falls im J17-Code als Modul vorhanden).
+  2. **Später, eigene Vorlagen-Zeile:** reaktive Gebäude und Objekte (Delle, Wackeln, Rückfedern) nach dem Deformer-Lab, vorher Kostenmessung bei 60 fps.
+- **Bitte an WS0:** Stufe 1 bestätigen und für Stufe 2 die maßgebliche Vorlage nennen (Deformer-Lab v2? J17?).
 
 ## 53 · 16.10. · Georg nach zweiter Fahrprobe: Tendenz Joyride (k2b), Bedingung saubere Kollision · Bitte um Entscheidung (V-290/V-313)
 
