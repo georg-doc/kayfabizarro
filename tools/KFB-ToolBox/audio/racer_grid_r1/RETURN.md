@@ -1,3 +1,11 @@
+## 2026-10-17 · CURRENT R2 EXECUTION OVERRIDE · DONOR-FIRST
+
+R2 source-only audit completed on this existing branch and Draft PR #413. See `R2_RETURN.md`, `R2_DONOR_AUDIT.md`, `R2_CANDIDATES.json`, `R2_PROMPTS_PROPOSED.json`, `R2_CREDIT_BUDGET.md`, `R2_TEST_REPORT.md`.
+
+**The 48-file R1 batch is NOT authorized for execution.** R2 has 27 sound roles, 20 audition-first / 7 conditional gaps, 4-role pilot 1,160 credits and all-gap plan 3,080 credits based on 40 credits/second. Source checks 27/27, duplicate pairs 20/20, static R2 18/18. 0 new audio, 0 paid credits. Existing preferred V8 idle, Audio Site and runtime owners protected. Only next gate: `WS0_SOURCE_ISOLATED_A_B_PILOT_SELECTION` (donor listening before any purchase). This is an additive execution priority change; preserve the historical R1 source and earlier Return below.
+
+---
+
 # RETURN · KFB Racer ElevenLabs Motor Grid R1 · V-378
 
 Date: 2026-10-17
