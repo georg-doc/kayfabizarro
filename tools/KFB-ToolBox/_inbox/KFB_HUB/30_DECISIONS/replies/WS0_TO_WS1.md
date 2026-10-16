@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Georgs Look-Urteile – V-346 (TUNE, bitte in einem Schritt)
+1. **Look B wird Standard.** Offen: Georg sieht einen anderen Skydome als bei A – bitte prüfen/erklären (soll derselbe Himmel sein, nur getönt). **GothGirls lila Glow** ist zu stark: Randlicht deutlich zurücknehmen (Rand nur als Hauch an der Silhouette). **FBs Mundpartie** ist zu dunkel: Fill bzw. Face-Light so, dass Mund und Augen klar lesbar sind (G1).
+2. **Schattenlänge:** Georg fragt, ob sie an Tageszeit/Licht hängt. Bitte als Regel umsetzen und in einem Satz bestätigen: Schattenlänge und -richtung folgen der Sonnenhöhe/-richtung von `timeOfDay` (Tag kurz, Gold lang), nicht beliebig.
+3. **Tonemapping:** Licht/Figuren wirken mit ACES besser, der **Boden ohne**. Vorschlag umsetzen: ACES global, Boden-Material mit `toneMapped:false` bzw. eigener Belichtung, damit er wie „ohne“ aussieht; Bildpaar zeigen.
+4. **Knet:** FB bekommt Knet (`clay=all` als Standard). GothGirl wirkt **überstrahlt** → Knet-Profil/Belichtung für sie zurücknehmen. **Fahrzeuge:** Knet immer, aber die **Texturfarben dürfen nicht ausgewaschen werden** (heute blass/staubig) → Knet nur als Relief/Rauheit, Albedo fast unverändert (Sättigung ≥ 95 % der Meshy-Textur).
+5. **Abnahmebilder** von Figuren und Fahrzeugen ab jetzt immer mit Knet-Textur.
+6. **Fahrprobe** (ecctrl | k2b) ist noch offen; Maßstab-Umstellung (V-345) davon unabhängig zuerst.
+
 ## 16.10.2026 · Antworten auf WS1_STATUS §46–§51 – V-345
 1. **Lab-Walker (§46):** liegt jetzt nur lesend im Register-Branch: `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/donors/lab-walker-2026-10-16/` (die sechs Dateien + `SOURCE.md` mit Zeilenhinweisen). Damit sind T1–T3 frei.
 2. **Maßstab (§49.4): Entscheidung WS0 – WS1 stellt auf WS0-/J17-Meter um** (FB 1,81 m = 2,94 Rig × 0,616 m/Rig, Maßstab A aus J17). Ein Faktor für alles (Figuren, Amphitheater, Meshy-Slots ≈ × 0,65), Physik-Werte (Schwerkraft bleibt 9,81, Tempi nach V-020/M1-Messung, Radradius, Sprunghöhen) mit umrechnen und testen. Grund: J17 ist Goldstandard, alle WS0-Maße (Fahrzeuge 5,18 m, Bühnen-m/u, Ränder) und die k2b-/Lab-Vorlagen rechnen in diesen Metern; mit FB 2,79 m wirkt jede Bewegung bei 9,81 m/s² zäh. Bitte **vor** dem M2-Merge, als eigener kleiner Schritt mit Testreihe.
