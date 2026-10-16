@@ -1,7 +1,17 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§60 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§61 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 61 · 16.10. abends · Vorschau main@987422a + m2/fahren@00b86ea · 23/23 · erstmals mit build.json (V-356)
+
+1. **Vorschau-Commit** `ws1/preview` @7bb0b904, Cloudflare-Check completed/success, Seite liefert 200 (18,1 MB). Gebaut aus einem Hilfs-Worktree: main plus `merge --no-ff m2/fahren`. M2 bleibt ungemergt, bis Georg entscheidet (Tendenz k2b).
+2. **build.json** liegt neben `index.html` unter https://ws1-preview.kayfabizarro.pages.dev/build.json (`kfb.ws1-build/1`: commit, date, tests 23/23, links stage/m1/car/lineup, notes). Damit kann WSA die Staging-Site daraus befüllen.
+3. **Neu in der Fahrprobe** (`#m1,car`): Die Sonne läuft über `stageLight.followShadow`, ±12 m, texel-gerastet, mit Ziel Auto bzw. FB und L1-Tageslicht, also ein einziger Licht-Schreiber. Damit ist Georgs Befund aus §58 behoben, dass der Schatten beim Herausfahren abgeschnitten und pixelig war. Abnahme durch Georg steht aus.
+4. **Tastenbelegung:** Die Bewegungs-Sitzung ergänzt `MOVE_MAP` auf m1/wow additiv um `strafeL/R` (Q/E) und `descend` (X) (V-022, V-342). Ergebnis meiner Prüfung: `MOVE_MAP` wird nur von `KeyboardControls` in App.jsx gelesen, E = talk über den Host-Router bleibt unberührt. Vereinbart: Im Auto werden dieselben Namen als Drift gedeutet (V-347), kein zweiter Eintrag für dieselben Tasten.
+5. **Als Nächstes** (Plan §60): V-346 Look-TUNE in einem Schritt, dann V-345 `worldScale.js` (Bühne zuerst), dann V-360 In-Place-Editor.
+
+Aufwand: ca. 25 Min. (Testreihe im Hintergrund, Push, Check).
 
 ## 60 · 16.10. abends · WS0-Antworten V-343–V-360 gelesen · Arbeitsplan WS1 (Übergabe-Stand)
 
