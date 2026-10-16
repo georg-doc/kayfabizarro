@@ -1,0 +1,33 @@
+name: KFB Racer Motor Grid R1 — offline contract
+on:
+  push:
+    branches:
+      - audio/kfb-racer-motor-grid-r1-v378-2026-10-17
+    paths:
+      - "media/3D_Assets/Audio/KFB Racer/grid_r1/**"
+      - "tools/KFB-ToolBox/audio/racer_grid_r1/**"
+      - ".github/workflows/kfb-racer-motor-grid-r1-validate.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile, validate and dry-run without API key
+        run: |
+          python -m py_compile tools/KFB-ToolBox/audio/racer_grid_r1/generate_elevenlabs.py
+          python -m unittest discover -s tools/KFB-ToolBox/audio/racer_grid_r1 -p 'test_*.py' -v
+          python tools/KFB-ToolBox/audio/racer_grid_r1/generate_elevenlabs.py > /tmp/kfb_racer_grid_plan.json
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/kfb_racer_grid_plan.json'))
+          assert d["mode"]=="DRY_RUN__NO_API_CALLS"
+          assert d["calls_planned"]==48
+          assert len(d["planned_files"])==48
+          print("V-378 PASS: 48 expected files, 0 API requests, 0 credits")
+          PY
