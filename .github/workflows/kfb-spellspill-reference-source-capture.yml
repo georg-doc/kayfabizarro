@@ -26,7 +26,19 @@ jobs:
             -H 'User-Agent: Mozilla/5.0' "$URL" -o /tmp/spellspill.zip
           file /tmp/spellspill.zip
           unzip -t /tmp/spellspill.zip | tail -2
-          unzip -oq /tmp/spellspill.zip -d /tmp/spellspill
+          python3 - <<'PY'
+          from zipfile import ZipFile
+          from pathlib import Path
+          src=Path('/tmp/spellspill.zip'); dst=Path('/tmp/spellspill');dst.mkdir(parents=True,exist_ok=True)
+          with ZipFile(src) as archive:
+            pngs=[f for f in archive.infolist() if not f.is_dir() and f.filename.lower().endswith('.png')]
+            if len(pngs)!=9: raise SystemExit('expected 9 PNGs, found '+str(len(pngs)))
+            for f in pngs:
+              name=Path(f.filename).name
+              if not name or '/' in name or '\\' in name: raise SystemExit('unsafe filename')
+              (dst/name).write_bytes(archive.read(f))
+          print('SOURCE_ZIP_EXTRACTED',len(pngs),'PNG files via safe flattened zipfile')
+          PY
       - name: Verify actual 9 PNGs and create contact sheet
         run: |
           python3 -m pip install --quiet pillow
