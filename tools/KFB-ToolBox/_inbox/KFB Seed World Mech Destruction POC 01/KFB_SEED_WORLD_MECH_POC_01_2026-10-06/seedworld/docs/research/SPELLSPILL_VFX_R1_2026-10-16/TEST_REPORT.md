@@ -61,3 +61,12 @@ Renderer pixel signal from same frozen scene vs baseline: single 3D 2.147%, 2D 0
 Actual screenshot visual inspection: **TUNE** for all variants: original 3D source displayed 5× is oversized/smooth/off-white, 2D actual white-alpha masks 6.5× are too weak/low-contrast against sand-colored blocks, hybrid retains oversized white geometry. No accepted Clay K1/H0/K2 parity, no actual source motion performance, no dynamic frame-by-frame KFB gameplay stress, no measured browser on Georg's device.
 **Previous failures retained** in `FX_AB_R1_EVIDENCE.md`: first run 39/39 technically green but visually invisible; second run 13/14 correctly rejected minimal 2D visibility; final pass is a **technical proof only**, not an artistic or target FPS PASS.
 Next one gate: `KFB SEED WORLD SATURATED HYBRID FX VISUAL BUDGET + TARGET-GPU REVIEW`.
+
+
+## Recovery and R2 capped hybrid source proof · 2026-10-16
+- Timeout recovery verified open Draft PR #406 and previous 50/50 source CI: `RECOVERY_2026-10-16_TIMEOUT_CHECK.md`; no data lost, main unmodified.
+- Real tested capped original-source hybrid CI [38945532821](https://github.com/georg-doc/kayfabizarro/actions/runs/38945532821) at revision `e847450a567c0e08d3842053a934d61b7b1c063a`: **16/16 assertions PASS, 3 actual screenshots, 3 measurement rows**; [artifact 12066121184](https://github.com/georg-doc/kayfabizarro/actions/runs/38945532821/artifacts/12066121184), ZIP SHA-256 `1370cebfbb31ee887e72a1e77183eb02585b140b4409b50809582ed4e3fefb41`.
+- Original source damage invariant under NONE/C/D: 12 rockets, 90 cell losses, 2 cascades, 178/256 debris, source smoke 195/200, VFX 584/584. No new damage writer.
+- Hybrid C: 9 3D + 186 original Brackeys mask 2D; 1,464 smoke triangles, 4.222% changed pixels. Budget D: 3 3D + 11 2D (cap 3+28, screen tile 110px) = 284 smoke triangles, 0.415% changed pixels; **81% less smoke-specific geometry**, but virtually unchanged massive scene geometry and 145 draw calls each.
+- **Technical budget PASS only.** Screenshots opened: D removes original C giant white sphere but also removes nearly all desired visible smoke. Human Clay/style PASS = **NO**, actual GPU performance = **NOT_RUN**, software-renderer frame timing not suitable for target FPS claim.
+- Full evidence and next gate: `FX_BUDGET_R2_EVIDENCE_2026-10-16.md` and source metadata `SOURCE.json.fxBudgetR2`. Prior R1 50/50 unchanged. Do not re-test the whole R1 matrix for doc-only updates.
