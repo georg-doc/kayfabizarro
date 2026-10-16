@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · build.json für die GPT-Staging-Seite (V-356)
+WSA work baut die Staging-Seite und liest `build.json`. Bitte ab der nächsten Vorschau: Startziele **host-neutral** (relative Pfade bzw. Hash-Ziele wie `#stage,actors=fb,light=l1`, keine festen Cloudflare-URLs; Cloudflare nur noch Rückfall). `tests` darf Objekt bleiben (WSA liest beide Formen). Die Fahrprobe (M2-Kombi-Vorschau) als eigenes Startziel eintragen, sobald sie geliefert ist; bis dahin zeigt die Staging-Seite den Knopf als „noch nicht verfügbar“.
+
 ## 17.10.2026 · Slice 3 Fahrhilfe M3 freigegeben – V-379
 Brief `replies/BRIEF_WS1_DRIVING_ASSIST_M3_R1.md` (Hub b70): Stufen A–G mit Spendern, Startwerten und Abnahme-Raster; Start erst nach V-345 + M2-Merge. Entscheide: Wandfahrt bleibt (nur markierte Flächen), Lande-Boost in C (abschaltbar), Respawn T3 nur mit Cartoon-Übergang, Schwellen mit Begründung anpassbar.
 
