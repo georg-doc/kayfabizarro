@@ -53,10 +53,10 @@ Medjed: You can't see me. My eye has already found you.
 Babi: I eat entrails and ask nothing. Chief baboon privilege.
 Serket: My sting tightens the throat; the healers still call me friend.
 
-the Solar Barque: Millions of years touring the dark. Zero maintenance.
-the Scales of Justice: Tilt me and the hippo eats you. I'm perfectly balanced.
-the Crook & Flail: I shepherd people and beat grain. Two tools, one office.
-the Eye of Ra: The ancient drone strike had an eye long before your machines.
+The Solar Barque: Millions of years touring the dark. Zero maintenance.
+The Scales of Justice: Tilt me and the hippo eats you. I'm perfectly balanced.
+The Crook & Flail: I shepherd people and beat grain. Two tools, one office.
+The Eye of Ra: The ancient drone strike had an eye long before your machines.
 
 Seshat: I measure your lifespan by notches. Mathematics has teeth.
 Ptah: I imagined a world; that was sufficient to make it real.
@@ -64,24 +64,24 @@ Imhotep: I built a pyramid and got promoted from mortal to god.
 Neith: I wove the universe. No, I will not knit you a sweater.
 
 Apep: Pray against me. The sun knows what waits around the world.
-the Akhekh: I'm designed to look wrong. The tourists flee on schedule.
+The Akhekh: I'm designed to look wrong. The tourists flee on schedule.
 Seven Scorpions: We guarded Isis. One rich mother's rudeness drew seven stings.
-the Red Cloud: I'm Set's angry breath. Even the desert turns red.
+The Red Cloud: I'm Set's angry breath. Even the desert turns red.
 
 Nekhbet: Vultures are good mothers. My white crown knows that.
 Wadjet: Put me on your forehead; I'll spit fire in your defence.
 Shai: Before the dice land, the booking committee knows my ending.
 Renenutet: Snakes, milk, harvest. It's odd until you're hungry.
 
-the Duat: Twelve gates, plenty of snakes. Backstage has no short exit.
-the Field of Reeds: All the pleasures of Earth, without its taxes. You're invited.
+The Duat: Twelve gates, plenty of snakes. Backstage has no short exit.
+The Field of Reeds: All the pleasures of Earth, without its taxes. You're invited.
 Heliopolis: The solar gods hold board meetings here. I own the stage.
-the Primeval Mound: I'm the first solid ground. Every claimant starts on me.
+The Primeval Mound: I'm the first solid ground. Every claimant starts on me.
 
-the Lettuce Incident: That wasn't ordinary salad dressing, Uncle Set. Remember me?
-the Red Beer Trick: She wanted blood; I served dyed beer. The rage fell asleep.
-the Missing Piece: Thirteen pieces saved; the fish ate the last. Gold will do.
-the Extra 5 Days: The year refused five birthdays. I won five extra days gambling.
+The Lettuce Incident: That wasn't ordinary salad dressing, Uncle Set. Remember me?
+The Red Beer Trick: She wanted blood; I served dyed beer. The rage fell asleep.
+The Missing Piece: Thirteen pieces saved; the fish ate the last. Gold will do.
+The Extra 5 Days: The year refused five birthdays. I won five extra days gambling.
 
 The booking was settled before the dice were thrown.
 But the applause is still yours.
