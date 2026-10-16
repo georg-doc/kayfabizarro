@@ -26,3 +26,18 @@ Official document existence and quoted hearing statistics were cross-checked by 
 
 ## No-go
 Do not treat these static checks as fact-check approval for any allegations or as consent to overwrite existing published KFB card text.
+
+
+## Additive verification · societal-psychology intake · 2026-10-16
+These are **exact-branch static/document-presence tests only**, not peer review, source-text verification, video playback, or clinical/social-science validation.
+1. PASS — Four exact-branch context files fetched
+2. PASS — Original source rows S01–S08 retained
+3. PASS — New source rows S09–S18 retained
+4. PASS — Exact YouTube URLs retained with unavailable-content caveat
+5. PASS — ISBN matched to correct Frank Höfer 2026 book, not homonyms
+6. PASS — Desmet, scientific comparator and methodological separation present
+7. PASS — Original cards and six new research-only prompts retained
+8. PASS — One R2 research gate / no deck/runtime activation
+
+**Additional checks:** 8/8 PASS. Cumulative indexed source candidates **18**, of which two video URLs have **unverified content**. Original 12 unapproved KFB seeds preserved plus **six additional conceptual prompts** (18 research prompts, zero accepted/published cards).
+Full 350-page Höfer book reviewed: 0. Actual supplied YouTube videos watched: 0 of 2. New House hearing page checked: 1; full witness testimony documents read: 0. Desmet author essays and linked academic abstracts/reviews inspected selectively; full academic literature review: 0. New unit/runtime/browser tests: 0. Direct Cloudflare Stage proof: 0; no Stage/Live claim. Four files read and inspected on target branch, with all intended source-separation fields present.
