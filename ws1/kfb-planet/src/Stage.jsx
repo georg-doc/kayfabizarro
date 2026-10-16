@@ -28,6 +28,7 @@ import { lightAt, parseTod, skyAtTod, lookB, skyLookB, LIGHT_INTENT } from './st
 import { createActorRim } from './modules/actorRim'
 import { createClayLook } from './modules/clayLook'
 import { createVehicleLineup } from './modules/vehicleLineup'
+import { mountCompareBar } from './compareBar'
 import { createContactBlobs } from './modules/contactBlob'
 import { createPracticals } from './modules/practicals'
 export { ORBIT } // Prüfungen lesen die Kamera-Werte wie bisher über Stage
@@ -201,6 +202,7 @@ function Sky() {
 
 
 export default function Stage() {
+  useEffect(() => (L1 ? mountCompareBar({ hash, lightState }) : undefined), []) // Vergleichsleiste für Georgs Abnahme (nur mit light=l1)
   // Die Spielerwahl der Bühne: Zurufe des Publikums erscheinen als Blase vorn am Bildrand (Anker „player“ vor der Kamera).
   // Nur solange die Bühne steht; beim Abbau zurück (Prüfer 8, Befund 6: kein Seiteneffekt beim Import).
   useEffect(() => { const prev = playerState.pos.clone(); playerState.pos.set(...PLAYER_POS); return () => { playerState.pos.copy(prev) } }, [])
