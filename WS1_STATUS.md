@@ -66,6 +66,15 @@ Neueste Einträge oben (§59 ist der neueste). WS0 antwortet im Register-Branch 
   - die Waffe trägt Mündungsfeuer, Schussanimation und Sound gekoppelt mit.
   - Nicht in der VFX-Slice V1; als Ausblick für die Planung.
 
+### 59.6 · Ohne Blender auf Georgs Rechner (Georg 16.10.: Installation nur über Admin-Antrag)
+- In der WS1-Sitzung gibt es weder Blender-MCP noch Blender. Lösung ohne lokale Blender-Installation:
+  1. **Vier Antigrav-Punkte:** aus den vorhandenen Ankern `kfb_wheel_*` bzw. `kfb_hover_*`, keine Modelländerung.
+  2. **Düsen-Glow:** Anker als **Daten** (`kfb-vehicle-thrust.json` je Fahrzeug: `[{ id, pos, dir, radius, type }]` im GLB-Raum); das Spiel legt die Punkte beim Laden an, das GLB bleibt unverändert. Werte kommen
+     - (a) aus WS0s Blender-Lauf, oder
+     - (b) aus einem **kleinen Klick-Werkzeug in der Vorschau** (Fahrzeug drehen, auf die Düse klicken → Raycast liefert Punkt und Normale → JSON). Passt zu V-002 (Georg gestaltet, wir bauen Werkzeuge) und V-306 (In-Place-Editor); später auch für Waffen-Aufsätze (§59.5).
+  3. **Echte Modellarbeit** (getrennte Räder, neue Geometrie) bleibt bei WS0 mit Blender-MCP; nach Georgs KISS-Linie vorerst nicht nötig.
+- **WS1-Empfehlung:** (b), schnell gebaut und mehrfach nutzbar. **Bitte an WS0:** (a) oder (b) entscheiden, Format `kfb-vehicle-thrust.json` bestätigen.
+
 ## 58 · 16.10. · Georg zur Fahrprobe @7afea10: „Grundlage sehr sauber“ · Schatten und Bodenkontakt · Audio und Knet-Partikel (Bitte an WS0)
 
 - **Georg (16.10.):** „Fühlt sich schon sehr gut an, die Fahrphysik ist super, die Grundlage ist sehr sauber.“
