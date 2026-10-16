@@ -14,3 +14,12 @@
 - `VISUAL_SOURCE_PROOF.md` separates observed smoke/debris/water/tornado styles from unverified source shader implementation.
 - Prior original Claude Design white-alpha/4×4 atlas source recovery linked in `EXISTING_ALPHA_MASK_ATLAS_CATALOG.md`; reuse before new draw-call or particle-pool owners.
 - Changed workflow trigger to manual / actual workflow revision; routine document commits no longer repeatedly download Dropbox source art.
+
+
+## 2026-10-16 · Actual source-only FX A/B/C implemented and measured
+- Added bounded nonproduction `seedworld/fx-ab/{index.html,comparison.mjs,proof.mjs}`, using exact existing POC `sw-world`, `sw-mesh`, `sw-destruct`; actual 3D dust instance geometry/material and original Brackeys `smoke_03_a.png`. New GitHub Action workflow for same-scene A/B/C.
+- Original mask shown alone, original existing 3D mesh shown alone, then one/four/whole-block source rockets compared across baseline/3D/2D/hybrid. Original damage/cell/physics/FX rendering modules untouched; no new World runtime.
+- First CI `38924108695` 39/39 static source tests but visual FX nearly invisible; second CI `38925577044` 13/14 correctly failed visual pixel gate; final CI `38926541781` **50/50 technical success**, 14 screenshots and 12 rows, source isolated before comparison. Actual 2 cascades/90 cell losses under 12 real hit events.
+- Real headless measurements show smoke-specific triangles down 20× in 2D, while overall frame times are not trustworthy KFB GPU FPS; VFX pool again saturated 584/584. Pixel tests pass but style/clarity does not yet meet desired KFB Clay quality.
+- Added `FX_AB_R1_EVIDENCE.md` and `FX_AB_R1_FINAL_RESULT.json` for source-fixed result/negative tests. No Site/Stage, no merge/Live; do not accept WB2 R5.
+- Single next productive gate now `KFB SEED WORLD SATURATED HYBRID FX VISUAL BUDGET + TARGET-GPU REVIEW`: measured screen-space budgets, authored palette, bounded near Clay lobes, original mid/far masks, and real on-device benchmarks.
