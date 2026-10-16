@@ -1,0 +1,280 @@
+{
+  "schema": "kfb.audio.racer_grid.r2.candidates.v1",
+  "date": "2026-10-17",
+  "decision": "V-378 R2 donor-first proposal",
+  "implementation": "PLANNING_ONLY__NO_ELEVENLABS_CALLS",
+  "owner": "existing KFB Audio & Soundscape; KFB Racer source lane on Draft PR #413",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceMainHead": "904f0e95968999c7e8af77cc6667161bd4f3f788",
+  "branch": "audio/kfb-racer-motor-grid-r1-v378-2026-10-17",
+  "r1Status": "R1 48-file generation contract remains archival/frozen; do not run --execute while R2 curation pending",
+  "auditBasis": "GitHub main recursive-by-directory name/size/blob existence, not listening",
+  "statuses": {
+    "AUDITION_EXISTING": "Source exists, sonic eligibility NOT proven",
+    "GENERATE_IF_DONOR_FAILS": "Source analogue exists, missing requested behavior; generate ONLY after isolated listening rejects reuse"
+  },
+  "generation": {
+    "model_id": "eleven_text_to_sound_v2",
+    "prompt_influence": 0.85,
+    "output_format": "mp3_44100_128",
+    "plannedVariantsPerGap": 2,
+    "billingAssumptionCreditsPerSecond": 40,
+    "paidExecutionAuthorized": false
+  },
+  "slots": [
+    {
+      "id": "M01",
+      "label": "Idle",
+      "primaryDonor": "media/3D_Assets/Audio/KFB Racer/Seamless_10–12_secon_#1-1789884544910.mp3",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Georg-preferred Suno V8 idle; DO NOT replace without new listening choice."
+    },
+    {
+      "id": "M02",
+      "label": "Low",
+      "primaryDonor": "media/3D_Assets/Audio/KFB Racer/KFB_V8_Load_Loop_10s_48k.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Existing steady-load synthetic master; pair with human-preferred idle."
+    },
+    {
+      "id": "M03",
+      "label": "Mid",
+      "primaryDonor": "media/3D_Assets/Audio/KFB Racer/Seamless_10_second_l_#1-1789885228084.mp3",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Existing load candidate; no new independent engine identity."
+    },
+    {
+      "id": "M04",
+      "label": "High steady",
+      "primaryDonor": "media/3D_Assets/Audio/KFB Racer/KFB_V8_Rev_Sweep_8s_48k.wav",
+      "disposition": "GENERATE_IF_DONOR_FAILS",
+      "durationSecondsIfGenerated": 8,
+      "why": "Rev sweep is NOT proof of steady high RPM; try speed/pitch reuse first."
+    },
+    {
+      "id": "M05",
+      "label": "Coast steady",
+      "primaryDonor": "media/3D_Assets/Audio/KFB Racer/KFB_V8_Load_Loop_10s_48k.wav",
+      "disposition": "GENERATE_IF_DONOR_FAILS",
+      "durationSecondsIfGenerated": 8,
+      "why": "Load bed cannot establish true overrun. First try filtering/gain/pitch reuse."
+    },
+    {
+      "id": "H01",
+      "label": "Hover idle",
+      "primaryDonor": "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/spaceEngineLow_000.ogg",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Only filename/source existence verified; compare also S050C DeepEngineLoop."
+    },
+    {
+      "id": "H02",
+      "label": "Hover thrust",
+      "primaryDonor": "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/thrusterFire_000.ogg",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Compare S050C ThrustLoop; do not assume seamless loop."
+    },
+    {
+      "id": "H03",
+      "label": "Flight cruise",
+      "primaryDonor": "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/spaceEngineLarge_000.ogg",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Check sustained pitch/length and bass/sub-bass overlap with music."
+    },
+    {
+      "id": "H04",
+      "label": "Hyperspeed sustain",
+      "primaryDonor": "media/3D_Assets/Audio/Classic Arcade SFX Complete/Scifi/Warp.wav",
+      "disposition": "GENERATE_IF_DONOR_FAILS",
+      "durationSecondsIfGenerated": 8,
+      "why": "Warp is likely a transition, not a constant-pitch sustain; gap candidate."
+    },
+    {
+      "id": "T01",
+      "label": "Backfire",
+      "primaryDonor": "media/3D_Assets/Audio/Retro/explosion_quick.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Very short candidate; use gain/EQ and exhaust character only after listening."
+    },
+    {
+      "id": "T02",
+      "label": "Shift",
+      "primaryDonor": "media/3D_Assets/Audio/Machines/hydraulic_up.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Machine movement only rough mechanical analogue, may fail toy-gear identity."
+    },
+    {
+      "id": "T03",
+      "label": "Boost",
+      "primaryDonor": "media/3D_Assets/Audio/Classic Arcade SFX Complete/Scifi/Booster.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Can combine with existing whoosh. Avoid generating another stock boost."
+    },
+    {
+      "id": "T04",
+      "label": "Drift start",
+      "primaryDonor": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_steady_tire_#1-1791082443239.mp3",
+      "disposition": "GENERATE_IF_DONOR_FAILS",
+      "durationSecondsIfGenerated": 1.5,
+      "why": "Tire roll donor is not evidence of isolated onset squeal."
+    },
+    {
+      "id": "T05",
+      "label": "Soft landing",
+      "primaryDonor": "media/3D_Assets/Audio/kenney_impact-sounds/Audio/impactSoft_heavy_000.ogg",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Try soft clay landing layering before generation."
+    },
+    {
+      "id": "T06",
+      "label": "Squishy wall bump",
+      "primaryDonor": "media/3D_Assets/Audio/Other/elastic_twang.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Blend with soft impact; spring tail may be suitable."
+    },
+    {
+      "id": "T07",
+      "label": "Re-grip",
+      "primaryDonor": "media/3D_Assets/Audio/Other/whoosh_1.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Audition restrained skid release; might need reuse of friction recording."
+    },
+    {
+      "id": "T08",
+      "label": "Sustained skid",
+      "primaryDonor": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_car_tire_ro_#1-1791082331112.mp3",
+      "disposition": "GENERATE_IF_DONOR_FAILS",
+      "durationSecondsIfGenerated": 8,
+      "why": "Tire rolling is not sustained asphalt skid; earlier oscillator friction rejected."
+    },
+    {
+      "id": "T09",
+      "label": "Gravel/surface bounce",
+      "primaryDonor": "media/3D_Assets/Audio/Footsteps/foley_footstep_gravel_1.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Layer with impact, do not treat footstep as directly accepted car material."
+    },
+    {
+      "id": "T10",
+      "label": "Hard crash",
+      "primaryDonor": "media/3D_Assets/Audio/S050C-ArcadeShooter/DryStereo/HitTankWalls.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Compare spatial/frequency role; S050C own license must be checked."
+    },
+    {
+      "id": "D01",
+      "label": "Deep impact",
+      "primaryDonor": "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/lowFrequency_explosion_000.ogg",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Existing low-frequency source; headroom/provenance check before layering."
+    },
+    {
+      "id": "D02",
+      "label": "Large explosion",
+      "primaryDonor": "media/3D_Assets/Audio/S050C-ArcadeShooter/DryStereo/ExploRetroDeep.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Compare Retro explosion_small/medium/large and Classic Arcade duplicates."
+    },
+    {
+      "id": "D03",
+      "label": "Clay fracture",
+      "primaryDonor": "media/3D_Assets/Audio/Combat and Gore/crunch_splat.wav",
+      "disposition": "GENERATE_IF_DONOR_FAILS",
+      "durationSecondsIfGenerated": 2.5,
+      "why": "Crunch/splat alone does not prove granular clay-body fracture."
+    },
+    {
+      "id": "D04",
+      "label": "Wood/soft debris",
+      "primaryDonor": "media/3D_Assets/Audio/Materials/cardboard_tear.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Foam/cardboard/wood Foley only provisional material donor."
+    },
+    {
+      "id": "D05",
+      "label": "Metal impact/break",
+      "primaryDonor": "media/3D_Assets/Audio/Materials/metal_clang.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Combine with Kenney heavy metal impacts; avoid duplicated new SFX."
+    },
+    {
+      "id": "D06",
+      "label": "Stone/debris",
+      "primaryDonor": "media/3D_Assets/Audio/Materials/stone_push_short.wav",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Movement sound; add grain/crumble only if source test fails."
+    },
+    {
+      "id": "D07",
+      "label": "Energy detonation",
+      "primaryDonor": "media/3D_Assets/Audio/kenney_sci-fi-sounds/Audio/explosionCrunch_000.ogg",
+      "disposition": "AUDITION_EXISTING",
+      "durationSecondsIfGenerated": null,
+      "why": "Layer with existing forceField/laser instead of new generic pulse."
+    },
+    {
+      "id": "D08",
+      "label": "Fluff harvest/dispersal",
+      "primaryDonor": "media/3D_Assets/Audio/ElevenLabs Audio/DSGNBass-power_up_bubbles_bas-Elevenlabs.mp3",
+      "disposition": "GENERATE_IF_DONOR_FAILS",
+      "durationSecondsIfGenerated": 2.5,
+      "why": "Existing bubble/bass candidate; custom soft rolling fluff identity if not sufficient."
+    }
+  ],
+  "pilotIds": [
+    "H04",
+    "T04",
+    "D03",
+    "D08"
+  ],
+  "alternateExtra": [
+    "warp-entry-one-shot 2s ×2 =160 credits",
+    "warp-exit-one-shot 2s ×2 =160 credits",
+    "new shared cartoon-engine-identity 10s ×2 =800 credits ONLY if V8 identity is unsuitable",
+    "new hover signature 8s ×2 =640 credits ONLY if existing space-engine donor unsuitable"
+  ],
+  "budget": {
+    "slotCount": 27,
+    "auditionFirst": 20,
+    "conditionalGapCount": 7,
+    "pilotIds": [
+      "H04",
+      "T04",
+      "D03",
+      "D08"
+    ],
+    "pilotSecondsPerVariant": 14.5,
+    "pilotCostAt40": 1160,
+    "conditionalAllGapSecondsPerVariant": 38.5,
+    "conditionalAllGapCostAt40": 3080,
+    "optionalExtraCredits": 1760,
+    "maxPlannedEnvelopeIfAllGapsAndExtras": 4840,
+    "availableUserScreenshotCredits": 90000,
+    "estimatedUnspentAfterBase": 86920
+  },
+  "notices": [
+    "No audio quality accepted without listening",
+    "No new runtime, soundbed, AudioContext or Site",
+    "Do not invent the full master KFB engine from the existing rev sweep",
+    "Keep canonical older preferred V8 Idle",
+    "ElevenLabs API costs must be checked at execution; hard stop by budget"
+  ]
+}
