@@ -1150,3 +1150,26 @@ Stop before any profile promotion, per-eye feature work, Blender cleanup, merge 
 - no newer EyeRig batch export found in Dropbox/current owner branch;
 - safe import seam verified: Medium batch import updates matching Medium profiles only and preserves Large/Legacy;
 - current gate remains `EYE_RIG_PROFILE_RECOVERY_01`: export from old Stage LocalStorage if still present, compare, then persist/import the newest proven batch.
+
+
+## 2026-10-17 · Norman Prototype Dummy · OPEN_DESIGN candidate
+
+- Georg clarified that Norman's character design is **not fixed**;
+- added exact KayKit Prototype Bits `Dummy.glb` as `Norman · Prototype Dummy` in the existing Rig_Medium roster;
+- Medium count: **56**;
+- exact source: `fe9d95e20d660261370c02cb6bca0afe439c0979` · blob `295357f6e031c47689d14f71ae2bcfaacbd05883` · Rig_Medium · 23 joints · 0 embedded animations;
+- original eyes + mouth are painted into the source head texture, so cleanup reuses existing `texclean.js` and stays reversible/runtime-only;
+- added Norman-specific **Source only / Face candidate** compare;
+- reused EyeRig v6 for white eyes / black pupils / dark-yellow lid path;
+- reused BrowRig v2 for thick even dark-yellow block brows;
+- added source-pinned yellow cartoon/clay mouth catalog with **20** forms from commit `ea603d31d…` / blob `fcfaddb7…`;
+- added live lid-color, brow and mouth fine-tuning controls inside the same workbench;
+- existing storage remains `kfb.toolbox.eye-rig-batch.v0`;
+- focused source/contract checks: **40/40 PASS**;
+- JS syntax: **3/3 PASS**;
+- cleanup geometry preflight: **5/5 PASS**;
+- integrated browser/WebGL proof: **NOT_RUN**;
+- Site publish/update: **PENDING Site-capable WS0/WSA**;
+- handoff: `docs/WS0_HANDOFF_NORMAN_2026-10-17.md`;
+- next gate: `NORMAN_TOOLBOX_SITE_FINE_TUNE_01`;
+- no merge / no Live promotion.
