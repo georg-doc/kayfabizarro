@@ -5190,6 +5190,21 @@
    "applies": "S0 bis Slice 3"
   },
   {
+   "id": "V-379",
+   "date": "2026-10-17",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Slice 3 Fahrhilfe M3 auf K2B (Brief replies/BRIEF_WS1_DRIVING_ASSIST_M3_R1.md, Hub b70), Start nach V-345 + M2-Merge, Stufen in Reihenfolge: A fester Schritt 120 Hz + Interpolation bzw. Rapier-CCD; B Anti-Roll, tiefer virtueller Schwerpunkt, Luftlage (neu bauen); C Landehilfe in Fahrtrichtung inkl. kurzem lenkbarem Lande-Boost; D Anti-Steckenbleiben T1 Nudge, T2 Aufrichten, T3 weicher Respawn nur mit Cartoon-Übergang (nie harter Schnitt); E Deformer v2 (CAR_CHILL_LIGHT + GPU-Kern tyre-deformation, WALL_IMPACT); F Rampen-/Wandzonen, Wandfahrt auf zwei Rädern nur an markierten Flächen (Georg V-351, gegen Recherche-Rat); G Präsentations-Tricks optional erst nach PASS A–F. Jeder Test bei ≥ 50 und gedrosselt 30 fps. Warp-Fahrt, Hero-Kamera, Loops/Magnet nicht Teil.",
+   "values": {},
+   "owner": "WS1 (Bewegungs-Sitzung)",
+   "check": "Abnahme-Raster G-A1 bis G-G im Brief",
+   "source": "replies/BRIEF_WS1_DRIVING_ASSIST_M3_R1.md · Recherche WSA_CARTOON_RACER_RESEARCH_R1 (PDF auf main)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Recherche und Spender sind da; Überschlag, Festfahren und Tunneln sind die größten Spaßkiller.",
+   "applies": "nach V-345 + M2-Merge"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5262,7 +5277,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:702",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:704",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

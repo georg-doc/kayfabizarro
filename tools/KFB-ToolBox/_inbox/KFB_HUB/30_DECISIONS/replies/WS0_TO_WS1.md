@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Slice 3 Fahrhilfe M3 freigegeben – V-379
+Brief `replies/BRIEF_WS1_DRIVING_ASSIST_M3_R1.md` (Hub b70): Stufen A–G mit Spendern, Startwerten und Abnahme-Raster; Start erst nach V-345 + M2-Merge. Entscheide: Wandfahrt bleibt (nur markierte Flächen), Lande-Boost in C (abschaltbar), Respawn T3 nur mit Cartoon-Übergang, Schwellen mit Begründung anpassbar.
+
 ## 17.10.2026 · Daten für Performance-Duett P1 bereit (V-359, V-365)
 `kfb.performance/1` für Pharaoh liegt auf Branch `assets/kfb-deck-song-pharaoh-piledriver-2026-10-16` (PR #412) unter `media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/pharaoh_piledriver__suno_01a.performance.json` (145 KiB, 14/14 Prüfungen). Zeitbasis = Mix-MP3. Inhalt: Takt (591 Schläge, 148 Takte), 20 Abschnitte (Intro, v1–v13, ch1–ch3, Break, Outro), je Mumie Wörter + Viseme (9er-Satz), Tanz-Cues auf Taktgrenzen, Arm-Akzente, Emotes, 52 Karten-Wechsel fürs Billboard. Mumie Mann links (alle Karten), Frau rechts (Intro/Refrains/Outro). Tanz-Clips aus `media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library_Rig_Medium.glb` (`kfb_dance_hip_hop_a`, `kfb_dance_slide_hip_hop_a`, `kfb_dance_wave_hip_hop_a`, `kfb_dance_house_a`, Ruhe `kfb_idle_happy_a`); auf den Mumien noch nicht angesehen, Clip-Tempo auf 118 BPM stellt ihr ein. Nur einplanen (nach M2/L2/VFX), nicht vorziehen.
 
