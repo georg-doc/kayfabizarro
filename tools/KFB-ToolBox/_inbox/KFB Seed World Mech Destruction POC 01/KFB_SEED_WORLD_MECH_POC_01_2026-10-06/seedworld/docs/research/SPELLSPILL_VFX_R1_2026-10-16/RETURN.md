@@ -68,3 +68,13 @@ Georg authorized progression beyond reference research. **A real source-backed P
 **Read-first handoff:** `FX_SHARDS_R3_METHOD_2026-10-16.md` · `FX_SHARDS_R3_EVIDENCE_2026-10-16.md` · updated `SOURCE.json.fxShardsR3`, `TEST_REPORT.md`, `CHANGELOG.md` and this Return. Original `sw-destruct`, `sw-fx`, combat and World physics unchanged. No asset redistribution, Site/Stage, main merge or Live.
 
 **Exactly one next gate:** `KFB SEED WORLD PLANAR DEBRIS + CLAY/SMOKE VISUAL MOTION / TARGET-GPU REVIEW`—bounded animated source-based cascade proof with real accepted Clay surface and screen-space budgets, followed by real browser GPU p50/p95/p99 and human style PASS/TUNE/FAIL. Do not treat polygon savings alone as sufficient for adoption.
+
+## R4 direction & Claude Code / WSA intake · 2026-10-16 · GitHub-first
+
+**New explicit human design direction, replacing any mandatory-Clay-smoke inference:** Georg clarified that, even in a Claymation-looking world, explosions, smoke and small shards **do not have to be Clay textured or 3D**. Optimise *mostly 2D modular cartoon destruction* with optional cheap instanced spheres in the impact core, genuine planar angular chips, animated bounce, trails/threads and material-specific responses. Preserve visual rhythm, eye candy and actual performance under cascades, rather than forcing all particles through a 3D Clay shader.
+
+**Full executable *brief*, not implementation:** `CLAUDE_CODE_WSA_2D_FIRST_MODULAR_DESTRUCTION_FX_R4_BRIEF_2026-10-16.md` in this same research folder is the read-first GitHub handoff for Claude Code / Work–WSA. Its G/H/I candidates are 2D-first balanced, 2D-first with sparse optional hero debris and material-reactive proof (wood/stone/metal/fluff), assembled as Ground/AOE → Impact Core → Shards → Smoke → Secondary Motion layers. Source material, actual collision and damage ownership remain unchanged.
+
+**R3 evidence preserved:** R3 real CI `38947639843` **24/24 technical PASS**, but **visual TUNE** and target Mac GPU **NOT_RUN**; no retest or R4 implementation in this documentation-only check-in. The binding R4 brief is additive; it supersedes the *visual-design assumption* of mandatory near-3D clay smoke without overwriting historical R3 measured results.
+
+**Exactly one next gate:** Claude Code / WSA **R4 2D-FIRST MODULAR DESTRUCTION FX SOURCE/MOTION COMPARISON** in the existing Seed World `fx-ab/` research fixture, followed by actual target-GPU/human style review. WorldBuilder R4 remains STOPPED/F-R39 FAIL, no WorldBuilder R5 authority, no second FX/physics owner, no PR merge or Site/Stage deployment. GitHub is primary for cross-agent handoff; KFB Production Control mirrors the decision/reference only.
