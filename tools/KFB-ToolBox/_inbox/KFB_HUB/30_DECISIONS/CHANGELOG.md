@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · Triplet-Songs angehalten, Münder
+- V-325: Batch 8 v2 + Batch 9 zurückgestellt (Hub b35–b43 markiert), erst Opener-Recherche (anekdotische Opener) und dramaturgischer Bogen statt Verteilregel.
+- V-326 (TBD): neue Mund-Sätze + Mund-Plugin mit Tönung je Figur.
+
 ## 2026-10-16 · Deck-Songs im Hauptstand
 - PR #405 (assets/kfb-deck-songs-2026-10-15) von Georg gemergt → main @2ecac226: 48 mp3 unter media/3D_Assets/Sounds/kfb_deck_songs/, jukebox.json mit 4 Deck-Songs; Raw-Abruf geprüft (Wrinkle-Mix lädt). Asset-Registry-Workflow sollte einen Bot-PR öffnen.
 

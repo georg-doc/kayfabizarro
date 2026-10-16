@@ -302,6 +302,8 @@ d('V-321','2026-10-15','Fahren','RULE','Racer-Größe: etwas kleiner als die Ohr
 d('V-322','2026-10-15','Bühne','RULE','Bühnen v2 PASS (Hub st03), Ausnahme Retro-Arcade: das Billboard kommt VOR das Galaxy-Neonschild (verdeckt es), nicht darüber. Grüne Ruinen und Alien-Werkstatt PASS (st04).', 'WS0 (Asset) → WS1', 'Arcade-Bild v3', 'Georg 15.10.')
 d('V-323','2026-10-15','Bühne','RULE','Meshy-Community (Hub cm01): Marmor-Terrassen und Portal-Ruine werden Bühnen, Grüne Ruinen bleibt dabei; der Ödland-Käfer wird Fahrzeug (Car).', 'WS0 (Bühnen, Fahrzeug-Intake) → WS1', 'Bühnenbilder + Fahrzeug', 'Georg 15.10.')
 d('V-324','2026-10-15','Dialog','PASS','Stimmen-Besetzung R1 PASS (Hub vo02): FrizzleBob am_michael, GothGirl bf_emma, Lord Hunky onyx60+george40, Lady Dory isabella60+bella40, Orc fenrir50+lewis50, Georg-Chronist bm_daniel, 28 KayKit-Nebenfiguren laut voice_casting.r1.json. Aussprache-Liste (Rousseau, Blödsinn, Kayfabizarro, deutsches Intro) folgt.', 'WS0 → WS1 (Einbau Stimmen)', 'Hub vo02', 'Georg 15.10.')
+d('V-325','2026-10-16','Dialog','RULE','Triplet-Songs: Batch 8 v2 und Batch 9 werden NICHT umgesetzt, bis Opener und Dramaturgie durchdacht sind. Problem: Opener werden mechanisch nach Heuristik verteilt (gleiches Raster auf denselben Zeilennummern), ohne Storytelling-Absicht – z. B. Epistemic Sabotage. Neu: (1) Opener-Recherche erweitern um anekdotische Opener („I read in a book“, „a friend told me recently“, „I found a note“, „someone wrote in my diary“, „a politician once said“ …); (2) Opener flexibel und bewusst einsetzen, als Meta-Storytelling in einem dramaturgischen Bogen je Track, nicht nach Verteil-Regel. Im Song „Hilfe, ich bin ein Mensch!“ hat Georg den deutschen Titel absichtlich herausgenommen, weil die stumpfe Aneinanderreihung mit dem englischen Titel keinen Sinn ergab.', 'WS0 (Recherche/Modell) · Georg (Recherche im Web-Chat)', 'Opener-Dramaturgie-Modell + Probe-Track', 'Georg 16.10.', supersedes='V-280 (Opener-Familien als Verteilregel, bleibt als Mindestabstand)')
+d('V-326','2026-10-16','Figuren','TBD','Neue Mund-Sätze von Georg (main: media/3D_Assets/Textures/FrizzleBob-Mouths_PNGs) und Idee eines Plugins, das Münder flexibel je Charakter bzw. Farbe anpasst (Lippen-/Hauttönung). Die Integration der Münder war bis auf die Farbe schon sehr gut und überzeugend; weiterverfolgen.', 'WS0 (Inventur, Plugin-Plan) → WSA', 'Mund-Inventur + Plugin-Plan', 'Georg 16.10.')
 d('V-084','2026-10-10','Claude Design','FAIL','Town-Massemodell R1: Claude Design baut keine 3D-Geometrie mehr.', 'Steuerung', '-', 'docs/critic/claude-design/town-massemodell-r1-FAIL_2026-10-10/')
 # --- WARUM und WANN (Georg 11.10.: „why & when für decisions“) ---
 # WANN = Datum der Entscheidung (Feld date) + ab wann bzw. in welcher Phase sie gilt (applies).
@@ -592,6 +594,8 @@ WHY = {
  'V-322':('Die Karte ist der Star der Bühne, auch vor einem Wahrzeichen.','ab sofort'),
  'V-323':('Gute freie Modelle direkt nutzen statt neu generieren.','ab sofort'),
  'V-324':('Jede Figur hat jetzt eine feste, unterscheidbare Stimme.','ab sofort'),
+ 'V-325':('Opener sind Erzählmittel, keine Streuregel; ohne Bogen kein Storytelling.','ab sofort'),
+ 'V-326':('Ein Mund-Werkzeug mit Tönung spart Einzelbögen je Figur.','Planung'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }
 SUP = {}

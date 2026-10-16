@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-15",
+ "updated": "2026-10-16",
  "entries": [
   {
    "id": "V-001",
@@ -3697,7 +3697,9 @@
    "check": "Prüfskript, Tracks",
    "source": "Georg 15.10.",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-325"
+   ],
    "why": "Wiederholte Einstiege nutzen sich ab; Familien brauchen Abstand.",
    "applies": "ab sofort"
   },
@@ -4374,6 +4376,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-325",
+   "date": "2026-10-16",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Triplet-Songs: Batch 8 v2 und Batch 9 werden NICHT umgesetzt, bis Opener und Dramaturgie durchdacht sind. Problem: Opener werden mechanisch nach Heuristik verteilt (gleiches Raster auf denselben Zeilennummern), ohne Storytelling-Absicht – z. B. Epistemic Sabotage. Neu: (1) Opener-Recherche erweitern um anekdotische Opener („I read in a book“, „a friend told me recently“, „I found a note“, „someone wrote in my diary“, „a politician once said“ …); (2) Opener flexibel und bewusst einsetzen, als Meta-Storytelling in einem dramaturgischen Bogen je Track, nicht nach Verteil-Regel. Im Song „Hilfe, ich bin ein Mensch!“ hat Georg den deutschen Titel absichtlich herausgenommen, weil die stumpfe Aneinanderreihung mit dem englischen Titel keinen Sinn ergab.",
+   "values": {},
+   "owner": "WS0 (Recherche/Modell) · Georg (Recherche im Web-Chat)",
+   "check": "Opener-Dramaturgie-Modell + Probe-Track",
+   "source": "Georg 16.10.",
+   "supersedes": "V-280 (Opener-Familien als Verteilregel, bleibt als Mindestabstand)",
+   "superseded_by": [],
+   "why": "Opener sind Erzählmittel, keine Streuregel; ohne Bogen kein Storytelling.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-326",
+   "date": "2026-10-16",
+   "area": "Figuren",
+   "verdict": "TBD",
+   "text": "Neue Mund-Sätze von Georg (main: media/3D_Assets/Textures/FrizzleBob-Mouths_PNGs) und Idee eines Plugins, das Münder flexibel je Charakter bzw. Farbe anpasst (Lippen-/Hauttönung). Die Integration der Münder war bis auf die Farbe schon sehr gut und überzeugend; weiterverfolgen.",
+   "values": {},
+   "owner": "WS0 (Inventur, Plugin-Plan) → WSA",
+   "check": "Mund-Inventur + Plugin-Plan",
+   "source": "Georg 16.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Mund-Werkzeug mit Tönung spart Einzelbögen je Figur.",
+   "applies": "Planung"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4446,7 +4478,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:559",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:609",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
