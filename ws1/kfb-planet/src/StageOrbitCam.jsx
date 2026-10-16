@@ -1,7 +1,7 @@
 // V-257 Bühnen-Kamera: frei bewegliche Orbit-Kamera (360° drehen, Zoom zum Cursor, Panning, Fokus per Doppelklick), ruhig nach V-026
 // (geglättet, nicht zu empfindlich), nie unter 0,5 m (V-203). Feste Blicke nur als Sprungmarken: „Standard“ = Standard-Blick, „Nah“ = 40 % näher.
 // Aus Stage.jsx herausgelöst (Werte und Ablauf unverändert), damit auch der M1-Dialog dieselbe Kamera nutzt statt eines zweiten Wegs (V-206).
-// Props: view = { pos, target, fov? } (Startblick und Sprungmarken) · active (Standard true). active = false: Steuerung aus, Knöpfe verborgen,
+// Props: view = { pos, target, fov?, focus? } (Startblick und Sprungmarken; focus = Kartenmitte für „Nah“) · active (Standard true). active = false: Steuerung aus, Knöpfe verborgen,
 // kein update – die Kamera gehört dann einem anderen Besitzer (M1: ecctrl-Folgekamera). Beim Einschalten gleitet sie von der aktuellen Kamera zum Startblick,
 // das Bildfeld wird über ORBIT.glideS überblendet (nicht gesetzt). ref (React 19, Prop): { setActive(on) – sofort im selben Schritt wirksam, ohne auf
 // Render/Effekt zu warten (M1-Prüfer 5, N2: sonst schreiben bis zum Commit zwei Steuerungen die Kamera), target() – Orbit-Ziel (Kopie), jump(name) }.
@@ -12,7 +12,13 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { expose } from './debug'
 
 export const ORBIT = Object.freeze({ damping: 0.08, rotate: 0.45, zoom: 0.5, pan: 0.6, minDist: 2, maxDist: 60, minY: 0.5, glideS: 0.8 })
-const marksOf = (view) => { const p = new THREE.Vector3(...view.pos), t = new THREE.Vector3(...view.target); return { standard: { pos: p, target: t }, nah: { pos: t.clone().lerp(p, 0.6), target: t.clone() } } }
+// „Nah“ (Georg 16.10.: Karte saß am oberen Bildrand statt in der Mitte): Ziel ist der Fokus (Kartenmitte), Abstand 60 % des Standard-Blicks in
+// derselben Blickrichtung. view.focus = [x, y, z] oder Funktion → [x, y, z] | null (die Bildfläche kennt ihre Lage erst nach dem Laden); ohne Fokus wie bisher.
+const marksOf = (view) => {
+  const p = new THREE.Vector3(...view.pos), t = new THREE.Vector3(...view.target), f0 = typeof view.focus === 'function' ? view.focus() : view.focus
+  const f = f0 ? new THREE.Vector3(...f0) : t.clone()
+  return { standard: { pos: p, target: t }, nah: { pos: f.clone().addScaledVector(p.clone().sub(t), 0.6), target: f } }
+}
 
 export function StageOrbitCam({ view, active = true, ref }) {
   const { camera, gl, scene, size } = useThree()

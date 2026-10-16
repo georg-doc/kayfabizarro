@@ -43,6 +43,7 @@ const SCENE = MESHY_STAGES[/scene=(\w+)/.exec(hash)?.[1]] ? /scene=(\w+)/.exec(h
 const SCENE_S = SCENE ? (+(/sscale=([\d.]+)/.exec(hash)?.[1]) || MESHY_STAGES[SCENE].s) : null // Abstimmen per sscale=<m/u>; Standard = Slot-Datei (WS0)
 const SCENE_CAM = SCENE ? stageCamera(MESHY_STAGES[SCENE], SCENE_S) : null
 const cam = SCENE_CAM || STAGE_CAMS[CAM]
+const CAM_VIEW = { ...cam, focus: () => cardFocus() } // cardFocus steht weiter unten (braucht mods); erst beim Klick auf „Nah“ ausgewertet
 // Publikums-Anker je Kamera: 3,2 m vor der Kamera auf der Blickachse, so tief, dass Blase und Spielerwahl am unteren Bildrand sitzen (NDC y −0,9),
 // nicht über der Karte. Der Anker liegt 1,05 m über playerState.pos (BubbleHost). Für cam=two ergibt das die bisherige Lage (0, 0,6, z − 3,2).
 export const playerPosFor = (c, fov = 38, d = 3.2, ndcY = -0.9) => { const [px, py, pz] = c.pos, [tx, ty, tz] = c.target, L = Math.hypot(tx - px, ty - py, tz - pz), k = d / L
@@ -91,6 +92,12 @@ const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : PREVIEW_CARDS ? PR
 // Dialog-Karten ab der Startkarte; drift-freie Seiten bevorzugt (WS0 zu §24.2, Auswahl statt Beschnitt), die Vorschau behält Georgs Reihenfolge
 const DECK = PREVIEW_CARDS || (di >= 0 ? preferDriftFree(cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num), NDIALOG) : [])
 const mods = {}
+// Kartenmitte in Weltkoordinaten für die Kamera-Marke „Nah“: Billboard = Bildfläche `face`, Meshy-Bühne = Mitte der Slot-Fläche
+const cardFocus = () => {
+  const bb = mods.billboard, face = bb?.object3d?.getObjectByName?.('face'), slot = mods.amph?.surface?.mesh
+  const m = face?.geometry ? face : slot?.geometry?.attributes?.position ? slot : null; if (!m) return null
+  m.updateWorldMatrix(true, false); return new THREE.Box3().setFromObject(m).getCenter(new THREE.Vector3()).toArray()
+}
 // Ports des Dialogs: werden beim Aufruf aufgelöst (die Module entstehen nacheinander über ModuleHost)
 const DIALOG = {
   cards: DECK,
@@ -145,7 +152,7 @@ export default function Stage() {
       <color attach="background" args={[PAL0?.sky.bottom || '#bcd7ea']} />
       <fog attach="fog" args={[PAL0?.sky.bottom || '#bcd7ea', 80, 260]} />
       <Sky />
-      <StageOrbitCam view={cam} />
+      <StageOrbitCam view={CAM_VIEW} />
       <hemisphereLight args={[0xfff4e0, 0x3a3226, 1.25]} />
       <directionalLight position={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-25} shadow-camera-right={25} shadow-camera-top={25} shadow-camera-bottom={-25} shadow-bias={-0.0002} />
       {SCENE ? <ModuleHost create={makeMeshy} options={MESHY_OPTS} /> : <ModuleHost create={makeAmph} options={AMPH} />}

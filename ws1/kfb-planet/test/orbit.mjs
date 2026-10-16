@@ -21,6 +21,9 @@ await page.mouse.move(640, 200); await page.mouse.down(); for (let i = 1; i <= 1
 const c3 = await cam()
 // Sprungmarken über die Knöpfe
 await page.click('#kfb-cam-marks [data-mark="nah"]'); await settle(); const cN = await cam()
+// „Nah“ zentriert die Karte (Georg 16.10.): Kartenmitte nach dem Anfahren in Bildmitte (NDC)
+const nahNdc = await page.evaluate(() => { const S = window.__kfbStageMods, c = window.__kfbStageCamera, f = S.billboard.object3d.getObjectByName('face'); f.updateWorldMatrix(true, false)
+  f.geometry.computeBoundingBox(); const b = f.geometry.boundingBox.clone().applyMatrix4(f.matrixWorld), v = b.getCenter(c.position.clone()).project(c); return [v.x, v.y] })
 await page.click('#kfb-cam-marks [data-mark="standard"]'); await settle(); const cS = await cam()
 // Fokus: Doppelklick auf die Kartenfläche (Mitte der Tafel im Standard-Blick)
 const face = await page.evaluate(() => { const f = window.__kfbStageMods.billboard.object3d.getObjectByName('face'), c = window.__kfbStageCamera, V = c.position.constructor; f.updateWorldMatrix(true, false); const w = f.getWorldPosition(new V()), p = w.clone().project(c); return { w: w.toArray(), px: [(p.x + 1) / 2 * innerWidth, (1 - p.y) / 2 * innerHeight] } })
@@ -41,6 +44,7 @@ process.exit(report('orbit camera V-257', {
   zoomTowardCursor: c2.d < c1.d * 0.9 && dist(c2.t, tBefore) > 0.05,
   neverBelowHalfMetre: c3.p[1] >= 0.5 - 1e-6,
   jumpMarkNah: dist(cN.p, marks.nah) < 0.02 && Math.abs(cN.d - 0.6 * c0.d) < 0.05,
+  nahCentresCard: Math.abs(nahNdc[0]) < 0.05 && Math.abs(nahNdc[1]) < 0.05,
   jumpMarkStandard: dist(cS.p, marks.std) < 0.02 && dist(cS.t, marks.stdT) < 0.02,
   offLeavesCameraAlone: sw.off.enabled === false && sw.off.btn === 'none' && sw.off.active === false && JSON.stringify(sw.stayed) === JSON.stringify([6, 3, 6]) && sw.fovStayed === 55,
   onGlidesBackFovBlended: sw.on0.enabled === true && sw.on0.glide === true && sw.on0.fov0 === 55 && sw.on0.btn === 'flex' && sw.mid != null && Math.abs(sw.fov - 38) < 0.01 && dist(sw.pos, sw.std) < 0.05,
