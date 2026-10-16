@@ -1,0 +1,51 @@
+{
+  "schema": "kfb.norman-mouth-source/0.1-candidate",
+  "id": "clay_yellow_r3",
+  "status": "NORMAN_DESIGN_CANDIDATE",
+  "visualCanon": "OPEN_DESIGN",
+  "owner": "KFB ToolBox / Rigging",
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "revision": "ea603d31dbb7beefd6715ba0b455e0aa5502cae5",
+    "path": "media/3D_Assets/Textures/FrizzleBob-Mouths_PNGs/YELLOW_Clay-Mundvisemen für Lippen-Synchronisation.png",
+    "blob": "fcfaddb79ea1193ebfa0d7244629c5f6b33223bf",
+    "width": 1536,
+    "height": 1024,
+    "sourceUrl": "https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@ea603d31dbb7beefd6715ba0b455e0aa5502cae5/media/3D_Assets/Textures/FrizzleBob-Mouths_PNGs/YELLOW_Clay-Mundvisemen%20fu%CC%88r%20Lippen-Synchronisation.png"
+  },
+  "provenance": {
+    "derivedMeasurement": "Dropbox /CLAUDE/KFB_HUB/30_DECISIONS/replies/MOUTHS_R3/clay_yellow_r3/anchors.json",
+    "derivedSetStatus": "proposal / per-character candidate; not promoted as global mouth canon",
+    "runtimePolicy": "load the exact pinned GitHub source sheet, crop measured source cells, remove only edge-connected near-white background"
+  },
+  "forms": [
+    {"id":"closed","sheetLabel":"REST","bbox":[16,73,242,133],"useAs":"rest"},
+    {"id":"smile_teeth","sheetLabel":"SMILE","bbox":[280,69,276,154],"useAs":"smile"},
+    {"id":"ah","sheetLabel":"A","bbox":[582,22,269,224],"useAs":"wide open"},
+    {"id":"eh","sheetLabel":"E","bbox":[875,46,279,196],"useAs":"open teeth"},
+    {"id":"oh","sheetLabel":"O","bbox":[1205,42,190,205],"useAs":"round open"},
+    {"id":"oo","sheetLabel":"U","bbox":[30,318,206,167],"useAs":"pucker"},
+    {"id":"clench","sheetLabel":"CLENCH","bbox":[281,323,270,153],"useAs":"clenched"},
+    {"id":"fv","sheetLabel":"F/V","bbox":[581,328,267,153],"useAs":"F/V"},
+    {"id":"mbp","sheetLabel":"M/B/P","bbox":[885,333,245,144],"useAs":"pressed"},
+    {"id":"th","sheetLabel":"TH","bbox":[1165,341,258,136],"useAs":"TH"},
+    {"id":"l","sheetLabel":"L","bbox":[19,577,241,142],"useAs":"L"},
+    {"id":"d","sheetLabel":"D","bbox":[291,580,253,137],"useAs":"D/T/N"},
+    {"id":"s_z","sheetLabel":"S/Z","bbox":[588,589,251,127],"useAs":"S/Z"},
+    {"id":"ch_j","sheetLabel":"CH/J","bbox":[875,588,255,129],"useAs":"CH/J"},
+    {"id":"r","sheetLabel":"R","bbox":[1164,571,262,152],"useAs":"R"},
+    {"id":"sad","sheetLabel":"SAD","bbox":[21,810,239,154],"useAs":"reaction sad"},
+    {"id":"surprised","sheetLabel":"SURPRISED","bbox":[305,795,233,207],"useAs":"reaction surprised"},
+    {"id":"tongue_out","sheetLabel":"TONGUE","bbox":[577,826,270,148],"useAs":"reaction tongue"},
+    {"id":"smirk","sheetLabel":"SMIRK","bbox":[875,817,255,163],"useAs":"reaction smirk"},
+    {"id":"angry","sheetLabel":"ANGRY","bbox":[1153,819,275,155],"useAs":"reaction angry"}
+  ],
+  "expressionDefaults": {
+    "neutral": "closed",
+    "happy": "smile_teeth",
+    "angry": "angry",
+    "sad": "sad",
+    "surprised": "surprised",
+    "thinking": "smirk"
+  }
+}
