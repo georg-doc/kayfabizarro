@@ -148,7 +148,7 @@
     "contactSheetVisuallyInspected": true,
     "originalShaderSourceFound": false
   },
-  "nextGate": "KFB SEED WORLD SATURATED HYBRID FX VISUAL BUDGET + TARGET-GPU REVIEW",
+  "nextGate": "KFB SEED WORLD HYBRID FX READABILITY + TARGET-DEVICE REVIEW",
   "existingVfxCatalog": {
     "status": "EXACT_SOURCE_FOUND_AND_REUSED_AS_REFERENCE_ONLY",
     "originalHandoff": {
@@ -291,5 +291,59 @@
     "worldR5Authorised": false,
     "evidenceFile": "FX_AB_R1_EVIDENCE.md",
     "clayGoldenAccepted": false
+  },
+  "fxBudgetR2": {
+    "schema": "kfb.seedworld.saturated-fx-budget/0.1",
+    "status": "TECHNICAL_PASS_VISUAL_TUNE_TARGET_GPU_OPEN",
+    "sourceRevision": "e847450a567c0e08d3842053a934d61b7b1c063a",
+    "ci": {
+      "runId": 38945532821,
+      "jobId": 117123575926,
+      "conclusion": "SUCCESS",
+      "passed": 16,
+      "total": 16,
+      "artifactId": 12066121184,
+      "zipSha256": "1370cebfbb31ee887e72a1e77183eb02585b140b4409b50809582ed4e3fefb41"
+    },
+    "source": {
+      "rockets": 12,
+      "cellsLost": 90,
+      "cascades": 2,
+      "debris": 178,
+      "dust": 195,
+      "vfxPeak": 584,
+      "vfxCap": 584
+    },
+    "legacyHybrid": {
+      "clay": 9,
+      "alpha": 186,
+      "smokeTriangles": 1464,
+      "sceneTriangles": 798406,
+      "pixelDiffPct": 4.222
+    },
+    "cappedHybrid": {
+      "clay": 3,
+      "alpha": 11,
+      "maxClay": 3,
+      "maxAlpha": 28,
+      "tilePx": 110,
+      "unrepresented": 181,
+      "smokeTriangles": 284,
+      "sceneTriangles": 797226,
+      "pixelDiffPct": 0.415
+    },
+    "drawCalls": {
+      "baseline": 142,
+      "hybridC": 145,
+      "cappedD": 145
+    },
+    "verdict": "TUNE_TOO_LITTLE_SMOKE_BUT_BIG_BALLOON_REMOVED",
+    "caveats": [
+      "single frozen POC source scene",
+      "not target Mac GPU",
+      "not KFB Clay Golden",
+      "no new physics/FX/damage writer"
+    ],
+    "evidence": "FX_BUDGET_R2_EVIDENCE_2026-10-16.md"
   }
 }
