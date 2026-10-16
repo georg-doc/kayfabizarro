@@ -14,11 +14,15 @@ Ein Licht für das ganze Spiel, das sich wie ein beleuchtetes Diorama anfühlt: 
    - **Story-Nacht:** gedämpfte kühle Hemisphäre, Sonne fast aus; Lesbarkeit kommt aus den lokalen Lichtern. Karte, Augen, Mund, Sprechblase bleiben lesbar.
    - Später optional: **surreal** als Akzent, erst nach Tag/Nacht-PASS.
 3. **Farbe aus dem Generator (V-305):** Himmel-, Nebel- und Hemi-Tönung aus `fromStoryMode`/`fromHue` der jeweiligen Bühne bzw. des Decks; Meshy-Texturen bleiben zu 82 % original (V-286). **Die gedruckte Karte wird nie umgefärbt** (kein Grading auf Billboard/Bildfläche). Grading, falls überhaupt, ganz zuletzt.
+   - **Tageszeit × Palette (Ergänzung zu V-305):** Tag = Himmel/Nebel genau aus der Generator-Rolle `sky`; Goldene Stunde = dieselbe Rolle, in OKLCH um höchstens 25° Richtung Orange gedreht und leicht entsättigt; Nacht = Helligkeit L × 0,35, Buntheit × 0,5, Farbton Richtung Blau. Nebel folgt immer der tatsächlich gezeigten Horizontfarbe. So bleibt jede Bühne in jeder Tageszeit ihre eigene Palette.
 4. **Schatten sparsam:**
    - genau **ein** Schatten werfendes Licht (Sonne), eng angepasster, texel-gerasteter PCFSoft-Frustum um die Spielfläche (LESSONS_SHADOWS; kein VSM wegen Kontakt-Lecks);
    - Schatten werfen nur Figuren, Fahrzeug und wenige Leit-Requisiten; **Meshy-Dioramen werfen keine Echtzeit-Schatten** (ihre Texturen enthalten schon gemaltes Licht/AO), sie empfangen den Figurenschatten;
    - für **alle** Figuren weiche Kontaktschatten (contact-ao wie bei FB, jetzt auch KayKit, V-203), damit niemand schwebt, auch nachts;
-   - lokale Lichter werfen **keine** Schatten.
+   - lokale Lichter werfen **keine** Schatten;
+   - Gesichter empfangen keine Schatten (wie heute bei FB: Gesicht `shadowOff`), damit Augen und Mund lesbar bleiben.
+   - Hinweis: Die Web-Chat-Recherche schlug „jede Figur und jedes Requisit wirft“ vor – hier gilt Georgs Linie (wenige Schatten, Performance).
+   - Sonnenrichtung: WS1s heutige Sonne kommt von der anderen Seite (Azimut ≈ +39°); für L1 auf die J17-Richtung (≈ −53°) umstellen und im Bildpaar zeigen.
 5. **Lokale Lichtquellen (Diorama-Charme):**
    - je Bühne `practicals[]` im Slot-/Bühnen-JSON (`kfb.stage-descriptor/1`): Position, Farbe, Reichweite, Stärke, Typ (Laterne, Neon, Kristall, Fackel, Monitor), optional Flackern;
    - Umsetzung: emissives Material am Objekt + **kleiner Pool** von höchstens 4–6 PointLights ohne Schatten, nächstgelegene zur Kamera/Figur aktiv (wie der vorhandene Tunnel-Lampenpool);
