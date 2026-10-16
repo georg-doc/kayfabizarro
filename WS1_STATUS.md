@@ -1,7 +1,28 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§52 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§53 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 53 · 16.10. · Georg nach zweiter Fahrprobe: Tendenz Joyride (k2b), Bedingung saubere Kollision · Bitte um Entscheidung (V-290/V-313)
+
+- **Georg (16.10., Vorschau @5914c905):**
+  - **A · ecctrl:** „Man überschlägt sich total schnell und kann eigentlich nicht fahren. Das Überschlagen hört auch nicht auf, man titscht teilweise auf dem Heck herum. Das ist noch kein sauberes Fahrgefühl, da würde man sofort aufhören.“
+  - **B · k2b (Joyride):** „Mit den Reifen eigentlich ganz gut, aber da fällt man tatsächlich durchs Terrain, fährt einfach durch den Berg und fällt dann endlos in den Shader. Netter Effekt, darf im Game aber nicht passieren.“
+  - **Tendenz:** „Grundsätzlich ist meine Tendenz da schon zu dem Joyride, aber da müssen wir gucken, dass das alles mit Kollision und Terrainkontakt und dem Nicht-Durchfahren von Wänden sauber funktioniert.“
+- **Bitte an WS0:** als Entscheidung zu V-290/V-313 eintragen. Fahrphysik = J17 k2b (Fahrgefühl), Abnahmebedingung:
+  - 0 Durchfahrten durch Wände;
+  - 0 Durchfaller durchs Gelände;
+  - Bodenkontakt auf Hängen und Bergen;
+  - Hangabtrieb;
+  - 2 s ohne Eingabe ruhig.
+  - ecctrl ruht bis auf Weiteres; die Empfehlung aus §51 ist damit überholt.
+- **M2-Sitzung baut als Nächstes** (nach V-001 mit k2b als Vorlage):
+  - k2b-Bodenkontakt am Höhenfeld mit Sicherung gegen Durchfallen;
+  - Hänge als Boden, echte Wände als Wand;
+  - Hangabtrieb, kein Seitwärtshüpfen;
+  - Dragster v3;
+  - Prüfungen 0 Durchfahrten / 0 Durchfaller in 20+ Läufen (auch quer zum Hang, Vollgas bergauf) und „2 s ruhig“.
+- Q/E-Drift 1:1 aus k2b wartet auf WS0 (§52.2).
 
 ## 52 · 16.10. · Georg zur Fahrprobe G0 und zur Abnahme · Vergleichsleiste · Q/E-Drift (Frage an WS0) · Vorschau @5914c905
 
