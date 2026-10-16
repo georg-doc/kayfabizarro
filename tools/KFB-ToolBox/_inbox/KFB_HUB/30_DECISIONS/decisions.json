@@ -4886,6 +4886,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-359",
+   "date": "2026-10-16",
+   "area": "Performance",
+   "verdict": "RULE",
+   "text": "Performance-Pilot P1 (Georg 16.10.): Der zweistimmige Pharaoh-Song (Refrain, 118 BPM, Männer-MC + Frauen-Chor) wird als Duett zweier KayKit-Mumien inszeniert – Männerstimme = helle Mumie mit männlich lesbarem Haaransatz, Frauenstimme = Mumie mit dunklem Gesicht und weißen Augen –, links und rechts vom Billboard, Mund je Stimme, Tanz-Clips beat-getimt (V-298), Emotes. Gesicht KFB_NATIVE (EyeRig + KFB-Mund-Sätze per Viseme), nicht Wireface (ein Gesichtstreiber je Figur). Eine Datenquelle kfb.performance/1 (Beats, Abschnitte, Wörter/Viseme je Stimme, Clip-Cues je Darsteller) von WS0 aus der Audio-Pipeline; zwei Ausgaben: WS1 im Spiel (Karte diegetisch auf dem Billboard, eigener Job nach den laufenden Schritten) und WSV im Musikvideo (Karten vollflächig, Mumien kleiner am Rand mit 3D-Schatten). Briefing replies/BRIEF_PERFORMANCE_DUET_P1.md, Hub b64. Der Refrain-Song ist eine bewusste Ausnahme zu V-354.",
+   "values": {},
+   "owner": "WS0 (Daten) · WS1 (Spiel) · WSV (Video)",
+   "check": "30-s-Probe Duett",
+   "source": "Georg 16.10.: „zweistimmig, Male und Female … die beiden Mumien … links und rechts vom Billboard … Münder animieren … Tanzposen … Remotion … Karten vollflächig“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Song, zwei Stimmen, zwei Figuren: der erste echte Test der Performance-Schicht für Spiel und Video aus einer Datenquelle.",
+   "applies": "nach den laufenden WS1-Schritten"
+  },
+  {
+   "id": "V-360",
+   "date": "2026-10-16",
+   "area": "VFX",
+   "verdict": "RULE",
+   "text": "Düsen-/Antriebs-Anker (präzisiert V-357): statt eines eigenen Klick-Werkzeugs der vorhandene 3D-In-Place-Editor (Verschieben/Drehen/Skalieren wie im Resident Atlas – Spender lib/edit-layer.js mit TransformControls – und in der neuen ToolBox) als Modus des God-Mode-Editors (V-306): Anker als Punkt + Richtungspfeil an Düse bzw. unter den Rädern setzen, speichern als kfb.vehicle-thrust/1. KISS, ohne Blender-MCP, wiederverwendbar für Waffen-Aufsätze.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Georg setzt Anker am Dragster, Glow sitzt",
+   "source": "Georg 16.10.: „das könnte ja auch der 3D-In-Place-Editor sein … drehen, verschieben, skalieren“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vorhandenen Editor wiederverwenden statt ein zweites Werkzeug bauen (V-001).",
+   "applies": "mit VFX-Slice"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4958,7 +4988,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:684",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:686",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
