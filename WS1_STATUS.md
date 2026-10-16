@@ -1,7 +1,56 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§61 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§62 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 62 · 16.10. abends · Vorschlag: nächste größere Integrations-Slices, Synergien und blinde Flecken (Bitte an WS0)
+
+Anlass: Georg hat Sitzungsvolumen frei und fragt nach größeren, gut gekapselten Integrations-Slices, „nicht parallel“, in Abstimmung mit WS0. Das HUD gibt er später als eigene Slice. Grundlage: Register @dcf1323d2 (bis V-364), WS1 main @987422a, m2/fahren @00b86ea, m1/wow; dazu eine Web-Recherche zu Standards bei Open-/Hub-World-Spielen im R3F-Ökosystem 2025/26 (Quellen auf Wunsch). Die WSA-Recherche Cartoon Racer R1 (V-352) ist laut Georg fertig, liegt aber noch nicht im Register (dort nur `RESEARCH_CARTOON_RACER_R1/BRIEF_…`).
+
+### 62.1 Empfohlene Reihenfolge (WS1-Sicht)
+
+| # | Slice | Größe | Was | Liegt schon vor | Blocker |
+|---|---|---|---|---|---|
+| 0 | **V-346 + V-345** (läuft) | S | Look-TUNE, dann `worldScale.js` (J17-Meter) | – | – |
+| 1 | **Fundament F1** | M | (a) Spielstand als ein Objekt `kfb.save/1` (Flags, Karten, d6-Würfe, Position, Version; erst localStorage, später GPT-Site); (b) Interaktions-Vertrag `interactable` (Radius, Text, Aktion; Host zeigt nur den nächsten Prompt, ersetzt die Mehrfachbelegung E/Q/X); (c) Eingabe als **Aktionen** statt Tasten im einen Router (Neubelegung, später Gamepad/Touch für 9:16); (d) Leistungs-Overlay und Budget (Draw Calls, ms/Bild, Qualitätsstufen über drei `PerformanceMonitor`/`AdaptiveDpr`) | Host-Vertrag R1.2, ein Router (`hostKeys.js`), Store | Host-Vertrag R1.3 von WS0 (neue Felder) |
+| 2 | **Liefer-Pipeline F2** | M | Asset-Manifest statt fest verdrahteter `raw.githubusercontent`-Commits (`meshyStage.js`, `vehicleLineup.js`), Ladebildschirm mit Fortschritt, Fehleranzeige/Rückfall bei GitHub-Ausfall oder Rate-Limit, Kompression der Meshy-GLBs (Meshopt + WebP/KTX2) | `build.json` (V-356) | WSA-Ergebnis GPT-Plattform (Größe, CORS); Werkzeug-Download braucht Georgs Erlaubnis |
+| 3 | **Weltboden S1** | L | Terrain-Einbettung (V-341) mit `terrainStitch` (liest `footprint`/`terrainRing`), Boden aus `fromColors(edgePalette)` (V-342), Steine-Kit-Streuung, Kollisions-Deskriptor je Bühne (begehbar, Rampen, Wände) | Ränder @d4e24f15, Steine @320c896f, Lab-Inselboden | V-345; Hub-Frage clay-stones-r1 |
+| 4 | **Ein Look S2** | M | L2 Schritt 5 (V-355): PMREM-Umgebung warm wie Look B, Haze aus `edgePalette`, Helligkeit/Sättigung je Schicht ≤ 15 %; danach die übrigen PASS-Bühnen im Paket über den Deskriptor, Portal-Shader (V-343) | Delit @4c962420, `clayLook`, `toneSplit` | S1 (gleiche Palettenquelle) |
+| 5 | **Fahrassistenz** (Bewegungs-Sitzung) | M | aus V-352: Bodenkontakt, virtueller Schwerpunkt, Anti-Roll, mehrstufiges Recovery, Vorher/Nachher-Fahrtests | k2b, STUNT_DONOR_MAP_R1 | Georgs formale Engine-Wahl; WS0-Auftrag aus V-352; V-345 |
+| 6 | **Fahrzeug-Rückmeldung S3** | M | VFX V1 (V-357) + Fahr-Audio + Düsen-Anker (V-360) als drei Module an `M2EVENTS`; gemeinsamer Partikel-Pool; Audio mit Bussen (Musik/SFX/Stimme) und Ducking | `kfb-flight-vfx.js`, `clay-vfx.v1.js`, Audio KFB Racer/Kenney, Editor-Kern | M2-Merge; Anker aus S4 |
+| 7 | **God-Mode-Editor-Kern S4** | M | ein In-Place-Editor (TransformControls aus `edit-layer.js`) mit Modi: Düsen-Anker (V-360, zuerst), Billboard-Platz (V-287/306), später Waffen-Halter; Speichern als `kfb.op` aus `kfb.world/1`, mit Rückgängig | WORLD_CONTRACT_R1, Spender | Persistenz (GPT-Site) für mehr als Datei-Export |
+
+Später (blockiert durch Entscheidungen oder Lieferungen): M3 Assisted Stunt (V-351; nach S1 und M2-Merge), Performance-Abspieler mit Viseme-Treiber (V-359; Daten `kfb.performance/1` fehlen; derselbe Treiber dient allen Mündern, Mund-Sätze R3 liegen bei @eb1100f9), Ziel/Kompass/Quest-Kern (V-333–335; nach HUD R4, Weltstruktur, Game Loop), Insel-Streaming mit LOD/Impostors (erst bei mehreren Inseln).
+
+### 62.2 Synergien, die die Reihenfolge begründen
+- **Maßstab → Boden → Fahren:** V-345 vor S1, S1 vor Fahrassistenz und M3: Kollision „0 Durchfahrten“, Hang ≠ Wand und Stunt-Zonen brauchen den Kollisions-Deskriptor in echten Metern.
+- **Eine Palettenquelle:** `edgePalette` speist Bodenfarbe (S1), Haze/Umgebung (S2) und Partikelfarben je Terraintyp (S3).
+- **Ein Editor, viele Daten:** Düsen-Anker, Billboard-Platz und Waffen-Halter sind derselbe Editor mit anderem Schema.
+- **Ein Viseme-Treiber:** Performance-Duett, Aliens, Musikvideo und alle Dialog-Münder.
+- **Aktions-Router + Interaktions-Vertrag** beenden die Absprachen zu Mehrfachbelegungen (E = talk, Q/E = strafen bzw. driften, X) und sind die Voraussetzung für Gamepad/Touch und das HUD-Radialmenü.
+
+### 62.3 Blinde Flecken (in keinem Planungsdokument gefunden)
+1. **Speichern/Laden des Spielers** (nur die Welt hat `kfb.world-save`).
+2. **Lade- und Leistungsbudget:** kein Zielgerät, kein Speicherbudget, keine Qualitätsstufen, keine Kompression; Bühnen 14–18 MB, Bündel 18 MB. Gemessen wird nur auf Georgs Rechner.
+3. **Einstellungen und Barrierefreiheit:** Lautstärke, Tastenbelegung, Kamera-Tempo, Untertitel-Größe, „weniger Bewegung“ (wichtig für Speedlines und FOV-Stoß aus V-357), Farbsehschwäche.
+4. **Eingabe:** kein Gamepad, kein Touch, obwohl HUD R4 für 9:16 entworfen wird.
+5. **Fehler-Erholung:** kein Rückfall, wenn GitHub-Raw oder die API nicht erreichbar sind (Rate-Limit), keine Ladefehler-Anzeige.
+6. **Kamera bei Zustandswechseln** (Gehen ↔ Fahren ↔ Fliegen ↔ Dialog ↔ Karte): nur punktuell geregelt.
+7. **Audio-Gesamtkonzept:** Musik, Zonen-Song (V-294), SFX und Stimmen ohne gemeinsamen Mixer bzw. Ducking.
+8. **Lokalisierung:** UI-Texte deutsch fest im Code, Karten englisch; keine Textschicht.
+9. **Prüfung der Content-Pipeline:** kein Sammel-Check für Slot-JSON, Maßstab, Dateigröße, Anker; rund 15 Asset-Branches nicht in main.
+10. **Onboarding/Tutorial** im Spiel (V-363 meint Marketing).
+11. **Telemetrie/Spieltests:** Ob ein Botengang wirklich 2–4 Minuten dauert (V-294), lässt sich ohne Messung nicht sagen.
+
+### 62.4 Was WS1 von WS0 bräuchte
+1. **Vorlagenzeilen** für F1 und F2 (neues Verhalten, Regel „keine neue Funktion ohne WS0-Vorlage“), mit Host-Vertrag R1.3 (`interactable`, Aktionen, `save`-Schnittstelle).
+2. **Georg-Entscheidungen ins Register:** Fahr-Engine (heute nur Tendenz k2b in §53), Weltstruktur (V-289), Game-Loop-Variante (V-319).
+3. Den **V-352-Bericht** im Register und daraus den Fahrassistenz-Auftrag.
+4. Eine Aussage zu **Zielgerät und Budget**, z. B. „Mittelklasse-Laptop ohne eigene Grafikkarte, 30 fps, Bündel ≤ X MB“.
+
+WS1-Empfehlung: Als nächsten großen Block nach V-345 **S1 Weltboden**, weil er den größten Hebel hat und nichts blockiert. F1 und F2 sind klein und verhindern späteren Umbau, deshalb davor oder direkt danach. Ein M2-Merge erst nach Georgs Engine-Wahl.
+
+Aufwand: ca. 15 Min. eigene Arbeit plus zwei Recherche-Agenten.
 
 ## 61 · 16.10. abends · Vorschau main@987422a + m2/fahren@00b86ea · 23/23 · erstmals mit build.json (V-356)
 
