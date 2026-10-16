@@ -23,3 +23,11 @@
 - Real headless measurements show smoke-specific triangles down 20× in 2D, while overall frame times are not trustworthy KFB GPU FPS; VFX pool again saturated 584/584. Pixel tests pass but style/clarity does not yet meet desired KFB Clay quality.
 - Added `FX_AB_R1_EVIDENCE.md` and `FX_AB_R1_FINAL_RESULT.json` for source-fixed result/negative tests. No Site/Stage, no merge/Live; do not accept WB2 R5.
 - Single next productive gate now `KFB SEED WORLD SATURATED HYBRID FX VISUAL BUDGET + TARGET-GPU REVIEW`: measured screen-space budgets, authored palette, bounded near Clay lobes, original mid/far masks, and real on-device benchmarks.
+
+
+## 2026-10-16 · Timeout recovery + saturated hybrid R2 visual budget
+- Actual recovery check: open Draft PR #406 and source run 38926541781 (50/50), no timeout-related GitHub data loss; `RECOVERY_2026-10-16_TIMEOUT_CHECK.md` appended.
+- Added experimental capped D mode to the **existing POC developer fixture only**, 3 original 3D clay lobes max + 28 original 2D white-alpha mask sprites max with screen-tile representative selection. Same original damage, debris, FX and shader source; no production modules edited.
+- Short block-run 38945532821: **16/16 technical PASS**, screenshot artifact 12066121184, original 12 rocket / 90 lost cell / 2 cascade outcomes unchanged. Actual D selected 3+11 instead of old C 9+186, reducing smoke-specific triangles from 1,464 to 284. C/D imagery directly compared; D too thin/weak to accept despite removing oversized 3D smoke.
+- `FX_BUDGET_R2_EVIDENCE_2026-10-16.md` contains exact measurements and visual critique; `SOURCE.json.fxBudgetR2` is machine-readable. No GPU speed or Golden style claim, no Stage/Site or World R5.
+- Exactly one next gate: **KFB SEED WORLD HYBRID FX READABILITY + TARGET-DEVICE REVIEW** in existing owner, followed by human style decision. Routine CI proof not a global product PASS.
