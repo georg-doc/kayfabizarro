@@ -1,7 +1,56 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§42 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§43 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 43 · 16.10. · Georg: Story-Mode ist ein Würfelwurf, keine Karteneigenschaft · Licht L1 (V-329) gelesen: Rückmeldung und `practicals[]`-Format · Vorschau ws1/preview
+
+### 43.1 · Georg 16.10.: Story-Mode
+- **Georg:** „Die Karte selbst hat keinen Story-Modus.“ Der Story-Modus wird im Spiel mit einem W6 dazugewürfelt, als eine Art Stipulation: eine Färbung der Story, die Georg dann erzählt. Konzeptionell ist das im Farb- und Lichtzusammenhang noch nicht sauber.
+- **Folge für WS1:**
+  - Heute leitet `stagePalette.js` einen Story-Modus aus dem Kartentext ab (`world-context` / R2 computeContext) und tönt die Bühne damit um 12 %. Das ist nach Georg falsch.
+  - **Vorschlag:** Mit dem Einbau von V-305 entfällt die Ableitung aus der Karte.
+  - Die Grundfarbe kommt fest aus Bühne bzw. Deck (`fromHue`/`fromColors`).
+  - Der Story-Mode wird Spielzustand: gesetzt durch den Würfelwurf, Tönung bzw. `fromStoryMode` erst dann.
+  - Bis zum Würfel gibt es keinen Story-Tint.
+  - **Bitte bestätigen.**
+
+### 43.2 · Georg 16.10.: Licht und Environment in die nächsten MVP-Schritte
+Georg will Licht, Beleuchtung und Environment in die nächsten MVP-Schritte bzw. Scheiben aufnehmen. V-329 (L1, parallel zu M2) beantwortet das für den ersten Schritt; der Tageslauf, Wetter und übrigen Bühnen folgen nach L1-PASS.
+
+### 43.3 · L1 (`replies/BRIEF_WS1_LIGHT_R1.md`) gelesen: passt im Kern, fünf Punkte vor dem Bau
+1. **Story-Mode (43.1):** Das Briefing sagt „Lichtstimmung je Deck/Story-Mode“ und „`fromStoryMode`/`fromHue` der jeweiligen Bühne bzw. des Decks“.
+   - **Vorschlag:** Eingabe = `palette.hue` (oder Farben) im Bühnen-Deskriptor, sonst Deck.
+   - Story-Mode erst mit dem Würfel.
+   - Bitte festlegen: Bühne oder Deck, und wenn Deck, nach welcher Tabelle (Genre → Farbton).
+2. **Lokale Lichter in Meshy-Modellen:** Meshy-GLBs sind ein Netz mit einer gemalten Textur; einzelne Laternen bzw. Kristalle lassen sich nicht emissiv schalten.
+   - **Vorschlag:** je `practical` ein PointLight aus dem Pool plus ein additiver Leuchthof (Sprite/Billboard, `halo`) an der Position.
+   - Alternative: WS0 liefert eine Emissions-Maske je Bühne (`emissiveMap`), dann leuchtet die gemalte Lampe selbst.
+3. **Kontaktschatten für KayKit (V-203):**
+   - `contact-ao` ist auf FB abgestimmt (P08-Werte).
+   - Bei GothGirl brach schon der Eigenschatten den Studio-Bildvergleich (f1, §38).
+   - **Vorschlag:** contact-ao für KayKit nur Körper und Füße, Kopf ausgenommen (Gesicht ohne Schatten, Regel 4).
+   - Weicht das Gesicht trotzdem messbar vom Studio-Bild ab, braucht es Georgs Ja zu einer neuen Studio-Referenz.
+4. **PointLight-Pool:** three.js kompiliert alle Materialien neu, wenn sich die Zahl der Lichter ändert. Deshalb gibt es einen festen Pool (z. B. 6), Lichter werden nur in Stärke und Position geschaltet, nie hinzugefügt oder entfernt. Nur zur Kenntnis.
+5. **Tonemapping:**
+   - J17 nutzt ACES, WS1 heute keins.
+   - Die Kartenfläche (Billboard `face`, Meshy-Slot) ist bereits `toneMapped: false`, bleibt also auch mit ACES unverändert (Regel 3).
+   - WS1 zeigt die Wahl im Bildpaar.
+
+### 43.4 · Format `practicals[]` im Bühnen-Deskriptor (bitte so eintragen)
+```json
+"practicals": [
+  { "id": "laterne-1", "type": "lantern", "pos": [0.12, 0.40, -0.31], "color": "#ffc15a", "intensity": 1.0, "range": 4.0,
+    "flicker": { "amp": 0.15, "hz": 6 }, "halo": { "size": 0.35 } }
+]
+```
+- `pos` in Modelleinheiten wie `marks` (die Bühne rechnet mit `scale` und `floorY` aus dem Slot in Meter um).
+- `range` in Metern.
+- `type` aus lantern | neon | crystal | torch | monitor (bestimmt nur Standardwerte für Flackern und Hof).
+- `intensity` relativ (1 = Standard je Typ).
+- `flicker` und `halo` sind optional.
+- Keine Schatten.
+- Der Pool wählt die nächstgelegenen zur Kamera bzw. Figur.
 
 ## 42 · 15.10. abends · M1 als Zwischenstand nach main gemergt (Georg) · alles grün
 
