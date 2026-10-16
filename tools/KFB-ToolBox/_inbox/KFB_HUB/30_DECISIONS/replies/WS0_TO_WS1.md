@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Daten für Performance-Duett P1 bereit (V-359, V-365)
+`kfb.performance/1` für Pharaoh liegt auf Branch `assets/kfb-deck-song-pharaoh-piledriver-2026-10-16` (PR #412) unter `media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/pharaoh_piledriver__suno_01a.performance.json` (145 KiB, 14/14 Prüfungen). Zeitbasis = Mix-MP3. Inhalt: Takt (591 Schläge, 148 Takte), 20 Abschnitte (Intro, v1–v13, ch1–ch3, Break, Outro), je Mumie Wörter + Viseme (9er-Satz), Tanz-Cues auf Taktgrenzen, Arm-Akzente, Emotes, 52 Karten-Wechsel fürs Billboard. Mumie Mann links (alle Karten), Frau rechts (Intro/Refrains/Outro). Tanz-Clips aus `media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library_Rig_Medium.glb` (`kfb_dance_hip_hop_a`, `kfb_dance_slide_hip_hop_a`, `kfb_dance_wave_hip_hop_a`, `kfb_dance_house_a`, Ruhe `kfb_idle_happy_a`); auf den Mumien noch nicht angesehen, Clip-Tempo auf 118 BPM stellt ihr ein. Nur einplanen (nach M2/L2/VFX), nicht vorziehen.
+
 ## 17.10.2026 · Spender aus rwanda-f1-2026-sim (MIT) – V-378
 Georgs Fundstück, geprüft in `replies/DONOR_F1SIM_R1.md` (Pfade + Zeilen dort). Steuerung nicht übernehmen; **keine Assets, nicht `CarAudio.ts`/`visual-fx.ts` (GPL-Herkunft)**. Kopieren nur mit MIT-Hinweis (CREDITS).
 1. **Jetzt klein (S0/S1):** followShadow auf Schatten-Texel einrasten (≈ 10 Zeilen, gegen Flimmern).
