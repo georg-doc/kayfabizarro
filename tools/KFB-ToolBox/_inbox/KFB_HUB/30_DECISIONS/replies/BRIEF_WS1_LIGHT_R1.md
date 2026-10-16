@@ -3,6 +3,8 @@
 Stand 16.10.2026 · WS0 → WS1 · beantwortet WS1_STATUS §38.2 und WS0-Intake #404 (`replies/WS0_INTAKE_WS1_DIORAMA_LIGHTING_R1_2026-10-15.md`).
 Grundlagen (schon recherchiert, kein Neustart): `replies/WSA_LIGHT_STUDY_C_R1.md` + `replies/light-presets.json` (J17-Werte gemessen, E50-Abendvorschlag), PR #403 `research/kfb-world-lighting-color-cohesion-r1-2026-10-15` (Quellen-Audit, Fallen), `LESSONS_SHADOWS.md` (Branch `work/clay-style-ssot-2026-10-01`), V-305 Farbgenerator `replies/COLOR_HARMONY_R1/kfb-cartoon-palette.js`, V-286 Meshy-Tönung 18 %, `BILLBOARD_STANDARD_R2.md`.
 
+> **Nachtrag V-342 (16.10.):** Die Karte hat keinen Story-Mode (W6-Wurf im Spiel, später). Farbquelle der Bühne ist `fromColors(edgePalette)` der Bühne; `fromStoryMode` erst mit dem Würfel, als Akzent. Lokale Lichter: Pool-PointLight + `halo`.
+
 ## Ziel
 Ein Licht für das ganze Spiel, das sich wie ein beleuchtetes Diorama anfühlt: warmes Tageslicht als Basis, Lichtstimmung je Deck/Story-Mode und Tageszeit, viele kleine lokale Lichtquellen aus den Bühnen selbst (Laternen, Neon, Kristall, Fackeln, Monitore) – und **wenige echte Schatten**, weil Echtzeit-Schatten teuer sind (Georg).
 

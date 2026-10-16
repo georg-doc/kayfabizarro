@@ -12,7 +12,7 @@ Register branch `docs/kfb-decisions-register-2026-10-11`, folder `tools/KFB-Tool
 
 ## 1. Step 1 · Light L1 + warm default + character light identity
 1. Build L1 exactly as briefed (dialog scene FB + GothGirl with real card, Goblin Bank v2, Atlantis; day / golden hour / story night).
-2. **Warm default (Georg's choice):** add look **B** next to the J17 control **A**. B = warm Krazy Kat stage: warmer sun, terracotta/ochre ground bounce in the hemisphere, coral-to-ochre sky, a cool blue/violet counter-accent in shadows or sky; all values still from V-305 roles (hue shift inside the generator, no second palette). The per-card story colour on the ground (V-331) stays. Printed card never tinted.
+2. **Warm default (Georg's choice):** add look **B** next to the J17 control **A**. B = warm Krazy Kat stage: warmer sun, terracotta/ochre ground bounce in the hemisphere, coral-to-ochre sky, a cool blue/violet counter-accent in shadows or sky; all values still from V-305 roles (hue shift inside the generator, no second palette). Ground colour comes from the stage: `fromColors(edgePalette)` (V-342; the card has no story mode, it is rolled with a D6 later). Printed card never tinted.
 3. **Light identity per character** as data, not as extra lights: `lightIntent` per actor = `rimColor`, `rimStrength`, `fillTint`, `keyBias` (warm/cool), `priority`. Render it as a rim/fresnel term in the clay material plus a tint on the fill; the talking actor may borrow one pooled light for focus and give it back. Start profiles: FrizzleBob warm heroic rim, GothGirl violet mystical rim; story-mode presets (tragic cool fill, heroic warm angled key, mystical violet, forbidden wine, comic/absurd bright accent).
 
 ## 2. Step 2 · One clay look for figures and vehicles
@@ -40,7 +40,7 @@ Today the Meshy dioramas look placed on top. They must grow out of the ground; n
 - G3 card pixels unchanged; Meshy textures ≥ 82 % original.
 - G4 night: at least two local light islands, figures readable.
 - G5 cost before/after: lights, shadow pass, draw calls, frametime; target 60 fps on Georg's M4; Step 2 adds ≤ 1 ms.
-- G6 look B: sky/ground/hemi in the warm band, story ground colour still the card's story mode, one cool counter-accent visible.
+- G6 look B: sky/ground/hemi in the warm band, ground colour from the stage's edgePalette, one cool counter-accent visible.
 - G7 rim identity visible on FB and GothGirl, faces still evenly lit.
 - G8 no plastic or metal gloss on figures or vehicles (no specular hotspot brighter than the lit albedo).
 - G9 FB, KayKit figure and one vehicle side by side read as one material family.

@@ -1,5 +1,31 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Antworten auf WS1_STATUS §43–§45 – V-342
+1. **Story-Farbe (§45.1, §43.1, §43.3 Punkt 1):** Georg hat recht, die Karte hat keinen Story-Mode. Entscheidung: **Bodenfarbe kommt von der Bühne**, nicht von der Karte und nicht von einer Deck-Tabelle.
+   - Quelle: `fromColors(edgePalette)` der Bühne (3–5 Farben, an der Basis gemessen). WS0 trägt `edgePalette` und `footprint` je Bühne mit dem Blender-Lauf R1 (17.10., b51 §E) in die Bühnen-Deskriptoren ein. Damit passt der Boden auch zum Terrain-Übergang (V-341).
+   - Bis dahin: die heutige Bühnen-Tönung (V-286) als Platzhalter, **kein Story-Tint**. Die Ableitung aus dem Kartentext (`world-context`/computeContext) fliegt raus.
+   - Story-Mode wird Spielzustand, gesetzt durch den W6-Wurf (Option A, später). Dann tönt `fromStoryMode(gewürfelt)` als Akzent (Licht/Rand), nicht den ganzen Boden. Den Würfel-Look liefert Claude Design mit HUD R4; WS1 baut ihn erst danach.
+   - Korrigiert: V-331 Punkt 2 und L2 G6 lauten jetzt „Bodenfarbe aus der Bühne (edgePalette)“.
+2. **Walker-Vorlage (§44.3, §45.2):** Die Lab-Fassung liegt lokal auf demselben Mac (nur lesen, Lab 5192 läuft für Georg): `~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/`
+   - `src/main.ts` ab Zeile ≈ 307: Tastenbelegung und WoW-Maus (RMB lenkt die Figur, A/D strafen; LMB nur Kamera; beide = vorwärts; Tasten werden nur bei gedrückter Maustaste umgelegt, Z. ≈ 532–535); Z. ≈ 356: Leertaste-Antippen kürzer als ein Frame springt trotzdem.
+   - `src/play/travel.ts` (`TravelKeys` inkl. `turnA`), `src/play/vendor/travel-core.j17.js` (Schema `wsa6`; Sprünge je Zustand Z. ≈ 168: stand / short aus Joggen / long mit Boost), `src/play/vendor/walk-controller.js`, `locomotion-profiles.v1.js`, `src/play/figure.ts` (Walker, gemessene Profile).
+   - V-199 (1) ist dort behoben (Q/E strafen auch im Stand), nicht den alten Fehler übernehmen.
+   - **Flug:** Ein gemessener Flug-Controller existiert im Lab **nicht** (V-024 war TBD). Freigabe als Neubau mit Vorlagen-Zeile (V-001 erfüllt durch diese Freigabe): WoW-Flug – Doppel-Leertaste im 400-ms-Fenster hebt ab (V-179); im Flug W vorwärts in Blickrichtung (mit RMB steuert die Kameraneigung das Steigen), A/D drehen, Q/E strafen, Leertaste halten = steigen, X halten = sinken, Shift = Schub; Bodenkontakt unter Landetempo = Landung und zurück ins Gehen. Look und Pose aus `KFB HUD Flight Board - Flight VFX/.../hud-flight/kfb-flight-vfx.js` (main: `hoverPose`, `FLIGHT_IDLE`, Takeoff/Land-Puff, Speed-Trails).
+3. **Reihenfolge (§44.2, §45.3):** bestätigt. M1 TUNE vor M2; Owner-Sitzung wie in §45.3 (Kamera „Nah“ → L1 ohne Farbe → V-305-Einbau nach Punkt 1 → L1-Bildreihe → L2 Schritt 1–4).
+   **Abnahme-Raster M1 TUNE (V-312):**
+   - T1 V-022: im Stand A/D drehen, Q/E strafen (auch ohne W); RMB: Maus lenkt, A/D strafen; LMB nur Kamera; beide Tasten = vorwärts.
+   - T2 V-023: Leertaste im Stand = Sprung auf der Stelle; aus Joggen = vorwärts; Shift+Leertaste aus Sprint = Weitsprung (Jump_Full_Long).
+   - T3 Doppel-Leertaste < 400 ms = Abheben; einzelne Leertaste hebt nie ab; > 400 ms = zwei Sprünge.
+   - T4 Flug nach Punkt 2; Frametime im Flug p95 ≤ 20 ms und ≤ 1,2 × Boden; Kamera ohne Ruckeln.
+   - T5 Rampe auf der START-Achse begehbar, G = Geh-Umschalter, weiches Aufsetzen ≈ 0,15 s, Info-Symbol unten links.
+   - T6 Figur folgt Hügeln statt durchzulaufen (V-199 (3)).
+4. **Lokale Lichter (§43.3 Punkt 2, §45.2):** Pool-PointLight + additiver Leuchthof (`halo`) freigegeben. Emissions-Masken nur, falls die Höfe aufgesetzt wirken; dann liefert WS0 sie je Bühne. `practicals[]` für Goblin Bank v2 und Atlantis trägt WS0 im Format §43.4 ein (Blender-Lauf R1).
+5. **Kontaktschatten KayKit (§43.3 Punkt 3):** freigegeben: nur Körper und Füße, Kopf ausgenommen. Weicht das Gesicht trotzdem messbar ab, kommt die Frage nach einer neuen Studio-Referenz zu Georg.
+6. **Tonemapping (§43.3 Punkt 5):** Bildpaar ACES | ohne zeigen; Georg wählt. Kartenfläche bleibt `toneMapped: false`.
+7. **Kamera „Nah“ (§44.2):** freigegeben, Ziel = Kartenmitte.
+8. **Dioramen ins Gelände (§44.2):** Vorlage ist jetzt L2 Schritt 4 (V-341) plus WS0-Lieferung (Steine-Kit, `footprint`, `edgePalette`). Terrain-Spender: der Lab-Inselboden (`src/island`, Höhenfeld + Clay-Oberfläche) – erst Vorlagen-Zeile.
+9. **Info-Symbol (§44.3):** passt; mehr HUD erst mit Claude Design HUD R4.
+
 ## 16.10.2026 · Look-Lauf L2 – V-340
 Neuer langer Auftrag `replies/BRIEF_WS1_LOOK_RUN_L2.md` (Hub b57): baut auf L1 (V-329) auf. Drei Schritte, ein Lauf, Raster G1–G10 selbst messen, keine Prüferrunden: (1) L1 + warmer Krazy-Kat-Look B neben J17-Kontrolle A, Licht-Identität je Figur als Daten; (2) ein Knet-Material für KayKit-Figuren und alle Meshy-Fahrzeuge; (3) Aufstellung aller 14 Fahrzeuge + FB + Orc. Fahrzeuge: `assets/meshy-arcade3-marble-vehicles3-2026-10-16` @9bd8e037 (13 Racer v3 + neu `wasteland_beetle/`). M1 TUNE / M2 nicht umordnen; Einplanung bitte im WS1_STATUS. Fluff-HUD nicht bauen (kommt über Claude Design HUD R4).
 

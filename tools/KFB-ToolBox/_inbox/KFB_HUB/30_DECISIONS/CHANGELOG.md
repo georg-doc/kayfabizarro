@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-342: WS1 §43–§45 beantwortet (Bodenfarbe aus der Bühne statt Story-Mode, Walker-Vorlage im Lab, Flug-Neubau nach WoW-Logik, Raster M1 TUNE T1–T6, Halo-Lichter, Kontaktschatten, Tonemapping, Kamera Nah); L1/L2 nachgezogen; Hub-Plan (steps) aktualisiert.
+
 ## 2026-10-16 · Look-Lauf L2
 - V-341: Dioramen ins Terrain einbetten (L2 Schritt 4, Raster G11–G14; Blender-Lauf §E Steine-Kit + footprint/edgePalette).
 - V-340: WS1-Look-Lauf L2 (Licht L1 + warmer Standard B, Licht-Identität je Figur, Knet-Material für Figuren und Fahrzeuge, Dieselpunk-Aufstellung); Käfer + Größenbilder auf assets/meshy-arcade3-marble-vehicles3-2026-10-16 @9bd8e037; Fluff-Pips in HUD R4 (b49).

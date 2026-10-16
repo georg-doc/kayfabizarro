@@ -4631,6 +4631,21 @@
    "applies": "mit L2"
   },
   {
+   "id": "V-342",
+   "date": "2026-10-16",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "WS0-Antworten auf WS1_STATUS §43–§45: (1) Karte hat keinen Story-Mode → Bodenfarbe aus der Bühne fromColors(edgePalette) (WS0 liefert mit Blender-Lauf R1), bis dahin V-286-Tönung ohne Story-Tint, Kartentext-Ableitung entfällt; Story-Mode = W6-Wurf als Spielzustand später, dann Akzent statt Boden (korrigiert V-331 Punkt 2 und L2 G6). (2) Walker-Vorlage = Lab lokal (src/main.ts WoW-Maus/Tasten, travel.ts, travel-core.j17.js Sprünge, walk-controller.js); Flug-Controller gibt es nicht → Neubau freigegeben nach WoW-Logik (Doppel-Leertaste 400 ms, W in Blickrichtung, Leertaste/X steigen/sinken, Shift Schub), Look aus kfb-flight-vfx.js. (3) M1 TUNE vor M2, Raster T1–T6. (4) Lokale Lichter = Pool-Licht + Halo; WS0 trägt practicals[] ein. (5) KayKit-Kontaktschatten ohne Kopf. (6) Tonemapping als Bildpaar, Georg wählt. (7) Kamera Nah auf Kartenmitte. (8) Gelände-Vorlage = L2 Schritt 4 + Lab-Inselboden.",
+   "values": {},
+   "owner": "WS1 · WS0",
+   "check": "nächster WS1-Status",
+   "source": "WS1 §43–§45; Georg 16.10.: „Karte selbst hat keinen Story-Modus“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Offene WS1-Fragen blockierten Farb-Einbau und M1-Steuerung; klare Antworten mit Vorlage-Pfaden.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4703,7 +4718,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:653",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:656",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
