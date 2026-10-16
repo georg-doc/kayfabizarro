@@ -24,7 +24,7 @@ import { isCardSafe } from './cardMapping'
 import { expose } from './debug'
 import { ROGUE, FB, KAYKIT, CAST_IDS } from './actors/stageCast'
 import { StageOrbitCam, ORBIT } from './StageOrbitCam'
-import { lightAt, parseTod, skyAtTod, lookB, skyLookB, LIGHT_INTENT } from './stageLight'
+import { lightAt, parseTod, skyAtTod, lookB, skyLookB, LIGHT_INTENT, followShadow } from './stageLight'
 import { createActorRim } from './modules/actorRim'
 import { createClayLook } from './modules/clayLook'
 import { createVehicleLineup } from './modules/vehicleLineup'
@@ -151,6 +151,7 @@ const sky = (() => {
 // Kontaktschatten (V-203, Spender Lab contact-blob.ts) als eigenes Modul unter jeder Figur (modules/contactBlob.js); FB behält zusätzlich seinen contact-ao.
 const L1 = /(^|[#,])light=l1(,|$)/.test(hash)
 export const lightState = { tod: parseTod(hash), current: null }
+const ORIGIN = { x: 0, y: 0, z: 0 }
 const L1_TM = /tm=none/.test(hash) ? 'none' : 'aces' // Bildpaar ACES | ohne (V-342 Punkt 6); Georg wählt
 // L2 Schritt 1 (V-340): look=a (L1 genau) | look=b (warmer Krazy-Kat-Grundton); mit look=… ist auch die Licht-Identität je Figur (Randlicht) an
 const LOOK = L1 && /look=b/.test(hash) ? 'b' : 'a', RIM = L1 && /look=[ab]/.test(hash)
@@ -182,7 +183,7 @@ function LightRigL1() {
   useFrame(() => {
     const L0 = lightAt(lightState.tod), L = LOOK === 'b' ? { ...lookB(L0), sunDir: L0.sunDir, tod: L0.tod, elev: L0.elev, az: L0.az } : L0, { sun, back, hemi } = sunRef; if (!sun || !back || !hemi) return
     const d = L.sunDir, R = 40
-    sun.position.set(d[0] * R, d[1] * R, d[2] * R); sun.color.set(L.sun); sun.intensity = L.sunI
+    followShadow(sun, ORIGIN, { size: 12, dist: R, sunDir: d }); sun.color.set(L.sun); sun.intensity = L.sunI // Bühne: Ziel fest in der Mitte; M1/M2 übergeben Figur bzw. Fahrzeug
     back.position.set(-d[0] * R, Math.max(6, d[1] * R * 0.5), -d[2] * R); back.color.set(L.back); back.intensity = L.backI
     hemi.color.set(L.hemiSky); hemi.groundColor.set(L.hemiGround); hemi.intensity = L.hemiI
     lightState.current = { look: LOOK, rim: RIM, tm: L1_TM, tod: L.tod, hemiGround: L.hemiGround, back: L.back, sun: L.sun, sunI: +L.sunI.toFixed(3), hemiI: +L.hemiI.toFixed(3), backI: +L.backI.toFixed(3), elev: +L.elev.toFixed(2), az: +L.az.toFixed(2) }

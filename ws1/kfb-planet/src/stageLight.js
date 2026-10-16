@@ -66,3 +66,23 @@ export const LIGHT_INTENT = Object.freeze({
 })
 // Story-Mode-Voreinstellungen für später (gewürfelt, V-342): nur Hinweise für Rand und Fill, nie der ganze Boden
 export const STORY_INTENT = Object.freeze({ tragic: { fillTint: '#9fb8d6' }, heroic: { rimColor: '#ffb066', keyBias: 'warm' }, mystical: { rimColor: '#a98bff' }, forbidden: { rimColor: '#c4507f' }, comic: { rimColor: '#e9e36a' }, absurd: { rimColor: '#e9c14a' } })
+
+// L1 Regel 4 · Sonnenschatten folgt dem Ziel (Figur zu Fuß, Fahrzeug im Auto; Georg 16.10.: „fährt aus dem Schatten raus, extrem pixelig“).
+// Ein enges Frustum (±size m) um das Ziel, Mittelpunkt auf das Texelraster der Schattenkarte gerastet (sonst flimmern die Schattenkanten beim
+// Bewegen), Sonnenwinkel unverändert. Je Bild vom Host aufrufen; ohne three-Import (Duck-Typing auf DirectionalLight). sunDir = Richtung ZUM Licht (Einheit).
+// light: DirectionalLight mit shadow.camera (orthografisch) · target: { x, y, z } · opts: { size = 12, dist = 40, near = 1, far = 90, sunDir }
+export function followShadow(light, target, { size = 12, dist = 40, near = 1, far = 90, sunDir } = {}) {
+  const d = sunDir || (() => { const p = light.position, t = light.target.position, l = Math.hypot(p.x - t.x, p.y - t.y, p.z - t.z) || 1; return [(p.x - t.x) / l, (p.y - t.y) / l, (p.z - t.z) / l] })()
+  // Lichtraum-Basis: f zeigt von der Sonne zum Ziel; r, u spannen die Ebene der Schattenkarte auf
+  const f = [-d[0], -d[1], -d[2]], up = Math.abs(f[1]) > 0.99 ? [0, 0, 1] : [0, 1, 0]
+  const cr = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]], nrm = (v) => { const l = Math.hypot(...v) || 1; return v.map((x) => x / l) }
+  const r = nrm(cr(up, f)), u = cr(f, r), dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
+  const map = light.shadow?.mapSize?.x || 2048, texel = (2 * size) / map, T = [target.x, target.y, target.z]
+  const pr = dot(T, r), pu = dot(T, u), sr = Math.round(pr / texel) * texel - pr, su = Math.round(pu / texel) * texel - pu
+  const c = [T[0] + r[0] * sr + u[0] * su, T[1] + r[1] * sr + u[1] * su, T[2] + r[2] * sr + u[2] * su]
+  light.target.position.set(c[0], c[1], c[2]); light.target.updateMatrixWorld?.()
+  light.position.set(c[0] + d[0] * dist, c[1] + d[1] * dist, c[2] + d[2] * dist)
+  const cam = light.shadow?.camera
+  if (cam && (cam.left !== -size || cam.far !== far || cam.near !== near)) { Object.assign(cam, { left: -size, right: size, top: size, bottom: -size, near, far }); cam.updateProjectionMatrix?.() }
+  return { center: c, texel }
+}
