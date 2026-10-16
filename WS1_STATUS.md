@@ -18,6 +18,25 @@ Neueste Einträge oben (§55 ist der neueste). WS0 antwortet im Register-Branch 
   2. Als Konzept-Eingang aufnehmen und nach M2 (k2b-Grundfahren sauber) als eigene Vorlagen-Zeile planen. Vorschlag: Stunt-Zonen als Daten im Bühnen- bzw. Welt-Deskriptor (`stuntZones: [{ type: 'ramp', push, pull, landing }]`) plus Ereignisse aus der Fahrphysik (Wandkontakt schräg → Zwei-Rad-Zustand mit Zeitlimit und Recovery).
 - **M2 jetzt:** k2b so bauen, dass Stunt-Zustände später andocken können (Kontakt- und Landeereignisse als Hooks), aber keine Stunts bauen.
 
+### 55.1 · Fundort (Georg 16.10.): georg-doc/KFB-Stunt-Car-Race `_inbox/` @df1e35b5
+- **Ordner `KFB Cologne Race Option C/`, Stand `handoff/KFB_Vehicle_Lab_v4/`:**
+  - `lab-v7/vehicle-cartoon-deformer.v2.js` + `deformer-profiles.json`:
+    - Cartoon-Deformer fürs Fahrzeug, nur Darstellungs-Knoten (schreibt nie in Kontakt bzw. Physik);
+    - Signale `speed, longAccel, lateral, bank, drift`, Ereignisse `railImpact({side, strength})` und `landing({strength})`;
+    - Federn mit attack/release, Teilschritte 1/240 s, Priorität `impact > drift/load > speed > idle`.
+    - RETURN-Dokument: `RETURN_cartoon_vehicle_deformer.md` (17.09.).
+  - `lab-v7/vehicle-twowheel.v1.js` „Zwei-Rad-Schräglage“ (Georgs Auftrag 18.09.: „seitlich gekippte Cartoon-Stunt-Fahrt auf 2 Rädern, z. B. entlang einer Bande oder Hausfassade“):
+    - Kippachse = äußere Laufflächenkante, gemessen;
+    - Haltephase mit Balancekorrekturen als Kern;
+    - Kippwinkel aus dem Schwerpunkt gerechnet.
+  - `lab-v8/cartoon-deform-segmented.v1.js`, `lab-v8/flight-deformer.v1.js` (Plan `PLAN_flight_deformer.md`, `RETURN_flight_deformer_v1.md`).
+  - `cardeform.v1.js` (Vertex-Shader-Fassung) ist laut RETURN überholt.
+- **Rampen mit Push- und Pull-Zone:** nicht gefunden in den Dateinamen von `_inbox/` (Suche nach stunt|ramp|push|pull|jump|sprung). Inhalte der Markdown-Dateien sind noch nicht durchsucht.
+- **Folge für M2:**
+  - Die Hooks in k2b (§55) heißen wie im Deformer: `railImpact({side, strength})`, `landing({strength})`, kontinuierlich `speed/longAccel/lateral/bank/drift`.
+  - Dann docken Deformer (Squash, §54 Stufe 1) und Zwei-Rad (§55) als Vorlagen 1:1 an.
+- **Bitte an WS0:** Deformer v2 und Zwei-Rad v1 als Vorlagen für M2 bestätigen; Freigabe als Vorlagen-Zeile nach dem k2b-Grundfahren.
+
 ## 54 · 16.10. · Georg: cartoonige Impact-Physik (Knete/Gummi-Welt) · Vorschlag in zwei Stufen
 
 - **Georg (16.10.):** Alles in der Welt ist aus Knete bzw. Gummi gedacht.
