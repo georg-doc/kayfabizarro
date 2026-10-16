@@ -63,3 +63,23 @@ References: Three.js TSL `triplanarTexture()` and `normalMap()`: https://threejs
 ## 6. Handoff
 **Status:** Source intake + grounded diagnosis; no changed running light, material, model or 3D scene. No actual original screenshots downloaded or pixel-audited; no Site/preview URL revision verified. Existing WS1 L2/V-346 is the recipient.
 **Next single gate:** WS0_V346_COHERENT_LOOK_RECEIVER_CHECK — WS0 maps this Dropbox visual reference + the focused diagnostic to the EXISTING V-346/L2 tune and nominates its first real same-camera actor-stage-terrain proof. Do not create a new runtime owner, no V-number asserted.
+
+
+---
+
+## 2026-10-16 · Georg confirms approach · routed to existing WS0 V-355
+**Georg's response:** the source-first look-cohesion diagnosis is intuitively plausible; **continue with this approach**. This is a GO for the *method and next comparison*, **NOT** a rendered Look PASS, new code authorization outside the established owner or acceptance of an unverified VFX donor.
+
+**Newer WS0 authority supersedes the earlier “V-346 receiver check” gate in this historical note:** WS0_TO_WS1 now explicitly assigns **V-355 / L2 Step 5 “Ein Look für alle Schichten”** (paired with V-356 delivery/publish planning). Implement the accepted owner task **within existing V-340 L2**, following Step 4 V-341 terrain integration. WS0 has specified:
+- Meshy baked lighting + real-time lighting yields muddy, overly dark stages relative to bright figures;
+- **WS0 supplies de-lit/normalized Meshy texture variants**, retaining the source's colors and original asset identity; *no unverified wholesale repaint or destructive UV remap*;
+- shared environment tint, horizon/haze and ambient from the stage's **source-sampled edgePalette**; actor ground hemisphere/bounce matches the stage;
+- common KFB Clay fine normal/roughness at consistent scale (UV-independent triplanar **detail only**, source UV albedo retained);
+- same-camera comparison among **actors, stage, terrain** at same time/look; assess mean lightness and chroma deviations ≤ 15 % as WS0's quantitative guide, while still reviewing visible material and contact continuity;
+- carry forward **V-346**: very subtle GothGirl violet rim, FB mouth fill, no overexposed clay, look B default, shadows follow solar time, ACES/toneMapped:false ground trial explicitly visible in comparison.
+
+**Smallest evidence packet for WS1 (no separate new gate):** one original real Meshy GLB and original material **shown alone** before normalized-texture variant; original FrizzleBob and GothGirl under same light; then real Meshy stage + actual terrain transition + original ungraded KFB Card. Identical cameras, look B gold/day, 16:9 and portrait where relevant. Pair current V-346 baseline | actual V-355 receiver, with **rims, local lights, tonemapping and Clayton normal** test toggles. For WS0-supplied normalized Meshy textures show original vs new together, exact source refs and ownership; inspect painted AO, luminosity clipping, source color fidelity and look at both day/night after pass. Do NOT claim a 15% metric proves visually finished; inspect original Card and actor eyes/mouth as well.
+
+**Dropbox reference state:** confirmed nine SpellSpill PNG source IDs/preview links in connected Dropbox. Direct original pixel transfer into the local container remained unavailable in this chat environment (temporary Dropbox download URL could not be resolved from container); therefore no original screenshot color histogram or claim that any reference shader was integrated. Keep them as Georg visual inspiration and retrieve/source-isolate with the appropriate GUI/connected browser capability before VFX adoption. Never claim an asset URL loaded is visual donor proof.
+
+**No extra runtime owner, issue, V-number, Site deployment or broad asset rewrite.** Existing Issue #404 and V-355 are the route. One next action/gate: **WS0_V355_LOOK_COMPARISON_SOURCE_AND_RECEIVER** — WS0 supplies de-lit Meshy source textures and the exact L2 Step 5 acceptance packet for the current single WS1 R3F owner, then reviews the real same-camera evidence. Current GPT-Site staging idea in WS1_STATUS §57 / WS0 V-356 is separate platform planning, not verified delivery of a revised Look build by this research chat.
