@@ -5205,6 +5205,21 @@
    "applies": "nach V-345 + M2-Merge"
   },
   {
+   "id": "V-380",
+   "date": "2026-10-17",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "Norman (Prototype Dummy, Rig_Medium-Darsteller #56, Branch toolbox/eye-rig-batch-2026-09-18 PR #104) kommt in die ToolBox: Design offen (OPEN_DESIGN, altes Braun nicht bindend), Gesicht EyeRig v6 + dunkelgelbe Lider + BrowRig-v2-Blockbrauen + gelber R3-Mund. Seiten-Besitz der ToolBox-Site bleibt bei WSA work (WS0 kann ChatGPT-Sites nicht veröffentlichen): Browser-Prüfung Source only → Face Candidate mit Clay, Staging auf kfb-toolbox Site (kein Live, kein Merge), Tuning-Panel mit Werte-Kopieren für Georg, Bilder-Raster für den Hub, Geschichte vor dem Bau.",
+   "values": {},
+   "owner": "WSA work (Site, Bau) · Georg (Tuning) · WS0 (Register, Review)",
+   "check": "Bilder-Raster mit Clay im Hub, Konsole 0 Fehler",
+   "source": "replies/BRIEF_WSA_NORMAN_TOOLBOX_R1.md (Hub b71) · WSA-Handoff WS0_HANDOFF_NORMAN_2026-10-17.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Character Design braucht sichtbares Iterieren statt blind festgeschriebener Werte; Georg tunt selbst im Browser.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5277,7 +5292,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:704",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:705",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

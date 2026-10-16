@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-380: Norman in die ToolBox (WSA work: Browser-Prüfung, Staging, Tuning-Panel, Bilder; Hub b71). M3-Brief: max. 8 Schritte/Bild, Pause bei verstecktem Tab.
 - V-379: Slice-3-Brief Fahrhilfe M3 auf K2B (A–G, Raster, Hub b70).
 - P1-Daten: kfb.performance/1 Pharaoh (Mumien, Viseme, Tanz-Cues, 52 Karten-Wechsel) auf dem Song-Branch (PR #412); ElevenLabs-Motor-Set als Hub b69; Fahrhilfe-Auftrag M3 in Arbeit.
 - V-378: Spender rwanda-f1-2026-sim (MIT): Texel-Schatten, Deformer-v2-Kern, LoopGrid-Motorsound, PMREM für Metall; keine Assets, keine GPL-Dateien.
