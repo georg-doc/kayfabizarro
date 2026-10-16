@@ -57,7 +57,9 @@
       }
     ],
     "originalPngsMirroredToGitHub": false,
-    "sourceMediaLookDirectlyInspected": false
+    "sourceMediaLookDirectlyInspected": true,
+    "contactSheetOnly": true,
+    "eachOriginalFullResViewed": false
   },
   "reddit": {
     "shortUrl": "https://www.reddit.com/r/threejs/s/rVGHVxDEdT",
@@ -137,12 +139,14 @@
   },
   "currentResult": {
     "referenceFilesListed": true,
-    "originalPixelsVerified": false,
+    "originalPixelsVerified": true,
     "visualLookAccepted": false,
     "benchExecuted": false,
     "projectCodeChanged": false,
     "sitePublished": false,
-    "merged": false
+    "merged": false,
+    "contactSheetVisuallyInspected": true,
+    "originalShaderSourceFound": false
   },
   "nextGate": "KFB SEED WORLD BLOCK-DESTRUCTION HYBRID FX SOURCE-ISOLATION + PERFORMANCE A/B",
   "existingVfxCatalog": {
@@ -210,5 +214,18 @@
       "status": "previous source-isolated review evidence; no fresh Golden approval"
     },
     "followUp": "EXISTING_ALPHA_MASK_ATLAS_CATALOG.md"
+  },
+  "visualEvidence": {
+    "status": "NINE_PNG_HASHES_VERIFIED_CONTACT_SHEET_VIEWED",
+    "runId": 38922347665,
+    "jobId": 117045170526,
+    "ciConclusion": "SUCCESS",
+    "artifactId": 12054229885,
+    "zipSha256": "d175d3e3d4331c4823b24abe5f25247b4f61c08f99aed278ff73961e86bb38b8",
+    "contactSheet": "contact-sheet.jpg",
+    "manifest": "manifest.json",
+    "originalImagesVendored": false,
+    "summary": "Warm parchment diorama, gray smoke, orange blast, angular brown shards, teal waterfall/foam, pale cream vortex; shader origin still unknown",
+    "sourceDocument": "VISUAL_SOURCE_PROOF.md"
   }
 }
