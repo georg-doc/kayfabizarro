@@ -1,7 +1,22 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§62 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§63 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 63 · 16.10. abends · V-346 Look-TUNE gebaut (lokal @8ce5ac5) · Messwerte · Code-Push nach grüner Testreihe
+
+Stand: Commit kfb-planet main @8ce5ac5, noch nicht gespiegelt. Licht-Test PASS mit neuen V-346-Prüfungen. Die volle Testreihe lief beim Pausieren (8/23 grün) und wird nach der Pause wiederholt; erst danach folgen Spiegelung und Vorschau mit build.json (V-356).
+1. **Look B Standard** (mit `light=l1`), Randlicht immer an. Himmel B ist jetzt **derselbe Himmel, nur getönt**: lineare Mischung mit warmem Licht (oben 12 %, unten 15 %), statt den Farbton um 70 % zu drehen. Das war Georgs „anderer Skydome“: Aus Mint bzw. Hellblau wurde Orange bzw. Rosa. OKLab-Abstand ≤ 0,023 statt bis 0,146.
+2. **GothGirl-Glow:** rimStrength 0,5 → 0,15, rimPower 3 → 4 (nur Silhouette). **FB-Gesicht:** faceFill 0,16 (eigene Grundfarbe als Selbstleuchten, nur Mesh `CharacterTemplate_Head` und Mund; Ohren und Haare nicht), Kopf empfängt keinen Sonnenschatten. Gesichtshelligkeit +14 % (Tag 115 → 131).
+3. **Schattenlänge (Bestätigung in einem Satz):** Länge und Richtung folgen nur der Sonnenhöhe bzw. dem Azimut aus `timeOfDay`: Länge = Höhe / tan(Sonnenhöhe), Tag 49° → 0,87 × Höhe, Gold 16° → 3,49 × Höhe, Nacht 35° → 1,43 × Höhe, Richtung gleich (Azimut −53,13°). Getestet in `test/light`.
+4. **Tonemapping:** Standard `split` = ACES global, Bühne bzw. Boden mit `toneMapped:false` (Modul `toneSplit`); `tm=aces` und `tm=none` bleiben als Vergleich.
+5. **Knet:** `clay=all` ist Standard (FB mit Knet). GothGirl: Samt 0,18 → 0,06, Grundfarbe × 0,95. Messung: Das „überstrahlt“ kam vor allem vom Glow (vorher +3 % Helligkeit gegen Knet aus). **Fahrzeuge:** Samt 0. Sättigung bei gleichem Licht **99 %** der Textur (vorher 88 %; Ziel ≥ 95 %). Dass sie matter wirken als das Meshy-Original, liegt am Metall: Meshy-Materialien haben metalness ≈ 0,93, Knet ist nach G8 nie metallisch. **Frage an WS0/Georg:** Restglanz für Metallteile zulassen (Ausnahme von G8)?
+6. **Vergleichsleiste:** neue Zeile „V-346 neu | vorher“ (`tune=0`), Tonemapping mit drei Knöpfen; Standardwerte angepasst.
+7. **Bildpaare** (V-253, je 1920 px, alle mit Knet) an Georg gegeben: Bühne Tag/Gold, GothGirl nah, FB-Gesicht, Tonemapping, Fahrzeuge. Skripte `scripts/light/v346-pairs.mjs` und `v346-vsat.mjs`.
+
+Als Nächstes: Testreihe → Spiegeln und Vorschau, dann V-345 `worldScale.js` (Bühne zuerst; die Bewegungs-Sitzung zieht M1/M2 nach), dann V-360 Editor.
+
+Aufwand V-346: ca. 2 h 10 min (davon ca. 1 h Browser-Läufe), Tokens im Rahmen.
 
 ## 62 · 16.10. abends · Vorschlag: nächste größere Integrations-Slices, Synergien und blinde Flecken (Bitte an WS0)
 
