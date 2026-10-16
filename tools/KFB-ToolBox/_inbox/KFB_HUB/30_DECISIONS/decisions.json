@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-16",
+ "updated": "2026-10-17",
  "entries": [
   {
    "id": "V-001",
@@ -5160,6 +5160,21 @@
    "applies": "ab Plugin R1"
   },
   {
+   "id": "V-377",
+   "date": "2026-10-17",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Writer’s Room JSON-first, PDF nur bei Ausnahme (Georg über WSA, WS0-ACK): Karten-Wahrheit = Registry-JSON (cardName, lore, power, page); Bildmotiv aus media/kfb/<PDF>.pdf.json artworkPrompt, gespeichert roh + kurzes imageMotif (≤ 12 Wörter) mit motifSource und visualVerified:false; Motiv darf nie dem gedruckten Text widersprechen; gradeReason/jsonLegacy/Marketing bleiben draußen. PDF nur bei benanntem Widerspruch. Trust #30 Heel-Face Turn: gedruckt nur Titel/Werte, Registry-POWER ist Datenfehler (Song nutzt Titel + Motiv). Pharaoh-Seiten vorläufig aus WS0-Dossier (mappingVerified:false). Blind-Review wr4 durch WS0: Pharaoh 5/5/6, Trust 6/4/6; wr5-Auftrag an WSA (Deck-Geist hörbar: Wrestling bzw. Kayfabe/„Price: your soul“, Callbacks ohne vorweggenommene Pointe, ein Reset in der Mitte).",
+   "values": {},
+   "owner": "WSA (Plugin, wr5) · WS0 (Review, Registry-Fix #30)",
+   "check": "wr5 nach Review-Punkten; #30-Datenbranch",
+   "source": "replies/WS0_ACK_WRITERS_ROOM_JSON_FIRST_R1_2026-10-17.md · replies/BLINDREVIEW_WR4/",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Kartendaten mit Bildbeschreibung liegen als JSON vor; eine PDF-Sichtprüfung je Seite hätte den Ablauf grundlos blockiert.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5232,7 +5247,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:698",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:701",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-17 · Writer’s Room JSON-first
+- V-377: ACK JSON-first (artworkPrompt als Motiv, PDF nur bei Ausnahme), Trust #30 = gedruckt leer, Blind-Review wr4 (Pharaoh 5/5/6, Trust 6/4/6), wr5-Auftrag an WSA.
+
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
 - V-376: Triplets + Writer’s Room + Review + Check-in + Performance als ein gekoppelter Tool-Workflow mit Dateien je Stufe; Blind-Review per eigenem Reviewer-GPT bzw. WS0-Agent.
 - V-374 Writer’s Room als Skill im ChatGPT-Plugin kfb-triplets (Chat + GitHub, Hub b66); V-375 Regeln für Langläufe ohne Georg (Hub b67 WS1-Start).
