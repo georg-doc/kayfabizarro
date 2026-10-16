@@ -17,4 +17,5 @@ check(()=>assert.equal(localHash('#m1'),'#m1'));
 check(()=>assert.equal(localHash(null),null));
 check(()=>assert.equal(localHash('https://evil.example/#stage'),null));
 check(()=>assert.deepEqual(testSummary([{status:'failed'},{success:true}]),{passed:1,total:2}));
+check(()=>assert.deepEqual(testSummary([{passed:23,total:23},{passed:5,total:5}]),{passed:28,total:28}));
 console.log(`${count}/${count} contract checks PASS`);

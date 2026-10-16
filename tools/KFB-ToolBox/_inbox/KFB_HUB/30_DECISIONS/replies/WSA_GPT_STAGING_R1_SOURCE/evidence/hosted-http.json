@@ -1,0 +1,154 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "seconds": 0.197,
+    "bytes": 9510,
+    "sha256": "17059fea8d71bb515d0c95d890c3684ad828be08ac4f1213b87da2bac5769e67",
+    "sourceSha": null,
+    "expected": true,
+    "csp": null
+  },
+  {
+    "path": "/api/status",
+    "status": 200,
+    "seconds": 0.524,
+    "bytes": 2559,
+    "sha256": "82810eb3758b47f886c94c989ad3bb0972184fd014ccbfb43fc98a62917c8f05",
+    "sourceSha": null,
+    "body": {
+      "builds": [
+        {
+          "schema": "kfb.ws1-build/1",
+          "commit": "kfb-planet main@8ce5ac5 (V-346 Look-TUNE)",
+          "date": "2026-10-17T00:35:00+02:00",
+          "tests": {
+            "suite": "npm test",
+            "passed": 23,
+            "total": 23
+          },
+          "links": {
+            "stage": "https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,light=l1",
+            "m1": "https://ws1-preview.kayfabizarro.pages.dev/#m1",
+            "car": null,
+            "lineup": "https://ws1-preview.kayfabizarro.pages.dev/#stage,light=l1,lineup=1"
+          },
+          "notes": "V-346: Look B, Knet alle, ACES mit Boden ohne als Standard; Vergleichsleiste mit Zeile V-346 neu|vorher (tune=0). Fahrprobe nicht enthalten: M2 (K2B, V-347) kommt nach der Browser-Prüfung der Bewegungs-Sitzung wieder in die Vorschau.",
+          "entry": "index.html",
+          "sha": "8c5bd157c6c17d44b323453e97671aeec3251187",
+          "bytes": 18100265,
+          "files": [
+            "index.html"
+          ],
+          "archivedAt": "2026-10-16T23:05:17.340Z"
+        },
+        {
+          "schema": "kfb.ws1-build/1",
+          "commit": "kfb-planet main@987422a + merge m2/fahren@00b86ea (Vorschau-Kombi, nicht gemergt)",
+          "date": "2026-10-16T19:15:00+02:00",
+          "tests": {
+            "suite": "npm test",
+            "passed": 23,
+            "total": 23
+          },
+          "links": {
+            "stage": "https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,light=l1",
+            "m1": "https://ws1-preview.kayfabizarro.pages.dev/#m1",
+            "car": "https://ws1-preview.kayfabizarro.pages.dev/#m1,car",
+            "lineup": "https://ws1-preview.kayfabizarro.pages.dev/#stage,light=l1,lineup=1"
+          },
+          "notes": "Fahrprobe k2b mit Sonne über stageLight.followShadow (Schatten folgt dem Auto, texel-gerastet), L1-Tageslicht; Bühne L1/L2 mit Vergleichsleiste. M2 nicht in main (Georg entscheidet).",
+          "entry": "index.html",
+          "sha": "7bb0b90435c3adf29f4080e4951e4ac57f842344",
+          "bytes": 18149142,
+          "files": [
+            "index.html"
+          ],
+          "archivedAt": "2026-10-16T23:05:21.042Z"
+        }
+      ],
+      "checkedAt": "2026-10-16T23:05:52.803Z",
+      "error": null,
+      "revision": "WSA-R1-2026-10-17",
+      "headResolvedAt": "2026-10-16T23:05:14.912Z",
+      "signature": "{\"schema\":\"kfb.ws1-build/1\",\"commit\":\"kfb-planet main@8ce5ac5 (V-346 Look-TUNE)\",\"date\":\"2026-10-17T00:35:00+02:00\",\"tests\":{\"suite\":\"npm test\",\"passed\":23,\"total\":23},\"links\":{\"stage\":\"https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,light=l1\",\"m1\":\"https://ws1-preview.kayfabizarro.pages.dev/#m1\",\"car\":null,\"lineup\":\"https://ws1-preview.kayfabizarro.pages.dev/#stage,light=l1,lineup=1\"},\"notes\":\"V-346: Look B, Knet alle, ACES mit Boden ohne als Standard; Vergleichsleiste mit Zeile V-346 neu|vorher (tune=0). Fahrprobe nicht enthalten: M2 (K2B, V-347) kommt nach der Browser-Prüfung der Bewegungs-Sitzung wieder in die Vorschau.\",\"entry\":\"index.html\"}",
+      "historyChecked": "8c5bd157c6c17d44b323453e97671aeec3251187"
+    }
+  },
+  {
+    "path": "/api/status?history=1",
+    "status": 200,
+    "seconds": 0.141,
+    "bytes": 2559,
+    "sha256": "82810eb3758b47f886c94c989ad3bb0972184fd014ccbfb43fc98a62917c8f05",
+    "sourceSha": null,
+    "body": {
+      "builds": [
+        {
+          "schema": "kfb.ws1-build/1",
+          "commit": "kfb-planet main@8ce5ac5 (V-346 Look-TUNE)",
+          "date": "2026-10-17T00:35:00+02:00",
+          "tests": {
+            "suite": "npm test",
+            "passed": 23,
+            "total": 23
+          },
+          "links": {
+            "stage": "https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,light=l1",
+            "m1": "https://ws1-preview.kayfabizarro.pages.dev/#m1",
+            "car": null,
+            "lineup": "https://ws1-preview.kayfabizarro.pages.dev/#stage,light=l1,lineup=1"
+          },
+          "notes": "V-346: Look B, Knet alle, ACES mit Boden ohne als Standard; Vergleichsleiste mit Zeile V-346 neu|vorher (tune=0). Fahrprobe nicht enthalten: M2 (K2B, V-347) kommt nach der Browser-Prüfung der Bewegungs-Sitzung wieder in die Vorschau.",
+          "entry": "index.html",
+          "sha": "8c5bd157c6c17d44b323453e97671aeec3251187",
+          "bytes": 18100265,
+          "files": [
+            "index.html"
+          ],
+          "archivedAt": "2026-10-16T23:05:17.340Z"
+        },
+        {
+          "schema": "kfb.ws1-build/1",
+          "commit": "kfb-planet main@987422a + merge m2/fahren@00b86ea (Vorschau-Kombi, nicht gemergt)",
+          "date": "2026-10-16T19:15:00+02:00",
+          "tests": {
+            "suite": "npm test",
+            "passed": 23,
+            "total": 23
+          },
+          "links": {
+            "stage": "https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,light=l1",
+            "m1": "https://ws1-preview.kayfabizarro.pages.dev/#m1",
+            "car": "https://ws1-preview.kayfabizarro.pages.dev/#m1,car",
+            "lineup": "https://ws1-preview.kayfabizarro.pages.dev/#stage,light=l1,lineup=1"
+          },
+          "notes": "Fahrprobe k2b mit Sonne über stageLight.followShadow (Schatten folgt dem Auto, texel-gerastet), L1-Tageslicht; Bühne L1/L2 mit Vergleichsleiste. M2 nicht in main (Georg entscheidet).",
+          "entry": "index.html",
+          "sha": "7bb0b90435c3adf29f4080e4951e4ac57f842344",
+          "bytes": 18149142,
+          "files": [
+            "index.html"
+          ],
+          "archivedAt": "2026-10-16T23:05:21.042Z"
+        }
+      ],
+      "checkedAt": "2026-10-16T23:05:52.803Z",
+      "error": null,
+      "revision": "WSA-R1-2026-10-17",
+      "headResolvedAt": "2026-10-16T23:05:14.912Z",
+      "signature": "{\"schema\":\"kfb.ws1-build/1\",\"commit\":\"kfb-planet main@8ce5ac5 (V-346 Look-TUNE)\",\"date\":\"2026-10-17T00:35:00+02:00\",\"tests\":{\"suite\":\"npm test\",\"passed\":23,\"total\":23},\"links\":{\"stage\":\"https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,light=l1\",\"m1\":\"https://ws1-preview.kayfabizarro.pages.dev/#m1\",\"car\":null,\"lineup\":\"https://ws1-preview.kayfabizarro.pages.dev/#stage,light=l1,lineup=1\"},\"notes\":\"V-346: Look B, Knet alle, ACES mit Boden ohne als Standard; Vergleichsleiste mit Zeile V-346 neu|vorher (tune=0). Fahrprobe nicht enthalten: M2 (K2B, V-347) kommt nach der Browser-Prüfung der Bewegungs-Sitzung wieder in die Vorschau.\",\"entry\":\"index.html\"}",
+      "historyChecked": "8c5bd157c6c17d44b323453e97671aeec3251187"
+    }
+  },
+  {
+    "path": "/build/8c5bd157c6c17d44b323453e97671aeec3251187/index.html",
+    "status": 200,
+    "seconds": 2.231,
+    "bytes": 18101203,
+    "sha256": "29d5fe3ffaaf70a12c8a714b1db088aa2a155f5a01fd432a75f728df993c691d",
+    "sourceSha": "8c5bd157c6c17d44b323453e97671aeec3251187",
+    "expected": true,
+    "csp": null
+  }
+]

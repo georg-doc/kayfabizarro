@@ -1,7 +1,11 @@
 export function localHash(link:unknown){if(typeof link!=='string')return null;if(link.startsWith('#'))return link;try{const u=new URL(link);return u.hostname==='ws1-preview.kayfabizarro.pages.dev'&&u.hash?u.hash:null}catch{return null}}
 export function testSummary(t:any){
  if(typeof t==='string'){const m=t.match(/^(\d+)\/(\d+)$/);return m?{passed:+m[1],total:+m[2]}:null}
- if(Array.isArray(t)){const pass=(v:any)=>v===true||v==='PASS'||v==='pass'||(v&&typeof v==='object'&&(v.passed===true||v.success===true||['PASS','pass','passed'].includes(v.status)));return {passed:t.filter(pass).length,total:t.length}}
+ if(Array.isArray(t)){return t.reduce((sum:any,v:any)=>{
+  if(v&&typeof v==='object'&&!Array.isArray(v)&&Number.isInteger(v.passed)&&Number.isInteger(v.total)&&v.total>0&&v.passed>=0&&v.passed<=v.total)return {passed:sum.passed+v.passed,total:sum.total+v.total};
+  const pass=v===true||v==='PASS'||v==='pass'||(v&&typeof v==='object'&&(v.passed===true||v.success===true||['PASS','pass','passed'].includes(v.status)));
+  return {passed:sum.passed+(pass?1:0),total:sum.total+1};
+ },{passed:0,total:0})}
  if(t&&Number.isInteger(t.passed)&&Number.isInteger(t.total))return {passed:t.passed,total:t.total};
  return null;
 }
