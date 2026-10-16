@@ -1,5 +1,66 @@
 # KFB Eye Actor Studio v1 · RETURN
 
+## CLAUDE DESIGN E1 TUNE · E2 PASS (Georg 16.10., V-348) · next: oval step 6, EyeRig v6 hull step 7
+
+**Human result:** Georg approved **E2 · closed clay lid skin** as the KFB lid construction on 2026-10-16 (decision **V-348**). E1 stays **TUNE** (Georg 14.10.: "schon nicht schlecht"). `thin-clay-lid.v1.mjs` stays **HUMAN VISUAL FAIL · NEGATIVE FIXTURE ONLY**. This answers gate `CLAUDE_DESIGN_KFB_EYELID_SOURCE_ISOLATION_AND_CLEAN_MESH_PROOF_01`.
+
+**E2 construction (Claude Design, Clay-Lid E2 session cut 2026-10-16 r1):**
+- One mesh around the whole eyeball with sphere topology (χ = 2). The lid slit is the only opening. Two poles at the back (inner/outer), no seam.
+- Lid slit in an equidistant map around the gaze axis: x = A·cos ψ, y = U·|sin ψ|^(2γ) upper, −L·… lower.
+- U/L = mid lid edge from EyeRig v6 (rest 55.6° / 59.6°); lid closed 0.06° (slit 0.002 R).
+- Lid corner A: rest 105° from front (behind the silhouette), wide 118°, closed 80° (visible from the side).
+- 160 columns × 97 profile points (inner → inner edge → lip → outer rounding → outer) = **31,360 triangles**.
+- Outer rounding 0.075 R, inner edge 0.012 R, inner surface 1.012 R.
+- Same topology in every state. Lid closure only recomputes positions. Motion = the opening slides; the skin stretches when closing.
+
+**New files (additive, `tools/KFB-ToolBox/eye-actor-studio-v1/clay-eyelid/`):**
+- `clay-eyelid.v1.js` (E1, TUNE; carries the V6 measurements used by v2)
+- `clay-eyelid.v2.js` (E2, PASS)
+- `mesh-qa.v1.js`
+- `eyelid-bench.v3.js` (= Claude Design `eyelid-bench.v2.js`; only the three donor import paths changed to `../*.mjs`)
+- `index.html` (plain workbench without the Claude Design shell; three r160 importmap)
+- `RETURN_E1.md`, `RETURN_E2.md` (verbatim Claude Design returns)
+- `ALIEN_STALK_E2_PLAN.md`
+- `tests/clay-eyelid-skin.test.mjs`
+
+Donors `clay-lid.v1.mjs` (30201095), `upper-lid-volume.v1.mjs` (f2ac451a) and `thin-clay-lid.v1.mjs` (79eb8abe) are unchanged. `pet-eye-rig.v6.js` was read only.
+
+**Measured in the browser (Claude Design workbench; states wide, rest, 25, 50, 75, closed):**
+- Mesh: boundary edges 0 raw/welded · non-manifold 0 · winding 0 · volume > 0 · χ = 2 · 1 body.
+- Self-intersection 0 hits (442,367 pairs) · degenerate/duplicate 0/0 · min triangle quality 0.026 · clearance 1.20 % R.
+- Pupil with lid closed: 0 px in 8 views (front, 40° l/r, 30° up/down, 75° side, top, back) × 5 gaze directions.
+- Counter-check rest, gaze centre: front pupil 5,088 px · side 90° pupil 106 px · back 0 px white.
+- GLB export of the current state: 925 kB (eyeball, pupil, lid_skin).
+- Re-run before intake with the repo-layout `clay-eyelid/index.html` in Chrome 152: same numbers. All five sources load from the repo paths.
+- Test limit (from E1): penetration is checked edge against triangle; coplanar overlap is not detected.
+
+**Node test, new (no browser, no three.js):** `node tools/KFB-ToolBox/eye-actor-studio-v1/clay-eyelid/tests/clay-eyelid-skin.test.mjs` → **105/105 PASS** (Node 24.21.0).
+- Every state: boundary edges 0 raw/welded · non-manifold 0 · winding 0 · χ = 2 · 1 body · volume > 0 · self-intersection 0 · degenerate 0 · duplicate 0 · 31,360 triangles.
+- Index buffer is byte-identical across all six states (376,320 B).
+- Min quality 0.02605 · clearance 1.2000 % R.
+- Negative control: `thin-clay-lid.v1` rest is caught (non-manifold 161, χ 261, degenerate 280, duplicate 118).
+- The broad-phase pair count (442,363 in Node vs 442,367 in Chrome) is informational only. Positions differ in the last float32 bit between the two V8 builds in 5 of 6 states (rest is byte-identical). Index buffers are identical. Pixel occlusion stays browser work.
+
+**Known weaknesses (accepted with PASS):**
+- With the lid closed, the skin compresses at the seam end and the lip forms a small notch there.
+- 160 triangles meet at the back pole: unremarkable when shaded, dark in wireframe.
+- Oval is display-only until step 6.
+
+**Next:**
+- **Step 6 · E3-OVAL (Claude Design):** shared oval deformation of eye and skin through `eyeoval.v1.js`. Path @main: `tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-10-04_r2/lib/frizzlegraft/eyeoval.v1.js`, blob 90c5e44b.
+  - Hang the E2 skin where eyeoval scales `e._lids`.
+  - Repeat the mesh and pixel checks after the deformation.
+  - Add a check of the pupil seat (+0.006 R) against the skin inner surface (1.012 R × axis).
+- **Step 7 · E4-RIG:** hull `attachClaySkin(rig)` after the pattern of `eyeoval.attach`.
+  - Hide `_up/_lo`; do not delete them. The skin becomes a child of `e._lids`.
+  - Every frame: `cu = (1.30 + _up.rotation.x) / 1.18`, `cl = (1.30 − _lo.rotation.x) / 1.18` → `apertureV6` → `updateClayEyelidSkin`.
+  - No second owner. EyeRig v6 PR #104 receives only after that proof.
+- **Aliens:** Lord Hunky / Lady Dory (E2 inside the baked socket shell): `clay-eyelid/ALIEN_STALK_E2_PLAN.md`.
+
+Runtime, profiles, FaceHost, Site and Stage are untouched.
+
+---
+
 ## CURRENT STATUS · 2026-10-14 · BOTH VIDEO TRANSCRIPTS ANALYZED · CLAUDE DESIGN READY
 
 **Binding intake:** `CLAUDE_DESIGN_EYELID_MESH_RECOVERY_BRIEF_2026-10-14.md` now contains timecoded source comparisons for both exact videos. Georg's pasted non-timecoded Step 1... text duplicates video A; his attached `Eingefügter Text(5).txt` contains the actual 0:00–18:02 Raymond Gabriel video B transcript. Caption transcription origin remains unknown; no source video-frame inspection claimed.

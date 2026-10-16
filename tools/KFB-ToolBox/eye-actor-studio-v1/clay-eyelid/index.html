@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB Clay-Lid E2 Werkbank</title>
+<!-- Schlichte Werkbank ohne Claude-Design-Hülle (kein support.js, kein DC-Rahmen). Bühne und Prüfung kommen
+     unverändert aus eyelid-bench.v3.js (= v2 mit Repo-Importpfaden). Über einen lokalen Webserver öffnen,
+     file:// lädt keine ES-Module. three.js r160 per Importmap von unpkg wie in »KFB Clay-Lid E2.dc.html«. -->
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#fff;font-family:Roboto,Arial,sans-serif;color:#000}
+#app{display:grid;grid-template-rows:auto minmax(0,1fr);height:100vh}
+header{padding:12px 18px;border-bottom:2px solid #eee}
+header h1{margin:0;font-size:20px;line-height:1.25;color:#c03}
+header p{margin:4px 0 0;font-size:13px;line-height:1.4;color:#666}
+main{display:grid;grid-template-columns:minmax(0,1fr) 340px;min-height:0}
+#stage{position:relative;min-width:0;min-height:0;background:#eee}
+#stage .msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:#666}
+aside{overflow:auto;border-left:2px solid #eee;padding:14px 18px 28px;display:flex;flex-direction:column;gap:14px;box-sizing:border-box;font-size:13px}
+.grp{display:flex;flex-direction:column;gap:6px}
+.grp b{font-size:12px;color:#666}
+.row{display:flex;flex-wrap:wrap;gap:5px}
+button{font:inherit;font-size:13px;line-height:1;padding:7px 10px;border-radius:5px;cursor:pointer;background:#fff;color:#000;border:1px solid #ccc}
+button.on{background:#c03;color:#fff;border-color:#c03}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+td{padding:4px 0;border-bottom:1px solid #eee;vertical-align:top}
+td.v{color:#666;text-align:right;padding-left:8px}
+.ok{color:#690;font-weight:700}.bad{color:#c03;font-weight:700}
+@media (max-width:820px){main{grid-template-columns:1fr;grid-template-rows:60vh auto}aside{border-left:0;border-top:2px solid #eee}}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>KFB Clay-Lid E2 · geschlossene Lidhaut</h1>
+    <p>Ein Auge in EyeRig-v6-Maßen, die Lider als eine geschlossene Haut, der Lidspalt als einzige Öffnung. E1, Spender und Negativ-Fixture zum Vergleich. Klick auf eine Ansicht vergrößert sie.</p>
+  </header>
+  <main>
+    <div id="stage"><div class="msg" id="msg">Lade three.js und die Lidmodule …</div></div>
+    <aside>
+      <div id="controls"></div>
+      <div class="grp"><b id="qaHead">Netzprüfung · läuft …</b><table id="qa"></table></div>
+      <div class="grp"><b>Pixel-Verdeckung · Lid zu (Höchstwert über alle Blickrichtungen)</b><table id="occ"></table><div id="ref" style="color:#666;line-height:1.4"></div></div>
+    </aside>
+  </main>
+</div>
+<script type="module">
+import { createBench, SOURCES, STATES, GAZE } from './eyelid-bench.v3.js';
+
+const stage = document.getElementById('stage'), msg = document.getElementById('msg');
+const fmt = (x, d = 0) => Number(x).toLocaleString('de-DE', { minimumFractionDigits: d, maximumFractionDigits: d });
+let bench = null;
+
+function renderControls() {
+  const st = bench.state(), box = document.getElementById('controls');
+  const groups = [
+    ['Quelle', Object.entries(SOURCES).map(([k, s]) => [s.label, st.source === k, { source: k }])],
+    ['Lidschluss (EyeRig-v6-Signal)', STATES.map((s) => [s.label, !st.play && st.closure === s.k, { closure: s.k, play: false }])],
+    ['Lidschlag 0 → 100 → 0', [[st.play ? 'Stopp' : 'Abspielen', st.play, { play: !st.play }], ['langsam · 1,2 s', st.speed === 'langsam', { speed: 'langsam' }], ['v6 · 0,12 s', st.speed === 'v6', { speed: 'v6' }]]],
+    ['Blick', Object.keys(GAZE).map((k) => [k, st.gaze === k, { gaze: k }])],
+    ['Anzeige', [['Kugel', st.shape === 'kugel', { shape: 'kugel' }], ['Oval 1,18 × 0,86', st.shape === 'oval', { shape: 'oval' }], ['Drahtgitter', st.wire, { wire: !st.wire }]]],
+  ];
+  box.innerHTML = '';
+  box.style.cssText = 'display:flex;flex-direction:column;gap:14px';
+  for (const [label, opts] of groups) {
+    const g = document.createElement('div'); g.className = 'grp';
+    g.innerHTML = `<b>${label}</b>`;
+    const row = document.createElement('div'); row.className = 'row';
+    for (const [l, on, patch] of opts) {
+      const b = document.createElement('button'); b.textContent = l; if (on) b.className = 'on';
+      b.onclick = () => { bench.set(patch); renderControls(); };
+      row.appendChild(b);
+    }
+    g.appendChild(row); box.appendChild(g);
+  }
+  const g = document.createElement('div'); g.className = 'grp'; g.innerHTML = '<b>Export</b>';
+  const b = document.createElement('button'); b.textContent = 'GLB des aktuellen Zustands'; b.onclick = () => bench.exportGLB();
+  const row = document.createElement('div'); row.className = 'row'; row.appendChild(b); g.appendChild(row); box.appendChild(g);
+}
+
+function renderQA(qa) {
+  const head = document.getElementById('qaHead'), t = document.getElementById('qa'), o = document.getElementById('occ'), r = document.getElementById('ref');
+  if (!qa || qa.running) { head.textContent = 'Netzprüfung · läuft …'; return; }
+  const scored = qa.rows.filter((x) => x.ok !== null), passed = scored.filter((x) => x.ok).length;
+  head.textContent = `Netzprüfung · ${qa.states.join(', ')} · ${passed} / ${scored.length} bestanden`;
+  t.innerHTML = qa.rows.map((x) => `<tr><td>${x.label}${x.note ? ' · ' + x.note : ''}</td><td class="v">${x.value}</td><td class="v ${x.ok === true ? 'ok' : x.ok === false ? 'bad' : ''}">${x.ok === true ? 'OK' : x.ok === false ? 'FEHLER' : 'INFO'}</td></tr>`).join('');
+  o.innerHTML = '<tr><td style="color:#666">Ansicht</td><td class="v">Pupille px</td><td class="v">Weiß px</td></tr>' +
+    qa.occ.map((x) => `<tr><td>${x.view}</td><td class="v ${x.pupil === 0 ? 'ok' : 'bad'}">${fmt(x.pupil)}</td><td class="v">${fmt(x.sclera)}</td></tr>`).join('');
+  r.textContent = 'Gegenprobe Ruhe, Blick Mitte: ' + qa.ref.map((x) => `${x.view} Pupille ${fmt(x.pupil)} px, Weiß ${fmt(x.sclera)} px`).join(' · ') +
+    `. Pupillenschale ${fmt(qa.pupilShell, 3)} R` + (qa.clearance != null ? `, Lid-Innenfläche ${fmt(1 + qa.clearance, 3)} R.` : '.');
+}
+
+try {
+  bench = createBench(stage, { onQA: renderQA, onState: renderControls });
+  msg.remove();
+  renderControls();
+  window.__KFB_EYELID = { createBench, bench };
+} catch (e) {
+  msg.textContent = 'Fehler: ' + (e && e.message || e);
+  console.error(e);
+}
+</script>
+</body>
+</html>

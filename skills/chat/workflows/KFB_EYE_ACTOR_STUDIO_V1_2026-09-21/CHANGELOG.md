@@ -1,5 +1,39 @@
 # KFB Eye Actor Studio v1 · CHANGELOG
 
+## 2026-10-16 · Claude Design E1 TUNE · E2 PASS (Georg, V-348) · clay-eyelid intake + Node mesh test
+
+Georg approved Claude Design's **E2 closed clay lid skin** as the KFB lid construction (V-348). E1 stays TUNE, and `thin-clay-lid.v1` stays NEGATIVE FIXTURE.
+
+E2 is one sphere-topology skin around the eyeball (χ = 2), with the lid slit as the only opening. It has 31,360 triangles, and the topology is identical in every lid state. Lid edges follow EyeRig v6 (rest 55.6° / 59.6°). Lid corners are at 105° rest / 118° wide / 80° closed.
+
+New, additive files under `tools/KFB-ToolBox/eye-actor-studio-v1/clay-eyelid/`:
+- `clay-eyelid.v1.js` and `clay-eyelid.v2.js`
+- `mesh-qa.v1.js`
+- `eyelid-bench.v3.js`: v2 with the repo import paths, otherwise unchanged
+- plain `index.html` workbench (no Claude Design shell)
+- `RETURN_E1.md` and `RETURN_E2.md`
+- `ALIEN_STALK_E2_PLAN.md`
+- `tests/clay-eyelid-skin.test.mjs`
+
+Donors and `pet-eye-rig.v6.js` are unchanged.
+
+Node test 105/105 PASS. In every state (wide, rest, 25, 50, 75, closed):
+- boundary edges 0 raw/welded, non-manifold 0, winding 0, χ = 2, 1 body, volume > 0
+- self-intersection 0, degenerate 0, duplicate 0
+- 31,360 triangles, index buffer byte-identical
+
+The thin-clay negative control is caught: non-manifold 161, χ 261, degenerate 280, duplicate 118.
+
+Browser figures from the Claude Design workbench, reproduced with the repo-layout `index.html` in Chrome 152:
+- self-intersection 0 hits / 442,367 pairs
+- min quality 0.026, clearance 1.20 % R
+- pupil 0 px with the lid closed in 8 views × 5 gaze directions
+- rest front pupil 5,088 px, back 0 px white
+
+Next single gate: `E3-OVAL` (step 6: E2 skin under `e._lids` scaled by `eyeoval.v1`, then mesh + pixel + pupil-seat checks). After that comes `E4-RIG` (step 7: `attachClaySkin(rig)` hull, `_up/_lo` hidden not deleted). EyeRig v6 PR #104 receives only after both.
+
+---
+
 ## 2026-10-14 · RG3D Video B transcript received; Claude Design source-first gate ready
 
 Georg supplied second timed transcript as `Eingefügter Text(5).txt` (0:00–18:02), verified content is Raymond Gabriel RG3D, unlike accompanying pasted step-list copied from Video A. Timecoded Video B evidence added to `CLAUDE_DESIGN_EYELID_MESH_RECOVERY_BRIEF_2026-10-14.md`: texture alpha/UV projection; nested armature bones, separate cornea/eye vertex weights, IK/Copy Scale, L/R weight-group correction and 15:46–17:38 Lattice for oval eyeball adaptation. Video does not construct eyelids or prove their shared deformation; proposed simultaneous eye/lid ovalization remains HYPOTHESIS pending 3D proof. Video A rig-only control graph preserved. Both transcripts now received, caption origin unverified. Previous rejected thin-clay mesh remains NEGATIVE DONOR; no new Blender/browser/runtime tests, Site, Stage, merge or Live.
