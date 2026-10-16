@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-349 (TBD): Brain-Cyborg – Hirnwelt-Hirn im Space-Ranger-Hals-Ring, E2-Augen, Brauen, Mund; nach Aliens-PASS, Hirn-Modell kommt von Georg.
 - WS1 §52 beantwortet (V-347): k2b-Drift 1:1 sofort, ecctrl-Drift als Nachbau, gleiche Bedienung, Plan für nächste Fahrprobe bestätigt.
 - V-348: Augenlid E2 (geschlossene Lidhaut) PASS als Konstruktion; Aliens: E2-Auge im Sockel, Stiel hinten unterhalb der Mitte; Repo-Übernahme gestartet.
 - V-346 korrigiert: Hals-Ring des Anzugs bleibt sichtbar (Raumanzug-Effekt); Blender-Lauf R2 informiert.
