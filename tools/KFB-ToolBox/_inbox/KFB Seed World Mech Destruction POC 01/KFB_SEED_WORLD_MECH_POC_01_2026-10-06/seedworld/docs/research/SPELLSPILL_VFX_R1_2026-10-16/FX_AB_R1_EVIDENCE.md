@@ -34,3 +34,13 @@ The smallest visual seam is only the **test presentation scale, mask tint and is
 ## Strict guards
 Source shader originality and SpellSpill upstream are still unverified; Dropbox shots are user visual reference. No generic source art, second physics/FX actor/audio owner, KFB WorldBuilder R5, Target Mac GPU claim, public Stage/Site, merge or Live.
 Exactly one current next gate: **KFB SEED WORLD BLOCK-DESTRUCTION HYBRID FX SOURCE-ISOLATION + PERFORMANCE A/B** (closing as technical evidence only after the corrected run, then hardware-specific visual/performance verification if needed).
+
+
+## Closing addendum · corrected source capture did finish successfully
+Third CI `38926541781` finished **SUCCESS** at source commit `6c2214da5844b50fb9a1f952fd339040a332e2f9`: **50/50** technical assertions, **14** screenshots (including true source-isolated original 3D and exact Brackeys alpha), and **12** frozen-source render cost/visual rows. Exact artifact https://github.com/georg-doc/kayfabizarro/actions/runs/38926541781/artifacts/12058220353 , zip SHA256 `412d691d9ed99c7b389c11d39444f2e35b3aef245ccc1e2a6e32622aedaffcd4`. `FX_AB_R1_FINAL_RESULT.json` is the machine-readable final result. Prior in-progress line above is historical and superseded.
+
+Actual block source: 12 repeated rockets across 4 buildings; **90 cells destroyed, 2 real support cascades, debris peak 178/256, dust 195/200, VFX active peak 584/584**, source damage fixed across render variants.
+Baseline triangles **796,942** vs 3D **812,542** (+15,600), 2D **797,722** (+780), hybrid **798,406** (+1,464) in same frame. 2D uses **20× fewer source smoke triangles** than 3D; this does not imply faster FPS. CI render-submit p95 for block NONE=8.4ms, A=7.4, B=7.5, C=8.3; rAF p95 **1.7–3.7 seconds**, unfit for hardware-FPS claims. No consistent actual speed winner.
+
+Source-visible pixel-change vs NONE (same frozen frame): A=9.147%, B=1.272%, C=4.222% at block; technical visibility minimum **PASS**. **Independent visual reading does not pass KFB Clay:** enlarged real 3D icosa smoke appears like one oversized smooth off-white balloon; 2D mask is too pale/low-contrast; hybrid still dominated by same giant sphere. Performance and image readability require an *adaptive saturated FX visibility budget* and actual accepted Clay/material treatment. The existing POC's clay_floor_001 is merely a stand-in, not accepted K1/H0 or K2/v10. 
+Next **one** gate is `KFB SEED WORLD SATURATED HYBRID FX VISUAL BUDGET + TARGET-GPU REVIEW`. No additional runtime owner or World R5.
