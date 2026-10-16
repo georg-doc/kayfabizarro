@@ -201,5 +201,29 @@
     -0.32
    ]
   ]
+ },
+ "billboard": {
+  "defaultVisible": false,
+  "_note": "Georg 16.10. (V-343): Billboard kann auftauchen (z. B. wenn eine Karte gespielt wird), ist aber kein Standard. kfb_screen_frame + kfb_screen_slot sind eigene Knoten und werden standardmäßig ausgeblendet; keine Mesh-Änderung."
+ },
+ "portal": {
+  "schema": "kfb.stage-portal/0.1",
+  "shader": "hellblau-weiß, spiralig animiert (Wirbel nach innen), additiv, weicher Rand, keine Schatten; leuchtet mit einem Pool-Licht (practical type 'crystal', Farbe #bfefff) auf das Runen-Podest",
+  "plane": {
+   "center_u": [
+    0.0,
+    -0.04,
+    -0.31
+   ],
+   "normal": [
+    0,
+    0,
+    1
+   ],
+   "radius_u": 0.37,
+   "_note": "Schätzung aus Kartenrahmen und Portalöffnung 5,9 × 6,4 m bei 8 m/u; WS1 passt die Scheibe an die Innenkante des Rings an (Ring und Schlussstein bleiben frei)."
+  },
+  "story": "Das Portal ist das Tor der Ruine zu anderen Orten; heute nur sichtbar aktiv, Reisefunktion kommt mit der Weltstruktur (V-289).",
+  "default": true
  }
 }
