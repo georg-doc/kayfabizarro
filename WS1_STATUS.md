@@ -1,7 +1,34 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§50 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§51 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 51 · 16.10. · M2 G0 (V-313): Vergleich EcctrlVehicle gegen k2b · Vorschau für Georgs Fahrprobe · Empfehlung ecctrl
+
+### 51.1 · Stand (M2-Sitzung, m2/fahren @67de52e, enthält main @b1af18e; **nicht nach main gemergt**)
+- **Einstieg** `#m1,car`: Die Figur steht am Start, daneben das Platzhalter-Auto, die Kamera hinter dem Auto.
+- **Tasten:**
+  - W/S Gas und Rückwärts, A/D lenken;
+  - Leertaste = Handbremse (ecctrl) bzw. Sprung (k2b);
+  - R = Start, C = Kandidat wechseln.
+- **Raster G0** (V-313, selbst gemessen):
+
+| Punkt | ecctrl (EcctrlVehicle + M2TUNE) | k2b (J17) |
+|---|---|---|
+| Selbstaufrichten < 2 s | Dach 1,03 s, Seite 0,57 s ✓ | – (kinematisch) |
+| 0 Durchfahrten in 20 Läufen (14 aufs Theater zu, 6 in die Hügel) | 0/20 ✓ | 4/20 ✗ (ploppt Stufen hinauf, dann greift die Wandprüfung nicht) |
+| 60 fps, kein Bild > 33 ms (GPU, dpr 2, 6 s Vollgas mit Sprüngen) | 59,9 fps, p95 16,8 ms ✓ | 59,9 fps, p95 16,7 ms ✓ |
+| Tempo und Lenkung | ≈ 31 m/s (Getriebegrenze) | 41 m/s, direkter |
+
+- **Empfehlung M2-Sitzung und WS1:** ecctrl. Gleiche Rapier-Physik wie Laufen und Fliegen, echte Überschläge, Raster erfüllt. Das k2b-Fahrgefühl (Tempo, Direktheit) ist Abstimmungsziel.
+- **Georg entscheidet an der Fahrprobe.** Merge nach main erst danach.
+- **Kosten** (V-312, M2-Sitzung, geschätzt): Browser ≈ 80 min, davon 40 min durch zwei hängende Testläufe (Ausnahme im Schritt-Haken, abgesichert); ≈ 250k Token.
+
+### 51.2 · Vorschau
+- `ws1/preview` @2d879401 = dist von m2/fahren @67de52e. Die ganze Testreihe lief dort 23/23; der Drift-Test brauchte den nicht versionierten Drift-Bericht im Worktree, sonst kein Unterschied.
+- Rauchtest im App-Browser: `#m1,car` lädt, keine Konsolenfehler.
+- **Link für Georg:** `https://ws1-preview.kayfabizarro.pages.dev/#m1,car`
+- **Hinweis Maßstab (§49.4):** Tempo-Angaben in WS1-Metern; WS1-Welt ≈ 1,54 × WS0-Meter.
 
 ## 50 · 16.10. · M1 TUNE als Zwischenstand gemergt (T4–T6 erfüllt) · V-334 behoben · Vorschau @5a51948b
 
