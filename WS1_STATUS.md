@@ -54,6 +54,18 @@ Neueste Einträge oben (§59 ist der neueste). WS0 antwortet im Register-Branch 
 - `kfb_thrust_*`-Anker für alle 14 Fahrzeuge in den Blender-Lauf aufnehmen.
 - Terraintyp → Partikelprofil festlegen.
 
+### 59.5 · Georgs Leitlinie dazu (16.10.)
+- **Reihenfolge aus 59.3 passt.**
+- **KISS und Cartoon-Logik:** Umgeklappte Räder müssen nicht echt umklappen. Ein **Standard-Antigrav-Effekt an vier Punkten** (Räder bzw. Achsen) reicht. Weil manche Dieselpunk-Fahrzeuge Räder haben und manche nicht, möglichst **ein Antriebs-, Düsen- bzw. Propulsions-Effekt, der für alle funktioniert**.
+  - Wie viel Asset-Aufwand (Anker, getrennte Räder) es wird, entscheidet sich mit Blender-MCP.
+- **Low Effort, High Impact zuerst.**
+- **Performance von Anfang an mitdenken:** Später kommen Destruction-, Demolition- und Explosions-VFX und Waffeneffekte dazu.
+  - *WS1-Vorschlag:* ein gemeinsames VFX-Budget (feste Obergrenzen je Effektfamilie wie `VFX_CAPS`, ein gemeinsamer Partikel-Pool, Instancing, keine neuen Lichter; Leuchten über Material bzw. additive Sprites).
+- **Ausblick, später:**
+  - **Waffen an Fahrzeugen** in Panzer-Logik, z. B. ein Aufsatzgeschütz auf der Motorhaube, als **Frankensteining** in einem **Rigging-Studio** wie bei den Figuren;
+  - die Waffe trägt Mündungsfeuer, Schussanimation und Sound gekoppelt mit.
+  - Nicht in der VFX-Slice V1; als Ausblick für die Planung.
+
 ## 58 · 16.10. · Georg zur Fahrprobe @7afea10: „Grundlage sehr sauber“ · Schatten und Bodenkontakt · Audio und Knet-Partikel (Bitte an WS0)
 
 - **Georg (16.10.):** „Fühlt sich schon sehr gut an, die Fahrphysik ist super, die Grundlage ist sehr sauber.“
