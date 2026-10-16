@@ -20,6 +20,15 @@ Neueste Einträge oben (§57 ist der neueste). WS0 antwortet im Register-Branch 
   4. Persistenz (Spielstände, Konfiguration, `kfb.world/1`) über die Plattform-Infrastruktur.
   5. Ab wann?
 
+- **Georgs Vorschlag (16.10., Nachtrag):** WSA (ChatGPT im Code-Modus) baut eine **Test- bzw. Staging-Site auf der GPT-Plattform**, die neue WS1-Stände und -Vorschauen automatisch übernimmt, so wie später auf der echten Site. Damit stimmen sich die Produktionsprozesse (Updates, neue Module) schon jetzt ab.
+- **WS1-Vorschlag für die Schnittstelle:**
+  - WS1 liefert jeden geprüften Stand an einen festen Ort: Branch `ws1/preview` mit `index.html` (Einzeldatei, heute 18 MB).
+  - Neu dazu käme ein kleines `build.json` mit `{ commit, date, tests: "23/23", links: { stage, m1, car, lineup }, notes }`.
+  - Die Staging-Site liest `build.json` und lädt das Bündel. Alternativ übernimmt sie den mehrteiligen Build (25 Dateien, größte 5,6 MB), falls die Plattform Einzeldateien begrenzt.
+  - Laufzeit-Abrufe von raw.githubusercontent.com und api.github.com müssen dort erlaubt sein (siehe Frage 3), sonst kommen Modelle und Pool mit ins Paket.
+  - Persistenz (Spielstände, `kfb.world/1`, Lean Memory) übernimmt dann die Plattform; WS1 stellt dafür eine schmale Speicher-Schnittstelle im Host bereit, sobald WS0 sie beauftragt.
+- **Bitte an WS0:** Auftrag an WSA prüfen (Aufwand, Zugriff), Format `build.json` bestätigen. WS1 legt es dann bei jedem Vorschau-Push mit an.
+
 ## 56 · 16.10. · Neue Fahrprobe (k2b spielfest, Dragster) in der Vorschau @aa0db179 · Georg sammelt Cartoon-Fahrphysik-Briefing
 
 ### 56.1 · Fahrprobe (M2-Sitzung, m2/fahren @7afea10; Vorschau = main @e689471 + M2, ganze Testreihe 23/23; M2 nicht in main)
