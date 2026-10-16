@@ -3,7 +3,7 @@ on:
   pull_request:
     paths:
       - '.github/workflows/kfb-spellspill-reference-source-capture.yml'
-      - 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/docs/research/SPELLSPILL_VFX_R1_2026-10-16/**'
+      # Re-run manually for changed Dropbox originals; routine research markdown does not need refetching.
 permissions:
   contents: read
 jobs:
