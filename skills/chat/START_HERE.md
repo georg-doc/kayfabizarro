@@ -1,3 +1,14 @@
+## ADDITIVE RESEARCH ROUTE · 2026-10-16 · MKULTRA / MONARCH / KFB CARDS (NO RUNTIME)
+
+Georg requested a source-focused GitHub research slice and later KFB cards ideation for the documented MKUltra experiments, claimed Project Monarch, and Cathy O'Brien / Mark Phillips' *TranceFormation of America*. **This is not a new canon, implementation or runtime owner; none of the world/MVP gates below change.**
+
+Research branch: `research/kfb-mkultra-monarch-cardway-r1-2026-10-16`.
+Read first: `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/BRIEF.md`, then `SOURCE_LEDGER.md`, `CARDWAY_IDEAS.md`, `TEST_REPORT.md`, `RETURN.md`.
+
+Use existing `travel/3D Conspiracy Iceberg Explorer/docs/SCHEMA-v2.md` and `registry/assets/v1/decks/project_gateway_kayfabe.json` for read-only reuse/donor comparison. `skills/chat/meta/KFB_META_COMPENDIUM_v1.md` remains the meta index, not a research SSOT. Never conflate source-proven MKUltra with the separately uncorroborated Monarch claims or turn named-person allegations into verified facts. Research only; no cards activated, Stage/Live or merge. Next gate: original-text and primary-document page-level comparison.
+
+---
+
 ## CURRENT ADDITIVE DECISION · 2026-10-12 · WORLD MONUMENTS01 CLAUDE DESIGN PASS / TUNE LATER
 
 Georg has accepted the uploaded **WORLD MONUMENTS01 Claude Design session cut r1** as **PASS · TUNE LATER** for the next Claude Code / WSA implementation intake.
