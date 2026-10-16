@@ -31,3 +31,12 @@
 - Short block-run 38945532821: **16/16 technical PASS**, screenshot artifact 12066121184, original 12 rocket / 90 lost cell / 2 cascade outcomes unchanged. Actual D selected 3+11 instead of old C 9+186, reducing smoke-specific triangles from 1,464 to 284. C/D imagery directly compared; D too thin/weak to accept despite removing oversized 3D smoke.
 - `FX_BUDGET_R2_EVIDENCE_2026-10-16.md` contains exact measurements and visual critique; `SOURCE.json.fxBudgetR2` is machine-readable. No GPU speed or Golden style claim, no Stage/Site or World R5.
 - Exactly one next gate: **KFB SEED WORLD HYBRID FX READABILITY + TARGET-DEVICE REVIEW** in existing owner, followed by human style decision. Routine CI proof not a global product PASS.
+
+
+## 2026-10-16 · R3 actual original-source planar debris / readable smoke comparison
+- Georg asked for smaller wooden/angular fragments and optional planar representations instead of always using expensive fully 3D debris. Routed to **same** Seed World Mech source-only FX fixture, no new fragment physics owner.
+- Added E moderate original smoke = source 2/48 near 3D/alpha-mask 2D vs prior D 3/11. Added F same E smoke but source-sampled opaque irregular 3-triangle planar shard proxies for 166 far dynamic rubble fragments and 320 small chips; preserve 12 near original 3D source parts, exact source transforms/colors.
+- Showed source original 3D debris/chips and derived planar proxies **in isolation** before both full scenes. First CI `38947275597` incorrectly executed stale R2 script; corrected workflow, [run 38947639843](https://github.com/georg-doc/kayfabizarro/actions/runs/38947639843) **24/24 technical PASS**, 6 screenshots + 4 measurement rows.
+- Same source 12 rockets, 90 lost cells and 2 real cascades. Submitted scene geometry E 797,294 triangles vs F **748,800** (6.08% lower); no measured actual GPU speed gain or KFB Clay/style PASS. F reduced original chunky debris clutter and reads more like small jagged shards, but needs actual animated proof/hardware/human gate.
+- New `FX_SHARDS_R3_METHOD_2026-10-16.md`, `FX_SHARDS_R3_EVIDENCE_2026-10-16.md`, `SOURCE.json.fxShardsR3`. Existing source `sw-destruct`, `sw-fx`, World/Combat unchanged; no Stage/Site/merge/Live.
+- Exactly one next gate: `KFB SEED WORLD PLANAR DEBRIS + CLAY/SMOKE VISUAL MOTION / TARGET-GPU REVIEW`.
