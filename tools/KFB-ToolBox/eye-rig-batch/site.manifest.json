@@ -5,7 +5,7 @@
   "owner": "KFB ToolBox / Rigging",
   "repository": "georg-doc/kayfabizarro",
   "branch": "toolbox/eye-rig-batch-2026-09-18",
-  "sourceHead": "9247d6b3832bdb73fac20d55bf76a766bc2d4453",
+  "sourceHead": "e6283eacf0000fa7ccc8e15c14b9fa1b67f88343",
   "sourceRoot": "tools/KFB-ToolBox/eye-rig-batch/",
   "entrypoint": "index.html",
   "publicationTarget": "ChatGPT Site",
@@ -29,7 +29,7 @@
   "classData": {
     "Rig_Medium": {
       "catalog": "data/rig-medium-actors.v0.json",
-      "count": 55,
+      "count": 56,
       "seed": "data/rig-medium-default.v0.json"
     },
     "Rig_Large": {
@@ -76,11 +76,34 @@
   ],
   "checks": {
     "focusedUnified": "33/33 PASS",
-    "staticContract": "160 assertions persisted · NOT_RUN on this head because no GitHub Actions run exists",
+    "staticContract": "updated for 56 Medium + 8 Norman checks · full suite NOT_RUN on this head",
     "legacyHistorical": "24/24 static + 247/247 browser/WebGL; 30/30 profile + 215/215 persisted remount",
-    "mediumLargeHumanBaseline": "HUMAN_ACCEPTED before unified integration"
+    "mediumLargeHumanBaseline": "HUMAN_ACCEPTED before unified integration",
+    "normanFocused": "40/40 PASS @ e6283eacf0000fa7ccc8e15c14b9fa1b67f88343",
+    "normanCleanupGeometry": "5/5 PASS · eye-box 82 tris · mouth-box 230 tris · union 294/734 (40.05%)",
+    "normanBrowser": "NOT_RUN"
   },
-  "publishGate": "EYE_RIG_UNIFIED_SITE_PUBLISH_01",
-  "firstSiteHumanGate": "GEORG_EYERIG_UNIFIED_SITE_01",
-  "mergePolicy": "No auto-merge. No Live promotion."
+  "publishGate": "NORMAN_TOOLBOX_SITE_FINE_TUNE_01",
+  "firstSiteHumanGate": "GEORG_NORMAN_SOURCE_VS_FACE_TUNE",
+  "mergePolicy": "No auto-merge. No Live promotion.",
+  "normanCandidate": {
+    "actorId": "norman",
+    "label": "Norman · Prototype Dummy",
+    "visualCanon": "OPEN_DESIGN",
+    "status": "DESIGN_TUNE_SOURCE_READY_SITE_PENDING",
+    "source": {
+      "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Character/Dummy.glb",
+      "revision": "fe9d95e20d660261370c02cb6bca0afe439c0979",
+      "blob": "295357f6e031c47689d14f71ae2bcfaacbd05883",
+      "rigClass": "Rig_Medium",
+      "joints": 23
+    },
+    "profile": "data/norman.prototype-profile.v0.json",
+    "mouthCatalog": "data/norman-mouth-r3.v1.json",
+    "companion": "lib/norman-face.v1.js",
+    "sourceIsolation": "implemented · browser proof pending",
+    "requestedFineTuningSurface": "https://kfb-toolbox.frizzlebob.chatgpt.site/",
+    "currentUnifiedEyeRigSite": "https://kfb-eyerig-workbench.frizzlebob.chatgpt.site/",
+    "sitePublication": "PENDING_SITE_CAPABLE_EXECUTOR"
+  }
 }
