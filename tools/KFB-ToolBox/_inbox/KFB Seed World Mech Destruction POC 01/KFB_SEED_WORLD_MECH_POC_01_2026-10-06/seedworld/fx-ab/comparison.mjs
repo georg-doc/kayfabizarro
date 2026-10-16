@@ -23,6 +23,28 @@ const seeded=(initial)=>{let s=initial>>>0;return()=>{s^=s<<13;s^=s>>>17;s^=s<<5
 const pause=()=>new Promise(r=>setTimeout(r,0));
 const q=(v,p)=>{if(!v.length)return null;const s=[...v].sort((a,b)=>a-b);return +s[Math.min(s.length-1,Math.floor((s.length-1)*p))].toFixed(2)};
 const M=new THREE.Matrix4(),P=new THREE.Vector3(),R=new THREE.Quaternion(),S=new THREE.Vector3(),C=new THREE.Color();
+// Optional fourth PRESENTATION ONLY profile. SOURCE positions remain unchanged.
+const SATURATED_FX_BUDGET=Object.freeze({hero3D:3,smoke2D:28,tilePx:110,worldPx:[980,640],clayScale:2.3,smokeScale:5.2});
+function chooseBudgetIndices(){
+ const projected=[],vec=new THREE.Vector3(),chosen=[],seen=new Set();
+ camera.updateMatrixWorld();
+ // Newer original source puffs are preferred, one representative per screen tile.
+ for(let i=sourceDustInstances.length-1;i>=0;i--){
+  const v=sourceDustInstances[i];vec.copy(v.p).project(camera);
+  if(!Number.isFinite(vec.x)||!Number.isFinite(vec.y)||vec.z<-.95||vec.z>1)continue;
+  const x=(vec.x+1)*490,y=(1-vec.y)*320;
+  if(x<0||x>=980||y<0||y>=640)continue;
+  projected.push({i,x,y,key:Math.floor(x/SATURATED_FX_BUDGET.tilePx)+':'+Math.floor(y/SATURATED_FX_BUDGET.tilePx)});
+ }
+ // Select a few distinct near-impact lobes first; do not spawn a second particle simulation.
+ const hero=[];
+ for(const p of projected){if(hero.length>=SATURATED_FX_BUDGET.hero3D)break;if(seen.has(p.key))continue;hero.push(p.i);seen.add(p.key);}
+ // Preserve coverage of the whole impact region without stacking dozens of overlapping alpha quads.
+ const sprites=[],spriteTiles=new Set();
+ for(const p of projected){if(sprites.length>=SATURATED_FX_BUDGET.smoke2D)break;if(hero.includes(p.i)||spriteTiles.has(p.key))continue;sprites.push(p.i);spriteTiles.add(p.key);}
+ return {hero,sprites,candidateVisible:projected.length,droppedMath:max0(sourceDustInstances.length-hero.length-sprites.length),tilePx:SATURATED_FX_BUDGET.tilePx};
+}
+function max0(n){return Math.max(0,n);}
 function smokeVisibility(mode){
  const count=out.originalDustCount;
  // Source instance transforms are sampled once from the actual POC; only these display copies change.
@@ -41,6 +63,31 @@ function smokeVisibility(mode){
    for(let i=from;i<count;i++){const x=sourceDustInstances[i];M.compose(x.p,camera.quaternion,new THREE.Vector3(x.s.x*6.5,x.s.y*6.5,1));alpha.setMatrixAt(i-from,M);}
    alpha.instanceMatrix.needsUpdate=true;
  }
+ let activeBudget=null;
+ if(mode==='d'){
+   activeBudget=chooseBudgetIndices();
+   clayOverlay.visible=activeBudget.hero.length>0;clayOverlay.count=activeBudget.hero.length;
+   for(let j=0;j<activeBudget.hero.length;j++){
+     const x=sourceDustInstances[activeBudget.hero[j]];
+     M.compose(x.p,x.q,new THREE.Vector3(x.s.x*SATURATED_FX_BUDGET.clayScale,x.s.y*SATURATED_FX_BUDGET.clayScale,x.s.z*SATURATED_FX_BUDGET.clayScale));
+     clayOverlay.setMatrixAt(j,M);clayOverlay.setColorAt(j,x.color.clone().multiplyScalar(.78));
+   }
+   if(clayOverlay.count){clayOverlay.instanceMatrix.needsUpdate=true;clayOverlay.instanceColor.needsUpdate=true;}
+   alpha.material.color.set('#68635d'); // subdued neutral clay-gray, adapter only, not style Golden
+   alpha.material.opacity=.90;
+   alpha.visible=activeBudget.sprites.length>0;alpha.count=activeBudget.sprites.length;
+   for(let j=0;j<activeBudget.sprites.length;j++){
+     const x=sourceDustInstances[activeBudget.sprites[j]];
+     const size=SATURATED_FX_BUDGET.smokeScale*(.88+((j*13)%7)/25);
+     M.compose(x.p,camera.quaternion,new THREE.Vector3(x.s.x*size,x.s.y*size,1));
+     alpha.setMatrixAt(j,M);
+   }
+   if(alpha.count)alpha.instanceMatrix.needsUpdate=true;
+ }else{
+   alpha.material.color.set('#8f867f');alpha.material.opacity=.96;
+ }
+ out.budget=activeBudget;
+
  out.variant=mode;
  $$('#info').textContent=JSON.stringify({variant:mode,scenario,originalDust:count,drawn3D:clayOverlay.visible?clayOverlay.count:0,drawn2D:alpha.visible?alpha.count:0,damage:out.damageEvidence},null,2);
 }
@@ -124,7 +171,7 @@ out.damageEvidence={events:when.length,cellsLost:destruct.stats.cellsLost,cascad
  smokeVisibility('a');renderer.render(scene,camera);out.ready=true;out.status='READY';
 }
 out.measure=async(mode,frames=38)=>{
- if(!out.ready||!['none','a','b','c'].includes(mode))throw Error('not ready or invalid variant');
+ if(!out.ready||!['none','a','b','c','d'].includes(mode))throw Error('not ready or invalid variant');
  smokeVisibility(mode);renderer.compile(scene,camera);
  for(let i=0;i<5;i++)renderer.render(scene,camera);
  let renderMs=[],intervalMs=[],calls=0,tris=0,last=0;
@@ -141,7 +188,7 @@ out.measure=async(mode,frames=38)=>{
  let visible=null;
  if(mode==='none')baselinePixels=px.slice();
  else if(baselinePixels){let changed=0,checked=0,delta=0;for(let i=0;i<px.length;i+=16){const d=(Math.abs(px[i]-baselinePixels[i])+Math.abs(px[i+1]-baselinePixels[i+1])+Math.abs(px[i+2]-baselinePixels[i+2]))/3;delta+=d;if(d>8)changed++;checked++;}visible={changedPercent:+(100*changed/checked).toFixed(3),meanDifference:+(delta/checked).toFixed(3),samplePixels:checked};}
- const result={variant:mode,scenario,frames,sourceDust:out.originalDustCount,pixelDiffVsNoSmoke:visible,visual3D:clayOverlay.visible?clayOverlay.count:0,visual2D:alpha.visible?alpha.count:0,renderSubmitMs:{p50:q(renderMs,.5),p95:q(renderMs,.95),p99:q(renderMs,.99)},rafIntervalMs:{p50:q(intervalMs,.5),p95:q(intervalMs,.95),p99:q(intervalMs,.99)},callsAvg:Math.round(calls/frames),trisMax:tris,rendererInfo:{geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures},damageEvidence:out.damageEvidence,engine:'headless fixture, real source POC, not target GPU'};
+ const result={variant:mode,scenario,frames,sourceDust:out.originalDustCount,budget:mode==='d'?out.budget:null,pixelDiffVsNoSmoke:visible,visual3D:clayOverlay.visible?clayOverlay.count:0,visual2D:alpha.visible?alpha.count:0,renderSubmitMs:{p50:q(renderMs,.5),p95:q(renderMs,.95),p99:q(renderMs,.99)},rafIntervalMs:{p50:q(intervalMs,.5),p95:q(intervalMs,.95),p99:q(intervalMs,.99)},callsAvg:Math.round(calls/frames),trisMax:tris,rendererInfo:{geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures},damageEvidence:out.damageEvidence,engine:'headless fixture, real source POC, not target GPU'};
  out.lastResult=result;return result;
 };
 for(const button of document.querySelectorAll('[data-mode]'))button.onclick=()=>out.measure(button.dataset.mode,20).catch(e=>$$('#info').textContent=e.message);
