@@ -3,7 +3,10 @@
 // Ausgenommen: Gesicht und Augen (Augen-Rig, Lider, Mund, Brauen; eigener Besitzer), Shader-Materialien, durchsichtige Teile. Die Farbtextur der
 // Quelle bleibt erhalten (src-Material), daher bleiben Meshy- und KayKit-Texturen erkennbar. Modul nach Host-Vertrag R1.2; dispose stellt die
 // Original-Materialien wieder her.
-// options: { targets: () => [Modul mit object3d], profile = 'figure', seed = 11 }
+// V-346 · Abstimmung je Ziel (tune): sheen = Samtschicht des Knets (Profil-Rolle soft: 0,18; sie legt einen hellen, staubigen Schleier auf satte Texturen),
+// colorK = Faktor auf die Grundfarbe (Belichtung des Knets je Figur). Fahrzeuge: sheen 0 und Farbe unverändert, Knet nur als Relief/Rauheit
+// (Georg: Texturfarben nicht auswaschen, Sättigung ≥ 95 % der Meshy-Textur). GothGirl: Belichtung zurück (Georg: „überstrahlt“).
+// options: { targets: () => [Modul mit object3d | { module, tune: { sheen?, colorK? } }], profile = 'figure', tune = {} }
 import * as THREE from 'three'
 import { makeClayRelief } from '../vendor/clay/clay-relief.v2.js'
 import { makeClayUniforms, makeClayMaterial, PROFILES } from '../vendor/clay/clay-material.v8.js'
@@ -24,7 +27,7 @@ function shared() {
 const pathOf = (o, root) => { const a = []; for (let n = o; n && n !== root; n = n.parent) a.push(n.name || ''); return a.join('/') }
 const convertible = (m) => m && !m.isShaderMaterial && !m.userData?.clay && (m.isMeshStandardMaterial || m.isMeshPhongMaterial || m.isMeshLambertMaterial) && !(m.transparent && (m.opacity == null || m.opacity < 0.98))
 
-export function createClayLook({ targets = () => [], profile = 'figure' } = {}) {
+export function createClayLook({ targets = () => [], profile = 'figure', tune = {} } = {}) {
   const root = new THREE.Group(); root.name = 'clay-look:' + profile
   const { U } = shared()
   const done = new Map() // Modul → [{ mesh, before, after }]
@@ -32,13 +35,14 @@ export function createClayLook({ targets = () => [], profile = 'figure' } = {}) 
     object3d: root,
     uniforms: U,
     update() {
-      for (const a of targets() || []) {
+      for (const t of targets() || []) {
+        const a = t?.module || t, T = { ...tune, ...(t?.module ? t.tune : null) }
         const o3 = a?.object3d; if (!o3 || done.has(a) || a.status?.().shown === false || (a.status && a.status().status !== 'OK')) continue
         const cache = new Map(), list = []
         o3.traverse((o) => {
           if (!o.isMesh || SKIP.test(pathOf(o, o3))) return
           const pf = HEAD.test(o.name || '') ? FACE_PROFILE : profile, key = (m) => m.uuid + (pf === FACE_PROFILE ? '|face' : '')
-          const conv = (m) => { if (!convertible(m)) return m; if (!cache.has(key(m))) cache.set(key(m), makeClayMaterial(THREE, U, { src: m, profile: pf })); return cache.get(key(m)) }
+          const conv = (m) => { if (!convertible(m)) return m; if (!cache.has(key(m))) { const c = makeClayMaterial(THREE, U, { src: m, profile: pf }); if (T.sheen != null) c.sheen = T.sheen; if (T.colorK != null) c.color.multiplyScalar(T.colorK); c.userData.clay.tune = T; cache.set(key(m), c) } return cache.get(key(m)) }
           const before = o.material, after = Array.isArray(before) ? before.map(conv) : conv(before)
           if (after !== before) { o.material = after; list.push({ mesh: o, before }) }
         })

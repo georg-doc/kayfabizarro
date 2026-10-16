@@ -24,13 +24,14 @@ import { isCardSafe } from './cardMapping'
 import { expose } from './debug'
 import { ROGUE, FB, KAYKIT, CAST_IDS } from './actors/stageCast'
 import { StageOrbitCam, ORBIT } from './StageOrbitCam'
-import { lightAt, parseTod, skyAtTod, lookB, skyLookB, LIGHT_INTENT, followShadow } from './stageLight'
+import { lightAt, parseTod, skyAtTod, lookB, skyLookB, SKY_TINT, LIGHT_INTENT, LIGHT_INTENT_V340, followShadow, shadowLength } from './stageLight'
 import { createActorRim } from './modules/actorRim'
 import { createClayLook } from './modules/clayLook'
 import { createVehicleLineup } from './modules/vehicleLineup'
 import { mountCompareBar } from './compareBar'
 import { createContactBlobs } from './modules/contactBlob'
 import { createPracticals } from './modules/practicals'
+import { createToneSplit } from './modules/toneSplit'
 export { ORBIT } // Prüfungen lesen die Kamera-Werte wie bisher über Stage
 
 const hash = typeof location !== 'undefined' ? location.hash : ''
@@ -142,7 +143,7 @@ const sky = (() => {
   return { mesh, top, bottom, viewTop, viewBottom, state: () => ({ top: '#' + top.getHexString(), bottom: '#' + bottom.getHexString(), fading: F.on }),
     set(sk, fadeS) { const b = { top: new THREE.Color(sk.top), bottom: new THREE.Color(sk.bottom) }; if (!(fadeS > 0)) { top.copy(b.top); bottom.copy(b.bottom); F.on = false; return } Object.assign(F, { on: true, t: 0, dur: fadeS, a: { top: top.clone(), bottom: bottom.clone() }, b }) },
     step(dt) { if (F.on) { F.t = Math.min(F.dur, F.t + dt); const u = F.t / F.dur, k = u * u * (3 - 2 * u); top.copy(F.a.top).lerp(F.b.top, k); bottom.copy(F.a.bottom).lerp(F.b.bottom, k); if (u >= 1) F.on = false }
-      if (L1) { const b = LOOK === 'b' ? skyLookB('#' + top.getHexString(), '#' + bottom.getHexString()) : { top: '#' + top.getHexString(), bottom: '#' + bottom.getHexString() }
+      if (L1) { const b = LOOK === 'b' ? skyLookB('#' + top.getHexString(), '#' + bottom.getHexString(), TUNE ? SKY_TINT.v346 : SKY_TINT.v340) : { top: '#' + top.getHexString(), bottom: '#' + bottom.getHexString() }
         viewTop.set(skyAtTod(b.top, lightState.tod)); viewBottom.set(skyAtTod(b.bottom, lightState.tod)) } else { viewTop.copy(top); viewBottom.copy(bottom) } } }
 })()
 // L1 (V-329) · Licht-Schreiber hinter light=l1: der einzige Ort, der Sonne, Hemisphäre, Gegenlicht und Tonemapping setzt. Werte aus stageLight.js
@@ -152,19 +153,31 @@ const sky = (() => {
 const L1 = /(^|[#,])light=l1(,|$)/.test(hash)
 export const lightState = { tod: parseTod(hash), current: null }
 const ORIGIN = { x: 0, y: 0, z: 0 }
-const L1_TM = /tm=none/.test(hash) ? 'none' : 'aces' // Bildpaar ACES | ohne (V-342 Punkt 6); Georg wählt
-// L2 Schritt 1 (V-340): look=a (L1 genau) | look=b (warmer Krazy-Kat-Grundton); mit look=… ist auch die Licht-Identität je Figur (Randlicht) an
-const LOOK = L1 && /look=b/.test(hash) ? 'b' : 'a', RIM = L1 && /look=[ab]/.test(hash)
-const RIMS = { targets: () => [{ module: mods.left, intent: LIGHT_INTENT.frizzlebob }, { module: mods.right, intent: LIGHT_INTENT[CAST_ID] || LIGHT_INTENT.default }] }
+// V-346 (Georgs Look-Urteile, TUNE in einem Schritt): mit light=l1 sind jetzt Standard: Look B, Randlicht, Knet für alle, ACES mit Boden „ohne“.
+// tune=0 zeigt zum Vergleich den Stand vor V-346 (Himmel stark verschoben, GothGirl-Glow 0,5, kein Gesichts-Fill, Knet ohne Abstimmung).
+const TUNE = L1 && !/(^|[#,])tune=0(,|$)/.test(hash)
+// Tonemapping: tm=none (ohne) | tm=aces (ACES überall, Stand V-342) | Standard split = ACES global, Boden/Bühne toneMapped: false (V-346 Punkt 3)
+const L1_TM = /tm=none/.test(hash) ? 'none' : /tm=aces/.test(hash) ? 'aces' : 'split'
+// L2 Schritt 1 (V-340): look=a (L1 genau) | look=b (warmer Krazy-Kat-Grundton, seit V-346 Standard); Licht-Identität je Figur (Randlicht) immer mit L1
+const LOOK = L1 && !/look=a/.test(hash) ? 'b' : 'a', RIM = L1
+const INTENT = TUNE ? LIGHT_INTENT : LIGHT_INTENT_V340
+const RIMS = { targets: () => [{ module: mods.left, intent: INTENT.frizzlebob }, { module: mods.right, intent: INTENT[CAST_ID] || INTENT.default }] }
 const makeRim = (o) => { const m = createActorRim(o); mods.rim = m; return m }
 // L2 Schritt 2 (V-340): clay=1 stellt KayKit-Figuren auf das K1/H0-Knet-Material (Profil figure) um; FB behält sein abgenommenes ToolBox-Material.
-// clay=all stellt zum Vergleich auch FB um (G9 „eine Materialfamilie“; Georg entscheidet am Bildpaar)
-const CLAY = /(^|[#,])clay=(1|all)(,|$)/.test(hash), CLAY_FB = /(^|[#,])clay=all(,|$)/.test(hash)
-const CLAYS = { targets: () => [...(CLAY_FB ? [mods.left] : []), ...(CAST_ID ? [mods.right] : [])], profile: 'figure' }
+// clay=all stellt auch FB um (G9 „eine Materialfamilie“). V-346: mit L1 ist clay=all Standard (Georg: FB bekommt Knet); clay=1 nur KayKit, clay=0 aus.
+// Ohne L1 bleibt alles wie vorher (nur mit Schalter).
+const CLAY = L1 ? !/(^|[#,])clay=0(,|$)/.test(hash) : /(^|[#,])clay=(1|all)(,|$)/.test(hash)
+const CLAY_FB = L1 ? !/(^|[#,])clay=(0|1)(,|$)/.test(hash) : /(^|[#,])clay=all(,|$)/.test(hash)
+// V-346: GothGirl wirkte im Knet überstrahlt → Samt weniger, Grundfarbe × 0,95 (WS1-Wert nach Messung: × 0,88 lag 8 % unter „Knet aus“, scripts/light/v346-pairs.mjs); Fahrzeuge farbtreu
+const CLAY_TUNE = { gothgirl: { sheen: 0.06, colorK: 0.95 } }, VEHICLE_TUNE = { sheen: 0 }
+const CLAYS = { targets: () => [...(CLAY_FB ? [mods.left] : []), ...(CAST_ID ? [{ module: mods.right, tune: TUNE ? CLAY_TUNE[CAST_ID] || {} : {} }] : [])], profile: 'figure' }
 const makeClay = (o) => { const m = createClayLook(o); mods.clay = m; return m }
 const LINEUP_OPTS = { figure: () => mods.left }
 const makeLineup = (o) => { const m = createVehicleLineup(o); mods.amph = m; mods.lineup = m; expose('StageMods', mods); return m }
-const CLAYV = { targets: () => (mods.lineup ? [mods.lineup] : []), profile: 'vehicle' }
+const CLAYV = { targets: () => (mods.lineup ? [mods.lineup] : []), profile: 'vehicle', tune: TUNE ? VEHICLE_TUNE : {} }
+// Boden ohne Tonemapping (tm split): Bühne bzw. in der Aufstellung nur die Bodenfläche
+const TONES = { targets: () => [LINEUP ? { object3d: mods.lineup?.object3d.getObjectByName('lineup-ground') } : { object3d: mods.amph?.object3d, ready: () => mods.amph?.status().status === 'OK' }] }
+const makeTones = (o) => { const m = createToneSplit(o); mods.tones = m; return m }
 const makeClayV = (o) => { const m = createClayLook(o); mods.clayV = m; return m }
 const BLOBS = { targets: () => [mods.left, mods.right] }
 const makeBlobs = (o) => { const m = createContactBlobs(o); mods.blobs = m; return m }
@@ -177,7 +190,7 @@ const makePract = (o) => { const m = createPracticals(o); mods.practicals = m; r
 function LightRigL1() {
   const { gl } = useThree()
   const sunRef = useMemo(() => ({ sun: null, back: null, hemi: null }), [])
-  useEffect(() => { const prev = gl.toneMapping; gl.toneMapping = L1_TM === 'none' ? THREE.NoToneMapping : THREE.ACESFilmicToneMapping
+  useEffect(() => { const prev = gl.toneMapping; gl.toneMapping = L1_TM === 'none' ? THREE.NoToneMapping : THREE.ACESFilmicToneMapping // split: global ACES, Boden per Material
     expose('StageLight', { state: lightState, set: (t) => { lightState.tod = t }, info: () => lightState.current })
     return () => { gl.toneMapping = prev } }, [gl])
   useFrame(() => {
@@ -186,7 +199,7 @@ function LightRigL1() {
     followShadow(sun, ORIGIN, { size: 12, dist: R, sunDir: d }); sun.color.set(L.sun); sun.intensity = L.sunI // Bühne: Ziel fest in der Mitte; M1/M2 übergeben Figur bzw. Fahrzeug
     back.position.set(-d[0] * R, Math.max(6, d[1] * R * 0.5), -d[2] * R); back.color.set(L.back); back.intensity = L.backI
     hemi.color.set(L.hemiSky); hemi.groundColor.set(L.hemiGround); hemi.intensity = L.hemiI
-    lightState.current = { look: LOOK, rim: RIM, tm: L1_TM, tod: L.tod, hemiGround: L.hemiGround, back: L.back, sun: L.sun, sunI: +L.sunI.toFixed(3), hemiI: +L.hemiI.toFixed(3), backI: +L.backI.toFixed(3), elev: +L.elev.toFixed(2), az: +L.az.toFixed(2) }
+    lightState.current = { look: LOOK, rim: RIM, tm: L1_TM, tune: TUNE, shadowLen: +shadowLength(L.elev).toFixed(3), tod: L.tod, hemiGround: L.hemiGround, back: L.back, sun: L.sun, sunI: +L.sunI.toFixed(3), hemiI: +L.hemiI.toFixed(3), backI: +L.backI.toFixed(3), elev: +L.elev.toFixed(2), az: +L.az.toFixed(2) }
   })
   return <>
     <hemisphereLight ref={(o) => { sunRef.hemi = o }} />
@@ -231,6 +244,7 @@ export default function Stage() {
       {ACTORS !== 'none' && <ModuleHost create={makeL} options={L} />}
       {L1 && ACTORS !== 'none' && <ModuleHost create={makeBlobs} options={BLOBS} />}
       {L1 && <ModuleHost create={makePract} options={PRACT} />}
+      {L1 && L1_TM === 'split' && <ModuleHost create={makeTones} options={TONES} />}
       {CLAY && ACTORS !== 'none' && <ModuleHost create={makeClay} options={CLAYS} />}
       {RIM && ACTORS !== 'none' && <ModuleHost create={makeRim} options={RIMS} />}
       {ACTORS !== 'none' && <ModuleHost create={makeR} options={R} />}

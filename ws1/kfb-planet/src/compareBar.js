@@ -2,24 +2,26 @@
 // (HUD R4 kommt von Claude Design): beschriftete Knöpfe statt URL-Schaltern. Tageszeit wechselt sofort (Licht-Schreiber liest lightState.tod je Bild),
 // Look, Knet und Tonemapping setzen den Hash-Schalter und laden neu (Materialien und Renderer-Einstellung entstehen beim Start). Aktiver Knopf ist hervorgehoben,
 // darunter ein Satz, worauf zu achten ist. Ausblenden mit nobar.
+// V-346: Standard ist jetzt Look B, Knet „alle“, Tonemapping „ACES · Boden ohne“; die Zeile „V-346“ schaltet die Korrekturen (Himmel nur getönt,
+// GothGirl-Glow als Hauch, FB-Gesichts-Fill, Knet farbtreu) gegen den Stand davor, damit Georg sie direkt sieht (WS0 V-347 Punkt 5).
 const GROUPS = [
-  { key: 'look', label: 'Look', opts: [['a', 'A · J17'], ['b', 'B · warm']], hint: 'Look: Wirkt B wärmer und gemütlicher als A, ohne dass Karte, Augen und Münder schlechter lesbar werden?' },
+  { key: 'tune', label: 'V-346', opts: [['1', 'neu'], ['0', 'vorher']], hint: 'V-346: Himmel nur getönt, GothGirls Glow nur als Hauch, FBs Mund und Augen heller, Knet farbtreu (Fahrzeuge satt, GothGirl nicht überstrahlt). Besser als vorher?' },
+  { key: 'look', label: 'Look', opts: [['a', 'A · J17'], ['b', 'B · warm']], hint: 'Look: B ist jetzt Standard. Gleicher Himmel wie A, nur wärmer getönt. Bleiben Karte, Augen und Münder gut lesbar?' },
   { key: 'tod', label: 'Tageszeit', opts: [['day', 'Tag'], ['gold', 'Gold'], ['night', 'Nacht']], live: true, hint: 'Tageszeit: Passt die Stimmung? Nachts sollen die Figuren im Licht gut lesbar bleiben.' },
-  { key: 'clay', label: 'Knet', opts: [['0', 'aus'], ['1', 'GothGirl'], ['all', 'alle']], hint: 'Knet: Sehen die Figuren nach handgemachter Knete aus? Bei „alle“ trägt auch FrizzleBob Knet – so lassen oder nicht?' },
-  { key: 'tm', label: 'Tonemapping', opts: [['aces', 'ACES'], ['none', 'ohne']], hint: 'Tonemapping: ACES ist weicher (wie J17), „ohne“ etwas heller und bunter. Was gefällt besser?' },
+  { key: 'clay', label: 'Knet', opts: [['0', 'aus'], ['1', 'GothGirl'], ['all', 'alle']], hint: 'Knet: „alle“ ist jetzt Standard, auch FrizzleBob trägt Knet. Wirkt es handgemacht, ohne dass Farben blass werden?' },
+  { key: 'tm', label: 'Tonemapping', opts: [['split', 'ACES · Boden ohne'], ['aces', 'ACES überall'], ['none', 'ohne']], hint: 'Tonemapping: neu ist ACES für Licht und Figuren, der Boden wie „ohne“. Passt das zusammen?' },
 ]
 const TOD = { day: 1, gold: 0.5, night: 0 }
 
 function current(hash) {
   const get = (re, d) => (re.exec(hash)?.[1] ?? d)
-  return { look: get(/look=([ab])/, 'a'), tod: get(/tod=(day|gold|night)/, 'day'), clay: get(/clay=(1|all)/, '0'), tm: get(/tm=(none)/, 'aces') }
+  return { tune: get(/tune=(0)/, '1'), look: get(/look=([ab])/, 'b'), tod: get(/tod=(day|gold|night)/, 'day'), clay: get(/clay=(0|1|all)/, 'all'), tm: get(/tm=(none|aces)/, 'split') }
 }
 // Hash-Schalter setzen bzw. entfernen; Rest des Hashs bleibt
 function withParam(hash, key, val) {
   const parts = hash.replace(/^#/, '').split(',').filter((p) => p && !p.startsWith(key + '='))
-  const def = { look: null, tod: null, clay: '0', tm: 'aces' }[key]
+  const def = { tune: '1', look: 'b', tod: null, clay: 'all', tm: 'split' }[key]
   if (val !== def) parts.push(key + '=' + val)
-  if (key === 'look' && !parts.some((p) => p.startsWith('look='))) parts.push('look=a')
   return '#' + parts.join(',')
 }
 

@@ -56,14 +56,31 @@ const shiftTo = (hex, target, k, dC = 0, Lmul = 1) => { const c = hexToOklch(hex
 export function lookB(L) {
   return { ...L, sun: shiftTo(L.sun, 50, 0.7, 0.03), hemiGround: shiftTo(L.hemiGround, 45, 0.8, 0.05), hemiSky: shiftTo(L.hemiSky, 60, 0.35, 0.01), back: shiftTo(L.back, 290, 0.8, 0.04) }
 }
-export function skyLookB(top, bottom) { return { top: shiftTo(top, 30, 0.7, 0.03), bottom: shiftTo(bottom, 75, 0.7, 0.02) } }
+// V-346 (Georg: „anderer Skydome als bei A“): derselbe Himmel, nur getönt. Vorher (v340) drehte B den Farbton um 70 % des Wegs Richtung Koralle/Ocker –
+// aus Hellblau wurde Rosa. Jetzt wird die Himmelsfarbe nur linear ein wenig mit warmem Licht gemischt (oben 12 % Pfirsich, unten 15 % Ocker-Creme):
+// Blau bleibt Blau, nur wärmer. Alle Werte WS1-Vorschlag.
+export const SKY_TINT = Object.freeze({ v340: { rotate: true, k: 0.7, dC: [0.03, 0.02] }, v346: { rotate: false, mix: [0.12, 0.15], toward: ['#ffcfb0', '#ffe2b0'] } })
+export function skyLookB(top, bottom, T = SKY_TINT.v346) {
+  if (T.rotate) return { top: shiftTo(top, 30, T.k, T.dC[0]), bottom: shiftTo(bottom, 75, T.k, T.dC[1]) }
+  return { top: mixHex(top, T.toward[0], T.mix[0]), bottom: mixHex(bottom, T.toward[1], T.mix[1]) }
+}
 // Licht-Identität je Figur (L2 Schritt 1, Georg-Absicht §2): Daten, keine zusätzlichen Lichter. rimColor/rimStrength = Randlicht im Material,
 // fillTint = Tönung des Figuren-Fills (Pool-Licht nachts), keyBias warm|cool, priority. Startprofile nach V-340: FB warm heroisch, GothGirl violett mystisch.
+// V-346: GothGirls Rand nur noch als Hauch an der Silhouette (Stärke 0,5 → 0,15, Abfall steiler: rimPower 3 → 4); FB bekommt ein Gesichts-Fill im Material
+// (faceFill = Anteil der eigenen Grundfarbe als Selbstleuchten auf Kopf und Mund, kein zusätzliches Licht), damit Mund und Augen lesbar sind (G1).
+// LIGHT_INTENT_V340 = Stand vor V-346, nur für den Vergleich in der Leiste (tune=0).
 export const LIGHT_INTENT = Object.freeze({
-  frizzlebob: { rimColor: '#ffb066', rimStrength: 0.55, fillTint: '#ffd9a8', keyBias: 'warm', priority: 1 },
-  gothgirl: { rimColor: '#a98bff', rimStrength: 0.5, fillTint: '#d8c8ff', keyBias: 'cool', priority: 2 },
-  default: { rimColor: '#ffe2c0', rimStrength: 0.35, fillTint: '#ffe6cc', keyBias: 'warm', priority: 3 },
+  frizzlebob: { rimColor: '#ffb066', rimStrength: 0.55, rimPower: 3, faceFill: 0.16, fillTint: '#ffd9a8', keyBias: 'warm', priority: 1 },
+  gothgirl: { rimColor: '#a98bff', rimStrength: 0.15, rimPower: 4, faceFill: 0, fillTint: '#d8c8ff', keyBias: 'cool', priority: 2 },
+  default: { rimColor: '#ffe2c0', rimStrength: 0.35, rimPower: 3, faceFill: 0, fillTint: '#ffe6cc', keyBias: 'warm', priority: 3 },
 })
+export const LIGHT_INTENT_V340 = Object.freeze({
+  frizzlebob: { ...LIGHT_INTENT.frizzlebob, rimPower: 3, faceFill: 0 },
+  gothgirl: { ...LIGHT_INTENT.gothgirl, rimStrength: 0.5, rimPower: 3 },
+  default: LIGHT_INTENT.default,
+})
+// V-346 Punkt 2 · Schattenlänge je Meter Figurenhöhe = 1 / tan(Sonnenhöhe); Richtung = Gegenrichtung des Sonnen-Azimuts. Beides kommt nur aus timeOfDay.
+export const shadowLength = (elevDeg) => 1 / Math.tan((Math.max(1, elevDeg) * Math.PI) / 180)
 // Story-Mode-Voreinstellungen für später (gewürfelt, V-342): nur Hinweise für Rand und Fill, nie der ganze Boden
 export const STORY_INTENT = Object.freeze({ tragic: { fillTint: '#9fb8d6' }, heroic: { rimColor: '#ffb066', keyBias: 'warm' }, mystical: { rimColor: '#a98bff' }, forbidden: { rimColor: '#c4507f' }, comic: { rimColor: '#e9e36a' }, absurd: { rimColor: '#e9c14a' } })
 
