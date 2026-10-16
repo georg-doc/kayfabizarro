@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "note": "Ride-Musik-Auswahl. Jeder Track traegt seinen vollen Pfad ab Repo-Wurzel in 'file'; der Loader macht RAW + file. Optionale Felder 'srt' und 'booklet' machen aus einem Track die getaktete Regel-Tour. bpm nur gesetzt, wo bekannt (Van-Metronome-Familie = 104); fehlt es, faellt die Float-Kopplung auf 104 zurueck.",
   "tracks": [
     {
@@ -107,6 +107,16 @@
       "group": "deck_songs",
       "deckId": "kayfabizarro_philosophy",
       "srt": "media/3D_Assets/Sounds/kfb_deck_songs/kayfabizarro_philosophy__suno_01d/kayfabizarro_philosophy__suno_01d.srt"
+    },
+    {
+      "id": "cosmic_grift_dark_journalism__suno_01a",
+      "title": "Cosmic Grift – Dark Journalism 01a",
+      "file": "media/3D_Assets/Sounds/kfb_deck_songs/cosmic_grift_dark_journalism__suno_01a/cosmic_grift_dark_journalism__suno_01a.mp3",
+      "bpm": 109,
+      "loop": false,
+      "group": "deck_songs",
+      "deckId": "cosmic_grift_dark_journalism",
+      "srt": "media/3D_Assets/Sounds/kfb_deck_songs/cosmic_grift_dark_journalism__suno_01a/cosmic_grift_dark_journalism__suno_01a.srt"
     }
   ]
 }
