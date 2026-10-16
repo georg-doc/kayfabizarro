@@ -1,6 +1,6 @@
 # Claude Design · KFB HUD R4 · handmade diorama interface, target arrow, social-call radial
 
-WS0 → Claude Design · 16.10.2026 · V-334 (builds on V-040, V-204, V-292, V-305, V-333).
+WS0 → Claude Design · 16.10.2026 · V-334/V-335 (builds on V-040, V-204, V-292, V-305, V-333).
 **Mode: DESIGN ONLY (V-228).** You deliver look, specs, values and a clickable look sandbox. WS1 builds the runtime later. No game code, no second renderer.
 
 ## 0. Read first (GitHub `georg-doc/kayfabizarro`)
@@ -9,6 +9,7 @@ Register branch `docs/kfb-decisions-register-2026-10-11`, folder `tools/KFB-Tool
 - `replies/HUD_R4_DESIGN/ref/`:
   - `hud_r3_01_hud_walk.jpg` … `hud_r3_04_god_mode.jpg` = **approved clay HUD R3** (V-040). This is the direction: soft clay pills, few elements.
   - `ws1_preview_now_01_deal.jpg`, `ws1_preview_now_02_intro_ritual.jpg` = **current MVP state**: smooth dark panels, big text boxes. This is what R4 replaces.
+- `ref/j17_hud_clay_minimap.jpg` = Joyride J17 clay HUD (gold standard look, V-010) with minimap, tacho, radio; `ref/arrow_donors_contact_sheet.jpg` = 3D arrow donors in the repo.
 - `replies/COLOR_HARMONY_R1/` (README + `kfb-cartoon-palette.js`): the palette generator. Its roles tint the HUD per stage/deck.
 - `replies/CLAUDE_DESIGN_STAGE_LIVE_R1/vendor/chatterbox/chatterbox-core.js`: the plain speech bubble (V-204).
 - `replies/WEBCHAT_UPDATES_R1.md` §R0.3/R0.4: background on the 3D compass and the pickup/social-call ideas (concepts only).
@@ -33,7 +34,9 @@ Georg's model is the taxi/delivery driving in WoW *Undermine*: a 3D arrow floats
 - **World arrow:** a clay 3D arrow hovering over FrizzleBob / over the vehicle. Turns relative to the view. In flight it tilts visibly up or down toward the target.
 - **Destination ring:** a clay or felt ring/marker at the drop-off or point of interest, readable from far away.
 - **HUD label:** target name + distance (“~120 m” straight-line until a route length exists). Flight adds ↑/↓, height difference, and a small horizon ring.
-- **Proximity behaviour:** propose two variants (for example size, colour warmth, pulse, fade-out near arrival). Georg is checking Undermine in-game and picks one.
+- **Behaviour (Georg 16.10.):** the arrow turns **sluggishly and calmly**, never flickers, but always shows the direction dynamically (damped turn, about 0.3 s settle, small dead zone). On approach it changes **colour toward green**; check how that green works with the palette (green ground stages need enough contrast, so shape/pulse supports the colour). Arrival: soft pulse, then the arrow settles or fades.
+- **Distance display, short like in RPGs, no number clutter.** Proposal: under 100 m in 5 m steps (“85 m”), 100–999 m in 10 m steps (“350 m”), from 1 km with one decimal (“1,2 km”), from 10 km whole numbers (“12 km”); near arrival no number, just the arrival cue. You may propose a more compact game style (e.g. “1,2k”) if it reads better. Show two placements: (a) a small clay tag hanging on the 3D arrow (moves with it), (b) next to the target marker on the minimap.
+- **Arrow donors in the repo** (CC0, see `ref/arrow_donors_contact_sheet.jpg`): A = Quaternius `Platformer Game Kit - Dec 2021/Level and Mechanics/glTF/Arrow.gltf` (flat, rounded – WS0's favourite base), B/C = its signpost variants, D/E = Kenney factory arrows, G = KayKit RPG Tools Bits `compass_base` (housing idea). Your spec says which base and how to clay it (thicker, softer edges, thumb-print texture, colour roles); WS0 builds the GLB.
 - Arrow and ring are 3D objects: deliver modelling specs (shape, proportions, size relative to FrizzleBob, pivot, material colour roles) plus look frames. WS0 builds the GLB from your spec.
 
 ### 3.2 Social-call radial menu (replaces the answer meta-bubble)
@@ -55,12 +58,17 @@ The calls must not feel cryptic. Design a light first-time help: one-line toolti
 - backpack (open state);
 - fluff counter, collection count, discard pile (“Sammlung”, “Ablagestapel”).
 
+### 3.4b Screen layout (Georg 16.10.)
+- **Minimap top right.** Donor: the Joyride J17 clay HUD (`ref/j17_hud_clay_minimap.jpg`, minimap there sits bottom right) – keep its clay track-line style, move it to the top right. It also shows the active target marker.
+- **Fractal almanac fan directly below the minimap**, fanning **straight down**, not into the picture (V-043): last 7 cards + “+N”; click opens the overlay with deck/world tabs → viewer. No scrolling inside the fan.
+- Mode plaque top centre, radio and speed/tacho from the J17 layout where they don't collide; show where the social-call knob sits so it never covers the fan or the bubble.
+
 ### 3.5 Card moments
 The card deal (choose one of three) and the card reveal (“win → card → OK → almanac”): replace the dark panels with the same handmade family. The card is always shown complete, landscape quarter page, unchanged (V-220, V-327).
 
 ## 4. Deliverables
 1. **Style board:** two variants side by side, A “pure clay” and B “clay + wood/cardboard accents”. Same layout, so Georg can pick by one look.
-2. **Key frames, 16:9 and 9:16:** walk with target arrow; drive with arrow + ring in sight; flight with arrow tilted up and down; radial open; player bubble after a choice; own-text input; card deal; backpack open.
+2. **Key frames, 16:9 and 9:16:** walk with target arrow; drive with arrow + ring in sight and minimap + almanac fan on the right; flight with arrow tilted up and down; radial open; player bubble after a choice; own-text input; card deal; backpack open.
 3. **Look sandbox** (single HTML page, no build step) where the radial can be opened and a segment chosen, and the arrow turns/tilts with sliders. Artifact link, so Georg only clicks.
 4. **Spec sheet:** colour role mapping, radii, shadows, font choice (Google Fonts or licence-free only), icon set for the four calls + own text, sizes in px at 1080p and phone, motion notes (open/close timing, squash and stretch).
 

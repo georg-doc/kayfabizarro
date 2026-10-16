@@ -4526,6 +4526,21 @@
    "applies": "nach Claude-Design-Lieferung"
   },
   {
+   "id": "V-335",
+   "date": "2026-10-16",
+   "area": "HUD",
+   "verdict": "RULE",
+   "text": "Ergänzung HUD R4 (Georg 16.10., Undermine-Test entfällt vorerst, Auftrag trotzdem starten): Ziel-Pfeil dreht träge und ruhig, flackert nie; färbt sich bei Annäherung Richtung Grün (Kontrast zur Palette prüfen). Entfernung kurz wie im Rollenspiel (Vorschlag: <100 m in 5-m-, bis 999 m in 10-m-Schritten, ab 1 km eine Nachkommastelle, ab 10 km ganze km; beim Ankommen keine Zahl). Layout: Minikarte oben rechts (Spender J17-Knet-HUD), darunter der Almanach-Fächer senkrecht nach unten (V-043, letzte 7 + „+N“). Pfeil-Spender im Repo: Quaternius Platformer Game Kit Arrow.gltf (Favorit), Kenney-Factory-Pfeile, KayKit compass_base; Knet-Look drüber, WS0 baut das GLB nach Claude-Design-Spec.",
+   "values": {},
+   "owner": "Claude Design · WS1 · WS0",
+   "check": "Schlüsselbilder mit Minikarte + Fächer rechts",
+   "source": "Georg 16.10.: „etwas träge Ausrichtung … nicht flackert“, „grünlich“, „mit kurzen Zahlen“, „Minimap … oben rechts … darunter der Fächer“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ruhige Richtung, knappe Zahl, feste Plätze rechts für Karte und Almanach.",
+   "applies": "mit HUD R4"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4598,7 +4613,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:633",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:634",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
