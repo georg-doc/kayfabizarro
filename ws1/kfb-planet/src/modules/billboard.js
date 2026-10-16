@@ -43,7 +43,7 @@ export const billboardLog = { create: 0, update: 0, dispose: 0, freed: null }
 // options: { card, content? (Inhalt, Standard createCardContent()), palette (stagePaletteFor(...), V-270) | biome (Objekt wie BIOMES, Rückfall) | biomeName, maxW = 7, maxH = 5, position, yaw }
 // palette: Rahmen/Zierleiste/Pfosten/Boden aus den ENV_ROLES der Insel-Palette (stagePalette.js); setPalette(p, fadeS) wechselt weich (V-011).
 export function createBillboard(options = {}) {
-  const { maxW = 7, maxH = 5, position = [0, 0, 0], yaw = 0 } = options
+  const { maxW = 7, maxH = 5, position = [0, 0, 0], yaw = 0, worldK = 1 } = options // worldK (V-345): ganze Tafel samt Rahmen gleichmäßig in J17-Meter
   const fam = makeClayFamily('B', { uClayNear: { value: 26 }, uClayFar: { value: 70 }, uClayScale: { value: 2.6 }, uClayAmt: { value: 0.4 } })
   const bodyMat = fam.std('#ffffff', 0.88, { vertexColors: true })
   const biome = options.biome || biomeByName(options.biomeName) || null
@@ -54,7 +54,7 @@ export function createBillboard(options = {}) {
   let P = options.palette ? palOf(options.palette) : buildPalette({ biomePalette: { mode: 'island-biome' } }, { biome })
   let palName = options.palette ? options.palette.id : biome.name
   const fade = { from: null, to: null, own: null, t: 0, dur: 0 } // Überblendung: Farbwerte zwischen zwei Cache-Geometrien, in einer eigenen Kopie
-  const g = new THREE.Group(); g.name = 'billboard-plain'; g.position.fromArray(position); g.rotation.y = yaw
+  const g = new THREE.Group(); g.name = 'billboard-plain'; g.position.fromArray(position); g.rotation.y = yaw; g.scale.setScalar(worldK)
   const body = new THREE.Mesh(undefined, bodyMat); body.name = 'body'; body.castShadow = body.receiveShadow = true; g.add(body)
   // Bildfläche des Trägers: Material und Maske gehören dem Träger, die Textur setzt der Inhalt
   const faceMat = new THREE.MeshBasicMaterial({ toneMapped: false })

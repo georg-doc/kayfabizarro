@@ -32,6 +32,7 @@ import { mountCompareBar } from './compareBar'
 import { createContactBlobs } from './modules/contactBlob'
 import { createPracticals } from './modules/practicals'
 import { createToneSplit } from './modules/toneSplit'
+import { worldKFor } from './worldScale'
 export { ORBIT } // Prüfungen lesen die Kamera-Werte wie bisher über Stage
 
 const hash = typeof location !== 'undefined' ? location.hash : ''
@@ -42,9 +43,15 @@ const findCard = (d, n) => { const i = DECKS.findIndex((x) => x.id === d); retur
 export const PREVIEW_CARDS = PREVIEW ? PREVIEW.sets[0].orderedBeatIds.map((id) => { const [d, n] = id.split(':'); return findCard(d, +n) }).filter(Boolean) : null
 const CARD = PREVIEW_CARDS?.[0] || (di >= 0 ? cardsOfDeck(di).map(cardAt).find((c) => c.num === +num) || null : null)
 const BIOME = BIOMES.find((b) => b.name === decodeURIComponent(/biome=([^,]+)/.exec(hash)?.[1] || '')) || BIOMES[1]
-export const STAGE_CAMS = { two: { pos: [0, 2.7, 12.5], target: [0, 2.4, -3.5] }, wide: { pos: [0, 9, 30], target: [0, 2, -2] }, q: { pos: [9, 3.2, 9], target: [0, 2.2, -3] },
+// V-345 · J17-Meter: alle eigenen WS1-Bühnenmaße (Amphitheater, Tafel, Marken, Kameras, Nebel, Schatten-Frustum, Figuren) × K. Die Zahlen unten bleiben
+// die bisherigen WS1-Werte (abgenommene Bildaufbauten), umgerechnet wird an einer Stelle. Meshy-Bühnen sind schon in WS0-Metern (Slot-Datei), dort nur die Figuren.
+// wscale=legacy zeigt die alte, 1,54-fach große Bühne zum Vergleich.
+export const K = worldKFor(hash)
+const camK = (c) => ({ ...c, pos: c.pos.map((v) => v * K), target: c.target.map((v) => v * K) })
+const STAGE_CAMS0 = { two: { pos: [0, 2.7, 12.5], target: [0, 2.4, -3.5] }, wide: { pos: [0, 9, 30], target: [0, 2, -2] }, q: { pos: [9, 3.2, 9], target: [0, 2.2, -3] },
   // G4-Bildaufbau (Georg 14.10.: „near nehmen“): Kamera näher, auf Augenhöhe der Figuren, Figuren vor der Tafel. Standard seit §20.
   near: { pos: [0, 2.15, 9.2], target: [0, 2.1, -3.5] } }
+export const STAGE_CAMS = Object.fromEntries(Object.entries(STAGE_CAMS0).map(([k, c]) => [k, camK(c)]))
 const CAM = STAGE_CAMS[/cam=(\w+)/.exec(hash)?.[1]] ? /cam=(\w+)/.exec(hash)[1] : 'near'
 // Meshy-Bühne statt Amphitheater (Vorschau, Georg 15.10.): scene=comic | utopia | goblin | atlantis (L1-Probebühnen). Kamera aus der Slot-Datei (WS0), Karte auf der Bildfläche im Modell.
 const SCENE = MESHY_STAGES[/scene=(\w+)/.exec(hash)?.[1]] ? /scene=(\w+)/.exec(hash)[1] : null
@@ -52,14 +59,14 @@ const SCENE_S = SCENE ? (+(/sscale=([\d.]+)/.exec(hash)?.[1]) || MESHY_STAGES[SC
 const SCENE_CAM = SCENE ? stageCamera(MESHY_STAGES[SCENE], SCENE_S) : null
 // L2 Schritt 3 (V-340): lineup=1 = Aufstellung aller 14 Fahrzeuge + Figuren auf eigener Fläche statt Amphitheater/Billboard
 const LINEUP = /(^|[#,])lineup=1(,|$)/.test(hash)
-const LINEUP_CAM = { pos: [0, 11, 34], target: [0, 1.6, -4], fov: 38 }
+const LINEUP_CAM = camK({ pos: [0, 11, 34], target: [0, 1.6, -4], fov: 38 })
 const cam = SCENE_CAM || (LINEUP ? LINEUP_CAM : STAGE_CAMS[CAM])
 const CAM_VIEW = { ...cam, focus: () => cardFocus() } // cardFocus steht weiter unten (braucht mods); erst beim Klick auf „Nah“ ausgewertet
 // Publikums-Anker je Kamera: 3,2 m vor der Kamera auf der Blickachse, so tief, dass Blase und Spielerwahl am unteren Bildrand sitzen (NDC y −0,9),
 // nicht über der Karte. Der Anker liegt 1,05 m über playerState.pos (BubbleHost). Für cam=two ergibt das die bisherige Lage (0, 0,6, z − 3,2).
 export const playerPosFor = (c, fov = 38, d = 3.2, ndcY = -0.9) => { const [px, py, pz] = c.pos, [tx, ty, tz] = c.target, L = Math.hypot(tx - px, ty - py, tz - pz), k = d / L
   return [px + (tx - px) * k, py + (ty - py) * k + ndcY * d * Math.tan((fov / 2) * Math.PI / 180) - 1.05, pz + (tz - pz) * k] }
-const PLAYER_POS = playerPosFor(cam)
+const PLAYER_POS = playerPosFor(cam, 38, 3.2 * K)
 const ACTORS = ['none', 'fb', 'rogue'].includes(/actors=(\w+)/.exec(hash)?.[1]) ? /actors=(\w+)/.exec(hash)[1] : 'none' // unbekannter Wert → keine Figuren (Prüfer 9, Befund 7)
 // Bühnen-Palette (V-270): nach der Karte (Deck-Genre → Insel-Palette → Rollen, Story-Tint), Hash palette=<Insel> zum Vergleichen, plain = ohne Tint (Bildpaar)
 const PAL_OVERRIDE = /palette=(\w+)/.exec(hash)?.[1] || null
@@ -67,9 +74,9 @@ const PAL_PLAIN = /(^|,)plain(,|$)/.test(hash.replace(/^#/, ''))
 const PAL_VARIANT = /palv=b/.test(hash) ? 'b' : 'a' // Variante B (§36): Rolle je Bühnenteil wie Joyride
 const palFor = (card) => stagePaletteFor(card, { override: PAL_OVERRIDE, noTint: PAL_PLAIN, variant: PAL_VARIANT })
 const PAL0 = palFor(CARD)
-const AMPH = { biome: BIOME, palette: PAL0?.amph || null }
+const AMPH = { biome: BIOME, palette: PAL0?.amph || null, worldK: K }
 const MESHY_OPTS = SCENE ? { stage: SCENE, scale: SCENE_S } : null
-const BB = { card: CARD, biome: BIOME, palette: PAL0, maxW: 7, maxH: 5, position: [0, 0, -3.5] }
+const BB = { card: CARD, biome: BIOME, palette: PAL0, maxW: 7, maxH: 5, position: [0, 0, -3.5 * K], worldK: K }
 const palState = { current: PAL0, log: [] } // aktuelle Palette der Bühne + Wechsel-Protokoll (Prüfung)
 // Palette der Karte auf Billboard, Amphitheater und Himmel legen (weich, außer beim ersten Bild)
 function applyPalette(card, fadeS = FADE_S) {
@@ -100,7 +107,8 @@ export const STAGE_MARKS = Object.freeze({
 })
 // Stellung: place=near (Figuren vor der Tafel, enger; Standard) | place=two (bisherige Stellung hinten). Ohne Angabe folgt sie der Kamera (cam=two → two).
 const NEAR = (/place=(\w+)/.exec(hash)?.[1] || (CAM === 'two' ? 'two' : 'near')) === 'near'
-const at = (mk, m, id) => ({ ...mk(m.x, m.yaw, id), position: [m.x, 0, m.z] }), MARKS = SCENE ? { left: sceneMark(SCENE_MARKS[SCENE].left), right: sceneMark(SCENE_MARKS[SCENE].right) } : LINEUP ? { left: { x: -1.3, z: 8, yaw: 0 }, right: { x: 1.3, z: 8, yaw: 0 } } : STAGE_MARKS[NEAR ? 'near' : 'two']
+const stageMark = (m) => ({ ...m, x: m.x * K, z: m.z * K }) // alte WS1-Bühnenmeter → J17
+const at = (mk, m, id) => ({ ...mk(m.x, m.yaw, id), position: [m.x, 0, m.z], worldScale: K }), MARKS = SCENE ? { left: sceneMark(SCENE_MARKS[SCENE].left), right: sceneMark(SCENE_MARKS[SCENE].right) } : LINEUP ? { left: stageMark({ x: -1.3, z: 8, yaw: 0 }), right: stageMark({ x: 1.3, z: 8, yaw: 0 }) } : { left: stageMark(STAGE_MARKS[NEAR ? 'near' : 'two'].left), right: stageMark(STAGE_MARKS[NEAR ? 'near' : 'two'].right) }
 const L = at(MK, MARKS.left, 'stage-left'), R = at(MKR, MARKS.right, 'stage-right')
 const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : PREVIEW_CARDS ? PREVIEW_CARDS.length : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
 // Dialog-Karten ab der Startkarte; drift-freie Seiten bevorzugt (WS0 zu §24.2, Auswahl statt Beschnitt), die Vorschau behält Georgs Reihenfolge
@@ -172,21 +180,24 @@ const CLAY_FB = L1 ? !/(^|[#,])clay=(0|1)(,|$)/.test(hash) : /(^|[#,])clay=all(,
 const CLAY_TUNE = { gothgirl: { sheen: 0.06, colorK: 0.95 } }, VEHICLE_TUNE = { sheen: 0 }
 const CLAYS = { targets: () => [...(CLAY_FB ? [mods.left] : []), ...(CAST_ID ? [{ module: mods.right, tune: TUNE ? CLAY_TUNE[CAST_ID] || {} : {} }] : [])], profile: 'figure' }
 const makeClay = (o) => { const m = createClayLook(o); mods.clay = m; return m }
-const LINEUP_OPTS = { figure: () => mods.left }
+const LINEUP_OPTS = { figure: () => mods.left, gap: 0.9 * K }
 const makeLineup = (o) => { const m = createVehicleLineup(o); mods.amph = m; mods.lineup = m; expose('StageMods', mods); return m }
 const CLAYV = { targets: () => (mods.lineup ? [mods.lineup] : []), profile: 'vehicle', tune: TUNE ? VEHICLE_TUNE : {} }
 // Boden ohne Tonemapping (tm split): Bühne bzw. in der Aufstellung nur die Bodenfläche
 const TONES = { targets: () => [LINEUP ? { object3d: mods.lineup?.object3d.getObjectByName('lineup-ground') } : { object3d: mods.amph?.object3d, ready: () => mods.amph?.status().status === 'OK' }] }
 const makeTones = (o) => { const m = createToneSplit(o); mods.tones = m; return m }
 const makeClayV = (o) => { const m = createClayLook(o); mods.clayV = m; return m }
-const BLOBS = { targets: () => [mods.left, mods.right] }
+const BLOBS = { targets: () => [mods.left, mods.right], size: 0.95 * K } // Fleck folgt der Figurengröße (V-345)
 const makeBlobs = (o) => { const m = createContactBlobs(o); mods.blobs = m; return m }
 // Lokale Lichter der Bühne aus ihrem Deskriptor (kfb.stage-descriptor/1, practicals[] in u → Meter wie die Slot-Umrechnung); nachts voll, tags fast aus
 const DESCRIPTORS = import.meta.glob('./data/stages/*.stage.json', { eager: true, import: 'default' })
 const stageDesc = SCENE ? DESCRIPTORS[`./data/stages/${SCENE}.stage.json`] || null : null
 const toMeters = (u) => [u[0] * SCENE_S, (u[1] - MESHY_STAGES[SCENE].floorY) * SCENE_S, u[2] * SCENE_S]
-const PRACT = { practicals: (stageDesc?.practicals || []).map((p) => ({ ...p, pos: toMeters(p.pos) })), weight: () => Math.pow(1 - lightState.tod, 1.5), actors: () => [mods.left, mods.right] }
+const PRACT = { practicals: (stageDesc?.practicals || []).map((p) => ({ ...p, pos: toMeters(p.pos) })), weight: () => Math.pow(1 - lightState.tod, 1.5), actors: () => [mods.left, mods.right],
+  actorLight: { color: '#ffd9a8', intensity: 4, range: 4.5 * K }, actorOffset: [1.2 * K, 2.1 * K] } // Figuren-Licht in Figurenmaß (V-345)
 const makePract = (o) => { const m = createPracticals(o); mods.practicals = m; return m }
+// Schatten-Frustum: Amphitheater in J17-Metern enger (±7,8 m statt ±12, feinere Texel); Meshy-Bühnen (schon WS0-Meter) und Aufstellung wie bisher
+const SHADOW_SIZE = SCENE || LINEUP ? 12 : 12 * K
 function LightRigL1() {
   const { gl } = useThree()
   const sunRef = useMemo(() => ({ sun: null, back: null, hemi: null }), [])
@@ -196,7 +207,7 @@ function LightRigL1() {
   useFrame(() => {
     const L0 = lightAt(lightState.tod), L = LOOK === 'b' ? { ...lookB(L0), sunDir: L0.sunDir, tod: L0.tod, elev: L0.elev, az: L0.az } : L0, { sun, back, hemi } = sunRef; if (!sun || !back || !hemi) return
     const d = L.sunDir, R = 40
-    followShadow(sun, ORIGIN, { size: 12, dist: R, sunDir: d }); sun.color.set(L.sun); sun.intensity = L.sunI // Bühne: Ziel fest in der Mitte; M1/M2 übergeben Figur bzw. Fahrzeug
+    followShadow(sun, ORIGIN, { size: SHADOW_SIZE, dist: R, sunDir: d }); sun.color.set(L.sun); sun.intensity = L.sunI // Bühne: Ziel fest in der Mitte; M1/M2 übergeben Figur bzw. Fahrzeug
     back.position.set(-d[0] * R, Math.max(6, d[1] * R * 0.5), -d[2] * R); back.color.set(L.back); back.intensity = L.backI
     hemi.color.set(L.hemiSky); hemi.groundColor.set(L.hemiGround); hemi.intensity = L.hemiI
     lightState.current = { look: LOOK, rim: RIM, tm: L1_TM, tune: TUNE, shadowLen: +shadowLength(L.elev).toFixed(3), tod: L.tod, hemiGround: L.hemiGround, back: L.back, sun: L.sun, sunI: +L.sunI.toFixed(3), hemiI: +L.hemiI.toFixed(3), backI: +L.backI.toFixed(3), elev: +L.elev.toFixed(2), az: +L.az.toFixed(2) }
@@ -215,6 +226,7 @@ function Sky() {
 }
 
 
+const FOG_K = SCENE ? 1 : K // Nebel in Bühnenmaß; Meshy-Bühnen sind schon WS0-Meter
 export default function Stage() {
   useEffect(() => (L1 ? mountCompareBar({ hash, lightState }) : undefined), []) // Vergleichsleiste für Georgs Abnahme (nur mit light=l1)
   // Die Spielerwahl der Bühne: Zurufe des Publikums erscheinen als Blase vorn am Bildrand (Anker „player“ vor der Kamera).
@@ -224,14 +236,14 @@ export default function Stage() {
   useEffect(() => { if (!PREVIEW) return undefined; const d = document.createElement('div'); d.id = 'kfb-preview-badge'
     d.style.cssText = 'position:fixed;left:16px;top:14px;padding:6px 12px;border-radius:10px;background:rgba(40,28,16,.72);color:#ffe9b8;font:600 15px/1.2 system-ui,sans-serif;z-index:9000;pointer-events:none'
     d.textContent = 'Vorschau-Text · Georgs Fassungen · nicht abgenommen'; document.body.appendChild(d); return () => d.remove() }, [])
-  useEffect(() => { expose('StageCtl', { log: () => ({ amph: { ...amphLog } }), biome: BIOME, card: CARD, cams: STAGE_CAMS, deck: DECK, palette: () => palState.current, palLog: () => palState.log.slice(), sky: () => sky.state(), applyPalette }) }, [])
+  useEffect(() => { expose('StageCtl', { worldK: K, log: () => ({ amph: { ...amphLog } }), biome: BIOME, card: CARD, cams: STAGE_CAMS, deck: DECK, palette: () => palState.current, palLog: () => palState.log.slice(), sky: () => sky.state(), applyPalette }) }, [])
   // Ergebnis der Spielerwahl → Dialog (Store-Ereignis lastChoice)
   useEffect(() => useGame.subscribe((s, p) => { if (s.lastChoice && s.lastChoice !== p.lastChoice) mods.dialog?.onChoice(s.lastChoice) }), [])
   const sun = useMemo(() => [18, 30, 22], [])
   return (
     <>
       <color attach="background" args={[PAL0?.sky.bottom || '#bcd7ea']} />
-      <fog attach="fog" args={[PAL0?.sky.bottom || '#bcd7ea', 80, 260]} />
+      <fog attach="fog" args={[PAL0?.sky.bottom || '#bcd7ea', 80 * FOG_K, 260 * FOG_K]} />
       <Sky />
       <StageOrbitCam view={CAM_VIEW} />
       {L1 ? <LightRigL1 /> : <>

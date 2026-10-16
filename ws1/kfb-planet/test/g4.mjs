@@ -3,6 +3,7 @@
 // · Farben der Original-Brauen/-Nase aus Georgs Export (WS0 14.10.) · Augen-Rig sitzt auch auf gedrehten Figuren richtig.
 import fs from 'fs'
 import { openPage, report } from './_page.mjs'
+import { WORLD_K as K } from '../src/worldScale.js'
 const { browser, page, errs } = await openPage('#stage,debug,actors=fb,dialog=1', { viewport: { width: 1280, height: 720 } })
 const st = () => page.evaluate(() => window.__kfbStageMods?.dialog?.state())
 const until = async (f, ms = 300000) => { const t0 = Date.now(); while (Date.now() - t0 < ms) { const s = await st(); if (s && f(s)) return s; await page.waitForTimeout(100) } throw new Error('timeout ' + JSON.stringify(await st())) }
@@ -41,7 +42,7 @@ await browser.close()
 const inter = (P, Q) => !!P && !!Q && Math.min(P[2], Q[2]) > Math.max(P[0], Q[0]) && Math.min(P[3], Q[3]) > Math.max(P[1], Q[1])
 const inView = (R) => R[0] >= 0 && R[1] >= 0 && R[2] <= 1280 && R[3] <= 720
 process.exit(report('g4 framing (near, FrizzleBob)', {
-  defaultIsNear: camPos[0] === 0 && camPos[1] === 2.15 && camPos[2] === 9.2, // ohne cam/place: Kamera near (Georg 14.10.)
+  defaultIsNear: camPos[0] === 0 && Math.abs(camPos[1] - 2.15 * K) < 0.006 && Math.abs(camPos[2] - 9.2 * K) < 0.006, // ohne cam/place: Kamera near (Georg 14.10.), seit V-345 in J17-Metern
   eyesSeatedOnRotatedFigures: eyesLocal.every((E) => E.length === 2 && Math.abs(E[0][0] + E[1][0]) < 0.05 && Math.abs(E[0][2] - E[1][2]) < 0.03 && Math.min(Math.abs(E[0][0]), Math.abs(E[1][0])) > 0.1), // beide Figuren: Augen symmetrisch vorn
   actorsShownBeforeFirstLine: visAtStart.first === 'card' && visAtStart.shown.every((x) => x === true) && shA.every((x) => x === true),
   cardWholeInView: inView(rA.face),

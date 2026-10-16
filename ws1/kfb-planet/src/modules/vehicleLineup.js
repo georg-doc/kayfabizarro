@@ -4,8 +4,9 @@
 // FB-Höhe / 2,94 Rig, WS0-Maß FB v5b mit Ohren), damit Fahrzeuge und Figuren im richtigen Verhältnis stehen (Größenblatt 05_v3_groessenvergleich).
 // Zwei Reihen à 7, Front zur Kamera, Abstand nach Breite; nur Material wird später umgestellt (Knet `vehicle`, V-336), keine Netzänderung.
 // options: { ids?, figure: () => FB-Modul (Maßstab = seine Höhe / 2,94 Rig), rows = 2, gap = 0.9 (m) }
-export const FB_RIG_HEIGHT = 2.94 // WS0 V-311: FB_TEMPLATE_LOOK_v5b misst 2,94 Rig = 1,81 m mit Ohren
 import * as THREE from 'three'
+import { FB_RIG_HEIGHT } from '../worldScale' // WS0 V-311: FB_TEMPLATE_LOOK_v5b misst 2,94 Rig = 1,81 m mit Ohren
+export { FB_RIG_HEIGHT }
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 export const VEHICLE_COMMIT = '9bd8e0376105b29375377ea3052e33528d50fbb6'

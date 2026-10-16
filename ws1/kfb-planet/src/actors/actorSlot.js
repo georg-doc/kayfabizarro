@@ -40,6 +40,7 @@ export function createActor(options) {
   const make = KFB_NATIVE_OWNERS[owner]
   if (!make) throw new Error('FACE_OWNER_UNKNOWN: ' + owner)
   const mod = make(options)
+  if (options.worldScale && options.worldScale !== 1) mod.object3d.scale.multiplyScalar(options.worldScale) // V-345: Figur in J17-Meter (Stelle und Blickrichtung bleiben)
   mod.faceDriver = 'KFB_NATIVE'
   mod.plan = plan
   if (!mod.say) mod.say = () => null // F1-Figur (Rogue_Hooded): Maske, kein Mund

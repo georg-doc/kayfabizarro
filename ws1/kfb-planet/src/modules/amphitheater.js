@@ -39,10 +39,11 @@ export const AMPH_BANDS = Object.freeze({ yArch: 4.55, y0: 0.05, rowH: 0.71, sta
 // options: { url = AMPH_URL, biome (für die Geländefarbe), palette (V-270), groundR = 70 }
 export function createAmphitheater(options = {}) {
   amphLog.create++
-  const { url = AMPH_URL, biome = null, groundR = 70, palette = null } = options
-  const s = AMPH_SCALE
+  // worldK (V-345): alte WS1-Bühnenmeter → J17-Meter; skaliert Modell, Gelände, Höhenbänder und Knet-Abstände gleich, damit das Bild gleich bleibt
+  const { url = AMPH_URL, biome = null, groundR = 70, palette = null, worldK = 1 } = options
+  const s = AMPH_SCALE * worldK
   const root = new THREE.Group(); root.name = 'amphitheater'
-  const fam = makeClayFamily('G', { uClayNear: { value: 30 }, uClayFar: { value: 90 }, uClayScale: { value: 1.4 }, uClayAmt: { value: 0.45 } }, { oct: 2, near: true, stick: false })
+  const fam = makeClayFamily('G', { uClayNear: { value: 30 * worldK }, uClayFar: { value: 90 * worldK }, uClayScale: { value: 1.4 * worldK }, uClayAmt: { value: 0.45 } }, { oct: 2, near: true, stick: false })
   const groundMat = fam.std(palette?.ground || biome?.top || '#9aab62', 0.95)
   // Paletten-Uniforms: gemeinsam für alle Modell-Materialien; Überblendung lerpt sie (und die Geländefarbe) von → nach
   const KEYS = ['w0', 'w1', 'w2', 'f0', 'f1', 'f2']
@@ -52,7 +53,7 @@ export function createAmphitheater(options = {}) {
   const inject = (m) => {
     m.onBeforeCompile = (sh) => {
       for (const k of KEYS) sh.uniforms['p' + k] = PU[k]; sh.uniforms.pamt = PU.amt; sh.uniforms.pmode = PU.mode
-      sh.uniforms.pband = { value: [AMPH_BANDS.yArch, AMPH_BANDS.y0, AMPH_BANDS.rowH, AMPH_BANDS.stageR] }
+      sh.uniforms.pband = { value: [AMPH_BANDS.yArch * worldK, AMPH_BANDS.y0 * worldK, AMPH_BANDS.rowH * worldK, AMPH_BANDS.stageR * worldK] }
       sh.vertexShader = 'varying vec3 vKfbWN; varying vec3 vKfbWP;\n' + sh.vertexShader.replace('#include <defaultnormal_vertex>', `#include <defaultnormal_vertex>
   vKfbWN = normalize(mat3(modelMatrix) * objectNormal);`).replace('#include <project_vertex>', `#include <project_vertex>
   vKfbWP = (modelMatrix * vec4(transformed, 1.0)).xyz;`)
@@ -82,8 +83,8 @@ export function createAmphitheater(options = {}) {
   }
   function apply(a, b, k) { KEYS.forEach((n, i) => PU[n].value.copy(a.c[i]).lerp(b.c[i], k)); PU.amt.value = a.amt + (b.amt - a.amt) * k; groundMat.color.copy(a.ground).lerp(b.ground, k) }
   function stepFade(dt) { if (!fade.on) return; fade.t = Math.min(fade.dur, fade.t + dt); const u = fade.t / fade.dur; apply(fade.from, fade.to, u * u * (3 - 2 * u)); if (u >= 1) fade.on = false }
-  const ground = new THREE.Mesh(new THREE.CircleGeometry(groundR, 96), groundMat); ground.name = 'clay-ground'
-  ground.rotation.x = -Math.PI / 2; ground.position.y = (STAGE.minY - STAGE.floorY) * s + 0.11 // −0,125 m: über der Bodenplatte (≈ −0,16), unter der Bühnenfläche
+  const ground = new THREE.Mesh(new THREE.CircleGeometry(groundR * worldK, 96), groundMat); ground.name = 'clay-ground'
+  ground.rotation.x = -Math.PI / 2; ground.position.y = (STAGE.minY - STAGE.floorY) * s + 0.11 * worldK // −0,125 m: über der Bodenplatte (≈ −0,16), unter der Bühnenfläche
   ground.receiveShadow = true; root.add(ground)
   const state = { model: null, status: 'LOADING', error: null, disposed: false, info: null, palette: palette ? plain(palette) : null }
   const ready = new GLTFLoader().loadAsync(url).then((g) => {
@@ -95,7 +96,7 @@ export function createAmphitheater(options = {}) {
     let tris = 0; m.traverse((o) => { if (o.isMesh) tris += o.geometry.index ? o.geometry.index.count / 3 : o.geometry.attributes.position.count / 3 })
     root.updateMatrixWorld(true)
     const box = new THREE.Box3().setFromObject(m)
-    state.info = { scale: +s.toFixed(4), tris, size: box.getSize(new THREE.Vector3()).toArray().map((v) => +v.toFixed(2)), min: box.min.toArray().map((v) => +v.toFixed(3)), groundY: +ground.position.y.toFixed(3), stageR: STAGE.diameterM / 2 }
+    state.info = { scale: +s.toFixed(4), tris, size: box.getSize(new THREE.Vector3()).toArray().map((v) => +v.toFixed(2)), min: box.min.toArray().map((v) => +v.toFixed(3)), groundY: +ground.position.y.toFixed(3), stageR: STAGE.diameterM * worldK / 2 }
     state.status = 'OK'; return state.info
   }).catch((e) => { state.status = 'ERROR'; state.error = String(e?.message || e); return null })
 

@@ -1,4 +1,5 @@
 // V-230 · Amphitheater-Bühne (#stage) · ein deterministischer Prüfpunkt je zugesagter Eigenschaft.
+import { WORLD_K as K } from '../src/worldScale.js'
 import fs from 'fs'
 import { createHash } from 'crypto'
 import { openPage, report } from './_page.mjs'
@@ -23,7 +24,7 @@ await page.waitForFunction(() => { const S = window.__kfbStageMods; return S?.am
 await page.waitForTimeout(2000)
 fs.mkdirSync('test/out', { recursive: true }); fs.writeFileSync('test/out/stage_two.png', await page.screenshot())
 // Höhenproben auf dem Modell (senkrechter Strahl gegen die Dreiecke des Modells in Weltlage)
-const m = await page.evaluate(() => {
+const m = await page.evaluate((K) => {
   const S = window.__kfbStageMods, root = S.amph.object3d, model = root.getObjectByName('amphitheater-model'), ground = root.getObjectByName('clay-ground'), cam = window.__kfbStageCamera, V = cam.position.constructor
   // eigener Strahltest: Dreiecke des Modells (Welt) gegen senkrechten Strahl; genügt für Höhenproben
   let mesh = null; model.traverse((o) => { if (o.isMesh && !mesh) mesh = o })
@@ -31,10 +32,10 @@ const m = await page.evaluate(() => {
   const P = mesh.geometry.attributes.position, I = mesh.geometry.index, M = mesh.matrixWorld, a = new V(), b = new V(), c = new V()
   const heightAt = (x, z) => { let best = -Infinity; for (let t = 0; t < I.count; t += 3) { a.fromBufferAttribute(P, I.getX(t)).applyMatrix4(M); b.fromBufferAttribute(P, I.getX(t + 1)).applyMatrix4(M); c.fromBufferAttribute(P, I.getX(t + 2)).applyMatrix4(M)
       const d = (b.z - c.z) * (a.x - c.x) + (c.x - b.x) * (a.z - c.z); if (Math.abs(d) < 1e-12) continue; const l1 = ((b.z - c.z) * (x - c.x) + (c.x - b.x) * (z - c.z)) / d, l2 = ((c.z - a.z) * (x - c.x) + (a.x - c.x) * (z - c.z)) / d, l3 = 1 - l1 - l2
-      if (l1 < 0 || l2 < 0 || l3 < 0) continue; const y = l1 * a.y + l2 * b.y + l3 * c.y; if (y > best && y < 3) best = y } return best }
+      if (l1 < 0 || l2 < 0 || l3 < 0) continue; const y = l1 * a.y + l2 * b.y + l3 * c.y; if (y > best && y < 3 * K) best = y } return best }
   const bbBox = (() => { const bb = S.billboard.object3d; bb.updateWorldMatrix(true, true); const box = { min: [1e9, 1e9, 1e9], max: [-1e9, -1e9, -1e9] }; bb.traverse((o) => { if (!o.isMesh) return; o.geometry.computeBoundingBox(); const q = o.geometry.boundingBox; for (const x of [q.min.x, q.max.x]) for (const y of [q.min.y, q.max.y]) for (const z of [q.min.z, q.max.z]) { const w = new V(x, y, z).applyMatrix4(o.matrixWorld); ['x', 'y', 'z'].forEach((k, i) => { box.min[i] = Math.min(box.min[i], w[k]); box.max[i] = Math.max(box.max[i], w[k]) }) } }); return box })()
-  return { info: S.amph.status().info, groundY: ground.position.y, h0: heightAt(0, 0), h65: heightAt(6.5, 0), hm65: heightAt(-6.5, 0), hb65: heightAt(0, -6.5), h80: heightAt(8.5, 0), hb85: heightAt(0, -8.5), bbBox, cams: window.__kfbStageCtl.cams }
-})
+  return { info: S.amph.status().info, groundY: ground.position.y, h0: heightAt(0, 0), h65: heightAt(6.5 * K, 0), hm65: heightAt(-6.5 * K, 0), hb65: heightAt(0, -6.5 * K), h80: heightAt(8.5 * K, 0), hb85: heightAt(0, -8.5 * K), bbBox, cams: window.__kfbStageCtl.cams }
+}, K)
 // Karte im Two-Shot: Bildschirm-Überdeckung mit Figuren und Sichtlinie Kamera → Kartenecken frei (kein Theater-Teil davor)
 const ov = await page.evaluate(() => {
   const S = window.__kfbStageMods, face = S.billboard.object3d.getObjectByName('face'), cam = window.__kfbStageCamera, V = cam.position.constructor
@@ -54,10 +55,10 @@ process.exit(report('stage amphitheater', {
   pinnedAssetMatchesRegistry: pinnedSha === AMPH_SHA256 && rec?.delivery?.runtimeUrl === AMPH_URL && AMPH_URL.includes(AMPH_COMMIT) && rec?.delivery?.runtimeSha256 === AMPH_SHA256 && rec?.delivery?.runtimeBytes === bytes?.length
     && rec?.integrity?.sha256 === '11846848465efb0f119bf2ab27290787cdbb2c63f55773915d1dca38952a9efb',
   browserBudget: !!bytes && bytes.length < 20e6 && i.tris >= 300000 && i.tris <= 400000,
-  scaleStage14m: Math.abs(i.scale - 18.9189) < 1e-3 && Math.abs(m.h0) < 0.03 && Math.abs(m.h65) < 0.05 && Math.abs(m.hm65) < 0.05 && Math.abs(m.hb65) < 0.05 && (m.h80 > 0.3 || m.hb85 > 0.3), // Bühnenboden bei y = 0 (±3 cm Mitte), eben bis r 6,5 m, Ränge dahinter
+  scaleStage14m: Math.abs(i.scale - 18.9189 * K) < 1e-3 && Math.abs(m.h0) < 0.03 && Math.abs(m.h65) < 0.05 && Math.abs(m.hm65) < 0.05 && Math.abs(m.hb65) < 0.05 && (m.h80 > 0.3 * K || m.hb85 > 0.3 * K), // V-345: 14 alte WS1-Meter = 9,1 J17-Meter; Bühnenboden bei y = 0 (±3 cm Mitte), eben bis r 6,5 m, Ränge dahinter
   groundCloseUnderModel: m.groundY > i.min[1] && m.groundY < 0, // Bodenschluss: Gelände über der offenen Unterkante, unter der Bühnenfläche
   camerasAboveGround: Object.values(m.cams).every((c) => c.pos[1] > 0.5),
-  billboardOnStageFloor: Math.hypot(Math.max(Math.abs(m.bbBox.min[0]), Math.abs(m.bbBox.max[0])), Math.max(Math.abs(m.bbBox.min[2]), Math.abs(m.bbBox.max[2]))) < 7 && m.bbBox.min[1] > -1.25, // Pfosten stecken wie im Spender 1,2 m im Boden (STYLES.plain.sink)
+  billboardOnStageFloor: Math.hypot(Math.max(Math.abs(m.bbBox.min[0]), Math.abs(m.bbBox.max[0])), Math.max(Math.abs(m.bbBox.min[2]), Math.abs(m.bbBox.max[2]))) < 7 * K && m.bbBox.min[1] > -1.25 * K, // Pfosten stecken wie im Spender 1,2 m im Boden (STYLES.plain.sink)
   cardReadableTwoShot: ov.faceInView && ov.overlap === 0,
   disposeFreesAll: life.freed === life.meshes && life.log.dispose === 1,
   noPageErrors: errs.length === 0,

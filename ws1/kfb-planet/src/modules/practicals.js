@@ -6,7 +6,7 @@
 // Figuren-Licht (L2 Schritt 1: „the talking actor may borrow one pooled light“, hier für L1-G1 nachts beide Figuren): je Figur ein Pool-Licht schräg
 // vor ihr Richtung Kamera (1,2 m) und über Kopfhöhe (2,1 m), warm, Stärke × weight; die übrigen Pool-Lichter gehen an die nächstgelegenen practicals.
 // options: { practicals: [{ id, type, pos: [x,y,z] in Metern (Bühne), color, intensity, range, flicker?, halo? }], weight: () => 0..1, pool = 6,
-//            actors: () => [Modul mit object3d], actorLight = { color: '#ffd9a8', intensity: 4, range: 4.5 } }
+//            actors: () => [Modul mit object3d], actorLight = { color: '#ffd9a8', intensity: 4, range: 4.5 }, actorOffset = [vor der Figur, über dem Boden] m }
 import * as THREE from 'three'
 
 export const POOL = 6
@@ -16,7 +16,7 @@ let HALO = null
 const haloTex = () => { if (HALO) return HALO; const c = document.createElement('canvas'); c.width = c.height = 64; const g = c.getContext('2d'), r = g.createRadialGradient(32, 32, 0, 32, 32, 32)
   r.addColorStop(0, 'rgba(255,255,255,1)'); r.addColorStop(0.35, 'rgba(255,255,255,0.45)'); r.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = r; g.fillRect(0, 0, 64, 64); HALO = new THREE.CanvasTexture(c); return HALO }
 
-export function createPracticals({ practicals = [], weight = () => 1, pool = POOL, actors = () => [], actorLight = { color: '#ffd9a8', intensity: 4, range: 4.5 } } = {}) {
+export function createPracticals({ practicals = [], weight = () => 1, pool = POOL, actors = () => [], actorLight = { color: '#ffd9a8', intensity: 4, range: 4.5 }, actorOffset = [1.2, 2.1] } = {}) {
   const root = new THREE.Group(); root.name = 'practicals'
   const items = practicals.map((p, i) => {
     const T = TYPE[p.type] || TYPE.lantern, color = new THREE.Color(p.color || '#ffc15a')
@@ -36,7 +36,7 @@ export function createPracticals({ practicals = [], weight = () => 1, pool = POO
       items.forEach((it) => { it.halo.material.opacity = Math.min(1, 0.25 + 0.75 * w) * f(it) })
       const acts = w > 0.01 ? (actors() || []).filter((a) => a?.object3d && a.status?.().shown !== false).slice(0, pool) : []
       acts.forEach((a, i) => { const L = lights[i]; a.object3d.getWorldPosition(aPos); toCam.copy(camPos).sub(aPos).setY(0).normalize()
-        L.position.copy(aPos).addScaledVector(toCam, 1.2).setY(aPos.y + 2.1); L.color.copy(aColor); L.distance = actorLight.range; L.intensity = actorLight.intensity * w })
+        L.position.copy(aPos).addScaledVector(toCam, actorOffset[0]).setY(aPos.y + actorOffset[1]); L.color.copy(aColor); L.distance = actorLight.range; L.intensity = actorLight.intensity * w })
       const near = items.map((it) => ({ it, d: camPos.distanceToSquared(it.halo.position) })).sort((a, b) => a.d - b.d).slice(0, pool - acts.length)
       lights.forEach((L, i) => { if (i < acts.length) return; const n = near[i - acts.length]; if (!n) { L.intensity = 0; return }
         L.position.copy(n.it.halo.position); L.color.copy(n.it.color); L.distance = n.it.range; L.intensity = n.it.base * w * f(n.it) })
