@@ -1,0 +1,24 @@
+{
+ "measuredIn": "proof_r2.html (three.js r180, exactly the rendered skinned vertices), collar frame; 360 rays at the collar inner edge",
+ "rest": {
+  "maxGap_mm": 0.0,
+  "maxPenetration_mm": 7.65,
+  "meanPress_mm": 5.45,
+  "neckCentre_vs_ringCentre_mm": 1.53,
+  "headAxis_vs_ringCentre_mm": 20.0,
+  "ridgeClearance_min_mm": 11.81
+ },
+ "idleA_t0.5-3.0": {
+  "maxGap_mm": 0.0,
+  "maxPenetration_mm": 7.58,
+  "neckCentreMax_mm": 1.54,
+  "ridgeClearanceMin_mm": 11.36
+ },
+ "headTurn_pm35deg": {
+  "maxGap_mm": 0.0,
+  "maxPenetration_mm": 8.12,
+  "neckCentreMax_mm": 1.67,
+  "ridgeClearanceMin_mm": -18.68
+ },
+ "note": "penetration = neck pressed into the inside of the roll (hidden); gap = visible opening; headAxis = centre of the widest head section (sculpt asymmetry, not a tilt); ridgeClearance > 0 = roll top visible outside the neck"
+}

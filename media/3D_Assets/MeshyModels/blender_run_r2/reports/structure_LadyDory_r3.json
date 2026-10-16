@@ -1,0 +1,974 @@
+{
+ "file": "LadyDory_RigMedium.toolbox.r3.glb",
+ "bytes": 4689616,
+ "extensionsRequired": [
+  "EXT_texture_webp"
+ ],
+ "animations": 0,
+ "hierarchy": [
+  {
+   "name": "Rig_Medium",
+   "children": [
+    {
+     "name": "LadyDory_Head_mesh",
+     "mesh": "LadyDory_Head_mesh",
+     "skin": 0
+    },
+    {
+     "name": "SpaceRanger_ArmLeft",
+     "mesh": "SpaceRanger_ArmLeft",
+     "skin": 0
+    },
+    {
+     "name": "SpaceRanger_ArmRight",
+     "mesh": "SpaceRanger_ArmRight",
+     "skin": 0
+    },
+    {
+     "name": "SpaceRanger_Body",
+     "mesh": "SpaceRanger_Body",
+     "skin": 0
+    },
+    {
+     "name": "SpaceRanger_LegLeft",
+     "mesh": "SpaceRanger_LegLeft",
+     "skin": 0
+    },
+    {
+     "name": "SpaceRanger_LegRight",
+     "mesh": "SpaceRanger_LegRight",
+     "skin": 0
+    },
+    {
+     "name": "root",
+     "children": [
+      {
+       "name": "hips",
+       "children": [
+        {
+         "name": "upperleg.r",
+         "children": [
+          {
+           "name": "lowerleg.r",
+           "children": [
+            {
+             "name": "foot.r",
+             "children": [
+              {
+               "name": "toes.r"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "upperleg.l",
+         "children": [
+          {
+           "name": "lowerleg.l",
+           "children": [
+            {
+             "name": "foot.l",
+             "children": [
+              {
+               "name": "toes.l"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "spine",
+         "children": [
+          {
+           "name": "chest",
+           "children": [
+            {
+             "name": "upperarm.r",
+             "children": [
+              {
+               "name": "lowerarm.r",
+               "children": [
+                {
+                 "name": "wrist.r",
+                 "children": [
+                  {
+                   "name": "hand.r",
+                   "children": [
+                    {
+                     "name": "handslot.r"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "name": "head",
+             "children": [
+              {
+               "name": "LadyDory_Head",
+               "children": [
+                {
+                 "name": "head_part",
+                 "children": [
+                  {
+                   "name": "antenna.l"
+                  },
+                  {
+                   "name": "antenna.r"
+                  },
+                  {
+                   "name": "eyestalk.c",
+                   "children": [
+                    {
+                     "name": "KFB_Eye_C_anchor"
+                    },
+                    {
+                     "name": "KFB_Brow_C_anchor"
+                    }
+                   ]
+                  },
+                  {
+                   "name": "KFB_Mouth_anchor"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "name": "upperarm.l",
+             "children": [
+              {
+               "name": "lowerarm.l",
+               "children": [
+                {
+                 "name": "wrist.l",
+                 "children": [
+                  {
+                   "name": "hand.l",
+                   "children": [
+                    {
+                     "name": "handslot.l"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "skin": {
+  "name": "Rig_Medium",
+  "joints": [
+   "root",
+   "hips",
+   "upperleg.r",
+   "lowerleg.r",
+   "foot.r",
+   "toes.r",
+   "upperleg.l",
+   "lowerleg.l",
+   "foot.l",
+   "toes.l",
+   "spine",
+   "chest",
+   "upperarm.r",
+   "lowerarm.r",
+   "wrist.r",
+   "hand.r",
+   "handslot.r",
+   "head",
+   "upperarm.l",
+   "lowerarm.l",
+   "wrist.l",
+   "hand.l",
+   "handslot.l",
+   "LadyDory_Head",
+   "head_part",
+   "antenna.l",
+   "antenna.r",
+   "eyestalk.c"
+  ],
+  "ibmMaxErr": 1.1516930410633563e-05
+ },
+ "meshes": [
+  {
+   "name": "SpaceRanger_ArmLeft",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "SpaceRanger_LadyDory",
+     "verts": 532,
+     "tris": 620,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 3.725290298461914e-08,
+     "jointsUsed": [
+      "hand.l",
+      "lowerarm.l",
+      "upperarm.l",
+      "wrist.l"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SpaceRanger_ArmRight",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "SpaceRanger_LadyDory",
+     "verts": 532,
+     "tris": 620,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 3.725290298461914e-08,
+     "jointsUsed": [
+      "hand.r",
+      "lowerarm.r",
+      "upperarm.r",
+      "wrist.r"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SpaceRanger_Body",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "SpaceRanger_LadyDory",
+     "verts": 1137,
+     "tris": 1010,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 4.470348358154297e-08,
+     "jointsUsed": [
+      "chest",
+      "hips",
+      "spine"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SpaceRanger_LegLeft",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "SpaceRanger_LadyDory",
+     "verts": 441,
+     "tris": 496,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 4.470348358154297e-08,
+     "jointsUsed": [
+      "foot.l",
+      "lowerleg.l",
+      "toes.l",
+      "upperleg.l"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SpaceRanger_LegRight",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "SpaceRanger_LadyDory",
+     "verts": 441,
+     "tris": 496,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 3.5390257835388184e-08,
+     "jointsUsed": [
+      "foot.r",
+      "lowerleg.r",
+      "toes.r",
+      "upperleg.r"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "LadyDory_Head_mesh",
+   "targetNames": [
+    "neckTaper"
+   ],
+   "primitives": [
+    {
+     "material": "LadyDory_Head_Clay",
+     "verts": 26850,
+     "tris": 48302,
+     "attributes": [
+      "_CLAYSEED",
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 3.748573362827301e-08,
+     "jointsUsed": [
+      "antenna.l",
+      "antenna.r",
+      "chest",
+      "eyestalk.c",
+      "head_part"
+     ],
+     "morphTargets": 1
+    },
+    {
+     "material": "LadyDory_Sockel_C_Clay",
+     "verts": 8217,
+     "tris": 10688,
+     "attributes": [
+      "_CLAYSEED",
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 0.0,
+     "jointsUsed": [
+      "eyestalk.c"
+     ],
+     "morphTargets": 1
+    }
+   ]
+  }
+ ],
+ "trianglesTotal": 62232,
+ "anchors": {
+  "KFB_Eye_C_anchor": {
+   "parent": "eyestalk.c",
+   "world": [
+    -0.02714,
+    1.85049,
+    0.0102
+   ],
+   "forward": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "up": [
+    0.0,
+    1.0,
+    -0.0
+   ],
+   "extras": null
+  },
+  "KFB_Mouth_anchor": {
+   "parent": "head_part",
+   "world": [
+    0.02997,
+    1.43367,
+    0.33399
+   ],
+   "forward": [
+    0.0,
+    -0.0,
+    1.0
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "extras": null
+  },
+  "KFB_Brow_C_anchor": {
+   "parent": "eyestalk.c",
+   "world": [
+    -0.02714,
+    2.02843,
+    0.0439
+   ],
+   "forward": [
+    0.11488,
+    0.05252,
+    0.99199
+   ],
+   "up": [
+    -0.12028,
+    0.99199,
+    -0.03859
+   ],
+   "extras": {
+    "kfb": {
+     "kind": "eyebrowsLater",
+     "status": "nicht gebaut (Georg 15.10.: sp\u00e4ter)",
+     "radius": 0.15406,
+     "size": "klein und d\u00fcnn"
+    }
+   }
+  }
+ },
+ "bonesRest": {
+  "root": {
+   "parent": "Rig_Medium",
+   "t": null,
+   "r": [
+    0,
+    1.1920927533992653e-07,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "hips": {
+   "parent": "root",
+   "t": [
+    0,
+    0.4056634306907654,
+    0
+   ],
+   "r": [
+    0,
+    -1.1920927533992653e-07,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "upperleg.r": {
+   "parent": "hips",
+   "t": [
+    -0.17094506323337555,
+    0.11358726024627686,
+    1.392327231286572e-08
+   ],
+   "r": [
+    0.9998490810394287,
+    7.426552173228629e-08,
+    -3.172627316416765e-08,
+    0.017373191192746162
+   ],
+   "s": [
+    1,
+    0.9999998211860657,
+    1.0000011920928955
+   ]
+  },
+  "lowerleg.r": {
+   "parent": "upperleg.r",
+   "t": [
+    -3.5798608521986353e-09,
+    0.22707749903202057,
+    -6.139392549897593e-09
+   ],
+   "r": [
+    0.1062251403927803,
+    -6.865224122520885e-08,
+    7.376965527328139e-08,
+    0.9943422079086304
+   ],
+   "s": [
+    1,
+    1.0000004768371582,
+    1.0000001192092896
+   ]
+  },
+  "foot.r": {
+   "parent": "lowerleg.r",
+   "t": [
+    -1.8315698957493964e-10,
+    0.14943702518939972,
+    9.667975309213261e-10
+   ],
+   "r": [
+    -0.45523902773857117,
+    1.6598181673543877e-07,
+    2.2507999908327747e-09,
+    0.8903692960739136
+   ],
+   "s": [
+    1,
+    1.0000008344650269,
+    0.9999987483024597
+   ]
+  },
+  "toes.r": {
+   "parent": "foot.r",
+   "t": [
+    2.1296139851578744e-10,
+    0.16565002501010895,
+    5.171931771741356e-09
+   ],
+   "r": [
+    2.1219781487502587e-08,
+    0.920354962348938,
+    -0.39108410477638245,
+    6.450591882867229e-08
+   ],
+   "s": [
+    1,
+    0.9999966025352478,
+    1.000003695487976
+   ]
+  },
+  "upperleg.l": {
+   "parent": "hips",
+   "t": [
+    0.17094506323337555,
+    0.11358726024627686,
+    1.392327231286572e-08
+   ],
+   "r": [
+    0.9998490810394287,
+    -7.132744173077299e-08,
+    -1.2042741914797261e-08,
+    0.017373191192746162
+   ],
+   "s": [
+    1,
+    0.9999998211860657,
+    1.0000011920928955
+   ]
+  },
+  "lowerleg.l": {
+   "parent": "upperleg.l",
+   "t": [
+    3.5798608521986353e-09,
+    0.22707749903202057,
+    -6.139392549897593e-09
+   ],
+   "r": [
+    0.1062251403927803,
+    6.865221990892678e-08,
+    -7.376966237870874e-08,
+    0.9943422079086304
+   ],
+   "s": [
+    1,
+    1.0000004768371582,
+    1.0000001192092896
+   ]
+  },
+  "foot.l": {
+   "parent": "lowerleg.l",
+   "t": [
+    1.8315821082026673e-10,
+    0.14943702518939972,
+    9.667923128731104e-10
+   ],
+   "r": [
+    -0.45523902773857117,
+    1.619774891992165e-08,
+    -3.435669881923786e-08,
+    0.8903692960739136
+   ],
+   "s": [
+    1,
+    1.0000008344650269,
+    0.9999987483024597
+   ]
+  },
+  "toes.l": {
+   "parent": "foot.l",
+   "t": [
+    -1.5114125062609673e-08,
+    0.16565002501010895,
+    5.1719273308492575e-09
+   ],
+   "r": [
+    4.7759868948560324e-08,
+    0.920354962348938,
+    -0.39108410477638245,
+    5.8015622528273525e-08
+   ],
+   "s": [
+    1,
+    0.9999966025352478,
+    1.000003695487976
+   ]
+  },
+  "spine": {
+   "parent": "hips",
+   "t": [
+    0,
+    0.19197750091552734,
+    0
+   ],
+   "r": [
+    0,
+    7.105427357601002e-15,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "chest": {
+   "parent": "spine",
+   "t": [
+    0,
+    0.37498795986175537,
+    0
+   ],
+   "r": [
+    0,
+    -8.470329472543003e-22,
+    0,
+    1
+   ],
+   "s": [
+    1,
+    0.9999999403953552,
+    1
+   ]
+  },
+  "upperarm.r": {
+   "parent": "chest",
+   "t": [
+    -0.21200737357139587,
+    0.13413214683532715,
+    8.40246201505579e-08
+   ],
+   "r": [
+    -0.514121413230896,
+    0.48546773195266724,
+    0.4854677617549896,
+    0.514121949672699
+   ],
+   "s": [
+    0.9999993443489075,
+    0.9999993443489075,
+    0.9999997615814209
+   ]
+  },
+  "lowerarm.r": {
+   "parent": "upperarm.r",
+   "t": [
+    -7.12192249618937e-11,
+    0.2418973296880722,
+    -1.1940561250867177e-07
+   ],
+   "r": [
+    1.4942596049394297e-09,
+    6.228115267958856e-08,
+    0.05528552085161209,
+    0.9984706044197083
+   ],
+   "s": [
+    1.000000238418579,
+    0.9999998807907104,
+    0.9999999403953552
+   ]
+  },
+  "wrist.r": {
+   "parent": "lowerarm.r",
+   "t": [
+    -7.426281811717672e-09,
+    0.26004382967948914,
+    6.127964108371131e-11
+   ],
+   "r": [
+    5.11842720984923e-11,
+    3.0773722459187525e-10,
+    -0.02665809914469719,
+    0.9996446967124939
+   ],
+   "s": [
+    0.9999999403953552,
+    0.9999999403953552,
+    0.9999999403953552
+   ]
+  },
+  "hand.r": {
+   "parent": "wrist.r",
+   "t": [
+    3.9968028886505635e-15,
+    0.07382583618164062,
+    -2.220446049250313e-16
+   ],
+   "r": [
+    1.199916277450086e-09,
+    -9.210968698880606e-08,
+    5.455195605463814e-06,
+    1
+   ],
+   "s": [
+    1,
+    0.9999999403953552,
+    0.9999999403953552
+   ]
+  },
+  "handslot.r": {
+   "parent": "hand.r",
+   "t": [
+    -5.138920400327152e-10,
+    0.09612506628036499,
+    -0.05750012397766113
+   ],
+   "r": [
+    1.6805922209428559e-09,
+    -1.6805921099205534e-09,
+    0.7071068286895752,
+    0.7071067094802856
+   ],
+   "s": [
+    0.9999999403953552,
+    1,
+    0.9999999403953552
+   ]
+  },
+  "head": {
+   "parent": "chest",
+   "t": [
+    0,
+    0.26879656314849854,
+    0
+   ],
+   "r": [
+    0,
+    4.235164736271502e-22,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "upperarm.l": {
+   "parent": "chest",
+   "t": [
+    0.21200737357139587,
+    0.13413214683532715,
+    8.40246201505579e-08
+   ],
+   "r": [
+    -0.5141214728355408,
+    -0.485467791557312,
+    -0.4854677617549896,
+    0.5141218900680542
+   ],
+   "s": [
+    0.9999993443489075,
+    0.9999993443489075,
+    0.9999997615814209
+   ]
+  },
+  "lowerarm.l": {
+   "parent": "upperarm.l",
+   "t": [
+    -3.219664312936743e-09,
+    0.24189729988574982,
+    -1.1940561250867177e-07
+   ],
+   "r": [
+    1.4942596049394297e-09,
+    -6.228115267958856e-08,
+    -0.05528552085161209,
+    0.9984706044197083
+   ],
+   "s": [
+    1.000000238418579,
+    0.9999998807907104,
+    0.9999999403953552
+   ]
+  },
+  "wrist.l": {
+   "parent": "lowerarm.l",
+   "t": [
+    7.426281811717672e-09,
+    0.26004382967948914,
+    6.127964108371131e-11
+   ],
+   "r": [
+    5.118455659314236e-11,
+    -3.0774255366239345e-10,
+    0.02665809914469719,
+    0.9996446967124939
+   ],
+   "s": [
+    0.9999999403953552,
+    0.9999999403953552,
+    0.9999999403953552
+   ]
+  },
+  "hand.l": {
+   "parent": "wrist.l",
+   "t": [
+    9.054978988842777e-13,
+    0.07382583618164062,
+    -2.220446049250313e-16
+   ],
+   "r": [
+    1.2001638571845774e-09,
+    1.358929182515567e-07,
+    -5.455195605463814e-06,
+    1
+   ],
+   "s": [
+    1,
+    0.9999999403953552,
+    0.9999999403953552
+   ]
+  },
+  "handslot.l": {
+   "parent": "hand.l",
+   "t": [
+    5.138920400327152e-10,
+    0.09612506628036499,
+    -0.05750012397766113
+   ],
+   "r": [
+    1.6806123159796016e-09,
+    1.6806122049572991e-09,
+    -0.7071068286895752,
+    0.7071067094802856
+   ],
+   "s": [
+    0.9999999403953552,
+    1,
+    0.9999999403953552
+   ]
+  },
+  "LadyDory_Head": {
+   "parent": "head",
+   "t": [
+    0.0,
+    -0.025,
+    0.01614
+   ],
+   "r": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "s": [
+    0.875,
+    0.875,
+    0.875
+   ]
+  },
+  "head_part": {
+   "parent": "LadyDory_Head",
+   "t": null,
+   "r": [
+    0,
+    1.7114269112994407e-08,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "antenna.l": {
+   "parent": "head_part",
+   "t": [
+    0.273030549287796,
+    0.3906957507133484,
+    0.014157306402921677
+   ],
+   "r": [
+    -0.05994501709938049,
+    -0.19455169141292572,
+    -0.19455169141292572,
+    0.959534227848053
+   ],
+   "s": [
+    1,
+    0.9999999403953552,
+    1
+   ]
+  },
+  "antenna.r": {
+   "parent": "head_part",
+   "t": [
+    -0.2655998766422272,
+    0.3966410756111145,
+    0.02098812162876129
+   ],
+   "r": [
+    -0.07368981093168259,
+    0.204108327627182,
+    0.204108327627182,
+    0.9545938968658447
+   ],
+   "s": [
+    0.9999999403953552,
+    1,
+    1
+   ]
+  },
+  "eyestalk.c": {
+   "parent": "head_part",
+   "t": [
+    0.0006105703068897128,
+    0.4638006091117859,
+    0.003356741741299629
+   ],
+   "r": [
+    -0.022864338010549545,
+    0.05901288986206055,
+    0.059012897312641144,
+    0.9962490200996399
+   ],
+   "s": [
+    0.9999999403953552,
+    1.0000001192092896,
+    1
+   ]
+  }
+ },
+ "diffVsRef": {
+  "ref": "../_blender_run_r1/LadyDory_RigMedium.toolbox.r2.glb",
+  "nodesAdded": [],
+  "nodesRemoved": [],
+  "nodesTRSChanged": [
+   "LadyDory_Head"
+  ],
+  "jointsSame": true,
+  "materialsRemoved": [],
+  "trianglesRef": 62232
+ }
+}

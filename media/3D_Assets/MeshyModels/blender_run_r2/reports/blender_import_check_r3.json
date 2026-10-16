@@ -1,0 +1,174 @@
+{
+ "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r2/LordHunky_RigMedium.toolbox.r3.glb": {
+  "ok": true,
+  "err": null,
+  "objects": {
+   "Rig_Medium": {
+    "type": "ARMATURE",
+    "parent": null,
+    "bones": 27
+   },
+   "LordHunky_Head_mesh": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 49472,
+    "shapeKeys": [
+     "Basis",
+     "neckTaper"
+    ],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "SpaceRanger_ArmLeft": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 620,
+    "shapeKeys": [],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "SpaceRanger_ArmRight": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 620,
+    "shapeKeys": [],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "SpaceRanger_Body": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 1010,
+    "shapeKeys": [],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "SpaceRanger_LegLeft": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 496,
+    "shapeKeys": [],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "SpaceRanger_LegRight": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 496,
+    "shapeKeys": [],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "KFB_Eye_L_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Brow_L_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Eye_R_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Brow_R_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Mouth_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "Icosphere": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 80,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   }
+  }
+ },
+ "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r2/LadyDory_RigMedium.toolbox.r3.glb": {
+  "ok": true,
+  "err": null,
+  "objects": {
+   "Rig_Medium": {
+    "type": "ARMATURE",
+    "parent": null,
+    "bones": 28
+   },
+   "LadyDory_Head_mesh": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 58990,
+    "shapeKeys": [
+     "Basis",
+     "neckTaper"
+    ],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "SpaceRanger_ArmLeft": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 620,
+    "shapeKeys": [],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "SpaceRanger_ArmRight": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 620,
+    "shapeKeys": [],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "SpaceRanger_Body": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 1010,
+    "shapeKeys": [],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "SpaceRanger_LegLeft": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 496,
+    "shapeKeys": [],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "SpaceRanger_LegRight": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 496,
+    "shapeKeys": [],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "KFB_Eye_C_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Brow_C_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Mouth_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "Icosphere": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 80,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   }
+  }
+ }
+}

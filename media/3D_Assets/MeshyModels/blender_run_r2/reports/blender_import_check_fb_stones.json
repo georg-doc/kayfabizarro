@@ -1,0 +1,203 @@
+{
+ "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r2/FB_TEMPLATE_LOOK_v5d_meshyears.glb": {
+  "ok": true,
+  "err": null,
+  "objects": {
+   "Rig": {
+    "type": "ARMATURE",
+    "parent": null,
+    "bones": 47
+   },
+   "CharacterTemplate_ArmLeft": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 440,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "CharacterTemplate_ArmRight": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 440,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "CharacterTemplate_Body": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 418,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "CharacterTemplate_Head": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 12544,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "CharacterTemplate_LegLeft": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 334,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "CharacterTemplate_LegRight": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 334,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "FB_Ear_L_v5": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 6000,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "FB_Ear_R_v5": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 6000,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "Carl_Brow_L": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 94,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "Carl_Brow_R": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 94,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "Carl_Nose": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 448,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "FB_Eye_L": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 96,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "FB_Eye_R": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 96,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "FB_Mouth_Smile": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 256,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "Icosphere": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 80,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   }
+  }
+ },
+ "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r2/kfb_clay_stones.r1.glb": {
+  "ok": true,
+  "err": null,
+  "objects": {
+   "stone_01": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 520,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "stone_02": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 420,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "stone_03": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 700,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "stone_04": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 380,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "stone_05": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 780,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "stone_06": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 320,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "stone_07": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 600,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "stone_08": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 520,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   }
+  }
+ }
+}

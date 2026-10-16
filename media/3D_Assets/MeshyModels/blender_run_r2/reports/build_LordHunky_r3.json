@@ -1,0 +1,66 @@
+{
+ "figure": "LordHunky",
+ "source": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r1/LordHunky_RigMedium.toolbox.r2.glb",
+ "params": {
+  "headScale": 0.85,
+  "headOffset": [
+   0.0,
+   0.0,
+   0.01614
+  ],
+  "neckTop_hN": 0.035,
+  "blendTop_h1": 0.17,
+  "neckBottom": -0.1,
+  "pen_m": 0.003,
+  "targetRadius": {
+   "harmonics": 16,
+   "liftOverPolygon_mm": 2.197750910221008,
+   "widenAboveInnerEdge_per_m": 0.25
+  }
+ },
+ "movedVerts": 4288,
+ "seatIterations": [
+  {
+   "minPress_mm": 3.2288876813483522,
+   "maxPress_mm": 7.520474406505246
+  }
+ ],
+ "maxDelta_m": 0.23869125192257037,
+ "bandTopL": 0.2,
+ "mouthCentreL_y": null,
+ "texture": {
+  "cleanColour": [
+   20,
+   118,
+   99
+  ],
+  "texelsTouched": 104771,
+  "fullyCleanBelow_hb_y": 0.15000000000000002,
+  "fadeEnd_hb_y": 0.20500000000000002
+ },
+ "neckSkin": {
+  "joints": [
+   "head_part",
+   "chest"
+  ],
+  "vertsBlended": 2800,
+  "chestWeight1_below": "collar inner edge + 4 mm",
+  "chestWeight0_above": "max(inner edge + 70 mm, neck top + 30 mm)",
+  "curve": "smoothstep"
+ },
+ "bindReset": {
+  "jointsIBMupdated": [
+   "LordHunky_Head",
+   "head_part",
+   "eyestalk.l",
+   "eyestalk.r"
+  ],
+  "ibmMaxErrAllJoints": 1.1549828678944496e-05,
+  "scaleFactor": 1.1643835616438356
+ },
+ "out": {
+  "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r2/LordHunky_RigMedium.toolbox.r3.glb",
+  "bytes": 4011408,
+  "sha256": "3b14998da424e7628cf09594e549a15a8e7894a79ecc01a0d1eecd50d4f8c478"
+ }
+}
