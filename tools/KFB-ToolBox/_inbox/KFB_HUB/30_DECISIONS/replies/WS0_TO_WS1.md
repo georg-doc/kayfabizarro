@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Portal Ruin als echtes Portal – V-343
+Neue Bühne `assets/meshy-stage-portal-ruin-2026-10-16` @22e382c9: `media/3D_Assets/MeshyModels/browser/kfb-meshy-portal-ruin.screen-a.v1.glb` + `.slot.json` (8 m/u).
+- Georg (Hub st05): Der Ring ist ein **Portal**: hellblau-weißer, spiralig animierter Shader (Wirbel nach innen, additiv, weicher Rand, keine Schatten) auf einer Scheibe in der Ringöffnung; ein Pool-Licht (#bfefff) beleuchtet das Runen-Podest. Ring und Schlussstein bleiben frei.
+- **Billboard nicht Standard:** `billboard.defaultVisible: false`; die Knoten `kfb_screen_frame` und `kfb_screen_slot` werden standardmäßig ausgeblendet (eigene Knoten, keine Mesh-Änderung) und erscheinen nur, wenn eine Karte gezeigt wird.
+- `portal.plane` im Slot-JSON ist eine Schätzung (Mitte [0, −0,04, −0,31] u, Radius 0,37 u); bitte an die Innenkante des Rings anpassen.
+- Reisefunktion kommt erst mit der Weltstruktur (V-289). Einplanung: mit dem Bühnen-Einbau bzw. L2; Abnahme Bild + kurze Videoschleife.
+
 ## 16.10.2026 · Antworten auf WS1_STATUS §43–§45 – V-342
 1. **Story-Farbe (§45.1, §43.1, §43.3 Punkt 1):** Georg hat recht, die Karte hat keinen Story-Mode. Entscheidung: **Bodenfarbe kommt von der Bühne**, nicht von der Karte und nicht von einer Deck-Tabelle.
    - Quelle: `fromColors(edgePalette)` der Bühne (3–5 Farben, an der Basis gemessen). WS0 trägt `edgePalette` und `footprint` je Bühne mit dem Blender-Lauf R1 (17.10., b51 §E) in die Bühnen-Deskriptoren ein. Damit passt der Boden auch zum Terrain-Übergang (V-341).

@@ -4646,6 +4646,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-343",
+   "date": "2026-10-16",
+   "area": "Bühne",
+   "verdict": "TUNE",
+   "text": "Portal Ruin (Hub st05, TUNE): Der Steinring wird als echtes Portal genutzt – hellblau-weißer, spiralig animierter Portal-Shader (additiv, weicher Rand, keine Schatten, ein Pool-Licht aufs Runen-Podest). Billboard kann auftauchen (z. B. wenn eine Karte gespielt wird), ist aber kein Standard: Rahmen- und Slot-Knoten standardmäßig aus. Story: Tor der Ruine zu anderen Orten, Reisefunktion erst mit der Weltstruktur (V-289). Slot-JSON mit portal-Block auf assets/meshy-stage-portal-ruin-2026-10-16 @22e382c9.",
+   "values": {},
+   "owner": "WS1 (Shader, Einbau)",
+   "check": "Bild + Video-Schleife des Portals",
+   "source": "Georg 16.10.: „das portal eher als portal nutzen … hellblau-weiß, spiralig animiert … billboard kann auftauchen, ist aber kein default“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Portal, das eine Karte zeigt, verschenkt seine Rolle; die Karte kommt dazu, wenn sie gebraucht wird.",
+   "applies": "mit dem Bühnen-Einbau"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4718,7 +4733,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:656",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:658",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
