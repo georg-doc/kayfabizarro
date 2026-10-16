@@ -5,20 +5,20 @@
   "exportedBy": "WS0 · alien figures toolbox r1 (built from parts, not a ToolBox export)",
   "exportedAt": "2026-10-15T00:00:00Z",
   "fields": "eye · brow · nose · moustache · mouth · color · parts · lids · clayLids · body use the FB v5b / face-mount.v1 names; eyes[] · eyeHost · dangle · neckRing · headPart are new (kfb.headpart/1)",
-  "actor": "lordhunky-headpart-r1",
-  "glb": "LordHunky_RigMedium.toolbox.glb",
+  "actor": "ladydory-headpart-r1",
+  "glb": "LadyDory_RigMedium.toolbox.glb",
   "roster": {
-   "id": "lordhunky-headpart-r1",
+   "id": "ladydory-headpart-r1",
    "kind": "headpart",
-   "label": "Lord Hunky · Space Ranger",
+   "label": "Lady Dory · Space Ranger",
    "section": "Frankenstein",
-   "swatch": "#3095ad",
+   "swatch": "#fb650e",
    "rig": "Rig_Medium"
   },
   "sources": {
    "headPartJson": {
-    "file": "_alien_head_parts_r1/LordHunky_Head.part.json",
-    "sha256": "3c35ab6e85e047cf0621bab0d036bf9393344d7577dcb64a9d3427576b609b70"
+    "file": "_alien_head_parts_r1/LadyDory_Head.part.json",
+    "sha256": "2c521bca5c278889319aa663f5fd1db338de564d6b2a170e018156102296f54e"
    },
    "contract": {
     "file": "_alien_head_parts_r1/vendor/kfb-pet-graft-driver.v4.json",
@@ -30,18 +30,18 @@
      "sha256": "302f8aef4af43d0fb00abe8f7a237fbdf5baed356c8c11efe5e038f3177ca854"
     },
     "suitTexture": {
-     "from": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_frankenstein_poc/LordHunky_Frankenstein_RigMedium.glb",
-     "image": "spaceranger_hanky",
-     "sha256": "55de7ce4c5756cdc016687b3f9d69a6c40fcf8e88bfe3e1051b734aa80b56ad5",
-     "fkGlbSha256": "b366bc9bb3275e96571f3ad4070310cae164ac1d7057b75c5a97d025ef594f1e"
+     "from": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_frankenstein_poc/LadyDory_Frankenstein_RigMedium.glb",
+     "image": "spaceranger_dory",
+     "sha256": "78ce2519e3c5437b07a80063ff0e3f48b4fd7b3d4ac2782b9643f58d0c94d78d",
+     "fkGlbSha256": "7e3793f174eb98a1fda6f3539f9856dd111142cbb97c5c6b5e8e4bb506c254e7"
     },
     "headPart": {
-     "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_alien_head_parts_r1/LordHunky_Head.part.glb",
-     "sha256": "41f29921005fa6b21fd7bce597db8e99c51711f0b8e189027300673d2566cd2d"
+     "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_alien_head_parts_r1/LadyDory_Head.part.glb",
+     "sha256": "4fa6e7cdb6a6a19aafd83287fea3a5036612b3c64993a14f2948cbf15a134a99"
     },
     "headPartJson": {
-     "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_alien_head_parts_r1/LordHunky_Head.part.json",
-     "sha256": "3c35ab6e85e047cf0621bab0d036bf9393344d7577dcb64a9d3427576b609b70"
+     "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_alien_head_parts_r1/LadyDory_Head.part.json",
+     "sha256": "2c521bca5c278889319aa663f5fd1db338de564d6b2a170e018156102296f54e"
     }
    }
   },
@@ -49,18 +49,17 @@
    "by": "WS0 Blender run R1 2026-10-16",
    "changes": [
     "source.glb/sha256/bytes -> r2 file (commit: WS0 fills in after push)",
-    "eyes[R].pos [-0.37504, 0.72658, 0.2156] -> [-0.37484, 0.72647, 0.21564] (mirror of L)",
-    "dangle eyestalk.r pivot [-0.16597, 0.58014, 0.03101] -> [-0.16481, 0.57956, 0.02456], length 0.1199 -> 0.11478 (mirror of L)"
+    "eyes[0].quat [-0.03096, 0.14135, 0, 0.98948] -> [0,0,0,1], gaze [0.27972, 0.06127, 0.95813] -> [0,0,1] (socket now coaxial + frontal)"
    ],
    "note": "mouth.path stays relative to the ToolBox asset folder (mouths/A|B/), unchanged."
   },
-  "r3": {
+  "r4": {
    "by": "WS0 Blender run R2 2026-10-16",
    "changes": [
-    "source.glb/sha256/bytes -> r3 file (commit: WS0 fills in after push)",
-    "tunables: headScale default/value 0.73/1.0 -> 0.85; headOffset [0.0, -0.1015, 0.01614] -> [0.0, 0.0, 0.01614]; neckTaper default/value 0/0.655 -> 0/0 (new meaning: slims the baked neck)",
-    "headPart.collar re-measured from the original Space Ranger body; headPart.neckFit added; scaleRange removed (neck is baked); checks_mm = R2 measurement",
-    "mouth set MOUTHS_GPT_R2/B -> MOUTHS_GPT_R2/A (swap; placement centre/normal/up/width unchanged)"
+    "source -> r4 file (commit: WS0 fills in after push)",
+    "tunables: headScale 0.751/1.0 -> 0.925; headOffset [0.0, -0.1315, 0.01614] -> [0.0, -0.0905, 0.01614]; neckTaper 0/0.0 -> 0.0 (existing morph, unchanged)",
+    "headPart.collar re-measured; headPart.seat added (rule + checks); scaleRange/auto removed (obsolete)",
+    "mouth set MOUTHS_GPT_R2/A -> MOUTHS_GPT_R2/B (swap, Georg 16.10.; placement unchanged)"
    ]
   }
  },
@@ -276,16 +275,16 @@
  },
  "pets": [
   {
-   "id": "lordhunky-headpart-r1",
-   "name": "Lord Hunky · Space Ranger",
+   "id": "ladydory-headpart-r1",
+   "name": "Lady Dory · Space Ranger",
    "kind": "biped",
    "module": "HeadPart",
    "variant": "headpart-r1",
    "source": {
-    "glb": "LordHunky_RigMedium.toolbox.r3.glb",
+    "glb": "LadyDory_RigMedium.toolbox.r4.glb",
     "commit": null,
-    "sha256": "3b14998da424e7628cf09594e549a15a8e7894a79ecc01a0d1eecd50d4f8c478",
-    "bytes": 4011408,
+    "sha256": "74420ad9785c276bf0083e730214fa3494d08a03dc8dca0bfd890c15d7a04883",
+    "bytes": 4712400,
     "reader": "ToolBox kind \"headpart\" (new, WSA) · reference loader _work/proof.html",
     "head": "head",
     "rigFamily": "Rig_Medium",
@@ -293,10 +292,10 @@
     "branch": "assets/kfb-alien-figures-toolbox-2026-10-15",
     "repo": "georg-doc/kayfabizarro"
    },
-   "color": "#147663",
+   "color": "#fca840",
    "eye": {
     "anchor": {
-     "dx": 0.9378616267028296,
+     "dx": 0,
      "dy": 0,
      "ring": 0.3,
      "track": 0.1
@@ -304,7 +303,7 @@
     "pupilStyle": "matte-cute",
     "pupilSize": 0.4,
     "gloss": 0.1,
-    "lidFit": 0,
+    "lidFit": 0.9,
     "inset": 0,
     "converge": 0,
     "splay": 0,
@@ -331,20 +330,20 @@
      "maxGap": 6.5,
      "dur": 0.12
     },
-    "baseColor": "#147663",
+    "baseColor": "#fca840",
     "_note": "socket \"anchor\" (new): EyeRig v6 eyes sit on eyes[] (KFB_Eye_*_anchor), not on the FaceHost ellipsoid. anchor.dx/ring are the Claude Design values that size the eye via the proxy box in eyeHost."
    },
    "eyes": [
     {
-     "side": "R",
+     "side": "C",
      "rigIndex": 0,
-     "anchorNode": "KFB_Eye_R_anchor",
-     "bone": "eyestalk.r",
+     "anchorNode": "KFB_Eye_C_anchor",
+     "bone": "eyestalk.c",
      "cdKey": "eyeL",
      "pos": [
-      -0.37484,
-      0.72647,
-      0.21564
+      -0.03102,
+      0.72464,
+      -0.00679
      ],
      "quat": [
       0,
@@ -352,66 +351,39 @@
       0,
       1
      ],
-     "scale": 0.99823,
-     "R": 0.11972,
+     "scale": 1,
+     "R": 0.15406,
      "gaze": [
       0,
       0,
       1
      ],
-     "socketColour": "#147763",
-     "shellRadius": 0.1317
-    },
-    {
-     "side": "L",
-     "rigIndex": 1,
-     "anchorNode": "KFB_Eye_L_anchor",
-     "bone": "eyestalk.l",
-     "cdKey": "eyeR",
-     "pos": [
-      0.37484,
-      0.72647,
-      0.21564
-     ],
-     "quat": [
-      0,
-      0,
-      0,
-      1
-     ],
-     "scale": 0.99823,
-     "R": 0.11972,
-     "gaze": [
-      0,
-      0,
-      1
-     ],
-     "socketColour": "#147663",
-     "shellRadius": 0.1317
+     "socketColour": "#fb650e",
+     "shellRadius": 0.15621
     }
    ],
    "eyeHost": {
-    "frame": "L = node LordHunky_Head (EyeRig host = Group directly under it, no own matrix)",
+    "frame": "L = node LadyDory_Head (EyeRig host = Group directly under it, no own matrix)",
     "proxy": {
      "name": "body",
      "box": [
       [
-       -0.61491,
-       0.32674,
-       0.00455
+       -0.33915,
+       0.21109,
+       -0.27794
       ],
       [
-       0.61472,
-       1.12631,
-       0.24442
+       0.27711,
+       1.23818,
+       0.03019
       ]
      ],
      "note": "unsichtbarer Quader »body« wie Claude Design app.js buildEyes: Höhe 2U legt R = U·ring fest"
     },
-    "lidColour": "#147663",
-    "singleEye": false,
+    "lidColour": "#fb650e",
+    "singleEye": true,
     "afterBuild": {
-     "place": "e.position = pos_S, e.scale = scale_S, e.rotation.y = ±splay (Regler opt.splay = 0°)",
+     "place": "e.position = pos_S, e.scale = scale_S, e.rotation.y = ±splay (Regler opt.splay = 0°); Auge 0 Blick auf gaze_S drehen, Auge 1 unsichtbar",
      "emote": {
       "lidUpper": -0.4,
       "lidLower": 0,
@@ -428,36 +400,24 @@
       "tremor": 0.045
      }
     },
-    "place": "nach rig.build(): eye[i].position = eyes[i].pos, eye[i].scale = eyes[i].scale, rotation.y = 0"
+    "place": "nach rig.build(): eye[i].position = eyes[i].pos, eye[i].scale = eyes[i].scale, rotation.y = 0; Lady Dory: eye[0] auf gaze drehen (setFromUnitVectors(+Z, gaze)), eye[1].visible = false"
    },
    "brow": {
     "enabled": false,
     "status": "later (V-297)",
     "anchors": [
-     "KFB_Brow_R_anchor",
-     "KFB_Brow_L_anchor"
+     "KFB_Brow_C_anchor"
     ],
     "points": [
      {
-      "bone": "eyestalk.r",
+      "bone": "eyestalk.c",
       "pos": [
-       -0.37504,
-       0.88518,
-       0.24564
+       -0.03102,
+       0.928,
+       0.03173
       ],
-      "radius": 0.12015,
-      "size": "dick",
-      "rule": "Vorschlag: Augenmitte + (0, 1,32 R, 0,25 R); genaue Lage liefert EyeRig v6 eyeFrame() zur Laufzeit"
-     },
-     {
-      "bone": "eyestalk.l",
-      "pos": [
-       0.37484,
-       0.8845,
-       0.24557
-      ],
-      "radius": 0.11972,
-      "size": "dick",
+      "radius": 0.15406,
+      "size": "klein und dünn",
       "rule": "Vorschlag: Augenmitte + (0, 1,32 R, 0,25 R); genaue Lage liefert EyeRig v6 eyeFrame() zur Laufzeit"
      }
     ],
@@ -470,51 +430,48 @@
     "enabled": false
    },
    "mouth": {
-    "set": "MOUTHS_GPT_R2/A",
-    "type": "A",
-    "path": "mouths/A/",
+    "set": "MOUTHS_GPT_R2/B",
+    "type": "B",
+    "path": "mouths/B/",
     "upperLift": 0.35,
     "upperLiftBaked": true,
     "rest": "closed",
-    "default": "smile_closed",
+    "default": "smirk",
     "emoteMap": {
-     "neutral": "smile_closed",
+     "neutral": "smirk",
      "happy": "smile_teeth",
-     "angry": "ee_wide",
-     "sad": "mbp",
-     "surprised": "surprised_tall",
-     "blink": "smile_closed",
-     "thinking": "oo"
+     "angry": "grit",
+     "sad": "grimace",
+     "surprised": "oh",
+     "blink": "smirk",
+     "thinking": "smirk"
     },
     "visemeMap": {
      "closed": "closed",
      "open": "ah",
-     "wide": "ee_wide",
+     "wide": "grit",
      "round": "oh",
      "smile": "smile_closed",
-     "small": "small_open",
-     "mbp": "mbp",
-     "oo": "oo",
-     "teeth": "teeth_small"
+     "small": "small_open"
     },
     "anchorNode": "KFB_Mouth_anchor",
     "bone": "head_part",
     "centre": [
-     0.0,
-     0.26232,
-     0.305
+     0.03425,
+     0.24828,
+     0.36326
     ],
     "normal": [
-     0.014,
-     0.0144,
-     0.9998
+     0.1137,
+     0.1056,
+     0.9879
     ],
     "up": [
      0,
      1,
      0
     ],
-    "width": 0.21922,
+    "width": 0.24069,
     "canvasAnchor": [
      256,
      220
@@ -553,6 +510,23 @@
     "reader": "kfb-lib/ear-dangle.v1.js#DangleChain",
     "readerSha256": "3d7626bbb07667d7236bfdbbd7732db917d124880552ebbedfdb04f33a2b0046",
     "groups": {
+     "antenna": {
+      "stiffness": [
+       26
+      ],
+      "damping": [
+       3.2
+      ],
+      "maxDeg": [
+       32
+      ],
+      "inertia": 0.02,
+      "spin": 0.06,
+      "bob": 4,
+      "bobHz": 0.8,
+      "elastic": 0,
+      "gravity": 0
+     },
      "stalk": {
       "stiffness": [
        45
@@ -573,40 +547,71 @@
     },
     "parts": [
      {
-      "id": "eyestalk.r",
-      "kind": "stalk",
-      "bone": "eyestalk.r",
+      "id": "antenna.r",
+      "kind": "antenna",
+      "bone": "antenna.r",
       "stiffness": [
-       45
+       26
       ],
       "damping": [
-       5.5
+       3.2
       ],
       "maxDeg": [
-       18
+       32
       ],
-      "inertia": 0.016,
-      "spin": 0.05,
-      "bob": 2.5,
-      "bobHz": 0.55,
+      "inertia": 0.02,
+      "spin": 0.06,
+      "bob": 4,
+      "bobHz": 0.8,
       "elastic": 0,
       "gravity": 0,
-      "eyeFollows": true,
-      "eyeIndex": 0,
+      "eyeFollows": false,
+      "eyeIndex": null,
       "pivot": [
-       -0.16481,
-       0.57956,
-       0.02456
+       -0.2656,
+       0.39664,
+       0.02099
       ],
-      "length": 0.11478,
-      "threeName": "eyestalkr",
+      "length": 0.37615,
+      "threeName": "antennar",
       "side": "R",
       "_sideNote": "DangleChain side comes from THIS field, never from the three.js node name (sanitizeNodeName drops the dot: eyestalk.r -> eyestalkr, so a /\\.r$/ test fails and both stalks become 'L' -> the right stalk bends the wrong way). Capture rest quaternion q0 after load, before the first dangle step."
      },
      {
-      "id": "eyestalk.l",
+      "id": "antenna.l",
+      "kind": "antenna",
+      "bone": "antenna.l",
+      "stiffness": [
+       26
+      ],
+      "damping": [
+       3.2
+      ],
+      "maxDeg": [
+       32
+      ],
+      "inertia": 0.02,
+      "spin": 0.06,
+      "bob": 4,
+      "bobHz": 0.8,
+      "elastic": 0,
+      "gravity": 0,
+      "eyeFollows": false,
+      "eyeIndex": null,
+      "pivot": [
+       0.27303,
+       0.39069,
+       0.01416
+      ],
+      "length": 0.39109,
+      "threeName": "antennal",
+      "side": "L",
+      "_sideNote": "DangleChain side comes from THIS field, never from the three.js node name (sanitizeNodeName drops the dot: eyestalk.r -> eyestalkr, so a /\\.r$/ test fails and both stalks become 'L' -> the right stalk bends the wrong way). Capture rest quaternion q0 after load, before the first dangle step."
+     },
+     {
+      "id": "eyestalk.c",
       "kind": "stalk",
-      "bone": "eyestalk.l",
+      "bone": "eyestalk.c",
       "stiffness": [
        45
       ],
@@ -625,12 +630,12 @@
       "eyeFollows": true,
       "eyeIndex": 1,
       "pivot": [
-       0.16481,
-       0.57956,
-       0.02456
+       0.00061,
+       0.4638,
+       0.00336
       ],
-      "length": 0.11478,
-      "threeName": "eyestalkl",
+      "length": 0.10831,
+      "threeName": "eyestalkc",
       "side": "L",
       "_sideNote": "DangleChain side comes from THIS field, never from the three.js node name (sanitizeNodeName drops the dot: eyestalk.r -> eyestalkr, so a /\\.r$/ test fails and both stalks become 'L' -> the right stalk bends the wrong way). Capture rest quaternion q0 after load, before the first dangle step."
      }
@@ -641,28 +646,26 @@
    },
    "neckRing": {
     "enabled": false,
-    "radius": 0.2536,
+    "radius": 0.1656,
     "ellipse": {
-     "rx": 0.2494,
-     "rz": 0.2579
+     "rx": 0.167,
+     "rz": 0.1609
     },
-    "tube": 0.0447,
+    "tube": 0.056,
     "y": 0.0,
-    "colour": "#3095ad",
+    "colour": "#e76138",
     "note": "Wulst aus r1/_frankenstein_poc (dort am Brustknochen und zu weit vorn). Standard AUS: der Kopf steckt im Kragen des Anzugs. Nur für Körper ohne eigenen Kragen."
    },
    "headPart": {
     "schema": "kfb.headpart/1",
-    "partId": "LordHunky_Head",
-    "root": "LordHunky_Head",
+    "partId": "LadyDory_Head",
+    "root": "LadyDory_Head",
     "rigidJoint": "head_part",
-    "mesh": "LordHunky_Head_mesh",
+    "mesh": "LadyDory_Head_mesh",
     "anchors": [
-     "KFB_Eye_R_anchor",
-     "KFB_Eye_L_anchor",
+     "KFB_Eye_C_anchor",
      "KFB_Mouth_anchor",
-     "KFB_Brow_R_anchor",
-     "KFB_Brow_L_anchor"
+     "KFB_Brow_C_anchor"
     ],
     "frame": {
      "name": "L",
@@ -670,7 +673,7 @@
      "up": "+Y",
      "forward": "+Z",
      "units": "m",
-     "scale": "S = Meshy-GLB-Raum, in dem Claude Design gemessen hat (r1-Montage war S × 1.3885)",
+     "scale": "S = Meshy-GLB-Raum, in dem Claude Design gemessen hat (r1-Montage war S × 1.4291)",
      "fromS": "L = S − neckBase.centre_S (nur Verschiebung, keine Drehung, keine Skalierung)"
     },
     "attachBone": "head",
@@ -678,10 +681,10 @@
     "_hideNote": "SpaceRanger_Head is not in the GLB.",
     "tunables": {
      "headScale": {
-      "value": 0.85,
-      "default": 0.85,
-      "min": 0.5,
-      "max": 1.25,
+      "value": 0.925,
+      "default": 0.925,
+      "min": 0.45,
+      "max": 1.4,
       "step": 0.005,
       "apply": "node(root).scale.setScalar(v)",
       "label": "Kopf · Größe"
@@ -689,12 +692,12 @@
      "headOffset": {
       "value": [
        0.0,
-       0.0,
+       -0.0905,
        0.01614
       ],
       "default": [
        0.0,
-       0.0,
+       -0.0905,
        0.01614
       ],
       "min": [
@@ -712,63 +715,31 @@
       "label": "Kopf · Lage x/y/z"
      },
      "neckTaper": {
-      "value": 0,
-      "default": 0,
+      "value": 0.0,
+      "default": 0.0,
       "min": 0,
       "max": 1,
       "step": 0.01,
       "apply": "every primitive of node(mesh): morphTargetInfluences[morphTargetDictionary.neckTaper] = v",
       "label": "Hals · Verjüngung",
-      "radiusBelowFlare": "1 - 0.40 * v (radial about the collar axis, fades out over the flare)",
-      "meaning": "r3: the fitted neck is baked into the head mesh (seated in the Space Ranger collar ring at the default headScale/headOffset). neckTaper > 0 only slims that neck, for bodies with a narrower collar; 0 = exact Space Ranger fit."
+      "radiusAtCut": "1 - 0.40 * v",
+      "kAtOne": 0.6,
+      "band": 0.15,
+      "bandL_m": 0.13212
      }
     },
     "applyOrder": "after mixer.update(dt) and after any Skeleton.pose(): set root position/scale from headScale/headOffset each frame (pose() resets every bone to bind, incl. the root)",
     "collar": {
-     "frame": "head bone local (Rig_Medium head, rest; glTF axes: +Y up, +Z forward; origin = head bone, world y 1.24143)",
-     "source": "SpaceRanger_Body of KayKit Space Ranger (bb/main media/3D_Assets/KayKit_Mystery_Series6/7 - January 2024 - Space Ranger/character/SpaceRanger.glb), identical in the r3 GLB",
-     "what": "the grey/white collar roll of the suit = the seat of the head (like the original head and helmet); it stays visible all round",
+     "frame": "head bone local (Rig_Medium head, rest; +Y up, +Z forward; origin = head bone, world y 1.24143)",
+     "source": "SpaceRanger_Body (KayKit Space Ranger, bb/main .../7 - January 2024 - Space Ranger/character/SpaceRanger.glb), identical in the GLB",
      "centre_hb": [
       -0.0,
       0.0,
       0.0161
      ],
-     "axis": [
-      0,
-      1,
-      0
-     ],
-     "innerEdge": {
-      "note": "white roll meets the dark neck cap = narrowest opening (saddle: low in front, high at the sides)",
-      "rFront": 0.1409,
-      "rSide": 0.1169,
-      "rBack": 0.1409,
-      "rMin": 0.1163,
-      "rMax": 0.1479,
-      "yFront": -0.0765,
-      "ySide": 0.0044,
-      "yBack": -0.0366
-     },
-     "ridge": {
-      "note": "top of the roll",
-      "rFront": 0.1789,
-      "rSide": 0.1471,
-      "rBack": 0.1743,
-      "yFront": -0.042,
-      "ySide": 0.0441,
-      "yBack": -0.0029
-     },
-     "outerEdge": {
-      "note": "roll meets the suit",
-      "rFront": 0.1903,
-      "rSide": 0.1887,
-      "rBack": 0.202,
-      "yFront": -0.1228,
-      "ySide": 0.008,
-      "yBack": -0.0749
-     },
+     "shape": "saddle: roll top front y -0.042 (r 0.179), sides +0.044 (r 0.147), back -0.003 (r 0.174); inner edge front -0.077 / sides +0.004 / back -0.037",
      "polar": {
-      "theta_deg (0 = +Z front, 90 = +X)": [
+      "theta_deg (0 = +Z front)": [
        -162.2,
        -147.9,
        -137.8,
@@ -791,96 +762,6 @@
        147.9,
        162.2,
        180.0
-      ],
-      "inner [r, y]": [
-       [
-        0.1432,
-        -0.0366
-       ],
-       [
-        0.148,
-        -0.0345
-       ],
-       [
-        0.1439,
-        -0.023
-       ],
-       [
-        0.1349,
-        -0.008
-       ],
-       [
-        0.1222,
-        0.0003
-       ],
-       [
-        0.1169,
-        0.0044
-       ],
-       [
-        0.1224,
-        -0.0147
-       ],
-       [
-        0.1371,
-        -0.0338
-       ],
-       [
-        0.1465,
-        -0.0604
-       ],
-       [
-        0.1396,
-        -0.0703
-       ],
-       [
-        0.1409,
-        -0.0765
-       ],
-       [
-        0.1396,
-        -0.0703
-       ],
-       [
-        0.1465,
-        -0.0604
-       ],
-       [
-        0.1372,
-        -0.0338
-       ],
-       [
-        0.1224,
-        -0.0147
-       ],
-       [
-        0.117,
-        0.0044
-       ],
-       [
-        0.1222,
-        0.0003
-       ],
-       [
-        0.1349,
-        -0.008
-       ],
-       [
-        0.1439,
-        -0.023
-       ],
-       [
-        0.148,
-        -0.0345
-       ],
-       [
-        0.1432,
-        -0.0366
-       ],
-       [
-        0.1409,
-        -0.0366
-       ]
       ],
       "ridge [r, y]": [
        [
@@ -971,77 +852,149 @@
         0.1743,
         -0.0029
        ]
+      ],
+      "inner [r, y]": [
+       [
+        0.1432,
+        -0.0366
+       ],
+       [
+        0.148,
+        -0.0345
+       ],
+       [
+        0.1439,
+        -0.023
+       ],
+       [
+        0.1349,
+        -0.008
+       ],
+       [
+        0.1222,
+        0.0003
+       ],
+       [
+        0.1169,
+        0.0044
+       ],
+       [
+        0.1224,
+        -0.0147
+       ],
+       [
+        0.1371,
+        -0.0338
+       ],
+       [
+        0.1465,
+        -0.0604
+       ],
+       [
+        0.1396,
+        -0.0703
+       ],
+       [
+        0.1409,
+        -0.0765
+       ],
+       [
+        0.1396,
+        -0.0703
+       ],
+       [
+        0.1465,
+        -0.0604
+       ],
+       [
+        0.1372,
+        -0.0338
+       ],
+       [
+        0.1224,
+        -0.0147
+       ],
+       [
+        0.117,
+        0.0044
+       ],
+       [
+        0.1222,
+        0.0003
+       ],
+       [
+        0.1349,
+        -0.008
+       ],
+       [
+        0.1439,
+        -0.023
+       ],
+       [
+        0.148,
+        -0.0345
+       ],
+       [
+        0.1432,
+        -0.0366
+       ],
+       [
+        0.1409,
+        -0.0366
+       ]
       ]
      }
     },
     "checks_mm": {
-     "measuredIn": "proof_r2.html (three.js r180, exactly the rendered skinned vertices), collar frame; 360 rays at the collar inner edge",
-     "rest": {
-      "maxGap_mm": 0.0,
-      "maxPenetration_mm": 7.65,
-      "meanPress_mm": 5.45,
-      "neckCentre_vs_ringCentre_mm": 1.53,
-      "headAxis_vs_ringCentre_mm": 20.0,
-      "ridgeClearance_min_mm": 11.81
-     },
-     "idleA_t0.5-3.0": {
-      "maxGap_mm": 0.0,
-      "maxPenetration_mm": 7.58,
-      "neckCentreMax_mm": 1.54,
-      "ridgeClearanceMin_mm": 11.36
-     },
-     "headTurn_pm35deg": {
-      "maxGap_mm": 0.0,
-      "maxPenetration_mm": 8.12,
-      "neckCentreMax_mm": 1.67,
-      "ridgeClearanceMin_mm": -18.68
-     },
-     "note": "penetration = neck pressed into the inside of the roll (hidden); gap = visible opening; headAxis = centre of the widest head section (sculpt asymmetry, not a tilt); ridgeClearance > 0 = roll top visible outside the neck"
+     "openingCoveredMin": 36.1,
+     "neckBaseToOuterEdgeMin": 73.8,
+     "headOverlapsRollTop": 152.13,
+     "note": "openingCoveredMin > 0: Kopfoberfläche liegt auf Höhe der Kragen-Innenkante rundum ausserhalb der Öffnung (kein Loch). headOverlapsRollTop: so weit legt sich der Kopf an der engsten Stelle über den Kragenwulst."
     },
-    "rule": "r3 (Georg 16.10.): the alien head sits IN the suit collar ring like the original Space Ranger head: centred on the ring axis, not tilted, neck sunk below the ring top, no gap, ring visible all round; no extra ruff (neckRing stays off).",
+    "rule": "r4 (Georg 16.10.): Kopf SITZT auf der Halskrause auf, kein zusaetzlicher Hals; Kopf starr auf head_part.",
     "notes": [
      "WS0 15.10.: Startwert Kopfgröße 1,0 (Hunky mit auto-Verjüngung 0,655), weil 0,73 neben FrizzleBob zu klein wirkt; default = gemessene Kragen-Passung.",
-     "WS0 R2 16.10.: headScale/headOffset/neck = measured collar fit (Georg verdict 16.10.); r2 notes on 1.0/auto-taper are obsolete."
+     "WS0 R2 r4 16.10.: headScale/headOffset/neckTaper = collar seat (transform only); r2 notes on 1.0/auto-taper are obsolete."
     ],
-    "neckFit": {
-     "schema": "kfb.neckfit/1",
-     "by": "WS0 Blender run R2 2026-10-16",
-     "rule": "head axis = collar axis; neck radius = smooth fit of the inner-edge polygon + lift (never inside it) + 3.0 mm press; neck widens 0.25 m/m above the inner edge (stays inside the roll slope); vertical neck up to y = 0.035, smooth flare to the original head surface at y = 0.170 (head bone frame); neck bottom y = -0.100 (inside the suit)",
-     "params": {
-      "headScale": 0.85,
-      "headOffset": [
-       0.0,
-       0.0,
-       0.01614
-      ],
-      "neckTop_hN": 0.035,
-      "blendTop_h1": 0.17,
-      "neckBottom": -0.1,
-      "pen_m": 0.003,
-      "targetRadius": {
-       "harmonics": 16,
-       "liftOverPolygon_mm": 2.197750910221008,
-       "widenAboveInnerEdge_per_m": 0.25
-      }
-     },
-     "neckSkin": {
-      "joints": [
-       "head_part",
-       "chest"
-      ],
-      "vertsBlended": 2800,
-      "chestWeight1_below": "collar inner edge + 4 mm",
-      "chestWeight0_above": "max(inner edge + 70 mm, neck top + 30 mm)",
-      "curve": "smoothstep"
-     },
-     "baked": "head primitive POSITION/NORMAL (head part frame L); valid at the default headScale/headOffset"
+    "seat": {
+     "schema": "kfb.headseat/1",
+     "by": "WS0 Blender run R2 r4 2026-10-16",
+     "rule": "head rests on the collar like the original Space Ranger head / helmet: centred on the collar axis, not tilted, head bottom sunk 4 mm below the lowest (front) roll top so no opening shows from any side; the collar roll stays visible below the head at the front and back; at the sides (saddle high points) the roll top runs into the head. Only node transform + neckTaper; no extra geometry.",
+     "neckTaperRole": "not needed: the head bottom already fits inside the collar opening",
+     "checks_mm": {
+      "measuredIn": "proof_r2.html, rendered skinned vertices, collar frame; 180 vertical probes on the roll top (ridge)",
+      "rest": {
+       "maxGap_mm": 0.0,
+       "maxSink_mm": 124.6,
+       "frontGap_mm": -8.0,
+       "sideGapL_R_mm": [
+        -124.1,
+        -124.6
+       ],
+       "backGap_mm": -47.6,
+       "axisOffset_bottom_mm": 2.9,
+       "axisOffset_widest_mm": 2.4
+      },
+      "idleA_t0.5-3.0": {
+       "maxGap_mm": 0.0,
+       "maxSink_mm": 125.8,
+       "axisOffset_bottom_max_mm": 9.6
+      },
+      "headTurn_pm35deg": {
+       "maxGap_mm": 0.0,
+       "maxSink_mm": 133.8,
+       "axisOffset_bottom_max_mm": 12.3,
+       "probesInsideOpenHeadBottom": 19
+      },
+      "note": "gap > 0 = opening between roll top and head; sink = roll top inside the head. Front sink 8 mm by design; at the sides (saddle high points, roll top 86 mm above the front) the roll top runs ~11-12 cm into the head. axisOffset_bottom = head bottom section centre vs collar axis; axisOffset_widest = widest head section (Hunky: sculpt back bulge, not a tilt)"
+     }
     }
    },
    "eyeSocket": {
     "approved": "FrankenEyes R1, Georg 15.10.: 'die Augen-Einfassung ist gut gelungen'",
     "baked": true,
     "geometry": "Claude Design repair baked into the head mesh: neck loft from the stalk + spherical socket shell radius 1.10 R, front opening 58 deg, rolled rim 0.075 R, socket colour = stalk colour (socketColour per eye). Do not hide, replace or cover it.",
-    "lids": "EyeRig v6 lid shells, makeMat clay with lidColour (stalk tone x 0.72), lidFit 0 -> lid shell radius 1.056 R, just inside the 1.10 R socket shell; when open they slide UNDER the socket shell, when closed they fill the socket opening. Nothing sits on top of the socket.",
+    "lids": "EyeRig v6 lid shells, makeMat clay with lidColour (stalk tone x 0.72), lidFit 0.9 (Dory); when open they slide UNDER the socket shell, when closed they fill the socket opening. Nothing sits on top of the socket.",
     "reference": "media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/reference/ (face close-ups + expression sheets from FrankenEyes R1)"
    }
   }

@@ -1,0 +1,27 @@
+{
+ "measuredIn": "proof_r2.html, rendered skinned vertices, collar frame; 180 vertical probes on the roll top (ridge)",
+ "rest": {
+  "maxGap_mm": 0.0,
+  "maxSink_mm": 124.6,
+  "frontGap_mm": -8.0,
+  "sideGapL_R_mm": [
+   -124.1,
+   -124.6
+  ],
+  "backGap_mm": -47.6,
+  "axisOffset_bottom_mm": 2.9,
+  "axisOffset_widest_mm": 2.4
+ },
+ "idleA_t0.5-3.0": {
+  "maxGap_mm": 0.0,
+  "maxSink_mm": 125.8,
+  "axisOffset_bottom_max_mm": 9.6
+ },
+ "headTurn_pm35deg": {
+  "maxGap_mm": 0.0,
+  "maxSink_mm": 133.8,
+  "axisOffset_bottom_max_mm": 12.3,
+  "probesInsideOpenHeadBottom": 19
+ },
+ "note": "gap > 0 = opening between roll top and head; sink = roll top inside the head. Front sink 8 mm by design; at the sides (saddle high points, roll top 86 mm above the front) the roll top runs ~11-12 cm into the head. axisOffset_bottom = head bottom section centre vs collar axis; axisOffset_widest = widest head section (Hunky: sculpt back bulge, not a tilt)"
+}

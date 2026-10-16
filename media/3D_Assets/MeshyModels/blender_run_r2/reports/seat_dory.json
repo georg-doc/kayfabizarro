@@ -1,0 +1,146 @@
+{
+ "m4_dory_bind.png": {
+  "clip": "bind",
+  "t": 0.02,
+  "turn": 0,
+  "samples": 180,
+  "holeSamples": 0,
+  "maxGap_mm": 0.0,
+  "maxSink_mm": 124.6,
+  "frontGap_mm": -8.0,
+  "sideGapL_R_mm": [
+   -124.1,
+   -124.6
+  ],
+  "backGap_mm": -47.6,
+  "axisOffset_widest_mm": 2.4,
+  "axisOffset_bottom_mm": 2.9,
+  "headBottom_y_hb": -0.0905
+ },
+ "m4_dory_idle05.png": {
+  "clip": "Idle_A",
+  "t": 0.5,
+  "turn": 0,
+  "samples": 180,
+  "holeSamples": 0,
+  "maxGap_mm": 0.0,
+  "maxSink_mm": 125.5,
+  "frontGap_mm": -3.3,
+  "sideGapL_R_mm": [
+   -121.8,
+   -125.5
+  ],
+  "backGap_mm": -51.4,
+  "axisOffset_widest_mm": 13.6,
+  "axisOffset_bottom_mm": 7.8,
+  "headBottom_y_hb": -0.094
+ },
+ "m4_dory_idle10.png": {
+  "clip": "Idle_A",
+  "t": 1,
+  "turn": 0,
+  "samples": 180,
+  "holeSamples": 0,
+  "maxGap_mm": 0.0,
+  "maxSink_mm": 125.8,
+  "frontGap_mm": -7.0,
+  "sideGapL_R_mm": [
+   -122.0,
+   -125.7
+  ],
+  "backGap_mm": -48.7,
+  "axisOffset_widest_mm": 2.8,
+  "axisOffset_bottom_mm": 3.7,
+  "headBottom_y_hb": -0.0914
+ },
+ "m4_dory_idle15.png": {
+  "clip": "Idle_A",
+  "t": 1.5,
+  "turn": 0,
+  "samples": 180,
+  "holeSamples": 0,
+  "maxGap_mm": 0.0,
+  "maxSink_mm": 125.4,
+  "frontGap_mm": -3.0,
+  "sideGapL_R_mm": [
+   -121.7,
+   -125.4
+  ],
+  "backGap_mm": -51.7,
+  "axisOffset_widest_mm": 11.4,
+  "axisOffset_bottom_mm": 9.6,
+  "headBottom_y_hb": -0.0943
+ },
+ "m4_dory_idle20.png": {
+  "clip": "Idle_A",
+  "t": 2,
+  "turn": 0,
+  "samples": 180,
+  "holeSamples": 0,
+  "maxGap_mm": 0.0,
+  "maxSink_mm": 125.8,
+  "frontGap_mm": -6.7,
+  "sideGapL_R_mm": [
+   -122.0,
+   -125.7
+  ],
+  "backGap_mm": -48.9,
+  "axisOffset_widest_mm": 5.6,
+  "axisOffset_bottom_mm": 3.9,
+  "headBottom_y_hb": -0.0916
+ },
+ "m4_dory_idle30.png": {
+  "clip": "Idle_A",
+  "t": 3,
+  "turn": 0,
+  "samples": 180,
+  "holeSamples": 0,
+  "maxGap_mm": 0.0,
+  "maxSink_mm": 125.7,
+  "frontGap_mm": -6.3,
+  "sideGapL_R_mm": [
+   -122.0,
+   -125.7
+  ],
+  "backGap_mm": -49.2,
+  "axisOffset_widest_mm": 4.7,
+  "axisOffset_bottom_mm": 5.5,
+  "headBottom_y_hb": -0.0919
+ },
+ "m4_dory_turn35.png": {
+  "clip": "Idle_A",
+  "t": 2,
+  "turn": 35,
+  "samples": 164,
+  "holeSamples": 16,
+  "maxGap_mm": 0.0,
+  "maxSink_mm": 133.8,
+  "frontGap_mm": -7.5,
+  "sideGapL_R_mm": [
+   NaN,
+   -113.5
+  ],
+  "backGap_mm": -51.7,
+  "axisOffset_widest_mm": 9.3,
+  "axisOffset_bottom_mm": 12.3,
+  "headBottom_y_hb": -0.0915
+ },
+ "m4_dory_turnm35.png": {
+  "clip": "Idle_A",
+  "t": 2,
+  "turn": -35,
+  "samples": 161,
+  "holeSamples": 19,
+  "maxGap_mm": 0.0,
+  "maxSink_mm": 129.9,
+  "frontGap_mm": -7.3,
+  "sideGapL_R_mm": [
+   -111.4,
+   NaN
+  ],
+  "backGap_mm": -53.7,
+  "axisOffset_widest_mm": 13.7,
+  "axisOffset_bottom_mm": 10.2,
+  "headBottom_y_hb": -0.0915
+ }
+}
