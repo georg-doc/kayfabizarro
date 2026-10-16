@@ -4451,6 +4451,36 @@
    "applies": "L1"
   },
   {
+   "id": "V-330",
+   "date": "2026-10-16",
+   "area": "Bühne",
+   "verdict": "PASS",
+   "text": "Retro-Arcade v3 (Billboard vor dem Galaxy-Neonschild, verdeckt es) und Bühne Marmor-Terrassen (Karte als Altartafel in der hinteren Statuen-Nische, Kampf auf der runden Plaza links) PASS. Branch assets/meshy-arcade3-marble-vehicles3-2026-10-16 @2633f354 (auch Fahrzeuge v3 ×1,5).",
+   "values": {},
+   "owner": "WS0 (Asset) → WS1",
+   "check": "Bilder 05_v3 bzw. 04",
+   "source": "Georg 16.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Beide Platzierungen erzählen die Bühne und zeigen die Karte groß.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-331",
+   "date": "2026-10-16",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "WS0-Antworten auf WS1_STATUS §32–§42 (Technik-Entscheide WS0): (1) Auslieferweg = V-314. (2) V-305-Einbau wie WS1-Vorschlag §40.7 Hauptvariante freigegeben: Palette 1:1 vendoren, fromStoryMode(Story-Mode der Karte), Story-Farbe auf dem Boden, Rollen Rahmen=strang, Pfosten=trunk, Leiste=pad/cloud, Himmel=sky→cloud, Gelände=top, Meshy 18 % zum Boden-Farbton; island-palettes/Genre-Tabelle/palv=b entfallen; Tageszeit-Regel aus BRIEF_WS1_LIGHT_R1. (3) Bühne zu Fuß erreichbar: WS1 setzt eine unsichtbare Rampe (Kollider) vor dem vorderen Ring auf der START-Achse; das Amphitheater-Kollisionsnetz von WS0 entfällt für MVP-0, begehbare Netze kommen je Bühne als optionales walkable-GLB im Bühnen-Deskriptor. (4) Zaunhöhe: Variante (a) bleibt (kein Überfliegen der Ränge, kein neues Flugverhalten). (5) V-248 Gehen/Sprint: Rutschen ist Eigenschaft der KayKit-Clips, für MVP-0 nicht blockierend; später Clips aus der Motion-Library-v7-Gangleiter mit gemessenem Rutschen < 0,1 wählen. (6) Harter Halt beim Aufsetzen: weiches Abdämpfen (≈ 0,15 s) freigegeben. (7) Geh-Taste: G als Umschalter statt Strg (Mac). (8) V-023 Sprungarten nicht Teil von MVP-0. (9) m1-gait ist das eine Gang-Modul (V-206), anim.mjs bleibt entfernt. (10) Eigene M1-Schleife: bei M2 in die eine Host-Schleife zurückführen (Host-Vertrag). (11) Bewegtes Bildpaar Studio|M1 (V-214) erst zum Meilenstein-Ende. (12) Bühnen-Deskriptor kfb.stage-descriptor/1 (§40.3) freigegeben, ergänzt um practicals[] (V-329) und optional walkable.",
+   "values": {},
+   "owner": "WS1",
+   "check": "nächster WS1-Status",
+   "source": "WS0 16.10. (Georg: bitte beantworten)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Offene Prüferfragen blockieren nichts mehr; klare kleine Entscheide statt Warten.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4523,7 +4553,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:620",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:627",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

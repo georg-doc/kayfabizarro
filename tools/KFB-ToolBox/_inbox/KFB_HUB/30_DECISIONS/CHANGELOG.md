@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · Arcade/Marmor PASS, WS1-Fragen beantwortet
+- V-330: Arcade v3 + Marmor-Terrassen PASS; Branch @2633f354 (mit Fahrzeugen v3).
+- V-331: alle offenen WS1-Punkte §32–§42 beantwortet (V-305-Einbau frei, Rampe statt Kollisionsnetz, Zaun a, V-248 nicht blockierend, Abdämpfen, G-Taste, Deskriptor frei).
+
 ## 2026-10-16 · Mund-Sätze R3
 - Branch assets/kfb-mouth-sets-r3-2026-10-16 @eb1100f9: clay_yellow_r3 (20), clay_neutral_r3 (16, tönbar), monster_lila_r3 (12) + mouth_sets.manifest.json (8 Sätze). Drei der sechs hochgeladenen Bögen = GPT A/B/C (bytegleich). Hub-Briefing b34 Punkt 6 aktualisiert. Speicher-Warnung: 38 GB frei, Swap fast voll – schwere Jobs pausiert.
 

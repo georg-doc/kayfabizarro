@@ -1,5 +1,20 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Antworten auf alle offenen WS0-Punkte (§32–§42) – V-331
+1. **Auslieferweg (§40.6):** siehe V-314 – Branch `ws1/preview` → `https://ws1-preview.kayfabizarro.pages.dev/`; ihr dürft Georg die URL geben. Gilt auch für den M1-Zwischenstand.
+2. **V-305-Einbau (§40.7):** freigegeben wie eure **Hauptvariante**: `kfb-cartoon-palette.js` 1:1 vendoren, `fromStoryMode(story-mode der Karte, 0)`, Story-Farbe auf dem Boden; Rollen Rahmen=`strang`, Pfosten=`trunk`, Leiste=`pad`/`cloud`, Himmel=`sky`→`cloud`, Gelände=`top`; Meshy 18 % zum Boden-Farbton; `island-palettes.js`, Genre-Tabelle und `palv=b` entfallen. Tageszeit-Regel für Himmel/Nebel steht im Licht-Briefing (`BRIEF_WS1_LIGHT_R1.md`). Bildreihe je Story-Mode + Paar heute | V-305 wie vorgeschlagen.
+3. **Vorderer Ring / Rampe (§39.4 a/b):** Die Bühne muss zu Fuß erreichbar sein (Begegnung am Diorama, V-288). Bitte eine unsichtbare Rampe (Kollider) vor dem vorderen Ring auf der START-Achse, ≈ 3 m breit. Das WS0-Kollisionsnetz fürs Amphitheater entfällt für MVP-0; begehbare Netze kommen künftig je Bühne als optionales `walkable`-GLB im Bühnen-Deskriptor.
+4. **Zaunhöhe (§38.3):** Variante **(a)** bleibt.
+5. **V-248 Gehen/Sprint (§33.1, §39.4 d):** Rutschen 0,47/0,21 ist Clip-Eigenschaft – für MVP-0 **nicht blockierend**. Später Gehen/Sprint aus der Motion-Library-v7-Gangleiter (LOCOMOTION-LADDER-02) mit gemessenem Rutschen < 0,1 tauschen.
+6. **Harter Halt beim Aufsetzen (§39.4 e):** weiches Abdämpfen (≈ 0,15 s) ist freigegeben.
+7. **Strg auf dem Mac (§35.4):** G als Geh-Umschalter.
+8. **V-023 Sprungarten:** nicht Teil von MVP-0.
+9. **m1-gait vs. anim.mjs:** m1-gait ist das eine Gang-Modul; anim.mjs bleibt weg.
+10. **Eigene M1-Schleife (§32):** bei M2 in die eine Host-Schleife zurückführen.
+11. **Bewegtes Bildpaar Studio | M1 (V-214):** erst zum Meilenstein-Ende.
+12. **Bühnen-Deskriptor `kfb.stage-descriptor/1` (§40.3):** freigegeben, ergänzt um `practicals[]` (V-329) und optional `walkable`.
+- **Neu für die Bühnen-Vorlagen:** Arcade v3 (Billboard vor dem Neonschild) und Marmor-Terrassen sind von Georg PASS (V-330): Branch `assets/meshy-arcade3-marble-vehicles3-2026-10-16` @2633f354, dazu Fahrzeuge v3 (×1,5, Racer ≈ 5,2 m, `rigClassScale` large 1,70; Georg: Ohren dürfen im Auto knicken, V-321).
+
 ## 16.10.2026 · Licht-Auftrag L1 (V-329) – beantwortet §38.2 und Intake #404
 - Briefing: `replies/BRIEF_WS1_LIGHT_R1.md`. Kurz: ein Licht-Schreiber; `timeOfDay` mit Tag (J17: Sonne #fff4e6/2,9, Hemi #eef4fa/#9a8a78/1,05, Gegenlicht #ffe6d6/0,6, Elev. ≈ 49°, Az. ≈ −53°), Goldener Stunde (E50 aus light-presets.json) und Story-Nacht; Farben aus V-305; Karte nie umgefärbt; nur die Sonne wirft Schatten (enger texel-gerasteter PCFSoft-Frustum, nur Figuren/Fahrzeug/Leit-Requisiten), Meshy-Dioramen werfen keine Echtzeit-Schatten; Kontaktschatten für alle Figuren; lokale Lichtquellen `practicals[]` je Bühne (Emission + Pool von 4–6 PointLights ohne Schatten).
 - Probe L1 parallel zu M2 (M2 nicht umordnen): Dialogszene + Goblin-Bank v2 + Atlantis, je Tag/Gold/Nacht, 16:9 und 9:16; Raster G1–G5 im Briefing; Abnahme live über ws1-preview.
