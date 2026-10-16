@@ -1,7 +1,51 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§51 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§52 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 52 · 16.10. · Georg zur Fahrprobe G0 und zur Abnahme · Vergleichsleiste · Q/E-Drift (Frage an WS0) · Vorschau @5914c905
+
+### 52.1 · Georgs Feedback zur Fahrprobe (16.10.)
+- Lenken funktioniert noch nicht; er wusste nicht, welche Variante nach C aktiv war.
+- „Eine Version mit Reifen fährt sich ein bisschen besser, aber am Hügel fährt sie alleine ewig weiter.“ Sie hüpft am Hang dauerhaft seitwärts (Screenshot). Die andere überschlägt sich sehr schnell.
+- Intuitiv hält er die zweite Variante für besser. Mit dem Kasten-Dummy kann er es aber nicht beurteilen.
+- **Zuordnung (M2-Sitzung, Sonde):**
+  - Start = A · ecctrl (keine sichtbaren Räder, kippt bei 17 m/s in der Kurve: Schwerpunkt in Kastenmitte, hohe Haftung, Lenkwinkel unabhängig vom Tempo);
+  - nach C = B · k2b (Reifen sichtbar).
+  - k2b-Seitwärtshüpfen: Die WS1-Wandprüfung hält den Seitenhang für eine Wand und gibt den Bandenstoß (4,6 m/s).
+  - k2b-„rollt ewig“: kinematisch ohne Hangabtrieb, nach 3 s ohne Gas noch 22 m/s.
+- **Nächste Probe (M2-Sitzung):**
+  - echter `crimson_flame_dragster` v3;
+  - groß „Fahrphysik A · ecctrl / B · k2b“ im Bild;
+  - ecctrl: Schwerpunkt tief, Lenkung je Tempo kleiner, sichtbare Räder, ohne Gas sanft bremsen;
+  - k2b: Hangabtrieb, Hang ist keine Wand, kein Mikro-Abheben;
+  - neue Prüfung „2 s ohne Eingabe → Aufbaubewegung ≤ wenige mm je Schritt“ (Stand, Hang, nach Landung) für beide.
+
+### 52.2 · Q/E-Drift (Georg: „haben wir noch nicht umgesetzt; in Joyride auch nicht hundertprozentig richtig“)
+- **Register:** keine V-Nummer zum Fahr-Drift; Q/E nur in V-022 (Strafen zu Fuß) und V-199.
+- **Quelle:** J17 `lab-drive/kfb-drive.k2b.js` (J14-Schnitt 30.09.), `stepDriver` mit `driftL`/`driftR`.
+  - FEEL: `driftMinSpeed` 7,5, `driftSteerScale` 1,28, `driftDampingScale` 0,28, `driftYawGain` 1,32, `regripSeconds` 0,34, `regripDampingScale` 1,85.
+  - Abweichung K2B-Δ1: In K2 stand die Driftzeile hinter `//`, Q/E rutschte nie. Das erklärt Georgs Eindruck.
+- **Vorschlag:**
+  - B · k2b: Drift 1:1 aus k2b, Q/E nur im Auto (zu Fuß bleibt Strafen, kein Konflikt).
+  - A · ecctrl: Drift wäre Nachbau (Hinterrad-Haftung kurz senken plus Gier nach k2b-FEEL).
+- **Bitte an WS0:**
+  1. Darf B den Drift 1:1 aus der Vorlage schon vor Georgs Wahl bekommen? Er vermisst ihn beim Testen.
+  2. Für A Nachbau ja/nein?
+  - Bis zur Antwort kein Drift.
+
+### 52.3 · Abnahme leichter machen: Vergleichsleiste (Georg: „wüsste nicht, wie ich Look A oder B abnehmen soll“)
+- kfb-planet @e689471, nur mit `light=l1`, kein Spiel-HUD: beschriftete Knöpfe oben links.
+  - Look A | B;
+  - Tageszeit Tag/Gold/Nacht (wechselt sofort);
+  - Knet aus/GothGirl/alle;
+  - Tonemapping ACES/ohne.
+  - Je Gruppe ein Satz, worauf zu achten ist. `nobar` blendet aus.
+  - Geprüft: Knöpfe zeigen den aktiven Stand, Tageszeit wechselt live, Look lädt neu und behält die Tageszeit.
+- **Vorschau @5914c905** = main @e689471 + m2/fahren @67de52e zusammengebaut (M2 nicht in main), ganze Testreihe 23/23 auf dieser Fassung.
+- Links für Georg:
+  - Bühne: `https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,dialog=6,light=l1,look=a`
+  - Fahrprobe: `…/#m1,car`
 
 ## 51 · 16.10. · M2 G0 (V-313): Vergleich EcctrlVehicle gegen k2b · Vorschau für Georgs Fahrprobe · Empfehlung ecctrl
 
