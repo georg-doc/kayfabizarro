@@ -41,6 +41,7 @@ Ears, antennae and eye stalks are future **actors**: they will show surprise, jo
 For WS1's terrain integration (L2 step 4):
 1. **Clay stone kit:** 7–9 small stones/pebbles, hand-shaped clay forms (flattened, chipped, slightly asymmetric – no eggs, no spheres), 300–800 tris each, clean normals, pivot at the base, one material with a tintable base colour + the clay detail normal. Proof: a turntable sheet next to a FrizzleBob for scale.
 2. **Edge data per Meshy stage** (all stages on GitHub): `footprint` polygon (outline of the base where it meets y = 0) and `edgePalette` (3–5 colours sampled from the base texture in a ring 0–0.5 m above the ground), written into each stage's slot/descriptor JSON. Proof: top view with the polygon and colour swatches.
+3. **`practicals[]` for Goblin Bank v2 and Atlantis** (V-342, format WS1_STATUS §43.4: id, type lantern|neon|crystal|torch|monitor, pos in model units like `marks`, color, intensity, range in m, optional flicker/halo): find the painted lamps/crystals/portal lights on the textures, 6–12 per stage, written into the stage descriptor. Proof: stage view with numbered markers.
 
 ## D · Order and report
 A (Dory → Hunky → Orc) → B1 → C2 → E → B2 if time. Report in German into `replies/WS0_BLENDER_RUN_R1_REPORT.md` with paths, commit, numbers and the proof images; Hub entries only after I have checked every image.
