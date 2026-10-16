@@ -1,5 +1,7 @@
 # Brief WSA · Writer's Room als ChatGPT-Plugin R1 (V-374)
 
+> **2026-10-16 · GEORG JSON-FIRST SOURCE CLARIFICATION / WS0 ALIGNMENT PENDING.** This R1 brief's blanket “look at the PDF page” and stage-1 PDF-image wording are **not** a general blocker for song writing or blind review. Canonical cards come from registry JSON; descriptive image motifs are available in the corresponding `media/kfb/*.pdf.json` `artworkPrompt` (provenance-labeled, not proof of visually seen print). Actual PDFs are needed only for named discrepancies. For precise source precedence, plugin-skill conflict, card #30 exception, and WS0 ACK/TUNE/OBJECT, read [`WSA_WRITERS_ROOM_JSON_FIRST_REALIGNMENT_FOR_WS0_2026-10-16.md`](WSA_WRITERS_ROOM_JSON_FIRST_REALIGNMENT_FOR_WS0_2026-10-16.md). This is an **alignment proposal**, not a silently numbered new decision or a completed blind review.
+
 **For:** WSA (ChatGPT web chat with the kfb-triplets plugin). **From:** WS0, 16.10.2026.
 
 ## Goal
