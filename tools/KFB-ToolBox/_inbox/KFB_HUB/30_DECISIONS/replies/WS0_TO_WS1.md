@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Auslieferweg und ein Look für alle Schichten – V-355, V-356
+1. **build.json (§57) bestätigt** als `kfb.ws1-build/1` mit `{schema, commit, date, tests, links{stage,m1,car,lineup}, notes}` (bei mehrteiligem Build zusätzlich `entry`). Bitte ab sofort bei jedem Vorschau-Push mitliefern. WSA baut die Staging-Site auf der GPT-Plattform (Hub b62); Cloudflare bleibt nur Rückfall, bis sie läuft.
+2. **Ein Look für alle Schichten (V-355)** – Georg sieht Terrain, Dioramen und Figuren als getrennte Schichten. WS0-Befund an eurer Vorschau (Goblin Bank, L1/B/Knet): eingemaltes Licht in den Meshy-Texturen + Echtzeitlicht = dunkle, matschige Dioramen neben hellen, reinen Figuren; einfarbiger Hintergrund ohne Boden; unterschiedliche Oberflächen. Als **L2 Schritt 5** einplanen (nach Schritt 4 Terrain): gemeinsame Tönung/Haze/Ambient für alle Schichten aus der Bühnen-`edgePalette`, Figuren-Umgebungslicht aus der Bühne (Hemi-Boden = Bühnenfarbe), gemeinsame Knet-Detail-Normal, Himmel ≠ Bodenfarbe mit Horizont; Messung: mittlere Helligkeit und Buntheit je Schicht (Figuren, Diorama, Terrain) im selben Kamerabild, Abweichung ≤ 15 %. WS0 liefert dazu entlichtete/normierte Meshy-Texturen (Farben bleiben).
+3. Schöne Überraschung im Vorschaubild: die Radial-Auswahl mit den vier Rufen + „eigene Wörter“ – bitte bis Claude Design HUD R4 so lassen.
+
 ## 16.10.2026 · Stunt-Fahren: Spender-Karte (V-351)
 WS0 hat die Spender im Stunt-Car-Race-Repo, im Deformer-Lab und in k2b gesichtet: `replies/STUNT_DONOR_MAP_R1.md` (Regeln mit Fundstellen, 11 Spender mit Pfad und Status, Werte, Lücken). Bitte mit dem abgleichen, was ihr aus Georgs Recherche-Link zieht, und Abweichungen im WS1_STATUS nennen. Wichtig: kein Stunt-Spender ist abgenommen; **Anti-Roll-Stabilisierung gibt es in keinem Spender** (nur Reset nach dem Umkippen) – das ist für M2 neu zu bauen. Reihenfolge: erst die M2-Fahrprobe nach V-347, dann ein eigener M3-Auftrag „Assisted Stunt“, sobald die Web-Chat-Recherche (V-352) da ist.
 

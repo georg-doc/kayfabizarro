@@ -4826,6 +4826,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-355",
+   "date": "2026-10-16",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Ein Look für alle Schichten (Georg 16.10.: Terrain, Dioramen und Figuren wirken wie getrennte Schichten in Farbe, Textur und Licht). WS0-Befund am Vorschaubild Goblin Bank: (1) Meshy-Texturen tragen eingemaltes Licht/AO/Schatten, darüber kommt Echtzeitlicht → Dioramen dunkel und matschig, Figuren nur mit Echtzeitlicht hell und sauber; (2) Wertebereich und Sättigung weichen stark ab (Diorama gedecktes Braun, FB reines Gelb); (3) kein Boden um die Dioramen, Hintergrund einfarbig → Ausschneide-Effekt; (4) unterschiedliche Oberflächen (Knete auf Figuren, Meshy-PBR auf Dioramen, glatter Boden) und Detail-Frequenzen; (5) Figuren bekommen kein Umgebungslicht aus dem Diorama. Regel: ein gemeinsamer Look-Vertrag – Meshy-Texturen offline entlichten/normieren (WS0-Pipeline, Farben bleiben), gemeinsame Tönung/Haze/Ambient für alle Schichten aus der Bühnen-Palette (edgePalette), gemeinsame Knet-Detail-Normal für Figuren, Dioramen und Terrain, Terrain-Einbettung (V-341), Figuren-Umgebungslicht aus der Bühne; messbar über Helligkeit/Buntheit je Schicht.",
+   "values": {},
+   "owner": "WS0 (Textur-Normierung) · WS1 (Laufzeit, L2 Schritt 5)",
+   "check": "Bildpaar vorher/nachher + Histogramm je Schicht",
+   "source": "Georg 16.10.: „Terrain, Dioramen und Figuren … wie komplett separate Schichten … Farbgebung, Textur … Beleuchtung … konsistentes Look and Feel“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Getrennt wirkende Schichten zerstören das Diorama-Gefühl; Ursache sind eingemaltes Licht und fehlende gemeinsame Regeln, nicht ein einzelner Regler.",
+   "applies": "L2 Schritt 5"
+  },
+  {
+   "id": "V-356",
+   "date": "2026-10-16",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Auslieferweg: Cloudflare-Vorschauen raus aus dem Produktionsprozess (Georg: umständlich, langsam, Timeouts). Ziel = GPT-Site; WSA baut eine Staging-Site auf der GPT-Plattform, die jeden geprüften WS1-Stand von ws1/preview automatisch übernimmt (index.html + build.json kfb.ws1-build/1, Format von WS1 vorgeschlagen, WS0 bestätigt) – replies/BRIEF_WSA_GPT_STAGING_R1.md, Hub b62. WSA klärt Zugriff, Größengrenzen, externe Abrufe (raw/api.github.com) und Persistenz. Cloudflare nur Rückfall bis die Staging-Site läuft; dann löst V-356 V-314 ab.",
+   "values": {},
+   "owner": "WSA (Staging) · WS1 (build.json)",
+   "check": "Georg öffnet Staging-URL, neuer Stand ohne Handarbeit",
+   "source": "Georg 16.10.; WS1_STATUS §57",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Vorschau soll dort laufen, wo das Spiel später läuft, ohne Timeouts.",
+   "applies": "sobald WSA liefert"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4898,7 +4928,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:679",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:681",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- PR #407 gemergt (Cosmic Grift auf main). V-355 ein Look für alle Schichten (Befund + L2 Schritt 5), V-356 GPT-Staging statt Cloudflare (WSA-Briefing b62, build.json bestätigt).
 - Deck-Song Cosmic Grift 01a (109 BPM, 62/62 Zeilen, Match 0,983, Intro „Evening, fellow truth-seekers…“) auf assets/kfb-deck-song-cosmic-grift-2026-10-16 @af046233; Schnitt je Karte in 40_AUDIO/cosmic_grift_dark_journalism__suno_01a/. PR-Link an Georg.
 - V-354: Suno v4 – kein Refrain, eine Solo-Stimme je Style (V-278 als Vorlage), leichter wortloser Doo-Wop erlaubt, tanzbar; korrigiert V-350.
 - Stunt-Spender-Karte R1 (replies/STUNT_DONOR_MAP_R1.md) an WS1: 11 Spender, keiner abgenommen, Anti-Roll nirgends gebaut; M3 Assisted Stunt nach Recherche.
