@@ -80,6 +80,7 @@ function createFlatShardGeometry(){
 const shardTmp=new THREE.Matrix4(),shardPos=new THREE.Vector3(),shardQ=new THREE.Quaternion(),shardS=new THREE.Vector3(),shardCol=new THREE.Color(),zTurn=new THREE.Quaternion();
 function showPlanarDebris(enabled){
  if(!sourceDebris||!sourceChips||!shardProxy||!debrisHero)return;
+ if(isolationState){sourceDebris.visible=false;sourceChips.visible=false;shardProxy.visible=false;debrisHero.visible=false;return;}
  sourceDebris.visible=!enabled;sourceChips.visible=!enabled;
  shardProxy.visible=enabled;debrisHero.visible=enabled;
  if(!enabled){shardProxy.count=0;debrisHero.count=0;return;}
@@ -191,6 +192,29 @@ out.restoreIsolation=()=>{
  scene.background=isolationState.background;world.root.visible=isolationState.world;
  destruct.meshes.forEach((m,i)=>m.visible=isolationState.sourceMeshes[i]);
  const prev=isolationState.variant;isolationState=null;smokeVisibility(prev);renderer.render(scene,camera);return true;
+};
+out.isolateShards=(mode)=>{
+ if(!out.ready||!['original','planar'].includes(mode)||isolationState)throw Error('real source shards not ready / already isolated');
+ isolationState={kind:'shards',background:scene.background,world:world.root.visible,sourceMeshes:destruct.meshes.map(m=>m.visible),variant:out.variant};
+ world.root.visible=false;for(const m of destruct.meshes)m.visible=false;
+ clayOverlay.visible=false;alpha.visible=false;shardProxy.visible=false;debrisHero.visible=false;
+ scene.background=new THREE.Color('#54514a');
+ if(mode==='original'){sourceDebris.visible=true;sourceChips.visible=true;}
+ else{
+  isolationState=null;showPlanarDebris(true);
+  // Keep detached source cells hidden, only real-source planar debris/chips.
+  isolationState={kind:'shards',background:scene.background,world:false,sourceMeshes:destruct.meshes.map(m=>m.visible),variant:out.variant,restoreOriginal:true};
+ }
+ renderer.render(scene,camera);
+ return {mode,originalSourceDebris:sourceDebrisCount,originalSourceChips:sourceChipsCount,drawnPlanar:mode==='planar'?shardProxy.count:0};
+};
+out.restoreShards=()=>{
+ if(!isolationState||isolationState.kind!=='shards')throw Error('no shard isolation');
+ isolationState=null;world.root.visible=true;
+ scene.background=new THREE.Color(world.gen.type.sky);
+ // Re-establish saved regular render mode, not source references as a new owner.
+ destruct.meshes.forEach(m=>m.visible=true);smokeVisibility(out.variant);renderer.render(scene,camera);
+ return true;
 };
 async function build(){
  const mat=clayMaterial();
