@@ -1,0 +1,139 @@
+{
+  "schema": "kfb.norman-prototype-face/0.1-candidate",
+  "id": "norman-prototype-dummy",
+  "status": "DESIGN_TUNE",
+  "visualCanon": "OPEN_DESIGN",
+  "owner": "KFB ToolBox / Rigging",
+  "character": {
+    "canonicalName": "Norman",
+    "series": "Cancel This Planet / Hunky & Dory",
+    "designStatement": "KayKit crash-test-dummy interpretation for authoring; character design is explicitly not fixed.",
+    "roles": [
+      "tragicomic crash-test dummy",
+      "combat target presentation candidate",
+      "alien test subject presentation candidate"
+    ]
+  },
+  "source": {
+    "repo": "georg-doc/kayfabizarro",
+    "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Character/Dummy.glb",
+    "revision": "fe9d95e20d660261370c02cb6bca0afe439c0979",
+    "blob": "295357f6e031c47689d14f71ae2bcfaacbd05883",
+    "rigClass": "Rig_Medium",
+    "jointCount": 23,
+    "embeddedAnimations": 0,
+    "sourceFace": "painted eyes and mouth in the single embedded head texture; no separate eye or mouth nodes"
+  },
+  "cleanup": {
+    "mode": "texture-face-paint",
+    "donor": "tools/KFB-ToolBox/kfb-rigs-embed-v3/lab-v6/texclean.js",
+    "donorRevision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+    "status": "TUNE_UNTIL_VISUAL_REVIEW",
+    "headMeshHints": [
+      "Dummy_Head",
+      "PrototypePete_head.010"
+    ],
+    "boxesLocal": [
+      {
+        "id": "painted-eyes",
+        "min": [-0.34, 1.71, 0.12],
+        "max": [0.34, 2.02, 0.58]
+      },
+      {
+        "id": "painted-mouth",
+        "min": [-0.33, 1.43, 0.12],
+        "max": [0.33, 1.73, 0.58]
+      }
+    ],
+    "grow": 0.12,
+    "fillColor": null,
+    "sourceToggleRequired": true
+  },
+  "eye": {
+    "baseColor": "#e4b53c",
+    "lidColorMode": "face-base-darkened",
+    "designIntent": "EyeRig v6 white eyeballs/black pupils with dark-yellow clay lids; exact hue remains tunable.",
+    "anchor": {
+      "dx": 0.295,
+      "dy": 0.045,
+      "ring": 0.153,
+      "track": 0.15
+    },
+    "pupilStyle": "matte-cute",
+    "pupilSize": 0.34,
+    "gloss": 0.1,
+    "inset": 0.4,
+    "lidFit": 0.9,
+    "converge": 0.18,
+    "splay": 0,
+    "trackingMode": "life",
+    "fixedGaze": [0, 0],
+    "oval": {
+      "w": 1,
+      "h": 1,
+      "d": 1,
+      "tilt": 0
+    }
+  },
+  "brows": {
+    "owner": "BrowRig v2",
+    "source": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/brow-rig.v2.js",
+    "sourceRevision": "5650b6c54d8789b20ea80abe857688173d506d3b",
+    "enabled": true,
+    "mask": 0.42,
+    "thickness": 1.45,
+    "length": 0.56,
+    "taper": 0,
+    "height": 0.24,
+    "x": 0,
+    "y": 0,
+    "tiltLeft": 0,
+    "tiltRight": 0,
+    "bendLeft": 0,
+    "bendRight": 0,
+    "follow": 0.9,
+    "lift": 0.22,
+    "symmetric": true,
+    "solid": true,
+    "round": 0.48,
+    "even": true,
+    "cap": 0.72,
+    "color": "#9b741f",
+    "points": [
+      [-1, 0.04],
+      [-0.5, 0.04],
+      [0, 0.04],
+      [0.5, 0.04],
+      [1, 0.04]
+    ],
+    "designIntent": "dark-yellow, thick, even block-like brows; dimensions and color are tuning values, not canon"
+  },
+  "mouth": {
+    "owner": "Norman anchored mouth adapter",
+    "sourceSet": "clay_yellow_r3",
+    "sourceCatalog": "./data/norman-mouth-r3.v1.json",
+    "form": "closed",
+    "x": 0,
+    "y": -3.15,
+    "width": 4.35,
+    "depth": 0.1,
+    "visible": true,
+    "designIntent": "new yellow cartoon/clay mouth; form, placement and scale remain tunable"
+  },
+  "expressionMap": {
+    "neutral": {"brow": "neutral", "mouth": "closed"},
+    "happy": {"brow": "neutral", "mouth": "smile_teeth"},
+    "angry": {"brow": "angry", "mouth": "angry"},
+    "sad": {"brow": "worried", "mouth": "sad"},
+    "surprised": {"brow": "surprised", "mouth": "surprised"},
+    "thinking": {"brow": "skeptical", "mouth": "smirk"}
+  },
+  "acceptance": {
+    "sourceIsolationBeforeIntegration": true,
+    "requiredViews": ["front", "three-left", "three-right", "side-right"],
+    "requiredMotion": ["bind", "Idle_A", "Walking_A", "Running_A"],
+    "humanDecision": "TUNE / APPROVE / REJECT",
+    "siteTarget": "https://kfb-toolbox.frizzlebob.chatgpt.site/",
+    "siteStatus": "NOT_PUBLISHED_BY_THIS_SLICE"
+  }
+}
