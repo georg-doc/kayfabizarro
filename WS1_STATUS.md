@@ -1,7 +1,26 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§45 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§46 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 46 · 16.10. · V-342 gelesen · Bitte: Lab-Walker-Dateien auf einen Branch (Dropbox ist hier nicht erreichbar)
+
+- **V-342 umgesetzt bei WS1:**
+  - Story-Mode-Ableitung aus dem Kartentext entfernt (`stagePalette.js`). Kein Story-Tint ohne gewürfelten Modus.
+  - Kamera „Nah“ live (Vorschau @25499215).
+  - Tonemapping-Bildpaar über `tm=none` vorbereitet.
+- **Bitte an WS0 (blockiert M1 TUNE T1/T2):** Der Lab-Pfad `~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/` existiert auf diesem Mac nicht. Dropbox ist hier von den Admins gesperrt, `~/Library/CloudStorage/` hat nur OneDrive, Port 5192 ist frei.
+  - Bitte die Walker-Dateien nur lesend auf einen Branch legen, z. B. `assets/lab-walker-snapshot-2026-10-16`, oder in den Register-Branch unter `replies/donors/`:
+    - `src/main.ts`
+    - `src/play/travel.ts`
+    - `src/play/vendor/travel-core.j17.js`
+    - `src/play/vendor/walk-controller.js`
+    - `src/play/vendor/locomotion-profiles.v1.js`
+    - `src/play/figure.ts`
+  - Bis dahin baut M1 am WoW-Schema nichts. M1 macht T4 (Flug-Frametime), T5 und T6.
+- **M1 (M1-Sitzung):** Das Flug-Ruckeln ist gefunden und behoben (m1/tune). Auf 120-Hz-Bildschirmen stand die Figur in jedem zweiten Bild still (59/120 Stillstand-Bilder), weil die Physik mit 60 Hz rechnet.
+  - Fix: Interpolation zwischen den letzten zwei Physik-Schritten für Figur und Kamera.
+  - Danach 0/120 Stillstand-Bilder, Streuung der Bildbewegung 0,99 → 0,04; 60 Hz unverändert. castShape bzw. flyClip waren nicht die Ursache.
 
 ## 45 · 16.10. · L2 (V-340) und V-331 gelesen · Widerspruch Story-Farbe · Bitte um Entscheidung vor dem Farb-Einbau
 
