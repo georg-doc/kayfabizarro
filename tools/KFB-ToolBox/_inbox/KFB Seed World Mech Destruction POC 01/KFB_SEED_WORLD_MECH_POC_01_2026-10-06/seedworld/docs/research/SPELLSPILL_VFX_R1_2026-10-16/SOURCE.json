@@ -144,5 +144,71 @@
     "sitePublished": false,
     "merged": false
   },
-  "nextGate": "KFB SEED WORLD BLOCK-DESTRUCTION HYBRID FX SOURCE-ISOLATION + PERFORMANCE A/B"
+  "nextGate": "KFB SEED WORLD BLOCK-DESTRUCTION HYBRID FX SOURCE-ISOLATION + PERFORMANCE A/B",
+  "existingVfxCatalog": {
+    "status": "EXACT_SOURCE_FOUND_AND_REUSED_AS_REFERENCE_ONLY",
+    "originalHandoff": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB Style References/VFX + KEYS + ASSETS - kfb-asset-handoff-animation-lab (9).json",
+      "gitBlob": "55c2ad6cf37dc906381949f2c0e56cc2ff3888c4",
+      "assetsTotal": 132,
+      "fxVisualAssetsInHandoff": 91,
+      "candidateOnly": true
+    },
+    "canonicalRegistry": {
+      "indexPath": "registry/assets/v1/packs/index.json",
+      "gitBlob": "647412d12277a59732aaf6278318a0ab9e28d51e",
+      "packId": "fx-visual",
+      "shard": "packs/fx-visual.json"
+    },
+    "sourceFolders": {
+      "alpha": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/",
+      "alphaFilesCurrent": 93,
+      "predrawn": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/predrawn/",
+      "predrawnFilesCurrent": 14
+    },
+    "muzzleAlphaBlobPins": [
+      {
+        "name": "muzzle_01_a.png",
+        "gitBlob": "23984b9721140611363f1fed02f3538e12b752e6"
+      },
+      {
+        "name": "muzzle_02_a.png",
+        "gitBlob": "0f26ac88a73080119e0bbfe5e464040b20ebd653"
+      },
+      {
+        "name": "muzzle_03_a.png",
+        "gitBlob": "6cb99deb7783b0eb0d87ec6d217ece01917a8c29"
+      },
+      {
+        "name": "muzzle_04_a.png",
+        "gitBlob": "5b3f13c6790e00a8e447a92397c1aaa45314a1da"
+      },
+      {
+        "name": "muzzle_05_a.png",
+        "gitBlob": "78b99209f90cbe0c93132b8b38580e61e460401c"
+      }
+    ],
+    "runtimeDonor": {
+      "path": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/donor-bank/modules/kfb-vfx.js",
+      "blob": "62bb08843942c7040e452f1a4873fdf317dec6eb",
+      "atlas": "4x4, 256px each",
+      "roles": 16,
+      "method": "single atlas + shared quad pool + four alignments + tint, consume authoritative game events only"
+    },
+    "designSSOT": {
+      "path": "tools/KFB-ToolBox/_inbox/cloud-design-worldbuilding-2026-09-18/donor-bank/docs/VFX_DESIGN_v10.md",
+      "blob": "5d716c2020561accb1d486f959622c34ce0ef61a"
+    },
+    "upstreamLicense": {
+      "path": "media/3D_Assets/FX_Visual/brackeys_vfx_bundle/LICENSE & CREDITS.txt",
+      "blob": "2a10782d8761c121e6d0bc23add8b8d453777ff1",
+      "classification": "CC0, with origin credits (Picster, Kenney, Thomas Iché, CodeManu)"
+    },
+    "review": {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_VFX_01_REVIEW/RETURN_VFX_01.md",
+      "blob": "836ecd1edf83ef3930bcf7dc8ab86f7d44cf0e0c",
+      "status": "previous source-isolated review evidence; no fresh Golden approval"
+    },
+    "followUp": "EXISTING_ALPHA_MASK_ATLAS_CATALOG.md"
+  }
 }
