@@ -1,7 +1,57 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§46 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§47 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 47 · 16.10. · L1 Licht (V-329) gebaut, hinter `light=l1` · Bildreihe · Messwerte G1–G5
+
+### 47.1 · Was gebaut ist (kfb-planet @bec425a, ganze Testreihe 23/23 PASS, neuer Test `light` 11/11)
+- **Ein Licht-Schreiber** (`Stage.jsx` LightRigL1, Werte in `src/stageLight.js`):
+  - Tag = J17 (Sonne #fff4e6/2,9, Hemi #eef4fa/#9a8a78/1,05, Gegenlicht #ffe6d6/0,6, Elevation 48,99°, Azimut −53,13°);
+  - Gold = E50 (Sonne #ffd3ae, Stärken im E50-Verhältnis auf J17 übertragen, Sonnenhöhe 16° = WS1-Vorschlag);
+  - Story-Nacht = WS1-Vorschlag (Sonne 0,18 kühl, Hemi 0,42 kühl);
+  - `tod=day|gold|night|0..1` stufenlos.
+  - Ohne `light=l1` bleibt das bisherige Bühnenlicht (Test `defaultLightUnchanged`).
+- **Tonemapping:** ACES wie J17; `tm=none` für das Bildpaar. Die Kartenfläche ist `toneMapped: false`.
+- **Schatten:** nur die Sonne (Frustum ±12 m, 2048², normalBias 0,02). Meshy-Dioramen werfen keine Schatten (gemessen 0 Werfer).
+- **Kontaktschatten:** V-203-Fleck (Lab `contact-blob.ts`, nach JS übertragen) als Modul `createContactBlobs` unter jeder Figur.
+  - FB behält seinen contact-ao.
+  - contact-ao für KayKit (Körper/Füße, V-342 Punkt 5) ist noch nicht gebaut: Der Bodenfleck verhindert das Schweben; ob zusätzlich die Eigenverschattung gewünscht ist, entscheidet sich mit L2 Schritt 2 (Knet-Material).
+- **Lokale Lichter:** Modul `createPracticals`, fester Pool von 6 PointLights ohne Schatten (nie hinzufügen oder entfernen, keine Shader-Neukompilierung), Leuchthof je `practical` (V-342 Punkt 4).
+  - Nachts leiht jede Figur ein Pool-Licht (warm, vor ihr über Kopfhöhe, L2 „borrow one pooled light“), sonst bleiben Augen und Mund nachts unlesbar (G1).
+  - Die Stärke folgt (1 − tod)^1,5.
+- **Himmel und Nebel × Tageszeit** (Regel 3):
+  - Tag = Palette genau;
+  - Gold = Farbton ≤ 25° Richtung Orange (55°), Buntheit × 0,85;
+  - Nacht = Helligkeit × 0,35, Buntheit × 0,5, Farbton Richtung Blau (262°).
+  - Der Nebel folgt der gezeigten Horizontfarbe. OKLCH-Umrechnung aus `kfb-cartoon-palette.js` (1:1 vendored, Blob ab328bc0).
+- **Bühnen:** Goblin-Bank v2 (@8cf2ec71) und Atlantis (@d3326a6a) als `scene=goblin|atlantis`; die Figuren-Plätze kommen aus `slot.figures`.
+  - Deskriptoren `src/data/stages/{goblin,atlantis}.stage.json` (`kfb.stage-descriptor/1`), `practicals: []`, bis WS0 einträgt.
+- **V-342 Punkt 1:** Die Story-Mode-Ableitung aus dem Kartentext ist entfernt; `stagePaletteFor` tönt nur mit übergebenem gewürfeltem Modus. Test `palette`: `noStoryTintFromCard`.
+
+### 47.2 · Bildreihe (`ws1/proofs/2026-10-16-l1/`, Vorschau @8a145a90)
+- Je Bühne `vorher` (bisheriges Licht) und L1 Tag/Gold/Nacht, 16:9 und 9:16.
+- Dazu `paar_aces_ohne.png` (Georg wählt, V-342 Punkt 6).
+- Links:
+  - `https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,dialog=6,light=l1,tod=day` (bzw. `tod=gold`, `tod=night`);
+  - Meshy-Bühnen mit `,scene=goblin` bzw. `,scene=atlantis`;
+  - ohne Tonemapping `,tm=none`.
+
+### 47.3 · Raster (selbst gemessen)
+| Punkt | Stand |
+|---|---|
+| G1 lesbar in allen Stimmungen | erfüllt am Bild: Augen, Mund, Karte inkl. Marginalien; Blasen sind DOM und lichtunabhängig. Nachts über das Figuren-Licht. |
+| G2 nicht schwebend, < 0,1 % geclippt | Kontaktfleck unter beiden Figuren (Test). Clipping **noch nicht gemessen**. |
+| G3 Karte unverändert, Meshy ≥ 82 % original | Kartenmitte Tag vs. Nacht: Abweichung **0** (0–255, Test). Amphitheater 18 % Tönung, Meshy-Bühnen ungetönt. |
+| G4 Nacht ≥ 2 Lichtinseln | **offen**: `practicals` für Goblin-Bank und Atlantis fehlen noch (WS0, Blender-Lauf R1). Die gemalten Laternen leuchten nachts noch nicht. |
+| G5 Kosten | App-Browser, echte GPU, 1600 × 900, dpr 1 (Stage), 300 Bilder: bisher Median 16,7 ms / p95 17,8 ms; L1 Tag 16,7 / 18,3; L1 Nacht 16,7 / 18,1 (60 fps, vsync). Lichter vorher 2 → L1 3 + 6 Pool; ein Schatten-Pass wie vorher. Messung nicht auf Georgs M4-Bildschirm, sondern im App-Fenster desselben Macs. |
+
+### 47.4 · Offen und Nächstes
+- WS0 trägt `practicals`, `edgePalette` und `footprint` ein (Blender-Lauf R1, 17.10.); danach G4 und der V-305-Einbau mit der Bodenfarbe aus der Bühne.
+- **Georg wählt:** ACES oder ohne; L1 als neuer Standard ja/nein.
+- **Hinweis:** Die Meshy-Dioramen schweben frei vor dem Himmel. Das löst L2 Schritt 4 (V-341, Gelände).
+- **Als Nächstes WS1:** L2 Schritt 1 (Look B warm neben A, `lightIntent` je Figur), dann Schritt 2 (Knet-Material) und Schritt 3 (Fahrzeug-Aufstellung).
+- **Aufwand dieser Runde:** etwa 2 h Arbeitszeit, 3 Testläufe der ganzen Reihe (je ≈ 25 min headless).
 
 ## 46 · 16.10. · V-342 gelesen · Bitte: Lab-Walker-Dateien auf einen Branch (Dropbox ist hier nicht erreichbar)
 
