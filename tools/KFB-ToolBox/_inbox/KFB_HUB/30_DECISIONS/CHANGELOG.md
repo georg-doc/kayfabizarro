@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- Georg bestätigt V-342: Würfel (W6-Story-Mode) kommt später. Portal Ruin auf assets/meshy-stage-portal-ruin-2026-10-16 @07a0b023, Hub-Frage st05. Blender-Lauf R1 gestartet (Figuren; Randdaten/practicals parallel ohne Blender).
 - V-342: WS1 §43–§45 beantwortet (Bodenfarbe aus der Bühne statt Story-Mode, Walker-Vorlage im Lab, Flug-Neubau nach WoW-Logik, Raster M1 TUNE T1–T6, Halo-Lichter, Kontaktschatten, Tonemapping, Kamera Nah); L1/L2 nachgezogen; Hub-Plan (steps) aktualisiert.
 
 ## 2026-10-16 · Look-Lauf L2
