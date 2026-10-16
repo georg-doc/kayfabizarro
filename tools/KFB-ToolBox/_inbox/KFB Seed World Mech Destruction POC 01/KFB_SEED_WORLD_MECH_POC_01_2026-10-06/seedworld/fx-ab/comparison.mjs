@@ -16,6 +16,8 @@ sun.position.set(90,160,60);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024
 Object.assign(sun.shadow.camera,{left:-95,right:95,top:95,bottom:-95,near:1,far:420});sun.shadow.normalBias=.6;
 scene.add(ambient,sun,sun.target);
 let world,destruct,dust,clayOverlay,alpha,texture,loadOk=false,target=null;
+let shardProxy,debrisHero,sourceDebris,sourceChips;
+let sourceDebrisCount=0,sourceChipsCount=0;
 let isolationState=null;
 const sourceDustInstances=[];
 let baselinePixels=null;
@@ -45,6 +47,72 @@ function chooseBudgetIndices(){
  return {hero,sprites,candidateVisible:projected.length,droppedMath:max0(sourceDustInstances.length-hero.length-sprites.length),tilePx:SATURATED_FX_BUDGET.tilePx};
 }
 function max0(n){return Math.max(0,n);}
+// R3 is still a frozen-frame test adapter. One authoritative event/transform stream,
+// and the original source 3D meshes always remain available in modes NONE/A/B/C/D/E.
+const READABLE_FX_BUDGET=Object.freeze({hero3D:2,smoke2D:48,tilePx:70,perTile:3,clayScale:1.55,smokeScale:7.8,near3DDebris:12,shardScale:.65});
+function selectReadableSourceIds(){
+ const candidates=[],tileCounts=new Map(),v=new THREE.Vector3();camera.updateMatrixWorld();
+ for(let i=sourceDustInstances.length-1;i>=0;i--){
+  const x=sourceDustInstances[i];v.copy(x.p).project(camera);
+  if(!Number.isFinite(v.x)||!Number.isFinite(v.y)||v.z<-.95||v.z>1)continue;
+  const px=(v.x+1)*490,py=(1-v.y)*320;
+  if(px<0||px>=980||py<0||py>=640)continue;
+  candidates.push({i,key:Math.floor(px/READABLE_FX_BUDGET.tilePx)+':'+Math.floor(py/READABLE_FX_BUDGET.tilePx)});
+ }
+ const hero=[],sprites=[];
+ for(const c of candidates){
+  if(hero.length<READABLE_FX_BUDGET.hero3D && !hero.some(i=>sourceDustInstances[i].p.distanceTo(sourceDustInstances[c.i].p)<1.3)){hero.push(c.i);continue;}
+  if(sprites.length>=READABLE_FX_BUDGET.smoke2D)continue;
+  const n=tileCounts.get(c.key)||0;
+  if(n>=READABLE_FX_BUDGET.perTile)continue;
+  if(hero.includes(c.i))continue;
+  sprites.push(c.i);tileCounts.set(c.key,n+1);
+ }
+ return {hero,sprites,candidateVisible:candidates.length,sourceUnrepresented:max0(sourceDustInstances.length-hero.length-sprites.length),tilePx:READABLE_FX_BUDGET.tilePx,perTile:READABLE_FX_BUDGET.perTile};
+}
+function createFlatShardGeometry(){
+ // A genuine planar jagged wood/chip silhouette, 5 vertices and 3 triangles,
+ // not a new donor texture or a replacement for any gameplay physics chunk.
+ const g=new THREE.BufferGeometry();
+ g.setAttribute('position',new THREE.Float32BufferAttribute([-.47,-.23,0, -.21,.29,0, .12,.52,0, .46,.12,0, .22,-.41,0],3));
+ g.setIndex([0,1,2,0,2,3,0,3,4]);g.computeVertexNormals();return g;
+}
+const shardTmp=new THREE.Matrix4(),shardPos=new THREE.Vector3(),shardQ=new THREE.Quaternion(),shardS=new THREE.Vector3(),shardCol=new THREE.Color(),zTurn=new THREE.Quaternion();
+function showPlanarDebris(enabled){
+ if(!sourceDebris||!sourceChips||!shardProxy||!debrisHero)return;
+ sourceDebris.visible=!enabled;sourceChips.visible=!enabled;
+ shardProxy.visible=enabled;debrisHero.visible=enabled;
+ if(!enabled){shardProxy.count=0;debrisHero.count=0;return;}
+ let near=[],far=[];
+ for(let i=0;i<sourceDebrisCount;i++){
+  sourceDebris.getMatrixAt(i,shardTmp);shardTmp.decompose(shardPos,shardQ,shardS);
+  const item={i,dist:shardPos.distanceToSquared(camera.position)};
+  (near.length<READABLE_FX_BUDGET.near3DDebris?near:far).push(item);
+ }
+ // Preserve a small foreground group in exactly the original rounded source material.
+ const sorted=near.concat(far).sort((a,b)=>a.dist-b.dist),hero=sorted.slice(0,READABLE_FX_BUDGET.near3DDebris);
+ const heroIDs=new Set(hero.map(x=>x.i)),proxyIDs=sorted.filter(x=>!heroIDs.has(x.i));
+ for(let j=0;j<hero.length;j++){
+  const i=hero[j].i;sourceDebris.getMatrixAt(i,shardTmp);debrisHero.setMatrixAt(j,shardTmp);
+  sourceDebris.getColorAt(i,shardCol);debrisHero.setColorAt(j,shardCol);
+ }
+ debrisHero.count=hero.length;if(hero.length){debrisHero.instanceMatrix.needsUpdate=true;debrisHero.instanceColor.needsUpdate=true;}
+ let n=0;
+ const add=(src,i,scale,rotSeed)=>{
+  src.getMatrixAt(i,shardTmp);shardTmp.decompose(shardPos,shardQ,shardS);
+  zTurn.setFromAxisAngle(new THREE.Vector3(0,0,1),rotSeed);
+  shardQ.copy(camera.quaternion).multiply(zTurn);
+  shardS.set(Math.max(.07,shardS.x*scale),Math.max(.09,shardS.y*scale),1);
+  shardTmp.compose(shardPos,shardQ,shardS);shardProxy.setMatrixAt(n,shardTmp);
+  src.getColorAt(i,shardCol);shardProxy.setColorAt(n,shardCol);n++;
+ };
+ proxyIDs.forEach(({i})=>add(sourceDebris,i,READABLE_FX_BUDGET.shardScale,(i*0.71)%6.28));
+ for(let i=0;i<sourceChipsCount;i++)add(sourceChips,i,.9,(i*1.13)%6.28);
+ shardProxy.count=n;
+ if(n){shardProxy.instanceMatrix.needsUpdate=true;shardProxy.instanceColor.needsUpdate=true;}
+ out.shardBudget={originalDebris:sourceDebrisCount,originalChips:sourceChipsCount,originalDebris3D:hero.length,planeDebris:n-sourceChipsCount,planeChips:sourceChipsCount,planeTotal:n,geometryTrianglesPerInstance:3,sourceUnmodified:true};
+}
+
 function smokeVisibility(mode){
  const count=out.originalDustCount;
  // Source instance transforms are sampled once from the actual POC; only these display copies change.
@@ -64,6 +132,24 @@ function smokeVisibility(mode){
    alpha.instanceMatrix.needsUpdate=true;
  }
  let activeBudget=null;
+ if(mode==='e'||mode==='f'){
+   activeBudget=selectReadableSourceIds();
+   clayOverlay.visible=activeBudget.hero.length>0;clayOverlay.count=activeBudget.hero.length;
+   for(let j=0;j<activeBudget.hero.length;j++){
+     const x=sourceDustInstances[activeBudget.hero[j]];
+     M.compose(x.p,x.q,new THREE.Vector3(x.s.x*READABLE_FX_BUDGET.clayScale,x.s.y*READABLE_FX_BUDGET.clayScale,x.s.z*READABLE_FX_BUDGET.clayScale));
+     clayOverlay.setMatrixAt(j,M);clayOverlay.setColorAt(j,x.color.clone().multiplyScalar(.66));
+   }
+   if(clayOverlay.count){clayOverlay.instanceMatrix.needsUpdate=true;clayOverlay.instanceColor.needsUpdate=true;}
+   alpha.visible=activeBudget.sprites.length>0;alpha.count=activeBudget.sprites.length;
+   alpha.material.color.set('#55504d');alpha.material.opacity=.96;
+   for(let j=0;j<activeBudget.sprites.length;j++){
+     const x=sourceDustInstances[activeBudget.sprites[j]];
+     const scale=READABLE_FX_BUDGET.smokeScale*(.85+((j*11)%9)/30);
+     M.compose(x.p,camera.quaternion,new THREE.Vector3(x.s.x*scale,x.s.y*scale,1));alpha.setMatrixAt(j,M);
+   }
+   if(alpha.count)alpha.instanceMatrix.needsUpdate=true;
+ }
  if(mode==='d'){
    activeBudget=chooseBudgetIndices();
    clayOverlay.visible=activeBudget.hero.length>0;clayOverlay.count=activeBudget.hero.length;
@@ -83,9 +169,10 @@ function smokeVisibility(mode){
      alpha.setMatrixAt(j,M);
    }
    if(alpha.count)alpha.instanceMatrix.needsUpdate=true;
- }else{
+ }else if(mode!=='e'&&mode!=='f'){
    alpha.material.color.set('#8f867f');alpha.material.opacity=.96;
  }
+ showPlanarDebris(mode==='f');
  out.budget=activeBudget;
 
  out.variant=mode;
@@ -122,6 +209,15 @@ async function build(){
  loadOk=true;
  alpha=new THREE.InstancedMesh(new THREE.PlaneGeometry(1,1),new THREE.MeshBasicMaterial({map:texture,color:'#8f867f',transparent:true,opacity:0.96,depthWrite:false,side:THREE.DoubleSide,alphaTest:0.015,fog:true}),CAPS.dust);
  alpha.count=0;alpha.visible=false;alpha.renderOrder=20;alpha.frustumCulled=false;alpha.name='original-KFB-smoke-03-alpha-adapter';scene.add(alpha);
+ // Original POC dynamic source is still sole owner of real structural debris + chips.
+ // This immutable shared geometry is a *presentation proxy* for the same frozen instances.
+ sourceDebris=destruct.meshes[3];sourceChips=destruct.meshes[5];
+ if(!sourceDebris.isInstancedMesh||!sourceChips.isInstancedMesh)throw Error('actual POC debris/chips source missing');
+ const shardGeom=createFlatShardGeometry();
+ shardProxy=new THREE.InstancedMesh(shardGeom,new THREE.MeshBasicMaterial({color:'#fff',side:THREE.DoubleSide,depthWrite:true,transparent:false,polygonOffset:true,polygonOffsetFactor:-1}),CAPS.debris+CAPS.chips);
+ shardProxy.count=0;shardProxy.visible=false;shardProxy.frustumCulled=false;shardProxy.name='source-event-planar-shards-test-only';scene.add(shardProxy);
+ debrisHero=new THREE.InstancedMesh(sourceDebris.geometry,sourceDebris.material,CAPS.debris);
+ debrisHero.count=0;debrisHero.visible=false;debrisHero.frustumCulled=false;debrisHero.name='exact-POC-debris-foreground-source';scene.add(debrisHero);
  const timeout=performance.now()+70000;
  while(performance.now()<timeout){
    world.update(0,0);
@@ -153,6 +249,8 @@ async function build(){
    if(step%3===0)await pause();
  }
  const all=destruct.meshes,dustMesh=all[6];const cnt=dustMesh.count;
+ sourceDebrisCount=sourceDebris.count;sourceChipsCount=sourceChips.count;
+ out.originalDebrisCount=sourceDebrisCount;out.originalChipsCount=sourceChipsCount;
  out.originalDustCount=cnt;
  // Reframe only this read-only test camera onto actual observed POC smoke, not an imagined target.
  let sum=new THREE.Vector3(),num=0;
@@ -171,7 +269,7 @@ out.damageEvidence={events:when.length,cellsLost:destruct.stats.cellsLost,cascad
  smokeVisibility('a');renderer.render(scene,camera);out.ready=true;out.status='READY';
 }
 out.measure=async(mode,frames=38)=>{
- if(!out.ready||!['none','a','b','c','d'].includes(mode))throw Error('not ready or invalid variant');
+ if(!out.ready||!['none','a','b','c','d','e','f'].includes(mode))throw Error('not ready or invalid variant');
  smokeVisibility(mode);renderer.compile(scene,camera);
  for(let i=0;i<5;i++)renderer.render(scene,camera);
  let renderMs=[],intervalMs=[],calls=0,tris=0,last=0;
@@ -188,7 +286,7 @@ out.measure=async(mode,frames=38)=>{
  let visible=null;
  if(mode==='none')baselinePixels=px.slice();
  else if(baselinePixels){let changed=0,checked=0,delta=0;for(let i=0;i<px.length;i+=16){const d=(Math.abs(px[i]-baselinePixels[i])+Math.abs(px[i+1]-baselinePixels[i+1])+Math.abs(px[i+2]-baselinePixels[i+2]))/3;delta+=d;if(d>8)changed++;checked++;}visible={changedPercent:+(100*changed/checked).toFixed(3),meanDifference:+(delta/checked).toFixed(3),samplePixels:checked};}
- const result={variant:mode,scenario,frames,sourceDust:out.originalDustCount,budget:mode==='d'?out.budget:null,pixelDiffVsNoSmoke:visible,visual3D:clayOverlay.visible?clayOverlay.count:0,visual2D:alpha.visible?alpha.count:0,renderSubmitMs:{p50:q(renderMs,.5),p95:q(renderMs,.95),p99:q(renderMs,.99)},rafIntervalMs:{p50:q(intervalMs,.5),p95:q(intervalMs,.95),p99:q(intervalMs,.99)},callsAvg:Math.round(calls/frames),trisMax:tris,rendererInfo:{geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures},damageEvidence:out.damageEvidence,engine:'headless fixture, real source POC, not target GPU'};
+ const result={variant:mode,scenario,frames,sourceDust:out.originalDustCount,budget:['d','e','f'].includes(mode)?out.budget:null,shards:mode==='f'?out.shardBudget:null,pixelDiffVsNoSmoke:visible,visual3D:clayOverlay.visible?clayOverlay.count:0,visual2D:alpha.visible?alpha.count:0,renderSubmitMs:{p50:q(renderMs,.5),p95:q(renderMs,.95),p99:q(renderMs,.99)},rafIntervalMs:{p50:q(intervalMs,.5),p95:q(intervalMs,.95),p99:q(intervalMs,.99)},callsAvg:Math.round(calls/frames),trisMax:tris,rendererInfo:{geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures},damageEvidence:out.damageEvidence,engine:'headless fixture, real source POC, not target GPU'};
  out.lastResult=result;return result;
 };
 for(const button of document.querySelectorAll('[data-mode]'))button.onclick=()=>out.measure(button.dataset.mode,20).catch(e=>$$('#info').textContent=e.message);
