@@ -1,4 +1,4 @@
-name: KFB Seed World real-source 3D vs 2D vs Hybrid FX
+name: KFB Seed World original-source budget hybrid smoke proof
 on:
   pull_request:
     paths:
@@ -29,19 +29,19 @@ jobs:
       - name: JS syntax and exact source-mask integrity
         run: |
           node --check 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/comparison.mjs'
-          node --check 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/proof.mjs'
+          node --check 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/budget-proof.mjs'
           test "$(git hash-object media/3D_Assets/FX_Visual/brackeys_vfx_bundle/particles/alpha/smoke_03_a.png)" = 7cbc81b89d58671748e819f5f9756d5fbe53a477
-      - name: Run actual same-world original destruction source FX comparisons
+      - name: Check fixed original 12-hit block state and capped hybrid source FX
         env:
-          KFB_PROOF_DIR: kfb-spellspill-fx-ab-evidence
+          KFB_PROOF_DIR: kfb-seedworld-budget-fx-evidence
         run: |
           python3 -m http.server 8768 --bind 127.0.0.1 > /tmp/kfb-spellspill-fx-ab.log 2>&1 &
           sleep 2
-          node 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/proof.mjs'
+          node 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/budget-proof.mjs'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: kfb-spellspill-source-fx-ab-evidence
-          path: kfb-spellspill-fx-ab-evidence/
+          name: kfb-seedworld-budget-fx-evidence
+          path: kfb-seedworld-budget-fx-evidence/
           if-no-files-found: warn
           retention-days: 21
