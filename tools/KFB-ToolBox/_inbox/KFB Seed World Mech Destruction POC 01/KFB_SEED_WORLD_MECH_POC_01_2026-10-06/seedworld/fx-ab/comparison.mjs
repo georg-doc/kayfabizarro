@@ -16,7 +16,8 @@ sun.position.set(90,160,60);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024
 Object.assign(sun.shadow.camera,{left:-95,right:95,top:95,bottom:-95,near:1,far:420});sun.shadow.normalBias=.6;
 scene.add(ambient,sun,sun.target);
 let world,destruct,dust,alpha,texture,loadOk=false,target=null;
-const snapshots=[];
+const sourceDustInstances=[];
+let baselinePixels=null;
 const seeded=(initial)=>{let s=initial>>>0;return()=>{s^=s<<13;s^=s>>>17;s^=s<<5;return(s>>>0)/4294967296}};
 const pause=()=>new Promise(r=>setTimeout(r,0));
 const q=(v,p)=>{if(!v.length)return null;const s=[...v].sort((a,b)=>a-b);return +s[Math.min(s.length-1,Math.floor((s.length-1)*p))].toFixed(2)};
@@ -27,6 +28,11 @@ function smokeVisibility(mode){
  if(mode==='a'){dust.visible=true;dust.count=count;alpha.visible=false;alpha.count=0;}
  if(mode==='b'){dust.visible=false;alpha.visible=true;alpha.count=count;}
  if(mode==='c'){dust.visible=count>0;dust.count=Math.min(9,count);alpha.visible=true;alpha.count=Math.max(0,count-9);}
+ if(mode==='b'||mode==='c'){
+   const from=mode==='c'?Math.min(9,count):0;
+   for(let i=from;i<count;i++){const x=sourceDustInstances[i];M.compose(x.p,camera.quaternion,new THREE.Vector3(x.s.x*1.85,x.s.y*1.85,1));alpha.setMatrixAt(i-from,M);}
+   alpha.instanceMatrix.needsUpdate=true;
+ }
  out.variant=mode; $$('#info').textContent=JSON.stringify({variant:mode,scenario,originalDust:count,drawn3D:dust.visible?dust.count:0,drawn2D:alpha.visible?alpha.count:0,damage:out.damageEvidence},null,2);
 }
 async function build(){
@@ -74,13 +80,18 @@ async function build(){
    if(step%3===0)await pause();
  }
  const all=destruct.meshes,dustMesh=all[6];const cnt=dustMesh.count;
- out.originalDustCount=cnt;out.damageEvidence={events:when.length,cellsLost:destruct.stats.cellsLost,cascades:destruct.stats.cascades,debris:destruct.stats.debris,smoke:cnt,chips:destruct.stats.chips,fire:destruct.stats.fire,promoted:destruct.stats.promoted,peakVfx:destruct.stats.vfxPeak,updateMs:{p50:q(damageStepMs,.5),p95:q(damageStepMs,.95),p99:q(damageStepMs,.99)}};
+ out.originalDustCount=cnt;
+ // Reframe only this read-only test camera onto actual observed POC smoke, not an imagined target.
+ let sum=new THREE.Vector3(),num=0;
  for(let i=0;i<cnt;i++){
    dustMesh.getMatrixAt(i,M);M.decompose(P,R,S);
-   // Billboard plane aligned to the SAME camera; real source mask, identical underlying dust positions/scale.
-   M.compose(P,camera.quaternion,new THREE.Vector3(S.x*1.3,S.y*1.3,1));alpha.setMatrixAt(i,M);
+   sourceDustInstances.push({p:P.clone(),s:S.clone()});
+   if(i>=Math.max(0,cnt-70)){sum.add(P);num++;}
  }
- alpha.instanceMatrix.needsUpdate=true;
+ if(num){sum.divideScalar(num);const k=scenario==='single'?1:scenario==='four'?1.25:1.7;camera.position.set(sum.x+13*k,sum.y+21*k,sum.z+16*k);camera.lookAt(sum);camera.updateMatrixWorld();out.smokeCenter=sum.toArray();}
+out.damageEvidence={events:when.length,cellsLost:destruct.stats.cellsLost,cascades:destruct.stats.cascades,debris:destruct.stats.debris,smoke:cnt,chips:destruct.stats.chips,fire:destruct.stats.fire,promoted:destruct.stats.promoted,peakVfx:destruct.stats.vfxPeak,updateMs:{p50:q(damageStepMs,.5),p95:q(damageStepMs,.95),p99:q(damageStepMs,.99)}};
+ // B/C instance buffers are filled from these pinned original 3D source positions by smokeVisibility().
+
  if(!cnt)throw Error('Original source smoke pool empty in '+scenario);
  // Source isolation: the exact Brackeys alpha is separately shown above; this confirms actual 3D dust geometry source.
  out.isolated={alphaNaturalWidth:mask.naturalWidth,threeGeometry:dust.geometry.type,damageFromSource:true,dustInstanceCount:cnt,sourceRevision:THREE.REVISION};
@@ -97,7 +108,14 @@ out.measure=async(mode,frames=38)=>{
    renderer.info.reset();renderer.render(scene,camera);renderMs.push(performance.now()-start);
    calls+=renderer.info.render.calls;tris=Math.max(tris,renderer.info.render.triangles);
  }
- const result={variant:mode,scenario,frames,sourceDust:out.originalDustCount,visual3D:dust.visible?dust.count:0,visual2D:alpha.visible?alpha.count:0,renderSubmitMs:{p50:q(renderMs,.5),p95:q(renderMs,.95),p99:q(renderMs,.99)},rafIntervalMs:{p50:q(intervalMs,.5),p95:q(intervalMs,.95),p99:q(intervalMs,.99)},callsAvg:Math.round(calls/frames),trisMax:tris,rendererInfo:{geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures},damageEvidence:out.damageEvidence,engine:'headless fixture, real source POC, not target GPU'};
+ // Pixel signal is counted after timing, so source presence is not mistaken for visual coverage.
+ const probe=document.createElement('canvas');probe.width=980;probe.height=640;
+ const ctx=probe.getContext('2d',{willReadFrequently:true});ctx.drawImage(renderer.domElement,0,0);
+ const px=ctx.getImageData(0,0,980,640).data;
+ let visible=null;
+ if(mode==='none')baselinePixels=px.slice();
+ else if(baselinePixels){let changed=0,checked=0,delta=0;for(let i=0;i<px.length;i+=16){const d=(Math.abs(px[i]-baselinePixels[i])+Math.abs(px[i+1]-baselinePixels[i+1])+Math.abs(px[i+2]-baselinePixels[i+2]))/3;delta+=d;if(d>8)changed++;checked++;}visible={changedPercent:+(100*changed/checked).toFixed(3),meanDifference:+(delta/checked).toFixed(3),samplePixels:checked};}
+ const result={variant:mode,scenario,frames,sourceDust:out.originalDustCount,pixelDiffVsNoSmoke:visible,visual3D:dust.visible?dust.count:0,visual2D:alpha.visible?alpha.count:0,renderSubmitMs:{p50:q(renderMs,.5),p95:q(renderMs,.95),p99:q(renderMs,.99)},rafIntervalMs:{p50:q(intervalMs,.5),p95:q(intervalMs,.95),p99:q(intervalMs,.99)},callsAvg:Math.round(calls/frames),trisMax:tris,rendererInfo:{geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures},damageEvidence:out.damageEvidence,engine:'headless fixture, real source POC, not target GPU'};
  out.lastResult=result;return result;
 };
 for(const button of document.querySelectorAll('[data-mode]'))button.onclick=()=>out.measure(button.dataset.mode,20).catch(e=>$$('#info').textContent=e.message);
