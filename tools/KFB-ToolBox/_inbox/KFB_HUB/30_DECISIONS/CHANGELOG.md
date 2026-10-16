@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-346 korrigiert: Hals-Ring des Anzugs bleibt sichtbar (Raumanzug-Effekt); Blender-Lauf R2 informiert.
 - V-347: M2 Fahrgefühl – Q/E Drift (k2b-Spender), enger Wendekreis A/D, ecctrl weniger Überschläge, aktives System sichtbar; neue Fahrprobe.
 - V-346: Georgs Look-Urteile (B Standard, Glow/Mund-Licht/Farbtreue TUNE, Tonemapping-Kombi, FB Knet, Aliens exakt in den Hals-Ring, Münder vertauscht, Proofs immer mit Knet, FB-Ohren gespiegelt + schmaler); WS1-Notiz; Hub-Seite v13 (lange Fragen volle Breite).
 - Blender-Lauf R1 fertig (WS0 geprüft): Lady Dory r2, Lord Hunky r2 (Stiel-Knick weg), Orc mit KFB-Augen r1, FB v5c Meshy-Ohren; assets/kfb-blender-run-r1-2026-10-16 @e4bf8b15. Hub-Fragen fb-ears-v5c, aliens-r2. Steine-Kit noch offen.
