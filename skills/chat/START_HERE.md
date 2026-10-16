@@ -1,3 +1,9 @@
+## 2026-10-17 · V-378 R2 DONOR-FIRST SOURCE AUDIT · REPLACES R1 BATCH EXECUTION PRIORITY
+
+Owner: existing KFB Audio & Soundscape; retained branch `audio/kfb-racer-motor-grid-r1-v378-2026-10-17`, Draft PR #413. Current R2 Return: `tools/KFB-ToolBox/audio/racer_grid_r1/R2_RETURN.md`. Source grid: `R2_CANDIDATES.json` and `R2_DONOR_AUDIT.md`, with 7 unapproved prompts and credit report. **27/27 primary donor paths exist; 20 audition-first, 7 conditional gaps; 20/20 SHA-proven duplicate Classic Arcade pairs; 18/18 R2 static checks.** Pilot budget 1,160 credits, full conditional 3,080 (+1,760 optional). `R1 --execute` **ON HOLD**, no new MP3/API calls and no new sound owner/Site. One next gate = `WS0_SOURCE_ISOLATED_A_B_PILOT_SELECTION` (hear isolated sources before paid generation). KFB Hub board source update on this **unmerged branch only**; existing live Site and Cloudflare unchanged.
+
+---
+
 ## 2026-10-17 · SOURCE PREPARED · V-378 KFB RACER MOTOR GRID R1
 
 Owner: existing KFB Racer audio assets / KFB Audio playback; runtime Race telemetry remains unchanged.
