@@ -1,0 +1,171 @@
+{
+ "id": "monster_lila_r3",
+ "label": "Monster lila (Reißzähne, 12)",
+ "format": "anchored_png",
+ "ref": "main",
+ "path": "media/3D_Assets/Textures/KFB-Mouth-Sets_R3/monster_lila_r3",
+ "canvas": [
+  512,
+  512
+ ],
+ "anchors": "anchors.json",
+ "anchor": {
+  "x": 256,
+  "y": 220,
+  "closed_upper_lip_top_y": 138.0
+ },
+ "upperLift": 0.35,
+ "shapes": [
+  {
+   "id": "closed",
+   "file": "closed.png",
+   "use_as": "X rest",
+   "variant_of": null
+  },
+  {
+   "id": "mbp",
+   "file": "mbp.png",
+   "use_as": "MBP (pressed, slightly fuller than closed)",
+   "variant_of": null
+  },
+  {
+   "id": "small_open",
+   "file": "small_open.png",
+   "use_as": "C small open (4 fangs)",
+   "variant_of": null
+  },
+  {
+   "id": "mid_open",
+   "file": "mid_open.png",
+   "use_as": "C/D half open",
+   "variant_of": null
+  },
+  {
+   "id": "ah",
+   "file": "ah.png",
+   "use_as": "D AA wide open (tongue)",
+   "variant_of": null
+  },
+  {
+   "id": "ah_full",
+   "file": "ah_full.png",
+   "use_as": "D AA wide open (tongue)",
+   "variant_of": "ah"
+  },
+  {
+   "id": "smile_teeth",
+   "file": "smile_teeth.png",
+   "use_as": "reaction grin (two fang rows)",
+   "variant_of": null
+  },
+  {
+   "id": "oh",
+   "file": "oh.png",
+   "use_as": "E OH tall oval",
+   "variant_of": null
+  },
+  {
+   "id": "oh_full",
+   "file": "oh_full.png",
+   "use_as": "E OH tall oval",
+   "variant_of": "oh"
+  },
+  {
+   "id": "oo",
+   "file": "oo.png",
+   "use_as": "F OO small round",
+   "variant_of": null
+  },
+  {
+   "id": "fangs_peek",
+   "file": "fangs_peek.png",
+   "use_as": "B EE/S stand-in (lips parted, fangs peek)",
+   "variant_of": null
+  },
+  {
+   "id": "grumpy",
+   "file": "grumpy.png",
+   "use_as": "reaction grumpy / clenched teeth (also B EE/S)",
+   "variant_of": null
+  },
+  {
+   "id": "snarl",
+   "file": "snarl.png",
+   "use_as": "reaction snarl (teeth bared, slightly open)",
+   "variant_of": null
+  },
+  {
+   "id": "smirk",
+   "file": "smirk.png",
+   "use_as": "reaction smirk (asymmetric, one side open)",
+   "variant_of": null
+  }
+ ],
+ "defaults": {
+  "rest": "closed",
+  "fallback": "closed",
+  "shadow": "baked (X.png); noshadow/X.png without",
+  "fullVariants": "*_full = unsquashed original of a shape squashed to the height limit"
+ },
+ "visemeMap": {
+  "rest": "closed",
+  "mbp": "mbp",
+  "small_open": "small_open",
+  "ah": "ah",
+  "ee": "fangs_peek",
+  "oh": "oh",
+  "oo": "oo",
+  "fv": "fangs_peek",
+  "l_th": "small_open"
+ },
+ "visemeMapExtra": {
+  "mid_open": "mid_open",
+  "clench": "grumpy"
+ },
+ "petMouthVisemes": {
+  "closed": "mbp",
+  "open": "ah",
+  "wide": "fangs_peek",
+  "round": "oh",
+  "smile": "smile_teeth"
+ },
+ "emoteMap": {
+  "neutral": "closed",
+  "happy": "smile_teeth",
+  "angry": "snarl",
+  "sad": "closed",
+  "surprised": "oh",
+  "blink": "closed"
+ },
+ "talkPool": [
+  "small_open",
+  "mid_open",
+  "ah",
+  "oh",
+  "fangs_peek",
+  "oo"
+ ],
+ "tintable": false,
+ "tint": {
+  "note": "Lippen lila eingebacken (Monster-Look); kein Umfärben vorgesehen."
+ },
+ "gaps": [
+  "kein F/V (fangs_peek als Ersatz)",
+  "kein L/TH (small_open als Ersatz)",
+  "kein sad (closed + Mundwinkel-bend −)"
+ ],
+ "source": {
+  "repo": "georg-doc/kayfabizarro",
+  "path": "media/3D_Assets/Textures/FrizzleBob-Mouths_PNGs/Lila Monster-Mundausdrücke als Animationsvorlage.png",
+  "commit": "ea603d31d",
+  "grid": "4x3",
+  "background": "weiss (freigestellt)"
+ },
+ "status": "WS0-Vorschlag, wartet auf Georg (Hub)",
+ "quality": "gut: sauber freigestellt, ah/oh leicht gestaucht (+ _full); Visem-Lücken F/V, L/TH, sad",
+ "recommended": [
+  "Monster",
+  "Kreaturen",
+  "Bösewichte"
+ ]
+}

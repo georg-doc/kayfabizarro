@@ -1,0 +1,232 @@
+{
+ "id": "clay_yellow_r3",
+ "label": "Knete gelb (FrizzleBob-Viseme, 20)",
+ "format": "anchored_png",
+ "ref": "main",
+ "path": "media/3D_Assets/Textures/KFB-Mouth-Sets_R3/clay_yellow_r3",
+ "canvas": [
+  512,
+  512
+ ],
+ "anchors": "anchors.json",
+ "anchor": {
+  "x": 256,
+  "y": 220,
+  "closed_upper_lip_top_y": 152.0
+ },
+ "upperLift": 0.35,
+ "shapes": [
+  {
+   "id": "closed",
+   "file": "closed.png",
+   "use_as": "X rest (sheet label REST)",
+   "variant_of": null,
+   "sheet_label": "REST"
+  },
+  {
+   "id": "smile_teeth",
+   "file": "smile_teeth.png",
+   "use_as": "reaction smile with teeth (label SMILE)",
+   "variant_of": null,
+   "sheet_label": "SMILE"
+  },
+  {
+   "id": "ah",
+   "file": "ah.png",
+   "use_as": "D AA wide open (label A)",
+   "variant_of": null,
+   "sheet_label": "A"
+  },
+  {
+   "id": "eh",
+   "file": "eh.png",
+   "use_as": "C/D open with both teeth rows (label E; more EH than a wide EE)",
+   "variant_of": null,
+   "sheet_label": "E"
+  },
+  {
+   "id": "oh",
+   "file": "oh.png",
+   "use_as": "E OH round (label O)",
+   "variant_of": null,
+   "sheet_label": "O"
+  },
+  {
+   "id": "oo",
+   "file": "oo.png",
+   "use_as": "F OO pucker (label U)",
+   "variant_of": null,
+   "sheet_label": "U"
+  },
+  {
+   "id": "clench",
+   "file": "clench.png",
+   "use_as": "B EE/S clenched (label CLENCH)",
+   "variant_of": null,
+   "sheet_label": "CLENCH"
+  },
+  {
+   "id": "fv",
+   "file": "fv.png",
+   "use_as": "G F/V upper teeth on lower lip (label F/V)",
+   "variant_of": null,
+   "sheet_label": "F/V"
+  },
+  {
+   "id": "mbp",
+   "file": "mbp.png",
+   "use_as": "MBP pressed (label M/B/P)",
+   "variant_of": null,
+   "sheet_label": "M/B/P"
+  },
+  {
+   "id": "th",
+   "file": "th.png",
+   "use_as": "H L/TH tongue behind upper teeth (label TH)",
+   "variant_of": null,
+   "sheet_label": "TH"
+  },
+  {
+   "id": "l",
+   "file": "l.png",
+   "use_as": "H L slightly open, upper teeth (label L)",
+   "variant_of": null,
+   "sheet_label": "L"
+  },
+  {
+   "id": "d",
+   "file": "d.png",
+   "use_as": "C D/T/N slightly open (label D)",
+   "variant_of": null,
+   "sheet_label": "D"
+  },
+  {
+   "id": "s_z",
+   "file": "s_z.png",
+   "use_as": "B S/Z teeth almost together (label S/Z)",
+   "variant_of": null,
+   "sheet_label": "S/Z"
+  },
+  {
+   "id": "ch_j",
+   "file": "ch_j.png",
+   "use_as": "B CH/J teeth, lips forward (label CH/J)",
+   "variant_of": null,
+   "sheet_label": "CH/J"
+  },
+  {
+   "id": "r",
+   "file": "r.png",
+   "use_as": "R asymmetric (label R)",
+   "variant_of": null,
+   "sheet_label": "R"
+  },
+  {
+   "id": "sad",
+   "file": "sad.png",
+   "use_as": "reaction sad",
+   "variant_of": null,
+   "sheet_label": "SAD"
+  },
+  {
+   "id": "surprised",
+   "file": "surprised.png",
+   "use_as": "reaction surprised",
+   "variant_of": null,
+   "sheet_label": "SURPRISED"
+  },
+  {
+   "id": "tongue_out",
+   "file": "tongue_out.png",
+   "use_as": "reaction tongue out (fun shape, not for talk)",
+   "variant_of": null,
+   "sheet_label": "TONGUE"
+  },
+  {
+   "id": "smirk",
+   "file": "smirk.png",
+   "use_as": "reaction smirk / sly grin",
+   "variant_of": null,
+   "sheet_label": "SMIRK"
+  },
+  {
+   "id": "angry",
+   "file": "angry.png",
+   "use_as": "reaction angry, teeth bared",
+   "variant_of": null,
+   "sheet_label": "ANGRY"
+  }
+ ],
+ "defaults": {
+  "rest": "closed",
+  "fallback": "closed",
+  "shadow": "baked (X.png); noshadow/X.png without",
+  "fullVariants": "*_full = unsquashed original of a shape squashed to the height limit"
+ },
+ "visemeMap": {
+  "rest": "closed",
+  "mbp": "mbp",
+  "small_open": "d",
+  "ah": "ah",
+  "ee": "eh",
+  "oh": "oh",
+  "oo": "oo",
+  "fv": "fv",
+  "l_th": "th"
+ },
+ "visemeMapExtra": {
+  "l": "l",
+  "d": "d",
+  "s": "s_z",
+  "ch": "ch_j",
+  "r": "r",
+  "clench": "clench"
+ },
+ "petMouthVisemes": {
+  "closed": "mbp",
+  "open": "ah",
+  "wide": "eh",
+  "round": "oh",
+  "smile": "smile_teeth"
+ },
+ "emoteMap": {
+  "neutral": "closed",
+  "happy": "smile_teeth",
+  "angry": "angry",
+  "sad": "sad",
+  "surprised": "surprised",
+  "blink": "closed"
+ },
+ "talkPool": [
+  "ah",
+  "eh",
+  "oh",
+  "d",
+  "s_z",
+  "l",
+  "th",
+  "r",
+  "ch_j"
+ ],
+ "tintable": false,
+ "tint": {
+  "note": "Lippen = FrizzleBob-Hautgelb, eingebacken. Auf FB verschmelzen die Lippen mit der Haut (gewollt: Knet-Mund aus derselben Masse); Kontur kommt vom gebackenen Kontaktschatten. Umfärben wäre nur per Farbton-Maske auf den gesättigten Gelb-Pixeln möglich."
+ },
+ "gaps": [
+  "kein smile_closed (Lächeln geschlossen); happy nutzt smile_teeth",
+  "E-Form des Bogens ist offen (eh), kein breites EE; s_z/clench decken EE/S"
+ ],
+ "source": {
+  "repo": "georg-doc/kayfabizarro",
+  "path": "media/3D_Assets/Textures/FrizzleBob-Mouths_PNGs/YELLOW_Clay-Mundvisemen für Lippen-Synchronisation.png",
+  "commit": "ea603d31d",
+  "grid": "5x4",
+  "background": "weiss (freigestellt)"
+ },
+ "status": "WS0-Vorschlag, wartet auf Georg (Hub)",
+ "quality": "gut: sauber freigestellt, keine Ränder, 20/20 geschnitten, keine Stauchung nötig",
+ "recommended": [
+  "FrizzleBob",
+  "gelbe Figuren"
+ ]
+}

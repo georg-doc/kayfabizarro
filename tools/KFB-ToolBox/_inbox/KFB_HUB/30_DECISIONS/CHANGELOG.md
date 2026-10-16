@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · Mund-Sätze R3
+- Branch assets/kfb-mouth-sets-r3-2026-10-16 @eb1100f9: clay_yellow_r3 (20), clay_neutral_r3 (16, tönbar), monster_lila_r3 (12) + mouth_sets.manifest.json (8 Sätze). Drei der sechs hochgeladenen Bögen = GPT A/B/C (bytegleich). Hub-Briefing b34 Punkt 6 aktualisiert. Speicher-Warnung: 38 GB frei, Swap fast voll – schwere Jobs pausiert.
+
 ## 2026-10-16 · Licht-Auftrag L1
 - V-329: replies/BRIEF_WS1_LIGHT_R1.md an WS1 (aus WSA_LIGHT_STUDY_C_R1, PR #403, Intake #404, LESSONS_SHADOWS, V-305): Tag/Gold/Nacht, sparsame Schatten, lokale Lichtquellen je Bühne; Hub-Briefing b44.
 
