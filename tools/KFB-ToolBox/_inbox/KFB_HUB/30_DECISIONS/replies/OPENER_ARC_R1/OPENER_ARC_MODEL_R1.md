@@ -168,6 +168,6 @@ told: A friend told me about / I heard a rumor about / My neighbor mentioned · 
 
 ## 10 · Offen für Georg / WS0
 1. **Pool-Erweiterung:** die 4 Anekdoten-Opener der Probe (A friend told me about, I read a book about, Someone wrote in my diary, I found a note saying) plus Familien in den Checker aufnehmen. Dafür braucht es eine V-Nummer. Danach wird `arc1-anek` die Abgabefassung.
-2. **Intro ohne Teaser-Titel:** In arc1 besteht das Intro nur aus Decktitel und gedrucktem Slogan (13 Wörter). Die R2-Vorgabe nennt zusätzlich 2–3 Kartentitel; mit Titeln wären es mehr als 15 Wörter. Freigeben oder zurück zu Titeln.
+2. **Intro ohne Teaser-Titel (entschieden V-344: ohne Titel, Decktitel + gedruckter Slogan):** In arc1 besteht das Intro nur aus Decktitel und gedrucktem Slogan (13 Wörter). Die R2-Vorgabe nennt zusätzlich 2–3 Kartentitel; mit Titeln wären es mehr als 15 Wörter. Freigeben oder zurück zu Titeln.
 3. **Spec-Satz ersetzen:** „gleichmäßig verteilt“ in R2 durch R5 (Dichte folgt dem Bogen).
 4. **Checker-Ergänzung (Vorschlag):** Muster-Abgleich nach R2 und Lückenprüfung nach R1/R5 als Warnung, nicht als FAIL. In R1 nicht gebaut.
