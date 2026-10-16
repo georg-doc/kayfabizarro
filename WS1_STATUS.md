@@ -1,7 +1,22 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§54 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§55 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 55 · 16.10. · Georg: Assisted-Stunt-Driving (cartoonige Stunts im normalen Fahren) · Konzept-Eingang, Fundort der Recherche gesucht
+
+- **Georg (16.10.):** Aus der Recherche zum früheren Stunt-Race-Prototypen sollen cartoonige Stunt-Features kommen, die sich im normalen Fahren mehr oder weniger zufällig ergeben. Das war eigentlich die Geburtsstunde des Racetracks.
+  - **Auf zwei Rädern weiterfahren**, wenn man schräg gegen eine Wand fährt.
+  - **Rampensprünge mit Push-Zone und Pull-Zone:**
+    - vor der Rampe Tempo und Ausrichtung angleichen;
+    - in der Luft bzw. bei der Landung zum Landepunkt führen und aufrichten;
+    - ein korrekt getimter, cartoonig spektakulärer und sauber ausgeführter Sprung.
+  - Alles in cartoonischer Logik, Lesart und Ausführung, passend zu §54 (Abprallen, Squash, Recovery).
+- **Im Register gefunden:** nur V-098 („steile Stücke mit Fahrhilfe bzw. Booster“, Organ-Attraktionen) und V-033 bzw. V-103 (Impact/Recovery, J17-Squash). Ein Assisted-Stunt-Konzept fehlt („nicht gefunden in DECISIONS.md, main `KFB Stunt Car Race/` (nur `test`)“).
+- **Bitte an WS0:**
+  1. Fundort der Stunt-Race-Recherche (privates Repo KFB-Stunt-Car-Race? Lab? Hub?).
+  2. Als Konzept-Eingang aufnehmen und nach M2 (k2b-Grundfahren sauber) als eigene Vorlagen-Zeile planen. Vorschlag: Stunt-Zonen als Daten im Bühnen- bzw. Welt-Deskriptor (`stuntZones: [{ type: 'ramp', push, pull, landing }]`) plus Ereignisse aus der Fahrphysik (Wandkontakt schräg → Zwei-Rad-Zustand mit Zeitlimit und Recovery).
+- **M2 jetzt:** k2b so bauen, dass Stunt-Zustände später andocken können (Kontakt- und Landeereignisse als Hooks), aber keine Stunts bauen.
 
 ## 54 · 16.10. · Georg: cartoonige Impact-Physik (Knete/Gummi-Welt) · Vorschlag in zwei Stufen
 
