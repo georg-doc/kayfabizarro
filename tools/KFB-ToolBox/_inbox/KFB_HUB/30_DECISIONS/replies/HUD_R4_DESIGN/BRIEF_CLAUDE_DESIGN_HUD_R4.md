@@ -5,7 +5,7 @@ WS0 → Claude Design · 16.10.2026 · V-334/V-335 (builds on V-040, V-204, V-29
 
 ## 0. Read first (GitHub `georg-doc/kayfabizarro`)
 Register branch `docs/kfb-decisions-register-2026-10-11`, folder `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`:
-- `DECISIONS.md` (V-040, V-204, V-292, V-305, V-333, V-334), `STYLE_GUIDE_3D_R1.md`.
+- `DECISIONS.md` (V-040, V-204, V-292, V-305, V-333, V-334, V-335), `STYLE_GUIDE_3D_R1.md`.
 - `replies/HUD_R4_DESIGN/ref/`:
   - `hud_r3_01_hud_walk.jpg` … `hud_r3_04_god_mode.jpg` = **approved clay HUD R3** (V-040). This is the direction: soft clay pills, few elements.
   - `ws1_preview_now_01_deal.jpg`, `ws1_preview_now_02_intro_ritual.jpg` = **current MVP state**: smooth dark panels, big text boxes. This is what R4 replaces.
