@@ -4796,6 +4796,21 @@
    "applies": "parallel zu M2"
   },
   {
+   "id": "V-353",
+   "date": "2026-10-16",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "Aliens r4 mit TUNE angenommen (Georg 16.10.): Kopf sitzt ohne Hals auf der Halskrause, für die Kopfbewegung am saubersten; Teile der (nicht runden) Krause stecken im Kopf. Weiter: (1) WSA work baut r4 + Orc (KFB-Augen) in die ToolBox ein (replies/BRIEF_WSA_ALIENS_TOOLBOX_R4.md, Hub b61), Münder getauscht, Mund-Dropdown aus dem Manifest, Knet-Material. (2) Parallel WS0: prüfen, wie der originale Space Ranger Kopfdrehung und Krause in der Animation löst (Skin, Bones, Helm/Kopf-Geometrie), und das möglichst 1:1 auf die Alien-Köpfe übertragen.",
+   "values": {},
+   "owner": "WSA work (ToolBox) · WS0 (Space-Ranger-Analyse)",
+   "check": "ToolBox live + Analysebericht",
+   "source": "Georg 16.10.: „sieht jetzt okay aus … nehmen wir mit einem Tune mit … wie das bei dem Space Ranger gelöst ist … eins zu eins übertragen“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gut genug zum Weiterarbeiten; die exakte Passung lernen wir am Original statt weiter zu raten.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4868,7 +4883,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:676",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:677",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

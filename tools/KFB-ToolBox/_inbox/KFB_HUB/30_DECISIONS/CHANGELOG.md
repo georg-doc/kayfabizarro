@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-353: Aliens r4 TUNE angenommen → WSA work ToolBox-Einbau (Hub b61); WS0 analysiert Space-Ranger-Kopfdrehung.
 - V-352: Web-Chat-Recherche Cartoon-Racer (Hub b60). Aliens r4 (Kopf ohne Hals auf der Halskrause) gepusht @6ecf8577, Hub-Frage aliens-r4-seat.
 - V-351: Assisted-Stunt-Driving (Wandfahrt auf zwei Rädern, Cartoon-Deformer, Push/Pull-Zonen, keine Überschläge, Q/E-Drift); Spender-Sichtung im Stunt-Car-Race-Repo läuft.
 - Aliens r3 FAIL (Georg): zusätzlicher Hals falsch; r4 = saubere R1-Köpfe, nur auf die Halskrause aufgesetzt (Kopf-Transform), Mund-Tausch bleibt.
