@@ -37,11 +37,11 @@ jobs:
         run: |
           python3 -m http.server 8768 --bind 127.0.0.1 > /tmp/kfb-spellspill-fx-ab.log 2>&1 &
           sleep 2
-          node 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/budget-proof.mjs'
+          node 'tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/fx-ab/shard-proof.mjs'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: kfb-seedworld-budget-fx-evidence
-          path: kfb-seedworld-budget-fx-evidence/
+          name: kfb-seedworld-planar-shard-evidence
+          path: kfb-seedworld-planar-shard-evidence/
           if-no-files-found: warn
           retention-days: 21
