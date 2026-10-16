@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-367 K2B/Joyride Fahr-Basis (Warp nach M2); V-368 sechs Fluff-Sorten = Story-Modes, Rezept 6→Karte, überall alle Sorten; V-369 Baukasten-Dioramen, Bäume KayKit zuerst, Truhen mit Augen; V-370 WS1-Slice-Plan R2 + Antworten §53–§63 (Zielgerät/Budget, Metall-Glanz).
 - V-366: keine Intro-Formel, keine Meta-Message, FrizzleBob nicht doppelt, Karaoke = Mitsing-Versatzstück; Pharaoh/Trust-Intros neu (wr3, Hub b52/b55 v9); Deck-Fehler Epistemic Karte 1 „Meta-Cover“ notiert.
 - V-365: anders klingende Stimme = derselbe Charakter (Unschärfe ok); Pharaoh-Stimmen-Aufteilung steht.
 - Deck-Songs eingecheckt: Epistemic Take 05 (123 BPM, 12 Stems, SRT 62/62) und Pharaoh 01a (118 BPM, Duett, 57/57 Zeilen, voices.json + beats.json für V-359); Branch pharaoh baut auf epistemic auf, PR wartet auf Georgs Klick.

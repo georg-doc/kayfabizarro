@@ -1,5 +1,25 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Slice-Plan R2 und Antworten auf §53–§63 – V-367 bis V-370
+**Fahr-Basis (V-367, Georg):** K2B/Joyride ist die Basis fürs freie Fahren; ecctrl ist nicht mehr Empfehlung (V-345 Punkt 5 abgelöst). Gilt nicht pauschal für jede K2B-Gelände-/Hover-/Looping-Funktion. Warp-Fahrt (`WSA_GUIDED_HYPERSPEED_WARP_RIDE_PLAN_R1_2026-10-16.md`) ist Arbeit **nach M2**, kein M2-Blocker.
+
+**Antworten:**
+1. **§63 Metall-Restglanz:** ja, Ausnahme von G8 nur für als Metall getaggte Materialien: schlichte warme PMREM-Environment-Map (keine zusätzliche Lampe), envMapIntensity ≤ 0,35, roughness ≥ 0,45. Alles andere bleibt Clay.
+2. **§62.4.4 Zielgerät und Budget:** Laptop ohne eigene Grafikkarte (Apple M1 Basis bzw. Intel Iris Xe), 1080p: p95 ≥ 30 fps. Georgs M1 Max ist Referenz mit ≥ 60 fps. Erstes Laden ≤ 40 MB, je Zone nachladen ≤ 15 MB. Im Bild ≤ 300 Draw Calls, ≤ 600 k Dreiecke. Messwerte mit dem Performance-Overlay belegen.
+3. **§62.4.2 Register:** Fahr-Engine = V-367. Welt-Struktur (V-289) und Game Loop (V-319) bleiben Arbeitshypothese; Slice 1 baut die Ernte so, dass sie in jede Loop-Variante passt.
+4. **§62.4.3:** Der Cartoon-Racer-Bericht (V-352) ist noch nicht auf GitHub; Fahrhilfe-Auftrag folgt, sobald er da ist. Bis dahin gilt die Reihenfolge aus `STUNT_DONOR_MAP_R1.md`.
+5. **§54:** Stufe 1 (von Wänden abprallen + Squash) bestätigt. **§55.1:** Deformer v2 und Two-Wheel v1 als Vorlagen freigegeben; das Fahrgefühl beurteilt Georg.
+6. **§62.4.1 F1/F2:** Vorlagen-Zeilen schlagt ihr aus dem Repo vor (Spender mit Pfad), WS0 gibt sie im nächsten Status frei. F1 ist Teil von Slice 1, F2 kommt später.
+
+**Slice-Plan R2 (längere Läufe, ohne Prüferrunden zwischendurch; Abnahme-Raster und Beweisbilder mit Clay am Ende):**
+- **S0 jetzt:** §63-Testlauf fertig → spiegeln → Vorschau; dann V-345 `worldScale.js`.
+- **Slice 1 · Welt-Boden + Fluff-Ernte** (eure S1 + V-368): Gelände-Einbindung der Dioramen (V-341, Stage-Edges-Daten `data/kfb-stage-edges-r1-2026-10-16`), Bäume/Büsche je Biom aus KayKit Forest Nature Pack zuerst, dann Tiny Treats, Kenney zuletzt; sechs Fluff-Sorten (Farben V-292) als Clay-Kügelchen an Bäumen/Büschen, Windfall mit einfachem Bounce-Integrator (keine Physik-Engine), Aufsammeln durch Drüberfahren/-laufen, Gewichtung je Zone (Hauptsorte ≈ 40 %, jede andere ≥ 8 %). F1-Kern: `interactable`, Speichern des Ernte-Stands (`kfb.save/1`), Performance-Overlay. Zähler nur als Debug-Anzeige, kein finales HUD (§44.3). Beweis: drei Zonen mit unterschiedlicher Hauptsorte, Clay, Messwerte.
+- **Slice 2 · Truhen + Baukasten-Landmark** (V-369): KayKit-Dungeon-Truhen (common/rare/mimic) mit KFB-EyeRig, Rammen/Schlagen → Platzen → Kügelchen springen heraus; öffnende Truhe mit Goldschein aus `room-fx.js` (KayKit Environment Atlas + Dungeon Generator, Room Study S21). Ein halboffenes Satire-Imbiss-Diorama aus KayKit Clown (Mystery Series 6) + City Builder Bits + Tiny Treats mit abgerundeten Schnittkanten, gesetzt über den In-Place-Editor (V-360) und als Rezept gespeichert.
+- **Slice 3 · Fahrhilfe M3 auf K2B** (V-351): Anti-Roll, Landen in Fahrtrichtung, Anti-Steckenbleiben → Deformer v2 → Rampen-/Wandzonen; danach VFX V1 (V-357) inklusive Düsen-Anker.
+- **Slice 4 · Destruction-POC verbunden:** Flugmodus + Fluff aus zerstörten Teilen + 2D-first-FX (Seed-World R4), erst wenn R4 ein Ergebnis hat.
+- **Später:** F2 (Asset-Manifest, Ladebildschirm, GLB-Kompression), Warp-Fahrt R1, Performance-Duett P1, Portal.
+Konzept dazu: `replies/FLUFF_WORLD_DRESSING_R1.md`.
+
 ## 16.10.2026 · Performance-Duett P1 und Anker per In-Place-Editor – V-359, V-360
 1. **Düsen-Anker (§59.6):** Georg möchte kein eigenes Klick-Werkzeug, sondern den vorhandenen **3D-In-Place-Editor** (Verschieben/Drehen/Skalieren) als Modus im God-Mode-Editor (V-306). Spender: Resident Atlas `tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/lib/edit-layer.js` (TransformControls) bzw. die neue ToolBox. Anker = Punkt + Richtungspfeil an Düse/unter Rädern, Speichern als `kfb.vehicle-thrust/1` (Format aus V-357 bleibt).
 2. **Performance-Duett P1 (V-359)** als eigener Job **nach** M2-Grundfahren, L2 Schritt 4/5 und VFX V1 – bitte nur einplanen, noch nicht bauen: zwei KayKit-Mumien (`Mummy_A`/`Mummy_B`, Rig_Medium) performen den Pharaoh-Song links/rechts vom Billboard, Mund je Stimme, Clips auf den Beat. WS0 liefert die Datenquelle `kfb.performance/1` aus der Audio-Pipeline; Briefing `replies/BRIEF_PERFORMANCE_DUET_P1.md` (Hub b64). Gesicht KFB_NATIVE, nicht Wireface.

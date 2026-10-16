@@ -4686,7 +4686,9 @@
    "check": "nächster WS1-Status",
    "source": "WS1 §46–§51",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-367"
+   ],
    "why": "Ein Meter für alle: J17-Vorlagen, Fahrzeug- und Bühnenmaße rechnen in WS0-Metern; die 1,54-fache Welt macht Physik zäh und jede Übergabe fehleranfällig.",
    "applies": "vor M2-Merge"
   },
@@ -5008,6 +5010,66 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-367",
+   "date": "2026-10-16",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "K2B/Joyride ist die Basis fürs freie Fahren (Georg 16.10.: Kompromiss aus WSA_GUIDED_HYPERSPEED_WARP_RIDE_PLAN_R1 bestätigt). Drei Reise-Freiheiten mit einem Fahrzeug- und einem Eingabe-Besitzer: freies Fahren (Haupt-Gameplay), spontaner Hyperspeed/Hover-Rush mit eigener Lenkung, optionale geführte Warp-Fahrt zum Kartenziel (nach M2, kein M2-Blocker, Ausstieg jederzeit). Nicht pauschal jede K2B-Gelände-/Hover-/Looping-Funktion. ecctrl ist nicht mehr Empfehlung.",
+   "values": {},
+   "owner": "WS1 (Laufzeit) · WS0 (Pilot-Auftrag Warp nach M2)",
+   "check": "Vorschau-Label zeigt aktives Fahrsystem (V-347)",
+   "source": "Georg 16.10.: „K2B eintragen“ · replies/WSA_GUIDED_HYPERSPEED_WARP_RIDE_PLAN_R1_2026-10-16.md",
+   "supersedes": "V-345",
+   "superseded_by": [],
+   "why": "Georg findet K2B stabiler als ecctrl; der Warp-Plan verbindet freies Fahren und Schnellreise ohne zweite Physik.",
+   "applies": "ab sofort; Warp nach M2"
+  },
+  {
+   "id": "V-368",
+   "date": "2026-10-16",
+   "area": "Spiel",
+   "verdict": "TBD",
+   "text": "Fluff-Sorten = die sechs Story-Modes (Farben V-292: Tragic, Comic, Absurd, Heroic, Mystical, Forbidden). Arbeitshypothese Rezept: je ein Kügelchen jeder Sorte ergibt eine beliebige Karte nach Wahl (Hexe/Alchemist). Verteilung: in jeder Zone alle sechs Sorten, gewichtet nach Story-Mode der Karte/Zone (Hauptsorte ≈ 40 %, jede andere ≥ 8 %), damit niemand lange sucht. Fundorte: Bäume/Büsche (Windfall), Boden (Sprengen/Graben), Truhen; Aufsammeln durch Drüberlaufen/-fahren. High/Low-Varianten bleiben in den Daten, fürs Rezept vorerst ohne Rolle.",
+   "values": {},
+   "owner": "WS1 (Slice 1) · WS0 (Balance nach Spieltest)",
+   "check": "drei Zonen mit verschiedener Hauptsorte im Beweisbild",
+   "source": "replies/FLUFF_WORLD_DRESSING_R1.md · Georg 16.10.: „aus sechs verschiedenen Kügelchen eine beliebige Karte … überall alle Arten“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Fluff liest sich parallel zu den Karten; schnelles Sammeln hält es chillig.",
+   "applies": "Slice 1"
+  },
+  {
+   "id": "V-369",
+   "date": "2026-10-16",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Welt-Ausstattung ohne Meshy für alles (Georg 16.10.): Bäume/Büsche aus KayKit Forest Nature Pack zuerst, dann Tiny Treats, Kenney zuletzt; Landmarks auch als halboffene Baukasten-Dioramen aus KayKit/Tiny-Treats/Dungeon-Generator-Teilen (Bäckerei, Wohn-Ecken, Satire-Imbiss mit bösem Clown) mit abgerundeten, ruinenartigen Schnittkanten, damit Baukasten und Meshy gleich aussehen; Setzen per In-Place-Editor (V-360) und als Rezept gespeichert bzw. vorgerendert. Truhen: KayKit-Dungeon-Truhen inkl. Mimic mit KFB-Augen-Rig, platzen beim Rammen/Schlagen und lassen Kügelchen/Karte herausspringen; öffnende Truhe mit Goldschein aus room-fx.js. Jedes Landmark braucht vorher seine Geschichte.",
+   "values": {},
+   "owner": "WS1 (Slice 2) · WS0 (Geschichten, Rezepte)",
+   "check": "Beweisbild Clay: Baukasten-Diorama neben Meshy-Landmark ohne harte Kante",
+   "source": "replies/FLUFF_WORLD_DRESSING_R1.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Nicht jedes Landmark braucht ein Meshy-Modell; gleiche Kantenlogik hält den Look zusammen.",
+   "applies": "Slice 2"
+  },
+  {
+   "id": "V-370",
+   "date": "2026-10-16",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "WS1-Slice-Plan R2 und Antworten §53–§63 (Technik-Entscheide WS0): S0 §63-Testlauf + V-345 worldScale; Slice 1 Welt-Boden + Fluff-Ernte (inkl. F1-Kern Save/interactable/Perf-Overlay); Slice 2 Truhen + Baukasten-Landmark; Slice 3 Fahrhilfe M3 auf K2B + VFX V1; Slice 4 Destruction-POC verbunden (nach Seed-World R4); später F2, Warp R1, Duett P1, Portal. Zielgerät: Laptop ohne eigene GPU (M1 Basis/Iris Xe), 1080p, p95 ≥ 30 fps; M1 Max ≥ 60 fps; erstes Laden ≤ 40 MB, je Zone ≤ 15 MB; ≤ 300 Draw Calls, ≤ 600 k Dreiecke. Metall-Restglanz als G8-Ausnahme nur für Metall-Materialien (PMREM warm, envMapIntensity ≤ 0,35, roughness ≥ 0,45). Deformer v2 + Two-Wheel v1 als Vorlagen freigegeben; Stufe 1 Abprallen + Squash bestätigt.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Performance-Overlay-Messwerte je Slice",
+   "source": "replies/WS0_TO_WS1.md (16.10. Slice-Plan R2)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS1 fragte nach Reihenfolge, Budget und Vorlagen; längere Läufe sparen Tokens.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5080,7 +5142,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:693",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:694",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
