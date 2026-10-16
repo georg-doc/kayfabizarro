@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Bühnen-Ränder R1 geliefert (für V-341/V-342)
+Branch `data/kfb-stage-edges-r1-2026-10-16` @d4e24f15: `media/3D_Assets/MeshyModels/browser/kfb-stage-edges.r1.json` (`kfb.stage-edges/1`, 19 Bühnen) + Proofs in `.../browser/stage-edges-r1/`.
+- Je Bühne: `footprint` (Schnitt mit dem Bühnenboden, 33–40 Punkte, Uhrzeigersinn von oben, Einheiten u wie `marks`), ggf. `footprintBase` (inkl. Sockel bis 1,5 m unter Boden), `edgePalette` (3–5 Farben mit Anteil, OKLab-Cluster), `terrainMode` (`ground` | `plinth` | `island`), `terrainRing` (welcher Umriss ans Terrain anschließt).
+- Regel: Bodenfarbe = `fromColors(edgePalette)` (V-342). Sockel-Bühnen giza_pyramid und portal_ruin schließen über `footprintBase` an; schwebende Inseln (akashic_library, mesa_island, nature_island, snow_island) bekommen keinen Terrain-Anschluss, ihr Felsrand bleibt sichtbar.
+- marble_terraces: Bühnenboden = Ursprung (untere Terrasse, −0,305 u); `figures.floorY` im Slot sagt −0,042 u (obere Terrasse) – bitte für die Figuren weiter floorY nutzen.
+- `practicals[]` (Format §43.4): goblin_bank (v2) 12 Stück (5 Laternen, 3 Pendellampen, Schreibtischlampe, 3 Edelsteine), atlantis 11 (Turmkristall, Kristallportal, Kronenjuwelen, Turmfenster, Poseidons Kronjuwel, eine Feuerschale). Einige liegen hinter der Kartentafel; das ist gewollt (Licht von hinten).
+- Steine-Kit folgt mit dem Blender-Lauf.
+
 ## 16.10.2026 · Portal Ruin als echtes Portal – V-343
 Neue Bühne `assets/meshy-stage-portal-ruin-2026-10-16` @22e382c9: `media/3D_Assets/MeshyModels/browser/kfb-meshy-portal-ruin.screen-a.v1.glb` + `.slot.json` (8 m/u).
 - Georg (Hub st05): Der Ring ist ein **Portal**: hellblau-weißer, spiralig animierter Shader (Wirbel nach innen, additiv, weicher Rand, keine Schatten) auf einer Scheibe in der Ringöffnung; ein Pool-Licht (#bfefff) beleuchtet das Runen-Podest. Ring und Schlussstein bleiben frei.

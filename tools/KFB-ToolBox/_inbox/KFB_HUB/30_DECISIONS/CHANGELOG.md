@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- Bühnen-Ränder R1 (footprint, edgePalette, terrainRing, practicals Goblin/Atlantis) auf data/kfb-stage-edges-r1-2026-10-16 @d4e24f15; WS1-Notiz.
 - V-344: Suno-Intro = Decktitel + gedruckter Slogan, keine Teaser-Titel; STYLE und LYRICS als getrennte Hub-Karten (b52–b55 + -style).
 - V-343: Portal Ruin = echtes Portal mit hellblau-weißem Spiral-Shader, Billboard nicht Standard; Slot-JSON @22e382c9.
 - Georg bestätigt V-342: Würfel (W6-Story-Mode) kommt später. Portal Ruin auf assets/meshy-stage-portal-ruin-2026-10-16 @07a0b023, Hub-Frage st05. Blender-Lauf R1 gestartet (Figuren; Randdaten/practicals parallel ohne Blender).
