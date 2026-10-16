@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-358: Suno v5 nach Georgs Beispiel (mehrzeiliges Karaoke-Intro, Verb-Opener fast jede Zeile, Mini-Anekdoten), b52/b53/b55. De-lit-Texturen Goblin/Atlantis fertig (Wirkung klein, +2–4 % L).
 - V-357: WS1 §58–§59 beantwortet (VFX-Slice V1 freigegeben, Düsen-Anker per Klick-Werkzeug, Terrain→Partikel-Tabelle, Audio-Quellen); Hub b63.
 - V-355 Georg GO (Methode): L2 Schritt 5 mit Abnahmepaket A/B/C im Briefing, WS0 entlichtet Goblin-Bank- und Atlantis-Texturen.
 - PR #407 gemergt (Cosmic Grift auf main). V-355 ein Look für alle Schichten (Befund + L2 Schritt 5), V-356 GPT-Staging statt Cloudflare (WSA-Briefing b62, build.json bestätigt).

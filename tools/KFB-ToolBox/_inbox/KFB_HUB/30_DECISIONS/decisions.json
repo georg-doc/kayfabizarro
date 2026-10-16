@@ -4871,6 +4871,21 @@
    "applies": "nach M2-Grundfahren"
   },
   {
+   "id": "V-358",
+   "date": "2026-10-16",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Suno-Text v5 nach Georgs eigenem Beispiel (Golden, 16.10.): [Spoken Word]; mehrzeiliges Intro – Hook-Zeile mit Fluff-o-lect und „…“, dann Decktitel mit Doppelpunkt und Slogan auf eigener Zeile, dann „Welcome to Uncle FrizzleBob’s Kayfa-Bizarro Karaoke!“ + kurze Deck-Tagline „… And follow the Fluff…“ (darf die erste Karte ersetzen, wenn sie die Begrüßung ist); danach FAST JEDE Kartenzeile mit kurzem, wechselndem Verb-Opener (Meet the …, Watch …, Play …, Enter the …, Behold …) – jeder höchstens einmal pro Track –, dazwischen wenige erfundene Mini-Anekdoten („My neighbour raised the …“, „My grandmother swore by …“) und Wende-Opener; kein Refrain; Style aus V-354 (eine Solo-Stimme). Kartenzeilen bytegleich außer Artikel am Zeilenanfang. Ersetzt die Opener-Dichte aus V-339/Bogen-Modell. Tracks v5: Pharaoh, Epistemic, Trust (Hub b52/b53/b55).",
+   "values": {},
+   "owner": "WS0",
+   "check": "Georg hört",
+   "source": "Georg 16.10.: „da fehlen ja jetzt die ganzen Opener … nur noch die Karten aufgezählt … Beispiel, wie ich mir das vorstelle“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Beispiel ist die Vorlage: Opener tragen den Groove, Karten allein sind eine Aufzählung.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4943,7 +4958,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:683",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:684",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
