@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Spender aus rwanda-f1-2026-sim (MIT) – V-378
+Georgs Fundstück, geprüft in `replies/DONOR_F1SIM_R1.md` (Pfade + Zeilen dort). Steuerung nicht übernehmen; **keine Assets, nicht `CarAudio.ts`/`visual-fx.ts` (GPL-Herkunft)**. Kopieren nur mit MIT-Hinweis (CREDITS).
+1. **Jetzt klein (S0/S1):** followShadow auf Schatten-Texel einrasten (≈ 10 Zeilen, gegen Flimmern).
+2. **Slice 3:** Deformer v2 auf Basis von `tyre-deformation.ts` (Ebene + Eindringtiefe + Rückfedern, Schatten-Material mitverformt); Motorsound als `LoopGrid` (3–5 Loops, Crossfade, Fake-Drehzahl); Steuerung mit festem 120-Hz-Schritt + Interpolation bzw. Rapier-CCD gegen Tunneln; `WALL_IMPACT`-Ereignis als Auslöser.
+3. **S2/L2 Schritt 5:** PMREM einmal backen (256, warm), nur als `envMap` der Metall-Materialien. Tonemapping bleibt ACES im Renderer, nicht im Postprocessing-Pass (sonst bricht `toneSplit`).
+
 ## 16.10.2026 · Slice-Plan R2 und Antworten auf §53–§63 – V-367 bis V-370
 **Fahr-Basis (V-367, Georg):** K2B/Joyride ist die Basis fürs freie Fahren; ecctrl ist nicht mehr Empfehlung (V-345 Punkt 5 abgelöst). Gilt nicht pauschal für jede K2B-Gelände-/Hover-/Looping-Funktion. Warp-Fahrt (`WSA_GUIDED_HYPERSPEED_WARP_RIDE_PLAN_R1_2026-10-16.md`) ist Arbeit **nach M2**, kein M2-Blocker.
 

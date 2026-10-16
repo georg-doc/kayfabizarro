@@ -5175,6 +5175,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-378",
+   "date": "2026-10-17",
+   "area": "Technik",
+   "verdict": "RULE",
+   "text": "Spender rwanda-f1-2026-sim (MIT, Georgs Fundstück): übernehmen als Vorlagen mit MIT-Hinweis – Follow-Schatten auf Texel eingerastet (sofort), GPU-Verformung aus tyre-deformation.ts als Kern von Deformer v2, Motorsound-LoopGrid aus vf26-audio.ts, PMREM-Backen nur für Metall-Materialien, smoothDamp3; als Idee: fester 120-Hz-Schritt mit Interpolation bzw. Rapier-CCD gegen Tunneln, Wand-Segmente mit Aufprall-Ereignis. Nicht übernehmen: Steuerung, alle Assets, CarAudio.ts und visual-fx.ts (GPL-Herkunft). Tonemapping bleibt ACES im Renderer (toneSplit).",
+   "values": {},
+   "owner": "WS1",
+   "check": "CREDITS-Eintrag je kopierter Datei",
+   "source": "replies/DONOR_F1SIM_R1.md · Georg 17.10.: „vielleicht ist für alles andere etwas dabei“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Saubere MIT-Spender für genau die offenen Punkte Deformer, Motorsound, Schatten-Flimmern und Metall-Umgebung.",
+   "applies": "S0 bis Slice 3"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5247,7 +5262,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:701",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:702",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

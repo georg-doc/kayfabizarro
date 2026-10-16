@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-378: Spender rwanda-f1-2026-sim (MIT): Texel-Schatten, Deformer-v2-Kern, LoopGrid-Motorsound, PMREM für Metall; keine Assets, keine GPL-Dateien.
 - V-377: ACK JSON-first (artworkPrompt als Motiv, PDF nur bei Ausnahme), Trust #30 = gedruckt leer, Blind-Review wr4 (Pharaoh 5/5/6, Trust 6/4/6), wr5-Auftrag an WSA.
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
