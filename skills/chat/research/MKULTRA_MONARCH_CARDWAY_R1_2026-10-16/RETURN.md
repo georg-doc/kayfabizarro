@@ -1,5 +1,30 @@
 # RETURN · MKUltra / Monarch → KFB Cardway Research R1 · 2026-10-16
 
+## ADDITIVE R2C RETURN · 2026-10-16 · NSA screenshot / Detainee 063 / medical experiment provenance
+**Outcome:** Continued the exact same KFB editorial research owner and Draft PR #408; no second research thread/branch and no product implementation. The screenshot's 5p Daily Caller clip (26 Dec 2024) was accurately traced to NSA/GWU archive catalog #32786. It is SECONDARY PRESS saved by an archive, not CIA source truth. Its parent 23 Dec 2024 NSA curated publication contains >1,200 MKUltra-related archival records (partly paid ProQuest); already used R2A document families not double-counted.
+
+**Direct new primary archival document:** NSA exhibit **Document 17**, CIA IG John S. Earman *MKULTRA Program*, **29 Nov 1963**, actual two-page original visually inspected. CIA Helms/Gottlieb argued for continuing tests on unwitting US citizens, Carter/Earman/Kirkpatrick disagreed; review and decision route discussed, no future outcome proven by this two-page memorandum.
+
+**063 upgrade from R2B:** University of Minnesota Human Rights Library hosts **83-page PDF text reproduction** `SECRET ORCON Interrogation Log Detainee 063`; UC Davis CSHRA hosts complete long-form transcription and explains that TIME uploaded original 84-page report in March 2006, after 2005 journalism. In the copies, dated entries document BSCT involvement from **23 Nov 2002**, interrogation approaches and alleged detainee response, plus **7 Dec 2002 ECG bradycardia 35 bpm** and hospital evaluation. These are *interrogator log assertions*, not independent hospital records, clinically controlled study data, evidence of truthfulness or an original scanned TIME facsimile. Long log text opened but no original PDF page images successfully rendered. Historical detail source in `R2C_ORIGINAL_DOCUMENTS_MEDICAL_PROVENANCE_2026-10-16.md`.
+
+**2002 BSCT SOP:** an **18-page military document scan** dated Nov 11 2002 is on Wikimedia Commons; 12MB direct PDF inaccessible to current web/container tools. Original pages read: **0**. Senate SASC 2008 report (secondary official quotation) says BSCT prepared profiles, consulted, observed, did behavioral strategy advice but SOP stated no treatment role; Senate was **uncertain whether the draft SOP was approved**. Distinguish clinical patient care vs interrogator support.
+
+**Medical/ethics direct-source comparison:** PHR *Experiments in Torture* **30-page report June 2010** opened; PDF original rendered index 8 and 10 and numerous selected text pages inspected. It describes three alleged experiments/evidence clusters: waterboarding modifications via OMS medical observations; combined technique experience involving **more than 25 detainees**; use of sleep-deprivation observations. PHR explicitly acknowledges that original subject-level data and an exposed formal research protocol were not public, and argues from Common Rule criteria that the monitoring and subsequent generalization may amount to unconsented human research. Corroborating ORIGINAL DOJ FOIA **Steven Bradbury 10 May 2005 Combined Techniques memo** 20p PDF text inspected at indices 0,2,11–14, shows reference to OMS comparisons and >25 detainees, while its own purpose is a conditional legal analysis, not an IRB approval or clinical study. PHR's conclusion remains a contestable analytical finding, not shown as a final judicial adjudication.
+
+**SSCI 2014 distinction refined:** official Senate CIA detention study and CIA response accessible as indexes (full 60MB Senate summary not read). There is a more nuanced location/command relation: **14 CIA detainees transferred in Sept 2006 to an isolated unit at Guantánamo, still under CIA operational control**, which does not collapse the 2002–03 DoD JTF-GTMO and CIA overseas detention programs into one program. This was not emphasized enough in prior handoff. Full textual original-passage comparison still required.
+
+**Additive record changes:**
+- New `R2C_ORIGINAL_DOCUMENTS_MEDICAL_PROVENANCE_2026-10-16.md`.
+- `SOURCE_LEDGER.md` appended **S40–S48**, now **48 heterogeneous source/lead entries**.
+- `CARDWAY_IDEAS.md` appended 6 research-only concepts; **36 provisional unapproved topics** cumulatively.
+- `TEST_REPORT.md` appended **8/8** source/structure checks PASS, detailed non-successful fetch/page evidence.
+- `RETURN.md` this additive handoff, `skills/chat/CHANGELOG.md` and `skills/chat/START_HERE.md` routing pointer to be updated/verified at handoff.
+- Same Draft PR #408 body updated with exact result.
+
+**Proof counts:** 4 newly visually inspected source PDF pages (CIA 1963:2; PHR 2010:2). Separate original DOJ and Minnesota text PDFs opened/searchable but **zero visual scan pages** successfully shown. Original 18p BSCT scan not read. Full 30p PHR not audited every page; original TIME 84p not acquired. Static document/source checks **8/8**, executable/unit/browsing product tests **0**; Stage/Live/browser product proof **none**. No card writer, new runtime or production merge. Last validated pre-Return head `bd851caeb8ae17d1335422911a1e0727d0ac2f9f`; always fetch exact current branch HEAD after this Return, router and changelog.
+
+**Exactly one next gate:** **R2D original-to-original medical and interrogation provenance**: obtain 2002 BSCT pages and original TIME report where accessible, compare 2004 CIA OMS primary clinical-monitoring guidelines with DOJ/PHR and full Senate 2014/agency counterpositions, then resume outstanding West/Cameron/Desmet subtracks within one research lane. No deck activation/public Stage without Georg selection.
+
 ## ADDITIVE RETURN · R2B Guantánamo / SERE / Battle Lab · 2026-10-16
 **Outcome:** Added an **evidence-led Guantánamo research strand** inside the EXISTING MKUltra/Monarch/Mass Formation editorial research branch and Draft PR #408; no new project, runtime, accepted deck, Stage, Hub publication or merge. The original West/Cameron/Desmet research tracks remain open, not overwritten.
 
