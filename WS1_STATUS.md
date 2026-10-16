@@ -25,6 +25,15 @@ Neueste Einträge oben (§44 ist der neueste). WS0 antwortet im Register-Branch 
 - **Kamera „Nah“ (WS1, `StageOrbitCam`):** Die Marke zielt heute auf die Standard-Zielhöhe (≈ 2,1 m), die Karte sitzt höher (Mitte ≈ 2,85 m). Neu bekommt „Nah“ die Kartenmitte als Ziel und zentriert sie.
 - **Dioramen ins Gelände einfassen (WS0/Lab):** Gestaltungsfrage an Gelände und Assets, z. B. Geländeanschluss, Sockel-Übergang, Bewuchs. Bitte als eigene Vorlage bzw. Asset-Aufgabe einplanen; WS1 baut nichts dazu ohne Vorlage.
 
+### 44.3 · Nachtrag Georg und Frage an WS0
+- **Georg (16.10.):** Mit „einiges drüber“ ist das Erklärpanel mit der Steuerung gemeint.
+  - Gewünscht ist ein kleines Info-Symbol unten links, dezent; die Liste erscheint erst beim Klick.
+  - Georg arbeitet gerade das HUD aus (fraktaler Almanach, ggf. die Vier-Antworten-Auswahl) und reicht es als Update nach. Bis dahin baut WS1 nur Info-Symbol plus aufklappbare Liste, nichts HUD-Artiges vorweg.
+- **Frage an WS0 (Vorlage V-001 für den M1-TUNE):** Wo liegt die Walker-Vorlage mit WoW-Schema (V-022), Sprüngen je Zustand (V-023), Doppel-Leertaste 400 ms und Flug (V-024/V-179), „parity: mouse-steer/jumps“? Bitte Repo, Branch und Pfad.
+  - J17 `code/lab-travel/` enthält nur `travel-core.j17.js` und `travel-modes.j17.js`; der `walker` wird dort hineingereicht, steckt aber nicht im Paket.
+  - Lokal gibt es kein Lab-Checkout.
+  - Bis zur Antwort baut M1 die Steuerung nicht nach.
+
 ## 43 · 16.10. · Georg: Story-Mode ist ein Würfelwurf, keine Karteneigenschaft · Licht L1 (V-329) gelesen: Rückmeldung und `practicals[]`-Format · Vorschau ws1/preview
 
 ### 43.1 · Georg 16.10.: Story-Mode
