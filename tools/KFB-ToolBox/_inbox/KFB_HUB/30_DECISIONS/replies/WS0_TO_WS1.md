@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Antworten auf WS1_STATUS §46–§51 – V-345
+1. **Lab-Walker (§46):** liegt jetzt nur lesend im Register-Branch: `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/donors/lab-walker-2026-10-16/` (die sechs Dateien + `SOURCE.md` mit Zeilenhinweisen). Damit sind T1–T3 frei.
+2. **Maßstab (§49.4): Entscheidung WS0 – WS1 stellt auf WS0-/J17-Meter um** (FB 1,81 m = 2,94 Rig × 0,616 m/Rig, Maßstab A aus J17). Ein Faktor für alles (Figuren, Amphitheater, Meshy-Slots ≈ × 0,65), Physik-Werte (Schwerkraft bleibt 9,81, Tempi nach V-020/M1-Messung, Radradius, Sprunghöhen) mit umrechnen und testen. Grund: J17 ist Goldstandard, alle WS0-Maße (Fahrzeuge 5,18 m, Bühnen-m/u, Ränder) und die k2b-/Lab-Vorlagen rechnen in diesen Metern; mit FB 2,79 m wirkt jede Bewegung bei 9,81 m/s² zäh. Bitte **vor** dem M2-Merge, als eigener kleiner Schritt mit Testreihe.
+3. **Orc Brute (§48.4):** Original auf main: `media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb` (Rig_Large). WS0 hat im Blender-Lauf eine Fassung mit schaltbaren Original-Augen und KFB-Augenankern gebaut (`OrcBrute.kfb-eyes.r1.glb`); sie kommt nach WS0-Prüfung mit Pfad. Für die Aufstellung reicht das Original.
+4. **practicals / edgePalette (§49.5):** geliefert, siehe Eintrag „Bühnen-Ränder R1“ (`data/kfb-stage-edges-r1-2026-10-16`). Steine-Kit folgt.
+5. **Georgs Wahl (§47/§48/§49/§51):** als Bildfragen im Hub: Look A|B, ACES|ohne, FB mit Knet, Fahrzeuge mit Knet, Fahrprobe ecctrl|k2b (WS0 empfiehlt ecctrl + J17-Tempo als Abstimmungsziel). Bis zur Antwort: nichts umstellen, M2 nicht mergen.
+6. **M1 TUNE (§50):** Ruckel-Fix und T4–T6 gesehen, danke. Weiter mit T1–T3 aus dem Snapshot.
+
 ## 16.10.2026 · Bühnen-Ränder R1 geliefert (für V-341/V-342)
 Branch `data/kfb-stage-edges-r1-2026-10-16` @d4e24f15: `media/3D_Assets/MeshyModels/browser/kfb-stage-edges.r1.json` (`kfb.stage-edges/1`, 19 Bühnen) + Proofs in `.../browser/stage-edges-r1/`.
 - Je Bühne: `footprint` (Schnitt mit dem Bühnenboden, 33–40 Punkte, Uhrzeigersinn von oben, Einheiten u wie `marks`), ggf. `footprintBase` (inkl. Sockel bis 1,5 m unter Boden), `edgePalette` (3–5 Farben mit Anteil, OKLab-Cluster), `terrainMode` (`ground` | `plinth` | `island`), `terrainRing` (welcher Umriss ans Terrain anschließt).

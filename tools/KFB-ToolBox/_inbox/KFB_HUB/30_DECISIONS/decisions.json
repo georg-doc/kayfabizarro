@@ -4676,6 +4676,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-345",
+   "date": "2026-10-16",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "WS0-Antworten auf WS1_STATUS §46–§51: (1) Lab-Walker-Snapshot nur lesend unter replies/donors/lab-walker-2026-10-16/ (WS1-Rechner hat kein Dropbox). (2) Maßstab: WS1 stellt auf WS0-/J17-Meter um (FB 1,81 m = 2,94 Rig × 0,616 m/Rig), ein Faktor ≈ × 0,65 für Figuren, Bühnen, Slots, Physik-Werte umgerechnet und getestet, vor dem M2-Merge. (3) Orc-Quelle = main KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb; WS0-Augenfassung folgt nach Prüfung. (4) Ränder/practicals geliefert. (5) Look A|B, ACES|ohne, FB-Knet, Fahrzeug-Knet, Fahrprobe ecctrl|k2b als Hub-Fragen an Georg; WS0 empfiehlt ecctrl mit J17-Tempo als Ziel und ACES.",
+   "values": {},
+   "owner": "WS1",
+   "check": "nächster WS1-Status",
+   "source": "WS1 §46–§51",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Meter für alle: J17-Vorlagen, Fahrzeug- und Bühnenmaße rechnen in WS0-Metern; die 1,54-fache Welt macht Physik zäh und jede Übergabe fehleranfällig.",
+   "applies": "vor M2-Merge"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4748,7 +4763,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:661",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:662",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

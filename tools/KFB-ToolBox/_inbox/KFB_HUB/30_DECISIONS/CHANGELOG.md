@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-345: WS1 §46–§51 beantwortet (Lab-Walker-Snapshot, Maßstab auf WS0-/J17-Meter, Orc-Quelle); fünf Hub-Bildfragen (l2a, l1-tonemapping, l2-fb-clay, l2-vehicles-clay, m2-drive-feel).
 - V-344 präzisiert: Intro = Stand-up-Eröffnung (FrizzleBob als Comedian), Slogan als Pointe; Hub zeigt STYLE + LYRICS in einer Karte (Seite v12, Feld style).
 - Bühnen-Ränder R1 (footprint, edgePalette, terrainRing, practicals Goblin/Atlantis) auf data/kfb-stage-edges-r1-2026-10-16 @d4e24f15; WS1-Notiz.
 - V-344: Suno-Intro = Decktitel + gedruckter Slogan, keine Teaser-Titel; STYLE und LYRICS als getrennte Hub-Karten (b52–b55 + -style).
