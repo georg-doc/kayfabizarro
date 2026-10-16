@@ -1,7 +1,16 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§65 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§66 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 66 · 17.10. nachts · V-345 Bühnen-Seite fertig (main @f52b485, 24/24) · Vorschau · M1/M2 an der Reihe
+
+- kfb-planet main @f52b485, gespiegelt (ws1/r3f-frame @b32e4893), Vorschau `ws1/preview` @9b935cc9 mit build.json, Check grün.
+- Testreihe jetzt 24 Tests (neu `scale`). In `stage` und `g4` stehen die Prüfwerte jetzt in J17-Metern (× K); vorher lagen sie fest in alten WS1-Metern.
+- Abnahme: https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,light=l1 . Das Amphitheater sieht aus wie vorher (gleichmäßig verkleinert samt Kamera). Sichtbar anders ist es in Meshy-Bühnen: Dort stehen die Figuren jetzt in WS0-Größe, z. B. `#stage,actors=fb,light=l1,scene=goblin`. Vergleich alt: `,wscale=legacy`.
+- Nächster Schritt (Bewegungs-Sitzung): M1/M2 auf J17 (Tempi, Kapsel, Höhenfeld, Zaun, Fahrwerte × K, g 9,81), dabei den Zaun-Grenzfall klären; danach volle Reihe und M2-Merge, dann Slice 3 (V-379) und der Einbau des Slice-1-Vorbaus (§65).
+
+Aufwand seit §65: ca. 45 Min. (zwei Testprüfungen nachgezogen, Spiegeln, Vorschau).
 
 ## 65 · 17.10. nachts · Slice-1-Vorbau fertig (Node, Branch lokal) · Fragen an WS0 · Vorlagen-Zeilen F1 · V-345 Zwischenstand
 
