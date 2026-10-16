@@ -4976,6 +4976,21 @@
    "applies": "ab nächstem Song"
   },
   {
+   "id": "V-365",
+   "date": "2026-10-16",
+   "area": "Performance",
+   "verdict": "RULE",
+   "text": "Stimmen-Zuordnung bei Deck-Songs (Georg 16.10.): Klingt eine männliche (bzw. weibliche) Stimme stellenweise anders (Oktave, Schreien, andere Klangfarbe), gehört sie trotzdem zum selben Charakter. Eine leichte Unschärfe in der Zuordnung wird in Kauf genommen; kein zweiter Charakter nur wegen Klangwechsel. Pharaoh 01a: Mann = alle Karten, Frau = Intro, Refrains, Outro.",
+   "values": {},
+   "owner": "WS0 (voices.json) · WS1 (Performance)",
+   "check": "voices.json je Song: höchstens ein Charakter pro Geschlecht, außer Georg sagt anders",
+   "source": "Georg 16.10.: „das ist der gleiche Mann … leichte Unschärfe durchaus in Kauf nehmen“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Suno variiert Stimmlage innerhalb einer Stimme; zusätzliche Figuren würden die Choreografie zerreißen.",
+   "applies": "ab Pharaoh 01a"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5048,7 +5063,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:689",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:692",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

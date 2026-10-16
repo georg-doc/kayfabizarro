@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-365: anders klingende Stimme = derselbe Charakter (Unschärfe ok); Pharaoh-Stimmen-Aufteilung steht.
 - Deck-Songs eingecheckt: Epistemic Take 05 (123 BPM, 12 Stems, SRT 62/62) und Pharaoh 01a (118 BPM, Duett, 57/57 Zeilen, voices.json + beats.json für V-359); Branch pharaoh baut auf epistemic auf, PR wartet auf Georgs Klick.
 - Writer’s Room Pharaoh + Trust (V-361/V-364): Dossier, Blind-Review (Pharaoh 5/6/7, Trust 6/6.5/6), wr2 mit songLines (14 bzw. 25) in Hub b52/b55; b53 Epistemic erledigt (Take 05).
 - V-363 Deck-Dossier als Architektur vorgesehen (Quellen → Essay → Deck → Karten → Song, Anker-Links, freier Download; Bau später); V-364 Epistemic Take 05 TUNE, Redaktionslauf mit songLine je Karte + Intro nach Georgs Form.
