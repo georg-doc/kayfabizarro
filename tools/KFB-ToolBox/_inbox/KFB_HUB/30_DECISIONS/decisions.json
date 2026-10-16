@@ -5100,6 +5100,21 @@
    "applies": "ab dem nächsten Song"
   },
   {
+   "id": "V-373",
+   "date": "2026-10-16",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Jede Karte tritt selbst auf (Georg 16.10., ergänzt V-372): Show it, Spin it, Sell it – jedes Triplet ist die Karte, die in eigener Sache spricht und etwas behauptet. Der Song arbeitet wie ein Comedian bzw. Sänger, der Rollen wechselt: Delivery, Mini-Opener und Intro nehmen die Rolle der jeweiligen Karte ernst (konzeptionell, semantisch, meta-narrativ). Treffen zwei widersprüchliche Karten aufeinander, wird trotzdem jede mit vollem, überzeugendem Impetus performt; der Witz entsteht aus dem Nebeneinander, nicht aus Distanzierung.",
+   "values": {},
+   "owner": "WS0 (Writer’s Room)",
+   "check": "Blind-Review-Frage: verkauft jede Karte ihre Behauptung?",
+   "source": "Georg 16.10.: „jede Karte ist ja Show it, Spin it, Sell it … jede mit dem überzeugenden Impetus“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Karten sind Behauptungen mit Kayfabe; ein Erzähler, der sie nur aufzählt, nimmt ihnen die Bühne.",
+   "applies": "ab dem nächsten Song"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5172,7 +5187,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:695",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:696",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

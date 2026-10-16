@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-373: jede Karte tritt selbst auf (Show it, Spin it, Sell it); Rollenwechsel in Delivery/Openern/Intro, widersprüchliche Karten je mit vollem Impetus.
 - V-371 WS0-Ideen (Fluff-Böe, Hauptstadt färben, Drift-Sammeln, Mimic-Jagd, Karaoke-Jukebox, Postkarten, Feldnotiz, Story-Würfel) übernommen; V-372 Songs erzählen die Karte (Lore/Motiv), Power nur Meta-Satire, Seite = Strophe, Leerzeilen/Intro-Zeilen als Pausen.
 - V-367 K2B/Joyride Fahr-Basis (Warp nach M2); V-368 sechs Fluff-Sorten = Story-Modes, Rezept 6→Karte, überall alle Sorten; V-369 Baukasten-Dioramen, Bäume KayKit zuerst, Truhen mit Augen; V-370 WS1-Slice-Plan R2 + Antworten §53–§63 (Zielgerät/Budget, Metall-Glanz).
 - V-366: keine Intro-Formel, keine Meta-Message, FrizzleBob nicht doppelt, Karaoke = Mitsing-Versatzstück; Pharaoh/Trust-Intros neu (wr3, Hub b52/b55 v9); Deck-Fehler Epistemic Karte 1 „Meta-Cover“ notiert.
