@@ -5145,6 +5145,21 @@
    "applies": "jeder Langlauf"
   },
   {
+   "id": "V-376",
+   "date": "2026-10-16",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Triplet-Erzeugung und Writer’s Room sind ein gekoppelter Tool-Workflow (Georg 16.10.): Karten-Paket (JSON + Seitenbild-Motiv) → Song-Triplets/songLines (V-372/V-373) → Writer’s Room (Strophe = Seite, Intro, Opener, Style) → Blind-Review → eine Überarbeitung → Georg/Suno → Check-in (Stems, SRT, voices, beats) → Performance. Jede Stufe legt eine Datei auf GitHub ab, die nächste liest sie; jede Stufe ist einzeln wiederholbar. Blind-Review dort, wo das Plugin sich nicht selbst trennen kann: eigener Reviewer-GPT ohne Regelwissen, Rückfall WS0-Agent.",
+   "values": {},
+   "owner": "WSA (Stufen 1–5) · WS0 (Check-in, Review-Rückfall) · WS1/WSV (Performance)",
+   "check": "jede Stufe hat ihre Datei auf dem Song-Branch",
+   "source": "replies/BRIEF_WSA_WRITERS_ROOM_PLUGIN_R1.md (Hub b66) · Georg 16.10.: „beides zusammenzudenken als Tool-Workflow“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Getrennte Werkzeuge verlieren Kontext zwischen Triplet und Song; ein gekoppelter Ablauf mit Dateien hält jede Stufe nachvollziehbar.",
+   "applies": "ab Plugin R1"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5217,7 +5232,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:697",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:698",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-376: Triplets + Writer’s Room + Review + Check-in + Performance als ein gekoppelter Tool-Workflow mit Dateien je Stufe; Blind-Review per eigenem Reviewer-GPT bzw. WS0-Agent.
 - V-374 Writer’s Room als Skill im ChatGPT-Plugin kfb-triplets (Chat + GitHub, Hub b66); V-375 Regeln für Langläufe ohne Georg (Hub b67 WS1-Start).
 - V-373: jede Karte tritt selbst auf (Show it, Spin it, Sell it); Rollenwechsel in Delivery/Openern/Intro, widersprüchliche Karten je mit vollem Impetus.
 - V-371 WS0-Ideen (Fluff-Böe, Hauptstadt färben, Drift-Sammeln, Mimic-Jagd, Karaoke-Jukebox, Postkarten, Feldnotiz, Story-Würfel) übernommen; V-372 Songs erzählen die Karte (Lore/Motiv), Power nur Meta-Satire, Seite = Strophe, Leerzeilen/Intro-Zeilen als Pausen.

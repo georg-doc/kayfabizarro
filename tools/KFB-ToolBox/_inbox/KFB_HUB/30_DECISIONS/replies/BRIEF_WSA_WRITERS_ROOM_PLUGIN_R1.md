@@ -30,6 +30,22 @@ Run it as a **separate pass** that sees only the lyrics and a short deck descrip
 
 Then do one revision and show it.
 
+## One tool workflow: card → triplet → song (V-376)
+Triplet generation and the writer's room are two stages of **one coupled workflow**, not two products. Each stage writes a file to GitHub that the next stage reads, so any stage can be re-run alone.
+
+| # | Stage | Input → Output | Who |
+|---|---|---|---|
+| 1 | Card package | registry deck JSON + PDF page images → `cards.json` (name, lore, power, image motif per card, page number) | plugin |
+| 2 | Song triplets | cards.json → `songlines.json` (one line per card, the card sells its claim, power only as an aside; V-372/V-373) | plugin, skill `compose-card-performance` (updated) |
+| 3 | Writer's room | songlines + dossier → `wr<N>.suno.txt` (stanza = page, intro, mini-openers) + `style.txt` | plugin, skill `writers-room-song` |
+| 4 | Blind review | lyrics + a short deck description only → `blindreview.md` | separate reviewer (see below) |
+| 5 | Revision | one round → `wr<N+1>` | plugin |
+| 6 | Georg | edits in the chat, Suno, stems | Georg |
+| 7 | Check-in | stems → mix, SRT, voices.json, beats.json, jukebox entry | WS0 pipeline (existing) |
+| 8 | Performance | `kfb.performance/1` → figures/Remotion | WS1 / WSV |
+
+**Blind review where the plugin cannot separate itself:** best option is a second, separate custom GPT "KFB Blind Reviewer" whose instructions contain only the review questions and no rules, so it is really blind. Georg pastes the lyrics or the plugin hands them over. Fallback: WS0 runs the review here as one small agent when a new `wr<N>.suno.txt` lands on GitHub.
+
 ## Output
 **In the chat:** STYLE A and LYRICS as two code blocks directly one after the other, then STYLE B, then the review scores.
 
