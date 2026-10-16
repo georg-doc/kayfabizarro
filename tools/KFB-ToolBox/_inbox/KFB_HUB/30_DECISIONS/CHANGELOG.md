@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-361: Songs im Writer’s Room (Deck-Dossier → Songwriter/Comedian-Pass → Blind-Review → Georg); Pilot Epistemic Sabotage gestartet.
 - V-359 Performance-Duett P1 (Mumien, Pharaoh-Song, kfb.performance/1, Hub b64); V-360 Düsen-Anker per In-Place-Editor; Pharaoh-Duett-Song wird eingecheckt (Stimmen-Trennung je Wort).
 - De-lit-Texturen auf assets/kfb-meshy-delit-r1-2026-10-16 (Goblin L2, Atlantis L1); Befund Goblin: dunkle Albedo + 11 % Metall ohne Env-Map → Laufzeit-Aufgabe WS1.
 - V-358: Suno v5 nach Georgs Beispiel (mehrzeiliges Karaoke-Intro, Verb-Opener fast jede Zeile, Mini-Anekdoten), b52/b53/b55. De-lit-Texturen Goblin/Atlantis fertig (Wirkung klein, +2–4 % L).

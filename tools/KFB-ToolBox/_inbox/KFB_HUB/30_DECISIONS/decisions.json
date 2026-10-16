@@ -4916,6 +4916,21 @@
    "applies": "mit VFX-Slice"
   },
   {
+   "id": "V-361",
+   "date": "2026-10-16",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Songs entstehen im Writer’s Room statt aus Regel-Mustern (Georg 16.10.): Jedes Deck wird als Ganzes respektiert – seine Story, sein Zweck, der Kontext, in dem die Karten ihre Behauptungen aufstellen (Beispiel Epistemic Sabotage = „Let AI Read Your Comic“: KI als Leser und Ratgeber für die eigene Comic-Arbeit statt als Zeichner, ein Workshop-Deck für das Comic-Seminar – nicht Verschwörung). Ablauf je Track: (1) Deck-Dossier (Titel, Zweck, Seiten/Kapitel, Publikum, gedrucktes Material); (2) Writer-Pass als Songwriter + Stand-up-Comedian: schlüssiges, gern absurdes Meta-Storytelling mit innerer Logik über Intro, Opener und Übergänge, Kartenzeilen bleiben die geprüften Triplets; (3) Blind-Review durch einen getrennten Prüfer ohne Regelkenntnis: ist es ein guter Song, eine gute Stand-up-Nummer, erzählt es das Deck? (4) eine Überarbeitung, dann Georg. Styles variieren (solo, Duett, Tempo), sind aber alle groovy/tanzbar und übersetzen Spirit, Sportsgeist und Musikalität des Decks. Mechanische Muster (V-339 Pool-Verteilung, V-358 Verb-Opener) sind Werkzeuge, keine Vorlage für jeden Track.",
+   "values": {},
+   "owner": "WS0 (Writer’s Room + Blind-Review)",
+   "check": "Blind-Review-Note + Georg hört",
+   "source": "Georg 16.10.: „das Deck auch als solches respektieren … wie ein Songwriter plus Stand-up-Comedian … schlüssiges Meta-Storytelling … Writer’s Room … blind beurteilen“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Regel-Muster haben Bedeutung und Witz der Decks verloren; Songs brauchen Autorenschaft und einen unabhängigen Blick.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4988,7 +5003,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:686",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:687",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
