@@ -559,7 +559,9 @@
               0.02099
             ],
             "length": 0.37615,
-            "threeName": "antennar"
+            "threeName": "antennar",
+            "side": "R",
+            "_sideNote": "DangleChain side comes from THIS field, never from the three.js node name (sanitizeNodeName drops the dot: eyestalk.r -> eyestalkr, so a /\\.r$/ test fails and both stalks become 'L' -> the right stalk bends the wrong way). Capture rest quaternion q0 after load, before the first dangle step."
           },
           {
             "id": "antenna.l",
@@ -588,7 +590,9 @@
               0.01416
             ],
             "length": 0.39109,
-            "threeName": "antennal"
+            "threeName": "antennal",
+            "side": "L",
+            "_sideNote": "DangleChain side comes from THIS field, never from the three.js node name (sanitizeNodeName drops the dot: eyestalk.r -> eyestalkr, so a /\\.r$/ test fails and both stalks become 'L' -> the right stalk bends the wrong way). Capture rest quaternion q0 after load, before the first dangle step."
           },
           {
             "id": "eyestalk.c",
@@ -617,11 +621,14 @@
               0.00336
             ],
             "length": 0.10831,
-            "threeName": "eyestalkc"
+            "threeName": "eyestalkc",
+            "side": "L",
+            "_sideNote": "DangleChain side comes from THIS field, never from the three.js node name (sanitizeNodeName drops the dot: eyestalk.r -> eyestalkr, so a /\\.r$/ test fails and both stalks become 'L' -> the right stalk bends the wrong way). Capture rest quaternion q0 after load, before the first dangle step."
           }
         ],
         "eyeFollow": "Auge folgt seinem Stielknochen: qd = bone.quaternion · q0⁻¹; eye.position = pivot + qd·(eyes[i].pos − pivot); eye.quaternion = qd · Ruhe-Quaternion (wie Claude Design app.js dangleApply)",
-        "_note": "one DangleChain per bone, params per part (stalk != antenna). Step after mixer.update(dt)."
+        "_note": "one DangleChain per bone, params per part (stalk != antenna). Step after mixer.update(dt).",
+        "restCheck": "At rest (Idle_A, no push) both stalks/antennae must stand mirror-symmetric to their rest pose in the GLB; max deviation 2 deg."
       },
       "neckRing": {
         "enabled": false,
