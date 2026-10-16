@@ -4,7 +4,7 @@ import {localHash,testSummary} from '../lib/links';
 type Build={sha:string;commit:string;date:string;notes:string;tests:any;links:Record<string,string|null>;entry:string;bytes:number};
 export default function Home(){
  const [data,setData]=useState<any>({builds:[]});const [selected,setSelected]=useState('');const [busy,setBusy]=useState(true);const [game,setGame]=useState('');const [opened,setOpened]=useState(false);
- async function refresh(backfill=false){try{const r=await fetch('/api/status'+(backfill?'?history=1':''),{cache:'no-store'});const d=await r.json();setData(d);if(!backfill&&d.builds?.length<5)void fetch('/api/status?history=1').then(r=>r.json()).then(setData).catch(()=>{});}catch{setData((d:any)=>({...d,error:'Verbindung unterbrochen. Archiv bleibt verfügbar.'}))}finally{setBusy(false)}}
+ async function refresh(backfill=false){try{const r=await fetch('/api/status'+(backfill?'?history=1':''),{cache:'no-store'});const d=await r.json();setData(d);if(!backfill&&d.builds?.length&&d.historyChecked!==d.builds[0].sha)void fetch('/api/status?history=1').then(r=>r.json()).then(setData).catch(()=>{});}catch{setData((d:any)=>({...d,error:'Verbindung unterbrochen. Archiv bleibt verfügbar.'}))}finally{setBusy(false)}}
  useEffect(()=>{void refresh();const timer=setInterval(()=>void refresh(),15000);return()=>clearInterval(timer)},[]);
  const builds:Build[]=data.builds||[];const b=builds.find(x=>x.sha===selected)||builds[0];
  function launch(key:string){const hash=localHash(b?.links[key]);if(!hash)return;setOpened(false);setGame('/build/'+b.sha+'/'+b.entry+hash)}

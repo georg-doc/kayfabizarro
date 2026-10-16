@@ -11,8 +11,9 @@ const staging=await import('data:text/javascript;base64,'+Buffer.from(compiled).
 const manifests=new Map();let head='a'.repeat(40);let offline=false;let time=Date.now();const realNow=Date.now;Date.now=()=>time;
 const make=(n)=>({schema:'kfb.ws1-build/1',commit:'fixture-'+n,date:`2026-10-17T01:${String(n).padStart(2,'0')}:00Z`,tests:{passed:23,total:23},links:{stage:'#stage',m1:'#m1',car:null},notes:'fixture'});
 manifests.set(head,make(1));const html='<!doctype html><html>UNCHANGED FIXTURE</html>';
+let historyRef=null;
 const realFetch=globalThis.fetch;
-globalThis.fetch=async input=>{if(offline)throw Error('injected offline');const u=new URL(String(input));if(u.hostname==='api.github.com'){if(u.pathname.includes('/git/trees/'))return Response.json({tree:[{type:'blob',path:'dist/index.html',size:html.length},{type:'blob',path:'dist/assets/test.js',size:10}]});if(u.searchParams.has('path'))return Response.json([...manifests.keys()].reverse().map(sha=>({sha})));return Response.json({sha:head})}if(u.pathname.includes('/ws1/preview/build.json'))return Response.json(manifests.get(head));const parts=u.pathname.split('/');const sha=parts[3],path=parts.slice(4).join('/');if(path==='build.json')return Response.json(manifests.get(sha));if(path.endsWith('index.html'))return new Response(html);if(path==='dist/assets/test.js')return new Response('window.x=1');return new Response('absent',{status:404})};
+globalThis.fetch=async input=>{if(offline)throw Error('injected offline');const u=new URL(String(input));if(u.hostname==='api.github.com'){if(u.pathname.includes('/git/trees/'))return Response.json({tree:[{type:'blob',path:'dist/index.html',size:html.length},{type:'blob',path:'dist/assets/test.js',size:10}]});if(u.searchParams.has('path')){historyRef=u.searchParams.get('sha');return Response.json([...manifests.keys()].reverse().map(sha=>({sha})));}return Response.json({sha:head})}if(u.pathname.includes('/ws1/preview/build.json'))return Response.json(manifests.get(head));const parts=u.pathname.split('/');const sha=parts[3],path=parts.slice(4).join('/');if(path==='build.json')return Response.json(manifests.get(sha));if(path.endsWith('index.html'))return new Response(html);if(path==='dist/assets/test.js')return new Response('window.x=1');return new Response('absent',{status:404})};
 let count=0;const check=(fn)=>{fn();count++};
 try{
  let c=await staging.sync();check(()=>assert.equal(c.builds[0].sha,head));
@@ -30,5 +31,11 @@ try{
  response=await staging.artifact('d'.repeat(40),'index.html');check(()=>assert.equal(response.status,404));
  time+=20000;const pair=await Promise.all([staging.sync(),staging.history()]);const after=await staging.catalog();check(()=>assert.equal(after.builds[0].sha,head));
  check(()=>assert.ok(pair.every(c=>c.builds.length<=5)));
+ for(let n=9;n<=14;n++){head=n.toString(16).padStart(40,'0');manifests.set(head,make(n))}
+ time+=20000;await staging.sync();await staging.history();const resumed=await staging.catalog();
+ check(()=>assert.equal(resumed.builds.length,5));
+ check(()=>assert.deepEqual(resumed.builds.map(b=>b.sha),[14,13,12,11,10].map(n=>n.toString(16).padStart(40,'0'))));
+ check(()=>assert.equal(resumed.historyChecked,head));
+ check(()=>assert.equal(historyRef,head));
  console.log(`${count}/${count} archive integration checks PASS (synthetic source, in-memory R2; not a real WS1 push)`);
 }finally{globalThis.fetch=realFetch;Date.now=realNow}

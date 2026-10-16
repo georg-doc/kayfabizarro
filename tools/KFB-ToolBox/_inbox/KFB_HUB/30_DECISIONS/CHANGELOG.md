@@ -1,3 +1,7 @@
+# 17.10.2026 · WSA GPT Staging R1 · Abschlusskorrektur Historie
+
+Gleiche private Site, v3: Auch bei bereits fünf Archivständen werden mehrere während einer Browserpause veröffentlichte WS1-Stände nachgezogen. Die Historie bleibt an den erfassten SHA gebunden. 16/16 Vertragsprüfungen, jetzt 22/22 Archivprüfungen; unabhängige schreibgeschützte Nachprüfung CONTINUE. Veröffentlichtes Sites-Quellcommit 25b1b1e90e12ece4703960f5a1570f79f13db649; Return und Prüfbericht aktualisiert. Georgs Browser-Abnahme und nächster echter WS1-Push bleiben das eine nächste Tor. Live-Spiel und Cloudflare-Rückfall unverändert.
+
 # 17.10.2026 · WSA GPT Staging R1 · V-356
 
 Private GPT-Staging-Site bereit: https://kfb-ws1-staging.frizzlebob.chatgpt.site . WS1-Bündel bleibt unverändert; Metadatenpolling, SHA-Archiv, fünf auswählbare Stände (aktuell zwei vorhanden), Rückfall und host-neutrale Startziele. 16/16 Vertrags- und 18/18 synthetische Archivtests; echter gehosteter Kaltabruf neuester Stand 3,938 s. Fahrprobe aktuell noch nicht verfügbar. Sites-internes HTML-Challenge-Skript dokumentiert; Browserabnahme und nächster echter WS1-Push noch offen. Keine Live-Spielumschaltung; Cloudflare bleibt Rückfall bis Georgs Abnahme. Return: replies/WSA_GPT_STAGING_R1_RETURN.md; Nachweise: replies/WSA_GPT_STAGING_R1_SOURCE/TEST_REPORT.md. Sites-Projekt appgprj_6ad2ac305b788191af0bdfc68823a300, v2 Quellcommit b41d26abbdca0c9eb3a5967967ac7bbc25a4eab3.

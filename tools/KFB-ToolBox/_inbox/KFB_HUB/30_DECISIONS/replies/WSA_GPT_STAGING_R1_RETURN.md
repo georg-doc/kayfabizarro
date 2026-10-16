@@ -30,8 +30,8 @@ Cloudflare-Startlinks werden auf dieselben Hash-Ziele im GPT-Site-Bündel abgebi
 
 ## 3 Tatsächliche Prüfung
 
-- 16/16 Vertragsprüfungen PASS; 18/18 synthetische Archiv-Integrationstests PASS, einschließlich neuer geprüfter Revision, Fehler-Rückfall, fünf Einträge, dist und altem geöffnetem Bündel.
-- Sites-Produktionsbuild PASS; private Veröffentlichung v2 erfolgreich.
+- 16/16 Vertragsprüfungen PASS; 22/22 synthetische Archiv-Integrationstests PASS, einschließlich neuer geprüfter Revision, Fehler-Rückfall, fünf Einträge, dist, altem geöffnetem Bündel und mehrerer nach Browserpause verpasster Stände. Die Historienabfrage ist an den erfassten GitHub-SHA gebunden.
+- Sites-Produktionsbuild PASS; private Veröffentlichung v3 erfolgreich.
 - Gehosteter Kaltabruf: Oberfläche200 0,394 s; neuester Stand200 3,938 s; Historie200 3,810 s; Originalbündel200 3,964 s. Warmer Statusabruf0,524 s. Das belegt den technischen Abruf unter 30 s, noch nicht Georgs kompletten Szenenstart nach Login.
 - Lokaler Browser: schmale und breite Darstellung, Stand/Datum/Notiz/23 von23 Tests; Bühne und M1 starten über die richtigen GPT-relativen Ziele; echte Bühne/Figuren/Karte sichtbar. Keine erneute Annahme des WS1-Looks oder der Spielphysik.
 - Separater schreibgeschützter Kritiker `/root/staging_critic`: zunächst REPAIR; nach Metadaten-, Katalog-, Altstand- und Auswahlkorrekturen CONTINUE zum gehosteten Nachweis. Kein Georg-PASS ersetzt.
@@ -41,10 +41,10 @@ Cloudflare-Startlinks werden auf dieselben Hash-Ziele im GPT-Site-Bündel abgebi
 
 Repository: **georg-doc/kayfabizarro**. Register-Branch: **docs/kfb-decisions-register-2026-10-11**. Kein neuer PR.
 
-Implementierungscheckpoint **08f22dddb35163f335c2ea82e843a28e6517a9b7**; Materialnachweischeckpoint **a7e432717f134d9a60b5fbf09fb96944683b6713**. Beide Branch-Refs und alle beabsichtigten Dateien exakt zurückgelesen. Dieser Return und der additive Changelog folgen als Abschlusscommit auf demselben Branch; dessen SHA wird aus dem abschließenden Ref-Readback gemeldet.
+Implementierungscheckpoint **08f22dddb35163f335c2ea82e843a28e6517a9b7**; Materialnachweischeckpoint **a7e432717f134d9a60b5fbf09fb96944683b6713**. Beide Branch-Refs und alle beabsichtigten Dateien exakt zurückgelesen. Erster Returnabschluss 3c13530e1038b91ea3e936c4dfc073abb21d4e5c. Die abschließende Korrektur für lückenloses Nachziehen nach Browserpause aktualisiert Quellstand, Tests, Return und additiven Changelog auf demselben Branch; deren SHA wird aus dem abschließenden Ref-Readback gemeldet.
 
 Geänderte Dateien: `replies/WSA_GPT_STAGING_R1_SOURCE/` mit app/page.tsx, globals.css, layout.tsx, API-/Bündelroute, lib/links.ts, lib/staging.ts, .openai/hosting.json, README, zwei Testdateien, TEST_REPORT und zwei JSON-Nachweisen; dazu dieser Return und der additive 30_DECISIONS/CHANGELOG.md. Der vollständige Build-/Framework-Unterbau bleibt zusätzlich im Sites-Quellrepository.
 
-Sites-Projekt **appgprj_6ad2ac305b788191af0bdfc68823a300**. Veröffentlichtes Sites-Quellcommit **b41d26abbdca0c9eb3a5967967ac7bbc25a4eab3**. Version **appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_a3c800ba3c348191b001a0af66c8336d**, Deployment **appgdep_6ad2ae672450819185e83155ddb7bc5d**. Site-Status DEPLOYED PRIVATE, nicht PUBLIC_VERIFIED oder HUMAN_ACCEPTED. Lokaler Screenshot: `evidence/local-m1.jpg` im Arbeitsstand; HTTP-/Transform-Nachweis und reproduzierbare Tests im Register.
+Sites-Projekt **appgprj_6ad2ac305b788191af0bdfc68823a300**. Veröffentlichtes Sites-Quellcommit **25b1b1e90e12ece4703960f5a1570f79f13db649**. Version **appgprj_6ad2ac305b788191af0bdfc68823a300~appgver_428d7cb68df08191b0b60add450f4f56**, Deployment **appgdep_6ad2af5dc5b88191b8e6d17a6b6a7736**. Site-Status DEPLOYED PRIVATE, nicht PUBLIC_VERIFIED oder HUMAN_ACCEPTED. Lokaler Screenshot: `evidence/local-m1.jpg` im Arbeitsstand; HTTP-/Transform-Nachweis und reproduzierbare Tests im Register.
 
 **Genau ein nächstes Tor:** Georg prüft die private GPT-Staging-Site nach Anmeldung einschließlich der automatischen Übernahme des nächsten echten WS1-Vorschau-Pushs. Erst nach Georgs Abnahme darf WS0 den Cloudflare-Rückfall aus dem Prozess nehmen. Die aktuelle M2-Fahrprobe bleibt bis zur WS1-Lieferung ausdrücklich ausgenommen.

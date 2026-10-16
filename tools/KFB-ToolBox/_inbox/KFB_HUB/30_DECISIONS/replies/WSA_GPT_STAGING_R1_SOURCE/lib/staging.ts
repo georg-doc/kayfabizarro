@@ -56,13 +56,14 @@ export async function sync(){
  })();try{return await inflight}finally{inflight=null}
 }
 export async function history(){
- const c=await catalog();if(c.builds.length>=5||c.historyChecked===c.builds[0]?.sha)return c;
- const commits:any=await(await remote(API+'commits?sha=ws1%2Fpreview&path=build.json&per_page=20')).json();
- const builds=[...c.builds];
+ const c=await catalog();if(!c.builds.length||c.historyChecked===c.builds[0]?.sha)return c;
+ const commits:any=await(await remote(API+`commits?sha=${c.builds[0].sha}&path=build.json&per_page=100`)).json();
+ const builds=[c.builds[0]];
  for(const item of commits){if(builds.length>=5)break;if(builds.some(b=>b.sha===item.sha))continue;try{builds.push(await snapshot(item.sha))}catch{/* unqualified historical builds are not admitted */}}
  // Re-read to retain a newer live head that may have arrived during backfill.
  return changeCatalog(fresh=>{
- const combined=[...fresh.builds,...builds.filter(b=>!fresh.builds.some((f:any)=>f.sha===b.sha))].slice(0,5);
+ if(fresh.builds[0]?.sha!==c.builds[0]?.sha)return fresh;
+ const combined=[...builds,...fresh.builds.filter((f:any)=>!builds.some(b=>b.sha===f.sha))].slice(0,5);
  return {...fresh,builds:combined,historyChecked:c.builds[0]?.sha};
  });
 }
