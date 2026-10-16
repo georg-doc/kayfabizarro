@@ -4781,6 +4781,21 @@
    "applies": "mit M2/M3"
   },
   {
+   "id": "V-352",
+   "date": "2026-10-16",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Recherche Cartoon-Racer per Web-Chat (Georg, token-sparend): wie Kart-Spiele (Mario Kart, CTR, Sonic Racing, Rocket League u. a.) wildes, achterbahnartiges Cartoon-Fahren sicher machen – Lande-/Ausricht-Hilfen, kein Überschlag, nach Crash in Fahrtrichtung weiter, nicht in Ecken festfahren, kein Stehenbleiben auf der Nase nach kleiner Rampe, Drift, Tricks per Sprung, Hero-Shot-Kamera (Fahrzeug von vorn), Stunt-Animationen als Loot, Cartoon-Deformer. Ergebnis als WSA_CARTOON_RACER_RESEARCH_R1 im Register-Branch; WS0 übersetzt es in den Stunt-/Fahr-Auftrag für WS1. Out of scope vorerst: Rennstrecken, Item-Waffen, Kart-Baukasten, Hero-Shots als eigene Sequenzen.",
+   "values": {},
+   "owner": "Web-Chat (Georg) → WS0 → WS1",
+   "check": "Recherche-Datei mit Quellen + Tabelle",
+   "source": "Georg 16.10.: „Cartoon-Racer … Super Mario Kart … Cartoon-Fahrphysik … Hero-Shot … als Loot … Achterbahnfahrt-artiges Fahrgefühl … nicht auf der Front stehen bleiben“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bewährte Arcade-Tricks recherchieren statt raten; Web-Chat spart Tokens.",
+   "applies": "parallel zu M2"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4853,7 +4868,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:675",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:676",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
