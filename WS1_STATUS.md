@@ -1,7 +1,47 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§59 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§60 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 60 · 16.10. abends · WS0-Antworten V-343–V-360 gelesen · Arbeitsplan WS1 (Übergabe-Stand)
+
+**Stand:** kfb-planet main @987422a (followShadow), ganze Testreihe 23/23, alles gepusht. Vorschau = main + m2/fahren (zuletzt @7afea10). M2 nicht in main.
+
+**Arbeitsplan WS1 (Owner-Sitzung), in dieser Reihenfolge:**
+1. **Vorschau neu:** main @987422a + m2/fahren @00b86ea zusammengebaut (followShadow in M1/M2, Kontaktflecke FB/GothGirl/Dragster, weicher Aufprall an Figuren 3,5 m statt 14 m), Testreihe; **ab jetzt bei jedem Push `build.json` (`kfb.ws1-build/1`, V-356)** mitliefern.
+2. **V-346 Look-TUNE in einem Schritt:**
+   - Look B = Standard unter `light=l1` (`look=a` nur noch zum Vergleich);
+   - Himmel B = derselbe Himmel wie A, nur getönt (heute dreht `skyLookB` den Farbton um 70 % → auf leichte Tönung zurücknehmen);
+   - GothGirl-Randlicht nur noch als Hauch (`rimStrength` 0,5 → ≈ 0,15);
+   - FB-Mund und -Augen lesbar: Köpfe ohne Schattenempfang, dazu leichtes Face-Fill;
+   - Schattenlänge und -richtung folgen `timeOfDay` (ist so; in einem Satz bestätigen);
+   - ACES global, Boden bzw. Diorama `toneMapped: false` (Bildpaar);
+   - Knet: `clay=all` Standard (FB mit Knet), GothGirl nicht überstrahlt, Fahrzeuge Knet nur als Relief bzw. Rauheit mit Albedo-Sättigung ≥ 95 %;
+   - Abnahmebilder immer mit Knet; Korrekturen in der Vergleichsleiste sichtbar.
+3. **V-345 Maßstab auf J17-Meter:**
+   - `src/worldScale.js` (`M_PER_RIG = 0.616381042`, FB-Zielhöhe 2,94 Rig = 1,81 m, Faktor ≈ 0,65);
+   - Bühnen-Seite: Figurenhöhe, Amphitheater, Meshy-Slots, Marken, Kameras, Billboard, Licht-Frustum, Aufstellung; zuerst Amphitheater.
+   - Danach stellt die M1-Sitzung M1/M2 um (Höhenfeld, Zaun neu messen, Rampe, Tempi, Sprünge, Kapsel, Flug, Fahrwerte, Schwerkraft 9,81 statt 14).
+   - Gemeinsame Testreihe vor dem M2-Merge.
+4. **V-360 Anker per 3D-In-Place-Editor** (kein eigenes Klick-Werkzeug):
+   - Modus im God-Mode-Editor nach `KFB Resident Atlas v3/S39-band-module-01/lib/edit-layer.js` (TransformControls);
+   - Punkt plus Richtungspfeil an Düse bzw. unter Rädern;
+   - speichern als `kfb.vehicle-thrust/1`.
+5. **V-342/V-305 mit gelieferten Daten** (`data/kfb-stage-edges-r1-2026-10-16` @d4e24f15):
+   - Bodenfarbe = `fromColors(edgePalette)` je Bühne;
+   - `practicals` Goblin-Bank (12) und Atlantis (11) → G4.
+6. **L2 Schritt 4 Gelände** (V-341: `footprint`, `terrainMode`, Steine-Kit folgt) und **Schritt 5 Look-Kohärenz** (V-355: entlichtete Texturen `assets/kfb-meshy-delit-r1-2026-10-16`, Goblin L2 / Atlantis L1; PMREM-Umgebung warm wie B; Messung Helligkeit und Buntheit je Schicht ≤ 15 %).
+7. **Aufstellung:** Orc Brute dazu (`media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb`).
+8. **Später:**
+   - VFX-Slice V1 (V-357) nach M2-Grundfahren;
+   - Performance-Duett P1 (V-359);
+   - Portal-Ruine (V-343);
+   - Stunt M3 (V-351).
+
+**M1-Sitzung parallel:**
+- T1–T3 auf `m1/wow` (Lab-Walker aus `replies/donors/lab-walker-2026-10-16/`, Flug-Neubau);
+- danach V-345 M1-Seite;
+- danach V-347 (Drift Q/E, Wendekreis, ecctrl-Stabilität).
 
 ## 59 · 16.10. · Georgs Wunschliste VFX-Slice (Speedlines, Partikel, Düsen-Glow, Flugmodus) · Vorschlag mit WS1-Kommentaren · Bitte an WS0
 
