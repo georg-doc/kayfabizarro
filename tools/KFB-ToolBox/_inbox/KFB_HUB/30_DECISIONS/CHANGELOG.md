@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- Blender-Lauf R1 fertig (WS0 geprüft): Lady Dory r2, Lord Hunky r2 (Stiel-Knick weg), Orc mit KFB-Augen r1, FB v5c Meshy-Ohren; assets/kfb-blender-run-r1-2026-10-16 @e4bf8b15. Hub-Fragen fb-ears-v5c, aliens-r2. Steine-Kit noch offen.
 - V-345: WS1 §46–§51 beantwortet (Lab-Walker-Snapshot, Maßstab auf WS0-/J17-Meter, Orc-Quelle); fünf Hub-Bildfragen (l2a, l1-tonemapping, l2-fb-clay, l2-vehicles-clay, m2-drive-feel).
 - V-344 präzisiert: Intro = Stand-up-Eröffnung (FrizzleBob als Comedian), Slogan als Pointe; Hub zeigt STYLE + LYRICS in einer Karte (Seite v12, Feld style).
 - Bühnen-Ränder R1 (footprint, edgePalette, terrainRing, practicals Goblin/Atlantis) auf data/kfb-stage-edges-r1-2026-10-16 @d4e24f15; WS1-Notiz.
