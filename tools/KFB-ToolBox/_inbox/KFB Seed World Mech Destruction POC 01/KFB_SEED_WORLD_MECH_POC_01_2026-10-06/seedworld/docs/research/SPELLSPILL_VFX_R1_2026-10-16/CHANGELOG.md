@@ -40,3 +40,10 @@
 - Same source 12 rockets, 90 lost cells and 2 real cascades. Submitted scene geometry E 797,294 triangles vs F **748,800** (6.08% lower); no measured actual GPU speed gain or KFB Clay/style PASS. F reduced original chunky debris clutter and reads more like small jagged shards, but needs actual animated proof/hardware/human gate.
 - New `FX_SHARDS_R3_METHOD_2026-10-16.md`, `FX_SHARDS_R3_EVIDENCE_2026-10-16.md`, `SOURCE.json.fxShardsR3`. Existing source `sw-destruct`, `sw-fx`, World/Combat unchanged; no Stage/Site/merge/Live.
 - Exactly one next gate: `KFB SEED WORLD PLANAR DEBRIS + CLAY/SMOKE VISUAL MOTION / TARGET-GPU REVIEW`.
+
+## 2026-10-16 · Georg's 2D-first modular cartoon destruction FX direction · Claude Code/WSA brief
+- Persisted the full source-first, standalone `CLAUDE_CODE_WSA_2D_FIRST_MODULAR_DESTRUCTION_FX_R4_BRIEF_2026-10-16.md` **in GitHub**, not only chat; current research branch/PR #406 remains the receiving owner.
+- Design clarification: **Clay world does not obligate 3D-Clay explosion particles.** 2D-first smoke, ground AOE, irregular planar shards and simple instanced bouncing impact spheres are primary; 3D hero fragments and clay texturing are **optional**. Modular material-specific wood/stone/metal/cartoon reaction presets and elastic afterlife motion are requested.
+- Brief gives G 2D-first balanced / H sparse-hero-3D / I material-reactive source comparison, bounded source-first motion, unchanged `sw-destruct` damage and explicit visual/perf/overdraw/human-acceptance requirements. Reuse verified original Brackeys/Claude Design atlas assets and existing FX pool; no new shader/physics owner.
+- **Documentation/intake only** this phase: prior R3 24/24 source technical evidence retained, no R4 code or motion/GPU test yet, no WorldBuilder R5, Site/Stage/Live or merge.
+- Exactly one next gate: `KFB SEED WORLD R4 2D-FIRST MODULAR DESTRUCTION FX SOURCE/MOTION COMPARISON`, then target-device and human visual review.
