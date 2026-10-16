@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · Figuren-Bau neu, Musikvideo
+- V-336: Rigging/Frankensteining jetzt WS0 mit Blender MCP, ToolBox nur Integration; Laufzeit-Mesh-Hacks verboten; Frankensteining Studio verabschiedet (WSA-Postmortem + Blender-Handoff auf feat/headpart-v332-acceptance-2026-10-16).
+- V-337: Musikvideo-Briefing an neue Sitzung WSV (Hub b50), Pilot wrinkle_rumble.
+
 ## 2026-10-16 · Alien-Rebriefing
 - V-335: HUD-R4-Brief ergänzt (träger Pfeil, Grün bei Annäherung, kurze Distanz, Minikarte oben rechts + Fächer darunter, Pfeil-Spender-Kontaktbogen); Hub b49 aktualisiert.
 - V-334: HUD R4 an Claude Design (Hub b49): Diorama-/Knet-Look, Ziel-Pfeil über der Figur nach Undermine + Ring, Social-Call-Radialmenü, Spielfigur spricht die Wahl; präzisiert V-333.

@@ -4541,6 +4541,36 @@
    "applies": "mit HUD R4"
   },
   {
+   "id": "V-336",
+   "date": "2026-10-16",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Figuren-Bau neu geordnet (Georg 16.10., WSA-Postmortem V-332 auf feat/headpart-v332-acceptance-2026-10-16 @16f4f197): Strukturelle Asset-Arbeit (Topologie, Sockel, Anker, Bone-Restpose, Mesh-Trennung, Rigging, Frankensteining) macht WS0 mit Blender MCP, bevor etwas in die ToolBox kommt; die ToolBox ist nur Integration und Abnahme (Rezept-Tunables, Owner, Pose, Save). Projektweites Verbot von Laufzeit-Mesh-Hacks (Vertices verschieben, Flächen per Material/Alpha wegdekorieren, Heuristik-Inselentfernung, Sammel-Mounts mit fremden Ownern). Das Frankensteining Studio wird verabschiedet (kein Meta-Tool, nicht funktional integriert); V-239 bleibt. Erster Blender-Auftrag: BLENDER_MCP_HANDOFF.md (Lady Dory Kopf-Oval + Mund-Fläche, Lord Hunky Kontrolle, Orc-Augen-Owner).",
+   "values": {},
+   "owner": "WS0 (Blender MCP) · WSA work (ToolBox-Integration)",
+   "check": "Blender-Rückgabe mit Front/3-4-Proofs, dann kurzer ToolBox-Lauf",
+   "source": "Georg 16.10.: „relativ üble Hacks“, „Riggings, Frankensteinings dann erstmal mit Blender MCP hier“, „vom Frankensteining-Studio … verabschieden“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Laufzeit-Kaschierung hat Figuren sichtbar beschädigt; Struktur gehört in Blender, nicht in den Renderer.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-337",
+   "date": "2026-10-16",
+   "area": "Video",
+   "verdict": "RULE",
+   "text": "Deck-Musikvideo R1 (replies/VIDEO_R1/BRIEF_MUSIC_VIDEO_R1.md, Hub b50, neue Claude-Code-Sitzung WSV): Suno-Song mit Stems + Karten + Triplets + Hypernormalisation-Look/Quotes, auf den Beat geschnitten; während eine Zeile gesungen wird, ist ihre Karte zu sehen. Stufe 1 = 2D-Basisschicht mit Remotion aus timeline.json + edl.json, Pilot wrinkle_rumble, erst 30-s-Probe, dann ganzer Song 16:9 + 9:16. Stufe 2 erst nach PASS: @remotion/three mit Figuren (EyeRig v6, Münder per Visemen, 3–4 Dance-Moves beat-getimt nach V-298). Kein Posting.",
+   "values": {},
+   "owner": "WSV (neu)",
+   "check": "30-s-Probe + Kontaktbogen, Raster G1–G8",
+   "source": "Georg 16.10.: „wie ein Musikvideo“, „Basisproduktionsschicht“, „danach … React … Characters … performen“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Deck-Songs mit Stems und Karten-Timing sind fertig; ein Musikvideo zeigt, ob das Paket als Marketing und Cutscene trägt.",
+   "applies": "parallel"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4613,7 +4643,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:634",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:638",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
