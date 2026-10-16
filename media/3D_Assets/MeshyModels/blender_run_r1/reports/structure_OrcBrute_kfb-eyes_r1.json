@@ -1,0 +1,915 @@
+{
+ "file": "OrcBrute.kfb-eyes.r1.glb",
+ "bytes": 780820,
+ "extensionsRequired": [],
+ "animations": 0,
+ "hierarchy": [
+  {
+   "name": "Rig_Large",
+   "children": [
+    {
+     "name": "OrcBrute_ArmLeft",
+     "mesh": "OrcBrute_ArmLeft",
+     "skin": 0
+    },
+    {
+     "name": "OrcBrute_ArmRight",
+     "mesh": "OrcBrute_ArmRight",
+     "skin": 0
+    },
+    {
+     "name": "OrcBrute_Body",
+     "mesh": "OrcBrute_Body",
+     "skin": 0
+    },
+    {
+     "name": "OrcBrute_Head",
+     "mesh": "OrcBrute_Head",
+     "skin": 0
+    },
+    {
+     "name": "KFB_OriginalEye_R",
+     "mesh": "KFB_OriginalEye_R",
+     "skin": 0
+    },
+    {
+     "name": "KFB_OriginalEye_L",
+     "mesh": "KFB_OriginalEye_L",
+     "skin": 0
+    },
+    {
+     "name": "OrcBrute_LegArmor",
+     "mesh": "OrcBrute_LegArmor",
+     "skin": 0
+    },
+    {
+     "name": "OrcBrute_LegLeft",
+     "mesh": "OrcBrute_LegLeft",
+     "skin": 0
+    },
+    {
+     "name": "OrcBrute_LegRight",
+     "mesh": "OrcBrute_LegRight",
+     "skin": 0
+    },
+    {
+     "name": "OrcBrute_Shoulderpad",
+     "mesh": "OrcBrute_Shoulderpad",
+     "skin": 0
+    },
+    {
+     "name": "root",
+     "children": [
+      {
+       "name": "hips",
+       "children": [
+        {
+         "name": "upperleg.l",
+         "children": [
+          {
+           "name": "lowerleg.l",
+           "children": [
+            {
+             "name": "foot.l",
+             "children": [
+              {
+               "name": "toes.l"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "upperleg.r",
+         "children": [
+          {
+           "name": "lowerleg.r",
+           "children": [
+            {
+             "name": "foot.r",
+             "children": [
+              {
+               "name": "toes.r"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "spine",
+         "children": [
+          {
+           "name": "chest",
+           "children": [
+            {
+             "name": "head",
+             "children": [
+              {
+               "name": "KFB_Eye_L_anchor"
+              },
+              {
+               "name": "KFB_Eye_R_anchor"
+              }
+             ]
+            },
+            {
+             "name": "upperarm.l",
+             "children": [
+              {
+               "name": "lowerarm.l",
+               "children": [
+                {
+                 "name": "wrist.l",
+                 "children": [
+                  {
+                   "name": "hand.l",
+                   "children": [
+                    {
+                     "name": "handslot.l"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "name": "upperarm.r",
+             "children": [
+              {
+               "name": "lowerarm.r",
+               "children": [
+                {
+                 "name": "wrist.r",
+                 "children": [
+                  {
+                   "name": "hand.r",
+                   "children": [
+                    {
+                     "name": "handslot.r"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "skin": {
+  "name": "Rig_Large",
+  "joints": [
+   "root",
+   "hips",
+   "upperleg.l",
+   "lowerleg.l",
+   "foot.l",
+   "toes.l",
+   "upperleg.r",
+   "lowerleg.r",
+   "foot.r",
+   "toes.r",
+   "spine",
+   "chest",
+   "head",
+   "upperarm.l",
+   "lowerarm.l",
+   "wrist.l",
+   "hand.l",
+   "handslot.l",
+   "upperarm.r",
+   "lowerarm.r",
+   "wrist.r",
+   "hand.r",
+   "handslot.r"
+  ],
+  "ibmMaxErr": 7.2003333485367256e-06
+ },
+ "meshes": [
+  {
+   "name": "OrcBrute_ArmLeft",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "orcbrute_texture",
+     "verts": 1062,
+     "tris": 1028,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 3.725290298461914e-08,
+     "jointsUsed": [
+      "hand.l",
+      "lowerarm.l",
+      "upperarm.l",
+      "wrist.l"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "OrcBrute_ArmRight",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "orcbrute_texture",
+     "verts": 951,
+     "tris": 956,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 4.470348358154297e-08,
+     "jointsUsed": [
+      "hand.r",
+      "lowerarm.r",
+      "upperarm.r",
+      "wrist.r"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "OrcBrute_Body",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "orcbrute_texture",
+     "verts": 2630,
+     "tris": 2506,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 4.470348358154297e-08,
+     "jointsUsed": [
+      "chest",
+      "hips",
+      "spine"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "OrcBrute_Head",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "orcbrute_texture",
+     "verts": 3234,
+     "tris": 3692,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 0.0,
+     "jointsUsed": [
+      "head"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "OrcBrute_LegArmor",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "orcbrute_texture",
+     "verts": 1721,
+     "tris": 1260,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 0.0,
+     "jointsUsed": [
+      "hips"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "OrcBrute_LegLeft",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "orcbrute_texture",
+     "verts": 548,
+     "tris": 680,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 3.725290298461914e-08,
+     "jointsUsed": [
+      "foot.l",
+      "lowerleg.l",
+      "toes.l",
+      "upperleg.l"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "OrcBrute_LegRight",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "orcbrute_texture",
+     "verts": 548,
+     "tris": 680,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 3.725290298461914e-08,
+     "jointsUsed": [
+      "foot.r",
+      "lowerleg.r",
+      "toes.r",
+      "upperleg.r"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "OrcBrute_Shoulderpad",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "orcbrute_texture",
+     "verts": 1789,
+     "tris": 1380,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 0.0,
+     "jointsUsed": [
+      "chest"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "KFB_OriginalEye_L",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "orcbrute_texture",
+     "verts": 40,
+     "tris": 66,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 0.0,
+     "jointsUsed": [
+      "head"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "KFB_OriginalEye_R",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "orcbrute_texture",
+     "verts": 40,
+     "tris": 66,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 0.0,
+     "jointsUsed": [
+      "head"
+     ]
+    }
+   ]
+  }
+ ],
+ "trianglesTotal": 12314,
+ "anchors": {
+  "KFB_Eye_L_anchor": {
+   "parent": "head",
+   "world": [
+    0.1548,
+    3.5063,
+    0.5866
+   ],
+   "forward": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "extras": {
+    "kfb": {
+     "kind": "eyeAnchor",
+     "radius": 0.055,
+     "forward": "+Z",
+     "frame": "head bone (Rig_Large)",
+     "note": "eyeball centre for the KFB EyeRig; front of the eyeball = original eye front + 0.1 R"
+    }
+   }
+  },
+  "KFB_Eye_R_anchor": {
+   "parent": "head",
+   "world": [
+    -0.1548,
+    3.5063,
+    0.5866
+   ],
+   "forward": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "extras": {
+    "kfb": {
+     "kind": "eyeAnchor",
+     "radius": 0.055,
+     "forward": "+Z",
+     "frame": "head bone (Rig_Large)",
+     "note": "eyeball centre for the KFB EyeRig; front of the eyeball = original eye front + 0.1 R"
+    }
+   }
+  }
+ },
+ "bonesRest": {
+  "root": {
+   "parent": "Rig_Large",
+   "t": null,
+   "r": [
+    0,
+    1.1920923981278975e-07,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "hips": {
+   "parent": "root",
+   "t": [
+    0,
+    1.041326880455017,
+    0
+   ],
+   "r": [
+    0,
+    -1.1920926112907182e-07,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "upperleg.l": {
+   "parent": "hips",
+   "t": [
+    0.3418900966644287,
+    0.2271745204925537,
+    2.7846533967590403e-08
+   ],
+   "r": [
+    0.9999039173126221,
+    -5.580835349405788e-08,
+    -1.1316093839752739e-08,
+    0.013863272964954376
+   ],
+   "s": [
+    1,
+    0.9999997615814209,
+    1.000000238418579
+   ]
+  },
+  "lowerleg.l": {
+   "parent": "upperleg.l",
+   "t": [
+    -4.775359840891724e-08,
+    0.5690996646881104,
+    1.149788619869696e-08
+   ],
+   "r": [
+    0.07813356071710587,
+    5.6414364735246636e-08,
+    -5.713953044050868e-08,
+    0.996942937374115
+   ],
+   "s": [
+    1,
+    0.9999999403953552,
+    0.9999997019767761
+   ]
+  },
+  "foot.l": {
+   "parent": "lowerleg.l",
+   "t": [
+    5.978625239322355e-08,
+    0.4125581979751587,
+    -1.7135130647716323e-08
+   ],
+   "r": [
+    -0.4331081509590149,
+    3.944258253341104e-08,
+    -8.264285611403466e-08,
+    0.90134197473526
+   ],
+   "s": [
+    1,
+    1.000000238418579,
+    0.9999998807907104
+   ]
+  },
+  "toes.l": {
+   "parent": "foot.l",
+   "t": [
+    -3.006992699283728e-08,
+    0.3313000798225403,
+    9.129329292534294e-09
+   ],
+   "r": [
+    2.754864114606903e-09,
+    0.9203549027442932,
+    -0.3910842537879944,
+    9.798768019209092e-08
+   ],
+   "s": [
+    1,
+    1.0000005960464478,
+    1.000000238418579
+   ]
+  },
+  "upperleg.r": {
+   "parent": "hips",
+   "t": [
+    -0.3418900966644287,
+    0.2271745204925537,
+    2.7846562389299834e-08
+   ],
+   "r": [
+    0.9999039173126221,
+    5.807877911934156e-08,
+    -3.2430968133212446e-08,
+    0.013863272964954376
+   ],
+   "s": [
+    1,
+    0.9999997615814209,
+    1.000000238418579
+   ]
+  },
+  "lowerleg.r": {
+   "parent": "upperleg.r",
+   "t": [
+    4.775359840891724e-08,
+    0.5690996646881104,
+    1.1497854224273851e-08
+   ],
+   "r": [
+    0.07813356071710587,
+    -5.641440736781078e-08,
+    5.7139526887795e-08,
+    0.996942937374115
+   ],
+   "s": [
+    1,
+    0.9999999403953552,
+    0.9999997019767761
+   ]
+  },
+  "foot.r": {
+   "parent": "lowerleg.r",
+   "t": [
+    -2.998392645281456e-08,
+    0.4125581681728363,
+    -5.5009272692529976e-09
+   ],
+   "r": [
+    -0.4331081509590149,
+    1.9118087379865756e-07,
+    6.78718414803825e-09,
+    0.90134197473526
+   ],
+   "s": [
+    1,
+    1.000000238418579,
+    0.9999998807907104
+   ]
+  },
+  "toes.r": {
+   "parent": "foot.r",
+   "t": [
+    3.006992699283728e-08,
+    0.3313000798225403,
+    9.129330180712714e-09
+   ],
+   "r": [
+    8.127823036829795e-08,
+    0.9203549027442932,
+    -0.3910842537879944,
+    9.642714360325044e-08
+   ],
+   "s": [
+    1,
+    1.0000005960464478,
+    1.000000238418579
+   ]
+  },
+  "spine": {
+   "parent": "hips",
+   "t": [
+    0,
+    0.3839550018310547,
+    0
+   ],
+   "r": [
+    0,
+    1.1920926112907182e-07,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "chest": {
+   "parent": "spine",
+   "t": [
+    0,
+    0.7499760389328003,
+    0
+   ],
+   "r": [
+    0,
+    -1.192092469182171e-07,
+    0,
+    1
+   ],
+   "s": [
+    1,
+    0.9999999403953552,
+    1
+   ]
+  },
+  "head": {
+   "parent": "chest",
+   "t": [
+    0,
+    1.1404743194580078,
+    0
+   ],
+   "r": [
+    0,
+    2.1316285460934795e-14,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "upperarm.l": {
+   "parent": "chest",
+   "t": [
+    0.8840135931968689,
+    0.4982635974884033,
+    1.6634172084195598e-07
+   ],
+   "r": [
+    -0.5141234397888184,
+    -0.48546579480171204,
+    -0.48546576499938965,
+    0.5141236186027527
+   ],
+   "s": [
+    0.9999997019767761,
+    0.9999998211860657,
+    1
+   ]
+  },
+  "lowerarm.l": {
+   "parent": "upperarm.l",
+   "t": [
+    3.093468947668043e-08,
+    0.5805540084838867,
+    -2.370763922954211e-07
+   ],
+   "r": [
+    1.8232165777121168e-09,
+    -6.750330783233949e-08,
+    -0.055293008685112,
+    0.9984701871871948
+   ],
+   "s": [
+    0.9999999403953552,
+    0.9999996423721313,
+    1
+   ]
+  },
+  "wrist.l": {
+   "parent": "lowerarm.l",
+   "t": [
+    1.1838636737593333e-08,
+    0.6241049766540527,
+    9.973177839128766e-11
+   ],
+   "r": [
+    3.850745070033135e-11,
+    -5.476200604093151e-10,
+    0.026658104732632637,
+    0.9996446967124939
+   ],
+   "s": [
+    0.9999999403953552,
+    1,
+    1
+   ]
+  },
+  "hand.l": {
+   "parent": "wrist.l",
+   "t": [
+    -9.245937349078304e-13,
+    0.17718170583248138,
+    -4.440892098500626e-16
+   ],
+   "r": [
+    6.307562916418874e-09,
+    1.469463910552804e-07,
+    -1.7522536381875398e-06,
+    1
+   ],
+   "s": null
+  },
+  "handslot.l": {
+   "parent": "hand.l",
+   "t": [
+    2.4002222431818154e-10,
+    0.23070047795772552,
+    -0.1379997730255127
+   ],
+   "r": [
+    5.068087727266857e-09,
+    5.068086839088437e-09,
+    -0.7071068286895752,
+    0.7071067094802856
+   ],
+   "s": null
+  },
+  "upperarm.r": {
+   "parent": "chest",
+   "t": [
+    -0.8840135931968689,
+    0.4982635974884033,
+    1.663417492636654e-07
+   ],
+   "r": [
+    -0.5141234397888184,
+    0.48546579480171204,
+    0.4854658246040344,
+    0.5141236186027527
+   ],
+   "s": [
+    0.9999997019767761,
+    0.9999998211860657,
+    1
+   ]
+  },
+  "lowerarm.r": {
+   "parent": "upperarm.r",
+   "t": [
+    -1.7771153437706744e-08,
+    0.5805538892745972,
+    -2.370763922954211e-07
+   ],
+   "r": [
+    1.8232163556675118e-09,
+    6.750330783233949e-08,
+    0.055293008685112,
+    0.9984701871871948
+   ],
+   "s": [
+    0.9999999403953552,
+    0.9999996423721313,
+    1
+   ]
+  },
+  "wrist.r": {
+   "parent": "lowerarm.r",
+   "t": [
+    -1.183772813106998e-08,
+    0.6241049766540527,
+    9.973177839128766e-11
+   ],
+   "r": [
+    3.8507641519913705e-11,
+    5.476271658366727e-10,
+    -0.026658104732632637,
+    0.9996446967124939
+   ],
+   "s": [
+    0.9999999403953552,
+    1,
+    1
+   ]
+  },
+  "hand.r": {
+   "parent": "wrist.r",
+   "t": [
+    4.600764214046649e-13,
+    0.17718170583248138,
+    -4.440892098500626e-16
+   ],
+   "r": [
+    6.30748564489636e-09,
+    -1.0316318110881184e-07,
+    1.7522536381875398e-06,
+    1
+   ],
+   "s": null
+  },
+  "handslot.r": {
+   "parent": "hand.r",
+   "t": [
+    -2.40029773834749e-10,
+    0.23070047795772552,
+    -0.1379997730255127
+   ],
+   "r": [
+    5.0680677432524135e-09,
+    -5.068066855073994e-09,
+    0.7071068286895752,
+    0.7071067094802856
+   ],
+   "s": null
+  }
+ },
+ "diffVsRef": {
+  "ref": "inputs/OrcBrute.glb",
+  "nodesAdded": [
+   "KFB_Eye_L_anchor",
+   "KFB_Eye_R_anchor",
+   "KFB_OriginalEye_L",
+   "KFB_OriginalEye_R"
+  ],
+  "nodesRemoved": [],
+  "nodesTRSChanged": [],
+  "jointsSame": true,
+  "materialsRemoved": [],
+  "trianglesRef": 12314
+ }
+}

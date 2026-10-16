@@ -1,0 +1,98 @@
+{
+ "source": {
+  "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r1/inputs/FB_TEMPLATE_LOOK_v5b.glb",
+  "sha256": "0675942b99cae8d507bc7855cb9730e955fa66e5c0a8767a618c68986b772694",
+  "git": "kayfabizarro-publish 93abbf22 tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5b.glb"
+ },
+ "ears": {
+  "L": {
+   "meshyEar": "bite",
+   "verts": [
+    11362,
+    3002
+   ],
+   "tris": [
+    22720,
+    6000
+   ],
+   "scale": 2.781280383024265,
+   "v5bChainLength": 0.8727389092345419,
+   "headEntryParam": 0.0,
+   "stemMeshyUnits": 0.07,
+   "widthFactor": 0.8,
+   "rootTaper": 0.6,
+   "thicknessFactor": 0.8,
+   "meshyLength": 0.3425540679212527,
+   "bbox": [
+    [
+     -0.016,
+     1.8304,
+     -0.2612
+    ],
+    [
+     0.5792,
+     2.98,
+     0.0765
+    ]
+   ],
+   "jointsUsed": [
+    "head",
+    "ear.l.1",
+    "ear.l.2",
+    "ear.l.3"
+   ],
+   "v5bFacingInBone2": [
+    0.303,
+    -0.0,
+    0.953
+   ]
+  },
+  "R": {
+   "meshyEar": "plain",
+   "verts": [
+    11362,
+    3002
+   ],
+   "tris": [
+    22720,
+    6000
+   ],
+   "scale": 2.407896665612731,
+   "v5bChainLength": 0.872738874272635,
+   "headEntryParam": 0.0,
+   "stemMeshyUnits": 0.07,
+   "widthFactor": 0.8,
+   "rootTaper": 0.6,
+   "thicknessFactor": 0.8,
+   "meshyLength": 0.39567265816624814,
+   "bbox": [
+    [
+     -0.5227,
+     1.8674,
+     -0.2416
+    ],
+    [
+     -0.0213,
+     2.9484,
+     0.0736
+    ]
+   ],
+   "jointsUsed": [
+    "head",
+    "ear.r.1",
+    "ear.r.2",
+    "ear.r.3"
+   ],
+   "v5bFacingInBone2": [
+    -0.303,
+    -0.0,
+    0.953
+   ]
+  }
+ },
+ "out": {
+  "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r1/FB_TEMPLATE_LOOK_v5c_meshyears.glb",
+  "bytes": 925940,
+  "sha256": "f57735c3f87ba3c4d1ed21917b68c63778ef4c4cf7355a15ca51e009dc0b8817"
+ }
+}

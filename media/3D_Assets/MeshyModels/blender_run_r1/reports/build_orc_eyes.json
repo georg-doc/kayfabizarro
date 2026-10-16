@@ -1,0 +1,108 @@
+{
+ "source": {
+  "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r1/inputs/OrcBrute.glb",
+  "sha256": "ee4aecd0c60d72ab49e4028dc4a30b8445a00f8401988463bab5589f4be27c94",
+  "git": "kayfabizarro-publish bb/main ea603d31 blob 1b56aac3"
+ },
+ "headLoosePartsTotal": 34,
+ "eyeParts": {
+  "L": {
+   "verts": 40,
+   "tris": 66,
+   "centroid": [
+    0.1548,
+    3.5063,
+    0.6056
+   ],
+   "bboxMin": [
+    0.1092,
+    3.4522,
+    0.563
+   ],
+   "bboxMax": [
+    0.1948,
+    3.5604,
+    0.6361
+   ],
+   "joints": [
+    12
+   ]
+  },
+  "R": {
+   "verts": 40,
+   "tris": 66,
+   "centroid": [
+    -0.1548,
+    3.5063,
+    0.6056
+   ],
+   "bboxMin": [
+    -0.1948,
+    3.4522,
+    0.563
+   ],
+   "bboxMax": [
+    -0.1092,
+    3.5604,
+    0.6361
+   ],
+   "joints": [
+    12
+   ]
+  }
+ },
+ "headShellBoundaryLoops": 0,
+ "OrcBrute_Head": {
+  "verts": [
+   3314,
+   3234
+  ],
+  "tris": [
+   3824,
+   3692
+  ]
+ },
+ "anchors": {
+  "KFB_Eye_L_anchor": {
+   "headLocal": [
+    0.1548,
+    0.19057,
+    0.5866
+   ],
+   "world": [
+    0.1548,
+    3.5063,
+    0.5866
+   ],
+   "radius": 0.055,
+   "forward": [
+    0,
+    0,
+    1
+   ]
+  },
+  "KFB_Eye_R_anchor": {
+   "headLocal": [
+    -0.1548,
+    0.19057,
+    0.5866
+   ],
+   "world": [
+    -0.1548,
+    3.5063,
+    0.5866
+   ],
+   "radius": 0.055,
+   "forward": [
+    0,
+    0,
+    1
+   ]
+  }
+ },
+ "out": {
+  "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r1/OrcBrute.kfb-eyes.r1.glb",
+  "bytes": 780820,
+  "sha256": "1a0755530b71f168d144a0440abca4186b3b1ef28730d94541ea1e27d21d3fcf"
+ }
+}

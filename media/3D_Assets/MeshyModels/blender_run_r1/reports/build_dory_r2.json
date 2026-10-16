@@ -1,0 +1,133 @@
+{
+ "figure": "LadyDory",
+ "source": {
+  "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_alien_figures_toolbox_r1/LadyDory_RigMedium.toolbox.glb",
+  "sha256": "1543dd79ccf5886582e4c4a11c4a0819c5ad06a4e58956b3e786af80fc54b92c"
+ },
+ "mouthHole": {
+  "oldHoleLoopVerts": 117,
+  "outlineRadius_m": [
+   0.08935368190586823,
+   0.20867551604863
+  ],
+  "oldLoopRadiusMax_m": 0.1926420137642117,
+  "margin_m": 0.012,
+  "headTrianglesRemovedOrClipped": 872,
+  "clipVertices": 240,
+  "K": 16,
+  "ring_step": 0.009312621324619302,
+  "mono": true,
+  "nB": 184,
+  "fill_tris": 1854,
+  "dihedral": {
+   "fill_mean": 1.8842615421898736,
+   "fill_p99": 5.817992505707338,
+   "fill_max": 24.546615426092742,
+   "head_mean": 3.2534523118823175,
+   "head_p99": 19.82832835722931,
+   "min_area": 6.089940699287698e-06
+  },
+  "uvIsland": {
+   "rectPx": [
+    112.0,
+    176.0,
+    308.0,
+    1124.0
+   ],
+   "texelPerM": 840.0,
+   "rotated": true,
+   "islandPx": [
+    120.0,
+    184.0,
+    288.6862580503973,
+    514.9919435239848
+   ]
+  },
+  "boundaryColourStd": [
+   [
+    1.82,
+    2.61,
+    2.78
+   ],
+   [
+    0.52,
+    0.4,
+    0.43
+   ]
+  ],
+  "donorRectPx": [
+   1312,
+   244,
+   136,
+   244
+  ],
+  "taperCheckOldVertsMaxErr": 1.3671815395355225e-05,
+  "verts": [
+   25590,
+   26850
+  ],
+  "tris": [
+   47029,
+   48302
+  ],
+  "fillVerts": 1020,
+  "fillTris": 1854,
+  "skinJointsInFill": [
+   24
+  ]
+ },
+ "mouthPatchRemoved": {
+  "material": "LadyDory_Mund_Clay",
+  "verts": 3394,
+  "tris": 2223
+ },
+ "socket": {
+  "components": [
+   {
+    "k": 0,
+    "verts": 2664,
+    "meanDist_m": 0.1173
+   },
+   {
+    "k": 1,
+    "verts": 1649,
+    "meanDist_m": 0.1179
+   },
+   {
+    "k": 2,
+    "verts": 3904,
+    "meanDist_m": 0.0977
+   }
+  ],
+  "shell": 0,
+  "rim": 1,
+  "cupUnchanged": 2,
+  "axisOld": [
+   0.2956,
+   0.0611,
+   0.9533
+  ],
+  "axisNew": [
+   0.0,
+   -0.0,
+   1.0
+  ],
+  "rotationDeg": 17.57088888399023,
+  "shellCentreAfter_minus_anchor_mm": [
+   0.002,
+   0.0,
+   0.0
+  ],
+  "anchorWorldForward": [
+   0.0,
+   0.0,
+   1.0
+  ],
+  "taperDeltaMax": 0.0
+ },
+ "out": {
+  "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r1/LadyDory_RigMedium.toolbox.r2.glb",
+  "bytes": 4712176,
+  "sha256": "8fd70fc56f1fcc6e007e6c852595e505a92b9bf22be4f73d395bb474a9c76a0c"
+ }
+}

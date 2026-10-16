@@ -1,0 +1,797 @@
+{
+ "schema": "kfb.pets/1",
+ "version": 1,
+ "meta": {
+  "exportedBy": "WS0 · alien figures toolbox r1 (built from parts, not a ToolBox export)",
+  "exportedAt": "2026-10-15T00:00:00Z",
+  "fields": "eye · brow · nose · moustache · mouth · color · parts · lids · clayLids · body use the FB v5b / face-mount.v1 names; eyes[] · eyeHost · dangle · neckRing · headPart are new (kfb.headpart/1)",
+  "actor": "ladydory-headpart-r1",
+  "glb": "LadyDory_RigMedium.toolbox.glb",
+  "roster": {
+   "id": "ladydory-headpart-r1",
+   "kind": "headpart",
+   "label": "Lady Dory · Space Ranger",
+   "section": "Frankenstein",
+   "swatch": "#fb650e",
+   "rig": "Rig_Medium"
+  },
+  "sources": {
+   "headPartJson": {
+    "file": "_alien_head_parts_r1/LadyDory_Head.part.json",
+    "sha256": "2c521bca5c278889319aa663f5fd1db338de564d6b2a170e018156102296f54e"
+   },
+   "contract": {
+    "file": "_alien_head_parts_r1/vendor/kfb-pet-graft-driver.v4.json",
+    "sha256": "a24db2de1d400ff8e0f2a83fe92e875309b6d29c9ed7fb15881a50a5245ab6c2"
+   },
+   "build": {
+    "body": {
+     "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_alien_head_parts_r1/_work/src/SpaceRanger.glb",
+     "sha256": "302f8aef4af43d0fb00abe8f7a237fbdf5baed356c8c11efe5e038f3177ca854"
+    },
+    "suitTexture": {
+     "from": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_frankenstein_poc/LadyDory_Frankenstein_RigMedium.glb",
+     "image": "spaceranger_dory",
+     "sha256": "78ce2519e3c5437b07a80063ff0e3f48b4fd7b3d4ac2782b9643f58d0c94d78d",
+     "fkGlbSha256": "7e3793f174eb98a1fda6f3539f9856dd111142cbb97c5c6b5e8e4bb506c254e7"
+    },
+    "headPart": {
+     "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_alien_head_parts_r1/LadyDory_Head.part.glb",
+     "sha256": "4fa6e7cdb6a6a19aafd83287fea3a5036612b3c64993a14f2948cbf15a134a99"
+    },
+    "headPartJson": {
+     "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_alien_head_parts_r1/LadyDory_Head.part.json",
+     "sha256": "2c521bca5c278889319aa663f5fd1db338de564d6b2a170e018156102296f54e"
+    }
+   }
+  },
+  "r2": {
+   "by": "WS0 Blender run R1 2026-10-16",
+   "changes": [
+    "source.glb/sha256/bytes -> r2 file (commit: WS0 fills in after push)",
+    "eyes[0].quat [-0.03096, 0.14135, 0, 0.98948] -> [0,0,0,1], gaze [0.27972, 0.06127, 0.95813] -> [0,0,1] (socket now coaxial + frontal)"
+   ],
+   "note": "mouth.path stays relative to the ToolBox asset folder (mouths/A|B/), unchanged."
+  }
+ },
+ "eyeRig": {
+  "anchorDefault": {
+   "dx": 0.345,
+   "dy": -0.1,
+   "ring": 0.3,
+   "track": 0.1
+  },
+  "pupilSize": 0.4,
+  "inset": 0,
+  "lidFit": 0.9,
+  "converge": 0,
+  "lids": {
+   "upper": true,
+   "lower": true
+  },
+  "eyelidColor": "base-darkened",
+  "pupilStyles": [
+   "matte-cute",
+   "glossy-googly"
+  ],
+  "gloss": {
+   "matte-cute": 0.1,
+   "glossy-googly": 0.85
+  },
+  "fx": [
+   "none",
+   "spiral",
+   "heart"
+  ],
+  "blink": {
+   "minGap": 2.5,
+   "maxGap": 6.5,
+   "dur": 0.12
+  },
+  "recolorDefault": "#f2c93c",
+  "note": "KORR v2 (Feedback FEEDBACK_v1_to_v2.md): glossy-googly = GROESSERE + GLAENZENDE Pupillen (NICHT herausstehende Kugeln ueber den Lidern!) via pupilSize + gloss, gleiche Geometrie. pupilSize = Default-Pupillengroesse (Slider). inset = Augen tiefer in den Koerper (Slider). lidFit = wie eng die Lider die Eyeballs umschliessen (kleiner Sicherheitsabstand ok; Pupille MUSS innerhalb bleiben = KEIN Clipping). eyelidColor = abgedunkelte Base-Color des Pets. track = Pupillen-Blickwanderung (in v1 unklar/unsichtbar -> klar labeln oder streichen)."
+ },
+ "face": {
+  "_reiter": "Gesicht",
+  "eye": {
+   "dx": 0.345,
+   "dy": -0.1,
+   "ring": 0.3,
+   "track": 0.1,
+   "inset": 0,
+   "lidFit": 0.9,
+   "converge": 0,
+   "lids": {
+    "upper": true,
+    "lower": true
+   },
+   "eyelidColor": "base-darkened",
+   "recolorDefault": "#f2c93c",
+   "blink": {
+    "minGap": 2.5,
+    "maxGap": 6.5,
+    "dur": 0.12
+   },
+   "fx": [
+    "none",
+    "spiral",
+    "heart"
+   ],
+   "note": "KORR v2 (Feedback FEEDBACK_v1_to_v2.md): glossy-googly = GROESSERE + GLAENZENDE Pupillen (NICHT herausstehende Kugeln ueber den Lidern!) via pupilSize + gloss, gleiche Geometrie. pupilSize = Default-Pupillengroesse (Slider). inset = Augen tiefer in den Koerper (Slider). lidFit = wie eng die Lider die Eyeballs umschliessen (kleiner Sicherheitsabstand ok; Pupille MUSS innerhalb bleiben = KEIN Clipping). eyelidColor = abgedunkelte Base-Color des Pets. track = Pupillen-Blickwanderung (in v1 unklar/unsichtbar -> klar labeln oder streichen)."
+  },
+  "pupil": {
+   "form": "googly",
+   "forms": [
+    "googly",
+    "cap",
+    "flach"
+   ],
+   "gloss": 0.85,
+   "glossPresets": {
+    "matte-cute": 0.1,
+    "glossy-googly": 0.85
+   },
+   "size": 0.4,
+   "note": "form = Geometrie (Rig _capAngle). gloss = Oberflaeche. Frueher als pupilStyles vermischt."
+  },
+  "emotes": {
+   "neutral": {
+    "lidUpper": -0.4,
+    "lidLower": 0,
+    "slant": 0,
+    "pupil": "normal",
+    "gaze": [
+     0,
+     0
+    ]
+   },
+   "happy": {
+    "lidUpper": 0,
+    "lidLower": 0.3,
+    "slant": 0,
+    "pupil": "normal",
+    "gaze": [
+     0,
+     0
+    ]
+   },
+   "angry": {
+    "lidUpper": 0.25,
+    "lidLower": 0.1,
+    "slant": -0.4,
+    "pupil": "normal",
+    "gaze": [
+     0,
+     0
+    ]
+   },
+   "sad": {
+    "lidUpper": 0.15,
+    "lidLower": 0.05,
+    "slant": 0.35,
+    "pupil": "normal",
+    "gaze": [
+     0,
+     -0.85
+    ]
+   },
+   "surprised": {
+    "lidUpper": -0.2,
+    "lidLower": -0.1,
+    "slant": 0,
+    "pupil": "wide",
+    "gaze": [
+     0,
+     0
+    ]
+   },
+   "thinking": {
+    "lidUpper": 0.4,
+    "lidLower": 0,
+    "slant": 0.05,
+    "pupil": "normal",
+    "gaze": [
+     0.9,
+     0.2
+    ]
+   }
+  },
+  "emoteNote": "Werte 0..1 (Lid = geschlossen-Anteil; negativ = weiter geoeffnet). slant negativ = down-in (angry), positiv = up-out (sad). Der Editor tunt die exakten Werte live; die IDs sind das STABILE Vokabular, das die Apps triggern. Keine Muender - Augen/Lider tragen die Emotion.",
+  "drift": {
+   "speed": 0.09,
+   "tremor": 0.045,
+   "tremorHz": 5,
+   "pair": [
+    "neutral",
+    "thinking"
+   ]
+  },
+  "react": {
+   "smoothTime": 0.16,
+   "hardTime": 0.03,
+   "hold": 1.5
+  },
+  "mouth": {
+   "src": "FrizzelBob-Mouth_01 (GitHub raw, 12 Viseme + Smile/Neutral)",
+   "size": 0.44,
+   "dy": -0.52,
+   "rate": 1,
+   "restMap": {
+    "neutral": "neutral",
+    "happy": "smile",
+    "angry": "s",
+    "sad": "m",
+    "surprised": "oh",
+    "thinking": "woo"
+   },
+   "_note": "Globaler Rueckfall. Pro Pet gewinnt pets[].mouth aus dem v9-Export."
+  },
+  "geometrie": {
+   "note": "Kenneys Gesicht ist GEOMETRIE im body-Mesh, keine Textur. Die colormap ist ein reiner Palette-Atlas aus Farbstreifen, sie enthaelt kein gemaltes Gesicht. hideEyes im Editor v4 warf nur die Textur weg, die Schalen blieben stehen und zeigten sich weiter ueber die Schattierung. Vermessen von Cowork am 2026-07-16.",
+   "stripEyes": true,
+   "eyeShell": {
+    "rule": "Im body-Mesh: getrennte Schalen (connected components). Genommen wird das Paar mit zPlane, minTris und gespiegelten X-Bereichen. Ergibt bei allen 24 Pets exakt 2 Schalen.",
+    "zPlane": 0.635,
+    "zTolerance": 0.002,
+    "minTris": 25,
+    "symmetricPair": true,
+    "verified": "24 von 24 Pets, 2026-07-16, Dreiecke je Auge 25 bis 57",
+    "doNotMatch": "Nasenloecher von cow, hog, pig liegen bei Z=0.835 mit je 2 Dreiecken. Mittige Schalen (Mund, Nase) spannen X ueber Null und sind kein Paar. Beide fallen durch minTris bzw. symmetricPair."
+   },
+   "stripSnout": {
+    "note": "KEINE Regel moeglich. Dieselbe Suche, die den Mund des bunny findet, findet die Maehne des lion (124 Dreiecke), den Schnabel von chick und penguin (32), den Ruessel des elephant (38), die Schnauze von dog (46), hog und koala (44). cow, crab und pig haben gar keine mittige Front-Schale. Deshalb: pro Pet von Hand, Liste leer = nichts wird geloescht.",
+    "perPet": {}
+   },
+   "facet": false
+  },
+  "note": "Kenneys Gesicht ist GEOMETRIE im body-Mesh, keine Textur. Die colormap ist ein reiner Palette-Atlas aus Farbstreifen, sie enthaelt kein gemaltes Gesicht. hideEyes im Editor v4 warf nur die Textur weg, die Schalen blieben stehen und zeigten sich weiter ueber die Schattierung. Vermessen von Cowork am 2026-07-16.",
+  "stripEyes": true,
+  "eyeShell": {
+   "rule": "Im body-Mesh: getrennte Schalen (connected components). Genommen wird das Paar mit zPlane, minTris und gespiegelten X-Bereichen. Ergibt bei allen 24 Pets exakt 2 Schalen.",
+   "zPlane": 0.635,
+   "zTolerance": 0.002,
+   "minTris": 25,
+   "symmetricPair": true,
+   "verified": "24 von 24 Pets, 2026-07-16, Dreiecke je Auge 25 bis 57",
+   "doNotMatch": "Nasenloecher von cow, hog, pig liegen bei Z=0.835 mit je 2 Dreiecken. Mittige Schalen (Mund, Nase) spannen X ueber Null und sind kein Paar. Beide fallen durch minTris bzw. symmetricPair."
+  },
+  "stripSnout": {
+   "note": "KEINE Regel moeglich. Dieselbe Suche, die den Mund des bunny findet, findet die Maehne des lion (124 Dreiecke), den Schnabel von chick und penguin (32), den Ruessel des elephant (38), die Schnauze von dog (46), hog und koala (44). cow, crab und pig haben gar keine mittige Front-Schale. Deshalb: pro Pet von Hand, Liste leer = nichts wird geloescht.",
+   "perPet": {}
+  },
+  "facet": false
+ },
+ "mouth": {
+  "src": "FrizzelBob-Mouth_01 (GitHub raw)"
+ },
+ "pets": [
+  {
+   "id": "ladydory-headpart-r1",
+   "name": "Lady Dory · Space Ranger",
+   "kind": "biped",
+   "module": "HeadPart",
+   "variant": "headpart-r1",
+   "source": {
+    "glb": "LadyDory_RigMedium.toolbox.r2.glb",
+    "commit": null,
+    "sha256": "8fd70fc56f1fcc6e007e6c852595e505a92b9bf22be4f73d395bb474a9c76a0c",
+    "bytes": 4712176,
+    "reader": "ToolBox kind \"headpart\" (new, WSA) · reference loader _work/proof.html",
+    "head": "head",
+    "rigFamily": "Rig_Medium",
+    "_note": "glb/commit: WSA fills the repo path + pinned commit after upload (asset branch). Local file name given.",
+    "branch": "assets/kfb-alien-figures-toolbox-2026-10-15",
+    "repo": "georg-doc/kayfabizarro"
+   },
+   "color": "#fca840",
+   "eye": {
+    "anchor": {
+     "dx": 0,
+     "dy": 0,
+     "ring": 0.3,
+     "track": 0.1
+    },
+    "pupilStyle": "matte-cute",
+    "pupilSize": 0.4,
+    "gloss": 0.1,
+    "lidFit": 0.9,
+    "inset": 0,
+    "converge": 0,
+    "splay": 0,
+    "socket": "anchor",
+    "turn": 0,
+    "turnFine": {
+     "l": 0,
+     "r": 0
+    },
+    "lashes": {
+     "length": 0,
+     "density": 6,
+     "width": 1
+    },
+    "oval": null,
+    "sclera": null,
+    "pupil": null,
+    "life": {
+     "wander": 0.09,
+     "tremor": 0.045
+    },
+    "blink": {
+     "minGap": 2.5,
+     "maxGap": 6.5,
+     "dur": 0.12
+    },
+    "baseColor": "#fca840",
+    "_note": "socket \"anchor\" (new): EyeRig v6 eyes sit on eyes[] (KFB_Eye_*_anchor), not on the FaceHost ellipsoid. anchor.dx/ring are the Claude Design values that size the eye via the proxy box in eyeHost."
+   },
+   "eyes": [
+    {
+     "side": "C",
+     "rigIndex": 0,
+     "anchorNode": "KFB_Eye_C_anchor",
+     "bone": "eyestalk.c",
+     "cdKey": "eyeL",
+     "pos": [
+      -0.03102,
+      0.72464,
+      -0.00679
+     ],
+     "quat": [
+      0,
+      0,
+      0,
+      1
+     ],
+     "scale": 1,
+     "R": 0.15406,
+     "gaze": [
+      0,
+      0,
+      1
+     ],
+     "socketColour": "#fb650e",
+     "shellRadius": 0.15621
+    }
+   ],
+   "eyeHost": {
+    "frame": "L = node LadyDory_Head (EyeRig host = Group directly under it, no own matrix)",
+    "proxy": {
+     "name": "body",
+     "box": [
+      [
+       -0.33915,
+       0.21109,
+       -0.27794
+      ],
+      [
+       0.27711,
+       1.23818,
+       0.03019
+      ]
+     ],
+     "note": "unsichtbarer Quader »body« wie Claude Design app.js buildEyes: Höhe 2U legt R = U·ring fest"
+    },
+    "lidColour": "#fb650e",
+    "singleEye": true,
+    "afterBuild": {
+     "place": "e.position = pos_S, e.scale = scale_S, e.rotation.y = ±splay (Regler opt.splay = 0°); Auge 0 Blick auf gaze_S drehen, Auge 1 unsichtbar",
+     "emote": {
+      "lidUpper": -0.4,
+      "lidLower": 0,
+      "slant": 0,
+      "pupil": "normal",
+      "gaze": [
+       0,
+       0
+      ]
+     },
+     "life": {
+      "on": true,
+      "wander": 0.09,
+      "tremor": 0.045
+     }
+    },
+    "place": "nach rig.build(): eye[i].position = eyes[i].pos, eye[i].scale = eyes[i].scale, rotation.y = 0; Lady Dory: eye[0] auf gaze drehen (setFromUnitVectors(+Z, gaze)), eye[1].visible = false"
+   },
+   "brow": {
+    "enabled": false,
+    "status": "later (V-297)",
+    "anchors": [
+     "KFB_Brow_C_anchor"
+    ],
+    "points": [
+     {
+      "bone": "eyestalk.c",
+      "pos": [
+       -0.03102,
+       0.928,
+       0.03173
+      ],
+      "radius": 0.15406,
+      "size": "klein und dünn",
+      "rule": "Vorschlag: Augenmitte + (0, 1,32 R, 0,25 R); genaue Lage liefert EyeRig v6 eyeFrame() zur Laufzeit"
+     }
+    ],
+    "hint": "EyeRig v6 eyeFrame() liefert Augenlage + Radius als öffentlichen Anker für Brauen"
+   },
+   "nose": {
+    "enabled": false
+   },
+   "moustache": {
+    "enabled": false
+   },
+   "mouth": {
+    "set": "MOUTHS_GPT_R2/A",
+    "type": "A",
+    "path": "mouths/A/",
+    "upperLift": 0.35,
+    "upperLiftBaked": true,
+    "rest": "closed",
+    "default": "smile_closed",
+    "emoteMap": {
+     "neutral": "smile_closed",
+     "happy": "smile_teeth",
+     "angry": "ee_wide",
+     "sad": "mbp",
+     "surprised": "surprised_tall",
+     "blink": "smile_closed",
+     "thinking": "oo"
+    },
+    "visemeMap": {
+     "closed": "closed",
+     "open": "ah",
+     "wide": "ee_wide",
+     "round": "oh",
+     "smile": "smile_closed",
+     "small": "small_open",
+     "mbp": "mbp",
+     "oo": "oo",
+     "teeth": "teeth_small"
+    },
+    "anchorNode": "KFB_Mouth_anchor",
+    "bone": "head_part",
+    "centre": [
+     0.03425,
+     0.24828,
+     0.36326
+    ],
+    "normal": [
+     0.1137,
+     0.1056,
+     0.9879
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "width": 0.24069,
+    "canvasAnchor": [
+     256,
+     220
+    ],
+    "decal": "DecalGeometry auf das Kopfnetz in Ruhepose; Grösse = width · Weltmassstab · canvas[0] / closed_width_px (anchors.json); Mitte um (canvas[1]/2 − anchor.y)/canvas[1] · Grösse nach unten versetzt; Ausrichtung: Projektionsrichtung = −normal, oben = up",
+    "_note": "centre/normal/up/width in L. rest = talk pause (\"Zu\", V-243); default = neutral expression. Decal is projected after the final headScale/headOffset/neckTaper and rebuilt when they change."
+   },
+   "parts": {
+    "eyes": "rig",
+    "brows": "off",
+    "nose": "off",
+    "mouth": "rig"
+   },
+   "original": {},
+   "body": {
+    "schema": "kfb.body-shape/0.1",
+    "reader": "kfb-lib/body-shape.v1.js",
+    "girth": 1,
+    "arms": 1,
+    "legs": 1,
+    "legLen": 1,
+    "torsoLen": 1
+   },
+   "lids": {
+    "schema": "kfb.eyerig-lids/0.1",
+    "use": false,
+    "_note": "NOT USED for headpart figures. No ToolBox lid flaps over the eye. Lids = EyeRig v6 lid shells INSIDE the baked socket shell (see eyeSocket)."
+   },
+   "clayLids": {
+    "schema": "kfb.clay-lids/0.1",
+    "on": false,
+    "_note": "MUST stay off for headpart figures (Georg 16.10.): the approved look is the socket-style enclosure, not two flaps over the lid."
+   },
+   "dangle": {
+    "schema": "kfb.headpart-dangle/0.1",
+    "reader": "kfb-lib/ear-dangle.v1.js#DangleChain",
+    "readerSha256": "3d7626bbb07667d7236bfdbbd7732db917d124880552ebbedfdb04f33a2b0046",
+    "groups": {
+     "antenna": {
+      "stiffness": [
+       26
+      ],
+      "damping": [
+       3.2
+      ],
+      "maxDeg": [
+       32
+      ],
+      "inertia": 0.02,
+      "spin": 0.06,
+      "bob": 4,
+      "bobHz": 0.8,
+      "elastic": 0,
+      "gravity": 0
+     },
+     "stalk": {
+      "stiffness": [
+       45
+      ],
+      "damping": [
+       5.5
+      ],
+      "maxDeg": [
+       18
+      ],
+      "inertia": 0.016,
+      "spin": 0.05,
+      "bob": 2.5,
+      "bobHz": 0.55,
+      "elastic": 0,
+      "gravity": 0
+     }
+    },
+    "parts": [
+     {
+      "id": "antenna.r",
+      "kind": "antenna",
+      "bone": "antenna.r",
+      "stiffness": [
+       26
+      ],
+      "damping": [
+       3.2
+      ],
+      "maxDeg": [
+       32
+      ],
+      "inertia": 0.02,
+      "spin": 0.06,
+      "bob": 4,
+      "bobHz": 0.8,
+      "elastic": 0,
+      "gravity": 0,
+      "eyeFollows": false,
+      "eyeIndex": null,
+      "pivot": [
+       -0.2656,
+       0.39664,
+       0.02099
+      ],
+      "length": 0.37615,
+      "threeName": "antennar",
+      "side": "R",
+      "_sideNote": "DangleChain side comes from THIS field, never from the three.js node name (sanitizeNodeName drops the dot: eyestalk.r -> eyestalkr, so a /\\.r$/ test fails and both stalks become 'L' -> the right stalk bends the wrong way). Capture rest quaternion q0 after load, before the first dangle step."
+     },
+     {
+      "id": "antenna.l",
+      "kind": "antenna",
+      "bone": "antenna.l",
+      "stiffness": [
+       26
+      ],
+      "damping": [
+       3.2
+      ],
+      "maxDeg": [
+       32
+      ],
+      "inertia": 0.02,
+      "spin": 0.06,
+      "bob": 4,
+      "bobHz": 0.8,
+      "elastic": 0,
+      "gravity": 0,
+      "eyeFollows": false,
+      "eyeIndex": null,
+      "pivot": [
+       0.27303,
+       0.39069,
+       0.01416
+      ],
+      "length": 0.39109,
+      "threeName": "antennal",
+      "side": "L",
+      "_sideNote": "DangleChain side comes from THIS field, never from the three.js node name (sanitizeNodeName drops the dot: eyestalk.r -> eyestalkr, so a /\\.r$/ test fails and both stalks become 'L' -> the right stalk bends the wrong way). Capture rest quaternion q0 after load, before the first dangle step."
+     },
+     {
+      "id": "eyestalk.c",
+      "kind": "stalk",
+      "bone": "eyestalk.c",
+      "stiffness": [
+       45
+      ],
+      "damping": [
+       5.5
+      ],
+      "maxDeg": [
+       18
+      ],
+      "inertia": 0.016,
+      "spin": 0.05,
+      "bob": 2.5,
+      "bobHz": 0.55,
+      "elastic": 0,
+      "gravity": 0,
+      "eyeFollows": true,
+      "eyeIndex": 1,
+      "pivot": [
+       0.00061,
+       0.4638,
+       0.00336
+      ],
+      "length": 0.10831,
+      "threeName": "eyestalkc",
+      "side": "L",
+      "_sideNote": "DangleChain side comes from THIS field, never from the three.js node name (sanitizeNodeName drops the dot: eyestalk.r -> eyestalkr, so a /\\.r$/ test fails and both stalks become 'L' -> the right stalk bends the wrong way). Capture rest quaternion q0 after load, before the first dangle step."
+     }
+    ],
+    "eyeFollow": "Auge folgt seinem Stielknochen: qd = bone.quaternion · q0⁻¹; eye.position = pivot + qd·(eyes[i].pos − pivot); eye.quaternion = qd · Ruhe-Quaternion (wie Claude Design app.js dangleApply)",
+    "_note": "one DangleChain per bone, params per part (stalk != antenna). Step after mixer.update(dt).",
+    "restCheck": "At rest (Idle_A, no push) both stalks/antennae must stand mirror-symmetric to their rest pose in the GLB; max deviation 2 deg."
+   },
+   "neckRing": {
+    "enabled": false,
+    "radius": 0.1656,
+    "ellipse": {
+     "rx": 0.167,
+     "rz": 0.1609
+    },
+    "tube": 0.056,
+    "y": 0.0,
+    "colour": "#e76138",
+    "note": "Wulst aus r1/_frankenstein_poc (dort am Brustknochen und zu weit vorn). Standard AUS: der Kopf steckt im Kragen des Anzugs. Nur für Körper ohne eigenen Kragen."
+   },
+   "headPart": {
+    "schema": "kfb.headpart/1",
+    "partId": "LadyDory_Head",
+    "root": "LadyDory_Head",
+    "rigidJoint": "head_part",
+    "mesh": "LadyDory_Head_mesh",
+    "anchors": [
+     "KFB_Eye_C_anchor",
+     "KFB_Mouth_anchor",
+     "KFB_Brow_C_anchor"
+    ],
+    "frame": {
+     "name": "L",
+     "origin": "Mitte der Halsschnitt-Schleife (wo der Kopf in den Kragen geht)",
+     "up": "+Y",
+     "forward": "+Z",
+     "units": "m",
+     "scale": "S = Meshy-GLB-Raum, in dem Claude Design gemessen hat (r1-Montage war S × 1.4291)",
+     "fromS": "L = S − neckBase.centre_S (nur Verschiebung, keine Drehung, keine Skalierung)"
+    },
+    "attachBone": "head",
+    "hideBodyNodes": [],
+    "_hideNote": "SpaceRanger_Head is not in the GLB.",
+    "tunables": {
+     "headScale": {
+      "value": 1.0,
+      "default": 0.751,
+      "min": 0.45,
+      "max": 1.4,
+      "step": 0.005,
+      "apply": "node(root).scale.setScalar(v)",
+      "label": "Kopf · Größe"
+     },
+     "headOffset": {
+      "value": [
+       0.0,
+       -0.1315,
+       0.01614
+      ],
+      "default": [
+       0.0,
+       -0.1315,
+       0.01614
+      ],
+      "min": [
+       -0.15,
+       -0.25,
+       -0.15
+      ],
+      "max": [
+       0.15,
+       0.1,
+       0.15
+      ],
+      "step": 0.001,
+      "apply": "node(root).position.set(x, y, z)  (head bone frame, m)",
+      "label": "Kopf · Lage x/y/z"
+     },
+     "neckTaper": {
+      "value": 0.0,
+      "default": 0,
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "apply": "every primitive of node(mesh): morphTargetInfluences[morphTargetDictionary.neckTaper] = v",
+      "label": "Hals · Verjüngung",
+      "radiusAtCut": "1 - 0.40 * v",
+      "kAtOne": 0.6,
+      "band": 0.15,
+      "bandL_m": 0.13212,
+      "auto": {
+       "maxScaleWithoutTaper": 1.181,
+       "formula": "neckTaper >= clamp((1 - 1.181 / headScale) / 0.40, 0, 1)",
+       "meaning": "smallest taper that keeps the neck-cut loop inside the collar outer edge at this headScale (same rule as defaultFit)"
+      }
+     }
+    },
+    "applyOrder": "after mixer.update(dt) and after any Skeleton.pose(): set root position/scale from headScale/headOffset each frame (pose() resets every bone to bind, incl. the root)",
+    "scaleRange": {
+     "minNoGap": 0.5,
+     "maxNeckBaseInsideCollar": 1.181,
+     "headFullyInsideRoll": null,
+     "note": "bei derselben Position. Unter minNoGap öffnet sich ein Spalt zur Kragenöffnung; über maxNeckBaseInsideCollar sitzt der Halsschnitt auf statt im Kragen."
+    },
+    "collar": {
+     "frame": "head bone local (Rig_Medium head, rest; glTF axes: +Y up, +Z forward; origin = head bone head, world y 1.24143)",
+     "openingCentre_hb": [
+      0.0,
+      -0.0289,
+      0.0161
+     ],
+     "innerEdge": {
+      "note": "white collar meets the grey bowl = narrowest opening",
+      "rx": 0.1169,
+      "rzFront": 0.1409,
+      "rzBack": 0.1409,
+      "rMin": 0.117,
+      "rMax": 0.1479,
+      "yFront": -0.0765,
+      "ySide": 0.0038,
+      "yBack": -0.0366,
+      "yMin": -0.0765,
+      "yMax": 0.0044
+     },
+     "ridge": {
+      "note": "top of the white roll",
+      "rMin": 0.1474,
+      "rMax": 0.1822,
+      "yFront": -0.042,
+      "ySide": 0.0437,
+      "yBack": -0.0029
+     },
+     "ridgeOuter": {
+      "rMin": 0.1786,
+      "rMax": 0.2124
+     },
+     "outerEdge": {
+      "note": "white collar meets the orange suit",
+      "rMin": 0.1887,
+      "rMax": 0.2116,
+      "yFront": -0.1228,
+      "ySide": 0.0076
+     }
+    },
+    "checks_mm": {
+     "openingCoveredMin": 36.1,
+     "neckBaseToOuterEdgeMin": 73.8,
+     "headOverlapsRollTop": 152.13,
+     "note": "openingCoveredMin > 0: Kopfoberfläche liegt auf Höhe der Kragen-Innenkante rundum ausserhalb der Öffnung (kein Loch). headOverlapsRollTop: so weit legt sich der Kopf an der engsten Stelle über den Kragenwulst."
+    },
+    "rule": "Lord Hunky: groesste Skala, bei der die Halsschnitt-Schleife noch 8 mm innerhalb der Aussenkante des weissen Kragens liegt; Lady Dory: derselbe Faktor gegenueber r1 (Groessenverhaeltnis der Figuren bleibt). Hals-Ebene so tief wie noetig, mindestens 20 mm unter der tiefsten Innenkante (vorn), bis die Oeffnung rundum >= 3 mm ueberdeckt ist.",
+    "notes": [
+     "WS0 15.10.: Startwert Kopfgröße 1,0 (Hunky mit auto-Verjüngung 0,655), weil 0,73 neben FrizzleBob zu klein wirkt; default = gemessene Kragen-Passung."
+    ]
+   },
+   "eyeSocket": {
+    "approved": "FrankenEyes R1, Georg 15.10.: 'die Augen-Einfassung ist gut gelungen'",
+    "baked": true,
+    "geometry": "Claude Design repair baked into the head mesh: neck loft from the stalk + spherical socket shell radius 1.10 R, front opening 58 deg, rolled rim 0.075 R, socket colour = stalk colour (socketColour per eye). Do not hide, replace or cover it.",
+    "lids": "EyeRig v6 lid shells, makeMat clay with lidColour (stalk tone x 0.72), lidFit 0.9 (Dory); when open they slide UNDER the socket shell, when closed they fill the socket opening. Nothing sits on top of the socket.",
+    "reference": "media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/reference/ (face close-ups + expression sheets from FrankenEyes R1)"
+   }
+  }
+ ]
+}

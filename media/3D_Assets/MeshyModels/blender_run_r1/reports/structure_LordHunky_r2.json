@@ -1,0 +1,1024 @@
+{
+ "file": "LordHunky_RigMedium.toolbox.r2.glb",
+ "bytes": 4013940,
+ "extensionsRequired": [
+  "EXT_texture_webp"
+ ],
+ "animations": 0,
+ "hierarchy": [
+  {
+   "name": "Rig_Medium",
+   "children": [
+    {
+     "name": "LordHunky_Head_mesh",
+     "mesh": "LordHunky_Head_mesh",
+     "skin": 0
+    },
+    {
+     "name": "SpaceRanger_ArmLeft",
+     "mesh": "SpaceRanger_ArmLeft",
+     "skin": 0
+    },
+    {
+     "name": "SpaceRanger_ArmRight",
+     "mesh": "SpaceRanger_ArmRight",
+     "skin": 0
+    },
+    {
+     "name": "SpaceRanger_Body",
+     "mesh": "SpaceRanger_Body",
+     "skin": 0
+    },
+    {
+     "name": "SpaceRanger_LegLeft",
+     "mesh": "SpaceRanger_LegLeft",
+     "skin": 0
+    },
+    {
+     "name": "SpaceRanger_LegRight",
+     "mesh": "SpaceRanger_LegRight",
+     "skin": 0
+    },
+    {
+     "name": "root",
+     "children": [
+      {
+       "name": "hips",
+       "children": [
+        {
+         "name": "upperleg.r",
+         "children": [
+          {
+           "name": "lowerleg.r",
+           "children": [
+            {
+             "name": "foot.r",
+             "children": [
+              {
+               "name": "toes.r"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "upperleg.l",
+         "children": [
+          {
+           "name": "lowerleg.l",
+           "children": [
+            {
+             "name": "foot.l",
+             "children": [
+              {
+               "name": "toes.l"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "spine",
+         "children": [
+          {
+           "name": "chest",
+           "children": [
+            {
+             "name": "upperarm.r",
+             "children": [
+              {
+               "name": "lowerarm.r",
+               "children": [
+                {
+                 "name": "wrist.r",
+                 "children": [
+                  {
+                   "name": "hand.r",
+                   "children": [
+                    {
+                     "name": "handslot.r"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "name": "head",
+             "children": [
+              {
+               "name": "LordHunky_Head",
+               "children": [
+                {
+                 "name": "head_part",
+                 "children": [
+                  {
+                   "name": "eyestalk.l",
+                   "children": [
+                    {
+                     "name": "KFB_Eye_L_anchor"
+                    },
+                    {
+                     "name": "KFB_Brow_L_anchor"
+                    }
+                   ]
+                  },
+                  {
+                   "name": "eyestalk.r",
+                   "children": [
+                    {
+                     "name": "KFB_Eye_R_anchor"
+                    },
+                    {
+                     "name": "KFB_Brow_R_anchor"
+                    }
+                   ]
+                  },
+                  {
+                   "name": "KFB_Mouth_anchor"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "name": "upperarm.l",
+             "children": [
+              {
+               "name": "lowerarm.l",
+               "children": [
+                {
+                 "name": "wrist.l",
+                 "children": [
+                  {
+                   "name": "hand.l",
+                   "children": [
+                    {
+                     "name": "handslot.l"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "skin": {
+  "name": "Rig_Medium",
+  "joints": [
+   "root",
+   "hips",
+   "upperleg.r",
+   "lowerleg.r",
+   "foot.r",
+   "toes.r",
+   "upperleg.l",
+   "lowerleg.l",
+   "foot.l",
+   "toes.l",
+   "spine",
+   "chest",
+   "upperarm.r",
+   "lowerarm.r",
+   "wrist.r",
+   "hand.r",
+   "handslot.r",
+   "head",
+   "upperarm.l",
+   "lowerarm.l",
+   "wrist.l",
+   "hand.l",
+   "handslot.l",
+   "LordHunky_Head",
+   "head_part",
+   "eyestalk.l",
+   "eyestalk.r"
+  ],
+  "ibmMaxErr": 1.1516930410633563e-05
+ },
+ "meshes": [
+  {
+   "name": "SpaceRanger_ArmLeft",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "SpaceRanger_LordHunky",
+     "verts": 532,
+     "tris": 620,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 3.725290298461914e-08,
+     "jointsUsed": [
+      "hand.l",
+      "lowerarm.l",
+      "upperarm.l",
+      "wrist.l"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SpaceRanger_ArmRight",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "SpaceRanger_LordHunky",
+     "verts": 532,
+     "tris": 620,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 3.725290298461914e-08,
+     "jointsUsed": [
+      "hand.r",
+      "lowerarm.r",
+      "upperarm.r",
+      "wrist.r"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SpaceRanger_Body",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "SpaceRanger_LordHunky",
+     "verts": 1137,
+     "tris": 1010,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 4.470348358154297e-08,
+     "jointsUsed": [
+      "chest",
+      "hips",
+      "spine"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SpaceRanger_LegLeft",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "SpaceRanger_LordHunky",
+     "verts": 441,
+     "tris": 496,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 4.470348358154297e-08,
+     "jointsUsed": [
+      "foot.l",
+      "lowerleg.l",
+      "toes.l",
+      "upperleg.l"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SpaceRanger_LegRight",
+   "targetNames": null,
+   "primitives": [
+    {
+     "material": "SpaceRanger_LordHunky",
+     "verts": 441,
+     "tris": 496,
+     "attributes": [
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 3.5390257835388184e-08,
+     "jointsUsed": [
+      "foot.r",
+      "lowerleg.r",
+      "toes.r",
+      "upperleg.r"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "LordHunky_Head_mesh",
+   "targetNames": [
+    "neckTaper"
+   ],
+   "primitives": [
+    {
+     "material": "LordHunky_Head_Clay",
+     "verts": 15814,
+     "tris": 28096,
+     "attributes": [
+      "_CLAYSEED",
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 2.9802322387695312e-08,
+     "jointsUsed": [
+      "eyestalk.l",
+      "eyestalk.r",
+      "head_part"
+     ],
+     "morphTargets": 1
+    },
+    {
+     "material": "LordHunky_Sockel_R_Clay",
+     "verts": 8217,
+     "tris": 10688,
+     "attributes": [
+      "_CLAYSEED",
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 0.0,
+     "jointsUsed": [
+      "eyestalk.r"
+     ],
+     "morphTargets": 1
+    },
+    {
+     "material": "LordHunky_Sockel_L_Clay",
+     "verts": 8217,
+     "tris": 10688,
+     "attributes": [
+      "_CLAYSEED",
+      "POSITION",
+      "NORMAL",
+      "TEXCOORD_0",
+      "JOINTS_0",
+      "WEIGHTS_0"
+     ],
+     "weightSumMaxDev": 0.0,
+     "jointsUsed": [
+      "eyestalk.l"
+     ],
+     "morphTargets": 1
+    }
+   ]
+  }
+ ],
+ "trianglesTotal": 52714,
+ "anchors": {
+  "KFB_Eye_L_anchor": {
+   "parent": "eyestalk.l",
+   "world": [
+    0.27363,
+    1.67025,
+    0.17356
+   ],
+   "forward": [
+    -0.0,
+    -0.0,
+    1.0
+   ],
+   "up": [
+    0.0,
+    1.0,
+    -0.0
+   ],
+   "extras": null
+  },
+  "KFB_Eye_R_anchor": {
+   "parent": "eyestalk.r",
+   "world": [
+    -0.27363,
+    1.67025,
+    0.17356
+   ],
+   "forward": [
+    0.0,
+    -0.0,
+    1.0
+   ],
+   "up": [
+    -0.0,
+    1.0,
+    -0.0
+   ],
+   "extras": null
+  },
+  "KFB_Mouth_anchor": {
+   "parent": "head_part",
+   "world": [
+    0.0,
+    1.33142,
+    0.23879
+   ],
+   "forward": [
+    0.0,
+    -0.0,
+    1.0
+   ],
+   "up": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "extras": null
+  },
+  "KFB_Brow_R_anchor": {
+   "parent": "eyestalk.r",
+   "world": [
+    -0.27363,
+    1.78561,
+    0.19541
+   ],
+   "forward": [
+    0.75039,
+    0.47514,
+    0.45952
+   ],
+   "up": [
+    -0.65697,
+    0.45952,
+    0.59768
+   ],
+   "extras": {
+    "kfb": {
+     "kind": "eyebrowsLater",
+     "status": "nicht gebaut (Georg 15.10.: sp\u00e4ter)",
+     "radius": 0.12015,
+     "size": "dick"
+    }
+   }
+  },
+  "KFB_Brow_L_anchor": {
+   "parent": "eyestalk.l",
+   "world": [
+    0.27363,
+    1.78561,
+    0.19541
+   ],
+   "forward": [
+    -0.75039,
+    0.47514,
+    0.45952
+   ],
+   "up": [
+    0.65697,
+    0.45952,
+    0.59768
+   ],
+   "extras": {
+    "kfb": {
+     "kind": "eyebrowsLater",
+     "status": "nicht gebaut (Georg 15.10.: sp\u00e4ter)",
+     "radius": 0.11972,
+     "size": "dick"
+    }
+   }
+  }
+ },
+ "bonesRest": {
+  "root": {
+   "parent": "Rig_Medium",
+   "t": null,
+   "r": [
+    0,
+    1.1920927533992653e-07,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "hips": {
+   "parent": "root",
+   "t": [
+    0,
+    0.4056634306907654,
+    0
+   ],
+   "r": [
+    0,
+    -1.1920927533992653e-07,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "upperleg.r": {
+   "parent": "hips",
+   "t": [
+    -0.17094506323337555,
+    0.11358726024627686,
+    1.392327231286572e-08
+   ],
+   "r": [
+    0.9998490810394287,
+    7.426552173228629e-08,
+    -3.172627316416765e-08,
+    0.017373191192746162
+   ],
+   "s": [
+    1,
+    0.9999998211860657,
+    1.0000011920928955
+   ]
+  },
+  "lowerleg.r": {
+   "parent": "upperleg.r",
+   "t": [
+    -3.5798608521986353e-09,
+    0.22707749903202057,
+    -6.139392549897593e-09
+   ],
+   "r": [
+    0.1062251403927803,
+    -6.865224122520885e-08,
+    7.376965527328139e-08,
+    0.9943422079086304
+   ],
+   "s": [
+    1,
+    1.0000004768371582,
+    1.0000001192092896
+   ]
+  },
+  "foot.r": {
+   "parent": "lowerleg.r",
+   "t": [
+    -1.8315698957493964e-10,
+    0.14943702518939972,
+    9.667975309213261e-10
+   ],
+   "r": [
+    -0.45523902773857117,
+    1.6598181673543877e-07,
+    2.2507999908327747e-09,
+    0.8903692960739136
+   ],
+   "s": [
+    1,
+    1.0000008344650269,
+    0.9999987483024597
+   ]
+  },
+  "toes.r": {
+   "parent": "foot.r",
+   "t": [
+    2.1296139851578744e-10,
+    0.16565002501010895,
+    5.171931771741356e-09
+   ],
+   "r": [
+    2.1219781487502587e-08,
+    0.920354962348938,
+    -0.39108410477638245,
+    6.450591882867229e-08
+   ],
+   "s": [
+    1,
+    0.9999966025352478,
+    1.000003695487976
+   ]
+  },
+  "upperleg.l": {
+   "parent": "hips",
+   "t": [
+    0.17094506323337555,
+    0.11358726024627686,
+    1.392327231286572e-08
+   ],
+   "r": [
+    0.9998490810394287,
+    -7.132744173077299e-08,
+    -1.2042741914797261e-08,
+    0.017373191192746162
+   ],
+   "s": [
+    1,
+    0.9999998211860657,
+    1.0000011920928955
+   ]
+  },
+  "lowerleg.l": {
+   "parent": "upperleg.l",
+   "t": [
+    3.5798608521986353e-09,
+    0.22707749903202057,
+    -6.139392549897593e-09
+   ],
+   "r": [
+    0.1062251403927803,
+    6.865221990892678e-08,
+    -7.376966237870874e-08,
+    0.9943422079086304
+   ],
+   "s": [
+    1,
+    1.0000004768371582,
+    1.0000001192092896
+   ]
+  },
+  "foot.l": {
+   "parent": "lowerleg.l",
+   "t": [
+    1.8315821082026673e-10,
+    0.14943702518939972,
+    9.667923128731104e-10
+   ],
+   "r": [
+    -0.45523902773857117,
+    1.619774891992165e-08,
+    -3.435669881923786e-08,
+    0.8903692960739136
+   ],
+   "s": [
+    1,
+    1.0000008344650269,
+    0.9999987483024597
+   ]
+  },
+  "toes.l": {
+   "parent": "foot.l",
+   "t": [
+    -1.5114125062609673e-08,
+    0.16565002501010895,
+    5.1719273308492575e-09
+   ],
+   "r": [
+    4.7759868948560324e-08,
+    0.920354962348938,
+    -0.39108410477638245,
+    5.8015622528273525e-08
+   ],
+   "s": [
+    1,
+    0.9999966025352478,
+    1.000003695487976
+   ]
+  },
+  "spine": {
+   "parent": "hips",
+   "t": [
+    0,
+    0.19197750091552734,
+    0
+   ],
+   "r": [
+    0,
+    7.105427357601002e-15,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "chest": {
+   "parent": "spine",
+   "t": [
+    0,
+    0.37498795986175537,
+    0
+   ],
+   "r": [
+    0,
+    -8.470329472543003e-22,
+    0,
+    1
+   ],
+   "s": [
+    1,
+    0.9999999403953552,
+    1
+   ]
+  },
+  "upperarm.r": {
+   "parent": "chest",
+   "t": [
+    -0.21200737357139587,
+    0.13413214683532715,
+    8.40246201505579e-08
+   ],
+   "r": [
+    -0.514121413230896,
+    0.48546773195266724,
+    0.4854677617549896,
+    0.514121949672699
+   ],
+   "s": [
+    0.9999993443489075,
+    0.9999993443489075,
+    0.9999997615814209
+   ]
+  },
+  "lowerarm.r": {
+   "parent": "upperarm.r",
+   "t": [
+    -7.12192249618937e-11,
+    0.2418973296880722,
+    -1.1940561250867177e-07
+   ],
+   "r": [
+    1.4942596049394297e-09,
+    6.228115267958856e-08,
+    0.05528552085161209,
+    0.9984706044197083
+   ],
+   "s": [
+    1.000000238418579,
+    0.9999998807907104,
+    0.9999999403953552
+   ]
+  },
+  "wrist.r": {
+   "parent": "lowerarm.r",
+   "t": [
+    -7.426281811717672e-09,
+    0.26004382967948914,
+    6.127964108371131e-11
+   ],
+   "r": [
+    5.11842720984923e-11,
+    3.0773722459187525e-10,
+    -0.02665809914469719,
+    0.9996446967124939
+   ],
+   "s": [
+    0.9999999403953552,
+    0.9999999403953552,
+    0.9999999403953552
+   ]
+  },
+  "hand.r": {
+   "parent": "wrist.r",
+   "t": [
+    3.9968028886505635e-15,
+    0.07382583618164062,
+    -2.220446049250313e-16
+   ],
+   "r": [
+    1.199916277450086e-09,
+    -9.210968698880606e-08,
+    5.455195605463814e-06,
+    1
+   ],
+   "s": [
+    1,
+    0.9999999403953552,
+    0.9999999403953552
+   ]
+  },
+  "handslot.r": {
+   "parent": "hand.r",
+   "t": [
+    -5.138920400327152e-10,
+    0.09612506628036499,
+    -0.05750012397766113
+   ],
+   "r": [
+    1.6805922209428559e-09,
+    -1.6805921099205534e-09,
+    0.7071068286895752,
+    0.7071067094802856
+   ],
+   "s": [
+    0.9999999403953552,
+    1,
+    0.9999999403953552
+   ]
+  },
+  "head": {
+   "parent": "chest",
+   "t": [
+    0,
+    0.26879656314849854,
+    0
+   ],
+   "r": [
+    0,
+    4.235164736271502e-22,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "upperarm.l": {
+   "parent": "chest",
+   "t": [
+    0.21200737357139587,
+    0.13413214683532715,
+    8.40246201505579e-08
+   ],
+   "r": [
+    -0.5141214728355408,
+    -0.485467791557312,
+    -0.4854677617549896,
+    0.5141218900680542
+   ],
+   "s": [
+    0.9999993443489075,
+    0.9999993443489075,
+    0.9999997615814209
+   ]
+  },
+  "lowerarm.l": {
+   "parent": "upperarm.l",
+   "t": [
+    -3.219664312936743e-09,
+    0.24189729988574982,
+    -1.1940561250867177e-07
+   ],
+   "r": [
+    1.4942596049394297e-09,
+    -6.228115267958856e-08,
+    -0.05528552085161209,
+    0.9984706044197083
+   ],
+   "s": [
+    1.000000238418579,
+    0.9999998807907104,
+    0.9999999403953552
+   ]
+  },
+  "wrist.l": {
+   "parent": "lowerarm.l",
+   "t": [
+    7.426281811717672e-09,
+    0.26004382967948914,
+    6.127964108371131e-11
+   ],
+   "r": [
+    5.118455659314236e-11,
+    -3.0774255366239345e-10,
+    0.02665809914469719,
+    0.9996446967124939
+   ],
+   "s": [
+    0.9999999403953552,
+    0.9999999403953552,
+    0.9999999403953552
+   ]
+  },
+  "hand.l": {
+   "parent": "wrist.l",
+   "t": [
+    9.054978988842777e-13,
+    0.07382583618164062,
+    -2.220446049250313e-16
+   ],
+   "r": [
+    1.2001638571845774e-09,
+    1.358929182515567e-07,
+    -5.455195605463814e-06,
+    1
+   ],
+   "s": [
+    1,
+    0.9999999403953552,
+    0.9999999403953552
+   ]
+  },
+  "handslot.l": {
+   "parent": "hand.l",
+   "t": [
+    5.138920400327152e-10,
+    0.09612506628036499,
+    -0.05750012397766113
+   ],
+   "r": [
+    1.6806123159796016e-09,
+    1.6806122049572991e-09,
+    -0.7071068286895752,
+    0.7071067094802856
+   ],
+   "s": [
+    0.9999999403953552,
+    1,
+    0.9999999403953552
+   ]
+  },
+  "LordHunky_Head": {
+   "parent": "head",
+   "t": [
+    0.0,
+    -0.1015,
+    0.01614
+   ],
+   "r": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "s": [
+    0.73,
+    0.73,
+    0.73
+   ]
+  },
+  "head_part": {
+   "parent": "LordHunky_Head",
+   "t": null,
+   "r": [
+    0,
+    1.7114269112994407e-08,
+    0,
+    1
+   ],
+   "s": null
+  },
+  "eyestalk.l": {
+   "parent": "head_part",
+   "t": [
+    0.164809450507164,
+    0.5795560479164124,
+    0.024555189535021782
+   ],
+   "r": [
+    0.04509570449590683,
+    -0.5178855061531067,
+    -0.5178854465484619,
+    0.6793789267539978
+   ],
+   "s": [
+    1.0000001192092896,
+    1.000000238418579,
+    1.0000001192092896
+   ]
+  },
+  "eyestalk.r": {
+   "parent": "head_part",
+   "t": [
+    -0.164809450507164,
+    0.5795560479164124,
+    0.024555189535021782
+   ],
+   "r": [
+    0.04509570449590683,
+    0.5178855061531067,
+    0.5178854465484619,
+    0.6793789267539978
+   ],
+   "s": [
+    1.0000001192092896,
+    1.000000238418579,
+    1.0000001192092896
+   ]
+  }
+ },
+ "diffVsRef": {
+  "ref": "../_alien_figures_toolbox_r1/LordHunky_RigMedium.toolbox.glb",
+  "nodesAdded": [],
+  "nodesRemoved": [],
+  "nodesTRSChanged": [
+   "KFB_Brow_R_anchor",
+   "KFB_Eye_R_anchor",
+   "eyestalk.r"
+  ],
+  "jointsSame": true,
+  "materialsRemoved": [
+   "LordHunky_Mund_Clay"
+  ],
+  "trianglesRef": 54101
+ }
+}

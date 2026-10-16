@@ -1,0 +1,412 @@
+{
+ "LadyDory_RigMedium.toolbox.r2.glb": {
+  "ok": true,
+  "err": null,
+  "objects": {
+   "Rig_Medium": {
+    "type": "ARMATURE",
+    "parent": null,
+    "bones": 28
+   },
+   "LadyDory_Head_mesh": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 58990,
+    "shapeKeys": [
+     "Basis",
+     "neckTaper"
+    ],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "SpaceRanger_ArmLeft": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 620,
+    "shapeKeys": [],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "SpaceRanger_ArmRight": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 620,
+    "shapeKeys": [],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "SpaceRanger_Body": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 1010,
+    "shapeKeys": [],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "SpaceRanger_LegLeft": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 496,
+    "shapeKeys": [],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "SpaceRanger_LegRight": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 496,
+    "shapeKeys": [],
+    "vgroups": 28,
+    "armatureMod": true
+   },
+   "KFB_Eye_C_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Brow_C_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Mouth_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "Icosphere": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 80,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   }
+  }
+ },
+ "LordHunky_RigMedium.toolbox.r2.glb": {
+  "ok": true,
+  "err": null,
+  "objects": {
+   "Rig_Medium": {
+    "type": "ARMATURE",
+    "parent": null,
+    "bones": 27
+   },
+   "LordHunky_Head_mesh": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 49472,
+    "shapeKeys": [
+     "Basis",
+     "neckTaper"
+    ],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "SpaceRanger_ArmLeft": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 620,
+    "shapeKeys": [],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "SpaceRanger_ArmRight": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 620,
+    "shapeKeys": [],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "SpaceRanger_Body": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 1010,
+    "shapeKeys": [],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "SpaceRanger_LegLeft": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 496,
+    "shapeKeys": [],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "SpaceRanger_LegRight": {
+    "type": "MESH",
+    "parent": "Rig_Medium",
+    "tris": 496,
+    "shapeKeys": [],
+    "vgroups": 27,
+    "armatureMod": true
+   },
+   "KFB_Eye_L_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Brow_L_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Eye_R_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Brow_R_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "KFB_Mouth_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Medium"
+   },
+   "Icosphere": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 80,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   }
+  }
+ },
+ "OrcBrute.kfb-eyes.r1.glb": {
+  "ok": true,
+  "err": null,
+  "objects": {
+   "Rig_Large": {
+    "type": "ARMATURE",
+    "parent": null,
+    "bones": 23
+   },
+   "OrcBrute_ArmLeft": {
+    "type": "MESH",
+    "parent": "Rig_Large",
+    "tris": 1028,
+    "shapeKeys": [],
+    "vgroups": 23,
+    "armatureMod": true
+   },
+   "OrcBrute_ArmRight": {
+    "type": "MESH",
+    "parent": "Rig_Large",
+    "tris": 956,
+    "shapeKeys": [],
+    "vgroups": 23,
+    "armatureMod": true
+   },
+   "OrcBrute_Body": {
+    "type": "MESH",
+    "parent": "Rig_Large",
+    "tris": 2506,
+    "shapeKeys": [],
+    "vgroups": 23,
+    "armatureMod": true
+   },
+   "OrcBrute_Head": {
+    "type": "MESH",
+    "parent": "Rig_Large",
+    "tris": 3692,
+    "shapeKeys": [],
+    "vgroups": 23,
+    "armatureMod": true
+   },
+   "KFB_OriginalEye_R": {
+    "type": "MESH",
+    "parent": "Rig_Large",
+    "tris": 66,
+    "shapeKeys": [],
+    "vgroups": 23,
+    "armatureMod": true
+   },
+   "KFB_OriginalEye_L": {
+    "type": "MESH",
+    "parent": "Rig_Large",
+    "tris": 66,
+    "shapeKeys": [],
+    "vgroups": 23,
+    "armatureMod": true
+   },
+   "OrcBrute_LegArmor": {
+    "type": "MESH",
+    "parent": "Rig_Large",
+    "tris": 1260,
+    "shapeKeys": [],
+    "vgroups": 23,
+    "armatureMod": true
+   },
+   "OrcBrute_LegLeft": {
+    "type": "MESH",
+    "parent": "Rig_Large",
+    "tris": 680,
+    "shapeKeys": [],
+    "vgroups": 23,
+    "armatureMod": true
+   },
+   "OrcBrute_LegRight": {
+    "type": "MESH",
+    "parent": "Rig_Large",
+    "tris": 680,
+    "shapeKeys": [],
+    "vgroups": 23,
+    "armatureMod": true
+   },
+   "OrcBrute_Shoulderpad": {
+    "type": "MESH",
+    "parent": "Rig_Large",
+    "tris": 1380,
+    "shapeKeys": [],
+    "vgroups": 23,
+    "armatureMod": true
+   },
+   "KFB_Eye_L_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Large"
+   },
+   "KFB_Eye_R_anchor": {
+    "type": "EMPTY",
+    "parent": "Rig_Large"
+   },
+   "Icosphere": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 80,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   }
+  }
+ },
+ "FB_TEMPLATE_LOOK_v5c_meshyears.glb": {
+  "ok": true,
+  "err": null,
+  "objects": {
+   "Rig": {
+    "type": "ARMATURE",
+    "parent": null,
+    "bones": 47
+   },
+   "CharacterTemplate_ArmLeft": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 440,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "CharacterTemplate_ArmRight": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 440,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "CharacterTemplate_Body": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 418,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "CharacterTemplate_Head": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 12544,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "CharacterTemplate_LegLeft": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 334,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "CharacterTemplate_LegRight": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 334,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "FB_Ear_L_v5": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 6000,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "FB_Ear_R_v5": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 6000,
+    "shapeKeys": [],
+    "vgroups": 47,
+    "armatureMod": true
+   },
+   "Carl_Brow_L": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 94,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "Carl_Brow_R": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 94,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "Carl_Nose": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 448,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "FB_Eye_L": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 96,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "FB_Eye_R": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 96,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "FB_Mouth_Smile": {
+    "type": "MESH",
+    "parent": "Rig",
+    "tris": 256,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   },
+   "Icosphere": {
+    "type": "MESH",
+    "parent": null,
+    "tris": 80,
+    "shapeKeys": [],
+    "vgroups": 0,
+    "armatureMod": false
+   }
+  }
+ }
+}

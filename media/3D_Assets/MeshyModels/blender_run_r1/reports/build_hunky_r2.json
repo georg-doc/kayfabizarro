@@ -1,0 +1,153 @@
+{
+ "figure": "LordHunky",
+ "source": {
+  "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_alien_figures_toolbox_r1/LordHunky_RigMedium.toolbox.glb",
+  "sha256": "64b4c74305c0eb9b82d4fbabd9de67dca40859927b951faf768f5c0d46a08e26"
+ },
+ "mouthHole": {
+  "oldHoleLoopVerts": 89,
+  "outlineRadius_m": [
+   0.03172355781144935,
+   0.08625698326589194
+  ],
+  "oldLoopRadiusMax_m": 0.07452673653924934,
+  "margin_m": 0.01,
+  "headTrianglesRemovedOrClipped": 411,
+  "clipVertices": 132,
+  "K": 8,
+  "ring_step": 0.006641135001453955,
+  "mono": true,
+  "nB": 95,
+  "fill_tris": 557,
+  "dihedral": {
+   "fill_mean": 2.508331659422419,
+   "fill_p99": 10.446286105614641,
+   "fill_max": 43.274582931614354,
+   "head_mean": 2.6178888417863946,
+   "head_p99": 8.488267549218223,
+   "min_area": 2.856458229125827e-06
+  },
+  "uvIsland": {
+   "rectPx": [
+    212.0,
+    688.0,
+    1280.0,
+    1260.0
+   ],
+   "texelPerM": 472.0,
+   "rotated": false,
+   "islandPx": [
+    220.0,
+    696.0,
+    293.6241905470732,
+    735.818060776687
+   ]
+  },
+  "boundaryColourStd": [
+   [
+    0.77,
+    0.45,
+    0.79
+   ],
+   [
+    0.02,
+    0.05,
+    0.08
+   ]
+  ],
+  "donorRectPx": [
+   1544,
+   1748,
+   116,
+   128
+  ],
+  "taperCheckOldVertsMaxErr": 0.00011906400322914124,
+  "verts": [
+   15355,
+   15814
+  ],
+  "tris": [
+   27792,
+   28096
+  ],
+  "fillVerts": 327,
+  "fillTris": 557,
+  "skinJointsInFill": [
+   24
+  ]
+ },
+ "mouthPatchRemoved": {
+  "material": "LordHunky_Mund_Clay",
+  "verts": 2582,
+  "tris": 1691
+ },
+ "rightStalk": {
+  "loopL_verts": 92,
+  "loopR_verts": 90,
+  "endNormalAngleDiff_deg_before": 23.923007417176876,
+  "endCentreDiff_mm_before": 5.704810510713121,
+  "maxDisplacement_mm": 20.490631633058346,
+  "falloffLength_m": 0.03641017045782381,
+  "stalkLength_m": 0.08669088204243765,
+  "movedVerts": 718,
+  "taperDeltaMaxMoved": 0.0,
+  "endNormalAngleDiff_deg_after": 1.9280923575057597e-05,
+  "endCentreDiff_mm_after": 0.33308015625653736
+ },
+ "socketR": {
+  "leftReference_elbowLoop_to_stalkLoop_mm": {
+   "mean": 0.766574248330959,
+   "max": 3.5623132509706124
+  },
+  "from": "mirror of LordHunky_Sockel_L_Clay",
+  "verts": 8217,
+  "tris": 10688,
+  "elbowLoop_to_stalkLoop_mm": {
+   "mean": 0.7903018652188105,
+   "max": 2.537848966568334
+  },
+  "oldSockelR_verts": 8217
+ },
+ "bonesMirror": {
+  "eyestalk.r": {
+   "mirrorPosErr_mm": 8.327048794303747e-06,
+   "mirrorRotErr_deg": 4.00455336570039e-06,
+   "movedFromR1_mm": 4.804310136151119,
+   "restRotationChange_deg": 0.8341530361988241
+  },
+  "KFB_Eye_R_anchor": {
+   "mirrorPosErr_mm": 2.161069778156327e-05,
+   "mirrorRotErr_deg": 3.818191820832846e-06,
+   "movedFromR1_mm": 0.16912574668361396,
+   "worldForward": [
+    0.0,
+    -0.0,
+    1.0
+   ]
+  },
+  "KFB_Brow_R_anchor": {
+   "mirrorPosErr_mm": 2.2394103592534347e-05,
+   "mirrorRotErr_deg": 4.00455336570039e-06,
+   "movedFromR1_mm": 0.5199440451983884
+  }
+ },
+ "ibmMaxErrAllJoints": 1.1516930410633563e-05,
+ "stalkMirror": {
+  "eyeR_pos_L": [
+   -0.37484,
+   0.72647,
+   0.21564
+  ],
+  "pivotR_L": [
+   -0.16481,
+   0.57956,
+   0.02456
+  ],
+  "lengthR": 0.11478
+ },
+ "out": {
+  "file": "/Users/georgv.westphalen/Dropbox/CLAUDE/MeshyModels/_blender_run_r1/LordHunky_RigMedium.toolbox.r2.glb",
+  "bytes": 4013940,
+  "sha256": "88c5aa36a80bbf03fc365ae940053f3ef28efffab174fd5ad8dafdb241daf784"
+ }
+}
