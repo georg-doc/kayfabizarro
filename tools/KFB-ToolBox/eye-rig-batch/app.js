@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { mountKayKitEyes, deriveSourceAnchorSeed } from './lib/kaykit-eye-adapter.v1.js';
 import { prepareMediumActorCleanup } from './lib/medium-source-eye-cleanup.v1.js';
 import { sampleActorFaceColor } from './lib/face-color-sampler.v1.js';
+import { prepareNormanFaceCleanup, mountNormanCompanionFace } from './lib/norman-face.v1.js';
 import { makeK1 } from './lib/clay-k1.js';
 import { assembleLegacy, replaceHead } from './lib/legacy/legacy-rig-adapter.v1.js';
 import { buildLegacyFaceHost, measureLegacyEyeCandidates, setLegacySourceEyeVisibility } from './lib/legacy/legacy-facehost.v1.js';
@@ -47,6 +48,8 @@ const CONTRACT_URL = DONOR_CDN + 'tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/
 const CLEANUP02_REVIEW_URL = './data/cleanup02-review.v0.json';
 const CLEANUP02_ANCHORS_URL = './data/cleanup02-anchors.v0.json';
 const APPEARANCE_VARIANTS_URL = './data/appearance-variants.v1.json';
+const NORMAN_PROFILE_URL = './data/norman.prototype-profile.v0.json';
+const NORMAN_MOUTH_URL = './data/norman-mouth-r3.v1.json';
 const CLAY_SOURCE_PIN = '74f7a690fbec88cf98ce0936f31b72ad3f1148f5';
 const CLAY_ASSET_CDN = `https://cdn.jsdelivr.net/gh/georg-doc/kayfabizarro@${CLAY_SOURCE_PIN}/`;
 const CLAY_FLOOR = {
@@ -59,6 +62,7 @@ function sourceAssetUrl(ref,fallbackRevision){ return encodeURI(`https://cdn.jsd
 function normalizeLegacyActorRecord(actor){
   return {...actor,path:actor.sourcePath,revision:actor.sourceRevision,provenance:actor.provenance||'KayKit Dungeon Pack 1.0 / Legacy modular head source'};
 }
+function isNorman(actor=state.currentActor){ return actor?.id==='norman'; }
 function legacySourceUrl(path){
   const src=state.legacyCatalog?.source;if(!src||!path)throw new Error('Legacy source catalog unavailable');
   return sourceAssetUrl({path,revision:src.partsRevision},src.partsRevision);
@@ -124,6 +128,7 @@ const state = {
   componentDiagnosticRestore:null, qaLast:null, savedLegacyDefault:false, cleanup02Review:null, cleanup02Anchors:null, sourceAnchorSeed:null, textureOverrideReport:null,
   legacyCatalog:null, legacyProfilesById:new Map(), legacyAssembly:null, legacyHeadPart:null, legacyMeasurement:null,
   appearanceManifest:null, appearanceByActor:{},
+  normanPreset:null, normanMouthCatalog:null, companion:null, normanPresentation:'candidate',
   stageLook:'neutral', clayK1:null, ground:null, neutralGroundMaterial:null, clayGroundMaterial:null, clayFloorLoad:null, wheelZoom:null,
   selectedByClass:{Rig_Medium:new Set(['gothgirl']),Rig_Large:new Set(['monstrosity']),Rig_Legacy:new Set(['barbarian-default'])},
   selectedActors:new Set(['gothgirl']), trackingMode:'life', fixedGaze:[0,0],
@@ -453,7 +458,7 @@ function applyAuthoringDefaultToProfile(profile=state.profile, { markSession=tru
     characterId:profile.actorId,
     sessionAdjusted:!!markSession
   };
-  profile.status='AUTO_CANDIDATE';
+  profile.status=profile.actorId==='norman'?'DESIGN_TUNE':'AUTO_CANDIDATE';
   return profile;
 }
 function actorById(id){ return state.catalog.find((a)=>a.id===id) || null; }
@@ -482,6 +487,15 @@ function makeActorProfile(actor) {
   p.reviewState='UNREVIEWED';
   p.inheritance={order:['rigClass','character','session'],rigClass:actor.rigClass,classSeed:classConfig(actor.rigClass).seedUrl.replace('./',''),characterId:actor.id,sessionAdjusted:false};
   p.evidence={camera:'front',motionClip:'bind',sourceEyeCleanupVisuallyAccepted:false,eyeProfileVisuallyApproved:false};
+  if(actor.id==='norman'&&state.normanPreset){
+    const n=state.normanPreset;
+    const ne=n.eye||{};
+    p.eye={...p.eye,...clone(ne),anchor:{...p.eye.anchor,...clone(ne.anchor||{})},oval:clone(ne.oval||p.eye.oval)};
+    p.sourceFace={...p.sourceFace,removalMode:'texture-clean',guard:'exact Dummy.glb source + reversible texclean boxes',status:'PENDING_TEXTURE_CLEAN',faceColor:n.eye?.baseColor||actor.faceColor||null,faceColorSource:'norman-open-design-lid-base'};
+    p.companionFace={schema:'kfb.norman-companion-face/0.1-candidate',status:'DESIGN_TUNE',visualCanon:'OPEN_DESIGN',brows:clone(n.brows||{}),mouth:clone(n.mouth||{}),expressionMap:clone(n.expressionMap||{})};
+    p.characterDesign={status:'DESIGN_TUNE',visualCanon:'OPEN_DESIGN',roles:clone(n.character?.roles||[])};
+    p.status='DESIGN_TUNE';
+  }
   return p;
 }
 function ensureProfile(actor) {
@@ -562,6 +576,89 @@ function updateActorAudit() {
   if(info) info.textContent=`${a.provenance} · ${a.path}${a.textureOverride?` · texture ${a.textureOverride.variant||a.textureOverride.path.split('/').pop()}`:''}`;
   renderAppearanceControl();
   renderCleanup02Issue();
+  syncNormanFaceUi();
+}
+function normanFaceConfig(){
+  return state.profile?.companionFace || (state.normanPreset ? {
+    schema:'kfb.norman-companion-face/0.1-candidate',
+    status:'DESIGN_TUNE',visualCanon:'OPEN_DESIGN',
+    brows:clone(state.normanPreset.brows||{}),
+    mouth:clone(state.normanPreset.mouth||{}),
+    expressionMap:clone(state.normanPreset.expressionMap||{})
+  } : null);
+}
+function setNormanTuneState(){
+  if(!isNorman()||!state.profile)return;
+  state.profile.status='DESIGN_TUNE';
+  if(!['APPROVED','ADJUSTED_APPROVED'].includes(state.profile.reviewState))state.profile.reviewState='ADJUSTED';
+  if(state.companion)state.profile.companionFace=state.companion.export();
+  state.profiles[state.profile.actorId]=clone(state.profile);
+}
+function syncNormanFaceUi(){
+  const panel=$('#normanFacePanel'),modes=$('#normanPresentationModes'),label=$('#cleanupToggleText');
+  const active=isNorman();
+  if(panel)panel.hidden=!active;
+  if(modes)modes.hidden=!active;
+  if(label)label.textContent=active?'Hide painted source eyes + mouth':'Hide verified source eyes';
+  if(!active)return;
+  const cfg=normanFaceConfig()||{},b=cfg.brows||{},m=cfg.mouth||{};
+  const status=$('#normanDesignStatus');if(status)status.textContent='OPEN DESIGN · tune, compare, then approve';
+  const lid=$('#normanLidBaseColor');if(lid)lid.value=state.profile?.eye?.baseColor||state.normanPreset?.eye?.baseColor||'#e4b53c';
+  const browColor=$('#normanBrowColor');if(browColor)browColor.value=b.color||'#9b741f';
+  const vals={thickness:b.thickness,length:b.length,height:b.height,lift:b.lift,x:m.x,y:m.y,width:m.width,depth:m.depth};
+  for(const [k,v] of Object.entries(vals)){
+    const input=$(`[data-norman-param="${k}"]`);if(input&&Number.isFinite(+v))input.value=v;
+    const out=$(`[data-norman-out="${k}"]`);if(out&&Number.isFinite(+v))out.value=value(v);
+  }
+  const sel=$('#normanMouthForm');
+  if(sel&&state.normanMouthCatalog){
+    if(!sel.options.length)sel.innerHTML=state.normanMouthCatalog.forms.map((f)=>`<option value="${f.id}">${f.sheetLabel} · ${f.id}</option>`).join('');
+    sel.value=m.form||'closed';
+  }
+  $('[data-norman-presentation]').forEach((x)=>x.classList.toggle('active',x.dataset.normanPresentation===state.normanPresentation));
+}
+async function setNormanPresentation(mode){
+  if(!isNorman()||!state.cleanup||!state.eyes)return false;
+  const source=mode==='source';
+  state.normanPresentation=source?'source':'candidate';
+  if(source)await setStageLook('neutral',{persist:false});
+  const cleaned=state.cleanup.apply(!source);
+  const cleanupToggle=$('#cleanupToggle');if(cleanupToggle)cleanupToggle.checked=!!cleaned;
+  const eyeToggle=$('#eyeRigToggle');if(eyeToggle)eyeToggle.checked=!source;
+  state.eyes.setVisible(!source);
+  state.companion?.setVisible(!source);
+  state.profile.sourceFace.runtimeSourceFaceHidden=!!cleaned;
+  syncNormanFaceUi();renderReport();
+  return true;
+}
+function persistNormanFace(){
+  if(!isNorman()||!state.profile)return;
+  setNormanTuneState();save();renderRoster();syncNormanFaceUi();renderReport();
+}
+function wireNormanControls(){
+  $('#normanSourceOnlyBtn').onclick=()=>setNormanPresentation('source').catch((err)=>log(`Norman source isolation failed · ${err.message}`));
+  $('#normanFaceCandidateBtn').onclick=()=>setNormanPresentation('candidate').catch((err)=>log(`Norman face candidate failed · ${err.message}`));
+  $('#normanLidBaseColor').oninput=(e)=>{
+    if(!isNorman()||!state.eyes)return;
+    state.profile.eye.baseColor=e.target.value;
+    state.eyes.setBaseColor(e.target.value);
+    persistNormanFace();
+  };
+  $('#normanBrowColor').oninput=(e)=>{
+    if(!isNorman()||!state.companion)return;
+    state.companion.setBrow({color:e.target.value});persistNormanFace();
+  };
+  $('[data-norman-param]').forEach((input)=>input.oninput=()=>{
+    if(!isNorman()||!state.companion)return;
+    const k=input.dataset.normanParam,v=+input.value,out=$(`[data-norman-out="${k}"]`);if(out)out.value=value(v);
+    if(['thickness','length','height','lift'].includes(k))state.companion.setBrow({[k]:v});
+    else state.companion.setMouth({[k]:v}).catch((err)=>log(`Norman mouth tune · ${err.message}`));
+    persistNormanFace();
+  });
+  $('#normanMouthForm').onchange=(e)=>{
+    if(!isNorman()||!state.companion)return;
+    state.companion.setMouth({form:e.target.value}).then(()=>persistNormanFace()).catch((err)=>log(`Norman mouth form · ${err.message}`));
+  };
 }
 function storeCurrentProfile() {
   if(!state.profile?.actorId) return;
@@ -664,6 +761,7 @@ function profileFromRig() {
   state.profile.life = clone(r.life);
   state.profile.kinetics = { enabled:r.kinetics.enabled, gain:r.kinetics.gain, ...clone(r._kinT || {a:0,c:0,j:0}) };
   state.profile.evidence = { ...state.profile.evidence, camera:state.currentView, motionClip:state.currentMotion, sourceEyeCleanupVisuallyAccepted:false, eyeProfileVisuallyApproved:state.profile.status === 'EYE_PROFILE_VISUALLY_APPROVED' || state.profile.status === 'ADJUSTED_APPROVED' };
+  if(isNorman()&&state.companion){state.profile.companionFace=state.companion.export();state.profile.characterDesign={...(state.profile.characterDesign||{}),status:'DESIGN_TUNE',visualCanon:'OPEN_DESIGN'};}
   return state.profile;
 }
 
@@ -671,6 +769,7 @@ function renderReport() {
   const chunks = [];
   if (state.cleanup?.report) chunks.push(`SOURCE FACE\n${JSON.stringify(state.cleanup.report, null, 2)}`);
   if (state.eyes) chunks.push(`\nFACE / EYE\n${JSON.stringify(state.eyes.report(), null, 2)}`);
+  if (state.companion) chunks.push(`\nNORMAN COMPANION FACE\n${JSON.stringify(state.companion.report(), null, 2)}`);
   if (logLines.length) chunks.push(`\nLOG\n${logLines.slice(-8).join('\n')}`);
   $('#sourceReport').textContent = chunks.join('\n') || 'Waiting for source…';
   const on = ['sourceReady','cleanupReady','hostReady','eyeReady','motionReady'].filter((k)=>state[k]).length;
@@ -716,6 +815,7 @@ function bindUiFromProfile() {
   updateBatchUi();
   setReviewStatus(state.profile.status || 'AUTO_CANDIDATE');
   refreshPlacementSourceUi();
+  syncNormanFaceUi();
 }
 
 function applyProfileToRig(profile) {
@@ -732,6 +832,7 @@ function applyProfileToRig(profile) {
   state.fixedGaze=clone(e.fixedGaze || [0,0]);
   state.eyes.applyExpression(state.expression || 'neutral');
   state.eyes.setVisible($('#eyeRigToggle').checked);
+  if(isNorman()&&state.companion&&profile.companionFace)state.companion.applyProfile(profile.companionFace);
   bindUiFromProfile();
   setTrackingMode(e.trackingMode || 'life', false);
   renderReport();
@@ -1013,7 +1114,8 @@ async function loadLegacyActor(actorId,{preserve=true}={}) {
     if(preserve)storeCurrentProfile();
     setLoading(true,`Loading ${actor.label} · Rig_Legacy assembly…`);
     state.currentAction?.stop?.();state.currentAction=null;state.clayK1?.revert?.();
-    state.mixer?.stopAllAction?.();state.eyes?.dispose?.();state.cleanup?.dispose?.();
+    state.mixer?.stopAllAction?.();state.companion?.dispose?.();state.eyes?.dispose?.();state.cleanup?.dispose?.();
+    state.companion=null;
     if(state.figure?.parent)state.figure.parent.remove(state.figure);
     state.figure=null;state.eyes=null;state.cleanup=null;state.mixer=null;state.componentDiagnosticRestore=null;state.sourceAnchorSeed=null;state.textureOverrideReport=null;state.legacyAssembly=null;state.legacyHeadPart=null;state.legacyMeasurement=null;
     state.currentActor=actor;state.currentActorId=actor.id;state.currentActorByClass[state.rigClass]=actor.id;
@@ -1087,7 +1189,8 @@ async function loadActor(actorId,{preserve=true}={}) {
     setLoading(true,`Loading ${actor.label}…`);
     state.currentAction?.stop?.(); state.currentAction=null;
     state.clayK1?.revert?.();
-    state.mixer?.stopAllAction?.(); state.eyes?.dispose?.(); state.cleanup?.dispose?.();
+    state.mixer?.stopAllAction?.(); state.companion?.dispose?.(); state.eyes?.dispose?.(); state.cleanup?.dispose?.();
+    state.companion=null;
     if(state.figure?.parent) state.figure.parent.remove(state.figure);
     state.figure=null; state.eyes=null; state.cleanup=null; state.mixer=null; state.componentDiagnosticRestore=null; state.sourceAnchorSeed=null; state.textureOverrideReport=null;
     state.currentActor=actor; state.currentActorId=actor.id; state.currentActorByClass[state.rigClass]=actor.id; state.profile=ensureProfile(actor);
@@ -1102,11 +1205,11 @@ async function loadActor(actorId,{preserve=true}={}) {
     const norm=normalizeActor(figure); figure.visible=false; state.sourceReady=true; gate('#gateSource','pass');
     log(`${actor.label} loaded · ${norm.sourceHeight} → ${norm.normalizedHeight} high`);
 
-    const cleanup=prepareMediumActorCleanup({THREE,figure,actor,log}); state.cleanup=cleanup;
-    state.cleanupReady=['AUTO_CANDIDATE','SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE','AUTO_CANDIDATE_GENERIC'].includes(cleanup.status);
+    const cleanup=isNorman(actor)?prepareNormanFaceCleanup({THREE,figure,actor,preset:state.normanPreset,log}):prepareMediumActorCleanup({THREE,figure,actor,log}); state.cleanup=cleanup;
+    state.cleanupReady=['AUTO_CANDIDATE','SOURCE_IDENTITY_VERIFIED_AUTO_CANDIDATE','AUTO_CANDIDATE_GENERIC','TEXTURE_CLEAN_CANDIDATE'].includes(cleanup.status);
     gate('#gateCleanup',state.cleanupReady?'pass':'fail'); if(state.cleanupReady) cleanup.apply(true);
     state.profile.sourceFace={...state.profile.sourceFace,...clone(cleanup.report)};
-    if(!state.cleanupReady && state.profile.reviewState==='UNREVIEWED') state.profile.technicalNote='source-eye cleanup requires manual review';
+    if(!state.cleanupReady && state.profile.reviewState==='UNREVIEWED') state.profile.technicalNote=isNorman(actor)?'painted source face cleanup requires manual review':'source-eye cleanup requires manual review';
 
     state.mixer=new THREE.AnimationMixer(figure);
     const eyes=await mountKayKitEyes({THREE,figure,sourceRef:sourceRef(),profile:state.profile,expressionContract:window.__EYE_RIG_CONTRACT,camera:window.__EYE_RIG_BATCH.camera,log});
@@ -1138,6 +1241,23 @@ async function loadActor(actorId,{preserve=true}={}) {
     const measured=cleanup.measureOnFaceHost?.(eyes.faceHost); if(measured) recordMeasuredSuggestion(measured);
     state.hostReady=eyes.faceHost.status==='OK'; state.eyeReady=!!eyes.eyeFrame();
     gate('#gateHost',state.hostReady?'pass':'fail');gate('#gateEye',state.eyeReady?'pass':'fail');
+    if(isNorman(actor)&&state.eyeReady){
+      const cf=state.profile.companionFace||{};
+      state.companion=await mountNormanCompanionFace({
+        THREE,eyes,
+        profile:{
+          ...state.normanPreset,
+          eye:state.profile.eye,
+          brows:clone(cf.brows||state.normanPreset?.brows||{}),
+          mouth:clone(cf.mouth||state.normanPreset?.mouth||{}),
+          expressionMap:clone(cf.expressionMap||state.normanPreset?.expressionMap||{})
+        },
+        mouthCatalog:state.normanMouthCatalog,
+        log
+      });
+      state.companion.applyExpression(state.expression||'neutral');
+      state.normanPresentation='candidate';
+    }
     await setStageLook(state.stageLook,{persist:false});
     figure.visible=true;
     if(state.profile.reviewState==='UNSUPPORTED' && /^load failed:/.test(state.profile.technicalNote||'')){
@@ -1148,6 +1268,7 @@ async function loadActor(actorId,{preserve=true}={}) {
       log(`${actor.label} recovered from previous loader error · review state reset to Unreviewed`);
     }
     bindUiFromProfile(); setView('front',window.__EYE_RIG_BATCH.camera,window.__EYE_RIG_BATCH.controls); poseBind();
+    if(isNorman(actor)){state.cleanup.apply(true);state.eyes.setVisible(true);state.companion?.setVisible(true);state.normanPresentation='candidate';syncNormanFaceUi();}
     wireComponentDiagnostic(window.__EYE_RIG_BATCH.camera,window.__EYE_RIG_BATCH.controls);
     updateActorAudit(); renderRoster(); save();
     setLoading(false);
@@ -1188,12 +1309,12 @@ function wireRuntimeControls(camera,controls,renderer) {
   $$('.tool[data-view]').forEach((b)=> b.onclick=()=>setView(b.dataset.view,camera,controls));
   $$('[data-stage-look]').forEach((b)=>b.onclick=()=>setStageLook(b.dataset.stageLook).catch((err)=>log(`stage look failed · ${err.message}`)));
   $$('.motion').forEach((b)=> b.onclick=()=>playMotion(b.dataset.motion));
-  $('#cleanupToggle').onchange=(e)=>{ const on=state.cleanup.apply(e.target.checked); e.target.checked=!!state.cleanup.active; if(state.rigClass==='Rig_Legacy')state.profile.sourceFace.runtimeSourceEyesHidden=!!state.cleanup.active; else state.profile.sourceFace.status=on?'AUTO_CANDIDATE':'SOURCE_VISIBLE'; renderReport(); };
+  $('#cleanupToggle').onchange=(e)=>{ const on=state.cleanup.apply(e.target.checked); e.target.checked=!!state.cleanup.active; if(state.rigClass==='Rig_Legacy')state.profile.sourceFace.runtimeSourceEyesHidden=!!state.cleanup.active; else state.profile.sourceFace.status=on?(isNorman()?'TEXTURE_CLEAN_CANDIDATE':'AUTO_CANDIDATE'):'SOURCE_VISIBLE'; renderReport(); };
   $('#eyeRigToggle').onchange=(e)=>state.eyes.setVisible(e.target.checked);
   $('#hostDebugToggle').onchange=(e)=>{ const m=state.eyes.faceHost.box.material; m.opacity=e.target.checked?.16:0; m.wireframe=!!e.target.checked; m.color?.set(0xc93a36); m.depthTest=!e.target.checked; state.eyes.faceHost.box.renderOrder=e.target.checked?998:0; };
   $('#stage').onpointermove=(e)=>{ if(state.trackingMode!=='pointer')return; const r=e.currentTarget.getBoundingClientRect(); const nx=((e.clientX-r.left)/r.width)*2-1, ny=-(((e.clientY-r.top)/r.height)*2-1); state.eyes.setPointer(nx,ny); };
   $('#blinkBtn').onclick=()=>state.eyes.blinkNow();
-  $$('.expr').forEach((b)=>b.onclick=()=>{ state.expression=b.dataset.expression; state.eyes.applyExpression(state.expression); $$('.expr').forEach((x)=>x.classList.toggle('active',x===b)); });
+  $('.expr').forEach((b)=>b.onclick=()=>{ state.expression=b.dataset.expression; state.eyes.applyExpression(state.expression); state.companion?.applyExpression(state.expression); $('.expr').forEach((x)=>x.classList.toggle('active',x===b)); });
   $$('#trackingModes [data-tracking-mode]').forEach((b)=>b.onclick=()=>setTrackingMode(b.dataset.trackingMode));
   $$('.gaze-buttons .seg').forEach((b)=>b.onclick=()=>{ const [x,y]=b.dataset.gaze.split(',').map(Number); state.fixedGaze=[x,y]; state.profile.eye.fixedGaze=[x,y]; setTrackingMode('fixed'); state.eyes.setPointer(x,y); });
   $('#matteBtn').onclick=()=>{ state.profile.eye.pupilStyle='matte-cute'; state.eyes.setPupilStyle('matte-cute'); bindUiFromProfile(); };
@@ -1221,7 +1342,7 @@ function wireRuntimeControls(camera,controls,renderer) {
     }
     else if(['wander','tremor'].includes(k)){state.profile.life[k]=v; state.eyes.setLife({[k]:v});}
     else if(['a','c','j'].includes(k)){state.profile.kinetics[k]=v; state.eyes.setKinetics({[k]:v});}
-    state.profile.status='AUTO_CANDIDATE'; state.profile.reviewState='ADJUSTED'; state.profiles[state.profile.actorId]=clone(state.profile); save(); renderRoster();
+    state.profile.status=isNorman()?'DESIGN_TUNE':'AUTO_CANDIDATE'; state.profile.reviewState='ADJUSTED'; state.profiles[state.profile.actorId]=clone(state.profile); save(); renderRoster();
   });
   initInlineNumberEditors();
   const measuredBtn=$('#useMeasuredBtn');
@@ -1233,7 +1354,7 @@ function wireRuntimeControls(camera,controls,renderer) {
 
 async function boot() {
   setBootProgress('Loading catalogs + source contracts…');
-  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,legacySeed,legacyCatalog,legacyReviewed,contract,cleanup02Review,cleanup02Anchors,appearanceManifest]=await Promise.all([
+  const [seed,mediumSeed,mediumCatalog,largeSeed,largeCatalog,largeReviewed,legacySeed,legacyCatalog,legacyReviewed,contract,cleanup02Review,cleanup02Anchors,appearanceManifest,normanPreset,normanMouthCatalog]=await Promise.all([
     fetch('./data/gothgirl.seed.json').then((r)=>{if(!r.ok)throw new Error(`seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.seedUrl).then((r)=>{if(!r.ok)throw new Error(`medium seed ${r.status}`);return r.json();}),
     fetch(CLASS_CONFIG.Rig_Medium.catalogUrl).then((r)=>{if(!r.ok)throw new Error(`medium catalog ${r.status}`);return r.json();}),
@@ -1246,7 +1367,9 @@ async function boot() {
     fetch(CONTRACT_URL).then((r)=>{if(!r.ok)throw new Error(`contract ${r.status}`);return r.json();}),
     fetch(CLEANUP02_REVIEW_URL).then((r)=>{if(!r.ok)throw new Error(`cleanup02 review ${r.status}`);return r.json();}),
     fetch(CLEANUP02_ANCHORS_URL).then((r)=>{if(!r.ok)throw new Error(`cleanup02 anchors ${r.status}`);return r.json();}),
-    fetch(APPEARANCE_VARIANTS_URL).then((r)=>{if(!r.ok)throw new Error(`appearance variants ${r.status}`);return r.json();})
+    fetch(APPEARANCE_VARIANTS_URL).then((r)=>{if(!r.ok)throw new Error(`appearance variants ${r.status}`);return r.json();}),
+    fetch(NORMAN_PROFILE_URL).then((r)=>{if(!r.ok)throw new Error(`Norman profile ${r.status}`);return r.json();}),
+    fetch(NORMAN_MOUTH_URL).then((r)=>{if(!r.ok)throw new Error(`Norman mouth ${r.status}`);return r.json();})
   ]);
   state.seed=seed;
   state.classSeeds={Rig_Medium:mediumSeed,Rig_Large:largeSeed,Rig_Legacy:legacySeed};
@@ -1258,6 +1381,8 @@ async function boot() {
   state.cleanup02Review=cleanup02Review;
   state.cleanup02Anchors=cleanup02Anchors;
   state.appearanceManifest=appearanceManifest;
+  state.normanPreset=normanPreset;
+  state.normanMouthCatalog=normanMouthCatalog;
   setBootProgress(`Catalogs loaded · ${mediumCatalog.actors?.length||0} Medium / ${largeCatalog.actors?.length||0} Large / ${legacyCatalog.actors?.length||0} Legacy · restoring profiles…`);
 
   const saved=readSaved();
@@ -1300,11 +1425,11 @@ async function boot() {
   window.__EYE_RIG_BATCH={state,scene,camera,controls,renderer,logLines,
     report:()=>({profile:profileFromRig(),profiles:clone(state.profiles),currentActor:state.currentActor,rigClass:state.rigClass,classSeed:clone(currentClassSeed()),cleanup:state.cleanup?.report,cleanup02Issue:cleanup02Issue(state.currentActorId),sourceAnchorSeed:clone(state.sourceAnchorSeed),textureOverride:clone(state.textureOverrideReport),appearance:{family:appearanceFamily(state.currentActorId)?.id||null,variant:appearanceSelection(actorById(state.currentActorId))},stageLook:state.stageLook,clay:state.clayK1?.state||null,wheelZoom:state.wheelZoom?.report?.()||null,
       controlSemantics:{spacing:'x-only',height:'y-only',eyeSize:'size-only-centre-locked',inset:'depth-only',splay:'orientation-plus-surface-seat',lidFit:'lids-only',oval:'shape-only',pupilSize:'pupil-only',track:'gaze-amplitude-only',converge:'pupil-aim-only',gloss:'material-only'},
-      eyes:state.eyes?.report(),qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
+      eyes:state.eyes?.report(),companion:state.companion?.report?.()||null,qa:state.qaLast,selectedActors:[...state.selectedActors],roster:{count:state.catalog.length,filter:state.rosterFilter},clips:[...state.clips.keys()],gates:{source:state.sourceReady,cleanup:state.cleanupReady,host:state.hostReady,eye:state.eyeReady,motion:state.motionReady},error:bootError?.message||null})
   };
 
   wireRoster();
-  wireProfileIo();wireAppearanceControl();wireRuntimeControls(camera,controls,renderer);
+  wireProfileIo();wireAppearanceControl();wireRuntimeControls(camera,controls,renderer);wireNormanControls();
   updateClassUi();renderRoster();
   setBootProgress(`Controls ready · loading ${classConfig().label} motion…`);
   await loadMotion(state.loader);
@@ -1318,7 +1443,7 @@ async function boot() {
   setLoading(false);
 
   let last=performance.now();
-  function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;state.mixer?.update(dt);state.eyes?.update(dt,camera);controls.update();state.wheelZoom?.update(dt);renderer.render(scene,camera);requestAnimationFrame(frame);}
+  function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;state.mixer?.update(dt);state.eyes?.update(dt,camera);state.companion?.update?.(dt,camera);controls.update();state.wheelZoom?.update(dt);renderer.render(scene,camera);requestAnimationFrame(frame);}
   requestAnimationFrame(frame);renderReport();
 }
 
