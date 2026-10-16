@@ -1,7 +1,36 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§44 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§45 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 45 · 16.10. · L2 (V-340) und V-331 gelesen · Widerspruch Story-Farbe · Bitte um Entscheidung vor dem Farb-Einbau
+
+### 45.1 · Widerspruch (bitte zuerst klären)
+- V-331 Punkt 2 („`fromStoryMode(story-mode der Karte, 0)`, Story-Farbe auf dem Boden“) und L2 G6 („story ground colour still the card's story mode“) setzen voraus, dass eine Karte einen Story-Mode hat.
+- **Georg 16.10. (§43.1):** Die Karte hat keinen Story-Modus. Er wird im Spiel mit einem W6 gewürfelt (Stipulation, Färbung der Story, die Georg erzählt).
+- Heute leitet WS1 einen Modus aus dem Kartentext ab (world-context, Erbe aus R2). Das ist danach falsch und soll nicht in den V-305-Einbau übernommen werden.
+- **Optionen für die Bodenfarbe, bis es den Würfel im Spiel gibt (Georg bat WS1, sie hier für WS0 aufzuschreiben):**
+  - **(A) Würfel zu Beginn jedes Dialogs:** W6 → Story-Mode, klein angezeigt; `fromStoryMode(gewürfelt, 0)` färbt den Boden. Entspricht Georgs Konzept, ist aber ein kleines neues Spielelement (Vorlagen-Zeile, Look kommt von Claude Design HUD R4).
+  - **(B) Grundfarbe aus Deck bzw. Genre** (`fromHue` bzw. `fromColors` je Deck-Welt), ohne Story-Mode. Der Story-Mode tönt erst, wenn der Würfel im Spiel existiert. Braucht eine Tabelle Deck/Genre → Farbton von WS0.
+  - **(C) Fester Story-Mode je Bühne als Platzhalter**, im Bild deutlich als Platzhalter markiert.
+- Bis zur Antwort baut WS1 den V-305-Einbau nicht. L1-Teile ohne Farbbezug laufen weiter (Licht-Schreiber, `timeOfDay`, J17-Werte, Sonnenrichtung, Schatten, Kontaktschatten, `practicals`-Pool).
+
+### 45.2 · Weiter offen
+- **Walker-Vorlage (§44.3):** Repo, Branch und Pfad der Lab-Fassung mit WoW-Schema (V-022), Doppel-Leertaste 400 ms und Flug (V-024/V-179). Ohne sie baut M1 die Steuerung nicht nach (V-001).
+- **Lokale Lichter (§43.3 Punkt 2):** Meshy-GLBs haben eine gemalte Textur, einzelne Lampen lassen sich nicht emissiv schalten.
+  - WS1 setzt deshalb je `practical` ein Pool-PointLight plus einen additiven Leuchthof (`halo`).
+  - Wenn WS0 lieber eine Emissions-Maske je Bühne liefert, bitte sagen.
+
+### 45.3 · Einplanung (V-340 bittet darum)
+- **Reihenfolge WS1 (Owner-Sitzung):**
+  1. Kamera „Nah“ (Karte zentriert, §44) pushen und Vorschau erneuern;
+  2. L1-Teile ohne Farbe;
+  3. V-305-Einbau nach 45.1;
+  4. L1-Bildreihe;
+  5. L2 Schritt 1–3 nacheinander, je Schritt ein WS1_STATUS-Eintrag.
+- **M1-Sitzung:** M1-TUNE nach V-331 (Rampe auf der START-Achse ≈ 3 m, G als Geh-Umschalter, weiches Aufsetzen ≈ 0,15 s, Info-Symbol für die Tastenliste, Flug-Ruckeln messen; WoW-Steuerung nach Vorlage, sobald 45.2 beantwortet ist), danach M2. M1 TUNE und M2 werden nicht umgeordnet.
+- **Kein Prüfer zwischendurch (V-312).** Je Schritt Token- und Minutenangabe.
+- **Notiert aus V-334:** In der Vorschau ragt im Intro-Ritual das Kartenbild rechts aus dem Rahmen. WS1 prüft das bei Gelegenheit.
 
 ## 44 · 16.10. · Georg spielt die Vorschau: M1-Steuerung weicht vom Register ab · Kamera „Nah“ · Dioramen ins Gelände
 
