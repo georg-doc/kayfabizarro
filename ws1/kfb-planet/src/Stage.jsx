@@ -27,6 +27,7 @@ import { StageOrbitCam, ORBIT } from './StageOrbitCam'
 import { lightAt, parseTod, skyAtTod, lookB, skyLookB, LIGHT_INTENT } from './stageLight'
 import { createActorRim } from './modules/actorRim'
 import { createClayLook } from './modules/clayLook'
+import { createVehicleLineup } from './modules/vehicleLineup'
 import { createContactBlobs } from './modules/contactBlob'
 import { createPracticals } from './modules/practicals'
 export { ORBIT } // Prüfungen lesen die Kamera-Werte wie bisher über Stage
@@ -47,7 +48,10 @@ const CAM = STAGE_CAMS[/cam=(\w+)/.exec(hash)?.[1]] ? /cam=(\w+)/.exec(hash)[1] 
 const SCENE = MESHY_STAGES[/scene=(\w+)/.exec(hash)?.[1]] ? /scene=(\w+)/.exec(hash)[1] : null
 const SCENE_S = SCENE ? (+(/sscale=([\d.]+)/.exec(hash)?.[1]) || MESHY_STAGES[SCENE].s) : null // Abstimmen per sscale=<m/u>; Standard = Slot-Datei (WS0)
 const SCENE_CAM = SCENE ? stageCamera(MESHY_STAGES[SCENE], SCENE_S) : null
-const cam = SCENE_CAM || STAGE_CAMS[CAM]
+// L2 Schritt 3 (V-340): lineup=1 = Aufstellung aller 14 Fahrzeuge + Figuren auf eigener Fläche statt Amphitheater/Billboard
+const LINEUP = /(^|[#,])lineup=1(,|$)/.test(hash)
+const LINEUP_CAM = { pos: [0, 11, 34], target: [0, 1.6, -4], fov: 38 }
+const cam = SCENE_CAM || (LINEUP ? LINEUP_CAM : STAGE_CAMS[CAM])
 const CAM_VIEW = { ...cam, focus: () => cardFocus() } // cardFocus steht weiter unten (braucht mods); erst beim Klick auf „Nah“ ausgewertet
 // Publikums-Anker je Kamera: 3,2 m vor der Kamera auf der Blickachse, so tief, dass Blase und Spielerwahl am unteren Bildrand sitzen (NDC y −0,9),
 // nicht über der Karte. Der Anker liegt 1,05 m über playerState.pos (BubbleHost). Für cam=two ergibt das die bisherige Lage (0, 0,6, z − 3,2).
@@ -94,7 +98,7 @@ export const STAGE_MARKS = Object.freeze({
 })
 // Stellung: place=near (Figuren vor der Tafel, enger; Standard) | place=two (bisherige Stellung hinten). Ohne Angabe folgt sie der Kamera (cam=two → two).
 const NEAR = (/place=(\w+)/.exec(hash)?.[1] || (CAM === 'two' ? 'two' : 'near')) === 'near'
-const at = (mk, m, id) => ({ ...mk(m.x, m.yaw, id), position: [m.x, 0, m.z] }), MARKS = SCENE ? { left: sceneMark(SCENE_MARKS[SCENE].left), right: sceneMark(SCENE_MARKS[SCENE].right) } : STAGE_MARKS[NEAR ? 'near' : 'two']
+const at = (mk, m, id) => ({ ...mk(m.x, m.yaw, id), position: [m.x, 0, m.z] }), MARKS = SCENE ? { left: sceneMark(SCENE_MARKS[SCENE].left), right: sceneMark(SCENE_MARKS[SCENE].right) } : LINEUP ? { left: { x: -1.3, z: 8, yaw: 0 }, right: { x: 1.3, z: 8, yaw: 0 } } : STAGE_MARKS[NEAR ? 'near' : 'two']
 const L = at(MK, MARKS.left, 'stage-left'), R = at(MKR, MARKS.right, 'stage-right')
 const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : PREVIEW_CARDS ? PREVIEW_CARDS.length : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
 // Dialog-Karten ab der Startkarte; drift-freie Seiten bevorzugt (WS0 zu §24.2, Auswahl statt Beschnitt), die Vorschau behält Georgs Reihenfolge
@@ -156,6 +160,10 @@ const makeRim = (o) => { const m = createActorRim(o); mods.rim = m; return m }
 const CLAY = /(^|[#,])clay=(1|all)(,|$)/.test(hash), CLAY_FB = /(^|[#,])clay=all(,|$)/.test(hash)
 const CLAYS = { targets: () => [...(CLAY_FB ? [mods.left] : []), ...(CAST_ID ? [mods.right] : [])], profile: 'figure' }
 const makeClay = (o) => { const m = createClayLook(o); mods.clay = m; return m }
+const LINEUP_OPTS = { figure: () => mods.left }
+const makeLineup = (o) => { const m = createVehicleLineup(o); mods.amph = m; mods.lineup = m; expose('StageMods', mods); return m }
+const CLAYV = { targets: () => (mods.lineup ? [mods.lineup] : []), profile: 'vehicle' }
+const makeClayV = (o) => { const m = createClayLook(o); mods.clayV = m; return m }
 const BLOBS = { targets: () => [mods.left, mods.right] }
 const makeBlobs = (o) => { const m = createContactBlobs(o); mods.blobs = m; return m }
 // Lokale Lichter der Bühne aus ihrem Deskriptor (kfb.stage-descriptor/1, practicals[] in u → Meter wie die Slot-Umrechnung); nachts voll, tags fast aus
@@ -214,8 +222,9 @@ export default function Stage() {
         <hemisphereLight args={[0xfff4e0, 0x3a3226, 1.25]} />
         <directionalLight position={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-25} shadow-camera-right={25} shadow-camera-top={25} shadow-camera-bottom={-25} shadow-bias={-0.0002} />
       </>}
-      {SCENE ? <ModuleHost create={makeMeshy} options={MESHY_OPTS} /> : <ModuleHost create={makeAmph} options={AMPH} />}
-      {!SCENE && <ModuleHost create={makeBB} options={BB} />}
+      {SCENE ? <ModuleHost create={makeMeshy} options={MESHY_OPTS} /> : LINEUP ? <ModuleHost create={makeLineup} options={LINEUP_OPTS} /> : <ModuleHost create={makeAmph} options={AMPH} />}
+      {!SCENE && !LINEUP && <ModuleHost create={makeBB} options={BB} />}
+      {LINEUP && CLAY && <ModuleHost create={makeClayV} options={CLAYV} />}
       {ACTORS !== 'none' && <ModuleHost create={makeL} options={L} />}
       {L1 && ACTORS !== 'none' && <ModuleHost create={makeBlobs} options={BLOBS} />}
       {L1 && <ModuleHost create={makePract} options={PRACT} />}
