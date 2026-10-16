@@ -69,3 +69,16 @@ Read `SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md` and S09–S18 in `SOURCE_LEDGE
 - `The Eighty Institutions` → `The Longing to Belong` → `The Disagreeing Neighbor`: legitimacy, authority, institutional trust and dissent at distinct social scales.
 
 **Deck direction only:** standalone Mass Formation / mass psychology expansion may later compare Desmet, Freud, Fromm, Arendt, Asch, Reicher, Bernays and experimental persuasion research through existing KFB cards and interactions. Georg's future editorial gate only once research-level provenance and concrete original KFB donor overlap are established. Existing 12 R1 candidate seeds remain preserved unchanged.
+
+
+## R2A source-backed neighborhoods · 2026-10-16 (research/editorial proposals only)
+**Core creative discovery:** the archival wording itself makes for a strong KFB story mechanism. Rather than a generic 'mind-control laser', the actual tension is between a **stated goal**, **an internal success claim**, **independent measurement**, **financial concealment**, **unwitting subject experience** and **imperfect oversight**. These should be differently legible and historically sourced, never merged into one fake 'declassified' claim.
+
+- **`Seventeen Wishes`** / TSS 1955 (S21): a list of 17 desired capabilities is not a list of 17 accomplished ones. Mechanism: interpret research request versus actual documented result. Source original indices 0–1.
+- **`One Sixth of a Hospital`** / Subproject 35 (S20): university receives a grant under philanthropy while intelligence sponsor uses part of the medical facility; the difference between university and individual faculty knowledge matters. Source original indices 0,6.
+- **`The Amnesia Report`** / ARTICHOKE (S19): officers **report** they induced interrogation amnesia. Ask what evidence would distinguish observation, self-report, suggestion, and objective persistence. Source index 0.
+- **`R&D / Field Use`** / MKULTRA–MKDELTA (S22): two real cryptonyms represent distinct organizational functions. Later claim 'Monarch' is not logically implied. Source indices 0,2.
+- **`The Inspector's Risk`** / 1963 IG (S22): inspections criticize uncontrolled research and agency exposure alongside ethical problems; whose 'risk' gets priority? Source indices 8,11,18.
+- **`Two Different Manuscripts?`** / O'Neill 2026 testimony (S24): a **reporter's claim of two discrepant versions**, one 1956 study and a shortened version in 1977. Keep both actual originals as required unverified sources; the archive comparison is an investigative Quest, not a factually resolved card. Testimony pages indices 5–6.
+
+These **six new candidate prompts** are additive to 12 initial MKUltra seeds and six earlier mass-psychology prompts (24 total provisional prompts, zero accepted decks/cards). Do not create/render the actual deck or reclassify the existing Gateway/Iceberg contents. Possible path: `One Sixth of a Hospital` → `The Inspector's Risk` → `Two Different Manuscripts?` to compare financing, internal oversight, and later dispute over evidence. Adjacency makes hypotheses visible without supplying proof of alleged later programs.
