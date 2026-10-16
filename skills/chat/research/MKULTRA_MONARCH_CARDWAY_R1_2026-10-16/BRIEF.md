@@ -55,3 +55,9 @@ No source edits to Iceberg, registry decks, Cards/Almanac, any game, actor/runti
 
 ## Crash recovery
 Read this BRIEF, then `SOURCE_LEDGER.md`, `CARDWAY_IDEAS.md` and `RETURN.md` within this folder, then inspect the **current GitHub branch head**. Source claims in the original 2026-10-16 user message stay attributed as claims. If an intended write times out, check ref/file before retrying. Next gate at intake checkpoint: curate initial primary sources and existing-card overlap, then persist Return.
+
+## ADDITIVE 2026-10-16 SCOPE EXTENSION · SOCIETAL PSYCHOLOGY
+Georg explicitly added Frank Höfer's 2026 *Der programmierte Mensch* (ISBN 9783982914107), two exact YouTube links (IDs `yx8AWx_sOl4` and `llSgrF8h9AU`), and Mattias Desmet's Mass Formation framework. These broaden the **same research lane** to the social-psychological, psychoanalytic, propaganda, authority and digital-behavior dimensions of influence. A future dedicated Mass Formation card deck is a **proposal only**, not an activated new project.
+
+**Additive, read-first:** `SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md`, with S09–S18 recorded in `SOURCE_LEDGER.md`. The linked videos' contents remain uninspected; the Höfer book was identified from catalog/publisher description, not read. Read this alongside existing R1 MKUltra/Monarch evidence and continue the **single R2 source-depth gate**, augmented with Desmet comparisons and video identification.
+
