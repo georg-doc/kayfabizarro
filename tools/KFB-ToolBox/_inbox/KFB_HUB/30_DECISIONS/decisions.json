@@ -4496,6 +4496,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-333",
+   "date": "2026-10-16",
+   "area": "HUD",
+   "verdict": "RULE",
+   "text": "HUD-Kompass = echtes 3D-Objekt (Clay-Pfeil im Spielzeug-Gehäuse), ersetzt den statischen SVG-/CSS-Pfeil des HUD R3 (der zeigt nur nach Norden, keine Höhe). Ein aktives Ziel (Quest/POI) mit Name und ehrlicher Distanz („Luftlinie ~m“, solange keine Routenlänge bekannt), Drehung relativ zur Blickrichtung mit kürzestem Winkel und Dämpfung. Zu Fuß/Fahren: ruhig waagrecht. Flug: Pflicht Neigung hoch/runter (pitch = atan2(Δy, horizontale Distanz)), kleiner Horizontring, ↑/↓ und Δ-Höhe; senkrecht drüber/drunter ohne Zittern. Nähe-Farbe nur als Zusatzhinweis. Gerendert im einen Three.js-Renderer (Overlay-Pass), kein zweiter Renderer. Quelle: Web-Chat R0.3 (recovery/kfb-minigames-fluff-source-bridge-2026-10-15, KFB_HOME_RETURN_STONE_POI_3D_COMPASS_R0_3). Stufe K1 (Gierwinkel + Distanz) im HUD-Slice nach M2; K2 (Neigung) mit dem Flugmodus V-274, Neigung aber schon im Modell vorhanden. Asset: WS0 baut den Kompass-GLB, Gehäuse-Spender KayKit RPG Tools Bits compass_base (CC0, auf main).",
+   "values": {},
+   "owner": "WS1 (Laufzeit) · WS0 (GLB)",
+   "check": "K1-Bildpaar Ziel vorn/hinten/seitlich; K2 Prüfbilder ±30°, senkrecht",
+   "source": "Georg 16.10.: „3D-File … als Kompass und Entfernungsmesser für die Quests und Points of Interest … Höhe oder Tiefe … für den Flugmodus“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Quests/POIs brauchen eine Richtung, die auch im Flug die Höhe zeigt; der statische SVG-Pfeil kann das nicht.",
+   "applies": "HUD-Slice nach M2"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4568,7 +4583,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:631",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:632",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · Alien-Rebriefing
+- V-333: HUD-Kompass als 3D-Objekt mit Distanz, Flug mit Neigung; aus Web-Chat R0.3; WS1-Notiz + Hub b48; WS0 baut den Kompass-GLB.
 - V-332: Augensockel statt Klappen, Dangle-Seite explizit (rechter Augenstiel knickte), Münder Pflicht; Rezepte auf assets/kfb-alien-figures-toolbox-2026-10-15 @9b1917ad (mit reference/), Hub-Briefing b47 an WSA work.
 - Fahrzeuge v3 (×1,5) + Ödland-Käfer (mit Vogel, hop-in-hidden) fertig gebaut, noch nicht gepusht.
 

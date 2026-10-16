@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · HUD-Kompass als 3D-Objekt – V-333
+Georg will den Kompass/Entfernungsmesser für Quests und POIs im HUD. Heute ist dort (HUD R3) ein statischer SVG-/CSS-Pfeil: nur Nordrichtung, keine Distanz, keine Höhe.
+- **Ziel:** ein echtes 3D-Clay-Pfeil-Objekt (GLB) im HUD, gerendert als Overlay-Pass im **einen** Three.js-Renderer (kein zweiter Kontext). Ein aktives Ziel (`TargetRef`: Quest/POI) mit Name + Distanz; Distanz ehrlich als „Luftlinie ~m“, solange keine Routenlänge existiert, keine erfundene ETA.
+- **K1 (HUD-Slice nach M2):** Gierwinkel relativ zur Blickrichtung (`targetBearing − playerHeading`, kürzester Weg, gedämpft), Distanz, zu Fuß und im Fahrzeug ruhig waagrecht. Nähe-Farbe nur zusätzlich, nie allein.
+- **K2 (mit Flugmodus V-274):** Pflicht-Neigung `pitch = atan2(Δy, max(hypot(Δx,Δz), ε))` um die lokale Querachse des Pfeils, kleiner Horizontring, ↑/↓ + Δ-Höhe; bei Ziel fast senkrecht: letzten Gierwinkel halten, „direkt über/unter“ anzeigen statt Zittern. Baut den Pfeil in K1 schon so, dass die Neigung nur freigeschaltet wird.
+- **Asset:** WS0 liefert `kfb_hud_compass.glb` (Gehäuse aus KayKit RPG Tools Bits `compass_base`, CC0 auf main, + Clay-Nadel, Pivot in der Mitte, Nadel zeigt +Z) mit Pfad und Bild im nächsten Eintrag. Bis dahin Platzhalter nur hinter `?debug=1`.
+- **Abnahme K1:** Bildpaar Ziel vorn / hinten / links; Pfeil dreht beim Umdrehen korrekt um; Distanz ändert sich stetig. **K2:** Prüfbilder Ziel waagrecht, +30°, −30°, senkrecht drüber.
+- Quelle: Web-Chat R0.3 (`recovery/kfb-minigames-fluff-source-bridge-2026-10-15`, `skills/chat/recovery/KFB_HOME_RETURN_STONE_POI_3D_COMPASS_R0_3_2026-10-15.md`); Owner dort = Lab ist überholt, Laufzeit = WS1 (V-228). Ruhestein/Taschenportal aus demselben Dokument sind **nicht** Teil davon.
+
 ## 16.10.2026 · Antworten auf alle offenen WS0-Punkte (§32–§42) – V-331
 1. **Auslieferweg (§40.6):** siehe V-314 – Branch `ws1/preview` → `https://ws1-preview.kayfabizarro.pages.dev/`; ihr dürft Georg die URL geben. Gilt auch für den M1-Zwischenstand.
 2. **V-305-Einbau (§40.7):** freigegeben wie eure **Hauptvariante**: `kfb-cartoon-palette.js` 1:1 vendoren, `fromStoryMode(story-mode der Karte, 0)`, Story-Farbe auf dem Boden; Rollen Rahmen=`strang`, Pfosten=`trunk`, Leiste=`pad`/`cloud`, Himmel=`sky`→`cloud`, Gelände=`top`; Meshy 18 % zum Boden-Farbton; `island-palettes.js`, Genre-Tabelle und `palv=b` entfallen. Tageszeit-Regel für Himmel/Nebel steht im Licht-Briefing (`BRIEF_WS1_LIGHT_R1.md`). Bildreihe je Story-Mode + Paar heute | V-305 wie vorgeschlagen.
