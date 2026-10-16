@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · Look-Lauf L2
+- V-340: WS1-Look-Lauf L2 (Licht L1 + warmer Standard B, Licht-Identität je Figur, Knet-Material für Figuren und Fahrzeuge, Dieselpunk-Aufstellung); Käfer + Größenbilder auf assets/meshy-arcade3-marble-vehicles3-2026-10-16 @9bd8e037; Fluff-Pips in HUD R4 (b49).
+
 ## 2026-10-16 · Suno arc2
 - V-339: Opener-Pool R2 (Anekdoten + Story-Mode-Pools) im Checker; vier Probe-Tracks arc2 mit Styles im Hub (b52–b56); Kartenzeilen bytegleich zu den geprüften Fassungen.
 

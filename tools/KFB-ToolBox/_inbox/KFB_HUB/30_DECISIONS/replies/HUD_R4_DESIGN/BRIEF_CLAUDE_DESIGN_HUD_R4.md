@@ -57,6 +57,7 @@ The calls must not feel cryptic. Design a light first-time help: one-line toolti
 - radio;
 - backpack (open state);
 - fluff counter, collection count, discard pile (“Sammlung”, “Ablagestapel”).
+- **Six Fluff pips (Georg 16.10., V-340):** six small permanent colour dots for the Fluff stock in the six story-mode colours (V-292/V-305: tragic #3e6a83, comic #7a8d4a, absurd #e9c14a, heroic #d97c3a, mystical #6b4e7d, forbidden #a64670), each with a tiny count; High/Low stays in the data, optional sub-state. On pickup a clay Fluff ball flies from the world to its pip and settles with a short squash-and-bounce (visual only; the stock is booked at pickup; reduced motion = instant). Shapes or counts so colour is not the only cue. Source: `replies/WS0_KRAZY_KAT_LIGHT_FLUFF_ACTOR_INTENT_R1_2026-10-16.md` §3–4.
 
 ### 3.4b Screen layout (Georg 16.10.)
 - **Minimap top right.** Donor: the Joyride J17 clay HUD (`ref/j17_hud_clay_minimap.jpg`, minimap there sits bottom right) – keep its clay track-line style, move it to the top right. It also shows the active target marker.

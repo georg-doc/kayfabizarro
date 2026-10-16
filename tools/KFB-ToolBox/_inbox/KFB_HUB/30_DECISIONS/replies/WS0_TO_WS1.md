@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Look-Lauf L2 – V-340
+Neuer langer Auftrag `replies/BRIEF_WS1_LOOK_RUN_L2.md` (Hub b57): baut auf L1 (V-329) auf. Drei Schritte, ein Lauf, Raster G1–G10 selbst messen, keine Prüferrunden: (1) L1 + warmer Krazy-Kat-Look B neben J17-Kontrolle A, Licht-Identität je Figur als Daten; (2) ein Knet-Material für KayKit-Figuren und alle Meshy-Fahrzeuge; (3) Aufstellung aller 14 Fahrzeuge + FB + Orc. Fahrzeuge: `assets/meshy-arcade3-marble-vehicles3-2026-10-16` @9bd8e037 (13 Racer v3 + neu `wasteland_beetle/`). M1 TUNE / M2 nicht umordnen; Einplanung bitte im WS1_STATUS. Fluff-HUD nicht bauen (kommt über Claude Design HUD R4).
+
 ## 16.10.2026 · Nachtrag zu V-333: Ziel-Pfeil in der Welt – V-334
 - Georgs Vorbild ist WoW *Undermine*: Der 3D-Pfeil schwebt **über der Spielfigur bzw. dem Fahrzeug** in der Welt, nicht in einer HUD-Ecke; am Ziel ein Ring. Im HUD nur Name + Distanz (+ im Flug ↑/↓, Δ-Höhe). Mechanik aus V-333 bleibt (Gierwinkel, Flug-Neigung, ehrliche Distanz); der Overlay-Pass entfällt, Pfeil und Ring sind normale Objekte der einen Szene.
 - Look von HUD, Pfeil, Ring und neuem **Social-Call-Radialmenü** (KayfaBINGO/BONGO/BOGGLE/Blödsinn! + eigener Text; die Spielfigur spricht die Wahl in ihrer eigenen Blase) kommt von Claude Design (HUD R4, `replies/HUD_R4_DESIGN/`). Bitte nichts davon vor der Design-Lieferung stylen; Mechanik-Vorarbeit hinter `?debug=1` ist ok.

@@ -4601,6 +4601,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-340",
+   "date": "2026-10-16",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "WS1-Look-Lauf L2 (replies/BRIEF_WS1_LOOK_RUN_L2.md, Hub b57), ein langer Lauf ohne Prüferrunden: (1) Licht L1 + warmer Krazy-Kat-Standard als Look B neben J17-Kontrolle A, Werte aus V-305 (keine zweite Palette), Story-Boden je Karte bleibt; Licht-Identität je Figur als Daten (lightIntent: Rim, Fill-Tönung, Key-Neigung, Priorität) über Clay-Rim + geliehenes Pool-Licht, keine Extra-Lampen. (2) Ein Knet-Material für KayKit-Figuren und Meshy-Fahrzeuge (matt, Daumenabdruck, ≤ 18 % Paletten-Zug, keine Mesh-Änderung). (3) Dieselpunk-Aufstellung aller 14 Fahrzeuge + FB + Orc in drei Stimmungen. Fluff-Pips + Pickup-Flug gehen in Claude Design HUD R4; Alchemie bleibt offen. Grundlage: Web-Chat-Intake WS0_KRAZY_KAT_LIGHT_FLUFF_ACTOR_INTENT_R1.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Bildserie je Schritt + ws1-preview, Raster G1–G10",
+   "source": "Georg 16.10.: Krazy-Kat-Wärme, „alle im Claymation-Look“, „längerer Job … ohne sinnlose Token-Iterationen“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Licht, Material und Fahrzeuge in einem Lauf, damit der Look als Ganzes beurteilt werden kann.",
+   "applies": "nach M1 TUNE bzw. parallel"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4673,7 +4688,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:642",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:652",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
