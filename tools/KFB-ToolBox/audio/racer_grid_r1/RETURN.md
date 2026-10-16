@@ -24,7 +24,7 @@ Generated audio: **0 / 48**. Existing media in `KFB Racer/` including Georg's pr
 - `README.md`: execution, credit-control and WS0 listening instructions
 - `generate_elevenlabs.py`: standard-library API client; optional `--execute`, `--max-calls`, atomic MP3/manifest writes, SHA-256 resume, stop on ambiguous API failure; no automatic retries
 - `test_generate_elevenlabs.py` + Actions workflow: offline contract tests, no secrets
-- `TEST_REPORT.md`: actual static source checks **16/16 PASS**; Python CI check pending on run 38980028515 at drafting; **0 actual audio/runtime checks**
+- `TEST_REPORT.md`: actual static source checks **16/16 PASS**; GitHub CI run 38980028515 SUCCESS with 10/10 Python tests, byte-safe dry-run and compilation; **0 actual audio/runtime checks**
 
 ## Outstanding
 1. WS0 or an authenticated executor must provision `ELEVENLABS_API_KEY` in a secure environment **outside GitHub source**; run pilot four files, then resume the full batch.

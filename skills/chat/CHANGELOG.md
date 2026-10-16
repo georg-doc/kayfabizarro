@@ -1,3 +1,7 @@
+## 2026-10-17 · V-378 KFB Racer ElevenLabs Motor Grid R1 (source-prepared)
+
+Dedicated `audio/kfb-racer-motor-grid-r1-v378-2026-10-17` branch contains verbatim 12 effect prompts, 4-variant/48-candidate model-v2 batch config, resumable credential-gated Python generator, 10/10 passing Actions unit tests and 16/16 source checks. No ElevenLabs credential, API request, real MP3, Stage, runtime change or merge. Legacy audio donors preserved. See `tools/KFB-ToolBox/audio/racer_grid_r1/RETURN.md`; next WS0 gate = authorized API batch and 48-file audible/measured QA.
+
 ## 2026-10-08 · ChatterBox Voice becomes next-runtime-MVP acceptance seam
 
 - Georg authorized the new Voice Layer for the first runtime MVP after the current Four-Island A/B visual gate.

@@ -4,8 +4,9 @@ on:
     branches:
       - audio/kfb-racer-motor-grid-r1-v378-2026-10-17
     paths:
-      - "media/3D_Assets/Audio/KFB Racer/grid_r1/**"
-      - "tools/KFB-ToolBox/audio/racer_grid_r1/**"
+      - "media/3D_Assets/Audio/KFB Racer/grid_r1/SOURCE.json"
+      - "tools/KFB-ToolBox/audio/racer_grid_r1/generate_elevenlabs.py"
+      - "tools/KFB-ToolBox/audio/racer_grid_r1/test_generate_elevenlabs.py"
       - ".github/workflows/kfb-racer-motor-grid-r1-validate.yml"
   workflow_dispatch:
 permissions:

@@ -5,8 +5,8 @@ State: **SOURCE VALIDATION PASS / ELEVENLABS GENERATION NOT RUN**
 
 ## Executed evidence
 - Actual GitHub-source JS/static checks: **16 / 16 PASS**. Checked current branch source and generator, full 12x4 candidate roster, 24 loops, 24 one-shots, v2 model and prompt influence, duration limits, safe destination, no automatic paid retries and explicit `--execute` credential gate.
-- GitHub Actions workflow `KFB Racer Motor Grid R1 — offline contract`: [run 38980028515](https://github.com/georg-doc/kayfabizarro/actions/runs/38980028515), created on tests commit `c3711a0f9f991c8fbdcc9747301b42db27e11b44`. **IN_PROGRESS at this report checkpoint; result not yet asserted**.
-- Python unittest definitions: **10**, automated CLI syntax/unittest/dry-run are CI targets, **not claimed passed** until Actions confirms.
+- GitHub Actions workflow `KFB Racer Motor Grid R1 — offline contract`: [run 38980028515](https://github.com/georg-doc/kayfabizarro/actions/runs/38980028515), created on tests commit `c3711a0f9f991c8fbdcc9747301b42db27e11b44`. **SUCCESS: Python compile, 10/10 unittests, and CLI 48-file dry-run PASS**.
+- Python unittest definitions: **10**, automated CLI syntax/unittest/dry-run are CI targets, **10/10 PASS**; GitHub job 117238456731 log confirms `Ran 10 tests in 0.706s`, `OK` and `V-378 PASS: 48 expected files, 0 API requests, 0 credits`.
 - Real ElevenLabs API executions: **0**. Generated MP3s: **0/48**. Audible seam/frequency/RPM measurements: **NOT_RUN**.
 - No key read, no secret uploaded, no Studio or Stage execution.
 
