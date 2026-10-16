@@ -4406,6 +4406,36 @@
    "applies": "Planung"
   },
   {
+   "id": "V-327",
+   "date": "2026-10-16",
+   "area": "Daten",
+   "verdict": "RULE",
+   "text": "Unlesbares bleibt unlesbar: Kartentexte sind in NotebookLM gerendert (nicht als Schrift gesetzt); Wasserzeichen bzw. Georgs Signatur-Overlay unten rechts verdecken teils Text. Das nimmt Georg bewusst in Kauf und rahmt es metanarrativ: nicht alles löst sich auf, ein Song darf falsch gesungen sein, manches bleibt unvollständig und rätselhaft – das lädt zum Entdecken ein. Keine typografische Kleinarbeit, nichts erfinden; solche Stellen bleiben OPEN bzw. „…“ (z. B. cosmic_grift #20).",
+   "values": {},
+   "owner": "alle",
+   "check": "-",
+   "source": "Georg 16.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Lücken als Charme statt als Fehlerjagd; spart Zeit und passt zum Kayfabe-Rahmen.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-328",
+   "date": "2026-10-16",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Mund-Sätze in der ToolBox: Georgs neue Clay-Mund-Bögen (sechs Bögen auf main, FrizzleBob-Mouths_PNGs) werden wie die ersten drei Decal-Münder im selben Mund-Dropdown angeboten, für alle Figuren; Auswahl über ein Manifest, damit weitere Sätze ohne Code-Änderung dazukommen; Tönung je Figur für tintable-Sätze. WS0 schneidet und verankert die Bögen (cut_align, Format wie GPT-R2), WSA baut das Dropdown (Briefing b34 Punkt 6).",
+   "values": {},
+   "owner": "WS0 (Schnitt, Manifest) → WSA ToolBox",
+   "check": "Georg wählt Münder im Dropdown",
+   "source": "Georg 16.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Dropdown für alle Münder statt Sonderwege je Satz.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4478,7 +4508,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:609",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:617",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
