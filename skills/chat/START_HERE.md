@@ -3,7 +3,9 @@
 Georg requested a source-focused GitHub research slice and later KFB cards ideation for the documented MKUltra experiments, claimed Project Monarch, and Cathy O'Brien / Mark Phillips' *TranceFormation of America*. **This is not a new canon, implementation or runtime owner; none of the world/MVP gates below change.**
 
 Research branch: `research/kfb-mkultra-monarch-cardway-r1-2026-10-16`.
-Read first: `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/BRIEF.md`, then `SOURCE_LEDGER.md`, `CARDWAY_IDEAS.md`, `TEST_REPORT.md`, `RETURN.md`.
+Read first: `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/BRIEF.md`, then `SOURCE_LEDGER.md`, `SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md`, `CARDWAY_IDEAS.md`, `TEST_REPORT.md`, `RETURN.md`.
+
+**Additive 2026-10-16 R1 extension:** Frank Höfer's *Der programmierte Mensch* (ISBN 9783982914107), YouTube IDs `yx8AWx_sOl4` and `llSgrF8h9AU` (video content UNINSPECTED), and Mattias Desmet's Mass Formation alongside empirical social-psychology / propaganda / digital-influence research. Future Mass Formation deck is editorial **proposal only**. Same Draft PR #408 and same R2 source-depth gate; no changes to existing KFB runtime/cards or Stage.
 
 Use existing `travel/3D Conspiracy Iceberg Explorer/docs/SCHEMA-v2.md` and `registry/assets/v1/decks/project_gateway_kayfabe.json` for read-only reuse/donor comparison. `skills/chat/meta/KFB_META_COMPENDIUM_v1.md` remains the meta index, not a research SSOT. Never conflate source-proven MKUltra with the separately uncorroborated Monarch claims or turn named-person allegations into verified facts. Research only; no cards activated, Stage/Live or merge. Next gate: original-text and primary-document page-level comparison.
 
