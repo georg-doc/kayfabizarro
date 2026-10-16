@@ -49,3 +49,15 @@ Date: 2026-10-16. Mode: research-source recovery + benchmark contract, not game/
 - Exact original contact sheet 3×3 downloaded and **visually inspected**: parchment/isometric scene, glowing orange core, gray plumes, angular brown debris, cyan water/waterfall, cream vortex. Evidence detail: `VISUAL_SOURCE_PROOF.md`.
 - **25/25** cross-file/source consistency checks remain, in addition to **9/9** source-image hash validations. This is **NOT** 34 rendered KFB effect tests. KFB 3D/2D/hybrid, original shader source, target GPU benchmarks and human acceptance remain NOT_RUN.
 - GitHub original alpha files independently enumerated, source IDs captured in `EXISTING_ALPHA_MASK_ATLAS_CATALOG.md`: current 93 alpha PNG files, 14 predrawn sheets, 5 exact muzzle masks, 16 atlas roles. No new paint/brand.
+
+
+## Actual complete source A/B/C browser milestone · 2026-10-16
+
+**Source CI:** `38926541781` at `6c2214da5844b50fb9a1f952fd339040a332e2f9`, job `117059410671`, **SUCCESS, 50/50 technical assertions**, `14` screenshots and `12` per-scenario/per-variant rows. Artifact `12058220353` includes `results.json`, source-isolated real 3D and real 2D, 4-variant source-scene captures for single, four and block. SHA256 archive `412d691d9ed99c7b389c11d39444f2e35b3aef245ccc1e2a6e32622aedaffcd4`. Machine-readable summary `FX_AB_R1_FINAL_RESULT.json`.
+
+**Observations:** single 8 cells lost/0 cascades; four 48 lost/0; block 12 rockets repeated over 4 actual neighboring buildings → **90 cells lost, 2 real support cascades, 178/256 debris, 195/200 smoke, 584/584 FX pool**. Fixed damage under four render variants.
+Block render triangles: baseline 796,942; 3D 812,542; original 2D 797,722; hybrid 798,406. Smoke triangle contributions 15,600 / 780 / 1,464: 2D is 20× less smoke geometry, **NOT** 20× faster KFB. Block render CPU-submit p95 8.4 / 7.4 / 7.5 / 8.3ms, heavily confounded by the CI SwiftShader and rAF p95 around **1705–3674ms**; not true target-device GPU/FPS evidence and insufficient for ranking.
+Renderer pixel signal from same frozen scene vs baseline: single 3D 2.147%, 2D 0.071%, hybrid 2.034%; four 12.67%, 0.833%, 1.031%; block **9.147%, 1.272%, 4.222%**. This proves visual presence, not readability/style.
+Actual screenshot visual inspection: **TUNE** for all variants: original 3D source displayed 5× is oversized/smooth/off-white, 2D actual white-alpha masks 6.5× are too weak/low-contrast against sand-colored blocks, hybrid retains oversized white geometry. No accepted Clay K1/H0/K2 parity, no actual source motion performance, no dynamic frame-by-frame KFB gameplay stress, no measured browser on Georg's device.
+**Previous failures retained** in `FX_AB_R1_EVIDENCE.md`: first run 39/39 technically green but visually invisible; second run 13/14 correctly rejected minimal 2D visibility; final pass is a **technical proof only**, not an artistic or target FPS PASS.
+Next one gate: `KFB SEED WORLD SATURATED HYBRID FX VISUAL BUDGET + TARGET-GPU REVIEW`.
