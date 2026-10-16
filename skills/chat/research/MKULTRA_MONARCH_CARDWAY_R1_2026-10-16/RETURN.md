@@ -1,5 +1,21 @@
 # RETURN · MKUltra / Monarch → KFB Cardway Research R1 · 2026-10-16
 
+## ADDITIVE R2A RETURN · 2026-10-16 · Original CIA FOIA document inspection
+**Completed this phase:** A real original-document R2A, while retaining R1 historical, Monarch, Höfer, video and Desmet context. New readable file: `R2A_FOIA_PRIMARY_SOURCE_DEEP_DIVE_2026-10-16.md`. Existing `SOURCE_LEDGER.md` extended S19–S26 (26 total source/lead IDs), `CARDWAY_IDEAS.md` with 6 R2A archival prompts, `TEST_REPORT.md` with exact evidence checks.
+
+**Concrete sources inspected directly, not only search summaries:** four primary CIA original scan families: ARTICHOKE (1952, narco-hypnosis report), MKUltra Subproject 35 (1954, CIA $125k proposed funding and hospital cover), CIA TSS Chemical Division 17 research objectives (1955), and CIA IG MKUltra/MKDELTA report (1963). Official House 2026 written testimony PDFs opened: Stephen Kinzer (3pp), Tom O'Neill (7pp) and Elizabeth Ginexi (56pp, only initial page checked). **15 individual original scan PDF pages visually verified** across those seven PDF families. Original scan URLs, original-date/project identifiers, exact PDF page indices, quotation scope and inference limits in R2A report.
+
+**New significant fact:** The 1963 CIA IG report distinguishes MKULTRA as R&D and MKDELTA as operational policy/use of biochemicals; unlike the alleged 'Monarch' this second codeword has direct contemporaneous agency primary-source documentation. It states unwitting US testing began in 1955. It reports limited effective tools as of 1960 and low operational yield; specific progress was nevertheless claimed in drugs used as interrogation aids.
+
+**Important newly surfaced investigative lead, not yet confirmed from its originals:** At the 30 June 2026 House hearing, Tom O'Neill said he found 1953 West/Gottlieb correspondence and a 1956 research report describing false-memory induction, and claims a different shortened 1977 version existed. The **actual West originals and paired historical copy were NOT read in R2A**; O'Neill's sworn/public testimonial statement proves he made the allegations, not that the historical originals are authentic, descriptions accurate or methods worked as advertised. Kinzer's modern AI/neuroscience concern was explicitly a question to investigate, NOT evidence of an ongoing MKUltra successor. Ginexi's opened first page concerns contemporary NIH policy, not primary MKUltra records.
+
+**FOIA access reality:** Public declassified originals can be fetched and read image-first (National Security Archive, House Oversight). Some old CIA Reading Room deep links presently redirect to homepage despite indexed snippets. NSA public original scans are functional mirrors; its more-than-1,200-document collection is not necessarily all publicly free at once. File-destruction, redactions and missing original books remain gaps. This is a selected direct-source audit, not total archive exploration.
+
+**Acceptance/evidence:** R2A content/provenance structural tests **8/8 PASS**; primary CIA scan families 4; contemporary hearing witness PDFs 3; original pages visually inspected 15; source IDs total 26; provisional card prompts total 24 (12 initial MKUltra +6 societal +6 R2A), accepted/implemented cards 0; runtime/CI/Cloudflare Stage/browser tests 0; merge/site/public promotion none. Each GitHub change was read back with its exact branch head. Last verified pre-Return checkpoint commit `9fc837349c6a4c72f5e35f356546bac24506bca1`; always check current branch head after this Return and subsequent router/changelog writes.
+
+**Next executor:** ChatGPT Web Chat, same research owner and branch Draft PR #408; no task for Georg. **Exactly one next gate: R2B SOURCE PROVENANCE COMPARISON** of West's claimed 1953 letters and 1956 study versus 1977 released version, with Cameron's original Subproject 68 primary records and independent Desmet peer-comparison as adjunct tracks; keep videos flagged uninspected until metadata/source available. No new card deck or runtime without a separate decision.
+
+
 ## ADDITIVE RETURN · 2026-10-16 · Desmet / societal psychology / Höfer / YouTube
 **Actual result:** Extended the EXISTING R1 research record on the same branch and PR; no second research project or Card engine. Source descriptions are additive and do not reclassify the historical MKUltra or separate Monarch claims.
 
