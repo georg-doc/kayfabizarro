@@ -52,6 +52,15 @@ Georg will Licht, Beleuchtung und Environment in die nächsten MVP-Schritte bzw.
 - Keine Schatten.
 - Der Pool wählt die nächstgelegenen zur Kamera bzw. Figur.
 
+### 43.5 · Vorschau live (V-314)
+- Branch `ws1/preview` **@24309fd2** = kfb-planet main @08463eb, darin Bühne und M1-Zwischenstand. Cloudflare-Check: success. Der Inhalt ist `index.html` (18,0 MB) plus `.github/scripts/build-cloudflare-pages.mjs` und `wrangler.jsonc`, 1:1 aus main.
+  - Ohne diese beiden Dateien scheitert der Pages-Build: Das Projekt baut jeden Branch mit dem main-Skript.
+  - Ein erster Versuch enthielt durch einen Fehler den ganzen Repo-Baum und wurde von GitHub abgelehnt; veröffentlicht wurde davon nichts.
+- **Links für Georg (im Browser-Fenster der App geprüft, keine Konsolenfehler):**
+  - Bühne mit Dialog: `https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,dialog=6` (Karte, FB | GothGirl, Blasen, Auswahl, Kamera-Knöpfe);
+  - M1-Welt: `https://ws1-preview.kayfabizarro.pages.dev/#m1` (Tastenliste mit H, Bühne vorn mit Sprung erreichbar).
+- **Hinweis:** Nach einem Wechsel nur des Hash-Teils muss die Seite neu geladen werden.
+
 ## 42 · 15.10. abends · M1 als Zwischenstand nach main gemergt (Georg) · alles grün
 
 ### 42.1 · Merge
