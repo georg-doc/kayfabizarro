@@ -50,3 +50,22 @@ KFB's satire should target systems, impunity, bureaucratic language and the abus
 R2: direct study of original O'Brien/Phillips passages, original Senate record and Cameron primary sources with page-level evidence and explicit contrary records, plus audit of overlapping Gateway cards.
 R3: choose a small set of source-backed cards and contested-claim neighbors for **Georg's editorial selection**, in the existing KFB card owner; only then make actual cards.
 No runtime changes, no deployed Iceberg nodes, no new renderer or source/asset IDs created here.
+
+
+## ADDITIVE 2026-10-16 · Potential mass psychology card neighborhoods (RESEARCH ONLY)
+Read `SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md` and S09–S18 in `SOURCE_LEDGER.md` for exact primary/secondary source status. Georg mentioned an **optional later independent Mass Formation deck**. Preserve the idea; do NOT create an independent content owner, render assets, or publish cards in this R1.
+
+**Six additional concept prompts, not final cards:**
+- `Free-Floating Anxiety` — Desmet's theoretical construct: how does uncertainty attach to a public explanation? Needs study-level verification before any claim of prevalence.
+- `The Longing to Belong` — shared identity, loneliness, desire for meaning. Compare Desmet and social-identity theory; do not equate conformity with hypnosis.
+- `The Disagreeing Neighbor` — when does group loyalty conflict with dissent and what predicts tolerance for disagreement?
+- `The Fear Appeal` — a narrow, experimentally researched persuasive message versus a general claim of manipulative control (S13).
+- `The Crowd Is Not One Mind` — SIDE/social identity research shows groups are more than passive victims of a unitary narrative (S14).
+- `The Algorithmic Audience` — profiling/recommendation/choice architecture as contemporary phenomena (S15), without asserting an undocumented MKUltra continuation.
+
+**Three possible cross-topic adjacency paths** (editorial hypotheses, not causality):
+- `Subproject Sixty-Eight` → `The Fear Appeal` → `The Algorithmic Audience`: how definitions of 'influence' differ across biomedical, social and technical contexts.
+- `The Monarch Label` → `Free-Floating Anxiety` → `The Crowd Is Not One Mind`: how to test narratives, communities, belief and evidence without declaring related historical projects proven.
+- `The Eighty Institutions` → `The Longing to Belong` → `The Disagreeing Neighbor`: legitimacy, authority, institutional trust and dissent at distinct social scales.
+
+**Deck direction only:** standalone Mass Formation / mass psychology expansion may later compare Desmet, Freud, Fromm, Arendt, Asch, Reicher, Bernays and experimental persuasion research through existing KFB cards and interactions. Georg's future editorial gate only once research-level provenance and concrete original KFB donor overlap are established. Existing 12 R1 candidate seeds remain preserved unchanged.
