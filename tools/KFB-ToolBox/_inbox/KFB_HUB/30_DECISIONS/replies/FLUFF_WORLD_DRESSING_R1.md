@@ -31,7 +31,7 @@ Jedes Landmark braucht vorher seine Geschichte (wer, was, warum, Regel „World 
 
 **Truhen mit Eigenleben:** KayKit Dungeon Pack hat Truhen in common/uncommon/rare **und Mimic-Varianten mit Zähnen** (auf main). Darauf das KFB-Augen-Rig (EyeRig, Lid E2). Schlagen oder Rammen → Truhe platzt (2D-first FX, V-Destruction R4) → Kügelchen bzw. Karte springen heraus. Öffnende Truhe mit Goldschein: Spender `room-fx.js` im Dungeon Generator (KayKit Environment Atlas, Room Study S21). Georgs Meshy-Truhen-Packs kommen dazu, sobald er sie hochlädt.
 
-## 4 · WS0-Vorschläge (neu, zum Abwägen)
+## 4 · WS0-Vorschläge – von Georg übernommen (V-371), Details bei Unklarheit besprechen
 | Idee | Was | Warum es passt |
 |---|---|---|
 | Fluff-Böe | Ab und zu fegt eine Windböe durch die Zone, alle Bäume schütteln Fluff ab: kurzer bunter Regen zum Einsammeln | Chill-Fun-Moment ohne Kampf, nutzt die vorhandene Windfall-Physik |

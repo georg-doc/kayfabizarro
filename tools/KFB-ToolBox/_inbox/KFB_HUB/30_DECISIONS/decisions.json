@@ -5070,6 +5070,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-371",
+   "date": "2026-10-16",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "WS0-Vorschläge aus FLUFF_WORLD_DRESSING_R1 §4 übernommen (Georg 16.10.) und in der Umsetzung zu berücksichtigen: Fluff-Böe (Wind schüttelt alle Bäume einer Zone), Fluff färbt die Hauptstadt (Story-Tint als Fortschritt), Driften durch Fluff sammelt im Bogen, flüchtende Mimic-Truhe (Jagd mit dem Auto), Karaoke-Jukebox als Zonen-Landmark (Deck-Song, Karten mitsingen), Postkarten-Modus (Schnappschuss → Almanach), Almanach-Feldnotiz je Landmark mit Link aufs Deck-Dossier, Story-Mode-Würfel beim Herstellen. Unklares oder Widersprüchliches wird vor dem Bau mit Georg geklärt.",
+   "values": {},
+   "owner": "WS0 (Einplanen in Slices) · WS1 (Bau)",
+   "check": "je Idee eine Slice-Zuordnung",
+   "source": "Georg 16.10.: „Die würde ich gerne so auch übernehmen … persistieren“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg hat die Ideen als passend zum Chill-and-Fun-Intent angenommen.",
+   "applies": "Einplanung in Slice-Plan R2 ff."
+  },
+  {
+   "id": "V-372",
+   "date": "2026-10-16",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Suno-Songs erzählen die Karte, nicht ihre Spielregel (Georg 16.10.): POWER ist satirischer Ausdruck dessen, was die Karte behauptet, keine echte Spielwirkung; im Song darf sie höchstens als Meta-Satire mitschwingen, nie wie eine vorgesungene Spielanleitung im Vordergrund stehen oder die Story-Beats bestimmen. Quelle der Song-Zeilen ist das ganze Karten-Paket (Name, Lore, Bildmotiv/visuelles Design, Power als Seitenhieb), meist aus dem Kartentext; was das Motiv anbietet, darf ins Triplet. Die vier Karten einer Seite sind eine Mikro-Story und werden als Strophe gebaut (Beats in Verslogik). Form: Leerzeile zwischen Strophen als Pause; im Intro steht jeder Satz, der eine Pause braucht, in eigener Zeile (Frage und Antwort getrennt, sonst singt Suno „Good tonight“). Immer mitdenken: Was will der Comic sagen, was die einzelne Karte? Abwechslungsreich, nicht repetitiv. Für Songs ändert das die Gewichtung aus TRIPLET_SET_SPEC_R2 (Titel + Power-Begriff vorn).",
+   "values": {},
+   "owner": "WS0 (Writer’s Room, Triplet-Spec Song R3)",
+   "check": "Blind-Review-Frage: klingt es nach Spielanleitung? Strophen = Seiten",
+   "source": "Georg 16.10.: „die Power eher die satirische Metaebene … nicht so missverständlich, als wäre das eine Spielanleitung“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vorgesungene Pseudo-Regeln sind zu komplex und meta, im schnellen Song nicht zu verarbeiten und verwirrend neben den gezeigten Karten.",
+   "applies": "ab dem nächsten Song"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5142,7 +5172,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:694",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:695",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
