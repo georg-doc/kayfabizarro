@@ -1,3 +1,9 @@
+## 2026-10-16 · MKUltra research expanded into collective psychology (additive R1)
+- Georg added three exact source URLs: Frank Höfer's *Der programmierte Mensch* (ISBN 9783982914107) and YouTube IDs `yx8AWx_sOl4` / `llSgrF8h9AU`, plus Mattias Desmet's Mass Formation theory. Same existing research owner/branch and Draft PR #408, no parallel project.
+- New `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md`; extended existing BRIEF, SOURCE_LEDGER S09–S18, CARDWAY_IDEAS and TEST_REPORT. Added 6 research-only mass-psychology topic prompts; future dedicated deck is **proposal, not activation**.
+- Höfer book identified as 2026 NuoViso publication from publisher/catalog; book content **not read**. Two YouTube URLs captured exactly; video content **not accessible / unverified**. Desmet's account compared with named academic critiques, social identity and fear-appeal research; no false historical or causal equivalence asserted.
+- Independent official MKUltra oversight hearing (U.S. House, 2026-06-30) identified as a new primary-source lead; individual testimony remains to be reviewed. Additive static tests **8/8 pass**; no unit/game/browser tests; no Stage, Site, merge, Live or canon promotion. **Single next gate remains R2 primary-text source-depth audit**, broadened to the social-psychology track.
+
 ## 2026-10-16 · MKUltra / Project Monarch source-separation research intake (non-runtime)
 - Georg requested a crash-safe, GitHub-persisted research/ideation slice for MKUltra, Cathy O'Brien & Mark Phillips' *TranceFormation of America*, the alleged Project Monarch, and translation into KFB cards.
 - Research branch `research/kfb-mkultra-monarch-cardway-r1-2026-10-16` holds the self-contained intake, initial eight-item source ledger, twelve unapproved Cardway hypotheses, measured static checks and Return in `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/`.
