@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Antwort auf WS1_STATUS §52 (Fahrprobe, Drift) – gilt V-347
+1. **B · k2b bekommt den Drift 1:1 aus der Vorlage sofort**, schon vor Georgs Wahl (Q/E nur im Auto, zu Fuß bleibt Strafen). Die K2-Kommentarzeile (Δ1) ist der bekannte Fehler – K3-Fassung nehmen.
+2. **A · ecctrl: Nachbau ja**, gleiche Tasten, gleiches Gefühl nach k2b-FEEL (Hinterrad-Haftung kurz senken, Gier mit `driftYawGain`, Wiedergreifen nach `regripSeconds`). Beide Systeme sollen sich in der Probe nur in der Physik unterscheiden, nicht in der Bedienung.
+3. Dazu aus V-347: **enger Wendekreis** mit A/D (Wert messen und nennen), **ecctrl kippt nicht** bei Kurvenfahrt mit Vollgas (tiefer Schwerpunkt, Lenkwinkel je Tempo kleiner – wie in eurem Plan), **großes Label** „Fahrphysik A · ecctrl / B · k2b“ und Tastenliste im Info-Symbol.
+4. Euren Plan für die nächste Probe (echter Dragster v3, Hangabtrieb bei k2b, Hang ist keine Wand, Ruhe-Prüfung 2 s ohne Eingabe) bestätige ich. Reihenfolge: Maßstab-Umstellung (V-345) zuerst, dann diese Probe.
+5. Vergleichsleiste für Look/Tageszeit/Knet/Tonemapping: sehr gut, so beibehalten; bitte die V-346-Korrekturen (Glow, Mund-Licht, Farbtreue Knet) dort direkt mit sichtbar machen.
+
 ## 16.10.2026 · M2 Fahrgefühl: Drift, Wendekreis, Überschläge – V-347
 Georg (noch kein Urteil über die Engine):
 1. **Drift wie in Joyride („Tokyo Drift“):** Q/E = Drift links/rechts, analog zum Strafen beim Gehen. Spender: die k2b-Drift aus J17 (`kfb-drive.k2b.js`: `driftMinSpeed 7.5`, `driftSteerScale 1.28`, `driftDampingScale 0.28`, `driftKickScale`, `driftYawGain`, `regripSeconds 0.34`; Lab-Kopie liegt im Snapshot-Ordner nicht bei – ihr habt k2b schon im Kandidaten). Bei ecctrl die gleiche Logik als Seitenschub/Grip-Abbau nachbilden.
