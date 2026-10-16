@@ -4571,6 +4571,21 @@
    "applies": "parallel"
   },
   {
+   "id": "V-338",
+   "date": "2026-10-16",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Blender-Lauf R1 (replies/BLENDER_R1/BRIEF_BLENDER_RUN_R1.md, Hub b51): (A) Alien-/Orc-Reparatur nach WSA-Handoff; (B) FrizzleBob-Ohren vom Meshy-Modell (Form + angebissene Ecke) als Variante v5c auf FB v5b, optional Meshy-Kopfgrundform als zweite Variante, v5b bleibt Standard bis Georg wählt; (C) Ohren, Antennen und Augenstiele als künftige Ausdrucks-Akteure (Ears as Actors): Schritt 1 = Steifigkeit je Typ (ear weich/schlackernd, antenna federnd, eyestalk fester), saubere Bone-Ketten mit einheitlichen Namen, später type-Feld in dangle.parts[] + Profiltabelle in der ToolBox und benannte Ausdrucks-Posen für die Choreografie (V-298), inkl. asymmetrischer Brauen.",
+   "values": {},
+   "owner": "WS0 (Blender MCP) · später WSA work (ToolBox-Profil)",
+   "check": "Proofs je Teil, v5b|v5c nebeneinander",
+   "source": "Georg 16.10.: „Meshi-Ohren … ausgebissene Ecke“, „Ears as Actors“, „Materialsteifigkeit … unterschiedlich für Ohren, Antenne und Augen am Stiel“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ausdrucksstarke Anhängsel brauchen saubere Ketten und eigene Steifigkeit; FBs Ohren bekommen endlich die angebissene Ecke.",
+   "applies": "Blender-Lauf 17.10."
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4643,7 +4658,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:638",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:639",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

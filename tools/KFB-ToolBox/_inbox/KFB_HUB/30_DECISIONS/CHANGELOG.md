@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · Figuren-Bau neu, Musikvideo
+- V-338: Blender-Lauf R1 für 17.10. (Hub b51): Alien/Orc-Reparatur, FB-Meshy-Ohren als v5c, Steifigkeit je Anhängsel-Typ als Grundlage für Ears as Actors.
 - V-336: Rigging/Frankensteining jetzt WS0 mit Blender MCP, ToolBox nur Integration; Laufzeit-Mesh-Hacks verboten; Frankensteining Studio verabschiedet (WSA-Postmortem + Blender-Handoff auf feat/headpart-v332-acceptance-2026-10-16).
 - V-337: Musikvideo-Briefing an neue Sitzung WSV (Hub b50), Pilot wrinkle_rumble.
 
