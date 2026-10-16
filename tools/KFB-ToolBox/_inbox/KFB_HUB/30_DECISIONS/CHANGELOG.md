@@ -1,3 +1,7 @@
+# 17.10.2026 · WS1 Staging · echtes ToolBox-UI übernommen
+
+Georgs UI-Wunsch ausgeführt auf derselben privaten Site: warme ToolBox-v9-Palette, Space Grotesk/IBM Plex Mono, kompakte Kopfleiste, segmentierte Szene-Tabs, rechter Stand-/Archivinspektor, schmale Ansicht. Original isoliert gezeigt; WS1-Runtime unverändert. 16/16+22/22 bestehende Prüfungen und Produktionsbuild PASS; lokale UI-Browserprüfungen bestanden; gehostete neue Oberfläche HTTP200. Site v4, Quelle fbabbad7b8efa98c9071fccb358e4fb4788ec826. Quelle/Prüfbelege am Registerkopf 687b3bc0db211995653896d27c226b27fcc1de22 exakt zurückgelesen. Chrome war laut Georg angemeldet, Tabsteuerung technisch nicht erreichbar; gehostete Browser-Abnahme und nächster echter WS1-Push bleiben das eine nächste Tor. Return aktualisiert, keine neue Site, keine Freigabeänderung, kein Live-Spielwechsel.
+
 # 17.10.2026 · WSA GPT Staging R1 · Abschlusskorrektur Historie
 
 Gleiche private Site, v3: Auch bei bereits fünf Archivständen werden mehrere während einer Browserpause veröffentlichte WS1-Stände nachgezogen. Die Historie bleibt an den erfassten SHA gebunden. 16/16 Vertragsprüfungen, jetzt 22/22 Archivprüfungen; unabhängige schreibgeschützte Nachprüfung CONTINUE. Veröffentlichtes Sites-Quellcommit 25b1b1e90e12ece4703960f5a1570f79f13db649; Return und Prüfbericht aktualisiert. Georgs Browser-Abnahme und nächster echter WS1-Push bleiben das eine nächste Tor. Live-Spiel und Cloudflare-Rückfall unverändert.
