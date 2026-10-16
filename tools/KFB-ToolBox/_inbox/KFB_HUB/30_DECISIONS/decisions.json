@@ -4766,6 +4766,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-351",
+   "date": "2026-10-16",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Cartoon-Stunt-Fahrgefühl (Georg 16.10.): Assisted-Stunt-Driving-Modus wie in KFB Stunt Car Race („Stuntways“, eigenes Repo georg-doc/KFB-Stunt-Car-Race): spektakuläre Fahrten auf zwei Rädern an Wänden entlang, bouncy Cartoon-Physik, Cartoon-Deformer beim Aufprall an Gebäude (Squash/Stretch), Push- und Pull-Zonen für Rampensprünge, Lande- und Spurhilfe – die Spiellogik sorgt dafür, dass es sauber und cool animiert ist, ohne Überschläge, bei voller Geschwindigkeit und mit den besprochenen Controls inkl. Q/E-Drift (V-347). Chill-and-Fun, kein Sim-Racing. Vorlage zuerst (V-001): Stunt-Car-Race-Repo, vehicle-deformer-v2, J17-k2b-ASSIST; WS0 sichtet die Spender, WS1 baut. Georg hat WS1 den damaligen Recherche-Link gegeben.",
+   "values": {},
+   "owner": "WS1 (M2/M3) · WS0 (Spender-Sichtung)",
+   "check": "Spender-Liste + Vorlagen-Zeile, dann Fahrprobe Stunt",
+   "source": "Georg 16.10.: „auf zwei Rädern an der Wand entlang … bouncige Cartoon-Physik … Cartoon-Deformer gegen Gebäude … Push-Zonen und Pull-Zonen … Assisted-Stunt-Driving … ohne dass man sich überschlägt“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Das Stunt-Gefühl war schon recherchiert und teils gebaut; es gehört als Vorlage in M2/M3 statt neu erfunden.",
+   "applies": "mit M2/M3"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4838,7 +4853,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:674",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:675",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
