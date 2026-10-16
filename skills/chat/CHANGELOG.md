@@ -1,3 +1,10 @@
+## 2026-10-16 · MKUltra / Project Monarch source-separation research intake (non-runtime)
+- Georg requested a crash-safe, GitHub-persisted research/ideation slice for MKUltra, Cathy O'Brien & Mark Phillips' *TranceFormation of America*, the alleged Project Monarch, and translation into KFB cards.
+- Research branch `research/kfb-mkultra-monarch-cardway-r1-2026-10-16` holds the self-contained intake, initial eight-item source ledger, twelve unapproved Cardway hypotheses, measured static checks and Return in `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/`.
+- Existing Iceberg `mkultra` entry and Project Gateway 60-card deck are reuse donors, not mutated. The meta-compendium remains an index rather than a new SSOT.
+- Senate hearing institutional counts and Cameron/Subproject 68 are documentary leads; accusations in the O'Brien/Phillips summary remain attributed claims, not promoted as proven facts.
+- Documentation-only. No Card/Almanac or runtime edits, no Stage, Site, Cloudflare, merge or Live promotion. Next gate is passage-level source analysis, not production.
+
 ## 2026-10-08 · ChatterBox Voice becomes next-runtime-MVP acceptance seam
 
 - Georg authorized the new Voice Layer for the first runtime MVP after the current Four-Island A/B visual gate.
