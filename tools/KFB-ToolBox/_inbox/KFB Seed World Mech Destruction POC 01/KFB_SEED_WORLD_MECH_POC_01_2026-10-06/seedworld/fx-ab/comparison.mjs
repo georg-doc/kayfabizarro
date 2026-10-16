@@ -69,12 +69,13 @@ async function build(){
  const near=world.buildingsNear(cx,cz,38).map(x=>x.rec).filter(r=>r.id&&r.centroid);
  near.sort((a,b)=>Math.hypot(a.centroid[0]-cx,a.centroid[1]-cz)-Math.hypot(b.centroid[0]-cx,b.centroid[1]-cz));
  let times=scenario==='single'?[0]:scenario==='four'?[0,6,12,18]:[0,2,4,6,8,10,12,14,16,18,20,22];
- let when=times.map((t,i)=>({t,r:near[i%near.length]}));
+ // The block stress re-hits four real neighbouring structures, rather than lightly tagging 12 unrelated buildings.
+ let when=times.map((t,i)=>({t,r:near[scenario==='block'?i%Math.min(4,near.length):i%near.length]}));
  let damageStepMs=[];
  for(let step=0;step<43;step++){
    for(const item of when.filter(x=>x.t===step)){
      const rec=item.r,dir=new THREE.Vector3(0,.2,-1).normalize();
-     destruct.rocket(new THREE.Vector3(rec.centroid[0],rec.baseY+Math.min(3,rec.height*.3),rec.centroid[1]),dir);
+     destruct.rocket(new THREE.Vector3(rec.centroid[0],rec.baseY+(scenario==='block'?1.35:Math.min(3,rec.height*.3)),rec.centroid[1]),dir);
    }
    const start=performance.now();destruct.update(1/60,null);damageStepMs.push(performance.now()-start);
    if(step%3===0)await pause();
