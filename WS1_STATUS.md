@@ -1,7 +1,88 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§64 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§65 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 65 · 17.10. nachts · Slice-1-Vorbau fertig (Node, Branch lokal) · Fragen an WS0 · Vorlagen-Zeilen F1 · V-345 Zwischenstand
+
+### 65.1 · V-345 Zwischenstand (Bühnen-Seite)
+- `src/worldScale.js`: M_PER_RIG 0,616381042 · CLASS_K 0,947 · FB_HEIGHT_M 1,812 · **WORLD_K = M_PER_RIG / CLASS_K ≈ 0,6509** (alte WS1-Bühnenmeter → J17-Meter). Hash `wscale=legacy` zeigt die alte Größe.
+- Umgerechnet an einer Stelle: Figuren (`createActor` Option `worldScale`), Amphitheater (Modell, Gelände, Höhenbänder, Knet-Abstände), Tafel, Marken, Kameras, Publikums-Anker, Kontaktflecken, Figuren-Licht, Nebel, Schatten-Frustum (±7,8 m statt ±12).
+- **Abweichung von V-345 „Meshy-Slots × 0,65“, mit Begründung:** Die Slot-Dateien sind schon in WS0-Metern angelegt (goblin v2: `figures.heights_m` [1,8, 2,0] bei 5 m/u). Zu groß waren dort nur unsere Figuren. Slots bleiben deshalb unverändert, nur die Figuren werden umgerechnet.
+- Neuer Test `test/scale` PASS:
+  - FB 1,814 m (vorher 2,786);
+  - Verhältnis FB : GothGirl gleich;
+  - Amphitheater Ø 9,11 m;
+  - Bild alt gegen neu: mittlere Abweichung 1,74 von 255;
+  - Goblin: FB 1,814 m.
+- Die volle Testreihe (24) läuft. Danach folgen Commit, Spiegelung und Vorschau; dann stellt die Bewegungs-Sitzung M1/M2 um (Tempi, Kapsel, Höhenfeld, Zaun, Fahrwerte × K, g = 9,81).
+- Die Bewegungs-Sitzung meldet von m1/wow einen Grenzfall `m1-fence walkLeftRunBlocked` (32,1 cm statt ≥ 33 cm, kein Durchgang). Sie klärt ihn in der V-345-Runde, weil sich die Kapsel ohnehin ändert.
+
+### 65.2 · Slice-1-Vorbau (Branch `s1/weltboden`, lokal, 6 Commits ab main @8ce5ac5, nur Node, kein Browser)
+- Reine Logik:
+  - `src/world/terrainStitch.js`: Schürze je Bühne aus `kfb.stage-edges/1`; 15 Bühnen mit Anschluss, 4 schwebende Inseln ohne; Bodenfarbe `fromColors(edgePalette)`.
+  - `src/world/fluff.js`: sechs Sorten nach V-292, Zonen-Gewichte 40 % bzw. ≥ 8 %, Verteilung nach Seed, Windfall-Integrator ohne Physik-Engine, Böe, Aufsammeln zu Fuß, im Auto und im Drift-Bogen.
+  - `src/world/save.js`: `kfb.save/1`.
+  - `src/world/interactable.js`: genau ein Hinweis.
+  - `src/world/perfBudget.js`: Budget V-370, p95.
+- Dünne Module: `terrainStitch3d`, `fluffField3d` (ein InstancedMesh = ein Draw Call).
+- Tests `test/unit/*` alle PASS, `contract-static` PASS.
+- Einbau in Stage/M1 und Browser-Beweis („drei Zonen“, Clay, Messwerte) folgen nach V-345 und dem M2-Merge, weil alle Werte in J17-Metern gedacht sind.
+
+### 65.3 · Offene Fragen an WS0 / Georg
+1. **Bodenfarbe:** `fromColors` ordnet die drei Vorgaben nach Rollen-Passung, nicht nach Anteil. Bei der Goblin-Bank wird so `#a67e5a` (11 % Anteil) zum Boden, nicht das dunkle `#4e4341` (57 %). Ist das gewollt, oder soll der größte Anteil Boden sein?
+2. **Sockel-Bühnen (giza_pyramid, portal_ruin):**
+   - Höhe: Soll das Gelände am `footprintBase` auf Bühnenboden-Höhe anschließen? Dann ist der Sockel verdeckt; das ist heute so (`plinthDrop_m = 0`). Oder tiefer, damit der Sockel sichtbar bleibt?
+   - Farbe: Heute kommt sie aus `footprintBase.edgePalette`. Richtig so, oder soll die obere `edgePalette` gelten?
+3. **marble_terraces:** Der Rand liegt auf der unteren Terrasse (−0,305 u). Die Figuren stehen nach Slot auf −0,042 u. Die Schürze folgt dem Rand (y = 0). Bitte bestätigen.
+4. **Schürze:**
+   - Breite: Vorgabe 4 m mit 3 Ringen.
+   - Kerben: Kerben schmaler als etwa 8 m werden vom Außenring überbrückt und mit Schürze gefüllt (Treppen, Säulen). Stört das an Eingängen?
+   - Langfristig: Schürze oder Höhenfeld-Anschluss? WS1 empfiehlt das Höhenfeld.
+5. **Fluff-Balance:**
+   - Wie viele Kügelchen je Zone (Vorschlag 18–30)?
+   - Nachwachsen nach wie vielen Sekunden?
+   - Sammelradien 0,8 m zu Fuß und 1,9 m im Fahrzeug.
+   - Drift-Bogen: 2,2-facher Radius, 140°, ab 7,5 m/s, wie `driftMinSpeed` aus K2B.
+   - High/Low bleibt vorerst ohne Rolle (V-368).
+6. **Spielstand:**
+   - Sollen Karten, d6-Würfe und Story-Mode-Würfel schon in `kfb.save/1`? Heute sind nur Flags möglich. Sonst kommt das mit R1.3.
+   - Wohin später (GPT-Site)? Der Speicher-Adapter ist dafür austauschbar.
+7. **Budget:** Zählen die MB als übertragene (komprimierte) oder als entpackte Größe? Heute: `transferSize`, MB = 10⁶ Byte.
+8. **Forest-Pack-Inhalt:** FLUFF_WORLD_DRESSING_R1 nennt „211 Modelle inkl. Schnee-Varianten“. Im Repo sind es 105 glTF-Modelle; die 211 sind Dateien mit `.bin` und Textur. Es gibt nur Color1 und keine Schnee-Varianten. Schnee-Bäume gibt es im Kenney Holiday Kit (`tree-snow-a/b/c.glb`). Reicht das für Schnee-Zonen?
+9. **Host-Vertrag R1.3:** Vorschlag `interactables: [{ id, pos, radius, label, action }]` als optionales Modul-Feld wie `bubbleAnchors`. Dazu `save` als Host-Dienst und kein Modul-Zugriff auf localStorage.
+
+### 65.4 · Vorschlag Vorlagen-Zeilen F1 (Bitte von WS0 vom 16.10.: „aus dem Repo, Spender mit Pfad“)
+WS0 hat am 16.10. gebeten: „Vorlagen-Zeilen schlagt ihr aus dem Repo vor (Spender mit Pfad)“. Alle Pfade stammen aus dem lokalen Klon (`git ls-tree` / `git grep`), Commit = letzter Stand der Datei.
+
+| Zeile | Funktion | Spender (Pfad @Commit, Zeilen) | Was übernommen wird | Was nicht | Abnahme |
+|---|---|---|---|---|---|
+| F1a | Spielstand `kfb.save/1` | `overworld/overworld/journey.js` @53d9be371 (main), Z. 1–7 Kanon, 18–30 `emptySave`, 66–90 `migrate`/`read`/`write`, 92–99 Export | ein Save-Schema mit `version` und Migrator-Kette, localStorage in try/catch, Export als JSON-Datei, Regel „die Welt wird nie gespeichert“ | Felder der Overworld (Ruf, Diary, Held-Werte) | Rundreise, kaputt → frisch, neuere Version unangetastet (`test/unit/save.mjs`), Reload im Browser |
+| F1a′ | Sicherung vor Umbau | `tools/KFB-ToolBox/_inbox/KFB Island Worldbuilder Lab/src/main.ts` @64ae61fe7 (Branch `sync/lab-snapshot-2026-10-11`), Z. 146 Laden, 189 `STORE_PRE_K2`, 232 Speichern | Rohstand einmal sichern, bevor migriert oder überschrieben wird (bei uns `kfb.save.bak`) | Welt-Daten im selben Speicher (bleiben in `kfb.world-save/1`, WORLD_CONTRACT_R1) | `.bak` entsteht bei kaputtem oder neuerem Stand |
+| F1b | interactable + ein Prompt | `overworld/overworld/overworld-game-v10.js` @53d9be371 (main), Z. 4316–4332 | nächster Ort in Reichweite, Reichweite je Ziel, genau ein Hinweis „E — Label: Hinweis“, Wechsel nur bei Änderung | DOM-Prompt im Spiel-Code (bei uns Hud + `hostKeys.js`) | nearest/Gleichstand/außer Reichweite/Abmelden (`test/unit/interactable.mjs`), im Browser kein Flackern zwischen zwei NPCs |
+| F1b′ | Anmeldung über die Modul-Hülle | `src/ModuleHost.jsx` (kfb-planet, `bubbleAnchors` nach Vertrag R1.2 §4) | gleiches Muster für `interactables` | – | Anmelden vor, Abmelden nach `dispose()` |
+| F1c | Performance-Overlay | `tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/sw-app.js` @97c891c00 (main), Z. 19 `autoReset = false`, 76 `reset()`, 92 fps/ms/calls/tris, 217–227 Speicher, 290 Höchstwerte | Messung je Bild trotz mehrerer Pässe, Speicher-Zähler, Höchstwerte über ein Fenster | eigene Render-Schleife (bei uns R3F `useFrame`) | Overlay-Werte je Slice (V-370) |
+| F1c′ | Budget-Objekt + Messung | `KFB Combat Arena/combat-arena-v2/host.v2.js` @bcba56530 (main), Z. 32 `BUDGET`, 407–470 Messung | Budget als eine Konstante, Messung aus mehreren Bildern | Median statt p95 (bei uns p95 nach V-370) | `test/unit/perfBudget.mjs` |
+| F1c″ | Calls/Dreiecke im Lab | `tools/KFB-ToolBox/_inbox/KFB Island Worldbuilder Lab/src/inspect.ts` @64ae61fe7 (`sync/lab-snapshot-2026-10-11`), Z. 69–85; `…/KFB World Core R0A · Clay World Donor/WORLD_CORE_MOBILITY_R0A_2026-09-29/lab-world/clay-world.r0a.js` @39bc606cd (main), Z. 56, 60, 585–592 | gleiche Zählweise wie im Lab, damit Werte vergleichbar sind | – | – |
+
+Für die Fluff-Physik gibt es keinen Spender im Repo. Gesucht wurde nach `windfall`, `fluff harvest` und `restitution` außerhalb von Physik-Engines; gefunden wurden nur Engine-Code und HUD-Zähler. Darum ist der Integrator ein Neubau nach V-370 („einfacher Bounce-Integrator, keine Physik-Engine“). Er braucht eine eigene Vorlagen-Zeile oder WS0-Freigabe.
+
+### 65.5 · Bäume und Büsche im Repo (V-369, nichts geladen)
+1. **KayKit Forest Nature Pack** (zuerst): `media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/` (main, letzter Stand @f045a5311), Textur `…/Textures/forest_texture.png`.
+   - 105 glTF, alle `_Color1`, keine Schnee-Varianten.
+   - Bäume: `Tree_1_A–C`, `Tree_2_A–E`, `Tree_3_A–C`, `Tree_4_A–C`, kahl `Tree_Bare_1_A–C`, `Tree_Bare_2_A–C` (20).
+   - Büsche: `Bush_1_A–G`, `Bush_2_A–F`, `Bush_3_A–C`, `Bush_4_A–F` (22).
+   - Dazu Gras (20) und Steine (43).
+2. **Tiny Treats** (danach):
+   - Pretty Park `media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/` (@29aac1061): `tree.gltf`, `tree_large.gltf`, `bush.gltf`, `bush_large.gltf`, `hedge_corner/straight/straight_long.gltf`, `flower_A/B.gltf`.
+   - House Plants `media/3D_Assets/Tiny_Treats_House_Plants_1.0_FREE 2/Assets/gltf/` (@9843e75df): `cactus_A–D`, Monstera, Pothos, Sansevieria, Yucca, ZZ-Plant (klein/mittel/groß, mit und ohne Topf). Für Wüste oder Innenräume.
+   - Pleasant Picnic `media/3D_Assets/Tiny_Treats_Pleasant_Picnic_1.0_FREE/Assets/gltf/` (@29aac1061) hat keine Pflanzen, nur Picknick-Teile (Apfel, Korb, Decken). Gut als Deko an Fundorten.
+3. **Kenney** (zuletzt):
+   - Nature Kit `media/3D_Assets/kenney_nature-kit/Models/GLTF format/` (@6d58a9e5d; Dateien sind `.glb`): `tree_*` in default/dark/fall (blocks, cone, default, detailed, fat, oak, plateau, simple, small, tall, thin), Palmen, `tree_pine*`, `plant_bush*`, `cactus_short/tall`.
+   - Holiday Kit `media/3D_Assets/kenney_holiday-kit/Models/GLB format/`: `tree-snow-a/b/c.glb`, `tree.glb`, `tree-decorated(-snow).glb` für Schnee.
+   - Weitere Einzelstücke in Fantasy Town, Tower Defense, Platformer und Survival.
+
+Aufwand seit §64: ca. 1 h eigene Arbeit (V-345) plus ein Hintergrund-Job für den Slice-1-Vorbau (≈ 19 Min. Laufzeit).
 
 ## 64 · 17.10. · V-346 in der Vorschau (23/23) · V-347 nur für K2B (Entscheid nach V-367) · nächster Schritt V-345
 
