@@ -5115,6 +5115,36 @@
    "applies": "ab dem nächsten Song"
   },
   {
+   "id": "V-374",
+   "date": "2026-10-16",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Writer’s Room wandert als Skill writers-room-song in das vorhandene ChatGPT-Plugin kfb-triplets (kein neues Plugin): Georg erzeugt Songs im Web-Chat, bekommt STYLE + LYRICS direkt im Chat zum Redigieren, jedes Ergebnis wird parallel auf GitHub gespeichert (Branch songs/<deckId>-wr<N>-<Datum>); Blind-Review als getrennter Durchgang im Plugin. WS0 liest auf GitHub und kommentiert, statt selbst zu schreiben (Claude-Tokens sparen). GitHub ist die gemeinsame Ablage auch für andere Plugins (Münder, Production Hub), da WS0 ChatGPT-Plugins nicht direkt bedienen kann. Erster Test: Pharaoh und Trust neu nach V-372/V-373.",
+   "values": {},
+   "owner": "WSA (Plugin) · WS0 (Review auf GitHub)",
+   "check": "Plugin-Ausgabe besteht Blind-Review-Fragen aus V-372/V-373",
+   "source": "replies/BRIEF_WSA_WRITERS_ROOM_PLUGIN_R1.md (Hub b66) · Georg 16.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Agenten hier zählen aufs Claude-Volumen; im Web-Chat redigiert Georg direkt, GitHub hält alles fest.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-375",
+   "date": "2026-10-16",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Langläufe ohne Georg (2–3 Stunden, Mac mini/anderer Workspace): keine Rückfragen, die den Lauf anhalten; Technik-Entscheide innerhalb des Briefings selbst treffen und begründet im Status notieren; echte Blocker als Frage im Status, dann am nächsten unabhängigen Punkt weiter; alle 30–45 Minuten Stand-Commit; Lab 5192/fremde Prozesse nie beenden, 5180 nie, ≥ 40 GB frei; am Ende Vorschau, Messwerte, Clay-Beweisbilder, kein main-Merge.",
+   "values": {},
+   "owner": "WS1 · WSA",
+   "check": "Stand-Commits im Takt, Abschluss-Raster",
+   "source": "Hub b67 · Georg 16.10.: „Rechner laufen lassen … remote noch mal reingucke“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg lässt die Rechner laufen und ist nicht erreichbar; Rückfragen würden Stunden verschenken.",
+   "applies": "jeder Langlauf"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5187,7 +5217,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:696",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:697",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
