@@ -5220,6 +5220,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-381",
+   "date": "2026-10-17",
+   "area": "Technik",
+   "verdict": "RULE",
+   "text": "PlayCanvas (DynamicSkyEffect, PR playcanvas/engine#9765, MIT) nur als Ideen-Spender, kein Engine-Wechsel: WS1 bleibt bei three.js/R3F (alle Spender, Clay-Material, Joyride/K2B hängen daran). Übernehmenswert als Idee: Umgebungslicht aus dem eigenen Himmel neu erzeugen, wenn die Sonne wandert, mit weichem Überblenden statt Springen (passt zu PMREM für Metall, V-370/V-378); Sonnenlicht-Richtung/Farbe/Stärke an die Tageszeit gekoppelt (timeOfDay, V-329). Nicht übernehmen: physikalischer Atmosphären-Himmel und volumetrische Wolken (widerspricht dem stilisierten Himmel nach V-305/V-346 „derselbe Himmel, nur getönt“; Wolken bleiben Clay/Cartoon).",
+   "values": {},
+   "owner": "WS1 (später, S2)",
+   "check": "-",
+   "source": "Georg 17.10. (Fundstück DynamicSkyEffect)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Engine-Wechsel würde alle three-Spender und den abgenommenen Look verlieren; einzelne Techniken lassen sich portieren.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5292,7 +5307,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:705",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:706",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
