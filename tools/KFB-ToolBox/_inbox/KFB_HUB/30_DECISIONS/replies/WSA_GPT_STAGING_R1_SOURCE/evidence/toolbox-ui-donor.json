@@ -1,0 +1,33 @@
+{
+  "donorUrl": "https://kfb-toolbox.frizzlebob.chatgpt.site/",
+  "siteProjectId": "appgprj_6ac2ba44282881919d1a49287a32054e",
+  "siteVersion": 9,
+  "sourceScreen": "ToolBox Production-08",
+  "downloadedHtmlSha256": "f780345185763fc533d34a9d4207bacb8502d97bf67a97ef417164cf00f566b2",
+  "tokens": {
+    "background": "#cfccc4",
+    "canvas": "#dedbd4",
+    "panel": "#efece6",
+    "field": "#f6f4ef",
+    "line": "#c9c5bc",
+    "ink": "#1f2022",
+    "muted": "#5c6065",
+    "link": "#7a4d0d",
+    "ok": "#7fa58a"
+  },
+  "fonts": [
+    "Space Grotesk 400/500/600",
+    "IBM Plex Mono 500"
+  ],
+  "controls": {
+    "topbarHeight": 48,
+    "buttonHeight": 30,
+    "buttonRadius": 6,
+    "segmentedRadius": 8,
+    "inspectorWidth": 300,
+    "inspectorRadius": 10
+  },
+  "copied": "Palette, typography, exact control dimensions, segmented tabs, inspector, status dot and compact workspace hierarchy",
+  "retained": "WS1 game bundle, server sync/archive, owner-private audience",
+  "isolation": "Actual fetched HTML and support.js rendered locally as donor. UI visible; no actor-owner dependency tree copied, so isolated donor model modules intentionally unavailable. No stand-in built."
+}
