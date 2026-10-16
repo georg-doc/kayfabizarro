@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · Suno arc2
+- V-339: Opener-Pool R2 (Anekdoten + Story-Mode-Pools) im Checker; vier Probe-Tracks arc2 mit Styles im Hub (b52–b56); Kartenzeilen bytegleich zu den geprüften Fassungen.
+
 ## 2026-10-16 · Georg Creative Intake · warmes Krazy-Kat-Licht, 6 Fluff, Actor-Clay/Eye
 - **Neue Gestaltungsrichtung (noch nicht neuer Lighting-Beschluss):** Herriman/Krazy-Kat-artiges warmes Orange/Rot/Coral als bevorzugte Grundstimmung; sechs StoryMode-Farben aus bestehender V-305-Palette; jeder Resident erhält ein source-verankertes Licht-Acting-Profil, **keine eigene permanente Schattenlampe**. Vorhandener **WS0-Lichtauftrag V-329 L1** bleibt führend (ein R3F-Host, Sonne als Schattenwerfer, Pool von 4–6 lokalen schattenlosen Lichtern). Aktuelle V-305/V-331 StoryMode-Farbe auf dem Boden nur nach explizitem WS0-Look-Vergleich ändern.
 - **Späterer UI/Game-Entwurf:** sechs kleine farbige Fluff-HUD-Punkte, cartoonige World→HUD-Bounce-Pickup-Animation, High/Low erhalten; sechs Kugelfarben → echte ausgewählte KFB-Karte via Hexe/Alchemie und optional D6 sind **offene Varianten**, keine festgeschriebene Währung oder aktuelle HUD-Anweisung. Character-JSONs sollen zentral auf vorhandenen KFB Clay Golden, originalen EyeRig/Face-Owner und Lore-/Prompt-Referenzen zeigen; vorgeschlagene Fluff-Affinitäten/Stage-Licht-Cues brauchen Owner-Audit.

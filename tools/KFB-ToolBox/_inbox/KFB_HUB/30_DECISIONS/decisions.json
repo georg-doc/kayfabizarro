@@ -4586,6 +4586,21 @@
    "applies": "Blender-Lauf 17.10."
   },
   {
+   "id": "V-339",
+   "date": "2026-10-16",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Suno wieder frei für Probe-Tracks mit Opener-Pool R2 + Bogen-Modell (löst V-325 für diese Tracks): Pool R2 = freigegebener Pool + Georgs Anekdoten-Formen (Nachbar, Buch, Film, unter dem Bett, Poesiealbum/friendship book, Tante, Serviette, anonymer Brief, Glückskeks …) + Story-Mode-Pools (tragic, comic, absurd, heroic, mystical, forbidden) zum leichteren Mapping je Deck; Familien gegen Wiederholung; jeder Opener höchstens einmal pro Track, Kartenzeilen bytegleich. Erste vier Tracks arc2: Pharaoh Piledriver, Epistemic Sabotage, Cosmic Grift, Trust and Betrayal (Hub b52–b55) mit eigenem Style (geschlechtsneutrale Sprechstimme, Jazz/Funk-Vielfalt, Pausen zwischen den Zeilen) + Alternativ-Styles b56. Dateien OPENER_ARC_R2/, Checker liest den Pool.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Georg hört die vier Tracks",
+   "source": "Georg 16.10.: „neuen Opener … unheimlich breit … eigener Pool … zu den Story-Modes“, „Style … geschlechtsneutral … jazzig … funky … breite Vielfalt“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Opener mit Funktion und eigener Stimme je Story-Mode statt Dreier-Takt; Styles testen die Darbietung.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4658,7 +4673,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:639",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:642",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -25,6 +25,16 @@ FAMILIES = {"heard": ["Did you hear of", "Have you heard of"], "know": ["You kno
             "thing": ["The thing about", "You know the thing with"],
             "anecdote": ["A friend told me about", "I read a book about", "Someone wrote in my diary", "I found a note saying", "My diary says"]}
 FAMILY_GAP = 10
+
+# Pool R2 (Georg 16.10.): Anekdoten-Formen + Story-Mode-Pools, siehe OPENER_ARC_R2/opener_pool_r2.py
+try:
+    import os as _os, sys as _sys
+    _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "OPENER_ARC_R2"))
+    from opener_pool_r2 import POOL as _P2, FAMILIES as _F2
+    OPENERS += [o for o in _P2 if o not in OPENERS]
+    for _k, _v in _F2.items(): FAMILIES[_k] = sorted(set(FAMILIES.get(_k, [])) | set(_v))
+except ImportError:
+    pass
 SUFFIXES = ("'s", "s'", "ies", "es", "s", "ed", "d", "ing", "ly", "er", "est", "n't")
 WORD = re.compile(r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)*")
 
