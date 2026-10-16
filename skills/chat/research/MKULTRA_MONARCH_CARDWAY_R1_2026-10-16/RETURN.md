@@ -1,5 +1,26 @@
 # RETURN · MKUltra / Monarch → KFB Cardway Research R1 · 2026-10-16
 
+## ADDITIVE RETURN · 2026-10-16 · Desmet / societal psychology / Höfer / YouTube
+**Actual result:** Extended the EXISTING R1 research record on the same branch and PR; no second research project or Card engine. Source descriptions are additive and do not reclassify the historical MKUltra or separate Monarch claims.
+
+**New files:** `SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md`.
+**Existing files updated:** `BRIEF.md`, `SOURCE_LEDGER.md`, `CARDWAY_IDEAS.md`, `TEST_REPORT.md`. The `START_HERE.md` router and `CHANGELOG.md` receive/add the extension pointer during closure. Older content retained.
+
+**Georg's added sources:** Frank Höfer, *Der programmierte Mensch: Wie Geheimdienste, Konzerne und KI unseren Geist vermessen* (2026; ISBN 9783982914107); https://www.youtube.com/watch?v=yx8AWx_sOl4 ; https://www.youtube.com/watch?v=llSgrF8h9AU ; Mattias Desmet's mass formation theory (both psychosocial and intentional-influence questions). All three original links preserved in exact form. Publisher/catalog and scholarly records identified; **complete book not read**, **both videos' content not accessible/reviewed**, so no invented titles or video claims.
+
+**Additional independent research leads:** Desmet's own 2022 explanation, his reply to critics, the academic-review debate, Reicher/Spears/Postmes on social identity, Tannenbaum et al.'s fear-appeal meta-analysis, Mathur et al. on interface dark patterns, and a newly found official U.S. House MKUltra hearing dated 30 June 2026. The official hearing page was checked; underlying witness texts are not yet reviewed.
+
+**Method:** Separate documented individual coercive medical/agency experiments, the different allegations about Project Monarch, interpretive group-psychology models, empirical research on conformity/persuasion, and today's digital choice architecture. Similar behaviors do **not** establish a continuous agency program or deliberate authorship. Record real disagreements with Desmet instead of treating him as the sole authority in collective psychology.
+
+**Deck option:** A future Mass Formation / The Social Mind deck is **PROPOSAL ONLY**, sharing this research first. Twelve original research-only cards and six new thematic prompts remain UNAPPROVED, none published.
+
+**New additional exact tests:** 8/8 static content/scope checks, confirmed by file readback. Combined ledger S01–S18 = 18 entries (S17/18 media contents uninspected). Actual playable/unit/browser tests: 0. Product screenshots: 0. Stage/Live: none; no merge/promotion. The latest commit before this Return update was `d3dc55f1b6fd16134da7271f09f389c26b19ac9c`; always fetch exact current branch/PR head after closure.
+
+**Read order on recovery:** project three workflows → BRIEF → SOURCE_LEDGER → **SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16** → CARDWAY_IDEAS → TEST_REPORT → RETURN. One shared research branch / PR #408. Original medical-history R2 track remains open, now complemented by mass-psychology comparisons and actual video identification.
+
+**Exactly one next gate:** R2 SOURCE DEPTH — page-level original-source comparison for historical MKUltra/Monarch, primary text of the Höfer book when available, Desmet theory versus relevant peer literature, and verified video metadata/transcripts where obtainable. No cards or runtime changes before editorial selection.
+
+
 ## What was completed
 **Result: Research entry and recovery state prepared and GitHub-persisted, not yet a finished historical study or usable game feature.**
 The user's detailed summary of Cathy O'Brien / Mark Phillips' *TranceFormation of America* was preserved as attributed claims; an eight-anchor source ledger separates documented MKUltra, medical experiment evidence and the **not-yet-corroborated** Project Monarch allegations. Twelve KFB editorial research seeds were outlined without writing to the current card registry or creating a second runtime. Existing KFB cards and Conspiracy Iceberg schema were located.
