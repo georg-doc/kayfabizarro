@@ -1,0 +1,76 @@
+{
+  "schema": "kfb.audio.racer_grid.r2.prompt_proposals.v1",
+  "status": "TEXT_PROPOSALS_ONLY__UNAPPROVED__NO_PAID_API",
+  "date": "2026-10-17",
+  "owner": "existing KFB Audio & Soundscape",
+  "sourceMatrix": "tools/KFB-ToolBox/audio/racer_grid_r1/R2_CANDIDATES.json",
+  "model_id": "eleven_text_to_sound_v2",
+  "prompt_influence": 0.85,
+  "output_format": "mp3_44100_128",
+  "variants": 2,
+  "credit_rate_if_fixed_duration": 40,
+  "pilot_order": [
+    "H04",
+    "T04",
+    "D03",
+    "D08"
+  ],
+  "generated": 0,
+  "requires": [
+    "A/B isolation and listening verdict for donor alternatives",
+    "WS0 confirmation of prompts and license provenance",
+    "Explicit authorization of paid execution",
+    "Budget cap per batch and manifest with charged credits"
+  ],
+  "prompts": [
+    {
+      "id": "M04",
+      "label": "Steady high RPM",
+      "duration_seconds": 8,
+      "loop": true,
+      "text": "Seamless steady loop of a compact chunky cartoon hot-rod engine at high fixed RPM under load, warm uneven combustion texture and round punchy exhaust, light mechanical rattle, close and dry recording, stable pitch throughout, no acceleration, no rev sweep, no music, no environment."
+    },
+    {
+      "id": "M05",
+      "label": "Steady coast/overrun",
+      "duration_seconds": 8,
+      "loop": true,
+      "text": "Seamless steady loop of a compact chunky cartoon hot-rod engine coasting off throttle at constant medium RPM, textured hollow burbling overrun with restrained popping, close dry recording, unchanging motor speed and pitch, no engine start, no deceleration sweep, no music, no ambience."
+    },
+    {
+      "id": "H04",
+      "label": "Hyperspeed sustain",
+      "duration_seconds": 8,
+      "loop": true,
+      "text": "Seamless steady loop of a playful retro science-fiction hyperspeed propulsion system, warm weighty bass-centered oscillation with controlled glassy harmonic shimmer, powerful but smooth and tactile, steady pitch and loudness for all eight seconds, no acceleration, no riser, no laser gun, no music, no ambience, clean isolated game audio."
+    },
+    {
+      "id": "T04",
+      "label": "Drift onset",
+      "duration_seconds": 1.5,
+      "loop": false,
+      "text": "Single short onset of a cartoon racing tire biting and squealing against dry asphalt to begin a drift, tactile rubber friction, fast attack, tiny textured release, dry isolated close sound, no vehicle engine, no crowd, no music."
+    },
+    {
+      "id": "T08",
+      "label": "Sustained drift",
+      "duration_seconds": 8,
+      "loop": true,
+      "text": "Seamless steady eight-second loop of cartoon racing tires sliding across dry asphalt at an unchanging slip angle, continuous textured rubber scrape and controlled higher squeal with audible roughness, stable intensity and pitch, isolated close-mic, no passing car, no engine, no acceleration, no music."
+    },
+    {
+      "id": "D03",
+      "label": "Clay fracture / crumbs",
+      "duration_seconds": 2.5,
+      "loop": false,
+      "text": "Single tactile claymation-style destruction impact: a dense soft clay object splits and crumbles into uneven damp little fragments, with two or three light rubbery bouncing crumbs afterward, weighty rounded body but dry isolated sound, not glass, not metal, no enormous cinematic explosion, no music, no ambience."
+    },
+    {
+      "id": "D08",
+      "label": "Fluff harvest / spheres",
+      "duration_seconds": 2.5,
+      "loop": false,
+      "text": "Single whimsical but physical soft-bass puff and fluffy spherical material harvest burst, a dense low pop breaking into small elastic claylike pellets which bounce twice and settle, crisp close dry game sound with an airy playful tail, no electronic jingle, no arcade coin chime, no music, no ambience."
+    }
+  ]
+}
