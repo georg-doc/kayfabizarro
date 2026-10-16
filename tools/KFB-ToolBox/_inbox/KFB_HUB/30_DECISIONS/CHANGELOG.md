@@ -1,5 +1,9 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · Kartendaten-Fixes Batch 8
+- Branch data/kfb-card-fixes-batch8-2026-10-16 @4d4b811a (Parent eade4aec): pharaoh #46 power gefüllt, trust #30 power → null (nicht gedruckt, alt in jsonLegacyPower), cosmic #20 Lore-Ende unlesbar (GW-Badge) → bleibt OPEN, Entscheidung Georg; observation #3 „The Taschenspion“; Zusatzfixes cosmic #40, observation #1/#4/#33/#36. Fix-Log media/kfb/CARD_DATA_FIXES_2026-10-16.md. Offen: observation_underground komplett gegen Druck prüfen (nie im Print-Text-Pass), registry/assets/v1/decks neu erzeugen.
+- Pharaoh v3 (52 Zeilen, neue Zeile #46) und Observation v3 liegen in TRIPLET_SETS_R2, aber zurückgestellt (V-325).
+
 ## 2026-10-16 · Triplet-Songs angehalten, Münder
 - V-325: Batch 8 v2 + Batch 9 zurückgestellt (Hub b35–b43 markiert), erst Opener-Recherche (anekdotische Opener) und dramaturgischer Bogen statt Verteilregel.
 - V-326 (TBD): neue Mund-Sätze + Mund-Plugin mit Tönung je Figur.
