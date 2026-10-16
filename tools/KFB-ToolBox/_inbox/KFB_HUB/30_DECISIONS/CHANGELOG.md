@@ -1,18 +1,7 @@
-# 17.10.2026 · WS1 Staging · echtes ToolBox-UI übernommen
-
-Georgs UI-Wunsch ausgeführt auf derselben privaten Site: warme ToolBox-v9-Palette, Space Grotesk/IBM Plex Mono, kompakte Kopfleiste, segmentierte Szene-Tabs, rechter Stand-/Archivinspektor, schmale Ansicht. Original isoliert gezeigt; WS1-Runtime unverändert. 16/16+22/22 bestehende Prüfungen und Produktionsbuild PASS; lokale UI-Browserprüfungen bestanden; gehostete neue Oberfläche HTTP200. Site v4, Quelle fbabbad7b8efa98c9071fccb358e4fb4788ec826. Quelle/Prüfbelege am Registerkopf 687b3bc0db211995653896d27c226b27fcc1de22 exakt zurückgelesen. Chrome war laut Georg angemeldet, Tabsteuerung technisch nicht erreichbar; gehostete Browser-Abnahme und nächster echter WS1-Push bleiben das eine nächste Tor. Return aktualisiert, keine neue Site, keine Freigabeänderung, kein Live-Spielwechsel.
-
-# 17.10.2026 · WSA GPT Staging R1 · Abschlusskorrektur Historie
-
-Gleiche private Site, v3: Auch bei bereits fünf Archivständen werden mehrere während einer Browserpause veröffentlichte WS1-Stände nachgezogen. Die Historie bleibt an den erfassten SHA gebunden. 16/16 Vertragsprüfungen, jetzt 22/22 Archivprüfungen; unabhängige schreibgeschützte Nachprüfung CONTINUE. Veröffentlichtes Sites-Quellcommit 25b1b1e90e12ece4703960f5a1570f79f13db649; Return und Prüfbericht aktualisiert. Georgs Browser-Abnahme und nächster echter WS1-Push bleiben das eine nächste Tor. Live-Spiel und Cloudflare-Rückfall unverändert.
-
-# 17.10.2026 · WSA GPT Staging R1 · V-356
-
-Private GPT-Staging-Site bereit: https://kfb-ws1-staging.frizzlebob.chatgpt.site . WS1-Bündel bleibt unverändert; Metadatenpolling, SHA-Archiv, fünf auswählbare Stände (aktuell zwei vorhanden), Rückfall und host-neutrale Startziele. 16/16 Vertrags- und 18/18 synthetische Archivtests; echter gehosteter Kaltabruf neuester Stand 3,938 s. Fahrprobe aktuell noch nicht verfügbar. Sites-internes HTML-Challenge-Skript dokumentiert; Browserabnahme und nächster echter WS1-Push noch offen. Keine Live-Spielumschaltung; Cloudflare bleibt Rückfall bis Georgs Abnahme. Return: replies/WSA_GPT_STAGING_R1_RETURN.md; Nachweise: replies/WSA_GPT_STAGING_R1_SOURCE/TEST_REPORT.md. Sites-Projekt appgprj_6ad2ac305b788191af0bdfc68823a300, v2 Quellcommit b41d26abbdca0c9eb3a5967967ac7bbc25a4eab3.
-
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-382: V-346-Licht FAIL/großes TUNE (Saum, Rahmen nachts weg, Karte taghell, Gold≈Tag), Licht-Modell R2 als Konzept, Audit aller Licht-Recherche läuft; V-383: Abnahme-UI überdeckt nie das Motiv, „Sauberes Bild“.
 - V-381: PlayCanvas DynamicSky nur Ideen-Spender (Umgebungslicht weich nachführen, Sonne an Tageszeit), kein Engine-Wechsel, kein physikalischer Himmel.
 - V-380: Norman in die ToolBox (WSA work: Browser-Prüfung, Staging, Tuning-Panel, Bilder; Hub b71). M3-Brief: max. 8 Schritte/Bild, Pause bei verstecktem Tab.
 - V-379: Slice-3-Brief Fahrhilfe M3 auf K2B (A–G, Raster, Hub b70).

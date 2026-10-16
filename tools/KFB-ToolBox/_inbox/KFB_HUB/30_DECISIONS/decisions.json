@@ -4703,7 +4703,9 @@
    "check": "neue Bildpaare + Proofs mit Knet",
    "source": "Georg 16.10. Hub: l2a, l1-tonemapping, l2-fb-clay, l2-vehicles-clay, aliens-r2, fb-ears-v5c",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-382"
+   ],
    "why": "Erste Look-Urteile: Richtung stimmt (B, Knet), Feinschliff an Glow, Ausleuchtung, Farbtreue und am Halsanschluss der Aliens.",
    "applies": "nächste Runde"
   },
@@ -5235,6 +5237,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-382",
+   "date": "2026-10-17",
+   "area": "Licht",
+   "verdict": "FAIL",
+   "text": "V-346 Licht auf der Staging-Seite FAIL bzw. großes TUNE, auch konzeptionell (Georg 17.10.): heller Saum um FrizzleBob (Randlicht als Heiligenschein), Billboard-Rahmen nachts unsichtbar, Karte nachts taghell, Gold kaum anders als Tag, Figuren wirken aufgeklebt. Ursache laut WS0-Prüfung: jede Schicht hat einen eigenen Licht-Trick (Boden ohne Tonemapping, Karte unbeleuchtet, Figuren mit Selbstleuchten/Randlicht). Neues Konzept Licht-Modell R2: ein Rig für alle Schichten, Stimmungen nur als Rig-Einstellungen, praktische Lichter am Billboard, gemessenes Raster. Vor dem Bau: Abgleich mit ALLER bisherigen Licht-Recherche inkl. KayKit-Vorgehen (Audit läuft).",
+   "values": {},
+   "owner": "WS0 (Konzept, Audit) · WS1 (Bau)",
+   "check": "Raster L-1 bis L-7, 9 Bilder ohne Overlays",
+   "source": "replies/LIGHT_MODEL_R2.md · Georg 17.10. Screenshot Staging Nacht",
+   "supersedes": "V-346",
+   "superseded_by": [],
+   "why": "Einzel-Tricks je Schicht passen in keiner Stimmung zusammen; Recherche wurde nicht vollständig umgesetzt.",
+   "applies": "vor jedem weiteren Licht-Bau"
+  },
+  {
+   "id": "V-383",
+   "date": "2026-10-17",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Abnahme-Oberflächen (Georg 17.10.): Vergleichs-Knöpfe, Paletten und Hinweise dürfen nie das Motiv überdecken (Karte, Figuren, Bühne). Bedienleiste eingeklappt am Rand bzw. außerhalb des Bildes, Hinweistexte nicht über dem Motiv, eine Taste/Knopf „Sauberes Bild“ blendet alles aus; Beweisbilder immer ohne Overlays.",
+   "values": {},
+   "owner": "WS1 · WSA work (Staging-Seite)",
+   "check": "Screenshot je Ansicht: Motiv frei",
+   "source": "Georg 17.10.: „dass nicht irgendwelche Paletten und Knöpfchen mal wieder alles überlagern“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Overlays verdecken genau das, was Georg beurteilen soll.",
+   "applies": "jede Vorschau und Staging-Seite"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5307,7 +5339,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:706",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:707",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
