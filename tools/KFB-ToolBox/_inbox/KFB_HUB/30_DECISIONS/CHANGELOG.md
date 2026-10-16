@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-16 · Licht-Auftrag L1
+- V-329: replies/BRIEF_WS1_LIGHT_R1.md an WS1 (aus WSA_LIGHT_STUDY_C_R1, PR #403, Intake #404, LESSONS_SHADOWS, V-305): Tag/Gold/Nacht, sparsame Schatten, lokale Lichtquellen je Bühne; Hub-Briefing b44.
+
 ## 2026-10-16 · Unlesbares als Charme, Mund-Dropdown
 - V-327: unlesbare Kartenstellen bleiben offen (Metanarrativ: nicht alles löst sich auf).
 - V-328: neue Clay-Mund-Bögen ins Mund-Dropdown der ToolBox per Manifest + Tönung; Hub-Briefing b34 um Punkt 6 ergänzt; WS0 schneidet die sechs Bögen.

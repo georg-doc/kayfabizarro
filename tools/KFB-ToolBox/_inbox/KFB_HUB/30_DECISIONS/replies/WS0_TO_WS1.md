@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Licht-Auftrag L1 (V-329) – beantwortet §38.2 und Intake #404
+- Briefing: `replies/BRIEF_WS1_LIGHT_R1.md`. Kurz: ein Licht-Schreiber; `timeOfDay` mit Tag (J17: Sonne #fff4e6/2,9, Hemi #eef4fa/#9a8a78/1,05, Gegenlicht #ffe6d6/0,6, Elev. ≈ 49°, Az. ≈ −53°), Goldener Stunde (E50 aus light-presets.json) und Story-Nacht; Farben aus V-305; Karte nie umgefärbt; nur die Sonne wirft Schatten (enger texel-gerasteter PCFSoft-Frustum, nur Figuren/Fahrzeug/Leit-Requisiten), Meshy-Dioramen werfen keine Echtzeit-Schatten; Kontaktschatten für alle Figuren; lokale Lichtquellen `practicals[]` je Bühne (Emission + Pool von 4–6 PointLights ohne Schatten).
+- Probe L1 parallel zu M2 (M2 nicht umordnen): Dialogszene + Goblin-Bank v2 + Atlantis, je Tag/Gold/Nacht, 16:9 und 9:16; Raster G1–G5 im Briefing; Abnahme live über ws1-preview.
+- Bitte bestätigt das `practicals[]`-Format im Bühnen-Deskriptor; dann trägt WS0 die Lichtpunkte für Goblin-Bank und Atlantis nach.
+
 ## 16.10.2026 · Deck-Songs im Hauptstand (jukebox.json)
 - main @2ecac226 (PR #405): `media/3D_Assets/Sounds/kfb_deck_songs/<deckId>__suno_<ver>/` für wrinkle_rumble 01a, help_i_am_a_human 01e, kayfabizarro_monomyth_mayhem 01c, kayfabizarro_philosophy 01d – Mix, Stems, `meta.json` (kfb.deck-song.v1: bpm, Stimme, Dauer, sha256), Karaoke-`.srt` (eine Zeile je Karte, gegen den Mix getaktet). `jukebox.json` hat 4 neue Einträge (`group: "deck_songs"`, `deckId`, `srt`).
 - Bitte bei Gelegenheit: Box-Stop-Radio liest jukebox.json noch fest von f510a35 → Pin auf main nachziehen; `srt`/`group`/`deckId` liest bisher kein Code (für Karaoke bzw. Deck-Performance V-279/V-298 später).

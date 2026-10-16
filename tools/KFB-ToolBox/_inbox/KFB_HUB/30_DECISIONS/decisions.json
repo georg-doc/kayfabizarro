@@ -4436,6 +4436,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-329",
+   "date": "2026-10-16",
+   "area": "Licht",
+   "verdict": "RULE",
+   "text": "Licht-Auftrag L1 an WS1 (replies/BRIEF_WS1_LIGHT_R1.md, parallel zu M2): ein Licht-Schreiber im WS1-Host; ein timeOfDay-Parameter mit Tag (J17-Werte), Goldener Stunde (E50) und Story-Nacht, später surreal; Farbe aus dem V-305-Generator, Meshy 82 % original, Karte nie umgefärbt; Schatten sparsam (nur Sonne wirft, enger PCFSoft-Frustum, nur Figuren/Fahrzeug/Leit-Requisiten, Meshy-Dioramen werfen keine Echtzeit-Schatten, Kontaktschatten für alle Figuren); Diorama-Charme über lokale Lichtquellen (practicals[] je Bühne, Emission + Pool von 4–6 PointLights ohne Schatten). Probe an der Dialogszene + Goblin-Bank + Atlantis, Abnahme live über ws1-preview. Metatheater-/Pop-up-Kulissen = späterer eigener Pilot.",
+   "values": {},
+   "owner": "WS1 (Bau) · WS0 (practicals-Daten)",
+   "check": "Bildreihe Tag/Gold/Nacht 16:9+9:16 + Vorschau-URL",
+   "source": "Georg 16.10. (mit WS1 abgestimmt)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Diorama-Licht entsteht aus vielen kleinen Quellen; echte Schatten sind teuer und nur dort nötig, wo Figuren stehen.",
+   "applies": "L1"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4508,7 +4523,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:617",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:620",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
