@@ -1,7 +1,33 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§55 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§56 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 56 · 16.10. · Neue Fahrprobe (k2b spielfest, Dragster) in der Vorschau @aa0db179 · Georg sammelt Cartoon-Fahrphysik-Briefing
+
+### 56.1 · Fahrprobe (M2-Sitzung, m2/fahren @7afea10; Vorschau = main @e689471 + M2, ganze Testreihe 23/23; M2 nicht in main)
+- **Fahrzeug:** Flammen-Dragster v3 (raw @9bd8e037, im Bühnenmaß ≈ 8 m).
+- **Anzeige** oben mittig „Fahrphysik B · k2b · C wechselt“; Start B, A (ecctrl) nur noch Gegenprobe.
+- **k2b:**
+  - Boden nie verloren (Strahl ab 3 m, Höhenfeld als Mindestboden, darunter sofort zurück);
+  - Hänge sind Boden, Zaun und Theater Wand;
+  - die Wandprüfung wertet alle Treffer aus, dazu eine Zaun-Sicherung;
+  - Hangabtrieb, Stillstand ohne Gas;
+  - Knet-Squash 1:1 aus k2b plus J17-Optik (V-103), frontal federndes Abprallen.
+- **Hooks** wie `vehicle-cartoon-deformer.v2`: `railImpact`, `landing`, Signale `speed/longAccel/lateral/bank/drift` über `M2EVENTS.on`. Deformer und Zwei-Rad sind nicht eingebaut (§55.1).
+- **Raster:**
+  - 28 k2b-Läufe: 0 Durchfahrten, 0 Durchfaller;
+  - 2 s ohne Eingabe ≤ 0,2 mm je Schritt (beide Varianten, eben, quer am Hang, nach Landung);
+  - 60 fps, p95 16,7 ms.
+- **Bekannt:** Mit Vollgas über die Rampe hebt der Dragster ab und kann über die Bühne aufs Billboard springen (Arcade).
+- **Kosten seit G0** (M2-Sitzung): Browser ≈ 70 min, ≈ 150k Token.
+- **Link:** `https://ws1-preview.kayfabizarro.pages.dev/#m1,car`
+
+### 56.2 · Georg (16.10.): Briefing zur Cartoon-Fahrphysik folgt
+- Georg recherchiert im Webchat Cartoon-Fahrphysik und -Fahrverhalten, mit Benchmarks wie Super Mario Kart, auch ohne Racetrack.
+  - Dazu Schleudern bzw. Rotation mit Kamera-Ansichten und Animationen, damit man das Auto beim Schleudern oder Driften von allen Seiten sieht („sonst nur von hinten, bei den Dieselpunk-Modellen schade“).
+  - Richtung: Arcade-Fahrgefühl im Chill-and-Fun-Cartoon-Modus mit Assisted Driving (§53–§55).
+- Georg stellt das mit WS0 als Briefing zusammen; WS1 und M2 bauen bis dahin nichts davon. Die Hooks (§56.1) sind die Andockstelle für Kamera- und Schleuder-Ereignisse.
 
 ## 55 · 16.10. · Georg: Assisted-Stunt-Driving (cartoonige Stunts im normalen Fahren) · Konzept-Eingang, Fundort der Recherche gesucht
 
