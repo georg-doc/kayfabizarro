@@ -4511,6 +4511,21 @@
    "applies": "HUD-Slice nach M2"
   },
   {
+   "id": "V-334",
+   "date": "2026-10-16",
+   "area": "HUD",
+   "verdict": "RULE",
+   "text": "HUD R4 (Auftrag an Claude Design, replies/HUD_R4_DESIGN/BRIEF_CLAUDE_DESIGN_HUD_R4.md, Hub b49): (1) Look handgebastelt/Diorama, Knete zuerst, Holz-/Pappe-Akzente erlaubt, wenige Zusatzelemente, alles aus einem Guss; ersetzt die glatten dunklen MVP-Panels; Farben aus dem Palettengenerator (V-305) + Ruf-Farben (V-292), Karte nie umgefärbt. (2) Ziel-Pfeil nach Undermine-Vorbild: 3D-Knetpfeil schwebt über der Spielfigur bzw. dem Fahrzeug (in der Welt, nicht in der HUD-Ecke), Ring am Ziel, im HUD nur Name + Distanz (+ Flug ↑/↓, Δ-Höhe); präzisiert V-333; Nähe-Verhalten wählt Georg nach Undermine-Check. (3) Social Calls als dezentes Radialmenü auf HUD-Ebene statt Meta-Sprechblase: KayfaBINGO/BONGO/BOGGLE/Blödsinn! + „Eigener Text“; die eigene Spielfigur spricht die Wahl in ihrer eigenen Blase, eigener Text erscheint dort (später TTS); Erstkontakt-Hilfe für neue Spieler. Bedeutungen der Rufe bleiben Daten (BONGO/Blödsinn-Umdeutung offen).",
+   "values": {},
+   "owner": "Claude Design (Design) · WS1 (Laufzeit) · WS0 (Pfeil-GLB)",
+   "check": "Stilbrett A Knete | B Knete+Holz, Schlüsselbilder 16:9/9:16, Look-Sandbox-Link",
+   "source": "Georg 16.10.: „handgebastelt Do-it-yourself und Diorama-Charakter“, „dezentes Radialmenü“, „dass der Charakter … KayfaBINGO … sagt“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Interface aus einem Guss mit der Welt; Antworten auf HUD-Ebene statt großer Zusatzblase; der Spieler spricht selbst.",
+   "applies": "nach Claude-Design-Lieferung"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4583,7 +4598,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:632",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:633",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

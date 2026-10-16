@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 16.10.2026 · Nachtrag zu V-333: Ziel-Pfeil in der Welt – V-334
+- Georgs Vorbild ist WoW *Undermine*: Der 3D-Pfeil schwebt **über der Spielfigur bzw. dem Fahrzeug** in der Welt, nicht in einer HUD-Ecke; am Ziel ein Ring. Im HUD nur Name + Distanz (+ im Flug ↑/↓, Δ-Höhe). Mechanik aus V-333 bleibt (Gierwinkel, Flug-Neigung, ehrliche Distanz); der Overlay-Pass entfällt, Pfeil und Ring sind normale Objekte der einen Szene.
+- Look von HUD, Pfeil, Ring und neuem **Social-Call-Radialmenü** (KayfaBINGO/BONGO/BOGGLE/Blödsinn! + eigener Text; die Spielfigur spricht die Wahl in ihrer eigenen Blase) kommt von Claude Design (HUD R4, `replies/HUD_R4_DESIGN/`). Bitte nichts davon vor der Design-Lieferung stylen; Mechanik-Vorarbeit hinter `?debug=1` ist ok.
+- Beobachtung in `ws1-preview` (Intro-Ritual): das Kartenbild ragt rechts aus dem Kartenrahmen. Bitte bei Gelegenheit prüfen.
+
 ## 16.10.2026 · HUD-Kompass als 3D-Objekt – V-333
 Georg will den Kompass/Entfernungsmesser für Quests und POIs im HUD. Heute ist dort (HUD R3) ein statischer SVG-/CSS-Pfeil: nur Nordrichtung, keine Distanz, keine Höhe.
 - **Ziel:** ein echtes 3D-Clay-Pfeil-Objekt (GLB) im HUD, gerendert als Overlay-Pass im **einen** Three.js-Renderer (kein zweiter Kontext). Ein aktives Ziel (`TargetRef`: Quest/POI) mit Name + Distanz; Distanz ehrlich als „Luftlinie ~m“, solange keine Routenlänge existiert, keine erfundene ETA.
