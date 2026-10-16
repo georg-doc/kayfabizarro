@@ -32,6 +32,7 @@ try{
    check(scenario+' B renders source 2D atlas',b.visual3D===0&&b.visual2D===b.sourceDust,b);
    check(scenario+' C bounded 3D + real 2D source',c.visual3D===Math.min(9,c.sourceDust)&&c.visual2D===Math.max(0,c.sourceDust-9),c);
    check(scenario+' gameplay damage immutable across comparisons',rows.every(r=>JSON.stringify(r.damageEvidence)===JSON.stringify(none.damageEvidence)),rows.map(r=>({v:r.variant,damage:r.damageEvidence})));
+   for(const m of [a,b,c])check(scenario+' '+m.variant+' actually changes source-scene pixels',m.pixelDiffVsNoSmoke?.changedPercent>=0.04,m.pixelDiffVsNoSmoke);
    check(scenario+' source alpha request succeeded',!result.errors.some(e=>e.scenario===scenario&&e.type==='asset-http'),result.errors);
   }catch(e){
    result.errors.push({scenario,type:'test',message:String(e.stack||e)});
