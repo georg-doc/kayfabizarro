@@ -58,3 +58,21 @@ Full 350-page Höfer book reviewed: 0. Actual supplied YouTube videos watched: 0
 **Card seeds**: 12 prior MKUltra + 6 prior social + 6 new R2A = **24 provisional, 0 accepted, 0 implemented**. Code tests: 0; Stage/browser tests: 0; independent fact-check critics: 0; deployed product: none. Every GitHub file mutation read back with exact branch HEAD. CIA legacy readingroom redirects were observed; National Security Archive public scans were accessible. Additional original-source claims require their own verification.
 
 **R2B next gate:** first obtain West's purported original letter/study and 1977 altered version; inspect Subproject 68 original, and compare Desmet theory against peer evidence; don't inflate R2A as all of R2.
+
+
+## R2B · Guantánamo / SERE / Battle Lab source slice · 2026-10-16
+**8 targeted static provenance/recovery checks:**
+1. PASS — Guantánamo scope document contains official/archived links and tracks
+2. PASS — Senate 'Battle Lab' title distinguished from formally controlled research
+3. PASS — SERE draft, training report and signed DoD memo source class differentiated
+4. PASS — DOJ Inspector General sample/population scope clearly bounded
+5. PASS — Human experimentation inference limited to PHR allegations concerning CIA custody
+6. PASS — 39 original-and-additive source IDs contiguous
+7. PASS — 30 unapproved card prompts, prior R2A retained
+8. PASS — Original MKUltra and Desmet source context retained
+
+**Actual R2B observation:** 7 individual original-document PDF page images visually inspected from 4 independent official-document families (SASC executive summary: 4; GTMO draft SERE SOP: 1; SERE trainer after-action: 1; DoD 2002 signed authorization: 1). Other PDF screenshot requests returned cache errors and do not count. Source/lead ledger S01–S39 = 39 **heterogeneous rows**; this is not 39 books fully read. Original leaked 84-page Detainee-063 log: 0 original pages located/inspected. Full 2008 committee report, DOJ OIG 438pp, PHR 2010 30pp and Senate 2014 executive summary were NOT read end-to-end. Recovered 30 unapproved card research prompts, 0 card implementations. No executable changes, code/unit/performance/browser/Cloudflare/Stage tests = 0, no Live/merge. Report/PDF source URL availability is not a live product acceptance test.
+
+**Research questions remain open:** Does the clinical research hypothesis have an actual protocol/decision record, versus medical surveillance to sustain interrogation; what original Detainee-063 or BSCT files are publicly retrievable; how the SERE/JPRA documented institutional line does or does not connect to older MKUltra/MKDELTA; retain existing West/Cameron/Desmet work in same owner.
+
+**One next gate:** R2C cross-document provenance for BSCT original 2002 SOP, original Detainee-063 leak, PHR original citations and 2014 CIA committee medical assertions, together with outstanding West/Cameron/Desmet comparisons, without card publication.
