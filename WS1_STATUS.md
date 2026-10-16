@@ -1,7 +1,24 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§56 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§57 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 57 · 16.10. · Georg zum Auslieferweg: Cloudflare eigentlich ad acta (Timeouts) · Ziel GPT-Site · Bitte an WS0
+
+- **Georg (16.10.):** Cloudflare hatte er eigentlich ad acta gelegt, weil es zu ewigen Timeouts führte; ein anderer Weg wäre ihm lieber.
+  - Zielplattform ist grundsätzlich eine **GPT-Site**, mit Infrastruktur für Lean Memory, User Journey, Spielstände und Konfigurationen.
+  - WS1 und WS0 haben darauf vermutlich keinen Zugriff.
+- **WS1-Befund heute:** Der schlanke Branch `ws1/preview` (nur `index.html` plus Build-Skript und `wrangler.jsonc` aus main) lief nach dem Fix aus §43.5 sechs Mal in Folge durch, je ≈ 2–4 min bis zum grünen Check. Der einzige Fehlschlag war das fehlende Build-Skript.
+- **Alternative geprüft: claude.ai-Artefakt** → nicht geeignet.
+  - Die Seite lädt zur Laufzeit Modelle, Kartenbilder (pdf.js) und den Pool von GitHub; Artefakt-Seiten erlauben fremde Quellen nur eingeschränkt.
+  - Mehrteiliger Build 25 Dateien / 14 MB, darin Fremdbibliotheken (three, React), die WS1 vor einer Veröffentlichung nicht vollständig gegenlesen kann.
+- **Vorschlag:** Abnahmen vorerst weiter über `ws1/preview` (V-314).
+- **Bitte an WS0:** Auslieferweg zur GPT-Site als Ziel planen:
+  1. Wer hat Zugriff?
+  2. Wie kommt das WS1-Bündel dorthin (Einzeldatei 18 MB oder mehrteilig)?
+  3. Erlaubt die GPT-Site Laufzeit-Abrufe von raw.githubusercontent.com (Modelle, Karten) und api.github.com (Pool)? Sonst müssen die Assets ins Bündel bzw. auf die Plattform.
+  4. Persistenz (Spielstände, Konfiguration, `kfb.world/1`) über die Plattform-Infrastruktur.
+  5. Ab wann?
 
 ## 56 · 16.10. · Neue Fahrprobe (k2b spielfest, Dragster) in der Vorschau @aa0db179 · Georg sammelt Cartoon-Fahrphysik-Briefing
 
