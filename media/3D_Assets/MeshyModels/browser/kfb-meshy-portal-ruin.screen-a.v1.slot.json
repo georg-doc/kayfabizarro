@@ -1,0 +1,205 @@
+{
+ "file": "~/Dropbox/CLAUDE/MeshyModels/_browser/portal_ruin/PortalRuin_A_screen.glb",
+ "bytes": 14979796,
+ "sha256": "66e037d27e3f0f0950b0cee59cf8c648b578fedef48cd9ee32c08545a1d57f84",
+ "source": "PortalRuin_A_faithful.glb",
+ "mode": "FRONT_DISPLAY (V-265/V-268: Karte im Steinring, füllt die Portalöffnung, Rahmen liegt vorn auf den Ringsteinen; Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_ringstone (Clay-Ringstein grau #7E8186 wie die Steine des Portalrings, rough 0,9, metal 0; Steinplatte 0,25 m tief)",
+  "bezel_u": 0.024,
+  "bezel_m": 0.192,
+  "depth_u": 0.031,
+  "outer_u": {
+   "x": [
+    -0.414,
+    0.414
+   ],
+   "y": [
+    -0.194,
+    0.289
+   ],
+   "cardBottom_y": -0.17,
+   "z": [
+    -0.318,
+    -0.287
+   ]
+  },
+  "mount": "ohne Sockel und ohne Stützen (V-268): die Steinplatte liegt 0,02 m vor der Stirnseite des Portalrings und überdeckt mit Ecken und Seiten die inneren Ringsteine – das Portal zeigt die Karte; frontal zur Standardkamera (yaw 0,0°)",
+  "inlay": "Türkis-Band (Clay-Türkis #36B7C0 wie die Runen und das Portal-Glimmen) mittig auf der Lünette, 4 Eck-Steine; kein Leuchten (WS1-Licht)"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z = Treppe, Runen-Podest im Ring y ≈ −0,44, Vorplatz y ≈ −0,55, Gelände y ≈ −0,60)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.393,
+    0.26803,
+    -0.2985
+   ],
+   "topRight": [
+    0.393,
+    0.26803,
+    -0.2985
+   ],
+   "bottomRight": [
+    0.393,
+    -0.173,
+    -0.2985
+   ],
+   "bottomLeft": [
+    -0.393,
+    -0.173,
+    -0.2985
+   ]
+  },
+  "center_u": [
+   0,
+   0.04751,
+   -0.2985
+  ],
+  "normalAtCenter": [
+   0,
+   0,
+   1
+  ],
+  "chordWidth_u": 0.786,
+  "arcWidth_u": 0.786,
+  "height_u": 0.44103,
+  "aspect_arc": 1.7822,
+  "surface": "eben: z = -0.2985",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,44)·s, z·s), Ursprung = Modellmitte (Runen-Podest liegt 0,44 u unter dem Ursprung); s = 8 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     -0.39,
+     0.26503,
+     -0.2985
+    ],
+    "topRight": [
+     0.39,
+     0.26503,
+     -0.2985
+    ],
+    "bottomRight": [
+     0.39,
+     -0.17,
+     -0.2985
+    ],
+    "bottomLeft": [
+     -0.39,
+     -0.17,
+     -0.2985
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0038,
+    "u1": 0.9962,
+    "v0": 0.0068,
+    "v1": 0.9932
+   }
+  },
+  "corners_m_note": "Schlüsselname corners_m_s5p5 aus dem Utopia-Format beibehalten; Werte hier mit s = 8 m/u",
+  "corners_m_s5p5": {
+   "topLeft": [
+    -3.12,
+    5.64,
+    -2.388
+   ],
+   "topRight": [
+    3.12,
+    5.64,
+    -2.388
+   ],
+   "bottomRight": [
+    3.12,
+    2.16,
+    -2.388
+   ],
+   "bottomLeft": [
+    -3.12,
+    2.16,
+    -2.388
+   ]
+  },
+  "visibleSize_m": [
+   6.24,
+   3.48
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   0,
+   0.45,
+   2.5
+  ],
+  "target": [
+   0,
+   -0.12,
+   -0.2
+  ],
+  "fovV_deg": 40,
+  "note": "Standardkamera frontal über die Vordertreppe in den Portalring, Runen-Podest und Karte im Bild (Bühne in Modell-Einheiten, three.js PerspectiveCamera, fov vertikal)"
+ },
+ "scale_m_per_u": 8,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)",
+ "figures": {
+  "floorY_u": -0.44,
+  "positions_u": [
+   [
+    -0.12,
+    -0.07
+   ],
+   [
+    0.12,
+    -0.09
+   ]
+  ],
+  "heights_m": [
+   1.8,
+   2.0
+  ],
+  "stageZone_u_xz": [
+   [
+    0.35,
+    -0.32
+   ],
+   [
+    0.303,
+    -0.145
+   ],
+   [
+    0.175,
+    -0.017
+   ],
+   [
+    0.0,
+    0.03
+   ],
+   [
+    -0.175,
+    -0.017
+   ],
+   [
+    -0.303,
+    -0.145
+   ],
+   [
+    -0.35,
+    -0.32
+   ]
+  ]
+ }
+}
