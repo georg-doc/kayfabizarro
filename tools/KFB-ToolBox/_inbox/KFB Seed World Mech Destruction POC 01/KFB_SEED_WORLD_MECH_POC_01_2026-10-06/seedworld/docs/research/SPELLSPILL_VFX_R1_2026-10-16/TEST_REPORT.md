@@ -41,3 +41,11 @@ Date: 2026-10-16. Mode: research-source recovery + benchmark contract, not game/
 
 ## Single next gate
 **KFB SEED WORLD BLOCK-DESTRUCTION HYBRID FX SOURCE-ISOLATION + PERFORMANCE A/B**. First show real KFB source masks and real 3D clay donor in isolation; A/B/C one/four/whole-block cascade with p50/p95/p99 actual performance and visual readability. WB2 R4 remains STOPPED.
+
+
+## Material source-evidence checkpoint · 2026-10-16 · CI PASS
+- Real Dropbox ZIP source capture: GitHub Actions `38922347665`, **SUCCESS**; `9/9` actual screenshot PNG content hashes matched the connected Dropbox metadata. Source-download ZIP tested, safely unpacked; first run failed on ZIP absolute path, repaired only test unzip seam with safe Python zip extraction.
+- Image dimensions approximately 914–960 × 1552–1602. Created contact sheet + result `manifest.json` in artifact [12054229885](https://github.com/georg-doc/kayfabizarro/actions/runs/38922347665/artifacts/12054229885), ZIP SHA256 `d175d3e3d4331c4823b24abe5f25247b4f61c08f99aed278ff73961e86bb38b8`.
+- Exact original contact sheet 3×3 downloaded and **visually inspected**: parchment/isometric scene, glowing orange core, gray plumes, angular brown debris, cyan water/waterfall, cream vortex. Evidence detail: `VISUAL_SOURCE_PROOF.md`.
+- **25/25** cross-file/source consistency checks remain, in addition to **9/9** source-image hash validations. This is **NOT** 34 rendered KFB effect tests. KFB 3D/2D/hybrid, original shader source, target GPU benchmarks and human acceptance remain NOT_RUN.
+- GitHub original alpha files independently enumerated, source IDs captured in `EXISTING_ALPHA_MASK_ATLAS_CATALOG.md`: current 93 alpha PNG files, 14 predrawn sheets, 5 exact muzzle masks, 16 atlas roles. No new paint/brand.
