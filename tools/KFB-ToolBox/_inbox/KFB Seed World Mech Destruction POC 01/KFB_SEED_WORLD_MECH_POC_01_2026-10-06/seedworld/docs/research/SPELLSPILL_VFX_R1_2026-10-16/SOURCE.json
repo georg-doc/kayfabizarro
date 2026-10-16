@@ -1,0 +1,148 @@
+{
+  "schema": "kfb.seedworld.spellspill-vfx-reference/0.1",
+  "date": "2026-10-16",
+  "scope": "RESEARCH_ONLY",
+  "owner": "KFB Seed World Mech Destruction POC 01 (research playground)",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/kfb-seedworld-spellspill-vfx-audit-2026-10-16",
+  "dropbox": {
+    "folderName": "SpellSpill VFX Study",
+    "folderId": "id:KeQLaY5-IIAAAAAAAAp9Uw",
+    "sharedUrl": "https://www.dropbox.com/scl/fo/khq2ourkr6ihtkvsofo3b/AF6uLp4fDDyuWr_5iGNl7_s?rlkey=75r24euxt8e6ybfo3d1y9j2pe&dl=0",
+    "items": [
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.52.47.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9Sg",
+        "dropboxContentHash": "5dd8c313139ed66d9927305c67e312cdbad3eb745cb90f61c4770e7521eec329"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.52.57.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9Sw",
+        "dropboxContentHash": "64c45ba4f6d3755b6d497ee2adfdeb6935a5fb9d62ce93270914d63d18f303cb"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.53.09.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9TA",
+        "dropboxContentHash": "3d6008600074841eab6cee6348739eb961e40ba976c759d36f553ba2c61ef4ae"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.53.30.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9TQ",
+        "dropboxContentHash": "1c20cd66e5f55a411123cacb3bf7393835cb1cf28ca06481118a5774e65552d7"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.54.03.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9Tg",
+        "dropboxContentHash": "23e494f4762d58a4d9620881143ca80d45fdb38297701ca56d9e386aa9f87ea5"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.54.20.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9Tw",
+        "dropboxContentHash": "d96d7a57af16d7611118fda46f1ac2dcb66a801044f955d421d70169aa0ebdf1"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.54.36.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9UA",
+        "dropboxContentHash": "31bc7b2d93f136ee8a6e7ed3c2a84178e255e3bd3577724759dbd97dad256f03"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.54.50.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9UQ",
+        "dropboxContentHash": "9f8539845130b5b9b659d65aa9b5ae001147b04b832afff9bac530fcd94eec86"
+      },
+      {
+        "filename": "Bildschirmfoto 2026-10-16 um 16.54.58.png",
+        "fileId": "id:KeQLaY5-IIAAAAAAAAp9Ug",
+        "dropboxContentHash": "487acba781d5cfc15d7d1b2851b0d55221c6722945ed41969e41c7deabe6e4d5"
+      }
+    ],
+    "originalPngsMirroredToGitHub": false,
+    "sourceMediaLookDirectlyInspected": false
+  },
+  "reddit": {
+    "shortUrl": "https://www.reddit.com/r/threejs/s/rVGHVxDEdT",
+    "exactPostVerified": false
+  },
+  "relatedPublicProject": {
+    "name": "Spellspill: Magic Destruction Sandbox",
+    "developer": "TCPB Arts",
+    "steamAppId": 5273530,
+    "identityMatchesScreenshots": "UNVERIFIED",
+    "confirmedAlgorithmOrSourceRepo": false
+  },
+  "proposedComparisons": [
+    {
+      "variant": "A",
+      "name": "near hero 3D clay lobes",
+      "effectOwner": "existing POC VFX",
+      "risk": "geometry/material/shadow cost, transparent fill"
+    },
+    {
+      "variant": "B",
+      "name": "2D real-source flipbook/sprite atlas",
+      "effectOwner": "existing POC VFX",
+      "risk": "alpha overdraw, billboard repetition"
+    },
+    {
+      "variant": "C",
+      "name": "HYBRID 3D hero core + 2D smoke + opaque instanced angular debris",
+      "effectOwner": "existing POC VFX",
+      "risk": "needs visual/palette gate"
+    }
+  ],
+  "preservedSource": {
+    "seedworld/sw-fx.js": "292dab6b3fa52b7b2d4e5f6263638851cbbfd565",
+    "seedworld/sw-destruct.js": "29f044b25f74633548f44a62b9506a8e42bdf6da",
+    "seedworld/sw-mech.js": "a2008d2546a58cdaaaa0d5a5e52e1e32e3b856d2"
+  },
+  "realCodeFacts": {
+    "rocketAOERadius": 5.5,
+    "rocketAOEPower": 16,
+    "damageFormula": "power * (1 - distance / radius)^0.7",
+    "debrisPoolCap": 256,
+    "rubbleCap": 1000,
+    "dustCap": 200,
+    "fireCap": 64,
+    "chipsCap": 320,
+    "tracerCap": 128,
+    "spikeOldMs": 353,
+    "vfxPeakOld": 584,
+    "oldPoolCapacity": 584,
+    "oldPerfType": "preview iframe, pumped simulated steps, not GPU vsync"
+  },
+  "requestedBench": {
+    "scenarios": [
+      "single blast",
+      "four simultaneous/overlapping blasts",
+      "whole city block support/cascade demolition + optional flame/water"
+    ],
+    "variants": [
+      "no FX",
+      "3D clay",
+      "2D sprite",
+      "hybrid"
+    ],
+    "metrics": [
+      "p50/p95/p99 frame ms",
+      "CPU FX update",
+      "GPU frame time if supported",
+      "active / evicted slots",
+      "instancing/draw calls/triangles",
+      "transparent pixel coverage",
+      "shader compile hitch",
+      "memory",
+      "cleanup / reconstruct consistency",
+      "visual read"
+    ]
+  },
+  "currentResult": {
+    "referenceFilesListed": true,
+    "originalPixelsVerified": false,
+    "visualLookAccepted": false,
+    "benchExecuted": false,
+    "projectCodeChanged": false,
+    "sitePublished": false,
+    "merged": false
+  },
+  "nextGate": "KFB SEED WORLD BLOCK-DESTRUCTION HYBRID FX SOURCE-ISOLATION + PERFORMANCE A/B"
+}
