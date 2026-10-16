@@ -33,3 +33,8 @@ Die Deck-Seite ist Marketing und Onboarding: Erst kommt man über Essay, Song od
 - Look der Deck-Seite gestaltet Claude Design.
 - Klickstrecke im Almanach (Deck-Ansicht im Spiel) gehört zu WS1, sobald der Almanach steht.
 - Substack-Inhalte werden importiert (Liste der Posts je Deck von Georg oder per Export).
+
+## Quellen-Orte (Georg 16.10.)
+- Substack-Archiv: https://cancelthiscomic.substack.com/archive (Posts nicht immer eindeutig einem Deck zuzuordnen).
+- MD-Booklets: `(DB) CS 2020 Krazy Karnikl/Krazy Kayfabizarro/PACKAGES & BOOKLETS/MD BOOKLETS (drafts)/`.
+- Deck-PDFs: `…/Comic Seminar PDFS/MODIFIED PROTOTYPES (PDFs, uncompressed, v05)/`.

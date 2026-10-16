@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- Writer’s Room Pharaoh + Trust (V-361/V-364): Dossier, Blind-Review (Pharaoh 5/6/7, Trust 6/6.5/6), wr2 mit songLines (14 bzw. 25) in Hub b52/b55; b53 Epistemic erledigt (Take 05).
 - V-363 Deck-Dossier als Architektur vorgesehen (Quellen → Essay → Deck → Karten → Song, Anker-Links, freier Download; Bau später); V-364 Epistemic Take 05 TUNE, Redaktionslauf mit songLine je Karte + Intro nach Georgs Form.
 - V-362: Suno-Styles rein musikalisch; Deck nur über Stimmung, keine Comic-/Story-Requisiten oder Rollenbilder; Epistemic-Styles A/B bereinigt.
 - V-361: Songs im Writer’s Room (Deck-Dossier → Songwriter/Comedian-Pass → Blind-Review → Georg); Pilot Epistemic Sabotage gestartet.
