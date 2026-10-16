@@ -519,18 +519,13 @@
       },
       "lids": {
         "schema": "kfb.eyerig-lids/0.1",
-        "u": 0,
-        "l": 0,
-        "s": 0,
-        "du": 0,
-        "dl": 0,
-        "ds": 0,
-        "sd": 0
+        "use": false,
+        "_note": "NOT USED for headpart figures. No ToolBox lid flaps over the eye. Lids = EyeRig v6 lid shells INSIDE the baked socket shell (see eyeSocket)."
       },
       "clayLids": {
         "schema": "kfb.clay-lids/0.1",
         "on": false,
-        "_note": "EyeRig v6 shells as in Claude Design; clay lids (V-297) are Georg's switch in the ToolBox."
+        "_note": "MUST stay off for headpart figures (Georg 16.10.): the approved look is the socket-style enclosure, not two flaps over the lid."
       },
       "dangle": {
         "schema": "kfb.headpart-dangle/0.1",
@@ -766,6 +761,13 @@
         "notes": [
           "WS0 15.10.: Startwert Kopfgröße 1,0 (Hunky mit auto-Verjüngung 0,655), weil 0,73 neben FrizzleBob zu klein wirkt; default = gemessene Kragen-Passung."
         ]
+      },
+      "eyeSocket": {
+        "approved": "FrankenEyes R1, Georg 15.10.: 'die Augen-Einfassung ist gut gelungen'",
+        "baked": true,
+        "geometry": "Claude Design repair baked into the head mesh: neck loft from the stalk + spherical socket shell radius 1.10 R, front opening 58 deg, rolled rim 0.075 R, socket colour = stalk colour (socketColour per eye). Do not hide, replace or cover it.",
+        "lids": "EyeRig v6 lid shells, makeMat clay with lidColour (stalk tone x 0.72), lidFit 0 -> lid shell radius 1.056 R, just inside the 1.10 R socket shell; when open they slide UNDER the socket shell, when closed they fill the socket opening. Nothing sits on top of the socket.",
+        "reference": "media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/reference/ (face close-ups + expression sheets from FrankenEyes R1)"
       }
     }
   ]
