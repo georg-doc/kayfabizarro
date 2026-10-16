@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- Aliens r3 FAIL (Georg): zusätzlicher Hals falsch; r4 = saubere R1-Köpfe, nur auf die Halskrause aufgesetzt (Kopf-Transform), Mund-Tausch bleibt.
 - Blender-Lauf R2 (WS0 geprüft): Aliens r3 im Anzug-Hals-Ring (0 mm Spalt Ruhe/Idle/±35°, Hals-Skin head_part+chest, Kopfteil-IBMs neu – von WS0 freigegeben), Münder Dory B/Hunky A, FB v5d, Knet-Steine r1; assets/kfb-blender-run-r1-2026-10-16 @320c896f; Hub-Fragen aliens-r3-neckring, fb-ears-v5d, clay-stones-r1.
 - V-350: Suno-Format v3 (eigene Intros, gesungener Refrain, Abschnitte, Break, tanzbare Styles, wechselnde Stimmen); Pharaoh/Epistemic/Trust v3 im Hub; Cosmic-Grift-Song (109 BPM) wird eingecheckt.
 - V-344 präzisiert: Suno-Intro mit Fluff-o-lect-Anrede („Evening, fluffheads“), kein Applaus/Dank; b52–b55 neu.

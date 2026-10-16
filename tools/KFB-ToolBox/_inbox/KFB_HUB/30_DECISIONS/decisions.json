@@ -4695,7 +4695,7 @@
    "date": "2026-10-16",
    "area": "Look",
    "verdict": "TUNE",
-   "text": "Georgs Antworten 16.10. (Hub): (1) Look B besser als A – aber: anderer Skydome als A? GothGirl hat einen lila Glow (Randlicht zu stark), FrizzleBobs Mundpartie ist nicht gut ausgeleuchtet; Frage: hängt die Schattenlänge an Licht/Tageszeit oder ist sie beliebig? (2) Tonemapping: Licht wirkt mit ACES besser, der Boden ohne – Kombination prüfen. (3) FB bekommt Knet; GothGirl wirkt überstrahlt. (4) Fahrzeuge: Knet immer, aber die Farben ohne Knet sind besser → Knet darf die Texturfarben nicht auswaschen. (5) Aliens r2 TUNE: Der graue Hals-Ring des Space-Ranger-Anzugs ist der Konstruktionspunkt – der Alien-Kopf muss exakt in diesen Ring eingepasst werden (Korrektur Georg: der Hals-Ring/die Halskrause des Anzugs bleibt sichtbar wie beim Space Ranger – das macht den Raumanzug-Effekt; weg müssen nur Spalt, schiefer Sitz und doppelte Kragen-Geometrie des Kopfteils; Figuren wirkten gedrungen); Münder Hunky/Dory sind vertauscht, Mund in der ToolBox frei wählbar aus allen Sätzen (auch künftigen); Orc passt. (6) Abnahmebilder von Figuren immer mit KFB-Knet-Textur. (7) FB-Ohren v5d: das komplette v5c-Ohr (ohne Biss, bessere Form) als Vorlage, etwas schmaler, gespiegelt für die andere Seite (gleiche Größe/Form), Biss nur an einem Ohr wie im Meshy-Modell. (8) Fahrprobe noch offen.",
+   "text": "Georgs Antworten 16.10. (Hub): (1) Look B besser als A – aber: anderer Skydome als A? GothGirl hat einen lila Glow (Randlicht zu stark), FrizzleBobs Mundpartie ist nicht gut ausgeleuchtet; Frage: hängt die Schattenlänge an Licht/Tageszeit oder ist sie beliebig? (2) Tonemapping: Licht wirkt mit ACES besser, der Boden ohne – Kombination prüfen. (3) FB bekommt Knet; GothGirl wirkt überstrahlt. (4) Fahrzeuge: Knet immer, aber die Farben ohne Knet sind besser → Knet darf die Texturfarben nicht auswaschen. (5) Aliens r2 TUNE: Der graue Hals-Ring des Space-Ranger-Anzugs ist der Konstruktionspunkt – der Alien-Kopf muss exakt in diesen Ring eingepasst werden (Korrektur Georg: der Hals-Ring/die Halskrause des Anzugs bleibt sichtbar wie beim Space Ranger – das macht den Raumanzug-Effekt; weg müssen nur Spalt, schiefer Sitz und doppelte Kragen-Geometrie des Kopfteils; Figuren wirkten gedrungen). Nachtrag r3 FAIL: KEIN zusätzlicher Hals – der vorhandene runde Kopf sitzt wie ein Helm bzw. eine Kugel AUF der Halskrause auf, Kopf starr am Kopfknochen, nur Kopf-Transform anpassen; Münder Hunky/Dory sind vertauscht, Mund in der ToolBox frei wählbar aus allen Sätzen (auch künftigen); Orc passt. (6) Abnahmebilder von Figuren immer mit KFB-Knet-Textur. (7) FB-Ohren v5d: das komplette v5c-Ohr (ohne Biss, bessere Form) als Vorlage, etwas schmaler, gespiegelt für die andere Seite (gleiche Größe/Form), Biss nur an einem Ohr wie im Meshy-Modell. (8) Fahrprobe noch offen.",
    "values": {},
    "owner": "WS1 (1–4) · WS0 Blender (5, 7) · WSA work (5 Münder)",
    "check": "neue Bildpaare + Proofs mit Knet",
@@ -4838,7 +4838,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:672",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:674",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
