@@ -1,0 +1,1088 @@
+{
+ "design": "clay_neutral_r3",
+ "note": "Lippenloser Mund-Einsatz: dunkelbrauner Rand, Zaehne, roter Rachen; 4x4 nach V-255-Reihenfolge; Alpha vorhanden",
+ "source": "media/3D_Assets/Textures/FrizzleBob-Mouths_PNGs/NEUTRAL_Claymation-Mund-Sprite-Sheet in 4×4 Raster.png @ main ea603d31d",
+ "canvas": [
+  512,
+  512
+ ],
+ "scale": "native sheet pixels; only tall shapes squashed vertically",
+ "grid": {
+  "cols": 4,
+  "rows": 4,
+  "background": "alpha"
+ },
+ "anchor": {
+  "x": 256,
+  "y": 220,
+  "closed_upper_lip_top_y": 189.0,
+  "rule": "Canvas anchor = horizontal centre + LIP LINE (mouth centre) of closed; headroom above. Closed shapes (anchor_mode seam) put their lip line on the anchor. Open shapes (anchor_mode lift) grow up AND down: upper-lip top = closed upper-lip top - upperLift * extra_height_px, the rest of the extra height goes down."
+ },
+ "upperLift": {
+  "value": 0.35,
+  "value_baked": 0.35,
+  "range": [
+   0.0,
+   1.0
+  ],
+  "tested": [
+   0.3,
+   0.4
+  ],
+  "rule": "dy = -(upperLift - value_baked) * extra_height_px relative to the baked PNG (dy_from_baked)"
+ },
+ "height_limit": {
+  "max_px": 147.3,
+  "ratio_to_closed": 2.415,
+  "rule": "closed is a thin teeth strip (lipless), so x closed is meaningless: same absolute face budget as A / C (1.7 x A-closed height on FrizzleBob = 54.1 px at the 452px panel)",
+  "originals": "*_full.png = unsquashed original"
+ },
+ "width_rule": "native widths kept (no horizontal rescale); width_ratio_to_closed per shape documents V-255 \"same width\"",
+ "shadow": {
+  "color": [
+   62,
+   38,
+   16
+  ],
+  "tight_sigma": 3.0,
+  "tight_alpha": 0.4,
+  "drop_sigma": 9.0,
+  "drop_dy": 8,
+  "drop_alpha": 0.38,
+  "note": "baked under the mouth in X.png; noshadow/X.png without"
+ },
+ "fb": {
+  "closed_width_equals_old_mouth_px": 91.0,
+  "scale_to_fb_panel": 0.3669
+ },
+ "closed_height_px": 61,
+ "closed_width_px": 248,
+ "mouths": [
+  {
+   "id": "closed",
+   "file": "closed.png",
+   "noshadow": "noshadow/closed.png",
+   "trim": "trim/closed.png",
+   "use_as": "X rest (teeth together, thin)",
+   "variant_of": null,
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    127,
+    184
+   ],
+   "bbox_canvas": [
+    132,
+    189,
+    248,
+    61
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    248,
+    61
+   ],
+   "height_ratio_to_closed": 1.0,
+   "width_ratio_to_closed": 1.0,
+   "height_full_ratio_to_closed": 1.0,
+   "anchor_mode": "seam",
+   "upper_lip_top_canvas": 189.0,
+   "lip_line_canvas": 220.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "fb_height_px_at_1x": 22.4,
+   "sheet_bbox": [
+    38,
+    139,
+    248,
+    61
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 2588,
+   "tintmask": "tintmask/closed.png"
+  },
+  {
+   "id": "mbp",
+   "file": "mbp.png",
+   "noshadow": "noshadow/mbp.png",
+   "trim": "trim/mbp.png",
+   "use_as": "MBP slot (teeth together, slightly taller; lipless = no pressed lips)",
+   "variant_of": null,
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    130,
+    174
+   ],
+   "bbox_canvas": [
+    135,
+    179,
+    241,
+    80
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    241,
+    80
+   ],
+   "height_ratio_to_closed": 1.311,
+   "width_ratio_to_closed": 0.972,
+   "height_full_ratio_to_closed": 1.311,
+   "anchor_mode": "seam",
+   "upper_lip_top_canvas": 179.0,
+   "lip_line_canvas": 220.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "fb_height_px_at_1x": 29.4,
+   "sheet_bbox": [
+    351,
+    128,
+    241,
+    80
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 2323,
+   "tintmask": "tintmask/mbp.png"
+  },
+  {
+   "id": "small_open",
+   "file": "small_open.png",
+   "noshadow": "noshadow/small_open.png",
+   "trim": "trim/small_open.png",
+   "use_as": "C small open",
+   "variant_of": null,
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    130,
+    172
+   ],
+   "bbox_canvas": [
+    135,
+    177,
+    242,
+    96
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    242,
+    96
+   ],
+   "height_ratio_to_closed": 1.574,
+   "width_ratio_to_closed": 0.976,
+   "height_full_ratio_to_closed": 1.574,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 177.0,
+   "lip_line_canvas": 226.0,
+   "extra_height_px": 35.0,
+   "dy_from_baked": {
+    "0.0": 12.2,
+    "0.3": 1.7,
+    "0.4": -1.8
+   },
+   "fb_height_px_at_1x": 35.2,
+   "sheet_bbox": [
+    664,
+    121,
+    242,
+    96
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 2866,
+   "tintmask": "tintmask/small_open.png"
+  },
+  {
+   "id": "mid_open",
+   "file": "mid_open.png",
+   "noshadow": "noshadow/mid_open.png",
+   "trim": "trim/mid_open.png",
+   "use_as": "C/D half open",
+   "variant_of": null,
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    134,
+    160
+   ],
+   "bbox_canvas": [
+    139,
+    165,
+    233,
+    129
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    233,
+    129
+   ],
+   "height_ratio_to_closed": 2.115,
+   "width_ratio_to_closed": 0.94,
+   "height_full_ratio_to_closed": 2.115,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 165.0,
+   "lip_line_canvas": 215.0,
+   "extra_height_px": 68.0,
+   "dy_from_baked": {
+    "0.0": 23.8,
+    "0.3": 3.4,
+    "0.4": -3.4
+   },
+   "fb_height_px_at_1x": 47.3,
+   "sheet_bbox": [
+    979,
+    100,
+    233,
+    129
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 2770,
+   "tintmask": "tintmask/mid_open.png"
+  },
+  {
+   "id": "ah",
+   "file": "ah.png",
+   "noshadow": "noshadow/ah.png",
+   "trim": "trim/ah.png",
+   "use_as": "D AA wide open",
+   "variant_of": null,
+   "squash_y": 0.818,
+   "squashed": true,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    128,
+    154
+   ],
+   "bbox_canvas": [
+    133,
+    158,
+    246,
+    148
+   ],
+   "bbox_trim": [
+    5,
+    4,
+    246,
+    148
+   ],
+   "height_ratio_to_closed": 2.426,
+   "width_ratio_to_closed": 0.992,
+   "height_full_ratio_to_closed": 2.951,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 159.0,
+   "lip_line_canvas": 205.0,
+   "extra_height_px": 86.0,
+   "dy_from_baked": {
+    "0.0": 30.1,
+    "0.3": 4.3,
+    "0.4": -4.3
+   },
+   "fb_height_px_at_1x": 54.3,
+   "sheet_bbox": [
+    37,
+    374,
+    246,
+    180
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 1,
+   "edge_px": 2866,
+   "tintmask": "tintmask/ah.png"
+  },
+  {
+   "id": "ah_full",
+   "file": "ah_full.png",
+   "noshadow": "noshadow/ah_full.png",
+   "trim": "trim/ah_full.png",
+   "use_as": "D AA wide open",
+   "variant_of": "ah",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    128,
+    141
+   ],
+   "bbox_canvas": [
+    133,
+    147,
+    246,
+    180
+   ],
+   "bbox_trim": [
+    5,
+    6,
+    246,
+    180
+   ],
+   "height_ratio_to_closed": 2.951,
+   "width_ratio_to_closed": 0.992,
+   "height_full_ratio_to_closed": 2.951,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 147.0,
+   "lip_line_canvas": 203.0,
+   "extra_height_px": 119.0,
+   "dy_from_baked": {
+    "0.0": 41.6,
+    "0.3": 5.9,
+    "0.4": -6.0
+   },
+   "fb_height_px_at_1x": 66.0,
+   "sheet_bbox": [
+    37,
+    374,
+    246,
+    180
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 3555,
+   "tintmask": "tintmask/ah_full.png"
+  },
+  {
+   "id": "ee",
+   "file": "ee.png",
+   "noshadow": "noshadow/ee.png",
+   "trim": "trim/ee.png",
+   "use_as": "B EE wide, both rows",
+   "variant_of": null,
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    121,
+    161
+   ],
+   "bbox_canvas": [
+    126,
+    166,
+    260,
+    126
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    260,
+    126
+   ],
+   "height_ratio_to_closed": 2.066,
+   "width_ratio_to_closed": 1.048,
+   "height_full_ratio_to_closed": 2.066,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 166.0,
+   "lip_line_canvas": 219.0,
+   "extra_height_px": 65.0,
+   "dy_from_baked": {
+    "0.0": 22.8,
+    "0.3": 3.2,
+    "0.4": -3.3
+   },
+   "fb_height_px_at_1x": 46.2,
+   "sheet_bbox": [
+    340,
+    404,
+    260,
+    126
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 3056,
+   "tintmask": "tintmask/ee.png"
+  },
+  {
+   "id": "oh",
+   "file": "oh.png",
+   "noshadow": "noshadow/oh.png",
+   "trim": "trim/oh.png",
+   "use_as": "E OH tall round",
+   "variant_of": null,
+   "squash_y": 0.729,
+   "squashed": true,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    172,
+    155
+   ],
+   "bbox_canvas": [
+    177,
+    159,
+    157,
+    147
+   ],
+   "bbox_trim": [
+    5,
+    4,
+    157,
+    147
+   ],
+   "height_ratio_to_closed": 2.41,
+   "width_ratio_to_closed": 0.633,
+   "height_full_ratio_to_closed": 3.311,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 159.0,
+   "lip_line_canvas": 198.0,
+   "extra_height_px": 86.0,
+   "dy_from_baked": {
+    "0.0": 30.1,
+    "0.3": 4.3,
+    "0.4": -4.3
+   },
+   "fb_height_px_at_1x": 53.9,
+   "sheet_bbox": [
+    705,
+    360,
+    157,
+    202
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 1923,
+   "tintmask": "tintmask/oh.png"
+  },
+  {
+   "id": "oh_full",
+   "file": "oh_full.png",
+   "noshadow": "noshadow/oh_full.png",
+   "trim": "trim/oh_full.png",
+   "use_as": "E OH tall round",
+   "variant_of": "oh",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    172,
+    135
+   ],
+   "bbox_canvas": [
+    177,
+    140,
+    157,
+    202
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    157,
+    202
+   ],
+   "height_ratio_to_closed": 3.311,
+   "width_ratio_to_closed": 0.633,
+   "height_full_ratio_to_closed": 3.311,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 140.0,
+   "lip_line_canvas": 194.0,
+   "extra_height_px": 141.0,
+   "dy_from_baked": {
+    "0.0": 49.3,
+    "0.3": 7.0,
+    "0.4": -7.1
+   },
+   "fb_height_px_at_1x": 74.1,
+   "sheet_bbox": [
+    705,
+    360,
+    157,
+    202
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 2707,
+   "tintmask": "tintmask/oh_full.png"
+  },
+  {
+   "id": "oo",
+   "file": "oo.png",
+   "noshadow": "noshadow/oo.png",
+   "trim": "trim/oo.png",
+   "use_as": "F OO small round",
+   "variant_of": null,
+   "squash_y": 0.95,
+   "squashed": true,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    188,
+    154
+   ],
+   "bbox_canvas": [
+    193,
+    159,
+    126,
+    147
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    126,
+    147
+   ],
+   "height_ratio_to_closed": 2.41,
+   "width_ratio_to_closed": 0.508,
+   "height_full_ratio_to_closed": 2.541,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 159.0,
+   "lip_line_canvas": 211.0,
+   "extra_height_px": 86.0,
+   "dy_from_baked": {
+    "0.0": 30.1,
+    "0.3": 4.3,
+    "0.4": -4.3
+   },
+   "fb_height_px_at_1x": 53.9,
+   "sheet_bbox": [
+    1033,
+    389,
+    126,
+    155
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 2,
+   "edge_px": 2051,
+   "tintmask": "tintmask/oo.png"
+  },
+  {
+   "id": "fv",
+   "file": "fv.png",
+   "noshadow": "noshadow/fv.png",
+   "trim": "trim/fv.png",
+   "use_as": "G F/V upper teeth on dark lower edge",
+   "variant_of": null,
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    128,
+    175
+   ],
+   "bbox_canvas": [
+    133,
+    180,
+    245,
+    88
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    245,
+    88
+   ],
+   "height_ratio_to_closed": 1.443,
+   "width_ratio_to_closed": 0.988,
+   "height_full_ratio_to_closed": 1.443,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 180.0,
+   "lip_line_canvas": 236.0,
+   "extra_height_px": 27.0,
+   "dy_from_baked": {
+    "0.0": 9.4,
+    "0.3": 1.3,
+    "0.4": -1.4
+   },
+   "fb_height_px_at_1x": 32.3,
+   "sheet_bbox": [
+    36,
+    716,
+    245,
+    88
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 2676,
+   "tintmask": "tintmask/fv.png"
+  },
+  {
+   "id": "l_th",
+   "file": "l_th.png",
+   "noshadow": "noshadow/l_th.png",
+   "trim": "trim/l_th.png",
+   "use_as": "H L/TH tongue tip behind upper teeth",
+   "variant_of": null,
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    124,
+    164
+   ],
+   "bbox_canvas": [
+    129,
+    169,
+    253,
+    117
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    253,
+    117
+   ],
+   "height_ratio_to_closed": 1.918,
+   "width_ratio_to_closed": 1.02,
+   "height_full_ratio_to_closed": 1.918,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 169.0,
+   "lip_line_canvas": 215.0,
+   "extra_height_px": 56.0,
+   "dy_from_baked": {
+    "0.0": 19.6,
+    "0.3": 2.8,
+    "0.4": -2.8
+   },
+   "fb_height_px_at_1x": 42.9,
+   "sheet_bbox": [
+    344,
+    706,
+    253,
+    117
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 2866,
+   "tintmask": "tintmask/l_th.png"
+  },
+  {
+   "id": "smile_closed",
+   "file": "smile_closed.png",
+   "noshadow": "noshadow/smile_closed.png",
+   "trim": "trim/smile_closed.png",
+   "use_as": "reaction smile (teeth together, curved)",
+   "variant_of": null,
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    130,
+    156
+   ],
+   "bbox_canvas": [
+    135,
+    161,
+    242,
+    95
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    242,
+    95
+   ],
+   "height_ratio_to_closed": 1.557,
+   "width_ratio_to_closed": 0.976,
+   "height_full_ratio_to_closed": 1.557,
+   "anchor_mode": "seam",
+   "upper_lip_top_canvas": 180.5,
+   "lip_line_canvas": 220.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "fb_height_px_at_1x": 34.9,
+   "sheet_bbox": [
+    663,
+    722,
+    242,
+    95
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 2655,
+   "tintmask": "tintmask/smile_closed.png"
+  },
+  {
+   "id": "smile_teeth",
+   "file": "smile_teeth.png",
+   "noshadow": "noshadow/smile_teeth.png",
+   "trim": "trim/smile_teeth.png",
+   "use_as": "reaction open smile with teeth",
+   "variant_of": null,
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    128,
+    147
+   ],
+   "bbox_canvas": [
+    133,
+    152,
+    245,
+    132
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    245,
+    132
+   ],
+   "height_ratio_to_closed": 2.164,
+   "width_ratio_to_closed": 0.988,
+   "height_full_ratio_to_closed": 2.164,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 170.0,
+   "lip_line_canvas": 214.0,
+   "extra_height_px": 53.0,
+   "dy_from_baked": {
+    "0.0": 18.5,
+    "0.3": 2.6,
+    "0.4": -2.7
+   },
+   "fb_height_px_at_1x": 48.4,
+   "sheet_bbox": [
+    974,
+    706,
+    245,
+    132
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 2899,
+   "tintmask": "tintmask/smile_teeth.png"
+  },
+  {
+   "id": "sad",
+   "file": "sad.png",
+   "noshadow": "noshadow/sad.png",
+   "trim": "trim/sad.png",
+   "use_as": "reaction sad (frown arc, upper teeth)",
+   "variant_of": null,
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    122,
+    170
+   ],
+   "bbox_canvas": [
+    127,
+    175,
+    257,
+    101
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    257,
+    101
+   ],
+   "height_ratio_to_closed": 1.656,
+   "width_ratio_to_closed": 1.036,
+   "height_full_ratio_to_closed": 1.656,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 175.0,
+   "lip_line_canvas": 223.0,
+   "extra_height_px": 40.0,
+   "dy_from_baked": {
+    "0.0": 14.0,
+    "0.3": 2.0,
+    "0.4": -2.0
+   },
+   "fb_height_px_at_1x": 37.1,
+   "sheet_bbox": [
+    30,
+    1012,
+    257,
+    101
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 2881,
+   "tintmask": "tintmask/sad.png"
+  },
+  {
+   "id": "surprised",
+   "file": "surprised.png",
+   "noshadow": "noshadow/surprised.png",
+   "trim": "trim/surprised.png",
+   "use_as": "reaction surprised (tall open)",
+   "variant_of": null,
+   "squash_y": 0.685,
+   "squashed": true,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    154,
+    155
+   ],
+   "bbox_canvas": [
+    159,
+    158,
+    193,
+    148
+   ],
+   "bbox_trim": [
+    5,
+    3,
+    193,
+    148
+   ],
+   "height_ratio_to_closed": 2.426,
+   "width_ratio_to_closed": 0.778,
+   "height_full_ratio_to_closed": 3.525,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 159.0,
+   "lip_line_canvas": 198.0,
+   "extra_height_px": 86.0,
+   "dy_from_baked": {
+    "0.0": 30.1,
+    "0.3": 4.3,
+    "0.4": -4.3
+   },
+   "fb_height_px_at_1x": 54.3,
+   "sheet_bbox": [
+    374,
+    952,
+    193,
+    215
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 1,
+   "edge_px": 2362,
+   "tintmask": "tintmask/surprised.png"
+  },
+  {
+   "id": "surprised_full",
+   "file": "surprised_full.png",
+   "noshadow": "noshadow/surprised_full.png",
+   "trim": "trim/surprised_full.png",
+   "use_as": "reaction surprised (tall open)",
+   "variant_of": "surprised",
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    154,
+    130
+   ],
+   "bbox_canvas": [
+    159,
+    135,
+    193,
+    215
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    193,
+    215
+   ],
+   "height_ratio_to_closed": 3.525,
+   "width_ratio_to_closed": 0.778,
+   "height_full_ratio_to_closed": 3.525,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 135.0,
+   "lip_line_canvas": 193.0,
+   "extra_height_px": 154.0,
+   "dy_from_baked": {
+    "0.0": 53.9,
+    "0.3": 7.7,
+    "0.4": -7.7
+   },
+   "fb_height_px_at_1x": 78.9,
+   "sheet_bbox": [
+    374,
+    952,
+    193,
+    215
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 3480,
+   "tintmask": "tintmask/surprised_full.png"
+  },
+  {
+   "id": "grumpy",
+   "file": "grumpy.png",
+   "noshadow": "noshadow/grumpy.png",
+   "trim": "trim/grumpy.png",
+   "use_as": "reaction grumpy (clenched, wavy)",
+   "variant_of": null,
+   "squash_y": 1.0,
+   "squashed": false,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    122,
+    170
+   ],
+   "bbox_canvas": [
+    127,
+    175,
+    258,
+    96
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    258,
+    96
+   ],
+   "height_ratio_to_closed": 1.574,
+   "width_ratio_to_closed": 1.04,
+   "height_full_ratio_to_closed": 1.574,
+   "anchor_mode": "seam",
+   "upper_lip_top_canvas": 189.0,
+   "lip_line_canvas": 220.0,
+   "extra_height_px": 0.0,
+   "dy_from_baked": {
+    "0.0": 0.0,
+    "0.3": 0.0,
+    "0.4": -0.0
+   },
+   "fb_height_px_at_1x": 35.2,
+   "sheet_bbox": [
+    654,
+    1021,
+    258,
+    96
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 0,
+   "edge_px": 3097,
+   "tintmask": "tintmask/grumpy.png"
+  },
+  {
+   "id": "smirk_tongue",
+   "file": "smirk_tongue.png",
+   "noshadow": "noshadow/smirk_tongue.png",
+   "trim": "trim/smirk_tongue.png",
+   "use_as": "signature: sly smirk, tongue in the corner",
+   "variant_of": null,
+   "squash_y": 0.989,
+   "squashed": true,
+   "canvas": [
+    512,
+    512
+   ],
+   "offset": [
+    130,
+    135
+   ],
+   "bbox_canvas": [
+    135,
+    140,
+    241,
+    147
+   ],
+   "bbox_trim": [
+    5,
+    5,
+    241,
+    147
+   ],
+   "height_ratio_to_closed": 2.41,
+   "width_ratio_to_closed": 0.972,
+   "height_full_ratio_to_closed": 2.443,
+   "anchor_mode": "lift",
+   "upper_lip_top_canvas": 169.0,
+   "lip_line_canvas": 225.0,
+   "extra_height_px": 57.0,
+   "dy_from_baked": {
+    "0.0": 19.9,
+    "0.3": 2.8,
+    "0.4": -2.9
+   },
+   "fb_height_px_at_1x": 53.9,
+   "sheet_bbox": [
+    981,
+    990,
+    241,
+    149
+   ],
+   "red_px_outside": 0,
+   "fringe_white_px": 0,
+   "fringe_green_px": 1,
+   "edge_px": 2882,
+   "tintmask": "tintmask/smirk_tongue.png"
+  }
+ ]
+}
