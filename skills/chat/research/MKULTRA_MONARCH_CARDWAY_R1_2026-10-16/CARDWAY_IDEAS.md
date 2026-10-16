@@ -98,3 +98,16 @@ Six further potential documents-as-play encounters:
 Possible chain to explore: `The Training Reversal` → `The Approved Margin` → `The Behavioral Consultant` → `Detainee 063` → `The File That Leaked` → `Battle Lab`. This is a **source/decision trail**, not a conspiracy diagram alleging unproven centralized or continuing conduct.
 
 Total to date: 12 R1 MKUltra + 6 social psychology + 6 R2A CIA file + 6 R2B GTMO = **30 distinct unapproved editorial prompts**, accepted or published 0. Reuse extant KFB Gateway cards/Conspiracy Iceberg schema and keep a separate evidence/quote layer. Do not create a standalone Guantánamo deck before source audit and user editorial approval.
+
+
+## R2C research-to-card neighborhoods · 2026-10-16 · unapproved
+Sources S40–S48 and `R2C_ORIGINAL_DOCUMENTS_MEDICAL_PROVENANCE_2026-10-16.md`. **Six further hypotheses**, no actual card/data/runtime creation. Previous 30 prompts preserved; total = **36 provisional editorial seeds**.
+
+- **The Five-Page Clipping:** a topical headline appears as a PDF in an institution's archive. Research tension: does archive hosting authenticate the press assertions, or just preserve them? S40 → S41 → S42.
+- **The Two-Page Disagreement:** Earman's 29 Nov 1963 CIA memorandum records Helms/Gottlieb backing unwitting testing while Carter/Earman/Kirkpatrick objected. The original's actual unresolved decision is more interesting than a fictional universal CIA consensus. S42, original pages 1–2.
+- **The Memo With No Patient:** BSCT 2002 consultative SOP located but original text still inaccessible here; Senate quotes it while not knowing if officially adopted. Contrast roles written on paper with records of actual interrogations. S45 plus contemporaneous 063 text S43/S44.
+- **Thirty-Five Beats:** the detainee 063 log records heart rate 35 bpm, clinical assessment and hospitalization. Narration must not imply this raw value alone proves etiology or a controlled experiment. S43 83p PDF index 26 / S44 Dec 7.
+- **Twenty-Five Observations:** CIA/OLC's 2005 argument invokes medical and psychological experience with >25 detainees and specific claims about combination effects. Distinguish clinical monitoring, a comparative assertion and a validated generalizable research finding. S47, PDF index 11.
+- **The Study Without a Protocol:** PHR 2010 argues that the operational use of monitoring and adaptations may constitute human-subject research, while acknowledging missing original subject-level data and no located formal prospective protocol. S46, PDF indices 6–13.
+
+**Proposed research navigation only:** Press clipping → NSA document list → genuine 1963 internal CIA dispute → SERE/BSCT role documents → 063 log → DOJ 2005 original → PHR critical analysis. Historical series occurs at different dates/agencies: adjacency must not imply a continuous operational owner or a single plan. Preserve patient dignity, evidence class, precise timestamps and primary/secondary boundaries. No new deck activated or canonical terminology decided.
