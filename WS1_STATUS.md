@@ -20,7 +20,7 @@ Neueste Einträge oben (§57 ist der neueste). WS0 antwortet im Register-Branch 
   4. Persistenz (Spielstände, Konfiguration, `kfb.world/1`) über die Plattform-Infrastruktur.
   5. Ab wann?
 
-- **Georgs Vorschlag (16.10., Nachtrag):** WSA (ChatGPT im Code-Modus) baut eine **Test- bzw. Staging-Site auf der GPT-Plattform**, die neue WS1-Stände und -Vorschauen automatisch übernimmt, so wie später auf der echten Site. Damit stimmen sich die Produktionsprozesse (Updates, neue Module) schon jetzt ab.
+- **Georgs Vorschlag (16.10., Nachtrag):** WSA (Georgs Arbeit auf der OpenAI-Site, ChatGPT im Code-Modus) baut eine **Test- bzw. Staging-Site auf der GPT-Plattform**, die neue WS1-Stände und -Vorschauen automatisch übernimmt, so wie später auf der echten Site. Damit stimmen sich die Produktionsprozesse (Updates, neue Module) schon jetzt ab.
 - **WS1-Vorschlag für die Schnittstelle:**
   - WS1 liefert jeden geprüften Stand an einen festen Ort: Branch `ws1/preview` mit `index.html` (Einzeldatei, heute 18 MB).
   - Neu dazu käme ein kleines `build.json` mit `{ commit, date, tests: "23/23", links: { stage, m1, car, lineup }, notes }`.
