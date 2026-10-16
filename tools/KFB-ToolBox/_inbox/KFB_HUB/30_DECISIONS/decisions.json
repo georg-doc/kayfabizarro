@@ -4721,6 +4721,21 @@
    "applies": "vor der nächsten Fahrprobe"
   },
   {
+   "id": "V-348",
+   "date": "2026-10-16",
+   "area": "Augen",
+   "verdict": "PASS",
+   "text": "Augenlid E2 von Claude Design (geschlossene Lidhaut, Lidspalt einzige Öffnung, keine Naht) ist die KFB-Lid-Konstruktion (Georg: „für uns die bessere Konstruktion“). Für die Aliens: E2-Auge sitzt im vorhandenen Augensockel, der Auge und Lid umfasst (keine Schließ-Animation des Sockels); der Augenstiel setzt hinten etwas unterhalb der Mitte an, das Auge ist leicht nach vorn gekippt; das Lid ist im Sockel-Anschnitt lesbar und tritt geöffnet hinter den Rand bzw. in den Kopf zurück, so dass keine Nahtstelle sichtbar wird – gleiches Prinzip für alle Figuren. Nächste Schritte: (1) E2 additiv ins Repo (neuer Branch auf Basis PR #159, HANDOVER_CLAUDE_CODE), Node-Test der Netz-Prüfungen; (2) Schritt 6 Ovalform über eyeoval.v1; (3) Schritt 7 als Hülle an EyeRig v6 ohne neuen Eigentümer; (4) Aliens: E2 im Sockel nach Blender-Lauf R2. Bekannte Schwäche: kleine Kerbe am Nahtende beim Schließen (TUNE).",
+   "values": {},
+   "owner": "WS0 (Repo, Anbindung) · Claude Design (TUNE Kerbe)",
+   "check": "Node-Test grün, Werkbank im Repo, Alien-Proof mit Knet",
+   "source": "Georg 16.10.: „ohne Naht und mit der geschlossenen Lidhaut eigentlich für uns die bessere Konstruktion … Stiel … hinten unten … in den vorhandenen Eye-Socket einsetzen“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine geschlossene Lidhaut löst das Kantenproblem bei Stielaugen und frei hängenden Augen an der Wurzel statt mit Klappen.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -4793,7 +4808,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:666",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:667",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

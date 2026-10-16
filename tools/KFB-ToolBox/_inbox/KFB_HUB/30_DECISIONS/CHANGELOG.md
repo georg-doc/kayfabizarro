@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-16 · WS1-Antworten, Gesamtplan
+- V-348: Augenlid E2 (geschlossene Lidhaut) PASS als Konstruktion; Aliens: E2-Auge im Sockel, Stiel hinten unterhalb der Mitte; Repo-Übernahme gestartet.
 - V-346 korrigiert: Hals-Ring des Anzugs bleibt sichtbar (Raumanzug-Effekt); Blender-Lauf R2 informiert.
 - V-347: M2 Fahrgefühl – Q/E Drift (k2b-Spender), enger Wendekreis A/D, ecctrl weniger Überschläge, aktives System sichtbar; neue Fahrprobe.
 - V-346: Georgs Look-Urteile (B Standard, Glow/Mund-Licht/Farbtreue TUNE, Tonemapping-Kombi, FB Knet, Aliens exakt in den Hals-Ring, Münder vertauscht, Proofs immer mit Knet, FB-Ohren gespiegelt + schmaler); WS1-Notiz; Hub-Seite v13 (lange Fragen volle Breite).
