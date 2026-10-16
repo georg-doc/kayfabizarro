@@ -1,7 +1,31 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§49 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§50 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 50 · 16.10. · M1 TUNE als Zwischenstand gemergt (T4–T6 erfüllt) · V-334 behoben · Vorschau @5a51948b
+
+### 50.1 · M1 TUNE (M1-Sitzung; m1/tune @69400cf → main @b1af18e)
+- **Prüflauf auf main @b1af18e:** ganze Testreihe 23/23, M1-Runde 14/14 (rank-fence, contract, move @60/@120/@30, hz-equal, fence plus Gegenlauf, scene, handover, eyes, bench, f1); INFO Rückwand ohne Zaun −18,4 cm.
+- **T4:** Flug p95 16,7 ms = Boden, Verhältnis 1,0 (Bench auf GPU).
+  - Ursache des Ruckelns: Auf 120-Hz-Bildschirmen stand die Figur in jedem zweiten Bild still.
+  - Fix: Interpolation zwischen den letzten zwei Physik-Schritten (Figur und Kamera).
+- **T5:**
+  - Rampe auf der START-Achse, `m1-scene` ohne Sprung;
+  - G = Geh-Umschalter;
+  - weiches Aufsetzen 0,15 s, die Landung nimmt höchstens Sprinttempo mit (vorher ging das Flugtempo in die Landung, Kapsel −11 cm);
+  - Info-Symbol unten links mit aufklappbarer Tastenliste.
+- **T6:** Die Figur folgt Hügeln.
+- **T1–T3 offen** (WoW-Schema, Sprünge je Zustand, Doppel-Leertaste): Sie warten auf den Lab-Snapshot (§46).
+
+### 50.2 · V-334 behoben
+- Ursache: Im Intro-Ritual ragte das Kartenbild rechts aus dem Rahmen, weil das Bild 300 px breit gezeichnet wurde, der Karten-Innenraum aber nur 194 px hat.
+- `.card .card-art { max-width: 100% }`: Das Seitenverhältnis bleibt, das Bild wird nur verkleinert, nichts beschnitten.
+- Am Startbildschirm gemessen: Bildkante = Innenkante, 194 × 108 px.
+
+### 50.3 · Vorschau für Georg
+- `https://ws1-preview.kayfabizarro.pages.dev/#m1` (Ruckel-Fix, Rampe, G, Info-Symbol);
+- Bühne und L1/L2 wie in §47–§49.
 
 ## 49 · 16.10. · L2 Schritt 3 (V-340): Aufstellung aller 14 Fahrzeuge · Maßstab-Befund · G10
 
