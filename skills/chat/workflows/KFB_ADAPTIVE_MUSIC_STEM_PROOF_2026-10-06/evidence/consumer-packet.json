@@ -1,0 +1,178 @@
+{
+  "schema": "kfb.voice.card-performance-packet/1",
+  "preview": true,
+  "contentRevision": "triplet-opener-pool-r5-cookie-tune-v11",
+  "contentBlob": "dfb5435bc0c913ea48f8f5558f801b293962fbc8",
+  "registryBlob": "af276a8b941a84a6b1856b9897dca196d1b7760a",
+  "Openers": [
+    {
+      "openerId": "DIRECT",
+      "version": 1,
+      "kind": "OPENER",
+      "pattern": "{title}.",
+      "sourceClass": "SOURCE_NEUTRAL",
+      "requiredEvidence": [],
+      "performerFiction": false,
+      "status": "EDITORIAL_CANDIDATE",
+      "enabled": true,
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "source": {
+        "path": "skills/chat/workflows/KFB_CHATTERBOX_VOICE_V1_2026-10-08/data/KFB_STANDUP_OPENER_CUT_SPIN_CURATED_CANDIDATES_R1_2026-10-13.json",
+        "revision": "46a48327fca3a6e6606de63623e677aa6a6923cf"
+      },
+      "history": []
+    }
+  ],
+  "CardBeats": [
+    {
+      "beatId": "wrinkle_rumble:10:compact",
+      "version": 3,
+      "deckId": "wrinkle_rumble",
+      "cardNumber": 10,
+      "cardBlob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+      "mode": "COMPACT",
+      "surfaceText": "The Cookie of Causality restarts the war over a snickerdoodle at Turn One, but keeps all the damage.",
+      "status": "EDITORIAL_CANDIDATE",
+      "owner": "KFB Voice / PR #379",
+      "reviewer": null,
+      "humanAcceptance": "PENDING",
+      "evidence": [
+        {
+          "field": "cardName",
+          "quote": "The Cookie of Causality",
+          "start": 0,
+          "end": 23,
+          "spoken": "The Cookie of Causality"
+        },
+        {
+          "field": "power",
+          "quote": "Restart",
+          "start": 19,
+          "end": 26,
+          "spoken": "restarts"
+        },
+        {
+          "field": "lore",
+          "quote": "The war",
+          "start": 0,
+          "end": 7,
+          "spoken": "the war"
+        },
+        {
+          "field": "lore",
+          "quote": "a snickerdoodle",
+          "start": 60,
+          "end": 75,
+          "spoken": "a snickerdoodle"
+        },
+        {
+          "field": "power",
+          "quote": "Turn 1",
+          "start": 41,
+          "end": 47,
+          "spoken": "Turn One"
+        },
+        {
+          "field": "power",
+          "quote": "Keep all damage",
+          "start": 49,
+          "end": 64,
+          "spoken": "keeps all the damage"
+        }
+      ],
+      "semanticCoverage": {
+        "power": "Restart game from Turn 1, keep damage",
+        "lore": "War started over a snickerdoodle",
+        "reframe": "Restarting war does not erase damage",
+        "newClaims": "No new Card facts; source-anchored interpretation pending review",
+        "humanAcceptance": "PENDING",
+        "editorialReview": "Version3 content-only tune of independently source-reviewed v2: clause order and pause changed for audition, title/Power/Lore evidence unchanged; human listening and revision3 review pending."
+      },
+      "speaker": {
+        "id": "lorekeeper"
+      },
+      "delivery": {
+        "pauseBeforeMs": 300,
+        "pauseAfterMs": 900,
+        "rate": 0.93,
+        "pitch": 1,
+        "emphasis": "keeps all the damage"
+      },
+      "performerFictionApproval": false,
+      "openerId": "DIRECT",
+      "openerVersion": 1,
+      "history": [
+        {
+          "version": 1,
+          "status": "REVIEWED",
+          "reviewer": "Independent source critic /root/pool_critic_guard",
+          "surfaceText": "The Cookie of Causality restarts the war over a snickerdoodle at Turn One, but keeps all the damage."
+        },
+        {
+          "version": 2,
+          "status": "REVIEWED",
+          "reviewer": "Independent source critic /root/pool_critic_guard",
+          "surfaceText": "The Cookie of Causality restarts the war at Turn One over a snickerdoodle, but keeps all the damage."
+        }
+      ],
+      "sourceRetention": {
+        "method": "ORIGINAL_TOKEN_POSITIONS_REFERENCED_BY_AUDIBLE_EVIDENCE",
+        "fields": {
+          "cardName": {
+            "originalTokens": 4,
+            "referencedTokens": 4
+          },
+          "power": {
+            "originalTokens": 11,
+            "referencedTokens": 6
+          },
+          "lore": {
+            "originalTokens": 13,
+            "referencedTokens": 4
+          }
+        },
+        "originalTokens": 28,
+        "referencedTokens": 14,
+        "pct": 50,
+        "semanticCoveragePct": null
+      }
+    }
+  ],
+  "PerformanceSet": {
+    "setId": "wrinkle_rumble:selection",
+    "orderedBeatIds": [
+      "wrinkle_rumble:10:compact"
+    ],
+    "bridgeIds": [],
+    "intro": "",
+    "outro": "Stay Fluffy!",
+    "cutBoundary": "BLANK_LINE",
+    "timing": "NO_RENDERED_CLIP_TIMES"
+  },
+  "VoiceClips": [],
+  "CardVisuals": [
+    {
+      "deckId": "wrinkle_rumble",
+      "cardNumber": 10,
+      "cardBlob": "695e74af3bd8f0c0cbaa4bd88a57d637ed095f8c",
+      "pdfPath": "media/kfb/Wrinkle_Rumble - ADD web ID.pdf",
+      "pdfRevision": "07e6ef8666a1b352ae2f0edd1d5399e4ca7ab16f",
+      "page": 4,
+      "quadrant": "TR",
+      "status": "ORIGINAL_PDF_GRID_REFERENCE_CROP_NOT_YET_RENDERED"
+    }
+  ],
+  "originalCards": [
+    {
+      "cardNumber": 10,
+      "cardName": "The Cookie of Causality",
+      "grade": 1,
+      "power": "Inciting Incident: Restart the game from Turn 1. Keep all damage.",
+      "lore": "The war didn't start over land or ideology. It started over a snickerdoodle.",
+      "gradeReason": "Restart from Turn 1 keeping all damage — the most catastrophic snickerdoodle in history.",
+      "artworkPrompt": "Style: cosmic horror watercolor. Subject: glowing cookie surrounded by green lightning vortex in void. Mood: apocalyptic pastry."
+    }
+  ],
+  "text": "The Cookie of Causality restarts the war over a snickerdoodle at Turn One, but keeps all the damage.\n\nStay Fluffy!"
+}
