@@ -1,0 +1,309 @@
+{
+ "schema": "kfb.voice.triplet-opener-pool/1",
+ "contentRevision": "g4-preview-georg-2026-10-15-r2",
+ "canonicalDefault": false,
+ "status": "PREVIEW",
+ "preview": true,
+ "owner": {
+  "repo": "georg-doc/kayfabizarro",
+  "note": "WS1 Vorschau F-3a; Pool r6 kommt erst mit sauberen Triplets (WS0 F-3b)"
+ },
+ "source": {
+  "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_TO_WS1.md",
+  "revision": "80e6c65515e5571860e8757bb178706e574e2c4b",
+  "note": "WS0 15.10. früh, F-3a: Georgs Fassungen (Opener in eckigen Klammern)"
+ },
+ "openers": [
+  {
+   "openerId": "georg-welcome-to",
+   "version": 1,
+   "kind": "OPENER",
+   "pattern": "Welcome to {title}",
+   "sourceClass": "SOURCE_NEUTRAL",
+   "requiredEvidence": [],
+   "performerFiction": false,
+   "status": "EDITORIAL_CANDIDATE",
+   "enabled": true,
+   "owner": "Georg (Fassung) · WS1 (Einbau, Vorschau F-3a)",
+   "reviewer": null,
+   "source": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_TO_WS1.md",
+    "revision": "80e6c65515e5571860e8757bb178706e574e2c4b"
+   },
+   "history": []
+  },
+  {
+   "openerId": "georg-remember",
+   "version": 1,
+   "kind": "OPENER",
+   "pattern": "Remember {title}",
+   "sourceClass": "SOURCE_NEUTRAL",
+   "requiredEvidence": [],
+   "performerFiction": false,
+   "status": "EDITORIAL_CANDIDATE",
+   "enabled": true,
+   "owner": "Georg (Fassung) · WS1 (Einbau, Vorschau F-3a)",
+   "reviewer": null,
+   "source": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_TO_WS1.md",
+    "revision": "80e6c65515e5571860e8757bb178706e574e2c4b"
+   },
+   "history": []
+  },
+  {
+   "openerId": "georg-you-know",
+   "version": 1,
+   "kind": "OPENER",
+   "pattern": "You know {title}",
+   "sourceClass": "SOURCE_NEUTRAL",
+   "requiredEvidence": [],
+   "performerFiction": false,
+   "status": "EDITORIAL_CANDIDATE",
+   "enabled": true,
+   "owner": "Georg (Fassung) · WS1 (Einbau, Vorschau F-3a)",
+   "reviewer": null,
+   "source": {
+    "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WS0_TO_WS1.md",
+    "revision": "80e6c65515e5571860e8757bb178706e574e2c4b"
+   },
+   "history": []
+  }
+ ],
+ "beats": [
+  {
+   "beatId": "kayfabizarro_monomyth_mayhem:1:georg-preview",
+   "version": 1,
+   "deckId": "kayfabizarro_monomyth_mayhem",
+   "cardNumber": 1,
+   "cardBlob": "175c441703ef2fcbdab0aa5211e3e96ddfeebb70",
+   "mode": "COMPACT",
+   "surfaceText": "The Ordinary World stasis loop: nothing changes; Dysfunction is habit. Normalize pain – feels like home.",
+   "status": "EDITORIAL_CANDIDATE",
+   "owner": "Georg (Fassung) · WS1 (Einbau)",
+   "reviewer": null,
+   "humanAcceptance": "PENDING",
+   "evidence": [
+    {
+     "field": "cardName",
+     "quote": "The Ordinary World",
+     "start": 0,
+     "end": 18,
+     "spoken": "The Ordinary World"
+    },
+    {
+     "field": "power",
+     "quote": "Stasis Loop",
+     "start": 0,
+     "end": 11,
+     "spoken": "stasis loop"
+    },
+    {
+     "field": "power",
+     "quote": "nothing changes",
+     "start": 78,
+     "end": 93,
+     "spoken": "nothing changes"
+    },
+    {
+     "field": "lore",
+     "quote": "Dysfunction",
+     "start": 0,
+     "end": 11,
+     "spoken": "Dysfunction"
+    },
+    {
+     "field": "lore",
+     "quote": "habit",
+     "start": 39,
+     "end": 44,
+     "spoken": "habit"
+    },
+    {
+     "field": "lore",
+     "quote": "normalize the pain",
+     "start": 49,
+     "end": 67,
+     "spoken": "Normalize pain"
+    },
+    {
+     "field": "lore",
+     "quote": "feels like home",
+     "start": 77,
+     "end": 92,
+     "spoken": "feels like home"
+    }
+   ],
+   "semanticCoverage": {
+    "power": "Stasis Loop: nichts ändert sich",
+    "lore": "Dysfunktion als Gewohnheit, Schmerz normalisiert",
+    "reframe": "Stillstand fühlt sich wie Zuhause an",
+    "newClaims": "keine neuen Kartenfakten; Georgs eigene Fassung",
+    "humanAcceptance": "PENDING",
+    "editorialReview": "Vorschau für G4 (F-3a), nicht ACCEPTED"
+   },
+   "speaker": {
+    "id": "stage"
+   },
+   "delivery": {
+    "pauseBeforeMs": 300,
+    "pauseAfterMs": 800,
+    "rate": 1,
+    "pitch": 1,
+    "emphasis": "Georg-Fassung"
+   },
+   "performerFictionApproval": false,
+   "openerId": "georg-welcome-to",
+   "openerVersion": 1,
+   "history": []
+  },
+  {
+   "beatId": "kayfabizarro_monomyth_mayhem:5:georg-preview",
+   "version": 1,
+   "deckId": "kayfabizarro_monomyth_mayhem",
+   "cardNumber": 5,
+   "cardBlob": "175c441703ef2fcbdab0aa5211e3e96ddfeebb70",
+   "mode": "COMPACT",
+   "surfaceText": "Crossing the Threshold: hand new cards, old self dead. Fear becomes movement. You can't un-fluff the pill.",
+   "status": "EDITORIAL_CANDIDATE",
+   "owner": "Georg (Fassung) · WS1 (Einbau)",
+   "reviewer": null,
+   "humanAcceptance": "PENDING",
+   "evidence": [
+    {
+     "field": "cardName",
+     "quote": "Crossing the Threshold",
+     "start": 0,
+     "end": 22,
+     "spoken": "Crossing the Threshold"
+    },
+    {
+     "field": "power",
+     "quote": "new cards",
+     "start": 68,
+     "end": 77,
+     "spoken": "new cards"
+    },
+    {
+     "field": "power",
+     "quote": "The old self is dead",
+     "start": 79,
+     "end": 99,
+     "spoken": "old self dead"
+    },
+    {
+     "field": "lore",
+     "quote": "fear becomes movement",
+     "start": 25,
+     "end": 46,
+     "spoken": "Fear becomes movement"
+    },
+    {
+     "field": "lore",
+     "quote": "the pill",
+     "start": 66,
+     "end": 74,
+     "spoken": "the pill"
+    }
+   ],
+   "semanticCoverage": {
+    "power": "neue Hand, das alte Selbst ist tot",
+    "lore": "Angst wird Bewegung, die Pille ist nicht zurückzunehmen",
+    "reframe": "un-take → un-fluff (Georgs Wortspiel)",
+    "newClaims": "keine neuen Kartenfakten; Georgs eigene Fassung",
+    "humanAcceptance": "PENDING",
+    "editorialReview": "Vorschau für G4 (F-3a), nicht ACCEPTED"
+   },
+   "speaker": {
+    "id": "stage"
+   },
+   "delivery": {
+    "pauseBeforeMs": 300,
+    "pauseAfterMs": 800,
+    "rate": 1,
+    "pitch": 1,
+    "emphasis": "Georg-Fassung"
+   },
+   "performerFictionApproval": false,
+   "openerId": "georg-remember",
+   "openerVersion": 1,
+   "history": []
+  },
+  {
+   "beatId": "help_i_am_a_human:10:georg-preview",
+   "version": 1,
+   "deckId": "help_i_am_a_human",
+   "cardNumber": 10,
+   "cardBlob": "bd00037b53945d4a650609037b9d9f9986474b66",
+   "mode": "COMPACT",
+   "surfaceText": "Jean-Jacques Rousseau, Natural Goodness: man born free, everywhere in chains.",
+   "status": "EDITORIAL_CANDIDATE",
+   "owner": "Georg (Fassung) · WS1 (Einbau)",
+   "reviewer": null,
+   "humanAcceptance": "PENDING",
+   "evidence": [
+    {
+     "field": "cardName",
+     "quote": "Jean-Jacques Rousseau",
+     "start": 0,
+     "end": 21,
+     "spoken": "Jean-Jacques Rousseau"
+    },
+    {
+     "field": "power",
+     "quote": "Natural Goodness",
+     "start": 0,
+     "end": 16,
+     "spoken": "Natural Goodness"
+    },
+    {
+     "field": "lore",
+     "quote": "Man is born free",
+     "start": 1,
+     "end": 17,
+     "spoken": "man born free"
+    },
+    {
+     "field": "lore",
+     "quote": "everywhere he is in chains",
+     "start": 23,
+     "end": 49,
+     "spoken": "everywhere in chains"
+    }
+   ],
+   "semanticCoverage": {
+    "power": "Natural Goodness",
+    "lore": "frei geboren, überall in Ketten",
+    "reframe": "Rousseau als Karte",
+    "newClaims": "keine neuen Kartenfakten; Georgs eigene Fassung",
+    "humanAcceptance": "PENDING",
+    "editorialReview": "Vorschau für G4 (F-3a), nicht ACCEPTED"
+   },
+   "speaker": {
+    "id": "stage"
+   },
+   "delivery": {
+    "pauseBeforeMs": 300,
+    "pauseAfterMs": 800,
+    "rate": 1,
+    "pitch": 1,
+    "emphasis": "Georg-Fassung"
+   },
+   "performerFictionApproval": false,
+   "openerId": "georg-you-know",
+   "openerVersion": 1,
+   "history": []
+  }
+ ],
+ "bridges": [],
+ "sets": [
+  {
+   "setId": "g4-preview",
+   "orderedBeatIds": [
+    "kayfabizarro_monomyth_mayhem:1:georg-preview",
+    "kayfabizarro_monomyth_mayhem:5:georg-preview",
+    "help_i_am_a_human:10:georg-preview"
+   ],
+   "note": "Reihenfolge der G4-Vorschau"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+ "schema": "kfb.stage-descriptor/1",
+ "id": "atlantis",
+ "slot": "kfb-meshy-atlantis.screen-a.v1.slot.json",
+ "marks": "slot.figures.positions_u",
+ "display": { "frame": "slot", "override": null },
+ "practicals": [],
+ "practicalsNote": "Format WS1_STATUS §43.4 (pos in Modelleinheiten u wie marks); WS0 trägt die Lichtpunkte nach (V-329/V-331)",
+ "collision": { "fences": [], "ramps": [], "walkable": null, "triggers": [] }
+}
