@@ -71,3 +71,26 @@ Zusätzlich fehlen Figurenkarten für die beiden 4gtn-Blätter.
 WS0 bitte diesen tatsächlichen Teilstand und den Plattformblock übernehmen: getesteter Kern PR #416, **noch kein direktes Speichern**. Die kommenden Hunky-/Dory-Fixes bleiben separate Quellenlieferungen. Keine Freigabewerte aus diesem Testlauf verwenden.
 
 **Ein nächstes Gate:** dokumentierte Sites-Connector-Eligibility und create-only Serveradapter verfügbar machen; danach im bestehenden ToolBox-Studio einen echten Vorschlag mit Georgs ausdrücklicher Save-Aktion vollständig bis GitHub nachweisen. Personae-R2 nutzt anschließend denselben Vertrag; 3D wartet zusätzlich weiter auf WS1.
+
+## Nachprüfung des Plattformblocks · 17.10.2026
+Georg verlangt ausdrücklich direktes Speichern in derselben ToolBox, ohne Kopieren und ohne neues Tool. Das bleibt das Produktziel.
+
+### Neue tatsächliche Befunde
+- Native `get_site` bestätigt ToolBox v11, Rolle owner, bestehende private Adresse und `requires_byop:false`. Das ist der aktuelle fehlende Runtime-Anschluss, kein Nachweis einer administrativen Ablehnung.
+- Das bestehende Manifest ist static-only; keine Plugin-/Connector-Deklarationen. Die Sites-Integrationsreferenz dokumentiert serverseitige Connector-Aufrufe und den Ausbau derselben bestehenden project_id. Kein neues Site-Projekt nötig.
+- Der ausführbare Sites-Werkzeugsatz wurde erneut auf Eligibility/Discovery geprüft: `sites_list_plugin_eligibility` fehlt weiterhin. Plugin-Suche/Installationsmetadaten ersetzen ihn ausdrücklich nicht.
+- Zusätzlich im angemeldeten Chrome die tatsächlichen ToolBox-Site-Einstellungen geöffnet: https://chatgpt.com/space/sites/appgprj_6ac2ba44282881919d1a49287a32054e/plugins
+- Der Tab Plugins meldet „Die aktuellen Plugins der Website konnten nicht geladen werden“. Ein gezieltes Erneut versuchen endet wieder in derselben Meldung. Keine Ursache/Admin-Sperre daraus ableitbar.
+- „Hinzufügen“ öffnet einen nicht abgesendeten Work-Entwurf zum Verbinden eines Plugins mit der bestehenden ToolBox. Es ist kein Freigabe-Schalter und liefert keine Eligibility-Daten. Kein neuer Chat-Auftrag wurde abgesendet, keine Verbindung/Permission verändert.
+- Öffentliche OpenAI-Dokumentation wurde ergänzend geprüft. Sign-in-Identität und Connector-Berechtigungen sind getrennt; bloßes ChatGPT-Anmelden ersetzt die GitHub-Runtime-Freigabe nicht. Kein öffentlich dokumentierter Ersatz für die fehlende native Sites-Eligibility gefunden. Quellen: https://developers.openai.com/siwc/quickstart und https://developers.openai.com/training/walkthroughs/building-a-shareable-site
+
+### Konkreter Anschlussweg nach Auflösung
+1. Im Sites-Ausführungskontext für genau project_id `appgprj_6ac2ba44282881919d1a49287a32054e` die dokumentierte Eligibility bereitstellen, GitHub auf allowed prüfen und die zurückgegebenen Plugin-/Connector-IDs übernehmen.
+2. Dieselbe ToolBox um unterstützte Serverrouten ergänzen und GitHub mit dem dokumentierten Schreibmodus deklarieren. Nur serverseitige Ziel-/Aktionsauswahl, keine Browser-Zugangsdaten. Die bestehende GitHub-Verbindung wird durch die Besucherfreigabe genutzt.
+3. Den vorbereiteten Kern aus PR #416 anschließen; davor create-only Branchsemantik des konkreten Adapters beweisen und alle geänderten Studio-Regler vollständig abbilden oder sichtbar verweigern.
+4. In der bestehenden UI „Als Änderungsvorschlag speichern“ mit Vorschau der Änderungen: neue Figurenkartenversion vom aktuellen Register, Werte aus Georgs aktueller Abstimmung, isolierter Branch/Commit, exaktes Rücklesen, Link zum Vorschlag. Kein Merge. Neue Hunky-/Dory-Fixes nicht durch alte Kartenwerte ersetzen.
+5. Erst tatsächliche Hosted-Anmeldung/Zustimmung/Read/Write/Rückleseprüfung belegen den Anschluss. Die bestehenden 36 lokalen Tests ersetzen das nicht.
+
+**Präziser Blocker:** fehlende Site-spezifische Connector-Discovery im aktuellen Ausführungskontext, zusätzlich fehlernde Plugin-Verwaltung in der Weboberfläche. Kein nachgewiesener GitHub-OAuth-Defekt. Ein Sites-Kontext mit dieser nativen Funktion bzw. die Behebung der Plugin-Verwaltung ist die nächste technische Voraussetzung; WS0 kann dafür nur koordinieren, die Plattformfunktion nicht durch eine Figurenkartenänderung ersetzen.
+
+Keine neue Site-Version, keine kanonische Karte, keine neue Berechtigung und kein Merge in dieser Nachprüfung. PR #416 bleibt offen/draft auf `9dca51687253acbcd612f5e6fb88c3e2e36ea64a`. Der getestete Kern bleibt vorbereitet, direktes Speichern bleibt noch nicht aktiv.
