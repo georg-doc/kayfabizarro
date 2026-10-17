@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- WSB 27. Nachtrag erledigt, alle drei über die Abnahme-Bühne PASS: Dory r9 (Normalen repariert), Plakatwand r3 (angehoben), FrizzleBob mit KFB-Augen-Ankern (privat wegen Capsule-Carl-Teilen); PROOF_STAGE_R1/sources.json nachgezogen.
 - Abnahme-Bühne kfb-proof-stage.v1 + Knet-Modul v1.1 fertig (replies/PROOF_STAGE_R1/, CLAY_SSOT_R1/kfb-clay.v1.1.js): gleiches Licht/Knete/Augen/Hohlkehle/Ansichten, Gates; stoppt Dory r7 (Null-Normalen) und Plakatwand (3,7 cm im Boden); im Hub q15. WSB 27. Nachtrag (Bühne nutzen, 3 Fixes, FB-Augen-Anker).
 - V-432: Zylinder/Fliege aus Assets (CC-BY), vier Pubs als Quest-Hubs + Ruhestein-Logik, Dieselpunk-Pool (Rust Runner, Rustwing Cruiser neu), Ninja-NPCs im Bento-Diorama, 8 Unity-Inseln im Knet-Stil mit eigenen Paletten; WSB 26. Nachtrag (B23–B27).
 

@@ -4,12 +4,50 @@
  "fb_silhouette": "hub:30_DECISIONS/replies/CLAY_SSOT_R1/assets/FB_TEMPLATE_LOOK_v5b.glb",
  "cards": "hub:30_DECISIONS/replies/FIGURES_R1/figures/",
  "figures": {
-  "frizzlebob": { "glb": "hub:30_DECISIONS/replies/CLAY_SSOT_R1/assets/FB_TEMPLATE_LOOK_v5b.glb", "type": "character", "private": false, "why": "card body sha256 0675942b… (byte-identical)" },
-  "gothgirl": { "glb": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/public/assets/figures-b2/gothgirl/GothGirl_NoEyes.glb", "type": "character", "private": true, "why": "card body = GothGirl_NoEyes.glb, sha256 3016e4b6… (Lab copy, byte-identical; KayKit Mystery Series)" },
-  "lord_hunky": { "glb": "hub:30_DECISIONS/replies/E2_ATTACH_R1/assets/variants/LordHunky_edge80.r4e.glb", "type": "character", "private": true, "why": "V-422/V-430: edge80 socket is the final state (card still points to r4)" },
-  "lady_dory": { "glb": "hub:50_BLENDER/B14/_privat_kauf_asset/LadyDory_RigMedium.toolbox.r7.glb", "type": "character", "private": true, "why": "HANDOFF_R1: r7 = final state after V-430 (head fixes r5 + edge80 socket); card still points to r4" },
-  "suit_ct_agent": { "glb": "hub:50_BLENDER/B12/_privat_kauf_asset/Suit_CT_agent.r3.glb", "card": "hub:50_BLENDER/B12/data/suit_ct.figure.r3.json", "type": "character", "private": true, "why": "B12 r3 (CharacterTemplate, Mystery Series): private, local only" },
-  "suit_ct_banker": { "glb": "hub:50_BLENDER/B12/_privat_kauf_asset/Suit_CT_banker.r3.glb", "card": "hub:50_BLENDER/B12/data/suit_ct.figure.r3.json", "type": "character", "private": true, "why": "B12 r3" },
-  "billboard_lamps": { "glb": "hub:50_BLENDER/B22/KFB_Billboard_Lamps.r2.glb", "type": "prop", "private": false, "why": "B22 r2 (Kenney CC0, Poly Haven CC0)" }
+  "frizzlebob": {
+   "glb": "hub:50_BLENDER/FB/_privat_kauf_asset/FB_TEMPLATE_LOOK_v5b_kfbanchors.glb",
+   "card": "hub:50_BLENDER/FB/data/frizzlebob.figure.kfbanchors.json",
+   "type": "character",
+   "private": true,
+   "why": "WSB 27th addendum: KFB_Eye_L/R_anchor added (facehost position); private because of the Capsule Carl parts (Mystery Series)"
+  },
+  "gothgirl": {
+   "glb": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/public/assets/figures-b2/gothgirl/GothGirl_NoEyes.glb",
+   "type": "character",
+   "private": true,
+   "why": "card body = GothGirl_NoEyes.glb, sha256 3016e4b6… (Lab copy, byte-identical; KayKit Mystery Series)"
+  },
+  "lord_hunky": {
+   "glb": "hub:30_DECISIONS/replies/E2_ATTACH_R1/assets/variants/LordHunky_edge80.r4e.glb",
+   "type": "character",
+   "private": true,
+   "why": "V-422/V-430: edge80 socket is the final state (card still points to r4)"
+  },
+  "lady_dory": {
+   "glb": "hub:50_BLENDER/B14/_privat_kauf_asset/LadyDory_RigMedium.toolbox.r9.glb",
+   "type": "character",
+   "private": true,
+   "why": "r9 = r7 + normal fix (27th addendum), stage PASS"
+  },
+  "suit_ct_agent": {
+   "glb": "hub:50_BLENDER/B12/_privat_kauf_asset/Suit_CT_agent.r3.glb",
+   "card": "hub:50_BLENDER/B12/data/suit_ct.figure.r3.json",
+   "type": "character",
+   "private": true,
+   "why": "B12 r3 (CharacterTemplate, Mystery Series): private, local only"
+  },
+  "suit_ct_banker": {
+   "glb": "hub:50_BLENDER/B12/_privat_kauf_asset/Suit_CT_banker.r3.glb",
+   "card": "hub:50_BLENDER/B12/data/suit_ct.figure.r3.json",
+   "type": "character",
+   "private": true,
+   "why": "B12 r3"
+  },
+  "billboard_lamps": {
+   "glb": "hub:50_BLENDER/B22/KFB_Billboard_Lamps.r3.glb",
+   "type": "prop",
+   "private": false,
+   "why": "B22 r3 raised 0.06 u, G3 0.00 cm PASS"
+  }
  }
 }
