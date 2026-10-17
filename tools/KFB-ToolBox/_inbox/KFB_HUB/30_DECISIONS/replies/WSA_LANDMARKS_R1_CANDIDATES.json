@@ -1,6 +1,6 @@
 {
   "schema": "kfb.landmark-candidates/1",
-  "revision": "R1.4-WS0-V424-source-choice-before-WSB-clay",
+  "revision": "R1.5-WS0-V424-five-isolated-cc0-sources",
   "date": "2026-10-17",
   "ticket": "V-421",
   "owner": "KFB existing Asset Librarian view / existing img2threejs landmark authoring",
@@ -8,9 +8,9 @@
   "branch": "docs/kfb-decisions-register-2026-10-11",
   "authority": "WS0 only decides priority; Georg selects asset after source isolation and Clay preview",
   "mode": "RESEARCH_ONLY",
-  "gateStatus": "THREE_GENUINE_CC0_SOURCE_RENDERS_RESEARCH_ONLY_VIEW_NOT_IMPLEMENTED",
+  "gateStatus": "FIVE_ORIGINAL_SOURCE_PROOFS_WSB_K1_PEND",
   "licensePolicy": "CC0 preferred, CC BY with recorded attribution; reject NC/paid/private unless separate later agreement, no actual asset mirrored",
-  "sourceAudit": "Three unique CC0 source meshes independently isolated; other twenty of twenty-three leads still lack source-isolated model-specific proof. Prior white flat-material clay diagnostic is rejected as KFB clay by WS0. No source choice has been made.",
+  "sourceAudit": "Five distinct authentic CC0 meshes imported and independently triangle-counted; source-only V424 render for two newer donors, no fake Clay; other direct monument sources still source-listing only.",
   "mcp3dAssets": {
     "configuredAt": "Dropbox /CLAUDE/.mcp.json",
     "endpoint": "https://3d.shep.bot/mcp",
@@ -22,8 +22,8 @@
     "V346": "WS0 V-424 override: Georg's candidate selection needs a real original-model isolated render and verified source/license; NO pseudo-KFB-clay preview is permitted or required for selection. WSB applies real KFB K1 rounded/clay/palette after Georg chooses.",
     "V383": "never draw markup over source image",
     "allCandidatePreviewsGenerated": 3,
-    "sourceIsolatedMeshes": 3,
-    "styleReviewStatus": "WS0_TUNE_FLAT_MATERIAL_IS_NOT_KFB_CLAY",
+    "sourceIsolatedMeshes": 5,
+    "styleReviewStatus": "WS0_V424_ORIGINAL_ONLY_ALLOWED_KFB_CLAY_WSB_K1_AFTER_SELECTION",
     "realKfbClayAccepted": 0,
     "originalSourceRendersVerified": 3,
     "remainingDistinctSourceProofs": 20,
@@ -37,21 +37,23 @@
     "selectButtonLabel": "Auswählen",
     "buttonState": "DISABLED_UNTIL_SOURCE_PROOF_AND_EXISTING_VIEW_IMPLEMENTED",
     "selectionPersistence": "existing Site/owner decision flow; no invented save backend",
-    "sourceChoiceDisplay": "Show standalone source render, creator, CC0/CC BY status, exact model role and limits, triangle count and 'Knete folgt'; hide rejected flat-material clay previews. Selecting is Georg's asset choice, NOT approval of the final K1 look.",
+    "sourceChoiceDisplay": "Georg source selection: authentic isolated object render + creator/license + model role/triangles + separate 'Knete folgt' UI text. Never show fake pseudo-clay as final look.",
     "postSelectionHandoff": "WSB Blender owns K1 material + actual rounded edges + palette colour on Georg-selected exact original candidate. WSA/Asset Librarian does NOT fake KFB clay.",
     "noNewBackend": true
   },
   "summary": {
     "landmarks": 10,
-    "sourceRecords": 23,
+    "sourceRecords": 26,
     "clayPreviews": 3,
     "eligibleForSelection": 0,
-    "originalSourceMeshesVerified": 3,
-    "remainingDistinctSourceProofs": 20,
+    "originalSourceMeshesVerified": 5,
+    "remainingDistinctSourceProofs": 19,
     "diagnosticFlatMaterialPreviews": 3,
     "acceptedRealKfbClayPreviews": 0,
     "eligibleForGeorgSourceChoice": 2,
-    "selectableInActualUi": 0
+    "selectableInActualUi": 0,
+    "additionalOriginalSourceOnlyProofs": 2,
+    "remainingSourceRecordsWithoutVerifiedMesh": 19
   },
   "landmarks": [
     {
@@ -399,6 +401,55 @@
           ],
           "notes": "Extremely heavy; source listing only, photogrammetry/attribution of original geometry not checked.",
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "neu-simple",
+          "title": "Simple Castle · TitaniumFalcon",
+          "sourceUrl": "https://opengameart.org/content/simple-castle",
+          "sourceRole": "construction_kit_only",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "TitaniumFalcon",
+            "creditLine": "Simple Castle · TitaniumFalcon — TitaniumFalcon; original https://opengameart.org/content/simple-castle; CC0-1.0 (credit retained voluntarily)",
+            "upstreamVerification": "ORIGINAL_SOURCE_DOWNLOADED_AND_MESH_ISOLATED_V424"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [
+              ".blend"
+            ],
+            "archiveType": "direct_model",
+            "archiveInspected": true,
+            "originalArchiveSha256": "bda823bd1732a8b53dede6dd25e0b19c84dfb9df4f24abb8f73106ed6eec1864",
+            "selectedModelFile": "SimpleCastle.blend",
+            "selectedModelSha256": "bda823bd1732a8b53dede6dd25e0b19c84dfb9df4f24abb8f73106ed6eec1864"
+          },
+          "geometry": {
+            "triangles": 2414,
+            "polygons": 1087,
+            "metric": "measured_source_only",
+            "verifiedAgainstDownloadedMesh": true
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "ORIGINAL_SOURCE_RENDER_CONFIRMED",
+            "thumbnailSourceRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/simple_castle_titanium_cc0/source-isolation.png",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_CREATED_V424_NO_PSEUDO_CLAY",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39068894022",
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/simple_castle_titanium_cc0/source-isolation.png",
+            "sourceImageSha256": "f03ee353d941e9b6af02316647c73c0d7520e6a08d5e369166d75a81128989d6",
+            "overlayOnPreviewAllowed": false,
+            "sourceOnlyV424": true
+          },
+          "rightsFlags": [
+            "NOT_A_COMPLETE_LANDMARK",
+            "WSB_K1_AFTER_ACTUAL_GEORG_SELECTION"
+          ],
+          "notes": "Complete toy-castle silhouette. Not Neuschwanstein; useful only as a proportion, tower and courtyard construction donor. Round crenellations and tier turrets with WSB K1 after Georg picks an actual landmark.",
+          "selectionStatus": "CONSTRUCTION_DONOR_ONLY_NOT_A_COMPLETED_LANDMARK",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION"
         }
       ],
       "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
@@ -492,6 +543,55 @@
           "rightsFlags": [],
           "notes": "Stepped construction donor, not historical digital scan.",
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "ur-temple-kit",
+          "title": "Modular Temple · arch donor",
+          "sourceUrl": "https://opengameart.org/content/modular-temple-3d-models",
+          "sourceRole": "construction_kit_only",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "Keith at Fertile Soil Productions",
+            "creditLine": "Modular Temple · arch donor — Keith at Fertile Soil Productions; original https://opengameart.org/content/modular-temple-3d-models; CC0-1.0 (credit retained voluntarily)",
+            "upstreamVerification": "ORIGINAL_SOURCE_DOWNLOADED_AND_MESH_ISOLATED_V424"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [
+              ".obj"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "93abe0df8d11aa7d5d230817dbc9ab7aea543b1a27c5024389cb7bb90f8db85a",
+            "selectedModelFile": "Modular Temple/Pillar_Large_Arch.obj",
+            "selectedModelSha256": "a14d14ad98aa82fb8d7bca3693cd0f48a2d0b30ac4a7149919a8c3fb966db5bf"
+          },
+          "geometry": {
+            "triangles": 196,
+            "polygons": 196,
+            "metric": "measured_source_only",
+            "verifiedAgainstDownloadedMesh": true
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "ORIGINAL_SOURCE_RENDER_CONFIRMED",
+            "thumbnailSourceRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/modular_temple_fertile_cc0/source-isolation.png",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_CREATED_V424_NO_PSEUDO_CLAY",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39068894022",
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/modular_temple_fertile_cc0/source-isolation.png",
+            "sourceImageSha256": "aa2561376fd4fbca83409a249fdeba139be8b7889e60eeade92563edde5f68b0",
+            "overlayOnPreviewAllowed": false,
+            "sourceOnlyV424": true
+          },
+          "rightsFlags": [
+            "NOT_A_COMPLETE_LANDMARK",
+            "WSB_K1_AFTER_ACTUAL_GEORG_SELECTION"
+          ],
+          "notes": "Single arched pillar/bridge block; NOT Ziggurat of Ur. Possible lintel/ritual approach donor only; historic stepped temple requires separate source.",
+          "selectionStatus": "CONSTRUCTION_DONOR_ONLY_NOT_A_COMPLETED_LANDMARK",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION"
         }
       ],
       "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
@@ -1162,6 +1262,55 @@
           ],
           "notes": "Relief, NOT complete temple. Creator NoAI restriction: do not feed mesh to Meshy or other AI; manual Blender source review only.",
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "bo-temple-kit",
+          "title": "Modular Temple · arch donor",
+          "sourceUrl": "https://opengameart.org/content/modular-temple-3d-models",
+          "sourceRole": "construction_kit_only",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "Keith at Fertile Soil Productions",
+            "creditLine": "Modular Temple · arch donor — Keith at Fertile Soil Productions; original https://opengameart.org/content/modular-temple-3d-models; CC0-1.0 (credit retained voluntarily)",
+            "upstreamVerification": "ORIGINAL_SOURCE_DOWNLOADED_AND_MESH_ISOLATED_V424"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [
+              ".obj"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "93abe0df8d11aa7d5d230817dbc9ab7aea543b1a27c5024389cb7bb90f8db85a",
+            "selectedModelFile": "Modular Temple/Pillar_Large_Arch.obj",
+            "selectedModelSha256": "a14d14ad98aa82fb8d7bca3693cd0f48a2d0b30ac4a7149919a8c3fb966db5bf"
+          },
+          "geometry": {
+            "triangles": 196,
+            "polygons": 196,
+            "metric": "measured_source_only",
+            "verifiedAgainstDownloadedMesh": true
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "ORIGINAL_SOURCE_RENDER_CONFIRMED",
+            "thumbnailSourceRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/modular_temple_fertile_cc0/source-isolation.png",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_CREATED_V424_NO_PSEUDO_CLAY",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39068894022",
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/modular_temple_fertile_cc0/source-isolation.png",
+            "sourceImageSha256": "aa2561376fd4fbca83409a249fdeba139be8b7889e60eeade92563edde5f68b0",
+            "overlayOnPreviewAllowed": false,
+            "sourceOnlyV424": true
+          },
+          "rightsFlags": [
+            "NOT_A_COMPLETE_LANDMARK",
+            "WSB_K1_AFTER_ACTUAL_GEORG_SELECTION"
+          ],
+          "notes": "Single arch piece; NOT Borobudur stupas/mandala. Possible passage/stair-adjacent scene construction donor only; not selected heritage architecture.",
+          "selectionStatus": "CONSTRUCTION_DONOR_ONLY_NOT_A_COMPLETED_LANDMARK",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION"
         }
       ],
       "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
@@ -1197,7 +1346,7 @@
     "Hiroshima",
     "Mount Rushmore"
   ],
-  "nextGate": "WS0_V421_VISUAL_SOURCE_REVIEW_AND_REMAINING_PREVIEWS",
+  "nextGate": "WS0_V421_REVIEW_ORIGINAL_SOURCE_CANDIDATES_THEN_ASSET_LIBRARIAN_EXISTING_SITE_VIEW",
   "styleDirection": {
     "status": "GEORG_STYLE_DIRECTION_ADDENDUM_V421",
     "reference": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/LANDMARK_CHROMATIC_DIORAMA_STYLE_R1.md",
