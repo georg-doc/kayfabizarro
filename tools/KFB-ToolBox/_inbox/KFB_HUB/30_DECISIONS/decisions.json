@@ -5859,6 +5859,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-423",
+   "date": "2026-10-17",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Konzept-Update (Georg 17.10.): (1) FrizzleBob trägt je nach Maske/Rolle einen schwarzen Smoking mit roter Fliege – „Tuxedo with Brass Knuckles“ (Charakterkarte frizzlebob, Outfit aus dem WSB-Anzug-Baukasten B12 als Variante auf dem FB-Rig). (2) Schlagring = KFB-Grund-Nahkampfwaffe, auch für die Fluff-Ernte (Bäume boxen). (3) Fluff-Ernte-Regel: im Schnitt 3 Box-Schläge / 2 Schüsse / 1 Explosions-Treffer leeren einen Baum; Abwurf gestaffelt – erst 1–2, dann 3–4, dann alle; cartoonig animiert, farbige Fluff-Kugeln springen, rollen und bleiben mit plausibler Physik im Gelände liegen, bis man sie einsammelt. Details zu Ernte und UI kommen mit Georgs HUD-Session-ZIP.",
+   "values": {},
+   "owner": "WS1 (Slice 1 Fluff-Ernte) · WSB (Smoking, Schlagring in Knete) · WS0",
+   "check": "Slice-1-Proof: Schlag-Zähler + Abwurf-Staffel + Kugel-Physik, Georg spielt",
+   "source": "Georg 17.10. · FIGURES_R1/characters/frizzlebob.character.json",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Ernte braucht ein spürbares, gestaffeltes Treffer-Gefühl je Waffe; der Schlagring verbindet FrizzleBobs Rolle mit der Grundmechanik.",
+   "applies": "ab sofort; Ernte-Details nach HUD-ZIP"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5931,7 +5946,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:753",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:754",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

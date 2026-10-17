@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-423: FrizzleBob „Tuxedo with Brass Knuckles“ (Charakterkarte), Schlagring als Grund-Nahkampfwaffe, Ernte-Regel 3 Schläge/2 Schüsse/1 Explosion mit gestaffeltem Abwurf und Kugel-Physik; WSB B12-Variante + B16 Schlagring, WS1-Notiz; HUD-ZIP folgt.
 - V-422: E2-Sockel 80° PASS (TUNE Rand organischer später, B15); Stopp WSA aufgehoben (b93), WSB 15. Nachtrag (B14 aus edge80-GLB, Dory Rand-Stiel verschleifen, B15 Rand-TUNE), WS1-Notiz; Hub-Briefings nachgezogen.
 - E2 R1e (Blender): Sockel unverändert (Kugel, Randprofil identisch), nur Öffnungskante von ~54° auf 70°/80°/90° zurückgenommen; seitlich sichtbarer Augapfel 14 % → 38/61/81 %; Dory 80°/90°: Rand trifft ihren Stielansatz (FAIL im Selbstcheck). R1c/R1d (starre Verschiebung, Winkel-Verbiegung im Browser) verworfen. Proof proof_r1e.html, wartet auf Georg.
 - V-421: Landmark-Kandidaten R1 an WSA (Web-Chat, 3D-Asset-Suche, TOP 10 je Deck, Auswahl in der Asset Library, Hub b96).

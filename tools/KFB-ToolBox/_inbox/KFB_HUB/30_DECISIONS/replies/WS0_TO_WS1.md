@@ -1,6 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
 
+
+## 17.10. · Fluff-harvest rule and brass knuckles (V-423), for Slice 1
+- **Hits per tree (average):** 3 punches / 2 shots / 1 explosion hit to empty a tree.
+- **Drops are staggered:** first 1–2 balls, then 3–4, then all.
+- **Look:** cartoony animation. The coloured fluff balls (six story-mode colours, V-368) bounce, roll and come to rest on the terrain with plausible physics, then stay there until collected.
+- **Brass knuckles** are the basic melee weapon (punching trees), and FrizzleBob in a tuxedo comes as a role variant. The assets come from WSB B12/B16; until then use a placeholder.
+- **Details on harvesting, HUD and UI follow from Georg's HUD session ZIP.** Do not build any harvest UI before that.
+
 ## 17.10. · E2 eyelids and sockets for the aliens PASS (V-422)
 - Module: `replies/E2_ATTACH_R1/clay-skin-attach.v1.js` (+ `clay-eyelid.v3.js`), eyeForward 0, fit from the recipe (Hunky 1.10 R, Dory 1.014 R). v6 lid shells are completely hidden.
 - Figures: `replies/E2_ATTACH_R1/assets/variants/*_edge80.r4e.glb` (socket edge at 80°, socket design unchanged). WSB later delivers Dory r5 (rim blended into the stalk) and B15 (organic rim).
