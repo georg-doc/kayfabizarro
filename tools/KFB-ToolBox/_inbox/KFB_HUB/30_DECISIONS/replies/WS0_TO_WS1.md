@@ -1,5 +1,19 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Antworten auf §68.4 und §69.3 – V-402
+**Georg-Entscheide aus dem WS1-Chat werden ins Register übernommen:** Mesa (Krazy-Kat-Sonntagsseiten, Mesas, laue Abende) ist die Grundrichtung für Licht und Farbe; Farbwelt cartoonig, ruhig psychedelisch wie Joyride; Reihenfolge L3 technisch → Look-Slice (Farbdrehbuch + Material) → Licht final → externe Designkritik → voller Beweislauf.
+**§68.4**
+1. **Mesa ersetzt die R2-Stimmungstabelle als Standard**, J17 bleibt Referenz (`lset=r2`). Die Regeln von R2 (ein Rig, kein Rand-/Gegenlicht, Figurenlicht, ein Ton-Pfad) gelten unverändert.
+2. **ACES bestätigt.** Messregel ergänzt: neben Clipping und ΔE zählt **Chroma-Treue** (Boden/Figuren ≤ 15 % Chroma-Verlust gegen „ohne“, V-355). AgX scheidet an der Sättigung aus.
+3. **M1/M2 auf das Licht-Modul** nach dem L3-Merge durch die Bewegungs-Sitzung; Zweitschatten am Auto über `fitShadow` (Radius ≥ Schattenlänge, Bias abgeleitet) lösen.
+4. **Figurenkarten (V-391):** direkt nach dem L3-Merge als kleiner eigener Schritt, **vor** dem sichtbaren Slice-1-Einbau. Karten: `replies/FIGURES_R1/figures/*.figure.json` (Register-Branch, folgt mit dem nächsten Abgleich).
+**§69.3**
+1. **Rahmenfarbe:** einverstanden – **eine Bühnenpalette mit Rollen** (Boden, Bauten/Säulen, Wege, Rahmen, Akzent) wie Joyride; die Karte färbt nur Akzente (Lampenlicht, Story-Tönung V-387). Ersetzt die Rahmen-Regel aus V-270.
+2. **Look-Slice vor dem Licht-Feinschliff** (Vorlagenzeile: Joyride-Paletten `track-look.v5` WORLDS + `kfb-cartoon-palette.js` aus V-305): Farbdrehbuch Mesa (Rollen, Hex, Anteile, Tag/Gold/Nacht-Verhalten), Knet-Boden fürs Amphitheater, Bögen nach Rollen umfärben (Variante B). **V-286 gilt weiter für Meshy-Bühnen mit fertig gemalter Textur; das Amphitheater ist ausdrücklich ausgenommen** und wird voll nach Rollen gefärbt. V-355 (Messung je Schicht) gilt danach weiter.
+   **Farbübergänge:** die „gesprenkelten Übergänge“ (Kontaktzonen zwischen Farbzonen/Biomen, wie in Joyride und den Insel-Biomen) werden gerade von WS0 zusammengesucht und als **ein zentrales Modul** gefasst (wie das Licht-Modul). Bis dahin keine eigene Übergangslösung bauen; Schürze mit Platzhalter-Verlauf ist ok.
+3. **Externe Designkritik:** WS0 lässt sie laufen – ein unabhängiger „Art Director“-Prüfer (Cartoon/Animation) ohne Regelkenntnis bewertet eure Bildtafeln (Totale, Nah FB, Nah Karte × Tag/Gold/Nacht, 16:9 + 9:16) und schlägt Farbe/Licht vor; optional eine Zweitmeinung über den Web-Chat. Anstoß: sobald die Look-Slice steht, Bildtafeln in den Status.
+4. **V-400-Daten:** liegen jetzt auf GitHub, Branch `assets/kfb-wsb-deliverables-2026-10-17`, Ordner `media/3D_Assets/WSB_BLENDER/B7/data/` (`b7_stage_edges.json` mit `groundY_u`) und `B7/scripts/b7_ground_gap.py`. `SPEC_PLACEMENT_GRAMMAR_R2.md` und Steinkit `kfb.stone-kit/1` kommen von WSB; bis dahin eigene Schwebe-Messung mit three-mesh-bvh und Platzhalter-Steine – genau richtig.
+
 ## 17.10.2026 · Mac-mini-Lieferungen jetzt auf GitHub
 Branch `assets/kfb-wsb-deliverables-2026-10-17`, Ordner `media/3D_Assets/WSB_BLENDER/`: B1 (Mumien-Tanzprüfung, `tempo.json`, Duett-Video), B2 (Fluff-Anker `kaykit-tree-fluff-anchors.v1.json`, Konzept B2-R2), B7 (Dschungel-Computer `JungleComputer_A_browser.v3.glb`, LOD1, Screen-GLBs A/B mit `kfb_screen_frame/slot`, `b7_stage_edges.json` mit `groundY_u`), dazu STATUS und Arbeitsteilung. Bitte von dort lesen, nicht aus Dropbox.
 

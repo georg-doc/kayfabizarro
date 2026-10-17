@@ -25,7 +25,7 @@ if [[ -n "$LAST" ]]; then
 fi
 add(){ local b=$(git hash-object -w "$1"); git update-index --add --cacheinfo 100644,$b,"$2"; }
 for f in DECISIONS.md decisions.json CHANGELOG.md build_decisions.py START_HERE_STEERING.md REVIEW_STEUERUNG_R1.md STYLE_GUIDE_3D_R1.md MOTION_GUIDE_R1.md KFB_WORKING_RULES_R1.md ARCHITECTURE_R1.md merge_changelog.py sync_github.sh; do [[ -f "$H/$f" ]] && add "$H/$f" "$BASE/$f"; done
-for f in "$H"/replies/**/*(.N); do r=${f#$H/replies/}; [[ $r == WSA_* || $r == track-module-look* ]] && continue; add "$f" "$BASE/replies/$r"; done  # WSA files are written on GitHub by WSA: never overwrite them from local copies
+for f in "$H"/replies/**/*(.N); do r=${f#$H/replies/}; [[ $r == WSA_* || $r == track-module-look* || $r == SETTINGS_* ]] && continue; add "$f" "$BASE/replies/$r"; done  # WSA files are written on GitHub by WSA: never overwrite them from local copies
 add "$L/CLAUDE.md" "$BASE/LAB_CLAUDE.md"
 for f in KFB_WORLDBUILDER_PLAN_R1.md PROJECT_STATE.md PHASE_C_DONORS_R1.md POSTMORTEM_JOYRIDE_REGRESS_R1.md POSTMORTEM_MVP1_STAGE1_R1.md BASELINE_ACCEPTED_R1.md ACCEPTANCE_INDEX.md ISLAND_ANATOMY_RULES.md SCALE_CONTRACT_K2.md; do add "$L/docs/$f" "$BASE/lab-docs/$f"; done
 for f in "$L"/docs/POSTMORTEM_*.md(N); do add "$f" "$BASE/lab-docs/${f:t}"; done

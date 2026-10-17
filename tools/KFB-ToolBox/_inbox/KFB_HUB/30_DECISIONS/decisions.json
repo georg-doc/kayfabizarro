@@ -3544,7 +3544,8 @@
    "supersedes": null,
    "superseded_by": [
     "V-286",
-    "V-305"
+    "V-305",
+    "V-402"
    ],
    "why": "Paletten sind Harmonie-Systeme, keine Stimmungsfarben.",
    "applies": "ab sofort"
@@ -5522,6 +5523,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-402",
+   "date": "2026-10-17",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Georg (WS1-Chat 17.10.) + WS0-Antworten §68.4/§69.3: Mesa (Krazy-Kat-Sonntagsseiten, Mesas, laue Abende, ruhig psychedelisch wie Joyride) ist Grundrichtung und ersetzt die R2-Stimmungstabelle als Standard (J17 Referenz; R2-Regeln bleiben); ACES bestätigt, Messregel um Chroma-Treue (≤ 15 % Verlust) ergänzt; Reihenfolge L3 technisch → Figurenkarten-Umbau → Look-Slice (Farbdrehbuch Mesa mit Rollen, Knet-Boden, Bögen nach Rollen umgefärbt) → Licht final → externe Art-Director-Kritik (WS0, blind) → Beweislauf L-1–L-9 → Slice 1 sichtbar. Eine Bühnenpalette mit Rollen (Boden, Bauten/Säulen, Wege, Rahmen, Akzent) färbt auch den Billboard-Rahmen; Karte nur Akzente (ersetzt Rahmen-Regel V-270). V-286 gilt weiter für gemalte Meshy-Bühnen, Amphitheater ausgenommen. Gesprenkelte Farbübergänge werden als ein zentrales Modul gefasst (Audit läuft).",
+   "values": {},
+   "owner": "WS1 · WS0",
+   "check": "Bildtafeln für die Designkritik",
+   "source": "WS1_STATUS §68–§69 · Hub b79",
+   "supersedes": "V-270",
+   "superseded_by": [],
+   "why": "J17-Tageswerte wirkten zu hell und ungemütlich; ein Farb- und Lichtkonzept braucht zuerst eine stimmige Bühne.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-401",
+   "date": "2026-10-17",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Georg mergt nicht mehr selbst auf GitHub (Georg 17.10.): Übergang – WS0 legt Merge-Anträge über das GitHub-Werkzeug an und führt sie selbst zusammen; Georg wählt bei den Bestätigungs-Formularen einmalig „immer erlauben“. Später (wenn Georg Zeit hat) eine Erlaubnis-Regel in den Claude-Code-Einstellungen (Entwurf lokal, nicht auf GitHub). Gilt nur für WS0-eigene Asset-/Daten-Lieferungen (media/, registry/, data/, songs/, characters/, figures/, docs/ws0/) nach eigener Prüfung (Größe < 95 MB, gültiges JSON, keine Secrets/privaten Assets); Code, tools/-Code, ws1/*, .github/ nie. Mac-mini-Lieferungen gehen sofort auf GitHub. Keine einzelnen Merge-Fragen an Georg.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Lieferungen landen ohne Georg-Klick auf main",
+   "source": "Georg 17.10.: „machen wir das doch mit dem immer erlauben“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Merge-Klicks verunsichern Georg und stauen Lieferungen; das Sicherheitssystem verlangt Georgs eigene Freigabe statt einer Automatik.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5594,7 +5625,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:720",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:723",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
