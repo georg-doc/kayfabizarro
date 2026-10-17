@@ -1,0 +1,458 @@
+{
+  "schema": "kfb.audio-sfx-prompt-bank/1.0",
+  "date": "2026-10-04",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "targetSurface": "KFB Audio Site",
+  "sourceGapModel": {
+    "p0": [
+      "rain/thunder",
+      "sustained crowd/venue",
+      "city/traffic",
+      "tyre/friction",
+      "loopable workshop machinery"
+    ],
+    "existingUseful": [
+      "ambient wind",
+      "water loops",
+      "impacts",
+      "sparse applause",
+      "KFB Racer V8/steampunk engine WAVs"
+    ],
+    "p2": [
+      "optional replacement engine layers"
+    ]
+  },
+  "toolPolicy": {
+    "elevenLabs": "Primary source-acquisition lane. Generate one clean layer per prompt. Use Loop for beds, One Shot for events.",
+    "sunoSounds": "Use for intentionally rhythmic/tonal Loop or One Shot textures with BPM/key.",
+    "sunoV6": "Optional biome/style experiment; never a substitute for physical-world weather/traffic sources."
+  },
+  "runtimePolicy": {
+    "environmentalBeds": "free-running; seed selection/variants; crossfade without restarting music",
+    "rhythmicTextures": "bar/BPM sync only when intentionally musical",
+    "vehicleFriction": "separate from engine; read existing Race telemetry; no new physics owner",
+    "promotion": "new audio remains INBOX_ONLY until human audition"
+  },
+  "elevenLabs": [
+    {
+      "id": "rain-open-light",
+      "title": "Rain · light open-air bed",
+      "priority": "P0",
+      "category": "Weather",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "20 s",
+      "filename": "KFB_Rain_Open_Light_Loop_20s.wav",
+      "role": "GLOBAL_BED / LOCAL_AMBIENCE",
+      "prompt": "Seamless light steady rain ambience in an open outdoor space, fine droplets on soil, leaves and distant stone, soft diffuse stereo field, natural irregular texture, no thunder, no wind gusts, no birds, no voices, no music, no dramatic swells. Clean game-ready environmental loop with no obvious start or end.",
+      "mix": "Free-running ambience. Random phase start is fine; 3–5 s crossfade between weather states. Do not restart on music changes."
+    },
+    {
+      "id": "rain-open-heavy",
+      "title": "Rain · heavy open-air bed",
+      "priority": "P0",
+      "category": "Weather",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "20 s",
+      "filename": "KFB_Rain_Open_Heavy_Loop_20s.wav",
+      "role": "GLOBAL_BED / LOCAL_AMBIENCE",
+      "prompt": "Seamless heavy rain ambience outdoors, dense natural rainfall on ground, foliage and stone, broad diffuse stereo field, constant intensity with subtle organic variation, no thunder, no voices, no music, no cinematic impacts, no obvious rhythm. Clean game-ready loop with no perceptible start or end.",
+      "mix": "Crossfade from light/medium/heavy by weather intensity. Keep thunder separate so event timing stays controllable."
+    },
+    {
+      "id": "rain-roof-metal",
+      "title": "Rain · metal roof / awning",
+      "priority": "P0",
+      "category": "Weather",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "15 s",
+      "filename": "KFB_Rain_Metal_Awning_Loop_15s.wav",
+      "role": "LOCAL_AMBIENCE",
+      "prompt": "Seamless medium rain striking a thin metal roof and old awning above the listener, detailed close droplets with softer outdoor rain behind, warm small-space resonance, natural irregular pattern, no thunder, no voices, no music, no exaggerated booms. Clean local ambience loop with no perceptible seam.",
+      "mix": "Use as a spatial/local layer near workshops, shelters or props; blend with the global rain bed rather than replacing it."
+    },
+    {
+      "id": "rain-window-inside",
+      "title": "Rain · inside window",
+      "priority": "P1",
+      "category": "Weather",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "20 s",
+      "filename": "KFB_Rain_Inside_Window_Loop_20s.wav",
+      "role": "LOCAL_AMBIENCE",
+      "prompt": "Seamless rain heard from inside a small room through a closed window, soft droplets on glass and sill, muffled exterior rainfall, quiet intimate interior resonance, occasional tiny drip variation, no thunder, no voices, no music, no HVAC hum. Calm game ambience with no obvious start or end.",
+      "mix": "Interior zone layer. Crossfade against outdoor rain when entering/leaving buildings."
+    },
+    {
+      "id": "thunder-distant",
+      "title": "Thunder · distant rumble",
+      "priority": "P0",
+      "category": "Weather",
+      "tool": "ElevenLabs",
+      "mode": "One Shot",
+      "duration": "8 s",
+      "filename": "KFB_Thunder_Distant_01.wav",
+      "role": "WORLD_SFX",
+      "prompt": "Single distant thunder event across a wide landscape: soft initial low crack followed by a long rolling low-frequency rumble moving across the horizon, natural outdoor reflections, restrained dynamics, no rain, no wind, no music, no cinematic braam, no explosion character.",
+      "mix": "Variant pool, seeded by weather event. Spatial or wide-world placement. Leave 8–25 s random gaps between events."
+    },
+    {
+      "id": "thunder-near",
+      "title": "Thunder · close crack",
+      "priority": "P0",
+      "category": "Weather",
+      "tool": "ElevenLabs",
+      "mode": "One Shot",
+      "duration": "6 s",
+      "filename": "KFB_Thunder_Near_01.wav",
+      "role": "WORLD_SFX",
+      "prompt": "Single close natural thunderclap: sharp dry atmospheric crack, brief branching snap, then deep rolling thunder tail with realistic outdoor decay. Powerful but not cinematic, no rain, no wind, no music, no explosion, no artificial sub drop.",
+      "mix": "Rare foreground event. Duck ambience slightly, not music timeline; keep near/far variants separate."
+    },
+    {
+      "id": "crowd-street",
+      "title": "Crowd · small street / market bed",
+      "priority": "P0",
+      "category": "Crowd",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "20 s",
+      "filename": "KFB_Crowd_Street_Small_Loop_20s.wav",
+      "role": "LOCAL_AMBIENCE",
+      "prompt": "Seamless small outdoor crowd ambience for a quirky town street: 15–30 people at conversational distance, indistinct speech murmur, occasional soft laugh and movement, no intelligible words, no cheering, no applause, no music, no vendor calls. Natural sparse social bed with no obvious loop point.",
+      "mix": "Biome/Resident density layer. Crossfade by population density; keep individual reactions as separate one-shots."
+    },
+    {
+      "id": "crowd-ring",
+      "title": "Crowd · wrestling ring low bed",
+      "priority": "P0",
+      "category": "Crowd",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "20 s",
+      "filename": "KFB_Crowd_Ring_Low_Loop_20s.wav",
+      "role": "LOCAL_AMBIENCE / DIEGETIC_SPACE",
+      "prompt": "Seamless small wrestling-show crowd bed in a modest indoor venue: low excited murmur, shifting bodies, occasional scattered reactions, roomy reflections, energetic but not constantly cheering. No announcer, no music, no chants, no intelligible speech, no applause wall. Leave headroom for commentary and impacts.",
+      "mix": "Persistent venue bed. Voice Focus ducks it modestly; cheer/groan one-shots sit above it."
+    },
+    {
+      "id": "crowd-cheer",
+      "title": "Crowd · cheer swell",
+      "priority": "P1",
+      "category": "Crowd",
+      "tool": "ElevenLabs",
+      "mode": "One Shot",
+      "duration": "5 s",
+      "filename": "KFB_Crowd_Cheer_Swell_01.wav",
+      "role": "WORLD_SFX",
+      "prompt": "One compact crowd cheer swell from a small-to-medium wrestling venue: anticipation rises quickly into a warm collective cheer, a few individual shouts without intelligible words, then natural decay. No music, no announcer, no stadium horn, no canned applause feel.",
+      "mix": "Event accent for entrance, victory, stunt or Resident performance. Keep 3–5 variants."
+    },
+    {
+      "id": "crowd-groan",
+      "title": "Crowd · collective groan",
+      "priority": "P1",
+      "category": "Crowd",
+      "tool": "ElevenLabs",
+      "mode": "One Shot",
+      "duration": "4 s",
+      "filename": "KFB_Crowd_Groan_01.wav",
+      "role": "WORLD_SFX",
+      "prompt": "One collective disappointed crowd groan in a small wrestling venue, mixed adult voices reacting together, a few breaths and seat movements, short natural decay. No intelligible words, no boo chant, no music, no announcer, no comic sound effect.",
+      "mix": "Event accent for misses/fails. Randomize variants and avoid repeated back-to-back playback."
+    },
+    {
+      "id": "urban-distant",
+      "title": "City · distant traffic bed",
+      "priority": "P0",
+      "category": "City / Traffic",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "20 s",
+      "filename": "KFB_City_Traffic_Distant_Loop_20s.wav",
+      "role": "GLOBAL_BED / LOCAL_AMBIENCE",
+      "prompt": "Seamless distant urban traffic ambience heard from a side street: soft continuous road wash, occasional far car pass, faint tire hiss, subtle city air, no horns, no sirens, no close engines, no voices, no music. Neutral background layer with stable loudness and no obvious loop point.",
+      "mix": "City-biome bed. Crossfade with wind/nature according to road density; no BPM sync."
+    },
+    {
+      "id": "traffic-pass-dry",
+      "title": "Traffic · dry-road pass-by",
+      "priority": "P0",
+      "category": "City / Traffic",
+      "tool": "ElevenLabs",
+      "mode": "One Shot",
+      "duration": "6 s",
+      "filename": "KFB_Traffic_Pass_Dry_01.wav",
+      "role": "WORLD_SFX",
+      "prompt": "Single ordinary passenger car pass-by on dry asphalt, approaching from left distance, natural tire noise and restrained engine presence, passes at moderate city speed and recedes right. No horn, no skid, no racing engine, no doppler exaggeration, clean isolated game Foley.",
+      "mix": "Spawn as spatial traffic event. Use variant pool and seeded timing; do not bake it into the background bed."
+    },
+    {
+      "id": "traffic-pass-wet",
+      "title": "Traffic · wet-road pass-by",
+      "priority": "P0",
+      "category": "City / Traffic",
+      "tool": "ElevenLabs",
+      "mode": "One Shot",
+      "duration": "6 s",
+      "filename": "KFB_Traffic_Pass_Wet_01.wav",
+      "role": "WORLD_SFX",
+      "prompt": "Single ordinary passenger car pass-by on wet asphalt, moderate city speed, realistic broad tire spray and wet-road hiss, restrained engine under the tire noise, approaches and recedes naturally. No horn, no skid, no puddle splash stunt, no music.",
+      "mix": "Wet-weather spatial traffic event. Blend with rain; use only when surface is wet."
+    },
+    {
+      "id": "tire-dry-loop",
+      "title": "Tyre · dry asphalt rolling",
+      "priority": "P0",
+      "category": "Tyre / Friction",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "12 s",
+      "filename": "KFB_Tyre_Dry_Asphalt_Loop_12s.wav",
+      "role": "PLAYER_CRITICAL / MOTION",
+      "prompt": "Seamless steady tire-on-dry-asphalt rolling texture for a car at constant moderate speed, close clean contact noise with subtle tread variation, no engine, no wind, no suspension knocks, no acceleration, no skid, no doppler movement. Stable game-ready friction loop for crossfading by speed.",
+      "mix": "Crossfade by normalized speed/load. Keep engine separate. Prefer 2–3 speed-band variants later rather than extreme pitch shifting."
+    },
+    {
+      "id": "tire-wet-loop",
+      "title": "Tyre · wet asphalt hiss",
+      "priority": "P0",
+      "category": "Tyre / Friction",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "12 s",
+      "filename": "KFB_Tyre_Wet_Asphalt_Loop_12s.wav",
+      "role": "PLAYER_CRITICAL / MOTION",
+      "prompt": "Seamless tire-on-wet-asphalt rolling hiss at constant moderate speed, close continuous water spray and tread texture, no engine, no wind, no acceleration, no puddle impact, no skid. Stable game-ready layer with gentle natural variation and no obvious loop point.",
+      "mix": "Weather/surface layer. Crossfade dry↔wet independently from engine."
+    },
+    {
+      "id": "tire-gravel-loop",
+      "title": "Tyre · gravel rolling",
+      "priority": "P0",
+      "category": "Tyre / Friction",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "12 s",
+      "filename": "KFB_Tyre_Gravel_Loop_12s.wav",
+      "role": "PLAYER_CRITICAL / MOTION",
+      "prompt": "Seamless car tire rolling over compact gravel at constant low-to-moderate speed, detailed small stone crunch and tread texture, occasional tiny loose pebble movement, no engine, no wind, no acceleration, no large impacts, no skid. Stable game-ready friction loop.",
+      "mix": "Surface-dependent motion layer. Use gravel weight from terrain/material truth; no separate physics owner."
+    },
+    {
+      "id": "skid-dry",
+      "title": "Tyre · dry skid / drift",
+      "priority": "P0",
+      "category": "Tyre / Friction",
+      "tool": "ElevenLabs",
+      "mode": "One Shot",
+      "duration": "3 s",
+      "filename": "KFB_Tyre_Skid_Dry_01.wav",
+      "role": "PLAYER_CRITICAL",
+      "prompt": "Clean isolated dry-asphalt tire skid for a playful car drift: rubber squeal builds quickly, holds briefly with changing grip, then releases naturally. No engine, no crash, no horn, no crowd, no cinematic whoosh. Useful as a short gameplay layer over existing vehicle audio.",
+      "mix": "Trigger from existing Race slip/drift telemetry. Variant pool + strength gain; do not create new drift logic."
+    },
+    {
+      "id": "brake-chirp",
+      "title": "Tyre · brake chirp",
+      "priority": "P1",
+      "category": "Tyre / Friction",
+      "tool": "ElevenLabs",
+      "mode": "One Shot",
+      "duration": "2 s",
+      "filename": "KFB_Tyre_Brake_Chirp_01.wav",
+      "role": "PLAYER_CRITICAL",
+      "prompt": "Short clean tire brake chirp on dry asphalt: quick grip-to-slip squeal and immediate recovery, small realistic rubber texture, no engine, no crash, no ABS clicking, no horn, no music. Tight isolated gameplay accent.",
+      "mix": "Short low-probability accent on braking threshold; avoid spam."
+    },
+    {
+      "id": "workshop-hum",
+      "title": "Workshop · machine room bed",
+      "priority": "P0",
+      "category": "Machinery",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "20 s",
+      "filename": "KFB_Workshop_MachineRoom_Loop_20s.wav",
+      "role": "LOCAL_AMBIENCE",
+      "prompt": "Seamless quirky workshop machine-room ambience: low electric motor hum, distant belt and fan movement, occasional soft mechanical ticks, restrained irregular motion, warm enclosed room reflections. No alarms, no voices, no music, no dramatic impacts. Background bed with space for dialogue.",
+      "mix": "Maker Space / workshop bed. Let local machinery one-shots sit above it."
+    },
+    {
+      "id": "vent-transformer",
+      "title": "Facility · ventilation / transformer bed",
+      "priority": "P1",
+      "category": "Machinery",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "20 s",
+      "filename": "KFB_Facility_Vent_Transformer_Loop_20s.wav",
+      "role": "LOCAL_AMBIENCE",
+      "prompt": "Seamless industrial facility ambience: steady ventilation airflow, low transformer hum and subtle electrical vibration, sparse tiny relay clicks far away, stable loudness, no alarms, no voices, no music, no heavy machinery impacts. Neutral game-ready room tone.",
+      "mix": "Facility/Area-51 base layer; no BPM sync."
+    },
+    {
+      "id": "hydraulic-cycle",
+      "title": "Workshop · hydraulic cycle",
+      "priority": "P1",
+      "category": "Machinery",
+      "tool": "ElevenLabs",
+      "mode": "One Shot",
+      "duration": "6 s",
+      "filename": "KFB_Hydraulic_Cycle_01.wav",
+      "role": "WORLD_SFX",
+      "prompt": "One isolated compact workshop hydraulic mechanism cycle: electric pump engages, short pressure build, piston extends with a soft mechanical clunk, brief hold, then pressure releases and retracts. No voices, no alarm, no music, no giant factory reverb.",
+      "mix": "Trigger from prop animation or scene recipe, not a random bed."
+    },
+    {
+      "id": "fire-loop",
+      "title": "Fire · small camp / barrel fire",
+      "priority": "P1",
+      "category": "Nature / Local",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "20 s",
+      "filename": "KFB_Fire_Small_Loop_20s.wav",
+      "role": "LOCAL_AMBIENCE",
+      "prompt": "Seamless small contained fire ambience, close dry wood and ember crackle with occasional tiny pops, soft steady flame body, no wind, no voices, no music, no large bonfire roar. Intimate game ambience loop with no perceptible start or end.",
+      "mix": "Local spatial layer; current shared pool has ignition, not a strong continuous fire bed."
+    },
+    {
+      "id": "night-insects",
+      "title": "Night · crickets / insects",
+      "priority": "P1",
+      "category": "Nature / Local",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "20 s",
+      "filename": "KFB_Night_Insects_Loop_20s.wav",
+      "role": "GLOBAL_BED / LOCAL_AMBIENCE",
+      "prompt": "Seamless quiet night insect ambience for an open field or graveyard: sparse crickets and tiny insects at mixed distances, irregular natural timing, lots of negative space, no frogs, no birds, no wind, no voices, no music. Calm loop without an obvious repeating phrase.",
+      "mix": "Shared central version; Travel has a local donor reference but this is not yet a normalized central bank."
+    },
+    {
+      "id": "v8-idle-alt",
+      "title": "Vehicle · V8 idle alternate",
+      "priority": "P2",
+      "category": "Vehicle Optional",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "12 s",
+      "filename": "KFB_V8_Idle_Alt_Loop_12s.wav",
+      "role": "PLAYER_CRITICAL / MOTION",
+      "prompt": "Seamless tuned vintage V8 muscle-car idle recorded close to the engine bay, deep uneven combustion pulses, subtle mechanical vibration, stable idle speed, warm analog character. No revving, no tire noise, no wind, no exhaust backfire, no music. Clean loop for game layering.",
+      "mix": "Optional quality replacement only. Existing Racer already has a V8 idle WAV."
+    },
+    {
+      "id": "v8-load-alt",
+      "title": "Vehicle · V8 constant load alternate",
+      "priority": "P2",
+      "category": "Vehicle Optional",
+      "tool": "ElevenLabs",
+      "mode": "Loop",
+      "duration": "10 s",
+      "filename": "KFB_V8_Load_Alt_Loop_10s.wav",
+      "role": "PLAYER_CRITICAL / MOTION",
+      "prompt": "Seamless tuned vintage V8 engine under constant medium load, steady RPM and throttle, muscular but controlled exhaust and engine texture, no acceleration sweep, no gear change, no tire noise, no wind, no backfire, no music. Stable loop intended for crossfading with idle and high-load layers.",
+      "mix": "Optional quality replacement only. Keep load stable so runtime crossfade owns dynamics."
+    },
+    {
+      "id": "v8-rev-alt",
+      "title": "Vehicle · V8 rev sweep alternate",
+      "priority": "P2",
+      "category": "Vehicle Optional",
+      "tool": "ElevenLabs",
+      "mode": "One Shot",
+      "duration": "8 s",
+      "filename": "KFB_V8_Rev_Sweep_Alt_01.wav",
+      "role": "PLAYER_CRITICAL / MOTION",
+      "prompt": "Clean tuned vintage V8 rev sweep from idle through medium-high RPM and back down, natural throttle response and mechanical/exhaust detail, no tire noise, no vehicle movement, no gear shift, no backfire, no music. Isolated source for testing a better dynamic engine layer.",
+      "mix": "Optional replacement experiment. Existing Racer already has a rev-sweep WAV."
+    }
+  ],
+  "sunoSounds": [
+    {
+      "id": "suno-rain-metal-118",
+      "title": "Rain percussion · Beetle / Ring",
+      "type": "Loop",
+      "bpm": "118",
+      "key": "D minor / no strong melody",
+      "prompt": "Rain striking a corrugated metal awning transformed into an organic percussion loop: irregular droplets become tight ghost-note texture around a dry rockabilly/electro-funk pulse, no lead melody, no vocals, lots of negative space, gritty spring-reverb edges, cartoon wrestling energy without becoming a full song.",
+      "use": "Start on bar boundaries. Use as optional rhythmic texture over a master, not as the weather bed itself."
+    },
+    {
+      "id": "suno-machine-118",
+      "title": "Workshop machine pulse · Beetle / Maker Space",
+      "type": "Loop",
+      "bpm": "118",
+      "key": "D minor",
+      "prompt": "Mechanical workshop rhythm loop built from belt clicks, relay ticks, muted piston clunks and low electric motor pulses, locked to 118 BPM, sparse electro-funk syncopation, dry foreground transients, no melody, no vocals, no cinematic impacts, enough empty beats for SFX and dialogue.",
+      "use": "Bar-synced texture; can follow BEETLE RUMBLE family without pretending to be a song."
+    },
+    {
+      "id": "suno-crowd-stomp-118",
+      "title": "Crowd stomp / clap · Ring",
+      "type": "Loop",
+      "bpm": "118",
+      "key": "none",
+      "prompt": "Small wrestling crowd body-percussion loop at 118 BPM: boots stomping wooden bleachers, scattered hand claps and a few nonverbal shouts, human timing and slight swing, energetic but not a chant, no melody, no announcer, no full drum kit, no stadium polish.",
+      "use": "Sync to entrances or performance bars; keep the normal crowd bed free-running underneath."
+    },
+    {
+      "id": "suno-rain-jazz-70",
+      "title": "Rain brush texture · Graveyard jazz",
+      "type": "Loop",
+      "bpm": "70",
+      "key": "D Dorian",
+      "prompt": "Soft rain-on-window and brushed-snare texture loop at 70 BPM in D Dorian mood, sparse low-room jazz ambience, droplets and brush swishes interlock gently without forming a full song, no lead melody, no vocals, warm tape character, long rests and negative space.",
+      "use": "Can sit quietly under Dorian Rests / future Graveyard jazz, bar-synced if desired."
+    },
+    {
+      "id": "suno-wet-road-105",
+      "title": "Wet road rhythmic texture · Road radio",
+      "type": "Loop",
+      "bpm": "105",
+      "key": "D Mixolydian",
+      "prompt": "Wet-road tire hiss and roadside rain shaped into a restrained 105 BPM electro-funk texture, soft syncopated pulses, occasional muted metallic tick, no bass line, no lead melody, no vocals, no EDM build, designed as a subtle rhythmic layer beneath an existing KFB master.",
+      "use": "Optional road texture. Bar-synced; do not replace the physical wet-tyre layer."
+    },
+    {
+      "id": "suno-thunder-sting",
+      "title": "Thunder / brass impact hybrid · event sting",
+      "type": "One Shot",
+      "bpm": "—",
+      "key": "D minor",
+      "prompt": "Short KFB event sting: one natural thunder crack morphing into a dirty muted brass-and-spring-reverb hit in D minor, comic wrestling swagger, fast decay, no trailer braam, no choir, no long riser, no melody beyond one recognizable two-note gesture.",
+      "use": "Musical event accent only; keep natural thunder as separate WORLD_SFX."
+    }
+  ],
+  "sunoV6MusicExperiments": [
+    {
+      "id": "music-rainy-graveyard-jazz",
+      "title": "Rainy Graveyard · small-room jazz experiment",
+      "bpm": "68–72",
+      "tonal": "D Dorian / D minor",
+      "refs": "Dorian Rests · Small-Room Groove · Warm Tape Saturation",
+      "prompt": "70 BPM instrumental small-room psychedelic jazz for a rainy graveyard at night. Warm upright/electric bass with long rests, brushed drums, low Rhodes and Hammond, sparse tremolo guitar, muted sax or clarinet phrases used rarely, tape hiss and rain-like high-frequency textures woven into the percussion. D Dorian/minor, intimate and slightly uncanny, never horror-score cliché. Long negative-space passages for footsteps and Resident dialogue, one tiny recurring motif, clear 8/16-bar form, soft loop-compatible ending. No vocals, no bright mallets, no cinematic strings, no busy bebop soloing."
+    },
+    {
+      "id": "music-storm-ring-funk",
+      "title": "Stormfront Ring · rockabilly electro-funk experiment",
+      "bpm": "118",
+      "tonal": "D Mixolydian / minor-pentatonic",
+      "refs": "Beetle-Wrestling Entrance · Buant Groove · Stalking Groove",
+      "prompt": "118 BPM instrumental KFB stormfront wrestling groove: rockabilly drums, slap/boogie bass, spring-reverb surf guitar, clavinet and dirty organ with electro-funk synth answers. Use rain-on-metal and distant-thunder textures as rhythmic color, not literal ambience. D Mixolydian/minor-pentatonic hook, exaggerated one-beat stops, strong 8/16-bar sections, danceable and mischievous rather than heroic. Leave room for crowd, impacts and commentary. No vocals, no trailer booms, no EDM drop, no cute mallets."
+    },
+    {
+      "id": "music-wet-neon-road",
+      "title": "Wet Neon Road · cosmic surf experiment",
+      "bpm": "108",
+      "tonal": "D Mixolydian",
+      "refs": "Surf Groove 3min · Neo Surf Trip 3min · Cyclical Warmth",
+      "prompt": "108 BPM instrumental wet-night road groove mixing cosmic surf, dusty electro-jazz and restrained psychedelic funk. Twang/baritone guitar, rounded bass, dry live drums, Rhodes/clavinet, organ and subtle analog synth; wet-road hiss and rain textures become quiet rhythmic details around the groove. D Mixolydian with one short memorable motif, hypnotic forward motion, 8/16-bar evolution, brief negative-space gaps for driving SFX, no vocals, no EDM build/drop, no constant arpeggiator, clean loop-compatible ending."
+    }
+  ]
+}

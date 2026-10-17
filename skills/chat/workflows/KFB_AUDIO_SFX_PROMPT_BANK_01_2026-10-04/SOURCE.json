@@ -1,0 +1,27 @@
+{
+  "schema": "kfb.audio-sfx-prompt-bank-slice/1",
+  "date": "2026-10-04",
+  "owner": "KFB Audio & Soundscape Baseline v1",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/kfb-audio-sfx-prompt-bank-01-2026-10-04",
+  "base": "main@70716382720b3c6a7fc24d261d914602c2c2c3c2",
+  "artifacts": {
+    "html": "tools/KFB-Audio-Site/SFX_PROMPT_BANK_01.html",
+    "json": "tools/KFB-Audio-Site/sfx-prompt-bank.v1.json"
+  },
+  "counts": {
+    "elevenLabs": 26,
+    "sunoSounds": 6,
+    "sunoV6MusicExperiments": 3
+  },
+  "maxElevenLabsPromptChars": 312,
+  "nextGate": "KFB_AUDIO_SFX_INTAKE_01",
+  "status": "PROMPT_READY_VALIDATED",
+  "validation": {
+    "run": 37171185733,
+    "job": 111344303905,
+    "pass": 9,
+    "total": 9,
+    "maxElevenLabsPromptChars": 312
+  }
+}
