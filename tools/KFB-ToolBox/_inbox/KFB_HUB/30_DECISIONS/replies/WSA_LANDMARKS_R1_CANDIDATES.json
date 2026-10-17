@@ -1,6 +1,6 @@
 {
   "schema": "kfb.landmark-candidates/1",
-  "revision": "R1.6-GEORG-KFB-ASSET-SUCHE-NO-KITBASH-LANDMARKS",
+  "revision": "R1.7-KFB_ASSET_SUCHE_AUTOMATIC_ORIGINAL_GITHUB_INTAKE",
   "date": "2026-10-17",
   "ticket": "V-421",
   "owner": "KFB existing Asset Librarian view / existing img2threejs landmark authoring",
@@ -56,7 +56,10 @@
     "additionalOriginalSourceOnlyProofs": 2,
     "remainingSourceRecordsWithoutVerifiedMesh": 19,
     "rejectedGenericOrWrongLandmarkDonors": 9,
-    "historicalResearchLeadsIncludingRejected": 26
+    "historicalResearchLeadsIncludingRejected": 26,
+    "originalsAutoImportedToGitHub": 2,
+    "autoImportedModelAndTextureFiles": 9,
+    "autoImportedToMain": 0
   },
   "landmarks": [
     {
@@ -161,7 +164,24 @@
           "rightsFlags": [],
           "notes": "OpenGameArt Stonehenge.zip; 392 vertices / 320 faces. Zip internals uninspected. Verified native real-mesh clay proof: 640 triangles; not accepted or selected.",
           "selectionStatus": "SOURCE_RENDER_READY_FOR_GEORG_CANDIDATE_REVIEW_UI_NOT_BUILT",
-          "sourceChoiceEligibility": "ELIGIBLE_CANDIDATE_ONLY_AFTER_ASSET_LIBRARIAN_VIEW_AND_GEORG"
+          "sourceChoiceEligibility": "ELIGIBLE_CANDIDATE_ONLY_AFTER_ASSET_LIBRARIAN_VIEW_AND_GEORG",
+          "autoImport": {
+            "mode": "AUTO_DOWNLOADED_AND_COMMITTED_BY_GITHUB_ACTIONS",
+            "sourceOwner": "existing KFB Asset Librarian / Asset Registry",
+            "sourceDirectory": "media/3D_Assets/KFB_Landmark_Candidates/stonehenge/stonehenge_oga_cc0",
+            "sourceFile": "media/3D_Assets/KFB_Landmark_Candidates/stonehenge/stonehenge_oga_cc0/source/Stonehengebed.blend",
+            "originalName": "Stonehengebed.blend1",
+            "provenanceManifest": "media/3D_Assets/KFB_Landmark_Candidates/stonehenge/stonehenge_oga_cc0/SOURCE.json",
+            "attribution": "media/3D_Assets/KFB_Landmark_Candidates/stonehenge/stonehenge_oga_cc0/CREDITS.md",
+            "originalFileCount": 2,
+            "verifiedRepoBranch": "research/v421-landmark-source-clay-proof-2026-10-17",
+            "verifiedWorkflowRun": 39070404364,
+            "sourceOnlyCandidate": true,
+            "siteAndMainAvailability": "REVIEW_BRANCH_ONLY_NOT_INDEXED_AS_MAIN_ASSET",
+            "humanUploadRequired": false,
+            "georgSelected": false,
+            "kfbClayAccepted": false
+          }
         },
         {
           "id": "st-sketch",
@@ -1198,7 +1218,24 @@
           "rightsFlags": [],
           "notes": "OpenGameArt chichenitza.zip (34.2MB), pyramid/temple; polygon count and archive internals NOT inspected. ElCastillo.fbx successfully imported; mesh 10,218 triangles / 5,175 faces. No ball court geometry verified. Source-isolation image and flat material diagnostic only; WS0 TUNE WSB finishing pending. CC0 with author's requested Esteban Lopez attribution.",
           "selectionStatus": "SOURCE_RENDER_READY_FOR_GEORG_CANDIDATE_REVIEW_UI_NOT_BUILT",
-          "sourceChoiceEligibility": "ELIGIBLE_CANDIDATE_ONLY_AFTER_ASSET_LIBRARIAN_VIEW_AND_GEORG"
+          "sourceChoiceEligibility": "ELIGIBLE_CANDIDATE_ONLY_AFTER_ASSET_LIBRARIAN_VIEW_AND_GEORG",
+          "autoImport": {
+            "mode": "AUTO_DOWNLOADED_AND_COMMITTED_BY_GITHUB_ACTIONS",
+            "sourceOwner": "existing KFB Asset Librarian / Asset Registry",
+            "sourceDirectory": "media/3D_Assets/KFB_Landmark_Candidates/chichen_itza/chichen_el_castillo_oga_cc0",
+            "sourceFile": "media/3D_Assets/KFB_Landmark_Candidates/chichen_itza/chichen_el_castillo_oga_cc0/source/ElCastillo.fbx",
+            "originalName": "ElCastillo.fbx",
+            "provenanceManifest": "media/3D_Assets/KFB_Landmark_Candidates/chichen_itza/chichen_el_castillo_oga_cc0/SOURCE.json",
+            "attribution": "media/3D_Assets/KFB_Landmark_Candidates/chichen_itza/chichen_el_castillo_oga_cc0/CREDITS.md",
+            "originalFileCount": 7,
+            "verifiedRepoBranch": "research/v421-landmark-source-clay-proof-2026-10-17",
+            "verifiedWorkflowRun": 39070404364,
+            "sourceOnlyCandidate": true,
+            "siteAndMainAvailability": "REVIEW_BRANCH_ONLY_NOT_INDEXED_AS_MAIN_ASSET",
+            "humanUploadRequired": false,
+            "georgSelected": false,
+            "kfbClayAccepted": false
+          }
         },
         {
           "id": "ch-phot",
@@ -1425,7 +1462,7 @@
     "Hiroshima",
     "Mount Rushmore"
   ],
-  "nextGate": "WS0_V421_KFB_ASSET_SUCHE_EXACT_LANDMARK_SEARCH",
+  "nextGate": "WS0_KFB_ASSET_SUCHE_TO_VERIFIED_AUTO_IMPORT_IN_EXISTING_LIBRARIAN",
   "styleDirection": {
     "status": "GEORG_STYLE_DIRECTION_ADDENDUM_V421",
     "reference": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/LANDMARK_CHROMATIC_DIORAMA_STYLE_R1.md",
@@ -1482,6 +1519,22 @@
     "previewBeforeGeorg": "original source model only, external 'Knete folgt' label as per WS0; never overlay preview",
     "laterKfbClay": "WSB only, selected exact source with canonical K1 clay and active zone/biome/card deck six-color palette",
     "reportPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WSA_TO_WS0_V421_KFB_ASSET_SUCHE_CORRECTION_2026-10-17.md",
-    "noNewRuntimeOwner": true
+    "noNewRuntimeOwner": true,
+    "directGitHubImport": {
+      "status": "TWO_HASH_VERIFIED_CC0_MODELS_AUTOMATICALLY_IMPORTED_ON_RESEARCH_BRANCH",
+      "authoritativeRoot": "media/3D_Assets/KFB_Landmark_Candidates",
+      "importManifest": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/KFB_ASSET_SUCHE_AUTO_IMPORT_R1.json",
+      "importOwner": "tools/asset_registry/kfb_asset_suche_auto_import.py",
+      "workflow": ".github/workflows/kfb-asset-suche-github-intake.yml",
+      "filesPerSource": [
+        "original licensed model",
+        "original model dependencies/textures",
+        "SOURCE.json",
+        "CREDITS.md"
+      ],
+      "eligibility": "exact genuine landmark model, confirmed author/license CC0 or CC-BY, hash-pinned, publicSafe, no NC/private/purchased, no generic-kit substitution",
+      "scope": "TOP candidate source-stage only; not Georg selected, no WSB clay, no WS1 integration, no main auto-merge",
+      "connectionStillNeeded": "KFB Asset Librarian / connected external 3d-assets search result -> verified intake request on review branch. Existing Web chat lacks that MCP and Site GitHub-write handoff."
+    }
   }
 }
