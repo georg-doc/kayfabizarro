@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-17 · V-421 R1.2 · Georg: surrealer Sechsfarben-Look (additive Vorgabe)
+- **GEORG STYLE RULE** (WSA registriert als V-421-Ergänzung, WS0 vergibt ggf. eigene V-Nummer): Alle Objekte eines Dioramas dürfen beliebige der sechs Farben der **jeweiligen Zone / des Bioms / Card-Decks** verwenden. Naturfarbzwang entfällt: **lila Wolken**, **hellblaue Baumstämme**, **gelbe Baumkronen** als Beispiele, wenn die jeweilige Palette diese Töne enthält. Gesamtharmonie/Lesbarkeit statt fest gebundener Farbrollen. Keine neuen unabhängigen Hex-Sets oder zweiter Palette-Generator; V-305 liefert weiter die Basis.
+- Lila Wolken fehlen als verifiziertes echtes 3D-Element; vorhandenen Sky-/Cloud-Owner und Quellspender später prüfen, keine Ersatzwolken. **PR #418 bleibt WS0-TUNE**: zwei Flat-Material-Screens nur Mesh-/Import-Nachweis, keine akzeptierte KFB-Knete. Finale Knete durch WSB; Asset-Library-Auswahl weiterhin gesperrt.
+- Persistiert: `replies/V421_SOURCE_PROOF/LANDMARK_CHROMATIC_DIORAMA_STYLE_R1.md`; ergänzt `replies/WSA_LANDMARKS_R1_CANDIDATES.json` R1.2 (10 Gruppen, 23 Leads) und `replies/WSA_LANDMARKS_R1_RETURN.md`. Ein Next Gate unverändert: `WS0_V421_VISUAL_SOURCE_REVIEW_AND_REMAINING_PREVIEWS`.
+
 ## 2026-10-17 · V-421 Landmark-Kandidaten · Source-Clay R1.1 (WSA)
 - Research-Only R1.1: Zwei reale CC0-Quellobjekte (OpenDungeons Stonehenge: 640 Dreiecke aus `.blend1`; Kenney Castle-Kit Turmbauteil: 176 Dreiecke aus `.glb`) mit Source-Isolation + unverändertem Clay-Bild: 4 PNG und SHA256-Manifest auf Research-Branch, Actions #39044683249 und #39044954699 jeweils SUCCESS, Bilder visuell geprüft. Das Turmbauteil ist **kein Neuschwanstein/Globe**.
 - WSA Kandidatenregister: weiter 10 Orte / 23 Leads, davon 2 verschiedene Source-Proofs, 0 wählbar. Asset-Library-Auswahlansicht nicht gebaut, Georg hat nicht entschieden. `V-346/V-383` nur für diese zwei Objekte visuell geprüft; WS0-Review und restliche Quellmodelle offen. Kein KFB-Runtime- oder Hub-Site-Write.
