@@ -5507,6 +5507,21 @@
    "applies": "nach R1 der Werkzeug-Inventur"
   },
   {
+   "id": "V-400",
+   "date": "2026-10-17",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Arbeitsteilung WSB ↔ WS1 (WSB-Vorschlag, WS0-Freigabe): WSB nur Blender/Original-Geometrie (Steinkit kfb.stone-kit/1 zuerst, dann B8 Detail-Schutz beim Dezimieren in Blender + Unterseiten säubern, B7-Tuning später); WS1 alles zur Laufzeit (Gelände-Schürze auf groundY_u, Schwebe-Messung aller Bühnen im Browser, Übergangssteine platzieren, Abnahme im Spiel). Eine Verteilungs-Grammatik für Fluff und Steine, Code bei WS1, Spec SPEC_PLACEMENT_GRAMMAR_R2 von WSB. Knete-Look R2 (Dellen-Varianz, Rauheit ≥ ≈ 0,6, weniger Oil, Sheen ≤ 0,05) im globalen Material durch WS1 in L3. Comic-Fluff vorrangig auf nicht-grünen Trägern, kein Schnee vorerst. Nacht-Langlauf WS1: A L3 → Slice 1, B Slice 3 (Hub b78). Modell-Empfehlung je Job in den Briefings (Integration/Design = Claude Opus 5.5, Batch/Messen/Check-ins = Claude Sonnet 5.5, WSA = ChatGPT im Work-/Agent-Modus).",
+   "values": {},
+   "owner": "WS0 · WS1 · WSB",
+   "check": "Briefings mit Modell-Zeile",
+   "source": "50_BLENDER/VORSCHLAG_ARBEITSTEILUNG_WSB_WS1_2026-10-17.md · Hub b78",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WSB verbrauchte Läufe für Spielszenen, die WS1 im Batch günstiger kann; klare Rollen sparen Tokens.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5579,7 +5594,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:719",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:720",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

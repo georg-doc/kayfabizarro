@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-400: Arbeitsteilung WSB (Blender: Steinkit, B8) ↔ WS1 (Laufzeit: Schürze, Schwebe-Messung, Steine platzieren), eine Verteilungs-Grammatik, Knete-Look R2 in L3, Nacht-Langlauf WS1 (Hub b78), Modell-Empfehlungen je Briefing.
 - V-399: Dramatis Personae als Tab der Asset-Bibliothek (3D + Charakterblatt, Suche, Bearbeiten per Branch-Vorschlag, Web-Chat), Hub b77.
 - V-398: Charakter-Dateien R1 (9 Figuren, 46 Quellen, Widersprüche sichtbar); Umleitungs-PR #414 geprüft, Merge empfohlen; Holz-Variante Computer-Billboard = Favorit; Trust-Song 05 wird eingecheckt.
 - V-396 Antworten WS1 §65.3 (Boden größter Anteil, Sockel, Schürze, Fluff-Startwerte, save mit Karten); V-397 Dschungel-Computer als Landmark + Meta-Artefakt mit Auge, Billboard Stein vs. Holz (WSB B7).

@@ -1,5 +1,18 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Nacht-Langlauf R1 (Georg: längere Runs, V-375) – V-400
+Zwei WS1-Sitzungen parallel, jede nach V-375 (keine anhaltenden Rückfragen, Stand-Commits alle 30–45 Min., Abschluss mit Messwerten + Clay-Bildern ohne Overlays, kein main-Merge ohne Georg).
+**A · Owner-Sitzung (Modell: Claude Opus 5.5):**
+1. **L3** nach `replies/LIGHT_MODEL_R2.md` (Hub b73) inkl. **Modul `kfb-stage-light.v1.js`** (kein Rand-/Gegenlicht, fitShadow, contactAO, Selbsttest Spalt 0) und **Knete-Look R2** im Material (Dellen-Varianz, Mindest-Rauheit ≈ 0,6, weniger Oil, Sheen ≤ 0,05).
+2. Danach **Slice 1** sichtbar einbauen (V-396-Antworten) plus die von WSB übergebenen Punkte:
+   - Gelände-Schürze trifft die Bühne ohne Stufe auf `groundY_u` (B7: 0,0238 u, gemessen in `50_BLENDER/B7/data/b7_stage_edges.json`), flache Dünen/Verwehungen, Farbübergang 3–8 m `edgePalette` → Zonenboden.
+   - **Schwebe-Messung aller Bühnen im Browser** (Strahlenraster von unten, three-mesh-bvh, 98-%-Methode aus `50_BLENDER/B7/scripts/b7_ground_gap.py`) → `groundY_u` je Bühne in die Stage-Edges-Daten.
+   - **Übergangssteine platzieren** (nicht bauen): Gruppen nach `nest()` 1:3:Rest, größte nahe der Bühne, 30–60 % versenkt, jede berührt den Boden – sobald das WSB-Steinkit `kfb.stone-kit/1` da ist; bis dahin Platzhalter-Logik.
+   - **Verteilungs-Grammatik** (Fluff + Steine) an einer Stelle im Spiel (`src/world/grammar.js`), Spec folgt von WSB als `replies/SPEC_PLACEMENT_GRAMMAR_R2.md`.
+   - Abnahme im Spiel: Vorher/nachher je Bühne mit Gelände, gleiche Kamera-Marken.
+**B · Bewegungs-Sitzung (Modell: Claude Opus 5.5):** Slice 3 Fahrhilfe M3 (Hub b70) Stufen A–F, Tests bei ≥ 50 und 30 fps.
+Blöcke aus `replies/KNOWN_FAILURES.md`: A = [Bühne/Licht], B = [Bewegung/Tests].
+
 ## 17.10.2026 · Antworten auf §65.3 (Slice-1-Vorbau) – V-396
 1. **Bodenfarbe:** der **größte Flächenanteil** der `edgePalette` wird Boden (Goblin: `#4e4341`), in OKLCH höchstens +10 % L aufgehellt, damit er als Knet-Boden liest; Rollen-Passung nur für die übrigen Farben. Begründung: gesampelt wurde der Ring, wo die Bühne den Boden trifft – genau dort darf keine Farbkante entstehen (V-341, keine harten Schnitte).
 2. **Sockel-Bühnen (giza_pyramid, portal_ruin):** Gelände schließt **15–25 % der Sockelhöhe unter dem Bühnenboden** an – der Sockel wirkt wie Fels, der aus dem Boden wächst, nicht wie aufgesetzt; Farbe aus `footprintBase.edgePalette` (dort trifft der Sockel den Boden). Übergangssteine aus dem Steine-Kit.
