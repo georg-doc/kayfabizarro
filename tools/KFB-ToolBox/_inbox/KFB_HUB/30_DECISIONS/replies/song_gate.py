@@ -111,8 +111,9 @@ def gate_lyrics(a):
         for e in sj:
             songlines[e.get("cardNumber")] = e
     cards = [c for c in cards if int(c.get("cardNumber", 0)) not in skip]
-    if len(songlines) > max(1, len(cards) // 10):
-        fails.append(f"FAIL A5: {len(songlines)} songLines bei {len(cards)} Karten (max 10 %)")
+    rewrites = [e for e in songlines.values() if str(e.get("rule", "")).upper() != "A7"]
+    if len(rewrites) > max(1, len(cards) // 10):  # A5: Zahlen-Ausschreibungen (A7) zählen nicht mit
+        fails.append(f"FAIL A5: {len(rewrites)} Wort-songLines bei {len(cards)} Karten (max 10 %, A7-Ausschreibungen ausgenommen)")
     deck_vocab = set()
     deck_text = ""
     for c in deck.get("cards", []):

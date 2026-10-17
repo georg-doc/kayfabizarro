@@ -1,6 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- SONG_SPEC R3.2: A5-Quote ohne A7-Zahlen-Ausschreibungen (WSA meldete Widerspruch bei 9/11), song_gate.py entsprechend; Hub b94 ergänzt.
+- Hub-Masterplan aktualisiert (Songs R4/R5 + Batch WS1, WSB-Reihenfolge, E2-Lid-Schritt, Figuren-SSOT, Tools fertig, M3/L3-Vorschau §75); erledigte Briefings b61/b68/b76/b77/b79/b88/b89/b91 abgehakt.
 - V-420: E2-Proof R1b FAIL; Sockel bleibt exakt wie r4, nur starr nach hinten verschoben (R1c mit Stufen 0–0,40 R); WSB-Nachträge 12/13 gestrichen (14. Nachtrag).
 - V-419 ergänzt: Batch aller KFB-Decks (ohne MED) läuft nach R5-Test über WS1.
 - V-419: Songs R5 (fünf Decks) über Triplet-Plugin + externen Kritiker; SONG_SPEC R3.2 mit gemeinsamem Prüfskript song_gate.py (Lyrics + Kritiker-Urteil), Intro ≥ 2 Beats, Meta-Karten-Regel, Ton-Hinweise je Deck (Hub-Briefing an WSA).

@@ -1,6 +1,6 @@
 # KFB Suno song spec R3.1: the one binding song document (V-411) · 17.10.2026
 
-**R3.2 (17.10., V-419):** the gate is now one shared script, `replies/song_gate.py` (E16); added A9 (meta cards), C9b (intro at least two beats), E16b deck notes for five more decks, §F (external critic). Nothing else changed.
+**R3.2 (17.10., V-419):** the gate is now one shared script, `replies/song_gate.py` (E16); added A9 (meta cards), C9b (intro at least two beats), E16b deck notes for five more decks, §F (external critic); A5 quota without A7 spellings (WSA found the A5/A7 conflict on 9/11). Nothing else changed.
 **R3.1 (17.10., after WSA R4):** added A6–A8 (brackets, numbers, game words), C12b (two tracks) and E16b (tone check).
 
 **This file replaces every earlier summary.** Briefs link to it and never paraphrase it. Changes go into this file as a new version; they are not stacked as separate rules.
@@ -11,7 +11,7 @@ A1. One card = **exactly one line**. Name first (normal case, no brackets).
 A2. **Only the card's words**: cardName, lore, power, plus image words from `artworkPrompt` (V-377). Grammar and cutting are allowed, with at most one Fluff-o-lect word per line. **No new verbs, images, events or jokes.**
 A3. **Weighting (V-372):** the claim and story of the card come first. Power appears only as an aside or inversion, never recited as a rule. Dice values and rule labels are dropped.
 A4. **Closure:** don't explain the card. 80–95 characters per line, sayable in one breath.
-A5. `songLine` only where the printed text cannot be sung (German words, numbers, symbols). At most 10 % of lines, each one logged.
+A5. `songLine` only where the printed text cannot be sung (German words, numbers, symbols). At most 10 % of lines, each one logged. **Spelled-out numbers and symbols under A7 do not count toward the 10 %.** Log them in `songlines.json` with `"rule":"A7"`. Only word rewrites count.
 A6. **No brackets are spoken** ("The Unconscious (Das Unbewusste)" → "The Unconscious"; German subtitles, "(Strike)", "(The New Breed)" are dropped or worked into the sentence without brackets).
 A7. **Numbers, times, amounts and symbols written out** as they are sung ("Seven A.M.", "three point two billion", "Nine-Eleven", "Rule Number One"), each logged as a songLine.
 A8. **No game words in the line:** Actor, token, Scene, card effects, "equipped items", "Zerg rush" and the like are dropped (V-372: mechanics at most as an image, never as a term).

@@ -1,0 +1,1820 @@
+{
+ "socketMode": "recipe",
+ "d": [
+  {
+   "d": 0,
+   "figs": [
+    {
+     "fig": "hunky",
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97337,
+       "socketFrontVsEquatorR": 0.6579,
+       "eyeApexR": 0.9773,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9202,
+          "pxWith": 37176,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5487,
+          "pxWith": 14676,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.6982,
+          "pxWith": 26782,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.3922,
+          "pxWith": 11352,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 1301,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1654,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 0,
+          "frontRimDeepestR": 0,
+          "frontRimThetaDeg": null
+         },
+         "rest": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1753,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 86,
+          "frontRimDeepestR": 0.0585,
+          "frontRimThetaDeg": [
+           55,
+           61
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1780,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 376,
+          "frontRimDeepestR": 0.068,
+          "frontRimThetaDeg": [
+           54,
+           62
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1409,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 352,
+          "frontRimDeepestR": 0.2332,
+          "frontRimThetaDeg": [
+           54,
+           89
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 0,
+         "deepestR": 0,
+         "thetaRangeDeg": null,
+         "frontRimVertsInsideSclera": 2,
+         "frontRimDeepestR": 0.1126
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.97337,
+       "socketFrontVsEquatorR": 0.6579,
+       "eyeApexR": 0.9773,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9202,
+          "pxWith": 37176,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5487,
+          "pxWith": 14676,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.6982,
+          "pxWith": 26782,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.3922,
+          "pxWith": 11352,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 1301,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1654,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 0,
+          "frontRimDeepestR": 0,
+          "frontRimThetaDeg": null
+         },
+         "rest": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1753,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 85,
+          "frontRimDeepestR": 0.0585,
+          "frontRimThetaDeg": [
+           55,
+           61
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1780,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 376,
+          "frontRimDeepestR": 0.068,
+          "frontRimThetaDeg": [
+           54,
+           62
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1409,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 352,
+          "frontRimDeepestR": 0.2332,
+          "frontRimThetaDeg": [
+           54,
+           89
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 0,
+         "deepestR": 0,
+         "thetaRangeDeg": null,
+         "frontRimVertsInsideSclera": 2,
+         "frontRimDeepestR": 0.1126
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.89676,
+       "socketFrontVsEquatorR": 0.6265,
+       "eyeApexR": 0.9003,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9001,
+          "pxWith": 30733,
+          "pxWithout": 34144
+         },
+         "lid": {
+          "visibleAreaFrac": 0.529,
+          "pxWith": 12084,
+          "pxWithout": 22844
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.6797,
+          "pxWith": 21985,
+          "pxWithout": 32346
+         },
+         "lid": {
+          "visibleAreaFrac": 0.3741,
+          "pxWith": 9234,
+          "pxWithout": 24684
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 0,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1674,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 495,
+          "frontRimDeepestR": 0.1547,
+          "frontRimThetaDeg": [
+           63,
+           90
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1785,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 626,
+          "frontRimDeepestR": 0.1512,
+          "frontRimThetaDeg": [
+           54,
+           90
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1832,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 737,
+          "frontRimDeepestR": 0.1445,
+          "frontRimThetaDeg": [
+           53,
+           90
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 0,
+          "binsCompared": 1535,
+          "deepestR": 0,
+          "thetaRangeDeg": null,
+          "minGapR": 0.0059,
+          "frontRimVertsInsideSkin": 549,
+          "frontRimDeepestR": 0.1424,
+          "frontRimThetaDeg": [
+           53,
+           90
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 0,
+         "deepestR": 0,
+         "thetaRangeDeg": null,
+         "frontRimVertsInsideSclera": 156,
+         "frontRimDeepestR": 0.0452
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "d": 0.1,
+   "figs": [
+    {
+     "fig": "hunky",
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97337,
+       "socketFrontVsEquatorR": 0.5579,
+       "eyeApexR": 0.9773,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8958,
+          "pxWith": 36190,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7167,
+          "pxWith": 19171,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7322,
+          "pxWith": 28088,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6869,
+          "pxWith": 19882,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 1556,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 194,
+          "binsCompared": 1741,
+          "deepestR": 0.0294,
+          "thetaRangeDeg": [
+           63,
+           88
+          ],
+          "minGapR": -0.0294,
+          "frontRimVertsInsideSkin": 108,
+          "frontRimDeepestR": 0.0969,
+          "frontRimThetaDeg": [
+           62,
+           67
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 247,
+          "binsCompared": 1850,
+          "deepestR": 0.0422,
+          "thetaRangeDeg": [
+           63,
+           88
+          ],
+          "minGapR": -0.0422,
+          "frontRimVertsInsideSkin": 314,
+          "frontRimDeepestR": 0.1169,
+          "frontRimThetaDeg": [
+           59,
+           67
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 326,
+          "binsCompared": 1814,
+          "deepestR": 0.0426,
+          "thetaRangeDeg": [
+           59,
+           88
+          ],
+          "minGapR": -0.0426,
+          "frontRimVertsInsideSkin": 600,
+          "frontRimDeepestR": 0.1173,
+          "frontRimThetaDeg": [
+           59,
+           67
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 298,
+          "binsCompared": 1299,
+          "deepestR": 0.043,
+          "thetaRangeDeg": [
+           59,
+           88
+          ],
+          "minGapR": -0.043,
+          "frontRimVertsInsideSkin": 618,
+          "frontRimDeepestR": 0.1177,
+          "frontRimThetaDeg": [
+           59,
+           67
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 0,
+         "deepestR": 0,
+         "thetaRangeDeg": null,
+         "frontRimVertsInsideSclera": 0,
+         "frontRimDeepestR": 0
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.97337,
+       "socketFrontVsEquatorR": 0.5579,
+       "eyeApexR": 0.9773,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8958,
+          "pxWith": 36190,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7167,
+          "pxWith": 19171,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7322,
+          "pxWith": 28088,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.687,
+          "pxWith": 19885,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 1556,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 194,
+          "binsCompared": 1741,
+          "deepestR": 0.0294,
+          "thetaRangeDeg": [
+           63,
+           88
+          ],
+          "minGapR": -0.0294,
+          "frontRimVertsInsideSkin": 108,
+          "frontRimDeepestR": 0.0969,
+          "frontRimThetaDeg": [
+           62,
+           67
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 247,
+          "binsCompared": 1850,
+          "deepestR": 0.0422,
+          "thetaRangeDeg": [
+           63,
+           88
+          ],
+          "minGapR": -0.0422,
+          "frontRimVertsInsideSkin": 315,
+          "frontRimDeepestR": 0.1169,
+          "frontRimThetaDeg": [
+           59,
+           67
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 326,
+          "binsCompared": 1814,
+          "deepestR": 0.0426,
+          "thetaRangeDeg": [
+           59,
+           88
+          ],
+          "minGapR": -0.0426,
+          "frontRimVertsInsideSkin": 600,
+          "frontRimDeepestR": 0.1173,
+          "frontRimThetaDeg": [
+           59,
+           67
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 298,
+          "binsCompared": 1299,
+          "deepestR": 0.043,
+          "thetaRangeDeg": [
+           59,
+           88
+          ],
+          "minGapR": -0.043,
+          "frontRimVertsInsideSkin": 618,
+          "frontRimDeepestR": 0.1177,
+          "frontRimThetaDeg": [
+           59,
+           67
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 0,
+         "deepestR": 0,
+         "thetaRangeDeg": null,
+         "frontRimVertsInsideSclera": 0,
+         "frontRimDeepestR": 0
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.89676,
+       "socketFrontVsEquatorR": 0.5265,
+       "eyeApexR": 0.9003,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8763,
+          "pxWith": 29922,
+          "pxWithout": 34144
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7012,
+          "pxWith": 16019,
+          "pxWithout": 22844
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7164,
+          "pxWith": 23172,
+          "pxWithout": 32346
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6778,
+          "pxWith": 16732,
+          "pxWithout": 24684
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 0,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 201,
+          "binsCompared": 1791,
+          "deepestR": 0.0305,
+          "thetaRangeDeg": [
+           63,
+           89
+          ],
+          "minGapR": -0.0305,
+          "frontRimVertsInsideSkin": 556,
+          "frontRimDeepestR": 0.139,
+          "frontRimThetaDeg": [
+           63,
+           90
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 245,
+          "binsCompared": 1884,
+          "deepestR": 0.042,
+          "thetaRangeDeg": [
+           63,
+           89
+          ],
+          "minGapR": -0.042,
+          "frontRimVertsInsideSkin": 705,
+          "frontRimDeepestR": 0.1377,
+          "frontRimThetaDeg": [
+           58,
+           90
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 331,
+          "binsCompared": 1864,
+          "deepestR": 0.0435,
+          "thetaRangeDeg": [
+           58,
+           89
+          ],
+          "minGapR": -0.0435,
+          "frontRimVertsInsideSkin": 833,
+          "frontRimDeepestR": 0.1301,
+          "frontRimThetaDeg": [
+           58,
+           90
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 314,
+          "binsCompared": 1404,
+          "deepestR": 0.0441,
+          "thetaRangeDeg": [
+           58,
+           89
+          ],
+          "minGapR": -0.0441,
+          "frontRimVertsInsideSkin": 728,
+          "frontRimDeepestR": 0.1304,
+          "frontRimThetaDeg": [
+           58,
+           90
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 0,
+         "deepestR": 0,
+         "thetaRangeDeg": null,
+         "frontRimVertsInsideSclera": 296,
+         "frontRimDeepestR": 0.0299
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "d": 0.2,
+   "figs": [
+    {
+     "fig": "hunky",
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97337,
+       "socketFrontVsEquatorR": 0.4579,
+       "eyeApexR": 0.9773,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9103,
+          "pxWith": 36776,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9197,
+          "pxWith": 24601,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.772,
+          "pxWith": 29615,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.8757,
+          "pxWith": 25346,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 1832,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 344,
+          "binsCompared": 1830,
+          "deepestR": 0.0768,
+          "thetaRangeDeg": [
+           64,
+           93
+          ],
+          "minGapR": -0.0768,
+          "frontRimVertsInsideSkin": 258,
+          "frontRimDeepestR": 0.1518,
+          "frontRimThetaDeg": [
+           63,
+           72
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 444,
+          "binsCompared": 1940,
+          "deepestR": 0.0856,
+          "thetaRangeDeg": [
+           64,
+           93
+          ],
+          "minGapR": -0.0856,
+          "frontRimVertsInsideSkin": 439,
+          "frontRimDeepestR": 0.1606,
+          "frontRimThetaDeg": [
+           63,
+           72
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 564,
+          "binsCompared": 1854,
+          "deepestR": 0.0857,
+          "thetaRangeDeg": [
+           64,
+           93
+          ],
+          "minGapR": -0.0857,
+          "frontRimVertsInsideSkin": 654,
+          "frontRimDeepestR": 0.1607,
+          "frontRimThetaDeg": [
+           63,
+           72
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 496,
+          "binsCompared": 1430,
+          "deepestR": 0.0857,
+          "thetaRangeDeg": [
+           64,
+           93
+          ],
+          "minGapR": -0.0857,
+          "frontRimVertsInsideSkin": 604,
+          "frontRimDeepestR": 0.1607,
+          "frontRimThetaDeg": [
+           63,
+           72
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 0,
+         "deepestR": 0,
+         "thetaRangeDeg": null,
+         "frontRimVertsInsideSclera": 485,
+         "frontRimDeepestR": 0.04
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.97337,
+       "socketFrontVsEquatorR": 0.4579,
+       "eyeApexR": 0.9773,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9103,
+          "pxWith": 36775,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9197,
+          "pxWith": 24599,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.772,
+          "pxWith": 29615,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.8756,
+          "pxWith": 25344,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 1832,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 344,
+          "binsCompared": 1830,
+          "deepestR": 0.0768,
+          "thetaRangeDeg": [
+           64,
+           93
+          ],
+          "minGapR": -0.0768,
+          "frontRimVertsInsideSkin": 258,
+          "frontRimDeepestR": 0.1518,
+          "frontRimThetaDeg": [
+           63,
+           72
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 444,
+          "binsCompared": 1940,
+          "deepestR": 0.0856,
+          "thetaRangeDeg": [
+           64,
+           93
+          ],
+          "minGapR": -0.0856,
+          "frontRimVertsInsideSkin": 441,
+          "frontRimDeepestR": 0.1606,
+          "frontRimThetaDeg": [
+           63,
+           72
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 564,
+          "binsCompared": 1854,
+          "deepestR": 0.0857,
+          "thetaRangeDeg": [
+           64,
+           93
+          ],
+          "minGapR": -0.0857,
+          "frontRimVertsInsideSkin": 654,
+          "frontRimDeepestR": 0.1607,
+          "frontRimThetaDeg": [
+           63,
+           72
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 496,
+          "binsCompared": 1430,
+          "deepestR": 0.0857,
+          "thetaRangeDeg": [
+           64,
+           93
+          ],
+          "minGapR": -0.0857,
+          "frontRimVertsInsideSkin": 604,
+          "frontRimDeepestR": 0.1607,
+          "frontRimThetaDeg": [
+           63,
+           72
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 0,
+         "deepestR": 0,
+         "thetaRangeDeg": null,
+         "frontRimVertsInsideSclera": 485,
+         "frontRimDeepestR": 0.04
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.89676,
+       "socketFrontVsEquatorR": 0.4265,
+       "eyeApexR": 0.9003,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9087,
+          "pxWith": 31026,
+          "pxWithout": 34144
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9176,
+          "pxWith": 20962,
+          "pxWithout": 22844
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7642,
+          "pxWith": 24719,
+          "pxWithout": 32346
+         },
+         "lid": {
+          "visibleAreaFrac": 0.8787,
+          "pxWith": 21691,
+          "pxWithout": 24684
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 0,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 348,
+          "binsCompared": 1881,
+          "deepestR": 0.0785,
+          "thetaRangeDeg": [
+           64,
+           93
+          ],
+          "minGapR": -0.0785,
+          "frontRimVertsInsideSkin": 574,
+          "frontRimDeepestR": 0.1562,
+          "frontRimThetaDeg": [
+           64,
+           90
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 420,
+          "binsCompared": 1942,
+          "deepestR": 0.0851,
+          "thetaRangeDeg": [
+           64,
+           93
+          ],
+          "minGapR": -0.0851,
+          "frontRimVertsInsideSkin": 667,
+          "frontRimDeepestR": 0.1562,
+          "frontRimThetaDeg": [
+           63,
+           90
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 550,
+          "binsCompared": 1898,
+          "deepestR": 0.087,
+          "thetaRangeDeg": [
+           63,
+           93
+          ],
+          "minGapR": -0.087,
+          "frontRimVertsInsideSkin": 748,
+          "frontRimDeepestR": 0.1565,
+          "frontRimThetaDeg": [
+           63,
+           90
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 471,
+          "binsCompared": 1453,
+          "deepestR": 0.0873,
+          "thetaRangeDeg": [
+           63,
+           93
+          ],
+          "minGapR": -0.0873,
+          "frontRimVertsInsideSkin": 649,
+          "frontRimDeepestR": 0.1566,
+          "frontRimThetaDeg": [
+           63,
+           90
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 0,
+         "deepestR": 0,
+         "thetaRangeDeg": null,
+         "frontRimVertsInsideSclera": 602,
+         "frontRimDeepestR": 0.0467
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "d": 0.3,
+   "figs": [
+    {
+     "fig": "hunky",
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97337,
+       "socketFrontVsEquatorR": 0.3579,
+       "eyeApexR": 0.9773,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9542,
+          "pxWith": 38548,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9501,
+          "pxWith": 25412,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8277,
+          "pxWith": 31752,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9277,
+          "pxWith": 26852,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 2099,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 394,
+          "binsCompared": 1930,
+          "deepestR": 0.1189,
+          "thetaRangeDeg": [
+           69,
+           95
+          ],
+          "minGapR": -0.1189,
+          "frontRimVertsInsideSkin": 436,
+          "frontRimDeepestR": 0.1935,
+          "frontRimThetaDeg": [
+           69,
+           77
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 450,
+          "binsCompared": 1987,
+          "deepestR": 0.1191,
+          "thetaRangeDeg": [
+           69,
+           95
+          ],
+          "minGapR": -0.1191,
+          "frontRimVertsInsideSkin": 544,
+          "frontRimDeepestR": 0.1938,
+          "frontRimThetaDeg": [
+           69,
+           77
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 524,
+          "binsCompared": 1814,
+          "deepestR": 0.1175,
+          "thetaRangeDeg": [
+           69,
+           95
+          ],
+          "minGapR": -0.1175,
+          "frontRimVertsInsideSkin": 616,
+          "frontRimDeepestR": 0.1936,
+          "frontRimThetaDeg": [
+           69,
+           77
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 450,
+          "binsCompared": 1364,
+          "deepestR": 0.1187,
+          "thetaRangeDeg": [
+           69,
+           95
+          ],
+          "minGapR": -0.1187,
+          "frontRimVertsInsideSkin": 586,
+          "frontRimDeepestR": 0.1933,
+          "frontRimThetaDeg": [
+           69,
+           77
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 0,
+         "deepestR": 0,
+         "thetaRangeDeg": null,
+         "frontRimVertsInsideSclera": 776,
+         "frontRimDeepestR": 0.0732
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.97337,
+       "socketFrontVsEquatorR": 0.3579,
+       "eyeApexR": 0.9773,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9542,
+          "pxWith": 38548,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9501,
+          "pxWith": 25412,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8277,
+          "pxWith": 31752,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9278,
+          "pxWith": 26853,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 2099,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 394,
+          "binsCompared": 1930,
+          "deepestR": 0.1189,
+          "thetaRangeDeg": [
+           69,
+           95
+          ],
+          "minGapR": -0.1189,
+          "frontRimVertsInsideSkin": 436,
+          "frontRimDeepestR": 0.1935,
+          "frontRimThetaDeg": [
+           69,
+           77
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 450,
+          "binsCompared": 1988,
+          "deepestR": 0.1192,
+          "thetaRangeDeg": [
+           69,
+           95
+          ],
+          "minGapR": -0.1192,
+          "frontRimVertsInsideSkin": 544,
+          "frontRimDeepestR": 0.1938,
+          "frontRimThetaDeg": [
+           69,
+           77
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 524,
+          "binsCompared": 1814,
+          "deepestR": 0.1175,
+          "thetaRangeDeg": [
+           69,
+           95
+          ],
+          "minGapR": -0.1175,
+          "frontRimVertsInsideSkin": 616,
+          "frontRimDeepestR": 0.1936,
+          "frontRimThetaDeg": [
+           69,
+           77
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 450,
+          "binsCompared": 1364,
+          "deepestR": 0.1187,
+          "thetaRangeDeg": [
+           69,
+           95
+          ],
+          "minGapR": -0.1187,
+          "frontRimVertsInsideSkin": 586,
+          "frontRimDeepestR": 0.1933,
+          "frontRimThetaDeg": [
+           69,
+           77
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 0,
+         "deepestR": 0,
+         "thetaRangeDeg": null,
+         "frontRimVertsInsideSclera": 776,
+         "frontRimDeepestR": 0.0732
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.89676,
+       "socketFrontVsEquatorR": 0.3265,
+       "eyeApexR": 0.9003,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9586,
+          "pxWith": 32732,
+          "pxWithout": 34144
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9532,
+          "pxWith": 21774,
+          "pxWithout": 22844
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8293,
+          "pxWith": 26824,
+          "pxWithout": 32346
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9315,
+          "pxWith": 22994,
+          "pxWithout": 24684
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 0,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 407,
+          "binsCompared": 2020,
+          "deepestR": 0.1169,
+          "thetaRangeDeg": [
+           70,
+           97
+          ],
+          "minGapR": -0.1169,
+          "frontRimVertsInsideSkin": 386,
+          "frontRimDeepestR": 0.1578,
+          "frontRimThetaDeg": [
+           69,
+           90
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 469,
+          "binsCompared": 2030,
+          "deepestR": 0.1184,
+          "thetaRangeDeg": [
+           69,
+           97
+          ],
+          "minGapR": -0.1184,
+          "frontRimVertsInsideSkin": 452,
+          "frontRimDeepestR": 0.1575,
+          "frontRimThetaDeg": [
+           69,
+           90
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 537,
+          "binsCompared": 1865,
+          "deepestR": 0.1199,
+          "thetaRangeDeg": [
+           69,
+           97
+          ],
+          "minGapR": -0.1199,
+          "frontRimVertsInsideSkin": 463,
+          "frontRimDeepestR": 0.1551,
+          "frontRimThetaDeg": [
+           69,
+           90
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 444,
+          "binsCompared": 1427,
+          "deepestR": 0.1201,
+          "thetaRangeDeg": [
+           69,
+           96
+          ],
+          "minGapR": -0.1201,
+          "frontRimVertsInsideSkin": 380,
+          "frontRimDeepestR": 0.155,
+          "frontRimThetaDeg": [
+           69,
+           90
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 61,
+         "deepestR": 0.0095,
+         "thetaRangeDeg": [
+          74,
+          76
+         ],
+         "frontRimVertsInsideSclera": 371,
+         "frontRimDeepestR": 0.0466
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "d": 0.4,
+   "figs": [
+    {
+     "fig": "hunky",
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97337,
+       "socketFrontVsEquatorR": 0.2579,
+       "eyeApexR": 0.9773,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9861,
+          "pxWith": 39840,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9688,
+          "pxWith": 25913,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8806,
+          "pxWith": 33778,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9585,
+          "pxWith": 27742,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 2369,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 440,
+          "binsCompared": 2026,
+          "deepestR": 0.1435,
+          "thetaRangeDeg": [
+           75,
+           97
+          ],
+          "minGapR": -0.1435,
+          "frontRimVertsInsideSkin": 540,
+          "frontRimDeepestR": 0.217,
+          "frontRimThetaDeg": [
+           74,
+           83
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 480,
+          "binsCompared": 1992,
+          "deepestR": 0.1435,
+          "thetaRangeDeg": [
+           75,
+           97
+          ],
+          "minGapR": -0.1435,
+          "frontRimVertsInsideSkin": 590,
+          "frontRimDeepestR": 0.2169,
+          "frontRimThetaDeg": [
+           74,
+           83
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 524,
+          "binsCompared": 1837,
+          "deepestR": 0.1434,
+          "thetaRangeDeg": [
+           75,
+           97
+          ],
+          "minGapR": -0.1434,
+          "frontRimVertsInsideSkin": 714,
+          "frontRimDeepestR": 0.2169,
+          "frontRimThetaDeg": [
+           74,
+           83
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 436,
+          "binsCompared": 1342,
+          "deepestR": 0.1433,
+          "thetaRangeDeg": [
+           75,
+           97
+          ],
+          "minGapR": -0.1433,
+          "frontRimVertsInsideSkin": 592,
+          "frontRimDeepestR": 0.2168,
+          "frontRimThetaDeg": [
+           74,
+           83
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 218,
+         "deepestR": 0.0228,
+         "thetaRangeDeg": [
+          75,
+          82
+         ],
+         "frontRimVertsInsideSclera": 873,
+         "frontRimDeepestR": 0.0963
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.97337,
+       "socketFrontVsEquatorR": 0.2579,
+       "eyeApexR": 0.9773,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9861,
+          "pxWith": 39840,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9688,
+          "pxWith": 25914,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8806,
+          "pxWith": 33778,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9585,
+          "pxWith": 27742,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 2369,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 440,
+          "binsCompared": 2026,
+          "deepestR": 0.1435,
+          "thetaRangeDeg": [
+           75,
+           97
+          ],
+          "minGapR": -0.1435,
+          "frontRimVertsInsideSkin": 540,
+          "frontRimDeepestR": 0.217,
+          "frontRimThetaDeg": [
+           74,
+           83
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 480,
+          "binsCompared": 1992,
+          "deepestR": 0.1435,
+          "thetaRangeDeg": [
+           75,
+           97
+          ],
+          "minGapR": -0.1435,
+          "frontRimVertsInsideSkin": 591,
+          "frontRimDeepestR": 0.2169,
+          "frontRimThetaDeg": [
+           74,
+           83
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 524,
+          "binsCompared": 1837,
+          "deepestR": 0.1434,
+          "thetaRangeDeg": [
+           75,
+           97
+          ],
+          "minGapR": -0.1434,
+          "frontRimVertsInsideSkin": 714,
+          "frontRimDeepestR": 0.2169,
+          "frontRimThetaDeg": [
+           74,
+           83
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 436,
+          "binsCompared": 1342,
+          "deepestR": 0.1433,
+          "thetaRangeDeg": [
+           75,
+           97
+          ],
+          "minGapR": -0.1433,
+          "frontRimVertsInsideSkin": 592,
+          "frontRimDeepestR": 0.2168,
+          "frontRimThetaDeg": [
+           74,
+           83
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 218,
+         "deepestR": 0.0228,
+         "thetaRangeDeg": [
+          75,
+          82
+         ],
+         "frontRimVertsInsideSclera": 873,
+         "frontRimDeepestR": 0.0963
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.89676,
+       "socketFrontVsEquatorR": 0.2265,
+       "eyeApexR": 0.9003,
+       "visible": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9923,
+          "pxWith": 33882,
+          "pxWithout": 34144
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9708,
+          "pxWith": 22176,
+          "pxWithout": 22844
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8884,
+          "pxWith": 28735,
+          "pxWithout": 32346
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9626,
+          "pxWith": 23760,
+          "pxWithout": 24684
+         }
+        }
+       },
+       "poke": {
+        "socketVertsFarLoft": 0,
+        "states": {
+         "open": {
+          "skinThroughShellBins": 444,
+          "binsCompared": 2069,
+          "deepestR": 0.1407,
+          "thetaRangeDeg": [
+           75,
+           100
+          ],
+          "minGapR": -0.1407,
+          "frontRimVertsInsideSkin": 234,
+          "frontRimDeepestR": 0.1527,
+          "frontRimThetaDeg": [
+           75,
+           87
+          ]
+         },
+         "rest": {
+          "skinThroughShellBins": 474,
+          "binsCompared": 2052,
+          "deepestR": 0.1417,
+          "thetaRangeDeg": [
+           75,
+           100
+          ],
+          "minGapR": -0.1417,
+          "frontRimVertsInsideSkin": 254,
+          "frontRimDeepestR": 0.1553,
+          "frontRimThetaDeg": [
+           75,
+           87
+          ]
+         },
+         "half": {
+          "skinThroughShellBins": 548,
+          "binsCompared": 1875,
+          "deepestR": 0.1429,
+          "thetaRangeDeg": [
+           75,
+           100
+          ],
+          "minGapR": -0.1429,
+          "frontRimVertsInsideSkin": 250,
+          "frontRimDeepestR": 0.1571,
+          "frontRimThetaDeg": [
+           75,
+           87
+          ]
+         },
+         "closed": {
+          "skinThroughShellBins": 430,
+          "binsCompared": 1429,
+          "deepestR": 0.1436,
+          "thetaRangeDeg": [
+           75,
+           99
+          ],
+          "minGapR": -0.1436,
+          "frontRimVertsInsideSkin": 244,
+          "frontRimDeepestR": 0.1578,
+          "frontRimThetaDeg": [
+           75,
+           87
+          ]
+         }
+        },
+        "sclera": {
+         "shellBinsInsideSclera": 203,
+         "deepestR": 0.0325,
+         "thetaRangeDeg": [
+          75,
+          85
+         ],
+         "frontRimVertsInsideSclera": 274,
+         "frontRimDeepestR": 0.0467
+        }
+       },
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
