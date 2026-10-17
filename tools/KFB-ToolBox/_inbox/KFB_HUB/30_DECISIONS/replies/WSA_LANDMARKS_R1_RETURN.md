@@ -1,5 +1,34 @@
 # WSA → WS0 · Landmark candidates R1 · V-421 · 2026-10-17
 
+## ADDITIVE R1.1 · two verified CC0 source objects and clay previews · 2026-10-17
+
+**STATUS: SOURCE PROOF PASS 2/2 · 4 REAL BLENDER IMAGES PERSISTED · GEORG SELECTION STILL BLOCKED.** This milestone replaces the earlier `0 renders` status *only for the two specific source objects documented here*; the original R1 discovery log below is preserved for provenance.
+
+### Sources actually downloaded, isolated and rendered
+
+| Reference | Genuine upstream downloaded file | Measured geometry | Original / Clay |
+| --- | --- | ---: | --- |
+| Stonehenge OpenDungeons by eugeneloza · CC0 | `Stonehenge.zip` archive SHA256 `1c3b5e0206c35eebfbf89985c21adc3472487288d6347ee8ad283c29ef6054bc`; selected `Stonehengebed.blend1` source SHA256 `a172911fdeadf25567e61fc2da2cfb42e19ad614c1c2c82f43be77c1d160e045` | **640 triangles, 320 mesh faces** | [isolated original](V421_SOURCE_PROOF/evidence/stonehenge_oga_cc0/source-isolation.png) · [unaltered clay render](V421_SOURCE_PROOF/evidence/stonehenge_oga_cc0/clay-preview.png) |
+| Kenney Castle Kit · CC0 | `kenney_castle-kit.zip` archive SHA256 `921f3f73927bb23106cae34bc21d5ab4b033a9fc120475e96f714a406e3169df`; selected `Models/GLB format/tower-square.glb` SHA256 `ae2e4f11247fef4e8e550011c20bc1862839cd4cfd21590aec9781ae0fbbbc7f` | **176 triangles, 176 mesh faces** | [isolated original](V421_SOURCE_PROOF/evidence/kenney_castle_cc0/source-isolation.png) · [unaltered clay render](V421_SOURCE_PROOF/evidence/kenney_castle_cc0/clay-preview.png) |
+
+Public page evidence: [OpenGameArt Stonehenge](https://opengameart.org/node/30878) (eugeneloza, CC0), [Kenney Castle Kit](https://opengameart.org/content/castle-kit) (Kenney, CC0, ZIP itself contains `License.txt`). Original 2D texture from Stonehenge preview was part of author's CC0 distribution. Only metadata and four proof PNGs, **not full source ZIP meshes**, were committed into the research branch. No private/purchased material. Source-image proof uses actual input materials, Clay proof uses replacement material **only**, not recreated geometry and **zero text/labels over the images**.
+
+The Kenney `tower-square.glb` is only a **source-owned modular castle-kit piece**, not a Neuschwanstein, Globe Theatre or Bremen statue. Same pack facts are attached to the Neuschwanstein/Globe construction-source leads without misrepresenting a completed landmark.
+
+### Actual run and verification
+
+- [GitHub Actions SUCCESS run 39044683249](https://github.com/georg-doc/kayfabizarro/actions/runs/39044683249): Blender headless source isolation + material-only Clay for **2 of 2 imported real meshes**; four PNGs produced; measured polygon and triangle counts compared to source. All job steps success; actual CI assertion passed.
+- [GitHub Actions SUCCESS persistence run 39044954699](https://github.com/georg-doc/kayfabizarro/actions/runs/39044954699): same real source QA plus **4 preview PNGs and a MANIFEST** written to research branch (evidence head `1c486e133a9c3e069f7205c3acd9528c896f932c`), then exact branch/readback of manifest and both clay images. Two downloaded CC0 ZIP hashes pinned; 228 Kenney interchange-model files found in FBX/GLB/OBJ.
+- Local independent archive/audit examination: 2/2 source proofs, 4 PNG files actually opened/visually checked (Stonehenge source and Clay, Kenney source and Clay), 6/6 JSON gate invariants PASS. No fake "whole building" model or source variants.
+- Previous intentional fail-closed runs (not silently erased): [39044326027](https://github.com/georg-doc/kayfabizarro/actions/runs/39044326027) full 6GB checkout, [39044400866](https://github.com/georg-doc/kayfabizarro/actions/runs/39044400866) Blender missing Python numpy, [39044509158](https://github.com/georg-doc/kayfabizarro/actions/runs/39044509158) optional OpenImageDenoiser not in apt build. Resolved: sparse checkout, apt Python NumPy, denoising disabled, Blender backup `.blend1` file import. Not reported as successful runs.
+- Targeted machine-readable JSON R1.1 keeps **10 landmark groups / 23 total records / 2 distinct inspected source objects / 0 select-enabled**. 3 references share 2 proven CC0 sources because Kenney Castle Kit is reused as a construction donor. **21 of 23 records still lack a source-specific clay proof**; Globe and Neuschwanstein are not "completed" merely from the kit component.
+
+**Not done:** WS0 has not reviewed these four visuals, Georg has not selected, other 21 candidates have not been downloaded/isolated/rendered, `Landmark-Kandidaten` Asset Librarian view and `Auswählen` button are not built, no public Site/Stage/Live test, no deck or world placement, no merge.
+
+**ONE NEXT GATE: `WS0_V421_VISUAL_SOURCE_REVIEW_AND_REMAINING_PREVIEWS`.** WS0 reviews the two source-isolated original/Clay pairs against V-346 and V-383, then an equipped WSA/WSB asset researcher repeats the verified CC0 import/rights/source-provenance process for the remaining direct/CC-BY models (Sketchfab auth and no-AI rules are still open) **before any Georg-facing selection UI**. Only Georg may choose a landmark; WSB retopo and WS1 placement remain separate later slices.
+
+---
+
 **STATUS: RESEARCH PARTIAL / SOURCE DISCOVERY ONLY — NO CLAY PREVIEWS, NO GEORG SELECTION, NO ASSET-LIBRARY VIEW DEPLOYMENT.** Only free-source listings recorded. No GLBs downloaded, no source-isolated images, no physical assets imported. This Return and its machine-readable sibling are **agent/WS0 research material, not a Georg-ready choice card**.
 
 ## Owner, constraints and source of truth
