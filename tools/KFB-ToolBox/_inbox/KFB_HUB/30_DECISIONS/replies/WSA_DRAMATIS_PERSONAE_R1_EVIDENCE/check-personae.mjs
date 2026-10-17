@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {searchText,previewReadiness} from '../WSA_DRAMATIS_PERSONAE_R1_SOURCE/dramatis-personae.js';
+const data=JSON.parse(readFileSync(new URL('../WSA_DRAMATIS_PERSONAE_R1_SOURCE/data/dramatis-personae-cache.json',import.meta.url)));let n=0;const test=(label,fn)=>{fn();n++;};
+test('9 actual character files',()=>assert.equal(data.characters.length,9));test('13 actual figure cards',()=>assert.equal(data.figures.length,13));
+const c=id=>data.characters.find(c=>c.id===id),f=id=>data.figures.find(f=>f.id===id);
+for(const [id,q]of [['lord_hunky','hanky'],['lord_hunky','anki'],['frizzlebob','herald'],['frizzlebob','comic'],['gothgirl','goth-girl']])test('search '+q,()=>assert(searchText(c(id),f(id)).includes(q)));
+for(const figure of data.figures)test('3D fail closed '+figure.id,()=>assert.equal(previewReadiness(figure).ready,false));
+test('FB approval retained',()=>assert.equal(f('frizzlebob').approval.status,'approved'));test('Hunky candidate retained',()=>assert.equal(f('lord_hunky').approval.status,'candidate'));
+test('9 original samples available',()=>assert.equal(data.sampleFiles.length,9));
+let leaves=0;function walk(v){if(!v||typeof v!=='object')return;if('v'in v){leaves++;assert(['GEORG','SOURCE','DESIGN','PREFILL','todo'].includes(v.status));return;}Object.values(v).forEach(walk);}data.characters.forEach(walk);test('all authored statuses accepted',()=>assert(leaves>300));
+const js=readFileSync(new URL('../WSA_DRAMATIS_PERSONAE_R1_SOURCE/dramatis-personae.js',import.meta.url),'utf8');test('No GLB/light runtime',()=>assert(!/GLTFLoader|new THREE|DirectionalLight|createActor|model-viewer/.test(js)));test('No write endpoint/localStorage',()=>assert(!/localStorage|method:\s*['"](?:POST|PUT|PATCH)|Authorization/.test(js)));
+console.log(JSON.stringify({tests:n,passed:n,characterSheets:9,figureCards:13,statusLeaves:leaves,previewRefused:13,voiceSamples:9,scope:'R1 read-only; 3D prerequisite unavailable'},null,2));

@@ -1,5 +1,12 @@
 # WSA Tool Cleanup R1 Return · V-390 · 17.10.2026
 
+## Aktualisierung · Georg-Freigabe und Veröffentlichung · 17.10.2026
+
+Georg hat ToolBox v10 und die alte Hub-Weiterleitung v13 ausdrücklich freigegeben. Beide exakten gespeicherten Versionen sind jetzt privat veröffentlicht: ToolBox `appgdep_6ad2dc45d4188191a3da7441d2948f20` (Quelle e3fb00ecf5fb29998cac848a5ba570205d5a0172) und alter Hub `appgdep_6ad2dc5a6e68819184ade91b851193a5` (Quelle fcd817798f5dbdefd444419e73dcbbded23ba8c0), beide native Status succeeded. URLs: https://kfb-toolbox.frizzlebob.chatgpt.site/?tab=motion und https://kfb-production-hub.frizzlebob.chatgpt.site (Umzug zu Claude). Zusätzliche HTTP-Inhaltsprüfung lieferte 401; eine neue authentifizierte Browser-Sichtprüfung wird nicht behauptet. PR #414 ist weiterhin offen/unmerged, Merge bleibt Georg. WS0-Anmeldung über Production Control Record f287cedf-c85b-4d46-8fc7-84d5d5e7d2dd und WSA_TO_WS0_TOOL_PUBLICATION_AND_PERSONAE_R1_2026-10-17.md. Georgs Präzisierung: bestehender Ort = ToolBox-Studio; kein neuer 'Figurinen-Workshop'.
+
+Der folgende ursprüngliche Return ist der historische Stand vor dieser Freigabe; seine Save-only-Aussagen zu v10/v13 sind durch diese Aktualisierung ersetzt. Der neue Dramatis-Personae-Kandidat Asset Library v16 bleibt dagegen unveröffentlicht.
+
+
 Owner WSA work. Ergebnis: belastbare Inventur, ein offener Redirect-PR und zwei gespeicherte Site-Versionen zur Abnahme. Kein neuer Arbeitsort, kein neues Werkzeug, kein Live-Schalten, kein Auto-Merge. Sound-Studio und Footstep-Pilot (V-388/V-389, PR #413) unverändert priorisiert.
 
 ## Stand und genaue Quellen

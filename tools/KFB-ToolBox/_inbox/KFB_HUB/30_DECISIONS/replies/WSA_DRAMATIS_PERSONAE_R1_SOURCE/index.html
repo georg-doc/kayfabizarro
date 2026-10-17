@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4efe5">
+  <meta name="description" content="KFB Asset Librarian — find, inspect, collect, and hand off canonical assets and visual construction references.">
+  <title>KFB Asset Librarian</title>
+  <link rel="preconnect" href="https://raw.githubusercontent.com">
+  <link rel="preconnect" href="https://3d.shep.bot">
+  <link rel="stylesheet" href="./styles.css?v=13-layout-r1">
+  <link rel="stylesheet" href="./dramatis-personae.css">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#browse" aria-label="KFB Asset Librarian home">
+      <span class="brand-mark" aria-hidden="true">KFB</span>
+      <span><strong>Asset Librarian</strong><small>Find → Inspect → Collect → Use</small></span>
+    </a>
+    <button class="rail-toggle" id="railToggle" type="button" aria-expanded="false" aria-controls="primaryRail" title="Expand navigation">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg>
+      <span>Menu</span>
+    </button>
+    <div class="registry-control">
+      <div class="registry-pill" id="registryPill">
+        <span class="pulse"></span>
+        <span><strong id="registryStatus">Connecting to Registry…</strong><small id="registryFreshness">Checking repository status…</small></span>
+      </div>
+      <button class="registry-refresh" id="refreshRegistry" type="button" aria-label="Refresh asset registry" title="Refresh asset registry">↻</button>
+    </div>
+    <button class="set-button" id="openSetButton" type="button"><span>Current set</span><strong id="setCount">0</strong></button>
+  </header>
+
+  <main class="shell">
+    <nav class="rail" id="primaryRail" aria-label="Primary">
+      <button class="nav-item active" type="button" data-view="browse" title="Assets"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4 8 8-4 8 4-8 4-8-4Zm0 0v8l8 4 8-4V8M12 12v8"/></svg></span><span class="nav-label">Assets</span></button>
+      <button class="nav-item" type="button" data-view="dramatis-personae" title="Dramatis Personae"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></svg></span><span class="nav-label">Dramatis Personae</span></button>
+      <a class="nav-item" href="./deck-library.html" title="Decks"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h12a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2V4Zm2 12h12M9 8h6M9 11h5"/></svg></span><span class="nav-label">Decks</span></a>
+      <button class="nav-item" type="button" data-view="external-search" title="External 3D"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5M10 7v6M7 10h6"/></svg></span><span class="nav-label">External 3D</span></button>
+      <button class="nav-item" type="button" data-view="motions" title="Motions"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16c3-8 5 0 8-8s5 0 8-4M16 4h4v4"/></svg></span><span class="nav-label">Motions</span></button>
+      <button class="nav-item" type="button" data-view="style-references" title="Style References"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3ZM18.5 14l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/></svg></span><span class="nav-label">Style References</span></button>
+      <button class="nav-item" type="button" data-view="saved" title="Saved Sets"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4V4Z"/></svg></span><span class="nav-label">Saved Sets</span></button>
+      <button class="nav-item" type="button" data-view="intake" title="Intake"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"/></svg></span><span class="nav-label">Intake</span></button>
+      <div class="rail-note">
+        <b>Registry-backed</b>
+        <span>No duplicate asset database.</span>
+      </div>
+    </nav>
+
+    <section class="workspace" aria-label="Asset browser">
+      <section id="dramatisPersonae" hidden aria-label="Dramatis Personae"></section>
+      <div class="search-zone">
+        <div id="assetSearchControls">
+        <label class="searchbox">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Search assets, packs, characters, props, motions…" aria-label="Search assets">
+          <kbd>⌘ K</kbd>
+        </label>
+
+        <div class="facets" aria-label="Asset filters">
+          <label><span>Family</span><select id="familyFilter"><option value="">All families</option></select></label>
+          <label><span>Pack</span><select id="packFilter"><option value="">All packs</option></select></label>
+          <label><span>Collection</span><select id="collectionFilter" disabled><option value="">Choose a pack first</option></select></label>
+          <label><span>Type</span><select id="typeFilter"><option value="">All types</option><option value="model-3d">3D model</option><option value="image-2d">Image</option><option value="audio">Audio</option></select></label>
+          <button class="filter-reset" id="resetFilters" type="button">Reset</button>
+        </div>
+
+        <div class="quick-row">
+          <div class="quick-filters" aria-label="Quick filters">
+            <button class="chip" type="button" data-kind="model-3d">3D</button>
+            <button class="chip" type="button" data-kind="image-2d">Image</button>
+            <button class="chip" type="button" data-kind="audio">Audio</button>
+            <button class="chip" type="button" data-rig="rigged">Rigged</button>
+            <button class="chip" type="button" data-rig="animated">Animated</button>
+          </div>
+          <div class="view-toggle" aria-label="Result view">
+            <button id="galleryButton" class="active" type="button" aria-label="Gallery view">▦</button>
+            <button id="listButton" type="button" aria-label="List view">☷</button>
+          </div>
+        </div>
+        </div>
+
+        <div id="externalSearchControls" hidden>
+          <form class="external-commandbar" id="externalSearchForm">
+            <label class="searchbox external-searchbox">
+              <span aria-hidden="true">⌕</span>
+              <input id="externalSearchInput" type="search" autocomplete="off" placeholder="Search external 3D sources…" aria-label="Search external 3D sources">
+              <kbd>⌘ K</kbd>
+            </label>
+            <label><span>Provider</span><select id="externalProvider"><option value="">All providers</option></select></label>
+            <label class="external-check"><input id="externalFreeOnly" type="checkbox" checked><span>Free only</span></label>
+            <label class="external-check"><input id="externalDownloadableOnly" type="checkbox"><span>Downloadable</span></label>
+            <button class="primary" id="externalSearchButton" type="submit">Search</button>
+          </form>
+          <div class="external-control-meta"><span id="externalProviderMeta">Loading providers…</span><b>External candidates stay outside the Registry until verified intake.</b></div>
+        </div>
+
+        <div id="referenceSearchControls" hidden>
+          <div class="reference-commandbar">
+            <label class="searchbox reference-searchbox">
+              <span aria-hidden="true">⌕</span>
+              <input id="referenceSearchInput" type="search" autocomplete="off" placeholder="Search 58 references…" aria-label="Search style references">
+              <kbd>⌘ K</kbd>
+            </label>
+            <button class="secondary reference-filter-toggle" id="toggleReferenceFilters" type="button" aria-expanded="false" aria-controls="referenceFacetPanel">Filters <span id="referenceFilterCount">0</span></button>
+            <button class="primary reference-add-trigger" id="openReferenceIntake" type="button">+ Add reference</button>
+          </div>
+          <div class="reference-quick-filters" aria-label="Quick reference filters">
+            <button class="chip active" type="button" data-reference-quick="">All</button>
+            <button class="chip" type="button" data-reference-quick="CURATED">Curated</button>
+            <button class="chip" type="button" data-reference-quick="SAVED">Saved</button>
+            <button class="chip" type="button" data-reference-quick="INSPECTED">Inspected</button>
+          </div>
+          <div class="reference-facets" id="referenceFacetPanel" aria-label="Style reference filters" hidden>
+            <label><span>Source</span><select id="referenceSourceFilter"><option value="">All sources</option></select></label>
+            <label><span>Subject</span><select id="referenceSubjectFilter"><option value="">All subjects</option></select></label>
+            <label><span>Technique</span><select id="referenceTechniqueFilter"><option value="">All techniques</option></select></label>
+            <label><span>Use case</span><select id="referenceUseCaseFilter"><option value="">All use cases</option></select></label>
+            <label><span>Media</span><select id="referenceMediaFilter"><option value="">All media</option></select></label>
+            <label><span>Rights / visibility</span><select id="referenceRightsFilter"><option value="">All rights</option></select></label>
+            <label><span>Verification</span><select id="referenceVerificationFilter"><option value="">All statuses</option></select></label>
+            <button class="filter-reset" id="resetReferenceFilters" type="button">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div><p id="eyebrow">BROWSE / ALL ASSETS</p><h1 id="viewTitle">Find something worth using.</h1></div>
+        <p id="resultMeta" aria-live="polite">Loading the canonical working shelf…</p>
+      </div>
+
+      <section class="reference-browser" id="referenceBrowser" hidden aria-label="Style reference browser">
+        <aside class="reference-gallery-pane" aria-label="Reference gallery">
+          <div class="reference-gallery-head"><strong>Gallery</strong><span id="referenceResultMeta">69 references · fallback</span></div>
+          <div id="referenceGallery" class="reference-gallery" aria-live="polite"></div>
+        </aside>
+        <section class="reference-viewer-pane" id="referenceViewerPane" aria-label="Reference viewer"></section>
+        <aside class="reference-details-pane" id="referenceDetailsPane" aria-label="Reference details"></aside>
+      </section>
+
+      <section class="external-browser" id="externalBrowser" hidden aria-label="External 3D search">
+        <div class="external-boundary">
+          <div><p>EXTERNAL DISCOVERY · PROVIDER CLAIMS</p><h1>Search outside. Admit deliberately.</h1></div>
+          <span id="externalResultMeta" aria-live="polite">Ready · Registry remains canonical</span>
+        </div>
+        <p class="external-error" id="externalError" role="status" hidden></p>
+        <div class="external-layout">
+          <div class="external-results" id="externalResults"></div>
+          <aside class="external-detail" id="externalDetail"></aside>
+        </div>
+        <details class="external-panel" open>
+          <summary>Compare provider claims <span id="externalCompareCount">0/4</span></summary>
+          <div id="externalCompare"></div>
+        </details>
+        <details class="external-panel" id="externalIntakePanel">
+          <summary>Prepared Intake <span id="externalIntakeCount">0</span></summary>
+          <p class="external-panel-note">Metadata only. A trusted workflow must download, hash, isolate, render-check and register the selected file.</p>
+          <div id="externalIntakeQueue"></div>
+        </details>
+      </section>
+
+      <div id="noticePanel" class="notice-panel" hidden></div>
+      <div id="results" class="results gallery" aria-live="polite"></div>
+      <button id="showMore" class="show-more" type="button" hidden>Show more</button>
+    </section>
+
+    <aside class="inspector" id="inspector" aria-label="Asset inspector" aria-hidden="true">
+      <div class="inspector-empty" id="inspectorEmpty">
+        <div class="empty-orbit"><span>✦</span></div>
+        <h2>Choose an asset</h2>
+        <p>Open a card to inspect the preview, exact identity and source facts.</p>
+      </div>
+      <div id="inspectorContent" hidden>
+        <div class="preview" id="preview"></div>
+        <div class="inspector-copy">
+          <button class="close-inspector" id="closeInspector" type="button" aria-label="Close inspector">×</button>
+          <p class="asset-family" id="assetFamily"></p>
+          <h2 id="assetTitle"></h2>
+          <div class="asset-source-row">
+            <p class="asset-path" id="assetPath"></p>
+            <a class="asset-github-link" id="assetGithubLink" href="#" target="_blank" rel="noopener noreferrer" hidden>Open on GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="fact-grid" id="factGrid"></div>
+          <div class="inspector-actions">
+            <button class="primary" id="toggleSet" type="button">Add to set</button>
+            <button class="secondary" id="copyReference" type="button">Copy reference</button>
+          </div>
+          <div id="assetReferenceLinks" class="asset-reference-links"></div>
+          <details class="technical">
+            <summary>Technical details</summary>
+            <dl id="technicalDetails"></dl>
+          </details>
+        </div>
+      </div>
+      <div id="referenceInspector" hidden></div>
+    </aside>
+  </main>
+
+  <section class="set-drawer" id="setDrawer" aria-hidden="true">
+    <div class="drawer-head">
+      <div><p>SAVED SET</p><input id="setName" value="Town Market Props" aria-label="Set name"></div>
+      <button id="closeSet" type="button" aria-label="Close saved set">×</button>
+    </div>
+    <textarea id="setNotes" rows="2" placeholder="Notes for this working set…" aria-label="Set notes"></textarea>
+    <div id="setItems" class="set-items"></div>
+    <div class="drawer-actions">
+      <button id="newSet" type="button">New set</button>
+      <button id="copyHandoff" type="button">Copy handoff</button>
+      <button class="primary" id="downloadHandoff" type="button">Export JSON</button>
+    </div>
+    <p class="candidate-note" id="candidateNote">Exports are candidate-only. WorldBuilder owns placement, transforms and persistence.</p>
+  </section>
+  <div class="backdrop" id="backdrop" hidden></div>
+  <dialog class="reference-intake-dialog" id="referenceIntakeDialog">
+    <div class="dialog-head">
+      <div><p>STYLE REFERENCES</p><h2>Add an official reference</h2></div>
+      <button id="closeReferenceIntake" type="button" aria-label="Close add reference">×</button>
+    </div>
+    <p class="dialog-note">Paste a creator or tutorial URL. The source stays remote and browser-local cards are preserved.</p>
+    <form class="url-intake" id="referenceIntakeForm">
+      <label>
+        <span class="sr-only">Official creator or tutorial URL</span>
+        <input id="referenceUrlInput" type="url" required placeholder="https://theetheringtonbrothers.blogspot.com/…">
+      </label>
+      <button class="primary" type="submit">Resolve URL</button>
+    </form>
+    <div class="intake-result" id="referenceIntakeResult" hidden></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="./app.js?v=13-layout-r1"></script>
+</body>
+</html>

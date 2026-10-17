@@ -1,0 +1,235 @@
+[
+  {
+    "id": "black_knight",
+    "name": "Black Knight",
+    "cardApproval": "candidate",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "Blender eye cleanup + anchors",
+      "eye setting on anchored seat + Georg save",
+      "clay proof"
+    ],
+    "cardTodos": []
+  },
+  {
+    "id": "brain_cyborg",
+    "name": "Brain-Cyborg",
+    "cardApproval": "open-design",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "aliens collar construction PASS first",
+      "story",
+      "Blender build + clay proofs",
+      "everything in this card"
+    ],
+    "cardTodos": [
+      "Story",
+      "Blender build",
+      "Voice"
+    ]
+  },
+  {
+    "id": "demon_lord",
+    "name": "Demon Lord",
+    "cardApproval": "candidate",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "baked cleanup PASS",
+      "eye setting on anchored seat + Georg save",
+      "clay proof"
+    ],
+    "cardTodos": []
+  },
+  {
+    "id": "frizzlebob",
+    "name": "FrizzleBob",
+    "cardApproval": "approved",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "clay proof pair front/3/4/side under the R2 stage-light module (V-346.6, V-392)"
+    ],
+    "cardTodos": [
+      "Put the FB v5b GLB on main, or name a fixed asset branch (today only on georg-doc-patch-3 / ws1).",
+      "Export field gaps noted by WS1 (clayLids fields of a newer ToolBox, export label): resolve in the Figure Workshop (V-241/V-244)."
+    ]
+  },
+  {
+    "id": "gothgirl",
+    "name": "GothGirl",
+    "cardApproval": "candidate",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "Georg PASS on GothGirl_NoEyes (EYE-CLEANUP-02 contact sheet row)",
+      "eye setting A vs B + save",
+      "mouth decision",
+      "clay proof pair"
+    ],
+    "cardTodos": []
+  },
+  {
+    "id": "lady_dory",
+    "name": "Lady Dory",
+    "cardApproval": "candidate",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "Figure Workshop r4 integration report (BRIEF_WSA_ALIENS_TOOLBOX_R4, Hub b61)",
+      "Georg tunes + saves (V-317)",
+      "E2 lids in socket (V-348.4)",
+      "Space Ranger head-turn transfer (V-353.2 / WSB B5)",
+      "brows (later, V-297)",
+      "Dory head oval + mouth area Blender job (V-336 BLENDER_MCP_HANDOFF) – status unknown"
+    ],
+    "cardTodos": [
+      "Put r4 GLB + card on main after Georg's save; pin commit (recipe has commit null)."
+    ]
+  },
+  {
+    "id": "lord_hunky",
+    "name": "Lord Hunky",
+    "cardApproval": "candidate",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "Figure Workshop r4 integration report (BRIEF_WSA_ALIENS_TOOLBOX_R4, Hub b61)",
+      "Georg tunes + saves (V-317)",
+      "E2 lids in socket (V-348.4)",
+      "Space Ranger head-turn transfer (V-353.2 / WSB B5)",
+      "brows (later, V-297)"
+    ],
+    "cardTodos": [
+      "Put r4 GLB + card on main after Georg's save; pin commit (recipe has commit null)."
+    ]
+  },
+  {
+    "id": "monstrosity",
+    "name": "Monstrosity",
+    "cardApproval": "candidate",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "baked cleanup PASS",
+      "eye setting on anchored seat + Georg save",
+      "clay proof"
+    ],
+    "cardTodos": []
+  },
+  {
+    "id": "mummy_a",
+    "name": "Mummy_A",
+    "cardApproval": "candidate",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "close-up pair front + 3/4 with EyeRig v6 on the anchors + clay (WSB re-render per ANTWORT_WS0_2026-10-17)",
+      "mouth set per voice",
+      "Georg confirms which mummy sings which voice",
+      "V-201 converge/gaze check"
+    ],
+    "cardTodos": [
+      "Georg's yes: copy the NoEyes GLB next to the original on main (eye-cleanup-01.json#out), then re-pin body.glb."
+    ]
+  },
+  {
+    "id": "mummy_b",
+    "name": "Mummy_B",
+    "cardApproval": "candidate",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "close-up pair front + 3/4 with EyeRig v6 on the anchors + clay (WSB re-render per ANTWORT_WS0_2026-10-17)",
+      "mouth set per voice",
+      "Georg confirms which mummy sings which voice",
+      "V-201 converge/gaze check"
+    ],
+    "cardTodos": [
+      "Georg's yes: copy the NoEyes GLB next to the original on main (eye-cleanup-01.json#out), then re-pin body.glb."
+    ]
+  },
+  {
+    "id": "norman",
+    "name": "Norman",
+    "cardApproval": "open-design",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "Site proof: Source only → Face candidate with clay (V-380)",
+      "Georg gate NORMAN_TOOLBOX_SITE_FINE_TUNE_01 (TUNE/APPROVE/REJECT)",
+      "voice casting",
+      "baked texture instead of runtime texclean"
+    ],
+    "cardTodos": [
+      "Voice not cast (voice_casting.r1.json has no Norman)."
+    ]
+  },
+  {
+    "id": "orc_brute",
+    "name": "Orc Brute",
+    "cardApproval": "candidate",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "Georg confirms G4 (image ↔ \"Orc passt\")",
+      "animated eyes (life/blink/gaze) + Figure Workshop save (V-353 r4 run)"
+    ],
+    "cardTodos": [
+      "Put OrcBrute.kfb-eyes.r1.glb on main after Georg's eye PASS."
+    ]
+  },
+  {
+    "id": "witch",
+    "name": "Witch",
+    "cardApproval": "candidate",
+    "previewReady": false,
+    "sharedRuntimeMissing": [
+      "kfb.figure/1 consumer",
+      "kfb-stage-light.v1.js"
+    ],
+    "cardMissing": [
+      "close-up pair with eye rig + clay",
+      "V-201 check"
+    ],
+    "cardTodos": []
+  }
+]
