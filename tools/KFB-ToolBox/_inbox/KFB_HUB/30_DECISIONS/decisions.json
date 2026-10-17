@@ -5829,6 +5829,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-421",
+   "date": "2026-10-17",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Landmark-Kandidaten R1 (Georg: WSA-Web-Chat sucht per 3D-Asset-Suche Genius loci, Weltkulturerbe, Wahrzeichen als Dioramen, cartoonig + Clay für KFB, Georg wählt aus): WSA sucht und schlägt vor (2–3 Kandidaten je Landmark mit Lizenz, Clay-Vorschau), Auswahl in der Asset Library, Aufbereitung danach als WSB-Job, Einbau WS1. TOP 10 (WS0-Vorschlag): Stonehenge, Bremer Stadtmusikanten, Neuschwanstein, Zikkurat von Ur, Turm zu Babel, Globe Theatre, Moai, Freiheitsstatue, Chichén Itzá, Borobudur; Reserve Pisa, Akropolis; keine Opfer-/Gedenkorte.",
+   "values": {},
+   "owner": "WSA (Web-Chat) · Georg wählt · WSB · WS1",
+   "check": "Kandidaten-JSON + Clay-Vorschau, Georg wählt",
+   "source": "replies/BRIEF_WSA_LANDMARKS_R1.md · PR #415",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Welt braucht wiedererkennbare Orte je Deck; vorhandene freie Modelle sparen Bauzeit, wenn Lizenz und Clay-Look vor der Auswahl geprüft sind.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5901,7 +5916,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:749",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:751",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

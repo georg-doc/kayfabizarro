@@ -1,6 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-421: Landmark-Kandidaten R1 an WSA (Web-Chat, 3D-Asset-Suche, TOP 10 je Deck, Auswahl in der Asset Library, Hub b96).
+- E2 R1c fertig (Sockel unverändert, nur zurückgezogen, Stufen 0–0,40 R; ab 0,10 R tritt die Lidhaut seitlich durch die Schale) – Georg wählt.
 - SONG_SPEC R3.2: A5-Quote ohne A7-Zahlen-Ausschreibungen (WSA meldete Widerspruch bei 9/11), song_gate.py entsprechend; Hub b94 ergänzt.
 - Hub-Masterplan aktualisiert (Songs R4/R5 + Batch WS1, WSB-Reihenfolge, E2-Lid-Schritt, Figuren-SSOT, Tools fertig, M3/L3-Vorschau §75); erledigte Briefings b61/b68/b76/b77/b79/b88/b89/b91 abgehakt.
 - V-420: E2-Proof R1b FAIL; Sockel bleibt exakt wie r4, nur starr nach hinten verschoben (R1c mit Stufen 0–0,40 R); WSB-Nachträge 12/13 gestrichen (14. Nachtrag).
