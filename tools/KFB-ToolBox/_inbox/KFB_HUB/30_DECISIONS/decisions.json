@@ -5964,6 +5964,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-431",
+   "date": "2026-10-17",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Abnahme-Grundsatz (Georg 17.10., Hub q11–q13): „einheitliche und repräsentative Darstellung aller Abnahmen“, keine Regresse als Kontext, Figuren immer mit Augen. Daraus: (1) Eine Abnahme-Bühne kfb-proof-stage.v1 (replies/PROOF_STAGE_R1/) für alle Arbeitsplätze: gleiches Licht-Modul, Knet-Modul v1.1, EyeRig mit E2-Lidern automatisch, neutrale Knet-Hohlkehle, feste Kamera-Presets (front/¾/seitlich/hinten/Gesicht nah/fern/Größenvergleich), feste Auflösung, automatische Gate-Prüfungen (Augen, fehlende Materialien/graue Flächen, Schweben, Fremdteile, Knet aktiv), Kontaktbogen fürs Hub. Blender-Renders gelten nicht mehr als Abnahmebild. (2) WS0 zeigt Georg nur, was diese Gates besteht und WS0 selbst geprüft hat – nie ein Teil mit sichtbarem Fehler (z. B. graue Fläche im Zylinder). (3) Keine Eigenbauten, wo es Assets gibt (Zylinder aus Asset-Suche bzw. Georgs Auswahl). Einzelurteile: B12 r3 FAIL (graue Fläche im Zylinder, Zylinder Eigenbau ohne Cartoon-Form/Dynamik); B22 r2 Lampen PASS; Knet-Modul: mehr Knete, Kerben-/Dellen-Mathematik verbessern (v1.1).",
+   "values": {},
+   "owner": "WS0 (Abnahme-Bühne, Knet v1.1) · alle Arbeitsplätze",
+   "check": "Kontaktbogen aus der Abnahme-Bühne, Gates grün, WS0-Sichtung",
+   "source": "replies/PROOF_STAGE_R1/ · replies/CLAY_SSOT_R1/",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Jeder Arbeitsplatz zeigte mit eigenem Licht, eigener Knete, ohne Augen und mit wechselndem Hintergrund – Georg konnte nicht verlässlich abnehmen, und WS0 ließ sichtbare Fehler durch.",
+   "applies": "sofort, für alle künftigen Abnahmen"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6051,7 +6066,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:772",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:776",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
