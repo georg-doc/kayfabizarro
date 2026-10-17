@@ -1,6 +1,6 @@
 {
   "schema": "kfb.landmark-candidates/1",
-  "revision": "R1-research-unrendered",
+  "revision": "R1.1-source-proof-two",
   "date": "2026-10-17",
   "ticket": "V-421",
   "owner": "KFB existing Asset Librarian view / existing img2threejs landmark authoring",
@@ -8,9 +8,9 @@
   "branch": "docs/kfb-decisions-register-2026-10-11",
   "authority": "WS0 only decides priority; Georg selects asset after source isolation and Clay preview",
   "mode": "RESEARCH_ONLY",
-  "gateStatus": "SOURCE_RESEARCH_NOT_ELIGIBLE_FOR_GEORG_SELECTION",
+  "gateStatus": "TWO_SOURCE_PROOFS_RENDERED_WS0_VISUAL_REVIEW_PENDING",
   "licensePolicy": "CC0 preferred, CC BY with recorded attribution; reject NC/paid/private unless separate later agreement, no actual asset mirrored",
-  "sourceAudit": "Public web listings reviewed; downloaded meshes, formats and source licenses not independently inspected",
+  "sourceAudit": "Two public CC0 archives actually downloaded in GitHub Actions run 39044683249, originals/imported meshes hash-pinned and rendered; all other sources retain listing-only state",
   "mcp3dAssets": {
     "configuredAt": "Dropbox /CLAUDE/.mcp.json",
     "endpoint": "https://3d.shep.bot/mcp",
@@ -21,8 +21,8 @@
   "previewPolicy": {
     "V346": "clay preview required per candidate before Georg",
     "V383": "never draw markup over source image",
-    "allCandidatePreviewsGenerated": 0,
-    "sourceIsolatedMeshes": 0
+    "allCandidatePreviewsGenerated": 2,
+    "sourceIsolatedMeshes": 2
   },
   "assetLibraryView": {
     "name": "Landmark-Kandidaten",
@@ -35,7 +35,7 @@
   "summary": {
     "landmarks": 10,
     "sourceRecords": 23,
-    "clayPreviews": 0,
+    "clayPreviews": 2,
     "eligibleForSelection": 0
   },
   "landmarks": [
@@ -103,25 +103,37 @@
           },
           "files": {
             "downloadable": true,
-            "formatsConfirmed": [],
-            "archiveType": null,
-            "archiveInspected": false
+            "formatsConfirmed": [
+              ".blend1"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "1c3b5e0206c35eebfbf89985c21adc3472487288d6347ee8ad283c29ef6054bc",
+            "selectedModelFile": "Stonehengebed.blend1",
+            "selectedModelSha256": "a172911fdeadf25567e61fc2da2cfb42e19ad614c1c2c82f43be77c1d160e045"
           },
           "geometry": {
             "triangles": 640,
-            "metric": "source_listing_triangles",
-            "verifiedAgainstDownloadedMesh": false
+            "metric": "independently_measured_mesh_triangles",
+            "verifiedAgainstDownloadedMesh": true,
+            "polygons": 320
           },
           "media": {
             "thumbnailUrl": null,
             "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
             "clayPreviewUrl": null,
-            "clayPreviewStatus": "NOT_RENDERED",
-            "sourceIsolatedProofUrl": null,
-            "overlayOnPreviewAllowed": false
+            "clayPreviewStatus": "PREVIEW_RENDERED_NOT_WS0_ACCEPTED",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39044683249",
+            "overlayOnPreviewAllowed": false,
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/stonehenge_oga_cc0/source-isolation.png",
+            "clayPreviewRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/stonehenge_oga_cc0/clay-preview.png",
+            "sourceImageSha256": "5653518020c878d15508b871a09d290818ca7dcfb9c7a1fb188d7db991c069a2",
+            "clayImageSha256": "532fb13211c83fa39d16b18f3a96bfc3c71b3d2412dae3b835eb134c15ef24ff",
+            "sourceIsolationStatus": "SOURCE_RENDERED",
+            "previewEvidenceClass": "ORIGINAL_MONUMENT_SOURCE"
           },
           "rightsFlags": [],
-          "notes": "OpenGameArt Stonehenge.zip; 392 vertices / 320 faces. Zip internals uninspected.",
+          "notes": "OpenGameArt Stonehenge.zip; 392 vertices / 320 faces. Zip internals uninspected. Verified native real-mesh clay proof: 640 triangles; not accepted or selected.",
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         },
         {
@@ -283,26 +295,39 @@
           },
           "files": {
             "downloadable": true,
-            "formatsConfirmed": [],
-            "archiveType": null,
-            "archiveInspected": false
+            "formatsConfirmed": [
+              ".fbx",
+              ".glb",
+              ".obj"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "921f3f73927bb23106cae34bc21d5ab4b033a9fc120475e96f714a406e3169df",
+            "selectedModelFile": "Models/GLB format/tower-square.glb",
+            "selectedModelSha256": "ae2e4f11247fef4e8e550011c20bc1862839cd4cfd21590aec9781ae0fbbbc7f"
           },
           "geometry": {
-            "triangles": null,
-            "polygons": null,
-            "metric": "not_published",
-            "verifiedAgainstDownloadedMesh": false
+            "triangles": 176,
+            "polygons": 176,
+            "metric": "independently_measured_mesh_triangles",
+            "verifiedAgainstDownloadedMesh": true
           },
           "media": {
             "thumbnailUrl": null,
             "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
             "clayPreviewUrl": null,
-            "clayPreviewStatus": "NOT_RENDERED",
-            "sourceIsolatedProofUrl": null,
-            "overlayOnPreviewAllowed": false
+            "clayPreviewStatus": "PREVIEW_RENDERED_NOT_WS0_ACCEPTED",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39044683249",
+            "overlayOnPreviewAllowed": false,
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/kenney_castle_cc0/source-isolation.png",
+            "clayPreviewRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/kenney_castle_cc0/clay-preview.png",
+            "sourceImageSha256": "e2c52a44aebf6d9818ee4772169d021c4c06fab5afa19ae4fb784d0dc4d87bb0",
+            "clayImageSha256": "90d64856ffd2d43e2725a5c10ec7d26170c6fe439149c648dcdb8c5d7fcd3c94",
+            "sourceIsolationStatus": "SOURCE_RENDERED",
+            "previewEvidenceClass": "ONLY_CONSTRUCTION_DONOR"
           },
           "rightsFlags": [],
-          "notes": "75-model architectural kit; NOT a faithful Neuschwanstein asset.",
+          "notes": "75-model architectural kit; NOT a faithful Neuschwanstein asset. Verified native real-mesh clay proof: 176 triangles; not accepted or selected.",
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         },
         {
@@ -590,26 +615,39 @@
           },
           "files": {
             "downloadable": true,
-            "formatsConfirmed": [],
-            "archiveType": null,
-            "archiveInspected": false
+            "formatsConfirmed": [
+              ".fbx",
+              ".glb",
+              ".obj"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "921f3f73927bb23106cae34bc21d5ab4b033a9fc120475e96f714a406e3169df",
+            "selectedModelFile": "Models/GLB format/tower-square.glb",
+            "selectedModelSha256": "ae2e4f11247fef4e8e550011c20bc1862839cd4cfd21590aec9781ae0fbbbc7f"
           },
           "geometry": {
-            "triangles": null,
-            "polygons": null,
-            "metric": "not_published",
-            "verifiedAgainstDownloadedMesh": false
+            "triangles": 176,
+            "polygons": 176,
+            "metric": "independently_measured_mesh_triangles",
+            "verifiedAgainstDownloadedMesh": true
           },
           "media": {
             "thumbnailUrl": null,
             "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
             "clayPreviewUrl": null,
-            "clayPreviewStatus": "NOT_RENDERED",
-            "sourceIsolatedProofUrl": null,
-            "overlayOnPreviewAllowed": false
+            "clayPreviewStatus": "PREVIEW_RENDERED_NOT_WS0_ACCEPTED",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39044683249",
+            "overlayOnPreviewAllowed": false,
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/kenney_castle_cc0/source-isolation.png",
+            "clayPreviewRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/kenney_castle_cc0/clay-preview.png",
+            "sourceImageSha256": "e2c52a44aebf6d9818ee4772169d021c4c06fab5afa19ae4fb784d0dc4d87bb0",
+            "clayImageSha256": "90d64856ffd2d43e2725a5c10ec7d26170c6fe439149c648dcdb8c5d7fcd3c94",
+            "sourceIsolationStatus": "SOURCE_RENDERED",
+            "previewEvidenceClass": "ONLY_CONSTRUCTION_DONOR"
           },
           "rightsFlags": [],
-          "notes": "Generic timber-like building donor; not Globe Theatre geometry.",
+          "notes": "Generic timber-like building donor; not Globe Theatre geometry. Verified native real-mesh clay proof: 176 triangles; not accepted or selected.",
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
@@ -1080,5 +1118,5 @@
     "Hiroshima",
     "Mount Rushmore"
   ],
-  "nextGate": "WSA_V421_ACTUAL_ASSET_RETRIEVAL_SOURCE_ISOLATION_CLAY_PREVIEW"
+  "nextGate": "WS0_REVIEW_TWO_SOURCE_PROOFS_THEN_WSA_COMPLETE_REMAINING_SOURCE_PREVIEWS"
 }
