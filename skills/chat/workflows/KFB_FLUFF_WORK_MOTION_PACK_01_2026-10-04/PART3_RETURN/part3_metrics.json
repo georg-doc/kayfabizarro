@@ -1,0 +1,686 @@
+{
+ "play": {
+  "Rig_Medium": {
+   "kfb_action_header_soccerball_a": {
+    "frames": 58,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Medium/KFB_Motion_action.glb",
+    "headMinOverH": 0.513,
+    "contactFrame": 27,
+    "part": "head",
+    "partPos": [
+     -0.017,
+     1.168,
+     -0.213
+    ],
+    "partSpeed": 1.02,
+    "hitDir": [
+     0.09,
+     0.62,
+     0.78
+    ]
+   },
+   "kfb_action_kicking_a": {
+    "frames": 103,
+    "loop": false,
+    "rootMotion": "travel",
+    "library": "libs/Rig_Medium/KFB_Motion_action.glb",
+    "headMinOverH": 0.393,
+    "contactFrame": 49,
+    "part": "toes.r",
+    "partPos": [
+     0.186,
+     0.407,
+     0.936
+    ],
+    "partSpeed": 9.69,
+    "hitDir": [
+     0.38,
+     0.65,
+     0.66
+    ]
+   },
+   "kfb_action_inside_crescent_kick_a": {
+    "frames": 81,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Medium/KFB_Motion_action_i04.glb",
+    "headMinOverH": 0.385,
+    "contactFrame": 37,
+    "part": "toes.r",
+    "partPos": [
+     -0.348,
+     0.177,
+     0.148
+    ],
+    "partSpeed": 7.53,
+    "hitDir": [
+     -0.0,
+     0.43,
+     0.91
+    ]
+   },
+   "kfb_action_headbutt_a": {
+    "frames": 64,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Medium/KFB_Motion_action.glb",
+    "headMinOverH": 0.406,
+    "contactFrame": 16,
+    "part": "head",
+    "partPos": [
+     -0.035,
+     1.027,
+     0.386
+    ],
+    "partSpeed": 2.44,
+    "hitDir": [
+     0.18,
+     -0.25,
+     0.95
+    ]
+   },
+   "kfb_action_headbutt_b": {
+    "frames": 54,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Medium/KFB_Motion_action_i04.glb",
+    "headMinOverH": 0.4,
+    "contactFrame": 14,
+    "part": "head",
+    "partPos": [
+     -0.044,
+     1.035,
+     0.451
+    ],
+    "partSpeed": 3.08,
+    "hitDir": [
+     0.2,
+     -0.23,
+     0.95
+    ]
+   },
+   "kfb_throw_frisbee_a": {
+    "frames": 100,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "headMinOverH": 0.496,
+    "contactFrame": 39,
+    "part": "hand.r",
+    "partPos": [
+     0.285,
+     0.806,
+     1.001
+    ],
+    "partSpeed": 6.68,
+    "hitDir": [
+     -0.1,
+     0.24,
+     0.96
+    ]
+   },
+   "kfb_throw_goalkeeper_overhand_a": {
+    "frames": 86,
+    "loop": false,
+    "rootMotion": "travel",
+    "library": "libs/Rig_Medium/KFB_Motion_throw.glb",
+    "headMinOverH": 0.413,
+    "contactFrame": 44,
+    "part": "hand.r",
+    "partPos": [
+     -0.386,
+     1.359,
+     1.685
+    ],
+    "partSpeed": 11.23,
+    "hitDir": [
+     -0.17,
+     0.11,
+     0.98
+    ]
+   },
+   "kfb_locomotion_skateboarding_a": {
+    "frames": 66,
+    "loop": true,
+    "rootMotion": "travel",
+    "library": "libs/Rig_Medium/KFB_Motion_locomotion.glb",
+    "headMinOverH": 0.46,
+    "footSepMax": 0.617,
+    "footSepMean": 0.414,
+    "footLowMin": 0.147,
+    "bothFeetDownFrac": 0.77,
+    "travel": 3.38
+   },
+   "kfb_locomotion_skateboarding_b": {
+    "frames": 67,
+    "loop": true,
+    "rootMotion": "travel",
+    "library": "libs/Rig_Medium/KFB_Motion_locomotion_i06.glb",
+    "headMinOverH": 0.452,
+    "footSepMax": 0.606,
+    "footSepMean": 0.409,
+    "footLowMin": 0.158,
+    "bothFeetDownFrac": 0.84,
+    "travel": 3.55
+   },
+   "kfb_locomotion_skateboarding_c": {
+    "frames": 39,
+    "loop": true,
+    "rootMotion": "travel",
+    "library": "libs/Rig_Medium/KFB_Motion_locomotion_i06.glb",
+    "headMinOverH": 0.542,
+    "footSepMax": 0.417,
+    "footSepMean": 0.415,
+    "footLowMin": 0.212,
+    "bothFeetDownFrac": 1.0,
+    "travel": 1.95
+   },
+   "kfb_idle_happy_a": {
+    "frames": 89,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Medium/KFB_Motion_idle.glb",
+    "headMinOverH": 0.558,
+    "footSepMax": 0.447,
+    "footSepMean": 0.43,
+    "footLowMin": 0.149,
+    "bothFeetDownFrac": 1.0,
+    "travel": 0.0
+   },
+   "kfb_dance_twist_dance_a": {
+    "frames": 284,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Medium/KFB_Motion_dance.glb",
+    "headMinOverH": 0.442,
+    "footSepMax": 0.515,
+    "footSepMean": 0.413,
+    "footLowMin": 0.147,
+    "bothFeetDownFrac": 1.0,
+    "travel": 0.0
+   }
+  },
+  "Rig_Large": {
+   "kfb_action_header_soccerball_a": {
+    "frames": 58,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Large/KFB_Motion_action.glb",
+    "headMinOverH": 0.714,
+    "contactFrame": 27,
+    "part": "head",
+    "partPos": [
+     -0.026,
+     3.127,
+     -0.567
+    ],
+    "partSpeed": 2.69,
+    "hitDir": [
+     0.16,
+     0.6,
+     0.78
+    ]
+   },
+   "kfb_action_kicking_a": {
+    "frames": 103,
+    "loop": false,
+    "rootMotion": "travel",
+    "library": "libs/Rig_Large/KFB_Motion_action.glb",
+    "headMinOverH": 0.53,
+    "contactFrame": 48,
+    "part": "toes.r",
+    "partPos": [
+     0.001,
+     0.602,
+     2.068
+    ],
+    "partSpeed": 14.94,
+    "hitDir": [
+     0.61,
+     0.71,
+     0.36
+    ]
+   },
+   "kfb_action_inside_crescent_kick_a": {
+    "frames": 81,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Large/KFB_Motion_action_i04.glb",
+    "headMinOverH": 0.508,
+    "contactFrame": 38,
+    "part": "toes.r",
+    "partPos": [
+     -0.808,
+     0.806,
+     0.954
+    ],
+    "partSpeed": 21.06,
+    "hitDir": [
+     0.11,
+     0.62,
+     0.78
+    ]
+   },
+   "kfb_action_headbutt_a": {
+    "frames": 64,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Large/KFB_Motion_action.glb",
+    "headMinOverH": 0.521,
+    "contactFrame": 17,
+    "part": "head",
+    "partPos": [
+     -0.087,
+     2.672,
+     1.314
+    ],
+    "partSpeed": 7.36,
+    "hitDir": [
+     0.16,
+     -0.31,
+     0.94
+    ]
+   },
+   "kfb_action_headbutt_b": {
+    "frames": 54,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Large/KFB_Motion_action_i04.glb",
+    "headMinOverH": 0.512,
+    "contactFrame": 14,
+    "part": "head",
+    "partPos": [
+     -0.144,
+     2.765,
+     1.24
+    ],
+    "partSpeed": 8.87,
+    "hitDir": [
+     0.18,
+     -0.24,
+     0.95
+    ]
+   },
+   "kfb_throw_frisbee_a": {
+    "frames": 100,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Large/KFB_Motion_throw.glb",
+    "headMinOverH": 0.685,
+    "contactFrame": 39,
+    "part": "hand.r",
+    "partPos": [
+     0.631,
+     1.86,
+     2.858
+    ],
+    "partSpeed": 16.03,
+    "hitDir": [
+     -0.09,
+     0.23,
+     0.97
+    ]
+   },
+   "kfb_throw_goalkeeper_overhand_a": {
+    "frames": 86,
+    "loop": false,
+    "rootMotion": "travel",
+    "library": "libs/Rig_Large/KFB_Motion_throw.glb",
+    "headMinOverH": 0.54,
+    "contactFrame": 44,
+    "part": "hand.r",
+    "partPos": [
+     -1.17,
+     3.477,
+     4.235
+    ],
+    "partSpeed": 30.37,
+    "hitDir": [
+     -0.2,
+     0.1,
+     0.98
+    ]
+   },
+   "kfb_locomotion_skateboarding_a": {
+    "frames": 66,
+    "loop": true,
+    "rootMotion": "travel",
+    "library": "libs/Rig_Large/KFB_Motion_locomotion.glb",
+    "headMinOverH": 0.609,
+    "footSepMax": 1.447,
+    "footSepMean": 0.938,
+    "footLowMin": 0.293,
+    "bothFeetDownFrac": 0.74,
+    "travel": 8.69
+   },
+   "kfb_locomotion_skateboarding_b": {
+    "frames": 67,
+    "loop": true,
+    "rootMotion": "travel",
+    "library": "libs/Rig_Large/KFB_Motion_locomotion_i06.glb",
+    "headMinOverH": 0.6,
+    "footSepMax": 1.425,
+    "footSepMean": 0.919,
+    "footLowMin": 0.321,
+    "bothFeetDownFrac": 0.82,
+    "travel": 9.1
+   },
+   "kfb_locomotion_skateboarding_c": {
+    "frames": 39,
+    "loop": true,
+    "rootMotion": "travel",
+    "library": "libs/Rig_Large/KFB_Motion_locomotion_i06.glb",
+    "headMinOverH": 0.748,
+    "footSepMax": 0.947,
+    "footSepMean": 0.934,
+    "footLowMin": 0.444,
+    "bothFeetDownFrac": 1.0,
+    "travel": 5.01
+   },
+   "kfb_idle_happy_a": {
+    "frames": 89,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Large/KFB_Motion_idle.glb",
+    "headMinOverH": 0.772,
+    "footSepMax": 0.964,
+    "footSepMean": 0.919,
+    "footLowMin": 0.296,
+    "bothFeetDownFrac": 1.0,
+    "travel": 0.0
+   },
+   "kfb_dance_twist_dance_a": {
+    "frames": 284,
+    "loop": true,
+    "rootMotion": "in-place",
+    "library": "libs/Rig_Large/KFB_Motion_dance.glb",
+    "headMinOverH": 0.58,
+    "footSepMax": 1.206,
+    "footSepMean": 0.916,
+    "footLowMin": 0.276,
+    "bothFeetDownFrac": 0.99,
+    "travel": 0.0
+   }
+  }
+ },
+ "kaykitKick": {
+  "Rig_Medium": {
+   "clip": "Melee_Unarmed_Attack_Kick",
+   "source": "Rig_Medium/Rig_Medium_CombatMelee.glb",
+   "frames": 29,
+   "contactFrame": 12,
+   "part": "toes.r",
+   "partPos": [
+    -0.171,
+    0.53,
+    0.56
+   ],
+   "partSpeed": 3.05,
+   "hitDir": [
+    -0.0,
+    0.17,
+    0.99
+   ],
+   "travel": 0.0,
+   "headMin": 1.097
+  },
+  "Rig_Large": {
+   "clip": "Melee_Unarmed_Kick",
+   "source": "Rig_Large/Rig_Large_CombatMelee.glb",
+   "frames": 52,
+   "contactFrame": 19,
+   "part": "toes.r",
+   "partPos": [
+    -0.344,
+    1.35,
+    1.742
+   ],
+   "partSpeed": 15.49,
+   "hitDir": [
+    0.01,
+    -0.18,
+    0.98
+   ],
+   "travel": 0.0,
+   "headMin": 2.478
+  }
+ },
+ "coop2": {
+  "minActorGap": 0.371,
+  "handToBallRange": [
+   0.043,
+   0.043
+  ],
+  "angles": [
+   -26,
+   26
+  ],
+  "R": 1.3966666666666667,
+  "ballCentreGltf": [
+   0.01641038090523237,
+   1.3966666666666667,
+   1.9268156781310015
+  ]
+ },
+ "coop3": {
+  "minActorGap": 0.302,
+  "handToBallRange": [
+   0.043,
+   0.043
+  ],
+  "angles": [
+   0,
+   -48,
+   48
+  ],
+  "R": 1.3966666666666667,
+  "ballCentreGltf": [
+   0.01641038090523237,
+   1.3966666666666667,
+   1.9268156781310015
+  ]
+ },
+ "penetration_Medium": {
+  "kfb_fluff_roll_push_a": {
+   "bodyPenetration": 0.0,
+   "frame": null,
+   "part": null,
+   "R": 0.7233333333333333
+  },
+  "kfb_fluff_roll_push_heavy_a": {
+   "bodyPenetration": 0.028,
+   "frame": 6,
+   "part": "Robot_One_Head",
+   "R": 0.7233333333333333
+  },
+  "kfb_fluff_steer_left_a": {
+   "bodyPenetration": 0.007,
+   "frame": 6,
+   "part": "Robot_One_Head",
+   "R": 0.7233333333333333
+  },
+  "kfb_fluff_steer_right_a": {
+   "bodyPenetration": 0.007,
+   "frame": 6,
+   "part": "Robot_One_Head",
+   "R": 0.7233333333333333
+  },
+  "kfb_fluff_roll_push_big_a": {
+   "bodyPenetration": 0.376,
+   "frame": 12,
+   "part": "Robot_One_Head",
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_roll_push_heavy_big_a": {
+   "bodyPenetration": 0.451,
+   "frame": 18,
+   "part": "Robot_One_Head",
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_steer_left_big_a": {
+   "bodyPenetration": 0.398,
+   "frame": 6,
+   "part": "Robot_One_Head",
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_steer_right_big_a": {
+   "bodyPenetration": 0.398,
+   "frame": 6,
+   "part": "Robot_One_Head",
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_ball_surf_a": {
+   "bodyPenetration": 0.007,
+   "frame": 16,
+   "part": "Robot_One_LegLeft",
+   "R": 0.7233333333333333
+  },
+  "kfb_fluff_ball_balance_a": {
+   "bodyPenetration": 0.009,
+   "frame": 44,
+   "part": "Robot_One_LegLeft",
+   "R": 0.7233333333333333
+  },
+  "kfb_fluff_ball_dance_a": {
+   "bodyPenetration": 0.009,
+   "frame": 8,
+   "part": "Robot_One_LegRight",
+   "R": 0.7233333333333333
+  },
+  "kfb_fluff_foot_roll_a": {
+   "bodyPenetration": 0.044,
+   "frame": 6,
+   "part": "Robot_One_LegLeft",
+   "R": 0.2
+  }
+ },
+ "penetration_Large": {
+  "kfb_fluff_roll_push_a": {
+   "bodyPenetration": 0.0,
+   "frame": null,
+   "part": null,
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_roll_push_heavy_a": {
+   "bodyPenetration": 0.0,
+   "frame": null,
+   "part": null,
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_steer_left_a": {
+   "bodyPenetration": 0.0,
+   "frame": null,
+   "part": null,
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_steer_right_a": {
+   "bodyPenetration": 0.0,
+   "frame": null,
+   "part": null,
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_ball_surf_a": {
+   "bodyPenetration": 0.121,
+   "frame": 12,
+   "part": "OrcBrute_LegRight",
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_ball_balance_a": {
+   "bodyPenetration": 0.069,
+   "frame": 18,
+   "part": "OrcBrute_LegRight",
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_ball_dance_a": {
+   "bodyPenetration": 0.123,
+   "frame": 218,
+   "part": "OrcBrute_LegLeft",
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_foot_roll_a": {
+   "bodyPenetration": 0.387,
+   "frame": 18,
+   "part": "OrcBrute_LegRight",
+   "R": 0.7233333333333333
+  }
+ },
+ "penetration_footRollFix_Medium": {
+  "kfb_fluff_roll_push_big_a": {
+   "bodyPenetration": 0.499,
+   "frame": 12,
+   "part": "Robot_One_Head",
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_roll_push_heavy_big_a": {
+   "bodyPenetration": 0.38,
+   "frame": 18,
+   "part": "Robot_One_Head",
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_steer_left_big_a": {
+   "bodyPenetration": 0.469,
+   "frame": 6,
+   "part": "Robot_One_Head",
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_steer_right_big_a": {
+   "bodyPenetration": 0.469,
+   "frame": 6,
+   "part": "Robot_One_Head",
+   "R": 1.3966666666666667
+  },
+  "kfb_fluff_foot_roll_a": {
+   "bodyPenetration": 0.044,
+   "frame": 6,
+   "part": "Robot_One_LegLeft",
+   "R": 0.2
+  }
+ },
+ "penetration_footRollFix_Large": {
+  "kfb_fluff_foot_roll_a": {
+   "bodyPenetration": 0.194,
+   "frame": 18,
+   "part": "OrcBrute_LegRight",
+   "R": 0.38617511520737335
+  }
+ },
+ "mergeTiming": {
+  "id": "kfb_fluff_merge_6to1_reference",
+  "fps": 30,
+  "smallRadius": 0.2,
+  "mediumRadius": 0.7233333333333333,
+  "frames": {
+   "start": 1,
+   "gather_end": 26,
+   "squash_end": 34,
+   "pop": 36,
+   "overshoot": 42,
+   "settle": 56,
+   "end": 64
+  },
+  "colours": [
+   "#8b68c7",
+   "#f2b632",
+   "#ef5a22",
+   "#1f7a3e",
+   "#cdc666",
+   "#b86384"
+  ],
+  "notes": "6 small roll in with two hops (1-26), squash into one lump (26-34), POP at 36: smalls vanish, the marbled Medium ball puffs up (stretch 1.25 at 39), lands squashed (0.86 at 42), wobbles, settles by 56. Visual size jump is cartoon (dough rising), not volume."
+ },
+ "notes": {
+  "penetration_Medium._big_a": "final build = original reach (repair 1 reverted); penfix_Medium._big_a = repair 1 values, reverted",
+  "penetration_Large.kfb_fluff_foot_roll_a": "measured with ball r 0.723, superseded by penetration_footRollFix_Large (r 0.386, shipped)",
+  "bodyHeight": {
+   "Rig_Medium": 2.17,
+   "Rig_Large": 4.19
+  },
+  "radii": {
+   "Small": 0.2,
+   "Medium": 0.723,
+   "Large": 1.397
+  }
+ }
+}

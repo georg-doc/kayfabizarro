@@ -1,0 +1,1212 @@
+{
+ "schema": "kfb.motion-catalog.v1/patch",
+ "batch": "FLUFF-01",
+ "date": "2026-10-04",
+ "base": "KFB_Motion_Library.catalog.json (+ patch_an01, patch_duel01)",
+ "apply": "append clips[] to catalogue.clips and libraries{} to catalogue.libraries; clipCount +9. Nothing existing changes.",
+ "workpieceRule": "Push/steer balls follow the Fluff Mass Ladder (brief cd69323: 6 Small = 1 Medium, 3 Medium = 1 Large by volume): Medium ball r 0.477 m (0.22 x Medium body height, Blender reading), Large ball r 0.477 x 3^(1/3) = 0.689 m. Option A (Production Control c948e155): the Large two-hand bench/ground work chunk (knead_press, collect_debris) is r 0.22 x Large body height = 0.922 m. All sizes are presentation only; inventory/resource/pickup value stays runtime-owned.",
+ "bodyHeight": {
+  "Rig_Medium": 2.17,
+  "Rig_Large": 4.19
+ },
+ "libraries": {
+  "libs/Rig_Medium/KFB_Motion_fluff01.glb": {
+   "rig": "Rig_Medium",
+   "group": "Fluff work motion pack 01 (FLUFF-01)",
+   "bytes": 532232,
+   "sha256": "497f4a1954996452285c83b08611ca2cfac836cace9584dd10339c73ec1bb491",
+   "clipCount": 9
+  },
+  "libs/Rig_Large/KFB_Motion_fluff01.glb": {
+   "rig": "Rig_Large",
+   "group": "Fluff work motion pack 01 (FLUFF-01)",
+   "bytes": 532316,
+   "sha256": "1617dd6dc25756147a258c157c0dddd427b74c0e05bda88d6b1d34207fca4454",
+   "clipCount": 9
+  }
+ },
+ "clips": [
+  {
+   "id": "kfb_fluff_roll_push_a",
+   "label_de": "Fluff-Ball rollen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 30,
+   "durationSec": 1.0,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 1.76,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_fluff01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_fluff01.glb"
+   },
+   "intake": "FLUFF-01",
+   "sourceFbx": null,
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        3,
+        22
+       ],
+       [
+        25,
+        25
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        11,
+        11
+       ],
+       [
+        17,
+        30
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        7,
+        20
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        5
+       ],
+       [
+        17,
+        30
+       ]
+      ]
+     }
+    }
+   },
+   "fluff": {
+    "Rig_Medium": {
+     "gap": "G1",
+     "donor": "kfb_locomotion_wheelbarrow_walk_a",
+     "note": "legs/root/rhythm unchanged; arms IK to ball back at 20 deg above equator, palms aimed at ball centre",
+     "workpiece": {
+      "radius": 0.477,
+      "radiusOverBodyHeight": 0.22,
+      "centre": [
+       0.016,
+       0.477,
+       1.062
+      ],
+      "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       0.044,
+       0.046
+      ],
+      "r": [
+       0.044,
+       0.045
+      ]
+     },
+     "trunkLeanDeg": 16.0,
+     "seamExcessDeg": 0.0,
+     "runtimeRootSpeedMps": 1.09,
+     "ikHandErrorM": 0.0029,
+     "palmToCentreDevDeg": 16.7
+    },
+    "Rig_Large": {
+     "gap": "G1",
+     "donor": "kfb_locomotion_wheelbarrow_walk_a",
+     "note": "legs/root/rhythm unchanged; arms IK to ball back at 20 deg above equator, palms aimed at ball centre",
+     "workpiece": {
+      "radius": 0.689,
+      "radiusOverBodyHeight": 0.164,
+      "centre": [
+       0.042,
+       0.689,
+       1.021
+      ],
+      "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 30 deg above equator"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       0.084,
+       0.085
+      ],
+      "r": [
+       0.084,
+       0.085
+      ]
+     },
+     "trunkLeanDeg": 17.5,
+     "seamExcessDeg": 0.0,
+     "runtimeRootSpeedMps": 2.744,
+     "ikHandErrorM": 0.0011,
+     "palmToCentreDevDeg": 5.0
+    }
+   },
+   "comment": "Push: wheelbarrow legs/rhythm kept; both palms on the ball back (20 deg above the equator on Medium, 30 deg on Large so the Large arms reach the smaller ladder ball), aimed at the ball centre. Ball stays in clip space; runtime rolls it and moves the root.",
+   "tags": [
+    "fluff",
+    "work",
+    "G1"
+   ]
+  },
+  {
+   "id": "kfb_fluff_roll_push_heavy_a",
+   "label_de": "Schweren Fluff-Ball rollen",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 39,
+   "durationSec": 1.3,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 6.62,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_fluff01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_fluff01.glb"
+   },
+   "intake": "FLUFF-01",
+   "sourceFbx": null,
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        4,
+        29
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        9
+       ],
+       [
+        14,
+        14
+       ],
+       [
+        20,
+        39
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        5,
+        5
+       ],
+       [
+        8,
+        27
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        6
+       ],
+       [
+        23,
+        39
+       ]
+      ]
+     }
+    }
+   },
+   "fluff": {
+    "Rig_Medium": {
+     "gap": "G2",
+     "donor": "kfb_locomotion_wheelbarrow_walk_b",
+     "note": "walk_b root travel stripped (linear drift), time-stretched to 0.75x, arms IK as G1",
+     "workpiece": {
+      "radius": 0.477,
+      "radiusOverBodyHeight": 0.22,
+      "centre": [
+       -0.022,
+       0.477,
+       1.377
+      ],
+      "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       0.044,
+       0.045
+      ],
+      "r": [
+       0.044,
+       0.044
+      ]
+     },
+     "trunkLeanDeg": 27.4,
+     "seamExcessDeg": 0.7,
+     "runtimeRootSpeedMps": 0.831,
+     "ikHandErrorM": 0.0014,
+     "palmToCentreDevDeg": 9.8
+    },
+    "Rig_Large": {
+     "gap": "G2",
+     "donor": "kfb_locomotion_wheelbarrow_walk_b",
+     "note": "walk_b root travel stripped (linear drift), time-stretched to 0.75x, arms IK as G1",
+     "workpiece": {
+      "radius": 0.689,
+      "radiusOverBodyHeight": 0.164,
+      "centre": [
+       -0.056,
+       0.689,
+       1.752
+      ],
+      "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 25 deg above equator"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       0.084,
+       0.084
+      ],
+      "r": [
+       0.084,
+       0.084
+      ]
+     },
+     "trunkLeanDeg": 29.0,
+     "seamExcessDeg": 1.1,
+     "runtimeRootSpeedMps": 2.069,
+     "ikHandErrorM": 0.0009,
+     "palmToCentreDevDeg": 3.8
+    }
+   },
+   "comment": "Heavy push: walk_b legs, travel stripped, 0.75x speed, stronger lean.",
+   "tags": [
+    "fluff",
+    "work",
+    "G2"
+   ]
+  },
+  {
+   "id": "kfb_fluff_steer_left_a",
+   "label_de": "Fluff-Ball nach links lenken",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 25,
+   "durationSec": 0.833,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 20.06,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_fluff01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_fluff01.glb"
+   },
+   "intake": "FLUFF-01",
+   "sourceFbx": null,
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        23
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        8
+       ],
+       [
+        10,
+        11
+       ],
+       [
+        24,
+        25
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        2,
+        23
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        7
+       ],
+       [
+        25,
+        25
+       ]
+      ]
+     }
+    }
+   },
+   "fluff": {
+    "Rig_Medium": {
+     "gap": "G3",
+     "donor": "kfb_locomotion_wheelbarrow_walk_turn_a",
+     "note": "turn_a: root travel + yaw drift stripped (runtime turns the actor), loop crossfade 8 f, arms IK as G1",
+     "workpiece": {
+      "radius": 0.477,
+      "radiusOverBodyHeight": 0.22,
+      "centre": [
+       0.003,
+       0.477,
+       1.445
+      ],
+      "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       0.044,
+       0.045
+      ],
+      "r": [
+       0.044,
+       0.045
+      ]
+     },
+     "trunkLeanDeg": 27.8,
+     "seamExcessDeg": 4.0,
+     "runtimeRootSpeedMps": 0.961,
+     "runtimeYawRateDegPerSec": 35.2,
+     "ikHandErrorM": 0.0022,
+     "palmToCentreDevDeg": 15.7
+    },
+    "Rig_Large": {
+     "gap": "G3",
+     "donor": "kfb_locomotion_wheelbarrow_walk_turn_a",
+     "note": "turn_a: root travel + yaw drift stripped (runtime turns the actor), loop crossfade 8 f, arms IK as G1",
+     "workpiece": {
+      "radius": 0.689,
+      "radiusOverBodyHeight": 0.164,
+      "centre": [
+       0.008,
+       0.689,
+       2.078
+      ],
+      "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 20 deg above equator"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       0.084,
+       0.084
+      ],
+      "r": [
+       0.084,
+       0.084
+      ]
+     },
+     "trunkLeanDeg": 28.9,
+     "seamExcessDeg": 4.0,
+     "runtimeRootSpeedMps": 2.524,
+     "runtimeYawRateDegPerSec": 35.2,
+     "ikHandErrorM": 0.0009,
+     "palmToCentreDevDeg": 4.3
+    }
+   },
+   "comment": "Steering loop: runtime owns the turn (yaw rate given); clip carries the asymmetric step and body lean.",
+   "tags": [
+    "fluff",
+    "work",
+    "G3"
+   ]
+  },
+  {
+   "id": "kfb_fluff_steer_right_a",
+   "label_de": "Fluff-Ball nach rechts lenken",
+   "group": "locomotion",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 25,
+   "durationSec": 0.833,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 20.06,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_fluff01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_fluff01.glb"
+   },
+   "intake": "FLUFF-01",
+   "sourceFbx": null,
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        8
+       ],
+       [
+        10,
+        11
+       ],
+       [
+        24,
+        25
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        23
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        7
+       ],
+       [
+        25,
+        25
+       ]
+      ],
+      "foot.r": [
+       [
+        2,
+        23
+       ]
+      ]
+     }
+    }
+   },
+   "fluff": {
+    "Rig_Medium": {
+     "gap": "G3",
+     "donor": "kfb_fluff_steer_left_a (mirror X)",
+     "note": "mirror of steer_left across the sagittal plane",
+     "workpiece": {
+      "radius": 0.477,
+      "radiusOverBodyHeight": 0.22,
+      "centre": [
+       -0.003,
+       0.477,
+       1.445
+      ],
+      "kind": "Medium ball r = 0.22 x 2.17 m (ground), contact 20 deg above equator"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       0.044,
+       0.045
+      ],
+      "r": [
+       0.044,
+       0.045
+      ]
+     },
+     "trunkLeanDeg": 27.8,
+     "seamExcessDeg": 4.0,
+     "runtimeRootSpeedMps": 0.961,
+     "runtimeYawRateDegPerSec": -35.2,
+     "ikHandErrorM": 0.0022,
+     "palmToCentreDevDeg": 15.7
+    },
+    "Rig_Large": {
+     "gap": "G3",
+     "donor": "kfb_fluff_steer_left_a (mirror X)",
+     "note": "mirror of steer_left across the sagittal plane",
+     "workpiece": {
+      "radius": 0.689,
+      "radiusOverBodyHeight": 0.164,
+      "centre": [
+       -0.008,
+       0.689,
+       2.078
+      ],
+      "kind": "Large ball, Mass Ladder: 3 Medium = 1 Large (r_M x 3^(1/3)), contact 20 deg above equator"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       0.084,
+       0.084
+      ],
+      "r": [
+       0.084,
+       0.084
+      ]
+     },
+     "trunkLeanDeg": 28.9,
+     "seamExcessDeg": 4.0,
+     "runtimeRootSpeedMps": 2.524,
+     "runtimeYawRateDegPerSec": -35.2,
+     "ikHandErrorM": 0.0009,
+     "palmToCentreDevDeg": 4.3
+    }
+   },
+   "comment": "Steering loop: runtime owns the turn (yaw rate given); clip carries the asymmetric step and body lean.",
+   "tags": [
+    "fluff",
+    "work",
+    "G3"
+   ]
+  },
+  {
+   "id": "kfb_fluff_knead_press_a",
+   "label_de": "Fluff kneten",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 77,
+   "durationSec": 2.567,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_fluff01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_fluff01.glb"
+   },
+   "intake": "FLUFF-01",
+   "sourceFbx": null,
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        77
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        77
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        77
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        77
+       ]
+      ]
+     }
+    }
+   },
+   "fluff": {
+    "Rig_Medium": {
+     "gap": "G4",
+     "donor": "KayKit Rig_Medium_Tools/Working_B (native copy)",
+     "note": "native KayKit copy",
+     "workpiece": {
+      "radius": 0.239,
+      "radiusOverBodyHeight": 0.11,
+      "centre": [
+       -0.0,
+       0.943,
+       0.527
+      ],
+      "kind": "bench chunk 0.11 H between hands"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       -0.065,
+       0.108
+      ],
+      "r": [
+       -0.066,
+       0.109
+      ]
+     },
+     "trunkLeanDeg": -0.8,
+     "seamExcessDeg": 0.0
+    },
+    "Rig_Large": {
+     "gap": "G4",
+     "donor": "KayKit Rig_Medium_Tools/Working_B (retarget)",
+     "note": "Medium->Large retarget: rotations copied, Large rest translations, hips/root delta x2.564; no arm correction (Option A)",
+     "workpiece": {
+      "radius": 0.922,
+      "radiusOverBodyHeight": 0.22,
+      "centre": [
+       0.001,
+       2.278,
+       1.645
+      ],
+      "kind": "bench chunk 0.22 H between hands, shifted forward 0.39 m to clear the body"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       -0.044,
+       0.244
+      ],
+      "r": [
+       -0.067,
+       0.249
+      ]
+     },
+     "trunkLeanDeg": -1.2,
+     "seamExcessDeg": 0.0
+    }
+   },
+   "comment": "Two-hand bench/ground work. Large uses the larger work chunk (Option A, decision c948e155): no arm correction.",
+   "tags": [
+    "fluff",
+    "work",
+    "G4"
+   ]
+  },
+  {
+   "id": "kfb_fluff_collect_debris_a",
+   "label_de": "Fluff-Brocken aufsammeln",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 43,
+   "durationSec": 1.433,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_fluff01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_fluff01.glb"
+   },
+   "intake": "FLUFF-01",
+   "sourceFbx": null,
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        43
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        43
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        43
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        43
+       ]
+      ]
+     }
+    }
+   },
+   "fluff": {
+    "Rig_Medium": {
+     "gap": "G4",
+     "donor": "KayKit Rig_Medium_Tools/Digging (native copy)",
+     "note": "native KayKit copy",
+     "workpiece": {
+      "radius": 0.239,
+      "radiusOverBodyHeight": 0.11,
+      "centre": [
+       -0.155,
+       0.239,
+       0.603
+      ],
+      "kind": "ground chunk 0.11 H at scoop"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       0.018,
+       0.46
+      ],
+      "r": [
+       0.044,
+       0.443
+      ]
+     },
+     "trunkLeanDeg": 10.7,
+     "seamExcessDeg": 0.0
+    },
+    "Rig_Large": {
+     "gap": "G4",
+     "donor": "KayKit Rig_Medium_Tools/Digging (retarget)",
+     "note": "Medium->Large retarget: rotations copied, Large rest translations, hips/root delta x2.564; no arm correction (Option A)",
+     "workpiece": {
+      "radius": 0.922,
+      "radiusOverBodyHeight": 0.22,
+      "centre": [
+       -0.275,
+       0.922,
+       2.01
+      ],
+      "kind": "ground chunk 0.22 H at scoop, shifted forward 0.37 m to clear the body"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       -0.14,
+       1.033
+      ],
+      "r": [
+       0.046,
+       2.05
+      ]
+     },
+     "trunkLeanDeg": 12.5,
+     "seamExcessDeg": 0.0
+    }
+   },
+   "comment": "Two-hand bench/ground work. Large uses the larger work chunk (Option A, decision c948e155): no arm correction.",
+   "tags": [
+    "fluff",
+    "work",
+    "G4"
+   ]
+  },
+  {
+   "id": "kfb_fluff_place_small_a",
+   "label_de": "Kleinen Fluff ablegen",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 40,
+   "durationSec": 1.333,
+   "fps": 30.0,
+   "loop": false,
+   "loopPoseDiffDeg": null,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_fluff01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_fluff01.glb"
+   },
+   "intake": "FLUFF-01",
+   "sourceFbx": null,
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        40
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        40
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        40
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        40
+       ]
+      ]
+     }
+    }
+   },
+   "fluff": {
+    "Rig_Medium": {
+     "gap": "G5",
+     "donor": "KayKit Rig_Medium_General/Interact (native copy)",
+     "note": "native KayKit copy",
+     "workpiece": {
+      "radius": 0.195,
+      "radiusOverBodyHeight": 0.09,
+      "centre": [
+       -0.306,
+       0.866,
+       0.892
+      ],
+      "kind": "small chunk 0.09 H at reach"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       1.047,
+       1.183
+      ],
+      "r": [
+       -0.015,
+       0.642
+      ]
+     },
+     "trunkLeanDeg": 4.5,
+     "seamExcessDeg": null
+    },
+    "Rig_Large": {
+     "gap": "G5",
+     "donor": "KayKit Rig_Medium_General/Interact (retarget)",
+     "note": "Medium->Large retarget: rotations copied, Large rest translations, hips/root delta x2.564; no arm correction (Option A)",
+     "workpiece": {
+      "radius": 0.377,
+      "radiusOverBodyHeight": 0.09,
+      "centre": [
+       -1.096,
+       2.147,
+       2.135
+      ],
+      "kind": "small chunk 0.09 H at reach"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       3.156,
+       3.524
+      ],
+      "r": [
+       -0.029,
+       1.616
+      ]
+     },
+     "trunkLeanDeg": 4.3,
+     "seamExcessDeg": null
+    }
+   },
+   "comment": "One-hand work; Medium native, Large plain retarget.",
+   "tags": [
+    "fluff",
+    "work",
+    "G5"
+   ]
+  },
+  {
+   "id": "kfb_fluff_pack_flatten_a",
+   "label_de": "Fluff festklopfen",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 46,
+   "durationSec": 1.533,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_fluff01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_fluff01.glb"
+   },
+   "intake": "FLUFF-01",
+   "sourceFbx": null,
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        46
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        46
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        46
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        46
+       ]
+      ]
+     }
+    }
+   },
+   "fluff": {
+    "Rig_Medium": {
+     "gap": "G5",
+     "donor": "KayKit Rig_Medium_Tools/Working_A (native copy)",
+     "note": "native KayKit copy",
+     "workpiece": {
+      "radius": 0.195,
+      "radiusOverBodyHeight": 0.09,
+      "centre": [
+       -0.49,
+       0.743,
+       0.746
+      ],
+      "kind": "small chunk 0.09 H at reach"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       0.786,
+       0.816
+      ],
+      "r": [
+       -0.015,
+       0.146
+      ]
+     },
+     "trunkLeanDeg": 0.4,
+     "seamExcessDeg": 0.0
+    },
+    "Rig_Large": {
+     "gap": "G5",
+     "donor": "KayKit Rig_Medium_Tools/Working_A (retarget)",
+     "note": "Medium->Large retarget: rotations copied, Large rest translations, hips/root delta x2.564; no arm correction (Option A)",
+     "workpiece": {
+      "radius": 0.377,
+      "radiusOverBodyHeight": 0.09,
+      "centre": [
+       -1.541,
+       1.777,
+       1.74
+      ],
+      "kind": "small chunk 0.09 H at reach"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       2.672,
+       2.743
+      ],
+      "r": [
+       -0.029,
+       0.362
+      ]
+     },
+     "trunkLeanDeg": 0.3,
+     "seamExcessDeg": 0.0
+    }
+   },
+   "comment": "One-hand work; Medium native, Large plain retarget.",
+   "tags": [
+    "fluff",
+    "work",
+    "G5"
+   ]
+  },
+  {
+   "id": "kfb_fluff_patch_press_a",
+   "label_de": "Fluff andr\u00fccken / flicken",
+   "group": "interaction",
+   "rigs": [
+    "Rig_Medium",
+    "Rig_Large"
+   ],
+   "frames": 77,
+   "durationSec": 2.567,
+   "fps": 30.0,
+   "loop": true,
+   "loopPoseDiffDeg": 0.0,
+   "rootMotion": "in-place",
+   "rootBone": "root",
+   "travelMetersPerCycle": {
+    "Rig_Medium": 0.0,
+    "Rig_Large": 0.0
+   },
+   "library": {
+    "Rig_Medium": "libs/Rig_Medium/KFB_Motion_fluff01.glb",
+    "Rig_Large": "libs/Rig_Large/KFB_Motion_fluff01.glb"
+   },
+   "intake": "FLUFF-01",
+   "sourceFbx": null,
+   "contacts": {
+    "Rig_Medium": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        77
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        77
+       ]
+      ]
+     }
+    },
+    "Rig_Large": {
+     "feet": {
+      "foot.l": [
+       [
+        1,
+        77
+       ]
+      ],
+      "foot.r": [
+       [
+        1,
+        77
+       ]
+      ]
+     }
+    }
+   },
+   "fluff": {
+    "Rig_Medium": {
+     "gap": "G5",
+     "donor": "KayKit Rig_Medium_Tools/Work_A (native copy)",
+     "note": "native KayKit copy",
+     "workpiece": {
+      "radius": 0.195,
+      "radiusOverBodyHeight": 0.09,
+      "centre": [
+       -0.479,
+       0.743,
+       0.75
+      ],
+      "kind": "small chunk 0.09 H at reach"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       0.777,
+       0.945
+      ],
+      "r": [
+       -0.015,
+       0.507
+      ]
+     },
+     "trunkLeanDeg": 0.2,
+     "seamExcessDeg": 0.0
+    },
+    "Rig_Large": {
+     "gap": "G5",
+     "donor": "KayKit Rig_Medium_Tools/Work_A (retarget)",
+     "note": "Medium->Large retarget: rotations copied, Large rest translations, hips/root delta x2.564; no arm correction (Option A)",
+     "workpiece": {
+      "radius": 0.377,
+      "radiusOverBodyHeight": 0.09,
+      "centre": [
+       -1.516,
+       1.784,
+       1.748
+      ],
+      "kind": "small chunk 0.09 H at reach"
+     },
+     "handToWorkpieceSurface": {
+      "l": [
+       2.65,
+       2.965
+      ],
+      "r": [
+       -0.029,
+       1.221
+      ]
+     },
+     "trunkLeanDeg": 0.2,
+     "seamExcessDeg": 0.0
+    }
+   },
+   "comment": "One-hand work; Medium native, Large plain retarget.",
+   "tags": [
+    "fluff",
+    "work",
+    "G5"
+   ]
+  }
+ ]
+}
