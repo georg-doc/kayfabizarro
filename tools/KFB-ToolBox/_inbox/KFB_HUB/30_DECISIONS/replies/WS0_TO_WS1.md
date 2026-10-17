@@ -1,5 +1,15 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Licht-Lauf L3 nach Licht-Modell R2 – V-382, V-385 (vor Slice 1)
+Georg hat V-346 auf der Staging-Seite als FAIL/großes TUNE bewertet. WS0-Audit `replies/LIGHT_RESEARCH_AUDIT_R1.md`: drei der fünf Fehler gehen auf **WS0-Aufträge** zurück (Randlicht, faceFill, toneSplit, unbeleuchtete Karte) – das ist kein WS1-Versäumnis. Neues Konzept: `replies/LIGHT_MODEL_R2.md` (zehn Regeln, Stimmungs-Tabelle, Raster L-1–L-8). Reihenfolge: **V-345 fertig → L3 → Slice 1**.
+1. **Feste Belichtung, Schalter-Vergleich:** Randlicht aus + Figuren-Sheen ≤ 0,05; Tonemapping ACES vs. Neutral vs. AgX für **alle** Schichten (kein toneSplit). Wahl per Messung (Clipping < 0,1 %, V-355 je Schicht), Bildpaare in den Status; Georg kann überstimmen.
+2. **Ein Rig für Tag/Gold/Nacht** nach der Tabelle in R2: J17-Tag als Basis, Gegenlicht immer an und neutral, Gold = warme tiefe Sonne + kühlere Füllung + dunklerer Himmel, Nacht = Mond + Hemi + Licht-Inseln ohne Belichtungsanhebung. Look-B-Lichtsättigung raus. Hemi-Boden = `edgePalette`, `faceFill` raus.
+3. **Praktische:** gelieferte Goblin-/Atlantis-Praktische (Branch `data/kfb-stage-edges-r1-2026-10-16`) einbauen; Billboard-Lampenarme aus dem Highway-Spender mit Emissive-Köpfen + ein Pool-Licht (Ausnahme zu BILLBOARD_STANDARD_R2).
+4. **Karte** = beleuchtetes mattes Papier; neue G3: Druckfarbton/Chroma bleiben, Helligkeit folgt der Stimmung.
+5. **Eine Material-Antwort** (Clay, Karte, Meshy, Fahrzeug; Metall PMREM nach V-370); AO-Probe im Budget.
+6. **Abnahme-Oberfläche nach V-383:** Bedienleiste eingeklappt am Rand, nichts über dem Motiv, Knopf „Sauberes Bild“.
+Beweis: 3 Stimmungen × (Totale, Nah FB, Nah Karte) × 16:9 + 9:16, Clay, ohne Overlays, Messwerte L-1–L-8. Langlauf nach V-375.
+
 ## 17.10.2026 · build.json für die GPT-Staging-Seite (V-356)
 WSA work baut die Staging-Seite und liest `build.json`. Bitte ab der nächsten Vorschau: Startziele **host-neutral** (relative Pfade bzw. Hash-Ziele wie `#stage,actors=fb,light=l1`, keine festen Cloudflare-URLs; Cloudflare nur noch Rückfall). `tests` darf Objekt bleiben (WSA liest beide Formen). Die Fahrprobe (M2-Kombi-Vorschau) als eigenes Startziel eintragen, sobald sie geliefert ist; bis dahin zeigt die Staging-Seite den Knopf als „noch nicht verfügbar“.
 

@@ -5282,6 +5282,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-385",
+   "date": "2026-10-17",
+   "area": "Licht",
+   "verdict": "RULE",
+   "text": "Licht-Modell R2 (replies/LIGHT_MODEL_R2.md nach Audit LIGHT_RESEARCH_AUDIT_R1, 28 Quellen): eine Szene, ein Licht-Rig, ein Ton-Pfad, eine Material-Antwort; keine privaten Lichter für Figuren/Karte/Boden (KayKit-Prinzip). Zehn Regeln: Randlicht raus + Sheen ≤ 0,05, J17-Gegenlicht immer an und neutral; Gold = warme tiefe Sonne + kühlere Füllung + Himmel dunkler; Look-B-Lichtsättigung raus; Hemi-Boden = edgePalette statt faceFill; ein Tonemapping für alle (Test ACES/Neutral/AgX bei fester Belichtung, toneSplit entfällt – ersetzt den toneSplit-Satz in V-378); Nacht = Mond + Hemi + ≥ 2 Licht-Inseln, keine Belichtungsanhebung, gelieferte Praktische einbauen; Billboard-Lampenarme mit Emissive + Pool-Licht (Ausnahme BILLBOARD_STANDARD_R2); Karte beleuchtetes mattes Papier, neue G3 Farbton/Chroma bleiben; eine Material-Antwort, AO-Probe; Raster L-1–L-8 inkl. 9:16. Drei der fünf V-346-Fehler gingen auf WS0-Aufträge zurück. Licht-Lauf L3 nach V-345, vor Slice 1 (Hub b73).",
+   "values": {},
+   "owner": "WS1 (L3) · WS0 (Konzept)",
+   "check": "Raster L-1–L-8, 18 Bilder ohne Overlays",
+   "source": "replies/LIGHT_MODEL_R2.md · replies/LIGHT_RESEARCH_AUDIT_R1.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Werte der Recherche waren übernommen, ihre Prinzipien nicht; Einzel-Tricks je Schicht – teils von WS0 bestellt – brachen jede Stimmung.",
+   "applies": "nach V-345, vor Slice 1"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5354,7 +5369,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:708",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:709",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
