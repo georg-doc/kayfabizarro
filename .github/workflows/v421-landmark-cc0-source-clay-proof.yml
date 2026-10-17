@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   source-and-clay:
@@ -40,6 +40,36 @@ jobs:
         continue-on-error: true
         if: steps.download.outcome == 'success'
         run: blender -b --factory-startup --disable-autoexec --python tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py -- render
+      - name: Checkpoint isolated CC0 proof images in research branch
+        id: checkpoint
+        if: steps.download.outcome == 'success' && steps.render.outcome == 'success'
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, hashlib, shutil
+          folder=pathlib.Path('v421-proof')
+          data=json.loads((folder/'final-audit.json').read_text())
+          assert data['passed']==2, 'Require both actual imported CC0 geometry previews before persistent checkpoint'
+          root=pathlib.Path('tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence')
+          root.mkdir(parents=True,exist_ok=True)
+          manifest={'schema':'kfb.landmark.source-isolation/1','run':'GitHub Actions CI source proof','selectionReady':False,'sources':[]}
+          for src in data['sources']:
+              assert src['license']=='CC0-1.0'
+              assert src['state']=='SOURCE_ISOLATED_AND_CLAY_RENDERED'
+              source_dir=folder/src['id']
+              dest=root/src['id'];dest.mkdir(exist_ok=True)
+              for name,digest in [('source-isolation.png','sourceImageSha256'),('clay-preview.png','clayImageSha256')]:
+                  p=source_dir/name
+                  assert p.exists() and hashlib.sha256(p.read_bytes()).hexdigest()==src[digest]
+                  shutil.copyfile(p,dest/name)
+              manifest['sources'].append({k:src[k] for k in ['id','source_page','creator','license','kind','archiveSha256','selectedRelativeFile','selectedSourceSha256','meshCount','trianglesMeasured','facePolygonsMeasured','sourceImageSha256','clayImageSha256']})
+          (root/'MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          print('CHECKPOINT SOURCE MESH PROOFS',len(manifest['sources']))
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/
+          git commit -m 'evidence(V-421): source-isolated CC0 originals and clay images'
+          git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17
       - name: Publish audit evidence for agent-only source QA
         if: always()
         uses: actions/upload-artifact@v4
