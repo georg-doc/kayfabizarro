@@ -7,3 +7,6 @@ Repo georg-doc/kayfabizarro, branch `songs/kayfabizarro_monopolies_manipulation_
 **Gate:** exact original song_gate.py and triplet_set_check.py configured in the branch workflow, not yet reported as PASS. External critic is not available in this session; no fabricated critic or post-critic revision. No final approval, Hub, merge or deployment.
 
 One next gate: GitHub Actions first pass on the committed head, then submit only green lyrics for genuinely independent judgment.
+
+## Gate repair 1 · original CI 39045115469
+At initial head fcf2b139bf0dde337448a89412a7c6f059124d0c: part-one canonical triplet checker passed 28/28; canonical song_gate failed only A7 `P2` in Banco Ambrosiano Collapse (#26). Converted sung text to `P Two` and derived QA alias with A7 songline. Part-two gates did not run. New source head requires fresh CI; no PASS prematurely claimed.
