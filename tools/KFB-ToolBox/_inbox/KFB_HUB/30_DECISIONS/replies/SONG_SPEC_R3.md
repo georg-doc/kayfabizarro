@@ -1,19 +1,19 @@
 # KFB Suno song spec R3.1: the one binding song document (V-411) · 17.10.2026
 
-**R3.1 (17.10., after WSA R4):** added A6–A8, C12b and E16b. Nothing else changed.
+**R3.1 (17.10., after WSA R4):** added A6–A8 (brackets, numbers, game words), C12b (two tracks) and E16b (tone check). Nothing else changed.
 
 **This file replaces every earlier summary.** Briefs link to it and never paraphrase it. Changes go into this file as a new version; they are not stacked as separate rules.
 Golden example (format and tone): `replies/OPENER_ARC_R2/epistemic_sabotage.take05.final.suno.txt` (Georg's own version) + style `…take05.final.style.txt`. Style model: Trust 05 (`suno-track-format`, Georg 17.10.).
 
 ## A · Card lines (the base, V-266 / TRIPLET_SET_SPEC_R2, unchanged)
-1. One card = **exactly one line**. Name first (normal case, no brackets).
-2. **Only the card's words**: cardName, lore, power, plus image words from `artworkPrompt` (V-377). Grammar and cutting are allowed, with at most one Fluff-o-lect word per line. **No new verbs, images, events or jokes.**
-3. **Weighting (V-372):** the claim and story of the card come first. Power appears only as an aside or inversion, never recited as a rule. Dice values and rule labels are dropped.
-4. **Closure:** don't explain the card. 80–95 characters per line, sayable in one breath.
-6. **No brackets are spoken** ("The Unconscious (Das Unbewusste)" → "The Unconscious"; German subtitles, "(Strike)", "(The New Breed)" are dropped or worked into the sentence without brackets).
-7. **Numbers, times, amounts and symbols written out** as they are sung ("Seven A.M.", "three point two billion", "Nine-Eleven", "Rule Number One"), each logged as a songLine.
-8. **No game words in the line:** Actor, token, Scene, card effects, "equipped items", "Zerg rush" and the like are dropped (V-372: mechanics at most as an image, never as a term).
-5. `songLine` only where the printed text cannot be sung (German words, numbers, symbols). At most 10 % of lines, each one logged.
+A1. One card = **exactly one line**. Name first (normal case, no brackets).
+A2. **Only the card's words**: cardName, lore, power, plus image words from `artworkPrompt` (V-377). Grammar and cutting are allowed, with at most one Fluff-o-lect word per line. **No new verbs, images, events or jokes.**
+A3. **Weighting (V-372):** the claim and story of the card come first. Power appears only as an aside or inversion, never recited as a rule. Dice values and rule labels are dropped.
+A4. **Closure:** don't explain the card. 80–95 characters per line, sayable in one breath.
+A5. `songLine` only where the printed text cannot be sung (German words, numbers, symbols). At most 10 % of lines, each one logged.
+A6. **No brackets are spoken** ("The Unconscious (Das Unbewusste)" → "The Unconscious"; German subtitles, "(Strike)", "(The New Breed)" are dropped or worked into the sentence without brackets).
+A7. **Numbers, times, amounts and symbols written out** as they are sung ("Seven A.M.", "three point two billion", "Nine-Eleven", "Rule Number One"), each logged as a songLine.
+A8. **No game words in the line:** Actor, token, Scene, card effects, "equipped items", "Zerg rush" and the like are dropped (V-372: mechanics at most as an image, never as a term).
 
 ## B · Opener layer
 6. Short openers in front of some lines (about a third to a half), each used **only once** per song. Check them against all earlier songs.
