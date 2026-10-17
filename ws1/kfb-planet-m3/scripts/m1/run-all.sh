@@ -24,7 +24,7 @@ run m1-bench node scripts/m1/bench.mjs
 run m2-g0 node test/m2-g0.mjs
 run m2-settle node test/m2-settle.mjs
 run m2-v347 node test/m2-v347.mjs
-for t in m3-a m3-b m3-c m3-d m3-e m3-f; do run $t node test/$t.mjs; done
+for t in m3-a m3-b m3-c m3-d m3-e m3-f m3-g; do run $t node test/$t.mjs; done
 [ "$M1_ONLY" = 1 ] && { run f1 node test/f1.mjs; echo DONE >> test/out/m1/all.log; exit 0 }
 for t in contract-static deps host s0 s1 s5a s5b s5c f1 actors b1 stage d1 d1stage g4 v243 palette cast scale light lineup preview g4preview orbit drift; do [ -f test/$t.mjs ] && run $t node test/$t.mjs; done
 echo DONE >> test/out/m1/all.log

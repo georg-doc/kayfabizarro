@@ -58,7 +58,12 @@ export const PUSH = { capture: { lateralK: 0.65, yawK: 0.75, maxForce: 0.95, max
 // dem Wagen), Gierung parallel zur Wand, leichter Zug zur Wand; Freigabe nach hold, bei Wandende (contactLoss s ohne Kontakt) oder Weglenken (abortHold s).
 // Eingefangen wird an der Vorderecke; parallel steht die Seite noch bis ≈ 0,8 m von der Wand (Sonde probe-ride 17.10.) – deshalb pullIn bis zur ersten
 // Seitenberührung und grace s Kulanz, bevor „Wandende“ zählt.
-export const RIDE = { speedMin: 8 * K, maxInto: 0.55, holdS: 1.4, leanRad: 1.2, rise: 0.25, fall: 0.8, contactLoss: 0.25, grace: 0.5, abortHold: 0.32, pull: 1.5 * K, pullIn: 4 * K }
+export const RIDE = { speedMin: 8 * K, maxInto: 0.55, holdS: 1.4, leanRad: 1.2, rise: 0.25, fall: 0.8, minRate: 1.2, contactLoss: 0.25, grace: 0.5, abortHold: 0.32, pull: 1.5 * K, pullIn: 4 * K }
+// M3 Stufe G (V-379, optional, Präsentation): Tricks ohne eigenen Stunt-Modus, Physik fährt unverändert weiter (Lenkung bleibt aktiv).
+// Fassrolle = im Sprung Leertaste erneut + A/D ab minSpeed: Ereignis trick/tumble (Darstellung: lab-v7 vehicle-tumble.v1.js, landet auf
+// ganzen Umdrehungen = immer auf den Rädern); Zwei-Rad frei = X + A/D ab minSpeed: holdS auf zwei Rädern knapp unter dem Umfallwinkel
+// (vehicle-twowheel.v1.js variant free: TIP_SAFETY 0,92, M2Car setzt freeLeanRad); danach Schlingern als Erholung (vehicle-fishtail.v1.js).
+export const TRICK = { minSpeed: 6 * K, lockS: 2.2, holdS: 1.4, freeLeanRad: 0.8, airMin: 0.15 }
 export const ATT = { ground: 14, air: 2.5, follow: 0.5, maxPitch: (25 * Math.PI) / 180 }
 const clamp = (x, a, b) => Math.min(b, Math.max(a, x))
 const fx0 = (d) => Math.sin(d.yaw), fz0 = (d) => Math.cos(d.yaw)
@@ -115,8 +120,11 @@ export function stepK2t(d, inp, dt, env) {
     R.t += dt; R.contactT += dt; R.abortT = steerIn === R.side ? R.abortT + dt : 0
     const why = R.t >= RIDE.holdS ? 'hold' : R.contactT > RIDE.contactLoss ? 'end' : R.abortT >= RIDE.abortHold ? 'abort' : d.air ? 'air' : null
     if (why) { d.events.push({ type: 'twoWheel', phase: 'release', why, t: +R.t.toFixed(2) }); d.rideLast = { why, t: R.t }; d.ride = null } }
-  { const tgt = d.ride ? -d.ride.side * RIDE.leanRad : 0, // Vorzeichen: wandseitige Räder heben ab (Drehung um die wandferne Aufstandslinie)
-    rate = Math.abs(tgt) > Math.abs(d.lean || 0) ? 1 / RIDE.rise : 1 / RIDE.fall; d.lean = (d.lean || 0) + (tgt - (d.lean || 0)) * Math.min(1, rate * dt) }
+  if (d.freeTip) { d.freeTip.t += dt; if (d.freeTip.t >= TRICK.holdS || d.air || d.ride) { d.events.push({ type: 'trick', kind: 'recover', side: d.freeTip.side }); d.freeTip = null } }
+  { const tgt = d.ride ? -d.ride.side * RIDE.leanRad : d.freeTip ? -d.freeTip.side * TRICK.freeLeanRad : 0, // Vorzeichen: wandseitige Räder heben ab (Drehung um die wandferne Aufstandslinie)
+    rate = Math.abs(tgt) > Math.abs(d.lean || 0) ? 1 / RIDE.rise : 1 / RIDE.fall, l0 = d.lean || 0, gap = tgt - l0
+    // gedämpft, aber mit Mindesttempo minRate (rad/s): sonst läuft das Zurückkippen exponentiell aus (m3-g 17.10.: 1,3 s nach der Freigabe noch 9°)
+    let stp = gap * Math.min(1, rate * dt); if (Math.abs(stp) < RIDE.minRate * dt) stp = Math.sign(gap) * Math.min(Math.abs(gap), RIDE.minRate * dt); d.lean = l0 + stp }
   // Quer (k2b: Zentrifugal mit dt, gedämpft – im Drift weicher, beim Wiedergreifen härter; latV + = links)
   const damp = FLOW.lateralDamping * (d.drift > 0.05 ? FEEL.driftDampingScale : (d.regrip > 0 ? FEEL.regripDampingScale : 1))
   if (!d.air) { d.latV += -yawRate * d.speed * FLOW.centrifugalGain * dt; d.latV -= d.latV * Math.min(1, damp * dt); d.latV = clamp(d.latV, -11 * K, 11 * K) }
@@ -127,6 +135,15 @@ export function stepK2t(d, inp, dt, env) {
   const fx = Math.sin(d.yaw), fz = Math.cos(d.yaw), lx = fz, lz = -fx // vorn (+Z bei yaw 0), links
   let delta = [(fx * d.speed + lx * d.latV) * dt, 0, (fz * d.speed + lz * d.latV) * dt]
   // senkrecht: am Boden der Bodenhöhe folgen (Schwebe hoverBase), sonst Wurf mit flyGravity
+  // Tricks (Stufe G): Sperre, solange einer läuft; Fassrolle ersetzt den Sprung, Zwei-Rad frei über X
+  d.trickT = Math.max(0, (d.trickT || 0) - dt)
+  const trickSide = (inp.right ? 1 : 0) - (inp.left ? 1 : 0)
+  const jumpEdge = !!inp.jump && !d.jumpHeld; d.jumpHeld = !!inp.jump; d.airT = d.air ? (d.airT || 0) + dt : 0
+  // Fassrolle in der Luft (Leertaste erneut + A/D, frühestens airMin s nach dem Abheben); Zwei-Rad frei am Boden (X + A/D). Der normale Sprung bleibt.
+  if (A3 && !d.ride && !d.trickT && trickSide && Math.abs(d.speed) >= TRICK.minSpeed && ((d.air && jumpEdge && d.airT >= TRICK.airMin) || (!d.air && inp.tip))) {
+    d.trickT = TRICK.lockS; d.tricks = (d.tricks || 0) + 1
+    if (d.air) d.events.push({ type: 'trick', kind: 'tumble', side: trickSide, speed: clamp(Math.abs(d.speed) / FLOW.maxForward, 0, 1) })
+    else { d.freeTip = { side: trickSide, t: 0 }; /* nach rechts gelenkt: die rechten (inneren) Räder heben ab */ d.events.push({ type: 'trick', kind: 'twoWheel', side: trickSide }) } }
   if (inp.jump && !d.air) { d.vy = FEEL.jumpImpulse; d.air = true; d.events.push({ type: 'takeoff', vy: d.vy, speed: Math.abs(d.speed), jump: true }) }
   if (d.air) { d.vy -= ASSIST.flyGravity * dt; delta[1] = d.vy * dt }
   // Wände: verschieben mit Shape-Cast; Prall wie k2b-Bande

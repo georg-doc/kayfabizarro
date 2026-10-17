@@ -22,7 +22,9 @@ import { isFence, inRankFence } from '../m1/m1Host'
 import { STEP, interpTrack } from '../m1/m1Clock'
 import { VEHICLE_COMMIT } from '../modules/vehicleLineup'
 import fbRecipe from '../data/actors/frizzlebob-v5b.recipe.json'
-import { createK2t, stepK2t, SQUASH_LOOK, attitude, ATT, LAND, STUCK, ASSIST_M3, PUSH, RIDE } from './k2t'
+import { createK2t, stepK2t, SQUASH_LOOK, attitude, ATT, LAND, STUCK, ASSIST_M3, PUSH, RIDE, TRICK } from './k2t'
+import { attachTumble } from '../vendor/deformer/vehicle-tumble.v1.js'
+import { attachFishtail } from '../vendor/deformer/vehicle-fishtail.v1.js'
 import { rampZone } from '../m3/stuntData.js'
 import { createDeformer } from '../vendor/deformer/vehicle-cartoon-deformer.v2.js'
 import DEFORM_PROFILES from '../vendor/deformer/deformer-profiles.json'
@@ -62,7 +64,7 @@ export const M2STATE = { kind: /car=ecctrl/.test(H) ? 'ecctrl' : 'k2b', // Start
 // Label nach V-367 („Fahrsystem: K2B | ecctrl“, Abnahmepunkt; weg erst beim M2-Merge mit Georgs Zustimmung): aktives System kräftig, das andere blass
 const LABEL = (kind) => ['k2b', 'ecctrl'].map((k) => `<span style="opacity:${k === kind ? 1 : 0.35}">${k === 'k2b' ? 'K2B' : 'ecctrl'}</span>`).join(' | ')
 // Fahr-Tasten im Info-Symbol (V-347 (4)), unter der M1-Liste; ecctrl ist eingefroren (V-367), Drift und Wendehilfe nur in K2B
-const CAR_KEYS = '<b>Auto</b><br>W · Gas &nbsp;·&nbsp; S · bremsen / rückwärts &nbsp;·&nbsp; A D · lenken (langsam: enge Wende)<br>Q E · driften links / rechts (K2B, ab 4,9 m/s)<br>Shift · Boost (K2B) &nbsp;·&nbsp; Leertaste · springen (K2B)<br>M · Fahrhilfe M3 an/aus (Landen, Lage, Nie-festfahren, Rampen- und Wandzonen) bzw. Handbremse (ecctrl)<br>R · zurück an den Start &nbsp;·&nbsp; C · Fahrsystem wechseln'
+const CAR_KEYS = '<b>Auto</b><br>W · Gas &nbsp;·&nbsp; S · bremsen / rückwärts &nbsp;·&nbsp; A D · lenken (langsam: enge Wende)<br>Q E · driften links / rechts (K2B, ab 4,9 m/s)<br>Shift · Boost (K2B) &nbsp;·&nbsp; Leertaste · springen (K2B)<br>im Sprung Leertaste + A/D · Fassrolle &nbsp;·&nbsp; X + A/D · auf zwei Rädern (ab 6 m/s, mit Fahrhilfe)<br>M · Fahrhilfe M3 an/aus (Landen, Lage, Nie-festfahren, Rampen- und Wandzonen) bzw. Handbremse (ecctrl)<br>R · zurück an den Start &nbsp;·&nbsp; C · Fahrsystem wechseln'
 const NOKEYS = { forward: false, backward: false, leftward: false, rightward: false, jump: false, run: false, walk: false }
 const OnFrame = ({ fn }) => { useFrame(fn); return null }
 
@@ -77,14 +79,32 @@ const loadModel = () => (modelPromise ||= new GLTFLoader().loadAsync(M2CAR.url).
 // Unterseite zeigt zur Wand (so ragt die gekippte Hülle nicht in die Wand; das Tempo „trägt“ wie an der Steilwand). Nur Darstellung, der Kollider kippt nicht.
 const TW = (() => { const cx = M2CAR.box.h[0], cg = M2CAR.box.c[1], tip = Math.atan(cx / cg); return { contactX: cx, tipDeg: +(tip * 180 / Math.PI).toFixed(1), hold: tip + (Math.PI / 2 - tip) * 0.45 } })()
 RIDE.leanRad = TW.hold
+TRICK.freeLeanRad = (TW.tipDeg * Math.PI / 180) * 0.92 // Zwei-Rad frei: TIP_SAFETY 0,92 des Umfallwinkels (vehicle-twowheel.v1.js)
 export const DEFORM = { profile: DEFORM_PROFILES.profiles.CAR_CHILL_LIGHT, last: null }
+// Stufe G: Fassrolle und Schlingern als eigene Gruppen über der Darstellung (lab-v7, 1:1). Unser Schwebewagen hat keine Räder: die vier Schwebepunkte
+// (M2CAR.hover) stehen für die Radlage (Aufstandslinie, Vorderachse als Drehpunkt des Schlingerns). Lesewerte für Tests in TRICKS.
+export const TRICKS = { tumble: null, fish: null, touchdowns: 0, recovers: 0, triggered: 0 }
+const TRICK_RIG_WHEELS = M2CAR.hover.map(([x, y, z], i) => ({ centre: { x, y, z }, width: 0.3 * S, end: i < 2 ? 'zPlus' : 'zMinus' }))
 function CarVisual({ squash, signals, lean }) {
-  const g = useRef(null), tilt = useRef(null), body = useRef(null), [model, setModel] = useState(null), def = useRef(null)
+  const g = useRef(null), tilt = useRef(null), trick = useRef(null), body = useRef(null), [model, setModel] = useState(null), def = useRef(null)
+  useEffect(() => { if (!signals || !g.current || !body.current || !tilt.current) return
+    const rig = { group: g.current, body: body.current, wheels: TRICK_RIG_WHEELS, frame: { height: M2CAR.box.c[1] + M2CAR.box.h[1], length: M2CAR.box.h[2] * 2, width: M2CAR.box.h[0] * 2, contactY: 0 }, report: { track: M2CAR.hover[0][0] * 2, wheelWidth: 0.3 * S } }
+    const host = tilt.current; host.remove(g.current)
+    const F = attachFishtail({ THREE, rig, profile: DEFORM.profile, facing: 1 }), T = attachTumble({ THREE, rig, profile: DEFORM.profile, facing: 1, child: F.root }); host.add(T.root)
+    const hideMarks = () => T.root.traverse((o) => { if (o.isLine || o.isLineSegments) o.visible = false }) // Lab-Hilfslinien (Achsen, Anker) nicht im Spiel
+    hideMarks(); trick.current = { T, F, hideMarks, side: 1 }
+    const _q = new THREE.Quaternion(), _u = new THREE.Vector3(); TRICKS.bodyUpY = () => { body.current?.getWorldQuaternion(_q); return _u.set(0, 1, 0).applyQuaternion(_q).y } // Prüfwert: Karosserie aufrecht?
+    const off = M2EVENTS.on('trick', (e) => { if (!ASSIST_M3.on) return
+      if (e.kind === 'tumble') { T.trigger({ severity: 0.7, speed: e.speed, side: e.side }); hideMarks(); TRICKS.triggered++; trick.current.side = e.side }
+      if (e.kind === 'recover') { F.trigger({ severity: 0.8, dir: e.side }); TRICKS.recovers++ } })
+    return () => { off(); trick.current = null; host.remove(T.root); F.dispose?.(); T.dispose?.(); host.add(g.current) } }, [signals])
   useEffect(() => { if (!signals || !g.current || !body.current) return
     const D = createDeformer(THREE, { group: g.current, body: body.current, wheels: [], frame: { height: M2CAR.box.h[1] * 2, length: M2CAR.box.h[2] * 2, width: M2CAR.box.h[0] * 2 } }, { profile: DEFORM.profile })
     def.current = D; const offs = [M2EVENTS.on('railImpact', (e) => ASSIST_M3.on && D.railImpact(e)), M2EVENTS.on('landing', (e) => ASSIST_M3.on && D.landing(e))]
     return () => { offs.forEach((f) => f()); D.dispose?.(); def.current = null } }, [signals])
-  useFrame(() => { const D = def.current
+  useFrame(() => { const D = def.current, X = trick.current
+    if (X) { const r = X.T.update(STEP); if (r.event === 'touchdown') { TRICKS.touchdowns++; D?.landing({ strength: r.strength }) } if (r.event === 'recover') { X.F.trigger({ severity: 0.8, dir: X.side || 1 }); TRICKS.recovers++ } X.hideMarks()
+      TRICKS.tumble = { active: r.active, phase: r.phase, rollDeg: r.rollDeg, turns: r.turns }; const f = X.F.update(STEP); TRICKS.fish = { active: f.active, yawDeg: f.yawDeg } }
     if (tilt.current) { const a = lean?.() ?? 0, px = -Math.sign(a) * TW.contactX; tilt.current.rotation.z = a; tilt.current.position.set(px - px * Math.cos(a), -px * Math.sin(a), 0) } // Drehung um die Aufstandslinie
     if (D && ASSIST_M3.on) { g.current.scale.set(1, 1, 1); D.setSignals(signals()); D.update(STEP); DEFORM.last = D.readout; return }
     if (D) D.reset?.()
@@ -153,7 +173,7 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
     const k = cam.init ? 1 - Math.exp(-4 * dt) : 1
     camera.position.lerp(cam.want, k); cam.tgt.lerp(new THREE.Vector3(p.x, p.y + M2CAR.cam.target[1], p.z), cam.init ? 1 - Math.exp(-8 * dt) : 1); cam.init = true; camera.lookAt(cam.tgt)
   })
-  useEffect(() => { expose('M2', { att: ATT, land: LAND, stuck: STUCK, push: PUSH, ride: RIDE, twoWheel: TW, assist: ASSIST_M3, deform: DEFORM, events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how) }) }, [])
+  useEffect(() => { expose('M2', { att: ATT, land: LAND, stuck: STUCK, push: PUSH, ride: RIDE, twoWheel: TW, trick: TRICK, tricks: TRICKS, assist: ASSIST_M3, deform: DEFORM, events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how) }) }, [])
   useImperativeHandle(ref, () => ({ kind: () => M2STATE.kind, setKind: (k, at) => restart(k, at), car: () => car.current }))
   const props = { key: kind + session, at: spawn.current, keys, carRef: car, player }
   return <><primitive object={proxy} />{kind === 'ecctrl' ? <EcctrlCar {...props} /> : <K2tCar {...props} />}</>
@@ -289,13 +309,13 @@ function K2tCar({ at, keys, carRef, player }) {
     carRef.current = {
       kind: 'k2b', pos: () => ({ x: d.x, y: d.y, z: d.z }), yaw: () => d.yaw, upY: () => tmp.u.fromArray(d.up).normalize().y, grounded: () => (d.air ? 0 : 4), speed: () => Math.hypot(d.speed, d.latV), body: () => body.current, flip: () => {},
       signals: () => d.signals, attitude: () => attitude(d), kick: (o) => { if (DEBUG) Object.assign(d, o) }, // Prüf-Stoß (nur debug): z. B. { latV } in der Luft
-      state: () => ({ kind: 'k2b', grounded: d.air ? 0 : 4, upY: 1, speed: +Math.abs(d.speed).toFixed(2), air: d.air, hits: d.hits, squash: +d.squash.toFixed(3), rescues: d.rescues || 0, t1: d.t1 || 0, t3: d.t3 || 0, rides: d.rides || 0, riding: !!d.ride, rideLast: d.rideLast || null, lean: +(d.lean || 0).toFixed(3), launches: d.launches || 0, zone: d.zone?.seg || null, zoneAborted: !!d.zone?.aborted, fenceRescues: d.fenceRescues || 0 }),
+      state: () => ({ kind: 'k2b', grounded: d.air ? 0 : 4, upY: 1, speed: +Math.abs(d.speed).toFixed(2), air: d.air, hits: d.hits, squash: +d.squash.toFixed(3), rescues: d.rescues || 0, t1: d.t1 || 0, t3: d.t3 || 0, rides: d.rides || 0, riding: !!d.ride, tricks: d.tricks || 0, freeTip: !!d.freeTip, rideLast: d.rideLast || null, lean: +(d.lean || 0).toFixed(3), launches: d.launches || 0, zone: d.zone?.seg || null, zoneAborted: !!d.zone?.aborted, fenceRescues: d.fenceRescues || 0 }),
     }
     return () => { if (carRef.current?.kind === 'k2b') carRef.current = null }
   }, [])
   const sig = useCallback(() => d.signals, [d]) // Deformer-Eingang (Stufe E), stabil je Wagen
   const step = () => {
-    const k = keys(), px = d.x, pz = d.z; stepK2t(d, { gas: k.forward, brake: k.backward, left: k.leftward, right: k.rightward, driftL: k.strafeL, driftR: k.strafeR, boost: k.run, jump: k.jump }, STEP, env) // Q/E = Drift (V-347, MOVE_MAP-Namen wie zu Fuß)
+    const k = keys(), px = d.x, pz = d.z; stepK2t(d, { gas: k.forward, brake: k.backward, left: k.leftward, right: k.rightward, driftL: k.strafeL, driftR: k.strafeR, boost: k.run, jump: k.jump, tip: k.descend }, STEP, env) // Q/E = Drift (V-347, MOVE_MAP-Namen wie zu Fuß)
     for (const e of d.events) M2EVENTS.emit(e)
     // Sicherung Ränge (V-283): landet die Automitte im Zaun-Grundriss, zurück auf den letzten Stand und abprallen (wie die Bodensicherung)
     if (inRankFence(d.x, d.z) && !inRankFence(px, pz)) { d.x = px; d.z = pz; d.speed *= -0.25; d.latV = 0; d.fenceRescues = (d.fenceRescues || 0) + 1 }
