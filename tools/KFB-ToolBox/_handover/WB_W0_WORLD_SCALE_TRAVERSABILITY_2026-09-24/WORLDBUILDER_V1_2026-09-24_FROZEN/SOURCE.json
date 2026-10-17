@@ -1,0 +1,31 @@
+{
+  "schema": "kfb.worldbuilder.source/1",
+  "slice": "WorldBuilder v1 · Slice 1 · planet foundation",
+  "status": "HUMAN_REJECTED_FOUNDATION · DO NOT PATCH (Georg 2026-09-24) · see POST_MORTEM.md",
+  "briefing": { "path": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/START_CLAUDE_DESIGN_WORLDBUILDER_V1.md", "verdict": "FAIL" },
+  "notUsedButRequired": [
+    { "path": "tools/KFB-ToolBox/_handover/WORLD_BUILDER_V1_2026-09-22/TERRAIN_FIRST_RESET_2026-09-23.md", "why": "biome blending, erosion, slope/height rules — not transferred into the briefing" },
+    { "ref": "PR #194", "why": "Hürth/Elastic foundation frozen after two repair passes — should not have been a donor" }
+  ],
+  "date": "2026-09-24",
+  "repo": "georg-doc/kayfabizarro",
+  "donors": [
+    { "what": "terrain sculpt core", "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/terrain-sculpt.js", "commit": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e", "reuse": "IMPORTED_AND_CALLED (brushWeight, makeStroke, pointSpacing, SCULPT_VERSION); 3D stroke points are the named delta" },
+    { "what": "WB2 editor source (noise subset, sculpt UI grammar)", "path": "tools/KFB-ToolBox/worldbuilder/wb2-terrain-sculpt-01/WB2_TERRAIN_SCULPT_01_SOURCE.html", "commit": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e", "reuse": "COPIED (ZyFou MIT subset verbatim, terrainHeightAt formula, DEFAULT_DOC terrain numbers)" },
+    { "what": "shared editor (one picker, one gizmo)", "path": "tools/KFB-ToolBox/lib/edit-layer.js", "commit": "8922d4b1329fbd47b8754db9dd04ca6b9eb0ee9e", "reuse": "IMPORTED_AND_CALLED (makeEditLayer); floor/space handled by host via onMenu" },
+    { "what": "planet approach + noise", "repo": "ZyFou/ProceduralTerrains", "commit": "f58a8ddb81d1fbb526a41282a9a7e9c05c2d2070", "license": "MIT", "files": ["src/engine/terrain/noise/cpuNoise.js", "src/engine/terrain/noise/seedDomain.js"], "reuse": "cube-sphere approach; noise subset via WB2" },
+    { "what": "TinySkies sky/weather/light", "path": "travel/wip/travel_globe_wsa/globe-v13/", "ref": "main", "files": ["sky-presets.js", "sky-atmosphere.js", "day-night.js", "weltstimmungen.js", "rain-overlay.js", "starfield.js", "sun-shadow.js", "light-budget.js"], "reuse": "IMPORTED_AND_CALLED, lengths × K = R/5; commit not pinned (brief URL @main)" },
+    { "what": "WorldDesign Lab layers", "path": "tools/KFB-ToolBox/_inbox/KFB World Design Setup (1)/WORLDDESIGN_LAB_2026-09-23/deliverables/", "ref": "main", "files": ["wd-look.js", "wd-macro.js", "wd-ink.js"], "reuse": "project copies, unchanged; host delta: color_fragment before map_fragment on the vertex-coloured planet" },
+    { "what": "Elastic Grotesque Clay V2 geometry", "path": "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/elastic-grotesque-clay.mjs", "commit": "0c59e92d9d8688f5a88cd309ae8891dcd174c2fc", "reuse": "IMPORTED_AND_CALLED; V2 palette constants copied from viewer.mjs @same commit" },
+    { "what": "Clean/Cartoon/Grotesque", "path": "tools/osm-city-lab/src/style/cartoon-city.js + kfb-city-materials.js + styles/kfb-city-v0.json", "commit": "0c59e92d9d8688f5a88cd309ae8891dcd174c2fc", "reuse": "IMPORTED_AND_CALLED" },
+    { "what": "OSM Hürth", "path": "tools/osm-city-lab/data/huerth-v0/normalized.json", "commit": "0c59e92d9d8688f5a88cd309ae8891dcd174c2fc", "reuse": "22 fixture ids, 9 nearest placed" },
+    { "what": "palette only (R2)", "path": "tools/osm-city-lab/experiments/elastic-grotesque-clay-huerth01/vendor/racer-cologne/cologne-palette.v1.js", "commit": "b7f28824299b15e5d8a61c4bd9d847cfbe8f18ea", "reuse": "makePalette only; R2 road/curb geometry NOT used" },
+    { "what": "EyeRig v6 adapter + cleanup + face colour", "path": "kfb-hub/stage/toolbox/eye-rig-batch/lib/{kaykit-eye-adapter,medium-source-eye-cleanup,face-color-sampler}.v1.js", "ref": "cloudflare-live", "reuse": "IMPORTED_AND_CALLED in the tool's own order" },
+    { "what": "approved eye profile", "path": "kfb-hub/stage/toolbox/eye-rig-batch/data/rig-medium-default.v0.json", "ref": "cloudflare-live", "reuse": "authoringDefault.eye mounted by default" },
+    { "what": "expression contract", "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json", "ref": "main" },
+    { "what": "character + clips", "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb + KayKit_Character_Animations_1.1 Rig_Medium General/MovementBasic", "ref": "main", "loader": "tools/resident_atlas_s6/lib/atlas.js loadAsset/instance/loadClips" },
+    { "what": "objects", "registry": "registry/assets/v1/packs/<slug>.json", "slugs": ["tiny-treats-homely-house-1-0-free (house)", "kaykit-forest-nature-pack-1-0-free (Tree_1_A_Color1, Rock_3_E_Color1)", "rocks-pebbles-path-tiles-by-quaternius (Pebble Round)", "tiny-treats-pretty-park-1-0-free (street_lantern)"], "assetCommit": "378b209355b13304e3cff656ec0806ca5b89df28 (per registry source.commit)" },
+    { "what": "Earth template", "external": "world-atlas@2.0.2 land-50m.json (Natural Earth, public domain) + topojson-client@3.1.0", "reuse": "rasterised land mask" },
+    { "what": "three.js", "external": "three@0.184.0 (single import map instance)" }
+  ]
+}
