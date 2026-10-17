@@ -1,0 +1,16 @@
+name: KFB 1001 R4 lyric gate
+on:
+  push:
+    branches:
+      - "songs/1001_kayfabe_nights-r4-2026-10-17"
+permissions:
+  contents: read
+jobs:
+  lexical_and_format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact triplet_set_check.py
+        run: python3 songs/1001_kayfabe_nights/triplet_set_check.py songs/1001_kayfabe_nights/1001_kayfabe_nights.qa.deck.json songs/1001_kayfabe_nights/1001_kayfabe_nights.qa.set.csv
+      - name: Format gate
+        run: python3 songs/1001_kayfabe_nights/format_gate.py
