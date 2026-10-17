@@ -1,0 +1,97 @@
+{
+  "schema": "kfb.hub-resident-story-overlay.source/1",
+  "owner": "KFB Production Hub",
+  "issue": 370,
+  "branch": "planning/hub-resident-story-overlay-2026-10-07",
+  "baseMainHead": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+  "executionMode": "PREP_ONLY",
+  "sources": [
+    {
+      "role": "hub_contract",
+      "path": "skills/chat/HUB_SHELL_DATA_STYLE_CONTRACT_2026-10-06.md",
+      "ref": "main"
+    },
+    {
+      "role": "hub_recovery_issue",
+      "ref": "issue:364",
+      "status": "closed-pass"
+    },
+    {
+      "role": "hub_overlay_primary",
+      "path": "tools/KFB-ToolBox/_inbox/KFB HUB Design v2/KFB_HUB_UX_RECOVERY_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/code/hub-recovery/resident-overlay.v1.js",
+      "ref": "main",
+      "sha": "b373b51769715ef70a2f426dd9735a6297344737"
+    },
+    {
+      "role": "hub_overlay_changelog",
+      "path": "tools/KFB-ToolBox/_inbox/KFB HUB Design v2/KFB_HUB_UX_RECOVERY_CLAUDE_DESIGN_SESSION_CUT_2026-09-25_r1/CHANGELOG.md",
+      "ref": "main"
+    },
+    {
+      "role": "resident_atlas_current",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-10-04_r2/KFB_Resident_Atlas_S17.html",
+      "ref": "main"
+    },
+    {
+      "role": "resident_band",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-10-04_r2/docs/RESIDENT_BAND_MODULE_01.md",
+      "ref": "main"
+    },
+    {
+      "role": "resident_disco",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-10-04_r2/docs/RESIDENT_DISCO_CD_01.md",
+      "ref": "main"
+    },
+    {
+      "role": "chatterbox_tts",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_CHATTERBOX_STUDIO_CLAUDE_DESIGN_SESSION_CUT_2026-10-05_r2/KFB ChatterBox Studio v2.dc.html",
+      "ref": "main"
+    },
+    {
+      "role": "frizzlebob_v5",
+      "path": "tools/KFB-ToolBox/ear-rig/glb/FB_TEMPLATE_LOOK_v5.glb",
+      "note": "canonical current model donor named by ToolBox source docs; binary path must be re-verified before implementation"
+    },
+    {
+      "role": "project_history",
+      "path": "skills/chat/CHANGELOG.md",
+      "ref": "main"
+    }
+  ],
+  "dropboxProvenance": [
+    {
+      "name": "FrizzleBob Studio v5.dc.html",
+      "id": "id:KeQLaY5-IIAAAAAAAASdZw"
+    },
+    {
+      "name": "frizzlebob-v5.js",
+      "id": "id:KeQLaY5-IIAAAAAAAASdeQ"
+    },
+    {
+      "name": "FrizzleBob v5 - standalone.html",
+      "id": "id:KeQLaY5-IIAAAAAAAASdfA"
+    },
+    {
+      "name": "KFB_Resident_Atlas_S17.html",
+      "id": "id:KeQLaY5-IIAAAAAAAAfU-w"
+    },
+    {
+      "name": "RESIDENT_BAND_MODULE_01.md",
+      "id": "id:KeQLaY5-IIAAAAAAAAfVHw"
+    },
+    {
+      "name": "RESIDENT_DISCO_CD_01.md",
+      "id": "id:KeQLaY5-IIAAAAAAAAfVIA"
+    }
+  ],
+  "protectedOwners": [
+    "KFB Production Hub",
+    "Resident Atlas",
+    "KFB ToolBox",
+    "KFB Motion Library",
+    "ChatterBox",
+    "Open World"
+  ],
+  "runtimeWrites": false,
+  "publication": false
+}
