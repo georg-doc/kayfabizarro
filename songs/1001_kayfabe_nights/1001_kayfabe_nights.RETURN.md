@@ -3,3 +3,6 @@ Owner existing kfb-triplets. Branch songs/1001_kayfabe_nights-r4-2026-10-17. Bin
 
 ## R3.1 executed test evidence
 Run https://github.com/georg-doc/kayfabizarro/actions/runs/39031905120; candidate 51df4947c06e63a260b23b84944545d92fe08b98. Exact original triplet_set_check.py EXIT 0 SUCCESS; R3.1 format_gate_r31.py EXIT 0 SUCCESS. Two named mechanical gates PASS. Creative blind review NOT RUN. This does not constitute Georg's approval.
+
+## V-418 pre-blind semantic repair
+After an additional A8/E16b audit: #17 Giant now a tusked monster-heel without cannibal/Jobber-eating language; #20 shipwreck uses timber image, not hard reset/equipped items; #30 horseman points to grave (no programmed referee), #32 spoiler tablets no card mechanics, #38 ebony mechanical horse image not a "Tech Gimmick", #43 hunchback scapegoat scene not card effect, #58 Montreal protest at stolen belt not reset. All key new words sourced from printed lore and PDF JSON artworkPrompt (source images NOT independently rendered). No card omitted, old R4 remains. Updated candidate 4997 chars. Mechanical rerun pending; prior CI belongs to old candidate and does not validate this new content.
