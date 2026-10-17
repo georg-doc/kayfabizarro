@@ -1,4 +1,4 @@
-name: KFB 1001 R4 lyric gate
+name: KFB 1001 R3.1 lyric gate
 on:
   push:
     branches:
@@ -6,11 +6,11 @@ on:
 permissions:
   contents: read
 jobs:
-  lexical_and_format:
+  r31:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Exact triplet_set_check.py
-        run: python3 songs/1001_kayfabe_nights/triplet_set_check.py songs/1001_kayfabe_nights/1001_kayfabe_nights.qa.deck.json songs/1001_kayfabe_nights/1001_kayfabe_nights.qa.set.csv
-      - name: Format gate
-        run: python3 songs/1001_kayfabe_nights/format_gate.py
+      - name: Exact plugin lexical gate
+        run: python3 songs/1001_kayfabe_nights/triplet_set_check.py songs/1001_kayfabe_nights/1001_kayfabe_nights.r31.qa.deck.json songs/1001_kayfabe_nights/1001_kayfabe_nights.r31.qa.set.csv
+      - name: R3.1 gate
+        run: python3 songs/1001_kayfabe_nights/format_gate_r31.py

@@ -1,10 +1,2 @@
-# R4 1001 Kayfabe Nights · source-pinned candidate
-
-Owner: existing kfb-triplets; GitHub-only. Source registry blob 86d50dd8f444664c764dba4d3578d9b6c6b98250; source media PDF JSON blob c5b6719d6a0612f227615d9917bbfbb45563f45d. The first four numbered artifacts are cover/manifesto/meter/warning nonplay metadata and explicitly skipped; 56 numbered character/story/field cards retained #5–60 in order. 4995 Unicode characters, 56/56 card vocabulary and length checks, 15 unique short opener tags. 0 songLine rewrites, no rule-recitation of power. PDF visual drawings not inspected in this run; word motifs from registered pdf.json artworkPrompt only. Source lexical fixture derived, NOT canonical dataset. Check exact Python GitHub Actions before review. Blind review pending, no scores, revision pending. No Hub/Stage/merge. One next gate: independent reviewer flags after mechanical gate passes, then ONE writer revision and Georg acceptance.
-
-ACTUAL PYTHON GATE EVIDENCE · run 39029115467
-https://github.com/georg-doc/kayfabizarro/actions/runs/39029115467
-Original candidate commit 5b28ae0f8a4a2115d70fe2ce38c3666201038e45
-Exact original triplet_set_check.py: exit 0 (GitHub Actions SUCCESS).
-R4 format_gate.py: exit 0 (GitHub Actions SUCCESS).
-Combined 2/2 PASS; independent blind reviewer and one revision still PENDING, NOT accepted/published.
+# 1001 Nights R4.1 Return V-418
+Owner existing kfb-triplets. Branch songs/1001_kayfabe_nights-r4-2026-10-17. Binding spec R3.1 blob 3a6ea19c0c30c4c9430decc1c739dbbb5a294f60. 56/56 playable original numbered cards, four cover/rule metadata omitted as documented R4. Original R4 retained. 4987 Unicode chars, 56/56 80–95 card core. Bracketed Aladdin subtitle dropped, The Black Giant human-group derogatory cannibal expression removed, The Giant as stage title alias; 39 -> Thirty-Nine sung, logged one songLine/56. Game effects removed. No canonical edit: derived QA-only alias & number spellings. Python CI gate pending. Blind review not run, no score or creative acceptance. No Hub/Site/merge. Next gate: independent reviewer flags only after Python PASS.

@@ -1,8 +1,8 @@
-# Independent blind review · PENDING
+# R3.1 blind review PENDING
 
-Short description for judge: A One Thousand and One Nights wrestling territory. Shahryār rules by threatened endings; Scheherazade's stories defer his decision. A succession of stories shows how contracts, cliffhangers and an audience's belief can determine who survives.
+Deck: One Thousand and One Nights recast as a wrestling territory: threatened dawn, the promise of another story, contracts and belief. Satire aims at coercion and the promoter, not victims.
 
-## Full lyrics
+## Lyrics
 
 [Spoken Word]
 
@@ -16,7 +16,7 @@ Dunyazad, the Hype Woman, keeps heat alive; sister, tell him the one about the a
 
 Again. The Grand Vizier, manager turned referee, caught between Bull and Fox; one more night.
 
-Aladdin (The New Breed), dark matches in a cave; now in the Main Event, the Push.
+Aladdin, formerly working dark matches in a cave; now in the Main Event, the Push.
 
 The African Sorcerer, heel manager, scouted talent; screwed out of the commission.
 
@@ -32,25 +32,25 @@ The Giant Roc, vertical suplex machine; takes you to the clouds, no landing pad 
 
 The Diamond Valley, high risk, high reward; floor literally knives, razor terrain.
 
-Oh. The Black Giant, a cannibal heel likes his Jobbers well-done; the squash match instantly.
+The Giant, heel likes his Jobbers well-done; the squash match, the lowest character.
 
 The Old Man of the Sea, backpack you can't take off; tap out or black out, chokehold.
 
 The Gourd of Wine, foreign object to break submission; old man detaches and sleeps.
 
-The Shipwreck, tour bus crashed; everyone starts from zero, equipped items destroyed.
+The Shipwreck, tour bus crashed; everyone starts from zero, a hard reset, shipwreck.
 
 Gold. Ali Baba, woodcutter found master script; taxing gold and the push, opportunist.
 
-Morgiana, marked your coffins; dance ends when dagger hits, hardcore valet, thief tokens.
+Morgiana, marked your coffins; dance ends when dagger hits, hardcore valet, daggers.
 
 Cassim, forgot his lines, trapped in cage with forty monsters; the botch, password.
 
 The Magic Cave, ultimate gated community; no one enters or leaves without the voice.
 
-Heat. The Captain of Thieves, not here for gold, here for heat; stable leader, thief tokens.
+Heat. The Captain of Thieves, not here for gold, here for Heat; stable leader with the thieves.
 
-The 39 Grunts, individually weak, collectively a burial squad; token swarm, Zerg rush.
+The Thirty-Nine Grunts, individually weak, collectively a burial squad; overwhelmed.
 
 The Marked Door, they tried to mark the house; Morgiana marked the block, mind games.
 
@@ -62,7 +62,7 @@ The Brass Horseman, doesn't care about your story; points to the grave, programm
 
 The Mummified Queen, top draw of silent era; promotion dead but she's still booking.
 
-The Seven Tablets, read the spoilers, leave the city; the script reveals next cards.
+The Seven Tablets, read the spoilers, leave the city; the script, tablet and spoilers.
 
 Freeze. The Petrified Market, believed the story so much they became the set, a dead crowd.
 
@@ -88,7 +88,7 @@ The Hunchback, prop body; tag, you're the killer, blame game triggered by ref bu
 
 The Fishbone, tiny foreign object, ultimate no-sell; choking hazard, temporary death.
 
-Panic. The Jewish Physician, tripped in dark; not medical school, a crime scene, panic.
+Panic. The Jewish Physician, tripped in the dark; this isn't medical school, it's a crime.
 
 The Tailor, wanted to fix the body so no one would notice; stitching the squash.
 
@@ -125,4 +125,4 @@ Next.
 Stay Fluffy!
 
 
-Judge ONLY: score song/stand-up/faithfulness, three key weaknesses, numbered observations and rulebook/card claim flags. Do not propose replacement text or change lines. Independent reviewer has not yet been engaged.
+Independent reviewer must judge only: numeric scores, line flags, observations. No replacement text or proposals.

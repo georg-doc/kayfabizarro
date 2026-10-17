@@ -1,13 +1,45 @@
 {
   "deckId": "1001_kayfabe_nights",
-  "version": "R4",
-  "songLineChanges": [],
-  "count": 0,
-  "limit": 5,
-  "metaSkipped": [
-    1,
-    2,
-    3,
-    4
+  "version": "R4.1",
+  "songLineChanges": [
+    {
+      "cardNumber": 26,
+      "before": "The 39 Grunts",
+      "after": "The Thirty-Nine Grunts",
+      "reason": "A7 spell numeric title"
+    }
+  ],
+  "songLineCount": 1,
+  "totalCardLines": 56,
+  "percent": 1.79,
+  "presentationEdits": [
+    {
+      "cardNumber": 9,
+      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
+    },
+    {
+      "cardNumber": 17,
+      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
+    },
+    {
+      "cardNumber": 20,
+      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
+    },
+    {
+      "cardNumber": 22,
+      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
+    },
+    {
+      "cardNumber": 25,
+      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
+    },
+    {
+      "cardNumber": 32,
+      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
+    },
+    {
+      "cardNumber": 45,
+      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
+    }
   ]
 }
