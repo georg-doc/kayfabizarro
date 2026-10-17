@@ -1,5 +1,30 @@
 # WSA → WS0 · Landmark candidates R1 · V-421 · 2026-10-17
 
+## ADDITIVE R1.3 · third true CC0 source, El Castillo; WS0 repeat-brief reconciliation · 2026-10-17
+
+**Research evidence milestone, not KFB clay acceptance or Georg choice.** The repeated V-421 WS0 brief is already represented by 10 landmark groups / 23 source-and-donor leads from R1/R1.2; do not restart/recreate the same candidate register or PR. Current WS0 steering after the older brief remains **PR #418 TUNE · 'keine Pseudo-Knete, Knete macht WSB'**. Research-material previews are diagnostic only. The user-stated six-colour zone/biome/deck assignment rule from R1.2 remains binding.
+
+### New independently downloaded and measured 3D source
+
+- **Chichén Itzá · El Castillo** — OpenGameArt author `elopez7`, explicitly **CC0** with requested creator credit **Esteban Lopez**: https://opengameart.org/content/chichen-itza-el-castillo . Original archive `chichenitza.zip` was actually downloaded in GitHub Actions; archive SHA256 `bc4f0caf2b3b88cab18019bf4679f41556f2d805a10033714e38c95f9a140163`. Exact chosen model `ElCastillo.fbx`, original SHA256 `a275298cb2f8acb9ceaf8e3831ffee49ad9d7b839ec7475af0572a07091de644`.
+- Real Blender isolated import measured **1 mesh, 10,218 triangles, 5,175 polygons**. Original source and neutral clay-material **diagnostic** images actually rendered, visually inspected as the real stepped El Castillo silhouette without overlays: [source-isolated original](V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/source-isolation.png) and [single-material source diagnostic](V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/clay-preview.png). Both originals and screenshots SHA256-pinned in [MANIFEST.json](V421_SOURCE_PROOF/evidence/MANIFEST.json). The actual model is **not yet an accepted KFB Clay stylization** and does **not prove the Ball Court**.
+- Successful source-check and evidence persistence: [Actions #39067916203](https://github.com/georg-doc/kayfabizarro/actions/runs/39067916203) **SUCCESS**, all relevant job steps passed. Earlier concurrent Actions #39067898555 was **FAIL** because its previous proof checkpoint still asserted exactly two sources; it nonetheless successfully imported/rasterized all three geometries. The corrected subsequent run passed and persisted third-model image evidence. The failed run is not concealed or counted as PASS.
+
+### Source-catalogue clarification: Moai Pa'a Pa'a is not a field of stone moai
+
+The WS0 quick-check says Museo Nacional de Historia Natural de Chile **Moai Pa'a Pa'a** CC0. That name occurs in its [Rapa Nui Sketchfab collection](https://sketchfab.com/MNHNcl/collections/rapa-nui-32fc2791899042f093d0e2d61211019d); it refers to an **anthropomorphic wooden ritual figurine class**, not the iconic monumental stone Moai heads/statues used as the proposed walkable Rapa Nui field (see [one sculpture's description](https://www.3dgo.app/models/printables/1771384)). A separate [CC0 Wikimedia photograph](https://commons.wikimedia.org/wiki/File:Moai_pa'a_pa'a_(flat_female_figure),_Rappa_Nui_(Easter_Island),_Bishop_Museum.JPG) **does not establish that the 3D Sketchfab model is CC0**. The registry's monumental Moai entry remains distinct: Museo "Moai" listed CC BY in source research. Verify an exact 3D object/model page and its own licence, not a museum name or photo license. **Do not substitute the wooden artefact for the landmark source without Georg deciding to use it as a secondary ritual prop.**
+
+### Current state / acceptance boundary
+
+- Registry `WSA_LANDMARKS_R1_CANDIDATES.json` rev **R1.3** has 10 geographic landmarks, 23 entries; **3 distinct actual source objects isolated** (Stonehenge, Kenney `tower-square.glb` construction donor, El Castillo). Kenney source is referenced for two kitbash families, **not** two separate imported proof objects.
+- 3 source-object + 3 material diagnostics = 6 actual PNG evidence images; these remain flat material research proofs **not** WSB final Clay; 0 candidate selections; 0 integrated scene / new UI / new GPT Site or Stage; 0 new runtime owners.
+- Evidence assertions for R1.3 JSON state: **8/8** schema, group/source totals, 3 source objects, exact El Castillo triangles and source image pin, fail-closed selection, no Site UI change.
+- Remaining up to 20 distinct catalogue leads without independently imported source-specific visual proof, and all final Clay approval gates, are OPEN. Some are category donors, not complete landmark models. Sketchfab/Fab file access may require external authentication; only direct public page permissions and exact licence can be claimed unless source binaries are retrieved.
+
+**SINGLE NEXT GATE (unchanged): `WS0_V421_VISUAL_SOURCE_REVIEW_AND_REMAINING_PREVIEWS`.** WS0 verifies actual source/provenance and decides which of the 10 environments deserve WSB Clay source-previews first. A model must be shown alone before integration, and palette assignments remain driven by the accepted six colours of the target zone/biome/deck. Georg, not WSA, selects and later authorises WSB retopo/WS1 placement.
+
+---
+
 ## ADDITIVE R1.2 · Georg's six-colour surreal environment direction · 2026-10-17
 
 **GEORG STYLE CORRECTION (V-421 addendum; no new WS0 V-number):** All environment/landmark/vegetation/sky props may use **any of the six colours defined by their zone, biome or card deck**. The total KFB diorama must be surreal yet chromatically coherent; natural object colours are **optional**, not fixed rules. Georg's explicit examples are **purple/violet clouds (missing source asset)**, **light-blue/cyan tree trunks**, and **yellow tree canopies**. Use only palette colours actually present for the current zone/biome/deck, not a new independent RGB source, random material colour or hardcoded purple/yellow. Distinguish the six palette slots from the six Fluff story modes.
