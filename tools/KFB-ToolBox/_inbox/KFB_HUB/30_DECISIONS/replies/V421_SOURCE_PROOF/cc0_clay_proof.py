@@ -272,7 +272,7 @@ def render():
         "readyForGeorg":False,
         "nextGate":"WS0_SOURCES_VISUAL_REVIEW_AND_RIGHTS_THEN_REMAINING_23",
     })
-    if not any(a["state"] == "SOURCE_ISOLATED_AND_CLAY_RENDERED" for a in outcomes):
+    if not any(a["state"] == "SOURCE_ISOLATED_ONLY" for a in outcomes):
         raise SystemExit("No original source proof rendered; candidate selection stays disabled.")
 
 
