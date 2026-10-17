@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- WSB B12 r2 (Anzug auf CharacterTemplate, Kleidung gemalt, 5 Varianten + FB-Smoking) und B22 (3 CC0-Lampen aus Paketen: Flutlicht Poly Haven, Baustrahler + Laterne Kenney) gesichtet, im Hub als q09/q10 zur Entscheidung.
 - V-429 FAIL Bühnen-Vorschau: ein Licht-Rig für alle Schatten (WS1), keine Eigenbau-Lampen (WSB B22), zentrales Knet-Modul kfb-clay.v1 mit Ebenen-Profilen + Golden-Test (WS0-Agent), Sprenkel C4 vorziehen.
 - V-428: Anzug auf KayKit CharacterTemplate, Kleidung aufgemalt, nur Fliege/Zylinder/Monokel/Zigarre/Frack-Schöße modelliert (22. Nachtrag, Hub q01 beantwortet).
 - WSB B21 nach Georgs Regeln neu: Meshy-Ableitungen (48) neverPublic; B4-Truhen (KayKit Dungeon 1.0 Legacy) und B12 (Idle_A aus KayKit Character Animations 1.1) jetzt privat; Übergabe 56 öffentlich / 26 privat, Allowlist 72 sicher, neverPublic 124.
