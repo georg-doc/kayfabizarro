@@ -15,3 +15,13 @@ https://github.com/georg-doc/kayfabizarro/actions/runs/39032118683. Source candi
 ## V-424 · R3.3 tested checkpoint
 - Source R3.3 spec blob c3f42c7be5cd56edb5c522db53c44b482b52bae6, same shared song_gate.py lyrics exit 0 on run [39068532201](https://github.com/georg-doc/kayfabizarro/actions/runs/39068532201), source candidate HEAD `2f565cb4ee4a5765725c2656081ae937f5c45795`. 52/52 cards, 4993 chars, introType `scene`, callbacks and deck frame pass. WARN E16b tone entry missing for Freud (nonblocking). See `R33_TEST_REPORT.md`.
 - Actual independent critic runs=0; no draft critic JSON and no post-review revision. No Hub/Stage/Site/merge. Next gate: WS0 external score/flag-only reviewer validated by same `song_gate.py critic`.
+
+
+## R4.4 E18 external critic writer pass · 17 October 2026
+- **Authority:** external Claude critic R1 `replies/SONG_CRITICS_R1/dream_wrestling_with_kayfabe_freud.r4.3.critic.json` passed central `song_gate.py critic` according to WS0 summary; writer performed exactly one creative author revision. No second critic claimed.
+- **Owner/repo/branch:** KFB Songs/Triplet Writer's Room · `georg-doc/kayfabizarro` · `songs/dream_wrestling_with_kayfabe_freud-r4-2026-10-17`; no PR or merge.
+- **Source-head of tested lyrics:** `651feeeadb0a16270a6b1762ce68fb9cfd13b64a`. Files added: `dream_wrestling_with_kayfabe_freud.r4.4.suno.txt`, `dream_wrestling_with_kayfabe_freud.r4.4.songlines.json`, `R44_E18_FLAG_DISPOSITIONS.md`, plus canonical original gate workflow `.github/workflows/kfb-song-r44-freud-gate.yml`.
+- **Protected A truth:** original 52/52 card core lines identical to R4.3 (programmatic beat suffix check). R4.3 source, registry, media, historic critiques retained. Flag dispositions: 12/12 documented, 9 handled by intro/outro/opener work, 3 explicitly kept (card-core restriction or source-bound rationale).
+- **CI on tested source:** https://github.com/georg-doc/kayfabizarro/actions/runs/39070727763: 2/2 original-script steps SUCCESS, triplet checker `0 FAIL`, central song_gate lyrics PASS (52/52 cards, 4984 chars, intro 2, outro 1, openers 16); WARN E16b missing dedicated tone map, nonblocking. Original canonical script from register `bfcf60f8faed39d5cbae3f715737cee95e890765`; no private fork.
+- **Unresolved:** source-level sayability/power fragments in protected A card cores explicitly deferred, no invented rewrite or manufactured critic. No Stage, Site, public browser review, Hub submission, Georg PASS.
+- **ONE next gate:** WS0 performs fresh independent judge-only critic pass two on this exact R4.4 candidate; write scores/flags without text edits, then route to Georg. Any protected-core changes require separate authorized scope.
