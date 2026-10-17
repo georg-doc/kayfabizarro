@@ -1,0 +1,42 @@
+{
+  "deckId": "dream_wrestling_with_kayfabe_freud",
+  "version": "R4.4",
+  "bindingSpec": "R3.2",
+  "metaSkipped": [
+    53,
+    54,
+    55,
+    56
+  ],
+  "songLineChanges": [
+    {
+      "cardNumber": 10,
+      "rule": "A7",
+      "songLine": "Infantile Material, the oldest stuff lies deepest; still four years old, want that cookie.",
+      "reason": "four years old sung rather than numeral"
+    },
+    {
+      "cardNumber": 12,
+      "rule": "A7",
+      "songLine": "Seven sharp: The Alarm Clock, executioner of the dream; the return of cruel cold logic of seven A.M.",
+      "reason": "seven A.M. sung rather than digital time"
+    },
+    {
+      "cardNumber": 40,
+      "rule": "A7",
+      "songName": "The Interpretation Detective",
+      "songLine": "The Interpretation Detective, Royal Road to Unconscious, bad intentions and dirty jokes.",
+      "reason": "Slash removed from spoken title"
+    }
+  ],
+  "nonA7Changes": 0,
+  "metaSkipReasons": {
+    "53": "How-to-use instruction",
+    "54": "New rule / slip",
+    "55": "New rule / symbolic cue",
+    "56": "Credits and blame"
+  },
+  "introType": "scene",
+  "refrain": "",
+  "sourceCritic": "dream_wrestling_with_kayfabe_freud.r4.3.critic.json"
+}
