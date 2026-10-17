@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- WSB B21 Übergabe-Paket fertig (50_BLENDER/HANDOFF_R1/: 82 Dateien mit Manifest, 59 öffentlich kopiert, 23 privat verwiesen; Allowlist 79 sicher / 48 prüfen → Meshy-Bühnen als eigene Inhalte laut V-230, Georg bestätigt). Offen an Georg: Herkunft/Lizenz der Capsule-Carl-Teile an FrizzleBob.
 - WSB B19 Treffer-FX (17 GLBs, eigene Geometrie) und B20 Kayfabrick-Baustelle (Negativraum 74 %) gesichtet; Bodenfarben-Vorschlag (gesättigte Grüns aus) an WS1; 21. Nachtrag: B21 Übergabe-Paket mit public/privat-Manifest (Allowlist für V-427).
 - WSB Runde 2 fertig und von WS0 gesichtet: B14 r7 Dory (r5-Kopf + edge80, Kragen am Stiel), B15 organischer Rand, B10 r2 E2-Augen, B11 r2 Mütze (eigene, Asset-Suche ohne Treffer) + Gewehr aufrecht, B12 Spender-Vergleich (Georg wählt), B16 Schlagring, B17 Bots, B18 Mündungsfeuer, B4 Truhen inkl. Mimic, B3 Imbiss; 20. Nachtrag: B19 Treffer-FX, B20 Kayfabrick-Baustelle.
 - V-427 (TBD): Inventur Repo-privat fertig (replies/REPO_PRIVATE_MIGRATION_INVENTORY_R1.md): GitHub Pages zweites öffentliches Leck, raw-Abhängigkeiten, Kauf-Assets ~0,7–0,9 GB; 6-Schritte-Plan wartet auf Georg.
