@@ -1,13 +1,16 @@
 {
   "schema": "kfb.ws1-build/1",
-  "commit": "kfb-planet main@20caedc (M2 K2B gemergt, M1 wow, V-345 J17-Meter, V-346)",
-  "date": "2026-10-17T03:10:00+02:00",
-  "tests": { "suite": "scripts/m1/run-all.sh + npm-test-Rest", "passed": 41, "total": 41, "info": "m1-rueckwand nur Bericht" },
+  "commit": "kfb-planet main@3e3b9d2 (L3 Licht-Modul, Stimmung Mesa, Knete R2, M2 K2B, J17-Meter)",
+  "date": "2026-10-17T07:30:00+02:00",
+  "tests": { "suite": "npm test", "passed": 24, "total": 24 },
   "links": {
-    "stage": "https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,light=l1",
-    "m1": "https://ws1-preview.kayfabizarro.pages.dev/#m1",
-    "car": "https://ws1-preview.kayfabizarro.pages.dev/#m1,car",
-    "lineup": "https://ws1-preview.kayfabizarro.pages.dev/#stage,light=l1,lineup=1"
+    "stage": "#stage,actors=fb,light=l1",
+    "stageGold": "#stage,actors=fb,light=l1,tod=gold",
+    "stageNight": "#stage,actors=fb,light=l1,tod=night",
+    "lookProbeOTown": "#stage,actors=fb,light=l1,palette=otown,palv=b,pamt=1",
+    "m1": "#m1",
+    "car": "#m1,car",
+    "lineup": "#stage,light=l1,lineup=1"
   },
-  "notes": "M2 nach Georgs Freigabe gemergt: K2B mit Drift Q/E, Wendekreis 1,97 Wagenlängen, Label Fahrsystem K2B|ecctrl (C wechselt). M1: A/D drehen, Q/E strafen, Doppel-Leertaste fliegt, X sinkt. Alles in J17-Metern."
+  "notes": "Hash-Ziele host-neutral (V-356). L3: ein Licht-Modul, Mesa-Stimmung (Krazy Kat) mit ACES, Vergleichsleiste unten links (H = sauberes Bild). M1/M2 nutzen das Licht-Modul noch nicht (Umzug folgt, Zweitschatten am Auto)."
 }
