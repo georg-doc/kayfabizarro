@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-424: SONG_SPEC R3.3 (Deck-Klammer Intro/Outro, 5 KayfabeTips für Opener/Brücken, Callbacks, ein Refrain, Opener-Fenster 15 Songs, Intro-Typen mit Cooldown); song_gate.py erweitert; R5-Brief + Hub b94/b95 ergänzt.
 - NotebookLM-Recherche (Opener-Rotation, Intro-Typen, vierte Wand) ausgewertet: 7 neue Opener im Pool (OPENER_ARC_R2/opener_pool_r2.py, Familien official/retort), Vierte-Wand-Parameter als Vorschlag (replies/DIALOGUE_FOURTH_WALL_R1.md); Regeländerung für Songs (Opener-Abstand über Songs, Intro-Typen) wartet auf Georg.
 - Bündel-PR #417 (Trust 05, Pharaoh-Performance, WSB B1/B2/B7) von Georg gemergt.
 - V-423: FrizzleBob „Tuxedo with Brass Knuckles“ (Charakterkarte), Schlagring als Grund-Nahkampfwaffe, Ernte-Regel 3 Schläge/2 Schüsse/1 Explosion mit gestaffeltem Abwurf und Kugel-Physik; WSB B12-Variante + B16 Schlagring, WS1-Notiz; HUD-ZIP folgt.

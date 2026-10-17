@@ -5874,6 +5874,21 @@
    "applies": "ab sofort; Ernte-Details nach HUD-ZIP"
   },
   {
+   "id": "V-424",
+   "date": "2026-10-17",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "SONG_SPEC → R3.3 (Georg 17.10.): Intro und Outro = maßgeschneiderte narrative/semantische/Mood-Klammer je Deck, Titel/Deck-Konzept verdichtet als satirisch-provokanter Rahmen (Intro = Onboarding & Setup mit einem von sechs Intro-Typen, Outro = thought-provoking mit Rückgriff aufs Intro, dann Stay Fluffy!); Opener und Brücken folgen den 5 KayfabeTips (Therefore/But nicht wörtlich, nie „and then“; Yes-and; People not props; Straight face; ein echtes Bild); Opener im Song einmalig bzw. nur als Variante derselben Familie, gleicher Opener frühestens nach 15 Songs; mindestens 2 Callbacks; ein Refrain/Hook erlaubt (≤ 8 Wörter, ≤ 3×). NotebookLM-Recherche (Opener-Rotation, Intro-Typen) als Grundlage; song_gate.py prüft introType, Refrain, Callbacks, and-then/therefore, Opener-Fenster.",
+   "values": {},
+   "owner": "WSA (Plugin) · WS1 (Batch) · WS0",
+   "check": "song_gate.py grün + Kritiker, Georg hört",
+   "source": "replies/SONG_SPEC_R3.md (R3.3) · media/prompts/KAYFABE_TIPS_corpus_v1.md · Google Doc KFB Modular Storytelling Research",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ohne Rahmen, Callbacks und Kausal-Brücken bleiben die Songs Kartenlisten; die KayfabeTips sind KFBs eigene Erzählregeln und gehören auch in die Songs.",
+   "applies": "ab sofort, R4 und R5"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5946,7 +5961,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:754",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:757",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

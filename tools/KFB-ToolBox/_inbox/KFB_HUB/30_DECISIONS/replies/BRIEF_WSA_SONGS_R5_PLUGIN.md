@@ -1,5 +1,13 @@
 # Brief WSA · Songs R5: five more decks through the triplet plugin + external critic (V-419) · 17.10.2026
 
+> **R3.3 (V-424, Georg 17.10.) applies to R4 and R5:**
+> - Intro and outro form the satirical, provocative frame tailored to the deck (onboarding/setup → thought-provoking outro → Stay Fluffy!).
+> - Openers and bridges follow the 5 KayfabeTips (`media/prompts/KAYFABE_TIPS_corpus_v1.md`): non-verbatim therefore/but, never "and then".
+> - At least 2 callbacks.
+> - At most one refrain (≤ 8 words, ≤ 3 times).
+> - `songlines.json` additionally gets `introType` and optionally `refrain`.
+> - Read SONG_SPEC again word for word; song_gate.py checks all of it.
+
 **Tier 0 (3 lines):**
 1. Rules come **only** from `replies/SONG_SPEC_R3.md` **R3.2** (read it word for word). Golden example: `replies/OPENER_ARC_R2/epistemic_sabotage.take05.final.suno.txt`.
 2. Gate = `replies/song_gate.py lyrics` + `triplet_set_check.py`, both exit 0. Do not use your own gate copies (the R4 `format_gate.py` files are retired).
@@ -18,7 +26,7 @@
 **Gate call per track:**
 `python3 song_gate.py lyrics <track>.suno.txt --deck <deck.json> --songlines <deck>.songlines.json --media <pdf.json> [--cards <from>-<to> for part 1/2] --corpus replies/OPENER_ARC_R2 <all earlier *.suno.txt incl. R4/R5>`
 
-Use `songlines.json` in the R3.2 form: `{deckId, songLineChanges:[{cardNumber, cardName, songLine, songName?, reason}], metaSkipped:[…]}`.
+Use `songlines.json` in the R3.2 form: `{deckId, introType, refrain?, songLineChanges:[{cardNumber, cardName, songLine, songName?, reason, rule?}], metaSkipped:[…]}`.
 If 50+ cards don't fit with an intro of at least two beats, split into two tracks at a page boundary (C9b/C12b).
 
 **Order:**
