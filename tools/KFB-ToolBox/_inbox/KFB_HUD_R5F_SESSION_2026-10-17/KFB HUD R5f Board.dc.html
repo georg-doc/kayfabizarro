@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800;900&display=swap">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+}}
+</script>
+<style>
+body{margin:0;background:#EDE7DB;color:#2A2420;font-family:'Fredoka',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#9A4A22;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#6E2F12}
+</style>
+</helmet>
+
+<section id="t0" data-screen-label="00 Kopf" style="padding:48px 56px 36px;border-bottom:1px solid rgba(42,36,32,.12);display:flex;flex-direction:column;gap:18px;max-width:1300px">
+  <div style="font:600 14px/1 'Fredoka',sans-serif;color:#7A6A58">Claude Design → WS0 · 17.10.2026 · Design only (V-228) · Vorstand: <a href="KFB HUD R5e Board.dc.html">R5e</a> · Konzept: hud-r5/KONZEPT_KAYFABRICATION.md</div>
+  <div style="font:700 56px/1 'Fredoka',sans-serif">KFB HUD R5f · Ein Tastenstil, ein Icon-Set</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:12px 32px;font:500 16px/1.4 'Fredoka',sans-serif;color:#3A3028;max-width:1240px">
+    <div style="font:700 13px/1 'Fredoka',sans-serif;color:#7A6A58;letter-spacing:.04em">KRITIK R5e</div>
+    <div style="font:700 13px/1 'Fredoka',sans-serif;color:#7A6A58;letter-spacing:.04em">R5f</div>
+    <div>Zu viele Icon- und Tastenstile.</div>
+    <div>Ein Tastenstil für alles: Fläche in der Farbe, kein Sockel, keine Kontur. Holz, Lack und Plakette als Auswahl entfallen. Text-Tasten bleiben Holz, Hauptaktion Gelb.</div>
+    <div>Icons unlesbar, passen nicht.</div>
+    <div>Neues Set aus einer Hand: volle Silhouette in dunklem Holzbraun, Details ausgespart, keine Zweitfarbe, keine Funken. Glyphe gut 70 % der Taste.</div>
+    <div>Nur Tastenfarbe, keine Einfassung.</div>
+    <div>Paare ohne Sockel, nur durch Nähe und Farbton verbunden: Primär hell, Spezial satter. Abstand im Paar 6 px, zwischen Gruppen 18 px.</div>
+    <div>Inaktives „i“ sieht schlecht aus.</div>
+    <div>Ohne Ziel ist „i“ eine Mulde mit blasser Glyphe, wie der leere Kontext-Platz. Mit Ziel springt die gelbe Taste hinein.</div>
+    <div>Klapp-Icon und Zähler passen nicht.</div>
+    <div>Modus-Taste trägt ein kleines Dreieck in Glyphenfarbe. Keine Zähler-Plaketten auf Tasten; die Belegung steht im Rucksack-Fenster.</div>
+    <div>Rucksack sieht aus wie Haus.</div>
+    <div>Rucksack als Cartoon-Beutel mit Zugband, die Item-Zahl steht mittig im Beutel. Fläche wie die Zielwahl-Taste. Ton, Info und Einstellungen heller und dezenter (helle Fläche, Glyphe mittelbraun). Hover-Wackeln ruhiger: halbe Auslenkung, rund 650 ms.</div>
+    <div>Fluff-Kugeln und Fächer.</div>
+    <div>Kugeln aus Knete: matt, feines Korn, leicht unrund, kein Glanzpunkt. Fächer mit feinem Glasrahmen in der Sortenfarbe.</div>
+  </div>
+  <div style="font:500 13px/1.4 ui-monospace,Menlo,monospace;color:#7A6A58">{{ status }}</div>
+</section>
+
+<section id="tL" data-screen-label="L Live" style="padding:40px 56px 40px;border-bottom:1px solid rgba(42,36,32,.12);display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+    <span style="font:700 34px/1 'Fredoka',sans-serif">Live</span>
+    <span style="font:500 15px/1.35 'Fredoka',sans-serif;color:#5A4E44;max-width:900px">Absurd fehlt noch. Wer Absurd einsammelt, löst Kayfabricate aus. Rucksack unten links, Modus über die rechte Taste im grünen Paar.</span>
+  </div>
+  <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
+    <div data-slot="live-d" style="flex:none;width:960px;height:540px;border-radius:8px;overflow:hidden;background:#ddd"></div>
+    <div data-slot="live-p" style="flex:none;width:304px;height:540px;border-radius:18px;overflow:hidden;background:#ddd"></div>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;font:600 15px/1 'Fredoka',sans-serif">
+    <span style="color:#7A6A58;margin-right:4px">Fluff einsammeln</span>
+    <button onClick="{{ c0 }}" style="display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border:1.5px solid #2B1A0B;border-radius:19px;background:#FBF5E6;font:600 15px/1 'Fredoka',sans-serif;color:#2A2420;cursor:pointer"><span style="width:14px;height:14px;border-radius:50%;background:#3F93CF"></span>Tragic</button>
+    <button onClick="{{ c1 }}" style="display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border:1.5px solid #2B1A0B;border-radius:19px;background:#FBF5E6;font:600 15px/1 'Fredoka',sans-serif;color:#2A2420;cursor:pointer"><span style="width:14px;height:14px;border-radius:50%;background:#93BE3C"></span>Comic</button>
+    <button onClick="{{ c2 }}" style="display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border:1.5px solid #2B1A0B;border-radius:19px;background:#FFF1B8;font:600 15px/1 'Fredoka',sans-serif;color:#2A2420;cursor:pointer"><span style="width:14px;height:14px;border-radius:50%;background:#FFD21F"></span>Absurd</button>
+    <button onClick="{{ c3 }}" style="display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border:1.5px solid #2B1A0B;border-radius:19px;background:#FBF5E6;font:600 15px/1 'Fredoka',sans-serif;color:#2A2420;cursor:pointer"><span style="width:14px;height:14px;border-radius:50%;background:#F5893A"></span>Heroic</button>
+    <button onClick="{{ c4 }}" style="display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border:1.5px solid #2B1A0B;border-radius:19px;background:#FBF5E6;font:600 15px/1 'Fredoka',sans-serif;color:#2A2420;cursor:pointer"><span style="width:14px;height:14px;border-radius:50%;background:#9A62C4"></span>Mystical</button>
+    <button onClick="{{ c5 }}" style="display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border:1.5px solid #2B1A0B;border-radius:19px;background:#FBF5E6;font:600 15px/1 'Fredoka',sans-serif;color:#2A2420;cursor:pointer"><span style="width:14px;height:14px;border-radius:50%;background:#E2508F"></span>Forbidden</button>
+    <span style="width:16px"></span>
+    <button onClick="{{ swap }}" style="height:38px;padding:0 16px;border:1.5px solid #2B1A0B;border-radius:19px;background:#2A2420;color:#FFF7EA;font:600 15px/1 'Fredoka',sans-serif;cursor:pointer">Waffe wechseln</button>
+    <button onClick="{{ reset }}" style="height:38px;padding:0 16px;border:1.5px solid #2B1A0B;border-radius:19px;background:transparent;color:#2A2420;font:600 15px/1 'Fredoka',sans-serif;cursor:pointer">Zurücksetzen</button>
+  </div>
+</section>
+
+<section id="t1" data-screen-label="01 Bilder" style="padding:40px 56px 40px;border-bottom:1px solid rgba(42,36,32,.12)">
+  <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 24px;flex-wrap:wrap">
+    <span style="font:700 34px/1 'Fredoka',sans-serif">1 · Bilder</span>
+    <span style="font:500 15px/1 'Fredoka',sans-serif;color:#7A6A58">Tweaks: Bühne, Federung</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:36px">
+    <sc-for list="{{ frames }}" as="f" hint-placeholder-count="6">
+      <div id="{{ f.id }}" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+          <span style="font:700 11px ui-monospace,Menlo,monospace;padding:3px 7px;background:#2A2420;color:#fff;border-radius:5px">{{ f.id }}</span>
+          <span style="font:700 24px/1 'Fredoka',sans-serif">{{ f.title }}</span>
+          <span style="font:500 15px/1.35 'Fredoka',sans-serif;color:#5A4E44;max-width:900px">{{ f.note }}</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
+          <div data-slot="{{ f.desk }}" style="flex:none;width:960px;height:540px;border-radius:8px;overflow:hidden;background:#ddd"></div>
+          <div data-slot="{{ f.phone }}" style="flex:none;width:304px;height:540px;border-radius:18px;overflow:hidden;background:#ddd"></div>
+          <div data-slot="{{ f.cov }}" style="width:180px;font:500 13px/1.5 ui-monospace,Menlo,monospace;color:#5A4E44"></div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="t2" data-screen-label="02 Bauteile" style="padding:40px 56px 40px;border-bottom:1px solid rgba(42,36,32,.12)">
+  <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 24px">
+    <span style="font:700 34px/1 'Fredoka',sans-serif">2 · Bauteile</span>
+    <span style="font:500 15px/1 'Fredoka',sans-serif;color:#7A6A58">1080p-Maß, verkleinert</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:36px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font:600 19px/1 'Fredoka',sans-serif">2a · Icon-Set</div>
+      <div style="font:500 15px/1.4 'Fredoka',sans-serif;color:#5A4E44;max-width:980px">Eine Taste, eine Hand: Fläche in der Familienfarbe, Glyphe als Silhouette in dunklem Holzbraun mit Aussparungen. Neutrale Tasten in Hellholz. Nicht verfügbar = Mulde.</div>
+      <div data-slot="p-icons" style="border-radius:12px;overflow:hidden;min-height:300px"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font:600 19px/1 'Fredoka',sans-serif">2b · Aktionsleiste, vier Zustände</div>
+      <div style="font:500 15px/1.4 'Fredoka',sans-serif;color:#5A4E44;max-width:980px">Waffen-Paar · Fortbewegungs-Paar · Kontext-Platz · Interagieren. Kein Sockel; die Gruppen trennt nur der Abstand.</div>
+      <div data-slot="p-pairs" style="border-radius:12px;overflow:hidden;min-height:420px"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font:600 19px/1 'Fredoka',sans-serif">2c · Kayfabrication, erster Ablauf</div>
+      <div style="font:500 15px/1.4 'Fredoka',sans-serif;color:#5A4E44;max-width:980px">1 Karte wählen (graue Karten aus bekannten Decks) · 2 Fluff einfüllen (Kugeln fallen in den Ring des Kayfabricators) · 3 Kayfabrizieren (Ring dreht ein, Kern wechselt durch die sechs Farben, Blitz) · 4 Karte springt aus dem Kessel. Schritt 3 ist nur live zu sehen. Preis ist ein Platzhalter: je Sorte 1, in Kartenfarbe 3.</div>
+      <div data-slot="p-fab" style="border-radius:12px;overflow:hidden;min-height:420px"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="font:600 19px/1 'Fredoka',sans-serif">2d · Fluff-Korb: noch nicht bereit, bereit</div>
+      <div data-slot="p-korb" style="border-radius:12px;overflow:hidden;min-height:420px"></div>
+    </div>
+  </div>
+</section>
+
+<section id="t3" data-screen-label="03 Offen" style="padding:40px 56px 64px">
+  <div style="font:700 34px/1 'Fredoka',sans-serif;margin:0 0 20px">3 · Offen für Georg</div>
+  <div style="display:flex;flex-direction:column;gap:12px;max-width:980px;font:500 17px/1.45 'Fredoka',sans-serif;color:#3A3028">
+    <div>Familienfarben in zwei Stufen (hell, satt). Kontext-Items haben noch je eine eigene Farbe; Bonbon liegt nah an Faust. Option: alle Kontext-Items in einer Farbe.</div>
+    <div>Waffe wechseln im Spiel: über den Rucksack (Ausrüsten) oder zusätzlich per Taste bzw. Rad?</div>
+    <div>Wann ein Kontext-Item im Platz erscheint (Trank bei Schaden, Bombe bei Gegnern …) ist Spielmechanik und noch nicht festgelegt.</div>
+    <div>Rucksack: 3D-Bilder gibt es für Taxi-Schlüssel, Radio, Donut und Karte (KayKit, Tiny Treats). Waffen und Kontext-Items brauchen noch Modelle.</div>
+    <div>Teleport öffnet die taktische Karte bzw. 3D-Galaxie; hier nur ein Platzhalter-Fenster.</div>
+    <div>Kayfabrication: Preis, Decknamen und die ungesammelten Karten sind Platzhalter. Der alchemistische Ablauf ist ein erster Entwurf.</div>
+    <div>Tastenbelegung (Umschalt = Sprint/Turbo, I = Interagieren, 1–6) und Tastenstil weiter offen.</div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;stage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;otown&quot;,&quot;canyon&quot;,&quot;bucht&quot;,&quot;wiese&quot;,&quot;tragic&quot;,&quot;comic&quot;,&quot;absurd&quot;,&quot;heroic&quot;,&quot;mystical&quot;,&quot;forbidden&quot;],&quot;default&quot;:&quot;otown&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Bilder&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Bilder&quot;}}">
+class Component extends DCLogic {
+  state = { status: 'Lade Module, Schriften, 3D-Bilder und Schnappschüsse …' };
+
+  componentDidMount() { this.boot().catch((e) => { console.error(e); this.setState({ status: 'Fehler: ' + e.message }); }); }
+  componentDidUpdate() {
+    if (!this.ready) return;
+    if (this.H) this.H.MOTION.on = this.props.motion ?? true;
+    const key = this.key();
+    if (key !== this.k) { this.k = key; this.renderAll().catch((e) => console.error(e)); }
+  }
+  componentWillUnmount() { this.dead = true; }
+  key() { return this.props.stage ?? 'otown'; }
+
+  async boot() {
+    const u = (p) => new URL(p, document.baseURI).href;
+    const [H, TH, A] = await Promise.all([import(u('hud-r5/r5f-hud.js')), import(u('hud-r4/r4-theme.js')), import(u('hud-r4/r4-arrow3d.js'))]);
+    if (this.dead) return;
+    Object.assign(this, { H, TH, A });
+    H.MOTION.on = this.props.motion ?? true;
+    await Promise.all(['700 30px Fredoka', '600 18px Fredoka', '500 16px Fredoka'].map((f) => document.fonts.load(f).catch(() => {})));
+    const imgs = ['hud-r4/ref/hud_r3_01_hud_walk.jpg', 'hud-r4/ref/hud_r3_02_hud_drive.jpg', 'hud-r4/card-mirror-neurons.png'];
+    await Promise.all(imgs.map((s) => new Promise((r) => { const i = new Image(); i.onload = i.onerror = r; i.src = s; })));
+    this.shots = await this.loadShots(u).catch((e) => { console.warn('3D-Bilder', e); return {}; });
+    this.snap = A.createSnapper();
+    this.arrows = new Map();
+    this.k = this.key();
+    await this.renderAll();
+    this.ready = true;
+    this.setState({ status: `Bereit · ${Object.keys(this.shots).length} von 4 Item-Bildern in 3D · HUD-Fläche live gemessen` });
+  }
+  async loadShots(u) {
+    const [THREE, BP, JD] = await Promise.all([import('three'), import(u('hud-flight/kfb-backpack.js')), import(u('hud-flight/kfb-jukebox-data.js'))]);
+    const lib = BP.createPropLibrary({ THREE }), view = BP.createPropRenderer({ THREE }), out = {};
+    const one = async (id) => {
+      const it = JD.ITEMS[id]; if (!it) return;
+      const o = await Promise.race([lib.load(it), new Promise((_, rej) => setTimeout(() => rej(new Error('Zeit')), 9000))]);
+      const c = document.createElement('canvas'); c.width = c.height = 400; const v = it.view || {};
+      view.render(o, c, { rotY: v.rotY ?? 0.5, tilt: v.tilt ?? 0.3, spin: it.spin, zoom: v.zoom ?? 1.05 });
+      out[id] = c.toDataURL();
+    };
+    await Promise.all(['item.taxi-key.01', 'item.radio.01', 'item.donut.01', 'item.map.01'].map((id) => one(id).catch((e) => console.warn('Item', id, e))));
+    return out;
+  }
+
+  slot(id) { return document.querySelector(`[data-slot="${id}"]`); }
+  mount(id, frame, dispW) {
+    const s = this.slot(id); if (!s) return null;
+    s.innerHTML = ''; const k = dispW / frame.W;
+    frame.el.style.transform = `scale(${k})`; frame.el.style.transformOrigin = '0 0';
+    s.append(frame.el); return frame;
+  }
+  tick() { return new Promise((r) => { requestAnimationFrame(r); setTimeout(r, 60); }); }
+  BG(scene, form) {
+    const walk = { src: 'hud-r4/ref/hud_r3_01_hud_walk.jpg', sw: 1600, sh: 1000 }, drive = { src: 'hud-r4/ref/hud_r3_02_hud_drive.jpg', sw: 1600, sh: 1000 };
+    if (scene === 'drive') return form === 'phone' ? { ...drive, zoom: 1.1, fx: 0.55, fy: 0.75 } : { ...drive, zoom: 1.16, fx: 0.5, fy: 0.4 };
+    return form === 'phone' ? { ...walk, zoom: 1.18, fx: 0.36, fy: 0.55 } : { ...walk, zoom: 1.12, fx: 0.5, fy: 0.35 };
+  }
+  arrow(T, dist, yaw) {
+    const k = [T.accent, Math.round(dist), yaw].join('|');
+    if (!this.arrows.has(k)) this.arrows.set(k, this.snap.arrow({ color: this.TH.arrowColor(T, dist).hex, cream: T.cream, yaw, pitch: 0, flight: false, w: 240, h: 240, camUp: 1.3, camBack: 2.2, fov: 34 }));
+    return this.arrows.get(k);
+  }
+  frameList() {
+    const N = { state: 'travel', dist: 350, name: 'KFB-Town' };
+    return [
+      { id: '1a', title: 'Gehen · Faust', note: 'Unten links Rucksack. Leiste: Faust-Paar (Schlag, Wrestling-Spezial), Fortbewegung (Sprint, Gehen), leerer Kontext-Platz, „i“ ausgegraut.', scene: 'walk', nav: { state: 'set', dist: 350, name: 'KFB-Town' }, weapon: 'fist' },
+      { id: '1b', title: 'Fahren · Blaster · Fortbewegung offen', note: 'Fahren macht aus Sprint den Turbo. Modus-Taste öffnet Gehen, Fahren, Fliegen | Teleport, Ruhestein; aktueller Modus in der Mulde.', scene: 'drive', nav: { state: 'travel', dist: 45, name: 'Bäckerei' }, weapon: 'blaster', locoOpen: true },
+      { id: '1c', title: 'Kontext-Platz und Interagieren', note: 'Schwert ausgerüstet, Heiltrank im Kontext-Platz, Ziel in Reichweite: „i“ wird aktiv.', scene: 'walk', nav: N, weapon: 'sword', ctx: 'potion', target: true },
+      { id: '1d', title: 'Rucksack', note: '20 Fächer, rechts das gewählte Item groß mit Text und einer Aktion. Ausgerüstete Waffe mit Haken. Ausrüsten tauscht das Paar in der Leiste.', scene: 'walk', nav: N, weapon: 'fist', bagOpen: true, noCov: true },
+      { id: '1e', title: 'Fluff-Korb · bereit', note: 'Alle sechs Sorten vorhanden: Funken-Marke an der Leiste, im Korb ist „Kayfabricate…“ aktiv.', scene: 'walk', nav: N, weapon: 'magic', counts: [34, 22, 3, 41, 19, 12], fluffOpen: true },
+      { id: '1f', title: 'Kayfabrication · Karte wählen', note: 'Bekannte Decks links, rechts alle Karten. Farbig mit Haken = gesammelt, grau = kann kayfabriziert werden.', scene: 'walk', nav: N, counts: [34, 22, 3, 41, 19, 12], kfabOpen: true, noCov: true }
+    ];
+  }
+  cfgBase(T, f, yaw) { return { T, scene: f.scene, nav: f.nav, weapon: f.weapon, ctx: f.ctx, target: f.target, counts: f.counts, locoOpen: !!f.locoOpen, bagOpen: !!f.bagOpen, fluffOpen: !!f.fluffOpen, kfabOpen: !!f.kfabOpen, shots: this.shots, arrowFor: (n) => this.arrow(T, n.dist, yaw), pinFor: (d) => this.TH.arrowColor(T, d).hex, speed: 55 }; }
+
+  async renderAll() {
+    const { H, TH } = this, st = this.props.stage ?? 'otown', pal = TH.stagePalette(st), T = TH.hudTheme(pal, 'A');
+    this.T = T; this.pal = pal;
+    this.renderLive();
+    for (const f of this.frameList()) {
+      if (this.dead) return;
+      const yaw = f.scene === 'drive' ? -0.35 : -0.62, cfg = this.cfgBase(T, f, yaw);
+      const fd = this.mount(`${f.id}-d`, H.buildFrame({ ...cfg, form: 'desk', bg: this.BG(f.scene, 'desk') }), 960);
+      const fp = this.mount(`${f.id}-p`, H.buildFrame({ ...cfg, form: 'phone', bg: this.BG(f.scene, 'phone') }), 304);
+      await this.tick();
+      const n = this.slot(`${f.id}-c`);
+      if (n && fd && fp && !f.noCov) n.innerHTML = `HUD-Fläche<br>16:9 ${(H.measureCoverage(fd.el, fd.W, fd.H) * 100).toFixed(1)} %<br>9:16 ${(H.measureCoverage(fp.el, fp.W, fp.H) * 100).toFixed(1)} %`;
+      else if (n) n.innerHTML = '';
+    }
+    this.renderParts(T, pal);
+  }
+  renderLive() {
+    const { H, T } = this, f = { scene: 'walk', nav: { state: 'travel', dist: 350, name: 'KFB-Town' }, weapon: 'fist' }, cfg = this.cfgBase(T, f, -0.62);
+    this.live = [
+      this.mount('live-d', H.buildFrame({ ...cfg, form: 'desk', bg: this.BG('walk', 'desk') }), 960),
+      this.mount('live-p', H.buildFrame({ ...cfg, form: 'phone', bg: this.BG('walk', 'phone') }), 304)
+    ].filter(Boolean);
+  }
+  collect(i) { (this.live || []).forEach((fr) => fr.api.collect(i)); }
+  swap() { const W = this.H.WEAPONS; (this.live || []).forEach((fr) => { const cur = fr.api.weapon(); fr.api.setWeapon(W[(W.indexOf(cur) + 1) % W.length]); }); }
+
+  renderParts(T, pal) {
+    const { H } = this, Z = H.SIZES.desk, h = H.h, FN = H.FN, F = H.FAM;
+    const band = (css = '') => h('div', `display:flex;flex-wrap:wrap;gap:34px;align-items:flex-start;padding:28px 30px 34px;background:${pal.roles.top};box-sizing:border-box;${css}`);
+    const zoom = (el, k = 0.75) => h('div', `zoom:${k}`, [el]);
+    const cap = (t, css = '') => h('div', `font:600 14px/1.2 ${FN};color:#2B1A0B;${css}`, t);
+    const s1 = this.slot('p-icons'); if (s1) { s1.innerHTML = ''; const b = band('flex-direction:column;gap:26px');
+      const L = F.loco.c, LS = F.loco.s, U = H.UT;
+      const groups = [
+        ['Waffen · Primär hell, Spezial satter', [['fist', 'Schlag', F.fist.c], ['wrestle', 'Wrestling', F.fist.s], ['sword', 'Schwerthieb', F.sword.c], ['swordX', 'Klingen-Wirbel', F.sword.s], ['blaster', 'Blaster', F.blaster.c], ['rocket', 'Rakete', F.blaster.s], ['wand', 'Zauber', F.magic.c], ['magicX', 'Magie-Spezial', F.magic.s]]],
+        ['Fortbewegung', [['sprint', 'Sprint', L], ['turbo', 'Turbo', L], ['walk', 'Gehen', LS], ['car', 'Fahren', LS], ['fly', 'Fliegen', LS], ['teleport', 'Teleport', LS], ['home', 'Ruhestein', LS]]],
+        ['Kontext', Object.values(H.CTX).map(([i, t, c]) => [i, t, c])],
+        ['Immer da', [['interact', 'Interagieren', '#FFD21F'], ['bag', 'Rucksack', U], ['sound', 'Ton', 'q'], ['help', 'Info', 'q'], ['gear', 'Einstellungen', 'q']]]
+      ];
+      const cell = (node, lab) => h('div', 'display:flex;flex-direction:column;align-items:center;gap:8px;width:84px', [node, cap(lab, 'text-align:center;font-size:13px')]);
+      const row = (t, nodes) => h('div', 'display:flex;flex-direction:column;gap:12px', [cap(t, 'opacity:.75'), h('div', 'display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start', nodes)]);
+      groups.forEach(([t, list]) => b.append(row(t, list.map(([icn, lab, c]) => cell(icn === 'bag' ? H.bagButton(Z, 13) : c === 'q' ? H.quietKey(Z.key, icn, { title: lab }) : H.key(Z.key, icn, { color: c, title: lab }), lab)))));
+      const mk = H.key(Z.key, 'car', { color: LS }); mk.style.position = 'relative'; mk.append(H.caretEl(Z.key));
+      b.append(row('Zustände', [cell(H.slotEl(Z), 'Kontext leer'), cell(H.slotEl(Z, 'interact'), '„i“ ohne Ziel'), cell(H.key(Z.key, 'interact', { color: '#FFD21F' }), '„i“ mit Ziel'), cell(mk, 'Modus, klappt auf')]));
+      s1.append(b); }
+    const s2 = this.slot('p-pairs'); if (s2) { s2.innerHTML = ''; const b = band('flex-direction:column;gap:22px;align-items:flex-start');
+      [['Gehen · Faust · kein Ziel', { weapon: 'fist' }], ['Schwert · Heiltrank · Ziel in Reichweite', { weapon: 'sword', ctx: 'potion', target: true }], ['Fahren · Blaster · Bombe', { weapon: 'blaster', mode: 'drive', ctx: 'bomb' }], ['Fliegen · Magie', { weapon: 'magic', mode: 'fly' }]].forEach(([lab, o]) => b.append(h('div', 'display:flex;align-items:center;gap:24px', [cap(lab, 'width:340px'), H.actionBar(T, Z, o)])));
+      s2.append(b); }
+    const s3 = this.slot('p-fab'); if (s3) { s3.innerHTML = ''; const b = band('gap:22px');
+      const target = H.DECKS[0].cards.find((c) => !c.have), counts = [34, 22, 3, 41, 19, 12];
+      [['1 · Karte wählen', { step: 1 }], ['2 · Fluff einfüllen', { step: 2, card: target }], ['2 · gefüllt', { step: 2, card: target, filled: true }], ['4 · Karte', { step: 4, card: target }]].forEach(([lab, o]) => {
+        const box = h('div', `position:relative;width:1920px;height:1080px;overflow:hidden;background:${T.sky}`); box.append(H.kayfabOverlay(T, Z, { counts, ...o }));
+        b.append(h('div', 'display:flex;flex-direction:column;gap:10px', [cap(lab), h('div', 'border-radius:8px;overflow:hidden', [zoom(box, 0.3)])]));
+      });
+      s3.append(b); }
+    const s4 = this.slot('p-korb'); if (s4) { s4.innerHTML = ''; const b = band('gap:48px');
+      b.append(h('div', 'display:flex;flex-direction:column;gap:10px', [cap('Absurd fehlt'), zoom(H.fluffKorb(T, Z, { counts: H.FLUFF_COUNTS }), 0.9)]), h('div', 'display:flex;flex-direction:column;gap:10px', [cap('alle sechs da'), zoom(H.fluffKorb(T, Z, { counts: [34, 22, 3, 41, 19, 12] }), 0.9)]));
+      s4.append(b); }
+  }
+
+  renderVals() {
+    const c = (i) => () => this.collect(i);
+    return {
+      status: this.state.status,
+      c0: c(0), c1: c(1), c2: c(2), c3: c(3), c4: c(4), c5: c(5),
+      swap: () => this.swap(),
+      reset: () => this.renderLive(),
+      frames: this.frameList().map((f) => ({ id: f.id, title: f.title, note: f.note, desk: f.id + '-d', phone: f.id + '-p', cov: f.id + '-c' }))
+    };
+  }
+}
+</script>
+</body>
+</html>
