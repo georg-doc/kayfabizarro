@@ -1,18 +1,31 @@
-# KFB known failures · required reading for every session (V-393)
+# KFB known failures · tiered (V-393, as amended 17.10.)
 
-Read this before every job. If one of these happens: **stop and report to WS0, do not keep tuning**. A known failure gets one local attempt at most, then it goes to the module owner.
+Principle: **guard in code before guarding in text.** The best rule is one that a module or figure card enforces by itself. Briefs therefore include only **tier 0 plus the one matching block**. Never the whole list.
 
-| # | Failure (has happened repeatedly) | Rule | Correct source / module |
+## Tier 0 · always, in every brief (three lines)
+1. Figures only ever come from their **figure card**: KFB eye rig + clay. The card says what may be removed (V-391).
+2. Light and shadow only ever come from the **stage light module**. Never build them yourself (V-392).
+3. Known failure seen again → **stop and report to WS0**. One local attempt at most.
+
+## Tier 1 · one block per job type (WS0 copies only the matching block into the brief)
+**[Figure]**: Remove only the original eyes; mouth, teeth and brows stay. Figure sheen ≤ 0.05. Never use a raw KayKit/Meshy GLB as an actor.
+**[Stage/light]**: No rim light, no back light, no private light tricks (unlit card, own tone curve, self-lit face). Bias is never a fixed number. Parts sitting in each other get contact AO.
+**[Motion/tests]**: Run walk and drive tests at ≥ 50 fps **and** throttled to 30 fps. Landing comes from ground contact, not from the animation.
+**[Audio/generation]**: Credit budget before every generation, 1 variant first. API keys never in a repo, log or chat.
+**[Georg-facing]**: Clean images with no overlays. Use only the names of the five places, no internal tool names.
+
+## Tier 2 · reference (do not put it in briefs; WS0 looks things up here)
+| # | Failure | Since | Block |
 |---|---|---|---|
-| F1 | **Figure without KFB eye rig** (raw KayKit/Meshy eyes): V-200, V-201, V-214, mummies on 17.10. | Figures are always delivered and staged with the KFB eye rig, unless the figure card says `eyeRig: none` with a reason (V-061, V-219, V-227) | `figures/<id>.figure.json` (V-391); EyeRig v6; EYE-CLEANUP-01 anchors |
-| F2 | **Wrong part removed**: Orc Brute lost teeth or got a wrong mouth | Remove only the original **eyes**; keep mouth, teeth, brows, ears unless the card lists them under `originals.remove` | figure card `originals.remove/keep` |
-| F3 | **Proof without clay material** | Always clay (V-346), figure sheen ≤ 0.05 | clay-material.v8 + figure profile |
-| F4 | **Bright seam / halo** at silhouettes and shadow sides (rim or back light, fresnel, sheen): V-382 plus 5 rounds at WSB on 17.10. | No rim and no back light. Separation comes from the warm character light on the camera side + contact AO | `kfb-stage-light.v1` (V-392) |
-| F5 | **Light gap under feet, balls and props** (fixed bias number from a different scale) | Bias is derived from texel + depth range, never a fixed number; parts that sit in each other get contact AO, not more bias | `kfb-stage-light.v1`: `fitShadow`, `contactAO` |
-| F6 | **Every stage builds its own light** | No stage builds light/shadow itself; deviations only as module parameters | `kfb-stage-light.v1` |
-| F7 | **Private light tricks per layer** (unlit card, separate tone curve, emissive face) | One rig, one tone curve, one material response | LIGHT_MODEL_R2 (V-385/386) |
-| F8 | **Raw KayKit GLB as actor in a stage** | Stages load only figure cards | V-391 |
-| F9 | **Overlays cover the subject** | Clean image, controls at the edge | V-383 |
-| F10 | **Foot or drive test below 50 fps counted as PASS** | Test at ≥ 50 fps and at 30 fps throttled | V-138, V-379 |
-| F11 | **Credits/costs without a cap** (e.g. 4 variants × 12 prompts) | State the credit budget before every generation; 1 variant first | V-388 |
-| F12 | **Internal tool names to Georg** ("Motion Lab", stage ids) | Only the five places from TOOL_MAP | V-390 |
+| F1 | Figure without KFB eye rig | V-200/201/214, mummies 17.10. | Tier 0 |
+| F2 | Wrong part removed (Orc teeth/mouth) | — | Figure |
+| F3 | Proof without clay | V-346 | Tier 0 |
+| F4 | Bright seam/halo (rim, back light, sheen) | V-382, WSB 17.10. | Stage/light |
+| F5 | Light gap under feet/props (fixed bias) | WSB 17.10. | Stage/light |
+| F6 | Each stage builds its own light | — | Tier 0 |
+| F7 | Private light tricks per layer | V-385 | Stage/light |
+| F8 | Raw KayKit GLB as actor | V-219 | Figure |
+| F9 | Overlays covering the subject | V-383 | Georg-facing |
+| F10 | Tests below 50 fps counted as PASS | V-138 | Motion/tests |
+| F11 | Credits with no cap | V-388 | Audio/generation |
+| F12 | Internal tool names shown to Georg | V-390 | Georg-facing |

@@ -3,7 +3,7 @@
 ## 17.10.2026 · Licht-Modul für alle Bühnen, Figurenkarten, Fehlerliste – V-391 bis V-393
 1. **L3 liefert zusätzlich das Modul `kfb-stage-light.v1.js`** (Details am Ende von `replies/LIGHT_MODEL_R2.md`): Rig ohne Rand- **und ohne Gegenlicht** (Korrektur nach WSB-Beleg: das J17-Gegenlicht malt den Saum), `fitShadow`, generisches `contactAO`, Selbsttest Spalt = 0 px. Es wird vendorbar gebaut, WSB/ToolBox/Claude-Design-Bühne binden es ein.
 2. **Figurenkarten (V-391):** Bühnen laden Figuren nur noch über `figures/<id>.figure.json` (Entwurf `replies/FIGURES_R1/`, folgt); ohne `eyeRig` sichtbar ablehnen.
-3. **Pflicht-Lektüre `replies/KNOWN_FAILURES.md`** (F1–F12) vor jedem Lauf; bekannter Fehler = stoppen und melden.
+3. **Fehlerliste gestaffelt (V-393):** Stufe 0 (drei Zeilen) gilt immer; für L3 zusätzlich nur der Block [Bühne/Licht], für Slice 3 [Bewegung/Tests] aus `replies/KNOWN_FAILURES.md`.
 
 ## 17.10.2026 · Licht-Lauf L3 nach Licht-Modell R2 – V-382, V-385 (vor Slice 1)
 Georg hat V-346 auf der Staging-Seite als FAIL/großes TUNE bewertet. WS0-Audit `replies/LIGHT_RESEARCH_AUDIT_R1.md`: drei der fünf Fehler gehen auf **WS0-Aufträge** zurück (Randlicht, faceFill, toneSplit, unbeleuchtete Karte) – das ist kein WS1-Versäumnis. Neues Konzept: `replies/LIGHT_MODEL_R2.md` (zehn Regeln, Stimmungs-Tabelle, Raster L-1–L-8). Reihenfolge: **V-345 fertig → L3 → Slice 1**.
