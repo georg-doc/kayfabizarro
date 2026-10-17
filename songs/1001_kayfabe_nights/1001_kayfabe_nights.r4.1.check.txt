@@ -1,1 +1,4 @@
 R3.1 candidate 1001_kayfabe_nights: 4987 Unicode chars (<5000); 56/56 playable card lines, 80–95 core characters; one songLine (#26 numeric), 1/56=1.79%. #9 parenthetical omitted, #17 Black Giant -> The Giant, cannibal deleted, #20/#22/#25/#26 mechanics removed, #32 card term removed. Sources untouched; QA derived fixture includes approved stage aliases. Original exact plugin lexical checker and new Python format gate PENDING CI.
+
+## R3.1 executed test evidence
+Run https://github.com/georg-doc/kayfabizarro/actions/runs/39031905120; candidate 51df4947c06e63a260b23b84944545d92fe08b98. Exact original triplet_set_check.py EXIT 0 SUCCESS; R3.1 format_gate_r31.py EXIT 0 SUCCESS. Two named mechanical gates PASS. Creative blind review NOT RUN. This does not constitute Georg's approval.

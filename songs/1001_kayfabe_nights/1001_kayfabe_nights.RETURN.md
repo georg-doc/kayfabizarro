@@ -1,2 +1,5 @@
 # 1001 Nights R4.1 Return V-418
 Owner existing kfb-triplets. Branch songs/1001_kayfabe_nights-r4-2026-10-17. Binding spec R3.1 blob 3a6ea19c0c30c4c9430decc1c739dbbb5a294f60. 56/56 playable original numbered cards, four cover/rule metadata omitted as documented R4. Original R4 retained. 4987 Unicode chars, 56/56 80–95 card core. Bracketed Aladdin subtitle dropped, The Black Giant human-group derogatory cannibal expression removed, The Giant as stage title alias; 39 -> Thirty-Nine sung, logged one songLine/56. Game effects removed. No canonical edit: derived QA-only alias & number spellings. Python CI gate pending. Blind review not run, no score or creative acceptance. No Hub/Site/merge. Next gate: independent reviewer flags only after Python PASS.
+
+## R3.1 executed test evidence
+Run https://github.com/georg-doc/kayfabizarro/actions/runs/39031905120; candidate 51df4947c06e63a260b23b84944545d92fe08b98. Exact original triplet_set_check.py EXIT 0 SUCCESS; R3.1 format_gate_r31.py EXIT 0 SUCCESS. Two named mechanical gates PASS. Creative blind review NOT RUN. This does not constitute Georg's approval.
