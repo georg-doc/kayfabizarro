@@ -72,3 +72,9 @@ Build the brain head in the Space Ranger collar: brain from `~/Dropbox/CLAUDE/Me
 - Eyes: KFB eye rig on the NoEyes base (anchors). Mouth and moustache only as the card specifies; remove only the eyes (F2).
 **Animation:** marching/patrolling with the rifle shouldered: stiff legs, one arm swinging, a short halt and salute. First check the Motion Library and KayKit clips. If nothing fits, build one marching clip in Blender (Rig_Medium, loopable) and a salute clip.
 **Output:** GLB (+ rank variants 1–3 as proof), `toy_soldier_cop.figure.json` draft, clay proofs front/¾/side, a short march clip render. Then WSA adds them to ToolBox-Studio.
+
+## B12 · "Man in Black" (Georg 17.10., V-413), after B11
+**Build:** in Blender (V-336, no runtime mesh hacks; the Frankensteining Studio is retired). Base is a KayKit Rig_Medium body (Adventurers 2.0, `media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/`; the head/body pick goes in the RETURN). On top, modelled as clay with few big shapes: a **black suit** (jacket, trousers), a **white shirt** (visible collar and front), a **dark tie**, and optionally sunglasses (donor `media/3D_Assets/GLB_mini_chars/aid-sunglasses.glb`, check the licence) as a removable variant.
+Eyes: KFB eye rig (anchors). The sunglasses variant may cover the eyes; the eye rig stays underneath for close-ups without glasses.
+**Story (proposal; Georg confirms):** agents of the cover-up. They show up where aliens (Lord Hunky, Lady Dory) or UFO traces appear, and they "erase" what happened (link to the Cosmic Grift deck: UFO File, Majestic 12). Satire on official kayfabe.
+**Output:** GLB, `man_in_black.figure.json` draft, clay proofs front/¾/side with and without glasses. Then WSA adds it to ToolBox-Studio.
