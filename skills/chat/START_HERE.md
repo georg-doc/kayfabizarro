@@ -1,3 +1,22 @@
+## ADDITIVE RESEARCH ROUTE · 2026-10-16 · MKULTRA / MONARCH / KFB CARDS (NO RUNTIME)
+
+Georg requested a source-focused GitHub research slice and later KFB cards ideation for the documented MKUltra experiments, claimed Project Monarch, and Cathy O'Brien / Mark Phillips' *TranceFormation of America*. **This is not a new canon, implementation or runtime owner; none of the world/MVP gates below change.**
+
+Research branch: `research/kfb-mkultra-monarch-cardway-r1-2026-10-16`.
+Read first: `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/BRIEF.md`, then `SOURCE_LEDGER.md`, `SOCIETAL_PSYCHOLOGY_ADDENDUM_2026-10-16.md`, `CARDWAY_IDEAS.md`, `TEST_REPORT.md`, `RETURN.md`.
+
+**R2C research complete, 2026-10-16:** Same research owner, branch and Draft PR #408. Read `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/R2C_ORIGINAL_DOCUMENTS_MEDICAL_PROVENANCE_2026-10-16.md` before further work. An archived 2024 press clipping led to a 1963 CIA primary memorandum; newly accessible university Detainee 063 transcriptions and DOJ 2005 original were compared with PHR 2010 analysis. The BSCT 2002 primary scan remains inaccessible. S01–S48 source leads, 36 unapproved card concepts, 8/8 R2C static checks; no runtime or Stage work. Next one source gate: R2D original-document comparison, preserving West/Cameron/Desmet research.
+
+**R2B additive Guantánamo SERE 'Battle Lab' evidence, 2026-10-16:** Read `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/R2B_GUANTANAMO_SERE_BATTLE_LAB_2026-10-16.md` after R2A. Official 2008 SASC report chapter III literally calls Guantánamo a 'Battle Lab' for interrogation techniques; checked original Senate executive summary, December 2002 GTMO SERE draft SOP, original SERE instructors' January 2003 report and signed DoD November/December 2002 action memo. Medical BSCT and possible human-subject research are different evidentiary questions. **SERE→GTMO directly documented, MKUltra→GTMO institutional continuation not demonstrated.** 39 source/lead rows, 30 unapproved card prompts, R2B checks 8/8 with 7 actual primary PDF scan pages; no runtime, Stage, or Merge. ONE next gate R2C original BSCT/063/leak/PHR/SSCI provenance together with outstanding West/Cameron/Desmet threads. Same Draft PR #408; no new project.
+
+**R2A completed, documentation-only, 2026-10-16:** Read `skills/chat/research/MKULTRA_MONARCH_CARDWAY_R1_2026-10-16/R2A_FOIA_PRIMARY_SOURCE_DEEP_DIVE_2026-10-16.md` after SOURCE_LEDGER and alongside RETURN/TEST_REPORT. Original 1952 ARTICHOKE, 1954 Subproject 35, 1955 17-goal TSS list, 1963 IG MKULTRA/MKDELTA scans and 2026 House testimony inspected selectively. **MKDELTA** has primary documentation distinct from **unproven Monarch**. 26 source IDs and 24 unapproved concept cards, 8/8 R2A static checks; source images inspected 15 pages, no card/runtime/public Stage. Next one research gate: **R2B West original manuscripts vs altered-version allegation, Cameron/68 originals, Desmet scientific comparison**. Source details and limits in R2A report.
+
+**Additive 2026-10-16 R1 extension:** Frank Höfer's *Der programmierte Mensch* (ISBN 9783982914107), YouTube IDs `yx8AWx_sOl4` and `llSgrF8h9AU` (video content UNINSPECTED), and Mattias Desmet's Mass Formation alongside empirical social-psychology / propaganda / digital-influence research. Future Mass Formation deck is editorial **proposal only**. Same Draft PR #408 and same R2 source-depth gate; no changes to existing KFB runtime/cards or Stage.
+
+Use existing `travel/3D Conspiracy Iceberg Explorer/docs/SCHEMA-v2.md` and `registry/assets/v1/decks/project_gateway_kayfabe.json` for read-only reuse/donor comparison. `skills/chat/meta/KFB_META_COMPENDIUM_v1.md` remains the meta index, not a research SSOT. Never conflate source-proven MKUltra with the separately uncorroborated Monarch claims or turn named-person allegations into verified facts. Research only; no cards activated, Stage/Live or merge. Next gate: original-text and primary-document page-level comparison.
+
+---
+
 ## CURRENT ADDITIVE DECISION · 2026-10-12 · WORLD MONUMENTS01 CLAUDE DESIGN PASS / TUNE LATER
 
 Georg has accepted the uploaded **WORLD MONUMENTS01 Claude Design session cut r1** as **PASS · TUNE LATER** for the next Claude Code / WSA implementation intake.
