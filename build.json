@@ -1,16 +1,21 @@
 {
   "schema": "kfb.ws1-build/1",
-  "commit": "kfb-planet main@3e3b9d2 (L3 Licht-Modul, Stimmung Mesa, Knete R2, M2 K2B, J17-Meter)",
-  "date": "2026-10-17T07:30:00+02:00",
-  "tests": { "suite": "npm test", "passed": 24, "total": 24 },
+  "commit": "kfb-planet look/mesa@d193606 (Branch, nicht main: Figurenkarten V-391, Farbwelt Joyride-Rollen, Knet-Amphitheater, Sprenkel-Band V-403, Gelände um Meshy-Bühnen, perf-Anzeige; auf main@3e3b9d2)",
+  "date": "2026-10-17T10:30:00+02:00",
+  "tests": { "suite": "npm test", "passed": 25, "total": 25 },
   "links": {
     "stage": "#stage,actors=fb,light=l1",
     "stageGold": "#stage,actors=fb,light=l1,tod=gold",
     "stageNight": "#stage,actors=fb,light=l1,tod=night",
-    "lookProbeOTown": "#stage,actors=fb,light=l1,palette=otown,palv=b,pamt=1",
+    "worldBucht": "#stage,actors=fb,light=l1,world=bucht",
+    "worldOTown": "#stage,actors=fb,light=l1,world=otown",
+    "goblin": "#stage,actors=fb,light=l1,scene=goblin",
+    "atlantis": "#stage,actors=fb,light=l1,scene=atlantis",
+    "legacy": "#stage,actors=fb,light=l1,look=legacy",
+    "perf": "#stage,actors=fb,light=l1,perf",
     "m1": "#m1",
     "car": "#m1,car",
     "lineup": "#stage,light=l1,lineup=1"
   },
-  "notes": "Hash-Ziele host-neutral (V-356). L3: ein Licht-Modul, Mesa-Stimmung (Krazy Kat) mit ACES, Vergleichsleiste unten links (H = sauberes Bild). M1/M2 nutzen das Licht-Modul noch nicht (Umzug folgt, Zweitschatten am Auto)."
+  "notes": "Vorschau eines Branch-Stands zum Ansehen (V-400: kein main-Merge ohne Georg). M1/M2 hier noch ohne Licht-Modul-Umzug (der liegt auf m3/fahrhilfe)."
 }
