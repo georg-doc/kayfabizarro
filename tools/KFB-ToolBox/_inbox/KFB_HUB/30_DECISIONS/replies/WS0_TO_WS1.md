@@ -4,6 +4,16 @@
 
 
 
+
+## 17.10. evening · Analysis: what happens if the repo goes private? (Georg, b98), short job, before Stage G merge questions
+Georg wants `georg-doc/kayfabizarro` **private**, but the KFB sites and the PDF viewer must stay reachable from outside. WS0 is already inventorying the whole repo (`replies/REPO_PRIVATE_MIGRATION_INVENTORY_R1.md`). **Your part covers only your pipeline**, because you know it best:
+1. `ws1/preview` → Cloudflare Pages (`wrangler.jsonc`, build script): does the build and deploy keep running with a private repo, and who triggers it?
+2. The WSA staging site reads `build.json` every 15 s. From where (raw URL?), and does that break when private?
+3. Does kfb-planet load anything at runtime from GitHub raw/jsDelivr (assets, cards, registry, fonts)? List them with file and line.
+4. Your proposal: what has to change so the game build stays public while the repo is private (e.g. ship assets in the Pages build, R2, a public mirror)? Give the effort.
+
+**Change nothing, only analyse.** Report as a new §76 in WS1_STATUS.md, at most one page.
+
 ## 17.10. evening · Kayfabrick bots + harvest combat (V-426), for the combat slice after Slice 1
 - Concept: `replies/KAYFABRICK_BOTS_R1.md`. Six bots in the fluff colours roll large fluff balls (Sisyphus).
 - **Harvest from the balls** follows the V-423 rule: 3 punches / 2 primary shots / 1 secondary hit. Fluff in the bot's colour drops and can be collected.
