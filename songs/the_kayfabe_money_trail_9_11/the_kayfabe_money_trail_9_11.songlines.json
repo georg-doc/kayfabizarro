@@ -1,6 +1,6 @@
 {
   "deckId": "the_kayfabe_money_trail_9_11",
-  "version": "R4.1/R3.2",
+  "version": "R4.2/R3.2",
   "bindingSpec": "R3.2",
   "metaSkipped": [],
   "songLineChanges": [
@@ -59,11 +59,11 @@
     },
     {
       "cardNumber": 9,
-      "reason": "A7 required spoken number/symbol replacement",
+      "reason": "A7 required spoken number/symbol replacement; ampersand rendered as spoken 'and'",
       "before": "Floors 93 To 100, Marsh & McLennan, 2,000 employees and critical transaction data.",
       "after": "Floors Ninety-Three To One Hundred, Marsh & McLennan, employees and critical data.",
       "rule": "A7",
-      "songLine": "Floors Ninety-Three To One Hundred, Marsh & McLennan, employees and critical data.",
+      "songLine": "Floors Ninety-Three To One Hundred, Marsh and McLennan, employees and critical data.",
       "songName": "Floors Ninety-Three To One Hundred"
     },
     {
