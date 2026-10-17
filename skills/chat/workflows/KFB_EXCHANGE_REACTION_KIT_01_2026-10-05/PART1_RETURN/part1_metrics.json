@@ -1,0 +1,594 @@
+{
+ "reactionAudition": {
+  "kfb_gesture_cheering_a": {
+   "Rig_Medium": {
+    "frames": 88,
+    "loop": true,
+    "peak": 32,
+    "trim": [
+     0,
+     75
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.083,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.004,
+    "reaction": "delighted"
+   },
+   "Rig_Large": {
+    "frames": 88,
+    "loop": true,
+    "peak": 32,
+    "trim": [
+     0,
+     75
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.108,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.005,
+    "reaction": "delighted"
+   }
+  },
+  "kfb_gesture_clapping_a": {
+   "Rig_Medium": {
+    "frames": 37,
+    "loop": true,
+    "peak": 4,
+    "trim": [
+     0,
+     36
+    ],
+    "trimSec": 1.2,
+    "peakDevOverH": 0.014,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.0,
+    "reaction": "delighted"
+   },
+   "Rig_Large": {
+    "frames": 37,
+    "loop": true,
+    "peak": 4,
+    "trim": [
+     0,
+     36
+    ],
+    "trimSec": 1.2,
+    "peakDevOverH": 0.018,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.0,
+    "reaction": "delighted"
+   }
+  },
+  "kfb_idle_happy_a": {
+   "Rig_Medium": {
+    "frames": 89,
+    "loop": true,
+    "peak": 28,
+    "trim": [
+     1,
+     74
+    ],
+    "trimSec": 2.43,
+    "peakDevOverH": 0.063,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.004,
+    "reaction": "delighted"
+   },
+   "Rig_Large": {
+    "frames": 89,
+    "loop": true,
+    "peak": 27,
+    "trim": [
+     2,
+     73
+    ],
+    "trimSec": 2.37,
+    "peakDevOverH": 0.089,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.005,
+    "reaction": "delighted"
+   }
+  },
+  "kfb_reaction_surprised_a": {
+   "Rig_Medium": {
+    "frames": 121,
+    "loop": true,
+    "peak": 51,
+    "trim": [
+     14,
+     89
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.097,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.018,
+    "reaction": "surprised"
+   },
+   "Rig_Large": {
+    "frames": 121,
+    "loop": true,
+    "peak": 51,
+    "trim": [
+     14,
+     89
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.12,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.024,
+    "reaction": "surprised"
+   }
+  },
+  "kfb_reaction_reacting_a": {
+   "Rig_Medium": {
+    "frames": 111,
+    "loop": true,
+    "peak": 35,
+    "trim": [
+     0,
+     75
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.029,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.008,
+    "reaction": "surprised"
+   },
+   "Rig_Large": {
+    "frames": 111,
+    "loop": true,
+    "peak": 34,
+    "trim": [
+     0,
+     75
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.039,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.01,
+    "reaction": "surprised"
+   }
+  },
+  "kfb_reaction_reaction_a": {
+   "Rig_Medium": {
+    "frames": 67,
+    "loop": true,
+    "peak": 33,
+    "trim": [
+     1,
+     57
+    ],
+    "trimSec": 1.87,
+    "peakDevOverH": 0.209,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.047,
+    "reaction": "surprised"
+   },
+   "Rig_Large": {
+    "frames": 67,
+    "loop": true,
+    "peak": 29,
+    "trim": [
+     1,
+     57
+    ],
+    "trimSec": 1.87,
+    "peakDevOverH": 0.272,
+    "hipsTravel": 0.001,
+    "hipsDropOverH": 0.063,
+    "reaction": "surprised"
+   }
+  },
+  "kfb_gesture_dismissing_gesture_a": {
+   "Rig_Medium": {
+    "frames": 68,
+    "loop": true,
+    "peak": 27,
+    "trim": [
+     4,
+     44
+    ],
+    "trimSec": 1.33,
+    "peakDevOverH": 0.035,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.002,
+    "reaction": "unimpressed"
+   },
+   "Rig_Large": {
+    "frames": 68,
+    "loop": true,
+    "peak": 27,
+    "trim": [
+     5,
+     44
+    ],
+    "trimSec": 1.3,
+    "peakDevOverH": 0.046,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.003,
+    "reaction": "unimpressed"
+   }
+  },
+  "kfb_gesture_thoughtful_head_shake_a": {
+   "Rig_Medium": {
+    "frames": 93,
+    "loop": true,
+    "peak": 28,
+    "trim": [
+     6,
+     64
+    ],
+    "trimSec": 1.93,
+    "peakDevOverH": 0.016,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.0,
+    "reaction": "unimpressed"
+   },
+   "Rig_Large": {
+    "frames": 93,
+    "loop": true,
+    "peak": 28,
+    "trim": [
+     6,
+     56
+    ],
+    "trimSec": 1.67,
+    "peakDevOverH": 0.025,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.0,
+    "reaction": "unimpressed"
+   }
+  },
+  "kfb_gesture_angry_gesture_a": {
+   "Rig_Medium": {
+    "frames": 99,
+    "loop": true,
+    "peak": 22,
+    "trim": [
+     6,
+     45
+    ],
+    "trimSec": 1.3,
+    "peakDevOverH": 0.088,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.002,
+    "reaction": "outraged"
+   },
+   "Rig_Large": {
+    "frames": 99,
+    "loop": true,
+    "peak": 22,
+    "trim": [
+     6,
+     56
+    ],
+    "trimSec": 1.67,
+    "peakDevOverH": 0.111,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.003,
+    "reaction": "outraged"
+   }
+  },
+  "kfb_gesture_yelling_a": {
+   "Rig_Medium": {
+    "frames": 243,
+    "loop": true,
+    "peak": 76,
+    "trim": [
+     39,
+     114
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.151,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.016,
+    "reaction": "outraged"
+   },
+   "Rig_Large": {
+    "frames": 243,
+    "loop": true,
+    "peak": 76,
+    "trim": [
+     39,
+     114
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.186,
+    "hipsTravel": 0.001,
+    "hipsDropOverH": 0.021,
+    "reaction": "outraged"
+   }
+  },
+  "kfb_idle_laughing_a": {
+   "Rig_Medium": {
+    "frames": 312,
+    "loop": true,
+    "peak": 115,
+    "trim": [
+     78,
+     153
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.122,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.011,
+    "reaction": "amused"
+   },
+   "Rig_Large": {
+    "frames": 312,
+    "loop": true,
+    "peak": 115,
+    "trim": [
+     78,
+     153
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.157,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.015,
+    "reaction": "amused"
+   }
+  },
+  "kfb_idle_sad_a": {
+   "Rig_Medium": {
+    "frames": 85,
+    "loop": true,
+    "peak": 27,
+    "trim": [
+     3,
+     68
+    ],
+    "trimSec": 2.17,
+    "peakDevOverH": 0.081,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.006,
+    "reaction": "disappointed"
+   },
+   "Rig_Large": {
+    "frames": 85,
+    "loop": true,
+    "peak": 26,
+    "trim": [
+     2,
+     69
+    ],
+    "trimSec": 2.23,
+    "peakDevOverH": 0.122,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.008,
+    "reaction": "disappointed"
+   }
+  },
+  "kfb_reaction_scared_a": {
+   "Rig_Medium": {
+    "frames": 303,
+    "loop": true,
+    "peak": 229,
+    "trim": [
+     192,
+     267
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.145,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.005,
+    "reaction": "scared"
+   },
+   "Rig_Large": {
+    "frames": 303,
+    "loop": true,
+    "peak": 97,
+    "trim": [
+     60,
+     135
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.224,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.007,
+    "reaction": "scared"
+   }
+  },
+  "kfb_reaction_fall_flat_a": {
+   "Rig_Medium": {
+    "frames": 77,
+    "loop": false,
+    "peak": 42,
+    "trim": [
+     2,
+     76
+    ],
+    "trimSec": 2.47,
+    "peakDevOverH": 0.305,
+    "hipsTravel": 1.945,
+    "hipsDropOverH": 0.141,
+    "reaction": "knockout"
+   },
+   "Rig_Large": {
+    "frames": 77,
+    "loop": false,
+    "peak": 42,
+    "trim": [
+     5,
+     76
+    ],
+    "trimSec": 2.37,
+    "peakDevOverH": 0.367,
+    "hipsTravel": 4.993,
+    "hipsDropOverH": 0.187,
+    "reaction": "knockout"
+   }
+  },
+  "kfb_reaction_getting_up_a": {
+   "Rig_Medium": {
+    "frames": 229,
+    "loop": false,
+    "peak": 166,
+    "trim": [
+     129,
+     204
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.34,
+    "hipsTravel": 0.208,
+    "hipsDropOverH": 0.032,
+    "reaction": "knockout"
+   },
+   "Rig_Large": {
+    "frames": 229,
+    "loop": false,
+    "peak": 166,
+    "trim": [
+     129,
+     204
+    ],
+    "trimSec": 2.5,
+    "peakDevOverH": 0.422,
+    "hipsTravel": 0.534,
+    "hipsDropOverH": 0.043,
+    "reaction": "knockout"
+   }
+  },
+  "kfb_reaction_dizzy_idle_a": {
+   "Rig_Medium": {
+    "frames": 134,
+    "loop": true,
+    "peak": 112,
+    "trim": [
+     75,
+     133
+    ],
+    "trimSec": 1.93,
+    "peakDevOverH": 0.044,
+    "hipsTravel": 0.001,
+    "hipsDropOverH": 0.006,
+    "reaction": "knockout"
+   },
+   "Rig_Large": {
+    "frames": 134,
+    "loop": true,
+    "peak": 112,
+    "trim": [
+     75,
+     133
+    ],
+    "trimSec": 1.93,
+    "peakDevOverH": 0.058,
+    "hipsTravel": 0.002,
+    "hipsDropOverH": 0.008,
+    "reaction": "knockout"
+   }
+  },
+  "kfb_gesture_taunt_a": {
+   "Rig_Medium": {
+    "frames": 88,
+    "loop": true,
+    "peak": 48,
+    "trim": [
+     11,
+     78
+    ],
+    "trimSec": 2.23,
+    "peakDevOverH": 0.079,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.0,
+    "reaction": "taunt"
+   },
+   "Rig_Large": {
+    "frames": 88,
+    "loop": true,
+    "peak": 48,
+    "trim": [
+     11,
+     78
+    ],
+    "trimSec": 2.23,
+    "peakDevOverH": 0.103,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.0,
+    "reaction": "taunt"
+   }
+  },
+  "kfb_gesture_taunt_b": {
+   "Rig_Medium": {
+    "frames": 50,
+    "loop": true,
+    "peak": 14,
+    "trim": [
+     0,
+     48
+    ],
+    "trimSec": 1.6,
+    "peakDevOverH": 0.101,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.001,
+    "reaction": "taunt"
+   },
+   "Rig_Large": {
+    "frames": 50,
+    "loop": true,
+    "peak": 28,
+    "trim": [
+     0,
+     47
+    ],
+    "trimSec": 1.57,
+    "peakDevOverH": 0.131,
+    "hipsTravel": 0.0,
+    "hipsDropOverH": 0.001,
+    "reaction": "taunt"
+   }
+  }
+ },
+ "exchange_lid_L": {
+  "grabFrame": 53,
+  "handSep": 1.802,
+  "lidWidth": 0.926,
+  "boxHeight": 0.694,
+  "kenneyScale": 2.315,
+  "releaseFrame": 163,
+  "liftHeight": 1.37
+ },
+ "exchange_lid_M": {
+  "grabFrame": 52,
+  "handSep": 0.444,
+  "lidWidth": 0.411,
+  "boxHeight": 0.308,
+  "kenneyScale": 1.027,
+  "releaseFrame": 162,
+  "liftHeight": 0.549
+ },
+ "exchange_heldpop_M": {},
+ "exchange_pair_M": {
+  "boxWidth": 0.454,
+  "kenneyScale": 1.136,
+  "palmToBoxSide": {
+   "giver": [
+    -0.0,
+    0.001
+   ],
+   "receiver": [
+    0.013,
+    0.014
+   ]
+  }
+ },
+ "exchange_pair_L": {
+  "boxWidth": 1.88,
+  "kenneyScale": 4.7,
+  "palmToBoxSide": {
+   "giver": [
+    -0.001,
+    0.003
+   ],
+   "receiver": [
+    0.031,
+    0.032
+   ]
+  }
+ },
+ "exchange_knead_M": {
+  "kneadBallR": 0.135
+ }
+}
