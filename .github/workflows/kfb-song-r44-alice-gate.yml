@@ -1,0 +1,19 @@
+name: KFB Alice R4.4 original song gates
+on:
+  push:
+    branches: ["songs/frizzlebob_bloedsinnland_alice-r4-2026-10-17"]
+permissions:
+  contents: read
+jobs:
+  r44:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: bfcf60f8faed39d5cbae3f715737cee95e890765
+          path: .kfb-register-readonly
+      - name: Canonical original triplet checker
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r31.qa.deck.json songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r31.qa.set.csv
+      - name: Canonical original song gate
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r4.4.suno.txt --deck songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r31.qa.deck.json --songlines songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r4.4.songlines.json --cards 1-30 --tone frizzlebob_bloedsinnland_alice --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
