@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-435 Intro/Outro FAIL „AI slop“: SONG_SPEC R3.4 (Kaltstart mit Deck-Titel, Stand-up für Normies + Dog Whistles für Experten, satirische Outro-Pointe, kein Objekt-Acting, Slop-Liste); song_gate C9/C13, Kritiker-Prompt; WSA Neufassung der Rahmen R4.5/R5.1 (Hub b110); Songkarten b103–b109 als FAIL markiert.
 - V-434 Fundsachen: häufig Süßes/Snacks/Drinks/Essen, selten surreale Werkzeuge/Requisiten; Fluff automatisch, Requisiten mit „I“/Interagieren in den Rucksack (HUD R5f), Wegwerfen im Rucksack-Detail. WS1-Notiz, WSB 28. Nachtrag (B28 Fundsachen-Set, nur _FREE).
 - Kritiker-Durchlauf 2 (nur Urteil) für die 7 R4.4-Tracks: fast überall besser, Freud/Therapy pass, Rest revise mit 3ern (replies/SONG_CRITICS_R2/); song_gate critic erlaubt jetzt Zitate aus der Kartenquelle (--source, SONG_SPEC F20). Songs als Suno-Karten im Hub (b103–b109) für Georg; Schritte-Probe R3 als q18 mit Link. WSB B25: Rust Runner identisch, Rustwing Cruiser neu (in den Fahrzeugordner kopiert).
 - V-433 WS0-Fehler: private Dateien über sync_github.sh auf den öffentlichen Register-Zweig gelangt; Sync-Ausschluss eingebaut, Entfernen wartet auf Georg. WS1 §78 beantwortet (Hub b102): B9 lokal, Alien-Karten glbCurrent (edge80/r9), Grammatik-Entscheide, kein Resolver jetzt, HUD R5f frei zur Einplanung, Lampen r3 + Knete v1.1. Hub q16 Pubs, q17 Insel-Paletten.

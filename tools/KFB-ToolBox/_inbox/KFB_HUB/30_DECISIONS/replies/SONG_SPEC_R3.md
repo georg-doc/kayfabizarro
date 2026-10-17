@@ -1,5 +1,6 @@
 # KFB Suno song spec R3.1: the one binding song document (V-411) · 17.10.2026
 
+**R3.4 (18.10., V-435, Georg FAIL "AI slop galore"):** C9 cold start made precise (intro beat 1 = deck title + thesis in plain words, then onboarding; outro = satirical, thought-provoking punch), **no object-acting** (things and abstractions don't act like people), anti-slop list (Layer Zero). Gate: `song_gate.py` C9/C13.
 **R3.3 (17.10., V-424, Georg):** intro/outro as a tailored satirical frame (C9 new), openers and bridges follow the 5 KayfabeTips (B7 new), callbacks required (B7b), one refrain allowed (C11 new), opener distance across songs = 15 songs, intro types with a cooldown. Gate: `song_gate.py`.
 **R3.2 (17.10., V-419):** the gate is now one shared script, `replies/song_gate.py` (E16); added A9 (meta cards), C9b (intro at least two beats), E16b deck notes for five more decks, §F (external critic); A5 quota without A7 spellings (WSA found the A5/A7 conflict on 9/11). Nothing else changed.
 **R3.1 (17.10., after WSA R4):** added A6–A8 (brackets, numbers, game words), C12b (two tracks) and E16b (tone check).
@@ -31,12 +32,20 @@ A9. **Meta cards** that are not playable (cover, manifesto, rule card, warning c
 
 ## C · Frame
 8. `[Spoken Word]` at the top. **A blank line between ALL beats:** every intro sentence, every card line, the outro.
-9. **Intro and outro are the bracket tailored to the deck:** deck title and deck concept condensed into a **satirical, provocative frame** (narrative, meaning and mood). Intro = onboarding and setup (2–4 beats of its own, one of six intro types: question · scene in medias res · found object · bold claim · confession · misdirection; log it as `introType` in `songlines.json`; the same type must not appear twice in 3 consecutive songs). Outro = a thought-provoking turn that calls back to the intro, then "Stay Fluffy!". No formula, no "Welcome to …", no Meta-Message, no announcer. FrizzleBob appears at most once (V-366).
+9. **Intro and outro are the bracket tailored to the deck** (Georg's golden take05 as the model, without copying its wording):
+   - **Intro = cold start / onboarding.** **Beat 1 names the deck plainly**: title words + the deck's thesis in one line, the way the golden says "Epistemic Sabotage: Let AI read your comic – not draw it!". Then 1–3 beats that bring the listener in: who is speaking, what we're doing here, what the satirical premise is, in concrete words and with direct address allowed. **No riddle or aphorism pairs, no question without an answer, no mood sentences without content.** Log the intro type (question · scene · found object · bold claim · confession · misdirection) as `introType`; it describes the form of beats 2–4, never beat 1.
+   - **Two levels (Georg 18.10.):** a **stand-up intro for normies**: setup and punch the way a stand-up comedian opens a set, relatable, everyday, funny, understandable without prior knowledge. Plus **dog whistles for experts**: 1–3 precise insider references from the deck/lore/history (names, dates, terms, quotes) that only people in the know pick up and that reward them, without blocking the normies. Same in the outro.
+   - **Outro = a satirical, thought-provoking punch.** A clear statement about power, money, media or us, the audience. Concrete and quotable, it may call back to the intro or the deck title. Then "Stay Fluffy!". No cryptic closing image, no aphorism.
+   - Do not use the template "Welcome to …" or the label "Meta-Message"; FrizzleBob appears at most once (V-366).
 9b. **The intro has at least two beats of its own.** Do not cut it to one line to make the deck fit; split it into two tracks instead (C12b).
 10. Order follows the card numbers. "Page = stanza" means only a micro-arc built through openers, **not block formatting**.
 11. **No running-gag shouts** (the "Blödsinn" FAIL). Apart from cards, no word appears more than twice. **Exception: one refrain/hook** when the character budget allows: at most 8 words, drawn from the deck title or thesis, appearing **at most 3 times** at stanza or page boundaries (may vary slightly). Log it as `refrain` in `songlines.json`; it does not count toward the repetition limits.
 12. Ending: "Stay Fluffy!" on its own line. The whole song is under 5000 characters.
 12b. **When a deck doesn't fit** (e.g. 60 cards × 80–95 characters), split it into **two tracks** at a page boundary (part 1/part 2), each with its own intro and outro. Do not drop cards and do not shorten lines below the spec (TRIPLET_SET_SPEC_R2 §4).
+
+## C2 · No AI slop (V-435, KayfabeTips Layer Zero)
+13a. **No object-acting:** in the intro, outro and openers, things and abstractions do not act like people (forbidden: "The ledger begins…", "A pocket watch is late…", "The ledger never stood trial", "the mind disputes"). People, figures and cards act; things are things. Card text (A) is exempt.
+13b. **No slop words or cadences:** tapestry, testament, whisper(s), echo(es), symphony, delve, unravel, journey, "in the end", "little did", "a reminder that", "stands as", and stacked dramatic two-liners with no information. Check: could the sentence appear in any song at all? Then it is slop.
 
 ## D · Style (V-362)
 13. Purely musical: genre fusion, production texture, one voice with attitude (or an explicit duet), 5–7 instruments, a groove word, BPM. No props, no job roles. Give two variants A and B.

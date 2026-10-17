@@ -6024,6 +6024,21 @@
    "applies": "ab sofort, nach C3"
   },
   {
+   "id": "V-435",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "FAIL",
+   "text": "Intro/Outro FAIL „AI slop galore“ (Georg 18.10., 9/11 Teil 1; WS0-Befund: alle 7 R4.4-Tracks gleiches Muster): Objekt-Acting (Dinge handeln wie Menschen), kein Onboarding/Kaltstart, wirr und belanglos; Outro ohne Satire und ohne Denkanstoß. Neu SONG_SPEC R3.4: Intro-Beat 1 = Deck-Titel + These im Klartext; zwei Ebenen – Stand-up-Intro für Normies + Dog Whistles für Experten (präzise Insider-Bezüge aus Deck/Lore/Geschichte); Outro = satirische Pointe zu Macht/Geld/Medien/uns; C13 kein Objekt-Acting, keine Slop-Wörter (KayfabeTips Layer Zero). song_gate prüft Kaltstart (Titelwörter) und Objekt-Acting/Slop; Kritiker-Prompt flaggt C13. WSA schreibt nur Rahmen und Opener neu (R4.5/R5.1).",
+   "values": {},
+   "owner": "WSA (Plugin) · WS0",
+   "check": "song_gate grün, WS0-Sichtung der Rahmen, Georg",
+   "source": "replies/SONG_SPEC_R3.md (R3.4) · replies/BRIEF_WSA_SONGS_FRAME_R45.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Mechanische Prüfungen und Kritiker belohnten Form, nicht Inhalt; der Writer’s Room fiel in generische Aphorismen zurück.",
+   "applies": "sofort, alle Songs"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6111,7 +6126,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:785",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:786",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

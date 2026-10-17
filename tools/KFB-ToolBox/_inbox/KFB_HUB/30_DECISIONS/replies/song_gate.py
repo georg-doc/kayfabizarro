@@ -38,6 +38,11 @@ TONE = {
     "romantic_kayfabe": ["she asked for it", "asked for it", "no means yes"],
 }
 STOP = GRAMMAR | EXTRA | FLUFF
+# C13 (R3.4, V-435): object-acting + slop
+THINGS = r"(ledger|ledgers|audit|audits|receipt|receipts|record|records|file|files|paper|papers|money|number|numbers|desk|door|office|stage|night|day|clock|watch|pocket watch|time|truth|silence|story|stories|deck|card|cards|question|answer|mind|dream|verdict|bell|seat|ticket|fee|whistle|crown|city|book|books|history|archive|evidence|page|pages|entry|entries|tablet|tablets|world|memory|account|accounting|figures|keys|blueprints|map|ink|coin|vault)"
+ACTS = r"(begins?|began|knows?|remembers?|waits?|whispers?|stands?|stood|wanders?|reach(es)?|summons?|commissions?|asks?|tells?|refuses?|keeps?|kept|holds?|buys?|offers?|appeals?|convicts?|disputes?|demands?|bills?|forgets?|lies|sleeps?|dreams?|wants?|hides?|watches|listens?|counts?|confess(es)?|never|cannot|can't|still|is late|precedes?|expose[sd]?|remain[s]?)"
+OBJECT_ACTING = re.compile(rf"(?:^|[.!?]\s+)(?:the|a|an|every|no|this|that|its|his|her)\s+(?:\w+\s+){{0,2}}?{THINGS}\s+(?:\w+\s+){{0,1}}?{ACTS}\b", re.I)
+SLOP = ["tapestry", "testament", "whisper", "echo", "symphony", "delve", "unravel", "journey", "in the end", "little did", "a reminder that", "stands as", "stood trial"]
 INTRO_TYPES = {"question", "scene", "found_object", "bold_claim", "confession", "misdirection"}  # C9 (R3.3)
 OPENER_WINDOW = 15   # B6 (R3.3): gleicher Opener frühestens nach 15 Songs
 INTRO_COOLDOWN = 3   # C9 (R3.3): gleicher Intro-Typ nicht zweimal in 3 aufeinanderfolgenden Songs
@@ -210,12 +215,25 @@ def gate_lyrics(a):
                 F("C9", f"introType {intro_type!r} schon in {fn} (Cooldown {INTRO_COOLDOWN} Songs)")
 
     frame_text = " ".join(intro + outro + middle)
+    # C9 (R3.4): Kaltstart – erster Intro-Beat nennt das Deck (Titelwörter)
+    title = str(deck.get("title") or deck.get("deckTitle") or "")
+    tw = {w.lower() for w in WORD.findall(title) if w.lower() not in STOP and len(w) > 3}
+    if intro and tw and not (tw & {w.lower() for w in WORD.findall(intro[0])}):
+        F("C9", f"Kaltstart fehlt: erster Intro-Beat nennt das Deck nicht (Titelwörter {sorted(tw)[:6]})")
     for p in INTRO_FORBIDDEN:
         if p in frame_text.casefold():
             F("C9", f"Formel im Rahmen: {p!r}")
     if frame_text.casefold().count("frizzlebob") > 1:
         F("C9", "FrizzleBob mehr als einmal im Rahmen")
 
+    # C13 (R3.4): Objekt-Acting + Slop im Rahmen (Intro/Outro); Opener werden unten geprüft
+    for b in intro + outro:
+        m = OBJECT_ACTING.search(b)
+        if m:
+            F("C13", f"Objekt-Acting: {m.group(0).strip()[:60]!r}")
+        for w in SLOP:
+            if re.search(rf"\b{re.escape(w)}", b, re.I):
+                F("C13", f"Slop-Wort {w!r}: {b[:50]!r}")
     # Opener + Kartenteil
     openers, seen = [], {}
     for j, b, c, k in card_beats:
@@ -223,6 +241,9 @@ def gate_lyrics(a):
         part = b[k:].strip()
         if op:
             openers.append((j, op))
+            m = OBJECT_ACTING.search(op)
+            if m:
+                F("C13", f"Objekt-Acting im Opener (Beat {j + 1}): {op[:50]!r}")
             key = op.casefold().rstrip(".:!?,; ")
             if key in seen:
                 F("B6", f"Opener doppelt: {op!r} (Beats {seen[key] + 1} und {j + 1})")
@@ -327,7 +348,7 @@ def gate_lyrics(a):
 CRITIC_KEYS = {"schema", "song", "critic", "blind", "scores", "flags", "verdict"}
 SCORE_KEYS = {"cardTruth", "performance", "arc", "sayability", "tone", "styleFit"}
 FLAG_KEYS = {"beat", "rule", "observation"}
-RULE = re.compile(r"^(A[1-9]|B(6|7|7b)|C(8|9|9b|10|11|12|12b)|D13|E16b|E17|F)$")
+RULE = re.compile(r"^(A[1-9]|B(6|7|7b)|C(8|9|9b|10|11|12|12b|13|13a|13b)|D13|E16b|E17|F)$")
 SUGGEST = re.compile(r"(replace|instead|rewrite|could say|should say|try |suggest|better:|e\.g\.|->|→|=>|change to|swap)", re.I)
 
 
