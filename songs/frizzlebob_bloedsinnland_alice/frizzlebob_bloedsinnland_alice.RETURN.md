@@ -13,3 +13,7 @@ Candidate head 5fbac36d10489ac42cc1064def4e6c9579cd73d2. Exact original triplet_
 - **Actual QA:** [39043397902](https://github.com/georg-doc/kayfabizarro/actions/runs/39043397902) shared `song_gate.py lyrics` **EXIT 0**, 30/30 recognized cards, intro 3 / outro 2, 15 openers. Warning: no dedicated E16b tone mapping for Alice; not a fail. Original exact triplet checker [39031723503](https://github.com/georg-doc/kayfabizarro/actions/runs/39031723503) SUCCESS. Latest additional critic-source JSON commit is metadata only; lyric blob unchanged.
 - **Creative state:** zero external critic sessions, no approved `*.critic.json`, no writer post-critic revision, no WS0/Georg acceptance, no Hub/Site/Stage.
 - **One next gate:** `WS0_V419_EXTERNAL_CRITIC_F19_F22` using only spec, Golden, isolated 30-card source and pinned lyrics; validate with `song_gate.py critic`.
+
+## V-424 · R3.3 tested checkpoint
+- Source spec R3.3 blob c3f42c7be5cd56edb5c522db53c44b482b52bae6; shared central lyrics gate run https://github.com/georg-doc/kayfabizarro/actions/runs/39068221812 at candidate `fd8c5793774fda7c4d8b00cbbe8d73d480eadff7`, **1/1 PASS**. Track(s): r4.3 (30 cards, 3211 chars, found_object). B7b callbacks and deck frame passed. Earlier R4.1/R4.2 remain untouched. Details: `R33_TEST_REPORT.md`.
+- External §F critic: 0 runs; one writer revision reserved, not performed. No Site/Hub/merge. Next gate: fresh external critic per track with scores/flags and exact `song_gate.py critic` proof.
