@@ -9,23 +9,27 @@
 // Tasten (Folgetasten des Hosts): W/S Gas/rückwärts, A/D lenken, Q/E driften (B, V-347), Leertaste = Handbremse (A) bzw. Sprung (B), R = zurück an den
 // Start, C = wechseln. ecctrl ist seit V-367 eingefroren (Vergleich in der Vorschau, keine neue Arbeit).
 import * as THREE from 'three'
-import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
+import { useCallback, forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { CuboidCollider, RigidBody, useRapier } from '@react-three/rapier'
 import { useKeyboardControls } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { EcctrlVehicle, ShapeCastWheel } from 'ecctrl/vehicle'
 import { useHostKeys } from '../hostKeys'
-import { expose } from '../debug'
+import { expose, DEBUG } from '../debug'
 import { M1INPUT } from '../m1/M1Player'
 import { isFence, inRankFence } from '../m1/m1Host'
 import { STEP, interpTrack } from '../m1/m1Clock'
 import { VEHICLE_COMMIT } from '../modules/vehicleLineup'
 import fbRecipe from '../data/actors/frizzlebob-v5b.recipe.json'
-import { createK2t, stepK2t, SQUASH_LOOK } from './k2t'
+import { createK2t, stepK2t, SQUASH_LOOK, attitude, ATT, LAND, STUCK, ASSIST_M3, PUSH, RIDE, TRICK } from './k2t'
+import { attachTumble } from '../vendor/deformer/vehicle-tumble.v1.js'
+import { attachFishtail } from '../vendor/deformer/vehicle-fishtail.v1.js'
+import { rampZone } from '../m3/stuntData.js'
+import { createDeformer } from '../vendor/deformer/vehicle-cartoon-deformer.v2.js'
+import DEFORM_PROFILES from '../vendor/deformer/deformer-profiles.json'
 import { terrainHeight } from '../modules/m1-terrain'
 import { K } from '../m1/m1Scale.js'
-import { contactBlob } from '../modules/contactBlob'
 
 // ── Fahrzeug (aus crimson_flame_dragster.kfb-vehicle.v3.json, Rig-Einheiten × S) ─────────────────────────────────────────────────────────────────
 const S = (fbRecipe.stage?.scale ?? 0.947) * K // V-345: Rig × 0,947 × K = Rig × M_PER_RIG (J17-Meter, wie FB)
@@ -51,7 +55,8 @@ export const M2TUNE = {
   rightAfter: 0.35, rightRate: 4, rightLift: 3 * K,
 }
 const H = typeof location !== 'undefined' ? location.hash : ''
-export const M2_ON = /#m1\b.*\bcar\b/.test(H) // #m1,car[=ecctrl|k2b]
+export const M2_ON = /#m1\b.*\bcar\b/.test(H) // #m1,car[=ecctrl|k2b] · assist=off: Fahrhilfe M3 zu Beginn aus
+if (/(^|[#,])assist=off(,|$)/.test(H)) ASSIST_M3.on = false
 // Ereignis-Abos (railImpact/landing/takeoff, Namen wie vehicle-cartoon-deformer.v2) für Squash, VFX, später Stunts (§55): M2EVENTS.on(type, fn) → abmelden
 export const M2EVENTS = { subs: new Map(), on(type, fn) { const l = this.subs.get(type) || new Set(); l.add(fn); this.subs.set(type, l); return () => l.delete(fn) }, emit(e) { this.subs.get(e.type)?.forEach((fn) => fn(e)); this.subs.get('*')?.forEach((fn) => fn(e)) } }
 export const M2STATE = { kind: /car=ecctrl/.test(H) ? 'ecctrl' : 'k2b', // Start mit B (Georgs Tendenz 16.10.), A per C als Gegenprobe
@@ -59,28 +64,63 @@ export const M2STATE = { kind: /car=ecctrl/.test(H) ? 'ecctrl' : 'k2b', // Start
 // Label nach V-367 („Fahrsystem: K2B | ecctrl“, Abnahmepunkt; weg erst beim M2-Merge mit Georgs Zustimmung): aktives System kräftig, das andere blass
 const LABEL = (kind) => ['k2b', 'ecctrl'].map((k) => `<span style="opacity:${k === kind ? 1 : 0.35}">${k === 'k2b' ? 'K2B' : 'ecctrl'}</span>`).join(' | ')
 // Fahr-Tasten im Info-Symbol (V-347 (4)), unter der M1-Liste; ecctrl ist eingefroren (V-367), Drift und Wendehilfe nur in K2B
-const CAR_KEYS = '<b>Auto</b><br>W · Gas &nbsp;·&nbsp; S · bremsen / rückwärts &nbsp;·&nbsp; A D · lenken (langsam: enge Wende)<br>Q E · driften links / rechts (K2B, ab 4,9 m/s)<br>Leertaste · springen (K2B) bzw. Handbremse (ecctrl)<br>R · zurück an den Start &nbsp;·&nbsp; C · Fahrsystem wechseln'
+const CAR_KEYS = '<b>Auto</b><br>W · Gas &nbsp;·&nbsp; S · bremsen / rückwärts &nbsp;·&nbsp; A D · lenken (langsam: enge Wende)<br>Q E · driften links / rechts (K2B, ab 4,9 m/s)<br>Shift · Boost (K2B) &nbsp;·&nbsp; Leertaste · springen (K2B)<br>im Sprung Leertaste + A/D · Fassrolle &nbsp;·&nbsp; X + A/D · auf zwei Rädern (ab 6 m/s, mit Fahrhilfe)<br>M · Fahrhilfe M3 an/aus (Landen, Lage, Nie-festfahren, Rampen- und Wandzonen) bzw. Handbremse (ecctrl)<br>R · zurück an den Start &nbsp;·&nbsp; C · Fahrsystem wechseln'
 const NOKEYS = { forward: false, backward: false, leftward: false, rightward: false, jump: false, run: false, walk: false }
 const OnFrame = ({ fn }) => { useFrame(fn); return null }
 
 // Modell einmal laden (geteilt), je Auto ein Klon; bis dahin ein Kasten in Rumpfgröße
 let modelPromise = null
 const loadModel = () => (modelPromise ||= new GLTFLoader().loadAsync(M2CAR.url).then((g) => { M2STATE.model = 'OK'; g.scene.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true } }); return g.scene }).catch((e) => { M2STATE.model = 'ERROR ' + e.message; return null }))
-function CarVisual({ squash }) {
-  const g = useRef(null), [model, setModel] = useState(null)
-  // Knet-Squash wie J17 (holder.scale 1 + 0,12·sq, 1 − 0,18·sq, 1 + 0,06·sq) – nur die Optik, um die Unterseite
-  useFrame(() => { const sq = squash?.() ?? 0; g.current?.scale.set(1 + SQUASH_LOOK.x * sq, 1 + SQUASH_LOOK.y * sq, 1 + SQUASH_LOOK.z * sq) })
+// M3 Stufe E (V-379): Deformer v2 (lab-v7 vehicle-cartoon-deformer.v2.js 1:1, kayfabizarro main @904f0e959), Profil CAR_CHILL_LIGHT. Er schreibt nur in
+// eigene Knoten unter der Darstellung (Shell-Gruppe), nie in den Starrkörper – die Kollider-Lage bleibt unverändert. Eingang: K2B-Signale je Schritt
+// (setSignals) und die Ereignisse railImpact/landing (M2EVENTS). Mit Fahrhilfe aus: Knet-Squash wie M2 (J17 SQUASH_LOOK).
+// Zwei-Rad an der Wand (Stufe F, lab-v7 vehicle-twowheel.v1.js deriveTwoWheel): Umfallwinkel = atan(halbe Breite / Schwerpunkthöhe der Hülle),
+// Haltewinkel wallride = Umfall + (90° − Umfall) × 0,45. Drehpunkt = Aufstandslinie auf der wandfernen Seite: die wandseitigen Räder heben ab, die
+// Unterseite zeigt zur Wand (so ragt die gekippte Hülle nicht in die Wand; das Tempo „trägt“ wie an der Steilwand). Nur Darstellung, der Kollider kippt nicht.
+const TW = (() => { const cx = M2CAR.box.h[0], cg = M2CAR.box.c[1], tip = Math.atan(cx / cg); return { contactX: cx, tipDeg: +(tip * 180 / Math.PI).toFixed(1), hold: tip + (Math.PI / 2 - tip) * 0.45 } })()
+RIDE.leanRad = TW.hold
+TRICK.freeLeanRad = (TW.tipDeg * Math.PI / 180) * 0.92 // Zwei-Rad frei: TIP_SAFETY 0,92 des Umfallwinkels (vehicle-twowheel.v1.js)
+export const DEFORM = { profile: DEFORM_PROFILES.profiles.CAR_CHILL_LIGHT, last: null }
+// Stufe G: Fassrolle und Schlingern als eigene Gruppen über der Darstellung (lab-v7, 1:1). Unser Schwebewagen hat keine Räder: die vier Schwebepunkte
+// (M2CAR.hover) stehen für die Radlage (Aufstandslinie, Vorderachse als Drehpunkt des Schlingerns). Lesewerte für Tests in TRICKS.
+export const TRICKS = { tumble: null, fish: null, touchdowns: 0, recovers: 0, triggered: 0 }
+const TRICK_RIG_WHEELS = M2CAR.hover.map(([x, y, z], i) => ({ centre: { x, y, z }, width: 0.3 * S, end: i < 2 ? 'zPlus' : 'zMinus' }))
+function CarVisual({ squash, signals, lean }) {
+  const g = useRef(null), tilt = useRef(null), trick = useRef(null), body = useRef(null), [model, setModel] = useState(null), def = useRef(null)
+  useEffect(() => { if (!signals || !g.current || !body.current || !tilt.current) return
+    const rig = { group: g.current, body: body.current, wheels: TRICK_RIG_WHEELS, frame: { height: M2CAR.box.c[1] + M2CAR.box.h[1], length: M2CAR.box.h[2] * 2, width: M2CAR.box.h[0] * 2, contactY: 0 }, report: { track: M2CAR.hover[0][0] * 2, wheelWidth: 0.3 * S } }
+    const host = tilt.current; host.remove(g.current)
+    const F = attachFishtail({ THREE, rig, profile: DEFORM.profile, facing: 1 }), T = attachTumble({ THREE, rig, profile: DEFORM.profile, facing: 1, child: F.root }); host.add(T.root)
+    const hideMarks = () => T.root.traverse((o) => { if (o.isLine || o.isLineSegments) o.visible = false }) // Lab-Hilfslinien (Achsen, Anker) nicht im Spiel
+    hideMarks(); trick.current = { T, F, hideMarks, side: 1 }
+    const _q = new THREE.Quaternion(), _u = new THREE.Vector3(); TRICKS.bodyUpY = () => { body.current?.getWorldQuaternion(_q); return _u.set(0, 1, 0).applyQuaternion(_q).y } // Prüfwert: Karosserie aufrecht?
+    const off = M2EVENTS.on('trick', (e) => { if (!ASSIST_M3.on) return
+      if (e.kind === 'tumble') { T.trigger({ severity: 0.7, speed: e.speed, side: e.side }); hideMarks(); TRICKS.triggered++; trick.current.side = e.side }
+      if (e.kind === 'recover') { F.trigger({ severity: 0.8, dir: e.side }); TRICKS.recovers++ } })
+    return () => { off(); trick.current = null; host.remove(T.root); F.dispose?.(); T.dispose?.(); host.add(g.current) } }, [signals])
+  useEffect(() => { if (!signals || !g.current || !body.current) return
+    const D = createDeformer(THREE, { group: g.current, body: body.current, wheels: [], frame: { height: M2CAR.box.h[1] * 2, length: M2CAR.box.h[2] * 2, width: M2CAR.box.h[0] * 2 } }, { profile: DEFORM.profile })
+    def.current = D; const offs = [M2EVENTS.on('railImpact', (e) => ASSIST_M3.on && D.railImpact(e)), M2EVENTS.on('landing', (e) => ASSIST_M3.on && D.landing(e))]
+    return () => { offs.forEach((f) => f()); D.dispose?.(); def.current = null } }, [signals])
+  useFrame(() => { const D = def.current, X = trick.current
+    if (X) { const r = X.T.update(STEP); if (r.event === 'touchdown') { TRICKS.touchdowns++; D?.landing({ strength: r.strength }) } if (r.event === 'recover') { X.F.trigger({ severity: 0.8, dir: X.side || 1 }); TRICKS.recovers++ } X.hideMarks()
+      TRICKS.tumble = { active: r.active, phase: r.phase, rollDeg: r.rollDeg, turns: r.turns }; const f = X.F.update(STEP); TRICKS.fish = { active: f.active, yawDeg: f.yawDeg } }
+    if (tilt.current) { const a = lean?.() ?? 0, px = -Math.sign(a) * TW.contactX; tilt.current.rotation.z = a; tilt.current.position.set(px - px * Math.cos(a), -px * Math.sin(a), 0) } // Drehung um die Aufstandslinie
+    if (D && ASSIST_M3.on) { g.current.scale.set(1, 1, 1); D.setSignals(signals()); D.update(STEP); DEFORM.last = D.readout; return }
+    if (D) D.reset?.()
+    // Knet-Squash wie J17 (holder.scale 1 + 0,12·sq, 1 − 0,18·sq, 1 + 0,06·sq) – nur die Optik, um die Unterseite
+    const sq = squash?.() ?? 0; g.current?.scale.set(1 + SQUASH_LOOK.x * sq, 1 + SQUASH_LOOK.y * sq, 1 + SQUASH_LOOK.z * sq) })
   useEffect(() => { let alive = true; loadModel().then((m) => { if (alive && m) setModel(m.clone(true)) }); return () => { alive = false } }, [])
   useEffect(() => (g.current?.parent ? interpTrack(g.current.parent) : undefined), []) // Bild-Interpolation: Wurzel = Starrkörper
   return (
-    <group ref={g}>
-      {model ? <primitive object={model} scale={S} /> : <mesh position={M2CAR.box.c}><boxGeometry args={M2CAR.box.h.map((v) => v * 2)} /><meshStandardMaterial color="#c8432f" /></mesh>}
-    </group>
+    <group ref={tilt}><group ref={g}>
+      <group ref={body}>{model ? <primitive object={model} scale={S} /> : <mesh position={M2CAR.box.c}><boxGeometry args={M2CAR.box.h.map((v) => v * 2)} /><meshStandardMaterial color="#c8432f" /></mesh>}</group>
+    </group></group>
   )
 }
 
 // Anzeige der aktiven Fahrphysik: groß oben mittig, beim Wechsel kurz hervorgehoben (Host-DOM, kein HUD-Stil)
-function useKindLabel(kind) {
+function useKindLabel(kind, assist) {
   useEffect(() => {
     if (typeof document === 'undefined') return
     const el = document.createElement('div'); el.id = 'm2-kind'
@@ -89,12 +129,13 @@ function useKindLabel(kind) {
   }, [])
   useEffect(() => {
     const el = document.getElementById('m2-kind'); if (!el) return
-    el.innerHTML = 'Fahrsystem: ' + LABEL(kind) + ' <span style="font-weight:400;font-size:15px">· C wechselt</span>'
+    // M3 Fühlprobe (V-379): „Fahrsystem: K2B · Assist M3 an/aus“ – M schaltet die Fahrhilfe (Vergleich mit dem Stand vorher), C wechselt das System
+    el.innerHTML = 'Fahrsystem: ' + LABEL(kind) + (kind === 'k2b' ? ` · Assist M3 <span style="color:${assist ? '#2f7d32' : '#a33'}">${assist ? 'an' : 'aus'}</span>` : '') + ' <span style="font-weight:400;font-size:15px">· M Assist · C wechselt</span>'
     const list = document.getElementById('m1-keys'); if (list && !document.getElementById('m2-keys')) { const c = document.createElement('div'); c.id = 'm2-keys'; c.style.marginTop = '6px'; c.innerHTML = CAR_KEYS; list.appendChild(c) }
     el.style.background = 'rgba(255,214,120,.95)'; el.style.transform = 'translateX(-50%) scale(1.12)'
     const t = setTimeout(() => { el.style.background = 'rgba(255,250,240,.82)'; el.style.transform = 'translateX(-50%) scale(1)' }, 900)
     return () => clearTimeout(t)
-  }, [kind])
+  }, [kind, assist])
 }
 
 const M2Car = forwardRef(function M2Car({ player }, ref) {
@@ -106,23 +147,21 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
   const car = useRef(null)
   const { camera } = useThree()
   const cam = useMemo(() => ({ tgt: new THREE.Vector3(), want: new THREE.Vector3(), init: false }), [])
-  useKindLabel(kind)
+  const [assist, setAssist] = useState(ASSIST_M3.on)
+  useKindLabel(kind, assist)
   useEffect(() => { M2STATE.carPos = () => car.current?.pos() ?? null; return () => { M2STATE.carPos = null } }, [])
-  // Kontaktfleck (V-203, contactBlob aus modules/contactBlob – derselbe Fleck wie bei den Figuren): auf dem Boden unter dem Auto, dreht mit, wird mit
-  // der Höhe blasser (Sprung). Je Schritt gesetzt und in der Bild-Interpolation geführt (sonst ruckelt er bei 120 Hz gegen das Auto).
-  const { world, rapier } = useRapier()
-  const blob = useMemo(() => contactBlob(M2CAR.box.h[0] * 2.4, M2CAR.box.h[2] * 2.2, 0.6), [])
-  const blobRay = useMemo(() => new rapier.Ray({ x: 0, y: 0, z: 0 }, { x: 0, y: -1, z: 0 }), [rapier])
-  useEffect(() => interpTrack(blob), [blob])
-  useFrame(() => { const c = car.current; if (!c) { blob.visible = false; return } const p = c.pos(), b = c.body?.()
-    blobRay.origin.x = p.x; blobRay.origin.y = p.y + 2; blobRay.origin.z = p.z
-    const h = world.castRay(blobRay, 60, true, undefined, undefined, undefined, b ?? undefined, (co) => !co.parent()?.userData?.m2Car && !isFence(co))
-    const gy = Math.max(h ? p.y + 2 - h.timeOfImpact : -Infinity, terrainHeight(p.x, p.z)), up = Math.max(0, p.y - gy)
-    blob.visible = true; blob.position.set(p.x, gy + 0.015 * K, p.z); blob.rotation.y = c.yaw(); blob.material.opacity = blob.userData.op0 * THREE.MathUtils.clamp(1 - up / (6 * K), 0.15, 1) })
+  // Kontaktverdeckung (L3): das Licht-Modul (createContactAO in M1World) legt den Fleck an der Boden-Normale unter einen Stellvertreter in Wagengröße,
+  // der dem Auto folgt (Grundfläche einmal gemessen, ungedreht). Löst den eigenen, waagrechten Fleck ab (Georg 17.10.: abgeschnittener Zweitschatten am Hang).
+  const proxy = useMemo(() => { const g = new THREE.Group(); g.name = 'm2-car-ao'; const m = new THREE.Mesh(new THREE.BoxGeometry(M2CAR.box.h[0] * 2, 0.01, M2CAR.box.h[2] * 2)); m.visible = false; g.add(m); return g }, [])
+  useEffect(() => { M2STATE.ao = { object3d: proxy, status: () => ({ status: car.current ? 'OK' : 'LOADING', shown: !!car.current }) }
+    M2STATE.carSize = { half: Math.hypot(M2CAR.box.h[0], M2CAR.box.h[2]), h: M2CAR.box.c[1] + M2CAR.box.h[1] }; return () => { M2STATE.ao = null } }, [proxy])
+  useEffect(() => interpTrack(proxy), [proxy])
+  useFrame(() => { const c = car.current; if (!c) return; const p = c.pos(); proxy.position.set(p.x, p.y, p.z); proxy.rotation.set(0, c.yaw(), 0) })
   useEffect(() => { loadModel(); player.current?.freeze(true); player.current?.yieldCamera(true); return () => { player.current?.yieldCamera(false); player.current?.freeze(false) } }, [player])
   const restart = (k, at) => { if (at) spawn.current = at; M2STATE.kind = k; setKind(k); setSession((n) => n + 1); cam.init = false }
   useHostKeys((e) => {
     if (e.repeat) return
+    if (e.code === 'KeyM') { ASSIST_M3.on = !ASSIST_M3.on; setAssist(ASSIST_M3.on); e.preventDefault(); return }
     if (e.code === 'KeyC') { const p = car.current?.pos(), y = car.current?.yaw() ?? spawn.current.yaw; M2STATE.switches++; restart(kind === 'ecctrl' ? 'k2b' : 'ecctrl', p ? { p: [p.x, p.y + 0.8 * K, p.z], yaw: y } : null); e.preventDefault() }
     if (e.code === 'KeyR') { M2STATE.resets++; restart(kind, { p: M2CAR.spawn, yaw: M2CAR.yaw }); e.preventDefault() }
   }, 12)
@@ -134,10 +173,10 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
     const k = cam.init ? 1 - Math.exp(-4 * dt) : 1
     camera.position.lerp(cam.want, k); cam.tgt.lerp(new THREE.Vector3(p.x, p.y + M2CAR.cam.target[1], p.z), cam.init ? 1 - Math.exp(-8 * dt) : 1); cam.init = true; camera.lookAt(cam.tgt)
   })
-  useEffect(() => { expose('M2', { events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how) }) }, [])
+  useEffect(() => { expose('M2', { att: ATT, land: LAND, stuck: STUCK, push: PUSH, ride: RIDE, twoWheel: TW, trick: TRICK, tricks: TRICKS, assist: ASSIST_M3, deform: DEFORM, events: M2EVENTS, kind: () => M2STATE.kind, stats: M2STATE, tune: M2TUNE, spec: M2CAR, car: () => car.current, setKind: (k, at) => restart(k, at), flip: (how) => car.current?.flip?.(how) }) }, [])
   useImperativeHandle(ref, () => ({ kind: () => M2STATE.kind, setKind: (k, at) => restart(k, at), car: () => car.current }))
   const props = { key: kind + session, at: spawn.current, keys, carRef: car, player }
-  return <><primitive object={blob} />{kind === 'ecctrl' ? <EcctrlCar {...props} /> : <K2tCar {...props} />}</>
+  return <><primitive object={proxy} />{kind === 'ecctrl' ? <EcctrlCar {...props} /> : <K2tCar {...props} />}</>
 })
 export default M2Car
 
@@ -220,24 +259,35 @@ function K2tCar({ at, keys, carRef, player }) {
   const body = useRef(null), d = useMemo(() => createK2t(at.p[0], at.p[1], at.p[2], at.yaw), [at])
   const { c: bc, h: bh } = M2CAR.box
   const shape = useMemo(() => new rapier.Cuboid(bh[0], bh[1], bh[2]), [rapier])
+  const shrunk = useMemo(() => new rapier.Cuboid(bh[0] * 0.97, bh[1] * 0.9, bh[2] * 0.97), [rapier]) // Drehprüfung: knapp kleiner, Berührung ist kein Stecken
   const ray = useMemo(() => new rapier.Ray({ x: 0, y: 0, z: 0 }, { x: 0, y: -1, z: 0 }), [rapier])
-  const tmp = useMemo(() => ({ q: new THREE.Quaternion(), e: new THREE.Euler(), m: new THREE.Matrix4(), f: new THREE.Vector3(), u: new THREE.Vector3(), x: new THREE.Vector3(), Y: new THREE.Vector3(0, 1, 0), o: new THREE.Vector3() }), [])
+  const tmp = useMemo(() => ({ q2: new THREE.Quaternion(), o2: new THREE.Vector3(), q: new THREE.Quaternion(), e: new THREE.Euler(), m: new THREE.Matrix4(), f: new THREE.Vector3(), u: new THREE.Vector3(), x: new THREE.Vector3(), Y: new THREE.Vector3(0, 1, 0), o: new THREE.Vector3() }), [])
   const skip = (c) => !c.parent()?.userData?.m2Car
+  const isObstacle = (c) => { const u = c.parent()?.userData; return !!(u?.stunt?.kind === 'wall' || u?.obstacle) }
   // weiche Hindernisse = Figuren: FrizzleBob (ecctrl-Kapsel) und GothGirl (userData.soft)
   const isSoft = (c) => { const b = c.parent(); return !!b && (b.userData?.soft === true || b.handle === player?.current?.handle?.()?.body?.handle) }
   const env = useMemo(() => ({
     // Bodenhöhe unter dem Ursprung (= Unterseite) + Fahrhöhe. Georg 16.10.: „fährt durch den Berg und fällt endlos“ – der Strahl begann 1,5 m über dem
     // Auto und verfehlte einen steil ansteigenden Hang. Jetzt: Strahl ab 3 m über dem Auto auf Theater/Gelände, und das Gelände-Höhenfeld ist IMMER
     // Mindestboden (nie None, nie darunter); Normale aus dem Höhenfeld, wo der Strahl nichts Höheres trifft.
+    home: () => ({ x: M2CAR.spawn[0], y: terrainHeight(M2CAR.spawn[0], M2CAR.spawn[2]) + M2TUNE.rideHeight, z: M2CAR.spawn[2], yaw: M2CAR.yaw }), // T3-Rückfall (Stufe D)
     ground: (x, z, fromY) => { const from = fromY + 1.5 * K; ray.origin.x = x; ray.origin.y = from; ray.origin.z = z
-      const h = world.castRayAndGetNormal(ray, 60, true, undefined, undefined, undefined, body.current ?? undefined, (c) => skip(c) && !isFence(c))
+      let h = world.castRayAndGetNormal(ray, 60, true, undefined, undefined, undefined, body.current ?? undefined, (c) => skip(c) && !isFence(c))
+      // Strahl beginnt in einem Körper (toi ≈ 0, z. B. Wagen an einer Gebäudekante): dieser Körper ist kein Boden (m3-a 17.10.: Wagen kletterte aufs Dach)
+      if (h && h.timeOfImpact < 1e-3) { const inside = h.collider; h = world.castRayAndGetNormal(ray, 60, true, undefined, undefined, undefined, body.current ?? undefined, (c) => skip(c) && !isFence(c) && c !== inside) }
       const ty = terrainHeight(x, z), e = 0.4 * K, tn = new THREE.Vector3(terrainHeight(x - e, z) - terrainHeight(x + e, z), 2 * e, terrainHeight(x, z - e) - terrainHeight(x, z + e)).normalize()
       const hy = h ? from - h.timeOfImpact : -Infinity
-      return hy > ty + 0.01 * K ? { y: hy + M2TUNE.rideHeight, n: [h.normal.x, h.normal.y, h.normal.z], floor: ty + M2TUNE.rideHeight } : { y: ty + M2TUNE.rideHeight, n: [tn.x, tn.y, tn.z], floor: ty + M2TUNE.rideHeight } },
+      // M3 Stufe B: steile Flächen (Normale < 60° zur Senkrechten, z. B. Rampenseite, Tafelkante) sind kein Boden – dann zählt das Gelände
+      return hy > ty + 0.01 * K && (h.normal.y >= 0.5 || !ASSIST_M3.on) ? { y: hy + M2TUNE.rideHeight, n: [h.normal.x, h.normal.y, h.normal.z], floor: ty + M2TUNE.rideHeight } : { y: ty + M2TUNE.rideHeight, n: [tn.x, tn.y, tn.z], floor: ty + M2TUNE.rideHeight } },
     // Wände: Rumpf in seiner Lage (mit Neigung) entlang der Bewegung schieben. castShape meldet nur den ERSTEN Treffer – daher je Treffer: Boden
     // (n.y > 0,3: Hang, Bühnenboden, Rampe) überspringen, Wand kürzen, Kollider ausnehmen und mit der gekürzten Bewegung erneut schieben, bis
     // nichts mehr kommt (höchstens 5 Durchgänge). Sonst sah die Prüfung den Zaun hinter einem Billboard bzw. Boden nicht (m2-g0 16.10.: 3–4/28).
-    sweep: (from, delta) => { let dl = delta.slice(), wall = null, soft = false
+    zone: (x, z) => rampZone(x, z), // Stufe F: Rampen-Zonen des Testfelds
+    // steckt der Kasten bei Gierung yaw (aufrecht) in einem Hindernis? Hindernis = Gebäude des Testfelds, Theater, Tafel, Partnerin (userData obstacle/soft)
+    blocked: (x, y, z, yaw) => { const q = tmp.q2.setFromAxisAngle(tmp.Y, yaw), o = tmp.o2.set(bc[0], bc[1] + 0.05 * K, bc[2]).applyQuaternion(q)
+      let hit = false; world.intersectionsWithShape({ x: x + o.x, y: y + o.y, z: z + o.z }, { x: q.x, y: q.y, z: q.z, w: q.w }, shrunk, (c) => { hit = true; return false }, undefined, undefined, undefined, body.current ?? undefined,
+        (c) => { const u = c.parent()?.userData; return skip(c) && !isFence(c) && !!(u?.stunt?.kind === 'wall' || u?.obstacle || u?.soft) }); return hit },
+    sweep: (from, delta) => { let dl = delta.slice(), wall = null, soft = false, ride = false
       const q = tmp.q, o = tmp.o.set(bc[0], bc[1] + 0.05 * K, bc[2]).applyQuaternion(q), skipSet = new Set(), pred = (c) => skip(c) && !skipSet.has(c.handle)
       for (let pass = 0; pass < 5; pass++) {
         if (Math.hypot(...dl) < 1e-6) break
@@ -245,23 +295,27 @@ function K2tCar({ at, keys, carRef, player }) {
         M2STATE.lastSweep = hit ? { pass, toi: +hit.time_of_impact.toFixed(3), ny: +hit.normal1.y.toFixed(2), fence: isFence(hit.collider) } : { pass, none: true } // Prüfwert
         if (!hit) break
         skipSet.add(hit.collider.handle)
-        if (hit.normal1.y > 0.3 && !isFence(hit.collider)) continue // Boden: weiter nach Wänden suchen
+        // Boden: weiter nach Wänden suchen. Hindernisse (Gebäude, Theater, Tafel) zählen nur mit fast waagrechter Fläche als Boden – an Kanten ist die
+        // Treffer-Normale schräg (m3-a 17.10.: n.y > 0,3 an der Kante von ecke-1 ließ den Wagen hinein, der Bodenstrahl hob ihn dann aufs Dach)
+        if (hit.normal1.y > (isObstacle(hit.collider) ? 0.85 : 0.3) && !isFence(hit.collider)) continue
         const n = [hit.normal1.x, hit.normal1.y, hit.normal1.z], into = dl[0] * n[0] + dl[1] * n[1] + dl[2] * n[2] // normal1 zeigt aus dem Hindernis (gemessen)
         if (into >= 0) continue
-        const cut = into * (1 - Math.min(1, hit.time_of_impact)); dl = [dl[0] - cut * n[0], dl[1] - cut * n[1], dl[2] - cut * n[2]]; wall = n; soft = isSoft(hit.collider)
+        const cut = into * (1 - Math.min(1, hit.time_of_impact)); dl = [dl[0] - cut * n[0], dl[1] - cut * n[1], dl[2] - cut * n[2]]; wall = n; soft = isSoft(hit.collider); ride = !!hit.collider.parent()?.userData?.stunt?.ride
       }
-      return { delta: dl, hit: !!wall, n: wall, soft } },
+      return { delta: dl, hit: !!wall, n: wall, soft, ride } },
   }), [world, rapier])
   useEffect(() => {
     tmp.q.setFromAxisAngle(tmp.Y, d.yaw)
     carRef.current = {
       kind: 'k2b', pos: () => ({ x: d.x, y: d.y, z: d.z }), yaw: () => d.yaw, upY: () => tmp.u.fromArray(d.up).normalize().y, grounded: () => (d.air ? 0 : 4), speed: () => Math.hypot(d.speed, d.latV), body: () => body.current, flip: () => {},
-      signals: () => d.signals, state: () => ({ kind: 'k2b', grounded: d.air ? 0 : 4, upY: 1, speed: +Math.abs(d.speed).toFixed(2), air: d.air, hits: d.hits, squash: +d.squash.toFixed(3), rescues: d.rescues || 0, fenceRescues: d.fenceRescues || 0 }),
+      signals: () => d.signals, attitude: () => attitude(d), kick: (o) => { if (DEBUG) Object.assign(d, o) }, // Prüf-Stoß (nur debug): z. B. { latV } in der Luft
+      state: () => ({ kind: 'k2b', grounded: d.air ? 0 : 4, upY: 1, speed: +Math.abs(d.speed).toFixed(2), air: d.air, hits: d.hits, squash: +d.squash.toFixed(3), rescues: d.rescues || 0, t1: d.t1 || 0, t3: d.t3 || 0, rides: d.rides || 0, riding: !!d.ride, tricks: d.tricks || 0, freeTip: !!d.freeTip, rideLast: d.rideLast || null, lean: +(d.lean || 0).toFixed(3), launches: d.launches || 0, zone: d.zone?.seg || null, zoneAborted: !!d.zone?.aborted, fenceRescues: d.fenceRescues || 0 }),
     }
     return () => { if (carRef.current?.kind === 'k2b') carRef.current = null }
   }, [])
+  const sig = useCallback(() => d.signals, [d]) // Deformer-Eingang (Stufe E), stabil je Wagen
   const step = () => {
-    const k = keys(), px = d.x, pz = d.z; stepK2t(d, { gas: k.forward, brake: k.backward, left: k.leftward, right: k.rightward, driftL: k.strafeL, driftR: k.strafeR, jump: k.jump }, STEP, env) // Q/E = Drift (V-347, MOVE_MAP-Namen wie zu Fuß)
+    const k = keys(), px = d.x, pz = d.z; stepK2t(d, { gas: k.forward, brake: k.backward, left: k.leftward, right: k.rightward, driftL: k.strafeL, driftR: k.strafeR, boost: k.run, jump: k.jump, tip: k.descend }, STEP, env) // Q/E = Drift (V-347, MOVE_MAP-Namen wie zu Fuß)
     for (const e of d.events) M2EVENTS.emit(e)
     // Sicherung Ränge (V-283): landet die Automitte im Zaun-Grundriss, zurück auf den letzten Stand und abprallen (wie die Bodensicherung)
     if (inRankFence(d.x, d.z) && !inRankFence(px, pz)) { d.x = px; d.z = pz; d.speed *= -0.25; d.latV = 0; d.fenceRescues = (d.fenceRescues || 0) + 1 }
@@ -274,7 +328,7 @@ function K2tCar({ at, keys, carRef, player }) {
       <OnFrame fn={step} />
       <RigidBody ref={body} type="kinematicPosition" colliders={false} position={at.p} name="m2-car" userData={{ m2Car: true }}>
         <CuboidCollider args={bh} position={bc} />
-        <CarVisual squash={() => d.squash} />
+        <CarVisual squash={() => d.squash} signals={sig} lean={() => d.lean || 0} />
       </RigidBody>
     </>
   )

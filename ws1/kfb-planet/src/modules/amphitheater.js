@@ -11,6 +11,8 @@
 // Schatten: Das Theater empfängt Schatten, wirft aber keine (castShadow aus: Bildzeit und keine Eigenschatten-Streifen auf den Rängen).
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { clayFrom } from './clayLook.js'
+import { createSpeckle } from '../vendor/speckle/kfb-speckle-transition.v1.js'
 import { makeClayFamily } from '../vendor/billboard/billboard-clay.js'
 
 export const AMPH_COMMIT = '829d551d5cf45eb2fe18ce7a532e37ba7282005a'
@@ -41,18 +43,26 @@ export function createAmphitheater(options = {}) {
   amphLog.create++
   // worldK (V-345): alte WS1-Bühnenmeter → J17-Meter; skaliert Modell, Gelände, Höhenbänder und Knet-Abstände gleich, damit das Bild gleich bleibt
   // palAmt (Look-Slice, Georg 17.10.): Anteil der Umfärbung nach Helligkeit; Standard PAL_AMT (V-286), 1 = volle Umfärbung nach Rollen (Joyride-Look)
-  const { url = AMPH_URL, biome = null, groundR = 70, palette = null, worldK = 1, palAmt = PAL_AMT } = options
+  // clay (Look-Slice, Georg 17.10.: „keine Claymation-Bodentextur“): Modell-Materialien auf Knete (Relief/Rauheit, Farbtextur bleibt), Umfärbung darüber
+  const { url = AMPH_URL, biome = null, groundR = 70, palette = null, worldK = 1, palAmt = PAL_AMT, clay = false } = options
   const s = AMPH_SCALE * worldK
   const root = new THREE.Group(); root.name = 'amphitheater'
   const fam = makeClayFamily('G', { uClayNear: { value: 30 * worldK }, uClayFar: { value: 90 * worldK }, uClayScale: { value: 1.4 * worldK }, uClayAmt: { value: 0.45 } }, { oct: 2, near: true, stick: false })
   const groundMat = fam.std(palette?.ground || biome?.top || '#9aab62', 0.95)
+  // V-403 · Übergang Bühne → Gelände als Sprenkel-Band (kfb-speckle-transition.v1, Preset diorama↔ground), nie als Farbverlauf: an der Naht die
+  // Bühnenboden-Rolle (Variante B: Sand), außen der Zonenboden. Gewicht je Vertex gebacken (Abstand zum Fuß des Amphitheaters, nach dem Laden je Sektor).
+  const ringOf = (pa) => pa?.cols?.[4] ?? pa?.floor?.[1] ?? '#cdb48c'
+  const speckle = createSpeckle({ seed: 'amphitheater', preset: 'diorama-ground' })
+  const spH = speckle.patch(groundMat, { layers: [{ weight: 'aSW.x', color: ringOf(palette), name: 'ring' }] })
   // Paletten-Uniforms: gemeinsam für alle Modell-Materialien; Überblendung lerpt sie (und die Geländefarbe) von → nach
   const KEYS = ['w0', 'w1', 'w2', 'f0', 'f1', 'f2']
   const cols = (pa) => (pa ? pa.cols || [...pa.wall, ...pa.floor] : Array(6).fill('#000000')) // A: Wand- und Boden-Verlauf · B: tower0, tower1, hill0, hill1, top, rock
   const PU = { amt: { value: palette ? palAmt : 0 }, mode: { value: palette?.mode === 'b' ? 1 : 0 } }; cols(palette).forEach((c, i) => { PU[KEYS[i]] = { value: new THREE.Color(c) } })
   const fade = { on: false, t: 0, dur: 0, from: null, to: null }
   const inject = (m) => {
-    m.onBeforeCompile = (sh) => {
+    const prev = m.onBeforeCompile, prevKey = m.customProgramCacheKey // Knet-Material zuerst, Umfärbung danach
+    m.onBeforeCompile = (sh, r) => {
+      prev?.call(m, sh, r)
       for (const k of KEYS) sh.uniforms['p' + k] = PU[k]; sh.uniforms.pamt = PU.amt; sh.uniforms.pmode = PU.mode
       sh.uniforms.pband = { value: [AMPH_BANDS.yArch * worldK, AMPH_BANDS.y0 * worldK, AMPH_BANDS.rowH * worldK, AMPH_BANDS.stageR * worldK] }
       sh.vertexShader = 'varying vec3 vKfbWN; varying vec3 vKfbWP;\n' + sh.vertexShader.replace('#include <defaultnormal_vertex>', `#include <defaultnormal_vertex>
@@ -72,30 +82,40 @@ export function createAmphitheater(options = {}) {
       ramp = base * mix(0.6, 1.15, L); }
     diffuseColor.rgb = mix(diffuseColor.rgb, ramp, pamt); }`)
     }
-    m.customProgramCacheKey = () => 'kfb-amph-palette-v270b'; m.needsUpdate = true
+    m.customProgramCacheKey = () => (m.userData?.clay ? prevKey.call(m) + '|' : '') + 'kfb-amph-palette-v270b'; m.needsUpdate = true
   }
-  const snap = () => ({ c: KEYS.map((k) => PU[k].value.clone()), amt: PU.amt.value, ground: groundMat.color.clone() })
+  const snap = () => ({ c: KEYS.map((k) => PU[k].value.clone()), amt: PU.amt.value, ground: groundMat.color.clone(), ring: spH.uniforms.uSpC0.value.clone() })
   const plain = (pa) => (pa.mode === 'b' ? { mode: 'b', cols: [...pa.cols], ground: pa.ground } : { wall: [...pa.wall], floor: [...pa.floor], ground: pa.ground })
   function setPalette(pa, fadeS = 0) {
-    const to = { c: cols(pa).map((x) => new THREE.Color(x)), amt: palAmt, ground: new THREE.Color(pa.ground) }
+    const to = { c: cols(pa).map((x) => new THREE.Color(x)), amt: palAmt, ground: new THREE.Color(pa.ground), ring: new THREE.Color(ringOf(pa)) }
     state.palette = plain(pa); PU.mode.value = pa.mode === 'b' ? 1 : 0
     if (!(fadeS > 0)) { fade.on = false; apply(to, to, 1); return }
     Object.assign(fade, { on: true, t: 0, dur: fadeS, from: snap(), to })
   }
-  function apply(a, b, k) { KEYS.forEach((n, i) => PU[n].value.copy(a.c[i]).lerp(b.c[i], k)); PU.amt.value = a.amt + (b.amt - a.amt) * k; groundMat.color.copy(a.ground).lerp(b.ground, k) }
+  function apply(a, b, k) { KEYS.forEach((n, i) => PU[n].value.copy(a.c[i]).lerp(b.c[i], k)); PU.amt.value = a.amt + (b.amt - a.amt) * k; groundMat.color.copy(a.ground).lerp(b.ground, k); if (a.ring && b.ring) spH.uniforms.uSpC0.value.copy(a.ring).lerp(b.ring, k) }
   function stepFade(dt) { if (!fade.on) return; fade.t = Math.min(fade.dur, fade.t + dt); const u = fade.t / fade.dur; apply(fade.from, fade.to, u * u * (3 - 2 * u)); if (u >= 1) fade.on = false }
-  const ground = new THREE.Mesh(new THREE.CircleGeometry(groundR * worldK, 96), groundMat); ground.name = 'clay-ground'
-  ground.rotation.x = -Math.PI / 2; ground.position.y = (STAGE.minY - STAGE.floorY) * s + 0.11 * worldK // −0,125 m: über der Bodenplatte (≈ −0,16), unter der Bühnenfläche
+  // Ring mit inneren Vertices (≈ 0,28 m radial), damit das gebackene Gewicht ein Band tragen kann; Fuß vorläufig als Kreis, nach dem Laden je Sektor
+  const groundGeo = new THREE.RingGeometry(0, groundR * worldK, 256, 160).rotateX(-Math.PI / 2)
+  const foot = { R: Array(64).fill(10.4 * worldK) }, footAt = (x, z) => { const a = (Math.atan2(z, x) / (2 * Math.PI) + 1) % 1, i = a * 64, i0 = Math.floor(i) % 64, f = i - Math.floor(i); return foot.R[i0] * (1 - f) + foot.R[(i0 + 1) % 64] * f }
+  const bakeRing = () => speckle.bake(groundGeo, (x, y, z) => Math.max(0, Math.hypot(x, z) - footAt(x, z)))
+  bakeRing()
+  const ground = new THREE.Mesh(groundGeo, groundMat); ground.name = 'clay-ground'
+  ground.position.y = (STAGE.minY - STAGE.floorY) * s + 0.11 * worldK // −0,125 m: über der Bodenplatte (≈ −0,16), unter der Bühnenfläche
   ground.receiveShadow = true; root.add(ground)
   const state = { model: null, status: 'LOADING', error: null, disposed: false, info: null, palette: palette ? plain(palette) : null }
   const ready = new GLTFLoader().loadAsync(url).then((g) => {
     if (state.disposed) return null
     const m = g.scene; m.name = 'amphitheater-model'
     m.scale.setScalar(s); m.position.set(-STAGE.center[0] * s, -STAGE.floorY * s, -STAGE.center[1] * s)
-    m.traverse((o) => { if (o.isMesh) { o.receiveShadow = true; o.castShadow = false; [].concat(o.material).forEach(inject) } }) // Palette immer eingehängt (amt 0 = Original)
+    m.traverse((o) => { if (o.isMesh) { o.receiveShadow = true; o.castShadow = false; if (clay) o.material = Array.isArray(o.material) ? o.material.map((x) => clayFrom(x, 'house')) : clayFrom(o.material, 'house'); [].concat(o.material).forEach(inject) } }) // Palette immer eingehängt (amt 0 = Original)
     root.add(m); state.model = m
     let tris = 0; m.traverse((o) => { if (o.isMesh) tris += o.geometry.index ? o.geometry.index.count / 3 : o.geometry.attributes.position.count / 3 })
     root.updateMatrixWorld(true)
+    // Fuß des Bauwerks je 64 Sektoren: größter Radius der Modell-Punkte bis 0,5 m über dem Gelände (wie Lab footRadii); danach Sprenkel-Gewicht neu backen
+    { const R = Array(64).fill(0), v = new THREE.Vector3(), gy = ground.position.y + 0.5 * worldK
+      m.traverse((o) => { if (!o.isMesh) return; const P = o.geometry.attributes.position; for (let i = 0; i < P.count; i += 3) { v.fromBufferAttribute(P, i).applyMatrix4(o.matrixWorld); if (v.y > gy) continue
+        const k = Math.floor(((Math.atan2(v.z, v.x) / (2 * Math.PI) + 1) % 1) * 64) % 64, r = Math.hypot(v.x, v.z); if (r > R[k]) R[k] = r } })
+      if (R.filter((r) => r > 0).length > 48) { foot.R = R.map((r, i) => r || R[(i + 1) % 64] || R[(i + 63) % 64] || 10.4 * worldK); bakeRing(); state.foot = { min: +Math.min(...foot.R).toFixed(2), max: +Math.max(...foot.R).toFixed(2) } } }
     const box = new THREE.Box3().setFromObject(m)
     state.info = { scale: +s.toFixed(4), tris, size: box.getSize(new THREE.Vector3()).toArray().map((v) => +v.toFixed(2)), min: box.min.toArray().map((v) => +v.toFixed(3)), groundY: +ground.position.y.toFixed(3), stageR: STAGE.diameterM * worldK / 2 }
     state.status = 'OK'; return state.info
@@ -108,7 +128,7 @@ export function createAmphitheater(options = {}) {
     setPalette,
     update(dt) { amphLog.update++; stepFade(dt || 0) },
     dispose() {
-      amphLog.dispose++; state.disposed = true
+      amphLog.dispose++; state.disposed = true; speckle.dispose()
       const geos = new Set(), mats = new Set(), texs = new Set()
       root.traverse((o) => { if (!o.isMesh) return; geos.add(o.geometry); [].concat(o.material).forEach((m) => { mats.add(m); for (const k in m) if (m[k]?.isTexture) texs.add(m[k]) }) })
       geos.forEach((g) => g.dispose()); mats.forEach((m) => m.dispose()); texs.forEach((t) => t.dispose())

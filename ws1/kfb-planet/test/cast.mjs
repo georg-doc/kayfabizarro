@@ -18,7 +18,7 @@ for (const id of IDS) {
   const rec = JSON.parse(fs.readFileSync(`src/data/actors/cast/${id}.recipe.json`, 'utf8')), pick = JSON.parse(fs.readFileSync(`src/data/eyes/cast/${id}.profile.json`, 'utf8'))
   const glb = `src/assets/actors/cast/${rec.composition.modelRef.path.split('/').pop()}`
   const pinned = blob(glb).startsWith(rec.composition.modelRef.blob) && !!batch && JSON.stringify(batch.profiles.find((p) => p.actorId === id)) === JSON.stringify(pick.profile)
-  const { browser, page, errs } = await openPage(`#stage,debug,actors=fb,cast=${id},dialog=1`, { viewport: { width: 1280, height: 720 } })
+  const { browser, page, errs } = await openPage(`#stage,debug,actors=fb,cast=${id},dialog=1,uncarded=1`, { viewport: { width: 1280, height: 720 } })
   await page.waitForFunction(() => { const S = window.__kfbStageMods; return S?.right?.status().status === 'OK' && S.left?.status().shown }, null, { timeout: 300000 })
   const m = await page.evaluate(() => { const R = window.__kfbStageMods.right, root = R.object3d; root.updateWorldMatrix(true, true)
     let fig = null; root.traverse((o) => { if (!fig && o.isObject3D && o.children.some((c) => c.isSkinnedMesh || c.isBone)) fig = o })
@@ -39,7 +39,7 @@ for (const id of IDS) {
 const ok = (f) => IDS.every((id) => f(res[id]))
 process.exit(report('cast F-4 (drei KayKit-Kandidaten)', {
   sourcesPinned: ok((r) => r.pinned),
-  loadedWithEyes: ok((r) => r.status === 'OK' && /^AUTO_CANDIDATE/.test(r.cleanup) && r.eyes.length === 2),
+  loadedWithEyes: ok((r) => r.status === 'OK' && /^(AUTO_CANDIDATE|BAKED)/.test(r.cleanup) && r.eyes.length === 2), // BAKED: Figurenkarte, Augen in Blender entfernt (V-391)
   eyesSymmetricOnTurnedFigure: ok((r) => Math.abs(r.yaw + 0.45) < 1e-3 && Math.abs(r.eyes[0][0] + r.eyes[1][0]) < 0.05 && Math.abs(r.eyes[0][1] - r.eyes[1][1]) < 0.01 && Math.abs(r.eyes[0][2] - r.eyes[1][2]) < 0.03 && Math.min(Math.abs(r.eyes[0][0]), Math.abs(r.eyes[1][0])) > 0.1),
   classScaleLikeFrizzleBob: ok((r) => r.childScales.some((s) => Math.abs(s - fbScale) < 1e-4)),
   speaksByBubbleWithoutMouth: ok((r) => r.bub.includes('stage-right')),

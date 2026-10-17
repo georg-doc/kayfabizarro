@@ -32,6 +32,13 @@ function shared() {
 const pathOf = (o, root) => { const a = []; for (let n = o; n && n !== root; n = n.parent) a.push(n.name || ''); return a.join('/') }
 const convertible = (m) => m && !m.isShaderMaterial && !m.userData?.clay && (m.isMeshStandardMaterial || m.isMeshPhongMaterial || m.isMeshLambertMaterial) && !(m.transparent && (m.opacity == null || m.opacity < 0.98))
 
+// Ein einzelnes Material auf Knete (Knete-Look R2) umstellen, mit denselben gemeinsamen Reglern wie die Figuren (Look-Slice: Amphitheater als Knete).
+// Die Farbtextur der Quelle bleibt; der Aufrufer darf weitere onBeforeCompile-Haken anhängen (sie müssen den vorhandenen zuerst aufrufen).
+export function clayFrom(src, profile = 'house') {
+  const { U } = shared(), c = makeClayMaterial(THREE, U, { src, profile: profileR2(profile) }); c.roughness = Math.max(c.roughness, KNETE_R2.minRough); c.sheen = 0
+  if (typeof profile === 'string') c.userData.clay.profile = profile; return c
+}
+
 export function createClayLook({ targets = () => [], profile = 'figure', tune = {} } = {}) {
   const root = new THREE.Group(); root.name = 'clay-look:' + profile
   const { U } = shared()

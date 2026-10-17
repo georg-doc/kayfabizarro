@@ -5,18 +5,19 @@
 // Tageszeit wechselt sofort (das Rig liest lightState.tod je Bild); Look, Knet und Tonemapping setzen den Hash-Schalter und laden neu.
 const GROUPS = [
   { key: 'lset', label: 'Stimmung', opts: [['mesa', 'Mesa · Krazy Kat'], ['cozy', 'Gemütlich'], ['r2', 'J17']], hint: 'Stimmung: Mesa = warme Sonne, violette Schatten, Türkis-Himmel wie die Krazy-Kat-Sonntagsseiten. Gemütlich und J17 zum Vergleich.' },
+  { key: 'world', label: 'Farbwelt', opts: [['canyon', 'A · Canyon'], ['bucht', 'B · Bikini-Bucht'], ['otown', 'C · O-Town']], hint: 'Farbwelt: Bühnenpalette aus den drei Joyride-Welten, voll nach Rollen umgefärbt. Welche passt am besten?' },
   { key: 'tod', label: 'Tageszeit', opts: [['day', 'Tag'], ['gold', 'Gold'], ['night', 'Nacht']], live: true, hint: 'Tageszeit: Gold mit tiefer warmer Sonne, Nacht mit Licht-Inseln. Bleiben Gesichter lesbar?' },
   { key: 'tm', label: 'Tonemapping', opts: [['aces', 'ACES'], ['neutral', 'Neutral'], ['agx', 'AgX'], ['none', 'ohne']], hint: 'Tonemapping: eine Kurve für alles (Figuren, Bühne, Karte). Welche wirkt am stimmigsten?' },
   { key: 'look', label: 'Himmel', opts: [['a', 'A · Palette'], ['b', 'B · warm getönt']], hint: 'Himmel: B tönt nur den Himmel wärmer, das Licht bleibt gleich.' },
   { key: 'clay', label: 'Knet', opts: [['0', 'aus'], ['1', 'GothGirl'], ['all', 'alle']], hint: 'Knet: handgemacht, ohne hellen Saum an den Figuren?' },
 ]
 const TOD = { day: 1, gold: 0.5, night: 0 }
-const DEF = { tod: null, tm: 'aces', look: 'b', clay: 'all', lset: 'mesa' }
-const CLEAN_IDS = ['kfb-compare', 'kfb-cam-marks', 'kfb-preview-badge', 'kfb-info', 'kfb-m1-info', 'kfb-drive-label']
+const DEF = { tod: null, tm: 'aces', look: 'b', clay: 'all', lset: 'mesa', world: 'canyon' }
+const CLEAN_IDS = ['kfb-compare', 'kfb-cam-marks', 'kfb-preview-badge', 'kfb-info', 'kfb-m1-info', 'kfb-drive-label', 'kfb-figure-status', 'kfb-perf']
 
 function current(hash) {
   const get = (re, d) => (re.exec(hash)?.[1] ?? d)
-  return { look: get(/look=([ab])/, 'b'), tod: get(/tod=(day|gold|night)/, 'day'), clay: get(/clay=(0|1|all)/, 'all'), tm: get(/tm=(aces|neutral|agx|none)/, 'aces'), lset: get(/lset=(mesa|cozy|r2)/, 'mesa') }
+  return { look: get(/look=([ab])/, 'b'), tod: get(/tod=(day|gold|night)/, 'day'), clay: get(/clay=(0|1|all)/, 'all'), tm: get(/tm=(aces|neutral|agx|none)/, 'aces'), lset: get(/lset=(mesa|cozy|r2)/, 'mesa'), world: get(/world=(canyon|bucht|otown)/, 'canyon') }
 }
 function withParam(hash, key, val) {
   const parts = hash.replace(/^#/, '').split(',').filter((p) => p && !p.startsWith(key + '='))

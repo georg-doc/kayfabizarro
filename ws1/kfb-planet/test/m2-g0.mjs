@@ -38,7 +38,8 @@ const res = await page.evaluate(async (KINDS) => {
     let t = 0, ok = false; while (t < 360) { await steps(1); t++; const c = M2.car(); if (!c) continue; if (c.upY() > 0.9 && c.grounded() >= 3) { ok = true; break } }
     right.push({ how, steps: t, seconds: +(t / 60).toFixed(2), ok })
   }
-  return { out, right, stats: M2.stats }
+  const { resets, switches, rightStarts, model } = M2.stats // nur Zahlen (M2STATE trägt jetzt den AO-Stellvertreter, ein 3D-Objekt)
+  return { out, right, stats: { resets, switches, rightStarts, model } }
 }, KINDS)
 await browser.close()
 

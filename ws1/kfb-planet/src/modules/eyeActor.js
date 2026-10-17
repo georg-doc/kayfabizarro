@@ -67,7 +67,9 @@ export function createEyeActor(options) {
     const q0 = root.quaternion.clone(), pq = new THREE.Quaternion(); if (root.parent) root.parent.getWorldQuaternion(pq)
     root.quaternion.copy(pq.invert()); root.updateWorldMatrix(true, true)
     root.add(figure)
-    const cleanup = prepareMediumActorCleanup({ THREE, figure, actor, log }); state.cleanup = cleanup
+    // V-391 Regel 7: Karten mit originals.method = 'baked' (Augen in Blender entfernt) bekommen keine Laufzeit-Bereinigung; sonst wie bisher (Rohdatei + Adapter)
+    const cleanup = options.originals?.method === 'baked' ? { status: 'BAKED', report: null, apply() {}, dispose() {} } : prepareMediumActorCleanup({ THREE, figure, actor, log }); state.cleanup = cleanup
+    if (cleanup.status === 'BAKED') log('Augen laut Figurenkarte in Blender entfernt (baked) · keine Laufzeit-Bereinigung')
     const cleanupOk = CLEANUP_READY.includes(cleanup.status); if (cleanupOk) cleanup.apply(true)
     profile.sourceFace = { ...profile.sourceFace, ...JSON.parse(JSON.stringify(cleanup.report || {})) }
     state.mixer = new THREE.AnimationMixer(figure)

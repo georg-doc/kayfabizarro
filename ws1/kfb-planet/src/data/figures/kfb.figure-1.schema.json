@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kfb.figure/1",
+  "title": "KFB figure card (kfb.figure/1, R1 2026-10-17, V-391)",
+  "type": "object",
+  "required": ["schema", "id", "displayName", "role", "body", "originals", "eyeRig", "mouth", "material", "approval", "provenance"],
+  "properties": {
+    "schema": { "const": "kfb.figure/1" },
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "displayName": { "type": "string" },
+    "aliases": { "type": "array", "items": { "type": "string" } },
+    "role": { "enum": ["protagonist", "npc", "performer", "prop-actor"] },
+    "body": {
+      "type": "object",
+      "required": ["glb", "rig"],
+      "properties": {
+        "glb": {
+          "type": "object",
+          "required": ["path", "sha256", "onMain"],
+          "properties": {
+            "repo": { "type": ["string", "null"] }, "ref": { "type": ["string", "null"] }, "commit": { "type": ["string", "null"] },
+            "path": { "type": ["string", "null"] }, "blob": { "type": ["string", "null"] },
+            "sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+            "bytes": { "type": ["integer", "null"] }, "onMain": { "type": "boolean" }
+          }
+        },
+        "rawSource": { "type": ["object", "null"] },
+        "rig": { "type": ["string", "null"] },
+        "scale": { "type": ["object", "null"] },
+        "variants": { "type": "array" }
+      }
+    },
+    "originals": {
+      "type": "object",
+      "required": ["remove", "keep", "method"],
+      "properties": {
+        "remove": { "type": "array", "items": { "type": "string" } },
+        "keep": { "type": "array", "items": { "type": "string" } },
+        "method": { "enum": ["baked", "switchable-node", "runtime-texture", "none", null] }
+      }
+    },
+    "eyeRig": {
+      "type": "object",
+      "required": ["required"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "none": { "type": ["object", "null"], "required": ["reason"] },
+        "version": { "type": ["string", "null"] },
+        "seat": { "enum": ["anchored", "headpart-socket", "facehost", null] },
+        "anchors": { "type": ["object", "null"] },
+        "lid": { "type": ["object", "null"], "properties": { "type": { "enum": ["E2", "skin", "socket-shell", null] } } },
+        "settings": { "type": ["object", "null"] },
+        "source": { "type": ["string", "null"] }
+      },
+      "if": { "properties": { "required": { "const": false } } },
+      "then": { "required": ["none"], "properties": { "none": { "type": "object", "required": ["reason", "vRef"] } } },
+      "else": { "required": ["version", "seat", "lid", "settings", "source"] }
+    },
+    "brows": { "type": ["object", "null"] },
+    "mouth": { "type": "object", "required": ["owner"] },
+    "appendages": {
+      "type": "array",
+      "items": { "type": "object", "required": ["id", "type", "side"], "properties": { "type": { "enum": ["ear", "antenna", "eyestalk"] } } }
+    },
+    "material": {
+      "type": "object",
+      "required": ["clayProfile", "sheenMax"],
+      "properties": { "sheenMax": { "type": "number", "maximum": 0.05 } }
+    },
+    "voice": { "type": ["object", "null"] },
+    "performance": { "type": ["object", "null"] },
+    "approval": {
+      "type": "object",
+      "required": ["status", "parts", "missing"],
+      "properties": { "status": { "enum": ["approved", "candidate", "open-design"] } }
+    },
+    "provenance": { "type": "array", "minItems": 1 },
+    "todo": { "type": "array" }
+  }
+}

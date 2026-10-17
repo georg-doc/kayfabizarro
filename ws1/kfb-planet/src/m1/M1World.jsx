@@ -23,20 +23,20 @@ import { StageOrbitCam, ORBIT } from '../StageOrbitCam'
 import { KAYKIT, FB } from '../actors/stageCast'
 import M1Loop from './M1Loop'
 import M2Car, { M2_ON, M2STATE } from '../m2/M2Car'
+import StuntField from '../m3/stuntField'
 import M1Player, { FOOT, START, M1INPUT, M1MOVE, M1BOUNDS, M1CAM } from './M1Player'
 import { STAGE_CAMS, STAGE_MARKS } from '../Stage'
 import { M1CLOCK, STEP } from './m1Clock'
 import { K, G } from './m1Scale.js'
 import { trimeshOf, amphModelOf, worldPosOf, trackDialog, keyList, rankFence, FENCE_TAG, rampVerts } from './m1Host'
 import { createSky, skyLog } from '../modules/m1-sky'
-import { createTerrain, TERRAIN, terrainLog } from '../modules/m1-terrain'
+import { createTerrain, TERRAIN, terrainLog, GROUND_Y } from '../modules/m1-terrain'
 import { createAmphitheater, amphLog } from '../modules/amphitheater'
 import { locoActorLog } from '../modules/m1-locoActor'
 import { faceActorLog } from '../modules/faceMountActor'
 import { eyeActorLog } from '../modules/eyeActor'
 import { createBillboard, BIOMES, billboardLog } from '../modules/billboard'
-import { createContactBlobs } from '../modules/contactBlob'
-import { followShadow, lightAt } from '../stageLight'
+import { createStageLight, createContactAO, applyTone, parseTod, moodAt, shadowLength, MOOD_SETS } from '../vendor/light/kfb-stage-light.v1.js'
 import { createActor } from '../actors/actorSlot'
 import { createDialog } from '../modules/dialog'
 import BubbleHost from '../BubbleHost'
@@ -76,42 +76,51 @@ const BB = { card: DECK[0] || null, biome: BIOME, maxW: 7, maxH: 5, position: [0
 
 const mods = {}
 const mk = (k, f) => (o) => { mods[k] = f(o); return mods[k] }
-const makeSky = mk('sky', createSky), makeTerrain = mk('terrain', createTerrain), makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makePartner = mk('partner', createActor), makeBlobs = mk('blobs', createContactBlobs)
+const makeSky = mk('sky', createSky), makeTerrain = mk('terrain', createTerrain), makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makePartner = mk('partner', createActor), makeAO = mk('blobs', createContactAO), makeRig = mk('light', createStageLight)
 // Kontaktflecke (V-203, L1: für alle Figuren; Georg 16.10.: „FrizzleBob schwebt“): Spieler und Partnerin (in M2 steht FB noch neben dem Auto)
-const BLOBS = { targets: () => [mods.player, mods.partner].filter(Boolean), size: 0.95 * K }
+// Kontaktverdeckung (L3, V-392/V-393 Stufe 0: Licht nur über das Bühnen-Licht-Modul): Spieler, Partnerin und im Fahrmodus das Auto (M2STATE.ao), je an
+// der Boden-Normale ausgerichtet (GROUND_AT: Strahl auf die Kollider, sonst Gelände-Gradient)
+export const GROUND_AT = { fn: null }
+const AO = { targets: () => [mods.player, mods.partner, M2STATE.ao].filter(Boolean), groundAt: (x, z) => GROUND_AT.fn?.(x, z) ?? null, strength: 0.42 }
 
 export const M1STATE = { phase: 'free', cooldown: false, dialogs: 0, amphTris: 0, lastDialog: null, lastLog: null }
 const resetState = () => { for (const k of Object.keys(mods)) delete mods[k]; Object.assign(M1STATE, { phase: 'free', cooldown: false, dialogs: 0, amphTris: 0, lastDialog: null, lastLog: null }); M1INPUT.override = null; M1CLOCK.onStep = null } // Takt nicht zurücksetzen: M1Loop läuft weiter (Bildzähler), Schritte zählt nur die Physik
 
-// Host: Licht, Nebel, Hintergrund. Sonne folgt der Figur (Schattenausschnitt), Nebel/Hintergrund = Horizontfarbe der Kuppel.
-// Licht (L1, ein Licht-Schreiber): Sonne und Himmelslicht aus stageLight.lightAt (Tag), Schatten mit followShadow – enges, texel-gerastetes Frustum
-// (±12 m, L1 Regel 4) um das, was der Spieler steuert: im Fahrmodus das Auto, sonst FrizzleBob (Georg 16.10.: Schatten „extrem pixelig“, „fährt raus“)
-const L1 = lightAt(1)
+// Host: Nebel und Hintergrund (Horizontfarbe der Kuppel), Tonemapping; Licht = Rig des Bühnen-Licht-Moduls (L3)
+// Licht-Rig L3 wie #stage: Stimmungs-Satz lset=mesa (Standard) | cozy | r2, Tageszeit tod=day|gold|night|0..1. Schattenbereich = Kugel um das, was der
+// Spieler steuert (Auto bzw. FrizzleBob), Radius = halbe Länge + Schattenlänge der Sonnenhöhe × Höhe (+ 1 m Rand) – auch der lange Gold-Schatten liegt
+// ganz darin (Georg 17.10.: „zweiter, abgeschnittener Schatten“ bei ±7,8 m festem Ausschnitt). Bias leitet das Modul ab (fitShadow), keine feste Zahl.
+const LSET = (/lset=(r2|cozy|mesa)/.exec(hash) || [0, 'mesa'])[1], MOOD_SET = MOOD_SETS[LSET] || undefined, TODV = parseTod(hash)
+const fitTarget = () => { const cp = M2_ON ? M2STATE.carPos?.() : null; if (cp) return { p: cp, half: M2STATE.carSize?.half ?? 2.6 * K, h: M2STATE.carSize?.h ?? 1.8 * K }
+  const p = worldPosOf(mods.player); return p ? { p, half: 0.6 * K, h: 2.79 * K } : null }
+const RIG = { moods: MOOD_SET, tod: () => TODV, groundColor: () => BIOME.top, figures: () => (M1STATE.phase === 'dialog' ? [mods.player, mods.partner].filter(Boolean) : []), figureLight: { distance: 4.6 * K, up: 2.6 * K },
+  fit: () => { const t = fitTarget(), M = moodAt(TODV, MOOD_SET); if (!t) return { center: { x: 0, y: 0, z: 0 }, radius: 12 * K }
+    return { center: { x: t.p.x, y: t.p.y, z: t.p.z }, radius: t.half + shadowLength(M.elev) * t.h + 1 * K } } }
+export const LIGHT_INFO = () => mods.light?.info?.() || null
 function HostEnv() {
-  const { scene } = useThree()
-  const sun = useRef(), hemi = useRef(), tgt = useMemo(() => new THREE.Object3D(), [])
+  const { scene, gl } = useThree()
+  useEffect(() => applyTone(gl, 'aces', 1), [gl]) // ein Tonemapping für alle Schichten (L3 Regel 5)
   useEffect(() => {
     const c = mods.sky?.horizonColor?.() || new THREE.Color('#bcd7ea')
     scene.background = c.clone(); scene.fog = new THREE.Fog(c.clone(), 140 * K, 620 * K)
-    scene.add(tgt); if (sun.current) sun.current.target = tgt
-    return () => { scene.fog = null; scene.background = null; scene.remove(tgt) }
-  }, [scene, tgt])
-  useFrame(() => {
-    // Schatten folgt dem, was der Spieler steuert: im Fahrmodus dem Auto (Georg 16.10.: „fährt aus dem Schatten heraus“), sonst FrizzleBob
-    const cp = M2_ON ? M2STATE.carPos?.() : null, p = cp ? new THREE.Vector3(cp.x, cp.y, cp.z) : worldPosOf(mods.player); if (!p || !sun.current) return
-    followShadow(sun.current, p, { size: 12 * K, dist: 40 * K, sunDir: L1.sunDir }); sun.current.color.set(L1.sun); sun.current.intensity = L1.sunI
-    if (hemi.current) { hemi.current.color.set(L1.hemiSky); hemi.current.groundColor.set(L1.hemiGround); hemi.current.intensity = L1.hemiI }
-  })
-  return (
-    <>
-      <hemisphereLight ref={hemi} args={[0xfff4e0, 0x3a3226, 1.25]} />
-      <directionalLight ref={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-bias={-0.0002} shadow-normalBias={0.02} />
-    </>
-  )
+    return () => { scene.fog = null; scene.background = null }
+  }, [scene])
+  return <ModuleHost create={makeRig} options={RIG} />
 }
 
 // Physik-Schritt: genau einer je Durchlauf, als ERSTER Bild-Handler in der Physik (vor Figur und ecctrl). Zuschlag 1e-9: Rapiers Akkumulator
 // (Gleitkomma) ließe sonst gelegentlich einen Schritt aus und machte im nächsten Durchlauf zwei.
+// Boden unter (x, z) für die Kontaktverdeckung: Strahl von oben auf alle Kollider außer Zaun und Auto, sonst das Gelände; Normale wie getroffen
+function GroundProbe() {
+  const { world, rapier } = useRapier(), ray = useMemo(() => new rapier.Ray({ x: 0, y: 0, z: 0 }, { x: 0, y: -1, z: 0 }), [rapier])
+  useEffect(() => { GROUND_AT.fn = (x, z) => { const ty = mods.terrain?.height(x, z) ?? GROUND_Y0, from = ty + 40 * K; ray.origin.x = x; ray.origin.y = from; ray.origin.z = z
+    const h = world.castRayAndGetNormal(ray, 80 * K, true, undefined, undefined, undefined, undefined, (c) => !c.parent()?.userData?.m2Car && !c.parent()?.userData?.tag)
+    if (h && from - h.timeOfImpact > ty + 0.01 * K && h.normal.y > 0.5) return { y: from - h.timeOfImpact, normal: [h.normal.x, h.normal.y, h.normal.z] }
+    const e = 0.4 * K, H = (a, b) => mods.terrain?.height(a, b) ?? ty; return { y: ty, normal: [H(x - e, z) - H(x + e, z), 2 * e, H(x, z - e) - H(x, z + e)] } }
+    return () => { GROUND_AT.fn = null } }, [world, ray])
+  return null
+}
+
 function Stepper() {
   const { step } = useRapier()
   useFrame(() => { M1CLOCK.steps++; step(STEP + 1e-9) })
@@ -136,8 +145,8 @@ function Colliders({ ready }) {
   return (
     <>
       {terr && <RigidBody type="fixed" colliders={false} name="m1-terrain"><TrimeshCollider args={[terr.vertices, terr.indices]} /></RigidBody>}
-      {amph && <RigidBody type="fixed" colliders={false} name="m1-amph"><TrimeshCollider args={[amph.vertices, amph.indices]} /></RigidBody>}
-      {bb && <RigidBody type="fixed" colliders={false} name="m1-billboard" position={bb.c}><CuboidCollider args={bb.h} /></RigidBody>}
+      {amph && <RigidBody type="fixed" colliders={false} name="m1-amph" userData={{ obstacle: true }}><TrimeshCollider args={[amph.vertices, amph.indices]} /></RigidBody>}
+      {bb && <RigidBody type="fixed" colliders={false} name="m1-billboard" userData={{ obstacle: true }} position={bb.c}><CuboidCollider args={bb.h} /></RigidBody>}
       <RigidBody type="fixed" colliders={false} name="m1-ramp"><ConvexHullCollider args={[RAMP]} /></RigidBody>
       <RigidBody type="fixed" colliders={false} name="m1-partner" userData={{ soft: true }} position={[MARK.right[0], 1 * K, MARK.right[1]]}><CylinderCollider args={[1 * K, 0.35 * K]} /></RigidBody>
       {!NOFENCE && <RigidBody type="fixed" colliders={false} name={FENCE_TAG} userData={{ tag: FENCE_TAG, ecctrl: { excludeRay: true } }}>{FENCE.map((c, i) => <ConvexHullCollider key={i} args={[c.verts]} friction={0} frictionCombineRule={CoefficientCombineRule.Max} />)}</RigidBody>}
@@ -253,13 +262,15 @@ function M1World() {
       <ModuleHost create={makeAmph} options={AMPH} />
       <ModuleHost create={makeBB} options={BB} />
       <ModuleHost create={makePartner} options={PARTNER} />
-      <ModuleHost create={makeBlobs} options={BLOBS} />
+      <ModuleHost create={makeAO} options={AO} />
       <Suspense fallback={null}>{/* Rapier lädt asynchron: eigene Grenze, damit die Hüllen davor nicht verworfen und doppelt erzeugt werden (Prüfer M1, Befund 3) */}
       <Physics gravity={[0, -G, 0]} timeStep={1 / 60} paused>
         <Stepper />
+        <GroundProbe />
         <Colliders ready={amphReady} />
         <M1Player ref={player} actorOptions={PLAYER_ACTOR} clipUrls={CLIP_URLS} onMod={onPlayer} />
         {M2_ON && <M2Car player={player} />}
+        {M2_ON && <StuntField />}
       </Physics>
       </Suspense>
       <StageOrbitCam ref={orbit} view={STAGE_VIEW} active={phase === 'dialog'} />

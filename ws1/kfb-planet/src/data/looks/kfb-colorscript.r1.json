@@ -1,0 +1,929 @@
+{
+ "schema": "kfb.colorscript/1",
+ "version": "r1",
+ "date": "2026-10-17",
+ "vRef": [
+  "V-402",
+  "V-406",
+  "V-305"
+ ],
+ "rule": "Licht und Farbe getrennt (Georg 17.10.): Licht = Mesa/Krazy Kat (kfb-stage-light MOODS_MESA), Farbe = Joyride-Welten. Eine Bühnenpalette mit Rollen je Diorama; die Karte färbt nur Akzente. Umfärben nach Helligkeit (Struktur bleibt), Übergänge über das Sprenkel-Modul (V-403), steinweise Sprengsel über WSB B9 (V-406).",
+ "moods": "Die Palette bleibt über Tag/Gold/Nacht gleich; Stimmung kommt nur aus dem Licht-Rig (R2 Regel 3).",
+ "worlds": {
+  "canyon": {
+   "name": "A · Claybound-Canyon (Joyride-Standard)",
+   "note": "Joyride A: oranger Strang auf violettem Tisch, orange Tafeltürme, grüne Kugelbäume",
+   "roles": {
+    "ground": "#8b68c7",
+    "structures": "#ef5a22",
+    "structures2": "#e8743a",
+    "tiers": "#a582d9",
+    "tiers2": "#7b5bb8",
+    "stageFloor": "#e2d0bc",
+    "rock": "#e2d0bc",
+    "path": "#e9d8c0",
+    "frame": "#ef5a22",
+    "accent": "#1f7a3e",
+    "sky": "#96bede"
+   },
+   "six": [
+    "#8b68c7",
+    "#ef5a22",
+    "#a582d9",
+    "#e2d0bc",
+    "#ef5a22",
+    "#1f7a3e"
+   ],
+   "harmony": {
+    "groundHue": 299,
+    "rows": {
+     "sky": {
+      "hex": "#91c5e2",
+      "L": 0.797,
+      "C": 0.068,
+      "h": 233.2,
+      "dhGround": -65.8,
+      "relC": 0.55,
+      "cuspL": 0.75,
+      "stufe": "hell",
+      "buntheit": "ruhe"
+     },
+     "top": {
+      "hex": "#8b68c7",
+      "L": 0.594,
+      "C": 0.143,
+      "h": 299,
+      "dhGround": 0,
+      "relC": 0.55,
+      "cuspL": 0.55,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "top2": {
+      "hex": "#9f7fd6",
+      "L": 0.662,
+      "C": 0.13,
+      "h": 299.8,
+      "dhGround": 0.8,
+      "relC": 0.61,
+      "cuspL": 0.55,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "hill0": {
+      "hex": "#a585dc",
+      "L": 0.681,
+      "C": 0.129,
+      "h": 299.9,
+      "dhGround": 1,
+      "relC": 0.65,
+      "cuspL": 0.55,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "hill1": {
+      "hex": "#805fbb",
+      "L": 0.561,
+      "C": 0.14,
+      "h": 298.3,
+      "dhGround": -0.7,
+      "relC": 0.5,
+      "cuspL": 0.54,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "sand": {
+      "hex": "#e9dcc8",
+      "L": 0.9,
+      "C": 0.03,
+      "h": 78.8,
+      "dhGround": 139.8,
+      "relC": 0.33,
+      "cuspL": 0.82,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "rim": {
+      "hex": "#805fbb",
+      "L": 0.561,
+      "C": 0.14,
+      "h": 298.3,
+      "dhGround": -0.7,
+      "relC": 0.5,
+      "cuspL": 0.54,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "under0": {
+      "hex": "#67489a",
+      "L": 0.475,
+      "C": 0.13,
+      "h": 298.8,
+      "dhGround": -0.2,
+      "relC": 0.51,
+      "cuspL": 0.55,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "under1": {
+      "hex": "#ce826b",
+      "L": 0.681,
+      "C": 0.1,
+      "h": 37.6,
+      "dhGround": 98.6,
+      "relC": 0.47,
+      "cuspL": 0.67,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "under2": {
+      "hex": "#b56d5b",
+      "L": 0.609,
+      "C": 0.096,
+      "h": 34.8,
+      "dhGround": 95.9,
+      "relC": 0.45,
+      "cuspL": 0.66,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "under3": {
+      "hex": "#935649",
+      "L": 0.52,
+      "C": 0.084,
+      "h": 32.9,
+      "dhGround": 93.9,
+      "relC": 0.44,
+      "cuspL": 0.65,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "rock": {
+      "hex": "#ab7de7",
+      "L": 0.678,
+      "C": 0.157,
+      "h": 302.4,
+      "dhGround": 3.5,
+      "relC": 0.76,
+      "cuspL": 0.56,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "tower0": {
+      "hex": "#a582d9",
+      "L": 0.674,
+      "C": 0.13,
+      "h": 301.6,
+      "dhGround": 2.6,
+      "relC": 0.62,
+      "cuspL": 0.56,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "tower1": {
+      "hex": "#ab7de7",
+      "L": 0.678,
+      "C": 0.157,
+      "h": 302.4,
+      "dhGround": 3.5,
+      "relC": 0.76,
+      "cuspL": 0.56,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "leaf0": {
+      "hex": "#277c3b",
+      "L": 0.52,
+      "C": 0.128,
+      "h": 147.9,
+      "dhGround": -151.1,
+      "relC": 0.85,
+      "cuspL": 0.87,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "leaf1": {
+      "hex": "#49922b",
+      "L": 0.591,
+      "C": 0.155,
+      "h": 138.1,
+      "dhGround": -160.9,
+      "relC": 0.85,
+      "cuspL": 0.88,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "leaf2": {
+      "hex": "#ff9ea6",
+      "L": 0.8,
+      "C": 0.116,
+      "h": 14.7,
+      "dhGround": 75.7,
+      "relC": 1,
+      "cuspL": 0.63,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "trunk": {
+      "hex": "#ce826b",
+      "L": 0.681,
+      "C": 0.1,
+      "h": 37.6,
+      "dhGround": 98.6,
+      "relC": 0.47,
+      "cuspL": 0.67,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "cloud": {
+      "hex": "#f2e6d3",
+      "L": 0.929,
+      "C": 0.028,
+      "h": 79.5,
+      "dhGround": 140.5,
+      "relC": 0.44,
+      "cuspL": 0.82,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "water": {
+      "hex": "#5d81a3",
+      "L": 0.59,
+      "C": 0.066,
+      "h": 247.6,
+      "dhGround": -51.4,
+      "relC": 0.42,
+      "cuspL": 0.67,
+      "stufe": "mitte",
+      "buntheit": "ruhe"
+     },
+     "path": {
+      "hex": "#f5e6c9",
+      "L": 0.929,
+      "C": 0.042,
+      "h": 83.9,
+      "dhGround": 144.9,
+      "relC": 0.57,
+      "cuspL": 0.84,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "roadStreet": {
+      "hex": "#566680",
+      "L": 0.507,
+      "C": 0.046,
+      "h": 260,
+      "dhGround": -39,
+      "relC": 0.22,
+      "cuspL": 0.57,
+      "stufe": "dunkel",
+      "buntheit": "neutral"
+     },
+     "roadTrack": {
+      "hex": "#3d4a60",
+      "L": 0.407,
+      "C": 0.041,
+      "h": 260.8,
+      "dhGround": -38.2,
+      "relC": 0.23,
+      "cuspL": 0.56,
+      "stufe": "dunkel",
+      "buntheit": "neutral"
+     },
+     "strang": {
+      "hex": "#ef5a22",
+      "L": 0.657,
+      "C": 0.195,
+      "h": 38.7,
+      "dhGround": 99.7,
+      "relC": 0.92,
+      "cuspL": 0.67,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "pad": {
+      "hex": "#f7cd36",
+      "L": 0.861,
+      "C": 0.162,
+      "h": 92.3,
+      "dhGround": 153.3,
+      "relC": 0.92,
+      "cuspL": 0.87,
+      "stufe": "creme",
+      "buntheit": "pop"
+     }
+    }
+   }
+  },
+  "bucht": {
+   "name": "B · Bikini-Bucht",
+   "note": "Joyride B: Sand, Aqua-Dünen, violette Korallentürme, Tangbäume mit rosa Blüten",
+   "roles": {
+    "ground": "#f0cf7e",
+    "structures": "#9a6fd0",
+    "structures2": "#b08ae0",
+    "tiers": "#5cc3bf",
+    "tiers2": "#46adb2",
+    "stageFloor": "#fbe8b4",
+    "rock": "#9a6fd0",
+    "path": "#fff1d2",
+    "frame": "#f2708a",
+    "accent": "#8fcf45",
+    "sky": "#8fd6ec"
+   },
+   "six": [
+    "#f0cf7e",
+    "#9a6fd0",
+    "#5cc3bf",
+    "#fbe8b4",
+    "#f2708a",
+    "#8fcf45"
+   ],
+   "harmony": {
+    "groundHue": 88,
+    "rows": {
+     "sky": {
+      "hex": "#9b9ecd",
+      "L": 0.714,
+      "C": 0.068,
+      "h": 281.7,
+      "dhGround": -166.3,
+      "relC": 0.45,
+      "cuspL": 0.5,
+      "stufe": "mitte",
+      "buntheit": "ruhe"
+     },
+     "top": {
+      "hex": "#f0cf7e",
+      "L": 0.865,
+      "C": 0.107,
+      "h": 88,
+      "dhGround": 0,
+      "relC": 0.66,
+      "cuspL": 0.85,
+      "stufe": "creme",
+      "buntheit": "feld"
+     },
+     "top2": {
+      "hex": "#fee092",
+      "L": 0.915,
+      "C": 0.102,
+      "h": 89.2,
+      "dhGround": 1.3,
+      "relC": 0.96,
+      "cuspL": 0.86,
+      "stufe": "creme",
+      "buntheit": "feld"
+     },
+     "hill0": {
+      "hex": "#84b5ec",
+      "L": 0.759,
+      "C": 0.095,
+      "h": 251.9,
+      "dhGround": 163.9,
+      "relC": 0.75,
+      "cuspL": 0.65,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "hill1": {
+      "hex": "#769dd6",
+      "L": 0.69,
+      "C": 0.095,
+      "h": 257.8,
+      "dhGround": 169.8,
+      "relC": 0.58,
+      "cuspL": 0.6,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "sand": {
+      "hex": "#fae7b3",
+      "L": 0.931,
+      "C": 0.07,
+      "h": 90.3,
+      "dhGround": 2.4,
+      "relC": 0.78,
+      "cuspL": 0.86,
+      "stufe": "creme",
+      "buntheit": "ruhe"
+     },
+     "rim": {
+      "hex": "#e4bb62",
+      "L": 0.811,
+      "C": 0.118,
+      "h": 84.9,
+      "dhGround": -3.1,
+      "relC": 0.71,
+      "cuspL": 0.84,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "under0": {
+      "hex": "#d8a85c",
+      "L": 0.76,
+      "C": 0.11,
+      "h": 77.4,
+      "dhGround": -10.6,
+      "relC": 0.69,
+      "cuspL": 0.81,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "under1": {
+      "hex": "#725600",
+      "L": 0.469,
+      "C": 0.096,
+      "h": 86.6,
+      "dhGround": -1.4,
+      "relC": 1,
+      "cuspL": 0.85,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "under2": {
+      "hex": "#634800",
+      "L": 0.42,
+      "C": 0.086,
+      "h": 83.9,
+      "dhGround": -4,
+      "relC": 1,
+      "cuspL": 0.84,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "under3": {
+      "hex": "#4e3600",
+      "L": 0.351,
+      "C": 0.073,
+      "h": 81,
+      "dhGround": -7,
+      "relC": 1,
+      "cuspL": 0.83,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "rock": {
+      "hex": "#ad7ce7",
+      "L": 0.679,
+      "C": 0.159,
+      "h": 303.6,
+      "dhGround": -144.4,
+      "relC": 0.76,
+      "cuspL": 0.57,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "tower0": {
+      "hex": "#9a6fd0",
+      "L": 0.626,
+      "C": 0.147,
+      "h": 302.9,
+      "dhGround": -145.1,
+      "relC": 0.59,
+      "cuspL": 0.56,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "tower1": {
+      "hex": "#ad7ce7",
+      "L": 0.679,
+      "C": 0.159,
+      "h": 303.6,
+      "dhGround": -144.4,
+      "relC": 0.76,
+      "cuspL": 0.57,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "leaf0": {
+      "hex": "#4ad0d2",
+      "L": 0.787,
+      "C": 0.114,
+      "h": 196.5,
+      "dhGround": 108.5,
+      "relC": 0.85,
+      "cuspL": 0.89,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "leaf1": {
+      "hex": "#54ebdd",
+      "L": 0.857,
+      "C": 0.128,
+      "h": 186.3,
+      "dhGround": 98.3,
+      "relC": 0.85,
+      "cuspL": 0.9,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "leaf2": {
+      "hex": "#9864d5",
+      "L": 0.609,
+      "C": 0.17,
+      "h": 302.9,
+      "dhGround": -145.1,
+      "relC": 0.65,
+      "cuspL": 0.56,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "trunk": {
+      "hex": "#725600",
+      "L": 0.469,
+      "C": 0.096,
+      "h": 86.6,
+      "dhGround": -1.4,
+      "relC": 1,
+      "cuspL": 0.85,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "cloud": {
+      "hex": "#f2e6d3",
+      "L": 0.929,
+      "C": 0.028,
+      "h": 79.5,
+      "dhGround": -8.5,
+      "relC": 0.44,
+      "cuspL": 0.82,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "water": {
+      "hex": "#82b4f6",
+      "L": 0.761,
+      "C": 0.109,
+      "h": 255.7,
+      "dhGround": 167.7,
+      "relC": 0.88,
+      "cuspL": 0.61,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "path": {
+      "hex": "#f5e6c9",
+      "L": 0.929,
+      "C": 0.042,
+      "h": 83.9,
+      "dhGround": -4.1,
+      "relC": 0.57,
+      "cuspL": 0.84,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "roadStreet": {
+      "hex": "#566680",
+      "L": 0.507,
+      "C": 0.046,
+      "h": 260,
+      "dhGround": 172,
+      "relC": 0.22,
+      "cuspL": 0.57,
+      "stufe": "dunkel",
+      "buntheit": "neutral"
+     },
+     "roadTrack": {
+      "hex": "#3d4a60",
+      "L": 0.407,
+      "C": 0.041,
+      "h": 260.8,
+      "dhGround": 172.8,
+      "relC": 0.23,
+      "cuspL": 0.56,
+      "stufe": "dunkel",
+      "buntheit": "neutral"
+     },
+     "strang": {
+      "hex": "#f85e7b",
+      "L": 0.689,
+      "C": 0.189,
+      "h": 12.2,
+      "dhGround": -75.8,
+      "relC": 0.92,
+      "cuspL": 0.64,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "pad": {
+      "hex": "#f7cd36",
+      "L": 0.861,
+      "C": 0.162,
+      "h": 92.3,
+      "dhGround": 4.3,
+      "relC": 0.92,
+      "cuspL": 0.87,
+      "stufe": "creme",
+      "buntheit": "pop"
+     }
+    }
+   }
+  },
+  "otown": {
+   "name": "C · O-Town",
+   "note": "Joyride C: Petrol-Boden, magentafarbene Wackeltürme, orange Kronen auf lila Stämmen, Mintgrün als Himmel",
+   "roles": {
+    "ground": "#3aa596",
+    "structures": "#c9508f",
+    "structures2": "#e0679f",
+    "tiers": "#2f8f83",
+    "tiers2": "#4cb5a5",
+    "stageFloor": "#f3ead8",
+    "rock": "#e0679f",
+    "path": "#f3e6c8",
+    "frame": "#e9b53b",
+    "accent": "#f08a2c",
+    "sky": "#a8d8b9"
+   },
+   "six": [
+    "#3aa596",
+    "#c9508f",
+    "#2f8f83",
+    "#f3ead8",
+    "#e9b53b",
+    "#f08a2c"
+   ],
+   "harmony": {
+    "groundHue": 182.2,
+    "rows": {
+     "sky": {
+      "hex": "#929ecb",
+      "L": 0.706,
+      "C": 0.067,
+      "h": 273,
+      "dhGround": 90.8,
+      "relC": 0.44,
+      "cuspL": 0.47,
+      "stufe": "mitte",
+      "buntheit": "ruhe"
+     },
+     "top": {
+      "hex": "#3aa596",
+      "L": 0.657,
+      "C": 0.099,
+      "h": 182.2,
+      "dhGround": 0,
+      "relC": 0.84,
+      "cuspL": 0.89,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "top2": {
+      "hex": "#52b2a5",
+      "L": 0.702,
+      "C": 0.093,
+      "h": 183.6,
+      "dhGround": 1.4,
+      "relC": 0.75,
+      "cuspL": 0.9,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "hill0": {
+      "hex": "#5ab8ab",
+      "L": 0.722,
+      "C": 0.092,
+      "h": 183.6,
+      "dhGround": 1.4,
+      "relC": 0.72,
+      "cuspL": 0.9,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "hill1": {
+      "hex": "#229484",
+      "L": 0.602,
+      "C": 0.1,
+      "h": 180.9,
+      "dhGround": -1.2,
+      "relC": 0.92,
+      "cuspL": 0.89,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "sand": {
+      "hex": "#e9dcc8",
+      "L": 0.9,
+      "C": 0.03,
+      "h": 78.8,
+      "dhGround": -103.4,
+      "relC": 0.33,
+      "cuspL": 0.82,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "rim": {
+      "hex": "#229484",
+      "L": 0.602,
+      "C": 0.1,
+      "h": 180.9,
+      "dhGround": -1.2,
+      "relC": 0.92,
+      "cuspL": 0.89,
+      "stufe": "mitte",
+      "buntheit": "feld"
+     },
+     "under0": {
+      "hex": "#03796c",
+      "L": 0.517,
+      "C": 0.092,
+      "h": 181.9,
+      "dhGround": -0.2,
+      "relC": 0.99,
+      "cuspL": 0.89,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "under1": {
+      "hex": "#785300",
+      "L": 0.47,
+      "C": 0.098,
+      "h": 78.8,
+      "dhGround": -103.3,
+      "relC": 1,
+      "cuspL": 0.82,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "under2": {
+      "hex": "#694500",
+      "L": 0.421,
+      "C": 0.089,
+      "h": 75.2,
+      "dhGround": -107,
+      "relC": 1,
+      "cuspL": 0.81,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "under3": {
+      "hex": "#523300",
+      "L": 0.35,
+      "C": 0.075,
+      "h": 72.3,
+      "dhGround": -109.9,
+      "relC": 1,
+      "cuspL": 0.8,
+      "stufe": "dunkel",
+      "buntheit": "ruhe"
+     },
+     "rock": {
+      "hex": "#e973ab",
+      "L": 0.708,
+      "C": 0.158,
+      "h": 352.1,
+      "dhGround": 170,
+      "relC": 0.73,
+      "cuspL": 0.65,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "tower0": {
+      "hex": "#c9508f",
+      "L": 0.608,
+      "C": 0.167,
+      "h": 350.9,
+      "dhGround": 168.7,
+      "relC": 0.66,
+      "cuspL": 0.66,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "tower1": {
+      "hex": "#e973ab",
+      "L": 0.708,
+      "C": 0.158,
+      "h": 352.1,
+      "dhGround": 170,
+      "relC": 0.73,
+      "cuspL": 0.65,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "leaf0": {
+      "hex": "#4ad0c7",
+      "L": 0.783,
+      "C": 0.115,
+      "h": 188.7,
+      "dhGround": 6.6,
+      "relC": 0.85,
+      "cuspL": 0.9,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "leaf1": {
+      "hex": "#54ebd0",
+      "L": 0.853,
+      "C": 0.133,
+      "h": 178.7,
+      "dhGround": -3.4,
+      "relC": 0.85,
+      "cuspL": 0.89,
+      "stufe": "hell",
+      "buntheit": "feld"
+     },
+     "leaf2": {
+      "hex": "#d45898",
+      "L": 0.637,
+      "C": 0.17,
+      "h": 350.9,
+      "dhGround": 168.7,
+      "relC": 0.64,
+      "cuspL": 0.66,
+      "stufe": "mitte",
+      "buntheit": "pop"
+     },
+     "trunk": {
+      "hex": "#785300",
+      "L": 0.47,
+      "C": 0.098,
+      "h": 78.8,
+      "dhGround": -103.3,
+      "relC": 1,
+      "cuspL": 0.82,
+      "stufe": "dunkel",
+      "buntheit": "feld"
+     },
+     "cloud": {
+      "hex": "#f2e6d3",
+      "L": 0.929,
+      "C": 0.028,
+      "h": 79.5,
+      "dhGround": -102.7,
+      "relC": 0.44,
+      "cuspL": 0.82,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "water": {
+      "hex": "#5d81a3",
+      "L": 0.59,
+      "C": 0.066,
+      "h": 247.6,
+      "dhGround": 65.4,
+      "relC": 0.42,
+      "cuspL": 0.67,
+      "stufe": "mitte",
+      "buntheit": "ruhe"
+     },
+     "path": {
+      "hex": "#f5e6c9",
+      "L": 0.929,
+      "C": 0.042,
+      "h": 83.9,
+      "dhGround": -98.3,
+      "relC": 0.57,
+      "cuspL": 0.84,
+      "stufe": "creme",
+      "buntheit": "neutral"
+     },
+     "roadStreet": {
+      "hex": "#566680",
+      "L": 0.507,
+      "C": 0.046,
+      "h": 260,
+      "dhGround": 77.9,
+      "relC": 0.22,
+      "cuspL": 0.57,
+      "stufe": "dunkel",
+      "buntheit": "neutral"
+     },
+     "roadTrack": {
+      "hex": "#3d4a60",
+      "L": 0.407,
+      "C": 0.041,
+      "h": 260.8,
+      "dhGround": 78.7,
+      "relC": 0.23,
+      "cuspL": 0.56,
+      "stufe": "dunkel",
+      "buntheit": "neutral"
+     },
+     "strang": {
+      "hex": "#eba92e",
+      "L": 0.778,
+      "C": 0.149,
+      "h": 77.7,
+      "dhGround": -104.5,
+      "relC": 0.92,
+      "cuspL": 0.82,
+      "stufe": "hell",
+      "buntheit": "pop"
+     },
+     "pad": {
+      "hex": "#f8da39",
+      "L": 0.888,
+      "C": 0.169,
+      "h": 98,
+      "dhGround": -84.2,
+      "relC": 0.92,
+      "cuspL": 0.9,
+      "stufe": "creme",
+      "buntheit": "pop"
+     }
+    }
+   }
+  }
+ }
+}

@@ -2,7 +2,7 @@
 // Die Szene läuft mit Canvas frameloop="never"; M1Loop ruft R3F advance() einmal je fälligem Schritt mit künstlicher Zeit (+1/60 s). Damit sehen
 // ecctrl (Impulse je Bild mit world.timestep), alle Module (dt) und Rapier (ein Schritt je Durchlauf, Physics pausiert, Stepper) dieselbe Zeit –
 // unabhängig davon, ob der Bildschirm mit 30, 60 oder 120 Hz läuft.
-//   live                  Schritte nach echter Zeit (Akkumulator, höchstens 4 je Bild)
+//   live                  Schritte nach echter Zeit (Akkumulator, höchstens 8 je Bild, M3 Stufe A; versteckter Tab pausiert)
 //   #m1,debug,replay      genau ein Schritt je Bild (Tests, bildzeitunabhängig)
 //   #m1,debug,replay=120  ein Schritt je zweitem Bild (Bildschirm 120 Hz)
 //   #m1,debug,replay=30   zwei Schritte je Bild (Bildschirm 30 Hz)
@@ -14,8 +14,9 @@ const hz = m ? +(m[1] || 60) : 60
 export const STEP = 1 / 60
 // onStep: Prüf-Haken (nur Tests mit Debug-Schalter) – wird nach JEDEM Schritt gerufen, auch wenn ein Bildschirm-Bild mehrere Schritte macht;
 // onDraw: Prüf-Haken im Zeichenmoment (interpolierter Stand, siehe interpDraw)
-export const M1CLOCK = { replay: !!(DEBUG && m), hz, stepsPerFrame: hz === 30 ? 2 : 1, framesPerStep: hz === 120 ? 2 : 1, frame: 0, steps: 0, t: 0, draw: true, onStep: null, onDraw: null, stats: { stepMs: 0, drawMs: 0, steps: 0, draws: 0, multi: 0 } }
-export function resetClock() { Object.assign(M1CLOCK, { frame: 0, steps: 0, t: 0, draw: true, onStep: null, onDraw: null, stats: { stepMs: 0, drawMs: 0, steps: 0, draws: 0, multi: 0 } }) }
+// nodraw (nur mit debug): Physik-Tests ohne Zeichnen – der Takt bleibt replay-fest, der Software-Renderer des Test-Browsers (≈ 8 Bilder/s) entfällt
+export const M1CLOCK = { replay: !!(DEBUG && m), nodraw: !!(DEBUG && /(^|[#,])nodraw(,|$)/.test(h)), hz, stepsPerFrame: hz === 30 ? 2 : 1, framesPerStep: hz === 120 ? 2 : 1, frame: 0, steps: 0, t: 0, draw: true, hidden: false, onStep: null, onDraw: null, stats: { stepMs: 0, drawMs: 0, steps: 0, draws: 0, multi: 0, dropped: 0 } }
+export function resetClock() { Object.assign(M1CLOCK, { frame: 0, steps: 0, t: 0, draw: true, hidden: false, onStep: null, onDraw: null, stats: { stepMs: 0, drawMs: 0, steps: 0, draws: 0, multi: 0, dropped: 0 } }) }
 
 // Bild-Interpolation (Georg 16.10.: „ruckelt sehr stark beim Fliegen“; Sonde probe-judder: auf 120-Hz-Bildschirmen stand die Figur in jedem zweiten Bild
 // still – im Flug 23 cm je Doppelbild). Die Physik bleibt bei festen 1/60-s-Schritten; gezeichnet wird je Bildschirm-Bild der Zwischenstand

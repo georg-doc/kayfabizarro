@@ -22,12 +22,17 @@ import { playerState } from './world'
 import { DECKS, cardAt, cardsOfDeck } from './cards'
 import { isCardSafe } from './cardMapping'
 import { expose } from './debug'
-import { ROGUE, FB, KAYKIT, CAST_IDS } from './actors/stageCast'
+import { ROGUE, CAST_IDS } from './actors/stageCast'
+import { figureFor } from './actors/figureCard'
+import { createRefusedFigure } from './modules/refusedFigure'
 import { StageOrbitCam, ORBIT } from './StageOrbitCam'
 import { skyAtTod, skyLookB, SKY_TINT } from './stageLight'
 import { createStageLight, createContactAO, createPracticals, applyTone, parseTod, moodAt, selfTest, MOOD_SETS } from './vendor/light/kfb-stage-light.v1.js'
 import { useHostKeys, PRIO } from './hostKeys'
 import EDGES from './data/stages/kfb-stage-edges.r1.json'
+import { stitchFor } from './world/terrainStitch'
+import { createStageGround } from './modules/stageGround'
+import { evaluate, createFrameSampler, overlayLine } from './world/perfBudget'
 import { createClayLook } from './modules/clayLook'
 import { createVehicleLineup } from './modules/vehicleLineup'
 import { mountCompareBar, toggleClean } from './compareBar'
@@ -68,30 +73,41 @@ export const playerPosFor = (c, fov = 38, d = 3.2, ndcY = -0.9) => { const [px, 
 const PLAYER_POS = playerPosFor(cam, 38, 3.2 * K)
 const ACTORS = ['none', 'fb', 'rogue'].includes(/actors=(\w+)/.exec(hash)?.[1]) ? /actors=(\w+)/.exec(hash)[1] : 'none' // unbekannter Wert → keine Figuren (Prüfer 9, Befund 7)
 // Bühnen-Palette (V-270): nach der Karte (Deck-Genre → Insel-Palette → Rollen, Story-Tint), Hash palette=<Insel> zum Vergleichen, plain = ohne Tint (Bildpaar)
-const PAL_OVERRIDE = /palette=(\w+)/.exec(hash)?.[1] || null
+// Look-Slice (V-402/V-406, Georg 17.10.): mit light=l1 trägt die Bühne EINE Bühnenpalette mit Rollen aus den drei Joyride-Welten (world=canyon|bucht|otown,
+// Standard canyon = Joyride-Standard: violetter Boden, orange Bögen), voll nach Rollen umgefärbt (Variante B, pamt 1); die Karte färbt nur noch Akzente.
+// look=legacy zeigt den alten Stand (Palette nach Kartengenre, 18 %). palette=<id> bleibt als Vergleich vorrangig.
+const STAGE_WORLD = /(^|[#,])light=l1(,|$)/.test(hash) && !/look=legacy/.test(hash) ? ((/world=(canyon|bucht|otown)/.exec(hash) || [0, 'canyon'])[1]) : null
+const PAL_OVERRIDE = /palette=(\w+)/.exec(hash)?.[1] || STAGE_WORLD
 const PAL_PLAIN = /(^|,)plain(,|$)/.test(hash.replace(/^#/, ''))
-const PAL_VARIANT = /palv=b/.test(hash) ? 'b' : 'a' // Variante B (§36): Rolle je Bühnenteil wie Joyride
+const PAL_VARIANT = /palv=b/.test(hash) || (STAGE_WORLD && !/palv=a/.test(hash)) ? 'b' : 'a' // Variante B (§36): Rolle je Bühnenteil wie Joyride
 const palFor = (card) => stagePaletteFor(card, { override: PAL_OVERRIDE, noTint: PAL_PLAIN, variant: PAL_VARIANT })
 const PAL0 = palFor(CARD)
 // pamt=0..1: Anteil der Umfärbung des Amphitheaters nach Helligkeit (Look-Slice-Probe, Georg 17.10.); ohne Schalter V-286 (18 %)
-const PAMT = /pamt=([\d.]+)/.exec(hash) ? Math.min(1, +/pamt=([\d.]+)/.exec(hash)[1]) : undefined
-const AMPH = { biome: BIOME, palette: PAL0?.amph || null, worldK: K, palAmt: PAMT }
+const PAMT = /pamt=([\d.]+)/.exec(hash) ? Math.min(1, +/pamt=([\d.]+)/.exec(hash)[1]) : STAGE_WORLD ? 1 : undefined
+const AMPH = { biome: BIOME, palette: PAL0?.amph || null, worldK: K, palAmt: PAMT, clay: !!STAGE_WORLD && !/clay=0/.test(hash) } // Look-Slice: Amphitheater als Knete
 const MESHY_OPTS = SCENE ? { stage: SCENE, scale: SCENE_S } : null
 const BB = { card: CARD, biome: BIOME, palette: PAL0, maxW: 7, maxH: 5, position: [0, 0, -3.5 * K], worldK: K }
 const palState = { current: PAL0, log: [] } // aktuelle Palette der Bühne + Wechsel-Protokoll (Prüfung)
 // Palette der Karte auf Billboard, Amphitheater und Himmel legen (weich, außer beim ersten Bild)
 function applyPalette(card, fadeS = FADE_S) {
+  if (STAGE_WORLD) return palState.current // Bühnenpalette bleibt fest, die Karte färbt nur Akzente (V-402)
   const p = palFor(card); if (!p || p.key === palState.current?.key) return palState.current // gleiche Palette und gleicher Akzent: kein Wechsel
   palState.current = p; palState.log.push({ card: card ? card.deck.id + '#' + card.num : null, id: p.id, via: p.via, storyMode: p.storyMode })
   mods.billboard?.setPalette?.(p, fadeS); mods.amph?.setPalette?.(p.amph, fadeS); sky.set(p.sky, fadeS)
   return p
 }
-const MK = /actors=fb/.test(hash) ? FB : ROGUE
+// V-391 · Figuren nur über ihre Karte (actors/figureCard.js): FB und GothGirl aus src/data/figures, Körper byte-gleich mit der Karte; ohne gültige Karte
+// steht ein rotes Schild „FIGURE REFUSED“ an ihrer Stelle. Rogue bleibt die F1-Prüffigur der Stellproben (kein Darsteller, actors=rogue).
+// Kandidaten ohne Karte (cast=<KayKit-id>) nur im Casting-Vergleich mit uncarded=1.
+const UNCARDED = /(^|[#,])uncarded=1(,|$)/.test(hash)
+const pick = (id) => figureFor(id, { allowUncarded: UNCARDED })
+const FIG_L = /actors=fb/.test(hash) ? pick('frizzlebob') : null
 // Standard (V-269, Georg 15.10.): rechts GothGirl, sobald FrizzleBob links steht; cast=<id> wählt einen anderen Kandidaten, cast=fb lässt FrizzleBob beidseitig
 export { CAST_IDS } // für Prüfungen und Skripte wie bisher
 const CAST_ARG = /cast=([\w-]+)/.exec(hash)?.[1] || null
 const CAST_ID = CAST_ARG === 'fb' ? null : CAST_IDS.includes(CAST_ARG) ? CAST_ARG : /actors=fb/.test(hash) ? 'gothgirl' : null
-const MKR = CAST_ID ? KAYKIT(CAST_ID) : MK
+const FIG_R = CAST_ID ? pick(CAST_ID) : FIG_L
+export const FIGURES = { left: FIG_L && { ok: FIG_L.ok, id: FIG_L.id, status: FIG_L.status, reason: FIG_L.reason }, right: FIG_R && { ok: FIG_R.ok, id: FIG_R.id || CAST_ID, status: FIG_R.status, reason: FIG_R.reason } }
 // Marken der Figuren je Stellung (Bühnenmitte = Ursprung, +z zum Publikum): near = G4-Standard vor der Tafel (Georg 14.10.), two = bisherige Stellung
 // Marken je Meshy-Bühne in Modell-Einheiten u (skalieren mit dem Bühnen-Maßstab mit): freie Fläche vor der Kartenwand laut Kamera-Notiz der Slot-Datei
 export const SCENE_MARKS = Object.freeze({
@@ -109,8 +125,9 @@ export const STAGE_MARKS = Object.freeze({
 // Stellung: place=near (Figuren vor der Tafel, enger; Standard) | place=two (bisherige Stellung hinten). Ohne Angabe folgt sie der Kamera (cam=two → two).
 const NEAR = (/place=(\w+)/.exec(hash)?.[1] || (CAM === 'two' ? 'two' : 'near')) === 'near'
 const stageMark = (m) => ({ ...m, x: m.x * K, z: m.z * K }) // alte WS1-Bühnenmeter → J17
-const at = (mk, m, id) => ({ ...mk(m.x, m.yaw, id), position: [m.x, 0, m.z], worldScale: K }), MARKS = SCENE ? { left: sceneMark(SCENE_MARKS[SCENE].left), right: sceneMark(SCENE_MARKS[SCENE].right) } : LINEUP ? { left: stageMark({ x: -1.3, z: 8, yaw: 0 }), right: stageMark({ x: 1.3, z: 8, yaw: 0 }) } : { left: stageMark(STAGE_MARKS[NEAR ? 'near' : 'two'].left), right: stageMark(STAGE_MARKS[NEAR ? 'near' : 'two'].right) }
-const L = at(MK, MARKS.left, 'stage-left'), R = at(MKR, MARKS.right, 'stage-right')
+const at = (fig, m, id) => (fig === null ? { ...ROGUE(m.x, m.yaw, id), position: [m.x, 0, m.z], worldScale: K } : fig.ok && fig.build ? { ...fig.build(m.x, m.yaw, id), position: [m.x, 0, m.z], worldScale: K }
+  : { refused: true, id: fig.id || id, reason: fig.reason || 'abgelehnt', position: [m.x, 0, m.z], yaw: m.yaw, scale: K }), MARKS = SCENE ? { left: sceneMark(SCENE_MARKS[SCENE].left), right: sceneMark(SCENE_MARKS[SCENE].right) } : LINEUP ? { left: stageMark({ x: -1.3, z: 8, yaw: 0 }), right: stageMark({ x: 1.3, z: 8, yaw: 0 }) } : { left: stageMark(STAGE_MARKS[NEAR ? 'near' : 'two'].left), right: stageMark(STAGE_MARKS[NEAR ? 'near' : 'two'].right) }
+const L = at(FIG_L, MARKS.left, 'stage-left'), R = at(FIG_R, MARKS.right, 'stage-right')
 const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : PREVIEW_CARDS ? PREVIEW_CARDS.length : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
 // Dialog-Karten ab der Startkarte; drift-freie Seiten bevorzugt (WS0 zu §24.2, Auswahl statt Beschnitt), die Vorschau behält Georgs Reihenfolge
 const DECK = PREVIEW_CARDS || (di >= 0 ? preferDriftFree(cardsOfDeck(di).map(cardAt).filter((c) => c.num >= +num), NDIALOG) : [])
@@ -138,7 +155,7 @@ function billboardReady() { const i = mods.billboard?.info(); if (!i) return fal
 const mk = (k, f) => (o) => { mods[k] = f(o); expose('StageMods', mods); return mods[k] }
 // Meshy-Bühne: Bühnen-Modul mit Bildflächen-Inhalt auf ihrem Slot (meshyStage.createMeshyScene); `amph` = Bühne, `billboard` = Bildfläche wie beim Billboard
 const makeMeshy = (o) => { const { stage, screen } = createMeshyScene({ ...o, card: CARD }); mods.amph = stage; mods.billboard = screen; expose('StageMods', mods); return stage }
-const makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makeL = mk('left', createActor), makeR = mk('right', createActor)
+const makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makeL = mk('left', (o) => (o.refused ? createRefusedFigure(o) : createActor(o))), makeR = mk('right', (o) => (o.refused ? createRefusedFigure(o) : createActor(o)))
 const makeDialog = (o) => { const d = createDialog({ ...o, reader: { lineFor: (...a) => o.reader.lineFor(...a), silence: () => o.reader.silence() } }); mods.dialog = d; expose('StageMods', mods); return d }
 
 // Himmel (V-245, färbt mit): Kuppel mit Verlauf skyBottom → skyTop aus den Rollen; Nebel = skyBottom. Wechsel weich (V-011).
@@ -180,7 +197,7 @@ const makeClayV = (o) => { const m = createClayLook(o); mods.clayV = m; return m
 const EDGE_ID = { goblin: 'goblin_bank', atlantis: 'atlantis', comic: 'comic_broadcast', utopia: 'utopia_stage' }
 const edge = SCENE ? EDGES.stages[EDGE_ID[SCENE]] || null : null
 const liftL = (hex, k = 1.1) => { const c = new THREE.Color(hex), hsl = {}; c.getHSL(hsl); c.setHSL(hsl.h, hsl.s, Math.min(1, hsl.l * k)); return '#' + c.getHexString() }
-const GROUND = edge?.edgePalette?.length ? liftL([...edge.edgePalette].sort((a, b) => b.share - a.share)[0].hex) : LINEUP ? '#cdb48c' : (PAL0?.amph?.floor?.[1] || '#9a8a78')
+const GROUND = edge?.edgePalette?.length ? liftL([...edge.edgePalette].sort((a, b) => b.share - a.share)[0].hex) : LINEUP ? '#cdb48c' : (PAL0?.amph?.floor?.[1] || PAL0?.amph?.cols?.[4] || '#9a8a78') // Variante B: Bühnenboden = Sand-Rolle
 // Schattenbereich: Spielfläche der Bühne (Amphitheater-Bühne ⌀ 9,1 m, Meshy-Slot nach Figuren-Zone, Aufstellung weit)
 const FIT = SCENE ? { center: { x: 0, y: 0, z: 0 }, radius: 7 } : LINEUP ? { center: { x: 0, y: 0, z: -4 * K }, radius: 16 } : { center: { x: 0, y: 1, z: -1.2 * K }, radius: 7.6 * K }
 // Stimmungs-Satz: lset=mesa (Standard, Georg 17.10.: Krazy-Kat-Sonntagsseiten, Mesas, laue Abende) | cozy (wärmer, weniger hell) | r2 (J17-Tag nach LIGHT_MODEL_R2)
@@ -188,6 +205,10 @@ const LSET = (/lset=(r2|cozy|mesa)/.exec(hash) || [0, 'mesa'])[1], MOOD_SET = MO
 const RIG = { moods: MOOD_SET, tod: () => lightState.tod, groundColor: () => GROUND, fit: () => FIT, figures: () => [mods.left, mods.right], figureLight: { distance: 4.6 * K, up: 2.6 * K } }
 const makeRig = (o) => { const m = createStageLight(o); mods.light = m; return m }
 const AO = { targets: () => [mods.left, mods.right], strength: 0.42 }
+// Slice 1 · Gelände um Meshy-Bühnen mit Sprenkel-Band (V-341/V-396/V-403); Inseln ohne Gelände; Zonenboden = Boden-Rolle der Bühnenpalette
+const STITCH = SCENE && L1 && edge ? stitchFor(edge, { scale: SCENE_S, floorY_u: MESHY_STAGES[SCENE].floorY }) : null
+const GROUND_OPTS = { stitch: STITCH, zoneColor: PAL0?.amph?.ground || GROUND, seed: SCENE || 'stage' }
+const makeStageGround = (o) => { const m = createStageGround(o); mods.ground = m; return m }
 const makeAO = (o) => { const m = createContactAO(o); mods.blobs = m; return m }
 // Praktische: Meshy-Bühnen aus den Rändern (u → m wie der Slot), Amphitheater = die zwei Billboard-Lampen; Stärke = Rig-glow (nachts Inseln)
 const toMeters = (u) => [u[0] * SCENE_S, (u[1] - MESHY_STAGES[SCENE].floorY) * SCENE_S, u[2] * SCENE_S]
@@ -195,6 +216,17 @@ const SCENE_PRACT = SCENE ? (edge?.practicals || []).map((p) => ({ ...p, pos: to
 const PRACT = { practicals: () => SCENE_PRACT || (mods.billboard?.lampPoints?.() || []).map((pos, i) => ({ id: 'bb-lamp-' + i, type: 'lamp', pos, color: '#ffd9a0', intensity: 1, range: 6 * K, halo: { size: 0.45 * K } })),
   weight: () => moodAt(lightState.tod, MOOD_SET).glow }
 const makePract = (o) => { const m = createPracticals(o); mods.practicals = m; return m }
+// F1 · Leistungsanzeige (V-370-Budget, perfBudget.js): Hash perf → Zeile unten am Rand mit p95, fps, Draw Calls, Dreiecken; kein finales HUD (§44.3)
+const PERF = /(^|[#,])perf(,|$)/.test(hash)
+function PerfOverlay() {
+  const { gl } = useThree()
+  const st = useMemo(() => ({ s: createFrameSampler(600), t: 0, el: null, last: null }), [])
+  useEffect(() => { const d = document.createElement('div'); d.id = 'kfb-perf'; d.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:8px;padding:4px 10px;border-radius:8px;background:rgba(20,16,12,.7);color:#e9f3d8;font:500 11px/1.3 ui-monospace,Menlo,monospace;z-index:8998;pointer-events:none;white-space:nowrap'
+    document.body.appendChild(d); st.el = d; expose('StagePerf', { last: () => st.last }); return () => d.remove() }, [st])
+  useFrame((_, dt) => { st.s.push(dt * 1000); st.t += dt; if (st.t < 0.5 || !st.el) return; st.t = 0
+    st.last = evaluate({ info: { calls: gl.info.render.calls, triangles: gl.info.render.triangles }, frameMs: st.s.samples() }); st.el.textContent = overlayLine(st.last) })
+  return null
+}
 function LightL3() {
   const { gl } = useThree()
   useEffect(() => { const undo = applyTone(gl, L1_TM, 1)
@@ -219,11 +251,15 @@ export default function Stage() {
   // Die Spielerwahl der Bühne: Zurufe des Publikums erscheinen als Blase vorn am Bildrand (Anker „player“ vor der Kamera).
   // Nur solange die Bühne steht; beim Abbau zurück (Prüfer 8, Befund 6: kein Seiteneffekt beim Import).
   useEffect(() => { const prev = playerState.pos.clone(); playerState.pos.set(...PLAYER_POS); return () => { playerState.pos.copy(prev) } }, [])
+  // V-391 Regel 5 · Kandidaten-Vermerk außerhalb des Motivs (V-383: unten rechts am Rand, mit „Sauberes Bild“ ausblendbar)
+  useEffect(() => { const c = [FIGURES.left, FIGURES.right].filter((f) => f?.ok && f.status === 'candidate'); if (!c.length) return undefined
+    const d = document.createElement('div'); d.id = 'kfb-figure-status'; d.style.cssText = 'position:fixed;right:10px;bottom:10px;padding:4px 9px;border-radius:8px;background:rgba(40,28,16,.6);color:#ffe9b8;font:500 11px/1.2 system-ui,sans-serif;z-index:8999;pointer-events:none'
+    d.textContent = [...new Set(c.map((f) => f.id))].join(', ') + ' · Kandidat (Figurenkarte)'; document.body.appendChild(d); return () => d.remove() }, [])
   // Kennzeichnung der Vorschau im Bild (F-3a: nicht ACCEPTED)
   useEffect(() => { if (!PREVIEW) return undefined; const d = document.createElement('div'); d.id = 'kfb-preview-badge'
     d.style.cssText = 'position:fixed;left:16px;top:14px;padding:6px 12px;border-radius:10px;background:rgba(40,28,16,.72);color:#ffe9b8;font:600 15px/1.2 system-ui,sans-serif;z-index:9000;pointer-events:none'
     d.textContent = 'Vorschau-Text · Georgs Fassungen · nicht abgenommen'; document.body.appendChild(d); return () => d.remove() }, [])
-  useEffect(() => { expose('StageCtl', { worldK: K, log: () => ({ amph: { ...amphLog } }), biome: BIOME, card: CARD, cams: STAGE_CAMS, deck: DECK, palette: () => palState.current, palLog: () => palState.log.slice(), sky: () => sky.state(), applyPalette }) }, [])
+  useEffect(() => { expose('StageCtl', { figures: FIGURES, worldK: K, log: () => ({ amph: { ...amphLog } }), biome: BIOME, card: CARD, cams: STAGE_CAMS, deck: DECK, palette: () => palState.current, palLog: () => palState.log.slice(), sky: () => sky.state(), applyPalette }) }, [])
   // Ergebnis der Spielerwahl → Dialog (Store-Ereignis lastChoice)
   useEffect(() => useGame.subscribe((s, p) => { if (s.lastChoice && s.lastChoice !== p.lastChoice) mods.dialog?.onChoice(s.lastChoice) }), [])
   const sun = useMemo(() => [18, 30, 22], [])
@@ -233,6 +269,7 @@ export default function Stage() {
       <fog attach="fog" args={[PAL0?.sky.bottom || '#bcd7ea', 80 * FOG_K, 260 * FOG_K]} />
       <Sky />
       <StageOrbitCam view={CAM_VIEW} />
+      {PERF && <PerfOverlay />}
       {L1 ? <><LightL3 /><ModuleHost create={makeRig} options={RIG} /></> : <>
         <hemisphereLight args={[0xfff4e0, 0x3a3226, 1.25]} />
         <directionalLight position={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-25} shadow-camera-right={25} shadow-camera-top={25} shadow-camera-bottom={-25} shadow-bias={-0.0002} />
@@ -243,6 +280,7 @@ export default function Stage() {
       {ACTORS !== 'none' && <ModuleHost create={makeL} options={L} />}
       {L1 && ACTORS !== 'none' && <ModuleHost create={makeAO} options={AO} />}
       {L1 && <ModuleHost create={makePract} options={PRACT} />}
+      {STITCH && <ModuleHost create={makeStageGround} options={GROUND_OPTS} />}
       {CLAY && ACTORS !== 'none' && <ModuleHost create={makeClay} options={CLAYS} />}
       {ACTORS !== 'none' && <ModuleHost create={makeR} options={R} />}
       {NDIALOG > 0 && <ModuleHost create={makeDialog} options={DIALOG} />}
