@@ -9,3 +9,7 @@ V-399 ist kritisch geprüft. Sicherer R1-Anteil (Galerie/Suche/Quellstatus/Konfl
 **Bitte WS1 den kanonischen Figurenkarten-Consumer plus R2-Lichtmodul mit Pin/Import-API liefern lassen.** WSA kann dann an genau dieser Seam fortsetzen. Georg muss kein weiteres Briefing übertragen. Read-only Guard-/Quellchecks 26/26; UI-Belege und genaue Lückenliste im WSA_DRAMATIS_PERSONAE_R1_RETURN.md. R2/R3 noch nicht umgesetzt; keine source character/figure.json überschrieben.
 
 Production-Control-Anmeldungen: V-390 Return f287cedf-c85b-4d46-8fc7-84d5d5e7d2dd; V-399 Failure Recovery 52e61fec-48a5-4c25-aa31-78afc7d00c5e. Keine WS0-Lesebestätigung behauptet.
+
+## Nachtrag: Georg gibt die lesende v16 frei
+
+Asset Library v16 ist jetzt auf ausdrückliche Freigabe privat veröffentlicht: https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=dramatis-personae. Deployment appgdep_6ad2fbaa012c819182e44b664f32ed5d succeeded, Source b82efaa017e2a5d455ca4e3fd07a3db09f7db273. **3D bleibt gesperrt**, bis WS1 die gemeinsamen Module liefert. Keine Kanondaten, Codeänderungen, R2/R3 oder PR-Merges. Frühere Save-only-Aussagen sind durch diesen Nachtrag ersetzt.

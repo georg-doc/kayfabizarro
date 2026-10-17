@@ -1,5 +1,16 @@
 # WSA Dramatis Personae R1 Return · V-399 · 17.10.2026
 
+## Freigegeben und veröffentlicht · 17.10.2026
+
+Georg hat die lesende Asset Library v16 ausdrücklich zur Veröffentlichung freigegeben, bei unverändert gesperrter 3D-Vorschau. Genau diese Version wurde privat veröffentlicht: `appgprj_6ac1afef08148191b62b95f184bf845e~appgver_b9a5aacc19e88191b9cd8a30c5b62f88`, Quelle `b82efaa017e2a5d455ca4e3fd07a3db09f7db273`, Deployment `appgdep_6ad2fbaa012c819182e44b664f32ed5d`, native Status `succeeded` (2026-10-17T04:38:20Z).
+
+**Veröffentlichter Tab:** https://kfb-asset-librarian.frizzlebob.chatgpt.site/?view=dramatis-personae
+
+Direkt: `&character=frizzlebob` bzw. `&character=lord_hunky`. Lesend; kein R2-Speichern, keine R3-Autorenschaft, kein Modell-/Privatlicht-Fallback. Alle 13 3D-Vorschauen bleiben gesperrt, bis der gemeinsame Figurenkarten-Consumer und das R2-Lichtmodul von WS1 geliefert sind. Kartenfreigaben bleiben unverändert. Keine neue Site, keine Codeänderung und kein Merge von PR #414. Native Deploymentbestätigung ist vorhanden; eine neue Browser-Sichtprüfung wird nicht behauptet.
+
+Der folgende ursprüngliche Return dokumentiert den Stand vor Georgs Freigabe. Seine Save-only-/Nicht-veröffentlicht-Aussagen sind für v16 durch diese Aktualisierung ersetzt; der 3D-STOP und die offenen Anforderungen gelten weiter.
+
+
 ## Ergebnis und kritische Briefprüfung
 
 **Sicherer lesender Anteil vorbereitet; vollständiges R1 mit 3D ist NICHT fertig.** Keine neue Site und kein neues Werkzeug: derselbe Asset-Library-Owner `appgprj_6ac1afef08148191b62b95f184bf845e`, neue Tab-Routingoption `?view=dramatis-personae`, optional `&character=frizzlebob` oder `&character=lord_hunky`.
