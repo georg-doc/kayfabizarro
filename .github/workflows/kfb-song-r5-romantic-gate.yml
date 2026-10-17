@@ -1,0 +1,32 @@
+name: KFB Romantic R5 Original Gate Contract Check
+on:
+  push:
+    branches: ["songs/romantic_kayfabe-r5-2026-10-17"]
+permissions:
+  contents: read
+jobs:
+  r5-canonical:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch previous R4 and R5 songs
+        shell: bash
+        run: |
+          mkdir -p .song-corpus
+          for b in songs/1001_kayfabe_nights-r4-2026-10-17 songs/frizzlebob_bloedsinnland_alice-r4-2026-10-17 songs/the_carnival_of_unsolved_problems_therapy-r4-2026-10-17 songs/dream_wrestling_with_kayfabe_freud-r4-2026-10-17 songs/the_kayfabe_money_trail_9_11-r4-2026-10-17 songs/federal_kayfabe-r5-2026-10-17 songs/grimms_kayfabe_legends_expansion_set_02-r5-2026-10-17 songs/kayfabizarro_monopolies_manipulation_murder_vol-r5-2026-10-17 songs/geopolitical_thrillers_conspiracy_theories-r5-2026-10-17; do
+            git fetch --depth=1 origin "refs/heads/${b}:refs/remotes/origin/${b}"
+            git ls-tree -r --name-only "refs/remotes/origin/${b}" | grep '\.suno\.txt$' | while IFS= read -r p; do
+              git show "refs/remotes/origin/${b}:$p" > ".song-corpus/$(echo "${b}" | tr / _)-$(basename "$p")"
+            done
+          done
+      - name: Original triplet source gate part one - known image vocabulary gap
+        run: python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py songs/romantic_kayfabe/romantic_kayfabe.r5.qa.deck.json songs/romantic_kayfabe/romantic_kayfabe.part1.r5.qa.set.csv
+      - name: Original lyric gate part one - independently report despite triplet result
+        if: always()
+        run: python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/romantic_kayfabe/romantic_kayfabe.part1.r5.suno.txt --deck registry/assets/v1/decks/romantic_kayfabe.json --songlines songs/romantic_kayfabe/romantic_kayfabe.songlines.json --media media/kfb/Romantic_Kayfabe_-_ADD_web.pdf.json --cards 1-28 --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2 .song-corpus
+      - name: Original triplet source gate part two
+        if: always()
+        run: python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py songs/romantic_kayfabe/romantic_kayfabe.r5.qa.deck.json songs/romantic_kayfabe/romantic_kayfabe.part2.r5.qa.set.csv
+      - name: Original lyric gate part two
+        if: always()
+        run: python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/romantic_kayfabe/romantic_kayfabe.part2.r5.suno.txt --deck registry/assets/v1/decks/romantic_kayfabe.json --songlines songs/romantic_kayfabe/romantic_kayfabe.songlines.json --media media/kfb/Romantic_Kayfabe_-_ADD_web.pdf.json --cards 29-56 --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2 .song-corpus
