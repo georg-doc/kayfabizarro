@@ -1,0 +1,28 @@
+# WSA → WS0 · V-418 R3.1 five-deck song correction · 2026-10-17
+
+**STATUS:** FOUR R3.1 MECHANICAL PASS · 9/11 TWO-TRACK SOURCE/FORMAT PASS, A5/A7 SPEC COLLISION FAIL · ALL BLIND REVIEWS PENDING. No Hub submission, audio, PR, Stage, merge or Live.
+
+**Binding single rule source:** [SONG_SPEC_R3.md](../SONG_SPEC_R3.md), version R3.1 blob `3a6ea19c0c30c4c9430decc1c739dbbb5a294f60`. Golden Georg take05 `a7339bae42f012aef2f06675c83f298cfa633372`. Original 2026-10-17 R4 candidates preserved, distinct R4.1 files added. Existing runtime/owner `kfb-triplets` only.
+
+| Deck | GitHub branch + verified head | R3.1 candidate | Actions (real) | songLine | Verdict |
+|---|---|---|---|---|---|
+| 1001 Kayfabe Nights | `songs/1001_kayfabe_nights-r4-2026-10-17` @ `d13050ba500867ac088854abab8bd80bde4d9b34` | `songs/1001_kayfabe_nights/1001_kayfabe_nights.r4.1.suno.txt` · 56 lines · 4987 chars | [39031905120](https://github.com/georg-doc/kayfabizarro/actions/runs/39031905120) checker SUCCESS, format SUCCESS | 1/56 | MECHANICAL PASS |
+| Alice / BlödsinnLand | `songs/frizzlebob_bloedsinnland_alice-r4-2026-10-17` @ `c5a6cdf1aa2e3a3666dd409153a125c24603cb6b` | `songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r4.1.suno.txt` · 30 lines · 3090 chars | [39031723503](https://github.com/georg-doc/kayfabizarro/actions/runs/39031723503) checker SUCCESS, format SUCCESS | 1/30 | MECHANICAL PASS |
+| Carnival / Therapy | `songs/the_carnival_of_unsolved_problems_therapy-r4-2026-10-17` @ `790a965003b63e2c5a5ec47917bdc7931386095c` | `songs/the_carnival_of_unsolved_problems_therapy/the_carnival_of_unsolved_problems_therapy.r4.1.suno.txt` · 47 lines · 4740 chars | [39031803248](https://github.com/georg-doc/kayfabizarro/actions/runs/39031803248) checker SUCCESS, format SUCCESS | 1/47 | MECHANICAL PASS |
+| Dream-Wrestling / Freud | `songs/dream_wrestling_with_kayfabe_freud-r4-2026-10-17` @ `7e0ead9c3a8d9f7b09800463127c1a312a03d448` | `songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.r4.1.suno.txt` · 52 lines · 4878 chars | [39032118683](https://github.com/georg-doc/kayfabizarro/actions/runs/39032118683) checker SUCCESS, format SUCCESS | 3/52 | MECHANICAL PASS |
+| The Kayfabe Money Trail 9/11 | `songs/the_kayfabe_money_trail_9_11-r4-2026-10-17` @ `73e9d0353903fb953d229289c6efdd0e6ba6a0e2` | `songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.part1.r4.1.suno.txt` 28 lines / 2679 chars, `.part2.r4.1.suno.txt` 32 lines / 3072 chars, page 7/8 split | [39032451068](https://github.com/georg-doc/kayfabizarro/actions/runs/39032451068) checker Part 1 SUCCESS, checker Part 2 SUCCESS, both format SUCCESS, A5 quota FAILURE | **31/60 = 51.67%** | SPEC GATE FAIL |
+
+**Scope and corrections:** A6: removed German and staging bracket labels; A7: wrote out numbers, amounts, times and symbols in lyrics and logged mandatory songLines; A8: removed game-engine terms and mechanics from sung card beats; E16b: `The Giant` without `cannibal`, 9/11 SPC International without remote flight technology; 9/11 victim lines sober and no who-flew hints; C12b: split after page seven, retaining all 60. R3.1 format checks enforce 80–95 core chars, blank beats, source-aware lexical donor, no spoken brackets or digits, under 5000 per track. Lexical checker is the shipped ORIGINAL `triplet_set_check.py`, run with an **explicitly derived** QA fixture: staged title aliases and vocabulary from original card fields/PDF-JSON artworkPrompt plus numeric pronunciation spellings. Neither canonical printed cards nor original PDF JSON were edited. Alice remains OCR-provisional, no new PDF visual verification is claimed.
+
+**Exact unresolved contradiction:** R3.1 A7 requires each number/symbol conversion to be logged as a `songLine`; 9/11 has 31 numbered/symbolic source lines. R3.1 A5 permits at most 10% songLines. The source and format tests are now GREEN; the last GitHub CI step deliberately FAILS the quota. No unilateral exemption, no silently dropped numbered cards. 9/11 not eligible for blind review/Hub.
+
+**Blind review integrity:** `blindreview.md` on each song branch contains judge-only deck description + exact R4.1 lyrics for the four passing candidates; the 9/11 file marks BLOCKED. **Independent reviewers actually executed = 0; scores = 0; writer post-review revisions = 0.** Reviewer must return ratings, observations and flags ONLY, without proposing text. A self-review would not count.
+
+**Actual tests:** 4 × (original lexical SUCCESS + R3.1 format SUCCESS) = 8 PASS; 9/11 (two original lexical SUCCESS + two-track format SUCCESS + quota FAIL) = 3 PASS / 1 FAIL. **Total 11 green named CI steps and 1 failing quota step.** Every owner branch head and candidate/Return files was fetched after persistence. Unverified: PDF page image visual inspection in this run, independent song quality, human approval, audio/Suno, published Hub.
+
+## Additive changelog · R3.1
+- V-418 implementation: A6/A7/A8/E16b corrections preserved alongside original R4; 9/11 restructured without dropped cards.
+- V-418 executed evidence: four songs mechanical PASS, 9/11 split technical PASS and mandatory songLine quota FAIL; all evidence written into owning song Returns.
+- Unchanged: original printed card truth, card registry, source PDFs/JSON, plugin runtime owner, Golden take05, branch merge state.
+
+**ONE NEXT GATE:** `WS0_V418_R31_EDITORIAL_GATE` — WS0 must resolve A5 versus compulsory A7 song spelling in the ONE canonical SONG_SPEC, and route four already mechanically passing songs to a genuinely independent scores/flags-only reviewer. Then (only after real reviewer notes) permit ONE writer-room revision and WS0 checks before any Hub submission. 
