@@ -5,3 +5,10 @@ B: 30/30 card lines in 80–95 characters; 15/30 distinct opener tags; 30/30 bla
 Python gate: PENDING GITHUB ACTION (exact shipped plugin script included). This is a candidate until exit 0; no Hub submission.
 Blind review: PENDING external independent judge; not scored by writer.
 Golden regression: structural comparison intended against epistemic_sabotage.take05.final.suno.txt; no accepted human verdict claimed.
+
+## Executed GitHub Actions gate
+Run: https://github.com/georg-doc/kayfabizarro/actions/runs/39028397112
+Original candidate head: c8ae9d8351d00d13813492d0d9d45d2ddf450dc5
+Exact plugin triplet_set_check.py: EXIT 0 (SUCCESS)
+R4 format_gate.py: EXIT 0 (SUCCESS)
+Combined job: SUCCESS. Source lexical QA fixture explicitly derived for §A artwork terms; this does not replace independent creative review.

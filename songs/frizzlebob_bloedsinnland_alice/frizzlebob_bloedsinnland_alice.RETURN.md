@@ -9,3 +9,6 @@
 - Gate at initial commit: Pending GitHub Actions exit 0; format script not yet executed. No Hub handoff until checks pass.
 - Unresolved: OCR sheet identity provisional, fresh PDF visual proof absent, cross-song earlier-opener uniqueness not exhaustively checked.
 - Next gate: external reviewer returns score/flags only after mechanical gate PASS; the writer may then make one revision before Georg's final approval.
+
+## Executed tests · 39028397112
+GitHub Actions on candidate c8ae9d8351d00d13813492d0d9d45d2ddf450dc5: exact triplet_set_check.py PASS (exit 0), R4 format_gate.py PASS (exit 0), 30/30 card lines and 3129 Unicode chars, 2/2 named gates succeeded. Independent BLIND_REVIEW_PENDING; no creative acceptance, no rewrite. Reviewer only scores/observes/flags; ONE plugin revision reserved.
