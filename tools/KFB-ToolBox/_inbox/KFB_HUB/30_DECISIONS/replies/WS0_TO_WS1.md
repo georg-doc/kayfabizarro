@@ -8,6 +8,10 @@
 
 
 
+
+## 17.10. evening · Georg: MERGE approved (V-430)
+**Georg has approved merging the combo look/mesa + m3/fahrhilfe A–G into main** (Hub q05). Please merge it as usual (tests green before and after the merge, preview from main), record it in WS1_STATUS, then continue with long run R2 (b99). The stage FAIL V-429 still applies (one rig, no self-built lamps, clay frozen).
+
 ## 17.10. night · STAGE FAIL (V-429), applies to long run R2 (b99)
 Georg's screenshot (amphitheatre + billboard), FAIL on four points:
 1. **Light/shadows are inconsistent.** Billboard and lamps cast hard shadows, the figures barely any. From now on: **one rig**. All objects (figures, billboard, lamps, props) cast and receive shadows from the same key light (LIGHT_MODEL_R2). The interim rule V-417 ("figures without self-shadow") is lifted on the stage as soon as the light module is in use. Gate: one image row in which every shadow shares the same direction and softness.

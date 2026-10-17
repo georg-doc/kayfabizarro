@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-430: Georg im Hub: WS1-Kombi Merge frei; Schritte-Probe FAIL (Hammerstampfen, zu schnell, Knöpfe kaputt) → ElevenLabs HOLD; B15 Rand FAIL → vorherige Fassung; Anzug r2 TUNE (pixelige Hemdränder, Zylinder, Hose); Lampen TUNE (klassische Billboard-Arme, gleichmäßiger Lichtfleck). 24. Nachtrag an WSB, WS1-Notiz, WSA-Brief Ton-Studio.
 - WSB B12 r2 (Anzug auf CharacterTemplate, Kleidung gemalt, 5 Varianten + FB-Smoking) und B22 (3 CC0-Lampen aus Paketen: Flutlicht Poly Haven, Baustrahler + Laterne Kenney) gesichtet, im Hub als q09/q10 zur Entscheidung.
 - V-429 FAIL Bühnen-Vorschau: ein Licht-Rig für alle Schatten (WS1), keine Eigenbau-Lampen (WSB B22), zentrales Knet-Modul kfb-clay.v1 mit Ebenen-Profilen + Golden-Test (WS0-Agent), Sprenkel C4 vorziehen.
 - V-428: Anzug auf KayKit CharacterTemplate, Kleidung aufgemalt, nur Fliege/Zylinder/Monokel/Zigarre/Frack-Schöße modelliert (22. Nachtrag, Hub q01 beantwortet).

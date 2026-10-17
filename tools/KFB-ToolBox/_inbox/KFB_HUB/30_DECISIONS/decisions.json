@@ -5949,6 +5949,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-430",
+   "date": "2026-10-17",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Georgs Hub-Antworten 17.10. abends: (1) WS1-Kombi look/mesa + m3/fahrhilfe A–G: MERGE nach main freigegeben. (2) Schritte-Probe Ton-Studio FAIL: nur nerviges Hammer-/Maschinenstampfen, viel zu schnell, null immersiv; Knöpfe der Seite funktionieren nicht → ElevenLabs bleibt HOLD. (3) WSB Runde 2: Rand-TUNE B15 FAIL (zu klobig, kein gutes Design) → vorherige Fassung (edge80-Rand, Dory r7/Hunky edge80) verwenden, später sauber cartoon-logisch modellieren. (4) Anzug r2 TUNE: Anzug gut; Hemdränder/Brust pixelig, Zylinder sitzt nicht auf dem Kopf, Hose in großer Ansicht schwarz/verschwunden. (5) Billboard-Lampen TUNE: Licht in allen Varianten unsinnig, leuchtet das Billboard nicht cartoon-logisch sauber aus. (6) Tränke/Hexen-Station wie vorgeschlagen.",
+   "values": {},
+   "owner": "WS1 (Merge) · WSA (Ton-Studio) · WSB (B12, B15, B22)",
+   "check": "je Punkt Proof, WS0 prüft vor Georg",
+   "source": "Hub q05–q10",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Abnahmen mit Bild und Link im Hub; klare Rückmeldung je Punkt.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6036,7 +6051,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:770",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:772",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
