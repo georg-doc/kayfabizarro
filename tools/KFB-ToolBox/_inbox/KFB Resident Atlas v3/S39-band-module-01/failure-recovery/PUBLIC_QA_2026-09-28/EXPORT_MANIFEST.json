@@ -1,0 +1,62 @@
+{
+  "schema": "kfb.failure-recovery-export/1",
+  "project": "RESIDENT-BAND-MODULE-01 public QA harness",
+  "exportRevision": "2026-09-28-r1",
+  "status": "ARCHIVED_FAILED_CANDIDATE",
+  "moduleStatus": "RETAINED_RESIDENT_CANDIDATE",
+  "owner": {
+    "repo": "georg-doc/kayfabizarro",
+    "branch": "chatgpt-web/resident-band-module-01-2026-09-28",
+    "pr": 277,
+    "path": "tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01"
+  },
+  "entrypoints": [
+    "tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/KFB_Resident_Atlas_S8.html#__band",
+    "https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band"
+  ],
+  "sourceFiles": [
+    "tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/KFB_Resident_Atlas_S8.html",
+    "tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/lib/band-module.js",
+    "tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/lib/band-workshop.js",
+    "tools/KFB-ToolBox/_inbox/KFB Resident Atlas v3/S39-band-module-01/data/resident-band-module-01.json",
+    ".github/workflows/resident-band-module-01-public.yml"
+  ],
+  "evidence": [
+    {
+      "run": 36398578326,
+      "result": "21/23 FAIL",
+      "artifact": 10959452416
+    },
+    {
+      "run": 36398674762,
+      "result": "21/23 FAIL",
+      "artifact": 10959143954,
+      "files": [
+        "report.json",
+        "check.mjs",
+        "01-band-loaded.png"
+      ]
+    }
+  ],
+  "missing": [
+    "02-drummer-strike-r.png: screenshot timeout",
+    "03-hub-card.png: Hub step not reached",
+    "public Hub semantic proof: not executed"
+  ],
+  "sourceIdentity": {
+    "stageHtmlGitBlob": "ee56b1556ca2c25c3d859b639ff224b0f0b6d21c",
+    "bandDefinitionGitBlob": "f9ac5ca71738562e5fee25e94d97daf255bed235",
+    "songGitBlob": "368eb5ae8fafcfba1cce3ba3f80488378fe056b0",
+    "stageSnapshotCommit": "b6a8c7a43989493e6699303f705096004dcd14d1",
+    "publicationHeadObserved": "b5d5c85f1ad155a39058b8a73ab4680817dc5fe9"
+  },
+  "zip": {
+    "status": "NOT_CREATED_IN_REPO",
+    "reason": "Editable source is already versioned at the owner path; exact browser report/screenshot bytes are preserved as GitHub Actions artifacts. Duplicating runtime into a ZIP would create a second source owner."
+  },
+  "start": {
+    "command": null,
+    "url": "https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band",
+    "notes": "Read RECOVERY.md. Do not rerun unchanged QA."
+  }
+}

@@ -1,6 +1,23 @@
 # RESIDENT-BAND-MODULE-01 · KayfaBizarros Orc Band ohne Grundplatte · 2026-09-24
 
-Status: **candidate-only · wartet auf Georgs Blick und Handpose.** Kein Push, kein Deployment.
+Status: **Public Stage runtime reached · public QA frozen after 2 attempts · Hub-link public proof open · wartet auf Georgs Trommler-Handpose.** Keine Human-Abnahme, kein Live-Promote.ne Human-Abnahme, kein Live-Promote.
+
+> **S39f · 2026-09-28 · Public QA frozen after two attempts.** GitHub Actions opened the exact
+> Cloudflare Stage twice and proved the real S8 runtime, song identity, Play/Pause and R-strike hold.
+> Both runs ended 21/23 because the QA harness demanded exactly three performers although S39 has
+> the documented optional trumpeter extension, and omitted the stable `resident-module:` root prefix.
+> After all 23 Stage checks, screenshot #2 timed out before the Hub-link proof. Per two-pass rule:
+> no third attempt in this slice. Runtime/data stay unchanged; recovery lives under
+> `failure-recovery/PUBLIC_QA_2026-09-28/`.
+
+> **S39e · 2026-09-28 · Recovery / Pose Gate.** Der bestehende S39/S8-Owner wurde unverändert als
+> Stage-Snapshot gespiegelt: `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band`.
+> `index.html` ist byte-identisch mit `KFB_Resident_Atlas_S8.html`; die Band-Definition ist
+> ebenfalls byte-identisch. Der einzige Acceptance-Blocker ist weiterhin
+> `posePatches.drummer: null`: Georg setzt die reale Kontaktpose am gemessenen Schlagbild.
+> Danach 48-Frame-Konstanttest; nur bei zeitabhängiger Abweichung geht der exakte Delta-Befund an
+> `POSE-TO-BLENDER-01`. Kein neuer Arm-zu-Trommel-Solver. Public HTTP konnte in diesem Chat nicht
+> verifiziert werden und bleibt deshalb UNKNOWN.
 
 > **S39b · Arbeitsplatz ist jetzt `KFB_Resident_Atlas_S8.html#__band`.** Die eigenständige
 > DC-Seite unten ist SUPERSEDED. In S8: Klick auf Arm oder Körper greift den Bone, Klick auf eine
@@ -15,10 +32,10 @@ Es bringt **keine Grundplatte** mit: das `Ground`-Mesh aus ORB-P1 wird nicht ref
 Der Host gibt einen Ankerpunkt auf SEINER Fläche. Das Modul setzt seinen Stützpunkt (lokal y = 0)
 dorthin. Die Uhr gibt auch der Host.
 
-- Review: `KFB Resident Band Module 01.dc.html`
+- Aktueller Review/Authoring-Host: `KFB_Resident_Atlas_S8.html#__band` · Stage-Ziel `https://kayfabizarro.pages.dev/kfb-hub/stage/resident-atlas/band/#__band`
 - Definition: `data/resident-band-module-01.json` (`kfb.resident-band-module/1`)
 - Laufzeit: `lib/band-module.js` · `mountBandModule(def, { parent, anchor })` → `{ root, update(beatPos), place(), dispose() }`
-- Review-Host: `lib/band-review.js`, Werkzeuge aus S7 wiederverwendet (`edit-layer`, `rigwork`-Puppe, `studio`)
+- Review-Host: S8 integriert die bestehenden S7-Werkzeuge (`edit-layer`, `rigwork`-Puppe, `studio`) plus Band-Workshop/IK; die alte `lib/band-review.js`-Standalone-Seite ist superseded
 - Sonden: `tools/band-module-probe.html` (Quellen, Clips, Blob), `tools/band-module-smoke.html` (Laufzeit ohne Oberfläche)
 
 ## Quellen (gemessen)

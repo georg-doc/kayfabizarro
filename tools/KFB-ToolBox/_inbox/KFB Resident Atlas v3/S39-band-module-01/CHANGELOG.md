@@ -4,6 +4,33 @@ Nur Zuwachs. Ältere Einträge bleiben stehen.
 
 ---
 
+## S39f · 2026-09-28 · Public browser evidence + two-pass recovery freeze
+
+- Added exact Pages proof workflow `.github/workflows/resident-band-module-01-public.yml`.
+- Runs `36398578326` and `36398674762`: both **21/23 FAIL**.
+- Both attempts: exact Stage HTTP 200, correct build marker, song identity, Play/Pause + R strike hold, 0 failed Stage HTTP assets.
+- Two failures are proven QA mismatches: optional trumpeter versus exact-three assertion; runtime root prefix versus shortened expected id.
+- Screenshot #2 timed out after all 23 Stage checks; Hub public-link proof never ran.
+- Two-pass rule: no third attempt here.
+- Full recovery export: `failure-recovery/PUBLIC_QA_2026-09-28/`.
+- Resident runtime/data remain untouched; `posePatches.drummer` remains null for Georg's hand-pose gate.
+
+---
+
+## S39e · 2026-09-28 · Recovery + Stage Drummer-Pose-Gate
+
+- **Kein Neubau.** GitHub-Recovery bestätigt S39 als vorhandenen Resident-Owner. S8 bleibt die Autoring-Oberfläche; ToolBox/S9 konsumieren diesen Donor nur.
+- Neuer enger Resident-Owner: Draft PR #277 · `chatgpt-web/resident-band-module-01-2026-09-28`.
+- Current static gate: **26/26 PASS**; exacte Figuren-/Prop-/Song-/Clock-/Root-/Deep-Link-Verträge geprüft.
+- Stage-Snapshot wurde ohne Ersatz-Viewer auf `cloudflare-live` geschrieben: S8-HTML blob `ee56b155…` und Band-Definition blob `f9ac5ca7…` sind byte-identisch zum Owner.
+- Publication checkpoints: Resident snapshot `b6a8c7a43989…`; nach Hub-Sync `cloudflare-live@b5d5c85f1ad1…`.
+- Current Hub source PR #269 @ `057d74fff44e…`: alter Orc-Band-POC-Slot in place ersetzt durch **Resident Band · Drummer-Pose setzen** mit fixed Stage route.
+- Public HTTP verification bleibt **UNKNOWN**: der verfügbare Fetch-Layer konnte weder die neue Route noch den bekannten Hub-Root öffnen; kein `PUBLIC_VERIFIED`-Claim.
+- `posePatches.drummer` bleibt absichtlich `null`. Nächster und einziger Gate: Georg setzt am gemessenen v5c-Schlagbild die Kontaktpose; danach 48-Frame-Konstanttest oder exakter `POSE-TO-BLENDER-01`-Delta.
+- `kfb-web-push` war nicht als Connector/Repo-Helper auffindbar; einmaliger repository-nativer Git-Tree/Commit-Fallback wurde verwendet.
+
+---
+
 ## S39d · 2026-09-24 · Motion Library per URL · Trompete „in der Pfote" · Trompeter-Groove
 
 - Die Motion Library kommt jetzt von GitHub, PR #209 @ `f91c4e0f`. Die geladene Datei ist
