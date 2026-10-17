@@ -90,5 +90,5 @@ Eyes: KFB eye rig (anchors). The sunglasses variant may cover the eyes; the eye 
 Georg's screenshot from ToolBox-Studio: Dory's head oval is not rounded, and the lower head has defective shading and a seam (mouth area / underside). This was already Blender run R1 part A ("closed, clean oval head; integrate the jagged mouth patch into the head surface; clean normals"). It is evidently not fully done in r4.
 - Source: `media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/LadyDory_RigMedium.toolbox.r4.glb` (branch `assets/kfb-blender-run-r1-2026-10-16`).
 - Make the head a **soft, closed oval** (no flat or dented areas, no facets). Close the **lower head and mouth area seamlessly**: one surface, clean normals, no hard edge, no shading jumps.
-- ~~Socket shell to 1.10 R~~ **cancelled (V-420):** the socket shape stays exactly as in r4. Later the socket only moves rigidly backward by d R (d comes from WS0 after Georg chooses).
+- ~~Socket shell to 1.10 R~~ cancelled (V-420). **Socket edge 80° PASS (V-422):** start from `replies/E2_ATTACH_R1/assets/variants/LadyDory_edge80.r4e.glb`, blend the rim into the stalk at the bottom; rim TUNE as job B15 (see 15th addendum in ANTWORT_WS0_2026-10-17.md).
 - Proof with clay: front/¾/side/underside close-up, before vs. after. Output `LadyDory_RigMedium.toolbox.r5.glb` + RETURN.

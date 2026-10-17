@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+
+## 17.10. · E2 eyelids and sockets for the aliens PASS (V-422)
+- Module: `replies/E2_ATTACH_R1/clay-skin-attach.v1.js` (+ `clay-eyelid.v3.js`), eyeForward 0, fit from the recipe (Hunky 1.10 R, Dory 1.014 R). v6 lid shells are completely hidden.
+- Figures: `replies/E2_ATTACH_R1/assets/variants/*_edge80.r4e.glb` (socket edge at 80°, socket design unchanged). WSB later delivers Dory r5 (rim blended into the stalk) and B15 (organic rim).
+- Integrate them together with the figure-card loader (b90). Do not build your own lid or socket shapes. Reference: `proof_r1e.html?edge=80`.
+
 ## 17.10.2026 · Augenlider E2 für alle Figuren – ein gemeinsames Modul (V-417/V-348)
 Nicht selbst bauen: WS0 baut `clay-skin-attach.v1.js` (E2 = dünne geschlossene Lidhaut statt der v6-Lidschalen) mit Beweis-Seite gegen das Referenzbild `replies/E2_REFERENCE/E2_approved_closed_lid_skin.png`, Ablage `replies/E2_ATTACH_R1/`. Danach vendort WS1 genau dieses Modul für alle Figuren mit EyeRig (V-348 „gleiches Prinzip für alle“); bis dahin nichts an den Lidern ändern. Bild-Abnahme durch WS0 vor Georg.
 

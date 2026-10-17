@@ -5844,6 +5844,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-422",
+   "date": "2026-10-17",
+   "area": "Augen",
+   "verdict": "PASS",
+   "text": "E2-Augensockel R1e PASS mit späterem TUNE (Georg 17.10., Screenshot Sockelrand 80°, Passung Rezept Hunky 1,10 R / Dory 1,014 R): Sockel unverändert (Kugel, Randprofil), Öffnungskante von ~54° auf 80° zurückgenommen; E2-Lidhaut über clay-skin-attach.v1.js (eyeForward 0). Referenz-GLBs: replies/E2_ATTACH_R1/assets/variants/*_edge80.r4e.glb. TUNE später: Randwulst organischer – leicht gebogen statt gerader technischer Ring, unten etwas dicker. Offen: bei Dory trifft der 80°-Rand unten ihren Stielansatz → WSB verschleift organisch. Stopp für WSA (b93) aufgehoben; WSB backt 80° in B14/B14b; WS1 bindet Modul + GLBs mit den Figurenkarten ein.",
+   "values": {},
+   "owner": "WSA work · WSB · WS1",
+   "check": "ToolBox-Bild mit WS0-Prüfung, dann Georg; TUNE Rand als WSB-Job",
+   "source": "replies/E2_ATTACH_R1/proof_r1e.html · evidence/*_r1e.png",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Mehr Augapfel von der Seite bei unverändertem Sockel-Design; starre Verschiebung und Browser-Verbiegung waren falsch, erst der Neubau der Kante mit identischem Randprofil traf Georgs Satz.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5916,7 +5931,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:751",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:753",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,6 +1,6 @@
 # Brief WSA work · ToolBox-Studio: E2 eyelids for the aliens + shadow seam (V-417) · 17.10.2026
 
-> **STOP (V-420, 17.10.):** do not integrate E2 or change any socket values until WS0 sends module version and d after Georg approves proof R1c. The socket stays exactly as in r4 (Dory too, no 1.10 R). Only change later: the socket moves rigidly backward by d R.
+> **STOP LIFTED (V-422, 17.10.):** Georg passed the socket edge at 80°. Integrate exactly: module `replies/E2_ATTACH_R1/clay-skin-attach.v1.js` (+ `clay-eyelid.v3.js`), eyeForward 0, fit = recipe (Hunky 1.10 R, Dory 1.014 R, do not change the shellRadius), figures `replies/E2_ATTACH_R1/assets/variants/LordHunky_edge80.r4e.glb` / `LadyDory_edge80.r4e.glb` (GitHub register branch, same path under `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/`). Reference look: `proof_r1e.html?edge=80`. Nothing else changes; a WS0 image check before Georg.
 
 **Tier 0:** figures only from their figure card (KFB eye rig + clay) · light only from the stage light module · a known failure means stop and report. **Your blocks:** [Figure] + [Stage/light].
 
