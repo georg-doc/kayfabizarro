@@ -1,0 +1,16 @@
+name: KFB Freud R4 lyric gate
+on:
+  push:
+    branches:
+      - "songs/dream_wrestling_with_kayfabe_freud-r4-2026-10-17"
+permissions:
+  contents: read
+jobs:
+  r4_gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact plugin triplet_set_check.py
+        run: python3 songs/dream_wrestling_with_kayfabe_freud/triplet_set_check.py songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.qa.deck.json songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.qa.set.csv
+      - name: R4 format check
+        run: python3 songs/dream_wrestling_with_kayfabe_freud/format_gate.py
