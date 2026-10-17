@@ -29,3 +29,12 @@ KayKit Character Animations 1.1, Mannequin_Medium, Rig_Medium General / Movement
 45 Hz highpass, restrained 1.5–2.1 kHz lowpass, gentle low-mid shelf, conservative peak trim, 6 ms onset fade, no immediate sample repeat. No synthetic placeholder sound. Subjective cosy/clay quality still needs Georg's listening decision; no HUMAN_ACCEPTED claim.
 
 ElevenLabs community Explore exists, but no free commercial/API entitlement is assumed; not used in this proof.
+# R2 · V-430 · 2026-10-17
+
+Active R2 playback uses only Kenney Impact Sounds (publisher CC0, https://kenney.nl/assets/impact-sounds).
+Five unique OGG files in each bank: snow → sand interpretation; concrete → muted stone; wood → muted wood; grass → wet-clay interpretation.
+The latter is processed grass foley, NOT a clay field recording. No provider generation. Runtime treatment: 65 Hz highpass, 650–1100 Hz lowpass, 10 ms attack, 190–240 ms decaying tail, output peak ceiling below 0.055, ±3% pitch, no immediate donor repeat.
+Old Chequered Ink and heavy-impact files are retained as historical V-389 evidence only; R2 never decodes or plays them.
+Medium and Large are original KayKit Mannequin source objects with their matching native Rig_Medium / Rig_Large clips, under the included original KayKit CC0 licence. No character retargeting or new model generation.
+Exact added source hashes are in sources.json r2Rows. Optional game-dev CLI unavailable; repository-native checks used. No paid calls.
+
