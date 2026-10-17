@@ -22,9 +22,11 @@ import ModuleHost from '../ModuleHost'
 import { StageOrbitCam, ORBIT } from '../StageOrbitCam'
 import { KAYKIT, FB } from '../actors/stageCast'
 import M1Loop from './M1Loop'
+import M2Car, { M2_ON, M2STATE } from '../m2/M2Car'
 import M1Player, { FOOT, START, M1INPUT, M1MOVE, M1BOUNDS, M1CAM } from './M1Player'
 import { STAGE_CAMS, STAGE_MARKS } from '../Stage'
 import { M1CLOCK, STEP } from './m1Clock'
+import { K, G } from './m1Scale.js'
 import { trimeshOf, amphModelOf, worldPosOf, trackDialog, keyList, rankFence, FENCE_TAG, rampVerts } from './m1Host'
 import { createSky, skyLog } from '../modules/m1-sky'
 import { createTerrain, TERRAIN, terrainLog } from '../modules/m1-terrain'
@@ -33,6 +35,8 @@ import { locoActorLog } from '../modules/m1-locoActor'
 import { faceActorLog } from '../modules/faceMountActor'
 import { eyeActorLog } from '../modules/eyeActor'
 import { createBillboard, BIOMES, billboardLog } from '../modules/billboard'
+import { createContactBlobs } from '../modules/contactBlob'
+import { followShadow, lightAt } from '../stageLight'
 import { createActor } from '../actors/actorSlot'
 import { createDialog } from '../modules/dialog'
 import BubbleHost from '../BubbleHost'
@@ -51,9 +55,9 @@ const BIOME = BIOMES[1] // wie #stage (Moos-Insel), bis WS0 Biom/Kartenzone der 
 // Brennweite wie #stage (Stage.jsx Cam: fov 38).
 const STAGE_CAM = STAGE_CAMS.near, STAGE_FOV = 38
 const STAGE_VIEW = { pos: STAGE_CAM.pos, target: STAGE_CAM.target, fov: STAGE_FOV }
-const MK = (m) => [m.x, m.z, m.yaw]
+const MK = (m) => [m.x * K, m.z * K, m.yaw] // V-345: STAGE_MARKS sind alte WS1-Bühnenmeter (Stage rechnet sie selbst × K), STAGE_CAMS schon J17
 const MARK = { left: MK(STAGE_MARKS.near.left), right: MK(STAGE_MARKS.near.right) }
-const STAGE_TRIGGER = { r: 6.2, leaveR: 9.5, maxDy: 0.9 } // Bühnenfläche ≈ 14 m (Innenkreis); Auslösen innerhalb 6,2 m um die Mitte, nur am Boden
+const STAGE_TRIGGER = { r: 6.2 * K, leaveR: 9.5 * K, maxDy: 0.9 * K } // Bühnenfläche ≈ 14 m (Innenkreis); Auslösen innerhalb 6,2 m um die Mitte, nur am Boden
 const NCARDS = Math.max(1, +(/cards=(\d+)/.exec(hash)?.[1] || 2))
 const di = DECKS.findIndex((d) => d.id === 'forget_utopia')
 const DECK = di >= 0 ? cardsOfDeck(di).map(cardAt).filter((c) => c.num >= 1).slice(0, NCARDS) : []
@@ -61,40 +65,47 @@ const DECK = di >= 0 ? cardsOfDeck(di).map(cardAt).filter((c) => c.num >= 1).sli
 // Spieler = FrizzleBob aus derselben Besetzung wie #stage (actors/stageCast FB, V-206; Prüfer M1-5 Befund N5) – ohne Bühnen-Lage und Clips der Bühne:
 // Lage führt ecctrl, Clips lädt der Darsteller-Slot (CLIP_URLS)
 const { clipsUrl: _c, motion: _m, position: _p, yaw: _y, ...FB_OPTS } = FB(0, 0, 'stage-left')
-const PLAYER_ACTOR = FB_OPTS
+const PLAYER_ACTOR = { ...FB_OPTS, worldScale: K } // V-345: Figur in J17-Meter (createActor), Tempo-Abgleich im Loco-Modul
 // Partner (V-269, Georg 15.10.): GothGirl wie in #stage – gleiche Besetzung über actors/stageCast (V-206), Lage = rechte Marke
-const PARTNER = { ...KAYKIT('gothgirl')(MARK.right[0], MARK.right[2], 'stage-right'), position: [MARK.right[0], 0, MARK.right[1]] }
+const PARTNER = { ...KAYKIT('gothgirl')(MARK.right[0], MARK.right[2], 'stage-right'), position: [MARK.right[0], 0, MARK.right[1]], worldScale: K }
 const CLIP_URLS = [clipsMove, clipsGeneral]
 const SKY = { variant: 'S', mode: 3 }
 const TERR = { biome: BIOME }
-const AMPH = { biome: BIOME, groundR: 0.01 } // Boden kommt vom Gelände (gleiche Höhe −0,125 m), kein zweiter Boden
-const BB = { card: DECK[0] || null, biome: BIOME, maxW: 7, maxH: 5, position: [0, 0, -3.5] }
+const AMPH = { biome: BIOME, groundR: 0.01, worldK: K } // Boden kommt vom Gelände (gleiche Höhe −0,125 m), kein zweiter Boden
+const BB = { card: DECK[0] || null, biome: BIOME, maxW: 7, maxH: 5, position: [0, 0, -3.5 * K], worldK: K }
 
 const mods = {}
 const mk = (k, f) => (o) => { mods[k] = f(o); return mods[k] }
-const makeSky = mk('sky', createSky), makeTerrain = mk('terrain', createTerrain), makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makePartner = mk('partner', createActor)
+const makeSky = mk('sky', createSky), makeTerrain = mk('terrain', createTerrain), makeAmph = mk('amph', createAmphitheater), makeBB = mk('billboard', createBillboard), makePartner = mk('partner', createActor), makeBlobs = mk('blobs', createContactBlobs)
+// Kontaktflecke (V-203, L1: für alle Figuren; Georg 16.10.: „FrizzleBob schwebt“): Spieler und Partnerin (in M2 steht FB noch neben dem Auto)
+const BLOBS = { targets: () => [mods.player, mods.partner].filter(Boolean), size: 0.95 * K }
 
 export const M1STATE = { phase: 'free', cooldown: false, dialogs: 0, amphTris: 0, lastDialog: null, lastLog: null }
 const resetState = () => { for (const k of Object.keys(mods)) delete mods[k]; Object.assign(M1STATE, { phase: 'free', cooldown: false, dialogs: 0, amphTris: 0, lastDialog: null, lastLog: null }); M1INPUT.override = null; M1CLOCK.onStep = null } // Takt nicht zurücksetzen: M1Loop läuft weiter (Bildzähler), Schritte zählt nur die Physik
 
 // Host: Licht, Nebel, Hintergrund. Sonne folgt der Figur (Schattenausschnitt), Nebel/Hintergrund = Horizontfarbe der Kuppel.
+// Licht (L1, ein Licht-Schreiber): Sonne und Himmelslicht aus stageLight.lightAt (Tag), Schatten mit followShadow – enges, texel-gerastetes Frustum
+// (±12 m, L1 Regel 4) um das, was der Spieler steuert: im Fahrmodus das Auto, sonst FrizzleBob (Georg 16.10.: Schatten „extrem pixelig“, „fährt raus“)
+const L1 = lightAt(1)
 function HostEnv() {
   const { scene } = useThree()
-  const sun = useRef(), tgt = useMemo(() => new THREE.Object3D(), [])
+  const sun = useRef(), hemi = useRef(), tgt = useMemo(() => new THREE.Object3D(), [])
   useEffect(() => {
     const c = mods.sky?.horizonColor?.() || new THREE.Color('#bcd7ea')
-    scene.background = c.clone(); scene.fog = new THREE.Fog(c.clone(), 140, 620)
+    scene.background = c.clone(); scene.fog = new THREE.Fog(c.clone(), 140 * K, 620 * K)
     scene.add(tgt); if (sun.current) sun.current.target = tgt
     return () => { scene.fog = null; scene.background = null; scene.remove(tgt) }
   }, [scene, tgt])
   useFrame(() => {
-    const p = worldPosOf(mods.player); if (!p || !sun.current) return
-    tgt.position.copy(p); sun.current.position.set(p.x + 18, p.y + 30, p.z + 22)
+    // Schatten folgt dem, was der Spieler steuert: im Fahrmodus dem Auto (Georg 16.10.: „fährt aus dem Schatten heraus“), sonst FrizzleBob
+    const cp = M2_ON ? M2STATE.carPos?.() : null, p = cp ? new THREE.Vector3(cp.x, cp.y, cp.z) : worldPosOf(mods.player); if (!p || !sun.current) return
+    followShadow(sun.current, p, { size: 12 * K, dist: 40 * K, sunDir: L1.sunDir }); sun.current.color.set(L1.sun); sun.current.intensity = L1.sunI
+    if (hemi.current) { hemi.current.color.set(L1.hemiSky); hemi.current.groundColor.set(L1.hemiGround); hemi.current.intensity = L1.hemiI }
   })
   return (
     <>
-      <hemisphereLight args={[0xfff4e0, 0x3a3226, 1.25]} />
-      <directionalLight ref={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-30} shadow-camera-right={30} shadow-camera-top={30} shadow-camera-bottom={-30} shadow-camera-far={120} shadow-bias={-0.0002} />
+      <hemisphereLight ref={hemi} args={[0xfff4e0, 0x3a3226, 1.25]} />
+      <directionalLight ref={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-bias={-0.0002} shadow-normalBias={0.02} />
     </>
   )
 }
@@ -128,7 +139,7 @@ function Colliders({ ready }) {
       {amph && <RigidBody type="fixed" colliders={false} name="m1-amph"><TrimeshCollider args={[amph.vertices, amph.indices]} /></RigidBody>}
       {bb && <RigidBody type="fixed" colliders={false} name="m1-billboard" position={bb.c}><CuboidCollider args={bb.h} /></RigidBody>}
       <RigidBody type="fixed" colliders={false} name="m1-ramp"><ConvexHullCollider args={[RAMP]} /></RigidBody>
-      <RigidBody type="fixed" colliders={false} name="m1-partner" position={[MARK.right[0], 1, MARK.right[1]]}><CylinderCollider args={[1, 0.35]} /></RigidBody>
+      <RigidBody type="fixed" colliders={false} name="m1-partner" userData={{ soft: true }} position={[MARK.right[0], 1 * K, MARK.right[1]]}><CylinderCollider args={[1 * K, 0.35 * K]} /></RigidBody>
       {!NOFENCE && <RigidBody type="fixed" colliders={false} name={FENCE_TAG} userData={{ tag: FENCE_TAG, ecctrl: { excludeRay: true } }}>{FENCE.map((c, i) => <ConvexHullCollider key={i} args={[c.verts]} friction={0} frictionCombineRule={CoefficientCombineRule.Max} />)}</RigidBody>}
     </>
   )
@@ -170,15 +181,15 @@ function M1World() {
     const orbitTarget = orbit.current?.target?.() ?? null
     orbit.current?.setActive?.(false)
     player.current?.yieldCamera(false)
-    const cc = player.current?.camera(), p = worldPosOf(mods.player), c = camera.position, t = orbitTarget || new THREE.Vector3(p?.x ?? 0, (p?.y ?? 0) + 1.3, p?.z ?? 0)
-    if (cc && p) { cc.setLookAt(c.x, c.y, c.z, t.x, t.y, t.z, false); cc.setLookAt(p.x, p.y + 3.2, p.z + 7.5, p.x, p.y + 1.3, p.z, true) }
+    const cc = player.current?.camera(), p = worldPosOf(mods.player), c = camera.position, t = orbitTarget || new THREE.Vector3(p?.x ?? 0, (p?.y ?? 0) + 1.3 * K, p?.z ?? 0)
+    if (cc && p) { cc.setLookAt(c.x, c.y, c.z, t.x, t.y, t.z, false); cc.setLookAt(p.x, p.y + 3.2 * K, p.z + 7.5 * K, p.x, p.y + 1.3 * K, p.z, true) }
     Object.assign(fovBlend.current, { on: true, from: camera.fov, to: M1CAM.fov, t: 0 })
   }, [camera])
   const startDialog = useCallback(() => {
     if (M1STATE.phase !== 'free' || !player.current) return
     M1STATE.phase = 'dialog'; M1STATE.dialogs++; mods.dialog = null; queueMicrotask(() => { setPhase('dialog'); setSession((n) => n + 1) })
     player.current.freeze(true)
-    player.current.teleport([MARK.left[0], FOOT + 0.02, MARK.left[1]], MARK.left[2])
+    player.current.teleport([MARK.left[0], FOOT + 0.02 * K, MARK.left[1]], MARK.left[2])
     // V-257: dieselbe Bühnenkamera wie #stage (StageOrbitCam: drehen, Zoom zum Cursor, verschieben, Fokus per Doppelklick, Sprungmarken
     // Standard/Nah), Startblick STAGE_CAMS.near mit 38°; sie gleitet von der Folgekamera dorthin. Die Folgekamera pausiert solange.
     fovBlend.current.on = false
@@ -222,12 +233,12 @@ function M1World() {
   useEffect(() => {
     if (!DEBUG) return
     expose('M1', {
-      mods, state: M1STATE, clock: M1CLOCK, input: (o) => { M1INPUT.override = o }, player: () => player.current,
+      mods, state: M1STATE, clock: M1CLOCK, input: (o) => { M1INPUT.override = o }, mouse: (m) => { M1INPUT.mouse = m }, player: () => player.current,
       status: () => ({ phase: M1STATE.phase, amphReady, amphTris: M1STATE.amphTris, player: mods.player?.status(), partner: mods.partner?.status().status, terrain: mods.terrain?.info(), sky: mods.sky?.info(),
         pos: worldPosOf(mods.player)?.toArray(), dialog: mods.dialog?.state?.() ?? null, lastDialog: M1STATE.lastDialog, camera: camera.position.toArray(), cameraDir: camera.getWorldDirection(new THREE.Vector3()).toArray(), fov: camera.fov,
         ready: { pool: isPoolReady(), card: mods.billboard?.info()?.source ?? null, player: mods.player?.status().status, partner: mods.partner?.status().status, partnerShown: mods.partner?.status().shown },
         keysShown: keysUi.current?.shown?.() ?? null }),
-      feet: () => worldPosOf(mods.player)?.toArray(), fence: { on: !NOFENCE }, startDialog, endDialog, move: M1MOVE, bounds: M1BOUNDS, start: START, terrainH: (x, z) => mods.terrain?.height(x, z), trigger: STAGE_TRIGGER,
+      feet: () => worldPosOf(mods.player)?.toArray(), fence: { on: !NOFENCE }, startDialog, endDialog, move: M1MOVE, bounds: M1BOUNDS, start: START, k: K, g: G, terrainH: (x, z) => mods.terrain?.height(x, z), trigger: STAGE_TRIGGER,
       logs: () => ({ sky: { ...skyLog }, terrain: { ...terrainLog }, amph: { ...amphLog }, billboard: { create: billboardLog.create, update: billboardLog.update, dispose: billboardLog.dispose }, loco: { ...locoActorLog },
         face: { create: faceActorLog.create, update: faceActorLog.update, dispose: faceActorLog.dispose, lastCtx: faceActorLog.lastCtx },
         eye: { create: eyeActorLog.create, update: eyeActorLog.update, dispose: eyeActorLog.dispose, lastCtx: eyeActorLog.lastCtx }, three: THREE.REVISION }), // eye = KayKit-Partner (V-269)
@@ -242,11 +253,13 @@ function M1World() {
       <ModuleHost create={makeAmph} options={AMPH} />
       <ModuleHost create={makeBB} options={BB} />
       <ModuleHost create={makePartner} options={PARTNER} />
+      <ModuleHost create={makeBlobs} options={BLOBS} />
       <Suspense fallback={null}>{/* Rapier lädt asynchron: eigene Grenze, damit die Hüllen davor nicht verworfen und doppelt erzeugt werden (Prüfer M1, Befund 3) */}
-      <Physics gravity={[0, -14, 0]} timeStep={1 / 60} paused>
+      <Physics gravity={[0, -G, 0]} timeStep={1 / 60} paused>
         <Stepper />
         <Colliders ready={amphReady} />
         <M1Player ref={player} actorOptions={PLAYER_ACTOR} clipUrls={CLIP_URLS} onMod={onPlayer} />
+        {M2_ON && <M2Car player={player} />}
       </Physics>
       </Suspense>
       <StageOrbitCam ref={orbit} view={STAGE_VIEW} active={phase === 'dialog'} />

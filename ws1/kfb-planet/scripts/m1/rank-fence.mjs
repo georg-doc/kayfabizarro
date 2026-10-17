@@ -19,7 +19,14 @@ import crypto from 'crypto'
 const T = new URL('../../node_modules/three/', import.meta.url).href
 const THREE = await import(T + 'build/three.module.js')
 const { GLTFLoader } = await import(T + 'examples/jsm/loaders/GLTFLoader.js')
-const { inRankFence, RANK_FENCE, RANK_PROFILE, rankInnerR, rankFence, rankFenceOutline, rankFenceClear } = await import(new URL('../../src/m1/m1Host.js', import.meta.url).href)
+const H1 = await import(new URL('../../src/m1/m1Host.js', import.meta.url).href)
+// V-345: m1Host hält den Zaun in J17-Metern (× K); dieses Skript misst und prüft weiter in alten WS1-Bühnenmetern (Modell ohne worldK, alle
+// Grenzwerte unten) – der Zaun wird dafür hier durch K geteilt. --emit gibt die Profile in alten Metern aus (m1Host rechnet sie × K).
+const { K } = await import(new URL('../../src/m1/m1Scale.js', import.meta.url).href)
+const RANK_FENCE = { ...H1.RANK_FENCE, top: H1.RANK_FENCE.top / K, bottom: H1.RANK_FENCE.bottom / K }, RANK_PROFILE = H1.RANK_PROFILE.map((r) => r / K)
+const inRankFence = (x, z) => H1.inRankFence(x * K, z * K), rankInnerR = (a) => H1.rankInnerR(a) / K, rankFenceClear = (x, z) => H1.rankFenceClear(x * K, z * K) / K
+const rankFenceOutline = () => { const o = H1.rankFenceOutline(); return { ...o, pts: o.pts.map(([x, z]) => [x / K, z / K]) } }
+const rankFence = () => H1.rankFence().map((f) => ({ ...f, tri: f.tri.map(([x, z]) => [x / K, z / K]), quad: f.quad.map(([x, z]) => [x / K, z / K]), verts: f.verts.map((v) => v / K) }))
 globalThis.self = globalThis
 // Maße und Pin wie modules/amphitheater (dort nicht importierbar: der Shader-Spender braucht den Browser), hier gespiegelt und am Quelltext geprüft
 const src = fs.readFileSync(new URL('../../src/modules/amphitheater.js', import.meta.url), 'utf8')

@@ -8,11 +8,11 @@ await page.waitForFunction(() => window.__kfbM1?.status().player?.status === 'OK
 const rows = await page.evaluate(async () => {
   const M = window.__kfbM1, C = M.clock, P = M.player(), cam = P.camera()
   const steps = (n) => new Promise((r) => { const t = C.steps + n; const f = () => (C.steps >= t ? r() : requestAnimationFrame(f)); f() })
-  await steps(30); P.teleport([0, 8, -4], Math.PI); P.setFlying(true); await steps(30)
+  await steps(30); P.teleport([0, 8 * M.k, -4 * M.k], Math.PI); P.setFlying(true); await steps(30)
   cam.rotateAzimuthTo(0, false); cam.rotatePolarTo(0.6, false); M.input({ forward: true })
   const out = []
   await new Promise((done) => { let i = 0; C.onStep = () => { const b = P.handle().body, p = b.translation(), v = b.linvel(), f = M.feet(), cap = P.capsuleBottom()
-    const s16 = P.castDown(p.x, p.z, f[1] + 1.6), s80 = P.castDown(p.x, p.z)
+    const s16 = P.castDown(p.x, p.z, f[1] + 1.6 * M.k), s80 = P.castDown(p.x, p.z)
     out.push({ i, x: +p.x.toFixed(2), y: +p.y.toFixed(2), z: +p.z.toFixed(2), vy: +v.y.toFixed(2), vz: +v.z.toFixed(2), fly: P.flying(), capClear16: s16 == null ? null : +((cap - s16) * 100).toFixed(1), capClear80: s80 == null ? null : +((cap - s80) * 100).toFixed(1), lift: +(P.lift() * 100).toFixed(1) })
     if (++i >= 260) { C.onStep = null; done() } } })
   M.input(null); return out

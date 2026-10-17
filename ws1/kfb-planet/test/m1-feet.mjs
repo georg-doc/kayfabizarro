@@ -8,6 +8,7 @@
 // locoReference(series): derselbe Gang-Mischer wie im Spiel (m1-gait, V-248) mit denselben Clips auf derselben Figur (FB v5b, Maßstab 0,947) – ohne Controller, ohne Physik:
 //   Wurzel fährt genau mit Tempo × Maßstab geradeaus, Tempo-Parameter und Startphase aus dem Spiel-Mitschnitt. Was die Referenz an Rutschen zeigt, steckt in
 //   den Clips bzw. der LOCO-Mischung (Handover); was das Spiel darüber hinaus zeigt, kommt aus der Einbindung (Controller, Takt, Figur).
+import { K } from '../src/m1/m1Scale.js' // V-345: Positionen und Grenzen in alten WS1-Metern × K
 import fs from 'fs'
 import path from 'path'
 
@@ -15,7 +16,7 @@ import path from 'path'
 // Kontakt je Punkt wie bei der Eigentempo-Messung (scripts/m1/clip-speed.mjs): bis 1,5 cm über dem tiefsten Stand DIESES Punkts relativ zur Figur;
 // haben beide Kontakt, zählt der näher an seinem Bodenstand. Rutschen und Kriechen nur zwischen Proben mit demselben Kontaktpunkt (Abrollen Ferse →
 // Ballen ist kein Rutschen).
-export function analyse(rec, thr = 0.015) {
+export function analyse(rec, thr = 0.015 * K) {
   let worst = 0, contacts = 0; const slips = [], bodyV = []
   for (let i = 1; i < rec.t.length; i++) { const dt = rec.t[i] - rec.t[i - 1]; if (dt > 0) bodyV.push(Math.hypot(rec.bodyXZ[i][0] - rec.bodyXZ[i - 1][0], rec.bodyXZ[i][1] - rec.bodyXZ[i - 1][1]) / dt) }
   const vb = bodyV.slice().sort((a, b) => a - b)[bodyV.length >> 1] || 0
@@ -41,7 +42,7 @@ export function analyse(rec, thr = 0.015) {
     flush()
   }
   const sm = slips.length ? slips.slice().sort((a, b) => a - b)[slips.length >> 1] : null
-  return { creepCm: +(worst * 100).toFixed(1), contacts, slipSpeed: sm == null ? null : +sm.toFixed(3), bodySpeed: +vb.toFixed(3), slipRatio: sm == null || vb < 0.05 ? null : +(sm / vb).toFixed(3) }
+  return { creepCm: +(worst * 100).toFixed(1), contacts, slipSpeed: sm == null ? null : +sm.toFixed(3), bodySpeed: +vb.toFixed(3), slipRatio: sm == null || vb < 0.05 * K ? null : +(sm / vb).toFixed(3) }
 }
 
 let REF = null
@@ -61,7 +62,7 @@ async function refRig() {
   console.warn = warn
   const clips = {}; for (const c of [...mv.animations, ...gen.animations]) if (!clips[c.name]) clips[c.name] = c
   const recipe = JSON.parse(fs.readFileSync('src/data/actors/frizzlebob-v5b.recipe.json', 'utf8'))
-  REF = { THREE, GaitAnimator, soleOffsets, solePoints, fb, clips, scale: recipe.stage?.scale ?? 1 }
+  REF = { THREE, GaitAnimator, soleOffsets, solePoints, fb, clips, scale: (recipe.stage?.scale ?? 1) * K }
   return REF
 }
 

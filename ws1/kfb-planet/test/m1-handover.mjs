@@ -14,7 +14,7 @@ const rec = await page.evaluate(async () => {
   await steps(30)
   const out = []; let endAt = -1
   await new Promise((done) => { let i = 0; C.onStep = () => {
-    if (i === 10) P.teleport([0, 1.15, 3], Math.PI) // auf die Bühne (innerhalb des Auslösers) – Dialog startet beim Aufsetzen
+    if (i === 10) P.teleport([0, 1.15 * window.__kfbM1.k, 3 * window.__kfbM1.k], Math.PI) // auf die Bühne (innerhalb des Auslösers) – Dialog startet beim Aufsetzen
     if (i === 260 && M.state.phase === 'dialog') { M.endDialog(); endAt = i }
     const st = M.status(); out.push({ i, phase: M.state.phase, fov: st.fov, dir: st.cameraDir, orbit: window.__kfbStageOrbit?.active?.() ?? null })
     if (++i >= 420) { C.onStep = null; done() } } })

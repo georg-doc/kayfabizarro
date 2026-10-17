@@ -8,9 +8,11 @@
 // Kein Hex (V-194). Kein React: Kollision baut der Host aus colliderData() (Rapier-Trimesh in Weltkoordinaten).
 import * as THREE from 'three'
 import { makeClayFamily } from '../vendor/billboard/billboard-clay.js'
+import { K } from '../m1/m1Scale.js'
 
-export const GROUND_Y = -0.125 // = Boden des Amphitheater-Moduls (modules/amphitheater.js: (minY − floorY)·s + 0,11)
-export const TERRAIN = Object.freeze({ flatR: 46, blendR: 95, hillR: 225, R: 270, hillAmp: 7, rimH: 32, seg: 180, seed: 20261014 })
+// V-345: ganzes Gelände × K (gleiche Form in J17-Metern); Zahlen = alte WS1-Werte
+export const GROUND_Y = -0.125 * K // = Boden des Amphitheater-Moduls (modules/amphitheater.js: (minY − floorY)·s + 0,11)
+export const TERRAIN = Object.freeze({ flatR: 46 * K, blendR: 95 * K, hillR: 225 * K, R: 270 * K, hillAmp: 7 * K, rimH: 32 * K, noiseL: 55 * K, seg: 180, seed: 20261014 })
 export const terrainLog = { create: 0, update: 0, dispose: 0, freed: null }
 
 // deterministisches Wertrauschen (2D, glatt), Saat fest → gleiche Welt bei jedem Start (Replay-Tests)
@@ -28,7 +30,7 @@ const smooth = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a
 
 export function terrainHeight(x, z, T = TERRAIN, noise = DEFAULT_NOISE) {
   const r = Math.hypot(x, z)
-  const hills = noise(x / 55, z / 55) * T.hillAmp + T.hillAmp * 0.55
+  const hills = noise(x / T.noiseL, z / T.noiseL) * T.hillAmp + T.hillAmp * 0.55
   const h = GROUND_Y + smooth(T.flatR, T.blendR, r) * hills
   return h + smooth(T.hillR, T.R, r) * T.rimH
 }
@@ -45,7 +47,7 @@ export function createTerrain(options = {}) {
   const pos = geo.attributes.position
   for (let i = 0; i < pos.count; i++) pos.setY(i, H(pos.getX(i), pos.getZ(i)))
   geo.computeVertexNormals()
-  const fam = makeClayFamily('G', { uClayNear: { value: 30 }, uClayFar: { value: 90 }, uClayScale: { value: 1.4 }, uClayAmt: { value: 0.45 } }, { oct: 2, near: true, stick: false })
+  const fam = makeClayFamily('G', { uClayNear: { value: 30 * K }, uClayFar: { value: 90 * K }, uClayScale: { value: 1.4 * K }, uClayAmt: { value: 0.45 } }, { oct: 2, near: true, stick: false })
   const mat = fam.std(options.biome?.top || '#9aab62', 0.95)
   const mesh = new THREE.Mesh(geo, mat); mesh.name = 'm1-terrain-clay'; mesh.receiveShadow = true
   root.add(mesh)

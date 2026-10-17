@@ -13,6 +13,10 @@ export const MOVE_MAP = [
   { name: 'run', keys: ['Shift'] },
   // Gehen (V-020: Strg+W = Gehen). Achtung: Strg+W schließt unter Windows/Linux den Tab (nicht abfangbar) – für MVP-3 eine andere Taste wählen (WS1_STATUS §31.3)
   { name: 'walk', keys: ['ControlLeft', 'ControlRight'] },
+  // V-022/V-342, nur M1 liest: Q/E strafen (im Auto = Drift, V-347, dieselben Namen), X hält = sinken im Flug. E = talk in ACTION_KEYS bleibt für die Bühne
+  { name: 'strafeL', keys: ['KeyQ'] },
+  { name: 'strafeR', keys: ['KeyE'] },
+  { name: 'descend', keys: ['KeyX'] },
 ]
 
 // Aktionstasten, an einer Stelle festgelegt (e.code bzw. Ziffern 1–9 für Auswahlen).

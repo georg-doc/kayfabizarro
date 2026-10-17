@@ -1,6 +1,7 @@
 // M1 · Vertragstest der M1-Module (Briefing M1 Punkt 7, Host-Vertrag R1.2 §2/§6, Muster test/host.mjs; Prüfer M1, Befund 2 + 3):
 //   create je Modul genau einmal (auch über die Suspense-Grenze von Rapier hinweg), update je Bild mit ctx (Kamera), dispose genau einmal beim
 //   Abbau, danach kein update mehr; Himmel folgt der Kamera; Host besitzt Licht, Nebel und Hintergrund; eine three-Instanz (Laufzeit-Anteil).
+import { K } from '../src/m1/m1Scale.js' // V-345: Positionen und Grenzen in alten WS1-Metern × K
 import { openPage, report } from './_page.mjs'
 import { execSync } from 'child_process'
 // eine three-Instanz im Baum (wie test/deps.mjs) und zur Laufzeit dieselbe Revision
@@ -22,9 +23,9 @@ const b = await page.evaluate(() => window.__kfbM1.logs())
 // Weltgrenzen (Prüfer M1, Befund 5) und Kamera nie unter das Gelände (Befund 10)
 const bounds = await page.evaluate(async () => {
   const M = window.__kfbM1, P = M.player(), w = (ms) => new Promise((r) => { const C = M.clock, t = C.steps + Math.ceil(ms * 0.06); const f = () => (C.steps >= t ? r() : requestAnimationFrame(f)); f() }), r = () => { const f = M.feet(); return Math.hypot(f[0], f[2]) }
-  P.teleport([300, 40, 0], 0); await w(600); const walkR = r()
-  P.setFlying(true); P.teleport([0, 600, 300], 0); await w(600); const flyR = r(), flyY = M.feet()[1]; P.setFlying(false)
-  P.teleport([0, -40, 30], 0); await w(600); const afterFall = M.feet()
+  P.teleport([300 * M.k, 40 * M.k, 0], 0); await w(600); const walkR = r()
+  P.setFlying(true); P.teleport([0, 600 * M.k, 300 * M.k], 0); await w(600); const flyR = r(), flyY = M.feet()[1]; P.setFlying(false)
+  P.teleport([0, -40 * M.k, 30 * M.k], 0); await w(600); const afterFall = M.feet()
   const cc = P.camera(); cc.rotatePolarTo(1.7, false); await w(400); const polar = cc.polarAngle
   return { walkR, flyR, flyY, afterFall, polar, limits: M.bounds }
 })
@@ -52,9 +53,9 @@ process.exit(report('m1-contract', {
   hostOwnsFogAndBackground: a.fog && a.bg,
   hostLights: a.lights.includes('HemisphereLight') && a.lights.includes('DirectionalLight'),
   oneCanvas: a.canvases === 1,
-  walkStaysInside: bounds.walkR <= bounds.limits.walkR + 1,
-  flyStaysInside: bounds.flyR <= bounds.limits.flyR + 1 && bounds.flyY <= bounds.limits.flyMaxY + 1,
-  fallResetsToStart: Math.hypot(bounds.afterFall[0], bounds.afterFall[2] - 30) < 2 && bounds.afterFall[1] > -1,
+  walkStaysInside: bounds.walkR <= bounds.limits.walkR + 1 * K,
+  flyStaysInside: bounds.flyR <= bounds.limits.flyR + 1 * K && bounds.flyY <= bounds.limits.flyMaxY + 1 * K,
+  fallResetsToStart: Math.hypot(bounds.afterFall[0], bounds.afterFall[2] - 30 * K) < 2 * K && bounds.afterFall[1] > -1 * K,
   cameraNotBelow: bounds.polar <= 1.4501,
   disposedOnce: once(c, 'dispose'),
   actorsDisposed: c.face.dispose === 1 && c.eye.dispose === 1,

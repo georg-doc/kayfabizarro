@@ -17,7 +17,7 @@ const res = await page.evaluate(async () => {
   const M = window.__kfbM1, C = M.clock, P = M.player(), loco = M.mods.player, R = loco.debugRig()
   const frames = (n) => new Promise((r) => { const t = C.frame + n; const f = () => (C.frame >= t ? r() : requestAnimationFrame(f)); f() })
   const bodyYaw = () => { const q = P.handle().body.rotation(); return Math.atan2(2 * (q.w * q.y + q.x * q.z), 1 - 2 * (q.y * q.y + q.x * q.x)) * 180 / Math.PI }
-  P.teleport([-20, 1.15, 30], Math.PI); await frames(90) // Blick −Z, Kamera dahinter; Pupillen kommen zur Ruhe
+  P.teleport([-20 * M.k, 1.15 * M.k, 30 * M.k], Math.PI); await frames(90) // Blick −Z, Kamera dahinter; Pupillen kommen zur Ruhe
   const y0 = bodyYaw(), rows = []
   M.input({ rightward: true }) // Ziel springt nach +X (90° rechts aus Sicht der Figur)
   const m0 = loco.measure()
@@ -41,13 +41,13 @@ const tEye = first((x) => Math.abs(x.eye) >= 0.5 * eyeMax), tHead = first((x) =>
 const pics = await page.evaluate(async () => {
   const M = window.__kfbM1, C = M.clock, P = M.player()
   const frames = (n) => new Promise((r) => { const t = C.frame + n; const f = () => (C.frame >= t ? r() : requestAnimationFrame(f)); f() })
-  P.teleport([-20, 1.15, 30], Math.PI); await frames(40)
+  P.teleport([-20 * M.k, 1.15 * M.k, 30 * M.k], Math.PI); await frames(40)
   return true
 })
 const at = [0, 4, 10, 20, 40]
 // Kamera fest bei +X, Blick nach −X (Eingaben sind kamerabezogen: „rückwärts“ = +X = zur Kamera). Die Figur schaut nach −Z (Profil) und
 // dreht sich zur Kamera: erst die Augen, dann der Kopf, dann der Körper.
-await page.evaluate(() => { const M = window.__kfbM1, p = M.feet(), cc = M.player().camera(); cc.enabled = false; cc.setLookAt(p[0] + 3.4, p[1] + 1.9, p[2], p[0], p[1] + 1.6, p[2], false) })
+await page.evaluate(() => { const M = window.__kfbM1, p = M.feet(), cc = M.player().camera(); cc.enabled = false; cc.setLookAt(p[0] + 3.4 * M.k, p[1] + 1.9 * M.k, p[2], p[0], p[1] + 1.6 * M.k, p[2], false) })
 for (let k = 0; k < at.length; k++) {
   if (k === 0) await page.evaluate(() => window.__kfbM1.input({ backward: true }))
   const n = at[k] - (k ? at[k - 1] : 0)

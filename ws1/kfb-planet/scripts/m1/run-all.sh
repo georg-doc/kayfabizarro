@@ -19,7 +19,11 @@ run m1-rueckwand node scripts/m1/probe-landranks.mjs
 run m1-scene node test/m1-scene.mjs
 run m1-handover node test/m1-handover.mjs
 run m1-eyes node test/m1-eyes.mjs
+run m1-wow node test/m1-wow.mjs
 run m1-bench node scripts/m1/bench.mjs
+run m2-g0 node test/m2-g0.mjs
+run m2-settle node test/m2-settle.mjs
+run m2-v347 node test/m2-v347.mjs
 [ "$M1_ONLY" = 1 ] && { run f1 node test/f1.mjs; echo DONE >> test/out/m1/all.log; exit 0 }
-for t in contract-static deps host s0 s1 s5a s5b s5c f1 actors b1 stage d1 d1stage g4 v243 palette cast; do [ -f test/$t.mjs ] && run $t node test/$t.mjs; done
+for t in contract-static deps host s0 s1 s5a s5b s5c f1 actors b1 stage d1 d1stage g4 v243 palette cast scale light lineup; do [ -f test/$t.mjs ] && run $t node test/$t.mjs; done
 echo DONE >> test/out/m1/all.log

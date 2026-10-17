@@ -46,7 +46,7 @@ export function createLocoActor(options) {
   locoActorLog.create++
   // Der Slot baut das Gesicht selbst in Weltdrehung 0 auf (faceMountActor @dde5ba2, Befund A15: facehost richtet den Halter an der Welt aus)
   const actor = createActor({ ...options.actor, motion: 'bind' })
-  const scale = options.actor.recipe?.stage?.scale ?? 1
+  const W = options.actor.worldScale ?? 1, scale = (options.actor.recipe?.stage?.scale ?? 1) * W // V-345: Figur × worldScale → Tempo in Rig-Einheiten bleibt gleich
   const drive = options.drive || (() => ({ speed: 0, grounded: true, vy: 0, y: 0, flying: false }))
   const S = { anim: null, fig: null, head: null, headYaw: 0, headPitch: 0, hist: [], clock: 0, air: 'ground', airT: 0, offT: 0, peakY: 0, fly: false,
     status: 'LOADING', error: null, disposed: false, eyes: { nx: 0, ny: 0 }, lastSpeed: 0, flyLean: 0, flyBank: 0, inner: null, gazeOwn: false, headBase: null, headOut: null }
@@ -61,7 +61,7 @@ export function createLocoActor(options) {
     fig.visible = false // bis der LOCO-Mixer steht: keine Bindepose (T-Pose) im Bild, wie der Slot für seinen Ruhe-Clip (V-214)
     const clips = {}
     for (const u of options.clipUrls || []) { const list = await loadClips(u); if (S.disposed) return; for (const c of list) if (!clips[c.name]) clips[c.name] = c }
-    const need = ['Idle_A', ...GAITS.map((g) => g.clip), 'Jump_Start', 'Jump_Idle', 'Jump_Land']
+    const need = ['Idle_A', ...GAITS.map((g) => g.clip), 'Jump_Start', 'Jump_Idle', 'Jump_Land', 'Jump_Full_Short', 'Jump_Full_Long']
     const missing = need.filter((n) => !clips[n]); if (missing.length) throw new Error('Clips fehlen: ' + missing.join(', '))
     S.soles = soleOffsets(THREE, fig) // Ferse/Ballen aus dem Netz, in der Bindepose (vor dem ersten Clip-Bild)
     S.anim = new GaitAnimator(fig, clips); S.fig = fig
@@ -87,13 +87,19 @@ export function createLocoActor(options) {
     if (S.fly) { S.fly = false; S.air = 'fall'; S.airT = 0; S.peakY = d.y ?? 0 } // nach dem Flug: Landung nach Fallhöhe entscheiden (Host meldet „Boden“ per Strahl)
     if (S.air === 'ground') {
       S.offT = d.grounded ? 0 : S.offT + dt
-      if (d.jumping) { A.play('Jump_Start', { mode: 'once', fade: 0.08 }); S.air = 'up'; S.airT = 0; S.peakY = d.y ?? 0; actor.earImpulse?.('up') }
-      else if (S.offT > L.fallMinTime && d.vy < -L.fallMinVy) { A.play('Jump_Idle', { mode: 'loop', fade: 0.2 }); S.air = 'fall'; S.airT = 0; S.peakY = d.y ?? 0 }
+      // Sprung je Zustand (V-023; Lab travel-core.j17 Z. 165–171): Stand = Start/Luft/Landung, aus dem Joggen Jump_Full_Short, aus dem Sprint
+      // Jump_Full_Long; der ganze Sprung-Clip läuft einmal, Abspielrate auf die Flugzeit (Ausholen 0,09 s + 2·v/g + 0,28 s wie im Lab)
+      if (d.jumping) { const full = d.jumpKind === 'short' ? 'Jump_Full_Short' : d.jumpKind === 'long' ? 'Jump_Full_Long' : null
+        if (full && A.has(full)) { const c = A.clips[full], air = 0.09 + 2 * (d.jumpV ?? 6.5) * (d.jumpKind === 'long' ? 1.15 : 1) / (d.g ?? 14) + 0.28; A.play(full, { mode: 'once', fade: 0.08, timeScale: c ? c.duration / Math.max(0.3, air) : 1 }); S.full = full }
+        else { A.play('Jump_Start', { mode: 'once', fade: 0.08 }); S.full = null }
+        S.air = 'up'; S.airT = 0; S.peakY = d.y ?? 0; actor.earImpulse?.('up') }
+      else if (S.offT > L.fallMinTime && d.vy < -L.fallMinVy * W) { A.play('Jump_Idle', { mode: 'loop', fade: 0.2 }); S.air = 'fall'; S.airT = 0; S.peakY = d.y ?? 0 }
     } else if (S.air === 'up' || S.air === 'fall') {
       S.airT += dt; S.peakY = Math.max(S.peakY, d.y ?? 0)
-      if (S.air === 'up' && (A.progress('Jump_Start') > 0.95 || S.airT > 0.6)) { A.play('Jump_Idle', { mode: 'loop', fade: 0.12 }); S.air = 'fall' }
+      if (S.air === 'up' && !S.full && (A.progress('Jump_Start') > 0.95 || S.airT > 0.6)) { A.play('Jump_Idle', { mode: 'loop', fade: 0.12 }); S.air = 'fall' }
       if (d.grounded && S.airT > 0.1) {
-        if (S.peakY - (d.y ?? 0) >= L.landMinDrop || S.air === 'up') { A.play('Jump_Land', { mode: 'once', fade: 0.08 }); actor.earImpulse?.('land') } else A.stop(null, 0.15)
+        if (S.full) { A.stop(S.full, 0.18); S.full = null; actor.earImpulse?.('land') } // ganzer Sprung-Clip enthält die Landung
+        else if (S.peakY - (d.y ?? 0) >= L.landMinDrop * W || S.air === 'up') { A.play('Jump_Land', { mode: 'once', fade: 0.08 }); actor.earImpulse?.('land') } else A.stop(null, 0.15)
         S.air = 'ground'; S.offT = 0
       }
     }
