@@ -1,0 +1,94 @@
+{
+  "schema": "kfb.combat.melee-profile/0.1-candidate",
+  "id": "skeleton-warrior-axe-chop-ca2-04",
+  "status": "SOURCE_PINNED_MARKERS_AND_VISUAL_CONTACT_PENDING",
+  "actorId": "ca2_skeleton_warrior",
+  "rigFamily": "Rig_Medium",
+  "weapon": {
+    "source": {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+      "path": "media/3D_Assets/KayKit_Skeletons/assets/gltf/Skeleton_Axe.gltf",
+      "blob": "79d77edd260b727980571b4b2836f942e0b31d3d"
+    },
+    "socket": {
+      "authored": "handslot.r",
+      "runtime": "handslotr"
+    },
+    "grip": {
+      "space": "socket-local",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "evidence": "Resident Atlas identity attachment"
+    },
+    "bladeAxis": {
+      "space": "weapon-root-local",
+      "axis": "+Y"
+    },
+    "hiltPoint": {
+      "space": "weapon-root-local",
+      "units": "asset units",
+      "value": [
+        0,
+        -0.2508419454,
+        0
+      ]
+    },
+    "tipPoint": {
+      "space": "weapon-root-local",
+      "units": "asset units",
+      "value": [
+        0,
+        1.0012037754,
+        0
+      ]
+    }
+  },
+  "attack": {
+    "clip": "Melee_1H_Attack_Chop",
+    "loopMode": "LoopOnce",
+    "durationSeconds": 1.0667,
+    "markersRef": "ACTION_MARKERS.json",
+    "intendedReach": null,
+    "reachStatus": "BROWSER_MEASUREMENT_PENDING"
+  },
+  "hitGeometry": {
+    "kind": "swept-capsule-from-hilt-tip",
+    "algorithm": "contact.v1.js::sweptSegmentVsCapsule",
+    "weaponRadius": null,
+    "radiusStatus": "ISOLATED_WEAPON_VISUAL_MEASUREMENT_PENDING",
+    "targetGeometry": "vertical hurt capsule derived from target visible body bounds",
+    "conditions": [
+      "inside derived active window",
+      "swept weapon capsule intersects hurt capsule",
+      "target not previously consumed for attack id"
+    ]
+  },
+  "events": {
+    "swing": "melee.swing",
+    "hit": "melee.hit",
+    "block": "melee.block",
+    "worldHit": "melee.worldHit"
+  },
+  "vfxCue": "melee.hit.kfb-scratch",
+  "sfxCue": {
+    "confirm": "confirm.hit",
+    "bodyImpact": null
+  },
+  "sfxStatus": "CONFIRM_EXISTS_BODY_IMPACT_ROLE_MISSING",
+  "promotion": "candidate only; current Arena Skeleton punch mapping remains unchanged until visual contact gate passes"
+}

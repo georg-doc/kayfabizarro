@@ -1,0 +1,60 @@
+{
+  "schema": "kfb.combat.vfx-sfx-map/0.1-candidate",
+  "status": "INVENTORIED_MAPPING_CANDIDATE",
+  "ownership": "presentation only; confirmed combat event is upstream truth",
+  "events": {
+    "melee.swing": {
+      "vfx": {
+        "owner": "modules/kfb-fx-trails.js::TrailFx",
+        "recipe": "short directional ribbon bound to actual axe tip",
+        "status": "candidate"
+      },
+      "sfx": {
+        "cue": null,
+        "status": "MISSING_DEDICATED_SWING_WHOOSH_IN_CURRENT_BANK"
+      }
+    },
+    "melee.hit": {
+      "vfx": {
+        "owner": "modules/kfb-fx-trails.js::TrailFx",
+        "recipe": "compact KFB scratch at measured contact point",
+        "status": "candidate"
+      },
+      "sfx": {
+        "confirmCue": "confirm.hit",
+        "bodyImpactCue": null,
+        "status": "CONFIRM_EXISTS_BODY/FLESH_IMPACT_ROLE_MISSING"
+      }
+    },
+    "melee.block": {
+      "vfx": null,
+      "sfx": null,
+      "status": "DEFERRED"
+    },
+    "melee.worldHit": {
+      "vfx": null,
+      "sfx": null,
+      "status": "DEFERRED"
+    },
+    "actor.hitReact": {
+      "motion": "Hit_A after confirmed contact",
+      "status": "candidate"
+    },
+    "actor.defeat": {
+      "motion": "Death_A",
+      "status": "existing semantic"
+    }
+  },
+  "existingInventory": [
+    "assets/vfx/kfb-combat-atlas_4x3.png",
+    "modules/kfb-combat-atlas.js",
+    "modules/kfb-fx-sprites.js",
+    "modules/kfb-fx-trails.js",
+    "modules/kfb-vfx-recipes.js",
+    "modules/kfb-combat-cues.js",
+    "modules/kfb-sfx-layers.js",
+    "modules/kfb-combat-sfx.v2.json",
+    "modules/kfb-arena-sfx.v4.json"
+  ],
+  "audioRule": "No synthesized placeholder. Arena master/mute remains sole audio master. Acoustic A/B remains human gate."
+}

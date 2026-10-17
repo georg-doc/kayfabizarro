@@ -1,0 +1,21 @@
+{
+  "schema": "kfb.combat.action-markers/0.1-candidate",
+  "actorId": "ca2_skeleton_warrior",
+  "clip": "Melee_1H_Attack_Chop",
+  "durationSeconds": 1.0667,
+  "status": "BROWSER_MEASUREMENT_PENDING",
+  "method": {
+    "playbackDonor": "CA2-03B 109/109 PUBLIC_VERIFIED cleanClip + one mixer",
+    "activeWindow": "derive from actual weapon-tip motion envelope around measured speed peak",
+    "contact": "first swept weapon-capsule intersection with measured target hurt capsule",
+    "noGuesses": true
+  },
+  "normalized": {
+    "anticipation": null,
+    "activeStart": null,
+    "nominalContact": null,
+    "activeEnd": null,
+    "recoveryStart": null,
+    "recoveryEnd": 1
+  }
+}
