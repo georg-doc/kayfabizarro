@@ -1,0 +1,1024 @@
+{
+  "assetCount": 27,
+  "assets": [
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 2/SmallBuilding01.obj",
+      "collectionPath": "Package 2",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 2",
+      "format": "obj",
+      "kind": "model-3d",
+      "name": "SmallBuilding01",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 2/SmallBuilding01.obj",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 2/SmallBuilding01.mtl",
+            "provenance": "file-explicit",
+            "reference": "obj:mtllib",
+            "role": "material",
+            "status": "ok",
+            "uri": "SmallBuilding01.mtl"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 2/SmallBuilding01.png",
+            "provenance": "file-explicit",
+            "reference": "mtl:8:map_Kd",
+            "role": "baseColor",
+            "status": "ok",
+            "uri": "SmallBuilding01.png",
+            "via": "media/3D_Assets/VoxelDesertTown01/Package 2/SmallBuilding01.mtl"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 248307,
+      "source": {
+        "blobSha": "5f9a31a3cc62709204e96d90212c3ecdff37595a",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%202/SmallBuilding01.obj",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%202/SmallBuilding01.obj",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 2/SmallBuilding01.png",
+      "collectionPath": "Package 2",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 2",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "SmallBuilding01",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 2/SmallBuilding01.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 291,
+      "source": {
+        "blobSha": "c3ae5ef6d2f00e6346995a9d8455d753941fecc1",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%202/SmallBuilding01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%202/SmallBuilding01.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 2/SmallBuilding01_Thumbnail.gif",
+      "collectionPath": "Package 2",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 2",
+      "format": "gif",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "SmallBuilding01_Thumbnail",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 2/SmallBuilding01_Thumbnail.gif",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1370503,
+      "source": {
+        "blobSha": "69a24b61c013ee89933391cddfaaf066a58a5be6",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%202/SmallBuilding01_Thumbnail.gif",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%202/SmallBuilding01_Thumbnail.gif",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 3/SmallBuilding02.obj",
+      "collectionPath": "Package 3",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 3",
+      "format": "obj",
+      "kind": "model-3d",
+      "name": "SmallBuilding02",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 3/SmallBuilding02.obj",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 3/SmallBuilding02.mtl",
+            "provenance": "file-explicit",
+            "reference": "obj:mtllib",
+            "role": "material",
+            "status": "ok",
+            "uri": "SmallBuilding02.mtl"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 3/SmallBuilding02.png",
+            "provenance": "file-explicit",
+            "reference": "mtl:8:map_Kd",
+            "role": "baseColor",
+            "status": "ok",
+            "uri": "SmallBuilding02.png",
+            "via": "media/3D_Assets/VoxelDesertTown01/Package 3/SmallBuilding02.mtl"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 255982,
+      "source": {
+        "blobSha": "5e65050af3b638b2802372ecd2c2ca5083f3bb7d",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%203/SmallBuilding02.obj",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%203/SmallBuilding02.obj",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 3/SmallBuilding02.png",
+      "collectionPath": "Package 3",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 3",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "SmallBuilding02",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 3/SmallBuilding02.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 291,
+      "source": {
+        "blobSha": "c3ae5ef6d2f00e6346995a9d8455d753941fecc1",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%203/SmallBuilding02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%203/SmallBuilding02.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 3/SmallBuilding02_Thumbnail.gif",
+      "collectionPath": "Package 3",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 3",
+      "format": "gif",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "SmallBuilding02_Thumbnail",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 3/SmallBuilding02_Thumbnail.gif",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1131011,
+      "source": {
+        "blobSha": "481e2f9f41b337e3c74e81addc4d9aecc10f4304",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%203/SmallBuilding02_Thumbnail.gif",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%203/SmallBuilding02_Thumbnail.gif",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 4/SmallBuilding03.gif",
+      "collectionPath": "Package 4",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 4",
+      "format": "gif",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "SmallBuilding03",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 4/SmallBuilding03.gif",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1242284,
+      "source": {
+        "blobSha": "4b0a187f0b864870b6f12dfbe01857bed462c56c",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%204/SmallBuilding03.gif",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%204/SmallBuilding03.gif",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 4/SmallBuilding03.obj",
+      "collectionPath": "Package 4",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 4",
+      "format": "obj",
+      "kind": "model-3d",
+      "name": "SmallBuilding03",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 4/SmallBuilding03.obj",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 4/SmallBuilding03.mtl",
+            "provenance": "file-explicit",
+            "reference": "obj:mtllib",
+            "role": "material",
+            "status": "ok",
+            "uri": "SmallBuilding03.mtl"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 4/SmallBuilding03.png",
+            "provenance": "file-explicit",
+            "reference": "mtl:8:map_Kd",
+            "role": "baseColor",
+            "status": "ok",
+            "uri": "SmallBuilding03.png",
+            "via": "media/3D_Assets/VoxelDesertTown01/Package 4/SmallBuilding03.mtl"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 192053,
+      "source": {
+        "blobSha": "f1379cc6ddd6c05928c80045df8cf89a71730bd5",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%204/SmallBuilding03.obj",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%204/SmallBuilding03.obj",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 4/SmallBuilding03.png",
+      "collectionPath": "Package 4",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 4",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "SmallBuilding03",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 4/SmallBuilding03.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 291,
+      "source": {
+        "blobSha": "c3ae5ef6d2f00e6346995a9d8455d753941fecc1",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%204/SmallBuilding03.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%204/SmallBuilding03.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 5/SmallBuilding04.gif",
+      "collectionPath": "Package 5",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 5",
+      "format": "gif",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "SmallBuilding04",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 5/SmallBuilding04.gif",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 959320,
+      "source": {
+        "blobSha": "cc02f760efa6906e4035fa232e3ad88199ace864",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%205/SmallBuilding04.gif",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%205/SmallBuilding04.gif",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 5/SmallBuilding04.obj",
+      "collectionPath": "Package 5",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 5",
+      "format": "obj",
+      "kind": "model-3d",
+      "name": "SmallBuilding04",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 5/SmallBuilding04.obj",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 5/SmallBuilding04.mtl",
+            "provenance": "file-explicit",
+            "reference": "obj:mtllib",
+            "role": "material",
+            "status": "ok",
+            "uri": "SmallBuilding04.mtl"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 5/SmallBuilding04.png",
+            "provenance": "file-explicit",
+            "reference": "mtl:8:map_Kd",
+            "role": "baseColor",
+            "status": "ok",
+            "uri": "SmallBuilding04.png",
+            "via": "media/3D_Assets/VoxelDesertTown01/Package 5/SmallBuilding04.mtl"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 184263,
+      "source": {
+        "blobSha": "4d6e7ac18e5bf32434e022959298c184597e8a7b",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%205/SmallBuilding04.obj",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%205/SmallBuilding04.obj",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 5/SmallBuilding04.png",
+      "collectionPath": "Package 5",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 5",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "SmallBuilding04",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 5/SmallBuilding04.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 291,
+      "source": {
+        "blobSha": "c3ae5ef6d2f00e6346995a9d8455d753941fecc1",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%205/SmallBuilding04.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%205/SmallBuilding04.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 6/TallBuilding01.obj",
+      "collectionPath": "Package 6",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 6",
+      "format": "obj",
+      "kind": "model-3d",
+      "name": "TallBuilding01",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 6/TallBuilding01.obj",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 6/TallBuilding01.mtl",
+            "provenance": "file-explicit",
+            "reference": "obj:mtllib",
+            "role": "material",
+            "status": "ok",
+            "uri": "TallBuilding01.mtl"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 6/TallBuilding01.png",
+            "provenance": "file-explicit",
+            "reference": "mtl:8:map_Kd",
+            "role": "baseColor",
+            "status": "ok",
+            "uri": "TallBuilding01.png",
+            "via": "media/3D_Assets/VoxelDesertTown01/Package 6/TallBuilding01.mtl"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 282916,
+      "source": {
+        "blobSha": "64c6bac62e0fac224bae9442977bae7edb64c010",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%206/TallBuilding01.obj",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%206/TallBuilding01.obj",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 6/TallBuilding01.png",
+      "collectionPath": "Package 6",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 6",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "TallBuilding01",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 6/TallBuilding01.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 291,
+      "source": {
+        "blobSha": "c3ae5ef6d2f00e6346995a9d8455d753941fecc1",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%206/TallBuilding01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%206/TallBuilding01.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 6/TallBuilding01_Thumbnail.gif",
+      "collectionPath": "Package 6",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 6",
+      "format": "gif",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "TallBuilding01_Thumbnail",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 6/TallBuilding01_Thumbnail.gif",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1463053,
+      "source": {
+        "blobSha": "0113ffe5f337b3513b1139d036c37a5d5e6fbdb1",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%206/TallBuilding01_Thumbnail.gif",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%206/TallBuilding01_Thumbnail.gif",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 7/TallBuilding02.gif",
+      "collectionPath": "Package 7",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 7",
+      "format": "gif",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "TallBuilding02",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 7/TallBuilding02.gif",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1197010,
+      "source": {
+        "blobSha": "ade9194bbe17bcc7b33f91709d0042b24c9941ac",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%207/TallBuilding02.gif",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%207/TallBuilding02.gif",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 7/TallBuilding02.obj",
+      "collectionPath": "Package 7",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 7",
+      "format": "obj",
+      "kind": "model-3d",
+      "name": "TallBuilding02",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 7/TallBuilding02.obj",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 7/TallBuilding02.mtl",
+            "provenance": "file-explicit",
+            "reference": "obj:mtllib",
+            "role": "material",
+            "status": "ok",
+            "uri": "TallBuilding02.mtl"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 7/TallBuilding02.png",
+            "provenance": "file-explicit",
+            "reference": "mtl:8:map_Kd",
+            "role": "baseColor",
+            "status": "ok",
+            "uri": "TallBuilding02.png",
+            "via": "media/3D_Assets/VoxelDesertTown01/Package 7/TallBuilding02.mtl"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 386530,
+      "source": {
+        "blobSha": "17852535d05168f5b44deceb22ebbba563f34419",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%207/TallBuilding02.obj",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%207/TallBuilding02.obj",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 7/TallBuilding02.png",
+      "collectionPath": "Package 7",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 7",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "TallBuilding02",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 7/TallBuilding02.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 291,
+      "source": {
+        "blobSha": "c3ae5ef6d2f00e6346995a9d8455d753941fecc1",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%207/TallBuilding02.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%207/TallBuilding02.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 8/TallBuilding03.gif",
+      "collectionPath": "Package 8",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 8",
+      "format": "gif",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "TallBuilding03",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 8/TallBuilding03.gif",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1204565,
+      "source": {
+        "blobSha": "de91c1541ae273df4d7157e060b4b444084139b1",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%208/TallBuilding03.gif",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%208/TallBuilding03.gif",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 8/TallBuilding03.obj",
+      "collectionPath": "Package 8",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 8",
+      "format": "obj",
+      "kind": "model-3d",
+      "name": "TallBuilding03",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 8/TallBuilding03.obj",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 8/TallBuilding03.mtl",
+            "provenance": "file-explicit",
+            "reference": "obj:mtllib",
+            "role": "material",
+            "status": "ok",
+            "uri": "TallBuilding03.mtl"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 8/TallBuilding03.png",
+            "provenance": "file-explicit",
+            "reference": "mtl:8:map_Kd",
+            "role": "baseColor",
+            "status": "ok",
+            "uri": "TallBuilding03.png",
+            "via": "media/3D_Assets/VoxelDesertTown01/Package 8/TallBuilding03.mtl"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 294484,
+      "source": {
+        "blobSha": "8771187386fe3d997cbf806b4b1152a7ec463368",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%208/TallBuilding03.obj",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%208/TallBuilding03.obj",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 8/TallBuilding03.png",
+      "collectionPath": "Package 8",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 8",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "TallBuilding03",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 8/TallBuilding03.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 291,
+      "source": {
+        "blobSha": "c3ae5ef6d2f00e6346995a9d8455d753941fecc1",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%208/TallBuilding03.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%208/TallBuilding03.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 9/TinyBuilding01.obj",
+      "collectionPath": "Package 9",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 9",
+      "format": "obj",
+      "kind": "model-3d",
+      "name": "TinyBuilding01",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 9/TinyBuilding01.obj",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 9/TinyBuilding01.mtl",
+            "provenance": "file-explicit",
+            "reference": "obj:mtllib",
+            "role": "material",
+            "status": "ok",
+            "uri": "TinyBuilding01.mtl"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package 9/TinyBuilding01.png",
+            "provenance": "file-explicit",
+            "reference": "mtl:8:map_Kd",
+            "role": "baseColor",
+            "status": "ok",
+            "uri": "TinyBuilding01.png",
+            "via": "media/3D_Assets/VoxelDesertTown01/Package 9/TinyBuilding01.mtl"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 96230,
+      "source": {
+        "blobSha": "275ee17fb1305c99da3de7c5c26111fbcb5d5736",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%209/TinyBuilding01.obj",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%209/TinyBuilding01.obj",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 9/TinyBuilding01.png",
+      "collectionPath": "Package 9",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 9",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "TinyBuilding01",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 9/TinyBuilding01.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 291,
+      "source": {
+        "blobSha": "c3ae5ef6d2f00e6346995a9d8455d753941fecc1",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%209/TinyBuilding01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%209/TinyBuilding01.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package 9/TinyBuilding_Thumbnail.gif",
+      "collectionPath": "Package 9",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package 9",
+      "format": "gif",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "TinyBuilding_Thumbnail",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package 9/TinyBuilding_Thumbnail.gif",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1067469,
+      "source": {
+        "blobSha": "fe2957eb0bbbb7570214d4e4883604a26db59e1c",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package%209/TinyBuilding_Thumbnail.gif",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package%209/TinyBuilding_Thumbnail.gif",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.gif",
+      "collectionPath": "Package",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package",
+      "format": "gif",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "LargeBuilding01",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.gif",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 1569704,
+      "source": {
+        "blobSha": "895f3c0e5b428a74c8703398c35a7e14aef89bcb",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.gif",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.gif",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.obj",
+      "collectionPath": "Package",
+      "dependencyStatus": "complete",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package",
+      "format": "obj",
+      "kind": "model-3d",
+      "name": "LargeBuilding01",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.obj",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "relations": {
+        "dependencies": [
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.mtl",
+            "provenance": "file-explicit",
+            "reference": "obj:mtllib",
+            "role": "material",
+            "status": "ok",
+            "uri": "LargeBuilding01.mtl"
+          },
+          {
+            "exists": true,
+            "path": "media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.png",
+            "provenance": "file-explicit",
+            "reference": "mtl:8:map_Kd",
+            "role": "baseColor",
+            "status": "ok",
+            "uri": "LargeBuilding01.png",
+            "via": "media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.mtl"
+          }
+        ]
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 445273,
+      "source": {
+        "blobSha": "bc6604b68b114f9d6c285faef420df9ef7494e8d",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.obj",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.obj",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    },
+    {
+      "assetId": "media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.png",
+      "collectionPath": "Package",
+      "folder": "media/3D_Assets/VoxelDesertTown01/Package",
+      "format": "png",
+      "hints": {
+        "textureCandidate": false,
+        "textureCandidateProvenance": "generated-structural"
+      },
+      "kind": "image-2d",
+      "name": "LargeBuilding01",
+      "packId": "voxeldeserttown01",
+      "packRoot": "media/3D_Assets/VoxelDesertTown01",
+      "path": "media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.png",
+      "provenance": {
+        "identity": "repo-exact",
+        "kind": "generated-structural",
+        "pack": "generated-structural"
+      },
+      "root": "media/3D_Assets",
+      "sizeBytes": 291,
+      "source": {
+        "blobSha": "c3ae5ef6d2f00e6346995a9d8455d753941fecc1",
+        "commit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+        "rawLatest": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/main/media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.png",
+        "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/VoxelDesertTown01/Package/LargeBuilding01.png",
+        "repo": "georg-doc/kayfabizarro"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "assetCount": 3,
+      "path": "Package"
+    },
+    {
+      "assetCount": 3,
+      "path": "Package 2"
+    },
+    {
+      "assetCount": 3,
+      "path": "Package 3"
+    },
+    {
+      "assetCount": 3,
+      "path": "Package 4"
+    },
+    {
+      "assetCount": 3,
+      "path": "Package 5"
+    },
+    {
+      "assetCount": 3,
+      "path": "Package 6"
+    },
+    {
+      "assetCount": 3,
+      "path": "Package 7"
+    },
+    {
+      "assetCount": 3,
+      "path": "Package 8"
+    },
+    {
+      "assetCount": 3,
+      "path": "Package 9"
+    }
+  ],
+  "dependencyStatus": {
+    "complete": 9
+  },
+  "displayName": "VoxelDesertTown01",
+  "formats": {
+    "gif": 9,
+    "obj": 9,
+    "png": 9
+  },
+  "kinds": {
+    "image-2d": 18,
+    "model-3d": 9
+  },
+  "packId": "voxeldeserttown01",
+  "provenance": "generated-structural",
+  "root": "media/3D_Assets/VoxelDesertTown01",
+  "schema": "kfb.asset-pack.v1",
+  "shard": "packs/voxeldeserttown01.json"
+}

@@ -2,9 +2,9 @@
   "counts": {
     "DECK_PATH_NORMALIZED": 2,
     "DUPLICATE_NAME": 716,
-    "MISSING_REFERENCED_FILE": 339,
+    "MISSING_REFERENCED_FILE": 338,
     "UNRESOLVED_FBX_DEPENDENCY": 511,
-    "UNRESOLVED_MODEL_DEPENDENCY": 242
+    "UNRESOLVED_MODEL_DEPENDENCY": 286
   },
   "problems": [
     {
@@ -11018,12 +11018,6 @@
       "type": "DUPLICATE_NAME"
     },
     {
-      "assetPath": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.gltf",
-      "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.gltf:media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.bin",
-      "target": "media/3D_Assets/KayKit_HalloweenBits/Assets/gltf/gravemarker_A.bin",
-      "type": "MISSING_REFERENCED_FILE"
-    },
-    {
       "assetPath": "media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/balcony-wall-fence.glb",
       "problemId": "MISSING_REFERENCED_FILE:media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/balcony-wall-fence.glb:media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/Textures/colormap.png",
       "target": "media/3D_Assets/kenney_fantasy-town-kit_2.0/Models/GLB format/Textures/colormap.png",
@@ -16664,6 +16658,12 @@
       "type": "UNRESOLVED_MODEL_DEPENDENCY"
     },
     {
+      "assetPath": "media/3D_Assets/LowPolyRockPack./LowPolyRockPack.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/LowPolyRockPack./LowPolyRockPack.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
       "assetPath": "media/3D_Assets/Textures/Metal022_1K-JPG/Metal022_1K-JPG.blend",
       "detail": "dependency parsing not implemented for .blend",
       "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/Textures/Metal022_1K-JPG/Metal022_1K-JPG.blend:dependency parsing not implemented for .blend",
@@ -17568,8 +17568,266 @@
       "detail": "dependency parsing not implemented for .blend",
       "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/Ultimate Nature Pack by Quaternius(1)/Blends/WoodLog_Snow.blend:dependency parsing not implemented for .blend",
       "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Fence Type2 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Demo/Models/Fence Type2 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Rock Type2 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Demo/Models/Rock Type2 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Tree Type1 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Demo/Models/Tree Type1 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Tree Type3 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Demo/Models/Tree Type3 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/LowPolyTreePack.blend",
+      "detail": "dependency parsing not implemented for .blend",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/LowPolyTreePack.blend:dependency parsing not implemented for .blend",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 05.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 05.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 06.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 06.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 05.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 05.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 05.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 05.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 05.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 05.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 05.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 05.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 01.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 01.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 02.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 02.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 03.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 03.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
+    },
+    {
+      "assetPath": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 04.dae",
+      "detail": "dependency parsing not implemented for .dae",
+      "problemId": "UNRESOLVED_MODEL_DEPENDENCY:media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 04.dae:dependency parsing not implemented for .dae",
+      "type": "UNRESOLVED_MODEL_DEPENDENCY"
     }
   ],
   "schema": "kfb.asset-registry.problems.v1",
-  "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3"
+  "sourceCommit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e"
 }
