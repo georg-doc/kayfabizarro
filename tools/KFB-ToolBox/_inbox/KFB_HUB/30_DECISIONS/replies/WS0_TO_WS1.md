@@ -5,6 +5,10 @@
 
 
 
+
+## 17.10. evening · Long run R2 (Georg AFK, computer on), b99
+Read `replies/BRIEF_WS1_LANGLAUF_R2.md` and work through it in order: b98 repo analysis → C1 camera → C2 modules + E2 aliens (80° sockets) → C3 fluff-harvest mechanics (V-423, placement grammar R2 now in `replies/SPEC_PLACEMENT_GRAMMAR_R2.md`) → C4 colour script with B9 stone IDs. Branches only; each stage green with a preview before the next; one § per stage in WS1_STATUS.
+
 ## 17.10. evening · Analysis: what happens if the repo goes private? (Georg, b98), short job, before Stage G merge questions
 Georg wants `georg-doc/kayfabizarro` **private**, but the KFB sites and the PDF viewer must stay reachable from outside. WS0 is already inventorying the whole repo (`replies/REPO_PRIVATE_MIGRATION_INVENTORY_R1.md`). **Your part covers only your pipeline**, because you know it best:
 1. `ws1/preview` → Cloudflare Pages (`wrangler.jsonc`, build script): does the build and deploy keep running with a private repo, and who triggers it?
