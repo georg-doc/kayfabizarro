@@ -37,9 +37,13 @@
   "worldStyleRules": {
     "grotesqueIsLandmarkDefault": true,
     "osmCityDefaultModeUnchanged": true,
-    "landmarkIdentityPaletteRemainsLocal": true,
+    "landmarkColourMode": "kfb-seed",
+    "landmarkColourDecision": "tools/img2threejs/docs/DECISION_LANDMARK_COLOUR_KFB_SEED_2026-09-24.md",
+    "landmarkIdentityPaletteRemainsLocal": false,
+    "identityPaletteRole": "lightness anchor per zone (OKLCH L) + fallback for landmarkColourMode identity",
     "worldMoodIsHueShiftOnly": true,
-    "preserveLandmarkSaturationAndLightness": true,
+    "preserveLandmarkSaturationAndLightness": false,
+    "preserveLandmarkLightness": true,
     "environmentLightingOwnedByHost": true,
     "noPrivateTravelFetchAtRuntime": true,
     "derivedTravelSnapshot": "travel-visual-snapshot.v1.json",
@@ -47,6 +51,38 @@
     "legacySkydomeVariantsAreOptional": true,
     "osmCityIsDefaultReviewEnvironment": true,
     "travelRemainsAlternateReviewEnvironment": true
+  },
+  "kfbSeed": {
+    "schema": "kfb.landmark.kfb-seed-colour/1.0",
+    "rule": "zone hue + chroma from the active cologne-palette.v1 seed role, zone lightness (OKLCH L) from the identity palette; out of gamut reduces chroma only; world mood then rotates hue by moodDelta*worldCoupling",
+    "zoneSource": {
+      "structure": "roles.structure",
+      "secondary": "roles.shoulder",
+      "upper": "roofs[0]",
+      "accent": "roles.gold",
+      "glazing": "roles.deep",
+      "base": "roles.shoulderLo"
+    },
+    "accentScope": "identity hits only (finials, crocket bands, crossing spire, clock/crown details); never every pinnacle tip",
+    "defaultSeedPalette": {
+      "label": "Gemessen · Tafel 01/02",
+      "seed": 0,
+      "source": "cologne-palette.v1.js makePalette(0) @ KFB Cologne Race Option C-3/lab-v9",
+      "roles": {
+        "structure": "#c88869",
+        "shoulder": "#d8956b",
+        "gold": "#fdc348",
+        "deep": "#164b59",
+        "shoulderLo": "#674b54"
+      },
+      "roofs": [
+        "#88243c",
+        "#972b3b",
+        "#422d1d",
+        "#785559",
+        "#164b59"
+      ]
+    }
   },
   "profiles": {
     "koelner-dom": {

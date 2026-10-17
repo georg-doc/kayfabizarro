@@ -38,6 +38,46 @@ function setHuePreserveSL(hex,hueDeg){
   const hsl=rgbHsl(hexRgb(hex));hsl[0]=mod1(hueDeg/360);return rgbHex(hslRgb(hsl));
 }
 
+
+// ---- KFB seed colour (decision 2026-09-24, docs/DECISION_LANDMARK_COLOUR_KFB_SEED_2026-09-24.md) ----
+// Landmarks are colourful by the active KFB seed: zone hue + chroma from the seed role, zone lightness from the
+// identity palette (OKLCH), out of gamut -> chroma only. The grey identity palette is no longer the look.
+const s2l=c=>c<=.04045?c/12.92:Math.pow((c+.055)/1.055,2.4);
+const l2s=c=>{c=Math.max(0,c);return c<=.0031308?12.92*c:1.055*Math.pow(c,1/2.4)-.055;};
+export function hexToOklch(hex){
+  const [r,g,b]=hexRgb(hex).map(s2l);
+  let l=.4122214708*r+.5363325363*g+.0514459929*b,m=.2119034982*r+.6806995451*g+.1073969566*b,s=.0883024619*r+.2817188376*g+.6299787005*b;
+  l=Math.cbrt(l);m=Math.cbrt(m);s=Math.cbrt(s);
+  const L=.2104542553*l+.793617785*m-.0040720468*s,A=1.9779984951*l-2.428592205*m+.4505937099*s,B=.0259040371*l+.7827717662*m-.808675766*s;
+  return [L,Math.hypot(A,B),((Math.atan2(B,A)*180/Math.PI)%360+360)%360];
+}
+function oklchLin(L,C,H){
+  const A=C*Math.cos(H*Math.PI/180),B=C*Math.sin(H*Math.PI/180);
+  const l=(L+.3963377774*A+.2158037573*B)**3,m=(L-.1055613458*A-.0638541728*B)**3,s=(L-.0894841775*A-1.291485548*B)**3;
+  return [4.0767416621*l-3.3077115913*m+.2309699292*s,-1.2684380046*l+2.6097574011*m-.3413193965*s,-.0041960863*l-.7034186147*m+1.707614701*s];
+}
+export function oklchToHex(L,C,H){
+  let rgb=oklchLin(L,C,H);
+  for(let i=0;i<40&&!rgb.every(v=>v>=-1e-4&&v<=1.0001);i++){C*=.93;rgb=oklchLin(L,C,H);}
+  return rgbHex(rgb.map(l2s));
+}
+function seedRole(seedPalette,path){
+  const m=/^(roles|roofs)(?:\.(\w+)|\[(\d+)\])$/.exec(path);
+  if(!m)throw Error('bad kfbSeed zoneSource '+path);
+  return m[1]==='roofs'?seedPalette.roofs[Number(m[3])]:seedPalette.roles[m[2]];
+}
+export function kfbSeedZoneColours(id,profiles,seedPalette=null){
+  const p=profileForLandmark(id,profiles),cfg=profiles.kfbSeed;
+  const pal=seedPalette||cfg.defaultSeedPalette,out={};
+  for(const zone of LANDMARK_ZONES){
+    const [L]=hexToOklch(p.identityPalette[zone]);
+    const [,C,H]=hexToOklch(seedRole(pal,cfg.zoneSource[zone]));
+    out[zone]=oklchToHex(L,C,H);
+  }
+  return out;
+}
+function shiftHueOklch(hex,deltaDeg){const [L,C,H]=hexToOklch(hex);return oklchToHex(L,C,((H+deltaDeg)%360+360)%360);}
+
 export function profileForLandmark(id,profiles){
   const p=profiles?.profiles?.[id];
   if(!p)throw Error('No landmark style profile for '+id);
@@ -57,9 +97,11 @@ export function resolveLandmarkColours(id,profiles,snapshot,ctx={}){
   const p=profileForLandmark(id,profiles),moods=snapshot.moods;
   const mood=moods[ctx.mood]||moods.verdant,baseMood=moods.verdant;
   const biomeIndex=Math.max(0,Math.min(3,Number(ctx.biomeIndex??0)|0));
+  const kfb=(profiles.worldStyleRules?.landmarkColourMode??'kfb-seed')==='kfb-seed';
+  const seeded=kfb?kfbSeedZoneColours(id,profiles,ctx.seedPalette||null):null;
   const out={};
   for(const zone of LANDMARK_ZONES){
-    const base=p.identityPalette[zone];
+    const base=kfb?seeded[zone]:p.identityPalette[zone];
     const slot=SLOT_BY_ZONE[zone];
     const coupling=Number(p.worldCoupling?.[zone]??.25);
     let moodDelta=0,biomeDelta=0;
@@ -71,7 +113,8 @@ export function resolveLandmarkColours(id,profiles,snapshot,ctx={}){
     }else{
       moodDelta=shortestHueDeltaDeg(baseMood[slot],mood[slot]);
     }
-    out[zone]=shiftHuePreserveSL(base,moodDelta*coupling+biomeDelta*coupling);
+    const d=moodDelta*coupling+biomeDelta*coupling;
+    out[zone]=kfb?(d?shiftHueOklch(base,d):base):shiftHuePreserveSL(base,d);
   }
   return out;
 }
@@ -143,6 +186,7 @@ export function worldStyleReport(id,profiles,snapshot,ctx={}){
   return {
     id,
     defaultShapeMode:profiles.defaultShapeMode,
+    colourMode:profiles.worldStyleRules?.landmarkColourMode??'kfb-seed',
     colours:resolveLandmarkColours(id,profiles,snapshot,ctx),
     floor:ctx.environment==='osm'?null:resolveTravelBiomeFloor(snapshot,ctx),
     mood:ctx.mood||'verdant',
