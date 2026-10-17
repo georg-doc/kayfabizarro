@@ -1,7 +1,34 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§69 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§70 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 70 · 17.10. · Look-Probe Umfärbung (Joyride A/B/C) · Farbsprengsel steinweise (Bitte an WS0 → WSB) · s1 gespiegelt
+
+### 70.1 · Look-Probe (Branch `l3/licht` @41430ff, `scripts/light/look-recolor.mjs`)
+- Amphitheater unter Mesa-Licht: Original (18 %, V-286) gegen volle Umfärbung nach Helligkeit mit Rollen je Bauteil (`palv=b`, `pamt=1`, neuer Schalter) in den drei Joyride-Welten aus `track-look.v5` `WORLDS`:
+  - A · Claybound-Canyon (Joyride-Standard)
+  - B · Bikini-Bucht
+  - C · O-Town
+- Tafeln `tafel_recolor_{day,gold}.png` an Georg.
+- **Georg:** „die Beispiele in den Bildern sind auf jeden Fall gut, die können wir so nehmen“. Ausgangspunkt für das Farbdrehbuch sind die drei Joyride-Welten; je Diorama eine Palette mit ≈ 6 Farben, zufällig in cartoonhafter Harmonie erzeugbar (V-305-Generator) und je Diorama optimierbar.
+- Rahmenfarbe kommt in der Probe aus der Bühnenpalette (passt zu V-402).
+
+### 70.2 · Farbsprengsel steinweise (Georg 17.10., vormerken, Bitte an WS0 → WSB)
+Georg: In umgefärbten Bauteilen (z. B. Torbögen) sollen hin und wieder andersfarbige Steine erscheinen, etwa ein lila Stein im orangen Bogen, heuristisch-organisch verteilt.
+- **Warum:** Eine durchgehend umgefärbte Fläche wirkt „in Farbe getaucht“ mit harter Kante und bricht die Illusion natürlicher Farbigkeit. Die Sprengsel sind derselbe Übergang wie das Sprenkel-Band im Gelände (V-403), nur auf Objekten.
+- **Technik:** Amphitheater und Meshy-Dioramen sind ein Netz mit gemalter Textur, ohne Stein-Grenzen. Ein reiner Shader-Weg (Zellrauschen im Raum) schneidet quer durch die Steine und wirkt wie Farbspritzer, also wieder ein erkennbares Konstruktionsmuster. **Darum der Blender-Weg:**
+  1. **WSB (Blender, im ohnehin geplanten Dioramen-Durchgang mit Polygon-Optimierung und Baking):** je Stein bzw. Bauteil-Insel eine ID als Vertexfarbe (Kanal R/G: Stein-ID, gleichverteilt), dazu ein zweiter Kanal mit der Bauteil-Rolle (Türme/Bögen, Ränge, Boden, Fels, Rahmen). Auslieferung als GLB nach `kfb.stage-descriptor/1` mit Vermerk der Kanäle.
+  2. **WS1 (Spiel):** Die Farbregel kommt in das Sprenkel-Modul `kfb-speckle-transition.v1` als Objekt-Ebene: Je Stein-ID wählt eine feste, seedbare Regel die Rollenfarbe oder eine Sprengselfarbe. Dichter an Übergängen und Kanten, Gruppen nach `nest()` (1:3:Rest), viele Größen, Seed je Diorama, reproduzierbar, kein erkennbares Muster.
+  3. Abnahme wie V-403: keine harte Kante, kein Konstruktionsmuster (blinder Kritiker), ≤ 3 Ebenen, keine zusätzlichen Draw Calls.
+- **Bitte an WS0:** als Auftragszeile für WSB anlegen (Kanäle und Format festlegen) und in die Look-Slice-Vorlage aufnehmen. Bis die GLBs kommen, bleibt es bei der flächigen Umfärbung nach Rollen.
+
+### 70.3 · Erledigt
+- `s1/weltboden` @d0a66eb auf GitHub gespiegelt (Bitte V-403 Punkt 5): Branch `ws1/s1-weltboden` @bfd0aa4a, Ordner `ws1/kfb-planet-s1/`. Nur Node-geprüft.
+- Die drei Joyride-Paletten sind gefunden: `WORLDS` in `track-look.v5` heißen A · Claybound-Canyon, B · Bikini-Bucht, C · O-Town. Sie stecken schon als `canyon`, `bucht`, `otown` in `src/vendor/palette/island-palettes.js`.
+
+### 70.4 · Nächste Schritte
+L3-Testreihe läuft → Merge nach main (Georg: „ja, so umsetzen“) → Figurenkarten (V-402.4) → Look-Slice (Farbdrehbuch, Umfärbung, Knet-Boden, Sprenkel-Modul V-403) → Slice 1 sichtbar → Licht final → externe Designkritik.
 
 ## 69 · 17.10. · Georg-Entscheide zu Look und Reihenfolge · Fragen an WS0 (Farbe vor Licht-Feinschliff, Rahmenfarbe, B7-Daten)
 
