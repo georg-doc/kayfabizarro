@@ -1,3 +1,7 @@
 R3.1 candidate frizzlebob_bloedsinnland_alice · binding SONG_SPEC_R3.md blob 3a6ea19c0c30c4c9430decc1c739dbbb5a294f60
 Coverage: 30/30 OCR provisional cards; 30/30 JS card line length pass; zero digit or parentheses; original Blödsinn count = 1; lyrics 3090 chars.
 Numerical sung replacement: #4 six in the evening, logged as songLine (1/30=3.33%). Other presentation aliases from printed headings (A6/A8): 10, 26, 27, 28, 29, 30. Canonical OCR dossier unchanged. Full exact Python QA PENDING CI; no blind reviewer.
+
+## VERIFIED R3.1 Python evidence · 39031723503
+https://github.com/georg-doc/kayfabizarro/actions/runs/39031723503
+Candidate head 5fbac36d10489ac42cc1064def4e6c9579cd73d2. Exact original triplet_set_check.py EXIT 0; R3.1 format_gate_r31.py EXIT 0; 2/2 named steps SUCCESS. This verifies source-aware mechanical and format gates, NOT independent creative judgment. No separate reviewer used. Next gate: independent judge only scores/flags without prose rewrites.

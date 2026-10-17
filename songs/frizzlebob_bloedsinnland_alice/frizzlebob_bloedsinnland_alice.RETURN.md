@@ -1,2 +1,6 @@
 # Alice R4.1 RETURN · V-418
 Existing owner kfb-triplets, branch songs/frizzlebob_bloedsinnland_alice-r4-2026-10-17; R3.1 spec blob 3a6ea19c0c30c4c9430decc1c739dbbb5a294f60. Never modify source OCR dossier. 30/30 provisional cards (page mapping remains provisional). Replaced 6:00 PM with six in the evening and logged mandatory songLine 1/30. Removed parenthetical subtitle and game terms in the card beats. Kept Blödsinn once. Original R4 retained separately; new r4.1 files carry candidate. All numbers/brackets/game words checked by format_gate_r31.py. Python exact checker still runs with explicitly derived lexical testing fixture (not source canon), awaiting Actions evidence. Independent reviewer NOT RUN; one writer revision reserved. No Stage/Hub/merge. Next gate: independent judge only after actual Python PASS.
+
+## VERIFIED R3.1 Python evidence · 39031723503
+https://github.com/georg-doc/kayfabizarro/actions/runs/39031723503
+Candidate head 5fbac36d10489ac42cc1064def4e6c9579cd73d2. Exact original triplet_set_check.py EXIT 0; R3.1 format_gate_r31.py EXIT 0; 2/2 named steps SUCCESS. This verifies source-aware mechanical and format gates, NOT independent creative judgment. No separate reviewer used. Next gate: independent judge only scores/flags without prose rewrites.
