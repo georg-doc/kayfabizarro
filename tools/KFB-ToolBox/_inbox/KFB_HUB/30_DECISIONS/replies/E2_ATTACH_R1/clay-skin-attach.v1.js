@@ -49,7 +49,10 @@ export function fitScale(socketInnerR, socketPlay = 0.006, skinOpts = {}) {
  *   skin:         {}                                                  E2 overrides (clay-eyelid DEFAULTS2 keys); default = the approved E2
  *   claySeed:     0                                                   per-geometry seed for clay-material v10 (eye index is added)
  *   autoUpdate:   true                                                wrap rig.update so sync() runs after every rig.update(dt)
- *   epsilon:      1e-4                                                aperture change (deg) below which the geometry is not rebuilt
+ *   epsilon:      0.1                                                 aperture change (deg) below which the geometry is not rebuilt.
+ *                                                                     One rebuild costs ~5 ms per eye (Node, Apple silicon); v6 'life' tremor
+ *                                                                     moves the lid ~0.06°, so 0.1 skips tremor-only frames (0.1° ≈ 0.002 R).
+ *   settleFrames: 10                                                  a smaller change is applied after this many frames (no lasting offset)
  * }
  * handle: { schema, sync(), detach(), skins, fit, rig, opts }
  */
@@ -57,7 +60,7 @@ export function attachClaySkin(rig, THREE, opts = {}) {
   if (!rig || typeof rig.build !== 'function' || typeof rig.update !== 'function') throw new TypeError('attachClaySkin: EyeRig v6 instance expected');
   if (!THREE || !THREE.BufferGeometry) throw new TypeError('attachClaySkin: THREE namespace expected');
   if (rig.__kfbClaySkin) return rig.__kfbClaySkin;                       // idempotent: one skin per eye, ever
-  const o = Object.assign({ socketInnerR: null, socketPlay: 0.006, skin: {}, claySeed: 0, autoUpdate: true, epsilon: 1e-4 }, opts);
+  const o = Object.assign({ socketInnerR: null, socketPlay: 0.006, skin: {}, claySeed: 0, autoUpdate: true, epsilon: 0.1, settleFrames: 10 }, opts);
   const skinOpts = Object.assign({}, DEFAULTS2, o.skin || {});
   const origBuild = rig.build, origUpdate = rig.update;
   const live = new Set();                                                // geometries we own (disposed on rebuild/detach)
@@ -87,7 +90,7 @@ export function attachClaySkin(rig, THREE, opts = {}) {
     skin.userData.petOverlay = true; skin.userData.kfbClaySkin = CLAY_SKIN_ATTACH_SCHEMA;
     skin.raycast = () => {}; skin.frustumCulled = false; skin.castShadow = false;
     e._lids.add(skin);
-    e._claySkin = skin; e._claySkinAp = ap;
+    e._claySkin = skin; e._claySkinAp = ap; e._claySkinWait = 0;
     const s = fitScale(socketFor(e, i), o.socketPlay, skinOpts);
     e.userData.__claySkinFit = { s, base: null, applied: null };
     enforceFit(e);
@@ -106,9 +109,11 @@ export function attachClaySkin(rig, THREE, opts = {}) {
       if (skin.material !== e._up.material) skin.material = e._up.material;
       enforceFit(e);
       const ap = apertureOf(e), p = e._claySkinAp;
-      if (p && Math.abs(ap.U - p.U) < o.epsilon && Math.abs(ap.L - p.L) < o.epsilon && Math.abs(ap.A - p.A) < o.epsilon) continue;
+      const d = p ? Math.max(Math.abs(ap.U - p.U), Math.abs(ap.L - p.L), Math.abs(ap.A - p.A)) : Infinity;
+      if (d < 1e-6) { e._claySkinWait = 0; continue; }                     // exact: nothing to do
+      if (d < o.epsilon && ++e._claySkinWait < o.settleFrames) continue;  // small change: catch up after settleFrames
       updateClayEyelidSkin(skin.geometry, Object.assign({}, skinOpts, { radius: rig._R, aperture: ap }));
-      e._claySkinAp = ap;
+      e._claySkinAp = ap; e._claySkinWait = 0;
     }
   }
   function detach() {

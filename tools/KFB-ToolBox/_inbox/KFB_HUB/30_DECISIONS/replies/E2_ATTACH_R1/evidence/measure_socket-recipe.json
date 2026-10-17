@@ -1,0 +1,432 @@
+{
+ "socketMode": "recipe",
+ "figs": [
+  {
+   "fig": "hunky",
+   "eyes": [
+    {
+     "eye": 0,
+     "fit": 0.97337,
+     "recipeShellOverR": 1.1001,
+     "socketVerts": 6916,
+     "shellSphereR": {
+      "p1": 1.0999,
+      "p50": 1.1,
+      "p99": 1.531,
+      "n": 3382
+     },
+     "allSocketR": {
+      "p0": 0.564,
+      "p50": 1.1
+     },
+     "openingHalfAngleDeg_fromPlusZ": 54.14,
+     "states": {
+      "open": {
+       "aperture": {
+        "U": 63.685,
+        "L": 63.685,
+        "A": 107.644
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.0941,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 79,
+        "ph": 62
+       },
+       "shellBinsCompared": 1654,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 0,
+       "rimVertsInsideSkinOuter": 0,
+       "rimDeepestR": 0,
+       "pupilPx": {
+        "front": 7460,
+        "left40": 4926,
+        "right40": 4926,
+        "up30": 5960,
+        "down30": 5960,
+        "side75": 988,
+        "top": 342,
+        "back": 0
+       }
+      },
+      "rest": {
+       "aperture": {
+        "U": 55.571,
+        "L": 59.628,
+        "A": 105
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.0941,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 79,
+        "ph": 50
+       },
+       "shellBinsCompared": 1753,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 156,
+       "rimVertsInsideSkinOuter": 86,
+       "rimDeepestR": 0.0585,
+       "pupilPx": {
+        "front": 7460,
+        "left40": 4926,
+        "right40": 4926,
+        "up30": 5960,
+        "down30": 5960,
+        "side75": 988,
+        "top": 342,
+        "back": 0
+       }
+      },
+      "half": {
+       "aperture": {
+        "U": 29.88,
+        "L": 29.88,
+        "A": 92.956
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.0941,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 61,
+        "ph": 34
+       },
+       "shellBinsCompared": 1780,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 682,
+       "rimVertsInsideSkinOuter": 376,
+       "rimDeepestR": 0.068,
+       "pupilPx": {
+        "front": 7460,
+        "left40": 4926,
+        "right40": 4926,
+        "up30": 5960,
+        "down30": 5960,
+        "side75": 988,
+        "top": 138,
+        "back": 0
+       }
+      },
+      "closed": {
+       "aperture": {
+        "U": 0.06,
+        "L": 0.06,
+        "A": 80
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.0941,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 67,
+        "ph": 10
+       },
+       "shellBinsCompared": 1409,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 592,
+       "rimVertsInsideSkinOuter": 350,
+       "rimDeepestR": 0.0676,
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     }
+    },
+    {
+     "eye": 1,
+     "fit": 0.97337,
+     "recipeShellOverR": 1.1001,
+     "socketVerts": 6916,
+     "shellSphereR": {
+      "p1": 1.0999,
+      "p50": 1.1,
+      "p99": 1.531,
+      "n": 3382
+     },
+     "allSocketR": {
+      "p0": 0.564,
+      "p50": 1.1
+     },
+     "openingHalfAngleDeg_fromPlusZ": 54.14,
+     "states": {
+      "open": {
+       "aperture": {
+        "U": 63.685,
+        "L": 63.685,
+        "A": 107.644
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.0941,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 79,
+        "ph": 118
+       },
+       "shellBinsCompared": 1654,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 0,
+       "rimVertsInsideSkinOuter": 0,
+       "rimDeepestR": 0,
+       "pupilPx": {
+        "front": 7460,
+        "left40": 4926,
+        "right40": 4926,
+        "up30": 5960,
+        "down30": 5960,
+        "side75": 988,
+        "top": 342,
+        "back": 0
+       }
+      },
+      "rest": {
+       "aperture": {
+        "U": 55.571,
+        "L": 59.628,
+        "A": 105
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.0941,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 79,
+        "ph": 134
+       },
+       "shellBinsCompared": 1753,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 153,
+       "rimVertsInsideSkinOuter": 85,
+       "rimDeepestR": 0.0585,
+       "pupilPx": {
+        "front": 7460,
+        "left40": 4926,
+        "right40": 4926,
+        "up30": 5960,
+        "down30": 5960,
+        "side75": 988,
+        "top": 342,
+        "back": 0
+       }
+      },
+      "half": {
+       "aperture": {
+        "U": 29.88,
+        "L": 29.88,
+        "A": 92.956
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.0941,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 61,
+        "ph": 146
+       },
+       "shellBinsCompared": 1780,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 682,
+       "rimVertsInsideSkinOuter": 376,
+       "rimDeepestR": 0.068,
+       "pupilPx": {
+        "front": 7460,
+        "left40": 4926,
+        "right40": 4926,
+        "up30": 5960,
+        "down30": 5960,
+        "side75": 988,
+        "top": 138,
+        "back": 0
+       }
+      },
+      "closed": {
+       "aperture": {
+        "U": 0.06,
+        "L": 0.06,
+        "A": 80
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.0941,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 67,
+        "ph": 170
+       },
+       "shellBinsCompared": 1409,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 592,
+       "rimVertsInsideSkinOuter": 350,
+       "rimDeepestR": 0.0676,
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "fig": "dory",
+   "eyes": [
+    {
+     "eye": 0,
+     "fit": 0.89676,
+     "recipeShellOverR": 1.014,
+     "socketVerts": 8217,
+     "shellSphereR": {
+      "p1": 1.0139,
+      "p50": 1.0139,
+      "p99": 1.088,
+      "n": 3343
+     },
+     "allSocketR": {
+      "p0": 0.5631,
+      "p50": 1.0042
+     },
+     "openingHalfAngleDeg_fromPlusZ": 52.86,
+     "states": {
+      "open": {
+       "aperture": {
+        "U": 63.685,
+        "L": 63.685,
+        "A": 107.644
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.008,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 111,
+        "ph": -162
+       },
+       "shellBinsCompared": 1674,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 364,
+       "rimVertsInsideSkinOuter": 183,
+       "rimDeepestR": 0.1014,
+       "pupilPx": {
+        "front": 6172,
+        "left40": 4138,
+        "right40": 4138,
+        "up30": 4964,
+        "down30": 4964,
+        "side75": 874,
+        "top": 312,
+        "back": 0
+       }
+      },
+      "rest": {
+       "aperture": {
+        "U": 55.571,
+        "L": 59.628,
+        "A": 105
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.008,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 111,
+        "ph": -166
+       },
+       "shellBinsCompared": 1785,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 517,
+       "rimVertsInsideSkinOuter": 314,
+       "rimDeepestR": 0.1076,
+       "pupilPx": {
+        "front": 6172,
+        "left40": 4138,
+        "right40": 4138,
+        "up30": 4964,
+        "down30": 4964,
+        "side75": 874,
+        "top": 312,
+        "back": 0
+       }
+      },
+      "half": {
+       "aperture": {
+        "U": 29.88,
+        "L": 29.88,
+        "A": 92.956
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.008,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 99,
+        "ph": 170
+       },
+       "shellBinsCompared": 1832,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 902,
+       "rimVertsInsideSkinOuter": 500,
+       "rimDeepestR": 0.0961,
+       "pupilPx": {
+        "front": 6172,
+        "left40": 4138,
+        "right40": 4138,
+        "up30": 4964,
+        "down30": 4964,
+        "side75": 874,
+        "top": 176,
+        "back": 0
+       }
+      },
+      "closed": {
+       "aperture": {
+        "U": 0.06,
+        "L": 0.06,
+        "A": 80
+       },
+       "shellsVisible": 0,
+       "lidSkins": 1,
+       "skinOuterMaxR": 1.008,
+       "shellGapMinR": 0.0059,
+       "shellGapMinAt": {
+        "th": 83,
+        "ph": 174
+       },
+       "shellBinsCompared": 1535,
+       "shellBinsPenetrating": 0,
+       "rimVertsFront": 758,
+       "rimVertsInsideSkinOuter": 432,
+       "rimDeepestR": 0.0921,
+       "pupilPx": {
+        "front": 0,
+        "left40": 0,
+        "right40": 0,
+        "up30": 0,
+        "down30": 0,
+        "side75": 0,
+        "top": 0,
+        "back": 0
+       }
+      }
+     }
+    }
+   ]
+  }
+ ]
+}
