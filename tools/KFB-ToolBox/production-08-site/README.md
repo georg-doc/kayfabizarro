@@ -1,0 +1,3 @@
+# KFB ToolBox Production-08 · Site v8 · V-244
+
+https://kfb-toolbox.frizzlebob.chatgpt.site/ opens the actual ToolBox. Exact attached Georg Ear Rig imports on startup. Site v8 adds persisted closed rest mouth and texture-ready reveal, Studio Idle/bind/standard/saved poses, Dots visibility and direct paused Animation IK drag. Existing FaceHost/PoseRig/editor remain owners. Shadow camera depth follows the known shared recipe more tightly; its visible contact result is NOT accepted. 27 targeted + 21 import regression checks = 48/48 PASS, browser/WebGL NOT RUN. Actual Site→GitHub Save remains pending. Read RETURN.md and REST_POSES_DOTS_TEST_REPORT.md for exact evidence and limitations. Draft PR #399; no merge/Live.

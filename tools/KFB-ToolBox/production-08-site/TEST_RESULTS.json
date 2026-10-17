@@ -1,0 +1,918 @@
+{
+  "schema": "kfb.toolbox-port-check/1",
+  "passed": 180,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "source checksum: ACTORS.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: ACTORS.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: CHANGELOG_LINE.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: CHANGELOG_LINE.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: KFB ToolBox Production-08.dc.html",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: KFB ToolBox Production-08.dc.html",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: KNOWN_ISSUES.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: KNOWN_ISSUES.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: Lid Reference.dc.html",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: Lid Reference.dc.html",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: START_HERE.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: START_HERE.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: STORAGE.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: STORAGE.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: UI_NOTES.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: UI_NOTES.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: data/FB_V5_RIG_BASELINE_2026-10-14.json",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: data/FB_V5_RIG_BASELINE_2026-10-14.json",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: data/kfb-pet-frizzlebob-earrig-v5.georg-2026-10-14.json",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: data/kfb-pet-frizzlebob-earrig-v5.georg-2026-10-14.json",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: docs/LESSONS_SHADOWS.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: docs/LESSONS_SHADOWS.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: docs/PROJECT_RULES_CLAUDE.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: docs/PROJECT_RULES_CLAUDE.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: docs/github.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: docs/github.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: handover/BLENDER_BRIEF_FB_LIDS_A_2026-10-14.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: handover/BLENDER_BRIEF_FB_LIDS_A_2026-10-14.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: handover/HANDOVER_CLAUDE_CODE_TOOLBOX_2026-10-14.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: handover/HANDOVER_CLAUDE_CODE_TOOLBOX_2026-10-14.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/_ref/clay-lids.v1.lids01.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/_ref/clay-lids.v1.lids01.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/_ref/clay-lids.v1.lids03.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/_ref/clay-lids.v1.lids03.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/_ref/clay-lids.v1.lids04.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/_ref/clay-lids.v1.lids04.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/_ref/clay-lids.v1.lids05.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/_ref/clay-lids.v1.lids05.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/_ref/ear-dangle.v1.pr214.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/_ref/ear-dangle.v1.pr214.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/anim-library.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/anim-library.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/anim-map.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/anim-map.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/body-shape.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/body-shape.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/body-surface.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/body-surface.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/body-surface.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/body-surface.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/clay-lids.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/clay-lids.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/clay/ASSET_REFS.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/clay/ASSET_REFS.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/clay/clay-material.v10.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/clay/clay-material.v10.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/clay/clay-profiles.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/clay/clay-profiles.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/clay/clay-relief.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/clay/clay-relief.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/clay/clay-relief.v4.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/clay/clay-relief.v4.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/clay/clay-toolmix.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/clay/clay-toolmix.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/contact-ao.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/contact-ao.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/ear-base.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/ear-base.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/ear-dangle.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/ear-dangle.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/edit-layer.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/edit-layer.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/face-mount.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/face-mount.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/grounding.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/grounding.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/hair-tufts.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/hair-tufts.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/librarian-motion-projection.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/librarian-motion-projection.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/lipsync-text.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/lipsync-text.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/locomotion-profiles.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/locomotion-profiles.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/pet-eye-rig.v6.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/pet-eye-rig.v6.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/pet-library.v6.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/pet-library.v6.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/pose-rig.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/pose-rig.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: kfb-lib/snap.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: kfb-lib/snap.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source checksum: support.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "port source identity: support.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "entry unchanged outside import map",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Three remains 0.160.0",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner module redirects preserve pinned path",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/frizzlegraft-v1/graft-mount.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/frizzlegraft-v1/graft-biped.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/frizzlegraft-v1/headgraft.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/frizzlegraft-v1/ears.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/frizzlegraft-v1/facehost.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/frizzlegraft-v1/matzones.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/frizzlegraft-v1/eyeoval.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/frizzlegraft-v1/headzones.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/frizzlegraft-v1/donoreyes.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/frizzlegraft-v1/wordmark.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/frizzlegraft-v1/actor-wobble.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/petstudio-v9/studio-v12/brow-rig.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/petstudio-v9/studio-v12/pet-nose.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/petstudio-v9/studio-v12/pet-moustache.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/petstudio-v9/studio-v12/frizzlebob.v4a.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/petstudio-v9/studio-v3/pet-mouth.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/petstudio-v9/studio-v13/pose-rig.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/petstudio-v9/kfb-ink-canon.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/lab-v6/facegraft.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/lab-v6/partrig.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/lab-v4/carlrig.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/lab-v2/audit.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "owner code identity with explicit URL adaptations: owners/petstudio-v9/studio-v12/gun-look.v4a.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/_ref/clay-lids.v1.lids01.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/_ref/clay-lids.v1.lids03.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/_ref/clay-lids.v1.lids04.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/_ref/clay-lids.v1.lids05.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/_ref/ear-dangle.v1.pr214.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/anim-library.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/anim-map.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/body-shape.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/body-surface.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/body-surface.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/clay/clay-material.v10.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/clay/clay-profiles.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/clay/clay-relief.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/clay/clay-relief.v4.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/clay/clay-toolmix.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/clay-lids.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/contact-ao.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/ear-base.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/ear-dangle.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/edit-layer.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/face-mount.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/grounding.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/hair-tufts.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/librarian-motion-projection.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/lipsync-text.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/locomotion-profiles.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/pet-eye-rig.v6.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/pet-library.v6.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/pose-rig.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: kfb-lib/snap.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/frizzlegraft-v1/actor-wobble.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/frizzlegraft-v1/donoreyes.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/frizzlegraft-v1/ears.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/frizzlegraft-v1/eyeoval.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/frizzlegraft-v1/facehost.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/frizzlegraft-v1/graft-biped.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/frizzlegraft-v1/graft-mount.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/frizzlegraft-v1/headgraft.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/frizzlegraft-v1/headzones.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/frizzlegraft-v1/matzones.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/frizzlegraft-v1/wordmark.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/lab-v2/audit.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/lab-v4/carlrig.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/lab-v6/facegraft.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/lab-v6/partrig.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/petstudio-v9/kfb-ink-canon.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/petstudio-v9/studio-v12/brow-rig.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/petstudio-v9/studio-v12/frizzlebob.v4a.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/petstudio-v9/studio-v12/gun-look.v4a.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/petstudio-v9/studio-v12/pet-moustache.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/petstudio-v9/studio-v12/pet-nose.v2.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/petstudio-v9/studio-v13/pose-rig.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: owners/petstudio-v9/studio-v3/pet-mouth.v1.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JS syntax: support.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "DC Component syntax",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Georg actor recipe schema and v5b source retained",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "source actor uses existing EyeRig shells",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "model binaries remain remote",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "notRun": [
+    "HTTP boot",
+    "WebGL",
+    "visual parity front/three-quarter/side",
+    "ToolBox self-test",
+    "Library self-test",
+    "rigging acceptance",
+    "E1-E9",
+    "hosted app consent/read/write",
+    "independent critic"
+  ]
+}

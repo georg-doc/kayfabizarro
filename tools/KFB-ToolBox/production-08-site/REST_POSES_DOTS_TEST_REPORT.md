@@ -1,0 +1,7 @@
+# Site v8 test report
+
+27/27 targeted checks PASS plus rerun actor-import suite 21/21 PASS = 48/48 executed. Test command: THREE_MODULE=/absolute/path/to/three-0.160.mjs TOOLBOX_DIST=/absolute/path/to/dist node scripts/test-rest-poses-dots.mjs. Three module fetched from the exact active import-map source https://unpkg.com/three@0.160.0/build/three.module.js . The test imports the actual FaceHost/PetMouth code and uses actual Three math; image delivery and DOM pointer events are controlled fixtures. No browser or offscreen render was installed or improvised.
+
+Actual cases: missing rest migration, explicit rest preservation, waiting for texture, FaceHost rest setter/export/import, original model mouth closed texture and flipY=false, speech return, invalid value; Studio bind stops clips, bind survives bone ticks and tab entry, Idle restarts existing path, source Surf and saved pose; paused dot selects existing editor, drag writes correction f7, release restores orbit, hidden/playing targets disabled; fitted depth positive/tight, texel bias preserved, DoubleSide still casting, deterministic repeated shadow centre; source startup waits before reveal and root/compat identical. Full 21-case import suite rerun as before.
+
+UNVERIFIED: actual UI rendering/selection, human-visible closed-mouth pixels, shadow seam before/after, representative 10s idle/orbit/moving-contact checks from LESSONS_SHADOWS, fresh cross-device GitHub saving. Issue #247 remains open. User screenshots were viewed; no new screenshot generated. No visual PASS.
