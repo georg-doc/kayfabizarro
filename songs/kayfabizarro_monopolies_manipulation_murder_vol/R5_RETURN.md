@@ -1,0 +1,9 @@
+# Monopolies Manipulation Murder Vol II · R5 writer checkpoint · 2026-10-17
+
+Repo georg-doc/kayfabizarro, branch `songs/kayfabizarro_monopolies_manipulation_murder_vol-r5-2026-10-17`. Two tracks covering 56/56 printed registry cards, pages 2–8 then pages 9–15 (4 cards per page). Parts 2857 and 2835 Unicode characters. 10 opener beats each; two intro beats and one outro, Stay Fluffy! alone. All 56 isolated card cores locally checked at 80–95 characters and for per-card source vocabulary.
+
+**E16b frame:** satire of the card deck's claims; not a factual report or independent validation of the historical allegations. No new allegations introduced by song author. Original registry and media untouched; QA fixture isolates numeric and title vocal aliases and logs them in songlines.json. The cashless card's [UNCLEAR] segment has deliberately not been voiced.
+
+**Gate:** exact original song_gate.py and triplet_set_check.py configured in the branch workflow, not yet reported as PASS. External critic is not available in this session; no fabricated critic or post-critic revision. No final approval, Hub, merge or deployment.
+
+One next gate: GitHub Actions first pass on the committed head, then submit only green lyrics for genuinely independent judgment.
