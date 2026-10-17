@@ -1,0 +1,44 @@
+{
+  "schema": "kfb.failure-recovery/0.1",
+  "date": "2026-09-20",
+  "status": "FROZEN_CANDIDATE_BROWSER_PROOF_HARNESS_BLOCKED",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "world-atlas/inline-detail-editor-e1-2026-09-20",
+  "pr": 133,
+  "implementation": {
+    "file": "tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html",
+    "sourceBlob": "da12716b1e9f40f9a1d5f25c133516b59af4762f",
+    "staticContract": "20/20 PASS",
+    "browserAssertion": "NOT_REACHED",
+    "georgAcceptance": "OPEN"
+  },
+  "donor": {
+    "intakePr": 120,
+    "root": "tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/"
+  },
+  "browserAttempts": [
+    {
+      "run": 35487119077,
+      "job": 106015440253,
+      "conclusion": "FAIL",
+      "failedStep": "Headless Chrome roundtrip proof",
+      "cause": "QA_HARNESS_CHROME_PROCESS_TIMEOUT",
+      "evidence": "Chrome loaded page/WebGL; --dump-dom/virtual-time process did not exit; outer timeout exit 124",
+      "applicationResult": "NOT_OBSERVED"
+    },
+    {
+      "run": 35487373804,
+      "job": 106016124834,
+      "conclusion": "FAIL",
+      "failedStep": "Headless Chrome roundtrip proof",
+      "cause": "QA_HARNESS_NODE_AMBIGUOUS_MODULE_SYNTAX",
+      "evidence": "Node 22 rejected require() plus top-level await before CDP application polling",
+      "applicationResult": "NOT_OBSERVED"
+    }
+  ],
+  "freeze": {
+    "workflowRemovedAt": "65d3fc94a0e1e9e013e3de84d12aa67f7c27904e",
+    "thirdRepairAllowedInSlice": false
+  },
+  "nextGate": "Fresh QA-only slice proves unchanged ?e1proof=1 candidate with a minimal valid CDP harness; no editor redesign."
+}
