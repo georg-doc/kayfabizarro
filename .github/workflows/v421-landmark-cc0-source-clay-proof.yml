@@ -1,0 +1,66 @@
+name: V421 CC0 landmark source and clay proof
+on:
+  push:
+    branches:
+      - research/v421-landmark-source-clay-proof-2026-10-17
+    paths:
+      - .github/workflows/v421-landmark-cc0-source-clay-proof.yml
+      - tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-and-clay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      V421_PROOF_DIR: v421-proof
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile safe source-audit script
+        run: python3 -m py_compile tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py
+      - name: Install native Blender (headless, not a KFB runtime)
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y blender
+          blender -b --version | head -3
+      - name: Get original CC0 archives and archive/source hashes
+        id: download
+        continue-on-error: true
+        run: python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py fetch
+      - name: Render isolated ORIGINAL and CLAY from original source meshes
+        id: render
+        continue-on-error: true
+        if: steps.download.outcome == 'success'
+        run: blender -b --factory-startup --disable-autoexec --python tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py -- render
+      - name: Publish audit evidence for agent-only source QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v421-real-mesh-cc0-clay-proofs
+          path: v421-proof/
+          retention-days: 14
+          if-no-files-found: warn
+      - name: Fail closed unless real geometry was rendered
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('v421-proof/final-audit.json')
+          if not p.exists():
+              raise SystemExit('BLOCKED: no final mesh audit and no clay rendering proof')
+          j=json.loads(p.read_text())
+          assert j['passed']>=1, 'BLOCKED: no real imported mesh clay proof'
+          assert j['readyForGeorg'] is False
+          for record in j['sources']:
+              if record['state']=='SOURCE_ISOLATED_AND_CLAY_RENDERED':
+                  folder=Path('v421-proof')/record['id']
+                  assert (folder/'source-isolation.png').stat().st_size>1024
+                  assert (folder/'clay-preview.png').stat().st_size>1024
+                  assert record['trianglesMeasured']>0
+                  print(record['id'],record['trianglesMeasured'],record['sourceImageSha256'],record['clayImageSha256'])
+          print('RESEARCH PREVIEW SOURCE PROOF PASS; GEORG SELECTION STILL BLOCKED')
+          PY
