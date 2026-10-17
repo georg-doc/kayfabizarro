@@ -1,15 +1,2 @@
-# the_carnival_of_unsolved_problems_therapy · R4 Writer’s Room Return (candidate)
-
-- Owner existing kfb-triplets. GitHub authoring only; no Hub/Stage/Live.
-- Source registry 5b13138a77163fb7091dcc38a63797c481f5b134; PDF JSON 70dd75345de9878c9341198f95cad1b559843b5a. 48 numbered objects, #48 Back Cover / Manifesto explicitly meta-skipped. All 47 playable cards included in ascending cardNumber and PDF page order; PDF illustrations not independently viewed.
-- Binding SONG_SPEC_R3 blob d3f91a64ae74551455b7c08f4d8fc772e7e1acad, Golden take05 blob a7339bae42f012aef2f06675c83f298cfa633372.
-- R4 candidate: 4753 code points; 47/47 80–95 chars; 17 unique openers; a blank after all beats. No invented content words in source+art motif lexical QA; zero songLine rewrites. STYLE A/B only musical.
-- WARNING: qa.deck.json extends the lexical checker fixture with source artworkPrompt tokens allowed by SONG_SPEC_R3 §A. The canonical registry and pdf.json are unchanged. Full printed page visual observation NOT claimed.
-- Mechanical Python exit: pending CI readback. No blind review has occurred; blindreview.md is an independent reviewer payload, not a score. One writer revision reserved.
-- Next gate: Python exit 0, then independent reviewer returns scores/flags only for one writer revision.
-
-## Executed tests · 39028591388
-GitHub Actions on candidate 2c0bc6208e49c5b41b8f35e73cbf850da6d652c2: exact triplet_set_check.py PASS (exit 0), R4 format_gate.py PASS (exit 0), 47/47 card lines and 4753 Unicode chars, 2/2 named gates succeeded. Independent BLIND_REVIEW_PENDING; no creative acceptance, no rewrite. Reviewer only scores/observes/flags; ONE plugin revision reserved.
-
-## Executed evidence · 39028591388
-GitHub Actions on candidate 2c0bc6208e49c5b41b8f35e73cbf850da6d652c2: exact triplet_set_check.py exit 0, R4 format_gate.py exit 0, 2/2 named gates PASS. Creative independent reviewer pending; 1 writer revision reserved.
+# Therapy R4.1 Return V-418
+Owner original kfb-triplets; base R4 branch songs/the_carnival_of_unsolved_problems_therapy-r4-2026-10-17. Binding R3.1 spec blob 3a6ea19c0c30c4c9430decc1c739dbbb5a294f60. Existing canonical and original R4 unchanged. 47/47 playable lines; 4740 characters; 80–95 core chars. Reworded spoken card labels from bracketed qualifiers (#17/#18/#20/#28/#36), moved FrizzleBob’s Guarantee to "The Guarantee" to avoid two FrizzleBob uses. "Seven-Day Witness" logged one mandatory numeric songLine; 1/47 under 10%. All visual words in lexical QA fixtures originate from pdf.json artworkPrompt, not independently viewed PDF. GitHub Python gate pending. NO blind reviewer scores, no revision, Hub, Site or merge. Next gate independent reviewer after a real QA success.

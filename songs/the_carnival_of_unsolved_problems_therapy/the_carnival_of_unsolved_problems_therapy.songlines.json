@@ -1,10 +1,42 @@
 {
   "deckId": "the_carnival_of_unsolved_problems_therapy",
-  "version": "R4",
-  "songLineChanges": [],
-  "count": 0,
-  "limit": 4,
-  "metaSkip": [
-    48
+  "version": "R4.1",
+  "sourceSpec": "R3.1",
+  "songLineChanges": [
+    {
+      "cardNumber": 40,
+      "before": "7-Day Witness",
+      "after": "Seven-Day Witness",
+      "reason": "A7 spoken number"
+    }
+  ],
+  "songLineCount": 1,
+  "totalCardLines": 47,
+  "percent": 2.13,
+  "otherPresentationEdits": [
+    {
+      "cardNumber": 17,
+      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
+    },
+    {
+      "cardNumber": 18,
+      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
+    },
+    {
+      "cardNumber": 20,
+      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
+    },
+    {
+      "cardNumber": 28,
+      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
+    },
+    {
+      "cardNumber": 36,
+      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
+    },
+    {
+      "cardNumber": 44,
+      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
+    }
   ]
 }

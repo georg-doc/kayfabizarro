@@ -1,8 +1,8 @@
-# Independent blind reviewer · BLIND_REVIEW_PENDING
+# Independent judge · R3.1 · PENDING
 
-Description: The Carnival of Unsolved Problems is a symbolic fairground whose attractions are patterns of guilt, shame, approval, withdrawal and care. It does not mock people seeking help; instead it questions false cures and damaging loops, then makes room for witnessing and maintenance.
+Short description: A therapeutic allegory about patterns of feeling, shame, resistance, and care. The setting is a fairground and the target of jokes is false certainty and selling cures, never people seeking help.
 
-## Full lyrics — reviewer input
+## Lyrics
 
 [Spoken Word]
 
@@ -44,13 +44,13 @@ Meta-Analysis Loop, thinking replaces doing; brain analyzing itself, infinite re
 
 I Can Fix Them Kit, control disguised as care; others as projects, hearts and wires.
 
-Staff entrance: The Gatekeeper (Strike), protection shuts doors; guard refusing access, vulnerable content.
+Staff entrance: The Gatekeeper, protection shuts doors; exhausted guard blocking gate, vulnerable content.
 
-Gatekeeper (Overcompensating), too much protection suffocates; armored guard, overlocked door.
+Gatekeeper, too much protection suffocates; armored guard overlocking doors to avoid risk.
 
 The Exhausted Caretaker, care without self; helping despite depletion, empty cup, tired worker.
 
-Volume up: Inner Critic (Megaphone), failure is loud; negative commentary, goblin shouting insults.
+Volume up: Inner Critic, failure is loud; negative commentary, goblin shouting into a megaphone.
 
 Future left: Future Self: The One Who Left, another path existed; situation escaped, suitcase, timeline.
 
@@ -66,7 +66,7 @@ Spiritual Ego Check, awakening becomes identity; performative enlightenment, gur
 
 Intermission: I Need a Snack, body breaks narrative; interrupt intensity, basic need, hunger and taco.
 
-Cosmic PowerPoint (Broken), insight without clarity; broken chart, profound presentation.
+Cosmic PowerPoint, insight without clarity; broken chart, profound presentation, surreal.
 
 Clown Shoe Shuffle, body becomes joke; oversized shoe, physical behavior, tripping slapstick.
 
@@ -82,7 +82,7 @@ Trophy of Meaningless Suffering, look what I endured; pain into status, award st
 
 Bridge We Never Cross, avoidance stabilizes distance; unresolved conflict, broken bridge.
 
-Exit Sign (That Moves), leaving isn’t simple; escape shifts constantly, hallway endless.
+Exit Sign, leaving isn’t simple; moving sign, escape shifts constantly, hallway endless.
 
 In private: Solo Anti-Journaling, witness without fixing; chaotic page, pen scribbling, no structure.
 
@@ -90,7 +90,7 @@ Therapist & Client, structure holds chaos; speaker and witness, two chairs facin
 
 Set it down: The Grey Stone, name it, place it; burden into object, stone outside, labeled burden.
 
-7-Day Witness, boring reveals truth; observation across time, calendar and repeating eyes.
+Seven-Day Witness, boring reveals truth; observation across time, calendar and repeating eyes.
 
 Couple’s Swap, you can’t unhear it; another perspective, swapped positions, mirrored couple.
 
@@ -98,7 +98,7 @@ Family seating: Family Constellation, system speaks through you; family roles ha
 
 Workplace Hazard, system absorbs blame; corporate water cooler, nothing is your fault.
 
-Refund desk: FrizzleBob’s Guarantee, no neat endings; unresolved ambiguity, ticket stamped into the void.
+Refund desk: The Guarantee, no neat endings; unresolved ambiguity, ticket stamped into the void.
 
 The Bardo, between states; realities mix, boundaries dissolve, portal merging worlds.
 
@@ -113,4 +113,4 @@ The workers remain when the lights come on.
 Stay Fluffy!
 
 
-Review scores and observations: PENDING independent external judge. The reviewer flags exact lines and answers rulebook/claims questions, without proposing replacement text.
+Scores/observations/flags only. Reviewer must NOT propose text. No independent reviewer used yet.
