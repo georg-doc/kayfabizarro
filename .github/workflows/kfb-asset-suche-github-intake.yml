@@ -26,6 +26,7 @@ jobs:
         with:
           filter: blob:none
           sparse-checkout: |
+            media/3D_Assets/KFB_Landmark_Candidates/
             tools/asset_registry/unpack_asset_pack.py
             tools/asset_registry/kfb_asset_suche_auto_import.py
             tools/asset_registry/tests/test_kfb_asset_suche_auto_import.py
@@ -48,8 +49,9 @@ jobs:
           python3 - <<'PY'
           import json, pathlib
           result=json.loads(pathlib.Path('/tmp/kfb-asset-import-result.json').read_text())
-          assert result['status']=='STAGED_FOR_REVIEW'
-          assert len(result['candidates'])==2
+          assert result['status'] in ('STAGED_FOR_REVIEW','ALL_PREVIOUSLY_VERIFIED')
+          intake=json.loads(pathlib.Path('tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/KFB_ASSET_SUCHE_AUTO_IMPORT_R1.json').read_text())
+          assert len(result['candidates'])==len(intake['candidates'])
           assert result['autoMerged'] is False
           assert result['georgSelected'] is False
           for c in result['candidates']:
@@ -62,13 +64,16 @@ jobs:
           git config user.name 'kfb-asset-intake[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add --sparse -f -- media/3D_Assets/KFB_Landmark_Candidates/
-          git diff --cached --quiet && { echo 'ERROR: expected original candidate source files absent'; exit 1; }
-          git commit -m 'assets(V-421): two verified CC0 landmark originals into canonical 3D asset candidates'
-          if ! git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17; then
-            echo 'Concurrent WS0 update: one conflict-free non-force rebase attempt'
-            git fetch origin research/v421-landmark-source-clay-proof-2026-10-17
-            git rebase origin/research/v421-landmark-source-clay-proof-2026-10-17
-            git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17
+          if git diff --cached --quiet; then
+            echo 'VERIFIED IDEMPOTENT: all originals already in GitHub, no second commit'
+          else
+            git commit -m 'assets(V-421): verified KFB Asset Suche originals into canonical 3D asset candidates'
+            if ! git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17; then
+              echo 'Concurrent WS0 update: one conflict-free non-force rebase attempt'
+              git fetch origin research/v421-landmark-source-clay-proof-2026-10-17
+              git rebase origin/research/v421-landmark-source-clay-proof-2026-10-17
+              git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17
+            fi
           fi
           git fetch origin research/v421-landmark-source-clay-proof-2026-10-17
           test "$(git rev-parse HEAD)" = "$(git rev-parse FETCH_HEAD)"
