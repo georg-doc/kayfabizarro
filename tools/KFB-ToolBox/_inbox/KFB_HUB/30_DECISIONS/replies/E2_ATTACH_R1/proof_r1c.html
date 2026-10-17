@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E2 Lidhaut Aliens r1c</title><link rel="icon" href="data:,">
+<style>
+:root{--bg:#e9e5dd;--panel:#f6f4ef;--ink:#2a2622;--mute:#6d665d;--line:#d2ccc1;--acc:#b0182f;--accInk:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1d1b19;--panel:#262320;--ink:#ece7df;--mute:#a59d92;--line:#3b3631;--acc:#e0485f;--accInk:#fff}}
+:root[data-theme="dark"]{--bg:#1d1b19;--panel:#262320;--ink:#ece7df;--mute:#a59d92;--line:#3b3631;--acc:#e0485f;--accInk:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:12px 16px 4px}
+h1{margin:0;font-size:19px;font-weight:650}
+header p{margin:2px 0 0;color:var(--mute);font-size:13px}
+.bar{display:flex;flex-wrap:wrap;gap:6px 14px;padding:8px 16px;align-items:center}
+.grp{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.grp>span{color:var(--mute);font-size:12px;margin-right:2px}
+button{font:inherit;font-size:13px;padding:5px 11px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;cursor:pointer}
+button.on{background:var(--acc);border-color:var(--acc);color:var(--accInk)}
+main{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:12px;padding:4px 16px 16px}
+@media (max-width:900px){main{grid-template-columns:minmax(0,1fr)}}
+#stage{position:relative;background:#d9d4ca;border:1px solid var(--line);border-radius:8px;overflow:hidden;aspect-ratio:2/1.15;min-height:260px}
+#stage canvas{display:block;width:100%;height:100%}
+.lab{position:absolute;top:6px;font-size:12px;color:#3a352f;background:rgba(255,255,255,.6);padding:2px 7px;border-radius:4px}
+#labL{left:6px}#labR{left:calc(50% + 6px)}
+#msg{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-size:12px;color:#3a352f}
+aside{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px}
+aside h2{margin:0 0 6px;font-size:14px;font-weight:650}
+aside img{width:100%;height:auto;border-radius:4px;border:1px solid var(--line);background:#fff}
+aside p{margin:6px 0 0;color:var(--mute);font-size:12px}
+#live{font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;margin-top:10px;color:var(--ink)}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+</head><body>
+<header>
+  <h1>Clay-Lid E2 auf EyeRig v6 · Lord Hunky r4 und Lady Dory r4</h1>
+  <p>Gleiches Modul wie ToolBox und Spiel: <code>clay-skin-attach.v1.js</code>. v6-Lidschalen ausgeblendet, eine geschlossene E2-Lidhaut je Auge, Farbe = lidColour des Rezepts.</p>
+</header>
+<div class="bar">
+  <div class="grp" id="lidBtns"><span>Lid</span>
+    <button data-lid="open">offen</button><button data-lid="rest" class="on">Ruhe</button><button data-lid="half">50 %</button><button data-lid="closed">zu</button><button data-act="blink">Blinzeln</button>
+  </div>
+  <div class="grp" id="viewBtns"><span>Ansicht</span>
+    <button data-view="front" class="on">vorn</button><button data-view="threeq">¾</button><button data-view="side">seitlich</button><button data-view="figure">ganze Figur</button>
+  </div>
+  <div class="grp" id="sockBtns"><span>Passung in der Höhle</span>
+    <button data-sock="recipe">Rezept (Hunky 1,10 R · Dory 1,014 R)</button><button data-sock="1.10">1,10 R für beide</button><button data-sock="none">ohne Skalierung</button>
+  </div>
+  <div class="grp" id="backBtns"><span>Sockel zurück</span>
+    <button data-back="0">0</button><button data-back="0.1">0,10</button><button data-back="0.2">0,20</button><button data-back="0.3">0,30</button><button data-back="0.4">0,40 R</button>
+  </div>
+</div>
+<main>
+  <div id="stage"><span class="lab" id="labL">Lord Hunky r4</span><span class="lab" id="labR">Lady Dory r4</span><div id="msg">lädt …</div></div>
+  <aside>
+    <h2>Referenz: von Georg abgenommen (E2, 16.10.)</h2>
+    <img src="assets/E2_approved_closed_lid_skin.png" alt="Werkbank KFB Clay-Lid E2, geschlossene Lidhaut, abgenommene Ansichten">
+    <p>Links rendert dieselbe Geometrie (clay-eyelid.v2 über v3) im Rig der Aliens.</p>
+    <div id="live"></div>
+  </aside>
+</main>
+<script type="module">
+/* WS0 · E2_ATTACH_R1 proof. Loader derived from MeshyModels/_alien_figures_toolbox_r1/_work/proof.html (same EyeRig v6, same
+   eyeHost proxy box, same place()), clay from _blender_run_r2/proof/proof_r2.html (clay-material.v8 + clay-profiles.v2, profile
+   'figure', hand measure 1/0.47). Bind pose, no clip, no dangle, no mouth decal: this page judges the lid only.
+   Light: hemisphere + one front key, NO rim light, NO back light, no shadow maps (no self-shadow); soft contact blob on the ground.
+   Lid clay: sheen clamped to 0.04 (≤ 0.05).
+   ?socket=1.10 (default) | none | <number>   inner radius of the baked socket shell in R → fit path A in attachClaySkin
+   ?measure=1  socket gap + pupil pixel counts per lid state → window.__job.info (headless check, see RETURN.md)
+   R1c (Georg 17.10.: »Der Sockel soll bleiben wie zuvor, nur weiter zurückgezogen«): copy of proof.html (R1) + one button row
+   »Sockel zurück« d = 0 · 0,10 · 0,20 · 0,30 · 0,40 R. The baked socket submesh (shell, 58° opening, rolled rim, unchanged shape)
+   is translated rigidly by −d·R along the eye's gaze; the offset is written into the bind-space vertices of the skinned socket
+   primitive through each vertex's skin transform, so it rides the stalk bone. Eye centre/size/fit, stalk: unchanged (R1).
+   ?back=<d>  start value · ?measure=r1c  per-d measurement → window.__job.info */
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { EyeRig } from './vendor/pet-eye-rig.v6.js';
+import * as CM from './vendor/clay-material.v8.js';
+import * as CR from './vendor/clay-relief.v2.js';
+import { attachClaySkin, lidValuesFromV6, LID_SKIN_NAME } from './clay-skin-attach.v1.js';
+
+const Q = new URLSearchParams(location.search);
+const job = window.__job = { done: false, err: null, ready: false, info: null };
+const msg = (s) => { document.getElementById('msg').textContent = s; };
+const SAN = (n) => THREE.PropertyBinding.sanitizeNodeName(n);
+/* Socket fit (path A). Default 'recipe': per eye eyes[i].shellRadius / eyes[i].R from the r4 recipe — measured on the GLB
+   (?measure=1): the baked shell is a sphere of exactly that radius (Hunky 1.100 R, Dory 1.014 R), opening axis +Z. */
+const SOCKET_MODE = Q.get('socket') || 'recipe';
+const SOCKET = SOCKET_MODE === 'none' ? null : SOCKET_MODE === 'recipe' ? 'recipe' : +SOCKET_MODE;
+const FIGS = [
+  { key: 'hunky', name: 'Lord Hunky r4', glb: 'assets/LordHunky_RigMedium.toolbox.r4.glb', recipe: 'assets/lordhunky-headpart-r4.ws0-2026-10-16.kfb-pets.json', x: -10, layer: 1 },
+  { key: 'dory', name: 'Lady Dory r4', glb: 'assets/LadyDory_RigMedium.toolbox.r4.glb', recipe: 'assets/ladydory-headpart-r4.ws0-2026-10-16.kfb-pets.json', x: 10, layer: 2 },
+];
+/* v6 lid targets (emote = target − v6 rest). v6 update() shows at most c = 0 open (cu = max(P.u, blink ≥ 0)). */
+const LID = { open: { u: -1, l: -1 }, rest: { u: 0.12, l: 0.06 }, half: { u: 0.5, l: 0.5 }, closed: { u: 1, l: 1 } };
+
+/* ---------------- renderer, scene, light ---------------- */
+const stage = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.NoToneMapping;
+renderer.shadowMap.enabled = false;                                             // no self-shadow anywhere
+stage.prepend(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#d9d4ca');
+const hemi = new THREE.HemisphereLight(0xfff4e0, 0x3a3226, 1.25);
+const key = new THREE.DirectionalLight(0xffffff, 1.6); key.position.set(1.6, 3.2, 4.0);   // front key, camera side; no rim/back light
+const keyR = new THREE.Group(); keyR.add(key, key.target);
+for (const l of [hemi, key]) l.layers.enableAll();
+scene.add(hemi, keyR);
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), new THREE.MeshStandardMaterial({ color: '#c7c0b2', roughness: 1 }));
+ground.rotation.x = -Math.PI / 2; ground.layers.enableAll(); scene.add(ground);
+function blobTexture() {
+  const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d');
+  const gr = g.createRadialGradient(128, 128, 0, 128, 128, 128);
+  gr.addColorStop(0, 'rgba(40,32,24,0.42)'); gr.addColorStop(0.45, 'rgba(40,32,24,0.22)'); gr.addColorStop(1, 'rgba(40,32,24,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, 256, 256); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const BLOB = blobTexture();
+
+/* ---------------- clay (same set-up as proof_r2.html) ---------------- */
+const HK = 1 / 0.47;
+let CU = null;
+async function clayUniforms() {
+  if (CU) return CU;
+  const rel = CR.makeClayRelief({ size: 1024, seed: 11 }), tx = new THREE.DataTexture(rel.data, rel.size, rel.size, THREE.RGBAFormat);
+  tx.wrapS = tx.wrapT = THREE.RepeatWrapping; tx.magFilter = THREE.LinearFilter; tx.minFilter = THREE.LinearMipmapLinearFilter; tx.generateMipmaps = true; tx.anisotropy = 8; tx.needsUpdate = true;
+  CU = CM.makeClayUniforms(THREE, tx);
+  try { CU.uClayPrint.value = await CM.makePrintTexture(THREE, new URL('./vendor/Fingerprints01_3K.png', import.meta.url).href, 2048); CU.uClayPrintOn.value = 1; } catch (e) { CU.uClayPrint.value = tx; }
+  CU.uClayHand.value = 0.5 * HK; CU.uClayTile.value = 1.6 * HK; CU.uClayPrintTile.value = 4.5 * HK; CU.uClayFacetSize.value = 0.65 * HK;
+  return CU;
+}
+const lowSheen = (m) => { if (m.sheen > 0.04) m.sheen = 0.04; return m; };
+function clayFrom(src, U) { return lowSheen(CM.makeClayMaterial(THREE, U, { src, profile: 'figure', scale: CM.PROFILES.figure.scale * HK })); }
+async function clayify(root, seed) {
+  const U = await clayUniforms(), mc = new Map(); let n = 0;
+  root.traverse((o) => {
+    if (!o.isMesh) return;
+    const conv = (m) => { if (!mc.has(m)) mc.set(m, clayFrom(m, U)); return mc.get(m); };
+    o.material = Array.isArray(o.material) ? o.material.map(conv) : conv(o.material);
+    if (!o.geometry.attributes.claySeed) CM.seedGeometry(THREE, o.geometry, seed + (n++));
+  });
+}
+
+/* ---------------- figure loader (as _work/proof.html) ---------------- */
+const loader = new GLTFLoader();
+async function loadFigure(F) {
+  const [gltf, doc] = await Promise.all([loader.loadAsync(F.glb), fetch(F.recipe).then((r) => r.json())]);
+  const pet = doc.pets[0], hp = pet.headPart, fig = gltf.scene;
+  fig.traverse((o) => { if (o.isMesh) { o.castShadow = false; o.receiveShadow = false; o.frustumCulled = false; } });
+  const root = fig.getObjectByName(SAN(hp.root)), headNode = fig.getObjectByName(SAN(hp.mesh));
+  const headMeshes = []; headNode.traverse((o) => { if (o.isMesh) headMeshes.push(o); });
+  const sockets = headMeshes.filter((m) => /Sockel/i.test(m.material && m.material.name || ''));
+  const T = hp.tunables;
+  root.position.set(...T.headOffset.value); root.scale.setScalar(T.headScale.value);
+  for (const m of headMeshes) { const i = m.morphTargetDictionary && m.morphTargetDictionary.neckTaper; if (i != null) m.morphTargetInfluences[i] = T.neckTaper.value; }
+  fig.position.x = F.x; fig.updateMatrixWorld(true);
+  await clayify(fig, F.layer * 50);
+  return { F, fig, pet, root, headMeshes, sockets };
+}
+async function buildEyes(f) {
+  const { pet, root } = f, E = pet.eyeHost, o = pet.eye, box = E.proxy.box, U = await clayUniforms();
+  const host = new THREE.Group(); host.name = 'KFB_EyeHost'; root.add(host);
+  const pg = new THREE.BoxGeometry(box[1][0] - box[0][0], box[1][1] - box[0][1], box[1][2] - box[0][2]);
+  pg.translate((box[0][0] + box[1][0]) / 2, (box[0][1] + box[1][1]) / 2, (box[0][2] + box[1][2]) / 2);
+  const proxy = new THREE.Mesh(pg, new THREE.MeshBasicMaterial({ visible: false })); proxy.name = E.proxy.name; host.add(proxy); host.updateMatrixWorld(true);
+  /* makeMat: host lidColour as is (WS0 16.10.: no ×0.72), KFB clay 'figure', sheen ≤ 0.05. */
+  const makeMat = () => { const m = clayFrom(null, U); m.color.set(E.lidColour); return m; };   // ignores v6's o.color (= base × 0.72)
+  const rig = new EyeRig({ THREE, inner: host, o: { makeMat } },
+    { anchor: { ...o.anchor }, pupilStyle: o.pupilStyle, pupilSize: o.pupilSize, inset: o.inset, lidFit: o.lidFit, gloss: o.gloss,
+      converge: o.converge, baseColor: parseInt(o.baseColor.slice(1), 16), blink: { ...o.blink }, lashes: { ...o.lashes } });
+  const byKey = Object.fromEntries(pet.eyes.map((e) => [e.cdKey, e])), one = pet.eyes.length === 1;
+  const eyeQ = ['eyeL', 'eyeR'].map((k) => byKey[k] || pet.eyes[0]);
+  const place = () => {
+    if (!rig.eyes) return;
+    rig.eyes.forEach((e, i) => { const q = eyeQ[i]; e.position.set(...q.pos); e.scale.setScalar(q.scale); e.rotation.y = 0; });
+    if (one) { rig.eyes[0].quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), new THREE.Vector3(...pet.eyes[0].gaze)); rig.eyes[1].visible = false; }
+  };
+  const b0 = rig.build.bind(rig); rig.build = (...a) => { const r = b0(...a); place(); return r; };
+  /* THE MODULE UNDER TEST — attached before build(), so it rides the build hook like a ToolBox/game host would. */
+  const socketInnerR = SOCKET === 'recipe' ? eyeQ.map((q) => q.shellRadius / q.R) : SOCKET;
+  const skin = attachClaySkin(rig, THREE, { socketInnerR });
+  rig.build();
+  rig.setLife({ on: false }); rig.setKinetics({ enabled: false });
+  return { rig, skin, host, one, eyeQ };
+}
+function setLid(f, name) {
+  const t = LID[name], r = f.eyes.rig;
+  r.applyEmote({ lidUpper: t.u - r._rest.u, lidLower: t.l - r._rest.l, slant: 0, pupil: 'normal', gaze: 'center' });
+}
+function stepRig(f, dt, allowBlink) { const r = f.eyes.rig; if (!allowBlink && r._blinkK < 0) r._blinkT = 1e9; r.update(dt); }
+const layerAll = (f) => f.fig.traverse((o) => o.layers.set(f.F.layer));
+
+/* ---------------- cameras / views ---------------- */
+const cams = FIGS.map(() => new THREE.PerspectiveCamera(24, 1, 0.01, 100));
+FIGS.forEach((F, i) => cams[i].layers.set(F.layer));
+let view = 'front', lid = 'rest';
+function visibleEyes(f) { return f.eyes.rig.eyes.filter((e) => e.visible); }
+function frame(f, cam, v) {
+  f.fig.updateMatrixWorld(true);
+  let tgt, rad;
+  if (v === 'figure') { tgt = new THREE.Vector3(f.F.x, 1.05, 0); rad = 1.25; }
+  else {
+    const eyes = visibleEyes(f), c = new THREE.Vector3();
+    eyes.forEach((e) => c.add(e.getWorldPosition(new THREE.Vector3()))); c.divideScalar(eyes.length);
+    const Rw = f.eyes.rig._R * eyes[0].getWorldScale(new THREE.Vector3()).x;
+    rad = 0; eyes.forEach((e) => { rad = Math.max(rad, e.getWorldPosition(new THREE.Vector3()).distanceTo(c)); }); rad += Rw * (eyes.length > 1 ? 2.4 : 3.2);
+    tgt = c.add(new THREE.Vector3(0, -Rw * 0.4, 0));
+  }
+  const az = { front: 0, threeq: 35, side: 90, figure: 20 }[v] * Math.PI / 180, el = { front: 4, threeq: 8, side: 3, figure: 6 }[v] * Math.PI / 180;
+  const d = rad / Math.sin(cam.fov * Math.PI / 360);
+  cam.position.set(tgt.x + d * Math.sin(az) * Math.cos(el), tgt.y + d * Math.sin(el), tgt.z + d * Math.cos(az) * Math.cos(el));
+  cam.lookAt(tgt); cam.updateProjectionMatrix();
+  keyR.position.set(0, 0, 0);
+}
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false);
+  cams.forEach((c) => { c.aspect = (w / 2) / h; c.updateProjectionMatrix(); });
+}
+function render() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setScissorTest(true);
+  cams.forEach((c, i) => { renderer.setViewport(i * w / 2, 0, w / 2, h); renderer.setScissor(i * w / 2, 0, w / 2, h); renderer.render(scene, c); });
+  renderer.setScissorTest(false);
+}
+
+/* ---------------- live readout ---------------- */
+function readout(figs) {
+  const L = [];
+  for (const f of figs) {
+    const r = f.eyes.rig; L.push(f.F.name);
+    r.eyes.forEach((e, i) => {
+      if (!e.visible) return;
+      const { cu, cl } = lidValuesFromV6(e), a = e._claySkinAp, sk = []; e.traverse((m) => { if (m.isMesh && m.name === LID_SKIN_NAME) sk.push(m); });
+      L.push(` Auge ${i}: v6-Schalen sichtbar ${(e._up.visible ? 1 : 0) + (e._lo.visible ? 1 : 0)} · lid_skin ${sk.length} · s ${f.eyes.skin.fit[i].toFixed(4)}`);
+      L.push(`   cu ${cu.toFixed(3)} cl ${cl.toFixed(3)} → U ${a.U.toFixed(1)}° L ${a.L.toFixed(1)}° A ${a.A.toFixed(1)}°`);
+    });
+  }
+  L.push(`Höhle (socketInnerR): ${SOCKET == null ? 'keine Skalierung (s = 1)' : SOCKET === 'recipe' ? 'Rezept shellRadius/R je Auge' : SOCKET + ' R'}`);
+  L.push(`Sockel zurück: ${BACK.toFixed(2)} R`);
+  for (const f of figs) f.eyes.rig.eyes.forEach((e, i) => { if (e.visible && f.sockFront) L.push(` ${f.F.key} Auge ${i}: Sockel-Vorderkante ${f.sockFront[i].toFixed(3)} R vor dem Augenäquator`); });
+  document.getElementById('live').textContent = L.join('\n');
+}
+
+/* ---------------- R1c: socket pulled back (rigid translation along the gaze, shape unchanged) ---------------- */
+let BACK = +(Q.get('back') || 0);
+const V3 = () => new THREE.Vector3();
+function eyeBaseC(f, i) {              // eye centre O, gaze g (world), host-placed eye radius Rh (before fit s)
+  const ev = f.eyes, q = ev.eyeQ[i], e = ev.rig.eyes[i]; f.fig.updateMatrixWorld(true);
+  const O = e.getWorldPosition(V3()), qw = e.getWorldQuaternion(new THREE.Quaternion()), g = new THREE.Vector3(0, 0, 1).applyQuaternion(qw);
+  const Rh = ev.rig._R * q.scale * ev.host.getWorldScale(V3()).x;
+  return { O, g, qw, qi: qw.clone().invert(), Rh };
+}
+function socketOfC(f, i) {             // socket primitive of eye i (nearest centroid), cached before any shift
+  f.sockMap = f.sockMap || {};
+  if (f.sockMap[i]) return f.sockMap[i];
+  const { O } = eyeBaseC(f, i); let best = null, bd = 1e9;
+  for (const m of f.sockets) { const p = m.geometry.attributes.position, v = V3(), c = V3(); const st = Math.max(1, Math.floor(p.count / 300)); let n = 0;
+    for (let k = 0; k < p.count; k += st) { m.getVertexPosition(k, v); c.add(v.applyMatrix4(m.matrixWorld)); n++; } c.divideScalar(n);
+    const d = c.distanceTo(O); if (d < bd) { bd = d; best = m; } }
+  return (f.sockMap[i] = best);
+}
+function shiftSocket(f, d) {
+  f.sockFront = [];
+  f.eyes.rig.eyes.forEach((e, i) => {
+    if (!e.visible) return;
+    const m = socketOfC(f, i), P = m.geometry.attributes.position;
+    if (!m.userData.pos0) m.userData.pos0 = P.array.slice();
+    P.array.set(m.userData.pos0);
+    const { O, g, Rh } = eyeBaseC(f, i);
+    if (d) {
+      const dw = g.clone().multiplyScalar(-d * Rh), v0 = V3(), w0 = V3(), a = [V3(), V3(), V3()], M = new THREE.Matrix3(), dl = V3();
+      const W = (k, v) => { const t = v.clone(); m.applyBoneTransform(k, t); return t.applyMatrix4(m.matrixWorld); };
+      for (let n = 0; n < P.count; n++) {
+        v0.fromBufferAttribute(P, n); w0.copy(W(n, v0));
+        for (let j = 0; j < 3; j++) { const u = V3(); u.setComponent(j, 1); a[j].copy(W(n, v0.clone().add(u))).sub(w0); }
+        M.set(a[0].x, a[1].x, a[2].x, a[0].y, a[1].y, a[2].y, a[0].z, a[1].z, a[2].z).invert();
+        dl.copy(dw).applyMatrix3(M); P.setXYZ(n, v0.x + dl.x, v0.y + dl.y, v0.z + dl.z);
+      }
+    }
+    P.needsUpdate = true; m.geometry.computeBoundingSphere(); m.geometry.computeBoundingBox();
+    let zf = -9; const v = V3(); for (let k = 0; k < P.count; k++) { m.getVertexPosition(k, v); v.applyMatrix4(m.matrixWorld); zf = Math.max(zf, v.sub(O).dot(g) / Rh); }
+    f.sockFront[i] = zf;
+  });
+}
+
+/* ---------------- R1c measurement (?measure=r1c) ---------------- */
+const BINC = (th, ph) => Math.min(89, Math.floor(th / 2)) * 90 + Math.min(89, Math.floor((ph + 180) / 4));
+const tp = (v) => { const r = v.length(); return { r, th: Math.acos(Math.max(-1, Math.min(1, v.z / r))) * 180 / Math.PI, ph: Math.atan2(v.y, v.x) * 180 / Math.PI }; };
+function pokeC(f, i, d) {              // eye frame O/g. shell = socket verts facing away from the (shifted) shell centre
+  const { O, qi, Rh } = eyeBaseC(f, i), m = socketOfC(f, i), e = f.eyes.rig.eyes[i], s = f.eyes.skin.fit[i];
+  const P = m.geometry.attributes.position, N = m.geometry.attributes.normal, nm = new THREE.Matrix3().getNormalMatrix(m.matrixWorld), w = V3(), v = V3(), n = V3();
+  const Cs = new THREE.Vector3(0, 0, -d);   // shell centre in eye frame (R)
+  const shell = new Map(), inner = []; let far = 0;
+  for (let k = 0; k < P.count; k++) {
+    m.getVertexPosition(k, w); w.applyMatrix4(m.matrixWorld); v.copy(w).sub(O).applyQuaternion(qi).divideScalar(Rh);
+    const t = tp(v); if (t.r > 1.6) { far++; continue; }
+    n.fromBufferAttribute(N, k).applyMatrix3(nm).applyQuaternion(qi).normalize();
+    const out = n.dot(v.clone().sub(Cs).normalize()) > 0.3;
+    if (out) { const b = BINC(t.th, t.ph); const o = shell.get(b); if (!o || t.r < o.r) shell.set(b, t); } else if (t.r > 0.85) inner.push(t);
+  }
+  const sclR = s * 1.0, res = { socketVertsFarLoft: far, states: {} };
+  // sclera through the shell (sphere s·R around O)
+  let scN = 0, scDeep = 0, scTh = [180, 0];
+  for (const t of shell.values()) if (t.r < sclR) { scN++; scDeep = Math.max(scDeep, sclR - t.r); scTh = [Math.min(scTh[0], t.th), Math.max(scTh[1], t.th)]; }
+  // inward-facing socket verts: front (θ < 90°: rolled rim) vs back (θ ≥ 90°: stalk loft entering the shell, hidden inside)
+  let rimSc = 0, rimScDeep = 0; for (const t of inner) if (t.th < 90 && t.r < sclR) { rimSc++; rimScDeep = Math.max(rimScDeep, sclR - t.r); }
+  res.sclera = { shellBinsInsideSclera: scN, deepestR: +scDeep.toFixed(4), thetaRangeDeg: scN ? scTh.map((x) => +x.toFixed(0)) : null, frontRimVertsInsideSclera: rimSc, frontRimDeepestR: +rimScDeep.toFixed(4) };
+  for (const st of ['open', 'rest', 'half', 'closed']) {
+    setLid(f, st); for (let k = 0; k < 180; k++) stepRig(f, 1 / 60, false); f.fig.updateMatrixWorld(true);
+    const sk = e._claySkin, SP = sk.geometry.attributes.position, smax = new Map();
+    for (let k = 0; k < SP.count; k++) { v.fromBufferAttribute(SP, k).applyMatrix4(sk.matrixWorld).sub(O).applyQuaternion(qi).divideScalar(Rh); const t = tp(v); const b = BINC(t.th, t.ph); if (!(smax.get(b) >= t.r)) smax.set(b, t.r); }
+    let pen = 0, nb = 0, deep = 0, th = [180, 0], gMin = Infinity;
+    for (const [b, t] of shell) { const rk = smax.get(b); if (rk == null) continue; nb++; const g = t.r - rk; gMin = Math.min(gMin, g); if (g < 0) { pen++; deep = Math.max(deep, -g); th = [Math.min(th[0], t.th), Math.max(th[1], t.th)]; } }
+    let rimIn = 0, rimDeep = 0, rimTh = [180, 0]; for (const t of inner) { if (t.th >= 90) continue; const rk = smax.get(BINC(t.th, t.ph)); if (rk != null && t.r < rk) { rimIn++; rimDeep = Math.max(rimDeep, rk - t.r); rimTh = [Math.min(rimTh[0], t.th), Math.max(rimTh[1], t.th)]; } }
+    res.states[st] = { skinThroughShellBins: pen, binsCompared: nb, deepestR: +deep.toFixed(4), thetaRangeDeg: pen ? th.map((x) => +x.toFixed(0)) : null, minGapR: +gMin.toFixed(4),
+      frontRimVertsInsideSkin: rimIn, frontRimDeepestR: +rimDeep.toFixed(4), frontRimThetaDeg: rimIn ? rimTh.map((x) => +x.toFixed(0)) : null };
+  }
+  return res;
+}
+const RTC = new THREE.WebGLRenderTarget(400, 400), BUFC = new Uint8Array(400 * 400 * 4), CAMC = new THREE.PerspectiveCamera(24, 1, 0.01, 100);
+function countC() { renderer.setRenderTarget(RTC); renderer.setViewport(0, 0, 400, 400); renderer.render(scene, CAMC); renderer.readRenderTargetPixels(RTC, 0, 0, 400, 400, BUFC); renderer.setRenderTarget(null);
+  let mg = 0, cy = 0; for (let k = 0; k < BUFC.length; k += 4) { const r = BUFC[k], g = BUFC[k + 1], b = BUFC[k + 2]; if (r > 235 && g < 25 && b > 235) mg++; else if (r < 25 && g > 235 && b > 235) cy++; } return { mg, cy }; }
+function visibleC(f, i) {              // eyeball (lid open c = 0) and lid skin (50 %): visible area with socket ÷ without, front and ¾
+  const e = f.eyes.rig.eyes[i], sc = e.children[0], pu = e._puMesh, sk = e._claySkin, { O, g, Rh } = eyeBaseC(f, i);
+  const MG = new THREE.MeshBasicMaterial({ color: 0xff00ff }), CY = new THREE.MeshBasicMaterial({ color: 0x00ffff }), keep = [sc.material, pu.material, sk.material];
+  CAMC.layers.set(f.F.layer); const two = f.eyes.rig.eyes.filter((x) => x.visible).length > 1, res = {};
+  for (const [vn, yaw] of [['front', 0], ['threeq', 35]]) {
+    const dir = g.clone().applyAxisAngle(new THREE.Vector3(0, 1, 0), (two && i === 0 ? -1 : 1) * yaw * Math.PI / 180);
+    CAMC.position.copy(O).addScaledVector(dir, Rh * 8); CAMC.up.set(0, 1, 0); CAMC.lookAt(O); CAMC.updateProjectionMatrix();
+    const r = {};
+    for (const [st, key] of [['open', 'eyeball'], ['half', 'lid']]) {
+      setLid(f, st); for (let k = 0; k < 180; k++) stepRig(f, 1 / 60, false); f.fig.updateMatrixWorld(true);
+      if (key === 'eyeball') { sc.material = MG; pu.material = MG; } else sk.material = CY;
+      const a = countC(); f.sockets.forEach((m) => m.visible = false); const b = countC(); f.sockets.forEach((m) => m.visible = true);
+      sc.material = keep[0]; pu.material = keep[1]; sk.material = keep[2];
+      const A = key === 'eyeball' ? a.mg : a.cy, B = key === 'eyeball' ? b.mg : b.cy;
+      r[key] = { visibleAreaFrac: +(A / Math.max(1, B)).toFixed(4), pxWith: A, pxWithout: B };
+    }
+    res[vn] = r;
+  }
+  MG.dispose(); CY.dispose(); return res;
+}
+async function measureC(figs) {
+  const info = { socketMode: SOCKET_MODE, d: [] };
+  for (const d of [0, 0.1, 0.2, 0.3, 0.4]) {
+    const row = { d, figs: [] };
+    for (const f of figs) {
+      shiftSocket(f, d);
+      const eyes = [];
+      f.eyes.rig.eyes.forEach((e, i) => { if (!e.visible) return;
+        eyes.push({ eye: i, s: +f.eyes.skin.fit[i].toFixed(5), socketFrontVsEquatorR: +f.sockFront[i].toFixed(4), eyeApexR: +(f.eyes.skin.fit[i] * 1.004).toFixed(4),
+          visible: visibleC(f, i), poke: pokeC(f, i, d), pupilPx: pupilPixels(f, i) }); });
+      row.figs.push({ fig: f.F.key, eyes });
+    }
+    info.d.push(row); msg('misst d ' + d);
+  }
+  return info;
+}
+
+/* ---------------- headless measurement (?measure=1) ---------------- */
+const V = () => new THREE.Vector3();
+function eyeFrame(f, i) {
+  const e = f.eyes.rig.eyes[i]; f.fig.updateMatrixWorld(true);
+  const c = e.getWorldPosition(V()), qi = e.getWorldQuaternion(new THREE.Quaternion()).invert();
+  const Rw0 = f.eyes.rig._R * f.eyes.eyeQ[i].scale * e.parent.getWorldScale(V()).x;   // host-placed eye radius (before fit s)
+  return { e, c, qi, Rw0 };
+}
+const BIN = (th, ph) => Math.min(89, Math.floor(th / 2)) * 90 + Math.min(89, Math.floor((ph + 180) / 4));
+/* Socket vertices near eye i, in the eye frame (+Z gaze), radius in host-placed R. `out` = normal faces away from the eye
+   centre: that is the spherical shell itself (single surface); the rest is the rolled rim and the stalk loft. */
+function socketSamples(f, i) {
+  const { c, qi, Rw0 } = eyeFrame(f, i), out = [], v = V(), n = V(), nm = new THREE.Matrix3();
+  for (const m of f.sockets) {
+    const p = m.geometry.attributes.position, N = m.geometry.attributes.normal; nm.getNormalMatrix(m.matrixWorld);
+    for (let k = 0; k < p.count; k++) {
+      m.getVertexPosition(k, v); v.applyMatrix4(m.matrixWorld).sub(c);
+      const r = v.length() / Rw0; if (r > 1.6) continue;
+      v.applyQuaternion(qi).normalize(); n.fromBufferAttribute(N, k).applyMatrix3(nm).applyQuaternion(qi).normalize();
+      out.push({ r, out: n.dot(v) > 0.3, th: Math.acos(Math.max(-1, Math.min(1, v.z))) * 180 / Math.PI, ph: Math.atan2(v.y, v.x) * 180 / Math.PI });
+    }
+  }
+  return out;
+}
+function skinGap(f, i, sock) {
+  const { e, c, qi, Rw0 } = eyeFrame(f, i), sk = e._claySkin, p = sk.geometry.attributes.position, v = V(), smax = new Map(), smin = new Map();
+  let rMax = 0;
+  for (let k = 0; k < p.count; k++) {
+    v.fromBufferAttribute(p, k).applyMatrix4(sk.matrixWorld).sub(c); const r = v.length() / Rw0; rMax = Math.max(rMax, r);
+    v.applyQuaternion(qi).normalize(); const th = Math.acos(Math.max(-1, Math.min(1, v.z))) * 180 / Math.PI, ph = Math.atan2(v.y, v.x) * 180 / Math.PI;
+    const b = BIN(th, ph); if (!(smax.get(b) >= r)) smax.set(b, r);
+  }
+  for (const s of sock) { if (!s.out) continue; const b = BIN(s.th, s.ph); if (!(smin.get(b) <= s.r)) smin.set(b, s.r); }
+  let gMin = Infinity, at = null, neg = 0, n = 0;
+  for (const [b, rs] of smin) { const rk = smax.get(b); if (rk == null) continue; n++; const g = rs - rk; if (g < 0) neg++; if (g < gMin) { gMin = g; at = { th: Math.floor(b / 90) * 2 + 1, ph: (b % 90) * 4 - 178 }; } }
+  // rolled rim (inward-facing socket vertices in the front 75°): how many lie inside the skin's outer radius in their direction
+  let rimIn = 0, rimN = 0, rimDeep = 0;
+  for (const s of sock) { if (s.out || s.th > 75 || s.r < 0.9) continue; const rk = smax.get(BIN(s.th, s.ph)); if (rk == null) continue; rimN++; if (s.r < rk) { rimIn++; rimDeep = Math.max(rimDeep, rk - s.r); } }
+  return { skinOuterMaxR: +rMax.toFixed(4), shellGapMinR: +gMin.toFixed(4), shellGapMinAt: at, shellBinsCompared: n, shellBinsPenetrating: neg,
+    rimVertsFront: rimN, rimVertsInsideSkinOuter: rimIn, rimDeepestR: +rimDeep.toFixed(4) };
+}
+function pupilPixels(f, i) {
+  const { e, c, Rw0 } = eyeFrame(f, i), pu = e._puMesh, old = pu.material, rt = new THREE.WebGLRenderTarget(360, 360), cam = new THREE.PerspectiveCamera(24, 1, 0.01, 100);
+  cam.layers.set(f.F.layer); pu.material = new THREE.MeshBasicMaterial({ color: 0xff00ff });
+  const q = e.getWorldQuaternion(new THREE.Quaternion()), buf = new Uint8Array(360 * 360 * 4), res = {};
+  const views = { front: [0, 0], left40: [-40, 0], right40: [40, 0], up30: [0, 30], down30: [0, -30], side75: [75, 0], top: [0, 85], back: [180, 0] };
+  for (const [name, [az, el]] of Object.entries(views)) {
+    const a = az * Math.PI / 180, b = el * Math.PI / 180, dir = new THREE.Vector3(Math.sin(a) * Math.cos(b), Math.sin(b), Math.cos(a) * Math.cos(b)).applyQuaternion(q);
+    cam.position.copy(c).addScaledVector(dir, Rw0 * 7); cam.up.set(0, 1, 0); cam.lookAt(c); cam.updateProjectionMatrix();
+    renderer.setRenderTarget(rt); renderer.setViewport(0, 0, 360, 360); renderer.render(scene, cam); renderer.readRenderTargetPixels(rt, 0, 0, 360, 360, buf); renderer.setRenderTarget(null);
+    let n = 0; for (let k = 0; k < buf.length; k += 4) if (buf[k] > 235 && buf[k + 1] < 25 && buf[k + 2] > 235) n++;
+    res[name] = n;
+  }
+  pu.material.dispose(); pu.material = old; rt.dispose();
+  return res;
+}
+async function measure(figs) {
+  const info = { socketMode: SOCKET_MODE, figs: [] };
+  for (const f of figs) {
+    const r = f.eyes.rig, fi = { fig: f.F.key, eyes: [] };
+    for (let i = 0; i < r.eyes.length; i++) {
+      if (!r.eyes[i].visible) continue;
+      const sock = socketSamples(f, i), rs = sock.map((s) => s.r).sort((a, b) => a - b), pct = (p) => +rs[Math.min(rs.length - 1, Math.floor(p * rs.length))].toFixed(4);
+      const sh = sock.filter((s) => s.out).map((s) => s.r).sort((a, b) => a - b), shp = (p) => +sh[Math.min(sh.length - 1, Math.floor(p * sh.length))].toFixed(4);
+      const front = sock.filter((s) => s.r > 0.9 && s.r < 1.4).map((s) => s.th).sort((a, b) => a - b);
+      const ei = { eye: i, fit: +f.eyes.skin.fit[i].toFixed(5), recipeShellOverR: +(f.eyes.eyeQ[i].shellRadius / f.eyes.eyeQ[i].R).toFixed(4), socketVerts: sock.length,
+        shellSphereR: { p1: shp(0.01), p50: shp(0.5), p99: shp(0.99), n: sh.length }, allSocketR: { p0: pct(0), p50: pct(0.5) },
+        openingHalfAngleDeg_fromPlusZ: +(front[0] || NaN).toFixed(2), states: {} };
+      for (const s of ['open', 'rest', 'half', 'closed']) {
+        setLid(f, s); for (let k = 0; k < 180; k++) stepRig(f, 1 / 60, false);
+        f.fig.updateMatrixWorld(true);
+        const e = r.eyes[i], shells = (e._up.visible ? 1 : 0) + (e._lo.visible ? 1 : 0); let skins = 0; e.traverse((m) => { if (m.isMesh && m.name === LID_SKIN_NAME) skins++; });
+        ei.states[s] = { aperture: Object.fromEntries(Object.entries(e._claySkinAp).map(([k, v]) => [k, +v.toFixed(3)])), shellsVisible: shells, lidSkins: skins, ...skinGap(f, i, sock), pupilPx: pupilPixels(f, i) };
+      }
+      fi.eyes.push(ei);
+    }
+    info.figs.push(fi);
+  }
+  return info;
+}
+
+/* ---------------- main ---------------- */
+try {
+  const figs = window.__figs = [];
+  for (const F of FIGS) {
+    msg('lädt ' + F.name + ' …');
+    const f = await loadFigure(F); f.eyes = await buildEyes(f);
+    const blob = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.9), new THREE.MeshBasicMaterial({ map: BLOB, transparent: true, depthWrite: false }));
+    blob.rotation.x = -Math.PI / 2; blob.position.set(0, 0.002, 0); f.fig.add(blob);
+    scene.add(f.fig); layerAll(f); figs.push(f);
+    setLid(f, lid); for (let k = 0; k < 120; k++) stepRig(f, 1 / 60, false);
+  }
+  resize(); figs.forEach((f, i) => frame(f, cams[i], view));
+  if (Q.get('measure') === 'r1c') { msg('misst …'); job.info = await measureC(figs); figs.forEach((f) => { setLid(f, lid); for (let k = 0; k < 120; k++) stepRig(f, 1 / 60, false); }); }
+  else if (Q.get('measure')) { msg('misst …'); job.info = await measure(figs); figs.forEach((f) => { setLid(f, lid); for (let k = 0; k < 120; k++) stepRig(f, 1 / 60, false); }); }
+  msg('');
+  const setBtn = (sel, attr, v) => document.querySelectorAll(sel + ' button[' + attr + ']').forEach((b) => b.classList.toggle('on', b.getAttribute(attr) === v));
+  window.__setLid = (v) => { lid = v; figs.forEach((f) => setLid(f, v)); setBtn('#lidBtns', 'data-lid', v); };
+  window.__setView = (v) => { view = v; figs.forEach((f, i) => frame(f, cams[i], v)); setBtn('#viewBtns', 'data-view', v); };
+  window.__settle = (n = 180) => { figs.forEach((f) => { for (let k = 0; k < n; k++) stepRig(f, 1 / 60, false); }); readout(figs); render(); };
+  window.__blink = () => figs.forEach((f) => f.eyes.rig.blinkNow());
+  window.__setBack = (d) => { BACK = +d; figs.forEach((f) => shiftSocket(f, BACK)); setBtn('#backBtns', 'data-back', String(BACK)); readout(figs);
+    const u = new URL(location.href); u.searchParams.set('back', String(BACK)); history.replaceState(null, '', u.href); };
+  window.__setBack(BACK);
+  document.querySelectorAll('#backBtns button').forEach((b) => b.onclick = () => window.__setBack(b.dataset.back));
+  document.querySelectorAll('#lidBtns button[data-lid]').forEach((b) => b.onclick = () => window.__setLid(b.dataset.lid));
+  document.querySelector('#lidBtns button[data-act="blink"]').onclick = () => window.__blink();
+  document.querySelectorAll('#viewBtns button').forEach((b) => b.onclick = () => window.__setView(b.dataset.view));
+  document.querySelectorAll('#sockBtns button').forEach((b) => { b.classList.toggle('on', b.dataset.sock === SOCKET_MODE); b.onclick = () => { const u = new URL(location.href); u.searchParams.set('socket', b.dataset.sock); location.href = u.href; }; });
+  new ResizeObserver(() => { resize(); figs.forEach((f, i) => frame(f, cams[i], view)); }).observe(stage);
+  const clock = new THREE.Clock(); let acc = 0;
+  renderer.setAnimationLoop(() => {
+    const dt = Math.min(0.05, clock.getDelta());
+    figs.forEach((f) => stepRig(f, dt, true));
+    if ((acc += dt) > 0.15) { acc = 0; readout(figs); }
+    render();
+  });
+  readout(figs); job.ready = true; job.done = true;
+} catch (e) { job.err = String(e && e.stack || e); msg('FEHLER ' + job.err); console.error(e); }
+</script></body></html>

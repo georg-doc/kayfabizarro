@@ -5803,7 +5803,7 @@
    "date": "2026-10-17",
    "area": "Dialog",
    "verdict": "RULE",
-   "text": "Songs R5 (Georg: weitere Triplets → Suno mit externem Kritiker, ohne Drift/Regress): SONG_SPEC → R3.2. Ein gemeinsames Prüfskript replies/song_gate.py für alle Songs (Rahmen, Kartenwörter inkl. Bildwörter, Klammern, Zahlen, Spielwörter, Opener einmalig auch gegen frühere Songs, Rufe/Wiederholung, Intro ≥ 2 Beats, Ton je Deck) statt eigener Kopien je Deck; externer Kritiker nach §F (festes JSON, nur Urteile, kein Ersatztext, selbst durch song_gate.py critic geprüft). Fünf Decks: Federal Kayfabe, Geopolitical Thrillers, Grimm Set 02, Monopolies Vol. II, Romantic Kayfabe. Plan: Wenn R5 bei Georg ohne Regress besteht, Lauf über alle KFB-Decks (ohne MED) in Wellen.",
+   "text": "Songs R5 (Georg: weitere Triplets → Suno mit externem Kritiker, ohne Drift/Regress): SONG_SPEC → R3.2. Ein gemeinsames Prüfskript replies/song_gate.py für alle Songs (Rahmen, Kartenwörter inkl. Bildwörter, Klammern, Zahlen, Spielwörter, Opener einmalig auch gegen frühere Songs, Rufe/Wiederholung, Intro ≥ 2 Beats, Ton je Deck) statt eigener Kopien je Deck; externer Kritiker nach §F (festes JSON, nur Urteile, kein Ersatztext, selbst durch song_gate.py critic geprüft). Fünf Decks: Federal Kayfabe, Geopolitical Thrillers, Grimm Set 02, Monopolies Vol. II, Romantic Kayfabe. Plan (Georg): Wenn R5 bei Georg ohne Regress besteht, Batch über alle KFB-Decks (ohne MED) in Wellen – läuft über WS1 (Triplet-Plugin + Suno-Text + Kritiker + song_gate.py).",
    "values": {},
    "owner": "WSA (Plugin) · externer Kritiker · WS0",
    "check": "Tor + Kritiker grün, eine Revision, WS0 → Georg",
@@ -5812,6 +5812,21 @@
    "superseded_by": [],
    "why": "R4 zeigte: eigene Prüfskripte je Deck übersahen Klammern, Zahlen, Spielwörter und ein weggekürztes Intro; ein Kritiker mit Textvorschlägen schreibt mit und erzeugt Drift.",
    "applies": "ab sofort, R4-Korrekturen eingeschlossen"
+  },
+  {
+   "id": "V-420",
+   "date": "2026-10-17",
+   "area": "Augen",
+   "verdict": "FAIL",
+   "text": "E2-Proof R1b FAIL (Georg 17.10.: „Augenlider wieder neu erfunden … falsch gebaut“, „DER SOCKEL SOLL BLEIBEN WIE ZUVOR, NUR WEITER ZURÜCKGEZOGEN“). Der Agent hatte statt Georgs TUNE (Auge sitzt zu tief, Sockel deckt zu viel) einen neuen Sockel vorgeschlagen (66° Öffnung, Rand nach außen, Schnittebene, Augenverkleinerung). Regel: Sockelschale bleibt in Form, Radius, 58°-Öffnung und Rand exakt wie r4; einzige Änderung = starre Verschiebung nach hinten entlang der Blickachse um d R; Auge bleibt in Mitte und Größe wie R1. Proof R1c mit Stufen 0–0,40 R, Georg wählt d; WSB-Nachträge 12/13 (1,10 R, Öffnungswinkel) gestrichen, B14 ohne Sockelarbeit.",
+   "values": {},
+   "owner": "WS0 (Agent E2) · WSB wartet auf d",
+   "check": "proof_r1c.html, WS0-Abgleich mit E2-Referenz, dann Georg",
+   "source": "replies/E2_ATTACH_R1/ · 50_BLENDER/ANTWORT_WS0_2026-10-17.md (14. Nachtrag)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS0 gab dem Agenten den TUNE als offene Frage weiter; der Agent erfand eine neue Sockelform statt der verlangten Verschiebung.",
+   "applies": "sofort"
   },
   {
    "id": "V-084",
@@ -5886,7 +5901,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:745",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:747",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

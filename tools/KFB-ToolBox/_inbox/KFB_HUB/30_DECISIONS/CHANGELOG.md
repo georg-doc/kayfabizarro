@@ -1,6 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-420: E2-Proof R1b FAIL; Sockel bleibt exakt wie r4, nur starr nach hinten verschoben (R1c mit Stufen 0–0,40 R); WSB-Nachträge 12/13 gestrichen (14. Nachtrag).
+- V-419 ergänzt: Batch aller KFB-Decks (ohne MED) läuft nach R5-Test über WS1.
 - V-419: Songs R5 (fünf Decks) über Triplet-Plugin + externen Kritiker; SONG_SPEC R3.2 mit gemeinsamem Prüfskript song_gate.py (Lyrics + Kritiker-Urteil), Intro ≥ 2 Beats, Meta-Karten-Regel, Ton-Hinweise je Deck (Hub-Briefing an WSA).
 - E2 R1b vom Agenten zurück: Ursache = zu enge Sockelöffnung + nach innen gerollter Rand; Vorschlag 66° Öffnung, Rand 0,04 R nach außen, eyeForward 0,05 R (proof_r1b.html), wartet auf Georgs Blick.
 - WSB-Lieferungen B1/B2/B7 auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17); automatisches Mergen vom Sicherheitssystem blockiert, Georg entscheidet den Weg.

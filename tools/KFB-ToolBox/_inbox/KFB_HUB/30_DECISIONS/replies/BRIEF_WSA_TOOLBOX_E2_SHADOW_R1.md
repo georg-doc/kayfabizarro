@@ -1,4 +1,7 @@
 # Brief WSA work · ToolBox-Studio: E2 eyelids for the aliens + shadow seam (V-417) · 17.10.2026
+
+> **STOP (V-420, 17.10.):** do not integrate E2 or change any socket values until WS0 sends module version and d after Georg approves proof R1c. The socket stays exactly as in r4 (Dory too, no 1.10 R). Only change later: the socket moves rigidly backward by d R.
+
 **Tier 0:** figures only from their figure card (KFB eye rig + clay) · light only from the stage light module · a known failure means stop and report. **Your blocks:** [Figure] + [Stage/light].
 
 Georg 17.10., with screenshots from ToolBox-Studio: the eyelids are "still or again wrong", there is a shadow seam on FrizzleBob's neck, and Dory's lower head (oval, seam) is broken. Cause, honestly: integrating the E2 lids into the aliens (V-348) was **planned and never built**. The plan has been sitting since 16.10.
