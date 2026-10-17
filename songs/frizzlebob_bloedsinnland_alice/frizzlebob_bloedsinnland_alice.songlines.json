@@ -1,9 +1,78 @@
 {
   "deckId": "frizzlebob_bloedsinnland_alice",
-  "version": "R4",
-  "songLineChanges": [],
-  "songLineCount": 0,
-  "cardCount": 30,
-  "limit": 3,
-  "notes": "Original card words retained. 6:00 PM is unchanged from printed card."
+  "version": "R4.1",
+  "sourceSpec": "R3.1",
+  "songLineChanges": [
+    {
+      "cardNumber": 4,
+      "reason": "A7 spoken-time six in the evening instead of 6:00 PM",
+      "before": "6:00 PM",
+      "after": "six in the evening"
+    }
+  ],
+  "songLineCount": 1,
+  "totalCardLines": 30,
+  "percent": 3.33,
+  "presentationEdits": [
+    {
+      "cardNumber": 4,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 10,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 11,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 15,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 16,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 17,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 20,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 21,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 24,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 25,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 26,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 27,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 28,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 29,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    },
+    {
+      "cardNumber": 30,
+      "reason": "A6/A8 stage presentation; original source stays in OCR dossier"
+    }
+  ]
 }
