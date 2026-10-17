@@ -1,0 +1,223 @@
+{
+  "schema": "kfb.diegetic-landmark-poi-candidates/1",
+  "updated": "2026-10-17",
+  "mode": "PROPOSAL_INTAKE_NOT_IMPLEMENTED",
+  "author": "Georg / KFB",
+  "researchOwner": "KFB Chat Production / WS0 intake",
+  "receivingOwner": "EXISTING_TOWN_WORLDBUILDER_OWNER_TO_BE_NAMED_BY_WS0",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "research/kfb-diegetic-landmark-diorama-pois-r1-2026-10-17",
+  "conceptContract": {
+    "purpose": "A dominant oversized surreal object becomes navigable place, maintained social artifact, optional real diegetic tool and unresolved narrative encounter",
+    "storyBeats": [
+      "origin",
+      "first_use",
+      "settlement",
+      "institution_power",
+      "accretion_scars",
+      "present_day_life"
+    ],
+    "playerMeaning": "CLOSURE_STAYS_WITH_PLAYER_NO_ANSWER_ENGINE",
+    "interaction": "PULL_DONT_GATE",
+    "meshyRule": "SOURCE_IMAGE_CONCEPT_NOT_PROOF_OF_MODEL_GEOMETRY",
+    "visual": "KFB_CLAY_SSOT_GOLDEN_AND_REAL_SOURCE_FIRST",
+    "protectedSystems": [
+      "WorldBuilder WB2 terrain/physics/camera",
+      "Town SSOT",
+      "Asset Librarian / Registry",
+      "World Atlas S13/S22",
+      "EyeRig",
+      "Resident Atlas/ChatterBox",
+      "Card Viewer/Almanac",
+      "Billboard content engine",
+      "2D Animation/Motion"
+    ],
+    "nextGate": "WS0_EXISTING_OWNER_INTAKE_OF_REPORTED_JUNGLE_MESHY_MODEL_PLUS_S22_ISOLATED_STAIRS_WALL_GIZMOS"
+  },
+  "candidates": [
+    {
+      "id": "KFB_POI_PC_JUNGLE_01",
+      "label": "Jungle stone-computer oracle",
+      "family": "PC_ORACLE",
+      "conceptStatus": "GEORG_POSITIVE_VISUAL_DIRECTION",
+      "meshStatus": "GEORG_REPORTS_MESHY_MODEL_EXISTS_BUT_FILE_NOT_RECEIVED",
+      "geoProvenance": "UNKNOWN",
+      "worldPlacement": "UNDECIDED",
+      "hero": "light sandstone-colored antique CRT/computer with keyboard",
+      "environment": "ISOLATED_DIORAMA_NO_WIDE_JUNGLE_BACKDROP",
+      "criticalAccess": "old contiguous stone stair visibly ending at keyboard",
+      "buildLayers": [
+        "sandstone PC shell",
+        "old stone stairs and platform",
+        "primitive timber lashings",
+        "roots and clay jungle foliage",
+        "functional screen/keyboard"
+      ],
+      "excluded": [
+        "eyes on PC",
+        "banners",
+        "heraldry",
+        "distant landscape"
+      ],
+      "diegeticFunction": "optional existing Card Viewer/Oracle focus adapter, NOT implemented",
+      "npcLayer": "primitive maintainers/reinterpretations PROPOSAL ONLY",
+      "visualSha256": "2be654ef8cca9aa4e6bc9c35257e48e680812a837a83d49b11d92fc1b15eab63",
+      "glbSha256": null
+    },
+    {
+      "id": "KFB_POI_PC_DYSTOPIA_02",
+      "label": "Black surveillance control PC",
+      "family": "PC_ORACLE",
+      "conceptStatus": "GEORG_VISUAL_DIRECTION_POSITIVE",
+      "meshStatus": "NO_MESH_REPORTED",
+      "worldPlacement": "DYSTOPIA_PROPOSAL_ONLY",
+      "hero": "massive black rectangular computer with clearly legible keyboard/screen",
+      "criticalAccess": "one primary main entry stair, slim observation loop",
+      "buildLayers": [
+        "black PC core",
+        "radial walkway / constrained control platform",
+        "limited surveillance cameras",
+        "occult/industrial materials"
+      ],
+      "excluded": [
+        "giant floating sphere",
+        "four watchtowers",
+        "CRT remake",
+        "eyes on housing"
+      ],
+      "diegeticFunction": "perspective/network/contradiction reading PROPOSAL ONLY",
+      "visualSha256": "a71c04ace7af5b68cf4c3e42f9ae3b38b59f4cc7115b9d56a25ae0227c156e7c",
+      "glbSha256": null
+    },
+    {
+      "id": "KFB_POI_PC_RETRO_03",
+      "label": "Retro CRT archival monument",
+      "family": "PC_ORACLE",
+      "conceptStatus": "CONCEPT_ONLY",
+      "meshStatus": "NO_MESH_REPORTED",
+      "worldPlacement": "UNDECIDED",
+      "hero": "oversized readable beige CRT computer",
+      "criticalAccess": "stone/industrial stairs to keyboard plus slim maintenance deck",
+      "buildLayers": [
+        "main CRT",
+        "stairs",
+        "platforms/scaffold",
+        "few service props"
+      ],
+      "diegeticFunction": "existing Deck Browser or Almanac, source verified before binding",
+      "visualSha256": "b4840d6462968110e2f041ffedf15b19d271f45c29516d1cba680448f9ce6234",
+      "glbSha256": null
+    },
+    {
+      "id": "KFB_POI_PC_DIY_SCI_FI_04",
+      "label": "DIY / orbital / many-screen knowledge apparatus",
+      "family": "PC_ORACLE",
+      "conceptStatus": "IDEA_ONLY_NO_SELECTED_DESIGN",
+      "meshStatus": "NO_MESH_REPORTED",
+      "worldPlacement": "UNDECIDED",
+      "hero": "single clear computer identity not a loose collection of monitors",
+      "criticalAccess": "defined platform/readable front approach",
+      "diegeticFunction": "different source-backed viewpoints, not algorithmic truth",
+      "visualSha256": null,
+      "glbSha256": null
+    },
+    {
+      "id": "KFB_POI_CAT_BEER_GLASS_05",
+      "label": "Cat in beer glass",
+      "family": "SURREAL_ATTRACTION",
+      "conceptStatus": "AUTHOR_SEED_REASSERTED",
+      "meshStatus": "NO_SOURCE_MESH_OR_IMAGE_RETRIEVED",
+      "worldPlacement": "UNDECIDED",
+      "hero": "visibly legible oversized beer-glass vessel and cat inside",
+      "criticalAccess": "safe peripheral walk/view platform; TBD",
+      "diegeticFunction": "encounter / curiosity; TBD",
+      "donorStatus": "REAL_CAT_AND_GLASS_IDS_UNKNOWN",
+      "avoidInvention": [
+        "named character",
+        "puzzle",
+        "coercive gameplay",
+        "canon origin",
+        "glass contents beyond user seed"
+      ],
+      "visualSha256": null,
+      "glbSha256": null
+    },
+    {
+      "id": "KFB_POI_EVIL_CLOWN_RESTAURANT_06",
+      "label": "Evil clown restaurant",
+      "family": "SURREAL_RESTAURANT",
+      "conceptStatus": "AUTHOR_SEED_REASSERTED",
+      "meshStatus": "NO_SOURCE_MESH_OR_IMAGE_RETRIEVED",
+      "worldPlacement": "UNDECIDED",
+      "hero": "readable restaurant physical layout and distinct unsettling clown presence",
+      "criticalAccess": "walkable entry, circulation, seating/service and safe exit",
+      "diegeticFunction": "resident/social encounter with existing tool if any; TBD",
+      "donorStatus": "S17_METHOD_DOCUMENTED_BUT_CURRENT_MODULE_NOT_RETRIEVED",
+      "doNotConflateWith": "GOLDEN_JOURNEY_TOWN_JUGGLING_CLOWN",
+      "visualSha256": null,
+      "glbSha256": null
+    }
+  ],
+  "donors": [
+    {
+      "id": "KFB_TOWN_J04",
+      "path": "skills/chat/town/LIVING_KFB_TOWN.md",
+      "status": "CURRENT"
+    },
+    {
+      "id": "S13_DUNGEON_TOPOLOGY",
+      "path": "tools/world_atlas/docs/HANDOFF_dungeon_S13.md",
+      "status": "ORIGINAL_MEASURED_GRID_SUPERSEDED_ON_WALL_NODE_ABSENCE"
+    },
+    {
+      "id": "S22_WALL_NODES",
+      "path": "tools/KFB-ToolBox/_inbox/KayKit_Room_Study_S21/S22_RoomStudy_Handover/tools/probe-wall-nodes.html",
+      "status": "MEASUREMENT_SOURCE"
+    },
+    {
+      "id": "S22_GIZMOS",
+      "path": "tools/KFB-ToolBox/_inbox/KayKit_Room_Study_S21/S22_RoomStudy_Handover/KayKit_Room_Study_S21.html",
+      "status": "PRESENT_IN_SOURCE_BUT_NOT_VALIDATED_IN_THIS_TURN"
+    },
+    {
+      "id": "S22_R08_NEGATIVE",
+      "path": "tools/KFB-ToolBox/_inbox/KayKit_Room_Study_S21/S22_RoomStudy_Handover/docs/POSTMORTEM_R08_S22.md",
+      "status": "FAILURE_REFERENCE"
+    },
+    {
+      "id": "S17_RESTAURANT",
+      "path": "tools/KFB-ToolBox/_inbox/KayKit_Room_Study_S21/S22_RoomStudy_Handover/CHANGELOG.md",
+      "status": "DOCUMENTED_METHOD_ORIGINAL_CODE_UNCONFIRMED"
+    },
+    {
+      "id": "KFB_CLAY_GOLDEN",
+      "path": "tools/KFB-ToolBox/docs/KFB_CLAYMATION_STYLE_SSOT.md",
+      "ref": "work/clay-style-ssot-2026-10-01",
+      "status": "BINDING"
+    },
+    {
+      "id": "WORLDBUILDER_PR348",
+      "url": "https://github.com/georg-doc/kayfabizarro/pull/348",
+      "status": "NO_MVP_R4_STOPPED_DO_NOT_PROCEED"
+    }
+  ],
+  "mediaReceipts": {
+    "zipName": "KFB_DIEGETIC_DIORAMA_POIS_R1_VISUAL_SOURCES_2026-10-17.zip",
+    "zipSha256": "1264dae7e4e2779d6829749ef3cd343c44f85d661d05b07d22c8e92b06390595",
+    "sizeBytes": 7104135,
+    "githubBinaryUploaded": false,
+    "status": "LOCAL_CONVERSATION_EXPORT_ONLY_NOT_PERSISTED_IN_REPOSITORY",
+    "pngCount": 3
+  },
+  "qualityState": {
+    "imageIsReal2D": true,
+    "modelUploaded": false,
+    "sourceDonorIsolated": false,
+    "meshConnectivityMeasured": false,
+    "rendererTests": 0,
+    "gpuTests": 0,
+    "stagePublished": false,
+    "merged": false,
+    "goldenAccepted": false
+  }
+}
