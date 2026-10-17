@@ -2,6 +2,17 @@
 
 deckId `dream_wrestling_with_kayfabe_freud` · Writer's Room R3 (WS0, 17.10.2026) · binding: V-361, V-362, V-364/366, V-372, V-373, V-377
 
+## wr2 revision (after WS0 blind review: listen 8, stand-up 8, spirit 8.5)
+Current file: `dream_wrestling_with_kayfabe_freud.wr2.suno.txt` (4926 characters). wr1 is kept unchanged. The songlines JSON now points to wr2. The sections below describe wr1 unless marked wr2.
+Kept: intro, all callbacks (card-eating, alarm-clock kick-out, Mommy slip, Aha runner).
+1. **Structure:** the last two quatrains are swapped. The page-15 fine print (opener "Fine print!") now comes before page 14, so the run ends on Lucidity's "Now watch this backflip!" straight into "Here lies Siggy". This is the only place where stanza order differs from page order.
+2. **Lecturing lines performed:** Condensation ("five anxieties? I crush them into one monster."), Representability ("I can't say because. So I crash two things together. Boom.", quote marks removed), Psychic Energy ("the gas in the tank. Block the pipe, I come out sideways!"), The Wood ("materia, mater, mother. Every table is your mom.").
+3. **The Examination:** "you passed this years ago. Relax, says Freud. Me? I say fraud." This is a deliberate partial adoption. The reviewer's line ("That's the point. Relax. You'll pass again.") would reverse the printed lore ("To prove you're a fraud") and break V-373/V-377, which say the card sells its own claim. Freud's reassurance is set against the card's claim instead, and the question-and-answer is gone. The reviewer's version stays available if Georg prefers it.
+4. **(Aha!)** removed after the Sphinx. The runner is now Hat, Tie, Flying Machine, then the payoff at The Symbol.
+5. **The Intruder** stays light: "I wiped my feet." added.
+6. **Cross-song clichés:** "executioner" (1001 Nights) replaced by "Dream's over"; opener "Main event!" (the phrase appears in 1001 Nights) became "Triple threat!"; "Hot tag!" dropped (1001 Nights has "Tag!"). Openers now sit on 10 of 56 card lines.
+wr2 opener list: Ref at the door! · Snooze. Kick-out. Back to sleep. (reset stanza) · Dress code! · About those teeth! · Please welcome... Mommy! Sorry. · Pop quiz! · Masks off! · Ring's gone. Just a rug and a couch. · Triple threat! · Snooze over. · Fine print!
+
 ## Purpose and thesis
 - **Printed title:** "Dream-Wrestling with Kayfabe-Freud: Where the Id Always Kicks Out at Two!" A psychoanalytic expansion pack (56 cards, 15 pages) for the Kayfabizarro improv engine. Cover (from the PDF JSON coverQA, not seen): vintage horror-comic poster, a brain luchador against a masked FrizzleBob rabbit, "MADNESS ARENA", "Contains 100% Repressed Content", "Do not eat the cards".
 - **What the deck says:** Freud's *Interpretation of Dreams* (1900) works like a wrestling card. Every dream is a scripted match: the Wish books it, the Censor referees, the dream work (Condensation, Displacement, Secondary Revision) does the gimmicks, and the drives never stay pinned. You don't cure the Id. It kicks out at two. The cards are the concepts acting themselves out ("if it makes no sense, it makes PERFECT sense").
@@ -117,3 +128,5 @@ Motifs used in lines: 1 flooded basement (implied "downstairs"), 2 waiting room,
 
 ## Character count
 `len()` of the lyrics file: **4923** characters (limit 5000), starts with [Spoken Word].
+
+wr2: `len()` = **4926** characters (limit 5000), starts with [Spoken Word].

@@ -1,6 +1,6 @@
-# 1001_kayfabe_nights: Writer's Room R3 (wr1) dossier
+# 1001_kayfabe_nights: Writer's Room R3 dossier (wr2 current, wr1 kept)
 
-Song: `1001_kayfabe_nights.wr1.suno.txt`. It is **4935 characters** including newlines (Python `len()`), starts with `[Spoken Word]`, has 15 stanzas for 15 printed pages and 60 card lines in deck order. Style: `1001_kayfabe_nights.style.txt` (A solo, B duet). Song versions of cards: `1001_kayfabe_nights.songlines.json` (36 entries). The printed card stays canonical.
+Song: **`1001_kayfabe_nights.wr2.suno.txt` (current)**, **4958 characters**; wr1 (4935) is kept for comparison. wr2 is including newlines (Python `len()`), starts with `[Spoken Word]`, has 15 stanzas for 15 printed pages and 60 card lines in deck order. Style: `1001_kayfabe_nights.style.txt` (A solo, B duet). Song versions of cards: `1001_kayfabe_nights.songlines.json` (41 entries, checked against wr2). The printed card stays canonical.
 
 ## Purpose and thesis of the deck
 **Title (registry):** "Uncle FrizzleBob's 1001 Kayfabe Nights", a stand-alone expansion for the Krazy Kayfabizarro Komik Kard Klub. deckType "Narrative Wrestling Mashup". Tags: comedy, improv, roleplay, storytelling, #KayfabeIsReal.
@@ -11,6 +11,16 @@ Song: `1001_kayfabe_nights.wr1.suno.txt`. It is **4935 characters** including ne
 
 **Audience:** Kayfabizarro players who want a story arc with heels, faces and a pink slip on the line. The deck is improv and roleplay rather than conspiracy.
 
+## wr2 revision (blind review WS0: listen 8, stand-up 8, spirit 8.5)
+Kept: the sister arc, the apples callback, and the Cliffhanger/outro (including "Did the king swing? / No.").
+1. **Meter:** "the second the king stops believing, I stop breathing." (no longer reads like a win condition).
+2. **"ultimate" ×4 → 0:** Lamp "sentient brass" (printed lore), Roc "vertical suplex from three thousand feet", Cave "gated community. Say the password or stay forever.", Fishbone "One bite, lights out."
+3. **Princess of Bengal:** "I'm not crazy. I'm faking madness to dodge a bad contract."
+4. **The Slave:** "took the apple, took the heat. Blame rolls downhill." I didn't use the reviewer's "body count" line because it jokes about the murdered wife; this punchline aims at power.
+5. **Tone:** "The Black Giant: cannibal heel" became "The Giant: monster heel" (songLine). "Pass it on!" moved from the Jewish Physician to the Tailor; no opener touches the Physician or the African Sorcerer.
+6. **Pauses:** every aside that ends in a period now ends in "..." before the card name (e.g. "Daddy's nervous... The Grand Vizier:").
+7. **Jargon load:** "heat" 6→3 (Scheherazade, Captain, Slave), "no-sell" 2→0, "foreign object" 3→1 (Fishbone). For length, "don't look down" was cut from the Tower Lure.
+
 ## Page / stanza table (acts per PDF JSON `notes`)
 | Stanza | Page | Cards | Act | Micro-story beat |
 |---|---|---|---|---|
@@ -18,7 +28,7 @@ Song: `1001_kayfabe_nights.wr1.suno.txt`. It is **4935 characters** including ne
 | 2 | 2 | 5–8 | Royal Court | Heel king threatens; Scheherazade answers "He's wrong"; sister plants the apples; father begs for one more night |
 | 3 | 3 | 9–12 | Aladdin | Rookie push, cheated manager, the lamp as foreign object, the princess picks the guy with the genie |
 | 4 | 4 | 13–16 | Sinbad Vol. 1 | Daredevil who always kicks out at two; the island that no-sells; the Roc; the knife floor |
-| 5 | 5 | 17–20 | Sinbad Vol. 2 | Monster heel, the parasite hold, wine as the dirty finish, the shipwreck as a small reset ("starts from zero") |
+| 5 | 5 | 17–20 | Sinbad Vol. 2 | Monster heel ('The Giant'), the parasite hold, wine as the dirty finish, the shipwreck as a small reset ("starts from zero") |
 | 6 | 6 | 21–24 | Ali Baba / Cave | "Open sesame!" against "Open... barley?": the man who forgets his lines dies in the cage |
 | 7 | 7 | 25–28 | 39 Thieves | Stable leader, the grunt swarm, the marked door out-marked, the oil jar |
 | 8 | 8 | 29–32 | City of Brass: Automata | **Turn begins:** an audience that cannot be persuaded ("I don't care about your story"); spoilers threaten the whole method |
@@ -49,32 +59,32 @@ Song: `1001_kayfabe_nights.wr1.suno.txt`. It is **4935 characters** including ne
 ## Opener list (26 of 60 lines; 34 lines breathe without one; none repeated)
 | # | Card | Opener | Function |
 |---|---|---|---|
-| 6 | Scheherazade | He's wrong. | Lore split: answers Shahryār |
-| 8 | Grand Vizier | Daddy's nervous. | Character beat |
+| 6 | Scheherazade | He's wrong... | Lore split: answers Shahryār |
+| 8 | Grand Vizier | Daddy's nervous... | Character beat |
 | 11 | Wonderful Lamp | Rub it! | Action cue |
-| 13 | Sinbad | At sea. | Scene change |
+| 13 | Sinbad | At sea... | Scene change |
 | 14 | Island-Whale | Land ho! | Gag (the island is a whale) |
 | 19 | Gourd of Wine | Cheers! | Gag |
 | 21 | Ali Baba | Open sesame! | Setup |
 | 23 | Cassim | Open... barley? | Callback / botch |
 | 26 | 39 Grunts | Count off! | Gag |
-| 29 | King of Brass | Talk him round, sister. | Turn begins |
+| 29 | King of Brass | Talk him round, sister... | Turn begins |
 | 32 | Seven Tablets | No spoilers! | Contradiction with the card |
-| 33 | Petrified Market | Tough crowd. | Low point |
-| 37 | Prince Qamar | New story, sister. Wings! | Reset |
-| 41 | Abu Hasan | Go low, sister. | Escalation (new tactic) |
-| 42 | Great Fart | Excuse me. | Gag |
+| 33 | Petrified Market | Tough crowd... | Low point |
+| 37 | Prince Qamar | New story, sister... Wings! | Reset |
+| 41 | Abu Hasan | Go low, sister... | Escalation (new tactic) |
+| 42 | Great Fart | Excuse me... | Gag |
 | 43 | Hunchback | The king's laughing! | Turn succeeds |
-| 44 | Fishbone | Chew slowly. | Gag |
-| 45 | Jewish Physician | Pass it on! | The body is passed along |
-| 48 | Barber | Professional courtesy. | Mirror callback |
-| 49 | Harun al-Rashid | Act natural. | Disguise |
+| 44 | Fishbone | Chew slowly... | Gag |
+| 46 | Tailor | Pass it on! | The body is passed along (wr2: moved off the Jewish Physician so his line has no opener) |
+| 48 | Barber | Professional courtesy... | Mirror callback |
+| 49 | Harun al-Rashid | Act natural... | Disguise |
 | 50 | Ja'far | Another vizier? | Callback |
-| 52 | Masrur | Clock's ticking. | Threat |
-| 53 | Locked Chest | Finally, the one about the apples. | Payoff |
+| 52 | Masrur | Clock's ticking... | Threat |
+| 53 | Locked Chest | Finally, the one about the apples... | Payoff |
 | 57 | Suspension of Disbelief | Meter check! | Callback |
-| 58 | Montreal Screwjob | Dawn. | Climax threat |
-| 59 | Cliffhanger | Not so fast. | Payoff |
+| 58 | Montreal Screwjob | Dawn... | Climax threat |
+| 59 | Cliffhanger | Not so fast... | Payoff |
 
 Cross-check against `OPENER_ARC_R2/*.suno.txt`: none of these openers appears there. In particular these were avoided: In the beginning, Keep clapping, Make some noise, Boo, Our hero, Who writes this stuff?, Spoiler, Backstage, Last call, Encore, Tag team, True story, Everyone agrees, Trust me bro, Psst, Evening fluffheads, Welcome to. Also checked against the parallel R3 songs (Freud, Alice, Carnival, Money Trail): 'Sunrise.' (Freud) replaced with 'Dawn.', 'Pardon' (in Alice card text) replaced with 'Excuse me.'; no other overlaps. The intro has no "Welcome to…", no Meta-Message and no karaoke line. FrizzleBob appears once, inside the cover card name.
 
@@ -82,7 +92,7 @@ Cross-check against `OPENER_ARC_R2/*.suno.txt`: none of these openers appears th
 - Card names are written in title case, and the "Power: N" stat tags in the lore field are dropped (stat values are game data, not story).
 - The power field is used only as a punchline or setup: Shahryār's "Bore me", Scheherazade's "thousand nights", Dunyazad's apples, the Vizier's "one more night", "Three wishes, no DQ", and the Cliffhanger's "To be continued" in the outro.
 - Every word change beyond these conventions is in `songlines.json` (first-person shifts per rule 2, length cuts, spelled-out numbers, removed diacritic, rules jargon).
-- Sensitive cards: The Jewish Physician and The Slave are canonical *Nights* characters (Hunchback cycle, Three Apples). Their lines are the printed lore. Neither gets a mocking opener; The Slave's line stands alone so the scapegoat beat aims at power.
+- Sensitive cards: The Jewish Physician, The African Sorcerer and The Slave are canonical *Nights* characters (Hunchback cycle, Three Apples). Their lines are the printed lore. None gets an opener or a joke about who they are. In wr2 the Slave's added beat ('Blame rolls downhill.') aims at power, and The Black Giant is sung as 'The Giant', 'monster heel' (songLine).
 
 ## Image motifs (`imageMotif`, motifSource: PDF JSON `cards[].artworkPrompt` Subject+Mood, visualVerified:false)
 | # | Card | imageMotif |
@@ -158,4 +168,4 @@ Motifs used in the lyrics: bull and fox (8: "caught between the bull and the fox
 - Binding rules: V-361, V-362, V-364 (songLine part), V-366, V-372, V-373, V-377.
 
 ## Character count
-4935 characters (Python `len()` of the file, including newlines). Limit 5000.
+wr2: 4958 characters; wr1: 4935 characters (Python `len()` of each file, including newlines). Limit 5000.

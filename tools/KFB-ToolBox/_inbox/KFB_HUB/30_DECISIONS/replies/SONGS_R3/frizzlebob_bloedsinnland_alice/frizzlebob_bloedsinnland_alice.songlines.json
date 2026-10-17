@@ -1,19 +1,345 @@
 [
-  {"cardNumber": null, "cardName": "Deck title: FrizzleBob's Kafab-Alice in Blödsinn-Land", "songLine": "This is Blödsinn-Land. / Nonsense-Land, for the tourists.", "reason": "'Blödsinn' kept as brand word: two hard syllables, works as a gang shout and is the deck's own interrupt call. Glossed once as 'Nonsense-Land' so English listeners get it; the gloss is the joke. 'Kafab-Alice' (printed title) is not sung: it breaks spoken and the deck bans Alice anyway."},
-  {"cardNumber": null, "cardName": "Rules page: NEW RULE: BLÖDSINN! (Nonsense Check)", "songLine": "the second anything makes sense, the whole room yells / Blödsinn! / Laugh. Rewind. Keep falling.", "reason": "Printed 'If the story gets too logical ... yell BLÖDSINN! ... Laugh. Rewind. Continue.' compressed into the intro hook; 'Continue' changed to 'Keep falling' to set up the rabbit-hole rewind."},
-  {"cardNumber": 3, "cardName": "The Cheshire Cat", "songLine": "Smile: The Cheshire Cat, we're all mad here, I'm just honest about it; the grin stays, the cat goes, and that last card was never there.", "reason": "POWER 'GASLIGHT: remove a card, claim it was never there' used only as punchline, not as a rule."},
-  {"cardNumber": 4, "cardName": "The Mad Hatter", "songLine": "Six o'clock sharp: The Mad Hatter, I murdered Time, now it's always tea; ten-and-six in the hatband, and I talk and I talk and I never stop to breathe.", "reason": "Printed 'eternal 6:00 PM' (digits read badly) becomes 'six o'clock' in the opener plus 'always tea'; hat label '10/6' spoken as 'ten-and-six'; FILIBUSTER power performed as breathless talk instead of a rule."},
-  {"cardNumber": 6, "cardName": "The Dormouse", "songLine": "Shh: The Dormouse, breathing while I sleep is sleeping while I breathe; curled up in the teapot, humming twinkle, twinkle, little bat… scene over.", "reason": "Lore turned first person and shortened for rhythm ('Breathing while sleeping is the same as sleeping while breathing'); 'Twinkle, Twinkle, Little Bat!' from the page margin planted as a callback for Give Evidence; NARCOLEPSY as 'scene over'."},
-  {"cardNumber": 10, "cardName": "The Visitor (The Anomaly)", "songLine": "Eyes down: The Visitor, the Anomaly, a cryptid ape, I change size, don't look directly at me; no fur, static for a face, a whole galaxy in my dress.", "reason": "Parentheses in the card name dropped for speech; 'Do not look directly at her' moved in from the rules page; 'Ask the Dodo for classification' becomes the Dodo stanza beat that triggers the mid-song Blödsinn reset."},
-  {"cardNumber": 12, "cardName": "The Pool of Tears", "songLine": "The Pool of Tears, I'm salty, somebody cried an ocean; the Dodo swims laps, the mouse panics, and everybody talks through a pinched nose.", "reason": "Telegram-style 'SALTY: All communication must be done while holding your nose' turned into a pun ('I'm salty') plus an image instead of an instruction."},
-  {"cardNumber": 14, "cardName": "The Duchess' Kitchen", "songLine": "Bless you: The Duchess's Kitchen, ...", "reason": "Spelled 'Duchess's' so the possessive is sung ('Duchess-iz'); printed 'Duchess'' tends to be swallowed."},
-  {"cardNumber": 18, "cardName": "The High Tribunal", "songLine": "Hear ye: The High Tribunal, logic is forbidden in this court; twelve jurors with slates, one guinea pig cheered, into the sack, and if your story makes sense— / Blödsinn!", "reason": "Printed 'call \"Blödsinn!\"' kept verbatim as gang shout (brand word, see title entry); 'suppressed' guinea pig from the page margin rendered as 'into the sack'."},
-  {"cardNumber": 22, "cardName": "The Mushroom", "songLine": "Pick a side: The Mushroom, one side grows you, one side shrinks you; flip a coin, and if it lands on the edge, your neck goes up like a serpent.", "reason": "Printed typo 'Neck grows like like a serpent' fixed; Heads/Tails shorthand opened up for speech."},
-  {"cardNumber": 24, "cardName": "The Squeaky Slate-Pencil", "songLine": "The Squeaky Slate-Pencil, you're talking? Write it down instead; every word you say comes out screeeech.", "reason": "Image caption 'SCREECH' stretched to 'screeeech' so Suno performs the sound."},
-  {"cardNumber": 26, "cardName": "Quest: Paint the Roses Red", "songLine": "Quick, the brushes: Paint the Roses Red, somebody planted white by mistake; slap it red before the Queen arrives, or lose your head.", "reason": "'QUEST:' label dropped (would stack two colons with the opener); 'Risk: Decapitation' spoken as 'or lose your head'."},
-  {"cardNumber": 27, "cardName": "Quest: Find the Gloves", "songLine": "Late again: Find the Gloves, the Rabbit needs his gloves and his fan; fetch them, Mary Ann! I'm not Mary Ann. Fetch them anyway.", "reason": "'QUEST:' label dropped; 'Risk: Being mistaken for the housemaid Mary Ann' acted out as dialogue."},
-  {"cardNumber": 28, "cardName": "Quest: Solve the Riddle", "songLine": "Solve the Riddle: why is a raven like a writing desk? / There is no answer. / So: why is a raven like a writing desk?", "reason": "'QUEST:' label dropped; question and answer on separate lines; 'Infinite loop' performed by repeating the question instead of naming it."},
-  {"cardNumber": 29, "cardName": "Quest: Who Stole the Tarts?", "songLine": "Order, order: Who Stole the Tarts? The Knave did, we all watched him run; open and shut, except the evidence is a poem, and the poem makes no sense.", "reason": "'Quest:' label and 'Goal/Risk' telegram dropped; the Knave running with tarts comes from the card image."},
-  {"cardNumber": 30, "cardName": "Quest: Give Evidence", "songLine": "Take the stand: Give Evidence, I swear I'll recite it correctly; twinkle, twinkle, little bat, how I wonder what you're at—", "reason": "'Quest:' label dropped; 'Risk: the words come out wrong' performed by reciting the wrong poem (callback to the Dormouse)."},
-  {"cardNumber": null, "cardName": "FrizzleBob Note (Sheet K)", "songLine": "A tip from Uncle FrizzleBob: when the Queen gets angry, remember she's made of cardboard.", "reason": "Printed 'Pro Tip: If the Queen gets angry, just remember she's made of cardboard.' 'Pro tip' is already used as an opener in the 9/11 song, so it's reworded; this is FrizzleBob's only appearance."}
+  {
+    "version": "wr2",
+    "cardNumber": null,
+    "cardName": "Deck title: FrizzleBob's Kafab-Alice in Blödsinn-Land",
+    "songLine": "This is Blödsinn-Land. / Nonsense-Land, for the tourists.",
+    "reason": "Unchanged from wr1: 'Blödsinn' kept as brand word and hook shout, glossed once. Phonetic fallback if Suno mangles the umlaut: 'Blerd-zin' (dossier only, text keeps 'Blödsinn')."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": null,
+    "cardName": "Rules page: NEW RULE: BLÖDSINN!",
+    "songLine": "the second anything makes sense, the whole room yells / Blödsinn! / And we fall all over again.",
+    "reason": "Review: 'Laugh. Rewind. Keep falling.' read as an instruction; now a consequence, not an order."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 1,
+    "cardName": "The White Rabbit",
+    "songLine": "The White Rabbit: oh my ears and whiskers, how late it's getting! Possibly I'm a hallucination.",
+    "reason": "Review: 'late for a very important date' is the Disney lyric; replaced with Carroll's own words (1865, public domain). Printed lore keeps the canonical wording."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 2,
+    "cardName": "The Caterpillar",
+    "songLine": "The Caterpillar: who are you? / Wrong answer.",
+    "reason": "Review: pause risk; question and verdict on separate lines. 'Rejects your answer' performed before you can even answer."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 3,
+    "cardName": "The Cheshire Cat",
+    "songLine": "Smile. The Cheshire Cat: we're all mad here, I'm just honest about it. And I was never here.",
+    "reason": "Review: 'that last card was never there' recited a game effect; GASLIGHT now performed in-world."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 4,
+    "cardName": "The Mad Hatter",
+    "songLine": "The Mad Hatter: I murdered Time. Now it's always six. Always tea.",
+    "reason": "'eternal 6:00 PM' as 'always six'; art description (hat label) and filibuster dropped for groove."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 5,
+    "cardName": "The March Hare",
+    "songLine": "The March Hare: have some tea. Have some more. It was the best butter!",
+    "reason": "Short claim format; FORCED TEA performed as pushy hosting."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 6,
+    "cardName": "The Dormouse",
+    "songLine": "Shh. The Dormouse: breathing while I sleep is sleeping while I breathe. Twinkle, twinkle, little bat… zzz.",
+    "reason": "First-person lore; margin text 'Twinkle, Twinkle, Little Bat!' planted for Give Evidence; NARCOLEPSY as 'zzz'."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 8,
+    "cardName": "The King of Hearts",
+    "songLine": "The King of Hearts: pardoned! Pardoned! All of you! Is she looking?",
+    "reason": "Lore 'Pardons everyone when the Queen isn't looking' performed as action instead of described."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 9,
+    "cardName": "The Duchess",
+    "songLine": "The Duchess: everything has a moral, if you can find it. And tonight's moral is nobody mentions the pig.",
+    "reason": "MORALIZING power as punchline (invented rule); pig from the card image."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 10,
+    "cardName": "The Visitor (The Anomaly)",
+    "songLine": "Eyes down. The Visitor: the girl who fell in. I change size. Don't look directly at me.",
+    "reason": "Review: the hinge card was unclear; 'the girl who fell in' tells the listener who it is without naming the banned Alice. 'Do not look directly at her' from the rules page."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 11,
+    "cardName": "The Rabbit Hole",
+    "songLine": "Down we go! The Rabbit Hole: gravity optional. Hey, isn't that the marmalade you threw away?",
+    "reason": "Review: 'every card you threw away falls right back' recited the retrieve-discards effect; now performed with the marmalade jar from the image."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 12,
+    "cardName": "The Pool of Tears",
+    "songLine": "The Pool of Tears: I'm salty. Somebody cried an ocean.",
+    "reason": "SALTY as pun; nose-holding instruction dropped."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 13,
+    "cardName": "The Hall of Doors",
+    "songLine": "The Hall of Doors: a hundred doors, one tiny key, and every lock whispers, riddle first.",
+    "reason": "Review: 'nothing opens until you solve a riddle' recited LOCKED OUT; the locks now speak. Sets up the Riddle callback."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 14,
+    "cardName": "The Duchess' Kitchen",
+    "songLine": "The Duchess's Kitchen: pepper everywhere. Ah-choo! That's etiquette.",
+    "reason": "Spelled 'Duchess's' so the possessive is sung; PEPPER SNEEZE performed."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 15,
+    "cardName": "The Mad Tea Party",
+    "songLine": "Still six o'clock. The Mad Tea Party: no room! No room! Move one down. Move one down.",
+    "reason": "TIME LOOP performed as repetition; opener calls back to the Hatter."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 16,
+    "cardName": "The Rose Garden",
+    "songLine": "The Rose Garden: I was planted white. I'm wearing red now. Don't touch, still wet.",
+    "reason": "COVER UP as image; owns the paint motif so Paint the Roses can tell a different beat."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 18,
+    "cardName": "The High Tribunal",
+    "songLine": "Hear ye! The High Tribunal: logic is forbidden in this court. One guinea pig cheered. Suppressed. And if your story makes sense— / Blödsinn!",
+    "reason": "Printed 'call \"Blödsinn!\"' kept as gang shout; 'suppressed' guinea pig from the page margin."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 19,
+    "cardName": "The Mock Turtle's Rock",
+    "songLine": "The Mock Turtle's Rock: sigh. Once I was a real turtle. Now every story ends in soup. Beautiful soup.",
+    "reason": "Review: double sigh; one sigh only, then Carroll's 'Beautiful Soup' (mock turtle soup) as punchline."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 20,
+    "cardName": "Suspicious Cake",
+    "songLine": "Eat me. Suspicious Cake: one bite and you're a giant. Hello up there, King.",
+    "reason": "GROW ('intimidate the King') performed as a greeting from above."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 21,
+    "cardName": "Unknown Bottle",
+    "songLine": "Drink me. Unknown Bottle: one sip and you're tiny. Small enough to hide in a teacup.",
+    "reason": "Review: 'hide inside somebody else's card' recited SHRINK; now an in-world image (teacup)."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 22,
+    "cardName": "The Mushroom",
+    "songLine": "The Mushroom: one side grows you, one side shrinks you. Land on the edge, and your neck goes up like a serpent.",
+    "reason": "Printed typo 'like like a serpent' fixed; coin flip compressed."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 23,
+    "cardName": "The Vorpal Flamingo",
+    "songLine": "Change of subject. The Vorpal Flamingo: snicker-snack! I swing at conversations. Lovely weather, isn't it?",
+    "reason": "BLUNT FORCE performed: the line changes topic itself."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 24,
+    "cardName": "The Squeaky Slate-Pencil",
+    "songLine": "The Squeaky Slate-Pencil: don't say it. Write it. Screeeech.",
+    "reason": "'SCREECH' stretched so Suno performs it."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 25,
+    "cardName": "The Treacle Well",
+    "songLine": "The Treacle Well: sticky, sweet and bottomless. You're staying. Humbug!",
+    "reason": "STICKY TRAP performed as 'You're staying'; 'Humbug!' from the page."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 26,
+    "cardName": "Quest: Paint the Roses Red",
+    "songLine": "Quick, the brushes! Paint the Roses Red: three gardeners, one bucket. She's coming round the corner. Faster, faster!",
+    "reason": "Review: repeated the Rose Garden beat; now the panic of the Goal ('before the Queen arrives'). 'Quest:' label dropped."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 27,
+    "cardName": "Quest: Find the Gloves",
+    "songLine": "Late again. Find the Gloves: Mary Ann! Fetch my gloves! I'm not Mary Ann. Fetch them anyway.",
+    "reason": "'Quest:' label dropped; Risk (mistaken for Mary Ann) acted out."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 28,
+    "cardName": "Quest: Solve the Riddle",
+    "songLine": "Solve the Riddle: why is a raven like a writing desk? / No answer. / So: why is a raven like a writing desk?",
+    "reason": "'Quest:' label dropped; question and answer separated; infinite loop performed."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 29,
+    "cardName": "Quest: Who Stole the Tarts?",
+    "songLine": "Order, order! Who Stole the Tarts? The Knave did. We all watched him run. Exhibit A: a poem that makes no sense.",
+    "reason": "'Quest:' label and Goal/Risk telegram dropped."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": 30,
+    "cardName": "Quest: Give Evidence",
+    "songLine": "Take the stand. Give Evidence: I swear I'll get it right. Twinkle, twinkle, little bat, how I wonder what you're at—",
+    "reason": "'Quest:' label dropped; wrong poem recited (Dormouse callback)."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": null,
+    "cardName": "FrizzleBob Note (Sheet K)",
+    "songLine": "A tip from Uncle FrizzleBob: when the Queen gets angry, remember she's made of cardboard.",
+    "reason": "'Pro tip' reworded (used as opener in the 9/11 song); FrizzleBob's only appearance."
+  },
+  {
+    "version": "wr2",
+    "cardNumber": null,
+    "cardName": "End page (p15)",
+    "songLine": "Wake up. / Did we win? / Who cares. / You're holding the cards. / Blödsinn!",
+    "reason": "Review: dropped 'The End? / No.' (used in three songs) and the 'Cut them out' instruction; ends on the shout."
+  },
+  {
+    "cardNumber": null,
+    "cardName": "Deck title: FrizzleBob's Kafab-Alice in Blödsinn-Land",
+    "songLine": "This is Blödsinn-Land. / Nonsense-Land, for the tourists.",
+    "reason": "'Blödsinn' kept as brand word: two hard syllables, works as a gang shout and is the deck's own interrupt call. Glossed once as 'Nonsense-Land' so English listeners get it; the gloss is the joke. 'Kafab-Alice' (printed title) is not sung: it breaks spoken and the deck bans Alice anyway.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": null,
+    "cardName": "Rules page: NEW RULE: BLÖDSINN! (Nonsense Check)",
+    "songLine": "the second anything makes sense, the whole room yells / Blödsinn! / Laugh. Rewind. Keep falling.",
+    "reason": "Printed 'If the story gets too logical ... yell BLÖDSINN! ... Laugh. Rewind. Continue.' compressed into the intro hook; 'Continue' changed to 'Keep falling' to set up the rabbit-hole rewind.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 3,
+    "cardName": "The Cheshire Cat",
+    "songLine": "Smile: The Cheshire Cat, we're all mad here, I'm just honest about it; the grin stays, the cat goes, and that last card was never there.",
+    "reason": "POWER 'GASLIGHT: remove a card, claim it was never there' used only as punchline, not as a rule.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 4,
+    "cardName": "The Mad Hatter",
+    "songLine": "Six o'clock sharp: The Mad Hatter, I murdered Time, now it's always tea; ten-and-six in the hatband, and I talk and I talk and I never stop to breathe.",
+    "reason": "Printed 'eternal 6:00 PM' (digits read badly) becomes 'six o'clock' in the opener plus 'always tea'; hat label '10/6' spoken as 'ten-and-six'; FILIBUSTER power performed as breathless talk instead of a rule.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 6,
+    "cardName": "The Dormouse",
+    "songLine": "Shh: The Dormouse, breathing while I sleep is sleeping while I breathe; curled up in the teapot, humming twinkle, twinkle, little bat… scene over.",
+    "reason": "Lore turned first person and shortened for rhythm ('Breathing while sleeping is the same as sleeping while breathing'); 'Twinkle, Twinkle, Little Bat!' from the page margin planted as a callback for Give Evidence; NARCOLEPSY as 'scene over'.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 10,
+    "cardName": "The Visitor (The Anomaly)",
+    "songLine": "Eyes down: The Visitor, the Anomaly, a cryptid ape, I change size, don't look directly at me; no fur, static for a face, a whole galaxy in my dress.",
+    "reason": "Parentheses in the card name dropped for speech; 'Do not look directly at her' moved in from the rules page; 'Ask the Dodo for classification' becomes the Dodo stanza beat that triggers the mid-song Blödsinn reset.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 12,
+    "cardName": "The Pool of Tears",
+    "songLine": "The Pool of Tears, I'm salty, somebody cried an ocean; the Dodo swims laps, the mouse panics, and everybody talks through a pinched nose.",
+    "reason": "Telegram-style 'SALTY: All communication must be done while holding your nose' turned into a pun ('I'm salty') plus an image instead of an instruction.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 14,
+    "cardName": "The Duchess' Kitchen",
+    "songLine": "Bless you: The Duchess's Kitchen, ...",
+    "reason": "Spelled 'Duchess's' so the possessive is sung ('Duchess-iz'); printed 'Duchess'' tends to be swallowed.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 18,
+    "cardName": "The High Tribunal",
+    "songLine": "Hear ye: The High Tribunal, logic is forbidden in this court; twelve jurors with slates, one guinea pig cheered, into the sack, and if your story makes sense— / Blödsinn!",
+    "reason": "Printed 'call \"Blödsinn!\"' kept verbatim as gang shout (brand word, see title entry); 'suppressed' guinea pig from the page margin rendered as 'into the sack'.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 22,
+    "cardName": "The Mushroom",
+    "songLine": "Pick a side: The Mushroom, one side grows you, one side shrinks you; flip a coin, and if it lands on the edge, your neck goes up like a serpent.",
+    "reason": "Printed typo 'Neck grows like like a serpent' fixed; Heads/Tails shorthand opened up for speech.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 24,
+    "cardName": "The Squeaky Slate-Pencil",
+    "songLine": "The Squeaky Slate-Pencil, you're talking? Write it down instead; every word you say comes out screeeech.",
+    "reason": "Image caption 'SCREECH' stretched to 'screeeech' so Suno performs the sound.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 26,
+    "cardName": "Quest: Paint the Roses Red",
+    "songLine": "Quick, the brushes: Paint the Roses Red, somebody planted white by mistake; slap it red before the Queen arrives, or lose your head.",
+    "reason": "'QUEST:' label dropped (would stack two colons with the opener); 'Risk: Decapitation' spoken as 'or lose your head'.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 27,
+    "cardName": "Quest: Find the Gloves",
+    "songLine": "Late again: Find the Gloves, the Rabbit needs his gloves and his fan; fetch them, Mary Ann! I'm not Mary Ann. Fetch them anyway.",
+    "reason": "'QUEST:' label dropped; 'Risk: Being mistaken for the housemaid Mary Ann' acted out as dialogue.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 28,
+    "cardName": "Quest: Solve the Riddle",
+    "songLine": "Solve the Riddle: why is a raven like a writing desk? / There is no answer. / So: why is a raven like a writing desk?",
+    "reason": "'QUEST:' label dropped; question and answer on separate lines; 'Infinite loop' performed by repeating the question instead of naming it.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 29,
+    "cardName": "Quest: Who Stole the Tarts?",
+    "songLine": "Order, order: Who Stole the Tarts? The Knave did, we all watched him run; open and shut, except the evidence is a poem, and the poem makes no sense.",
+    "reason": "'Quest:' label and 'Goal/Risk' telegram dropped; the Knave running with tarts comes from the card image.",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": 30,
+    "cardName": "Quest: Give Evidence",
+    "songLine": "Take the stand: Give Evidence, I swear I'll recite it correctly; twinkle, twinkle, little bat, how I wonder what you're at—",
+    "reason": "'Quest:' label dropped; 'Risk: the words come out wrong' performed by reciting the wrong poem (callback to the Dormouse).",
+    "version": "wr1"
+  },
+  {
+    "cardNumber": null,
+    "cardName": "FrizzleBob Note (Sheet K)",
+    "songLine": "A tip from Uncle FrizzleBob: when the Queen gets angry, remember she's made of cardboard.",
+    "reason": "Printed 'Pro Tip: If the Queen gets angry, just remember she's made of cardboard.' 'Pro tip' is already used as an opener in the 9/11 song, so it's reworded; this is FrizzleBob's only appearance.",
+    "version": "wr1"
+  }
 ]

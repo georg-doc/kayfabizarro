@@ -5617,7 +5617,7 @@
    "date": "2026-10-17",
    "area": "Welt",
    "verdict": "TBD",
-   "text": "Wasser für die spätere Piraten-Insel (Georg 17.10.): Fundstück web-ocean (github.com/Noniv/web-ocean, WebGPU, FFT-Wellen, Schaumkronen, Himmel, Sonnenglitzern) nur als Ideen-Spender. Grundsatz Cartoon-Logik und KISS-Shader wie Tiny Skies: Schaum als Knet-/Cartoon-Ringe statt Physik, Glitzern als stilisierte Funken, wenige Wellen-Schichten; WebGL2-tauglich für das Zielgerät (V-370), kein reines WebGPU. Vorhandene Wasser-Spender zuerst: Claude-Design-Wasser Island Kit R1 kit/fluid.js (Flüsse/Seen mit Tiefe), Tiny-Skies-Wasser. Lizenz vor Übernahme prüfen. Einplanen erst mit der Piraten-Insel.",
+   "text": "Wasser für die spätere Piraten-Insel (Georg 17.10.): Fundstück web-ocean (github.com/Noniv/web-ocean, WebGPU, FFT-Wellen, Schaumkronen, Himmel, Sonnenglitzern) nur als Ideen-Spender. Grundsatz Cartoon-Logik und KISS-Shader wie Tiny Skies: Schaum als Knet-/Cartoon-Ringe statt Physik, Glitzern als stilisierte Funken, wenige Wellen-Schichten; Georg 17.10.: Demo läuft auf seinem MacBook (M1 Max) sehr flüssig – WebGPU ist also auf Georgs Geräten realistisch; trotzdem für das Zielgerät (V-370) mit WebGL2-Rückfall planen (z. B. three.js WebGPURenderer mit Fallback), Leistung auf dem Zielgerät messen. Vorhandene Wasser-Spender zuerst: Claude-Design-Wasser Island Kit R1 kit/fluid.js (Flüsse/Seen mit Tiefe), Tiny-Skies-Wasser. Lizenz vor Übernahme prüfen. Einplanen erst mit der Piraten-Insel.",
    "values": {},
    "owner": "WS0 (Spender-Merkzettel) · später WS1",
    "check": "erst bei Piraten-Insel",
@@ -5626,6 +5626,21 @@
    "superseded_by": [],
    "why": "Gutes Ozean-Beispiel, aber fotorealistisch und WebGPU; KFB braucht Cartoon-Wasser auf dem Zielgerät.",
    "applies": "mit der Piraten-Insel"
+  },
+  {
+   "id": "V-408",
+   "date": "2026-10-17",
+   "area": "Kamera",
+   "verdict": "RULE",
+   "text": "Kamera ruckelfrei nach den bestehenden Regeln (Georg 17.10.: freie Kamera ruckelt): Spielmodus V-025/V-088 (Orbit von allen Seiten auch in Bewegung, träges Zurückgleiten nur in Bewegung, gedämpfter Zoom bis Ich-Perspektive, Werte in J17-Meter nachgestellt), God-Mode/Bühne V-026/V-257 (360°, Zoom zum Cursor, Panning, Fokus per Klick). Technik: Kamera nach der Physik-Interpolation, framerate-unabhängig kritisch gedämpft (smoothDamp3, V-378), kein lerp(dt*k), Zielpunkt geglättet. Abnahme: Jitter ≤ 1 px (60 fps) / ≤ 2 px (30 fps), Zoom trifft Cursor-Punkt ≤ 2 % Bildbreite. Bewegungs-Sitzung nach Slice-3-Stufe A (Hub b82).",
+   "values": {},
+   "owner": "WS1 (Bewegungs-Sitzung)",
+   "check": "Jitter-Messung + Clip",
+   "source": "Hub b82 · V-025, V-026, V-088, V-257",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Kamera-Regeln waren festgelegt, die Umsetzung ruckelt; Ursache liegt meist in Update-Reihenfolge und framerate-abhängiger Glättung.",
+   "applies": "nach Slice-3-Stufe A"
   },
   {
    "id": "V-084",
@@ -5700,7 +5715,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:727",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:728",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

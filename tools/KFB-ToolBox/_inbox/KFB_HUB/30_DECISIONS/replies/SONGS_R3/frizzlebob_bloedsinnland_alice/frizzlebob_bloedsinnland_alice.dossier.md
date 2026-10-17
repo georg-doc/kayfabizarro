@@ -87,3 +87,20 @@ Removed during the check: "Anyway" (an R2 pool opener) and "All rise", "Pro tip"
 - `MD BOOKLETS (drafts)/01 kayfabizarro-rules-v05.md` (Blödsinn interrupt: "a correction, not an attack"), `02 kayfabizarro_frizzleBob-almanac_v01.md` (Blödsinn as "Sinnfeld collapse", a formal interrupt for everyone).
 - `30_DECISIONS/DECISIONS.md`: V-361, V-362, V-364/V-366, V-372, V-373, V-377. Brief `SONGS_R3/WRITERS_ROOM_BRIEF_R3.md`.
 - Repetition check: `replies/OPENER_ARC_R2/*.suno.txt`, `replies/SONGS_R3/*/*.suno.txt` and the sibling style files (circus funk/second-line, neo-soul/calypso, slow funk, electro-swing, Arabic funk, Balkan funk were already taken).
+
+---
+
+## wr2 revision (after WS0 blind review: listen 6 · stand-up 7 · spirit 7.5)
+- **File:** `frizzlebob_bloedsinnland_alice.wr2.suno.txt` (wr1 is kept). **Character count: 3448** (Python `len()`), down from 4905.
+- **Kept, since the review said these work:** the Blödsinn engine (intro law → mid-song reset → court shout → final shout), the Pigeon turn ("serpent" → "So the Pigeon was right"), the courtroom crescendo, and the "pack of cards" payoff. The page/stanza table and arc are unchanged.
+- **Groove:** every card line now follows **"Name: claim."** in short sentences, with at most one image. The semicolon stacks and three-part art descriptions are gone. Opener tags now end in "." or "!" instead of a colon, so no line carries two colons.
+- **Performed instead of recited:** Cheshire ("And I was never here."), Rabbit Hole ("isn't that the marmalade you threw away?"), Unknown Bottle ("small enough to hide in a teacup"), Hall of Doors ("every lock whispers, riddle first"). The intro ending is now "And we fall all over again." The outro no longer says "Cut them out".
+- **The Visitor (hinge card):** "the girl who fell in. I change size. Don't look directly at me." This tells the listener who she is without naming the banned Alice.
+- **Mock Turtle:** one sigh only, then "every story ends in soup. Beautiful soup."
+- **Paint the Roses Red:** "three gardeners, one bucket. She's coming round the corner. Faster, faster!" The Rose Garden keeps the white-to-red image ("Don't touch, still wet").
+- **White Rabbit:** the Disney lyric is replaced with Carroll's "oh my ears and whiskers, how late it's getting!"
+- **Caterpillar:** "who are you?" and "Wrong answer." now sit on separate lines.
+- **Outro:** "The End? / No." is dropped. It now runs Wake up → Did we win? → Who cares. → You're holding the cards. → Blödsinn! → Stay Fluffy!
+- **Openers:** 14 out of 30 card lines carry one: Smile · Shh · Head office · Eyes down · Down we go · Still six o'clock · Hear ye · Eat me · Drink me · Change of subject · Quick, the brushes · Late again · Order, order · Take the stand. These were cut: Tick tick, Six o'clock sharp, Behind her back, Try the doors, Bless you, Game on, Pick a side, Sit down.
+- **Phonetic fallback:** if Suno mispronounces "Blödsinn", spell the shout lines **"Blerd-zin!"**. The lyrics keep "Blödsinn".
+- **songlines.json:** the wr2 entries (`version: "wr2"`) come first; the wr1 entries are kept below them for traceability.
