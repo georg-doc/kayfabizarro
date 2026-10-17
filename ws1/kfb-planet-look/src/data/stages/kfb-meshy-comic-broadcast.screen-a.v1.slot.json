@@ -1,0 +1,155 @@
+{
+ "file": "kfb-meshy-comic-broadcast.screen-a.v1.glb",
+ "bytes": 17787852,
+ "sha256": "15883cf2ff83ff401f5cba94ce6da29504db00e22e3bd1eb2402c3e718f0dac7",
+ "source": "~/Dropbox/CLAUDE/MeshyModels/_browser/comic_broadcast/ComicBroadcast_A_faithful.glb",
+ "mode": "WALL_FRAME (Holzrahmen vor der Comic-Wand, Modell unverändert)",
+ "targetAspect": 1.793,
+ "extend_d_u": 0,
+ "verticesMoved": 0,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "material": "kfb_screen_frame_wood (Clay-Holz #5A3A1F, rough 0,72, schlicht)",
+  "bezel_u": 0.016,
+  "bezel_m": 0.061,
+  "depth_u": 0.022,
+  "outer_u": {
+   "x": [
+    -0.516,
+    0.066
+   ],
+   "y": [
+    -0.131,
+    0.2077
+   ],
+   "z": [
+    -0.808,
+    -0.786
+   ]
+  },
+  "hangsOn": "Comic-Wand (Plakatfläche) über dem Zeichentisch"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "mesh": "kfb_screen_slot",
+  "material": "kfb_screen_slot (KHR_materials_unlit, Platzhalter #1A212E)",
+  "space": "GLB-Modellraum (Einheiten u, Y oben, vorne +Z, Boden y = −0,491)",
+  "grid": [
+   24,
+   12
+  ],
+  "corners_u": {
+   "topLeft": [
+    -0.503,
+    0.19475,
+    -0.7975
+   ],
+   "topRight": [
+    0.053,
+    0.19475,
+    -0.7975
+   ],
+   "bottomRight": [
+    0.053,
+    -0.118,
+    -0.7975
+   ],
+   "bottomLeft": [
+    -0.503,
+    -0.118,
+    -0.7975
+   ]
+  },
+  "center_u": [
+   -0.225,
+   0.03837,
+   -0.7975
+  ],
+  "normalAtCenter": [
+   0,
+   0,
+   1
+  ],
+  "chordWidth_u": 0.556,
+  "arcWidth_u": 0.556,
+  "height_u": 0.31275,
+  "aspect_arc": 1.7778,
+  "surface": "eben: z = -0.7975",
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "stageTransform": "Bühne in Metern: p_m = (x·s, (y + 0,491)·s, z·s), Bodenmitte = Ursprung; s = 3.8 m/u",
+  "visibleOpening": {
+   "note": "sichtbare Öffnung (Lünetten-Innenkante); der Slot ragt 0,003 u darüber hinaus unter die Lünette",
+   "corners_u": {
+    "topLeft": [
+     -0.5,
+     0.19175,
+     -0.7975
+    ],
+    "topRight": [
+     0.05,
+     0.19175,
+     -0.7975
+    ],
+    "bottomRight": [
+     0.05,
+     -0.115,
+     -0.7975
+    ],
+    "bottomLeft": [
+     -0.5,
+     -0.115,
+     -0.7975
+    ]
+   },
+   "aspect_arc": 1.793,
+   "uvRect": {
+    "u0": 0.0054,
+    "u1": 0.9946,
+    "v0": 0.0096,
+    "v1": 0.9904
+   }
+  },
+  "corners_m_s5p5": {
+   "topLeft": [
+    -1.9,
+    2.594,
+    -3.03
+   ],
+   "topRight": [
+    0.19,
+    2.594,
+    -3.03
+   ],
+   "bottomRight": [
+    0.19,
+    1.429,
+    -3.03
+   ],
+   "bottomLeft": [
+    -1.9,
+    1.429,
+    -3.03
+   ]
+  },
+  "visibleSize_m": [
+   2.09,
+   1.17
+  ]
+ },
+ "defaultCamera": {
+  "pos": [
+   -0.12,
+   0.05,
+   1.75
+  ],
+  "target": [
+   -0.2,
+   -0.12,
+   -0.5
+  ],
+  "fovV_deg": 40,
+  "note": "Figuren links (Zeichentisch) und rechts (Regaltür) am Bildrand, freie Fläche davor"
+ },
+ "scale_m_per_u": 3.8,
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)"
+}

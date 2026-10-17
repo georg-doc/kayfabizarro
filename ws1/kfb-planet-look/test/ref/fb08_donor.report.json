@@ -1,0 +1,134 @@
+{
+ "rigRT": {
+  "ok": true,
+  "detail": "imported frizzlebob-earrig-v5 \u00b7 applied 135 \u00b7 not applied 0"
+ },
+ "applied": 135,
+ "rejected": [],
+ "parts": {
+  "eyes": "rig",
+  "brows": "original",
+  "nose": "original",
+  "mouth": "original"
+ },
+ "eye": {
+  "anchor": {
+   "dx": 0.455,
+   "dy": 0.21,
+   "ring": 0.255,
+   "track": 0.1
+  },
+  "pupilStyle": "matte-cute",
+  "pupilSize": 0.27,
+  "gloss": 0.85,
+  "lidFit": 0.9,
+  "inset": 0,
+  "converge": 0,
+  "splay": 0,
+  "socket": "surface",
+  "turn": 0,
+  "turnFine": {
+   "l": 0,
+   "r": 0
+  },
+  "lashes": {
+   "length": 0,
+   "density": 6,
+   "width": 1
+  },
+  "oval": {
+   "w": 1.06,
+   "h": 1.04,
+   "d": 0.98,
+   "tilt": -25
+  },
+  "sclera": null,
+  "pupil": null,
+  "life": {
+   "wander": 0.27,
+   "tremor": 0.2
+  }
+ },
+ "eyeFrame": {
+  "left": [
+   -0.2029,
+   0.0936,
+   0.3706
+  ],
+  "right": [
+   0.2029,
+   0.0936,
+   0.3706
+  ],
+  "radius": 0.1137,
+  "unit": 0.4459
+ },
+ "lids": {
+  "u": -0.07,
+  "l": -0.4,
+  "s": 0,
+  "du": 0,
+  "dl": 0,
+  "ds": 0,
+  "sd": 0
+ },
+ "clayOn": false,
+ "ears": {
+  "schema": "kfb.ear-rig.v0#tuning",
+  "on": true,
+  "stiff": 1,
+  "damp": 0.8,
+  "elastic": 0.8,
+  "link": true,
+  "dangle": 1.5,
+  "out": 10.5,
+  "back": -6,
+  "twist": -14.5,
+  "sink": 0.3,
+  "fwd": -0.03
+ },
+ "hair": {
+  "on": true,
+  "pick": "three",
+  "size": 0.82,
+  "height": -0.054,
+  "depth": 0.016,
+  "spread": 0.014,
+  "lean": 1,
+  "tilt": 0,
+  "color": null,
+  "rough": 0.62
+ },
+ "fig": "figure \u00b7 FrizzleBob Ear Rig v5",
+ "earBase": [
+  {
+   "side": "L",
+   "p": [
+    0.13289,
+    0.8091,
+    -0.00661
+   ],
+   "q": [
+    0.00093,
+    -0.11719,
+    -0.06447,
+    0.99101
+   ]
+  },
+  {
+   "side": "R",
+   "p": [
+    -0.13289,
+    0.8091,
+    -0.00661
+   ],
+   "q": [
+    0.00093,
+    0.11719,
+    0.06447,
+    0.99101
+   ]
+  }
+ ],
+ "source": "KFB ToolBox Production-08 Session-Cut 01.10. r1 (main @ac9dbaed), Akteur frizzlebob-earrig-v5 = Figur v5b @23615cff, Import Georgs Export (aab8eeb0) \u00fcber P08 rigImport, Bindepose + Ohren erneut angewendet, Augen- und Brauen-Leben eingefroren, ohne Schattenwurf, Kamera ActorTest.VIEWS, scripts/fb/donor-pair-p08.mjs"
+}

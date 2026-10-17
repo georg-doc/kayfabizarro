@@ -1,0 +1,53 @@
+{
+ "schema": "kfb.stage-palette.genre/2",
+ "status": "VORSCHLAG WS1 (V-270, Vorlage freigegeben) – Georg urteilt an den sechs Einzelbildern",
+ "source": "Insel-Paletten = PALETTES + ENV_ROLES aus Lab src/palettes.ts @64ae61fe7 (Blob f8f57d76), canyon/bucht/otown = Joyride track-look.v5 WORLDS 1:1; Story-Tint = storymode.v4.js MODES",
+ "rule": "genre[0] des Decks (klein), sonst bundle über bundleToGenre; unbekannt → fallback",
+ "genreToPalette": {
+  "satire": "otown",
+  "meta": "otown",
+  "art": "otown",
+  "craft": "otown",
+  "comedy": "bucht",
+  "conspiracy": "canyon",
+  "esoteric": "canyon",
+  "history": "wueste",
+  "mythology": "wueste",
+  "politics": "kfb_town",
+  "economics": "kfb_town",
+  "education": "kfb_town",
+  "futures": "protopia",
+  "medical": "protopia",
+  "psychology": "protopia",
+  "philosophy": "protopia",
+  "narrative": "protopia",
+  "literature": "protopia"
+ },
+ "bundleToGenre": {
+  "education": "education",
+  "conspiracy_theory": "conspiracy",
+  "comedy": "comedy",
+  "media_memetics": "satire",
+  "narrative": "narrative",
+  "history": "history",
+  "military_history": "history",
+  "scifi": "futures",
+  "mind_games": "psychology",
+  "art_creativity": "art",
+  "philosophy_theory": "philosophy",
+  "power_systems": "politics",
+  "human_condition": "psychology",
+  "culture_comics": "comedy",
+  "creative_engine": "craft",
+  "meta_systems": "meta"
+ },
+ "why": {
+  "otown": "schräge Vorstadt, Petrol/Magenta/Orange – Satire, Meta, Kunst",
+  "bucht": "Bikini-Bucht, Sand/Aqua/Koralle – Comedy",
+  "canyon": "Claybound-Canyon, Violett/Orange – Verschwörung, Esoterik",
+  "wueste": "Pyramiden-Wüste, Sand/Sandstein/Türkis – Geschichte, Mythos",
+  "kfb_town": "KFB Town (Burg), Wiesengrün/Kalkstein – Politik, Ökonomie, Bildung",
+  "protopia": "Protopia (Bergwiese), Gelbgrün/Ocker – Zukunft, Medizin, Psychologie, Philosophie, Erzählung"
+ },
+ "fallback": "kfb_town"
+}
