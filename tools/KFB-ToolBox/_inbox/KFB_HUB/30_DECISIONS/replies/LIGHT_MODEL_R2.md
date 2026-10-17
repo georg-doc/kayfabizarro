@@ -16,7 +16,7 @@ WS1 hat die gemessenen Werte unserer Recherche übernommen (J17-Tageslicht, Sonn
 **KayKit-Vorgehen (unsere Tutorial-Lektion A):** eine Umgebung für die ganze Szene, Nacht = dieselbe Szene dunkler; „Characters consume that scene light; they do not carry a second private world-light rig“; ein Schatten-Hauptlicht von oben, Fackeln nur als Akzent, matte Materialien (Rauheit ≈ 0,95), Kontaktschatten unter jedem Teil, Leuchten über Emissive-Material, nicht Lampe je Teil.
 
 ## Grundsatz
-**Eine Szene, ein Licht-Rig, ein Ton-Pfad, eine Material-Antwort.** Stimmungen sind Einstellungen dieses Rigs. Keine Figur, keine Karte, kein Boden hat ein privates Licht.
+**Eine Szene, ein Licht-Rig, ein Ton-Pfad, eine Material-Antwort.** Stimmungen sind Einstellungen dieses Rigs. Keine Karte und kein Boden hat ein privates Licht; Figuren haben genau ein echtes, warmes Figurenlicht als Teil des Rigs (Regel 11), keine Tricks.
 
 ### Die zehn Regeln
 1. **Silhouette:** Fresnel-Randlicht entfernen **und** Figuren-Sheen ≤ 0,05 im selben Schritt (mit Schaltern belegt). Das J17-Gegenlicht bleibt **immer an** und **ungesättigt** (kein Violett).
@@ -29,6 +29,15 @@ WS1 hat die gemessenen Werte unserer Recherche übernommen (J17-Tageslicht, Sonn
 8. **Karte = beleuchtetes, mattes Papier.** Neue Prüfung G3: Druckfarbton und Chroma bleiben, Helligkeit darf der Stimmung folgen.
 9. **Gleicher Licht- und Ton-Pfad für jede Materialklasse** (Clay, Karte, Meshy, Fahrzeug; Metall mit PMREM nach V-370). AO-Probe im Budget V-370.
 10. **Raster vollständig:** V-355-Messung je Schicht, Clipping < 0,1 %, G2/G4, 16:9 **und** 9:16, erster Durchgang mit fester Belichtung. Lichter-Budget = V-329-Pool (4–6) + fps-Budget V-370.
+
+### Regel 11 · Figurenlicht wie im Cartoon (Georg 17.10., V-386)
+Figuren bekommen ein **eigenes, warmes Figurenlicht**, damit Gesicht, Augen, Brauen und Mund (Eyes/Brows/Mouth as Actors) in jeder Stimmung gut lesbar und knuffig ausgeleuchtet sind – nie im Halbschatten, nie überstrahlt. Das ist kein Widerspruch zu „ein Rig“, wenn es **richtig gebaut** ist; gescheitert ist nur die falsche Bauweise (Fresnel-Saum, Selbstleuchten, eigene Tonkurve).
+- **Echtes Licht, kein Trick:** ein weiches, schattenloses Licht (Spot/Rect mit weicher Kante) von vorn-oben auf Kamera-Seite, auf die sprechende Figur bzw. Dialog-Gruppe gerichtet; Farbe warm (≈ 3200–4000 K). Kein Fresnel, kein Emissive, gleiche Tonkurve wie die Szene.
+- **Stimmungsabhängig:** tags kaum sichtbar (Gesicht folgt der Sonne), Gold mittel, nachts stärkster Anteil – Gesichter bleiben lesbar, auch wenn die Bühne dunkel ist (Cartoon-Konvention).
+- **Gehört zur Szene:** fällt mit Abfall auch leicht auf den Boden direkt um die Figur (kein Ausschluss per Licht-Layer), dadurch kein „aufgeklebt“. Motivierbar durch Billboard-, Laternen- oder Mondlicht.
+- **Augenlicht:** kleines Glanzlicht in den Augen (Catchlight) aus demselben Licht, für lebendige Augen.
+- **Budget:** ein Figurenlicht pro Dialog-Gruppe, zählt im V-329-Pool.
+- **Messung (L-9):** Gesichts-Helligkeit in jeder Stimmung im Zielband (nicht unter Bühnen-Mittel × 0,9, Clipping im Gesicht < 0,1 %); Mundzone vs. Stirn ≥ 0,85 (kein Halbschatten über dem Mund); Farbtemperatur im Gesicht warm; Saum weiterhin ≤ 2 px.
 
 ### Stimmungen = Rig-Einstellungen
 | Stimmung | Hauptlicht | Füllung (Hemi) | Gegenlicht | Praktische | Himmel |
@@ -55,5 +64,6 @@ WS1 hat die gemessenen Werte unserer Recherche übernommen (J17-Tageslicht, Sonn
 | L-5 | Figuren gehören zur Bühne | Gesicht ↔ Boden daneben 0,8–1,6; V-355 je Schicht Helligkeit/Sättigung ≤ 15 % Abstand |
 | L-6 | Schatten/Clipping | Schattenkontrast tags ≥ 25 %, nachts Schatten L ≥ 8; Clipping < 0,1 % |
 | L-7 | Nacht-Inseln | ≥ 2 Licht-Inseln je Nachtbild |
+| L-9 | Figurenlicht | Gesicht ≥ 0,9 × Bühnen-Mittel, Clipping Gesicht < 0,1 %, Mund/Stirn ≥ 0,85, warm |
 | L-8 | Budget | V-329-Pool, p95 ≥ 30 fps Zielgerät, ≤ 300 Draw Calls |
 Beweis: 3 Stimmungen × (Totale, Nah FB, Nah Karte) × 16:9 + 9:16, mit Clay, **ohne Overlays** (V-383); erster Durchgang mit fester Belichtung.

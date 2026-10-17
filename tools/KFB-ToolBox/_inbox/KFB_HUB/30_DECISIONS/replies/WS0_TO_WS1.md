@@ -8,6 +8,7 @@ Georg hat V-346 auf der Staging-Seite als FAIL/großes TUNE bewertet. WS0-Audit 
 4. **Karte** = beleuchtetes mattes Papier; neue G3: Druckfarbton/Chroma bleiben, Helligkeit folgt der Stimmung.
 5. **Eine Material-Antwort** (Clay, Karte, Meshy, Fahrzeug; Metall PMREM nach V-370); AO-Probe im Budget.
 6. **Abnahme-Oberfläche nach V-383:** Bedienleiste eingeklappt am Rand, nichts über dem Motiv, Knopf „Sauberes Bild“.
+7. **Figurenlicht (V-386, Georg):** ein echtes, weiches, warmes, schattenloses Licht von vorn-oben auf die Dialog-Gruppe, stimmungsabhängig (tags kaum, nachts stark), fällt leicht auch auf den Boden um die Figur, Catchlight in den Augen; ersetzt faceFill und Randlicht. Messung L-9 (Gesicht lesbar, Mund nie im Halbschatten, nie überstrahlt).
 Beweis: 3 Stimmungen × (Totale, Nah FB, Nah Karte) × 16:9 + 9:16, Clay, ohne Overlays, Messwerte L-1–L-8. Langlauf nach V-375.
 
 ## 17.10.2026 · build.json für die GPT-Staging-Seite (V-356)

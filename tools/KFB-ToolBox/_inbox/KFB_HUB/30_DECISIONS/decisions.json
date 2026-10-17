@@ -5297,6 +5297,21 @@
    "applies": "nach V-345, vor Slice 1"
   },
   {
+   "id": "V-386",
+   "date": "2026-10-17",
+   "area": "Licht",
+   "verdict": "RULE",
+   "text": "Figurenlicht wie im Cartoon (Georg 17.10., ergänzt V-385 als Regel 11): jede Dialog-Gruppe bekommt ein echtes, weiches, warmes (≈ 3200–4000 K), schattenloses Licht von vorn-oben auf Kamera-Seite, damit Gesicht, Augen, Brauen und Mund in jeder Stimmung lesbar und knuffig ausgeleuchtet sind – nie Halbschatten, nie überstrahlt. Stimmungsabhängig (tags kaum, nachts am stärksten), fällt mit Abfall leicht auf den Boden um die Figur (kein Layer-Ausschluss, damit nichts aufgeklebt wirkt), Catchlight in den Augen. Kein Fresnel, kein Emissive, keine eigene Tonkurve. Messung L-9.",
+   "values": {},
+   "owner": "WS1 (L3)",
+   "check": "L-9: Gesicht ≥ 0,9 × Bühnen-Mittel, Clipping < 0,1 %, Mund/Stirn ≥ 0,85",
+   "source": "Georg 17.10.: „jede Figur … ein eigenes Licht … warm … Mundpartie nicht im Halbschatten … knuffig illuminiert“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eyes/Brows/Mouth as Actors brauchen lesbare, warme Gesichter auch im Dunkeln; gescheitert war nur die Bauweise als Trick.",
+   "applies": "L3"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5369,7 +5384,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:709",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:710",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
