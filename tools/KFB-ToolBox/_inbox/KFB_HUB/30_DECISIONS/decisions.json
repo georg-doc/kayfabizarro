@@ -5919,6 +5919,21 @@
    "applies": "ab sofort; Combat nach Slice 1"
   },
   {
+   "id": "V-427",
+   "date": "2026-10-17",
+   "area": "Prozess",
+   "verdict": "TBD",
+   "text": "Repo privat (Georg: Ziel privates Repo, PDF-Viewer und KFB-Seiten extern erreichbar). Inventur: GitHub Pages (georg-doc.github.io/kayfabizarro) spiegelt das ganze Repo öffentlich inkl. Mystery Series; Cloudflare Pages baut weiter, lädt 2D/3D/Songs aber per raw.githubusercontent → bricht; Registry erzeugt 51 034 raw-Links (Generator tools/asset_registry/build.py); PDFs schon auf pages.dev, Viewer nur 4 URLs umzustellen. Kauf-/eingeschränkte Assets auf main: Mystery Series 297 MB (inkl. 64 SOURCE-.blend), Patreon Snow Biome, ggf. KayKit ohne _FREE (~165 MB, Georg klärt), Audio-Packs ~337 MB, CraftPix ~63 MB, Pixel Frog, Mixamo. Vorschlag Reihenfolge: (1) PDF-Viewer auf pages.dev, (2) öffentlicher R2-Bucket aus Allowlist per Action, (3) Registry-Generator + Librarian/Personae/Audio auf öffentliche URLs, (4) Kauf-Assets nur in Spiel-/Tool-Builds, (5) Token für WS1-Staging + CI-Sperre gegen raw/jsDelivr/github.io, (6) Georg: Pages abschalten, Repo privat, Cloudflare-Zugriff prüfen. Aufwand ~3–5 Agent-Tage + ~1 h Georg.",
+   "values": {},
+   "owner": "WS0 (Plan) · WSA/WS1 (Umstellung) · Georg (Einstellungen)",
+   "check": "Georg entscheidet Plan + welche Packs gekauft sind",
+   "source": "replies/REPO_PRIVATE_MIGRATION_INVENTORY_R1.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gekaufte Assets liegen öffentlich (Repo + GitHub Pages); privat schalten ohne Umzug würde Viewer, Librarian, Audio, ToolBox und 3D-Bühnen brechen.",
+   "applies": "nach Georgs Entscheid"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5991,7 +6006,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:760",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:762",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

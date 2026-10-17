@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-427 (TBD): Inventur Repo-privat fertig (replies/REPO_PRIVATE_MIGRATION_INVENTORY_R1.md): GitHub Pages zweites öffentliches Leck, raw-Abhängigkeiten, Kauf-Assets ~0,7–0,9 GB; 6-Schritte-Plan wartet auf Georg.
 - WS1 Langlauf R2 beauftragt (Hub b99): Repo-Analyse, Kamera, Module + E2-Aliens, Fluff-Ernte-Mechanik V-423 (Platzhalter-UI), Farbdrehbuch; Platzierungs-Grammatik R2 ins Register (replies/SPEC_PLACEMENT_GRAMMAR_R2.md). M3 A–G fertig (§76), Merge wartet auf Georg.
 - V-426: Kayfabrick-Bots (6 Fluff-Farben, Sisyphos), Ernte aus Bot-Kugeln mit Aggro → Combat-Arena, Mündungsfeuer primär/sekundär + Varianten, Banker-Anzug; WSB 19. Nachtrag (B17, B18, B12-Banker), WS1-Notiz; Lizenzhinweis Mystery Series im öffentlichen Repo.
 - V-425: B13 4GTN PASS; B10 Augen E2 ins Hirn; B11 Mütze (Asset-Suche) + Gewehr aufrecht; B12 weißer Kragen, Hauthände, Manschetten, Spender-Kriterium schlanke Unterarme (18. Nachtrag).
