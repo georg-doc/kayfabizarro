@@ -1,0 +1,35 @@
+{
+  "deckId": "1001_kayfabe_nights",
+  "version": "R4.3/R3.3",
+  "part": "part1",
+  "introType": "bold_claim",
+  "refrain": "",
+  "metaSkipped": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "metaSkipReasons": {
+    "1": "Cover / non-play title",
+    "2": "Manifesto / framing statement",
+    "3": "Rules and suspension-of-disbelief meter",
+    "4": "Warning / legal and thematic frame"
+  },
+  "songLineChanges": [
+    {
+      "cardNumber": 17,
+      "rule": "E16b",
+      "songName": "The Giant",
+      "songLine": "Oh. The Giant, tusked boar with a club; monster heel, the squash match destroys them.",
+      "reason": "Remove dehumanizing Giant depiction, stage alias; original title remains in canonical card truth"
+    },
+    {
+      "cardNumber": 26,
+      "rule": "A7",
+      "songName": "The Thirty-Nine Grunts",
+      "songLine": "The Thirty-Nine Grunts, individually weak, collectively a burial squad; overwhelmed.",
+      "reason": "Write card title number as sung"
+    }
+  ]
+}
