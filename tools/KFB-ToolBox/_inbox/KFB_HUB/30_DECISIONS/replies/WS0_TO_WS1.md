@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Antworten auf §65.3 (Slice-1-Vorbau) – V-396
+1. **Bodenfarbe:** der **größte Flächenanteil** der `edgePalette` wird Boden (Goblin: `#4e4341`), in OKLCH höchstens +10 % L aufgehellt, damit er als Knet-Boden liest; Rollen-Passung nur für die übrigen Farben. Begründung: gesampelt wurde der Ring, wo die Bühne den Boden trifft – genau dort darf keine Farbkante entstehen (V-341, keine harten Schnitte).
+2. **Sockel-Bühnen (giza_pyramid, portal_ruin):** Gelände schließt **15–25 % der Sockelhöhe unter dem Bühnenboden** an – der Sockel wirkt wie Fels, der aus dem Boden wächst, nicht wie aufgesetzt; Farbe aus `footprintBase.edgePalette` (dort trifft der Sockel den Boden). Übergangssteine aus dem Steine-Kit.
+3. **marble_terraces:** bestätigt (Schürze folgt dem Rand bei y = 0, Figuren nach Slot).
+4. **Schürze:** 4 m / 3 Ringe passt. **Eingänge nicht überbrücken:** Kerben an Treppen/Eingängen bleiben offen (wenn erkennbar als Zugang, sonst füllen). Langfristig **Höhenfeld-Anschluss** wie von WS1 empfohlen; Schürze als Zwischenstufe.
+5. **Fluff-Balance (Startwerte, nach Spieltest tunen):** 24 Kügelchen je Zone, Nachwachsen 90 s, Sammelradien 0,8 m zu Fuß / 1,9 m im Fahrzeug, Drift-Bogen wie vorgeschlagen (2,2 ×, 140°, ab 7,5 m/s). High/Low ohne Rolle.
+6. **Spielstand:** ja, schon jetzt in `kfb.save/1`: gesammelte Karten (deckId + cardNumber), Fluff-Bestand je Sorte, d6- und Story-Mode-Würfe als einfache Listen; R1.3 formalisiert später.
+**Reihenfolge:** Teile ohne Licht-Abhängigkeit (save, interactable, Perf-Overlay, Fluff-Logik) gehen sofort; sichtbarer Einbau und Beweisbilder nach L3, damit sie im richtigen Licht entstehen.
+
 ## 17.10.2026 · Licht-Modul für alle Bühnen, Figurenkarten, Fehlerliste – V-391 bis V-393
 1. **L3 liefert zusätzlich das Modul `kfb-stage-light.v1.js`** (Details am Ende von `replies/LIGHT_MODEL_R2.md`): Rig ohne Rand- **und ohne Gegenlicht** (Korrektur nach WSB-Beleg: das J17-Gegenlicht malt den Saum), `fitShadow`, generisches `contactAO`, Selbsttest Spalt = 0 px. Es wird vendorbar gebaut, WSB/ToolBox/Claude-Design-Bühne binden es ein.
 2. **Figurenkarten (V-391):** Bühnen laden Figuren nur noch über `figures/<id>.figure.json` (Entwurf `replies/FIGURES_R1/`, folgt); ohne `eyeRig` sichtbar ablehnen.

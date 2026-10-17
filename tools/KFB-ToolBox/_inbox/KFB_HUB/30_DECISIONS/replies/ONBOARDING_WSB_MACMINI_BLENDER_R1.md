@@ -35,3 +35,16 @@ You are **WSB**, a Claude Code session on Georg's Mac mini with a free Blender i
 
 ## 4 · Report
 After each job: `RETURN.md` in the job folder, plus a one-line status in `50_BLENDER/STATUS.md` (newest on top). WS0 reads the Dropbox folder. Ask questions to WS0 in STATUS.md, then continue with the next independent job (V-375).
+
+
+## B7 · Jungle computer (Meshy, Georg 17.10., V-397), new job, priority after B1 re-render
+Source: `~/Dropbox/CLAUDE/MeshyModels/Meshy_AI_jungle_computer_diora_1017014450_image-to-3d-texture.glb` (≈ 7.0 M triangles, far too heavy).
+1. **Browser version** the way the Meshy stages were done: source isolation, decimated to ≤ 80 k triangles (LOD1 ≤ 25 k), texture kept, base on y = 0, scale in WS0 metres; `footprint` + `edgePalette` as in `kfb.stage-edges/1`.
+2. **Find the monitor screen:** rectangle (centre, normal, width/height, aspect ratio) as `kfb_screen_frame` / `kfb_screen_slot` anchors, as for Goblin Bank. Compare with the card format.
+3. **Two frame variants on the screen, built in Blender with clay** (V-369, rounded edges):
+   - **A: stone frame** in the stone colour of the monitor housing, with cracks and joints. Two vertical bars fill the screen to card format, set in front of the monitor like an artefact.
+   - **B: wooden frame**, 4 cartoon-carpentered beams, slightly overhanging, rounded, wood tone of the trees with a light grain, lashed with rope. Story: the devotees built a holder for the sacred card.
+   - In both, the card or a Hypernormalisation screen goes in the slot behind it (mask).
+   - Two renders each: wide and close.
+4. **Eye anchors for the computer** (it is a character, a diegetic meta-artefact): suggestion is the red round lens on the right as one big eye (cyclops). Alternatively the stone mask above the monitor with two eyes. Set `KFB_Eye_*_anchor` frontal and render with EyeRig v6 + clay.
+Output in `50_BLENDER/B7/` + RETURN. WS0 then puts A against B in the Hub as a one-click question for Georg.

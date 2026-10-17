@@ -5447,6 +5447,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-396",
+   "date": "2026-10-17",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Antworten WS1 §65.3 (Technik-Entscheide WS0): Boden = größter Flächenanteil der edgePalette (≤ +10 % L), Sockel-Bühnen mit Geländeanschluss 15–25 % der Sockelhöhe unter Bühnenboden (Farbe footprintBase), marble_terraces bestätigt, Schürze 4 m/3 Ringe ohne Überbrücken von Eingängen, langfristig Höhenfeld; Fluff 24 je Zone, Nachwachsen 90 s, Radien 0,8/1,9 m, Drift-Bogen wie vorgeschlagen; kfb.save/1 enthält schon Karten, Fluff-Bestand und Würfe. Sichtbarer Einbau nach L3. M2 ist gemergt (Georg, WS1 §67).",
+   "values": {},
+   "owner": "WS1",
+   "check": "Slice-1-Beweis nach L3",
+   "source": "replies/WS0_TO_WS1.md (17.10. §65.3)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS1 wartete mit dem Slice-1-Vorbau auf diese Antworten.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-397",
+   "date": "2026-10-17",
+   "area": "Welt",
+   "verdict": "TBD",
+   "text": "Dschungel-Computer (Meshy, Georg 17.10.) als Diorama/Landmark/POI und diegetisches Meta-Artefakt mit eigenem Augen-Rig (Charakter „Weltenrechner“, Vorschlag: rote Linse als Zyklopen-Auge). Billboard auf dem Monitor: Variante A Steinrahmen in Gehäusefarbe mit Rissen/Fugen und zwei Längsbalken bis Kartenformat, Variante B vier cartoonig gezimmerte, überstehende, abgerundete Holzbalken im Baumholzton mit Maserung (Geschichte: Verehrer bauten der heiligen Karte einen Halter); Karte bzw. Hypernormalisation-Screen per Maske dahinter. WSB baut Browser-Fassung (≤ 80 k Dreiecke), Screen-Anker und beide Varianten als Clay-Bilder, Georg wählt per Klick. Konzept (begehbarer Ort, Meta-Computer-Interface, Aufträge/Quests, den Rechner nach der Bedeutung einer Karte fragen à la Deep Thought, surreale Rituale mit Ork-Band und tanzenden Figuren als Tech-Verehrungs-Satire) checkt der Web-Chat ein; WS0 übernimmt danach.",
+   "values": {},
+   "owner": "WSB (B7) · Web-Chat (Konzept) · WS0",
+   "check": "A|B-Bilder im Hub, Georg wählt",
+   "source": "Georg 17.10. · ~/Dropbox/CLAUDE/MeshyModels/Meshy_AI_jungle_computer_diora_1017014450_image-to-3d-texture.glb",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein diegetischer Computer verbindet Landmark, Karten-Bedeutung, Quests und Satire an einem begehbaren Ort.",
+   "applies": "nach B7 und Web-Chat-Konzept"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5519,7 +5549,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:716",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:717",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

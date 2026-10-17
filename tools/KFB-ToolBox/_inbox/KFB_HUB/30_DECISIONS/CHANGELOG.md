@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-396 Antworten WS1 §65.3 (Boden größter Anteil, Sockel, Schürze, Fluff-Startwerte, save mit Karten); V-397 Dschungel-Computer als Landmark + Meta-Artefakt mit Auge, Billboard Stein vs. Holz (WSB B7).
 - V-395: 13 Figurenkarten-Entwürfe (FB approved, Rest candidate/open-design), Status-Regel, augenfertige GLBs auf main per Asset-Branch, Mumien-Stimmen, Schiel-Fix; Georg-Fragen erst mit Clay-Bildern.
 - V-394: Charakter-SSOT kfb.character/1 (Identität, Geschichte, Persönlichkeit, Dialog, Karten, Lead-Memory, Aussehen inkl. renderStyle, Performance, Stimme); Figurenkarte ist der Abschnitt Aussehen.
 - V-391 Figurenkarte kfb.figure/1 (immer Augen-Rig + Clay, nur Augen entfernen), V-392 ein Licht-Modul für alle Bühnen (kein Gegenlicht, fitShadow, contactAO, Selbsttest), V-393 Fehlerliste gestaffelt (Stufe 0 drei Zeilen, Stufe 1 ein Block je Job-Art, Stufe 2 nur Nachschlagen); WSB-Antwort (Mumien mit EYE-CLEANUP-01 + EyeRig v6 neu rendern).
