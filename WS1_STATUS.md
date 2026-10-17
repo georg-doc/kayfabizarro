@@ -1,7 +1,57 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§71 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§72 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 72 · 17.10. · Langlauf: Figurenkarten (V-391) · Look-Slice (Farbwelt, Knet-Amphitheater, Sprenkel-Band V-403) · M1/M2 auf dem Licht-Modul
+
+Bilder: `ws1/proofs/2026-10-17-look/` (Sprenkel oben/Rand, Bühne Canyon mit Figurenkarten, GothGirl nah, Umfärbungs-Tafeln Tag/Gold, Mesa-Paare).
+
+### 72.1 · Figurenkarten (Branch `fig/karten` @1e4a89b + Folge-Commits, lokal)
+- FB und GothGirl laden nur noch über `src/data/figures/<id>.figure.json`. Die Karten sind byte-gleich aus `FIGURES_R1` @8fac0d277.
+- Die Körper-Prüfsumme wird gegen die Karte geprüft (`assets.sha.json`, sync): FB v5b 0675…, GothGirl_NoEyes 3016e4….
+- Status-Tor nach Regel 5. Ohne gültige Karte erscheint das rote Schild „FIGURE REFUSED · id · Grund“ (`modules/refusedFigure.js`).
+- Kandidaten-Vermerk außerhalb des Motivs, unten rechts, mit „Sauberes Bild“ ausblendbar.
+- **GothGirl** bekommt jetzt den Körper aus der Karte: `GothGirl_NoEyes.glb` aus georg-doc-patch-3, Augen in Blender entfernt. Vorher lud sie das rohe KayKit-GLB.
+  - `originals.method = baked` → keine Laufzeit-Augenbereinigung (Regel 7).
+  - Das Augen-Rig sitzt sauber (Bild `gothgirl_karte_nah.jpg`).
+  - Die gespeicherte Augen-Einstellung bleibt der bisherige Batch-Weg; anchored-Seat nach Karte und der V-201-Fix sind noch offen (Karte: todo).
+- **Rogue** bleibt F1-Prüffigur (kein Darsteller). Rohe KayKit-Kandidaten (Mage, Barbarian) nur im Casting-Vergleich mit `uncarded=1`.
+- QA `test/unit/figures.mjs` (läuft in `npm test`): Karten durch den Lader, Körper byte-gleich, alle Ablehnungsgründe greifen.
+
+### 72.2 · Look-Slice (Branch `look/mesa`, auf `fig/karten`, lokal)
+- **Farbwelt:** Mit `light=l1` trägt die Bühne eine Bühnenpalette mit Rollen aus den Joyride-Welten.
+  - `world=canyon|bucht|otown`, Standard Canyon, Variante B voll.
+  - Die Karte färbt nur Akzente (V-402).
+  - `look=legacy` zeigt den alten Stand.
+  - Farbdrehbuch `src/data/looks/kfb-colorscript.r1.json` (kfb.colorscript/1, Rollen und 6 Farben je Welt, V-305-Analyse, Skript `scripts/look/colorscript.mjs`).
+  - Vergleichsleiste: Zeile „Farbwelt“.
+- **Knet-Amphitheater:** Modell-Materialien über `clayFrom` (Knete R2, Profil house), Umfärbung nach Rollen darüber (onBeforeCompile verkettet).
+- **Sprenkel-Modul `kfb-speckle-transition.v1`** (V-403; Branch `speckle/modul`, von einem Hintergrund-Job gebaut, in look/mesa gemergt):
+  - Donor-GLSL byte-gleich aus `sync/lab-snapshot-2026-10-11` @64ae61fe7; Quelle in `src/vendor/speckle/SOURCE.md`.
+  - WS1-Hülle nach Audit §4 (createSpeckle, patch, setColors, bake, weights, Presets).
+  - WS1-Erweiterung nach TRANSITION_INTENT_R1 in eigenem GLSL-Block: Formverzerrung gegen Scheiben, beide Richtungen. `look: 's1'` zeigt den Donor-Stand.
+  - 46 Unit-Prüfungen grün.
+- **Amphitheater → Gelände:** Sprenkel-Band Preset diorama↔ground.
+  - Gewicht nach dem Fuß des Bauwerks je 64 Sektoren; Naht = Bühnenboden-Rolle (Sand), außen Zonenboden (Canyon-Violett).
+  - Erster Kompilierlauf ohne Fehler. Bild `sprenkel_oben.jpg`, `sprenkel_rand.jpg`: Flecken laufen in beide Richtungen, kein Verlauf, keine Ringe.
+- **Testreihe:** 25/25 für den Stand vor dem Sprenkel-Einbau.
+  - Einmal GitHub-Limit (s5a, HTTP 403) → Rest nachgefahren.
+  - cast und g4 nach der baked-Änderung wiederholt.
+  - Die volle Reihe mit Sprenkel-Band folgt vor der Vorschau.
+- **Beobachtungen für Georg/WS0:**
+  - Der Sandring um das Amphitheater ist breit (Naht-Rolle Bühnenboden); Geschmacksfrage.
+  - Die Rang-Bänder der Umfärbung (Variante B nach Höhe) zeigen außen an der Mauer Querstreifen. Das löst B9 (Rollen-Kanal je Bauteil).
+
+### 72.3 · Bewegungs-Sitzung: M1/M2 auf dem Licht-Modul (m3/fahrhilfe @b96bee6, lokal)
+- createStageLight (mesa), Schattenkugel ums Auto (halbe Länge + Schattenlänge × Höhe + 1 m), applyTone ACES, createContactAO mit Rapier-Strahl und Normale.
+- followShadow, feste Biase und alte Flecken sind raus.
+- Bildfolge Tag/Gold: kein Zweitschatten, kein abgeschnittenes Stück, der lange Gold-Schatten läuft natürlich aus.
+- Offen: Unter Mesa wirkt das grüne M1-Gelände olivgrün, in Gold sehr dunkel. Gelände-Farbe aus dem Farbdrehbuch folgt in der Look-Slice bzw. Slice 1.
+- M3 (Fahrhilfe A–F) läuft weiter; m3-a hatte 2/50 Ecken-Fälle (Analyse bei der Bewegungs-Sitzung).
+
+### 72.4 · Nächste Schritte
+Volle Reihe look/mesa → Vorschau zum Ansehen (Branch, nicht main; V-400) → Slice 1 sichtbar (Gelände-Schürze Meshy-Bühnen mit Sprenkel-Band, Performance-Overlay, Schwebe-Messung mit three-mesh-bvh gegen `b7_stage_edges.json`) → Abnahme-Seite für Georg.
 
 ## 71 · 17.10. · Langlauf (V-375/V-400) · L3 technisch fertig: main @3e3b9d2 (24/24) · Vorschau mit build.json host-neutral
 
