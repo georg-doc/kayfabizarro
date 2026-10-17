@@ -1,0 +1,32 @@
+{
+  "schema": "kfb.stage.travel-mode-bridge-tmb1/0.1",
+  "revision": "TMB1-CARD-ONLY-01",
+  "status": "TECHNICAL_PASS_VISUAL_REVIEW_PENDING",
+  "owner": "georg-doc/KFB-Travel-Globe",
+  "travel": {
+    "branch": "chatgpt-web/travel-mode-bridge-tmb1-card-2026-09-23",
+    "draftPR": 33,
+    "head": "62a669d9e69f5489221f7f2dca98108d2378ba2a",
+    "stackedBasePR": 32,
+    "stackedBaseHead": "048499315581d2b9916a4d3fcbaba5f3adef719c",
+    "ciRun": 35815928680,
+    "ciConclusion": "success"
+  },
+  "sourceObjects": {
+    "htmlBlob": "1c4cec940fd2e120a79975279356854a01fd3092",
+    "proofRuntimeBlob": "efe059b5925bc5756f800c8f7d96b8105937e42d",
+    "cardCarrierBlob": "2eef4db5aa38fffc8e9c23457815e3be12fc3bd8",
+    "cardArtwork": {
+      "repository": "georg-doc/kayfabizarro",
+      "commit": "852f9d2cd1be228898316b205063855c95308c9a",
+      "blob": "36da589c1227dc796097d71bd0fd30a539905b1f",
+      "path": "media/kfb/KayfaBizarro_Card_Backside_01_lowrez.png"
+    }
+  },
+  "route": "/kfb-hub/stage/travel/travel-mode-bridge/tmb1/",
+  "publicUrl": "https://kayfabizarro.pages.dev/kfb-hub/stage/travel/travel-mode-bridge/tmb1/",
+  "phase": "CARD_ONLY",
+  "passenger": null,
+  "humanAcceptance": "PENDING",
+  "livePromotion": false
+}
