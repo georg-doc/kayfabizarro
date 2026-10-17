@@ -10,3 +10,6 @@ One next gate: GitHub Actions first pass on the committed head, then submit only
 
 ## Gate repair 1 · original CI 39045115469
 At initial head fcf2b139bf0dde337448a89412a7c6f059124d0c: part-one canonical triplet checker passed 28/28; canonical song_gate failed only A7 `P2` in Banco Ambrosiano Collapse (#26). Converted sung text to `P Two` and derived QA alias with A7 songline. Part-two gates did not run. New source head requires fresh CI; no PASS prematurely claimed.
+
+## Gate pass 2 · exact CI evidence
+Run 39045372552 on caa49611c0d0994ce3516eec0bbd482c8ae04f3e: part1 original triplet and song gates BOTH PASS (28/28); part2 original triplet PASS (28/28), part2 original song_gate FAIL only due B6 exact earlier R4 opener collision `Fine print.`. Changed one spoken opener to `Penalty clause.`; no card text or QA source changed. Rerun required, independent critic pending.
