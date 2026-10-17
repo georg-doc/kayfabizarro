@@ -1,0 +1,415 @@
+{
+  "schema": "kfb.audio-donor-census/1",
+  "date": "2026-10-03",
+  "donors": [
+    {
+      "id": "cyclical",
+      "title": "Cyclical Warmth",
+      "bpm": 76,
+      "master": {
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth.mp3",
+        "sha": "0f544bd7e51b6b0f86f3996daa0a66b8d8be27ce",
+        "size": 4917339
+      },
+      "stemDir": "Cyclical Warmth Stems (76BPM)",
+      "stems": [
+        {
+          "role": "drums",
+          "name": "0 Drums.mp3",
+          "sha": "39525692c33c738aafa519661773fbd78c1fb21a",
+          "size": 4354916,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/0 Drums.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "bass",
+          "name": "1 Bass.mp3",
+          "sha": "32b5ceae7b973f43055f46bbded3db19d4b13ade",
+          "size": 3252740,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/1 Bass.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "guitar",
+          "name": "2 Guitar.mp3",
+          "sha": "9e3b0b83e5a237465e4ee5cc2661011916518419",
+          "size": 2854004,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/2 Guitar.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "keyboard",
+          "name": "3 Keyboard.mp3",
+          "sha": "38b44f8fca9af07cdea5aca1ccddd651856885d7",
+          "size": 3836900,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/3 Keyboard.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "percussion",
+          "name": "4 Percussion.mp3",
+          "sha": "f4aa370df2b08979fc861b1168cdf29104dec4ac",
+          "size": 4563980,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/4 Percussion.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "strings",
+          "name": "5 Strings.mp3",
+          "sha": "a26456d848b4cd44b587f1176758c6743f8d5f9a",
+          "size": 1452572,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/5 Strings.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "synth",
+          "name": "6 Synth.mp3",
+          "sha": "1736f60264d25ff74f753cba36261b8d3f203f20",
+          "size": 3918932,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/6 Synth.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "brass",
+          "name": "7 Brass.mp3",
+          "sha": "54828793df169cedea834745a6f6c2611d10b28b",
+          "size": 1731524,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Cyclical Warmth Stems (76BPM)/7 Brass.mp3",
+          "excludeByDefault": false
+        }
+      ]
+    },
+    {
+      "id": "loping",
+      "title": "Loping Groove",
+      "bpm": 88,
+      "master": {
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove.mp3",
+        "sha": "04d08d460e0339504802fd9f77544a92661e2d54",
+        "size": 4986803
+      },
+      "stemDir": "Loping Groove Stems (88BPM)",
+      "stems": [
+        {
+          "role": "lead-vocals",
+          "name": "0 Lead Vocals.mp3",
+          "sha": "bb8e1c4c9c3bdc144f809ec909bdd5093a3d0c7c",
+          "size": 823484,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove Stems (88BPM)/0 Lead Vocals.mp3",
+          "excludeByDefault": true
+        },
+        {
+          "role": "backing-vocals",
+          "name": "1 Backing Vocals.mp3",
+          "sha": "0a771b0aee7e70318ce06a1796901fff739e8426",
+          "size": 816788,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove Stems (88BPM)/1 Backing Vocals.mp3",
+          "excludeByDefault": true
+        },
+        {
+          "role": "drums",
+          "name": "2 Drums.mp3",
+          "sha": "532aeaedcdfea8fea548f456b319be65bdd740ed",
+          "size": 4839788,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove Stems (88BPM)/2 Drums.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "bass",
+          "name": "3 Bass.mp3",
+          "sha": "0e83bf3aa1073fe5cd129d45e3e75111e0a68f0c",
+          "size": 3308732,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove Stems (88BPM)/3 Bass.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "guitar",
+          "name": "4 Guitar.mp3",
+          "sha": "707613ae4cb3cf25a7e0f55f116f28967592e430",
+          "size": 3548276,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove Stems (88BPM)/4 Guitar.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "keyboard",
+          "name": "5 Keyboard.mp3",
+          "sha": "6a51bf637242ac41c15e34c127a30eccf5fe388c",
+          "size": 3893012,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove Stems (88BPM)/5 Keyboard.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "percussion",
+          "name": "6 Percussion.mp3",
+          "sha": "96843d46910b08f48b4e0b36f4e46e13f13b78ed",
+          "size": 4797716,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove Stems (88BPM)/6 Percussion.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "strings",
+          "name": "7 Strings.mp3",
+          "sha": "58fa2bbc93988cc05dc5e21c5b75d758040c934f",
+          "size": 2763164,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove Stems (88BPM)/7 Strings.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "synth",
+          "name": "8 Synth.mp3",
+          "sha": "88611699cdfd262b373ff2f36fee5f3d46bf1c51",
+          "size": 4055588,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove Stems (88BPM)/8 Synth.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "brass",
+          "name": "9 Brass.mp3",
+          "sha": "685b823cb6f9bf466264ae981cb8a991d8f811e5",
+          "size": 1790828,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Loping Groove Stems (88BPM)/9 Brass.mp3",
+          "excludeByDefault": false
+        }
+      ]
+    },
+    {
+      "id": "modal",
+      "title": "Modal Vamp",
+      "bpm": 77,
+      "master": {
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Modal Vamp.mp3",
+        "sha": "aba134a31b995cb21270c61806f862e992e3bb2d",
+        "size": 4998903
+      },
+      "stemDir": "Modal Vamp Stems (77BPM)",
+      "stems": [
+        {
+          "role": "drums",
+          "name": "0 Drums.mp3",
+          "sha": "06e76b230a1b9d067df49463d0e0671b58fd5c45",
+          "size": 4526420,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Modal Vamp Stems (77BPM)/0 Drums.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "bass",
+          "name": "1 Bass.mp3",
+          "sha": "4fb84cd6593f9053c6ea2f131b104952e934ee33",
+          "size": 3855476,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Modal Vamp Stems (77BPM)/1 Bass.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "guitar",
+          "name": "2 Guitar.mp3",
+          "sha": "00c6ee51fbd51f35367465ab2774e07172faf067",
+          "size": 3349244,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Modal Vamp Stems (77BPM)/2 Guitar.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "keyboard",
+          "name": "3 Keyboard.mp3",
+          "sha": "029b3826b7a90e0fbf2957d8e05fc32e285d5062",
+          "size": 3862676,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Modal Vamp Stems (77BPM)/3 Keyboard.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "synth",
+          "name": "4 Synth.mp3",
+          "sha": "cab0f580d734143bc99d752086d1faa3c9a5a76f",
+          "size": 4069772,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Modal Vamp Stems (77BPM)/4 Synth.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "brass",
+          "name": "5 Brass.mp3",
+          "sha": "317ce8c5ab06a55b2f4c40a25a60fc10b2446715",
+          "size": 965036,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Modal Vamp Stems (77BPM)/5 Brass.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "woodwinds",
+          "name": "6 Woodwinds.mp3",
+          "sha": "0825d045355aa55498ce893cb05921aa0c3c44a3",
+          "size": 1111484,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Modal Vamp Stems (77BPM)/6 Woodwinds.mp3",
+          "excludeByDefault": false
+        }
+      ]
+    },
+    {
+      "id": "small-room",
+      "title": "Small-Room Groove",
+      "bpm": 122,
+      "master": {
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Small-Room Groove.mp3",
+        "sha": "f7b5533d16017c980c74d5c5fc12e1f3aa982d21",
+        "size": 4676300
+      },
+      "stemDir": "Small-Room Groove Stems (122BPM)",
+      "stems": [
+        {
+          "role": "drums",
+          "name": "0 Drums.mp3",
+          "sha": "2782a5d712588132c1eceb7b75655e0f9578bb33",
+          "size": 4374044,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Small-Room Groove Stems (122BPM)/0 Drums.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "bass",
+          "name": "1 Bass.mp3",
+          "sha": "d60fd1ea35f7290553b8402bf567cab360d8381c",
+          "size": 3378236,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Small-Room Groove Stems (122BPM)/1 Bass.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "guitar",
+          "name": "2 Guitar.mp3",
+          "sha": "62abba6d45c47160b6b67ad873a70fff76e5e317",
+          "size": 2095460,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Small-Room Groove Stems (122BPM)/2 Guitar.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "keyboard",
+          "name": "3 Keyboard.mp3",
+          "sha": "f3566098c38f4e981293c65e517c4de3e8b51a37",
+          "size": 3464084,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Small-Room Groove Stems (122BPM)/3 Keyboard.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "percussion",
+          "name": "4 Percussion.mp3",
+          "sha": "6f480c5b4dfdf2db308bcf6cb7af7b56f8dc35d5",
+          "size": 3858068,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Small-Room Groove Stems (122BPM)/4 Percussion.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "synth",
+          "name": "5 Synth.mp3",
+          "sha": "da163a26551b72badd09e218e4a6a4cc83139e3b",
+          "size": 3508580,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Small-Room Groove Stems (122BPM)/5 Synth.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "other",
+          "name": "6 Other.mp3",
+          "sha": "ebefb0b37d2c870d73ef14452e8764ad7c5e7baf",
+          "size": 2248652,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Small-Room Groove Stems (122BPM)/6 Other.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "brass",
+          "name": "7 Brass.mp3",
+          "sha": "8788aba6dcd10a5b4f66848ddd46fd9dc17cf1af",
+          "size": 1385516,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Small-Room Groove Stems (122BPM)/7 Brass.mp3",
+          "excludeByDefault": false
+        }
+      ]
+    },
+    {
+      "id": "warm-tape",
+      "title": "Warm Tape Saturation",
+      "bpm": 75,
+      "master": {
+        "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation.mp3",
+        "sha": "3fa4ebaf22432d344714af3eefb0eea46cea7b97",
+        "size": 5535324
+      },
+      "stemDir": "Warm Tape Saturation Stems (75BPM)",
+      "stems": [
+        {
+          "role": "lead-vocals",
+          "name": "0 Lead Vocals.mp3",
+          "sha": "f890bf9b349a71838109d01ee72e57099611a292",
+          "size": 877364,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)/0 Lead Vocals.mp3",
+          "excludeByDefault": true
+        },
+        {
+          "role": "drums",
+          "name": "1 Drums.mp3",
+          "sha": "e965b9f52accea2625e6d6e6e3c40d086c01d861",
+          "size": 5329028,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)/1 Drums.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "bass",
+          "name": "2 Bass.mp3",
+          "sha": "4c44c33408844a226769c8fb5a277af0d4597f00",
+          "size": 3513068,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)/2 Bass.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "guitar",
+          "name": "3 Guitar.mp3",
+          "sha": "f6d3f44bb185567e981c932febe5167976831c12",
+          "size": 2392148,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)/3 Guitar.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "keyboard",
+          "name": "4 Keyboard.mp3",
+          "sha": "1a7d8b53e7915f6c4ebb343c66e53d9894024bde",
+          "size": 4049012,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)/4 Keyboard.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "percussion",
+          "name": "5 Percussion.mp3",
+          "sha": "b4e2c9cf1810e142194ae2aa1e3b5af49db50477",
+          "size": 5770004,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)/5 Percussion.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "strings",
+          "name": "6 Strings.mp3",
+          "sha": "0f1fd6845e0bbae6bcedac11fc9b181a30c433b6",
+          "size": 2284220,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)/6 Strings.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "synth",
+          "name": "7 Synth.mp3",
+          "sha": "eb23524359e542e06e712624b63d64d24a361772",
+          "size": 3406460,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)/7 Synth.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "other",
+          "name": "8 Other.mp3",
+          "sha": "9c86d36e048ccf0720a3ca9df5782232d9c4ee44",
+          "size": 1787708,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)/8 Other.mp3",
+          "excludeByDefault": false
+        },
+        {
+          "role": "brass",
+          "name": "9 Brass.mp3",
+          "sha": "f3c08c896e98d7f5a7c1b9d54ed33a609ebe82fd",
+          "size": 2624684,
+          "path": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Warm Tape Saturation Stems (75BPM)/9 Brass.mp3",
+          "excludeByDefault": false
+        }
+      ]
+    }
+  ]
+}

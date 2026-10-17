@@ -1,0 +1,27 @@
+name: AUDIO donor census
+on:
+  push:
+    branches: ['chatgpt-web/audio-arrange-donor-library-2026-10-03']
+    paths: ['kfb-hub/stage/audio-donor-census/**','.github/workflows/audio-donor-census.yml']
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            kfb-hub/stage/audio-donor-census
+            media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2
+            .github/workflows/audio-donor-census.yml
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm install --no-save playwright@1.51.1 && npx playwright install --with-deps chromium
+      - run: python3 -m http.server 4173 >/tmp/http.log 2>&1 & sleep 2
+      - run: node kfb-hub/stage/audio-donor-census/qa.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: {name: audio-donor-census-proof, path: audio-donor-census-proof/, retention-days: 14}
