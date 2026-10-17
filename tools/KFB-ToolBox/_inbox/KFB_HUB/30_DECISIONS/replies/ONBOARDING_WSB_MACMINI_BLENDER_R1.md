@@ -80,9 +80,8 @@ Eyes: KFB eye rig (anchors). The sunglasses variant may cover the eyes; the eye 
 **Story (confirmed by Georg 17.10.):** agents of the cover-up. They show up where aliens (Lord Hunky, Lady Dory) or UFO traces appear, and they "erase" what happened (link to the Cosmic Grift deck: UFO File, Majestic 12). Satire on official kayfabe.
 **Output:** GLB, `man_in_black.figure.json` draft, clay proofs front/¾/side with and without glasses. Then WSA adds it to ToolBox-Studio.
 
-## B13 · Utopia CEO: candidate comparison (Georg 17.10., V-414), small, can run between other jobs
-Monstrosity becomes its own character. A different robot becomes the **Utopia CEO**. Comparison sheet with clay (front/¾, same light, same scale next to FrizzleBob):
-- **Mannequin Large** (`media/3D_Assets/KayKit_Character_Animations_1.1/Mannequin Character/characters/Mannequin_Large.glb`)
-- **Clanker** (`…/KayKit_Mystery_Series6/9 - March 2025 - Clanker/characters/Clanker.glb`, both textures)
-- **4GTN** (`…/7 - January 2026 - 4GTN/4GTN.glb`) together with **4GTN_Forgotten** (the overgrown nature variant). That one becomes the protopian twin / predecessor model / rogue variant, the **maker space helper**. Careful: give the CEO version a neutral style, no samurai stereotype.
-Optionally each in the suit kit from B12. Output: one comparison sheet (PNG, 1920 px) for a Georg one-click question. No rebuild before Georg chooses.
+## B13 · 4GTN twins (Georg 17.10., V-415): no longer a comparison, decided
+**4GTN = Utopia CEO**, **4GTN_Forgotten = the twin banished from Utopia**, maker space helper. Allegory: transhumanism vs. co-creation, tragicomic.
+- **4GTN (CEO):** source `…/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb`. A clean, polished upgrade look in clay, combinable with the suit kit from B12 (CEO variant). Neutral style, no samurai stereotype. KFB eye rig anchors (remove only the eyes).
+- **4GTN_Forgotten (twin):** `4GTN_Forgotten.glb`. Overgrown, mossy and repaired, keep the nature traces. Eye rig anchors; props for the maker space helper (tool, solder iron or similar from KayKit packs) optional.
+- Output: both GLBs, `4gtn_ceo.figure.json` + `4gtn_forgotten.figure.json` drafts, clay proofs front/¾ next to each other ("twin picture"). Then WSA adds them to ToolBox-Studio.
