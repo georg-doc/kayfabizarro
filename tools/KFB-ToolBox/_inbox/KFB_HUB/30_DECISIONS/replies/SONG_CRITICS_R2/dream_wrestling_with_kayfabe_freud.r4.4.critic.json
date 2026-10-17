@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "dream_wrestling_with_kayfabe_freud.r4.4.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F22 pass 2)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 4,
+  "performance": 3,
+  "arc": 4,
+  "sayability": 3,
+  "tone": 5,
+  "styleFit": 4
+ },
+ "flags": [
+  {
+   "beat": 1,
+   "rule": "C9",
+   "observation": "Intro never names Freud, the couch or the therapy target; \"the mind disputes the score\" stays abstract, with no concrete picture."
+  },
+  {
+   "beat": 5,
+   "rule": "A3",
+   "observation": "Tail tag \"redaction\" recites the power label; same pattern recurs in Tie, Fall, Emperor, Double, Paralysis, Navel, Deja Vu lines."
+  },
+  {
+   "beat": 54,
+   "rule": "A3",
+   "observation": "\"Now watch this backflip, control.\" ends on a power label, flattening the card's punchline."
+  },
+  {
+   "beat": 47,
+   "rule": "A4",
+   "observation": "110 characters with opener; \"a memory hole\" plus \"Trust me\" overloads one breath, and \"gap\" doubles across opener and name."
+  },
+  {
+   "beat": 43,
+   "rule": "A4",
+   "observation": "114 characters with opener; \"hunger\" appears in opener and again at line end, overlong for one breath."
+  },
+  {
+   "beat": 31,
+   "rule": "B7",
+   "observation": "Opener \"Yet the case:\" is opaque; no audible cause or twist linking the Dead Relative to Oedipus Rex."
+  },
+  {
+   "beat": 32,
+   "rule": "C10",
+   "observation": "Seven consecutive cards, beats 32 to 38, carry no opener or bridge; the page micro-arc goes flat."
+  },
+  {
+   "beat": 45,
+   "rule": "B7",
+   "observation": "Opener \"Parent:\" only pre-echoes \"the internalized parent\" in the card; it neither builds nor twists."
+  },
+  {
+   "beat": 9,
+   "rule": "B7",
+   "observation": "\"Blocked? Retreat:\" duplicates the card's own \"when the path forward is blocked\"; bridge is redundant."
+  },
+  {
+   "beat": 39,
+   "rule": "B7b",
+   "observation": "\"The rebus calls:\" and beat 43 \"The detective finds hunger:\" reach back only one card; weak as callbacks."
+  },
+  {
+   "beat": 27,
+   "rule": "A4",
+   "observation": "\"why back?\" is a garbled cut; the question loses its sense when spoken aloud."
+  },
+  {
+   "beat": 19,
+   "rule": "A4",
+   "observation": "\"losing a tooth in a dream, not dentists\" breaks the grammar; the contrast does not land on first hearing."
+  }
+ ],
+ "verdict": "pass"
+}

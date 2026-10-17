@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "the_kayfabe_money_trail_9_11.part1.r4.4.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F22 pass 2)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 3,
+  "arc": 4,
+  "sayability": 3,
+  "tone": 4,
+  "styleFit": 3
+ },
+ "flags": [
+  {
+   "beat": 6,
+   "rule": "A3",
+   "observation": "\"nullify investigation\" closes the line as a recited power label, not an aside or inversion."
+  },
+  {
+   "beat": 7,
+   "rule": "A4",
+   "observation": "\"agreed to a ninety-nine-year WTC lease signed\" is ungrammatical; the line stumbles at 109 characters."
+  },
+  {
+   "beat": 8,
+   "rule": "A4",
+   "observation": "\"investors, empire\" leaves the power word dangling without syntax; the card's tiny own-money stake claim is missing."
+  },
+  {
+   "beat": 10,
+   "rule": "A2",
+   "observation": "\"paid back initial equity and control\" reads as control being returned, inverting the card's claim that control was kept."
+  },
+  {
+   "beat": 12,
+   "rule": "A4",
+   "observation": "\"specific and commercial\" is a hollow fragment; the card's first-on-the-planet claim vanishes, line explains nothing and lands nowhere."
+  },
+  {
+   "beat": 16,
+   "rule": "B7b",
+   "observation": "Opener callbacks (\"Those ten veils\", \"That recovery exposes\", \"Those odds\") all point at the immediately preceding card; no long-range callback."
+  },
+  {
+   "beat": 22,
+   "rule": "B7",
+   "observation": "Openers repeat one noun-verb template (\"The data surfaces\", \"The investigation leaves paper\"); objects carry bridges, no character want or grudge (Tip 3)."
+  },
+  {
+   "beat": 25,
+   "rule": "A2",
+   "observation": "\"firm formerly chaired by CIA\" makes the agency the chair; the card names a person at the CIA."
+  },
+  {
+   "beat": 26,
+   "rule": "E16b",
+   "observation": "\"admitted knowing a DOD staffer; cashed out a day before\" lets the named person read as the one who cashed out."
+  },
+  {
+   "beat": 27,
+   "rule": "A3",
+   "observation": "\"nine point five million transactions, advanced knowledge\" drops the SEC inversion; sounds as if the SEC confirmed advanced knowledge."
+  },
+  {
+   "beat": 27,
+   "rule": "B7",
+   "observation": "\"The inquiry meets a verdict\" and similar bridges stay abstract; artwork picture words are nearly absent throughout (Tip 5)."
+  },
+  {
+   "beat": 30,
+   "rule": "A4",
+   "observation": "At 125 characters with opener, the line exceeds one breath; \"first rule Follow the Money rejected; little significance\" crowds the close."
+  }
+ ],
+ "verdict": "revise"
+}

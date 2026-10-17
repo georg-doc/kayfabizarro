@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Kritiker-Durchlauf 2 (nur Urteil) für die 7 R4.4-Tracks: fast überall besser, Freud/Therapy pass, Rest revise mit 3ern (replies/SONG_CRITICS_R2/); song_gate critic erlaubt jetzt Zitate aus der Kartenquelle (--source, SONG_SPEC F20). Songs als Suno-Karten im Hub (b103–b109) für Georg; Schritte-Probe R3 als q18 mit Link. WSB B25: Rust Runner identisch, Rustwing Cruiser neu (in den Fahrzeugordner kopiert).
 - V-433 WS0-Fehler: private Dateien über sync_github.sh auf den öffentlichen Register-Zweig gelangt; Sync-Ausschluss eingebaut, Entfernen wartet auf Georg. WS1 §78 beantwortet (Hub b102): B9 lokal, Alien-Karten glbCurrent (edge80/r9), Grammatik-Entscheide, kein Resolver jetzt, HUD R5f frei zur Einplanung, Lampen r3 + Knete v1.1. Hub q16 Pubs, q17 Insel-Paletten.
 - WSB B27 (8 Unity-Inseln, abgerundet, Farbrollen, Bühne PASS) und B24 (4 Pubs, Anker/Maßstab/Kanten, Bühne PASS) geliefert. WS0-Sichtung: Pubs zu dunkel (Meshy-Licht eingebacken) → Entlichten wie Goblin-Bank; Abnahme-Bühne bekommt eigenes Layout für Bühnen/Requisiten ohne Leerfelder (v1.1); Insel-Paletten nach KFB-Farbrezept beauftragt (Agent). WS1 seit §76 ohne Lebenszeichen.
 - WSB 27. Nachtrag erledigt, alle drei über die Abnahme-Bühne PASS: Dory r9 (Normalen repariert), Plakatwand r3 (angehoben), FrizzleBob mit KFB-Augen-Ankern (privat wegen Capsule-Carl-Teilen); PROOF_STAGE_R1/sources.json nachgezogen.

@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "the_carnival_of_unsolved_problems_therapy.r4.4.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F22 pass 2)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 4,
+  "performance": 3,
+  "arc": 4,
+  "sayability": 3,
+  "tone": 4,
+  "styleFit": 4
+ },
+ "flags": [
+  {
+   "beat": 46,
+   "rule": "A1",
+   "observation": "Card is sung as \"The Guarantee\"; the printed card name is cut, so the name-first rule is broken."
+  },
+  {
+   "beat": 19,
+   "rule": "A6",
+   "observation": "\"The Gatekeeper\" and beat 20 \"Gatekeeper\" sound identical once brackets drop; the two cards become indistinguishable by ear."
+  },
+  {
+   "beat": 15,
+   "rule": "A3",
+   "observation": "\"helping behavior repeats even when it fails\" recites the power almost word for word, reading like a rule."
+  },
+  {
+   "beat": 32,
+   "rule": "A3",
+   "observation": "\"sell a false solution confidently\" recites the power; with the opener the line runs 127 characters, past one breath."
+  },
+  {
+   "beat": 32,
+   "rule": "B7",
+   "observation": "\"After the fall, a vendor appears\" is a sequence step, an and-then link with no cause or twist."
+  },
+  {
+   "beat": 35,
+   "rule": "B6",
+   "observation": "\"After closing\" repeats the After-family opener only three beats after beat 32, under the ten-line distance."
+  },
+  {
+   "beat": 23,
+   "rule": "A4",
+   "observation": "\"divides: Future Self: The One Who Left\" stacks two colons in one breath; 119 characters overall."
+  },
+  {
+   "beat": 34,
+   "rule": "A4",
+   "observation": "\"work, love, sanity, chaos, balanced\" is a bare noun list; hard to phrase as one spoken thought."
+  },
+  {
+   "beat": 27,
+   "rule": "A4",
+   "observation": "\"Wait… What?, meaning\" collides ellipsis, question mark and comma; the read stumbles at the card name."
+  },
+  {
+   "beat": 22,
+   "rule": "B7b",
+   "observation": "Callback openers mostly name only the directly preceding card; beat 37 is the only reach back to an earlier card."
+  },
+  {
+   "beat": 5,
+   "rule": "B7",
+   "observation": "\"Admission includes:\" presents the whistle as an inventory item, a prop without want, wound or grudge."
+  },
+  {
+   "beat": 51,
+   "rule": "E16b",
+   "observation": "\"They kept the fee\" leans cynical about paid help; aimed at providers, not seekers, yet it cools the warm close."
+  }
+ ],
+ "verdict": "pass"
+}

@@ -54,6 +54,6 @@ A9. **Meta cards** that are not playable (cover, manifesto, rule card, warning c
 19. **Who:** a model instance outside the writer's room (separate GPT, or a separate Claude session with no room context). It gets **only** this file, the golden example, the card JSON (+ pdf.json) and the candidate. It does not get the room's drafts, the dossier or earlier versions (`blind: true`).
 20. **Output:** exactly one JSON file per track, `<track>.critic.json`:
    `{"schema":"kfb.song-critic.v1","song":"<file>","critic":"<model/instance>","blind":true,"scores":{"cardTruth":1-5,"performance":1-5,"arc":1-5,"sayability":1-5,"tone":1-5,"styleFit":1-5},"flags":[{"beat":<number from 0>,"rule":"A3","observation":"≤25 words"}],"verdict":"pass|revise"}`
-   No other fields and no replacement text. Quotes are allowed only from the candidate itself.
+   No other fields and no replacement text. Quotes are allowed only from the candidate itself or from the card source (for card-truth flags); `song_gate.py critic … --source <deck.json> [<pdf.json>]`.
 21. **Gate for the critic:** `song_gate.py critic <x.critic.json> --lyrics <track>` exit 0. Otherwise the critique is discarded and run again.
 22. The writer's room works through the flags **once** (E18). Then `song_gate.py lyrics` again; a second critic pass only judges and changes nothing. Only then does the song go to WS0 → Georg.

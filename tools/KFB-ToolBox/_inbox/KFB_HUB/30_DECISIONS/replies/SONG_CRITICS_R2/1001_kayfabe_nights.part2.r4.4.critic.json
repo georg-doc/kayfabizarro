@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "1001_kayfabe_nights.part2.r4.4.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F22 pass 2)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 4,
+  "performance": 3,
+  "arc": 4,
+  "sayability": 3,
+  "tone": 3,
+  "styleFit": 4
+ },
+ "flags": [
+  {
+   "beat": 15,
+   "rule": "E16b",
+   "observation": "\"The fishbone starts an accusation against: The Jewish Physician\" - the added frame aims blame at the one group-labelled character."
+  },
+  {
+   "beat": 11,
+   "rule": "B7",
+   "observation": "\"That horse is a bad alibi for:\" links Ebony Horse to Abu Hasan with no cause or twist; the bridge does not follow."
+  },
+  {
+   "beat": 22,
+   "rule": "A4",
+   "observation": "\"the bell, match ends by the King\" is garbled; who orders the ending blurs and the clause stumbles."
+  },
+  {
+   "beat": 29,
+   "rule": "A4",
+   "observation": "Line closes on orphaned \"next night, match.\" - the final word dangles after the breath."
+  },
+  {
+   "beat": 10,
+   "rule": "A4",
+   "observation": "Tail \"insanity\" hangs alone after the promo clause and sounds cut off."
+  },
+  {
+   "beat": 27,
+   "rule": "A4",
+   "observation": "\"Bizarro sell\" is a clipped jargon fragment, hard to parse when heard once."
+  },
+  {
+   "beat": 21,
+   "rule": "A3",
+   "observation": "\"witty verse boosts faces\" recites the power effect as a rule, not an aside."
+  },
+  {
+   "beat": 20,
+   "rule": "A3",
+   "observation": "\"enforcer destroys corruption\" restates the card effect as a mechanic."
+  },
+  {
+   "beat": 30,
+   "rule": "A3",
+   "observation": "\"true face, prevent identity reveals\" recites rule text; \"prevent\" also breaks the grammar."
+  },
+  {
+   "beat": 12,
+   "rule": "A8",
+   "observation": "\"cheap heat for opponent\" carries the game term \"opponent\" from the power text."
+  },
+  {
+   "beat": 5,
+   "rule": "A3",
+   "observation": "Many lines end on a power-label tail (\"sonic attack\", \"suicide dive\", \"aerial assault\", \"sabotage\", \"audit\"), giving a list cadence."
+  },
+  {
+   "beat": 19,
+   "rule": "B7",
+   "observation": "Openers like \"The body attracts an inspector:\" narrate plot in flat clauses; little want, wound or grudge, few voiced interjections."
+  }
+ ],
+ "verdict": "revise"
+}

@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "the_kayfabe_money_trail_9_11.part2.r4.4.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F22 pass 2b)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 3,
+  "arc": 3,
+  "sayability": 2,
+  "tone": 4,
+  "styleFit": 3
+ },
+ "flags": [
+  {
+   "beat": 4,
+   "rule": "A2",
+   "observation": "\"JP Morgan sought software for rogue trading and failures\" drops the card's \"stop\", inverting the claim: the bank now seeks rogue trading."
+  },
+  {
+   "beat": 14,
+   "rule": "A3",
+   "observation": "Line ends \"with BMI, Commission.\" The card's core claim, that the Commission never looked into Ptech, is lost to a dangling noun."
+  },
+  {
+   "beat": 15,
+   "rule": "A4",
+   "observation": "Ends on the fragment \"Pentagon bureaucracy, twenty-four hours.\" Without the catastrophe reference the timing point has no closure."
+  },
+  {
+   "beat": 21,
+   "rule": "A4",
+   "observation": "Reordered quote leaves \"a long one.\" trailing after the catalyzing event; the line closes limp and the quote's sense blurs."
+  },
+  {
+   "beat": 29,
+   "rule": "A4",
+   "observation": "124 characters with the opener \"Falsification has another author:\"; not one breath, far beyond the 80-95 range and golden line lengths."
+  },
+  {
+   "beat": 11,
+   "rule": "A4",
+   "observation": "117 characters. Fourteen opener lines run 108 to 124 characters; the long narrator openers push every one past the spec range."
+  },
+  {
+   "beat": 23,
+   "rule": "E16b",
+   "observation": "\"Those figures reach:\" leads into thirty-four killed bookkeepers, framing the dead as a ledger stop; \"killed, office moved\" ends anticlimactically."
+  },
+  {
+   "beat": 13,
+   "rule": "B6",
+   "observation": "\"Those keys remain with:\" repeats the opener family of \"Those blueprints expose:\" (beat 6) seven beats later; beat 23 repeats it again."
+  },
+  {
+   "beat": 16,
+   "rule": "B7",
+   "observation": "\"The accounting wanders:\" is an abstract bridge with no artworkPrompt image and no therefore-or-but logic linking it to Rumsfeld's war."
+  },
+  {
+   "beat": 20,
+   "rule": "B7",
+   "observation": "\"That account commissions:\" implies a causal link between Zakheim's company and the PNAC paper that neither card states; the phrase is opaque aloud."
+  },
+  {
+   "beat": 27,
+   "rule": "A3",
+   "observation": "The lore claim about Rumsfeld's war losing even more money is absent; the line recites power details \"over a decade, no hearing\"."
+  },
+  {
+   "beat": 1,
+   "rule": "C9",
+   "observation": "Ledger scene sets a mood but never touches the deck title or kayfabe concept; the frame lacks satirical provocation aimed at money and power."
+  }
+ ],
+ "verdict": "revise"
+}

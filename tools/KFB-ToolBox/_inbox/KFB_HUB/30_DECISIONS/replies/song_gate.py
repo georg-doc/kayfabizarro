@@ -334,6 +334,9 @@ SUGGEST = re.compile(r"(replace|instead|rewrite|could say|should say|try |sugges
 def gate_critic(a):
     crit = json.load(open(a.critic, encoding="utf-8"))
     song = open(a.lyrics, encoding="utf-8").read()
+    source = song
+    for src in (a.source or []):  # F20 (R3.3): Zitate aus der Kartenquelle sind erlaubt (Kartentreue-Hinweise)
+        source += "\n" + open(src, encoding="utf-8").read()
     nb = len(beats_of(song))
     fails = []
     F = lambda m: fails.append("FAIL F: " + m)
@@ -369,8 +372,8 @@ def gate_critic(a):
         quotes += re.findall(r"“([^”]{3,})”", ob)
         quotes += re.findall(r"(?<![A-Za-z])['‘]([^'’]{3,}?)['’](?![A-Za-z])", ob)  # Apostrophe in Wörtern sind keine Zitate
         for q in quotes:
-            if q.casefold() not in song.casefold():
-                F(f"flag {i}: Zitat {q!r} steht nicht im Song (Ersatztext?)")
+            if q.casefold() not in source.casefold():
+                F(f"flag {i}: Zitat {q!r} steht weder im Song noch in der Kartenquelle (Ersatztext?)")
     if crit.get("verdict") == "pass" and any(v <= 2 for v in sc.values() if isinstance(v, int)):
         F("verdict pass bei einem Score <= 2")
     print(f"song_gate critic · {os.path.basename(a.critic)} · {len(crit.get('flags') or [])} Flags · verdict {crit.get('verdict')}")
@@ -387,6 +390,6 @@ if __name__ == "__main__":
     l.add_argument("lyrics"); l.add_argument("--deck", required=True); l.add_argument("--songlines"); l.add_argument("--media")
     l.add_argument("--cards"); l.add_argument("--tone"); l.add_argument("--corpus", nargs="*")
     c = sub.add_parser("critic")
-    c.add_argument("critic"); c.add_argument("--lyrics", required=True)
+    c.add_argument("critic"); c.add_argument("--lyrics", required=True); c.add_argument("--source", nargs="*")
     a = ap.parse_args()
     sys.exit(gate_lyrics(a) if a.cmd == "lyrics" else gate_critic(a))

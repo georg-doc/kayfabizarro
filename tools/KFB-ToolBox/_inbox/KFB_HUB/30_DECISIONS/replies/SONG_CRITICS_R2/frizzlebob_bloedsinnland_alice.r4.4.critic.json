@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "frizzlebob_bloedsinnland_alice.r4.4.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F22 pass 2b)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 3,
+  "arc": 4,
+  "sayability": 3,
+  "tone": 4,
+  "styleFit": 4
+ },
+ "flags": [
+  {
+   "beat": 2,
+   "rule": "C9",
+   "observation": "\"the verdict precedes the witness\" pre-empts the Queen's card and stays literary; the frame carries little satirical provocation about the deck concept."
+  },
+  {
+   "beat": 5,
+   "rule": "A3",
+   "observation": "\"Gaslight, a fading grin.\" keeps the power label as a bare tag; rule labels are to be dropped, power only as aside."
+  },
+  {
+   "beat": 8,
+   "rule": "A3",
+   "observation": "Line ends on the rule label \"Narcolepsy.\" and carries no artwork image; the Dormouse in the teapot is absent."
+  },
+  {
+   "beat": 12,
+   "rule": "B7",
+   "observation": "\"Dodo, pigeon, serpent, galaxy belly\" is an image inventory, not one real picture; the Visitor gets no want or grudge."
+  },
+  {
+   "beat": 13,
+   "rule": "A2",
+   "observation": "\"discarded cupboards, clocks, marmalade jar fall\" fuses the power's discarded cards into the image; cupboards are never discarded on the card."
+  },
+  {
+   "beat": 17,
+   "rule": "A3",
+   "observation": "\"time loop, repeat the last sentence\" recites label plus rule mechanics; reads like a rulebook line read aloud."
+  },
+  {
+   "beat": 22,
+   "rule": "A8",
+   "observation": "\"Giant can intimidate the King. Eat Me cake, the Giant grows.\" uses the game state Giant twice and recites the power as rule."
+  },
+  {
+   "beat": 23,
+   "rule": "A2",
+   "observation": "\"Micro hides inside the other bottle\": card says other cards, so the second bottle is a new image; Micro is a game state term."
+  },
+  {
+   "beat": 25,
+   "rule": "B7",
+   "observation": "\"Topic closed:\" does not follow from the Mushroom before it and only echoes the card's own ending; no therefore or but."
+  },
+  {
+   "beat": 26,
+   "rule": "A4",
+   "observation": "\"Slate, SCREECH, screech.\" doubles the same word as filler; the line closes on noise, not on the card's claim."
+  },
+  {
+   "beat": 27,
+   "rule": "A3",
+   "observation": "\"sticky trap, cannot leave\" states label and mechanic directly; the Treacle Well has no character, only a rule effect."
+  },
+  {
+   "beat": 31,
+   "rule": "A4",
+   "observation": "\"Who Stole the Tarts?, prove innocence or guilt\" stacks question mark and comma; the breath stalls mid-line before the clause."
+  }
+ ],
+ "verdict": "revise"
+}

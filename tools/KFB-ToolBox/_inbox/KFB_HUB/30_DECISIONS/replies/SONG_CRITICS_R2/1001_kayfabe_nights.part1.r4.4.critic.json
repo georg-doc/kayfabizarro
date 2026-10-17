@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "1001_kayfabe_nights.part1.r4.4.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F22 pass 2)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 4,
+  "performance": 3,
+  "arc": 3,
+  "sayability": 3,
+  "tone": 4,
+  "styleFit": 4
+ },
+ "flags": [
+  {
+   "beat": 1,
+   "rule": "C9",
+   "observation": "Intro reads as neutral plot synopsis; deck title, kayfabe thesis and any satirical or provocative edge are absent from both intro beats."
+  },
+  {
+   "beat": 31,
+   "rule": "C9",
+   "observation": "Outro calls back to promoter and final bell, but the turn stays narrative; the work-versus-shoot concept never surfaces in the frame."
+  },
+  {
+   "beat": 6,
+   "rule": "B7",
+   "observation": "\"Her sister's story buys time for:\" links to the Vizier without causal logic; the story does not obviously produce the referee."
+  },
+  {
+   "beat": 6,
+   "rule": "A4",
+   "observation": "Opener plus card line totals about 120 characters; not sayable in one breath."
+  },
+  {
+   "beat": 9,
+   "rule": "B7",
+   "observation": "\"The stolen commission buys:\" implies a purchase of the lamp, an event the card never states."
+  },
+  {
+   "beat": 19,
+   "rule": "B7",
+   "observation": "\"another bargain\" presumes an earlier bargain that the song never established."
+  },
+  {
+   "beat": 27,
+   "rule": "B7",
+   "observation": "Openers share one template, previous card as subject plus verb and colon; \"conceals\" then \"waits\" chains as and-then, no but or twist."
+  },
+  {
+   "beat": 23,
+   "rule": "B7b",
+   "observation": "Every callback opener points only at the immediately preceding card; no opener reaches back to the intro pair or a distant card."
+  },
+  {
+   "beat": 14,
+   "rule": "A3",
+   "observation": "\"razor terrain\" tacked on as a power label tag after the claim; reads like a rulebook index."
+  },
+  {
+   "beat": 20,
+   "rule": "A3",
+   "observation": "\"hardcore valet, daggers\" appends label plus image as a list; \"daggers\" echoes \"dagger\" in the same line."
+  },
+  {
+   "beat": 21,
+   "rule": "A3",
+   "observation": "\"the botch, password\" closes on bare power-label fragments; residue of card mechanics rather than story."
+  },
+  {
+   "beat": 15,
+   "rule": "A4",
+   "observation": "\"the squash match destroys them\" leaves \"them\" without a referent; closure blurs. Tone note respected: sung as \"The Giant\", no cannibal."
+  }
+ ],
+ "verdict": "revise"
+}
