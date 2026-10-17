@@ -1,0 +1,102 @@
+name: Scene Patch Public QA
+
+on:
+  push:
+    branches: ['toolbox/scene-patch-adapter-v1-2026-09-20']
+    paths:
+      - '.github/workflows/scene-patch-public-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.51.1
+          npx playwright install --with-deps chromium
+
+      - name: Public Cloudflare proof
+        run: |
+          mkdir -p scene-patch-public-proof
+          cat > scene-patch-public-proof/check.mjs <<'JS'
+          import fs from 'node:fs';
+          import { chromium } from 'playwright';
+
+          const marker='KFB_SCENE_PATCH_V1_2026_09_20';
+          const root='https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/scene-patch-v1/';
+          const hub='https://kayfabizarro.pages.dev/kfb-hub/';
+          const report={root,hub,checks:[],errors:[]};
+          const check=(name,pass,detail=null)=>{report.checks.push({name,pass:!!pass,detail});if(!pass)process.exitCode=1;};
+
+          const browser=await chromium.launch({headless:true});
+          const page=await browser.newPage({viewport:{width:1280,height:820}});
+          page.on('pageerror',e=>report.errors.push('pageerror: '+String(e)));
+          page.on('console',m=>{if(m.type()==='error')report.errors.push('console: '+m.text());});
+          try{
+            let response=null;
+            for(let attempt=0;attempt<12;attempt++){
+              response=await page.goto(root+'?host=resident',{waitUntil:'domcontentloaded',timeout:60000}).catch(()=>null);
+              const mark=await page.getAttribute('body','data-build').catch(()=>null);
+              if(response?.ok()&&mark===marker)break;
+              await page.waitForTimeout(5000);
+            }
+            check('public stage HTTP 200',!!response&&response.ok(),response?.status());
+            check('public stage build marker',await page.getAttribute('body','data-build')===marker,await page.getAttribute('body','data-build'));
+
+            await page.waitForFunction(()=>document.getElementById('hostFrame')?.contentWindow?.__residentScenePatch?.session?.stats?.().registered===10,{}, {timeout:120000});
+            let frame=page.frames().find(f=>/\/resident\/$/.test(f.url()));
+            check('public resident frame',!!frame,frame?.url());
+            if(!frame)throw new Error('resident frame missing');
+            const resident=await frame.evaluate(()=>{
+              const a=window.__residentScenePatch;
+              return {registered:a.session.stats().registered,editable:a.editableNodes().length,source:a.session.source};
+            });
+            check('public Resident adapter ready',resident.registered===10&&resident.editable===10,resident);
+            check('public Resident source exact',resident.source?.sourceRef==='tools/resident_atlas/scenes/caveman-cave-camp.json',resident.source);
+            await frame.click('#editor');
+            check('public Resident editor opens',await frame.evaluate(()=>window.__residentScenePatch.edit.on&&!document.getElementById('patchDock').hidden));
+            await page.screenshot({path:'scene-patch-public-proof/resident-public.png',fullPage:true});
+
+            await page.click('button[data-host="dungeon"]');
+            await page.waitForFunction(()=>document.getElementById('hostFrame')?.contentWindow?.__dungeonScenePatch?.session?.stats?.().registered>0,{}, {timeout:180000});
+            frame=page.frames().find(f=>/\/dungeon\/$/.test(f.url()));
+            check('public Dungeon frame',!!frame,frame?.url());
+            if(!frame)throw new Error('dungeon frame missing');
+            const dungeon=await frame.evaluate(()=>{
+              const a=window.__dungeonScenePatch;
+              return {registered:a.session.stats().registered,layers:[...new Set(a.editableNodes().map(n=>n.userData.scenePatchRecord?.layer))],source:a.session.source};
+            });
+            check('public Dungeon adapter ready',dungeon.registered>0&&dungeon.layers.length===1&&dungeon.layers[0]==='candle',dungeon);
+            check('public Dungeon source exact',dungeon.source?.sourceRef==='tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html',dungeon.source);
+            await frame.click('#editor');
+            check('public Dungeon editor opens',await frame.evaluate(()=>window.__dungeonScenePatch.edit.on&&!document.getElementById('patchDock').hidden));
+            await page.screenshot({path:'scene-patch-public-proof/dungeon-public.png',fullPage:true});
+
+            const hubResponse=await page.goto(hub,{waitUntil:'domcontentloaded',timeout:60000});
+            check('KFB Hub HTTP 200',!!hubResponse&&hubResponse.ok(),hubResponse?.status());
+            check('KFB Hub links Scene Patch',await page.locator('a[href="/kfb-hub/stage/toolbox/scene-patch-v1/"],a[href="./stage/toolbox/scene-patch-v1/"]').count()>0);
+          }catch(e){
+            report.errors.push(String(e?.stack||e));process.exitCode=1;
+          }finally{
+            check('no public page/console errors',report.errors.length===0,report.errors);
+            fs.writeFileSync('scene-patch-public-proof/report.json',JSON.stringify(report,null,2));
+            await browser.close();
+          }
+          JS
+          node scene-patch-public-proof/check.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene-patch-public-proof
+          path: scene-patch-public-proof
+          retention-days: 90

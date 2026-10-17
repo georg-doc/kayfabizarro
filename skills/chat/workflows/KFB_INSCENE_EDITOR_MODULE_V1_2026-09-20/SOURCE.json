@@ -1,0 +1,52 @@
+{
+  "schema": "kfb.scene-patch-source/1",
+  "date": "2026-09-20",
+  "owner": "ToolBox shared scene-patch module; host retains scene/runtime ownership",
+  "repository": "georg-doc/kayfabizarro",
+  "branch": "toolbox/scene-patch-adapter-v1-2026-09-20",
+  "testedHead": "f3cb12d119a0e565b1d8b09a9eb2d667c6e8b218",
+  "hostSchema": "kfb.scene-patch.v1",
+  "donors": [
+    {
+      "role": "editor interaction donor",
+      "repo": "georg-doc/kayfabizarro",
+      "revision": "6c1b02a3338c005127d45bc7bff3ecbb785f1342",
+      "path": "tools/KFB-ToolBox/_inbox/KayKit Resident Atlas vS7/S38-rig-werkstatt/lib/edit-layer.js",
+      "note": "Second proven S21-style integration; one TransformControls owner, picking, semantic group scope, drop, borrow/release."
+    },
+    {
+      "role": "editor contract donor",
+      "repo": "georg-doc/kayfabizarro",
+      "revision": "6c1b02a3338c005127d45bc7bff3ecbb785f1342",
+      "path": "tools/KFB-ToolBox/_inbox/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/docs/EDITOR_LAYER.md",
+      "note": "Recipe remains source; editor exports a reversible patch; second integration permits library extraction."
+    }
+  ],
+  "hosts": [
+    {
+      "id": "resident-atlas",
+      "source": "tools/resident_atlas/index.html",
+      "sceneRecipe": "tools/resident_atlas/scenes/caveman-cave-camp.json",
+      "editable": "habitat + props",
+      "protected": "animated actor / resident pose owner",
+      "adapter": "tools/resident_atlas/scene-patch-adapter.v1.js"
+    },
+    {
+      "id": "dungeon",
+      "source": "tools/world_atlas/source/KayKit_Dungeon_Generator_S13_2.html",
+      "editable": "generated layer:candle props only",
+      "protected": "layout, floors, walls, corners, stairs, mounted torches, generator placements/recipe",
+      "adapter": "tools/world_atlas/source/lib/dungeon-scene-patch-adapter.v1.js"
+    }
+  ],
+  "shared": [
+    "tools/KFB-ToolBox/shared/scene-patch/edit-layer.v1.js",
+    "tools/KFB-ToolBox/shared/scene-patch/scene-patch.v1.js"
+  ],
+  "dropboxCrossCheck": {
+    "mode": "read-only",
+    "roomStudy": "/CLAUDE/KayKit Environment Atlas + Dungeon Generator + 3D scene editor TOOL (5)/KFB_Dungeon_RoomStudy_S21_EXPORT_2026-09-20/",
+    "residentS38": "Dropbox search confirmed current S38 rig-werkstatt export/source line.",
+    "mutation": false
+  }
+}
