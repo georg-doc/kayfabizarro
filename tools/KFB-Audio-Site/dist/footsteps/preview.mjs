@@ -74,7 +74,7 @@ function frame(){
    for(const e of events){if(e.epoch!==epoch||e.renderedAt!=null||e.time>visibleTime||e.kind!=='footstep')continue;
     e.renderedAt=visibleTime;const p=points.find(p=>p.foot===e.foot),height=soles.height(e.foot);
     const supportY=mode==='walk'?0:p.floorY;avSamples.push({foot:e.foot,figure,mode,contact:e.time,estimatedOnset:e.estimatedOnsetAt,rendered:visibleTime,avErrorMs:(visibleTime-e.estimatedOnsetAt)*1000,soleY:height,floorY:supportY,soleClearance:height-supportY});if(avSamples.length>3000)avSamples.shift();
-    $('footLast').textContent='CONTACT '+e.foot.toUpperCase()+' · '+e.surface+' · sole '+((height-p.floorY)*1000).toFixed(1)+' mm';
+    $('footLast').textContent='CONTACT '+e.foot.toUpperCase()+' · '+e.surface+' · sole '+((height-supportY)*1000).toFixed(1)+' mm';
    }
    if(points.length)scene.userData.floor.position.y=mode==='walk'?-.03:Math.min(...points.map(p=>p.floorY))-.03;
    if(mode==='land'&&visualPhase>=1)setMode($('footGait').value);

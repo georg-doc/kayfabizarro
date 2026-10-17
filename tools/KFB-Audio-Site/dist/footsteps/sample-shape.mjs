@@ -7,7 +7,8 @@ export function shapePCM(channels,sampleRate,{cutoff,tail,attack=.01}){
  const shaped=channels.map(pcm=>{const out=filter(filter(pcm.subarray(0,length),65,.707,true),cutoff,.5,false);
   for(let i=0;i<length;i++){const t=i/sampleRate,k=t<attack?t/attack:t<tail*.55?Math.pow(.24,(t-attack)/(tail*.55-attack)):.24*(tail-t)/(tail*.45);out[i]*=Math.max(0,k);}return out;});
  let energy=0,peak=0;for(const pcm of shaped)for(const x of pcm){energy+=x*x;peak=Math.max(peak,Math.abs(x));}
- const rms=Math.sqrt(energy/(length*shaped.length)),gain=Math.min(.010/Math.max(1e-8,rms),.12/Math.max(1e-8,peak));
+ // Fixed 240-ms reference window matches ENERGY PER CONTACT, not unequal clip lengths.
+ const rms=Math.sqrt(energy/(.24*sampleRate*shaped.length)),gain=Math.min(.010/Math.max(1e-8,rms),.12/Math.max(1e-8,peak));
  for(const pcm of shaped)for(let i=0;i<length;i++)pcm[i]*=gain;
  let onset=length;for(const pcm of shaped)for(let i=0;i<length;i++)if(Math.abs(pcm[i])>=peak*gain*.2){onset=Math.min(onset,i);break;}
  return {channels:shaped,rms:rms*gain,peak:peak*gain,onsetSeconds:onset/sampleRate,gain};

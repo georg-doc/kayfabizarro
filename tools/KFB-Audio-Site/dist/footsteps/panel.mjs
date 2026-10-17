@@ -1,5 +1,5 @@
 const panel=document.createElement('section');panel.id='footsteps';panel.className='panel';
-panel.innerHTML=`<div class="eyebrow">FOOTSTEPS · KONTAKTKORREKTUR · SOURCE 0.7.4</div><h2>Schritte · Soft steps</h2><p>Start: <strong>Play steps</strong>. Ende: <strong>Stop steps</strong>. Musik und Prüf-Funktionen brauchst du dafür nicht.</p><div class="foot-layout"><div><div id="footCanvas" style="max-width:640px;overflow:hidden"></div><p id="footLast" class="tiny"></p></div><div>
+panel.innerHTML=`<div class="eyebrow">FOOTSTEPS · KONTAKTKORREKTUR · SOURCE 0.7.5</div><h2>Schritte · Soft steps</h2><p>Start: <strong>Play steps</strong>. Ende: <strong>Stop steps</strong>. Musik und Prüf-Funktionen brauchst du dafür nicht.</p><div class="foot-layout"><div><div id="footCanvas" style="max-width:640px;overflow:hidden"></div><p id="footLast" class="tiny"></p></div><div>
 <p><button class="btn primary" id="footPlay">Play steps</button> <button class="btn" id="footStop" disabled>Stop steps</button> <button class="btn" id="footLoad">Inspect figure · silent</button></p>
 <label>Movement <select id="footGait"><option value="idle">Idle</option><option value="walk" selected>Walk</option><option value="run">Run</option></select></label>
 <label>Surface <select id="footSurface"><option value="sand">Sand</option><option value="stone">Stone</option><option value="wood">Wood</option><option value="wet-clay" selected>Cozy · weich &amp; gedämpft</option></select></label>
@@ -11,11 +11,11 @@ panel.innerHTML=`<div class="eyebrow">FOOTSTEPS · KONTAKTKORREKTUR · SOURCE 0.
 <video id="footVideo" controls hidden style="width:min(640px,100%)"></video><a id="footClipDownload" hidden>Download audible motion clip</a>
 <details><summary>Contact and control evidence</summary><pre id="footDiagnostics" style="max-height:420px;overflow:auto;white-space:pre-wrap"></pre></details>
 <p class="tiny">Five unique CC0 donors per surface, ±3% pitch variation, soft attack. Sand and wet-clay are processed snow/grass foley interpretations, not original clay recordings. One existing AudioContext / PLAYER_CRITICAL bus. Music and TTS ducking unchanged. <a href="./footsteps/LICENCES.md">Sources & licences</a>.</p>
-<p class="tiny"><a href="./footsteps/proof/footsteps-cozy.mp4">Cozy-Beispiel · 12 Sekunden mit Ton</a> · <a href="./footsteps/proof/contact-fixture.json">Kontaktmessungen</a>. Die ältere R2-Aufnahme ist kein aktueller Synchronitätsnachweis.</p>`;
+<p class="tiny"><a href="./footsteps/proof/sand-walk.mp4">Vier Böden · aktueller Walk mit Ton</a> · <a href="./footsteps/proof/sand-walk-fixture.json">Kontaktmessungen</a>. Ältere Aufnahmen sind kein aktueller Synchronitätsnachweis.</p>`;
 document.getElementById('mix').append(panel);
 const style=document.createElement('style');style.textContent='.foot-layout{display:flex;gap:20px;flex-wrap:wrap}.foot-layout>div{flex:1;min-width:280px}#footCanvas canvas{width:100%!important;height:auto!important;display:block}#footsteps label{display:block;margin:12px 0}#footsteps select{max-width:100%;margin-left:8px}';document.head.append(style);
 let modulePromise;
-const module=()=>modulePromise??=import('./preview.mjs?v=0.7.4').catch(e=>{modulePromise=null;throw e;});
+const module=()=>modulePromise??=import('./preview.mjs?v=0.7.5').catch(e=>{modulePromise=null;throw e;});
 for(const [id,action] of [['footPlay','play'],['footStop','stop'],['footLoad','inspect'],['footJump','jump'],['footDemo','demo'],['footRecord','record'],['footReset','reset'],['footExport','export']]){
  document.getElementById(id).onclick=async()=>{try{
  const host=['play','demo'].includes(action)?window.KFBAudioSite.resume():null;
