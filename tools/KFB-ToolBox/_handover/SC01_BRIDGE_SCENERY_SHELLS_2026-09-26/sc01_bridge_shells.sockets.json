@@ -1,0 +1,138 @@
+{
+ "schema": "kfb.scenery-shell.v0",
+ "id": "sc01-bridge-suspension",
+ "status": "CANDIDATE · scenery only",
+ "rule": "placed by route frame (frameAt(s)); no drivable geometry; stand-in route = RKIT-11 fixture profile until W0",
+ "variants": {
+  "MB": {
+   "checks": {
+    "corridor_intrusions": 0,
+    "deck_body_intrusions": 0,
+    "drivable_faces": 0,
+    "pylon_lateral_gap_min_m": 0.626,
+    "pylon_lateral_gap_ok": true,
+    "cable_underside_above_deck_main_m": 1.851,
+    "cable_ok": true,
+    "hanger_socket_gap_max_m": 0.0,
+    "hangers": 110,
+    "PASS": true
+   },
+   "sockets": {
+    "pylons": [
+     {
+      "tag": "W",
+      "s": 314.41,
+      "frame": "flat heading + world up",
+      "x": 0.0,
+      "y": "deck(s)",
+      "top_above_deck": 46.0,
+      "foot_y": -4.0,
+      "cable_x": "deck_half(s) + 0.75"
+     },
+     {
+      "tag": "E",
+      "s": 632.39,
+      "frame": "flat heading + world up",
+      "x": 0.0,
+      "y": "deck(s)",
+      "top_above_deck": 46.0,
+      "foot_y": -4.0,
+      "cable_x": "deck_half(s) + 0.75"
+     }
+    ],
+    "anchors": [
+     {
+      "tag": "W",
+      "s": 184.41,
+      "x": "±(deck_half(s) + 1.55)",
+      "y": "deck(s) - 2.5"
+     },
+     {
+      "tag": "E",
+      "s": 706.89,
+      "x": "±(deck_half(s) + 1.55)",
+      "y": "deck(s) - 2.5"
+     }
+    ],
+    "hangers": {
+     "step": 9.0,
+     "socket": "deck_edge (x = ±deck_half(s)) via outrigger bracket",
+     "count": 110
+    },
+    "clearance": {
+     "corridor": "|x| <= deck_half(s), 0 <= y <= 6.5",
+     "deck_body": "|x| <= deck_half(s), -3.2 <= y < 0"
+    }
+   },
+   "route_len": 714.6,
+   "objects": 22,
+   "tris": 23800,
+   "glb_kb": 616
+  },
+  "NARROW": {
+   "checks": {
+    "corridor_intrusions": 0,
+    "deck_body_intrusions": 0,
+    "drivable_faces": 0,
+    "pylon_lateral_gap_min_m": 0.6,
+    "pylon_lateral_gap_ok": true,
+    "cable_underside_above_deck_main_m": 1.85,
+    "cable_ok": true,
+    "hanger_socket_gap_max_m": 0.0,
+    "hangers": 72,
+    "PASS": true
+   },
+   "sockets": {
+    "pylons": [
+     {
+      "tag": "W",
+      "s": 200.0,
+      "frame": "flat heading + world up",
+      "x": 0.0,
+      "y": "deck(s)",
+      "top_above_deck": 30.0,
+      "foot_y": -4.0,
+      "cable_x": "deck_half(s) + 0.75"
+     },
+     {
+      "tag": "E",
+      "s": 400.0,
+      "frame": "flat heading + world up",
+      "x": 0.0,
+      "y": "deck(s)",
+      "top_above_deck": 30.0,
+      "foot_y": -4.0,
+      "cable_x": "deck_half(s) + 0.75"
+     }
+    ],
+    "anchors": [
+     {
+      "tag": "W",
+      "s": 110.0,
+      "x": "±(deck_half(s) + 1.55)",
+      "y": "deck(s) - 2.5"
+     },
+     {
+      "tag": "E",
+      "s": 460.0,
+      "x": "±(deck_half(s) + 1.55)",
+      "y": "deck(s) - 2.5"
+     }
+    ],
+    "hangers": {
+     "step": 9.0,
+     "socket": "deck_edge (x = ±deck_half(s)) via outrigger bracket",
+     "count": 72
+    },
+    "clearance": {
+     "corridor": "|x| <= deck_half(s), 0 <= y <= 6.5",
+     "deck_body": "|x| <= deck_half(s), -3.2 <= y < 0"
+    }
+   },
+   "route_len": 480.2,
+   "objects": 22,
+   "tris": 21520,
+   "glb_kb": 568
+  }
+ }
+}
