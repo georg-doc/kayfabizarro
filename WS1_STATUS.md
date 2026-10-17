@@ -1,7 +1,34 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§73 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§74 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 74 · 17.10. · Slice 3 Fahrhilfe M3 (V-379) A–F grün · L3-Umzug M1/M2 · Branch-Spiegel · Kombi-Vorschau läuft
+
+Stand der Bewegungs-Sitzung: `m3/fahrhilfe` @2cc2562, gespiegelt als Branch `ws1/m3-fahrhilfe` (Ordner `ws1/kfb-planet-m3/`). Kein Merge nach main (V-400).
+- **Prüfung:** volle `run-all` mit m3-a bis m3-f, 47 Tests: **47 PASS**, 1 INFO (m1-rueckwand, nur Bericht), 0 FAIL.
+  - m2-g0 und drift hatten im ersten Durchgang kein Ergebnis; einzeln nachgefahren: PASS.
+  - run-all meldet ein fehlendes Ergebnis jetzt als FAIL.
+- **Messwerte M3:**
+  - **A** (Takt 120 Hz, höchstens 8 Schritte je Bild, versteckter Tab pausiert): Sprungweite 8,19 m bei 60 und bei 30 fps, Abweichung 0 %.
+  - **B** (Anti-Roll/Luftlage): Überschläge 0/40, Nase > 45° 0/10, Rollen-Umkehrungen am Hang 85 → 6.
+  - **C** (Landehilfe, Lande-Boost abschaltbar): Gierfehler 0,3 s nach dem Aufsetzen ohne Hilfe bis 9,2°, mit Hilfe ≤ 4,8°; 0 Spin-Outs; Tempo ≥ 98 %.
+  - **D** (Anti-Steckenbleiben): 20/20 frei in ≤ 2,9 s, T3 (Respawn) 0.
+  - **E** (Deformer v2, nur Darstellungsknoten): 30/30 Ereignisse, Kollider-Lage unverändert, kein Stillstand.
+  - **F** (Rampen-/Wandzonen): Launch 10/10 (Gier ≤ 7,5°), Wand 10/10 (1,33–1,4 s, nur markierte Fläche block-b, 24 m), Abbruch 10/10, Fehl-Einfangen 0/20.
+- **Behobene Fehler:**
+  - Gier-Drehung schwenkte in Wände.
+  - Gebäudekanten galten als Boden (Dach-Klettern).
+  - Absetzen knapp unter der Fahrhöhe katapultierte den Wagen.
+  - Festfahren wird jetzt über Fortschritt erkannt.
+  - Die Wandmarkierung im Testfeld war fest aus.
+- **Fühlprobe** `#m1,car`:
+  - Testfeld neben dem Theater: Rampen bei +X, Gebäude und markierte Wand bei −X.
+  - Tasten: M = Assist M3 an/aus, Shift = Boost; `assist=off` startet ohne Hilfe; `tod=gold`.
+- **L3-Umzug M1/M2** (§72.3): createStageLight (Mesa), Schattenkugel ums Auto, ACES, createContactAO mit Normale; followShadow und feste Biase sind entfernt. Bildfolge: Zweitschatten weg, langer Gold-Schatten vollständig.
+- **In Arbeit** (Georg-Wunsch): Stufe G (Fassrolle, Schlingern, Zwei-Rad frei).
+- **Offen:** M1 lädt Figuren noch direkt aus stageCast. Nach dem Merge Umstellung auf `figureFor` (V-391), Hinweis an die Bewegungs-Sitzung ist raus.
+- **WS1-Owner:** Die Kombi `look/mesa` + `m3/fahrhilfe` ist konfliktfrei gemergt (Hilfs-Worktree), die Prüfung läuft. Danach gemeinsame Vorschau für Georg (Bühne, Farbwelt, Gelände, Fahrprobe mit M3).
 
 ## 73 · 17.10. · Langlauf: Slice 1 sichtbar (Gelände um Meshy-Bühnen, perf), look/mesa 25/25, Branch-Vorschau, Schwebe-Messung
 
