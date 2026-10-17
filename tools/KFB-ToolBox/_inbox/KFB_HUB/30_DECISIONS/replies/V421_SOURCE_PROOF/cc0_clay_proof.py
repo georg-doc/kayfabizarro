@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""V-421: Download immutable public CC0 archives; audit *real* meshes; render source-only + clay.
-Research proof only; no KFB runtime, no generated substitute geometry and no preview overlays.
+"""V-421: Download CC0 3D sources and render originals in isolation; no invented clay.
+Research proof only; no KFB runtime, no generated substitute geometry, no pseudo clay and no preview overlays.
 Run: python cc0_clay_proof.py fetch
      blender -b --factory-startup --disable-autoexec --python cc0_clay_proof.py -- render
 """
@@ -243,27 +243,12 @@ def render_one(source):
     source_png = folder / "source-isolation.png"
     scene.render.filepath = str(source_png.resolve())
     bpy.ops.render.render(write_still=True)
-    clay = bpy.data.materials.new("KFB_preview_only_mat_not_source_mesh")
-    clay.diffuse_color = (0.51, 0.61, 0.57, 1)
-    clay.use_nodes = True
-    pbr=clay.node_tree.nodes.get("Principled BSDF")
-    pbr.inputs["Base Color"].default_value = (0.51, 0.61, 0.57, 1)
-    pbr.inputs["Roughness"].default_value = 0.94
-    for obj in mesh_objs:
-        obj.data.materials.clear()
-        obj.data.materials.append(clay)
-    # Second: same source mesh, clay material only; no text, labels or graphic overlays.
-    clay_png = folder / "clay-preview.png"
-    scene.render.filepath = str(clay_png.resolve())
-    bpy.ops.render.render(write_still=True)
-    audit["state"] = "SOURCE_ISOLATED_AND_CLAY_RENDERED"
-    audit["preview_status"] = "PREVIEW_RENDERED_NOT_WS0_ACCEPTED"
+    # V-424: source-only. Fake flat-material clay explicitly rejected.
+    audit["state"] = "SOURCE_ISOLATED_ONLY"
+    audit["preview_status"] = "SOURCE_ORIGINAL_ONLY_KNETE_FOLGT"
     audit["sourceImageSha256"] = sha256(source_png)
-    audit["clayImageSha256"] = sha256(clay_png)
-    audit["proofConditions"] = {
-        "source_mesh_kept": True, "camera_only_visual_transform": True,
-        "clay_material_only": True, "no_image_overlays": True, "georg_selection_enabled": False
-    }
+    audit["proofConditions"] = {"source_mesh_kept": True, "no_image_overlays": True,
+                                "pseudo_clay_generated": False, "georg_selection_enabled": False}
     write_json(folder / "audit.json", audit)
     return audit
 
@@ -282,13 +267,13 @@ def render():
     write_json(ROOT/"final-audit.json",{
         "schema":"kfb.landmark.source-isolation/1",
         "sources":outcomes,
-        "passed":sum(a["state"]=="SOURCE_ISOLATED_AND_CLAY_RENDERED" for a in outcomes),
+        "passed":sum(a["state"]=="SOURCE_ISOLATED_ONLY" for a in outcomes),
         "attempted":len(outcomes),
         "readyForGeorg":False,
         "nextGate":"WS0_SOURCES_VISUAL_REVIEW_AND_RIGHTS_THEN_REMAINING_23",
     })
     if not any(a["state"] == "SOURCE_ISOLATED_AND_CLAY_RENDERED" for a in outcomes):
-        raise SystemExit("No clay proof rendered; candidate selection stays disabled.")
+        raise SystemExit("No original source proof rendered; candidate selection stays disabled.")
 
 
 if __name__ == "__main__":
