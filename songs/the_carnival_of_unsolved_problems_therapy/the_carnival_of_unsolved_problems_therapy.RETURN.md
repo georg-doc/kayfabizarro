@@ -4,3 +4,6 @@ Owner original kfb-triplets; base R4 branch songs/the_carnival_of_unsolved_probl
 ## VERIFIED R3.1 Python evidence · 39031803248
 https://github.com/georg-doc/kayfabizarro/actions/runs/39031803248
 Candidate head f035c4c8f6f67115a32df78549733e6993fe855c. Exact original triplet_set_check.py EXIT 0; R3.1 format_gate_r31.py EXIT 0; 2/2 named steps SUCCESS. This verifies source-aware mechanical and format gates, NOT independent creative judgment. No separate reviewer used. Next gate: independent judge only scores/flags without prose rewrites.
+
+## Executed R3.1 GitHub Actions evidence
+Run https://github.com/georg-doc/kayfabizarro/actions/runs/39031803248; candidate f035c4c8f6f67115a32df78549733e6993fe855c. Exact original triplet_set_check.py EXIT 0 (SUCCESS); R3.1 format_gate_r31.py EXIT 0 (SUCCESS); 2/2 steps. Independent blind reviewer NOT RUN; creative revision PENDING.
