@@ -41,6 +41,25 @@ SOURCES = [
         "kind": "monument_source_el_castillo_not_ballcourt",
         "selection_hints": ["castillo", "chichen", "pyramid", "temple"],
     },
+    {
+        "id": "modular_temple_fertile_cc0",
+        "source_page": "https://opengameart.org/content/modular-temple-3d-models",
+        "download_url": "https://opengameart.org/sites/default/files/modular_temple_collection.zip",
+        "creator": "Keith at Fertile Soil Productions",
+        "license": "CC0-1.0",
+        "kind": "construction_donor_not_ur_not_borobudur",
+        "selection_hints": ["column", "pillar", "stair", "temple"],
+    },
+    {
+        "id": "simple_castle_titanium_cc0",
+        "source_page": "https://opengameart.org/content/simple-castle",
+        "download_url": "https://opengameart.org/sites/default/files/SimpleCastle.blend",
+        "file_name": "SimpleCastle.blend",
+        "creator": "TitaniumFalcon",
+        "license": "CC0-1.0",
+        "kind": "construction_donor_not_neuschwanstein",
+        "selection_hints": ["castle", "simple"],
+    },
 ]
 EXTS = {".blend", ".blend1", ".glb", ".gltf", ".obj", ".fbx"}
 # Prefer inspectable interchange sources to accidental archive backups.
@@ -74,35 +93,47 @@ def fetch():
                 source["download_url"],
                 headers={"User-Agent": "KFB-source-audit/1.0 (noncommercial source-verification; contact via source page)", "Accept": "application/zip,*/*"},
             )
+            is_zip = source["download_url"].lower().split("?")[0].endswith(".zip")
+            stored = folder / ("original.zip" if is_zip else source.get("file_name", "source.blend"))
             with urllib.request.urlopen(request, timeout=80) as response:
-                with open(folder / "original.zip", "wb") as out:
+                with open(stored, "wb") as out:
                     total = 0
                     while True:
                         block = response.read(1024 * 1024)
                         if not block: break
                         total += len(block)
                         if total > 50_000_000:
-                            raise ValueError("archive too large for bounded source proof")
+                            raise ValueError("original file too large for bounded source proof")
                         out.write(block)
-            archive = folder / "original.zip"
-            audit["archiveBytes"] = archive.stat().st_size
-            audit["archiveSha256"] = sha256(archive)
-            with zipfile.ZipFile(archive) as zf:
-                items = [i for i in zf.infolist() if not i.is_dir()]
-                if len(items) > 1000: raise ValueError("too many archive members")
-                uncompressed = sum(i.file_size for i in items)
-                if uncompressed > 240_000_000: raise ValueError("uncompressed archive too big")
-                for entry in items:
-                    target = (folder / "source" / entry.filename).resolve()
-                    if not target.is_relative_to((folder / "source").resolve()):
-                        raise ValueError("zip slip path refused")
-                    if entry.file_size > 150_000_000:
-                        raise ValueError("individual member too big")
-                    target.parent.mkdir(parents=True, exist_ok=True)
-                    with zf.open(entry) as i, open(target, "wb") as o:
-                        import shutil
-                        shutil.copyfileobj(i, o)
-                    audit["files"].append({"path": entry.filename, "bytes": entry.file_size})
+            audit["downloadBytes"] = stored.stat().st_size
+            audit["downloadSha256"] = sha256(stored)
+            audit["downloadKind"] = "zip" if is_zip else "direct_model"
+            # Keep legacy audit schema keys but tag whether original is ZIP or direct binary.
+            audit["archiveBytes"] = stored.stat().st_size
+            audit["archiveSha256"] = sha256(stored)
+            if is_zip:
+                with zipfile.ZipFile(stored) as zf:
+                    items = [i for i in zf.infolist() if not i.is_dir()]
+                    if len(items) > 1000: raise ValueError("too many archive members")
+                    uncompressed = sum(i.file_size for i in items)
+                    if uncompressed > 240_000_000: raise ValueError("uncompressed archive too big")
+                    for entry in items:
+                        target = (folder / "source" / entry.filename).resolve()
+                        if not target.is_relative_to((folder / "source").resolve()):
+                            raise ValueError("zip slip path refused")
+                        if entry.file_size > 150_000_000:
+                            raise ValueError("individual member too big")
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        with zf.open(entry) as i, open(target, "wb") as o:
+                            import shutil
+                            shutil.copyfileobj(i, o)
+                        audit["files"].append({"path": entry.filename, "bytes": entry.file_size})
+            else:
+                target = (folder / "source" / stored.name)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                import shutil
+                shutil.copyfile(stored, target)
+                audit["files"].append({"path": stored.name, "bytes": stored.stat().st_size})
             models = [folder / "source" / e["path"] for e in audit["files"] if Path(e["path"]).suffix.lower() in EXTS and not Path(e["path"]).name.startswith(".")]
             def model_score(p):
                 name = p.name.lower()
