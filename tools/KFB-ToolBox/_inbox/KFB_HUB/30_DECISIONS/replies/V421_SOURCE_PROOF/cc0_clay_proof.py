@@ -32,6 +32,15 @@ SOURCES = [
         "kind": "construction_donor_not_neuschwanstein",
         "selection_hints": ["tower", "castle"],
     },
+    {
+        "id": "chichen_el_castillo_oga_cc0",
+        "source_page": "https://opengameart.org/content/chichen-itza-el-castillo",
+        "download_url": "https://opengameart.org/sites/default/files/chichenitza.zip",
+        "creator": "Esteban Lopez (elopez7)",
+        "license": "CC0-1.0",
+        "kind": "monument_source_el_castillo_not_ballcourt",
+        "selection_hints": ["castillo", "chichen", "pyramid", "temple"],
+    },
 ]
 EXTS = {".blend", ".blend1", ".glb", ".gltf", ".obj", ".fbx"}
 # Prefer inspectable interchange sources to accidental archive backups.
@@ -72,7 +81,7 @@ def fetch():
                         block = response.read(1024 * 1024)
                         if not block: break
                         total += len(block)
-                        if total > 20_000_000:
+                        if total > 50_000_000:
                             raise ValueError("archive too large for bounded source proof")
                         out.write(block)
             archive = folder / "original.zip"
@@ -82,12 +91,12 @@ def fetch():
                 items = [i for i in zf.infolist() if not i.is_dir()]
                 if len(items) > 1000: raise ValueError("too many archive members")
                 uncompressed = sum(i.file_size for i in items)
-                if uncompressed > 150_000_000: raise ValueError("uncompressed archive too big")
+                if uncompressed > 240_000_000: raise ValueError("uncompressed archive too big")
                 for entry in items:
                     target = (folder / "source" / entry.filename).resolve()
                     if not target.is_relative_to((folder / "source").resolve()):
                         raise ValueError("zip slip path refused")
-                    if entry.file_size > 80_000_000:
+                    if entry.file_size > 150_000_000:
                         raise ValueError("individual member too big")
                     target.parent.mkdir(parents=True, exist_ok=True)
                     with zf.open(entry) as i, open(target, "wb") as o:
