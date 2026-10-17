@@ -7,7 +7,9 @@ Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch 
 
 **Merge:**
 - main → **4c7c70e**, ein Fast-Forward auf die Kombi look/mesa @d193606 (enthält fig/karten) + m3/fahrhilfe @66bec2c.
-- Tests auf main: npm test **25/25 PASS** und M-Reihe (run-all M1/M2/M3) läuft gerade (bis m1-rueckwand alle PASS); Push von main, Spiegel und Vorschau folgen direkt danach.
+- Tests auf main: npm test **25/25 PASS** und M-Reihe (run-all M1/M2/M3) **24/24 PASS** (m1-rueckwand nur Bericht).
+- Spiegel `ws1/r3f-frame` @13600d705.
+- **Vorschau ist live:** ws1/preview @5e25358f, `build.json` commit „main@4c7c70e“ → https://ws1-preview.kayfabizarro.pages.dev/ (Fahrprobe `#m1,car`, Bühne `#stage,actors=fb,light=l1`)..
 - Spiegel und Vorschau: siehe unten.
 
 **Neu von Georg: HUD R5f („KFB HUD v4.zip“, Claude-Design-Session 17.10.).** Bitte prüfen und für WS1 einplanen (V-423: Ernte-UI erst nach dem HUD-ZIP).
