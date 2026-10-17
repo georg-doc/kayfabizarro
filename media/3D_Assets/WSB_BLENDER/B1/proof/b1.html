@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSB B1 Mummy Motion Proof</title>
+<style>html,body{margin:0;background:#d9d4ca;overflow:hidden;font:13px system-ui}#msg{position:fixed;left:8px;top:6px;color:#333}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+</head><body><div id="msg">lädt …</div>
+<script type="module">
+/* WSB · B1 · KFB Motion Library (Rig_Medium) on KayKit Mummy_A / Mummy_B.
+   Same clay pipeline as WS0 Blender Run R1/R2 proof_r2.html: three r180, K1 clay-material.v8 + clay-profiles.v2
+   (profile 'figure', hand-measure uniforms x 1/0.47 for native-size Rig_Medium), same hemi + sun light, no overlays (V-383).
+   mode=inspect | measure | sheet&clip= | video   ·   results are POSTed to ../save/<path> (wsb_proof_server.py) */
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const Q = new URLSearchParams(location.search), MODE = Q.get('mode') || 'inspect';
+const SRC = { lib: '../_src/KFB_Motion_Library_Rig_Medium.glb', A: '../_src/Mummy_A.glb', B: '../_src/Mummy_B.glb' };
+const CLIPS = ['kfb_dance_hip_hop_a', 'kfb_dance_slide_hip_hop_a', 'kfb_dance_wave_hip_hop_a', 'kfb_dance_house_a', 'kfb_idle_happy_a'];
+const FPS = 30;
+{ let a = 7; Math.random = () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const job = window.__job = { done: false, err: null, log: [], out: null };
+const log = s => { job.log.push(s); document.getElementById('msg').textContent = s; };
+const save = async (path, body) => { const r = await fetch('../save/' + path, { method: 'POST', body }); if (!r.ok) throw new Error('save ' + path + ' ' + r.status); return path; };
+const loader = new GLTFLoader();
+
+/* ---------- clay (identical to proof_r2.html) ---------- */
+const CM = await import('./vendor/clay-material.v8.js'); const CR = await import('./vendor/clay-relief.v2.js');
+const HK = 1 / 0.47 * (+(Q.get('hk') || 1)); let CU = null;
+async function clayUniforms() { if (CU) return CU;
+  const rel = CR.makeClayRelief({ size: 1024, seed: 11 }), tx = new THREE.DataTexture(rel.data, rel.size, rel.size, THREE.RGBAFormat);
+  tx.wrapS = tx.wrapT = THREE.RepeatWrapping; tx.magFilter = THREE.LinearFilter; tx.minFilter = THREE.LinearMipmapLinearFilter; tx.generateMipmaps = true; tx.anisotropy = 8; tx.needsUpdate = true;
+  CU = CM.makeClayUniforms(THREE, tx);
+  try { CU.uClayPrint.value = await CM.makePrintTexture(THREE, new URL('./vendor/Fingerprints01_3K.png', import.meta.url).href, 2048); CU.uClayPrintOn.value = 1; } catch (e) { CU.uClayPrint.value = tx; }
+  CU.uClayHand.value = 0.5 * HK; CU.uClayTile.value = 1.6 * HK; CU.uClayPrintTile.value = 4.5 * HK; CU.uClayFacetSize.value = 0.65 * HK;
+  return CU; }
+async function clayify(root, { profile = 'figure', seed = 1 } = {}) { const U = await clayUniforms(); const mc = new Map(); let n = 0;
+  root.traverse(o => { if (!o.isMesh) return; const conv = m => { if (!mc.has(m)) mc.set(m, CM.makeClayMaterial(THREE, U, { src: m, profile, scale: CM.PROFILES[profile].scale * HK })); return mc.get(m); };
+    o.material = Array.isArray(o.material) ? o.material.map(conv) : conv(o.material);
+    if (!o.geometry.attributes.claySeed) CM.seedGeometry(THREE, o.geometry, seed + (n++)); });
+  return mc.size; }
+
+/* ---------- loading ---------- */
+const lib = await loader.loadAsync(SRC.lib);
+async function loadFig(key) { const g = await loader.loadAsync(SRC[key]); const fig = g.scene; fig.name = 'Mummy_' + key;
+  const bones = {}, meshes = []; fig.traverse(o => { if (o.isBone) bones[o.name] = o; if (o.isMesh) { meshes.push(o); o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false; } });
+  return { key, fig, bones, meshes, ownClips: g.animations.map(a => a.name) }; }
+const getClip = name => lib.animations.find(a => a.name === name);
+function bindReport(f, clip) { const miss = new Set(); for (const t of clip.tracks) { const node = t.name.split('.')[0]; if (!f.fig.getObjectByName(node)) miss.add(node); } return [...miss]; }
+
+/* ---------- measurement ---------- */
+const PART = n => /^(wrist|hand)/.test(n) ? 'hand' : /^lowerarm/.test(n) ? 'forearm' : /^upperarm/.test(n) ? 'upperarm' : n === 'head' ? 'head'
+  : /^(foot|toes)/.test(n) ? 'foot' : /^lowerleg/.test(n) ? 'shin' : /^upperleg/.test(n) ? 'thigh' : 'torso';
+const V = () => new THREE.Vector3();
+function prepFig(f) { // per-vertex part label + bind-pose edge lengths + torso/head reference volumes
+  f.mixer = new THREE.AnimationMixer(f.fig); f.fig.updateMatrixWorld(true);
+  f.mesh = f.meshes.map(m => { const g = m.geometry, n = g.attributes.position.count, si = g.attributes.skinIndex, sw = g.attributes.skinWeight, part = new Array(n);
+    for (let i = 0; i < n; i++) { let best = 0, bw = -1; for (let k = 0; k < 4; k++) { const w = sw.getComponent(i, k); if (w > bw) { bw = w; best = si.getComponent(i, k); } } part[i] = PART(m.skeleton.bones[best].name); }
+    const es = new Set(), edges = [], idx = g.index.array; for (let t = 0; t < idx.length; t += 3) for (const [a, b] of [[idx[t], idx[t + 1]], [idx[t + 1], idx[t + 2]], [idx[t + 2], idx[t]]]) { const k = a < b ? a * 65536 + b : b * 65536 + a; if (!es.has(k)) { es.add(k); edges.push(a, b); } }
+    return { m, n, part, edges: Uint32Array.from(edges), pos: new Float32Array(n * 3) }; });
+  skin(f); for (const M of f.mesh) { M.rest = edgeLen(M); }
+  // torso core: axis hips->chest, radius = 0.8 x median distance of torso-labelled verts to the axis (bind pose)
+  const hp = f.bones.hips.getWorldPosition(V()), cp = f.bones.chest.getWorldPosition(V()), hd = f.bones.head.getWorldPosition(V());
+  const dT = [], dH = [], hc = V(); let nh = 0;
+  for (const M of f.mesh) for (let i = 0; i < M.n; i++) { const p = V().fromArray(M.pos, i * 3); if (M.part[i] === 'torso') dT.push(segDist(p, hp, cp)); if (M.part[i] === 'head') { hc.add(p); nh++; } }
+  hc.divideScalar(nh); for (const M of f.mesh) for (let i = 0; i < M.n; i++) if (M.part[i] === 'head') dH.push(V().fromArray(M.pos, i * 3).distanceTo(hc));
+  const med = a => a.sort((x, y) => x - y)[a.length >> 1];
+  f.ref = { torsoR: 0.8 * med(dT), headR: 0.8 * med(dH), headOff: f.bones.head.worldToLocal(hc.clone()), hipH: hp.y }; }
+function segDist(p, a, b) { const ab = V().subVectors(b, a), t = Math.max(0, Math.min(1, V().subVectors(p, a).dot(ab) / ab.lengthSq())); return p.distanceTo(a.clone().addScaledVector(ab, t)); }
+function skin(f) { f.fig.updateMatrixWorld(true); const v = V(); for (const M of f.mesh) for (let i = 0; i < M.n; i++) { M.m.getVertexPosition(i, v); v.applyMatrix4(M.m.matrixWorld); M.pos[i * 3] = v.x; M.pos[i * 3 + 1] = v.y; M.pos[i * 3 + 2] = v.z; } }
+function edgeLen(M) { const e = M.edges, p = M.pos, out = new Float32Array(e.length / 2); for (let j = 0; j < out.length; j++) { const a = e[2 * j] * 3, b = e[2 * j + 1] * 3; out[j] = Math.hypot(p[a] - p[b], p[a + 1] - p[b + 1], p[a + 2] - p[b + 2]); } return out; }
+/* point-in-closed-mesh by ray parity (+X ray, Möller–Trumbore); the KayKit parts are closed shells */
+function insideCount(pts, M) { const p = M.pos, idx = M.m.geometry.index.array; let inside = 0, deepest = 0;
+  for (const q of pts) { let hits = 0;
+    for (let t = 0; t < idx.length; t += 3) { const a = idx[t] * 3, b = idx[t + 1] * 3, c = idx[t + 2] * 3;
+      if (Math.max(p[a + 1], p[b + 1], p[c + 1]) < q[1] || Math.min(p[a + 1], p[b + 1], p[c + 1]) > q[1] || Math.max(p[a + 2], p[b + 2], p[c + 2]) < q[2] || Math.min(p[a + 2], p[b + 2], p[c + 2]) > q[2] || Math.max(p[a], p[b], p[c]) < q[0]) continue;
+      const e1y = p[b + 1] - p[a + 1], e1z = p[b + 2] - p[a + 2], e2y = p[c + 1] - p[a + 1], e2z = p[c + 2] - p[a + 2];
+      const det = e1y * e2z - e1z * e2y; if (Math.abs(det) < 1e-12) continue; // ray dir (1,0,0): P = D x e2 = (0,-e2z,e2y)
+      const ty = q[1] - p[a + 1], tz = q[2] - p[a + 2], w = (e1y * tz - e1z * ty) / det;
+      const uu = (ty * e2z - tz * e2y) / det; if (uu < 0 || w < 0 || uu + w > 1) continue;
+      const xHit = p[a] + uu * (p[b] - p[a]) + w * (p[c] - p[a]); if (xHit > q[0]) hits++; }
+    if (hits & 1) { inside++; } }
+  return inside; }
+function frameStats(f) {
+  const s = { minY: {}, stretch: 0, stretchPart: null }, hp = f.bones.hips.getWorldPosition(V());
+  const sample = { hand: [], forearm: [] };
+  s.footMinL = 9; s.footMinR = 9;
+  for (const M of f.mesh) { const L = edgeLen(M), side = /LegLeft$/.test(M.m.name) ? 'L' : /LegRight$/.test(M.m.name) ? 'R' : null;
+    for (let j = 0; j < L.length; j++) { const r = L[j] / Math.max(M.rest[j], 1e-5); if (M.rest[j] >= 0.02 && r > s.stretch) { s.stretch = r; s.stretchPart = M.part[M.edges[2 * j]]; } }
+    for (let i = 0; i < M.n; i++) { const y = M.pos[i * 3 + 1], pt = M.part[i]; if (!(pt in s.minY) || y < s.minY[pt]) s.minY[pt] = y;
+      if (side && pt === 'foot' && y < s['footMin' + side]) s['footMin' + side] = y;
+      if ((pt === 'hand' || pt === 'forearm') && i % 6 === 0) sample[pt].push([M.pos[i * 3], y, M.pos[i * 3 + 2]]); } }
+  const body = f.mesh.find(M => /_Body$/.test(M.m.name)), head = f.mesh.find(M => /_Head$/.test(M.m.name));
+  s.handInBody = insideCount(sample.hand, body); s.handInHead = insideCount(sample.hand, head); s.forearmInHead = insideCount(sample.forearm, head); s.forearmInBody = insideCount(sample.forearm, body);
+  s.nHand = sample.hand.length; s.nForearm = sample.forearm.length;
+  s.footL = f.bones.footl.getWorldPosition(V()).toArray(); s.footR = f.bones.footr.getWorldPosition(V()).toArray(); s.hips = hp.toArray();
+  s.ext = ['handl', 'handr', 'footl', 'footr', 'head', 'hips', 'chest'].map(n => f.bones[n].getWorldPosition(V()).toArray());
+  return s; }
+function energy(fr) { // motion energy: summed speed of hands, feet, head, hips, chest (units/s), circular difference (clips loop)
+  const n = fr.length; return fr.map((s, i) => { const q = fr[(i + 1) % n].ext; let e = 0; s.ext.forEach((p, k) => { e += Math.hypot(q[k][0] - p[0], q[k][1] - p[1], q[k][2] - p[2]); }); return e * FPS; }); }
+function tempoMulti(fr, dur) { // two signals, octave-folded into 80..160 BPM, best agreement wins
+  const hip = tempo(fr.map(s => s.hips[1]), dur, true), en = tempo(energy(fr), dur, false), fold = b => { while (b < 80) b *= 2; while (b >= 160) b /= 2; return b; };
+  const cands = [];
+  for (const [src, t] of [['hipBounce', hip], ['motionEnergy', en]]) if (t.ok) for (const a of t.alt) cands.push({ src, bpm: a.bpm, folded: fold(a.bpm), r: a.r });
+  // score = correlation + support from the other signal within 3 %
+  for (const c of cands) c.score = c.r + cands.filter(o => o.src !== c.src && Math.abs(o.folded - c.folded) / c.folded < 0.03).reduce((m, o) => Math.max(m, o.r), 0);
+  cands.sort((a, b) => b.score - a.score); const win = cands[0];
+  if (!win) return { ok: false, hip, energy: en };
+  const beats = Math.max(1, Math.round(dur * win.folded / 60)), bpmLoop = 60 * beats / dur;
+  const ph = tempo(fr.map(s => s.hips[1]), dur, true, 60 / bpmLoop);
+  return { ok: true, bpmNatural: +win.folded.toFixed(2), bpmLoop: +bpmLoop.toFixed(3), beatsInLoop: beats, source: win.src, agree: win.score > win.r + 1e-9,
+    beatPhaseS: ph.ok ? +ph.beatPhaseS.toFixed(3) : null, candidates: cands.slice(0, 6).map(c => ({ src: c.src, bpm: c.bpm, folded: +c.folded.toFixed(2), r: c.r, score: +c.score.toFixed(3) })) }; }
+function tempo(y, dur, minPhase = true, forcePeriod = null) { // autocorrelation, lags 45..200 BPM, parabolic refinement, loop quantisation, beat phase
+  const n = y.length, m = y.reduce((a, b) => a + b, 0) / n, x = y.map(v => v - m), ac = [];
+  if (forcePeriod) { const P = forcePeriod, bins = 24, acc = new Array(bins).fill(0), cnt = new Array(bins).fill(0);
+    for (let i = 0; i < n; i++) { const b = Math.floor(((i / FPS) % P) / P * bins) % bins; acc[b] += x[i]; cnt[b]++; }
+    const fold = acc.map((a, i) => a / Math.max(1, cnt[i])); let bm = 0; fold.forEach((v, i) => { if (minPhase ? v < fold[bm] : v > fold[bm]) bm = i; });
+    return { ok: true, beatPhaseS: (bm + 0.5) / bins * P, foldAmp: Math.max(...fold) - Math.min(...fold) }; }
+  const lo = Math.floor(FPS * 60 / 200), hi = Math.ceil(FPS * 60 / 45);
+  for (let L = 0; L <= hi + 1; L++) { let s = 0; for (let i = 0; i + L < n; i++) s += x[i] * x[i + L]; ac[L] = s / (n - L); }
+  const norm = ac[0] || 1, peaks = [];
+  for (let L = lo; L <= hi; L++) if (ac[L] > ac[L - 1] && ac[L] >= ac[L + 1] && ac[L] > 0) { const d = (ac[L - 1] - ac[L + 1]) / (2 * (ac[L - 1] - 2 * ac[L] + ac[L + 1])); peaks.push({ lag: L + d, r: ac[L] / norm }); }
+  peaks.sort((a, b) => b.r - a.r); if (!peaks.length) return { ok: false };
+  // prefer the shortest lag whose correlation is within 85 % of the best (avoids picking 2-beat periods)
+  const best = peaks[0], pick = peaks.filter(p => p.r >= 0.85 * best.r).sort((a, b) => a.lag - b.lag)[0];
+  const period = pick.lag / FPS, bpmRaw = 60 / period, beats = Math.max(1, Math.round(dur / period)), bpmLoop = 60 * beats / dur;
+  const P = dur / beats, bins = 24, acc = new Array(bins).fill(0), cnt = new Array(bins).fill(0);
+  for (let i = 0; i < n; i++) { const b = Math.floor(((i / FPS) % P) / P * bins) % bins; acc[b] += x[i]; cnt[b]++; }
+  const fold = acc.map((a, i) => a / Math.max(1, cnt[i])); let bmin = 0; fold.forEach((v, i) => { if (v < fold[bmin]) bmin = i; });
+  return { ok: true, bpmRaw, bpmLoop, beatsInLoop: beats, periodS: P, corr: pick.r, alt: peaks.slice(0, 4).map(p => ({ bpm: +(60 * FPS / p.lag).toFixed(2), r: +p.r.toFixed(3) })),
+    beatPhaseS: (bmin + 0.5) / bins * P, foldAmp: Math.max(...fold) - Math.min(...fold) }; }
+function footSlide(fr, key, hipH) { // contact = foot bone within 6 % hip height of its lowest position (catalogue rule); drift over runs >= 3 frames
+  const ys = fr.map(s => s[key][1]), y0 = Math.min(...ys), th = y0 + 0.06 * hipH, runs = []; let st = -1;
+  for (let i = 0; i <= fr.length; i++) { const c = i < fr.length && ys[i] < th; if (c && st < 0) st = i; if (!c && st >= 0) { if (i - st >= 3) runs.push([st, i - 1]); st = -1; } }
+  const drift = runs.map(([a, b]) => { const p0 = fr[a][key]; let mx = 0; for (let i = a; i <= b; i++) mx = Math.max(mx, Math.hypot(fr[i][key][0] - p0[0], fr[i][key][2] - p0[2])); return { from: a, to: b, drift: mx }; });
+  const onsets = runs.map(r => r[0]); return { runs: drift.length, maxDrift: Math.max(0, ...drift.map(d => d.drift)), worst: drift.sort((a, b) => b.drift - a.drift)[0] || null, onsets, contactShare: runs.reduce((a, [s, e]) => a + e - s + 1, 0) / fr.length }; }
+async function measureAll(figs) {
+  const out = { schema: 'kfb.wsb-b1-measure.v1', fps: FPS, units: 'three.js world units (= m, Rig_Medium ~2.2 tall)', clips: {} };
+  for (const f of figs) prepFig(f);
+  out.ref = Object.fromEntries(figs.map(f => [f.key, { torsoR: +f.ref.torsoR.toFixed(4), headR: +f.ref.headR.toFixed(4), hipH: +f.ref.hipH.toFixed(4) }]));
+  for (const c of CLIPS) { const clip = getClip(c), N = Math.round(clip.duration * FPS), res = {};
+    for (const f of figs) { f.mixer.stopAllAction(); const act = f.mixer.clipAction(clip); act.reset().play(); const fr = [];
+      for (let i = 0; i < N; i++) { f.mixer.setTime(i / FPS); skin(f); fr.push(frameStats(f)); }
+      log(c + ' ' + f.key + ' ' + N + ' frames'); await new Promise(r => setTimeout(r, 0));
+      const hipY = fr.map(s => s.hips[1]), worstOf = k => { let w = 0; fr.forEach((s, i) => { if (s[k] > fr[w][k]) w = i; }); return { v: +fr[w][k].toFixed(4), frame: w }; };
+      const minOf = part => { let w = 0; fr.forEach((s, i) => { if ((s.minY[part] ?? 9) < (fr[w].minY[part] ?? 9)) w = i; }); return { y: +(fr[w].minY[part] ?? NaN).toFixed(4), frame: w }; };
+      const below = (part, eps) => fr.filter(s => (s.minY[part] ?? 9) < -eps).length;
+      const pen = k => { const fs = fr.map((s, i) => [s[k], i]).filter(([v]) => v > 0); return { frames: fs.length, maxVerts: Math.max(0, ...fs.map(x => x[0])), worstFrame: fs.length ? fs.sort((a, b) => b[0] - a[0])[0][1] : null }; };
+      const footMin = fr.map(s => s.minY.foot), sorted = [...footMin].sort((a, b) => a - b), q = p => sorted[Math.min(sorted.length - 1, Math.floor(p * sorted.length))];
+      const st = fr.map(s => s.stretch).sort((a, b) => a - b);
+      const allMin = fr.map(s => Math.min(...Object.values(s.minY)));
+      res[f.key] = { frames: N, tempo: tempoMulti(fr, clip.duration),
+        stretch: { max: worstOf('stretch'), part: fr[worstOf('stretch').frame].stretchPart, p95: +st[Math.floor(0.95 * st.length)].toFixed(3), framesOver1_5: fr.filter(s => s.stretch > 1.5).length },
+        penetration: { sampledHandVerts: fr[0].nHand, sampledForearmVerts: fr[0].nForearm, handInBody: pen('handInBody'), handInHead: pen('handInHead'), forearmInBody: pen('forearmInBody'), forearmInHead: pen('forearmInHead') },
+        ground: { footMinY: { min: +q(0).toFixed(4), p10: +q(0.1).toFixed(4), median: +q(0.5).toFixed(4) }, footMinFrame: minOf('foot').frame, hand: minOf('hand'), head: minOf('head'), torso: minOf('torso'),
+          framesHandBelow: below('hand', 0.005), framesHeadBelow: below('head', 0.005), framesFootBelow2cm: below('foot', 0.02), framesAirborne3cm: allMin.filter(v => v > 0.03).length },
+        slideL: footSlide(fr, 'footL', f.ref.hipH), slideR: footSlide(fr, 'footR', f.ref.hipH),
+        hipY: hipY.map(v => +v.toFixed(4)), footMinY: footMin.map(v => +v.toFixed(4)),
+        perFrame: { footL: fr.map(s => s.footL.map(v => +v.toFixed(4))), footR: fr.map(s => s.footR.map(v => +v.toFixed(4))), footMinL: fr.map(s => +s.footMinL.toFixed(4)), footMinR: fr.map(s => +s.footMinR.toFixed(4)),
+          handInBody: fr.map(s => s.handInBody), handInHead: fr.map(s => s.handInHead), forearmInBody: fr.map(s => s.forearmInBody), forearmInHead: fr.map(s => s.forearmInHead), stretch: fr.map(s => +s.stretch.toFixed(3)) } }; }
+    out.clips[c] = { duration: clip.duration, ...res }; }
+  return out; }
+
+/* ---------- rendering ---------- */
+let R = null;
+function stage(W, H) { if (R) { R.renderer.setSize(W, H); R.cam.aspect = W / H; R.cam.updateProjectionMatrix(); return R; }
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setPixelRatio(1); renderer.setSize(W, H); renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.NoToneMapping;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; renderer.setScissorTest(true); document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color('#d9d4ca');
+  scene.add(new THREE.HemisphereLight(0xfff4e0, 0x3a3226, 1.25));
+  const sun = new THREE.DirectionalLight(0xffffff, 1.8); sun.position.set(2.2, 4.6, 3.4); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+  Object.assign(sun.shadow.camera, { left: -3.5, right: 3.5, top: 3.4, bottom: -1.5, near: 0.5, far: 14 }); sun.shadow.camera.updateProjectionMatrix(); sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.02;
+  scene.add(sun, sun.target);
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.MeshStandardMaterial({ color: '#c7c0b2', roughness: 1 }));
+  ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+  const cam = new THREE.PerspectiveCamera(26, W / H, 0.05, 60);
+  return R = { renderer, scene, cam }; }
+function look(cam, target, azDeg, elDeg, halfH) { const d = halfH / Math.tan(THREE.MathUtils.degToRad(cam.fov / 2)), az = THREE.MathUtils.degToRad(azDeg), el = THREE.MathUtils.degToRad(elDeg);
+  cam.position.set(target.x + d * Math.sin(az) * Math.cos(el), target.y + d * Math.sin(el), target.z + d * Math.cos(az) * Math.cos(el)); cam.lookAt(target); }
+async function dressFigs(figs, gap) { const S = stage(16, 16);
+  for (const [i, f] of figs.entries()) { if (!f.mixer) f.mixer = new THREE.AnimationMixer(f.fig); if (!f.clay) { f.clay = await clayify(f.fig, { profile: 'figure', seed: 10 + i * 50 }); S.scene.add(f.fig); }
+    f.fig.position.set((i - 0.5) * gap, 0, 0); f.fig.rotation.y = (i ? -1 : 1) * THREE.MathUtils.degToRad(+(Q.get('turn') || 12)); }
+  return S; }
+const shot = (canvas, type = 'image/png', q) => canvas.toDataURL(type, q);
+async function renderSheets(figs, clips) {
+  const W = 1920, H = 1080, S = await dressFigs(figs, +(Q.get('gap') || 1.9)); stage(W, H);
+  const meas = await fetch('../data/measure.json').then(r => r.ok ? r.json() : null).catch(() => null), sheets = {};
+  for (const c of clips) { const clip = getClip(c), d = clip.duration, ts = [d / 8, 3 * d / 8, 5 * d / 8];
+    let worst = 7 * d / 8, why = 'phase 7/8';
+    if (meas) { const A = meas.clips[c].A, B = meas.clips[c].B, cand = [];
+      for (const [k, m] of [['A', A], ['B', B]]) { const P = m.penetration;
+        for (const [nm, p, n] of [['hand in body', P.handInBody, P.sampledHandVerts], ['hand in head', P.handInHead, P.sampledHandVerts], ['forearm in body', P.forearmInBody, P.sampledForearmVerts], ['forearm in head', P.forearmInHead, P.sampledForearmVerts]])
+          if (p.worstFrame != null) cand.push([p.maxVerts / n, p.worstFrame, k + ' ' + nm + ' ' + p.maxVerts + '/' + n + ' sampled verts']);
+        cand.push([Math.max(0, -m.ground.footMinY.min) * 2, m.ground.footMinFrame, k + ' foot ' + (-m.ground.footMinY.min * 100).toFixed(1) + ' cm below ground']); }
+      cand.sort((a, b) => b[0] - a[0]); if (cand.length && cand[0][0] > 0.02) { worst = cand[0][1] / FPS; why = 'worst: ' + cand[0][2]; } }
+    ts.push(worst);
+    for (const f of figs) { f.mixer.stopAllAction(); f.mixer.clipAction(clip).reset().play(); }
+    S.renderer.setScissorTest(true);
+    for (const [k, t] of ts.entries()) { for (const f of figs) f.mixer.setTime(t); S.scene.updateMatrixWorld(true);
+      const x = (k % 2) * W / 2, y = (k < 2 ? 1 : 0) * H / 2; S.renderer.setViewport(x, y, W / 2, H / 2); S.renderer.setScissor(x, y, W / 2, H / 2);
+      S.cam.aspect = (W / 2) / (H / 2); S.cam.updateProjectionMatrix(); look(S.cam, new THREE.Vector3(0, 1.05, 0), +(Q.get('az') || 0), +(Q.get('el') || 8), +(Q.get('halfh') || 1.45));
+      S.renderer.render(S.scene, S.cam); }
+    const path = 'renders/B1_sheet_' + c + '.png'; await save(path, shot(S.renderer.domElement)); sheets[c] = { file: path, times_s: ts.map(t => +t.toFixed(3)), panel4: why, layout: '2x2: TL t1, TR t2, BL t3, BR t4; Mummy_A left, Mummy_B right' }; log('sheet ' + c); }
+  await save('data/sheets.json', JSON.stringify(sheets, null, 1)); job.out = sheets; }
+async function renderFrame(figs) { // single evidence frame: ?mode=frame&clip=&t=&az=&el=&halfh=&ty=&name=
+  const W = 1920, H = 1080, S = await dressFigs(figs, +(Q.get('gap') || 1.9)); stage(W, H); const clip = getClip(Q.get('clip'));
+  for (const f of figs) { f.mixer.stopAllAction(); f.mixer.clipAction(clip).reset().play(); f.mixer.setTime(+Q.get('t')); }
+  if (Q.get('only')) figs.forEach(f => { f.fig.visible = f.key === Q.get('only'); if (f.fig.visible) f.fig.position.x = 0; });
+  if (Q.get('seeground')) S.scene.traverse(o => { if (o.isMesh && o.geometry.type === 'PlaneGeometry') { o.material.transparent = true; o.material.opacity = 0.45; o.material.depthWrite = false; } });
+  S.scene.updateMatrixWorld(true); S.renderer.setViewport(0, 0, W, H); S.renderer.setScissor(0, 0, W, H); S.cam.aspect = W / H; S.cam.updateProjectionMatrix();
+  look(S.cam, new THREE.Vector3(+(Q.get('tx') || 0), +(Q.get('ty') || 1.05), 0), +(Q.get('az') || 0), +(Q.get('el') || 8), +(Q.get('halfh') || 1.3));
+  S.renderer.render(S.scene, S.cam); const path = 'renders/' + (Q.get('name') || 'B1_frame') + '.png'; await save(path, shot(S.renderer.domElement)); job.out = path; }
+async function renderVideo(figs) { // beat-locked duet on the song: data/video_plan.json (built from tempo.json + beats.json)
+  const plan = await fetch('../data/video_plan.json').then(r => r.json()), W = plan.w, H = plan.h, S = await dressFigs(figs, +(Q.get('gap') || 1.9)); stage(W, H);
+  S.renderer.setViewport(0, 0, W, H); S.renderer.setScissor(0, 0, W, H); S.cam.aspect = W / H; S.cam.updateProjectionMatrix();
+  look(S.cam, new THREE.Vector3(0, 1.0, 0), +(Q.get('az') || 0), +(Q.get('el') || 8), +(Q.get('halfh') || 1.45));
+  for (const f of figs) { f.mixer.stopAllAction(); f.acts = plan.figs[f.key].map(s => { const clip = getClip(s.clip), a = f.mixer.clipAction(clip); a.reset().play(); a.setEffectiveWeight(0); return { s, a, d: clip.duration }; }); }
+  const clipT = (x, tau) => { const t = x.s.clip_time_at_anchor + (tau - x.s.anchor_beat_song_s) * x.s.timeScale; return ((t % x.d) + x.d) % x.d; };
+  const N = Math.round((plan.song_to_s - plan.song_from_s) * plan.fps), from = +(Q.get('from') || 0), to = Math.min(N, +(Q.get('to') || N));
+  for (let i = from; i < to; i++) { const tau = plan.song_from_s + i / plan.fps;
+    for (const f of figs) { f.acts.forEach((x, k) => { let w = 0; const nx = f.acts[k + 1];
+        if (tau >= x.s.from_song_s && tau < x.s.to_song_s) w = 1;
+        if (nx && tau >= nx.s.from_song_s && tau < nx.s.from_song_s + plan.blend_s) w = 1 - (tau - nx.s.from_song_s) / plan.blend_s;
+        if (k > 0 && tau >= x.s.from_song_s && tau < x.s.from_song_s + plan.blend_s) w = (tau - x.s.from_song_s) / plan.blend_s;
+        x.a.setEffectiveWeight(w); x.a.time = clipT(x, tau); });
+      f.mixer.update(0); }
+    S.scene.updateMatrixWorld(true); S.renderer.render(S.scene, S.cam);
+    await save('_frames/f_' + String(i).padStart(4, '0') + '.jpg', shot(S.renderer.domElement, 'image/jpeg', 0.92)); if (i % 30 === 0) log('video frame ' + i + '/' + N); }
+  job.out = { frames: to - from, of: N }; }
+
+try {
+  const figs = [await loadFig('A'), await loadFig('B')];
+  if (MODE === 'inspect') {
+    const out = { libClips: lib.animations.length, libBones: [], figs: {} };
+    lib.scene.traverse(o => { if (o.isBone) out.libBones.push(o.name); });
+    for (const f of figs) { f.fig.updateMatrixWorld(true); const box = new THREE.Box3().setFromObject(f.fig);
+      out.figs[f.key] = { bones: Object.keys(f.bones), ownClips: f.ownClips.length,
+        meshes: f.meshes.map(m => ({ name: m.name, skinned: !!m.isSkinnedMesh, verts: m.geometry.attributes.position.count, tris: m.geometry.index ? m.geometry.index.count / 3 : null, mat: (Array.isArray(m.material) ? m.material : [m.material]).map(x => x.name + (x.map ? '+map' : '')) })),
+        bbox: [box.min.toArray(), box.max.toArray()],
+        hipsY: f.bones.hips ? f.bones.hips.getWorldPosition(new THREE.Vector3()).y : null,
+        clips: Object.fromEntries(CLIPS.map(c => { const cl = getClip(c); return [c, cl ? { dur: +cl.duration.toFixed(4), tracks: cl.tracks.length, unbound: bindReport(f, cl) } : 'MISSING']; })) }; }
+    job.out = out; await save('data/inspect.json', JSON.stringify(out, null, 1)); log('inspect ok');
+  }
+  if (MODE === 'measure') { job.out = await measureAll(figs); await save('data/measure.json', JSON.stringify(job.out)); log('measure ok'); }
+  if (MODE === 'sheet') await renderSheets(figs, (Q.get('clip') || CLIPS.join(',')).split(','));
+  if (MODE === 'video') await renderVideo(figs);
+  if (MODE === 'frame') await renderFrame(figs);
+  job.done = true;
+} catch (e) { job.err = String(e && e.stack || e); log('FEHLER ' + job.err); }
+</script></body></html>

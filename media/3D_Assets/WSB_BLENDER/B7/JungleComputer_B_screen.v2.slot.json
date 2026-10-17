@@ -1,0 +1,142 @@
+{
+ "file": "~/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/B7/JungleComputer_B_screen.v2.glb",
+ "bytes": 6378820,
+ "sha256": "4d3f53b1494e0eb26051386365363a5ebb9ca623ffc6c740b3c64e777c41db2b",
+ "source": "~/Dropbox/CLAUDE/MeshyModels/Meshy_AI_jungle_computer_diora_1017014450_image-to-3d-texture.glb (sha256 7e9663bf…46531, 7,0 Mio. Dreiecke) → JungleComputer_A_browser.v3.glb (80 k, Basis y = 0, Detailflächen geschützt dezimiert, Normal-Bake vom Original, braune Stufen-Flecken umgefärbt)",
+ "mode": "FRONT_DISPLAY vor dem Monitor (V-397): B vier gezimmerte, überstehende, abgerundete Holzbalken, Lianen-Seil an den Ecken",
+ "story": "Die Anhänger haben der heiligen Karte einen Halter gezimmert: vier Balken aus dem Holz der Dschungelbäume, überstehend, mit Lianen-Seil gebunden, vor den alten Bildschirm gestellt.",
+ "targetAspect": 1.793,
+ "frame": {
+  "node": "kfb_screen_frame",
+  "tris": 16512,
+  "frontZ_u": 0.0267,
+  "material": "kfb_screen_frame_wood #8A5634 + kfb_rope #CDB27A",
+  "clayProfile": "prop"
+ },
+ "slot": {
+  "node": "kfb_screen_slot",
+  "space": "GLB-Modellraum u, Y oben, vorne +Z, Basis y = 0",
+  "corners_u": {
+   "topLeft": [
+    -0.262,
+    0.7883,
+    0.0207
+   ],
+   "topRight": [
+    0.162,
+    0.7883,
+    0.0207
+   ],
+   "bottomRight": [
+    0.162,
+    0.5518,
+    0.0207
+   ],
+   "bottomLeft": [
+    -0.262,
+    0.5518,
+    0.0207
+   ]
+  },
+  "center_u": [
+   -0.05,
+   0.67,
+   0.0207
+  ],
+  "normalAtCenter": [
+   0,
+   0,
+   1
+  ],
+  "width_u": 0.424,
+  "height_u": 0.2365,
+  "aspect": 1.793,
+  "uv": "u 0→1 links→rechts, v 0→1 oben→unten (glTF; three.js-Textur flipY = false)",
+  "corners_m": {
+   "topLeft": [
+    -1.1,
+    3.311,
+    0.087
+   ],
+   "topRight": [
+    0.68,
+    3.311,
+    0.087
+   ],
+   "bottomRight": [
+    0.68,
+    2.317,
+    0.087
+   ],
+   "bottomLeft": [
+    -1.1,
+    2.317,
+    0.087
+   ]
+  },
+  "visibleSize_m": [
+   1.78,
+   0.99
+  ],
+  "stageTransform": "p_m = (x·s, y·s, z·s), s = 4.2 m/u, Basis y = 0"
+ },
+ "idle": {
+  "node": "kfb_screen_idle",
+  "note": "Ruhezustand ohne Billboard (Georg 17.10.): Motiv aus dem Original unverzerrt abfotografiert (ortho, nur Albedo), flach 2 mm vor der gewölbten Glasmitte; Laufzeit: unlit. frame+slot standardmäßig aus, idle an.",
+  "glass_u": {
+   "x": [
+    -0.2619999999999999,
+    0.16200000000000042
+   ],
+   "y": [
+    0.508,
+    0.8320000000000003
+   ],
+   "z": -0.0132,
+   "aspect": 1.309
+  }
+ },
+ "billboard": {
+  "defaultVisible": false,
+  "_note": "wie Portal-Ruine: kfb_screen_frame + kfb_screen_slot ausgeblendet, kfb_screen_idle sichtbar; beim Kartenspiel umgekehrt"
+ },
+ "eyes": {
+  "status": "nur Anker gesetzt, kein Augen-Render (Georg 17.10.: zurückgestellt bis Figurenkarte V-391)",
+  "cyclops": {
+   "node": "KFB_Eye_C_anchor",
+   "center_u": [
+    0.36300000000000004,
+    0.555,
+    -0.002187785762259864
+   ],
+   "radius_u": 0.04700000000000004,
+   "axes": "lokal +Z = außen (frontal, keine Außen-Normalen V-201), +Y = oben, Skalierung = Augenradius",
+   "what": "rote Linse im rechten Lautsprecher"
+  },
+  "alternative": {
+   "nodes": [
+    "KFB_Eye_L_anchor_mask_alt",
+    "KFB_Eye_R_anchor_mask_alt"
+   ],
+   "what": "Steinmaske über dem Monitor, zwei Glyphen-Augen",
+   "radius_u": 0.026
+  }
+ },
+ "defaultCamera": {
+  "pos_u": [
+   0.619,
+   0.571,
+   3.214
+  ],
+  "target_u": [
+   0.024,
+   0.476,
+   0.0
+  ],
+  "fovV_deg": 30,
+  "note": "Weit-Ansicht der Proofs (Meter: pos 2,6/2,4/13,5, Ziel 0,1/2,0/0)"
+ },
+ "scale_m_per_u": 4.2,
+ "scaleBasis": "Treppe: Setzstufen ≈ 0,045 u → 0,19 m; Bildschirmglas 0,424 × 0,324 u = 1,78 × 1,36 m",
+ "testCard": "KFB_HUB/30_DECISIONS/replies/MODULE_INVENTORY_R1/proofs/card_forget_utopia_7.png (1490×831)"
+}
