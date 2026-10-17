@@ -1,0 +1,548 @@
+{
+  "schema": "kfb.c0-source/1",
+  "repository": "georg-doc/kayfabizarro",
+  "baseCommit": "5650b6c54d8789b20ea80abe857688173d506d3b",
+  "registry": {
+    "schema": "kfb.asset-registry.v1",
+    "sourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+    "counts": {
+      "byKind": {
+        "audio": 1689,
+        "image-2d": 6589,
+        "model-3d": 6304
+      },
+      "byRoot": {
+        "media/2D_Assets": 5132,
+        "media/3D_Assets": 9450
+      },
+      "decks": 4,
+      "dependencies": {
+        "complete": 3684,
+        "embedded": 1887,
+        "missing": 339,
+        "unresolved": 394
+      },
+      "packs": 112,
+      "problems": {
+        "DUPLICATE_NAME": 670,
+        "MISSING_REFERENCED_FILE": 339,
+        "UNRESOLVED_FBX_DEPENDENCY": 305,
+        "UNRESOLVED_MODEL_DEPENDENCY": 89
+      },
+      "textureCandidates": 573,
+      "total": 14582
+    }
+  },
+  "packs": {
+    "tiny-treats-pleasant-picnic-1-0-free": {
+      "packId": "tiny-treats-pleasant-picnic-1-0-free",
+      "displayName": "Tiny_Treats_Pleasant_Picnic_1.0_FREE",
+      "root": "media/3D_Assets/Tiny_Treats_Pleasant_Picnic_1.0_FREE",
+      "assetCount": 51,
+      "kinds": {
+        "image-2d": 10,
+        "model-3d": 41
+      },
+      "formats": {
+        "gltf": 41,
+        "png": 10
+      },
+      "registrySourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+    },
+    "tiny-treats-pretty-park-1-0-free": {
+      "packId": "tiny-treats-pretty-park-1-0-free",
+      "displayName": "Tiny_Treats_Pretty_Park_1.0_FREE",
+      "root": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE",
+      "assetCount": 34,
+      "kinds": {
+        "image-2d": 6,
+        "model-3d": 28
+      },
+      "formats": {
+        "gltf": 28,
+        "png": 6
+      },
+      "registrySourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+    },
+    "bubbly-bathroom-tiny-treats-1-1": {
+      "packId": "bubbly-bathroom-tiny-treats-1-1",
+      "displayName": "Bubbly_Bathroom_Tiny_Treats_1-1",
+      "root": "media/3D_Assets/Bubbly_Bathroom_Tiny_Treats_1-1",
+      "assetCount": 89,
+      "kinds": {
+        "image-2d": 5,
+        "model-3d": 84
+      },
+      "formats": {
+        "gltf": 84,
+        "png": 5
+      },
+      "registrySourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+    },
+    "kaykit-medieval-hexagon-pack-1-0-free": {
+      "packId": "kaykit-medieval-hexagon-pack-1-0-free",
+      "displayName": "KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "root": "media/3D_Assets/KayKit_Medieval_Hexagon_Pack_1.0_FREE",
+      "assetCount": 240,
+      "kinds": {
+        "image-2d": 19,
+        "model-3d": 221
+      },
+      "formats": {
+        "gltf": 221,
+        "jpg": 5,
+        "png": 14
+      },
+      "registrySourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+    },
+    "kenney-platformer-kit": {
+      "packId": "kenney-platformer-kit",
+      "displayName": "kenney_platformer-kit",
+      "root": "media/3D_Assets/kenney_platformer-kit",
+      "assetCount": 158,
+      "kinds": {
+        "image-2d": 5,
+        "model-3d": 153
+      },
+      "formats": {
+        "glb": 153,
+        "png": 5
+      },
+      "registrySourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+    },
+    "kaykit-mystery-series6": {
+      "packId": "kaykit-mystery-series6",
+      "displayName": "KayKit_Mystery_Series6",
+      "root": "media/3D_Assets/KayKit_Mystery_Series6",
+      "assetCount": 916,
+      "kinds": {
+        "image-2d": 268,
+        "model-3d": 648
+      },
+      "formats": {
+        "blend": 61,
+        "fbx": 242,
+        "glb": 82,
+        "gltf": 146,
+        "obj": 117,
+        "png": 268
+      },
+      "registrySourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+    },
+    "tiny-treats-homely-house-1-0-free": {
+      "packId": "tiny-treats-homely-house-1-0-free",
+      "displayName": "Tiny_Treats_Homely_House_1.0_FREE",
+      "root": "media/3D_Assets/Tiny_Treats_Homely_House_1.0_FREE",
+      "assetCount": 31,
+      "kinds": {
+        "image-2d": 4,
+        "model-3d": 27
+      },
+      "formats": {
+        "gltf": 27,
+        "png": 4
+      },
+      "registrySourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+    },
+    "tiny-treats-bakery-interior-1-1-free": {
+      "packId": "tiny-treats-bakery-interior-1-1-free",
+      "displayName": "Tiny_Treats_Bakery_Interior_1.1_FREE",
+      "root": "media/3D_Assets/Tiny_Treats_Bakery_Interior_1.1_FREE",
+      "assetCount": 123,
+      "kinds": {
+        "image-2d": 9,
+        "model-3d": 114
+      },
+      "formats": {
+        "gltf": 114,
+        "png": 9
+      },
+      "registrySourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+    },
+    "kaykit-medieval-builder-pack-1-0": {
+      "packId": "kaykit-medieval-builder-pack-1-0",
+      "displayName": "KayKit Medieval Builder Pack 1.0",
+      "root": "media/3D_Assets/KayKit Medieval Builder Pack 1.0",
+      "assetCount": 233,
+      "kinds": {
+        "image-2d": 7,
+        "model-3d": 226
+      },
+      "formats": {
+        "glb": 226,
+        "png": 7
+      },
+      "registrySourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+    },
+    "kaykit-dungeon-pack-1-1-free-2": {
+      "packId": "kaykit-dungeon-pack-1-1-free-2",
+      "displayName": "KayKit_Dungeon_Pack_1.1_FREE 2",
+      "root": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2",
+      "assetCount": 227,
+      "kinds": {
+        "image-2d": 20,
+        "model-3d": 207
+      },
+      "formats": {
+        "gltf": 207,
+        "png": 20
+      },
+      "registrySourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+    },
+    "tiny-treats-house-plants-1-0-free-2": {
+      "packId": "tiny-treats-house-plants-1-0-free-2",
+      "displayName": "Tiny_Treats_House_Plants_1.0_FREE 2",
+      "root": "media/3D_Assets/Tiny_Treats_House_Plants_1.0_FREE 2",
+      "assetCount": 117,
+      "kinds": {
+        "image-2d": 4,
+        "model-3d": 113
+      },
+      "formats": {
+        "gltf": 113,
+        "png": 4
+      },
+      "registrySourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc"
+    }
+  },
+  "tinyTreatsClassification": {
+    "tiny-treats-bakery-interior-1-1-free": {
+      "structural": "PROVEN_MODULAR_INTERIOR",
+      "looseScenery": "PROVEN"
+    },
+    "bubbly-bathroom-tiny-treats-1-1": {
+      "structural": "PROVEN_MODULAR_INTERIOR",
+      "looseScenery": "PROVEN"
+    },
+    "tiny-treats-pretty-park-1-0-free": {
+      "structural": "PROVEN_GROUND_MODULES",
+      "looseScenery": "PROVEN"
+    },
+    "tiny-treats-pleasant-picnic-1-0-free": {
+      "structural": "NOT_PROVEN",
+      "looseScenery": "PROVEN"
+    },
+    "tiny-treats-homely-house-1-0-free": {
+      "structural": "LIMITED_GROUND_SCENE_PARTS_ONLY",
+      "looseScenery": "PROVEN"
+    },
+    "tiny-treats-house-plants-1-0-free-2": {
+      "structural": "UNKNOWN_CONFLICT_WITH_BRIEFING",
+      "looseScenery": "PROVEN",
+      "note": "Current registry shard exposes plant/pot/leaf/vine families and no wall/floor/door/modular filename in C0 scan."
+    }
+  },
+  "proofs": {
+    "tell-modular": {
+      "id": "tell-modular",
+      "sourcePath": "media/3D_Assets/Tiny_Treats_Bakery_Interior_1.1_FREE/Assets/gltf/door_modular.gltf",
+      "sourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+      "blobSha": "7a8d9da67ef28e8ac07c5142b6b909160f63d63e",
+      "packId": "tiny-treats-bakery-interior-1-1-free",
+      "measurement": {
+        "size": [
+          1.60001573230835,
+          2.8000003695487976,
+          0.7399995923042297
+        ],
+        "min": [
+          -3.3046813996406854e-7,
+          7.748603820800781e-7,
+          -0.3700000047683716
+        ],
+        "max": [
+          1.60001540184021,
+          2.8000011444091797,
+          0.36999958753585815
+        ],
+        "baseY": 7.748603820800781e-7,
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "pivotNormalized": [
+          2.0654055662771558e-7,
+          -2.7673581421881813e-7,
+          0.5000002819140157
+        ]
+      },
+      "scaleAnchor": "height 2.800 → 2.05 target = scale 0.732",
+      "collision": "CONNECTOR VISUAL · collision REVIEW",
+      "evidence": "FOUND · MEASURED · BROWSER SEEN"
+    },
+    "carry": {
+      "id": "carry",
+      "sourcePath": "media/3D_Assets/KayKit_Dungeon_Pack_1.1_FREE 2/Assets/gltf/floor_tile_large.gltf",
+      "sourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+      "blobSha": "eb63bcfb388d316118a9779e2b314439e5707359",
+      "packId": "kaykit-dungeon-pack-1-1-free-2",
+      "measurement": {
+        "size": [
+          4,
+          0.15000001713633537,
+          4
+        ],
+        "min": [
+          -2,
+          -0.10000000894069672,
+          -2
+        ],
+        "max": [
+          2,
+          0.05000000819563866,
+          2
+        ],
+        "baseY": -0.10000000894069672,
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "pivotNormalized": [
+          0.5,
+          0.6666666501098227,
+          0.5
+        ]
+      },
+      "scaleAnchor": "footprint 4.000 × 4.000 @ scale 1.0",
+      "collision": "SUPPORT_SURFACE_CANDIDATE · consumer SOLID proxy",
+      "evidence": "FOUND · MEASURED · BROWSER SEEN"
+    },
+    "tell-loose": {
+      "id": "tell-loose",
+      "sourcePath": "media/3D_Assets/Tiny_Treats_Pretty_Park_1.0_FREE/Assets/gltf/bench.gltf",
+      "sourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+      "blobSha": "7b2193305a4f84a953d2e35cff99ed4ae2c74e4b",
+      "packId": "tiny-treats-pretty-park-1-0-free",
+      "measurement": {
+        "size": [
+          2,
+          1.405943751335144,
+          1.316649854183197
+        ],
+        "min": [
+          -1,
+          0,
+          -0.7166498303413391
+        ],
+        "max": [
+          1,
+          1.405943751335144,
+          0.6000000238418579
+        ],
+        "baseY": 0,
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "pivotNormalized": [
+          0.5,
+          0,
+          0.5442979605127616
+        ]
+      },
+      "scaleAnchor": "height @ authored scale 1.0",
+      "collision": "LOOSE PROP · collision REVIEW",
+      "evidence": "FOUND · MEASURED · BROWSER SEEN"
+    },
+    "act": {
+      "id": "act",
+      "sourcePath": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+      "sourceCommit": "5650b6c54d8789b20ea80abe857688173d506d3b",
+      "blobSha": "f202a1c2f1670ab6045176af6621c94041124e76",
+      "reader": {
+        "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+        "blobSha": "a84b2c92a00f7764088c4916030327eb04a91c5c"
+      },
+      "host": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/character/gltf/Driver.glb",
+        "sourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "blobSha": "1a25cb515a7f0332df3bc2d1909d7383f06b42fc"
+      },
+      "measurement": {
+        "size": [
+          1.942506511197077,
+          2.2781131926713227,
+          0.9938296377658844
+        ],
+        "min": [
+          -0.9712568318768479,
+          4.089128929961584e-7,
+          -0.45999982953071594
+        ],
+        "max": [
+          0.9712496793202291,
+          2.2781136015842156,
+          0.5338298082351685
+        ],
+        "baseY": 4.089128929961584e-7,
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "pivotNormalized": [
+          0.5000018410637436,
+          -1.794963017253176e-7,
+          0.4628558175873979
+        ]
+      },
+      "scaleAnchor": "assembled figure height 2.278 @ scale 1.0",
+      "collision": "ACTOR PRESENTATION · runtime owns capsule/hitbox",
+      "evidence": "CONTRACT FOUND · GRAFT MOUNTED · MEASURED · BROWSER SEEN"
+    },
+    "inhabit": {
+      "id": "inhabit",
+      "sourcePath": "tools/resident_atlas/modules/clown-juggling-island.module.json",
+      "sourceCommit": "be4843354c5cf420ddecbb25ed5a51aa5f21ca18",
+      "blobSha": "1c75730143e3481b43edaa8e7231e1a853f7834d",
+      "actor": {
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb",
+        "sourceCommit": "29aac1061bdd73736351cb856fa9f1e322478abc",
+        "blobSha": "9d5db2f3a00694b49c6ba182a3b51ebd370f09c8"
+      },
+      "adapter": "tools/resident_atlas/modules/runtime/s6-resident-module.js",
+      "measurement": {
+        "size": [
+          7.768487763404846,
+          4.632168509192345,
+          4.60578191280365
+        ],
+        "min": [
+          -3.882872700691223,
+          0,
+          -2.8328727006912233
+        ],
+        "max": [
+          3.8856150627136232,
+          4.632168509192345,
+          1.7729092121124268
+        ],
+        "baseY": 0,
+        "pivot": [
+          0,
+          0,
+          0
+        ],
+        "pivotNormalized": [
+          0.49982349447499175,
+          0,
+          0.6150687883888071
+        ]
+      },
+      "scaleAnchor": "module root · scene.scale = 1",
+      "collision": "NONE IN MODULE · support/collision consumer-owned",
+      "evidence": "FOUND · MODULE MOUNTED · MEASURED · BROWSER SEEN"
+    }
+  },
+  "modules": {
+    "resident": {
+      "manifest": "tools/resident_atlas/modules/clown-juggling-island.module.json",
+      "adapter": "tools/resident_atlas/modules/runtime/s6-resident-module.js",
+      "definition": {
+        "schema": "kfb.resident-scene-module/1",
+        "id": "clown-juggling-island",
+        "title": "Clown · Juggling Island",
+        "status": "candidate-only",
+        "source": {
+          "repo": "georg-doc/kayfabizarro",
+          "commit": "be4843354c5cf420ddecbb25ed5a51aa5f21ca18",
+          "residentRecipe": "tools/resident_atlas_s6/data/cast.js",
+          "residentId": "clown",
+          "builder": "tools/resident_atlas_s6/lib/atlas.js",
+          "adapter": "tools/resident_atlas/modules/runtime/s6-resident-module.js",
+          "note": "Pinned after Clown recipe ownership fix, cascade syntax fix and alternating-hand correction; later docs/tests may advance branch without changing this runtime source."
+        },
+        "scene": {
+          "anchor": "support-top-center",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotationYDeg": 0,
+          "scale": 1,
+          "activity": "juggle-cascade-v1"
+        },
+        "activity": {
+          "kind": "juggle-cascade-v1",
+          "count": 3,
+          "props": [
+            "pin_blue",
+            "pin_green",
+            "pin_red"
+          ],
+          "apex": 0.85,
+          "gravity": 9.81,
+          "dwellBeats": 0.45,
+          "spinHalfTurns": 2,
+          "note": "Three-club proof only. 4–6 clubs require trajectory/collision proof before promotion."
+        },
+        "support": {
+          "owner": "consumer",
+          "collisionOwnedByConsumer": true,
+          "minFlatFootprintCells": [
+            4,
+            4
+          ],
+          "recommendedPlatformer": {
+            "sourceStatus": "candidate donor from current Claude export; consumer must re-pin when integrated",
+            "packRoot": "media/3D_Assets/Platformer Game Kit - Dec 2021/",
+            "packCommit": "eb48f50489b9e4903ec1e3d2fb1837605ce7d792",
+            "theme": "grass",
+            "widthCells": 4,
+            "depthCells": 4,
+            "anchor": "top-center",
+            "rule": "Use the Platformer consumer's measured cell and SOLID/VISUAL separation; this module must not write collision."
+          }
+        },
+        "lifecycle": {
+          "mount": "mountResidentSceneModule(def, { parent, anchor, onProgress })",
+          "update": "module.update(dt)",
+          "dispose": "module.dispose()"
+        },
+        "boundaries": [
+          "No player physics, collision, camera, portal, progression or persistence ownership.",
+          "No asset identity rewrite; paths remain exact GitHub/KayKit sources.",
+          "Resident Atlas S6 owns the vignette/activity evidence; consumer owns world placement."
+        ],
+        "open": [
+          "Browser/mobile visual acceptance of the three-club loop.",
+          "4–6 club variants remain unapproved until trajectories and clearances are measured.",
+          "Platformer integration is not performed in this slice."
+        ]
+      }
+    },
+    "graft": {
+      "contract": "tools/KFB-ToolBox/kfb-rigs-embed-v3/contracts/kfb-pet-graft-driver.v4.json",
+      "reader": "tools/KFB-ToolBox/kfb-rigs-embed-v3/frizzlegraft-v1/graft-mount.v1.js",
+      "definition": {
+        "contractMeta": {
+          "contract": "1.3.0",
+          "updated": "2026-09-13",
+          "source": "KFB Pet Studio v5",
+          "label": "single",
+          "count": 1,
+          "ids": [
+            "graft-driver"
+          ],
+          "petVersions": {
+            "graft-driver": 7
+          },
+          "leafCounts": {
+            "graft-driver": 121
+          }
+        },
+        "pet": {
+          "id": "graft-driver",
+          "kind": "biped",
+          "module": "Graft",
+          "variant": "driver"
+        }
+      }
+    }
+  },
+  "rule": "References only. No asset copies. Central registry remains asset identity/provenance owner."
+}
