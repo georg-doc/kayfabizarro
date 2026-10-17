@@ -1,6 +1,6 @@
 {
   "schema": "kfb.landmark-candidates/1",
-  "revision": "R1.1-source-proof-two",
+  "revision": "R1.2-georg-chromatic-surreal-style",
   "date": "2026-10-17",
   "ticket": "V-421",
   "owner": "KFB existing Asset Librarian view / existing img2threejs landmark authoring",
@@ -19,17 +19,18 @@
     "getAssetCalls": 0
   },
   "previewPolicy": {
-    "V346": "clay preview required per candidate before Georg",
+    "V346": "Source-isolated original and genuine WSB clay preview required per candidate before Georg; current two diagnostic flat-material renders are not final KFB clay.",
     "V383": "never draw markup over source image",
     "allCandidatePreviewsGenerated": 2,
-    "sourceIsolatedMeshes": 2
+    "sourceIsolatedMeshes": 2,
+    "styleReviewStatus": "WS0_TUNE_REAL_CLAY_NOT_PROVEN"
   },
   "assetLibraryView": {
     "name": "Landmark-Kandidaten",
     "owner": "existing KFB Asset Librarian Site; do not create separate tool",
     "state": "SPEC_ONLY_NO_UI_WRITE",
     "selectButtonLabel": "Auswählen",
-    "buttonState": "DISABLED_UNTIL_LICENSE_SOURCE_CLAY_PREVIEW_VERIFIED",
+    "buttonState": "DISABLED_UNTIL_REAL_CLAY_AND_RIGHTS_WS0_REVIEW",
     "selectionPersistence": "existing Site/owner decision flow; no invented save backend"
   },
   "summary": {
@@ -51,7 +52,11 @@
       "cartoonification": {
         "instructions": "Reuse existing KFB grouped monoliths; oversize upright stones, rounded lintels; palette existing Stonehenge structure #969789, moss #71796e, gold accent #c7a65e.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -172,7 +177,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -187,7 +192,11 @@
       "cartoonification": {
         "instructions": "Four exaggerated stacked animals, rounded feet, deliberately readable silhouettes; earth cream and warm character colours from V-305 palette, no hardcoded new palette.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -263,7 +272,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -278,7 +287,11 @@
       "cartoonification": {
         "instructions": "Reduce to stepped towers, big turrets and balcony; caramel-cream stone, periwinkle roofs, warm gold accent proposed through V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -368,7 +381,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -382,7 +395,11 @@
       "cartoonification": {
         "instructions": "Broad hero stairs, 3 bold platform tiers, playable steps; baked-earth terracotta and warm sand from V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -457,7 +474,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -472,7 +489,11 @@
       "cartoonification": {
         "instructions": "Open, offset concentric galleries with oversized arches; warm ochre masonry, muted teal shadow role, ochre-gold accent via V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -548,7 +569,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -563,7 +584,11 @@
       "cartoonification": {
         "instructions": "Radial timber ring, open roof and audience tiers, oversized stage; timber honey/cream and red cloth accent via V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -651,7 +676,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -667,7 +692,11 @@
       "cartoonification": {
         "instructions": "Rounded monumental faces and three distinct expressions, grounded plinth; volcanic stone charcoal, mineral cream edge and island vegetation from host roles.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -776,7 +805,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -791,7 +820,11 @@
       "cartoonification": {
         "instructions": "Make crown, torch and pedestal read at a distance; oxidized mint-patina, warm cream pedestal, restrained gold flame from V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -900,7 +933,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -915,7 +948,11 @@
       "cartoonification": {
         "instructions": "Stepped temple with outsized ball-court rings, feathered serpent motif; limestone cream, verdant shadow and clay red accents from V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -990,7 +1027,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -1005,7 +1042,11 @@
       "cartoonification": {
         "instructions": "Keep 3-tier mandala walk, oversized bells, broad stairs; volcanic-grey stone, cream relief and warm clay accents through V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -1085,7 +1126,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     }
   ],
@@ -1118,5 +1159,36 @@
     "Hiroshima",
     "Mount Rushmore"
   ],
-  "nextGate": "WS0_REVIEW_TWO_SOURCE_PROOFS_THEN_WSA_COMPLETE_REMAINING_SOURCE_PREVIEWS"
+  "nextGate": "WS0_REVIEW_TWO_SOURCE_PROOFS_THEN_WSA_COMPLETE_REMAINING_SOURCE_PREVIEWS",
+  "styleDirection": {
+    "status": "GEORG_STYLE_DIRECTION_ADDENDUM_V421",
+    "reference": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/LANDMARK_CHROMATIC_DIORAMA_STYLE_R1.md",
+    "paletteSource": "ONE existing V-305 kfb-cartoon-palette.js; six colour set of active zone/biome/card deck",
+    "paletteSize": 6,
+    "semanticObjectColoursAreFixed": false,
+    "assignmentRule": "Any of six actual colours can be remapped to any diorama visual object class while preserving scene harmony and legibility; no extra unscoped colour generator.",
+    "examples": [
+      {
+        "object": "clouds",
+        "requestedAppearance": "purple/violet",
+        "assetState": "MISSING_NOT_BUILT"
+      },
+      {
+        "object": "tree_trunks",
+        "requestedAppearance": "light blue/cyan",
+        "assetState": "EXISTING_MESHES_COLOUR_ASSIGNMENT_NOT_TESTED"
+      },
+      {
+        "object": "tree_canopies",
+        "requestedAppearance": "yellow",
+        "assetState": "EXISTING_MESHES_COLOUR_ASSIGNMENT_NOT_TESTED"
+      }
+    ],
+    "sampleColorsNotHardcoded": true,
+    "cloudAssetStatus": "OPEN_FIND_EXISTING_SKY_CLOUD_OWNER_AND_SOURCE; NOT IMPLEMENTED",
+    "sourceImageMustRemainUnmodified": true,
+    "distinction": "Six active palette colours are not the six Fluff story-mode types",
+    "ws0Evaluation": "PR418 TUNE: no pseudo clay; WSB owns true clay finishing; 2 existing renders geometry research evidence only",
+    "integrationStatus": "SPEC_ONLY"
+  }
 }
