@@ -1,0 +1,168 @@
+{
+ "schema": "kfb.proof-manifest/1",
+ "stage": "kfb-proof-stage.v1",
+ "created": "2026-10-17T22:10:13.831Z",
+ "input": {
+  "id": "billboard_lamps",
+  "type": "prop",
+  "card": null,
+  "cardSha256": null,
+  "cardSchema": null,
+  "cardApproval": null,
+  "glb": "hub:50_BLENDER/B22/KFB_Billboard_Lamps.r2.glb",
+  "glbSha256": "5b4351fd0690d47cb0540e03badb4b7833abff4e9ee0700c243b071d77daa7b1",
+  "glbBytes": 1624248,
+  "cardBodySha256": null,
+  "glbMatchesCard": null,
+  "faceTransformsFrom": "card",
+  "private": false,
+  "displayName": "billboard_lamps",
+  "glbPathLocal": "~/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/B22/KFB_Billboard_Lamps.r2.glb",
+  "cardPathLocal": null,
+  "glbSha256_node": "5b4351fd0690d47cb0540e03badb4b7833abff4e9ee0700c243b071d77daa7b1"
+ },
+ "modules": {
+  "stage": "kfb-proof-stage.v1",
+  "clay": "kfb-clay.v1.1",
+  "light": "kfb.stage-light/1 (kfb-stage-light.v1)",
+  "eyes": "kfb-proof-eyes.v1",
+  "eyeRig": "pet-eye-rig.v6",
+  "lid": "clay-skin-attach.v1 + clay-eyelid.v3 (E2)",
+  "three": "r180"
+ },
+ "status": "FAIL",
+ "gates": {
+  "G1": {
+   "name": "Augen (nur Figuren)",
+   "result": "N/A",
+   "detail": "Prop/Bühne ohne Augen-Anker"
+  },
+  "G2": {
+   "name": "Texturen, Materialien, Normalen",
+   "result": "PASS",
+   "detail": "keine fehlenden Texturen, kein Standard-/Magenta-Material, keine NaN-Normalen"
+  },
+  "G3": {
+   "name": "Bodenkontakt ±1 cm",
+   "result": "FAIL",
+   "detail": "tiefster Punkt y = -3.70 cm (versinkt)",
+   "minY_m": -0.037
+  },
+  "G4": {
+   "name": "Fremdteile, lose Inseln, Löcher (Warnung)",
+   "result": "WARN",
+   "detail": "64 Inseln · lose < 0,5 % Volumen: Mesh_noExport ×2, join013 ×12, join013_1 ×3, lamp_arm_0 ×3, join001 ×12, join001_1 ×3 · Ausreißer: keine · offene Ränder: Mesh_noExport (12 offene Kanten), Mesh_noExport_1 (12 offene Kanten), Mesh_noExport_2 (4 offene Kanten), Mesh_noExport_3 (8 offene Kanten) …",
+   "smallIslands": 56,
+   "outliers": 0,
+   "openMeshes": 15
+  },
+  "G5": {
+   "name": "Clay-Modul aktiv",
+   "result": "PASS",
+   "detail": "kfb-clay.v1.1 · Profil midground · Seed billboard_lamps · 13/13 Materialien"
+  }
+ },
+ "render": {
+  "light": {
+   "module": "kfb-stage-light.v1",
+   "moods": "MOODS_MESA",
+   "tod": 1,
+   "tone": "ACES Filmic",
+   "exposure": 1,
+   "shadow": "PCFSoft, fitShadow",
+   "figureLight": true,
+   "rim": false,
+   "mood": null
+  },
+  "clay": {
+   "version": "kfb-clay.v1.1",
+   "profile": "midground",
+   "seed": "billboard_lamps",
+   "scaleRef": 1.81,
+   "meshes": 13,
+   "cove": "background, relief off (neutral)"
+  },
+  "eyes": {
+   "status": "none",
+   "reason": null
+  },
+  "eyePixels": null,
+  "frame": {
+   "w": 1600,
+   "h": 1200,
+   "fov": 30,
+   "pixelRatio": 1,
+   "fill": {
+    "full": 0.8,
+    "face": 0.6,
+    "far": 0.4,
+    "scale": 0.7
+   },
+   "az": {
+    "front": 0,
+    "threeq": 35,
+    "side": 90,
+    "back": 180,
+    "near_face": 0,
+    "far": 20,
+    "scale_ref": 0
+   },
+   "el": {
+    "front": 5,
+    "threeq": 6,
+    "side": 5,
+    "back": 5,
+    "near_face": 3,
+    "far": 8,
+    "scale_ref": 4
+   }
+  },
+  "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+  "size_m": [
+   3.696,
+   2.725,
+   2.762
+  ],
+  "head_m": null,
+  "hiddenOriginals": [],
+  "cardFaceParts": [],
+  "loadErrors": []
+ },
+ "files": {
+  "billboard_lamps_contact_sheet_FAIL.png": {
+   "sheet": true,
+   "fail": true,
+   "sha256": "9d5fc1a7fe3b7dbba6e8f00cc44471a819d6e71670164b29c31e88ef9dd7b584"
+  }
+ },
+ "cli": {
+  "command": "node render.mjs --id billboard_lamps --out evidence/billboard_lamps",
+  "views": [
+   "front",
+   "threeq",
+   "side",
+   "back",
+   "near_face",
+   "far",
+   "scale_ref"
+  ],
+  "eyes": null,
+  "node": "v24.21.0",
+  "chrome": "chrome-headless-shell-mac-arm64",
+  "ms": 1013,
+  "pageErrors": []
+ },
+ "vendor": {
+  "clay-eyelid.v1.js": "4e186697635be62fd31e041c084c82eb2bc979591e91851837f064dcfa175976",
+  "clay-eyelid.v2.js": "7f1cf72fbe926c6f40c8eca70330e61c87b9181a885b3329ffb40034f3fc2675",
+  "clay-eyelid.v3.js": "eb751a5bcf174e4bd353a49150634a73b7cd76358ddf808f331933d6ad2e43bb",
+  "clay-skin-attach.v1.js": "9a22279a243cda196862390f12a2e847fb66294f96b3525ae02c24e4d6beca00",
+  "facehost.v1.js": "54214741e57909211fbd9122b3a4bcc30c688b5269ab035e6f82e616f598fb22",
+  "kfb-clay.v1.1.js": "a81a3ee36ec25ab536e5c05fca14d2538b84f02ad6156a7006927836bdb93fd0",
+  "kfb-stage-light.v1.js": "53383f04601e07603864d0cbbbabd44fe568a6ceba9074842c1177d224a58998",
+  "pet-eye-rig.v6.js": "3129bb7b08b40565ea9bd0c44e65ae8442780a3aa5e99ac519740a84341ca9a3",
+  "kfb-proof-stage.v1.js": "d9b56930ecb35019bb897fd4bad3e1684e14693bc9d3957cdf39f17b947968c9",
+  "kfb-proof-eyes.v1.js": "88fa39e9cb7bbae2a390d52358739e94eb3e9fd1db740035bd38bf656052dba8"
+ },
+ "staleFilesInOut": []
+}

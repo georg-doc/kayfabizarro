@@ -1,0 +1,7 @@
+GothGirl · character · 1.362 m · eyes NO_ANCHORS · clay kfb-clay.v1.1/character · 96 ms
+  G1 FAIL Augen vorhanden (EyeRig v6 + E2): KEINE AUGEN-ANKER · keine KFB_Eye_*_anchor / eye_anchor.* in der GLB und kein Karten-Sitz (eyeRig.seat facehost)
+  G2 PASS Texturen, Materialien, Normalen: keine fehlenden Texturen, kein Standard-/Magenta-Material, keine NaN-Normalen
+  G3 PASS Bodenkontakt ±1 cm: tiefster Punkt y = -0.00 cm (steht)
+  G4 WARN Fremdteile, lose Inseln, Löcher (Warnung): 34 Inseln · lose < 0,5 % Volumen: GothGirl_Body ×9, GothGirl_Head ×10, GothGirl_LegLeft ×4, GothGirl_LegRight ×4 · Ausreißer: keine · offene Ränder: GothGirl_Head (122 offene Kanten), GothGirl_LegLeft (64 offene Kanten), GothGirl_LegRight (64 offene Kanten)
+  G5 PASS Clay-Modul aktiv: kfb-clay.v1.1 · Profil character · Seed GothGirl · 6/6 Materialien
+FAIL · 1 file(s) -> /Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/PROOF_STAGE_R1/evidence/_privat/no_anchor_GothGirl_raw

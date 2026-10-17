@@ -1,0 +1,72 @@
+{
+ "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+ "three": "r180 (CDN)",
+ "resolutions": {
+  "lo": [
+   800,
+   450
+  ]
+ },
+ "ms": 1129,
+ "errors": 0,
+ "tests": {
+  "G0": {
+   "rule": "synthetic: isotropic + craters pass, + faint stripes fail",
+   "limits": {
+    "stripePeak": 3,
+    "coherence": 0.7
+   },
+   "isotropic": {
+    "coherence": 0.551,
+    "stripePeak": 1.884,
+    "fftAniso": 2.452,
+    "energy": 0.0015
+   },
+   "craters": {
+    "coherence": 0.587,
+    "stripePeak": 1.45,
+    "fftAniso": 2.7,
+    "energy": 0.0031
+   },
+   "isotropicPlusStripes": {
+    "coherence": 0.867,
+    "stripePeak": 8.956,
+    "fftAniso": 24.891,
+    "energy": 0.0024
+   },
+   "cratersPlusStripes": {
+    "coherence": 0.723,
+    "stripePeak": 6.445,
+    "fftAniso": 16.039,
+    "energy": 0.0036
+   },
+   "result": "PASS"
+  },
+  "G2": {
+   "rule": "face relief: stripePeak <= 3.0 and coherence <= 0.70 (v1.1, all figures, both resolutions; thresholds unchanged from v1)",
+   "rows": [
+    {
+     "variant": "v11",
+     "res": "lo",
+     "fig": "fb",
+     "coherence": 0.497,
+     "stripePeak": 1.765,
+     "fftAniso": 2.812,
+     "energy": 0.0107
+    }
+   ],
+   "result": "PASS"
+  },
+  "G3": {
+   "rule": "FrizzleBob face, stage scale x1 vs x2.5: SSIM >= 0.98 (v1.1)",
+   "rows": [
+    {
+     "variant": "v11",
+     "res": "lo",
+     "ssim": 1
+    }
+   ],
+   "result": "PASS"
+  }
+ }
+}

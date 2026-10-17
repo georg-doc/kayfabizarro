@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-432: Zylinder/Fliege aus Assets (CC-BY), vier Pubs als Quest-Hubs + Ruhestein-Logik, Dieselpunk-Pool (Rust Runner, Rustwing Cruiser neu), Ninja-NPCs im Bento-Diorama, 8 Unity-Inseln im Knet-Stil mit eigenen Paletten; WSB 26. Nachtrag (B23–B27).
+
 ## 2026-10-17 · Writer’s Room JSON-first
 - V-431 Abnahme-Grundsatz: eine Abnahme-Bühne kfb-proof-stage.v1 für alle (Licht-Modul, Knet v1.1, Augen immer, neutrale Hohlkehle, feste Presets, automatische Gates), WS0 zeigt nur Fehlerfreies; B12 r3 FAIL (graue Fläche, Zylinder Eigenbau → Asset/Georgs Wahl), B22 r2 PASS, Knete stärker + bessere Dellen-Mathematik (v1.1). Agent baut Bühne + Knet v1.1.
 - Externer Kritiker R1 für 7 R4.3-Tracks gelaufen (frische Instanzen, nur 4 Eingaben), alle Kritiker-JSONs gültig nach Fix im song_gate (Apostrophe ≠ Zitate); Ergebnis meist 3er, Schwächen B7/C9/A4 (replies/SONG_CRITICS_R1/). WSA: eine Überarbeitung R4.4 (Hub b101).

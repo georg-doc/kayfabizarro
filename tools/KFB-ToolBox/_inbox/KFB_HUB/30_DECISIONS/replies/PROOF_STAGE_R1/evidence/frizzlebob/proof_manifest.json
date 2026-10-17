@@ -1,0 +1,341 @@
+{
+ "schema": "kfb.proof-manifest/1",
+ "stage": "kfb-proof-stage.v1",
+ "created": "2026-10-17T22:10:11.391Z",
+ "input": {
+  "id": "frizzlebob",
+  "type": "character",
+  "card": "/30_DECISIONS/replies/FIGURES_R1/figures/frizzlebob.figure.json",
+  "cardSha256": "5abdeac38835a91679ab79615928475a264079abe2e177d03b652327bfd3370a",
+  "cardSchema": "kfb.figure/1",
+  "cardApproval": "approved",
+  "glb": "hub:30_DECISIONS/replies/CLAY_SSOT_R1/assets/FB_TEMPLATE_LOOK_v5b.glb",
+  "glbSha256": "0675942b99cae8d507bc7855cb9730e955fa66e5c0a8767a618c68986b772694",
+  "glbBytes": 1790024,
+  "cardBodySha256": "0675942b99cae8d507bc7855cb9730e955fa66e5c0a8767a618c68986b772694",
+  "glbMatchesCard": true,
+  "faceTransformsFrom": "card + card source 30_DECISIONS/replies/actors/frizzlebob.georg-2026-10-14.kfb-pets.json",
+  "private": false,
+  "displayName": "FrizzleBob",
+  "glbPathLocal": "~/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/CLAY_SSOT_R1/assets/FB_TEMPLATE_LOOK_v5b.glb",
+  "cardPathLocal": "~/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/frizzlebob.figure.json",
+  "glbSha256_node": "0675942b99cae8d507bc7855cb9730e955fa66e5c0a8767a618c68986b772694",
+  "cardSha256_node": "5abdeac38835a91679ab79615928475a264079abe2e177d03b652327bfd3370a"
+ },
+ "modules": {
+  "stage": "kfb-proof-stage.v1",
+  "clay": "kfb-clay.v1.1",
+  "light": "kfb.stage-light/1 (kfb-stage-light.v1)",
+  "eyes": "kfb-proof-eyes.v1",
+  "eyeRig": "pet-eye-rig.v6",
+  "lid": "clay-skin-attach.v1 + clay-eyelid.v3 (E2)",
+  "three": "r180"
+ },
+ "status": "PASS",
+ "gates": {
+  "G1": {
+   "name": "Augen vorhanden (EyeRig v6 + E2)",
+   "result": "PASS",
+   "detail": "seat card-facehost · 2 Auge(n) · 2 E2-Lidhaut · v6-Schalen sichtbar 0 · Augenpixel near_face 30629 / 30612 (min 1152)"
+  },
+  "G2": {
+   "name": "Texturen, Materialien, Normalen",
+   "result": "PASS",
+   "detail": "keine fehlenden Texturen, kein Standard-/Magenta-Material, keine NaN-Normalen"
+  },
+  "G3": {
+   "name": "Bodenkontakt ±1 cm",
+   "result": "PASS",
+   "detail": "tiefster Punkt y = -0.03 cm (steht)",
+   "minY_m": -0.0003
+  },
+  "G4": {
+   "name": "Fremdteile, lose Inseln, Löcher (Warnung)",
+   "result": "WARN",
+   "detail": "12 Inseln · lose < 0,5 % Volumen: keine · Ausreißer: keine · offene Ränder: Carl_Brow_L (16 offene Kanten), Carl_Brow_R (16 offene Kanten), FB_Mouth_Smile (48 offene Kanten)",
+   "smallIslands": 0,
+   "outliers": 0,
+   "openMeshes": 3
+  },
+  "G5": {
+   "name": "Clay-Modul aktiv",
+   "result": "PASS",
+   "detail": "kfb-clay.v1.1 · Profil character · Seed frizzlebob · 11/11 Materialien"
+  }
+ },
+ "render": {
+  "light": {
+   "module": "kfb-stage-light.v1",
+   "moods": "MOODS_MESA",
+   "tod": 1,
+   "tone": "ACES Filmic",
+   "exposure": 1,
+   "shadow": "PCFSoft, fitShadow",
+   "figureLight": true,
+   "rim": false,
+   "mood": {
+    "tod": 1,
+    "sun": "#ffdcae",
+    "sunI": 2.4,
+    "elev": 38,
+    "az": -53.13,
+    "hemiSky": "#b4bdee",
+    "hemiI": 0.82,
+    "figI": 0.3,
+    "skyL": 1,
+    "glow": 0,
+    "shadowLen": 1.28
+   }
+  },
+  "clay": {
+   "version": "kfb-clay.v1.1",
+   "profile": "character",
+   "seed": "frizzlebob",
+   "scaleRef": 1.81173,
+   "meshes": 11,
+   "cove": "background, relief off (neutral)"
+  },
+  "eyes": {
+   "version": "kfb-proof-eyes.v1",
+   "seat": "card-facehost",
+   "anchors": [],
+   "radiusSource": "facehost + card eyeRig.settings.anchor (ring 0.255)",
+   "eyes": 2,
+   "lidSkins": 2,
+   "v6ShellsVisible": 0,
+   "fit": [
+    1,
+    1
+   ],
+   "lidColour": "v6 base-darkened",
+   "aperture": [
+    {
+     "cu": 0.12,
+     "cl": 0.06
+    },
+    {
+     "cu": 0.12,
+     "cl": 0.06
+    }
+   ],
+   "settings": {
+    "pupilStyle": "matte-cute",
+    "pupilSize": 0.27,
+    "gloss": 0.85,
+    "inset": 0,
+    "lidFit": 0.9,
+    "anchor": {
+     "dx": 0.455,
+     "dy": 0.21,
+     "ring": 0.255,
+     "track": 0.1
+    }
+   }
+  },
+  "eyePixels": {
+   "total": 61241,
+   "perEye": [
+    30629,
+    30612
+   ]
+  },
+  "frame": {
+   "w": 1600,
+   "h": 1200,
+   "fov": 30,
+   "pixelRatio": 1,
+   "fill": {
+    "full": 0.8,
+    "face": 0.6,
+    "far": 0.4,
+    "scale": 0.7
+   },
+   "az": {
+    "front": 0,
+    "threeq": 35,
+    "side": 90,
+    "back": 180,
+    "near_face": 0,
+    "far": 20,
+    "scale_ref": 0
+   },
+   "el": {
+    "front": 5,
+    "threeq": 6,
+    "side": 5,
+    "back": 5,
+    "near_face": 3,
+    "far": 8,
+    "scale_ref": 4
+   }
+  },
+  "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+  "size_m": [
+   1.197,
+   1.812,
+   0.75
+  ],
+  "head_m": [
+   0.62,
+   0.581,
+   0.75
+  ],
+  "hiddenOriginals": [
+   "FB_Eye_L",
+   "FB_Eye_R"
+  ],
+  "cardFaceParts": [
+   "Carl_Brow_L (brows, transform from card)",
+   "Carl_Brow_R (brows, transform from card)",
+   "Carl_Nose (nose, transform from card source export)",
+   "FB_Mouth_Smile (mouth, transform from card source export)",
+   "FB_Mouth_Smile (mouth conformed 153/153)"
+  ],
+  "loadErrors": []
+ },
+ "files": {
+  "frizzlebob_front_rest.png": {
+   "view": "front",
+   "eyes": "rest",
+   "sha256": "8bdd545ffd94b98cb08ba5a08cf286a9c19888420a39914e62f236fd4f909569"
+  },
+  "frizzlebob_front_half.png": {
+   "view": "front",
+   "eyes": "half",
+   "sha256": "aab2018b10a3af60d009b4f89a9da776bdbd9074a5c9c2dd37cd2b521edfeb29"
+  },
+  "frizzlebob_front_closed.png": {
+   "view": "front",
+   "eyes": "closed",
+   "sha256": "79a37dec3a59ee80071f231459d652c3dafe01cf169c2b70740356697775703e"
+  },
+  "frizzlebob_threeq_rest.png": {
+   "view": "threeq",
+   "eyes": "rest",
+   "sha256": "cc193d55d85f36c5e4b922dbeaadd7010a35f57366a4d17d08f32a272f985bf8"
+  },
+  "frizzlebob_threeq_half.png": {
+   "view": "threeq",
+   "eyes": "half",
+   "sha256": "52989cde8da2018f8980104015488b772f5aab1d1a78b618d3c5b183b52acaea"
+  },
+  "frizzlebob_threeq_closed.png": {
+   "view": "threeq",
+   "eyes": "closed",
+   "sha256": "71599d607e242815f09e3660b28445b136aef32d7fc3a6edf09e05578e35f518"
+  },
+  "frizzlebob_side_rest.png": {
+   "view": "side",
+   "eyes": "rest",
+   "sha256": "be6b3c82a381198cc8f5b6d50fd099365b7bb1829e7ad36b70c12290698fc744"
+  },
+  "frizzlebob_side_half.png": {
+   "view": "side",
+   "eyes": "half",
+   "sha256": "f0cb5a0069649267c8904c2ac2ac1565e9477e709b0d7e622d4a0d5554c2b760"
+  },
+  "frizzlebob_side_closed.png": {
+   "view": "side",
+   "eyes": "closed",
+   "sha256": "3aad2e0636bf8996d6c5a7be2432912d78cb294749218a5318a92a2ff04c66f6"
+  },
+  "frizzlebob_back_rest.png": {
+   "view": "back",
+   "eyes": "rest",
+   "sha256": "978ea520deecabbaab2ea142d129a5e85feeeebb438a6aabdbcab0971dc2e676"
+  },
+  "frizzlebob_back_half.png": {
+   "view": "back",
+   "eyes": "half",
+   "sha256": "978ea520deecabbaab2ea142d129a5e85feeeebb438a6aabdbcab0971dc2e676"
+  },
+  "frizzlebob_back_closed.png": {
+   "view": "back",
+   "eyes": "closed",
+   "sha256": "978ea520deecabbaab2ea142d129a5e85feeeebb438a6aabdbcab0971dc2e676"
+  },
+  "frizzlebob_near_face_rest.png": {
+   "view": "near_face",
+   "eyes": "rest",
+   "sha256": "79d5ab794d5c549c67653716ad56e51bb5ad0a488998b0a3fe11b6628bba727c"
+  },
+  "frizzlebob_near_face_half.png": {
+   "view": "near_face",
+   "eyes": "half",
+   "sha256": "0671dc56f1cc73f782d3c3d9b5a3a287453c86d2ef359bb99802b6c0da39ef15"
+  },
+  "frizzlebob_near_face_closed.png": {
+   "view": "near_face",
+   "eyes": "closed",
+   "sha256": "46e8e439b6e296a1d6746530c1cd67f41715390ddd54f47a90d3eccb9297d930"
+  },
+  "frizzlebob_far_rest.png": {
+   "view": "far",
+   "eyes": "rest",
+   "sha256": "6c1f8086de0cb57742b30ff1d5e2c3ac1b70a8681def7542aabf9df192d857fd"
+  },
+  "frizzlebob_far_half.png": {
+   "view": "far",
+   "eyes": "half",
+   "sha256": "7774d8077f607c8042fbe139456cc289ff06ed682a197463481fd5fda07f9d36"
+  },
+  "frizzlebob_far_closed.png": {
+   "view": "far",
+   "eyes": "closed",
+   "sha256": "e5c10ce4d7c74ff49cd54298d3d2c33732fdf60a82e25e4bc7d4bd49de78f756"
+  },
+  "frizzlebob_scale_ref_rest.png": {
+   "view": "scale_ref",
+   "eyes": "rest",
+   "sha256": "f8388b4a564ecedc3f6aa9977e2c8a6c9148bfb2171a6d16e322532fc48c7130"
+  },
+  "frizzlebob_scale_ref_half.png": {
+   "view": "scale_ref",
+   "eyes": "half",
+   "sha256": "0929b1a750049b91b385c8bda4b3341541952a6ca700ab59973b5ca39256ddc2"
+  },
+  "frizzlebob_scale_ref_closed.png": {
+   "view": "scale_ref",
+   "eyes": "closed",
+   "sha256": "afdbc2fd9cb39ae4f03f6145057b1029c8269b0b51c3089be7c52c6f93b6f2d4"
+  },
+  "frizzlebob_contact_sheet.png": {
+   "sheet": true,
+   "sha256": "7c633a5e00a33e3d592195b1d24a62a7af07bc42922ac456e35a04b2d3f812de"
+  }
+ },
+ "cli": {
+  "command": "node render.mjs --id frizzlebob --eyes rest,half,closed --out evidence/frizzlebob",
+  "views": [
+   "front",
+   "threeq",
+   "side",
+   "back",
+   "near_face",
+   "far",
+   "scale_ref"
+  ],
+  "eyes": [
+   "rest",
+   "half",
+   "closed"
+  ],
+  "node": "v24.21.0",
+  "chrome": "chrome-headless-shell-mac-arm64",
+  "ms": 8587,
+  "pageErrors": []
+ },
+ "vendor": {
+  "clay-eyelid.v1.js": "4e186697635be62fd31e041c084c82eb2bc979591e91851837f064dcfa175976",
+  "clay-eyelid.v2.js": "7f1cf72fbe926c6f40c8eca70330e61c87b9181a885b3329ffb40034f3fc2675",
+  "clay-eyelid.v3.js": "eb751a5bcf174e4bd353a49150634a73b7cd76358ddf808f331933d6ad2e43bb",
+  "clay-skin-attach.v1.js": "9a22279a243cda196862390f12a2e847fb66294f96b3525ae02c24e4d6beca00",
+  "facehost.v1.js": "54214741e57909211fbd9122b3a4bcc30c688b5269ab035e6f82e616f598fb22",
+  "kfb-clay.v1.1.js": "a81a3ee36ec25ab536e5c05fca14d2538b84f02ad6156a7006927836bdb93fd0",
+  "kfb-stage-light.v1.js": "53383f04601e07603864d0cbbbabd44fe568a6ceba9074842c1177d224a58998",
+  "pet-eye-rig.v6.js": "3129bb7b08b40565ea9bd0c44e65ae8442780a3aa5e99ac519740a84341ca9a3",
+  "kfb-proof-stage.v1.js": "d9b56930ecb35019bb897fd4bad3e1684e14693bc9d3957cdf39f17b947968c9",
+  "kfb-proof-eyes.v1.js": "88fa39e9cb7bbae2a390d52358739e94eb3e9fd1db740035bd38bf656052dba8"
+ },
+ "staleFilesInOut": []
+}

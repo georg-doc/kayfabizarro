@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB Abnahme-Bühne</title><link rel="icon" href="data:,">
+<style>
+:root{--bg:#ece6dc;--panel:#f7f3ec;--ink:#2a2622;--mute:#6d665d;--line:#d4cdc1;--acc:#2f5d8a;--accInk:#fff;--ok:#2f7d4a;--bad:#b0182f;--warn:#b7791f}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1d1b19;--panel:#262320;--ink:#ece7df;--mute:#a59d92;--line:#3b3631;--acc:#6ea0d0;--accInk:#10161c}}
+:root[data-theme="dark"]{--bg:#1d1b19;--panel:#262320;--ink:#ece7df;--mute:#a59d92;--line:#3b3631;--acc:#6ea0d0;--accInk:#10161c}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:12px 16px 2px}
+h1{margin:0;font-size:19px;font-weight:650}
+header p{margin:2px 0 0;color:var(--mute);font-size:13px}
+.bar{display:flex;flex-wrap:wrap;gap:8px 16px;padding:8px 16px;align-items:center}
+.grp{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.grp>span{color:var(--mute);font-size:12px;margin-right:2px}
+button,select,input[type=file]{font:inherit;font-size:13px}
+button,select{padding:5px 10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;cursor:pointer}
+button.on{background:var(--acc);border-color:var(--acc);color:var(--accInk)}
+button:disabled{opacity:.45;cursor:not-allowed}
+main{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(0,1fr);gap:12px;padding:4px 16px 16px}
+@media (max-width:960px){main{grid-template-columns:minmax(0,1fr)}}
+#stageBox{position:relative;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#e4d7c2;aspect-ratio:4/3}
+#stageBox canvas{display:block;width:100%;height:100%}
+#msg{position:absolute;left:0;right:0;bottom:8px;text-align:center;font-size:12px;color:#3a352f}
+#noeyes{display:none;margin:0 0 10px;padding:10px 12px;border-radius:8px;background:var(--bad);color:#fff;font-weight:700;font-size:16px;letter-spacing:.02em}
+aside{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;min-width:0}
+aside h2{margin:2px 0 6px;font-size:14px;font-weight:650}
+.gate{display:grid;grid-template-columns:52px minmax(0,1fr);gap:8px;padding:6px 0;border-top:1px solid var(--line)}
+.gate b{display:inline-block;text-align:center;border-radius:4px;color:#fff;font-size:12px;padding:1px 0}
+.gate small{display:block;color:var(--mute);font-size:12px;overflow-wrap:anywhere}
+.PASS{background:var(--ok)}.FAIL{background:var(--bad)}.WARN{background:var(--warn)}.NA{background:#8a8379}
+#status{font-weight:700;margin:6px 0}
+#infoBox{font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;color:var(--mute);margin-top:8px;max-height:260px;overflow:auto}
+.hint{color:var(--mute);font-size:12px}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+</head><body>
+<header>
+  <h1>KFB Abnahme-Bühne v1</h1>
+  <p>Eine Bühne für alle Abnahmen: gleiches Licht (kfb-stage-light, Mesa-Tag, ACES 1), gleicher Knet (kfb-clay v1.1), gleiche Hohlkehle, feste Kameras, 1600 × 1200, immer KFB-Augen mit E2-Lid.</p>
+</header>
+<div class="bar">
+  <div class="grp"><span>Figur</span><select id="srcSel"><option value="">– aus Liste –</option></select></div>
+  <div class="grp"><span>oder Dateien</span><input type="file" id="glbFile" accept=".glb,.gltf" title="GLB"><input type="file" id="cardFile" accept=".json" title="Figurenkarte kfb.figure/1 (optional)">
+    <select id="typeSel"><option value="character">character</option><option value="prop">prop</option><option value="stage">stage</option></select>
+    <button id="loadBtn">laden</button></div>
+</div>
+<div class="bar">
+  <div class="grp" id="viewBtns"><span>Ansicht</span></div>
+  <div class="grp" id="eyeBtns"><span>Augen</span></div>
+  <div class="grp"><button id="pngBtn" disabled>Bild exportieren</button><button id="allBtn" disabled>Alle Ansichten + Kontaktbogen + Manifest</button></div>
+</div>
+<main>
+  <div>
+    <div id="noeyes">KEINE AUGEN-ANKER · diese Figur hat weder KFB_Eye_*_anchor noch eye_anchor.* und keinen Karten-Sitz. Export gesperrt.</div>
+    <div id="stageBox"><canvas id="cv" width="1600" height="1200"></canvas><div id="msg">bereit</div></div>
+  </div>
+  <aside>
+    <h2>Prüfungen</h2>
+    <div id="status" class="hint">noch nichts geladen</div>
+    <div id="gates"></div>
+    <div id="infoBox"></div>
+    <p class="hint">Headless/CLI: <code>node render.mjs --card … --glb … --views … --eyes … --out …</code> (siehe README.md).</p>
+  </aside>
+</main>
+<script type="module">
+/* KFB Abnahme-Bühne v1 (PROOF_STAGE_R1). The page and the CLI (render.mjs, headless) drive the same object: window.KFB_PROOF.
+   No overlays are drawn into the 1600 x 1200 frame; labels live in the page UI and in the caption bars of the contact sheet. */
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { createProofStage, contactSheet, VIEWS, EYE_STATES, MODULES, SHEET_SLOTS, W, H } from './kfb-proof-stage.v1.js';
+
+const Q = new URLSearchParams(location.search), HEADLESS = Q.has('headless');
+const $ = (id) => document.getElementById(id), msg = (s) => { $('msg').textContent = s; };
+/* hub base: the page lives in <hub>/30_DECISIONS/replies/PROOF_STAGE_R1/ */
+const HUB = location.pathname.includes('/30_DECISIONS/') ? location.pathname.slice(0, location.pathname.indexOf('/30_DECISIONS/') + 1) : '../../../';
+const enc = (p) => p.split('/').map(encodeURIComponent).join('/');
+function srcUrl(p) {
+  if (!p) return null;
+  if (/^(blob:|https?:|data:|\/)/.test(p)) return p;
+  if (p.startsWith('hub:')) return HUB + enc(p.slice(4));
+  if (p.startsWith('~/')) return '/@home/' + enc(p.slice(2));       // only the CLI server answers this (allow-listed files)
+  return p;
+}
+async function sha256(buf) { if (!crypto.subtle) return null; const h = await crypto.subtle.digest('SHA-256', buf); return [...new Uint8Array(h)].map((b) => b.toString(16).padStart(2, '0')).join(''); }
+
+const stage = createProofStage({ THREE, GLTFLoader, canvas: $('cv') });
+let SOURCES = null, CUR = null, view = 'front', eyes = 'rest';
+try { SOURCES = await (await fetch('./sources.json', { cache: 'no-store' })).json(); for (const [k, v] of Object.entries(SOURCES.figures)) $('srcSel').insertAdjacentHTML('beforeend', `<option value="${k}">${k}${v.private ? ' (privat)' : ''} · ${v.type}</option>`); } catch (e) { SOURCES = { figures: {} }; }
+
+/** load({ id, cardUrl, card, glbUrl, type, units }) -> { status, gates, info, input } */
+async function load({ id = null, cardUrl = null, card = null, glbUrl = null, type = null, units = 'kaykit', glbName = null } = {}) {
+  const src = id && SOURCES.figures[id];
+  if (!cardUrl && !card && src && (src.card || src.type === 'character')) cardUrl = srcUrl(src.card || SOURCES.cards + id + '.figure.json');
+  let cardText = null;
+  if (!card && cardUrl) { const r = await fetch(cardUrl, { cache: 'no-store' }); if (r.ok) { cardText = await r.text(); card = JSON.parse(cardText); } else cardUrl = null; }
+  if (card && !cardText) cardText = JSON.stringify(card);
+  if (card && card.schema !== 'kfb.figure/1') throw new Error('Karte ist nicht kfb.figure/1: ' + card.schema);
+  glbUrl = glbUrl || (src && srcUrl(src.glb));
+  if (!glbUrl) throw new Error('keine GLB (sources.json oder --glb)');
+  type = type || src?.type || (card ? 'character' : 'prop');
+  const buf = await (await fetch(glbUrl, { cache: 'no-store' })).arrayBuffer();
+  const glbSha = await sha256(buf), cardSha = cardText ? await sha256(new TextEncoder().encode(cardText)) : null;
+  const blobUrl = URL.createObjectURL(new Blob([buf], { type: 'model/gltf-binary' }));
+  /* card face parts: values live on the card; if a part has no transform, the card's own source (a kfb.pets export, "KFB_HUB/…json#pets[0]…")
+     is read for pets[0].original.<part> (FIGURES_R1 cards copied brows only; Georg's export also has nose and mouth) */
+  let exportOriginal = null, exportSrc = null;
+  for (const k of ['brows', 'nose', 'mouth']) {
+    const pt = card?.[k]; if (!pt || pt.owner !== 'original-mesh' || pt.transform || exportOriginal) continue;
+    const m = /KFB_HUB\/([^#\s]+\.kfb-pets\.json)/.exec(pt.source || ''); if (!m) continue;
+    try { const r = await fetch(HUB + enc(m[1]), { cache: 'no-store' }); if (r.ok) { const ex = await r.json(); exportOriginal = ex?.pets?.[0]?.original || null; exportSrc = m[1]; } } catch (e) { /* stays null */ }
+  }
+  const fileId = String(glbName || glbUrl).split(/[\\/]/).pop().replace(/\.(glb|gltf)([?#].*)?$/i, '').replace(/[^\w.-]+/g, '_');
+  const res = await stage.load({ glbUrl: blobUrl, card, type, id: id || card?.id || fileId, units, fbUrl: srcUrl(SOURCES.fb_silhouette), exportOriginal });
+  const cardBody = card?.body?.glb?.sha256 || null;
+  const input = { id: res.info.id, type, card: cardUrl || (card ? '(Datei)' : null), cardSha256: cardSha, cardSchema: card?.schema || null, cardApproval: card?.approval?.status || null,
+    glb: glbName || (src ? src.glb : glbUrl), glbSha256: glbSha, glbBytes: buf.byteLength, cardBodySha256: cardBody,
+    glbMatchesCard: cardBody ? cardBody === glbSha : null, faceTransformsFrom: exportSrc ? 'card + card source ' + exportSrc : 'card', private: !!src?.private, displayName: card?.displayName || res.info.id };
+  CUR = { ...res, input, card };
+  return { status: res.status, gates: res.gates, info: res.info, input };
+}
+function render(v = 'front', e = 'rest') { stage.render(v, e); return stage.dataURL(); }
+function sheetHead(status) {
+  const i = CUR.info, inp = CUR.input;
+  return {
+    title: `KFB Abnahme · ${inp.displayName} (${inp.id}) · ${inp.type}${inp.cardApproval && inp.cardApproval !== 'approved' ? ' · Karte: ' + inp.cardApproval : ''}${inp.private ? ' · PRIVAT (Kauf-Asset, nur lokal)' : ''}`,
+    sub: `GLB ${String(inp.glb).split('/').slice(-2).join('/')} · sha256 ${String(inp.glbSha256).slice(0, 12)}…${inp.glbMatchesCard === false ? ' (≠ Karte ' + String(inp.cardBodySha256).slice(0, 8) + '…)' : inp.glbMatchesCard ? ' (= Karte)' : ''} · Höhe ${i.height_m} m · Augen ${i.eyes.seat || i.eyes.status} · Clay ${i.clay.version} ${i.clay.profile} Seed „${i.clay.seed}“`,
+    gates: CUR.gates, status,
+    foot: `kfb-proof-stage.v1 · ${i.modules.clay} · kfb-stage-light.v1 MOODS_MESA Tag · ACES 1 · ${i.modules.eyeRig} + ${i.modules.lid} · three ${i.modules.three} · ${W}×${H} · ${new Date().toISOString().slice(0, 10)}`,
+  };
+}
+/** sheet(renders: { 'view|eyes': dataURL }) -> dataURL of the fixed-layout contact sheet */
+async function sheet(renders, status = CUR.status) {
+  const images = {}, hasEyes = CUR.info.eyes && CUR.info.eyes.seat != null;
+  for (const [k, u] of Object.entries(renders)) { const im = new Image(); im.src = u; await im.decode(); const kk = hasEyes ? k : k.split('|')[0] + '|-'; images[kk] = im; }
+  return contactSheet({ images, head: sheetHead(status), hasEyes, type: CUR.info.type }).toDataURL('image/png');
+}
+function manifest(files = {}) {
+  return { schema: 'kfb.proof-manifest/1', stage: CUR.info.version, created: new Date().toISOString(), input: CUR.input, modules: CUR.info.modules,
+    status: CUR.status, gates: CUR.gates, render: { light: CUR.info.light, clay: CUR.info.clay, eyes: CUR.info.eyes, eyePixels: CUR.info.eyePixels, frame: CUR.info.frame, gpu: CUR.info.gpu, size_m: CUR.info.size_m, head_m: CUR.info.head_m, hiddenOriginals: CUR.info.hiddenOriginals, cardFaceParts: CUR.info.cardFaceParts, loadErrors: CUR.info.loadErrors },
+    files };
+}
+window.KFB_PROOF = { stage, load, render, sheet, manifest, info: () => CUR && CUR.info, VIEWS, EYE_STATES, SHEET_SLOTS, MODULES };
+
+/* ---------------- UI ---------------- */
+function showGates(r) {
+  const G = r.gates, el = $('gates'); el.innerHTML = '';
+  for (const [k, g] of Object.entries(G)) el.insertAdjacentHTML('beforeend', `<div class="gate"><div><b class="${g.result === 'N/A' ? 'NA' : g.result}">${g.result}</b></div><div>${k} · ${g.name}<small>${g.detail}</small></div></div>`);
+  $('status').innerHTML = r.status === 'PASS' ? '<span style="color:var(--ok)">ABNAHMEFÄHIG</span> · alle Prüfungen bestanden' : '<span style="color:var(--bad)">NICHT ABNAHMEFÄHIG</span> · Export gesperrt';
+  $('noeyes').style.display = r.info.type === 'character' && G.G1.result === 'FAIL' ? 'block' : 'none';
+  if (G.G1.result === 'FAIL' && r.info.eyes && r.info.eyes.status !== 'NO_ANCHORS') $('noeyes').textContent = 'AUGEN FEHLEN · ' + G.G1.detail + ' · Export gesperrt.';
+  $('pngBtn').disabled = $('allBtn').disabled = r.status !== 'PASS';
+  const i = r.info; $('infoBox').textContent = `${i.id} · ${i.type} · ${i.size_m.join(' × ')} m\nEinheiten ${i.units} (× ${i.unitScale})\nClay ${i.clay.version} · ${i.clay.profile} · Seed ${i.clay.seed} · ${i.clay.meshes} Meshes\nLicht ${i.light.moods} tod ${i.light.tod} · ${i.light.tone} ${i.light.exposure}\nAugen ${JSON.stringify(i.eyes, null, 1)}\nGLB sha256 ${r.input.glbSha256}${r.input.glbMatchesCard === false ? '\n  ≠ Karte ' + r.input.cardBodySha256 : ''}\nGPU ${i.gpu}`;
+}
+function draw() { if (!stage.loaded) return; stage.render(view, eyes); }
+const setOn = (sel, attr, v) => document.querySelectorAll(`${sel} button[${attr}]`).forEach((b) => b.classList.toggle('on', b.getAttribute(attr) === v));
+for (const v of VIEWS) $('viewBtns').insertAdjacentHTML('beforeend', `<button data-view="${v}" class="${v === view ? 'on' : ''}">${v}</button>`);
+for (const e of EYE_STATES) $('eyeBtns').insertAdjacentHTML('beforeend', `<button data-eyes="${e}" class="${e === eyes ? 'on' : ''}">${e}</button>`);
+document.querySelectorAll('#viewBtns button').forEach((b) => b.onclick = () => { view = b.dataset.view; setOn('#viewBtns', 'data-view', view); draw(); });
+document.querySelectorAll('#eyeBtns button').forEach((b) => b.onclick = () => { eyes = b.dataset.eyes; setOn('#eyeBtns', 'data-eyes', eyes); draw(); });
+async function uiLoad(args) {
+  msg('lädt …'); $('noeyes').style.display = 'none';
+  try { const r = await load(args); showGates(r); draw(); msg(''); }
+  catch (e) { msg('FEHLER ' + e.message); console.error(e); $('status').textContent = 'Ladefehler: ' + e.message; }
+}
+$('srcSel').onchange = () => { const id = $('srcSel').value; if (id) uiLoad({ id }); };
+$('loadBtn').onclick = async () => {
+  const gf = $('glbFile').files[0], cf = $('cardFile').files[0]; if (!gf) { msg('bitte eine GLB wählen'); return; }
+  const card = cf ? JSON.parse(await cf.text()) : null;
+  uiLoad({ glbUrl: URL.createObjectURL(gf), glbName: gf.name, card, type: $('typeSel').value });
+};
+const download = (name, url) => { const a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove(); };
+$('pngBtn').onclick = () => { if (CUR?.status !== 'PASS') return; draw(); download(`${CUR.input.id}_${view}${CUR.info.eyes.seat ? '_' + eyes : ''}.png`, stage.dataURL()); };
+$('allBtn').onclick = async () => {
+  if (CUR?.status !== 'PASS') return; const renders = {}, files = {}, hasEyes = !!CUR.info.eyes.seat;
+  const combos = []; for (const [v, e] of SHEET_SLOTS) if (hasEyes || e === 'rest') combos.push([v, e]);
+  for (const [v, e] of combos) { const u = render(v, e), n = `${CUR.input.id}_${v}${hasEyes ? '_' + e : ''}.png`; renders[`${v}|${e}`] = u; files[n] = { view: v, eyes: hasEyes ? e : null }; download(n, u); await new Promise((r) => setTimeout(r, 150)); }
+  const sh = await sheet(renders); download(`${CUR.input.id}_contact_sheet.png`, sh); files[`${CUR.input.id}_contact_sheet.png`] = { sheet: true };
+  download('proof_manifest.json', URL.createObjectURL(new Blob([JSON.stringify(manifest(files), null, 1)], { type: 'application/json' }))); draw();
+};
+new ResizeObserver(() => draw()).observe($('stageBox'));
+window.KFB_PROOF_READY = true;
+if (!HEADLESS && Q.get('id')) { $('srcSel').value = Q.get('id'); uiLoad({ id: Q.get('id') }); }
+else if (!HEADLESS && Q.get('glb')) uiLoad({ glbUrl: srcUrl(Q.get('glb')), cardUrl: Q.get('card') ? srcUrl(Q.get('card')) : null, type: Q.get('type') || null });
+</script></body></html>

@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-17",
+ "updated": "2026-10-18",
  "entries": [
   {
    "id": "V-001",
@@ -5979,6 +5979,21 @@
    "applies": "sofort, für alle künftigen Abnahmen"
   },
   {
+   "id": "V-432",
+   "date": "2026-10-18",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Neue Modelle von Georg (18.10.): (1) Banker-Zylinder = Poly-by-Google Top hat (CC-BY), Fliege = jeremy Bowtie (CC-BY) → ersetzen Eigenbauten; Gimmick später: aus dem Hut Requisiten und Karten herbeizaubern. (2) Vier Pubs/Gaststätten als Quest-Hubs (RPG-Logik), soziale Begegnungen, exotisches Essen/Trinken, Party-Zonen: The Salty Bite (mit Hai), The Yelling Goblin, The Fat Mermaid, vermutlich The Hungry Pelican; Ruhestein-Logik (Rückkehrpunkt, solange noch nichts freigespielt bzw. keine Karte gesammelt ist). (3) Dieselpunk-Fahrzeugpool: Rust Runner + Rustwing Cruiser (neue Fassungen). (4) Ninja-NPCs (KayKit Mystery Ninja, 3+ Varianten) im Sushi-Bento-Diorama (Meshy). (5) Die 8 Unity-Inseln (Low Poly Floating Islands) im Knet-Stil, mit eigenen Cartoon-Farbharmonien je Insel nach KFB-Farbrezept und Licht, abgerundete Bodenplatten und Kanten. Alle Abnahmen über die Abnahme-Bühne (V-431); Meshy und Unity privat.",
+   "values": {},
+   "owner": "WSB (B23–B27) · WS0 (Paletten je Insel) · WS1 (Einbau später)",
+   "check": "Abnahme-Bühne-Kontaktbögen, Georg",
+   "source": "50_BLENDER/ANTWORT_WS0_2026-10-17.md (26. Nachtrag)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vorhandene Modelle statt Eigenbau; Pubs als Hubs geben der Welt Anlaufpunkte vor dem ersten Freispielen.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6066,7 +6081,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:776",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:779",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
