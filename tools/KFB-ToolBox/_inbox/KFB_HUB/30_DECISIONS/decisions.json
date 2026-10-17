@@ -5492,6 +5492,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-399",
+   "date": "2026-10-17",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Dramatis Personae (Georg 17.10.) – kein neues Werkzeug, sondern Tab der Asset-Bibliothek: alle Charaktere mit 3D-Vorschau aus der Figurenkarte und Charakterblatt aus kfb.character/1, Live-Suche, Status und Widersprüche sichtbar. R1 nur lesen; R2 Georg bearbeitet Name, Farben, Textur/renderStyle, Decks, Eigenschaften, Backstory, Beziehungs-Vorlagen zum Spieler → Änderungsvorschlag als Commit auf Branch (kein Merge), Aussehen per Deep-Link in die Figuren-Werkstatt; R3 Ausformulieren per Web-Chat mit Rückgabe im selben Format. Beide Orte lesen/schreiben dieselben Dateien auf GitHub. Bauer: WSA work (Hub b77).",
+   "values": {},
+   "owner": "WSA work (Bau) · WS0 (Review, Übernahme) · Georg (Bearbeitung)",
+   "check": "Galerie + Blatt FrizzleBob/Lord Hunky",
+   "source": "replies/BRIEF_WSA_DRAMATIS_PERSONAE_R1.md · TOOL_MAP_R1 Ort 5",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Charaktere brauchen einen sichtbaren, pflegbaren Ort; als Tab bleibt die Werkzeug-Landkarte bei fünf Orten.",
+   "applies": "nach R1 der Werkzeug-Inventur"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5564,7 +5579,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:718",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:719",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

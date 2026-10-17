@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-399: Dramatis Personae als Tab der Asset-Bibliothek (3D + Charakterblatt, Suche, Bearbeiten per Branch-Vorschlag, Web-Chat), Hub b77.
 - V-398: Charakter-Dateien R1 (9 Figuren, 46 Quellen, Widersprüche sichtbar); Umleitungs-PR #414 geprüft, Merge empfohlen; Holz-Variante Computer-Billboard = Favorit; Trust-Song 05 wird eingecheckt.
 - V-396 Antworten WS1 §65.3 (Boden größter Anteil, Sockel, Schürze, Fluff-Startwerte, save mit Karten); V-397 Dschungel-Computer als Landmark + Meta-Artefakt mit Auge, Billboard Stein vs. Holz (WSB B7).
 - V-395: 13 Figurenkarten-Entwürfe (FB approved, Rest candidate/open-design), Status-Regel, augenfertige GLBs auf main per Asset-Branch, Mumien-Stimmen, Schiel-Fix; Georg-Fragen erst mit Clay-Bildern.
