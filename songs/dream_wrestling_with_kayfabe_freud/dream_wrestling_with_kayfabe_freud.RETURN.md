@@ -3,3 +3,11 @@ Original kfb-triplets owner; branch songs/dream_wrestling_with_kayfabe_freud-r4-
 
 ## Executed R3.1 GitHub Actions · V-418
 https://github.com/georg-doc/kayfabizarro/actions/runs/39032118683. Source candidate head 3fbc6cbb40a2296e0f721c21a7b5d83d7dd9e7db: exact original triplet_set_check.py exit 0 SUCCESS; R3.1 format_gate_r31.py exit 0 SUCCESS. 2/2 named steps PASS, 52/52 cards. Independent reviewer not engaged; no judge scores or writer revision.
+
+
+## V-419 · R3.2 shared-song-gate · 2026-10-17
+- **Current candidate:** `dream_wrestling_with_kayfabe_freud.r4.1.suno.txt`, 52/52 playable Freud cards, 4878 Unicode characters, intro 2 / outro 1, 17 distinct openers. A9 metaSkipped 53–56 (instructions, two new rule cards, credits) with reasons. `songlines.json` A7 #10 "four", #12 "seven A.M.", #40 spoken slash removed; all three exempt from 10% word rewrite quota.
+- **Binding:** canonical R3.2 `SONG_SPEC_R3.md` blob `29637879615503e4f6b134e27081b00016f6d443`, shared `song_gate.py` blob `cc9d8172b3a076470b1ca44f687b44de01aae1eb` pinned register `f253bf4b5edb6ac8e2a702a284767fa0e844e7e3`.
+- **Actual gates:** [39043419766](https://github.com/georg-doc/kayfabizarro/actions/runs/39043419766) R3.2 shared `song_gate.py lyrics` exit 0, 52/52. [39043926604](https://github.com/georg-doc/kayfabizarro/actions/runs/39043926604) same source/motif and metadata reason recheck SUCCESS. Tone registry emits optional WARN E16b: no Freud-specific entry; static gate passes. Historical original triplet_set_check.py separately passed. No independent render of PDF images in this turn, original registry/PDF JSON not edited.
+- **Blind critic state:** external judge sessions=0, `*.critic.json`=none; no invented score or writer post-review revision, no WS0/Georg acceptance, no Hub/Stage/Site.
+- **One next gate:** `WS0_V419_EXTERNAL_CRITIC_F19_F22` (fresh independent instance sees only spec, Golden, canonical card package and exact current track; validates critic with same song_gate.py).
