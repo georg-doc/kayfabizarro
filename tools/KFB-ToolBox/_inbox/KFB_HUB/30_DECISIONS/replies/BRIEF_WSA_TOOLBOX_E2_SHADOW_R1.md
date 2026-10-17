@@ -3,6 +3,15 @@
 
 Georg 17.10., with screenshots from ToolBox-Studio: the eyelids are "still or again wrong", there is a shadow seam on FrizzleBob's neck, and Dory's lower head (oval, seam) is broken. Cause, honestly: integrating the E2 lids into the aliens (V-348) was **planned and never built**. The plan has been sitting since 16.10.
 
+
+## 0 · What is wrong right now (Georg 17.10.: "THOSE ARE LIDS AS CAPS!")
+The aliens currently have **thick, rigid caps** as lids (the v6 lid shells `_up`/`_lo`, upper hood with a ring, lower ring). **That is not what Georg approved.**
+**Approved (V-348) is E2: a thin, closed lid skin that hugs the eyeball. The lid slit is the only opening, and there is no cap and no separate shell.** Reference image: `replies/E2_REFERENCE/E2_approved_closed_lid_skin.png` (Claude Design workbench E2: rest, 25/50/75 %, closed, side, back).
+- Hide the v6 lid shells **completely** (`e._up.visible = e._lo.visible = false`, see plan §3.2). No other shell in their place.
+- The skin hugs the eyeball (inner surface 1.012 R, outer about 1.112 R), not a hood standing out.
+- The baked eye **socket** of the aliens (head part, Georg V-332) is not a lid and stays. The E2 eye sits inside it.
+- Proof before/after side by side with the reference image: open, half, closed, and from the side. Only send it to Georg once it looks like the reference.
+
 ## 1 · Integrate E2 lids exactly according to the existing plan
 Plan: `tools/KFB-ToolBox/eye-actor-studio-v1/clay-eyelid/ALIEN_STALK_E2_PLAN.md` (commit `e1e60edff`, branch `eyes/kfb-clay-eyelid-e2-2026-10-16`); module `clay-eyelid.v2.js`, test `tests/clay-eyelid-skin.test.mjs`. Build `clay-skin-attach.v1.js` (`attachClaySkin(rig)`) as described in plan §3.
 **WS0 decisions on the plan's open points:**
