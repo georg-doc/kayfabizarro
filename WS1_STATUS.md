@@ -1,7 +1,24 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§66 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§67 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 67 · 17.10. nachts · M2 gemergt (Georg-Freigabe) · main @20caedc · Vorschau mit Fahrprobe
+
+1. **Georg-Entscheidung (17.10., im WS1-Chat, für das Register):** „ja, mergen wenn alles grün ist“. M2 (K2B nach V-367) nach main, sobald die Reihe grün ist. Damit ist der Vorbehalt „M2 nicht mergen bis Georg entscheidet“ erledigt.
+2. **Merge:** m2/fahren @20caedc per Fast-Forward nach kfb-planet main. Der Stand enthält:
+   - M1 TUNE T1–T3 (m1/wow);
+   - V-347 auf K2B;
+   - V-345 M1/M2: `src/m1/m1Scale.js`, K = WORLD_K, g = 9,81 (vorher 14), Absprung × √(gK/14), Kapsel-Federn × K³, Drehfedern × K⁵, k2b-Fahrwerte × K, Auto 4,97 m.
+3. **Prüfung:** `scripts/m1/run-all.sh` auf genau diesem Stand: 37 PASS, 0 FAIL, 1 INFO (m1-rueckwand, nur Bericht). Dazu die vier dort fehlenden Tests der npm-Reihe (preview, g4preview, orbit, drift) nach dem Merge: PASS. Gemessen:
+   - m1-fence PASS, kleinster Abstand 22,3 cm bei Kapselradius 26 cm;
+   - m2-v347: Wende 360° = 9,8 m = 1,97 Wagenlängen, Drift mit Q 1,51 rad/s gegen 0,81 ohne;
+   - m2-g0: 0/28 Durchfahrten;
+   - Sprung 1,19 m, Weitsprung 1,71 m.
+4. **Vorschau:** `ws1/preview` @04cb6f1c mit build.json, Check grün. Fahrprobe: https://ws1-preview.kayfabizarro.pages.dev/#m1,car (Label „Fahrsystem: K2B | ecctrl · C wechselt“; ecctrl bleibt eingefroren als Vergleich).
+5. **Als Nächstes:** Die Bewegungs-Sitzung startet Slice 3 (V-379, Fahrhilfe M3) auf neuem Branch ab main @20caedc. WS1-Owner baut den Slice-1-Vorbau (§65, Branch `s1/weltboden`, auf V-345 rebased) in Stage/M1 ein, sobald WS0 die Fragen aus §65.3 beantwortet hat; Teile ohne offene Frage (save, interactable, Perf-Overlay) gehen zuerst.
+
+Aufwand seit §66: ca. 20 Min.
 
 ## 66 · 17.10. nachts · V-345 Bühnen-Seite fertig (main @f52b485, 24/24) · Vorschau · M1/M2 an der Reihe
 
