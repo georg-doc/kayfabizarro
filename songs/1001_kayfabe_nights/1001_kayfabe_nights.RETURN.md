@@ -1,11 +1,8 @@
-# 1001 Nights R4.1 Return V-418
-Owner existing kfb-triplets. Branch songs/1001_kayfabe_nights-r4-2026-10-17. Binding spec R3.1 blob 3a6ea19c0c30c4c9430decc1c739dbbb5a294f60. 56/56 playable original numbered cards, four cover/rule metadata omitted as documented R4. Original R4 retained. 4987 Unicode chars, 56/56 80–95 card core. Bracketed Aladdin subtitle dropped, The Black Giant human-group derogatory cannibal expression removed, The Giant as stage title alias; 39 -> Thirty-Nine sung, logged one songLine/56. Game effects removed. No canonical edit: derived QA-only alias & number spellings. Python CI gate pending. Blind review not run, no score or creative acceptance. No Hub/Site/merge. Next gate: independent reviewer flags only after Python PASS.
-
-## R3.1 executed test evidence
-Run https://github.com/georg-doc/kayfabizarro/actions/runs/39031905120; candidate 51df4947c06e63a260b23b84944545d92fe08b98. Exact original triplet_set_check.py EXIT 0 SUCCESS; R3.1 format_gate_r31.py EXIT 0 SUCCESS. Two named mechanical gates PASS. Creative blind review NOT RUN. This does not constitute Georg's approval.
-
-## V-418 pre-blind semantic repair
-After an additional A8/E16b audit: #17 Giant now a tusked monster-heel without cannibal/Jobber-eating language; #20 shipwreck uses timber image, not hard reset/equipped items; #30 horseman points to grave (no programmed referee), #32 spoiler tablets no card mechanics, #38 ebony mechanical horse image not a "Tech Gimmick", #43 hunchback scapegoat scene not card effect, #58 Montreal protest at stolen belt not reset. All key new words sourced from printed lore and PDF JSON artworkPrompt (source images NOT independently rendered). No card omitted, old R4 remains. Updated candidate 4997 chars. Mechanical rerun pending; prior CI belongs to old candidate and does not validate this new content.
-
-## V-418 final pre-blind semantic repair · executed QA
-https://github.com/georg-doc/kayfabizarro/actions/runs/39033060994 · candidate d1025e32fd36b3ce5bb66eca1db50a59fa803d0f. Exact original triplet_set_check.py SUCCESS (exit 0), R3.1 format_gate_r31.py SUCCESS (exit 0), 2/2 PASS. Updated 56 source-pinned lines, 4997 characters. The Giant no cannibal/Jobber-eating content; Shipwreck, Horseman, Seven Tablets, Ebony Horse, Hunchback, Montreal Screwjob no literal game rule/effect recital. No independent blind review; no writer post-review edit.
+# 1001 Nights R3.2 · two-track mechanical candidate
+- Canonical spec blob 29637879615503e4f6b134e27081b00016f6d443, shared song_gate.py blob cc9d8172b3a076470b1ca44f687b44de01aae1eb.
+- 56 playable cards: 5–32 (PDF pages 2–8); 33–60 (pages 9–15); meta 1–4 listed in songlines.json.
+- Part 1: 2605 Unicode characters, intro 2 beats. Part 2: 2564 characters, intro 2 beats.
+- Old R4.1 and original R4 retained for audit.
+- Shared R3.2 gate pending actual CI; original exact legacy checker handled by existing workflow, no private copies of song_gate.py.
+- Independent critic pending F19–F22; next gate shared CI PASS before external review.
+.

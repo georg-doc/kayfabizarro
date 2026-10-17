@@ -1,45 +1,30 @@
 {
   "deckId": "1001_kayfabe_nights",
-  "version": "R4.1",
+  "version": "R4.2",
+  "bindingSpec": "R3.2",
+  "metaSkipped": [
+    1,
+    2,
+    3,
+    4
+  ],
   "songLineChanges": [
     {
+      "cardNumber": 17,
+      "rule": "E16b",
+      "songName": "The Giant",
+      "songLine": "Oh. The Giant, tusked boar with a club; monster heel, the squash match destroys them.",
+      "reason": "Remove dehumanizing Giant depiction, stage alias; original title remains in canonical card truth"
+    },
+    {
       "cardNumber": 26,
-      "before": "The 39 Grunts",
-      "after": "The Thirty-Nine Grunts",
-      "reason": "A7 spell numeric title"
+      "rule": "A7",
+      "songName": "The Thirty-Nine Grunts",
+      "songLine": "The Thirty-Nine Grunts, individually weak, collectively a burial squad; overwhelmed.",
+      "reason": "Write card title number as sung"
     }
   ],
-  "songLineCount": 1,
-  "totalCardLines": 56,
-  "percent": 1.79,
-  "presentationEdits": [
-    {
-      "cardNumber": 9,
-      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
-    },
-    {
-      "cardNumber": 17,
-      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
-    },
-    {
-      "cardNumber": 20,
-      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
-    },
-    {
-      "cardNumber": 22,
-      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
-    },
-    {
-      "cardNumber": 25,
-      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
-    },
-    {
-      "cardNumber": 32,
-      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
-    },
-    {
-      "cardNumber": 45,
-      "reason": "A6 no bracket or A8 no game word; #17 E16b tone"
-    }
-  ]
+  "songLineCount": 2,
+  "spokenNumberCount": 1,
+  "nonA7Changes": 1
 }

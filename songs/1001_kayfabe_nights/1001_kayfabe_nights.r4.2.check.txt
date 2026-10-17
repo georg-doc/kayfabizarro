@@ -1,0 +1,7 @@
+# 1001 Nights R3.2 · two-track mechanical candidate
+- Canonical spec blob 29637879615503e4f6b134e27081b00016f6d443, shared song_gate.py blob cc9d8172b3a076470b1ca44f687b44de01aae1eb.
+- 56 playable cards: 5–32 (PDF pages 2–8); 33–60 (pages 9–15); meta 1–4 listed in songlines.json.
+- Part 1: 2605 Unicode characters, intro 2 beats. Part 2: 2564 characters, intro 2 beats.
+- Old R4.1 and original R4 retained for audit.
+- Shared R3.2 gate pending actual CI; original exact legacy checker handled by existing workflow, no private copies of song_gate.py.
+- Independent critic pending F19–F22; next gate shared CI PASS before external review.
