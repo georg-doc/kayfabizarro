@@ -2,6 +2,7 @@
 
 ## 2026-10-17 · Writer’s Room JSON-first
 - WSB-Lieferungen B1/B2/B7 auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17); automatisches Mergen vom Sicherheitssystem blockiert, Georg entscheidet den Weg.
+- V-418: SONG_SPEC R3.1 (Klammern, Zahlen, Spielwörter, Ton-Tor, zwei Tracks bei zu langen Decks); Antwort an WSA zu Songs R4 (Hub b94).
 - b93 präzisiert: Deckel (v6-Lidschalen) komplett weg, E2 = dünne Lidhaut mit Referenzbild (replies/E2_REFERENCE); Hub-Briefings gruppiert (Weitergeben oben, WS1/WSB im Aufklapper, Hub v16).
 - V-417: ToolBox-Stand FAIL (Lider, Halssaum, Dora-Kopf); E2 nach Plan durch WSA (Hub b93), kein Eigenschatten bis WS1-Modul, WSB B14 Dora-Kopf r5 mit Vorrang, WS0-Bildprüfung vor Georg.
 - V-416: Charakterblätter per Web-Chat direkt ergänzen (WSA schreibt in FIGURES_R1/characters, Hub b92).

@@ -5784,6 +5784,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-418",
+   "date": "2026-10-17",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "SONG_SPEC_R3 → R3.1 nach WSA-Songs R4 (Prüfung durch WS0): keine Klammern sprechen (A6), Zahlen/Zeiten/Beträge/Symbole ausschreiben als songLine (A7), keine Spielwörter wie Actor/Token/Scene/Karteneffekte in der Zeile (A8), Ton-Prüfung als Teil des Tors (E16b: 9/11 keine „remote flight tech“-Andeutung, 1001 „The Giant“ ohne „cannibal“, Therapy nie gegen Hilfesuchende), zu lange Decks als zwei Tracks an einer Seitengrenze (C12b, 9/11: Seiten 1–7 / 8–15). Vier R4-Kandidaten bestehen das Prüfskript, brauchen diese Korrekturen vor dem Blind-Review.",
+   "values": {},
+   "owner": "WSA (Plugin) · WS0",
+   "check": "Tor erneut grün, dann Blind-Review",
+   "source": "replies/SONG_SPEC_R3.md (R3.1) · replies/WS0_ACK_SONGS_R4_2026-10-17.md (Hub b94)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Vorgabe hatte eine Lücke (60 Karten passen nicht in 5000 Zeichen) und benannte Klammern, Zahlen und Spielwörter nicht ausdrücklich.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5856,7 +5871,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:740",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:742",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
