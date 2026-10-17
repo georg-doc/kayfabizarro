@@ -1,0 +1,86 @@
+name: KFB SpellSpill visual source integrity and contact sheet
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/kfb-spellspill-reference-source-capture.yml'
+      # Re-run manually for changed Dropbox originals; routine research markdown does not need refetching.
+permissions:
+  contents: read
+jobs:
+  reference-capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            tools/KFB-ToolBox/_inbox/KFB Seed World Mech Destruction POC 01/KFB_SEED_WORLD_MECH_POC_01_2026-10-06/seedworld/docs/research/SPELLSPILL_VFX_R1_2026-10-16
+            .github/workflows/kfb-spellspill-reference-source-capture.yml
+      - name: Retrieve public Dropbox folder into ephemeral CI only
+        env:
+          URL: https://www.dropbox.com/scl/fo/khq2ourkr6ihtkvsofo3b/AF6uLp4fDDyuWr_5iGNl7_s?rlkey=75r24euxt8e6ybfo3d1y9j2pe&dl=1
+        run: |
+          mkdir -p /tmp/spellspill kfb-spellspill-source-evidence
+          curl --fail --location --silent --show-error --retry 2 --connect-timeout 20 --max-time 120 \
+            -H 'User-Agent: Mozilla/5.0' "$URL" -o /tmp/spellspill.zip
+          file /tmp/spellspill.zip
+          unzip -t /tmp/spellspill.zip | tail -2
+          python3 - <<'PY'
+          from zipfile import ZipFile
+          from pathlib import Path
+          src=Path('/tmp/spellspill.zip'); dst=Path('/tmp/spellspill');dst.mkdir(parents=True,exist_ok=True)
+          with ZipFile(src) as archive:
+            pngs=[f for f in archive.infolist() if not f.is_dir() and f.filename.lower().endswith('.png')]
+            if len(pngs)!=9: raise SystemExit('expected 9 PNGs, found '+str(len(pngs)))
+            for f in pngs:
+              name=Path(f.filename).name
+              if not name or '/' in name or '\\' in name: raise SystemExit('unsafe filename')
+              (dst/name).write_bytes(archive.read(f))
+          print('SOURCE_ZIP_EXTRACTED',len(pngs),'PNG files via safe flattened zipfile')
+          PY
+      - name: Verify actual 9 PNGs and create contact sheet
+        run: |
+          python3 -m pip install --quiet pillow
+          python3 - <<'PY'
+          import json, hashlib, pathlib
+          from PIL import Image,ImageOps,ImageDraw
+          src=pathlib.Path('/tmp/spellspill')
+          out=pathlib.Path('kfb-spellspill-source-evidence')
+          hashes={
+          '16.52.47':'5dd8c313139ed66d9927305c67e312cdbad3eb745cb90f61c4770e7521eec329',
+          '16.52.57':'64c45ba4f6d3755b6d497ee2adfdeb6935a5fb9d62ce93270914d63d18f303cb',
+          '16.53.09':'3d6008600074841eab6cee6348739eb961e40ba976c759d36f553ba2c61ef4ae',
+          '16.53.30':'1c20cd66e5f55a411123cacb3bf7393835cb1cf28ca06481118a5774e65552d7',
+          '16.54.03':'23e494f4762d58a4d9620881143ca80d45fdb38297701ca56d9e386aa9f87ea5',
+          '16.54.20':'d96d7a57af16d7611118fda46f1ac2dcb66a801044f955d421d70169aa0ebdf1',
+          '16.54.36':'31bc7b2d93f136ee8a6e7ed3c2a84178e255e3bd3577724759dbd97dad256f03',
+          '16.54.50':'9f8539845130b5b9b659d65aa9b5ae001147b04b832afff9bac530fcd94eec86',
+          '16.54.58':'487acba781d5cfc15d7d1b2851b0d55221c6722945ed41969e41c7deabe6e4d5'}
+          pics=sorted(src.rglob('*.png'))
+          results={'source':'Dropbox SpellSpill VFX Study', 'count':len(pics),'files':[]}
+          canvas=Image.new('RGB',(1200,960),'#171818');d=ImageDraw.Draw(canvas)
+          for i,p in enumerate(pics):
+            data=p.read_bytes()
+            match=[k for k in hashes if k in p.name]
+            actual=hashlib.sha256(hashlib.sha256(data).digest()).hexdigest()
+            ok=len(match)==1 and actual==hashes[match[0]]
+            img=Image.open(p).convert('RGB')
+            results['files'].append({'name':p.name,'bytes':len(data),'width':img.width,'height':img.height,'dropbox_hash':actual,'hash_verified':ok})
+            if i<9:
+              thumb=ImageOps.contain(img,(382,288))
+              x=(i%3)*400+(400-thumb.width)//2;y=(i//3)*320+12
+              canvas.paste(thumb,(x,y));d.text(((i%3)*400+8,(i//3)*320+302),p.name.split('um ')[-1],fill='#eeeeee')
+          results['verified_all']=len(pics)==9 and all(x['hash_verified'] for x in results['files'])
+          (out/'manifest.json').write_text(json.dumps(results,indent=2,ensure_ascii=False))
+          canvas.save(out/'contact-sheet.jpg',quality=88)
+          print(json.dumps({'count':len(pics),'verified':results['verified_all'],'names':[x['name'] for x in results['files']]}))
+          if not results['verified_all']:raise SystemExit('SOURCE_HASH_MISMATCH_OR_NOT_9')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-spellspill-source-contact-sheet
+          path: kfb-spellspill-source-evidence/
+          if-no-files-found: warn
+          retention-days: 14
