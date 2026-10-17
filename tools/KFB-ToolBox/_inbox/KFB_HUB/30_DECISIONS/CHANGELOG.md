@@ -2,6 +2,7 @@
 
 ## 2026-10-17 · Writer’s Room JSON-first
 - WSB-Lieferungen B1/B2/B7 auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17); automatisches Mergen vom Sicherheitssystem blockiert, Georg entscheidet den Weg.
+- V-410: Drift-Analyse Songs R3 – Grundvorgabe TRIPLET_SET_SPEC_R2 bleibt verbindlich (Kartenwörter, eine Zeile, Leerzeile nach jedem Beat), keine Hook-Rufe, Review nur Intro/Opener/Outro, Prüfskript vor Hub; b83–b87 FAIL.
 - V-409: ToolBox-Studio-Roster (Hunky/Dory r4, Norman, Brain-Cyborg via WSB B10), WS1-Pakete Licht-Modul + Figurenkarten-Loader direkt nach L3, Dramatis Personae Lese-R1 jetzt (Hub b88–b90).
 - Songs R3 (Writer’s Room, Brief SONGS_R3/WRITERS_ROOM_BRIEF_R3.md): 1001 Kayfabe Nights, Alice BlödsinnLand, 9/11 Money Trail, Therapy Carnival, Dream Wrestling Freud – Blind-Review (8/8/8,5 · 6/7/7,5 · 5,5/6,5/7 · 6/7,5/8 · 8/8/8,5), je eine Überarbeitung wr2 mit Ton-Pflichtkorrekturen (9/11, 1001), Hub b83–b87 (+ Style B b83b–b87b).
 - V-408: Kamera ruckelfrei nach V-025/026/088/257 (Orbit von allen Seiten, träges Zurückgleiten, Zoom zum Cursor), Jitter-Messung (Hub b82).

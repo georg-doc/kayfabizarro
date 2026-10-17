@@ -5098,7 +5098,9 @@
    "check": "Blind-Review-Frage: klingt es nach Spielanleitung? Strophen = Seiten",
    "source": "Georg 16.10.: „die Power eher die satirische Metaebene … nicht so missverständlich, als wäre das eine Spielanleitung“",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-410"
+   ],
    "why": "Vorgesungene Pseudo-Regeln sind zu komplex und meta, im schnellen Song nicht zu verarbeiten und verwirrend neben den gezeigten Karten.",
    "applies": "ab dem nächsten Song"
   },
@@ -5113,7 +5115,9 @@
    "check": "Blind-Review-Frage: verkauft jede Karte ihre Behauptung?",
    "source": "Georg 16.10.: „jede Karte ist ja Show it, Spin it, Sell it … jede mit dem überzeugenden Impetus“",
    "supersedes": null,
-   "superseded_by": [],
+   "superseded_by": [
+    "V-410"
+   ],
    "why": "Karten sind Behauptungen mit Kayfabe; ein Erzähler, der sie nur aufzählt, nimmt ihnen die Bühne.",
    "applies": "ab dem nächsten Song"
   },
@@ -5658,6 +5662,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-410",
+   "date": "2026-10-17",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Drift-Korrektur Songs R3 (Georg 17.10.: Texte verletzen die Regeln, Blödsinn-Rufen im Alice-Song FAIL; Analyse replies/SONGS_R3/DRIFT_ANALYSIS_R3.md): Die Grundvorgabe TRIPLET_SET_SPEC_R2 (V-266) bleibt für jede Kartenzeile verbindlich – nur Wörter der Karte, eine Zeile je Karte, Leerzeile zwischen allen Beats (Intro-Sätze, jede Kartenzeile, Outro), Closure, 80–95 Zeichen. V-372/V-373 ändern nur die Gewichtung (Power als Seitenhieb, Motiv-Wörter aus artworkPrompt erlaubt, Karte spricht über Vortrag/Opener), keine erfundenen Inhalte. „Seite = Strophe“ heißt Reihenfolge/Mikro-Bogen über Opener, nicht Block-Formatierung. songLine nur bei Unsingbarem (≤ 10 %). Keine wiederholten Hooks/Rufe (kein Wort/Ruf öfter als zweimal, kein Running-Gag-Ruf). Blind-Review darf nur Intro/Opener/Outro ändern, Kartenzeilen nur markieren. Vor dem Hub: triplet_set_check.py Exit 0 + Formatprüfung. Hub b83–b87 FAIL, Neubau aus Karten-Triplets.",
+   "values": {},
+   "owner": "WS0 · Writer’s Room · WSA-Plugin",
+   "check": "triplet_set_check.py Exit 0, Leerzeile nach jedem Beat",
+   "source": "replies/SONGS_R3/DRIFT_ANALYSIS_R3.md",
+   "supersedes": "V-372, V-373",
+   "superseded_by": [],
+   "why": "Mein R3-Briefing ließ die Grundvorgabe weg; Ergänzungen wurden als Ersatz gelesen, Blind-Review drängte zu erfundenen Gags.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5730,7 +5749,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:730",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:731",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
