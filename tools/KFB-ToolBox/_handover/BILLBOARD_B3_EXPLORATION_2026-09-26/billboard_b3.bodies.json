@@ -1,0 +1,247 @@
+{
+ "schema": "kfb.billboard-body.v0",
+ "unit": "m",
+ "up": "+Z (Blender) / +Y (glTF)",
+ "front": "-Y (Blender) / +Z (glTF)",
+ "palettes": {
+  "motel": {
+   "bb_body": "#2fb5a8",
+   "bb_frame": "#fff1d6",
+   "bb_accent": "#ff6b4a",
+   "bb_post": "#e8c547",
+   "bb_bulb": "#fff4b0",
+   "bb_face": "#1b1f2b"
+  },
+  "casino": {
+   "bb_body": "#d7263d",
+   "bb_frame": "#ffd23f",
+   "bb_accent": "#1b998b",
+   "bb_post": "#2e294e",
+   "bb_bulb": "#fffbe6",
+   "bb_face": "#141018"
+  },
+  "kfb": {
+   "bb_body": "#279797",
+   "bb_frame": "#fdc348",
+   "bb_accent": "#fa7a47",
+   "bb_post": "#674b54",
+   "bb_bulb": "#fff6c8",
+   "bb_face": "#1a1c24"
+  }
+ },
+ "boards": [
+  {
+   "name": "BB_KIDNEY_1",
+   "type": "KIDNEY",
+   "palette": "motel",
+   "content_aspect": 1.7778,
+   "max_box": [
+    8.0,
+    4.6
+   ],
+   "face": {
+    "object": "BB_KIDNEY_1_FACE",
+    "w": 8.0,
+    "h": 4.5,
+    "centre_local": [
+     0,
+     -0.19,
+     6.45
+    ],
+    "normal_local": [
+     0,
+     -1,
+     0
+    ],
+    "uv": "0..1 across the face rectangle"
+   }
+  },
+  {
+   "name": "BB_ARROW_1",
+   "type": "ARROW",
+   "palette": "motel",
+   "content_aspect": 1.3333,
+   "max_box": [
+    8.0,
+    4.6
+   ],
+   "face": {
+    "object": "BB_ARROW_1_FACE",
+    "w": 6.133,
+    "h": 4.6,
+    "centre_local": [
+     0,
+     -0.19,
+     6.2
+    ],
+    "normal_local": [
+     0,
+     -1,
+     0
+    ],
+    "uv": "0..1 across the face rectangle"
+   }
+  },
+  {
+   "name": "BB_BLOB_1",
+   "type": "BLOB",
+   "palette": "motel",
+   "content_aspect": 1.7778,
+   "max_box": [
+    8.0,
+    4.6
+   ],
+   "face": {
+    "object": "BB_BLOB_1_FACE",
+    "w": 8.0,
+    "h": 4.5,
+    "centre_local": [
+     0,
+     -0.19,
+     6.04
+    ],
+    "normal_local": [
+     0,
+     -1,
+     0
+    ],
+    "uv": "0..1 across the face rectangle"
+   }
+  },
+  {
+   "name": "BB_TOTEM_1",
+   "type": "TOTEM",
+   "palette": "motel",
+   "content_aspect": 1.3333,
+   "max_box": [
+    5.5,
+    4.0
+   ],
+   "face": {
+    "object": "BB_TOTEM_1_FACE",
+    "w": 5.333,
+    "h": 4.0,
+    "centre_local": [
+     0,
+     -0.19,
+     7.2
+    ],
+    "normal_local": [
+     0,
+     -1,
+     0
+    ],
+    "uv": "0..1 across the face rectangle"
+   }
+  },
+  {
+   "name": "BB_KIDNEY_2",
+   "type": "KIDNEY",
+   "palette": "casino",
+   "content_aspect": 1.3333,
+   "max_box": [
+    8.0,
+    4.6
+   ],
+   "face": {
+    "object": "BB_KIDNEY_2_FACE",
+    "w": 6.133,
+    "h": 4.6,
+    "centre_local": [
+     0,
+     -0.19,
+     6.5
+    ],
+    "normal_local": [
+     0,
+     -1,
+     0
+    ],
+    "uv": "0..1 across the face rectangle"
+   }
+  },
+  {
+   "name": "BB_KIDNEY_3",
+   "type": "KIDNEY",
+   "palette": "kfb",
+   "content_aspect": 0.5625,
+   "max_box": [
+    8.0,
+    4.6
+   ],
+   "face": {
+    "object": "BB_KIDNEY_3_FACE",
+    "w": 2.587,
+    "h": 4.6,
+    "centre_local": [
+     0,
+     -0.19,
+     6.5
+    ],
+    "normal_local": [
+     0,
+     -1,
+     0
+    ],
+    "uv": "0..1 across the face rectangle"
+   }
+  },
+  {
+   "name": "BB_BLOB_2",
+   "type": "BLOB",
+   "palette": "kfb",
+   "content_aspect": 1.3333,
+   "max_box": [
+    8.0,
+    4.6
+   ],
+   "face": {
+    "object": "BB_BLOB_2_FACE",
+    "w": 6.133,
+    "h": 4.6,
+    "centre_local": [
+     0,
+     -0.19,
+     6.112
+    ],
+    "normal_local": [
+     0,
+     -1,
+     0
+    ],
+    "uv": "0..1 across the face rectangle"
+   }
+  },
+  {
+   "name": "BB_ARROW_2",
+   "type": "ARROW",
+   "palette": "casino",
+   "content_aspect": 1.7778,
+   "max_box": [
+    8.0,
+    4.6
+   ],
+   "face": {
+    "object": "BB_ARROW_2_FACE",
+    "w": 8.0,
+    "h": 4.5,
+    "centre_local": [
+     0,
+     -0.19,
+     6.15
+    ],
+    "normal_local": [
+     0,
+     -1,
+     0
+    ],
+    "uv": "0..1 across the face rectangle"
+   }
+  }
+ ],
+ "donor": {
+  "path": "kenney_racing-kit/Models/GLTF format/billboard.glb",
+  "scale": 4.2,
+  "note": "comparison only"
+ }
+}
