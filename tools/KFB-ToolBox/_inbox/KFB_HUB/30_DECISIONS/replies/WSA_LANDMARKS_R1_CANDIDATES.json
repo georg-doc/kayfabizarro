@@ -1,6 +1,6 @@
 {
   "schema": "kfb.landmark-candidates/1",
-  "revision": "R1.2-georg-chromatic-surreal-style",
+  "revision": "R1.3-cc0-el-castillo-source-proof",
   "date": "2026-10-17",
   "ticket": "V-421",
   "owner": "KFB existing Asset Librarian view / existing img2threejs landmark authoring",
@@ -8,9 +8,9 @@
   "branch": "docs/kfb-decisions-register-2026-10-11",
   "authority": "WS0 only decides priority; Georg selects asset after source isolation and Clay preview",
   "mode": "RESEARCH_ONLY",
-  "gateStatus": "TWO_SOURCE_PROOFS_RENDERED_WS0_VISUAL_REVIEW_PENDING",
+  "gateStatus": "THREE_SOURCES_ISOLATED_BUT_WS0_TUNE_KFB_CLAY_OPEN",
   "licensePolicy": "CC0 preferred, CC BY with recorded attribution; reject NC/paid/private unless separate later agreement, no actual asset mirrored",
-  "sourceAudit": "Two public CC0 archives actually downloaded in GitHub Actions run 39044683249, originals/imported meshes hash-pinned and rendered; all other sources retain listing-only state",
+  "sourceAudit": "Three distinct actual CC0 source objects examined with isolated render evidence; original El Castillo CC0 zip adds FBX mesh and 10,218 triangles. Remaining listings unverified; no accepted clay finishing.",
   "mcp3dAssets": {
     "configuredAt": "Dropbox /CLAUDE/.mcp.json",
     "endpoint": "https://3d.shep.bot/mcp",
@@ -21,8 +21,8 @@
   "previewPolicy": {
     "V346": "Source-isolated original and genuine WSB clay preview required per candidate before Georg; current two diagnostic flat-material renders are not final KFB clay.",
     "V383": "never draw markup over source image",
-    "allCandidatePreviewsGenerated": 2,
-    "sourceIsolatedMeshes": 2,
+    "allCandidatePreviewsGenerated": 3,
+    "sourceIsolatedMeshes": 3,
     "styleReviewStatus": "WS0_TUNE_REAL_CLAY_NOT_PROVEN"
   },
   "assetLibraryView": {
@@ -30,13 +30,13 @@
     "owner": "existing KFB Asset Librarian Site; do not create separate tool",
     "state": "SPEC_ONLY_NO_UI_WRITE",
     "selectButtonLabel": "Auswählen",
-    "buttonState": "DISABLED_UNTIL_REAL_CLAY_AND_RIGHTS_WS0_REVIEW",
+    "buttonState": "DISABLED_KFB_CLAY_PREVIEWS_WSB_PENDING",
     "selectionPersistence": "existing Site/owner decision flow; no invented save backend"
   },
   "summary": {
     "landmarks": 10,
     "sourceRecords": 23,
-    "clayPreviews": 2,
+    "clayPreviews": 3,
     "eligibleForSelection": 0
   },
   "landmarks": [
@@ -135,7 +135,8 @@
             "sourceImageSha256": "5653518020c878d15508b871a09d290818ca7dcfb9c7a1fb188d7db991c069a2",
             "clayImageSha256": "532fb13211c83fa39d16b18f3a96bfc3c71b3d2412dae3b835eb134c15ef24ff",
             "sourceIsolationStatus": "SOURCE_RENDERED",
-            "previewEvidenceClass": "ORIGINAL_MONUMENT_SOURCE"
+            "previewEvidenceClass": "ORIGINAL_MONUMENT_SOURCE",
+            "materialRenderAcceptance": "DIAGNOSTIC_ONLY_WS0_TUNE_NOT_APPROVED_CLAY"
           },
           "rightsFlags": [],
           "notes": "OpenGameArt Stonehenge.zip; 392 vertices / 320 faces. Zip internals uninspected. Verified native real-mesh clay proof: 640 triangles; not accepted or selected.",
@@ -337,7 +338,8 @@
             "sourceImageSha256": "e2c52a44aebf6d9818ee4772169d021c4c06fab5afa19ae4fb784d0dc4d87bb0",
             "clayImageSha256": "90d64856ffd2d43e2725a5c10ec7d26170c6fe439149c648dcdb8c5d7fcd3c94",
             "sourceIsolationStatus": "SOURCE_RENDERED",
-            "previewEvidenceClass": "ONLY_CONSTRUCTION_DONOR"
+            "previewEvidenceClass": "ONLY_CONSTRUCTION_DONOR",
+            "materialRenderAcceptance": "DIAGNOSTIC_ONLY_WS0_TUNE_NOT_APPROVED_CLAY"
           },
           "rightsFlags": [],
           "notes": "75-model architectural kit; NOT a faithful Neuschwanstein asset. Verified native real-mesh clay proof: 176 triangles; not accepted or selected.",
@@ -669,7 +671,8 @@
             "sourceImageSha256": "e2c52a44aebf6d9818ee4772169d021c4c06fab5afa19ae4fb784d0dc4d87bb0",
             "clayImageSha256": "90d64856ffd2d43e2725a5c10ec7d26170c6fe439149c648dcdb8c5d7fcd3c94",
             "sourceIsolationStatus": "SOURCE_RENDERED",
-            "previewEvidenceClass": "ONLY_CONSTRUCTION_DONOR"
+            "previewEvidenceClass": "ONLY_CONSTRUCTION_DONOR",
+            "materialRenderAcceptance": "DIAGNOSTIC_ONLY_WS0_TUNE_NOT_APPROVED_CLAY"
           },
           "rightsFlags": [],
           "notes": "Generic timber-like building donor; not Globe Theatre geometry. Verified native real-mesh clay proof: 176 triangles; not accepted or selected.",
@@ -965,30 +968,42 @@
             "attributionRequired": false,
             "creator": "elopez7 / Esteban Lopez",
             "creditLine": "Chichén Itzá — El Castillo — elopez7 / Esteban Lopez; source https://opengameart.org/content/chichen-itza-el-castillo; CC0-1.0",
-            "upstreamVerification": "listing_only_not_file_audited"
+            "upstreamVerification": "CC0 verified OpenGameArt source page; original zip and selected FBX independently inspected, attribution 'Esteban Lopez' recorded"
           },
           "files": {
             "downloadable": true,
-            "formatsConfirmed": [],
-            "archiveType": null,
-            "archiveInspected": false
+            "formatsConfirmed": [
+              ".fbx"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "bc4f0caf2b3b88cab18019bf4679f41556f2d805a10033714e38c95f9a140163",
+            "selectedModelFile": "ElCastillo.fbx",
+            "selectedModelSha256": "a275298cb2f8acb9ceaf8e3831ffee49ad9d7b839ec7475af0572a07091de644"
           },
           "geometry": {
-            "triangles": null,
-            "polygons": null,
-            "metric": "not_published",
-            "verifiedAgainstDownloadedMesh": false
+            "triangles": 10218,
+            "polygons": 5175,
+            "metric": "independently_measured_source_model",
+            "verifiedAgainstDownloadedMesh": true
           },
           "media": {
             "thumbnailUrl": null,
-            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "thumbnailStatus": "SOURCE_ISOLATION_DIAGNOSTIC_AVAILABLE",
             "clayPreviewUrl": null,
-            "clayPreviewStatus": "NOT_RENDERED",
-            "sourceIsolatedProofUrl": null,
-            "overlayOnPreviewAllowed": false
+            "clayPreviewStatus": "MATERIAL_DIAGNOSTIC_NOT_APPROVED_KFB_CLAY",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39067916203",
+            "overlayOnPreviewAllowed": false,
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/source-isolation.png",
+            "clayPreviewRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/clay-preview.png",
+            "sourceImageSha256": "8373e42a1f84748f5a417b151a95707c4a825d2578c1162d82c32a063965bfcf",
+            "clayImageSha256": "2b3a0f346731ec133f16001ea02ac7f7fe960fc51a5d64326e0c0f5d988bcc03",
+            "sourceIsolationStatus": "SOURCE_RENDERED",
+            "previewEvidenceClass": "ORIGINAL_MONUMENT_SOURCE_NOT_BALLCOURT",
+            "thumbnailSourceRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/source-isolation.png"
           },
           "rightsFlags": [],
-          "notes": "OpenGameArt chichenitza.zip (34.2MB), pyramid/temple; polygon count and archive internals NOT inspected.",
+          "notes": "OpenGameArt chichenitza.zip (34.2MB), pyramid/temple; polygon count and archive internals NOT inspected. ElCastillo.fbx successfully imported; mesh 10,218 triangles / 5,175 faces. No ball court geometry verified. Source-isolation image and flat material diagnostic only; WS0 TUNE WSB finishing pending. CC0 with author's requested Esteban Lopez attribution.",
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         },
         {
@@ -1159,7 +1174,7 @@
     "Hiroshima",
     "Mount Rushmore"
   ],
-  "nextGate": "WS0_REVIEW_TWO_SOURCE_PROOFS_THEN_WSA_COMPLETE_REMAINING_SOURCE_PREVIEWS",
+  "nextGate": "WS0_V421_VISUAL_SOURCE_REVIEW_AND_REMAINING_PREVIEWS",
   "styleDirection": {
     "status": "GEORG_STYLE_DIRECTION_ADDENDUM_V421",
     "reference": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/LANDMARK_CHROMATIC_DIORAMA_STYLE_R1.md",
