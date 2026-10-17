@@ -3,6 +3,104 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 78 · 18.10. nachts · Merge nach main (Georg V-430) · Langlauf R2 läuft: C1 (Bewegung), V-429 + C2 + C3 (Owner) auf Branches
+
+**Merge:**
+- main → **4c7c70e**, ein Fast-Forward auf die Kombi look/mesa @d193606 (enthält fig/karten) + m3/fahrhilfe @66bec2c.
+- Tests auf main: npm test **25/25 PASS** und M-Reihe (run-all M1/M2/M3) läuft gerade (bis m1-rueckwand alle PASS); Push von main, Spiegel und Vorschau folgen direkt danach.
+- Spiegel und Vorschau: siehe unten.
+
+**Langlauf R2: wer macht was:**
+- **C1 Kamera (V-408):** übernimmt die Bewegungs-Sitzung auf `c1/kamera`.
+  - Erster Fund: Seit M3 interpolierte das Bild des Autos die Kippgruppe statt der Starrkörper-Gruppe. Der fahrende Wagen ruckelte deshalb zwischen den Physik-Schritten, das ist wahrscheinlich Georgs „Ruckeln“.
+  - Der Fix (eine Zeile) kommt mit C1.
+- **V-429 (Bühnen-FAIL), auf `c2/ein-rig`:**
+  1. Ein Rig: Figuren werfen **und empfangen** Schatten vom selben Key, V-417 ist auf der Bühne mit Licht-Modul aufgehoben. Test `oneRigFiguresCastAndReceive`.
+  2. Billboard-Lampen ausgebaut, keine Praktischen am Amphitheater, bis WSB B22 liefert. Test `practicalsPoolNoSelfBuiltLamps`.
+  3. Knet-Parameter eingefroren. Aliens bekommen das bestehende Figuren-Profil, nichts geändert.
+  4. C4 wird vorgezogen, sobald die B9-GLBs greifbar sind (siehe Frage 1).
+- **C2 Module + E2 (V-409/V-422), auf `c2/ein-rig`:**
+  - `src/vendor/figure/kfb-figure-loader.v1.js` (`kfb.figure-loader/1`):
+    - Kartenprüfung, Körper als Bytes von fester Adresse, sha256 im Browser.
+    - Kopfteil-Figuren mit EyeRig v6 und E2-Lidhaut, nach `proof_r1e.html`.
+    - Varianten über `kfb.figure-variant/1`, gebunden an Karten-id und Karten-sha256.
+  - E2-Module byte-gleich vendort (`src/vendor/e2/`).
+  - Aliens auf der Bühne: `#stage,actors=aliens,light=l1` (Lord Hunky links, Lady Dory rechts, Sockelrand 80°).
+  - README für WSA: `docs/VENDOR_PACKAGES.md`. Pakete auf `ws1/vendor` folgen mit dem C2-Push.
+  - Messwerte und Bildreihe kommen im nächsten §.
+- **C3 Fluff-Ernte (V-423), Logik fertig (`c3/fluff-ernte` @2f7ec5a, reine Logik, Node-Tests):**
+  - Grammatik R2 (`src/world/grammar.js`, alle Operatoren aus §2), Trefferregel (`src/world/harvest.js`), Gelände-Windfall in `fluff.js`.
+  - Trefferregel über 1000 Bäume: Faust 3,00 / Schuss 2,00 / Explosion 1.
+  - Kugeln je Baum Ø 11,7 (7–19) + 2 Fallobst.
+  - Ruhezeit Ø 2,3 s, max 3,4 s.
+  - Einsinken 0, Energie steigt nie.
+  - Haltewinkel: 30° hält, 40° rollt weiter.
+  - Gleiche Ruhelage bei 30/60/144 fps.
+  - **Sichtbarer Einbau gebaut** (Branch `c3/ernte` @e3a7aef, lokal, auf c2): `src/modules/orchard3d.js` in der Laufwelt `#m1,harvest`, drei Obstgärten (goblin/atlantis/utopia, Haupt-Sorte je Zone), KayKit-Bäume mit Maß 1 KayKit-Einheit = 0,616 m (M_PER_RIG), Tasten V Faust / B Schuss (Projektil) / N Explosion, Sammeln zu Fuß und im Auto, Stand in kfb.save/1, Zähler als Platzhalter unten links. Browser-Test `test/c3.mjs` und Knet-Video `scripts/c3/clip.mjs` laufen im nächsten Browser-Slot.
+
+**Fragen an WS0:**
+1. **C4:** Die B9-GLBs mit `COLOR_1` (Stein-IDs) liegen nicht auf GitHub, nur in den WSB-Kopien bzw. HANDOFF_R1. Bitte auf einen Branch legen, dann ziehe ich C4 vor.
+2. **Alien-Karten:** `lord_hunky` und `lady_dory` nennen noch den r4-Körper. Ich lade den edge80-Körper (V-422/V-430) über eine Varianten-Datei. Bitte die Karten auf edge80 (bzw. Dory r7) umstellen, dann entfällt sie.
+3. **Grammatik R2 hat Widersprüche:**
+   - Die Kontur-Regel (≥ 15 % Überlappung oder ≥ 25 % Luft) schließt 0,85–1,25 × Radiensumme aus. `relax` schiebt aber auf 0,92×, Folgefrüchte liegen bei 1,15–1,5×. Bisher nur gemessen, nicht erzwungen.
+   - „Ungerade Mengen“ gegen die Stand-Zahlen (großer Busch 4, Kaktus 2). Angewendet auf die hängenden Kugeln je Pflanze.
+   - Kahle Bäume: Fluff ja oder nein? Laut Konzept nein, laut B2-Farbregel trägt Comic auch kahle Bäume.
+   - Maßstab: KayKit-Einheit = Spielmeter angenommen.
+   - Die B2-Anker liegen dichter als der Spec-Abstand, deshalb meist 6 statt 7 Stände je Baum.
+4. **Repo privat (§77):** Soll WS1 den Asset-Resolver (a) jetzt einbauen oder erst nach V-427?
+
+## 77 · 17.10. abends · b98: Was passiert in der WS1-Kette, wenn das Repo privat wird? (nur Analyse, nichts geändert)
+
+**1 · `ws1/preview` → Cloudflare Pages.**
+- Gebaut wird über die Git-Anbindung des Pages-Projekts `kayfabizarro`: Branch-Build auf jeden Push nach `ws1/preview`, Alias `ws1-preview.kayfabizarro.pages.dev`.
+- Auf dem Branch liegen `.github/scripts/build-cloudflare-pages.mjs` (kopiert die öffentliche Oberfläche nach `.cloudflare-pages/`), `wrangler.jsonc`, `index.html` (Einzeldatei, 18,7 MB) und `build.json`.
+- Ausgelöst wird der Build von dieser Owner-Sitzung: ein Push vom Mac (Git über https mit Schlüsselbund-Anmeldung, Georgs Konto).
+- **Privat bricht das nicht**, solange die Cloudflare-GitHub-App Zugriff auf das Repo hat. Bei „alle Repositories“ ist das so, sonst muss das Repo ausgewählt sein. Das prüft Georg einmal in GitHub → Settings → Applications.
+- Der Push selbst läuft weiter, weil die Anmeldung Schreibrechte hat.
+- **Bricht schon:** meine Kontrollabfragen über die GitHub-API ohne Anmeldung (Status der Cloudflare-Prüfung, Commits). Privat brauchen sie ein Token mit Lesezugriff. Lösung: ein feinkörniges Token für dieses eine Repo, nur Leserechte auf contents und checks, liegend im Schlüsselbund.
+
+**2 · Staging-Seite (WSA) liest `build.json`.**
+- Quelle ist `WSA_GPT_STAGING_R1_SOURCE/lib/staging.ts:4/43`: `https://raw.githubusercontent.com/georg-doc/kayfabizarro/ws1/preview/build.json?t=…` alle 15 s.
+- Dazu kommt `:5/46` mit `api.github.com/…/commits/ws1%2Fpreview` und danach das Bündel über raw.
+- **Bricht bei privatem Repo** (raw und API ohne Token liefern 404).
+- Billigste Lösung: Die Seite liest `https://ws1-preview.kayfabizarro.pages.dev/build.json` und `…/index.html`. Die liegen schon dort, weil der Pages-Build den Branch-Inhalt 1:1 ausliefert, und sie sind öffentlich.
+- Den Commit trägt `build.json` bereits (`commit`), den API-Aufruf braucht es also nicht mehr.
+- Aufwand bei WSA: etwa eine Stunde. Alternativ ein Token auf der Staging-Seite (serverseitig, `/api/status`).
+
+**3 · Was kfb-planet zur Laufzeit von GitHub lädt** (alle Adressen mit festem Commit, außer wo `main` steht):
+
+| Datei:Zeile | Was | Quelle |
+|---|---|---|
+| `src/cardImage.js:12` | Karten-PDF-Seiten (Kartenbilder) | raw @MEDIA_COMMIT |
+| `src/dialogText.js:17` | Deck-JSON (Kartentexte) | raw @MEDIA_COMMIT |
+| `src/poolReader.js:16` | Opener-Pool (Dialog) | **api.github.com contents**, Planungs-Branch |
+| `src/modules/amphitheater.js:20` | Amphitheater-GLB | raw @AMPH_COMMIT |
+| `src/modules/meshyStage.js:19` | Meshy-Bühnen (Goblin, Atlantis, Comic, Utopia) | raw @ASSET_COMMIT |
+| `src/modules/vehicleLineup.js:15`, `src/m2/M2Car.jsx:39` | 14 Fahrzeug-GLBs, Dragster | raw @VEHICLE_COMMIT |
+| `src/vendor/sky3/skydome-shader.js:25` | Himmel-Texturen | raw **main** |
+| `src/vendor/fb/emb/…/pet-mouth.v1.js:11/27/43` | Mund-Texturen | raw **main** |
+| `src/vendor/eyes/pet-library.v6.js:17` | Pet-Bibliothek (Augen-Teile) | raw **main** |
+| `src/vendor/billboard/billboard-clay.js:225` | Billboard-Bilder | jsDelivr `gh/…@pin` |
+| `src/vendor/card-art-2d.js:24` | pdf.js | jsDelivr **npm** (bleibt, öffentliches Paket) |
+| `src/bubbleLayer.js:31` | Schrift Shantell Sans | Google Fonts (bleibt) |
+
+- Die jsDelivr-Importe der Augen-Spender sind schon lokal: Alias in `vite.config.js`, byte-gleiche Kopien in `src/vendor/eyes/`. Kein Netz nötig.
+- Figuren-GLBs (FB, GothGirl), Figurenkarten, Licht-, Sprenkel- und Deformer-Module sind schon im Bündel.
+- Privat brechen also: Karten, Dialog-Pool, alle Bühnen-GLBs, Fahrzeuge, Himmel, Münder, Billboard-Bilder.
+- **Unsere Testreihe bricht ebenfalls**, weil sie dieselben Adressen im Browser lädt.
+
+**4 · Vorschlag: Spiel-Build öffentlich, Repo privat.**
+- **(a) Ein Asset-Resolver** an einer Stelle: `src/assetBase.js` mit `assetUrl(path, pin)`. Er ersetzt die zehn Fundstellen oben und schaltet die Quelle um (`raw` heute, `build` oder `r2` morgen). Dazu eine Test-Sperre: kein `raw.githubusercontent`, `api.github` oder `jsdelivr/gh` mehr in `src/` (Ausnahme pdf.js über npm).
+  - Aufwand WS1: ½ Tag.
+- **(b) Assets mit dem Build ausliefern.**
+  - Ein Sammel-Skript holt die gepinnten Dateien in `public/assets/<pin>/…`. Heute etwa 90 MB: 14 Fahrzeuge à ≈ 3,8 MB, 5 Bühnen bis 15,7 MB, Himmel, Münder, Karten-PDFs der freigegebenen Decks.
+  - `ws1/preview` liefert sie neben `index.html` aus. Die Pages-Grenzen (25 MB je Datei, 20 000 Dateien) halten.
+  - Der Pool kommt als Schnappschuss-JSON ins Bündel statt über die API.
+  - Aufwand WS1: ½–1 Tag.
+- **(c) Statt (b), später: der öffentliche R2-Bucket aus der WS0-Allowlist** (V-427, Schritt 2). Dann zeigt nur `assetBase` auf die R2-Adresse, (b) entfällt. Empfehlung: (a) sofort, (b) als Brücke, (c) sobald der Bucket steht.
+- **Lizenz-Hinweis für Georg:** Was im Spiel-Build liegt, ist als Datei abrufbar. Für eingebettete Nutzung im Produkt ist das bei Kauf-Assets üblich erlaubt, als lose Sammlung nicht. Die Allowlist sollte deshalb nur Dateien enthalten, die das Spiel wirklich lädt, keine ganzen Packs.
+- **Reihenfolge:** WS1 baut (a) und (b) erst nach Georgs Entscheid V-427, weil es bis dahin die Langlauf-Stufen bremsen würde. Wenn WS0 es vorzieht, passt es zwischen C2 und C3.
+
 ## 76 · 17.10. · Fahrhilfe M3 komplett A–G · Vorschau mit Stufe G
 
 - **Stufe G** (m3/fahrhilfe @66bec2c, Bewegungs-Sitzung), alles nur Darstellung, Physik und Lenkung bleiben aktiv, nur mit Assist M3 an:
