@@ -5934,6 +5934,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-429",
+   "date": "2026-10-17",
+   "area": "Look",
+   "verdict": "FAIL",
+   "text": "Bühnen-Vorschau FAIL (Georg 17.10., Screenshot Amphitheater + Billboard): (1) Licht/Schatten inkonsistent – Billboard und Lampen werfen harte Schatten, Figuren kaum (Zwischenregel V-417 „kein Eigenschatten“) → ab jetzt ein Rig: alle Objekte werfen und empfangen vom selben Key (LIGHT_MODEL_R2). (2) Billboard-Lampen schlampig selbst gebaut → keine Eigenbauten, wenn es Assets gibt (WSB B22 aus Paketen, geknetet). (3) Knet-Textur der Figuren in jeder Vorschau anders, im Gesicht Streifen, falsche Skalierung → ein zentrales Knet-Modul kfb-clay.v1 mit drei festen Profilen (character, midground, background) + Distanzbändern, objekt-normierte Skalierung, nicht UV-abhängig, fester Seed aus der Figurenkarte, Golden-Regressionstest (zwei Ladevorgänge identisch); WS0 baut es (wie E2), WS1/ToolBox/WSB binden nur ein. (4) Farbige Sprenkel-Streuung der Diorama-Steine fehlt → WS1 Stufe C4 (B9-Stein-IDs).",
+   "values": {},
+   "owner": "WS0 (Knet-Modul) · WS1 (Licht, Sprenkel) · WSB (B22 Lampen)",
+   "check": "Knet-Golden-Test grün, dann WS1-Bühne mit Modul + einem Rig, WS0 prüft vor Georg",
+   "source": "replies/CLAY_SSOT_R1/ · V-053 · V-355 · LIGHT_MODEL_R2",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Jedes Werkzeug hatte eine eigene Knet-Umsetzung und die Zwischenregel ohne Figurenschatten blieb stehen; so ist keine verlässliche Abnahme möglich.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6021,7 +6036,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:769",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:770",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -7,6 +7,14 @@
 
 
 
+
+## 17.10. night · STAGE FAIL (V-429), applies to long run R2 (b99)
+Georg's screenshot (amphitheatre + billboard), FAIL on four points:
+1. **Light/shadows are inconsistent.** Billboard and lamps cast hard shadows, the figures barely any. From now on: **one rig**. All objects (figures, billboard, lamps, props) cast and receive shadows from the same key light (LIGHT_MODEL_R2). The interim rule V-417 ("figures without self-shadow") is lifted on the stage as soon as the light module is in use. Gate: one image row in which every shadow shares the same direction and softness.
+2. **Billboard lamps** are self-built, so they go. WSB delivers proper lamps from asset packs, in clay (B22). Until then: no lamps rather than self-built ones.
+3. **Clay on figures looks different in every preview** (stripes in the face, wrong scale). **Do not change any clay parameters yourself.** WS0 is building the central module `kfb-clay.v1` (three profiles character/midground/background + distance bands + golden test). You will only integrate it when WS0 delivers it. Until then, freeze the clay settings.
+4. **Coloured speckle scatter on the diorama stones is missing:** pull stage C4 (colour script with the B9 stone IDs) forward, right after C2.
+
 ## 17.10. night · WSB deliveries for your long run (C2/C3)
 - **Ground colour** (WSB `50_BLENDER/SPEC/VORSCHLAG_BODENFARBE_R1.md`): skip saturated greens (hue 55–170°, saturation > 0.35) as ground, and use the toned-down largest remaining share of the edge palette instead. For B7, moss turns into earth brown #73653f and green only shows as speckles. Test it in C3.
 - **Harvest feedback in clay (B19):** punch puff, shot hit (9 colours), explosion, fluff burst (6 colours, small balls stay on the ground). One `kfb_fx` clip per GLB.
