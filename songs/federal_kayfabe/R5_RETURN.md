@@ -14,3 +14,6 @@
 
 ## Gate repair one — actual CI evidence
 Run 39043879462 at 3f3a536edf1deb17ee1a08c4fb382b0c4b937d38: R4 corpus PASS, original triplet part 1 PASS (28/28), original lyrics part 1 PASS (28/28, 2826 chars), original triplet part 2 FAIL solely on #34 curly-apostrophe token `don't` (source uses `don’t`); original lyrics part 2 not run. Replaced with source-backed `do not possess` and shortened filler; both original gates now need rerun. This is a candidate repair, not an independent revision.
+
+## Gate check 2 · green with B6 warning
+Run 39044051223 at d636c0b562e2243154f91fcb76a5d2c48675bbc8: both original triplet checks 0 FAIL (28/28 and 32/32); both original song_gate lyrics PASS (28/28, 2826 chars and 32/32, 3195 chars). One B6 *warning* due to existing R4 opener `Receipts.`; replacing only that pre-review opener with `Street account.` and requesting third CI verification. Creative critic still not run.
