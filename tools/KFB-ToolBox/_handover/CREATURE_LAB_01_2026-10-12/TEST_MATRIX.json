@@ -1,0 +1,130 @@
+{
+  "schema": "kfb.creature-lab-01.test-matrix/0.1-candidate",
+  "date": "2026-10-12",
+  "status": "PLANNED_NOT_RUN",
+  "owner": "KFB ToolBox / FrankenStein-Rigging-Animation authoring",
+  "branch": "planning/kfb-creature-lab-01-rig-qa-2026-10-12",
+  "fixtures": [
+    {
+      "id": "CL01-A",
+      "name": "Fassbeiner",
+      "seed": "fixed-documented-at-execution",
+      "regions": [
+        "torso",
+        "front_left_leg",
+        "front_right_leg",
+        "rear_left_leg",
+        "rear_right_leg"
+      ],
+      "poses": [
+        "rest",
+        "front_left_lift",
+        "front_right_lift",
+        "hind_leg_lift",
+        "squat",
+        "stress_abduction"
+      ],
+      "negativeControl": "intentionally misbind inner leg seam to opposite limb; must localize"
+    },
+    {
+      "id": "CL01-B",
+      "name": "Schleifenschwanz",
+      "seed": "fixed-documented-at-execution",
+      "regions": [
+        "torso",
+        "left_arm",
+        "right_arm",
+        "tail_root",
+        "tail_mid",
+        "tail_tip"
+      ],
+      "poses": [
+        "rest",
+        "left_reach",
+        "right_reach",
+        "tail_curl_left",
+        "tail_curl_right",
+        "stress_tail"
+      ],
+      "negativeControl": "intentionally assign tail-middle skin weights to wrong root/arm; must detect"
+    },
+    {
+      "id": "CL01-C",
+      "name": "Turmhals",
+      "seed": "fixed-documented-at-execution",
+      "regions": [
+        "torso",
+        "neck_base",
+        "neck_mid",
+        "neck_tip",
+        "head"
+      ],
+      "poses": [
+        "rest",
+        "neck_bow",
+        "neck_sidebend",
+        "neck_twist",
+        "head_turn",
+        "stress_neck"
+      ],
+      "negativeControl": "none mandatory; validate compression/stretch signal"
+    }
+  ],
+  "tests": [
+    {
+      "id": "SOURCE_ISOLATION",
+      "method": "Before rig/material show original generated SDF mesh itself, reproducible seed/code and 4-view images",
+      "pass": "Source proof visible and provenance pinned"
+    },
+    {
+      "id": "MESH_TOPOLOGY",
+      "method": "Validate connected components, manifold closedness where intended, triangle area, duplicate vertices, face winding, normal finiteness",
+      "pass": "No unplanned nonmanifold edges, degenerates, floating components, NaN normals; distinguish expected openings"
+    },
+    {
+      "id": "SKIN_REST",
+      "method": "Per-vertex influences finite, normalized, existing named bones; compare bind/rest mesh and evaluated rest",
+      "pass": "No unweighted vertices and within measured numeric float tolerance; report coordinate units"
+    },
+    {
+      "id": "POSE_METRICS",
+      "method": "Evaluate actual skinned vertex positions at recorded pose matrices; compute per-rest-edge distance ratio and compression inverse, p50/p95/p99/max per semantic region; ignore degenerate zero-length rest edges",
+      "pass": "Complete metrics per pose/region, no NaNs; thresholds calibrated by actual neutral samples and visually acceptable cartoon deformation, not invented universal 1.25 hard gate"
+    },
+    {
+      "id": "NEGATIVE_CONTROLS",
+      "method": "Introduce two seeded deliberately broken weight assignments for CL01-A leg midline and CL01-B tail; rerun identical suite",
+      "pass": "Both broken cases detected with localized affected edges/bones; known-good rest/nonstress poses not broadly false-flagged"
+    },
+    {
+      "id": "EXPORT_ROUNDTRIP",
+      "method": "Export glTF/GLB, cold reopen in target tool/renderer; compare bone names/hierarchy, source scale/pivot/up axis, neutral mesh and sampled pose metrics",
+      "pass": "Reproduction matches documented tolerance and original source identity; screenshot from post-export renderer"
+    },
+    {
+      "id": "STYLE_BOUNDARY",
+      "method": "Shader uses recorded material slots/region patterns only; no KFB Surface canon mutation",
+      "pass": "Geometry and material role separable, approved KFB style not replaced"
+    },
+    {
+      "id": "OWNER_ISOLATION",
+      "method": "Git diff/PR roster against ToolBox and active Composer PR #355",
+      "pass": "No production file mutation outside isolated Creature Lab proof; KayKit, EyeRig, Asset Registry, World, Sites untouched"
+    }
+  ],
+  "interpretation": {
+    "proposedVisualQA": "At minimum front, back, side and 3/4 neutral; selected stress pose before/after; compare with wireframe/bone labels",
+    "measurements": "edge-length ratio is a diagnostic, not proof of correct joint deformation; inspect volume loss, folded faces, face normal inversion, self-intersections and weight boundary where practical",
+    "policy": "No numeric hard thresholds prior to calibration; record chosen region-based thresholds and rationale in result, not silently use this planning file as PASS",
+    "expectations": "For final three-fixture proof: 3 mesh generations; 18 defined pose cases; 2 negative controls; 3 export/reimport checks; counts are PLANNED only",
+    "countsExecuted": {
+      "mesh": 0,
+      "pose": 0,
+      "negativeControls": 0,
+      "roundtrip": 0,
+      "browser": 0,
+      "visual": 0
+    },
+    "nextGate": "CL01_A_SOURCE_ISOLATED_MESH_AND_HEADLESS_RIG_QA_PROOF"
+  }
+}
