@@ -5417,6 +5417,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-394",
+   "date": "2026-10-17",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Charakter-SSOT kfb.character/1 (Georg 17.10.): je Charakter eine Datei auf GitHub (characters/<id>/character.json), die Figurenkarte kfb.figure/1 ist ihr Abschnitt Aussehen. Abschnitte: Identität (Name, Aliase inkl. Spracheingabe-Verhörer), Geschichte (Background-Story, Weltwissen, Rolle in der Welt), Persönlichkeit (Archetyp, Rolle, Persönlichkeitstyp, Humor), Dialog (Signature-Pool, Triplet-Stimme), Karten (zugeordnete Decks/Karten), Gedächtnis (Lead-Memory: was der Charakter über den Spieler wissen kann – nur Schema; Werte im Spielstand/Journey-Diary, Almanach, Beziehungen/Interaktionen mit NPCs), Aussehen (Körper, Augen-Rig, Mund, Brauen, Farben; renderStyle Standard clay, andere Texturen ausdrücklich erlaubt), Performance (bevorzugte Clips/Tänze, Gang, Emotes, Figurenlicht je Story-Mode), Stimme. Vorhandene Skizzen werden zusammengeführt, nicht neu erfunden (Entwurf läuft in replies/FIGURES_R1/).",
+   "values": {},
+   "owner": "WS0 (Schema, Zusammenführung) · alle Konsumenten (Spiel, Werkstatt, Blender, Video, Dialog)",
+   "check": "eine Datei je Charakter, Quellen je Abschnitt",
+   "source": "Georg 17.10.: „zu jedem Charakter … SSOT … Persönlichkeit, Signature-Pool, Karten, Lead-Memory, Beleuchtung, Background-Story, Weltwissen“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Persönlichkeit, Aussehen, Dialog und Gedächtnis lagen in verstreuten Skizzen; ohne eine Quelle entstehen Widersprüche zwischen Spiel, Werkstatt und Video.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5489,7 +5504,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:714",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:715",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
