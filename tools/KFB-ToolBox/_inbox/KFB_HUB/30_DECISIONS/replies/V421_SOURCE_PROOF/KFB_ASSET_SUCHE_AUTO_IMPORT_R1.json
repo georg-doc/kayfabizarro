@@ -1,0 +1,91 @@
+{
+  "schema": "kfb.asset-suche-github-intake/1",
+  "version": "R1-2026-10-17",
+  "owner": "existing Asset Librarian / tools/asset_registry",
+  "status": "GITHUB_REVIEW_BRANCH_ONLY_NOT_MAIN_OR_LIVE",
+  "destinationRoot": "media/3D_Assets/KFB_Landmark_Candidates",
+  "publishedRepoRequires": "public safe source license evidence, exact source identity and exact binary hash; exclude paid/private, NC and rights-unknown",
+  "sourceSearchRoute": "KFB Asset Suche: existing Asset Librarian Registry -> external 3d-assets.search_assets -> get_asset -> licence verification -> selected TOP candidate intake",
+  "candidates": [
+    {
+      "id": "stonehenge_oga_cc0",
+      "landmarkId": "stonehenge",
+      "title": "Stonehenge OpenDungeons four stones",
+      "sourcePage": "https://opengameart.org/node/30878",
+      "archiveUrl": "https://opengameart.org/sites/default/files/Stonehenge.zip",
+      "archiveSha256": "1c3b5e0206c35eebfbf89985c21adc3472487288d6347ee8ad283c29ef6054bc",
+      "license": "CC0-1.0",
+      "licenceEvidence": "https://opengameart.org/node/30878",
+      "author": "eugeneloza",
+      "attribution": "eugeneloza, Stonehenge (OpenDungeons), OpenGameArt CC0; source URL above",
+      "identityChecked": true,
+      "rightsVerifiedForPublicRepo": true,
+      "searchVerified": "EXTERNAL_ORIGINAL_OPEN_GAME_ART_NOT_MCP_SEARCH",
+      "sourceRole": "exact-landmark-model-not-final-diorama",
+      "selectedSourceFile": "Stonehengebed.blend1",
+      "selectedSourceSha256": "a172911fdeadf25567e61fc2da2cfb42e19ad614c1c2c82f43be77c1d160e045",
+      "files": [
+        {
+          "archiveMember": "Stonehengebed.blend1",
+          "destination": "source/Stonehengebed.blend"
+        },
+        {
+          "archiveMember": "Stonehenge_texture.png",
+          "destination": "source/Stonehenge_texture.png"
+        }
+      ],
+      "sourcePreviewPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/stonehenge_oga_cc0/source-isolation.png",
+      "sourceApproval": "CANDIDATE_ONLY_KNETE_FOLGT_NOT_GEORG_SELECTED"
+    },
+    {
+      "id": "chichen_el_castillo_oga_cc0",
+      "landmarkId": "chichen_itza",
+      "title": "Chichen Itza El Castillo",
+      "sourcePage": "https://opengameart.org/content/chichen-itza-el-castillo",
+      "archiveUrl": "https://opengameart.org/sites/default/files/chichenitza.zip",
+      "archiveSha256": "bc4f0caf2b3b88cab18019bf4679f41556f2d805a10033714e38c95f9a140163",
+      "license": "CC0-1.0",
+      "licenceEvidence": "https://opengameart.org/content/chichen-itza-el-castillo",
+      "author": "Esteban Lopez (elopez7)",
+      "attribution": "Esteban Lopez (elopez7), Chichen Itza El Castillo, OpenGameArt CC0; creator name requested by source",
+      "identityChecked": true,
+      "rightsVerifiedForPublicRepo": true,
+      "searchVerified": "EXTERNAL_ORIGINAL_OPEN_GAME_ART_NOT_MCP_SEARCH",
+      "sourceRole": "partial-site-exact-pyramid-not-ball-court",
+      "selectedSourceFile": "ElCastillo.fbx",
+      "selectedSourceSha256": "a275298cb2f8acb9ceaf8e3831ffee49ad9d7b839ec7475af0572a07091de644",
+      "files": [
+        {
+          "archiveMember": "ElCastillo.fbx",
+          "destination": "source/ElCastillo.fbx"
+        },
+        {
+          "archiveMember": "ElCastillo_StairRails_AO.png",
+          "destination": "source/ElCastillo_StairRails_AO.png"
+        },
+        {
+          "archiveMember": "ElCastillo_StairRails_Albedo.png",
+          "destination": "source/ElCastillo_StairRails_Albedo.png"
+        },
+        {
+          "archiveMember": "ElCastillo_StairRails_Displacement.exr",
+          "destination": "source/ElCastillo_StairRails_Displacement.exr"
+        },
+        {
+          "archiveMember": "ElCastillo_StairRails_Metalness.png",
+          "destination": "source/ElCastillo_StairRails_Metalness.png"
+        },
+        {
+          "archiveMember": "ElCastillo_StairRails_Normal.png",
+          "destination": "source/ElCastillo_StairRails_Normal.png"
+        },
+        {
+          "archiveMember": "ElCastillo_StairRails_Roughness.png",
+          "destination": "source/ElCastillo_StairRails_Roughness.png"
+        }
+      ],
+      "sourcePreviewPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/source-isolation.png",
+      "sourceApproval": "CANDIDATE_ONLY_KNETE_FOLGT_NOT_GEORG_SELECTED"
+    }
+  ]
+}
