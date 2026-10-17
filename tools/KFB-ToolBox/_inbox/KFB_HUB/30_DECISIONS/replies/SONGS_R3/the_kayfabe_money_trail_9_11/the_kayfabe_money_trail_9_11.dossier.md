@@ -1,13 +1,13 @@
-# The Kayfabe Money Trail: 9/11 - Writer's Room R3 dossier (wr1)
+# The Kayfabe Money Trail: 9/11 - Writer's Room R3 dossier (wr2, after blind review)
 
-deckId `the_kayfabe_money_trail_9_11` - 60 cards, 15 printed pages - registry `gh/main` (`registry/assets/v1/decks/the_kayfabe_money_trail_9_11.json`, mappingStatus verified, sourceCommit 073b79c). Lyrics: **4992 characters** incl. newlines (Python `len()`), limit 5000.
+deckId `the_kayfabe_money_trail_9_11` - 60 cards, 15 printed pages - registry `gh/main` (`registry/assets/v1/decks/the_kayfabe_money_trail_9_11.json`, mappingStatus verified, sourceCommit 073b79c). Current lyrics: `the_kayfabe_money_trail_9_11.wr2.suno.txt`, **4989 characters** incl. newlines (Python `len()`), limit 5000.
 
 ## Purpose and thesis
 A 9/11 *financial forensics* add-on: the deck plays the money trail (lease and insurance, put options, insiders, Ptech, the Pentagon's missing trillions) as a wrestling card game in which the official investigation is itself a performance. Thesis printed on card 2 and card 28: **Rule #1 is Follow the Money - and the official final word called the money's origin "of little practical significance."** Card 60 delivers the payoff: 9/11 "made the house infinitely rich."
 
 The song treats this as satire about money, power, media narratives and official kayfabe. **Never at the victims.** The cards make their own claims; the song lets each one perform its claim with full conviction (V-373). Nothing beyond the printed cards is stated. The comedy comes from cards contradicting each other side by side:
 - Coincidence Engine (#3) vs Academic Probability (#27)
-- Global Manhunt (#19, "terror's friends profited, surely!") vs Single Institutional Investor (#26, US-based, free pass)
+- Global Manhunt (#19, foreign probes chase the profiteers to the US border) vs Single Institutional Investor (#26, US-based, free pass)
 - Rule #1 (#2) vs Commission Handwave (#28), sung as a direct callback
 - Keys to the Cyber Kingdom (#31) vs Tom Ridge's Rubber Stamp (#39)
 - Rumsfeld's war on bureaucracy (#41) vs the $8.5 Trillion Benchmark (#53, "great success at losing money")
@@ -20,7 +20,7 @@ The song treats this as satire about money, power, media narratives and official
 | 1 | 1 | #1 9/11 Trillions: Follow The Kayfabe-Money!, #2 Rule #1: Follow the Money, #3 The Coincidence Engine, #4 Treasury's 10 Veils | The case opens: Follow the Money vs the Coincidence Engine and ten veils |
 | 2 | 2 | #5 The Privatized Towers, #6 The $14 Million Bridge, #7 The Double-Trouble Policy, #8 The Secret 80% Kickback | The lease and the insurance: buy, leverage, double the cover, get refunded |
 | 3 | 3 | #9 Floors 93 To 100, #10 Silver Stream E-Link, #11 The $10M Anomalies, #12 The Upper West Side Safehouse | Marsh floors 93-100: people and data in the impact zone; the boss stayed home |
-| 4 | 4 | #13 Convar Data Recovery, #14 The 40-Minute Window, #15 The Absolute Shopping Binge, #16 Paul Bremer's NBC Pivot | Data recovery: a surge, a purge, a 'shopping binge', and TV names the enemy |
+| 4 | 4 | #13 Convar Data Recovery, #14 The 40-Minute Window, #15 The Absolute Shopping Binge, #16 Paul Bremer's NBC Pivot | Data recovery: a surge, a purge, somebody's 'shopping binge', TV talks enemy not money |
 | 5 | 5 | #17 The Put Options, #18 The Raytheon Call, #19 The Global Manhunt, #20 The CBOE Shredder | Options: airline puts, Raytheon calls, a global manhunt, a shredder |
 | 6 | 6 | #21 The Stratex Spike, #22 The Ritz-Carlton Meeting, #23 Buzzy Krongard's Brokerage, #24 The San Diego Cash-Out | Insiders: Stratex, Carlyle breakfast, Krongard's brokerage, the cash-out |
 | 7 | 7 | #25 The SEC Investigation, #26 The Single Institutional Investor, #27 Academic Probability, #28 The 9/11 Commission Handwave | The official verdict (courtroom): SEC, single investor, ignored papers, Handwave = TURN |
@@ -28,7 +28,7 @@ The song treats this as satire about money, power, media narratives and official
 | 9 | 9 | #33 Vulgar Betrayal, #34 Yassin al-Qadi, #35 Sarmand Limited, #36 BMI Real Estate | Ptech's money: blocked agents, al-Qadi, Sarmand, BMI |
 | 10 | 10 | #37 The Radical Chief Architect, #38 The Pre-Raid Warning, #39 Tom Ridge's Rubber Stamp, #40 Thomas Kean's Wallet | Ptech cover-up: chief architect, pre-raid warning, Ridge's stamp, Kean's wallet |
 | 11 | 11 | #41 Rumsfeld's Declaration, #42 The $2.3 Trillion Cushion, #43 The Whistleblower's Reward, #44 Dov Zakheim's Ledger | Second turn inward: Rumsfeld vs the Pentagon's missing $2.3T; whistleblower asked why he cares |
-| 12 | 12 | #45 SPC International, #46 Rebuilding America's Defenses, #47 The New Pearl Harbor, #48 The Fear Integration | The plan on paper: SPC, PNAC, 'New Pearl Harbor', fear budget |
+| 12 | 12 | #45 SPC International, #46 Rebuilding America's Defenses, #47 The New Pearl Harbor, #48 The Fear Integration | The plan on paper: SPC (bookkeeping-only line in wr2), PNAC, 'New Pearl Harbor', fear budget |
 | 13 | 13 | #49 Wedge 1 Renovations, #50 The Unproduceable Report, #51 Thomas White's Enron Playbook, #52 Building 7 SEC Vault | HUMANE DROP: Wedge 1 bookkeepers killed, report unproduceable, Enron man runs the Army, SEC files gone |
 | 14 | 14 | #53 The $8.5 Trillion Benchmark, #54 The Standard Operating Plug, #55 Linda Woodford's Eraser, #56 The Iraq Pocket Change | Escalation of the plug: $2.3T to $8.5T, false numbers, eraser, Iraq cash |
 | 15 | 15 | #57 The Ultimate Heist, #58 The Suspects' Story, #59 The Destroyed Records, #60 Uncle FrizzleBob's Verdict | Payoff: Ultimate Heist, suspects investigate themselves, records always smoke, FrizzleBob's verdict |
@@ -38,43 +38,54 @@ The song treats this as satire about money, power, media narratives and official
 - **Build (p1-6):** a detective's nose follows the money: lease, insurance, Marsh, data purge, options, insiders. The shredder is planted at #20 ("Records, please? ... Destroyed.").
 - **Turn (p7):** a courtroom mini-sequence (All rise / Next witness / Objection! / Final word) ends with the Commission throwing out "Rule Number One", a callback to card 2.
 - **Reset (p8):** "Fine. Forget the money. Follow the software." The hunt restarts in the FAA basement (Ptech, p8-10).
-- **Second turn (p11):** "September tenth": Rumsfeld names the adversary "closer to home". The trail turns inward to the Pentagon's books, and the whistleblower question is planted.
+- **Second turn (p11):** "September tenth": Rumsfeld (heel turn) names his own Pentagon bureaucracy as the enemy. The trail turns inward to the Pentagon's books, and the whistleblower question is planted.
 - **Drop (p13):** "Hats off." The auditors die, the report can't be produced, and the next turn ("Who keeps the books?") hands the Army to Enron.
 - **Payoff (p14-15):** the plug, the snowball, "Remember the shredder?" (callback), FrizzleBob's verdict (his only appearance), then the outro answers the planted question.
 
-## Mini-openers (each used once; 27 openers on 60 cards, the rest breathe)
+## Mini-openers wr2 (each used once; 21 openers plus a reset line on 60 cards, so most lines breathe; 7 of them bring the kayfabe/wrestling frame back)
 - Nose down: (2)
-- Peekaboo: (4)
 - Sold! (5)
-- Easy now: (6)
-- Your honor: (7)
 - Tick, tock: (14)
-- Live: (16)
+- Promo time: (16, kayfabe)
 - Records, please? (20)
-- Same morning: (22)
 - All rise: (25)
 - Next witness: (26)
 - Objection! (27)
 - Final word: (28)
 - Fine. Forget the money. Follow the software. (reset line before 29)
-- Heel, boys: (33)
-- Special delivery: (38)
-- Ka-chunk: (39)
-- Pocket check: (40)
-- September tenth: (41)
-- Zakheim again: (45, callback to 44)
+- Sit. Stay. (33)
+- Scripted finish: (38, kayfabe)
+- No-sell: (39, kayfabe)
+- Heel turn: (41, kayfabe)
 - Read it slowly: (47)
 - Hats off. (own line before 49)
 - Who keeps the books? (51)
 - Snowball! (53)
-- Oops: (56)
-- Add it up: (57)
+- It's a work: (54, kayfabe)
+- Main event: (57, kayfabe)
+- Who books this show? (58, kayfabe; pun-callback to 51)
 - Remember the shredder? (59, callback to 20)
 
 Checked against `replies/OPENER_ARC_R2/*.suno.txt` and the sibling R3 songs present at writing time (1001 Kayfabe Nights, Carnival of Unsolved Problems). No identical opener. "Clock's ticking" (1001) was avoided by using "Tick, tock".
 
+## wr2 revision (blind review WS0: listen 5.5 / stand-up 6.5 / spirit 7)
+Kept as the review asked: the intro "The grief was real. / The bookkeeping was kayfabe.", the courtroom run (All rise / Next witness / Objection! / Final word), the Rule Number One payoff, "Hats off.", and the outro "Somebody has to count...".
+
+Mandatory tone fixes:
+1. #9 "...impact zone. Two thousand employees. And the data." becomes "two thousand employees. Mourn the people. Then ask about the data."
+2. #12 "The investigators never came back" becomes "The investigation never came back."
+3. #35 the accidental flight pun is gone: "Sarmand Limited: P-Tech's seed money."
+4. #45 SPC: the remote-flight/DARPA content is deleted. The card keeps a bookkeeping-only line: "the ledger man's old firm. Contracts, nobody counting."
+5. #16 Bremer keeps the media-speed and money-deflection point and drops any doubt about who did it: "On air in hours. Name the enemy, skip the money."
+6. #15 "somebody went shopping that Tuesday morning".
+7. #17 "Somebody knew? Officially, nobody." This sets up #25 "So who knew?"
+
+Clarity fixes: #30 "JP Morgan's rogue-trading fix? Experts said P-Tech."; #8 "the Port Authority refunds me. I keep the site."
+
+The wall of names and numbers in the middle is thinned out. Most dollar figures and share counts are dropped (#6, #18, #19, #21, #23, #26, #42), and more cards make a first-person claim instead of reading a label (#4, #8, #29, #31, #44, #39). The kayfabe frame comes back through card 1 ("Financial wrestling") and seven wrestling openers (Promo time, Scripted finish, No-sell, Heel turn, It's a work, Main event, Who books this show?). Openers dropped from 27 to 21 so they stop reading like wallpaper. #37 is clarified ("quoting Bin Laden's mentor") so the man is not mistaken for the mentor. wr1 is kept unchanged.
+
 ## songLine changes
-20 entries in `the_kayfabe_money_trail_9_11.songlines.json`. Most write out numbers, `$` and `%` signs and acronyms (9/11, #1, $14, 80%, 93 To 100, $10M, 40-Minute, CBOE, SEC, Ptech, FAA, $2.3T, Wedge 1, Building 7, $8.5T). Three compress a quote for length or tone (#12, #39, #60), and #1 drops the lore's FrizzleBob mention. The printed cards stay canonical.
+26 entries (wr2) in `the_kayfabe_money_trail_9_11.songlines.json`. Pronunciation entries write out numbers, `$` and `%` signs and acronyms (9/11, #1, $14, 80%, 93 To 100, $10M, 40-Minute, CBOE, SEC, Ptech, FAA, $2.3T, Wedge 1, Building 7, $8.5T). Review-driven entries: #8, #9, #12, #15, #16, #17, #30, #35, #39, #45. #60 trims the quote, and #1 drops the lore's FrizzleBob mention. The printed cards stay canonical.
 
 ## Image motifs (from artworkPrompt Subject, <= 12 words, visualVerified:false)
 | # | Page | Card | imageMotif |
@@ -512,4 +523,4 @@ Checked against `replies/OPENER_ARC_R2/*.suno.txt` and the sibling R3 songs pres
 - Binding: V-361, V-362, V-364 (superseded by V-366), V-366, V-372, V-373, V-377; brief `WRITERS_ROOM_BRIEF_R3.md`.
 
 ## Character count
-`len()` = 4992 (incl. newlines, starts with `[Spoken Word]`, ends with "Stay Fluffy!").
+wr2 `len()` = 4989 (wr1 was 4992) (incl. newlines, starts with `[Spoken Word]`, ends with "Stay Fluffy!").

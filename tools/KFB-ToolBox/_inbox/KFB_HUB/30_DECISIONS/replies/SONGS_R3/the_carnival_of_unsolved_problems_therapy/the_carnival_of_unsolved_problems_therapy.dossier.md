@@ -48,3 +48,18 @@ Tear here: · This way: · Lost and found: · Round and round: · Let me think: 
 
 ## Character count
 Lyrics file `the_carnival_of_unsolved_problems_therapy.wr1.suno.txt`: **4944** characters including newlines (Python `len()`), starting with `[Spoken Word]`.
+
+---
+
+## wr2 revision (17.10.2026, after the WS0 blind review: listen 6 / stand-up 7.5 / spirit 8)
+Current file: `the_carnival_of_unsolved_problems_therapy.wr2.suno.txt` (wr1 kept). **4942 characters** (Python `len()`), starts with `[Spoken Word]`.
+
+**What changed**
+- **Format:** every card line is now `Name: first-person claim; punch.` The comma chains are gone. Mini-openers now end with a period or "!", so a line never has two colons (e.g. "Staff only. The Gatekeeper, on strike: …").
+- **No recited theme tags:** each lore line is rewritten as the card's own claim. Examples: "identity bends under reflection" became "I bend you, you bend back". "silence becomes system" became "I go quiet, then quieter". "endurance becomes fate" became "I stayed and stayed". "choice branches reality" became "choose once, I split the world". "should have dominates now" became "I measure should-haves". "body breaks narrative" became "hold that breakthrough, my stomach has the floor". "avoidance stabilizes distance" became "never crossed, never fought, perfectly stable". "system absorbs blame" became "it's the system, never you". "love becomes pattern" became "I love you in the same eight steps, forever". "you enter a space where nothing is literal" became "past this gate, nothing is literal". The one exception is "Meaning collapses suddenly", which stays because the review explicitly asked for it after "That's the card.".
+- **Lines the review named:** Tent of Unnamed Feelings now reads "not sad, not mad, more like... that one". The Ringmaster line is "authority is a costume; top hat on, voice up, and suddenly you all believe me". The Trophy line ends "heavier than it looks" (replacing the dismissive "nobody asked"). The FrizzleBob card is softened to "the heavy stuff plays too, gently". "Wait… What?" now has a line break, then "That's the card.". The Manifesto line is "stay symbolic, stay theatrical, just stay; paws up, curtain."
+- **Intro:** no more instructions. "Will it get solved? / That's the other carnival." replaces the "? / No." beat. The karaoke element became "The attractions do the singing. / Hum along if one sounds familiar." The ticket is set up as "Every ticket has a refund stub. / The desk is somewhere.", which still pays off at the "Refund desk." line on FrizzleBob's Guarantee.
+- **Outro:** "Problem solved? / No." is dropped. The new turn is "The lights go down. / The rucksack goes back on. / Lighter. A little. / The trucks roll to the next town. / Same mirrors. / Different you. / Stay Fluffy!" The rucksack callback now lands as an action, not a Q&A.
+- **Openers:** the same 16 as wr1, on 16 of 48 card lines, ending in a period instead of a colon. I checked them against all other SONGS_R3 songs (1001 Kayfabe Nights, Dream-Wrestling Freud, Blödsinnland Alice, Money Trail 9/11) and found no collisions. The only overlap was "Whistle", which appears there only inside a card name.
+- **Trimmed for length:** I dropped a few motif tails to stay under 5000. Gone are the "glitchy suitcase", "two skeletons", "glowing guru" and "brain in a jar" images, plus the bridge's "nice view".
+- **songlines.json** now has 11 entries, built from wr2. Card 25 ("That's the card.") is new, and card 48 has the extended lore.

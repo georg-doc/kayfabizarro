@@ -2,6 +2,7 @@
 
 ## 2026-10-17 · Writer’s Room JSON-first
 - WSB-Lieferungen B1/B2/B7 auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17); automatisches Mergen vom Sicherheitssystem blockiert, Georg entscheidet den Weg.
+- Songs R3 (Writer’s Room, Brief SONGS_R3/WRITERS_ROOM_BRIEF_R3.md): 1001 Kayfabe Nights, Alice BlödsinnLand, 9/11 Money Trail, Therapy Carnival, Dream Wrestling Freud – Blind-Review (8/8/8,5 · 6/7/7,5 · 5,5/6,5/7 · 6/7,5/8 · 8/8/8,5), je eine Überarbeitung wr2 mit Ton-Pflichtkorrekturen (9/11, 1001), Hub b83–b87 (+ Style B b83b–b87b).
 - V-408: Kamera ruckelfrei nach V-025/026/088/257 (Orbit von allen Seiten, träges Zurückgleiten, Zoom zum Cursor), Jitter-Messung (Hub b82).
 - V-407: web-ocean als Ideen-Spender für Piraten-Insel-Wasser vorgemerkt (Cartoon/KISS wie Tiny Skies, WebGL2, vorhandene Wasser-Spender zuerst).
 - V-405 Card Ink Defense als Post-MVP-Slice eingeplant (ACK an WSA); V-406 Farbdrehbuch aus Joyride A/B/C, Farbsprengsel steinweise (WSB B9: COLOR_1 Stein-ID + Rolle).
