@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-17T01:27:36.993815+00:00",
+  "routes": [
+    {
+      "url": "https://ws1-preview.kayfabizarro.pages.dev/",
+      "status": 200,
+      "finalUrl": "https://ws1-preview.kayfabizarro.pages.dev/",
+      "bytes": 18100983,
+      "gitBlobSha": "c890bfbb64f27a5e6235756386840ff4a41cdb09",
+      "build": null,
+      "title": "KFB Planet-Spike"
+    },
+    {
+      "url": "https://ws1-preview.kayfabizarro.pages.dev/build.json",
+      "status": 200,
+      "finalUrl": "https://ws1-preview.kayfabizarro.pages.dev/build.json",
+      "bytes": 757,
+      "gitBlobSha": "fb7d9ab71531a670749c0e0f382d7b1cec8805c8",
+      "build": {
+        "schema": "kfb.ws1-build/1",
+        "commit": "kfb-planet main@f52b485 (V-345 B\u00fchne in J17-Metern, V-346 Look-TUNE)",
+        "date": "2026-10-17T02:30:00+02:00",
+        "tests": {
+          "suite": "npm test",
+          "passed": 24,
+          "total": 24
+        },
+        "links": {
+          "stage": "https://ws1-preview.kayfabizarro.pages.dev/#stage,actors=fb,light=l1",
+          "m1": "https://ws1-preview.kayfabizarro.pages.dev/#m1",
+          "car": null,
+          "lineup": "https://ws1-preview.kayfabizarro.pages.dev/#stage,light=l1,lineup=1"
+        },
+        "notes": "V-345: B\u00fchne in J17-Metern (FB 1,81 m); wscale=legacy zeigt die alte Gr\u00f6\u00dfe. Meshy-B\u00fchnen unver\u00e4ndert (schon WS0-Meter), Figuren dort jetzt passend (z. B. #stage,actors=fb,light=l1,scene=goblin). M1/M2 folgen nach Umstellung durch die Bewegungs-Sitzung."
+      },
+      "title": null
+    },
+    {
+      "url": "https://ws1-preview.kayfabizarro.pages.dev/no-such-kfb-tool-cleanup-route",
+      "status": 200,
+      "finalUrl": "https://ws1-preview.kayfabizarro.pages.dev/no-such-kfb-tool-cleanup-route",
+      "bytes": 18100983,
+      "gitBlobSha": "c890bfbb64f27a5e6235756386840ff4a41cdb09",
+      "build": null,
+      "title": "KFB Planet-Spike"
+    }
+  ]
+}
