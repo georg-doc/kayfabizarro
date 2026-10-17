@@ -1,0 +1,365 @@
+{
+  "schema": "kfb.asset-librarian.source-intake/0.1",
+  "date": "2026-10-12",
+  "intakeId": "BV_TREE_PACK_20261012",
+  "sourceRepo": "georg-doc/kayfabizarro",
+  "sourceRef": "main",
+  "packRoot": "media/3D_Assets/low-poly-tree-pack",
+  "registryPackIdProposed": "low-poly-tree-pack",
+  "displayName": "Broken Vector — Low Poly Tree Pack",
+  "vendor": "Broken Vector (per bundled README)",
+  "status": "SOURCE_VERIFIED_REGISTRY_OVERRIDE_BRANCH_ONLY",
+  "rights": {
+    "evidence": [
+      "Models/README.txt identifies this as a purchased pack",
+      "Demo/README.txt identifies free demo collection"
+    ],
+    "licenseDocumentLocated": false,
+    "commercialRights": "NOT_VERIFIED",
+    "redistributionRights": "NOT_VERIFIED",
+    "publicRepublishing": "NO_NEW_DISTRIBUTION_AUTHORIZED"
+  },
+  "formats": {
+    "main": "DAE / Collada",
+    "native": "BLEND",
+    "textures": "PNG",
+    "runtimeGLB": "NOT_PRESENT"
+  },
+  "readiness": {
+    "sourcePathsVerified": true,
+    "registryGeneratedShardOnMain": false,
+    "canonicalAssetLibrarianLiveVisible": false,
+    "blenderImportQA": false,
+    "glbConversionQA": false,
+    "visualDonorIsolation": false,
+    "textureBindingQA": false,
+    "licenseQA": false,
+    "claudeCodeRunStarted": false
+  },
+  "counts": {
+    "mainModels": 38,
+    "mainTextures": 4,
+    "demoModels": 4,
+    "demoTextures": 4
+  },
+  "mainModels": [
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 01.dae",
+      "name": "Tree Type0 01.dae",
+      "bytes": 100883,
+      "blobSha": "3392b6d92fe978eb69099fe94591af2de64c59f5"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 02.dae",
+      "name": "Tree Type0 02.dae",
+      "bytes": 90486,
+      "blobSha": "44adbb900a3a32d98882201d273bd22310edeaf7"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 03.dae",
+      "name": "Tree Type0 03.dae",
+      "bytes": 169290,
+      "blobSha": "479289259a15c1364a894f4ec4c35eb79dab5cfa"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 04.dae",
+      "name": "Tree Type0 04.dae",
+      "bytes": 403517,
+      "blobSha": "41f2c2007c19f9e7b1375da242ce6ba797c410d7"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 05.dae",
+      "name": "Tree Type0 05.dae",
+      "bytes": 48871,
+      "blobSha": "247e2c09099bbcac619a53f272110e66f683f495"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type0 06.dae",
+      "name": "Tree Type0 06.dae",
+      "bytes": 96204,
+      "blobSha": "6b7cb2e507128fb7ec2132d5c2264c3ba97c67ad"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 01.dae",
+      "name": "Tree Type1 01.dae",
+      "bytes": 9475,
+      "blobSha": "0ff12d36a841c6b9451c8fc38b2a4db85b795413"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 02.dae",
+      "name": "Tree Type1 02.dae",
+      "bytes": 9471,
+      "blobSha": "41e94b1f8ddc1906e2b23733f3441c422f56fcdd"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 03.dae",
+      "name": "Tree Type1 03.dae",
+      "bytes": 11736,
+      "blobSha": "2dbbb0288bc0c77933aa3581e263a0d4092431a0"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 04.dae",
+      "name": "Tree Type1 04.dae",
+      "bytes": 17386,
+      "blobSha": "cd0c6952e67041a52c6ecb178fb3494dfa991d67"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type1 05.dae",
+      "name": "Tree Type1 05.dae",
+      "bytes": 24033,
+      "blobSha": "755215186a9f42494e75b7881efb6f1139e31602"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 01.dae",
+      "name": "Tree Type2 01.dae",
+      "bytes": 21212,
+      "blobSha": "4b77a1e8234c6ef27d92a3a76385a32a9c13ace4"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 02.dae",
+      "name": "Tree Type2 02.dae",
+      "bytes": 20854,
+      "blobSha": "4b39f1b9f1e445a6bce68cbf5f3abdbaeeeee0ec"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 03.dae",
+      "name": "Tree Type2 03.dae",
+      "bytes": 29093,
+      "blobSha": "efabc8b8bc8182d49b1fcbfdd8090f6ee81b2071"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 04.dae",
+      "name": "Tree Type2 04.dae",
+      "bytes": 36439,
+      "blobSha": "61be995fdf9f15d7988d0e9640dd8941ee76bb9a"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type2 05.dae",
+      "name": "Tree Type2 05.dae",
+      "bytes": 44267,
+      "blobSha": "9cb5f78408a0b517ae5105e0b8f67f6c8e486e73"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 01.dae",
+      "name": "Tree Type3 01.dae",
+      "bytes": 21553,
+      "blobSha": "458cd20ce6e5f0b8af8a8a0596b7fa85493f79e3"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 02.dae",
+      "name": "Tree Type3 02.dae",
+      "bytes": 40498,
+      "blobSha": "58138814a78e03e0128354f9f14f7fbd1ba53a81"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 03.dae",
+      "name": "Tree Type3 03.dae",
+      "bytes": 51009,
+      "blobSha": "4e2f5c14adec91b0445535c427aebdfa790ea2f0"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 04.dae",
+      "name": "Tree Type3 04.dae",
+      "bytes": 62270,
+      "blobSha": "11fb3235881e9597bff62e8677906ef7948eb950"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type3 05.dae",
+      "name": "Tree Type3 05.dae",
+      "bytes": 62460,
+      "blobSha": "9fbd061bdce39b398a4c88bf5aed6f2d0b0a74b0"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 01.dae",
+      "name": "Tree Type4 01.dae",
+      "bytes": 28301,
+      "blobSha": "0fac171670a8a3f13cac1c9e620399b2e764bae7"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 02.dae",
+      "name": "Tree Type4 02.dae",
+      "bytes": 40954,
+      "blobSha": "ce074827122468d6424e119d9dedc7b87b654458"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 03.dae",
+      "name": "Tree Type4 03.dae",
+      "bytes": 42952,
+      "blobSha": "0f03140fe36ad7a45491236bc2a16eb024a788cc"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 04.dae",
+      "name": "Tree Type4 04.dae",
+      "bytes": 87964,
+      "blobSha": "46f68a63c0207cdedbc9750bc44347d1ee6f5e95"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type4 05.dae",
+      "name": "Tree Type4 05.dae",
+      "bytes": 138125,
+      "blobSha": "ed60a805c1bbc488863732d3f5b53f894c9341a3"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 01.dae",
+      "name": "Tree Type5 01.dae",
+      "bytes": 24390,
+      "blobSha": "374dd15b0cc18d2827da0ca05c67788fa99a320a"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 02.dae",
+      "name": "Tree Type5 02.dae",
+      "bytes": 41962,
+      "blobSha": "05adfbbd824a52142e9158d041125147b7f1e3c5"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 03.dae",
+      "name": "Tree Type5 03.dae",
+      "bytes": 61814,
+      "blobSha": "abe27adbe034932ce9bb1fbb1b99b32de7510ab8"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type5 04.dae",
+      "name": "Tree Type5 04.dae",
+      "bytes": 84589,
+      "blobSha": "2194f861b1544c2ad7772f665ae012edfd1d8456"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 01.dae",
+      "name": "Tree Type6 01.dae",
+      "bytes": 24894,
+      "blobSha": "a5c12e7e5d9a86984456db4be79fc84a8a9bed3d"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 02.dae",
+      "name": "Tree Type6 02.dae",
+      "bytes": 96192,
+      "blobSha": "92386fe2ff97201febaa6e708c9f371d6a5e8d6d"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 03.dae",
+      "name": "Tree Type6 03.dae",
+      "bytes": 121655,
+      "blobSha": "2430459ba877ca3c3211d6ed07265f065c361ae6"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type6 04.dae",
+      "name": "Tree Type6 04.dae",
+      "bytes": 234276,
+      "blobSha": "9c102d9d8e14428d7c0469ddcb311217cc782813"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 01.dae",
+      "name": "Tree Type7 01.dae",
+      "bytes": 35988,
+      "blobSha": "7ee7cd82e193476ec03fad88beee167c459a1c83"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 02.dae",
+      "name": "Tree Type7 02.dae",
+      "bytes": 43602,
+      "blobSha": "caebab018c67826b2197cc20ed24c451349996f6"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 03.dae",
+      "name": "Tree Type7 03.dae",
+      "bytes": 37524,
+      "blobSha": "430750248e6c671f5d177852b634851bff341b3e"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Models/Tree Type7 04.dae",
+      "name": "Tree Type7 04.dae",
+      "bytes": 67560,
+      "blobSha": "8ac376d8a29e18a49b100ea2cd65c9e3b196ae69"
+    }
+  ],
+  "demoModels": [
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Fence Type2 03.dae",
+      "name": "Fence Type2 03.dae",
+      "bytes": 18386,
+      "blobSha": "2db8aac69b8c7e9eb76588395e92422c5176efa3"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Rock Type2 04.dae",
+      "name": "Rock Type2 04.dae",
+      "bytes": 8147,
+      "blobSha": "e2f7274e3e5c416abfd44f165f29d2d2805441aa"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Tree Type1 04.dae",
+      "name": "Tree Type1 04.dae",
+      "bytes": 17494,
+      "blobSha": "520bedc915f12565a32cf0f54e5a39675efd855c"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Demo/Models/Tree Type3 04.dae",
+      "name": "Tree Type3 04.dae",
+      "bytes": 62378,
+      "blobSha": "a4a4aae4c0029bbe8367b84b6755fe10972683c8"
+    }
+  ],
+  "mainTextures": [
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Textures/Colorsheet Tree Cold.png",
+      "name": "Colorsheet Tree Cold.png",
+      "bytes": 227,
+      "blobSha": "5ec3463fca945d6375afd618f9ddccd801a125d0"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Textures/Colorsheet Tree Dry.png",
+      "name": "Colorsheet Tree Dry.png",
+      "bytes": 228,
+      "blobSha": "7dd84ed3108223d62481385b1bda30836e5b1741"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Textures/Colorsheet Tree Fall.png",
+      "name": "Colorsheet Tree Fall.png",
+      "bytes": 217,
+      "blobSha": "e9d9c61a528ad318128b3b5cee96219bfdf7dcbd"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Models/Textures/Colorsheet Tree Normal.png",
+      "name": "Colorsheet Tree Normal.png",
+      "bytes": 232,
+      "blobSha": "25ea55f2a2cb56e70d7277cc20564882b7e24168"
+    }
+  ],
+  "demoTextures": [
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Demo/Textures/Colorsheet Fence Brown.png",
+      "name": "Colorsheet Fence Brown.png",
+      "bytes": 166,
+      "blobSha": "2acbdb1d3bd98034cf94b557318303389ae5b70d"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Demo/Textures/Colorsheet Rock Grey.png",
+      "name": "Colorsheet Rock Grey.png",
+      "bytes": 171,
+      "blobSha": "075a57af2241fbea9c892b839db0c163a4e14f24"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Demo/Textures/Colorsheet Tree Normal.png",
+      "name": "Colorsheet Tree Normal.png",
+      "bytes": 232,
+      "blobSha": "25ea55f2a2cb56e70d7277cc20564882b7e24168"
+    },
+    {
+      "path": "media/3D_Assets/low-poly-tree-pack/Demo/Textures/Occlusion Fence.png",
+      "name": "Occlusion Fence.png",
+      "bytes": 158,
+      "blobSha": "302c62177377cd0ed2c6c2997790227dc0888e6c"
+    }
+  ],
+  "blendSource": {
+    "path": "media/3D_Assets/low-poly-tree-pack/LowPolyTreePack.blend",
+    "sizeBytes": 2741460,
+    "blobSha": "46ff3cf5c47ebe21f04a19d9a235919f6acee5aa"
+  },
+  "notes": [
+    "DAE model files were checked as repository entries; a representative Tree Type0 01.dae is COLLADA 1.4.1, Blender 2.76 authoring provenance, meter=1, Z_UP, with no library_images. Do not assume the external palette PNGs are wired to source DAE materials.",
+    "Root pack is under the configured Asset Registry 3D root and will be grouped structurally upon next registry generation; current generated main index still lacks this pack.",
+    "An explicit displayName override is prepared on planning branch; no generated registry was edited by hand.",
+    "Do not promote to Unity/Blender/Three runtime until palette assignment, origin/scale, triangle counts, alpha normals, rights and sample GLB fidelity pass."
+  ],
+  "nextGate": "ASSET_LIBRARIAN_BROKEN_VECTOR_TREE_PACK_REGISTRY_REFRESH_AND_ISOLATED_GLB_QA"
+}

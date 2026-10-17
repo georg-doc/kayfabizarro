@@ -1,0 +1,67 @@
+{
+  "schema": "kfb.asset-librarian.nature-batch/0.1",
+  "date": "2026-10-12",
+  "repo": "georg-doc/kayfabizarro",
+  "sourceRef": "main",
+  "status": "SOURCE_INVENTORY_NOT_LIVE_INDEXED",
+  "packs": [
+    {
+      "kind": "trees",
+      "path": "media/3D_Assets/low-poly-tree-pack",
+      "mainDae": 38,
+      "palettes": 4,
+      "demoDae": 4,
+      "demoTextures": 4,
+      "blend": {
+        "path": "media/3D_Assets/low-poly-tree-pack/LowPolyTreePack.blend",
+        "bytes": 2741460,
+        "sha": "46ff3cf5c47ebe21f04a19d9a235919f6acee5aa"
+      },
+      "vendor": "Broken Vector per bundled README",
+      "rights": "UNVERIFIED",
+      "runtimeGLB": "NOT_BUILT"
+    },
+    {
+      "kind": "rocks",
+      "path": "media/3D_Assets/LowPolyRockPack.",
+      "literalTrailingDot": true,
+      "files": [
+        {
+          "name": "LowPolyRockPack.blend",
+          "bytes": 919816,
+          "sha": "df9d71b8f4277cf40ca3ea18d05dab68f16a7fdc"
+        },
+        {
+          "name": "Models.zip",
+          "bytes": 101348,
+          "sha": "5a6300646acab9d1ced2785085e4af6399a35977"
+        },
+        {
+          "name": "README.txt",
+          "bytes": 452,
+          "sha": "a82ac67bf0f59bec6112e015a70b36435918ee2d"
+        }
+      ],
+      "vendor": "Broken Vector per README",
+      "rights": "UNVERIFIED",
+      "zipContents": "UNINSPECTED"
+    },
+    {
+      "kind": "modular-terrain",
+      "path": "media/3D_Assets/modular_terrain_collection.zip",
+      "bytes": 954640,
+      "sha": "0e9873a2ffe3495dce7ed0b1e72ecfe0227edca8",
+      "license": "UNVERIFIED",
+      "zipContents": "UNINSPECTED",
+      "registrySupport": "ZIP_NOT_MODEL_EXT"
+    }
+  ],
+  "qa": {
+    "modelImports": 0,
+    "archiveExtracts": 0,
+    "visualComparisons": 0,
+    "registryRebuilds": 0,
+    "siteReloadChecks": 0
+  },
+  "nextGate": "NATURE_BATCH_AR4_REFRESH_PLUS_SOURCE_ISOLATION_R1"
+}
