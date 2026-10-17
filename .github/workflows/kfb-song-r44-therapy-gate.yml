@@ -1,0 +1,19 @@
+name: KFB Therapy R4.4 original canonical gates
+on:
+  push:
+    branches: ["songs/the_carnival_of_unsolved_problems_therapy-r4-2026-10-17"]
+permissions:
+  contents: read
+jobs:
+  r44:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: bfcf60f8faed39d5cbae3f715737cee95e890765
+          path: .kfb-register-readonly
+      - name: Original triplet checker
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py songs/the_carnival_of_unsolved_problems_therapy/the_carnival_of_unsolved_problems_therapy.r31.qa.deck.json songs/the_carnival_of_unsolved_problems_therapy/the_carnival_of_unsolved_problems_therapy.r31.qa.set.csv
+      - name: Canonical R3.3 lyrics gate
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/the_carnival_of_unsolved_problems_therapy/the_carnival_of_unsolved_problems_therapy.r4.4.suno.txt --deck registry/assets/v1/decks/the_carnival_of_unsolved_problems_therapy.json --songlines songs/the_carnival_of_unsolved_problems_therapy/the_carnival_of_unsolved_problems_therapy.r4.4.songlines.json --media media/kfb/The_Carnival_of_Unsolved_Problems_-_THERAPY_-_ADD_web.pdf.json --cards 1-48 --tone the_carnival_of_unsolved_problems_therapy --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
