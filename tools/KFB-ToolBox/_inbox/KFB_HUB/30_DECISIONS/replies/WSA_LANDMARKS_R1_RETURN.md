@@ -1,5 +1,21 @@
 # WSA → WS0 · Landmark candidates R1 · V-421 · 2026-10-17
 
+## ADDITIVE R1.2 · Georg's six-colour surreal environment direction · 2026-10-17
+
+**GEORG STYLE CORRECTION (V-421 addendum; no new WS0 V-number):** All environment/landmark/vegetation/sky props may use **any of the six colours defined by their zone, biome or card deck**. The total KFB diorama must be surreal yet chromatically coherent; natural object colours are **optional**, not fixed rules. Georg's explicit examples are **purple/violet clouds (missing source asset)**, **light-blue/cyan tree trunks**, and **yellow tree canopies**. Use only palette colours actually present for the current zone/biome/deck, not a new independent RGB source, random material colour or hardcoded purple/yellow. Distinguish the six palette slots from the six Fluff story modes.
+
+**Technical scope:** The accepted V-305 Joyride/J17-derived `kfb-cartoon-palette.js` is still the *single palette/harmony generator*. Its conventional role defaults (cream cloud, brown trunk, green/orange leaf) do **not** constrain subsequent **scene composition** and object-to-palette-role assignment. StoryMode, host lighting, fog and colour authority remain unchanged. No shader/material/runtime changes in this research slice.
+
+**Clouds gap:** Purple clouds are a requested *real 3D visual element* not yet available in the source-verified asset/model roster for this effort. Find the existing sky/cloud owner and authentic cloud source/donor in a separately authorized look/world-dressing slice, and show the real source in isolation; no placeholder cloud blobs and no painted-on graphics.
+
+**WS0 latest precedence:** The current steering changelog calls **PR #418 TUNE: "keine Pseudo-Knete, Knete macht WSB"**. Thus the two Blender flat-material "clay" source proofs in R1.1 count as **source geometry/import evidence, NOT an accepted KFB claymation look**. Real clay stylization/material/rounding belongs to WSB after selection and authorization. V-346 visual acceptance remains OPEN, and V-383 continues to forbid overlays on images.
+
+Full user-facing and machine-facing rule: [LANDMARK_CHROMATIC_DIORAMA_STYLE_R1.md](V421_SOURCE_PROOF/LANDMARK_CHROMATIC_DIORAMA_STYLE_R1.md) and `WSA_LANDMARKS_R1_CANDIDATES.json` revision `R1.2-georg-chromatic-surreal-style`, applied to **all ten groups** without changing the 23 source leads, their rights, evidence or blocked selection. JSON contract check 7/7 PASS after save. No cloud generated; no Site/Asset Library/Stage/WS1 update; no merge.
+
+**Unchanged one next gate:** `WS0_V421_VISUAL_SOURCE_REVIEW_AND_REMAINING_PREVIEWS`. WS0/WSB apply this rule while assessing the pending sources and preparing actual clay concept previews, then Georg chooses from proven options. No extra human gate created by this note.
+
+---
+
 ## ADDITIVE R1.1 · two verified CC0 source objects and clay previews · 2026-10-17
 
 **STATUS: SOURCE PROOF PASS 2/2 · 4 REAL BLENDER IMAGES PERSISTED · GEORG SELECTION STILL BLOCKED.** This milestone replaces the earlier `0 renders` status *only for the two specific source objects documented here*; the original R1 discovery log below is preserved for provenance.
