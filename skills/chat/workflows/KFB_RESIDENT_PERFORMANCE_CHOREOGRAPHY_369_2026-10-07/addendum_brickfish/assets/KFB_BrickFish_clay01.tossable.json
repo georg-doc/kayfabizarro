@@ -1,0 +1,32 @@
+{
+ "assetId": "KFB_BrickFish_clay01",
+ "note": "Brick Fish / Red Herring, first clay pass (BRICKFISH-TOSS-01). Pivot = grip (body centre), nose = +X (glTF: converted to Blender Y-up export axes), up = +Z.",
+ "dimsM": {
+  "body": [
+   0.36,
+   0.17,
+   0.11
+  ],
+  "withFins": [
+   0.485,
+   0.17,
+   0.18
+  ]
+ },
+ "displayScaleInBench": 1.35,
+ "tossable": {
+  "hand": "either",
+  "massClass": "light",
+  "flightProfile": "wobble",
+  "targetZone": "head",
+  "impactProfile": "clay_burst",
+  "recoveryProfile": "reform"
+ },
+ "colours": {
+  "body": "#c8402e",
+  "fin": "#9e2a22",
+  "lip": "#f07a6e",
+  "eye": "#fbf6ee",
+  "pupil": "#1b1512"
+ }
+}

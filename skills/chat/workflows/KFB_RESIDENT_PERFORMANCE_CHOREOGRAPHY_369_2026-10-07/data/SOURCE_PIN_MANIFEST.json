@@ -1,0 +1,872 @@
+{
+ "pins": {
+  "main": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+  "motionSSOT_PR344": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+  "fluff_PR356": "9124366b88e5e317cbba8480412a8b90f84c9d5d",
+  "exchange_PR358": "2a92f2bf2102a3d752cad5615ef1c0d26cc15a8f",
+  "kaykitAnimRegistry": "378b209355b13304e3cff656ec0806ca5b89df28"
+ },
+ "files": [
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_B.glb",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "bc76522947c6f03b4dfc404f7737452875e786c1",
+   "size": 390844,
+   "group": "resident"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_A.glb",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "54e04d7ad1f0dad0126396b85e3e1b3eae450b57",
+   "size": 334696,
+   "group": "resident"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "5d4f21fe9fa621011c2061011c45ede74aa7fd6b",
+   "size": 584144,
+   "group": "resident"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "b56f67e4ddb7db95ff54fef526148a49289f3915",
+   "size": 323724,
+   "group": "resident"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "1b56aac3d98cc978bd1311ddc61f1260a870494d",
+   "size": 754444,
+   "group": "resident"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/farmer_texture_A.png",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "dd70e3553875406da15fe0229c49103acc98ad1a",
+   "size": 12542,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/pitchfork.bin",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "261168a1f18b8d15063709ce91fd6da5cd156e65",
+   "size": 18744,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/pitchfork.gltf",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "d2cb8557ea41327e62feade6faa9649c2c7865d8",
+   "size": 3034,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/wheelbarrow.bin",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "414793442a174b8f8eae8bf485c62cab4bcbf3e3",
+   "size": 34432,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/wheelbarrow.gltf",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "f59c4f5a9fa37f6ddb0fc5080014f1c022e07557",
+   "size": 3044,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/wheelbarrow_empty.bin",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "c5271b3d63f156a76e05a54129c381d1555db372",
+   "size": 28664,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/gltf/wheelbarrow_empty.gltf",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "eabe88a1fa517cca5b52337015ae1407d0b83d16",
+   "size": 3059,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Staff.bin",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "88992cd633a3365e9aa84a2070c970bcb4aceebc",
+   "size": 37352,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Staff.gltf",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "f091e34bf4e16fa661512f02148257c6ba76ba9f",
+   "size": 3066,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.bin",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "3a280ccebf35cca609a2bee14bed0afcd16c1b6e",
+   "size": 170424,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/Lorekeeper_Tome.gltf",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "faa36ea1327c8287d24213d119929fa92c696fe5",
+   "size": 3071,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/gltf/lorekeeper_texture.png",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "e64930b239a25f326332d6cd7708c92f330a6790",
+   "size": 11867,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/gltf/Present_Base.bin",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "115f491b3c391f3cd2f4623366514ef4846b77ef",
+   "size": 43052,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/gltf/Present_Base.gltf",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "1b4e54d9cd61e557b035f8d645041fa2dcd6d32e",
+   "size": 13691,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/gltf/toy_soldier_texture.png",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "ecef6b64418c0bab18ff5de00c752efb2af176c7",
+   "size": 13323,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_MicStand.bin",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "205a7b8b5cc991158dba759b708ac8d2388e169e",
+   "size": 35124,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_MicStand.gltf",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "2f873952af95458504e3e965905363b362794c1a",
+   "size": 3065,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Microphone.bin",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "742484938b3e576f1b9ecd17dbb60d436ba44f36",
+   "size": 10320,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Microphone.gltf",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "d718959bbf5c3e949823d47e94b94ef2948b0795",
+   "size": 3068,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Speaker.bin",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "5f902717c412372bb8b374cabd463bc7f85fe715",
+   "size": 18072,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Speaker.gltf",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "18f355f56163f1110a737a0fb374719240fccbf5",
+   "size": 3039,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Stool.bin",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "490db1fca540b595273e6197d4803ca38ff928a3",
+   "size": 17728,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/GothGirl_Stool.gltf",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "67735eb5f7b08491a73ec7e6806b249d27ec3f5b",
+   "size": 3056,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/assets/gltf/gothgirl_texture.png",
+   "commit": "34150cd17ed1975fa5a95304fe8f2756d8ee8697",
+   "blob": "a977d07571b967f0a7ead7f0603f297ec0a52bca",
+   "size": 10955,
+   "group": "prop"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_CombatMelee.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "f19c23a9da0030bb2ca5ee48fdc33817b5139214",
+   "size": 1025388,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_General.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "6a4b23c8289e1bf3b82ad62c5ecb31b78630bcfd",
+   "size": 700336,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_MovementAdvanced.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "b7e01649483b9080769d0e95dfbea2e16f32c704",
+   "size": 601624,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_MovementBasic.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "f1f9df3f11523c6c92e8c6bb52b9f906686204a3",
+   "size": 584676,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_Simulation.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "ed6dc6f100b45e30a8ac9f2bde72fe5dac7595cc",
+   "size": 589952,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_Special.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "10f7465f487a5d63d36e9ecb80e7bb4910960799",
+   "size": 575264,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatMelee.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "0ab63f221ca5d5c7c485a245199fb6107f1f3764",
+   "size": 999416,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_CombatRanged.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "df56bad0071108e4d735771483233aa4fc85456c",
+   "size": 1014852,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_General.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "5d16cb6815fc8371705147188813f851c10ba26a",
+   "size": 828240,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementAdvanced.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "f3ea309627f3ad76b92b85877ebc46f945cd4f1d",
+   "size": 719628,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "98e965e886ec539e80f8984a77a29b0c1c02e5e5",
+   "size": 689624,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_Simulation.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "c64056cda5d2fca14ecb3b61d02d9dde56d1b401",
+   "size": 855904,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_Special.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "4c2277dee56909c52800430f0a0daa419fe58654",
+   "size": 924308,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_Tools.glb",
+   "commit": "378b209355b13304e3cff656ec0806ca5b89df28",
+   "blob": "bc9db031f6608ce4b5e2b1c07f3cfae0c9b152a3",
+   "size": 1461204,
+   "group": "kaykit_native"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_action.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "6577cbbaac1f05a7fd8e7d78a0bec618791e8cfe",
+   "size": 639812,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_action_i03.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "2c59584a5682d7d90328895b73f65b6637ddf400",
+   "size": 80920,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_action_i04.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "4f0aacab14838114ed9c8cf66ee631ebfcd32f11",
+   "size": 675448,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_action_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "b0369ef2e1e2a7c887a2dab0851f40c5ae11b90b",
+   "size": 66856,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_action_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "f3a7e219c9d5402aa0c90faaf8fbb27d4ffaa73a",
+   "size": 205476,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_climb.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "9263a5cef1aaecd2394d27465fce91e2bbdd1209",
+   "size": 246360,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_dance.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "897f875742327b620f74e7afe60a38de2e84def8",
+   "size": 2527732,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_dance_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "8b09be6de9a88748baff890efa361da98c274bec",
+   "size": 316800,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_gesture.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "c956a00fada758c664b16420ca64eb13185b00ad",
+   "size": 1107580,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_gesture_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "06f53b2424ac97b4a20eae230937975b07feff9f",
+   "size": 73224,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_gesture_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "2248684deba6f62ba8733fbd988147097dc902ec",
+   "size": 99980,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_idle.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "e7b8409b5c3625a4f3d88d101d65ca44a02413a0",
+   "size": 1774576,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_idle_i04.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "9749b45895866448dd71c54e01ea517c58054258",
+   "size": 121140,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_idle_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "b41141f44ffa982f76b833b6f2f75a4364c17577",
+   "size": 443532,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_idle_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "0cb46d9b2cd57b6423ad601836ce913ceefe47dd",
+   "size": 49680,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_interaction.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "c5fb05cc04b601a15b18ac6790f136ba0a3d4d08",
+   "size": 670312,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_interaction_i04.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "cab615ac2b0a001ed9392ec48fd3b7fea7db8a08",
+   "size": 134232,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_interaction_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "09b3dbd7097c2cf4ef6126f86af3716ad83a7448",
+   "size": 763076,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_interaction_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "9858c09800228590ebda0f654bd8eb918d7a4dd4",
+   "size": 429936,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "a9a23e865d9ec4a64e7fb7de14bfb924a46a5046",
+   "size": 1367608,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i03.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "c4ea15fedf944cded88406f1e97c29a4ec37ec5d",
+   "size": 289452,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i04.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "74ec7a55e61aa22e70821158ce25ad2aa31e5c1f",
+   "size": 949780,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "a8dab22d3c1ca8dd860398832158e2bf3adbe4c0",
+   "size": 1404716,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "06d902d0757d65995b9d9e81f2702900302f8fac",
+   "size": 168328,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_locomotion_i07.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "3afa3cb7865f4c0dc0608b72c1ad3af33ca7608e",
+   "size": 642476,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_music.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "883eec6871c5401633b079242d333ebde1c300e7",
+   "size": 244280,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_perf_an01.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "5a2661743dfbb4f23ba8f876b425f453f70bec64",
+   "size": 105468,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_reaction.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "47ce060abc2fbfb658c3946e74584f4a1b251877",
+   "size": 695700,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_reaction_i03.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "6b72b202c4253166f03a19bbbc06167146b598bc",
+   "size": 52196,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_reaction_i04.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "d7813e0e2bd0536de8549754c894e95da9bc53b1",
+   "size": 224272,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_reaction_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "aff076dc517ba1ec8d85a60f540517c74c32c287",
+   "size": 38136,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_reaction_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "013758937fd82acab96f82a0d60e37657dffbfef",
+   "size": 245128,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_talk.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "6a343c537f723f0100f5d1303b215d1660e41a0e",
+   "size": 1824008,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_talk_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "f54e02b6d8a902010f2610995486019261cc26bf",
+   "size": 311172,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Large/KFB_Motion_throw.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "0fbf9069c7d0f4d8a93ee09a8bdda4297a360adc",
+   "size": 535948,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_action.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "68ac639cc7595fd4ca31b5808e7b6d45e4d0cf97",
+   "size": 640148,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_action_i03.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "1da045b134c6197d872356beda10f8a35eaf990d",
+   "size": 81116,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_action_i04.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "a82327dee5facdd78ad2e4f2af2fcd0dc6372f8e",
+   "size": 675512,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_action_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "426b338869ba45e07aef49996b2fc42b10b1e31c",
+   "size": 66788,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_action_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "98c2461feb3bdf9b19335d7cc8556e10fcd5b5d2",
+   "size": 205124,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_climb.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "709760b2ff81a4100b679b7a406f1d855db5f72c",
+   "size": 246568,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_dance.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "b02fc98d63b79565c9f0924a5a187f45f95ad46c",
+   "size": 2530460,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_dance_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "06d018e06af7d448baacbc0a8a79a1ef4e707539",
+   "size": 316728,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_gesture.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "da686edcd79cf8672b4f1a3fc4a543cb5ca2b81b",
+   "size": 1109192,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_gesture_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "bb192942b391bff2fa84ba23de78f2cb257ff1c6",
+   "size": 73016,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_gesture_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "526dd1969eb526f47c3c8095a24bda8f4e7f49bb",
+   "size": 100324,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_idle.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "0979b41cdbb5a355a177014160967ca65beca8f3",
+   "size": 1774948,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_idle_i04.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "290e2a7381ecdbe5945f2be8cd05488b91a81089",
+   "size": 121620,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_idle_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "6c6e4c62aaf717d6dca1141342796d174683790f",
+   "size": 443876,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_idle_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "0c798664d6e8b1b33a48eeec72883d155a21f40a",
+   "size": 49340,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_interaction.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "19b25f0943828bf01c46ec39677ef628d431ac90",
+   "size": 670380,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_interaction_i04.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "b3bd530c6be0b0f991919e622bcff43ef5fe692a",
+   "size": 134436,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_interaction_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "45e3246ecb7121511aa02f827aa4f9846be7bec8",
+   "size": 764240,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_interaction_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "6d9850df3cbd94c486b42329ed63fe5a60db4998",
+   "size": 431672,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "18b8eee73bd6ceb40cfccd791cd99f68097f43c6",
+   "size": 1374240,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i03.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "82e39bfb1e7ed3f732ab7dc74f946da7c4f54fb3",
+   "size": 289792,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i04.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "381f5d49e663fc96518d4cd328328fc85c3cbc10",
+   "size": 956100,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "dc1533e67423657577b677fd2f8c6a6c1bd73051",
+   "size": 1406180,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "638e85545a208cb8bad3385767135114af1d6239",
+   "size": 168800,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_locomotion_i07.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "e073aaefe807f9dcd6cc334770fda1f3b81db624",
+   "size": 645468,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_music.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "ffd24fb38d23b9cd9cb7f5a5fa1f6174728aa713",
+   "size": 243796,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_perf_an01.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "cb3610ad9cac4812f044ff794afd8ae9f3dffdda",
+   "size": 105396,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_reaction.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "1e5fdc5a7975f2567e26e61c57af272312e6c0e2",
+   "size": 695868,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_reaction_i03.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "8c5985973715484d4543318037e4202028316c8c",
+   "size": 51988,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_reaction_i04.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "57dbef219335bc9318b3ec03fd09e6f84e5f95ab",
+   "size": 223652,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_reaction_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "4b978998b6233f7763be68925fc9973b27723e9b",
+   "size": 38068,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_reaction_i06.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "2c6a2eb883e153a6a73326624342444ffb565b46",
+   "size": 244372,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_talk.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "1e5d6e99d16788fc85f74c14df5be69fd4129ebe",
+   "size": 1822696,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_talk_i05.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "f123d5b03c0534096e775b1b2fec73209aabc4da",
+   "size": 311100,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/libs/Rig_Medium/KFB_Motion_throw.glb",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "089b18ae5d752d5e315c66bc6a6bf7bf1d175879",
+   "size": 535048,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library.catalog.json",
+   "commit": "dfb6b8a15b3f04c52f49825252fcaf60f45df51c",
+   "blob": "7f333d0a1809ff5b299263a5e2ec21a29dba723c",
+   "size": 677364,
+   "group": "motion_ssot"
+  },
+  {
+   "path": "skills/chat/workflows/KFB_FLUFF_WORK_MOTION_PACK_01_2026-10-04/PART3_RETURN/motion_library_delta/KFB_Motion_Library.catalog.patch_fluff01.json",
+   "commit": "9124366b88e5e317cbba8480412a8b90f84c9d5d",
+   "blob": "3461b362b554ec0948cb869c4b5956aa55e2f584",
+   "size": 35772,
+   "group": "fluff_donor"
+  },
+  {
+   "path": "skills/chat/workflows/KFB_FLUFF_WORK_MOTION_PACK_01_2026-10-04/PART3_RETURN/motion_library_delta/libs/Rig_Large/KFB_Motion_fluff01.glb",
+   "commit": "9124366b88e5e317cbba8480412a8b90f84c9d5d",
+   "blob": "0922feaf2e7a368c4dc6134b8c62060822875b55",
+   "size": 1014012,
+   "group": "fluff_donor"
+  },
+  {
+   "path": "skills/chat/workflows/KFB_FLUFF_WORK_MOTION_PACK_01_2026-10-04/PART3_RETURN/motion_library_delta/libs/Rig_Medium/KFB_Motion_fluff01.glb",
+   "commit": "9124366b88e5e317cbba8480412a8b90f84c9d5d",
+   "blob": "c17504c1c1e8f01d362b557fa0341b2faa015008",
+   "size": 1193660,
+   "group": "fluff_donor"
+  },
+  {
+   "path": "skills/chat/workflows/KFB_FLUFF_WORK_MOTION_PACK_01_2026-10-04/PART3_RETURN/kfb_fluff_merge_6to1_reference.glb",
+   "commit": "9124366b88e5e317cbba8480412a8b90f84c9d5d",
+   "blob": "e85dae9fe6d8357437bf8fb3751c88ebffd5d590",
+   "size": 957548,
+   "group": "fluff_donor"
+  },
+  {
+   "path": "skills/chat/workflows/KFB_EXCHANGE_REACTION_KIT_01_2026-10-05/PART2_RETURN/motion_library_delta/KFB_Motion_Library.catalog.patch_exch01.json",
+   "commit": "2a92f2bf2102a3d752cad5615ef1c0d26cc15a8f",
+   "blob": "06e8729b8791dc4ffdac9448404b134947e999fc",
+   "size": 20989,
+   "group": "exchange_donor"
+  },
+  {
+   "path": "skills/chat/workflows/KFB_EXCHANGE_REACTION_KIT_01_2026-10-05/PART2_RETURN/motion_library_delta/libs/Rig_Large/KFB_Motion_exchange01.glb",
+   "commit": "2a92f2bf2102a3d752cad5615ef1c0d26cc15a8f",
+   "blob": "ab7a0e1b7aeeaaa74664aa1781eb615050fd7b5e",
+   "size": 1502608,
+   "group": "exchange_donor"
+  },
+  {
+   "path": "skills/chat/workflows/KFB_EXCHANGE_REACTION_KIT_01_2026-10-05/PART2_RETURN/motion_library_delta/libs/Rig_Medium/KFB_Motion_exchange01.glb",
+   "commit": "2a92f2bf2102a3d752cad5615ef1c0d26cc15a8f",
+   "blob": "4da8a93b40a3793933298f5caba957619254cf14",
+   "size": 1062548,
+   "group": "exchange_donor"
+  },
+  {
+   "path": "skills/chat/workflows/KFB_EXCHANGE_REACTION_KIT_01_2026-10-05/PART2_RETURN/props/KFB_Gift_Presents_clay01.glb",
+   "commit": "2a92f2bf2102a3d752cad5615ef1c0d26cc15a8f",
+   "blob": "82113f0c9b3c7638691a195c251dba8b90918c51",
+   "size": 208212,
+   "group": "exchange_donor"
+  },
+  {
+   "path": "skills/chat/workflows/KFB_EXCHANGE_REACTION_KIT_01_2026-10-05/PART2_RETURN/props/presents.json",
+   "commit": "2a92f2bf2102a3d752cad5615ef1c0d26cc15a8f",
+   "blob": "22135759901ac32cf25ffa0af52589735cead743",
+   "size": 1008,
+   "group": "exchange_donor"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "_note": "Overrides for scripts/kfb369_reveal_r8.py. Edit and re-run the script; omitted keys keep the script defaults.",
+ "BOX": [-0.85, 0.0, 0.0],
+ "MOUTH_Z": 0.46,
+ "ZP": 1.55,
+ "RADIO_MAXDIM": 1.0,
+ "LAUNCH": 249,
+ "BUILD": [250, 257],
+ "DISS": [259, 267],
+ "HULL": [262, 272],
+ "CLAY_HEX": "#f2b632",
+ "EDGE_HEX": "#fff1b0",
+ "SPIN_LAUNCH": 0.55,
+ "SPIN_STEADY_FRAMES": 200,
+ "SPIN_DRAG_TAU": 6.0,
+ "TILT_X": [0.28, 97],
+ "TILT_Y": [0.22, 131],
+ "BOB": [0.055, 74],
+ "DRIFT": [0.03, 113, 0.025, 151],
+ "BLOBS_IN": {"card": 22, "radio": 26},
+ "CRUMBS_OUT": {"card": 16, "radio": 20}
+}
