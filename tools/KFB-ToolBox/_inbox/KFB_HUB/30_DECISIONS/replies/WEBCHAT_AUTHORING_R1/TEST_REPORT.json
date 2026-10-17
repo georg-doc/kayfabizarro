@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-18",
+  "scope": "KFB Triplets 0.4.0 + existing Asset Library v17",
+  "pluginRelease": "pluginrel_6ad401d76fa88191b33a2ac0c8f74e68",
+  "pluginReadback": true,
+  "legacySkillsUnchanged": true,
+  "staticSafetyTests": {
+    "passed": 9,
+    "failed": 0,
+    "independentRepeatPassed": 9
+  },
+  "nativeGithubProbe": {
+    "branch": "characters/edit-lord_hunky-2026-10-18-a86b108d935a491480d04f84bfe6ab76",
+    "head": "32054508059f62ff32f8862e075a0fce45c4d4d5",
+    "collision": "422 Reference already exists",
+    "priorRefUnchanged": true,
+    "receiptReadbackExact": true,
+    "characterBlobUnchanged": true,
+    "testOnly": true
+  },
+  "browserLocal": {
+    "register": 15,
+    "characterSheets": 11,
+    "proposalRead": true,
+    "proposalLabel": true,
+    "invalidRefRejected": true,
+    "missingProposal404RetainsPreviousView": true,
+    "threeDLocked": true
+  },
+  "hosted": {
+    "deployment": "appgdep_6ad4028d7e508191b822901021f4e063",
+    "status": "succeeded",
+    "version": 17,
+    "source": "9275d53c085d37e614db3a6ddcca4f1437b5c575",
+    "browser": "AUTH_REQUIRED: IAB is not signed in; published content not visually verified"
+  },
+  "limits": [
+    "fresh ordinary webchat skill execution not independently exercised",
+    "proposal preview checks receipt structure; not a forensic diff proof",
+    "plugin link opens plugin, does not automatically transfer character context",
+    "no scene 3D rendering or actual new character/fiction authored"
+  ]
+}
