@@ -5919,6 +5919,21 @@
    "applies": "ab sofort; Combat nach Slice 1"
   },
   {
+   "id": "V-428",
+   "date": "2026-10-17",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Anzug-Baukasten (Georg 17.10.): Körper = KayKit CharacterTemplate (Mystery Series, privat); Anzug, Hose, Hemd, Krawatte und Hände werden auf den glatten Körper aufgemalt (Vertex-Farben/Textur im Knet-Material, weiche Kanten), modelliert werden nur Akzente mit runden Ecken: Fliege (Smoking), beim Banker gebogener Zylinder, goldenes Monokel, Zigarre, Frack-Schöße; Streifenhose gemalt. Varianten Agent/MIB, Banker, Politiker, CEO, Smoking (auch auf FrizzleBob gemalt + Fliege). Keine KayKit-Animations-Clips einbetten.",
+   "values": {},
+   "owner": "WSB (B12)",
+   "check": "Knet-Proofs je Variante, WS0 prüft vor Georg",
+   "source": "50_BLENDER/ANTWORT_WS0_2026-10-17.md (22. Nachtrag)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gemalte Kleidung auf einem glatten Körper passt zum Knet-Look und vermeidet die kantigen Hüllen der Spender-Körper.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6006,7 +6021,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:762",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:769",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-428: Anzug auf KayKit CharacterTemplate, Kleidung aufgemalt, nur Fliege/Zylinder/Monokel/Zigarre/Frack-Schöße modelliert (22. Nachtrag, Hub q01 beantwortet).
 - WSB B21 nach Georgs Regeln neu: Meshy-Ableitungen (48) neverPublic; B4-Truhen (KayKit Dungeon 1.0 Legacy) und B12 (Idle_A aus KayKit Character Animations 1.1) jetzt privat; Übergabe 56 öffentlich / 26 privat, Allowlist 72 sicher, neverPublic 124.
 - Georg im Hub: Repo-Plan später; alle KayKit-Pakete ohne _FREE = gekauft (Patreon + Extended) → privat; Meshy-Bühnen privat halten; Tränke/Hexen-Station wie vorgeschlagen. Offene Fragen q01/q05/q06/q07 jetzt mit Bildern bzw. Links im Hub (Hub v17: Link-Knöpfe in Fragen).
 - Georg: Capsule-Carl-Teile an FrizzleBob (Brauen enemy.gltf, Nase player.gltf) = KayKit Mystery Series → FB-GLBs nie als Rohdatei öffentlich (neverPublic), im Spiel-Build eingebaut ok; langfristig eigene Knet-Teile. WSB B21 wird nachgezogen.
