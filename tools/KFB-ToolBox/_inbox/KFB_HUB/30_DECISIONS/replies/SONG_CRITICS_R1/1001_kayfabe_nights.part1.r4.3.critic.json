@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "1001_kayfabe_nights.part1.r4.3.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F19)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 3,
+  "arc": 3,
+  "sayability": 3,
+  "tone": 5,
+  "styleFit": 4
+ },
+ "flags": [
+  {
+   "beat": 15,
+   "rule": "A3",
+   "observation": "Lore claim absent; power \"the squash match destroys them\" carries the whole line, and \"them\" has no referent."
+  },
+  {
+   "beat": 26,
+   "rule": "A3",
+   "observation": "\"boiling point, trap\" tacks on the power label plus the Power stat value; ends like a rulebook tag."
+  },
+  {
+   "beat": 20,
+   "rule": "A4",
+   "observation": "\"hardcore valet, daggers\" stacks a label and an image right after \"dagger hits\"; duplicate word, list fragment, weak landing."
+  },
+  {
+   "beat": 21,
+   "rule": "A8",
+   "observation": "\"the botch, password\" keeps the power's card reference as a bare keyword; mechanic survives as term, not as picture."
+  },
+  {
+   "beat": 23,
+   "rule": "A4",
+   "observation": "118 characters with opener; \"thieves\" three times and \"gold\" twice inside one beat, hard to say in one breath."
+  },
+  {
+   "beat": 19,
+   "rule": "B7",
+   "observation": "\"So Aladdin's cave\" fuses Ali Baba with Aladdin's cave; cards never link them, so the causal \"So\" rests on nothing."
+  },
+  {
+   "beat": 15,
+   "rule": "B7",
+   "observation": "\"But the cave has teeth\" precedes a Sinbad-voyage giant; the image belongs to The Magic Cave, seven cards later."
+  },
+  {
+   "beat": 12,
+   "rule": "B7",
+   "observation": "Openers lean on objects and places (\"the brass answers\", \"an island moves\", \"the rusted decree\"); Tip 3, people with wants, rarely served."
+  },
+  {
+   "beat": 3,
+   "rule": "B6",
+   "observation": "Eight openers across twenty-eight cards, under the one-third floor, spaced at near-fixed intervals; \"At dawn:\" echoes beat 2 verbatim."
+  },
+  {
+   "beat": 6,
+   "rule": "B7b",
+   "observation": "\"Dunyazad's heat\" calls back to the directly preceding card; formally a callback, but no distance, no memory payoff."
+  },
+  {
+   "beat": 1,
+   "rule": "C9",
+   "observation": "Two short intro beats offer a pun but never set up the territory or storytelling-for-survival premise; satirical provocation stays thin."
+  },
+  {
+   "beat": 31,
+   "rule": "C9",
+   "observation": "Outro reuses \"blade\" and \"sentence\" from the intro; callback present, yet no turn beyond the opening setup."
+  }
+ ],
+ "verdict": "pass"
+}

@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "the_kayfabe_money_trail_9_11.part1.r4.3.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F19)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 2,
+  "arc": 3,
+  "sayability": 3,
+  "tone": 4,
+  "styleFit": 4
+ },
+ "flags": [
+  {
+   "beat": 7,
+   "rule": "A2",
+   "observation": "\"agreed to a ninety-nine-year WTC lease signed\" fuses two card facts into broken grammar; the privatization agreement disappears."
+  },
+  {
+   "beat": 8,
+   "rule": "A4",
+   "observation": "Trailing \"empire\" dangles with no grammatical anchor; a listener cannot parse it as a claim."
+  },
+  {
+   "beat": 10,
+   "rule": "A2",
+   "observation": "\"paid back initial equity and control\" makes control something the Port Authority paid back, distorting the card."
+  },
+  {
+   "beat": 12,
+   "rule": "A4",
+   "observation": "\"specific and commercial\" is a fragment without meaning; the card's first-on-the-planet claim is lost."
+  },
+  {
+   "beat": 25,
+   "rule": "A2",
+   "observation": "\"firm formerly chaired by CIA\" says the agency chaired the firm; the card names a person, the CIA's number three."
+  },
+  {
+   "beat": 26,
+   "rule": "A2",
+   "observation": "\"admitted knowing a DOD staffer; cashed out a day before\" leaves the subject ambiguous; it reads as if Baer cashed out."
+  },
+  {
+   "beat": 27,
+   "rule": "A2",
+   "observation": "\"But the SEC asks\" plus \"advanced knowledge\" inverts the card: the SEC concluded nothing happened; the question belongs to the card voice."
+  },
+  {
+   "beat": 9,
+   "rule": "B7",
+   "observation": "\"So the double policy\" only restates the card name; no therefore or twist grows from the previous card."
+  },
+  {
+   "beat": 16,
+   "rule": "B6",
+   "observation": "\"But\" openers at beats 7 and 16 are nine lines apart; \"Yet\" at 13 and 22 also nine; the So/But/Yet rotation feels mechanical."
+  },
+  {
+   "beat": 17,
+   "rule": "B7",
+   "observation": "Openers like \"Trading:\", \"Audit:\", \"Recovered:\" are labels; almost no artworkPrompt image words appear anywhere (tip five); cards show no want or grudge."
+  },
+  {
+   "beat": 30,
+   "rule": "A4",
+   "observation": "122 characters with opener; \"first rule Follow the Money rejected; little significance\" is not sayable in one breath."
+  },
+  {
+   "beat": 31,
+   "rule": "C9",
+   "observation": "Outro turn is thin: \"the receipts have names\" closes the ledger image but adds little provocation; the frame barely carries the kayfabe concept."
+  }
+ ],
+ "verdict": "revise"
+}

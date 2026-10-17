@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "dream_wrestling_with_kayfabe_freud.r4.3.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F19)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 4,
+  "performance": 3,
+  "arc": 3,
+  "sayability": 3,
+  "tone": 4,
+  "styleFit": 4
+ },
+ "flags": [
+  {
+   "beat": 1,
+   "rule": "C9",
+   "observation": "\"rings the bell before Freud counts\" barely condenses the deck thesis (Id kicks out at two, couch as mat); the listener gets little onboarding."
+  },
+  {
+   "beat": 55,
+   "rule": "C9",
+   "observation": "Callback to bell and seat lands, but \"That bell still rings beside the empty seat.\" gives mood, not a provocative satirical turn."
+  },
+  {
+   "beat": 9,
+   "rule": "B6",
+   "observation": "\"But the crib waits\" comes three beats after \"But Freud wishes\"; the But-family opens five lines, two within ten lines."
+  },
+  {
+   "beat": 19,
+   "rule": "B6",
+   "observation": "\"So another tooth\" is the third So-opener at eight-beat spacing after \"So downstairs\" and \"So yesterday\"; family spacing under ten lines."
+  },
+  {
+   "beat": 43,
+   "rule": "B7",
+   "observation": "\"So hunger\" claims causation from The Interpretation Detective that the sequence does not earn; the connector is formal, not a real therefore."
+  },
+  {
+   "beat": 39,
+   "rule": "B7",
+   "observation": "Opener \"Lie down:\" duplicates the card's own \"lie down\" at once; an echo, not a bridge building on The Rebus."
+  },
+  {
+   "beat": 23,
+   "rule": "C11",
+   "observation": "\"Dad's law\" appears as opener and again as the line's tail; same doubling with \"downstairs\" in beat 3 and \"hunger\" in beat 43."
+  },
+  {
+   "beat": 5,
+   "rule": "A3",
+   "observation": "Tail \"redaction\" is a bare power label; the pattern recurs (\"symbolic authority\", \"surrender\", \"projection\", \"stuck\", \"control\") and reads as length padding."
+  },
+  {
+   "beat": 50,
+   "rule": "A2",
+   "observation": "Opener \"Pencil\" is neither card text nor an artworkPrompt image word for The Notebook."
+  },
+  {
+   "beat": 47,
+   "rule": "A4",
+   "observation": "With opener \"Yet the Censor's door\" the beat runs 117 characters, beyond one breath; beats 3 and 31 also exceed 100."
+  },
+  {
+   "beat": 19,
+   "rule": "A4",
+   "observation": "\"losing a tooth in a dream, not dentists; losing your power\" breaks the card's grammar; the logic of the claim gets lost aloud."
+  },
+  {
+   "beat": 15,
+   "rule": "B7b",
+   "observation": "Callback \"But the Wish's teeth\" exists, but its twist into The Hat has no causal link; it reads attached, not motivated."
+  }
+ ],
+ "verdict": "pass"
+}

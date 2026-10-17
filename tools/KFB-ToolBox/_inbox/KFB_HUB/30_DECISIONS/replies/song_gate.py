@@ -365,7 +365,10 @@ def gate_critic(a):
             F(f"flag {i}: observation länger als 25 Wörter")
         if SUGGEST.search(ob):
             F(f"flag {i}: klingt nach Textvorschlag ({SUGGEST.search(ob).group()!r}); Kritiker urteilt nur")
-        for q in re.findall(r"[\"“'‘]([^\"”'’]{3,})[\"”'’]", ob):
+        quotes = [q for q in ob.split('"')[1::2] if len(q) >= 3]  # gerade Anführungszeichen paarweise
+        quotes += re.findall(r"“([^”]{3,})”", ob)
+        quotes += re.findall(r"(?<![A-Za-z])['‘]([^'’]{3,}?)['’](?![A-Za-z])", ob)  # Apostrophe in Wörtern sind keine Zitate
+        for q in quotes:
             if q.casefold() not in song.casefold():
                 F(f"flag {i}: Zitat {q!r} steht nicht im Song (Ersatztext?)")
     if crit.get("verdict") == "pass" and any(v <= 2 for v in sc.values() if isinstance(v, int)):

@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "the_kayfabe_money_trail_9_11.part2.r4.3.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F19)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 2,
+  "arc": 2,
+  "sayability": 3,
+  "tone": 3,
+  "styleFit": 3
+ },
+ "flags": [
+  {
+   "beat": 4,
+   "rule": "A2",
+   "observation": "'sought software for rogue trading' drops the card's 'stop'; the meaning inverts and now accuses a named bank."
+  },
+  {
+   "beat": 29,
+   "rule": "E16b",
+   "observation": "Opener 'But Wedge One's bookkeepers' ties the killed auditors to Woodford's falsified Navy records; no card makes that link, it lands on victims."
+  },
+  {
+   "beat": 24,
+   "rule": "A2",
+   "observation": "'due to loss' drops the accountants; the human loss turns ambiguous and can be heard as money lost."
+  },
+  {
+   "beat": 14,
+   "rule": "A3",
+   "observation": "'Wallet:' only echoes the card name; the line ends on a dangling 'Commission', so the card's claim about ignoring Ptech vanishes."
+  },
+  {
+   "beat": 15,
+   "rule": "A3",
+   "observation": "'twenty-four hours' is a bare power fragment; without its catastrophe context it reads as a leftover rule value."
+  },
+  {
+   "beat": 17,
+   "rule": "A2",
+   "observation": "'His question' plus 'why care?' blurs who asks; on the card the director asks Minnery, not Minnery himself."
+  },
+  {
+   "beat": 21,
+   "rule": "A4",
+   "observation": "'a long one' trails after 'event'; the scrambled word order breaks the quote's sense within one breath."
+  },
+  {
+   "beat": 20,
+   "rule": "A4",
+   "observation": "'biological warfare, genotypes' is a bare noun list; it reads like an index line, not a sayable claim."
+  },
+  {
+   "beat": 27,
+   "rule": "B6",
+   "observation": "'Yet the balance grows' repeats the 'Yet the' family four beats after beat 23; 'But the' also recurs at beats 6 and 13."
+  },
+  {
+   "beat": 11,
+   "rule": "B7",
+   "observation": "Openers 'Blueprint:', 'Wallet:', 'Paper:' are single labels without a so/but bridge; across all openers almost no artworkPrompt picture appears."
+  },
+  {
+   "beat": 1,
+   "rule": "C9",
+   "observation": "'A sealed ledger sits under a locked office door.' is a plain image; intro carries no satirical or provocative setup of the money trail."
+  },
+  {
+   "beat": 35,
+   "rule": "C9",
+   "observation": "Outro 'That sealed ledger remains beyond the office door.' restates the intro without a thought-provoking turn before 'Stay Fluffy!'."
+  }
+ ],
+ "verdict": "revise"
+}

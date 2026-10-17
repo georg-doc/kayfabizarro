@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "1001_kayfabe_nights.part2.r4.3.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F19)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 2,
+  "arc": 2,
+  "sayability": 3,
+  "tone": 4,
+  "styleFit": 3
+ },
+ "flags": [
+  {
+   "beat": 1,
+   "rule": "C9",
+   "observation": "\"Kayfabe Nights is still holding the city's debt.\" Debt has no anchor in cards or concept; storytelling-for-survival and wrestling territory absent; no satirical bite."
+  },
+  {
+   "beat": 31,
+   "rule": "C9",
+   "observation": "\"The seal stays rusted; nobody gets that last word.\" mirrors the intro wording; the closing turn is thin, not thought-provoking."
+  },
+  {
+   "beat": 11,
+   "rule": "B6",
+   "observation": "\"But the ebony horse:\" repeats the But family eight lines after beat 3; So (beats 7, 15) and Until (19, 27) also under ten apart."
+  },
+  {
+   "beat": 4,
+   "rule": "B7",
+   "observation": "\"Yet the Petrified Market's crowd:\" contrast word with no contrast, right after a But opener; the fragment does not bridge into Solomon's Vessel."
+  },
+  {
+   "beat": 19,
+   "rule": "B7b",
+   "observation": "\"Until the steward's mistake:\" calls back into Harun al-Rashid, a different story; the callback is formal, with no therefore or but logic."
+  },
+  {
+   "beat": 23,
+   "rule": "B7",
+   "observation": "\"But the market's bargain:\" gives the Petrified Market a bargain it never had; hollow callback, props not people (Tip 3)."
+  },
+  {
+   "beat": 5,
+   "rule": "A3",
+   "observation": "Power names tacked on as trailing labels: \"sonic attack\"; likewise \"suicide dive\", \"aerial assault\", \"sabotage\", \"insanity\", \"audit\", \"rage\", \"clue\" elsewhere."
+  },
+  {
+   "beat": 21,
+   "rule": "A3",
+   "observation": "\"witty verse boosts faces\" recites the power as a rule; same pattern in \"enforcer destroys corruption\" (beat 20) and \"prevent identity reveals\" (beat 30)."
+  },
+  {
+   "beat": 22,
+   "rule": "A4",
+   "observation": "\"the bell, match ends by the King\" is garbled syntax; also \"keep marks believing, Bizarro sell\" (beat 27). Meaning gets lost when spoken."
+  },
+  {
+   "beat": 29,
+   "rule": "A4",
+   "observation": "\"to be continued next night, match.\" ends on a dangling word that breaks the cadence of the line."
+  },
+  {
+   "beat": 4,
+   "rule": "A4",
+   "observation": "118 characters including opener; beats 3, 7, 15, 19, 23, 25, 27 also exceed 105, beyond one breath."
+  },
+  {
+   "beat": 15,
+   "rule": "A2",
+   "observation": "\"it's a crime\" cuts the card's crime scene, shifting the lore from a place to an accusation."
+  }
+ ],
+ "verdict": "revise"
+}

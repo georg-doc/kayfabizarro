@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- Externer Kritiker R1 für 7 R4.3-Tracks gelaufen (frische Instanzen, nur 4 Eingaben), alle Kritiker-JSONs gültig nach Fix im song_gate (Apostrophe ≠ Zitate); Ergebnis meist 3er, Schwächen B7/C9/A4 (replies/SONG_CRITICS_R1/). WSA: eine Überarbeitung R4.4 (Hub b101).
 - Knet-Modul kfb-clay.v1 fertig (replies/CLAY_SSOT_R1/): Ursachen = 5 Umsetzungen, Skalierung in Welteinheiten, Strich-Relief (Streifen), Pixel-abhängiges Ausblenden, Tonemapping je Werkzeug; Modul mit 3 Profilen, objekt-normiert, ohne UV, fester Seed; Golden-Gates G0–G5 PASS (bit-gleich über Ladevorgänge). Im Hub q13 zur Stärke-Entscheidung. Offen: Tonemapping Blender↔Spiel (Neutral vs ACES), Animations-Test, Integration WS1/ToolBox/WSB.
 - WSB 24. Nachtrag erledigt: B15 zurückgesetzt (Dory r7, Hunky edge80), B12 r3 (gebackene Kleidungs-Textur, Zylinder auf dem Kopf, Hose fern sichtbar), B22 r2 (Kenney-Plakatwand CC0 + 3 Armlampen, weiche Kegel, gleichmäßiger Lichtfleck); gesichtet, im Hub q11/q12.
 - V-430: Georg im Hub: WS1-Kombi Merge frei; Schritte-Probe FAIL (Hammerstampfen, zu schnell, Knöpfe kaputt) → ElevenLabs HOLD; B15 Rand FAIL → vorherige Fassung; Anzug r2 TUNE (pixelige Hemdränder, Zylinder, Hose); Lampen TUNE (klassische Billboard-Arme, gleichmäßiger Lichtfleck). 24. Nachtrag an WSB, WS1-Notiz, WSA-Brief Ton-Studio.

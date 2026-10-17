@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "frizzlebob_bloedsinnland_alice.r4.3.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F19)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 3,
+  "arc": 4,
+  "sayability": 2,
+  "tone": 4,
+  "styleFit": 3
+ },
+ "flags": [
+  {
+   "beat": 3,
+   "rule": "A4",
+   "observation": "114 characters; one of fourteen card lines above 95 (also beats 6, 9, 12, 15, 20, 22, 28, 31, 32). Regression against golden line length."
+  },
+  {
+   "beat": 6,
+   "rule": "B6",
+   "observation": "\"So time stops:\" three beats after \"So the summons arrives:\"; the So family opens beats 3, 6, 15, 28, 32, closer than ten lines."
+  },
+  {
+   "beat": 9,
+   "rule": "A4",
+   "observation": "120 characters, the longest line; \"But the White Rabbit's delay:\" is a verbless fragment that stalls the breath before the card starts."
+  },
+  {
+   "beat": 12,
+   "rule": "B7",
+   "observation": "\"Dodo, pigeon, serpent, galaxy belly\" is a tag list; KayfabeTip 5 asks for one real picture, here four compete."
+  },
+  {
+   "beat": 17,
+   "rule": "A3",
+   "observation": "\"repeat the last sentence\" lands as an instruction to players; rulebook voice (also beat 15, \"locked out until you solve a riddle\")."
+  },
+  {
+   "beat": 22,
+   "rule": "A8",
+   "observation": "\"Giant\" is a game-state term, used twice, plus \"grow\" and \"grows\" doubled; the line circles without a picture."
+  },
+  {
+   "beat": 23,
+   "rule": "A2",
+   "observation": "\"hides inside the other bottle\" adds an image; the card says other cards. \"Micro\" is a game-state term (A8)."
+  },
+  {
+   "beat": 24,
+   "rule": "A3",
+   "observation": "\"heads grow, tails shrink, edge\" recites the coin-flip mechanic; without the coin the listener gets no picture."
+  },
+  {
+   "beat": 28,
+   "rule": "B7",
+   "observation": "\"So the Queen needs new roses\" contradicts the card: the paint hides a mistake from the Queen. The bridge twists logic, not story."
+  },
+  {
+   "beat": 31,
+   "rule": "B7b",
+   "observation": "Callback \"But the Rose Garden's paint:\" has no verb and no link to stolen tarts; same template as beat 9, reads as formula."
+  },
+  {
+   "beat": 32,
+   "rule": "C11",
+   "observation": "Fifth \"So\" opener; outside card text \"So\" appears five times and \"But\" three times, above the twice limit."
+  },
+  {
+   "beat": 33,
+   "rule": "C9",
+   "observation": "\"The Queen is made of cardboard.\" is a quiet aside; the outro turn lacks the provocative, satirical edge the frame demands."
+  }
+ ],
+ "verdict": "revise"
+}

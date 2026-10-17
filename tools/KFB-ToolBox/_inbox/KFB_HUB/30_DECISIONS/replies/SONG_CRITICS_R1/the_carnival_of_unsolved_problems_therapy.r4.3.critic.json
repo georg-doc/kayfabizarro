@@ -1,0 +1,77 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "the_carnival_of_unsolved_problems_therapy.r4.3.suno.txt",
+ "critic": "claude-opus-5-5 fresh instance (WS0 F19)",
+ "blind": true,
+ "scores": {
+  "cardTruth": 4,
+  "performance": 3,
+  "arc": 4,
+  "sayability": 3,
+  "tone": 4,
+  "styleFit": 3
+ },
+ "flags": [
+  {
+   "beat": 15,
+   "rule": "A4",
+   "observation": "125 characters, longest line; all eighteen opener lines exceed 95 characters and break the one-breath limit."
+  },
+  {
+   "beat": 7,
+   "rule": "B6",
+   "observation": "\"So the mirror bends\" lands four beats after \"So the fairground opens\"; same opener family under ten lines apart."
+  },
+  {
+   "beat": 22,
+   "rule": "B6",
+   "observation": "\"But the megaphone interrupts\" follows \"But the Invisible Rucksack's weight\" by seven beats; family spacing under ten lines."
+  },
+  {
+   "beat": 46,
+   "rule": "A1",
+   "observation": "Card name sung as \"The Guarantee\"; the printed name is truncated, owner dropped from the title."
+  },
+  {
+   "beat": 32,
+   "rule": "A3",
+   "observation": "\"sell a false solution confidently\" recites the power nearly verbatim; sounds like a rule, not an aside."
+  },
+  {
+   "beat": 15,
+   "rule": "A3",
+   "observation": "\"helping behavior repeats even when it fails\" restates the power as the line's payload; rulebook register."
+  },
+  {
+   "beat": 5,
+   "rule": "B7",
+   "observation": "Opener \"But the emergency brake\" repeats the line's closing image \"emergency brake\"; the bridge adds no turn."
+  },
+  {
+   "beat": 23,
+   "rule": "A4",
+   "observation": "\"Future left: Future Self: The One Who Left\" stacks two colons and doubles Future and Left; stumbles aloud."
+  },
+  {
+   "beat": 41,
+   "rule": "A4",
+   "observation": "\"burden\" spoken three times in one beat: \"old burden\", \"burden into object\", \"labeled burden\"."
+  },
+  {
+   "beat": 40,
+   "rule": "A4",
+   "observation": "\"two chairs facing setup\" is a clipped artwork fragment; ungrammatical when spoken."
+  },
+  {
+   "beat": 34,
+   "rule": "B7",
+   "observation": "Tail \"work, love, sanity, chaos, balanced\" is a noun list; the card shows no want, wound or grudge."
+  },
+  {
+   "beat": 51,
+   "rule": "C9",
+   "observation": "\"Nobody can sell the whistle back\" calls back to the intro, but the turn stays opaque; satirical edge of frame faint."
+  }
+ ],
+ "verdict": "revise"
+}
