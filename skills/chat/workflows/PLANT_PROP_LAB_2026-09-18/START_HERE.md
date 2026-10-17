@@ -158,3 +158,14 @@ Potential later consumers:
 - Game Dev Studio packaging.
 
 No consumer gets automatic ownership or acceptance merely because the Plant Prop Lab can render the composition.
+
+
+## Additive Georg direction · 2026-10-12 · Wobbleflora + bigger Crazy-Cat pot motifs (PROPOSAL)
+
+**Read-first art-direction note:** `WOBBLEFLORA_CRAZY_CAT_POT_STYLE_DIRECTION_2026-10-12.md` (existing Research Draft PR #389 carrier, not on main unless later merged).
+
+Wobbleflora is a *new form of existing Living Plants*, optionally in decorated, oversized pots, optionally direct ground-rooted, optionally mixed in small authored groups. These are equal concept modes; current v2 PlantRecipe only constructs potted variants, and potless requires an owner-consumer adapter. Preserve canonical plant/pot source meshes, `plant-rig.js`, `plant-eyes.js` → EyeRig v6, seed/biome/palette rules, no terrain/audio/weather/character ownership.
+
+**Pot ornament adjustment:** favor one huge legible hand-painted hero motif plus calm large negative spaces, fewer tiny glyphs, using existing Mexican-inspired/Crazy-Cat register grammar from S19. Do not replace the already implemented `plant-pattern.js` register grammar with a new tile system. Candidate 3–5 loud repetitions, 0–1 quiet companion register **only for an A/B visual trial**; old code limits and prior tests remain unchanged. Source shapes, bounded pot profile, contrast and real camera-distance readability matter.
+
+**State:** concept direction captured and saved; **no runtime/deformer/clip or potless proof**, no new asset, browser test or public product gate. Existing Plant Lab is a donor/lookdev owner, WorldBuilder R4 STOPPED/F-R39 FAIL, no R5. One optional Plant Lab next gate: actual source-isolated **macro-pattern pot A/B** with the same source, camera and seed before Wobbleflora animation proof.

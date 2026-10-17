@@ -57,3 +57,21 @@ Pack:
 
 ### BOUNDARY
 This proves discoverability/provenance only. PlantRecipe, prop rig, pot patterns and LivingProp EyeRig remain authoring candidates.
+
+
+## 2026-10-12 · PPL-WOBBLEFLORA-CERAMIC-01 · Georg art-direction update · NOT IMPLEMENTED
+
+### GEORG DIRECTION
+- Wobbleflora belongs inside existing KFB Plants/Living Plants; **potted** in a boldly decorated, even oversized Crazy-Cat-style pot and **ground-rooted** without pot are two equal valid presentation modes, also combinable with ordinary existing plant assets in authored groups.
+- Pot patterns should be **bigger, less busy, more graphic**, taking inspiration from the Mexican-influenced, hand-painted ceramic ornament rhythms already found in Crazy-Cat. Reduce fine repeated texture and let one large visible motif lead the composition.
+
+### SOURCE-BASED DESIGN RESPONSE
+- New owner brief: `WOBBLEFLORA_CRAZY_CAT_POT_STYLE_DIRECTION_2026-10-12.md`.
+- **Keep** current S19 implemented pattern *register grammar* and existing 12 biome palettes, dark common outline and contrast checks; no return to S18 dense cell grid. Candidate **macro** art-direction test: 3–5 dominant large shapes around one broad register, at most one quiet companion register; keep generous rest areas. These are **LOOKDEV candidates, not changed code thresholds or measured visual acceptance**.
+- Existing v2 `plant-recipe.js` constructs pots: a potless plant needs a separate receiving-owner placement adapter and is **NOT IMPLEMENTED**. `plant-rig.js` + `plant-eyes.js` are the intended existing source modules. S19 actual deformation and S20 clip library are still proposed/unbuilt.
+- Keep original source assets untouched; no second EyeRig, world position, audio/wind owner, UI, stage or Live.
+
+### EVIDENCE / DISPOSITION
+- Current main source docs and v2 plant-pattern/recipe/rig/eyes read; owner concept note written and exact GitHub head/file readback verified. No current visual source-isolation screenshots, new meshes, browser animation, mobile performance, Site/Stage or human art-direction PASS.
+- Parent World Lab Research PR #389 is the existing intake carrier; this owner-specific design note doesn't authorize WB2 R4/R5 or replace the weather/VFX/SFX research gate.
+- **One optional Plant Lab next gate:** real original S19 pot source at fixed seed/camera, current patterns vs enlarged macro pattern A/B, independently checked in isolation before any Wobbleflora integration.

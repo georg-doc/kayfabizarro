@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB World Lab · Existing Source Isolation / Weather–FX audit</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui, sans-serif;background:#232320;color:#eae6d9}
+body{margin:0;padding:16px;max-width:1260px;margin-inline:auto}
+header{margin-bottom:12px}h1{font-size:19px;font-weight:650;margin:0 0 5px}p{font-size:13px;line-height:1.48;margin:5px 0;color:#b9b5a8}
+main{display:grid;grid-template-columns:minmax(0,2fr) minmax(250px,1fr);gap:12px}
+section{border:1px solid #555146;background:#292824;padding:12px;min-width:0}
+h2{font-size:14px;margin:0 0 9px}canvas{display:block;width:100%;height:420px}
+#sky{height:420px;position:relative;overflow:hidden;background:#1e272c}
+#vfx-isolate{height:330px;background:#4a4d4a;display:grid;place-items:center}
+#vfx-original{width:min(94%,290px);height:290px;object-fit:contain}
+#controls{margin:10px 0;display:flex;flex-wrap:wrap;gap:7px}button{color:#f7f3e7;background:#48443a;border:1px solid #777063;padding:8px 11px;cursor:pointer}button:focus{outline:2px solid #b8b4a8}
+pre{font-size:11px;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere;background:#1b1b19;padding:10px;min-height:92px}
+code{font-family:ui-monospace,monospace;font-size:12px}
+footer{margin-top:14px}audio{width:100%}
+@media(max-width:800px){main{grid-template-columns:1fr}#sky{height:300px}canvas{height:300px}}
+</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<header><h1>KFB World Lab · Source-isolation QA</h1><p>Existing SKY3 EnvironmentHost and original Travel rain overlay · original Kenney whitePuff00 · existing KFB ambient_wind.wav. Development evidence only; no new runtime owner, Clay acceptance or public Stage.</p></header>
+<main><section><h2>A · Actual SKY3 / Travel source · dry → rain → dry</h2>
+<div id="sky"><canvas id="sky-canvas"></canvas></div>
+<div id="controls"><button id="dry">Dry · 7 sec</button><button id="rain">Rain · 2 sec</button><button id="reset">Reset + replay</button></div>
+<pre id="sky-state">Loading current KFB EnvironmentHost…</pre>
+<p>One renderer, one original EnvironmentHost and its rain-overlay shader. Fixed-dt numerical rain replay; source rain has unseeded particles and therefore does not claim pixel-identical frames. Scene intentionally shows the real KFB atmosphere only, not an invented world.</p>
+</section><section><h2>C · Real VFX-01 source object, isolated</h2>
+<div id="vfx-isolate"><img id="vfx-original" alt="Original Kenney white puff PNG, frame 00" src="../../../../../media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/White%20puff/whitePuff00.png"></div>
+<p><code>whitePuff00.png</code> · KFB repository Git blob <code>52d2a79863b06669c0a77556602fdb139039267e</code>. Original artwork, no recolor or sprite replacement. Clay integration NOT TESTED.</p>
+<h2>B · Existing world sound source</h2>
+<audio id="wind-source" controls preload="metadata" src="../../../../../media/3D_Assets/Audio/Environment/ambient_wind.wav"></audio>
+<p>Original <code>ambient_wind.wav</code> (blob <code>9e259a43528d292cf2d61796893df9b2ddb80eb6</code>), not rain. Source audition only; not ducking/mixer acceptance. Missing verified local rain-loop remains SOURCE_REQUIRED.</p>
+</section></main><footer><p id="status" role="status">Initialising from repository sources…</p></footer>
+<script type="module" src="./audit.mjs"></script>
+</body></html>

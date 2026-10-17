@@ -1,0 +1,49 @@
+name: KFB World Lab Source Weather VFX Audit
+on:
+  pull_request:
+    paths:
+      - 'skills/chat/research/KFB_WORLDLAB_WEATHER_ENVIRONMENT_VFX_SFX_2026-10-12/source-audit/**'
+      - '.github/workflows/worldlab-weather-vfx-source-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-isolation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            skills/chat/research/KFB_WORLDLAB_WEATHER_ENVIRONMENT_VFX_SFX_2026-10-12/source-audit
+            tools/KFB-ToolBox/_inbox/KFB Skydome Gates SKY3/KFB_SKYDOME_SKY3_SESSION_CUT_2026-10-01_r1
+            media/3D_Assets/FX_Visual/kenney_smoke-particles/PNG/White puff
+            media/3D_Assets/Audio/Environment
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install real Three/WebGL and browser test dependencies
+        run: |
+          npm install --no-save --no-package-lock playwright@1.51.1 three@0.184.0
+          npx playwright install --with-deps chromium
+      - name: Source-only syntax checks
+        run: |
+          node --check skills/chat/research/KFB_WORLDLAB_WEATHER_ENVIRONMENT_VFX_SFX_2026-10-12/source-audit/audit.mjs
+          node --check skills/chat/research/KFB_WORLDLAB_WEATHER_ENVIRONMENT_VFX_SFX_2026-10-12/source-audit/proof.mjs
+      - name: Run original SKY3 / Kenney source WebGL proof
+        env:
+          KFB_SOURCE_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+          KFB_PROOF_DIR: kfb-worldlab-weather-source-evidence
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/kfb-weather-server.log 2>&1 &
+          sleep 3
+          node skills/chat/research/KFB_WORLDLAB_WEATHER_ENVIRONMENT_VFX_SFX_2026-10-12/source-audit/proof.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-weather-source-audit
+          path: kfb-worldlab-weather-source-evidence/
+          if-no-files-found: warn
+          retention-days: 21
