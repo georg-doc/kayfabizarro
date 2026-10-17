@@ -102,9 +102,31 @@ class KfbAssetSucheAutoImportTests(unittest.TestCase):
         with self.assertRaises(IntakeError):
             run(self.request(), self.repo, self.downloader)
 
-    def test_blocks_duplicate_or_existing_dest(self):
+    def test_idempotent_existing_verified_source_never_redownloads(self):
         path = self.request()
         run(path, self.repo, self.downloader)
+        def fail_download(url):
+            raise AssertionError("Repeat must never contact upstream source")
+        again = run(path, self.repo, fail_download)
+        self.assertEqual(again["status"], "ALL_PREVIOUSLY_VERIFIED")
+        self.assertEqual(again["alreadyVerified"], 1)
+        self.assertEqual(again["newlyImported"], 0)
+        self.assertEqual(again["candidates"][0]["state"], "ALREADY_VERIFIED")
+
+    def test_blocks_modified_existing_original(self):
+        path = self.request()
+        run(path, self.repo, self.downloader)
+        (self.repo / BASE / "test_monument" / "test_landmark_cc0" / "source" / "sample-model.glb").write_bytes(b"tampered")
+        with self.assertRaises(IntakeError):
+            run(path, self.repo, self.downloader)
+
+    def test_blocks_corrupt_existing_source_manifest(self):
+        path = self.request()
+        run(path, self.repo, self.downloader)
+        target = self.repo / BASE / "test_monument" / "test_landmark_cc0" / "SOURCE.json"
+        m = json.loads(target.read_text())
+        m["licenseSPDX"] = "CC-BY-NC-4.0"
+        target.write_text(json.dumps(m))
         with self.assertRaises(IntakeError):
             run(path, self.repo, self.downloader)
 
