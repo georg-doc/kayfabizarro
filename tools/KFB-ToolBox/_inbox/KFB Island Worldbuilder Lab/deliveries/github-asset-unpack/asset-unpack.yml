@@ -1,0 +1,105 @@
+name: Unpack KFB Asset Zip
+
+# Ziel im Repo: .github/workflows/asset-unpack.yml
+# Unpacks an asset zip that is already in the repo, next to itself (same level, folder named like the zip),
+# when a request file `<anything>.unpack-request.json` is pushed to an `asset-unpack/**` branch.
+# Result (folder + kfb.asset-pack-unpack/1 manifest) is committed to the same branch. Never writes to main;
+# merging the branch PR then triggers the existing Asset Registry refresh.
+
+on:
+  push:
+    branches:
+      - "asset-unpack/**"
+    paths:
+      - "media/**/*.unpack-request.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kfb-asset-unpack-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - name: Unpack requested zips
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import fnmatch, glob, json, os, subprocess, sys, zipfile, datetime
+          from pathlib import PurePosixPath
+          MODEL_EXTS = {'.glb', '.gltf', '.fbx', '.obj', '.blend', '.dae', '.3ds'}
+          reqs = sorted(glob.glob('media/**/*.unpack-request.json', recursive=True))
+          if not reqs:
+              print('no unpack requests'); sys.exit(0)
+          for rp in reqs:
+              req = json.load(open(rp, encoding='utf-8'))
+              zp, tp, mp = req['zipPath'], req['targetPath'], req['manifestPath']
+              for p in (zp, tp, mp):
+                  assert p.startswith('media/') and '..' not in p, f'bad path {p}'
+              assert os.path.isfile(zp), f'zip missing: {zp}'
+              assert not os.path.exists(tp), f'target exists, refusing to overwrite: {tp}'
+              excl = ['__MACOSX/*', '*.DS_Store', '*/.DS_Store'] + req.get('exclude', [])
+              files, total, formats, skipped = 0, 0, {}, 0
+              with zipfile.ZipFile(zp) as z:
+                  for info in z.infolist():
+                      name = info.filename
+                      if info.is_dir():
+                          continue
+                      if any(fnmatch.fnmatch(name, e) for e in excl):
+                          skipped += 1; continue
+                      rel = PurePosixPath(name)
+                      assert not rel.is_absolute() and '..' not in rel.parts, f'unsafe entry {name}'
+                      out = os.path.join(tp, *rel.parts)
+                      os.makedirs(os.path.dirname(out), exist_ok=True)
+                      with z.open(info) as src, open(out, 'wb') as dst:
+                          dst.write(src.read())
+                      files += 1; total += info.file_size
+                      ext = rel.suffix.lower() or '(none)'
+                      formats[ext] = formats.get(ext, 0) + 1
+              blob = subprocess.check_output(['git', 'hash-object', zp], text=True).strip()
+              lic = any('licen' in p.lower() for p in glob.glob(tp + '/**/*', recursive=True))
+              manifest = {
+                  'schema': 'kfb.asset-pack-unpack/1',
+                  'date': datetime.date.today().isoformat(),
+                  'status': 'SOURCE_RECEIVED_UNPACKED_REGISTRY_REFRESH_REQUESTED',
+                  'zipPath': zp,
+                  'zipBlobSha': blob,
+                  'targetPath': tp,
+                  'fileCount': files,
+                  'bytes': total,
+                  'modelFileCount': sum(v for k, v in formats.items() if k in MODEL_EXTS),
+                  'formats': dict(sorted(formats.items())),
+                  'excludedEntries': skipped,
+                  'licensePresent': lic,
+                  'license': req.get('license'),
+                  'zipPreserved': True,
+                  'unpackedBy': 'github-actions · .github/workflows/asset-unpack.yml',
+                  'candidateConsumers': req.get('candidateConsumers', []),
+                  'registryNote': req.get('note', 'Index exact source assets only.'),
+              }
+              with open(mp, 'w', encoding='utf-8') as f:
+                  json.dump(manifest, f, indent=2, ensure_ascii=False); f.write('\n')
+              os.remove(rp)
+              print(json.dumps(manifest, indent=2))
+          PY
+
+      - name: Commit result to this branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A media
+          if git diff --cached --quiet; then echo 'nothing to commit'; exit 0; fi
+          git commit -m "assets: unpack requested zip(s) on ${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

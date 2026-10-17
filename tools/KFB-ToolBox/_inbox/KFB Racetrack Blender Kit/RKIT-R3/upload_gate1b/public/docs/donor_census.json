@@ -1,0 +1,523 @@
+{
+ "schema": "kfb.rkit-r3.donor-census/0.1",
+ "donors": [
+  {
+   "id": "RKIT01_track_straight_16m",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/RKIT-01/glb/track_straight_16m.glb",
+   "family": "race body (R3d 12-pt profile)",
+   "rights": "KFB self-authored (RKIT-01 script)",
+   "exists": true,
+   "sha256": "87e4daf8024513f4cdbfa337597d6c807b18ea0062bf07153d1bae0b2b0e67c6",
+   "bytes": 121448,
+   "objects": 2,
+   "meshes": 2,
+   "tris": 4736,
+   "materials": [
+    "KFB_barrier_cap.001",
+    "KFB_barrier_side.001",
+    "KFB_edge_line",
+    "KFB_road.001",
+    "KFB_shoulder.001",
+    "KFB_underside.001"
+   ],
+   "size_blender_xyz_m": [
+    26.64,
+    16.0,
+    3.543
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/RKIT01_track_straight_16m.png"
+  },
+  {
+   "id": "RKIT01_track_curve_R40_45",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/RKIT-01/glb/track_curve_R40_45deg.glb",
+   "family": "race curve",
+   "rights": "KFB self-authored",
+   "exists": true,
+   "sha256": "5adb4f936f335a8ccb390ceb4d20b18b58f1618e6067b871a51481c4899720d7",
+   "bytes": 231196,
+   "objects": 2,
+   "meshes": 2,
+   "tris": 9324,
+   "materials": [
+    "KFB_barrier_cap.001",
+    "KFB_barrier_side.001",
+    "KFB_edge_line",
+    "KFB_road.001",
+    "KFB_shoulder.001",
+    "KFB_underside.001"
+   ],
+   "size_blender_xyz_m": [
+    34.454,
+    37.703,
+    13.421
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/RKIT01_track_curve_R40_45.png"
+  },
+  {
+   "id": "RKIT01_support_bank00",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/RKIT-01/glb/support_bank00.glb",
+   "family": "support",
+   "rights": "KFB self-authored",
+   "exists": true,
+   "sha256": "31aa3b4654f4d15b7110c135afafc8b3dad9ee2ca3db5239684268d05146b581",
+   "bytes": 12664,
+   "objects": 1,
+   "meshes": 1,
+   "tris": 640,
+   "materials": [
+    "KFB_support"
+   ],
+   "size_blender_xyz_m": [
+    5.9,
+    5.9,
+    12.85
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/RKIT01_support_bank00.png"
+  },
+  {
+   "id": "RKIT01_arch_standard",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/RKIT-01/glb/arch_standard.glb",
+   "family": "tunnel arch",
+   "rights": "KFB self-authored",
+   "exists": true,
+   "sha256": "84560a1b89dd02ea42242b3f354d76462f7d4a5f757f1d8b24cd462b13c04a83",
+   "bytes": 48140,
+   "objects": 1,
+   "meshes": 1,
+   "tris": 1984,
+   "materials": [
+    "KFB_arch"
+   ],
+   "size_blender_xyz_m": [
+    26.94,
+    1.872,
+    12.01
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/RKIT01_arch_standard.png"
+  },
+  {
+   "id": "RKIT01_ground_skirt",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/RKIT-01/glb/ground_skirt_R40_45deg.glb",
+   "family": "embankment / skirt",
+   "rights": "KFB self-authored",
+   "exists": true,
+   "sha256": "dc5a6344b65c88460dcf954c2e42127fa01dfc765c99dbb8c12138775773819a",
+   "bytes": 67044,
+   "objects": 1,
+   "meshes": 1,
+   "tris": 2772,
+   "materials": [
+    "KFB_skirt"
+   ],
+   "size_blender_xyz_m": [
+    49.544,
+    42.087,
+    10.659
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/RKIT01_ground_skirt.png"
+  },
+  {
+   "id": "RKIT03_funnel_wide_std",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/RKIT-03/glb/funnel_wide_to_standard.glb",
+   "family": "width transition (fixed piece)",
+   "rights": "KFB self-authored",
+   "exists": true,
+   "sha256": "ba83d6e57ad883578f80e0da2212780cf1d2d04852e32f06228bb6f0ef95f083",
+   "bytes": 263200,
+   "objects": 2,
+   "meshes": 2,
+   "tris": 10656,
+   "materials": [
+    "KFB_barrier_cap.001",
+    "KFB_barrier_side.001",
+    "KFB_edge_line",
+    "KFB_road.001",
+    "KFB_shoulder.001",
+    "KFB_underside.001"
+   ],
+   "size_blender_xyz_m": [
+    26.64,
+    36.0,
+    3.543
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/RKIT03_funnel_wide_std.png"
+  },
+  {
+   "id": "RKIT03_street_city_narrow",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/RKIT-03/glb/street_city_narrow_s.glb",
+   "family": "city street (fixed piece)",
+   "rights": "KFB self-authored",
+   "exists": true,
+   "sha256": "580978a2c44af5c30cee3577ad9db262bcaa58ea02f94424242bbf02133d8683",
+   "bytes": 436972,
+   "objects": 2,
+   "meshes": 2,
+   "tris": 16864,
+   "materials": [
+    "KFB_barrier_side.001",
+    "KFB_edge_line",
+    "KFB_road.001",
+    "KFB_shoulder.001",
+    "KFB_underside.001"
+   ],
+   "size_blender_xyz_m": [
+    55.8,
+    109.282,
+    0.75
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/RKIT03_street_city_narrow.png"
+  },
+  {
+   "id": "RKIT03_tunnel_60",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/RKIT-03/glb/tunnel_60.glb",
+   "family": "tunnel",
+   "rights": "KFB self-authored",
+   "exists": true,
+   "sha256": "b0e0f277e32b4eba5425d407a380d302081782d05c0fe0343aa514475108419f",
+   "bytes": 639468,
+   "objects": 5,
+   "meshes": 5,
+   "tris": 28848,
+   "materials": [
+    "KFB_arch",
+    "KFB_barrier_cap.001",
+    "KFB_barrier_side.001",
+    "KFB_edge_line",
+    "KFB_road.001",
+    "KFB_shoulder.001",
+    "KFB_underside.001"
+   ],
+   "size_blender_xyz_m": [
+    30.04,
+    60.0,
+    9.7
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/RKIT03_tunnel_60.png"
+  },
+  {
+   "id": "RKIT03_support_styles",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/RKIT-03/glb/support_styles_sample.glb",
+   "family": "supports",
+   "rights": "KFB self-authored",
+   "exists": true,
+   "sha256": "6829c056d43ad5608014c8d4da9a793253af70f64f3c2224875a5dc52f0645e4",
+   "bytes": 1150656,
+   "objects": 22,
+   "meshes": 22,
+   "tris": 56844,
+   "materials": [
+    "KFB_barrier_cap.001",
+    "KFB_barrier_side.001",
+    "KFB_edge_line",
+    "KFB_road.001",
+    "KFB_shoulder.001",
+    "KFB_support",
+    "KFB_underside.001"
+   ],
+   "size_blender_xyz_m": [
+    57.355,
+    68.898,
+    19.241
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/RKIT03_support_styles.png"
+  },
+  {
+   "id": "RKIT07_switch_y",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/RKIT-07/glb/switch_y.glb",
+   "family": "Y switch / pit split",
+   "rights": "KFB self-authored",
+   "exists": true,
+   "sha256": "a8d2eb890fa298677b269fae811876692cf0eac38370dd5f04f45b250b5be71f",
+   "bytes": 3008896,
+   "objects": 7,
+   "meshes": 7,
+   "tris": 125124,
+   "materials": [
+    "KFB_barrier_cap.001",
+    "KFB_barrier_side.001",
+    "KFB_edge_line",
+    "KFB_road.001",
+    "KFB_shoulder.001",
+    "KFB_underside.001"
+   ],
+   "size_blender_xyz_m": [
+    108.272,
+    301.475,
+    8.696
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/RKIT07_switch_y.png"
+  },
+  {
+   "id": "RKIT11_muelheimer_bruecke",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/RKIT-11/glb/muelheimer_bruecke.glb",
+   "family": "bridge fixture (OSM-framed)",
+   "rights": "KFB self-authored; OSM frame ODbL (held back)",
+   "exists": true,
+   "sha256": "79ee03654f27842663f8b90dd1ee790c4f34ee72dfa630fa62a9d7a824a2f5a5",
+   "bytes": 1307664,
+   "objects": 32,
+   "meshes": 32,
+   "tris": 60278,
+   "materials": [
+    "KFB_arch",
+    "KFB_barrier_cap.001",
+    "KFB_barrier_side.001",
+    "KFB_cable",
+    "KFB_edge_line",
+    "KFB_road.001",
+    "KFB_shoulder.001",
+    "KFB_skirt",
+    "KFB_support",
+    "KFB_underside.001"
+   ],
+   "size_blender_xyz_m": [
+    42.2,
+    714.0,
+    70.8
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/RKIT11_muelheimer_bruecke.png"
+  },
+  {
+   "id": "SC01_bridge_shell_narrow",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/SC01-BRIDGE-SHELLS/glb/sc01_bridge_shell_narrow_fixture.glb",
+   "family": "bridge scenery shell",
+   "rights": "KFB self-authored",
+   "exists": true,
+   "sha256": "2b122b6ecff37c092a5effd300fd7cd70f12c341f1c4a2c51e36fdbdc17cfe76",
+   "bytes": 582652,
+   "objects": 22,
+   "meshes": 22,
+   "tris": 39280,
+   "materials": [
+    "KFB_arch",
+    "KFB_barrier_cap.001",
+    "KFB_cable",
+    "KFB_support"
+   ],
+   "size_blender_xyz_m": [
+    36.719,
+    352.849,
+    58.3
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/SC01_bridge_shell_narrow.png"
+  },
+  {
+   "id": "SC02_supports_classic",
+   "path": "~/Dropbox/CLAUDE/KFB Racetrack Blender Kit/SC02-SUPPORTS/glb/sc02_supports_classic_fixture.glb",
+   "family": "support ladder",
+   "rights": "KFB self-authored",
+   "exists": true,
+   "sha256": "8fe42dd52c2d0b57088b5bd603b6ab8651db3bcdb987a96daf2313a7fb6a3e05",
+   "bytes": 810192,
+   "objects": 66,
+   "meshes": 66,
+   "tris": 57896,
+   "materials": [
+    "KFB_support",
+    "KFB_underside.001"
+   ],
+   "size_blender_xyz_m": [
+    97.168,
+    257.501,
+    13.949
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/SC02_supports_classic.png"
+  },
+  {
+   "id": "KENNEY_lightPostModern",
+   "path": "~/Dropbox/CLAUDE/KFB Stunt Car Race/racetrack01/assets/racing/lightPostModern.glb",
+   "family": "street lamp",
+   "rights": "Kenney Racing Kit, CC0 (claim; licence file not in folder)",
+   "exists": true,
+   "sha256": "8fd8fccc65f53cf54efff81546b90be23d8c32a4ea85b5bbc79c6c9d123cb925",
+   "bytes": 16584,
+   "objects": 1,
+   "meshes": 1,
+   "tris": 198,
+   "materials": [
+    "_defaultMat",
+    "grey"
+   ],
+   "size_blender_xyz_m": [
+    0.049,
+    0.178,
+    0.781
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/KENNEY_lightPostModern.png"
+  },
+  {
+   "id": "KENNEY_rail",
+   "path": "~/Dropbox/CLAUDE/KFB Stunt Car Race/racetrack01/assets/racing/rail.glb",
+   "family": "guard rail",
+   "rights": "Kenney Racing Kit, CC0 (claim)",
+   "exists": true,
+   "sha256": "c60d60e34b675d5d832d91c6f5d7c125a1020953c2e22dbcd1215397990aaaf4",
+   "bytes": 5940,
+   "objects": 1,
+   "meshes": 1,
+   "tris": 68,
+   "materials": [
+    "grey"
+   ],
+   "size_blender_xyz_m": [
+    1.0,
+    0.05,
+    0.16
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/KENNEY_rail.png"
+  },
+  {
+   "id": "KENNEY_barrierRed",
+   "path": "~/Dropbox/CLAUDE/KFB Stunt Car Race/racetrack01/assets/racing/barrierRed.glb",
+   "family": "barrier block",
+   "rights": "Kenney Racing Kit, CC0 (claim)",
+   "exists": true,
+   "sha256": "6d7de595a92507af6fcb40fe5a62730925ea23f1f8c727b8ecdec9eba9b98156",
+   "bytes": 3244,
+   "objects": 1,
+   "meshes": 1,
+   "tris": 28,
+   "materials": [
+    "red"
+   ],
+   "size_blender_xyz_m": [
+    0.25,
+    0.123,
+    0.131
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/KENNEY_barrierRed.png"
+  },
+  {
+   "id": "KENNEY_roadCrossing",
+   "path": "~/Dropbox/CLAUDE/KFB Stunt Car Race/racetrack01/assets/racing/roadCrossing.glb",
+   "family": "X crossing tile (fixed)",
+   "rights": "Kenney Racing Kit, CC0 (claim)",
+   "exists": true,
+   "sha256": "74c0e3b66606e9b6c0b64fc96f1a73c76163bfa712b3f07930776f4976c21df0",
+   "bytes": 18676,
+   "objects": 1,
+   "meshes": 1,
+   "tris": 266,
+   "materials": [
+    "grass",
+    "grey",
+    "road"
+   ],
+   "size_blender_xyz_m": [
+    2.0,
+    2.0,
+    0.02
+   ],
+   "native_axis_note": "glTF +Y up -> Blender Z up",
+   "render": "evidence/donors/KENNEY_roadCrossing.png"
+  },
+  {
+   "id": "UNITY_BEDRILL_fence_red_block",
+   "path": "~/Developer/rkit-r3/donors/unity_lowpoly_track_roads_free/tree/Assets/BEDRILL/Modular_Track_Free/Models/Track_Fence_line_type_01_red_block_1&5m_free.fbx",
+   "family": "race kerb / fence block",
+   "rights": "Unity Asset Store EULA (BE DRILL ENTER) \u00b7 local only",
+   "exists": true,
+   "sha256": "29db77fa2efa0cf1f9433c413c2d4b2f081c101ea92f70baa7f5cda6a7a4ca7f",
+   "bytes": 19276,
+   "objects": 1,
+   "meshes": 1,
+   "tris": 18,
+   "materials": [
+    "Trek_Material_free"
+   ],
+   "size_blender_xyz_m": [
+    0.4,
+    1.5,
+    1.2
+   ],
+   "native_axis_note": "FBX via Blender importer (unit scale applied)",
+   "render": "evidence/donors/local_only/UNITY_BEDRILL_fence_red_block.png"
+  },
+  {
+   "id": "UNITY_BEDRILL_start_finish",
+   "path": "~/Developer/rkit-r3/donors/unity_lowpoly_track_roads_free/tree/Assets/BEDRILL/Modular_Track_Free/Models/Track_line_type_01_start_finish_15m_free.fbx",
+   "family": "start / finish straight",
+   "rights": "Unity Asset Store EULA \u00b7 local only",
+   "exists": true,
+   "sha256": "642117c02693af743c4bd74b84099d225682d13cdda1015aa0abd1c5cce13808",
+   "bytes": 24796,
+   "objects": 1,
+   "meshes": 1,
+   "tris": 202,
+   "materials": [
+    "Trek_Material_free"
+   ],
+   "size_blender_xyz_m": [
+    15.0,
+    15.0,
+    0.1
+   ],
+   "native_axis_note": "FBX via Blender importer (unit scale applied)",
+   "render": "evidence/donors/local_only/UNITY_BEDRILL_start_finish.png"
+  },
+  {
+   "id": "UNITY_STREETPACK_roadmarks",
+   "path": "~/Developer/rkit-r3/donors/unity_low_poly_street_pack/tree/Assets/LowpolyStreetPack/Meshes/RoadMarks.FBX",
+   "family": "road marking decals",
+   "rights": "Unity Asset Store EULA (Dynamic Art) \u00b7 local only",
+   "exists": true,
+   "sha256": "f721955da1a774579684db5dac19218e85afb40fbe4548a53693a21b00f9b630",
+   "bytes": 80976,
+   "objects": 16,
+   "meshes": 16,
+   "tris": 35,
+   "materials": [
+    "14 - Default"
+   ],
+   "size_blender_xyz_m": [
+    64.849,
+    47.097,
+    0.0
+   ],
+   "native_axis_note": "FBX via Blender importer (unit scale applied)",
+   "render": "evidence/donors/local_only/UNITY_STREETPACK_roadmarks.png"
+  },
+  {
+   "id": "UNITY_STREETPACK_lampposts",
+   "path": "~/Developer/rkit-r3/donors/unity_low_poly_street_pack/tree/Assets/LowpolyStreetPack/Meshes/LampPosts.FBX",
+   "family": "lamp posts",
+   "rights": "Unity Asset Store EULA \u00b7 local only",
+   "exists": true,
+   "sha256": "2e87db2dbc6299a0875046f67a59fa6153ce1e1c26acc6ae15313e90b7db6f89",
+   "bytes": 115040,
+   "objects": 5,
+   "meshes": 5,
+   "tris": 1942,
+   "materials": [
+    "13 - Default",
+    "Material #3",
+    "Material #4",
+    "Material #5",
+    "Material #6"
+   ],
+   "size_blender_xyz_m": [
+    8.368,
+    13.711,
+    9.885
+   ],
+   "native_axis_note": "FBX via Blender importer (unit scale applied)",
+   "render": "evidence/donors/local_only/UNITY_STREETPACK_lampposts.png"
+  }
+ ]
+}

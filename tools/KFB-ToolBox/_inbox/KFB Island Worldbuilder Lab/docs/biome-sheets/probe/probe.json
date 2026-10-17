@@ -1,0 +1,106 @@
+{
+  "url": "http://127.0.0.1:5192/probe.html?pal=canyon&shot=1",
+  "name": "probe",
+  "startedAt": "2026-10-08T17:32:33.296Z",
+  "size": [
+    1200,
+    800
+  ],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "pageErrors": [],
+  "warnings": [],
+  "shots": [
+    {
+      "preset": "overview",
+      "file": "probe__overview.jpg"
+    },
+    {
+      "preset": "baum-ohne",
+      "file": "probe__baum-ohne.jpg"
+    },
+    {
+      "preset": "baum-mit",
+      "file": "probe__baum-mit.jpg"
+    },
+    {
+      "preset": "busch-ohne",
+      "file": "probe__busch-ohne.jpg"
+    },
+    {
+      "preset": "busch-mit",
+      "file": "probe__busch-mit.jpg"
+    },
+    {
+      "preset": "fels-ohne",
+      "file": "probe__fels-ohne.jpg"
+    },
+    {
+      "preset": "fels-mit",
+      "file": "probe__fels-mit.jpg"
+    }
+  ],
+  "stats": {
+    "calls": 66,
+    "tris": 165556
+  },
+  "ready": true,
+  "presets": [
+    "baum-ohne",
+    "baum-mit",
+    "busch-ohne",
+    "busch-mit",
+    "fels-ohne",
+    "fels-mit",
+    "overview"
+  ],
+  "eval": [
+    [
+      {
+        "object": "baum",
+        "species": "kk:Tree_1_A",
+        "kit": "kaykit",
+        "heightH": 3.25,
+        "sinkPct": 7,
+        "moundMax": 0.33,
+        "contactBand": 0.06,
+        "tufts": 7,
+        "pebbles": 3,
+        "tuftShare": 0.054,
+        "pebbleShare": 0.078
+      },
+      {
+        "object": "busch",
+        "species": "kk:Bush_1_D",
+        "kit": "kaykit",
+        "heightH": 0.6,
+        "sinkPct": 12,
+        "moundMax": 0.1,
+        "contactBand": 0.1,
+        "tufts": 6,
+        "pebbles": 2,
+        "tuftShare": 0.13,
+        "pebbleShare": 0.12
+      },
+      {
+        "object": "fels",
+        "species": "kk:Rock_3_A",
+        "kit": "kaykit",
+        "heightH": 1.35,
+        "sinkPct": 15,
+        "moundMax": 0.29,
+        "contactBand": 0.1,
+        "tufts": 6,
+        "pebbles": 3,
+        "tuftShare": 0.13,
+        "pebbleShare": 0.12
+      }
+    ]
+  ],
+  "streaming": null,
+  "inPageErrors": [],
+  "inPageWarnings": [],
+  "finishedAt": "2026-10-08T17:32:55.306Z",
+  "errorCount": 1
+}

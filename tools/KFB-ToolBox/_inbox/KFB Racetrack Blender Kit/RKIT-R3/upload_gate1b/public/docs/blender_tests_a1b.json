@@ -1,0 +1,71 @@
+{
+ "schema": "kfb.rkit-r3.blender-tests/0.2",
+ "core": "kfb.track-core/0.14",
+ "blender": "5.2.2 LTS",
+ "passed": 8,
+ "total": 8,
+ "tests": [
+  {
+   "test": "seam \u00b7 both junctions: every mouth shares its section with the arm route and both kerb runs (< 1 mm)",
+   "pass": true,
+   "value": [
+    0.0,
+    0.000216
+   ],
+   "note": "12 kerb ends"
+  },
+  {
+   "test": "seam \u00b7 both end caps carry the full stub end section (14 slots, < 1 mm)",
+   "pass": true,
+   "value": 0,
+   "note": ""
+  },
+  {
+   "test": "modules \u00b7 exit starts and entry ends exactly on the highway edge (stream + mesh)",
+   "pass": true,
+   "value": [
+    0.001,
+    0.0,
+    0.0004
+   ],
+   "note": "stream exit, stream entry, mesh (m)"
+  },
+  {
+   "test": "modules \u00b7 two gore slabs, two U noses, one cushion (exit only)",
+   "pass": true,
+   "value": "ok",
+   "note": ""
+  },
+  {
+   "test": "no blunt ends \u00b7 every route end continues (node, module, socket join, end cap, or off the scene)",
+   "pass": true,
+   "value": 0,
+   "note": ""
+  },
+  {
+   "test": "mesh \u00b7 no degenerate faces, no loose vertices",
+   "pass": true,
+   "value": [
+    0,
+    0
+   ],
+   "note": "45 meshes"
+  },
+  {
+   "test": "mesh \u00b7 kerb runs, parapets, gore slabs, noses, end caps closed",
+   "pass": true,
+   "value": 0,
+   "note": "21 meshes"
+  },
+  {
+   "test": "furniture \u00b7 signals on their anchors and >= half a KFB car + 0.35 from every lane connector",
+   "pass": true,
+   "value": [
+    6,
+    0,
+    4.727
+   ],
+   "note": ""
+  }
+ ]
+}

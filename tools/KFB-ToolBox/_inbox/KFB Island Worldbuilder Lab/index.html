@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KFB Island Worldbuilder</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #96bede; font: 13px/1.35 system-ui, -apple-system, sans-serif; color: #2b2340; }
+      #c { display: block; width: 100vw; height: 100vh; }
+      #panel { position: fixed; top: 12px; left: 12px; width: 270px; max-height: calc(100vh - 24px); overflow: auto; background: #fff8eeee; border-radius: 14px; padding: 12px 14px; box-shadow: 0 6px 24px #2b234033; }
+      #panel h1 { font-size: 15px; margin: 0 0 8px; }
+      #panel h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: #7b5bb8; margin: 14px 0 6px; }
+      #panel label { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 4px 0; }
+      #panel input[type=range] { width: 130px; }
+      #panel select, #panel input[type=text], #panel input[type=number] { width: 140px; }
+      #panel .row { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }
+      #panel button { border: 0; border-radius: 8px; padding: 5px 9px; background: #ef5a22; color: #fff; cursor: pointer; font: inherit; }
+      #panel button.ghost { background: #e9dfd0; color: #2b2340; }
+      #panel button.on { background: #7b5bb8; }
+      #panel .hint { color: #6a6080; font-size: 12px; margin: 6px 0; }
+      #toast { position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%); background: #2b2340dd; color: #fff; padding: 6px 12px; border-radius: 8px; opacity: 0; transition: opacity .3s; pointer-events: none; }
+      body.shot #panel { display: none; }
+    </style>
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+    <div id="panel"></div>
+    <div id="toast"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
