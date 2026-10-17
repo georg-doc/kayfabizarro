@@ -1,0 +1,108 @@
+name: M2M KFB Retarget P0
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - chatgpt-web/m2m-kfb-retarget-p0-2026-10-01
+    paths:
+      - 'skills/chat/workflows/M2M_KFB_RETARGET_P0_2026-10-01/**'
+      - '.github/workflows/m2m-kfb-retarget-p0.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  gothgirl-source-isolation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout KFB candidate
+        uses: actions/checkout@v4
+
+      - name: Checkout exact Mesh2Motion donor
+        uses: actions/checkout@v4
+        with:
+          repository: Mesh2Motion/mesh2motion-app
+          ref: 79f3f61a9852ef70234a5a4a7c13ed87f7a71833
+          path: donor/mesh2motion
+          persist-credentials: false
+
+      - name: Verify donor pin
+        working-directory: donor/mesh2motion
+        run: |
+          test "$(git rev-parse HEAD)" = "79f3f61a9852ef70234a5a4a7c13ed87f7a71833"
+
+      - name: Set up Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: donor/mesh2motion/package-lock.json
+
+      - name: Install donor dependencies
+        working-directory: donor/mesh2motion
+        run: npm ci
+
+      - name: Mount KFB compatibility test into donor
+        run: |
+          cp             skills/chat/workflows/M2M_KFB_RETARGET_P0_2026-10-01/qa/kfb-kaykit-compat.test.ts             donor/mesh2motion/src/retarget/bone-automap/KfbKayKitCompatibility.test.ts
+
+      - name: Run donor-native KFB gate
+        working-directory: donor/mesh2motion
+        env:
+          KFB_REPO: ${{ github.workspace }}
+        run: |
+          set -o pipefail
+          npm test -- --run src/retarget/bone-automap/KfbKayKitCompatibility.test.ts --reporter=verbose             | tee "${GITHUB_WORKSPACE}/m2m-kfb-retarget-p0-vitest.txt"
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start exact donor app
+        env:
+          SANDBOX_URL: ci
+        run: |
+          cd donor/mesh2motion
+          npm run dev -- --host 127.0.0.1 --port 4173 > "${GITHUB_WORKSPACE}/m2m-vite.log" 2>&1 &
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:4173/retarget/index.html >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat "${GITHUB_WORKSPACE}/m2m-vite.log"
+          exit 1
+
+      - name: Run real browser retarget and GLB export
+        env:
+          KFB_REPO: ${{ github.workspace }}
+          M2M_URL: http://127.0.0.1:4173/retarget/index.html
+        run: |
+          set -o pipefail
+          mkdir -p m2m-kfb-browser-evidence
+          node skills/chat/workflows/M2M_KFB_RETARGET_P0_2026-10-01/qa/browser-retarget.mjs             | tee m2m-kfb-browser-evidence/browser-log.txt
+
+      - name: Run donor preview recorder on retargeted GothGirl
+        env:
+          KFB_REPO: ${{ github.workspace }}
+          M2M_BASE_URL: http://127.0.0.1:4173
+        run: |
+          set -o pipefail
+          node skills/chat/workflows/M2M_KFB_RETARGET_P0_2026-10-01/qa/clip-preview.mjs \
+            | tee m2m-kfb-browser-evidence/clip-log.txt
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m2m-kfb-retarget-p0-evidence
+          path: |
+            m2m-kfb-retarget-p0-result.json
+            m2m-kfb-retarget-p0-vitest.txt
+            m2m-vite.log
+            m2m-kfb-browser-evidence/
+          if-no-files-found: warn
