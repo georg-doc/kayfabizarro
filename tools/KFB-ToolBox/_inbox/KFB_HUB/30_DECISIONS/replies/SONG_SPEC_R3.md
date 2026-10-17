@@ -1,6 +1,7 @@
 # KFB Suno song spec R3.1: the one binding song document (V-411) · 17.10.2026
 
-**R3.4 (18.10., V-435, Georg FAIL "AI slop galore"):** C9 cold start made precise (intro beat 1 = deck title + thesis in plain words, then onboarding; outro = satirical, thought-provoking punch), **no object-acting** (things and abstractions don't act like people), anti-slop list (Layer Zero). Gate: `song_gate.py` C9/C13.
+**R3.4 (18.10., V-435/V-436):** D13b danceable styles (100–130 BPM, no noir/downtempo, genre rotation).
+**R3.4 base (18.10., V-435, Georg FAIL "AI slop galore"):** C9 cold start made precise (intro beat 1 = deck title + thesis in plain words, then onboarding; outro = satirical, thought-provoking punch), **no object-acting** (things and abstractions don't act like people), anti-slop list (Layer Zero). Gate: `song_gate.py` C9/C13.
 **R3.3 (17.10., V-424, Georg):** intro/outro as a tailored satirical frame (C9 new), openers and bridges follow the 5 KayfabeTips (B7 new), callbacks required (B7b), one refrain allowed (C11 new), opener distance across songs = 15 songs, intro types with a cooldown. Gate: `song_gate.py`.
 **R3.2 (17.10., V-419):** the gate is now one shared script, `replies/song_gate.py` (E16); added A9 (meta cards), C9b (intro at least two beats), E16b deck notes for five more decks, §F (external critic); A5 quota without A7 spellings (WSA found the A5/A7 conflict on 9/11). Nothing else changed.
 **R3.1 (17.10., after WSA R4):** added A6–A8 (brackets, numbers, game words), C12b (two tracks) and E16b (tone check).
@@ -48,6 +49,7 @@ A9. **Meta cards** that are not playable (cover, manifesto, rule card, warning c
 13b. **No slop words or cadences:** tapestry, testament, whisper(s), echo(es), symphony, delve, unravel, journey, "in the end", "little did", "a reminder that", "stands as", and stacked dramatic two-liners with no information. Check: could the sentence appear in any song at all? Then it is slop.
 
 ## D · Style (V-362)
+13b. **Danceable, not boring (Georg 18.10.):** groove 100–130 BPM (golden take05: 124 BPM electro-swing), driving rhythm, head-nodding. **Forbidden as the main genre:** jazz noir, noir, downtempo, ballad, ambient, lo-fi/chill, "slow". The genre family must not repeat in **5 consecutive songs**; rotate across e.g. electro-swing, Balkan brass, Afrobeat, funk, nu-disco, cumbia, ska, big-beat, Bollywood dance, surf rock. Gate: `song_gate.py style <x.style.txt> [--corpus …]`.
 13. Purely musical: genre fusion, production texture, one voice with attitude (or an explicit duet), 5–7 instruments, a groove word, BPM. No props, no job roles. Give two variants A and B.
 
 ## E · Process (V-361, V-411)

@@ -404,6 +404,48 @@ def gate_critic(a):
     return 0 if not fails else 1
 
 
+STYLE_BANNED = ["jazz noir", "noir", "downtempo", "ballad", "ambient", "lo-fi", "lofi", "chill", "slow"]
+GENRE_FAMILIES = {"jazz": ["jazz", "bebop", "swing jazz"], "electro-swing": ["electro-swing", "electro swing"], "balkan": ["balkan"],
+                  "afro": ["afrobeat", "afro-funk", "highlife"], "funk": ["funk"], "disco": ["disco", "nu-disco"], "latin": ["cumbia", "samba", "salsa", "bossa"],
+                  "ska": ["ska", "rocksteady"], "bigbeat": ["big beat", "big-beat", "breakbeat"], "bollywood": ["bollywood", "bhangra"], "surf": ["surf"],
+                  "hiphop": ["hip-hop", "hip hop", "boom-bap", "boom bap"], "desert": ["desert", "tuareg"], "soul": ["soul"], "cabaret": ["cabaret"]}
+
+
+def style_family(text):
+    t = text.casefold()
+    for fam, keys in GENRE_FAMILIES.items():
+        if any(k in t for k in keys):
+            return fam
+    return None
+
+
+def gate_style(a):
+    txt = open(a.style, encoding="utf-8").read()
+    fails = []
+    variants = [v for v in re.split(r"(?im)^\s*(?:style\s*)?[ab]\s*[:\-·]", txt) if v.strip()] or [txt]
+    for k, v in enumerate(variants):
+        low = v.casefold()
+        bpms = [int(x) for x in re.findall(r"(\d{2,3})\s*bpm", low)]
+        if not bpms:
+            fails.append(f"FAIL D13b: Variante {k + 1}: keine BPM-Angabe")
+        elif not all(100 <= b <= 130 for b in bpms):
+            fails.append(f"FAIL D13b: Variante {k + 1}: BPM {bpms} außerhalb 100–130")
+        for w in STYLE_BANNED:
+            if re.search(rf"\b{re.escape(w)}\b", low):
+                fails.append(f"FAIL D13b: Variante {k + 1}: verbotenes Stilwort {w!r}")
+    fam = style_family(variants[0])
+    if a.corpus and fam:
+        recent = [f for f in corpus_files(a.corpus, ".style.txt") if os.path.abspath(f) != os.path.abspath(a.style)][:4]
+        for f in recent:
+            if style_family(open(f, encoding="utf-8").read().split("\n\n")[0]) == fam:
+                fails.append(f"FAIL D13b: Genre-Familie {fam!r} schon in {os.path.basename(f)} (Rotation über 5 Songs)")
+    print(f"song_gate style · {os.path.basename(a.style)} · Familie {fam}")
+    for x in fails:
+        print(x)
+    print("PASS" if not fails else f"FAIL ({len(fails)})")
+    return 0 if not fails else 1
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -412,5 +454,7 @@ if __name__ == "__main__":
     l.add_argument("--cards"); l.add_argument("--tone"); l.add_argument("--corpus", nargs="*")
     c = sub.add_parser("critic")
     c.add_argument("critic"); c.add_argument("--lyrics", required=True); c.add_argument("--source", nargs="*")
+    st = sub.add_parser("style")
+    st.add_argument("style"); st.add_argument("--corpus", nargs="*")
     a = ap.parse_args()
-    sys.exit(gate_lyrics(a) if a.cmd == "lyrics" else gate_critic(a))
+    sys.exit(gate_lyrics(a) if a.cmd == "lyrics" else gate_critic(a) if a.cmd == "critic" else gate_style(a))

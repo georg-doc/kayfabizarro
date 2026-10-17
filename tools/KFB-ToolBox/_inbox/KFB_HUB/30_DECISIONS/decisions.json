@@ -6039,6 +6039,21 @@
    "applies": "sofort, alle Songs"
   },
   {
+   "id": "V-436",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Suno-Styles (Georg 18.10.): nicht ständig Jazz Noir und langweilige/untanzbare Styles. SONG_SPEC D13b: 100–130 BPM, tanzbar/treibend; verboten als Hauptgenre: Jazz Noir/Noir, Downtempo, Ballade, Ambient, Lo-Fi/Chill, „slow“; Genre-Familie rotiert (nicht zweimal in 5 Songs). song_gate.py style prüft BPM, verbotene Wörter, Rotation.",
+   "values": {},
+   "owner": "WSA (Plugin)",
+   "check": "song_gate style grün",
+   "source": "replies/SONG_SPEC_R3.md D13b",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Styles rutschten in ruhige Noir-/Jazz-Muster; KFB-Songs sollen tanzbar und abwechslungsreich sein.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6126,7 +6141,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:786",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:787",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

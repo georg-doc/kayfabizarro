@@ -13,4 +13,11 @@ WS0 check: **all 7 R4.4 tracks** have the same pattern (cryptic aphorism pairs, 
 - **Beats 2–4:** a stand-up setup and punch for normies (relatable, everyday, funny), plus 1–3 **dog whistles** for experts. These are precise names, dates, terms or quotes from the deck/lore/history (e.g. for 9/11: a concrete figure, a commission or a name from the cards) that reward insiders.
 - **Outro:** a satirical punch about power, money, media or us, concrete and quotable, then "Stay Fluffy!".
 
+**Addendum, styles (Georg 18.10., V-436):** "and I don't want jazz noir all the time, and such boring/undanceable styles." **Rewrite style A+B as well** per D13b:
+- 100–130 BPM, danceable and driving;
+- no noir, downtempo, ballad, ambient, lo-fi/chill or "slow";
+- genre family rotates (not twice within 5 songs; e.g. electro-swing, Balkan brass, Afrobeat, funk, nu-disco, cumbia, ska, big beat, Bollywood dance, surf rock).
+
+Gate: `song_gate.py style <deck>.style.txt --corpus <all style.txt>`.
+
 Output: `<track>.r4.5.suno.txt` (R4) and `<track>.r5.1.suno.txt` (R5) on the existing song branches, plus the gate output. In the chat: intro and outro of every track as a short list for WS0.
