@@ -5769,6 +5769,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-417",
+   "date": "2026-10-17",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "ToolBox-Studio-Stand FAIL (Georg 17.10., Screenshots): Augenlider der Aliens immer noch/wieder falsch, Schattensaum am Hals von FrizzleBob, Doras Kopf-Oval nicht gerundet und unterer Kopf mit defekter Schattierung/Naht. Ursachen: (1) die E2-Lid-Anbindung für die Aliens (V-348, Besitzer WS0) war geplant (ALIEN_STALK_E2_PLAN.md) und nie gebaut; (2) ToolBox-Studio rendert mit eigenem Licht (Zwischenregel V-409) und Eigenschatten; (3) Dora-Kopf aus Blender-Lauf R1 Teil A in r4 nicht vollständig behoben. Korrektur: WSA baut E2 genau nach Plan (Weg A s ≤ 0,973, shellRadius 1,10 R, Lidfarbe = eyeHost.lidColour ohne × 0,72), Figuren werfen bis zum WS1-Modul keinen Eigenschatten (nur Kontaktschatten am Boden), WSB-Job B14 Dora-Kopf r5 hat Vorrang vor allem; kein ToolBox-Stand geht ohne WS0-Bildprüfung zu Georg.",
+   "values": {},
+   "owner": "WSA work · WSB · WS0 (Bildprüfung)",
+   "check": "Vorher/Nachher Augen offen/halb/zu, Hals, Dora-Kopf mit Clay",
+   "source": "Hub b93 · ONBOARDING_WSB B14",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine von WS0 verantwortete Anbindung blieb liegen; die Zwischenregel für eigenes Licht brachte den Saum zurück.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5841,7 +5856,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:739",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:740",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

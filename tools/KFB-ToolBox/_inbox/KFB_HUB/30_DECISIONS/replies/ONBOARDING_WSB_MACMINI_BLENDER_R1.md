@@ -85,3 +85,10 @@ Eyes: KFB eye rig (anchors). The sunglasses variant may cover the eyes; the eye 
 - **4GTN (CEO):** source `…/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb`. A clean, polished upgrade look in clay, **no suit for now** (Georg 17.10.). 4GTN is **Rig_Large**. Neutral style, no samurai stereotype. KFB eye rig anchors (remove only the eyes).
 - **4GTN_Forgotten (twin):** `4GTN_Forgotten.glb`. Overgrown, mossy and repaired, keep the nature traces. Eye rig anchors; props for the maker space helper (tool, solder iron or similar from KayKit packs) optional.
 - Output: both GLBs, `4gtn_ceo.figure.json` + `4gtn_forgotten.figure.json` drafts, clay proofs front/¾ next to each other ("twin picture"). Then WSA adds them to ToolBox-Studio.
+
+## B14 · Lady Dory: round head oval + repair the lower head (Georg 17.10., V-417), **PRIORITY: before everything else**
+Georg's screenshot from ToolBox-Studio: Dory's head oval is not rounded, and the lower head has defective shading and a seam (mouth area / underside). This was already Blender run R1 part A ("closed, clean oval head; integrate the jagged mouth patch into the head surface; clean normals"). It is evidently not fully done in r4.
+- Source: `media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/LadyDory_RigMedium.toolbox.r4.glb` (branch `assets/kfb-blender-run-r1-2026-10-16`).
+- Make the head a **soft, closed oval** (no flat or dented areas, no facets). Close the **lower head and mouth area seamlessly**: one surface, clean normals, no hard edge, no shading jumps.
+- Unchanged: socket shell 1.10 R / 58° / rolled rim 0.075 R, `KFB_Eye_C_anchor` coaxial at the front, `KFB_Mouth_anchor`, skin and bones, collar visible, head without neck on the collar (V-353).
+- Proof with clay: front/¾/side/underside close-up, before vs. after. Output `LadyDory_RigMedium.toolbox.r5.glb` + RETURN.
