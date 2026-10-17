@@ -1,7 +1,19 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§74 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§75 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 75 · 17.10. · Gemeinsame Vorschau: look/mesa + m3/fahrhilfe (50/50)
+
+- **Prüfung:** Kombi aus `look/mesa`@d193606 und `m3/fahrhilfe`@2cc2562, im Hilfs-Worktree konfliktfrei gemergt.
+  - `run-all` 47/47 PASS (M1, M2, M3 a–f und die npm-Reihe einschließlich light, lineup, scale), 1 INFO (m1-rueckwand).
+  - Unit figures, speckle, terrainStitch PASS. 0 FAIL.
+- **Vorschau** `ws1/preview` @c6d0fc41, Check grün, build.json mit Hash-Zielen (stage, stageGold/Night, worldBucht/OTown, goblin, atlantis, legacy, perf, m1, car, carGold, carNoAssist, lineup).
+- **Für Georg zum Ansehen:**
+  - Bühne in Mesa + Canyon mit Knet-Amphitheater, Sprenkel-Band und Figurenkarten;
+  - Goblin-Bank auf Knet-Gelände;
+  - Fahrprobe mit Fahrhilfe M3 (M an/aus) und dem sauberen Autoschatten des Licht-Moduls.
+- **Danach:** Stufe G (m3/fahrhilfe @a794894, Fassrolle, Schlingern, Zwei-Rad frei) nach m3-g in die nächste Kombi. Den Merge nach main entscheidet Georg (Abnahme-Seite, Frage 4).
 
 ## 74 · 17.10. · Slice 3 Fahrhilfe M3 (V-379) A–F grün · L3-Umzug M1/M2 · Branch-Spiegel · Kombi-Vorschau läuft
 
