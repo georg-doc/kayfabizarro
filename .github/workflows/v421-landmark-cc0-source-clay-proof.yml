@@ -48,13 +48,15 @@ jobs:
           import json, pathlib, hashlib, shutil
           folder=pathlib.Path('v421-proof')
           data=json.loads((folder/'final-audit.json').read_text())
-          assert data['passed']==2, 'Require both actual imported CC0 geometry previews before persistent checkpoint'
+          assert data['passed']>=2, 'Require baseline two actual CC0 geometry previews; new source may remain separately blocked'
           root=pathlib.Path('tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence')
           root.mkdir(parents=True,exist_ok=True)
           manifest={'schema':'kfb.landmark.source-isolation/1','run':'GitHub Actions CI source proof','selectionReady':False,'sources':[]}
           for src in data['sources']:
               assert src['license']=='CC0-1.0'
-              assert src['state']=='SOURCE_ISOLATED_AND_CLAY_RENDERED'
+              if src['state']!='SOURCE_ISOLATED_AND_CLAY_RENDERED':
+                  print('SOURCE NOT RENDERED, HELD:',src['id'],src['state'],src.get('error',src.get('renderError','')))
+                  continue
               source_dir=folder/src['id']
               dest=root/src['id'];dest.mkdir(exist_ok=True)
               for name,digest in [('source-isolation.png','sourceImageSha256'),('clay-preview.png','clayImageSha256')]:
@@ -68,8 +70,12 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add --sparse tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/
-          git commit -m 'evidence(V-421): source-isolated CC0 originals and clay images'
-          git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17
+          if ! git diff --cached --quiet; then
+            git commit -m 'evidence(V-421): source-isolated CC0 originals and clay images'
+            git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17
+          else
+            echo 'No new source evidence, previous manifest retained'
+          fi
       - name: Publish audit evidence for agent-only source QA
         if: always()
         uses: actions/upload-artifact@v4
@@ -88,7 +94,7 @@ jobs:
           if not p.exists():
               raise SystemExit('BLOCKED: no final mesh audit and no clay rendering proof')
           j=json.loads(p.read_text())
-          assert j['passed']>=1, 'BLOCKED: no real imported mesh clay proof'
+          assert j['passed']>=2, 'BLOCKED: baseline two actual source mesh proofs must remain valid'
           assert j['readyForGeorg'] is False
           for record in j['sources']:
               if record['state']=='SOURCE_ISOLATED_AND_CLAY_RENDERED':
