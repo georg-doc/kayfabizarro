@@ -1,5 +1,10 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-17 · V-421 Landmark-Kandidaten · Source-Clay R1.1 (WSA)
+- Research-Only R1.1: Zwei reale CC0-Quellobjekte (OpenDungeons Stonehenge: 640 Dreiecke aus `.blend1`; Kenney Castle-Kit Turmbauteil: 176 Dreiecke aus `.glb`) mit Source-Isolation + unverändertem Clay-Bild: 4 PNG und SHA256-Manifest auf Research-Branch, Actions #39044683249 und #39044954699 jeweils SUCCESS, Bilder visuell geprüft. Das Turmbauteil ist **kein Neuschwanstein/Globe**.
+- WSA Kandidatenregister: weiter 10 Orte / 23 Leads, davon 2 verschiedene Source-Proofs, 0 wählbar. Asset-Library-Auswahlansicht nicht gebaut, Georg hat nicht entschieden. `V-346/V-383` nur für diese zwei Objekte visuell geprüft; WS0-Review und restliche Quellmodelle offen. Kein KFB-Runtime- oder Hub-Site-Write.
+- Nächstes Gate: `WS0_V421_VISUAL_SOURCE_REVIEW_AND_REMAINING_PREVIEWS`. Forschungs-Return und Bildquellen unter `replies/WSA_LANDMARKS_R1_RETURN.md` und `replies/V421_SOURCE_PROOF/evidence/`.
+
 ## 2026-10-17 · Writer’s Room JSON-first
 - V-423: FrizzleBob „Tuxedo with Brass Knuckles“ (Charakterkarte), Schlagring als Grund-Nahkampfwaffe, Ernte-Regel 3 Schläge/2 Schüsse/1 Explosion mit gestaffeltem Abwurf und Kugel-Physik; WSB B12-Variante + B16 Schlagring, WS1-Notiz; HUD-ZIP folgt.
 - V-422: E2-Sockel 80° PASS (TUNE Rand organischer später, B15); Stopp WSA aufgehoben (b93), WSB 15. Nachtrag (B14 aus edge80-GLB, Dory Rand-Stiel verschleifen, B15 Rand-TUNE), WS1-Notiz; Hub-Briefings nachgezogen.
