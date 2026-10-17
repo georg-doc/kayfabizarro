@@ -20,6 +20,7 @@ function setMode(next){
  mixer.stopAllAction();mode=next;loops=0;epoch++;active=mixer.clipAction(clip);active.reset().setEffectiveWeight(1).setEffectiveTimeScale(Number($('footTempo').value)).play();active.setLoop(next==='land'?THREE.LoopOnce:THREE.LoopRepeat,Infinity);active.clampWhenFinished=true;mixer.update(0);
  origin=(host?.ctx.currentTime??0)+.28;visualPhase=0;timeline.previous=0;timeline.owner=name+':'+epoch;lastTime=host?.ctx.currentTime??null;
  if(audio){audio.stop();if(playing)audio.arm();}
+ if(next==='idle'&&soles&&scene?.userData.floor)scene.userData.floor.position.y=Math.min(soles.height('l'),soles.height('r'))-.03;
  $('footsteps').dataset.gait=mode;
 }
 function selectFigure(){

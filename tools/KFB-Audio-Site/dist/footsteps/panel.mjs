@@ -11,7 +11,7 @@ panel.innerHTML=`<div class="eyebrow">FOOTSTEPS · KONTAKTKORREKTUR · SOURCE 0.
 <video id="footVideo" controls hidden style="width:min(640px,100%)"></video><a id="footClipDownload" hidden>Download audible motion clip</a>
 <details><summary>Contact and control evidence</summary><pre id="footDiagnostics" style="max-height:420px;overflow:auto;white-space:pre-wrap"></pre></details>
 <p class="tiny">Five unique CC0 donors per surface, ±3% pitch variation, soft attack. Sand and wet-clay are processed snow/grass foley interpretations, not original clay recordings. One existing AudioContext / PLAYER_CRITICAL bus. Music and TTS ducking unchanged. <a href="./footsteps/LICENCES.md">Sources & licences</a>.</p>
-<p class="tiny">Die ältere R2-Aufnahme ist kein aktueller Synchronitätsnachweis. Neue Messungen lassen sich unten aufzeichnen und herunterladen.</p>`;
+<p class="tiny"><a href="./footsteps/proof/footsteps-cozy.mp4">Cozy-Beispiel · 12 Sekunden mit Ton</a> · <a href="./footsteps/proof/contact-fixture.json">Kontaktmessungen</a>. Die ältere R2-Aufnahme ist kein aktueller Synchronitätsnachweis.</p>`;
 document.getElementById('mix').append(panel);
 const style=document.createElement('style');style.textContent='.foot-layout{display:flex;gap:20px;flex-wrap:wrap}.foot-layout>div{flex:1;min-width:280px}#footCanvas canvas{width:100%!important;height:auto!important;display:block}#footsteps label{display:block;margin:12px 0}#footsteps select{max-width:100%;margin-left:8px}';document.head.append(style);
 let modulePromise;

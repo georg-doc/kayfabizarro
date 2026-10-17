@@ -38,3 +38,7 @@ Old Chequered Ink and heavy-impact files are retained as historical V-389 eviden
 Medium and Large are original KayKit Mannequin source objects with their matching native Rig_Medium / Rig_Large clips, under the included original KayKit CC0 licence. No character retargeting or new model generation.
 Exact added source hashes are in sources.json r2Rows. Optional game-dev CLI unavailable; repository-native checks used. No paid calls.
 
+# 2026-10-18 · Isolated contact correction + requested Cozy default
+
+No source audio was added or replaced. R2's 20 verified Kenney donors and all source hashes remain unchanged. After Georg identified the external Suno song in Safari, the hammering report was not used to justify replacement donors. Georg separately requested a softer default: only wet-clay/Cozy changes to 450 Hz lowpass, gain .5 and 24 ms attack. Sand/stone/wood, source selection, pitch variation and semantic destination remain unchanged. Contact timing now follows the rendered skinned sole, with original hips animation retained. This is not a claim of new clay field recordings or human acceptance.
+
