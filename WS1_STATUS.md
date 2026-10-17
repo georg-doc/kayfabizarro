@@ -1,7 +1,20 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§75 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 76 · 17.10. · Fahrhilfe M3 komplett A–G · Vorschau mit Stufe G
+
+- **Stufe G** (m3/fahrhilfe @66bec2c, Bewegungs-Sitzung), alles nur Darstellung, Physik und Lenkung bleiben aktiv, nur mit Assist M3 an:
+  - **Fassrolle** in der Luft (Sprung, dann Leertaste + A/D), `vehicle-tumble.v1.js` 1:1 aus lab-v7, rundet auf ganze Umdrehungen. Am Boden bleibt Leertaste + Lenken der Sprung bzw. Drift-Sprung.
+  - **Zwei-Rad frei:** X + A/D ab 6 m/s.
+  - **Schlingern** als Erholung nach jedem Trick: `vehicle-fishtail.v1.js` 1:1.
+  - Zurückkippen nach Zwei-Rad und Wandfahrt mit Mindesttempo 1,2 rad/s.
+- **m3-g:** je fps 10 Fassrollen + 10 Zwei-Rad = **20/20 auf den Rädern**, Lenkung aktiv (Gier ±42° im Trick). run-all auf m3/fahrhilfe 48/48, 1 INFO.
+- **Spiegel** `ws1/m3-fahrhilfe` @cd4788d9 (Stand 66bec2c).
+- **Kombi** look/mesa + m3/fahrhilfe@66bec2c: M1/M2/M3 a–g auf der Kombi 24/24, 1 INFO. Die Bühnen-Seite ist seit der vorigen grünen Kombi (47/47, §75) unverändert.
+- **Vorschau** `ws1/preview` @f5802ff9, Check grün (Cloudflare brauchte ca. 15 Min.).
+- **Abnahme durch Georg:** Fühlprobe `#m1,car` (M = Assist an/aus); Abnahme-Seite mit Farbwelt, Sprenkel, Gelände, Merge.
 
 ## 75 · 17.10. · Gemeinsame Vorschau: look/mesa + m3/fahrhilfe (50/50)
 
