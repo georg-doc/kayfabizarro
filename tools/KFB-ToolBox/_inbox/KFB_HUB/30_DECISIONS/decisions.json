@@ -5677,6 +5677,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-411",
+   "date": "2026-10-17",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Gegen Drift und Regress-Spiralen (Georg 17.10.): (1) Der Blind-Prüfer urteilt nur (Noten, Beobachtungen, Markierungen) und schlägt keinen Text vor; Änderungen macht allein der Writer’s Room. (2) Eine verbindliche Song-Vorgabe pro Bereich: replies/SONG_SPEC_R3.md bündelt TRIPLET_SET_SPEC_R2 und V-361–V-410; Änderungen werden dort als neue Version eingearbeitet, nicht als weitere Einzelregeln gestapelt. (3) Briefings verlinken Vorgabe und Golden-Beispiel (Georgs Take 05), sie paraphrasieren nie aus dem Gedächtnis. (4) Mechanisches Tor vor Review und Hub (Prüfskript, Format, Hooks, Länge) und Regressionsvergleich mit dem Golden-Beispiel. Gilt sinngemäß für alle Bereiche mit wiederkehrender Drift (Licht: LIGHT_MODEL_R2; Übergänge: TRANSITION_INTENT_R1; Figuren: FIGURE/CHARACTER_SCHEMA).",
+   "values": {},
+   "owner": "WS0 · alle Writer/Agenten",
+   "check": "jedes Song-Briefing verlinkt SONG_SPEC_R3 + Golden",
+   "source": "replies/SONG_SPEC_R3.md · Georg 17.10.: „der Blind-Prüfer darf nichts ändern“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gestapelte Ergänzungsregeln und Briefings aus dem Gedächtnis erzeugten Drift; ein Prüfer, der Text vorschlägt, schreibt am Writer’s Room vorbei.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5749,7 +5764,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:731",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:732",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
