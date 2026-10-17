@@ -61,7 +61,7 @@ jobs:
           set -euo pipefail
           git config user.name 'kfb-asset-intake[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -f -- media/3D_Assets/KFB_Landmark_Candidates/
+          git add --sparse -f -- media/3D_Assets/KFB_Landmark_Candidates/
           git diff --cached --quiet && { echo 'ERROR: expected original candidate source files absent'; exit 1; }
           git commit -m 'assets(V-421): two verified CC0 landmark originals into canonical 3D asset candidates'
           if ! git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17; then
