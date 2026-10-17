@@ -1,0 +1,183 @@
+{
+ "schema": "kfb.wsb-b1-tempo.v1",
+ "target_bpm": 118.0,
+ "mix_bpm": 117.748,
+ "source": {
+  "library": "media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library_Rig_Medium.glb @ georg-doc/kayfabizarro main 904f0e9 (blob 45e1291)",
+  "beat_grid": "KFB_HUB/40_AUDIO/pharaoh_piledriver__suno_01a/beats.json"
+ },
+ "method": "Bone-world-space samples at 30 fps in three.js r180 on Mummy_A (skeleton identical on Mummy_B). Two signals: hip height (dance bounce) and summed speed of hands, feet, head, hips, chest. Autocorrelation peaks 45-200 BPM, folded into 80-160 BPM; the candidate with cross-signal support (within 3 %) wins, else the strongest. Loop-quantised = whole beats per loop. beat_phase_s = time in the clip of the lowest hip point within one beat (the down-bounce, to place on the beat).",
+ "how_to_use": "mixer timeScale = playback_factor_118 (stems / 118.000 grid) or playback_factor_mix_117_748 (full mix mp3). Start the clip so that clip time beat_phase_s lands on a beat of the song.",
+ "clips": {
+  "kfb_dance_hip_hop_a": {
+   "duration_s": 13.6667,
+   "bpm_natural": 102.76,
+   "bpm_loop_quantised": 100.976,
+   "beats_in_loop": 23,
+   "beat_phase_s": 0.334,
+   "confidence": "low",
+   "signal": "hipBounce",
+   "alternatives": [
+    {
+     "bpm": 106.08,
+     "from": "motionEnergy",
+     "r": 0.238
+    },
+    {
+     "bpm": 131.5,
+     "from": "motionEnergy",
+     "r": 0.199
+    },
+    {
+     "bpm": 96.03,
+     "from": "motionEnergy",
+     "r": 0.067
+    }
+   ],
+   "playback_factor_118": 1.1686,
+   "playback_factor_mix_117_748": 1.1661,
+   "beats_per_loop_at_118": 26.88,
+   "loop_seconds_at_118": 11.695,
+   "loop_bars_at_118": 5.75,
+   "alt_whole_bar_factor_118": {
+    "bars": 7,
+    "factor": 0.9599,
+    "note": "loop = exactly 7 bars at 118; ignores the clip's own beat"
+   }
+  },
+  "kfb_dance_slide_hip_hop_a": {
+   "duration_s": 17.3333,
+   "bpm_natural": 141.86,
+   "bpm_loop_quantised": 141.923,
+   "beats_in_loop": 41,
+   "beat_phase_s": 0.114,
+   "confidence": "medium",
+   "signal": "hipBounce",
+   "alternatives": [
+    {
+     "bpm": 114.34,
+     "from": "motionEnergy",
+     "r": 0.48
+    },
+    {
+     "bpm": 113.84,
+     "from": "motionEnergy",
+     "r": 0.253
+    },
+    {
+     "bpm": 94.84,
+     "from": "hipBounce",
+     "r": 0.212
+    }
+   ],
+   "playback_factor_118": 0.8314,
+   "playback_factor_mix_117_748": 0.8297,
+   "beats_per_loop_at_118": 34.09,
+   "loop_seconds_at_118": 20.847,
+   "loop_bars_at_118": 10.25,
+   "alt_whole_bar_factor_118": {
+    "bars": 9,
+    "factor": 0.9469,
+    "note": "loop = exactly 9 bars at 118; ignores the clip's own beat"
+   }
+  },
+  "kfb_dance_wave_hip_hop_a": {
+   "duration_s": 16.8667,
+   "bpm_natural": 122.74,
+   "bpm_loop_quantised": 124.506,
+   "beats_in_loop": 35,
+   "beat_phase_s": 0.452,
+   "confidence": "medium",
+   "signal": "motionEnergy",
+   "alternatives": [
+    {
+     "bpm": 122.92,
+     "from": "motionEnergy",
+     "r": 0.369
+    }
+   ],
+   "playback_factor_118": 0.9477,
+   "playback_factor_mix_117_748": 0.9457,
+   "beats_per_loop_at_118": 33.17,
+   "loop_seconds_at_118": 17.797,
+   "loop_bars_at_118": 8.75,
+   "alt_whole_bar_factor_118": {
+    "bars": 8,
+    "factor": 1.0366,
+    "note": "loop = exactly 8 bars at 118; ignores the clip's own beat"
+   }
+  },
+  "kfb_dance_house_a": {
+   "duration_s": 19.8333,
+   "bpm_natural": 94.5,
+   "bpm_loop_quantised": 93.782,
+   "beats_in_loop": 31,
+   "beat_phase_s": 0.52,
+   "confidence": "high",
+   "signal": "hipBounce",
+   "alternatives": [
+    {
+     "bpm": 96.55,
+     "from": "motionEnergy",
+     "r": 0.387
+    },
+    {
+     "bpm": 97.26,
+     "from": "motionEnergy",
+     "r": 0.329
+    },
+    {
+     "bpm": 100.77,
+     "from": "hipBounce",
+     "r": 0.448
+    }
+   ],
+   "playback_factor_118": 1.2582,
+   "playback_factor_mix_117_748": 1.2556,
+   "beats_per_loop_at_118": 39.01,
+   "loop_seconds_at_118": 15.763,
+   "loop_bars_at_118": 7.75,
+   "alt_whole_bar_factor_118": {
+    "bars": 10,
+    "factor": 0.9751,
+    "note": "loop = exactly 10 bars at 118; ignores the clip's own beat"
+   }
+  },
+  "kfb_idle_happy_a": {
+   "duration_s": 2.9667,
+   "bpm_natural": 141.45,
+   "bpm_loop_quantised": 141.573,
+   "beats_in_loop": 7,
+   "beat_phase_s": 0.15,
+   "confidence": "high",
+   "signal": "hipBounce",
+   "alternatives": [
+    {
+     "bpm": 141.24,
+     "from": "hipBounce",
+     "r": 0.439
+    },
+    {
+     "bpm": 137.23,
+     "from": "motionEnergy",
+     "r": 0.372
+    },
+    {
+     "bpm": 88.36,
+     "from": "motionEnergy",
+     "r": 0.23
+    }
+   ],
+   "playback_factor_118": 0.8335,
+   "playback_factor_mix_117_748": 0.8317,
+   "beats_per_loop_at_118": 5.83,
+   "loop_seconds_at_118": 3.559,
+   "loop_bars_at_118": 1.75,
+   "alt_whole_bar_factor_118": {
+    "bars": 1,
+    "factor": 1.4586,
+    "note": "loop = exactly 1 bars at 118; ignores the clip's own beat"
+   }
+  }
+ }
+}

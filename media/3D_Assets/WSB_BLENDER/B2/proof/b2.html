@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSB B2 Tree Fluff Anchors</title>
+<style>html,body{margin:0;background:#d9d4ca;overflow:hidden;font:13px system-ui}#msg{position:fixed;left:8px;top:6px;color:#333}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+</head><body><div id="msg">lädt …</div>
+<script type="module">
+/* WSB · B2 · fluff anchors on the KayKit Forest Nature Pack 1.0 FREE trees (20 models on main, no snow variants in that pack).
+   Canopy vs wood = colour of the shared texture atlas at each triangle's UV centroid. Anchors = deterministic, area-weighted
+   surface samples on the outer canopy (bare trees: outer upper branches), filtered for outward normal + free space for the ball,
+   then farthest-point selection with a minimum spacing. Clay as WS0 R1/R2 proofs: K1 clay-material.v8, profile 'nature' (trees),
+   'figure' (soft fluff balls), V-292 saturated story-mode colours. mode=inspect | anchors | sheet | hero&model=  */
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const Q = new URLSearchParams(location.search), MODE = Q.get('mode') || 'inspect';
+const MODELS = ['Tree_1_A', 'Tree_1_B', 'Tree_1_C', 'Tree_2_A', 'Tree_2_B', 'Tree_2_C', 'Tree_2_D', 'Tree_2_E', 'Tree_3_A', 'Tree_3_B', 'Tree_3_C',
+  'Tree_4_A', 'Tree_4_B', 'Tree_4_C', 'Tree_Bare_1_A', 'Tree_Bare_1_B', 'Tree_Bare_1_C', 'Tree_Bare_2_A', 'Tree_Bare_2_B', 'Tree_Bare_2_C'].map(m => m + '_Color1');
+const FLUFF = [['Tragic', '#3e6a83'], ['Comic', '#7a8d4a'], ['Absurd', '#e9c14a'], ['Heroic', '#d97c3a'], ['Mystical', '#6b4e7d'], ['Forbidden', '#a64670']]; // V-292 satt
+const P = { ballR: +(Q.get('r') || 0.15), samples: 6000, minN: 6, maxN: 12, embed: 0.45, clear: 0.9, seed: 1234, edgeClear: 1.4, minContrast: +(Q.get('mc') || 40), neighbourR: 4.5, bareMode: Q.get('bare') || 'sit', groupMin: 3.4, groupMax: 4.5, centreGap: 6, fillGap: 3.5, branchMaxThick: +(Q.get('thick') || 0.3) };
+let seed = P.seed; const rnd = () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+const job = window.__job = { done: false, err: null, log: [], out: null };
+const log = s => { job.log.push(s); document.getElementById('msg').textContent = s; };
+const save = async (path, body) => { const r = await fetch('../save/' + path, { method: 'POST', body }); if (!r.ok) throw new Error('save ' + path + ' ' + r.status); return path; };
+const loader = new GLTFLoader(), V = () => new THREE.Vector3();
+
+/* ---------- texture atlas lookup ---------- */
+const atlas = await new Promise((res, rej) => { const im = new Image(); im.onload = () => { const c = document.createElement('canvas'); c.width = im.width; c.height = im.height; const g = c.getContext('2d'); g.drawImage(im, 0, 0); res({ w: im.width, h: im.height, d: g.getImageData(0, 0, im.width, im.height).data }); }; im.onerror = rej; im.src = '../_src/forest_texture.png'; });
+function texel(u, v) { const x = Math.min(atlas.w - 1, Math.max(0, Math.floor((u - Math.floor(u)) * atlas.w))), y = Math.min(atlas.h - 1, Math.max(0, Math.floor((v - Math.floor(v)) * atlas.h))), i = (y * atlas.w + x) * 4; return [atlas.d[i], atlas.d[i + 1], atlas.d[i + 2]]; }
+function classify([r, g, b]) { const mx = Math.max(r, g, b), mn = Math.min(r, g, b), s = mx ? (mx - mn) / mx : 0; let h = 0;
+  if (mx !== mn) { if (mx === r) h = 60 * (((g - b) / (mx - mn)) % 6); else if (mx === g) h = 60 * ((b - r) / (mx - mn) + 2); else h = 60 * ((r - g) / (mx - mn) + 4); } if (h < 0) h += 360;
+  return (h >= 65 && h <= 175 && s > 0.18) ? 'leaf' : 'wood'; }
+
+/* ---------- clay ---------- */
+const CM = await import('./vendor/clay-material.v8.js'); const CR = await import('./vendor/clay-relief.v2.js'); let CU = null;
+async function clayUniforms() { if (CU) return CU;
+  const rel = CR.makeClayRelief({ size: 1024, seed: 11 }), tx = new THREE.DataTexture(rel.data, rel.size, rel.size, THREE.RGBAFormat);
+  tx.wrapS = tx.wrapT = THREE.RepeatWrapping; tx.magFilter = THREE.LinearFilter; tx.minFilter = THREE.LinearMipmapLinearFilter; tx.generateMipmaps = true; tx.anisotropy = 8; tx.needsUpdate = true;
+  CU = CM.makeClayUniforms(THREE, tx);
+  try { CU.uClayPrint.value = await CM.makePrintTexture(THREE, new URL('./vendor/Fingerprints01_3K.png', import.meta.url).href, 2048); CU.uClayPrintOn.value = 1; } catch (e) { CU.uClayPrint.value = tx; }
+  const HK = 1 / 0.47; CU.uClayHand.value = 0.5 * HK; CU.uClayTile.value = 1.6 * HK; CU.uClayPrintTile.value = 4.5 * HK; CU.uClayFacetSize.value = 0.65 * HK;
+  return CU; }
+async function clayify(root, profile, seed0) { const U = await clayUniforms(); const mc = new Map(); let n = 0;
+  root.traverse(o => { if (!o.isMesh) return; o.castShadow = o.receiveShadow = true; const conv = m => { if (!mc.has(m)) mc.set(m, CM.makeClayMaterial(THREE, U, { src: m, profile, scale: CM.PROFILES[profile].scale / 0.47 })); return mc.get(m); };
+    o.material = Array.isArray(o.material) ? o.material.map(conv) : conv(o.material); if (!o.geometry.attributes.claySeed) CM.seedGeometry(THREE, o.geometry, seed0 + (n++)); }); }
+
+/* ---------- geometry ---------- */
+async function loadTree(name) { const g = await loader.loadAsync('../_src/' + name + '.gltf'); const root = g.scene; root.updateMatrixWorld(true);
+  const tris = []; root.traverse(o => { if (!o.isMesh) return; (Array.isArray(o.material) ? o.material : [o.material]).forEach(m => { m.side = THREE.DoubleSide; }); const ge = o.geometry, pos = ge.attributes.position, uv = ge.attributes.uv, idx = ge.index ? ge.index.array : [...Array(pos.count).keys()];
+    for (let t = 0; t < idx.length; t += 3) { const a = V().fromBufferAttribute(pos, idx[t]).applyMatrix4(o.matrixWorld), b = V().fromBufferAttribute(pos, idx[t + 1]).applyMatrix4(o.matrixWorld), c = V().fromBufferAttribute(pos, idx[t + 2]).applyMatrix4(o.matrixWorld);
+      const n = V().subVectors(b, a).cross(V().subVectors(c, a)), area = n.length() / 2; if (area < 1e-9) continue; n.normalize();
+      const u = (uv.getX(idx[t]) + uv.getX(idx[t + 1]) + uv.getX(idx[t + 2])) / 3, v = (uv.getY(idx[t]) + uv.getY(idx[t + 1]) + uv.getY(idx[t + 2])) / 3;
+      const col = texel(u, v); tris.push({ a, b, c, n, area, col, kind: classify(col) }); } });
+  // crease edges: shared edges with > 25 deg between face normals, plus open boundary edges (canopy corners/edges of the boxy KayKit crowns)
+  const key = v => v.toArray().map(x => Math.round(x * 1e4)).join(','), edges = new Map();
+  for (const t of tris) for (const [a, b] of [[t.a, t.b], [t.b, t.c], [t.c, t.a]]) { const ka = key(a), kb = key(b), k = ka < kb ? ka + '|' + kb : kb + '|' + ka; if (!edges.has(k)) edges.set(k, { a, b, tris: [] }); edges.get(k).tris.push(t); }
+  const creases = []; for (const e of edges.values()) { if (e.tris.length !== 2 || e.tris[0].n.angleTo(e.tris[1].n) > THREE.MathUtils.degToRad(25)) if (e.tris.some(t => t.kind === 'leaf')) creases.push([e.a, e.b]); }
+  const box = new THREE.Box3().setFromObject(root); return { name, root, tris, box, creases }; }
+function segDist(p, a, b) { const ab = V().subVectors(b, a), t = Math.max(0, Math.min(1, V().subVectors(p, a).dot(ab) / Math.max(1e-12, ab.lengthSq()))); return p.distanceTo(a.clone().addScaledVector(ab, t)); }
+function lab([r, g, b]) { const f = c => { c /= 255; c = c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; return c; }; const R = f(r), G = f(g), B = f(b);
+  const X = (0.4124 * R + 0.3576 * G + 0.1805 * B) / 0.95047, Y = 0.2126 * R + 0.7152 * G + 0.0722 * B, Z = (0.0193 * R + 0.1192 * G + 0.9505 * B) / 1.08883;
+  const h = t => t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116; return [116 * h(Y) - 16, 500 * (h(X) - h(Y)), 200 * (h(Y) - h(Z))]; }
+const hex2rgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)), dE = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
+const FLUFF_LAB = FLUFF.map(([, h]) => lab(hex2rgb(h)));
+function closestOnTri(p, a, b, c, out) { // Ericson, Real-Time Collision Detection 5.1.5
+  const ab = V().subVectors(b, a), ac = V().subVectors(c, a), ap = V().subVectors(p, a), d1 = ab.dot(ap), d2 = ac.dot(ap); if (d1 <= 0 && d2 <= 0) return out.copy(a);
+  const bp = V().subVectors(p, b), d3 = ab.dot(bp), d4 = ac.dot(bp); if (d3 >= 0 && d4 <= d3) return out.copy(b);
+  const vc = d1 * d4 - d3 * d2; if (vc <= 0 && d1 >= 0 && d3 <= 0) return out.copy(a).addScaledVector(ab, d1 / (d1 - d3));
+  const cp = V().subVectors(p, c), d5 = ab.dot(cp), d6 = ac.dot(cp); if (d6 >= 0 && d5 <= d6) return out.copy(c);
+  const vb = d5 * d2 - d1 * d6; if (vb <= 0 && d2 >= 0 && d6 <= 0) return out.copy(a).addScaledVector(ac, d2 / (d2 - d6));
+  const va = d3 * d6 - d5 * d4; if (va <= 0 && (d4 - d3) >= 0 && (d5 - d6) >= 0) return out.copy(b).addScaledVector(V().subVectors(c, b), (d4 - d3) / ((d4 - d3) + (d5 - d6)));
+  const den = 1 / (va + vb + vc); return out.copy(a).addScaledVector(ab, vb * den).addScaledVector(ac, vc * den); }
+function minDist(p, tris, skip) { let m = 1e9; const q = V(); for (const t of tris) { if (t === skip) continue; const d = closestOnTri(p, t.a, t.b, t.c, q).distanceTo(p); if (d < m) m = d; } return m; }
+const ray = new THREE.Raycaster();
+/* Georg 17.10.: nothing may poke through a ball. Inside the ball radius only the contact cap is allowed: geometry at or below the
+   attach plane (q - p) . n <= cap. Any triangle reaching into the ball above that plane (branch spike, crown lobe) = pierced. */
+function pierced(c, p, n, r, tris, cap = 0.12) { const q = V(), lim = 0.97 * r;
+  for (const t of tris) { if (closestOnTri(c, t.a, t.b, t.c, q).distanceTo(c) < lim && V().subVectors(q, p).dot(n) > cap * r) return true;
+    for (const v of [t.a, t.b, t.c]) if (v.distanceTo(c) < lim && V().subVectors(v, p).dot(n) > cap * r) return true; }
+  return false; }
+function anchorsFor(T) {
+  seed = P.seed + T.name.split('').reduce((a, ch) => a + ch.charCodeAt(0), 0);
+  const H = T.box.max.y - T.box.min.y, bare = !T.tris.some(t => t.kind === 'leaf'), use = T.tris.filter(t => bare ? (t.kind === 'wood') : (t.kind === 'leaf'));
+  // trunk axis = centroid of the trunk foot (lowest 10 % of the tree), not the bbox centre (leaning / one-sided trees)
+  const foot = T.tris.filter(t => Math.max(t.a.y, t.b.y, t.c.y) < T.box.min.y + 0.1 * H), fw = foot.reduce((a, t) => a + t.area, 0) || 1;
+  const axis = foot.length ? new THREE.Vector2(foot.reduce((a, t) => a + t.area * (t.a.x + t.b.x + t.c.x) / 3, 0) / fw, foot.reduce((a, t) => a + t.area * (t.a.z + t.b.z + t.c.z) / 3, 0) / fw)
+    : new THREE.Vector2((T.box.min.x + T.box.max.x) / 2, (T.box.min.z + T.box.max.z) / 2), R = P.ballR;
+  const meshObj = T.root; const total = use.reduce((a, t) => a + t.area, 0), cand = [];
+  // area-weighted sampling
+  const cdf = []; let acc = 0; for (const t of use) { acc += t.area; cdf.push(acc); }
+  let rejected = { normal: 0, low: 0, clear: 0, outward: 0 };
+  for (let s = 0; s < P.samples; s++) { const x = rnd() * acc; let lo = 0, hi = cdf.length - 1; while (lo < hi) { const mid = (lo + hi) >> 1; if (cdf[mid] < x) lo = mid + 1; else hi = mid; }
+    const t = use[lo]; let r1 = rnd(), r2 = rnd(); if (r1 + r2 > 1) { r1 = 1 - r1; r2 = 1 - r2; }
+    const p = t.a.clone().addScaledVector(V().subVectors(t.b, t.a), r1).addScaledVector(V().subVectors(t.c, t.a), r2), n = t.n.clone();
+    const radial = new THREE.Vector2(p.x - axis.x, p.z - axis.y), rl = radial.length(); const out = rl > 1e-4 ? n.x * radial.x / rl + n.z * radial.y / rl : 0;
+    if (p.y < T.box.min.y + (bare ? 0.35 : 0.3) * H) { rejected.low++; continue; }
+    let dir = n;
+    const hang = bare && P.bareMode === 'hang';
+    if (bare) { const trunkOk = rl >= Math.max(0.12 * H, 0.35 * Math.max(T.box.max.x - T.box.min.x, T.box.max.z - T.box.min.z) / 2);
+      if (!trunkOk || (hang ? n.y > 0.5 : n.y < 0.3)) { rejected.normal++; continue; } // Georg 17.10.: default = sits on top of a thin branch / in a fork, hanging only as gag variant
+      dir = hang ? new THREE.Vector3(0, -1, 0) : n;
+      ray.set(p.clone().addScaledVector(n, -0.005), n.clone().negate()); ray.far = 2; const th = ray.intersectObject(meshObj, true)[0]; // local thickness: only thin branches, never the trunk
+      if (!th || th.distance > P.branchMaxThick) { rejected.thick = (rejected.thick || 0) + 1; continue; } }
+    else { if (n.y < -0.55) { rejected.normal++; continue; } if (out < -0.1 && n.y < 0.6) { rejected.outward++; continue; } // canopy: side band + top, facing out
+      let ed = 1e9; for (const [ea, eb] of T.creases) { const d = segDist(p, ea, eb); if (d < ed) ed = d; } if (ed < P.edgeClear * R) { rejected.edge = (rejected.edge || 0) + 1; continue; } } // Georg: no balls on crown corners/edges
+    // escape ray: open air in the attach direction (outer surface, not inside a canopy fold / not resting on a lower branch)
+    ray.set(p.clone().addScaledVector(dir, 0.01), dir); ray.far = 6 * R; if (ray.intersectObject(meshObj, true).length) { rejected.clear++; continue; }
+    const k0 = hang ? 0.9 : 1 - P.embed, c = p.clone().addScaledVector(dir, R * k0);
+    if (hang) { const near = T.tris.filter(q => Math.min(q.a.distanceTo(p), q.b.distanceTo(p), q.c.distanceTo(p)) > 1.2 * R); if (minDist(c, near, t) < P.clear * R * k0) { rejected.clear++; continue; } }
+    else if (pierced(c, p, dir, R, T.tris)) { rejected.pierce = (rejected.pierce || 0) + 1; continue; }
+    cand.push({ p, n: dir, sn: n, c, out, y: p.y, bare, hang, col: bare ? null : t.col, top: !bare && n.y > 0.45 }); }
+  // organic selection (Georg 17.10.): loose fruit-like groups of 1-3 balls instead of an even spread, fewer on the crown top
+  const N = Math.max(P.minN, Math.min(P.maxN, Math.round(bare ? 4 + 1.6 * total : 3 + 0.6 * Math.sqrt(total)))), pick = [];
+  const order = cand.map((x, i) => [rnd() * (x.top ? 0.45 : 1), i]).sort((a, b) => b[0] - a[0]).map(x => cand[x[1]]);
+  const free = (x, d) => pick.every(q => q.c.distanceTo(x.c) >= d), sizes = [1, 2, 1, 2, 2, 1];
+  for (const centreGap of [P.centreGap * R, (P.centreGap - 1.5) * R]) {
+    for (const x of order) { if (pick.length >= N) break; if (pick.includes(x) || !free(x, centreGap)) continue;
+      pick.push(x); x.group = pick.filter(q => q.group != null).length ? Math.max(...pick.map(q => q.group ?? -1)) + 1 : 0; let want = sizes[x.group % sizes.length] - 1;
+      for (const y of order) { if (want <= 0 || pick.length >= N) break; const d = y.c.distanceTo(x.c); if (d >= P.groupMin * R && d <= P.groupMax * R && free(y, P.groupMin * R)) { y.group = x.group; pick.push(y); want--; } } } }
+  for (const x of order) { if (pick.length >= N) break; if (!pick.includes(x) && free(x, P.fillGap * R)) { x.group = 99; pick.push(x); } }
+  // colour rule: neighbours (< 4.5 R) never share a colour; a colour is only used where it contrasts with the local leaf colour (CIE76 dE >= minContrast); balance counts
+  for (const x of pick) x.contrast = x.col ? FLUFF_LAB.map(L => dE(L, lab(x.col))) : FLUFF_LAB.map(() => 100);
+  const used = FLUFF.map(() => 0);
+  for (const x of [...pick].sort((a, b) => a.contrast.filter(v => v >= P.minContrast).length - b.contrast.filter(v => v >= P.minContrast).length)) {
+    const nb = new Set(pick.filter(q => q !== x && q.colour != null && q.c.distanceTo(x.c) < P.neighbourR * R).map(q => q.colour));
+    let opts = FLUFF.map((_, i) => i).filter(i => !nb.has(i) && x.contrast[i] >= P.minContrast); if (!opts.length) opts = FLUFF.map((_, i) => i).filter(i => !nb.has(i));
+    opts.sort((i, j) => used[i] - used[j] || x.contrast[j] - x.contrast[i]); x.colour = opts[0]; used[x.colour]++; }
+  for (const a of pick) { const k = a.hang ? 0.9 : 1 - P.embed; let ok = 0; for (let r = 0.05; r <= 0.351; r += 0.01) { const c = a.p.clone().addScaledVector(a.n, r * k);
+      const okR = a.hang ? minDist(c, T.tris.filter(q => Math.min(q.a.distanceTo(a.p), q.b.distanceTo(a.p), q.c.distanceTo(a.p)) > 1.2 * r), null) >= P.clear * r * k * 0.98 : !pierced(c, a.p, a.n, r, T.tris); if (okR) ok = r; else break; } a.maxR = ok; }
+  // Georg 17.10.: size variation (same value), regrow stagger and shake/drop order per anchor (deterministic)
+  const lowFirst = [...pick].sort((a, b) => (a.y - b.y) - 0.3 * (a.out - b.out));
+  for (const a of pick) { a.size = +(0.85 + 0.3 * rnd()).toFixed(3); a.regrow = Math.round(20 + 40 * rnd()); a.drop = lowFirst.indexOf(a); }
+  pick.sort((a, b) => Math.atan2(a.p.z - axis.y, a.p.x - axis.x) - Math.atan2(b.p.z - axis.y, b.p.x - axis.x) || b.y - a.y);
+  const r4 = v => +v.toFixed(4);
+  return { model: T.name, kind: bare ? 'bare' : 'canopy', height: r4(H), bbox: [T.box.min.toArray().map(r4), T.box.max.toArray().map(r4)], canopyArea: r4(total), candidates: cand.length, rejected, target: N, coloursUsed: Object.fromEntries(FLUFF.map(([nm], i) => [nm, used[i]])),
+    anchors: pick.map((a, i) => ({ id: T.name + '#' + String(i).padStart(2, '0'), p: a.p.toArray().map(r4), n: a.n.toArray().map(r4), surfaceNormal: a.sn.toArray().map(r4), attach: a.hang ? 'hang' : (a.bare ? 'branch' : 'surface'), ballCenter: a.c.toArray().map(r4), heightShare: r4((a.y - T.box.min.y) / H), maxBallR: r4(a.maxR), group: a.group, bgColor: a.col ? '#' + a.col.map(v => v.toString(16).padStart(2, '0')).join('') : null, contrastDE: Object.fromEntries(FLUFF.map(([nm], i) => [nm, Math.round(a.contrast[i])])), proofColour: FLUFF[a.colour][0], sizeScale: a.size, regrowDelayS: a.regrow, dropOrder: a.drop, azimuthDeg: Math.round(THREE.MathUtils.radToDeg(Math.atan2(a.p.z - axis.y, a.p.x - axis.x))) })),
+    minSpacing: pick.length > 1 ? r4(Math.min(...pick.flatMap((a, i) => pick.slice(i + 1).map(b => a.c.distanceTo(b.c))))) : null }; }
+
+/* ---------- rendering ---------- */
+let R = null;
+function stage(W, H) { if (R) { R.renderer.setSize(W, H); return R; }
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setPixelRatio(1); renderer.setSize(W, H);
+  renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.NoToneMapping; renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; renderer.setScissorTest(true); document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color('#d9d4ca'); scene.add(new THREE.HemisphereLight(0xfff4e0, 0x3a3226, 1.25));
+  const sun = new THREE.DirectionalLight(0xffffff, 1.8); sun.position.set(2.2, 4.6, 3.4).multiplyScalar(2); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+  Object.assign(sun.shadow.camera, { left: -6, right: 6, top: 8, bottom: -3, near: 0.5, far: 30 }); sun.shadow.camera.updateProjectionMatrix(); sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.02; scene.add(sun, sun.target);
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.MeshStandardMaterial({ color: '#c7c0b2', roughness: 1 })); ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+  return R = { renderer, scene, cam: new THREE.PerspectiveCamera(26, W / H, 0.05, 100) }; }
+function look(cam, target, azDeg, elDeg, halfH) { const d = halfH / Math.tan(THREE.MathUtils.degToRad(cam.fov / 2)), az = THREE.MathUtils.degToRad(azDeg), el = THREE.MathUtils.degToRad(elDeg);
+  cam.position.set(target.x + d * Math.sin(az) * Math.cos(el), target.y + d * Math.sin(el), target.z + d * Math.cos(az) * Math.cos(el)); cam.lookAt(target); }
+let ballGeo = null;
+async function dressed(name, A) { const T = await loadTree(name); await clayify(T.root, 'nature', 40); const grp = new THREE.Group(); grp.add(T.root);
+  ballGeo = ballGeo || new THREE.SphereGeometry(P.ballR, 28, 20); const mats = FLUFF.map(([, c]) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.8 }));
+  for (const [i, a] of A.anchors.entries()) { const m = new THREE.Mesh(ballGeo.clone(), mats[FLUFF.findIndex(f => f[0] === a.proofColour)]); m.position.fromArray(a.ballCenter); m.scale.setScalar(a.sizeScale || 1); grp.add(m); }
+  for (const o of grp.children.slice(1)) await clayify(o, 'figure', 500 + grp.children.indexOf(o));
+  return { T, grp }; }
+const shot = c => c.toDataURL('image/png');
+
+try {
+  if (MODE === 'inspect') { const out = {};
+    for (const n of MODELS) { const T = await loadTree(n); const leaf = T.tris.filter(t => t.kind === 'leaf'); out[n] = { tris: T.tris.length, leafTris: leaf.length, leafArea: +leaf.reduce((a, t) => a + t.area, 0).toFixed(3), woodArea: +T.tris.filter(t => t.kind === 'wood').reduce((a, t) => a + t.area, 0).toFixed(3), bbox: [T.box.min.toArray().map(v => +v.toFixed(3)), T.box.max.toArray().map(v => +v.toFixed(3))] }; }
+    job.out = out; await save('data/inspect.json', JSON.stringify(out, null, 1)); log('inspect ok'); }
+  if (MODE === 'anchors') { const out = { schema: 'kfb.tree-fluff-anchors.v1', params: P, models: {} };
+    for (const n of MODELS) { const T = await loadTree(n); out.models[n] = anchorsFor(T); log(n + ' ' + out.models[n].anchors.length); await new Promise(r => setTimeout(r, 0)); }
+    job.out = Object.fromEntries(Object.entries(out.models).map(([k, v]) => [k, [v.kind, v.anchors.length, v.candidates, v.minSpacing]])); await save('data/anchors_raw.json', JSON.stringify(out, null, 1)); log('anchors ok'); }
+  if (MODE === 'sheet') { // 2 sheets x 10 trees, 5 x 2 tiles of 384 x 540
+    const A = await fetch('../data/anchors_raw.json').then(r => r.json()), W = 1920, H = 1080, S = stage(W, H), page = +(Q.get('page') || 0), names = MODELS.slice(page * 10, page * 10 + 10);
+    S.renderer.setClearColor('#d9d4ca'); S.renderer.setScissor(0, 0, W, H); S.renderer.setViewport(0, 0, W, H); S.renderer.clear();
+    for (const [k, n] of names.entries()) { const { T, grp } = await dressed(n, A.models[n]); S.scene.add(grp);
+      const x = (k % 5) * 384, y = (k < 5 ? 1 : 0) * 540; S.renderer.setViewport(x, y, 384, 540); S.renderer.setScissor(x, y, 384, 540); S.cam.aspect = 384 / 540; S.cam.updateProjectionMatrix();
+      const h = T.box.max.y - T.box.min.y, w = Math.max(T.box.max.x - T.box.min.x, T.box.max.z - T.box.min.z); look(S.cam, new THREE.Vector3((T.box.min.x + T.box.max.x) / 2, h * 0.5, (T.box.min.z + T.box.max.z) / 2), 30, 12, Math.max(h * 0.58, w * 0.8));
+      S.renderer.render(S.scene, S.cam); S.scene.remove(grp); }
+    job.out = await save('renders/B2_sheet_' + (page + 1) + '.png', shot(S.renderer.domElement)); log('sheet ok'); }
+  if (MODE === 'hero') { const A = await fetch('../data/anchors_raw.json').then(r => r.json()), W = 1920, H = 1080, S = stage(W, H), n = Q.get('model');
+    const { T, grp } = await dressed(n, A.models[n]); S.scene.add(grp); S.renderer.setViewport(0, 0, W, H); S.renderer.setScissor(0, 0, W, H); S.cam.aspect = W / H; S.cam.updateProjectionMatrix();
+    const h = T.box.max.y - T.box.min.y; look(S.cam, new THREE.Vector3(0, h * (+(Q.get('ty') || 0.55)), 0), +(Q.get('az') || 30), +(Q.get('el') || 12), h * (+(Q.get('zoom') || 0.6)));
+    S.renderer.render(S.scene, S.cam); job.out = await save('renders/B2_hero_' + n + (Q.get('suffix') || '') + '.png', shot(S.renderer.domElement)); log('hero ok'); }
+  job.done = true;
+} catch (e) { job.err = String(e && e.stack || e); log('FEHLER ' + job.err); }
+</script></body></html>

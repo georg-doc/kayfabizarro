@@ -1,0 +1,778 @@
+{
+ "schema": "kfb.wsb-b1-checks.v1",
+ "thresholds": {
+  "contact_m": 0.015,
+  "skate_mps": 0.25,
+  "note_share": 0.05,
+  "broken_limbs": "bone local offset/scale vs rest (data/bone_check.json)",
+  "penetration": "ray-parity point-in-mesh on every 6th hand/forearm vertex vs skinned Body/Head shells; frame counts when >=10 % of sampled verts are inside"
+ },
+ "clips": {
+  "kfb_dance_hip_hop_a": {
+   "A": {
+    "broken_limbs": {
+     "max_edge_stretch": 1.9766,
+     "at_s": 10.43,
+     "part": "hand",
+     "p95": 1.886,
+     "frames_over_1_5": 410,
+     "bone_offset_max_m": 0.0,
+     "note": "edge stretch = joint-crossing edges of hard-weighted KayKit joints (elbow/knee/wrist), shells overlap, visually closed; info only"
+    },
+    "hand_in_body": {
+     "frames": 81,
+     "share": 0.198,
+     "max_share_of_sampled_verts": 0.4,
+     "worst_at_s": 6.13
+    },
+    "hand_in_head": {
+     "frames": 10,
+     "share": 0.024,
+     "max_share_of_sampled_verts": 0.167,
+     "worst_at_s": 11.47
+    },
+    "forearm_in_head": {
+     "frames": 5,
+     "share": 0.012,
+     "max_share_of_sampled_verts": 0.122,
+     "worst_at_s": 12.93
+    },
+    "forearm_in_body_beyond_idle": {
+     "frames": 37,
+     "share": 0.09,
+     "max_share_of_sampled_verts": 0.316,
+     "worst_at_s": 6.07
+    },
+    "feet": {
+     "L": {
+      "planted_frames": 410,
+      "skate_frames": 202,
+      "skate_share_of_planted": 0.493,
+      "max_planted_speed_mps": 2.253,
+      "longest_skate": {
+       "from_s": 0.37,
+       "to_s": 1.43
+      },
+      "sink_median_cm": 0.2,
+      "deepest_cm": 5.9,
+      "deepest_at_s": 7.33,
+      "frames_deeper_3cm": 52
+     },
+     "R": {
+      "planted_frames": 410,
+      "skate_frames": 236,
+      "skate_share_of_planted": 0.576,
+      "max_planted_speed_mps": 2.674,
+      "longest_skate": {
+       "from_s": 1.9,
+       "to_s": 2.6
+      },
+      "sink_median_cm": 1.6,
+      "deepest_cm": 10.2,
+      "deepest_at_s": 2.0,
+      "frames_deeper_3cm": 107
+     }
+    },
+    "airborne_frames_3cm": 0,
+    "hand_lowest_cm": 20.5,
+    "head_lowest_cm": 69.7,
+    "notes": [
+     "hand in body 20% of frames",
+     "forearm in body 9% of frames",
+     "foot L slides on 49% of planted frames",
+     "foot L dips 5.9 cm into ground at 7.33 s",
+     "foot R slides on 58% of planted frames",
+     "foot R dips 10.2 cm into ground at 2.00 s"
+    ],
+    "verdict": "PASS WITH NOTES"
+   },
+   "B": {
+    "broken_limbs": {
+     "max_edge_stretch": 1.9766,
+     "at_s": 10.43,
+     "part": "hand",
+     "p95": 1.886,
+     "frames_over_1_5": 410,
+     "bone_offset_max_m": 0.0,
+     "note": "edge stretch = joint-crossing edges of hard-weighted KayKit joints (elbow/knee/wrist), shells overlap, visually closed; info only"
+    },
+    "hand_in_body": {
+     "frames": 81,
+     "share": 0.198,
+     "max_share_of_sampled_verts": 0.4,
+     "worst_at_s": 6.13
+    },
+    "hand_in_head": {
+     "frames": 10,
+     "share": 0.024,
+     "max_share_of_sampled_verts": 0.167,
+     "worst_at_s": 11.47
+    },
+    "forearm_in_head": {
+     "frames": 5,
+     "share": 0.012,
+     "max_share_of_sampled_verts": 0.122,
+     "worst_at_s": 12.93
+    },
+    "forearm_in_body_beyond_idle": {
+     "frames": 37,
+     "share": 0.09,
+     "max_share_of_sampled_verts": 0.316,
+     "worst_at_s": 6.07
+    },
+    "feet": {
+     "L": {
+      "planted_frames": 410,
+      "skate_frames": 202,
+      "skate_share_of_planted": 0.493,
+      "max_planted_speed_mps": 2.253,
+      "longest_skate": {
+       "from_s": 0.37,
+       "to_s": 1.43
+      },
+      "sink_median_cm": 0.2,
+      "deepest_cm": 5.9,
+      "deepest_at_s": 7.33,
+      "frames_deeper_3cm": 52
+     },
+     "R": {
+      "planted_frames": 410,
+      "skate_frames": 236,
+      "skate_share_of_planted": 0.576,
+      "max_planted_speed_mps": 2.674,
+      "longest_skate": {
+       "from_s": 1.9,
+       "to_s": 2.6
+      },
+      "sink_median_cm": 1.6,
+      "deepest_cm": 10.2,
+      "deepest_at_s": 2.0,
+      "frames_deeper_3cm": 107
+     }
+    },
+    "airborne_frames_3cm": 0,
+    "hand_lowest_cm": 20.5,
+    "head_lowest_cm": 69.7,
+    "notes": [
+     "hand in body 20% of frames",
+     "forearm in body 9% of frames",
+     "foot L slides on 49% of planted frames",
+     "foot L dips 5.9 cm into ground at 7.33 s",
+     "foot R slides on 58% of planted frames",
+     "foot R dips 10.2 cm into ground at 2.00 s"
+    ],
+    "verdict": "PASS WITH NOTES"
+   }
+  },
+  "kfb_dance_slide_hip_hop_a": {
+   "A": {
+    "broken_limbs": {
+     "max_edge_stretch": 2.1332,
+     "at_s": 10.0,
+     "part": "hand",
+     "p95": 1.868,
+     "frames_over_1_5": 412,
+     "bone_offset_max_m": 0.0,
+     "note": "edge stretch = joint-crossing edges of hard-weighted KayKit joints (elbow/knee/wrist), shells overlap, visually closed; info only"
+    },
+    "hand_in_body": {
+     "frames": 466,
+     "share": 0.896,
+     "max_share_of_sampled_verts": 0.8,
+     "worst_at_s": 10.93
+    },
+    "hand_in_head": {
+     "frames": 13,
+     "share": 0.025,
+     "max_share_of_sampled_verts": 0.767,
+     "worst_at_s": 15.0
+    },
+    "forearm_in_head": {
+     "frames": 4,
+     "share": 0.008,
+     "max_share_of_sampled_verts": 0.153,
+     "worst_at_s": 14.97
+    },
+    "forearm_in_body_beyond_idle": {
+     "frames": 388,
+     "share": 0.746,
+     "max_share_of_sampled_verts": 0.684,
+     "worst_at_s": 9.07
+    },
+    "feet": {
+     "L": {
+      "planted_frames": 516,
+      "skate_frames": 260,
+      "skate_share_of_planted": 0.504,
+      "max_planted_speed_mps": 2.728,
+      "longest_skate": {
+       "from_s": 6.87,
+       "to_s": 8.0
+      },
+      "sink_median_cm": 0.3,
+      "deepest_cm": 12.6,
+      "deepest_at_s": 13.37,
+      "frames_deeper_3cm": 97
+     },
+     "R": {
+      "planted_frames": 514,
+      "skate_frames": 282,
+      "skate_share_of_planted": 0.549,
+      "max_planted_speed_mps": 2.854,
+      "longest_skate": {
+       "from_s": 8.97,
+       "to_s": 9.93
+      },
+      "sink_median_cm": 0.5,
+      "deepest_cm": 12.6,
+      "deepest_at_s": 6.93,
+      "frames_deeper_3cm": 88
+     }
+    },
+    "airborne_frames_3cm": 0,
+    "hand_lowest_cm": 24.0,
+    "head_lowest_cm": 67.1,
+    "notes": [
+     "hand in body 90% of frames",
+     "forearm in body 75% of frames",
+     "foot L slides on 50% of planted frames",
+     "foot L dips 12.6 cm into ground at 13.37 s",
+     "foot R slides on 55% of planted frames",
+     "foot R dips 12.6 cm into ground at 6.93 s"
+    ],
+    "verdict": "PASS WITH NOTES"
+   },
+   "B": {
+    "broken_limbs": {
+     "max_edge_stretch": 2.1332,
+     "at_s": 10.0,
+     "part": "hand",
+     "p95": 1.868,
+     "frames_over_1_5": 412,
+     "bone_offset_max_m": 0.0,
+     "note": "edge stretch = joint-crossing edges of hard-weighted KayKit joints (elbow/knee/wrist), shells overlap, visually closed; info only"
+    },
+    "hand_in_body": {
+     "frames": 466,
+     "share": 0.896,
+     "max_share_of_sampled_verts": 0.8,
+     "worst_at_s": 10.93
+    },
+    "hand_in_head": {
+     "frames": 13,
+     "share": 0.025,
+     "max_share_of_sampled_verts": 0.767,
+     "worst_at_s": 15.0
+    },
+    "forearm_in_head": {
+     "frames": 4,
+     "share": 0.008,
+     "max_share_of_sampled_verts": 0.153,
+     "worst_at_s": 14.97
+    },
+    "forearm_in_body_beyond_idle": {
+     "frames": 388,
+     "share": 0.746,
+     "max_share_of_sampled_verts": 0.684,
+     "worst_at_s": 9.07
+    },
+    "feet": {
+     "L": {
+      "planted_frames": 516,
+      "skate_frames": 260,
+      "skate_share_of_planted": 0.504,
+      "max_planted_speed_mps": 2.728,
+      "longest_skate": {
+       "from_s": 6.87,
+       "to_s": 8.0
+      },
+      "sink_median_cm": 0.3,
+      "deepest_cm": 12.6,
+      "deepest_at_s": 13.37,
+      "frames_deeper_3cm": 97
+     },
+     "R": {
+      "planted_frames": 514,
+      "skate_frames": 282,
+      "skate_share_of_planted": 0.549,
+      "max_planted_speed_mps": 2.854,
+      "longest_skate": {
+       "from_s": 8.97,
+       "to_s": 9.93
+      },
+      "sink_median_cm": 0.5,
+      "deepest_cm": 12.6,
+      "deepest_at_s": 6.93,
+      "frames_deeper_3cm": 88
+     }
+    },
+    "airborne_frames_3cm": 0,
+    "hand_lowest_cm": 24.0,
+    "head_lowest_cm": 67.1,
+    "notes": [
+     "hand in body 90% of frames",
+     "forearm in body 75% of frames",
+     "foot L slides on 50% of planted frames",
+     "foot L dips 12.6 cm into ground at 13.37 s",
+     "foot R slides on 55% of planted frames",
+     "foot R dips 12.6 cm into ground at 6.93 s"
+    ],
+    "verdict": "PASS WITH NOTES"
+   }
+  },
+  "kfb_dance_wave_hip_hop_a": {
+   "A": {
+    "broken_limbs": {
+     "max_edge_stretch": 2.2458,
+     "at_s": 8.17,
+     "part": "forearm",
+     "p95": 2.047,
+     "frames_over_1_5": 432,
+     "bone_offset_max_m": 0.0,
+     "note": "edge stretch = joint-crossing edges of hard-weighted KayKit joints (elbow/knee/wrist), shells overlap, visually closed; info only"
+    },
+    "hand_in_body": {
+     "frames": 316,
+     "share": 0.625,
+     "max_share_of_sampled_verts": 1.0,
+     "worst_at_s": 16.2
+    },
+    "hand_in_head": {
+     "frames": 31,
+     "share": 0.061,
+     "max_share_of_sampled_verts": 0.5,
+     "worst_at_s": 8.73
+    },
+    "forearm_in_head": {
+     "frames": 0,
+     "share": 0.0,
+     "max_share_of_sampled_verts": 0.051,
+     "worst_at_s": 5.67
+    },
+    "forearm_in_body_beyond_idle": {
+     "frames": 263,
+     "share": 0.52,
+     "max_share_of_sampled_verts": 0.612,
+     "worst_at_s": 16.17
+    },
+    "feet": {
+     "L": {
+      "planted_frames": 499,
+      "skate_frames": 174,
+      "skate_share_of_planted": 0.349,
+      "max_planted_speed_mps": 2.605,
+      "longest_skate": {
+       "from_s": 11.3,
+       "to_s": 11.8
+      },
+      "sink_median_cm": 0.2,
+      "deepest_cm": 9.9,
+      "deepest_at_s": 8.47,
+      "frames_deeper_3cm": 73
+     },
+     "R": {
+      "planted_frames": 499,
+      "skate_frames": 177,
+      "skate_share_of_planted": 0.355,
+      "max_planted_speed_mps": 2.113,
+      "longest_skate": {
+       "from_s": 6.8,
+       "to_s": 7.23
+      },
+      "sink_median_cm": 0.7,
+      "deepest_cm": 8.0,
+      "deepest_at_s": 7.0,
+      "frames_deeper_3cm": 51
+     }
+    },
+    "airborne_frames_3cm": 0,
+    "hand_lowest_cm": 1.3,
+    "head_lowest_cm": 61.0,
+    "notes": [
+     "hand in body 62% of frames",
+     "hand in head 6% of frames",
+     "forearm in body 52% of frames",
+     "foot L slides on 35% of planted frames",
+     "foot L dips 9.9 cm into ground at 8.47 s",
+     "foot R slides on 36% of planted frames",
+     "foot R dips 8.0 cm into ground at 7.00 s"
+    ],
+    "verdict": "PASS WITH NOTES"
+   },
+   "B": {
+    "broken_limbs": {
+     "max_edge_stretch": 2.2458,
+     "at_s": 8.17,
+     "part": "forearm",
+     "p95": 2.047,
+     "frames_over_1_5": 432,
+     "bone_offset_max_m": 0.0,
+     "note": "edge stretch = joint-crossing edges of hard-weighted KayKit joints (elbow/knee/wrist), shells overlap, visually closed; info only"
+    },
+    "hand_in_body": {
+     "frames": 316,
+     "share": 0.625,
+     "max_share_of_sampled_verts": 1.0,
+     "worst_at_s": 16.2
+    },
+    "hand_in_head": {
+     "frames": 31,
+     "share": 0.061,
+     "max_share_of_sampled_verts": 0.5,
+     "worst_at_s": 8.73
+    },
+    "forearm_in_head": {
+     "frames": 0,
+     "share": 0.0,
+     "max_share_of_sampled_verts": 0.051,
+     "worst_at_s": 5.67
+    },
+    "forearm_in_body_beyond_idle": {
+     "frames": 263,
+     "share": 0.52,
+     "max_share_of_sampled_verts": 0.612,
+     "worst_at_s": 16.17
+    },
+    "feet": {
+     "L": {
+      "planted_frames": 499,
+      "skate_frames": 174,
+      "skate_share_of_planted": 0.349,
+      "max_planted_speed_mps": 2.605,
+      "longest_skate": {
+       "from_s": 11.3,
+       "to_s": 11.8
+      },
+      "sink_median_cm": 0.2,
+      "deepest_cm": 9.9,
+      "deepest_at_s": 8.47,
+      "frames_deeper_3cm": 73
+     },
+     "R": {
+      "planted_frames": 499,
+      "skate_frames": 177,
+      "skate_share_of_planted": 0.355,
+      "max_planted_speed_mps": 2.113,
+      "longest_skate": {
+       "from_s": 6.8,
+       "to_s": 7.23
+      },
+      "sink_median_cm": 0.7,
+      "deepest_cm": 8.0,
+      "deepest_at_s": 7.0,
+      "frames_deeper_3cm": 51
+     }
+    },
+    "airborne_frames_3cm": 0,
+    "hand_lowest_cm": 1.3,
+    "head_lowest_cm": 61.0,
+    "notes": [
+     "hand in body 62% of frames",
+     "hand in head 6% of frames",
+     "forearm in body 52% of frames",
+     "foot L slides on 35% of planted frames",
+     "foot L dips 9.9 cm into ground at 8.47 s",
+     "foot R slides on 36% of planted frames",
+     "foot R dips 8.0 cm into ground at 7.00 s"
+    ],
+    "verdict": "PASS WITH NOTES"
+   }
+  },
+  "kfb_dance_house_a": {
+   "A": {
+    "broken_limbs": {
+     "max_edge_stretch": 2.0562,
+     "at_s": 12.53,
+     "part": "shin",
+     "p95": 1.807,
+     "frames_over_1_5": 514,
+     "bone_offset_max_m": 0.0,
+     "note": "edge stretch = joint-crossing edges of hard-weighted KayKit joints (elbow/knee/wrist), shells overlap, visually closed; info only"
+    },
+    "hand_in_body": {
+     "frames": 196,
+     "share": 0.329,
+     "max_share_of_sampled_verts": 0.667,
+     "worst_at_s": 15.17
+    },
+    "hand_in_head": {
+     "frames": 153,
+     "share": 0.257,
+     "max_share_of_sampled_verts": 0.7,
+     "worst_at_s": 13.57
+    },
+    "forearm_in_head": {
+     "frames": 110,
+     "share": 0.185,
+     "max_share_of_sampled_verts": 0.408,
+     "worst_at_s": 6.03
+    },
+    "forearm_in_body_beyond_idle": {
+     "frames": 157,
+     "share": 0.264,
+     "max_share_of_sampled_verts": 0.551,
+     "worst_at_s": 15.13
+    },
+    "feet": {
+     "L": {
+      "planted_frames": 586,
+      "skate_frames": 239,
+      "skate_share_of_planted": 0.408,
+      "max_planted_speed_mps": 2.608,
+      "longest_skate": {
+       "from_s": 10.37,
+       "to_s": 11.17
+      },
+      "sink_median_cm": 0.4,
+      "deepest_cm": 14.4,
+      "deepest_at_s": 10.8,
+      "frames_deeper_3cm": 112
+     },
+     "R": {
+      "planted_frames": 560,
+      "skate_frames": 250,
+      "skate_share_of_planted": 0.446,
+      "max_planted_speed_mps": 3.515,
+      "longest_skate": {
+       "from_s": 11.63,
+       "to_s": 12.97
+      },
+      "sink_median_cm": 0.2,
+      "deepest_cm": 14.1,
+      "deepest_at_s": 12.2,
+      "frames_deeper_3cm": 121
+     }
+    },
+    "airborne_frames_3cm": 0,
+    "hand_lowest_cm": 11.8,
+    "head_lowest_cm": 52.8,
+    "notes": [
+     "hand in body 33% of frames",
+     "hand in head 26% of frames",
+     "forearm in head 18% of frames",
+     "forearm in body 26% of frames",
+     "foot L slides on 41% of planted frames",
+     "foot L dips 14.4 cm into ground at 10.80 s",
+     "foot R slides on 45% of planted frames",
+     "foot R dips 14.1 cm into ground at 12.20 s"
+    ],
+    "verdict": "PASS WITH NOTES"
+   },
+   "B": {
+    "broken_limbs": {
+     "max_edge_stretch": 2.0562,
+     "at_s": 12.53,
+     "part": "shin",
+     "p95": 1.807,
+     "frames_over_1_5": 514,
+     "bone_offset_max_m": 0.0,
+     "note": "edge stretch = joint-crossing edges of hard-weighted KayKit joints (elbow/knee/wrist), shells overlap, visually closed; info only"
+    },
+    "hand_in_body": {
+     "frames": 196,
+     "share": 0.329,
+     "max_share_of_sampled_verts": 0.667,
+     "worst_at_s": 15.17
+    },
+    "hand_in_head": {
+     "frames": 153,
+     "share": 0.257,
+     "max_share_of_sampled_verts": 0.7,
+     "worst_at_s": 13.57
+    },
+    "forearm_in_head": {
+     "frames": 109,
+     "share": 0.183,
+     "max_share_of_sampled_verts": 0.459,
+     "worst_at_s": 6.03
+    },
+    "forearm_in_body_beyond_idle": {
+     "frames": 157,
+     "share": 0.264,
+     "max_share_of_sampled_verts": 0.551,
+     "worst_at_s": 15.13
+    },
+    "feet": {
+     "L": {
+      "planted_frames": 586,
+      "skate_frames": 239,
+      "skate_share_of_planted": 0.408,
+      "max_planted_speed_mps": 2.608,
+      "longest_skate": {
+       "from_s": 10.37,
+       "to_s": 11.17
+      },
+      "sink_median_cm": 0.4,
+      "deepest_cm": 14.4,
+      "deepest_at_s": 10.8,
+      "frames_deeper_3cm": 112
+     },
+     "R": {
+      "planted_frames": 560,
+      "skate_frames": 250,
+      "skate_share_of_planted": 0.446,
+      "max_planted_speed_mps": 3.515,
+      "longest_skate": {
+       "from_s": 11.63,
+       "to_s": 12.97
+      },
+      "sink_median_cm": 0.2,
+      "deepest_cm": 14.1,
+      "deepest_at_s": 12.2,
+      "frames_deeper_3cm": 121
+     }
+    },
+    "airborne_frames_3cm": 0,
+    "hand_lowest_cm": 11.8,
+    "head_lowest_cm": 52.8,
+    "notes": [
+     "hand in body 33% of frames",
+     "hand in head 26% of frames",
+     "forearm in head 18% of frames",
+     "forearm in body 26% of frames",
+     "foot L slides on 41% of planted frames",
+     "foot L dips 14.4 cm into ground at 10.80 s",
+     "foot R slides on 45% of planted frames",
+     "foot R dips 14.1 cm into ground at 12.20 s"
+    ],
+    "verdict": "PASS WITH NOTES"
+   }
+  },
+  "kfb_idle_happy_a": {
+   "A": {
+    "broken_limbs": {
+     "max_edge_stretch": 1.7439,
+     "at_s": 0.67,
+     "part": "forearm",
+     "p95": 1.68,
+     "frames_over_1_5": 24,
+     "bone_offset_max_m": 0.0,
+     "note": "edge stretch = joint-crossing edges of hard-weighted KayKit joints (elbow/knee/wrist), shells overlap, visually closed; info only"
+    },
+    "hand_in_body": {
+     "frames": 0,
+     "share": 0.0,
+     "max_share_of_sampled_verts": 0.0,
+     "worst_at_s": null
+    },
+    "hand_in_head": {
+     "frames": 0,
+     "share": 0.0,
+     "max_share_of_sampled_verts": 0.0,
+     "worst_at_s": null
+    },
+    "forearm_in_head": {
+     "frames": 0,
+     "share": 0.0,
+     "max_share_of_sampled_verts": 0.0,
+     "worst_at_s": null
+    },
+    "forearm_in_body_beyond_idle": {
+     "frames": 0,
+     "share": 0.0,
+     "max_share_of_sampled_verts": 0.0,
+     "worst_at_s": null
+    },
+    "feet": {
+     "L": {
+      "planted_frames": 89,
+      "skate_frames": 2,
+      "skate_share_of_planted": 0.022,
+      "max_planted_speed_mps": 0.283,
+      "longest_skate": null,
+      "sink_median_cm": 0.7,
+      "deepest_cm": 4.0,
+      "deepest_at_s": 0.37,
+      "frames_deeper_3cm": 10
+     },
+     "R": {
+      "planted_frames": 89,
+      "skate_frames": 6,
+      "skate_share_of_planted": 0.067,
+      "max_planted_speed_mps": 0.318,
+      "longest_skate": {
+       "from_s": 0.63,
+       "to_s": 0.7
+      },
+      "sink_median_cm": 1.4,
+      "deepest_cm": 4.9,
+      "deepest_at_s": 0.37,
+      "frames_deeper_3cm": 18
+     }
+    },
+    "airborne_frames_3cm": 0,
+    "hand_lowest_cm": 39.4,
+    "head_lowest_cm": 116.7,
+    "notes": [],
+    "verdict": "PASS"
+   },
+   "B": {
+    "broken_limbs": {
+     "max_edge_stretch": 1.7439,
+     "at_s": 0.67,
+     "part": "forearm",
+     "p95": 1.68,
+     "frames_over_1_5": 24,
+     "bone_offset_max_m": 0.0,
+     "note": "edge stretch = joint-crossing edges of hard-weighted KayKit joints (elbow/knee/wrist), shells overlap, visually closed; info only"
+    },
+    "hand_in_body": {
+     "frames": 0,
+     "share": 0.0,
+     "max_share_of_sampled_verts": 0.0,
+     "worst_at_s": null
+    },
+    "hand_in_head": {
+     "frames": 0,
+     "share": 0.0,
+     "max_share_of_sampled_verts": 0.0,
+     "worst_at_s": null
+    },
+    "forearm_in_head": {
+     "frames": 0,
+     "share": 0.0,
+     "max_share_of_sampled_verts": 0.0,
+     "worst_at_s": null
+    },
+    "forearm_in_body_beyond_idle": {
+     "frames": 0,
+     "share": 0.0,
+     "max_share_of_sampled_verts": 0.0,
+     "worst_at_s": null
+    },
+    "feet": {
+     "L": {
+      "planted_frames": 89,
+      "skate_frames": 2,
+      "skate_share_of_planted": 0.022,
+      "max_planted_speed_mps": 0.283,
+      "longest_skate": null,
+      "sink_median_cm": 0.7,
+      "deepest_cm": 4.0,
+      "deepest_at_s": 0.37,
+      "frames_deeper_3cm": 10
+     },
+     "R": {
+      "planted_frames": 89,
+      "skate_frames": 6,
+      "skate_share_of_planted": 0.067,
+      "max_planted_speed_mps": 0.318,
+      "longest_skate": {
+       "from_s": 0.63,
+       "to_s": 0.7
+      },
+      "sink_median_cm": 1.4,
+      "deepest_cm": 4.9,
+      "deepest_at_s": 0.37,
+      "frames_deeper_3cm": 18
+     }
+    },
+    "airborne_frames_3cm": 0,
+    "hand_lowest_cm": 39.4,
+    "head_lowest_cm": 116.7,
+    "notes": [],
+    "verdict": "PASS"
+   }
+  }
+ }
+}
