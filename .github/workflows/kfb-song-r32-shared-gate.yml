@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
         with:
-          ref: 3c72b727e8a694a51de7ab5033b7a4eae92c1062
+          ref: f253bf4b5edb6ac8e2a702a284767fa0e844e7e3
           path: .kfb-register-readonly
       - name: R3.2 Shared song_gate.py
         run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.r4.1.suno.txt --deck registry/assets/v1/decks/dream_wrestling_with_kayfabe_freud.json --songlines songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.songlines.json --media media/kfb/Dream_Wrestling_with_Kayfabe_Freud_-_ADD_web_ID.pdf.json --cards 1-56 --tone dream_wrestling_with_kayfabe_freud --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
