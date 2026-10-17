@@ -1,0 +1,38 @@
+{
+  "name": "kfb-triplets",
+  "version": "0.4.0",
+  "description": "Source-pinned KFB card performances, songs, characters, scenelets and dioramas with GitHub change proposals.",
+  "author": {
+    "name": "Georg Westphalen",
+    "email": "georg@cimoc.de"
+  },
+  "keywords": [
+    "triplets",
+    "cards",
+    "KFB",
+    "writers-room",
+    "songs",
+    "characters",
+    "scenelets",
+    "dioramas",
+    "webchat"
+  ],
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [
+          "Interactive"
+        ],
+        "category": "Productivity",
+        "defaultPrompt": [
+          "Prepare a complete source-faithful spoken-word Triplet set for Monomyth Mayhem with four export files."
+        ],
+        "developerName": "Georg Westphalen",
+        "displayName": "KFB Triplets",
+        "longDescription": "Develop KFB card performances, songs, character sheets, scenelets and diorama concepts in web chat; preserve source status and conflicts and save reviewable GitHub proposals. Existing spoken-word and song workflows retained.",
+        "shortDescription": "Songs Figuren und Szenen"
+      }
+    }
+  }
+}
