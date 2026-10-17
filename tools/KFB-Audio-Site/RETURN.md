@@ -1,3 +1,9 @@
+# CURRENT · SAND + LEVEL MATCH + FIRST WALK CONTACT · 2026-10-18
+
+Georg TUNE: softer Sand without large surface-level differences; Walk contact correction. Existing Site saved v15 / visible 0.7.5, authenticated Chrome verified. 401 assertions PASS; no human acoustic acceptance. Exact [current Return](WSA_FOOTSTEPS_SAND_WALK_RETURN.md), current four-surface clip linked there. Next gate: WS0 listens to current comparison.
+
+---
+
 # CURRENT OVERRIDE · ISOLATED CONTACT FIX + COZY · 2026-10-18
 
 Existing Site saved version 14 / visible source 0.7.4, authenticated Chrome verified. Softer Cozy default; donors retained after Safari/Suno clarification. 316 assertions PASS, estimated contact timing only; NOT HUMAN_ACCEPTED. Exact [current Return](WSA_FOOTSTEPS_CONTACT_RETURN.md). One next gate: WS0 review of current Cozy recording before Georg.

@@ -129,3 +129,11 @@ Existing Audio Site updated in place to version 13 / source 0.7.3; published sou
 - Existing 20 donors retained after Safari/Suno clarification; actual skinned-sole contact correction and softer default only.
 - 316 assertions; hosted Stop has zero sources/RMS; estimated AV max 8.941 ms, no human acoustic acceptance.
 - Current owner Return: tools/KFB-Audio-Site/WSA_FOOTSTEPS_CONTACT_RETURN.md. Next gate WS0 review; no Hub/router/World writes.
+
+
+## 2026-10-18 · Sand / matched contact energy / first Walk support
+
+- Same private Audio Site v15 / source 0.7.5 / managed d348af543d9999fe2e0f2d8e4739ce0ac7d4d38b, Chrome verified.
+- Softer sand from retained CC0 donors, fixed-window post-shaping energy matching, grounded first-support Walk preview.
+- 401 assertions PASS; 30-contact current clip. Human perceived sound/AV remains open.
+- Owner Return tools/KFB-Audio-Site/WSA_FOOTSTEPS_SAND_WALK_RETURN.md; next WS0 current comparison review. No Hub/World writes.
