@@ -3,3 +3,11 @@ Source canonical registry blob 3b5bf88f7890d50aa844c6cfb9129711caf6d17a, PDF JSO
 All 60 cards #1–60 retained in print order, without cuts; 60/60 JS source-only lexical screening PASS (name, lore, power, artworkPrompt), 60/60 80–95 character screening PASS, 19 unique short openers, one blank line after every beat.
 SONG LENGTH = 5572 Unicode characters. SONG_SPEC_R3 §C REQUIRES UNDER 5000: FAIL by 573 characters. Card lines alone plus mandatory blank separators: 5295 characters, before any intro/opener/outro. Lower bound for 60 cards at 80 chars plus mandatory blank separators is 60*(80+2)=4920, leaving fewer than 80 characters for [Spoken Word], deck-specific intro, ~20 unique openers, outro and Stay Fluffy!. This is incompatible with a meaningful frame under 5000.
 Exact Python checker: pending Actions exit. R4 format gate: EXPECTED EXIT 1 for length, not submission-worthy. Independent blind review MUST NOT RUN until source spec resolved. No Hub/Stage.
+
+## Executed mechanical gate · 2026-10-17
+https://github.com/georg-doc/kayfabizarro/actions/runs/39029467993
+Candidate head 133f644340a717f842a2607d6b079b2299df7da5
+Exact plugin triplet_set_check.py: EXIT 0, SUCCESS (60 source-pinned card lines).
+R4 format and 5000-character budget check: EXIT 1, FAILURE (5572 > 4999).
+Combined CI result FAILURE, correctly blocks the independent blind reviewer and Hub.
+This is not a pass and must not be submitted to Suno or called approved. Spec-level decision required.
