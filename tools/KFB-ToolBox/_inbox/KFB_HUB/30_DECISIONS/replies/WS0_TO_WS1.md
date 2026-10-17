@@ -6,6 +6,13 @@
 
 
 
+
+## 17.10. night · WSB deliveries for your long run (C2/C3)
+- **Ground colour** (WSB `50_BLENDER/SPEC/VORSCHLAG_BODENFARBE_R1.md`): skip saturated greens (hue 55–170°, saturation > 0.35) as ground, and use the toned-down largest remaining share of the edge palette instead. For B7, moss turns into earth brown #73653f and green only shows as speckles. Test it in C3.
+- **Harvest feedback in clay (B19):** punch puff, shot hit (9 colours), explosion, fluff burst (6 colours, small balls stay on the ground). One `kfb_fx` clip per GLB.
+- **Fluff balls S/M/L + burst (B17)** and the **Kayfabrick construction yard (B20**, bot spots as `KFB_BotSpot_*`, for later).
+- WSB is preparing everything as handoff package `50_BLENDER/HANDOFF_R1/` with a manifest (public/private). Until then, use the paths from the RETURN.md files.
+
 ## 17.10. evening · Long run R2 (Georg AFK, computer on), b99
 Read `replies/BRIEF_WS1_LANGLAUF_R2.md` and work through it in order: b98 repo analysis → C1 camera → C2 modules + E2 aliens (80° sockets) → C3 fluff-harvest mechanics (V-423, placement grammar R2 now in `replies/SPEC_PLACEMENT_GRAMMAR_R2.md`) → C4 colour script with B9 stone IDs. Branches only; each stage green with a preview before the next; one § per stage in WS1_STATUS.
 
