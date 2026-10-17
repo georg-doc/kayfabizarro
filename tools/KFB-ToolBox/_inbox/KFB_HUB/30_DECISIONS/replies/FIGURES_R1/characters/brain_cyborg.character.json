@@ -1,0 +1,414 @@
+{
+ "schema": "kfb.character/1",
+ "id": "brain_cyborg",
+ "status": "draft-r1",
+ "date": "2026-10-17",
+ "vRef": [
+  "V-394"
+ ],
+ "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo; src ids in CHARACTER_SOURCES.md",
+ "identity": {
+  "name": {
+   "v": "Brain-Cyborg",
+   "src": "V-349; CS-02",
+   "status": "GEORG"
+  },
+  "displayName": {
+   "v": null,
+   "status": "todo"
+  },
+  "aliases": {
+   "v": [
+    "brain-cyborg"
+   ],
+   "src": "CS-02",
+   "status": "SOURCE"
+  },
+  "voiceInputMishearings": {
+   "v": null,
+   "status": "todo"
+  },
+  "tier": {
+   "v": "npc",
+   "src": "CS-02 role",
+   "status": "SOURCE"
+  },
+  "series": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "story": {
+  "background": {
+   "v": null,
+   "status": "todo",
+   "note": "V-349: story question (who is it, why in the suit) to be clarified at build time"
+  },
+  "worldKnowledge": {
+   "v": null,
+   "status": "todo"
+  },
+  "inWorldRole": {
+   "v": "transhumanist alien entity for the Studio / ToolBox",
+   "src": "V-349",
+   "status": "GEORG"
+  },
+  "worldLogicRule": {
+   "v": null,
+   "status": "todo"
+  },
+  "place": {
+   "v": "brain from the brain world (H0) as head",
+   "src": "V-349",
+   "status": "GEORG"
+  },
+  "openQuestions": {
+   "v": [
+    "who is it, why in the suit (V-349)",
+    "thematic donor only: booklet 'menschenbilder' chapters on the brain as computer and transhumanism (CS-58), not character canon"
+   ],
+   "src": "V-349; CS-58",
+   "status": "SOURCE"
+  }
+ },
+ "personality": {
+  "archetype": {
+   "jungDrive": {
+    "v": null,
+    "status": "todo"
+   },
+   "journeyFunction": {
+    "v": null,
+    "status": "todo"
+   },
+   "frictionEngine": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "castRole": {
+   "v": null,
+   "status": "todo"
+  },
+  "personalityType": {
+   "v": null,
+   "status": "todo"
+  },
+  "traits": {
+   "coreWant": {
+    "v": null,
+    "status": "todo"
+   },
+   "coreIrritation": {
+    "v": null,
+    "status": "todo"
+   },
+   "contradiction": {
+    "v": null,
+    "status": "todo"
+   },
+   "failureLoop": {
+    "v": null,
+    "status": "todo"
+   },
+   "fears": {
+    "v": null,
+    "status": "todo"
+   },
+   "hiddenGoal": {
+    "v": null,
+    "status": "todo"
+   },
+   "darkSecret": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "humour": {
+   "v": null,
+   "status": "todo"
+  },
+  "attitudeBaseline": {
+   "v": null,
+   "status": "todo"
+  },
+  "stateMachine": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "dialogue": {
+  "languageOwner": {
+   "v": "ChatterBox + shared Triplet pool",
+   "src": "CS-20",
+   "status": "SOURCE"
+  },
+  "signaturePool": {
+   "v": null,
+   "status": "todo"
+  },
+  "tripletVoice": {
+   "rules": {
+    "v": "Triplet = one spoken line per card; title + power term first, telegram fragments from card words only, opener from pool max once per set, intro 'Welcome to <Deck>.', outro 'Stay Fluffy!'",
+    "src": "CS-11; V-231…V-235, V-266, V-275",
+    "status": "GEORG"
+   },
+   "goldenLine": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "openers": {
+   "placeScenePolicy": {
+    "v": null,
+    "status": "todo",
+    "note": "V-222: per figure either 'free stage fiction' or 'only places from the card' must be set in the figure profile; no value found"
+   },
+   "preferred": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "registers": {
+   "v": null,
+   "status": "todo"
+  },
+  "lexicon": {
+   "v": null,
+   "status": "todo"
+  },
+  "interjections": {
+   "v": null,
+   "status": "todo"
+  },
+  "catchphrases": {
+   "v": null,
+   "status": "todo"
+  },
+  "speechAvoid": {
+   "v": null,
+   "status": "todo"
+  },
+  "maxWordsPerLine": {
+   "v": null,
+   "status": "todo"
+  },
+  "knowledgePolicy": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "cards": {
+  "signatureDeck": {
+   "v": null,
+   "status": "todo"
+  },
+  "stance": {
+   "v": null,
+   "status": "todo"
+  },
+  "signatureCardRefs": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckLane": {
+   "v": null,
+   "status": "todo"
+  },
+  "secondaryDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "performanceDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "worldviewTags": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckGoal": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "memory": {
+  "owner": {
+   "v": "KFB Town Resident Social Memory (CS-20) inside Lean Memory layers A–F",
+   "src": "CS-20 memory.owner; CS-26 §10",
+   "status": "SOURCE"
+  },
+  "valuesLiveIn": {
+   "v": [
+    "PLAYER_SAVE",
+    "NPC_MEMORY_VIEW",
+    "SOCIAL_RELATION",
+    "ENCOUNTER_RECEIPT",
+    "MOMENT_RECEIPT",
+    "CARD_COLLECTION_ENTRY",
+    "JOURNEY_ENTRY"
+   ],
+   "src": "CS-26 §11",
+   "status": "SOURCE"
+  },
+  "rememberable": {
+   "v": [
+    "EncounterReceipt refs",
+    "relation refs",
+    "salient MomentReceipts",
+    "unresolved threads",
+    "shared Card/song/world refs",
+    "canonical fact knowledge"
+   ],
+   "src": "CS-26 §10 C (NPC / SOCIAL MEMORY)",
+   "status": "SOURCE"
+  },
+  "beliefSources": {
+   "v": [
+    "signature-deck",
+    "heard-from",
+    "seen",
+    "guessed"
+   ],
+   "src": "CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A)",
+   "status": "DESIGN"
+  },
+  "rules": {
+   "v": [
+    "deck knowledge is authored knowledge, not Lean Memory; no receipt per card",
+    "song/gift/performance discoveries go through Lean Memory / Journey only, one idempotent acquisition per canonical id",
+    "generated summaries are caches; receipts and canonical facts stay authoritative"
+   ],
+   "src": "CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10",
+   "status": "SOURCE"
+  },
+  "relationships": {
+   "v": null,
+   "status": "todo"
+  },
+  "almanacHooks": {
+   "v": null,
+   "status": "todo",
+   "note": "Fractal Almanac D-layer projection: collected cards, provenance, locations, Residents, Journey Entries (CS-26 §10 D); no character-specific hook found"
+  }
+ },
+ "appearance": {
+  "figureRef": {
+   "v": "figures/brain_cyborg.figure.json",
+   "src": "CS-02",
+   "status": "SOURCE"
+  },
+  "figureStatus": {
+   "v": "open-design",
+   "src": "CS-02 brain_cyborg.figure.json#approval.status",
+   "status": "SOURCE",
+   "note": "informational copy; the figure card is authoritative"
+  },
+  "renderStyle": {
+   "default": {
+    "v": "clay",
+    "src": "V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4",
+    "status": "GEORG"
+   },
+   "clayProfile": {
+    "v": "figure-fine",
+    "src": "CS-02 material.clayProfile (V-053/V-340)",
+    "status": "GEORG"
+   },
+   "alternatives": {
+    "v": [],
+    "src": "V-394 (other textures allowed only when listed here)",
+    "status": "GEORG"
+   }
+  },
+  "colours": {
+   "v": {
+    "lidSkin": "slightly darker, brain tone",
+    "lid": "E2 lid skin"
+   },
+   "src": "V-349",
+   "status": "GEORG"
+  },
+  "worldVariants": {
+   "v": null,
+   "status": "todo",
+   "note": "per-world costume variants proposed in CS-44 (kfb.character-card/1 'variants'), none authored"
+  }
+ },
+ "performance": {
+  "idle": {
+   "v": null,
+   "status": "todo"
+  },
+  "defaultPose": {
+   "v": null,
+   "status": "todo"
+  },
+  "preferredClips": {
+   "v": null,
+   "status": "todo"
+  },
+  "danceAuditions": {
+   "v": null,
+   "status": "todo"
+  },
+  "gait": {
+   "v": "Space Ranger suit body (Rig_Medium as aliens, V-267)",
+   "src": "V-349; V-267",
+   "status": "GEORG"
+  },
+  "presentationHints": {
+   "v": null,
+   "status": "todo"
+  },
+  "props": {
+   "v": null,
+   "status": "todo"
+  },
+  "kart": {
+   "v": null,
+   "status": "todo"
+  },
+  "lightByStoryMode": {
+   "table": {
+    "v": "LIGHT_MODEL_R2.md#B1 (Comic · Heroic · Tragic · Absurd · Mystical · Forbidden) + rule 11 warm character light, L-9",
+    "src": "CS-06 B1, rule 11; V-386, V-387",
+    "status": "GEORG"
+   },
+   "overrides": {
+    "v": null,
+    "status": "todo",
+    "note": "no per-character light preset found in any source; global table applies"
+   }
+  }
+ },
+ "voice": {
+  "engine": {
+   "v": null,
+   "status": "todo"
+  },
+  "spec": {
+   "v": null,
+   "status": "todo",
+   "note": "not cast"
+  },
+  "speed": {
+   "v": null,
+   "status": "todo"
+  },
+  "lang": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "provenance": [
+  "CS-01",
+  "CS-02",
+  "CS-06",
+  "CS-58"
+ ],
+ "conflicts": [],
+ "todo": [
+  "everything except the V-349 build intent: story, personality, dialogue, voice, cards (V-349 TBD after aliens PASS)"
+ ]
+}

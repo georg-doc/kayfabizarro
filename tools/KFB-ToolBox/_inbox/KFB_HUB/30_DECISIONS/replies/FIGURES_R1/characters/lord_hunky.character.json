@@ -1,0 +1,618 @@
+{
+ "schema": "kfb.character/1",
+ "id": "lord_hunky",
+ "status": "draft-r1",
+ "date": "2026-10-17",
+ "vRef": [
+  "V-394"
+ ],
+ "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo; src ids in CHARACTER_SOURCES.md",
+ "identity": {
+  "name": {
+   "v": "Lord Hunky",
+   "src": "V-295",
+   "status": "GEORG"
+  },
+  "displayName": {
+   "v": "Lord Hunky",
+   "src": "V-295",
+   "status": "GEORG"
+  },
+  "aliases": {
+   "v": [
+    "Hunky",
+    "The Administrator",
+    "LordHunky",
+    "Janitor (vocative)",
+    "Lord Hunky · Space Ranger",
+    "lordhunky-headpart-r1"
+   ],
+   "src": "CS-40 meta.alias; CS-41 normalization; CS-02",
+   "status": "SOURCE"
+  },
+  "voiceInputMishearings": {
+   "v": [
+    "Hanky",
+    "Anki",
+    "Hanki"
+   ],
+   "src": "V-295; CS-04",
+   "status": "GEORG"
+  },
+  "tier": {
+   "v": "main · npc",
+   "src": "CS-03; CS-02",
+   "status": "SOURCE"
+  },
+  "series": {
+   "v": [
+    "Cancel This Planet!",
+    "Hunky & Dory"
+   ],
+   "src": "CS-40; CS-41",
+   "status": "SOURCE"
+  }
+ },
+ "story": {
+  "background": {
+   "v": "After the Fluff Incident (Genesis) orbits Earth for about 5,000 years with Lady Dory as reluctant steward; his job includes the Fluff harvest; Academy in the background",
+   "src": "CS-04 §1, §9 (fixed); CS-30 §7.1; CS-41 project.logline",
+   "status": "GEORG"
+  },
+  "worldKnowledge": {
+   "v": [
+    "official technical version of the Fluff Incident",
+    "compliance / containment protocols",
+    "UFO engine room, tractor beam, official logbooks (proposal)"
+   ],
+   "src": "CS-04 §2, §6 (V05 proposal); CS-40",
+   "status": "DESIGN"
+  },
+  "inWorldRole": {
+   "v": "evil alien overlord / reality janitor whose work includes Fluff Harvest",
+   "src": "CS-30 §7.1 (Georg clarification) via CS-04 §2",
+   "status": "GEORG"
+  },
+  "worldLogicRule": {
+   "v": "UFO is a TARDIS-like game hub; the player is abducted or connected to Lord Hunky & Lady Dory at first",
+   "src": "V-294; CS-04 §5",
+   "status": "GEORG"
+  },
+  "place": {
+   "v": "UFO (cockpit stage now; engine room proposal); orbit / Area 51 / hollow cheese moon all named in sources",
+   "src": "CS-04 §5; V-254",
+   "status": "SOURCE"
+  },
+  "openQuestions": {
+   "v": [
+    "reason/form of the abduction",
+    "location of the UFO",
+    "which Academy",
+    "what happened in the Fluff Incident",
+    "do the three role descriptions belong together (CS-04 open Q7)"
+   ],
+   "src": "CS-04 §9",
+   "status": "SOURCE"
+  }
+ },
+ "personality": {
+  "archetype": {
+   "jungDrive": {
+    "v": null,
+    "status": "todo"
+   },
+   "journeyFunction": {
+    "v": null,
+    "status": "todo"
+   },
+   "frictionEngine": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "castRole": {
+   "v": "prison_planet_earth_janitor",
+   "src": "CS-41 characters.hunky.role",
+   "status": "SOURCE"
+  },
+  "personalityType": {
+   "v": [
+    "architect",
+    "choleric_control_freak"
+   ],
+   "src": "CS-41 characters.hunky.archetypes",
+   "status": "SOURCE"
+  },
+  "traits": {
+   "coreWant": {
+    "v": null,
+    "status": "todo"
+   },
+   "failureLoop": {
+    "v": "control → sloppy patch → collapse → blame → repeat",
+    "src": "CS-40 psychology.failure_loop",
+    "status": "SOURCE"
+   },
+   "triggers": {
+    "v": {
+     "words": [
+      "chaos",
+      "feelings",
+      "unauthorized",
+      "but why"
+     ],
+     "states": [
+      "control_fatigue",
+      "metric_slippage"
+     ],
+     "escalation": "control_questioned → defensive_aggression, rule_enforcement, explicit_threat"
+    },
+    "src": "CS-40; CS-41 characters.hunky.triggers, cross_character_triggers",
+    "status": "SOURCE"
+   },
+   "defenseMechanism": {
+    "v": "jargon as emotional armor",
+    "src": "CS-40",
+    "status": "SOURCE"
+   },
+   "psychoTags": {
+    "v": [
+     "authoritarian_compensation",
+     "control_addiction",
+     "anal_fixation"
+    ],
+    "src": "CS-40",
+    "status": "SOURCE"
+   },
+   "metaConflictAwareness": {
+    "v": "realizes_he_creates_chaos_he_tries_to_control",
+    "src": "CS-41",
+    "status": "SOURCE"
+   },
+   "ironicVictory": {
+    "v": "achieves_total_control_over_nothing",
+    "src": "CS-41",
+    "status": "SOURCE"
+   },
+   "hiddenGoal": {
+    "v": null,
+    "status": "todo"
+   },
+   "darkSecret": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "humour": {
+   "v": "cold, factual, bureaucratic; never explains, only implements; grim humour of a weary foreman",
+   "src": "CS-52; CS-41 speech_styles",
+   "status": "SOURCE"
+  },
+  "attitudeBaseline": {
+   "v": null,
+   "status": "todo"
+  },
+  "stateMachine": {
+   "v": {
+    "states": [
+     "calm",
+     "stressed",
+     "breakdown",
+     "recovered"
+    ],
+    "transitions": {
+     "calm": {
+      "to_stressed": [
+       "protocol_violation",
+       "chaos_detected"
+      ]
+     },
+     "stressed": {
+      "to_breakdown": [
+       "multiple_failures",
+       "authority_challenged"
+      ],
+      "to_calm": [
+       "control_restored"
+      ]
+     },
+     "breakdown": {
+      "to_recovered": [
+       "scapegoat_found",
+       "dory_intervention"
+      ]
+     }
+    },
+    "voiceModifiers": {
+     "stressed": {
+      "word_delta": -4,
+      "syntax": "fragments",
+      "tone": "sharp"
+     },
+     "breakdown": {
+      "word_delta": -8,
+      "syntax": "incomplete",
+      "tone": "desperate"
+     }
+    }
+   },
+   "src": "CS-41 character_state_machine.hunky",
+   "status": "SOURCE"
+  }
+ },
+ "dialogue": {
+  "languageOwner": {
+   "v": "ChatterBox + shared Triplet pool",
+   "src": "CS-20",
+   "status": "SOURCE"
+  },
+  "signaturePool": {
+   "v": null,
+   "status": "todo"
+  },
+  "tripletVoice": {
+   "rules": {
+    "v": "Triplet = one spoken line per card; title + power term first, telegram fragments from card words only, opener from pool max once per set, intro 'Welcome to <Deck>.', outro 'Stay Fluffy!'",
+    "src": "CS-11; V-231…V-235, V-266, V-275",
+    "status": "GEORG"
+   },
+   "goldenLine": {
+    "v": "This is Lord Hunky. Your reality is scheduled for cleaning. Please keep your hands inside the universe.",
+    "src": "CS-03 (WS0 test line, no card text)",
+    "status": "DESIGN"
+   }
+  },
+  "openers": {
+   "placeScenePolicy": {
+    "v": null,
+    "status": "todo",
+    "note": "V-222: per figure either 'free stage fiction' or 'only places from the card' must be set in the figure profile; no value found"
+   },
+   "preferred": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "registers": {
+   "v": [
+    "bureaucratic",
+    "short-declarative",
+    "clipped authoritarian rants",
+    "official galactic bureaucracy (Authority Report)"
+   ],
+   "src": "CS-40 voice; CS-41 speech_styles; CS-40 authority_report.md",
+   "status": "SOURCE"
+  },
+  "lexicon": {
+   "v": [
+    "compliance",
+    "containment",
+    "non-compliant",
+    "cosmetic containment",
+    "briefing the brief"
+   ],
+   "src": "CS-40 voice.lexicon",
+   "status": "SOURCE"
+  },
+  "interjections": {
+   "v": [
+    "damn",
+    "hell",
+    "wait"
+   ],
+   "src": "CS-41 characters.hunky.voice",
+   "status": "SOURCE"
+  },
+  "catchphrases": {
+   "v": null,
+   "status": "todo"
+  },
+  "speechAvoid": {
+   "v": null,
+   "status": "todo"
+  },
+  "maxWordsPerLine": {
+   "v": 18,
+   "src": "CS-40 voice.max_words_per_line",
+   "status": "SOURCE"
+  },
+  "knowledgePolicy": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "cards": {
+  "signatureDeck": {
+   "v": null,
+   "status": "todo"
+  },
+  "stance": {
+   "v": null,
+   "status": "todo"
+  },
+  "signatureCardRefs": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckLane": {
+   "v": null,
+   "status": "todo"
+  },
+  "secondaryDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "performanceDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "worldviewTags": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckGoal": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "memory": {
+  "owner": {
+   "v": "KFB Town Resident Social Memory (CS-20) inside Lean Memory layers A–F",
+   "src": "CS-20 memory.owner; CS-26 §10",
+   "status": "SOURCE"
+  },
+  "valuesLiveIn": {
+   "v": [
+    "PLAYER_SAVE",
+    "NPC_MEMORY_VIEW",
+    "SOCIAL_RELATION",
+    "ENCOUNTER_RECEIPT",
+    "MOMENT_RECEIPT",
+    "CARD_COLLECTION_ENTRY",
+    "JOURNEY_ENTRY"
+   ],
+   "src": "CS-26 §11",
+   "status": "SOURCE"
+  },
+  "rememberable": {
+   "v": [
+    "EncounterReceipt refs",
+    "relation refs",
+    "salient MomentReceipts",
+    "unresolved threads",
+    "shared Card/song/world refs",
+    "canonical fact knowledge"
+   ],
+   "src": "CS-26 §10 C (NPC / SOCIAL MEMORY)",
+   "status": "SOURCE"
+  },
+  "beliefSources": {
+   "v": [
+    "signature-deck",
+    "heard-from",
+    "seen",
+    "guessed"
+   ],
+   "src": "CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A)",
+   "status": "DESIGN"
+  },
+  "rules": {
+   "v": [
+    "deck knowledge is authored knowledge, not Lean Memory; no receipt per card",
+    "song/gift/performance discoveries go through Lean Memory / Journey only, one idempotent acquisition per canonical id",
+    "generated summaries are caches; receipts and canonical facts stay authoritative"
+   ],
+   "src": "CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10",
+   "status": "SOURCE"
+  },
+  "relationships": {
+   "v": [
+    {
+     "with": "lady_dory",
+     "type": "toxic_marriage",
+     "sharedTrauma": "fluff_incident_guilt",
+     "dynamicAxes": [
+      "containment/disclosure",
+      "control/emergence"
+     ],
+     "baselineHeat": 0.62,
+     "triggers": {
+      "mutual": [
+       "competence_questioned",
+       "past_mistakes_mentioned"
+      ],
+      "hunky_to_dory": [
+       "dismisses_moral_concerns",
+       "ridicules_empathy"
+      ],
+      "dory_to_hunky": [
+       "exposes_control_delusion",
+       "withholds_recognition"
+      ]
+     }
+    },
+    {
+     "with": "norman",
+     "type": "scene hunky_vs_norman",
+     "note": "CS-41 YAML scene list"
+    },
+    {
+     "with": "GodGPT (not in cast)",
+     "type": "overlord_vs_underling",
+     "sharedTrauma": "audit_failures"
+    }
+   ],
+   "src": "CS-40 relationship; CS-41 relationship_dynamics",
+   "status": "SOURCE"
+  },
+  "almanacHooks": {
+   "v": [
+    "Galactic Authority Report (periodic compliance report on Earth Sector 7, Dory's 'appendix: unauthorized commentary')"
+   ],
+   "src": "CS-40 authority_report.md",
+   "status": "DESIGN"
+  },
+  "pairMemory": {
+   "v": {
+    "file": "running_memory.json (append-only)",
+    "fields": [
+     "heat",
+     "running_gags",
+     "conflict_patterns",
+     "recurring_topics",
+     "character_drift",
+     "sessions"
+    ]
+   },
+   "src": "CS-40 running_memory.json",
+   "status": "DESIGN",
+   "note": "H&D pair memory, separate from player Lean Memory"
+  }
+ },
+ "appearance": {
+  "figureRef": {
+   "v": "figures/lord_hunky.figure.json",
+   "src": "CS-02",
+   "status": "SOURCE"
+  },
+  "figureStatus": {
+   "v": "candidate",
+   "src": "CS-02 lord_hunky.figure.json#approval.status",
+   "status": "SOURCE",
+   "note": "informational copy; the figure card is authoritative"
+  },
+  "renderStyle": {
+   "default": {
+    "v": "clay",
+    "src": "V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4",
+    "status": "GEORG"
+   },
+   "clayProfile": {
+    "v": "figure-fine",
+    "src": "CS-02 material.clayProfile (V-053/V-340)",
+    "status": "GEORG"
+   },
+   "alternatives": {
+    "v": [],
+    "src": "V-394 (other textures allowed only when listed here)",
+    "status": "GEORG"
+   }
+  },
+  "colours": {
+   "v": {
+    "suitAccent": "teal-blue",
+    "hdPrimary": "#2a8a9a",
+    "hdShadow": "#085060",
+    "type": "stalk-eyes (single eye stalk rig)"
+   },
+   "src": "V-261; CS-40 meta.visual",
+   "status": "GEORG"
+  },
+  "worldVariants": {
+   "v": null,
+   "status": "todo",
+   "note": "per-world costume variants proposed in CS-44 (kfb.character-card/1 'variants'), none authored"
+  }
+ },
+ "performance": {
+  "idle": {
+   "v": null,
+   "status": "todo"
+  },
+  "defaultPose": {
+   "v": null,
+   "status": "todo"
+  },
+  "preferredClips": {
+   "v": null,
+   "status": "todo"
+  },
+  "danceAuditions": {
+   "v": null,
+   "status": "todo"
+  },
+  "gait": {
+   "v": "Rig_Medium size like FrizzleBob",
+   "src": "V-267",
+   "status": "GEORG"
+  },
+  "presentationHints": {
+   "v": [
+    "eyes/lids first",
+    "named expression poses + appendage actors (eye stalk: firmer stiffness)"
+   ],
+   "src": "CS-02 performance.expression; V-297; V-338 C",
+   "status": "GEORG"
+  },
+  "props": {
+   "v": null,
+   "status": "todo"
+  },
+  "kart": {
+   "v": null,
+   "status": "todo"
+  },
+  "lightByStoryMode": {
+   "table": {
+    "v": "LIGHT_MODEL_R2.md#B1 (Comic · Heroic · Tragic · Absurd · Mystical · Forbidden) + rule 11 warm character light, L-9",
+    "src": "CS-06 B1, rule 11; V-386, V-387",
+    "status": "GEORG"
+   },
+   "overrides": {
+    "v": null,
+    "status": "todo",
+    "note": "no per-character light preset found in any source; global table applies"
+   }
+  }
+ },
+ "voice": {
+  "engine": {
+   "v": "kokoro v1.0",
+   "src": "CS-03",
+   "status": "GEORG"
+  },
+  "spec": {
+   "v": "am_onyx60+bm_george40",
+   "src": "CS-03; V-324",
+   "status": "GEORG"
+  },
+  "speed": {
+   "v": 0.92,
+   "src": "CS-03",
+   "status": "GEORG"
+  },
+  "lang": {
+   "v": "en-us",
+   "src": "CS-03",
+   "status": "GEORG"
+  }
+ },
+ "provenance": [
+  "CS-01",
+  "CS-02",
+  "CS-03",
+  "CS-04",
+  "CS-06",
+  "CS-11",
+  "CS-30",
+  "CS-31",
+  "CS-40",
+  "CS-41",
+  "CS-52",
+  "CS-53",
+  "CS-57"
+ ],
+ "conflicts": [
+  "Role: 'Earth supervisor for galactic technofeudalism compliance' (CS-40) vs 'prison_planet_earth_janitor' / 'Reality Janitor' (CS-41) vs Georg 'evil alien overlord / reality janitor ... Fluff Harvest' (CS-30) vs 'Technocratic alien administrator' (CS-52); CS-04 Q7 asks whether they belong together.",
+  "Colour: #2a8a9a teal (CS-40) and suit teal-blue (V-261) vs CtP palette #E74C3C, random per session (CS-41).",
+  "CS-57 maps LordHunky to 'overlord' but its own table also lists Quantumund as overlord.",
+  "M106 (archived booklet) treats HUNKY-DORY as a forced-cheerful FrizzleBob mode, not as two aliens."
+ ],
+ "todo": [
+  "Base-24 archetype (not in the map)",
+  "signature deck / cards",
+  "idle/clips/dance",
+  "relationship canon (CS-04 open Q6)",
+  "V1 may keep him offscreen at UFO world events (CS-31)"
+ ]
+}

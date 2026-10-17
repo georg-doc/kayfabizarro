@@ -6,7 +6,7 @@ There is one source of truth per character. Stages, proof pages, WSB renders and
 - `FIGURE_SCHEMA_R1.md`: fields and rules (one page)
 - `kfb.figure-1.schema.json`: the machine schema
 - `figures/*.figure.json`: 13 draft cards
-- `CHARACTER_SCHEMA_R1.md` / `characters/`: **not written yet** (scope extension kfb.character/1 still open, see the report)
+- `CHARACTER_SCHEMA_R1.md` / `characters/`: **written 17.10. → characters/*.character.json, CHARACTER_SCHEMA_R1.md, CHARACTER_SOURCES.md** (scope extension kfb.character/1 still open, see the report)
 
 Search covered:
 - 519 GitHub branches (fetched 17.10.);

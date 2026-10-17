@@ -5421,7 +5421,7 @@
    "date": "2026-10-17",
    "area": "Figuren",
    "verdict": "RULE",
-   "text": "Charakter-SSOT kfb.character/1 (Georg 17.10.): je Charakter eine Datei auf GitHub (characters/<id>/character.json), die Figurenkarte kfb.figure/1 ist ihr Abschnitt Aussehen. Abschnitte: Identität (Name, Aliase inkl. Spracheingabe-Verhörer), Geschichte (Background-Story, Weltwissen, Rolle in der Welt), Persönlichkeit (Archetyp, Rolle, Persönlichkeitstyp, Humor), Dialog (Signature-Pool, Triplet-Stimme), Karten (zugeordnete Decks/Karten), Gedächtnis (Lead-Memory: was der Charakter über den Spieler wissen kann – nur Schema; Werte im Spielstand/Journey-Diary, Almanach, Beziehungen/Interaktionen mit NPCs), Aussehen (Körper, Augen-Rig, Mund, Brauen, Farben; renderStyle Standard clay, andere Texturen ausdrücklich erlaubt), Performance (bevorzugte Clips/Tänze, Gang, Emotes, Figurenlicht je Story-Mode), Stimme. Vorhandene Skizzen werden zusammengeführt, nicht neu erfunden (Entwurf läuft in replies/FIGURES_R1/).",
+   "text": "Charakter-SSOT kfb.character/1 (Georg 17.10.): je Charakter eine Datei auf GitHub (characters/<id>/character.json), die Figurenkarte kfb.figure/1 ist ihr Abschnitt Aussehen. Abschnitte: Identität (Name, Aliase inkl. Spracheingabe-Verhörer), Geschichte (Background-Story, Weltwissen, Rolle in der Welt), Persönlichkeit (Archetyp, Rolle, Persönlichkeitstyp, Humor), Dialog (Signature-Pool, Triplet-Stimme), Karten (zugeordnete Decks/Karten), Gedächtnis (Lean Memory, Georg sprach von „Lead-Memory“: was der Charakter über den Spieler wissen kann – nur Schema; Werte im Spielstand/Journey-Diary, Almanach, Beziehungen/Interaktionen mit NPCs), Aussehen (Körper, Augen-Rig, Mund, Brauen, Farben; renderStyle Standard clay, andere Texturen ausdrücklich erlaubt), Performance (bevorzugte Clips/Tänze, Gang, Emotes, Figurenlicht je Story-Mode), Stimme. Vorhandene Skizzen werden zusammengeführt, nicht neu erfunden (Entwurf läuft in replies/FIGURES_R1/).",
    "values": {},
    "owner": "WS0 (Schema, Zusammenführung) · alle Konsumenten (Spiel, Werkstatt, Blender, Video, Dialog)",
    "check": "eine Datei je Charakter, Quellen je Abschnitt",
@@ -5466,7 +5466,7 @@
    "date": "2026-10-17",
    "area": "Welt",
    "verdict": "TBD",
-   "text": "Dschungel-Computer (Meshy, Georg 17.10.) als Diorama/Landmark/POI und diegetisches Meta-Artefakt mit eigenem Augen-Rig (Charakter „Weltenrechner“, Vorschlag: rote Linse als Zyklopen-Auge). Billboard auf dem Monitor: Variante A Steinrahmen in Gehäusefarbe mit Rissen/Fugen und zwei Längsbalken bis Kartenformat, Variante B vier cartoonig gezimmerte, überstehende, abgerundete Holzbalken im Baumholzton mit Maserung (Geschichte: Verehrer bauten der heiligen Karte einen Halter); Karte bzw. Hypernormalisation-Screen per Maske dahinter. WSB baut Browser-Fassung (≤ 80 k Dreiecke), Screen-Anker und beide Varianten als Clay-Bilder, Georg wählt per Klick. Konzept (begehbarer Ort, Meta-Computer-Interface, Aufträge/Quests, den Rechner nach der Bedeutung einer Karte fragen à la Deep Thought, surreale Rituale mit Ork-Band und tanzenden Figuren als Tech-Verehrungs-Satire) checkt der Web-Chat ein; WS0 übernimmt danach.",
+   "text": "Dschungel-Computer (Meshy, Georg 17.10.) als Diorama/Landmark/POI und diegetisches Meta-Artefakt mit eigenem Augen-Rig (Charakter „Weltenrechner“, Vorschlag: rote Linse als Zyklopen-Auge). Billboard auf dem Monitor: Variante A Steinrahmen in Gehäusefarbe mit Rissen/Fugen und zwei Längsbalken bis Kartenformat, Variante B (Georgs Favorit 17.10.) vier cartoonig gezimmerte, überstehende, abgerundete Holzbalken im Baumholzton mit Maserung (Geschichte: Verehrer bauten der heiligen Karte einen Halter); Karte bzw. Hypernormalisation-Screen per Maske dahinter. WSB baut Browser-Fassung (≤ 80 k Dreiecke), Screen-Anker und beide Varianten als Clay-Bilder, Georg wählt per Klick. Konzept (begehbarer Ort, Meta-Computer-Interface, Aufträge/Quests, den Rechner nach der Bedeutung einer Karte fragen à la Deep Thought, surreale Rituale mit Ork-Band und tanzenden Figuren als Tech-Verehrungs-Satire) checkt der Web-Chat ein; WS0 übernimmt danach.",
    "values": {},
    "owner": "WSB (B7) · Web-Chat (Konzept) · WS0",
    "check": "A|B-Bilder im Hub, Georg wählt",
@@ -5475,6 +5475,21 @@
    "superseded_by": [],
    "why": "Ein diegetischer Computer verbindet Landmark, Karten-Bedeutung, Quests und Satire an einem begehbaren Ort.",
    "applies": "nach B7 und Web-Chat-Konzept"
+  },
+  {
+   "id": "V-398",
+   "date": "2026-10-17",
+   "area": "Prozess",
+   "verdict": "PASS",
+   "text": "Charakter-Dateien R1 fertig (replies/FIGURES_R1/characters/*.character.json + CHARACTER_SCHEMA_R1.md + CHARACTER_SOURCES.md mit 46 Quellen): Struktur nach Resident-Lean-Card v0.2, erweitert um hd-character/v1 und CtP v6.5.2; jeder Wert mit Quelle und Status (GEORG/SOURCE/DESIGN/PREFILL/todo); Widersprüche zwischen Quellen in conflicts[] sichtbar gelassen (u. a. Rollen von Hunky/Dory, Alien-Farben, FrizzleBob-Identität/Modi, GothGirl-Pose). Werkzeug-Inventur WSA (297 Cloudflare-Pfade, 12 GPT-Sites) und Umleitungs-PR #414 (572 Regeln, keine Löschung) von WS0 stichprobenartig geprüft: alter Hub → Production Hub, Rest → Ziel-Ort oder Archiv; Merge durch Georg empfohlen, danach Live-Prüfung der Haupt-Adressen.",
+   "values": {},
+   "owner": "WS0",
+   "check": "Stichprobe Umleitungen; Charakter-Dateien mit Quellen",
+   "source": "replies/FIGURES_R1/ · replies/WSA_TOOL_CLEANUP_R1_RETURN.md · PR #414",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erste vollständige Charakter-SSOT aus vorhandenen Skizzen; Aufräumen ohne Löschung mit nachprüfbaren Umleitungen.",
+   "applies": "ab sofort"
   },
   {
    "id": "V-084",
@@ -5549,7 +5564,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:717",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:718",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

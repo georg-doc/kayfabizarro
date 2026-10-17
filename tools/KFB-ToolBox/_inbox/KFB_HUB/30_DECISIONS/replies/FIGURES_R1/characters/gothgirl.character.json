@@ -1,0 +1,606 @@
+{
+ "schema": "kfb.character/1",
+ "id": "gothgirl",
+ "status": "draft-r1",
+ "date": "2026-10-17",
+ "vRef": [
+  "V-394"
+ ],
+ "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo; src ids in CHARACTER_SOURCES.md",
+ "identity": {
+  "name": {
+   "v": "GothGirl",
+   "src": "CS-02",
+   "status": "SOURCE"
+  },
+  "displayName": {
+   "v": "Goth Girl",
+   "src": "CS-25; CS-42",
+   "status": "SOURCE"
+  },
+  "aliases": {
+   "v": [
+    "goth-girl (residentId)",
+    "GothGirl_NoEyes",
+    "Goth Girl · Novacyy-Kandidatin"
+   ],
+   "src": "CS-02; CS-20; CS-42",
+   "status": "SOURCE"
+  },
+  "voiceInputMishearings": {
+   "v": null,
+   "status": "todo"
+  },
+  "tier": {
+   "v": "main · npc (second figure of dialogue scene F-4)",
+   "src": "CS-03; V-269",
+   "status": "GEORG"
+  },
+  "series": {
+   "v": [
+    "KFB Town / Resident Atlas"
+   ],
+   "src": "CS-42",
+   "status": "SOURCE"
+  }
+ },
+ "story": {
+  "background": {
+   "v": null,
+   "status": "todo",
+   "note": "no bio found in any source"
+  },
+  "worldKnowledge": {
+   "v": null,
+   "status": "todo"
+  },
+  "inWorldRole": {
+   "v": "stage/performance Resident (Bühnen-Resident · Auftritt / Musik)",
+   "src": "CS-25 profiles[goth-girl].source.townRole; CS-42",
+   "status": "SOURCE"
+  },
+  "worldLogicRule": {
+   "v": null,
+   "status": "todo"
+  },
+  "place": {
+   "v": "stage / microphone / music; ruined city stage (promo), set candidate open",
+   "src": "CS-21 §4 #06; CS-42 habitatIntent",
+   "status": "DESIGN"
+  },
+  "openQuestions": {
+   "v": [
+    "CS-42 relationship 'Birthday-Set Elisa (source of the handoff)': Elisa birthday reference folder holds Georg's GothGirl Pet Studio save (CS-34); in-world meaning open"
+   ],
+   "src": "CS-42; CS-34",
+   "status": "SOURCE"
+  }
+ },
+ "personality": {
+  "archetype": {
+   "jungDrive": {
+    "v": "Creator + Lover",
+    "src": "CS-21 §4 #06",
+    "status": "DESIGN"
+   },
+   "journeyFunction": {
+    "v": "Ally / Shapeshifter",
+    "src": "CS-21 §4 #06",
+    "status": "DESIGN"
+   },
+   "frictionEngine": {
+    "v": "Emotional precision hidden behind dry performance distance",
+    "src": "CS-21 §4 #06",
+    "status": "DESIGN"
+   }
+  },
+  "castRole": {
+   "v": "Resident · regular",
+   "src": "CS-20 role",
+   "status": "SOURCE"
+  },
+  "personalityType": {
+   "v": null,
+   "status": "todo"
+  },
+  "traits": {
+   "clamp": {
+    "v": "Keeper of what actually landed",
+    "src": "CS-20 clamps.clamp",
+    "status": "PREFILL"
+   },
+   "method": {
+    "v": "PERFORMANCE_TRUTH",
+    "src": "CS-25 profiles[goth-girl].authoring.method",
+    "status": "DESIGN",
+    "note": "site-authored CANDIDATE"
+   },
+   "coreWant": {
+    "v": "protect what actually lands before it is over-explained",
+    "src": "CS-25 profiles[goth-girl].authoring.coreWant",
+    "status": "DESIGN"
+   },
+   "coreIrritation": {
+    "v": "forced enthusiasm and audience instructions",
+    "src": "CS-25 profiles[goth-girl].authoring.coreIrritation",
+    "status": "DESIGN"
+   },
+   "contradiction": {
+    "v": "Emotional precision hidden behind dry performance distance",
+    "src": "CS-20 clamps.contradiction",
+    "status": "DESIGN"
+   },
+   "failureLoop": {
+    "v": "withholds reaction -> room fills the silence -> fake enthusiasm wins -> withdraws further",
+    "src": "CS-20 clamps.failureLoop",
+    "status": "PREFILL"
+   },
+   "fears": {
+    "v": [
+     "being explained",
+     "performing on command",
+     "faked feeling"
+    ],
+    "src": "CS-20 clamps.fears",
+    "status": "PREFILL"
+   },
+   "escalationStyle": {
+    "v": [
+     "statement→what-landed",
+     "polish→surviving-flaw",
+     "applause→earned-response"
+    ],
+    "src": "CS-20 clamps.escalationStyle",
+    "status": "DESIGN"
+   },
+   "hiddenGoal": {
+    "v": null,
+    "status": "todo",
+    "note": "CS-20: OPEN, Georg optional"
+   },
+   "darkSecret": {
+    "v": null,
+    "status": "todo",
+    "note": "CS-20: OPEN, Georg optional"
+   }
+  },
+  "humour": {
+   "v": "attentive restraint; reaction must be earned (dry)",
+   "src": "CS-25 profiles[goth-girl].attitude.colour",
+   "status": "DESIGN"
+  },
+  "attitudeBaseline": {
+   "v": {
+    "warmth": "COOL_NEUTRAL",
+    "energy": "LOW_MEDIUM",
+    "pressure": "MEDIUM",
+    "play": "LOW_MEDIUM",
+    "openness": "MEDIUM_HIGH",
+    "reserve": "HIGH"
+   },
+   "src": "CS-25 profiles[goth-girl].attitude.baseline",
+   "status": "DESIGN"
+  },
+  "stateMachine": {
+   "v": {
+    "states": [
+     "calm",
+     "stressed",
+     "breakdown",
+     "recovered"
+    ],
+    "transitions": null
+   },
+   "src": "CS-20 social.moodStates (state set from CS-41)",
+   "status": "DESIGN",
+   "note": "transitions OPEN"
+  }
+ },
+ "dialogue": {
+  "languageOwner": {
+   "v": "ChatterBox + shared Triplet pool",
+   "src": "CS-20",
+   "status": "SOURCE"
+  },
+  "signaturePool": {
+   "tripletRefs": {
+    "v": [
+     "gothgirl.performance.01",
+     "gothgirl.performance.02",
+     "gothgirl.applause.01",
+     "gothgirl.silence.01"
+    ],
+    "src": "CS-25 profiles[goth-girl].signatureTriplets; CS-24",
+    "status": "DESIGN",
+    "note": "pool status AUTHORING_CANDIDATE; Georg review pending"
+   },
+   "signatureWeight": {
+    "v": 4,
+    "src": "CS-24 residentWeights",
+    "status": "DESIGN"
+   },
+   "globalWeight": {
+    "v": 1,
+    "src": "CS-24 residentWeights",
+    "status": "DESIGN"
+   },
+   "relationBias": {
+    "v": [
+     "MISFIT",
+     "COLLISION"
+    ],
+    "src": "CS-24; CS-25",
+    "status": "DESIGN"
+   },
+   "transformBias": {
+    "v": [
+     "statement→what-landed",
+     "polish→surviving-flaw",
+     "applause→earned-response"
+    ],
+    "src": "CS-25 profiles[goth-girl]",
+    "status": "DESIGN"
+   },
+   "preferredOperators": {
+    "v": [
+     "BONGO",
+     "BOGGLE"
+    ],
+    "src": "CS-25 profiles[goth-girl].chatterBoxAdapter",
+    "status": "DESIGN"
+   },
+   "fluffOlectBias": {
+    "v": "MEDIUM_LOW (0.25)",
+    "src": "CS-25 profiles[goth-girl].attitude; CS-24",
+    "status": "DESIGN",
+    "note": "first tests without Fluff-o-lect (Georg 03.10.)"
+   },
+   "initiative": {
+    "v": {
+     "initiative": "LOW_MEDIUM",
+     "interruption": "LOW",
+     "silenceAllowed": true,
+     "defaultMaxGeneratedTurns": 1
+    },
+    "src": "CS-25 profiles[goth-girl].chatterBoxAdapter",
+    "status": "DESIGN"
+   }
+  },
+  "tripletVoice": {
+   "rules": {
+    "v": "Triplet = one spoken line per card; title + power term first, telegram fragments from card words only, opener from pool max once per set, intro 'Welcome to <Deck>.', outro 'Stay Fluffy!'",
+    "src": "CS-11; V-231…V-235, V-266, V-275",
+    "status": "GEORG"
+   },
+   "goldenLine": {
+    "v": "The Virtual Trap, Curated Illusion: chasing likes, totally empty inside.",
+    "src": "CS-03 (TRIPLET_SETS_R2/kayfabizarro_philosophy #56)",
+    "status": "GEORG"
+   }
+  },
+  "openers": {
+   "placeScenePolicy": {
+    "v": null,
+    "status": "todo",
+    "note": "V-222: per figure either 'free stage fiction' or 'only places from the card' must be set in the figure profile; no value found"
+   },
+   "preferred": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "registers": {
+   "v": null,
+   "status": "todo"
+  },
+  "lexicon": {
+   "v": null,
+   "status": "todo"
+  },
+  "interjections": {
+   "v": null,
+   "status": "todo"
+  },
+  "catchphrases": {
+   "v": null,
+   "status": "todo"
+  },
+  "speechAvoid": {
+   "v": [
+    "goth caricature",
+    "constant darkness/death language",
+    "generic sarcasm",
+    "melodramatic nihilism"
+   ],
+   "src": "CS-25 profiles[goth-girl].authoring.speechAvoid",
+   "status": "DESIGN"
+  },
+  "maxWordsPerLine": {
+   "v": null,
+   "status": "todo"
+  },
+  "knowledgePolicy": {
+   "v": {
+    "self": true,
+    "publicWorld": true,
+    "visibleScene": true,
+    "witnessedEvents": true,
+    "heardClaims": "PROVENANCE_REQUIRED",
+    "currentCard": "ONLY_IF_PRESENT_OR_REPORTED",
+    "forbiddenUnseenContext": true
+   },
+   "src": "CS-25 profiles[goth-girl].knowledgePolicy",
+   "status": "DESIGN"
+  }
+ },
+ "cards": {
+  "signatureDeck": {
+   "v": "sonic_slaughterhouse",
+   "src": "CS-25 profiles[goth-girl].authoring.signatureDeckCandidate; CS-20",
+   "status": "DESIGN",
+   "note": "candidate, not decided; deck file not found on main under this id"
+  },
+  "stance": {
+   "v": null,
+   "status": "todo",
+   "note": "CS-20: OPEN"
+  },
+  "signatureCardRefs": {
+   "v": null,
+   "status": "todo",
+   "note": "CS-20: OPEN"
+  },
+  "deckLane": {
+   "v": "art, alienation, romance, identity, music",
+   "src": "CS-21 §4 #06",
+   "status": "DESIGN"
+  },
+  "secondaryDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "performanceDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "worldviewTags": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckGoal": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "memory": {
+  "owner": {
+   "v": "KFB Town Resident Social Memory (CS-20) inside Lean Memory layers A–F",
+   "src": "CS-20 memory.owner; CS-26 §10",
+   "status": "SOURCE"
+  },
+  "valuesLiveIn": {
+   "v": [
+    "PLAYER_SAVE",
+    "NPC_MEMORY_VIEW",
+    "SOCIAL_RELATION",
+    "ENCOUNTER_RECEIPT",
+    "MOMENT_RECEIPT",
+    "CARD_COLLECTION_ENTRY",
+    "JOURNEY_ENTRY"
+   ],
+   "src": "CS-26 §11",
+   "status": "SOURCE"
+  },
+  "rememberable": {
+   "v": [
+    "EncounterReceipt refs",
+    "relation refs",
+    "salient MomentReceipts",
+    "unresolved threads",
+    "shared Card/song/world refs",
+    "canonical fact knowledge"
+   ],
+   "src": "CS-26 §10 C (NPC / SOCIAL MEMORY)",
+   "status": "SOURCE"
+  },
+  "beliefSources": {
+   "v": [
+    "signature-deck",
+    "heard-from",
+    "seen",
+    "guessed"
+   ],
+   "src": "CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A)",
+   "status": "DESIGN"
+  },
+  "rules": {
+   "v": [
+    "deck knowledge is authored knowledge, not Lean Memory; no receipt per card",
+    "song/gift/performance discoveries go through Lean Memory / Journey only, one idempotent acquisition per canonical id",
+    "generated summaries are caches; receipts and canonical facts stay authoritative"
+   ],
+   "src": "CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10",
+   "status": "SOURCE"
+  },
+  "relationships": {
+   "v": [
+    {
+     "with": "Elisa (birthday set)",
+     "type": "source of the handoff",
+     "note": "production relation, not in-world"
+    },
+    {
+     "with": "Town stage ensemble",
+     "type": "ensemble candidate"
+    },
+    {
+     "with": "Clown",
+     "type": "counterpart of the GothGirl stage (from clown entry)"
+    }
+   ],
+   "src": "CS-42 relationships",
+   "status": "SOURCE"
+  },
+  "almanacHooks": {
+   "v": null,
+   "status": "todo",
+   "note": "Fractal Almanac D-layer projection: collected cards, provenance, locations, Residents, Journey Entries (CS-26 §10 D); no character-specific hook found"
+  }
+ },
+ "appearance": {
+  "figureRef": {
+   "v": "figures/gothgirl.figure.json",
+   "src": "CS-02",
+   "status": "SOURCE"
+  },
+  "figureStatus": {
+   "v": "candidate",
+   "src": "CS-02 gothgirl.figure.json#approval.status",
+   "status": "SOURCE",
+   "note": "informational copy; the figure card is authoritative"
+  },
+  "renderStyle": {
+   "default": {
+    "v": "clay",
+    "src": "V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4",
+    "status": "GEORG"
+   },
+   "clayProfile": {
+    "v": "figure-fine",
+    "src": "CS-02 material.clayProfile (V-053/V-340)",
+    "status": "GEORG"
+   },
+   "alternatives": {
+    "v": [],
+    "src": "V-394 (other textures allowed only when listed here)",
+    "status": "GEORG",
+    "note": "texture variant A (gothgirl_texture.png) / B exist in the pack (CS-42), not approved as render alternatives"
+   }
+  },
+  "colours": {
+   "v": {
+    "lidSkin": "#f8d3be",
+    "bubbleTint": "#9a7cc4"
+   },
+   "src": "Lab figures-b2/catalog.json; Lab islands-npc.ts (CS-46)",
+   "status": "SOURCE"
+  },
+  "worldVariants": {
+   "v": null,
+   "status": "todo",
+   "note": "per-world costume variants proposed in CS-44 (kfb.character-card/1 'variants'), none authored"
+  }
+ },
+ "performance": {
+  "idle": {
+   "v": "Sit_Chair_Idle",
+   "src": "CS-20 body.defaultPose",
+   "status": "SOURCE"
+  },
+  "defaultPose": {
+   "v": "sits on the stool",
+   "src": "CS-25 profiles[goth-girl].source.sourceFacts",
+   "status": "SOURCE"
+  },
+  "preferredClips": {
+   "v": null,
+   "status": "todo"
+  },
+  "danceAuditions": {
+   "v": null,
+   "status": "todo",
+   "note": "GothGirl not in the CS-23 dance table"
+  },
+  "gait": {
+   "v": "Rig_Medium standard (gait_v157)",
+   "src": "CS-08 §2b",
+   "status": "SOURCE"
+  },
+  "presentationHints": {
+   "v": [
+    "gaze-hold",
+    "shorter-under-intensity",
+    "reaction-without-line-allowed"
+   ],
+   "src": "CS-25 profiles[goth-girl].chatterBoxAdapter.presentationHints; CS-08",
+   "status": "DESIGN"
+  },
+  "props": {
+   "v": [
+    "GothGirl_Stool",
+    "GothGirl_Speaker",
+    "GothGirl_MicStand",
+    "GothGirl_Microphone (handslot.r)"
+   ],
+   "src": "CS-20 body.props; CS-42; CS-02 performance.props",
+   "status": "SOURCE"
+  },
+  "kart": {
+   "v": null,
+   "status": "todo"
+  },
+  "lightByStoryMode": {
+   "table": {
+    "v": "LIGHT_MODEL_R2.md#B1 (Comic · Heroic · Tragic · Absurd · Mystical · Forbidden) + rule 11 warm character light, L-9",
+    "src": "CS-06 B1, rule 11; V-386, V-387",
+    "status": "GEORG"
+   },
+   "overrides": {
+    "v": null,
+    "status": "todo",
+    "note": "no per-character light preset found in any source; global table applies"
+   }
+  }
+ },
+ "voice": {
+  "engine": {
+   "v": "kokoro v1.0",
+   "src": "CS-03",
+   "status": "GEORG"
+  },
+  "spec": {
+   "v": "bf_emma",
+   "src": "CS-03; V-308; V-324",
+   "status": "GEORG"
+  },
+  "speed": {
+   "v": 0.95,
+   "src": "CS-03",
+   "status": "GEORG"
+  },
+  "lang": {
+   "v": "en-gb",
+   "src": "CS-03",
+   "status": "GEORG"
+  }
+ },
+ "provenance": [
+  "CS-02",
+  "CS-03",
+  "CS-06",
+  "CS-08",
+  "CS-11",
+  "CS-20",
+  "CS-21",
+  "CS-24",
+  "CS-25",
+  "CS-26",
+  "CS-34",
+  "CS-42",
+  "CS-46"
+ ],
+ "conflicts": [
+  "Pose: profile/lean card say seated on the stool with mic props; Lab islands-npc.ts has her standing (Idle_A/Interact) without props (CS-46).",
+  "Eyes: Lab runtime uses the original painted KayKit eyes; Lab baseline 09.10. and V-391 say never original eyes; figure card is candidate (NoEyes).",
+  "fluffOlectBias: 'MEDIUM_LOW' (CS-25) vs numeric 0.25 (CS-24) - same intent, two encodings.",
+  "Pack label: cast.js reference says 'Series 7 · Character 3' while register V-269 says KayKit Mystery Series 6."
+ ],
+ "todo": [
+  "background story / world knowledge",
+  "Georg OK for PREFILL clamp, failureLoop, fears",
+  "Georg review of the 4 signature triplets",
+  "signature deck + stance decision",
+  "opener place-scene policy (V-222)",
+  "dance auditions"
+ ]
+}

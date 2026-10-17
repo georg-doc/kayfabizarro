@@ -1,0 +1,481 @@
+{
+ "schema": "kfb.character/1",
+ "id": "orc_brute",
+ "status": "draft-r1",
+ "date": "2026-10-17",
+ "vRef": [
+  "V-394"
+ ],
+ "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo; src ids in CHARACTER_SOURCES.md",
+ "identity": {
+  "name": {
+   "v": "Orc Brute",
+   "src": "CS-02; CS-42",
+   "status": "SOURCE"
+  },
+  "displayName": {
+   "v": "Orc Brute · Kriegstrommel & Keule",
+   "src": "CS-42 display",
+   "status": "SOURCE"
+  },
+  "aliases": {
+   "v": [
+    "orc-brute",
+    "orcbrute",
+    "brute",
+    "Orc"
+   ],
+   "src": "CS-02; CS-42",
+   "status": "SOURCE"
+  },
+  "voiceInputMishearings": {
+   "v": null,
+   "status": "todo"
+  },
+  "tier": {
+   "v": "main · npc",
+   "src": "CS-03 tier; CS-02 role",
+   "status": "SOURCE"
+  },
+  "series": {
+   "v": [
+    "KFB Town / Resident Atlas"
+   ],
+   "src": "CS-42",
+   "status": "SOURCE"
+  }
+ },
+ "story": {
+  "background": {
+   "v": null,
+   "status": "todo",
+   "note": "no bio found"
+  },
+  "worldKnowledge": {
+   "v": null,
+   "status": "todo"
+  },
+  "inWorldRole": {
+   "v": "war Resident (noise and intimidation); drum camp / band / physical work",
+   "src": "CS-42 townRole; CS-21 §4 #21",
+   "status": "DESIGN"
+  },
+  "worldLogicRule": {
+   "v": "cosmic casting: the recurring Orc hurls himself into another hopeless battle on duty; off duty may be proud of his spectacular incompetence and share a beer",
+   "src": "CS-05 §R1.1 A/B, §R1.2 3",
+   "status": "DESIGN",
+   "note": "Georg creative refinement 15.10. as editorial lens; not authored canon"
+  },
+  "place": {
+   "v": "drum camp: war drum, planted banner, parked backpack",
+   "src": "CS-42 habitatIntent",
+   "status": "SOURCE"
+  },
+  "openQuestions": {
+   "v": [
+    "Is Orc Brute the 'Orc singer/bandleader' of the Orc Band (story recovery §4.2, Doomsday Clock card) - no file links the band to this model"
+   ],
+   "src": "CS-30 §4.2; Lab search",
+   "status": "SOURCE"
+  }
+ },
+ "personality": {
+  "archetype": {
+   "jungDrive": {
+    "v": "Everyperson + Rebel",
+    "src": "CS-21 §4 #21",
+    "status": "DESIGN"
+   },
+   "journeyFunction": {
+    "v": "Ally / Threshold",
+    "src": "CS-21 §4 #21",
+    "status": "DESIGN"
+   },
+   "frictionEngine": {
+    "v": "Direct bodily honesty; low patience for rhetorical decoration",
+    "src": "CS-21 §4 #21",
+    "status": "DESIGN"
+   }
+  },
+  "castRole": {
+   "v": "Resident (Large-tier)",
+   "src": "CS-42",
+   "status": "SOURCE"
+  },
+  "personalityType": {
+   "v": null,
+   "status": "todo"
+  },
+  "traits": {
+   "coreWant": {
+    "v": null,
+    "status": "todo"
+   },
+   "coreIrritation": {
+    "v": null,
+    "status": "todo"
+   },
+   "contradiction": {
+    "v": null,
+    "status": "todo"
+   },
+   "failureLoop": {
+    "v": null,
+    "status": "todo"
+   },
+   "fears": {
+    "v": null,
+    "status": "todo"
+   },
+   "hiddenGoal": {
+    "v": null,
+    "status": "todo"
+   },
+   "darkSecret": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "humour": {
+   "v": "brief, wry about taking another inevitable defeat seriously",
+   "src": "CS-05 §R1.2 3",
+   "status": "DESIGN"
+  },
+  "attitudeBaseline": {
+   "v": null,
+   "status": "todo"
+  },
+  "stateMachine": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "dialogue": {
+  "languageOwner": {
+   "v": "ChatterBox + shared Triplet pool",
+   "src": "CS-20",
+   "status": "SOURCE"
+  },
+  "signaturePool": {
+   "v": null,
+   "status": "todo"
+  },
+  "tripletVoice": {
+   "rules": {
+    "v": "Triplet = one spoken line per card; title + power term first, telegram fragments from card words only, opener from pool max once per set, intro 'Welcome to <Deck>.', outro 'Stay Fluffy!'",
+    "src": "CS-11; V-231…V-235, V-266, V-275",
+    "status": "GEORG"
+   },
+   "goldenLine": {
+    "v": "The Stag Hunt, Joint Effort: if I chase rabbit, we both lose.",
+    "src": "CS-03 (TRIPLET_SETS_R2/help_i_am_a_human #15)",
+    "status": "GEORG"
+   }
+  },
+  "openers": {
+   "placeScenePolicy": {
+    "v": null,
+    "status": "todo",
+    "note": "V-222: per figure either 'free stage fiction' or 'only places from the card' must be set in the figure profile; no value found"
+   },
+   "preferred": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "registers": {
+   "v": null,
+   "status": "todo"
+  },
+  "lexicon": {
+   "v": null,
+   "status": "todo"
+  },
+  "interjections": {
+   "v": null,
+   "status": "todo"
+  },
+  "catchphrases": {
+   "v": null,
+   "status": "todo"
+  },
+  "speechAvoid": {
+   "v": null,
+   "status": "todo"
+  },
+  "maxWordsPerLine": {
+   "v": null,
+   "status": "todo"
+  },
+  "knowledgePolicy": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "cards": {
+  "signatureDeck": {
+   "v": null,
+   "status": "todo"
+  },
+  "stance": {
+   "v": null,
+   "status": "todo"
+  },
+  "signatureCardRefs": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckLane": {
+   "v": "strength, loyalty, labor, noise, anti-pretension",
+   "src": "CS-21 §4 #21",
+   "status": "DESIGN"
+  },
+  "secondaryDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "performanceDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "worldviewTags": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckGoal": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "memory": {
+  "owner": {
+   "v": "KFB Town Resident Social Memory (CS-20) inside Lean Memory layers A–F",
+   "src": "CS-20 memory.owner; CS-26 §10",
+   "status": "SOURCE"
+  },
+  "valuesLiveIn": {
+   "v": [
+    "PLAYER_SAVE",
+    "NPC_MEMORY_VIEW",
+    "SOCIAL_RELATION",
+    "ENCOUNTER_RECEIPT",
+    "MOMENT_RECEIPT",
+    "CARD_COLLECTION_ENTRY",
+    "JOURNEY_ENTRY"
+   ],
+   "src": "CS-26 §11",
+   "status": "SOURCE"
+  },
+  "rememberable": {
+   "v": [
+    "EncounterReceipt refs",
+    "relation refs",
+    "salient MomentReceipts",
+    "unresolved threads",
+    "shared Card/song/world refs",
+    "canonical fact knowledge"
+   ],
+   "src": "CS-26 §10 C (NPC / SOCIAL MEMORY)",
+   "status": "SOURCE"
+  },
+  "beliefSources": {
+   "v": [
+    "signature-deck",
+    "heard-from",
+    "seen",
+    "guessed"
+   ],
+   "src": "CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A)",
+   "status": "DESIGN"
+  },
+  "rules": {
+   "v": [
+    "deck knowledge is authored knowledge, not Lean Memory; no receipt per card",
+    "song/gift/performance discoveries go through Lean Memory / Journey only, one idempotent acquisition per canonical id",
+    "generated summaries are caches; receipts and canonical facts stay authoritative"
+   ],
+   "src": "CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10",
+   "status": "SOURCE"
+  },
+  "relationships": {
+   "v": [
+    {
+     "with": "Orc Raider props",
+     "type": "same faction, two packs"
+    },
+    {
+     "with": "Black Knight, Demon Lord",
+     "type": "same Large size class"
+    },
+    {
+     "with": "toy soldier",
+     "type": "public skirmish then after-hours truce (scenic test concept F)",
+     "status": "DESIGN"
+    }
+   ],
+   "src": "CS-42 relationships; CS-05 §R1.1 F",
+   "status": "SOURCE"
+  },
+  "almanacHooks": {
+   "v": [
+    "BAND_SONG_COMPLETED: hearing the Orc Band's entire song unlocks the song (concept label)"
+   ],
+   "src": "CS-28 §2",
+   "status": "DESIGN",
+   "note": "Orc Band link to orc_brute unconfirmed"
+  }
+ },
+ "appearance": {
+  "figureRef": {
+   "v": "figures/orc_brute.figure.json",
+   "src": "CS-02",
+   "status": "SOURCE"
+  },
+  "figureStatus": {
+   "v": "candidate",
+   "src": "CS-02 orc_brute.figure.json#approval.status",
+   "status": "SOURCE",
+   "note": "informational copy; the figure card is authoritative"
+  },
+  "renderStyle": {
+   "default": {
+    "v": "clay",
+    "src": "V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4",
+    "status": "GEORG"
+   },
+   "clayProfile": {
+    "v": "figure-fine",
+    "src": "CS-02 material.clayProfile (V-053/V-340)",
+    "status": "GEORG"
+   },
+   "alternatives": {
+    "v": [],
+    "src": "V-394 (other textures allowed only when listed here)",
+    "status": "GEORG",
+    "note": "orcbrute_texture_A embedded; texture_B exists as variant (CS-42), not approved as render alternative"
+   }
+  },
+  "colours": {
+   "v": {
+    "lidSkin": "#82c061"
+   },
+   "src": "CS-42 eyesOf; Lab figures-b2/catalog.json",
+   "status": "SOURCE"
+  },
+  "worldVariants": {
+   "v": null,
+   "status": "todo",
+   "note": "per-world costume variants proposed in CS-44 (kfb.character-card/1 'variants'), none authored"
+  }
+ },
+ "performance": {
+  "idle": {
+   "v": "Idle_A (Rig_Large)",
+   "src": "CS-42 actor.pose",
+   "status": "SOURCE"
+  },
+  "defaultPose": {
+   "v": "stands with hanging arms, club right, drumstick left, drum in front",
+   "src": "CS-42 activity",
+   "status": "SOURCE"
+  },
+  "preferredClips": {
+   "v": [
+    "kfb_idle_orc_a (anger stance candidate, unreviewed)",
+    "Melee_Unarmed_Idle (L)"
+   ],
+   "src": "CS-07 §3b Wut",
+   "status": "DESIGN"
+  },
+  "danceAuditions": {
+   "v": [
+    "Orc Band leader 'orb.bounce' (Legacy rig, behavioural donor only)"
+   ],
+   "src": "CS-23",
+   "status": "DESIGN",
+   "note": "Legacy Orc, not Rig_Large: not a 1:1 clip"
+  },
+  "gait": {
+   "v": "Rig_Large: use the (L) clip variants",
+   "src": "CS-07; CHARACTER_SCHEMA rule 4",
+   "status": "SOURCE"
+  },
+  "presentationHints": {
+   "v": null,
+   "status": "todo"
+  },
+  "props": {
+   "v": [
+    "club",
+    "drumstick",
+    "war drum",
+    "banner",
+    "backpack (Orc Raider pack)"
+   ],
+   "src": "CS-42",
+   "status": "SOURCE"
+  },
+  "kart": {
+   "v": "bathtub kart R5 PASS, kartScale 1.04, fists on the rim",
+   "src": "V-320; CS-02",
+   "status": "GEORG"
+  },
+  "lightByStoryMode": {
+   "table": {
+    "v": "LIGHT_MODEL_R2.md#B1 (Comic · Heroic · Tragic · Absurd · Mystical · Forbidden) + rule 11 warm character light, L-9",
+    "src": "CS-06 B1, rule 11; V-386, V-387",
+    "status": "GEORG"
+   },
+   "overrides": {
+    "v": null,
+    "status": "todo",
+    "note": "no per-character light preset found in any source; global table applies"
+   }
+  }
+ },
+ "voice": {
+  "engine": {
+   "v": "kokoro v1.0",
+   "src": "CS-03",
+   "status": "GEORG"
+  },
+  "spec": {
+   "v": "am_fenrir50+bm_lewis50",
+   "src": "CS-03; V-324",
+   "status": "GEORG"
+  },
+  "speed": {
+   "v": 0.85,
+   "src": "CS-03",
+   "status": "GEORG"
+  },
+  "lang": {
+   "v": "en-us",
+   "src": "CS-03",
+   "status": "GEORG"
+  }
+ },
+ "provenance": [
+  "CS-02",
+  "CS-03",
+  "CS-05",
+  "CS-06",
+  "CS-07",
+  "CS-11",
+  "CS-21",
+  "CS-23",
+  "CS-28",
+  "CS-30",
+  "CS-42"
+ ],
+ "conflicts": [
+  "Orc Band leader (Legacy Orc B, orb.bounce) vs Orc Brute (Rig_Large): dance donor is a different actor family."
+ ],
+ "todo": [
+  "background / world knowledge",
+  "clamps (coreWant etc.)",
+  "signature deck + stance",
+  "decide whether Orc Brute is the Orc Band singer",
+  "dance moves on Rig_Large"
+ ]
+}
