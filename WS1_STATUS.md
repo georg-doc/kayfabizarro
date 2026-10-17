@@ -1,7 +1,31 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§72 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§73 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 73 · 17.10. · Langlauf: Slice 1 sichtbar (Gelände um Meshy-Bühnen, perf), look/mesa 25/25, Branch-Vorschau, Schwebe-Messung
+
+- **Branch `look/mesa`** @c3b888a+ (lokal; enthält fig/karten, speckle/modul, s1/weltboden): volle Reihe **25/25**. Vorschau `ws1/preview` @04166144 als Branch-Stand (build.json vermerkt das).
+- **Gelände um Meshy-Bühnen** (`modules/stageGround.js`):
+  - Knet-Boden auf Höhe des Bühnen-Rands, Sprenkel-Band Preset diorama↔ground nach Abstand zum Umriss (stitchFor/footprint bzw. footprintBase), Inseln ohne Gelände.
+  - Nahtfarbe nach V-396 (größter edgePalette-Anteil, ≤ +10 % L; `terrainStitch.groundColorOf` umgestellt, Unit-Test angepasst). Zonenboden = Boden-Rolle der Farbwelt.
+  - Bild `ws1/proofs/2026-10-17-look/gelaende_goblin.jpg`.
+- **Leistungsanzeige** (F1, Hash `perf`): p95/fps, Draw Calls, Dreiecke gegen das V-370-Budget (`world/perfBudget.js`); mit „Sauberes Bild“ ausblendbar.
+- **Schwebe-Messung** (`scripts/look/ground-gap.mjs`, Strahlenraster 120², Unterseite je Strahl; y in m relativ zum Bühnenboden y = 0):
+
+| Bühne | m/u | floorY_u | tiefster Punkt | 2-%-Quantil | Median Unterseite |
+|---|---|---|---|---|---|
+| goblin | 5 | -0.49 | -0.341 | -0.339 | -0.325 |
+| atlantis | 11 | -0.368 | -1.343 | -1.341 | -1.341 |
+| comic | 3.8 | -0.491 | -0.582 | -0.582 | -0.582 |
+| utopia | 5.5 | -0.405 | -0.434 | -0.424 | -0.424 |
+
+  Alle vier Slot-Dioramen reichen mit ihrer Unterseite unter den Bühnenboden (Sockel); das Gelände auf y = 0 trifft die Bühne an der Bodenkante, Schweben nicht messbar. Eine `groundY_u`-Korrektur ist für diese vier nicht nötig. Die übrigen 15 Bühnen (eigene Asset-Branches) misst WS1 beim Einbau.
+- **Noch offen in Slice 1:**
+  - Fluff im M1-Gelände (Bäume aus dem Forest Pack als Spawnpunkte; M1 gehört der Bewegungs-Sitzung) → nach M3 abgestimmt.
+  - interactable und Spielstand als Host-Dienste (Vertrag R1.3).
+  - Übergangssteine, sobald das Steinkit da ist.
+- **Georg:** Die Abnahme-Seite ist mit vier Fragen aktualisiert: Farbwelt, Sprenkel-Naht, Gelände, Merge.
 
 ## 72 · 17.10. · Langlauf: Figurenkarten (V-391) · Look-Slice (Farbwelt, Knet-Amphitheater, Sprenkel-Band V-403) · M1/M2 auf dem Licht-Modul
 
