@@ -1,3 +1,5 @@
+> **WSA ACK / V-389 implementation override · 2026-10-17:** Current user authorized the micro-proof in the EXISTING KFB Audio Site, no paid generation. It is implemented and privately deployed as Site source 0.7.2 / saved version 12, with real Mannequin_Medium (not ActionFigure), Walking_A/Running_A, three licensed donor banks and support-owned landing. 259 source/unit/evidence assertions PASS; 7 local interactive browser observations PASS; exact hosted visible check is BLOCKED_LOGIN, not HUMAN_ACCEPTED. Full current owner Return: [`tools/KFB-Audio-Site/RETURN.md`](../../../KFB-Audio-Site/RETURN.md). URL: https://kfb-audio.frizzlebob.chatgpt.site/#footsteps. This supersedes the historical research-only/no-runtime restriction below only for this bounded Audio Site slice. Both motor batches and paid clay pilot remain HOLD. No World/WB2/PR #348 writes. Next gate only: `GEORG_FOOTSTEP_MICRO_PROOF_REVIEW`.
+
 # V-378 R2 · Locomotion Footstep Pilot R1 · KFB Audio + Motion
 
 Date: **2026-10-17**. Mode: **BOUNDED DESIGN/RESEARCH SLICE ONLY; NO SOUND CREATED AND NO RUNTIME ADAPTER IMPLEMENTED**. All proposed schemas below are opt-in contracts, not new current KFB canon.
