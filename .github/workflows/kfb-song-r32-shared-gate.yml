@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
         with:
-          ref: f253bf4b5edb6ac8e2a702a284767fa0e844e7e3
+          ref: e7dc2e2c28434c7ec0204709770b9f13ea4f7eb2
           path: .kfb-register-readonly
       - name: R3.2 Shared song_gate.py
-        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/the_carnival_of_unsolved_problems_therapy/the_carnival_of_unsolved_problems_therapy.r4.2.suno.txt --deck registry/assets/v1/decks/the_carnival_of_unsolved_problems_therapy.json --songlines songs/the_carnival_of_unsolved_problems_therapy/the_carnival_of_unsolved_problems_therapy.songlines.json --media media/kfb/The_Carnival_of_Unsolved_Problems_-_THERAPY_-_ADD_web.pdf.json --cards 1-48 --tone the_carnival_of_unsolved_problems_therapy --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/the_carnival_of_unsolved_problems_therapy/the_carnival_of_unsolved_problems_therapy.r4.3.suno.txt --deck registry/assets/v1/decks/the_carnival_of_unsolved_problems_therapy.json --songlines songs/the_carnival_of_unsolved_problems_therapy/the_carnival_of_unsolved_problems_therapy.songlines.json --media media/kfb/The_Carnival_of_Unsolved_Problems_-_THERAPY_-_ADD_web.pdf.json --cards 1-48 --tone the_carnival_of_unsolved_problems_therapy --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
