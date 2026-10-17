@@ -121,3 +121,11 @@ See `tools/KFB-Audio-Site/RETURN.md` on Draft PR #413, branch `audio/kfb-racer-m
 ## 2026-10-18 · V-430 FOOTSTEPS R2 after Georg FAIL
 
 Existing Audio Site updated in place to version 13 / source 0.7.3; published source 6c2b672506f9df38bf3b448dc7e3b828a56a7380, deployment appgdep_6ad3f329c1308191944df353a65920fb succeeded and exact URL visibly checked. One-click controls, native Medium/Large walk/run, 4 disclosed processed CC0 banks, quiet/soft/variable steps, no heavy impacts. 340 source/unit/evidence assertions + 23 local / 8 hosted observations PASS; contact-to-scheduled source start max 11.156369 ms. Audible motion-region + HUD clip 15.933 s. Physical AV latency/sonic acceptance remains pending; not full-browser recording. Named Return: tools/KFB-Audio-Site/WSA_FOOTSTEPS_R2_RETURN.md. One next gate WS0_FOOTSTEPS_R2_REVIEW before Georg. No paid generation, World/Hub/router/Cloudflare config writes, merge or Live promotion.
+
+
+## 2026-10-18 · Footstep isolated correction + requested Cozy default
+
+- Same private Audio Site: saved version 14, source 0.7.4, managed commit d60685b70cd843a3ebe7d1f686ddcdcd5efc7c58; Chrome verified.
+- Existing 20 donors retained after Safari/Suno clarification; actual skinned-sole contact correction and softer default only.
+- 316 assertions; hosted Stop has zero sources/RMS; estimated AV max 8.941 ms, no human acoustic acceptance.
+- Current owner Return: tools/KFB-Audio-Site/WSA_FOOTSTEPS_CONTACT_RETURN.md. Next gate WS0 review; no Hub/router/World writes.

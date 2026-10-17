@@ -1,3 +1,9 @@
+# CURRENT OVERRIDE · ISOLATED CONTACT FIX + COZY · 2026-10-18
+
+Existing Site saved version 14 / visible source 0.7.4, authenticated Chrome verified. Softer Cozy default; donors retained after Safari/Suno clarification. 316 assertions PASS, estimated contact timing only; NOT HUMAN_ACCEPTED. Exact [current Return](WSA_FOOTSTEPS_CONTACT_RETURN.md). One next gate: WS0 review of current Cozy recording before Georg.
+
+---
+
 # CURRENT OVERRIDE · V-430 FOOTSTEPS R2 · 2026-10-18
 
 Georg rejected V-389 sonically and reported non-working controls. R2 repairs the same Audio Site: version 13 / source 0.7.3, visibly verified in authenticated Chrome. Exact R2 Return: [WSA_FOOTSTEPS_R2_RETURN.md](WSA_FOOTSTEPS_R2_RETURN.md). 340 source/unit/evidence assertions + 23 local and 8 hosted observations PASS; physical AV/sonic acceptance remains pending. One next gate: WS0_FOOTSTEPS_R2_REVIEW, before Georg. No paid generation, World/Hub/Cloudflare writes, merge or Live promotion.
