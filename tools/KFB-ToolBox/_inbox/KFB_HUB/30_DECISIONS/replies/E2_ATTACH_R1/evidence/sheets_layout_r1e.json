@@ -1,0 +1,8 @@
+{
+ "sheets": {
+  "sheet_{rest|half|closed}_r1e.png": "rows top->bottom: wie r4, 70, 80, 90; columns: front, threeq, side; each cell = proof canvas, Lord Hunky left | Lady Dory right",
+  "sheet_side_vs_E2_r1e.png": "rows top->bottom: wie r4, 70, 80, 90; columns: E2 reference side tile (E2_approved_closed_lid_skin.png, row 2 tile 1, Ruhe) | Lord Hunky side (rest, crop around eye) | Lady Dory side (rest, crop around eye)"
+ },
+ "views": "r1e_views_r1e/<Figure>_<r4|edge70|edge80|edge90>_<rest|half|closed>_<front|threeq|side>_r1e.png, one figure per image, proof_r1e.html camera (same framing as R1/R1c), labels hidden",
+ "render": "headless Chromium (playwright, ANGLE/Metal), proof_r1e.html: clay-material v8 profile figure, hemisphere + front key, no shadow maps; DSF 2"
+}

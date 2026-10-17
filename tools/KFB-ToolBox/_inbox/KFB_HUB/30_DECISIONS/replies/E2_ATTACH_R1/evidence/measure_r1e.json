@@ -1,0 +1,1781 @@
+{
+ "r4": {
+  "hunky": [
+   {
+    "Rh_page": 0.107751,
+    "Rw_glb": 0.107748,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 58.0,
+    "shellR_R": 1.10003,
+    "fit_s": 0.97337,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 0.9202,
+       "pxWith": 37176,
+       "pxWithout": 40400
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.9387,
+       "pxWith": 36600,
+       "pxWithout": 38992
+      },
+      "lid_half": {
+       "visibleFrac": 0.5487,
+       "pxWith": 14676,
+       "pxWithout": 26748
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.6982,
+       "pxWith": 26782,
+       "pxWithout": 38360
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.7289,
+       "pxWith": 26532,
+       "pxWithout": 36398
+      },
+      "lid_half": {
+       "visibleFrac": 0.3922,
+       "pxWith": 11352,
+       "pxWithout": 28944
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.1397,
+       "pxWith": 2986,
+       "pxWithout": 21370
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.1564,
+       "pxWith": 2986,
+       "pxWithout": 19097
+      },
+      "lid_half": {
+       "visibleFrac": 0.0324,
+       "pxWith": 1338,
+       "pxWithout": 41346
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 7460,
+     "left40": 4926,
+     "right40": 4926,
+     "up30": 5960,
+     "down30": 5960,
+     "side75": 988,
+     "top": 342,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 0,
+      "rimDepthIntoSkin_R": 0.0,
+      "skinInsideRim_thetaDeg": null
+     },
+     "rest": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 251,
+      "rimDepthIntoSkin_R": 0.0579,
+      "skinInsideRim_thetaDeg": [
+       55.6,
+       61.8
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 338,
+      "rimDepthIntoSkin_R": 0.0682,
+      "skinInsideRim_thetaDeg": [
+       54.2,
+       61.8
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.0941,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 358,
+      "rimDepthIntoSkin_R": 0.0683,
+      "skinInsideRim_thetaDeg": [
+       54.2,
+       61.7
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.9734,
+     "gapScleraToShell_R": 0.1267,
+     "gapScleraToRimInner_R": 0.0517,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 0,
+     "loftMaxDepthInRim_R": 0,
+     "headMeshVertsInsideRimTube": 0,
+     "minDistLoftToRimTubeSurface_R": 0.4852,
+     "minDistHeadToRimTubeSurface_R": null,
+     "loftVertsOutsideShellRadius_frontOfEdge": 0,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 0
+    }
+   },
+   {
+    "Rh_page": 0.107751,
+    "Rw_glb": 0.107748,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 58.0,
+    "shellR_R": 1.10003,
+    "fit_s": 0.97337,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 0.9202,
+       "pxWith": 37176,
+       "pxWithout": 40400
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.9387,
+       "pxWith": 36600,
+       "pxWithout": 38992
+      },
+      "lid_half": {
+       "visibleFrac": 0.5487,
+       "pxWith": 14676,
+       "pxWithout": 26748
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.6982,
+       "pxWith": 26782,
+       "pxWithout": 38360
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.7289,
+       "pxWith": 26532,
+       "pxWithout": 36398
+      },
+      "lid_half": {
+       "visibleFrac": 0.3922,
+       "pxWith": 11352,
+       "pxWithout": 28944
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.1397,
+       "pxWith": 2986,
+       "pxWithout": 21370
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.1563,
+       "pxWith": 2986,
+       "pxWithout": 19099
+      },
+      "lid_half": {
+       "visibleFrac": 0.0324,
+       "pxWith": 1338,
+       "pxWithout": 41346
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 7460,
+     "left40": 4926,
+     "right40": 4926,
+     "up30": 5960,
+     "down30": 5960,
+     "side75": 988,
+     "top": 342,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 0,
+      "rimDepthIntoSkin_R": 0.0,
+      "skinInsideRim_thetaDeg": null
+     },
+     "rest": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 251,
+      "rimDepthIntoSkin_R": 0.0579,
+      "skinInsideRim_thetaDeg": [
+       55.6,
+       61.8
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 338,
+      "rimDepthIntoSkin_R": 0.0682,
+      "skinInsideRim_thetaDeg": [
+       54.2,
+       61.8
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.0941,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 358,
+      "rimDepthIntoSkin_R": 0.0683,
+      "skinInsideRim_thetaDeg": [
+       54.2,
+       61.7
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.9734,
+     "gapScleraToShell_R": 0.1267,
+     "gapScleraToRimInner_R": 0.0517,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 0,
+     "loftMaxDepthInRim_R": 0,
+     "headMeshVertsInsideRimTube": 0,
+     "minDistLoftToRimTubeSurface_R": 0.4852,
+     "minDistHeadToRimTubeSurface_R": null,
+     "loftVertsOutsideShellRadius_frontOfEdge": 0,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 0
+    }
+   }
+  ],
+  "dory": [
+   {
+    "Rh_page": 0.142509,
+    "Rw_glb": 0.142506,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 58.0,
+    "shellR_R": 1.01394,
+    "fit_s": 0.89676,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 0.9001,
+       "pxWith": 30733,
+       "pxWithout": 34144
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.9233,
+       "pxWith": 30379,
+       "pxWithout": 32903
+      },
+      "lid_half": {
+       "visibleFrac": 0.529,
+       "pxWith": 12084,
+       "pxWithout": 22844
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.6797,
+       "pxWith": 21985,
+       "pxWithout": 32346
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.7109,
+       "pxWith": 21806,
+       "pxWithout": 30673
+      },
+      "lid_half": {
+       "visibleFrac": 0.3741,
+       "pxWith": 9234,
+       "pxWithout": 24684
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.1275,
+       "pxWith": 2298,
+       "pxWithout": 18026
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.1426,
+       "pxWith": 2298,
+       "pxWithout": 16111
+      },
+      "lid_half": {
+       "visibleFrac": 0.0287,
+       "pxWith": 1006,
+       "pxWithout": 35017
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 6172,
+     "left40": 4138,
+     "right40": 4138,
+     "up30": 4964,
+     "down30": 4964,
+     "side75": 874,
+     "top": 312,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 0,
+      "rimDepthIntoSkin_R": 0.0,
+      "skinInsideRim_thetaDeg": null
+     },
+     "rest": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 276,
+      "rimDepthIntoSkin_R": 0.0587,
+      "skinInsideRim_thetaDeg": [
+       55.6,
+       62.2
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 358,
+      "rimDepthIntoSkin_R": 0.0677,
+      "skinInsideRim_thetaDeg": [
+       53.8,
+       62.2
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 388,
+      "rimDepthIntoSkin_R": 0.0665,
+      "skinInsideRim_thetaDeg": [
+       53.9,
+       62.2
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.8968,
+     "gapScleraToShell_R": 0.1172,
+     "gapScleraToRimInner_R": 0.0422,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 0,
+     "loftMaxDepthInRim_R": 0,
+     "headMeshVertsInsideRimTube": 0,
+     "minDistLoftToRimTubeSurface_R": 0.0668,
+     "minDistHeadToRimTubeSurface_R": 0.2778,
+     "loftVertsOutsideShellRadius_frontOfEdge": 0,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 0
+    }
+   }
+  ]
+ },
+ "70": {
+  "hunky": [
+   {
+    "Rh_page": 0.107751,
+    "Rw_glb": 0.107748,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 70.051,
+    "shellR_R": 1.10003,
+    "fit_s": 0.97337,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 1,
+       "pxWith": 40400,
+       "pxWithout": 40400
+      },
+      "eyeball_rest": {
+       "visibleFrac": 1,
+       "pxWith": 38992,
+       "pxWithout": 38992
+      },
+      "lid_half": {
+       "visibleFrac": 0.8192,
+       "pxWith": 21912,
+       "pxWithout": 26748
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.8543,
+       "pxWith": 32772,
+       "pxWithout": 38360
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.8713,
+       "pxWith": 31713,
+       "pxWithout": 36398
+      },
+      "lid_half": {
+       "visibleFrac": 0.5939,
+       "pxWith": 17189,
+       "pxWithout": 28944
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.3594,
+       "pxWith": 7680,
+       "pxWithout": 21370
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.4013,
+       "pxWith": 7663,
+       "pxWithout": 19097
+      },
+      "lid_half": {
+       "visibleFrac": 0.1053,
+       "pxWith": 4354,
+       "pxWithout": 41346
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 7460,
+     "left40": 4926,
+     "right40": 4926,
+     "up30": 5960,
+     "down30": 5960,
+     "side75": 988,
+     "top": 342,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 404,
+      "rimDepthIntoSkin_R": 0.0646,
+      "skinInsideRim_thetaDeg": [
+       66.4,
+       73.7
+      ]
+     },
+     "rest": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 384,
+      "rimDepthIntoSkin_R": 0.0686,
+      "skinInsideRim_thetaDeg": [
+       66.2,
+       73.9
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 372,
+      "rimDepthIntoSkin_R": 0.0654,
+      "skinInsideRim_thetaDeg": [
+       66.3,
+       73.7
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.0941,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 440,
+      "rimDepthIntoSkin_R": 0.0679,
+      "skinInsideRim_thetaDeg": [
+       66.4,
+       73.8
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.9734,
+     "gapScleraToShell_R": 0.1267,
+     "gapScleraToRimInner_R": 0.0517,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 0,
+     "loftMaxDepthInRim_R": 0,
+     "headMeshVertsInsideRimTube": 0,
+     "minDistLoftToRimTubeSurface_R": 0.3251,
+     "minDistHeadToRimTubeSurface_R": null,
+     "loftVertsOutsideShellRadius_frontOfEdge": 0,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 0
+    }
+   },
+   {
+    "Rh_page": 0.107751,
+    "Rw_glb": 0.107748,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 70.051,
+    "shellR_R": 1.10003,
+    "fit_s": 0.97337,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 1,
+       "pxWith": 40400,
+       "pxWithout": 40400
+      },
+      "eyeball_rest": {
+       "visibleFrac": 1,
+       "pxWith": 38992,
+       "pxWithout": 38992
+      },
+      "lid_half": {
+       "visibleFrac": 0.8192,
+       "pxWith": 21912,
+       "pxWithout": 26748
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.8543,
+       "pxWith": 32772,
+       "pxWithout": 38360
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.8713,
+       "pxWith": 31713,
+       "pxWithout": 36398
+      },
+      "lid_half": {
+       "visibleFrac": 0.5939,
+       "pxWith": 17190,
+       "pxWithout": 28944
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.3594,
+       "pxWith": 7680,
+       "pxWithout": 21370
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.4012,
+       "pxWith": 7663,
+       "pxWithout": 19099
+      },
+      "lid_half": {
+       "visibleFrac": 0.1053,
+       "pxWith": 4354,
+       "pxWithout": 41346
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 7460,
+     "left40": 4926,
+     "right40": 4926,
+     "up30": 5960,
+     "down30": 5960,
+     "side75": 988,
+     "top": 342,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 404,
+      "rimDepthIntoSkin_R": 0.0646,
+      "skinInsideRim_thetaDeg": [
+       66.4,
+       73.7
+      ]
+     },
+     "rest": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 384,
+      "rimDepthIntoSkin_R": 0.0686,
+      "skinInsideRim_thetaDeg": [
+       66.2,
+       73.9
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 372,
+      "rimDepthIntoSkin_R": 0.0654,
+      "skinInsideRim_thetaDeg": [
+       66.3,
+       73.7
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.0941,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 440,
+      "rimDepthIntoSkin_R": 0.0679,
+      "skinInsideRim_thetaDeg": [
+       66.4,
+       73.8
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.9734,
+     "gapScleraToShell_R": 0.1267,
+     "gapScleraToRimInner_R": 0.0517,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 0,
+     "loftMaxDepthInRim_R": 0,
+     "headMeshVertsInsideRimTube": 0,
+     "minDistLoftToRimTubeSurface_R": 0.3251,
+     "minDistHeadToRimTubeSurface_R": null,
+     "loftVertsOutsideShellRadius_frontOfEdge": 0,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 0
+    }
+   }
+  ],
+  "dory": [
+   {
+    "Rh_page": 0.142509,
+    "Rw_glb": 0.142506,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 70.055,
+    "shellR_R": 1.01394,
+    "fit_s": 0.89676,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 0.9961,
+       "pxWith": 34010,
+       "pxWithout": 34144
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.9998,
+       "pxWith": 32898,
+       "pxWithout": 32903
+      },
+      "lid_half": {
+       "visibleFrac": 0.7971,
+       "pxWith": 18209,
+       "pxWithout": 22844
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.8363,
+       "pxWith": 27051,
+       "pxWithout": 32346
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.8579,
+       "pxWith": 26313,
+       "pxWithout": 30673
+      },
+      "lid_half": {
+       "visibleFrac": 0.5739,
+       "pxWith": 14166,
+       "pxWithout": 24684
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.3404,
+       "pxWith": 6136,
+       "pxWithout": 18026
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.3805,
+       "pxWith": 6130,
+       "pxWithout": 16111
+      },
+      "lid_half": {
+       "visibleFrac": 0.098,
+       "pxWith": 3430,
+       "pxWithout": 35017
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 6172,
+     "left40": 4138,
+     "right40": 4138,
+     "up30": 4964,
+     "down30": 4964,
+     "side75": 874,
+     "top": 312,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 460,
+      "rimDepthIntoSkin_R": 0.0648,
+      "skinInsideRim_thetaDeg": [
+       66.0,
+       74.2
+      ]
+     },
+     "rest": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 428,
+      "rimDepthIntoSkin_R": 0.0687,
+      "skinInsideRim_thetaDeg": [
+       65.9,
+       74.2
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 408,
+      "rimDepthIntoSkin_R": 0.0689,
+      "skinInsideRim_thetaDeg": [
+       65.9,
+       74.3
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 506,
+      "rimDepthIntoSkin_R": 0.0671,
+      "skinInsideRim_thetaDeg": [
+       65.9,
+       74.2
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.8968,
+     "gapScleraToShell_R": 0.1172,
+     "gapScleraToRimInner_R": 0.0422,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 168,
+     "loftMaxDepthInRim_R": 0.063,
+     "headMeshVertsInsideRimTube": 0,
+     "minDistLoftToRimTubeSurface_R": -0.063,
+     "minDistHeadToRimTubeSurface_R": 0.1057,
+     "loftVertsOutsideShellRadius_frontOfEdge": 3,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 0
+    }
+   }
+  ]
+ },
+ "80": {
+  "hunky": [
+   {
+    "Rh_page": 0.107751,
+    "Rw_glb": 0.107748,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 80.087,
+    "shellR_R": 1.10003,
+    "fit_s": 0.97337,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 1,
+       "pxWith": 40400,
+       "pxWithout": 40400
+      },
+      "eyeball_rest": {
+       "visibleFrac": 1,
+       "pxWith": 38992,
+       "pxWithout": 38992
+      },
+      "lid_half": {
+       "visibleFrac": 0.9539,
+       "pxWith": 25516,
+       "pxWithout": 26748
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.9368,
+       "pxWith": 35936,
+       "pxWithout": 38360
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.9462,
+       "pxWith": 34441,
+       "pxWithout": 36398
+      },
+      "lid_half": {
+       "visibleFrac": 0.7426,
+       "pxWith": 21493,
+       "pxWithout": 28944
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.5878,
+       "pxWith": 12562,
+       "pxWithout": 21370
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.6305,
+       "pxWith": 12041,
+       "pxWithout": 19097
+      },
+      "lid_half": {
+       "visibleFrac": 0.1999,
+       "pxWith": 8264,
+       "pxWithout": 41346
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 7460,
+     "left40": 4926,
+     "right40": 4926,
+     "up30": 5960,
+     "down30": 5960,
+     "side75": 988,
+     "top": 342,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 448,
+      "rimDepthIntoSkin_R": 0.0674,
+      "skinInsideRim_thetaDeg": [
+       76.3,
+       83.9
+      ]
+     },
+     "rest": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 434,
+      "rimDepthIntoSkin_R": 0.0683,
+      "skinInsideRim_thetaDeg": [
+       76.3,
+       83.9
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 480,
+      "rimDepthIntoSkin_R": 0.0687,
+      "skinInsideRim_thetaDeg": [
+       76.5,
+       83.9
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.0941,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 1026,
+      "rimDepthIntoSkin_R": 0.0681,
+      "skinInsideRim_thetaDeg": [
+       76.3,
+       83.9
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.9734,
+     "gapScleraToShell_R": 0.1267,
+     "gapScleraToRimInner_R": 0.0517,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 0,
+     "loftMaxDepthInRim_R": 0,
+     "headMeshVertsInsideRimTube": 0,
+     "minDistLoftToRimTubeSurface_R": 0.2056,
+     "minDistHeadToRimTubeSurface_R": null,
+     "loftVertsOutsideShellRadius_frontOfEdge": 0,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 0
+    }
+   },
+   {
+    "Rh_page": 0.107751,
+    "Rw_glb": 0.107748,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 80.087,
+    "shellR_R": 1.10003,
+    "fit_s": 0.97337,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 1,
+       "pxWith": 40400,
+       "pxWithout": 40400
+      },
+      "eyeball_rest": {
+       "visibleFrac": 1,
+       "pxWith": 38992,
+       "pxWithout": 38992
+      },
+      "lid_half": {
+       "visibleFrac": 0.9539,
+       "pxWith": 25516,
+       "pxWithout": 26748
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.9368,
+       "pxWith": 35936,
+       "pxWithout": 38360
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.9462,
+       "pxWith": 34441,
+       "pxWithout": 36398
+      },
+      "lid_half": {
+       "visibleFrac": 0.7426,
+       "pxWith": 21493,
+       "pxWithout": 28944
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.5878,
+       "pxWith": 12562,
+       "pxWithout": 21370
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.6305,
+       "pxWith": 12041,
+       "pxWithout": 19099
+      },
+      "lid_half": {
+       "visibleFrac": 0.1999,
+       "pxWith": 8264,
+       "pxWithout": 41346
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 7460,
+     "left40": 4926,
+     "right40": 4926,
+     "up30": 5960,
+     "down30": 5960,
+     "side75": 988,
+     "top": 342,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 448,
+      "rimDepthIntoSkin_R": 0.0674,
+      "skinInsideRim_thetaDeg": [
+       76.3,
+       83.9
+      ]
+     },
+     "rest": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 434,
+      "rimDepthIntoSkin_R": 0.0683,
+      "skinInsideRim_thetaDeg": [
+       76.3,
+       83.9
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 480,
+      "rimDepthIntoSkin_R": 0.0687,
+      "skinInsideRim_thetaDeg": [
+       76.5,
+       83.9
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.0941,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 1026,
+      "rimDepthIntoSkin_R": 0.0681,
+      "skinInsideRim_thetaDeg": [
+       76.3,
+       83.9
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.9734,
+     "gapScleraToShell_R": 0.1267,
+     "gapScleraToRimInner_R": 0.0517,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 0,
+     "loftMaxDepthInRim_R": 0,
+     "headMeshVertsInsideRimTube": 0,
+     "minDistLoftToRimTubeSurface_R": 0.2056,
+     "minDistHeadToRimTubeSurface_R": null,
+     "loftVertsOutsideShellRadius_frontOfEdge": 0,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 0
+    }
+   }
+  ],
+  "dory": [
+   {
+    "Rh_page": 0.142509,
+    "Rw_glb": 0.142506,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 80.095,
+    "shellR_R": 1.01394,
+    "fit_s": 0.89676,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 0.9961,
+       "pxWith": 34010,
+       "pxWithout": 34144
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.9998,
+       "pxWith": 32898,
+       "pxWithout": 32903
+      },
+      "lid_half": {
+       "visibleFrac": 0.9374,
+       "pxWith": 21413,
+       "pxWithout": 22844
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.9231,
+       "pxWith": 29857,
+       "pxWithout": 32346
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.937,
+       "pxWith": 28742,
+       "pxWithout": 30673
+      },
+      "lid_half": {
+       "visibleFrac": 0.717,
+       "pxWith": 17698,
+       "pxWithout": 24684
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.5641,
+       "pxWith": 10169,
+       "pxWithout": 18026
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.608,
+       "pxWith": 9795,
+       "pxWithout": 16111
+      },
+      "lid_half": {
+       "visibleFrac": 0.1883,
+       "pxWith": 6595,
+       "pxWithout": 35017
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 6172,
+     "left40": 4138,
+     "right40": 4138,
+     "up30": 4964,
+     "down30": 4964,
+     "side75": 874,
+     "top": 312,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 484,
+      "rimDepthIntoSkin_R": 0.0689,
+      "skinInsideRim_thetaDeg": [
+       75.9,
+       84.3
+      ]
+     },
+     "rest": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 481,
+      "rimDepthIntoSkin_R": 0.0683,
+      "skinInsideRim_thetaDeg": [
+       75.9,
+       84.3
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 512,
+      "rimDepthIntoSkin_R": 0.0676,
+      "skinInsideRim_thetaDeg": [
+       76.0,
+       84.3
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 1098,
+      "rimDepthIntoSkin_R": 0.0688,
+      "skinInsideRim_thetaDeg": [
+       75.9,
+       84.2
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.8968,
+     "gapScleraToShell_R": 0.1172,
+     "gapScleraToRimInner_R": 0.0422,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 126,
+     "loftMaxDepthInRim_R": 0.0664,
+     "headMeshVertsInsideRimTube": 0,
+     "minDistLoftToRimTubeSurface_R": -0.0664,
+     "minDistHeadToRimTubeSurface_R": 0.0321,
+     "loftVertsOutsideShellRadius_frontOfEdge": 271,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 3
+    }
+   }
+  ]
+ },
+ "90": {
+  "hunky": [
+   {
+    "Rh_page": 0.107751,
+    "Rw_glb": 0.107748,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 90.122,
+    "shellR_R": 1.10003,
+    "fit_s": 0.97337,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 1,
+       "pxWith": 40400,
+       "pxWithout": 40400
+      },
+      "eyeball_rest": {
+       "visibleFrac": 1,
+       "pxWith": 38992,
+       "pxWithout": 38992
+      },
+      "lid_half": {
+       "visibleFrac": 0.9853,
+       "pxWith": 26354,
+       "pxWithout": 26748
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.9833,
+       "pxWith": 37718,
+       "pxWithout": 38360
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.9874,
+       "pxWith": 35938,
+       "pxWithout": 36398
+      },
+      "lid_half": {
+       "visibleFrac": 0.8637,
+       "pxWith": 24998,
+       "pxWithout": 28944
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.7892,
+       "pxWith": 16866,
+       "pxWithout": 21370
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.8237,
+       "pxWith": 15730,
+       "pxWithout": 19097
+      },
+      "lid_half": {
+       "visibleFrac": 0.3227,
+       "pxWith": 13344,
+       "pxWithout": 41346
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 7460,
+     "left40": 4926,
+     "right40": 4926,
+     "up30": 5960,
+     "down30": 5960,
+     "side75": 988,
+     "top": 342,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 526,
+      "rimDepthIntoSkin_R": 0.0666,
+      "skinInsideRim_thetaDeg": [
+       86.5,
+       93.9
+      ]
+     },
+     "rest": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 542,
+      "rimDepthIntoSkin_R": 0.0689,
+      "skinInsideRim_thetaDeg": [
+       86.2,
+       94.0
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 974,
+      "rimDepthIntoSkin_R": 0.069,
+      "skinInsideRim_thetaDeg": [
+       86.3,
+       94.0
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.0941,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.006,
+      "skinInsideRimTube_verts": 452,
+      "rimDepthIntoSkin_R": 0.0685,
+      "skinInsideRim_thetaDeg": [
+       86.4,
+       93.8
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.9734,
+     "gapScleraToShell_R": 0.1267,
+     "gapScleraToRimInner_R": 0.0517,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 0,
+     "loftMaxDepthInRim_R": 0,
+     "headMeshVertsInsideRimTube": 0,
+     "minDistLoftToRimTubeSurface_R": 0.1103,
+     "minDistHeadToRimTubeSurface_R": null,
+     "loftVertsOutsideShellRadius_frontOfEdge": 0,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 0
+    }
+   },
+   {
+    "Rh_page": 0.107751,
+    "Rw_glb": 0.107748,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 90.122,
+    "shellR_R": 1.10003,
+    "fit_s": 0.97337,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 1,
+       "pxWith": 40400,
+       "pxWithout": 40400
+      },
+      "eyeball_rest": {
+       "visibleFrac": 1,
+       "pxWith": 38992,
+       "pxWithout": 38992
+      },
+      "lid_half": {
+       "visibleFrac": 0.9853,
+       "pxWith": 26354,
+       "pxWithout": 26748
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.9833,
+       "pxWith": 37718,
+       "pxWithout": 38360
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.9874,
+       "pxWith": 35938,
+       "pxWithout": 36398
+      },
+      "lid_half": {
+       "visibleFrac": 0.8637,
+       "pxWith": 24998,
+       "pxWithout": 28944
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.7892,
+       "pxWith": 16866,
+       "pxWithout": 21370
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.8236,
+       "pxWith": 15730,
+       "pxWithout": 19099
+      },
+      "lid_half": {
+       "visibleFrac": 0.3227,
+       "pxWith": 13344,
+       "pxWithout": 41346
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 7460,
+     "left40": 4926,
+     "right40": 4926,
+     "up30": 5960,
+     "down30": 5960,
+     "side75": 988,
+     "top": 342,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 526,
+      "rimDepthIntoSkin_R": 0.0666,
+      "skinInsideRim_thetaDeg": [
+       86.5,
+       93.9
+      ]
+     },
+     "rest": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 540,
+      "rimDepthIntoSkin_R": 0.0688,
+      "skinInsideRim_thetaDeg": [
+       86.2,
+       94.0
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.0942,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 974,
+      "rimDepthIntoSkin_R": 0.069,
+      "skinInsideRim_thetaDeg": [
+       86.3,
+       94.0
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.0941,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.006,
+      "skinInsideRimTube_verts": 452,
+      "rimDepthIntoSkin_R": 0.0685,
+      "skinInsideRim_thetaDeg": [
+       86.4,
+       93.8
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.9734,
+     "gapScleraToShell_R": 0.1267,
+     "gapScleraToRimInner_R": 0.0517,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 0,
+     "loftMaxDepthInRim_R": 0,
+     "headMeshVertsInsideRimTube": 0,
+     "minDistLoftToRimTubeSurface_R": 0.1103,
+     "minDistHeadToRimTubeSurface_R": null,
+     "loftVertsOutsideShellRadius_frontOfEdge": 0,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 0
+    }
+   }
+  ],
+  "dory": [
+   {
+    "Rh_page": 0.142509,
+    "Rw_glb": 0.142506,
+    "quatW": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "edgeDeg_measured": 90.132,
+    "shellR_R": 1.01394,
+    "fit_s": 0.89676,
+    "visible": {
+     "front": {
+      "eyeball_open": {
+       "visibleFrac": 0.9961,
+       "pxWith": 34010,
+       "pxWithout": 34144
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.9998,
+       "pxWith": 32898,
+       "pxWithout": 32903
+      },
+      "lid_half": {
+       "visibleFrac": 0.9753,
+       "pxWith": 22279,
+       "pxWithout": 22844
+      }
+     },
+     "threeq": {
+      "eyeball_open": {
+       "visibleFrac": 0.9738,
+       "pxWith": 31499,
+       "pxWithout": 32346
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.9826,
+       "pxWith": 30139,
+       "pxWithout": 30673
+      },
+      "lid_half": {
+       "visibleFrac": 0.8317,
+       "pxWith": 20530,
+       "pxWithout": 24684
+      }
+     },
+     "side": {
+      "eyeball_open": {
+       "visibleFrac": 0.7689,
+       "pxWith": 13861,
+       "pxWithout": 18026
+      },
+      "eyeball_rest": {
+       "visibleFrac": 0.8055,
+       "pxWith": 12978,
+       "pxWithout": 16111
+      },
+      "lid_half": {
+       "visibleFrac": 0.3023,
+       "pxWith": 10586,
+       "pxWithout": 35017
+      }
+     }
+    },
+    "pupilPxClosed": {
+     "front": 0,
+     "left40": 0,
+     "right40": 0,
+     "up30": 0,
+     "down30": 0,
+     "side75": 0,
+     "top": 0,
+     "back": 0
+    },
+    "pupilPxRest": {
+     "front": 6172,
+     "left40": 4138,
+     "right40": 4138,
+     "up30": 4964,
+     "down30": 4964,
+     "side75": 874,
+     "top": 312,
+     "back": 0
+    },
+    "skin": {
+     "open": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 568,
+      "rimDepthIntoSkin_R": 0.0679,
+      "skinInsideRim_thetaDeg": [
+       85.9,
+       94.3
+      ]
+     },
+     "rest": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 592,
+      "rimDepthIntoSkin_R": 0.0688,
+      "skinInsideRim_thetaDeg": [
+       85.9,
+       94.3
+      ]
+     },
+     "half": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.0059,
+      "skinInsideRimTube_verts": 1007,
+      "rimDepthIntoSkin_R": 0.0678,
+      "skinInsideRim_thetaDeg": [
+       86.0,
+       94.3
+      ]
+     },
+     "closed": {
+      "skinOuterMax_R": 1.008,
+      "skinThroughShell_verts": 0,
+      "skinMaxOverShell_R": -0.006,
+      "skinInsideRimTube_verts": 495,
+      "rimDepthIntoSkin_R": 0.069,
+      "skinInsideRim_thetaDeg": [
+       85.9,
+       94.3
+      ]
+     }
+    },
+    "eyeball": {
+     "scleraR_R": 0.8968,
+     "gapScleraToShell_R": 0.1172,
+     "gapScleraToRimInner_R": 0.0422,
+     "crossesShellOrRim": false
+    },
+    "stalk": {
+     "loftVertsInsideRimTube": 117,
+     "loftMaxDepthInRim_R": 0.0639,
+     "headMeshVertsInsideRimTube": 10,
+     "minDistLoftToRimTubeSurface_R": -0.0639,
+     "minDistHeadToRimTubeSurface_R": -0.0265,
+     "loftVertsOutsideShellRadius_frontOfEdge": 388,
+     "loftVertsBetweenSkinAndShellRadius_frontOfEdge": 12
+    }
+   }
+  ]
+ }
+}

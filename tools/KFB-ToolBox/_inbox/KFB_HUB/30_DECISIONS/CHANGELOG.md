@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- E2 R1e (Blender): Sockel unverändert (Kugel, Randprofil identisch), nur Öffnungskante von ~54° auf 70°/80°/90° zurückgenommen; seitlich sichtbarer Augapfel 14 % → 38/61/81 %; Dory 80°/90°: Rand trifft ihren Stielansatz (FAIL im Selbstcheck). R1c/R1d (starre Verschiebung, Winkel-Verbiegung im Browser) verworfen. Proof proof_r1e.html, wartet auf Georg.
 - V-421: Landmark-Kandidaten R1 an WSA (Web-Chat, 3D-Asset-Suche, TOP 10 je Deck, Auswahl in der Asset Library, Hub b96).
 - E2 R1c fertig (Sockel unverändert, nur zurückgezogen, Stufen 0–0,40 R; ab 0,10 R tritt die Lidhaut seitlich durch die Schale) – Georg wählt.
 - SONG_SPEC R3.2: A5-Quote ohne A7-Zahlen-Ausschreibungen (WSA meldete Widerspruch bei 9/11), song_gate.py entsprechend; Hub b94 ergänzt.
