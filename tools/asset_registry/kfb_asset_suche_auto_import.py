@@ -204,6 +204,53 @@ def prepare_one(source: dict, tmp_root: Path, relative_root: Path, downloader=do
     return {"sourceId":source["id"], "directory":dest.as_posix(), "files":len(contents), "bytes":sum(x["bytes"] for x in contents)}
 
 
+def validate_existing(source: dict, repo: Path) -> dict:
+    """Idempotent only for byte-identical, already verified source imports; never overwrite."""
+    directory = BASE / source["landmarkId"] / source["id"]
+    target = repo / directory
+    manifest_file = target / "SOURCE.json"
+    if not manifest_file.is_file() or not (target / "CREDITS.md").is_file():
+        raise IntakeError(f"Existing source folder is incomplete: {source['id']}")
+    meta = json.loads(manifest_file.read_text(encoding="utf-8"))
+    expected = {
+        "downloadSHA256": source["archiveSha256"],
+        "licenseSPDX": source["license"],
+        "modelVerifiedSHA256": source["selectedSourceSha256"],
+        "sourceId": source["id"],
+        "landmarkId": source["landmarkId"],
+        "sourceRole": source["sourceRole"],
+        "originalSource": source["sourcePage"],
+        "selectionStatus": "candidate-only",
+        "productionStatus": "NOT_SELECTED_NOT_INTEGRATED",
+    }
+    for key, value in expected.items():
+        if meta.get(key) != value:
+            raise IntakeError(f"Existing candidate provenance mismatch: {source['id']} field {key}")
+    saved = {item["archiveMember"]: item for item in meta["files"]}
+    requested = {item["archiveMember"]: item["destination"] for item in source["files"]}
+    if set(saved) != set(requested):
+        raise IntakeError("Existing candidate file roster differs")
+    total = 0
+    for name, desired in requested.items():
+        row = saved[name]
+        if row["destination"] != desired:
+            raise IntakeError("Existing candidate destination changed")
+        candidate_path = target / desired
+        if not candidate_path.is_file():
+            raise IntakeError("Existing candidate original file missing")
+        content = candidate_path.read_bytes()
+        if digest(content) != row["sha256"] or len(content) != row["bytes"]:
+            raise IntakeError(f"Previously imported source was modified: {name}")
+        total += len(content)
+    return {
+        "sourceId": source["id"],
+        "directory": directory.as_posix(),
+        "files": len(saved),
+        "bytes": total,
+        "state": "ALREADY_VERIFIED",
+    }
+
+
 def run(manifest_path: Path, repo: Path = Path("."), downloader=download_bytes) -> dict:
     repo = repo.resolve()
     m = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -213,32 +260,47 @@ def run(manifest_path: Path, repo: Path = Path("."), downloader=download_bytes) 
     if not isinstance(candidates, list) or not 1 <= len(candidates) <= 5:
         raise IntakeError("No bounded candidate roster")
     seen = set()
-    for s in candidates:
-        check_source(s)
-        if s["id"] in seen:
+    already, new = [], []
+    for source in candidates:
+        check_source(source)
+        if source["id"] in seen:
             raise IntakeError("Repeated source ID")
-        seen.add(s["id"])
-        if (repo / BASE / s["landmarkId"] / s["id"]).exists():
-            raise IntakeError(f"Already imported, refuse overwrite: {s['id']}")
+        seen.add(source["id"])
+        dest = repo / BASE / source["landmarkId"] / source["id"]
+        if dest.exists():
+            already.append(validate_existing(source, repo))
+        else:
+            new.append(source)
     outputs = []
     with tempfile.TemporaryDirectory(prefix="kfb-asset-suche-") as d:
         tmp = Path(d)
-        for source in candidates:
+        for source in new:
             outputs.append(prepare_one(source, tmp, BASE, downloader))
-        # All downloads and exact checks finish before any public/review repo files appear.
+        # Every new download must pass exact SHA and rights gates before any writes.
         committed = []
         try:
             for record in outputs:
                 src = tmp / record["directory"]
                 dst = repo / record["directory"]
+                if dst.exists():
+                    raise IntakeError("Import target appeared concurrently")
                 dst.parent.mkdir(parents=True, exist_ok=True)
                 shutil.move(str(src), str(dst))
                 committed.append(dst)
+                record["state"] = "NEWLY_STAGED_FOR_REVIEW"
         except Exception:
-            for d in committed:
-                shutil.rmtree(d, ignore_errors=True)
+            for path in committed:
+                shutil.rmtree(path, ignore_errors=True)
             raise
-    return {"schema": "kfb.asset-suche-import-result/1", "status": "STAGED_FOR_REVIEW", "candidates": outputs, "autoMerged": False, "georgSelected": False}
+    return {
+        "schema": "kfb.asset-suche-import-result/1",
+        "status": "STAGED_FOR_REVIEW" if outputs else "ALL_PREVIOUSLY_VERIFIED",
+        "candidates": already + outputs,
+        "newlyImported": len(outputs),
+        "alreadyVerified": len(already),
+        "autoMerged": False,
+        "georgSelected": False,
+    }
 
 
 if __name__ == "__main__":
