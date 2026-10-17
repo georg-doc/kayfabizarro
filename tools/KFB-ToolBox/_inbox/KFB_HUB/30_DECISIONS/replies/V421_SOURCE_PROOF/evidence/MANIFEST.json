@@ -1,0 +1,37 @@
+{
+  "schema": "kfb.landmark.source-isolation/1",
+  "run": "GitHub Actions CI source proof",
+  "selectionReady": false,
+  "sources": [
+    {
+      "id": "stonehenge_oga_cc0",
+      "source_page": "https://opengameart.org/node/30878",
+      "creator": "eugeneloza",
+      "license": "CC0-1.0",
+      "kind": "monument_source",
+      "archiveSha256": "1c3b5e0206c35eebfbf89985c21adc3472487288d6347ee8ad283c29ef6054bc",
+      "selectedRelativeFile": "Stonehengebed.blend1",
+      "selectedSourceSha256": "a172911fdeadf25567e61fc2da2cfb42e19ad614c1c2c82f43be77c1d160e045",
+      "meshCount": 1,
+      "trianglesMeasured": 640,
+      "facePolygonsMeasured": 320,
+      "sourceImageSha256": "5653518020c878d15508b871a09d290818ca7dcfb9c7a1fb188d7db991c069a2",
+      "clayImageSha256": "532fb13211c83fa39d16b18f3a96bfc3c71b3d2412dae3b835eb134c15ef24ff"
+    },
+    {
+      "id": "kenney_castle_cc0",
+      "source_page": "https://opengameart.org/content/castle-kit",
+      "creator": "Kenney",
+      "license": "CC0-1.0",
+      "kind": "construction_donor_not_neuschwanstein",
+      "archiveSha256": "921f3f73927bb23106cae34bc21d5ab4b033a9fc120475e96f714a406e3169df",
+      "selectedRelativeFile": "Models/GLB format/tower-square.glb",
+      "selectedSourceSha256": "ae2e4f11247fef4e8e550011c20bc1862839cd4cfd21590aec9781ae0fbbbc7f",
+      "meshCount": 1,
+      "trianglesMeasured": 176,
+      "facePolygonsMeasured": 176,
+      "sourceImageSha256": "e2c52a44aebf6d9818ee4772169d021c4c06fab5afa19ae4fb784d0dc4d87bb0",
+      "clayImageSha256": "90d64856ffd2d43e2725a5c10ec7d26170c6fe439149c648dcdb8c5d7fcd3c94"
+    }
+  ]
+}
