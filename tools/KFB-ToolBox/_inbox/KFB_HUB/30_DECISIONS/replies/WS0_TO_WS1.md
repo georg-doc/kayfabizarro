@@ -9,6 +9,31 @@
 
 
 
+
+## 18.10. · Answers to §78 (WS0), HUD R5f approved for planning
+Thank you: merge, one rig, lamps removed, clay frozen, C2 loader and C3 logic are all clean. On your questions:
+1. **C4 / B9 GLBs:** they are derived from Georg's Meshy stages, and Georg wants **Meshy kept private** (not on public branches). Read them **locally** from `~/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/B9/<stage>/` (or `HANDOFF_R1`). Built into the game they are fine; just don't commit them as raw files to new public branches. Pull C4 forward with them.
+2. **Alien cards:** done. `FIGURES_R1/figures/lord_hunky.figure.json` and `lady_dory.figure.json` now carry `body.glbCurrent` (edge80 for Hunky, **r9** for Dory with the normals fixed; source `local-private`, sha256 included). `body.glb` stays as the r4 origin. Load the private bodies through the local resolver (as in `PROOF_STAGE_R1/sources.json`); your variant file can then go.
+3. **Placement grammar R2, WS0 decisions:**
+   - (a) The contour rule applies **between fluff balls on the same plant**. `relax` targets either ≤ 0.85× (an intended overlap/cluster) or ≥ 1.25× (air); 0.92× is not allowed. Fall-off fruit may sit at 1.15–1.5×.
+   - (b) Odd numbers apply to the hanging balls per plant, as you have it.
+   - (c) **Bare trees carry no fluff** (the concept wins); Comic decoration comes later.
+   - (d) Scale: **1 KayKit unit = 0.616 m (M_PER_RIG)**, as you built it. The "KayKit unit = metre" line in the spec is wrong; WS0 corrects it.
+   - (e) 6 instead of 7 spots per tree is fine.
+4. **Repo private (§77):** Georg has deferred V-427. **Don't build the resolver yet**, but **add no new raw/main links.** Use pinned commits or local copies.
+
+**HUD R5f (Georg's "KFB HUD v4.zip"):** approved for planning as a design reference. Your proposal is right:
+- C3 counter → `fluffBar` from R5f;
+- V/B/N → action bar (fist/brass knuckles, blaster, bomb).
+
+Do it right after the visible C3 test (clay video). Build it as a module the way R5f describes. If you deviate from the boards, give a short reason in WS1_STATUS. Approval images go through the **approval stage** (`replies/PROOF_STAGE_R1/`, v1.1) or as a stage image with the same light and clay; WS0 checks before Georg.
+
+**New for your stage (from WSB, all approved through the approval stage):**
+- billboard lamps r3: `50_BLENDER/B22/KFB_Billboard_Lamps.r3.glb`, Kenney/Poly Haven, CC0, public; anchors `KFB_Mount_*`/`KFB_LightOrigin`;
+- clay module **v1.1**: `replies/CLAY_SSOT_R1/kfb-clay.v1.1.js`.
+
+Switch from frozen clay to v1.1 (three profiles, scale relative to the object, no stripes) and use the lamps on the billboard.
+
 ## 17.10. evening · Georg: MERGE approved (V-430)
 **Georg has approved merging the combo look/mesa + m3/fahrhilfe A–G into main** (Hub q05). Please merge it as usual (tests green before and after the merge, preview from main), record it in WS1_STATUS, then continue with long run R2 (b99). The stage FAIL V-429 still applies (one rig, no self-built lamps, clay frozen).
 

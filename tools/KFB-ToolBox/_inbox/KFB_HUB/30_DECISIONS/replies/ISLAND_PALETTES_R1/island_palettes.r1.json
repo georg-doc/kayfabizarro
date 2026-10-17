@@ -1,0 +1,2215 @@
+{
+ "schema": "kfb.island-palettes/1",
+ "version": "r1",
+ "created": "2026-10-17",
+ "by": "WS0 · ISLAND_PALETTES_R1",
+ "private": "GLBs are Unity-EULA purchase assets (Low Poly Floating Islands, streakbyte): palette data is ours, renders stay local in evidence/_privat/",
+ "generator": {
+  "file": "replies/COLOR_HARMONY_R1/kfb-cartoon-palette.js",
+  "version": "kfb-cartoon-palette/1",
+  "sha256": "c1f8ba185f469f6847c04d461c9b13c0a53106e35e22568937f37fdbaf4a526d",
+  "note": "byte-identical to the WS1 vendored copies (gh/ws1/look-mesa, gh/ws1/s1-weltboden …/vendor/palette/kfb-cartoon-palette.js)"
+ },
+ "apply": {
+  "module": "apply-island-palette.v1.js",
+  "by": "material name kfb_role_<role>_<tone>, tone 0 light / 1 mid / 2 dark, at runtime; GLBs unchanged"
+ },
+ "rules": {
+  "R1": {
+   "text": "One OKLCH harmony rule, one generator: ground hue g carries the mood; strang/accent = g ± scheme angle on the warm side; landmark opposite, pulled into the candy band; leaf green, autumn on green/teal ground; sky = leaf + 90°; trunk/earth = leaf − 105°; lightness/chroma ladders with the anti-neon cap.",
+   "source": "V-305 (DECISIONS.md, Hub col04 PASS) · replies/COLOR_HARMONY_R1/README.md §1–§3 · kfb-cartoon-palette.js fromHue()"
+  },
+  "R2": {
+   "text": "The mood/story colour goes on the GROUND (60 % of the picture), lightness from the J17 ladder, not from a dark web colour.",
+   "source": "V-305 (\"Story-Farbe bleibt auf dem Boden\") · COLOR_HARMONY_R1/README.md §3.7 (fromStoryMode)"
+  },
+  "R3": {
+   "text": "Islands carry no story mode of their own; story-mode colours (V-292) are a later accent, not the ground. Here the ground hue comes from the island mood brief instead of a card.",
+   "source": "V-342 (1) · V-292 (story-mode hexes, not used as ground)"
+  },
+  "R4": {
+   "text": "Role grammar = ENV_ROLES (ground, grass, stone, bark, leaf, bloom, water, accent, sand, paved, earth), three tones light/mid/dark; the generator's envRoles output is this grammar, mapped 1:1 by material name kfb_role_<role>_<tone>.",
+   "source": "Lab src/palettes.ts ENV_ROLES (read only) · COLOR_HARMONY_R1/README.md §3.8 (envRoles) · B27/RETURN.md (material names)"
+  },
+  "R5": {
+   "text": "Ladders: light = +0.07 L (C × 0.95), dark = −0.09 L.",
+   "source": "COLOR_HARMONY_R1/README.md §3.9 · MODEL.ladder"
+  },
+  "R6": {
+   "text": "Proposal roles snow and cloud = the generator cream (Creme 80–84°, L 0.93, C ≈ 0.03) as a ladder, light end only (tones light, light, mid): the dark cream tone read as sand on Iceland (iter3). B27 fallback would be sand/paved.",
+   "source": "COLOR_HARMONY_R1/README.md §2 (Wolke · Weg · Sand) · B27/RETURN.md (snow/cloud proposal)"
+  },
+  "R7": {
+   "text": "Ground never a saturated green: no ground/grass tone with HSV hue 55–170° and saturation > 0.35 (moss, leaf, grass, lime under ACES).",
+   "source": "50_BLENDER/SPEC/VORSCHLAG_BODENFARBE_R1.md rule 1 (WSB) · V-396 context"
+  },
+  "R8": {
+   "text": "Chromatic-surreal six-colour rule: every object of a diorama may use any of the six colours of its zone palette; leaf/trunk/cloud/stone are defaults, not prohibitions (purple clouds, light-blue trunks, yellow crowns). No new hex set, V-305 stays the base.",
+   "source": "CHANGELOG 2026-10-17 · V-421 R1.2 (register branch / PR #418, gh/research/v421-landmark-source-clay-proof-2026-10-17 commit 04cfdc7bb) · replies/V421_SOURCE_PROOF/LANDMARK_CHROMATIC_DIORAMA_STYLE_R1.md"
+  },
+  "R9": {
+   "text": "Never neon: chroma capped (pop ≤ 0.195, field ≤ 0.14, rest ≈ 0.07, neutral ≈ 0.03) even where sRGB would allow more.",
+   "source": "COLOR_HARMONY_R1/README.md §1 · MODEL.C"
+  },
+  "R10": {
+   "text": "Fixed road/rim colours are not island roles here (asphalt #3d4a60, J17 bande) – not used by the B27 materials.",
+   "source": "V-102 / V-174"
+  }
+ },
+ "sixColours": "six leading colours per island (R8) = ground.mid, accent.mid (strang), landmark.mid (tower), leaf.mid, sky.mid, bark.mid (trunk/earth); order as in this list",
+ "islands": {
+  "01_Port": {
+   "glb": "hub:50_BLENDER/B27/_privat_kauf_asset/KFB_Island_01_Port.r1.glb",
+   "mood": "A tidy little harbour at blue hour, where the lighthouse keeper lights the lamp before the fishing boats come in. A slate-blue harbour plate, cream quay sand, a coral-red light and a brick-orange underbelly that every sailor reads from far away.",
+   "recipe": {
+    "call": "fromHue(255, 0, 'joyride')",
+    "generator": "kfb-cartoon-palette/1",
+    "hues": {
+     "ground": 255,
+     "strang": 3,
+     "tower": 41,
+     "leaf": 143,
+     "sky": 233,
+     "trunk": 38,
+     "pad": 92
+    },
+    "mode": {
+     "boden": "tisch",
+     "wahrzeichen": "eigen",
+     "laub": "gruen"
+    },
+    "rules": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R9",
+     "R8"
+    ]
+   },
+   "six": [
+    "#4889da",
+    "#f85c90",
+    "#e0622e",
+    "#2c8c2c",
+    "#91c5e2",
+    "#ce826b"
+   ],
+   "roles": {
+    "ground": [
+     "#5d97e4",
+     "#4889da",
+     "#3479c7"
+    ],
+    "grass": [
+     "#46b1da",
+     "#1b9bc5",
+     "#007fa3"
+    ],
+    "stone": [
+     "#5d97e4",
+     "#4889da",
+     "#3479c7"
+    ],
+    "bark": [
+     "#e39982",
+     "#ce826b",
+     "#b06750"
+    ],
+    "leaf": [
+     "#4b952c",
+     "#2c8c2c",
+     "#287f3d"
+    ],
+    "bloom": [
+     "#ffc2c7",
+     "#ff9ea9",
+     "#e0828d"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#ff86a8",
+     "#f85c90",
+     "#d83d76"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#f57b4d",
+     "#f57b4d",
+     "#e0622e"
+    ],
+    "snow": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ],
+    "cloud": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ]
+   },
+   "roleSource": {
+    "ground": "envRoles.ground (R4)",
+    "grass": "envRoles.grass (R4)",
+    "stone": "envRoles.ground (R8: rim rock in the blue ground ladder: the whole top reads as one slate-blue harbour plate instead of dusty earth-grey)",
+    "bark": "envRoles.bark (R4)",
+    "leaf": "envRoles.leaf (R4)",
+    "bloom": "envRoles.bloom (R4)",
+    "water": "envRoles.water (R4)",
+    "accent": "envRoles.accent (R4)",
+    "sand": "envRoles.sand (R4)",
+    "paved": "envRoles.paved (R4)",
+    "earth": "envRoles.landmark tones 0,0,1 (R8: underside (earth role) in the landmark orange, one step lighter because it sits in shadow: warm brick under the blue top (Canyon-style warm underside, no brown))",
+    "snow": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)",
+    "cloud": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)"
+   },
+   "remaps": [
+    {
+     "role": "stone",
+     "from": "envRoles.ground",
+     "tones": [
+      0,
+      1,
+      2
+     ],
+     "why": "rim rock in the blue ground ladder: the whole top reads as one slate-blue harbour plate instead of dusty earth-grey",
+     "rule": "R8"
+    },
+    {
+     "role": "earth",
+     "from": "envRoles.landmark",
+     "tones": [
+      0,
+      0,
+      1
+     ],
+     "why": "underside (earth role) in the landmark orange, one step lighter because it sits in shadow: warm brick under the blue top (Canyon-style warm underside, no brown)",
+     "rule": "R8"
+    }
+   ],
+   "checks": {
+    "groundNotGreen": {
+     "rule": "R7",
+     "pass": true,
+     "offenders": [],
+     "groundMidHSV": {
+      "h": 213,
+      "s": 0.67,
+      "v": 0.855
+     },
+     "grassMidHSV": {
+      "h": 195,
+      "s": 0.863,
+      "v": 0.773
+     }
+    },
+    "noGrey": {
+     "rule": "no tone with OKLCH C < 0.02 at 0.25 < L < 0.9 (mid grey); cream ≥ L 0.9 allowed (R6)",
+     "pass": true,
+     "minC": 0.018,
+     "offenders": []
+    },
+    "noNeon": {
+     "rule": "R9",
+     "pass": true,
+     "maxC": 0.195,
+     "offenders": []
+    }
+   },
+   "seen": {
+    "method": "area_shares.r1.json (world-space area per material)",
+    "leading": [
+     {
+      "hex": "#4889da",
+      "share": 0.336
+     },
+     {
+      "hex": "#e0622e",
+      "share": 0.268
+     },
+     {
+      "hex": "#fff4e1",
+      "share": 0.222
+     },
+     {
+      "hex": "#287f3d",
+      "share": 0.033
+     },
+     {
+      "hex": "#5d97e4",
+      "share": 0.031
+     },
+     {
+      "hex": "#e39982",
+      "share": 0.024
+     }
+    ],
+    "top": [
+     {
+      "hex": "#4889da",
+      "share": 0.626
+     },
+     {
+      "hex": "#fff4e1",
+      "share": 0.276
+     },
+     {
+      "hex": "#e39982",
+      "share": 0.022
+     }
+    ],
+    "underside": [
+     {
+      "hex": "#e0622e",
+      "share": 0.542
+     },
+     {
+      "hex": "#fff4e1",
+      "share": 0.221
+     }
+    ]
+   },
+   "lead6": [
+    "#4889da",
+    "#e0622e",
+    "#fff4e1",
+    "#287f3d",
+    "#5d97e4",
+    "#e39982"
+   ]
+  },
+  "02_River": {
+   "glb": "hub:50_BLENDER/B27/_privat_kauf_asset/KFB_Island_02_River.r1.glb",
+   "mood": "A glacier river runs through a pine valley on a clear morning; the bear fishes, the canoe drifts. Glacier-blue meadow, deep green pines, a candy-pink cliff underneath – cold water, warm heart.",
+   "recipe": {
+    "call": "fromHue(225, 0, 'joyride')",
+    "generator": "kfb-cartoon-palette/1",
+    "hues": {
+     "ground": 225,
+     "strang": 342,
+     "tower": 23,
+     "leaf": 143,
+     "sky": 233,
+     "trunk": 38,
+     "pad": 92
+    },
+    "mode": {
+     "boden": "tisch",
+     "wahrzeichen": "eigen",
+     "laub": "gruen"
+    },
+    "rules": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R9",
+     "R8"
+    ]
+   },
+   "six": [
+    "#369abd",
+    "#ed66c1",
+    "#dd5556",
+    "#2f932e",
+    "#91c5e2",
+    "#ce826b"
+   ],
+   "roles": {
+    "ground": [
+     "#50a7c9",
+     "#369abd",
+     "#1c8aaa"
+    ],
+    "grass": [
+     "#63b8c2",
+     "#46a3ad",
+     "#248791"
+    ],
+    "stone": [
+     "#fff7eb",
+     "#f2e6d3",
+     "#d4c9b6"
+    ],
+    "bark": [
+     "#e39982",
+     "#ce826b",
+     "#b06750"
+    ],
+    "leaf": [
+     "#4f9b2e",
+     "#2f932e",
+     "#2a8640"
+    ],
+    "bloom": [
+     "#ffbfd9",
+     "#f99dc5",
+     "#da81a9"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#ff84d5",
+     "#ed66c1",
+     "#ce48a5"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#ff84d5",
+     "#ed66c1",
+     "#ce48a5"
+    ],
+    "snow": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ],
+    "cloud": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ]
+   },
+   "roleSource": {
+    "ground": "envRoles.ground (R4)",
+    "grass": "envRoles.grass (R4)",
+    "stone": "ladderOf(roles.cloud) (R8: the big boulder as pale glacier granite (generator cream))",
+    "bark": "envRoles.bark (R4)",
+    "leaf": "envRoles.leaf (R4)",
+    "bloom": "envRoles.bloom (R4)",
+    "water": "envRoles.water (R4)",
+    "accent": "envRoles.accent (R4)",
+    "sand": "envRoles.sand (R4)",
+    "paved": "envRoles.paved (R4)",
+    "earth": "envRoles.accent (R8: underside (earth role on this island) in the strang pink instead of terracotta: no brown-under-green, pink↔green complement)",
+    "snow": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)",
+    "cloud": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)"
+   },
+   "remaps": [
+    {
+     "role": "earth",
+     "from": "envRoles.accent",
+     "tones": [
+      0,
+      1,
+      2
+     ],
+     "why": "underside (earth role on this island) in the strang pink instead of terracotta: no brown-under-green, pink↔green complement",
+     "rule": "R8"
+    },
+    {
+     "role": "stone",
+     "from": "ladderOf(roles.cloud)",
+     "tones": [
+      0,
+      1,
+      2
+     ],
+     "why": "the big boulder as pale glacier granite (generator cream)",
+     "rule": "R8"
+    }
+   ],
+   "checks": {
+    "groundNotGreen": {
+     "rule": "R7",
+     "pass": true,
+     "offenders": [],
+     "groundMidHSV": {
+      "h": 196,
+      "s": 0.714,
+      "v": 0.741
+     },
+     "grassMidHSV": {
+      "h": 186,
+      "s": 0.595,
+      "v": 0.678
+     }
+    },
+    "noGrey": {
+     "rule": "no tone with OKLCH C < 0.02 at 0.25 < L < 0.9 (mid grey); cream ≥ L 0.9 allowed (R6)",
+     "pass": true,
+     "minC": 0.018,
+     "offenders": []
+    },
+    "noNeon": {
+     "rule": "R9",
+     "pass": true,
+     "maxC": 0.195,
+     "offenders": []
+    }
+   },
+   "seen": {
+    "method": "area_shares.r1.json (world-space area per material)",
+    "leading": [
+     {
+      "hex": "#ff84d5",
+      "share": 0.362
+     },
+     {
+      "hex": "#369abd",
+      "share": 0.207
+     },
+     {
+      "hex": "#f2e6d3",
+      "share": 0.177
+     },
+     {
+      "hex": "#2f932e",
+      "share": 0.06
+     },
+     {
+      "hex": "#5d81a3",
+      "share": 0.04
+     },
+     {
+      "hex": "#ce826b",
+      "share": 0.04
+     }
+    ],
+    "top": [
+     {
+      "hex": "#369abd",
+      "share": 0.652
+     },
+     {
+      "hex": "#5d81a3",
+      "share": 0.131
+     },
+     {
+      "hex": "#f2e6d3",
+      "share": 0.059
+     }
+    ],
+    "underside": [
+     {
+      "hex": "#ff84d5",
+      "share": 0.769
+     },
+     {
+      "hex": "#f2e6d3",
+      "share": 0.092
+     }
+    ]
+   },
+   "lead6": [
+    "#ff84d5",
+    "#369abd",
+    "#f2e6d3",
+    "#2f932e",
+    "#5d81a3",
+    "#ce826b"
+   ]
+  },
+  "03_Backyard": {
+   "glb": "hub:50_BLENDER/B27/_privat_kauf_asset/KFB_Island_03_Backyard.r1.glb",
+   "mood": "Sunday afternoon in somebody's backyard: swing, barbecue, an old car nobody drives any more. Sun-warmed terracotta-rose lawn, a butter-yellow car, blue trunks and a blue underside like a plastic paddling pool – lazy, warm, a bit kitsch.",
+   "recipe": {
+    "call": "fromHue(20, 0, 'joyride')",
+    "generator": "kfb-cartoon-palette/1",
+    "hues": {
+     "ground": 20,
+     "strang": 90.5,
+     "tower": 260,
+     "leaf": 143,
+     "sky": 233,
+     "trunk": 38,
+     "pad": 110.5
+    },
+    "mode": {
+     "boden": "tisch",
+     "wahrzeichen": "eigen",
+     "laub": "gruen"
+    },
+    "rules": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R9",
+     "R8"
+    ]
+   },
+   "six": [
+    "#c16b6c",
+    "#e4ba31",
+    "#4280e8",
+    "#2c8d2c",
+    "#91c5e2",
+    "#ce826b"
+   ],
+   "roles": {
+    "ground": [
+     "#cd7b7a",
+     "#c16b6c",
+     "#af5b5e"
+    ],
+    "grass": [
+     "#d19370",
+     "#bc7d58",
+     "#9f623e"
+    ],
+    "stone": [
+     "#b58e83",
+     "#a0786e",
+     "#855e54"
+    ],
+    "bark": [
+     "#5b97fb",
+     "#4280e8",
+     "#2764c9"
+    ],
+    "leaf": [
+     "#4b952c",
+     "#2c8d2c",
+     "#28803d"
+    ],
+    "bloom": [
+     "#b7e596",
+     "#9fce7d",
+     "#84b161"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#f9d159",
+     "#e4ba31",
+     "#c59d00"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#5b97fb",
+     "#5b97fb",
+     "#4280e8"
+    ],
+    "snow": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ],
+    "cloud": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ]
+   },
+   "roleSource": {
+    "ground": "envRoles.ground (R4)",
+    "grass": "envRoles.grass (R4)",
+    "stone": "envRoles.stone (R4)",
+    "bark": "envRoles.landmark (R8: trunks in the landmark blue (Georg example: light-blue trunks))",
+    "leaf": "envRoles.leaf (R4)",
+    "bloom": "envRoles.bloom (R4)",
+    "water": "envRoles.water (R4)",
+    "accent": "envRoles.accent (R4)",
+    "sand": "envRoles.sand (R4)",
+    "paved": "envRoles.paved (R4)",
+    "earth": "envRoles.landmark tones 0,0,1 (R8: underside (earth role) in the landmark blue, one step lighter (shadow side): a paddling-pool blue cone instead of a brown one)",
+    "snow": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)",
+    "cloud": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)"
+   },
+   "remaps": [
+    {
+     "role": "bark",
+     "from": "envRoles.landmark",
+     "tones": [
+      0,
+      1,
+      2
+     ],
+     "why": "trunks in the landmark blue (Georg example: light-blue trunks)",
+     "rule": "R8"
+    },
+    {
+     "role": "earth",
+     "from": "envRoles.landmark",
+     "tones": [
+      0,
+      0,
+      1
+     ],
+     "why": "underside (earth role) in the landmark blue, one step lighter (shadow side): a paddling-pool blue cone instead of a brown one",
+     "rule": "R8"
+    }
+   ],
+   "checks": {
+    "groundNotGreen": {
+     "rule": "R7",
+     "pass": true,
+     "offenders": [],
+     "groundMidHSV": {
+      "h": 359,
+      "s": 0.446,
+      "v": 0.757
+     },
+     "grassMidHSV": {
+      "h": 22,
+      "s": 0.532,
+      "v": 0.737
+     }
+    },
+    "noGrey": {
+     "rule": "no tone with OKLCH C < 0.02 at 0.25 < L < 0.9 (mid grey); cream ≥ L 0.9 allowed (R6)",
+     "pass": true,
+     "minC": 0.018,
+     "offenders": []
+    },
+    "noNeon": {
+     "rule": "R9",
+     "pass": true,
+     "maxC": 0.17,
+     "offenders": []
+    }
+   },
+   "seen": {
+    "method": "area_shares.r1.json (world-space area per material)",
+    "leading": [
+     {
+      "hex": "#4280e8",
+      "share": 0.387
+     },
+     {
+      "hex": "#c16b6c",
+      "share": 0.239
+     },
+     {
+      "hex": "#28803d",
+      "share": 0.144
+     },
+     {
+      "hex": "#fff8e9",
+      "share": 0.055
+     },
+     {
+      "hex": "#a0786e",
+      "share": 0.041
+     },
+     {
+      "hex": "#f9d159",
+      "share": 0.038
+     }
+    ],
+    "top": [
+     {
+      "hex": "#c16b6c",
+      "share": 0.761
+     },
+     {
+      "hex": "#28803d",
+      "share": 0.075
+     },
+     {
+      "hex": "#a0786e",
+      "share": 0.033
+     }
+    ],
+    "underside": [
+     {
+      "hex": "#4280e8",
+      "share": 0.771
+     },
+     {
+      "hex": "#28803d",
+      "share": 0.122
+     }
+    ]
+   },
+   "lead6": [
+    "#4280e8",
+    "#c16b6c",
+    "#28803d",
+    "#fff8e9",
+    "#a0786e",
+    "#f9d159"
+   ]
+  },
+  "04_Beach": {
+   "glb": "hub:50_BLENDER/B27/_privat_kauf_asset/KFB_Island_04_Beach.r1.glb",
+   "mood": "A stilt-house beach bar on bright sand, where the radio plays and nobody checks the time. Light sand, aqua lagoon, a violet coral reef underneath and pink blossom – the Bikini-Bucht recipe.",
+   "recipe": {
+    "call": "fromHue(88, 0, 'joyride')",
+    "generator": "kfb-cartoon-palette/1",
+    "hues": {
+     "ground": 88,
+     "strang": 12.1,
+     "tower": 300.8,
+     "leaf": 143,
+     "sky": 233,
+     "trunk": 38,
+     "pad": 92
+    },
+    "mode": {
+     "boden": "strand",
+     "wahrzeichen": "eigen",
+     "laub": "gruen"
+    },
+    "rules": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R9",
+     "R8"
+    ]
+   },
+   "six": [
+    "#f2d07d",
+    "#f85e7b",
+    "#9465d6",
+    "#5ec65b",
+    "#91c5e2",
+    "#ce826b"
+   ],
+   "roles": {
+    "ground": [
+     "#fee092",
+     "#f2d07d",
+     "#e4bb62"
+    ],
+    "grass": [
+     "#fef5af",
+     "#e7dd94",
+     "#cac078"
+    ],
+    "stone": [
+     "#bf94fb",
+     "#aa7ce7",
+     "#8f60c9"
+    ],
+    "bark": [
+     "#e39982",
+     "#ce826b",
+     "#b06750"
+    ],
+    "leaf": [
+     "#7acf59",
+     "#5ec65b",
+     "#3fbc5d"
+    ],
+    "bloom": [
+     "#ffbfd7",
+     "#fa9dc3",
+     "#db81a6"
+    ],
+    "water": [
+     "#6adbea",
+     "#48c5d4",
+     "#1ca8b7"
+    ],
+    "accent": [
+     "#ff8698",
+     "#f85e7b",
+     "#d83f61"
+    ],
+    "sand": [
+     "#fff8e6",
+     "#fae7b3",
+     "#dcc996"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#bf94fb",
+     "#aa7ce7",
+     "#aa7ce7"
+    ],
+    "snow": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ],
+    "cloud": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ]
+   },
+   "roleSource": {
+    "ground": "envRoles.ground (R4)",
+    "grass": "envRoles.grass (R4)",
+    "stone": "ladderOf(roles.rock) (R8: rocks = the generator's J17 rock role (Bucht: violet coral, roles.rock = tower[1]))",
+    "bark": "envRoles.bark (R4)",
+    "leaf": "envRoles.leaf (R4)",
+    "bloom": "envRoles.bloom (R4)",
+    "water": "envRoles.water (R4)",
+    "accent": "envRoles.accent (R4)",
+    "sand": "envRoles.sand (R4)",
+    "paved": "envRoles.paved (R4)",
+    "earth": "ladderOf(roles.rock) tones 0,1,1 (R8: underside (earth role) as violet coral reef, lighter tones for the shadow side: no brown cone under the sand)",
+    "snow": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)",
+    "cloud": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)"
+   },
+   "remaps": [
+    {
+     "role": "stone",
+     "from": "ladderOf(roles.rock)",
+     "tones": [
+      0,
+      1,
+      2
+     ],
+     "why": "rocks = the generator's J17 rock role (Bucht: violet coral, roles.rock = tower[1])",
+     "rule": "R8"
+    },
+    {
+     "role": "earth",
+     "from": "ladderOf(roles.rock)",
+     "tones": [
+      0,
+      1,
+      1
+     ],
+     "why": "underside (earth role) as violet coral reef, lighter tones for the shadow side: no brown cone under the sand",
+     "rule": "R8"
+    }
+   ],
+   "checks": {
+    "groundNotGreen": {
+     "rule": "R7",
+     "pass": true,
+     "offenders": [],
+     "groundMidHSV": {
+      "h": 43,
+      "s": 0.483,
+      "v": 0.949
+     },
+     "grassMidHSV": {
+      "h": 53,
+      "s": 0.359,
+      "v": 0.906
+     }
+    },
+    "noGrey": {
+     "rule": "no tone with OKLCH C < 0.02 at 0.25 < L < 0.9 (mid grey); cream ≥ L 0.9 allowed (R6)",
+     "pass": true,
+     "minC": 0.018,
+     "offenders": []
+    },
+    "noNeon": {
+     "rule": "R9",
+     "pass": true,
+     "maxC": 0.189,
+     "offenders": []
+    }
+   },
+   "seen": {
+    "method": "area_shares.r1.json (world-space area per material)",
+    "leading": [
+     {
+      "hex": "#48c5d4",
+      "share": 0.322
+     },
+     {
+      "hex": "#aa7ce7",
+      "share": 0.305
+     },
+     {
+      "hex": "#fae7b3",
+      "share": 0.107
+     },
+     {
+      "hex": "#bf94fb",
+      "share": 0.06
+     },
+     {
+      "hex": "#ce826b",
+      "share": 0.051
+     },
+     {
+      "hex": "#f2d07d",
+      "share": 0.045
+     }
+    ],
+    "top": [
+     {
+      "hex": "#48c5d4",
+      "share": 0.393
+     },
+     {
+      "hex": "#fae7b3",
+      "share": 0.282
+     },
+     {
+      "hex": "#f2d07d",
+      "share": 0.12
+     }
+    ],
+    "underside": [
+     {
+      "hex": "#aa7ce7",
+      "share": 0.512
+     },
+     {
+      "hex": "#48c5d4",
+      "share": 0.319
+     }
+    ]
+   },
+   "lead6": [
+    "#48c5d4",
+    "#aa7ce7",
+    "#fae7b3",
+    "#bf94fb",
+    "#ce826b",
+    "#f2d07d"
+   ]
+  },
+  "05_PirateCave": {
+   "glb": "hub:50_BLENDER/B27/_privat_kauf_asset/KFB_Island_05_PirateCave.r1.glb",
+   "mood": "A smugglers' fort on violet cliffs at dusk, treasure hidden somewhere in the cave below. Claybound violet stone, an orange underbelly, and everything worth stealing glows orange – the Canyon recipe with a monochrome landmark.",
+   "recipe": {
+    "call": "fromHue(300, 0, 'joyride')",
+    "generator": "kfb-cartoon-palette/1",
+    "hues": {
+     "ground": 300,
+     "strang": 34.5,
+     "tower": 34.5,
+     "leaf": 143,
+     "sky": 233,
+     "trunk": 38,
+     "pad": 92
+    },
+    "mode": {
+     "boden": "tisch",
+     "wahrzeichen": "monochrom",
+     "laub": "gruen"
+    },
+    "rules": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R9",
+     "R8"
+    ]
+   },
+   "six": [
+    "#936fcc",
+    "#f86c4c",
+    "#f86c4c",
+    "#2b892a",
+    "#91c5e2",
+    "#8a583e"
+   ],
+   "roles": {
+    "ground": [
+     "#a07ed5",
+     "#936fcc",
+     "#815fbb"
+    ],
+    "grass": [
+     "#77a1e7",
+     "#618bd3",
+     "#476fb5"
+    ],
+    "stone": [
+     "#a07ed5",
+     "#936fcc",
+     "#815fbb"
+    ],
+    "bark": [
+     "#e7714c",
+     "#cd5c40",
+     "#a74635"
+    ],
+    "leaf": [
+     "#49922b",
+     "#2b892a",
+     "#277d3b"
+    ],
+    "bloom": [
+     "#e0dd82",
+     "#cac665",
+     "#adaa48"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#ff9177",
+     "#f86c4c",
+     "#d84f2f"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#ff9177",
+     "#ff9177",
+     "#f86c4c"
+    ],
+    "snow": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ],
+    "cloud": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ]
+   },
+   "roleSource": {
+    "ground": "envRoles.ground (R4)",
+    "grass": "envRoles.grass (R4)",
+    "stone": "envRoles.ground (R8: cliffs in the violet ground ladder (Claybound-Canyon table rock))",
+    "bark": "envRoles.earth (R8: timber in the vivid mono earth (J17 Canyon under[1–3] orange) instead of the dull mono trunk brown)",
+    "leaf": "envRoles.leaf (R4)",
+    "bloom": "envRoles.bloom (R4)",
+    "water": "envRoles.water (R4)",
+    "accent": "envRoles.accent (R4)",
+    "sand": "envRoles.sand (R4)",
+    "paved": "envRoles.paved (R4)",
+    "earth": "envRoles.accent tones 0,0,1 (R8: underside (earth role) in the light strang/landmark orange (mono): the mono earth read maroon in the underside shadow (iter3))",
+    "snow": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)",
+    "cloud": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)"
+   },
+   "remaps": [
+    {
+     "role": "stone",
+     "from": "envRoles.ground",
+     "tones": [
+      0,
+      1,
+      2
+     ],
+     "why": "cliffs in the violet ground ladder (Claybound-Canyon table rock)",
+     "rule": "R8"
+    },
+    {
+     "role": "bark",
+     "from": "envRoles.earth",
+     "tones": [
+      0,
+      1,
+      2
+     ],
+     "why": "timber in the vivid mono earth (J17 Canyon under[1–3] orange) instead of the dull mono trunk brown",
+     "rule": "R8"
+    },
+    {
+     "role": "earth",
+     "from": "envRoles.accent",
+     "tones": [
+      0,
+      0,
+      1
+     ],
+     "why": "underside (earth role) in the light strang/landmark orange (mono): the mono earth read maroon in the underside shadow (iter3)",
+     "rule": "R8"
+    }
+   ],
+   "checks": {
+    "groundNotGreen": {
+     "rule": "R7",
+     "pass": true,
+     "offenders": [],
+     "groundMidHSV": {
+      "h": 263,
+      "s": 0.456,
+      "v": 0.8
+     },
+     "grassMidHSV": {
+      "h": 218,
+      "s": 0.54,
+      "v": 0.827
+     }
+    },
+    "noGrey": {
+     "rule": "no tone with OKLCH C < 0.02 at 0.25 < L < 0.9 (mid grey); cream ≥ L 0.9 allowed (R6)",
+     "pass": true,
+     "minC": 0.018,
+     "offenders": []
+    },
+    "noNeon": {
+     "rule": "R9",
+     "pass": true,
+     "maxC": 0.179,
+     "offenders": []
+    }
+   },
+   "seen": {
+    "method": "area_shares.r1.json (world-space area per material)",
+    "leading": [
+     {
+      "hex": "#ff9177",
+      "share": 0.282
+     },
+     {
+      "hex": "#936fcc",
+      "share": 0.237
+     },
+     {
+      "hex": "#fff4e1",
+      "share": 0.14
+     },
+     {
+      "hex": "#f5e6c9",
+      "share": 0.091
+     },
+     {
+      "hex": "#5d81a3",
+      "share": 0.075
+     },
+     {
+      "hex": "#f86c4c",
+      "share": 0.055
+     }
+    ],
+    "top": [
+     {
+      "hex": "#fff4e1",
+      "share": 0.413
+     },
+     {
+      "hex": "#936fcc",
+      "share": 0.215
+     },
+     {
+      "hex": "#5d81a3",
+      "share": 0.193
+     }
+    ],
+    "underside": [
+     {
+      "hex": "#ff9177",
+      "share": 0.655
+     },
+     {
+      "hex": "#936fcc",
+      "share": 0.16
+     }
+    ]
+   },
+   "lead6": [
+    "#ff9177",
+    "#936fcc",
+    "#fff4e1",
+    "#f5e6c9",
+    "#5d81a3",
+    "#f86c4c"
+   ]
+  },
+  "06_Iceland": {
+   "glb": "hub:50_BLENDER/B27/_privat_kauf_asset/KFB_Island_06_Iceland.r1.glb",
+   "mood": "Snowy peaks and a fishing hamlet under a northern sky, where the aurora paints the snow pink at night. Ice-blue rock and cream snow, magenta lights, warm coral huts.",
+   "recipe": {
+    "call": "fromHue(230, 0, 'joyride')",
+    "generator": "kfb-cartoon-palette/1",
+    "hues": {
+     "ground": 230,
+     "strang": 345.5,
+     "tower": 26,
+     "leaf": 143,
+     "sky": 233,
+     "trunk": 38,
+     "pad": 92
+    },
+    "mode": {
+     "boden": "tisch",
+     "wahrzeichen": "eigen",
+     "laub": "gruen"
+    },
+    "rules": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R9",
+     "R8"
+    ]
+   },
+   "six": [
+    "#3598c2",
+    "#f064b9",
+    "#dd564f",
+    "#2e922e",
+    "#91c5e2",
+    "#ce826b"
+   ],
+   "roles": {
+    "ground": [
+     "#50a5cd",
+     "#3598c2",
+     "#1b88af"
+    ],
+    "grass": [
+     "#5eb8c5",
+     "#40a2b0",
+     "#1a8794"
+    ],
+    "stone": [
+     "#aadbf7",
+     "#91c5e2",
+     "#75a9c5"
+    ],
+    "bark": [
+     "#e39982",
+     "#ce826b",
+     "#b06750"
+    ],
+    "leaf": [
+     "#4e9b2e",
+     "#2e922e",
+     "#2a8540"
+    ],
+    "bloom": [
+     "#ffbfd6",
+     "#fb9cc1",
+     "#dc81a4"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#ff84cd",
+     "#f064b9",
+     "#d0469d"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#ce826b",
+     "#b56d5b",
+     "#935649"
+    ],
+    "snow": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ],
+    "cloud": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ]
+   },
+   "roleSource": {
+    "ground": "envRoles.ground (R4)",
+    "grass": "envRoles.grass (R4)",
+    "stone": "envRoles.sky (R8: mountains + underside in the sky ladder: ice-blue rock (B27 RETURN suggestion \"blaugrauer Fels\", Georg example light blue), never beige)",
+    "bark": "envRoles.bark (R4)",
+    "leaf": "envRoles.leaf (R4)",
+    "bloom": "envRoles.bloom (R4)",
+    "water": "envRoles.water (R4)",
+    "accent": "envRoles.accent (R4)",
+    "sand": "envRoles.sand (R4)",
+    "paved": "envRoles.paved (R4)",
+    "earth": "envRoles.earth (R4)",
+    "snow": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)",
+    "cloud": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)"
+   },
+   "remaps": [
+    {
+     "role": "stone",
+     "from": "envRoles.sky",
+     "tones": [
+      0,
+      1,
+      2
+     ],
+     "why": "mountains + underside in the sky ladder: ice-blue rock (B27 RETURN suggestion \"blaugrauer Fels\", Georg example light blue), never beige",
+     "rule": "R8"
+    }
+   ],
+   "checks": {
+    "groundNotGreen": {
+     "rule": "R7",
+     "pass": true,
+     "offenders": [],
+     "groundMidHSV": {
+      "h": 198,
+      "s": 0.727,
+      "v": 0.761
+     },
+     "grassMidHSV": {
+      "h": 188,
+      "s": 0.636,
+      "v": 0.69
+     }
+    },
+    "noGrey": {
+     "rule": "no tone with OKLCH C < 0.02 at 0.25 < L < 0.9 (mid grey); cream ≥ L 0.9 allowed (R6)",
+     "pass": true,
+     "minC": 0.018,
+     "offenders": []
+    },
+    "noNeon": {
+     "rule": "R9",
+     "pass": true,
+     "maxC": 0.195,
+     "offenders": []
+    }
+   },
+   "seen": {
+    "method": "area_shares.r1.json (world-space area per material)",
+    "leading": [
+     {
+      "hex": "#91c5e2",
+      "share": 0.524
+     },
+     {
+      "hex": "#aadbf7",
+      "share": 0.233
+     },
+     {
+      "hex": "#f2e6d3",
+      "share": 0.139
+     },
+     {
+      "hex": "#5d81a3",
+      "share": 0.048
+     },
+     {
+      "hex": "#4e9b2e",
+      "share": 0.011
+     },
+     {
+      "hex": "#e39982",
+      "share": 0.011
+     }
+    ],
+    "top": [
+     {
+      "hex": "#91c5e2",
+      "share": 0.648
+     },
+     {
+      "hex": "#f2e6d3",
+      "share": 0.261
+     },
+     {
+      "hex": "#5d81a3",
+      "share": 0.061
+     }
+    ],
+    "underside": [
+     {
+      "hex": "#aadbf7",
+      "share": 0.515
+     },
+     {
+      "hex": "#91c5e2",
+      "share": 0.379
+     }
+    ]
+   },
+   "lead6": [
+    "#91c5e2",
+    "#aadbf7",
+    "#f2e6d3",
+    "#5d81a3",
+    "#4e9b2e",
+    "#e39982"
+   ]
+  },
+  "07_PondLand": {
+   "glb": "hub:50_BLENDER/B27/_privat_kauf_asset/KFB_Island_07_PondLand.r1.glb",
+   "mood": "A torii stands at the koi pond at lantern time, and a frog keeps the beat. Plum-rose garden, vermilion-orange gate, lemon-yellow crowns and a deep plum underside – a dream of a Japanese garden, not a postcard.",
+   "recipe": {
+    "call": "fromHue(330, 0, 'joyride')",
+    "generator": "kfb-cartoon-palette/1",
+    "hues": {
+     "ground": 330,
+     "strang": 55.5,
+     "tower": 55.5,
+     "leaf": 143,
+     "sky": 233,
+     "trunk": 38,
+     "pad": 92
+    },
+    "mode": {
+     "boden": "tisch",
+     "wahrzeichen": "monochrom",
+     "laub": "gruen"
+    },
+    "rules": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R9",
+     "R8"
+    ]
+   },
+   "six": [
+    "#b968b2",
+    "#f98a2b",
+    "#f98a2b",
+    "#2d8f2d",
+    "#91c5e2",
+    "#8a583e"
+   ],
+   "roles": {
+    "ground": [
+     "#c578bd",
+     "#b968b2",
+     "#a658a2"
+    ],
+    "grass": [
+     "#e38791",
+     "#ce707b",
+     "#b05561"
+    ],
+    "stone": [
+     "#c48777",
+     "#af7161",
+     "#925748"
+    ],
+    "bark": [
+     "#b968b2",
+     "#a658a2",
+     "#a658a2"
+    ],
+    "leaf": [
+     "#4d982d",
+     "#2d8f2d",
+     "#29823f"
+    ],
+    "bloom": [
+     "#ffe79c",
+     "#ffe79c",
+     "#f7cd36"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#ffab6f",
+     "#f98a2b",
+     "#d77000"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#c578bd",
+     "#b968b2",
+     "#b968b2"
+    ],
+    "snow": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ],
+    "cloud": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ]
+   },
+   "roleSource": {
+    "ground": "envRoles.ground (R4)",
+    "grass": "envRoles.grass (R4)",
+    "stone": "envRoles.stone (R4)",
+    "bark": "envRoles.ground tones 1,2,2 (R8: trunks in the plum ground ladder: crowns and gate pop against them)",
+    "leaf": "envRoles.leaf (R4)",
+    "bloom": "ladderOf(roles.pad) tones 0,0,1 (R8: crowns (bloom role) in the pad yellow (Georg example: yellow crowns); the mono-rule lime read olive under the stage light (iter4))",
+    "water": "envRoles.water (R4)",
+    "accent": "envRoles.accent (R4)",
+    "sand": "envRoles.sand (R4)",
+    "paved": "envRoles.paved (R4)",
+    "earth": "envRoles.ground tones 0,1,1 (R8: underside (earth role) in the plum ground ladder (J17 under0 = ground darker; lighter tones for the shadow side): one plum body)",
+    "snow": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)",
+    "cloud": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)"
+   },
+   "remaps": [
+    {
+     "role": "bark",
+     "from": "envRoles.ground",
+     "tones": [
+      1,
+      2,
+      2
+     ],
+     "why": "trunks in the plum ground ladder: crowns and gate pop against them",
+     "rule": "R8"
+    },
+    {
+     "role": "bloom",
+     "from": "ladderOf(roles.pad)",
+     "tones": [
+      0,
+      0,
+      1
+     ],
+     "why": "crowns (bloom role) in the pad yellow (Georg example: yellow crowns); the mono-rule lime read olive under the stage light (iter4)",
+     "rule": "R8"
+    },
+    {
+     "role": "earth",
+     "from": "envRoles.ground",
+     "tones": [
+      0,
+      1,
+      1
+     ],
+     "why": "underside (earth role) in the plum ground ladder (J17 under0 = ground darker; lighter tones for the shadow side): one plum body",
+     "rule": "R8"
+    }
+   ],
+   "checks": {
+    "groundNotGreen": {
+     "rule": "R7",
+     "pass": true,
+     "offenders": [],
+     "groundMidHSV": {
+      "h": 305,
+      "s": 0.438,
+      "v": 0.725
+     },
+     "grassMidHSV": {
+      "h": 353,
+      "s": 0.456,
+      "v": 0.808
+     }
+    },
+    "noGrey": {
+     "rule": "no tone with OKLCH C < 0.02 at 0.25 < L < 0.9 (mid grey); cream ≥ L 0.9 allowed (R6)",
+     "pass": true,
+     "minC": 0.018,
+     "offenders": []
+    },
+    "noNeon": {
+     "rule": "R9",
+     "pass": true,
+     "maxC": 0.167,
+     "offenders": []
+    }
+   },
+   "seen": {
+    "method": "area_shares.r1.json (world-space area per material)",
+    "leading": [
+     {
+      "hex": "#b968b2",
+      "share": 0.616
+     },
+     {
+      "hex": "#5d81a3",
+      "share": 0.091
+     },
+     {
+      "hex": "#e9dcc8",
+      "share": 0.09
+     },
+     {
+      "hex": "#a658a2",
+      "share": 0.059
+     },
+     {
+      "hex": "#af7161",
+      "share": 0.027
+     },
+     {
+      "hex": "#f7cd36",
+      "share": 0.026
+     }
+    ],
+    "top": [
+     {
+      "hex": "#b968b2",
+      "share": 0.479
+     },
+     {
+      "hex": "#5d81a3",
+      "share": 0.272
+     },
+     {
+      "hex": "#e9dcc8",
+      "share": 0.126
+     }
+    ],
+    "underside": [
+     {
+      "hex": "#b968b2",
+      "share": 0.8
+     },
+     {
+      "hex": "#e9dcc8",
+      "share": 0.086
+     }
+    ]
+   },
+   "lead6": [
+    "#b968b2",
+    "#5d81a3",
+    "#e9dcc8",
+    "#a658a2",
+    "#af7161",
+    "#f7cd36"
+   ]
+  },
+  "08_Forest": {
+   "glb": "hub:50_BLENDER/B27/_privat_kauf_asset/KFB_Island_08_Forest.r1.glb",
+   "mood": "A woodcutter's cabin deep in an autumn forest, chimney smoke curling into the evening. Teal forest floor, orange crowns on lilac trunks, a magenta roof light and violet smoke clouds – the O-Town recipe.",
+   "recipe": {
+    "call": "fromHue(198, 0, 'joyride')",
+    "generator": "kfb-cartoon-palette/1",
+    "hues": {
+     "ground": 198,
+     "strang": 89.1,
+     "tower": 6.8,
+     "leaf": 66,
+     "sky": 156,
+     "trunk": 321,
+     "pad": 109.1
+    },
+    "mode": {
+     "boden": "tisch",
+     "wahrzeichen": "eigen",
+     "laub": "herbst"
+    },
+    "rules": [
+     "R1",
+     "R2",
+     "R3",
+     "R4",
+     "R5",
+     "R6",
+     "R7",
+     "R9",
+     "R8"
+    ]
+   },
+   "six": [
+    "#38a3a6",
+    "#e4b730",
+    "#da5478",
+    "#ed9c3e",
+    "#a7d8b8",
+    "#74467d"
+   ],
+   "roles": {
+    "ground": [
+     "#52b0b4",
+     "#38a3a6",
+     "#219294"
+    ],
+    "grass": [
+     "#72bdb2",
+     "#58a89d",
+     "#3a8c82"
+    ],
+    "stone": [
+     "#6d5773",
+     "#594460",
+     "#412c47"
+    ],
+    "bark": [
+     "#885b90",
+     "#74467d",
+     "#5a2e62"
+    ],
+    "leaf": [
+     "#f5aa42",
+     "#ed9c3e",
+     "#e58e39"
+    ],
+    "bloom": [
+     "#f06e8e",
+     "#da5478",
+     "#bb375e"
+    ],
+    "water": [
+     "#7396b7",
+     "#5d81a3",
+     "#436787"
+    ],
+    "accent": [
+     "#f9cf58",
+     "#e4b730",
+     "#c59b00"
+    ],
+    "sand": [
+     "#fff4e1",
+     "#e9dcc8",
+     "#cbbfac"
+    ],
+    "paved": [
+     "#fff8e9",
+     "#f5e6c9",
+     "#d8c9ac"
+    ],
+    "earth": [
+     "#885b90",
+     "#885b90",
+     "#74467d"
+    ],
+    "snow": [
+     "#fff7eb",
+     "#fff7eb",
+     "#f2e6d3"
+    ],
+    "cloud": [
+     "#885b90",
+     "#74467d",
+     "#5a2e62"
+    ]
+   },
+   "roleSource": {
+    "ground": "envRoles.ground (R4)",
+    "grass": "envRoles.grass (R4)",
+    "stone": "envRoles.stone (R4)",
+    "bark": "envRoles.bark (R4)",
+    "leaf": "envRoles.leaf (R4)",
+    "bloom": "envRoles.bloom (R4)",
+    "water": "envRoles.water (R4)",
+    "accent": "envRoles.accent (R4)",
+    "sand": "envRoles.sand (R4)",
+    "paved": "envRoles.paved (R4)",
+    "earth": "envRoles.bark tones 0,0,1 (R8: underside (earth role) in the lilac trunk ladder instead of the autumn earth (L 0.35 = near black in shadow): the O-Town purple underside, readable)",
+    "snow": "ladderOf(roles.cloud) tones 0,0,1 (R6: snow/cloud stay at the light end; B27 tone = brightness rank inside the role, so snow_2 is still snow)",
+    "cloud": "envRoles.bark (R8: chimney smoke + clouds in the lilac trunk ladder (Georg example: purple clouds))"
+   },
+   "remaps": [
+    {
+     "role": "cloud",
+     "from": "envRoles.bark",
+     "tones": [
+      0,
+      1,
+      2
+     ],
+     "why": "chimney smoke + clouds in the lilac trunk ladder (Georg example: purple clouds)",
+     "rule": "R8"
+    },
+    {
+     "role": "earth",
+     "from": "envRoles.bark",
+     "tones": [
+      0,
+      0,
+      1
+     ],
+     "why": "underside (earth role) in the lilac trunk ladder instead of the autumn earth (L 0.35 = near black in shadow): the O-Town purple underside, readable",
+     "rule": "R8"
+    }
+   ],
+   "checks": {
+    "groundNotGreen": {
+     "rule": "R7",
+     "pass": true,
+     "offenders": [],
+     "groundMidHSV": {
+      "h": 182,
+      "s": 0.663,
+      "v": 0.651
+     },
+     "grassMidHSV": {
+      "h": 172,
+      "s": 0.476,
+      "v": 0.659
+     }
+    },
+    "noGrey": {
+     "rule": "no tone with OKLCH C < 0.02 at 0.25 < L < 0.9 (mid grey); cream ≥ L 0.9 allowed (R6)",
+     "pass": true,
+     "minC": 0.018,
+     "offenders": []
+    },
+    "noNeon": {
+     "rule": "R9",
+     "pass": true,
+     "maxC": 0.17,
+     "offenders": []
+    }
+   },
+   "seen": {
+    "method": "area_shares.r1.json (world-space area per material)",
+    "leading": [
+     {
+      "hex": "#885b90",
+      "share": 0.305
+     },
+     {
+      "hex": "#74467d",
+      "share": 0.212
+     },
+     {
+      "hex": "#38a3a6",
+      "share": 0.165
+     },
+     {
+      "hex": "#5a2e62",
+      "share": 0.09
+     },
+     {
+      "hex": "#e58e39",
+      "share": 0.085
+     },
+     {
+      "hex": "#e4b730",
+      "share": 0.036
+     }
+    ],
+    "top": [
+     {
+      "hex": "#38a3a6",
+      "share": 0.627
+     },
+     {
+      "hex": "#74467d",
+      "share": 0.184
+     },
+     {
+      "hex": "#5a2e62",
+      "share": 0.056
+     }
+    ],
+    "underside": [
+     {
+      "hex": "#885b90",
+      "share": 0.589
+     },
+     {
+      "hex": "#74467d",
+      "share": 0.185
+     }
+    ]
+   },
+   "lead6": [
+    "#885b90",
+    "#74467d",
+    "#38a3a6",
+    "#5a2e62",
+    "#e58e39",
+    "#e4b730"
+   ]
+  }
+ },
+ "distinguishability": {
+  "metric": "ΔE OKLab (0.02 barely, 0.05 clearly, 0.10 another colour; COLOR_HARMONY_R1 §4). seenChamfer = area-weighted nearest-colour ΔE both ways; topMain / undersideMain = ΔE of the largest top / underside colour",
+  "closestPairs": [
+   {
+    "a": "01_Port",
+    "b": "05_PirateCave",
+    "seenChamfer": 0.039,
+    "topMain": 0.384,
+    "undersideMain": 0.128
+   },
+   {
+    "a": "01_Port",
+    "b": "03_Backyard",
+    "seenChamfer": 0.04,
+    "topMain": 0.222,
+    "undersideMain": 0.322
+   },
+   {
+    "a": "02_River",
+    "b": "06_Iceland",
+    "seenChamfer": 0.045,
+    "topMain": 0.158,
+    "undersideMain": 0.224
+   },
+   {
+    "a": "01_Port",
+    "b": "02_River",
+    "seenChamfer": 0.046,
+    "topMain": 0.074,
+    "undersideMain": 0.214
+   },
+   {
+    "a": "05_PirateCave",
+    "b": "07_PondLand",
+    "seenChamfer": 0.059,
+    "topMain": 0.37,
+    "undersideMain": 0.2
+   },
+   {
+    "a": "04_Beach",
+    "b": "05_PirateCave",
+    "seenChamfer": 0.06,
+    "topMain": 0.246,
+    "undersideMain": 0.233
+   }
+  ],
+  "minSeenChamfer": 0.039,
+  "allPairs": [
+   {
+    "a": "01_Port",
+    "b": "05_PirateCave",
+    "seenChamfer": 0.039,
+    "topMain": 0.384,
+    "undersideMain": 0.128
+   },
+   {
+    "a": "01_Port",
+    "b": "03_Backyard",
+    "seenChamfer": 0.04,
+    "topMain": 0.222,
+    "undersideMain": 0.322
+   },
+   {
+    "a": "02_River",
+    "b": "06_Iceland",
+    "seenChamfer": 0.045,
+    "topMain": 0.158,
+    "undersideMain": 0.224
+   },
+   {
+    "a": "01_Port",
+    "b": "02_River",
+    "seenChamfer": 0.046,
+    "topMain": 0.074,
+    "undersideMain": 0.214
+   },
+   {
+    "a": "05_PirateCave",
+    "b": "07_PondLand",
+    "seenChamfer": 0.059,
+    "topMain": 0.37,
+    "undersideMain": 0.2
+   },
+   {
+    "a": "04_Beach",
+    "b": "05_PirateCave",
+    "seenChamfer": 0.06,
+    "topMain": 0.246,
+    "undersideMain": 0.233
+   },
+   {
+    "a": "03_Backyard",
+    "b": "05_PirateCave",
+    "seenChamfer": 0.061,
+    "topMain": 0.36,
+    "undersideMain": 0.325
+   },
+   {
+    "a": "05_PirateCave",
+    "b": "06_Iceland",
+    "seenChamfer": 0.067,
+    "topMain": 0.197,
+    "undersideMain": 0.223
+   },
+   {
+    "a": "02_River",
+    "b": "05_PirateCave",
+    "seenChamfer": 0.068,
+    "topMain": 0.351,
+    "undersideMain": 0.142
+   },
+   {
+    "a": "01_Port",
+    "b": "06_Iceland",
+    "seenChamfer": 0.069,
+    "topMain": 0.19,
+    "undersideMain": 0.321
+   },
+   {
+    "a": "02_River",
+    "b": "07_PondLand",
+    "seenChamfer": 0.07,
+    "topMain": 0.195,
+    "undersideMain": 0.149
+   },
+   {
+    "a": "01_Port",
+    "b": "07_PondLand",
+    "seenChamfer": 0.077,
+    "topMain": 0.171,
+    "undersideMain": 0.182
+   },
+   {
+    "a": "04_Beach",
+    "b": "06_Iceland",
+    "seenChamfer": 0.077,
+    "topMain": 0.068,
+    "undersideMain": 0.241
+   },
+   {
+    "a": "03_Backyard",
+    "b": "06_Iceland",
+    "seenChamfer": 0.08,
+    "topMain": 0.242,
+    "undersideMain": 0.28
+   },
+   {
+    "a": "02_River",
+    "b": "04_Beach",
+    "seenChamfer": 0.084,
+    "topMain": 0.123,
+    "undersideMain": 0.151
+   },
+   {
+    "a": "06_Iceland",
+    "b": "07_PondLand",
+    "seenChamfer": 0.084,
+    "topMain": 0.231,
+    "undersideMain": 0.283
+   },
+   {
+    "a": "05_PirateCave",
+    "b": "08_Forest",
+    "seenChamfer": 0.085,
+    "topMain": 0.333,
+    "undersideMain": 0.271
+   },
+   {
+    "a": "02_River",
+    "b": "03_Backyard",
+    "seenChamfer": 0.086,
+    "topMain": 0.209,
+    "undersideMain": 0.279
+   },
+   {
+    "a": "01_Port",
+    "b": "04_Beach",
+    "seenChamfer": 0.087,
+    "topMain": 0.172,
+    "undersideMain": 0.252
+   },
+   {
+    "a": "07_PondLand",
+    "b": "08_Forest",
+    "seenChamfer": 0.087,
+    "topMain": 0.218,
+    "undersideMain": 0.106
+   },
+   {
+    "a": "03_Backyard",
+    "b": "07_PondLand",
+    "seenChamfer": 0.089,
+    "topMain": 0.109,
+    "undersideMain": 0.181
+   },
+   {
+    "a": "04_Beach",
+    "b": "07_PondLand",
+    "seenChamfer": 0.092,
+    "topMain": 0.255,
+    "undersideMain": 0.086
+   },
+   {
+    "a": "06_Iceland",
+    "b": "08_Forest",
+    "seenChamfer": 0.097,
+    "topMain": 0.151,
+    "undersideMain": 0.346
+   },
+   {
+    "a": "03_Backyard",
+    "b": "04_Beach",
+    "seenChamfer": 0.099,
+    "topMain": 0.258,
+    "undersideMain": 0.134
+   },
+   {
+    "a": "04_Beach",
+    "b": "08_Forest",
+    "seenChamfer": 0.103,
+    "topMain": 0.106,
+    "undersideMain": 0.156
+   },
+   {
+    "a": "02_River",
+    "b": "08_Forest",
+    "seenChamfer": 0.104,
+    "topMain": 0.05,
+    "undersideMain": 0.253
+   },
+   {
+    "a": "03_Backyard",
+    "b": "08_Forest",
+    "seenChamfer": 0.105,
+    "topMain": 0.207,
+    "undersideMain": 0.166
+   },
+   {
+    "a": "01_Port",
+    "b": "08_Forest",
+    "seenChamfer": 0.11,
+    "topMain": 0.124,
+    "undersideMain": 0.209
+   }
+  ]
+ }
+}

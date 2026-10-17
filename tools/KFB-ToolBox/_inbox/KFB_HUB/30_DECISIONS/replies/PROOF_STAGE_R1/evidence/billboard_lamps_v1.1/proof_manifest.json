@@ -1,0 +1,221 @@
+{
+ "schema": "kfb.proof-manifest/1",
+ "stage": "kfb-proof-stage.v1.1",
+ "created": "2026-10-17T22:55:59.111Z",
+ "input": {
+  "id": "billboard_lamps",
+  "type": "prop",
+  "card": null,
+  "cardSha256": null,
+  "cardSchema": null,
+  "cardApproval": null,
+  "glb": "hub:50_BLENDER/B22/KFB_Billboard_Lamps.r3.glb",
+  "glbSha256": "75f74e7e7f3919b6dcfaf9c8793cc0ba45992ca59398a21943d92afc5f6b9a74",
+  "glbBytes": 1624208,
+  "cardBodySha256": null,
+  "glbMatchesCard": null,
+  "faceTransformsFrom": "card",
+  "private": false,
+  "displayName": "billboard_lamps",
+  "glbPathLocal": "~/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/B22/KFB_Billboard_Lamps.r3.glb",
+  "cardPathLocal": null,
+  "glbSha256_node": "75f74e7e7f3919b6dcfaf9c8793cc0ba45992ca59398a21943d92afc5f6b9a74"
+ },
+ "modules": {
+  "stage": "kfb-proof-stage.v1.1",
+  "clay": "kfb-clay.v1.1",
+  "light": "kfb.stage-light/1 (kfb-stage-light.v1)",
+  "eyes": "kfb-proof-eyes.v1",
+  "eyeRig": "pet-eye-rig.v6",
+  "lid": "clay-skin-attach.v1 + clay-eyelid.v3 (E2)",
+  "three": "r180"
+ },
+ "status": "PASS",
+ "gates": {
+  "G1": {
+   "name": "Augen (nur Figuren)",
+   "result": "N/A",
+   "detail": "Prop/Bühne ohne Augen-Anker"
+  },
+  "G2": {
+   "name": "Texturen, Materialien, Normalen",
+   "result": "PASS",
+   "detail": "keine fehlenden Texturen, kein Standard-/Magenta-Material, keine NaN-Normalen"
+  },
+  "G3": {
+   "name": "Bodenkontakt ±1 cm",
+   "result": "PASS",
+   "detail": "tiefster Punkt y = 0.00 cm (steht)",
+   "minY_m": 0
+  },
+  "G4": {
+   "name": "Fremdteile, lose Inseln, Löcher (Warnung)",
+   "result": "WARN",
+   "detail": "64 Inseln · lose < 0,5 % Volumen: Mesh_noExport ×2, join013 ×12, join013_1 ×3, lamp_arm_0 ×3, join001 ×12, join001_1 ×3 · Ausreißer: keine · offene Ränder: Mesh_noExport (12 offene Kanten), Mesh_noExport_1 (12 offene Kanten), Mesh_noExport_2 (4 offene Kanten), Mesh_noExport_3 (8 offene Kanten) …",
+   "smallIslands": 56,
+   "outliers": 0,
+   "openMeshes": 15
+  },
+  "G5": {
+   "name": "Clay-Modul aktiv",
+   "result": "PASS",
+   "detail": "kfb-clay.v1.1 · Profil midground · Seed billboard_lamps · 13/13 Materialien"
+  }
+ },
+ "render": {
+  "light": {
+   "module": "kfb-stage-light.v1",
+   "moods": "MOODS_MESA",
+   "tod": 1,
+   "tone": "ACES Filmic",
+   "exposure": 1,
+   "shadow": "PCFSoft, fitShadow",
+   "figureLight": true,
+   "rim": false,
+   "mood": null
+  },
+  "clay": {
+   "version": "kfb-clay.v1.1",
+   "profile": "midground",
+   "seed": "billboard_lamps",
+   "scaleRef": 1.81,
+   "meshes": 13,
+   "cove": "background, relief off (neutral)"
+  },
+  "eyes": {
+   "status": "none",
+   "reason": null
+  },
+  "eyePixels": null,
+  "frame": {
+   "w": 1600,
+   "h": 1200,
+   "fov": 30,
+   "pixelRatio": 1,
+   "fill": {
+    "full": 0.8,
+    "face": 0.6,
+    "far": 0.4,
+    "scale": 0.7
+   },
+   "az": {
+    "front": 0,
+    "threeq": 35,
+    "side": 90,
+    "back": 180,
+    "near_face": 0,
+    "far": 20,
+    "scale_ref": 0,
+    "top": 0,
+    "detail_low": 0
+   },
+   "el": {
+    "front": 5,
+    "threeq": 6,
+    "side": 5,
+    "back": 5,
+    "near_face": 3,
+    "far": 8,
+    "scale_ref": 4,
+    "top": 85,
+    "detail_low": 6
+   }
+  },
+  "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+  "size_m": [
+   3.696,
+   2.725,
+   2.762
+  ],
+  "head_m": null,
+  "hiddenOriginals": [],
+  "cardFaceParts": [],
+  "entrance": null,
+  "loadErrors": []
+ },
+ "files": {
+  "billboard_lamps_front.png": {
+   "view": "front",
+   "eyes": null,
+   "sha256": "345d0ea21377a1b8bcad07a49d7845308be6caf14c575c90a97c22fb2a84abff"
+  },
+  "billboard_lamps_threeq.png": {
+   "view": "threeq",
+   "eyes": null,
+   "sha256": "1300f820dea1ee3fdf53aa64175c0611c5a100c07b05c09dd92a6e5ff8beea10"
+  },
+  "billboard_lamps_side.png": {
+   "view": "side",
+   "eyes": null,
+   "sha256": "a638d38b558c6288ac4598d013b82ce95729102d56559fdf844cc4d77713c675"
+  },
+  "billboard_lamps_back.png": {
+   "view": "back",
+   "eyes": null,
+   "sha256": "bc36fb83aa1ab7dc39472d8b07685924380fe2f428b41d7e86d2d4e1d2355c9a"
+  },
+  "billboard_lamps_top.png": {
+   "view": "top",
+   "eyes": null,
+   "sha256": "25d71e571b69e9d7cb94d08153fe5346afb3cc16dec02c62e5da76b268928327"
+  },
+  "billboard_lamps_near_face.png": {
+   "view": "near_face",
+   "eyes": null,
+   "sha256": "c37689087ee5398281cdc837993ae5eca1bb7f134dd0c938b21c5ebe63fa094c"
+  },
+  "billboard_lamps_detail_low.png": {
+   "view": "detail_low",
+   "eyes": null,
+   "sha256": "2b3f68bc678e1969f8a6116a098f0f7faaf8fe8b515447cc521caf566c577f95"
+  },
+  "billboard_lamps_far.png": {
+   "view": "far",
+   "eyes": null,
+   "sha256": "c2bc05fb21e4f7d70ddf1da20f1aeb13fea0a6b18fd8ebe8c603f3704de85e56"
+  },
+  "billboard_lamps_scale_ref.png": {
+   "view": "scale_ref",
+   "eyes": null,
+   "sha256": "45b40d8c0fa8a8d7bac27f16c03ed9c1ea450bd9ab96a5340daf74f92f02c47f"
+  },
+  "billboard_lamps_contact_sheet.png": {
+   "sheet": true,
+   "sha256": "bd058a520e5f6dfff19d6560962a22f9e3017d7e9524cb97e1e6ec9e4a9beea5"
+  }
+ },
+ "cli": {
+  "command": "node render.mjs --id billboard_lamps --out evidence/billboard_lamps_v1.1",
+  "views": [
+   "front",
+   "threeq",
+   "side",
+   "back",
+   "top",
+   "near_face",
+   "detail_low",
+   "far",
+   "scale_ref"
+  ],
+  "eyes": null,
+  "node": "v24.21.0",
+  "chrome": "chrome-headless-shell-mac-arm64",
+  "ms": 977,
+  "pageErrors": [],
+  "stagePage": "v1.1"
+ },
+ "vendor": {
+  "clay-eyelid.v1.js": "4e186697635be62fd31e041c084c82eb2bc979591e91851837f064dcfa175976",
+  "clay-eyelid.v2.js": "7f1cf72fbe926c6f40c8eca70330e61c87b9181a885b3329ffb40034f3fc2675",
+  "clay-eyelid.v3.js": "eb751a5bcf174e4bd353a49150634a73b7cd76358ddf808f331933d6ad2e43bb",
+  "clay-skin-attach.v1.js": "9a22279a243cda196862390f12a2e847fb66294f96b3525ae02c24e4d6beca00",
+  "facehost.v1.js": "54214741e57909211fbd9122b3a4bcc30c688b5269ab035e6f82e616f598fb22",
+  "kfb-clay.v1.1.js": "a81a3ee36ec25ab536e5c05fca14d2538b84f02ad6156a7006927836bdb93fd0",
+  "kfb-stage-light.v1.js": "53383f04601e07603864d0cbbbabd44fe568a6ceba9074842c1177d224a58998",
+  "pet-eye-rig.v6.js": "3129bb7b08b40565ea9bd0c44e65ae8442780a3aa5e99ac519740a84341ca9a3",
+  "kfb-proof-stage.v1.js": "d9b56930ecb35019bb897fd4bad3e1684e14693bc9d3957cdf39f17b947968c9",
+  "kfb-proof-stage.v1.1.js": "521eeef868455694eb3f46631ccf599588cf837f548623f4ea50aed26a2f5e9f",
+  "kfb-proof-eyes.v1.js": "88fa39e9cb7bbae2a390d52358739e94eb3e9fd1db740035bd38bf656052dba8"
+ },
+ "staleFilesInOut": []
+}

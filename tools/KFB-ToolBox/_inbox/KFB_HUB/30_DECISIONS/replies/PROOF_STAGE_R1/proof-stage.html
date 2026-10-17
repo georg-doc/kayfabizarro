@@ -36,7 +36,7 @@ aside h2{margin:2px 0 6px;font-size:14px;font-weight:650}
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
 </head><body>
 <header>
-  <h1>KFB Abnahme-Bühne v1</h1>
+  <h1>KFB Abnahme-Bühne v1.1</h1>
   <p>Eine Bühne für alle Abnahmen: gleiches Licht (kfb-stage-light, Mesa-Tag, ACES 1), gleicher Knet (kfb-clay v1.1), gleiche Hohlkehle, feste Kameras, 1600 × 1200, immer KFB-Augen mit E2-Lid.</p>
 </header>
 <div class="bar">
@@ -64,11 +64,11 @@ aside h2{margin:2px 0 6px;font-size:14px;font-weight:650}
   </aside>
 </main>
 <script type="module">
-/* KFB Abnahme-Bühne v1 (PROOF_STAGE_R1). The page and the CLI (render.mjs, headless) drive the same object: window.KFB_PROOF.
+/* KFB Abnahme-Bühne v1.1 (PROOF_STAGE_R1; v1.1 = stage/prop 3 x 3 layout with views top + detail_low; v1 page: proof-stage.v1.html). The page and the CLI (render.mjs, headless) drive the same object: window.KFB_PROOF.
    No overlays are drawn into the 1600 x 1200 frame; labels live in the page UI and in the caption bars of the contact sheet. */
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { createProofStage, contactSheet, VIEWS, EYE_STATES, MODULES, SHEET_SLOTS, W, H } from './kfb-proof-stage.v1.js';
+import { createProofStage, contactSheet, VIEWS, EYE_STATES, MODULES, SHEET_SLOTS, PROP_SLOTS, slotsFor, DEFAULT_VIEWS, W, H } from './kfb-proof-stage.v1.1.js';
 
 const Q = new URLSearchParams(location.search), HEADLESS = Q.has('headless');
 const $ = (id) => document.getElementById(id), msg = (s) => { $('msg').textContent = s; };
@@ -126,21 +126,21 @@ function sheetHead(status) {
     title: `KFB Abnahme · ${inp.displayName} (${inp.id}) · ${inp.type}${inp.cardApproval && inp.cardApproval !== 'approved' ? ' · Karte: ' + inp.cardApproval : ''}${inp.private ? ' · PRIVAT (Kauf-Asset, nur lokal)' : ''}`,
     sub: `GLB ${String(inp.glb).split('/').slice(-2).join('/')} · sha256 ${String(inp.glbSha256).slice(0, 12)}…${inp.glbMatchesCard === false ? ' (≠ Karte ' + String(inp.cardBodySha256).slice(0, 8) + '…)' : inp.glbMatchesCard ? ' (= Karte)' : ''} · Höhe ${i.height_m} m · Augen ${i.eyes.seat || i.eyes.status} · Clay ${i.clay.version} ${i.clay.profile} Seed „${i.clay.seed}“`,
     gates: CUR.gates, status,
-    foot: `kfb-proof-stage.v1 · ${i.modules.clay} · kfb-stage-light.v1 MOODS_MESA Tag · ACES 1 · ${i.modules.eyeRig} + ${i.modules.lid} · three ${i.modules.three} · ${W}×${H} · ${new Date().toISOString().slice(0, 10)}`,
+    foot: `${i.version} · ${i.modules.clay} · kfb-stage-light.v1 MOODS_MESA Tag · ACES 1 · ${i.modules.eyeRig} + ${i.modules.lid} · three ${i.modules.three} · ${W}×${H} · ${new Date().toISOString().slice(0, 10)}`,
   };
 }
 /** sheet(renders: { 'view|eyes': dataURL }) -> dataURL of the fixed-layout contact sheet */
 async function sheet(renders, status = CUR.status) {
   const images = {}, hasEyes = CUR.info.eyes && CUR.info.eyes.seat != null;
   for (const [k, u] of Object.entries(renders)) { const im = new Image(); im.src = u; await im.decode(); const kk = hasEyes ? k : k.split('|')[0] + '|-'; images[kk] = im; }
-  return contactSheet({ images, head: sheetHead(status), hasEyes, type: CUR.info.type }).toDataURL('image/png');
+  return contactSheet({ images, head: sheetHead(status), hasEyes, type: CUR.info.type, entrance: !!CUR.info.entrance }).toDataURL('image/png');
 }
 function manifest(files = {}) {
   return { schema: 'kfb.proof-manifest/1', stage: CUR.info.version, created: new Date().toISOString(), input: CUR.input, modules: CUR.info.modules,
-    status: CUR.status, gates: CUR.gates, render: { light: CUR.info.light, clay: CUR.info.clay, eyes: CUR.info.eyes, eyePixels: CUR.info.eyePixels, frame: CUR.info.frame, gpu: CUR.info.gpu, size_m: CUR.info.size_m, head_m: CUR.info.head_m, hiddenOriginals: CUR.info.hiddenOriginals, cardFaceParts: CUR.info.cardFaceParts, loadErrors: CUR.info.loadErrors },
+    status: CUR.status, gates: CUR.gates, render: { light: CUR.info.light, clay: CUR.info.clay, eyes: CUR.info.eyes, eyePixels: CUR.info.eyePixels, frame: CUR.info.frame, gpu: CUR.info.gpu, size_m: CUR.info.size_m, head_m: CUR.info.head_m, hiddenOriginals: CUR.info.hiddenOriginals, cardFaceParts: CUR.info.cardFaceParts, entrance: CUR.info.entrance, loadErrors: CUR.info.loadErrors },
     files };
 }
-window.KFB_PROOF = { stage, load, render, sheet, manifest, info: () => CUR && CUR.info, VIEWS, EYE_STATES, SHEET_SLOTS, MODULES };
+window.KFB_PROOF = { stage, load, render, sheet, manifest, info: () => CUR && CUR.info, VIEWS, EYE_STATES, SHEET_SLOTS, PROP_SLOTS, DEFAULT_VIEWS, MODULES };
 
 /* ---------------- UI ---------------- */
 function showGates(r) {
@@ -173,7 +173,7 @@ const download = (name, url) => { const a = document.createElement('a'); a.href 
 $('pngBtn').onclick = () => { if (CUR?.status !== 'PASS') return; draw(); download(`${CUR.input.id}_${view}${CUR.info.eyes.seat ? '_' + eyes : ''}.png`, stage.dataURL()); };
 $('allBtn').onclick = async () => {
   if (CUR?.status !== 'PASS') return; const renders = {}, files = {}, hasEyes = !!CUR.info.eyes.seat;
-  const combos = []; for (const [v, e] of SHEET_SLOTS) if (hasEyes || e === 'rest') combos.push([v, e]);
+  const combos = []; for (const [v, e] of slotsFor(CUR.info.type)) if (hasEyes || e === 'rest') combos.push([v, e]);
   for (const [v, e] of combos) { const u = render(v, e), n = `${CUR.input.id}_${v}${hasEyes ? '_' + e : ''}.png`; renders[`${v}|${e}`] = u; files[n] = { view: v, eyes: hasEyes ? e : null }; download(n, u); await new Promise((r) => setTimeout(r, 150)); }
   const sh = await sheet(renders); download(`${CUR.input.id}_contact_sheet.png`, sh); files[`${CUR.input.id}_contact_sheet.png`] = { sheet: true };
   download('proof_manifest.json', URL.createObjectURL(new Blob([JSON.stringify(manifest(files), null, 1)], { type: 'application/json' }))); draw();

@@ -5994,6 +5994,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-433",
+   "date": "2026-10-18",
+   "area": "Prozess",
+   "verdict": "FAIL",
+   "text": "WS0-Fehler: sync_github.sh hat private Dateien auf den öffentlichen Register-Zweig geschoben (replies/E2_ATTACH_R1/assets inkl. edge70/80/90-GLBs mit Space-Ranger-Anzug, CLAY_SSOT_R1/assets mit FB/GothGirl/Hunky/Meshy-Utopia/Dragster, PROOF_STAGE_R1/evidence/_privat mit 109 Prüfbildern, Kauf-Assets). Sofortmaßnahme: Sync überspringt ab jetzt *.glb/*.gltf/*.bin, */_privat*, */assets/*, */vendor/*. Entfernen der schon gepushten Dateien vom Zweig (Commit) bzw. aus der Historie braucht Georgs Ja; dauerhaft löst es V-427 (Repo privat).",
+   "values": {},
+   "owner": "WS0",
+   "check": "Georg entscheidet Entfernen",
+   "source": "sync_github.sh · V-427",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Sync spiegelte den ganzen replies-Ordner ohne Ausschlussregel für private Unterordner.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6081,7 +6096,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:779",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:783",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

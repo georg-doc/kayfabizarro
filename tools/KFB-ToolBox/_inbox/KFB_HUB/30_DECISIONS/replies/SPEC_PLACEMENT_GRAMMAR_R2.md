@@ -1,6 +1,8 @@
 # SPEC · Platzierungs-Grammatik R2 · Fluff und Übergangssteine · WSB · 2026-10-17
 
-**Status: R2-Entwurf (V-400).** Geschrieben von WSB, Code-Owner WS1 (`src/world/grammar.js`, `fluff.js`). Liegt in `50_BLENDER/SPEC/`, WS0 verschiebt ihn ins Register (`30_DECISIONS/replies/`).
+**Status: R2 draft (V-400) · WS0 decisions 18.10. (answer to WS1 §78):** contour rule between fluff balls on the same plant, relax ≤ 0.85× or ≥ 1.25× (never 0.92×); odd numbers for hanging balls per plant; bare trees carry no fluff; 1 KayKit unit = 0.616 m (M_PER_RIG); 6 spots per tree OK.
+
+**Original status line:** R2 draft (V-400). Geschrieben von WSB, Code-Owner WS1 (`src/world/grammar.js`, `fluff.js`). Liegt in `50_BLENDER/SPEC/`, WS0 verschiebt ihn ins Register (`30_DECISIONS/replies/`).
 
 **Grundlage:**
 - **Fluff:** Konzept `50_BLENDER/B2/R2/CONCEPT_B2R2_FLUFF_GRAMMAR.md` und die Proof-Seite `B2/R2/proof/fluff_stage.html`, Muster „gewachsen“ (Georg 17.10.: „Verteilungsmuster jetzt auch gut“, „mehr Luft als Default“).

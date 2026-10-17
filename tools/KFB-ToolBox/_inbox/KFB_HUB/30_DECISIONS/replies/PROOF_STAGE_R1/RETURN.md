@@ -1,3 +1,40 @@
+# RETURN · PROOF_STAGE_R1 · **v1.1: layout for stages and props** (WS0 · 18.10.2026)
+
+**Brief (WS0, Georg):** the sheet for `--type stage` / `prop` had 5 empty grey cells; he wants a uniform presentation with no gaps. **Done.**
+
+## What changed
+- **New module:** `kfb-proof-stage.v1.1.js`, a copy of v1 plus the changes below. v1 stays untouched (`kfb-proof-stage.v1.js`, and the page copy `proof-stage.v1.html`; select it with `render.mjs --stage v1`).
+- **New views:**
+  - `top`: from above at 85°, the footprint fills 80 % of the frame.
+  - `detail_low`: the lower third, 60 % of the frame height. It aims at the entrance from the root extras `kfb.entrances[0]` (B24 convention), and the object turns so that the entrance faces the camera. Without an entrance, the view frames whatever stands in the lower third.
+  - `near_face` on stages and props remains "Detail oben" (upper third).
+- **Contact sheet** for stage/prop: fixed **3 × 3** (front, threeq, side / back, top, detail high / detail low, far, scale_ref), larger tiles (624 × 468), no empty cells. `PROP_SLOTS` and `slotsFor(type)` are exported.
+- **CLI and page:** default views per type (`DEFAULT_VIEWS`). The page's "Alle Ansichten" button uses the matching layout.
+- **The character layout is unchanged.** I checked this on the same input (FB): the v1 page and the v1.1 page give byte-identical PNGs.
+- **Small fix:** the G3 caption now reads "steht" (standing) for anything within ±1 cm. v1 said "schwebt" (floating) for +0.00 cm; v1 itself is unchanged.
+
+## Test: the four B24 pubs (`--type stage`, private → `evidence/_privat/`)
+
+| Pub | Height | G2 | G3 | G4 | G5 | Status | Entrance detail |
+|---|---|---|---|---|---|---|---|
+| Fat Mermaid | 10.10 m | PASS | 0.00 cm | WARN (2 small LOW islands) | PASS | **PASS** | door + steps |
+| Yelling Goblin | 23.25 m | PASS | −0.00 cm | WARN (1 island) | PASS | **PASS** | stairs + "Ale Grub Fights" sign |
+| Salty Bite | 19.08 m | PASS | −0.00 cm | PASS | PASS | **PASS** | shark mouth + stairs |
+| Hungry Pelican | 11.40 m | PASS | −0.00 cm | WARN (1 island, 2 open edges) | PASS | **PASS** | arched door + steps |
+
+- **Contact sheets:** `evidence/_privat/pub_<Name>_contact_sheet.png`; all views and manifests are in `evidence/_privat/pubs/<Name>/`.
+- **Public prop check:** billboard r3 (the current `sources.json` entry) → `evidence/billboard_lamps_v1.1_contact_sheet.png`, PASS, 3 × 3 with no empty cells.
+- **My image check:** all 9 cells are filled in every sheet, with the same light and cove. The `top` view shows roof and footprint, and the entrance details are readable. The pubs keep their Meshy textures, with `midground` clay laid over them.
+
+## Noticed (not changed by me)
+`sources.json` was updated by someone else at 00:27: FrizzleBob now uses `50_BLENDER/FB/…_kfbanchors.glb` (private) with its own card, Lady Dory uses r9 (normals fixed), and the billboard uses r3 (raised). The public v1 evidence `evidence/frizzlebob/` therefore still shows the older public FB v5b (card-facehost seat). `--id frizzlebob` now renders the private anchor version.
+
+## Open points (v1.1)
+- The pubs have no card. The seed is the file name and there is no displayName, so the title shows the file name. A stage/prop card (`kfb.stage/1`?) would supply name, seed and approval status. **WS0 decision.**
+- `detail_low` without an entrance is generic (lower third). If props get an anchor such as `KFB_Detail_anchor`, it could be aimed at directly.
+
+---
+
 # RETURN · PROOF_STAGE_R1 · KFB Abnahme-Bühne v1 (WS0 · 17./18.10.2026)
 
 **Brief:** Georg 17.10.: "Ich will eine einheitliche und repräsentative Darstellung aller Abnahmen!" (one uniform, representative presentation for all approvals) and "Wieso haben die Modelle keine Augen?" (why do the models have no eyes?).

@@ -3,7 +3,9 @@
 // node_modules, read only, as in the CLAY_SSOT golden test) and writes PNGs + contact sheet + proof_manifest.json.
 //
 //   node render.mjs --card <figure.json | id> [--glb <path>] [--type character|prop|stage] [--views front,threeq,...] [--eyes rest,closed]
-//                   [--units kaykit|m] --out <dir>
+//                   [--units kaykit|m] [--stage v1.1|v1] --out <dir>
+//   Default views: character = front,threeq,side,back,near_face,far,scale_ref · prop/stage (v1.1) = front,threeq,side,back,top,near_face,
+//   detail_low,far,scale_ref (3 x 3 sheet, no empty cells). --stage v1 drives proof-stage.v1.html (kfb-proof-stage.v1, frozen).
 //   node render.mjs --id frizzlebob --out out/fb                (id from sources.json: card + GLB resolved locally)
 //   node render.mjs --glb ../../../50_BLENDER/B22/KFB_Billboard_Lamps.r2.glb --type prop --out out/lamps
 //
@@ -24,16 +26,17 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const HUB = path.resolve(HERE, '../../..');
 const HOME = process.env.HOME;
 const LAB = path.join(HOME, 'Dropbox/CLAUDE/KFB Island Worldbuilder Lab');
-const ALL_VIEWS = ['front', 'threeq', 'side', 'back', 'near_face', 'far', 'scale_ref'], ALL_EYES = ['rest', 'half', 'closed'];
+const ALL_VIEWS = ['front', 'threeq', 'side', 'back', 'near_face', 'far', 'scale_ref', 'top', 'detail_low'], ALL_EYES = ['rest', 'half', 'closed'];
 
 /* ---------- args ---------- */
 const argv = process.argv.slice(2), A = {};
 for (let i = 0; i < argv.length; i++) { const k = argv[i]; if (k.startsWith('--')) { const v = argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[++i] : true; A[k.slice(2)] = v; } }
 const die = (m, code = 2) => { console.error('render.mjs: ' + m); process.exit(code); };
 if (A.help || (!A.card && !A.glb && !A.id) || !A.out) die('usage: node render.mjs --card <figure.json|id> [--glb <path>] [--type character|prop|stage] [--views a,b] [--eyes rest,closed] [--units kaykit|m] --out <dir>');
-const views = String(A.views || 'front,threeq,side,back,near_face,far,scale_ref').split(',').map((s) => s.trim()).filter(Boolean);
+let views = A.views ? String(A.views).split(',').map((s) => s.trim()).filter(Boolean) : null;   // default per type after load (DEFAULT_VIEWS)
+const STAGE = String(A.stage || 'v1.1'); if (!['v1', 'v1.1'].includes(STAGE)) die('--stage v1 | v1.1');
 const eyes = String(A.eyes || 'rest,closed').split(',').map((s) => s.trim()).filter(Boolean);
-for (const v of views) if (!ALL_VIEWS.includes(v)) die('unknown view ' + v + ' (' + ALL_VIEWS.join(', ') + ')');
+for (const v of views || []) if (!ALL_VIEWS.includes(v)) die('unknown view ' + v + ' (' + ALL_VIEWS.join(', ') + ')');
 for (const e of eyes) if (!ALL_EYES.includes(e)) die('unknown eye state ' + e + ' (' + ALL_EYES.join(', ') + ')');
 const OUT = path.resolve(A.out); fs.mkdirSync(OUT, { recursive: true });
 const before = new Set(fs.readdirSync(OUT));                                       // nothing is deleted; leftovers are reported
@@ -74,7 +77,7 @@ const server = http.createServer((req, res) => {
 });
 await new Promise((r) => server.listen(0, '127.0.0.1', r));
 const PORT = server.address().port; if ([5180, 5192, 8765].includes(PORT)) { server.close(); die('port collision ' + PORT); }
-const PAGE = `http://127.0.0.1:${PORT}/${path.relative(HUB, path.join(HERE, 'proof-stage.html')).split(path.sep).map(encodeURIComponent).join('/')}?headless=1`;
+const PAGE = `http://127.0.0.1:${PORT}/${path.relative(HUB, path.join(HERE, STAGE === 'v1' ? 'proof-stage.v1.html' : 'proof-stage.html')).split(path.sep).map(encodeURIComponent).join('/')}?headless=1`;
 
 /* ---------- run ---------- */
 const PW = process.env.KFB_PLAYWRIGHT_DIR ? path.resolve(process.env.KFB_PLAYWRIGHT_DIR) : LAB;   // a folder whose node_modules has playwright-core
@@ -95,6 +98,7 @@ try {
   const fid = r.input.id, hasEyes = !!(r.info.eyes && r.info.eyes.seat);
   console.log(`${fid} · ${r.input.type} · ${r.info.height_m} m · eyes ${r.info.eyes.seat || r.info.eyes.status} · clay ${r.info.clay.version}/${r.info.clay.profile} · ${Date.now() - t0} ms`);
   for (const [k, g] of Object.entries(r.gates)) console.log(`  ${k} ${g.result.padEnd(4)} ${g.name}: ${g.detail}`);
+  if (!views) views = (await page.evaluate(() => window.KFB_PROOF.DEFAULT_VIEWS || null))?.[r.input.type] || ['front', 'threeq', 'side', 'back', 'near_face', 'far', 'scale_ref'];
   const combos = []; for (const v of views) for (const e of hasEyes ? eyes : ['rest']) combos.push([v, e]);
   const renders = {}, files = {};
   if (r.status === 'PASS') {
@@ -115,7 +119,7 @@ try {
   if (glbPath) man.input.glbSha256_node = sha(glbPath); if (cardPath) man.input.cardSha256_node = sha(cardPath);
   man.cli = { command: 'node render.mjs ' + argv.join(' '), views, eyes: hasEyes ? eyes : null, node: process.version, chrome: process.env.KFB_CHROME ? path.basename(path.dirname(process.env.KFB_CHROME)) : 'channel chrome', ms: Date.now() - t0, pageErrors: errors };
   man.vendor = Object.fromEntries(fs.readdirSync(path.join(HERE, 'vendor')).filter((f) => f.endsWith('.js')).map((f) => [f, sha(path.join(HERE, 'vendor', f))]));
-  man.vendor['kfb-proof-stage.v1.js'] = sha(path.join(HERE, 'kfb-proof-stage.v1.js')); man.vendor['kfb-proof-eyes.v1.js'] = sha(path.join(HERE, 'kfb-proof-eyes.v1.js'));
+  man.vendor['kfb-proof-stage.v1.js'] = sha(path.join(HERE, 'kfb-proof-stage.v1.js')); man.vendor['kfb-proof-stage.v1.1.js'] = sha(path.join(HERE, 'kfb-proof-stage.v1.1.js')); man.cli.stagePage = STAGE; man.vendor['kfb-proof-eyes.v1.js'] = sha(path.join(HERE, 'kfb-proof-eyes.v1.js'));
   man.staleFilesInOut = [...before].filter((f) => !files[f] && f !== 'proof_manifest.json');
   if (man.staleFilesInOut.length) console.log('  note: files from an earlier run stay in the folder (not part of this manifest): ' + man.staleFilesInOut.join(', '));
   fs.writeFileSync(path.join(OUT, 'proof_manifest.json'), JSON.stringify(man, null, 1));

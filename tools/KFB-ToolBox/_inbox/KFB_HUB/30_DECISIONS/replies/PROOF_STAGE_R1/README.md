@@ -1,3 +1,22 @@
+# KFB Abnahme-Bühne v1.1 (`kfb-proof-stage.v1.1`) · how to use it
+
+> **v1.1 (18.10.)** keeps everything from v1 and adds a dedicated layout for `--type stage` and `--type prop`: a **3 × 3 contact sheet with no empty cells**.
+> - **Character:** views, sheet, gates, light, clay and eyes are unchanged. The v1 and v1.1 renders of the same input are byte-identical.
+> - **Files:** `proof-stage.html` and `render.mjs` now use `kfb-proof-stage.v1.1.js`. v1 stays as `kfb-proof-stage.v1.js` + `proof-stage.v1.html`; select it with `node render.mjs … --stage v1`.
+>
+> | Stage / prop sheet (3 × 3) | | |
+> |---|---|---|
+> | front 0° | threeq 35° | side 90° |
+> | back 180° | **top** (from above, 85°, footprint 80 %) | **detail high** = `near_face` (upper third, 60 %) |
+> | **detail low** = `detail_low` (lower third, 60 %) | far (40 %) | scale_ref (FrizzleBob 1.81 m) |
+>
+> `detail_low` aims at the entrance when the root carries the extras `kfb.entrances[0]`, using the WSB B24 convention: `pos_u` in the root's parent frame, plus `forward_xz`. The object is turned so that the entrance faces the camera, and the caption reads "Detail unten · Eingang". Without an entrance, the view frames whatever stands in the lower third (legs, stairs, plinth).
+>
+> CLI default views: character = `front,threeq,side,back,near_face,far,scale_ref`; prop and stage = `front,threeq,side,back,top,near_face,detail_low,far,scale_ref`.
+
+---
+(v1 text follows; it still applies unless the v1.1 note above says otherwise)
+
 # KFB Abnahme-Bühne v1 (`kfb-proof-stage.v1`) · how to use it
 
 Every approval image from every workstation comes out of this one stage, the same way. Do not render acceptance images with your own light, clay, background or camera.

@@ -87,7 +87,7 @@ try {
     const { GLTFLoader } = await import(cdn + 'examples/jsm/loaders/GLTFLoader.js');
     const AP = await import(applyUrl);
     window.__KFB_PAL = { entry: null, report: null, AP };
-    AP.patchGLTFLoader(GLTFLoader, () => window.__KFB_PAL.entry, (r) => { window.__KFB_PAL.report = r; });
+    AP.patchGLTFLoader(GLTFLoader, () => window.__KFB_PAL.entry, (r) => { const P = window.__KFB_PAL; (P.reports = P.reports || []).push(r); if (!P.report || r.touched > P.report.touched) P.report = r; });   // the stage also loads the FB silhouette (0 role materials)
     const THREE = await import(cdn + 'build/three.module.js');
     /* `top`: stage scene/light/AO/renderer, own camera (not a stage-v1 preset) */
     window.__KFB_TOP = () => {
@@ -151,7 +151,7 @@ try {
     const isl = PAL.islands[id], entry = A.diag ? diagEntry(id) : { id, ...isl };
     const glbPath = expand(isl.glb), dir = path.join(OUT, id); fs.mkdirSync(dir, { recursive: true });
     const before = new Set(fs.readdirSync(dir)); errors.length = 0;
-    await page.evaluate((e) => { window.__KFB_PAL.entry = e; window.__KFB_PAL.report = null; }, entry);
+    await page.evaluate((e) => { window.__KFB_PAL.entry = e; window.__KFB_PAL.report = null; window.__KFB_PAL.reports = []; }, entry);
     const t0 = Date.now();
     const r = await page.evaluate((a) => window.KFB_PROOF.load(a), { id: null, cardUrl: null, glbUrl: urlFor(glbPath), type: 'stage', units: 'kaykit', glbName: 'hub:' + path.relative(HUB, glbPath) });
     const rep = await page.evaluate(() => window.__KFB_PAL.report);
@@ -164,7 +164,7 @@ try {
     for (const v of views) {
       const url = v === 'top' ? await page.evaluate(() => window.__KFB_TOP()) : await page.evaluate((vv) => window.KFB_PROOF.render(vv, 'rest'), v);
       const name = `${id}${A.diag ? '_diag' : ''}_${v}.png`; files[name] = { view: v, sha256: save(path.join(dir, name), url) }; shots.push({ url, label: LABEL[v] || v });
-      if (v === 'threeq') overview.push({ url, label: `${id.replace('_', ' · ')} · ${r.status}`, swatch: isl.six || [] });
+      if (v === 'threeq') overview.push({ url, label: `${id.replace('_', ' · ')} · ${r.status}`, swatch: isl.lead6 || isl.six || [] });
     }
     const head = {
       title: `KFB Insel-Palette · ${id}${A.diag ? ' · DIAGNOSE Rollen-Falschfarben' : ''} · PRIVAT (Kauf-Asset, nur lokal)`,
@@ -186,7 +186,7 @@ try {
   }
   if (ids.length > 1 && overview.length) {
     const name = A.diag ? 'ISLAND_PALETTES_R1_diag_overview.png' : 'ISLAND_PALETTES_R1_overview.png';
-    save(path.join(OUT, name), await page.evaluate((x) => window.__KFB_OVERVIEW(x), { tiles: overview, title: `KFB Insel-Paletten R1 · ¾-Ansicht · Bühne v1 + Laufzeit-Palette${A.diag ? ' · DIAGNOSE' : ''} · PRIVAT (nur lokal)`, foot: `Streifen = die sechs Leitfarben je Insel (V-421-Ergänzung) · ${PAL.schema} · ${new Date().toISOString().slice(0, 10)}` }));
+    save(path.join(OUT, name), await page.evaluate((x) => window.__KFB_OVERVIEW(x), { tiles: overview, title: `KFB Insel-Paletten R1 · ¾-Ansicht · Bühne v1 + Laufzeit-Palette${A.diag ? ' · DIAGNOSE' : ''} · PRIVAT (nur lokal)`, foot: `Streifen = die sechs flächengrößten Farben je Insel (area_shares.r1.json) · ${PAL.schema} · ${new Date().toISOString().slice(0, 10)}` }));
     console.log('overview -> ' + path.join(OUT, name));
   }
 } catch (e) { console.error('render.palette.mjs: ' + e.message); code = 2; }
