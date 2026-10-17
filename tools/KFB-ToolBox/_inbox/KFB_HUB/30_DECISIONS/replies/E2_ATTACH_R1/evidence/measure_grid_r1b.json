@@ -1,0 +1,3280 @@
+{
+ "grid": [
+  {
+   "id": "baked_f0",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": null,
+      "fwd": 0,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97337,
+       "fwd": 0,
+       "apex": 0.9773,
+       "rimFront": 0.6579,
+       "protrusion": 0.3194,
+       "equatorBehindRim": 0.6579,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9202,
+          "coverOfRadius": 0.0407,
+          "pxWith": 37176,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5487,
+          "coverOfRadius": 0.2593,
+          "pxWith": 14676,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.6982,
+          "coverOfRadius": 0.1644,
+          "pxWith": 26782,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.3922,
+          "coverOfRadius": 0.3737,
+          "pxWith": 11352,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1654,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1753,
+         "rimVertsInsideSkin": 86,
+         "rimDeepestR": 0.0585
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1780,
+         "rimVertsInsideSkin": 376,
+         "rimDeepestR": 0.068
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1409,
+         "rimVertsInsideSkin": 350,
+         "rimDeepestR": 0.0676
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.97337,
+       "fwd": 0,
+       "apex": 0.9773,
+       "rimFront": 0.6579,
+       "protrusion": 0.3194,
+       "equatorBehindRim": 0.6579,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9202,
+          "coverOfRadius": 0.0407,
+          "pxWith": 37176,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5487,
+          "coverOfRadius": 0.2593,
+          "pxWith": 14676,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.6982,
+          "coverOfRadius": 0.1644,
+          "pxWith": 26782,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.3922,
+          "coverOfRadius": 0.3737,
+          "pxWith": 11352,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1654,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1753,
+         "rimVertsInsideSkin": 85,
+         "rimDeepestR": 0.0585
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1780,
+         "rimVertsInsideSkin": 376,
+         "rimDeepestR": 0.068
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1409,
+         "rimVertsInsideSkin": 350,
+         "rimDeepestR": 0.0676
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": null,
+      "fwd": 0,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.89676,
+       "fwd": 0,
+       "apex": 0.9003,
+       "rimFront": 0.6265,
+       "protrusion": 0.2738,
+       "equatorBehindRim": 0.6265,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9002,
+          "coverOfRadius": 0.0512,
+          "pxWith": 30735,
+          "pxWithout": 34144
+         },
+         "lid": {
+          "visibleAreaFrac": 0.529,
+          "coverOfRadius": 0.2727,
+          "pxWith": 12084,
+          "pxWithout": 22844
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.6797,
+          "coverOfRadius": 0.1756,
+          "pxWith": 21985,
+          "pxWithout": 32346
+         },
+         "lid": {
+          "visibleAreaFrac": 0.3741,
+          "coverOfRadius": 0.3884,
+          "pxWith": 9234,
+          "pxWithout": 24684
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1674,
+         "rimVertsInsideSkin": 183,
+         "rimDeepestR": 0.1014
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1785,
+         "rimVertsInsideSkin": 314,
+         "rimDeepestR": 0.1076
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1832,
+         "rimVertsInsideSkin": 500,
+         "rimDeepestR": 0.0961
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1535,
+         "rimVertsInsideSkin": 432,
+         "rimDeepestR": 0.0921
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "baked_f0.05",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": null,
+      "fwd": 0.05,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.92889,
+       "fwd": 0.05,
+       "apex": 0.9826,
+       "rimFront": 0.6579,
+       "protrusion": 0.3247,
+       "equatorBehindRim": 0.6079,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9868,
+          "coverOfRadius": 0.0066,
+          "pxWith": 36658,
+          "pxWithout": 37148
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6091,
+          "coverOfRadius": 0.2195,
+          "pxWith": 15070,
+          "pxWithout": 24740
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7424,
+          "coverOfRadius": 0.1384,
+          "pxWith": 26088,
+          "pxWithout": 35140
+         },
+         "lid": {
+          "visibleAreaFrac": 0.435,
+          "coverOfRadius": 0.3405,
+          "pxWith": 11625,
+          "pxWithout": 26724
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0406,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1760,
+         "rimVertsInsideSkin": 10,
+         "rimDeepestR": 0.0158
+        },
+        "rest": {
+         "shellGapMinR": 0.0343,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1831,
+         "rimVertsInsideSkin": 112,
+         "rimDeepestR": 0.0376
+        },
+        "half": {
+         "shellGapMinR": 0.0312,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1840,
+         "rimVertsInsideSkin": 302,
+         "rimDeepestR": 0.0444
+        },
+        "closed": {
+         "shellGapMinR": 0.0311,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1441,
+         "rimVertsInsideSkin": 281,
+         "rimDeepestR": 0.0448
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.92889,
+       "fwd": 0.05,
+       "apex": 0.9826,
+       "rimFront": 0.6579,
+       "protrusion": 0.3247,
+       "equatorBehindRim": 0.6079,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9868,
+          "coverOfRadius": 0.0066,
+          "pxWith": 36658,
+          "pxWithout": 37148
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6091,
+          "coverOfRadius": 0.2195,
+          "pxWith": 15070,
+          "pxWithout": 24740
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7424,
+          "coverOfRadius": 0.1384,
+          "pxWith": 26088,
+          "pxWithout": 35140
+         },
+         "lid": {
+          "visibleAreaFrac": 0.435,
+          "coverOfRadius": 0.3405,
+          "pxWith": 11624,
+          "pxWithout": 26724
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0406,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1760,
+         "rimVertsInsideSkin": 10,
+         "rimDeepestR": 0.0158
+        },
+        "rest": {
+         "shellGapMinR": 0.0343,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1831,
+         "rimVertsInsideSkin": 114,
+         "rimDeepestR": 0.0376
+        },
+        "half": {
+         "shellGapMinR": 0.0312,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1840,
+         "rimVertsInsideSkin": 302,
+         "rimDeepestR": 0.0444
+        },
+        "closed": {
+         "shellGapMinR": 0.0311,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1441,
+         "rimVertsInsideSkin": 281,
+         "rimDeepestR": 0.0448
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": null,
+      "fwd": 0.05,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.85227,
+       "fwd": 0.05,
+       "apex": 0.9057,
+       "rimFront": 0.6265,
+       "protrusion": 0.2792,
+       "equatorBehindRim": 0.5765,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9762,
+          "coverOfRadius": 0.012,
+          "pxWith": 30399,
+          "pxWithout": 31140
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5967,
+          "coverOfRadius": 0.2276,
+          "pxWith": 12487,
+          "pxWithout": 20928
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7268,
+          "coverOfRadius": 0.1475,
+          "pxWith": 21361,
+          "pxWithout": 29390
+         },
+         "lid": {
+          "visibleAreaFrac": 0.4211,
+          "coverOfRadius": 0.3511,
+          "pxWith": 9518,
+          "pxWithout": 22602
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0407,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1777,
+         "rimVertsInsideSkin": 157,
+         "rimDeepestR": 0.0728
+        },
+        "rest": {
+         "shellGapMinR": 0.0343,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1858,
+         "rimVertsInsideSkin": 283,
+         "rimDeepestR": 0.0749
+        },
+        "half": {
+         "shellGapMinR": 0.0296,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1926,
+         "rimVertsInsideSkin": 390,
+         "rimDeepestR": 0.065
+        },
+        "closed": {
+         "shellGapMinR": 0.0291,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1544,
+         "rimVertsInsideSkin": 342,
+         "rimDeepestR": 0.0607
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open58_f0",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 58,
+      "fwd": 0,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97337,
+       "fwd": 0,
+       "apex": 0.9773,
+       "rimFront": 0.5829,
+       "protrusion": 0.3944,
+       "equatorBehindRim": 0.5829,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9202,
+          "coverOfRadius": 0.0407,
+          "pxWith": 37176,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.668,
+          "coverOfRadius": 0.1827,
+          "pxWith": 17869,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7037,
+          "coverOfRadius": 0.1611,
+          "pxWith": 26994,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.4725,
+          "coverOfRadius": 0.3126,
+          "pxWith": 13676,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1654,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1739,
+         "rimVertsInsideSkin": 83,
+         "rimDeepestR": 0.0585
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1652,
+         "rimVertsInsideSkin": 294,
+         "rimDeepestR": 0.068
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1303,
+         "rimVertsInsideSkin": 287,
+         "rimDeepestR": 0.0676
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.97337,
+       "fwd": 0,
+       "apex": 0.9773,
+       "rimFront": 0.5829,
+       "protrusion": 0.3944,
+       "equatorBehindRim": 0.5829,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9202,
+          "coverOfRadius": 0.0407,
+          "pxWith": 37176,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.668,
+          "coverOfRadius": 0.1827,
+          "pxWith": 17869,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7037,
+          "coverOfRadius": 0.1611,
+          "pxWith": 26994,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.4725,
+          "coverOfRadius": 0.3126,
+          "pxWith": 13676,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1654,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1739,
+         "rimVertsInsideSkin": 82,
+         "rimDeepestR": 0.0585
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1652,
+         "rimVertsInsideSkin": 294,
+         "rimDeepestR": 0.068
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1303,
+         "rimVertsInsideSkin": 287,
+         "rimDeepestR": 0.0676
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 58,
+      "fwd": 0,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97331,
+       "fwd": 0,
+       "apex": 0.9772,
+       "rimFront": 0.5828,
+       "protrusion": 0.3944,
+       "equatorBehindRim": 0.5828,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9069,
+          "coverOfRadius": 0.0477,
+          "pxWith": 36647,
+          "pxWithout": 40408
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6732,
+          "coverOfRadius": 0.1795,
+          "pxWith": 17997,
+          "pxWithout": 26732
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.6932,
+          "coverOfRadius": 0.1674,
+          "pxWith": 26593,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.4716,
+          "coverOfRadius": 0.3133,
+          "pxWith": 13636,
+          "pxWithout": 28913
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1674,
+         "rimVertsInsideSkin": 264,
+         "rimDeepestR": 0.1875
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1760,
+         "rimVertsInsideSkin": 453,
+         "rimDeepestR": 0.1856
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1657,
+         "rimVertsInsideSkin": 526,
+         "rimDeepestR": 0.1759
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1359,
+         "rimVertsInsideSkin": 372,
+         "rimDeepestR": 0.1717
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open58_f0.05",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 58,
+      "fwd": 0.05,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.95055,
+       "fwd": 0.05,
+       "apex": 1.0043,
+       "rimFront": 0.5829,
+       "protrusion": 0.4215,
+       "equatorBehindRim": 0.5329,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9522,
+          "coverOfRadius": 0.0242,
+          "pxWith": 37104,
+          "pxWithout": 38968
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7177,
+          "coverOfRadius": 0.1528,
+          "pxWith": 18601,
+          "pxWithout": 25916
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7355,
+          "coverOfRadius": 0.1424,
+          "pxWith": 27105,
+          "pxWithout": 36850
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5079,
+          "coverOfRadius": 0.2873,
+          "pxWith": 14202,
+          "pxWithout": 27962
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0163,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1756,
+         "rimVertsInsideSkin": 20,
+         "rimDeepestR": 0.0399
+        },
+        "rest": {
+         "shellGapMinR": 0.01,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1794,
+         "rimVertsInsideSkin": 128,
+         "rimDeepestR": 0.0619
+        },
+        "half": {
+         "shellGapMinR": 0.0069,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1715,
+         "rimVertsInsideSkin": 298,
+         "rimDeepestR": 0.0687
+        },
+        "closed": {
+         "shellGapMinR": 0.0068,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1327,
+         "rimVertsInsideSkin": 305,
+         "rimDeepestR": 0.0691
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.95055,
+       "fwd": 0.05,
+       "apex": 1.0043,
+       "rimFront": 0.5829,
+       "protrusion": 0.4215,
+       "equatorBehindRim": 0.5329,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9522,
+          "coverOfRadius": 0.0242,
+          "pxWith": 37104,
+          "pxWithout": 38968
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7177,
+          "coverOfRadius": 0.1528,
+          "pxWith": 18601,
+          "pxWithout": 25916
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7355,
+          "coverOfRadius": 0.1424,
+          "pxWith": 27105,
+          "pxWithout": 36850
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5079,
+          "coverOfRadius": 0.2873,
+          "pxWith": 14202,
+          "pxWithout": 27962
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0163,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1756,
+         "rimVertsInsideSkin": 20,
+         "rimDeepestR": 0.0399
+        },
+        "rest": {
+         "shellGapMinR": 0.01,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1794,
+         "rimVertsInsideSkin": 131,
+         "rimDeepestR": 0.0619
+        },
+        "half": {
+         "shellGapMinR": 0.0069,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1715,
+         "rimVertsInsideSkin": 298,
+         "rimDeepestR": 0.0687
+        },
+        "closed": {
+         "shellGapMinR": 0.0068,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1327,
+         "rimVertsInsideSkin": 305,
+         "rimDeepestR": 0.0691
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 58,
+      "fwd": 0.05,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.95049,
+       "fwd": 0.05,
+       "apex": 1.0043,
+       "rimFront": 0.5828,
+       "protrusion": 0.4215,
+       "equatorBehindRim": 0.5328,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9401,
+          "coverOfRadius": 0.0304,
+          "pxWith": 36635,
+          "pxWithout": 38968
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7231,
+          "coverOfRadius": 0.1496,
+          "pxWith": 18723,
+          "pxWithout": 25892
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7247,
+          "coverOfRadius": 0.1487,
+          "pxWith": 26711,
+          "pxWithout": 36858
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5072,
+          "coverOfRadius": 0.2878,
+          "pxWith": 14175,
+          "pxWithout": 27946
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0165,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1762,
+         "rimVertsInsideSkin": 340,
+         "rimDeepestR": 0.1742
+        },
+        "rest": {
+         "shellGapMinR": 0.0102,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1786,
+         "rimVertsInsideSkin": 477,
+         "rimDeepestR": 0.175
+        },
+        "half": {
+         "shellGapMinR": 0.007,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1713,
+         "rimVertsInsideSkin": 474,
+         "rimDeepestR": 0.163
+        },
+        "closed": {
+         "shellGapMinR": 0.0069,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1373,
+         "rimVertsInsideSkin": 368,
+         "rimDeepestR": 0.1637
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open58_f0.1",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 58,
+      "fwd": 0.1,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.92929,
+       "fwd": 0.1,
+       "apex": 1.033,
+       "rimFront": 0.5829,
+       "protrusion": 0.4501,
+       "equatorBehindRim": 0.4829,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9776,
+          "coverOfRadius": 0.0112,
+          "pxWith": 36822,
+          "pxWithout": 37664
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7684,
+          "coverOfRadius": 0.1234,
+          "pxWith": 19277,
+          "pxWithout": 25088
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7662,
+          "coverOfRadius": 0.1246,
+          "pxWith": 27226,
+          "pxWithout": 35532
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5446,
+          "coverOfRadius": 0.262,
+          "pxWith": 14745,
+          "pxWithout": 27076
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0193,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1820,
+         "rimVertsInsideSkin": 58,
+         "rimDeepestR": 0.0536
+        },
+        "rest": {
+         "shellGapMinR": 0.009,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1845,
+         "rimVertsInsideSkin": 173,
+         "rimDeepestR": 0.065
+        },
+        "half": {
+         "shellGapMinR": 0.0073,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1864,
+         "rimVertsInsideSkin": 286,
+         "rimDeepestR": 0.0695
+        },
+        "closed": {
+         "shellGapMinR": 0.0078,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1326,
+         "rimVertsInsideSkin": 271,
+         "rimDeepestR": 0.0703
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.92929,
+       "fwd": 0.1,
+       "apex": 1.033,
+       "rimFront": 0.5829,
+       "protrusion": 0.4501,
+       "equatorBehindRim": 0.4829,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9776,
+          "coverOfRadius": 0.0112,
+          "pxWith": 36822,
+          "pxWithout": 37664
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7684,
+          "coverOfRadius": 0.1234,
+          "pxWith": 19277,
+          "pxWithout": 25088
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7662,
+          "coverOfRadius": 0.1246,
+          "pxWith": 27226,
+          "pxWithout": 35532
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5446,
+          "coverOfRadius": 0.262,
+          "pxWith": 14745,
+          "pxWithout": 27076
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0193,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1820,
+         "rimVertsInsideSkin": 58,
+         "rimDeepestR": 0.0536
+        },
+        "rest": {
+         "shellGapMinR": 0.009,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1845,
+         "rimVertsInsideSkin": 174,
+         "rimDeepestR": 0.065
+        },
+        "half": {
+         "shellGapMinR": 0.0073,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1864,
+         "rimVertsInsideSkin": 286,
+         "rimDeepestR": 0.0695
+        },
+        "closed": {
+         "shellGapMinR": 0.0078,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1326,
+         "rimVertsInsideSkin": 271,
+         "rimDeepestR": 0.0703
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 58,
+      "fwd": 0.1,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.92923,
+       "fwd": 0.1,
+       "apex": 1.0329,
+       "rimFront": 0.5828,
+       "protrusion": 0.4501,
+       "equatorBehindRim": 0.4828,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9677,
+          "coverOfRadius": 0.0163,
+          "pxWith": 36440,
+          "pxWithout": 37656
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7743,
+          "coverOfRadius": 0.1201,
+          "pxWith": 19406,
+          "pxWithout": 25064
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.756,
+          "coverOfRadius": 0.1305,
+          "pxWith": 26863,
+          "pxWithout": 35534
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5437,
+          "coverOfRadius": 0.2626,
+          "pxWith": 14705,
+          "pxWithout": 27044
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0196,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1839,
+         "rimVertsInsideSkin": 379,
+         "rimDeepestR": 0.1654
+        },
+        "rest": {
+         "shellGapMinR": 0.0093,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1864,
+         "rimVertsInsideSkin": 468,
+         "rimDeepestR": 0.1678
+        },
+        "half": {
+         "shellGapMinR": 0.0075,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1819,
+         "rimVertsInsideSkin": 475,
+         "rimDeepestR": 0.1583
+        },
+        "closed": {
+         "shellGapMinR": 0.0079,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1407,
+         "rimVertsInsideSkin": 350,
+         "rimDeepestR": 0.1609
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open62_f0",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 62,
+      "fwd": 0,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97337,
+       "fwd": 0,
+       "apex": 0.9773,
+       "rimFront": 0.5136,
+       "protrusion": 0.4637,
+       "equatorBehindRim": 0.5136,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9831,
+          "coverOfRadius": 0.0085,
+          "pxWith": 39718,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7319,
+          "coverOfRadius": 0.1445,
+          "pxWith": 19576,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7698,
+          "coverOfRadius": 0.1226,
+          "pxWith": 29530,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5263,
+          "coverOfRadius": 0.2746,
+          "pxWith": 15232,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1654,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1695,
+         "rimVertsInsideSkin": 53,
+         "rimDeepestR": 0.0479
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1534,
+         "rimVertsInsideSkin": 124,
+         "rimDeepestR": 0.0543
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1181,
+         "rimVertsInsideSkin": 122,
+         "rimDeepestR": 0.0542
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.97337,
+       "fwd": 0,
+       "apex": 0.9773,
+       "rimFront": 0.5136,
+       "protrusion": 0.4637,
+       "equatorBehindRim": 0.5136,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9831,
+          "coverOfRadius": 0.0085,
+          "pxWith": 39718,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7319,
+          "coverOfRadius": 0.1445,
+          "pxWith": 19576,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7698,
+          "coverOfRadius": 0.1226,
+          "pxWith": 29530,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5263,
+          "coverOfRadius": 0.2746,
+          "pxWith": 15232,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1654,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1695,
+         "rimVertsInsideSkin": 52,
+         "rimDeepestR": 0.0479
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1534,
+         "rimVertsInsideSkin": 124,
+         "rimDeepestR": 0.0543
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1181,
+         "rimVertsInsideSkin": 122,
+         "rimDeepestR": 0.0542
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 62,
+      "fwd": 0,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97331,
+       "fwd": 0,
+       "apex": 0.9772,
+       "rimFront": 0.5164,
+       "protrusion": 0.4608,
+       "equatorBehindRim": 0.5164,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9694,
+          "coverOfRadius": 0.0154,
+          "pxWith": 39170,
+          "pxWithout": 40408
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7583,
+          "coverOfRadius": 0.1292,
+          "pxWith": 20270,
+          "pxWithout": 26732
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8005,
+          "coverOfRadius": 0.1053,
+          "pxWith": 30707,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5323,
+          "coverOfRadius": 0.2704,
+          "pxWith": 15390,
+          "pxWithout": 28913
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1674,
+         "rimVertsInsideSkin": 264,
+         "rimDeepestR": 0.1875
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1727,
+         "rimVertsInsideSkin": 422,
+         "rimDeepestR": 0.1856
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1556,
+         "rimVertsInsideSkin": 384,
+         "rimDeepestR": 0.1759
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1261,
+         "rimVertsInsideSkin": 204,
+         "rimDeepestR": 0.1717
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open62_f0.05",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 62,
+      "fwd": 0.05,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.95329,
+       "fwd": 0.05,
+       "apex": 1.0071,
+       "rimFront": 0.5136,
+       "protrusion": 0.4935,
+       "equatorBehindRim": 0.4636,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9999,
+          "coverOfRadius": 0.0001,
+          "pxWith": 39168,
+          "pxWithout": 39172
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7795,
+          "coverOfRadius": 0.1171,
+          "pxWith": 20268,
+          "pxWithout": 26000
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7982,
+          "coverOfRadius": 0.1066,
+          "pxWith": 29612,
+          "pxWithout": 37098
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5632,
+          "coverOfRadius": 0.2496,
+          "pxWith": 15834,
+          "pxWithout": 28116
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0132,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1734,
+         "rimVertsInsideSkin": 20,
+         "rimDeepestR": 0.043
+        },
+        "rest": {
+         "shellGapMinR": 0.0077,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1733,
+         "rimVertsInsideSkin": 77,
+         "rimDeepestR": 0.0532
+        },
+        "half": {
+         "shellGapMinR": 0.0077,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1591,
+         "rimVertsInsideSkin": 128,
+         "rimDeepestR": 0.0544
+        },
+        "closed": {
+         "shellGapMinR": 0.0078,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1203,
+         "rimVertsInsideSkin": 146,
+         "rimDeepestR": 0.0544
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.95329,
+       "fwd": 0.05,
+       "apex": 1.0071,
+       "rimFront": 0.5136,
+       "protrusion": 0.4935,
+       "equatorBehindRim": 0.4636,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9999,
+          "coverOfRadius": 0.0001,
+          "pxWith": 39168,
+          "pxWithout": 39172
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7795,
+          "coverOfRadius": 0.1171,
+          "pxWith": 20268,
+          "pxWithout": 26000
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.7982,
+          "coverOfRadius": 0.1066,
+          "pxWith": 29612,
+          "pxWithout": 37098
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5632,
+          "coverOfRadius": 0.2496,
+          "pxWith": 15834,
+          "pxWithout": 28116
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0132,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1734,
+         "rimVertsInsideSkin": 20,
+         "rimDeepestR": 0.043
+        },
+        "rest": {
+         "shellGapMinR": 0.0077,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1733,
+         "rimVertsInsideSkin": 79,
+         "rimDeepestR": 0.0532
+        },
+        "half": {
+         "shellGapMinR": 0.0077,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1591,
+         "rimVertsInsideSkin": 128,
+         "rimDeepestR": 0.0544
+        },
+        "closed": {
+         "shellGapMinR": 0.0078,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1203,
+         "rimVertsInsideSkin": 146,
+         "rimDeepestR": 0.0544
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 62,
+      "fwd": 0.05,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.95324,
+       "fwd": 0.05,
+       "apex": 1.007,
+       "rimFront": 0.5164,
+       "protrusion": 0.4906,
+       "equatorBehindRim": 0.4664,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.986,
+          "coverOfRadius": 0.007,
+          "pxWith": 38630,
+          "pxWithout": 39180
+         },
+         "lid": {
+          "visibleAreaFrac": 0.8072,
+          "coverOfRadius": 0.1016,
+          "pxWith": 20973,
+          "pxWithout": 25984
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8312,
+          "coverOfRadius": 0.0883,
+          "pxWith": 30837,
+          "pxWithout": 37098
+         },
+         "lid": {
+          "visibleAreaFrac": 0.569,
+          "coverOfRadius": 0.2457,
+          "pxWith": 15985,
+          "pxWithout": 28092
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0134,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1744,
+         "rimVertsInsideSkin": 349,
+         "rimDeepestR": 0.1773
+        },
+        "rest": {
+         "shellGapMinR": 0.0073,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1743,
+         "rimVertsInsideSkin": 432,
+         "rimDeepestR": 0.1781
+        },
+        "half": {
+         "shellGapMinR": 0.0078,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1616,
+         "rimVertsInsideSkin": 335,
+         "rimDeepestR": 0.166
+        },
+        "closed": {
+         "shellGapMinR": 0.0077,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1256,
+         "rimVertsInsideSkin": 220,
+         "rimDeepestR": 0.1668
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open62_f0.1",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 62,
+      "fwd": 0.1,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.93491,
+       "fwd": 0.1,
+       "apex": 1.0386,
+       "rimFront": 0.5136,
+       "protrusion": 0.5251,
+       "equatorBehindRim": 0.4136,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 38144,
+          "pxWithout": 38144
+         },
+         "lid": {
+          "visibleAreaFrac": 0.8296,
+          "coverOfRadius": 0.0892,
+          "pxWith": 21038,
+          "pxWithout": 25360
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8257,
+          "coverOfRadius": 0.0913,
+          "pxWith": 29702,
+          "pxWithout": 35970
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5999,
+          "coverOfRadius": 0.2255,
+          "pxWith": 16424,
+          "pxWithout": 27378
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0151,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1768,
+         "rimVertsInsideSkin": 44,
+         "rimDeepestR": 0.0462
+        },
+        "rest": {
+         "shellGapMinR": 0.0097,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1778,
+         "rimVertsInsideSkin": 100,
+         "rimDeepestR": 0.0562
+        },
+        "half": {
+         "shellGapMinR": 0.0096,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1728,
+         "rimVertsInsideSkin": 112,
+         "rimDeepestR": 0.0554
+        },
+        "closed": {
+         "shellGapMinR": 0.0099,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1224,
+         "rimVertsInsideSkin": 118,
+         "rimDeepestR": 0.0558
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.93491,
+       "fwd": 0.1,
+       "apex": 1.0386,
+       "rimFront": 0.5136,
+       "protrusion": 0.5251,
+       "equatorBehindRim": 0.4136,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 38144,
+          "pxWithout": 38144
+         },
+         "lid": {
+          "visibleAreaFrac": 0.8296,
+          "coverOfRadius": 0.0892,
+          "pxWith": 21038,
+          "pxWithout": 25360
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8257,
+          "coverOfRadius": 0.0913,
+          "pxWith": 29702,
+          "pxWithout": 35970
+         },
+         "lid": {
+          "visibleAreaFrac": 0.5999,
+          "coverOfRadius": 0.2255,
+          "pxWith": 16423,
+          "pxWithout": 27378
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0151,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1768,
+         "rimVertsInsideSkin": 44,
+         "rimDeepestR": 0.0462
+        },
+        "rest": {
+         "shellGapMinR": 0.0096,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1778,
+         "rimVertsInsideSkin": 101,
+         "rimDeepestR": 0.0562
+        },
+        "half": {
+         "shellGapMinR": 0.0096,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1728,
+         "rimVertsInsideSkin": 112,
+         "rimDeepestR": 0.0554
+        },
+        "closed": {
+         "shellGapMinR": 0.0099,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1224,
+         "rimVertsInsideSkin": 118,
+         "rimDeepestR": 0.0558
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 62,
+      "fwd": 0.1,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.93485,
+       "fwd": 0.1,
+       "apex": 1.0386,
+       "rimFront": 0.5164,
+       "protrusion": 0.5222,
+       "equatorBehindRim": 0.4164,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9961,
+          "coverOfRadius": 0.0019,
+          "pxWith": 37996,
+          "pxWithout": 38144
+         },
+         "lid": {
+          "visibleAreaFrac": 0.8515,
+          "coverOfRadius": 0.0772,
+          "pxWith": 21583,
+          "pxWithout": 25348
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8598,
+          "coverOfRadius": 0.0727,
+          "pxWith": 30931,
+          "pxWithout": 35974
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6068,
+          "coverOfRadius": 0.221,
+          "pxWith": 16593,
+          "pxWithout": 27346
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0154,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1812,
+         "rimVertsInsideSkin": 379,
+         "rimDeepestR": 0.1717
+        },
+        "rest": {
+         "shellGapMinR": 0.0064,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1809,
+         "rimVertsInsideSkin": 418,
+         "rimDeepestR": 0.174
+        },
+        "half": {
+         "shellGapMinR": 0.0086,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1708,
+         "rimVertsInsideSkin": 336,
+         "rimDeepestR": 0.1646
+        },
+        "closed": {
+         "shellGapMinR": 0.0058,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1308,
+         "rimVertsInsideSkin": 198,
+         "rimDeepestR": 0.1671
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open66_f0",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 66,
+      "fwd": 0,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97337,
+       "fwd": 0,
+       "apex": 0.9773,
+       "rimFront": 0.4271,
+       "protrusion": 0.5501,
+       "equatorBehindRim": 0.4271,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 40400,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.8982,
+          "coverOfRadius": 0.0523,
+          "pxWith": 24025,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8657,
+          "coverOfRadius": 0.0695,
+          "pxWith": 33210,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6093,
+          "coverOfRadius": 0.2194,
+          "pxWith": 17635,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1640,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1669,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1498,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1143,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.97337,
+       "fwd": 0,
+       "apex": 0.9773,
+       "rimFront": 0.4271,
+       "protrusion": 0.5501,
+       "equatorBehindRim": 0.4271,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 40400,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.8982,
+          "coverOfRadius": 0.0523,
+          "pxWith": 24025,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8657,
+          "coverOfRadius": 0.0695,
+          "pxWith": 33210,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6093,
+          "coverOfRadius": 0.2194,
+          "pxWith": 17635,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1640,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1669,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1498,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1143,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 66,
+      "fwd": 0,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97331,
+       "fwd": 0,
+       "apex": 0.9772,
+       "rimFront": 0.4472,
+       "protrusion": 0.53,
+       "equatorBehindRim": 0.4472,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9963,
+          "coverOfRadius": 0.0019,
+          "pxWith": 40257,
+          "pxWithout": 40408
+         },
+         "lid": {
+          "visibleAreaFrac": 0.8985,
+          "coverOfRadius": 0.0521,
+          "pxWith": 24019,
+          "pxWithout": 26732
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8621,
+          "coverOfRadius": 0.0715,
+          "pxWith": 33071,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6093,
+          "coverOfRadius": 0.2194,
+          "pxWith": 17618,
+          "pxWithout": 28913
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1666,
+         "rimVertsInsideSkin": 264,
+         "rimDeepestR": 0.1875
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1703,
+         "rimVertsInsideSkin": 339,
+         "rimDeepestR": 0.1856
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1508,
+         "rimVertsInsideSkin": 237,
+         "rimDeepestR": 0.1759
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1217,
+         "rimVertsInsideSkin": 87,
+         "rimDeepestR": 0.1717
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open66_f0.05",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 66,
+      "fwd": 0.05,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.95614,
+       "fwd": 0.05,
+       "apex": 1.01,
+       "rimFront": 0.4271,
+       "protrusion": 0.5828,
+       "equatorBehindRim": 0.3771,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 39444,
+          "pxWithout": 39444
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9408,
+          "coverOfRadius": 0.0301,
+          "pxWith": 24629,
+          "pxWithout": 26180
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8885,
+          "coverOfRadius": 0.0574,
+          "pxWith": 33156,
+          "pxWithout": 37318
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6442,
+          "coverOfRadius": 0.1974,
+          "pxWith": 18217,
+          "pxWithout": 28278
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.01,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1712,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0063,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1703,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.0065,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1537,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0066,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1159,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.95614,
+       "fwd": 0.05,
+       "apex": 1.01,
+       "rimFront": 0.4271,
+       "protrusion": 0.5828,
+       "equatorBehindRim": 0.3771,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 39444,
+          "pxWithout": 39444
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9408,
+          "coverOfRadius": 0.0301,
+          "pxWith": 24629,
+          "pxWithout": 26180
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.8885,
+          "coverOfRadius": 0.0574,
+          "pxWith": 33156,
+          "pxWithout": 37318
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6442,
+          "coverOfRadius": 0.1974,
+          "pxWith": 18217,
+          "pxWithout": 28278
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.01,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1712,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0063,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1703,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.0065,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1537,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0066,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1159,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 66,
+      "fwd": 0.05,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.95608,
+       "fwd": 0.05,
+       "apex": 1.0099,
+       "rimFront": 0.4472,
+       "protrusion": 0.5628,
+       "equatorBehindRim": 0.3972,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.999,
+          "coverOfRadius": 0.0005,
+          "pxWith": 39400,
+          "pxWithout": 39440
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9407,
+          "coverOfRadius": 0.0301,
+          "pxWith": 24613,
+          "pxWithout": 26164
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.888,
+          "coverOfRadius": 0.0577,
+          "pxWith": 33141,
+          "pxWithout": 37322
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6445,
+          "coverOfRadius": 0.1972,
+          "pxWith": 18215,
+          "pxWithout": 28261
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0102,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1723,
+         "rimVertsInsideSkin": 318,
+         "rimDeepestR": 0.1805
+        },
+        "rest": {
+         "shellGapMinR": 0.0063,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1716,
+         "rimVertsInsideSkin": 342,
+         "rimDeepestR": 0.1813
+        },
+        "half": {
+         "shellGapMinR": 0.0067,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1568,
+         "rimVertsInsideSkin": 207,
+         "rimDeepestR": 0.1692
+        },
+        "closed": {
+         "shellGapMinR": 0.0068,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1208,
+         "rimVertsInsideSkin": 96,
+         "rimDeepestR": 0.1699
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open66_f0.1",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 66,
+      "fwd": 0.1,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.9407,
+       "fwd": 0.1,
+       "apex": 1.0445,
+       "rimFront": 0.4271,
+       "protrusion": 0.6173,
+       "equatorBehindRim": 0.3271,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 38624,
+          "pxWithout": 38624
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9772,
+          "coverOfRadius": 0.0115,
+          "pxWith": 25087,
+          "pxWithout": 25672
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9098,
+          "coverOfRadius": 0.0462,
+          "pxWith": 33146,
+          "pxWithout": 36434
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6806,
+          "coverOfRadius": 0.175,
+          "pxWith": 18845,
+          "pxWithout": 27690
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0087,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1742,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0063,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1750,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.0101,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1673,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0073,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1174,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.9407,
+       "fwd": 0.1,
+       "apex": 1.0445,
+       "rimFront": 0.4271,
+       "protrusion": 0.6173,
+       "equatorBehindRim": 0.3271,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 38624,
+          "pxWithout": 38624
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9772,
+          "coverOfRadius": 0.0115,
+          "pxWith": 25087,
+          "pxWithout": 25672
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9098,
+          "coverOfRadius": 0.0462,
+          "pxWith": 33146,
+          "pxWithout": 36434
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6806,
+          "coverOfRadius": 0.175,
+          "pxWith": 18845,
+          "pxWithout": 27690
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0087,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1742,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0063,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1750,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.0101,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1673,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0073,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1174,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 66,
+      "fwd": 0.1,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.94064,
+       "fwd": 0.1,
+       "apex": 1.0444,
+       "rimFront": 0.4472,
+       "protrusion": 0.5973,
+       "equatorBehindRim": 0.3472,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 38620,
+          "pxWithout": 38620
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9764,
+          "coverOfRadius": 0.0119,
+          "pxWith": 25054,
+          "pxWithout": 25660
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9098,
+          "coverOfRadius": 0.0461,
+          "pxWith": 33151,
+          "pxWithout": 36436
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6805,
+          "coverOfRadius": 0.1751,
+          "pxWith": 18831,
+          "pxWithout": 27672
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.009,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1781,
+         "rimVertsInsideSkin": 327,
+         "rimDeepestR": 0.1782
+        },
+        "rest": {
+         "shellGapMinR": 0.0064,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1778,
+         "rimVertsInsideSkin": 312,
+         "rimDeepestR": 0.1805
+        },
+        "half": {
+         "shellGapMinR": 0.0073,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1654,
+         "rimVertsInsideSkin": 210,
+         "rimDeepestR": 0.171
+        },
+        "closed": {
+         "shellGapMinR": 0.0075,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1269,
+         "rimVertsInsideSkin": 90,
+         "rimDeepestR": 0.1683
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open70_f0",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 70,
+      "fwd": 0,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97337,
+       "fwd": 0,
+       "apex": 0.9773,
+       "rimFront": 0.3726,
+       "protrusion": 0.6047,
+       "equatorBehindRim": 0.3726,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 40400,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9677,
+          "coverOfRadius": 0.0163,
+          "pxWith": 25884,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9046,
+          "coverOfRadius": 0.0489,
+          "pxWith": 34702,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.673,
+          "coverOfRadius": 0.1796,
+          "pxWith": 19479,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1622,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1640,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1452,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1107,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.97337,
+       "fwd": 0,
+       "apex": 0.9773,
+       "rimFront": 0.3726,
+       "protrusion": 0.6047,
+       "equatorBehindRim": 0.3726,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 40400,
+          "pxWithout": 40400
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9677,
+          "coverOfRadius": 0.0163,
+          "pxWith": 25884,
+          "pxWithout": 26748
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9046,
+          "coverOfRadius": 0.0489,
+          "pxWith": 34702,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.673,
+          "coverOfRadius": 0.1796,
+          "pxWith": 19479,
+          "pxWithout": 28944
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1622,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1640,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1452,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1107,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 70,
+      "fwd": 0,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.97331,
+       "fwd": 0,
+       "apex": 0.9772,
+       "rimFront": 0.3759,
+       "protrusion": 0.6013,
+       "equatorBehindRim": 0.3759,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9995,
+          "coverOfRadius": 0.0002,
+          "pxWith": 40388,
+          "pxWithout": 40408
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9661,
+          "coverOfRadius": 0.0171,
+          "pxWith": 25825,
+          "pxWithout": 26732
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9039,
+          "coverOfRadius": 0.0493,
+          "pxWith": 34673,
+          "pxWithout": 38360
+         },
+         "lid": {
+          "visibleAreaFrac": 0.6715,
+          "coverOfRadius": 0.1805,
+          "pxWith": 19416,
+          "pxWithout": 28913
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1641,
+         "rimVertsInsideSkin": 165,
+         "rimDeepestR": 0.1875
+        },
+        "rest": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1663,
+         "rimVertsInsideSkin": 174,
+         "rimDeepestR": 0.1856
+        },
+        "half": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1439,
+         "rimVertsInsideSkin": 123,
+         "rimDeepestR": 0.1759
+        },
+        "closed": {
+         "shellGapMinR": 0.0059,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1154,
+         "rimVertsInsideSkin": 39,
+         "rimDeepestR": 0.1717
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open70_f0.05",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 70,
+      "fwd": 0.05,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.95907,
+       "fwd": 0.05,
+       "apex": 1.0129,
+       "rimFront": 0.3726,
+       "protrusion": 0.6403,
+       "equatorBehindRim": 0.3226,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 39672,
+          "pxWithout": 39672
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9953,
+          "coverOfRadius": 0.0024,
+          "pxWith": 26206,
+          "pxWithout": 26330
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9241,
+          "coverOfRadius": 0.0387,
+          "pxWith": 34722,
+          "pxWithout": 37574
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7068,
+          "coverOfRadius": 0.1593,
+          "pxWith": 20099,
+          "pxWithout": 28437
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0067,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1686,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0061,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1669,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.008,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1491,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0066,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1117,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.95907,
+       "fwd": 0.05,
+       "apex": 1.0129,
+       "rimFront": 0.3726,
+       "protrusion": 0.6403,
+       "equatorBehindRim": 0.3226,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 39672,
+          "pxWithout": 39672
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9953,
+          "coverOfRadius": 0.0024,
+          "pxWith": 26206,
+          "pxWithout": 26330
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9241,
+          "coverOfRadius": 0.0387,
+          "pxWith": 34722,
+          "pxWithout": 37574
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7068,
+          "coverOfRadius": 0.1593,
+          "pxWith": 20099,
+          "pxWithout": 28437
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0067,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1686,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0061,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1669,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.008,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1491,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0066,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1117,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 70,
+      "fwd": 0.05,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.95901,
+       "fwd": 0.05,
+       "apex": 1.0128,
+       "rimFront": 0.3759,
+       "protrusion": 0.6369,
+       "equatorBehindRim": 0.3259,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9999,
+          "coverOfRadius": 0.0001,
+          "pxWith": 39664,
+          "pxWithout": 39668
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9932,
+          "coverOfRadius": 0.0034,
+          "pxWith": 26132,
+          "pxWithout": 26312
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9239,
+          "coverOfRadius": 0.0388,
+          "pxWith": 34713,
+          "pxWithout": 37574
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7058,
+          "coverOfRadius": 0.1599,
+          "pxWith": 20059,
+          "pxWithout": 28422
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0069,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1694,
+         "rimVertsInsideSkin": 174,
+         "rimDeepestR": 0.1838
+        },
+        "rest": {
+         "shellGapMinR": 0.0065,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1669,
+         "rimVertsInsideSkin": 174,
+         "rimDeepestR": 0.1846
+        },
+        "half": {
+         "shellGapMinR": 0.0067,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1509,
+         "rimVertsInsideSkin": 120,
+         "rimDeepestR": 0.1725
+        },
+        "closed": {
+         "shellGapMinR": 0.0067,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1149,
+         "rimVertsInsideSkin": 54,
+         "rimDeepestR": 0.1732
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "open70_f0.1",
+   "figs": [
+    {
+     "fig": "hunky",
+     "cfg": {
+      "open": 70,
+      "fwd": 0.1,
+      "rs": null,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.94664,
+       "fwd": 0.1,
+       "apex": 1.0504,
+       "rimFront": 0.3726,
+       "protrusion": 0.6778,
+       "equatorBehindRim": 0.2726,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 39132,
+          "pxWithout": 39132
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9991,
+          "coverOfRadius": 0.0005,
+          "pxWith": 25952,
+          "pxWithout": 25976
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9417,
+          "coverOfRadius": 0.0296,
+          "pxWith": 34770,
+          "pxWithout": 36924
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7414,
+          "coverOfRadius": 0.1389,
+          "pxWith": 20801,
+          "pxWithout": 28056
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0066,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1716,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0062,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1713,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.0084,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1612,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0081,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1134,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      },
+      {
+       "eye": 1,
+       "s": 0.94664,
+       "fwd": 0.1,
+       "apex": 1.0504,
+       "rimFront": 0.3726,
+       "protrusion": 0.6778,
+       "equatorBehindRim": 0.2726,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 39132,
+          "pxWithout": 39132
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9991,
+          "coverOfRadius": 0.0005,
+          "pxWith": 25952,
+          "pxWithout": 25976
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9417,
+          "coverOfRadius": 0.0296,
+          "pxWith": 34770,
+          "pxWithout": 36924
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7414,
+          "coverOfRadius": 0.1389,
+          "pxWith": 20801,
+          "pxWithout": 28056
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0066,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1716,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "rest": {
+         "shellGapMinR": 0.0062,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1713,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "half": {
+         "shellGapMinR": 0.0084,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1612,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        },
+        "closed": {
+         "shellGapMinR": 0.0081,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1134,
+         "rimVertsInsideSkin": 0,
+         "rimDeepestR": 0
+        }
+       }
+      }
+     ]
+    },
+    {
+     "fig": "dory",
+     "cfg": {
+      "open": 70,
+      "fwd": 0.1,
+      "rs": 1.1,
+      "fitR": "shell"
+     },
+     "eyes": [
+      {
+       "eye": 0,
+       "s": 0.94658,
+       "fwd": 0.1,
+       "apex": 1.0504,
+       "rimFront": 0.3759,
+       "protrusion": 0.6744,
+       "equatorBehindRim": 0.2759,
+       "coverage": {
+        "front": {
+         "eyeball": {
+          "visibleAreaFrac": 1,
+          "coverOfRadius": 0,
+          "pxWith": 39124,
+          "pxWithout": 39124
+         },
+         "lid": {
+          "visibleAreaFrac": 0.9983,
+          "coverOfRadius": 0.0008,
+          "pxWith": 25907,
+          "pxWithout": 25950
+         }
+        },
+        "threeq": {
+         "eyeball": {
+          "visibleAreaFrac": 0.9414,
+          "coverOfRadius": 0.0298,
+          "pxWith": 34767,
+          "pxWithout": 36932
+         },
+         "lid": {
+          "visibleAreaFrac": 0.7403,
+          "coverOfRadius": 0.1396,
+          "pxWith": 20756,
+          "pxWithout": 28036
+         }
+        }
+       },
+       "shell": {
+        "open": {
+         "shellGapMinR": 0.0062,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1743,
+         "rimVertsInsideSkin": 174,
+         "rimDeepestR": 0.1848
+        },
+        "rest": {
+         "shellGapMinR": 0.0072,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1730,
+         "rimVertsInsideSkin": 174,
+         "rimDeepestR": 0.1872
+        },
+        "half": {
+         "shellGapMinR": 0.0067,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1573,
+         "rimVertsInsideSkin": 99,
+         "rimDeepestR": 0.1762
+        },
+        "closed": {
+         "shellGapMinR": 0.0082,
+         "shellBinsPenetrating": 0,
+         "shellBinsCompared": 1201,
+         "rimVertsInsideSkin": 45,
+         "rimDeepestR": 0.1749
+        }
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

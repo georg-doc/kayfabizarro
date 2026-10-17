@@ -1,0 +1,325 @@
+#!/usr/bin/env python3
+"""KFB Song-Tor (SONG_SPEC_R3 ab R3.2, V-419): EIN Prüfskript für alle Deck-Songs. Keine Kopien je Deck.
+
+  python3 song_gate.py lyrics <track.suno.txt> --deck <deck.json> [--songlines <x.songlines.json>] [--media <deck.pdf.json>]
+                       [--cards 5-60] [--tone <deckId>] [--corpus <datei_oder_ordner> ...]
+  python3 song_gate.py critic <critic.json> --lyrics <track.suno.txt>
+
+lyrics: Rahmen (C8/C12), Klammern (A6), Ziffern/Symbole (A7), Spielwörter (A8), Kartenreihenfolge und -abdeckung (C10),
+        Kartenteil 80-95 Zeichen (A4), Opener einmalig im Song und nicht in früheren Songs (B6), Hooks/Rufe und
+        Wortwiederholung im Nicht-Kartentext (C11), Intro >= 2 Beats ohne Formel (C9), Ton (E16b), Kartenwortanteil (A2).
+critic: prüft das Urteil des externen Kritikers (F): festes Schema, nur Urteile, kein Ersatztext.
+Exit 0 = PASS, Exit 1 = FAIL. Jede Zeile der Ausgabe nennt die Regel.
+"""
+import argparse, json, os, re, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from triplet_set_check import GRAMMAR, FLUFF, vocab, stems  # gleiche Wortlogik wie das Triplet-Tor
+
+WORD = re.compile(r"[A-Za-z]+(?:[-'][A-Za-z]+)*")
+GAME_WORDS = {"actor", "actors", "token", "tokens", "scene", "scenes", "zerg", "equipped", "discard", "discards", "dice",
+              "mana", "cooldown", "buff", "debuff", "hitpoints", "hp", "playable", "keyword", "keywords"}
+GAME_PHRASES = ["card effect", "draw a card", "draw two", "play this card", "when played", "hit points", "your turn",
+                "end of turn", "roll a", "zerg rush", "equipped items"]
+INTRO_FORBIDDEN = ["welcome to", "meta-message", "meta message", "ladies and gentlemen"]
+EXTRA = {"oh", "yes", "yeah", "now", "just", "still", "all", "one", "every", "here", "there", "again", "more", "very"}
+# E16b: Ton. Begriffe, die NICHT aus dem Kartentext des Decks stammen, dürfen nicht im Song stehen.
+TONE_COMMON = ["jew", "jews", "jewish", "zionist", "zionists", "cabal", "globalist", "globalists", "bloodline", "bloodlines",
+               "reptilian", "reptilians", "subhuman", "vermin", "parasite", "parasites"]
+TONE = {
+    "the_kayfabe_money_trail_9_11": ["flight tech", "remote flight", "who flew", "inside job", "hologram", "no plane"],
+    "1001_kayfabe_nights": ["cannibal", "black giant"],
+    "the_carnival_of_unsolved_problems_therapy": ["crazy", "psycho", "nutjob", "lunatic", "snowflake", "loony", "insane"],
+    "federal_kayfabe": [],
+    "geopolitical_thrillers_conspiracy_theories": ["plandemic", "hoax", "fake virus", "they want you dead", "depopulation",
+                                                   "vaccine kills", "wake up sheeple", "sheeple"],
+    "kayfabizarro_monopolies_manipulation_murder_vol": ["deserved it", "had it coming"],
+    "grimms_kayfabe_legends_expansion_set_02": [],
+    "romantic_kayfabe": ["she asked for it", "asked for it", "no means yes"],
+}
+STOP = GRAMMAR | EXTRA | FLUFF
+
+
+def beats_of(text):
+    return [b for b in text.strip().split("\n\n")]
+
+
+def strip_paren(s):
+    return re.sub(r"\s*\([^)]*\)", "", s).strip()
+
+
+def name_variants(card, songlines):
+    n = card.get("cardName") or card.get("name") or ""
+    out = [strip_paren(n)]
+    if "/" in out[0]:
+        out += [p.strip() for p in out[0].split("/")]
+    sl = songlines.get(card.get("cardNumber"))
+    if sl:
+        out += [sl.get("songName") or "", strip_paren(sl.get("songLine") or "")]
+    return [v for v in out if v]
+
+
+def find_card(beat, cards, start, songlines):
+    low = beat.casefold()
+    for i in range(start, len(cards)):
+        for v in name_variants(cards[i], songlines):
+            k = low.find(v.casefold()) if not v.casefold().startswith(("the ", "a ")) else low.find(v.casefold())
+            if k < 0 and v.casefold().startswith("the "):
+                k = low.find(v.casefold()[4:])
+            if k >= 0:
+                return i, k
+    return None, None
+
+
+def parse_range(r, cards):
+    if not r:
+        return cards
+    a, b = (int(x) for x in r.split("-"))
+    return [c for c in cards if a <= int(c.get("cardNumber", 0)) <= b]
+
+
+def corpus_openers(paths, self_path):
+    out = {}
+    files = []
+    for p in paths or []:
+        if os.path.isdir(p):
+            for root, _, fs in os.walk(p):
+                files += [os.path.join(root, f) for f in fs if f.endswith(".suno.txt")]
+        elif os.path.isfile(p):
+            files.append(p)
+    for f in files:
+        if os.path.abspath(f) == os.path.abspath(self_path):
+            continue
+        for b in beats_of(open(f, encoding="utf-8").read()):
+            m = re.match(r"^([^.:!?;,]{1,40}[.:!?])\s", b)
+            if m:
+                out.setdefault(m.group(1).strip().casefold(), os.path.basename(f))
+    return out
+
+
+def gate_lyrics(a):
+    text = open(a.lyrics, encoding="utf-8").read()
+    deck = json.load(open(a.deck, encoding="utf-8"))
+    cards = parse_range(a.cards, sorted(deck.get("cards", []), key=lambda c: int(c.get("cardNumber", 0))))
+    fails, warns = [], []
+    songlines, skip = {}, set()
+    if a.songlines:
+        sj = json.load(open(a.songlines, encoding="utf-8"))
+        if isinstance(sj, dict):
+            skip = {int(x) for x in (sj.get("metaSkipped") or sj.get("metaSkip") or [])}
+            sj = sj.get("songLineChanges") or []
+        for e in sj:
+            songlines[e.get("cardNumber")] = e
+    cards = [c for c in cards if int(c.get("cardNumber", 0)) not in skip]
+    if len(songlines) > max(1, len(cards) // 10):
+        fails.append(f"FAIL A5: {len(songlines)} songLines bei {len(cards)} Karten (max 10 %)")
+    deck_vocab = set()
+    deck_text = ""
+    for c in deck.get("cards", []):
+        t = " ".join(str(c.get(k) or "") for k in ("cardName", "lore", "power"))
+        deck_text += " " + t.casefold()
+        deck_vocab |= vocab(t)
+    for e in songlines.values():
+        deck_vocab |= vocab(e.get("songLine") or "")
+    if a.media:  # A2/V-377: Bildwörter aus artworkPrompt sind erlaubt
+        mj = json.load(open(a.media, encoding="utf-8"))
+        for c in (mj.get("cards") or []) if isinstance(mj, dict) else mj:
+            deck_vocab |= vocab(str(c.get("artworkPrompt") or c.get("imageMotif") or ""))
+    F = lambda rule, msg: fails.append(f"FAIL {rule}: {msg}")
+    W = lambda rule, msg: warns.append(f"WARN {rule}: {msg}")
+
+    if len(text) >= 5000:
+        F("C12", f"{len(text)} Zeichen (>= 5000) -> zwei Tracks an einer Seitengrenze (C12b)")
+    bs = beats_of(text)
+    if not bs or bs[0].strip() != "[Spoken Word]":
+        F("C8", "erster Beat ist nicht [Spoken Word]")
+    if bs[-1].strip() != "Stay Fluffy!":
+        F("C12", "letzter Beat ist nicht 'Stay Fluffy!' allein")
+    for i, b in enumerate(bs):
+        if "\n" in b:
+            F("C8", f"Beat {i}: mehrere Zeilen ohne Leerzeile: {b.splitlines()[0][:60]!r}")
+        if b != b.strip() or not b:
+            F("C8", f"Beat {i}: leer oder Leerraum am Rand (doppelte Leerzeile?)")
+    body = bs[1:-1]
+
+    # Karten zuordnen
+    idx, card_beats, frame = 0, [], []
+    for j, b in enumerate(body):
+        ci, k = find_card(b, cards, idx, songlines)
+        if ci is None:
+            frame.append((j, b))
+            continue
+        if ci != idx:
+            F("C10", f"Karten {[c.get('cardNumber') for c in cards[idx:ci]]} fehlen oder Reihenfolge falsch (bei Beat {j + 1})")
+        card_beats.append((j, b, cards[ci], k))
+        idx = ci + 1
+    if idx < len(cards):
+        F("C10", f"Karten fehlen am Ende: {[c.get('cardNumber') for c in cards[idx:]]}")
+    first_card = card_beats[0][0] if card_beats else len(body)
+    last_card = card_beats[-1][0] if card_beats else -1
+    intro = [b for j, b in frame if j < first_card]
+    outro = [b for j, b in frame if j > last_card]
+    middle = [b for j, b in frame if first_card < j < last_card]
+    if len(intro) < 2:
+        F("C9", f"Intro hat {len(intro)} Beat(s); mindestens 2 eigene Beats (Idee aus dem Deck), nicht wegkürzen")
+    if not outro:
+        F("C12", "kein Outro-Beat vor 'Stay Fluffy!'")
+    for b in middle:
+        F("C10", f"Beat ohne Karte zwischen Karten: {b[:60]!r}")
+
+    frame_text = " ".join(intro + outro + middle)
+    for p in INTRO_FORBIDDEN:
+        if p in frame_text.casefold():
+            F("C9", f"Formel im Rahmen: {p!r}")
+    if frame_text.casefold().count("frizzlebob") > 1:
+        F("C9", "FrizzleBob mehr als einmal im Rahmen")
+
+    # Opener + Kartenteil
+    openers, seen = [], {}
+    for j, b, c, k in card_beats:
+        op = b[:k].strip()
+        part = b[k:].strip()
+        if op:
+            openers.append((j, op))
+            key = op.casefold().rstrip(".:!?,; ")
+            if key in seen:
+                F("B6", f"Opener doppelt: {op!r} (Beats {seen[key] + 1} und {j + 1})")
+            seen[key] = j
+        if not 80 <= len(part) <= 95:
+            F("A4", f"Karte {c.get('cardNumber')}: Kartenteil {len(part)} Zeichen (80-95): {part[:50]!r}")
+        toks = WORD.findall(part)
+        foreign = [t for t in toks if t.lower() not in STOP and not (stems(t) & deck_vocab)]
+        fl = [t for t in toks if t.lower() in FLUFF]
+        if len(fl) > 1:
+            F("A2", f"Karte {c.get('cardNumber')}: mehr als ein Fluff-Wort")
+        if foreign:
+            F("A2", f"Karte {c.get('cardNumber')}: Wörter nicht aus der Karte: {foreign}")
+    share = len(openers) / max(1, len(card_beats))
+    if card_beats and not (0.25 <= share <= 0.6):
+        W("B6", f"Opener auf {share:.0%} der Kartenzeilen (Ziel etwa ein Drittel bis die Hälfte)")
+    if a.corpus:
+        old = corpus_openers(a.corpus, a.lyrics)
+        for j, op in openers:
+            key = op.strip().casefold()
+            key = key if key[-1:] in ".:!?" else key + "."
+            hit = old.get(key) or old.get(key[:-1] + ":") or old.get(key[:-1] + "!")
+            if hit:
+                (F if len(op.split()) > 1 else W)("B6", f"Opener {op!r} schon in {hit}")
+
+    # Klammern, Ziffern, Symbole, Spielwörter (ganzer Song ausser [Spoken Word])
+    whole = "\n".join(body)
+    for m in re.finditer(r"[(\[{]", whole):
+        F("A6", f"Klammer im Text: …{whole[max(0, m.start() - 25):m.start() + 25]!r}…")
+    for m in re.finditer(r"[0-9$%#&/@*+=<>~^_|\\€£]", whole):
+        F("A7", f"Ziffer/Symbol {m.group()!r}: …{whole[max(0, m.start() - 20):m.start() + 20]!r}…")
+    low = whole.casefold()
+    names = " ".join((c.get("cardName") or "").casefold() for c in deck.get("cards", []))
+    for w in sorted(GAME_WORDS):
+        if re.search(rf"\b{w}\b", low) and not re.search(rf"\b{w}\b", names):
+            F("A8", f"Spielwort {w!r}")
+    for p in GAME_PHRASES:
+        if p in low and p not in names:
+            F("A8", f"Spielwort {p!r}")
+
+    # Hooks/Rufe + Wortwiederholung im Nicht-Kartentext
+    shouts = {}
+    for seg in re.findall(r"([^.!?;:]*!)", whole):
+        s = seg.strip().casefold()
+        if s:
+            shouts[s] = shouts.get(s, 0) + 1
+    for s, n in shouts.items():
+        if n > 2:
+            F("C11", f"Ruf {n}x: {s!r}")
+    nc = " ".join(intro + outro + middle + [op for _, op in openers])
+    cnt = {}
+    for t in WORD.findall(nc):
+        t = t.lower()
+        if t not in STOP and len(t) > 2:
+            cnt[t] = cnt.get(t, 0) + 1
+    for t, n in cnt.items():
+        if n > 2:
+            F("C11", f"Wort {t!r} {n}x im Rahmen/Opener-Text")
+    lines = [b.casefold() for b in body]
+    for b in set(lines):
+        if lines.count(b) > 1:
+            F("C11", f"Zeile wiederholt: {b[:50]!r}")
+
+    # Ton (E16b): nur Begriffe, die der Kartentext selbst nicht enthält
+    terms = TONE_COMMON + TONE.get(a.tone or deck.get("deckId", ""), [])
+    for t in terms:
+        if re.search(rf"\b{re.escape(t)}\b", low) and not re.search(rf"\b{re.escape(t)}\b", deck_text):
+            F("E16b", f"Ton: {t!r} steht nicht im Kartentext und darf nicht in den Song")
+    if (a.tone or deck.get("deckId")) not in TONE:
+        W("E16b", "kein Ton-Eintrag für dieses Deck in song_gate.py; Deck-Hinweise in SONG_SPEC E16b prüfen")
+
+    print(f"song_gate lyrics · {os.path.basename(a.lyrics)} · {len(text)} Zeichen · {len(card_beats)}/{len(cards)} Karten · "
+          f"Intro {len(intro)} · Outro {len(outro)} · Opener {len(openers)}")
+    for x in fails + warns:
+        print(x)
+    print("PASS" if not fails else f"FAIL ({len(fails)})")
+    return 0 if not fails else 1
+
+
+CRITIC_KEYS = {"schema", "song", "critic", "blind", "scores", "flags", "verdict"}
+SCORE_KEYS = {"cardTruth", "performance", "arc", "sayability", "tone", "styleFit"}
+FLAG_KEYS = {"beat", "rule", "observation"}
+RULE = re.compile(r"^(A[1-8]|B[67]|C(8|9|10|11|12|12b)|D13|E16b|E17|F)$")
+SUGGEST = re.compile(r"(replace|instead|rewrite|could say|should say|try |suggest|better:|e\.g\.|->|→|=>|change to|swap)", re.I)
+
+
+def gate_critic(a):
+    crit = json.load(open(a.critic, encoding="utf-8"))
+    song = open(a.lyrics, encoding="utf-8").read()
+    nb = len(beats_of(song))
+    fails = []
+    F = lambda m: fails.append("FAIL F: " + m)
+    if set(crit) - CRITIC_KEYS:
+        F(f"unerlaubte Felder {sorted(set(crit) - CRITIC_KEYS)}")
+    if crit.get("schema") != "kfb.song-critic.v1":
+        F("schema muss kfb.song-critic.v1 sein")
+    if crit.get("blind") is not True:
+        F("blind muss true sein (Kritiker kennt Writer's Room und Vorversionen nicht)")
+    if not crit.get("critic"):
+        F("critic (Modell/Instanz) fehlt")
+    sc = crit.get("scores") or {}
+    if set(sc) != SCORE_KEYS:
+        F(f"scores braucht genau {sorted(SCORE_KEYS)}")
+    for k, v in sc.items():
+        if not (isinstance(v, int) and 1 <= v <= 5):
+            F(f"score {k}={v!r} (ganze Zahl 1-5)")
+    if crit.get("verdict") not in ("pass", "revise"):
+        F("verdict muss pass oder revise sein")
+    for i, f in enumerate(crit.get("flags") or []):
+        if set(f) - FLAG_KEYS:
+            F(f"flag {i}: unerlaubte Felder {sorted(set(f) - FLAG_KEYS)}")
+        if not (isinstance(f.get("beat"), int) and 0 <= f["beat"] < nb):
+            F(f"flag {i}: beat {f.get('beat')!r} ausserhalb 0-{nb - 1}")
+        if not RULE.match(str(f.get("rule", ""))):
+            F(f"flag {i}: rule {f.get('rule')!r} ist keine Regel aus SONG_SPEC")
+        ob = str(f.get("observation", ""))
+        if len(ob.split()) > 25:
+            F(f"flag {i}: observation länger als 25 Wörter")
+        if SUGGEST.search(ob):
+            F(f"flag {i}: klingt nach Textvorschlag ({SUGGEST.search(ob).group()!r}); Kritiker urteilt nur")
+        for q in re.findall(r"[\"“'‘]([^\"”'’]{3,})[\"”'’]", ob):
+            if q.casefold() not in song.casefold():
+                F(f"flag {i}: Zitat {q!r} steht nicht im Song (Ersatztext?)")
+    if crit.get("verdict") == "pass" and any(v <= 2 for v in sc.values() if isinstance(v, int)):
+        F("verdict pass bei einem Score <= 2")
+    print(f"song_gate critic · {os.path.basename(a.critic)} · {len(crit.get('flags') or [])} Flags · verdict {crit.get('verdict')}")
+    for x in fails:
+        print(x)
+    print("PASS" if not fails else f"FAIL ({len(fails)})")
+    return 0 if not fails else 1
+
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    l = sub.add_parser("lyrics")
+    l.add_argument("lyrics"); l.add_argument("--deck", required=True); l.add_argument("--songlines"); l.add_argument("--media")
+    l.add_argument("--cards"); l.add_argument("--tone"); l.add_argument("--corpus", nargs="*")
+    c = sub.add_parser("critic")
+    c.add_argument("critic"); c.add_argument("--lyrics", required=True)
+    a = ap.parse_args()
+    sys.exit(gate_lyrics(a) if a.cmd == "lyrics" else gate_critic(a))

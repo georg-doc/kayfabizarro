@@ -5799,6 +5799,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-419",
+   "date": "2026-10-17",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Songs R5 (Georg: weitere Triplets → Suno mit externem Kritiker, ohne Drift/Regress): SONG_SPEC → R3.2. Ein gemeinsames Prüfskript replies/song_gate.py für alle Songs (Rahmen, Kartenwörter inkl. Bildwörter, Klammern, Zahlen, Spielwörter, Opener einmalig auch gegen frühere Songs, Rufe/Wiederholung, Intro ≥ 2 Beats, Ton je Deck) statt eigener Kopien je Deck; externer Kritiker nach §F (festes JSON, nur Urteile, kein Ersatztext, selbst durch song_gate.py critic geprüft). Fünf Decks: Federal Kayfabe, Geopolitical Thrillers, Grimm Set 02, Monopolies Vol. II, Romantic Kayfabe. Plan: Wenn R5 bei Georg ohne Regress besteht, Lauf über alle KFB-Decks (ohne MED) in Wellen.",
+   "values": {},
+   "owner": "WSA (Plugin) · externer Kritiker · WS0",
+   "check": "Tor + Kritiker grün, eine Revision, WS0 → Georg",
+   "source": "replies/SONG_SPEC_R3.md (R3.2) · replies/song_gate.py · replies/BRIEF_WSA_SONGS_R5_PLUGIN.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "R4 zeigte: eigene Prüfskripte je Deck übersahen Klammern, Zahlen, Spielwörter und ein weggekürztes Intro; ein Kritiker mit Textvorschlägen schreibt mit und erzeugt Drift.",
+   "applies": "ab sofort, R4-Korrekturen eingeschlossen"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5871,7 +5886,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:742",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:745",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

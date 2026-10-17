@@ -1,0 +1,112 @@
+PASS   1 attach is idempotent (second call returns the same handle)
+PASS   2 EyeRig v6 built 2 eyes in Node
+PASS   3 [eye 0] v6 lid shells _up/_lo hidden
+PASS   4 [eye 0] exactly one lid_skin mesh (found 1)
+PASS   5 [eye 0] lid_skin is a child of e._lids
+PASS   6 [eye 0] skin material === e._up.material (host makeMat)
+PASS   7 [eye 0] lid colour = host lidColour #147663 (no ×0.72)
+PASS   8 [eye 0] flags petOverlay / frustumCulled false / castShadow false
+PASS   9 [eye 0] raycast is a no-op
+PASS  10 [eye 0] visible meshes = sclera + pupil + lid_skin only (no extra shell): SphereGeometry, SphereGeometry, lid_skin
+PASS  11 [eye 0] mesh count 5 = v6's 4 (sclera, pupil, _up, _lo) + 1 skin
+PASS  12 [eye 0] claySeed attribute present for clay-material v10
+PASS  13 [eye 0] no socketInnerR → no scaling (scale 1)
+PASS  14 [eye 1] v6 lid shells _up/_lo hidden
+PASS  15 [eye 1] exactly one lid_skin mesh (found 1)
+PASS  16 [eye 1] lid_skin is a child of e._lids
+PASS  17 [eye 1] skin material === e._up.material (host makeMat)
+PASS  18 [eye 1] lid colour = host lidColour #147663 (no ×0.72)
+PASS  19 [eye 1] flags petOverlay / frustumCulled false / castShadow false
+PASS  20 [eye 1] raycast is a no-op
+PASS  21 [eye 1] visible meshes = sclera + pupil + lid_skin only (no extra shell): SphereGeometry, SphereGeometry, lid_skin
+PASS  22 [eye 1] mesh count 5 = v6's 4 (sclera, pupil, _up, _lo) + 1 skin
+PASS  23 [eye 1] claySeed attribute present for clay-material v10
+PASS  24 [eye 1] no socketInnerR → no scaling (scale 1)
+PASS  25 [weit] lid values read back from v6 rotations: cu 0.0000 cl 0.0000
+PASS  26 [weit] skin aperture = apertureV6(cu, cl): U 63.685 L 63.685 A 107.644
+PASS  27 [weit] χ = 2, closed, 1 body (χ 2)
+PASS  28 [weit] boundary 0 · non-manifold 0 · winding 0
+PASS  29 [weit] [eye 0] still 1 skin, shells hidden
+PASS  30 [weit] [eye 1] still 1 skin, shells hidden
+PASS  31 [Ruhe] lid values read back from v6 rotations: cu 0.1200 cl 0.0600
+PASS  32 [Ruhe] skin aperture = apertureV6(cu, cl): U 55.571 L 59.628 A 105.000
+PASS  33 [Ruhe] χ = 2, closed, 1 body (χ 2)
+PASS  34 [Ruhe] boundary 0 · non-manifold 0 · winding 0
+PASS  35 [Ruhe] self-intersection 0 hits (84988 pairs)
+PASS  36 [Ruhe] [eye 0] still 1 skin, shells hidden
+PASS  37 [Ruhe] [eye 1] still 1 skin, shells hidden
+PASS  38 [25 %] lid values read back from v6 rotations: cu 0.2500 cl 0.2500
+PASS  39 [25 %] skin aperture = apertureV6(cu, cl): U 46.782 L 46.782 A 100.300
+PASS  40 [25 %] χ = 2, closed, 1 body (χ 2)
+PASS  41 [25 %] boundary 0 · non-manifold 0 · winding 0
+PASS  42 [25 %] [eye 0] still 1 skin, shells hidden
+PASS  43 [25 %] [eye 1] still 1 skin, shells hidden
+PASS  44 [50 %] lid values read back from v6 rotations: cu 0.5000 cl 0.5000
+PASS  45 [50 %] skin aperture = apertureV6(cu, cl): U 29.880 L 29.880 A 92.956
+PASS  46 [50 %] χ = 2, closed, 1 body (χ 2)
+PASS  47 [50 %] boundary 0 · non-manifold 0 · winding 0
+PASS  48 [50 %] [eye 0] still 1 skin, shells hidden
+PASS  49 [50 %] [eye 1] still 1 skin, shells hidden
+PASS  50 [75 %] lid values read back from v6 rotations: cu 0.7500 cl 0.7500
+PASS  51 [75 %] skin aperture = apertureV6(cu, cl): U 12.978 L 12.978 A 85.613
+PASS  52 [75 %] χ = 2, closed, 1 body (χ 2)
+PASS  53 [75 %] boundary 0 · non-manifold 0 · winding 0
+PASS  54 [75 %] [eye 0] still 1 skin, shells hidden
+PASS  55 [75 %] [eye 1] still 1 skin, shells hidden
+PASS  56 [zu] lid values read back from v6 rotations: cu 1.0000 cl 1.0000
+PASS  57 [zu] skin aperture = apertureV6(cu, cl): U 0.060 L 0.060 A 80.000
+PASS  58 [zu] χ = 2, closed, 1 body (χ 2)
+PASS  59 [zu] boundary 0 · non-manifold 0 · winding 0
+PASS  60 [zu] self-intersection 0 hits (70937 pairs)
+PASS  61 [zu] [eye 0] still 1 skin, shells hidden
+PASS  62 [zu] [eye 1] still 1 skin, shells hidden
+PASS  63 [Ruhe] vertex count 15682 and index buffer byte-equal to [weit]
+PASS  64 [25 %] vertex count 15682 and index buffer byte-equal to [weit]
+PASS  65 [50 %] vertex count 15682 and index buffer byte-equal to [weit]
+PASS  66 [75 %] vertex count 15682 and index buffer byte-equal to [weit]
+PASS  67 [zu] vertex count 15682 and index buffer byte-equal to [weit]
+PASS  68 positions [weit] ≠ [zu] (the lid really moves)
+PASS  69 [c −0.35 direct] upper edge 87.348° (plan §6: 87.348)
+PASS  70 [c −0.35 direct] χ 2, self-hits 0, index byte-equal
+PASS  71 [zu] aperture closed: U 0.060° L 0.060°
+PASS  72 v6 blinkNow() drives the skin (min U during blink 0.06°)
+PASS  73 after rebuild: still exactly one skin per eye, shells hidden
+PASS  74 after rebuild: the 2 old skin geometries were disposed (2)
+PASS  75 reskinLids(): skin follows the new e._up.material
+PASS  76 whole rig: 10 meshes = 2 × (4 v6 + 1 skin), no stray shells (10)
+PASS  77 skin outer max = 1.1240 R (plan §5: 1.124)
+PASS  78 fit s = 0.97331 (plan: s ≤ 0.973 for 1.10 R, 0.006 R play)
+PASS  79 eye scaled host·s = 0.97159 (eye + skin together, both under e)
+PASS  80 [fit weit] skin outer radius 1.0940 R (host R) ≤ 1.094 R → inside a 1.10 R socket shell
+PASS  81 [fit Ruhe] skin outer radius 1.0940 R (host R) ≤ 1.094 R → inside a 1.10 R socket shell
+PASS  82 [fit 25 %] skin outer radius 1.0940 R (host R) ≤ 1.094 R → inside a 1.10 R socket shell
+PASS  83 [fit 50 %] skin outer radius 1.0940 R (host R) ≤ 1.094 R → inside a 1.10 R socket shell
+PASS  84 [fit 75 %] skin outer radius 1.0940 R (host R) ≤ 1.094 R → inside a 1.10 R socket shell
+PASS  85 [fit zu] skin outer radius 1.0940 R (host R) ≤ 1.094 R → inside a 1.10 R socket shell
+PASS  86 host overwrote e.scale → fit is re-applied on the next update
+PASS  87 fitScale: no socket → 1, roomy socket → 1 (never enlarges)
+PASS  88 detach(): shells visible again, skin gone, host scale restored
+PASS  89 detach(): build hook removed
+PASS  90 forward fit s = 0.95608 = √(b'² − 2b'f·cos66° + f²)/1.124
+PASS  91 eyeForward 0 → path A exactly (v1 value)
+PASS  92 eyeForward without opening → conservative closed-shell fit (b′ − f)/1.124
+PASS  93 eye moved +0.00599 along its gaze (0.05 R_host)
+PASS  94 [fwd weit] skin behind the 66° opening edge: max 1.0899 R ≤ 1.094 R (no poke through the 1.10 R shell, 14916 verts)
+PASS  95 [fwd weit] still 1 skin, shells hidden
+PASS  96 [fwd Ruhe] skin behind the 66° opening edge: max 1.0936 R ≤ 1.094 R (no poke through the 1.10 R shell, 14333 verts)
+PASS  97 [fwd Ruhe] still 1 skin, shells hidden
+PASS  98 [fwd 25 %] skin behind the 66° opening edge: max 1.0933 R ≤ 1.094 R (no poke through the 1.10 R shell, 13440 verts)
+PASS  99 [fwd 25 %] still 1 skin, shells hidden
+PASS 100 [fwd 50 %] skin behind the 66° opening edge: max 1.0934 R ≤ 1.094 R (no poke through the 1.10 R shell, 12302 verts)
+PASS 101 [fwd 50 %] still 1 skin, shells hidden
+PASS 102 [fwd 75 %] skin behind the 66° opening edge: max 1.0938 R ≤ 1.094 R (no poke through the 1.10 R shell, 11422 verts)
+PASS 103 [fwd 75 %] still 1 skin, shells hidden
+PASS 104 [fwd zu] skin behind the 66° opening edge: max 1.0932 R ≤ 1.094 R (no poke through the 1.10 R shell, 10602 verts)
+PASS 105 [fwd zu] still 1 skin, shells hidden
+PASS 106 host re-placed position + scale → forward and fit re-applied
+PASS 107 host turned the eye → offset follows the new gaze from the same base
+PASS 108 detach(): host position and scale restored
+PASS 109 eyeForward per eye (array); no socket → no scaling
+PASS 110 eyeDepthReport(66°, f 0.05): protrusion 0.567 R, front cover 0
+
+TOTAL 110/110 PASS

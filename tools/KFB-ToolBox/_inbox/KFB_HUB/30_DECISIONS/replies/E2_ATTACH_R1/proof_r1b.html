@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E2 Lidhaut Aliens r1b</title><link rel="icon" href="data:,">
+<style>
+:root{--bg:#e9e5dd;--panel:#f6f4ef;--ink:#2a2622;--mute:#6d665d;--line:#d2ccc1;--acc:#b0182f;--accInk:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1d1b19;--panel:#262320;--ink:#ece7df;--mute:#a59d92;--line:#3b3631;--acc:#e0485f;--accInk:#fff}}
+:root[data-theme="dark"]{--bg:#1d1b19;--panel:#262320;--ink:#ece7df;--mute:#a59d92;--line:#3b3631;--acc:#e0485f;--accInk:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:12px 16px 4px}
+h1{margin:0;font-size:19px;font-weight:650}
+header p{margin:2px 0 0;color:var(--mute);font-size:13px}
+.bar{display:flex;flex-wrap:wrap;gap:6px 14px;padding:8px 16px;align-items:center}
+.grp{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.grp>span{color:var(--mute);font-size:12px;margin-right:2px}
+button{font:inherit;font-size:13px;padding:5px 11px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;cursor:pointer}
+button.on{background:var(--acc);border-color:var(--acc);color:var(--accInk)}
+main{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:12px;padding:4px 16px 16px}
+@media (max-width:900px){main{grid-template-columns:minmax(0,1fr)}}
+#stage{position:relative;background:#d9d4ca;border:1px solid var(--line);border-radius:8px;overflow:hidden;aspect-ratio:2/1.15;min-height:260px}
+#stage canvas{display:block;width:100%;height:100%}
+.lab{position:absolute;top:6px;font-size:12px;color:#3a352f;background:rgba(255,255,255,.6);padding:2px 7px;border-radius:4px}
+#labL{left:6px}#labR{left:calc(50% + 6px)}
+#prevTag{position:absolute;right:6px;top:6px;font-size:12px;font-weight:650;color:#fff;background:#b0182f;padding:3px 8px;border-radius:4px;display:none}
+#msg{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-size:12px;color:#3a352f}
+aside{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px}
+aside h2{margin:0 0 6px;font-size:14px;font-weight:650}
+aside img{width:100%;height:auto;border-radius:4px;border:1px solid var(--line);background:#fff}
+aside p{margin:6px 0 0;color:var(--mute);font-size:12px}
+#live{font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;margin-top:10px;color:var(--ink)}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+</head><body>
+<header>
+  <h1>Clay-Lid E2 auf EyeRig v6 · R1b · Lord Hunky r4 und Lady Dory r4</h1>
+  <p>R1b nach Georgs TUNE (17.10.): Auge weiter vor (<code>eyeForward</code>) und weitere Sockel-Öffnung als Vorschau. Modul <code>clay-skin-attach.v2.js</code>; keine v6-Lidschalen, eine E2-Lidhaut je Auge.</p>
+</header>
+<div class="bar">
+  <div class="grp" id="lidBtns"><span>Lid</span>
+    <button data-lid="open">offen</button><button data-lid="rest" class="on">Ruhe</button><button data-lid="half">50 %</button><button data-lid="closed">zu</button><button data-act="blink">Blinzeln</button>
+  </div>
+  <div class="grp" id="viewBtns"><span>Ansicht</span>
+    <button data-view="front" class="on">vorn</button><button data-view="threeq">¾</button><button data-view="side">seitlich</button><button data-view="sideclose">seitlich nah</button><button data-view="figure">ganze Figur</button>
+  </div>
+  <div class="grp" id="cfgBtns"><span>Sockel</span>
+    <button data-cfg="rec">Empfehlung: Öffnung 66° + eyeForward 0,05 R (Vorschau)</button><button data-cfg="rec0">66° ohne eyeForward (Vorschau)</button><button data-cfg="baked">heutige GLB (r4)</button><button data-cfg="baked110">heutige GLB, Dory 1,10 R</button>
+  </div>
+</div>
+<main>
+  <div id="stage"><span class="lab" id="labL">Lord Hunky r4</span><span class="lab" id="labR">Lady Dory r4</span><span id="prevTag">Vorschau, Sockel muss in Blender neu gebacken werden</span><div id="msg">lädt …</div></div>
+  <aside>
+    <h2>Referenz: von Georg abgenommen (E2, 16.10.)</h2>
+    <img src="assets/E2_approved_closed_lid_skin.png" alt="Werkbank KFB Clay-Lid E2, geschlossene Lidhaut, abgenommene Ansichten">
+    <p>„Vorschau“ schneidet die eingebackene Sockelschale per Clipping-Ebene auf die empfohlene Öffnung (ohne Rollrand) und skaliert Dorys Schale auf 1,10 R (B14). Das ist eine Simulation; der echte Sockel muss in Blender neu gebacken werden.</p>
+    <div id="live"></div>
+  </aside>
+</main>
+<script type="module">
+/* WS0 · E2_ATTACH_R1 · R1b proof. Same loader/light/clay as proof.html (R1, unchanged next to this file).
+   Query: ?cfg=rec (default) | rec0 | baked | baked110   ·   overrides: ?fwd=<R> ?open=<deg> ?rs=<R for Dory preview> ?measure=1
+   rec      = recommended: socket opening preview (clip) + eyeForward + fit with forward (attach v2), Dory shell previewed at 1.10 R
+   rec0     = as rec, eyeForward 0 (no size loss)
+   baked    = today's r4 GLB socket (rolled rim inward, Hunky 1.10 R / Dory 1.014 R), eyeForward 0 (R1 look)
+   baked110 = today's GLB, fit assumes 1.10 R for both (Dory skin pokes through her 1.014 R shell, shown on purpose) */
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { EyeRig } from './vendor/pet-eye-rig.v6.js';
+import * as CM from './vendor/clay-material.v8.js';
+import * as CR from './vendor/clay-relief.v2.js';
+import { attachClaySkin, lidValuesFromV6, LID_SKIN_NAME } from './clay-skin-attach.v2.js';
+
+const Q = new URLSearchParams(location.search);
+const job = window.__job = { done: false, err: null, ready: false, info: null };
+const msg = (s) => { document.getElementById('msg').textContent = s; };
+const SAN = (n) => THREE.PropertyBinding.sanitizeNodeName(n);
+const FIGS = [
+  { key: 'hunky', name: 'Lord Hunky r4', glb: 'assets/LordHunky_RigMedium.toolbox.r4.glb', recipe: 'assets/lordhunky-headpart-r4.ws0-2026-10-16.kfb-pets.json', x: -10, layer: 1 },
+  { key: 'dory', name: 'Lady Dory r4', glb: 'assets/LadyDory_RigMedium.toolbox.r4.glb', recipe: 'assets/ladydory-headpart-r4.ws0-2026-10-16.kfb-pets.json', x: 10, layer: 2 },
+];
+const LID = { open: { u: -1, l: -1 }, rest: { u: 0.12, l: 0.06 }, half: { u: 0.5, l: 0.5 }, closed: { u: 1, l: 1 } };
+/* RECOMMENDATION (R1b) — filled in from the ?measure=1 grid, see RETURN.md §R1b. */
+const REC = window.__REC = { hunky: { open: 66, fwd: 0.05, rs: null }, dory: { open: 66, fwd: 0.05, rs: 1.10 } };
+const CFG = Q.get('cfg') || 'rec';
+function cfgFor(key) {
+  const r = REC[key];
+  let c = CFG === 'rec' ? { open: r.open, fwd: r.fwd, rs: r.rs, fitR: 'shell' } : CFG === 'rec0' ? { open: r.open, fwd: 0, rs: r.rs, fitR: 'shell' } : CFG === 'baked110' ? { open: null, fwd: 0, rs: null, fitR: 1.10 } : { open: null, fwd: 0, rs: null, fitR: 'shell' };
+  if (Q.get('fwd') != null) c.fwd = +Q.get('fwd');
+  if (Q.get('open') != null) c.open = Q.get('open') === 'none' ? null : +Q.get('open');
+  if (Q.get('rs') != null && key === 'dory') c.rs = Q.get('rs') === 'none' ? null : +Q.get('rs');
+  return c;
+}
+/* ---------------- renderer, scene, light ---------------- */
+const stage = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.NoToneMapping;
+renderer.shadowMap.enabled = false;                                             // no self-shadow anywhere
+stage.prepend(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#d9d4ca');
+const hemi = new THREE.HemisphereLight(0xfff4e0, 0x3a3226, 1.25);
+const key = new THREE.DirectionalLight(0xffffff, 1.6); key.position.set(1.6, 3.2, 4.0);   // front key, camera side; no rim/back light
+const keyR = new THREE.Group(); keyR.add(key, key.target);
+for (const l of [hemi, key]) l.layers.enableAll();
+scene.add(hemi, keyR);
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), new THREE.MeshStandardMaterial({ color: '#c7c0b2', roughness: 1 }));
+ground.rotation.x = -Math.PI / 2; ground.layers.enableAll(); scene.add(ground);
+function blobTexture() {
+  const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d');
+  const gr = g.createRadialGradient(128, 128, 0, 128, 128, 128);
+  gr.addColorStop(0, 'rgba(40,32,24,0.42)'); gr.addColorStop(0.45, 'rgba(40,32,24,0.22)'); gr.addColorStop(1, 'rgba(40,32,24,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, 256, 256); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const BLOB = blobTexture();
+
+/* ---------------- clay (same set-up as proof_r2.html) ---------------- */
+const HK = 1 / 0.47;
+let CU = null;
+async function clayUniforms() {
+  if (CU) return CU;
+  const rel = CR.makeClayRelief({ size: 1024, seed: 11 }), tx = new THREE.DataTexture(rel.data, rel.size, rel.size, THREE.RGBAFormat);
+  tx.wrapS = tx.wrapT = THREE.RepeatWrapping; tx.magFilter = THREE.LinearFilter; tx.minFilter = THREE.LinearMipmapLinearFilter; tx.generateMipmaps = true; tx.anisotropy = 8; tx.needsUpdate = true;
+  CU = CM.makeClayUniforms(THREE, tx);
+  try { CU.uClayPrint.value = await CM.makePrintTexture(THREE, new URL('./vendor/Fingerprints01_3K.png', import.meta.url).href, 2048); CU.uClayPrintOn.value = 1; } catch (e) { CU.uClayPrint.value = tx; }
+  CU.uClayHand.value = 0.5 * HK; CU.uClayTile.value = 1.6 * HK; CU.uClayPrintTile.value = 4.5 * HK; CU.uClayFacetSize.value = 0.65 * HK;
+  return CU;
+}
+const lowSheen = (m) => { if (m.sheen > 0.04) m.sheen = 0.04; return m; };
+function clayFrom(src, U) { return lowSheen(CM.makeClayMaterial(THREE, U, { src, profile: 'figure', scale: CM.PROFILES.figure.scale * HK })); }
+async function clayify(root, seed) {
+  const U = await clayUniforms(), mc = new Map(); let n = 0;
+  root.traverse((o) => {
+    if (!o.isMesh) return;
+    const conv = (m) => { if (!mc.has(m)) mc.set(m, clayFrom(m, U)); return mc.get(m); };
+    o.material = Array.isArray(o.material) ? o.material.map(conv) : conv(o.material);
+    if (!o.geometry.attributes.claySeed) CM.seedGeometry(THREE, o.geometry, seed + (n++));
+  });
+}
+
+/* ---------------- figure loader (as _work/proof.html) ---------------- */
+const loader = new GLTFLoader();
+async function loadFigure(F) {
+  const [gltf, doc] = await Promise.all([loader.loadAsync(F.glb), fetch(F.recipe).then((r) => r.json())]);
+  const pet = doc.pets[0], hp = pet.headPart, fig = gltf.scene;
+  fig.traverse((o) => { if (o.isMesh) { o.castShadow = false; o.receiveShadow = false; o.frustumCulled = false; } });
+  const root = fig.getObjectByName(SAN(hp.root)), headNode = fig.getObjectByName(SAN(hp.mesh));
+  const headMeshes = []; headNode.traverse((o) => { if (o.isMesh) headMeshes.push(o); });
+  const sockets = headMeshes.filter((m) => /Sockel/i.test(m.material && m.material.name || ''));
+  const T = hp.tunables;
+  root.position.set(...T.headOffset.value); root.scale.setScalar(T.headScale.value);
+  for (const m of headMeshes) { const i = m.morphTargetDictionary && m.morphTargetDictionary.neckTaper; if (i != null) m.morphTargetInfluences[i] = T.neckTaper.value; }
+  fig.position.x = F.x; fig.updateMatrixWorld(true);
+  await clayify(fig, F.layer * 50);
+  return { F, fig, pet, root, headMeshes, sockets };
+}
+async function buildEyes(f) {
+  const { pet, root } = f, E = pet.eyeHost, o = pet.eye, box = E.proxy.box, U = await clayUniforms();
+  const host = new THREE.Group(); host.name = 'KFB_EyeHost'; root.add(host);
+  const pg = new THREE.BoxGeometry(box[1][0] - box[0][0], box[1][1] - box[0][1], box[1][2] - box[0][2]);
+  pg.translate((box[0][0] + box[1][0]) / 2, (box[0][1] + box[1][1]) / 2, (box[0][2] + box[1][2]) / 2);
+  const proxy = new THREE.Mesh(pg, new THREE.MeshBasicMaterial({ visible: false })); proxy.name = E.proxy.name; host.add(proxy); host.updateMatrixWorld(true);
+  /* makeMat: host lidColour as is (WS0 16.10.: no ×0.72), KFB clay 'figure', sheen ≤ 0.05. */
+  const makeMat = () => { const m = clayFrom(null, U); m.color.set(E.lidColour); return m; };   // ignores v6's o.color (= base × 0.72)
+  const rig = new EyeRig({ THREE, inner: host, o: { makeMat } },
+    { anchor: { ...o.anchor }, pupilStyle: o.pupilStyle, pupilSize: o.pupilSize, inset: o.inset, lidFit: o.lidFit, gloss: o.gloss,
+      converge: o.converge, baseColor: parseInt(o.baseColor.slice(1), 16), blink: { ...o.blink }, lashes: { ...o.lashes } });
+  const byKey = Object.fromEntries(pet.eyes.map((e) => [e.cdKey, e])), one = pet.eyes.length === 1;
+  const eyeQ = ['eyeL', 'eyeR'].map((k) => byKey[k] || pet.eyes[0]);
+  const place = () => {
+    if (!rig.eyes) return;
+    rig.eyes.forEach((e, i) => { const q = eyeQ[i]; e.position.set(...q.pos); e.scale.setScalar(q.scale); e.rotation.y = 0; });
+    if (one) { rig.eyes[0].quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), new THREE.Vector3(...pet.eyes[0].gaze)); rig.eyes[1].visible = false; }
+  };
+  const b0 = rig.build.bind(rig); rig.build = (...a) => { const r = b0(...a); place(); return r; };
+  const ev = { rig, skin: null, host, one, eyeQ };
+  /* THE MODULE UNDER TEST — attached before build(), so it rides the build hook like a ToolBox/game host would. */
+  ev.skin = attachClaySkin(rig, THREE, skinOpts(f, ev, cfgFor(f.F.key)));
+  rig.build();
+  rig.setLife({ on: false }); rig.setKinetics({ enabled: false });
+  return ev;
+}
+function setLid(f, name) {
+  const t = LID[name], r = f.eyes.rig;
+  r.applyEmote({ lidUpper: t.u - r._rest.u, lidLower: t.l - r._rest.l, slant: 0, pupil: 'normal', gaze: 'center' });
+}
+function stepRig(f, dt, allowBlink) { const r = f.eyes.rig; if (!allowBlink && r._blinkK < 0) r._blinkT = 1e9; r.update(dt); }
+const layerAll = (f) => f.fig.traverse((o) => o.layers.set(f.F.layer));
+/* socket radius (R) the fit uses: the shell as it is in the scene (baked or preview-scaled), or a forced value */
+function shellR(f, ev, i, c) { const q = ev.eyeQ[i]; return c.fitR === 'shell' ? (c.rs || q.shellRadius / q.R) : c.fitR; }
+function skinOpts(f, ev, c) {
+  return { socketInnerR: (e, i) => shellR(f, ev, i, c), eyeForward: c.fwd || 0, socketOpeningDeg: c.open == null ? null : c.open };
+}
+/* ---------------- cameras / views ---------------- */
+const cams = FIGS.map(() => new THREE.PerspectiveCamera(24, 1, 0.01, 100));
+FIGS.forEach((F, i) => cams[i].layers.set(F.layer));
+let view = 'front', lid = 'rest';
+function visibleEyes(f) { return f.eyes.rig.eyes.filter((e) => e.visible); }
+function frame(f, cam, v) {
+  f.fig.updateMatrixWorld(true);
+  let tgt, rad;
+  if (v === 'figure') { tgt = new THREE.Vector3(f.F.x, 1.05, 0); rad = 1.25; }
+  else {
+    const eyes = visibleEyes(f), c = new THREE.Vector3();
+    eyes.forEach((e) => c.add(e.getWorldPosition(new THREE.Vector3()))); c.divideScalar(eyes.length);
+    const Rw = f.eyes.rig._R * eyes[0].getWorldScale(new THREE.Vector3()).x;
+    rad = 0; eyes.forEach((e) => { rad = Math.max(rad, e.getWorldPosition(new THREE.Vector3()).distanceTo(c)); }); rad += Rw * (eyes.length > 1 ? 2.4 : 3.2);
+    tgt = c.add(new THREE.Vector3(0, -Rw * 0.4, 0));
+  }
+  const az = { front: 0, threeq: 35, side: 90, sideclose: 90, figure: 20 }[v] * Math.PI / 180, el = { front: 4, threeq: 8, side: 3, sideclose: 2, figure: 6 }[v] * Math.PI / 180;
+  if (v === 'sideclose') { const e0 = visibleEyes(f)[visibleEyes(f).length - 1], Rw = f.eyes.rig._R * e0.getWorldScale(new THREE.Vector3()).x; tgt = e0.getWorldPosition(new THREE.Vector3()); rad = Rw * 1.6; }
+  const d = rad / Math.sin(cam.fov * Math.PI / 360);
+  cam.position.set(tgt.x + d * Math.sin(az) * Math.cos(el), tgt.y + d * Math.sin(el), tgt.z + d * Math.cos(az) * Math.cos(el));
+  cam.lookAt(tgt); cam.updateProjectionMatrix();
+  keyR.position.set(0, 0, 0);
+}
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false);
+  cams.forEach((c) => { c.aspect = (w / 2) / h; c.updateProjectionMatrix(); });
+}
+function render() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setScissorTest(true);
+  cams.forEach((c, i) => { renderer.setViewport(i * w / 2, 0, w / 2, h); renderer.setScissor(i * w / 2, 0, w / 2, h); renderer.render(scene, c); });
+  renderer.setScissorTest(false);
+}
+
+/* ---------------- live readout ---------------- */
+
+/* ---------------- socket preview (clip plane = wider opening, radial scale = rebaked radius) ---------------- */
+const V = () => new THREE.Vector3();
+function eyeBase(f, i) {               // ORIGINAL eye centre O (socket centre), gaze g, host-placed radius Rh — all world
+  const ev = f.eyes, q = ev.eyeQ[i], e = ev.rig.eyes[i]; f.fig.updateMatrixWorld(true);
+  const O = ev.host.localToWorld(new THREE.Vector3(...q.pos));
+  const qw = e.getWorldQuaternion(new THREE.Quaternion()), g = new THREE.Vector3(0, 0, 1).applyQuaternion(qw);
+  const Rh = ev.rig._R * q.scale * ev.host.getWorldScale(V()).x;
+  return { O, g, qw, qi: qw.clone().invert(), Rh };
+}
+function socketOf(f, i) {              // socket mesh that belongs to eye i (nearest bounding-sphere centre)
+  const { O } = eyeBase(f, i); let best = null, bd = 1e9;
+  for (const m of f.sockets) { const p = m.geometry.attributes.position, v = V(), c = V(); const st = Math.max(1, Math.floor(p.count / 300)); let n = 0;
+    for (let k = 0; k < p.count; k += st) { m.getVertexPosition(k, v); c.add(v.applyMatrix4(m.matrixWorld)); n++; } c.divideScalar(n);
+    const d = c.distanceTo(O); if (d < bd) { bd = d; best = m; } }
+  return best;
+}
+function scaleSocket(f, i, m, k) {     // radial scale of the socket mesh about O (bind space, through the skin transform)
+  if (!m.userData.pos0) m.userData.pos0 = m.geometry.attributes.position.array.slice();
+  const P = m.geometry.attributes.position; P.array.set(m.userData.pos0); P.needsUpdate = true;
+  if (!k || k === 1) return;
+  const { O } = eyeBase(f, i), v0 = V(), w0 = V(), w1 = V(), a = [V(), V(), V()], M = new THREE.Matrix3(), d = V();
+  const W = (k2, v) => { const t = v.clone(); m.applyBoneTransform(k2, t); return t.applyMatrix4(m.matrixWorld); };
+  for (let n = 0; n < P.count; n++) {
+    v0.fromBufferAttribute(P, n); w0.copy(W(n, v0));
+    for (let j = 0; j < 3; j++) { const e = V(); e.setComponent(j, 1); a[j].copy(W(n, v0.clone().add(e))).sub(w0); }
+    M.set(a[0].x, a[1].x, a[2].x, a[0].y, a[1].y, a[2].y, a[0].z, a[1].z, a[2].z).invert();
+    w1.copy(w0).sub(O).multiplyScalar(k).add(O); d.copy(w1).sub(w0).applyMatrix3(M);
+    P.setXYZ(n, v0.x + d.x, v0.y + d.y, v0.z + d.z);
+  }
+  P.needsUpdate = true; m.geometry.computeBoundingSphere();
+}
+function applySocketPreview(f, c) {
+  const tag = document.getElementById('prevTag'); let any = false;
+  f.eyes.rig.eyes.forEach((e, i) => {
+    if (!e.visible) return;
+    const m = socketOf(f, i), q = f.eyes.eyeQ[i], baked = q.shellRadius / q.R;
+    scaleSocket(f, i, m, c.rs ? c.rs / baked : 1);
+    const mat = m.material;
+    if (c.open != null) {
+      const { O, g, Rh } = eyeBase(f, i), b = (c.rs || baked) * Rh, zc = b * Math.cos(c.open * Math.PI / 180);
+      mat.clippingPlanes = [new THREE.Plane(g.clone().negate(), g.dot(O) + zc)]; mat.side = THREE.DoubleSide; any = true;
+    } else { mat.clippingPlanes = null; mat.side = THREE.FrontSide; }
+    if (c.rs) any = true;
+    mat.needsUpdate = true;
+    m.userData.preview = { open: c.open, rs: c.rs };
+  });
+  if (any) tag.style.display = 'block';
+}
+async function configure(f, c) {       // re-attach the module with new options + socket preview
+  f.cfg = c; f.eyes.skin.detach(); f.eyes.rig.build();      // rebuild v6 eyes clean (host place() runs)
+  f.eyes.skin = attachClaySkin(f.eyes.rig, THREE, skinOpts(f, f.eyes, c));
+  applySocketPreview(f, c);
+  layerAll(f);
+}
+
+/* ---------------- live readout ---------------- */
+function depthOf(f, i) {               // measured along g from O, in Rh
+  const { O, g, Rh } = eyeBase(f, i), e = f.eyes.rig.eyes[i], C = e.getWorldPosition(V());
+  const s = f.eyes.skin.fit[i], fwd = C.clone().sub(O).dot(g) / Rh;
+  const apex = fwd + s * 1.004, m = socketOf(f, i), p = m.geometry.attributes.position, v = V(); let zr = -9;
+  const pl = m.material.clippingPlanes && m.material.clippingPlanes[0];
+  for (let k = 0; k < p.count; k++) { m.getVertexPosition(k, v); v.applyMatrix4(m.matrixWorld); if (pl && pl.distanceToPoint(v) < 0) continue; zr = Math.max(zr, v.sub(O).dot(g) / Rh); }
+  return { s, fwd, apex, rimFront: zr, protrusion: apex - zr, equatorBehindRim: zr - fwd };
+}
+function readout(figs) {
+  const L = [];
+  for (const f of figs) {
+    const r = f.eyes.rig, c = f.cfg; L.push(`${f.F.name} · Öffnung ${c.open == null ? 'gebacken' : c.open + '° (Vorschau)'} · Schale ${c.rs ? c.rs + ' R (Vorschau)' : 'gebacken'} · eyeForward ${c.fwd} R`);
+    r.eyes.forEach((e, i) => {
+      if (!e.visible) return;
+      const { cu, cl } = lidValuesFromV6(e), a = e._claySkinAp; let sk = 0; e.traverse((m) => { if (m.isMesh && m.name === LID_SKIN_NAME) sk++; });
+      const d = depthOf(f, i);
+      L.push(` Auge ${i}: v6-Schalen ${(e._up.visible ? 1 : 0) + (e._lo.visible ? 1 : 0)} · lid_skin ${sk} · s ${d.s.toFixed(4)} · vor ${d.fwd.toFixed(3)} R`);
+      L.push(`   Scheitel ${d.apex.toFixed(3)} R · Randfront ${d.rimFront.toFixed(3)} R → Überstand ${d.protrusion.toFixed(3)} R`);
+      L.push(`   U ${a.U.toFixed(1)}° L ${a.L.toFixed(1)}° (cu ${cu.toFixed(2)} cl ${cl.toFixed(2)})`);
+    });
+  }
+  document.getElementById('live').textContent = L.join('\n');
+}
+
+/* ---------------- headless measurement (?measure=1) ---------------- */
+const BIN = (th, ph) => Math.min(89, Math.floor(th / 2)) * 90 + Math.min(89, Math.floor((ph + 180) / 4));
+function dirTP(v) { const r = v.length(); return { r, th: Math.acos(Math.max(-1, Math.min(1, v.z / r))) * 180 / Math.PI, ph: Math.atan2(v.y, v.x) * 180 / Math.PI }; }
+function shellCheck(f, i) {            // skin (all lid states) vs the shell that remains (outward-facing, not clipped), frame O/g
+  const { O, qi, Rh } = eyeBase(f, i), m = socketOf(f, i), pl = m.material.clippingPlanes && m.material.clippingPlanes[0];
+  const P = m.geometry.attributes.position, N = m.geometry.attributes.normal, nm = new THREE.Matrix3().getNormalMatrix(m.matrixWorld), v = V(), w = V(), n = V();
+  const smin = new Map(), rim = [];
+  for (let k = 0; k < P.count; k++) {
+    m.getVertexPosition(k, w); w.applyMatrix4(m.matrixWorld); if (pl && pl.distanceToPoint(w) < 0) continue;
+    v.copy(w).sub(O).applyQuaternion(qi).divideScalar(Rh); const t = dirTP(v); if (t.r > 1.6 || t.r < 0.9) continue;
+    n.fromBufferAttribute(N, k).applyMatrix3(nm).applyQuaternion(qi).normalize();
+    if (n.dot(v) / t.r > 0.3) { const b = BIN(t.th, t.ph); if (!(smin.get(b) <= t.r)) smin.set(b, t.r); } else if (t.th < 75) rim.push(t);
+  }
+  const out = {};
+  for (const s of ['open', 'rest', 'half', 'closed']) {
+    setLid(f, s); for (let k = 0; k < 180; k++) stepRig(f, 1 / 60, false); f.fig.updateMatrixWorld(true);
+    const sk = f.eyes.rig.eyes[i]._claySkin, SP = sk.geometry.attributes.position, smax = new Map();
+    for (let k = 0; k < SP.count; k++) { v.fromBufferAttribute(SP, k).applyMatrix4(sk.matrixWorld).sub(O).applyQuaternion(qi).divideScalar(Rh); const t = dirTP(v); const b = BIN(t.th, t.ph); if (!(smax.get(b) >= t.r)) smax.set(b, t.r); }
+    let gMin = Infinity, pen = 0, nb = 0, rimIn = 0, rimDeep = 0;
+    for (const [b, rs] of smin) { const rk = smax.get(b); if (rk == null) continue; nb++; const g = rs - rk; if (g < 0) pen++; gMin = Math.min(gMin, g); }
+    for (const t of rim) { const rk = smax.get(BIN(t.th, t.ph)); if (rk != null && t.r < rk) { rimIn++; rimDeep = Math.max(rimDeep, rk - t.r); } }
+    out[s] = { shellGapMinR: +gMin.toFixed(4), shellBinsPenetrating: pen, shellBinsCompared: nb, rimVertsInsideSkin: rimIn, rimDeepestR: +rimDeep.toFixed(4) };
+  }
+  return out;
+}
+const RT = new THREE.WebGLRenderTarget(400, 400), BUF = new Uint8Array(400 * 400 * 4), CAMM = new THREE.PerspectiveCamera(24, 1, 0.01, 100);
+function countPx(f) { renderer.setRenderTarget(RT); renderer.setViewport(0, 0, 400, 400); renderer.render(scene, CAMM); renderer.readRenderTargetPixels(RT, 0, 0, 400, 400, BUF); renderer.setRenderTarget(null);
+  let mg = 0, cy = 0; for (let k = 0; k < BUF.length; k += 4) { const r = BUF[k], g = BUF[k + 1], b = BUF[k + 2]; if (r > 235 && g < 25 && b > 235) mg++; else if (r < 25 && g > 235 && b > 235) cy++; } return { mg, cy }; }
+function coverage(f, i) {              // socket occlusion of eyeball (lid open, c = 0) and of the lid skin (50 %), front and ¾
+  const e = f.eyes.rig.eyes[i], sc = e.children[0], pu = e._puMesh, sk = e._claySkin, { O, g, Rh } = eyeBase(f, i);
+  const MG = new THREE.MeshBasicMaterial({ color: 0xff00ff }), CY = new THREE.MeshBasicMaterial({ color: 0x00ffff });
+  const keep = [sc.material, pu.material]; CAMM.layers.set(f.F.layer);
+  const res = {};
+  for (const [vn, yaw] of [['front', 0], ['threeq', 35]]) {
+    const dir = g.clone().applyAxisAngle(new THREE.Vector3(0, 1, 0), (i === 0 && f.eyes.rig.eyes.filter((x) => x.visible).length > 1 ? -1 : 1) * yaw * Math.PI / 180);
+    CAMM.position.copy(O).addScaledVector(dir, Rh * 8); CAMM.up.set(0, 1, 0); CAMM.lookAt(O); CAMM.updateProjectionMatrix();
+    const r = {};
+    for (const [st, key] of [['open', 'eyeball'], ['half', 'lid']]) {
+      setLid(f, st); for (let k = 0; k < 180; k++) stepRig(f, 1 / 60, false); f.fig.updateMatrixWorld(true);
+      const skm = sk.material; sc.material = MG; pu.material = MG; if (key === 'lid') { sk.material = CY; sc.material = keep[0]; pu.material = keep[1]; }
+      const a = countPx(f); f.sockets.forEach((m) => m.visible = false); const b = countPx(f); f.sockets.forEach((m) => m.visible = true);
+      sc.material = keep[0]; pu.material = keep[1]; sk.material = skm;
+      const vis = key === 'eyeball' ? a.mg / Math.max(1, b.mg) : a.cy / Math.max(1, b.cy);
+      r[key] = { visibleAreaFrac: +vis.toFixed(4), coverOfRadius: +(1 - Math.sqrt(vis)).toFixed(4), pxWith: key === 'eyeball' ? a.mg : a.cy, pxWithout: key === 'eyeball' ? b.mg : b.cy };
+    }
+    res[vn] = r;
+  }
+  MG.dispose(); CY.dispose(); return res;
+}
+async function measureGrid(figs) {
+  const grid = [{ id: 'baked_f0', open: null, fwd: 0, rs: null }, { id: 'baked_f0.05', open: null, fwd: 0.05, rs: null }];
+  for (const open of [58, 62, 66, 70]) for (const fwd of [0, 0.05, 0.1]) grid.push({ id: `open${open}_f${fwd}`, open, fwd, rs: 'B14' });
+  const info = { grid: [] };
+  for (const G of grid) {
+    const row = { id: G.id, figs: [] };
+    for (const f of figs) {
+      const c = { open: G.open, fwd: G.fwd, rs: G.rs === 'B14' && f.F.key === 'dory' ? 1.10 : null, fitR: 'shell' };
+      await configure(f, c);
+      const eyes = [];
+      f.eyes.rig.eyes.forEach((e, i) => { if (!e.visible) return;
+        setLid(f, 'open'); for (let k = 0; k < 120; k++) stepRig(f, 1 / 60, false);
+        const d = depthOf(f, i);
+        eyes.push({ eye: i, s: +d.s.toFixed(5), fwd: +d.fwd.toFixed(4), apex: +d.apex.toFixed(4), rimFront: +d.rimFront.toFixed(4), protrusion: +d.protrusion.toFixed(4), equatorBehindRim: +d.equatorBehindRim.toFixed(4),
+          coverage: coverage(f, i), shell: shellCheck(f, i) }); });
+      row.figs.push({ fig: f.F.key, cfg: c, eyes });
+    }
+    info.grid.push(row); msg('misst ' + G.id);
+  }
+  return info;
+}
+
+/* ---------------- main ---------------- */
+try {
+  renderer.localClippingEnabled = true;
+  const figs = window.__figs = [];
+  for (const F of FIGS) {
+    msg('lädt ' + F.name + ' …');
+    const f = await loadFigure(F); f.cfg = cfgFor(F.key); f.eyes = await buildEyes(f);
+    const blob = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.9), new THREE.MeshBasicMaterial({ map: BLOB, transparent: true, depthWrite: false }));
+    blob.rotation.x = -Math.PI / 2; blob.position.set(0, 0.002, 0); f.fig.add(blob);
+    scene.add(f.fig); layerAll(f); figs.push(f);
+  }
+  if (Q.get('measure')) { job.info = await measureGrid(figs); }
+  for (const f of figs) { await configure(f, cfgFor(f.F.key)); layerAll(f); setLid(f, lid); for (let k = 0; k < 120; k++) stepRig(f, 1 / 60, false); }
+  resize(); figs.forEach((f, i) => frame(f, cams[i], view));
+  msg('');
+  const setBtn = (sel, attr, v) => document.querySelectorAll(sel + ' button[' + attr + ']').forEach((b) => b.classList.toggle('on', b.getAttribute(attr) === v));
+  window.__setLid = (v) => { lid = v; figs.forEach((f) => setLid(f, v)); setBtn('#lidBtns', 'data-lid', v); };
+  window.__setView = (v) => { view = v; figs.forEach((f, i) => frame(f, cams[i], v)); setBtn('#viewBtns', 'data-view', v); };
+  window.__blink = () => figs.forEach((f) => f.eyes.rig.blinkNow());
+  window.__depth = () => figs.map((f) => ({ fig: f.F.key, cfg: f.cfg, eyes: f.eyes.rig.eyes.map((e, i) => e.visible ? depthOf(f, i) : null).filter(Boolean) }));
+  document.querySelectorAll('#lidBtns button[data-lid]').forEach((b) => b.onclick = () => window.__setLid(b.dataset.lid));
+  document.querySelector('#lidBtns button[data-act="blink"]').onclick = () => window.__blink();
+  document.querySelectorAll('#viewBtns button').forEach((b) => b.onclick = () => window.__setView(b.dataset.view));
+  document.querySelectorAll('#cfgBtns button').forEach((b) => { b.classList.toggle('on', b.dataset.cfg === CFG); b.onclick = () => { const u = new URL(location.href); u.search = ''; u.searchParams.set('cfg', b.dataset.cfg); location.href = u.href; }; });
+  new ResizeObserver(() => { resize(); figs.forEach((f, i) => frame(f, cams[i], view)); }).observe(stage);
+  const clock = new THREE.Clock(); let acc = 0;
+  renderer.setAnimationLoop(() => {
+    const dt = Math.min(0.05, clock.getDelta());
+    figs.forEach((f) => stepRig(f, dt, true));
+    if ((acc += dt) > 0.25) { acc = 0; readout(figs); }
+    render();
+  });
+  readout(figs); job.ready = true; job.done = true;
+} catch (e) { job.err = String(e && e.stack || e); msg('FEHLER ' + job.err); console.error(e); }
+</script></body></html>

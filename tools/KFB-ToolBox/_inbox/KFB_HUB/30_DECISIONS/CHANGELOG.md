@@ -1,6 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-419: Songs R5 (fünf Decks) über Triplet-Plugin + externen Kritiker; SONG_SPEC R3.2 mit gemeinsamem Prüfskript song_gate.py (Lyrics + Kritiker-Urteil), Intro ≥ 2 Beats, Meta-Karten-Regel, Ton-Hinweise je Deck (Hub-Briefing an WSA).
+- E2 R1b vom Agenten zurück: Ursache = zu enge Sockelöffnung + nach innen gerollter Rand; Vorschlag 66° Öffnung, Rand 0,04 R nach außen, eyeForward 0,05 R (proof_r1b.html), wartet auf Georgs Blick.
 - WSB-Lieferungen B1/B2/B7 auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17); automatisches Mergen vom Sicherheitssystem blockiert, Georg entscheidet den Weg.
 - E2-Modul gebaut (replies/E2_ATTACH_R1: clay-skin-attach.v1.js, 89/89 Tests, Beweisbilder Hunky/Dory r4, keine v6-Schalen mehr); Doras Sockel 1,014 R → in B14 auf 1,10 R neu backen.
 - V-418: SONG_SPEC R3.1 (Klammern, Zahlen, Spielwörter, Ton-Tor, zwei Tracks bei zu langen Decks); Antwort an WSA zu Songs R4 (Hub b94).
