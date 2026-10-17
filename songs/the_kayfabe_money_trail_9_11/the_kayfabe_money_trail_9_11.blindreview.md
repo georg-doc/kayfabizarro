@@ -1,5 +1,3 @@
-# Independent blind review · NOT RUN / BLOCKED BY MECHANICAL GATE
+# 9/11 Money Trail · independent blind review BLOCKED
 
-No independent reviewer was engaged because the R4 character budget cannot be satisfied while retaining 60 cards with 80–95 card characters each, blank lines and about one-third of the lines receiving opener performances. No scores, notes or proposed edits are fabricated.
-
-Next: WS0 reconciles this conflict in new canonical SONG_SPEC_R3 version (e.g. split 30+30, or explicitly permit deck-specific length). No retroactive silent exception.
+Part 1 (cards 1–28) and Part 2 (cards 29–60) are drafted, but R3.1 A5 and A7 conflict: 31 mandatory sung replacements exceed 10% quota. No independent reviewer has been engaged; no ratings or suggestions are recorded. WS0 must clarify whether mandatory A7 number spellings are exempt from A5 before this deck can proceed.

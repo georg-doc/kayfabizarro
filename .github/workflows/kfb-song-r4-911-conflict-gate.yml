@@ -1,4 +1,4 @@
-name: KFB Money Trail R4 conflict gate
+name: KFB Money Trail R3.1 two-track source and format
 on:
   push:
     branches:
@@ -6,11 +6,15 @@ on:
 permissions:
   contents: read
 jobs:
-  r4_source_budget:
+  r31:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Exact plugin triplet_set_check.py
-        run: python3 songs/the_kayfabe_money_trail_9_11/triplet_set_check.py songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.qa.deck.json songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.qa.set.csv
-      - name: R4 format and budget gate (expected nonzero)
-        run: python3 songs/the_kayfabe_money_trail_9_11/format_gate.py
+      - name: Exact original triplet checker Part One
+        run: python3 songs/the_kayfabe_money_trail_9_11/triplet_set_check.py songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.part1.r31.qa.deck.json songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.part1.r31.qa.set.csv
+      - name: Exact original triplet checker Part Two
+        run: python3 songs/the_kayfabe_money_trail_9_11/triplet_set_check.py songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.part2.r31.qa.deck.json songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.part2.r31.qa.set.csv
+      - name: R3.1 both format gates
+        run: python3 songs/the_kayfabe_money_trail_9_11/format_gate_r31.py
+      - name: A5 songLine quota hard gate
+        run: "python3 -c 'import json; from pathlib import Path; d=json.loads(Path(\"songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.songlines.json\").read_text()); assert d[\"percentage\"]<=d[\"limitPercent\"], \"A5 vs A7 canonical conflict: mandatory spellings exceed quota\"'"
