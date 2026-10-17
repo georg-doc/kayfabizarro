@@ -5583,6 +5583,36 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-405",
+   "date": "2026-10-17",
+   "area": "Spiel",
+   "verdict": "TBD",
+   "text": "Card Ink Defense R0.5 (WSA-Recovery, PR #400) als geplanter Post-MVP-Integrations-Slice angenommen: kanonische Karte als Köder in der Knetwelt, Tinten-Monster aus der Combat-Arena (Spender georg-doc/KFB-Combat-Arena) zensieren ihr Bild, Verteidigen/Heilen/Bergen gibt eine Karte mit Beleg und Almanach-Erinnerung; Chill-Standard, optional. Reihenfolge nach den MVP-Slices (L3/Look, Slice 1–4); erster Beweis „kleine Open-World-Kartenverteidigung“, Card-Hex vertikal später. Laufzeit-Besitzer WS1, Kartenwahrheit aus Deck-Registry. Nächster WS0-Schritt: Gesamtkarte der Spielmechaniken + Post-MVP-Integrationsplan.",
+   "values": {},
+   "owner": "WS0 (Plan) · WS1 (später Bau)",
+   "check": "Gesamtkarte Spielmechaniken im Hub",
+   "source": "replies/WS0_ACK_CARD_INK_DEFENSE_R0_5_2026-10-17.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kampf und Karten gehören ins Gesamtbild; der Spender existiert, aber erst nach den MVP-Slices.",
+   "applies": "nach Slice 4"
+  },
+  {
+   "id": "V-406",
+   "date": "2026-10-17",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Farbdrehbuch aus den drei Joyride-Welten (Georg 17.10., WS1 §70: „die können wir so nehmen“): Claybound-Canyon, Bikini-Bucht, O-Town als Ausgangspaletten, je Diorama ≈ 6 Farben mit Rollen über den V-305-Generator, optimierbar. Farbsprengsel steinweise: WSB B9 schreibt je Diorama COLOR_1 (R+G Stein-ID 16 Bit, B Rolle, A 255) in die GLBs (im B8-Durchgang, Amphitheater zuerst), WS1 wählt im Sprenkel-Modul je ID Rollen- oder Sprengselfarbe, organisch und seedbar.",
+   "values": {},
+   "owner": "WS1 · WSB",
+   "check": "ID-Karte + Rollen-Karte, blinder Kritiker",
+   "source": "WS1_STATUS §70 · ONBOARDING_WSB B9",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Durchgehend umgefärbte Flächen wirken wie in Farbe getaucht; steinweise Sprengsel brauchen echte Stein-Grenzen aus Blender.",
+   "applies": "Look-Slice"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5655,7 +5685,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:725",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:726",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

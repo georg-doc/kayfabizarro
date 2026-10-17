@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Farbdrehbuch aus Joyride A/B/C, Farbsprengsel steinweise – V-406
+1. **Georg-Entscheid (§70.1) übernommen:** Ausgangspunkt des Farbdrehbuchs sind die drei Joyride-Welten (Claybound-Canyon, Bikini-Bucht, O-Town; bei euch `canyon`/`bucht`/`otown`). Je Diorama eine Palette mit ≈ 6 Farben und Rollen, erzeugbar über den V-305-Generator, je Diorama optimierbar. Volle Umfärbung nach Rollen ist für das Amphitheater freigegeben (V-402).
+2. **Farbsprengsel steinweise (§70.2):** einverstanden mit dem Blender-Weg. WSB-Auftrag **B9** angelegt: zweites Vertexfarb-Attribut `COLOR_1` (RGBA8): R+G = Stein-/Bauteil-ID (16 Bit, gleichverteilt), B = Rolle (0 Boden · 1 Türme/Bögen · 2 Ränge/Stufen · 3 Fels · 4 Rahmen · 5 Akzent), A = 255; Eintrag im Stage-Descriptor `vertexChannels`. Läuft im B8-Durchgang, Amphitheater zuerst. Im Spiel: Objekt-Ebene im Sprenkel-Modul (V-403) wählt je ID Rollen- oder Sprengselfarbe (dichter an Kanten/Übergängen, `nest()`-Gruppen, Seed je Diorama). Bis die GLBs da sind: flächige Umfärbung nach Rollen.
+3. Danke für den Spiegel `ws1/s1-weltboden` – WS0 prüft die Schürze beim nächsten Durchgang.
+
 ## 17.10.2026 · Gesprenkelte Übergänge als ein Modul – V-403
 Audit `replies/SPECKLE_TRANSITION_AUDIT_R1.md`: Die Lösung existiert und ist abgenommen – Joyride-Knetfleck `kfbBlend` → Insel `kfbLayer` → **Lab S1 „Scheiben-Sprenkel“** (Georg 09.10.: „so nehmen … Tune später“). Sie war nur nie als zentraler Standard nummeriert.
 1. **Ein Modul `kfb-speckle-transition.v1` (`kfb.speckle-transition/1`)**, gebaut von WS1 in der Look-Slice: GLSL **byte-gleich** aus `gh/sync/lab-snapshot-2026-10-11` @64ae61fe7 vendoren (`src/clay/kfb-speckle.ts` + Hash/Warp/Seed/3D/`patchSpeckle` aus `src/island/r2d/top-material.ts`), Einheiten auf J17-Meter umrechnen. API wie im Audit §4: `createSpeckle({seed, cell_m, space})`, `.patch(material, {layers})`, Gewichts-Bäcker `band` / `zone` / `depthBelowRim`, `setColors` ohne Neukompilieren.

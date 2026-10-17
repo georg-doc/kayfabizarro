@@ -51,3 +51,10 @@ Source: `~/Dropbox/CLAUDE/MeshyModels/Meshy_AI_jungle_computer_diora_1017014450_
    - Two renders each: wide and close.
 4. **Eye anchors for the computer** (it is a character, a diegetic meta-artefact): suggestion is the red round lens on the right as one big eye (cyclops). Alternatively the stone mask above the monitor with two eyes. Set `KFB_Eye_*_anchor` frontal and render with EyeRig v6 + clay.
 Output in `50_BLENDER/B7/` + RETURN. WS0 then puts A against B in the Hub as a one-click question for Georg.
+
+## B9 · Stone IDs for colour flecks (Georg 17.10., V-406), runs inside the B8 pass
+Per diorama GLB (amphitheatre first, then the Meshy stages), add a second vertex colour attribute **`COLOR_1` (RGBA8)**:
+- **R + G = stone/part ID** (16 bit: R = low byte, G = high byte). Each recognisable stone or part island gets its own ID, uniformly distributed (no gradient across neighbours).
+- **B = role**: 0 ground · 1 towers/arches · 2 tiers/steps · 3 rock · 4 frame · 5 accent/props.
+- **A = 255.**
+Record the channels in the stage descriptor (`kfb.stage-descriptor/1`, field `vertexChannels: {COLOR_1: {id: "RG16", role: "B"}}`). Detect islands from the original mesh (connectivity + edge creases/UV islands), not from the decimated mesh. Proof: ID map rendered in false colour plus role map. WS1 then picks per ID in the speckle module (V-403) the role colour or a fleck colour, seedable and organic.
