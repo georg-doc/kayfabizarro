@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-391 Figurenkarte kfb.figure/1 (immer Augen-Rig + Clay, nur Augen entfernen), V-392 ein Licht-Modul für alle Bühnen (kein Gegenlicht, fitShadow, contactAO, Selbsttest), V-393 KNOWN_FAILURES als Pflicht-Lektüre; WSB-Antwort (Mumien mit EYE-CLEANUP-01 + EyeRig v6 neu rendern).
 - V-390: Werkzeug-Landkarte (5 Orte, je ein Besitzer), Umleitungen statt toter Links, Motion Lab als Tab; Aufräumen durch WSA work parallel (Hub b75).
 - V-389: eine Ereignis-Zeitleiste (performance.json + sfx/vfx/lights), Audio Site einziger Audio-Besitzer, Schritte-Beweis dort statt „Motion Lab“; Karaoke-Schritte später.
 - V-387 Lichtregie (Story-Mode-Figurenlicht inkl. Licht von unten, Spot-Pop-in, Verfolger, Disco-Kugel-Finale, lights[]-Spur); V-388 Audio Footstep-First ACK (Hub b74), Motor-Sets auf HOLD/reduziert.

@@ -19,7 +19,7 @@ WS1 hat die gemessenen Werte unserer Recherche übernommen (J17-Tageslicht, Sonn
 **Eine Szene, ein Licht-Rig, ein Ton-Pfad, eine Material-Antwort.** Stimmungen sind Einstellungen dieses Rigs. Keine Karte und kein Boden hat ein privates Licht; Figuren haben genau ein echtes, warmes Figurenlicht als Teil des Rigs (Regel 11), keine Tricks.
 
 ### Die zehn Regeln
-1. **Silhouette:** Fresnel-Randlicht entfernen **und** Figuren-Sheen ≤ 0,05 im selben Schritt (mit Schaltern belegt). Das J17-Gegenlicht bleibt **immer an** und **ungesättigt** (kein Violett).
+1. **Silhouette:** Fresnel-Randlicht entfernen **und** Figuren-Sheen ≤ 0,05 im selben Schritt (mit Schaltern belegt). **Korrektur 17.10. (V-392, Beleg WSB):** auch das J17-Gegenlicht (#ffe6d6 0,6 von hinten) malt den Saum an die Schattenseite – **standardmäßig aus**; Trennung über warmes Figurenlicht von der Kameraseite (Regel 11) und Kontakt-AO. Ein Gegenlicht nur als bewusste Lichtregie-Ausnahme (Teil B), nie Standard.
 2. **Gold** = tiefe, warme Sonne **plus kühlere Füllung**; Himmelshelligkeit ändert sich mit. Füllung nicht wärmer und nicht dunkler machen (sonst Wiederholung von V-050 „zu orange und zu dunkel“).
 3. **Look-B-Sättigung im Licht streichen:** Wärme kommt nur aus Himmelstönung, Boden-Rückstrahlung und Hauptlicht.
 4. **Hemi-Boden = `edgePalette` der Bühne** (V-355); ersetzt `faceFill` als Aufhellung von unten (Kinn, Mund).
@@ -42,9 +42,9 @@ Figuren bekommen ein **eigenes, warmes Figurenlicht**, damit Gesicht, Augen, Bra
 ### Stimmungen = Rig-Einstellungen
 | Stimmung | Hauptlicht | Füllung (Hemi) | Gegenlicht | Praktische | Himmel |
 |---|---|---|---|---|---|
-| Tag | J17-Werte (#fff4e6 / 2,9) | J17 Himmel #eef4fa, Boden = edgePalette | an, neutral 0,6 | Emissive aus | J17, nur getönt |
-| Gold | tief, warm-orange | **kühler** als Tag | an, neutral | schwach (Emissive) | dunkler, wärmer |
-| Nacht | Mond, kühl, schwach | dunkelblau, Schatten lesbar | an, kühl-neutral | Inseln an (Billboard + Bühnen-Praktische) | dunkel, Rahmen hebt sich ab |
+| Tag | J17-Werte (#fff4e6 / 2,9) | J17 Himmel #eef4fa, Boden = edgePalette | aus (V-392) | Emissive aus | J17, nur getönt |
+| Gold | tief, warm-orange | **kühler** als Tag | aus | schwach (Emissive) | dunkler, wärmer |
+| Nacht | Mond, kühl, schwach | dunkelblau, Schatten lesbar | aus (Figurenlicht trägt) | Inseln an (Billboard + Bühnen-Praktische) | dunkel, Rahmen hebt sich ab |
 | Story-Modes (später) | nur Tönung von Boden (V-305/V-331) und Praktischen | | | | |
 
 ### Ausdrücklich geändert (Register)
@@ -52,7 +52,7 @@ Figuren bekommen ein **eigenes, warmes Figurenlicht**, damit Gesicht, Augen, Bra
 - G3 „Kartenpixel unverändert“ → ersetzt durch Regel 8.
 - BILLBOARD_STANDARD_R2 „keine Zusatzteile“ → Ausnahme: Lampenarme/Leuchtköpfe nach Regel 7.
 - L-7 „≤ 2 echte Lichter“ (R2-Entwurf) → V-329-Pool + V-370-Budget.
-- Gegenlicht nur Gold/Nacht (R2-Entwurf) → immer an wie J17.
+- Gegenlicht: standardmäßig aus (V-392, WSB-Beleg Saum), nur als Lichtregie-Ausnahme.
 
 ## Abnahme-Raster
 | ID | Prüfung | Schwelle |
@@ -91,3 +91,6 @@ The V-292 colours tint the light. Measurement L-9 (mouth readable, nothing blown
 
 ## B3 · Light cues in the data
 `kfb.performance/1` gets a `lights[]` track: `{t, type: spot_on|spot_off|follow|disco_on|disco_off|mode, target, storyMode, intensity}`, snapped to beats, with spot_on lead time of −½ beat. The camera has base positions (wide, medium, close) and the light presets are tuned so they work from those positions.
+
+## Ein Modul für alle Bühnen (V-392)
+Das Rig dieses Dokuments wird **ein Modul** `kfb-stage-light.v1.js`, Pflicht-Import für jede Spiel- und Beweisbühne (WS1, WSB, ToolBox, Claude-Design-Bühne): Rig (Sonne, Hemi, Figurenlicht, kein Rand-/Gegenlicht), `fitShadow(box)` (Frustum auf Inhalt, Texel-Einrasten, enger Tiefenbereich, normalBias = 1,5 × Texel, bias abgeleitet, PCFSoft), `contactAO(receivers, occluders)` (generisch aus `kfb-lib/contact-ao.v1.js`, Kugeln analytisch, Fuß↔Boden, Prop↔Boden, ohne dunkle Ringe), Selbsttest mit Pixelmessung des Spalts (Fuß/Boden, Kugel/Krone, Kugel/Kugel = 0). Besitzer: WS1 als Teil von L3; WSB nutzt bis dahin seine Fluff-Bühne und stellt dann um.

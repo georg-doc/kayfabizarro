@@ -5372,6 +5372,51 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-391",
+   "date": "2026-10-17",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Figurenkarte als einzige Quelle (Georg 17.10.): je Figur figures/<id>.figure.json (kfb.figure/1) mit Körper-GLB, explizit originals.remove/keep (nur Augen entfernen, Mund/Zähne/Brauen behalten, wenn nicht anders angegeben), eyeRig (Pflicht; Version, Anker, Lid, Georgs gespeicherte Werte), Brauen, Mund-Satz, Anhängsel, Clay-Profil, Freigabe-Status. Standard: Figuren werden immer mit KFB-Augen-Rig und Clay ausgeliefert und gezeigt, außer die Karte sagt eyeRig: none mit Grund. Bühnen und Beweis-Seiten laden nur Karten, nie rohe KayKit/Meshy-GLBs; Karte ohne eyeRig wird sichtbar abgelehnt. Erste Karten: FrizzleBob, GothGirl, Mumien, Orc Brute, Lord Hunky, Lady Dory, Norman, Brain-Cyborg (Entwurf läuft). Neue Figuren kommen über ihre Karte in die Figuren-Werkstatt.",
+   "values": {},
+   "owner": "WS0 (Schema, Karten) · WSA work (Werkstatt) · WS1/WSB (laden nur Karten)",
+   "check": "Karte je Figur, Ablehnung ohne eyeRig",
+   "source": "Georg 17.10. · WSB-Postmortem Mumien ohne Augen-Rig",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Augen-Rig fehlte zum dritten Mal in vier Tagen; Konfigurationen lagen verstreut oder nie auf main.",
+   "applies": "ab sofort"
+  },
+  {
+   "id": "V-392",
+   "date": "2026-10-17",
+   "area": "Licht",
+   "verdict": "RULE",
+   "text": "Ein Licht-Modul für alle Bühnen: kfb-stage-light.v1.js (Rig nach R2 ohne Rand- UND ohne Gegenlicht, fitShadow mit Texel-Einrasten, engem Tiefenbereich, abgeleitetem Bias, generisches contactAO für Fuß/Boden, Prop/Boden, Kugel/Kugel, Selbsttest mit gemessenem Spalt 0). Pflicht-Import für WS1, WSB, ToolBox, Claude-Design-Bühne; keine Bühne baut Licht/Schatten selbst; ein Schattenfehler höchstens 1× lokal, dann an den Modul-Besitzer (WS1, Teil von L3). Korrigiert R2-Regel 1: J17-Gegenlicht malt den Saum (WSB-Beleg) und ist standardmäßig aus.",
+   "values": {},
+   "owner": "WS1 (Modul) · alle Bühnen",
+   "check": "Selbsttest Spalt 0 px",
+   "source": "replies/LIGHT_MODEL_R2.md · 50_BLENDER/AUFTRAG_WS0_SCHATTEN_GLOBAL",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Jede Bühne baute ihr Licht neu und fiel in dieselben Saum- und Spalt-Fehler.",
+   "applies": "ab sofort; Modul mit L3"
+  },
+  {
+   "id": "V-393",
+   "date": "2026-10-17",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Bekannte Fehler als Pflicht-Lektüre (Georg 17.10.: keine Tokens mehr für dieselben Failure-Loops): replies/KNOWN_FAILURES.md (F1 Figur ohne Augen-Rig, F2 falsche Teile entfernt, F3 ohne Clay, F4 Saum, F5 Licht-Spalt, F6 eigene Bühnenlichter, F7 private Licht-Tricks, F8 rohe KayKit-GLBs, F9 Overlays, F10 Tests < 50 fps, F11 Credits ohne Deckel, F12 interne Werkzeugnamen) steht am Anfang jedes Briefings/Onboardings; tritt ein bekannter Fehler auf: Lauf stoppen und an WS0 melden statt weiterdrehen.",
+   "values": {},
+   "owner": "alle Sitzungen",
+   "check": "jedes Briefing verweist auf KNOWN_FAILURES",
+   "source": "replies/KNOWN_FAILURES.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Dieselben Fehler kosteten wiederholt Runden und Tokens.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5444,7 +5489,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:713",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:714",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
