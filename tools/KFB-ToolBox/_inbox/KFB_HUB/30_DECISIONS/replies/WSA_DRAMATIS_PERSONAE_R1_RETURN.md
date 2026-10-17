@@ -80,3 +80,7 @@ Zusätzliche Charakterblatt-Lücke: Black Knight, Demon Lord, Monstrosity und Wi
 ## Genau ein nächster Schritt
 
 **WS0 lässt WS1 den gemeinsamen Figurenkarten-Consumer und das R2-Lichtmodul liefern.** Danach ergänzt WSA die echten Vorschauen, prüft FrizzleBob und Lord Hunky sichtbar mit Clay + EyeRig und veröffentlicht erst den zulässigen R1-Stand. R2/R3 starten anschließend. Georg muss keine Dateien oder Zwischenbriefings weiterreichen; die Anmeldung liegt bereits dauerhaft vor.
+
+## V-409 · ergänzte WS0-Entscheidung · 17.10.2026
+
+Übernommen; Einzelheiten und Quelldatei-Klarstellung: `WSA_ACK_V409_DRAMATIS_PERSONAE_R1_2026-10-17.md`. Der Lichtbaustein existiert laut WS0 auf dem L3-Branch; ausstehend sind gepinnte Lieferpfade/APIs beider gemeinsamen Module und der Figurenkarten-Loader. Integration nach L3-Merge, vor Look-Slice. Die vier fehlenden Charakterblätter wurden von WSA nicht angelegt; neun vorhandene Blätter plus 13 bestehende Figurenkarten sind getrennte Quellbestände. Die vier Karten ohne Blatt zeigen ausdrücklich todo; neue Blätter bleiben WS0-Aufgabe. Bestehende private v16 bleibt lesend veröffentlicht und 3D-gesperrt. Kein neuer Staging-Host, kein Code-/Deployment-Update in dieser Rückmeldung.
