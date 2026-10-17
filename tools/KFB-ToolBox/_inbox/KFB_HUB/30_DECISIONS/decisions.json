@@ -5754,6 +5754,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-416",
+   "date": "2026-10-17",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Charakterblätter per Web-Chat ergänzen (Georg 17.10., Zwischenlösung bis Dramatis-Personae-R2/R3): Georg diktiert Änderungen im Web-Chat, WSA schreibt sie direkt in replies/FIGURES_R1/characters/<id>.character.json auf dem Register-Branch (Wert status GEORG, src „Georg via Web-Chat <Datum>“, verdrängte Werte in conflicts[]); Aussehen bleibt in Figurenkarte/ToolBox-Studio; Dramatis Personae liest von GitHub; WS0 prüft nachträglich. Charakter-Dateien 4gtn_ceo und 4gtn_forgotten angelegt.",
+   "values": {},
+   "owner": "WSA (Web-Chat) · WS0 (Review)",
+   "check": "Änderung erscheint nach Neuladen im Tab",
+   "source": "replies/BRIEF_WSA_CHARACTER_EDITS_R2.md (Hub b92)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will Charakter-Infos sofort pflegen; der volle Bearbeiten-Ausbau des Tabs dauert noch.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5826,7 +5841,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:737",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:739",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

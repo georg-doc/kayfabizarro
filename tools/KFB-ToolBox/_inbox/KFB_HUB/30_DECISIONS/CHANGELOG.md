@@ -2,6 +2,7 @@
 
 ## 2026-10-17 · Writer’s Room JSON-first
 - WSB-Lieferungen B1/B2/B7 auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17); automatisches Mergen vom Sicherheitssystem blockiert, Georg entscheidet den Weg.
+- V-416: Charakterblätter per Web-Chat direkt ergänzen (WSA schreibt in FIGURES_R1/characters, Hub b92).
 - Charakter-Dateien 4gtn_ceo + 4gtn_forgotten (kfb.character/1, Story von Georg bestätigt) in FIGURES_R1/characters.
 - V-415: 4GTN = Utopia-CEO, 4GTN_Forgotten = verbannter Zwilling/Maker-Space-Helfer, Allegorie Transhumanismus vs. Co-Creation (Story-Vorschlag), WSB B13 baut beide.
 - V-414: Geschichten Cops/MIB bestätigt, Anzug-Baukasten (Banker/Politiker/CEO), Brille vom Driver, Monstrosity eigener Charakter, Utopia-CEO-Vergleich Mannequin/Clanker/4GTN (+ 4GTN_Forgotten als Maker-Space-Zwilling), WSB B13.
