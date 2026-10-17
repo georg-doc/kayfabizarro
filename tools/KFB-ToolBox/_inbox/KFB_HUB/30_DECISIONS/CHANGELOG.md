@@ -2,6 +2,7 @@
 
 ## 2026-10-17 · Writer’s Room JSON-first
 - WSB-Lieferungen B1/B2/B7 auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17); automatisches Mergen vom Sicherheitssystem blockiert, Georg entscheidet den Weg.
+- V-414: Geschichten Cops/MIB bestätigt, Anzug-Baukasten (Banker/Politiker/CEO), Brille vom Driver, Monstrosity eigener Charakter, Utopia-CEO-Vergleich Mannequin/Clanker/4GTN (+ 4GTN_Forgotten als Maker-Space-Zwilling), WSB B13.
 - V-413: „Man in Black“ (schwarzer Anzug, weißes Hemd, dunkle Krawatte) als WSB B12 nach B11, Geschichte Vertuschungs-Agenten zur Bestätigung.
 - V-412: Spielzeugsoldaten-Cops (KayKit Toy Soldier, US-Cop-Mütze mit Stern + Rangnummer, Nussknacker-Uniform, Gewehr geschultert, Marsch-Animation) als WSB B11 nach B5 → B10; Geschichte zur Bestätigung.
 - Neubau der 5 Songs an WSA-Triplet-Plugin (Hub b91, BRIEF_WSA_SONGS_R4_PLUGIN); WSA: Dramatis Personae v16 lesend auf der privaten Asset-Library-Adresse veröffentlicht, 3D gesperrt bis WS1-Module.

@@ -64,7 +64,7 @@ Build the brain head in the Space Ranger collar: brain from `~/Dropbox/CLAUDE/Me
 
 ## B11 · Toy-soldier cops "Ordnungshüter" (Georg 17.10., V-412), after B10
 **Donors (use what works):** KayKit Mystery Series 6 "Toy Soldier" (`media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/`, including `ToySoldier_Rifle` and `_Trumpet`), the eye-ready base `ToySoldier_NoEyes.glb` (Lab `public/assets/figures-b2/toysoldier/`, from EYE-CLEANUP), and the voice cast already exists (toy-soldier, am_eric).
-**Story (proposal; Georg confirms):** wind-up toy-soldier cops, the clay world's patrol for "order". They march fixed routes, salute rules nobody explains, and their rank is the number on their cap. Satire on kayfabe order.
+**Story (confirmed by Georg 17.10.):** wind-up toy-soldier cops, the clay world's patrol for "order". They march fixed routes, salute rules nobody explains, and their rank is the number on their cap. Satire on kayfabe order.
 **Design:**
 - **Classic US police cap** (peaked cap) with a **gold star** and a **number in the middle** (rank or instance 1–n). The number is a variant parameter (texture/decal or a separate number mesh), set in the figure card as `variant.rank`.
 - **Uniform:** blue-black police uniform mixed with **nutcracker design** (gold buttons, frogging and epaulettes, small red or gold accents). Clay look, few big shapes.
@@ -74,7 +74,15 @@ Build the brain head in the Space Ranger collar: brain from `~/Dropbox/CLAUDE/Me
 **Output:** GLB (+ rank variants 1–3 as proof), `toy_soldier_cop.figure.json` draft, clay proofs front/¾/side, a short march clip render. Then WSA adds them to ToolBox-Studio.
 
 ## B12 · "Man in Black" (Georg 17.10., V-413), after B11
-**Build:** in Blender (V-336, no runtime mesh hacks; the Frankensteining Studio is retired). Base is a KayKit Rig_Medium body (Adventurers 2.0, `media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/`; the head/body pick goes in the RETURN). On top, modelled as clay with few big shapes: a **black suit** (jacket, trousers), a **white shirt** (visible collar and front), a **dark tie**, and optionally sunglasses (donor `media/3D_Assets/GLB_mini_chars/aid-sunglasses.glb`, check the licence) as a removable variant.
+**Build:** in Blender (V-336, no runtime mesh hacks; the Frankensteining Studio is retired). Base is a KayKit Rig_Medium body (Adventurers 2.0, `media/3D_Assets/KayKit_Adventurers_2.0_FREE/Characters/`; the head/body pick goes in the RETURN). On top, modelled as clay with few big shapes: a **black suit** (jacket, trousers), a **white shirt** (visible collar and front), a **dark tie**, and **sunglasses 1:1 from the KayKit Driver** (`media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/character/gltf/Driver.glb`) as a removable variant. With glasses on, the KFB eyes are hidden or sit deeper in the head so nothing pokes through (check this in the RETURN).
+**Suit as an outfit kit (V-414):** build jacket, shirt, tie and trousers as separate, swappable parts with variant parameters, so the same suit also serves bankers (pinstripe, pocket square), politicians (lapel pin/flag, red tie), CEOs (open collar or bright tie) and the Utopia CEO. Variant list in the figure card.
 Eyes: KFB eye rig (anchors). The sunglasses variant may cover the eyes; the eye rig stays underneath for close-ups without glasses.
-**Story (proposal; Georg confirms):** agents of the cover-up. They show up where aliens (Lord Hunky, Lady Dory) or UFO traces appear, and they "erase" what happened (link to the Cosmic Grift deck: UFO File, Majestic 12). Satire on official kayfabe.
+**Story (confirmed by Georg 17.10.):** agents of the cover-up. They show up where aliens (Lord Hunky, Lady Dory) or UFO traces appear, and they "erase" what happened (link to the Cosmic Grift deck: UFO File, Majestic 12). Satire on official kayfabe.
 **Output:** GLB, `man_in_black.figure.json` draft, clay proofs front/¾/side with and without glasses. Then WSA adds it to ToolBox-Studio.
+
+## B13 · Utopia CEO: candidate comparison (Georg 17.10., V-414), small, can run between other jobs
+Monstrosity becomes its own character. A different robot becomes the **Utopia CEO**. Comparison sheet with clay (front/¾, same light, same scale next to FrizzleBob):
+- **Mannequin Large** (`media/3D_Assets/KayKit_Character_Animations_1.1/Mannequin Character/characters/Mannequin_Large.glb`)
+- **Clanker** (`…/KayKit_Mystery_Series6/9 - March 2025 - Clanker/characters/Clanker.glb`, both textures)
+- **4GTN** (`…/7 - January 2026 - 4GTN/4GTN.glb`) together with **4GTN_Forgotten** (the overgrown nature variant). That one becomes the protopian twin / predecessor model / rogue variant, the **maker space helper**. Careful: give the CEO version a neutral style, no samurai stereotype.
+Optionally each in the suit kit from B12. Output: one comparison sheet (PNG, 1920 px) for a Georg one-click question. No rebuild before Georg chooses.
