@@ -1,0 +1,167 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "brain_cyborg",
+ "displayName": "Brain-Cyborg",
+ "aliases": [
+  "brain-cyborg"
+ ],
+ "role": "npc",
+ "body": {
+  "glb": {
+   "repo": null,
+   "ref": null,
+   "commit": null,
+   "path": null,
+   "blob": null,
+   "sha256": null,
+   "bytes": null,
+   "onMain": false
+  },
+  "rawSource": {
+   "head": "MeshyModels/Meshy Community/bodyparts3d-brain-review.glb (local Dropbox)",
+   "headSha256": "01c5271f3110c09ff97785b3e8e28f9a27bbb2aa054683fd73420b6223b2527c",
+   "licence": "BodyParts3D, CC BY-SA – attribution DBCLS in the asset README (V-349)",
+   "body": "KayKit Space Ranger suit (as Lord Hunky / Lady Dory, collar visible)"
+  },
+  "rig": "Rig_Medium + rigid head_part (planned, same construction as aliens r4)",
+  "scale": {
+   "value": null,
+   "basis": null,
+   "source": null
+  },
+  "variants": []
+ },
+ "originals": {
+  "remove": [],
+  "keep": [
+   "Space Ranger suit incl. grey neck collar (V-346)"
+  ],
+  "method": null,
+  "note": "to be built in Blender after the aliens PASS (V-349)"
+ },
+ "eyeRig": {
+  "required": true,
+  "none": null,
+  "version": "pet-eye-rig.v6",
+  "module": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "ref": "main",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "seat": "headpart-socket",
+  "anchors": null,
+  "lid": {
+   "type": "E2",
+   "colour": null,
+   "colourMode": "skin slightly darker in brain tone (V-349)",
+   "fit": null,
+   "module": {
+    "module": "tools/KFB-ToolBox/eye-actor-studio-v1/clay-eyelid/clay-eyelid.v2.js",
+    "ref": "eyes/kfb-clay-eyelid-e2-2026-10-16",
+    "commit": "e1e60edff3973a396e120c2206e559981154b3be",
+    "status": "construction PASS (V-348); integration as hull on EyeRig v6 still open (V-348 steps 2-4)"
+   }
+  },
+  "irisColour": null,
+  "pupil": {
+   "style": null,
+   "size": null,
+   "gloss": null,
+   "form": null
+  },
+  "settings": null,
+  "source": "V-349 (design intent only, no values)",
+  "alternatives": [],
+  "todo": [
+   "all eye values open – build first"
+  ]
+ },
+ "brows": {
+  "owner": "planned",
+  "note": "V-349: brows yes"
+ },
+ "mouth": {
+  "owner": "planned",
+  "set": null,
+  "note": "V-349: first new cartoon mouth from the R3 sets",
+  "manifest": "assets/kfb-mouth-sets-r3-2026-10-16 @eb1100f9 · media/3D_Assets/Textures/KFB-Mouth-Sets_R3/mouth_sets.manifest.json"
+ },
+ "appendages": [],
+ "material": {
+  "clayProfile": "figure-fine",
+  "sheenMax": 0.05,
+  "canon": "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md (K1/H0 golden line) · V-053 figures = Resident Atlas profile \"fine\" · V-340 one clay material for KayKit figures and Meshy vehicles (matte, thumbprint, ≤ 18 % palette pull, no mesh change)",
+  "rules": "V-346.6 acceptance images always with KFB clay · V-346.4 clay must not wash out texture colours · V-385/V-392 sheen ≤ 0.05, no rim/back light, no emissive, no private light",
+  "eyeMeshes": "eye meshes without clay and without shadow casting (anchored-eyes.v1)"
+ },
+ "voice": null,
+ "performance": {
+  "story": "transhumanist alien entity; who is it, why in the suit – clarify at build time (V-349)"
+ },
+ "approval": {
+  "status": "open-design",
+  "by": null,
+  "date": null,
+  "vRef": [
+   "V-349"
+  ],
+  "parts": {
+   "body": {
+    "status": "open-design",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "not built"
+   },
+   "originals": {
+    "status": "open-design",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "not built"
+   },
+   "eyeRig": {
+    "status": "open-design",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "not built"
+   },
+   "mouth": {
+    "status": "open-design",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "not built"
+   },
+   "material": {
+    "status": "open-design",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "not built"
+   }
+  },
+  "missing": [
+   "aliens collar construction PASS first",
+   "story",
+   "Blender build + clay proofs",
+   "everything in this card"
+  ]
+ },
+ "provenance": [
+  {
+   "what": "decision",
+   "path": "KFB_HUB/30_DECISIONS/DECISIONS.md#V-349"
+  },
+  {
+   "what": "head source",
+   "path": "MeshyModels/Meshy Community/bodyparts3d-brain-review.glb"
+  }
+ ],
+ "todo": [
+  "Story",
+  "Blender build",
+  "Voice"
+ ]
+}

@@ -1,0 +1,267 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "norman",
+ "displayName": "Norman",
+ "aliases": [
+  "norman-prototype-dummy",
+  "Prototype Dummy",
+  "Rig_Medium actor #56"
+ ],
+ "role": "prop-actor",
+ "body": {
+  "glb": {
+   "repo": "georg-doc/kayfabizarro",
+   "ref": "main",
+   "commit": "904f0e95968999c7e8af77cc6667161bd4f3f788",
+   "path": "media/3D_Assets/KayKit_Bits_Bundle1_1.1/Prototype Bits/Character/Dummy.glb",
+   "blob": "295357f6e031c47689d14f71ae2bcfaacbd05883",
+   "sha256": "338ab8bc8171304ad36ee0885fbec806d9073dcdecd6ca9cda8474743c3ec406",
+   "bytes": 250364,
+   "onMain": true
+  },
+  "glbPinnedCommit": "fe9d95e20d660261370c02cb6bca0afe439c0979",
+  "rawSource": null,
+  "note": "Today the body IS the raw KayKit GLB; painted eyes/mouth are cleaned at runtime (see originals). Target: a baked face-clean texture variant from Blender.",
+  "rig": "Rig_Medium (23 joints, 0 embedded clips)",
+  "scale": {
+   "value": null,
+   "basis": null,
+   "source": null
+  },
+  "variants": []
+ },
+ "originals": {
+  "remove": [
+   "painted eyes (head texture band, 82 source tris area)",
+   "painted mouth (head texture band, 230 source tris area)"
+  ],
+  "keep": [
+   "Dummy_Head geometry",
+   "helmet/face regions outside the two bands",
+   "all body meshes",
+   "single material + embedded texture"
+  ],
+  "method": "runtime-texture",
+  "explicitException": "V-380: Norman gets EyeRig v6 + yellow R3 mouth, so the painted mouth is replaced by design (explicit, not default).",
+  "risk": "V-336 bans runtime decoration hacks; runtime texclean is temporary → bake a cleaned texture in Blender (WS0/WSB).",
+  "source": "toolbox/eye-rig-batch-2026-09-18 @d1900457 · tools/KFB-ToolBox/eye-rig-batch/data/norman.prototype-profile.v0.json#cleanup (texclean.js @5650b6c5, boxesLocal, grow 0.12)"
+ },
+ "eyeRig": {
+  "required": true,
+  "none": null,
+  "version": "pet-eye-rig.v6",
+  "module": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "ref": "main",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "seat": "facehost",
+  "anchors": null,
+  "lid": {
+   "type": "skin",
+   "colour": "#e4b53c",
+   "colourMode": "face-base-darkened → dark-yellow clay lids (V-380)",
+   "fit": 0.9,
+   "futureE2": {
+    "module": "tools/KFB-ToolBox/eye-actor-studio-v1/clay-eyelid/clay-eyelid.v2.js",
+    "ref": "eyes/kfb-clay-eyelid-e2-2026-10-16",
+    "commit": "e1e60edff3973a396e120c2206e559981154b3be",
+    "status": "construction PASS (V-348); integration as hull on EyeRig v6 still open (V-348 steps 2-4)"
+   }
+  },
+  "irisColour": null,
+  "pupil": {
+   "style": "matte-cute",
+   "size": 0.34,
+   "gloss": 0.1,
+   "form": null
+  },
+  "settings": {
+   "anchor": {
+    "dx": 0.295,
+    "dy": 0.045,
+    "ring": 0.153,
+    "track": 0.15
+   },
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.34,
+   "gloss": 0.1,
+   "inset": 0.4,
+   "lidFit": 0.9,
+   "converge": 0.18,
+   "splay": 0,
+   "trackingMode": "life",
+   "fixedGaze": [
+    0,
+    0
+   ],
+   "oval": {
+    "w": 1,
+    "h": 1,
+    "d": 1,
+    "tilt": 0
+   },
+   "blink": {
+    "minGap": 2.5,
+    "maxGap": 6.5,
+    "dur": 0.12
+   },
+   "life": {
+    "on": true,
+    "wander": 0.09,
+    "tremor": 0.045
+   },
+   "kinetics": {
+    "enabled": false,
+    "gain": 1,
+    "a": 0,
+    "c": 0,
+    "j": 0
+   }
+  },
+  "source": "toolbox/eye-rig-batch-2026-09-18 · tools/KFB-ToolBox/eye-rig-batch/data/norman.prototype-profile.v0.json#eye (status DESIGN_TUNE; values = Medium authoring default 19.09.)",
+  "alternatives": [],
+  "todo": [
+   "No eye anchors (no NoEyes GLB) → Blender: bake face texture + add eye_anchor.l/r like EYE-CLEANUP-01.",
+   "Georg tunes in the Figure Workshop (NORMAN_TOOLBOX_SITE_FINE_TUNE_01)."
+  ]
+ },
+ "brows": {
+  "owner": "browrig-v2",
+  "module": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/brow-rig.v2.js @5650b6c5",
+  "values": {
+   "enabled": true,
+   "mask": 0.42,
+   "thickness": 1.45,
+   "length": 0.56,
+   "taper": 0,
+   "height": 0.24,
+   "follow": 0.9,
+   "lift": 0.22,
+   "symmetric": true,
+   "solid": true,
+   "round": 0.48,
+   "even": true,
+   "cap": 0.72,
+   "color": "#9b741f"
+  },
+  "designIntent": "dark-yellow, thick, even block brows (tuning values, not canon)",
+  "source": "norman.prototype-profile.v0.json#brows"
+ },
+ "mouth": {
+  "owner": "decal-set",
+  "set": "clay_yellow_r3",
+  "form": "closed",
+  "placement": {
+   "x": 0,
+   "y": -3.15,
+   "width": 4.35,
+   "depth": 0.1
+  },
+  "sourceSheet": "media/3D_Assets/Textures/FrizzleBob-Mouths_PNGs/YELLOW_Clay-Mundvisemen für Lippen-Synchronisation.png @ea603d31 (20 forms)",
+  "expressionMap": {
+   "neutral": "closed",
+   "happy": "smile_teeth",
+   "angry": "angry",
+   "sad": "sad",
+   "surprised": "surprised",
+   "thinking": "smirk"
+  },
+  "note": "clay_yellow_r3 is \"WS0 proposal, waits for Georg\" in the manifest",
+  "manifest": "assets/kfb-mouth-sets-r3-2026-10-16 @eb1100f9 · media/3D_Assets/Textures/KFB-Mouth-Sets_R3/mouth_sets.manifest.json",
+  "source": "norman.prototype-profile.v0.json#mouth + data/norman-mouth-r3.v1.json"
+ },
+ "appendages": [],
+ "material": {
+  "clayProfile": "figure-fine",
+  "sheenMax": 0.05,
+  "canon": "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md (K1/H0 golden line) · V-053 figures = Resident Atlas profile \"fine\" · V-340 one clay material for KayKit figures and Meshy vehicles (matte, thumbprint, ≤ 18 % palette pull, no mesh change)",
+  "rules": "V-346.6 acceptance images always with KFB clay · V-346.4 clay must not wash out texture colours · V-385/V-392 sheen ≤ 0.05, no rim/back light, no emissive, no private light",
+  "eyeMeshes": "eye meshes without clay and without shadow casting (anchored-eyes.v1)"
+ },
+ "voice": null,
+ "performance": {
+  "series": "Cancel This Planet / Hunky & Dory",
+  "roles": [
+   "tragicomic crash-test dummy",
+   "combat target (presentation only)",
+   "alien test subject (presentation only)"
+  ]
+ },
+ "approval": {
+  "status": "open-design",
+  "by": null,
+  "date": null,
+  "vRef": [
+   "V-380"
+  ],
+  "parts": {
+   "body": {
+    "status": "open-design",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "old brown look not binding (V-380)"
+   },
+   "originals": {
+    "status": "open-design",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "runtime cleanup TUNE_UNTIL_VISUAL_REVIEW"
+   },
+   "eyeRig": {
+    "status": "open-design",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "browser/WebGL proof NOT_RUN (WS0_HANDOFF_NORMAN_2026-10-17.md)"
+   },
+   "mouth": {
+    "status": "open-design",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "yellow R3 set proposal"
+   },
+   "material": {
+    "status": "open",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "no clay proof"
+   }
+  },
+  "missing": [
+   "Site proof: Source only → Face candidate with clay (V-380)",
+   "Georg gate NORMAN_TOOLBOX_SITE_FINE_TUNE_01 (TUNE/APPROVE/REJECT)",
+   "voice casting",
+   "baked texture instead of runtime texclean"
+  ]
+ },
+ "provenance": [
+  {
+   "what": "profile",
+   "path": "tools/KFB-ToolBox/eye-rig-batch/data/norman.prototype-profile.v0.json",
+   "ref": "toolbox/eye-rig-batch-2026-09-18",
+   "commit": "d1900457e39eb56fe766fb7a7adb80ac0bc09bc3"
+  },
+  {
+   "what": "mouth catalog",
+   "path": "tools/KFB-ToolBox/eye-rig-batch/data/norman-mouth-r3.v1.json",
+   "ref": "toolbox/eye-rig-batch-2026-09-18"
+  },
+  {
+   "what": "handoff",
+   "path": "tools/KFB-ToolBox/eye-rig-batch/docs/WS0_HANDOFF_NORMAN_2026-10-17.md",
+   "ref": "toolbox/eye-rig-batch-2026-09-18"
+  },
+  {
+   "what": "brief",
+   "path": "KFB_HUB/30_DECISIONS/replies/BRIEF_WSA_NORMAN_TOOLBOX_R1.md"
+  }
+ ],
+ "todo": [
+  "Voice not cast (voice_casting.r1.json has no Norman)."
+ ]
+}

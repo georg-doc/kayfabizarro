@@ -1,0 +1,300 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "mummy_b",
+ "displayName": "Mummy_B",
+ "aliases": [
+  "Mummy_B",
+  "Mummy_B_NoEyes",
+  "mummy_male (proposed)",
+  "KayKit Mummy"
+ ],
+ "role": "performer",
+ "body": {
+  "glb": {
+   "repo": "georg-doc/kayfabizarro",
+   "ref": "georg-doc-patch-3",
+   "commit": "b7f6013bf00d0661ae943e69e7c3dfde38abcebd",
+   "path": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/Mummy_B_NoEyes.glb",
+   "blob": "7ebc9105f6502ff93e0d02864f7d239a4d87a775",
+   "sha256": "ca2addb2b0ff6ee8f3eb954b803751f2a84bac82d7b7fa611b3f4fcdd062077a",
+   "bytes": 338048,
+   "onMain": false
+  },
+  "labCopy": "KFB Island Worldbuilder Lab/public/assets/figures-b2/mummy_b/Mummy_B_NoEyes.glb (byte-identical, blob 7ebc9105)",
+  "targetPathOnMain": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_B_NoEyes.glb (proposal in eye-cleanup-01.json#out; needs Georg's yes)",
+  "rawSource": {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_B.glb",
+   "ref": "main",
+   "pin": "9248211a831d20f5d6cc665af90a2b38759a4609",
+   "blob": "539552ecf8bade98f624bcaa18c5a420082f7c90",
+   "sha256": "bfcd81a6b4dbfcd64da5a39d4a81701427d9f44f20cd25657bb17ef6251d367e",
+   "note": "NEVER load directly (F8)"
+  },
+  "rig": "Rig_Medium (23 joints; Idle_A 69/69 = original)",
+  "scale": {
+   "value": null,
+   "basis": "KayKit source units; world factor per V-345",
+   "source": null
+  },
+  "variants": []
+ },
+ "originals": {
+  "remove": [
+   "Mummy_B_Head: 2 eye-cap islands (132 faces)"
+  ],
+  "keep": [
+   "skin face patch",
+   "single brow (right side)",
+   "bandage head shell",
+   "all body meshes",
+   "material mummy"
+  ],
+  "method": "baked",
+  "source": "georg-doc-patch-3 · skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/eye-cleanup-01.json#figures[mummy_b] (Blender MCP, 01.10.)"
+ },
+ "eyeRig": {
+  "required": true,
+  "none": null,
+  "version": "pet-eye-rig.v6",
+  "module": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "ref": "main",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "seat": "anchored",
+  "seatModule": {
+   "path": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/lib/frizzlegraft/anchored-eyes.v1.js",
+   "ref": "main",
+   "note": "seat: eye centre 0.24 r behind the old cap; position, rotation, radius from the anchor empty; lid colour = measured skin (MUMMY_01_RETURN.md Runde 6)"
+  },
+  "anchors": {
+   "nodes": [
+    "eye_anchorl",
+    "eye_anchorr"
+   ],
+   "nodeNamesInBlender": [
+    "eye_anchor.l",
+    "eye_anchor.r"
+   ],
+   "parentBone": "head",
+   "axes": "local +Z = outward normal, +Y = head up, uniform scale = eye radius",
+   "l": {
+    "pos": [
+     0.2023,
+     1.6052,
+     0.417
+    ],
+    "normal": [
+     0.367,
+     -0.0056,
+     0.9302
+    ],
+    "r": 0.0649
+   },
+   "r": {
+    "pos": [
+     -0.2023,
+     1.6052,
+     0.417
+    ],
+    "normal": [
+     -0.367,
+     -0.0056,
+     0.9302
+    ],
+    "r": 0.0649
+   },
+   "source": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/eye-cleanup-01.json#figures[mummy_b].anchors"
+  },
+  "lid": {
+   "type": "skin",
+   "colour": "#f6bd99",
+   "colourMode": "measured figure skin around the cap (V-090)",
+   "fit": 0.9,
+   "futureE2": {
+    "module": "tools/KFB-ToolBox/eye-actor-studio-v1/clay-eyelid/clay-eyelid.v2.js",
+    "ref": "eyes/kfb-clay-eyelid-e2-2026-10-16",
+    "commit": "e1e60edff3973a396e120c2206e559981154b3be",
+    "status": "construction PASS (V-348); integration as hull on EyeRig v6 still open (V-348 steps 2-4)"
+   }
+  },
+  "irisColour": null,
+  "pupil": {
+   "style": "matte-cute",
+   "size": 0.34,
+   "gloss": 0.1,
+   "form": null
+  },
+  "settings": {
+   "anchor": {
+    "dx": 0.295,
+    "dy": 0.045,
+    "ring": 0.153,
+    "track": 0.15
+   },
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.34,
+   "gloss": 0.1,
+   "inset": 0.4,
+   "lidFit": 0.9,
+   "converge": 0.18,
+   "splay": 0,
+   "trackingMode": "life",
+   "fixedGaze": [
+    0,
+    0
+   ],
+   "oval": {
+    "w": 1,
+    "h": 1,
+    "d": 1,
+    "tilt": 0
+   },
+   "blink": {
+    "minGap": 2.5,
+    "maxGap": 6.5,
+    "dur": 0.12
+   },
+   "life": {
+    "on": true,
+    "wander": 0.09,
+    "tremor": 0.045
+   },
+   "kinetics": {
+    "enabled": false,
+    "gain": 1,
+    "a": 0,
+    "c": 0,
+    "j": 0
+   }
+  },
+  "source": "toolbox/eye-rig-batch-2026-09-18 @d1900457 · tools/KFB-ToolBox/eye-rig-batch/data/rig-medium-default.v0.json#authoringDefault (\"Georg screenshot / browser tuning 2026-09-19\", V-061) · Lab copy public/assets/figures-b2/eye-profiles/eye-rig-medium.batch-1.json#classDefault · V-200 (13.10.): these values on the anchored EYE-CLEANUP-01 seat for every Medium figure, lid = figure skin (V-090)",
+  "alternatives": [
+   {
+    "id": "v6-anchored-defaults",
+    "values": "pupil 0.5, converge 0, splay 0, lid rest top 0.12 / bottom 0.06",
+    "source": "KFB Island Worldbuilder Lab/docs/BASELINE_ACCEPTED_R1.md row 2 (Resident Atlas S16 anchored path)"
+   }
+  ],
+  "georgSavedConfig": "NOT FOUND for the mummies in HUB, Lab, WSB folders, ToolBox exports or the 519 GitHub branches (search 17.10.); only the class default above",
+  "todo": [
+   "V-201 FAIL (13.10.) after exactly this V-200 build: eyes \"not Georg's eyes\", squint outward, no idle gaze. Check the converge sign against the anchor normals (x ≈ ±0.37–0.44 = ~22–26° outward) and turn on v6 kinetics/life + gaze targets; build 1:1 from the Eye-Rig Studio, then show a studio | stage close-up pair before Georg sees it.",
+   "Original eye colour was #1c2427 (dark caps); decide sclera/pupil colours with Georg (v6 default = white sclera, dark pupil)."
+  ]
+ },
+ "brows": {
+  "owner": "original-mesh",
+  "note": "Mummy_B: single brow on the right side of the face, untouched (eye-cleanup-01 notes). Mummy_A: no brows in the source.",
+  "browRig": null
+ },
+ "mouth": {
+  "owner": "planned",
+  "set": null,
+  "anchor": null,
+  "rest": null,
+  "note": "Source has no mouth (bandage). V-359: KFB mouth sets per viseme, one mouth per voice. Set not chosen.",
+  "manifest": "assets/kfb-mouth-sets-r3-2026-10-16 @eb1100f9 · media/3D_Assets/Textures/KFB-Mouth-Sets_R3/mouth_sets.manifest.json"
+ },
+ "appendages": [],
+ "material": {
+  "clayProfile": "figure-fine",
+  "sheenMax": 0.05,
+  "canon": "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md (K1/H0 golden line) · V-053 figures = Resident Atlas profile \"fine\" · V-340 one clay material for KayKit figures and Meshy vehicles (matte, thumbprint, ≤ 18 % palette pull, no mesh change)",
+  "rules": "V-346.6 acceptance images always with KFB clay · V-346.4 clay must not wash out texture colours · V-385/V-392 sheen ≤ 0.05, no rim/back light, no emissive, no private light",
+  "eyeMeshes": "eye meshes without clay and without shadow casting (anchored-eyes.v1)"
+ },
+ "voice": {
+  "engine": "suno stem",
+  "spec": "male",
+  "role": "rapper: all 52 card verses incl. octave-up register + \"Pharaoh Piledriver\" in the intro (V-365)",
+  "mapping": "PROPOSAL: Mummy_B = \"light skin, more male-read hairline\" (brief P1) → male voice. Needs Georg's confirmation.",
+  "vRef": [
+   "V-359",
+   "V-365"
+  ],
+  "source": "assets/kfb-deck-song-pharaoh-piledriver-2026-10-16 · media/3D_Assets/Sounds/kfb_deck_songs/pharaoh_piledriver__suno_01a/pharaoh_piledriver__suno_01a.performance.json#characters"
+ },
+ "performance": {
+  "pilot": "P1 Pharaoh duet (V-359), left/right of the billboard, beat-timed dance clips (V-298), face KFB_NATIVE (EyeRig + KFB mouth sets)",
+  "brief": "KFB_HUB/30_DECISIONS/replies/BRIEF_PERFORMANCE_DUET_P1.md"
+ },
+ "approval": {
+  "status": "candidate",
+  "by": null,
+  "date": null,
+  "vRef": [
+   "V-090",
+   "V-200",
+   "V-201",
+   "V-359",
+   "V-391"
+  ],
+  "parts": {
+   "body": {
+    "status": "approved",
+    "by": "Georg",
+    "date": "2026-10-01",
+    "vRef": "V-090",
+    "evidence": "Georg PASS all four EYE-CLEANUP-01 figures, Mummy_A black band stays (agent report KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/docs/NPC_SETTINGS_01/MUMMY_01_RETURN.md \"Runde 6\"; data/cast.js:144; Lab catalog \"Georg PASS 01.10.\"). The review file uploads/EYE_CLEANUP_01_review.json was not found. RETURN.md on patch-3 still says candidate-only."
+   },
+   "originals": {
+    "status": "approved",
+    "by": "Georg",
+    "date": "2026-10-01",
+    "vRef": "V-090",
+    "evidence": "same as body (only the eye caps removed)"
+   },
+   "eyeRig": {
+    "status": "candidate",
+    "by": null,
+    "date": null,
+    "vRef": "V-201",
+    "evidence": "no image of the mummies with an eye rig was ever accepted; WSB B1 images (17.10.) had none (postmortem)"
+   },
+   "mouth": {
+    "status": "open",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "set not chosen"
+   },
+   "material": {
+    "status": "open",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "no clay proof"
+   }
+  },
+  "missing": [
+   "close-up pair front + 3/4 with EyeRig v6 on the anchors + clay (WSB re-render per ANTWORT_WS0_2026-10-17)",
+   "mouth set per voice",
+   "Georg confirms which mummy sings which voice",
+   "V-201 converge/gaze check"
+  ]
+ },
+ "provenance": [
+  {
+   "what": "eye cleanup + anchors",
+   "path": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/eye-cleanup-01.json",
+   "ref": "georg-doc-patch-3",
+   "sha256": "8eec6da28519357b485fabe39a036371721e57729ea59fef73b12fd475527d65"
+  },
+  {
+   "what": "evidence",
+   "path": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/evidence/Mummy_B_before_after.jpg",
+   "ref": "georg-doc-patch-3"
+  },
+  {
+   "what": "Atlas recipe field",
+   "path": "KFB_RESIDENT_ATLAS_SESSION_CUT_2026-10-04_r1/data/cast.js:144 (eyesOf: rig default, anchors eye_anchorl/r, review \"EYE-CLEANUP-01 · PASS 2026-10-01\")"
+  },
+  {
+   "what": "postmortem",
+   "path": "KFB_HUB/50_BLENDER/AUFTRAG_WS0_POSTMORTEM_AUGENRIG_MUMIEN_2026-10-17.md"
+  }
+ ],
+ "todo": [
+  "Georg's yes: copy the NoEyes GLB next to the original on main (eye-cleanup-01.json#out), then re-pin body.glb."
+ ]
+}

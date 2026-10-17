@@ -1,0 +1,343 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "orc_brute",
+ "displayName": "Orc Brute",
+ "aliases": [
+  "orc-brute",
+  "orcbrute",
+  "brute",
+  "OrcBrute.kfb-eyes.r1"
+ ],
+ "role": "npc",
+ "body": {
+  "glb": {
+   "repo": "georg-doc/kayfabizarro",
+   "ref": "assets/kfb-blender-run-r1-2026-10-16",
+   "commit": "6ecf85775de0118a232161f4b4f9d4a08f379cc7",
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.kfb-eyes.r1.glb",
+   "blob": "9a61613f6931c0e3ec5157b52338db771b4a6ff6",
+   "sha256": "1a0755530b71f168d144a0440abca4186b3b1ef28730d94541ea1e27d21d3fcf",
+   "bytes": 780820,
+   "onMain": false
+  },
+  "rawSource": {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb",
+   "ref": "main",
+   "blob": "1b56aac3d98cc978bd1311ddc61f1260a870494d",
+   "sha256": "ee4aecd0c60d72ab49e4028dc4a30b8445a00f8401988463bab5589f4be27c94",
+   "note": "NEVER load directly (F8); V-345.3 source of truth"
+  },
+  "rig": "Rig_Large",
+  "scale": {
+   "value": null,
+   "basis": "Large class; kart only: kartScale 1.04 (V-320); rigClassScale for cars per V-315",
+   "source": null
+  },
+  "variants": [
+   {
+    "id": "eye-cleanup-01",
+    "path": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/glb/OrcBrute_NoEyes.glb",
+    "ref": "georg-doc-patch-3",
+    "blob": "14ec2701f2f8fc129cb86d2ca55adf427f22db35",
+    "sha256": "5efb99a20caf2e16655a503e8d644d0dd588d5fd14f19e815c82e3e3d114a7b9",
+    "status": "older baked cleanup (Georg PASS 01.10.); anchors eye_anchorl/r with outward normals (0.415, 0, 0.910); superseded for the Figure Workshop by kfb-eyes.r1 (V-353 brief)"
+   }
+  ]
+ },
+ "originals": {
+  "remove": [
+   "KFB_OriginalEye_L",
+   "KFB_OriginalEye_R"
+  ],
+  "keep": [
+   "OrcBrute_Head mesh mouth",
+   "teeth / tusks",
+   "brows",
+   "war paint",
+   "hair",
+   "OrcBrute_Body",
+   "OrcBrute_ArmLeft/Right",
+   "OrcBrute_LegLeft/Right",
+   "OrcBrute_LegArmor",
+   "OrcBrute_Shoulderpad"
+  ],
+  "method": "switchable-node",
+  "note": "Blender R1: the original eyes (2 × 66 tris) were cut by hand into their own nodes and are hidden by default; nothing else was touched (head 3824 → 3692 tris). No FrizzleBob hair, no decal mouth by default. F2: the Orc once lost his teeth/mouth.",
+  "source": "assets/kfb-blender-run-r1-2026-10-16 · media/3D_Assets/MeshyModels/blender_run_r1/reports/build_orc_eyes.json · BRIEF_WSA_ALIENS_TOOLBOX_R4.md §5"
+ },
+ "eyeRig": {
+  "required": true,
+  "none": null,
+  "version": "pet-eye-rig.v6",
+  "module": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "ref": "main",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "seat": "anchored",
+  "anchors": {
+   "nodes": [
+    "KFB_Eye_L_anchor",
+    "KFB_Eye_R_anchor"
+   ],
+   "parentBone": "head",
+   "axes": "forward +Z (frontal, no outward yaw)",
+   "l": {
+    "pos": [
+     0.1548,
+     3.5063,
+     0.5866
+    ],
+    "headLocal": [
+     0.1548,
+     0.19057,
+     0.5866
+    ],
+    "normal": [
+     0,
+     0,
+     1
+    ],
+    "r": 0.055
+   },
+   "r": {
+    "pos": [
+     -0.1548,
+     3.5063,
+     0.5866
+    ],
+    "headLocal": [
+     -0.1548,
+     0.19057,
+     0.5866
+    ],
+    "normal": [
+     0,
+     0,
+     1
+    ],
+    "r": 0.055
+   },
+   "source": "media/3D_Assets/MeshyModels/blender_run_r1/reports/build_orc_eyes.json#anchors"
+  },
+  "lid": {
+   "type": "skin",
+   "colour": "#78b04a",
+   "colourMode": "as rendered in the R2 clay proofs (?lid=%2378b04a); measured skin was #82c061 (eye-cleanup-01)",
+   "fit": 0.9,
+   "futureE2": {
+    "module": "tools/KFB-ToolBox/eye-actor-studio-v1/clay-eyelid/clay-eyelid.v2.js",
+    "ref": "eyes/kfb-clay-eyelid-e2-2026-10-16",
+    "commit": "e1e60edff3973a396e120c2206e559981154b3be",
+    "status": "construction PASS (V-348); integration as hull on EyeRig v6 still open (V-348 steps 2-4)"
+   }
+  },
+  "irisColour": null,
+  "pupil": {
+   "style": "matte-cute",
+   "size": 0.42,
+   "gloss": 0.1,
+   "form": null
+  },
+  "settings": {
+   "anchor": {
+    "dx": 0.3,
+    "dy": 0,
+    "ring": 0.3,
+    "track": 0.1
+   },
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.42,
+   "inset": 0,
+   "lidFit": 0.9,
+   "gloss": 0.1,
+   "converge": 0,
+   "placement": "eyes placed exactly on KFB_Eye_L/R_anchor, rotation 0 (frontal); proxy box so R = anchor radius 0.055",
+   "emote": {
+    "lidUpper": 0,
+    "lidLower": 0,
+    "slant": 0,
+    "pupil": "normal",
+    "gaze": "front"
+   },
+   "life": {
+    "on": false,
+    "note": "life/blink frozen for the still images – animated values still open"
+   }
+  },
+  "source": "Blender run R2 clay proofs OrcBrute_r2_01…03_*_KFB-Augen_Knete.png (16.10.): MeshyModels/_blender_run_r2/proof/proof_r2.html#buildEyesOrc (sha256 c3320553…) + proof/orc.txt (lid #78b04a, hide KFB_OriginalEye_L/R). These are the images of the round where Georg wrote \"Orc passt\" (V-346 Nachtrag r3) – link image↔verdict inferred by WS0, confirm (G4).",
+  "alternatives": [
+   {
+    "id": "georg-large-2026-09-20",
+    "values": {
+     "anchor": {
+      "dx": 0.295,
+      "dy": -0.26,
+      "ring": 0.175,
+      "track": 0.15
+     },
+     "inset": 0.9,
+     "lidFit": 0.9,
+     "converge": 0.18,
+     "splay": 0,
+     "oval": {
+      "w": 1,
+      "h": 0.9,
+      "d": 0.91,
+      "tilt": 0
+     },
+     "trackingMode": "life",
+     "fixedGaze": [
+      0,
+      0
+     ],
+     "blink": {
+      "minGap": 2.5,
+      "maxGap": 6.5,
+      "dur": 0.12
+     },
+     "life": {
+      "on": true,
+      "wander": 0.09,
+      "tremor": 0.045
+     },
+     "kinetics": {
+      "enabled": false,
+      "gain": 1,
+      "a": 0,
+      "c": 0,
+      "j": 0
+     }
+    },
+    "source": "Georg-reviewed Large profile: KFB Island Worldbuilder Lab/public/assets/figures-b2/eye-profiles/rig-large-reviewed.v1.json#profiles[orc-brute] (status ADJUSTED_APPROVED, eyeProfileVisuallyApproved true, acceptedBy Georg 2026-09-20; origin tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json @52532aee). These values belong to the FaceHost seat (dx/dy on the head ellipsoid), not to the new anchors."
+   }
+  ],
+  "todo": [
+   "Georg confirms G4 (these exact images = \"Orc passt\"); then Figure Workshop save with animated life/blink → replace settings.",
+   "Repo copy of the proofs: assets/kfb-blender-run-r1-2026-10-16 · media/3D_Assets/MeshyModels/blender_run_r2/proofs/orc/"
+  ]
+ },
+ "brows": {
+  "owner": "original-mesh",
+  "note": "brow islands untouched",
+  "browRig": null
+ },
+ "mouth": {
+  "owner": "original-mesh",
+  "set": null,
+  "rest": null,
+  "note": "mesh mouth + teeth stay; decal sets may be offered in the dropdown but are off by default (BRIEF_WSA_ALIENS_TOOLBOX_R4.md §5)",
+  "manifest": "assets/kfb-mouth-sets-r3-2026-10-16 @eb1100f9 · media/3D_Assets/Textures/KFB-Mouth-Sets_R3/mouth_sets.manifest.json"
+ },
+ "appendages": [],
+ "material": {
+  "clayProfile": "figure-fine",
+  "sheenMax": 0.05,
+  "canon": "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md (K1/H0 golden line) · V-053 figures = Resident Atlas profile \"fine\" · V-340 one clay material for KayKit figures and Meshy vehicles (matte, thumbprint, ≤ 18 % palette pull, no mesh change)",
+  "rules": "V-346.6 acceptance images always with KFB clay · V-346.4 clay must not wash out texture colours · V-385/V-392 sheen ≤ 0.05, no rim/back light, no emissive, no private light",
+  "eyeMeshes": "eye meshes without clay and without shadow casting (anchored-eyes.v1)",
+  "note": "Clay proofs exist: blender_run_r2/proofs/orc/OrcBrute_r2_01…03 (clay profile \"figure\"). R1 proofs OrcBrute_01…09 were without clay."
+ },
+ "voice": {
+  "engine": "kokoro v1.0",
+  "spec": "am_fenrir50+bm_lewis50",
+  "speed": 0.85,
+  "lang": "en-us",
+  "vRef": [
+   "V-324"
+  ],
+  "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json"
+ },
+ "performance": {
+  "kart": "bathtub kart R5 PASS, kartScale 1.04, fists on the rim (V-320)"
+ },
+ "approval": {
+  "status": "candidate",
+  "by": null,
+  "date": null,
+  "vRef": [
+   "V-090",
+   "V-346",
+   "V-353"
+  ],
+  "parts": {
+   "body": {
+    "status": "approved",
+    "by": "Georg",
+    "date": "2026-10-16",
+    "vRef": "V-346",
+    "evidence": "V-346 (5) \"Orc passt\" (Georg 16.10., Hub aliens-r2/r3 round with Blender R1 Orc proofs)"
+   },
+   "originals": {
+    "status": "approved",
+    "by": "Georg",
+    "date": "2026-10-16",
+    "vRef": "V-346",
+    "evidence": "teeth/mouth intact in OrcBrute_01/02 proofs; original eyes switchable"
+   },
+   "eyeRig": {
+    "status": "image-approved-pending-confirmation",
+    "by": "Georg",
+    "date": "2026-10-16",
+    "vRef": "V-346",
+    "evidence": "\"Orc passt\" in the R2/r3 round; clay proofs with exactly these values; ToolBox r4 save not yet done (V-353)"
+   },
+   "mouth": {
+    "status": "approved",
+    "by": null,
+    "date": null,
+    "vRef": "V-353",
+    "evidence": "mesh mouth kept by rule"
+   },
+   "material": {
+    "status": "image-approved-pending-confirmation",
+    "by": "Georg",
+    "date": "2026-10-16",
+    "vRef": "V-346",
+    "evidence": "OrcBrute_r2_* rendered with clay profile \"figure\" (clayMats 1)"
+   }
+  },
+  "missing": [
+   "Georg confirms G4 (image ↔ \"Orc passt\")",
+   "animated eyes (life/blink/gaze) + Figure Workshop save (V-353 r4 run)"
+  ]
+ },
+ "provenance": [
+  {
+   "what": "Blender R1 build",
+   "path": "media/3D_Assets/MeshyModels/blender_run_r1/reports/build_orc_eyes.json",
+   "ref": "assets/kfb-blender-run-r1-2026-10-16"
+  },
+  {
+   "what": "proofs",
+   "path": "media/3D_Assets/MeshyModels/blender_run_r1/proofs/orc/OrcBrute_01…09_*.png",
+   "ref": "assets/kfb-blender-run-r1-2026-10-16"
+  },
+  {
+   "what": "old cleanup",
+   "path": "skills/chat/workflows/EYE_CLEANUP_01_2026-10-01/eye-cleanup-01.json#figures[orc_brute]",
+   "ref": "georg-doc-patch-3"
+  },
+  {
+   "what": "Large profile",
+   "path": "KFB Island Worldbuilder Lab/public/assets/figures-b2/eye-profiles/rig-large-reviewed.v1.json"
+  },
+  {
+   "what": "brief",
+   "path": "KFB_HUB/30_DECISIONS/replies/BRIEF_WSA_ALIENS_TOOLBOX_R4.md"
+  },
+  {
+   "what": "clay proofs R2",
+   "path": "media/3D_Assets/MeshyModels/blender_run_r2/proofs/orc/OrcBrute_r2_01…03_*_KFB-Augen_Knete.png",
+   "ref": "assets/kfb-blender-run-r1-2026-10-16 @320c896f"
+  },
+  {
+   "what": "proof loader",
+   "path": "MeshyModels/_blender_run_r2/proof/proof_r2.html",
+   "sha256": "c33205536b32601bef13d64f0e2c4b4ab6b062c08e45eadf7f8a980a60d790cd"
+  }
+ ],
+ "todo": [
+  "Put OrcBrute.kfb-eyes.r1.glb on main after Georg's eye PASS."
+ ]
+}

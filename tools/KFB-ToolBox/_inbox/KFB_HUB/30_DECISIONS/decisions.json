@@ -5432,6 +5432,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-395",
+   "date": "2026-10-17",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Figurenkarten R1 (replies/FIGURES_R1/, 13 Entwürfe + Schema kfb.figure/1): Technik-Entscheide WS0 – (a) Status-Regel: candidate darf mit Vermerk außerhalb des Bildes auf Staging und in Beweisen gezeigt werden, open-design nur in der Figuren-Werkstatt, approved überall; (b) augenfertige GLBs (NoEyes Mumien/Witch/GothGirl, Orc kfb-eyes) kommen als Asset-Branch neben die Originale auf main (CC0/eigene Bearbeitung, Merge-Ausnahme); (c) Mumien-Stimmen wie Georg beschrieben: Mann = Mummy_B, Frau = Mummy_A; (d) V-201-Schielen: Augen frontal mit leichter Konvergenz, alte nach außen zeigende Anker-Normalen nicht übernehmen. Georg-Fragen nur mit fertigen Clay-Bildern (Mumien-Augen, GothGirl A/B, Orc-Bestätigung, FB-Ohren v5b/v5d, Hunky/Dory nach r4, Norman). Charakter-Abschnitte (V-394) folgen.",
+   "values": {},
+   "owner": "WS0 · WSB (Bilder) · WSA work (Werkstatt)",
+   "check": "Karte je Figur mit Status",
+   "source": "replies/FIGURES_R1/README.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erste zentrale Figurenkarten aus allen gefundenen Georg-Einstellungen; technische Fragen entscheidet WS0, Georg nur visuell.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5504,7 +5519,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:715",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:716",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,0 +1,199 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "black_knight",
+ "displayName": "Black Knight",
+ "aliases": [
+  "black-knight"
+ ],
+ "role": "npc",
+ "body": {
+  "glb": {
+   "repo": "georg-doc/kayfabizarro",
+   "ref": "main",
+   "commit": "904f0e95968999c7e8af77cc6667161bd4f3f788",
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+   "blob": "ce20440309951a9d85d246b6ff6b0fa399f6c9d8",
+   "sha256": "91cfdbfc7d9b8f541c5d50716eca8d4edae3dcda9b78c07422a9c0ac4919019d",
+   "bytes": null,
+   "onMain": true
+  },
+  "rawSource": {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+   "ref": "main",
+   "blob": "ce20440309951a9d85d246b6ff6b0fa399f6c9d8",
+   "sha256": "91cfdbfc7d9b8f541c5d50716eca8d4edae3dcda9b78c07422a9c0ac4919019d",
+   "note": "NEVER load directly"
+  },
+  "rig": "Rig_Large",
+  "scale": {
+   "value": null,
+   "basis": null,
+   "source": null
+  },
+  "variants": []
+ },
+ "originals": {
+  "remove": [],
+  "keep": [
+   "mouth",
+   "teeth/fangs",
+   "brows",
+   "all body meshes"
+  ],
+  "method": null,
+  "note": "Not in EYE-CLEANUP-01/02 → no baked NoEyes GLB. Body points at the raw file only as a placeholder: per rule 1 this card must be refused until a cleanup exists.",
+  "source": "no baked cleanup found; Georg's 20.09. profile ran with runtime removal (pre-V-336)"
+ },
+ "eyeRig": {
+  "required": true,
+  "none": null,
+  "version": "pet-eye-rig.v6",
+  "module": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "ref": "main",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "seat": "facehost",
+  "anchors": null,
+  "lid": {
+   "type": "skin",
+   "colour": null,
+   "colourMode": "face-base-darkened (profile) → measured skin (V-090)",
+   "fit": 0.9
+  },
+  "irisColour": null,
+  "pupil": {
+   "style": "matte-cute",
+   "size": 0.34,
+   "gloss": 0.1,
+   "form": null
+  },
+  "settings": {
+   "anchor": {
+    "dx": 0.14,
+    "dy": -0.155,
+    "ring": 0.153,
+    "track": 0.15
+   },
+   "inset": 0.25,
+   "lidFit": 0.9,
+   "converge": 0.18,
+   "splay": 0,
+   "oval": {
+    "w": 0.79,
+    "h": 0.69,
+    "d": 0.8,
+    "tilt": -28
+   },
+   "trackingMode": "life",
+   "fixedGaze": [
+    0,
+    0
+   ],
+   "blink": {
+    "minGap": 2.5,
+    "maxGap": 6.5,
+    "dur": 0.12
+   },
+   "life": {
+    "on": true,
+    "wander": 0.09,
+    "tremor": 0.045
+   },
+   "kinetics": {
+    "enabled": false,
+    "gain": 1,
+    "a": 0,
+    "c": 0,
+    "j": 0
+   }
+  },
+  "source": "KFB Island Worldbuilder Lab/public/assets/figures-b2/eye-profiles/rig-large-reviewed.v1.json#profiles[black-knight] (ADJUSTED_APPROVED, acceptedBy Georg 2026-09-20; FaceHost seat)",
+  "alternatives": [],
+  "todo": [
+   "V-090: Large without newer entry keeps dx/dy (marked provisional); move to anchored seat once a baked cleanup exists and Georg re-saves."
+  ]
+ },
+ "brows": {
+  "owner": "original-mesh"
+ },
+ "mouth": {
+  "owner": "original-mesh",
+  "set": null,
+  "manifest": "assets/kfb-mouth-sets-r3-2026-10-16 @eb1100f9 · media/3D_Assets/Textures/KFB-Mouth-Sets_R3/mouth_sets.manifest.json"
+ },
+ "appendages": [],
+ "material": {
+  "clayProfile": "figure-fine",
+  "sheenMax": 0.05,
+  "canon": "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md (K1/H0 golden line) · V-053 figures = Resident Atlas profile \"fine\" · V-340 one clay material for KayKit figures and Meshy vehicles (matte, thumbprint, ≤ 18 % palette pull, no mesh change)",
+  "rules": "V-346.6 acceptance images always with KFB clay · V-346.4 clay must not wash out texture colours · V-385/V-392 sheen ≤ 0.05, no rim/back light, no emissive, no private light",
+  "eyeMeshes": "eye meshes without clay and without shadow casting (anchored-eyes.v1)"
+ },
+ "voice": {
+  "engine": "kokoro v1.0",
+  "spec": "am_adam50+bm_fable50",
+  "speed": 0.9,
+  "lang": "en-us",
+  "source": "voice_casting.r1.json"
+ },
+ "performance": null,
+ "approval": {
+  "status": "candidate",
+  "by": null,
+  "date": null,
+  "vRef": [
+   "V-090",
+   "V-200"
+  ],
+  "parts": {
+   "body": {
+    "status": "candidate",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "no baked cleanup"
+   },
+   "originals": {
+    "status": "candidate",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "eyes only"
+   },
+   "eyeRig": {
+    "status": "provisional",
+    "by": "Georg",
+    "date": "2026-09-20",
+    "vRef": "V-090",
+    "evidence": "Georg 20.09. eye profile visually approved on the old seat (Lab group B \"vorläufig\")"
+   },
+   "mouth": {
+    "status": "approved",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "original mesh kept by rule"
+   },
+   "material": {
+    "status": "open",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "no clay proof"
+   }
+  },
+  "missing": [
+   "Blender eye cleanup + anchors",
+   "eye setting on anchored seat + Georg save",
+   "clay proof"
+  ]
+ },
+ "provenance": [
+  {
+   "what": "Large profile",
+   "path": "KFB Island Worldbuilder Lab/public/assets/figures-b2/eye-profiles/rig-large-reviewed.v1.json"
+  }
+ ],
+ "todo": []
+}
