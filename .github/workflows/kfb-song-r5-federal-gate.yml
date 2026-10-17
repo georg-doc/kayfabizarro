@@ -24,7 +24,7 @@ jobs:
           for b in geopolitical_thrillers_conspiracy_theories grimms_kayfabe_legends_expansion_set_02 kayfabizarro_monopolies_manipulation_murder_vol romantic_kayfabe; do
             branch="songs/${b}-r5-2026-10-17"
             git fetch --depth=1 origin "refs/heads/${branch}:refs/remotes/origin/${branch}"
-            git ls-tree -r --name-only "refs/remotes/origin/${branch}" | grep -E '(\\.suno\\.txt|\\.songlines\\.json)$' | while IFS= read -r p; do
+            git ls-tree -r --name-only "refs/remotes/origin/${branch}" | grep -E '(\.suno\.txt|\.songlines\.json)$' | while IFS= read -r p; do
               git show "refs/remotes/origin/${branch}:$p" > ".song-corpus/${b}-$(basename "$p")"
             done
           done
