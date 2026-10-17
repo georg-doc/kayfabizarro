@@ -1,0 +1,63 @@
+{
+  "schema": "kfb.asset-intake-candidate/1",
+  "selectionStatus": "candidate-only",
+  "productionStatus": "NOT_SELECTED_NOT_INTEGRATED",
+  "originalSource": "https://opengameart.org/content/chichen-itza-el-castillo",
+  "downloadSource": "https://opengameart.org/sites/default/files/chichenitza.zip",
+  "downloadSHA256": "bc4f0caf2b3b88cab18019bf4679f41556f2d805a10033714e38c95f9a140163",
+  "licenseSPDX": "CC0-1.0",
+  "licenseEvidence": "https://opengameart.org/content/chichen-itza-el-castillo",
+  "creator": "Esteban Lopez (elopez7)",
+  "attribution": "Esteban Lopez (elopez7), Chichen Itza El Castillo, OpenGameArt CC0; creator name requested by source",
+  "sourceId": "chichen_el_castillo_oga_cc0",
+  "landmarkId": "chichen_itza",
+  "sourceRole": "partial-site-exact-pyramid-not-ball-court",
+  "geometryStatus": "original-source-only",
+  "lookStatus": "Knete folgt (WSB after Georg selection)",
+  "modelVerifiedSHA256": "a275298cb2f8acb9ceaf8e3831ffee49ad9d7b839ec7475af0572a07091de644",
+  "sourcePreview": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/source-isolation.png",
+  "files": [
+    {
+      "archiveMember": "ElCastillo.fbx",
+      "destination": "source/ElCastillo.fbx",
+      "bytes": 307436,
+      "sha256": "a275298cb2f8acb9ceaf8e3831ffee49ad9d7b839ec7475af0572a07091de644"
+    },
+    {
+      "archiveMember": "ElCastillo_StairRails_AO.png",
+      "destination": "source/ElCastillo_StairRails_AO.png",
+      "bytes": 1658316,
+      "sha256": "beb582d909494f044d7d0d96d64b84e7732dafd38244cd8a55923eeb7b15659a"
+    },
+    {
+      "archiveMember": "ElCastillo_StairRails_Albedo.png",
+      "destination": "source/ElCastillo_StairRails_Albedo.png",
+      "bytes": 2404864,
+      "sha256": "90debf4f1673b07ba11923bee7db3f6fe542ba02572ee00174034ee19cd9ead6"
+    },
+    {
+      "archiveMember": "ElCastillo_StairRails_Displacement.exr",
+      "destination": "source/ElCastillo_StairRails_Displacement.exr",
+      "bytes": 30792385,
+      "sha256": "5eda1133c92ad63d1c2215d7a56466add8599d75516ba9a29485e9b861cc34c1"
+    },
+    {
+      "archiveMember": "ElCastillo_StairRails_Metalness.png",
+      "destination": "source/ElCastillo_StairRails_Metalness.png",
+      "bytes": 55075,
+      "sha256": "c29fec023593c8c63840049e14607ebb6779489c56d0ffb6052d86b14a8e5b02"
+    },
+    {
+      "archiveMember": "ElCastillo_StairRails_Normal.png",
+      "destination": "source/ElCastillo_StairRails_Normal.png",
+      "bytes": 2448573,
+      "sha256": "ecdd4a779f9a15709878e597038bba5d1b606d7bd350e059723a9babe97c86e6"
+    },
+    {
+      "archiveMember": "ElCastillo_StairRails_Roughness.png",
+      "destination": "source/ElCastillo_StairRails_Roughness.png",
+      "bytes": 1625623,
+      "sha256": "43814b484fe096833483f75bd1fdb6619e5ab1d9314be8fd3d1e7bb1fb18ee79"
+    }
+  ]
+}
