@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- Georg im Hub: Repo-Plan später; alle KayKit-Pakete ohne _FREE = gekauft (Patreon + Extended) → privat; Meshy-Bühnen privat halten; Tränke/Hexen-Station wie vorgeschlagen. Offene Fragen q01/q05/q06/q07 jetzt mit Bildern bzw. Links im Hub (Hub v17: Link-Knöpfe in Fragen).
 - Georg: Capsule-Carl-Teile an FrizzleBob (Brauen enemy.gltf, Nase player.gltf) = KayKit Mystery Series → FB-GLBs nie als Rohdatei öffentlich (neverPublic), im Spiel-Build eingebaut ok; langfristig eigene Knet-Teile. WSB B21 wird nachgezogen.
 - WSB B21 Übergabe-Paket fertig (50_BLENDER/HANDOFF_R1/: 82 Dateien mit Manifest, 59 öffentlich kopiert, 23 privat verwiesen; Allowlist 79 sicher / 48 prüfen → Meshy-Bühnen als eigene Inhalte laut V-230, Georg bestätigt). Offen an Georg: Herkunft/Lizenz der Capsule-Carl-Teile an FrizzleBob.
 - WSB B19 Treffer-FX (17 GLBs, eigene Geometrie) und B20 Kayfabrick-Baustelle (Negativraum 74 %) gesichtet; Bodenfarben-Vorschlag (gesättigte Grüns aus) an WS1; 21. Nachtrag: B21 Übergabe-Paket mit public/privat-Manifest (Allowlist für V-427).

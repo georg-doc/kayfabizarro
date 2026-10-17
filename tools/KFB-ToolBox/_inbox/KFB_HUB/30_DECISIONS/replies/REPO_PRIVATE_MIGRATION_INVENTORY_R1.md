@@ -219,3 +219,9 @@ Public-safe open packs (CC0 Kenney ≈ 129 MB, Quaternius ≈ 215 MB, KayKit/Tin
 ## Addendum WS0 17.10. (Georg)
 - **FrizzleBob contains Mystery Series parts:** brows from `KayKit_Mystery_Series6/CapsuleCarl/gltf/enemy.gltf`, nose from `…/CapsuleCarl/gltf/player.gltf`. Every FB GLB is therefore **not public as a raw download** (neverPublic in the R2 allowlist). Using it built into game and tool builds stays possible. In the long run: replace brows and nose with our own clay parts if FB is to be published as a single file.
 - Meshy stages (B7/B8/B9) come from Georg's Meshy subscription (V-230), so they count as own content, public OK (final confirmation by Georg).
+
+## Georg's answers (Hub 17.10. evening)
+- Repo-private plan: **later** (do not start yet).
+- **All KayKit packs without "_FREE" count as purchased** (Georg has both the Patreon membership and the extended version), so they are private and only allowed built into builds.
+- **Keep the Meshy stages (B7/B8/B9) private**, so they are not in the public allowlist (overrides the WS0 assumption above).
+- Potions + witch station = magic colour variants and the fluff recipe station (V-368), confirmed.
