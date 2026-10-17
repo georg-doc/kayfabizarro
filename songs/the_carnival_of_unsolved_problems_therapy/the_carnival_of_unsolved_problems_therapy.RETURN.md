@@ -16,3 +16,7 @@ Run https://github.com/georg-doc/kayfabizarro/actions/runs/39031803248; candidat
 - **Executed tests:** [39043776346](https://github.com/georg-doc/kayfabizarro/actions/runs/39043776346) `song_gate.py lyrics` **exit 0**, 47/47, intro 3/outro 2/openers 17. Revalidation after A9 meta reason metadata-only commit [39043917490](https://github.com/georg-doc/kayfabizarro/actions/runs/39043917490) SUCCESS. Original exact triplet_set_check.py separately in owning workflow. Canonical registry and PDF JSON untouched. No fresh PDF image review claimed.
 - **Critic:** no separate judge instance, no numeric critic JSON scores, no writer revision or Hub publication.
 - **One next gate:** `WS0_V419_EXTERNAL_CRITIC_F19_F22` with spec, Golden take05, canonical card registry/PDF JSON, track only.
+
+## V-424 · R3.3 tested checkpoint
+- Source R3.3 spec blob c3f42c7be5cd56edb5c522db53c44b482b52bae6, same shared song_gate.py lyrics exit 0 on run [39068521543](https://github.com/georg-doc/kayfabizarro/actions/runs/39068521543), source candidate HEAD `b2120de1074fd7fa793589c5f63b922338e26b65`. 47/47 cards, 4910 chars, introType `confession`, callbacks and deck frame pass. none. See `R33_TEST_REPORT.md`.
+- Actual independent critic runs=0; no draft critic JSON and no post-review revision. No Hub/Stage/Site/merge. Next gate: WS0 external score/flag-only reviewer validated by same `song_gate.py critic`.
