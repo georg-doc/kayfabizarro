@@ -17,3 +17,8 @@ Run 39043879462 at 3f3a536edf1deb17ee1a08c4fb382b0c4b937d38: R4 corpus PASS, ori
 
 ## Gate check 2 · green with B6 warning
 Run 39044051223 at d636c0b562e2243154f91fcb76a5d2c48675bbc8: both original triplet checks 0 FAIL (28/28 and 32/32); both original song_gate lyrics PASS (28/28, 2826 chars and 32/32, 3195 chars). One B6 *warning* due to existing R4 opener `Receipts.`; replacing only that pre-review opener with `Street account.` and requesting third CI verification. Creative critic still not run.
+
+## Verified canonical gate and objective E17 regression
+Final run https://github.com/georg-doc/kayfabizarro/actions/runs/39044216958 at `ec977e45577ffbc55cdb43c6d05eeec25716f507`: original triplet part1 **0 FAIL (28/28)**; song_gate lyrics part1 **PASS (28/28 cards, 2826 chars, intro2, outro1, openers10)**; original triplet part2 **0 FAIL (32/32)**; song_gate lyrics part2 **PASS (32/32 cards, 3201 chars, intro2, outro1, openers11)**; **4/4 steps success, zero warnings**. Full historical before/after mechanical gate transcript in `federal_kayfabe.gate.txt`. Objective Golden E17 layout comparison included; not an independent creative verdict. No external critic pass or writer post-critic revision yet.
+
+**Only next gate:** external blind critic pass one → original `song_gate.py critic` → one writer revision → original lyrics gates → critic pass two, then WS0 reviews.
