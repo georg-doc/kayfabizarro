@@ -2,6 +2,7 @@
 
 ## 2026-10-17 · Writer’s Room JSON-first
 - WSB-Lieferungen B1/B2/B7 auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17); automatisches Mergen vom Sicherheitssystem blockiert, Georg entscheidet den Weg.
+- V-412: Spielzeugsoldaten-Cops (KayKit Toy Soldier, US-Cop-Mütze mit Stern + Rangnummer, Nussknacker-Uniform, Gewehr geschultert, Marsch-Animation) als WSB B11 nach B5 → B10; Geschichte zur Bestätigung.
 - Neubau der 5 Songs an WSA-Triplet-Plugin (Hub b91, BRIEF_WSA_SONGS_R4_PLUGIN); WSA: Dramatis Personae v16 lesend auf der privaten Asset-Library-Adresse veröffentlicht, 3D gesperrt bis WS1-Module.
 - V-411: Blind-Prüfer urteilt nur; eine verbindliche Song-Vorgabe SONG_SPEC_R3 statt gestapelter Regeln; Briefings verlinken statt paraphrasieren; mechanisches Tor + Regressionsvergleich.
 - V-410: Drift-Analyse Songs R3 – Grundvorgabe TRIPLET_SET_SPEC_R2 bleibt verbindlich (Kartenwörter, eine Zeile, Leerzeile nach jedem Beat), keine Hook-Rufe, Review nur Intro/Opener/Outro, Prüfskript vor Hub; b83–b87 FAIL.

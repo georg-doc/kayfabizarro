@@ -61,3 +61,14 @@ Record the channels in the stage descriptor (`kfb.stage-descriptor/1`, field `ve
 
 ## B10 · Brain-Cyborg body (V-349/V-409), after B5 (Space Ranger head turn)
 Build the brain head in the Space Ranger collar: brain from `~/Dropbox/CLAUDE/MeshyModels/Meshy Community/bodyparts3d-brain-review.glb` (BodyParts3D, **CC BY-SA**, so record attribution and licence in the RETURN and the card), darker brain skin tone in clay, seated exactly in the collar following the B5 recipe (no neck, collar visible). Eye sockets for E2 lids (V-348) with `KFB_Eye_*_anchor` facing front, brow anchors, and a mouth zone for the first new cartoon mouth. Output: GLB + `brain_cyborg.figure.json` draft + clay proofs front/¾/side. Then WSA adds it to ToolBox-Studio.
+
+## B11 · Toy-soldier cops "Ordnungshüter" (Georg 17.10., V-412), after B10
+**Donors (use what works):** KayKit Mystery Series 6 "Toy Soldier" (`media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/`, including `ToySoldier_Rifle` and `_Trumpet`), the eye-ready base `ToySoldier_NoEyes.glb` (Lab `public/assets/figures-b2/toysoldier/`, from EYE-CLEANUP), and the voice cast already exists (toy-soldier, am_eric).
+**Story (proposal; Georg confirms):** wind-up toy-soldier cops, the clay world's patrol for "order". They march fixed routes, salute rules nobody explains, and their rank is the number on their cap. Satire on kayfabe order.
+**Design:**
+- **Classic US police cap** (peaked cap) with a **gold star** and a **number in the middle** (rank or instance 1–n). The number is a variant parameter (texture/decal or a separate number mesh), set in the figure card as `variant.rank`.
+- **Uniform:** blue-black police uniform mixed with **nutcracker design** (gold buttons, frogging and epaulettes, small red or gold accents). Clay look, few big shapes.
+- **Rifle shouldered** (rifle from the pack, attached to the shoulder/hand bone).
+- Eyes: KFB eye rig on the NoEyes base (anchors). Mouth and moustache only as the card specifies; remove only the eyes (F2).
+**Animation:** marching/patrolling with the rifle shouldered: stiff legs, one arm swinging, a short halt and salute. First check the Motion Library and KayKit clips. If nothing fits, build one marching clip in Blender (Rig_Medium, loopable) and a salute clip.
+**Output:** GLB (+ rank variants 1–3 as proof), `toy_soldier_cop.figure.json` draft, clay proofs front/¾/side, a short march clip render. Then WSA adds them to ToolBox-Studio.
