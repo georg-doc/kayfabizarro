@@ -1,0 +1,708 @@
+{
+  "schema": "kfb.landmark.original-source-render-queue/v1",
+  "version": "V424",
+  "created": "2026-10-17",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "research/v421-landmark-source-clay-proof-2026-10-17",
+  "authority": "Georg source choice after original isolated render; WSB K1 only after Georg selected exact source. WS0 V-424",
+  "sourceRegister": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WSA_LANDMARKS_R1_CANDIDATES.json",
+  "sourceRegisterBlob": "f2e65cc9020f7fe3c99833e4f095c6a520ed3f97",
+  "sourceKind": "LISTING_ONLY_UNVERIFIED_UNTIL_REAL_SOURCE_DOWNLOADED",
+  "uniqueMissingModelSources": 20,
+  "unrenderedCandidateReferences": 22,
+  "alreadySourceIsolatedUnique": 3,
+  "totalDistinctSourceUrlsInRegistry": 23,
+  "selectionSurface": "existing Asset Librarian Site, Landmark-Kandidaten view NOT IMPLEMENTED",
+  "renderPolicy": "Only original 3D source object isolated in honest source render with original materials; do not render fake KFB clay; caption Knete folgt lives outside image",
+  "perSourceRequiredProof": [
+    "upstream license and creator verified, not simply listing claim",
+    "actual downloaded model archive and SHA256 (or internal repo source file audited)",
+    "exact model file/formats and measured mesh/poly triangles",
+    "unaltered source object isolated in source rendering; no marketing photo, no overlay, no generated fake",
+    "original-model silhouette, completeness and donor-vs-landmark role",
+    "CC BY credits and NO_AI restriction enforced; no AI transform when flagged",
+    "Artistic selection only by Georg; WSB Blender K1 clay after selection"
+  ],
+  "entries": [
+    {
+      "sourceUrl": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/img2threejs/landmarks/pilot-06/index.html",
+      "license": "KFB-OWN-SOURCE",
+      "creator": "KFB img2threejs",
+      "rank": 1,
+      "primaryLandmark": "stonehenge",
+      "referencingCandidates": [
+        {
+          "id": "st-kfb",
+          "landmark": "stonehenge",
+          "title": "KFB Pilot-06 Stonehenge",
+          "sourceRole": "existing_owner_donor"
+        }
+      ],
+      "roles": [
+        "existing_owner_donor"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": false,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "st-kfb",
+          "note": "Reuse-first. Internal source reports 1,596 triangles; third-party sublicensing not inferred."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/stonehenge-50fbd4391bbc4c2ebe09537c22eb858e",
+      "license": "CC-BY-4.0",
+      "creator": "neosearch",
+      "rank": 1,
+      "primaryLandmark": "stonehenge",
+      "referencingCandidates": [
+        {
+          "id": "st-sketch",
+          "landmark": "stonehenge",
+          "title": "Stonehenge by neosearch",
+          "sourceRole": "site_model"
+        }
+      ],
+      "roles": [
+        "site_model"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "st-sketch",
+          "note": "Sketchfab listing; downloadable subject to site access."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://kenney.nl/assets/cube-pets",
+      "license": "CC0-1.0",
+      "creator": "Kenney",
+      "rank": 2,
+      "primaryLandmark": "bremen",
+      "referencingCandidates": [
+        {
+          "id": "br-pets",
+          "landmark": "bremen",
+          "title": "Kenney Cube Pets",
+          "sourceRole": "construction_kit_only"
+        }
+      ],
+      "roles": [
+        "construction_kit_only"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "br-pets",
+          "note": "NOT a Bremen statue. Animal roster and four requested silhouettes require archive inspection."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://kenney.nl/assets/prototype-kit",
+      "license": "CC0-1.0",
+      "creator": "Kenney",
+      "rank": 2,
+      "primaryLandmark": "bremen",
+      "referencingCandidates": [
+        {
+          "id": "br-proto",
+          "landmark": "bremen",
+          "title": "Kenney Prototype Kit",
+          "sourceRole": "construction_kit_only"
+        },
+        {
+          "id": "ur-kit",
+          "landmark": "ur",
+          "title": "Kenney Prototype Kit",
+          "sourceRole": "construction_kit_only"
+        }
+      ],
+      "roles": [
+        "construction_kit_only"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "br-proto",
+          "note": "NOT a statue model; blocks/pedestal/robber-house scaffold only. No direct statue asset verified."
+        },
+        {
+          "candidateId": "ur-kit",
+          "note": "Stepped construction donor, not historical digital scan."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/neuschwanstein-castle-bavaria-germany-7d6d970009724dbda4fc5c5ffa303577",
+      "license": "CC-BY-4.0",
+      "creator": "Brian Trepanier",
+      "rank": 3,
+      "primaryLandmark": "neuschwanstein",
+      "referencingCandidates": [
+        {
+          "id": "neu-photo",
+          "landmark": "neuschwanstein",
+          "title": "Neuschwanstein Castle, Bavaria, Germany",
+          "sourceRole": "site_model"
+        }
+      ],
+      "roles": [
+        "site_model"
+      ],
+      "rightsFlags": [
+        "DECIMATION_REQUIRED"
+      ],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "neu-photo",
+          "note": "Extremely heavy; source listing only, photogrammetry/attribution of original geometry not checked."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://opengameart.org/content/simple-castle",
+      "license": "CC0-1.0",
+      "creator": "TitaniumFalcon",
+      "rank": 3,
+      "primaryLandmark": "neuschwanstein",
+      "referencingCandidates": [
+        {
+          "id": "neu-simple",
+          "landmark": "neuschwanstein",
+          "title": "Simple Castle · TitaniumFalcon",
+          "sourceRole": "construction_kit_only"
+        }
+      ],
+      "roles": [
+        "construction_kit_only"
+      ],
+      "rightsFlags": [
+        "NOT_A_COMPLETE_LANDMARK",
+        "WSB_K1_AFTER_ACTUAL_GEORG_SELECTION"
+      ],
+      "listedDownloadable": true,
+      "formatsConfirmed": [
+        ".blend"
+      ],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "neu-simple",
+          "note": "Complete toy-castle silhouette. Not Neuschwanstein; useful only as a proportion, tower and courtyard construction donor. Round crenellations and tier turrets with WSB K1 after Georg picks an actual landmark."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/ziggurat-f2ffb4bd5200400eac37fbce5c010ef0",
+      "license": "CC-BY-4.0",
+      "creator": "History Builds",
+      "rank": 4,
+      "primaryLandmark": "ur",
+      "referencingCandidates": [
+        {
+          "id": "ur-build",
+          "landmark": "ur",
+          "title": "Ziggurat",
+          "sourceRole": "site_model"
+        }
+      ],
+      "roles": [
+        "site_model"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "ur-build",
+          "note": "Visual/site identity to confirm as Ziggurat of Ur, not automatically Ur reconstruction."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://opengameart.org/content/modular-temple-3d-models",
+      "license": "CC0-1.0",
+      "creator": "Keith at Fertile Soil Productions",
+      "rank": 4,
+      "primaryLandmark": "ur",
+      "referencingCandidates": [
+        {
+          "id": "ur-temple-kit",
+          "landmark": "ur",
+          "title": "Modular Temple · arch donor",
+          "sourceRole": "construction_kit_only"
+        },
+        {
+          "id": "bo-temple-kit",
+          "landmark": "borobudur",
+          "title": "Modular Temple · arch donor",
+          "sourceRole": "construction_kit_only"
+        }
+      ],
+      "roles": [
+        "construction_kit_only"
+      ],
+      "rightsFlags": [
+        "NOT_A_COMPLETE_LANDMARK",
+        "WSB_K1_AFTER_ACTUAL_GEORG_SELECTION"
+      ],
+      "listedDownloadable": true,
+      "formatsConfirmed": [
+        ".obj"
+      ],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "ur-temple-kit",
+          "note": "Single arched pillar/bridge block; NOT Ziggurat of Ur. Possible lintel/ritual approach donor only; historic stepped temple requires separate source."
+        },
+        {
+          "candidateId": "bo-temple-kit",
+          "note": "Single arch piece; NOT Borobudur stupas/mandala. Possible passage/stair-adjacent scene construction donor only; not selected heritage architecture."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/tower-of-babel-a4e601c636b842879cd7eea15",
+      "license": "CC-BY-4.0",
+      "creator": "loiz",
+      "rank": 5,
+      "primaryLandmark": "babel",
+      "referencingCandidates": [
+        {
+          "id": "ba-loiz",
+          "landmark": "babel",
+          "title": "Tower of Babel",
+          "sourceRole": "site_model"
+        }
+      ],
+      "roles": [
+        "site_model"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "ba-loiz",
+          "note": "Bruegel likeness requires visual source-isolated check; 56.3k source vertices."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/tower-of-babel-13b66768d08f4e3ca59a04210c1d0b15",
+      "license": "CC-BY-4.0",
+      "creator": "AlvaroL",
+      "rank": 5,
+      "primaryLandmark": "babel",
+      "referencingCandidates": [
+        {
+          "id": "ba-alvaro",
+          "landmark": "babel",
+          "title": "Tower of Babel",
+          "sourceRole": "site_model"
+        }
+      ],
+      "roles": [
+        "site_model"
+      ],
+      "rightsFlags": [
+        "DECIMATION_REQUIRED"
+      ],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "ba-alvaro",
+          "note": "Heavy source; flatten shell and replace repetitive arches with reusable modular modules."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/shoreditch-theatre-30cc5fe94bd949c3b165e2d2409cb3c5",
+      "license": "CC-BY-4.0",
+      "creator": "novusod",
+      "rank": 6,
+      "primaryLandmark": "globe",
+      "referencingCandidates": [
+        {
+          "id": "gl-shoreditch",
+          "landmark": "globe",
+          "title": "Shoreditch Theatre",
+          "sourceRole": "architectural_reference_donor"
+        }
+      ],
+      "roles": [
+        "architectural_reference_donor"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "gl-shoreditch",
+          "note": "Historically different predecessor, NOT the actual Globe; roof/wall grammar only."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/stylized-low-poly-moai-976a26a8e0e94b3f90b26992ace92af5",
+      "license": "CC-BY-4.0",
+      "creator": "leunamanuelgc",
+      "rank": 7,
+      "primaryLandmark": "moai",
+      "referencingCandidates": [
+        {
+          "id": "mo-stylized",
+          "landmark": "moai",
+          "title": "Stylized Low Poly Moai",
+          "sourceRole": "site_model"
+        }
+      ],
+      "roles": [
+        "site_model"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "mo-stylized",
+          "note": "Best lightweight cartoon donor."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/moai-7099390468214c2dbcf283454e7b5c8a",
+      "license": "CC-BY-4.0",
+      "creator": "Museo Nacional de Historia Natural de Chile",
+      "rank": 7,
+      "primaryLandmark": "moai",
+      "referencingCandidates": [
+        {
+          "id": "mo-museum",
+          "landmark": "moai",
+          "title": "Moai — Museo Nacional de Historia Natural de Chile",
+          "sourceRole": "cultural_reference_donor"
+        }
+      ],
+      "roles": [
+        "cultural_reference_donor"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "mo-museum",
+          "note": "The museum listing is CC BY, NOT CC0. Cultural contextualization and source respect required; not a generic Moai field scan."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/low-poly-moai-a6613687895d4eb0a778242083ebb824",
+      "license": "CC-BY-4.0",
+      "creator": "XzavierStuffs",
+      "rank": 7,
+      "primaryLandmark": "moai",
+      "referencingCandidates": [
+        {
+          "id": "mo-low",
+          "landmark": "moai",
+          "title": "Low Poly Moai",
+          "sourceRole": "site_model"
+        }
+      ],
+      "roles": [
+        "site_model"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "mo-low",
+          "note": "Alternative lightweight silhouette."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/statue-of-liberty-8789c44648254d6fba0608439daf25d3",
+      "license": "CC-BY-4.0",
+      "creator": "Polskaball",
+      "rank": 8,
+      "primaryLandmark": "liberty",
+      "referencingCandidates": [
+        {
+          "id": "li-pol",
+          "landmark": "liberty",
+          "title": "Statue of Liberty",
+          "sourceRole": "site_model"
+        }
+      ],
+      "roles": [
+        "site_model"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "li-pol",
+          "note": "Island/terrain absent; stage composition later."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/statue-of-liberty-de104ba657a14df099bde10cd9bbf4f2",
+      "license": "CC-BY-4.0",
+      "creator": "Crafteri",
+      "rank": 8,
+      "primaryLandmark": "liberty",
+      "referencingCandidates": [
+        {
+          "id": "li-craf",
+          "landmark": "liberty",
+          "title": "Statue of Liberty",
+          "sourceRole": "site_model"
+        }
+      ],
+      "roles": [
+        "site_model"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "li-craf",
+          "note": "Island/terrain absent; city-island geometry not verified."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/statue-of-liberty-84094e8d5e724b5c882cf576ca12e44e",
+      "license": "CC-BY-4.0",
+      "creator": "Gravity Jack",
+      "rank": 8,
+      "primaryLandmark": "liberty",
+      "referencingCandidates": [
+        {
+          "id": "li-grav",
+          "landmark": "liberty",
+          "title": "Statue of Liberty",
+          "sourceRole": "site_model"
+        }
+      ],
+      "roles": [
+        "site_model"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "li-grav",
+          "note": "Detail baseline; costlier retopo."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/chichen-itza-yucatan-photogrammetry-test-cadcd48c10cb404da78e293256c7fac5",
+      "license": "CC-BY-4.0",
+      "creator": "Nick G. Gizelis",
+      "rank": 9,
+      "primaryLandmark": "chichen",
+      "referencingCandidates": [
+        {
+          "id": "ch-phot",
+          "landmark": "chichen",
+          "title": "Chichen Itza Yucatan Photogrammetry Test",
+          "sourceRole": "cultural_reference_donor"
+        }
+      ],
+      "roles": [
+        "cultural_reference_donor"
+      ],
+      "rightsFlags": [],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "ch-phot",
+          "note": "High-poly reference; ball court absent/unverified."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/borobudur-temple-complex-da47fe2900bc4e3b81fef8e6f10c4f5d",
+      "license": "CC-BY-4.0",
+      "creator": "czepedas",
+      "rank": 10,
+      "primaryLandmark": "borobudur",
+      "referencingCandidates": [
+        {
+          "id": "bo-meshy",
+          "landmark": "borobudur",
+          "title": "Borobudur Temple Complex",
+          "sourceRole": "site_model"
+        }
+      ],
+      "roles": [
+        "site_model"
+      ],
+      "rightsFlags": [
+        "SOURCE_PROVENANCE_RECHECK",
+        "DECIMATION_REQUIRED"
+      ],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "bo-meshy",
+          "note": "Source says Meshy generated; license alone does NOT prove underlying architectural source ownership; source provenance audit needed."
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://sketchfab.com/3d-models/borobudur-3rd-floor-relief-pictograph-2c49eeb628684757b8f0f87165a12007",
+      "license": "CC-BY-4.0",
+      "creator": "PHAC",
+      "rank": 10,
+      "primaryLandmark": "borobudur",
+      "referencingCandidates": [
+        {
+          "id": "bo-relief",
+          "landmark": "borobudur",
+          "title": "Borobudur 3rd Floor Relief Pictograph",
+          "sourceRole": "detail_reference_only"
+        }
+      ],
+      "roles": [
+        "detail_reference_only"
+      ],
+      "rightsFlags": [
+        "NO_AI_USE",
+        "NOT_FULL_TEMPLE"
+      ],
+      "listedDownloadable": true,
+      "formatsConfirmed": [],
+      "sourceObjectActuallyDownloaded": false,
+      "sourceObjectVisuallyIsolated": false,
+      "sourceProofImage": null,
+      "sha256": null,
+      "trianglesMeasured": null,
+      "notes": [
+        {
+          "candidateId": "bo-relief",
+          "note": "Relief, NOT complete temple. Creator NoAI restriction: do not feed mesh to Meshy or other AI; manual Blender source review only."
+        }
+      ]
+    }
+  ]
+}
