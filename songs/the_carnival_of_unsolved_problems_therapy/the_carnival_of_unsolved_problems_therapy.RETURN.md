@@ -7,3 +7,6 @@
 - WARNING: qa.deck.json extends the lexical checker fixture with source artworkPrompt tokens allowed by SONG_SPEC_R3 §A. The canonical registry and pdf.json are unchanged. Full printed page visual observation NOT claimed.
 - Mechanical Python exit: pending CI readback. No blind review has occurred; blindreview.md is an independent reviewer payload, not a score. One writer revision reserved.
 - Next gate: Python exit 0, then independent reviewer returns scores/flags only for one writer revision.
+
+## Executed tests · 39028591388
+GitHub Actions on candidate 2c0bc6208e49c5b41b8f35e73cbf850da6d652c2: exact triplet_set_check.py PASS (exit 0), R4 format_gate.py PASS (exit 0), 47/47 card lines and 4753 Unicode chars, 2/2 named gates succeeded. Independent BLIND_REVIEW_PENDING; no creative acceptance, no rewrite. Reviewer only scores/observes/flags; ONE plugin revision reserved.
