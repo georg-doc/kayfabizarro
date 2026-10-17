@@ -4,7 +4,7 @@
 
 Current implementation slice: **P0.2 Story Focus**.
 
-Read `docs/STORY_FOCUS_P02.md` after this file.
+Read `HANDOFF_WSA_2026-09-19.md` first for the current review package, then `RETURN_WSA_2026-09-19.md` and `docs/STORY_FOCUS_P02.md`.
 
 `tools/kfb-cartoon-map-board/index.html`
 
@@ -46,3 +46,23 @@ This tool is additive. Rollback is confined to `tools/kfb-cartoon-map-board/`; d
 First action in a recovery chat: read this file, `README.md`, `CHANGELOG.md`, `docs/STORY_FOCUS_P02.md`, then inspect the deployed P0.2 visually before adding hierarchy/cards/authoring.
 
 Current next slice after visual QA: **Europe -> country -> region -> city**, handing detailed city ownership back to `osm-city-lab`.
+
+
+## WSA review check-in · 2026-09-19
+
+Review branch:
+
+`handoff/cartoon-map-board-wsa-2026-09-19`
+
+The handoff is documentation-only. Runtime source remains the recovered P0.2 donor; no owner seam was changed during check-in.
+
+Start order for WSA:
+
+1. `HANDOFF_WSA_2026-09-19.md`
+2. `RETURN_WSA_2026-09-19.md`
+3. `README.md`
+4. `docs/STORY_FOCUS_P02.md`
+5. `qa/public.mjs`
+6. runtime only after the status/protected-boundary review
+
+The ordered backlog in the handoff is the current backlog. Do not infer browser/public acceptance from source presence.

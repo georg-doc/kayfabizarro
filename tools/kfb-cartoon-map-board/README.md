@@ -1,6 +1,6 @@
 # KFB Cartoon Map Board
 
-**Status:** P0.2 IMPLEMENTATION · STORY FOCUS ADDED · BROWSER / CLOUDFLARE RESULT NOT YET CLAIMED
+**Status:** P0.2 IMPLEMENTATION · WSA HANDOFF READY · STATIC PASS · BROWSER / CLOUDFLARE RESULT OPEN
 
 Browser entry: `tools/kfb-cartoon-map-board/index.html`
 
@@ -98,3 +98,21 @@ As of 2026-09-18:
 ## Attribution
 
 Map data © OpenStreetMap contributors, ODbL 1.0. Boundary delivery in P0: OpenPlanetData. KayKit assets are loaded from the existing KFB asset repository and remain under their source licence/provenance.
+
+
+## WSA handoff · 2026-09-19
+
+The complete review/check-in package is now in:
+
+- `HANDOFF_WSA_2026-09-19.md` — owner map, exact revisions, protected boundaries, tested status, all open points and ordered backlog;
+- `RETURN_WSA_2026-09-19.md` — compact recovery/return entry.
+
+WSA / Race remains integration lead. This handoff requests **review only**; it does not silently integrate the Map Board into Race or replace any runtime owner.
+
+Recovery pins used by the handoff:
+
+- `kayfabizarro@1e9318954c584e8af8498024fd1342e61b604faf`
+- latest Map Board implementation commit `43dc6f45748aa62cec3bb3515aee868e1d0dc529`
+- Race reference `KFB-Stunt-Car-Race@3d21812903b6d1c015252cddf386328d4cec4fb2`
+
+Current first gate remains the exact P0.2 browser/visual proof; hierarchy, real Cards and authoring stay behind that gate.
