@@ -1,0 +1,22 @@
+{
+  "schema": "kfb.webchat-proposal/1",
+  "id": "workflow_probe_a86b108d935a",
+  "subjectId": "lord_hunky",
+  "kind": "character",
+  "state": "PROPOSAL",
+  "testOnly": true,
+  "intent": "Technische Prüfung des von Georg beauftragten Webchat-Vorschlagswegs. Keine Figureneigenschaften geändert.",
+  "baseCommit": "9bbe68420732616164c39a0bede420c7199100b9",
+  "baseBlobs": {
+    "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lord_hunky.character.json": "11251a74925fd5f8615145da89a7f374b223f104"
+  },
+  "targets": [
+    "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lord_hunky.character.json"
+  ],
+  "changes": [],
+  "conflicts": [],
+  "provenance": [
+    "Georgs Auftrag 18.10.2026: bestehendes KFB-Triplets-Plugin um Webchat-Autorenweg erweitern."
+  ],
+  "createdAt": "2026-10-18T00:00:00Z"
+}
