@@ -214,3 +214,8 @@ Public-safe open packs (CC0 Kenney ≈ 129 MB, Quaternius ≈ 215 MB, KayKit/Tin
 * Claude artifacts behind the `_redirects` targets (`claude.ai/artifact/...`) were not inspected.
 * The GitHub plan (Free vs Pro) is unknown, and that decides what happens to Pages and how many Actions minutes are available.
 * The licence PDF of `S050C-ArcadeShooter` was not decoded. Licence status of `Cozy Tunes`, `Classic Arcade SFX Complete`, `FlowerPower_PNG` and `Foods Asset HQ` is unknown.
+
+
+## Addendum WS0 17.10. (Georg)
+- **FrizzleBob contains Mystery Series parts:** brows from `KayKit_Mystery_Series6/CapsuleCarl/gltf/enemy.gltf`, nose from `…/CapsuleCarl/gltf/player.gltf`. Every FB GLB is therefore **not public as a raw download** (neverPublic in the R2 allowlist). Using it built into game and tool builds stays possible. In the long run: replace brows and nose with our own clay parts if FB is to be published as a single file.
+- Meshy stages (B7/B8/B9) come from Georg's Meshy subscription (V-230), so they count as own content, public OK (final confirmation by Georg).
