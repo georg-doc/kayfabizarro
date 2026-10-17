@@ -1,6 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- NotebookLM-Recherche (Opener-Rotation, Intro-Typen, vierte Wand) ausgewertet: 7 neue Opener im Pool (OPENER_ARC_R2/opener_pool_r2.py, Familien official/retort), Vierte-Wand-Parameter als Vorschlag (replies/DIALOGUE_FOURTH_WALL_R1.md); Regeländerung für Songs (Opener-Abstand über Songs, Intro-Typen) wartet auf Georg.
+- Bündel-PR #417 (Trust 05, Pharaoh-Performance, WSB B1/B2/B7) von Georg gemergt.
 - V-423: FrizzleBob „Tuxedo with Brass Knuckles“ (Charakterkarte), Schlagring als Grund-Nahkampfwaffe, Ernte-Regel 3 Schläge/2 Schüsse/1 Explosion mit gestaffeltem Abwurf und Kugel-Physik; WSB B12-Variante + B16 Schlagring, WS1-Notiz; HUD-ZIP folgt.
 - V-422: E2-Sockel 80° PASS (TUNE Rand organischer später, B15); Stopp WSA aufgehoben (b93), WSB 15. Nachtrag (B14 aus edge80-GLB, Dory Rand-Stiel verschleifen, B15 Rand-TUNE), WS1-Notiz; Hub-Briefings nachgezogen.
 - E2 R1e (Blender): Sockel unverändert (Kugel, Randprofil identisch), nur Öffnungskante von ~54° auf 70°/80°/90° zurückgenommen; seitlich sichtbarer Augapfel 14 % → 38/61/81 %; Dory 80°/90°: Rand trifft ihren Stielansatz (FAIL im Selbstcheck). R1c/R1d (starre Verschiebung, Winkel-Verbiegung im Browser) verworfen. Proof proof_r1e.html, wartet auf Georg.

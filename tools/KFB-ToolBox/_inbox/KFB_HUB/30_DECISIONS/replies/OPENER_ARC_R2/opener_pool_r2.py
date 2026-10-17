@@ -36,6 +36,10 @@ POOL = {
  "Whispered in the attic": ("F", ("mystical", "forbidden"), ": "), "Behind the mirror": ("M", ("mystical",), ": "),
  "Don't tell anyone about": ("E", ("forbidden",), " "), "Off the record": ("D", ("forbidden",), ": "),
  "Strictly between us": ("D", ("forbidden", "comic"), ": "), "Behind the locked door": ("E", ("forbidden", "mystical"), ": "),
+ # --- NotebookLM research 17.10. (KEEP/next list, OP/UP/FW IDs from "KFB Modular Storytelling Research") ---
+ "You would think": ("P", ANY, " "), "The official explanation is": ("P", ("forbidden", "comic"), ": "),
+ "You call that": ("D", ("comic", "absurd"), " "), "You said": ("R", ANY, " "), "Exactly. And if": ("E", ANY, " "),
+ "That is not": ("D", ANY, " "), "Agree, or tell me why not": ("M", ANY, ": "),
 }
 FAMILIES = {"heard": ["Did you hear of", "Have you heard of"], "know": ["You know", "Do you know", "You know the thing with"],
  "try": ["Did you ever try", "Ever tasted"], "nobody": ["Nobody warned us about", "Here is something nobody asked for", "Nobody came back for"],
@@ -44,4 +48,5 @@ FAMILIES = {"heard": ["Did you hear of", "Have you heard of"], "know": ["You kno
  "diary": ["Someone wrote in my diary", "My diary says", "Someone wrote in my friendship book"],
  "found": ["I found a note saying", "I found this under my bed"],
  "saw": ["Did you see the film about", "I saw a painting of"],
- "secret": ["Don't tell anyone about", "Off the record", "Strictly between us"]}
+ "secret": ["Don't tell anyone about", "Off the record", "Strictly between us"],
+ "official": ["The official explanation is", "Everyone agrees"], "retort": ["You call that", "That is not"]}
