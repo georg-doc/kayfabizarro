@@ -17,3 +17,13 @@ Candidate head 5fbac36d10489ac42cc1064def4e6c9579cd73d2. Exact original triplet_
 ## V-424 · R3.3 tested checkpoint
 - Source spec R3.3 blob c3f42c7be5cd56edb5c522db53c44b482b52bae6; shared central lyrics gate run https://github.com/georg-doc/kayfabizarro/actions/runs/39068221812 at candidate `fd8c5793774fda7c4d8b00cbbe8d73d480eadff7`, **1/1 PASS**. Track(s): r4.3 (30 cards, 3211 chars, found_object). B7b callbacks and deck frame passed. Earlier R4.1/R4.2 remain untouched. Details: `R33_TEST_REPORT.md`.
 - External §F critic: 0 runs; one writer revision reserved, not performed. No Site/Hub/merge. Next gate: fresh external critic per track with scores/flags and exact `song_gate.py critic` proof.
+
+
+## R4.4 E18 external critic writer pass · 17 October 2026
+- **Authority:** external Claude critic R1 `replies/SONG_CRITICS_R1/frizzlebob_bloedsinnland_alice.r4.3.critic.json` passed central `song_gate.py critic` according to WS0 summary; writer performed exactly one creative author revision. No second critic claimed.
+- **Owner/repo/branch:** KFB Songs/Triplet Writer's Room · `georg-doc/kayfabizarro` · `songs/frizzlebob_bloedsinnland_alice-r4-2026-10-17`; no PR or merge.
+- **Source-head of tested lyrics:** `4e65d4e5594fa54968fb5febca654656efa7cdbe`. Files added: `frizzlebob_bloedsinnland_alice.r4.4.suno.txt`, `frizzlebob_bloedsinnland_alice.r4.4.songlines.json`, `R44_E18_FLAG_DISPOSITIONS.md`, plus canonical original gate workflow `.github/workflows/kfb-song-r44-alice-gate.yml`.
+- **Protected A truth:** original 30/30 card core lines identical to R4.3 (programmatic beat suffix check). R4.3 source, registry, media, historic critiques retained. Flag dispositions: 12/12 documented, 6 handled by intro/outro/opener work, 6 explicitly kept (card-core restriction or source-bound rationale).
+- **CI on tested source:** https://github.com/georg-doc/kayfabizarro/actions/runs/39070634916: 2/2 original-script steps SUCCESS, triplet checker `0 FAIL`, central song_gate lyrics PASS (30/30 cards, 3278 chars, intro 2, outro 2, openers 15); WARN E16b missing dedicated tone map, nonblocking. Original canonical script from register `bfcf60f8faed39d5cbae3f715737cee95e890765`; no private fork.
+- **Unresolved:** source-level sayability/power fragments in protected A card cores explicitly deferred, no invented rewrite or manufactured critic. No Stage, Site, public browser review, Hub submission, Georg PASS.
+- **ONE next gate:** WS0 performs fresh independent judge-only critic pass two on this exact R4.4 candidate; write scores/flags without text edits, then route to Georg. Any protected-core changes require separate authorized scope.
