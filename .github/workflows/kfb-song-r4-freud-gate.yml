@@ -1,4 +1,4 @@
-name: KFB Freud R4 lyric gate
+name: KFB Freud R3.1 lyric gate
 on:
   push:
     branches:
@@ -6,11 +6,11 @@ on:
 permissions:
   contents: read
 jobs:
-  r4_gates:
+  r31:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Exact plugin triplet_set_check.py
-        run: python3 songs/dream_wrestling_with_kayfabe_freud/triplet_set_check.py songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.qa.deck.json songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.qa.set.csv
-      - name: R4 format check
-        run: python3 songs/dream_wrestling_with_kayfabe_freud/format_gate.py
+      - name: Exact plugin lexical
+        run: python3 songs/dream_wrestling_with_kayfabe_freud/triplet_set_check.py songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.r31.qa.deck.json songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.r31.qa.set.csv
+      - name: R3.1 format
+        run: python3 songs/dream_wrestling_with_kayfabe_freud/format_gate_r31.py

@@ -1,13 +1,29 @@
 {
   "deckId": "dream_wrestling_with_kayfabe_freud",
-  "version": "R4",
-  "songLineChanges": [],
-  "count": 0,
-  "limit": 5,
-  "metaSkipped": [
-    53,
-    54,
-    55,
-    56
-  ]
+  "version": "R4.1",
+  "songLineChanges": [
+    {
+      "cardNumber": 10,
+      "before": "4 years old",
+      "after": "four years old",
+      "reason": "A7 sung number"
+    },
+    {
+      "cardNumber": 12,
+      "before": "7:00 AM",
+      "after": "seven A.M.",
+      "reason": "A7 sung time"
+    },
+    {
+      "cardNumber": 40,
+      "before": "The Interpretation / Detective",
+      "after": "The Interpretation Detective",
+      "reason": "A7 spoken slash removed"
+    }
+  ],
+  "songLineCount": 3,
+  "totalCardLines": 52,
+  "percent": 5.77,
+  "otherPresentationEdits": "All German parenthetical card subtitles dropped (A6); original source unchanged",
+  "scope": "QA derived fixture only"
 }

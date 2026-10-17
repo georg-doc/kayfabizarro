@@ -1,9 +1,2 @@
-# dream_wrestling_with_kayfabe_freud · R4 candidate / Writer's Room
-
-Source registry e11b5a1981dee624b8cc9ba1f6e927bc5de5fa29; PDF JSON c880321233ecabb87e0c3d6356c91a1d346b06b5. All 52 playable cards #1–52 in exact number order; #53–56 how-to/rules/credits marked nonplay meta. Style A/B pure music. 4911 Unicode characters, 52/52 lexical and 80–95 char JS checks, 17 unique openers, each beat blank-separated, 0 songLine substitutions. Motif words are from pdf.json artworkPrompt, visual PDF not independently inspected. Derived lexical QA fixture does not alter canonical sources. Binding SONG_SPEC_R3 + Golden take05. Python Actions test pending; creative independent blind reviewer pending. No Site/Hub or merge. Next gate: external reviewer score/flags only after Python PASS, then one writer edit and Georg acceptance.
-
-EXECUTED GITHUB ACTIONS: https://github.com/georg-doc/kayfabizarro/actions/runs/39029248126
-Candidate head 32764def2669c13dcd106980bc7ed376306917da
-Exact original plugin triplet_set_check.py: exit 0, SUCCESS.
-R4 format_gate.py: exit 0, SUCCESS.
-Combined 2/2 PASS, 52/52 lines, 4911 Unicode characters; blind review not run, one revision pending.
+# Freud R4.1 Return · V-418
+Original kfb-triplets owner; branch songs/dream_wrestling_with_kayfabe_freud-r4-2026-10-17. R3.1 binding spec blob 3a6ea19c0c30c4c9430decc1c739dbbb5a294f60. Original R4 kept. 52 playable cards, four rule/meta slots excluded as previously recorded. 4878 code points, 52/52 core 80–95. German bracket subtitles removed; stage label Interpretation Detective instead of slash. Four and seven A.M. sung; 3/52 songLines (5.77%). QA lexical fixture is DERIVED from canonical registry+artworkPrompt, not a new source. Original PDF image not newly seen. GitHub Python gate PENDING. No independent reviewer, no score, no writer revision, no Hub/Site/merge. Next gate independent review only after Python PASS.

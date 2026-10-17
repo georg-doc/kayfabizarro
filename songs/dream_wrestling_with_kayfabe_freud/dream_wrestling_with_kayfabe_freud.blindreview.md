@@ -1,8 +1,8 @@
-# R4 Freud blind reviewer · PENDING
+# R3.1 independent judge · PENDING
 
-Blind input description: A Freudian dream-work deck imagined as a wrestling match. The Censor guards the truth, the Wish supplies the plot, the Id never stays down, and remembered dreams lose their grip at dawn. The tone is dry satire about Freudian explanations rather than ridicule of therapy or patients.
+Deck: Freudian dream concepts perform as a wrestling story, with Wish, Censor, Id, and Ego making claims. The satire targets interpretations, not patients.
 
-## Full lyrics
+## Full Lyrics
 
 [Spoken Word]
 
@@ -10,61 +10,61 @@ Dreams do not wait for the final bell.
 
 Even the referee is asleep.
 
-Downstairs: The Unconscious (Das Unbewusste), downstairs, lifting weights, waiting for you to fall asleep.
+Downstairs: The Unconscious, it's not gone; downstairs, lifting weights, waiting for you to fall asleep.
 
-The Preconscious (Vorbewusst), waiting room of the mind; ideas called or kicked out.
+The Preconscious, waiting room of the mind; ideas sit until called or kicked out of the room.
 
-The Censor (Die Zensur), at the door; doesn't let naked truth into the party, redaction.
+The Censor, keeps at the door; doesn't let the naked truth into the party, redaction.
 
-Wish granted: The Wish (Der Wunsch), Freud says every dream is a wish, even the one where you lose teeth.
+Wish granted: The Wish, Freud says every dream is a wish, even the one where you lose your teeth.
 
-Condensation (Verdichtung), why one anxiety when five faces smash into one monster? Efficient!
+Condensation, why one anxiety when five faces smash into one monster? Efficient!
 
-Displacement (Verschiebung), not about the Father; the Father's coat button, obsess over it.
+Displacement, not about the Father; it's the Father's coat button. Obsess over the button.
 
-Reverse: Regression (Regredieren), forward path blocked; the mind runs backward to the crib.
+Reverse: Regression, when the path forward is blocked, the mind runs backward to the crib.
 
-Secondary Revision (Sekundäre Bearbeitung), the lie we tell ourselves to make chaos a movie.
+Secondary Revision, the lie we tell ourselves when we wake up, to make chaos look like a movie.
 
-Morning scraps: Day Residue (Tagesreste), trash of yesterday becomes treasure of tonight's hallucination.
+Morning scraps: Day Residue, the trash of yesterday becomes the treasure of tonight's hallucination.
 
-Infantile Material (Das Infantile), the oldest stuff deepest; still 4 and want that cookie.
+Infantile Material, the oldest stuff lies deepest; still four years old, want that cookie.
 
-Somatic Stimulus (Leibreiz), body shouting; dream translates into symphony of pain.
+Somatic Stimulus, the body is shouting, dream translates it into a symphony of pain.
 
-Seven sharp: The Alarm Clock (Der Wecker), executioner of the dream; cruel cold logic of 7:00 AM.
+Seven sharp: The Alarm Clock, executioner of the dream; the return of cruel cold logic of seven A.M.
 
-Headwear: The Hat (Der Hut), according to Freud, if it fits a head it stands in for the other head.
+Headwear: The Hat, according to Freud, if it fits on a head it stands in for the other head.
 
-The Staircase (Die Treppe), up and down, in and out; rhythm of stairs, rhythm of love.
+The Staircase, up and down, in and out; the rhythm of stairs is the rhythm of love. Allegedly.
 
-The Tie (Die Krawatte), hangs down, useless; men wear it. Do the math, symbolic authority.
+The Tie, hangs down, it is useless; men wear it. Do the math, symbolic authority.
 
-The Wood (Das Holz), Mater comes from Mater; universal mother-substitute, don't ask.
+The Wood, Mater comes from Mater, Mother; universal mother-substitute, don't ask.
 
-Loose tooth: The Tooth Extractor (Zahnreiz), losing a tooth in a dream, not dentists; losing your power.
+Loose tooth: The Tooth Extractor, losing a tooth in a dream, not dentists; losing your power.
 
-The Flying Machine (Das Flugwerk), defying gravity, rising up; the dream of capability.
+The Flying Machine, defying gravity, rising up; the dream of flying, dream of capability.
 
-The Fall (Der Sturz), falling is giving in; sometimes you want to hit the bottom, surrender.
+The Fall, falling is giving in; sometimes you want to hit the bottom, surrender.
 
-The Vermin (Das Ungeziefer), small animals are small children, unwanted siblings.
+The Vermin, small animals represent small children, the ones you wish weren't born.
 
-Dad's law: The Emperor (Der Kaiser), Father, King, Obstacle; he prohibits the fun, Dad's law.
+Dad's law: The Emperor, the Father, the King, the Obstacle; he prohibits the fun, Dad's law.
 
-The Queen (Die Königin), Mother, Object, Origin, Forbidden Zone; Mom's favor protects.
+The Queen, the Mother, the Object, the Origin, the Forbidden Zone; Mom's favor protects.
 
-The Intruder (Der Eindringling), dream about a burglar is about a distinct kind of entry.
+The Intruder, every dream about a burglar is about a distinct kind of entry. Sexual tension.
 
-The Double (Der Doppelgänger), not the bad guy; YOU are the bad guy who looks like me.
+The Double, I'm not the bad guy; YOU are the bad guy who looks exactly like me, projection.
 
-Again? The Examination (Der Prüfungstraum), passed years ago; back to prove you're a fraud.
+Again? The Examination, already passed this test years ago; why back? To prove you're a fraud.
 
-Public Nakedness (Die Nacktheit), not about skin; childhood wish to show off gone wrong.
+Public Nakedness, it's not about skin; the childhood wish to show off, gone wrong.
 
-The Paralysis (Die Hemmung), want to go, but Will says No; conflict turns legs to lead.
+The Paralysis, you want to go but Will says No; conflict turns your legs to lead, stuck.
 
-The Dead Relative (Der tote Verwandte), dreaming they are dead; Freud said you wished it.
+The Dead Relative, dream they are dead; secretly wished them dead, Freud said it.
 
 Case closed: Oedipus Rex, ultimate plot twist: you were detective AND murderer all along, total tragedy.
 
@@ -72,51 +72,51 @@ The Sphinx, gatekeeper of the story; solve the riddle or get strangled by neuros
 
 The Crossroads, where you met the Father, struck him down; where it all went wrong.
 
-Hamlet (The Modern Oedipus), couldn't kill the King, was the King in his dream; paralysis.
+Hamlet, couldn't kill the King because he was the King in his dream, analysis paralysis.
 
-Many causes: Overdetermination (Überdeterminierung), every dream image has ten causes; traffic jam.
+Many causes: Overdetermination, every dream image has ten different causes; traffic jam of meaning.
 
-Representability (Darstellbarkeit), dreams can't think Because; two things crashing.
+Representability, dreams can't think Because; they show two things crashing into each other.
 
-Opposites (Gegensinn), in the unconscious No does not exist; every No a Yes in a mask.
+Opposites, in the unconscious No doesn't exist; every No is just a Yes in a mask.
 
-The Rebus (Der Bilderrätsel), not a drawing; puzzle text made of pictures, read it.
+The Rebus, dream not a drawing; a puzzle text made of pictures. Read it, don't view it.
 
-Lie down: The Couch (Die Couch), lie down, don't look at me; talk until you say something shameful.
+Lie down: The Couch, lie down, don't look at me; just talk until you say something shameful.
 
-Resistance (Widerstand), refuse to talk about it; exactly what we need to talk about.
+Resistance, if you refuse to talk about it, that's exactly what we need to talk about.
 
-Transference (Übertragung), not mad at me; mad at Dad, charged by the hour, go ahead.
+Transference, you aren't mad at me, you're mad at Dad; I'm charging you by the hour.
 
-The Interpretation / Detective (Die Deutung), Royal Road to Unconscious, dirty jokes.
+The Interpretation Detective, Royal Road to Unconscious, bad intentions and dirty jokes.
 
-Now: The Id (Es), I want, I take, I eat, I kill, I sex, NOW; primal urge, ignore all rules.
+Now: The Id, I want, I take, I eat, I kill, I sex, NOW; yellow demonic face, primal hunger.
 
-The Ego (Ich), poor clown serving three masters at once: Reality, Id, Super-Ego.
+The Ego, poor clown trying to serve three masters at once: Reality, Id and Super-Ego.
 
-Parent: The Super-Ego (Über-Ich), internalized parent watches you shower, judges thoughts.
+Parent: The Super-Ego, the internalized parent watches you shower and judges your thoughts.
 
-Psychic Energy (Libido), fuel of the mind has to go somewhere; block it, it explodes.
+Psychic Energy, the fuel of the mind has to go somewhere; if you block it, it explodes.
 
-Missing: The Gap (Die Lücke), best parts of dream are the ones you can't remember, trust me.
+Missing: The Gap, the best parts of the dream are the ones you can't remember; a memory hole. Trust me.
 
-The Navel (Der Nabel des Traums), spot where dream reaches into unknown; don't touch it.
+The Navel, the spot where dream reaches down into the unknown; don't touch it. Unknowable.
 
-Morning Amnesia (Das Vergessen), sun comes up and truth evaporates; back to safe boring life.
+Morning Amnesia, sun comes up and truth evaporates; back to your safe boring life.
 
-Pencil: The Notebook (Das Notizbuch), write it down fast before Censor deletes the file.
+Pencil: The Notebook, write it down fast, before the Censor wakes up and deletes the file.
 
-Telepathy (Telepathie), Freud hated this stuff but couldn't rule it out, spooky.
+Telepathy, Freud hated this stuff, couldn't rule it out; two brains in jars, lightning.
 
 Deja Vu, I have been here before; or maybe I just dreamed I was here. Whatever; repeat.
 
-The Prophetic Dream (Wahrtraum), future or wish for it so hard you made it happen?
+The Prophetic Dream, is it future or did you wish for it so hard you made it happen?
 
-Wake up: Lucidity (Der Klartraum), I know I am dreaming, therefore I am God; watch this backflip.
+Wake up: Lucidity, I know I am dreaming; therefore I am God. Now watch this backflip, control.
 
 And the Id kicks out at two.
 
 Stay Fluffy!
 
 
-Judge ONLY: three 1–10 scores (song, stand-up, fidelity), observations, three weaknesses, line-specific flags, direct answers on rulebook tone and card conviction. Do not propose words. No real independent review yet.
+Judge ONLY three scores, observations, exact flags, answers on rulebook/Card performance. Do not suggest wording or edit lyrics.
