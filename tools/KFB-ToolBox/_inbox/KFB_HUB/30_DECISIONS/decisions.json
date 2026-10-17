@@ -5889,6 +5889,21 @@
    "applies": "ab sofort, R4 und R5"
   },
   {
+   "id": "V-425",
+   "date": "2026-10-17",
+   "area": "Figuren",
+   "verdict": "PASS",
+   "text": "Georgs Blick auf WSB-Proofs B10–B13 (17.10.): B13 4GTN-Zwillinge PASS; B10 Brain-Cyborg Hirn PASS vorerst, TUNE Augen mit E2-Knetlidern leicht ins Hirn gesteckt; B11 Cops TUNE: Mütze passend und sauber (erst 3D-Asset-Suche nach Cartoon-Polizeimütze, sonst sauber selbst bauen), Gewehr beim Marschieren wie KayKit-Promo (aufrecht vor der rechten Schulter, Kolben in der Hand); B12 Man in Black TUNE: Halskragen als weißer Hemdkragen, Hände in Hautfarbe, dünne weiße Hemdmanschetten, Körper-Spender mit schlanken Unterarmen ohne Handschuh-/Rüstungsmanschetten und runden Formen wählen (gilt für alle Anzüge/Smoking).",
+   "values": {},
+   "owner": "WSB",
+   "check": "Proofs je TUNE, WS0 prüft vor Georg",
+   "source": "50_BLENDER/ANTWORT_WS0_2026-10-17.md (18. Nachtrag)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Körper-Spender bestimmt, wie gut Kostüme sitzen; selbst gebastelte Teile wirken schlampig, wenn es passende freie Assets gibt.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5961,7 +5976,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:757",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:759",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
