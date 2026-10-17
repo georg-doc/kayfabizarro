@@ -1,0 +1,17 @@
+{
+  "scope": "Local browser in the existing Site source; hosted visible acceptance requires ChatGPT login",
+  "sourceCommit": "3e5849b0a0375664e9463a5663bbdcfec1847f4c",
+  "observations": [
+    {"case":"Isolated native Mannequin_Medium before SFX", "result":"PASS", "hostContexts":0, "screenshot":"isolated-rig.jpg"},
+    {"case":"Enable 15 existing WAV/OGG files", "result":"PASS", "hostContexts":1},
+    {"case":"24 s fixture all three banks, native walk/run, seam and support landing", "result":"PASS", "steps":37, "landings":1, "duplicateKeys":0, "evidence":"browser-fixture.json"},
+    {"case":"Idle holds event count", "result":"PASS", "beforeSteps":23, "afterSteps":23},
+    {"case":"D real stems + footsteps share host", "result":"PASS", "stemsDecoded":10, "durationDeltaMs":0, "hostContexts":1, "moduleCreatedContexts":0},
+    {"case":"D speech focus continues music and footsteps", "result":"PASS", "voiceActive":true, "scoreTargetDb":-17, "diegeticTargetDb":-18, "playerCriticalGain":1, "stepsAtObservation":109, "duplicateKeys":0, "adaptiveTimeline":"CONTINUES"},
+    {"case":"Stop stems and idle steps", "result":"PASS", "adaptiveStatus":"READY"},
+    {"case":"Hosted signed-in browser revision 0.7.2", "result":"BLOCKED_LOGIN", "exactUrl":"https://kfb-audio.frizzlebob.chatgpt.site/#footsteps", "visiblePage":"Anmelden, um Zugriff zu erhalten → auth.openai.com/log-in"}
+  ],
+  "browserChecksPassed":7,
+  "browserChecksBlocked":1,
+  "notClaimed":["G live re-audition", "Human sonic acceptance", "Physical speaker latency", "World integration", "Canonical performance schema admission"]
+}
