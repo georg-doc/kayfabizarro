@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- Knet-Modul kfb-clay.v1 fertig (replies/CLAY_SSOT_R1/): Ursachen = 5 Umsetzungen, Skalierung in Welteinheiten, Strich-Relief (Streifen), Pixel-abhängiges Ausblenden, Tonemapping je Werkzeug; Modul mit 3 Profilen, objekt-normiert, ohne UV, fester Seed; Golden-Gates G0–G5 PASS (bit-gleich über Ladevorgänge). Im Hub q13 zur Stärke-Entscheidung. Offen: Tonemapping Blender↔Spiel (Neutral vs ACES), Animations-Test, Integration WS1/ToolBox/WSB.
 - WSB 24. Nachtrag erledigt: B15 zurückgesetzt (Dory r7, Hunky edge80), B12 r3 (gebackene Kleidungs-Textur, Zylinder auf dem Kopf, Hose fern sichtbar), B22 r2 (Kenney-Plakatwand CC0 + 3 Armlampen, weiche Kegel, gleichmäßiger Lichtfleck); gesichtet, im Hub q11/q12.
 - V-430: Georg im Hub: WS1-Kombi Merge frei; Schritte-Probe FAIL (Hammerstampfen, zu schnell, Knöpfe kaputt) → ElevenLabs HOLD; B15 Rand FAIL → vorherige Fassung; Anzug r2 TUNE (pixelige Hemdränder, Zylinder, Hose); Lampen TUNE (klassische Billboard-Arme, gleichmäßiger Lichtfleck). 24. Nachtrag an WSB, WS1-Notiz, WSA-Brief Ton-Studio.
 - WSB B12 r2 (Anzug auf CharacterTemplate, Kleidung gemalt, 5 Varianten + FB-Smoking) und B22 (3 CC0-Lampen aus Paketen: Flutlicht Poly Haven, Baustrahler + Laterne Kenney) gesichtet, im Hub als q09/q10 zur Entscheidung.
