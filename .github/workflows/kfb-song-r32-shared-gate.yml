@@ -1,0 +1,19 @@
+name: KFB Money Trail R3.2 Shared Song Gate
+on:
+  push:
+    branches: ["songs/the_kayfabe_money_trail_9_11-r4-2026-10-17"]
+permissions:
+  contents: read
+jobs:
+  shared-r32:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: 3c72b727e8a694a51de7ab5033b7a4eae92c1062
+          path: .kfb-register-readonly
+      - name: R3.2 Shared song_gate.py Part One
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.part1.r4.1.suno.txt --deck registry/assets/v1/decks/the_kayfabe_money_trail_9_11.json --songlines songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.songlines.json --media media/kfb/The_Kayfabe_Money_Trail_-_9-11_-_ADD_web_ID.pdf.json --cards 1-28 --tone the_kayfabe_money_trail_9_11 --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
+      - name: R3.2 Shared song_gate.py Part Two
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.part2.r4.1.suno.txt --deck registry/assets/v1/decks/the_kayfabe_money_trail_9_11.json --songlines songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.songlines.json --media media/kfb/The_Kayfabe_Money_Trail_-_9-11_-_ADD_web_ID.pdf.json --cards 29-60 --tone the_kayfabe_money_trail_9_11 --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2

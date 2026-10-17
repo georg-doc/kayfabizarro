@@ -1,213 +1,271 @@
 {
   "deckId": "the_kayfabe_money_trail_9_11",
-  "version": "R4.1",
-  "spec": "R3.1",
-  "splitByPage": [
-    {
-      "part": 1,
-      "pages": "1–7",
-      "cards": "1–28",
-      "characters": 2679
-    },
-    {
-      "part": 2,
-      "pages": "8–15",
-      "cards": "29–60",
-      "characters": 3072
-    }
-  ],
+  "version": "R4.1/R3.2",
+  "bindingSpec": "R3.2",
+  "metaSkipped": [],
   "songLineChanges": [
     {
       "cardNumber": 1,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "9/11 Trillions: Follow The Kayfabe-Money!, epistemic sabotage, analog financial wrestling.",
-      "after": "Nine-Eleven Trillions: Follow The Kayfabe-Money!, analog financial wrestling, no neutrality."
+      "after": "Nine-Eleven Trillions: Follow The Kayfabe-Money!, analog financial wrestling, no neutrality.",
+      "rule": "A7",
+      "songLine": "Nine-Eleven Trillions: Follow The Kayfabe-Money!, analog financial wrestling, no neutrality.",
+      "songName": "Nine-Eleven Trillions: Follow The Kayfabe-Money!"
     },
     {
       "cardNumber": 2,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Audit: Rule #1: Follow the Money, 9/11 was a crime; detectives must identify perpetrators.",
-      "after": "Audit: Rule Number One: Follow the Money, Nine-Eleven was a crime; detectives identify perpetrators."
+      "after": "Audit: Rule Number One: Follow the Money, Nine-Eleven was a crime; detectives identify perpetrators.",
+      "rule": "A7",
+      "songLine": "Audit: Rule Number One: Follow the Money, Nine-Eleven was a crime; detectives identify perpetrators.",
+      "songName": "Rule Number One: Follow the Money"
     },
     {
       "cardNumber": 4,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Layers: Treasury's 10 Veils, go through 10 veils before real Source; nullify an investigation.",
-      "after": "Treasury's Ten Veils, go through ten veils before real Source; nullify investigation."
+      "after": "Treasury's Ten Veils, go through ten veils before real Source; nullify investigation.",
+      "rule": "A7",
+      "songLine": "Treasury's Ten Veils, go through ten veils before real Source; nullify investigation.",
+      "songName": "Treasury's Ten Veils"
     },
     {
       "cardNumber": 5,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Lease: The Privatized Towers, Port Authority, WTC, 99-year lease signed for $3.2B in 2001.",
-      "after": "Lease: The Privatized Towers, Port Authority agreed to a ninety-nine-year WTC lease signed."
+      "after": "Lease: The Privatized Towers, Port Authority agreed to a ninety-nine-year WTC lease signed.",
+      "rule": "A7",
+      "songLine": "Lease: The Privatized Towers, Port Authority agreed to a ninety-nine-year WTC lease signed."
     },
     {
       "cardNumber": 6,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Leverage: The $14 Million Bridge, GMAC and investors financed control of a multi-billion dollar empire.",
-      "after": "The Fourteen Million Dollar Bridge, financed by GMAC and individual investors, empire."
+      "after": "The Fourteen Million Dollar Bridge, financed by GMAC and individual investors, empire.",
+      "rule": "A7",
+      "songLine": "The Fourteen Million Dollar Bridge, financed by GMAC and individual investors, empire.",
+      "songName": "The Fourteen Million Dollar Bridge"
     },
     {
       "cardNumber": 8,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Refund: The Secret 80% Kickback, Port Authority paid back 80% equity; control maintained.",
-      "after": "The Secret Eighty Percent Kickback, Port Authority paid back initial equity and control."
+      "after": "The Secret Eighty Percent Kickback, Port Authority paid back initial equity and control.",
+      "rule": "A7",
+      "songLine": "The Secret Eighty Percent Kickback, Port Authority paid back initial equity and control.",
+      "songName": "The Secret Eighty Percent Kickback"
     },
     {
       "cardNumber": 9,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Floors 93 To 100, Marsh & McLennan, 2,000 employees and critical transaction data.",
-      "after": "Floors Ninety-Three To One Hundred, Marsh & McLennan, employees and critical data."
+      "after": "Floors Ninety-Three To One Hundred, Marsh & McLennan, employees and critical data.",
+      "rule": "A7",
+      "songLine": "Floors Ninety-Three To One Hundred, Marsh & McLennan, employees and critical data.",
+      "songName": "Floors Ninety-Three To One Hundred"
     },
     {
       "cardNumber": 11,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Receipts: The $10M Anomalies, severe fiscal anomalies, unnecessary hardware sales; Marsh.com mystery.",
-      "after": "Receipts: The Ten Million Dollar Anomalies, fiscal anomalies and unnecessary hardware sales."
+      "after": "Receipts: The Ten Million Dollar Anomalies, fiscal anomalies and unnecessary hardware sales.",
+      "rule": "A7",
+      "songLine": "Receipts: The Ten Million Dollar Anomalies, fiscal anomalies and unnecessary hardware sales.",
+      "songName": "The Ten Million Dollar Anomalies"
     },
     {
       "cardNumber": 14,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "The 40-Minute Window, Deutsche Bank computers externally taken over; download and purge.",
-      "after": "The Forty-Minute Window, Deutsche Bank computers externally taken over; download and purge."
+      "after": "The Forty-Minute Window, Deutsche Bank computers externally taken over; download and purge.",
+      "rule": "A7",
+      "songLine": "The Forty-Minute Window, Deutsche Bank computers externally taken over; download and purge.",
+      "songName": "The Forty-Minute Window"
     },
     {
       "cardNumber": 17,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Options: The Put Options, over 2,000 airline contracts; 30 times normal volume, insider trading.",
-      "after": "Options: The Put Options, airline contracts betting against United, thirty times normal volume."
+      "after": "Options: The Put Options, airline contracts betting against United, thirty times normal volume.",
+      "rule": "A7",
+      "songLine": "Options: The Put Options, airline contracts betting against United, thirty times normal volume."
     },
     {
       "cardNumber": 21,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "The Stratex Spike, 56,000 Stratex shares; FBI never interviewed Walker, no ties.",
-      "after": "The Stratex Spike, fifty-six thousand Stratex shares; FBI never interviewed Walker, no ties."
+      "after": "The Stratex Spike, fifty-six thousand Stratex shares; FBI never interviewed Walker, no ties.",
+      "rule": "A7",
+      "songLine": "The Stratex Spike, fifty-six thousand Stratex shares; FBI never interviewed Walker, no ties."
     },
     {
       "cardNumber": 23,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Buzzy Krongard's Brokerage, 2,500 put contracts; brokered by firm formerly chaired by CIA.",
-      "after": "Buzzy Krongard's Brokerage, twenty-five hundred put contracts, firm formerly chaired by CIA."
+      "after": "Buzzy Krongard's Brokerage, twenty-five hundred put contracts, firm formerly chaired by CIA.",
+      "rule": "A7",
+      "songLine": "Buzzy Krongard's Brokerage, twenty-five hundred put contracts, firm formerly chaired by CIA."
     },
     {
       "cardNumber": 25,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Question: The SEC Investigation, 9.5 million transactions; who had advanced knowledge to trade?",
-      "after": "Question: The SEC Investigation, nine point five million transactions, advanced knowledge."
+      "after": "Question: The SEC Investigation, nine point five million transactions, advanced knowledge.",
+      "rule": "A7",
+      "songLine": "Question: The SEC Investigation, nine point five million transactions, advanced knowledge."
     },
     {
       "cardNumber": 26,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "The Single Institutional Investor, 95% of airline puts; no conceivable ties, free pass.",
-      "after": "The Single Institutional Investor, ninety-five percent of airline puts; free pass."
+      "after": "The Single Institutional Investor, ninety-five percent of airline puts; free pass.",
+      "rule": "A7",
+      "songLine": "The Single Institutional Investor, ninety-five percent of airline puts; free pass."
     },
     {
       "cardNumber": 28,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Handwave: The 9/11 Commission Handwave, first rule Follow the Money rejected; little significance.",
-      "after": "Handwave: The Nine-Eleven Commission Handwave, first rule Follow the Money rejected; little significance."
+      "after": "Handwave: The Nine-Eleven Commission Handwave, first rule Follow the Money rejected; little significance.",
+      "rule": "A7",
+      "songLine": "Handwave: The Nine-Eleven Commission Handwave, first rule Follow the Money rejected; little significance.",
+      "songName": "The Nine-Eleven Commission Handwave"
     },
     {
       "cardNumber": 35,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Capital: Sarmand Limited, investment firm backed by al-Qadi; $5 million seed capital for Ptech.",
-      "after": "Sarmand Limited, firm backed by al-Qadi; five million dollars seed capital for Ptech."
+      "after": "Sarmand Limited, firm backed by al-Qadi; five million dollars seed capital for Ptech.",
+      "rule": "A7",
+      "songLine": "Sarmand Limited, firm backed by al-Qadi; five million dollars seed capital for Ptech."
     },
     {
       "cardNumber": 38,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "The Pre-Raid Warning, Ptech given two weeks advanced warning for the FBI raid in 2002.",
-      "after": "The Pre-Raid Warning, two weeks advanced warning; FBI raided Ptech in two thousand two."
+      "after": "The Pre-Raid Warning, two weeks advanced warning; FBI raided Ptech in two thousand two.",
+      "rule": "A7",
+      "songLine": "The Pre-Raid Warning, two weeks advanced warning; FBI raided Ptech in two thousand two."
     },
     {
       "cardNumber": 40,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Wallet: Thomas Kean's Wallet, $24M real estate transaction with BMI; Commission never looked.",
-      "after": "Wallet: Thomas Kean's Wallet, twenty-four million dollar transaction with BMI, Commission."
+      "after": "Wallet: Thomas Kean's Wallet, twenty-four million dollar transaction with BMI, Commission.",
+      "rule": "A7",
+      "songLine": "Wallet: Thomas Kean's Wallet, twenty-four million dollar transaction with BMI, Commission."
     },
     {
       "cardNumber": 41,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Rumsfeld's Declaration, adversary closer to home, Pentagon bureaucracy, 24 hours before.",
-      "after": "Rumsfeld's Declaration, adversary closer to home, Pentagon bureaucracy, twenty-four hours."
+      "after": "Rumsfeld's Declaration, adversary closer to home, Pentagon bureaucracy, twenty-four hours.",
+      "rule": "A7",
+      "songLine": "Rumsfeld's Declaration, adversary closer to home, Pentagon bureaucracy, twenty-four hours."
     },
     {
       "cardNumber": 42,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Ledger: The $2.3 Trillion Cushion, transactions could not be accounted for; $8,000 for every citizen.",
-      "after": "Ledger: The Two Point Three Trillion Cushion, transactions not accounted for, fudge entries."
+      "after": "Ledger: The Two Point Three Trillion Cushion, transactions not accounted for, fudge entries.",
+      "rule": "A7",
+      "songLine": "Ledger: The Two Point Three Trillion Cushion, transactions not accounted for, fudge entries.",
+      "songName": "The Two Point Three Trillion Cushion"
     },
     {
       "cardNumber": 43,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "The Whistleblower's Reward, Jim Minnery tried to track $300 million; why do you care?",
-      "after": "His question: The Whistleblower's Reward, Jim Minnery tried to track three hundred million; why care?"
+      "after": "His question: The Whistleblower's Reward, Jim Minnery tried to track three hundred million; why care?",
+      "rule": "A7",
+      "songLine": "His question: The Whistleblower's Reward, Jim Minnery tried to track three hundred million; why care?"
     },
     {
       "cardNumber": 44,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Dov Zakheim's Ledger, missing $2.3 trillion; papers on military transformation instead.",
-      "after": "Dov Zakheim's Ledger, two point three trillion missing; drafted papers on transformation."
+      "after": "Dov Zakheim's Ledger, two point three trillion missing; drafted papers on transformation.",
+      "rule": "A7",
+      "songLine": "Dov Zakheim's Ledger, two point three trillion missing; drafted papers on transformation."
     },
     {
       "cardNumber": 48,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "The Fear Integration, what registers with people is fear; $50 billion budget increase.",
-      "after": "The Fear Integration, people register fear; fifty billion dollar budget increase."
+      "after": "The Fear Integration, people register fear; fifty billion dollar budget increase.",
+      "rule": "A7",
+      "songLine": "The Fear Integration, people register fear; fifty billion dollar budget increase."
     },
     {
       "cardNumber": 49,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Wedge 1 Renovations, 34 bookkeepers and budget analysts killed; office just moved back.",
-      "after": "Office: Wedge One Renovations, thirty-four bookkeepers and budget analysts killed, office moved."
+      "after": "Office: Wedge One Renovations, thirty-four bookkeepers and budget analysts killed, office moved.",
+      "rule": "A7",
+      "songLine": "Office: Wedge One Renovations, thirty-four bookkeepers and budget analysts killed, office moved.",
+      "songName": "Wedge One Renovations"
     },
     {
       "cardNumber": 50,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "The Unproduceable Report, Army unable to produce 2001 financial report due to loss.",
-      "after": "The Unproduceable Report, Army unable to produce two thousand one financial report due to loss."
+      "after": "The Unproduceable Report, Army unable to produce two thousand one financial report due to loss.",
+      "rule": "A7",
+      "songLine": "The Unproduceable Report, Army unable to produce two thousand one financial report due to loss."
     },
     {
       "cardNumber": 52,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Building 7 SEC Vault, SEC floors 11-13, evidence on Enron wiped out when building collapsed.",
-      "after": "Building Seven SEC Vault, SEC occupied floors eleven to thirteen; Enron evidence wiped out."
+      "after": "Building Seven SEC Vault, SEC occupied floors eleven to thirteen; Enron evidence wiped out.",
+      "rule": "A7",
+      "songLine": "Building Seven SEC Vault, SEC occupied floors eleven to thirteen; Enron evidence wiped out.",
+      "songName": "Building Seven SEC Vault"
     },
     {
       "cardNumber": 53,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Decade: The $8.5 Trillion Benchmark, money unaccountable from $2.3T to $8.5T; no hearing.",
-      "after": "Decade: The Eight Point Five Trillion Benchmark, unaccountable money over a decade, no hearing."
+      "after": "Decade: The Eight Point Five Trillion Benchmark, unaccountable money over a decade, no hearing.",
+      "rule": "A7",
+      "songLine": "Decade: The Eight Point Five Trillion Benchmark, unaccountable money over a decade, no hearing.",
+      "songName": "The Eight Point Five Trillion Benchmark"
     },
     {
       "cardNumber": 55,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Linda Woodford's Eraser, money missing every month; 15 years falsifying Navy records.",
-      "after": "Monthly: Linda Woodford's Eraser, money missing every month; fifteen years falsifying Navy records."
+      "after": "Monthly: Linda Woodford's Eraser, money missing every month; fifteen years falsifying Navy records.",
+      "rule": "A7",
+      "songLine": "Monthly: Linda Woodford's Eraser, money missing every month; fifteen years falsifying Navy records."
     },
     {
       "cardNumber": 56,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "The Iraq Pocket Change, $50 billion wasted, $6 billion lost in Iraq, a war zone.",
-      "after": "The Iraq Pocket Change, fifty billion wasted, six billion lost in Iraq, a war zone."
+      "after": "The Iraq Pocket Change, fifty billion wasted, six billion lost in Iraq, a war zone.",
+      "rule": "A7",
+      "songLine": "The Iraq Pocket Change, fifty billion wasted, six billion lost in Iraq, a war zone."
     },
     {
       "cardNumber": 58,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "The Suspects' Story, answers to 9/11 not going to come from suspects of the crime.",
-      "after": "The Suspects' Story, answers to Nine-Eleven not going to come from suspects of the crime."
+      "after": "The Suspects' Story, answers to Nine-Eleven not going to come from suspects of the crime.",
+      "rule": "A7",
+      "songLine": "The Suspects' Story, answers to Nine-Eleven not going to come from suspects of the crime."
     },
     {
       "cardNumber": 60,
       "reason": "A7 required spoken number/symbol replacement",
       "before": "Uncle FrizzleBob's Verdict, they told you 9/11 changed everything; house infinitely rich.",
-      "after": "Uncle FrizzleBob's Verdict, Nine-Eleven changed everything; house infinitely rich."
+      "after": "Uncle FrizzleBob's Verdict, Nine-Eleven changed everything; house infinitely rich.",
+      "rule": "A7",
+      "songLine": "Uncle FrizzleBob's Verdict, Nine-Eleven changed everything; house infinitely rich."
     }
   ],
-  "songLineCount": 31,
-  "totalCardLines": 60,
-  "percentage": 51.67,
-  "limitPercent": 10,
-  "status": "A5_OVER_LIMIT_MANDATORY_A7",
-  "noCanonicalSourceChanged": true
+  "wordRewriteCount": 0,
+  "mandatoryA7Count": 31
 }
