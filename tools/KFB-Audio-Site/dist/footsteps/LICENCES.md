@@ -42,3 +42,7 @@ Exact added source hashes are in sources.json r2Rows. Optional game-dev CLI unav
 
 No source audio was added or replaced. R2's 20 verified Kenney donors and all source hashes remain unchanged. After Georg identified the external Suno song in Safari, the hammering report was not used to justify replacement donors. Georg separately requested a softer default: only wet-clay/Cozy changes to 450 Hz lowpass, gain .5 and 24 ms attack. Sand/stone/wood, source selection, pitch variation and semantic destination remain unchanged. Contact timing now follows the rendered skinned sole, with original hips animation retained. This is not a claim of new clay field recordings or human acceptance.
 
+# 2026-10-18 · 0.7.5 superseding treatment / Georg TUNE
+
+Sand is now a softer 620 Hz / 32 ms-attack / 280 ms-tail interpretation of the same CC0 snow donors, not a new sand field recording. All four banks are level-matched AFTER filtering and envelope (target per-step RMS .010, pre-host gain), with a .12 sample peak ceiling. No paid generation or new licence. RMS matching is an engineering proxy, not equal perceptual loudness certification. Walk uses first sustained support hand-over on a fixed ground plane; the audio-owned preview applies vertical sole grounding without changing source GLBs or any World animation owner.
+

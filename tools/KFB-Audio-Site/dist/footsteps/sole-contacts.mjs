@@ -22,6 +22,14 @@ export function measureSoleContacts(THREE,{mixer,clip,actor,soles}){
   candidates[foot]=intervals.map(item=>({foot,phase:item.i/frames,soleY:ys[item.i],floorY:min,lift:max-min,supportSeconds:item.span/frames*clip.duration}));
  }
  let best=null;
+ if(clip.name==='Walking_A'){
+  // First support hand-over on the grounded walking preview, NOT lowest sole later in stance.
+  for(const foot of ['l','r']){const other=foot==='l'?'r':'l',ys=curves[foot],os=curves[other];let found=[];
+   for(let i=0;i<frames;i++){const j=(i+frames-1)%frames,a=ys[j]-os[j],b=ys[i]-os[i];if(a>0&&b<=0){const t=a/(a-b),phase=((j+t)/frames)%1;let span=0;while(span<frames&&ys[(i+span)%frames]<=os[(i+span)%frames])span++;found.push({foot,phase,soleY:ys[i],floorY:ys[i],lift:Math.max(...ys)-Math.min(...ys),supportSeconds:span/frames*clip.duration});}}
+   found.sort((a,b)=>b.supportSeconds-a.supportSeconds);if(!found.length||found[0].supportSeconds<clip.duration*.2)throw Error('No sustained walking support: '+foot);points.push(found[0]);
+  }
+  action.stop();return {clip:clip.name,duration:clip.duration,frames,entries:points.sort((a,b)=>a.phase-b.phase),soleVertices:soles.counts,curves,groundedWalk:true,contactBasis:'first alternating support handover / grounded skinned soles'};
+ }
  for(const l of candidates.l)for(const r of candidates.r){const gap=(r.phase-l.phase+1)%1,cost=Math.abs(gap-.5)*100-l.supportSeconds-r.supportSeconds;if(!best||cost<best.cost)best={l,r,cost};}
  points.push(best.l,best.r);action.stop();return {clip:clip.name,duration:clip.duration,frames,entries:points.sort((a,b)=>a.phase-b.phase),soleVertices:soles.counts,curves,contactBasis:'skinned sole vertices / 2mm support-window entry'};
 }

@@ -1,7 +1,8 @@
 import {chooseIndex} from './contact-core.mjs';
+import {shapePCM} from './sample-shape.mjs?v=0.7.5';
 // Injected host only. No context creation, DOM, timers or music ownership.
 export const SURFACES={
- sand:{prefix:'footstep_snow_',cutoff:1100,tail:.24,gain:.78},
+ sand:{prefix:'footstep_snow_',cutoff:620,tail:.28,gain:.78,attack:.032},
  stone:{prefix:'footstep_concrete_',cutoff:950,tail:.19,gain:.72},
  wood:{prefix:'footstep_wood_',cutoff:780,tail:.22,gain:.72},
  'wet-clay':{prefix:'grass-',cutoff:450,tail:.24,gain:.5,attack:.024}
@@ -20,8 +21,10 @@ export async function createFootstepAudio({audioContext:ctx,destination,rows}){
    for(let ch=0;ch<b.numberOfChannels;ch++)for(const v of b.getChannelData(ch))peak=Math.max(peak,Math.abs(v));
    for(let ch=0;ch<b.numberOfChannels;ch++){const pcm=b.getChannelData(ch);for(let i=0;i<pcm.length;i++)if(Math.abs(pcm[i])>peak*.035){onset=Math.min(onset,i);break;}}
    const trim=Math.max(0,onset/b.sampleRate-.002);
-   banks[surface].push({buffer:b,trim,gain:Math.min(1,.11/Math.max(.01,peak)),file:row.file});
-   metrics.push({surface,file:row.file,duration:b.duration,sampleRate:b.sampleRate,peak,trimSeconds:trim,onsetAfterTrimMs:(onset/b.sampleRate-trim)*1000});
+   const shaped=shapePCM(Array.from({length:b.numberOfChannels},(_,ch)=>b.getChannelData(ch)),b.sampleRate,config),processed=ctx.createBuffer(b.numberOfChannels,shaped.channels[0].length,b.sampleRate);
+   shaped.channels.forEach((pcm,ch)=>processed.copyToChannel(pcm,ch));
+   banks[surface].push({buffer:processed,trim:0,gain:1,onset:shaped.onsetSeconds,file:row.file});
+   metrics.push({surface,file:row.file,duration:b.duration,sampleRate:b.sampleRate,peak,trimSeconds:0,onsetAfterTrimMs:shaped.onsetSeconds*1000,processedRms:shaped.rms,processedPeak:shaped.peak});
   }
   if(banks[surface].length!==5)throw Error('Exactly five donors required: '+surface);
  }}catch(e){output.disconnect();capture.disconnect();throw e;}
@@ -29,18 +32,16 @@ export async function createFootstepAudio({audioContext:ctx,destination,rows}){
  function play(cue){
   const bank=cue.surface,config=SURFACES[bank];if(!armed||!config)return null;
   const index=chooseIndex(banks[bank].length,last[bank]??-1);last[bank]=index;const sample=banks[bank][index];
-  const src=ctx.createBufferSource(),hp=ctx.createBiquadFilter(),low=ctx.createBiquadFilter(),env=ctx.createGain();
+  const src=ctx.createBufferSource(),env=ctx.createGain();
   const rate=.97+Math.random()*.06;src.buffer=sample.buffer;src.playbackRate.value=rate;
-  hp.type='highpass';hp.frequency.value=65;low.type='lowpass';low.frequency.value=config.cutoff;low.Q.value=.5;
-  src.connect(hp).connect(low).connect(env).connect(output);
-  const attack=config.attack||.01,lead=metrics.find(m=>m.file===sample.file).onsetAfterTrimMs/1000+attack*.5;
+  src.connect(env).connect(output);
+  const attack=config.attack||.01,lead=sample.onset/rate;
   const when=Math.max(ctx.currentTime,cue.time-lead),duration=Math.min(config.tail,(sample.buffer.duration-sample.trim)/rate);
-  const gain=sample.gain*config.gain*(.88+Math.random()*.12)*(cue.kind==='land'?1.15:1);
-  env.gain.setValueAtTime(0,when);env.gain.linearRampToValueAtTime(gain,when+attack);
-  env.gain.exponentialRampToValueAtTime(Math.max(.0001,gain*.24),when+duration*.55);env.gain.linearRampToValueAtTime(0,when+duration);
+  const gain=(.96+Math.random()*.04)*(cue.kind==='land'?1.1:1);
+  env.gain.setValueAtTime(gain,when);
   while(live.size>=4){const s=live.values().next().value;try{s.stop();}catch{}live.delete(s);}live.add(src);
-  src.onended=()=>{live.delete(src);for(const n of [src,hp,low,env])n.disconnect();};src.start(when,sample.trim);src.stop(when+duration+.002);
-  const record={...cue,file:sample.file,pitchRate:rate,scheduled:when,estimatedOnsetAt:when+lead,onsetEstimateErrorMs:(when+lead-cue.time)*1000,late:ctx.currentTime>cue.time-lead,driftMs:(when-cue.time)*1000,renderToScheduleMs:(when-cue.renderedAt)*1000,attackMs:attack*1000,outputPeakCeiling:gain*.5};
+  src.onended=()=>{live.delete(src);for(const n of [src,env])n.disconnect();};src.start(when,sample.trim);src.stop(when+duration+.002);
+  const record={...cue,file:sample.file,pitchRate:rate,scheduled:when,estimatedOnsetAt:when+lead,onsetEstimateErrorMs:(when+lead-cue.time)*1000,late:ctx.currentTime>cue.time-lead,driftMs:(when-cue.time)*1000,renderToScheduleMs:(when-cue.renderedAt)*1000,attackMs:attack*1000,outputPeakCeiling:gain*.06};
   scheduled.push(record);if(scheduled.length>3000)scheduled.shift();return record;
  }
  return {play,stop,metrics,scheduled,capture,output,arm(){armed=true;output.gain.setValueAtTime(.5,ctx.currentTime);},setCaptureDelay(seconds){captureDelay.delayTime.value=Math.max(0,Math.min(.45,seconds));},state(){meter.getFloatTimeDomainData(meterPCM);return {armed,activeSources:live.size,rms:Math.sqrt(meterPCM.reduce((n,v)=>n+v*v,0)/meterPCM.length)};},dispose(){stop();output.disconnect();captureDelay.disconnect();meter.disconnect();}};

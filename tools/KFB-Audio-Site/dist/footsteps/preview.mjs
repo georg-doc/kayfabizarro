@@ -3,8 +3,8 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {measureClip} from './vendor/locomotion-profiles.v1.js';
 import {entries,ContactTimeline} from './contact-core.mjs';
-import {createFootstepAudio} from './audio.mjs?v=0.7.4';
-import {makeSoles,measureSoleContacts} from './sole-contacts.mjs?v=0.7.4';
+import {createFootstepAudio} from './audio.mjs?v=0.7.5';
+import {makeSoles,measureSoleContacts} from './sole-contacts.mjs?v=0.7.5';
 const $=id=>document.getElementById(id);
 let host,audio,scene,renderer,camera,controls,actor,mixer,feet,active,profiles={},clips={},mode='idle',figure='Medium',playing=false,lastTime=null,loops=0,epoch=0,jump=null,recording=null,demo=null,initPromise,audioPromise;
 const timeline=new ContactTimeline(),events=[],actions=[],frameGaps=[],models={};
@@ -48,7 +48,7 @@ function cue(c,now){if(!c||!audio)return;const p=feet[c.foot==='r'?'r':'l'].getW
 function snapshot(){
  const ds=events.map(e=>e.onsetEstimateErrorMs).sort((a,b)=>a-b),rs=avSamples.map(e=>Math.abs(e.avErrorMs)).sort((a,b)=>a-b);
  const duplicate=events.filter((e,i)=>events.slice(0,i).some(p=>p.key===e.key)).length,rate=Number($('footTempo').value),focus=window.KFBAudioSite?.musicContext.getSnapshot();
- return {revision:'0.7.4-sole-contact-r3',playing,mode,figure,rate,surface:$('footSurface').value,hostContexts:window.KFBAudioSite?.audioContextsCreated,clock:'existing AudioContext output timestamp / native clip sampled from shared origin',bus:'PLAYER_CRITICAL',profiles,decode:audio?.metrics||[],audioState:audio?.state()||null,counts:{events:events.length,steps:events.filter(e=>e.kind==='footstep').length,landings:events.filter(e=>e.kind==='land').length,duplicateKeys:duplicate,suppressed:timeline.suppressed},cadenceStepsPerSecond:profiles[active?.getClip().name]?.qualifiedCadenceSpm/60*rate||0,sourceOnsetEstimateMs:{max:ds.at(-1)||0},renderedSoleToEstimatedOnsetMs:{max:rs.at(-1)||0,p95:rs[Math.floor(rs.length*.95)]||0},avSamples,outputLagMs:host?(host.ctx.currentTime-outputTime())*1000:0,frameGapMsMax:Math.max(0,...frameGaps),musicFocus:focus,events,actions,cues:timeline.packet(),limits:'Soles measured from rendered skinned vertices; source-onset estimate (not an acoustic measurement); device queue compensated via output timestamp. Acoustic speaker latency not independently recorded.'};
+ return {revision:'0.7.5-sole-contact-r3',playing,mode,figure,rate,surface:$('footSurface').value,hostContexts:window.KFBAudioSite?.audioContextsCreated,clock:'existing AudioContext output timestamp / native clip sampled from shared origin',bus:'PLAYER_CRITICAL',profiles,decode:audio?.metrics||[],audioState:audio?.state()||null,counts:{events:events.length,steps:events.filter(e=>e.kind==='footstep').length,landings:events.filter(e=>e.kind==='land').length,duplicateKeys:duplicate,suppressed:timeline.suppressed},cadenceStepsPerSecond:profiles[active?.getClip().name]?.qualifiedCadenceSpm/60*rate||0,sourceOnsetEstimateMs:{max:ds.at(-1)||0},renderedSoleToEstimatedOnsetMs:{max:rs.at(-1)||0,p95:rs[Math.floor(rs.length*.95)]||0},avSamples,outputLagMs:host?(host.ctx.currentTime-outputTime())*1000:0,frameGapMsMax:Math.max(0,...frameGaps),musicFocus:focus,events,actions,cues:timeline.packet(),limits:'Soles measured from rendered skinned vertices; source-onset estimate (not an acoustic measurement); device queue compensated via output timestamp. Acoustic speaker latency not independently recorded.'};
 }
 function renderMetrics(){const s=snapshot();$('footMetrics').textContent=(playing?'Playing':'Stopped')+' · '+figure+' · '+mode+' · '+s.cadenceStepsPerSecond.toFixed(2)+' steps/s · '+s.counts.steps+' steps · '+s.counts.duplicateKeys+' duplicates · '+(s.hostContexts??0)+' AudioContext';$('footDiagnostics').textContent=JSON.stringify(s,null,2);}
 function stop(stopMedia=true){playing=false;demo=null;jump=null;if(actor)actor.position.y=0;timeline.previous=null;timeline.grounded=true;audio?.stop();setMode('idle');if(recording)stopRecording();if(stopMedia)for(const media of $('footsteps').querySelectorAll('video,audio'))media.pause();$('footStop').disabled=false;$('footPlay').disabled=false;status('Stopped · live audio and footstep media stopped');renderMetrics();}
@@ -64,7 +64,8 @@ function frame(){
   if(playing){
    if(dt>.1){timeline.previous=null;status('Long frame: stale contacts discarded');}
    const rate=Number($('footTempo').value),visibleTime=outputTime(),duration=active.getClip().duration;
-   visualPhase=Math.max(0,(visibleTime-origin)*rate/duration);active.time=(visualPhase%1)*duration;mixer.update(0);actor.updateMatrixWorld(true);
+   actor.position.y=0;visualPhase=Math.max(0,(visibleTime-origin)*rate/duration);active.time=(visualPhase%1)*duration;mixer.update(0);actor.updateMatrixWorld(true);
+   if(mode==='walk'){actor.position.y=-Math.min(soles.height('l'),soles.height('r'));actor.updateMatrixWorld(true);}
    if(jump){const u=Math.min(1,(now-jump.start)/.9);actor.position.y=4*.65*u*(1-u);
     if(u>=1){actor.position.y=0;cue(timeline.support(true,now,$('footSurface').value),now);jump=null;setMode('land');}
    }
@@ -72,10 +73,10 @@ function frame(){
    for(const c of timeline.advance({owner:active.getClip().name+':'+epoch,phase,duration:duration/rate,time:futureTime,points,moving:(mode==='walk'||mode==='run')&&!jump&&dt<=.1,surfaceAt:()=>$('footSurface').value}))cue(c,now);
    for(const e of events){if(e.epoch!==epoch||e.renderedAt!=null||e.time>visibleTime||e.kind!=='footstep')continue;
     e.renderedAt=visibleTime;const p=points.find(p=>p.foot===e.foot),height=soles.height(e.foot);
-    avSamples.push({foot:e.foot,figure,mode,contact:e.time,estimatedOnset:e.estimatedOnsetAt,rendered:visibleTime,avErrorMs:(visibleTime-e.estimatedOnsetAt)*1000,soleY:height,floorY:p.floorY,soleClearance:height-p.floorY});if(avSamples.length>3000)avSamples.shift();
+    const supportY=mode==='walk'?0:p.floorY;avSamples.push({foot:e.foot,figure,mode,contact:e.time,estimatedOnset:e.estimatedOnsetAt,rendered:visibleTime,avErrorMs:(visibleTime-e.estimatedOnsetAt)*1000,soleY:height,floorY:supportY,soleClearance:height-supportY});if(avSamples.length>3000)avSamples.shift();
     $('footLast').textContent='CONTACT '+e.foot.toUpperCase()+' · '+e.surface+' · sole '+((height-p.floorY)*1000).toFixed(1)+' mm';
    }
-   if(points.length)scene.userData.floor.position.y=Math.min(...points.map(p=>p.floorY))-.03;
+   if(points.length)scene.userData.floor.position.y=mode==='walk'?-.03:Math.min(...points.map(p=>p.floorY))-.03;
    if(mode==='land'&&visualPhase>=1)setMode($('footGait').value);
   }
  }
