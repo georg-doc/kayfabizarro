@@ -6,3 +6,6 @@ Run https://github.com/georg-doc/kayfabizarro/actions/runs/39031905120; candidat
 
 ## V-418 pre-blind semantic repair
 After an additional A8/E16b audit: #17 Giant now a tusked monster-heel without cannibal/Jobber-eating language; #20 shipwreck uses timber image, not hard reset/equipped items; #30 horseman points to grave (no programmed referee), #32 spoiler tablets no card mechanics, #38 ebony mechanical horse image not a "Tech Gimmick", #43 hunchback scapegoat scene not card effect, #58 Montreal protest at stolen belt not reset. All key new words sourced from printed lore and PDF JSON artworkPrompt (source images NOT independently rendered). No card omitted, old R4 remains. Updated candidate 4997 chars. Mechanical rerun pending; prior CI belongs to old candidate and does not validate this new content.
+
+## V-418 final pre-blind semantic repair · executed QA
+https://github.com/georg-doc/kayfabizarro/actions/runs/39033060994 · candidate d1025e32fd36b3ce5bb66eca1db50a59fa803d0f. Exact original triplet_set_check.py SUCCESS (exit 0), R3.1 format_gate_r31.py SUCCESS (exit 0), 2/2 PASS. Updated 56 source-pinned lines, 4997 characters. The Giant no cannibal/Jobber-eating content; Shipwreck, Horseman, Seven Tablets, Ebony Horse, Hunchback, Montreal Screwjob no literal game rule/effect recital. No independent blind review; no writer post-review edit.
