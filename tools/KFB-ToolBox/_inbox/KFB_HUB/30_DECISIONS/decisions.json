@@ -5342,6 +5342,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-389",
+   "date": "2026-10-17",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "Eine Ereignis-Zeitleiste für Choreografie, Sounddesign, VFX und Licht (Georg 17.10.): Schritte, SFX, VFX, Lichtcues und Tanz sind Cues derselben Zeitleiste, nutzbar im Spiel (live aus Kontakten/M2EVENTS) und in Comic-Motion/Musikvideo (vorberechnet). kfb.performance/1 wird additiv um sfx[], vfx[], lights[] erweitert. Die KFB Audio Site (tools/KFB-Audio-Site, „KFB Audio 0.5.1“) ist der einzige Audio-Besitzer inkl. Soundbed, Mischung, Dialog-Ducking und Schritten; der Schritte-Mikro-Beweis läuft dort mit kleiner Motion-Vorschau, die Kontakte aus der ToolBox-Seite kaykit-motion-lab-v1 liest. Schritte in Karaoke-Tänzen vorgesehen, zurückgestellt.",
+   "values": {},
+   "owner": "WSA work (Audio Site) · WS0 (Format) · WS1/WSV (Abspieler)",
+   "check": "Schritte-Beweis in der Audio Site; performance.json mit sfx[]/vfx[]/lights[]",
+   "source": "Georg 17.10.: „zusammen mit unserer Audio-Site zu denken … alles ineinander greift … Comic-Motion oder Game“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Getrennte Werkzeuge für Ton, Licht und Tanz laufen auseinander; eine Zeitleiste und ein Audio-Besitzer halten alles synchron.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5414,7 +5429,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:711",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:712",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
