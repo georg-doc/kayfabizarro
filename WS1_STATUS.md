@@ -1,7 +1,55 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§67 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§68 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 68 · 17.10. früh · L3 Licht-Lauf (Zwischenstand, Branch `l3/licht` @c88075c, lokal) · Georgs Urteil „zu hell, nicht gemütlich“ → Stimmung „Mesa“ · Fragen an WS0
+
+### 68.1 · Gebaut (nach LIGHT_MODEL_R2, V-382/V-385/V-386/V-392/V-383)
+- **Licht-Modul** `src/vendor/light/kfb-stage-light.v1.js` (`kfb.stage-light/1`, vendorbar, nur three):
+  - Rig: Sonne als einziger Schattenwerfer, Hemisphäre mit Boden = edgePalette (V-396) × `bounce`, ein weiches warmes Figurenlicht (Spot, schattenlos, vorn-oben auf Kameraseite, Stärke je Stimmung).
+  - `fitShadow`: Kugel-Fit, Texel-Raster, enger Tiefenbereich, normalBias = 1,5 × Texel, bias abgeleitet.
+  - `createContactAO`: Gauß-Fleck ohne Ring, optional an der Boden-Normale.
+  - `createPracticals`: V-329-Pool, Billboard-Lampen und Goblin-/Atlantis-Praktische aus stage-edges.
+  - `applyTone`: ein Tonemapping für alle Schichten.
+  - `selfTest`: Spalt-Messung Kugel/Kiste, Ergebnis 0.
+- **Entfernt:** `actorRim` (Randlicht), `faceFill`, `toneSplit`, Gegenlicht, Look-B-Lichtsättigung. Look B tönt nur noch den Himmel.
+- **Karte und Bühne:** Karte (Billboard und Meshy-Bildfläche) = MeshStandard, roughness 1, im selben Ton-Pfad; Billboard-Lampenarme nach Highway-Spender mit Emissive-Köpfen.
+- **Figuren:** Samt ≤ 0,05.
+- **Abnahme-Oberfläche V-383:** Vergleichsleiste eingeklappt am Rand, „Sauberes Bild“ (H). Hochformat: Kamera fährt zurück (k = 1,42 / Seitenverhältnis), statt nur die Mitte zu zeigen.
+- **Licht-Test neu** (`test/light`, L3): 17 Prüfungen, nach Toleranz-Fix grün; Spalt-Selbsttest 0. Volle Reihe folgt mit dem Beweislauf.
+
+### 68.2 · Tonemapping-Messung (Regel 5, feste Belichtung, Maß = ΔE von Boden und Bühne gegen „ohne“, Clipping)
+| | Tag | Gold | Clipping | Punkte |
+|---|---|---|---|---|
+| AgX | 2,11 | 3,27 | 0 | 7,73 |
+| ACES | 4,13 | 1,72 | 0,05 % Gold | 8,50 |
+| Neutral | 3,40 | 5,34 | 0 | 16,03 |
+| ohne | – | – | bis 2,3 % | scheidet aus |
+
+AgX gewinnt nach Zahl knapp, senkt aber die Sättigung sichtbar (Boden-Chroma −31 % am Tag, FB fahl).
+
+### 68.3 · Georg zum ersten L3-Bild (J17-Werte + AgX): „viel zu hell und überstrahlt, keine gemütliche, warme Stimmung“
+Georgs Vorgabe als Grundstimmung: wie die farbigen Krazy-Kat-Sonntagsseiten, New Mexico/Arizona, Mesas, warme Sommertage, laue Abende.
+- **WS1 baute dazu den Stimmungs-Satz `mesa` (jetzt Standard, mit ACES):**
+  - Tag: Sonne #ffdcae 2,4 bei 38°, Hemi #b4bdee 0,82 (lavendel → violette Schatten), Boden-Rückstrahlung × 0,5.
+  - Gold: Sonne #ff9246 2,3 bei 11°, Hemi #9c9be2.
+  - Nacht: Mond #93a6ee 0,35, Hemi #3b3878, Figurenlicht 1,7.
+  - Himmel `SKY_TINT.mesa`: oben 42 % Richtung #2f93c4, unten 40 % Richtung #f7b788.
+  - Billboard-Lampen gedämpft (L-2), Figurenlicht-Kegel breiter.
+- `cozy` (wärmer/gedämpft) und `r2` (J17 nach R2) bleiben als Vergleich (`lset=`).
+- Bildpaare und Abnahmefragen liegen bei Georg auf einer Abnahme-Seite: Stimmung, Tonkurve, weiteres Vorgehen.
+- Der volle Beweislauf (L-1–L-9, 3 Stimmungen × 3 Ansichten × 16:9/9:16) folgt nach Georgs Richtungsentscheid.
+
+### 68.4 · Fragen bzw. Entscheide für WS0
+1. **R2-Stimmungstabelle vs. Mesa:** R2 setzt J17-Tageswerte. Georgs Urteil verlangt wärmer, dunkler, gemütlich. Bitte nach Georgs Wahl als Register-Entscheid eintragen. Vorschlag: Mesa ersetzt die R2-Tabelle als Standard-Stimmung, J17 bleibt Referenz.
+2. **Tonemapping:** WS1 wählt ACES gegen den knappen Mess-Sieger AgX, wegen der Sättigung (V-355 je Schicht ≤ 15 % würde AgX am Tag reißen). Bitte bestätigen oder die Messregel um Chroma-Treue ergänzen.
+3. **M1/M2 auf das Licht-Modul** (Fehlerliste Stufe 0): nach dem L3-Merge durch die Bewegungs-Sitzung.
+   - Georg reproduziert in der Fahrprobe einen flackernden, hart abgeschnittenen Zweitschatten neben dem Auto. Vermutete Ursache: followShadow-Frustum ±7,8 m mit fester Bias-Zahl aus der alten Weltgröße; Gold-Schatten ≈ 7 m.
+   - fitShadow mit Radius über Schattenlänge plus abgeleitetem Bias soll das lösen.
+4. **Figurenkarten V-391:** Die Bühne lädt Figuren noch direkt (stageCast). Umbau als eigener kleiner Schritt nach L3. Ist das Reihenfolge-gerecht, oder soll er vor Slice 1?
+
+Aufwand L3 bisher: ca. 3 h (davon ca. 1 h Browser-Läufe), ein Beweislauf wegen Hochformat- und Overlay-Fehlern abgebrochen und neu aufgesetzt.
 
 ## 67 · 17.10. nachts · M2 gemergt (Georg-Freigabe) · main @20caedc · Vorschau mit Fahrprobe
 
