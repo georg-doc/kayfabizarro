@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Augenlider E2 für alle Figuren – ein gemeinsames Modul (V-417/V-348)
+Nicht selbst bauen: WS0 baut `clay-skin-attach.v1.js` (E2 = dünne geschlossene Lidhaut statt der v6-Lidschalen) mit Beweis-Seite gegen das Referenzbild `replies/E2_REFERENCE/E2_approved_closed_lid_skin.png`, Ablage `replies/E2_ATTACH_R1/`. Danach vendort WS1 genau dieses Modul für alle Figuren mit EyeRig (V-348 „gleiches Prinzip für alle“); bis dahin nichts an den Lidern ändern. Bild-Abnahme durch WS0 vor Georg.
+
 ## 17.10.2026 · Zwei Module früh liefern: Licht + Figurenkarten-Loader – V-409
 Zwei Konsumenten warten (Dramatis-Personae-Tab der Asset-Bibliothek, ToolBox-Studio). Bitte **direkt nach dem L3-Merge, vor der Look-Slice**:
 1. `kfb-stage-light.v1.js` (liegt auf `l3/licht`) als vendorbares Paket auf GitHub mit festem Pfad (z. B. Branch `ws1/vendor`, Ordner `ws1/vendor/`), kurze Import-API, Versions-Pin.

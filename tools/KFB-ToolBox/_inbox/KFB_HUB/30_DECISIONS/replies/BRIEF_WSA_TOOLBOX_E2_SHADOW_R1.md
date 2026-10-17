@@ -4,6 +4,8 @@
 Georg 17.10., with screenshots from ToolBox-Studio: the eyelids are "still or again wrong", there is a shadow seam on FrizzleBob's neck, and Dory's lower head (oval, seam) is broken. Cause, honestly: integrating the E2 lids into the aliens (V-348) was **planned and never built**. The plan has been sitting since 16.10.
 
 
+> **UPDATE 17.10. (WS0): do NOT build E2 yourself.** WS0 is building the one shared module `clay-skin-attach.v1.js` with a proof page against the reference image (`replies/E2_ATTACH_R1/`, coming shortly). ToolBox-Studio **only integrates that module**, without its own interpretation. The game (WS1) gets the same module later. Do section 2 (shadow seam) and section 3 (gate) now.
+
 ## 0 · What is wrong right now (Georg 17.10.: "THOSE ARE LIDS AS CAPS!")
 The aliens currently have **thick, rigid caps** as lids (the v6 lid shells `_up`/`_lo`, upper hood with a ring, lower ring). **That is not what Georg approved.**
 **Approved (V-348) is E2: a thin, closed lid skin that hugs the eyeball. The lid slit is the only opening, and there is no cap and no separate shell.** Reference image: `replies/E2_REFERENCE/E2_approved_closed_lid_skin.png` (Claude Design workbench E2: rest, 25/50/75 %, closed, side, back).
