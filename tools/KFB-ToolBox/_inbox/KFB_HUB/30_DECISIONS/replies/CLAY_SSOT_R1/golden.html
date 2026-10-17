@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>KFB Clay Golden</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+<style>body{margin:0;background:#222;color:#ddd;font:13px system-ui}#log{padding:8px;white-space:pre}</style></head>
+<body><div id="log">golden harness (headless) · driven by tests/golden.test.mjs</div>
+<script type="module">
+/* Fixed scenes, fixed cameras, fixed light (kfb-stage-light.v1, MOODS_MESA day, ACES 1). Called by the test once per load and resolution.
+   run({ variant, w, h, bust }) -> { renders: [{ key, w, h, png, rect }], info } */
+import * as K from './proof-kit.v1.js';
+const { THREE } = K;
+const FIGS = ['fb', 'goth', 'hunky'];
+
+function headBox(root) {
+  const b = new THREE.Box3(); root.updateMatrixWorld(true);
+  root.traverse((o) => { if (o.isMesh && o.visible && /head/i.test(o.name)) b.expandByObject(o, true); });
+  return b.isEmpty() ? null : b;
+}
+async function figureRenders(R, variant, fig, w, h, bust, out, info, scale = 1, tag = '') {
+  const root = K.placeFigure(await K.loadGLB(fig, bust), scale);
+  const v = await K.clayVariant(variant, root, K.ASSETS[fig].card ? { profile: 'character', seed: K.ASSETS[fig].card.id } : {});
+  info[fig + tag] = v.info;
+  const S = scale, stage = K.makeStage({ figures: [root], fit: { center: { x: 0, y: 0.9 * S, z: 0 }, radius: 2.4 * S }, scale: S });
+  const hb = headBox(root), hc = hb.getCenter(new THREE.Vector3()), hs = hb.getSize(new THREE.Vector3());
+  const fov = 30, dist = Math.max(hs.y, hs.x) * 2.4;
+  const views = tag ? ['face'] : ['full', 'face'];
+  for (const view of views) {
+    const cam = view === 'full' ? K.camera(w, h, 32, [1.1 * S, 1.15 * S, 4.6 * S], [0, 0.92 * S, 0])
+      : K.camera(w, h, fov, [hc.x + 0.28 * dist, hc.y + 0.06 * dist, hc.z + dist], [hc.x, hc.y, hc.z]);
+    const rect = view === 'face' ? [Math.round(w / 2 - 0.28 * h), Math.round(0.22 * h), Math.round(0.56 * h), Math.round(0.56 * h)] : null;
+    stage.render(R, cam); out.push({ key: `${fig}_${view}${tag}`, w, h, png: K.toPNG(K.readRGBA(R)), rect });
+    if (variant !== 'none') { v.setRelief(false); stage.render(R, cam); out.push({ key: `${fig}_${view}${tag}_flat`, w, h, png: K.toPNG(K.readRGBA(R)), rect }); v.setRelief(true); }
+    if (variant === 'none' && !tag) out.push({ key: `${fig}_${view}_mask`, w, h, png: K.toPNG(K.renderMask(R, stage, cam, [root])), rect });
+  }
+}
+window.KFB_GOLDEN = {
+  async run({ variant = 'v1', w = 800, h = 450, bust = '', only = null } = {}) {
+    const t0 = performance.now(), out = [], info = {};
+    const R = K.makeRenderer(w, h);
+    const gl = R.getContext(), dbg = gl.getExtension('WEBGL_debug_renderer_info');
+    info.gpu = dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER);
+    info.three = THREE.REVISION;
+    for (const fig of FIGS) if (!only || only.includes(fig)) await figureRenders(R, variant, fig, w, h, bust, out, info);
+    if (!only || only.includes('scale')) await figureRenders(R, variant, 'fb', w, h, bust, out, info, 2.5, '_x2.5');
+    if ((variant === 'v1' || variant === 'none') && (!only || only.includes('stage'))) {
+      const st = K.placeWide(await K.loadGLB('stage', bust), 14);
+      const v = await K.clayVariant(variant, st, { profile: 'midground', seed: 'utopia_stage', scaleRef: K.FIG_H }); info.stage = v.info;
+      const S = K.makeStage({ figures: [], fit: { center: { x: 0, y: 2, z: 0 }, radius: 9.5 }, ground: true }); S.scene.add(st);
+      S.render(R, K.camera(w, h, 40, [0, 4.6, 15.5], [0, 1.6, 0])); out.push({ key: 'stage', w, h, png: K.toPNG(K.readRGBA(R)) });
+    }
+    if ((variant === 'v1' || variant === 'none') && (!only || only.includes('terrain'))) {
+      const tr = K.makeTerrain(); const v = await K.clayVariant(variant, tr, { profile: 'background', seed: 'terrain', scaleRef: K.FIG_H }); info.terrain = v.info;
+      const S = K.makeStage({ figures: [], fit: { center: { x: 0, y: 0, z: -5 }, radius: 32 }, ground: false }); S.scene.add(tr);
+      S.render(R, K.camera(w, h, 45, [0, 5.2, 26], [0, 0.4, -6])); out.push({ key: 'terrain', w, h, png: K.toPNG(K.readRGBA(R)) });
+    }
+    R.dispose(); R.forceContextLoss?.();
+    info.ms = Math.round(performance.now() - t0);
+    document.getElementById('log').textContent += `\n${variant} ${w}x${h}: ${out.length} renders, ${info.ms} ms`;
+    return { renders: out, info };
+  },
+};
+window.KFB_GOLDEN_READY = true;
+</script></body></html>

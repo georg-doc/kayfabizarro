@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Knete v1</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+<style>
+:root{--bg:#f3eee5;--ink:#1f1b16;--sub:#5d554b;--line:#d8cfc1;--card:#fffaf2;--ok:#2f7d3a;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,"Helvetica Neue",Arial,sans-serif}
+main{max-width:1560px;margin:0 auto;padding:20px 16px 60px}h1{font-size:26px;margin:0 0 4px}h2{font-size:19px;margin:28px 0 8px}
+.sub{color:var(--sub);max-width:980px}.bar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:14px 0 4px}
+button{font:600 16px system-ui;padding:9px 18px;border-radius:10px;border:1px solid #8a7a62;background:#fff3dc;cursor:pointer}button:disabled{opacity:.5;cursor:wait}
+#status{font-weight:600}#status.ok{color:var(--ok)}#status.bad{color:var(--bad)}
+table{border-collapse:separate;border-spacing:8px;width:100%}th{font-size:14px;text-align:left;color:var(--sub);font-weight:600;vertical-align:bottom}
+td{vertical-align:top}td.rowh{width:120px;font-weight:600;font-size:14px;padding-top:8px}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px}figure img{display:block;width:100%;height:auto;border-radius:6px;background:#ddd}
+figcaption{font-size:12px;color:var(--sub);margin-top:4px;display:flex;justify-content:space-between;gap:8px}
+.faces{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.wrap{overflow-x:auto}
+code{font-size:13px;background:#efe6d6;padding:1px 4px;border-radius:4px}
+</style></head>
+<body><main>
+<h1>KFB Knete v1 · ein Material, drei Profile</h1>
+<p class="sub">Alle Bilder: <code>kfb-clay.v1.js</code> mit den festen Profilen <b>character</b> · <b>midground</b> · <b>background</b>, Licht = <code>kfb-stage-light.v1.js</code> (Mesa, Tag, ACES, Belichtung 1), keine Einblendungen im Bild. Relief im Objektraum, Maßstab relativ zur Figurenhöhe (1,8 m Bühnenmaß), Saat aus der Figurenkarte. „neu laden“ baut alles von vorn (GLB neu geladen, neue Materialien, neuer Renderer) und vergleicht Pixel für Pixel mit der vorigen Ladung.</p>
+<div class="bar"><button id="reload" disabled>neu laden</button><span id="status">lädt …</span></div>
+<div id="grid"></div>
+<h2>Figuren nah · Profil character</h2>
+<div class="faces" id="faces"></div>
+<p class="sub" id="foot"></p>
+</main>
+<script type="module">
+import * as K from './proof-kit.v1.js';
+const { THREE } = K;
+const W = 480, H = 300, PROFILES = ['character', 'midground', 'background'], DIST = [['near', 'nah'], ['mid', 'mittel'], ['far', 'fern']];
+const OBJECTS = [['fig', 'Figur · FrizzleBob'], ['prop', 'Requisite · Meshy-Dragster'], ['terrain', 'Gelände']];
+const PROF_DE = { character: 'character (Figuren, fein)', midground: 'midground (Dioramen, Requisiten)', background: 'background (Gelände, ruhig)' };
+let load = 0, prev = null;
+
+function cams(obj) {
+  const dir = new THREE.Vector3(0.35, 0.12, 1).normalize(), at = (t, d, up = 0) => [t[0] + dir.x * d, t[1] + dir.y * d + up, t[2] + dir.z * d];
+  if (obj === 'fig') return { near: [32, at([0, 1.12, 0], 1.45), [0, 1.12, 0]], mid: [32, at([0, 0.95, 0], 4.6), [0, 0.95, 0]], far: [32, at([0, 0.9, 0], 15), [0, 0.9, 0]] };
+  if (obj === 'prop') return { near: [32, at([0.4, 0.6, 0.4], 1.9, 0.3), [0.4, 0.6, 0.4]], mid: [32, at([0, 0.5, 0], 6.5, 0.8), [0, 0.5, 0]], far: [32, at([0, 0.5, 0], 19, 2), [0, 0.5, 0]] };
+  return { near: [45, [0, 1.6, 7], [0, 0.2, 0]], mid: [45, [0, 4.2, 20], [0, 0.4, -3]], far: [45, [0, 10, 42], [0, 0.4, -12]] };
+}
+async function build(obj, bust) {
+  if (obj === 'fig') { const r = K.placeFigure(await K.loadGLB('fb', bust)); return { root: r, stage: K.makeStage({ figures: [r], fit: { center: { x: 0, y: 0.9, z: 0 }, radius: 2.6 } }) }; }
+  if (obj === 'prop') { const r = K.placeWide(await K.loadGLB('prop', bust), 4); const s = K.makeStage({ fit: { center: { x: 0, y: 0.6, z: 0 }, radius: 3.4 } }); s.scene.add(r); return { root: r, stage: s }; }
+  const r = K.makeTerrain(), s = K.makeStage({ ground: false, fit: { center: { x: 0, y: 0, z: -5 }, radius: 34 } }); s.scene.add(r); return { root: r, stage: s };
+}
+async function renderAll() {
+  const bust = 'p' + (++load) + '-' + Date.now(), t0 = performance.now(), R = K.makeRenderer(W, H), cells = {};
+  const seeds = { fig: 'frizzlebob', prop: 'crimson_flame_dragster', terrain: 'terrain' };
+  for (const [obj] of OBJECTS) {
+    const { root, stage } = await build(obj, bust), C = cams(obj);
+    for (const prof of PROFILES) {
+      await K.clayVariant('v1', root, { profile: prof, seed: seeds[obj], scaleRef: K.FIG_H });
+      for (const [d] of DIST) { const [fov, p, t] = C[d]; stage.render(R, K.camera(W, H, fov, p, t)); cells[`${obj}|${prof}|${d}`] = K.readRGBA(R); }
+    }
+  }
+  for (const f of ['fb', 'goth', 'hunky']) {
+    const root = K.placeFigure(await K.loadGLB(f, bust)); await K.clayVariant('v1', root, { profile: 'character', seed: K.ASSETS[f].card.id });
+    const st = K.makeStage({ figures: [root], fit: { center: { x: 0, y: 0.9, z: 0 }, radius: 2.4 } });
+    const b = new THREE.Box3(); root.traverse((o) => { if (o.isMesh && o.visible && /head/i.test(o.name)) b.expandByObject(o, true); });
+    const c = b.getCenter(new THREE.Vector3()), s = b.getSize(new THREE.Vector3()), d = Math.max(s.x, s.y) * 2.4;
+    const R2 = K.makeRenderer(420, 420); st.render(R2, K.camera(420, 420, 30, [c.x + 0.28 * d, c.y + 0.06 * d, c.z + d], [c.x, c.y, c.z])); cells['face|' + f] = K.readRGBA(R2); R2.dispose(); R2.forceContextLoss();
+  }
+  R.dispose(); R.forceContextLoss();
+  return { cells, ms: Math.round(performance.now() - t0) };
+}
+function compare(a, b) { let max = 0, changed = 0; for (let i = 0; i < a.data.length; i += 4) { let m = 0; for (let c = 0; c < 3; c++) m = Math.max(m, Math.abs(a.data[i + c] - b.data[i + c])); if (m) changed++; if (m > max) max = m; } return { max, changed }; }
+function show({ cells, ms }) {
+  const delta = {}; let tmax = 0, tchanged = 0;
+  if (prev) for (const k of Object.keys(cells)) { const d = compare(cells[k], prev[k]); delta[k] = d; tmax = Math.max(tmax, d.max); tchanged += d.changed; }
+  const cap = (k) => (prev ? `<span>Δ zur Ladung ${load - 1}: ${delta[k].changed ? delta[k].changed + ' px, max ' + delta[k].max : '0 px'}</span>` : '<span>Ladung 1</span>');
+  let html = '';
+  for (const [d, dDe] of DIST) {
+    html += `<h2>Abstand ${dDe}</h2><div class="wrap"><table><tr><th></th>${PROFILES.map((p) => `<th>${PROF_DE[p]}</th>`).join('')}</tr>`;
+    for (const [obj, label] of OBJECTS) html += `<tr><td class="rowh">${label}</td>${PROFILES.map((p) => { const k = `${obj}|${p}|${d}`; return `<td><figure><img alt="${label}, ${p}, ${dDe}" src="${K.toPNG(cells[k])}"><figcaption><span>${p} · ${dDe}</span>${cap(k)}</figcaption></figure></td>`; }).join('')}</tr>`;
+    html += '</table></div>';
+  }
+  document.getElementById('grid').innerHTML = html;
+  document.getElementById('faces').innerHTML = ['fb', 'goth', 'hunky'].map((f) => `<figure><img alt="${K.ASSETS[f].label}" src="${K.toPNG(cells['face|' + f])}"><figcaption><span>${K.ASSETS[f].label} · claySeed „${K.ASSETS[f].card.id}“</span>${cap('face|' + f)}</figcaption></figure>`).join('');
+  const st = document.getElementById('status'), n = Object.keys(cells).length;
+  if (!prev) { st.textContent = `Ladung 1 · ${n} Bilder · ${ms} ms`; st.className = ''; }
+  else { st.textContent = tchanged ? `Ladung ${load} · ${tchanged} Pixel anders (max Δ ${tmax}/255) – NICHT gleich` : `Ladung ${load} · ${n} Bilder · bit-gleich zur Ladung ${load - 1} (0 Pixel anders) · ${ms} ms`; st.className = tchanged ? 'bad' : 'ok'; }
+  document.getElementById('foot').textContent = `three r${THREE.REVISION} · Renderer ${W}×${H}, Pixelverhältnis 1 · Profile eingefroren (CLAY_PROFILES) · Bühnenmaß scaleRef = ${K.FIG_H} m für alle Zellen.`;
+  window.KFB_PROOF = { load, n, changed: tchanged, max: tmax, ms };
+  prev = cells;
+}
+const btn = document.getElementById('reload');
+async function go() { btn.disabled = true; document.getElementById('status').textContent = 'lädt …'; try { show(await renderAll()); } catch (e) { document.getElementById('status').textContent = 'Fehler: ' + e.message; document.getElementById('status').className = 'bad'; console.error(e); } btn.disabled = false; }
+btn.addEventListener('click', go);
+go();
+</script></body></html>

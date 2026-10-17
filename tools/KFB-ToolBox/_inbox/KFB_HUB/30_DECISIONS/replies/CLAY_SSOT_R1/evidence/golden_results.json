@@ -1,0 +1,792 @@
+{
+ "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+ "three": "r180 (CDN)",
+ "resolutions": {
+  "lo": [
+   800,
+   450
+  ],
+  "hi": [
+   1600,
+   900
+  ]
+ },
+ "ms": 42238,
+ "errors": 0,
+ "tests": {
+  "G0": {
+   "rule": "synthetic: isotropic + craters pass, + faint stripes fail",
+   "limits": {
+    "stripePeak": 3,
+    "coherence": 0.7
+   },
+   "isotropic": {
+    "coherence": 0.551,
+    "stripePeak": 1.884,
+    "fftAniso": 2.452,
+    "energy": 0.0015
+   },
+   "craters": {
+    "coherence": 0.587,
+    "stripePeak": 1.45,
+    "fftAniso": 2.7,
+    "energy": 0.0031
+   },
+   "isotropicPlusStripes": {
+    "coherence": 0.867,
+    "stripePeak": 8.956,
+    "fftAniso": 24.891,
+    "energy": 0.0024
+   },
+   "cratersPlusStripes": {
+    "coherence": 0.723,
+    "stripePeak": 6.445,
+    "fftAniso": 16.039,
+    "energy": 0.0036
+   },
+   "result": "PASS"
+  },
+  "G1": {
+   "rule": "SSIM(load1,load2) >= 0.995, every v1 render, both resolutions",
+   "rows": [
+    {
+     "res": "lo",
+     "key": "fb_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "goth_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "hunky_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face_x2.5",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "fb_face_x2.5_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "stage",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "lo",
+     "key": "terrain",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "goth_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_full",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_full_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_face",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "hunky_face_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face_x2.5",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "fb_face_x2.5_flat",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "stage",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    },
+    {
+     "res": "hi",
+     "key": "terrain",
+     "ssim": 1,
+     "maxDiff": 0,
+     "changedPct": 0
+    }
+   ],
+   "other": {
+    "none": {
+     "minSsim": 1,
+     "maxDiff": 0
+    },
+    "v8ws1": {
+     "minSsim": 1,
+     "maxDiff": 1
+    },
+    "v8proof": {
+     "minSsim": 1,
+     "maxDiff": 1
+    }
+   },
+   "minSsim": 1,
+   "maxDiff": 0,
+   "result": "PASS"
+  },
+  "G2": {
+   "rule": "face relief: stripePeak <= 3.0 and coherence <= 0.70 (v1, all figures, both resolutions)",
+   "rows": [
+    {
+     "variant": "v1",
+     "res": "lo",
+     "fig": "fb",
+     "coherence": 0.457,
+     "stripePeak": 1.615,
+     "fftAniso": 2.261,
+     "energy": 0.0056
+    },
+    {
+     "variant": "v1",
+     "res": "lo",
+     "fig": "goth",
+     "coherence": 0.38,
+     "stripePeak": 1.411,
+     "fftAniso": 1.992,
+     "energy": 0.0038
+    },
+    {
+     "variant": "v1",
+     "res": "lo",
+     "fig": "hunky",
+     "coherence": 0.396,
+     "stripePeak": 1.352,
+     "fftAniso": 1.976,
+     "energy": 0.0024
+    },
+    {
+     "variant": "v1",
+     "res": "hi",
+     "fig": "fb",
+     "coherence": 0.46,
+     "stripePeak": 1.611,
+     "fftAniso": 2.227,
+     "energy": 0.0058
+    },
+    {
+     "variant": "v1",
+     "res": "hi",
+     "fig": "goth",
+     "coherence": 0.381,
+     "stripePeak": 1.344,
+     "fftAniso": 1.983,
+     "energy": 0.0041
+    },
+    {
+     "variant": "v1",
+     "res": "hi",
+     "fig": "hunky",
+     "coherence": 0.398,
+     "stripePeak": 1.333,
+     "fftAniso": 2.014,
+     "energy": 0.0025
+    },
+    {
+     "variant": "v8ws1",
+     "res": "lo",
+     "fig": "fb",
+     "coherence": 0.822,
+     "stripePeak": 5.729,
+     "fftAniso": 16.369,
+     "energy": 0.0368
+    },
+    {
+     "variant": "v8ws1",
+     "res": "lo",
+     "fig": "goth",
+     "coherence": 0.773,
+     "stripePeak": 3.551,
+     "fftAniso": 9.862,
+     "energy": 0.0274
+    },
+    {
+     "variant": "v8ws1",
+     "res": "lo",
+     "fig": "hunky",
+     "coherence": 0.658,
+     "stripePeak": 3.276,
+     "fftAniso": 5.595,
+     "energy": 0.0183
+    },
+    {
+     "variant": "v8ws1",
+     "res": "hi",
+     "fig": "fb",
+     "coherence": 0.784,
+     "stripePeak": 5.705,
+     "fftAniso": 16.198,
+     "energy": 0.0377
+    },
+    {
+     "variant": "v8ws1",
+     "res": "hi",
+     "fig": "goth",
+     "coherence": 0.722,
+     "stripePeak": 3.381,
+     "fftAniso": 9.313,
+     "energy": 0.0293
+    },
+    {
+     "variant": "v8ws1",
+     "res": "hi",
+     "fig": "hunky",
+     "coherence": 0.588,
+     "stripePeak": 3.591,
+     "fftAniso": 5.515,
+     "energy": 0.0197
+    },
+    {
+     "variant": "v8proof",
+     "res": "lo",
+     "fig": "fb",
+     "coherence": 0.376,
+     "stripePeak": 2.499,
+     "fftAniso": 3.042,
+     "energy": 0.0208
+    },
+    {
+     "variant": "v8proof",
+     "res": "lo",
+     "fig": "goth",
+     "coherence": 0.455,
+     "stripePeak": 3.462,
+     "fftAniso": 3.124,
+     "energy": 0.0202
+    },
+    {
+     "variant": "v8proof",
+     "res": "lo",
+     "fig": "hunky",
+     "coherence": 0.493,
+     "stripePeak": 11.038,
+     "fftAniso": 4.221,
+     "energy": 0.0163
+    },
+    {
+     "variant": "v8proof",
+     "res": "hi",
+     "fig": "fb",
+     "coherence": 0.382,
+     "stripePeak": 2.446,
+     "fftAniso": 2.96,
+     "energy": 0.0213
+    },
+    {
+     "variant": "v8proof",
+     "res": "hi",
+     "fig": "goth",
+     "coherence": 0.445,
+     "stripePeak": 3.397,
+     "fftAniso": 3.088,
+     "energy": 0.021
+    },
+    {
+     "variant": "v8proof",
+     "res": "hi",
+     "fig": "hunky",
+     "coherence": 0.501,
+     "stripePeak": 10.294,
+     "fftAniso": 4.275,
+     "energy": 0.017
+    }
+   ],
+   "result": "PASS"
+  },
+  "G3": {
+   "rule": "FrizzleBob face, stage scale x1 vs x2.5: SSIM >= 0.98 (v1)",
+   "rows": [
+    {
+     "variant": "v1",
+     "res": "lo",
+     "ssim": 1
+    },
+    {
+     "variant": "v1",
+     "res": "hi",
+     "ssim": 1
+    },
+    {
+     "variant": "none",
+     "res": "lo",
+     "ssim": 1
+    },
+    {
+     "variant": "none",
+     "res": "hi",
+     "ssim": 1
+    },
+    {
+     "variant": "v8ws1",
+     "res": "lo",
+     "ssim": 0.8987
+    },
+    {
+     "variant": "v8ws1",
+     "res": "hi",
+     "ssim": 0.9142
+    },
+    {
+     "variant": "v8proof",
+     "res": "lo",
+     "ssim": 0.8921
+    },
+    {
+     "variant": "v8proof",
+     "res": "hi",
+     "ssim": 0.9121
+    }
+   ],
+   "result": "PASS"
+  },
+  "G4": {
+   "rule": "SSIM(down2(hi), lo) for v1 >= unclayed - 0.01 (faces and full figures)",
+   "rows": [
+    {
+     "variant": "v1",
+     "fig": "fb",
+     "view": "face",
+     "ssim": 0.999
+    },
+    {
+     "variant": "v1",
+     "fig": "fb",
+     "view": "full",
+     "ssim": 0.9983
+    },
+    {
+     "variant": "v1",
+     "fig": "goth",
+     "view": "face",
+     "ssim": 0.9988
+    },
+    {
+     "variant": "v1",
+     "fig": "goth",
+     "view": "full",
+     "ssim": 0.9984
+    },
+    {
+     "variant": "v1",
+     "fig": "hunky",
+     "view": "face",
+     "ssim": 0.9986
+    },
+    {
+     "variant": "v1",
+     "fig": "hunky",
+     "view": "full",
+     "ssim": 0.9981
+    },
+    {
+     "variant": "none",
+     "fig": "fb",
+     "view": "face",
+     "ssim": 0.999
+    },
+    {
+     "variant": "none",
+     "fig": "fb",
+     "view": "full",
+     "ssim": 0.9983
+    },
+    {
+     "variant": "none",
+     "fig": "goth",
+     "view": "face",
+     "ssim": 0.9988
+    },
+    {
+     "variant": "none",
+     "fig": "goth",
+     "view": "full",
+     "ssim": 0.9984
+    },
+    {
+     "variant": "none",
+     "fig": "hunky",
+     "view": "face",
+     "ssim": 0.9986
+    },
+    {
+     "variant": "none",
+     "fig": "hunky",
+     "view": "full",
+     "ssim": 0.998
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "fb",
+     "view": "face",
+     "ssim": 0.9972
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "fb",
+     "view": "full",
+     "ssim": 0.9971
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "goth",
+     "view": "face",
+     "ssim": 0.9967
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "goth",
+     "view": "full",
+     "ssim": 0.9979
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "hunky",
+     "view": "face",
+     "ssim": 0.995
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "hunky",
+     "view": "full",
+     "ssim": 0.9972
+    },
+    {
+     "variant": "v8proof",
+     "fig": "fb",
+     "view": "face",
+     "ssim": 0.9974
+    },
+    {
+     "variant": "v8proof",
+     "fig": "fb",
+     "view": "full",
+     "ssim": 0.9977
+    },
+    {
+     "variant": "v8proof",
+     "fig": "goth",
+     "view": "face",
+     "ssim": 0.9978
+    },
+    {
+     "variant": "v8proof",
+     "fig": "goth",
+     "view": "full",
+     "ssim": 0.998
+    },
+    {
+     "variant": "v8proof",
+     "fig": "hunky",
+     "view": "face",
+     "ssim": 0.9974
+    },
+    {
+     "variant": "v8proof",
+     "fig": "hunky",
+     "view": "full",
+     "ssim": 0.9977
+    }
+   ],
+   "result": "PASS"
+  },
+  "G5": {
+   "rule": "OKLab chroma in figure mask, clay / original >= 0.95 (lo res)",
+   "rows": [
+    {
+     "variant": "v1",
+     "fig": "fb",
+     "view": "full",
+     "chromaRatio": 0.999,
+     "lightRatio": 0.996
+    },
+    {
+     "variant": "v1",
+     "fig": "fb",
+     "view": "face",
+     "chromaRatio": 1,
+     "lightRatio": 0.997
+    },
+    {
+     "variant": "v1",
+     "fig": "goth",
+     "view": "full",
+     "chromaRatio": 0.956,
+     "lightRatio": 0.968
+    },
+    {
+     "variant": "v1",
+     "fig": "goth",
+     "view": "face",
+     "chromaRatio": 0.996,
+     "lightRatio": 0.994
+    },
+    {
+     "variant": "v1",
+     "fig": "hunky",
+     "view": "full",
+     "chromaRatio": 1.025,
+     "lightRatio": 0.989
+    },
+    {
+     "variant": "v1",
+     "fig": "hunky",
+     "view": "face",
+     "chromaRatio": 1.034,
+     "lightRatio": 0.982
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "fb",
+     "view": "full",
+     "chromaRatio": 0.997,
+     "lightRatio": 0.999
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "fb",
+     "view": "face",
+     "chromaRatio": 0.996,
+     "lightRatio": 0.998
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "goth",
+     "view": "full",
+     "chromaRatio": 0.976,
+     "lightRatio": 0.98
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "goth",
+     "view": "face",
+     "chromaRatio": 1.006,
+     "lightRatio": 1.006
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "hunky",
+     "view": "full",
+     "chromaRatio": 1.027,
+     "lightRatio": 1.001
+    },
+    {
+     "variant": "v8ws1",
+     "fig": "hunky",
+     "view": "face",
+     "chromaRatio": 1.039,
+     "lightRatio": 0.998
+    },
+    {
+     "variant": "v8proof",
+     "fig": "fb",
+     "view": "full",
+     "chromaRatio": 0.993,
+     "lightRatio": 0.997
+    },
+    {
+     "variant": "v8proof",
+     "fig": "fb",
+     "view": "face",
+     "chromaRatio": 0.996,
+     "lightRatio": 0.999
+    },
+    {
+     "variant": "v8proof",
+     "fig": "goth",
+     "view": "full",
+     "chromaRatio": 0.981,
+     "lightRatio": 0.984
+    },
+    {
+     "variant": "v8proof",
+     "fig": "goth",
+     "view": "face",
+     "chromaRatio": 1.004,
+     "lightRatio": 1.008
+    },
+    {
+     "variant": "v8proof",
+     "fig": "hunky",
+     "view": "full",
+     "chromaRatio": 0.997,
+     "lightRatio": 0.982
+    },
+    {
+     "variant": "v8proof",
+     "fig": "hunky",
+     "view": "face",
+     "chromaRatio": 1.004,
+     "lightRatio": 0.972
+    }
+   ],
+   "result": "PASS"
+  }
+ }
+}
