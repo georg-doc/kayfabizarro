@@ -5,3 +5,6 @@ Branch: `songs/grimms_kayfabe_legends_expansion_set_02-r5-2026-10-17`. Candidate
 The R3.2 `song_gate.py` and original `triplet_set_check.py` are configured in the GitHub workflow; actual exit results not yet known. No critic, revision, E17 regression, WS0 approval or Hub submission claimed.
 
 One next gate: inspect CI on this exact candidate head and repair only actual mechanical failures.
+
+## Gate run 39044573547 (pre-review, repair one)
+The canonical triplet_set_check.py passed all 52/52 lines. The original song_gate.py failed 47 knock-on C10/intro-match assertions because second intro named the future card `The Glass Mountain` (#27). This caused an early match that displaced the entire sequence; there were no triplet source-word failures. Only the 2 original intro lines were rewritten to avoid mentioning later card titles. Rerun pending, no official PASS claimed.
