@@ -1,5 +1,33 @@
 # WSA → WS0 · Landmark candidates R1 · V-421 · 2026-10-17
 
+## ADDITIVE R1.5 · WS0 V-424 source-only donor intake (Modular Temple + Simple Castle) · 2026-10-17
+
+**RESEARCH PROOF ONLY · five distinct genuine CC0 source objects isolated · zero true KFB K1-Clay renders · zero Georg selections.** This is the fourth V-421 briefing treated as an incremental research continuation, **not a new R1, second authoring owner or runtime**. Current WS0 V-424 takes precedence over the older briefing: an *unaltered original-model render* suffices for Georg's preliminary source decision, with a separate UI caption `Knete folgt`. V-429 requires a central `kfb-clay.v1` for accepted KFB materials. Previous white/flat material comparisons remain rejected diagnostics; WSB makes the actual rounded/coloured K1 clay look only **after Georg chooses**.
+
+### Two genuinely downloaded public-domain source donors, not heritage replicas
+
+| Model / author | Original file and rights | Measured Blender geometry | Isolated source |
+|---|---|---:|---|
+| **Modular Temple**, Keith at Fertile Soil Productions | [OpenGameArt original](https://opengameart.org/content/modular-temple-3d-models) · **CC0** · original public `modular_temple_collection.zip`; selected `Modular Temple/Pillar_Large_Arch.obj` | **196 triangles / 196 faces**; single pillar arch donor only | [Unmodified source render](V421_SOURCE_PROOF/evidence/modular_temple_fertile_cc0/source-isolation.png) |
+| **Simple Castle**, TitaniumFalcon | [OpenGameArt original](https://opengameart.org/content/simple-castle) · **CC0** · directly downloaded `SimpleCastle.blend` | **2,414 triangles / 1,087 faces**, complete small toy-fortress silhouette | [Unmodified source render](V421_SOURCE_PROOF/evidence/simple_castle_titanium_cc0/source-isolation.png) |
+
+Both mesh files were imported into a headless real Blender session, isolated, and their 600×600 original-only PNGs visually inspected without added graphics or labels. Each archive/direct-file SHA256, selected source SHA256, original-image SHA256, geometric metrics and model provenance are in [V421_SOURCE_PROOF/evidence/MANIFEST.json](V421_SOURCE_PROOF/evidence/MANIFEST.json). The two originals are **not KFB clay previews**; no new faux-clay renders were generated. The previous three genuine source-object proofs (Stonehenge 640 triangles, Kenney square tower 176, El Castillo 10,218) remain intact; source models themselves were not committed to public GitHub.
+
+**Exact source role:** Modular Temple's isolated `Pillar_Large_Arch.obj` is an arch *component*, **not** the Ziggurat of Ur or Borobudur. Its one real source proof is referenced by two separate catalogue records, `ur-temple-kit` and `bo-temple-kit`, never counted as two imported model proofs. Simple Castle is a generic stylized fortress **not Neuschwanstein**; `neu-simple` is a construction/composition donor only, not a selectable authentic castle source. All three new records are marked `CONSTRUCTION_DONOR_ONLY_NOT_A_COMPLETED_LANDMARK`, with no enabled Georg monument choice.
+
+### CI and persistence
+
+- Successful real Blender source-only job: [GitHub Actions #39068894022](https://github.com/georg-doc/kayfabizarro/actions/runs/39068894022) **SUCCESS** including original downloads, 5/5 mesh imports and source-only images, source-check, GitHub research-branch evidence checkpoint and hash audit. Two new source original PNGs and the extended five-source manifest read back from the exact research branch after the run.
+- Prior repair history retained, **not counted as successful**: [#39068503198](https://github.com/georg-doc/kayfabizarro/actions/runs/39068503198) imported all five but evidence push was rejected after WS0 concurrently changed the head to apply V-424. [#39068776703](https://github.com/georg-doc/kayfabizarro/actions/runs/39068776703) produced all five original renders and a successful artifact but failed the old render exit-condition because it still expected fake-clay status; checkout step was skipped. Both precise seams were corrected without force-push, branch reset or replaying WS0 decisions.
+- `WSA_LANDMARKS_R1_CANDIDATES.json` updated **R1.5** from 23 to **26 source/donor records across the same ten places**; each place now has 2–3 leads. **Five distinct real CC0 model sources** are measured; some sources are referenced across multiple places. Remaining **19 entries have no independently verified mesh**, 0 KFB real clay-accepted previews and 0 enabled UI selections.
+- Checks: **9/9 contract assertions** for group count, 2–3 entries/group, existing WS0 V-424 policy, new source-IDs and proven mesh hashes, fail-closed selection and no extra pseudo-clay. 5/5 real downloaded sources isolated in CI; two new source PNGs opened and visually inspected locally.
+- No 3d-assets MCP calls: external `3d.shep.bot/mcp` is configured in Dropbox but is not directly connected in this ChatGPT tool runtime. Direct public CC0 sources used instead; Sketchfab/Fab/CGTrader licence-specific downloads remain pending.
+- No new landmarks/geography built, no Source-to-runtime integration, no new cloud/Meshy assets, no Material/Lighting owner, no UI/Site/Cloudflare/Live/merge or Georg selection. Existing Story/deck/genius-loci hooks and free six-colour zone/biome/card-deck rule are preserved.
+
+**ONE NEXT GATE: `WS0_V421_REVIEW_ORIGINAL_SOURCE_CANDIDATES_THEN_ASSET_LIBRARIAN_EXISTING_SITE_VIEW`.** WS0 reviews source-object identity and donor suitability, prioritizes authentic *monument* models among the remaining leads, and routes the source-only candidate cards to the existing Asset Librarian Site-capable owner with a separate `Knete folgt` caption. Georg chooses a proven exact original; only then WSB K1/rounding followed by separate WS1 placement. No new Site owner or public Stage is authorised by this research slice.
+
+---
+
 ## ADDITIVE R1.3 · third true CC0 source, El Castillo; WS0 repeat-brief reconciliation · 2026-10-17
 
 **Research evidence milestone, not KFB clay acceptance or Georg choice.** The repeated V-421 WS0 brief is already represented by 10 landmark groups / 23 source-and-donor leads from R1/R1.2; do not restart/recreate the same candidate register or PR. Current WS0 steering after the older brief remains **PR #418 TUNE · 'keine Pseudo-Knete, Knete macht WSB'**. Research-material previews are diagnostic only. The user-stated six-colour zone/biome/deck assignment rule from R1.2 remains binding.
