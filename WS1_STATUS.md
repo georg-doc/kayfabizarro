@@ -1,7 +1,42 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§68 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§69 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 69 · 17.10. · Georg-Entscheide zu Look und Reihenfolge · Fragen an WS0 (Farbe vor Licht-Feinschliff, Rahmenfarbe, B7-Daten)
+
+### 69.1 · Georg-Entscheidungen (17.10., WS1-Chat, für das Register)
+1. **Grundrichtung Mesa:** „diese Lichtstimmung, dieses psychedelische, cozy, was mit der Mesa-Richtung verbunden ist, ist ein guter Grundansatz, um darauf aufzubauen“. Mesa (Krazy-Kat-Sonntagsseiten, Mesas, laue Abende) ist Ausgangspunkt für Licht und Farbe. Feinheiten erst auf der neu gefärbten Bühne.
+2. **Farbwelt cartoonig, ruhig psychedelisch** wie bei Joyride: Boden lila, Bahnen und Säulen orange, Bürgersteig neutral, mit Blick auf die Gesamtfarbwirkung. Heute passt das Bild nicht zusammen:
+   - Amphitheater-Bögen naturalistisch;
+   - Boden ohne Knet-Textur;
+   - Billboard-Rahmen pink aus dem Kartengenre (V-270);
+   - Rahmen glänzt nachts.
+
+   Georg: „nicht die richtigen Umstände, um ein Farb- und Lichtkonzept schlüssig zu entwickeln“.
+3. **Reihenfolge (Georg: „ja, so umsetzen“):**
+   1. L3 technisch abschließen und nach main: Licht-Modul, Regeln, Mesa als Arbeitsstimmung, matte Tafel, Knete-Look R2. Ohne endgültige Look-Abnahme. Danach zieht die Bewegungs-Sitzung M1/M2 auf das Modul (Zweitschatten am Auto).
+   2. **Look-Slice: Farbdrehbuch + Material vor dem Licht-Feinschliff.** Eine Bühnenpalette mit Rollen im Mesa/Krazy-Kat-Sinn, Knet-Boden, Rahmenfarbe aus der Bühnenpalette.
+   3. Licht final auf der stimmigen Bühne, dann eine **externe Designkritik** („Art Director“ für Cartoon/Animation, Farb- und Lichtvorschlag), dann der volle Beweislauf L-1–L-9.
+
+### 69.2 · Erledigt seit §68 (Branch `l3/licht` @fd7e011, lokal)
+- Billboard-Rahmen, Lampen und Arme ganz matt (Rauheit 1).
+- **Knete-Look R2 (V-400):** Öl 0,22 → 0,08, Dellen figure 0,55 / vehicle 0,5, Basis-Rauheit ≥ 0,95, Samt über tune ≤ 0,05. Spender `clay-material.v8` bleibt byte-gleich; gelöst über Profil und gemeinsame Regler.
+
+### 69.3 · Fragen an WS0
+1. **Rahmenfarbe der Tafel:** Heute gilt V-270 „Kartengenre → Insel-Palette → Rahmen“. Vorschlag nach Georg: Rahmen und Bühnenteile aus **einer Bühnenpalette** (Rollen wie Joyride: Boden, Bauten/Säulen, Wege, Rahmen, Akzent). Die Karte färbt nur noch Akzente, z. B. Lampenlicht oder Story-Tönung V-387. Bitte als Register-Entscheid fassen oder einen Gegenvorschlag machen.
+2. **Look-Slice vor dem Licht-Feinschliff:** Bitte als Auftrag mit Vorlagenzeile anlegen:
+   - Farbdrehbuch Mesa: Palette mit Rollen, Hex, Anteile, Tag/Gold/Nacht-Verhalten;
+   - Knet-Boden für das Amphitheater;
+   - Ersatz der naturalistischen Bogen-Textur (Umfärben nach Rollen, Variante B, gibt es schon).
+
+   Dazu die Frage: Gelten V-286 („Meshy nur leicht tönen, 18 %“) und V-355 für das Amphitheater dann noch?
+3. **Externe Designkritik:** Wer liefert sie (WS0, WSA, eigener Durchgang), und mit welchem Briefing? WS1 kann einen Kritik-Durchgang auf Bildtafeln anstoßen, sobald die Look-Slice steht.
+4. **V-400-Daten fehlen auf GitHub:**
+   - `50_BLENDER/B7/data/b7_stage_edges.json` (groundY_u) und `b7_ground_gap.py` liegen nur in Dropbox; der WS1-Rechner hat kein Dropbox.
+   - `replies/SPEC_PLACEMENT_GRAMMAR_R2.md` ist noch nicht da, ebenso das Steinkit `kfb.stone-kit/1`.
+
+   Bitte ins Register schieben. Bis dahin baut WS1 die Schwebe-Messung selbst nach (three-mesh-bvh ist als Abhängigkeit vorhanden) und setzt Platzhalter für Steine.
 
 ## 68 · 17.10. früh · L3 Licht-Lauf (Zwischenstand, Branch `l3/licht` @c88075c, lokal) · Georgs Urteil „zu hell, nicht gemütlich“ → Stimmung „Mesa“ · Fragen an WS0
 
