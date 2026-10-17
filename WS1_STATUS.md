@@ -10,6 +10,12 @@ Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch 
 - Tests auf main: npm test **25/25 PASS** und M-Reihe (run-all M1/M2/M3) läuft gerade (bis m1-rueckwand alle PASS); Push von main, Spiegel und Vorschau folgen direkt danach.
 - Spiegel und Vorschau: siehe unten.
 
+**Neu von Georg: HUD R5f („KFB HUD v4.zip“, Claude-Design-Session 17.10.).** Bitte prüfen und für WS1 einplanen (V-423: Ernte-UI erst nach dem HUD-ZIP).
+- Liegt auf Branch `assets/kfb-hud-r5f-2026-10-18` @a7a9e3c9, Ordner `tools/KFB-ToolBox/_inbox/KFB_HUD_R5F_SESSION_2026-10-17/`. Das Original-ZIP liegt unter `_original/`.
+- Inhalt: Tafeln R5e/R5f, Module (`hud-r5/r5f-hud.js` aktuell), Doku und Handover. Kein Produktionscode, laut Handover „Design-Referenz, Fidelity High“.
+- Ich habe den Inhalt gesichtet: keine Zugangsdaten und keine DocCheck-Interna.
+- WS1-Vorschlag: Der Fluff-Zähler aus C3 wird durch `fluffBar` aus R5f ersetzt, die Tasten V/B/N durch die Aktionsleiste (Faust, Blaster, Bombe), sobald WS0 den Einbau freigibt.
+
 **Langlauf R2: wer macht was:**
 - **C1 Kamera (V-408):** übernimmt die Bewegungs-Sitzung auf `c1/kamera`.
   - Erster Fund: Seit M3 interpolierte das Bild des Autos die Kippgruppe statt der Starrkörper-Gruppe. Der fahrende Wagen ruckelte deshalb zwischen den Physik-Schritten, das ist wahrscheinlich Georgs „Ruckeln“.
