@@ -28,7 +28,7 @@ R4.4: 3436 characters. Changed beat IDs: 1, 2, 3, 6, 7, 11, 13, 14, 16, 17, 20, 
 | Flag | Beat | Rule | Disposition | Reason |
 |---|---:|---|---|---|
 | 1 | 4 | A2 | deliberately kept | Protected card core cannot be changed in E18; source/wording issue explicitly deferred to WS0 card-line gate. |
-| 2 | 29 | E16b | deliberately kept | Protected card core cannot be changed in E18; source/wording issue explicitly deferred to WS0 card-line gate. |
+| 2 | 29 | E16b | fixed | Removed the unsourced Wedge One bookkeeper link from the opener; Woodford remains a separate source card, protected card core unchanged. |
 | 3 | 24 | A2 | deliberately kept | Protected card core cannot be changed in E18; source/wording issue explicitly deferred to WS0 card-line gate. |
 | 4 | 14 | A3 | deliberately kept | Protected card core cannot be changed in E18; source/wording issue explicitly deferred to WS0 card-line gate. |
 | 5 | 15 | A3 | deliberately kept | Protected card core cannot be changed in E18; source/wording issue explicitly deferred to WS0 card-line gate. |
@@ -39,3 +39,7 @@ R4.4: 3436 characters. Changed beat IDs: 1, 2, 3, 6, 7, 11, 13, 14, 16, 17, 20, 
 | 10 | 11 | B7 | fixed | Replaced the label or formula with a specific causal bridge/callback without touching card core. |
 | 11 | 1 | C9 | fixed | Deck-specific satirical frame and payoff re-authored; card core untouched. |
 | 12 | 35 | C9 | fixed | Deck-specific satirical frame and payoff re-authored; card core untouched. |
+
+## R4.4 original-gate evidence
+
+Original script run [39071158921](https://github.com/georg-doc/kayfabizarro/actions/runs/39071158921) on immutable lyric source HEAD `fd0dbbf10f765bd3646f6d93f0846a6198427da1`: original triplet checker both parts `0 FAIL`; canonical R3.3 song_gate lyrics part one 28/28, 3003 characters, intro 2, outro 1, openers 13 PASS; part two 32/32, 3431 characters, intro 2, outro 1, openers 14 PASS; zero WARN. Prior failing runs 39070434297 and 39070866472 remain visible as C11 diagnostic gate history. Original card core substrings unchanged from both R4.3 sources. No second external critic yet.
