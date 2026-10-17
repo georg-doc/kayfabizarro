@@ -3,6 +3,14 @@
 
 
 
+
+## 17.10. evening · Kayfabrick bots + harvest combat (V-426), for the combat slice after Slice 1
+- Concept: `replies/KAYFABRICK_BOTS_R1.md`. Six bots in the fluff colours roll large fluff balls (Sisyphus).
+- **Harvest from the balls** follows the V-423 rule: 3 punches / 2 primary shots / 1 secondary hit. Fluff in the bot's colour drops and can be collected.
+- **Then aggro/pull:** the hit bot attacks, and nearby bots within a radius join in. This is the bridge into the combat arena (card zines, mobs, mini games).
+- **Muzzle fire:** Action Figure `Muzzleflash` (primary) / `Muzzleflash_Long` (secondary) are the default; laser and magic come as colour/VFX variants. WSB delivers them as B18.
+- Do not build anything before Slice 1. Placeholders are fine. Details on harvest UI and HUD follow from Georg's HUD ZIP.
+
 ## 17.10. evening · WSB points for you (no extra slice, take them into account where relevant)
 - **Placement grammar R2** (WSB, `50_BLENDER/SPEC/SPEC_PLACEMENT_GRAMMAR_R2.md`): one grammar for fluff and stones, and you are the code owner. Read it before Slice 1/2. WS0 is moving it into the register.
 - **Ground colour V-396:** at B7 it picks up the moss of the plinth, which turns limegreen. Proposal: skip saturated greens for the ground.

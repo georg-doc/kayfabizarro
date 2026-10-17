@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-426: Kayfabrick-Bots (6 Fluff-Farben, Sisyphos), Ernte aus Bot-Kugeln mit Aggro → Combat-Arena, Mündungsfeuer primär/sekundär + Varianten, Banker-Anzug; WSB 19. Nachtrag (B17, B18, B12-Banker), WS1-Notiz; Lizenzhinweis Mystery Series im öffentlichen Repo.
 - V-425: B13 4GTN PASS; B10 Augen E2 ins Hirn; B11 Mütze (Asset-Suche) + Gewehr aufrecht; B12 weißer Kragen, Hauthände, Manschetten, Spender-Kriterium schlanke Unterarme (18. Nachtrag).
 - WSB-Stand: B9–B13 als Proofs fertig (Georg-Blick offen); B14 r6/B14b r5 (66°-Weg) verworfen → 17. Nachtrag (Dory = r5-Kopf + edge80-Sockel), Antworten zu Stage-Set, Quaternius, Polyfork (nein). WSA: Songs R3.2 grün (7 Tracks), erst R3.3, dann externer Kritiker durch WS0 (Hub b97); Landmarks PR #418 TUNE (keine Pseudo-Knete, Knete macht WSB). WS1: Kombi-Vorschau mit Fahrhilfe Stufe G (24/24), WSB-Punkte an WS1.
 - V-424: SONG_SPEC R3.3 (Deck-Klammer Intro/Outro, 5 KayfabeTips für Opener/Brücken, Callbacks, ein Refrain, Opener-Fenster 15 Songs, Intro-Typen mit Cooldown); song_gate.py erweitert; R5-Brief + Hub b94/b95 ergänzt.

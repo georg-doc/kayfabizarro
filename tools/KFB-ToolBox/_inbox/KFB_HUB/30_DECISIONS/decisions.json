@@ -5904,6 +5904,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-426",
+   "date": "2026-10-17",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Kayfabrick-Bots & Ernte-Combat (Georg 17.10.): Utopia-Bautrupp aus der „Kayfabrick“ = Robot_Two in den 6 Fluff-Akzentfarben (+ Ladestation, wahlweise Grubenhelm), tragen Knet-/Fluff-Blöcke wie Gift-Animationen, Standard-Clip Sisyphos (rollen große Fluff-Kugel bergauf). Kugeln der Bots als Ernte-Quelle: 3 Fausthiebe / 2 Primärschüsse / 1 Sekundärtreffer (Bombe, Granate, Rakete) → Kugel platzt, Fluff in Bot-Farbe sammelbar (HUD-Animation); danach Aggro/Pull, nahe Bots helfen → Combat-Arena für Card-Zines, Mobs, Minispiele (MVP-4). Mündungsfeuer: Action-Figure Muzzleflash (primär) + Muzzleflash_Long (sekundär) als Standard, Farb-/VFX-Varianten für Laser, Magie, Fluff. Banker-Anzug (Monopoly): gebogener Cartoon-Zylinder, goldenes Monokel, Zigarre, Längsstreifen-Hose, Frack-Schöße. Lizenz: KayKit Mystery Series = Kauf-Assets → Ableitungen nur privat; Originale liegen derzeit im öffentlichen Repo (Entscheid Georg).",
+   "values": {},
+   "owner": "WSB (B12-Banker, B17 Bots, B18 Mündungsfeuer) · WS1 (Ernte-/Aggro-Logik im Combat-Slice)",
+   "check": "Knet-Proofs, dann Georg; Combat-Slice nach Slice 1",
+   "source": "replies/KAYFABRICK_BOTS_R1.md · Georgs Selection v5",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Bots verbinden Fluff-Ernte, Utopia-Satire (Sisyphos-Arbeit) und den Weg in die Combat-Arena mit vorhandenen Assets.",
+   "applies": "ab sofort; Combat nach Slice 1"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5976,7 +5991,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:759",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:760",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
