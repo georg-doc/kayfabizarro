@@ -4,12 +4,13 @@ export const SURFACES={
  sand:{prefix:'footstep_snow_',cutoff:1100,tail:.24,gain:.78},
  stone:{prefix:'footstep_concrete_',cutoff:950,tail:.19,gain:.72},
  wood:{prefix:'footstep_wood_',cutoff:780,tail:.22,gain:.72},
- 'wet-clay':{prefix:'grass-',cutoff:650,tail:.24,gain:.85}
+ 'wet-clay':{prefix:'grass-',cutoff:450,tail:.24,gain:.5,attack:.024}
 };
 export async function createFootstepAudio({audioContext:ctx,destination,rows}){
  if(!ctx||!destination)throw Error('Existing host AudioContext and semantic bus required');
- const output=ctx.createGain();output.gain.value=.5;output.connect(destination);
- const capture=ctx.createMediaStreamDestination();output.connect(capture);
+ const output=ctx.createGain();output.gain.value=0;output.connect(destination);
+ const capture=ctx.createMediaStreamDestination(),captureDelay=ctx.createDelay(.5);output.connect(captureDelay).connect(capture);
+ const meter=ctx.createAnalyser();meter.fftSize=1024;output.connect(meter);const meterPCM=new Float32Array(1024);let armed=false;
  const banks={},metrics=[],last={},live=new Set(),scheduled=[];
  try{for(const [surface,config] of Object.entries(SURFACES)){
   banks[surface]=[];
@@ -24,23 +25,24 @@ export async function createFootstepAudio({audioContext:ctx,destination,rows}){
   }
   if(banks[surface].length!==5)throw Error('Exactly five donors required: '+surface);
  }}catch(e){output.disconnect();capture.disconnect();throw e;}
- function stop(){for(const s of live)try{s.stop();}catch{}live.clear();}
+ function stop(){armed=false;output.gain.cancelScheduledValues(ctx.currentTime);output.gain.setValueAtTime(0,ctx.currentTime);for(const s of live)try{s.stop();}catch{}live.clear();}
  function play(cue){
-  const bank=cue.surface,config=SURFACES[bank];if(!config)return null;
+  const bank=cue.surface,config=SURFACES[bank];if(!armed||!config)return null;
   const index=chooseIndex(banks[bank].length,last[bank]??-1);last[bank]=index;const sample=banks[bank][index];
   const src=ctx.createBufferSource(),hp=ctx.createBiquadFilter(),low=ctx.createBiquadFilter(),env=ctx.createGain();
   const rate=.97+Math.random()*.06;src.buffer=sample.buffer;src.playbackRate.value=rate;
   hp.type='highpass';hp.frequency.value=65;low.type='lowpass';low.frequency.value=config.cutoff;low.Q.value=.5;
   src.connect(hp).connect(low).connect(env).connect(output);
-  const when=ctx.currentTime,duration=Math.min(config.tail,(sample.buffer.duration-sample.trim)/rate);
+  const attack=config.attack||.01,lead=metrics.find(m=>m.file===sample.file).onsetAfterTrimMs/1000+attack*.5;
+  const when=Math.max(ctx.currentTime,cue.time-lead),duration=Math.min(config.tail,(sample.buffer.duration-sample.trim)/rate);
   const gain=sample.gain*config.gain*(.88+Math.random()*.12)*(cue.kind==='land'?1.15:1);
-  env.gain.setValueAtTime(0,when);env.gain.linearRampToValueAtTime(gain,when+.01);
+  env.gain.setValueAtTime(0,when);env.gain.linearRampToValueAtTime(gain,when+attack);
   env.gain.exponentialRampToValueAtTime(Math.max(.0001,gain*.24),when+duration*.55);env.gain.linearRampToValueAtTime(0,when+duration);
   while(live.size>=4){const s=live.values().next().value;try{s.stop();}catch{}live.delete(s);}live.add(src);
   src.onended=()=>{live.delete(src);for(const n of [src,hp,low,env])n.disconnect();};src.start(when,sample.trim);src.stop(when+duration+.002);
-  const record={...cue,file:sample.file,pitchRate:rate,scheduled:when,driftMs:(when-cue.time)*1000,renderToScheduleMs:(when-cue.renderedAt)*1000,attackMs:10,outputPeakCeiling:gain*.5};
+  const record={...cue,file:sample.file,pitchRate:rate,scheduled:when,estimatedOnsetAt:when+lead,onsetEstimateErrorMs:(when+lead-cue.time)*1000,late:ctx.currentTime>cue.time-lead,driftMs:(when-cue.time)*1000,renderToScheduleMs:(when-cue.renderedAt)*1000,attackMs:attack*1000,outputPeakCeiling:gain*.5};
   scheduled.push(record);if(scheduled.length>3000)scheduled.shift();return record;
  }
- return {play,stop,metrics,scheduled,capture,output,dispose(){stop();output.disconnect();}};
+ return {play,stop,metrics,scheduled,capture,output,arm(){armed=true;output.gain.setValueAtTime(.5,ctx.currentTime);},setCaptureDelay(seconds){captureDelay.delayTime.value=Math.max(0,Math.min(.45,seconds));},state(){meter.getFloatTimeDomainData(meterPCM);return {armed,activeSources:live.size,rms:Math.sqrt(meterPCM.reduce((n,v)=>n+v*v,0)/meterPCM.length)};},dispose(){stop();output.disconnect();captureDelay.disconnect();meter.disconnect();}};
 }
 
