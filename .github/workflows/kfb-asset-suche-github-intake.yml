@@ -1,0 +1,98 @@
+name: KFB Asset Suche - verified model import
+on:
+  push:
+    branches:
+      - research/v421-landmark-source-clay-proof-2026-10-17
+    paths:
+      - .github/workflows/kfb-asset-suche-github-intake.yml
+      - tools/asset_registry/kfb_asset_suche_auto_import.py
+      - tools/asset_registry/tests/test_kfb_asset_suche_auto_import.py
+      - tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/KFB_ASSET_SUCHE_AUTO_IMPORT_R1.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kfb-asset-suche-intake-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verified-top-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            tools/asset_registry/unpack_asset_pack.py
+            tools/asset_registry/kfb_asset_suche_auto_import.py
+            tools/asset_registry/tests/test_kfb_asset_suche_auto_import.py
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/KFB_ASSET_SUCHE_AUTO_IMPORT_R1.json
+          sparse-checkout-cone-mode: false
+          persist-credentials: true
+      - name: Static compile (non-game, no Blender)
+        run: |
+          python3 -m py_compile tools/asset_registry/unpack_asset_pack.py
+          python3 -m py_compile tools/asset_registry/kfb_asset_suche_auto_import.py
+          python3 -m py_compile tools/asset_registry/tests/test_kfb_asset_suche_auto_import.py
+      - name: KFB Registry-native importer security regressions
+        run: python3 -m unittest discover -s tools/asset_registry/tests -p 'test_kfb_asset_suche_auto_import.py' -v
+      - name: Import only the approved, hash-pinned public CC0 TOP original models
+        run: |
+          set -euo pipefail
+          python3 -m tools.asset_registry.kfb_asset_suche_auto_import \
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/KFB_ASSET_SUCHE_AUTO_IMPORT_R1.json \
+            | tee /tmp/kfb-asset-import-result.json
+          python3 - <<'PY'
+          import json, pathlib
+          result=json.loads(pathlib.Path('/tmp/kfb-asset-import-result.json').read_text())
+          assert result['status']=='STAGED_FOR_REVIEW'
+          assert len(result['candidates'])==2
+          assert result['autoMerged'] is False
+          assert result['georgSelected'] is False
+          for c in result['candidates']:
+              assert c['files']>0 and c['bytes']>0
+              print('VERIFIED',c['sourceId'],c['directory'],c['files'],c['bytes'])
+          PY
+      - name: Commit candidates to same review branch (no Live or main writes)
+        run: |
+          set -euo pipefail
+          git config user.name 'kfb-asset-intake[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f -- media/3D_Assets/KFB_Landmark_Candidates/
+          git diff --cached --quiet && { echo 'ERROR: expected original candidate source files absent'; exit 1; }
+          git commit -m 'assets(V-421): two verified CC0 landmark originals into canonical 3D asset candidates'
+          if ! git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17; then
+            echo 'Concurrent WS0 update: one conflict-free non-force rebase attempt'
+            git fetch origin research/v421-landmark-source-clay-proof-2026-10-17
+            git rebase origin/research/v421-landmark-source-clay-proof-2026-10-17
+            git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17
+          fi
+          git fetch origin research/v421-landmark-source-clay-proof-2026-10-17
+          test "$(git rev-parse HEAD)" = "$(git rev-parse FETCH_HEAD)"
+          git ls-tree -r --name-only HEAD -- media/3D_Assets/KFB_Landmark_Candidates/ | tee /tmp/kfb-landmark-imported.txt
+          test "$(wc -l < /tmp/kfb-landmark-imported.txt)" -ge 13
+      - name: Confirm every committed original against SOURCE.json hashes
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,pathlib,subprocess
+          root=pathlib.Path('media/3D_Assets/KFB_Landmark_Candidates')
+          sources=list(root.rglob('SOURCE.json'))
+          assert len(sources)==2, f'expected two exact models, found {len(sources)}'
+          n=0
+          for m in sources:
+              data=json.loads(m.read_text())
+              assert data['licenseSPDX']=='CC0-1.0'
+              assert data['selectionStatus']=='candidate-only'
+              assert data['productionStatus']=='NOT_SELECTED_NOT_INTEGRATED'
+              assert (m.parent/'CREDITS.md').exists()
+              for f in data['files']:
+                  p=m.parent/f['destination']
+                  assert p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==f['sha256']
+                  assert p.stat().st_size==f['bytes']
+                  n+=1
+          assert n==9
+          print('EXACT PUBLIC-SAFE ORIGINAL FILES HASH-VERIFIED AFTER GIT PUSH:',n)
+          PY
