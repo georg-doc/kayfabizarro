@@ -1,0 +1,33 @@
+{
+  "schema": "kfb.asset-intake-candidate/1",
+  "selectionStatus": "candidate-only",
+  "productionStatus": "NOT_SELECTED_NOT_INTEGRATED",
+  "originalSource": "https://opengameart.org/node/30878",
+  "downloadSource": "https://opengameart.org/sites/default/files/Stonehenge.zip",
+  "downloadSHA256": "1c3b5e0206c35eebfbf89985c21adc3472487288d6347ee8ad283c29ef6054bc",
+  "licenseSPDX": "CC0-1.0",
+  "licenseEvidence": "https://opengameart.org/node/30878",
+  "creator": "eugeneloza",
+  "attribution": "eugeneloza, Stonehenge (OpenDungeons), OpenGameArt CC0; source URL above",
+  "sourceId": "stonehenge_oga_cc0",
+  "landmarkId": "stonehenge",
+  "sourceRole": "exact-landmark-model-not-final-diorama",
+  "geometryStatus": "original-source-only",
+  "lookStatus": "Knete folgt (WSB after Georg selection)",
+  "modelVerifiedSHA256": "a172911fdeadf25567e61fc2da2cfb42e19ad614c1c2c82f43be77c1d160e045",
+  "sourcePreview": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/stonehenge_oga_cc0/source-isolation.png",
+  "files": [
+    {
+      "archiveMember": "Stonehenge_texture.png",
+      "destination": "source/Stonehenge_texture.png",
+      "bytes": 2336830,
+      "sha256": "e1800467307aaf41bd6bd367210495cf58e05d0f67ea2206ea92494253e32020"
+    },
+    {
+      "archiveMember": "Stonehengebed.blend1",
+      "destination": "source/Stonehengebed.blend",
+      "bytes": 589340,
+      "sha256": "a172911fdeadf25567e61fc2da2cfb42e19ad614c1c2c82f43be77c1d160e045"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+name: V421 real CC0 original model source proof
+on:
+  push:
+    branches:
+      - research/v421-landmark-source-clay-proof-2026-10-17
+    paths:
+      - .github/workflows/v421-landmark-cc0-source-clay-proof.yml
+      - tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  source-and-clay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      V421_PROOF_DIR: v421-proof
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/MANIFEST.json
+          sparse-checkout-cone-mode: false
+      - name: Compile safe source-audit script
+        run: python3 -m py_compile tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py
+      - name: Install native Blender (headless, not a KFB runtime)
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y blender python3-numpy
+          blender -b --version | head -3
+      - name: Get original CC0 archives and archive/source hashes
+        id: download
+        continue-on-error: true
+        run: python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py fetch
+      - name: Render isolated ORIGINAL ONLY from authentic source meshes (V424)
+        id: render
+        continue-on-error: true
+        if: steps.download.outcome == 'success'
+        run: blender -b --factory-startup --disable-autoexec --python tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py -- render
+      - name: Checkpoint new CC0 original-source proofs on research branch
+        id: checkpoint
+        if: steps.download.outcome == 'success' && steps.render.outcome == 'success'
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, hashlib, shutil
+          folder=pathlib.Path('v421-proof')
+          data=json.loads((folder/'final-audit.json').read_text())
+          assert data['passed']>=3, 'Existing 3 source proofs must still pass'
+          root=pathlib.Path('tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence')
+          root.mkdir(parents=True,exist_ok=True)
+          p=root/'MANIFEST.json'
+          manifest=json.loads(p.read_text()) if p.exists() else {'schema':'kfb.landmark.source-isolation/1','sources':[]}
+          present={q['id'] for q in manifest['sources']}
+          new=0
+          for src in data['sources']:
+              assert src['license']=='CC0-1.0'
+              if src['state']!='SOURCE_ISOLATED_ONLY':
+                  print('HELD:',src['id'],src['state'],src.get('error',src.get('renderError','')))
+                  continue
+              if src['id'] in present:
+                  print('EXISTING SOURCE EVIDENCE PRESERVED:',src['id'])
+                  continue
+              item=folder/src['id']/'source-isolation.png'
+              assert item.stat().st_size>1024
+              assert hashlib.sha256(item.read_bytes()).hexdigest()==src['sourceImageSha256']
+              assert not (folder/src['id']/'clay-preview.png').exists(), 'V424 prohibits fake clay'
+              dest=root/src['id'];dest.mkdir(exist_ok=True)
+              shutil.copyfile(item,dest/'source-isolation.png')
+              cols=['id','source_page','creator','license','kind','archiveSha256',
+                    'selectedRelativeFile','selectedSourceSha256','meshCount',
+                    'trianglesMeasured','facePolygonsMeasured','sourceImageSha256']
+              row={k:src[k] for k in cols}
+              row['sourceOnlyV424']=True
+              row['clayApproved']=False
+              manifest['sources'].append(row)
+              new+=1
+          assert new>=1, 'No new source proof; preserve previous manifest without a misleading checkpoint'
+          manifest['selectionReady']=False
+          p.write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n')
+          print('NEW REAL SOURCE OBJECTS:',new,'TOTAL IN MANIFEST:',len(manifest['sources']))
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/
+          git commit -m 'evidence(V-421): new CC0 original-source models only, no fake clay'
+          if ! git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17; then
+            echo 'Concurrent WS0 update detected; one non-force rebase attempt'
+            git fetch origin research/v421-landmark-source-clay-proof-2026-10-17
+            git rebase origin/research/v421-landmark-source-clay-proof-2026-10-17
+            git push origin HEAD:refs/heads/research/v421-landmark-source-clay-proof-2026-10-17
+          fi
+      - name: Publish audit evidence for agent-only source QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v421-real-mesh-cc0-clay-proofs
+          path: v421-proof/
+          retention-days: 14
+          if-no-files-found: warn
+      - name: Fail closed unless original-source proof is genuine
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('v421-proof/final-audit.json')
+          if not p.exists():
+              raise SystemExit('BLOCKED: no original source audit')
+          j=json.loads(p.read_text())
+          assert j['readyForGeorg'] is False
+          assert j['passed'] == 5, 'Two added public CC0 donors plus three existing proof objects required'
+          for record in j['sources']:
+              assert record['state']=='SOURCE_ISOLATED_ONLY'
+              folder=Path('v421-proof')/record['id']
+              assert (folder/'source-isolation.png').stat().st_size>1024
+              assert not (folder/'clay-preview.png').exists()
+              assert record['trianglesMeasured']>0
+              print(record['id'],record['trianglesMeasured'])
+          print('FIVE SOURCE-ONLY IMPORT PROOFS PASS; V424 PSEUDO CLAY REJECTED')
+          PY

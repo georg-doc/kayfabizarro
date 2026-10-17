@@ -1,6 +1,6 @@
 {
   "schema": "kfb.landmark-candidates/1",
-  "revision": "R1-research-unrendered",
+  "revision": "R1.7-KFB_ASSET_SUCHE_AUTOMATIC_ORIGINAL_GITHUB_INTAKE",
   "date": "2026-10-17",
   "ticket": "V-421",
   "owner": "KFB existing Asset Librarian view / existing img2threejs landmark authoring",
@@ -8,9 +8,9 @@
   "branch": "docs/kfb-decisions-register-2026-10-11",
   "authority": "WS0 only decides priority; Georg selects asset after source isolation and Clay preview",
   "mode": "RESEARCH_ONLY",
-  "gateStatus": "SOURCE_RESEARCH_NOT_ELIGIBLE_FOR_GEORG_SELECTION",
+  "gateStatus": "KFB_ASSET_SUCHE_EXACT_LANDMARK_SEARCH_REQUIRED",
   "licensePolicy": "CC0 preferred, CC BY with recorded attribution; reject NC/paid/private unless separate later agreement, no actual asset mirrored",
-  "sourceAudit": "Public web listings reviewed; downloaded meshes, formats and source licenses not independently inspected",
+  "sourceAudit": "Five distinct authentic CC0 meshes imported and independently triangle-counted; source-only V424 render for two newer donors, no fake Clay; other direct monument sources still source-listing only.",
   "mcp3dAssets": {
     "configuredAt": "Dropbox /CLAUDE/.mcp.json",
     "endpoint": "https://3d.shep.bot/mcp",
@@ -19,24 +19,47 @@
     "getAssetCalls": 0
   },
   "previewPolicy": {
-    "V346": "clay preview required per candidate before Georg",
+    "V346": "WS0 V-424 override: Georg's candidate selection needs a real original-model isolated render and verified source/license; NO pseudo-KFB-clay preview is permitted or required for selection. WSB applies real KFB K1 rounded/clay/palette after Georg chooses.",
     "V383": "never draw markup over source image",
-    "allCandidatePreviewsGenerated": 0,
-    "sourceIsolatedMeshes": 0
+    "allCandidatePreviewsGenerated": 3,
+    "sourceIsolatedMeshes": 5,
+    "styleReviewStatus": "WS0_V424_ORIGINAL_ONLY_ALLOWED_KFB_CLAY_WSB_K1_AFTER_SELECTION",
+    "realKfbClayAccepted": 0,
+    "originalSourceRendersVerified": 3,
+    "remainingDistinctSourceProofs": 20,
+    "previousFlatMaterialRendersAre": "DIAGNOSTIC_ONLY_NOT_KFB_CLAY",
+    "originalModelOnly": "Source identity, real mesh, real proportions, original materials and honest silhouette; label Knete folgt in UI text outside image; no fabricated texture/material"
   },
   "assetLibraryView": {
     "name": "Landmark-Kandidaten",
     "owner": "existing KFB Asset Librarian Site; do not create separate tool",
     "state": "SPEC_ONLY_NO_UI_WRITE",
     "selectButtonLabel": "Auswählen",
-    "buttonState": "DISABLED_UNTIL_LICENSE_SOURCE_CLAY_PREVIEW_VERIFIED",
-    "selectionPersistence": "existing Site/owner decision flow; no invented save backend"
+    "buttonState": "DISABLED_UNTIL_SOURCE_PROOF_AND_EXISTING_VIEW_IMPLEMENTED",
+    "selectionPersistence": "existing Site/owner decision flow; no invented save backend",
+    "sourceChoiceDisplay": "Georg source selection: authentic isolated object render + creator/license + model role/triangles + separate 'Knete folgt' UI text. Never show fake pseudo-clay as final look.",
+    "postSelectionHandoff": "WSB Blender owns K1 material + actual rounded edges + palette colour on Georg-selected exact original candidate. WSA/Asset Librarian does NOT fake KFB clay.",
+    "noNewBackend": true,
+    "shortlistFilter": "Exclude records with landmarkExactness.status=FAIL_NOT_THE_NAMED_LANDMARK; show evidence only in research/archive. No auto-approval of any other source."
   },
   "summary": {
     "landmarks": 10,
-    "sourceRecords": 23,
-    "clayPreviews": 0,
-    "eligibleForSelection": 0
+    "sourceRecords": 26,
+    "clayPreviews": 3,
+    "eligibleForSelection": 0,
+    "originalSourceMeshesVerified": 5,
+    "remainingDistinctSourceProofs": 19,
+    "diagnosticFlatMaterialPreviews": 3,
+    "acceptedRealKfbClayPreviews": 0,
+    "eligibleForGeorgSourceChoice": 2,
+    "selectableInActualUi": 0,
+    "additionalOriginalSourceOnlyProofs": 2,
+    "remainingSourceRecordsWithoutVerifiedMesh": 19,
+    "rejectedGenericOrWrongLandmarkDonors": 9,
+    "historicalResearchLeadsIncludingRejected": 26,
+    "originalsAutoImportedToGitHub": 2,
+    "autoImportedModelAndTextureFiles": 9,
+    "autoImportedToMain": 0
   },
   "landmarks": [
     {
@@ -51,7 +74,11 @@
       "cartoonification": {
         "instructions": "Reuse existing KFB grouped monoliths; oversize upright stones, rounded lintels; palette existing Stonehenge structure #969789, moss #71796e, gold accent #c7a65e.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -103,26 +130,58 @@
           },
           "files": {
             "downloadable": true,
-            "formatsConfirmed": [],
-            "archiveType": null,
-            "archiveInspected": false
+            "formatsConfirmed": [
+              ".blend1"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "1c3b5e0206c35eebfbf89985c21adc3472487288d6347ee8ad283c29ef6054bc",
+            "selectedModelFile": "Stonehengebed.blend1",
+            "selectedModelSha256": "a172911fdeadf25567e61fc2da2cfb42e19ad614c1c2c82f43be77c1d160e045"
           },
           "geometry": {
             "triangles": 640,
-            "metric": "source_listing_triangles",
-            "verifiedAgainstDownloadedMesh": false
+            "metric": "independently_measured_mesh_triangles",
+            "verifiedAgainstDownloadedMesh": true,
+            "polygons": 320
           },
           "media": {
             "thumbnailUrl": null,
             "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
             "clayPreviewUrl": null,
-            "clayPreviewStatus": "NOT_RENDERED",
-            "sourceIsolatedProofUrl": null,
-            "overlayOnPreviewAllowed": false
+            "clayPreviewStatus": "PREVIEW_RENDERED_NOT_WS0_ACCEPTED",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39044683249",
+            "overlayOnPreviewAllowed": false,
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/stonehenge_oga_cc0/source-isolation.png",
+            "clayPreviewRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/stonehenge_oga_cc0/clay-preview.png",
+            "sourceImageSha256": "5653518020c878d15508b871a09d290818ca7dcfb9c7a1fb188d7db991c069a2",
+            "clayImageSha256": "532fb13211c83fa39d16b18f3a96bfc3c71b3d2412dae3b835eb134c15ef24ff",
+            "sourceIsolationStatus": "SOURCE_RENDERED",
+            "previewEvidenceClass": "ORIGINAL_MONUMENT_SOURCE",
+            "materialRenderAcceptance": "REJECTED_AS_KFB_CLAY_DIAGNOSTIC_ONLY",
+            "sourceReviewLabel": "Genuine isolated original model; Knete folgt"
           },
           "rightsFlags": [],
-          "notes": "OpenGameArt Stonehenge.zip; 392 vertices / 320 faces. Zip internals uninspected.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "notes": "OpenGameArt Stonehenge.zip; 392 vertices / 320 faces. Zip internals uninspected. Verified native real-mesh clay proof: 640 triangles; not accepted or selected.",
+          "selectionStatus": "SOURCE_RENDER_READY_FOR_GEORG_CANDIDATE_REVIEW_UI_NOT_BUILT",
+          "sourceChoiceEligibility": "ELIGIBLE_CANDIDATE_ONLY_AFTER_ASSET_LIBRARIAN_VIEW_AND_GEORG",
+          "autoImport": {
+            "mode": "AUTO_DOWNLOADED_AND_COMMITTED_BY_GITHUB_ACTIONS",
+            "sourceOwner": "existing KFB Asset Librarian / Asset Registry",
+            "sourceDirectory": "media/3D_Assets/KFB_Landmark_Candidates/stonehenge/stonehenge_oga_cc0",
+            "sourceFile": "media/3D_Assets/KFB_Landmark_Candidates/stonehenge/stonehenge_oga_cc0/source/Stonehengebed.blend",
+            "originalName": "Stonehengebed.blend1",
+            "provenanceManifest": "media/3D_Assets/KFB_Landmark_Candidates/stonehenge/stonehenge_oga_cc0/SOURCE.json",
+            "attribution": "media/3D_Assets/KFB_Landmark_Candidates/stonehenge/stonehenge_oga_cc0/CREDITS.md",
+            "originalFileCount": 2,
+            "verifiedRepoBranch": "research/v421-landmark-source-clay-proof-2026-10-17",
+            "verifiedWorkflowRun": 39070404364,
+            "sourceOnlyCandidate": true,
+            "siteAndMainAvailability": "REVIEW_BRANCH_ONLY_NOT_INDEXED_AS_MAIN_ASSET",
+            "humanUploadRequired": false,
+            "georgSelected": false,
+            "kfbClayAccepted": false
+          }
         },
         {
           "id": "st-sketch",
@@ -160,7 +219,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -175,7 +234,11 @@
       "cartoonification": {
         "instructions": "Four exaggerated stacked animals, rounded feet, deliberately readable silhouettes; earth cream and warm character colours from V-305 palette, no hardcoded new palette.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -212,7 +275,16 @@
           },
           "rightsFlags": [],
           "notes": "NOT a Bremen statue. Animal roster and four requested silhouettes require archive inspection.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "selectionStatus": "REJECTED_FOR_LANDMARK_SHORTLIST_GENERIC_OR_WRONG_LOCATION_DONOR",
+          "priorSelectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION",
+          "landmarkExactness": {
+            "status": "FAIL_NOT_THE_NAMED_LANDMARK",
+            "confirmedBy": "GEORG_V421_KFB_ASSET_SUCHE_CORRECTION_2026_10_17",
+            "displayInGeorgLandmarkChoices": false,
+            "retainedForSourceAuditOnly": true
+          },
+          "shortlistReason": "Generic kit/construction component or different landmark; not eligible as a substitute for the requested named world landmark."
         },
         {
           "id": "br-proto",
@@ -248,10 +320,19 @@
           },
           "rightsFlags": [],
           "notes": "NOT a statue model; blocks/pedestal/robber-house scaffold only. No direct statue asset verified.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "selectionStatus": "REJECTED_FOR_LANDMARK_SHORTLIST_GENERIC_OR_WRONG_LOCATION_DONOR",
+          "priorSelectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION",
+          "landmarkExactness": {
+            "status": "FAIL_NOT_THE_NAMED_LANDMARK",
+            "confirmedBy": "GEORG_V421_KFB_ASSET_SUCHE_CORRECTION_2026_10_17",
+            "displayInGeorgLandmarkChoices": false,
+            "retainedForSourceAuditOnly": true
+          },
+          "shortlistReason": "Generic kit/construction component or different landmark; not eligible as a substitute for the requested named world landmark."
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -266,7 +347,11 @@
       "cartoonification": {
         "instructions": "Reduce to stepped towers, big turrets and balcony; caramel-cream stone, periwinkle roofs, warm gold accent proposed through V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -283,27 +368,51 @@
           },
           "files": {
             "downloadable": true,
-            "formatsConfirmed": [],
-            "archiveType": null,
-            "archiveInspected": false
+            "formatsConfirmed": [
+              ".fbx",
+              ".glb",
+              ".obj"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "921f3f73927bb23106cae34bc21d5ab4b033a9fc120475e96f714a406e3169df",
+            "selectedModelFile": "Models/GLB format/tower-square.glb",
+            "selectedModelSha256": "ae2e4f11247fef4e8e550011c20bc1862839cd4cfd21590aec9781ae0fbbbc7f"
           },
           "geometry": {
-            "triangles": null,
-            "polygons": null,
-            "metric": "not_published",
-            "verifiedAgainstDownloadedMesh": false
+            "triangles": 176,
+            "polygons": 176,
+            "metric": "independently_measured_mesh_triangles",
+            "verifiedAgainstDownloadedMesh": true
           },
           "media": {
             "thumbnailUrl": null,
             "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
             "clayPreviewUrl": null,
-            "clayPreviewStatus": "NOT_RENDERED",
-            "sourceIsolatedProofUrl": null,
-            "overlayOnPreviewAllowed": false
+            "clayPreviewStatus": "PREVIEW_RENDERED_NOT_WS0_ACCEPTED",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39044683249",
+            "overlayOnPreviewAllowed": false,
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/kenney_castle_cc0/source-isolation.png",
+            "clayPreviewRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/kenney_castle_cc0/clay-preview.png",
+            "sourceImageSha256": "e2c52a44aebf6d9818ee4772169d021c4c06fab5afa19ae4fb784d0dc4d87bb0",
+            "clayImageSha256": "90d64856ffd2d43e2725a5c10ec7d26170c6fe439149c648dcdb8c5d7fcd3c94",
+            "sourceIsolationStatus": "SOURCE_RENDERED",
+            "previewEvidenceClass": "ONLY_CONSTRUCTION_DONOR",
+            "materialRenderAcceptance": "REJECTED_AS_KFB_CLAY_DIAGNOSTIC_ONLY",
+            "sourceReviewLabel": "Source kit tower-square.glb, not Neuschwanstein or Globe; Knete folgt only after selected landmark model is proven"
           },
           "rightsFlags": [],
-          "notes": "75-model architectural kit; NOT a faithful Neuschwanstein asset.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "notes": "75-model architectural kit; NOT a faithful Neuschwanstein asset. Verified native real-mesh clay proof: 176 triangles; not accepted or selected.",
+          "selectionStatus": "REJECTED_FOR_LANDMARK_SHORTLIST_GENERIC_OR_WRONG_LOCATION_DONOR",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION",
+          "priorSelectionStatus": "CONSTRUCTION_DONOR_ONLY_NOT_A_COMPLETED_LANDMARK",
+          "landmarkExactness": {
+            "status": "FAIL_NOT_THE_NAMED_LANDMARK",
+            "confirmedBy": "GEORG_V421_KFB_ASSET_SUCHE_CORRECTION_2026_10_17",
+            "displayInGeorgLandmarkChoices": false,
+            "retainedForSourceAuditOnly": true
+          },
+          "shortlistReason": "Generic kit/construction component or different landmark; not eligible as a substitute for the requested named world landmark."
         },
         {
           "id": "neu-photo",
@@ -341,9 +450,66 @@
           ],
           "notes": "Extremely heavy; source listing only, photogrammetry/attribution of original geometry not checked.",
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "neu-simple",
+          "title": "Simple Castle · TitaniumFalcon",
+          "sourceUrl": "https://opengameart.org/content/simple-castle",
+          "sourceRole": "construction_kit_only",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "TitaniumFalcon",
+            "creditLine": "Simple Castle · TitaniumFalcon — TitaniumFalcon; original https://opengameart.org/content/simple-castle; CC0-1.0 (credit retained voluntarily)",
+            "upstreamVerification": "ORIGINAL_SOURCE_DOWNLOADED_AND_MESH_ISOLATED_V424"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [
+              ".blend"
+            ],
+            "archiveType": "direct_model",
+            "archiveInspected": true,
+            "originalArchiveSha256": "bda823bd1732a8b53dede6dd25e0b19c84dfb9df4f24abb8f73106ed6eec1864",
+            "selectedModelFile": "SimpleCastle.blend",
+            "selectedModelSha256": "bda823bd1732a8b53dede6dd25e0b19c84dfb9df4f24abb8f73106ed6eec1864"
+          },
+          "geometry": {
+            "triangles": 2414,
+            "polygons": 1087,
+            "metric": "measured_source_only",
+            "verifiedAgainstDownloadedMesh": true
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "ORIGINAL_SOURCE_RENDER_CONFIRMED",
+            "thumbnailSourceRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/simple_castle_titanium_cc0/source-isolation.png",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_CREATED_V424_NO_PSEUDO_CLAY",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39068894022",
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/simple_castle_titanium_cc0/source-isolation.png",
+            "sourceImageSha256": "f03ee353d941e9b6af02316647c73c0d7520e6a08d5e369166d75a81128989d6",
+            "overlayOnPreviewAllowed": false,
+            "sourceOnlyV424": true
+          },
+          "rightsFlags": [
+            "NOT_A_COMPLETE_LANDMARK",
+            "WSB_K1_AFTER_ACTUAL_GEORG_SELECTION"
+          ],
+          "notes": "Complete toy-castle silhouette. Not Neuschwanstein; useful only as a proportion, tower and courtyard construction donor. Round crenellations and tier turrets with WSB K1 after Georg picks an actual landmark.",
+          "selectionStatus": "REJECTED_FOR_LANDMARK_SHORTLIST_GENERIC_OR_WRONG_LOCATION_DONOR",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION",
+          "priorSelectionStatus": "CONSTRUCTION_DONOR_ONLY_NOT_A_COMPLETED_LANDMARK",
+          "landmarkExactness": {
+            "status": "FAIL_NOT_THE_NAMED_LANDMARK",
+            "confirmedBy": "GEORG_V421_KFB_ASSET_SUCHE_CORRECTION_2026_10_17",
+            "displayInGeorgLandmarkChoices": false,
+            "retainedForSourceAuditOnly": true
+          },
+          "shortlistReason": "Generic kit/construction component or different landmark; not eligible as a substitute for the requested named world landmark."
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -357,7 +523,11 @@
       "cartoonification": {
         "instructions": "Broad hero stairs, 3 bold platform tiers, playable steps; baked-earth terracotta and warm sand from V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -429,10 +599,76 @@
           },
           "rightsFlags": [],
           "notes": "Stepped construction donor, not historical digital scan.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "selectionStatus": "REJECTED_FOR_LANDMARK_SHORTLIST_GENERIC_OR_WRONG_LOCATION_DONOR",
+          "priorSelectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION",
+          "landmarkExactness": {
+            "status": "FAIL_NOT_THE_NAMED_LANDMARK",
+            "confirmedBy": "GEORG_V421_KFB_ASSET_SUCHE_CORRECTION_2026_10_17",
+            "displayInGeorgLandmarkChoices": false,
+            "retainedForSourceAuditOnly": true
+          },
+          "shortlistReason": "Generic kit/construction component or different landmark; not eligible as a substitute for the requested named world landmark."
+        },
+        {
+          "id": "ur-temple-kit",
+          "title": "Modular Temple · arch donor",
+          "sourceUrl": "https://opengameart.org/content/modular-temple-3d-models",
+          "sourceRole": "construction_kit_only",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "Keith at Fertile Soil Productions",
+            "creditLine": "Modular Temple · arch donor — Keith at Fertile Soil Productions; original https://opengameart.org/content/modular-temple-3d-models; CC0-1.0 (credit retained voluntarily)",
+            "upstreamVerification": "ORIGINAL_SOURCE_DOWNLOADED_AND_MESH_ISOLATED_V424"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [
+              ".obj"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "93abe0df8d11aa7d5d230817dbc9ab7aea543b1a27c5024389cb7bb90f8db85a",
+            "selectedModelFile": "Modular Temple/Pillar_Large_Arch.obj",
+            "selectedModelSha256": "a14d14ad98aa82fb8d7bca3693cd0f48a2d0b30ac4a7149919a8c3fb966db5bf"
+          },
+          "geometry": {
+            "triangles": 196,
+            "polygons": 196,
+            "metric": "measured_source_only",
+            "verifiedAgainstDownloadedMesh": true
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "ORIGINAL_SOURCE_RENDER_CONFIRMED",
+            "thumbnailSourceRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/modular_temple_fertile_cc0/source-isolation.png",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_CREATED_V424_NO_PSEUDO_CLAY",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39068894022",
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/modular_temple_fertile_cc0/source-isolation.png",
+            "sourceImageSha256": "aa2561376fd4fbca83409a249fdeba139be8b7889e60eeade92563edde5f68b0",
+            "overlayOnPreviewAllowed": false,
+            "sourceOnlyV424": true
+          },
+          "rightsFlags": [
+            "NOT_A_COMPLETE_LANDMARK",
+            "WSB_K1_AFTER_ACTUAL_GEORG_SELECTION"
+          ],
+          "notes": "Single arched pillar/bridge block; NOT Ziggurat of Ur. Possible lintel/ritual approach donor only; historic stepped temple requires separate source.",
+          "selectionStatus": "REJECTED_FOR_LANDMARK_SHORTLIST_GENERIC_OR_WRONG_LOCATION_DONOR",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION",
+          "priorSelectionStatus": "CONSTRUCTION_DONOR_ONLY_NOT_A_COMPLETED_LANDMARK",
+          "landmarkExactness": {
+            "status": "FAIL_NOT_THE_NAMED_LANDMARK",
+            "confirmedBy": "GEORG_V421_KFB_ASSET_SUCHE_CORRECTION_2026_10_17",
+            "displayInGeorgLandmarkChoices": false,
+            "retainedForSourceAuditOnly": true
+          },
+          "shortlistReason": "Generic kit/construction component or different landmark; not eligible as a substitute for the requested named world landmark."
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -447,7 +683,11 @@
       "cartoonification": {
         "instructions": "Open, offset concentric galleries with oversized arches; warm ochre masonry, muted teal shadow role, ochre-gold accent via V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -523,7 +763,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -538,7 +778,11 @@
       "cartoonification": {
         "instructions": "Radial timber ring, open roof and audience tiers, oversized stage; timber honey/cream and red cloth accent via V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -574,7 +818,16 @@
           },
           "rightsFlags": [],
           "notes": "Historically different predecessor, NOT the actual Globe; roof/wall grammar only.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "selectionStatus": "REJECTED_FOR_LANDMARK_SHORTLIST_GENERIC_OR_WRONG_LOCATION_DONOR",
+          "priorSelectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION",
+          "landmarkExactness": {
+            "status": "FAIL_NOT_THE_NAMED_LANDMARK",
+            "confirmedBy": "GEORG_V421_KFB_ASSET_SUCHE_CORRECTION_2026_10_17",
+            "displayInGeorgLandmarkChoices": false,
+            "retainedForSourceAuditOnly": true
+          },
+          "shortlistReason": "Generic kit/construction component or different landmark; not eligible as a substitute for the requested named world landmark."
         },
         {
           "id": "gl-kenney",
@@ -590,30 +843,54 @@
           },
           "files": {
             "downloadable": true,
-            "formatsConfirmed": [],
-            "archiveType": null,
-            "archiveInspected": false
+            "formatsConfirmed": [
+              ".fbx",
+              ".glb",
+              ".obj"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "921f3f73927bb23106cae34bc21d5ab4b033a9fc120475e96f714a406e3169df",
+            "selectedModelFile": "Models/GLB format/tower-square.glb",
+            "selectedModelSha256": "ae2e4f11247fef4e8e550011c20bc1862839cd4cfd21590aec9781ae0fbbbc7f"
           },
           "geometry": {
-            "triangles": null,
-            "polygons": null,
-            "metric": "not_published",
-            "verifiedAgainstDownloadedMesh": false
+            "triangles": 176,
+            "polygons": 176,
+            "metric": "independently_measured_mesh_triangles",
+            "verifiedAgainstDownloadedMesh": true
           },
           "media": {
             "thumbnailUrl": null,
             "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
             "clayPreviewUrl": null,
-            "clayPreviewStatus": "NOT_RENDERED",
-            "sourceIsolatedProofUrl": null,
-            "overlayOnPreviewAllowed": false
+            "clayPreviewStatus": "PREVIEW_RENDERED_NOT_WS0_ACCEPTED",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39044683249",
+            "overlayOnPreviewAllowed": false,
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/kenney_castle_cc0/source-isolation.png",
+            "clayPreviewRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/kenney_castle_cc0/clay-preview.png",
+            "sourceImageSha256": "e2c52a44aebf6d9818ee4772169d021c4c06fab5afa19ae4fb784d0dc4d87bb0",
+            "clayImageSha256": "90d64856ffd2d43e2725a5c10ec7d26170c6fe439149c648dcdb8c5d7fcd3c94",
+            "sourceIsolationStatus": "SOURCE_RENDERED",
+            "previewEvidenceClass": "ONLY_CONSTRUCTION_DONOR",
+            "materialRenderAcceptance": "REJECTED_AS_KFB_CLAY_DIAGNOSTIC_ONLY",
+            "sourceReviewLabel": "Source kit tower-square.glb, not Neuschwanstein or Globe; Knete folgt only after selected landmark model is proven"
           },
           "rightsFlags": [],
-          "notes": "Generic timber-like building donor; not Globe Theatre geometry.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "notes": "Generic timber-like building donor; not Globe Theatre geometry. Verified native real-mesh clay proof: 176 triangles; not accepted or selected.",
+          "selectionStatus": "REJECTED_FOR_LANDMARK_SHORTLIST_GENERIC_OR_WRONG_LOCATION_DONOR",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION",
+          "priorSelectionStatus": "CONSTRUCTION_DONOR_ONLY_NOT_A_COMPLETED_LANDMARK",
+          "landmarkExactness": {
+            "status": "FAIL_NOT_THE_NAMED_LANDMARK",
+            "confirmedBy": "GEORG_V421_KFB_ASSET_SUCHE_CORRECTION_2026_10_17",
+            "displayInGeorgLandmarkChoices": false,
+            "retainedForSourceAuditOnly": true
+          },
+          "shortlistReason": "Generic kit/construction component or different landmark; not eligible as a substitute for the requested named world landmark."
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -629,7 +906,11 @@
       "cartoonification": {
         "instructions": "Rounded monumental faces and three distinct expressions, grounded plinth; volcanic stone charcoal, mineral cream edge and island vegetation from host roles.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -738,7 +1019,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -753,7 +1034,11 @@
       "cartoonification": {
         "instructions": "Make crown, torch and pedestal read at a distance; oxidized mint-patina, warm cream pedestal, restrained gold flame from V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -862,7 +1147,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -877,7 +1162,11 @@
       "cartoonification": {
         "instructions": "Stepped temple with outsized ball-court rings, feathered serpent motif; limestone cream, verdant shadow and clay red accents from V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -890,31 +1179,63 @@
             "attributionRequired": false,
             "creator": "elopez7 / Esteban Lopez",
             "creditLine": "Chichén Itzá — El Castillo — elopez7 / Esteban Lopez; source https://opengameart.org/content/chichen-itza-el-castillo; CC0-1.0",
-            "upstreamVerification": "listing_only_not_file_audited"
+            "upstreamVerification": "CC0 verified OpenGameArt source page; original zip and selected FBX independently inspected, attribution 'Esteban Lopez' recorded"
           },
           "files": {
             "downloadable": true,
-            "formatsConfirmed": [],
-            "archiveType": null,
-            "archiveInspected": false
+            "formatsConfirmed": [
+              ".fbx"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "bc4f0caf2b3b88cab18019bf4679f41556f2d805a10033714e38c95f9a140163",
+            "selectedModelFile": "ElCastillo.fbx",
+            "selectedModelSha256": "a275298cb2f8acb9ceaf8e3831ffee49ad9d7b839ec7475af0572a07091de644"
           },
           "geometry": {
-            "triangles": null,
-            "polygons": null,
-            "metric": "not_published",
-            "verifiedAgainstDownloadedMesh": false
+            "triangles": 10218,
+            "polygons": 5175,
+            "metric": "independently_measured_source_model",
+            "verifiedAgainstDownloadedMesh": true
           },
           "media": {
             "thumbnailUrl": null,
-            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "thumbnailStatus": "SOURCE_ISOLATION_DIAGNOSTIC_AVAILABLE",
             "clayPreviewUrl": null,
-            "clayPreviewStatus": "NOT_RENDERED",
-            "sourceIsolatedProofUrl": null,
-            "overlayOnPreviewAllowed": false
+            "clayPreviewStatus": "MATERIAL_DIAGNOSTIC_NOT_APPROVED_KFB_CLAY",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39067916203",
+            "overlayOnPreviewAllowed": false,
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/source-isolation.png",
+            "clayPreviewRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/clay-preview.png",
+            "sourceImageSha256": "8373e42a1f84748f5a417b151a95707c4a825d2578c1162d82c32a063965bfcf",
+            "clayImageSha256": "2b3a0f346731ec133f16001ea02ac7f7fe960fc51a5d64326e0c0f5d988bcc03",
+            "sourceIsolationStatus": "SOURCE_RENDERED",
+            "previewEvidenceClass": "ORIGINAL_MONUMENT_SOURCE_NOT_BALLCOURT",
+            "thumbnailSourceRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/source-isolation.png",
+            "materialRenderAcceptance": "REJECTED_AS_KFB_CLAY_DIAGNOSTIC_ONLY",
+            "sourceReviewLabel": "Genuine isolated original model; Knete folgt"
           },
           "rightsFlags": [],
-          "notes": "OpenGameArt chichenitza.zip (34.2MB), pyramid/temple; polygon count and archive internals NOT inspected.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "notes": "OpenGameArt chichenitza.zip (34.2MB), pyramid/temple; polygon count and archive internals NOT inspected. ElCastillo.fbx successfully imported; mesh 10,218 triangles / 5,175 faces. No ball court geometry verified. Source-isolation image and flat material diagnostic only; WS0 TUNE WSB finishing pending. CC0 with author's requested Esteban Lopez attribution.",
+          "selectionStatus": "SOURCE_RENDER_READY_FOR_GEORG_CANDIDATE_REVIEW_UI_NOT_BUILT",
+          "sourceChoiceEligibility": "ELIGIBLE_CANDIDATE_ONLY_AFTER_ASSET_LIBRARIAN_VIEW_AND_GEORG",
+          "autoImport": {
+            "mode": "AUTO_DOWNLOADED_AND_COMMITTED_BY_GITHUB_ACTIONS",
+            "sourceOwner": "existing KFB Asset Librarian / Asset Registry",
+            "sourceDirectory": "media/3D_Assets/KFB_Landmark_Candidates/chichen_itza/chichen_el_castillo_oga_cc0",
+            "sourceFile": "media/3D_Assets/KFB_Landmark_Candidates/chichen_itza/chichen_el_castillo_oga_cc0/source/ElCastillo.fbx",
+            "originalName": "ElCastillo.fbx",
+            "provenanceManifest": "media/3D_Assets/KFB_Landmark_Candidates/chichen_itza/chichen_el_castillo_oga_cc0/SOURCE.json",
+            "attribution": "media/3D_Assets/KFB_Landmark_Candidates/chichen_itza/chichen_el_castillo_oga_cc0/CREDITS.md",
+            "originalFileCount": 7,
+            "verifiedRepoBranch": "research/v421-landmark-source-clay-proof-2026-10-17",
+            "verifiedWorkflowRun": 39070404364,
+            "sourceOnlyCandidate": true,
+            "siteAndMainAvailability": "REVIEW_BRANCH_ONLY_NOT_INDEXED_AS_MAIN_ASSET",
+            "humanUploadRequired": false,
+            "georgSelected": false,
+            "kfbClayAccepted": false
+          }
         },
         {
           "id": "ch-phot",
@@ -952,7 +1273,7 @@
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     },
     {
@@ -967,7 +1288,11 @@
       "cartoonification": {
         "instructions": "Keep 3-tier mandala walk, oversized bells, broad stairs; volcanic-grey stone, cream relief and warm clay accents through V-305.",
         "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
-        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+        "clayColourStatus": "PROPOSED_NOT_RENDERED",
+        "sixColourAssignmentRule": "Any of the six current zone/biome/deck palette colours may be used across stone, vegetation, cloud, buildings and props; naturalistic colour-role matches are optional. Preserve scene harmony.",
+        "exampleApplication": "Where environment assets exist: violet clouds, pale-cyan tree trunks, yellow canopies; only if those hues occur in the current palette; cloud mesh currently missing.",
+        "existingPaletteNotesAre": "SOURCE_IDENTITY_REFERENCE_NOT_FIXED_FINAL_COLOUR",
+        "clayAppearanceApproval": "NOT_ACCEPTED_WSB_REQUIRED"
       },
       "candidates": [
         {
@@ -1045,9 +1370,66 @@
           ],
           "notes": "Relief, NOT complete temple. Creator NoAI restriction: do not feed mesh to Meshy or other AI; manual Blender source review only.",
           "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "bo-temple-kit",
+          "title": "Modular Temple · arch donor",
+          "sourceUrl": "https://opengameart.org/content/modular-temple-3d-models",
+          "sourceRole": "construction_kit_only",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "Keith at Fertile Soil Productions",
+            "creditLine": "Modular Temple · arch donor — Keith at Fertile Soil Productions; original https://opengameart.org/content/modular-temple-3d-models; CC0-1.0 (credit retained voluntarily)",
+            "upstreamVerification": "ORIGINAL_SOURCE_DOWNLOADED_AND_MESH_ISOLATED_V424"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [
+              ".obj"
+            ],
+            "archiveType": "zip",
+            "archiveInspected": true,
+            "originalArchiveSha256": "93abe0df8d11aa7d5d230817dbc9ab7aea543b1a27c5024389cb7bb90f8db85a",
+            "selectedModelFile": "Modular Temple/Pillar_Large_Arch.obj",
+            "selectedModelSha256": "a14d14ad98aa82fb8d7bca3693cd0f48a2d0b30ac4a7149919a8c3fb966db5bf"
+          },
+          "geometry": {
+            "triangles": 196,
+            "polygons": 196,
+            "metric": "measured_source_only",
+            "verifiedAgainstDownloadedMesh": true
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "ORIGINAL_SOURCE_RENDER_CONFIRMED",
+            "thumbnailSourceRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/modular_temple_fertile_cc0/source-isolation.png",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_CREATED_V424_NO_PSEUDO_CLAY",
+            "sourceIsolatedProofUrl": "https://github.com/georg-doc/kayfabizarro/actions/runs/39068894022",
+            "sourceProofRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/modular_temple_fertile_cc0/source-isolation.png",
+            "sourceImageSha256": "aa2561376fd4fbca83409a249fdeba139be8b7889e60eeade92563edde5f68b0",
+            "overlayOnPreviewAllowed": false,
+            "sourceOnlyV424": true
+          },
+          "rightsFlags": [
+            "NOT_A_COMPLETE_LANDMARK",
+            "WSB_K1_AFTER_ACTUAL_GEORG_SELECTION"
+          ],
+          "notes": "Single arch piece; NOT Borobudur stupas/mandala. Possible passage/stair-adjacent scene construction donor only; not selected heritage architecture.",
+          "selectionStatus": "REJECTED_FOR_LANDMARK_SHORTLIST_GENERIC_OR_WRONG_LOCATION_DONOR",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION",
+          "priorSelectionStatus": "CONSTRUCTION_DONOR_ONLY_NOT_A_COMPLETED_LANDMARK",
+          "landmarkExactness": {
+            "status": "FAIL_NOT_THE_NAMED_LANDMARK",
+            "confirmedBy": "GEORG_V421_KFB_ASSET_SUCHE_CORRECTION_2026_10_17",
+            "displayInGeorgLandmarkChoices": false,
+            "retainedForSourceAuditOnly": true
+          },
+          "shortlistReason": "Generic kit/construction component or different landmark; not eligible as a substitute for the requested named world landmark."
         }
       ],
-      "georgDecision": "PENDING_PREVIEW",
+      "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
       "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
     }
   ],
@@ -1080,5 +1462,79 @@
     "Hiroshima",
     "Mount Rushmore"
   ],
-  "nextGate": "WSA_V421_ACTUAL_ASSET_RETRIEVAL_SOURCE_ISOLATION_CLAY_PREVIEW"
+  "nextGate": "WS0_KFB_ASSET_SUCHE_TO_VERIFIED_AUTO_IMPORT_IN_EXISTING_LIBRARIAN",
+  "styleDirection": {
+    "status": "GEORG_STYLE_DIRECTION_ADDENDUM_V421",
+    "reference": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/LANDMARK_CHROMATIC_DIORAMA_STYLE_R1.md",
+    "paletteSource": "ONE existing V-305 kfb-cartoon-palette.js; six colour set of active zone/biome/card deck",
+    "paletteSize": 6,
+    "semanticObjectColoursAreFixed": false,
+    "assignmentRule": "Any of six actual colours can be remapped to any diorama visual object class while preserving scene harmony and legibility; no extra unscoped colour generator.",
+    "examples": [
+      {
+        "object": "clouds",
+        "requestedAppearance": "purple/violet",
+        "assetState": "MISSING_NOT_BUILT"
+      },
+      {
+        "object": "tree_trunks",
+        "requestedAppearance": "light blue/cyan",
+        "assetState": "EXISTING_MESHES_COLOUR_ASSIGNMENT_NOT_TESTED"
+      },
+      {
+        "object": "tree_canopies",
+        "requestedAppearance": "yellow",
+        "assetState": "EXISTING_MESHES_COLOUR_ASSIGNMENT_NOT_TESTED"
+      }
+    ],
+    "sampleColorsNotHardcoded": true,
+    "cloudAssetStatus": "OPEN_FIND_EXISTING_SKY_CLOUD_OWNER_AND_SOURCE; NOT IMPLEMENTED",
+    "sourceImageMustRemainUnmodified": true,
+    "distinction": "Six active palette colours are not the six Fluff story-mode types",
+    "ws0Evaluation": "PR418 TUNE: no pseudo clay; WSB owns true clay finishing; 2 existing renders geometry research evidence only",
+    "integrationStatus": "SPEC_ONLY"
+  },
+  "researchLeadSemantics": "26 source and donor research records do NOT mean 26 viable landmark models; generic construction assets rejected from actual landmark shortlists, source audit retained.",
+  "assetSearchPolicy": {
+    "label": "KFB Asset Suche",
+    "classification": "GEORG_BINDING_CORRECTION_TO_V421",
+    "owner": "existing KFB Asset Librarian and shared 3d-assets MCP; no new search index",
+    "registrySource": "tools/asset_registry/librarian_tools.py search_assets/get_asset",
+    "externalMcp": {
+      "name": "3d-assets",
+      "endpoint": "https://3d.shep.bot/mcp",
+      "configuredAt": "~/Dropbox/CLAUDE/.mcp.json",
+      "methods": [
+        "search_assets",
+        "get_asset"
+      ],
+      "callableInThisWSAWebChat": false
+    },
+    "exactLandmarkOnly": true,
+    "noGenericKitbashSubstitution": true,
+    "noClaudeReconstructionWithoutGeorgExplicitGo": true,
+    "noAutomaticBlockyRounding": true,
+    "exactSearchNoHitStatus": "NO_SUITABLE_FREE_LANDMARK_MODEL_FOUND",
+    "sourceProofRequired": "original actual named landmark isolated, model identity and licensing, format, triangles/polygons, source URL and author",
+    "previewBeforeGeorg": "original source model only, external 'Knete folgt' label as per WS0; never overlay preview",
+    "laterKfbClay": "WSB only, selected exact source with canonical K1 clay and active zone/biome/card deck six-color palette",
+    "reportPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WSA_TO_WS0_V421_KFB_ASSET_SUCHE_CORRECTION_2026-10-17.md",
+    "noNewRuntimeOwner": true,
+    "directGitHubImport": {
+      "status": "TWO_HASH_VERIFIED_CC0_MODELS_AUTOMATICALLY_IMPORTED_ON_RESEARCH_BRANCH",
+      "authoritativeRoot": "media/3D_Assets/KFB_Landmark_Candidates",
+      "importManifest": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/KFB_ASSET_SUCHE_AUTO_IMPORT_R1.json",
+      "importOwner": "tools/asset_registry/kfb_asset_suche_auto_import.py",
+      "workflow": ".github/workflows/kfb-asset-suche-github-intake.yml",
+      "filesPerSource": [
+        "original licensed model",
+        "original model dependencies/textures",
+        "SOURCE.json",
+        "CREDITS.md"
+      ],
+      "eligibility": "exact genuine landmark model, confirmed author/license CC0 or CC-BY, hash-pinned, publicSafe, no NC/private/purchased, no generic-kit substitution",
+      "scope": "TOP candidate source-stage only; not Georg selected, no WSB clay, no WS1 integration, no main auto-merge",
+      "connectionStillNeeded": "KFB Asset Librarian / connected external 3d-assets search result -> verified intake request on review branch. Existing Web chat lacks that MCP and Site GitHub-write handoff."
+    }
+  }
 }
