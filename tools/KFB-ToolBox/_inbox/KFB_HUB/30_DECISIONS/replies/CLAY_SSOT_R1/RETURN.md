@@ -1,3 +1,76 @@
+# RETURN · CLAY_SSOT_R1 · **v1.1 "etwas mehr Knete"** (WS0 · 17./18.10.2026)
+
+**Brief:** Georg 17.10.: "etwas mehr Knete, wir müssen die Kerben- und Dellen-Mathematik optimieren" (a bit more clay; improve the notch and dent maths).
+
+**Result:** `kfb-clay.v1.1.js` (sha256 `a81a3ee3…3fd0`). The `character` relief is clearly stronger, the dent maths is new, there are still no stripes, and the API is identical to v1. Golden test v1.1: **G0–G5 all PASS**, with the G2 thresholds unchanged (stripePeak ≤ 3.0, coherence ≤ 0.70). Unit test **43/43 PASS**. **v1 is untouched** (sha256 `332d6af2…bb7b`, as before). The v1 report follows below, unchanged.
+
+## What changed (v1 → v1.1)
+v1.1 is v1 with four sections replaced: the header, the profiles, the dent GLSL and the dent uniforms; 156 changed lines. These stay byte-identical: seed handling, scale relative to the object (through the skin), no UV / texture / sin-hash / fwidth, distance bands in viewport shares, colour and matte rules, material build and API.
+
+| | v1 | v1.1 |
+|---|---|---|
+| Dent layers | 1 (cell 0.034 · 45 %) | **2:** small thumb-tip dents (cell 0.03 ref, 80 %, slope 0.15) and large thumb presses / drags (cell 0.075 ref, 65 %, slope 0.19) |
+| Sizes | radius 0.26–0.40 cell, uniform | **log-normal** per dent (σ 0.40 / 0.35, median 0.42 / 0.34 cell): a few large, many small. Clamped so a dent never leaves the 3×3×3 window, which means no seams and no cut dents |
+| Shape | mild ellipse | **oval and drawn out:** elongation 1…2.6 (small) and 1…2.8 (large), most clearly oval, a few drawn out. Each dent gets its own random 3D axis, so the field stays isotropic and has no stripe direction |
+| Distribution | 2×2×2 window, offset 0.25…0.75 (regular, slightly cell-like; visible in `relief_v1_fb_face.png`) | **clusters:** presence comes from a density field of two coarse octaves (2 and 4 cells, factor 0.35…2), so there are dense patches and calm areas. The centre is fully random in the cell. The 3×3×3 window removes the cell pattern |
+| Profile | Gaussian bowl + faint ring | Gaussian bowl that is **deeper at the push end** (teardrop), plus a low, wide **raised rim only on the far end** where the clay was pushed (a crescent, never a closed ring). This avoids the "moon crater" look |
+| Lumps / grain / maxSlope | 0.07 / 0.028 / 0.2 | **0.16 / 0.02** (grain very subtle) / 0.42 |
+| midground / background | — | proportional only: the same dent structure, sizes × their v1 size ratio, lump × 1.55, dent slopes × 1.4–1.55 of their v1 dent |
+| Hash | PCG3D integer | the same; size spread comes from Irwin–Hall (3 hashes), with no trig |
+
+Analytic gradient: with `u = q − (1 − 1/e)·a(a·q)`, `rr = |u|/R`, `t = (a·q)/(R e)` and `g = t/(1+|t|)`, the height is
+`h = D·(−e^{−2.5 rr²}(1 − 0.5 g) + rim·e^{−((rr−1)/0.26)²}(1+g)²/4)`, cut off at rr = 1.5, where both terms are below 0.5 %.
+
+## Test results (headless chrome-headless-shell 1234, ANGLE Metal, Apple M1 Max · `node tests/golden.v1.1.test.mjs` · 23 s)
+| Gate | Rule (unchanged) | v1.1 result |
+|---|---|---|
+| G0 metric | synthetic isotropic / craters pass; with stripes they fail | PASS: 1.88 / 1.45 vs 8.96 / 6.45 |
+| G1 determinism | SSIM load 1 vs load 2 ≥ 0.995 | **PASS:** 32 renders, min SSIM **1.0000**, max pixel diff **0/255** |
+| G2 no stripes | stripePeak ≤ 3.0, coherence ≤ 0.70 | **PASS:** stripePeak 1.51–1.92, coherence 0.38–0.52 (v1: 1.33–1.62 / 0.38–0.46) |
+| G3 scale | FB face, stage ×1 vs ×2.5, SSIM ≥ 0.98 | **PASS:** 1.000 / 1.000 |
+| G4 resolution | SSIM(↓2 hi, lo) ≥ unclayed − 0.01 | **PASS:** 0.9981–0.9990 = unclayed |
+| G5 colour V-346 | chroma ratio ≥ 0.95 | **PASS:** 0.957–1.030 (lowest is GothGirl full at 0.957, as in v1) |
+
+**Relief strength.** I measured the RMS of the face relief (relief on minus off, high-passed) for v1.1 / v1:
+
+| Figure | lo | hi |
+|---|---|---|
+| FrizzleBob | 1.41× | 1.38× |
+| GothGirl | 1.97× | 1.88× |
+| Lord Hunky | 1.75× | 1.72× |
+
+The mean is 1.7×. The metric keeps only periods under about 25 px, so part of the large dent layer and the lumps is not counted; the full relief gain is larger, as the comparison images show.
+
+**Two steps I took back, openly:**
+- The first v1.1 draft (sparse dents with a ring rim) read as moon craters, and the faces were calmer than v1.
+- The second draft was too strong on flat faces (pockmarks on the suit face and on the back of the billboard).
+
+The final values come from looking at the golden frames and the proof-stage images (suit, FB, billboard).
+
+## Evidence (`evidence/`)
+- `compare_v1_v11_{lo,hi}_*.png`: v1 on the left, v1.1 on the right, with the same frame and light (faces, full figures, stage, terrain, FB ×2.5).
+- `v11_{lo,hi}_*.png`: the v1.1 golden frames.
+- `relief_v11_*_face.png`: relief only (compare with `relief_v1_*`).
+- `golden_results.v1.1.json`: every number, plus `reliefRatio`.
+
+The proof-stage renders with v1.1 are in `../PROOF_STAGE_R1/evidence/`.
+
+## Files (new; v1 files unchanged)
+- `kfb-clay.v1.1.js`;
+- `proof-kit.v1.1.js` (wrapper: proof-kit.v1 plus variant `v11`);
+- `golden.v1.1.html`;
+- `tests/golden.v1.1.test.mjs` (a copy of the v1 test with gates on v11, the same thresholds, plus relief ratio and comparison images);
+- `tests/kfb-clay.v1.1.unit.test.mjs` (the v1 unit test pointed at v1.1).
+
+Run: `node tests/kfb-clay.v1.1.unit.test.mjs`, then `KFB_CHROME=…/chrome-headless-shell node tests/golden.v1.1.test.mjs`.
+
+## Open points (v1.1)
+1. **The look is not yet approved by Georg.** The thresholds prove determinism, no stripes, scale and colour; they do not prove taste.
+2. **Cost:** each dent layer searches 27 cells (v1 searched 8), with two layers. This is fine for proofs; fps on the game target is not measured. WS1 measures it before integration, and a lower-cost variant for far LOD is possible.
+3. **Integration:** like v1, vendor the file byte-identically and pass profile names only. `kfb-proof-stage.v1` already uses v1.1.
+
+---
+
 # RETURN · CLAY_SSOT_R1 · one KFB clay material (WS0 · 17.10.2026)
 
 Brief: Georg 17.10. (FAIL): "the claymation texture for the characters is displayed differently EVERY SINGLE TIME"; the latest WS1 preview shows stripes on the faces and the wrong scale.
