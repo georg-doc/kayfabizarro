@@ -1,0 +1,16 @@
+name: KFB Money Trail R4 conflict gate
+on:
+  push:
+    branches:
+      - "songs/the_kayfabe_money_trail_9_11-r4-2026-10-17"
+permissions:
+  contents: read
+jobs:
+  r4_source_budget:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact plugin triplet_set_check.py
+        run: python3 songs/the_kayfabe_money_trail_9_11/triplet_set_check.py songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.qa.deck.json songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.qa.set.csv
+      - name: R4 format and budget gate (expected nonzero)
+        run: python3 songs/the_kayfabe_money_trail_9_11/format_gate.py

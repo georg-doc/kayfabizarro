@@ -1,0 +1,5 @@
+R4 V-411 mechanical preflight · SOURCE/FORMAT PARTIAL PASS, 5000-BUDGET BLOCKER
+Source canonical registry blob 3b5bf88f7890d50aa844c6cfb9129711caf6d17a, PDF JSON blob bba2d93baa90f5b951f6015c0a16d4eb6ac481a5.
+All 60 cards #1–60 retained in print order, without cuts; 60/60 JS source-only lexical screening PASS (name, lore, power, artworkPrompt), 60/60 80–95 character screening PASS, 19 unique short openers, one blank line after every beat.
+SONG LENGTH = 5572 Unicode characters. SONG_SPEC_R3 §C REQUIRES UNDER 5000: FAIL by 573 characters. Card lines alone plus mandatory blank separators: 5295 characters, before any intro/opener/outro. Lower bound for 60 cards at 80 chars plus mandatory blank separators is 60*(80+2)=4920, leaving fewer than 80 characters for [Spoken Word], deck-specific intro, ~20 unique openers, outro and Stay Fluffy!. This is incompatible with a meaningful frame under 5000.
+Exact Python checker: pending Actions exit. R4 format gate: EXPECTED EXIT 1 for length, not submission-worthy. Independent blind review MUST NOT RUN until source spec resolved. No Hub/Stage.
