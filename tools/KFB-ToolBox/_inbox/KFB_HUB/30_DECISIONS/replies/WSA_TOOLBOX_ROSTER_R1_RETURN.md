@@ -1,12 +1,12 @@
 # WSA · ToolBox-Studio figure roster R1 · Return · V-409
-Stand: 17.10.2026. Owner: WSA / bestehendes ToolBox-Studio. Ergebnis: **Teilstand als unveröffentlichter Entwurf v11 gesichert; nicht abgenommen.**
+Stand: 17.10.2026. Owner: WSA / bestehendes ToolBox-Studio. Ergebnis: **Teilstand v11 nach ausdrücklicher Georg-Freigabe privat veröffentlicht. Figuren-Tuning und offene Nähte bleiben gesondert offen.**
 
 ## Identität und Abnahmefläche
 - Site: `appgprj_6ac2ba44282881919d1a49287a32054e`, KFB ToolBox. Bestehende private Zieladresse: https://kfb-toolbox.frizzlebob.chatgpt.site/
 - Gespeicherte Version: **11**, `appgprj_6ac2ba44282881919d1a49287a32054e~appgver_130348f1fae08191a592f91c62db27f8`.
 - Exakter gepushter Site-Quellstand: `53028aa47de97cf1c5791cdc72501212a5785094`.
 - Paket: SHA256 `a36792fac18b647aef57b65c82a1665b7464fdb5516c252fc994a5249cf8c349`, 429 Dateien.
-- **Kein Deployment.** Die bestehende URL zeigt weiterhin v10 und ist kein Beleg für diesen Entwurf. Sites liefert für eine gespeicherte, unveröffentlichte Version keine gesonderte Staging-URL; deshalb keine erfundene Kandidatenadresse. Browserprüfung erfolgte lokal, keine öffentliche Abnahme behauptet.
+- **Veröffentlicht am 17.10.2026 nach Georgs ausdrücklicher Freigabe:** https://kfb-toolbox.frizzlebob.chatgpt.site/ . Deployment `appgdep_6ad3588f3218819189a122116d5fdba1`, Status `succeeded`, exakte gespeicherte v11/Quelle unverändert. Bestehende private Zugriffsregel bleibt erhalten (Owner, ein erlaubter Nutzer, keine Gruppen). Native Sites-Bestätigung; kein neuer Browser-Lauf behauptet.
 - Bildbelege und dieses Return: https://chatgpt.com/space/page_b78228a96bc88191b1029cb5a6fb458a
 
 ## Ergebnis je Figur
@@ -51,11 +51,23 @@ Nach tatsächlichem Georg-Tuning: Vorschlag gegen aktuelle Karte prüfen, eigene
 - Lokaler Browser: Hunky/Dory laden, Front/¾ mit Clay und Mundprojektion geprüft. Pupille .40 → .41 → .40 über echten Regler, ohne Save.
 - Norman Source-first PASS; Gesichtskandidat visuell FAILED → STOP; gesperrter Schalter im Browser geprüft.
 - Motion-Tab: vorhandenes iframe mit kanonischen Profilen ready; Rückkehr in Rigging geprüft.
-- Kein privates Produktionslogin oder öffentliches v11-Hosting als geprüft ausgegeben.
+- Veröffentlichung anschließend durch native Sites-Bestätigung für exakte v11/Quelle nachgewiesen; privater Browser-Cold-load in diesem Publish-Schritt nicht erneut geprüft.
 
 ## Geänderte Site-Dateien
 `dist/index.html`, `dist/kfb-lib/figure-card-data.v1.js`, `body-surface.v2.js`, `kfb-stage-light.v1.js`, `kaykit-eye-adapter.v1.js`, `norman-face.v1.js`, `clay/clay-toolmix.v1.js`, vier unveränderte Kartenkopien + zwei Norman-Quelldokumente unter `dist/data/figure-cards/`, gepinnte drei GLBs/zwei Rezepte unter `dist/data/roster-r4/`, `ROSTER_R1.md`.
 
-Register-Handoff: dieses neue Return; kein Hub-/Router-Umbau. Kein neuer Source-PR; native Site-Version ist der unveröffentlichte Änderungsträger. PR #414 bleibt Georgs Merge.
+Register-Handoff: dieses neue Return; kein Hub-/Router-Umbau. Kein neuer Source-PR; native Site-Version v11 ist der veröffentlichte Änderungsträger. PR #414 bleibt Georgs Merge.
 
-**Nächstes Gate:** WS0 klärt Normans kleinste Fehlernaht und den GitHub-Save-Weg; danach Georgs Tuning/Abnahme und ausdrückliche Veröffentlichungsfreigabe. Bis dahin bleibt v10 live.
+## WS0-Anmeldung nach Veröffentlichung / Fortsetzung desselben Briefings
+Georg hat v11 ausdrücklich zur Veröffentlichung freigegeben: Norman bleibt bei Source only; Brain-Cyborg wartet auf B10. Dies ist keine automatische Freigabe der Figurenwerte.
+
+Offen bei WS0:
+1. **Norman:** kleinstes fehlerhaftes Gesichtsstück korrigieren lassen (graue Bereinigungsfläche/Augenpassung); Source only bleibt verfügbar, Kandidat und Vorschlagsexport bleiben gesperrt.
+2. **GitHub-Speicherweg:** Save ist Browser-lokal; Kopieren erzeugt nur einen Vorschlag. Für echtes Branch+Commit im bestehenden Site-Projekt fehlt die geprüfte Backend-/Connector-Integration. Der laut Sites-Integrationsreferenz erforderliche Eligibility-Aufruf ist im aktuellen Werkzeugsatz nicht angeboten. Keine Browser-Tokens oder ungesicherter Schreibproxy als Ersatz.
+3. **Gemeinsamer Figuren-Loader:** bei WS1 als gepinntes Modul mit Import-API ausliefern; Lichtmodul ist bereits in v11 integriert.
+4. **B10:** Körper und zugehörige vollständige Karte/Prüfsummen/Anker liefern; kein Ersatzmodell.
+5. **Georg-Tuning:** Hunky/Dory erst nach echten gespeicherten Georg-Werten gegen die aktuelle Karte als Änderungsvorschlag auf eigenem Branch übernehmen. Offene Lid-/Socket-/E2-Punkte sichtbar erhalten, keine pauschale approved-Markierung.
+
+Fortsetzungsprüfung am Register-Head `d115bfee940aedda8f9f153f02836d11f1787b27`: Brain-Cyborg-Karte enthält weiterhin keinen gelieferten GLB/keine Anker. WS1-Head `802f528dd4f8f3296fb36281eafec8bf0d1fe528`: rekursiver ws1-Tree enthält weiterhin das Lichtmodul (identischer Blob `cd8bda8c2c6364be97fa6123f739fef8f11313dc`), aber keinen kfb-figure-loader. Daher jetzt keine Entsperrung, kein doppelter Figurenbau, kein erneuter Look-Umbau. Das erneut eingereichte Briefing ist derselbe V-409-Auftrag.
+
+**Nächstes Gate:** WS0 priorisiert die offenen Liefer-/Save-Nähte; Georg kann währenddessen Hunky/Dory im veröffentlichten ToolBox-Studio abstimmen. Weitere Figuren-/Look-Freigaben bleiben ausdrücklich separat.
