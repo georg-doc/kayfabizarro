@@ -1330,3 +1330,5 @@
 - Nachgetragen aus Plan R1, PROJECT_STATE, Bestandsliste, Postmortems und den Chat-Entscheidungen vom 10. und 11.10. (Joyride-Goldstandard, WoW-Steuerung und -Kamera, Sprünge, HUD R3 mit Rucksack, Almanach, Insel-Thema, Wasser, Figuren-Auswahl, Studio-Übernahme, Lizenzen, TBD Interaktion).
 - Pflichtregeln für jede Lab-Sitzung in `KFB Island Worldbuilder Lab/CLAUDE.md`.
 - Georg: „und doku-pflicht für dich für alle decisions, designs etc -> living doc“, „additives changelog dazu“ → V-003, V-009.
+
+- 2026-10-17 · V-424 · WS0 Landmarks PR #418 **TUNE**: accepted source-only preview for preliminary Georg selection, `Knete folgt` separate UI caption; white diagnostic flat-clay rejected, no pseudo-clay previews. Owner remains existing Asset Librarian; WSB K1 after Georg choice. Actual inventory 3 distinct CC0 source proofs, 23 leads and 20 pending; Kenney tower only construction donor. Branch candidate registry R1.4 + owner Return; no actual Asset Librarian view/source downloads, no Stage or merge.
