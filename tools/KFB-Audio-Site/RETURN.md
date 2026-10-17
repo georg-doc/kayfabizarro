@@ -1,3 +1,11 @@
+# CURRENT OVERRIDE · V-430 FOOTSTEPS R2 · 2026-10-18
+
+Georg rejected V-389 sonically and reported non-working controls. R2 repairs the same Audio Site: version 13 / source 0.7.3, visibly verified in authenticated Chrome. Exact R2 Return: [WSA_FOOTSTEPS_R2_RETURN.md](WSA_FOOTSTEPS_R2_RETURN.md). 340 source/unit/evidence assertions + 23 local and 8 hosted observations PASS; physical AV/sonic acceptance remains pending. One next gate: WS0_FOOTSTEPS_R2_REVIEW, before Georg. No paid generation, World/Hub/Cloudflare writes, merge or Live promotion.
+
+---
+
+## Historical V-389 Return (superseded by Georg FAIL)
+
 # WSA · V-389 Footstep-first micro-proof · RETURN · 2026-10-17
 
 Status: **IMPLEMENTED + PRIVATE SITE DEPLOYED; HOSTED VISIBLE ACCEPTANCE BLOCKED BY LOGIN; HUMAN LISTENING OPEN.** No HUMAN_ACCEPTED claim.
