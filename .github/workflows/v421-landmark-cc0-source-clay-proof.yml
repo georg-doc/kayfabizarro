@@ -19,6 +19,11 @@ jobs:
       V421_PROOF_DIR: v421-proof
     steps:
       - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py
+          sparse-checkout-cone-mode: false
       - name: Compile safe source-audit script
         run: python3 -m py_compile tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/cc0_clay_proof.py
       - name: Install native Blender (headless, not a KFB runtime)
