@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-390: Werkzeug-Landkarte (5 Orte, je ein Besitzer), Umleitungen statt toter Links, Motion Lab als Tab; Aufräumen durch WSA work parallel (Hub b75).
 - V-389: eine Ereignis-Zeitleiste (performance.json + sfx/vfx/lights), Audio Site einziger Audio-Besitzer, Schritte-Beweis dort statt „Motion Lab“; Karaoke-Schritte später.
 - V-387 Lichtregie (Story-Mode-Figurenlicht inkl. Licht von unten, Spot-Pop-in, Verfolger, Disco-Kugel-Finale, lights[]-Spur); V-388 Audio Footstep-First ACK (Hub b74), Motor-Sets auf HOLD/reduziert.
 - V-386: warmes Figurenlicht als echtes Licht im Rig (Gesicht/Mund nie Halbschatten, nicht überstrahlt, Catchlight), Messung L-9; b73 ergänzt.

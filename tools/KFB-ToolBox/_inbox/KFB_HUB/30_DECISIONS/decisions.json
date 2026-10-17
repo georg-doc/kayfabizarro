@@ -5357,6 +5357,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-390",
+   "date": "2026-10-17",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Werkzeug-Landkarte R1 (Georg 17.10., „Toolbox-Zirkus aufräumen“): fünf Orte mit je einem Besitzer – Production Hub (Georgs einziger Einstieg, WS0), Spiel/Staging inkl. späterem God-Mode/Weltbauer (WS1, WSA work veröffentlicht), Figuren-Werkstatt = ToolBox (WSA work, Motion Lab wird dort ein Tab), Ton-Studio = Audio Site (WSA work, einziger Audio-Besitzer), Asset-Bibliothek (WSA work). Keine neuen Werkzeuge/Seiten ohne Eintrag; Briefings nennen den Ort mit Landkarten-Namen; jede alte Adresse (Cloudflare, alter Production Hub, alte Stage-Seiten) leitet um statt tot zu sein; nichts löschen. Aufräumen läuft parallel zur Produktion (WSA work, Hub b75).",
+   "values": {},
+   "owner": "WS0 (Landkarte) · WSA work (Inventar, Umleitungen)",
+   "check": "Inventar-Tabelle + Umleitungs-PR",
+   "source": "replies/TOOL_MAP_R1.md · replies/BRIEF_WSA_TOOL_CLEANUP_R1.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Verstreute Werkzeuge und tote Cloudflare-Adressen führen zu Fehlklicks und unklaren Briefings.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5429,7 +5444,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:712",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:713",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
