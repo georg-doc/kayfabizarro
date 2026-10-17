@@ -33,9 +33,9 @@ SOURCES = [
         "selection_hints": ["tower", "castle"],
     },
 ]
-EXTS = {".blend", ".glb", ".gltf", ".obj", ".fbx"}
+EXTS = {".blend", ".blend1", ".glb", ".gltf", ".obj", ".fbx"}
 # Prefer inspectable interchange sources to accidental archive backups.
-PREFERRED = {".glb": 0, ".obj": 1, ".gltf": 2, ".blend": 3, ".fbx": 4}
+PREFERRED = {".glb": 0, ".obj": 1, ".gltf": 2, ".blend": 3, ".blend1": 3, ".fbx": 4}
 
 
 def sha256(path):
@@ -97,7 +97,9 @@ def fetch():
             models = [folder / "source" / e["path"] for e in audit["files"] if Path(e["path"]).suffix.lower() in EXTS and not Path(e["path"]).name.startswith(".")]
             def model_score(p):
                 name = p.name.lower()
-                return (0 if any(h in name for h in source["selection_hints"]) else 1,
+                return (0 if name in ("tower-square.glb", "tower-square.obj") else 1,
+                        0 if any(h in name for h in source["selection_hints"]) else 1,
+                        1 if "demolished" in name else 0,
                         PREFERRED[p.suffix.lower()], len(p.parts), str(p))
             models.sort(key=model_score)
             audit["formatsDiscovered"] = sorted(set(p.suffix.lower() for p in models))
@@ -135,7 +137,7 @@ def render_one(source):
     file_path = folder / "source" / audit["selectedRelativeFile"]
     suffix = file_path.suffix.lower()
     bpy.ops.wm.read_factory_settings(use_empty=True)
-    if suffix == ".blend":
+    if suffix in (".blend", ".blend1"):
         bpy.ops.wm.open_mainfile(filepath=str(file_path.resolve()), load_ui=False)
     elif suffix == ".obj":
         if hasattr(bpy.ops.wm, "obj_import"): bpy.ops.wm.obj_import(filepath=str(file_path.resolve()))
@@ -163,6 +165,10 @@ def render_one(source):
     scene = bpy.context.scene
     scene.render.engine = "CYCLES"
     scene.cycles.samples = 12
+    if hasattr(scene.cycles, "use_denoising"):
+        scene.cycles.use_denoising = False
+    if hasattr(bpy.context.view_layer.cycles, "use_denoising"):
+        bpy.context.view_layer.cycles.use_denoising = False
     scene.render.resolution_x = 600
     scene.render.resolution_y = 600
     scene.render.resolution_percentage = 100
