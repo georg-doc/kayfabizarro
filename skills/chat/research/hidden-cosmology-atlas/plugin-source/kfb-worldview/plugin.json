@@ -1,0 +1,29 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "georg@cimoc.de",
+    "name": "Georg Westphalen"
+  },
+  "description": "Source-first, project-neutral worldview research: audit existing GitHub/Google Docs/NotebookLM evidence, research only gaps and recent publications, prepare cited patches and deep-dive prompts. No KFB fiction unless explicitly requested downstream.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [
+          "Interactive"
+        ],
+        "category": "Productivity",
+        "defaultPrompt": [
+          "Research an author: first audit our existing sources, then prepare only useful new deep dives.",
+          "Create a focused Perplexity or NotebookLM prompt for gaps in an existing worldview dossier.",
+          "Help: show modes, inputs, and safe GitHub/Docs/NotebookLM handoff steps."
+        ],
+        "developerName": "Georg Westphalen",
+        "displayName": "KFB WorldView",
+        "longDescription": "Audit current research before searching; reconstruct authors and sources, plan additive deep dives, and prepare versioned GitHub or authorized private recovery handoffs. Research remains usable outside KFB.",
+        "shortDescription": "Source-first research"
+      }
+    }
+  },
+  "name": "kfb-worldview",
+  "version": "0.1.0"
+}
