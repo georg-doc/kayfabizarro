@@ -17,6 +17,7 @@ Georg: **Props, food, drinks and similar found items float at hip height of the 
 - Hover height = hip height of the Medium rig (derive it from the rig, not a fixed number); ±5 % bob, ~1 turn per 3 s, phase randomised per item so they don't move in sync.
 - A soft contact shadow on the ground helps readability; no glow, no outline (one light rig, V-385).
 - Pick up still with "I"/Interagieren (V-434). Fluff still collected automatically on contact.
+- B28 pivot (WSB 18.10.): all 42 GLBs have their origin at the bbox centre (rotation without wobble). Hover: place the origin at hip height. To lay an item on the ground, lift it by `ground_offset_u` (GLB extras on the item and `KFB_Pickup`, plus `loot_items.r1.json`).
 - B28 set (42 GLBs, public) is in Hub q20 for Georg; use it once PASS, until then the KayKit/Tiny Treats originals with clay v1.1.
 
 ## 18.10. · Found items in the terrain + backpack (V-434), right after C3 together with HUD R5f
