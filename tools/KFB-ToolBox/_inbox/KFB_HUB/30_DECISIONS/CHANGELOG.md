@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- WSB Runde 2 fertig und von WS0 gesichtet: B14 r7 Dory (r5-Kopf + edge80, Kragen am Stiel), B15 organischer Rand, B10 r2 E2-Augen, B11 r2 Mütze (eigene, Asset-Suche ohne Treffer) + Gewehr aufrecht, B12 Spender-Vergleich (Georg wählt), B16 Schlagring, B17 Bots, B18 Mündungsfeuer, B4 Truhen inkl. Mimic, B3 Imbiss; 20. Nachtrag: B19 Treffer-FX, B20 Kayfabrick-Baustelle.
 - V-427 (TBD): Inventur Repo-privat fertig (replies/REPO_PRIVATE_MIGRATION_INVENTORY_R1.md): GitHub Pages zweites öffentliches Leck, raw-Abhängigkeiten, Kauf-Assets ~0,7–0,9 GB; 6-Schritte-Plan wartet auf Georg.
 - WS1 Langlauf R2 beauftragt (Hub b99): Repo-Analyse, Kamera, Module + E2-Aliens, Fluff-Ernte-Mechanik V-423 (Platzhalter-UI), Farbdrehbuch; Platzierungs-Grammatik R2 ins Register (replies/SPEC_PLACEMENT_GRAMMAR_R2.md). M3 A–G fertig (§76), Merge wartet auf Georg.
 - V-426: Kayfabrick-Bots (6 Fluff-Farben, Sisyphos), Ernte aus Bot-Kugeln mit Aggro → Combat-Arena, Mündungsfeuer primär/sekundär + Varianten, Banker-Anzug; WSB 19. Nachtrag (B17, B18, B12-Banker), WS1-Notiz; Lizenzhinweis Mystery Series im öffentlichen Repo.
