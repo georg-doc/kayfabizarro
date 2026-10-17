@@ -1,0 +1,17 @@
+name: KFB Alice R3.2 Shared Song Gate
+on:
+  push:
+    branches: ["songs/frizzlebob_bloedsinnland_alice-r4-2026-10-17"]
+permissions:
+  contents: read
+jobs:
+  shared-r32:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: 3c72b727e8a694a51de7ab5033b7a4eae92c1062
+          path: .kfb-register-readonly
+      - name: R3.2 Shared song_gate.py
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r4.1.suno.txt --deck songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r31.qa.deck.json --songlines songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.songlines.json --cards 1-30 --tone frizzlebob_bloedsinnland_alice --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
