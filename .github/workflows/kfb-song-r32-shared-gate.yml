@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
         with:
-          ref: f253bf4b5edb6ac8e2a702a284767fa0e844e7e3
+          ref: e7dc2e2c28434c7ec0204709770b9f13ea4f7eb2
           path: .kfb-register-readonly
       - name: R3.2 Shared song_gate.py
-        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r4.1.suno.txt --deck songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r31.qa.deck.json --songlines songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.songlines.json --cards 1-30 --tone frizzlebob_bloedsinnland_alice --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r4.3.suno.txt --deck songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.r31.qa.deck.json --songlines songs/frizzlebob_bloedsinnland_alice/frizzlebob_bloedsinnland_alice.songlines.json --cards 1-30 --tone frizzlebob_bloedsinnland_alice --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
