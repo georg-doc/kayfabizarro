@@ -1,0 +1,299 @@
+{
+  "schema": "kfb.open-world.gauntlet/1",
+  "date": "2026-10-07",
+  "status": "PREP_ONLY_NO_RUNTIME_WRITES",
+  "owner": {
+    "product": "KFB WorldBuilder / WB2",
+    "issue": 360,
+    "receivingPR": 348
+  },
+  "planning": {
+    "branch": "planning/open-world-autopilot-gauntlet-2026-10-07",
+    "baseMain": "26c822845a4d456f9692968a3495774182d47cf3",
+    "currentReportedCoworkerLocalHead": "1d4f8c8",
+    "coworkerLocalHeadIsGitHubTruth": false
+  },
+  "protectedBoundary": {
+    "noSecondRuntime": true,
+    "noSecondPlayerOwner": true,
+    "noSecondMovementWriter": true,
+    "noSecondCameraOwner": true,
+    "noSecondInputOwner": true,
+    "noSecondSkyOwner": true,
+    "noSecondTrackOwner": true,
+    "noSecondAudioOwner": true,
+    "noSecondEditor": true,
+    "noSecondPersistenceOwner": true,
+    "noParallelDebugGame": true,
+    "noNewWorldStudioSite": true,
+    "builderCannotFinalAccept": true
+  },
+  "seedPolicy": {
+    "state": "PIN_AFTER_EXACT_COWORKER_INTAKE",
+    "reason": "Use the receiving runtime's real deterministic seed API; do not invent an incompatible production seed before intake.",
+    "silentSeedChangesForbidden": true,
+    "pinGeneratorVersion": true
+  },
+  "controls": {
+    "owner": "KFB Ground movement",
+    "normalInputOnly": true,
+    "mapping": {
+      "W": "forward",
+      "S": "back",
+      "A": "turn-left",
+      "D": "turn-right",
+      "Q": "strafe-left",
+      "E": "strafe-right",
+      "Shift": "run",
+      "Space": "jump",
+      "RMB_drag": "camera-orbit-look",
+      "wheel": "zoom"
+    }
+  },
+  "sourceAndClay": {
+    "sourceIdentityOwner": "source-proven KFB/KayKit/Kenney/Joyride assets",
+    "clayOwner": "KFB Clay SSOT / Golden comparison",
+    "genericKayKitMaterialIsFinalTarget": false,
+    "clayFloor001Role": "BOUNDED_STANDIN_OR_MICROTEXTURE_DONOR_ONLY",
+    "sourceIsolationRequiredBeforeFirstFamilyIntegration": true
+  },
+  "architectureFreezeRequirements": [
+    "single terrain-height owner",
+    "single ramp-profile owner",
+    "single slope/road-surface ownership contract",
+    "public module APIs instead of direct internal cross-module imports",
+    "stable WorldObjectId model independent of render batching",
+    "one active Ground movement writer and one active camera owner",
+    "qa/autopilot adapter location in receiving owner",
+    "current Clay/Source contract"
+  ],
+  "worldObjectIdentity": {
+    "requiredBeforeAuthoringPersistenceAndConsumerFanout": true,
+    "fields": [
+      "sourceAssetId_or_recipeId",
+      "chunkId",
+      "semanticRole",
+      "stableInstanceId",
+      "transform",
+      "parent_or_section_ids",
+      "authored_or_procedural_origin",
+      "authoringOverrideRef_optional",
+      "damageStateRef_optional",
+      "transferStateRef_optional",
+      "rebuildStateRef_optional"
+    ],
+    "rule": "identity/data model first, render aggregation second"
+  },
+  "builderAutopilot": {
+    "purpose": "builder-side iterative QA and repair",
+    "mayWriteProduction": true,
+    "finalAcceptanceAuthority": false,
+    "loop": [
+      "boot-real-candidate",
+      "wait-ready",
+      "drive-normal-input-path",
+      "capture-screenshot-video-log",
+      "compare-source-canon-expected-state",
+      "classify-smallest-failing-seam",
+      "repair-through-current-owner",
+      "rerun"
+    ],
+    "repairBudgetRule": "after two non-improving passes freeze the smallest failing seam and let Production Guard route it"
+  },
+  "gauntlet": {
+    "productLocation": "real WorldBuilder runtime via existing qa/world-recipe seam",
+    "separateApp": false,
+    "syntheticTeleportAsGameplayEvidence": false,
+    "deterministicSetupAllowed": true,
+    "phases": [
+      {
+        "id": "G01_BOOT_INPUT",
+        "requires": [],
+        "checks": [
+          "ready-marker",
+          "normal-ground-controls",
+          "zero-unexplained-console-page-network-errors"
+        ]
+      },
+      {
+        "id": "G02_CAMERA_OCCLUSION",
+        "requires": [
+          "G01_BOOT_INPUT"
+        ],
+        "checks": [
+          "dense-building-prop-occlusion",
+          "practical-actor-framing",
+          "no-camera-collapse-into-actor",
+          "one-camera-owner"
+        ]
+      },
+      {
+        "id": "G03_STREAMING_BOUNDARY",
+        "requires": [
+          "G01_BOOT_INPUT"
+        ],
+        "checks": [
+          "repeat-chunk-boundary-crossing",
+          "time-sliced-integration",
+          "no-burst-load-stall",
+          "stable-semantic-id-after-unload-reload"
+        ]
+      },
+      {
+        "id": "G04_SOURCE_CLAY",
+        "requires": [
+          "G01_BOOT_INPUT"
+        ],
+        "checks": [
+          "source-family-isolation",
+          "recognizable-source-identity",
+          "current-clay-canon-separate-from-source-fidelity"
+        ]
+      },
+      {
+        "id": "G05_AUTHORING_IDENTITY",
+        "requires": [
+          "architecture-freeze-worldobjectid",
+          "authoring-core"
+        ],
+        "checks": [
+          "asset-search-isolation",
+          "place-edit-snap",
+          "terrain-delta",
+          "authored-override-wins-over-procedural-by-stable-id"
+        ]
+      },
+      {
+        "id": "G06_SAVE_RELOAD",
+        "requires": [
+          "persistence-core",
+          "G05_AUTHORING_IDENTITY"
+        ],
+        "checks": [
+          "save",
+          "fresh-reload-or-import",
+          "exact-transform-survival",
+          "terrain-delta-survival",
+          "semantic-id-survival",
+          "return-to-play"
+        ]
+      },
+      {
+        "id": "G07_JOYRIDE_SKY_DRIVE",
+        "requires": [
+          "track-core-joyride",
+          "sky-environment",
+          "vehicle-drive"
+        ],
+        "checks": [
+          "joyride-presented-route",
+          "one-sky-owner",
+          "enter-drive-exit-existing-handoff"
+        ]
+      },
+      {
+        "id": "G08_AUDIO",
+        "requires": [
+          "audio-integration"
+        ],
+        "checks": [
+          "one-audio-owner",
+          "world-context-transition",
+          "no-duplicate-transport-or-audiocontext",
+          "optional-family-failure-does-not-break-world-boot"
+        ]
+      },
+      {
+        "id": "G09_RESIDENT_CHATTERBOX",
+        "requires": [
+          "resident-chatterbox-integration"
+        ],
+        "checks": [
+          "source-proven-resident",
+          "existing-motion-owner",
+          "existing-dialogue-owner",
+          "deterministic-encounter-capture"
+        ]
+      },
+      {
+        "id": "G10_BILLBOARD_CARD_ALMANAC",
+        "requires": [
+          "billboard-card-almanac-integration"
+        ],
+        "checks": [
+          "clay-billboard",
+          "canonical-card-identity-provenance",
+          "acquire-inspect",
+          "almanac-state-survives-reload"
+        ]
+      },
+      {
+        "id": "G11_OPTIONAL_COMBAT_DESTRUCTION",
+        "requires": [
+          "owner-approved-activity-or-raid-seam"
+        ],
+        "optional": true,
+        "checks": [
+          "open-world-does-not-own-combat",
+          "stable-damage-object-ids-survive-unload-reload"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "required": [
+      "repo-branch-head-build",
+      "gauntlet-contract-version",
+      "fixed-seed-and-generator-version-after-freeze",
+      "timestamps",
+      "normal-input-script-identity",
+      "named-checkpoint-screenshots",
+      "continuous-traversal-video-for-gameplay-camera-gates",
+      "console-page-network-errors",
+      "fps-frame-time",
+      "draw-calls-instances-triangles-when-exposed",
+      "chunk-integration-budget-observations",
+      "WorldObjectIds-touched",
+      "persistence-state-before-after-reload",
+      "source-family-identities-shown",
+      "module-enable-disable-state",
+      "repair-classification",
+      "unresolved-seam"
+    ],
+    "receivingLocation": "owner qa/ structure after integration"
+  },
+  "critic": {
+    "independentFreshContextRequired": true,
+    "receivesBuilderTranscript": false,
+    "productionWritePermission": false,
+    "normalControls": true,
+    "capturesOwnEvidence": true,
+    "requiredDimensionThreshold": 8.5,
+    "wholeProductCriticSeparateFromModuleCritics": true
+  },
+  "integrationOrder": [
+    "exact-coworker-intake",
+    "camera-blocker-repair",
+    "architecture-freeze",
+    "authoring-persistence-core",
+    "gauntlet-phases-G01-through-G06",
+    "representative-existing-KFB-module-phases",
+    "builder-autopilot-loop",
+    "independent-module-critics",
+    "separate-whole-product-critic",
+    "publish-update-existing-world-studio-site",
+    "Georg-product-gate"
+  ],
+  "site": {
+    "primarySurface": "GPT_SITE",
+    "existingSiteUrl": "https://kfb-world-studio-mvp1.frizzlebob.chatgpt.site",
+    "existingSiteProjectId": "appgprj_6ac27631f74c8191b52e4819c1973668",
+    "updateInPlace": true,
+    "createSecondSite": false,
+    "publishThisPrepSlice": false,
+    "publicationModeWhenReady": "PUBLISH_ONLY",
+    "exactUrlVerificationRequired": true,
+    "cloudflareRole": "DOWNSTREAM_FORMAL_MIRROR_ONLY_WHEN_EXPLICITLY_REQUIRED"
+  },
+  "nextGate": "COWORKER_READ_ONLY_ALIGNMENT_THEN_EXACT_GITHUB_INTAKE"
+}
