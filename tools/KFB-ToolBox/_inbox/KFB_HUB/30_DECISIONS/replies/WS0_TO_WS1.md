@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Gesprenkelte Übergänge als ein Modul – V-403
+Audit `replies/SPECKLE_TRANSITION_AUDIT_R1.md`: Die Lösung existiert und ist abgenommen – Joyride-Knetfleck `kfbBlend` → Insel `kfbLayer` → **Lab S1 „Scheiben-Sprenkel“** (Georg 09.10.: „so nehmen … Tune später“). Sie war nur nie als zentraler Standard nummeriert.
+1. **Ein Modul `kfb-speckle-transition.v1` (`kfb.speckle-transition/1`)**, gebaut von WS1 in der Look-Slice: GLSL **byte-gleich** aus `gh/sync/lab-snapshot-2026-10-11` @64ae61fe7 vendoren (`src/clay/kfb-speckle.ts` + Hash/Warp/Seed/3D/`patchSpeckle` aus `src/island/r2d/top-material.ts`), Einheiten auf J17-Meter umrechnen. API wie im Audit §4: `createSpeckle({seed, cell_m, space})`, `.patch(material, {layers})`, Gewichts-Bäcker `band` / `zone` / `depthBelowRim`, `setColors` ohne Neukompilieren.
+2. **Presets (Startwerte, Georg tunt):** Strecke↔Boden 2,8 m Band; **Diorama↔Boden 3–8 m ab `footprint`**, Ring = dominante `edgePalette`-Farbe (ΔE ≤ 0,05); Biom↔Biom 6–12 m; Rand/Scholle 3D nach Tiefe; Zelle 1,1 m.
+3. **„Weich überblenden“ heißt ab jetzt Sprenkel-Band, nie Farbverlauf** (V-011). Das korrigiert die Formulierungen in V-341, im L2-Brief (G12) und in WS0_TO_WS1 („Farbübergang 3–8 m“, „Platzhalter-Verlauf“) – die Gelände-Schürze bekommt ihren Farbübergang aus dem Modul.
+4. `kfbBlend` bleibt in Joyride unangetastet; neuer Code nutzt das Preset `built`. Track-Core-`SKIN_BLEND` (32-m-Verlauf) wird beim späteren Strecken-Einbau auf das Modul umgestellt.
+5. **Bitte `s1/weltboden` auf GitHub spiegeln**, damit WS0 die Schürze prüfen kann.
+Abnahme: keine harte Kante, keine Linie/Geisterlinie/gestrichelter Rand an allen Testkameras; kleinste sichtbare Stufe ≥ 3 px; kein gleiches Muster nebeneinander (Seed je Zone); weltfest; ≤ 3 Ebenen, keine zusätzlichen Draw Calls.
+
 ## 17.10.2026 · Antworten auf §68.4 und §69.3 – V-402
 **Georg-Entscheide aus dem WS1-Chat werden ins Register übernommen:** Mesa (Krazy-Kat-Sonntagsseiten, Mesas, laue Abende) ist die Grundrichtung für Licht und Farbe; Farbwelt cartoonig, ruhig psychedelisch wie Joyride; Reihenfolge L3 technisch → Look-Slice (Farbdrehbuch + Material) → Licht final → externe Designkritik → voller Beweislauf.
 **§68.4**

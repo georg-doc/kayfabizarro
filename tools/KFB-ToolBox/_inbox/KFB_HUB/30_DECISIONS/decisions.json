@@ -5553,6 +5553,21 @@
    "applies": "ab sofort"
   },
   {
+   "id": "V-403",
+   "date": "2026-10-17",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Gesprenkelte Übergänge = ein zentrales Modul (Audit SPECKLE_TRANSITION_AUDIT_R1): Lab S1 „Scheiben-Sprenkel“ (kfbSpeckleLayer, Georg 09.10. „so nehmen … Tune später“, Nachfolger von Joyride-Knetfleck kfbBlend und Insel-kfbLayer) wird der einzige Standard für Farbübergänge zwischen Zonen, Biomen, Strecke und Dioramen: Modul kfb-speckle-transition.v1 (kfb.speckle-transition/1), GLSL byte-gleich aus gh/sync/lab-snapshot-2026-10-11 @64ae61fe7, J17-Meter, Presets Strecke↔Boden 2,8 m, Diorama↔Boden 3–8 m ab footprint (Ring = dominante edgePalette-Farbe), Biom↔Biom 6–12 m, Rand/Scholle 3D, built (ersetzt kfbBlend in neuem Code). „Weich überblenden“ heißt Sprenkel-Band, nie Farbverlauf (präzisiert V-341 und L2-G12). Track-Core-SKIN_BLEND wird beim Strecken-Einbau umgestellt. Bauer WS1 in der Look-Slice (Hub b80).",
+   "values": {},
+   "owner": "WS1 (Modul) · alle Bühnen",
+   "check": "keine harte Kante an allen Testkameras, kleinste Stufe ≥ 3 px, Seed je Zone",
+   "source": "replies/SPECKLE_TRANSITION_AUDIT_R1.md · Hub b80",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die abgenommene Sprenkel-Lösung war nie als Standard nummeriert; neue Texte drängten WS1 zu Farbverläufen.",
+   "applies": "Look-Slice"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5625,7 +5640,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:723",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:724",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

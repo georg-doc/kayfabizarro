@@ -2,6 +2,7 @@
 
 ## 2026-10-17 · Writer’s Room JSON-first
 - WSB-Lieferungen B1/B2/B7 auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17); automatisches Mergen vom Sicherheitssystem blockiert, Georg entscheidet den Weg.
+- V-403: gesprenkelte Übergänge = ein Modul kfb-speckle-transition.v1 (Lab S1 byte-gleich), weich = Sprenkel-Band statt Verlauf (Hub b80).
 - V-401: Merges macht WS0 über das GitHub-Werkzeug mit Georgs einmaligem „immer erlauben“; Einstellungs-Regel später; Mac-mini-Lieferungen sofort auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17).
 - V-402: Mesa Standard-Stimmung, ACES + Chroma-Regel, Reihenfolge L3 → Figurenkarten → Look-Slice → Licht → Designkritik, eine Bühnenpalette färbt Rahmen (V-270 abgelöst), Amphitheater voll umgefärbt; Antworten WS1 §68/§69 (Hub b79).
 - V-400: Arbeitsteilung WSB (Blender: Steinkit, B8) ↔ WS1 (Laufzeit: Schürze, Schwebe-Messung, Steine platzieren), eine Verteilungs-Grammatik, Knete-Look R2 in L3, Nacht-Langlauf WS1 (Hub b78), Modell-Empfehlungen je Briefing.
