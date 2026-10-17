@@ -15,6 +15,10 @@ const SKIP = /eye|pupil|iris|(^|[^a-z])lid|mouth|teeth|tongue|lash|brow|nose|mou
 // Kopf: sanftes Profil, damit Gesichter gleichmäßig und lesbar bleiben (L2 G1/G7); WS1-Vorschlag auf Basis von `figure` (weniger Striche, Abdrücke, Dellen)
 const HEAD = /(^|_)head$/i
 const FACE_PROFILE = { ...PROFILES.figure, stroke: 0.35, print: 0.25, dent: 0.1, facet: 0.6, crease: 0.4 }
+// Knete-Look R2 (V-400, WS0): mehr Dellen-Varianz, weniger Ölglanz, Mindest-Rauheit ≈ 0,6, Samt ≤ 0,05 (Samt kommt über tune). Über Profil und gemeinsame
+// Regler gelöst, die Spender-Datei clay-material.v8 bleibt byte-gleich; der Shader klemmt Rauheit erst bei 0,3, deshalb heben wir die Basis-Rauheit an.
+const KNETE_R2 = { oil: 0.08, dent: { figure: 0.55, vehicle: 0.5 }, minRough: 0.95 }
+const profileR2 = (pf) => (typeof pf === 'string' && KNETE_R2.dent[pf] != null ? { ...PROFILES[pf], dent: KNETE_R2.dent[pf] } : pf)
 let SHARED = null
 function shared() {
   if (SHARED) return SHARED
@@ -22,6 +26,7 @@ function shared() {
   const tex = new THREE.DataTexture(rel.data, rel.size, rel.size, THREE.RGBAFormat)
   tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.magFilter = THREE.LinearFilter; tex.minFilter = THREE.LinearMipmapLinearFilter; tex.generateMipmaps = true; tex.needsUpdate = true
   const U = makeClayUniforms(THREE, tex); U.uClayPrint.value = tex // Fingerabdruck-Rückfall wie im K1-Katalog
+  U.uClayOil.value = KNETE_R2.oil // Knete R2: weniger Ölglanz (Spender 0,22)
   SHARED = { tex, U }; return SHARED
 }
 const pathOf = (o, root) => { const a = []; for (let n = o; n && n !== root; n = n.parent) a.push(n.name || ''); return a.join('/') }
@@ -41,8 +46,8 @@ export function createClayLook({ targets = () => [], profile = 'figure', tune = 
         const cache = new Map(), list = []
         o3.traverse((o) => {
           if (!o.isMesh || SKIP.test(pathOf(o, o3))) return
-          const pf = HEAD.test(o.name || '') ? FACE_PROFILE : profile, key = (m) => m.uuid + (pf === FACE_PROFILE ? '|face' : '')
-          const conv = (m) => { if (!convertible(m)) return m; if (!cache.has(key(m))) { const c = makeClayMaterial(THREE, U, { src: m, profile: pf }); if (T.sheen != null) c.sheen = T.sheen; if (T.colorK != null) c.color.multiplyScalar(T.colorK); c.userData.clay.tune = T; cache.set(key(m), c) } return cache.get(key(m)) }
+          const pf = HEAD.test(o.name || '') ? FACE_PROFILE : profileR2(profile), key = (m) => m.uuid + (pf === FACE_PROFILE ? '|face' : '')
+          const conv = (m) => { if (!convertible(m)) return m; if (!cache.has(key(m))) { const c = makeClayMaterial(THREE, U, { src: m, profile: pf }); c.roughness = Math.max(c.roughness, KNETE_R2.minRough); if (typeof profile === 'string' && pf !== FACE_PROFILE) c.userData.clay.profile = profile; if (T.sheen != null) c.sheen = T.sheen; if (T.colorK != null) c.color.multiplyScalar(T.colorK); c.userData.clay.tune = T; cache.set(key(m), c) } return cache.get(key(m)) }
           const before = o.material, after = Array.isArray(before) ? before.map(conv) : conv(before)
           if (after !== before) { o.material = after; list.push({ mesh: o, before }) }
         })

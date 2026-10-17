@@ -16,7 +16,7 @@ export const TOD_NAMES = Object.freeze({ night: 0, gold: 0.5, day: 1 })
 // gedreht und leicht entsättigt; Nacht = Helligkeit × 0,35, Buntheit × 0,5, Farbton Richtung Blau. Orange = 55°, Blau = 262° (OKLCH, WS1-Wahl der Zielwinkel).
 const ORANGE = 55, BLUE = 262
 const toward = (h, target, maxDeg) => { const d = -dHue(h, target); return h + Math.sign(d) * Math.min(Math.abs(d), maxDeg) }
-const goldOf = (hex) => { const c = hexToOklch(hex); return oklchToHex(c.L, c.C * 0.85, toward(c.h, ORANGE, 25)) }
+const goldOf = (hex) => { const c = hexToOklch(hex); return oklchToHex(c.L * 0.84, c.C * 0.85, toward(c.h, ORANGE, 25)) } // L3: Gold-Himmel dunkler (R2-Tabelle)
 const nightOf = (hex) => { const c = hexToOklch(hex); return oklchToHex(c.L * 0.35, c.C * 0.5, toward(c.h, BLUE, Math.abs(dHue(c.h, BLUE)) * 0.6)) }
 export function skyAtTod(hex, tod = 1) {
   const t = Math.min(1, Math.max(0, tod)), ease = (u) => u * u * (3 - 2 * u)
@@ -48,41 +48,19 @@ export function parseTod(hash) {
   return m[1] in TOD_NAMES ? TOD_NAMES[m[1]] : Math.min(1, Math.max(0, parseFloat(m[1]) || 1))
 }
 
-// L2 Schritt 1 (V-340) · Look B „warmer Krazy-Kat-Grundton“ neben A (= L1 genau). Keine zweite Palette: B verschiebt nur Farbtöne der vorhandenen
-// Werte in OKLCH (V-305-Rechenart). Sonne wärmer (Farbton Richtung 50°, Buntheit +0,03), Bodenreflex Terrakotta/Ocker (Hemi-Boden Richtung 45°, satter),
-// Gegenlicht als kühler Gegenakzent (Richtung Violett 290°), Himmel oben Richtung Koralle (30°), unten Richtung Ocker (75°), je höchstens 70 % des Wegs.
-// Alle Zielwinkel und Anteile sind WS1-Vorschlag (PROPOSED), Georg urteilt am Bildpaar A | B.
+// L3 (Regel 3, LIGHT_MODEL_R2): Look B wärmt nur noch den Himmel (skyLookB), nie das Licht; lookB() und die Licht-Identität je Figur (Randlicht) sind entfernt.
 const shiftTo = (hex, target, k, dC = 0, Lmul = 1) => { const c = hexToOklch(hex); const h = c.h + -dHue(c.h, target) * k; return oklchToHex(c.L * Lmul, Math.max(0, c.C + dC), h) }
-export function lookB(L) {
-  return { ...L, sun: shiftTo(L.sun, 50, 0.7, 0.03), hemiGround: shiftTo(L.hemiGround, 45, 0.8, 0.05), hemiSky: shiftTo(L.hemiSky, 60, 0.35, 0.01), back: shiftTo(L.back, 290, 0.8, 0.04) }
-}
 // V-346 (Georg: „anderer Skydome als bei A“): derselbe Himmel, nur getönt. Vorher (v340) drehte B den Farbton um 70 % des Wegs Richtung Koralle/Ocker –
 // aus Hellblau wurde Rosa. Jetzt wird die Himmelsfarbe nur linear ein wenig mit warmem Licht gemischt (oben 12 % Pfirsich, unten 15 % Ocker-Creme):
 // Blau bleibt Blau, nur wärmer. Alle Werte WS1-Vorschlag.
-export const SKY_TINT = Object.freeze({ v340: { rotate: true, k: 0.7, dC: [0.03, 0.02] }, v346: { rotate: false, mix: [0.12, 0.15], toward: ['#ffcfb0', '#ffe2b0'] } })
+// mesa (Georg 17.10., Krazy Kat / Painted Desert): oben Richtung tiefes Türkis-Cerulean, unten Richtung Pfirsich (je 40 % linear gemischt)
+export const SKY_TINT = Object.freeze({ v340: { rotate: true, k: 0.7, dC: [0.03, 0.02] }, v346: { rotate: false, mix: [0.12, 0.15], toward: ['#ffcfb0', '#ffe2b0'] }, mesa: { rotate: false, mix: [0.42, 0.4], toward: ['#2f93c4', '#f7b788'] } })
 export function skyLookB(top, bottom, T = SKY_TINT.v346) {
   if (T.rotate) return { top: shiftTo(top, 30, T.k, T.dC[0]), bottom: shiftTo(bottom, 75, T.k, T.dC[1]) }
   return { top: mixHex(top, T.toward[0], T.mix[0]), bottom: mixHex(bottom, T.toward[1], T.mix[1]) }
 }
-// Licht-Identität je Figur (L2 Schritt 1, Georg-Absicht §2): Daten, keine zusätzlichen Lichter. rimColor/rimStrength = Randlicht im Material,
-// fillTint = Tönung des Figuren-Fills (Pool-Licht nachts), keyBias warm|cool, priority. Startprofile nach V-340: FB warm heroisch, GothGirl violett mystisch.
-// V-346: GothGirls Rand nur noch als Hauch an der Silhouette (Stärke 0,5 → 0,15, Abfall steiler: rimPower 3 → 4); FB bekommt ein Gesichts-Fill im Material
-// (faceFill = Anteil der eigenen Grundfarbe als Selbstleuchten auf Kopf und Mund, kein zusätzliches Licht), damit Mund und Augen lesbar sind (G1).
-// LIGHT_INTENT_V340 = Stand vor V-346, nur für den Vergleich in der Leiste (tune=0).
-export const LIGHT_INTENT = Object.freeze({
-  frizzlebob: { rimColor: '#ffb066', rimStrength: 0.55, rimPower: 3, faceFill: 0.16, fillTint: '#ffd9a8', keyBias: 'warm', priority: 1 },
-  gothgirl: { rimColor: '#a98bff', rimStrength: 0.15, rimPower: 4, faceFill: 0, fillTint: '#d8c8ff', keyBias: 'cool', priority: 2 },
-  default: { rimColor: '#ffe2c0', rimStrength: 0.35, rimPower: 3, faceFill: 0, fillTint: '#ffe6cc', keyBias: 'warm', priority: 3 },
-})
-export const LIGHT_INTENT_V340 = Object.freeze({
-  frizzlebob: { ...LIGHT_INTENT.frizzlebob, rimPower: 3, faceFill: 0 },
-  gothgirl: { ...LIGHT_INTENT.gothgirl, rimStrength: 0.5, rimPower: 3 },
-  default: LIGHT_INTENT.default,
-})
 // V-346 Punkt 2 · Schattenlänge je Meter Figurenhöhe = 1 / tan(Sonnenhöhe); Richtung = Gegenrichtung des Sonnen-Azimuts. Beides kommt nur aus timeOfDay.
 export const shadowLength = (elevDeg) => 1 / Math.tan((Math.max(1, elevDeg) * Math.PI) / 180)
-// Story-Mode-Voreinstellungen für später (gewürfelt, V-342): nur Hinweise für Rand und Fill, nie der ganze Boden
-export const STORY_INTENT = Object.freeze({ tragic: { fillTint: '#9fb8d6' }, heroic: { rimColor: '#ffb066', keyBias: 'warm' }, mystical: { rimColor: '#a98bff' }, forbidden: { rimColor: '#c4507f' }, comic: { rimColor: '#e9e36a' }, absurd: { rimColor: '#e9c14a' } })
 
 // L1 Regel 4 · Sonnenschatten folgt dem Ziel (Figur zu Fuß, Fahrzeug im Auto; Georg 16.10.: „fährt aus dem Schatten raus, extrem pixelig“).
 // Ein enges Frustum (±size m) um das Ziel, Mittelpunkt auf das Texelraster der Schattenkarte gerastet (sonst flimmern die Schattenkanten beim

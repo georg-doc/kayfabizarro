@@ -24,14 +24,13 @@ import { isCardSafe } from './cardMapping'
 import { expose } from './debug'
 import { ROGUE, FB, KAYKIT, CAST_IDS } from './actors/stageCast'
 import { StageOrbitCam, ORBIT } from './StageOrbitCam'
-import { lightAt, parseTod, skyAtTod, lookB, skyLookB, SKY_TINT, LIGHT_INTENT, LIGHT_INTENT_V340, followShadow, shadowLength } from './stageLight'
-import { createActorRim } from './modules/actorRim'
+import { skyAtTod, skyLookB, SKY_TINT } from './stageLight'
+import { createStageLight, createContactAO, createPracticals, applyTone, parseTod, moodAt, selfTest, MOOD_SETS } from './vendor/light/kfb-stage-light.v1.js'
+import { useHostKeys, PRIO } from './hostKeys'
+import EDGES from './data/stages/kfb-stage-edges.r1.json'
 import { createClayLook } from './modules/clayLook'
 import { createVehicleLineup } from './modules/vehicleLineup'
-import { mountCompareBar } from './compareBar'
-import { createContactBlobs } from './modules/contactBlob'
-import { createPracticals } from './modules/practicals'
-import { createToneSplit } from './modules/toneSplit'
+import { mountCompareBar, toggleClean } from './compareBar'
 import { worldKFor } from './worldScale'
 export { ORBIT } // Prüfungen lesen die Kamera-Werte wie bisher über Stage
 
@@ -74,7 +73,9 @@ const PAL_PLAIN = /(^|,)plain(,|$)/.test(hash.replace(/^#/, ''))
 const PAL_VARIANT = /palv=b/.test(hash) ? 'b' : 'a' // Variante B (§36): Rolle je Bühnenteil wie Joyride
 const palFor = (card) => stagePaletteFor(card, { override: PAL_OVERRIDE, noTint: PAL_PLAIN, variant: PAL_VARIANT })
 const PAL0 = palFor(CARD)
-const AMPH = { biome: BIOME, palette: PAL0?.amph || null, worldK: K }
+// pamt=0..1: Anteil der Umfärbung des Amphitheaters nach Helligkeit (Look-Slice-Probe, Georg 17.10.); ohne Schalter V-286 (18 %)
+const PAMT = /pamt=([\d.]+)/.exec(hash) ? Math.min(1, +/pamt=([\d.]+)/.exec(hash)[1]) : undefined
+const AMPH = { biome: BIOME, palette: PAL0?.amph || null, worldK: K, palAmt: PAMT }
 const MESHY_OPTS = SCENE ? { stage: SCENE, scale: SCENE_S } : null
 const BB = { card: CARD, biome: BIOME, palette: PAL0, maxW: 7, maxH: 5, position: [0, 0, -3.5 * K], worldK: K }
 const palState = { current: PAL0, log: [] } // aktuelle Palette der Bühne + Wechsel-Protokoll (Prüfung)
@@ -151,72 +152,57 @@ const sky = (() => {
   return { mesh, top, bottom, viewTop, viewBottom, state: () => ({ top: '#' + top.getHexString(), bottom: '#' + bottom.getHexString(), fading: F.on }),
     set(sk, fadeS) { const b = { top: new THREE.Color(sk.top), bottom: new THREE.Color(sk.bottom) }; if (!(fadeS > 0)) { top.copy(b.top); bottom.copy(b.bottom); F.on = false; return } Object.assign(F, { on: true, t: 0, dur: fadeS, a: { top: top.clone(), bottom: bottom.clone() }, b }) },
     step(dt) { if (F.on) { F.t = Math.min(F.dur, F.t + dt); const u = F.t / F.dur, k = u * u * (3 - 2 * u); top.copy(F.a.top).lerp(F.b.top, k); bottom.copy(F.a.bottom).lerp(F.b.bottom, k); if (u >= 1) F.on = false }
-      if (L1) { const b = LOOK === 'b' ? skyLookB('#' + top.getHexString(), '#' + bottom.getHexString(), TUNE ? SKY_TINT.v346 : SKY_TINT.v340) : { top: '#' + top.getHexString(), bottom: '#' + bottom.getHexString() }
+      if (L1) { const b = LOOK === 'b' ? skyLookB('#' + top.getHexString(), '#' + bottom.getHexString(), LSET === 'mesa' ? SKY_TINT.mesa : SKY_TINT.v346) : { top: '#' + top.getHexString(), bottom: '#' + bottom.getHexString() }
         viewTop.set(skyAtTod(b.top, lightState.tod)); viewBottom.set(skyAtTod(b.bottom, lightState.tod)) } else { viewTop.copy(top); viewBottom.copy(bottom) } } }
 })()
-// L1 (V-329) · Licht-Schreiber hinter light=l1: der einzige Ort, der Sonne, Hemisphäre, Gegenlicht und Tonemapping setzt. Werte aus stageLight.js
-// (J17-Tag, E50-Gold, Story-Nacht), timeOfDay über tod=day|gold|night|0..1. Nur die Sonne wirft Schatten, enger Frustum um die Spielfläche
-// (±12 m, 2048² → ≈ 1,2 cm je Texel, Ziel fest im Bühnenmittelpunkt, daher kein Nachrasten nötig). Ausgabe ACES wie J17; die Kartenfläche ist toneMapped: false.
-// Kontaktschatten (V-203, Spender Lab contact-blob.ts) als eigenes Modul unter jeder Figur (modules/contactBlob.js); FB behält zusätzlich seinen contact-ao.
+// L3 (V-382/V-385/V-386/V-392, LIGHT_MODEL_R2) · Licht nur aus dem Bühnen-Licht-Modul (vendor/light/kfb-stage-light.v1.js, Fehlerliste Stufe 0):
+// ein Rig (Sonne als einziger Schattenwerfer, Hemisphäre mit Boden = edgePalette der Bühne, ein warmes Figurenlicht von vorn-oben), Stimmungen
+// Tag/Gold/Nacht als Einstellungen, ein Tonemapping für alle Schichten bei fester Belichtung. Entfernt: Randlicht, Gegenlicht, Gesichts-Fill,
+// toneSplit, Look-B-Lichtsättigung, unbeleuchtete Karte (alles frühere WS0-Aufträge, ersetzt durch R2). Hinter light=l1, timeOfDay über tod=.
 const L1 = /(^|[#,])light=l1(,|$)/.test(hash)
 export const lightState = { tod: parseTod(hash), current: null }
-const ORIGIN = { x: 0, y: 0, z: 0 }
-// V-346 (Georgs Look-Urteile, TUNE in einem Schritt): mit light=l1 sind jetzt Standard: Look B, Randlicht, Knet für alle, ACES mit Boden „ohne“.
-// tune=0 zeigt zum Vergleich den Stand vor V-346 (Himmel stark verschoben, GothGirl-Glow 0,5, kein Gesichts-Fill, Knet ohne Abstimmung).
-const TUNE = L1 && !/(^|[#,])tune=0(,|$)/.test(hash)
-// Tonemapping: tm=none (ohne) | tm=aces (ACES überall, Stand V-342) | Standard split = ACES global, Boden/Bühne toneMapped: false (V-346 Punkt 3)
-const L1_TM = /tm=none/.test(hash) ? 'none' : /tm=aces/.test(hash) ? 'aces' : 'split'
-// L2 Schritt 1 (V-340): look=a (L1 genau) | look=b (warmer Krazy-Kat-Grundton, seit V-346 Standard); Licht-Identität je Figur (Randlicht) immer mit L1
-const LOOK = L1 && !/look=a/.test(hash) ? 'b' : 'a', RIM = L1
-const INTENT = TUNE ? LIGHT_INTENT : LIGHT_INTENT_V340
-const RIMS = { targets: () => [{ module: mods.left, intent: INTENT.frizzlebob }, { module: mods.right, intent: INTENT[CAST_ID] || INTENT.default }] }
-const makeRim = (o) => { const m = createActorRim(o); mods.rim = m; return m }
-// L2 Schritt 2 (V-340): clay=1 stellt KayKit-Figuren auf das K1/H0-Knet-Material (Profil figure) um; FB behält sein abgenommenes ToolBox-Material.
-// clay=all stellt auch FB um (G9 „eine Materialfamilie“). V-346: mit L1 ist clay=all Standard (Georg: FB bekommt Knet); clay=1 nur KayKit, clay=0 aus.
-// Ohne L1 bleibt alles wie vorher (nur mit Schalter).
+// Tonemapping: tm=aces | neutral | agx | none; Wahl per Messung bei fester Belichtung (scripts/light/l3-tone.mjs), Standard = Ergebnis der Messung
+const L1_TM = (/tm=(aces|neutral|agx|none)/.exec(hash) || [0, 'aces'])[1] // Messung 17.10. (l3-proof tone): AgX 7,73 knapp vor ACES 8,50, Neutral 16,03, ohne clippt; AgX entsättigt sichtbar (FB blass), Georg: zu hell und flach → ACES mit Mesa
+// Look B ist nur noch Himmelstönung (Regel 3: keine Lichtsättigung); look=a zeigt die Palette ungetönt
+const LOOK = L1 && !/look=a/.test(hash) ? 'b' : 'a'
+// Knet: mit L1 Standard für alle Figuren (V-346), clay=1 nur KayKit, clay=0 aus. Figuren-Samt ≤ 0,05 (Regel 1, gegen den hellen Saum)
 const CLAY = L1 ? !/(^|[#,])clay=0(,|$)/.test(hash) : /(^|[#,])clay=(1|all)(,|$)/.test(hash)
 const CLAY_FB = L1 ? !/(^|[#,])clay=(0|1)(,|$)/.test(hash) : /(^|[#,])clay=all(,|$)/.test(hash)
-// V-346: GothGirl wirkte im Knet überstrahlt → Samt weniger, Grundfarbe × 0,95 (WS1-Wert nach Messung: × 0,88 lag 8 % unter „Knet aus“, scripts/light/v346-pairs.mjs); Fahrzeuge farbtreu
-const CLAY_TUNE = { gothgirl: { sheen: 0.06, colorK: 0.95 } }, VEHICLE_TUNE = { sheen: 0 }
-const CLAYS = { targets: () => [...(CLAY_FB ? [mods.left] : []), ...(CAST_ID ? [{ module: mods.right, tune: TUNE ? CLAY_TUNE[CAST_ID] || {} : {} }] : [])], profile: 'figure' }
+const FIG_TUNE = { sheen: 0.04 }, CLAY_TUNE = { gothgirl: { sheen: 0.04, colorK: 0.95 } }, VEHICLE_TUNE = { sheen: 0 }
+const CLAYS = { targets: () => [...(CLAY_FB ? [{ module: mods.left, tune: FIG_TUNE }] : []), ...(CAST_ID ? [{ module: mods.right, tune: CLAY_TUNE[CAST_ID] || FIG_TUNE }] : [])], profile: 'figure' }
 const makeClay = (o) => { const m = createClayLook(o); mods.clay = m; return m }
 const LINEUP_OPTS = { figure: () => mods.left, gap: 0.9 * K }
 const makeLineup = (o) => { const m = createVehicleLineup(o); mods.amph = m; mods.lineup = m; expose('StageMods', mods); return m }
-const CLAYV = { targets: () => (mods.lineup ? [mods.lineup] : []), profile: 'vehicle', tune: TUNE ? VEHICLE_TUNE : {} }
-// Boden ohne Tonemapping (tm split): Bühne bzw. in der Aufstellung nur die Bodenfläche
-const TONES = { targets: () => [LINEUP ? { object3d: mods.lineup?.object3d.getObjectByName('lineup-ground') } : { object3d: mods.amph?.object3d, ready: () => mods.amph?.status().status === 'OK' }] }
-const makeTones = (o) => { const m = createToneSplit(o); mods.tones = m; return m }
+const CLAYV = { targets: () => (mods.lineup ? [mods.lineup] : []), profile: 'vehicle', tune: VEHICLE_TUNE }
 const makeClayV = (o) => { const m = createClayLook(o); mods.clayV = m; return m }
-const BLOBS = { targets: () => [mods.left, mods.right], size: 0.95 * K } // Fleck folgt der Figurengröße (V-345)
-const makeBlobs = (o) => { const m = createContactBlobs(o); mods.blobs = m; return m }
-// Lokale Lichter der Bühne aus ihrem Deskriptor (kfb.stage-descriptor/1, practicals[] in u → Meter wie die Slot-Umrechnung); nachts voll, tags fast aus
-const DESCRIPTORS = import.meta.glob('./data/stages/*.stage.json', { eager: true, import: 'default' })
-const stageDesc = SCENE ? DESCRIPTORS[`./data/stages/${SCENE}.stage.json`] || null : null
+// Bühnen-Ränder (kfb.stage-edges/1, WS0 @d4e24f15): Hemi-Boden = größter Flächenanteil der edgePalette, in OKLCH höchstens +10 % L (V-396);
+// Amphitheater: mittlerer Bühnenboden-Ton der Palette, Aufstellung: Bodenfläche
+const EDGE_ID = { goblin: 'goblin_bank', atlantis: 'atlantis', comic: 'comic_broadcast', utopia: 'utopia_stage' }
+const edge = SCENE ? EDGES.stages[EDGE_ID[SCENE]] || null : null
+const liftL = (hex, k = 1.1) => { const c = new THREE.Color(hex), hsl = {}; c.getHSL(hsl); c.setHSL(hsl.h, hsl.s, Math.min(1, hsl.l * k)); return '#' + c.getHexString() }
+const GROUND = edge?.edgePalette?.length ? liftL([...edge.edgePalette].sort((a, b) => b.share - a.share)[0].hex) : LINEUP ? '#cdb48c' : (PAL0?.amph?.floor?.[1] || '#9a8a78')
+// Schattenbereich: Spielfläche der Bühne (Amphitheater-Bühne ⌀ 9,1 m, Meshy-Slot nach Figuren-Zone, Aufstellung weit)
+const FIT = SCENE ? { center: { x: 0, y: 0, z: 0 }, radius: 7 } : LINEUP ? { center: { x: 0, y: 0, z: -4 * K }, radius: 16 } : { center: { x: 0, y: 1, z: -1.2 * K }, radius: 7.6 * K }
+// Stimmungs-Satz: lset=mesa (Standard, Georg 17.10.: Krazy-Kat-Sonntagsseiten, Mesas, laue Abende) | cozy (wärmer, weniger hell) | r2 (J17-Tag nach LIGHT_MODEL_R2)
+const LSET = (/lset=(r2|cozy|mesa)/.exec(hash) || [0, 'mesa'])[1], MOOD_SET = MOOD_SETS[LSET] || undefined
+const RIG = { moods: MOOD_SET, tod: () => lightState.tod, groundColor: () => GROUND, fit: () => FIT, figures: () => [mods.left, mods.right], figureLight: { distance: 4.6 * K, up: 2.6 * K } }
+const makeRig = (o) => { const m = createStageLight(o); mods.light = m; return m }
+const AO = { targets: () => [mods.left, mods.right], strength: 0.42 }
+const makeAO = (o) => { const m = createContactAO(o); mods.blobs = m; return m }
+// Praktische: Meshy-Bühnen aus den Rändern (u → m wie der Slot), Amphitheater = die zwei Billboard-Lampen; Stärke = Rig-glow (nachts Inseln)
 const toMeters = (u) => [u[0] * SCENE_S, (u[1] - MESHY_STAGES[SCENE].floorY) * SCENE_S, u[2] * SCENE_S]
-const PRACT = { practicals: (stageDesc?.practicals || []).map((p) => ({ ...p, pos: toMeters(p.pos) })), weight: () => Math.pow(1 - lightState.tod, 1.5), actors: () => [mods.left, mods.right],
-  actorLight: { color: '#ffd9a8', intensity: 4, range: 4.5 * K }, actorOffset: [1.2 * K, 2.1 * K] } // Figuren-Licht in Figurenmaß (V-345)
+const SCENE_PRACT = SCENE ? (edge?.practicals || []).map((p) => ({ ...p, pos: toMeters(p.pos) })) : null
+const PRACT = { practicals: () => SCENE_PRACT || (mods.billboard?.lampPoints?.() || []).map((pos, i) => ({ id: 'bb-lamp-' + i, type: 'lamp', pos, color: '#ffd9a0', intensity: 1, range: 6 * K, halo: { size: 0.45 * K } })),
+  weight: () => moodAt(lightState.tod, MOOD_SET).glow }
 const makePract = (o) => { const m = createPracticals(o); mods.practicals = m; return m }
-// Schatten-Frustum: Amphitheater in J17-Metern enger (±7,8 m statt ±12, feinere Texel); Meshy-Bühnen (schon WS0-Meter) und Aufstellung wie bisher
-const SHADOW_SIZE = SCENE || LINEUP ? 12 : 12 * K
-function LightRigL1() {
+function LightL3() {
   const { gl } = useThree()
-  const sunRef = useMemo(() => ({ sun: null, back: null, hemi: null }), [])
-  useEffect(() => { const prev = gl.toneMapping; gl.toneMapping = L1_TM === 'none' ? THREE.NoToneMapping : THREE.ACESFilmicToneMapping // split: global ACES, Boden per Material
-    expose('StageLight', { state: lightState, set: (t) => { lightState.tod = t }, info: () => lightState.current })
-    return () => { gl.toneMapping = prev } }, [gl])
-  useFrame(() => {
-    const L0 = lightAt(lightState.tod), L = LOOK === 'b' ? { ...lookB(L0), sunDir: L0.sunDir, tod: L0.tod, elev: L0.elev, az: L0.az } : L0, { sun, back, hemi } = sunRef; if (!sun || !back || !hemi) return
-    const d = L.sunDir, R = 40
-    followShadow(sun, ORIGIN, { size: SHADOW_SIZE, dist: R, sunDir: d }); sun.color.set(L.sun); sun.intensity = L.sunI // Bühne: Ziel fest in der Mitte; M1/M2 übergeben Figur bzw. Fahrzeug
-    back.position.set(-d[0] * R, Math.max(6, d[1] * R * 0.5), -d[2] * R); back.color.set(L.back); back.intensity = L.backI
-    hemi.color.set(L.hemiSky); hemi.groundColor.set(L.hemiGround); hemi.intensity = L.hemiI
-    lightState.current = { look: LOOK, rim: RIM, tm: L1_TM, tune: TUNE, shadowLen: +shadowLength(L.elev).toFixed(3), tod: L.tod, hemiGround: L.hemiGround, back: L.back, sun: L.sun, sunI: +L.sunI.toFixed(3), hemiI: +L.hemiI.toFixed(3), backI: +L.backI.toFixed(3), elev: +L.elev.toFixed(2), az: +L.az.toFixed(2) }
-  })
-  return <>
-    <hemisphereLight ref={(o) => { sunRef.hemi = o }} />
-    <directionalLight ref={(o) => { sunRef.sun = o }} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-12} shadow-camera-right={12} shadow-camera-top={12} shadow-camera-bottom={-12} shadow-camera-near={1} shadow-camera-far={90} shadow-bias={-0.0002} shadow-normalBias={0.02} />
-    <directionalLight ref={(o) => { sunRef.back = o }} />
-  </>
+  useEffect(() => { const undo = applyTone(gl, L1_TM, 1)
+    expose('StageLight', { state: lightState, set: (t) => { lightState.tod = t }, info: () => lightState.current, selfTest: () => selfTest(gl), gl: () => ({ calls: gl.info.render.calls, tris: gl.info.render.triangles, programs: gl.info.programs?.length ?? null }) })
+    return undo }, [gl])
+  useFrame(() => { const M = moodAt(lightState.tod, MOOD_SET); mods.billboard?.setGlow?.(M.glow)
+    lightState.current = { look: LOOK, tm: L1_TM, lset: LSET, ground: GROUND, ...(mods.light?.info?.() || {}) } })
+  return null
 }
 
 // Nebel folgt der gezeigten Horizontfarbe (L1 Regel 3): viewBottom = Palette × Tageszeit
@@ -229,6 +215,7 @@ function Sky() {
 const FOG_K = SCENE ? 1 : K // Nebel in Bühnenmaß; Meshy-Bühnen sind schon WS0-Meter
 export default function Stage() {
   useEffect(() => (L1 ? mountCompareBar({ hash, lightState }) : undefined), []) // Vergleichsleiste für Georgs Abnahme (nur mit light=l1)
+  useHostKeys((e) => { if (L1 && e.code === 'KeyH' && !e.repeat) { toggleClean(); e.preventDefault() } }, PRIO.editor) // V-383: Sauberes Bild an/aus
   // Die Spielerwahl der Bühne: Zurufe des Publikums erscheinen als Blase vorn am Bildrand (Anker „player“ vor der Kamera).
   // Nur solange die Bühne steht; beim Abbau zurück (Prüfer 8, Befund 6: kein Seiteneffekt beim Import).
   useEffect(() => { const prev = playerState.pos.clone(); playerState.pos.set(...PLAYER_POS); return () => { playerState.pos.copy(prev) } }, [])
@@ -246,7 +233,7 @@ export default function Stage() {
       <fog attach="fog" args={[PAL0?.sky.bottom || '#bcd7ea', 80 * FOG_K, 260 * FOG_K]} />
       <Sky />
       <StageOrbitCam view={CAM_VIEW} />
-      {L1 ? <LightRigL1 /> : <>
+      {L1 ? <><LightL3 /><ModuleHost create={makeRig} options={RIG} /></> : <>
         <hemisphereLight args={[0xfff4e0, 0x3a3226, 1.25]} />
         <directionalLight position={sun} intensity={1.8} castShadow shadow-mapSize={[2048, 2048]} shadow-camera-left={-25} shadow-camera-right={25} shadow-camera-top={25} shadow-camera-bottom={-25} shadow-bias={-0.0002} />
       </>}
@@ -254,11 +241,9 @@ export default function Stage() {
       {!SCENE && !LINEUP && <ModuleHost create={makeBB} options={BB} />}
       {LINEUP && CLAY && <ModuleHost create={makeClayV} options={CLAYV} />}
       {ACTORS !== 'none' && <ModuleHost create={makeL} options={L} />}
-      {L1 && ACTORS !== 'none' && <ModuleHost create={makeBlobs} options={BLOBS} />}
+      {L1 && ACTORS !== 'none' && <ModuleHost create={makeAO} options={AO} />}
       {L1 && <ModuleHost create={makePract} options={PRACT} />}
-      {L1 && L1_TM === 'split' && <ModuleHost create={makeTones} options={TONES} />}
       {CLAY && ACTORS !== 'none' && <ModuleHost create={makeClay} options={CLAYS} />}
-      {RIM && ACTORS !== 'none' && <ModuleHost create={makeRim} options={RIMS} />}
       {ACTORS !== 'none' && <ModuleHost create={makeR} options={R} />}
       {NDIALOG > 0 && <ModuleHost create={makeDialog} options={DIALOG} />}
       {NDIALOG > 0 && <BubbleHost />}

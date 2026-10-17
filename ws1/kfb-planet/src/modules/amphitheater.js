@@ -40,7 +40,8 @@ export const AMPH_BANDS = Object.freeze({ yArch: 4.55, y0: 0.05, rowH: 0.71, sta
 export function createAmphitheater(options = {}) {
   amphLog.create++
   // worldK (V-345): alte WS1-Bühnenmeter → J17-Meter; skaliert Modell, Gelände, Höhenbänder und Knet-Abstände gleich, damit das Bild gleich bleibt
-  const { url = AMPH_URL, biome = null, groundR = 70, palette = null, worldK = 1 } = options
+  // palAmt (Look-Slice, Georg 17.10.): Anteil der Umfärbung nach Helligkeit; Standard PAL_AMT (V-286), 1 = volle Umfärbung nach Rollen (Joyride-Look)
+  const { url = AMPH_URL, biome = null, groundR = 70, palette = null, worldK = 1, palAmt = PAL_AMT } = options
   const s = AMPH_SCALE * worldK
   const root = new THREE.Group(); root.name = 'amphitheater'
   const fam = makeClayFamily('G', { uClayNear: { value: 30 * worldK }, uClayFar: { value: 90 * worldK }, uClayScale: { value: 1.4 * worldK }, uClayAmt: { value: 0.45 } }, { oct: 2, near: true, stick: false })
@@ -48,7 +49,7 @@ export function createAmphitheater(options = {}) {
   // Paletten-Uniforms: gemeinsam für alle Modell-Materialien; Überblendung lerpt sie (und die Geländefarbe) von → nach
   const KEYS = ['w0', 'w1', 'w2', 'f0', 'f1', 'f2']
   const cols = (pa) => (pa ? pa.cols || [...pa.wall, ...pa.floor] : Array(6).fill('#000000')) // A: Wand- und Boden-Verlauf · B: tower0, tower1, hill0, hill1, top, rock
-  const PU = { amt: { value: palette ? PAL_AMT : 0 }, mode: { value: palette?.mode === 'b' ? 1 : 0 } }; cols(palette).forEach((c, i) => { PU[KEYS[i]] = { value: new THREE.Color(c) } })
+  const PU = { amt: { value: palette ? palAmt : 0 }, mode: { value: palette?.mode === 'b' ? 1 : 0 } }; cols(palette).forEach((c, i) => { PU[KEYS[i]] = { value: new THREE.Color(c) } })
   const fade = { on: false, t: 0, dur: 0, from: null, to: null }
   const inject = (m) => {
     m.onBeforeCompile = (sh) => {
@@ -76,7 +77,7 @@ export function createAmphitheater(options = {}) {
   const snap = () => ({ c: KEYS.map((k) => PU[k].value.clone()), amt: PU.amt.value, ground: groundMat.color.clone() })
   const plain = (pa) => (pa.mode === 'b' ? { mode: 'b', cols: [...pa.cols], ground: pa.ground } : { wall: [...pa.wall], floor: [...pa.floor], ground: pa.ground })
   function setPalette(pa, fadeS = 0) {
-    const to = { c: cols(pa).map((x) => new THREE.Color(x)), amt: PAL_AMT, ground: new THREE.Color(pa.ground) }
+    const to = { c: cols(pa).map((x) => new THREE.Color(x)), amt: palAmt, ground: new THREE.Color(pa.ground) }
     state.palette = plain(pa); PU.mode.value = pa.mode === 'b' ? 1 : 0
     if (!(fadeS > 0)) { fade.on = false; apply(to, to, 1); return }
     Object.assign(fade, { on: true, t: 0, dur: fadeS, from: snap(), to })

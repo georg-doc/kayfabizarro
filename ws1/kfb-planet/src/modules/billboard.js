@@ -45,7 +45,7 @@ export const billboardLog = { create: 0, update: 0, dispose: 0, freed: null }
 export function createBillboard(options = {}) {
   const { maxW = 7, maxH = 5, position = [0, 0, 0], yaw = 0, worldK = 1 } = options // worldK (V-345): ganze Tafel samt Rahmen gleichmäßig in J17-Meter
   const fam = makeClayFamily('B', { uClayNear: { value: 26 }, uClayFar: { value: 70 }, uClayScale: { value: 2.6 }, uClayAmt: { value: 0.4 } })
-  const bodyMat = fam.std('#ffffff', 0.88, { vertexColors: true })
+  const bodyMat = fam.std('#ffffff', 1, { vertexColors: true }) // L3 (Georg 17.10.: Rahmen glänzt nachts): ganz matt, Knete hat keinen Glanzpunkt
   const biome = options.biome || biomeByName(options.biomeName) || null
   if (!biome && !options.palette) throw new Error('BILLBOARD_BIOME_REQUIRED: Palette kommt aus Biom/Insel/Kartenzone (options.palette, options.biome oder biomeName)')
   billboardLog.create++ // erst nach der Prüfung: ein abgelehnter Aufruf erzeugt nichts
@@ -57,9 +57,27 @@ export function createBillboard(options = {}) {
   const g = new THREE.Group(); g.name = 'billboard-plain'; g.position.fromArray(position); g.rotation.y = yaw; g.scale.setScalar(worldK)
   const body = new THREE.Mesh(undefined, bodyMat); body.name = 'body'; body.castShadow = body.receiveShadow = true; g.add(body)
   // Bildfläche des Trägers: Material und Maske gehören dem Träger, die Textur setzt der Inhalt
-  const faceMat = new THREE.MeshBasicMaterial({ toneMapped: false })
+  // L3 Regel 8 (LIGHT_MODEL_R2): Karte = beleuchtetes, mattes Papier im selben Licht- und Ton-Pfad wie die Bühne (vorher unbeleuchtet, toneMapped: false)
+  const faceMat = new THREE.MeshStandardMaterial({ roughness: 1, metalness: 0 })
   const face = new THREE.Mesh(undefined, faceMat); face.name = 'face'; g.add(face)
   const state = { info: null, disposed: false }
+  // L3 Regel 7 · Billboard-Lampen nach den Lampenarmen der Highway-Tafel (vendor/billboard-clay.js, STYLES.highway): zwei Schwanenhälse über dem Rahmen,
+  // Leuchtköpfe als Emissive-Material, Stärke folgt dem Nachtgewicht (setGlow). Das Licht selbst (Pool-Licht auf Rahmen und Karte) kommt aus dem
+  // Bühnen-Licht-Modul (createPracticals) an lampPoints(): keine eigene Lampe in der Tafel (V-392).
+  const lampMat = new THREE.MeshStandardMaterial({ color: '#e9c14a', roughness: 1, metalness: 0, emissive: '#ffd58a', emissiveIntensity: 0 })
+  const armMat = new THREE.MeshStandardMaterial({ color: '#3a342a', roughness: 1, metalness: 0 })
+  const lamps = new THREE.Group(); lamps.name = 'billboard-lamps'; g.add(lamps)
+  const heads = []
+  function buildLamps(W, H) {
+    lamps.clear(); heads.length = 0; const top = STYLES.plain.gb + H + 0.45, zf = FACE_Z
+    for (const sx of [-1, 1]) {
+      const x = sx * W * 0.28, post = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.07, 0.7, 10), armMat); post.position.set(x, top + 0.3, zf - 0.1)
+      const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.0, 10), armMat); arm.rotation.x = Math.PI / 2; arm.position.set(x, top + 0.62, zf + 0.38)
+      const head = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.34, 0.32, 16, 1, true), armMat); head.position.set(x, top + 0.5, zf + 0.9); head.rotation.x = -0.5
+      const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.2, 14, 10), lampMat); bulb.position.set(x, top + 0.42, zf + 0.92)
+      ;[post, arm, head, bulb].forEach((m) => { m.castShadow = m !== bulb; lamps.add(m) }); heads.push(bulb)
+    }
+  }
 
   // Träger formt sich nach dem Seitenverhältnis des Inhalts (R2 „responsiv“, fitFace) und gibt seine Info zurück
   function fit(meta) {
@@ -69,6 +87,7 @@ export function createBillboard(options = {}) {
     body.geometry = bodyGeometry(W, H, P, 'plain', r) // geteilter Cache des Spenders, nicht freigeben
     face.geometry = faceGeometry(W, H, r)
     face.position.set(0, STYLES.plain.gb + H / 2, FACE_Z)
+    buildLamps(W, H)
     state.info = { source: meta.source, W: +W.toFixed(4), H: +H.toFixed(4), aspect: +meta.aspect.toFixed(4), gb: STYLES.plain.gb, cornerR: +r.toFixed(4), palette: { biome: palName, frame: P.frame, trim: P.trim, post: P.post }, canvas: meta.canvas,
       top: +(STYLES.plain.gb + H + 0.45 + 0.08).toFixed(3), faceCenter: [0, STYLES.plain.gb + H / 2, FACE_Z], fontScale: meta.fontScale, card: meta.card }
     return state.info
@@ -106,12 +125,14 @@ export function createBillboard(options = {}) {
     setPalette,
     fading: () => !!fade.own,
     info: () => state.info,
+    setGlow(w) { lampMat.emissiveIntensity = 2.2 * Math.max(0, Math.min(1, w)) },
+    lampPoints: () => heads.map((h) => h.getWorldPosition(new THREE.Vector3()).toArray()),
     update(dt) { billboardLog.update++; stepFade(dt || 0) }, // ruhend bis auf die Paletten-Überblendung: kein Takt, keine Lesefolge (R2 §4)
     dispose() {
       billboardLog.dispose++; state.disposed = true
       content.dispose() // Inhalt gibt seine Textur frei
-      endFade(); faceMat.dispose(); bodyMat.dispose() // Geometrien gehören dem Cache von billboard-clay.js (wie im Spender); die Überblend-Kopie ist eigen
-      billboardLog.freed = { textures: 1, materials: 2 }
+      endFade(); faceMat.dispose(); bodyMat.dispose(); lampMat.dispose(); armMat.dispose(); lamps.traverse((m) => m.geometry?.dispose()) // Geometrien gehören dem Cache von billboard-clay.js (wie im Spender); die Überblend-Kopie ist eigen
+      billboardLog.freed = { textures: 1, materials: 4 }
       g.clear()
     },
   }

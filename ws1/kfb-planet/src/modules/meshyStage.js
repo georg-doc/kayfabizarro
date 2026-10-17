@@ -48,7 +48,7 @@ export function createMeshyStage(options = {}) {
     const slotMesh = m.getObjectByName(st.slot.slot.mesh) || m.getObjectByName(st.slot.slot.node)
     let mesh = null; slotMesh?.traverse((o) => { if (!mesh && o.isMesh) mesh = o })
     if (mesh) { // Platzhalter-Farbe (#1A212E) würde die Karte einfärben: Fläche weiß und ungetönt, Inhalt kommt als Textur
-      mesh.material = new THREE.MeshBasicMaterial({ color: 0xffffff, toneMapped: false }); mesh.name = 'screen'
+      mesh.material = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 1, metalness: 0 }); mesh.name = 'screen' // L3 Regel 8: Karte = beleuchtetes mattes Papier
     }
     state.slotMesh = mesh
     root.add(m); root.updateMatrixWorld(true)

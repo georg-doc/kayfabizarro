@@ -14,10 +14,13 @@ import { expose } from './debug'
 export const ORBIT = Object.freeze({ damping: 0.08, rotate: 0.45, zoom: 0.5, pan: 0.6, minDist: 2, maxDist: 60, minY: 0.5, glideS: 0.8 })
 // „Nah“ (Georg 16.10.: Karte saß am oberen Bildrand statt in der Mitte): Ziel ist der Fokus (Kartenmitte), Abstand 60 % des Standard-Blicks in
 // derselben Blickrichtung. view.focus = [x, y, z] oder Funktion → [x, y, z] | null (die Bildfläche kennt ihre Lage erst nach dem Laden); ohne Fokus wie bisher.
-const marksOf = (view) => {
-  const p = new THREE.Vector3(...view.pos), t = new THREE.Vector3(...view.target), f0 = typeof view.focus === 'function' ? view.focus() : view.focus
+// Hochformat (L3/V-329: 9:16): die Kamera fährt zurück statt das Bildfeld zu weiten, damit waagrecht ≈ 80 % des 16:9-Ausschnitts bleiben (k = 1,42 / Seitenverhältnis);
+// Querformat ab 1,42:1 unverändert
+export const portraitK = (aspect) => Math.max(1, 1.42 / Math.max(0.2, aspect || 1))
+const marksOf = (view, k = 1) => {
+  const t = new THREE.Vector3(...view.target), p = new THREE.Vector3(...view.pos).sub(t).multiplyScalar(k).add(t), f0 = typeof view.focus === 'function' ? view.focus() : view.focus
   const f = f0 ? new THREE.Vector3(...f0) : t.clone()
-  return { standard: { pos: p, target: t }, nah: { pos: f.clone().addScaledVector(p.clone().sub(t), 0.6), target: f } }
+  return { standard: { pos: p, target: t }, nah: { pos: f.clone().addScaledVector(p.clone().sub(t), 0.6), target: f } } // nah: 60 % des (ggf. verlängerten) Standard-Abstands
 }
 
 export function StageOrbitCam({ view, active = true, ref }) {
@@ -30,13 +33,13 @@ export function StageOrbitCam({ view, active = true, ref }) {
     return c
   }, [camera, gl])
   const glide = useMemo(() => ({ on: false, t: 0, a: null, b: null, fovA: null, fovB: null }), [])
-  const camMarks = () => marksOf(viewRef.current)
+  const camMarks = () => marksOf(viewRef.current, portraitK(camera.aspect))
   // Sprungmarke: weich hingleiten (Kamera und Ziel), kein Schnitt
   // Restschwung der Dämpfung vor dem Gleiten verbrauchen (sonst verschiebt er den Blick nach dem Ankommen); während des Gleitens ohne Dämpfung
   const startGlide = (b, fovB = null) => { ctl.enableDamping = false; ctl.update(); Object.assign(glide, { on: true, t: 0, a: { pos: camera.position.clone(), target: ctl.target.clone() }, b, fovA: camera.fov, fovB }) }
   const jump = (name, fovB = null) => { const m = camMarks()[name]; if (m) startGlide(m, fovB) }
   // Startblick: aktiv beim Einhängen → wie bisher sofort setzen; inaktiv → Kamera nicht anfassen (anderer Besitzer)
-  useEffect(() => { if (!activeRef.current) return; const v = viewRef.current; camera.fov = v.fov || 38; camera.near = 0.1; camera.far = 600; camera.position.fromArray(v.pos); ctl.target.fromArray(v.target); camera.lookAt(ctl.target); camera.updateProjectionMatrix(); ctl.update(); expose('StageCamera', camera) }, [camera, ctl])
+  useEffect(() => { if (!activeRef.current) return; const v = viewRef.current; camera.fov = v.fov || 38; camera.near = 0.1; camera.far = 600; camera.aspect = size.width / size.height; camera.position.copy(camMarks().standard.pos); ctl.target.fromArray(v.target); camera.lookAt(ctl.target); camera.updateProjectionMatrix(); ctl.update(); expose('StageCamera', camera) }, [camera, ctl])
   useEffect(() => { camera.aspect = size.width / size.height; camera.updateProjectionMatrix() }, [camera, size])
   // Ein- und Ausschalten: aus = Steuerung und Knöpfe weg; ein = Orbit-Ziel vor die aktuelle Kamera legen, von dort zum Startblick gleiten, Bildfeld überblenden
   const setActive = (on) => {
