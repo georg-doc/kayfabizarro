@@ -2,6 +2,13 @@
 
 
 
+
+## 17.10. evening · WSB points for you (no extra slice, take them into account where relevant)
+- **Placement grammar R2** (WSB, `50_BLENDER/SPEC/SPEC_PLACEMENT_GRAMMAR_R2.md`): one grammar for fluff and stones, and you are the code owner. Read it before Slice 1/2. WS0 is moving it into the register.
+- **Ground colour V-396:** at B7 it picks up the moss of the plinth, which turns limegreen. Proposal: skip saturated greens for the ground.
+- **B8 decimation:** WSB recommends the B8 versions for Prison B, Atlantis A/B, Arcade A/B, Alien B and Cathedral B; keep the WS0 versions for Giza, Marble, Goblin and the Utopia stage. You decide in the game.
+- **B9 stone IDs** (`COLOR_1`) for the colour script b81 are ready (Cologne Cathedral not yet).
+
 ## 17.10. · Fluff-harvest rule and brass knuckles (V-423), for Slice 1
 - **Hits per tree (average):** 3 punches / 2 shots / 1 explosion hit to empty a tree.
 - **Drops are staggered:** first 1–2 balls, then 3–4, then all.

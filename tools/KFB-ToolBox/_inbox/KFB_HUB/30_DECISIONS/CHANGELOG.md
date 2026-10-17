@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- WSB-Stand: B9–B13 als Proofs fertig (Georg-Blick offen); B14 r6/B14b r5 (66°-Weg) verworfen → 17. Nachtrag (Dory = r5-Kopf + edge80-Sockel), Antworten zu Stage-Set, Quaternius, Polyfork (nein). WSA: Songs R3.2 grün (7 Tracks), erst R3.3, dann externer Kritiker durch WS0 (Hub b97); Landmarks PR #418 TUNE (keine Pseudo-Knete, Knete macht WSB). WS1: Kombi-Vorschau mit Fahrhilfe Stufe G (24/24), WSB-Punkte an WS1.
 - V-424: SONG_SPEC R3.3 (Deck-Klammer Intro/Outro, 5 KayfabeTips für Opener/Brücken, Callbacks, ein Refrain, Opener-Fenster 15 Songs, Intro-Typen mit Cooldown); song_gate.py erweitert; R5-Brief + Hub b94/b95 ergänzt.
 - NotebookLM-Recherche (Opener-Rotation, Intro-Typen, vierte Wand) ausgewertet: 7 neue Opener im Pool (OPENER_ARC_R2/opener_pool_r2.py, Familien official/retort), Vierte-Wand-Parameter als Vorschlag (replies/DIALOGUE_FOURTH_WALL_R1.md); Regeländerung für Songs (Opener-Abstand über Songs, Intro-Typen) wartet auf Georg.
 - Bündel-PR #417 (Trust 05, Pharaoh-Performance, WSB B1/B2/B7) von Georg gemergt.
