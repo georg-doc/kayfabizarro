@@ -8,6 +8,7 @@ Audit `replies/SPECKLE_TRANSITION_AUDIT_R1.md`: Die Lösung existiert und ist ab
 4. `kfbBlend` bleibt in Joyride unangetastet; neuer Code nutzt das Preset `built`. Track-Core-`SKIN_BLEND` (32-m-Verlauf) wird beim späteren Strecken-Einbau auf das Modul umgestellt.
 5. **Bitte `s1/weltboden` auf GitHub spiegeln**, damit WS0 die Schürze prüfen kann.
 Abnahme: keine harte Kante, keine Linie/Geisterlinie/gestrichelter Rand an allen Testkameras; kleinste sichtbare Stufe ≥ 3 px; kein gleiches Muster nebeneinander (Seed je Zone); weltfest; ≤ 3 Ebenen, keine zusätzlichen Draw Calls.
+6. **Ziel ist Georgs Absicht, nicht der alte S1-Look:** `replies/TRANSITION_INTENT_R1.md` lesen – Flächen laufen wie Flüssigkeiten/Farben gesprenkelt ineinander, in beide Richtungen (Erdflecken ins Gras, Grasbüschel in die Erde), Bewuchs dünnt aus (Gruppenregel `nest()`), viele Größen, unregelmäßige Formen statt Scheiben, kein erkennbares Konstruktionsmuster. S1 ist die technische Basis und wird wo nötig erweitert (Verzerrung gegen Scheiben, zwei Richtungen, Bewuchs-Ebene). Abnahme zusätzlich mit blindem Kritiker: „Ist ein Konstruktionsmuster zu erkennen?“ → nein.
 
 ## 17.10.2026 · Antworten auf §68.4 und §69.3 – V-402
 **Georg-Entscheide aus dem WS1-Chat werden ins Register übernommen:** Mesa (Krazy-Kat-Sonntagsseiten, Mesas, laue Abende) ist die Grundrichtung für Licht und Farbe; Farbwelt cartoonig, ruhig psychedelisch wie Joyride; Reihenfolge L3 technisch → Look-Slice (Farbdrehbuch + Material) → Licht final → externe Designkritik → voller Beweislauf.
