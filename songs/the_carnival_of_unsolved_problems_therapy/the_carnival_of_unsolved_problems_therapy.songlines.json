@@ -1,42 +1,25 @@
 {
   "deckId": "the_carnival_of_unsolved_problems_therapy",
-  "version": "R4.1",
-  "sourceSpec": "R3.1",
+  "version": "R4.1/R3.2",
+  "bindingSpec": "R3.2",
+  "metaSkipped": [
+    48
+  ],
   "songLineChanges": [
     {
       "cardNumber": 40,
-      "before": "7-Day Witness",
-      "after": "Seven-Day Witness",
-      "reason": "A7 spoken number"
-    }
-  ],
-  "songLineCount": 1,
-  "totalCardLines": 47,
-  "percent": 2.13,
-  "otherPresentationEdits": [
-    {
-      "cardNumber": 17,
-      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
-    },
-    {
-      "cardNumber": 18,
-      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
-    },
-    {
-      "cardNumber": 20,
-      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
-    },
-    {
-      "cardNumber": 28,
-      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
-    },
-    {
-      "cardNumber": 36,
-      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
+      "rule": "A7",
+      "songName": "Seven-Day Witness",
+      "songLine": "Seven-Day Witness, boring reveals truth; observation across time, calendar and repeating eyes.",
+      "reason": "Write numbered card title as sung"
     },
     {
       "cardNumber": 44,
-      "reason": "R3.1 A6 bracket / descriptive alias; source unchanged"
+      "rule": "A6",
+      "songName": "The Guarantee",
+      "songLine": "Refund desk: The Guarantee, no neat endings; unresolved ambiguity, ticket stamped into the void.",
+      "reason": "Present playable guarantee without repeating FrizzleBob in lyric"
     }
-  ]
+  ],
+  "nonA7Changes": 1
 }
