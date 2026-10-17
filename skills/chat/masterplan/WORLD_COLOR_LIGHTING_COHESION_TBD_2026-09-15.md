@@ -102,3 +102,19 @@ Current public Town state is `SESSION_CARD.md` S001 r022 plus `references/TOWN_S
 - **PROPOSAL:** the exact five-part separation and the three-state KFB Look Calibration Stage as the first implementation-oriented comparison slice.
 - **UNRESOLVED:** exact parameter schema, renderer/material-adapter technique, whether/how a LUT is used, numeric ranges and the final set of mood presets.
 - **NOT TESTED:** no comparison scene, browser pass, material measurements, LUT, Travel integration or cross-game FrizzleBob calibration has been performed by this documentation update.
+
+
+---
+
+## Research checkpoint R1 · 2026-10-15 · EXISTING-OWNER SOURCE AUDIT
+
+Georg requested a more complete source-backed assessment of lighting, atmosphere/ambient, camera, sky shell, KayKit creator examples, Meshy models, Clay Goldens, deck/Card/biome palette, and cozy→psychedelic Story Scenes. The research remains **NO RUNTIME / NO R5 / NO NEW LIGHTING OWNER**. Its implementation branch is a Draft PR, not main:
+
+- Repo: `georg-doc/kayfabizarro` · Draft PR [#403](https://github.com/georg-doc/kayfabizarro/pull/403) · branch `research/kfb-world-lighting-color-cohesion-r1-2026-10-15`.
+- Audit and existing donor selection: `skills/chat/research/KFB_WORLD_LIGHTING_COLOR_COHESION_R1_2026-10-15/RESEARCH_AUDIT.md`.
+- Ranked 16 external/free HDRI, skybox, GitHub/documentation, Reddit and license references: `SOURCE_CANDIDATES.json` in that research folder. **Candidates only; not visually source-isolated, downloaded or licensed per exact file for KFB adoption.**
+- Next owner/Claude Code/WSA comparison brief: `INTEGRATION_BRIEF.md`; evidence limits: `TEST_REPORT.md`.
+
+**Reuse-first conclusion:** the existing Travel/TinySkies atmosphere and one-writer day-night rig, SKY3 EnvironmentHost, accepted-with-tune Environment Preview #218, accepted-scope WB1-P1 environment profile #177, K1/H0 + K2/v10 Clay Golden, PCFSoft shadow/contact recipe, and existing world/card semantic palettes provide substantial capability. The missing outcome is a **source-object-first same-camera multi-asset look-cohesion calibration**, not a new renderer/light stack. `cozy-lit` and psychedelic/local practical staging remain comparison candidates only.
+
+**World/Story gate remains binding:** R4 = STOPPED / NO MVP; Four-Island visual A/B/FAIL must authorize any receiving World look slice. Do not read this checkpoint as an implementation authorization. No Site/Stage/Live result is claimed. Exactly one next gate: `OWNER-ACCEPTED_EXISTING-HOST_LOOK_CALIBRATION_INTAKE`.

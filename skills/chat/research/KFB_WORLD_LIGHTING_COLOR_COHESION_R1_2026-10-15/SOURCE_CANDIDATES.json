@@ -1,0 +1,155 @@
+{
+  "schema": "kfb.lighting-research-sources/1",
+  "date": "2026-10-15",
+  "status": "CURATED_CANDIDATES_NOT_ADOPTED",
+  "owner": "Existing KFB World/Travel EnvironmentHost and receiving World/ToolBox; no new owner",
+  "licenseRule": "Verify concrete asset and upstream code license/version; do not copy or ship before current source/entitlement/provenance check",
+  "assetRule": "One exact source object / license / hash / visual source-isolation before any KFB look integration",
+  "externalSourceCount": 16,
+  "sources": [
+    {
+      "id": "THREE_SKY",
+      "kind": "CODE_DOC",
+      "url": "https://threejs.org/docs/pages/Sky.html",
+      "licenseStatus": "three.js project license; verify exact code version before copying",
+      "use": "Procedural-sky baseline against existing TinySkies/Travel shells; conceptual/implementation reference",
+      "rank": "P1",
+      "status": "EXTERNAL_REFERENCE_NOT_INTEGRATED"
+    },
+    {
+      "id": "THREE_PMREM",
+      "kind": "CODE_DOC",
+      "url": "https://threejs.org/docs/pages/PMREMGenerator.html",
+      "licenseStatus": "three.js code license requires source check",
+      "use": "Compare existing KFB pet-lighting cached PMREM; no per-frame recapture",
+      "rank": "P0",
+      "status": "EXTERNAL_REFERENCE_NOT_INTEGRATED"
+    },
+    {
+      "id": "THREE_ROOM",
+      "kind": "CODE_DOC",
+      "url": "https://threejs.org/docs/pages/RoomEnvironment.html",
+      "licenseStatus": "three.js code license requires source check",
+      "use": "Controlled neutral light benchmark for clay and asset-family comparison; not a new owner",
+      "rank": "P1",
+      "status": "EXTERNAL_REFERENCE_NOT_INTEGRATED"
+    },
+    {
+      "id": "POLY_OVERCAST",
+      "kind": "HDRI",
+      "url": "https://polyhaven.com/a/kloppenheim_01_puresky",
+      "licenseStatus": "CC0 on asset page; no download/repack yet",
+      "use": "Cool overcast/soft low contrast ambient and shadow-detail benchmark",
+      "rank": "P0",
+      "status": "CANDIDATE_NOT_DOWNLOADED"
+    },
+    {
+      "id": "POLY_SUNSET",
+      "kind": "HDRI",
+      "url": "https://polyhaven.com/a/qwantani_sunset_puresky",
+      "licenseStatus": "CC0 on asset page; no download/repack yet",
+      "use": "Warm late-day sky/reflections benchmark, avoid baking sunny shadows twice",
+      "rank": "P0",
+      "status": "CANDIDATE_NOT_DOWNLOADED"
+    },
+    {
+      "id": "POLY_LICENSE",
+      "kind": "LICENSE",
+      "url": "https://polyhaven.com/license",
+      "licenseStatus": "official CC0 policy",
+      "use": "Asset provenance and commercial redistribution rule reference",
+      "rank": "P0",
+      "status": "VERIFIED_TEXT_ONLY"
+    },
+    {
+      "id": "AMBIENTCG_HDRI",
+      "kind": "HDRI_CATALOG",
+      "url": "https://ambientcg.com/",
+      "licenseStatus": "official site states CC0 incl commercial; verify individual asset provenance on selection",
+      "use": "Alternative background/real-HDR illumination source",
+      "rank": "P1",
+      "status": "CATALOG_REVIEW_ONLY"
+    },
+    {
+      "id": "KENNEY_SKY",
+      "kind": "SKYBOX_TEXTURE",
+      "url": "https://kenney.nl/assets/skyboxes",
+      "licenseStatus": "official page CC0",
+      "use": "Stylized sky wallpaper; distinguish visible background from real HDR light",
+      "rank": "P0",
+      "status": "CANDIDATE_NOT_DOWNLOADED"
+    },
+    {
+      "id": "KENNEY_SPACE",
+      "kind": "SKYBOX_TEXTURE",
+      "url": "https://kenney.nl/assets/skyboxes-space",
+      "licenseStatus": "official page CC0",
+      "use": "Psychedelic/cosmic shell artwork donor; visual background not lighting alone",
+      "rank": "P1",
+      "status": "CANDIDATE_NOT_DOWNLOADED"
+    },
+    {
+      "id": "DREI_ENV",
+      "kind": "GITHUB_CODE",
+      "url": "https://github.com/pmndrs/drei/blob/master/docs/staging/environment.mdx",
+      "licenseStatus": "verify project/license at pinned commit before adoption",
+      "use": "IBL/background separation, rotation/exposure staging patterns; React code not direct WebGL transplant",
+      "rank": "P1",
+      "status": "READ_REFERENCE_ONLY"
+    },
+    {
+      "id": "DREI_VANILLA",
+      "kind": "GITHUB_CODE",
+      "url": "https://github.com/pmndrs/drei-vanilla",
+      "licenseStatus": "verify repo license and source before adoption",
+      "use": "Vanilla Three.js shadow/environment helpers where KFB lacks existing equivalent",
+      "rank": "P2",
+      "status": "READ_REFERENCE_ONLY"
+    },
+    {
+      "id": "GODOT_ENV",
+      "kind": "DOCUMENTATION",
+      "url": "https://docs.godotengine.org/en/4.6/tutorials/3d/environment_and_post_processing.html",
+      "licenseStatus": "documentation reference; no source copied",
+      "use": "Reference pattern linking sun, sky, ambient, reflected light, fog and camera environment",
+      "rank": "P1",
+      "status": "DESIGN_REFERENCE_ONLY"
+    },
+    {
+      "id": "REDDIT_COZY",
+      "kind": "COMMUNITY",
+      "url": "https://www.reddit.com/r/gamedev/comments/1e18ild",
+      "licenseStatus": "Discussion/opinions; NOT an asset license",
+      "use": "Evidence that cozy relies on softness, warm light, contact and animation, not a magic filter",
+      "rank": "P2",
+      "status": "QUALITATIVE_ONLY"
+    },
+    {
+      "id": "REDDIT_CLAY",
+      "kind": "COMMUNITY",
+      "url": "https://www.reddit.com/r/threejs/comments/rpx0m2",
+      "licenseStatus": "Discussion/opinions",
+      "use": "Pastel clay discussion: toon gradient maps vs StandardMaterial contrast; not replacing KFB Clay SSOT",
+      "rank": "P2",
+      "status": "QUALITATIVE_ONLY"
+    },
+    {
+      "id": "REDDIT_LOWPOLY",
+      "kind": "COMMUNITY",
+      "url": "https://www.reddit.com/r/gamedev/comments/1o80jdr",
+      "licenseStatus": "Discussion/opinions",
+      "use": "Changing overhead sun may wash out scene; blue fill and light fog as hypotheses, not universal rules",
+      "rank": "P2",
+      "status": "QUALITATIVE_ONLY"
+    },
+    {
+      "id": "REDDIT_LIGHT",
+      "kind": "COMMUNITY",
+      "url": "https://www.reddit.com/r/threejs/comments/1rxpyzt",
+      "licenseStatus": "Discussion/opinions",
+      "use": "Lighting failure can stem from exposure/fill imbalance; control variables in A/B",
+      "rank": "P2",
+      "status": "QUALITATIVE_ONLY"
+    }
+  ]
+}
