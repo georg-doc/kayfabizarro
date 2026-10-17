@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Mac-mini-Lieferungen jetzt auf GitHub
+Branch `assets/kfb-wsb-deliverables-2026-10-17`, Ordner `media/3D_Assets/WSB_BLENDER/`: B1 (Mumien-Tanzprüfung, `tempo.json`, Duett-Video), B2 (Fluff-Anker `kaykit-tree-fluff-anchors.v1.json`, Konzept B2-R2), B7 (Dschungel-Computer `JungleComputer_A_browser.v3.glb`, LOD1, Screen-GLBs A/B mit `kfb_screen_frame/slot`, `b7_stage_edges.json` mit `groundY_u`), dazu STATUS und Arbeitsteilung. Bitte von dort lesen, nicht aus Dropbox.
+
 ## 17.10.2026 · Nacht-Langlauf R1 (Georg: längere Runs, V-375) – V-400
 Zwei WS1-Sitzungen parallel, jede nach V-375 (keine anhaltenden Rückfragen, Stand-Commits alle 30–45 Min., Abschluss mit Messwerten + Clay-Bildern ohne Overlays, kein main-Merge ohne Georg).
 **A · Owner-Sitzung (Modell: Claude Opus 5.5):**
