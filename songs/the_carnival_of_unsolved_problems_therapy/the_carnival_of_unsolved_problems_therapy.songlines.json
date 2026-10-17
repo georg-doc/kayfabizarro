@@ -1,11 +1,18 @@
 {
   "deckId": "the_carnival_of_unsolved_problems_therapy",
-  "version": "R4.1/R3.2",
+  "version": "R4.2/R3.2",
   "bindingSpec": "R3.2",
   "metaSkipped": [
     48
   ],
   "songLineChanges": [
+    {
+      "cardNumber": 38,
+      "rule": "A7",
+      "songName": "Therapist and Client",
+      "songLine": "Therapist and Client, structure holds chaos; speaker and witness, two chairs facing setup.",
+      "reason": "Render ampersand as spoken 'and'"
+    },
     {
       "cardNumber": 40,
       "rule": "A7",
