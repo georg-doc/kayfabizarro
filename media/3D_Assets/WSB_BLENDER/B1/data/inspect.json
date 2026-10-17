@@ -1,0 +1,254 @@
+{
+ "libClips": 33,
+ "libBones": [],
+ "figs": {
+  "A": {
+   "bones": [
+    "root",
+    "hips",
+    "upperlegr",
+    "lowerlegr",
+    "footr",
+    "toesr",
+    "spine",
+    "chest",
+    "head",
+    "upperarml",
+    "lowerarml",
+    "wristl",
+    "handl",
+    "handslotl",
+    "upperarmr",
+    "lowerarmr",
+    "wristr",
+    "handr",
+    "handslotr",
+    "upperlegl",
+    "lowerlegl",
+    "footl",
+    "toesl"
+   ],
+   "ownClips": 0,
+   "meshes": [
+    {
+     "name": "Mummy_A_ArmLeft",
+     "skinned": true,
+     "verts": 574,
+     "tris": 664,
+     "mat": [
+      "mummy+map"
+     ]
+    },
+    {
+     "name": "Mummy_A_ArmRight",
+     "skinned": true,
+     "verts": 581,
+     "tris": 664,
+     "mat": [
+      "mummy+map"
+     ]
+    },
+    {
+     "name": "Mummy_A_Body",
+     "skinned": true,
+     "verts": 1180,
+     "tris": 1138,
+     "mat": [
+      "mummy+map"
+     ]
+    },
+    {
+     "name": "Mummy_A_Head",
+     "skinned": true,
+     "verts": 1222,
+     "tris": 1248,
+     "mat": [
+      "mummy+map"
+     ]
+    },
+    {
+     "name": "Mummy_A_LegLeft",
+     "skinned": true,
+     "verts": 705,
+     "tris": 750,
+     "mat": [
+      "mummy+map"
+     ]
+    },
+    {
+     "name": "Mummy_A_LegRight",
+     "skinned": true,
+     "verts": 705,
+     "tris": 750,
+     "mat": [
+      "mummy+map"
+     ]
+    }
+   ],
+   "bbox": [
+    [
+     -0.9712531951056749,
+     -5.278662001364188e-7,
+     -0.5424519777297974
+    ],
+    [
+     0.9712532086854194,
+     2.199286590332696,
+     0.4993729591369629
+    ]
+   ],
+   "hipsY": 0.4056634306907654,
+   "clips": {
+    "kfb_dance_hip_hop_a": {
+     "dur": 13.6667,
+     "tracks": 69,
+     "unbound": []
+    },
+    "kfb_dance_slide_hip_hop_a": {
+     "dur": 17.3333,
+     "tracks": 69,
+     "unbound": []
+    },
+    "kfb_dance_wave_hip_hop_a": {
+     "dur": 16.8667,
+     "tracks": 69,
+     "unbound": []
+    },
+    "kfb_dance_house_a": {
+     "dur": 19.8333,
+     "tracks": 69,
+     "unbound": []
+    },
+    "kfb_idle_happy_a": {
+     "dur": 2.9667,
+     "tracks": 69,
+     "unbound": []
+    }
+   }
+  },
+  "B": {
+   "bones": [
+    "root",
+    "hips",
+    "upperlegl",
+    "lowerlegl",
+    "footl",
+    "toesl",
+    "upperlegr",
+    "lowerlegr",
+    "footr",
+    "toesr",
+    "spine",
+    "chest",
+    "upperarmr",
+    "lowerarmr",
+    "wristr",
+    "handr",
+    "handslotr",
+    "head",
+    "upperarml",
+    "lowerarml",
+    "wristl",
+    "handl",
+    "handslotl"
+   ],
+   "ownClips": 0,
+   "meshes": [
+    {
+     "name": "Mummy_B_ArmLeft",
+     "skinned": true,
+     "verts": 574,
+     "tris": 664,
+     "mat": [
+      "mummy+map"
+     ]
+    },
+    {
+     "name": "Mummy_B_ArmRight",
+     "skinned": true,
+     "verts": 581,
+     "tris": 664,
+     "mat": [
+      "mummy+map"
+     ]
+    },
+    {
+     "name": "Mummy_B_Body",
+     "skinned": true,
+     "verts": 1180,
+     "tris": 1138,
+     "mat": [
+      "mummy+map"
+     ]
+    },
+    {
+     "name": "Mummy_B_Head",
+     "skinned": true,
+     "verts": 1636,
+     "tris": 1750,
+     "mat": [
+      "mummy+map"
+     ]
+    },
+    {
+     "name": "Mummy_B_LegLeft",
+     "skinned": true,
+     "verts": 705,
+     "tris": 750,
+     "mat": [
+      "mummy+map"
+     ]
+    },
+    {
+     "name": "Mummy_B_LegRight",
+     "skinned": true,
+     "verts": 705,
+     "tris": 750,
+     "mat": [
+      "mummy+map"
+     ]
+    }
+   ],
+   "bbox": [
+    [
+     -0.971253195105674,
+     -5.278658917496819e-7,
+     -0.5424519777297974
+    ],
+    [
+     0.9712532086854183,
+     2.30664386029675,
+     0.5102497339248657
+    ]
+   ],
+   "hipsY": 0.4056634306907654,
+   "clips": {
+    "kfb_dance_hip_hop_a": {
+     "dur": 13.6667,
+     "tracks": 69,
+     "unbound": []
+    },
+    "kfb_dance_slide_hip_hop_a": {
+     "dur": 17.3333,
+     "tracks": 69,
+     "unbound": []
+    },
+    "kfb_dance_wave_hip_hop_a": {
+     "dur": 16.8667,
+     "tracks": 69,
+     "unbound": []
+    },
+    "kfb_dance_house_a": {
+     "dur": 19.8333,
+     "tracks": 69,
+     "unbound": []
+    },
+    "kfb_idle_happy_a": {
+     "dur": 2.9667,
+     "tracks": 69,
+     "unbound": []
+    }
+   }
+  }
+ }
+}

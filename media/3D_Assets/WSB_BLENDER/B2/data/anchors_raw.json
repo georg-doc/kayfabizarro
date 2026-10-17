@@ -1,0 +1,5923 @@
+{
+ "schema": "kfb.tree-fluff-anchors.v1",
+ "params": {
+  "ballR": 0.15,
+  "samples": 6000,
+  "minN": 6,
+  "maxN": 12,
+  "embed": 0.45,
+  "clear": 0.9,
+  "seed": 1234,
+  "edgeClear": 1.4,
+  "minContrast": 40,
+  "neighbourR": 4.5,
+  "bareMode": "sit",
+  "groupMin": 3.4,
+  "groupMax": 4.5,
+  "centreGap": 6,
+  "fillGap": 3.5,
+  "branchMaxThick": 0.3
+ },
+ "models": {
+  "Tree_1_A_Color1": {
+   "model": "Tree_1_A_Color1",
+   "kind": "canopy",
+   "height": 4.1607,
+   "bbox": [
+    [
+     -1.9346,
+     -0.2613,
+     -1.6256
+    ],
+    [
+     1.2464,
+     3.8994,
+     1.6256
+    ]
+   ],
+   "canopyArea": 27.6081,
+   "candidates": 2571,
+   "rejected": {
+    "normal": 1614,
+    "low": 0,
+    "clear": 0,
+    "outward": 87,
+    "edge": 1728
+   },
+   "target": 6,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 1,
+    "Heroic": 1,
+    "Mystical": 1,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_1_A_Color1#00",
+     "p": [
+      -1.707,
+      1.8735,
+      -0.3085
+     ],
+     "n": [
+      -0.8155,
+      -0.4973,
+      -0.2961
+     ],
+     "surfaceNormal": [
+      -0.8155,
+      -0.4973,
+      -0.2961
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.7743,
+      1.8324,
+      -0.333
+     ],
+     "heightShare": 0.5131,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": "#3d913b",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.124,
+     "regrowDelayS": 25,
+     "dropOrder": 0,
+     "azimuthDeg": -170
+    },
+    {
+     "id": "Tree_1_A_Color1#01",
+     "p": [
+      -1.324,
+      3.2843,
+      -0.6772
+     ],
+     "n": [
+      -0.7184,
+      0.4426,
+      -0.5367
+     ],
+     "surfaceNormal": [
+      -0.7184,
+      0.4426,
+      -0.5367
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.3833,
+      3.3208,
+      -0.7215
+     ],
+     "heightShare": 0.8522,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#65ac3d",
+     "contrastDE": {
+      "Tragic": 78,
+      "Comic": 30,
+      "Absurd": 49,
+      "Heroic": 73,
+      "Mystical": 99,
+      "Forbidden": 103
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.932,
+     "regrowDelayS": 53,
+     "dropOrder": 5,
+     "azimuthDeg": -153
+    },
+    {
+     "id": "Tree_1_A_Color1#02",
+     "p": [
+      -1.3662,
+      2.8003,
+      -0.9422
+     ],
+     "n": [
+      -0.7384,
+      0.3124,
+      -0.5976
+     ],
+     "surfaceNormal": [
+      -0.7384,
+      0.3124,
+      -0.5976
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.4272,
+      2.8261,
+      -0.9915
+     ],
+     "heightShare": 0.7358,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#57a23c",
+     "contrastDE": {
+      "Tragic": 74,
+      "Comic": 27,
+      "Absurd": 52,
+      "Heroic": 74,
+      "Mystical": 95,
+      "Forbidden": 101
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.011,
+     "regrowDelayS": 39,
+     "dropOrder": 4,
+     "azimuthDeg": -145
+    },
+    {
+     "id": "Tree_1_A_Color1#03",
+     "p": [
+      -0.0435,
+      2.6623,
+      -1.5058
+     ],
+     "n": [
+      0.2227,
+      0.2686,
+      -0.9372
+     ],
+     "surfaceNormal": [
+      0.2227,
+      0.2686,
+      -0.9372
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.0251,
+      2.6844,
+      -1.5831
+     ],
+     "heightShare": 0.7027,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#47983b",
+     "contrastDE": {
+      "Tragic": 70,
+      "Comic": 26,
+      "Absurd": 56,
+      "Heroic": 75,
+      "Mystical": 92,
+      "Forbidden": 99
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.95,
+     "regrowDelayS": 48,
+     "dropOrder": 3,
+     "azimuthDeg": -92
+    },
+    {
+     "id": "Tree_1_A_Color1#04",
+     "p": [
+      0.2116,
+      2.174,
+      -1.328
+     ],
+     "n": [
+      0.4229,
+      -0.4866,
+      -0.7644
+     ],
+     "surfaceNormal": [
+      0.4229,
+      -0.4866,
+      -0.7644
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.2465,
+      2.1338,
+      -1.3911
+     ],
+     "heightShare": 0.5853,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#31893a",
+     "contrastDE": {
+      "Tragic": 64,
+      "Comic": 26,
+      "Absurd": 61,
+      "Heroic": 77,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 1.002,
+     "regrowDelayS": 41,
+     "dropOrder": 2,
+     "azimuthDeg": -81
+    },
+    {
+     "id": "Tree_1_A_Color1#05",
+     "p": [
+      -1.1494,
+      2.1169,
+      1.1884
+     ],
+     "n": [
+      -0.5914,
+      -0.4123,
+      0.693
+     ],
+     "surfaceNormal": [
+      -0.5914,
+      -0.4123,
+      0.693
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.1982,
+      2.0829,
+      1.2456
+     ],
+     "heightShare": 0.5716,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#3d913b",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 1.141,
+     "regrowDelayS": 47,
+     "dropOrder": 1,
+     "azimuthDeg": 134
+    }
+   ],
+   "minSpacing": 0.5654
+  },
+  "Tree_1_B_Color1": {
+   "model": "Tree_1_B_Color1",
+   "kind": "canopy",
+   "height": 4.9296,
+   "bbox": [
+    [
+     -1.7895,
+     -0.341,
+     -1.7227
+    ],
+    [
+     2.2173,
+     4.5886,
+     1.7227
+    ]
+   ],
+   "canopyArea": 36.2955,
+   "candidates": 2518,
+   "rejected": {
+    "normal": 1580,
+    "low": 0,
+    "clear": 32,
+    "outward": 227,
+    "edge": 1589,
+    "pierce": 54
+   },
+   "target": 7,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 1,
+    "Heroic": 1,
+    "Mystical": 2,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_1_B_Color1#00",
+     "p": [
+      -1.5778,
+      3.5415,
+      -0.2642
+     ],
+     "n": [
+      -0.8952,
+      0.3476,
+      -0.2789
+     ],
+     "surfaceNormal": [
+      -0.8952,
+      0.3476,
+      -0.2789
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.6517,
+      3.5701,
+      -0.2872
+     ],
+     "heightShare": 0.7876,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#5ca63c",
+     "contrastDE": {
+      "Tragic": 76,
+      "Comic": 28,
+      "Absurd": 51,
+      "Heroic": 74,
+      "Mystical": 97,
+      "Forbidden": 102
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 1.108,
+     "regrowDelayS": 40,
+     "dropOrder": 6,
+     "azimuthDeg": -171
+    },
+    {
+     "id": "Tree_1_B_Color1#01",
+     "p": [
+      2.0004,
+      2.587,
+      -0.5089
+     ],
+     "n": [
+      0.8766,
+      0.3932,
+      0.2774
+     ],
+     "surfaceNormal": [
+      0.8766,
+      0.3932,
+      0.2774
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      2.0727,
+      2.6194,
+      -0.486
+     ],
+     "heightShare": 0.594,
+     "maxBallR": 0.35,
+     "group": 4,
+     "bgColor": "#56a23c",
+     "contrastDE": {
+      "Tragic": 74,
+      "Comic": 28,
+      "Absurd": 52,
+      "Heroic": 74,
+      "Mystical": 95,
+      "Forbidden": 101
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 1.032,
+     "regrowDelayS": 40,
+     "dropOrder": 0,
+     "azimuthDeg": -14
+    },
+    {
+     "id": "Tree_1_B_Color1#02",
+     "p": [
+      1.1171,
+      3.4481,
+      0.943
+     ],
+     "n": [
+      0.6469,
+      0.3115,
+      0.6961
+     ],
+     "surfaceNormal": [
+      0.6469,
+      0.3115,
+      0.6961
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      1.1705,
+      3.4738,
+      1.0004
+     ],
+     "heightShare": 0.7686,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#47983b",
+     "contrastDE": {
+      "Tragic": 70,
+      "Comic": 26,
+      "Absurd": 56,
+      "Heroic": 75,
+      "Mystical": 92,
+      "Forbidden": 99
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.973,
+     "regrowDelayS": 41,
+     "dropOrder": 4,
+     "azimuthDeg": 40
+    },
+    {
+     "id": "Tree_1_B_Color1#03",
+     "p": [
+      0.9012,
+      3.0679,
+      1.1966
+     ],
+     "n": [
+      0.7187,
+      -0.0564,
+      0.693
+     ],
+     "surfaceNormal": [
+      0.7187,
+      -0.0564,
+      0.693
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.9605,
+      3.0633,
+      1.2538
+     ],
+     "heightShare": 0.6915,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#3d913b",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 1.125,
+     "regrowDelayS": 27,
+     "dropOrder": 3,
+     "azimuthDeg": 53
+    },
+    {
+     "id": "Tree_1_B_Color1#04",
+     "p": [
+      -0.5245,
+      2.7048,
+      1.5006
+     ],
+     "n": [
+      -0.2488,
+      -0.2618,
+      0.9325
+     ],
+     "surfaceNormal": [
+      -0.2488,
+      -0.2618,
+      0.9325
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.545,
+      2.6832,
+      1.5775
+     ],
+     "heightShare": 0.6179,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": "#398e3a",
+     "contrastDE": {
+      "Tragic": 66,
+      "Comic": 26,
+      "Absurd": 59,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.039,
+     "regrowDelayS": 54,
+     "dropOrder": 1,
+     "azimuthDeg": 109
+    },
+    {
+     "id": "Tree_1_B_Color1#05",
+     "p": [
+      -1.0898,
+      3.4646,
+      1.1172
+     ],
+     "n": [
+      -0.6924,
+      0.4042,
+      0.5976
+     ],
+     "surfaceNormal": [
+      -0.6924,
+      0.4042,
+      0.5976
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.1469,
+      3.4979,
+      1.1665
+     ],
+     "heightShare": 0.772,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#57a23c",
+     "contrastDE": {
+      "Tragic": 74,
+      "Comic": 27,
+      "Absurd": 52,
+      "Heroic": 74,
+      "Mystical": 95,
+      "Forbidden": 101
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.921,
+     "regrowDelayS": 57,
+     "dropOrder": 5,
+     "azimuthDeg": 134
+    },
+    {
+     "id": "Tree_1_B_Color1#06",
+     "p": [
+      -1.196,
+      2.859,
+      1.1032
+     ],
+     "n": [
+      -0.6393,
+      -0.3334,
+      0.693
+     ],
+     "surfaceNormal": [
+      -0.6393,
+      -0.3334,
+      0.693
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.2487,
+      2.8315,
+      1.1603
+     ],
+     "heightShare": 0.6491,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#3d913b",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.007,
+     "regrowDelayS": 58,
+     "dropOrder": 2,
+     "azimuthDeg": 137
+    }
+   ],
+   "minSpacing": 0.5261
+  },
+  "Tree_1_C_Color1": {
+   "model": "Tree_1_C_Color1",
+   "kind": "canopy",
+   "height": 7.8143,
+   "bbox": [
+    [
+     -2.7458,
+     -0.3923,
+     -2.8767
+    ],
+    [
+     3.9455,
+     7.4219,
+     2.8767
+    ]
+   ],
+   "canopyArea": 121.4296,
+   "candidates": 2783,
+   "rejected": {
+    "normal": 1384,
+    "low": 273,
+    "clear": 74,
+    "outward": 212,
+    "edge": 1258,
+    "pierce": 16
+   },
+   "target": 10,
+   "coloursUsed": {
+    "Tragic": 2,
+    "Comic": 0,
+    "Absurd": 2,
+    "Heroic": 2,
+    "Mystical": 2,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_1_C_Color1#00",
+     "p": [
+      -2.2256,
+      4.0765,
+      -0.9165
+     ],
+     "n": [
+      -0.8214,
+      -0.4882,
+      -0.2949
+     ],
+     "surfaceNormal": [
+      -0.8214,
+      -0.4882,
+      -0.2949
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -2.2933,
+      4.0362,
+      -0.9408
+     ],
+     "heightShare": 0.5719,
+     "maxBallR": 0.35,
+     "group": 5,
+     "bgColor": "#378d3a",
+     "contrastDE": {
+      "Tragic": 66,
+      "Comic": 26,
+      "Absurd": 59,
+      "Heroic": 76,
+      "Mystical": 88,
+      "Forbidden": 97
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 1.102,
+     "regrowDelayS": 55,
+     "dropOrder": 3,
+     "azimuthDeg": -158
+    },
+    {
+     "id": "Tree_1_C_Color1#01",
+     "p": [
+      -2.1317,
+      5.4559,
+      -1.1628
+     ],
+     "n": [
+      -0.7301,
+      0.3202,
+      -0.6036
+     ],
+     "surfaceNormal": [
+      -0.7301,
+      0.3202,
+      -0.6036
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -2.1919,
+      5.4824,
+      -1.2126
+     ],
+     "heightShare": 0.7484,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": "#5ca63c",
+     "contrastDE": {
+      "Tragic": 76,
+      "Comic": 28,
+      "Absurd": 51,
+      "Heroic": 74,
+      "Mystical": 97,
+      "Forbidden": 102
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.877,
+     "regrowDelayS": 42,
+     "dropOrder": 6,
+     "azimuthDeg": -151
+    },
+    {
+     "id": "Tree_1_C_Color1#02",
+     "p": [
+      -1.3736,
+      2.4537,
+      -2.4034
+     ],
+     "n": [
+      0.0784,
+      0.1836,
+      -0.9799
+     ],
+     "surfaceNormal": [
+      0.0784,
+      0.1836,
+      -0.9799
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.3671,
+      2.4688,
+      -2.4843
+     ],
+     "heightShare": 0.3642,
+     "maxBallR": 0.35,
+     "group": 6,
+     "bgColor": "#47983b",
+     "contrastDE": {
+      "Tragic": 70,
+      "Comic": 26,
+      "Absurd": 56,
+      "Heroic": 75,
+      "Mystical": 92,
+      "Forbidden": 99
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 1.105,
+     "regrowDelayS": 50,
+     "dropOrder": 0,
+     "azimuthDeg": -120
+    },
+    {
+     "id": "Tree_1_C_Color1#03",
+     "p": [
+      0.716,
+      5.4721,
+      -2.603
+     ],
+     "n": [
+      0.2252,
+      0.2768,
+      -0.9342
+     ],
+     "surfaceNormal": [
+      0.2252,
+      0.2768,
+      -0.9342
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.7346,
+      5.4949,
+      -2.6801
+     ],
+     "heightShare": 0.7505,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#45963b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 56,
+      "Heroic": 75,
+      "Mystical": 91,
+      "Forbidden": 98
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.963,
+     "regrowDelayS": 33,
+     "dropOrder": 7,
+     "azimuthDeg": -75
+    },
+    {
+     "id": "Tree_1_C_Color1#04",
+     "p": [
+      0.9493,
+      4.9889,
+      -2.5683
+     ],
+     "n": [
+      0.348,
+      -0.1282,
+      -0.9287
+     ],
+     "surfaceNormal": [
+      0.348,
+      -0.1282,
+      -0.9287
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.978,
+      4.9783,
+      -2.6449
+     ],
+     "heightShare": 0.6886,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#378d3a",
+     "contrastDE": {
+      "Tragic": 66,
+      "Comic": 26,
+      "Absurd": 59,
+      "Heroic": 76,
+      "Mystical": 88,
+      "Forbidden": 97
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.03,
+     "regrowDelayS": 27,
+     "dropOrder": 5,
+     "azimuthDeg": -70
+    },
+    {
+     "id": "Tree_1_C_Color1#05",
+     "p": [
+      3.3996,
+      3.3615,
+      1.0297
+     ],
+     "n": [
+      0.6841,
+      -0.218,
+      0.6961
+     ],
+     "surfaceNormal": [
+      0.6841,
+      -0.218,
+      0.6961
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      3.456,
+      3.3435,
+      1.0871
+     ],
+     "heightShare": 0.4804,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#4c9b3b",
+     "contrastDE": {
+      "Tragic": 72,
+      "Comic": 27,
+      "Absurd": 54,
+      "Heroic": 75,
+      "Mystical": 93,
+      "Forbidden": 100
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 0.893,
+     "regrowDelayS": 60,
+     "dropOrder": 2,
+     "azimuthDeg": 17
+    },
+    {
+     "id": "Tree_1_C_Color1#06",
+     "p": [
+      3.1911,
+      2.8901,
+      0.9749
+     ],
+     "n": [
+      0.4836,
+      -0.5347,
+      0.693
+     ],
+     "surfaceNormal": [
+      0.4836,
+      -0.5347,
+      0.693
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      3.231,
+      2.846,
+      1.0321
+     ],
+     "heightShare": 0.4201,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#398e3a",
+     "contrastDE": {
+      "Tragic": 66,
+      "Comic": 26,
+      "Absurd": 59,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 1.006,
+     "regrowDelayS": 36,
+     "dropOrder": 1,
+     "azimuthDeg": 17
+    },
+    {
+     "id": "Tree_1_C_Color1#07",
+     "p": [
+      2.0457,
+      6.1596,
+      1.418
+     ],
+     "n": [
+      0.6069,
+      0.3873,
+      0.694
+     ],
+     "surfaceNormal": [
+      0.6069,
+      0.3873,
+      0.694
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      2.0958,
+      6.1916,
+      1.4752
+     ],
+     "heightShare": 0.8385,
+     "maxBallR": 0.35,
+     "group": 4,
+     "bgColor": "#45963b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 56,
+      "Heroic": 75,
+      "Mystical": 91,
+      "Forbidden": 98
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.877,
+     "regrowDelayS": 40,
+     "dropOrder": 9,
+     "azimuthDeg": 35
+    },
+    {
+     "id": "Tree_1_C_Color1#08",
+     "p": [
+      2.0781,
+      5.6246,
+      1.6882
+     ],
+     "n": [
+      0.6069,
+      0.3873,
+      0.694
+     ],
+     "surfaceNormal": [
+      0.6069,
+      0.3873,
+      0.694
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      2.1282,
+      5.6566,
+      1.7454
+     ],
+     "heightShare": 0.77,
+     "maxBallR": 0.35,
+     "group": 4,
+     "bgColor": "#45963b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 56,
+      "Heroic": 75,
+      "Mystical": 91,
+      "Forbidden": 98
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 1.076,
+     "regrowDelayS": 33,
+     "dropOrder": 8,
+     "azimuthDeg": 39
+    },
+    {
+     "id": "Tree_1_C_Color1#09",
+     "p": [
+      -2.0187,
+      4.5031,
+      1.4718
+     ],
+     "n": [
+      -0.7197,
+      -0.021,
+      0.694
+     ],
+     "surfaceNormal": [
+      -0.7197,
+      -0.021,
+      0.694
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -2.078,
+      4.5013,
+      1.529
+     ],
+     "heightShare": 0.6265,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#45963b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 56,
+      "Heroic": 75,
+      "Mystical": 91,
+      "Forbidden": 98
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 1.083,
+     "regrowDelayS": 48,
+     "dropOrder": 4,
+     "azimuthDeg": 144
+    }
+   ],
+   "minSpacing": 0.5488
+  },
+  "Tree_2_A_Color1": {
+   "model": "Tree_2_A_Color1",
+   "kind": "canopy",
+   "height": 4.6748,
+   "bbox": [
+    [
+     -1.6411,
+     -0.3735,
+     -1.2144
+    ],
+    [
+     0.9589,
+     4.3013,
+     0.7856
+    ]
+   ],
+   "canopyArea": 27.009,
+   "candidates": 1952,
+   "rejected": {
+    "normal": 1104,
+    "low": 0,
+    "clear": 182,
+    "outward": 217,
+    "edge": 2504,
+    "pierce": 41
+   },
+   "target": 6,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 1,
+    "Heroic": 1,
+    "Mystical": 1,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_2_A_Color1#00",
+     "p": [
+      -1.543,
+      2.4906,
+      -0.7268
+     ],
+     "n": [
+      -0.9896,
+      -0.0429,
+      -0.1377
+     ],
+     "surfaceNormal": [
+      -0.9896,
+      -0.0429,
+      -0.1377
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.6247,
+      2.487,
+      -0.7381
+     ],
+     "heightShare": 0.6127,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#3a8f3a",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 26,
+      "Absurd": 59,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.873,
+     "regrowDelayS": 38,
+     "dropOrder": 0,
+     "azimuthDeg": -155
+    },
+    {
+     "id": "Tree_2_A_Color1#01",
+     "p": [
+      0.9578,
+      3.8679,
+      0.1588
+     ],
+     "n": [
+      0.9955,
+      -0.095,
+      0
+     ],
+     "surfaceNormal": [
+      0.9955,
+      -0.095,
+      0
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      1.04,
+      3.8601,
+      0.1588
+     ],
+     "heightShare": 0.9073,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#4c9b3b",
+     "contrastDE": {
+      "Tragic": 72,
+      "Comic": 27,
+      "Absurd": 54,
+      "Heroic": 75,
+      "Mystical": 93,
+      "Forbidden": 100
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.994,
+     "regrowDelayS": 31,
+     "dropOrder": 5,
+     "azimuthDeg": 9
+    },
+    {
+     "id": "Tree_2_A_Color1#02",
+     "p": [
+      0.9028,
+      3.291,
+      0.1788
+     ],
+     "n": [
+      0.9955,
+      -0.095,
+      0
+     ],
+     "surfaceNormal": [
+      0.9955,
+      -0.095,
+      0
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.9849,
+      3.2831,
+      0.1788
+     ],
+     "heightShare": 0.7839,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#398e3a",
+     "contrastDE": {
+      "Tragic": 66,
+      "Comic": 26,
+      "Absurd": 59,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 1.021,
+     "regrowDelayS": 53,
+     "dropOrder": 3,
+     "azimuthDeg": 11
+    },
+    {
+     "id": "Tree_2_A_Color1#03",
+     "p": [
+      -0.4578,
+      3.6965,
+      0.7856
+     ],
+     "n": [
+      0,
+      0,
+      1
+     ],
+     "surfaceNormal": [
+      0,
+      0,
+      1
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.4578,
+      3.6965,
+      0.8681
+     ],
+     "heightShare": 0.8706,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": "#4f9d3c",
+     "contrastDE": {
+      "Tragic": 72,
+      "Comic": 27,
+      "Absurd": 54,
+      "Heroic": 74,
+      "Mystical": 93,
+      "Forbidden": 100
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.003,
+     "regrowDelayS": 30,
+     "dropOrder": 4,
+     "azimuthDeg": 120
+    },
+    {
+     "id": "Tree_2_A_Color1#04",
+     "p": [
+      -0.788,
+      2.7406,
+      0.7856
+     ],
+     "n": [
+      0,
+      0,
+      1
+     ],
+     "surfaceNormal": [
+      0,
+      0,
+      1
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.788,
+      2.7406,
+      0.8681
+     ],
+     "heightShare": 0.6662,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#3d913b",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 1.093,
+     "regrowDelayS": 57,
+     "dropOrder": 2,
+     "azimuthDeg": 135
+    },
+    {
+     "id": "Tree_2_A_Color1#05",
+     "p": [
+      -1.1342,
+      2.711,
+      0.4365
+     ],
+     "n": [
+      -0.9955,
+      0.095,
+      0
+     ],
+     "surfaceNormal": [
+      -0.9955,
+      0.095,
+      0
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.2163,
+      2.7189,
+      0.4365
+     ],
+     "heightShare": 0.6598,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#40933b",
+     "contrastDE": {
+      "Tragic": 68,
+      "Comic": 26,
+      "Absurd": 57,
+      "Heroic": 75,
+      "Mystical": 90,
+      "Forbidden": 98
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.988,
+     "regrowDelayS": 53,
+     "dropOrder": 1,
+     "azimuthDeg": 159
+    }
+   ],
+   "minSpacing": 0.5799
+  },
+  "Tree_2_B_Color1": {
+   "model": "Tree_2_B_Color1",
+   "kind": "canopy",
+   "height": 6.0421,
+   "bbox": [
+    [
+     -1.6147,
+     -0.3448,
+     -0.7214
+    ],
+    [
+     2.0853,
+     5.6973,
+     1.3786
+    ]
+   ],
+   "canopyArea": 41.5744,
+   "candidates": 2039,
+   "rejected": {
+    "normal": 1102,
+    "low": 0,
+    "clear": 98,
+    "outward": 387,
+    "edge": 2357,
+    "pierce": 17
+   },
+   "target": 7,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 1,
+    "Heroic": 1,
+    "Mystical": 2,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_2_B_Color1#00",
+     "p": [
+      -1.5535,
+      4.7283,
+      -0.4368
+     ],
+     "n": [
+      -0.9724,
+      -0.2333,
+      0
+     ],
+     "surfaceNormal": [
+      -0.9724,
+      -0.2333,
+      0
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.6337,
+      4.709,
+      -0.4368
+     ],
+     "heightShare": 0.8396,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#348b3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 88,
+      "Forbidden": 96
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.908,
+     "regrowDelayS": 53,
+     "dropOrder": 5,
+     "azimuthDeg": -164
+    },
+    {
+     "id": "Tree_2_B_Color1#01",
+     "p": [
+      -1.1944,
+      4.8348,
+      -0.7214
+     ],
+     "n": [
+      0,
+      0,
+      -1
+     ],
+     "surfaceNormal": [
+      0,
+      0,
+      -1
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.1944,
+      4.8348,
+      -0.8039
+     ],
+     "heightShare": 0.8572,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#4d9c3b",
+     "contrastDE": {
+      "Tragic": 72,
+      "Comic": 27,
+      "Absurd": 54,
+      "Heroic": 75,
+      "Mystical": 94,
+      "Forbidden": 100
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 1.062,
+     "regrowDelayS": 49,
+     "dropOrder": 6,
+     "azimuthDeg": -149
+    },
+    {
+     "id": "Tree_2_B_Color1#02",
+     "p": [
+      1.9742,
+      3.4608,
+      -0.1196
+     ],
+     "n": [
+      0.9672,
+      -0.2542,
+      0
+     ],
+     "surfaceNormal": [
+      0.9672,
+      -0.2542,
+      0
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      2.054,
+      3.4399,
+      -0.1196
+     ],
+     "heightShare": 0.6299,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": "#46973b",
+     "contrastDE": {
+      "Tragic": 70,
+      "Comic": 26,
+      "Absurd": 56,
+      "Heroic": 75,
+      "Mystical": 92,
+      "Forbidden": 99
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.039,
+     "regrowDelayS": 31,
+     "dropOrder": 0,
+     "azimuthDeg": -3
+    },
+    {
+     "id": "Tree_2_B_Color1#03",
+     "p": [
+      1.4918,
+      3.6416,
+      1.113
+     ],
+     "n": [
+      0,
+      0,
+      1
+     ],
+     "surfaceNormal": [
+      0,
+      0,
+      1
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      1.4918,
+      3.6416,
+      1.1955
+     ],
+     "heightShare": 0.6598,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#4d9c3b",
+     "contrastDE": {
+      "Tragic": 72,
+      "Comic": 27,
+      "Absurd": 54,
+      "Heroic": 75,
+      "Mystical": 94,
+      "Forbidden": 100
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.957,
+     "regrowDelayS": 48,
+     "dropOrder": 2,
+     "azimuthDeg": 37
+    },
+    {
+     "id": "Tree_2_B_Color1#04",
+     "p": [
+      -0.6199,
+      3.8394,
+      1.3786
+     ],
+     "n": [
+      0,
+      0,
+      1
+     ],
+     "surfaceNormal": [
+      0,
+      0,
+      1
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.6199,
+      3.8394,
+      1.4611
+     ],
+     "heightShare": 0.6925,
+     "maxBallR": 0.35,
+     "group": 4,
+     "bgColor": "#3b903a",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 90,
+      "Forbidden": 97
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 1.107,
+     "regrowDelayS": 46,
+     "dropOrder": 3,
+     "azimuthDeg": 114
+    },
+    {
+     "id": "Tree_2_B_Color1#05",
+     "p": [
+      -1.2598,
+      3.5044,
+      0.2754
+     ],
+     "n": [
+      -0.9724,
+      -0.2333,
+      0
+     ],
+     "surfaceNormal": [
+      -0.9724,
+      -0.2333,
+      0
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.34,
+      3.4852,
+      0.2754
+     ],
+     "heightShare": 0.6371,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#348b3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 88,
+      "Forbidden": 96
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.912,
+     "regrowDelayS": 48,
+     "dropOrder": 1,
+     "azimuthDeg": 168
+    },
+    {
+     "id": "Tree_2_B_Color1#06",
+     "p": [
+      -1.391,
+      4.0511,
+      0.274
+     ],
+     "n": [
+      -0.9724,
+      -0.2333,
+      0
+     ],
+     "surfaceNormal": [
+      -0.9724,
+      -0.2333,
+      0
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.4712,
+      4.0318,
+      0.274
+     ],
+     "heightShare": 0.7275,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#348b3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 88,
+      "Forbidden": 96
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.886,
+     "regrowDelayS": 44,
+     "dropOrder": 4,
+     "azimuthDeg": 169
+    }
+   ],
+   "minSpacing": 0.5622
+  },
+  "Tree_2_C_Color1": {
+   "model": "Tree_2_C_Color1",
+   "kind": "canopy",
+   "height": 6.9204,
+   "bbox": [
+    [
+     -2.5124,
+     -0.3932,
+     -1.8892
+    ],
+    [
+     2.0876,
+     6.5271,
+     1.5108
+    ]
+   ],
+   "canopyArea": 45.9684,
+   "candidates": 1773,
+   "rejected": {
+    "normal": 1029,
+    "low": 0,
+    "clear": 224,
+    "outward": 523,
+    "edge": 2393,
+    "pierce": 58
+   },
+   "target": 7,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 1,
+    "Heroic": 1,
+    "Mystical": 2,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_2_C_Color1#00",
+     "p": [
+      -1.4269,
+      4.4572,
+      -0.1558
+     ],
+     "n": [
+      -0.3985,
+      0,
+      0.9172
+     ],
+     "surfaceNormal": [
+      -0.3985,
+      0,
+      0.9172
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.4597,
+      4.4572,
+      -0.0801
+     ],
+     "heightShare": 0.7009,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#519f3c",
+     "contrastDE": {
+      "Tragic": 73,
+      "Comic": 27,
+      "Absurd": 53,
+      "Heroic": 74,
+      "Mystical": 94,
+      "Forbidden": 100
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.877,
+     "regrowDelayS": 49,
+     "dropOrder": 2,
+     "azimuthDeg": -174
+    },
+    {
+     "id": "Tree_2_C_Color1#01",
+     "p": [
+      -1.6864,
+      3.988,
+      -0.2685
+     ],
+     "n": [
+      -0.3985,
+      0,
+      0.9172
+     ],
+     "surfaceNormal": [
+      -0.3985,
+      0,
+      0.9172
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.7193,
+      3.988,
+      -0.1929
+     ],
+     "heightShare": 0.6331,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#3b903a",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 90,
+      "Forbidden": 97
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.903,
+     "regrowDelayS": 24,
+     "dropOrder": 0,
+     "azimuthDeg": -171
+    },
+    {
+     "id": "Tree_2_C_Color1#02",
+     "p": [
+      -2.1769,
+      4.3981,
+      -1.2302
+     ],
+     "n": [
+      -0.8824,
+      -0.2856,
+      -0.3739
+     ],
+     "surfaceNormal": [
+      -0.8824,
+      -0.2856,
+      -0.3739
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -2.2497,
+      4.3745,
+      -1.261
+     ],
+     "heightShare": 0.6923,
+     "maxBallR": 0.19,
+     "group": 2,
+     "bgColor": "#45963b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 56,
+      "Heroic": 75,
+      "Mystical": 91,
+      "Forbidden": 98
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.933,
+     "regrowDelayS": 59,
+     "dropOrder": 1,
+     "azimuthDeg": -151
+    },
+    {
+     "id": "Tree_2_C_Color1#03",
+     "p": [
+      1.8168,
+      4.9232,
+      -0.0976
+     ],
+     "n": [
+      0.9302,
+      -0.3361,
+      -0.1476
+     ],
+     "surfaceNormal": [
+      0.9302,
+      -0.3361,
+      -0.1476
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      1.8936,
+      4.8955,
+      -0.1098
+     ],
+     "heightShare": 0.7682,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#42953b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 57,
+      "Heroic": 76,
+      "Mystical": 91,
+      "Forbidden": 98
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 1.015,
+     "regrowDelayS": 57,
+     "dropOrder": 4,
+     "azimuthDeg": -3
+    },
+    {
+     "id": "Tree_2_C_Color1#04",
+     "p": [
+      1.8815,
+      4.8222,
+      0.5403
+     ],
+     "n": [
+      0.9302,
+      -0.3361,
+      -0.1476
+     ],
+     "surfaceNormal": [
+      0.9302,
+      -0.3361,
+      -0.1476
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      1.9583,
+      4.7945,
+      0.5281
+     ],
+     "heightShare": 0.7536,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#31893a",
+     "contrastDE": {
+      "Tragic": 64,
+      "Comic": 26,
+      "Absurd": 61,
+      "Heroic": 77,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 1.123,
+     "regrowDelayS": 58,
+     "dropOrder": 3,
+     "azimuthDeg": 16
+    },
+    {
+     "id": "Tree_2_C_Color1#05",
+     "p": [
+      0.7195,
+      5.1011,
+      1.3155
+     ],
+     "n": [
+      0.1606,
+      0,
+      0.987
+     ],
+     "surfaceNormal": [
+      0.1606,
+      0,
+      0.987
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.7327,
+      5.1011,
+      1.3969
+     ],
+     "heightShare": 0.7939,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": "#4f9d3c",
+     "contrastDE": {
+      "Tragic": 72,
+      "Comic": 27,
+      "Absurd": 54,
+      "Heroic": 74,
+      "Mystical": 93,
+      "Forbidden": 100
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.079,
+     "regrowDelayS": 55,
+     "dropOrder": 5,
+     "azimuthDeg": 62
+    },
+    {
+     "id": "Tree_2_C_Color1#06",
+     "p": [
+      -0.815,
+      5.5213,
+      0.68
+     ],
+     "n": [
+      -0.984,
+      0.0854,
+      0.1561
+     ],
+     "surfaceNormal": [
+      -0.984,
+      0.0854,
+      0.1561
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.8962,
+      5.5283,
+      0.6929
+     ],
+     "heightShare": 0.8547,
+     "maxBallR": 0.35,
+     "group": 4,
+     "bgColor": "#54a03c",
+     "contrastDE": {
+      "Tragic": 73,
+      "Comic": 27,
+      "Absurd": 52,
+      "Heroic": 74,
+      "Mystical": 94,
+      "Forbidden": 100
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 1.067,
+     "regrowDelayS": 53,
+     "dropOrder": 6,
+     "azimuthDeg": 140
+    }
+   ],
+   "minSpacing": 0.5479
+  },
+  "Tree_2_D_Color1": {
+   "model": "Tree_2_D_Color1",
+   "kind": "canopy",
+   "height": 8.0876,
+   "bbox": [
+    [
+     -2.4509,
+     -0.3932,
+     -2.3911
+    ],
+    [
+     2.2887,
+     7.6944,
+     1.6433
+    ]
+   ],
+   "canopyArea": 151.2921,
+   "candidates": 1031,
+   "rejected": {
+    "normal": 1217,
+    "low": 0,
+    "clear": 522,
+    "outward": 524,
+    "edge": 2572,
+    "pierce": 134
+   },
+   "target": 10,
+   "coloursUsed": {
+    "Tragic": 2,
+    "Comic": 0,
+    "Absurd": 2,
+    "Heroic": 2,
+    "Mystical": 2,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_2_D_Color1#00",
+     "p": [
+      -1.1328,
+      6.0516,
+      -1.3038
+     ],
+     "n": [
+      -0.881,
+      0.4392,
+      0.1756
+     ],
+     "surfaceNormal": [
+      -0.881,
+      0.4392,
+      0.1756
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.2055,
+      6.0879,
+      -1.2893
+     ],
+     "heightShare": 0.7969,
+     "maxBallR": 0.24,
+     "group": 4,
+     "bgColor": "#4b9a3b",
+     "contrastDE": {
+      "Tragic": 71,
+      "Comic": 26,
+      "Absurd": 55,
+      "Heroic": 75,
+      "Mystical": 93,
+      "Forbidden": 99
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 1.071,
+     "regrowDelayS": 55,
+     "dropOrder": 7,
+     "azimuthDeg": -131
+    },
+    {
+     "id": "Tree_2_D_Color1#01",
+     "p": [
+      -1.4127,
+      3.9776,
+      -1.725
+     ],
+     "n": [
+      0.3985,
+      0,
+      -0.9172
+     ],
+     "surfaceNormal": [
+      0.3985,
+      0,
+      -0.9172
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.3798,
+      3.9776,
+      -1.8007
+     ],
+     "heightShare": 0.5404,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#4c9b3b",
+     "contrastDE": {
+      "Tragic": 72,
+      "Comic": 27,
+      "Absurd": 54,
+      "Heroic": 75,
+      "Mystical": 93,
+      "Forbidden": 100
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.952,
+     "regrowDelayS": 45,
+     "dropOrder": 0,
+     "azimuthDeg": -129
+    },
+    {
+     "id": "Tree_2_D_Color1#02",
+     "p": [
+      -0.3549,
+      6.2819,
+      -0.5964
+     ],
+     "n": [
+      -0.1383,
+      -0.0817,
+      -0.987
+     ],
+     "surfaceNormal": [
+      -0.1383,
+      -0.0817,
+      -0.987
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.3663,
+      6.2752,
+      -0.6778
+     ],
+     "heightShare": 0.8254,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#3c903a",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.022,
+     "regrowDelayS": 41,
+     "dropOrder": 8,
+     "azimuthDeg": -121
+    },
+    {
+     "id": "Tree_2_D_Color1#03",
+     "p": [
+      -0.9721,
+      5.7132,
+      -1.6189
+     ],
+     "n": [
+      -0.366,
+      -0.3867,
+      -0.8465
+     ],
+     "surfaceNormal": [
+      -0.366,
+      -0.3867,
+      -0.8465
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.0023,
+      5.6813,
+      -1.6888
+     ],
+     "heightShare": 0.755,
+     "maxBallR": 0.35,
+     "group": 4,
+     "bgColor": "#44963b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 56,
+      "Heroic": 75,
+      "Mystical": 91,
+      "Forbidden": 99
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 0.894,
+     "regrowDelayS": 32,
+     "dropOrder": 5,
+     "azimuthDeg": -121
+    },
+    {
+     "id": "Tree_2_D_Color1#04",
+     "p": [
+      0.0112,
+      6.6916,
+      -0.6815
+     ],
+     "n": [
+      -0.1383,
+      -0.0817,
+      -0.987
+     ],
+     "surfaceNormal": [
+      -0.1383,
+      -0.0817,
+      -0.987
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.0002,
+      6.6848,
+      -0.763
+     ],
+     "heightShare": 0.876,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#3c903a",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.866,
+     "regrowDelayS": 39,
+     "dropOrder": 9,
+     "azimuthDeg": -90
+    },
+    {
+     "id": "Tree_2_D_Color1#05",
+     "p": [
+      1.0077,
+      5.3452,
+      -1.6971
+     ],
+     "n": [
+      0.881,
+      -0.4392,
+      -0.1756
+     ],
+     "surfaceNormal": [
+      0.881,
+      -0.4392,
+      -0.1756
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      1.0803,
+      5.309,
+      -1.7115
+     ],
+     "heightShare": 0.7095,
+     "maxBallR": 0.35,
+     "group": 6,
+     "bgColor": "#3c903a",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 1.049,
+     "regrowDelayS": 25,
+     "dropOrder": 2,
+     "azimuthDeg": -60
+    },
+    {
+     "id": "Tree_2_D_Color1#06",
+     "p": [
+      1.9104,
+      5.1679,
+      -0.0652
+     ],
+     "n": [
+      0.9302,
+      -0.3361,
+      -0.1476
+     ],
+     "surfaceNormal": [
+      0.9302,
+      -0.3361,
+      -0.1476
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      1.9871,
+      5.1402,
+      -0.0774
+     ],
+     "heightShare": 0.6876,
+     "maxBallR": 0.28,
+     "group": 0,
+     "bgColor": "#42953b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 57,
+      "Heroic": 76,
+      "Mystical": 91,
+      "Forbidden": 98
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.975,
+     "regrowDelayS": 59,
+     "dropOrder": 1,
+     "azimuthDeg": -2
+    },
+    {
+     "id": "Tree_2_D_Color1#07",
+     "p": [
+      0.9383,
+      5.6323,
+      1.4004
+     ],
+     "n": [
+      0.1606,
+      0,
+      0.987
+     ],
+     "surfaceNormal": [
+      0.1606,
+      0,
+      0.987
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.9515,
+      5.6323,
+      1.4818
+     ],
+     "heightShare": 0.745,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#509d3c",
+     "contrastDE": {
+      "Tragic": 72,
+      "Comic": 26,
+      "Absurd": 53,
+      "Heroic": 74,
+      "Mystical": 93,
+      "Forbidden": 100
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 0.867,
+     "regrowDelayS": 36,
+     "dropOrder": 3,
+     "azimuthDeg": 56
+    },
+    {
+     "id": "Tree_2_D_Color1#08",
+     "p": [
+      0.287,
+      5.7328,
+      1.5064
+     ],
+     "n": [
+      0.1606,
+      0,
+      0.987
+     ],
+     "surfaceNormal": [
+      0.1606,
+      0,
+      0.987
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.3002,
+      5.7328,
+      1.5878
+     ],
+     "heightShare": 0.7575,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#509d3c",
+     "contrastDE": {
+      "Tragic": 72,
+      "Comic": 26,
+      "Absurd": 53,
+      "Heroic": 74,
+      "Mystical": 93,
+      "Forbidden": 100
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.869,
+     "regrowDelayS": 56,
+     "dropOrder": 4,
+     "azimuthDeg": 80
+    },
+    {
+     "id": "Tree_2_D_Color1#09",
+     "p": [
+      -2.2449,
+      5.8078,
+      0.7489
+     ],
+     "n": [
+      -0.8571,
+      -0.4936,
+      0.1476
+     ],
+     "surfaceNormal": [
+      -0.8571,
+      -0.4936,
+      0.1476
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -2.3156,
+      5.7671,
+      0.761
+     ],
+     "heightShare": 0.7667,
+     "maxBallR": 0.35,
+     "group": 5,
+     "bgColor": "#3e923b",
+     "contrastDE": {
+      "Tragic": 68,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 90,
+      "Forbidden": 98
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.874,
+     "regrowDelayS": 31,
+     "dropOrder": 6,
+     "azimuthDeg": 162
+    }
+   ],
+   "minSpacing": 0.556
+  },
+  "Tree_2_E_Color1": {
+   "model": "Tree_2_E_Color1",
+   "kind": "canopy",
+   "height": 8.7918,
+   "bbox": [
+    [
+     -2.944,
+     -0.4364,
+     -2.7789
+    ],
+    [
+     3.1069,
+     8.3554,
+     2.898
+    ]
+   ],
+   "canopyArea": 248.975,
+   "candidates": 1246,
+   "rejected": {
+    "normal": 1221,
+    "low": 0,
+    "clear": 478,
+    "outward": 616,
+    "edge": 2300,
+    "pierce": 139
+   },
+   "target": 12,
+   "coloursUsed": {
+    "Tragic": 2,
+    "Comic": 0,
+    "Absurd": 2,
+    "Heroic": 2,
+    "Mystical": 3,
+    "Forbidden": 3
+   },
+   "anchors": [
+    {
+     "id": "Tree_2_E_Color1#00",
+     "p": [
+      -2.419,
+      5.4819,
+      -0.3261
+     ],
+     "n": [
+      -0.8414,
+      -0.4936,
+      -0.22
+     ],
+     "surfaceNormal": [
+      -0.8414,
+      -0.4936,
+      -0.22
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -2.4884,
+      5.4412,
+      -0.3442
+     ],
+     "heightShare": 0.6732,
+     "maxBallR": 0.35,
+     "group": 5,
+     "bgColor": "#3e923b",
+     "contrastDE": {
+      "Tragic": 68,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 90,
+      "Forbidden": 98
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 1.011,
+     "regrowDelayS": 31,
+     "dropOrder": 10,
+     "azimuthDeg": -172
+    },
+    {
+     "id": "Tree_2_E_Color1#01",
+     "p": [
+      -1.618,
+      4.3683,
+      -0.4858
+     ],
+     "n": [
+      -0.5756,
+      0,
+      0.8178
+     ],
+     "surfaceNormal": [
+      -0.5756,
+      0,
+      0.8178
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.6655,
+      4.3683,
+      -0.4183
+     ],
+     "heightShare": 0.5465,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#3b8f3a",
+     "contrastDE": {
+      "Tragic": 67,
+      "Comic": 25,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 89,
+      "Forbidden": 97
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.038,
+     "regrowDelayS": 47,
+     "dropOrder": 4,
+     "azimuthDeg": -164
+    },
+    {
+     "id": "Tree_2_E_Color1#02",
+     "p": [
+      -1.5414,
+      4.1079,
+      -0.9596
+     ],
+     "n": [
+      -0.0126,
+      0.3465,
+      -0.938
+     ],
+     "surfaceNormal": [
+      -0.0126,
+      0.3465,
+      -0.938
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.5424,
+      4.1364,
+      -1.037
+     ],
+     "heightShare": 0.5169,
+     "maxBallR": 0.19,
+     "group": 3,
+     "bgColor": "#47983b",
+     "contrastDE": {
+      "Tragic": 70,
+      "Comic": 26,
+      "Absurd": 56,
+      "Heroic": 75,
+      "Mystical": 92,
+      "Forbidden": 99
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 1.078,
+     "regrowDelayS": 32,
+     "dropOrder": 1,
+     "azimuthDeg": -148
+    },
+    {
+     "id": "Tree_2_E_Color1#03",
+     "p": [
+      -1.4269,
+      4.2351,
+      -2.4842
+     ],
+     "n": [
+      0.5756,
+      0,
+      -0.8178
+     ],
+     "surfaceNormal": [
+      0.5756,
+      0,
+      -0.8178
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.3795,
+      4.2351,
+      -2.5517
+     ],
+     "heightShare": 0.5313,
+     "maxBallR": 0.35,
+     "group": 7,
+     "bgColor": "#4c9b3b",
+     "contrastDE": {
+      "Tragic": 72,
+      "Comic": 27,
+      "Absurd": 54,
+      "Heroic": 75,
+      "Mystical": 93,
+      "Forbidden": 100
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 1.034,
+     "regrowDelayS": 42,
+     "dropOrder": 2,
+     "azimuthDeg": -120
+    },
+    {
+     "id": "Tree_2_E_Color1#04",
+     "p": [
+      -1.034,
+      4.5109,
+      -2.2077
+     ],
+     "n": [
+      0.5756,
+      0,
+      -0.8178
+     ],
+     "surfaceNormal": [
+      0.5756,
+      0,
+      -0.8178
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.9865,
+      4.5109,
+      -2.2751
+     ],
+     "heightShare": 0.5627,
+     "maxBallR": 0.35,
+     "group": 7,
+     "bgColor": "#40933b",
+     "contrastDE": {
+      "Tragic": 68,
+      "Comic": 26,
+      "Absurd": 57,
+      "Heroic": 75,
+      "Mystical": 90,
+      "Forbidden": 98
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.942,
+     "regrowDelayS": 41,
+     "dropOrder": 6,
+     "azimuthDeg": -115
+    },
+    {
+     "id": "Tree_2_E_Color1#05",
+     "p": [
+      0.7057,
+      4.5788,
+      -2.298
+     ],
+     "n": [
+      0.1724,
+      -0.4276,
+      -0.8874
+     ],
+     "surfaceNormal": [
+      0.1724,
+      -0.4276,
+      -0.8874
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.7199,
+      4.5435,
+      -2.3712
+     ],
+     "heightShare": 0.5704,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#41943b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 57,
+      "Heroic": 76,
+      "Mystical": 91,
+      "Forbidden": 98
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 1.126,
+     "regrowDelayS": 24,
+     "dropOrder": 5,
+     "azimuthDeg": -73
+    },
+    {
+     "id": "Tree_2_E_Color1#06",
+     "p": [
+      1.7553,
+      5.1753,
+      -1.5399
+     ],
+     "n": [
+      0.1258,
+      -0.3867,
+      -0.9136
+     ],
+     "surfaceNormal": [
+      0.1258,
+      -0.3867,
+      -0.9136
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      1.7657,
+      5.1434,
+      -1.6152
+     ],
+     "heightShare": 0.6383,
+     "maxBallR": 0.2,
+     "group": 6,
+     "bgColor": "#31893a",
+     "contrastDE": {
+      "Tragic": 64,
+      "Comic": 26,
+      "Absurd": 61,
+      "Heroic": 77,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 1.109,
+     "regrowDelayS": 59,
+     "dropOrder": 9,
+     "azimuthDeg": -41
+    },
+    {
+     "id": "Tree_2_E_Color1#07",
+     "p": [
+      2.5544,
+      4.1782,
+      0.0157
+     ],
+     "n": [
+      0.9455,
+      -0.3078,
+      -0.1064
+     ],
+     "surfaceNormal": [
+      0.9455,
+      -0.3078,
+      -0.1064
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      2.6324,
+      4.1529,
+      0.0069
+     ],
+     "heightShare": 0.5249,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#328a3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 77,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 0.868,
+     "regrowDelayS": 34,
+     "dropOrder": 0,
+     "azimuthDeg": 0
+    },
+    {
+     "id": "Tree_2_E_Color1#08",
+     "p": [
+      2.7276,
+      4.5305,
+      0.5355
+     ],
+     "n": [
+      0.9455,
+      -0.3078,
+      -0.1064
+     ],
+     "surfaceNormal": [
+      0.9455,
+      -0.3078,
+      -0.1064
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      2.8056,
+      4.5051,
+      0.5267
+     ],
+     "heightShare": 0.5649,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#328a3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 77,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 1.043,
+     "regrowDelayS": 53,
+     "dropOrder": 3,
+     "azimuthDeg": 11
+    },
+    {
+     "id": "Tree_2_E_Color1#09",
+     "p": [
+      2.4853,
+      5.7487,
+      0.7849
+     ],
+     "n": [
+      0.3287,
+      0,
+      -0.9444
+     ],
+     "surfaceNormal": [
+      0.3287,
+      0,
+      -0.9444
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      2.5124,
+      5.7487,
+      0.7069
+     ],
+     "heightShare": 0.7035,
+     "maxBallR": 0.34,
+     "group": 0,
+     "bgColor": "#529f3c",
+     "contrastDE": {
+      "Tragic": 73,
+      "Comic": 27,
+      "Absurd": 53,
+      "Heroic": 74,
+      "Mystical": 94,
+      "Forbidden": 100
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.124,
+     "regrowDelayS": 45,
+     "dropOrder": 11,
+     "azimuthDeg": 18
+    },
+    {
+     "id": "Tree_2_E_Color1#10",
+     "p": [
+      -1.1101,
+      5.12,
+      1.9913
+     ],
+     "n": [
+      -0.6132,
+      0,
+      0.79
+     ],
+     "surfaceNormal": [
+      -0.6132,
+      0,
+      0.79
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.1607,
+      5.12,
+      2.0564
+     ],
+     "heightShare": 0.632,
+     "maxBallR": 0.35,
+     "group": 4,
+     "bgColor": "#3d913a",
+     "contrastDE": {
+      "Tragic": 68,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 90,
+      "Forbidden": 98
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 0.905,
+     "regrowDelayS": 34,
+     "dropOrder": 7,
+     "azimuthDeg": 119
+    },
+    {
+     "id": "Tree_2_E_Color1#11",
+     "p": [
+      -1.5776,
+      5.2244,
+      1.6284
+     ],
+     "n": [
+      -0.6132,
+      0,
+      0.79
+     ],
+     "surfaceNormal": [
+      -0.6132,
+      0,
+      0.79
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.6282,
+      5.2244,
+      1.6935
+     ],
+     "heightShare": 0.6439,
+     "maxBallR": 0.2,
+     "group": 4,
+     "bgColor": "#3d913a",
+     "contrastDE": {
+      "Tragic": 68,
+      "Comic": 26,
+      "Absurd": 58,
+      "Heroic": 76,
+      "Mystical": 90,
+      "Forbidden": 98
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.968,
+     "regrowDelayS": 21,
+     "dropOrder": 8,
+     "azimuthDeg": 134
+    }
+   ],
+   "minSpacing": 0.554
+  },
+  "Tree_3_A_Color1": {
+   "model": "Tree_3_A_Color1",
+   "kind": "canopy",
+   "height": 3.5066,
+   "bbox": [
+    [
+     -1.5521,
+     -0.2613,
+     -1.5466
+    ],
+    [
+     1.5411,
+     3.2453,
+     1.5466
+    ]
+   ],
+   "canopyArea": 21.7622,
+   "candidates": 2009,
+   "rejected": {
+    "normal": 2582,
+    "low": 0,
+    "clear": 200,
+    "outward": 24,
+    "edge": 1184,
+    "pierce": 1
+   },
+   "target": 6,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 1,
+    "Heroic": 1,
+    "Mystical": 1,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_3_A_Color1#00",
+     "p": [
+      -1.1591,
+      2.8005,
+      -0.4246
+     ],
+     "n": [
+      -0.4183,
+      0.9045,
+      -0.0832
+     ],
+     "surfaceNormal": [
+      -0.4183,
+      0.9045,
+      -0.0832
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.1937,
+      2.8751,
+      -0.4315
+     ],
+     "heightShare": 0.8732,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#60a83c",
+     "contrastDE": {
+      "Tragic": 77,
+      "Comic": 29,
+      "Absurd": 50,
+      "Heroic": 73,
+      "Mystical": 97,
+      "Forbidden": 102
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.93,
+     "regrowDelayS": 55,
+     "dropOrder": 1,
+     "azimuthDeg": -160
+    },
+    {
+     "id": "Tree_3_A_Color1#01",
+     "p": [
+      -0.8633,
+      2.8144,
+      -0.849
+     ],
+     "n": [
+      -0.3547,
+      0.9044,
+      -0.237
+     ],
+     "surfaceNormal": [
+      -0.3547,
+      0.9044,
+      -0.237
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.8926,
+      2.889,
+      -0.8686
+     ],
+     "heightShare": 0.8771,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#60a83c",
+     "contrastDE": {
+      "Tragic": 77,
+      "Comic": 29,
+      "Absurd": 50,
+      "Heroic": 73,
+      "Mystical": 97,
+      "Forbidden": 102
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.058,
+     "regrowDelayS": 21,
+     "dropOrder": 2,
+     "azimuthDeg": -135
+    },
+    {
+     "id": "Tree_3_A_Color1#02",
+     "p": [
+      0.1297,
+      3.2162,
+      -0.3271
+     ],
+     "n": [
+      0.0464,
+      0.9965,
+      -0.0694
+     ],
+     "surfaceNormal": [
+      0.0464,
+      0.9965,
+      -0.0694
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.1336,
+      3.2984,
+      -0.3328
+     ],
+     "heightShare": 0.9917,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#7bbb3e",
+     "contrastDE": {
+      "Tragic": 85,
+      "Comic": 34,
+      "Absurd": 45,
+      "Heroic": 72,
+      "Mystical": 104,
+      "Forbidden": 107
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.98,
+     "regrowDelayS": 56,
+     "dropOrder": 5,
+     "azimuthDeg": -68
+    },
+    {
+     "id": "Tree_3_A_Color1#03",
+     "p": [
+      0.742,
+      3.0632,
+      -0.3213
+     ],
+     "n": [
+      0.5121,
+      0.7878,
+      -0.3422
+     ],
+     "surfaceNormal": [
+      0.5121,
+      0.7878,
+      -0.3422
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.7843,
+      3.1282,
+      -0.3495
+     ],
+     "heightShare": 0.9481,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#69ae3d",
+     "contrastDE": {
+      "Tragic": 79,
+      "Comic": 30,
+      "Absurd": 48,
+      "Heroic": 73,
+      "Mystical": 99,
+      "Forbidden": 103
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.954,
+     "regrowDelayS": 53,
+     "dropOrder": 4,
+     "azimuthDeg": -23
+    },
+    {
+     "id": "Tree_3_A_Color1#04",
+     "p": [
+      0.9559,
+      2.7196,
+      1.0244
+     ],
+     "n": [
+      0.237,
+      0.9045,
+      0.3546
+     ],
+     "surfaceNormal": [
+      0.237,
+      0.9045,
+      0.3546
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.9754,
+      2.7942,
+      1.0537
+     ],
+     "heightShare": 0.8501,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#5ca63c",
+     "contrastDE": {
+      "Tragic": 76,
+      "Comic": 28,
+      "Absurd": 51,
+      "Heroic": 74,
+      "Mystical": 97,
+      "Forbidden": 102
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 0.989,
+     "regrowDelayS": 36,
+     "dropOrder": 0,
+     "azimuthDeg": 47
+    },
+    {
+     "id": "Tree_3_A_Color1#05",
+     "p": [
+      -0.9647,
+      2.8585,
+      0.5287
+     ],
+     "n": [
+      -0.3546,
+      0.9045,
+      0.237
+     ],
+     "surfaceNormal": [
+      -0.3546,
+      0.9045,
+      0.237
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.994,
+      2.9331,
+      0.5482
+     ],
+     "heightShare": 0.8897,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": "#60a83c",
+     "contrastDE": {
+      "Tragic": 77,
+      "Comic": 29,
+      "Absurd": 50,
+      "Heroic": 73,
+      "Mystical": 97,
+      "Forbidden": 102
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.905,
+     "regrowDelayS": 54,
+     "dropOrder": 3,
+     "azimuthDeg": 151
+    }
+   ],
+   "minSpacing": 0.531
+  },
+  "Tree_3_B_Color1": {
+   "model": "Tree_3_B_Color1",
+   "kind": "canopy",
+   "height": 4.3529,
+   "bbox": [
+    [
+     -2.0916,
+     -0.341,
+     -2.0647
+    ],
+    [
+     2.0378,
+     4.0118,
+     2.0647
+    ]
+   ],
+   "canopyArea": 36.8494,
+   "candidates": 2229,
+   "rejected": {
+    "normal": 2610,
+    "low": 0,
+    "clear": 117,
+    "outward": 28,
+    "edge": 1011,
+    "pierce": 5
+   },
+   "target": 7,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 1,
+    "Heroic": 1,
+    "Mystical": 2,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_3_B_Color1#00",
+     "p": [
+      -0.578,
+      3.9188,
+      -0.4442
+     ],
+     "n": [
+      -0.2742,
+      0.9441,
+      -0.1832
+     ],
+     "surfaceNormal": [
+      -0.2742,
+      0.9441,
+      -0.1832
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.6006,
+      3.9967,
+      -0.4593
+     ],
+     "heightShare": 0.9786,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": "#78b83e",
+     "contrastDE": {
+      "Tragic": 83,
+      "Comic": 33,
+      "Absurd": 45,
+      "Heroic": 72,
+      "Mystical": 102,
+      "Forbidden": 105
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.939,
+     "regrowDelayS": 48,
+     "dropOrder": 6,
+     "azimuthDeg": -142
+    },
+    {
+     "id": "Tree_3_B_Color1#01",
+     "p": [
+      -1.3592,
+      3.2927,
+      -1.3572
+     ],
+     "n": [
+      -0.3883,
+      0.7153,
+      -0.5811
+     ],
+     "surfaceNormal": [
+      -0.3883,
+      0.7153,
+      -0.5811
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.3912,
+      3.3517,
+      -1.4051
+     ],
+     "heightShare": 0.8348,
+     "maxBallR": 0.35,
+     "group": 4,
+     "bgColor": "#519f3c",
+     "contrastDE": {
+      "Tragic": 73,
+      "Comic": 27,
+      "Absurd": 53,
+      "Heroic": 74,
+      "Mystical": 94,
+      "Forbidden": 100
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 1.031,
+     "regrowDelayS": 46,
+     "dropOrder": 0,
+     "azimuthDeg": -135
+    },
+    {
+     "id": "Tree_3_B_Color1#02",
+     "p": [
+      0.3509,
+      3.8136,
+      -0.9555
+     ],
+     "n": [
+      0.1202,
+      0.7878,
+      -0.6041
+     ],
+     "surfaceNormal": [
+      0.1202,
+      0.7878,
+      -0.6041
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.3608,
+      3.8786,
+      -1.0053
+     ],
+     "heightShare": 0.9545,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#69ae3d",
+     "contrastDE": {
+      "Tragic": 79,
+      "Comic": 30,
+      "Absurd": 48,
+      "Heroic": 73,
+      "Mystical": 99,
+      "Forbidden": 103
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.86,
+     "regrowDelayS": 57,
+     "dropOrder": 5,
+     "azimuthDeg": -70
+    },
+    {
+     "id": "Tree_3_B_Color1#03",
+     "p": [
+      0.7942,
+      3.7417,
+      -0.7559
+     ],
+     "n": [
+      0.5121,
+      0.7878,
+      -0.3422
+     ],
+     "surfaceNormal": [
+      0.5121,
+      0.7878,
+      -0.3422
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.8364,
+      3.8067,
+      -0.7841
+     ],
+     "heightShare": 0.9379,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#6eb23d",
+     "contrastDE": {
+      "Tragic": 81,
+      "Comic": 31,
+      "Absurd": 47,
+      "Heroic": 73,
+      "Mystical": 101,
+      "Forbidden": 105
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.081,
+     "regrowDelayS": 55,
+     "dropOrder": 4,
+     "azimuthDeg": -44
+    },
+    {
+     "id": "Tree_3_B_Color1#04",
+     "p": [
+      1.5664,
+      3.4049,
+      -0.4421
+     ],
+     "n": [
+      0.4184,
+      0.9044,
+      -0.0832
+     ],
+     "surfaceNormal": [
+      0.4184,
+      0.9044,
+      -0.0832
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      1.6009,
+      3.4795,
+      -0.4489
+     ],
+     "heightShare": 0.8606,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#5ca63c",
+     "contrastDE": {
+      "Tragic": 76,
+      "Comic": 28,
+      "Absurd": 51,
+      "Heroic": 74,
+      "Mystical": 97,
+      "Forbidden": 102
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 1.041,
+     "regrowDelayS": 43,
+     "dropOrder": 1,
+     "azimuthDeg": -16
+    },
+    {
+     "id": "Tree_3_B_Color1#05",
+     "p": [
+      -0.4635,
+      3.7131,
+      1.074
+     ],
+     "n": [
+      -0.3385,
+      0.7929,
+      0.5066
+     ],
+     "surfaceNormal": [
+      -0.3385,
+      0.7929,
+      0.5066
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.4914,
+      3.7785,
+      1.1158
+     ],
+     "heightShare": 0.9314,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#6eb23d",
+     "contrastDE": {
+      "Tragic": 81,
+      "Comic": 31,
+      "Absurd": 47,
+      "Heroic": 73,
+      "Mystical": 101,
+      "Forbidden": 105
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 1.066,
+     "regrowDelayS": 40,
+     "dropOrder": 3,
+     "azimuthDeg": 113
+    },
+    {
+     "id": "Tree_3_B_Color1#06",
+     "p": [
+      -0.6605,
+      3.4274,
+      1.5024
+     ],
+     "n": [
+      -0.237,
+      0.9044,
+      0.3547
+     ],
+     "surfaceNormal": [
+      -0.237,
+      0.9044,
+      0.3547
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.6801,
+      3.5021,
+      1.5316
+     ],
+     "heightShare": 0.8657,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#5ca63c",
+     "contrastDE": {
+      "Tragic": 76,
+      "Comic": 28,
+      "Absurd": 51,
+      "Heroic": 74,
+      "Mystical": 97,
+      "Forbidden": 102
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.924,
+     "regrowDelayS": 47,
+     "dropOrder": 2,
+     "azimuthDeg": 114
+    }
+   ],
+   "minSpacing": 0.5295
+  },
+  "Tree_3_C_Color1": {
+   "model": "Tree_3_C_Color1",
+   "kind": "canopy",
+   "height": 5.792,
+   "bbox": [
+    [
+     -3.2389,
+     -0.3923,
+     -1.8776
+    ],
+    [
+     2.3933,
+     5.3997,
+     2.7471
+    ]
+   ],
+   "canopyArea": 64.6681,
+   "candidates": 1687,
+   "rejected": {
+    "normal": 2637,
+    "low": 0,
+    "clear": 441,
+    "outward": 73,
+    "edge": 1135,
+    "pierce": 27
+   },
+   "target": 8,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 1,
+    "Heroic": 2,
+    "Mystical": 2,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_3_C_Color1#00",
+     "p": [
+      -0.4438,
+      4.7588,
+      -0.6386
+     ],
+     "n": [
+      -0.5645,
+      0.7878,
+      -0.2464
+     ],
+     "surfaceNormal": [
+      -0.5645,
+      0.7878,
+      -0.2464
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.4904,
+      4.8238,
+      -0.6589
+     ],
+     "heightShare": 0.8894,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#6cb03d",
+     "contrastDE": {
+      "Tragic": 80,
+      "Comic": 30,
+      "Absurd": 47,
+      "Heroic": 72,
+      "Mystical": 100,
+      "Forbidden": 104
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.966,
+     "regrowDelayS": 56,
+     "dropOrder": 2,
+     "azimuthDeg": -125
+    },
+    {
+     "id": "Tree_3_C_Color1#01",
+     "p": [
+      -0.0553,
+      4.7934,
+      -0.9281
+     ],
+     "n": [
+      -0.2249,
+      0.7878,
+      -0.5734
+     ],
+     "surfaceNormal": [
+      -0.2249,
+      0.7878,
+      -0.5734
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.0739,
+      4.8584,
+      -0.9754
+     ],
+     "heightShare": 0.8953,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#73b53e",
+     "contrastDE": {
+      "Tragic": 82,
+      "Comic": 32,
+      "Absurd": 46,
+      "Heroic": 72,
+      "Mystical": 101,
+      "Forbidden": 105
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.996,
+     "regrowDelayS": 58,
+     "dropOrder": 3,
+     "azimuthDeg": -94
+    },
+    {
+     "id": "Tree_3_C_Color1#02",
+     "p": [
+      0.244,
+      5.016,
+      0.0667
+     ],
+     "n": [
+      -0.0601,
+      0.9965,
+      0.0579
+     ],
+     "surfaceNormal": [
+      -0.0601,
+      0.9965,
+      0.0579
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.239,
+      5.0982,
+      0.0715
+     ],
+     "heightShare": 0.9338,
+     "maxBallR": 0.23,
+     "group": 3,
+     "bgColor": "#84c03f",
+     "contrastDE": {
+      "Tragic": 86,
+      "Comic": 35,
+      "Absurd": 43,
+      "Heroic": 72,
+      "Mystical": 105,
+      "Forbidden": 107
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.133,
+     "regrowDelayS": 60,
+     "dropOrder": 7,
+     "azimuthDeg": 16
+    },
+    {
+     "id": "Tree_3_C_Color1#03",
+     "p": [
+      0.7812,
+      4.9954,
+      0.2458
+     ],
+     "n": [
+      0.0579,
+      0.9965,
+      0.0601
+     ],
+     "surfaceNormal": [
+      0.0579,
+      0.9965,
+      0.0601
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.786,
+      5.0776,
+      0.2507
+     ],
+     "heightShare": 0.9302,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#84c03f",
+     "contrastDE": {
+      "Tragic": 86,
+      "Comic": 35,
+      "Absurd": 43,
+      "Heroic": 72,
+      "Mystical": 105,
+      "Forbidden": 107
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.854,
+     "regrowDelayS": 39,
+     "dropOrder": 6,
+     "azimuthDeg": 18
+    },
+    {
+     "id": "Tree_3_C_Color1#04",
+     "p": [
+      -0.0983,
+      4.6545,
+      0.9821
+     ],
+     "n": [
+      -0.2464,
+      0.7878,
+      0.5645
+     ],
+     "surfaceNormal": [
+      -0.2464,
+      0.7878,
+      0.5645
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.1187,
+      4.7195,
+      1.0287
+     ],
+     "heightShare": 0.8714,
+     "maxBallR": 0.35,
+     "group": 4,
+     "bgColor": "#6cb03d",
+     "contrastDE": {
+      "Tragic": 80,
+      "Comic": 30,
+      "Absurd": 47,
+      "Heroic": 72,
+      "Mystical": 100,
+      "Forbidden": 104
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.911,
+     "regrowDelayS": 50,
+     "dropOrder": 1,
+     "azimuthDeg": 96
+    },
+    {
+     "id": "Tree_3_C_Color1#05",
+     "p": [
+      -0.2119,
+      4.3701,
+      1.5109
+     ],
+     "n": [
+      -0.2796,
+      0.7153,
+      0.6405
+     ],
+     "surfaceNormal": [
+      -0.2796,
+      0.7153,
+      0.6405
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.235,
+      4.4292,
+      1.5638
+     ],
+     "heightShare": 0.8223,
+     "maxBallR": 0.21,
+     "group": 4,
+     "bgColor": "#55a13c",
+     "contrastDE": {
+      "Tragic": 74,
+      "Comic": 27,
+      "Absurd": 52,
+      "Heroic": 74,
+      "Mystical": 95,
+      "Forbidden": 101
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 0.941,
+     "regrowDelayS": 52,
+     "dropOrder": 0,
+     "azimuthDeg": 98
+    },
+    {
+     "id": "Tree_3_C_Color1#06",
+     "p": [
+      -0.9983,
+      4.8991,
+      2.3709
+     ],
+     "n": [
+      -0.1706,
+      0.9045,
+      0.3909
+     ],
+     "surfaceNormal": [
+      -0.1706,
+      0.9045,
+      0.3909
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.0124,
+      4.9738,
+      2.4031
+     ],
+     "heightShare": 0.9136,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#5ca63c",
+     "contrastDE": {
+      "Tragic": 76,
+      "Comic": 28,
+      "Absurd": 51,
+      "Heroic": 74,
+      "Mystical": 97,
+      "Forbidden": 102
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 1.092,
+     "regrowDelayS": 55,
+     "dropOrder": 4,
+     "azimuthDeg": 113
+    },
+    {
+     "id": "Tree_3_C_Color1#07",
+     "p": [
+      -1.4675,
+      4.9725,
+      0.6728
+     ],
+     "n": [
+      -0.3909,
+      0.9045,
+      -0.1706
+     ],
+     "surfaceNormal": [
+      -0.3909,
+      0.9045,
+      -0.1706
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.4997,
+      5.0471,
+      0.6588
+     ],
+     "heightShare": 0.9263,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": "#60a83c",
+     "contrastDE": {
+      "Tragic": 77,
+      "Comic": 29,
+      "Absurd": 50,
+      "Heroic": 73,
+      "Mystical": 97,
+      "Forbidden": 102
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.126,
+     "regrowDelayS": 60,
+     "dropOrder": 5,
+     "azimuthDeg": 155
+    }
+   ],
+   "minSpacing": 0.5243
+  },
+  "Tree_4_A_Color1": {
+   "model": "Tree_4_A_Color1",
+   "kind": "canopy",
+   "height": 5.2744,
+   "bbox": [
+    [
+     -0.96,
+     -0.3421,
+     -1.0197
+    ],
+    [
+     1.0473,
+     4.9323,
+     0.9847
+    ]
+   ],
+   "canopyArea": 21.451,
+   "candidates": 1263,
+   "rejected": {
+    "normal": 1863,
+    "low": 0,
+    "clear": 0,
+    "outward": 129,
+    "edge": 2681,
+    "pierce": 64
+   },
+   "target": 6,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 1,
+    "Heroic": 1,
+    "Mystical": 1,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_4_A_Color1#00",
+     "p": [
+      -0.7,
+      3.2604,
+      -0.1014
+     ],
+     "n": [
+      -0.9372,
+      0.3483,
+      0.0201
+     ],
+     "surfaceNormal": [
+      -0.9372,
+      0.3483,
+      0.0201
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.7773,
+      3.2891,
+      -0.0997
+     ],
+     "heightShare": 0.683,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#338a3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.11,
+     "regrowDelayS": 47,
+     "dropOrder": 2,
+     "azimuthDeg": -172
+    },
+    {
+     "id": "Tree_4_A_Color1#01",
+     "p": [
+      -0.874,
+      2.8184,
+      -0.5572
+     ],
+     "n": [
+      -0.9372,
+      0.3483,
+      0.0201
+     ],
+     "surfaceNormal": [
+      -0.9372,
+      0.3483,
+      0.0201
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.9513,
+      2.8471,
+      -0.5556
+     ],
+     "heightShare": 0.5992,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#338a3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.895,
+     "regrowDelayS": 40,
+     "dropOrder": 0,
+     "azimuthDeg": -147
+    },
+    {
+     "id": "Tree_4_A_Color1#02",
+     "p": [
+      0.2309,
+      3.4528,
+      0.6509
+     ],
+     "n": [
+      -0.0252,
+      0.3523,
+      0.9356
+     ],
+     "surfaceNormal": [
+      -0.0252,
+      0.3523,
+      0.9356
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.2288,
+      3.4818,
+      0.7281
+     ],
+     "heightShare": 0.7195,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#42943b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 57,
+      "Heroic": 75,
+      "Mystical": 90,
+      "Forbidden": 98
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.895,
+     "regrowDelayS": 21,
+     "dropOrder": 3,
+     "azimuthDeg": 70
+    },
+    {
+     "id": "Tree_4_A_Color1#03",
+     "p": [
+      -0.1832,
+      4.372,
+      0.5195
+     ],
+     "n": [
+      -0.0278,
+      0.3967,
+      0.9175
+     ],
+     "surfaceNormal": [
+      -0.0278,
+      0.3967,
+      0.9175
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.1855,
+      4.4048,
+      0.5952
+     ],
+     "heightShare": 0.8938,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#55a13c",
+     "contrastDE": {
+      "Tragic": 74,
+      "Comic": 27,
+      "Absurd": 52,
+      "Heroic": 74,
+      "Mystical": 95,
+      "Forbidden": 101
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.987,
+     "regrowDelayS": 51,
+     "dropOrder": 5,
+     "azimuthDeg": 109
+    },
+    {
+     "id": "Tree_4_A_Color1#04",
+     "p": [
+      -0.8449,
+      2.839,
+      0.4424
+     ],
+     "n": [
+      -0.9372,
+      0.3483,
+      0.0201
+     ],
+     "surfaceNormal": [
+      -0.9372,
+      0.3483,
+      0.0201
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.9223,
+      2.8677,
+      0.444
+     ],
+     "heightShare": 0.6031,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": "#338a3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.982,
+     "regrowDelayS": 51,
+     "dropOrder": 1,
+     "azimuthDeg": 152
+    },
+    {
+     "id": "Tree_4_A_Color1#05",
+     "p": [
+      -0.5133,
+      4.3527,
+      0.2331
+     ],
+     "n": [
+      -0.9194,
+      0.3928,
+      0.0226
+     ],
+     "surfaceNormal": [
+      -0.9194,
+      0.3928,
+      0.0226
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.5891,
+      4.3851,
+      0.2349
+     ],
+     "heightShare": 0.8901,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#55a13c",
+     "contrastDE": {
+      "Tragic": 74,
+      "Comic": 27,
+      "Absurd": 52,
+      "Heroic": 74,
+      "Mystical": 95,
+      "Forbidden": 101
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 1.124,
+     "regrowDelayS": 57,
+     "dropOrder": 4,
+     "azimuthDeg": 156
+    }
+   ],
+   "minSpacing": 0.5414
+  },
+  "Tree_4_B_Color1": {
+   "model": "Tree_4_B_Color1",
+   "kind": "canopy",
+   "height": 6.9426,
+   "bbox": [
+    [
+     -1.2432,
+     -0.3764,
+     -1.3464
+    ],
+    [
+     1.3308,
+     6.5662,
+     0.9239
+    ]
+   ],
+   "canopyArea": 24.8887,
+   "candidates": 1027,
+   "rejected": {
+    "normal": 1870,
+    "low": 0,
+    "clear": 0,
+    "outward": 304,
+    "edge": 2761,
+    "pierce": 38
+   },
+   "target": 6,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 1,
+    "Heroic": 1,
+    "Mystical": 1,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_4_B_Color1#00",
+     "p": [
+      0.9361,
+      2.0488,
+      -0.3441
+     ],
+     "n": [
+      0.0477,
+      0.3768,
+      -0.9251
+     ],
+     "surfaceNormal": [
+      0.0477,
+      0.3768,
+      -0.9251
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.94,
+      2.0799,
+      -0.4205
+     ],
+     "heightShare": 0.3493,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#358c3a",
+     "contrastDE": {
+      "Tragic": 66,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 88,
+      "Forbidden": 97
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.952,
+     "regrowDelayS": 45,
+     "dropOrder": 1,
+     "azimuthDeg": -20
+    },
+    {
+     "id": "Tree_4_B_Color1#01",
+     "p": [
+      0.8103,
+      4.8986,
+      -0.2465
+     ],
+     "n": [
+      0.9417,
+      0.2967,
+      -0.1587
+     ],
+     "surfaceNormal": [
+      0.9417,
+      0.2967,
+      -0.1587
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.888,
+      4.9231,
+      -0.2596
+     ],
+     "heightShare": 0.7598,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": "#338a3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.909,
+     "regrowDelayS": 38,
+     "dropOrder": 3,
+     "azimuthDeg": -17
+    },
+    {
+     "id": "Tree_4_B_Color1#02",
+     "p": [
+      0.6684,
+      6.1404,
+      -0.0197
+     ],
+     "n": [
+      0.9279,
+      0.3417,
+      -0.149
+     ],
+     "surfaceNormal": [
+      0.9279,
+      0.3417,
+      -0.149
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.745,
+      6.1686,
+      -0.0319
+     ],
+     "heightShare": 0.9387,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#55a13c",
+     "contrastDE": {
+      "Tragic": 74,
+      "Comic": 27,
+      "Absurd": 52,
+      "Heroic": 74,
+      "Mystical": 95,
+      "Forbidden": 101
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.957,
+     "regrowDelayS": 39,
+     "dropOrder": 5,
+     "azimuthDeg": -2
+    },
+    {
+     "id": "Tree_4_B_Color1#03",
+     "p": [
+      1.2568,
+      2.066,
+      0.0368
+     ],
+     "n": [
+      0.9654,
+      0.2606,
+      0
+     ],
+     "surfaceNormal": [
+      0.9654,
+      0.2606,
+      0
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      1.3364,
+      2.0875,
+      0.0368
+     ],
+     "heightShare": 0.3518,
+     "maxBallR": 0.27,
+     "group": 3,
+     "bgColor": "#358c3a",
+     "contrastDE": {
+      "Tragic": 66,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 88,
+      "Forbidden": 97
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.867,
+     "regrowDelayS": 36,
+     "dropOrder": 0,
+     "azimuthDeg": 2
+    },
+    {
+     "id": "Tree_4_B_Color1#04",
+     "p": [
+      0.5969,
+      5.7854,
+      0.4236
+     ],
+     "n": [
+      0.2498,
+      0.3129,
+      0.9164
+     ],
+     "surfaceNormal": [
+      0.2498,
+      0.3129,
+      0.9164
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.6175,
+      5.8112,
+      0.4992
+     ],
+     "heightShare": 0.8875,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#55a13c",
+     "contrastDE": {
+      "Tragic": 74,
+      "Comic": 27,
+      "Absurd": 52,
+      "Heroic": 74,
+      "Mystical": 95,
+      "Forbidden": 101
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 0.975,
+     "regrowDelayS": 59,
+     "dropOrder": 4,
+     "azimuthDeg": 35
+    },
+    {
+     "id": "Tree_4_B_Color1#05",
+     "p": [
+      0.2876,
+      4.4144,
+      0.6681
+     ],
+     "n": [
+      0.2479,
+      0.2673,
+      0.9312
+     ],
+     "surfaceNormal": [
+      0.2479,
+      0.2673,
+      0.9312
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.308,
+      4.4365,
+      0.7449
+     ],
+     "heightShare": 0.6901,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#338a3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.869,
+     "regrowDelayS": 56,
+     "dropOrder": 2,
+     "azimuthDeg": 66
+    }
+   ],
+   "minSpacing": 0.6052
+  },
+  "Tree_4_C_Color1": {
+   "model": "Tree_4_C_Color1",
+   "kind": "canopy",
+   "height": 10.774,
+   "bbox": [
+    [
+     -1.7309,
+     -0.3565,
+     -1.5473
+    ],
+    [
+     2.0043,
+     10.4175,
+     1.3217
+    ]
+   ],
+   "canopyArea": 58.5783,
+   "candidates": 923,
+   "rejected": {
+    "normal": 1521,
+    "low": 469,
+    "clear": 6,
+    "outward": 413,
+    "edge": 2640,
+    "pierce": 28
+   },
+   "target": 8,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 1,
+    "Heroic": 2,
+    "Mystical": 2,
+    "Forbidden": 2
+   },
+   "anchors": [
+    {
+     "id": "Tree_4_C_Color1#00",
+     "p": [
+      -1.4647,
+      5.0206,
+      -0.0269
+     ],
+     "n": [
+      -0.9546,
+      0.2415,
+      -0.1742
+     ],
+     "surfaceNormal": [
+      -0.9546,
+      0.2415,
+      -0.1742
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.5434,
+      5.0406,
+      -0.0413
+     ],
+     "heightShare": 0.4991,
+     "maxBallR": 0.24,
+     "group": 1,
+     "bgColor": "#42943b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 57,
+      "Heroic": 75,
+      "Mystical": 90,
+      "Forbidden": 98
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 0.854,
+     "regrowDelayS": 24,
+     "dropOrder": 3,
+     "azimuthDeg": -179
+    },
+    {
+     "id": "Tree_4_C_Color1#01",
+     "p": [
+      -1.2305,
+      6.8796,
+      -0.1023
+     ],
+     "n": [
+      -0.9992,
+      0.0408,
+      0
+     ],
+     "surfaceNormal": [
+      -0.9992,
+      0.0408,
+      0
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.3129,
+      6.883,
+      -0.1023
+     ],
+     "heightShare": 0.6716,
+     "maxBallR": 0.32,
+     "group": 0,
+     "bgColor": "#358c3a",
+     "contrastDE": {
+      "Tragic": 66,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 88,
+      "Forbidden": 97
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 1.051,
+     "regrowDelayS": 49,
+     "dropOrder": 4,
+     "azimuthDeg": -175
+    },
+    {
+     "id": "Tree_4_C_Color1#02",
+     "p": [
+      -1.5378,
+      4.5141,
+      -0.3285
+     ],
+     "n": [
+      -0.9546,
+      0.2415,
+      -0.1742
+     ],
+     "surfaceNormal": [
+      -0.9546,
+      0.2415,
+      -0.1742
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -1.6165,
+      4.534,
+      -0.3429
+     ],
+     "heightShare": 0.4521,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": "#338a3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.968,
+     "regrowDelayS": 45,
+     "dropOrder": 2,
+     "azimuthDeg": -168
+    },
+    {
+     "id": "Tree_4_C_Color1#03",
+     "p": [
+      0.6223,
+      2.9573,
+      -1.2255
+     ],
+     "n": [
+      -0.1698,
+      0.3979,
+      -0.9016
+     ],
+     "surfaceNormal": [
+      -0.1698,
+      0.3979,
+      -0.9016
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.6083,
+      2.9901,
+      -1.2999
+     ],
+     "heightShare": 0.3076,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#338a3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.96,
+     "regrowDelayS": 55,
+     "dropOrder": 0,
+     "azimuthDeg": -63
+    },
+    {
+     "id": "Tree_4_C_Color1#04",
+     "p": [
+      1.0739,
+      3.2935,
+      -1.1622
+     ],
+     "n": [
+      -0.1698,
+      0.3979,
+      -0.9016
+     ],
+     "surfaceNormal": [
+      -0.1698,
+      0.3979,
+      -0.9016
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      1.0599,
+      3.3263,
+      -1.2366
+     ],
+     "heightShare": 0.3388,
+     "maxBallR": 0.35,
+     "group": 3,
+     "bgColor": "#338a3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 1.095,
+     "regrowDelayS": 35,
+     "dropOrder": 1,
+     "azimuthDeg": -47
+    },
+    {
+     "id": "Tree_4_C_Color1#05",
+     "p": [
+      0.8057,
+      8.7264,
+      0.1215
+     ],
+     "n": [
+      0.8541,
+      0.2785,
+      0.4392
+     ],
+     "surfaceNormal": [
+      0.8541,
+      0.2785,
+      0.4392
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      0.8762,
+      8.7494,
+      0.1578
+     ],
+     "heightShare": 0.843,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": "#42943b",
+     "contrastDE": {
+      "Tragic": 69,
+      "Comic": 26,
+      "Absurd": 57,
+      "Heroic": 75,
+      "Mystical": 90,
+      "Forbidden": 98
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 1.1,
+     "regrowDelayS": 34,
+     "dropOrder": 5,
+     "azimuthDeg": 9
+    },
+    {
+     "id": "Tree_4_C_Color1#06",
+     "p": [
+      -0.0774,
+      9.6416,
+      0.629
+     ],
+     "n": [
+      -0.3503,
+      0.3799,
+      0.8561
+     ],
+     "surfaceNormal": [
+      -0.3503,
+      0.3799,
+      0.8561
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.1063,
+      9.673,
+      0.6996
+     ],
+     "heightShare": 0.928,
+     "maxBallR": 0.35,
+     "group": 4,
+     "bgColor": "#55a13c",
+     "contrastDE": {
+      "Tragic": 74,
+      "Comic": 27,
+      "Absurd": 52,
+      "Heroic": 74,
+      "Mystical": 95,
+      "Forbidden": 101
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 0.971,
+     "regrowDelayS": 25,
+     "dropOrder": 7,
+     "azimuthDeg": 97
+    },
+    {
+     "id": "Tree_4_C_Color1#07",
+     "p": [
+      -0.2287,
+      9.0421,
+      0.538
+     ],
+     "n": [
+      -0.3632,
+      0.3356,
+      0.8692
+     ],
+     "surfaceNormal": [
+      -0.3632,
+      0.3356,
+      0.8692
+     ],
+     "attach": "surface",
+     "ballCenter": [
+      -0.2587,
+      9.0698,
+      0.6097
+     ],
+     "heightShare": 0.8723,
+     "maxBallR": 0.21,
+     "group": 4,
+     "bgColor": "#338a3a",
+     "contrastDE": {
+      "Tragic": 65,
+      "Comic": 26,
+      "Absurd": 60,
+      "Heroic": 76,
+      "Mystical": 87,
+      "Forbidden": 96
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 0.999,
+     "regrowDelayS": 59,
+     "dropOrder": 6,
+     "azimuthDeg": 113
+    }
+   ],
+   "minSpacing": 0.5665
+  },
+  "Tree_Bare_1_A_Color1": {
+   "model": "Tree_Bare_1_A_Color1",
+   "kind": "bare",
+   "height": 2.8569,
+   "bbox": [
+    [
+     -0.5122,
+     -0.2613,
+     -0.5944
+    ],
+    [
+     0.6164,
+     2.5956,
+     0.4397
+    ]
+   ],
+   "canopyArea": 5.2844,
+   "candidates": 57,
+   "rejected": {
+    "normal": 2684,
+    "low": 3196,
+    "clear": 8,
+    "outward": 0,
+    "pierce": 54,
+    "thick": 1
+   },
+   "target": 12,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 1,
+    "Absurd": 0,
+    "Heroic": 0,
+    "Mystical": 0,
+    "Forbidden": 0
+   },
+   "anchors": [
+    {
+     "id": "Tree_Bare_1_A_Color1#00",
+     "p": [
+      -0.3715,
+      1.3609,
+      -0.0372
+     ],
+     "n": [
+      0.2467,
+      0.5671,
+      0.7858
+     ],
+     "surfaceNormal": [
+      0.2467,
+      0.5671,
+      0.7858
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      -0.3512,
+      1.4077,
+      0.0277
+     ],
+     "heightShare": 0.5678,
+     "maxBallR": 0.33,
+     "group": 1,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Comic",
+     "sizeScale": 0.936,
+     "regrowDelayS": 20,
+     "dropOrder": 1,
+     "azimuthDeg": -174
+    },
+    {
+     "id": "Tree_Bare_1_A_Color1#01",
+     "p": [
+      0.378,
+      1.2474,
+      -0.2743
+     ],
+     "n": [
+      -0.0825,
+      0.99,
+      0.1143
+     ],
+     "surfaceNormal": [
+      -0.0825,
+      0.99,
+      0.1143
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      0.3712,
+      1.3291,
+      -0.2648
+     ],
+     "heightShare": 0.5281,
+     "maxBallR": 0.17,
+     "group": 0,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 1.056,
+     "regrowDelayS": 51,
+     "dropOrder": 0,
+     "azimuthDeg": -36
+    }
+   ],
+   "minSpacing": 0.7833
+  },
+  "Tree_Bare_1_B_Color1": {
+   "model": "Tree_Bare_1_B_Color1",
+   "kind": "bare",
+   "height": 3.2508,
+   "bbox": [
+    [
+     -0.4443,
+     -0.341,
+     -0.9924
+    ],
+    [
+     1.5205,
+     2.9098,
+     0.4588
+    ]
+   ],
+   "canopyArea": 6.6569,
+   "candidates": 252,
+   "rejected": {
+    "normal": 2829,
+    "low": 2870,
+    "clear": 0,
+    "outward": 0,
+    "thick": 49
+   },
+   "target": 12,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 1,
+    "Absurd": 1,
+    "Heroic": 1,
+    "Mystical": 0,
+    "Forbidden": 0
+   },
+   "anchors": [
+    {
+     "id": "Tree_Bare_1_B_Color1#00",
+     "p": [
+      -0.4015,
+      1.5461,
+      -0.0124
+     ],
+     "n": [
+      -0.5163,
+      0.8039,
+      -0.2954
+     ],
+     "surfaceNormal": [
+      -0.5163,
+      0.8039,
+      -0.2954
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      -0.4441,
+      1.6124,
+      -0.0368
+     ],
+     "heightShare": 0.5805,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Comic",
+     "sizeScale": 1.041,
+     "regrowDelayS": 30,
+     "dropOrder": 0,
+     "azimuthDeg": -178
+    },
+    {
+     "id": "Tree_Bare_1_B_Color1#01",
+     "p": [
+      0.3924,
+      1.4801,
+      -0.3414
+     ],
+     "n": [
+      -0.6155,
+      0.6875,
+      -0.3854
+     ],
+     "surfaceNormal": [
+      -0.6155,
+      0.6875,
+      -0.3854
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      0.3416,
+      1.5368,
+      -0.3732
+     ],
+     "heightShare": 0.5602,
+     "maxBallR": 0.28,
+     "group": 99,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 1.101,
+     "regrowDelayS": 23,
+     "dropOrder": 2,
+     "azimuthDeg": -41
+    },
+    {
+     "id": "Tree_Bare_1_B_Color1#02",
+     "p": [
+      1.4472,
+      1.9688,
+      -0.9715
+     ],
+     "n": [
+      -0.8036,
+      0.5499,
+      -0.2276
+     ],
+     "surfaceNormal": [
+      -0.8036,
+      0.5499,
+      -0.2276
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      1.3809,
+      2.0142,
+      -0.9903
+     ],
+     "heightShare": 0.7105,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.991,
+     "regrowDelayS": 35,
+     "dropOrder": 3,
+     "azimuthDeg": -34
+    },
+    {
+     "id": "Tree_Bare_1_B_Color1#03",
+     "p": [
+      0.8255,
+      1.5507,
+      -0.4058
+     ],
+     "n": [
+      0.4367,
+      0.7201,
+      0.5392
+     ],
+     "surfaceNormal": [
+      0.4367,
+      0.7201,
+      0.5392
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      0.8615,
+      1.6101,
+      -0.3613
+     ],
+     "heightShare": 0.5819,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.964,
+     "regrowDelayS": 58,
+     "dropOrder": 1,
+     "azimuthDeg": -26
+    }
+   ],
+   "minSpacing": 0.5252
+  },
+  "Tree_Bare_1_C_Color1": {
+   "model": "Tree_Bare_1_C_Color1",
+   "kind": "bare",
+   "height": 5.2554,
+   "bbox": [
+    [
+     -1.3667,
+     -0.3923,
+     -1.3953
+    ],
+    [
+     2.3703,
+     4.8631,
+     0.6789
+    ]
+   ],
+   "canopyArea": 13.5628,
+   "candidates": 282,
+   "rejected": {
+    "normal": 2544,
+    "low": 3033,
+    "clear": 44,
+    "outward": 0,
+    "pierce": 70,
+    "thick": 27
+   },
+   "target": 12,
+   "coloursUsed": {
+    "Tragic": 2,
+    "Comic": 2,
+    "Absurd": 1,
+    "Heroic": 1,
+    "Mystical": 1,
+    "Forbidden": 1
+   },
+   "anchors": [
+    {
+     "id": "Tree_Bare_1_C_Color1#00",
+     "p": [
+      -1.2928,
+      1.8799,
+      -0.8364
+     ],
+     "n": [
+      0.5696,
+      0.6115,
+      0.5492
+     ],
+     "surfaceNormal": [
+      0.5696,
+      0.6115,
+      0.5492
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      -1.2459,
+      1.9304,
+      -0.7911
+     ],
+     "heightShare": 0.4324,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Absurd",
+     "sizeScale": 0.948,
+     "regrowDelayS": 56,
+     "dropOrder": 1,
+     "azimuthDeg": -147
+    },
+    {
+     "id": "Tree_Bare_1_C_Color1#01",
+     "p": [
+      -1.0405,
+      2.1305,
+      -1.2826
+     ],
+     "n": [
+      0.4473,
+      0.4399,
+      0.7787
+     ],
+     "surfaceNormal": [
+      0.4473,
+      0.4399,
+      0.7787
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      -1.0036,
+      2.1668,
+      -1.2183
+     ],
+     "heightShare": 0.48,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Comic",
+     "sizeScale": 1.046,
+     "regrowDelayS": 20,
+     "dropOrder": 2,
+     "azimuthDeg": -129
+    },
+    {
+     "id": "Tree_Bare_1_C_Color1#02",
+     "p": [
+      -0.6274,
+      1.5213,
+      -0.8454
+     ],
+     "n": [
+      0.7382,
+      0.661,
+      -0.1349
+     ],
+     "surfaceNormal": [
+      0.7382,
+      0.661,
+      -0.1349
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      -0.5665,
+      1.5758,
+      -0.8565
+     ],
+     "heightShare": 0.3641,
+     "maxBallR": 0.35,
+     "group": 5,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Comic",
+     "sizeScale": 0.963,
+     "regrowDelayS": 39,
+     "dropOrder": 0,
+     "azimuthDeg": -126
+    },
+    {
+     "id": "Tree_Bare_1_C_Color1#03",
+     "p": [
+      0.6712,
+      3.2666,
+      -0.0568
+     ],
+     "n": [
+      0.8562,
+      0.3602,
+      -0.3705
+     ],
+     "surfaceNormal": [
+      0.8562,
+      0.3602,
+      -0.3705
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      0.7418,
+      3.2963,
+      -0.0874
+     ],
+     "heightShare": 0.6962,
+     "maxBallR": 0.17,
+     "group": 3,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Forbidden",
+     "sizeScale": 0.943,
+     "regrowDelayS": 58,
+     "dropOrder": 4,
+     "azimuthDeg": -5
+    },
+    {
+     "id": "Tree_Bare_1_C_Color1#04",
+     "p": [
+      0.7474,
+      3.7696,
+      -0.0243
+     ],
+     "n": [
+      -0.7088,
+      0.4479,
+      -0.545
+     ],
+     "surfaceNormal": [
+      -0.7088,
+      0.4479,
+      -0.545
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      0.6889,
+      3.8066,
+      -0.0692
+     ],
+     "heightShare": 0.7919,
+     "maxBallR": 0.21,
+     "group": 3,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Mystical",
+     "sizeScale": 1.085,
+     "regrowDelayS": 46,
+     "dropOrder": 7,
+     "azimuthDeg": -2
+    },
+    {
+     "id": "Tree_Bare_1_C_Color1#05",
+     "p": [
+      2.2493,
+      3.1684,
+      0.0023
+     ],
+     "n": [
+      -0.4763,
+      0.8793,
+      0
+     ],
+     "surfaceNormal": [
+      -0.4763,
+      0.8793,
+      0
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      2.21,
+      3.241,
+      0.0023
+     ],
+     "heightShare": 0.6775,
+     "maxBallR": 0.35,
+     "group": 4,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.961,
+     "regrowDelayS": 43,
+     "dropOrder": 6,
+     "azimuthDeg": 0
+    },
+    {
+     "id": "Tree_Bare_1_C_Color1#06",
+     "p": [
+      1.301,
+      3.1048,
+      0.0516
+     ],
+     "n": [
+      0.1888,
+      0.7113,
+      0.6771
+     ],
+     "surfaceNormal": [
+      0.1888,
+      0.7113,
+      0.6771
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      1.3166,
+      3.1634,
+      0.1075
+     ],
+     "heightShare": 0.6654,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 1.029,
+     "regrowDelayS": 39,
+     "dropOrder": 5,
+     "azimuthDeg": 2
+    },
+    {
+     "id": "Tree_Bare_1_C_Color1#07",
+     "p": [
+      0.4863,
+      2.49,
+      0.6689
+     ],
+     "n": [
+      -0.4449,
+      0.6048,
+      0.6605
+     ],
+     "surfaceNormal": [
+      -0.4449,
+      0.6048,
+      0.6605
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      0.4496,
+      2.5399,
+      0.7234
+     ],
+     "heightShare": 0.5484,
+     "maxBallR": 0.35,
+     "group": 2,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Heroic",
+     "sizeScale": 0.993,
+     "regrowDelayS": 56,
+     "dropOrder": 3,
+     "azimuthDeg": 54
+    }
+   ],
+   "minSpacing": 0.5133
+  },
+  "Tree_Bare_2_A_Color1": {
+   "model": "Tree_Bare_2_A_Color1",
+   "kind": "bare",
+   "height": 3.8428,
+   "bbox": [
+    [
+     -0.6923,
+     -0.3583,
+     -0.2091
+    ],
+    [
+     0.504,
+     3.4845,
+     0.3909
+    ]
+   ],
+   "canopyArea": 3.7947,
+   "candidates": 47,
+   "rejected": {
+    "normal": 3384,
+    "low": 2524,
+    "clear": 20,
+    "outward": 0,
+    "pierce": 24,
+    "thick": 1
+   },
+   "target": 10,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 1,
+    "Absurd": 0,
+    "Heroic": 0,
+    "Mystical": 0,
+    "Forbidden": 0
+   },
+   "anchors": [
+    {
+     "id": "Tree_Bare_2_A_Color1#00",
+     "p": [
+      0.4678,
+      2.5986,
+      -0.0518
+     ],
+     "n": [
+      -0.7021,
+      0.3134,
+      -0.6394
+     ],
+     "surfaceNormal": [
+      -0.7021,
+      0.3134,
+      -0.6394
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      0.4099,
+      2.6244,
+      -0.1045
+     ],
+     "heightShare": 0.7695,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Comic",
+     "sizeScale": 1.149,
+     "regrowDelayS": 58,
+     "dropOrder": 1,
+     "azimuthDeg": -6
+    },
+    {
+     "id": "Tree_Bare_2_A_Color1#01",
+     "p": [
+      -0.4635,
+      1.2404,
+      0.3147
+     ],
+     "n": [
+      0.7001,
+      0.6322,
+      0.3319
+     ],
+     "surfaceNormal": [
+      0.7001,
+      0.6322,
+      0.3319
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      -0.4057,
+      1.2926,
+      0.3421
+     ],
+     "heightShare": 0.416,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 1.01,
+     "regrowDelayS": 34,
+     "dropOrder": 0,
+     "azimuthDeg": 146
+    }
+   ],
+   "minSpacing": 1.6244
+  },
+  "Tree_Bare_2_B_Color1": {
+   "model": "Tree_Bare_2_B_Color1",
+   "kind": "bare",
+   "height": 5.5417,
+   "bbox": [
+    [
+     -0.9556,
+     -0.3588,
+     -0.2337
+    ],
+    [
+     0.8322,
+     5.1829,
+     0.4302
+    ]
+   ],
+   "canopyArea": 5.8188,
+   "candidates": 23,
+   "rejected": {
+    "normal": 2981,
+    "low": 2973,
+    "clear": 13,
+    "outward": 0,
+    "pierce": 10
+   },
+   "target": 12,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 1,
+    "Absurd": 0,
+    "Heroic": 0,
+    "Mystical": 0,
+    "Forbidden": 0
+   },
+   "anchors": [
+    {
+     "id": "Tree_Bare_2_B_Color1#00",
+     "p": [
+      0.7817,
+      3.0304,
+      0.1015
+     ],
+     "n": [
+      -0.5581,
+      0.3174,
+      -0.7667
+     ],
+     "surfaceNormal": [
+      -0.5581,
+      0.3174,
+      -0.7667
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      0.7357,
+      3.0566,
+      0.0383
+     ],
+     "heightShare": 0.6116,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 1.092,
+     "regrowDelayS": 52,
+     "dropOrder": 1,
+     "azimuthDeg": 7
+    },
+    {
+     "id": "Tree_Bare_2_B_Color1#01",
+     "p": [
+      -0.9036,
+      2.0349,
+      0.0175
+     ],
+     "n": [
+      -0.6462,
+      0.3947,
+      0.6531
+     ],
+     "surfaceNormal": [
+      -0.6462,
+      0.3947,
+      0.6531
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      -0.9569,
+      2.0674,
+      0.0714
+     ],
+     "heightShare": 0.4319,
+     "maxBallR": 0.35,
+     "group": 1,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Comic",
+     "sizeScale": 0.92,
+     "regrowDelayS": 23,
+     "dropOrder": 0,
+     "azimuthDeg": 179
+    }
+   ],
+   "minSpacing": 1.9607
+  },
+  "Tree_Bare_2_C_Color1": {
+   "model": "Tree_Bare_2_C_Color1",
+   "kind": "bare",
+   "height": 7.6136,
+   "bbox": [
+    [
+     -0.8364,
+     -0.463,
+     -0.6053
+    ],
+    [
+     0.7416,
+     7.1505,
+     0.4985
+    ]
+   ],
+   "canopyArea": 7.4692,
+   "candidates": 2,
+   "rejected": {
+    "normal": 3190,
+    "low": 2808,
+    "clear": 0,
+    "outward": 0
+   },
+   "target": 12,
+   "coloursUsed": {
+    "Tragic": 1,
+    "Comic": 0,
+    "Absurd": 0,
+    "Heroic": 0,
+    "Mystical": 0,
+    "Forbidden": 0
+   },
+   "anchors": [
+    {
+     "id": "Tree_Bare_2_C_Color1#00",
+     "p": [
+      -0.8074,
+      2.2059,
+      0.4671
+     ],
+     "n": [
+      -0.6961,
+      0.5996,
+      0.3948
+     ],
+     "surfaceNormal": [
+      -0.6961,
+      0.5996,
+      0.3948
+     ],
+     "attach": "branch",
+     "ballCenter": [
+      -0.8648,
+      2.2554,
+      0.4996
+     ],
+     "heightShare": 0.3506,
+     "maxBallR": 0.35,
+     "group": 0,
+     "bgColor": null,
+     "contrastDE": {
+      "Tragic": 100,
+      "Comic": 100,
+      "Absurd": 100,
+      "Heroic": 100,
+      "Mystical": 100,
+      "Forbidden": 100
+     },
+     "proofColour": "Tragic",
+     "sizeScale": 0.963,
+     "regrowDelayS": 40,
+     "dropOrder": 0,
+     "azimuthDeg": 150
+    }
+   ],
+   "minSpacing": null
+  }
+ }
+}

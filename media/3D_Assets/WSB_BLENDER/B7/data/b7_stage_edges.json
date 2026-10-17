@@ -1,0 +1,154 @@
+{
+ "stage": "jungle_computer",
+ "glb": "MeshyModels/_browser/jungle_computer/JungleComputer_A_screen.v2.glb (WSB B7)",
+ "units": "GLB model units (u); Y up, front +Z",
+ "scale_m_per_u": 4.2,
+ "groundY_u": 0.0238,
+ "bottomY_u": 0.0,
+ "footprint": {
+  "space": "xz in u: convex hull of geometry 0\u20130,5 m above ground (approximation; WS0 method uses the slab section)",
+  "winding": "counter-clockwise seen from above",
+  "points": [
+   [
+    -0.8843,
+    -0.1955
+   ],
+   [
+    -0.883,
+    -0.1842
+   ],
+   [
+    -0.8393,
+    0.0519
+   ],
+   [
+    -0.8173,
+    0.1547
+   ],
+   [
+    -0.7724,
+    0.3533
+   ],
+   [
+    -0.7644,
+    0.3862
+   ],
+   [
+    -0.6745,
+    0.7478
+   ],
+   [
+    -0.5999,
+    0.8454
+   ],
+   [
+    -0.5732,
+    0.8659
+   ],
+   [
+    -0.3282,
+    0.89
+   ],
+   [
+    -0.2895,
+    0.8933
+   ],
+   [
+    0.1432,
+    0.8642
+   ],
+   [
+    0.2335,
+    0.8513
+   ],
+   [
+    0.3005,
+    0.8218
+   ],
+   [
+    0.3128,
+    0.8125
+   ],
+   [
+    0.6971,
+    0.3963
+   ],
+   [
+    0.8134,
+    0.0772
+   ],
+   [
+    0.8842,
+    -0.2085
+   ],
+   [
+    0.8837,
+    -0.2189
+   ],
+   [
+    0.6926,
+    -0.4714
+   ],
+   [
+    0.6631,
+    -0.4952
+   ],
+   [
+    0.5783,
+    -0.5509
+   ],
+   [
+    0.3631,
+    -0.6653
+   ],
+   [
+    -0.1674,
+    -0.8944
+   ],
+   [
+    -0.1839,
+    -0.8901
+   ],
+   [
+    -0.5017,
+    -0.6757
+   ],
+   [
+    -0.745,
+    -0.5062
+   ],
+   [
+    -0.8637,
+    -0.3116
+   ]
+  ],
+  "count": 28,
+  "area_m2": 40.7
+ },
+ "edgePalette": [
+  {
+   "hex": "#5a610d",
+   "share": 43.9
+  },
+  {
+   "hex": "#645213",
+   "share": 27.9
+  },
+  {
+   "hex": "#72601e",
+   "share": 18.0
+  },
+  {
+   "hex": "#977943",
+   "share": 5.2
+  },
+  {
+   "hex": "#c09b72",
+   "share": 5.0
+  }
+ ],
+ "edgePaletteMethod": "base colour on faces 0\u20130,5 m above ground within 1 m of the footprint edge (10211 samples), k-means k=5 in OKLab, near-black/white dropped, shares >=4%",
+ "terrainMode": "ground",
+ "lod1Tris": 25000,
+ "groundYNote": "WSB 17.10.: 98 % der Unterseite liegen 6,1\u20136,6 cm \u00fcber dem tiefsten Punkt (einzelne Steinspitzen ragen tiefer; Strahlenraster 120x120, scripts/b7_ground_gap.py). groundY = 6,3 cm Schwebe + ca. 4 cm Einsinken (ca. 20 % der untersten Stufe 0,19 m, V-396) = 0,10 m = 0,0238 u. Terrain-Sch\u00fcrze/Verwehungen: WS1 Schritt 4 (V-341)."
+}

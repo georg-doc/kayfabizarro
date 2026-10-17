@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dschungel-Computer Bühne</title>
+<style>html,body{margin:0;background:#cfd9e2;overflow:hidden;font:13px system-ui}#msg{position:fixed;left:8px;top:6px;color:#333}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/","three-mesh-bvh":"https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.8.3/build/index.module.js"}}</script>
+</head><body><div id="msg">lädt …</div>
+<script type="module">
+/* WSB · B7 · Dschungel-Computer (Meshy, V-397) auf der Knete-Bühne.
+   Bühne wie Fluff-Bühne (WSB B2-R2): J17-Sonne ohne Gegen-/Randlicht (V-392), Fülllicht Kameraseite, fitShadow nach LESSONS_SHADOWS mit engem
+   Tiefenbereich + Texel-Bias, Himmel skydome_a, Ton-Terrain K1. Modell in Metern: s m/u, Basis y = 0.
+   ?mode=markers (Messkontrolle) | frame&variant=A|B&cam=weit|nah  ·  speichert nach /save/renders/ */
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { computeBoundsTree, acceleratedRaycast } from 'three-mesh-bvh';
+THREE.BufferGeometry.prototype.computeBoundsTree = computeBoundsTree; THREE.Mesh.prototype.raycast = acceleratedRaycast;
+const Q = new URLSearchParams(location.search), MODE = Q.get('mode') || 'markers', S = +(Q.get('s') || 4.2);
+const job = window.__job = { done: false, err: null, log: [], out: null };
+const log = s => { job.log.push(s); document.getElementById('msg').textContent = s; };
+const save = async (path, body) => { const r = await fetch('/save/' + path, { method: 'POST', body }); if (!r.ok) throw new Error('save ' + path); return path; };
+const V = (x = 0, y = 0, z = 0) => new THREE.Vector3(x, y, z), loader = new GLTFLoader();
+const CM = await import('../../proof/vendor/clay-material.v8.js'); const CR = await import('../../proof/vendor/clay-relief.v2.js');
+let CU = null;
+async function clayUniforms() { if (CU) return CU;
+  const rel = CR.makeClayRelief({ size: 1024, seed: 11 }), tx = new THREE.DataTexture(rel.data, rel.size, rel.size, THREE.RGBAFormat);
+  tx.wrapS = tx.wrapT = THREE.RepeatWrapping; tx.magFilter = THREE.LinearFilter; tx.minFilter = THREE.LinearMipmapLinearFilter; tx.generateMipmaps = true; tx.anisotropy = 8; tx.needsUpdate = true;
+  CU = CM.makeClayUniforms(THREE, tx);
+  try { CU.uClayPrint.value = await CM.makePrintTexture(THREE, new URL('../../proof/vendor/Fingerprints01_3K.png', import.meta.url).href, 2048); CU.uClayPrintOn.value = 1; } catch (e) { CU.uClayPrint.value = tx; }
+  const HK = 1 / 0.47; CU.uClayHand.value = 0.5 * HK; CU.uClayTile.value = 1.6 * HK; CU.uClayPrintTile.value = 4.5 * HK; CU.uClayFacetSize.value = 0.65 * HK; return CU; }
+async function clayify(root, profile, seed0) { const U = await clayUniforms(); const mc = new Map(); let n = 0;
+  root.traverse(o => { if (!o.isMesh || o.userData.noClay) return; o.castShadow = o.receiveShadow = true; const conv = m => { if (!mc.has(m)) mc.set(m, CM.makeClayMaterial(THREE, U, { src: m, profile, scale: CM.PROFILES[profile].scale / 0.47 })); return mc.get(m); };
+    o.material = Array.isArray(o.material) ? o.material.map(conv) : conv(o.material); if (!o.geometry.attributes.claySeed) CM.seedGeometry(THREE, o.geometry, seed0 + (n++)); }); }
+
+const W = 1920, H = 1080, renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H); renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene(); const sky = await new THREE.TextureLoader().loadAsync('../assets/sky/skydome_a.webp'); sky.mapping = THREE.EquirectangularReflectionMapping; sky.colorSpace = THREE.SRGBColorSpace; scene.background = sky;
+const el = THREE.MathUtils.degToRad(48.99), az = THREE.MathUtils.degToRad(-53.13), SUN = V(Math.sin(az) * Math.cos(el), Math.sin(el), Math.cos(az) * Math.cos(el)).normalize();
+scene.add(new THREE.HemisphereLight(0xeef4fa, 0x9a8a78, 1.05));
+const sun = new THREE.DirectionalLight(0xfff4e6, 2.9); sun.castShadow = true; scene.add(sun, sun.target); const SMAX = Math.min(8192, renderer.capabilities.maxTextureSize); sun.shadow.mapSize.set(SMAX, SMAX);
+const fill = new THREE.DirectionalLight(0xffe6d6, 0.15 * 2.9); fill.position.set(2, 8, 20); scene.add(fill);
+function fitShadow(box) { const sph = box.getBoundingSphere(new THREE.Sphere()), r = Math.ceil(Math.max(0.6, sph.radius * 1.12) * 8) / 8, texel = 2 * r / SMAX;
+  const fwd = SUN.clone().negate(), right = V().crossVectors(fwd, V(0, 1, 0)).normalize(), up = V().crossVectors(right, fwd).normalize(), c = sph.center;
+  const ctr = V().addScaledVector(right, Math.round(c.dot(right) / texel) * texel).addScaledVector(up, Math.round(c.dot(up) / texel) * texel).addScaledVector(fwd, c.dot(fwd));
+  sun.position.copy(ctr).addScaledVector(SUN, r + 30); sun.target.position.copy(ctr); sun.target.updateMatrixWorld();
+  const near = 30 - r * 1.15, far = 30 + r * 1.15; Object.assign(sun.shadow.camera, { left: -r, right: r, top: r, bottom: -r, near, far }); sun.shadow.camera.updateProjectionMatrix();
+  sun.shadow.normalBias = texel * 1.5; sun.shadow.bias = -(0.5 * texel) / (far - near); }
+/* Gelände: leicht gewellter Ton-Boden in Dschungel-Erde */
+const geo = new THREE.PlaneGeometry(80, 80, 200, 200); geo.rotateX(-Math.PI / 2); const gp = geo.attributes.position;
+for (let i = 0; i < gp.count; i++) { const x = gp.getX(i), z = gp.getZ(i), d = Math.hypot(x, z); gp.setY(i, d < 5 ? -0.03 : (0.12 * Math.sin(x * 0.35) * Math.cos(z * 0.3) + 0.06 * Math.sin(x * 0.9 - z * 0.6)) * THREE.MathUtils.smoothstep(d, 5, 9) - 0.03); }
+geo.computeVertexNormals(); const ground = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: Q.get('ground') || '#8c7a52', roughness: 1 })); ground.receiveShadow = true; scene.add(ground); await clayify(ground, 'nature', 3); ground.castShadow = false;
+
+const VAR = Q.get('variant') || 'A', FILE = Q.get('file') || (MODE === 'markers' ? 'JungleComputer_A_browser.glb' : 'JungleComputer_' + (VAR === 'idle' ? 'A' : VAR) + '_screen.v1.glb');
+const g = await loader.loadAsync('../assets/' + FILE), comp = g.scene; let baseImg = null; comp.traverse(o => { if (o.isMesh && o.material.map) baseImg = o.material.map.image; });
+const texRead = (() => { const c = document.createElement('canvas'); c.width = baseImg.width; c.height = baseImg.height; const x = c.getContext('2d'); x.drawImage(baseImg, 0, 0); const d = x.getImageData(0, 0, c.width, c.height).data;
+  return (u, v) => { const px = Math.min(c.width - 1, Math.max(0, Math.floor(u * c.width))), py = Math.min(c.height - 1, Math.max(0, Math.floor(v * c.height))), i = (py * c.width + px) * 4; return new THREE.Color(d[i] / 255, d[i + 1] / 255, d[i + 2] / 255); }; })(); comp.scale.setScalar(S); scene.add(comp); comp.updateMatrixWorld(true);
+/* Bildschirm-Teile: Ruhe-Motiv leuchtet (unlit), Kartenfläche zeigt die Testkarte, Rahmen ist Knete; Ruhezustand ohne Rahmen/Karte */
+const card = await new THREE.TextureLoader().loadAsync('../assets/testcard.png'); card.colorSpace = THREE.SRGBColorSpace; card.anisotropy = 8; card.flipY = false; // glTF-UV-Konvention
+let frame = null, slotM = null, idle = null; comp.traverse(o => { if (!o.isMesh) return; const n = (o.name + ' ' + (o.parent && o.parent.name)).toLowerCase();
+  if (n.includes('kfb_screen_frame')) frame = o; else if (n.includes('kfb_screen_slot')) slotM = o; else if (n.includes('kfb_screen_idle')) idle = o; });
+if (idle) { idle.material = new THREE.MeshBasicMaterial({ map: idle.material.map, toneMapped: false, color: new THREE.Color(0.92, 0.95, 0.92) }); idle.userData.noClay = true; idle.castShadow = false; }
+if (slotM) { slotM.material = new THREE.MeshBasicMaterial({ map: card, toneMapped: false }); slotM.userData.noClay = true; slotM.castShadow = false; }
+if (VAR === 'idle') { if (frame) frame.visible = false; if (slotM) slotM.visible = false; } else if (idle) idle.visible = false;
+const box = new THREE.Box3().setFromObject(comp); comp.position.y -= box.min.y + 0.02; comp.updateMatrixWorld(true); await clayify(comp, 'prop', 40);
+fitShadow(new THREE.Box3().setFromObject(comp).expandByScalar(0.8));
+const meas = await fetch('../assets/b7_measure.json').then(r => r.json()), U2M = a => V(a[0] * S, a[1] * S + comp.position.y, a[2] * S);
+const cam = new THREE.PerspectiveCamera(30, W / H, 0.1, 400);
+function look(pos, at, fov = 30) { cam.fov = fov; cam.position.copy(pos); cam.lookAt(at); cam.updateProjectionMatrix(); }
+const shot = () => renderer.domElement.toDataURL('image/png');
+try {
+  const ray = new THREE.Raycaster(), hsl = {}; ray.firstHitOnly = true; comp.traverse(o => { if (o.isMesh) o.geometry.computeBoundsTree(); });
+  /* Raster-Messung (Modellraum u): Strahlen gegen -Z auf die Front; Texel am Treffer entscheidet. Glas = dunkles Grün, Linse = sattes Rot/Orange */
+  function grid(x0, x1, y0, y1, step, test) { const hits = []; comp.updateMatrixWorld(true);
+    for (let x = x0; x <= x1; x += step) for (let y = y0; y <= y1; y += step) { const o = U2M([x, y, 2]); ray.set(o, V(0, 0, -1)); const h = ray.intersectObject(comp, true)[0]; if (!h || !h.uv) continue;
+      h.object.material.map; const c = texRead(h.uv.x, h.uv.y); c.getHSL(hsl); if (test(hsl, c)) hits.push({ x, y, z: (h.point.z) / S, n: h.face.normal.clone().transformDirection(h.object.matrixWorld) }); }
+    return hits; }
+  const ext = hs => { const xs = hs.map(h => h.x).sort((a, b) => a - b), ys = hs.map(h => h.y).sort((a, b) => a - b), q = (a, p) => a[Math.floor(p * (a.length - 1))];
+    return { n: hs.length, x: [q(xs, 0.01), q(xs, 0.99)], y: [q(ys, 0.01), q(ys, 0.99)], zMed: hs.map(h => h.z).sort((a, b) => a - b)[hs.length >> 1] }; };
+  const glass = grid(-0.35, 0.25, 0.42, 0.9, 0.004, (h, c) => h.h * 360 > 85 && h.h * 360 < 175 && h.s > 0.25 && h.l < 0.32);
+  const red = grid(0.29, 0.46, 0.49, 0.65, 0.002, (h, c) => (h.h * 360 < 42 || h.h * 360 > 345) && h.s > 0.6 && h.l > 0.2 && h.l < 0.8); // nur der rechte Lautsprecher (Bildkontrolle 1: Holz-Totem fiel mit hinein)
+  /* Linse = dichteste rote Gruppe (Median + Radius-Schnitt) */
+  let lens = red; for (let k = 0; k < 5 && lens.length > 6; k++) { const mx = lens.map(h => h.x).sort((a, b) => a - b)[lens.length >> 1], my = lens.map(h => h.y).sort((a, b) => a - b)[lens.length >> 1]; lens = lens.filter(h => Math.hypot(h.x - mx, h.y - my) < 0.06); }
+  const G = ext(glass), L = ext(lens), M2 = { glass: G, lens: { ...L, center: [(L.x[0] + L.x[1]) / 2, (L.y[0] + L.y[1]) / 2, L.zMed], radius_u: Math.max(L.x[1] - L.x[0], L.y[1] - L.y[0]) / 2 } };
+  M2.screen = { center_u: [(G.x[0] + G.x[1]) / 2, (G.y[0] + G.y[1]) / 2, G.zMed], width_u: G.x[1] - G.x[0], height_u: G.y[1] - G.y[0] };
+  await save('data/b7_grid_measure.json', JSON.stringify(M2, null, 1));
+  meas.screen = { ...meas.screen, center_u: M2.screen.center_u, width_u: M2.screen.width_u, height_u: M2.screen.height_u, right: [1, 0, 0], up: [0, 1, 0] }; meas.lens = { ...meas.lens, center_u: M2.lens.center };
+  if (MODE === 'markers') { const mk = new THREE.Group(); scene.add(mk); const mat = c => new THREE.MeshBasicMaterial({ color: c, depthTest: false });
+    const sc = meas.screen, c = U2M(sc.center_u), r = V(...sc.right), u = V(...sc.up), w = sc.width_u * S, h = sc.height_u * S;
+    const pts = [[-1, -1], [1, -1], [1, 1], [-1, 1], [-1, -1]].map(([a, b]) => c.clone().addScaledVector(r, a * w / 2).addScaledVector(u, b * h / 2));
+    const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: 0xff2080, depthTest: false })); line.renderOrder = 9; mk.add(line);
+    for (const [k, col] of [['lens', 0xffee00], ['mask', 0x00e0ff]]) { const s = new THREE.Mesh(new THREE.SphereGeometry(0.06, 16, 12), mat(col)); s.renderOrder = 9; s.position.copy(U2M(meas[k].center_u)); mk.add(s); }
+    look(V(0, c.y + 0.4, 9.5), V(0, c.y - 0.3, 0), 30); renderer.render(scene, cam); job.out = await save('renders/B7_check_markers.png', shot()); }
+  if (MODE === 'frame') { const sc = U2M(meas.screen.center_u), ck = Q.get('cam') || 'weit';
+    if (ck === 'weit') look(V(2.6, 2.4, 13.5), V(0.1, 2.0, 0), 30); else if (ck === 'lautsprecher') { const sp = U2M([-0.40, 0.67, 0.0]); look(V(sp.x + 0.35, sp.y + 0.15, 2.4), V(sp.x, sp.y - 0.02, sp.z), 26); } else look(V(0.6, sc.y + 0.25, 4.6), V(-0.15, sc.y - 0.05, 0), 32);
+    renderer.render(scene, cam); job.out = await save('renders/B7_' + VAR + '_' + ck + (Q.get('tag') || '') + '.png', shot()); }
+  log('ok'); job.done = true;
+} catch (e) { job.err = String(e && e.stack || e); log('FEHLER ' + job.err); }
+</script></body></html>

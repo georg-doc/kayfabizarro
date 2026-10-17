@@ -1,0 +1,81 @@
+{
+ "schema": "kfb.wsb-b1-video-plan.v1",
+ "audio": "pharaoh_piledriver__suno_01a.mp3 (full mix, 117.748 BPM)",
+ "song_from_s": 81.91,
+ "song_to_s": 96.94,
+ "fps": 30,
+ "w": 1920,
+ "h": 1080,
+ "blend_s": 0.25,
+ "section": "Chorus 1 \u00b7 \"Pharaoh, Pharaoh, Piledriver! Wrestle like a mummy master!\"",
+ "figs": {
+  "A": [
+   {
+    "clip": "kfb_dance_house_a",
+    "from_song_s": 81.91,
+    "to_song_s": 90.062,
+    "anchor_beat_song_s": 81.91,
+    "clip_time_at_anchor": 0.52,
+    "timeScale": 1.2556
+   },
+   {
+    "clip": "kfb_dance_wave_hip_hop_a",
+    "from_song_s": 90.062,
+    "to_song_s": 96.94,
+    "anchor_beat_song_s": 90.062,
+    "clip_time_at_anchor": 0.452,
+    "timeScale": 0.9457
+   }
+  ],
+  "B": [
+   {
+    "clip": "kfb_dance_house_a",
+    "from_song_s": 81.91,
+    "to_song_s": 90.062,
+    "anchor_beat_song_s": 81.91,
+    "clip_time_at_anchor": 0.52,
+    "timeScale": 1.2556
+   },
+   {
+    "clip": "kfb_dance_hip_hop_a",
+    "from_song_s": 90.062,
+    "to_song_s": 96.94,
+    "anchor_beat_song_s": 90.062,
+    "clip_time_at_anchor": 0.334,
+    "timeScale": 1.1661
+   }
+  ]
+ },
+ "beats_mix": [
+  81.91,
+  82.419,
+  82.928,
+  83.438,
+  83.947,
+  84.457,
+  84.966,
+  85.476,
+  85.985,
+  86.495,
+  87.005,
+  87.515,
+  88.024,
+  88.534,
+  89.043,
+  89.553,
+  90.062,
+  90.572,
+  91.081,
+  91.591,
+  92.1,
+  92.61,
+  93.12,
+  93.629,
+  94.139,
+  94.648,
+  95.158,
+  95.667,
+  96.177,
+  96.686
+ ]
+}
