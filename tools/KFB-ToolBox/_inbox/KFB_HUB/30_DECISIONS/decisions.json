@@ -5643,6 +5643,21 @@
    "applies": "nach Slice-3-Stufe A"
   },
   {
+   "id": "V-409",
+   "date": "2026-10-17",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Neue Figuren in die ToolBox-Studio (Georgs Begriff: vorhandene ToolBox mit Studio/Animation/Rigging/Motion-Tabs = „Figuren-Werkstatt“): Lord Hunky + Lady Dory r4, Norman, Brain-Cyborg über Figurenkarten (WSA work, Hub b88); Brain-Cyborg-Körper zuerst als WSB-Job B10 (BodyParts3D-Hirn, CC BY-SA mit Namensnennung, im Space-Ranger-Kragen, E2-Sockel). WS1 liefert direkt nach dem L3-Merge zwei Pakete: kfb-stage-light.v1.js und kfb-figure-loader.v1.js (Schema/EyeRig/SHA256/Clay/Sheen-Prüfung, sichtbare Ablehnung) mit festem Pfad und API (Hub b90). Dramatis Personae: Lese-R1 ohne 3D jetzt auf Staging, 3D nach den WS1-Paketen (Hub b89). ToolBox-Studio darf bis dahin den eigenen Renderer regelkonform nutzen (kein Rand-/Gegenlicht, Sheen ≤ 0,05, Clay, warmes Figurenlicht).",
+   "values": {},
+   "owner": "WSA work · WS1 · WSB",
+   "check": "Screenshots je Figur mit Clay, Georgs Werte in den Karten",
+   "source": "Hub b88–b90 · WSA_DRAMATIS_PERSONAE_R1_RETURN",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gefixte Aliens, Norman und Brain-Cyborg fehlten in der ToolBox; zwei Werkzeuge warten auf dieselben WS1-Module.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5715,7 +5730,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:728",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:730",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

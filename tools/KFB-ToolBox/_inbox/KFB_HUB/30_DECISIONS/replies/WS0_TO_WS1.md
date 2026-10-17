@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 17.10.2026 · Zwei Module früh liefern: Licht + Figurenkarten-Loader – V-409
+Zwei Konsumenten warten (Dramatis-Personae-Tab der Asset-Bibliothek, ToolBox-Studio). Bitte **direkt nach dem L3-Merge, vor der Look-Slice**:
+1. `kfb-stage-light.v1.js` (liegt auf `l3/licht`) als vendorbares Paket auf GitHub mit festem Pfad (z. B. Branch `ws1/vendor`, Ordner `ws1/vendor/`), kurze Import-API, Versions-Pin.
+2. **`kfb-figure-loader.v1.js`**: liest `kfb.figure/1` (`replies/FIGURES_R1/figures/*.figure.json`), prüft Schema, eyeRig vorhanden, SHA256 des Körper-GLB, Clay-Profil, Sheen ≤ 0,05; lädt Körper + EyeRig + Mund/Brauen; **lehnt sichtbar ab** (rote Meldung) statt still zu rendern. Derselbe Loader ersetzt `stageCast`/`createActor`-Direktladen in der Bühne (V-402.4).
+3. README mit API und Beispiel, damit WSA ihn 1:1 einbinden kann.
+
 ## 17.10.2026 · Kamera: ruckelfrei, träges Zurückgleiten, Orbit von allen Seiten, God-Mode-Zoom zum Cursor – V-408
 Georg: Die freie Kamera ruckelt. Die Kamera-Logik ist längst festgelegt – bitte genau danach bauen (Bewegungs-Sitzung, nach Slice-3-Stufe A, die ohnehin den festen Zeitschritt bringt):
 1. **Spielmodus (V-025, V-088):** Figur/Auto/Fahrzeug jederzeit **von allen Seiten** ansehen (freier Orbit per Maus, auch während der Bewegung). Bei Bewegung **träges Zurückgleiten** hinter die Figur (Recenter nur in Bewegung, gedämpft – V-088: Orbit-Feder ω 7,5, Arm rein 8/s, raus 3/s, Recenter 1,6/s; in J17-Metern nachgestellt nach V-345). Zoom Rad/Touchpad normalisiert und gedämpft bis Ich-Perspektive.

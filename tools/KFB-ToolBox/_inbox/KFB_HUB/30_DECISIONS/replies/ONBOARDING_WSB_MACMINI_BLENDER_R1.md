@@ -58,3 +58,6 @@ Per diorama GLB (amphitheatre first, then the Meshy stages), add a second vertex
 - **B = role**: 0 ground · 1 towers/arches · 2 tiers/steps · 3 rock · 4 frame · 5 accent/props.
 - **A = 255.**
 Record the channels in the stage descriptor (`kfb.stage-descriptor/1`, field `vertexChannels: {COLOR_1: {id: "RG16", role: "B"}}`). Detect islands from the original mesh (connectivity + edge creases/UV islands), not from the decimated mesh. Proof: ID map rendered in false colour plus role map. WS1 then picks per ID in the speckle module (V-403) the role colour or a fleck colour, seedable and organic.
+
+## B10 · Brain-Cyborg body (V-349/V-409), after B5 (Space Ranger head turn)
+Build the brain head in the Space Ranger collar: brain from `~/Dropbox/CLAUDE/MeshyModels/Meshy Community/bodyparts3d-brain-review.glb` (BodyParts3D, **CC BY-SA**, so record attribution and licence in the RETURN and the card), darker brain skin tone in clay, seated exactly in the collar following the B5 recipe (no neck, collar visible). Eye sockets for E2 lids (V-348) with `KFB_Eye_*_anchor` facing front, brow anchors, and a mouth zone for the first new cartoon mouth. Output: GLB + `brain_cyborg.figure.json` draft + clay proofs front/¾/side. Then WSA adds it to ToolBox-Studio.
