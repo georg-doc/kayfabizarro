@@ -1,8 +1,8 @@
 {
   "schema": "kfb.ws1-build/1",
-  "commit": "kfb-planet look/mesa@d193606 (Branch, nicht main: Figurenkarten V-391, Farbwelt Joyride-Rollen, Knet-Amphitheater, Sprenkel-Band V-403, Gelände um Meshy-Bühnen, perf-Anzeige; auf main@3e3b9d2)",
-  "date": "2026-10-17T10:30:00+02:00",
-  "tests": { "suite": "npm test", "passed": 25, "total": 25 },
+  "commit": "Kombi look/mesa@d193606 + m3/fahrhilfe@2cc2562 (Hilfsstand 7d2a688; Branches, nicht main)",
+  "date": "2026-10-17T12:40:00+02:00",
+  "tests": { "suite": "scripts/m1/run-all.sh + unit figures/speckle/terrainStitch", "passed": 50, "total": 50, "info": "m1-rueckwand nur Bericht" },
   "links": {
     "stage": "#stage,actors=fb,light=l1",
     "stageGold": "#stage,actors=fb,light=l1,tod=gold",
@@ -15,7 +15,9 @@
     "perf": "#stage,actors=fb,light=l1,perf",
     "m1": "#m1",
     "car": "#m1,car",
+    "carGold": "#m1,car,tod=gold",
+    "carNoAssist": "#m1,car,assist=off",
     "lineup": "#stage,light=l1,lineup=1"
   },
-  "notes": "Vorschau eines Branch-Stands zum Ansehen (V-400: kein main-Merge ohne Georg). M1/M2 hier noch ohne Licht-Modul-Umzug (der liegt auf m3/fahrhilfe)."
+  "notes": "Gemeinsame Vorschau: Figurenkarten, Farbwelt Joyride-Rollen, Knet-Amphitheater, Sprenkel-Band, Gelände um Meshy-Bühnen, Licht-Modul auch in M1/M2 (Zweitschatten weg), Fahrhilfe M3 A–F (M an/aus, Shift Boost). Stufe G folgt. Kein main-Merge ohne Georg (V-400)."
 }
