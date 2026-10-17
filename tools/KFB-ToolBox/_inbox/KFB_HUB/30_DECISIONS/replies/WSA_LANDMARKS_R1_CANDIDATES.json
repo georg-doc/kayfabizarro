@@ -1,0 +1,1084 @@
+{
+  "schema": "kfb.landmark-candidates/1",
+  "revision": "R1-research-unrendered",
+  "date": "2026-10-17",
+  "ticket": "V-421",
+  "owner": "KFB existing Asset Librarian view / existing img2threejs landmark authoring",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "docs/kfb-decisions-register-2026-10-11",
+  "authority": "WS0 only decides priority; Georg selects asset after source isolation and Clay preview",
+  "mode": "RESEARCH_ONLY",
+  "gateStatus": "SOURCE_RESEARCH_NOT_ELIGIBLE_FOR_GEORG_SELECTION",
+  "licensePolicy": "CC0 preferred, CC BY with recorded attribution; reject NC/paid/private unless separate later agreement, no actual asset mirrored",
+  "sourceAudit": "Public web listings reviewed; downloaded meshes, formats and source licenses not independently inspected",
+  "mcp3dAssets": {
+    "configuredAt": "Dropbox /CLAUDE/.mcp.json",
+    "endpoint": "https://3d.shep.bot/mcp",
+    "availableToWebChat": false,
+    "searchAssetsCalls": 0,
+    "getAssetCalls": 0
+  },
+  "previewPolicy": {
+    "V346": "clay preview required per candidate before Georg",
+    "V383": "never draw markup over source image",
+    "allCandidatePreviewsGenerated": 0,
+    "sourceIsolatedMeshes": 0
+  },
+  "assetLibraryView": {
+    "name": "Landmark-Kandidaten",
+    "owner": "existing KFB Asset Librarian Site; do not create separate tool",
+    "state": "SPEC_ONLY_NO_UI_WRITE",
+    "selectButtonLabel": "Auswählen",
+    "buttonState": "DISABLED_UNTIL_LICENSE_SOURCE_CLAY_PREVIEW_VERIFIED",
+    "selectionPersistence": "existing Site/owner decision flow; no invented save backend"
+  },
+  "summary": {
+    "landmarks": 10,
+    "sourceRecords": 23,
+    "clayPreviews": 0,
+    "eligibleForSelection": 0
+  },
+  "landmarks": [
+    {
+      "id": "stonehenge",
+      "rank": 1,
+      "name": "Stonehenge",
+      "decks": [
+        "woad_and_warriors",
+        "platos_dungeon_raid_*"
+      ],
+      "geniusLoci": "Druid as ring announcer, solstice main event",
+      "cartoonification": {
+        "instructions": "Reuse existing KFB grouped monoliths; oversize upright stones, rounded lintels; palette existing Stonehenge structure #969789, moss #71796e, gold accent #c7a65e.",
+        "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
+        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+      },
+      "candidates": [
+        {
+          "id": "st-kfb",
+          "title": "KFB Pilot-06 Stonehenge",
+          "sourceUrl": "https://github.com/georg-doc/kayfabizarro/blob/main/tools/img2threejs/landmarks/pilot-06/index.html",
+          "sourceRole": "existing_owner_donor",
+          "license": {
+            "spdx": "KFB-OWN-SOURCE",
+            "attributionRequired": false,
+            "creator": "KFB img2threejs",
+            "creditLine": "KFB Pilot-06 Stonehenge — KFB img2threejs; source https://github.com/georg-doc/kayfabizarro/blob/main/tools/img2threejs/landmarks/pilot-06/index.html; KFB-OWN-SOURCE",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": false,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 1596,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Reuse-first. Internal source reports 1,596 triangles; third-party sublicensing not inferred.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "st-oga",
+          "title": "4-piece Stonehenge [OpenDungeons]",
+          "sourceUrl": "https://opengameart.org/node/30878",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "eugeneloza",
+            "creditLine": "4-piece Stonehenge [OpenDungeons] — eugeneloza; source https://opengameart.org/node/30878; CC0-1.0",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 640,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "OpenGameArt Stonehenge.zip; 392 vertices / 320 faces. Zip internals uninspected.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "st-sketch",
+          "title": "Stonehenge by neosearch",
+          "sourceUrl": "https://sketchfab.com/3d-models/stonehenge-50fbd4391bbc4c2ebe09537c22eb858e",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "neosearch",
+            "creditLine": "Stonehenge by neosearch — neosearch; source https://sketchfab.com/3d-models/stonehenge-50fbd4391bbc4c2ebe09537c22eb858e; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 504,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Sketchfab listing; downloadable subject to site access.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        }
+      ],
+      "georgDecision": "PENDING_PREVIEW",
+      "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
+    },
+    {
+      "id": "bremen",
+      "rank": 2,
+      "name": "Bremen Town Musicians",
+      "decks": [
+        "grimms_kayfabe_legends_expansion_set_02",
+        "the_bards_barnyard_beatdown"
+      ],
+      "geniusLoci": "Donkey/dog/cat/rooster tag-team stack, robber house heel lair",
+      "cartoonification": {
+        "instructions": "Four exaggerated stacked animals, rounded feet, deliberately readable silhouettes; earth cream and warm character colours from V-305 palette, no hardcoded new palette.",
+        "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
+        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+      },
+      "candidates": [
+        {
+          "id": "br-pets",
+          "title": "Kenney Cube Pets",
+          "sourceUrl": "https://kenney.nl/assets/cube-pets",
+          "sourceRole": "construction_kit_only",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "Kenney",
+            "creditLine": "Kenney Cube Pets — Kenney; source https://kenney.nl/assets/cube-pets; CC0-1.0",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": null,
+            "polygons": null,
+            "metric": "not_published",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "NOT a Bremen statue. Animal roster and four requested silhouettes require archive inspection.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "br-proto",
+          "title": "Kenney Prototype Kit",
+          "sourceUrl": "https://kenney.nl/assets/prototype-kit",
+          "sourceRole": "construction_kit_only",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "Kenney",
+            "creditLine": "Kenney Prototype Kit — Kenney; source https://kenney.nl/assets/prototype-kit; CC0-1.0",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": null,
+            "polygons": null,
+            "metric": "not_published",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "NOT a statue model; blocks/pedestal/robber-house scaffold only. No direct statue asset verified.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        }
+      ],
+      "georgDecision": "PENDING_PREVIEW",
+      "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
+    },
+    {
+      "id": "neuschwanstein",
+      "rank": 3,
+      "name": "Neuschwanstein",
+      "decks": [
+        "grimms_kayfabe_legends_expansion_set_02",
+        "nibelungen_booster_pack_design"
+      ],
+      "geniusLoci": "Ludwig II dream booker; theatrical tower tour and Wagner/Nibelungen mural cards",
+      "cartoonification": {
+        "instructions": "Reduce to stepped towers, big turrets and balcony; caramel-cream stone, periwinkle roofs, warm gold accent proposed through V-305.",
+        "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
+        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+      },
+      "candidates": [
+        {
+          "id": "neu-kit",
+          "title": "Kenney Castle Kit",
+          "sourceUrl": "https://kenney.nl/assets/castle-kit",
+          "sourceRole": "construction_kit_only",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "Kenney",
+            "creditLine": "Kenney Castle Kit — Kenney; source https://kenney.nl/assets/castle-kit; CC0-1.0",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": null,
+            "polygons": null,
+            "metric": "not_published",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "75-model architectural kit; NOT a faithful Neuschwanstein asset.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "neu-photo",
+          "title": "Neuschwanstein Castle, Bavaria, Germany",
+          "sourceUrl": "https://sketchfab.com/3d-models/neuschwanstein-castle-bavaria-germany-7d6d970009724dbda4fc5c5ffa303577",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "Brian Trepanier",
+            "creditLine": "Neuschwanstein Castle, Bavaria, Germany — Brian Trepanier; source https://sketchfab.com/3d-models/neuschwanstein-castle-bavaria-germany-7d6d970009724dbda4fc5c5ffa303577; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 1500000,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [
+            "DECIMATION_REQUIRED"
+          ],
+          "notes": "Extremely heavy; source listing only, photogrammetry/attribution of original geometry not checked.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        }
+      ],
+      "georgDecision": "PENDING_PREVIEW",
+      "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
+    },
+    {
+      "id": "ur",
+      "rank": 4,
+      "name": "Ziggurat of Ur",
+      "decks": [
+        "the_uruk_rumble"
+      ],
+      "geniusLoci": "Gilgamesh stair-arena, clay-tablet announcements",
+      "cartoonification": {
+        "instructions": "Broad hero stairs, 3 bold platform tiers, playable steps; baked-earth terracotta and warm sand from V-305.",
+        "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
+        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+      },
+      "candidates": [
+        {
+          "id": "ur-build",
+          "title": "Ziggurat",
+          "sourceUrl": "https://sketchfab.com/3d-models/ziggurat-f2ffb4bd5200400eac37fbce5c010ef0",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "History Builds",
+            "creditLine": "Ziggurat — History Builds; source https://sketchfab.com/3d-models/ziggurat-f2ffb4bd5200400eac37fbce5c010ef0; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 44700,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Visual/site identity to confirm as Ziggurat of Ur, not automatically Ur reconstruction.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "ur-kit",
+          "title": "Kenney Prototype Kit",
+          "sourceUrl": "https://kenney.nl/assets/prototype-kit",
+          "sourceRole": "construction_kit_only",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "Kenney",
+            "creditLine": "Kenney Prototype Kit — Kenney; source https://kenney.nl/assets/prototype-kit; CC0-1.0",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": null,
+            "polygons": null,
+            "metric": "not_published",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Stepped construction donor, not historical digital scan.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        }
+      ],
+      "georgDecision": "PENDING_PREVIEW",
+      "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
+    },
+    {
+      "id": "babel",
+      "rank": 5,
+      "name": "Tower of Babel — Bruegel form",
+      "decks": [
+        "epistemic_sabotage",
+        "unspoken_systems_kayfabizarro_meta_deck_01"
+      ],
+      "geniusLoci": "Polyglot Parrot at summit; floors disagree about card languages",
+      "cartoonification": {
+        "instructions": "Open, offset concentric galleries with oversized arches; warm ochre masonry, muted teal shadow role, ochre-gold accent via V-305.",
+        "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
+        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+      },
+      "candidates": [
+        {
+          "id": "ba-loiz",
+          "title": "Tower of Babel",
+          "sourceUrl": "https://sketchfab.com/3d-models/tower-of-babel-a4e601c636b842879cd7eea15",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "loiz",
+            "creditLine": "Tower of Babel — loiz; source https://sketchfab.com/3d-models/tower-of-babel-a4e601c636b842879cd7eea15; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 65200,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Bruegel likeness requires visual source-isolated check; 56.3k source vertices.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "ba-alvaro",
+          "title": "Tower of Babel",
+          "sourceUrl": "https://sketchfab.com/3d-models/tower-of-babel-13b66768d08f4e3ca59a04210c1d0b15",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "AlvaroL",
+            "creditLine": "Tower of Babel — AlvaroL; source https://sketchfab.com/3d-models/tower-of-babel-13b66768d08f4e3ca59a04210c1d0b15; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 3800000,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [
+            "DECIMATION_REQUIRED"
+          ],
+          "notes": "Heavy source; flatten shell and replace repetitive arches with reusable modular modules.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        }
+      ],
+      "georgDecision": "PENDING_PREVIEW",
+      "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
+    },
+    {
+      "id": "globe",
+      "rank": 6,
+      "name": "Globe Theatre",
+      "decks": [
+        "shakespearean_animal_beatdown",
+        "uncle_frizzlebob_s_tragic_flaws_shakespeare"
+      ],
+      "geniusLoci": "Wooden O as wrestling ring; Bard as manager",
+      "cartoonification": {
+        "instructions": "Radial timber ring, open roof and audience tiers, oversized stage; timber honey/cream and red cloth accent via V-305.",
+        "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
+        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+      },
+      "candidates": [
+        {
+          "id": "gl-shoreditch",
+          "title": "Shoreditch Theatre",
+          "sourceUrl": "https://sketchfab.com/3d-models/shoreditch-theatre-30cc5fe94bd949c3b165e2d2409cb3c5",
+          "sourceRole": "architectural_reference_donor",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "novusod",
+            "creditLine": "Shoreditch Theatre — novusod; source https://sketchfab.com/3d-models/shoreditch-theatre-30cc5fe94bd949c3b165e2d2409cb3c5; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 6400,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Historically different predecessor, NOT the actual Globe; roof/wall grammar only.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "gl-kenney",
+          "title": "Kenney Castle Kit",
+          "sourceUrl": "https://kenney.nl/assets/castle-kit",
+          "sourceRole": "construction_kit_only",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "Kenney",
+            "creditLine": "Kenney Castle Kit — Kenney; source https://kenney.nl/assets/castle-kit; CC0-1.0",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": null,
+            "polygons": null,
+            "metric": "not_published",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Generic timber-like building donor; not Globe Theatre geometry.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        }
+      ],
+      "georgDecision": "PENDING_PREVIEW",
+      "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
+    },
+    {
+      "id": "moai",
+      "rank": 7,
+      "name": "Moai · Rapa Nui",
+      "decks": [
+        "forget_utopia",
+        "ignore_dystopia",
+        "embrace_protopia"
+      ],
+      "geniusLoci": "Moai talk back; avoid deterministic collapse myth",
+      "cartoonification": {
+        "instructions": "Rounded monumental faces and three distinct expressions, grounded plinth; volcanic stone charcoal, mineral cream edge and island vegetation from host roles.",
+        "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
+        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+      },
+      "candidates": [
+        {
+          "id": "mo-stylized",
+          "title": "Stylized Low Poly Moai",
+          "sourceUrl": "https://sketchfab.com/3d-models/stylized-low-poly-moai-976a26a8e0e94b3f90b26992ace92af5",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "leunamanuelgc",
+            "creditLine": "Stylized Low Poly Moai — leunamanuelgc; source https://sketchfab.com/3d-models/stylized-low-poly-moai-976a26a8e0e94b3f90b26992ace92af5; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 252,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Best lightweight cartoon donor.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "mo-museum",
+          "title": "Moai — Museo Nacional de Historia Natural de Chile",
+          "sourceUrl": "https://sketchfab.com/3d-models/moai-7099390468214c2dbcf283454e7b5c8a",
+          "sourceRole": "cultural_reference_donor",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "Museo Nacional de Historia Natural de Chile",
+            "creditLine": "Moai — Museo Nacional de Historia Natural de Chile — Museo Nacional de Historia Natural de Chile; source https://sketchfab.com/3d-models/moai-7099390468214c2dbcf283454e7b5c8a; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 171400,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "The museum listing is CC BY, NOT CC0. Cultural contextualization and source respect required; not a generic Moai field scan.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "mo-low",
+          "title": "Low Poly Moai",
+          "sourceUrl": "https://sketchfab.com/3d-models/low-poly-moai-a6613687895d4eb0a778242083ebb824",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "XzavierStuffs",
+            "creditLine": "Low Poly Moai — XzavierStuffs; source https://sketchfab.com/3d-models/low-poly-moai-a6613687895d4eb0a778242083ebb824; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 1500,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Alternative lightweight silhouette.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        }
+      ],
+      "georgDecision": "PENDING_PREVIEW",
+      "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
+    },
+    {
+      "id": "liberty",
+      "rank": 8,
+      "name": "Statue of Liberty / Liberty Island",
+      "decks": [
+        "federal_kayfabe",
+        "kayfabizzaro_politics"
+      ],
+      "geniusLoci": "Torch as loan lamp, island as a Fed vault",
+      "cartoonification": {
+        "instructions": "Make crown, torch and pedestal read at a distance; oxidized mint-patina, warm cream pedestal, restrained gold flame from V-305.",
+        "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
+        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+      },
+      "candidates": [
+        {
+          "id": "li-pol",
+          "title": "Statue of Liberty",
+          "sourceUrl": "https://sketchfab.com/3d-models/statue-of-liberty-8789c44648254d6fba0608439daf25d3",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "Polskaball",
+            "creditLine": "Statue of Liberty — Polskaball; source https://sketchfab.com/3d-models/statue-of-liberty-8789c44648254d6fba0608439daf25d3; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 1700,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Island/terrain absent; stage composition later.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "li-craf",
+          "title": "Statue of Liberty",
+          "sourceUrl": "https://sketchfab.com/3d-models/statue-of-liberty-de104ba657a14df099bde10cd9bbf4f2",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "Crafteri",
+            "creditLine": "Statue of Liberty — Crafteri; source https://sketchfab.com/3d-models/statue-of-liberty-de104ba657a14df099bde10cd9bbf4f2; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 21200,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Island/terrain absent; city-island geometry not verified.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "li-grav",
+          "title": "Statue of Liberty",
+          "sourceUrl": "https://sketchfab.com/3d-models/statue-of-liberty-84094e8d5e724b5c882cf576ca12e44e",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "Gravity Jack",
+            "creditLine": "Statue of Liberty — Gravity Jack; source https://sketchfab.com/3d-models/statue-of-liberty-84094e8d5e724b5c882cf576ca12e44e; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 56900,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "Detail baseline; costlier retopo.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        }
+      ],
+      "georgDecision": "PENDING_PREVIEW",
+      "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
+    },
+    {
+      "id": "chichen",
+      "rank": 9,
+      "name": "Chichén Itzá · El Castillo + ball court",
+      "decks": [
+        "sonic_warfare_music_history_01",
+        "combat_arena_mvp_4"
+      ],
+      "geniusLoci": "Stair chirp as quetzal; Maya ballcourt separate arena",
+      "cartoonification": {
+        "instructions": "Stepped temple with outsized ball-court rings, feathered serpent motif; limestone cream, verdant shadow and clay red accents from V-305.",
+        "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
+        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+      },
+      "candidates": [
+        {
+          "id": "ch-oga",
+          "title": "Chichén Itzá — El Castillo",
+          "sourceUrl": "https://opengameart.org/content/chichen-itza-el-castillo",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC0-1.0",
+            "attributionRequired": false,
+            "creator": "elopez7 / Esteban Lopez",
+            "creditLine": "Chichén Itzá — El Castillo — elopez7 / Esteban Lopez; source https://opengameart.org/content/chichen-itza-el-castillo; CC0-1.0",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": null,
+            "polygons": null,
+            "metric": "not_published",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "OpenGameArt chichenitza.zip (34.2MB), pyramid/temple; polygon count and archive internals NOT inspected.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "ch-phot",
+          "title": "Chichen Itza Yucatan Photogrammetry Test",
+          "sourceUrl": "https://sketchfab.com/3d-models/chichen-itza-yucatan-photogrammetry-test-cadcd48c10cb404da78e293256c7fac5",
+          "sourceRole": "cultural_reference_donor",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "Nick G. Gizelis",
+            "creditLine": "Chichen Itza Yucatan Photogrammetry Test — Nick G. Gizelis; source https://sketchfab.com/3d-models/chichen-itza-yucatan-photogrammetry-test-cadcd48c10cb404da78e293256c7fac5; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 228900,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [],
+          "notes": "High-poly reference; ball court absent/unverified.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        }
+      ],
+      "georgDecision": "PENDING_PREVIEW",
+      "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
+    },
+    {
+      "id": "borobudur",
+      "rank": 10,
+      "name": "Borobudur",
+      "decks": [
+        "kreative_kayfab_creative_hero_journey",
+        "kayfabizarro_monomyth_mayhem"
+      ],
+      "geniusLoci": "Pilgrim's mandala path; stupas as stage checkpoints",
+      "cartoonification": {
+        "instructions": "Keep 3-tier mandala walk, oversized bells, broad stairs; volcanic-grey stone, cream relief and warm clay accents through V-305.",
+        "paletteAuthority": "V-305 approved kfb-cartoon-palette.js; KFB landmark default City Grotesque; source Stonehenge palette reused where present",
+        "clayColourStatus": "PROPOSED_NOT_RENDERED"
+      },
+      "candidates": [
+        {
+          "id": "bo-meshy",
+          "title": "Borobudur Temple Complex",
+          "sourceUrl": "https://sketchfab.com/3d-models/borobudur-temple-complex-da47fe2900bc4e3b81fef8e6f10c4f5d",
+          "sourceRole": "site_model",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "czepedas",
+            "creditLine": "Borobudur Temple Complex — czepedas; source https://sketchfab.com/3d-models/borobudur-temple-complex-da47fe2900bc4e3b81fef8e6f10c4f5d; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 1200000,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [
+            "SOURCE_PROVENANCE_RECHECK",
+            "DECIMATION_REQUIRED"
+          ],
+          "notes": "Source says Meshy generated; license alone does NOT prove underlying architectural source ownership; source provenance audit needed.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        },
+        {
+          "id": "bo-relief",
+          "title": "Borobudur 3rd Floor Relief Pictograph",
+          "sourceUrl": "https://sketchfab.com/3d-models/borobudur-3rd-floor-relief-pictograph-2c49eeb628684757b8f0f87165a12007",
+          "sourceRole": "detail_reference_only",
+          "license": {
+            "spdx": "CC-BY-4.0",
+            "attributionRequired": true,
+            "creator": "PHAC",
+            "creditLine": "Borobudur 3rd Floor Relief Pictograph — PHAC; source https://sketchfab.com/3d-models/borobudur-3rd-floor-relief-pictograph-2c49eeb628684757b8f0f87165a12007; CC BY, creator credit and modifications to be recorded",
+            "upstreamVerification": "listing_only_not_file_audited"
+          },
+          "files": {
+            "downloadable": true,
+            "formatsConfirmed": [],
+            "archiveType": null,
+            "archiveInspected": false
+          },
+          "geometry": {
+            "triangles": 50000,
+            "metric": "source_listing_triangles",
+            "verifiedAgainstDownloadedMesh": false
+          },
+          "media": {
+            "thumbnailUrl": null,
+            "thumbnailStatus": "NOT_EXTRACTED_OR_VALIDATED",
+            "clayPreviewUrl": null,
+            "clayPreviewStatus": "NOT_RENDERED",
+            "sourceIsolatedProofUrl": null,
+            "overlayOnPreviewAllowed": false
+          },
+          "rightsFlags": [
+            "NO_AI_USE",
+            "NOT_FULL_TEMPLE"
+          ],
+          "notes": "Relief, NOT complete temple. Creator NoAI restriction: do not feed mesh to Meshy or other AI; manual Blender source review only.",
+          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+        }
+      ],
+      "georgDecision": "PENDING_PREVIEW",
+      "previewGate": "BLOCKED_NO_ISOLATED_CLAY_PREVIEW"
+    }
+  ],
+  "exclusions": [
+    {
+      "url": "https://sketchfab.com/3d-models/ziggurat-of-ur-01a917691d344f3d801f67151de6b2f0",
+      "reason": "CC BY-NC commercial restriction"
+    },
+    {
+      "url": "https://sketchfab.com/3d-models/chichen-itza-pyramid-3d-reconstruction-a073249838ad419c8beb35ff32bebf3d",
+      "reason": "CC BY-NC"
+    }
+  ],
+  "excludedPlaces": [
+    "Giza",
+    "Portal Ruin",
+    "Akashic Library",
+    "Atlantis",
+    "Cologne",
+    "amphitheatre",
+    "Mesa/Canyon",
+    "Goblin Bank",
+    "Dystopia/Utopia",
+    "comic broadcast",
+    "jungle computer",
+    "cat in beer glass",
+    "evil clown",
+    "WTC",
+    "Auschwitz",
+    "Hiroshima",
+    "Mount Rushmore"
+  ],
+  "nextGate": "WSA_V421_ACTUAL_ASSET_RETRIEVAL_SOURCE_ISOLATION_CLAY_PREVIEW"
+}
