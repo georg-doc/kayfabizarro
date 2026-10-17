@@ -1,0 +1,16 @@
+name: KFB Therapy R4 lyric gate
+on:
+  push:
+    branches:
+      - "songs/the_carnival_of_unsolved_problems_therapy-r4-2026-10-17"
+permissions:
+  contents: read
+jobs:
+  r4_lexical_format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact plugin triplet_set_check.py
+        run: python3 songs/the_carnival_of_unsolved_problems_therapy/triplet_set_check.py songs/the_carnival_of_unsolved_problems_therapy/the_carnival_of_unsolved_problems_therapy.qa.deck.json songs/the_carnival_of_unsolved_problems_therapy/the_carnival_of_unsolved_problems_therapy.qa.set.csv
+      - name: R4 Unicode format gate
+        run: python3 songs/the_carnival_of_unsolved_problems_therapy/format_gate.py

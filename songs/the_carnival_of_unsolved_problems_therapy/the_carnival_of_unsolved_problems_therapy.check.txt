@@ -1,0 +1,7 @@
+R4 Therapy pre-review gate · source registry blob 5b13138a77163fb7091dcc38a63797c481f5b134 / pdf.json 70dd75345de9878c9341198f95cad1b559843b5a
+Numbered cards: 48; 47 playable lines included, #48 is Back Cover / Manifesto meta.
+JS source vocabulary comparison against canonical card name, lore, power and pdf.json artworkPrompt: 47/47 PASS.
+JS 80–95 character card lines: 47/47 PASS; blank line after each beat: 1:1 by construction.
+17 unique opener tags; all 47 card beats; zero songLine transformations; entire song 4753 Unicode characters (<5000).
+Python triplet_set_check.py exact: PENDING CI; lexical QA fixture derived from canonical + pdf.json art tokens.
+Separate format_gate.py: PENDING CI. Blind review: BLIND_REVIEW_PENDING, no scores; one revision pending reviewer.
