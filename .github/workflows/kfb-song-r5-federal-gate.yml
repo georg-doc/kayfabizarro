@@ -1,0 +1,30 @@
+name: KFB Federal R5 Canonical Song Gates
+on:
+  push:
+    branches: ["songs/federal_kayfabe-r5-2026-10-17"]
+permissions:
+  contents: read
+jobs:
+  r5-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect R4 corpus
+        shell: bash
+        run: |
+          mkdir -p .song-corpus
+          for b in 1001_kayfabe_nights frizzlebob_bloedsinnland_alice the_carnival_of_unsolved_problems_therapy dream_wrestling_with_kayfabe_freud the_kayfabe_money_trail_9_11; do
+            branch="songs/${b}-r4-2026-10-17"
+            git fetch --depth=1 origin "refs/heads/${branch}:refs/remotes/origin/${branch}"
+            git ls-tree -r --name-only "refs/remotes/origin/${branch}" | grep '\.suno\.txt$' | while IFS= read -r p; do
+              git show "refs/remotes/origin/${branch}:$p" > ".song-corpus/${b}-$(basename "$p")"
+            done
+          done
+      - name: Triplet original part one
+        run: python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py songs/federal_kayfabe/federal_kayfabe.r5.qa.deck.json songs/federal_kayfabe/federal_kayfabe.part1.r5.qa.set.csv
+      - name: Song original part one
+        run: python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/federal_kayfabe/federal_kayfabe.part1.r5.suno.txt --deck registry/assets/v1/decks/federal_kayfabe.json --songlines songs/federal_kayfabe/federal_kayfabe.songlines.json --media media/kfb/Federal_Kayfabe_-_ADD_web.pdf.json --cards 1-28 --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2 .song-corpus
+      - name: Triplet original part two
+        run: python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py songs/federal_kayfabe/federal_kayfabe.r5.qa.deck.json songs/federal_kayfabe/federal_kayfabe.part2.r5.qa.set.csv
+      - name: Song original part two
+        run: python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/federal_kayfabe/federal_kayfabe.part2.r5.suno.txt --deck registry/assets/v1/decks/federal_kayfabe.json --songlines songs/federal_kayfabe/federal_kayfabe.songlines.json --media media/kfb/Federal_Kayfabe_-_ADD_web.pdf.json --cards 29-60 --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2 .song-corpus
