@@ -1,7 +1,22 @@
 # WS1_STATUS · R3F-Spielrahmen (Branch `ws1/r3f-frame`)
 
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
-Neueste Einträge oben (§70 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+Neueste Einträge oben (§71 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
+
+## 71 · 17.10. · Langlauf (V-375/V-400) · L3 technisch fertig: main @3e3b9d2 (24/24) · Vorschau mit build.json host-neutral
+
+- **Merge:** L3 nach kfb-planet main (Georg: „ja, so umsetzen“, §69.1.3).
+  - Inhalt: Licht-Modul `kfb-stage-light.v1`, Stimmung Mesa als Standard mit ACES (V-402), Knete-Look R2, matte Tafel, Vergleichsleiste V-383, Hochformat-Kamera.
+  - Licht-Test L3: Mesa-Standard plus J17-Referenz (`lset=r2`) geprüft. Gold-Füllung 0,82 (nicht dunkler als Tag, V-050).
+  - Spiegel ws1/r3f-frame @20c399f3, Vorschau @cd75b9bb, Check grün.
+  - `test:lineup` (65 MB) nicht erneut gefahren; Fahrzeug-Knet nur Rauheit und Öl geändert.
+- **build.json** nach V-356 host-neutral: nur Hash-Ziele (stage, stageGold, stageNight, lookProbeOTown, m1, car, lineup).
+- **Nächste Schritte im Langlauf:**
+  1. Bewegungs-Sitzung zieht M1/M2 auf das Licht-Modul (Zweitschatten Auto), dann M3.
+  2. WS1: Figurenkarten-Lader (V-391/V-402.4) auf eigenem Branch.
+  3. Look-Slice (Farbdrehbuch, Amphitheater voll nach Rollen, Knet-Boden, Sprenkel-Modul V-403).
+  4. Wenn Zeit: Slice 1 sichtbar.
+  - Kein weiterer main-Merge ohne Georg (V-400).
 
 ## 70 · 17.10. · Look-Probe Umfärbung (Joyride A/B/C) · Farbsprengsel steinweise (Bitte an WS0 → WSB) · s1 gespiegelt
 
