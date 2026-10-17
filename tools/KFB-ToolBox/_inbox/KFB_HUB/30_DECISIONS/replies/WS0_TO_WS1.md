@@ -11,6 +11,14 @@
 
 
 
+
+## 18.10. · Addendum to the found items: presentation (V-437)
+Georg: **Props, food, drinks and similar found items float at hip height of the Medium rig** and rotate slowly with a gentle bob (pickup principle as in Whackman). **Fluff, in contrast, lies on the ground**: it bounces, rolls and comes to rest (the C3 physics stays as it is).
+- Hover height = hip height of the Medium rig (derive it from the rig, not a fixed number); ±5 % bob, ~1 turn per 3 s, phase randomised per item so they don't move in sync.
+- A soft contact shadow on the ground helps readability; no glow, no outline (one light rig, V-385).
+- Pick up still with "I"/Interagieren (V-434). Fluff still collected automatically on contact.
+- B28 set (42 GLBs, public) is in Hub q20 for Georg; use it once PASS, until then the KayKit/Tiny Treats originals with clay v1.1.
+
 ## 18.10. · Found items in the terrain + backpack (V-434), right after C3 together with HUD R5f
 Georg's concept:
 - **Frequent:** colourful sweets, snacks, drinks and food lie around the terrain. Sources: KayKit Restaurant Bits, Resource Bits; Tiny Treats Baked Goods, Bakery Interior, Charming Kitchen, Pleasant Picnic; all _FREE, so public.

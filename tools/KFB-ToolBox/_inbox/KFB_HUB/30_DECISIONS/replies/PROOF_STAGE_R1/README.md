@@ -1,3 +1,7 @@
+## v1.1.1 (18.10., WS0)
+- `render.mjs` defaults to all three eye states (rest, half, closed), so the sheet has no gaps.
+- `detail_low`: if the entrance is blocked from the stage camera (e.g. the bento shrine behind the bowl), set `extras.kfb.entrances[0].proof = false`; the cell then shows "Detail unten" without the entrance. (A free entrance camera was tried and discarded; it ended up inside the geometry.)
+
 # KFB Abnahme-Bühne v1.1 (`kfb-proof-stage.v1.1`) · how to use it
 
 > **v1.1 (18.10.)** keeps everything from v1 and adds a dedicated layout for `--type stage` and `--type prop`: a **3 × 3 contact sheet with no empty cells**.

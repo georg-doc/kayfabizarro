@@ -334,7 +334,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     }
     /* v1.1: entrance for 'detail_low' (WSB root extras kfb.entrances[]: pos_u in the root node's frame, forward_xz) */
     let entrance = null;
-    root.traverse((o) => { const en = o.userData?.kfb?.entrances; if (!entrance && Array.isArray(en) && en.length && Array.isArray(en[0].pos_u)) entrance = { node: o, id: en[0].id || 'main', pos: new THREE.Vector3(...en[0].pos_u), fwd: en[0].forward_xz || [0, 1], width_m: en[0].width_m ?? null }; });
+    root.traverse((o) => { const en = o.userData?.kfb?.entrances; if (!entrance && Array.isArray(en) && en.length && Array.isArray(en[0].pos_u) && en[0].proof !== false) entrance = { node: o, id: en[0].id || 'main', pos: new THREE.Vector3(...en[0].pos_u), fwd: en[0].forward_xz || [0, 1], width_m: en[0].width_m ?? null }; });
     S = { root, turntable, aoProxy, scene, rig, ao, cove, coveClay, sil, eyes, clay, type, id, card, bounds: B, Hs, rxz, s, loadErrors, skipClay, hidden, faceParts, units, k, eyePixels: null, entrance };
     S.head = type === 'character' ? headBounds(THREE, root, eyes) : null;
     if (eyes?.status === 'OK') S.eyePixels = measureEyePixels();

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-437 Fundsachen schweben auf Hüfthöhe (Medium-Rig) und drehen/floaten wie Whackman-Pickups; Fluff liegt, springt, rollt am Boden. Abnahme-Bühne v1.1.1 (alle drei Augenzustände als Standard, Eingang abschaltbar per proof:false). Hub q19 Ninjas B26 + Aiko-Bento, q20 Fundsachen B28 (je Bögen der Abnahme-Bühne).
 - V-436 Styles tanzbar: D13b (100–130 BPM, kein Noir/Downtempo, Genre-Rotation über 5 Songs), song_gate style; WSA-Brief b110 ergänzt.
 - V-435 Intro/Outro FAIL „AI slop“: SONG_SPEC R3.4 (Kaltstart mit Deck-Titel, Stand-up für Normies + Dog Whistles für Experten, satirische Outro-Pointe, kein Objekt-Acting, Slop-Liste); song_gate C9/C13, Kritiker-Prompt; WSA Neufassung der Rahmen R4.5/R5.1 (Hub b110); Songkarten b103–b109 als FAIL markiert.
 - V-434 Fundsachen: häufig Süßes/Snacks/Drinks/Essen, selten surreale Werkzeuge/Requisiten; Fluff automatisch, Requisiten mit „I“/Interagieren in den Rucksack (HUD R5f), Wegwerfen im Rucksack-Detail. WS1-Notiz, WSB 28. Nachtrag (B28 Fundsachen-Set, nur _FREE).

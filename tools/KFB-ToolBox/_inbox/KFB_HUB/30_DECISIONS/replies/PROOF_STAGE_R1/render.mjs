@@ -2,7 +2,7 @@
 // KFB Abnahme-Bühne v1 · headless export (WS0 PROOF_STAGE_R1). Drives proof-stage.html in headless Chrome (playwright-core from the Lab
 // node_modules, read only, as in the CLAY_SSOT golden test) and writes PNGs + contact sheet + proof_manifest.json.
 //
-//   node render.mjs --card <figure.json | id> [--glb <path>] [--type character|prop|stage] [--views front,threeq,...] [--eyes rest,closed]
+//   node render.mjs --card <figure.json | id> [--glb <path>] [--type character|prop|stage] [--views front,threeq,...] [--eyes rest,half,closed]
 //                   [--units kaykit|m] [--stage v1.1|v1] --out <dir>
 //   Default views: character = front,threeq,side,back,near_face,far,scale_ref · prop/stage (v1.1) = front,threeq,side,back,top,near_face,
 //   detail_low,far,scale_ref (3 x 3 sheet, no empty cells). --stage v1 drives proof-stage.v1.html (kfb-proof-stage.v1, frozen).
@@ -32,10 +32,10 @@ const ALL_VIEWS = ['front', 'threeq', 'side', 'back', 'near_face', 'far', 'scale
 const argv = process.argv.slice(2), A = {};
 for (let i = 0; i < argv.length; i++) { const k = argv[i]; if (k.startsWith('--')) { const v = argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[++i] : true; A[k.slice(2)] = v; } }
 const die = (m, code = 2) => { console.error('render.mjs: ' + m); process.exit(code); };
-if (A.help || (!A.card && !A.glb && !A.id) || !A.out) die('usage: node render.mjs --card <figure.json|id> [--glb <path>] [--type character|prop|stage] [--views a,b] [--eyes rest,closed] [--units kaykit|m] --out <dir>');
+if (A.help || (!A.card && !A.glb && !A.id) || !A.out) die('usage: node render.mjs --card <figure.json|id> [--glb <path>] [--type character|prop|stage] [--views a,b] [--eyes rest,half,closed] [--units kaykit|m] --out <dir>');
 let views = A.views ? String(A.views).split(',').map((s) => s.trim()).filter(Boolean) : null;   // default per type after load (DEFAULT_VIEWS)
 const STAGE = String(A.stage || 'v1.1'); if (!['v1', 'v1.1'].includes(STAGE)) die('--stage v1 | v1.1');
-const eyes = String(A.eyes || 'rest,closed').split(',').map((s) => s.trim()).filter(Boolean);
+const eyes = String(A.eyes || 'rest,half,closed').split(',').map((s) => s.trim()).filter(Boolean);  // v1.1.1: default = all three eye states (uniform sheets)
 for (const v of views || []) if (!ALL_VIEWS.includes(v)) die('unknown view ' + v + ' (' + ALL_VIEWS.join(', ') + ')');
 for (const e of eyes) if (!ALL_EYES.includes(e)) die('unknown eye state ' + e + ' (' + ALL_EYES.join(', ') + ')');
 const OUT = path.resolve(A.out); fs.mkdirSync(OUT, { recursive: true });
