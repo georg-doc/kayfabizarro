@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-17 · Writer’s Room JSON-first
+- V-387 Lichtregie (Story-Mode-Figurenlicht inkl. Licht von unten, Spot-Pop-in, Verfolger, Disco-Kugel-Finale, lights[]-Spur); V-388 Audio Footstep-First ACK (Hub b74), Motor-Sets auf HOLD/reduziert.
 - V-386: warmes Figurenlicht als echtes Licht im Rig (Gesicht/Mund nie Halbschatten, nicht überstrahlt, Catchlight), Messung L-9; b73 ergänzt.
 - V-385: Licht-Modell R2 nach Audit (28 Quellen): ein Rig/ein Tonemapping/eine Material-Antwort, toneSplit und unbeleuchtete Karte entfallen, Praktische + Billboard-Lampen; WS1-Licht-Lauf L3 vor Slice 1 (Hub b73).
 - V-384: WSB = Blender-Arbeitsplatz auf dem Mac mini (Onboarding + Jobs B1–B5, Hub b72), Ausgabe über Dropbox 50_BLENDER.

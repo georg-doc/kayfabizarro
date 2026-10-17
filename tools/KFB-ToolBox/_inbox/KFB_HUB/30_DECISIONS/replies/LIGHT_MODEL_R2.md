@@ -67,3 +67,27 @@ Figuren bekommen ein **eigenes, warmes Figurenlicht**, damit Gesicht, Augen, Bra
 | L-9 | Figurenlicht | Gesicht ≥ 0,9 × Bühnen-Mittel, Clipping Gesicht < 0,1 %, Mund/Stirn ≥ 0,85, warm |
 | L-8 | Budget | V-329-Pool, p95 ≥ 30 fps Zielgerät, ≤ 300 Draw Calls |
 Beweis: 3 Stimmungen × (Totale, Nah FB, Nah Karte) × 16:9 + 9:16, mit Clay, **ohne Overlays** (V-383); erster Durchgang mit fester Belichtung.
+
+---
+# Part B · Light direction as staging (V-387, Georg 17.10.) — after L3 PASS
+Once the rig is clean (part A), light becomes part of the staging, the way it is in cartoons. The **character light (rule 11)** can be set per moment and per story mode, not just made brighter or darker. Light cues belong to choreography, like dance and mouth.
+
+## B1 · Character light per story mode (direction + colour, not only colour)
+| Story mode | Character light | Effect |
+|---|---|---|
+| Comic | flat, bright, frontal, warm | cheerful, readable |
+| Heroic | warm key at 3/4 from slightly below, strong silhouette, back light warm | larger than life |
+| Tragic | cool top light, eyes slightly in shadow (mouth still readable) | heavy, lonely |
+| Absurd | hard coloured spot from the side, ochre/gold accent | crooked, comic |
+| Mystical | violet from below or the side, soft halo of the room (not of the figure) | strange, magical |
+| Forbidden | **light from below**, wine red, low face light | spooky, uncanny |
+The V-292 colours tint the light. Measurement L-9 (mouth readable, nothing blown out) applies in every mode.
+
+## B2 · Performance light in front of the billboard
+- **"Spot on":** when a figure steps up, a spotlight appears in the cartoon way: it pops in with an elastic scale on the cone and a visible soft light cone (additive mesh, no fog volume). It switches on **ahead of time**, half a beat before the entrance.
+- **Follow spot** on the lead during their passage. It gets brighter and narrower when the voice gets louder or stands out (from the stem level in `kfb.performance/1`).
+- **Disco ball as the climax:** when a deck song is unlocked or the finale is reached, a disco ball appears with light dots wandering over the stage and figures, and the colours change on the beat. Donor candidates: the Resident dance scene, and the birthday start screen (branch `alignment/a0-travel-race-2026-09-17`, `kfb-hub/index.html`); WS1/WSB locate the exact file.
+- **Budget:** at most one real spot plus the character light; disco dots as a projected texture or decals, not real lights.
+
+## B3 · Light cues in the data
+`kfb.performance/1` gets a `lights[]` track: `{t, type: spot_on|spot_off|follow|disco_on|disco_off|mode, target, storyMode, intensity}`, snapped to beats, with spot_on lead time of −½ beat. The camera has base positions (wide, medium, close) and the light presets are tuned so they work from those positions.

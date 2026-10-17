@@ -5312,6 +5312,36 @@
    "applies": "L3"
   },
   {
+   "id": "V-387",
+   "date": "2026-10-17",
+   "area": "Licht",
+   "verdict": "RULE",
+   "text": "Lichtregie als Inszenierung (Georg 17.10., Teil B von LIGHT_MODEL_R2, nach L3-PASS): Figurenlicht je Story-Mode in Richtung und Farbe (z. B. Forbidden = Licht von unten, spooky; Heroic = warm von schräg unten; Tragic = kühles Oberlicht), Messung L-9 gilt immer. Performance vor dem Billboard: Spot erscheint cartoonig (Pop-in mit Lichtkegel) einen halben Schlag vor dem Auftritt, Verfolger auf den Lead (lauter = heller/enger aus Stem-Pegel), Disco-Kugel als Höhepunkt beim freigespielten Song (Spender Resident-Dance-Szene bzw. Geburtstags-Startscreen). kfb.performance/1 bekommt eine lights[]-Spur auf Beats; Licht-Presets für die Kamera-Grundpositionen. Budget: ein echter Spot + Figurenlicht, Disco-Punkte als Projektion.",
+   "values": {},
+   "owner": "WS1 (nach L3) · WS0 (Datenformat lights[]) · WSB (Choreo-Timing)",
+   "check": "Probe Pharaoh-Duett mit Spot + Disco-Finale",
+   "source": "replies/LIGHT_MODEL_R2.md Teil B · Georg 17.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Licht ist im Cartoon Teil der Inszenierung; Story-Modes und Auftritte leben von Lichtrichtung und Timing.",
+   "applies": "nach L3-PASS"
+  },
+  {
+   "id": "V-388",
+   "date": "2026-10-17",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "Audio Footstep-First (WSA-Plan FOOTSTEP_PILOT_R1, PR #413, WS0-ACK): Schritte an echten Fußkontakten aus gemessenen Locomotion-Profilen, Untergrund je Fuß, Landung nur aus Bodenkontakt; vorhandene Banken zuerst (Gras/Beton/Kies), Charakter „viszeral, dumpf, kartonig“, warm, nie klickend; Gangarten nur mit echten Clips. Mikro-Beweis durch WSA work im ToolBox-Motion-Lab; danach optional 6 bezahlte Clay-Schritte/Landungen (~280 Credits), von Georg selbst gestartet, API-Schlüssel nie in Repo/Log/Chat. 48er-Motor-Grid und WS0-Motor-Set b69 auf HOLD, b69 vor Erzeugung reduziert (1 Variante, 6-s-Loops, nur echte Lücken).",
+   "values": {},
+   "owner": "WSA work (Mikro-Beweis) · Georg (Credits) · WS1 (Integration Slice 3)",
+   "check": "Kontakt-Drift ≤ 1 Frame, 0 Doppelschritte, Landung genau einmal",
+   "source": "replies/WS0_ACK_AUDIO_FOOTSTEP_R1_2026-10-17.md (Hub b74)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Schritte tragen die Immersion beim Laufen; 48 Motor-Kandidaten wären zu teuer für Georgs Credits.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5384,7 +5414,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:710",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:711",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
