@@ -5568,6 +5568,21 @@
    "applies": "Look-Slice"
   },
   {
+   "id": "V-404",
+   "date": "2026-10-17",
+   "area": "Werkzeuge",
+   "verdict": "RULE",
+   "text": "Gemeinsame Werkzeuge zentral bereitstellen (Georg 17.10.): Die kostenlose 3D-Asset-Suche (MCP 3d-assets, https://3d.shep.bot/mcp, Open Source arielshad/3d-asset-server, ~20 Quellen mit Lizenzangabe) steht jeder Claude-Code-Sitzung über die Projekt-Datei ~/Dropbox/CLAUDE/.mcp.json zur Verfügung (per Dropbox auch auf dem Mac mini; einmal bestätigen), Rückfall REST https://3d.shep.bot, nicht die ChatGPT-Seite. Externe Funde erst nach Asset-Bibliothek-Aufnahme kanonisch, CC0 bevorzugt. TOOL_MAP hat dafür einen Abschnitt „gemeinsame Werkzeuge“.",
+   "values": {},
+   "owner": "WS0 · alle Sitzungen",
+   "check": "WSB findet 3d-assets-Werkzeuge",
+   "source": "replies/TOOL_MAP_R1.md · ~/Dropbox/CLAUDE/.mcp.json",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Mac mini fand die übernommene 3D-Suche nicht und suchte auf der ChatGPT-Seite.",
+   "applies": "ab sofort"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5640,7 +5655,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:724",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:725",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -19,3 +19,11 @@ Not a place, just storage: **GitHub** (truth + persistence), **Dropbox KFB_HUB**
 3. Every place has **one** address. Old addresses (Cloudflare `*.pages.dev`, old Production Hub, old stage pages) **redirect** to the new place or to an archive page. Never a dead link.
 4. Cloudflare remains only a fallback for WS1 previews (V-356). Everything Georg clicks lives at the five addresses.
 5. Cleanup happens alongside production and does not block it.
+
+## Shared tools for every session (not places, but available everywhere) · V-404
+| Tool | What | How available |
+|---|---|---|
+| **Free 3D asset search** (MCP `3d-assets`, hosted https://3d.shep.bot/mcp, open source github.com/arielshad/3d-asset-server) | One search across about 20 sources (Poly Haven, ambientCG, Kenney, Quaternius, BlenderKit, …), with licence and attribution | Project setting `~/Dropbox/CLAUDE/.mcp.json` (synced through Dropbox; every Claude Code session in `Dropbox/CLAUDE` offers it, confirm once). Tools: `search_assets` → `get_asset` → download `selection.bundleUrl`. Fallback without MCP: REST at https://3d.shep.bot. **Not** the ChatGPT side. |
+| Blender MCP | Blender control | per computer (WSB Mac mini) |
+| GitHub tool | branches, merge requests | WS0 (V-401) |
+Rule: external finds are never a canonical KFB asset until they have gone through Asset Library intake (licence, source isolation). Prefer CC0; record licence/attribution.

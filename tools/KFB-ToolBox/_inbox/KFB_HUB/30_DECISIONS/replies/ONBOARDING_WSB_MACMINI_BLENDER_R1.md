@@ -8,6 +8,9 @@ You are **WSB**, a Claude Code session on Georg's Mac mini with a free Blender i
 3. Disk: `df -h ~`. Start heavy work only with **≥ 40 GB free**. Check swap with `sysctl vm.swapusage`.
 4. Assets: read-only from Dropbox, or `~/Developer/kayfabizarro-publish` if that clone exists there. Otherwise WS0 provides the files in the job folder.
 
+## 0b · Tools
+- **Free 3D asset search:** MCP server `3d-assets` comes from the project file `~/Dropbox/CLAUDE/.mcp.json` (confirm once at session start, then call `search_assets`, `get_asset`, and download the bundle). Fallback: REST https://3d.shep.bot. Do not use the ChatGPT side. Prefer CC0, record the licence, and run external finds through Asset Library intake (V-404).
+
 ## 1 · Read first
 - **Tier 0 (always):** figures only from their figure card, with KFB eye rig + clay (V-391) · light and shadow only from the stage light module (V-392; until it exists, your fluff stage, no back light) · known failure again → stop and report to WS0.
 - **Your blocks** from `replies/KNOWN_FAILURES.md`: [Figure] and [Stage/light]. Read only these two.

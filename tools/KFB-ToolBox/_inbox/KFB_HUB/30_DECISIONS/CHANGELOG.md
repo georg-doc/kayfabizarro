@@ -2,6 +2,7 @@
 
 ## 2026-10-17 · Writer’s Room JSON-first
 - WSB-Lieferungen B1/B2/B7 auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17); automatisches Mergen vom Sicherheitssystem blockiert, Georg entscheidet den Weg.
+- V-404: 3D-Asset-Suche (MCP 3d-assets) zentral über ~/Dropbox/CLAUDE/.mcp.json für alle Sitzungen inkl. Mac mini; TOOL_MAP „gemeinsame Werkzeuge“; b80 im Hub.
 - V-403: gesprenkelte Übergänge = ein Modul kfb-speckle-transition.v1 (Lab S1 byte-gleich), weich = Sprenkel-Band statt Verlauf (Hub b80).
 - V-401: Merges macht WS0 über das GitHub-Werkzeug mit Georgs einmaligem „immer erlauben“; Einstellungs-Regel später; Mac-mini-Lieferungen sofort auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17).
 - V-402: Mesa Standard-Stimmung, ACES + Chroma-Regel, Reihenfolge L3 → Figurenkarten → Look-Slice → Licht → Designkritik, eine Bühnenpalette färbt Rahmen (V-270 abgelöst), Amphitheater voll umgefärbt; Antworten WS1 §68/§69 (Hub b79).
