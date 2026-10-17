@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KFB Song-Tor (SONG_SPEC_R3 ab R3.2, V-419): EIN Prüfskript für alle Deck-Songs. Keine Kopien je Deck.
+"""KFB Song-Tor (SONG_SPEC_R3 ab R3.2, V-419; R3.3 V-424: introType, Refrain, Callbacks, KayfabeTip 1, Opener-Fenster 15 Songs): EIN Prüfskript für alle Deck-Songs. Keine Kopien je Deck.
 
   python3 song_gate.py lyrics <track.suno.txt> --deck <deck.json> [--songlines <x.songlines.json>] [--media <deck.pdf.json>]
                        [--cards 5-60] [--tone <deckId>] [--corpus <datei_oder_ordner> ...]
@@ -38,6 +38,9 @@ TONE = {
     "romantic_kayfabe": ["she asked for it", "asked for it", "no means yes"],
 }
 STOP = GRAMMAR | EXTRA | FLUFF
+INTRO_TYPES = {"question", "scene", "found_object", "bold_claim", "confession", "misdirection"}  # C9 (R3.3)
+OPENER_WINDOW = 15   # B6 (R3.3): gleicher Opener frühestens nach 15 Songs
+INTRO_COOLDOWN = 3   # C9 (R3.3): gleicher Intro-Typ nicht zweimal in 3 aufeinanderfolgenden Songs
 
 
 def beats_of(text):
@@ -78,15 +81,20 @@ def parse_range(r, cards):
     return [c for c in cards if a <= int(c.get("cardNumber", 0)) <= b]
 
 
-def corpus_openers(paths, self_path):
-    out = {}
+def corpus_files(paths, suffix):
     files = []
     for p in paths or []:
         if os.path.isdir(p):
             for root, _, fs in os.walk(p):
-                files += [os.path.join(root, f) for f in fs if f.endswith(".suno.txt")]
-        elif os.path.isfile(p):
+                files += [os.path.join(root, f) for f in fs if f.endswith(suffix)]
+        elif os.path.isfile(p) and p.endswith(suffix):
             files.append(p)
+    return sorted(set(files), key=os.path.getmtime, reverse=True)  # neueste zuerst
+
+
+def corpus_openers(paths, self_path):
+    out = {}
+    files = [f for f in corpus_files(paths, ".suno.txt") if os.path.abspath(f) != os.path.abspath(self_path)][:OPENER_WINDOW]
     for f in files:
         if os.path.abspath(f) == os.path.abspath(self_path):
             continue
@@ -102,10 +110,11 @@ def gate_lyrics(a):
     deck = json.load(open(a.deck, encoding="utf-8"))
     cards = parse_range(a.cards, sorted(deck.get("cards", []), key=lambda c: int(c.get("cardNumber", 0))))
     fails, warns = [], []
-    songlines, skip = {}, set()
+    songlines, skip, refrain, intro_type = {}, set(), "", None
     if a.songlines:
         sj = json.load(open(a.songlines, encoding="utf-8"))
         if isinstance(sj, dict):
+            refrain, intro_type = (sj.get("refrain") or "").strip(), sj.get("introType")
             skip = {int(x) for x in (sj.get("metaSkipped") or sj.get("metaSkip") or [])}
             sj = sj.get("songLineChanges") or []
         for e in sj:
@@ -161,12 +170,44 @@ def gate_lyrics(a):
     intro = [b for j, b in frame if j < first_card]
     outro = [b for j, b in frame if j > last_card]
     middle = [b for j, b in frame if first_card < j < last_card]
-    if len(intro) < 2:
-        F("C9", f"Intro hat {len(intro)} Beat(s); mindestens 2 eigene Beats (Idee aus dem Deck), nicht wegkürzen")
     if not outro:
         F("C12", "kein Outro-Beat vor 'Stay Fluffy!'")
+    def is_refrain(b):
+        if not refrain:
+            return False
+        rw, bw = set(WORD.findall(refrain.lower())), set(WORD.findall(b.lower()))
+        return bool(rw) and len(rw & bw) / len(rw) >= 0.6 and len(bw) <= len(rw) + 3
+    ref_beats = [b for b in intro + outro + middle if is_refrain(b)]
+    intro = [b for b in intro if not is_refrain(b)]
+    outro = [b for b in outro if not is_refrain(b)]
+    middle = [b for b in middle if not is_refrain(b)]
+    if refrain:
+        if len(refrain.split()) > 8:
+            F("C11", f"Refrain länger als 8 Wörter: {refrain!r}")
+        if len(ref_beats) > 3:
+            F("C11", f"Refrain {len(ref_beats)}x (max 3)")
     for b in middle:
         F("C10", f"Beat ohne Karte zwischen Karten: {b[:60]!r}")
+    if len(intro) < 2:
+        F("C9", f"Intro ohne Refrain hat {len(intro)} Beat(s); mindestens 2 eigene Beats")
+    if a.songlines and intro_type not in INTRO_TYPES:
+        F("C9", f"introType fehlt oder ungültig ({intro_type!r}); erlaubt: {sorted(INTRO_TYPES)}")
+    if a.corpus and intro_type:
+        recent = []
+        for f in corpus_files(a.corpus, ".songlines.json"):
+            if a.songlines and os.path.abspath(f) == os.path.abspath(a.songlines):
+                continue
+            try:
+                it = json.load(open(f, encoding="utf-8")).get("introType")
+            except Exception:
+                it = None
+            if it:
+                recent.append((it, os.path.basename(f)))
+            if len(recent) >= INTRO_COOLDOWN - 1:
+                break
+        for it, fn in recent:
+            if it == intro_type:
+                F("C9", f"introType {intro_type!r} schon in {fn} (Cooldown {INTRO_COOLDOWN} Songs)")
 
     frame_text = " ".join(intro + outro + middle)
     for p in INTRO_FORBIDDEN:
@@ -195,6 +236,27 @@ def gate_lyrics(a):
             F("A2", f"Karte {c.get('cardNumber')}: mehr als ein Fluff-Wort")
         if foreign:
             F("A2", f"Karte {c.get('cardNumber')}: Wörter nicht aus der Karte: {foreign}")
+    # B7 (KayfabeTip 1): "and then" verboten, wörtliches "therefore" höchstens einmal im Opener-/Rahmentext
+    bridge_text = " ".join([op for _, op in openers] + intro + outro).casefold()
+    if re.search(r"\band then\b", " ".join(body).casefold()):
+        F("B7", "„and then“ im Song (KayfabeTip 1: therefore/but, nie and-then)")
+    if len(re.findall(r"\btherefore\b", bridge_text)) > 1:
+        F("B7", "wörtliches „therefore“ mehr als einmal (nicht-wörtlich verknüpfen)")
+    # B7b: Callbacks – Opener greift Name/Bild einer früheren Karte auf
+    def cw(t):
+        return {w.lower() for w in WORD.findall(t) if w.lower() not in STOP and len(w) > 3}
+    callbacks, seen_vocab = 0, set()
+    by_beat = {j: (c, k) for j, b, c, k in card_beats}
+    for j, b, c, k in card_beats:
+        op = b[:k]
+        own = cw(" ".join(str(c.get(x) or "") for x in ("cardName", "lore")))
+        if op and (cw(op) - own) & seen_vocab:
+            callbacks += 1
+        seen_vocab |= cw(" ".join(str(c.get(x) or "") for x in ("cardName", "lore")))
+    if card_beats and callbacks < 2:
+        F("B7b", f"nur {callbacks} Callback(s) im Opener (mindestens 2: Name oder Bild einer früheren Karte)")
+    if intro and outro and not (cw(" ".join(outro)) & cw(" ".join(intro))):
+        W("B7b", "Outro greift kein Bild aus dem Intro auf")
     share = len(openers) / max(1, len(card_beats))
     if card_beats and not (0.25 <= share <= 0.6):
         W("B6", f"Opener auf {share:.0%} der Kartenzeilen (Ziel etwa ein Drittel bis die Hälfte)")
@@ -224,7 +286,8 @@ def gate_lyrics(a):
 
     # Hooks/Rufe + Wortwiederholung im Nicht-Kartentext
     shouts = {}
-    for seg in re.findall(r"([^.!?;:]*!)", whole):
+    whole_nr = "\n".join(b for b in body if not is_refrain(b))
+    for seg in re.findall(r"([^.!?;:]*!)", whole_nr):
         s = seg.strip().casefold()
         if s:
             shouts[s] = shouts.get(s, 0) + 1
@@ -240,7 +303,7 @@ def gate_lyrics(a):
     for t, n in cnt.items():
         if n > 2:
             F("C11", f"Wort {t!r} {n}x im Rahmen/Opener-Text")
-    lines = [b.casefold() for b in body]
+    lines = [b.casefold() for b in body if not is_refrain(b)]
     for b in set(lines):
         if lines.count(b) > 1:
             F("C11", f"Zeile wiederholt: {b[:50]!r}")
@@ -264,7 +327,7 @@ def gate_lyrics(a):
 CRITIC_KEYS = {"schema", "song", "critic", "blind", "scores", "flags", "verdict"}
 SCORE_KEYS = {"cardTruth", "performance", "arc", "sayability", "tone", "styleFit"}
 FLAG_KEYS = {"beat", "rule", "observation"}
-RULE = re.compile(r"^(A[1-8]|B[67]|C(8|9|10|11|12|12b)|D13|E16b|E17|F)$")
+RULE = re.compile(r"^(A[1-9]|B(6|7|7b)|C(8|9|9b|10|11|12|12b)|D13|E16b|E17|F)$")
 SUGGEST = re.compile(r"(replace|instead|rewrite|could say|should say|try |suggest|better:|e\.g\.|->|→|=>|change to|swap)", re.I)
 
 

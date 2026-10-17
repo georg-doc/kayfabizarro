@@ -1,5 +1,6 @@
 # KFB Suno song spec R3.1: the one binding song document (V-411) · 17.10.2026
 
+**R3.3 (17.10., V-424, Georg):** intro/outro as a tailored satirical frame (C9 new), openers and bridges follow the 5 KayfabeTips (B7 new), callbacks required (B7b), one refrain allowed (C11 new), opener distance across songs = 15 songs, intro types with a cooldown. Gate: `song_gate.py`.
 **R3.2 (17.10., V-419):** the gate is now one shared script, `replies/song_gate.py` (E16); added A9 (meta cards), C9b (intro at least two beats), E16b deck notes for five more decks, §F (external critic); A5 quota without A7 spellings (WSA found the A5/A7 conflict on 9/11). Nothing else changed.
 **R3.1 (17.10., after WSA R4):** added A6–A8 (brackets, numbers, game words), C12b (two tracks) and E16b (tone check).
 
@@ -18,15 +19,22 @@ A8. **No game words in the line:** Actor, token, Scene, card effects, "equipped 
 A9. **Meta cards** that are not playable (cover, manifesto, rule card, warning card) may be skipped. List each one in `songlines.json` → `metaSkipped` with its reason. All other cards stay.
 
 ## B · Opener layer
-6. Short openers in front of some lines (about a third to a half), each used **only once** per song. Check them against all earlier songs.
-7. The opener carries the card's performance (V-373): attitude, callback, escalation. The card text itself stays as in A.
+6. Short openers in front of some lines (about a third to a half). **Within a song each opener appears only once**; use a variation only from the same family, at least 10 lines apart. The identical opener must not appear in any of the **last 15 songs**. Source: `OPENER_ARC_R2/opener_pool_r2.py` (+ new ones in the pool's style, added to the pool).
+7. **Openers and bridges between cards follow the 5 KayfabeTips** (`media/prompts/KAYFABE_TIPS_corpus_v1.md` on main, verbatim):
+   1. Therefore / But, never and-then: every card follows from the previous one ("so", "which is why", "except", "until", "turns out") or twists it. **Non-verbatim**: "and then" is forbidden, the literal "therefore" appears at most once.
+   2. Yes, and: build on the previous card instead of starting over.
+   3. We follow people, not props: the card sells itself like a character with a want, a wound or a grudge (show it, spin it, sell it, V-373).
+   4. The weirder the card, the straighter the face: no winking, no ironic distance.
+   5. One real picture beats ten big ideas: image words from `artworkPrompt` (V-377).
+   The card text itself stays exactly as in A; the bridge lives only in the opener.
+7b. **Callbacks (Georg: "!"):** at least **two** openers call back to an earlier card (its name or image), and the outro calls back to an image from the intro.
 
 ## C · Frame
 8. `[Spoken Word]` at the top. **A blank line between ALL beats:** every intro sentence, every card line, the outro.
-9. The intro has its own idea drawn from the deck: no formula, no "Welcome to …" template, no Meta-Message, not a wrestling announcer. FrizzleBob appears at most once (V-366). Comic Card Karaoke is optional.
+9. **Intro and outro are the bracket tailored to the deck:** deck title and deck concept condensed into a **satirical, provocative frame** (narrative, meaning and mood). Intro = onboarding and setup (2–4 beats of its own, one of six intro types: question · scene in medias res · found object · bold claim · confession · misdirection; log it as `introType` in `songlines.json`; the same type must not appear twice in 3 consecutive songs). Outro = a thought-provoking turn that calls back to the intro, then "Stay Fluffy!". No formula, no "Welcome to …", no Meta-Message, no announcer. FrizzleBob appears at most once (V-366).
 9b. **The intro has at least two beats of its own.** Do not cut it to one line to make the deck fit; split it into two tracks instead (C12b).
 10. Order follows the card numbers. "Page = stanza" means only a micro-arc built through openers, **not block formatting**.
-11. **No repeated hooks or shouts.** No word and no shout appears more than twice, and no running-gag shout.
+11. **No running-gag shouts** (the "Blödsinn" FAIL). Apart from cards, no word appears more than twice. **Exception: one refrain/hook** when the character budget allows: at most 8 words, drawn from the deck title or thesis, appearing **at most 3 times** at stanza or page boundaries (may vary slightly). Log it as `refrain` in `songlines.json`; it does not count toward the repetition limits.
 12. Ending: "Stay Fluffy!" on its own line. The whole song is under 5000 characters.
 12b. **When a deck doesn't fit** (e.g. 60 cards × 80–95 characters), split it into **two tracks** at a page boundary (part 1/part 2), each with its own intro and outro. Do not drop cards and do not shorten lines below the spec (TRIPLET_SET_SPEC_R2 §4).
 
