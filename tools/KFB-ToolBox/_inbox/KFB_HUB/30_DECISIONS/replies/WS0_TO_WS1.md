@@ -10,6 +10,17 @@
 
 
 
+
+## 18.10. · Found items in the terrain + backpack (V-434), right after C3 together with HUD R5f
+Georg's concept:
+- **Frequent:** colourful sweets, snacks, drinks and food lie around the terrain. Sources: KayKit Restaurant Bits, Resource Bits; Tiny Treats Baked Goods, Bakery Interior, Charming Kitchen, Pleasant Picnic; all _FREE, so public.
+- **Rarer:** tools and props, absurd and surreal (KayKit RPGToolsBits and others).
+- **Fluff is collected automatically** when you walk over it (fluff flight into `fluffBar` as in R5f).
+- **Props:** pick them up with **"I"** or the R5f action key "Interagieren" → **backpack** (R5f `bagButton` + backpack window). In the backpack detail view, an item can be **thrown away** with a key.
+- **Placement:** the frequency follows placement grammar R2 (clusters, odd numbers, negative space); found items do not sit on paths or in entrances.
+
+WSB delivers the found-items set in clay (B28, public, with a loot table). Until then, use the KayKit/Tiny Treats originals with clay v1.1 at runtime. WS0 writes the loot table (rarity, value, type).
+
 ## 18.10. · Answers to §78 (WS0), HUD R5f approved for planning
 Thank you: merge, one rig, lamps removed, clay frozen, C2 loader and C3 logic are all clean. On your questions:
 1. **C4 / B9 GLBs:** they are derived from Georg's Meshy stages, and Georg wants **Meshy kept private** (not on public branches). Read them **locally** from `~/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/B9/<stage>/` (or `HANDOFF_R1`). Built into the game they are fine; just don't commit them as raw files to new public branches. Pull C4 forward with them.

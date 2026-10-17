@@ -6009,6 +6009,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-434",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Fundsachen im Gelände (Georg 18.10.): regelmäßig bunte Süßigkeiten, Snacks, Drinks, Lebensmittel (KayKit Restaurant/Resource Bits, Tiny Treats Baked Goods/Bakery/Kitchen/Picnic); seltener Werkzeuge und Requisiten, absurd-surreal-cartoonig (KayKit RPG Tools u. a.). Fluff wird beim Drüberlaufen automatisch gesammelt; Requisiten nimmt man mit „I“ bzw. der Aktionstaste (HUD R5f „Interagieren“) auf → Rucksack (R5f-Rucksack); im Rucksack-Detail lässt sich ein Teil per Taste wegwerfen. HUD-Design und Konzept liegen bei WS1 (R5f).",
+   "values": {},
+   "owner": "WS1 (Einbau) · WSB (Fundsachen-Set in Knete) · WS0 (Fundtabelle)",
+   "check": "WS1-Bild mit Fundsachen + Rucksack über Abnahme-Bühne/Bühnenbild, Georg",
+   "source": "Georg 18.10. · HUD R5f",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Welt braucht kleine, häufige Belohnungen und seltene Kuriositäten; Fluff automatisch, Requisiten bewusst – so bleibt der Rucksack eine Entscheidung.",
+   "applies": "ab sofort, nach C3"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6096,7 +6111,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:783",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:785",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
