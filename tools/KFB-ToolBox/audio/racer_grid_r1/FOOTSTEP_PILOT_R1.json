@@ -1,0 +1,241 @@
+{
+  "schema": "kfb.audio.footstep.locomotion-pilot/0.1",
+  "created": "2026-10-17",
+  "owner": "KFB Audio & Soundscape existing semantic SFX; motion timing remains Animation Lab/Locomotion and authoritative movement remains Travel/Ground",
+  "mode": "PROPOSAL_NO_RUNTIME_WRITE_NO_PAID_GENERATION",
+  "decision": "V-378 R2 footstep-first downstream pilot",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "audio/kfb-racer-motor-grid-r1-v378-2026-10-17",
+  "source_main_head": "904f0e95968999c7e8af77cc6667161bd4f3f788",
+  "actor_fixture": "Rig_Medium ActionFigure; exact current Rig_Medium Walking_A, Running_A, Jump_Start/Idle/Land availability MUST be read in receiving owner before execution",
+  "status": "SRC_IDENTIFIED__EVENT_ADAPTER_PROPOSED__SFX_NOT_GENERATED",
+  "soundbank": {
+    "grass": {
+      "files": [
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_grass_000.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_grass_001.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_grass_002.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_grass_003.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_grass_004.ogg"
+      ],
+      "source": "KENNEY_CC0",
+      "audit": "FILE_EXISTS_NO_LISTEN"
+    },
+    "concrete": {
+      "files": [
+        "media/3D_Assets/Audio/Footsteps/foley_footstep_concrete_1.wav",
+        "media/3D_Assets/Audio/Footsteps/foley_footstep_concrete_2.wav",
+        "media/3D_Assets/Audio/Footsteps/foley_footstep_concrete_3.wav",
+        "media/3D_Assets/Audio/Footsteps/foley_footstep_concrete_4.wav"
+      ],
+      "source": "KFB_FOLEY_PACK_VERIFY_LICENSE",
+      "audit": "FILE_EXISTS_NO_LISTEN"
+    },
+    "gravel": {
+      "files": [
+        "media/3D_Assets/Audio/Footsteps/foley_footstep_gravel_1.wav",
+        "media/3D_Assets/Audio/Footsteps/foley_footstep_gravel_2.wav",
+        "media/3D_Assets/Audio/Footsteps/foley_footstep_gravel_3.wav",
+        "media/3D_Assets/Audio/Footsteps/foley_footstep_gravel_4.wav"
+      ],
+      "source": "KFB_FOLEY_PACK_VERIFY_LICENSE",
+      "audit": "FILE_EXISTS_NO_LISTEN"
+    },
+    "wood": {
+      "files": [
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_wood_000.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_wood_001.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_wood_002.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_wood_003.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_wood_004.ogg"
+      ],
+      "source": "KENNEY_CC0",
+      "audit": "FILE_EXISTS_NO_LISTEN",
+      "deferred": true
+    },
+    "snow": {
+      "files": [
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_snow_000.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_snow_001.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_snow_002.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_snow_003.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_snow_004.ogg"
+      ],
+      "source": "KENNEY_CC0",
+      "audit": "FILE_EXISTS_NO_LISTEN",
+      "deferred": true
+    },
+    "carpet": {
+      "files": [
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_carpet_000.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_carpet_001.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_carpet_002.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_carpet_003.ogg",
+        "media/3D_Assets/Audio/kenney_impact-sounds/Audio/footstep_carpet_004.ogg"
+      ],
+      "source": "KENNEY_CC0",
+      "audit": "FILE_EXISTS_NO_LISTEN",
+      "deferred": true
+    }
+  },
+  "material_truth": {
+    "owner": "existing collision/terrain support surface; query at foot world/contact position",
+    "surface_tags": [
+      "grass",
+      "concrete",
+      "gravel",
+      "wood",
+      "snow",
+      "carpet",
+      "soft-clay"
+    ],
+    "fallback": "concrete/dull neutral, source-backed; silence if no valid support",
+    "shader_texture_only_is_not_sufficient": true
+  },
+  "contact_contract": {
+    "emitter": "existing Animation Lab measured foot-contact entry, crossed normalized action phase, constrained by authoritative movement grounded/contact",
+    "event_name": "kfb:motion-foot-contact (PROPOSAL)",
+    "required_fields": [
+      "actorId",
+      "foot",
+      "motionClip",
+      "cycleIndex",
+      "contactPhase",
+      "worldFootPosition",
+      "surfaceTag",
+      "grounded",
+      "actualSpeed",
+      "contactLoad",
+      "eventId"
+    ],
+    "optional_fields": [
+      "blendWeight",
+      "rigFamily",
+      "verticalImpactSpeed",
+      "travelMode"
+    ],
+    "motion_states": [
+      "walk",
+      "walk.fast",
+      "run",
+      "sprint",
+      "backward",
+      "strafe.left",
+      "strafe.right",
+      "jump.start",
+      "jump.air",
+      "jump.land"
+    ],
+    "event_rules": [
+      "one event per foot when entering stance, not every frame",
+      "only on grounded confirmed support and actual locomotion",
+      "crossfade same-foot dedup, author one winning contact",
+      "idle and airborne emit zero step sounds",
+      "landing is single authoritative grounded transition, suppress nearby step",
+      "surface sampled at exact contact, not global actor origin",
+      "multi-surface blend only when authoritative surface weights exist",
+      "animation event phase follows phase-synchronized clip and playbackRate; no hardcoded wall-clock footstep metronome"
+    ],
+    "soundSelection": "deterministic per-actor anti-repeat weighted sample draw; short source one-shots; L/R selection via event, not baked stereo alternating loops",
+    "mix": "existing PLAYER_CRITICAL/WORLD_SFX bus through one AudioContext; avoid competing score/voice ducking owner"
+  },
+  "minimum_acceptance_fixture": {
+    "actor": "Rig_Medium on flat source-backed support",
+    "tested_materials": [
+      "grass",
+      "concrete",
+      "gravel",
+      "soft-clay"
+    ],
+    "states": [
+      "idle",
+      "walk",
+      "walk.fast",
+      "run",
+      "sprint-if-real-profile",
+      "jump.start",
+      "jump.air",
+      "jump.land",
+      "walk-to-run",
+      "run-to-walk",
+      "air-to-ground"
+    ],
+    "developer_evidence": [
+      "foot.left/right plant marker visualization",
+      "per-event ID, clip/phase/surface provenance",
+      "single audio owner and buffer decode",
+      "event to visible contact drift <= one rendered frame when deterministic",
+      "no duplicate during phase-aligned gait transition",
+      "no steps during idle/free-fall or no-ground",
+      "landing plays once",
+      "surface change mid-gait reads correct under contacting foot",
+      "voice ducking + SCORE musical continuity unchanged",
+      "first frame only after user gesture unlocking WebAudio"
+    ]
+  },
+  "elevenlabs_pilot": {
+    "generator": "eleven_text_to_sound_v2",
+    "prompt_influence": 0.85,
+    "output_format": "mp3_44100_128",
+    "credit_assumption_per_second": 40,
+    "effects": [
+      {
+        "id": "clay_step_a",
+        "duration_seconds": 1,
+        "loop": false,
+        "variants": 4,
+        "role": "soft-clay-step",
+        "prompt": "One isolated single soft heavy cartoon clay footstep: a round muted compressed body thump and a tiny dry damp tacky peel as a shoe lifts from dense soft modeling clay. Close microphone, low-mid weighted, restrained, no sharp snap, no exaggerated cartoon boing, no rhythm, no music, no ambience, no voice."
+      },
+      {
+        "id": "clay_land_a",
+        "duration_seconds": 1.5,
+        "loop": false,
+        "variants": 2,
+        "role": "soft-clay-landing",
+        "prompt": "One isolated short landing of a chunky toy-like character on soft sculpting clay, satisfying cushioned low-end impact and very small damp compression and rebound texture, short natural tail, dry close microphone, no huge crash, no sparkling debris, no synthetic riser, no music, no ambience, no voice."
+      }
+    ],
+    "estimated_total_seconds": 7,
+    "estimated_credits": 280,
+    "approved_to_execute": false,
+    "note": "4 independent clay step attempts plus 2 isolated clay landing attempts, not 4x4 or 48 sounds. Do not fire payable API calls without user approval and authenticated key."
+  },
+  "external_research": [
+    {
+      "title": "Fantozzi 12 single footsteps grass/sand stone",
+      "url": "https://opengameart.org/content/fantozzis-footsteps-grasssand-stone",
+      "license": "CC0 claimed by source",
+      "status": "DONOR_ONLY_NOT_IMPORTED"
+    },
+    {
+      "title": "42 Snow and Gravel Footsteps",
+      "url": "https://opengameart.org/content/42-snow-and-gravel-footsteps",
+      "license": "CC0 claimed by source",
+      "status": "DONOR_ONLY_NOT_IMPORTED"
+    },
+    {
+      "title": "Godot Material Footsteps",
+      "url": "https://github.com/developer-benny-zhu/godot-material-footsteps",
+      "license": "MIT claimed by source",
+      "status": "DESIGN_DONOR_NOT_COPIED"
+    },
+    {
+      "title": "Unity automatic footstep detector",
+      "url": "https://github.com/dropecho/unity_footstep",
+      "license": "CHECK_AT_SOURCE",
+      "status": "ARCHITECTURE_DONOR_NOT_COPIED"
+    },
+    {
+      "title": "Godot root motion and IK study",
+      "url": "https://github.com/Johnz86/locomotion-godot",
+      "license": "CHECK_CODE_AND_ASSET_LICENSES",
+      "status": "TECHNIQUE_REFERENCE_ONLY"
+    }
+  ],
+  "stage": {
+    "route": null,
+    "reason": "source-and-process design only, no integrated audible or browser-review product"
+  },
+  "next_gate": "WS0_LOCOMOTION_FOOT_CONTACT_ADAPTER_MICRO_PROOF"
+}
