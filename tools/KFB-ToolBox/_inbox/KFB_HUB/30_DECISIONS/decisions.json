@@ -5613,6 +5613,21 @@
    "applies": "Look-Slice"
   },
   {
+   "id": "V-407",
+   "date": "2026-10-17",
+   "area": "Welt",
+   "verdict": "TBD",
+   "text": "Wasser für die spätere Piraten-Insel (Georg 17.10.): Fundstück web-ocean (github.com/Noniv/web-ocean, WebGPU, FFT-Wellen, Schaumkronen, Himmel, Sonnenglitzern) nur als Ideen-Spender. Grundsatz Cartoon-Logik und KISS-Shader wie Tiny Skies: Schaum als Knet-/Cartoon-Ringe statt Physik, Glitzern als stilisierte Funken, wenige Wellen-Schichten; WebGL2-tauglich für das Zielgerät (V-370), kein reines WebGPU. Vorhandene Wasser-Spender zuerst: Claude-Design-Wasser Island Kit R1 kit/fluid.js (Flüsse/Seen mit Tiefe), Tiny-Skies-Wasser. Lizenz vor Übernahme prüfen. Einplanen erst mit der Piraten-Insel.",
+   "values": {},
+   "owner": "WS0 (Spender-Merkzettel) · später WS1",
+   "check": "erst bei Piraten-Insel",
+   "source": "Georg 17.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gutes Ozean-Beispiel, aber fotorealistisch und WebGPU; KFB braucht Cartoon-Wasser auf dem Zielgerät.",
+   "applies": "mit der Piraten-Insel"
+  },
+  {
    "id": "V-084",
    "date": "2026-10-10",
    "area": "Claude Design",
@@ -5685,7 +5700,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:726",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:727",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

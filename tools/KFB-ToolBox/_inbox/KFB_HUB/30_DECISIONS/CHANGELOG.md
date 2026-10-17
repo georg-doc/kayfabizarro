@@ -2,6 +2,7 @@
 
 ## 2026-10-17 · Writer’s Room JSON-first
 - WSB-Lieferungen B1/B2/B7 auf GitHub (Branch assets/kfb-wsb-deliverables-2026-10-17); automatisches Mergen vom Sicherheitssystem blockiert, Georg entscheidet den Weg.
+- V-407: web-ocean als Ideen-Spender für Piraten-Insel-Wasser vorgemerkt (Cartoon/KISS wie Tiny Skies, WebGL2, vorhandene Wasser-Spender zuerst).
 - V-405 Card Ink Defense als Post-MVP-Slice eingeplant (ACK an WSA); V-406 Farbdrehbuch aus Joyride A/B/C, Farbsprengsel steinweise (WSB B9: COLOR_1 Stein-ID + Rolle).
 - V-404: 3D-Asset-Suche (MCP 3d-assets) zentral über ~/Dropbox/CLAUDE/.mcp.json für alle Sitzungen inkl. Mac mini; TOOL_MAP „gemeinsame Werkzeuge“; b80 im Hub.
 - V-403: gesprenkelte Übergänge = ein Modul kfb-speckle-transition.v1 (Lab S1 byte-gleich), weich = Sprenkel-Band statt Verlauf (Hub b80).
