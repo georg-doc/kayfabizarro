@@ -1,0 +1,60 @@
+name: Legacy Web Pet v0
+on:
+  push:
+    branches:
+      - chatgpt-web/legacy-web-pet-v0-2026-09-21
+    paths:
+      - 'kfb-hub/shared/legacy-web-pet/**'
+      - 'kfb-hub/stage/toolbox/legacy-web-pet/**'
+      - 'extensions/kfb-legacy-web-pet/**'
+      - 'kfb-hub/index.html'
+      - '.github/workflows/legacy-web-pet-v0.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install build/test deps
+        run: |
+          npm install --no-save esbuild@0.25.9 three@0.160.0 playwright@1.51.1
+          npx playwright install --with-deps chromium
+      - name: Static source contracts
+        run: |
+          node kfb-hub/stage/toolbox/legacy-web-pet/static-check.mjs
+          node --check kfb-hub/shared/legacy-web-pet/host.js
+          node --check kfb-hub/shared/legacy-web-pet/frame-runtime.js
+          node --check kfb-hub/shared/legacy-web-pet/sources.js
+      - name: Build MV3 extension
+        run: node extensions/kfb-legacy-web-pet/build.mjs
+      - name: Start local repo server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/kfb-pet-http.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/kfb-hub/stage/toolbox/legacy-web-pet/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/kfb-pet-http.log; exit 1
+      - name: Hub/web pet WebGL proof
+        env:
+          KFB_PET_EVIDENCE: legacy-web-pet-evidence/web
+        run: node kfb-hub/stage/toolbox/legacy-web-pet/web-proof.mjs
+      - name: Chrome extension arbitrary-page proof
+        env:
+          KFB_PET_EVIDENCE: legacy-web-pet-evidence/extension
+        run: node kfb-hub/stage/toolbox/legacy-web-pet/extension-proof.mjs
+      - name: Package extension
+        run: |
+          cd extensions/kfb-legacy-web-pet/dist
+          zip -r ../../../kfb-legacy-web-pet-v0.zip .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kfb-legacy-web-pet-v0
+          path: |
+            kfb-legacy-web-pet-v0.zip
+            legacy-web-pet-evidence
+          retention-days: 14

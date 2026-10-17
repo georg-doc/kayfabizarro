@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KFB Legacy Web Pet v0</title>
+<style>
+body{margin:0;background:#eee8da;color:#191713;font:16px/1.5 system-ui;padding:40px 5vw 220px}
+main{max-width:980px;margin:auto}h1{font:800 44px/1 Georgia,serif}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{min-height:180px;border:2px solid #222;background:#fffdf7;padding:18px;box-shadow:5px 6px 0 #0002}.dark{background:#1a1815;color:#eee8da}
+code{background:#0001;padding:2px 5px}@media(max-width:700px){.cards{grid-template-columns:1fr}h1{font-size:34px}}
+</style></head><body>
+<main><h1>Legacy Web Pet v0</h1><p>Scroll, click links and use the page normally. The pet lives over the bottom edge without owning the page. Left-click the pet for a real Legacy action + SFX/VFX. Right-click pet or camp to choose the character.</p>
+<div class="cards">
+<article class="card"><h2>Arbitrary page test</h2><p>The overlay is deliberately transparent and only the measured pet/camp hitboxes capture pointer input.</p><a href="#works">This page link must stay clickable.</a></article>
+<article class="card dark"><h2>Shared runtime</h2><p>Hub embed and Chrome Extension use the same <code>host.js</code> and <code>frame-runtime.js</code>.</p></article>
+<article class="card"><h2>Camp</h2><p>Bottom-right uses the actual Legacy Orc Warband banner and two hostname-stable Warband props.</p></article>
+</div><div style="height:520px"></div><h2 id="works">Normal website content survives.</h2><p>This section exists so the pet has a long page to walk across while scrolling.</p></main>
+<script type="module" src="/kfb-hub/shared/legacy-web-pet/hub-mount.js"></script>
+</body></html>

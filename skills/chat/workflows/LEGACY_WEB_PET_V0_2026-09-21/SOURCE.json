@@ -1,0 +1,50 @@
+{
+  "schema": "kfb.stage-source/0.1",
+  "product": "KFB Legacy Web Pet v0",
+  "owner": "KFB ToolBox / Legacy Web Pet presentation adapter",
+  "status": "FROZEN_EXTENSION_GATE_AFTER_TWO_ATTEMPTS",
+  "repo": "georg-doc/kayfabizarro",
+  "branch": "chatgpt-web/legacy-web-pet-v0-2026-09-21",
+  "testedRuntimeHead": "f41c59a8178bf77266c0f776f2e20a7948ee6223",
+  "intendedStage": "https://kayfabizarro.pages.dev/kfb-hub/stage/toolbox/legacy-web-pet/",
+  "publicVerified": false,
+  "humanAcceptance": "PENDING",
+  "webHost": {
+    "result": "PASS",
+    "static": "15/15 PASS",
+    "browser": "12/12 PASS",
+    "run": 35553968462,
+    "defaultCharacter": "rogue",
+    "testedClickClip": "HeavyAttack",
+    "testedSwitch": "mage",
+    "campProps": [
+      "hammeraxe",
+      "sword"
+    ],
+    "failedResources": 0,
+    "pageErrors": 0
+  },
+  "extension": {
+    "manifest": "MV3",
+    "build": "PASS",
+    "arbitraryPageProof": "FAIL_TIMEOUT_BEFORE_READY",
+    "attempts": [
+      {
+        "run": 35553680781,
+        "head": "e8e49385600a0aa6ba71b73bab383e52dd713821",
+        "result": "timeout after plain page HTTP/no-Hub checks"
+      },
+      {
+        "run": 35553968462,
+        "head": "f41c59a8178bf77266c0f776f2e20a7948ee6223",
+        "result": "same timeout after Chromium channel repair"
+      }
+    ]
+  },
+  "evidence": {
+    "artifactId": 10619267683,
+    "digest": "sha256:da9bdfa9e0dd03c83f4335e61963449b7d559fc91e892867dd2c98843f361bf3",
+    "note": "Artifact contains successful web proof evidence; extension ZIP packaging was skipped after the extension gate failed."
+  },
+  "nextGate": "LWP-EXT-F1 · extension-load observability only: prove content-script entry marker, iframe creation and first frame boot/error before running the full pet."
+}
