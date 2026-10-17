@@ -1,3 +1,7 @@
+## 2026-10-17 · Locomotion-footstep-first V-378 handoff
+
+R2 PR #413 now carries `FOOTSTEP_PILOT_R1.{md,json}` and `FOOTSTEP_TEST_REPORT_R1.md`. It proposes measured foot-contact events, authoritative under-foot material and playback via existing KFB Audio owner. 28/28 donor files and 26/26 static checks PASS; 2 exact Kenney carpet duplicate pairs detected. Only proposed paid pilot is 4 × 1s isolated soft-clay step and 2 × 1.5s Clay landing sounds, approximately 280 credits, not authorized or produced. No new runtime and no Site/Stage/merge. Next gate is owner-only real Rig_Medium contact-to-sound micro-proof.
+
 ## 2026-10-17 · R2 DONOR-FIRST EXECUTION PRIORITY
 
 R2 audit is current on this branch. See `R2_RETURN.md`, `R2_DONOR_AUDIT.md`, `R2_CANDIDATES.json`, `R2_PROMPTS_PROPOSED.json`, `R2_CREDIT_BUDGET.md` and `R2_TEST_REPORT.md`.
