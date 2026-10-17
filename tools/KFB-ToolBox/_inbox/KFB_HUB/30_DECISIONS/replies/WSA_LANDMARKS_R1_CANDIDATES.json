@@ -1,6 +1,6 @@
 {
   "schema": "kfb.landmark-candidates/1",
-  "revision": "R1.3-cc0-el-castillo-source-proof",
+  "revision": "R1.4-WS0-V424-source-choice-before-WSB-clay",
   "date": "2026-10-17",
   "ticket": "V-421",
   "owner": "KFB existing Asset Librarian view / existing img2threejs landmark authoring",
@@ -8,9 +8,9 @@
   "branch": "docs/kfb-decisions-register-2026-10-11",
   "authority": "WS0 only decides priority; Georg selects asset after source isolation and Clay preview",
   "mode": "RESEARCH_ONLY",
-  "gateStatus": "THREE_SOURCES_ISOLATED_BUT_WS0_TUNE_KFB_CLAY_OPEN",
+  "gateStatus": "THREE_GENUINE_CC0_SOURCE_RENDERS_RESEARCH_ONLY_VIEW_NOT_IMPLEMENTED",
   "licensePolicy": "CC0 preferred, CC BY with recorded attribution; reject NC/paid/private unless separate later agreement, no actual asset mirrored",
-  "sourceAudit": "Three distinct actual CC0 source objects examined with isolated render evidence; original El Castillo CC0 zip adds FBX mesh and 10,218 triangles. Remaining listings unverified; no accepted clay finishing.",
+  "sourceAudit": "Three unique CC0 source meshes independently isolated; other twenty of twenty-three leads still lack source-isolated model-specific proof. Prior white flat-material clay diagnostic is rejected as KFB clay by WS0. No source choice has been made.",
   "mcp3dAssets": {
     "configuredAt": "Dropbox /CLAUDE/.mcp.json",
     "endpoint": "https://3d.shep.bot/mcp",
@@ -19,25 +19,39 @@
     "getAssetCalls": 0
   },
   "previewPolicy": {
-    "V346": "Source-isolated original and genuine WSB clay preview required per candidate before Georg; current two diagnostic flat-material renders are not final KFB clay.",
+    "V346": "WS0 V-424 override: Georg's candidate selection needs a real original-model isolated render and verified source/license; NO pseudo-KFB-clay preview is permitted or required for selection. WSB applies real KFB K1 rounded/clay/palette after Georg chooses.",
     "V383": "never draw markup over source image",
     "allCandidatePreviewsGenerated": 3,
     "sourceIsolatedMeshes": 3,
-    "styleReviewStatus": "WS0_TUNE_REAL_CLAY_NOT_PROVEN"
+    "styleReviewStatus": "WS0_TUNE_FLAT_MATERIAL_IS_NOT_KFB_CLAY",
+    "realKfbClayAccepted": 0,
+    "originalSourceRendersVerified": 3,
+    "remainingDistinctSourceProofs": 20,
+    "previousFlatMaterialRendersAre": "DIAGNOSTIC_ONLY_NOT_KFB_CLAY",
+    "originalModelOnly": "Source identity, real mesh, real proportions, original materials and honest silhouette; label Knete folgt in UI text outside image; no fabricated texture/material"
   },
   "assetLibraryView": {
     "name": "Landmark-Kandidaten",
     "owner": "existing KFB Asset Librarian Site; do not create separate tool",
-    "state": "SPEC_ONLY_NO_UI_WRITE",
+    "state": "SPEC_ONLY_NO_UI_WRITE; EXISTING_ASSET_LIBRARIAN_OWNER_RECEIVES_UI_SLICE",
     "selectButtonLabel": "Auswählen",
-    "buttonState": "DISABLED_KFB_CLAY_PREVIEWS_WSB_PENDING",
-    "selectionPersistence": "existing Site/owner decision flow; no invented save backend"
+    "buttonState": "DISABLED_UNTIL_SOURCE_PROOF_AND_EXISTING_VIEW_IMPLEMENTED",
+    "selectionPersistence": "existing Site/owner decision flow; no invented save backend",
+    "sourceChoiceDisplay": "Show standalone source render, creator, CC0/CC BY status, exact model role and limits, triangle count and 'Knete folgt'; hide rejected flat-material clay previews. Selecting is Georg's asset choice, NOT approval of the final K1 look.",
+    "postSelectionHandoff": "WSB Blender owns K1 material + actual rounded edges + palette colour on Georg-selected exact original candidate. WSA/Asset Librarian does NOT fake KFB clay.",
+    "noNewBackend": true
   },
   "summary": {
     "landmarks": 10,
     "sourceRecords": 23,
     "clayPreviews": 3,
-    "eligibleForSelection": 0
+    "eligibleForSelection": 0,
+    "originalSourceMeshesVerified": 3,
+    "remainingDistinctSourceProofs": 20,
+    "diagnosticFlatMaterialPreviews": 3,
+    "acceptedRealKfbClayPreviews": 0,
+    "eligibleForGeorgSourceChoice": 2,
+    "selectableInActualUi": 0
   },
   "landmarks": [
     {
@@ -136,11 +150,13 @@
             "clayImageSha256": "532fb13211c83fa39d16b18f3a96bfc3c71b3d2412dae3b835eb134c15ef24ff",
             "sourceIsolationStatus": "SOURCE_RENDERED",
             "previewEvidenceClass": "ORIGINAL_MONUMENT_SOURCE",
-            "materialRenderAcceptance": "DIAGNOSTIC_ONLY_WS0_TUNE_NOT_APPROVED_CLAY"
+            "materialRenderAcceptance": "REJECTED_AS_KFB_CLAY_DIAGNOSTIC_ONLY",
+            "sourceReviewLabel": "Genuine isolated original model; Knete folgt"
           },
           "rightsFlags": [],
           "notes": "OpenGameArt Stonehenge.zip; 392 vertices / 320 faces. Zip internals uninspected. Verified native real-mesh clay proof: 640 triangles; not accepted or selected.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "selectionStatus": "SOURCE_RENDER_READY_FOR_GEORG_CANDIDATE_REVIEW_UI_NOT_BUILT",
+          "sourceChoiceEligibility": "ELIGIBLE_CANDIDATE_ONLY_AFTER_ASSET_LIBRARIAN_VIEW_AND_GEORG"
         },
         {
           "id": "st-sketch",
@@ -339,11 +355,13 @@
             "clayImageSha256": "90d64856ffd2d43e2725a5c10ec7d26170c6fe439149c648dcdb8c5d7fcd3c94",
             "sourceIsolationStatus": "SOURCE_RENDERED",
             "previewEvidenceClass": "ONLY_CONSTRUCTION_DONOR",
-            "materialRenderAcceptance": "DIAGNOSTIC_ONLY_WS0_TUNE_NOT_APPROVED_CLAY"
+            "materialRenderAcceptance": "REJECTED_AS_KFB_CLAY_DIAGNOSTIC_ONLY",
+            "sourceReviewLabel": "Source kit tower-square.glb, not Neuschwanstein or Globe; Knete folgt only after selected landmark model is proven"
           },
           "rightsFlags": [],
           "notes": "75-model architectural kit; NOT a faithful Neuschwanstein asset. Verified native real-mesh clay proof: 176 triangles; not accepted or selected.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "selectionStatus": "CONSTRUCTION_DONOR_ONLY_NOT_A_COMPLETED_LANDMARK",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION"
         },
         {
           "id": "neu-photo",
@@ -672,11 +690,13 @@
             "clayImageSha256": "90d64856ffd2d43e2725a5c10ec7d26170c6fe439149c648dcdb8c5d7fcd3c94",
             "sourceIsolationStatus": "SOURCE_RENDERED",
             "previewEvidenceClass": "ONLY_CONSTRUCTION_DONOR",
-            "materialRenderAcceptance": "DIAGNOSTIC_ONLY_WS0_TUNE_NOT_APPROVED_CLAY"
+            "materialRenderAcceptance": "REJECTED_AS_KFB_CLAY_DIAGNOSTIC_ONLY",
+            "sourceReviewLabel": "Source kit tower-square.glb, not Neuschwanstein or Globe; Knete folgt only after selected landmark model is proven"
           },
           "rightsFlags": [],
           "notes": "Generic timber-like building donor; not Globe Theatre geometry. Verified native real-mesh clay proof: 176 triangles; not accepted or selected.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "selectionStatus": "CONSTRUCTION_DONOR_ONLY_NOT_A_COMPLETED_LANDMARK",
+          "sourceChoiceEligibility": "NOT_ELIGIBLE_FOR_MONUMENT_SELECTION"
         }
       ],
       "georgDecision": "PENDING_REAL_CLAY_PREVIEW_AND_SOURCE_REVIEW",
@@ -1000,11 +1020,14 @@
             "clayImageSha256": "2b3a0f346731ec133f16001ea02ac7f7fe960fc51a5d64326e0c0f5d988bcc03",
             "sourceIsolationStatus": "SOURCE_RENDERED",
             "previewEvidenceClass": "ORIGINAL_MONUMENT_SOURCE_NOT_BALLCOURT",
-            "thumbnailSourceRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/source-isolation.png"
+            "thumbnailSourceRepoPath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/V421_SOURCE_PROOF/evidence/chichen_el_castillo_oga_cc0/source-isolation.png",
+            "materialRenderAcceptance": "REJECTED_AS_KFB_CLAY_DIAGNOSTIC_ONLY",
+            "sourceReviewLabel": "Genuine isolated original model; Knete folgt"
           },
           "rightsFlags": [],
           "notes": "OpenGameArt chichenitza.zip (34.2MB), pyramid/temple; polygon count and archive internals NOT inspected. ElCastillo.fbx successfully imported; mesh 10,218 triangles / 5,175 faces. No ball court geometry verified. Source-isolation image and flat material diagnostic only; WS0 TUNE WSB finishing pending. CC0 with author's requested Esteban Lopez attribution.",
-          "selectionStatus": "HOLD_PREVIEW_AND_RIGHTS_GATES"
+          "selectionStatus": "SOURCE_RENDER_READY_FOR_GEORG_CANDIDATE_REVIEW_UI_NOT_BUILT",
+          "sourceChoiceEligibility": "ELIGIBLE_CANDIDATE_ONLY_AFTER_ASSET_LIBRARIAN_VIEW_AND_GEORG"
         },
         {
           "id": "ch-phot",
