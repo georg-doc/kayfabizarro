@@ -1,0 +1,482 @@
+{
+ "schema": "kfb.proof-manifest/1",
+ "stage": "kfb-proof-stage.v1.2",
+ "created": "2026-10-18T16:48:32.023Z",
+ "input": {
+  "id": "monstrosity",
+  "type": "character",
+  "card": "/50_BLENDER/B33/data/_ws0_test_monst_lidLR.json",
+  "cardSha256": "d9212269933c988e33aba71d0e925abad5b73e86a2bfcce023a82111176f53cf",
+  "cardSchema": "kfb.figure/1",
+  "cardApproval": "candidate",
+  "glb": "hub:50_BLENDER/B33/_privat_kauf_asset/monstrosity/Monstrosity_A.b33.glb",
+  "glbSha256": "d78f178e909e0cd22a3693694794348ea8492e636ead0be658c05f1f54d22639",
+  "glbBytes": 837608,
+  "cardBodySha256": "7c000de1de7aaa20612ab66e816a8631810b710684108fae9049edd7bc59e093",
+  "glbMatchesCard": false,
+  "faceTransformsFrom": "card",
+  "private": false,
+  "displayName": "Monstrosity",
+  "glbPathLocal": "~/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/B33/_privat_kauf_asset/monstrosity/Monstrosity_A.b33.glb",
+  "cardPathLocal": "~/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/B33/data/_ws0_test_monst_lidLR.json",
+  "glbSha256_node": "d78f178e909e0cd22a3693694794348ea8492e636ead0be658c05f1f54d22639",
+  "cardSha256_node": "d9212269933c988e33aba71d0e925abad5b73e86a2bfcce023a82111176f53cf"
+ },
+ "modules": {
+  "stage": "kfb-proof-stage.v1.2",
+  "clay": "kfb-clay.v1.1",
+  "gem": "kfb-gem.v1",
+  "light": "kfb.stage-light/1 (kfb-stage-light.v1.1)",
+  "eyes": "kfb-proof-eyes.v1",
+  "eyeRig": "pet-eye-rig.v6",
+  "lid": "clay-skin-attach.v1 + clay-eyelid.v3 (E2)",
+  "three": "r180"
+ },
+ "status": "PASS",
+ "gates": {
+  "G1": {
+   "name": "Augen vorhanden (EyeRig v6 + E2)",
+   "result": "PASS",
+   "detail": "seat eye-anchor · 2 Auge(n) · 2 E2-Lidhaut · v6-Schalen sichtbar 0 · Augenpixel near_face 8078 / 6669 (min 1152)"
+  },
+  "G2": {
+   "name": "Texturen, Materialien, Normalen",
+   "result": "PASS",
+   "detail": "keine fehlenden Texturen, kein Standard-/Magenta-Material, keine NaN-Normalen"
+  },
+  "G3": {
+   "name": "Bodenkontakt ±1 cm",
+   "result": "PASS",
+   "detail": "tiefster Punkt y = -0.25 cm (steht)",
+   "minY_m": -0.0025
+  },
+  "G4": {
+   "name": "Fremdteile, lose Inseln, Löcher (Warnung)",
+   "result": "WARN",
+   "detail": "67 Inseln · lose < 0,5 % Volumen: Monstrosity_Body ×2, Monstrosity_Head ×30, Monstrosity_BarndoorShield ×18, Monstrosity_Pitchfork ×9 · Ausreißer: keine · offene Ränder: Monstrosity_Head (172 offene Kanten), Monstrosity_BarndoorShield (84 offene Kanten), Monstrosity_Pitchfork (16 offene Kanten)",
+   "smallIslands": 59,
+   "outliers": 0,
+   "openMeshes": 3
+  },
+  "G5": {
+   "name": "Clay-Modul aktiv",
+   "result": "PASS",
+   "detail": "kfb-clay.v1.1 · Profil character · Seed monstrosity · 8/8 Materialien"
+  },
+  "G6": {
+   "name": "Schattensaum (kein heller Saum zwischen Teil und Schatten)",
+   "result": "PASS",
+   "detail": "Saum front 0 px · threeq 0 px · side 0 px · back 0 px · Kontaktzone 10 px · Schwelle 6 Luma, Umriss-Toleranz 3 px · Texel 2.50 mm · normalBias 3.75 mm (1,5 Texel) · 4096² · Vorderseiten werfen",
+   "seamPx": 0,
+   "perView": [
+    {
+     "view": "front",
+     "seamPx": 0,
+     "isolatedPx": 0,
+     "tipPx": 0,
+     "shadowPx": 57742,
+     "maxDelta": 0,
+     "bbox": null,
+     "thresh": 6,
+     "erode": 3,
+     "minCluster": 5,
+     "contactPx": 10
+    },
+    {
+     "view": "threeq",
+     "seamPx": 0,
+     "isolatedPx": 0,
+     "tipPx": 0,
+     "shadowPx": 79181,
+     "maxDelta": 0,
+     "bbox": null,
+     "thresh": 6,
+     "erode": 3,
+     "minCluster": 5,
+     "contactPx": 10
+    },
+    {
+     "view": "side",
+     "seamPx": 0,
+     "isolatedPx": 0,
+     "tipPx": 0,
+     "shadowPx": 108989,
+     "maxDelta": 0,
+     "bbox": null,
+     "thresh": 6,
+     "erode": 3,
+     "minCluster": 5,
+     "contactPx": 10
+    },
+    {
+     "view": "back",
+     "seamPx": 0,
+     "isolatedPx": 0,
+     "tipPx": 0,
+     "shadowPx": 55325,
+     "maxDelta": 0,
+     "bbox": null,
+     "thresh": 6,
+     "erode": 3,
+     "minCluster": 5,
+     "contactPx": 10
+    }
+   ]
+  }
+ },
+ "render": {
+  "light": {
+   "module": "kfb-stage-light.v1.1",
+   "moods": "MOODS_MESA",
+   "tod": 1,
+   "tone": "ACES Filmic",
+   "exposure": 1,
+   "shadow": "PCFSoft, fitAround (subject + cast shadow), front faces cast, mapSize 4096",
+   "shadowNow": {
+    "texel": 0.0025,
+    "near": 0.05,
+    "far": 12.25,
+    "bias": -0.00010256109182963352,
+    "normalBias": 0.00375,
+    "mapSize": 4096,
+    "radius": 5.126
+   },
+   "minCaster_m": 2.958,
+   "figureLight": true,
+   "rim": false,
+   "mood": {
+    "tod": 1,
+    "sun": "#ffdcae",
+    "sunI": 2.4,
+    "elev": 38,
+    "az": -53.13,
+    "hemiSky": "#b4bdee",
+    "hemiI": 0.82,
+    "figI": 0.3,
+    "skyL": 1,
+    "glow": 0,
+    "shadowLen": 1.28
+   }
+  },
+  "pose": {
+   "on": false,
+   "mode": "ground",
+   "requested": "auto",
+   "pickups": 0,
+   "hip_m": null,
+   "hipSource": null,
+   "items": []
+  },
+  "lineup": null,
+  "shadowSeam": [
+   {
+    "view": "front",
+    "seamPx": 0,
+    "isolatedPx": 0,
+    "tipPx": 0,
+    "shadowPx": 57742,
+    "maxDelta": 0,
+    "bbox": null,
+    "thresh": 6,
+    "erode": 3,
+    "minCluster": 5,
+    "contactPx": 10
+   },
+   {
+    "view": "threeq",
+    "seamPx": 0,
+    "isolatedPx": 0,
+    "tipPx": 0,
+    "shadowPx": 79181,
+    "maxDelta": 0,
+    "bbox": null,
+    "thresh": 6,
+    "erode": 3,
+    "minCluster": 5,
+    "contactPx": 10
+   },
+   {
+    "view": "side",
+    "seamPx": 0,
+    "isolatedPx": 0,
+    "tipPx": 0,
+    "shadowPx": 108989,
+    "maxDelta": 0,
+    "bbox": null,
+    "thresh": 6,
+    "erode": 3,
+    "minCluster": 5,
+    "contactPx": 10
+   },
+   {
+    "view": "back",
+    "seamPx": 0,
+    "isolatedPx": 0,
+    "tipPx": 0,
+    "shadowPx": 55325,
+    "maxDelta": 0,
+    "bbox": null,
+    "thresh": 6,
+    "erode": 3,
+    "minCluster": 5,
+    "contactPx": 10
+   }
+  ],
+  "contactAO": {
+   "items": 1,
+   "skippedHollow": []
+  },
+  "clay": {
+   "version": "kfb-clay.v1.1",
+   "profile": "character",
+   "seed": "monstrosity",
+   "scaleRef": 2.95822,
+   "meshes": 8,
+   "cove": "background, relief off (neutral)"
+  },
+  "eyes": {
+   "version": "kfb-proof-eyes.v1",
+   "seat": "eye-anchor",
+   "anchors": [
+    "eye_anchorl",
+    "eye_anchorr"
+   ],
+   "radiusSource": "anchor scale (seat 0.24 r behind the cap)",
+   "eyes": 2,
+   "lidSkins": 2,
+   "v6ShellsVisible": 0,
+   "fit": [
+    1,
+    1
+   ],
+   "lidColour": "#c8bda9",
+   "aperture": [
+    {
+     "cu": 0.12,
+     "cl": 0.06
+    },
+    {
+     "cu": 0.12,
+     "cl": 0.06
+    }
+   ],
+   "settings": {
+    "pupilStyle": "matte-cute",
+    "pupilSize": 0.36,
+    "gloss": 0.1,
+    "inset": 0,
+    "lidFit": 0.9,
+    "anchor": "seat from anchors"
+   }
+  },
+  "eyePixels": {
+   "total": 14747,
+   "perEye": [
+    8078,
+    6669
+   ]
+  },
+  "frame": {
+   "w": 1600,
+   "h": 1200,
+   "fov": 30,
+   "pixelRatio": 1,
+   "fill": {
+    "full": 0.8,
+    "face": 0.6,
+    "far": 0.4,
+    "scale": 0.7
+   },
+   "az": {
+    "front": 0,
+    "threeq": 35,
+    "side": 90,
+    "back": 180,
+    "near_face": 0,
+    "far": 20,
+    "scale_ref": 0,
+    "top": 0,
+    "detail_low": 0,
+    "detail_right": 0
+   },
+   "el": {
+    "front": 5,
+    "threeq": 6,
+    "side": 5,
+    "back": 5,
+    "near_face": 3,
+    "far": 8,
+    "scale_ref": 4,
+    "top": 85,
+    "detail_low": 6,
+    "detail_right": 6
+   }
+  },
+  "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Max, Unspecified Version)",
+  "size_m": [
+   3.833,
+   2.958,
+   0.82
+  ],
+  "head_m": [
+   0.6,
+   0.489,
+   0.477
+  ],
+  "hiddenOriginals": [],
+  "cardFaceParts": [],
+  "entrance": null,
+  "loadErrors": []
+ },
+ "scaleRef": null,
+ "files": {
+  "monstrosity_front_rest.png": {
+   "view": "front",
+   "eyes": "rest",
+   "sha256": "37952078f5f60b2ba1b861b429f5d545f236fd52c7a07a9164dc6d580ade6a50"
+  },
+  "monstrosity_front_half.png": {
+   "view": "front",
+   "eyes": "half",
+   "sha256": "1b10a3945ffb08ecae4a5089f2ea91672e972540bb2a911510765b1b6136017c"
+  },
+  "monstrosity_front_closed.png": {
+   "view": "front",
+   "eyes": "closed",
+   "sha256": "01bb465fa9be63a46e7736b858620268535131772e4278636ce2f5d042dd11c6"
+  },
+  "monstrosity_threeq_rest.png": {
+   "view": "threeq",
+   "eyes": "rest",
+   "sha256": "7bdc8fe518fefac13f1f5423048f36517fb5f7e1a76d5e60f22f471201ffa4ea"
+  },
+  "monstrosity_threeq_half.png": {
+   "view": "threeq",
+   "eyes": "half",
+   "sha256": "e468f258076417f4f07e905c66ae9296a3a51441ce280f198b9109d0a2839587"
+  },
+  "monstrosity_threeq_closed.png": {
+   "view": "threeq",
+   "eyes": "closed",
+   "sha256": "3938ecd2391358912b3404cc7cbde8ef7758d5ed1b157af3d8b8a5285a11bbe1"
+  },
+  "monstrosity_side_rest.png": {
+   "view": "side",
+   "eyes": "rest",
+   "sha256": "141628658c67126d13003eca212fdeb955a6ad4cb06df9b64862f730a8a29fcc"
+  },
+  "monstrosity_side_half.png": {
+   "view": "side",
+   "eyes": "half",
+   "sha256": "80af5c9c274e3b593081fd040fc33f01b0f20ebe99134383dbcedefa1a5a7e1f"
+  },
+  "monstrosity_side_closed.png": {
+   "view": "side",
+   "eyes": "closed",
+   "sha256": "2b527cf7e84b406747ee7b310d58f0476475153e14cdd5e6a6bd15bd625b99b1"
+  },
+  "monstrosity_back_rest.png": {
+   "view": "back",
+   "eyes": "rest",
+   "sha256": "49ab62c4d9873dee65504ad90f94b7f7be221a361d2e7db472a7f317717616fd"
+  },
+  "monstrosity_back_half.png": {
+   "view": "back",
+   "eyes": "half",
+   "sha256": "49ab62c4d9873dee65504ad90f94b7f7be221a361d2e7db472a7f317717616fd"
+  },
+  "monstrosity_back_closed.png": {
+   "view": "back",
+   "eyes": "closed",
+   "sha256": "49ab62c4d9873dee65504ad90f94b7f7be221a361d2e7db472a7f317717616fd"
+  },
+  "monstrosity_near_face_rest.png": {
+   "view": "near_face",
+   "eyes": "rest",
+   "sha256": "94ad4838a7fc5a170cdacb9346a9502696eaaee27248e8a41b1950d90d61edc2"
+  },
+  "monstrosity_near_face_half.png": {
+   "view": "near_face",
+   "eyes": "half",
+   "sha256": "b51f7cf1f2bd9703cc347ba20de7a8be15b140abe1ff3ef5e8b7c2bedb690b2b"
+  },
+  "monstrosity_near_face_closed.png": {
+   "view": "near_face",
+   "eyes": "closed",
+   "sha256": "41d80c228019b18a00fe7db28e408cdbe115b1051c7ceb776ff6f1b561dcf417"
+  },
+  "monstrosity_far_rest.png": {
+   "view": "far",
+   "eyes": "rest",
+   "sha256": "1f2e8ee3ad7af0160b28ad8ac31300cf9dfd16de567e82f61ef3611daf7ae2cd"
+  },
+  "monstrosity_far_half.png": {
+   "view": "far",
+   "eyes": "half",
+   "sha256": "9044ad3fa4a4ac7b43a19c62b503f0c8811eecf0fe804983d3ae9c25fbe95e7c"
+  },
+  "monstrosity_far_closed.png": {
+   "view": "far",
+   "eyes": "closed",
+   "sha256": "356555b733049ebf72aecd7abaf45939dc4e4ef024da5487390b4372100c1f5f"
+  },
+  "monstrosity_scale_ref_rest.png": {
+   "view": "scale_ref",
+   "eyes": "rest",
+   "sha256": "25f2c88a256cd6b75049ad666795bd33a15d924703f16c974b8a0c6fbee0b799"
+  },
+  "monstrosity_scale_ref_half.png": {
+   "view": "scale_ref",
+   "eyes": "half",
+   "sha256": "f1db15d60eed334ccc7ec36210b7de5bee3850636d41e7721a9c45e9e23215e9"
+  },
+  "monstrosity_scale_ref_closed.png": {
+   "view": "scale_ref",
+   "eyes": "closed",
+   "sha256": "42f64ecc8131cfaa56df75c506b0803ab882cfd074f52836289890d134130f72"
+  },
+  "monstrosity_contact_sheet.png": {
+   "sheet": true,
+   "sha256": "03bfeeffaa3f0f5670743f539626fbaa8fba8b1f666f160d00a8b78e6d1cc0da"
+  }
+ },
+ "cli": {
+  "command": "node render.mjs --glb /Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/B33/_privat_kauf_asset/monstrosity/Monstrosity_A.b33.glb --type character --card /Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/B33/data/_ws0_test_monst_lidLR.json --out /Users/georgv.westphalen/Dropbox/CLAUDE/KFB_HUB/30_DECISIONS/replies/PROOF_STAGE_R1/evidence/v127_lidLR",
+  "views": [
+   "front",
+   "threeq",
+   "side",
+   "back",
+   "near_face",
+   "far",
+   "scale_ref"
+  ],
+  "eyes": [
+   "rest",
+   "half",
+   "closed"
+  ],
+  "node": "v24.21.0",
+  "chrome": "chrome-headless-shell-mac-arm64",
+  "ms": 7764,
+  "pageErrors": [],
+  "stagePage": "v1.2"
+ },
+ "vendor": {
+  "clay-eyelid.v1.js": "4e186697635be62fd31e041c084c82eb2bc979591e91851837f064dcfa175976",
+  "clay-eyelid.v2.js": "7f1cf72fbe926c6f40c8eca70330e61c87b9181a885b3329ffb40034f3fc2675",
+  "clay-eyelid.v3.js": "eb751a5bcf174e4bd353a49150634a73b7cd76358ddf808f331933d6ad2e43bb",
+  "clay-skin-attach.v1.js": "9a22279a243cda196862390f12a2e847fb66294f96b3525ae02c24e4d6beca00",
+  "facehost.v1.js": "54214741e57909211fbd9122b3a4bcc30c688b5269ab035e6f82e616f598fb22",
+  "kfb-clay.v1.1.js": "a81a3ee36ec25ab536e5c05fca14d2538b84f02ad6156a7006927836bdb93fd0",
+  "kfb-gem.v1.js": "ca13732cd0268c9679a1204c49d97103d6acfc1b7034d476d34a62ea36e5a8bb",
+  "kfb-stage-light.v1.1.js": "113387b30c090731ce32f64859af4713c574327c4e4aa48e381395ed5f4a64bb",
+  "kfb-stage-light.v1.js": "53383f04601e07603864d0cbbbabd44fe568a6ceba9074842c1177d224a58998",
+  "pet-eye-rig.v6.js": "3129bb7b08b40565ea9bd0c44e65ae8442780a3aa5e99ac519740a84341ca9a3",
+  "kfb-proof-stage.v1.js": "d9b56930ecb35019bb897fd4bad3e1684e14693bc9d3957cdf39f17b947968c9",
+  "kfb-proof-stage.v1.1.js": "437386bef7fd1a6e1b4776f3f5abc7eb925ba6043e883e35637d0e97ed027507",
+  "kfb-proof-stage.v1.2.js": "4dc18cac6e514ffad64dc703b6956e1ab881d6aac605be3cef43e704a64c5c7a",
+  "kfb-proof-eyes.v1.js": "8ab804939e64482555ba52eeab4bb079dd99f5ad414975397cf8a58d7514827d"
+ },
+ "staleFilesInOut": []
+}

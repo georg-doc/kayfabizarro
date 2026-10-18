@@ -185,3 +185,6 @@ To check a file that is not in the list, drop in the GLB and, optionally, its `k
 
 ## v1.2.6 (18.10.)
 - Blickrichtung: Beide Augen schauen entlang der gemeinsamen Vorwärtsrichtung (Mittel der Anker-Normalen), nach innen gedreht um card converge. Vorher übernahm jedes Auge die Flächennormale seines Ankers – auf runden Köpfen (Orks, Monstrosity) schielten die Pupillen nach außen, converge wurde überschrieben. Beleg: Orc Brute B / Raider B near_face (scratchpad eye126), Spielzeugsoldat G1 PASS.
+
+## v1.2.7 (18.10.)
+- Lidfarbe je Auge: Karte `eyeRig.lid.colourL` / `colourR` (Seite aus dem Anker; ohne Anker gilt +X = Figur links). Fällt auf `lid.colour` zurück. Für asymmetrische Gesichter (Monstrosity A: L #7da6a4 im grünen Flicken, R #c8bda9). Beleg: evidence/v127_lidLR/monstrosity_near_face_closed.png, G1 PASS.

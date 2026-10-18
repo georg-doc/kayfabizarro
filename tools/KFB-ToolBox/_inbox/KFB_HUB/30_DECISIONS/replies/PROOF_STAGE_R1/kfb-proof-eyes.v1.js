@@ -159,7 +159,7 @@ export function mountEyes(THREE, figure, { card = null, applyClay = null, clayRe
       rig.eyes.forEach((e, i) => {
         const x = single ? (i === 0 ? seats[0] : null) : (seats.find((t) => Math.sign(t.p.x) === Math.sign(e._sx)) || seats[i]);
         if (!x) { e.visible = false; return; }
-        e.position.copy(x.p); e.quaternion.copy(x.q); e.scale.setScalar(x.r / rig._R);
+        e.position.copy(x.p); e.quaternion.copy(x.q); e.scale.setScalar(x.r / rig._R); e.userData.kfbSide = x.side;
       });
       rig._max = rig._R * 0.3;
     };
@@ -173,6 +173,12 @@ export function mountEyes(THREE, figure, { card = null, applyClay = null, clayRe
   if (!rig.eyes || !rig.eyes.length) { host?.dispose?.(); return { status: 'ERROR', seat: found.seat, reason: 'EyeRig baute keine Augen' }; }
   rig.setLife({ on: false, wander: 0, tremor: 0 }); rig.setKinetics({ enabled: false });
   rig.rig.traverse((m) => { if (m.isMesh) { m.castShadow = false; m.receiveShadow = false; m.userData.eyeRig = true; } });
+  /* v1.2.7: per-eye lid colour (card eyeRig.lid.colourL / colourR) for asymmetric faces (Monstrosity skin patches); falls back to lid.colour */
+  if (er.lid && (er.lid.colourL || er.lid.colourR)) for (const e of rig.eyes) {
+    const side = e.userData.kfbSide || (Math.sign(e._sx || 0) >= 0 ? 'L' : 'R');   // KayKit: figure left = +X
+    const hexS = side === 'L' ? (er.lid.colourL || lidHex) : (er.lid.colourR || lidHex);
+    if (hexS && e._up && e._up.material) { e._up.material = e._up.material.clone(); e._up.material.color = new THREE.Color(hexS); }
+  }
   /* lid clay: convert the (hidden) v6 upper shell material; the E2 skin shares it via skin.sync() */
   if (applyClay) for (const e of rig.eyes) applyClay(e._up, THREE, { profile: 'character', seed: seed + ':lid', scaleRef: clayRef, skip: () => false });
   skin.sync();
