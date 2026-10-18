@@ -7239,6 +7239,21 @@
    "applies": "R10.1"
   },
   {
+   "id": "V-516",
+   "date": "2026-10-18",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Hub q71–q73 (Georg 18.10.): (1) Spielzeugsoldat B11 r5b FAIL – Georg baut die Paradehaltung selbst im Resident Atlas; WSB liefert die aktuelle Pose als kfb.resident-pose-patch/1-JSON (Knochen-Euler, Gewehr als Prop mit Eltern-Knochen, Meta mit Kontaktpunkten und Modell-Eingriff) und färbt Tschako und Uniform in dasselbe, etwas hellere Blau. (2) Friedhof B33 r2b TUNE, vorerst so übernommen („noch viel zu tun“). (3) Vampirturm: Georg erzeugt ein neues Meshy-Modell nach WSB-Prompt (ebene Dachplattform ≥ 3 × 3 m); Thron-Modul und Vampire_NoEyes (EYE-CLEANUP-02) liegen bereit.",
+   "values": {},
+   "owner": "WSB · Georg",
+   "check": "Pose-JSON + Farbbilder",
+   "source": "Hub q71–q73",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg übernimmt die Pose selbst; wir liefern die Basis.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7326,7 +7341,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:869",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:870",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
