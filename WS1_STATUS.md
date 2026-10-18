@@ -3,6 +3,54 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 80 · 18.10. früh · C3 grün · HUD R5f + C3b Fundsachen-Demo gebaut und grün · clay v1.1 umgestellt · Volltest läuft als Nächstes
+
+Alles auf Branch `c3/ernte` @d878835 (lokal; Push, Spiegel und Branch-Vorschau nach der vollen Testreihe).
+
+**C3 Fluff-Ernte, `test/c3.mjs` PASS (15/15):**
+- 15 KayKit-Bäume, texturiert 15/15.
+- 183 Kugeln (goblin 57 / atlantis 63 / utopia 63).
+- Treffer Ø Faust 2,4, Schuss 2,4 (Projektil trifft), Explosion 1.
+- Ruhe Ø 1,8 s, max 2,6 s.
+- **Einsinken 0** gegen das gerenderte Netz.
+- 183/183 gesammelt, Zähler je Sorte stimmen, kfb.save/1 gespeichert.
+- Modul 0,007 ms je Bild.
+- Grammatik nach WS0 (a): Kontur 0,85/1,25 durchgesetzt, 1400 Bäume ohne Verstoß. (c) kahle Bäume ohne Fluff.
+
+**HUD R5f** (byte-gleich in `src/vendor/hud/`, Wirt `src/HudR5f.jsx`):
+- Fluff-Leiste oben (Kugeln springen je Sorte ins Fach), Aktionsleiste unten, Rucksack unten links.
+- V/B/N setzen Faust/Blaster bzw. die Bombe im Kontext-Platz, Klick auf die Bombe zündet.
+- Abweichungen von der Tafel:
+  - Instrumente, Karte und Radio rechts oben fehlen noch (folgen mit Navigation).
+  - Fluff-Flug ohne Startpunkt im Bild (`fl.land`).
+  - **Wegwerfen:** R5f hat in der Rucksack-Detailansicht keine Taste dafür. Der Wirt hängt eine Lack-Taste „Wegwerfen“ an (Brief verlangt Wegwerfen). Bitte als Tafel-Ergänzung prüfen.
+
+**C3b Fundsachen-Demo, `test/c3b.mjs` PASS (11/11):**
+- Laufwelt `#m1,harvest`, Weg (27,8 m, Halbbreite 1,3 m).
+- 58 Fundsachen in ungeraden Gruppen (nest 1/3/5), **0 auf dem Weg**.
+- Essen/Süßes/Getränke häufig, Werkzeug selten (Platzhalter-Beute aus KayKit Restaurant/Resource/RPGTools und Tiny Treats Baked Goods/Picnic, Pin c746a956).
+- Schweben auf **Hüfthöhe aus dem Spieler-Skelett** (Knochen hips über root) mit ±5 % (gemessen 0,951–1,051), drehen sich (1 Umdrehung/3 s), Phase je Stück, Kontaktfleck je Stück (58).
+- Ziel-„i“ in der Aktionsleiste.
+- Aufheben mit I in den Rucksack, Wegwerfen aus dem Rucksack: Stück schwebt wieder vor dem Spieler.
+- **Befund an WS0:** FrizzleBobs Hüfte liegt nur ≈ 0,25 m über dem Boden (kurzbeinig, 1,81 m mit großem Kopf). Die Fundsachen schweben deshalb tief. Soll die Hüfthöhe von einem anderen Medium-Rig kommen (z. B. GothGirl), oder ist das so gewollt?
+- Clip: `test/out/c3/clip.webm` (Wiese → Aufheben → Rucksack → Wegwerfen → Baum 3 Hiebe → Einsammeln, etwa 24 s plus kurzer Ladevorlauf).
+- Die Bühnen-Kontaktschatten-Aufnahme 200 % liegt in `test/out/c3b/contact-200.png`.
+- **Perf ≥ 55 fps** messe ich auf echter GPU im Browser-Fenster, sobald die Branch-Vorschau steht (headless SwiftShader sagt dazu nichts).
+
+**clay v1.1 (V-429):**
+- `src/vendor/clay/kfb-clay.v1.1.js` byte-gleich (blob 6cdb67b0), Wirt `src/modules/claySSOT.js`.
+- Bühne: Figuren nach Karte (character), Aufstellung midground.
+- Laufwelt: FB/GothGirl nach Karte, Bäume und Fundsachen midground.
+- Das Amphitheater läuft noch über `clayLook` (Umstellung als Nächstes).
+- Licht-Test PASS, Aufstellungs-Test auf v1.1 angepasst (Samt ≤ 0,05 statt 0).
+
+**C1 Kamera:** Jitter/Orbit/God PASS. Den Clip (Ich-Perspektive zeigt Boden) korrigiert die Bewegungs-Sitzung gerade, danach ihr run-all. Grün gemeldet wird erst danach.
+
+**Blockiert wie §79:**
+- kein Dropbox auf dem WS1-Mac;
+- B9 (C4), B22-Lampen r3, B28 + Beute-Tabelle, Dory r9 nicht lesbar;
+- Stage-Light v1.1 noch nicht da.
+
 ## 79 · 18.10. nachts · Stand C1/C2/C3 · WS0-Antworten gelesen · **Bitte: Dropbox fehlt auf dem WS1-Mac**
 
 **C1 Kamera** (Bewegungs-Sitzung, `c1/kamera`):
