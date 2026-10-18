@@ -1,3 +1,11 @@
+# NEU OBEN · Reihenfolge für WSA ab jetzt (18.10. 22:45)
+1. **`kfb-bubbles` PR #424 fertigstellen** (R10.1-Regeln, Blasen-Hintergrund V-519, Font-Fallback, Single-File-Demo). Das ist Blocker für WS1b (Melodie-Stimme V-497 wartet darauf).
+2. **Plattform-Deep-Dive** nach `replies/BRIEF_WSA_PLATFORM_DEEPDIVE_R1.md`: nur recherchieren, nichts einrichten. Ergebnis ins private Repo + Seite, Link an WS0.
+3. **Combat Arena gegen V-536 prüfen** (Abschnitt unten): nur Liste, was anzupassen ist.
+4. **Songs Best-of Batch 1** (`replies/BRIEF_WSA_SONGS_BESTOF_R1.md`), Plan zuerst.
+- **Noch nicht:** Critic-Chats (WS0 aktualisiert die Briefings), Zensurbalken (wartet auf Georgs q104), Wurfwaffen-VFX (B41 noch nicht freigegeben).
+- **Neu:** WS1 läuft ab heute Nacht als WS1b auf Georgs MacBook (V-539). Die privaten Assets kommen dort aus Dropbox bzw. aus deinem privaten Repo.
+
 # NEU OBEN · Waffen-Achse global, auch Combat Arena (V-536, Georg 18.10.)
 Blaster, Gewehr, Trichter und jede Ziel-Waffe sitzen als Verlängerung des Unterarms in der Faustkugel; Mündungsachse = Unterarmachse. Sonst zielen alle seitlich, und Mündung, Aim und Auto-Target brechen. Gilt auch für die Combat Arena (Spieler- und Gegner-Waffen) und deine Module.
 - Referenz: WSB B31 r6b_final. Anker `KFB_Grip` (Hand) und `KFB_Muzzle` (Unterarm), glTF lokal +Y = Unterarmachse, Prüfbild mit Achsenlinie Ellbogen → Mündung.
