@@ -3,6 +3,27 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 86 · 18.10. · Georg: Cartoon-Deformation der Racer bei Schub und Steigen (Anticipation → Stretch → Recovery, wie Dragonriding) · WS1-Konzept
+
+**Georg:** Beschleunigen und an Höhe gewinnen mit Anticipation und Recovery: erst gestaucht, dann durch den Schub gestreckt, so ähnlich wie bei WoW. Antriebs-VFX bleiben dabei konsistent. Ziel ist cartoon-kinetisches Feedback am eigenen Fahrzeug.
+
+**Basis ist schon im Spiel:** `vendor/deformer/vehicle-cartoon-deformer.v2.js` (`kfb.cartoon-vehicle-deformer/2`, M3 Stufe E).
+- Bewusst **kein Shader**, sondern verschachtelte Gruppen (Visual Response Root → Shell Deform Root für Karosserie, Fahrersitz, Sekundärteile), begrenzte nicht-uniforme Skalierung und gedämpfte Federn.
+- Grammatik Cause → Anticipation → Action → Impact → Follow-through → Recovery: Dauer-Ursachen ziehen an Feder-Zielen, Ereignisse geben Feder-Impulse.
+
+**WS1-Vorschlag:**
+1. **Neue Ereignisse im Deformer** (Profilwerte, kein neuer Code-Pfad):
+   - `surge` (Schub/Boost): 80–120 ms Stauchen in Fahrtrichtung (Länge −8 %, Breite und Höhe +4 % bei Volumen-Erhalt), dann Streckung +10–14 % mit dem Schub, Überschwingen, Ruhe nach ~0,5 s.
+   - `ascent` (Space in der Luft): vertikal stauchen, dann strecken plus kurzes Nicken nach oben.
+   - `brake` bzw. `halt`: Nase taucht, Heck hebt, Rückfedern.
+   - Barrel Roll gibt es schon (Tumble/Assist).
+2. **VFX konsistent ohne Extra-Arbeit:**
+   - Die Düsen-Anker hängen **unter dem Shell Deform Root**. Stauchen und Strecken verschieben sie automatisch mit, die Fahnen bleiben an den Düsen.
+   - Die **Fahnenlänge folgt demselben Federwert:** In der Anticipation wird die Flamme kurz eingezogen (Ansaugen), beim Stretch schießt sie lang raus und pulsiert. Ein Signal treibt Deformer, VFX und Sound (Gang- bzw. Boost-Stoß).
+3. **Grenzen und Feinschliff:** Deformation ist reine Präsentation (Kollision und Physik unberührt, wie im Deformer festgelegt). Die Werte je Fahrzeug liegen im Profil (`deformer-profiles.json`), Georg tunt in der Fühlprobe. Abnahme mit Bildfolge und Clip (Stauchen sichtbar, kein Ruckeln, Düsen sitzen in jedem Bild).
+
+**Reihenfolge:** zusammen mit dem Antriebs-Modul R1a (§83/§84) für Georgs sechs Fahrzeuge. Die Dragonriding-Recherche (läuft) liefert das Schwung-Modell dazu.
+
 ## 85 · 18.10. · Tempo-Grenzen Freifahrt / Hyperspeed (Georg-Frage, WS1-Einschätzung für die Hyperspeed-Planung)
 
 **Heute (K2B, J17-Meter):**
