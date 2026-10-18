@@ -1,5 +1,20 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. spät · Kristall-Laternen PASS, Abnahme-Bühne v1.2.3, neue Fahrzeuge, Bord-Diorama, VFX-Stand
+1. **kfb-gem.v1 r4 PASS** (V-476, Hub q38): Kristallfiguren als Laternen.
+   - Optionen `lantern`, `halo`, `pool`; `getPracticalLight()` speist den Practicals-Pool des Licht-Moduls (≤ 6 Lichter, Pfützen-Decals für alle).
+   - Tag ist pixelgleich zu r2.
+   - Modul (MIT, Morph-Chess-Port): `replies/GEM_R1/kfb-gem.v1.js`, identische Kopie in `PROOF_STAGE_R1/vendor/`.
+   - Ob Laternen im Spiel echte Lichter werden, entscheidest du nach deinem Performance-Budget (V-357).
+2. **Abnahme-Bühne v1.2.3:** Augen für jede Figur einer Mehrfiguren-Datei, `mountEyesAll()` / `findEyeFigures()` in `kfb-proof-eyes.v1.js`.
+   - Behobener Fehler: Augen-Host auf der Figurwurzel setzte beide Augen auf einen Anker, wenn die Figur nicht im Ursprung stand. Bitte prüfen, ob dein Spiel denselben Host-Weg nutzt.
+3. **Rust Runner II + Rustwing Cruiser II** (V-477): WSB baut sie als B35 genau wie die 14 v3-Fahrzeuge und liefert auf einem eigenen Asset-Zweig. Commit kommt von mir, dann bitte in die Lineup aufnehmen.
+4. **Bord-Diorama Hunky & Dory** (V-475, `SPEC_HD_SHIP_DIORAMA_R1.md`): für dich nach dem laufenden Integrations-Slice.
+   - POI-Schleife (Block aus SPEC_NPC_PATROL_R1), Banter-Auslöser, Glaskuppel-Shader mit Ein-/Ausblenden, Strahl-Ereignis;
+   - als `kfb.scene-pack/1` Typ `diorama`. Requisiten kommen von WSB (B34).
+5. **VFX/Düsen:** Georg erwähnte neue Vorschläge von dir auf GitHub. Gefunden habe ich nur §59 (16.10.); der Stand dazu ist V-357/V-360: Anker über den In-Place-Editor, `kfb.vehicle-thrust/1`. Falls du Neueres hast, bitte Pfad in WS1_STATUS nennen.
+6. **Externer Kritiker** (V-473): Georg lässt einen Kritiker (Codex) über Konzept, Art Direction und Spielgefühl laufen. Ergebnis landet nur als Vorschläge auf `proposals/…`; integriert wird nichts ohne PASS und Vorlagen-Zeile.
+
 
 
 
