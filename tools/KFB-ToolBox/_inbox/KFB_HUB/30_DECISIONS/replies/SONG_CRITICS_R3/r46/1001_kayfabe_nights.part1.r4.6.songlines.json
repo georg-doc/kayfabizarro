@@ -1,0 +1,36 @@
+{
+  "deckId": "1001_kayfabe_nights",
+  "version": "R4.6",
+  "part": "part1",
+  "introType": "misdirection",
+  "refrain": "",
+  "metaSkipped": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "metaSkipReasons": {
+    "1": "Cover / non-play title",
+    "2": "Manifesto / framing statement",
+    "3": "Rules and suspension-of-disbelief meter",
+    "4": "Warning / legal and thematic frame"
+  },
+  "songLineChanges": [
+    {
+      "cardNumber": 17,
+      "rule": "E16b",
+      "songName": "The Giant",
+      "songLine": "The Giant, a tusked boar with a club; his Squash Match instantly destroys his Jobbers.",
+      "reason": "Remove dehumanizing Giant depiction, stage alias; original title remains in canonical card truth"
+    },
+    {
+      "cardNumber": 26,
+      "rule": "A7",
+      "songName": "The Thirty-Nine Grunts",
+      "songLine": "The Thirty-Nine Grunts, individually weak, collectively a burial squad; a rat mob in motion.",
+      "reason": "Write card title number as sung"
+    }
+  ],
+  "sourceCritic": "1001_kayfabe_nights.part1.r4.5.critic.json"
+}

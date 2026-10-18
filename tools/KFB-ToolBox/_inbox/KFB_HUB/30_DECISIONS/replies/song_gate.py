@@ -166,6 +166,8 @@ def gate_lyrics(a):
             continue
         if ci != idx:
             F("C10", f"Karten {[c.get('cardNumber') for c in cards[idx:ci]]} fehlen oder Reihenfolge falsch (bei Beat {j + 1})")
+            if idx == 0:   # R3.4b: an intro beat that names a later card makes the matcher jump (1001 R4.5 'Montreal Screwjob')
+                F("C10", f"Beat {j + 1} wurde als Karte {cards[ci].get('cardNumber')} erkannt, bevor Karte {cards[0].get('cardNumber')} kam – nennt das Intro einen Kartennamen?")
         card_beats.append((j, b, cards[ci], k))
         idx = ci + 1
     if idx < len(cards):
@@ -193,6 +195,14 @@ def gate_lyrics(a):
             F("C11", f"Refrain {len(ref_beats)}x (max 3)")
     for b in middle:
         F("C10", f"Beat ohne Karte zwischen Karten: {b[:60]!r}")
+    # R3.4b: frame beats must not contain card names of the range (breaks card recognition and spoils the reveal)
+    _names = [(c.get("cardNumber"), str(c.get("cardName") or "").strip()) for c in cards]
+    for b in intro + outro:
+        bl = b.casefold()
+        for num, nm in _names:
+            core = re.sub(r"^(the|a|an)\s+", "", nm.casefold())
+            if len(core) >= 6 and core in bl:
+                F("C10", f"Rahmen nennt Kartennamen {nm!r} (Karte {num}): {b[:60]!r}")
     if len(intro) < 2:
         F("C9", f"Intro ohne Refrain hat {len(intro)} Beat(s); mindestens 2 eigene Beats")
     if a.songlines and intro_type not in INTRO_TYPES:

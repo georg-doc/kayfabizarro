@@ -28,6 +28,7 @@ You are a KFB song writer for one spoken-word track. Base folder: `R = /Users/ge
    - **Meaning must not shift or flip** (critics found reversals).
    - **No game rules read out** (A3), no game words such as Giant/Micro (A8).
    - Card part **80–95 characters**, whole line incl. opener ≤ 105 characters (A4, sayability).
+3b. **Never name a card from the range in the intro/outro** (the gate checks this: "Rahmen nennt Kartennamen"; it breaks card recognition and spoils the reveal).
 4. Callbacks (B7b): at least 2, including outro → intro image. Refrain only where there is room (C11: no frame word more than 2×).
 5. **Keep the style file unchanged** (it passed the style gate); your text has to fit it (BPM/groove).
 

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- song_gate R3.4b: Rahmen (Intro/Outro) darf keine Kartennamen des Bereichs nennen (FAIL C10) + Hinweis, wenn ein Intro-Beat als spätere Karte erkannt wird (Ursache des 1001-Teil-2-Fehlers, gefunden vom Autor). Kristallfiguren r3 beauftragt: echtes Leuchten von innen wie Fackeln (Kern heiß, Rand dunkler, Außenlicht nachts reduziert, Halo optional).
 - V-472 Externer Kritiker R4.5/R5.1: 13/13 revise (A4 58, B7 52, A2 39, C9 35, A3 35 Flags); WS0-Writers-Room R4.6/R5.2 gestartet (16 Autoren, Gate-Runner gate_track.py), danach frische Kritiker mit Style-Datei.
 - Hub q35: KayKit Mystery bleibt privat (V-470). Hub q36 Kristallfiguren TUNE (V-471): nachts stärker leuchten (Laternen auch außerhalb des Bretts), Schachzug-Hüpfen, Begleiter nach Interaktion (Kleiner-Prinz-Logik).
 - Songs R4.5/R5.1 (16 Tracks) von WSA geliefert; WS0-Gates mit CI-Kartenbereichen: 14 PASS, Style 16/16 PASS; 1001 Teil 2 (Kartenerkennung/C9/C11) und Romantic (Opener doppelt) zurück an WSA (b118); externer Kritiker für 13 Tracks gestartet (SONG_CRITICS_R3). Export-Brief Resident Atlas → Szenen-Packs (b117).

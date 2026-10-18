@@ -1,0 +1,10 @@
+# 1001_kayfabe_nights.part2 r4.5 -> r4.6 (gate: PASS, 28/28 cards)
+- C10 card recognition (3/28): the intro named "Montreal Screwjob" (card 58), so the gate jumped to card 59. The intro now names no card from 33-60; all 28 cards are recognised in order.
+- C9: the intro has 5 beats. Beat 1 = title + thesis (the better storyteller lives). Then the narrator (FrizzleBob, once), a stand-up setup and punch ("fired a wife every morning" / "stop at the good part"), and dog whistles (ref bump, botched finish, three apples).
+- C9 outro: punch on media/money/us (promoters tell stories to stay rich; we buy season two). It calls back to the intro (Scheherazade, morning).
+- C11: the frame and opener words repeated only because the cards were not recognised. The new frame and openers have no word more than 2x.
+- B6: 12 openers on 28 lines (43 %), all new and short (whole line <= 105 characters). The old object-acting openers (fishbone/body "accuses/attracts") and the time hop "After the final bell" are gone.
+- B7b callbacks: height (Qamar), horse (Sage), Sage (Princess), marks (Screwjob), Masrur (Cliffhanger).
+- A4: card 58 now includes "unfair reset". Cards 39, 40, 52, 53, 59, 60 now use more of the card's own wording to stay within 80-95 characters (52 "if King orders it", 59 "to be continued next night", 60 "keep it on, true face").
+- Card 52 meaning: "match ends by the King" -> "the bell, if King orders it", as in the card.
+- Style file unchanged. No new songlines (no A7 changes; the r4.4 songlines still apply).
