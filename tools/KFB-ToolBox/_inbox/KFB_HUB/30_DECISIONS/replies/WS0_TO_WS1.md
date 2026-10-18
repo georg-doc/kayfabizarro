@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. Abend · Georg: „ja“ zu Flug + Zerstörung R1 (V-514)
+Briefing `replies/BRIEF_WS1_FLIGHT_DESTRUCTION_R1.md`, Referenzen in `replies/SPELLSPILL_R2_REF/`. Start nach R1a-Veröffentlichung und Status §93. Fragen bitte in WS1_STATUS.
+
 ## 18.10. Abend · Stand nach Georgs Hub-Runde (q52–q70)
 - **Fluff-o-lect ist entschieden (V-507/V-508):**
   - Spec-Entwurf `replies/SPEC_FLUFF_O_LECT_R1_DRAFT.md`; Datenformat `kfb.fluffolect/1`.

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-514 WS1-Block Flug + Zerstörung R1 (BRIEF_WS1_FLIGHT_DESTRUCTION_R1, SpellSpill-Referenz in replies/SPELLSPILL_R2_REF). Probe R10 veröffentlicht.
 - Hub q52–q68 beantwortet: V-508 Fluff-o-lect-Entscheide, V-509 B11 FAIL (King’s-Guard-Haltung), V-510 Spieler-Arm als Roboter-Unterarm, V-511 Assets statt Eigenbau, V-512 Friedhof/Hexenhaus/Vampir, V-513 EyeRig-Varianten. B33 Vampirturm r2 eingegangen.
 - V-507 Fluff-o-lect-Spec R1 (Entwurf), Hub b139 + Fragen q59–q68. B36 Werkstatt → q56, B33 Friedhof mit KFB-Augen → q57, Vampir ohne augenfreie Version → q58.
 - Deep Research Fluff-Linguistik R1 da (replies/RESEARCH_FLUFF_LINGUISTICS_R1.md, Hub b138). Probe R9.2: Kontraktionen lesbar, Zahlen lesbar, Glyphen-Seed auf bereinigtes Wort. B32 r2: Turm-Kandidaten → Hub q55, Diorama zu leer → r3 nach Turm-Wahl.

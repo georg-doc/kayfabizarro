@@ -1,0 +1,541 @@
+{
+  "schema": "kfb.seedworld.saturated-fx-budget/0.1",
+  "owner": "Existing Seed World Mech Destruction POC 01",
+  "scenario": "block",
+  "status": "TECHNICAL_BUDGET_PROOF_PASS__NOT_VISUAL_OR_TARGET_GPU_ACCEPTANCE",
+  "tests": [
+    {
+      "name": "real original POC loaded",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "actual Brackeys alpha plus source 3D isolated earlier",
+      "pass": true,
+      "details": {
+        "alphaNaturalWidth": 512,
+        "threeGeometry": "IcosahedronGeometry",
+        "damageFromSource": true,
+        "dustInstanceCount": 195,
+        "sourceRevision": "170"
+      }
+    },
+    {
+      "name": "actual 12 source rocket events",
+      "pass": true,
+      "details": {
+        "events": 12,
+        "cellsLost": 90,
+        "cascades": 2,
+        "debris": 178,
+        "smoke": 195,
+        "chips": 320,
+        "fire": 17,
+        "promoted": 4,
+        "peakVfx": 584,
+        "updateMs": {
+          "p50": 0.5,
+          "p95": 1.7,
+          "p99": 2.8
+        }
+      }
+    },
+    {
+      "name": "nonzero true damage and smoke",
+      "pass": true,
+      "details": {
+        "events": 12,
+        "cellsLost": 90,
+        "cascades": 2,
+        "debris": 178,
+        "smoke": 195,
+        "chips": 320,
+        "fire": 17,
+        "promoted": 4,
+        "peakVfx": 584,
+        "updateMs": {
+          "p50": 0.5,
+          "p95": 1.7,
+          "p99": 2.8
+        }
+      }
+    },
+    {
+      "name": "actual source pool pressure",
+      "pass": true,
+      "details": {
+        "events": 12,
+        "cellsLost": 90,
+        "cascades": 2,
+        "debris": 178,
+        "smoke": 195,
+        "chips": 320,
+        "fire": 17,
+        "promoted": 4,
+        "peakVfx": 584,
+        "updateMs": {
+          "p50": 0.5,
+          "p95": 1.7,
+          "p99": 2.8
+        }
+      }
+    },
+    {
+      "name": "finite actual render timings none",
+      "pass": true,
+      "details": {
+        "variant": "none",
+        "scenario": "block",
+        "frames": 16,
+        "sourceDust": 195,
+        "budget": null,
+        "pixelDiffVsNoSmoke": null,
+        "visual3D": 0,
+        "visual2D": 0,
+        "renderSubmitMs": {
+          "p50": 4.6,
+          "p95": 6.8,
+          "p99": 6.8
+        },
+        "rafIntervalMs": {
+          "p50": 16.7,
+          "p95": 1873.9,
+          "p99": 1873.9
+        },
+        "callsAvg": 142,
+        "trisMax": 796942,
+        "rendererInfo": {
+          "geometries": 41,
+          "textures": 2
+        },
+        "damageEvidence": {
+          "events": 12,
+          "cellsLost": 90,
+          "cascades": 2,
+          "debris": 178,
+          "smoke": 195,
+          "chips": 320,
+          "fire": 17,
+          "promoted": 4,
+          "peakVfx": 584,
+          "updateMs": {
+            "p50": 0.5,
+            "p95": 1.7,
+            "p99": 2.8
+          }
+        },
+        "engine": "headless fixture, real source POC, not target GPU"
+      }
+    },
+    {
+      "name": "finite actual render timings c",
+      "pass": true,
+      "details": {
+        "variant": "c",
+        "scenario": "block",
+        "frames": 16,
+        "sourceDust": 195,
+        "budget": null,
+        "pixelDiffVsNoSmoke": {
+          "changedPercent": 4.222,
+          "meanDifference": 2.753,
+          "samplePixels": 156800
+        },
+        "visual3D": 9,
+        "visual2D": 186,
+        "renderSubmitMs": {
+          "p50": 3.9,
+          "p95": 6.8,
+          "p99": 6.8
+        },
+        "rafIntervalMs": {
+          "p50": 16.7,
+          "p95": 17.1,
+          "p99": 17.1
+        },
+        "callsAvg": 145,
+        "trisMax": 798406,
+        "rendererInfo": {
+          "geometries": 42,
+          "textures": 3
+        },
+        "damageEvidence": {
+          "events": 12,
+          "cellsLost": 90,
+          "cascades": 2,
+          "debris": 178,
+          "smoke": 195,
+          "chips": 320,
+          "fire": 17,
+          "promoted": 4,
+          "peakVfx": 584,
+          "updateMs": {
+            "p50": 0.5,
+            "p95": 1.7,
+            "p99": 2.8
+          }
+        },
+        "engine": "headless fixture, real source POC, not target GPU"
+      }
+    },
+    {
+      "name": "finite actual render timings d",
+      "pass": true,
+      "details": {
+        "variant": "d",
+        "scenario": "block",
+        "frames": 16,
+        "sourceDust": 195,
+        "budget": {
+          "hero": [
+            194,
+            192,
+            188
+          ],
+          "sprites": [
+            193,
+            191,
+            187,
+            174,
+            172,
+            159,
+            145,
+            138,
+            112,
+            106,
+            90
+          ],
+          "candidateVisible": 195,
+          "droppedMath": 181,
+          "tilePx": 110
+        },
+        "pixelDiffVsNoSmoke": {
+          "changedPercent": 0.415,
+          "meanDifference": 0.244,
+          "samplePixels": 156800
+        },
+        "visual3D": 3,
+        "visual2D": 11,
+        "renderSubmitMs": {
+          "p50": 4.2,
+          "p95": 6.4,
+          "p99": 6.4
+        },
+        "rafIntervalMs": {
+          "p50": 16.6,
+          "p95": 17,
+          "p99": 17
+        },
+        "callsAvg": 145,
+        "trisMax": 797226,
+        "rendererInfo": {
+          "geometries": 42,
+          "textures": 3
+        },
+        "damageEvidence": {
+          "events": 12,
+          "cellsLost": 90,
+          "cascades": 2,
+          "debris": 178,
+          "smoke": 195,
+          "chips": 320,
+          "fire": 17,
+          "promoted": 4,
+          "peakVfx": 584,
+          "updateMs": {
+            "p50": 0.5,
+            "p95": 1.7,
+            "p99": 2.8
+          }
+        },
+        "engine": "headless fixture, real source POC, not target GPU"
+      }
+    },
+    {
+      "name": "budget capped 3D near hero",
+      "pass": true,
+      "details": {
+        "legacy": 9,
+        "budget": 3
+      }
+    },
+    {
+      "name": "budget capped 2D source atlas",
+      "pass": true,
+      "details": {
+        "legacy": 186,
+        "budget": 11
+      }
+    },
+    {
+      "name": "source smoke positions never duplicated in bounded hybrid",
+      "pass": true,
+      "details": {
+        "hero": [
+          194,
+          192,
+          188
+        ],
+        "sprites": [
+          193,
+          191,
+          187,
+          174,
+          172,
+          159,
+          145,
+          138,
+          112,
+          106,
+          90
+        ],
+        "candidateVisible": 195,
+        "droppedMath": 181,
+        "tilePx": 110
+      }
+    },
+    {
+      "name": "budget uses actual original pool IDs not new emitter simulation",
+      "pass": true,
+      "details": {
+        "hero": [
+          194,
+          192,
+          188
+        ],
+        "sprites": [
+          193,
+          191,
+          187,
+          174,
+          172,
+          159,
+          145,
+          138,
+          112,
+          106,
+          90
+        ],
+        "candidateVisible": 195,
+        "droppedMath": 181,
+        "tilePx": 110
+      }
+    },
+    {
+      "name": "bounded geometry lower than prior hybrid",
+      "pass": true,
+      "details": {
+        "legacy": 798406,
+        "budget": 797226
+      }
+    },
+    {
+      "name": "budget smoke visible in rendered scene",
+      "pass": true,
+      "details": {
+        "changedPercent": 0.415,
+        "meanDifference": 0.244,
+        "samplePixels": 156800
+      }
+    },
+    {
+      "name": "same authoritative game damage across all variants",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "no original source mask HTTP error",
+      "pass": true,
+      "details": []
+    }
+  ],
+  "measurements": [
+    {
+      "variant": "none",
+      "scenario": "block",
+      "frames": 16,
+      "sourceDust": 195,
+      "budget": null,
+      "pixelDiffVsNoSmoke": null,
+      "visual3D": 0,
+      "visual2D": 0,
+      "renderSubmitMs": {
+        "p50": 4.6,
+        "p95": 6.8,
+        "p99": 6.8
+      },
+      "rafIntervalMs": {
+        "p50": 16.7,
+        "p95": 1873.9,
+        "p99": 1873.9
+      },
+      "callsAvg": 142,
+      "trisMax": 796942,
+      "rendererInfo": {
+        "geometries": 41,
+        "textures": 2
+      },
+      "damageEvidence": {
+        "events": 12,
+        "cellsLost": 90,
+        "cascades": 2,
+        "debris": 178,
+        "smoke": 195,
+        "chips": 320,
+        "fire": 17,
+        "promoted": 4,
+        "peakVfx": 584,
+        "updateMs": {
+          "p50": 0.5,
+          "p95": 1.7,
+          "p99": 2.8
+        }
+      },
+      "engine": "headless fixture, real source POC, not target GPU"
+    },
+    {
+      "variant": "c",
+      "scenario": "block",
+      "frames": 16,
+      "sourceDust": 195,
+      "budget": null,
+      "pixelDiffVsNoSmoke": {
+        "changedPercent": 4.222,
+        "meanDifference": 2.753,
+        "samplePixels": 156800
+      },
+      "visual3D": 9,
+      "visual2D": 186,
+      "renderSubmitMs": {
+        "p50": 3.9,
+        "p95": 6.8,
+        "p99": 6.8
+      },
+      "rafIntervalMs": {
+        "p50": 16.7,
+        "p95": 17.1,
+        "p99": 17.1
+      },
+      "callsAvg": 145,
+      "trisMax": 798406,
+      "rendererInfo": {
+        "geometries": 42,
+        "textures": 3
+      },
+      "damageEvidence": {
+        "events": 12,
+        "cellsLost": 90,
+        "cascades": 2,
+        "debris": 178,
+        "smoke": 195,
+        "chips": 320,
+        "fire": 17,
+        "promoted": 4,
+        "peakVfx": 584,
+        "updateMs": {
+          "p50": 0.5,
+          "p95": 1.7,
+          "p99": 2.8
+        }
+      },
+      "engine": "headless fixture, real source POC, not target GPU"
+    },
+    {
+      "variant": "d",
+      "scenario": "block",
+      "frames": 16,
+      "sourceDust": 195,
+      "budget": {
+        "hero": [
+          194,
+          192,
+          188
+        ],
+        "sprites": [
+          193,
+          191,
+          187,
+          174,
+          172,
+          159,
+          145,
+          138,
+          112,
+          106,
+          90
+        ],
+        "candidateVisible": 195,
+        "droppedMath": 181,
+        "tilePx": 110
+      },
+      "pixelDiffVsNoSmoke": {
+        "changedPercent": 0.415,
+        "meanDifference": 0.244,
+        "samplePixels": 156800
+      },
+      "visual3D": 3,
+      "visual2D": 11,
+      "renderSubmitMs": {
+        "p50": 4.2,
+        "p95": 6.4,
+        "p99": 6.4
+      },
+      "rafIntervalMs": {
+        "p50": 16.6,
+        "p95": 17,
+        "p99": 17
+      },
+      "callsAvg": 145,
+      "trisMax": 797226,
+      "rendererInfo": {
+        "geometries": 42,
+        "textures": 3
+      },
+      "damageEvidence": {
+        "events": 12,
+        "cellsLost": 90,
+        "cascades": 2,
+        "debris": 178,
+        "smoke": 195,
+        "chips": 320,
+        "fire": 17,
+        "promoted": 4,
+        "peakVfx": 584,
+        "updateMs": {
+          "p50": 0.5,
+          "p95": 1.7,
+          "p99": 2.8
+        }
+      },
+      "engine": "headless fixture, real source POC, not target GPU"
+    }
+  ],
+  "errors": [],
+  "notRun": [
+    "Target Mac/actual GPU FPS",
+    "Visual Clay Golden acceptance",
+    "Dynamic sustained fire/real-time pool arbitration",
+    "Full WB2 or Combat integration"
+  ],
+  "originalDamage": {
+    "events": 12,
+    "cellsLost": 90,
+    "cascades": 2,
+    "debris": 178,
+    "smoke": 195,
+    "chips": 320,
+    "fire": 17,
+    "promoted": 4,
+    "peakVfx": 584,
+    "updateMs": {
+      "p50": 0.5,
+      "p95": 1.7,
+      "p99": 2.8
+    }
+  },
+  "summary": {
+    "passed": 16,
+    "total": 16,
+    "screenshots": 3
+  }
+}

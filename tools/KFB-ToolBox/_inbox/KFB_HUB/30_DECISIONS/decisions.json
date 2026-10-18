@@ -7209,6 +7209,21 @@
    "applies": "später"
   },
   {
+   "id": "V-514",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Großer WS1-Block „Flug + Zerstörung R1“ freigegeben (Georg 18.10.: „ja“), Briefing replies/BRIEF_WS1_FLIGHT_DESTRUCTION_R1.md: (1) Flugmodus per Doppel-Leertaste (400 ms, V-024/V-179) – eine Flugsteuerung für Racer, Jetpack und Kampf-Mech auf Basis Elan/R1a/Cartoon-Deformer und kfb-flight-vfx.js; (2) Destruction-Mech-POC (Seed World createWorld/createDestruct/createWeaponFX, ohne sw-mech) mit neuem Auslöser über Arm-Aufsatz/Fahrzeug-Waffe, Fluff-Ausbeute ins Saug-Modul, freiliegende Karten; (3) Effekt-Kette Shot→Hit→Bild/Ton/Spur getrennt→Aufräumen nach der SpellSpill-Analyse, Schichten Impact/Splitter/Trümmer/Rauch/Akzent/Fluff, Budget 3 nahe 3D-Rauchkörper + 11 Atlas-Sprites, Formen V-499, Ton V-461. Start nach R1a-Veröffentlichung und Status §93.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Vorschau + Videos + Messwerte",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Spielgefühl und Kreislauf Zerstören → Fluff → Karten.",
+   "applies": "nach §93"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7296,7 +7311,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:867",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:868",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
