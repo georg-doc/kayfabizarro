@@ -1,0 +1,29 @@
+{
+ "set": "flight_r1",
+ "note": "Cartoon clay flight sounds (V-449/aircraft); loops seamless, pitch adjusted in code.",
+ "items": [
+  {
+   "id": "F1_prop_loop",
+   "loop": true,
+   "seconds": 6,
+   "prompt": "Seamless loop, small cartoon propeller plane engine at steady cruise, buzzy friendly prop drone, constant pitch, no music, no ambience"
+  },
+  {
+   "id": "F2_jet_antigrav_loop",
+   "loop": true,
+   "seconds": 6,
+   "prompt": "Seamless loop, cartoon jet-antigravity engine hum with soft turbine whine, warm and steady, constant pitch, no music"
+  },
+  {
+   "id": "F3_wind_rush_loop",
+   "loop": true,
+   "seconds": 6,
+   "prompt": "Seamless loop, steady wind rush of fast flight high in the sky, airy whoosh, no engine, no music"
+  },
+  {
+   "id": "F4_takeoff",
+   "seconds": 3,
+   "prompt": "Cartoon aircraft takeoff: engine surges, rising whoosh as it lifts off, short and punchy, isolated"
+  }
+ ]
+}

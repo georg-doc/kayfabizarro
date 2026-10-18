@@ -1,0 +1,27 @@
+{
+ "set": "hyperdrive_r1",
+ "note": "Cartoon sci-fi hyperdrive (KFB, playful, not grim).",
+ "items": [
+  {
+   "id": "H1_charge",
+   "seconds": 4,
+   "prompt": "Cartoon sci-fi hyperdrive charging up: rising electric whine and bubbling energy, building tension, playful, isolated"
+  },
+  {
+   "id": "H2_jump",
+   "seconds": 3,
+   "prompt": "Cartoon hyperdrive jump: big boomy whoosh and stretchy zap as the ship launches into hyperspace, punchy, isolated"
+  },
+  {
+   "id": "H3_tunnel_loop",
+   "loop": true,
+   "seconds": 6,
+   "prompt": "Seamless loop, cartoon hyperspace tunnel: swirling shimmering hum with soft whooshes, steady, no music"
+  },
+  {
+   "id": "H4_exit",
+   "seconds": 2,
+   "prompt": "Cartoon hyperdrive drop-out: quick reverse whoosh and soft pop back into normal space, isolated"
+  }
+ ]
+}

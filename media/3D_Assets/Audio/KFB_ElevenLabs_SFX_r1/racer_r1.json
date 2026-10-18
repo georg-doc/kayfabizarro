@@ -1,0 +1,85 @@
+{
+ "set": "racer_r1",
+ "note": "One engine for all cars (V-357), pitch per vehicle in code. Loops = constant RPM for the LoopGrid (V-378 reference: rwanda-f1 vf26-audio). Cartoon clay toy hot-rod, dry close-mic.",
+ "items": [
+  {
+   "id": "L1_idle",
+   "loop": true,
+   "seconds": 6,
+   "prompt": "Seamless loop, small chunky cartoon hot-rod engine idling at steady low RPM, lumpy and friendly, slight rattle of loose toy parts, dry close-mic, constant pitch, no revving, no music, no ambience"
+  },
+  {
+   "id": "L2_low",
+   "loop": true,
+   "seconds": 6,
+   "prompt": "Seamless loop, the same small chunky cartoon hot-rod engine at steady low-mid RPM under light throttle, constant pitch, dry close-mic, no revving, no music"
+  },
+  {
+   "id": "L3_mid",
+   "loop": true,
+   "seconds": 6,
+   "prompt": "Seamless loop, the same small chunky cartoon hot-rod engine at steady mid RPM under full load, punchy raspy exhaust, constant pitch, dry close-mic, no revving, no music"
+  },
+  {
+   "id": "L4_high",
+   "loop": true,
+   "seconds": 6,
+   "prompt": "Seamless loop, the same small chunky cartoon hot-rod engine screaming at steady high RPM under full load, buzzy and strained, constant pitch, dry close-mic, no music"
+  },
+  {
+   "id": "L5_overrun",
+   "loop": true,
+   "seconds": 6,
+   "prompt": "Seamless loop, the same cartoon hot-rod engine off throttle at mid RPM, burbling overrun with irregular little exhaust pops and crackles, constant pitch, dry close-mic, no music"
+  },
+  {
+   "id": "O1_upshift",
+   "seconds": 2,
+   "prompt": "Racing car upshift: engine revs high, a split-second ignition cut with a sharp exhaust bang and mechanical gear clunk, then RPM drops and pulls again, cartoon hot-rod, dry, isolated"
+  },
+  {
+   "id": "O2_backfire",
+   "seconds": 1.5,
+   "prompt": "Single loud cartoon exhaust backfire pop with a short crackle tail, dry, isolated"
+  },
+  {
+   "id": "O3_crackle_series",
+   "seconds": 2.5,
+   "prompt": "Series of rapid exhaust pops, bangs and crackles on hard deceleration, rally car anti-lag style, cartoon, dry, isolated"
+  },
+  {
+   "id": "O4_downshift_blip",
+   "seconds": 2,
+   "prompt": "Racing car downshift with a quick throttle blip rev, gear clunk and two exhaust pops, cartoon hot-rod, dry, isolated"
+  },
+  {
+   "id": "O5_boost",
+   "seconds": 2,
+   "prompt": "Short airy whoosh of a cartoon turbo boost kicking in with a rising whistle, dry, isolated"
+  },
+  {
+   "id": "O2b_backfire_loud",
+   "seconds": 1.5,
+   "influence": 0.8,
+   "prompt": "Very loud single exhaust backfire BANG from a hot-rod tailpipe, sharp explosive pop followed by a short metallic crackle, close-mic, punchy, isolated, no music"
+  },
+  {
+   "id": "O2c_backfire_double",
+   "seconds": 1.5,
+   "influence": 0.8,
+   "prompt": "Two loud exhaust backfire bangs in quick succession from a cartoon hot-rod, sharp pops with crackle tail, close-mic, punchy, isolated"
+  },
+  {
+   "id": "S1_accel_upshifts",
+   "seconds": 8,
+   "influence": 0.7,
+   "prompt": "Small cartoon hot-rod accelerating hard from idle through three gears: engine revs climb, each upshift has a split-second ignition cut with a loud exhaust pop and gear clunk, RPM drops and climbs again, close-mic onboard, no music"
+  },
+  {
+   "id": "S2_brake_downshifts",
+   "seconds": 5,
+   "influence": 0.7,
+   "prompt": "Small cartoon hot-rod braking hard: three quick downshifts with throttle blips, exhaust bangs, pops and crackles on overrun, engine burbles down to idle, close-mic onboard, no music"
+  }
+ ]
+}
