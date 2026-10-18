@@ -7554,6 +7554,21 @@
    "applies": "sofort, vor weiteren Waffen-Clips"
   },
   {
+   "id": "V-537",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Wurfwaffen + Brick-Fish (Georg 18.10.): Granate, Cartoon-Bombe (Clown-Set, KayKit Mystery S6 clown_bomb, privat) und Fluff-Bombe (platzt in Fluff-Wolke, wäscht auch Black Goo frei, V-532). Cartoonige Wurf-Clips aus Georgs Mixamo-Downloads (Grenade Throw, Run And Throw Grenade, Throw, Throwing, Goalie/Overhand, Frisbee) + KayKit Throw; zugleich die Brick-Fish-Wurf- und Treffer-Choreografie optimieren (Throw, Hit_A/B, Dodge_*, Hit-Stop-Marke). VFX als Zusatz zum Zerstörungs-Modus (V-514) mit derselben Partikel-Logik (V-533/V-535), SFX-Set throwables_r1 (ElevenLabs) von WS0. Griff nach V-536. Brick-Fish-Duell ist Kandidat für ein Comic-Motion-Video (WSV). Brief B41 an WSB nach V-536 und B40.",
+   "values": {},
+   "owner": "WSB (B41) · WS1 (Flug/Aufprall/Explosion) · WS0 (SFX) · WSV (Video-Kandidat)",
+   "check": "B41 Streifen + Hub-Hörprobe",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Werfen ist ein Kern-Verb (Brick-Fish, Bomben, Fluff): eine Wurf-Grammatik für alles.",
+   "applies": "B41 nach B40"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7641,7 +7656,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:890",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:891",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
