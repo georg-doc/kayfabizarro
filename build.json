@@ -1,12 +1,12 @@
 {
  "schema": "kfb.ws1-build/1",
- "commit": "main@4c7c70e (Merge look/mesa@d193606 + m3/fahrhilfe@66bec2c, Georg V-430)",
- "date": "2026-10-18T01:15:00+02:00",
+ "commit": "combo/r2@027d5c5 (Branch, nicht main: C1 Kamera, C2 Aliens/E2, V-429/clay v1.1, C3 Fluff-Ernte, HUD R5f, C3b Fundsachen V-450, R1a Antriebe, Elan S1/S2, Licht v1.1, B22-Lampen)",
+ "date": "2026-10-18T10:30:00+02:00",
  "tests": {
-  "suite": "npm test 25/25 + M-Reihe run-all M1/M2/M3 24/24 auf main",
-  "passed": 49,
-  "total": 49,
-  "info": "m1-rueckwand nur Bericht"
+  "suite": "run-all combo/r2: 61 Prüfungen (M1/M2/M3/C1/Elan/Bühne/C2/C3/C3b/R1a) + Unit-Tests",
+  "passed": 61,
+  "total": 61,
+  "info": "m1-rueckwand nur Bericht; m1-move@120 mit verlängertem Alarm"
  },
  "links": {
   "stage": "#stage,actors=fb,light=l1",
@@ -22,7 +22,17 @@
   "car": "#m1,car",
   "carGold": "#m1,car,tod=gold",
   "carNoAssist": "#m1,car,assist=off",
-  "lineup": "#stage,light=l1,lineup=1"
+  "lineup": "#stage,light=l1,lineup=1",
+  "aliens": "#stage,actors=aliens,light=l1",
+  "harvest": "#m1,harvest",
+  "skyriding": "#m1,flight=elan",
+  "racerDragster": "#m1,car,racer=crimson_flame_dragster",
+  "racerFly": "#m1,car,fly,racer=street_racer_hoverbeast",
+  "racerThunderjet": "#m1,car,racer=crimson_thunderjet",
+  "racerSkycruiser": "#m1,car,racer=ironclad_skycruiser",
+  "racerGraffiti": "#m1,car,racer=graffiti_jet_cruiser",
+  "racerRustwing": "#m1,car,racer=rustwing_cruiser",
+  "stageNightLamps": "#stage,actors=fb,light=l1,tod=night"
  },
- "notes": "main nach Georgs Freigabe (V-430): Look-Slice Mesa + Farbwelten, Figurenkarten, Sprenkel-Band, Gelände um Meshy-Bühnen, Fahrhilfe M3 A–G (Taste M). Langlauf R2 (C1 Kamera, C2 Aliens/E2, C3 Fluff-Ernte, V-429) läuft auf Branches."
+ "notes": "Langlauf R2 auf combo/r2 (Branch, nicht main). Fluff-Ernte: V Faust, B Schuss, N Bombe, I aufheben, Rucksack unten links. Racer: Shift Boost (Stauchen/Strecken), Leertaste Sprung; mit fly: Rampe/Doppel-Leertaste = Schwungflug, Pfeile/RMB Nase. Skyriding (flight=elan): G in der Luft, Leertaste steigen, Shift Schub, Leertaste+A/D Rolle, K Komfort."
 }
