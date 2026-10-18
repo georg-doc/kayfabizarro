@@ -7059,6 +7059,21 @@
    "applies": "B11 r4d"
   },
   {
+   "id": "V-504",
+   "date": "2026-10-18",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "Spielzeugsoldat B11 r4d FAIL (Georg 18.10.): „der Arm und die Hand müssen erst mal exakt wie im Bild sein, dann erst das Gewehr einpassen!“ Reihenfolge verbindlich: (1) Gewehr ausblenden, Haltearm und Hand per Keypoint-Overlay auf artwork.png (Schulter, Ellbogen, Manschette, Faust; ≤ 2 % Figurhöhe je Punkt) – Arm außen an der Rumpf-Silhouette, leicht nach außen gebogen, Faust knapp über dem Gürtel; (2) erst danach das Gewehr in die Faust einpassen. Gilt allgemein: erst die Figur-Pose exakt, dann das Requisit.",
+   "values": {},
+   "owner": "WSB",
+   "check": "Keypoint-Tabelle + 2 Overlays",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "IK zog die Hand zum Gewehr und verbog den Arm; Pose zuerst, Requisit danach.",
+   "applies": "B11 r4e"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7146,7 +7161,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:859",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:860",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
