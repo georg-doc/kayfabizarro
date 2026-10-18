@@ -1,0 +1,75 @@
+{
+ "schema": "kfb.proof-sources/1",
+ "note": "Local resolver: figure card id -> GLB on this Mac. Paths starting with 'hub:' are relative to ~/Dropbox/CLAUDE/KFB_HUB, '~/' = home. The card body.glb.path is a repo path and is not loadable locally; this table is the bridge until the GLBs sit on a fixed asset branch. private = purchased asset, local only (never publish the renders).",
+ "fb_silhouette": "hub:30_DECISIONS/replies/CLAY_SSOT_R1/assets/FB_TEMPLATE_LOOK_v5b.glb",
+ "scale_ref": {
+  "note": "v1.2 scale figures for stage/prop scale_ref. Height = bind-pose bbox x 0.616 m/u; shown in the rig's own idle clip (bind pose is a T-pose). Large = purchased KayKit Mystery asset: local path only, never copy it into a public folder; renders stay private. v1.2.1: paths moved to the Worldbuilder Lab (present on both Macs; sha256 identical to the former Codex copies). Missing scale figure = G2 FAIL.",
+  "medium": {
+   "glb": "hub:50_BLENDER/FB/_privat_kauf_asset/FB_TEMPLATE_LOOK_v5b_kfbanchors.glb",
+   "card": "hub:50_BLENDER/FB/data/frizzlebob.figure.kfbanchors.json",
+   "anim": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/public/assets/kaykit/anims/Rig_Medium_General.glb",
+   "clip": "Idle_A",
+   "time": 0,
+   "label": "FrizzleBob (Rig_Medium)",
+   "animSha256": "5f725c0f745f36078c7238968cd5c04843cbc6260689eb6e7f5e2bbd7ffdd7ad"
+  },
+  "large": {
+   "glb": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/public/assets/figures-b2/demonlord/DemonLord.glb",
+   "anim": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/public/assets/kaykit/anims/Rig_Large_General.glb",
+   "clip": "Idle_A",
+   "time": 0,
+   "label": "DemonLord (Rig_Large)",
+   "private": true,
+   "glbSha256": "130fc2ae9cdb35bec987bc39f57453331999e3979c04cf549b7a8e508d77cb52",
+   "animSha256": "ec263b40704d996692033fc716fc0fcaa11a5089393845fe27877e5f773b2f3e"
+  }
+ },
+ "cards": "hub:30_DECISIONS/replies/FIGURES_R1/figures/",
+ "figures": {
+  "frizzlebob": {
+   "glb": "hub:50_BLENDER/FB/_privat_kauf_asset/FB_TEMPLATE_LOOK_v5b_kfbanchors.glb",
+   "card": "hub:50_BLENDER/FB/data/frizzlebob.figure.kfbanchors.json",
+   "type": "character",
+   "private": true,
+   "why": "WSB 27th addendum: KFB_Eye_L/R_anchor added (facehost position); private because of the Capsule Carl parts (Mystery Series)"
+  },
+  "gothgirl": {
+   "glb": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/public/assets/figures-b2/gothgirl/GothGirl_NoEyes.glb",
+   "type": "character",
+   "private": true,
+   "why": "card body = GothGirl_NoEyes.glb, sha256 3016e4b6… (Lab copy, byte-identical; KayKit Mystery Series)"
+  },
+  "lord_hunky": {
+   "glb": "hub:30_DECISIONS/replies/E2_ATTACH_R1/assets/variants/LordHunky_edge80.r4e.glb",
+   "type": "character",
+   "private": true,
+   "why": "V-422/V-430: edge80 socket is the final state (card still points to r4)"
+  },
+  "lady_dory": {
+   "glb": "hub:50_BLENDER/B14/_privat_kauf_asset/LadyDory_RigMedium.toolbox.r9.glb",
+   "type": "character",
+   "private": true,
+   "why": "r9 = r7 + normal fix (27th addendum), stage PASS"
+  },
+  "suit_ct_agent": {
+   "glb": "hub:50_BLENDER/B12/_privat_kauf_asset/Suit_CT_agent.r3.glb",
+   "card": "hub:50_BLENDER/B12/data/suit_ct.figure.r3.json",
+   "type": "character",
+   "private": true,
+   "why": "B12 r3 (CharacterTemplate, Mystery Series): private, local only"
+  },
+  "suit_ct_banker": {
+   "glb": "hub:50_BLENDER/B12/_privat_kauf_asset/Suit_CT_banker.r3.glb",
+   "card": "hub:50_BLENDER/B12/data/suit_ct.figure.r3.json",
+   "type": "character",
+   "private": true,
+   "why": "B12 r3"
+  },
+  "billboard_lamps": {
+   "glb": "hub:50_BLENDER/B22/KFB_Billboard_Lamps.r3.glb",
+   "type": "prop",
+   "private": false,
+   "why": "B22 r3 raised 0.06 u, G3 0.00 cm PASS"
+  }
+ }
+}

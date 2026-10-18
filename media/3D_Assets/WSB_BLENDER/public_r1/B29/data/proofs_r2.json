@@ -1,0 +1,139 @@
+{
+ "maze5x5_W1": {
+  "glb": "B29_proof_maze5x5_W1.glb",
+  "tris": 49224,
+  "open_edges_above_ground": 0,
+  "size_u": [
+   21.35,
+   21.35
+  ],
+  "pieces": {
+   "end": 9,
+   "tee": 5,
+   "straight": 9,
+   "corner": 7,
+   "broken": 6
+  }
+ },
+ "maze5x5_W2": {
+  "glb": "B29_proof_maze5x5_W2.glb",
+  "tris": 49224,
+  "open_edges_above_ground": 0,
+  "size_u": [
+   21.35,
+   21.35
+  ],
+  "pieces": {
+   "end": 9,
+   "tee": 5,
+   "straight": 9,
+   "corner": 7,
+   "broken": 6
+  }
+ },
+ "maze5x5_layout": {
+  "cells": [
+   5,
+   5
+  ],
+  "seed": 29,
+  "algorithm": "recursive backtracker",
+  "entry": "Zelle (0,0) unten",
+  "exit": "Zelle (4,4) oben",
+  "walls": 34
+ },
+ "polar_r2r5_W1": {
+  "glb": "B29_proof_polar_r2r5_W1.glb",
+  "tris": 135507,
+  "open_edges_above_ground": 0,
+  "size_u": [
+   41.35,
+   41.35
+  ],
+  "pieces": {
+   "curved_ring_r2_capA": 1,
+   "curved_ring_r2": 9,
+   "curved_ring_r2_capB": 1,
+   "curved_ring_r3_capA": 4,
+   "curved_ring_r3_capB": 4,
+   "curved_ring_r3": 2,
+   "curved_ring_r4_capAB": 3,
+   "curved_ring_r4_capA": 2,
+   "curved_ring_r4_capB": 2,
+   "curved_ring_r4": 1,
+   "curved_ring_r5": 25,
+   "curved_ring_r5_capB": 1,
+   "curved_ring_r5_capA": 1,
+   "straight_capped (radial)": 22
+  }
+ },
+ "polar_layout": {
+  "rings_u": [
+   8.0,
+   12.0,
+   16.0,
+   20.0
+  ],
+  "segments": {
+   "2": 12,
+   "3": 16,
+   "4": 20,
+   "5": 28
+  },
+  "seed": 31,
+  "cells": 48,
+  "gaps": {
+   "2": [
+    0
+   ],
+   "3": [
+    2,
+    5,
+    6,
+    9,
+    14,
+    15
+   ],
+   "4": [
+    0,
+    1,
+    2,
+    4,
+    6,
+    9,
+    10,
+    12,
+    16,
+    17,
+    18,
+    19
+   ],
+   "5": [
+    14
+   ]
+  },
+  "radial_walls": 22,
+  "note": "Sektoren = Segmente des inneren Rings; zwischen Zellringen mit verschiedener Teilung kann ein Durchgang zwei innere Zellen berühren (fast perfektes Labyrinth)"
+ },
+ "kit_lineup_W2": {
+  "glb": "B29_proof_kit_lineup_W2.glb",
+  "tris": 17610,
+  "open_edges_above_ground": 748,
+  "size_u": [
+   30.07,
+   9.29
+  ],
+  "order": [
+   "straight",
+   "straight_long",
+   "corner",
+   "tee",
+   "cross",
+   "end",
+   "gate",
+   "broken",
+   "curved_quarter",
+   "curved_ring_r3"
+  ]
+ }
+}

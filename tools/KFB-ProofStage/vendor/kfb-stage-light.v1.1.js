@@ -121,7 +121,7 @@ export function fitAround(boxes, sunDir, { ground = 0, pad = 1.05 } = {}) {
 //   mit normalBias wachsende Toleranz wurde verworfen: sie verschluckte genau den Saum, den ein großer normalBias erzeugt (v1 bestand dann).
 //   Saum = Kernpixel, die in A um mehr als thresh (8 bit Luma) heller sind als in B, in zusammenhängenden Gruppen ab minCluster px (ein Saum
 //   ist ein Band; v1 erzeugt 25–1700 px). Kleinere Gruppen (Raster-/PCF-Einzelpixel) werden als isolatedPx mitgemeldet. Erwartet: seamPx 0.
-export function measureShadowSeam({ gl, scene, camera, sun, isFloor, erode = 3, thresh = 6, minCluster = 3 }) {
+export function measureShadowSeam({ gl, scene, camera, sun, isFloor, erode = 3, thresh = 6, minCluster = 5, contactPx = 10 }) {   // v1.1.1: minCluster 5 (a visible seam is a line along the contact; v1 seams measured 906-1700 px) and a seam must touch the contact zone (<= contactPx from the object's silhouette); lit shadow TIPS far from the object are reported as tipPx (V-440, WSB B29 maze)
   const size = gl.getDrawingBufferSize(new THREE.Vector2()), W = size.x, H = size.y, ctx = gl.getContext()
   const read = () => { const px = new Uint8Array(W * H * 4); ctx.readPixels(0, 0, W, H, ctx.RGBA, ctx.UNSIGNED_BYTE, px); const L = new Float32Array(W * H); for (let i = 0, j = 0; j < L.length; i += 4, j++) L[j] = 0.2126 * px[i] + 0.7152 * px[i + 1] + 0.0722 * px[i + 2]; return L }
   const prevT = gl.getRenderTarget(); gl.setRenderTarget(null)
@@ -143,11 +143,17 @@ export function measureShadowSeam({ gl, scene, camera, sun, isFloor, erode = 3, 
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { let ok = 1; for (let k = -erode; k <= erode && ok; k++) { const yy = y + k; if (yy < 0 || yy >= H || !tmp[yy * W + x]) ok = 0 } core[y * W + x] = ok }
   let maxDelta = 0; const hit = new Uint8Array(W * H)
   for (let j = 0; j < hit.length; j++) { if (!core[j]) continue; shadowPx++; const dl = A[j] - B[j]; if (dl > maxDelta) maxDelta = dl; if (dl > thresh) hit[j] = 1 }
-  let seamPx = 0, isolatedPx = 0, x0 = W, y0 = H, x1 = -1, y1 = -1; const st = []
+  // contact zone: object silhouette (non-floor, visible) dilated by contactPx (square, separable)
+  const obj = new Uint8Array(W * H); for (let j = 0; j < obj.length; j++) if (M[j] < 128 && B[j] > 0) obj[j] = 1
+  const zt = new Uint8Array(W * H), zone = new Uint8Array(W * H)
+  for (let y = 0; y < H; y++) { let last = -1e9; for (let x = 0; x < W; x++) { if (obj[y * W + x]) last = x; zt[y * W + x] = x - last <= contactPx ? 1 : 0 } last = 1e9; for (let x = W - 1; x >= 0; x--) { if (obj[y * W + x]) last = x; if (last - x <= contactPx) zt[y * W + x] = 1 } }
+  for (let x = 0; x < W; x++) { let last = -1e9; for (let y = 0; y < H; y++) { if (zt[y * W + x]) last = y; zone[y * W + x] = y - last <= contactPx ? 1 : 0 } last = 1e9; for (let y = H - 1; y >= 0; y--) { if (zt[y * W + x]) last = y; if (last - y <= contactPx) zone[y * W + x] = 1 } }
+  let seamPx = 0, isolatedPx = 0, tipPx = 0, x0 = W, y0 = H, x1 = -1, y1 = -1; const st = []
   for (let j0 = 0; j0 < hit.length; j0++) { if (hit[j0] !== 1) continue; const comp = []; hit[j0] = 2; st.push(j0)
     while (st.length) { const j = st.pop(); comp.push(j); const x = j % W, y = (j / W) | 0; for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) { const xx = x + dx, yy = y + dy; if (xx < 0 || yy < 0 || xx >= W || yy >= H) continue; const k = yy * W + xx; if (hit[k] === 1) { hit[k] = 2; st.push(k) } } }
+    if (comp.length >= minCluster && !comp.some((j) => zone[j])) { tipPx += comp.length; continue }
     if (comp.length >= minCluster) { seamPx += comp.length; for (const j of comp) { const x = j % W, yi = H - 1 - ((j / W) | 0); x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, yi); y1 = Math.max(y1, yi) } } else isolatedPx += comp.length }
-  return { seamPx, isolatedPx, shadowPx, maxDelta: +maxDelta.toFixed(1), bbox: seamPx ? [x0, y0, x1, y1] : null, thresh, erode, minCluster }
+  return { seamPx, isolatedPx, tipPx, shadowPx, maxDelta: +maxDelta.toFixed(1), bbox: seamPx ? [x0, y0, x1, y1] : null, thresh, erode, minCluster, contactPx }
 }
 
 // Ein Tonemapping für alle Schichten, feste Belichtung (Regel 5)

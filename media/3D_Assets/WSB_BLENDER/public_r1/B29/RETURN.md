@@ -129,3 +129,33 @@ Bühne **v1.2.1** (`--stage v1.2`, kfb-stage-light.v1.1, alle Standard-Ansichten
 - `_privat_kauf_asset/renders/proof_stage_v12/lineup_row_W2/`: Bogen `B29_proof_lineup_row_W2_contact_sheet.png` · Einzelansichten: `B29_proof_lineup_row_W2_back.png`, `B29_proof_lineup_row_W2_detail_low.png`, `B29_proof_lineup_row_W2_far.png`, `B29_proof_lineup_row_W2_front.png`, `B29_proof_lineup_row_W2_near_face.png`, `B29_proof_lineup_row_W2_scale_ref.png`, `B29_proof_lineup_row_W2_side.png`, `B29_proof_lineup_row_W2_threeq.png`, `B29_proof_lineup_row_W2_top.png`
 
 **Maßstabszelle:** Die Mauer (2,22 m) verdeckt FrizzleBob (1,81 m) vollständig. DemonLord (2,85 m mit Hörnern) schaut mit dem Kopf darüber. Das entspricht V-446/V-439 (nur Medium verdecken). Soll auch Large verdeckt werden, wären 4,8 u (≈ 3,0 m) nötig.
+
+## r2 · Bühnen-Fassungen als lesbares Labyrinth (WS0 18.10.) · Bühne v1.2.1
+**Skript:** `scripts/b29_r2_proofs.py`. GLBs liegen in `kit/proof_r2/`, Daten in `data/proofs_r2.json`.
+
+1. **Rechteck-Labyrinth 5 × 5** (Backtracker, Seed 29): Eingang unten links, Ausgang oben rechts, 34 Wandstücke auf dem Pfostengitter 6 × 6.
+   - Module je Pfosten nach anliegenden Wänden: {"end": 9, "tee": 5, "straight": 9, "corner": 7, "broken": 6}; ~15 % der Geraden als `broken` (Seed 7).
+   - Nach dem Verschmelzen **0 offene Kanten**. Haut W1 und W2.
+2. **Polar-Labyrinth r2–r5** (Seed 31): 3 Zellringe, Sektoren = Segmente des inneren Rings (12/16/20), 22 radiale Wände.
+   - Öffnungen sind weggelassene Ringsegmente; die Nachbarn bekommen Endkappen. Eingang im Außenring, Ziel ist der Innenhof.
+   - **0 offene Kanten.** Haut W1.
+   - Fast perfektes Labyrinth: Zwischen Ringen mit verschiedener Teilung kann ein Durchgang zwei innere Zellen berühren.
+3. **Kit-Reihe:** die 10 Grundteile im 5 × 2-Raster, Haut W2. Offene Anschlussenden sind hier gewollt: Die Teile stehen einzeln.
+
+**Neu im Kit (öffentlich):**
+- `straight_capped`: freistehende Wand, beide Enden gerundet. Daraus sind die radialen Wände gebaut.
+- `curved_ring_r2…r5_capA|capB|capAB`: Ringstücke mit Endkappe für Öffnungen.
+- **Alle Module haben jetzt eine geschlossene Unterseite** (geschlossenes Volumen).
+- Fugentest unverändert 0 bei allen Layouts und Vollkreisen.
+
+### Bühne v1.2.1: 2 PASS, 2 FAIL (G6)
+- `_privat_kauf_asset/renders/proof_stage_v12_r2/kit_lineup_W2/`: Bogen `B29_proof_kit_lineup_W2_contact_sheet.png` · Einzelansichten: `B29_proof_kit_lineup_W2_back.png`, `B29_proof_kit_lineup_W2_detail_low.png`, `B29_proof_kit_lineup_W2_far.png`, `B29_proof_kit_lineup_W2_front.png`, `B29_proof_kit_lineup_W2_near_face.png`, `B29_proof_kit_lineup_W2_scale_ref.png`, `B29_proof_kit_lineup_W2_side.png`, `B29_proof_kit_lineup_W2_threeq.png`, `B29_proof_kit_lineup_W2_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12_r2/maze5x5_W1/`: Bogen `B29_proof_maze5x5_W1_contact_sheet_FAIL.png` · **keine Einzelansichten (G6 FAIL → nur Diagnose-Bogen)**
+- `_privat_kauf_asset/renders/proof_stage_v12_r2/maze5x5_W2/`: Bogen `B29_proof_maze5x5_W2_contact_sheet_FAIL.png` · **keine Einzelansichten (G6 FAIL → nur Diagnose-Bogen)**
+- `_privat_kauf_asset/renders/proof_stage_v12_r2/polar_r2r5_W1/`: Bogen `B29_proof_polar_r2r5_W1_contact_sheet.png` · Einzelansichten: `B29_proof_polar_r2r5_W1_back.png`, `B29_proof_polar_r2r5_W1_detail_low.png`, `B29_proof_polar_r2r5_W1_far.png`, `B29_proof_polar_r2r5_W1_front.png`, `B29_proof_polar_r2r5_W1_near_face.png`, `B29_proof_polar_r2r5_W1_scale_ref.png`, `B29_proof_polar_r2r5_W1_side.png`, `B29_proof_polar_r2r5_W1_threeq.png`, `B29_proof_polar_r2r5_W1_top.png`
+
+**G6-Befund beim Rechteck-Labyrinth** (W1 und W2 gleich):
+- Nur die ¾-Ansicht ist betroffen: **3 px** (genau die Mindestgröße), alle in einer Zeile (bbox x 1344–1346, y 665), maxDelta 13,8 Luma.
+- Die Stelle ist die Spitze des langen, dünnen Schattens am rechten Rand (Mauer am Ausgang). Es ist kein Spalt in der Geometrie: Unterseiten sind geschlossen, 0 offene Kanten. Wahrscheinlich ist es die Auflösungsgrenze der Schattenkarte (Texel 7,5 mm) an einer schmalen Schattenspitze.
+- Ich habe nichts „passend geschoben“. WS0 entscheidet: Grenzfall der Bühne prüfen, oder ich verlege den Ausgang (anderer Seed).
+- Die älteren Bögen in `proof_stage_v12/` (3x3/2x2/Reihe aus r1) sind überholt.
