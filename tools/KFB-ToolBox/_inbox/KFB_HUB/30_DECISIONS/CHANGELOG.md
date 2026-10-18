@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-503 B11 r4d: Haltearm bogig nach unten gestreckt (Gewehr-Rollung r4c bleibt).
 - Sprachprobe R7 (Georg 18.10.): PottyMouth-Glyphen größer (1,6 em) und jede Glyphenfolge so breit wie das ersetzte Wort (in Shantell gemessen, Anzahl wächst mit der Wortlänge, Blocksatz auf Wortbreite); Satzzeichen bleiben am Glyphenblock. Regel für kfb-bubbles.v1 (V-500/V-501).
 - V-501 Sprechblasen/Comic-Words SSOT (chatterbox-core + bubbles.module + Defs, Shantell Sans); Probe R6 mit Original-Sprechblase. V-502 Kapazitätsplan: WSA-Slices A/B (BRIEF_WSA_SLICES_R1), WS1-Blocker = Privat-Artifact unter anderem Konto. Abnahme-Bühne v1.2.5 (Augen ohne Kopf-Knochen an Anker-Mitte). WS1 §92: R1a fertig, Saug-Modul + Ton, Laternen eingebaut.
 - V-500 Melodie-Sprache R4 PASS; Fluff-o-lect-Dekodieren in 3 Stufen (PottyMouth-Glyphen → Fluff-Wörter → Triplet) als Spielfeature, Probe R5 → Hub q52; Font-Lizenz PottyMouth fürs Spiel offen.

@@ -7044,6 +7044,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-503",
+   "date": "2026-10-18",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "Spielzeugsoldat B11 r4c (Gewehr-Rollung wie Promo, Overlay passt) → r4d (Georg 18.10.): Haltearm leicht bogig, fast gestreckt nach unten statt angewinkelt nach innen; Ellbogen nur ~15–25°, Hand am Schloss bzw. unteren Schaft auf Hüft- bis Gürtelhöhe wie artwork.png; Gewehrwinkel 28° bleibt. Abnahme wieder per Overlay Promo | 50 % | unsere.",
+   "values": {},
+   "owner": "WSB",
+   "check": "Overlay + Bühne",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Arm und Gewehr müssen zusammen wie im Promo-Bild wirken.",
+   "applies": "B11 r4d"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7131,7 +7146,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:858",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:859",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
