@@ -6414,6 +6414,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-461",
+   "date": "2026-10-18",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "Sound-Design R1 (Georg 18.10.): Kampf-Arena-Sounds waren enttäuschend („Xylophon-Pling-Plong“, oberflächlich, nicht immersiv). Ab jetzt jedes Ereignis geschichtet (Anschlag + Körper + Ausklang/Trümmer, je 3–4 Varianten, zufällig kombiniert, Tonhöhe/Lautstärke-Jitter, Entfernung + Raum), Charakter: cartoonig, warm, materiell-knetig, physisch – keine Retro-/Arcade-Töne für Treffer und Zerstörung. Quellen: Bestand → CC0 → prozedural nur für Dauergeräusche → Lücken per ElevenLabs (Georg investiert Credits). Umfang: Kampf, Zerstörung (inkl. Kristall-Schachfigur zerspringt, Dominos), Flug, Hyperdrive, Zuordnung aller Destruction-POC-Auslöser. Privates Repo kfb-private-assets: Georg legt es an (Integration darf keine Repos anlegen), WS0-Deploy-Key mit Schreibrecht, WS1 liest.",
+   "values": {},
+   "owner": "WSA (Ereignis-Tabelle, Einbau) · WS0 (ElevenLabs-Lücken) · WS1 (Auslöser)",
+   "check": "Ton-Studio KAMPF: je Ereignis 10× ohne hörbare Wiederholung, 30-s-Kampf-Demo, Georgs Ohr",
+   "source": "Georg 18.10. · b115",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Einzelne Töne pro Ereignis klingen billig; Schichten und Zufall machen Kampf und Zerstörung körperlich und immersiv.",
+   "applies": "WSA jetzt"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6501,7 +6516,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:815",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:816",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

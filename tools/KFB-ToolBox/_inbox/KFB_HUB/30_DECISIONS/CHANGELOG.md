@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-461 Sound-Design R1 (Kampf/Zerstörung/Flug/Hyperdrive, geschichtete Ereignisse statt Arcade-Pling); WSA-Brief b115. Privates Repo: GitHub-Integration darf keine Repos anlegen (403) → Georg legt kfb-private-assets an, WS0-Deploy-Key bereit.
 - V-460 Schach: Satz M (Morph Chess) kristallin-morphend statt Knete (bewusster Stilbruch, magisch), Brett r2 übernommen, Farben aus der Zonen-Palette; Modul kfb-gem.v1 (WS0) in Arbeit.
 - WS1 §80/§81 gelesen (C3 15/15, HUD R5f + C3b Fundsachen-Demo grün, clay v1.1; Georg im WS1-Chat: Fundsachen auf GothGirls Hüfthöhe; kein Dropbox). Öffentliche Stände (B28 r2, B22, B29 r4, B30 inkl. MIT-Lizenzdatei, Licht v1.1/Bühne v1.2.2) auf assets/kfb-wsb-public-2026-10-18 @0d9a632e; privater Weg: Vorschlag privates GitHub-Repo mit LFS (Georg entscheidet). GothGirl-Hüftknochen = 0,25 m wie FrizzleBob (gleiches Rig) – WS1 nennt Laufzeitwert.
 - B30 r2: Steinbrett neu (44 ungleiche Rahmenblöcke, Sandstein/Schiefer, Abschläge/Risse), zwei Figurenfarben F1 Elfenbein/Aubergine, F2 Elfenbein/Petrol → Hub q34; Satz M mit MIT-Lizenzdatei öffentlich.
