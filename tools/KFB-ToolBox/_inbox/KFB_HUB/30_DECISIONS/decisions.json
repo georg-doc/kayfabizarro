@@ -7329,6 +7329,21 @@
    "applies": "WS1 V-514"
   },
   {
+   "id": "V-522",
+   "date": "2026-10-18",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "ElevenLabs-Satz debris_crash_r1 (Georg „ja, gerne“ zur WSA-Wunschliste aus V-521): 35 Clips – leise Trümmerkontakte (Kiesel, Holzsplitter, Schrauben, Plastikteile, Fluff-Landung, Staub) und Crashs ohne Explosion (Auto-Knautschen, Flügel-Schaben, Bauchlandung, Jetpack-Purzeln, Busch, Cartoon-Bonk), je 2–3 Varianten; ≈ 1,6 Tsd. Credits; normalisiert auf −1 dBFS in 40_AUDIO/elevenlabs_r1/debris_crash_r1_norm/ (D05_fluff_land_c fast leer, verwerfen). Übergabe an WSA für die Audio-Site, privat in Dropbox.",
+   "values": {},
+   "owner": "WS0 (erzeugt) · WSA (Einbau)",
+   "check": "Hörprobe",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Wunschliste von WSA geschlossen.",
+   "applies": "WSA"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7416,7 +7431,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:874",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:875",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
