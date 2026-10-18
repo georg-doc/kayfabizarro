@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-525 Recherche HeyGen + Voice-Cast (Hub b141, Fragen q89–q95). Hub q87 Werkstatt r3, q88 Monstrosity-Lider. Abnahme-Bühne v1.2.7 (Lidfarbe je Auge).
 - V-524 B39 Ein-/Aussteigen Dieselpunk (WSB-Briefing).
 - V-523 Sound-Batch R1: 104 ElevenLabs-Clips in 6 Sätzen, Hörproben Hub q81–q86. Recherche HeyGen + Voice-Cast läuft.
 - V-522 ElevenLabs debris_crash_r1 (35 Clips, normalisiert) für die Audio-Site.

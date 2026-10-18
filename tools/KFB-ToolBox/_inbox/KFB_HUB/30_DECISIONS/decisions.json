@@ -7374,6 +7374,21 @@
    "applies": "B39"
   },
   {
+   "id": "V-525",
+   "date": "2026-10-18",
+   "area": "Audio",
+   "verdict": "TBD",
+   "text": "Recherche HeyGen + Voice-Cast R1 (replies/RESEARCH_HEYGEN_AND_VOICE_CAST_R1.md, Hub b141): HeyGen sinnvoll für HyperFrames-Kartenclips (lokal, keine Credits) und einen synthetischen KI-Sprecher als Hypernormalisation-Billboard; FrizzleBob-Foto-Avatar nur als Test; nicht für VFX/Musikvideos. Voice-Cast: 6 Instrument-Darsteller für 13 NPC-Typen (Cartoon-Synchron-Logik, ein Instrument = 1 Haupt- + 2–3 Neben- + ~4 generische Rollen, Unterscheidung auf ≥ 2 von 5 Achsen), echte Stimmen nur für Erzähler/Promo (ElevenLabs Voice Design + Remix). Offene Fragen q89–q95 (u. a. Instrument-Unstimmigkeit Melodie Horn/Flöte/Tuba vs. Einwürfe Posaune/Okarina/Fagott).",
+   "values": {},
+   "owner": "WS0 · Georg",
+   "check": "Hub q89–q95",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Viele Figuren, wenige Instrumente – Cartoon-Logik.",
+   "applies": "q89–q95"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7461,7 +7476,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:877",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:878",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
