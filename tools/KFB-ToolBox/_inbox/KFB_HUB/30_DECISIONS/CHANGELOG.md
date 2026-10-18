@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- B30 r2: Steinbrett neu (44 ungleiche Rahmenblöcke, Sandstein/Schiefer, Abschläge/Risse), zwei Figurenfarben F1 Elfenbein/Aubergine, F2 Elfenbein/Petrol → Hub q34; Satz M mit MIT-Lizenzdatei öffentlich.
 - WS0-Fehler: Rand-Vergleichsbild für q28 war um 27 % gestaucht (Vergleichsseite von WSB, Modelle unbetroffen) und ging ungeprüft an Georg; korrigiertes Bild in q28 mit Hinweis, Seitenverhältnis-Prüfung als feste Regel. B30: Figurensätze A (Poly Haven) / M (Morph Chess, MIT ok mit Lizenzdatei) → Hub q33; Steinbrett zurück an WSB (wirkte wie Holztablett, Farben braun/creme statt Stein + KFB-Palette). Ninja-POC r2 mit Kampf-Ruhepose fertig.
 - V-459 Hub q32 PASS: Sockelrand V1, Mauer r4 Backstein, B7 r4 riesig + Seil.
 - V-458 Umgebungs-Atmo je Biom (Modul kfb-ambience.v1, fünf Schichten, Donner synchron zum Blitz, Wind an Bild-Wind gekoppelt, Ducking unter Songs); WSA-Brief b114; Bestand gesichtet (Environment-Ordner, ElevenLabs-Regen-Loops; Tiny-Skies-Sounds nur Referenz).
