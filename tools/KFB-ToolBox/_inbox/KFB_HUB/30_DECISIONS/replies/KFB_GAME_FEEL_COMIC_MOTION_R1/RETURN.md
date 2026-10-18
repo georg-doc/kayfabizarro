@@ -57,3 +57,30 @@ All changes are new documents within the concept response directory. Existing Re
 **WS0 / existing Game Design owner: pick ONE genuine source-backed Resident/prop two-minute encounter (G1 invitation + G4 action/reaction), and evaluate whether the action and visible answer are fun/readable before any polish implementation.** Only after this outcome-gate may the owner authorize separate controlled 12/24/continuous motion, local hit-stop and camera-dither comparisons. Parallel Six-Dimensions/Deck/Gutter owner gates do not move.
 
 No merge, auto-promotion, public Stage or additional runtime work.
+
+
+---
+
+## CURRENT ADDENDUM · 2026-10-19 · Minigame Recovery R0.1–R0.5 + WS0/WS1b reconciliation
+
+**Current source-routing truth for this same DESIGN-only PR #435** is now captured in
+`MINIGAME_RECOVERY_WS0_WS1_ALIGNMENT_R1.md`, alongside the existing `CONCEPT_R1.md`.
+This addendum supersedes any earlier suggestion in this Return that minigame source/owner alignment is still unread.
+
+**Direct reads:** 5/5 original full Fluff/minigame v0.3–v0.7.1 files on historical planning branch, 7/7 R0.1–R0.5 Recovery + Return/index files on open Draft PR #400, current WS0 architecture/decision/explicit Card Ink ACK, current WS1 status + WS1→WS1b handover, WSV Video Studio brief. **Do not claim separate v0.8/v0.9 original mini-concept files were retrieved**; none was established in this audit.
+
+**WS0 uptake now source-proven:**
+- V-333/334 3D world target-arrow + flight pitch;
+- V-368/369/371 D6 Fluff types, Dioramas, lived activity/collector/postcard concepts;
+- V-405 **already ACKED** Card Ink Defense as a deferred post-MVP slice (via actual `WS0_ACK_CARD_INK_DEFENSE_R0_5_2026-10-17.md`); **do not request another intake ACK**;
+- V-514 flight/destruction WS1 authorized, not independently tested as a finished product;
+- V-531 Black Goo supply, V-532 restore color (specific match rule q103 pending), V-533 build/suck Kayfabrizieren;
+- V-527 **WSV already owns Remotion/HyperFrames/HeyGen** video production; no new Video Studio;
+- V-539 current runtime author transitioning **WS1 → WS1b**, V-228 authoritative single-world R3F owner; older Lab/WB2 names in original documents are historical.
+
+**WS1 actual reported history, not re-tested here:** current `ws1/r3f-frame@1ebebb9b411e66b880c0f3978a2135fb0e3cb8ab`, `WS1_STATUS.md` §94–96 and `WS1_HANDOVER.md` describe published `combo/r2@d762916` snapshot, R1a + Fluff-suck + source harvesting, with **61/62 reported tests**, one lantern luminance defect. No current WS1b workspace or actual browser/public visual acceptance in this research turn.
+
+**Handoff status:** 1/1 source alignment document newly committed and exact-read back; Test Report appended with 5+7 direct source reads and 9/9 additional editorial checks. Scope remains documents, open Draft PR #435, no prior branch/PR #400 modifications, no runtime, no deployment or visual source acceptance.
+
+**Updated one next gate (replaces older wording about an unqualified generic encounter):**
+WS0 Game Design checks ONE real-source, currently WS1b-feasible, approximately two-minute **Fluff interaction → visible Resident/card response** encounter against the existing R3F preview/owner. Make clear which parts already run (source harvesting/suction reported by WS1), which are planned (Card PDF reveal/Almanac, later R0.5 Defense) and whether this would make play genuinely fun. No implementation authorization from this Return.
