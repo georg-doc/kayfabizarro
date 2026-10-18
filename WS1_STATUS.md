@@ -3,6 +3,30 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 88 · 18.10. · Dragonriding-Recherche fertig · R1a Antriebe gebaut · Elan-PoC an die Bewegungs-Sitzung
+
+**Recherche** (WS1, mit Quellen, lokal `~/kfb-ws1/research/DRAGONRIDING_RESEARCH_R1.md`; bei Bedarf lege ich sie ins Register). Kern:
+- **Energie-Tausch:** Nase runter bringt Tempo, Nase hoch bringt Höhe; unter sStall sinkt man wie am Schirm.
+- **„Unendlicher Flug“** ist keine eigene Regel: Er entsteht, weil schnelles Fliegen schneller auflädt (Thrill), als man ausgibt.
+- **Fähigkeiten als Impulse:** Steigen, Schub, Fassrolle, Bremsflügel.
+- **Präsentation:** FOV weitet sich, Flügelpartikel werden zu Kondensstreifen, Wind über den Bildschirm. Blizzard musste den FOV dämpfen und „Steady Flight“ wieder einführen; daraus folgt Komfortmodus ab Tag 1.
+- **KFB-Übertragung:**
+  - Schwung-Modell „Elan“: 4 Gleichungen, Prüfgröße E = ½s² + gh, Startwerte sStall 12, sThrill 40, sDive 60, Boost 85 m/s.
+  - Tasten wie K2B: Leertaste steigen, Shift Schub, Leertaste + A/D Rolle.
+  - 6 Ladungen.
+  - FOV-Kurve 55 → 70° (Deckel 75°).
+  - Racer-Variante mit Kesseldruck (wie Episode I Racer), Schwebefeder und Bodeneffekt.
+- **Erste Scheibe Elan S1** (Figur, Ringkurs, Gates G1–G8). Die Bewegungs-Sitzung ist angefragt, weil das ihr Bereich ist (M1-Flug). S2 = Racer.
+
+**R1a Antriebe** (combo/r2 @20d2fa4):
+- Modul `src/modules/vehicleRig.js`:
+  - je Düse Glow-Kern + additive Fahne mit Schockdiamanten bei Vollgas, Lüfter mit drehender Scheibe, Funken-Pool;
+  - Motormodell (5 Gänge, Drehzahl, Schaltdelle + Stoß, Backfire beim Gaswegnehmen);
+  - surge/ascent als Stauchen → Strecken mit Volumen-Erhalt (Modell und Anker verformen gemeinsam, Fahnen bleiben an den Düsen).
+- Keine Lichter, kein Bloom-Pass. 3–19 Draw Calls je Racer (Thunderjet mit 10 Ankern am meisten).
+- Racer-Wahl `#m1,car,racer=<id>` für Georgs sechs. Daten `src/data/vehicles/kfb-vehicle-rig.r1.json` (nur Zahlen).
+- Unit-Test PASS. Browser-Test `test/r1a.mjs` (Dragster, Panzer-Gleiter, Thunderjet) läuft nach dem Volltest.
+
 ## 87 · 18.10. · Private Assets: Dropbox-Connector geht in diesem Workspace nicht (Georg) · Bitte an WS0
 
 - Georg: Der Dropbox-Connector lässt sich in diesem Workspace **nicht** freischalten. Der Weg aus V-462 fällt für WS1 deshalb aus.
