@@ -7389,6 +7389,21 @@
    "applies": "q89–q95"
   },
   {
+   "id": "V-526",
+   "date": "2026-10-18",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Hub-Antworten 18.10. Abend: q81 Belohnungs-Sounds TUNE (hohe Töne/Glyphen nerven) → reward_r1b weicher/tiefer (Holz/Filz), Hub q96; q87 Werkstatt TUNE → B36 r4: absurde Sci-Fi/Space-Garage (KayKit Space Kit / Quaternius Sci-Fi), gern allegorisch, zusammengehalten durch KFB-Cartoon-Stil, Requisiten, Farben, Knet-Textur; Boden mit Streu nach Platzierungs-Grammatik; q88 Monstrosity-Lider PASS; q92 auch menschliche Laute ohne Worte erlaubt (Barks); q94 HeyGen-Videoproduktion Piloten P1 Hypernormalisation (Video Agent) + P3 Cartoon-VFX (Seedance auf Schwarz) – wartet auf Georgs MCP-Einrichtung; q95 HyperFrames auf dem Mac mini installieren (WSB).",
+   "values": {},
+   "owner": "WS0 · WSB · Georg (HeyGen-MCP)",
+   "check": "Hub q96 + B36 r4",
+   "source": "Hub q81–q95",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Antworten umgesetzt.",
+   "applies": "laufend"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7476,7 +7491,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:878",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:879",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
