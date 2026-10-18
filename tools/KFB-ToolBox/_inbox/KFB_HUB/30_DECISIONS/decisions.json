@@ -7558,7 +7558,7 @@
    "date": "2026-10-18",
    "area": "Spiel",
    "verdict": "RULE",
-   "text": "Wurfwaffen + Brick-Fish (Georg 18.10.): Granate, Cartoon-Bombe (Clown-Set, KayKit Mystery S6 clown_bomb, privat) und Fluff-Bombe (platzt in Fluff-Wolke, wäscht auch Black Goo frei, V-532). Cartoonige Wurf-Clips aus Georgs Mixamo-Downloads (Grenade Throw, Run And Throw Grenade, Throw, Throwing, Goalie/Overhand, Frisbee) + KayKit Throw; zugleich die Brick-Fish-Wurf- und Treffer-Choreografie optimieren (Throw, Hit_A/B, Dodge_*, Hit-Stop-Marke). VFX als Zusatz zum Zerstörungs-Modus (V-514) mit derselben Partikel-Logik (V-533/V-535), SFX-Set throwables_r1 (ElevenLabs) von WS0. Griff nach V-536. Brick-Fish-Duell ist Kandidat für ein Comic-Motion-Video (WSV). Nachtrag Georg: Bomben/Granaten hinterlassen Dellen bzw. Krater im Terrain und schwarze Schmauch- und Explosionsspuren, klassisch sternförmig um das Aufprall-Zentrum (Decal + Terrain-Delle); am Krater ploppen Fluff-Vorkommen heraus (Ernte-Beute, V-484/V-533). Krater, Dellen und Schmauchspuren sind temporär: Der Knetboden glättet sich mit der Zeit, die Spuren verblassen. Technisch ist das eine abgeleitete Form der God-Mode-Terrainverformung (Terraforming): ein Terrain-Verformungs-Modul mit den Modi dauerhaft (God Mode/Terraforming/Kayfabrizieren) und temporär mit Rückbildung (Einschläge, Fahrspuren wie bei Joyride – Fundort prüft WS0). Brief B41 an WSB nach V-536 und B40.",
+   "text": "Wurfwaffen + Brick-Fish (Georg 18.10.): Granate, Cartoon-Bombe (Clown-Set, KayKit Mystery S6 clown_bomb, privat) und Fluff-Bombe (platzt in Fluff-Wolke, wäscht auch Black Goo frei, V-532). Cartoonige Wurf-Clips aus Georgs Mixamo-Downloads (Grenade Throw, Run And Throw Grenade, Throw, Throwing, Goalie/Overhand, Frisbee) + KayKit Throw; zugleich die Brick-Fish-Wurf- und Treffer-Choreografie optimieren (Throw, Hit_A/B, Dodge_*, Hit-Stop-Marke). VFX als Zusatz zum Zerstörungs-Modus (V-514) mit derselben Partikel-Logik (V-533/V-535), SFX-Set throwables_r1 (ElevenLabs) von WS0. Griff nach V-536. Brick-Fish-Duell ist Kandidat für ein Comic-Motion-Video (WSV). Nachtrag Georg: Bomben/Granaten hinterlassen Dellen bzw. Krater im Terrain und schwarze Schmauch- und Explosionsspuren, klassisch sternförmig um das Aufprall-Zentrum (Decal + Terrain-Delle); am Krater ploppen Fluff-Vorkommen heraus (Ernte-Beute, V-484/V-533). Krater, Dellen und Schmauchspuren sind temporär: Der Knetboden glättet sich mit der Zeit, die Spuren verblassen. Technisch ist das eine abgeleitete Form der God-Mode-Terrainverformung (Terraforming): ein Terrain-Verformungs-Modul mit den Modi dauerhaft (God Mode/Terraforming/Kayfabrizieren) und temporär mit Rückbildung (Einschläge, Fahrspuren). WS0-Prüfung: Joyride hat keine echte Bodenverformung; nächstverwandt sind die am Boden haftenden Knetkrümel aus clay-vfx.v1.js (J14/J17, Lebensdauer 0,4–2,2 s, stickChance je Biom), die als Krümel-Schicht wiederverwendet werden. Die temporäre Verformung entsteht neu im Terraforming-Modul). Brief B41 an WSB nach V-536 und B40.",
    "values": {},
    "owner": "WSB (B41) · WS1 (Flug/Aufprall/Explosion) · WS0 (SFX) · WSV (Video-Kandidat)",
    "check": "B41 Streifen + Hub-Hörprobe",
@@ -7656,7 +7656,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:893",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:894",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
