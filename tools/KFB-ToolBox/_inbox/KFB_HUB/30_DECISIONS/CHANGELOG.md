@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Hub-Antworten 18.10. mittags: V-493 Kuppel = eine drehbare Kugel (FAIL r3), V-494 Soldaten Stern/keine Staffel/Promo-Gewehrhaltung + WS0-Fehler Doppelaugen, V-495 Bots r4 (Unterarm-Aufsatz als Waffe + Trichter), V-496 Hexen FAIL (Meshy-Türme, Kessel auf Füßen, Platz, Rauch-Spec), V-497 Melodie-Sprache R3 (tiefer, Timing, Figur mit Mund-Rig bei WS1). q44 kein Rust Runner II. WSB 43. Nachtrag.
 - WSB B34 r3: Kuppel halbrund auf Glasring (Rückwand bleibt), Alpha 0,07, 6 Cabrio-Segmente + Clips open/close 1,6 s + Regler-extras; Glastank aus dem Bewegungsraum von kfb_idle_treading_water_a (Ø innen 1,95 u, H 2,9 u, nichts sticht heraus) → Hub q49 aktualisiert.
 - V-492 KFB-Sprache R1 FAIL (Georg) → R2 melodisch: Web-Audio-Instrumentenstimme je Figur, Wort = Motiv, Gefühl = Tempo/Lage/Tonleiter, durchgehend ohne Schnitte; gleiche Artifact-URL, Hub q45 aktualisiert. Tank-Blubber ElevenLabs tank_bubbles_r1 (Schleifen ruhig/Psyop-Soup, Plopps, Gluckser, Pumpen-Summen) erzeugt und auf dem Audio-Branch.
 - V-491 Glastank kleiner, Maß aus dem Bewegungsraum der Wassertreten-/Floating-Animation (nichts sticht heraus) → WSB B34 r3 (42. Nachtrag).

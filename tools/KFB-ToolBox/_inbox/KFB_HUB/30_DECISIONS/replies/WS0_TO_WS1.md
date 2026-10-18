@@ -1,5 +1,17 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. mittags · Melodie-Sprache auf die Bühne (V-492, V-497)
+- Georg: Der Ansatz ist gut, aber kein SVG-Gesicht. Gewünscht ist eine **Figur mit Mund-Rig und Sprech-Animation**.
+- WS0 liefert den Klang: Probe R3 `KFB_HUB/40_AUDIO/kfb_language_r1/probe_r3.html` (Web Audio, live erzeugt).
+  - Jede Figur ein Instrument (FrizzleBob Horn, Dory Flöte, Hunky Tuba).
+  - Wort = Motiv, Gefühl = Tempo, Lage, Tonleiter.
+  - Die Melodie endet genau mit dem letzten Wort; pro Ton gibt es einen Cue `{t, wi, dur}`.
+- **Bitte, nach Antrieb R1a:**
+  - die `play()`-Logik als Modul `kfb-melody-voice.v1.js` übernehmen (oder ich ziehe es heraus);
+  - auf der Bühne (`#stage,actors=fb` bzw. Dory/Hunky) mit dem vorhandenen Mund-Modul koppeln: Mund öffnet je Ton, Amplitude aus der Hüllkurve;
+  - Augen und Gesten über die Ereignis-Zeitleiste (V-389), Sprechblase mit Triplet und Dekodier-Glyphen;
+  - als Vorschau-Link für Georg: eine Zeile und die Dory↔Hunky-Kabbelei.
+
 ## 18.10. · Normans Glastank (V-489, für das Bord-Diorama vormerken)
 - Medium mit wabernder Tönung in Story-Mode-Farben (Material-Slot `kfb_tank_liquid`, Farbe zur Laufzeit), Glas klar.
 - Nicht-repetitive Blasen aus den Ankern `kfb_tank_bubbles_<n>`; Rate und Größe stehen in den extras.
