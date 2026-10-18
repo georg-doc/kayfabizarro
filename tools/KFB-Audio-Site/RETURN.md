@@ -1,3 +1,9 @@
+# CURRENT · V-458 ATMOSPHERE / HUB b116 · 2026-10-18
+
+Same private Audio Site v18 / source 0.8.1, native source 33c70dc8e9c1c3b78d3c53e26d78d024d60d033f; exact URL #atmosphere Chrome verified. Draft PR #420 / code-evidence c65cb5b594e8b232533454af5fd821273e782078. 36 CC0 files + canonical LICENCES.json, one injected AudioContext; 24 named automated tests, 172 Site + 511 Footstep assertions, 26 final hosted cases PASS. Source gaps and human 3-minute ear gate OPEN. b116 non-CC0 stock manifest-only, no paid calls or World/Hub/merge. [Full current Return](WSA_AMBIENCE_V458_RETURN.md). Next acceptance gate: WS0/Georg ear review; ordered independent follow-up Racer gears then layered Combat.
+
+---
+
 # CURRENT · WOOD DEFAULT / CARPET / SUPPLIED FOOTSTEP BANKS · 2026-10-18
 
 Georg accepted 0.7.5 contact timing, rejected subjective level balance, and chose Wood as reference. Same private Audio Site v16 / visible 0.7.6 is Chrome verified: Wood default, carpet experiment, 32 imported steps + separate creak, 13 selectable surfaces, one host context. 1067 assertions PASS; new sound/levels NOT HUMAN_ACCEPTED. Audio-owned game seam prepared; no World installation. Exact [current Return](WSA_FOOTSTEPS_WOOD_CARPET_RETURN.md). Next gate: WS0 current Wood/carpet listening review.

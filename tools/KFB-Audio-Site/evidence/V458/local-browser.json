@@ -1,0 +1,139 @@
+{
+  "cases": [
+    {
+      "case": "Start/decode",
+      "pass": true,
+      "elapsedSeconds": 118,
+      "loaded": 38,
+      "rms": 0.009624131411169442
+    },
+    {
+      "case": "jungle/night",
+      "pass": true,
+      "rms": 0.0077535877021256165
+    },
+    {
+      "case": "jungle/day",
+      "pass": true,
+      "rms": 0.009672968000565075
+    },
+    {
+      "case": "beach/night",
+      "pass": true,
+      "rms": 0.002976130408003435
+    },
+    {
+      "case": "beach/day",
+      "pass": true,
+      "rms": 0.004202469229679842
+    },
+    {
+      "case": "forest/night",
+      "pass": true,
+      "rms": 0.015644938745098962
+    },
+    {
+      "case": "forest/day",
+      "pass": true,
+      "rms": 0.015109436856583365
+    },
+    {
+      "case": "pond/night",
+      "pass": true,
+      "rms": 0.0027912000867054455
+    },
+    {
+      "case": "pond/day",
+      "pass": true,
+      "rms": 0.0033116303718733393
+    },
+    {
+      "case": "meadow/night",
+      "pass": true,
+      "rms": 0.008172810862556544
+    },
+    {
+      "case": "meadow/day",
+      "pass": true,
+      "rms": 0.011676786306860936
+    },
+    {
+      "case": "weather/rain-light",
+      "pass": true
+    },
+    {
+      "case": "weather/rain-heavy",
+      "pass": true
+    },
+    {
+      "case": "weather/snow",
+      "pass": true
+    },
+    {
+      "case": "weather/storm",
+      "pass": true
+    },
+    {
+      "case": "weather/thunderstorm",
+      "pass": true
+    },
+    {
+      "case": "weather/clear",
+      "pass": true
+    },
+    {
+      "case": "wind/.73",
+      "pass": true
+    },
+    {
+      "case": "lightning/1029m",
+      "pass": true,
+      "measurement": {
+        "type": "lightning",
+        "id": "studio-d72d1508-16bb-4f0b-8148-34e2572b0d20",
+        "flashAt": 158.8348299319728,
+        "thunderAt": 161.8348299319728,
+        "distanceM": 1029,
+        "delaySeconds": 3
+      },
+      "visual": [
+        {
+          "id": "studio-d72d1508-16bb-4f0b-8148-34e2572b0d20",
+          "flashAt": 158.8348299319728,
+          "thunderAt": 161.8348299319728,
+          "delaySeconds": 3,
+          "shown": true,
+          "visualAt": 158.84190476190477,
+          "visualDriftMs": 7.074829931980275
+        }
+      ]
+    },
+    {
+      "case": "music sidechain",
+      "pass": true,
+      "duckDb": -5
+    },
+    {
+      "case": "existing voice-focus cooperation C",
+      "pass": true,
+      "moduleDuckDb": -0.75,
+      "hostDuckDb": -4.25
+    },
+    {
+      "case": "Stop all/reset",
+      "pass": true
+    },
+    {
+      "case": "snow global owner filter",
+      "pass": true,
+      "frequency": 4200
+    },
+    {
+      "case": "Stop restores global filter",
+      "pass": true
+    }
+  ],
+  "passed": 24,
+  "failed": 0,
+  "humanEarAcceptance": "OPEN"
+}

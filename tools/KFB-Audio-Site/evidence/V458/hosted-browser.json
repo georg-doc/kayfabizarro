@@ -1,0 +1,140 @@
+{
+  "url": "https://kfb-audio.frizzlebob.chatgpt.site/#atmosphere",
+  "revision": "0.8.1",
+  "version": 18,
+  "cc0Files": 36,
+  "cases": [
+    {
+      "case": "v18/revision0.8.1/36CC0deocdes",
+      "pass": true,
+      "loaded": 36,
+      "rms": 0.00980683608889604
+    },
+    {
+      "case": "jungle/night",
+      "pass": true
+    },
+    {
+      "case": "jungle/day",
+      "pass": true
+    },
+    {
+      "case": "beach/night",
+      "pass": true
+    },
+    {
+      "case": "beach/day",
+      "pass": true
+    },
+    {
+      "case": "forest/night",
+      "pass": true
+    },
+    {
+      "case": "forest/day",
+      "pass": true
+    },
+    {
+      "case": "pond/night",
+      "pass": true
+    },
+    {
+      "case": "pond/day",
+      "pass": true
+    },
+    {
+      "case": "meadow/night",
+      "pass": true
+    },
+    {
+      "case": "meadow/day",
+      "pass": true
+    },
+    {
+      "case": "time/morning",
+      "pass": true
+    },
+    {
+      "case": "time/evening",
+      "pass": true
+    },
+    {
+      "case": "weather/rain-light",
+      "pass": true
+    },
+    {
+      "case": "weather/rain-heavy",
+      "pass": true
+    },
+    {
+      "case": "weather/snow",
+      "pass": true
+    },
+    {
+      "case": "weather/storm",
+      "pass": true
+    },
+    {
+      "case": "weather/thunderstorm",
+      "pass": true
+    },
+    {
+      "case": "weather/clear",
+      "pass": true
+    },
+    {
+      "case": "wind/.73",
+      "pass": true
+    },
+    {
+      "case": "1029m/3sec/visual alignment",
+      "pass": true,
+      "event": {
+        "type": "lightning",
+        "id": "studio-0562e7c7-b447-4e88-9805-a5602a8c400d",
+        "flashAt": 17.373061224489796,
+        "thunderAt": 20.373061224489796,
+        "distanceM": 1029,
+        "delaySeconds": 3
+      },
+      "visual": [
+        {
+          "id": "studio-0562e7c7-b447-4e88-9805-a5602a8c400d",
+          "flashAt": 17.373061224489796,
+          "thunderAt": 20.373061224489796,
+          "delaySeconds": 3,
+          "shown": true,
+          "visualAt": 17.38013605442177,
+          "visualDriftMs": 7.07482993197317
+        }
+      ]
+    },
+    {
+      "case": "real D music sidechain",
+      "pass": true,
+      "duckDb": -5
+    },
+    {
+      "case": "existing voice-focus compensation",
+      "pass": true,
+      "hostDb": -5,
+      "moduleDb": 0
+    },
+    {
+      "case": "music off",
+      "pass": true
+    },
+    {
+      "case": "snow global filter",
+      "pass": true
+    },
+    {
+      "case": "Stop all/restore filter",
+      "pass": true
+    }
+  ],
+  "passed": 26,
+  "failed": 0,
+  "mediaState": "STOPPED",
+  "humanEarAcceptance": "OPEN_NOT_HUMAN_ACCEPTED"
+}
