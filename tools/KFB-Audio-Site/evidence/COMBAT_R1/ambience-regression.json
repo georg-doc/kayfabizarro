@@ -1,0 +1,410 @@
+{
+  "schema": "kfb.ambience-qa/1",
+  "tests": 25,
+  "passed": 25,
+  "failed": 0,
+  "simulatedSeconds": 1800,
+  "results": [
+    {
+      "name": "All 36 shipped asset hashes and licences",
+      "status": "PASS"
+    },
+    {
+      "name": "Ten long beds: 30–90 seconds, two variants per biome",
+      "status": "PASS"
+    },
+    {
+      "name": "No forbidden source audio in shipped assets",
+      "status": "PASS"
+    },
+    {
+      "name": "DOM-free / no scheduler or AudioContext owner",
+      "status": "PASS"
+    },
+    {
+      "name": "Context and both semantic destinations mandatory",
+      "status": "PASS"
+    },
+    {
+      "name": "Poisson minimum gap, no immediate variant repeat, thunder physics",
+      "status": "PASS"
+    },
+    {
+      "name": "36 real Ogg decodes / duration / PCM peak / no clipping",
+      "status": "PASS"
+    },
+    {
+      "name": "meadow/day: 180 seconds host-driven scheduling",
+      "status": "PASS"
+    },
+    {
+      "name": "meadow/night: 180 seconds host-driven scheduling",
+      "status": "PASS"
+    },
+    {
+      "name": "jungle/day: 180 seconds host-driven scheduling",
+      "status": "PASS"
+    },
+    {
+      "name": "jungle/night: 180 seconds host-driven scheduling",
+      "status": "PASS"
+    },
+    {
+      "name": "beach/day: 180 seconds host-driven scheduling",
+      "status": "PASS"
+    },
+    {
+      "name": "beach/night: 180 seconds host-driven scheduling",
+      "status": "PASS"
+    },
+    {
+      "name": "forest/day: 180 seconds host-driven scheduling",
+      "status": "PASS"
+    },
+    {
+      "name": "forest/night: 180 seconds host-driven scheduling",
+      "status": "PASS"
+    },
+    {
+      "name": "pond/day: 180 seconds host-driven scheduling",
+      "status": "PASS"
+    },
+    {
+      "name": "pond/night: 180 seconds host-driven scheduling",
+      "status": "PASS"
+    },
+    {
+      "name": "Thunder unique event; 1/3/10 second arrival; Stop cancels queued thunder",
+      "status": "PASS"
+    },
+    {
+      "name": "5 dB music and speech ducking; host voice duck not stacked",
+      "status": "PASS"
+    },
+    {
+      "name": "Rain light/heavy weather changes preserve running bed and smooth crossfade",
+      "status": "PASS"
+    },
+    {
+      "name": "Snow, shared wind, positional water and invalid context",
+      "status": "PASS"
+    },
+    {
+      "name": "Suspended-host backlog is dropped, never caught up as machine-gun events",
+      "status": "PASS"
+    },
+    {
+      "name": "Async start cancelled by Stop remains silent",
+      "status": "PASS"
+    },
+    {
+      "name": "Snow global-filter callback is owner-injected and restored on Stop",
+      "status": "PASS"
+    },
+    {
+      "name": "Combat activity ducks ambience 6 dB and compensates existing voice focus",
+      "status": "PASS"
+    }
+  ],
+  "biomeMetrics": [
+    {
+      "biome": "meadow",
+      "timeOfDay": "day",
+      "seconds": 180,
+      "bedTransitions": 6,
+      "events": 14,
+      "activeSources": 3
+    },
+    {
+      "biome": "meadow",
+      "timeOfDay": "night",
+      "seconds": 180,
+      "bedTransitions": 6,
+      "events": 9,
+      "activeSources": 2
+    },
+    {
+      "biome": "jungle",
+      "timeOfDay": "day",
+      "seconds": 180,
+      "bedTransitions": 6,
+      "events": 8,
+      "activeSources": 2
+    },
+    {
+      "biome": "jungle",
+      "timeOfDay": "night",
+      "seconds": 180,
+      "bedTransitions": 6,
+      "events": 19,
+      "activeSources": 2
+    },
+    {
+      "biome": "beach",
+      "timeOfDay": "day",
+      "seconds": 180,
+      "bedTransitions": 6,
+      "events": 4,
+      "activeSources": 3
+    },
+    {
+      "biome": "beach",
+      "timeOfDay": "night",
+      "seconds": 180,
+      "bedTransitions": 6,
+      "events": 3,
+      "activeSources": 2
+    },
+    {
+      "biome": "forest",
+      "timeOfDay": "day",
+      "seconds": 180,
+      "bedTransitions": 6,
+      "events": 8,
+      "activeSources": 2
+    },
+    {
+      "biome": "forest",
+      "timeOfDay": "night",
+      "seconds": 180,
+      "bedTransitions": 6,
+      "events": 9,
+      "activeSources": 2
+    },
+    {
+      "biome": "pond",
+      "timeOfDay": "day",
+      "seconds": 180,
+      "bedTransitions": 6,
+      "events": 2,
+      "activeSources": 2
+    },
+    {
+      "biome": "pond",
+      "timeOfDay": "night",
+      "seconds": 180,
+      "bedTransitions": 6,
+      "events": 17,
+      "activeSources": 2
+    }
+  ],
+  "pcmMetrics": [
+    {
+      "id": "meadow-1",
+      "duration": 60,
+      "peakDbfs": -10.24645192199496,
+      "rmsDbfs": -30.08612435315189
+    },
+    {
+      "id": "meadow-2",
+      "duration": 60,
+      "peakDbfs": -7.847821223356483,
+      "rmsDbfs": -29.519384233541967
+    },
+    {
+      "id": "forest-1",
+      "duration": 60,
+      "peakDbfs": -11.60430955856727,
+      "rmsDbfs": -29.503803956897627
+    },
+    {
+      "id": "forest-2",
+      "duration": 60,
+      "peakDbfs": -10.390567278427689,
+      "rmsDbfs": -31.286677078683578
+    },
+    {
+      "id": "wind-1",
+      "duration": 45,
+      "peakDbfs": -8.548465984263302,
+      "rmsDbfs": -27.062295037703024
+    },
+    {
+      "id": "wind-2",
+      "duration": 45,
+      "peakDbfs": -8.699288872030507,
+      "rmsDbfs": -28.132272144615026
+    },
+    {
+      "id": "pond-1",
+      "duration": 60,
+      "peakDbfs": -9.216816896363337,
+      "rmsDbfs": -32.071746502118735
+    },
+    {
+      "id": "pond-2",
+      "duration": 60,
+      "peakDbfs": -8.286495664983546,
+      "rmsDbfs": -33.65464790351924
+    },
+    {
+      "id": "jungle-1",
+      "duration": 40,
+      "peakDbfs": -8.293250184376328,
+      "rmsDbfs": -30.930748032587744
+    },
+    {
+      "id": "jungle-2",
+      "duration": 39.90665625,
+      "peakDbfs": -12.698188502003374,
+      "rmsDbfs": -33.87536357602446
+    },
+    {
+      "id": "wave-1",
+      "duration": 4,
+      "peakDbfs": -10.744821107490171,
+      "rmsDbfs": -30.847843348219435
+    },
+    {
+      "id": "wave-2",
+      "duration": 2.5,
+      "peakDbfs": -13.337414931792736,
+      "rmsDbfs": -30.931160829754493
+    },
+    {
+      "id": "wave-3",
+      "duration": 2.25,
+      "peakDbfs": -14.083370772731456,
+      "rmsDbfs": -31.09983916095974
+    },
+    {
+      "id": "wave-4",
+      "duration": 3.421,
+      "peakDbfs": -12.236600414968454,
+      "rmsDbfs": -30.45278020472589
+    },
+    {
+      "id": "river-long",
+      "duration": 60,
+      "peakDbfs": -13.971786995633263,
+      "rmsDbfs": -30.28763984134731
+    },
+    {
+      "id": "waterfall",
+      "duration": 10,
+      "peakDbfs": -15.15459868841467,
+      "rmsDbfs": -27.99936162848171
+    },
+    {
+      "id": "rain-1",
+      "duration": 27,
+      "peakDbfs": -13.57394124087688,
+      "rmsDbfs": -30.658439666220666
+    },
+    {
+      "id": "rain-2",
+      "duration": 26,
+      "peakDbfs": -14.960710880142937,
+      "rmsDbfs": -29.869175880189772
+    },
+    {
+      "id": "rain-3",
+      "duration": 45,
+      "peakDbfs": -12.419127824770106,
+      "rmsDbfs": -31.253886522402485
+    },
+    {
+      "id": "rain-4",
+      "duration": 37.5,
+      "peakDbfs": -9.017247807969522,
+      "rmsDbfs": -31.01985333297549
+    },
+    {
+      "id": "bird-1",
+      "duration": 2.5,
+      "peakDbfs": -11.302117178929247,
+      "rmsDbfs": -33.771206484568744
+    },
+    {
+      "id": "bird-2",
+      "duration": 2.5,
+      "peakDbfs": -10.589987124094247,
+      "rmsDbfs": -32.386094218216776
+    },
+    {
+      "id": "bird-3",
+      "duration": 2.5,
+      "peakDbfs": -9.490695933013868,
+      "rmsDbfs": -32.20344983798987
+    },
+    {
+      "id": "bird-4",
+      "duration": 2.5,
+      "peakDbfs": -10.660762076354464,
+      "rmsDbfs": -32.28687595058548
+    },
+    {
+      "id": "bird-5",
+      "duration": 2.5,
+      "peakDbfs": -9.652143489408518,
+      "rmsDbfs": -34.29961614487313
+    },
+    {
+      "id": "bird-6",
+      "duration": 2.5,
+      "peakDbfs": -15.097193568900389,
+      "rmsDbfs": -37.42453152440689
+    },
+    {
+      "id": "chirp-1",
+      "duration": 0.846,
+      "peakDbfs": -31.602454438435515,
+      "rmsDbfs": -48.55500928568187
+    },
+    {
+      "id": "chirp-2",
+      "duration": 0.846,
+      "peakDbfs": -22.2595485560579,
+      "rmsDbfs": -40.68131852896162
+    },
+    {
+      "id": "chirp-3",
+      "duration": 0.846,
+      "peakDbfs": -16.07838173390722,
+      "rmsDbfs": -33.771080154066155
+    },
+    {
+      "id": "cricket-1",
+      "duration": 2.1,
+      "peakDbfs": -16.935091937348407,
+      "rmsDbfs": -32.69423121937053
+    },
+    {
+      "id": "cricket-2",
+      "duration": 2.1,
+      "peakDbfs": -17.319250519836892,
+      "rmsDbfs": -32.429457664305275
+    },
+    {
+      "id": "cricket-3",
+      "duration": 2.1,
+      "peakDbfs": -17.49179644033206,
+      "rmsDbfs": -32.75101687457508
+    },
+    {
+      "id": "frog-1",
+      "duration": 4,
+      "peakDbfs": -16.14343460912548,
+      "rmsDbfs": -31.901036516470803
+    },
+    {
+      "id": "frog-2",
+      "duration": 4,
+      "peakDbfs": -15.126540669266873,
+      "rmsDbfs": -29.088525535971588
+    },
+    {
+      "id": "frog-3",
+      "duration": 4,
+      "peakDbfs": -14.20100478365188,
+      "rmsDbfs": -31.514741238654924
+    },
+    {
+      "id": "thunder",
+      "duration": 12,
+      "peakDbfs": -9.283342120384876,
+      "rmsDbfs": -33.723058813378735
+    }
+  ],
+  "humanEarAcceptance": "OPEN_NOT_AUTOMATED"
+}

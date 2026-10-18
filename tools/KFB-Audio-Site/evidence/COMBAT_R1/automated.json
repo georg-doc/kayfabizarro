@@ -1,0 +1,2028 @@
+{
+  "schema": "kfb.combat-independent-test/1",
+  "date": "2026-10-18",
+  "engineSha256": "1be626c9659cc41560c09a8f3b28e13543f622083795966019a02b2daced0764",
+  "manifestSha256": "a52132a37d4f1d5c57202c5ad8b243de3f92c7afa66f2ad49f19d5bfe6e5ff21",
+  "boundary": "Mocked injected AudioContext state/graph; actual privateOgg/sourceSHA+FFmpeg decode. No browser/sonic/HUMAN claim.",
+  "counts": {
+    "passed": 395,
+    "failed": 0
+  },
+  "failures": [],
+  "checks": [
+    {
+      "name": "54 selected assets18 families3variants",
+      "pass": true
+    },
+    {
+      "name": "derived windows honestly labelled",
+      "pass": true
+    },
+    {
+      "name": "all privateAudio flags/provenance",
+      "pass": true
+    },
+    {
+      "name": "punchLight10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "punchLight no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "punchLight ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "punchLight ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "punchLight Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "punchHeavy10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "punchHeavy no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "punchHeavy ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "punchHeavy ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "punchHeavy Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "knuckles10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "knuckles no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "knuckles ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "knuckles ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "knuckles Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "whoosh10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "whoosh no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "whoosh ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "whoosh ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "whoosh Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "blaster10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "blaster no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "blaster ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "blaster ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "blaster Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "rocketLaunch10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "rocketLaunch no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "rocketLaunch ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "rocketLaunch ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "rocketLaunch Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "fuse10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "fuse no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "fuse ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "fuse ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "fuse Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "explosionSmall10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "explosionSmall no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "explosionSmall ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "explosionSmall ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "explosionSmall Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "explosionLarge10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "explosionLarge no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "explosionLarge ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "explosionLarge ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "explosionLarge Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "hitConfirm10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "hitConfirm no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "hitConfirm ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "hitConfirm ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "hitConfirm Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "fluffBurst10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "fluffBurst no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "fluffBurst ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "fluffBurst ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "fluffBurst Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "treeShake10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "treeShake no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "treeShake ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "treeShake ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "treeShake Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "botAngry10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "botAngry no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "botAngry ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "botAngry ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "botAngry Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "botCollapse10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "botCollapse no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "botCollapse ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "botCollapse ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "botCollapse Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "woodBreak10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "woodBreak no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "woodBreak ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "woodBreak ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "woodBreak Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "stoneBreak10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "stoneBreak no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "stoneBreak ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "stoneBreak ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "stoneBreak Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "crystalBreak10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "crystalBreak no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "crystalBreak ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "crystalBreak ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "crystalBreak Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "dominoChain10repeats accepted",
+      "pass": true
+    },
+    {
+      "name": "dominoChain no immediate primary variant repeat",
+      "pass": true
+    },
+    {
+      "name": "dominoChain ±4percent pitch",
+      "pass": true
+    },
+    {
+      "name": "dominoChain ±2dB volume",
+      "pass": true
+    },
+    {
+      "name": "dominoChain Stop releases allvoices",
+      "pass": true
+    },
+    {
+      "name": "fight30authoritative hosttime events",
+      "pass": true
+    },
+    {
+      "name": "fight complete after30s/tails",
+      "pass": true
+    },
+    {
+      "name": "fight sends combat activity signal",
+      "pass": true
+    },
+    {
+      "name": "ten schedule propagates supplied worldposition",
+      "pass": true
+    },
+    {
+      "name": "ten schedule material uses crystal debris donor",
+      "pass": true
+    },
+    {
+      "name": "fight schedule propagates supplied worldposition",
+      "pass": true
+    },
+    {
+      "name": "fight schedule material uses crystal debris donor",
+      "pass": true
+    },
+    {
+      "name": "actual ambience consumer combat duck−6dB",
+      "pass": true
+    },
+    {
+      "name": "actual ambience combat+hostvoice compensated−1.75dB",
+      "pass": true
+    },
+    {
+      "name": "combat release retains speech-only compensated−.75dB",
+      "pass": true
+    },
+    {
+      "name": "combat/speech release returns0dB",
+      "pass": true
+    },
+    {
+      "name": "ambience integrationStop releases sources",
+      "pass": true
+    },
+    {
+      "name": "music duck−3dB",
+      "pass": true
+    },
+    {
+      "name": "speech/music duck nonstacking−3",
+      "pass": true
+    },
+    {
+      "name": "duck release",
+      "pass": true
+    },
+    {
+      "name": "event ID deduplication",
+      "pass": true
+    },
+    {
+      "name": "70ms sameevent debounce",
+      "pass": true
+    },
+    {
+      "name": "debounce releases after80ms",
+      "pass": true
+    },
+    {
+      "name": "unknown event nofallback throws",
+      "pass": true
+    },
+    {
+      "name": "NaN position rejected",
+      "pass": true
+    },
+    {
+      "name": "distance increases LPF restraint",
+      "pass": true
+    },
+    {
+      "name": "distance uses inverse HRTF existingvoicegraph",
+      "pass": true
+    },
+    {
+      "name": "smallroom delay send exists bounded",
+      "pass": true
+    },
+    {
+      "name": "experimental source slices honestly event-labelled",
+      "pass": true
+    },
+    {
+      "name": "experimental attackbodytail scheduled separately",
+      "pass": true
+    },
+    {
+      "name": "polyphony capped24",
+      "pass": true
+    },
+    {
+      "name": "Stop all future/active sources",
+      "pass": true
+    },
+    {
+      "name": "Stop activity false",
+      "pass": true
+    },
+    {
+      "name": "Stop cancels pending Start",
+      "pass": true
+    },
+    {
+      "name": "Restart after cancelledStart works",
+      "pass": true
+    },
+    {
+      "name": "late gap no backlog cues",
+      "pass": true
+    },
+    {
+      "name": "DOMfree no context/timer/RAF creation",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C01_punch_light_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C01_punch_light_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C01_punch_light_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C01_punch_light_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C01_punch_light_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C01_punch_light_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C01_punch_light_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C01_punch_light_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C01_punch_light_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C01_punch_light_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C01_punch_light_c_r",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C01_punch_light_c_r",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C01_punch_light_c_r",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C01_punch_light_c_r",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C01_punch_light_c_r",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C02_punch_heavy_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C02_punch_heavy_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C02_punch_heavy_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C02_punch_heavy_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C02_punch_heavy_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C02_punch_heavy_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C02_punch_heavy_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C02_punch_heavy_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C02_punch_heavy_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C02_punch_heavy_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C02_punch_heavy_c_r",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C02_punch_heavy_c_r",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C02_punch_heavy_c_r",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C02_punch_heavy_c_r",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C02_punch_heavy_c_r",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C03_brass_knuckles_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C03_brass_knuckles_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C03_brass_knuckles_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C03_brass_knuckles_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C03_brass_knuckles_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C03_brass_knuckles_b_r",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C03_brass_knuckles_b_r",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C03_brass_knuckles_b_r",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C03_brass_knuckles_b_r",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C03_brass_knuckles_b_r",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C03_brass_knuckles_c_r",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C03_brass_knuckles_c_r",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C03_brass_knuckles_c_r",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C03_brass_knuckles_c_r",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C03_brass_knuckles_c_r",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C04_swing_whoosh_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C04_swing_whoosh_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C04_swing_whoosh_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C04_swing_whoosh_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C04_swing_whoosh_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C04_swing_whoosh_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C04_swing_whoosh_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C04_swing_whoosh_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C04_swing_whoosh_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C04_swing_whoosh_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C04_swing_whoosh_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C04_swing_whoosh_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C04_swing_whoosh_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C04_swing_whoosh_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C04_swing_whoosh_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C05_blaster_primary_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C05_blaster_primary_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C05_blaster_primary_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C05_blaster_primary_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C05_blaster_primary_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C05_blaster_primary_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C05_blaster_primary_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C05_blaster_primary_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C05_blaster_primary_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C05_blaster_primary_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C05_blaster_primary_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C05_blaster_primary_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C05_blaster_primary_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C05_blaster_primary_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C05_blaster_primary_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C06_rocket_launch_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C06_rocket_launch_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C06_rocket_launch_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C06_rocket_launch_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C06_rocket_launch_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C06_rocket_launch_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C06_rocket_launch_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C06_rocket_launch_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C06_rocket_launch_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C06_rocket_launch_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C06_rocket_launch_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C06_rocket_launch_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C06_rocket_launch_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C06_rocket_launch_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C06_rocket_launch_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C07_bomb_fuse_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C07_bomb_fuse_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C07_bomb_fuse_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C07_bomb_fuse_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C07_bomb_fuse_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C07_bomb_fuse_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C07_bomb_fuse_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C07_bomb_fuse_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C07_bomb_fuse_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C07_bomb_fuse_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C07_bomb_fuse_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C07_bomb_fuse_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C07_bomb_fuse_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C07_bomb_fuse_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C07_bomb_fuse_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C08_explosion_small_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C08_explosion_small_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C08_explosion_small_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C08_explosion_small_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C08_explosion_small_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C08_explosion_small_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C08_explosion_small_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C08_explosion_small_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C08_explosion_small_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C08_explosion_small_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C08_explosion_small_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C08_explosion_small_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C08_explosion_small_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C08_explosion_small_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C08_explosion_small_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C09_explosion_big_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C09_explosion_big_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C09_explosion_big_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C09_explosion_big_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C09_explosion_big_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C09_explosion_big_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C09_explosion_big_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C09_explosion_big_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C09_explosion_big_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C09_explosion_big_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C09_explosion_big_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C09_explosion_big_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C09_explosion_big_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C09_explosion_big_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C09_explosion_big_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C10_hit_confirm_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C10_hit_confirm_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C10_hit_confirm_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C10_hit_confirm_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C10_hit_confirm_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C10_hit_confirm_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C10_hit_confirm_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C10_hit_confirm_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C10_hit_confirm_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C10_hit_confirm_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C10_hit_confirm_c_r",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C10_hit_confirm_c_r",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C10_hit_confirm_c_r",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C10_hit_confirm_c_r",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C10_hit_confirm_c_r",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C11_fluff_ball_burst_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C11_fluff_ball_burst_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C11_fluff_ball_burst_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C11_fluff_ball_burst_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C11_fluff_ball_burst_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C11_fluff_ball_burst_b_r",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C11_fluff_ball_burst_b_r",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C11_fluff_ball_burst_b_r",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C11_fluff_ball_burst_b_r",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C11_fluff_ball_burst_b_r",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C11_fluff_ball_burst_c_r",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C11_fluff_ball_burst_c_r",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C11_fluff_ball_burst_c_r",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C11_fluff_ball_burst_c_r",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C11_fluff_ball_burst_c_r",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C12_tree_shake_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C12_tree_shake_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C12_tree_shake_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C12_tree_shake_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C12_tree_shake_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C12_tree_shake_b_r",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C12_tree_shake_b_r",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C12_tree_shake_b_r",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C12_tree_shake_b_r",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C12_tree_shake_b_r",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C12_tree_shake_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C12_tree_shake_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C12_tree_shake_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C12_tree_shake_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C12_tree_shake_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C13_bot_angry_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C13_bot_angry_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C13_bot_angry_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C13_bot_angry_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C13_bot_angry_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C13_bot_angry_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C13_bot_angry_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C13_bot_angry_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C13_bot_angry_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C13_bot_angry_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C13_bot_angry_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C13_bot_angry_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C13_bot_angry_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C13_bot_angry_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C13_bot_angry_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C14_bot_collapse_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C14_bot_collapse_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C14_bot_collapse_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C14_bot_collapse_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C14_bot_collapse_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C14_bot_collapse_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C14_bot_collapse_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C14_bot_collapse_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C14_bot_collapse_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C14_bot_collapse_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C14_bot_collapse_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C14_bot_collapse_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C14_bot_collapse_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C14_bot_collapse_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C14_bot_collapse_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C15_wood_splinter_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C15_wood_splinter_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C15_wood_splinter_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C15_wood_splinter_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C15_wood_splinter_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C15_wood_splinter_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C15_wood_splinter_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C15_wood_splinter_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C15_wood_splinter_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C15_wood_splinter_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C15_wood_splinter_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C15_wood_splinter_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C15_wood_splinter_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C15_wood_splinter_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C15_wood_splinter_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C16_stone_crumble_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C16_stone_crumble_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C16_stone_crumble_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C16_stone_crumble_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C16_stone_crumble_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C16_stone_crumble_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C16_stone_crumble_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C16_stone_crumble_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C16_stone_crumble_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C16_stone_crumble_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C16_stone_crumble_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C16_stone_crumble_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C16_stone_crumble_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C16_stone_crumble_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C16_stone_crumble_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C17_crystal_shatter_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C17_crystal_shatter_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C17_crystal_shatter_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C17_crystal_shatter_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C17_crystal_shatter_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C17_crystal_shatter_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C17_crystal_shatter_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C17_crystal_shatter_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C17_crystal_shatter_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C17_crystal_shatter_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C17_crystal_shatter_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C17_crystal_shatter_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C17_crystal_shatter_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C17_crystal_shatter_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C17_crystal_shatter_c",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C18_domino_topple_a",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C18_domino_topple_a",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C18_domino_topple_a",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C18_domino_topple_a",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C18_domino_topple_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C18_domino_topple_b",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C18_domino_topple_b",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C18_domino_topple_b",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C18_domino_topple_b",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C18_domino_topple_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA C18_domino_topple_c",
+      "pass": true
+    },
+    {
+      "name": "originalSHA C18_domino_topple_c",
+      "pass": true
+    },
+    {
+      "name": "realFFmpeg finite clipfree C18_domino_topple_c",
+      "pass": true
+    },
+    {
+      "name": "actual duration within1frame C18_domino_topple_c",
+      "pass": true
+    },
+    {
+      "name": "derivedwindows stayinside decoded C18_domino_topple_c",
+      "pass": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "C01_punch_light_a",
+      "duration": 0.16496875,
+      "manifestDuration": 0.16496875,
+      "peakDbfs": -14.956064117917915,
+      "rmsDbfs": -34.06491709471994,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C01_punch_light_b",
+      "duration": 0.2130625,
+      "manifestDuration": 0.2130625,
+      "peakDbfs": -15.608085163112744,
+      "rmsDbfs": -33.68984885190491,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C01_punch_light_c_r",
+      "duration": 0.3295,
+      "manifestDuration": 0.3295,
+      "peakDbfs": -17.096980158398523,
+      "rmsDbfs": -39.26876378922237,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C02_punch_heavy_a",
+      "duration": 0.246,
+      "manifestDuration": 0.246,
+      "peakDbfs": -16.070960215888473,
+      "rmsDbfs": -30.45988261608528,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C02_punch_heavy_b",
+      "duration": 0.3269375,
+      "manifestDuration": 0.3269375,
+      "peakDbfs": -16.181322317636713,
+      "rmsDbfs": -31.664963133424013,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C02_punch_heavy_c_r",
+      "duration": 0.50278125,
+      "manifestDuration": 0.50278125,
+      "peakDbfs": -13.977852761364424,
+      "rmsDbfs": -30.669312348403178,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C03_brass_knuckles_a",
+      "duration": 0.31,
+      "manifestDuration": 0.31,
+      "peakDbfs": -17.212457915944512,
+      "rmsDbfs": -29.27901605477535,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C03_brass_knuckles_b_r",
+      "duration": 0.77296875,
+      "manifestDuration": 0.77296875,
+      "peakDbfs": -16.173501597963835,
+      "rmsDbfs": -34.84570751095605,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C03_brass_knuckles_c_r",
+      "duration": 0.598,
+      "manifestDuration": 0.598,
+      "peakDbfs": -16.88013040384748,
+      "rmsDbfs": -33.29720810879203,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C04_swing_whoosh_a",
+      "duration": 0.382125,
+      "manifestDuration": 0.382125,
+      "peakDbfs": -16.831706167830227,
+      "rmsDbfs": -27.827946476056653,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C04_swing_whoosh_b",
+      "duration": 0.192625,
+      "manifestDuration": 0.192625,
+      "peakDbfs": -16.928584379888022,
+      "rmsDbfs": -30.63187357352355,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C04_swing_whoosh_c",
+      "duration": 0.312875,
+      "manifestDuration": 0.312875,
+      "peakDbfs": -16.71531030496119,
+      "rmsDbfs": -31.6046447714375,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C05_blaster_primary_a",
+      "duration": 0.563125,
+      "manifestDuration": 0.563125,
+      "peakDbfs": -13.155964053036971,
+      "rmsDbfs": -28.892484940562216,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C05_blaster_primary_b",
+      "duration": 0.421,
+      "manifestDuration": 0.421,
+      "peakDbfs": -13.694801876807436,
+      "rmsDbfs": -27.98934352621339,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C05_blaster_primary_c",
+      "duration": 0.43128125,
+      "manifestDuration": 0.43128125,
+      "peakDbfs": -14.051620297326066,
+      "rmsDbfs": -27.90771939649037,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C06_rocket_launch_a",
+      "duration": 0.50675,
+      "manifestDuration": 0.50675,
+      "peakDbfs": -14.385997815375433,
+      "rmsDbfs": -27.744959852877066,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C06_rocket_launch_b",
+      "duration": 0.71534375,
+      "manifestDuration": 0.71534375,
+      "peakDbfs": -14.62441366048072,
+      "rmsDbfs": -26.74346182480776,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C06_rocket_launch_c",
+      "duration": 0.643,
+      "manifestDuration": 0.643,
+      "peakDbfs": -14.051551779587488,
+      "rmsDbfs": -29.906615297042357,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C07_bomb_fuse_a",
+      "duration": 1.8630625,
+      "manifestDuration": 1.8630625,
+      "peakDbfs": -13.217418274058883,
+      "rmsDbfs": -26.487190824705014,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C07_bomb_fuse_b",
+      "duration": 1.8761875,
+      "manifestDuration": 1.8761875,
+      "peakDbfs": -13.834839911975678,
+      "rmsDbfs": -28.24001286859047,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C07_bomb_fuse_c",
+      "duration": 1.941,
+      "manifestDuration": 1.941,
+      "peakDbfs": -14.839589565717755,
+      "rmsDbfs": -27.218888390830816,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C08_explosion_small_a",
+      "duration": 0.640625,
+      "manifestDuration": 0.640625,
+      "peakDbfs": -14.524084073864623,
+      "rmsDbfs": -28.34062156701457,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C08_explosion_small_b",
+      "duration": 1.48,
+      "manifestDuration": 1.48,
+      "peakDbfs": -19.450861902766746,
+      "rmsDbfs": -35.808098075398384,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C08_explosion_small_c",
+      "duration": 0.7418125,
+      "manifestDuration": 0.7418125,
+      "peakDbfs": -15.726415860438452,
+      "rmsDbfs": -27.277739949981576,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C09_explosion_big_a",
+      "duration": 0.99784375,
+      "manifestDuration": 0.99784375,
+      "peakDbfs": -14.605241257115985,
+      "rmsDbfs": -27.251229634825748,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C09_explosion_big_b",
+      "duration": 1.083625,
+      "manifestDuration": 1.083625,
+      "peakDbfs": -14.13220273296372,
+      "rmsDbfs": -28.012845177582456,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C09_explosion_big_c",
+      "duration": 1.06325,
+      "manifestDuration": 1.06325,
+      "peakDbfs": -14.131865518583131,
+      "rmsDbfs": -28.38218108737172,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C10_hit_confirm_a",
+      "duration": 0.25003125,
+      "manifestDuration": 0.25003125,
+      "peakDbfs": -15.129357836115549,
+      "rmsDbfs": -28.871255017663046,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C10_hit_confirm_b",
+      "duration": 0.23609375,
+      "manifestDuration": 0.23609375,
+      "peakDbfs": -15.314722173409148,
+      "rmsDbfs": -30.525393000904284,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C10_hit_confirm_c_r",
+      "duration": 0.2400625,
+      "manifestDuration": 0.2400625,
+      "peakDbfs": -13.97553345439084,
+      "rmsDbfs": -29.726768300839286,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C11_fluff_ball_burst_a",
+      "duration": 0.354875,
+      "manifestDuration": 0.354875,
+      "peakDbfs": -14.572470734771539,
+      "rmsDbfs": -38.09321657247542,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C11_fluff_ball_burst_b_r",
+      "duration": 1.014,
+      "manifestDuration": 1.014,
+      "peakDbfs": -14.104628680358536,
+      "rmsDbfs": -44.75767829797831,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C11_fluff_ball_burst_c_r",
+      "duration": 0.958,
+      "manifestDuration": 0.958,
+      "peakDbfs": -14.183875849978056,
+      "rmsDbfs": -45.55599665421119,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C12_tree_shake_a",
+      "duration": 0.7201875,
+      "manifestDuration": 0.7201875,
+      "peakDbfs": -14.088459854114802,
+      "rmsDbfs": -35.04714054041105,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C12_tree_shake_b_r",
+      "duration": 0.36709375,
+      "manifestDuration": 0.36709375,
+      "peakDbfs": -19.656344839671647,
+      "rmsDbfs": -34.72182673111098,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C12_tree_shake_c",
+      "duration": 0.36428125,
+      "manifestDuration": 0.36428125,
+      "peakDbfs": -17.97943713793418,
+      "rmsDbfs": -35.019653712877016,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C13_bot_angry_a",
+      "duration": 0.91915625,
+      "manifestDuration": 0.91915625,
+      "peakDbfs": -14.003866855655518,
+      "rmsDbfs": -27.372612979989626,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C13_bot_angry_b",
+      "duration": 0.97209375,
+      "manifestDuration": 0.97209375,
+      "peakDbfs": -13.804764838089378,
+      "rmsDbfs": -26.628683851588093,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C13_bot_angry_c",
+      "duration": 0.997375,
+      "manifestDuration": 0.997375,
+      "peakDbfs": -13.730221097657704,
+      "rmsDbfs": -26.08615709805713,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C14_bot_collapse_a",
+      "duration": 0.8265,
+      "manifestDuration": 0.8265,
+      "peakDbfs": -13.860516657808601,
+      "rmsDbfs": -30.83115931256824,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C14_bot_collapse_b",
+      "duration": 1.11871875,
+      "manifestDuration": 1.11871875,
+      "peakDbfs": -14.022020112216676,
+      "rmsDbfs": -28.68539273249516,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C14_bot_collapse_c",
+      "duration": 1.02646875,
+      "manifestDuration": 1.02646875,
+      "peakDbfs": -13.459948419437946,
+      "rmsDbfs": -30.6891581966187,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C15_wood_splinter_a",
+      "duration": 0.53178125,
+      "manifestDuration": 0.53178125,
+      "peakDbfs": -13.04587463991384,
+      "rmsDbfs": -30.258232562187604,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C15_wood_splinter_b",
+      "duration": 0.59440625,
+      "manifestDuration": 0.59440625,
+      "peakDbfs": -14.000621939410845,
+      "rmsDbfs": -33.08025176358215,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C15_wood_splinter_c",
+      "duration": 0.4920625,
+      "manifestDuration": 0.4920625,
+      "peakDbfs": -13.759850686060792,
+      "rmsDbfs": -27.463293459252448,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C16_stone_crumble_a",
+      "duration": 1.10990625,
+      "manifestDuration": 1.10990625,
+      "peakDbfs": -14.5062530464356,
+      "rmsDbfs": -39.4223442924,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C16_stone_crumble_b",
+      "duration": 0.66571875,
+      "manifestDuration": 0.66571875,
+      "peakDbfs": -14.318425339710192,
+      "rmsDbfs": -38.95559125055766,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C16_stone_crumble_c",
+      "duration": 0.71875,
+      "manifestDuration": 0.71875,
+      "peakDbfs": -14.404065912028203,
+      "rmsDbfs": -41.7187280562172,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C17_crystal_shatter_a",
+      "duration": 0.694,
+      "manifestDuration": 0.694,
+      "peakDbfs": -14.792091964105458,
+      "rmsDbfs": -33.58036252492999,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C17_crystal_shatter_b",
+      "duration": 0.73934375,
+      "manifestDuration": 0.73934375,
+      "peakDbfs": -14.682851327104665,
+      "rmsDbfs": -31.421686403961978,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C17_crystal_shatter_c",
+      "duration": 0.546,
+      "manifestDuration": 0.546,
+      "peakDbfs": -14.320455740416797,
+      "rmsDbfs": -34.03952981379735,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C18_domino_topple_a",
+      "duration": 1.44509375,
+      "manifestDuration": 1.44509375,
+      "peakDbfs": -14.038884636509641,
+      "rmsDbfs": -31.724489731448493,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C18_domino_topple_b",
+      "duration": 1.3489375,
+      "manifestDuration": 1.3489375,
+      "peakDbfs": -14.094245688169291,
+      "rmsDbfs": -32.972580468384756,
+      "clippedSamples": 0
+    },
+    {
+      "id": "C18_domino_topple_c",
+      "duration": 1.21909375,
+      "manifestDuration": 1.21909375,
+      "peakDbfs": -13.807745139438893,
+      "rmsDbfs": -30.696877628736843,
+      "clippedSamples": 0
+    }
+  ]
+}

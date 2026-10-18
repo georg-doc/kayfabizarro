@@ -1,0 +1,104 @@
+{
+  "revision": "0.9.0",
+  "eventButtons": [
+    {
+      "control": "punchLight",
+      "lastEvent": "punchLight",
+      "hostContexts": 1
+    },
+    {
+      "control": "punchHeavy",
+      "lastEvent": "punchHeavy",
+      "hostContexts": 1
+    },
+    {
+      "control": "knuckles",
+      "lastEvent": "knuckles",
+      "hostContexts": 1
+    },
+    {
+      "control": "whoosh",
+      "lastEvent": "whoosh",
+      "hostContexts": 1
+    },
+    {
+      "control": "blaster",
+      "lastEvent": "blaster",
+      "hostContexts": 1
+    },
+    {
+      "control": "rocketLaunch",
+      "lastEvent": "rocketLaunch",
+      "hostContexts": 1
+    },
+    {
+      "control": "fuse",
+      "lastEvent": "fuse",
+      "hostContexts": 1
+    },
+    {
+      "control": "explosionSmall",
+      "lastEvent": "explosionSmall",
+      "hostContexts": 1
+    },
+    {
+      "control": "explosionLarge",
+      "lastEvent": "explosionLarge",
+      "hostContexts": 1
+    },
+    {
+      "control": "hitConfirm",
+      "lastEvent": "hitConfirm",
+      "hostContexts": 1
+    },
+    {
+      "control": "fluffBurst",
+      "lastEvent": "fluffBurst",
+      "hostContexts": 1
+    },
+    {
+      "control": "treeShake",
+      "lastEvent": "treeShake",
+      "hostContexts": 1
+    },
+    {
+      "control": "botAngry",
+      "lastEvent": "botAngry",
+      "hostContexts": 1
+    },
+    {
+      "control": "botCollapse",
+      "lastEvent": "botCollapse",
+      "hostContexts": 1
+    },
+    {
+      "control": "woodBreak",
+      "lastEvent": "woodBreak",
+      "hostContexts": 1
+    },
+    {
+      "control": "stoneBreak",
+      "lastEvent": "stoneBreak",
+      "hostContexts": 1
+    },
+    {
+      "control": "crystalBreak",
+      "lastEvent": "crystalBreak",
+      "hostContexts": 1
+    },
+    {
+      "control": "dominoChain",
+      "lastEvent": "dominoChain",
+      "hostContexts": 1
+    }
+  ],
+  "observedSidechain": {
+    "combatDuckDb": -3,
+    "ambienceWantedDb": -6,
+    "ambienceModuleDb": -1,
+    "hostVoiceDb": -5,
+    "totalAmbienceDb": -6
+  },
+  "contextCount": 1,
+  "earAcceptance": "OPEN"
+}

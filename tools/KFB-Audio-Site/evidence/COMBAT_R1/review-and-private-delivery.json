@@ -1,0 +1,57 @@
+{
+  "schema": "kfb.audio-racer-combat-review/1",
+  "date": "2026-10-18",
+  "tester": {
+    "racer": 137,
+    "combat": 395,
+    "passed": true,
+    "scope": "Independent mocked graph/host-clock + real private decode/source hash; not human ear"
+  },
+  "critic": {
+    "verdict": "CONTINUE_AFTER_REPAIR",
+    "repaired": "Stale panel success/error no longer stop newer asynchronous start; schedule respects selected distance/material"
+  },
+  "guard": {
+    "verdict": "CONTINUE",
+    "scope": "One injected context/host tick, original semantic buses, no World/Hub/Cloudflare/paid writes, public manifests/text only"
+  },
+  "regression": {
+    "ambienceNamedTests": 25,
+    "footstepsAssertions": 511
+  },
+  "humanEar": "OPEN",
+  "privateBundle": {
+    "dropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/WSA_AUDIO_RUNTIME_RACER_COMBAT_R1_2026-10-18.zip",
+    "sha256": "18188600590ef8f7feabb4f6afc4bcc530f13cab951d3aa70377748e9cbf9b9c",
+    "bytes": 2492009,
+    "uploadStatus": "completed"
+  },
+  "recordings": [
+    {
+      "name": "kfb-racer-gears-r1-demo.webm",
+      "decodedSeconds": 19.98,
+      "peakDbfs": -14.413872,
+      "rmsDbfs": -27.675765
+    },
+    {
+      "name": "kfb-combat-r1-demo (1).webm",
+      "decodedSeconds": 30,
+      "peakDbfs": -14.047917,
+      "rmsDbfs": -36.888787
+    }
+  ],
+  "site": {
+    "project_id": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
+    "version": 19,
+    "sourceRevision": "0.9.0",
+    "nativeHead": "420353fd640abf14ed5b16fa08f2166c0bfc7fb7",
+    "deployment_id": "appgdep_6ad4c7465dcc8191bbc531c9c4ae4b9a",
+    "status": "succeeded"
+  },
+  "notes": [
+    "No public audio/proof binaries; protected Site copy only",
+    "Separate asset original source assertion ElevenLabs paid plan, NOT CC0",
+    "Missing source layers held and listed for WS0; no own generation",
+    "Optional game-dev CLI unavailable once; repo-native checks used"
+  ]
+}
