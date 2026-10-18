@@ -7419,6 +7419,21 @@
    "applies": "WSV S0"
   },
   {
+   "id": "V-528",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Songs R5.3 „ein Track je Deck“ (Georg 18.10.): Standard ein Track je Deck < 5000 Zeichen; Decks mit zu vielen Karten/Zeichen als Best-of, ausgewählt nach Flow, Punch und Dramaturgie (Hook, Aufbau, Steigerung, Wendung, Höhepunkt, Landung), Auswahl als bestOf in songlines.json; Zweiteilung nur auf Wunsch (SONG_SPEC_R3 12b → R3.7, song_gate.py R3.7 mit bestOf, Regression 1001 Teil 1 PASS). Ziel: mit ≈ 60 Suno-Credits möglichst viele verschiedene Decks in unterschiedlichen Musikstilen; Batch 1 = 20 Decks, jeder mit eigenem Stil (WSA, replies/BRIEF_WSA_SONGS_BESTOF_R1.md).",
+   "values": {},
+   "owner": "WSA (Writer’s Room) · WS0 (Gate) · Georg (Suno)",
+   "check": "Plan + Hub-Karten",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Breite statt Vollständigkeit: viele Decks, viele Stile.",
+   "applies": "WSA Batch 1"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7506,7 +7521,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:880",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:881",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KFB Song-Tor (SONG_SPEC_R3 ab R3.2, V-419; R3.3 V-424: introType, Refrain, Callbacks, KayfabeTip 1, Opener-Fenster 15 Songs): EIN Prüfskript für alle Deck-Songs. Keine Kopien je Deck.
+"""KFB Song-Tor (R3.7 V-528: bestOf-Auswahl; SONG_SPEC_R3 ab R3.2, V-419; R3.3 V-424: introType, Refrain, Callbacks, KayfabeTip 1, Opener-Fenster 15 Songs): EIN Prüfskript für alle Deck-Songs. Keine Kopien je Deck.
 
   python3 song_gate.py lyrics <track.suno.txt> --deck <deck.json> [--songlines <x.songlines.json>] [--media <deck.pdf.json>]
                        [--cards 5-60] [--tone <deckId>] [--corpus <datei_oder_ordner> ...]
@@ -118,16 +118,21 @@ def gate_lyrics(a):
     deck = json.load(open(a.deck, encoding="utf-8"))
     cards = parse_range(a.cards, sorted(deck.get("cards", []), key=lambda c: int(c.get("cardNumber", 0))))
     fails, warns = [], []
-    songlines, skip, refrain, intro_type = {}, set(), "", None
+    songlines, skip, refrain, intro_type, best_of = {}, set(), "", None, None
     if a.songlines:
         sj = json.load(open(a.songlines, encoding="utf-8"))
         if isinstance(sj, dict):
             refrain, intro_type = (sj.get("refrain") or "").strip(), sj.get("introType")
             skip = {int(x) for x in (sj.get("metaSkipped") or sj.get("metaSkip") or [])}
+            # R3.7 (V-528, Georg 18.10.): Best-of – one track per deck; songlines.json lists the selected cards in "bestOf" (card numbers, sung order = deck order)
+            if sj.get("bestOf"): best_of = {int(x) for x in sj["bestOf"]}
             sj = sj.get("songLineChanges") or []
         for e in sj:
             songlines[e.get("cardNumber")] = e
     cards = [c for c in cards if int(c.get("cardNumber", 0)) not in skip]
+    if best_of:
+        cards = [c for c in cards if int(c.get("cardNumber", 0)) in best_of]
+        if len(cards) != len(best_of): print(f"WARN bestOf: {len(best_of) - len(cards)} Kartennummer(n) nicht im Deck")
     rewrites = [e for e in songlines.values() if str(e.get("rule", "")).upper() != "A7"]
     if len(rewrites) > max(1, len(cards) // 10):  # A5: Zahlen-Ausschreibungen (A7) zählen nicht mit
         fails.append(f"FAIL A5: {len(rewrites)} Wort-songLines bei {len(cards)} Karten (max 10 %, A7-Ausschreibungen ausgenommen)")
