@@ -6399,6 +6399,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-460",
+   "date": "2026-10-18",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Schach-Diorama (Georg 18.10., q33/q34): Figurensatz M (Morph-Chess-Silhouetten, detaillierter) – und zwar NICHT in Knete, sondern kristallin-morphend wie Morph Chess (Edelstein, innere Reflexion, Adern) als bewusster Stilbruch: Knete bleibt die Hauptmaterialebene (DIY-Diorama-Gedanke), das Kristalline ist das Besondere, Magische. Bedingung: harmonischer Gesamtstil über Farb- und Lichtkonzept, funktioniert in allen Lichtstimmungen (ein Rig, V-385). Zustände: ruhend lebendig (leichtes inneres Pulsieren), aktiv/ziehend mit Licht hervorgehoben, Schlagen = Zerspringen (Morph-Chess-Bruch, cartoonig). Steinbrett r2 so übernehmen; Brett und Figuren folgen der Farbharmonie/Palettenlogik der jeweiligen Zone wie alle Dioramen (V-305) – keine festen Farben F1/F2. Umsetzung: gemeinsames Modul kfb-gem.v1 (WS0, aus Morph Chess portiert, MIT-Hinweis), Abnahme-Bühne lässt Edelstein-Teile ohne Knete (extras.kfb.material = gem).",
+   "values": {},
+   "owner": "WS0 (Modul kfb-gem.v1 + Bühne) · WSB (Material-Slots/Rollen am Brett und an Satz M) · WS1 (Einbau, Zustände)",
+   "check": "Bögen in 3 Lichtstimmungen (Tag/Dämmerung/Nacht), aktiver Zug hervorgehoben",
+   "source": "Hub q33 · q34 · V-455 · V-305",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Bruch zwischen Knete und Kristall macht das Magische sichtbar; die Zonen-Palette hält das Ganze zusammen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6486,7 +6501,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:811",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:815",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
