@@ -3,9 +3,26 @@
  "note": "Local resolver: figure card id -> GLB on this Mac. Paths starting with 'hub:' are relative to ~/Dropbox/CLAUDE/KFB_HUB, '~/' = home. The card body.glb.path is a repo path and is not loadable locally; this table is the bridge until the GLBs sit on a fixed asset branch. private = purchased asset, local only (never publish the renders).",
  "fb_silhouette": "hub:30_DECISIONS/replies/CLAY_SSOT_R1/assets/FB_TEMPLATE_LOOK_v5b.glb",
  "scale_ref": {
-  "note": "v1.2 scale figures for stage/prop scale_ref. Height = bind-pose bbox x 0.616 m/u; shown in the rig's own idle clip (bind pose is a T-pose). Large = purchased KayKit Mystery asset: local path only, never copy it into a public folder; renders stay private.",
-  "medium": { "glb": "hub:50_BLENDER/FB/_privat_kauf_asset/FB_TEMPLATE_LOOK_v5b_kfbanchors.glb", "card": "hub:50_BLENDER/FB/data/frizzlebob.figure.kfbanchors.json", "anim": "~/Dropbox/Mac/Documents/Codex/2026-10-10/kf/work/kayfabizarro-wsa-incomplete/media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_General.glb", "clip": "Idle_A", "time": 0, "label": "FrizzleBob (Rig_Medium)" },
-  "large": { "glb": "~/Dropbox/Mac/Documents/Codex/2026-10-10/kf/work/kayfabizarro-wsa-incomplete/media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb", "anim": "~/Dropbox/Mac/Documents/Codex/2026-10-10/kf/work/kayfabizarro-wsa-incomplete/media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_General.glb", "clip": "Idle_A", "time": 0, "label": "DemonLord (Rig_Large)", "private": true }
+  "note": "v1.2 scale figures for stage/prop scale_ref. Height = bind-pose bbox x 0.616 m/u; shown in the rig's own idle clip (bind pose is a T-pose). Large = purchased KayKit Mystery asset: local path only, never copy it into a public folder; renders stay private. v1.2.1: paths moved to the Worldbuilder Lab (present on both Macs; sha256 identical to the former Codex copies). Missing scale figure = G2 FAIL.",
+  "medium": {
+   "glb": "hub:50_BLENDER/FB/_privat_kauf_asset/FB_TEMPLATE_LOOK_v5b_kfbanchors.glb",
+   "card": "hub:50_BLENDER/FB/data/frizzlebob.figure.kfbanchors.json",
+   "anim": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/public/assets/kaykit/anims/Rig_Medium_General.glb",
+   "clip": "Idle_A",
+   "time": 0,
+   "label": "FrizzleBob (Rig_Medium)",
+   "animSha256": "5f725c0f745f36078c7238968cd5c04843cbc6260689eb6e7f5e2bbd7ffdd7ad"
+  },
+  "large": {
+   "glb": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/public/assets/figures-b2/demonlord/DemonLord.glb",
+   "anim": "~/Dropbox/CLAUDE/KFB Island Worldbuilder Lab/public/assets/kaykit/anims/Rig_Large_General.glb",
+   "clip": "Idle_A",
+   "time": 0,
+   "label": "DemonLord (Rig_Large)",
+   "private": true,
+   "glbSha256": "130fc2ae9cdb35bec987bc39f57453331999e3979c04cf549b7a8e508d77cb52",
+   "animSha256": "ec263b40704d996692033fc716fc0fcaa11a5089393845fe27877e5f773b2f3e"
+  }
  },
  "cards": "hub:30_DECISIONS/replies/FIGURES_R1/figures/",
  "figures": {

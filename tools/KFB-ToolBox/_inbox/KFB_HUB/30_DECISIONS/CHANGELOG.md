@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Bühne v1.2.1: Größenfiguren-Pfade auf die Worldbuilder-Lab-Kopien (auf beiden Macs, sha256 gleich); fehlende Größenfigur = G2 FAIL (WSB fand einen 404, der als PASS durchlief). WSB rendert neu.
 - Abnahme-Bühne v1.2 + Licht v1.1 FREIGEGEBEN (WS0 geprüft: Pelican mit FrizzleBob mit Augen + DemonLord an der Tür, Pubs jetzt 2,25 m Türscheitel, B28-Raster lesbar mit Detail links/Mitte/rechts, Schweben über abgelöste Schatten sichtbar, G6 grün). WSB rendert Pubs/Bento, B28, B27 r2, B29. Tür-Messwerkzeug PROOF_STAGE_R1/tools/door.mjs.
 - V-448 Schritte PASS (Foley + Digital bevorzugt); WSA-Brief b112 (Untergrund-Tabelle, Lazy-Load, Übergabe an WS1, ElevenLabs-Motor frei); Lizenzhinweis 400 Sounds Pack nicht CC0. Hub aufgeräumt: 13 Briefings als erledigt/abgelöst markiert (nach GitHub-Returns), b71/b93 als blockiert (ToolBox-Speicherweg), b50/b64 ruhen.
 - V-447 Türmaß 2,25 m am Scheitel (Medium 1,81 m geht durch, Large 2,45 m bückt sich); Abnahme-Bühne v1.2 + Licht v1.1 gebaut (Rig-Figuren am Eingang, Schattensaum 0 px im Selbsttest 0,1–6 m, G6, Schwebe-Modus); vier Nachbesserungen vor Freigabe; WSB skaliert Pubs/Bento, B28-Reihen werden kompakte Raster. B29 r1 mit V-446 umgesetzt (W1 ohne Plattenfugen, Polar-Ringe r2–r5).

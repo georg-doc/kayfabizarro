@@ -229,6 +229,7 @@ export function runGates(THREE, S) {
     if (nan) bad.push(`${m.name}: ${nan} NaN-Normalen`); if (zero > N.count * 0.001) bad.push(`${m.name}: ${zero} Null-Normalen`);
   });
   for (const e of loadErrors) bad.push('Ladefehler: ' + e);
+  if (type !== 'character') { const nf = S.scaleFig?.figs?.length || 0; if (nf < 2) bad.push(`Größenfiguren fehlen (${nf}/2)` + ((S.figWarn || []).length ? ': ' + S.figWarn.join(' · ') : '')); }   // v1.2.1: fail closed (WSB: Large-Rig 404 lief als PASS durch)
   G.G2 = { name: 'Texturen, Materialien, Normalen', result: bad.length ? 'FAIL' : 'PASS', detail: bad.length ? bad.slice(0, 8).join(' · ') + (bad.length > 8 ? ` · … (${bad.length})` : '') : 'keine fehlenden Texturen, kein Standard-/Magenta-Material, keine NaN-Normalen' };
   // G3 floor contact (v1.2 float pose: hover height instead, V-437)
   const minY = S.bounds.min.y;
