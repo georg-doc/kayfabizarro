@@ -50,3 +50,14 @@ Builder: /root, only local preparation and this documentation writer. Tester: de
 ## One next gate
 
 A GitHub admin must make an authorized administrative connection available, or confirm/reuse/create the suitable PRIVATE repo and confirm the actual WS1 authentication identity with minimal read access. Do not send tokens in chat. Thereafter the executor uploads the prepared closed roster, reads back exact remote head/files, and WS1 tests clone/fetch with its own identity and verifies all 41 hashes. Resolve license/contractor evidence and exact WS1 source owner before copying the allowed runtime subset into the unchanged Site. No merge or deployment/public-access promotion authorized by this Return.
+
+
+## Additive research return · PLATFORM_DEEPDIVE_R1 · 2026-10-18
+
+Georg requested an exact GitHub administration guide and KISS public/free-access plan, adopting WS0 brief BRIEF_WSA_PLATFORM_DEEPDIVE_R1.md (blob f9b696e7d1cc25d98431e5894e0ff92234d14654). Current official provider pricing/limits, Steam, licensing, privacy, Sites and ChatGPT-plan usage reviewed. Full PLATFORM_DEEPDIVE_R1.md saved privately as a Page in this chat and locally under work/platform-deepdive-r1; private-repo write remains blocked. Do not copy the full report into this public branch.
+
+Fresh native get_site confirms the SAME project appgprj_6ad2ac305b788191af0bdfc68823a300 v4, current_user_role=owner, audience=custom, available_access_modes=[custom,public]. This is capability evidence, not a public browser test or authority to change audience. No publication, source credentials, site source edit, new service/account, payment, CLI installation or LLM request performed. Public regional availability cannot be rejected solely from an older general EEA assumption.
+
+Proposed KISS route: complete V-538; test the existing Site for licensed anonymous guest play + local save/export; add optional single cloud-sync adapter only when needed; bounded server-side Live AI later; Steam and ChatGPT companion as later channels. Cloudflare/itch remain researched alternatives, no switch. Current documentation separates Sign in with ChatGPT identity from approved plan usage; don't promise free NPC inference to every ChatGPT user. Private source storage does not prevent retrieval of assets delivered to a public browser.
+
+Exact administrative user action is documented: official arm64 GitHub CLI binary, web OAuth sign-in on this same Mac as georg-doc, no token in chat; broader OAuth scope disclosed and later revocation described. Narrow per-repository alternative documented. After authentication, existing V-538 authorization continues; WS1 identity/private fetch and license proof remain required. Owner/runtime boundary unchanged. One next gate remains the authorized GitHub administration connection, not a hosting migration.
