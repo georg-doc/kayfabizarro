@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-499 SPEC_CARTOON_VFX_SHAPES_R1 (Rauch/Dampf/Blasen/Wolken/Gedankenblasen) verbindlich; Kuppel r4 (eine Kugel mit Fenster, drehend) geprüft – kleine Vorschau-Korrektur r4b (weißer Bogen im Schatten, Fensterkante lesbarer) vor dem Hub.
 - V-498 Melodie-Sprache R4 mit Satzmelodie (Deklination, Akzente, Komma-Hebung, Frage steigend, Satzende fallend), tiefer/weicher, exaktes Timing, ohne SVG-Gesicht → Hub q50. VFX-Recherche Rauch/Blasen/Wolken läuft (SPEC_CARTOON_VFX_SHAPES_R1).
 - Hub-Antworten 18.10. mittags: V-493 Kuppel = eine drehbare Kugel (FAIL r3), V-494 Soldaten Stern/keine Staffel/Promo-Gewehrhaltung + WS0-Fehler Doppelaugen, V-495 Bots r4 (Unterarm-Aufsatz als Waffe + Trichter), V-496 Hexen FAIL (Meshy-Türme, Kessel auf Füßen, Platz, Rauch-Spec), V-497 Melodie-Sprache R3 (tiefer, Timing, Figur mit Mund-Rig bei WS1). q44 kein Rust Runner II. WSB 43. Nachtrag.
 - WSB B34 r3: Kuppel halbrund auf Glasring (Rückwand bleibt), Alpha 0,07, 6 Cabrio-Segmente + Clips open/close 1,6 s + Regler-extras; Glastank aus dem Bewegungsraum von kfb_idle_treading_water_a (Ø innen 1,95 u, H 2,9 u, nichts sticht heraus) → Hub q49 aktualisiert.

@@ -6984,6 +6984,21 @@
    "applies": "Probe R4"
   },
   {
+   "id": "V-499",
+   "date": "2026-10-18",
+   "area": "VFX",
+   "verdict": "RULE",
+   "text": "Cartoon-Effektformen verbindlich (nach Georgs FAIL V-496: „immer die gleiche Fehlerklasse“): replies/SPEC_CARTOON_VFX_SHAPES_R1.md gilt für Rauch, Dampf, Blasen, Wolken, Gedanken- und Sprechblasen in Blender-Assets und three.js. Kernregeln: eine Masse mit Lappen statt gestapelter Kugeln (Überlappung 30–60 %, gemeinsame Normalen), groß–mittel–klein ohne Symmetrie, Tropfenform mit Richtung (10–25° Neigung), Lebenszyklus Geburt→Steigen/Wachsen→Einrollen→Zerfallen→Schrumpfen mit Noise-Erosion (Speckle-Regel V-403, nie nur Alpha), Dichte nimmt nach oben ab, 2–3 Tonstufen aus dem einen Licht (V-385, Profil vfx-puff), keine Wiederholung (eigener Seed, ±25–40 % Größe), am Ursprung verankert. Abnahme mit der 15-Punkte-Liste §4 inkl. Blindfrage „Siehst du Kugeln?“.",
+   "values": {},
+   "owner": "WSB · WS1 · WS0 (Abnahme)",
+   "check": "Checkliste §4 je Effekt",
+   "source": "Georg 18.10. (V-496) · Recherche WS0",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein festes mentales Modell beendet die wiederkehrenden Rauch-/Wolken-FAILs; Regeln mit Zahlen und Prüfliste statt Geschmack.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7071,7 +7086,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:853",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:854",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

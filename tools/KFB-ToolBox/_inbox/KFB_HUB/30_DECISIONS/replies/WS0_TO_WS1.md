@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. · Cartoon-Effektformen verbindlich (V-499)
+- `replies/SPEC_CARTOON_VFX_SHAPES_R1.md` gilt für alle Rauch-, Dampf-, Blasen-, Wolken- und Gedankenblasen-Effekte im Spiel: Mesh-Puffs instanziert, Noise-Verformung, Auflösung über Noise-Schwelle bzw. Speckle (V-403), Toon-Stufen über das Licht-Modul.
+- Gilt auch für Kessel-Dampf, Tank-Blasen und Fluff-Wolken.
+- Abnahme nach §4.
+
 ## 18.10. mittags · Melodie-Sprache auf die Bühne (V-492, V-497)
 - Georg: Der Ansatz ist gut, aber kein SVG-Gesicht. Gewünscht ist eine **Figur mit Mund-Rig und Sprech-Animation**.
 - WS0 liefert den Klang: Probe R3 `KFB_HUB/40_AUDIO/kfb_language_r1/probe_r3.html` (Web Audio, live erzeugt).
