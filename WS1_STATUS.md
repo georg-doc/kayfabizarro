@@ -3,6 +3,34 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 85 · 18.10. · Tempo-Grenzen Freifahrt / Hyperspeed (Georg-Frage, WS1-Einschätzung für die Hyperspeed-Planung)
+
+**Heute (K2B, J17-Meter):**
+- `maxForward` 41·K ≈ 26,7 m/s ≈ **96 km/h**, Boost `boostMaxForward` 48,5·K ≈ 31,6 m/s ≈ **114 km/h**.
+- Physik 60 Hz fest (≈ 0,5 m pro Schritt bei Boost, unkritisch).
+- Grenze ist die Welt: das M1-Gelände ist ≈ 350 m breit (bei Boost in ~10 s durchquert), Nebel ab ≈ 90 m.
+
+**Was bei mehr Tempo begrenzt:**
+1. **Durchtunneln:** Bei 100 m/s sind es 1,7 m pro Schritt. Lösung: 120 Hz + Sweep/CCD statt Endpunkt-Test.
+2. **Streaming:** 300–500 m vorausladen, Gelände-Kacheln in Fahrtrichtung, Collider und Boden vor Scenery.
+3. **Float-Präzision:** ab ~10–20 km vom Ursprung Floating Origin.
+4. **Perf:** Es kostet die neue Welt pro Sekunde (Kacheln, Deko, Partikel), nicht das Tempo. Feste VFX-Obergrenzen sind angelegt.
+
+**Gefühltes vor echtem Tempo** (vgl. Fuse Games, im WSA-Plan verlinkt): FOV, Speedlines, Contrails, Kamerazittern, nahe Parallaxe-Objekte, Klang, pulsierende Düsen.
+
+**WS1-Vorschlag Stufen:**
+
+| Modus | echt | gefühlt | braucht |
+|---|---|---|---|
+| Freifahrt heute | ≤ 114 km/h | normal | – |
+| Freier Hyper-Rush (schwebend, selbst lenken) | 70–100 m/s ≈ 250–350 km/h | sehr schnell | 120 Hz + Sweep, Vorausladen, größere Welt |
+| Geführter Hyper-Ride (Route/Schiene, WSA-Plan) | 150–300 m/s | 500–1000 km/h | Route vorab geprüft, Kollision nur gegen die Route |
+| Warp-Tunnel | beliebig | „Lichtgeschwindigkeit“ | rein visuell, kaschiert das Laden der Zielwelt |
+
+**Empfehlung:** Freie Fahrt bis ≈ 350 km/h, darüber nur geführt bzw. im Warp. Die Antriebs-VFX (§83/§84) sind der günstigste Tempo-Verstärker.
+
+**Bitte an WS0:** in die Hyperspeed-Planung (WSA_GUIDED_HYPERSPEED_WARP_RIDE_PLAN_R1) aufnehmen; Gelände-Streaming bzw. größere Welt als Voraussetzung für den Hyper-Rush einplanen.
+
 ## 84 · 18.10. · Düsen-Erkennung Dieselpunk (14 Fahrzeuge) · Georgs 6er-Auswahl · Antriebsfarben aus dem Fahrzeug
 
 **Düsen-Erkennung r1** (WS1, ohne Blender, nur Node): Heckansicht als CPU-Höhenbild, runde Senken (Röhren) und runde Vorsprünge (Lüfter), Kreisfit, Spiegelpartner, Texturprüfung. Ergebnis `kfb.vehicle-rig-candidates/1` mit Anker je Düse (pos, dir, radius, outerRadius, size s/m/l, confidence).
