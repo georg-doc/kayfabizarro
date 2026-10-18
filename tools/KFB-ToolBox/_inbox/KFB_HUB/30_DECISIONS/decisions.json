@@ -7629,6 +7629,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-542",
+   "date": "2026-10-18",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Käpt’n Kayfa Bizarro (Georg 18.10.): Pirat aus vorhandenen Teilen – Cartoon-Piratenhut mit Totenkopf (aus dem Repo, dunkler), Survivalist-Kopf mit Augenklappe (nur ein KFB-Auge), neutraler Mund der neuen Serie, Körper mit Piraten-Gürtel und Weste bzw. Schärpe quer über die Brust, hellblau-weiß längs gestreifte Hose (wie Banker-Hose). Dazu Pirateninsel-Diorama mit Turm und Cartoon-Piratenschiff. Später: Wasser-Shader und Wasser-Track im Key-West-Stil, erreichbar auch mit den Dieselpunk-Fahrzeugen (WS1b). Brief B42 an WSB nach B40.",
+   "values": {},
+   "owner": "WSB (B42) · WS1b (Wasser später)",
+   "check": "B42 Prüfstand Figur + Diorama",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Neue Hauptfigur mit eigener Welt, aus vorhandenen Teilen.",
+   "applies": "B42 nach B40"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7716,7 +7731,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:903",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:904",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
