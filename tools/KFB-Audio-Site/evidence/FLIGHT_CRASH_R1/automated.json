@@ -1,0 +1,1802 @@
+{
+  "schema": "kfb.flight-runtime-audit/1",
+  "date": "2026-10-18",
+  "counts": {
+    "passed": 263,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "38asset roster",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved L1_idle",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved L2_low",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved L3_mid",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved L3_mid_original",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved L4_high",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved L4_high_original",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved L5_overrun",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved O1_upshift",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved O2b_backfire_loud",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved O2c_backfire_double",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved crackle-1",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved crackle-2",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved crackle-3",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved crackle-4",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved O4_downshift_blip",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved O5_boost",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved S1_accel_upshifts",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved S2_brake_downshifts",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved F1_prop_loop",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved F2_jet_antigrav_loop",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved F3_wind_rush_loop",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved F4_takeoff",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved H1_charge",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved H2_jump",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved H3_tunnel_loop",
+      "pass": true
+    },
+    {
+      "name": "baseline processed bytes preserved H4_exit",
+      "pass": true
+    },
+    {
+      "name": "prop thrust raises propulsion",
+      "pass": true
+    },
+    {
+      "name": "prop banking raises load",
+      "pass": true
+    },
+    {
+      "name": "prop climb raises load",
+      "pass": true
+    },
+    {
+      "name": "prop airbrake wind response",
+      "pass": true
+    },
+    {
+      "name": "prop engineoff suppresses thrust only",
+      "pass": true
+    },
+    {
+      "name": "prop ratesbounded",
+      "pass": true
+    },
+    {
+      "name": "prop default flight has no shifts",
+      "pass": true
+    },
+    {
+      "name": "prop explicit hybrid shift uses P06",
+      "pass": true
+    },
+    {
+      "name": "prop boost alternatesa/b",
+      "pass": true
+    },
+    {
+      "name": "prop Stop releases all voices",
+      "pass": true
+    },
+    {
+      "name": "jet thrust raises propulsion",
+      "pass": true
+    },
+    {
+      "name": "jet banking raises load",
+      "pass": true
+    },
+    {
+      "name": "jet climb raises load",
+      "pass": true
+    },
+    {
+      "name": "jet airbrake wind response",
+      "pass": true
+    },
+    {
+      "name": "jet engineoff suppresses thrust only",
+      "pass": true
+    },
+    {
+      "name": "jet ratesbounded",
+      "pass": true
+    },
+    {
+      "name": "jet default flight has no shifts",
+      "pass": true
+    },
+    {
+      "name": "jet explicit hybrid shift uses P06",
+      "pass": true
+    },
+    {
+      "name": "jet boost alternatesa/b",
+      "pass": true
+    },
+    {
+      "name": "jet Stop releases all voices",
+      "pass": true
+    },
+    {
+      "name": "jetpack thrust raises propulsion",
+      "pass": true
+    },
+    {
+      "name": "jetpack banking raises load",
+      "pass": true
+    },
+    {
+      "name": "jetpack climb raises load",
+      "pass": true
+    },
+    {
+      "name": "jetpack airbrake wind response",
+      "pass": true
+    },
+    {
+      "name": "jetpack engineoff suppresses thrust only",
+      "pass": true
+    },
+    {
+      "name": "jetpack ratesbounded",
+      "pass": true
+    },
+    {
+      "name": "jetpack default flight has no shifts",
+      "pass": true
+    },
+    {
+      "name": "jetpack explicit hybrid shift uses P06",
+      "pass": true
+    },
+    {
+      "name": "jetpack boost alternatesa/b",
+      "pass": true
+    },
+    {
+      "name": "jetpack Stop releases all voices",
+      "pass": true
+    },
+    {
+      "name": "turbine thrust raises propulsion",
+      "pass": true
+    },
+    {
+      "name": "turbine banking raises load",
+      "pass": true
+    },
+    {
+      "name": "turbine climb raises load",
+      "pass": true
+    },
+    {
+      "name": "turbine airbrake wind response",
+      "pass": true
+    },
+    {
+      "name": "turbine engineoff suppresses thrust only",
+      "pass": true
+    },
+    {
+      "name": "turbine ratesbounded",
+      "pass": true
+    },
+    {
+      "name": "turbine default flight has no shifts",
+      "pass": true
+    },
+    {
+      "name": "turbine explicit hybrid shift uses P06",
+      "pass": true
+    },
+    {
+      "name": "turbine boost alternatesa/b",
+      "pass": true
+    },
+    {
+      "name": "turbine Stop releases all voices",
+      "pass": true
+    },
+    {
+      "name": "antigrav thrust raises propulsion",
+      "pass": true
+    },
+    {
+      "name": "antigrav banking raises load",
+      "pass": true
+    },
+    {
+      "name": "antigrav climb raises load",
+      "pass": true
+    },
+    {
+      "name": "antigrav airbrake wind response",
+      "pass": true
+    },
+    {
+      "name": "antigrav engineoff suppresses thrust only",
+      "pass": true
+    },
+    {
+      "name": "antigrav ratesbounded",
+      "pass": true
+    },
+    {
+      "name": "antigrav default flight has no shifts",
+      "pass": true
+    },
+    {
+      "name": "antigrav explicit hybrid shift uses P06",
+      "pass": true
+    },
+    {
+      "name": "antigrav boost alternatesa/b",
+      "pass": true
+    },
+    {
+      "name": "antigrav Stop releases all voices",
+      "pass": true
+    },
+    {
+      "name": "30ssequence13cues",
+      "pass": true,
+      "detail": [
+        "boost",
+        "impact",
+        "fracture",
+        "contact",
+        "contact",
+        "impact",
+        "fracture",
+        "contact",
+        "contact",
+        "contact",
+        "contact",
+        "settle",
+        "settle"
+      ]
+    },
+    {
+      "name": "30ssequence2destructionroots",
+      "pass": true
+    },
+    {
+      "name": "sequence all8phases hostclock",
+      "pass": true
+    },
+    {
+      "name": "sequence dispatchdrift≤1frame",
+      "pass": true,
+      "detail": 0.006666666666667709
+    },
+    {
+      "name": "30ssequence completes stopped",
+      "pass": true
+    },
+    {
+      "name": "largegap no backlog allstopped",
+      "pass": true
+    },
+    {
+      "name": "withinrun latecue backlog dropped",
+      "pass": true
+    },
+    {
+      "name": "explicit sequenceStop stopsboth",
+      "pass": true
+    },
+    {
+      "name": "sequenceStop cancels pendingconsumerStart",
+      "pass": true
+    },
+    {
+      "name": "destructionrequiresfacts",
+      "pass": true
+    },
+    {
+      "name": "nonexplosiveimpact gap notboom",
+      "pass": true
+    },
+    {
+      "name": "explosiveimpact ownsoneboom",
+      "pass": true
+    },
+    {
+      "name": "same root secondimpact coalesced",
+      "pass": true
+    },
+    {
+      "name": "destruction eventid dedup",
+      "pass": true
+    },
+    {
+      "name": "firstfracture allowed",
+      "pass": true
+    },
+    {
+      "name": "fracture150mscluster",
+      "pass": true
+    },
+    {
+      "name": "secondfracture allowed",
+      "pass": true
+    },
+    {
+      "name": "thirdfracture coalesced",
+      "pass": true
+    },
+    {
+      "name": "max10 contactsperroot",
+      "pass": true,
+      "detail": 10
+    },
+    {
+      "name": "contactrows onlyderivedtails noexplosions",
+      "pass": true
+    },
+    {
+      "name": "unknownmaterial cleanSOURCE_GAP",
+      "pass": true
+    },
+    {
+      "name": "unknownmaterial nosourcefallback",
+      "pass": true
+    },
+    {
+      "name": "settledroot latercontacts coalesced",
+      "pass": true
+    },
+    {
+      "name": "3m cluster adjacent gridboundary",
+      "pass": true,
+      "detail": {
+        "status": "COALESCED",
+        "ids": []
+      }
+    },
+    {
+      "name": "150ms cluster adjacent timeboundary",
+      "pass": true,
+      "detail": {
+        "status": "COALESCED",
+        "ids": []
+      }
+    },
+    {
+      "name": "24voice cap across roots",
+      "pass": true
+    },
+    {
+      "name": "voice budget reports overload",
+      "pass": true
+    },
+    {
+      "name": "destructionStop allvoices",
+      "pass": true
+    },
+    {
+      "name": "64root boundedmap oldest evicted",
+      "pass": true
+    },
+    {
+      "name": "postStop destructionfacts producezero newsources",
+      "pass": true
+    },
+    {
+      "name": "only literaltrue allows explosion",
+      "pass": true
+    },
+    {
+      "name": "processedSHA L1_idle",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA L1_idle",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree L1_idle",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame L1_idle",
+      "pass": true
+    },
+    {
+      "name": "processedSHA L2_low",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA L2_low",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree L2_low",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame L2_low",
+      "pass": true
+    },
+    {
+      "name": "processedSHA L3_mid",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA L3_mid",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree L3_mid",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame L3_mid",
+      "pass": true
+    },
+    {
+      "name": "processedSHA L3_mid_original",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA L3_mid_original",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree L3_mid_original",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame L3_mid_original",
+      "pass": true
+    },
+    {
+      "name": "processedSHA L4_high",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA L4_high",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree L4_high",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame L4_high",
+      "pass": true
+    },
+    {
+      "name": "processedSHA L4_high_original",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA L4_high_original",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree L4_high_original",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame L4_high_original",
+      "pass": true
+    },
+    {
+      "name": "processedSHA L5_overrun",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA L5_overrun",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree L5_overrun",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame L5_overrun",
+      "pass": true
+    },
+    {
+      "name": "processedSHA O1_upshift",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA O1_upshift",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree O1_upshift",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame O1_upshift",
+      "pass": true
+    },
+    {
+      "name": "processedSHA O2b_backfire_loud",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA O2b_backfire_loud",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree O2b_backfire_loud",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame O2b_backfire_loud",
+      "pass": true
+    },
+    {
+      "name": "processedSHA O2c_backfire_double",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA O2c_backfire_double",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree O2c_backfire_double",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame O2c_backfire_double",
+      "pass": true
+    },
+    {
+      "name": "processedSHA crackle-1",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA crackle-1",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree crackle-1",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame crackle-1",
+      "pass": true
+    },
+    {
+      "name": "processedSHA crackle-2",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA crackle-2",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree crackle-2",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame crackle-2",
+      "pass": true
+    },
+    {
+      "name": "processedSHA crackle-3",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA crackle-3",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree crackle-3",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame crackle-3",
+      "pass": true
+    },
+    {
+      "name": "processedSHA crackle-4",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA crackle-4",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree crackle-4",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame crackle-4",
+      "pass": true
+    },
+    {
+      "name": "processedSHA O4_downshift_blip",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA O4_downshift_blip",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree O4_downshift_blip",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame O4_downshift_blip",
+      "pass": true
+    },
+    {
+      "name": "processedSHA O5_boost",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA O5_boost",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree O5_boost",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame O5_boost",
+      "pass": true
+    },
+    {
+      "name": "processedSHA S1_accel_upshifts",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA S1_accel_upshifts",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree S1_accel_upshifts",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame S1_accel_upshifts",
+      "pass": true
+    },
+    {
+      "name": "processedSHA S2_brake_downshifts",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA S2_brake_downshifts",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree S2_brake_downshifts",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame S2_brake_downshifts",
+      "pass": true
+    },
+    {
+      "name": "processedSHA F1_prop_loop",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA F1_prop_loop",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree F1_prop_loop",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame F1_prop_loop",
+      "pass": true
+    },
+    {
+      "name": "processedSHA F2_jet_antigrav_loop",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA F2_jet_antigrav_loop",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree F2_jet_antigrav_loop",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame F2_jet_antigrav_loop",
+      "pass": true
+    },
+    {
+      "name": "processedSHA F3_wind_rush_loop",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA F3_wind_rush_loop",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree F3_wind_rush_loop",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame F3_wind_rush_loop",
+      "pass": true
+    },
+    {
+      "name": "processedSHA F4_takeoff",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA F4_takeoff",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree F4_takeoff",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame F4_takeoff",
+      "pass": true
+    },
+    {
+      "name": "processedSHA H1_charge",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA H1_charge",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree H1_charge",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame H1_charge",
+      "pass": true
+    },
+    {
+      "name": "processedSHA H2_jump",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA H2_jump",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree H2_jump",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame H2_jump",
+      "pass": true
+    },
+    {
+      "name": "processedSHA H3_tunnel_loop",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA H3_tunnel_loop",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree H3_tunnel_loop",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame H3_tunnel_loop",
+      "pass": true
+    },
+    {
+      "name": "processedSHA H4_exit",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA H4_exit",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree H4_exit",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame H4_exit",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P06_shift_flame_pop_b",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P06_shift_flame_pop_b",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P06_shift_flame_pop_b",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P06_shift_flame_pop_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P02_turbine_fan_loop_a",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P02_turbine_fan_loop_a",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P02_turbine_fan_loop_a",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P02_turbine_fan_loop_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P05_antigrav_hum_loop_b",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P05_antigrav_hum_loop_b",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P05_antigrav_hum_loop_b",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P05_antigrav_hum_loop_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P06_shift_flame_pop_a",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P06_shift_flame_pop_a",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P06_shift_flame_pop_a",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P06_shift_flame_pop_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P02_turbine_fan_loop_b",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P02_turbine_fan_loop_b",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P02_turbine_fan_loop_b",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P02_turbine_fan_loop_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P05_antigrav_hum_loop_a",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P05_antigrav_hum_loop_a",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P05_antigrav_hum_loop_a",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P05_antigrav_hum_loop_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P04_boost_ignite_a",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P04_boost_ignite_a",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P04_boost_ignite_a",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P04_boost_ignite_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P01_jet_thrust_loop_a",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P01_jet_thrust_loop_a",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P01_jet_thrust_loop_a",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P01_jet_thrust_loop_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P03_exhaust_rumble_loop_a",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P03_exhaust_rumble_loop_a",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P03_exhaust_rumble_loop_a",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P03_exhaust_rumble_loop_a",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P04_boost_ignite_b",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P04_boost_ignite_b",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P04_boost_ignite_b",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P04_boost_ignite_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P01_jet_thrust_loop_b",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P01_jet_thrust_loop_b",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P01_jet_thrust_loop_b",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P01_jet_thrust_loop_b",
+      "pass": true
+    },
+    {
+      "name": "processedSHA P03_exhaust_rumble_loop_b",
+      "pass": true
+    },
+    {
+      "name": "sourceSHA P03_exhaust_rumble_loop_b",
+      "pass": true
+    },
+    {
+      "name": "realdecode finiteclipfree P03_exhaust_rumble_loop_b",
+      "pass": true
+    },
+    {
+      "name": "decodeduration≤1frame P03_exhaust_rumble_loop_b",
+      "pass": true
+    },
+    {
+      "name": "no DOM/context/timerowner racer/engine.mjs",
+      "pass": true
+    },
+    {
+      "name": "no DOM/context/timerowner racer/flight-sequence.mjs",
+      "pass": true
+    },
+    {
+      "name": "no DOM/context/timerowner combat/engine.mjs",
+      "pass": true
+    }
+  ],
+  "failures": [],
+  "candidate": [
+    {
+      "file": "tools/KFB-Audio-Site/dist/racer/engine.mjs",
+      "sha256": "ea538732ffec12c4975b2646f2981788903f0a60a4a3d08ea34e0018bd21df9a"
+    },
+    {
+      "file": "tools/KFB-Audio-Site/dist/racer/flight-sequence.mjs",
+      "sha256": "ebf219336eff077caa794fbb0cf2db45e68b060705196af57a21fe47852ce0b8"
+    },
+    {
+      "file": "tools/KFB-Audio-Site/dist/combat/engine.mjs",
+      "sha256": "98dc53618bcc86e03ecbef07931068f8bd6fccc536038ebdc697eea299e06b77"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "L1_idle",
+      "duration": 5.95,
+      "peakDbfs": -12.473656264404486,
+      "rmsDbfs": -30.600257396502823,
+      "seamJump": 0.010736845433712006,
+      "seamVsInternalMax": 0.05161648248791535,
+      "end100msLevelDeltaDb": -0.6630161910246223,
+      "clippedSamples": 0
+    },
+    {
+      "id": "L2_low",
+      "duration": 5.95,
+      "peakDbfs": -12.297691682463224,
+      "rmsDbfs": -30.019381174327158,
+      "seamJump": 0.0038377949967980385,
+      "seamVsInternalMax": 0.03828790127328425,
+      "end100msLevelDeltaDb": 2.607693134353699,
+      "clippedSamples": 0
+    },
+    {
+      "id": "L3_mid",
+      "duration": 5.95484375,
+      "peakDbfs": -15.883371591648352,
+      "rmsDbfs": -24.968485335027268,
+      "seamJump": 0.0017342548817396164,
+      "seamVsInternalMax": 0.018869741648754445,
+      "end100msLevelDeltaDb": 1.8696981205912755,
+      "clippedSamples": 0
+    },
+    {
+      "id": "L3_mid_original",
+      "duration": 5.95,
+      "peakDbfs": -16.082431234847295,
+      "rmsDbfs": -24.966791801389903,
+      "seamJump": 0.005745818838477135,
+      "seamVsInternalMax": 0.059321786997192164,
+      "end100msLevelDeltaDb": -0.048530052076477884,
+      "clippedSamples": 0
+    },
+    {
+      "id": "L4_high",
+      "duration": 5.92225,
+      "peakDbfs": -13.2758458934387,
+      "rmsDbfs": -25.035314816248295,
+      "seamJump": 0.0280156311346218,
+      "seamVsInternalMax": 0.16686470957533595,
+      "end100msLevelDeltaDb": -1.2200672010595368,
+      "clippedSamples": 0
+    },
+    {
+      "id": "L4_high_original",
+      "duration": 5.95,
+      "peakDbfs": -13.021260132085386,
+      "rmsDbfs": -25.039901398115376,
+      "seamJump": 0.06616828590631485,
+      "seamVsInternalMax": 0.37666671374493227,
+      "end100msLevelDeltaDb": -1.5453783918622839,
+      "clippedSamples": 0
+    },
+    {
+      "id": "L5_overrun",
+      "duration": 5.95,
+      "peakDbfs": -12.690816868778732,
+      "rmsDbfs": -26.883454299660826,
+      "seamJump": 0.0012716539204120636,
+      "seamVsInternalMax": 0.009092810263778256,
+      "end100msLevelDeltaDb": -0.5305200996810654,
+      "clippedSamples": 0
+    },
+    {
+      "id": "O1_upshift",
+      "duration": 2,
+      "peakDbfs": -13.798209617569137,
+      "rmsDbfs": -25.987266920485617,
+      "seamJump": 0.0000649106441414915,
+      "seamVsInternalMax": 0.0004213743546583699,
+      "end100msLevelDeltaDb": -33.595286252271,
+      "clippedSamples": 0
+    },
+    {
+      "id": "O2b_backfire_loud",
+      "duration": 1.48,
+      "peakDbfs": -16.869140715672955,
+      "rmsDbfs": -26.118700964670893,
+      "seamJump": 0.0009921907621901482,
+      "seamVsInternalMax": 0.018243707869861424,
+      "end100msLevelDeltaDb": -2.595217076014294,
+      "clippedSamples": 0
+    },
+    {
+      "id": "O2c_backfire_double",
+      "duration": 1.48,
+      "peakDbfs": -12.506293483675073,
+      "rmsDbfs": -37.21540969939778,
+      "seamJump": 0.00018379792174982867,
+      "seamVsInternalMax": 0.003788987406548378,
+      "end100msLevelDeltaDb": -75.79365774279074,
+      "clippedSamples": 0
+    },
+    {
+      "id": "crackle-1",
+      "duration": 0.446,
+      "peakDbfs": -13.125095399898326,
+      "rmsDbfs": -32.48052002921863,
+      "seamJump": 0.00023368920756183797,
+      "seamVsInternalMax": 0.0022889289423009087,
+      "end100msLevelDeltaDb": -1.003496623698879,
+      "clippedSamples": 0
+    },
+    {
+      "id": "crackle-2",
+      "duration": 0.446,
+      "peakDbfs": -12.570190990507875,
+      "rmsDbfs": -34.24864568513661,
+      "seamJump": 0.0001575904075394874,
+      "seamVsInternalMax": 0.0013373306678649396,
+      "end100msLevelDeltaDb": -1.3131929667779263,
+      "clippedSamples": 0
+    },
+    {
+      "id": "crackle-3",
+      "duration": 0.446,
+      "peakDbfs": -12.525000095680097,
+      "rmsDbfs": -32.91695063640623,
+      "seamJump": 0.00017112179193645716,
+      "seamVsInternalMax": 0.0011497703583376602,
+      "end100msLevelDeltaDb": 1.1828059976427547,
+      "clippedSamples": 0
+    },
+    {
+      "id": "crackle-4",
+      "duration": 0.446,
+      "peakDbfs": -12.98474539480361,
+      "rmsDbfs": -32.77348065614311,
+      "seamJump": 0.003572657540644286,
+      "seamVsInternalMax": 0.04162090407579972,
+      "end100msLevelDeltaDb": -13.31738477843302,
+      "clippedSamples": 0
+    },
+    {
+      "id": "O4_downshift_blip",
+      "duration": 2,
+      "peakDbfs": -12.069802197654713,
+      "rmsDbfs": -28.16224115781518,
+      "seamJump": 0.00015682245702919317,
+      "seamVsInternalMax": 0.002314511625347032,
+      "end100msLevelDeltaDb": -80.94948255641737,
+      "clippedSamples": 0
+    },
+    {
+      "id": "O5_boost",
+      "duration": 2,
+      "peakDbfs": -12.232878840421456,
+      "rmsDbfs": -26.43766528323829,
+      "seamJump": 0.0005913115564908367,
+      "seamVsInternalMax": 0.007816248193842173,
+      "end100msLevelDeltaDb": -56.44390559079586,
+      "clippedSamples": 0
+    },
+    {
+      "id": "S1_accel_upshifts",
+      "duration": 8,
+      "peakDbfs": -11.677243344502479,
+      "rmsDbfs": -29.414888951710093,
+      "seamJump": 0.000002696255762657529,
+      "seamVsInternalMax": 0.000015701145430514573,
+      "end100msLevelDeltaDb": -21.024632694130997,
+      "clippedSamples": 0
+    },
+    {
+      "id": "S2_brake_downshifts",
+      "duration": 5,
+      "peakDbfs": -12.354765406969966,
+      "rmsDbfs": -33.88277618908812,
+      "seamJump": 0.0000018987695966643514,
+      "seamVsInternalMax": 0.00003118288185924279,
+      "end100msLevelDeltaDb": -5.3793923517787405,
+      "clippedSamples": 0
+    },
+    {
+      "id": "F1_prop_loop",
+      "duration": 5.95,
+      "peakDbfs": -16.958888080518676,
+      "rmsDbfs": -24.96875441275028,
+      "seamJump": 0.001628383994102478,
+      "seamVsInternalMax": 0.18044704314635945,
+      "end100msLevelDeltaDb": 1.5278802195550156,
+      "clippedSamples": 0
+    },
+    {
+      "id": "F2_jet_antigrav_loop",
+      "duration": 5.95,
+      "peakDbfs": -12.961847486167596,
+      "rmsDbfs": -25.041729059223165,
+      "seamJump": 0.0018987767398357391,
+      "seamVsInternalMax": 0.19407792718122485,
+      "end100msLevelDeltaDb": -0.5429082130924467,
+      "clippedSamples": 0
+    },
+    {
+      "id": "F3_wind_rush_loop",
+      "duration": 5.95,
+      "peakDbfs": -12.641944321004049,
+      "rmsDbfs": -25.98621745775106,
+      "seamJump": 0.011468514800071716,
+      "seamVsInternalMax": 0.20575024893756674,
+      "end100msLevelDeltaDb": -1.3153483194406594,
+      "clippedSamples": 0
+    },
+    {
+      "id": "F4_takeoff",
+      "duration": 3,
+      "peakDbfs": -12.608792713947793,
+      "rmsDbfs": -31.16449893737736,
+      "seamJump": 0.000015019619240774773,
+      "seamVsInternalMax": 0.00023665274226533257,
+      "end100msLevelDeltaDb": -54.90673356570464,
+      "clippedSamples": 0
+    },
+    {
+      "id": "H1_charge",
+      "duration": 4,
+      "peakDbfs": -15.205850029456098,
+      "rmsDbfs": -26.123865813603384,
+      "seamJump": 0.0007536509510828182,
+      "seamVsInternalMax": 0.004888295993955384,
+      "end100msLevelDeltaDb": -18.744393655450896,
+      "clippedSamples": 0
+    },
+    {
+      "id": "H2_jump",
+      "duration": 3,
+      "peakDbfs": -12.809720623433291,
+      "rmsDbfs": -28.008118890415375,
+      "seamJump": 0.0017611791032550173,
+      "seamVsInternalMax": 0.011185213881973136,
+      "end100msLevelDeltaDb": -77.62540964183128,
+      "clippedSamples": 0
+    },
+    {
+      "id": "H3_tunnel_loop",
+      "duration": 5.95,
+      "peakDbfs": -13.298732154104078,
+      "rmsDbfs": -28.27852125918708,
+      "seamJump": 0.048666472313925624,
+      "seamVsInternalMax": 0.19551903795277642,
+      "end100msLevelDeltaDb": -1.4675422067856245,
+      "clippedSamples": 0
+    },
+    {
+      "id": "H4_exit",
+      "duration": 2,
+      "peakDbfs": -12.434757993175287,
+      "rmsDbfs": -26.911726852542902,
+      "seamJump": 0.000009622073832815659,
+      "seamVsInternalMax": 0.0017626881852436114,
+      "end100msLevelDeltaDb": -43.302659899665954,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P06_shift_flame_pop_b",
+      "duration": 0.996,
+      "peakDbfs": -13.95554840015253,
+      "rmsDbfs": -35.15324040535056,
+      "seamJump": 0.0000577431974306819,
+      "seamVsInternalMax": 0.0013539912176014092,
+      "end100msLevelDeltaDb": -76.89042940673747,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P02_turbine_fan_loop_a",
+      "duration": 3.95,
+      "peakDbfs": -17.578723621027983,
+      "rmsDbfs": -24.965077979365766,
+      "seamJump": 0.001526745967566967,
+      "seamVsInternalMax": 0.08533498645378906,
+      "end100msLevelDeltaDb": -0.14832406642961682,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P05_antigrav_hum_loop_b",
+      "duration": 3.35,
+      "peakDbfs": -13.830594436742064,
+      "rmsDbfs": -28.731367262667348,
+      "seamJump": 0.007243052124977112,
+      "seamVsInternalMax": 0.167964328835995,
+      "end100msLevelDeltaDb": -0.5334770168692099,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P06_shift_flame_pop_a",
+      "duration": 0.996,
+      "peakDbfs": -13.831656883495063,
+      "rmsDbfs": -31.562992511404723,
+      "seamJump": 0.000015714563744495536,
+      "seamVsInternalMax": 0.00074995065800544,
+      "end100msLevelDeltaDb": -84.19261698019254,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P02_turbine_fan_loop_b",
+      "duration": 3.95,
+      "peakDbfs": -14.752071788063459,
+      "rmsDbfs": -24.989817147338282,
+      "seamJump": 0.0077850352972745895,
+      "seamVsInternalMax": 0.279591447037401,
+      "end100msLevelDeltaDb": 3.115516754915916,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P05_antigrav_hum_loop_a",
+      "duration": 3.35,
+      "peakDbfs": -13.969196526936795,
+      "rmsDbfs": -26.741660252825984,
+      "seamJump": 0.020964909344911575,
+      "seamVsInternalMax": 0.36038763415537706,
+      "end100msLevelDeltaDb": -4.13383847642784,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P04_boost_ignite_a",
+      "duration": 1.48,
+      "peakDbfs": -13.592583527299361,
+      "rmsDbfs": -27.90083826806173,
+      "seamJump": 0.0005310266490141657,
+      "seamVsInternalMax": 0.010332402717651793,
+      "end100msLevelDeltaDb": -77.53728405340523,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P01_jet_thrust_loop_a",
+      "duration": 3.95,
+      "peakDbfs": -13.98393960072498,
+      "rmsDbfs": -25.06973777003313,
+      "seamJump": 0.0033436715602874756,
+      "seamVsInternalMax": 0.5969075274151775,
+      "end100msLevelDeltaDb": -2.528044624188635,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P03_exhaust_rumble_loop_a",
+      "duration": 3.95,
+      "peakDbfs": -13.85268696989324,
+      "rmsDbfs": -30.367444633423833,
+      "seamJump": 0.0007270333007909358,
+      "seamVsInternalMax": 0.017116718795832923,
+      "end100msLevelDeltaDb": -2.9938250395817763,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P04_boost_ignite_b",
+      "duration": 1.48,
+      "peakDbfs": -13.783676318611263,
+      "rmsDbfs": -27.99540523052965,
+      "seamJump": 0.0008349333420198946,
+      "seamVsInternalMax": 0.018141439594416116,
+      "end100msLevelDeltaDb": -68.11346228841754,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P01_jet_thrust_loop_b",
+      "duration": 3.95,
+      "peakDbfs": -13.906555757224615,
+      "rmsDbfs": -25.07768256930506,
+      "seamJump": 0.003360290080308914,
+      "seamVsInternalMax": 0.4505253967790182,
+      "end100msLevelDeltaDb": -3.489964205596488,
+      "clippedSamples": 0
+    },
+    {
+      "id": "P03_exhaust_rumble_loop_b",
+      "duration": 3.95,
+      "peakDbfs": -13.938875671543833,
+      "rmsDbfs": -26.812404748529758,
+      "seamJump": 0.0019213594496250153,
+      "seamVsInternalMax": 0.030240941726523057,
+      "end100msLevelDeltaDb": -0.14106870371124705,
+      "clippedSamples": 0
+    }
+  ],
+  "sequence": {
+    "schema": "kfb.flight-crash-audition/1",
+    "running": false,
+    "profile": "jetpack",
+    "material": "wood",
+    "elapsed": 30,
+    "phase": "Ausklang",
+    "dispatched": 13,
+    "late": 0,
+    "clock": "injected AudioContext.currentTime / existing host tick",
+    "worldIntegration": false,
+    "log": [
+      {
+        "type": "phase",
+        "phase": "Start",
+        "at": 0,
+        "elapsed": 0
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-0",
+        "kind": "boost",
+        "plannedAt": 1,
+        "dispatchedAt": 1,
+        "synthetic": true
+      },
+      {
+        "type": "phase",
+        "phase": "Beschleunigen",
+        "at": 3,
+        "elapsed": 3
+      },
+      {
+        "type": "phase",
+        "phase": "Banking",
+        "at": 9,
+        "elapsed": 9
+      },
+      {
+        "type": "phase",
+        "phase": "Steigen",
+        "at": 14,
+        "elapsed": 14
+      },
+      {
+        "type": "phase",
+        "phase": "Luftbremse",
+        "at": 18,
+        "elapsed": 18
+      },
+      {
+        "type": "phase",
+        "phase": "Einschlag",
+        "at": 21,
+        "elapsed": 21
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-1",
+        "kind": "impact",
+        "plannedAt": 21,
+        "dispatchedAt": 21,
+        "synthetic": true
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-2",
+        "kind": "fracture",
+        "plannedAt": 21.16,
+        "dispatchedAt": 21.166666666666668,
+        "synthetic": true
+      },
+      {
+        "type": "phase",
+        "phase": "Kaskade",
+        "at": 21.3,
+        "elapsed": 21.3
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-3",
+        "kind": "contact",
+        "plannedAt": 21.6,
+        "dispatchedAt": 21.6,
+        "synthetic": true
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-4",
+        "kind": "contact",
+        "plannedAt": 22,
+        "dispatchedAt": 22,
+        "synthetic": true
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-5",
+        "kind": "impact",
+        "plannedAt": 22.2,
+        "dispatchedAt": 22.2,
+        "synthetic": true
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-6",
+        "kind": "fracture",
+        "plannedAt": 22.4,
+        "dispatchedAt": 22.4,
+        "synthetic": true
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-7",
+        "kind": "contact",
+        "plannedAt": 22.7,
+        "dispatchedAt": 22.7,
+        "synthetic": true
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-8",
+        "kind": "contact",
+        "plannedAt": 23.1,
+        "dispatchedAt": 23.1,
+        "synthetic": true
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-9",
+        "kind": "contact",
+        "plannedAt": 23.65,
+        "dispatchedAt": 23.65,
+        "synthetic": true
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-10",
+        "kind": "contact",
+        "plannedAt": 24.2,
+        "dispatchedAt": 24.2,
+        "synthetic": true
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-11",
+        "kind": "settle",
+        "plannedAt": 25.1,
+        "dispatchedAt": 25.1,
+        "synthetic": true
+      },
+      {
+        "type": "cue",
+        "key": "flight-1-0-12",
+        "kind": "settle",
+        "plannedAt": 25.7,
+        "dispatchedAt": 25.7,
+        "synthetic": true
+      },
+      {
+        "type": "phase",
+        "phase": "Ausklang",
+        "at": 26,
+        "elapsed": 26
+      },
+      {
+        "type": "complete",
+        "at": 30,
+        "elapsed": 30
+      }
+    ]
+  },
+  "destruction": [
+    {
+      "type": "destruction",
+      "id": "flight-1-0-1",
+      "cascadeId": "flight-1-0-crash",
+      "phase": "impact",
+      "material": "wood",
+      "at": 21,
+      "status": "PLAYED",
+      "ids": [
+        "C09_explosion_big_a"
+      ]
+    },
+    {
+      "type": "destruction",
+      "id": "flight-1-0-2",
+      "cascadeId": "flight-1-0-crash",
+      "phase": "fracture",
+      "material": "wood",
+      "at": 21.166666666666668,
+      "status": "PLAYED",
+      "ids": [
+        "C15_wood_splinter_c"
+      ]
+    },
+    {
+      "type": "destruction",
+      "id": "flight-1-0-3",
+      "cascadeId": "flight-1-0-crash",
+      "phase": "contact",
+      "material": "wood",
+      "at": 21.6,
+      "status": "PLAYED_DERIVED_TAIL",
+      "ids": [
+        "C15_wood_splinter_b"
+      ]
+    },
+    {
+      "type": "destruction",
+      "id": "flight-1-0-4",
+      "cascadeId": "flight-1-0-crash",
+      "phase": "contact",
+      "material": "wood",
+      "at": 22,
+      "status": "PLAYED_DERIVED_TAIL",
+      "ids": [
+        "C15_wood_splinter_a"
+      ]
+    },
+    {
+      "type": "destruction",
+      "id": "flight-1-0-5",
+      "cascadeId": "flight-1-0-secondary",
+      "phase": "impact",
+      "material": "stone",
+      "at": 22.2,
+      "status": "PLAYED",
+      "ids": [
+        "C09_explosion_big_c"
+      ]
+    },
+    {
+      "type": "destruction",
+      "id": "flight-1-0-6",
+      "cascadeId": "flight-1-0-secondary",
+      "phase": "fracture",
+      "material": "stone",
+      "at": 22.4,
+      "status": "PLAYED",
+      "ids": [
+        "C16_stone_crumble_b"
+      ]
+    },
+    {
+      "type": "destruction",
+      "id": "flight-1-0-7",
+      "cascadeId": "flight-1-0-crash",
+      "phase": "contact",
+      "material": "wood",
+      "at": 22.7,
+      "status": "PLAYED_DERIVED_TAIL",
+      "ids": [
+        "C15_wood_splinter_b"
+      ]
+    },
+    {
+      "type": "destruction",
+      "id": "flight-1-0-8",
+      "cascadeId": "flight-1-0-secondary",
+      "phase": "contact",
+      "material": "stone",
+      "at": 23.1,
+      "status": "PLAYED_DERIVED_TAIL",
+      "ids": [
+        "C16_stone_crumble_b"
+      ]
+    },
+    {
+      "type": "destruction",
+      "id": "flight-1-0-9",
+      "cascadeId": "flight-1-0-crash",
+      "phase": "contact",
+      "material": "wood",
+      "at": 23.65,
+      "status": "PLAYED_DERIVED_TAIL",
+      "ids": [
+        "C15_wood_splinter_c"
+      ]
+    },
+    {
+      "type": "destruction",
+      "id": "flight-1-0-10",
+      "cascadeId": "flight-1-0-secondary",
+      "phase": "contact",
+      "material": "stone",
+      "at": 24.2,
+      "status": "PLAYED_DERIVED_TAIL",
+      "ids": [
+        "C16_stone_crumble_a"
+      ]
+    },
+    {
+      "type": "destruction",
+      "id": "flight-1-0-11",
+      "cascadeId": "flight-1-0-crash",
+      "phase": "settle",
+      "material": "wood",
+      "at": 25.1,
+      "status": "PLAYED_DERIVED_TAIL",
+      "ids": [
+        "C15_wood_splinter_b"
+      ]
+    },
+    {
+      "type": "destruction",
+      "id": "flight-1-0-12",
+      "cascadeId": "flight-1-0-secondary",
+      "phase": "settle",
+      "material": "stone",
+      "at": 25.7,
+      "status": "PLAYED_DERIVED_TAIL",
+      "ids": [
+        "C16_stone_crumble_b"
+      ]
+    }
+  ],
+  "boundary": "Mock injected shared context; actual38privateOgg+originalSHA/FFmpeg; no browser or HUMAN sonic acceptance."
+}

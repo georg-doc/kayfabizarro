@@ -1,0 +1,1054 @@
+{
+  "revision": "0.10.0",
+  "hostContexts": 1,
+  "schema": "kfb.flight-crash-audition/1",
+  "running": false,
+  "profile": "jetpack",
+  "material": "wood",
+  "elapsed": 30,
+  "phase": "Ausklang",
+  "dispatched": 13,
+  "late": 0,
+  "clock": "injected AudioContext.currentTime / existing host tick",
+  "worldIntegration": false,
+  "log": [
+    {
+      "type": "phase",
+      "phase": "Start",
+      "at": 1.944671201814059,
+      "elapsed": 0
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-0",
+      "kind": "boost",
+      "plannedAt": 2.9446712018140593,
+      "dispatchedAt": 2.948934240362812,
+      "synthetic": true
+    },
+    {
+      "type": "phase",
+      "phase": "Beschleunigen",
+      "at": 4.951655328798186,
+      "elapsed": 3.0069841269841264
+    },
+    {
+      "type": "phase",
+      "phase": "Banking",
+      "at": 10.948208616780045,
+      "elapsed": 9.003537414965987
+    },
+    {
+      "type": "phase",
+      "phase": "Steigen",
+      "at": 15.946303854875284,
+      "elapsed": 14.001632653061225
+    },
+    {
+      "type": "phase",
+      "phase": "Luftbremse",
+      "at": 19.9459410430839,
+      "elapsed": 18.00126984126984
+    },
+    {
+      "type": "phase",
+      "phase": "Einschlag",
+      "at": 22.947120181405896,
+      "elapsed": 21.002448979591836
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-1",
+      "kind": "impact",
+      "plannedAt": 22.94467120181406,
+      "dispatchedAt": 22.947120181405896,
+      "synthetic": true
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-2",
+      "kind": "fracture",
+      "plannedAt": 23.10467120181406,
+      "dispatchedAt": 23.11546485260771,
+      "synthetic": true
+    },
+    {
+      "type": "phase",
+      "phase": "Kaskade",
+      "at": 23.248979591836736,
+      "elapsed": 21.304308390022676
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-3",
+      "kind": "contact",
+      "plannedAt": 23.54467120181406,
+      "dispatchedAt": 23.54503401360544,
+      "synthetic": true
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-4",
+      "kind": "contact",
+      "plannedAt": 23.94467120181406,
+      "dispatchedAt": 23.95138321995465,
+      "synthetic": true
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-5",
+      "kind": "impact",
+      "plannedAt": 24.14467120181406,
+      "dispatchedAt": 24.14875283446712,
+      "synthetic": true
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-6",
+      "kind": "fracture",
+      "plannedAt": 24.34467120181406,
+      "dispatchedAt": 24.351927437641724,
+      "synthetic": true
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-7",
+      "kind": "contact",
+      "plannedAt": 24.64467120181406,
+      "dispatchedAt": 24.647981859410432,
+      "synthetic": true
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-8",
+      "kind": "contact",
+      "plannedAt": 25.04467120181406,
+      "dispatchedAt": 25.048526077097506,
+      "synthetic": true
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-9",
+      "kind": "contact",
+      "plannedAt": 25.59467120181406,
+      "dispatchedAt": 25.6,
+      "synthetic": true
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-10",
+      "kind": "contact",
+      "plannedAt": 26.14467120181406,
+      "dispatchedAt": 26.151473922902493,
+      "synthetic": true
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-11",
+      "kind": "settle",
+      "plannedAt": 27.04467120181406,
+      "dispatchedAt": 27.051247165532878,
+      "synthetic": true
+    },
+    {
+      "type": "cue",
+      "key": "flight-1-1.944671201814059-12",
+      "kind": "settle",
+      "plannedAt": 27.64467120181406,
+      "dispatchedAt": 27.649160997732427,
+      "synthetic": true
+    },
+    {
+      "type": "phase",
+      "phase": "Ausklang",
+      "at": 27.945215419501135,
+      "elapsed": 26.000544217687075
+    },
+    {
+      "type": "complete",
+      "at": 31.944852607709752,
+      "elapsed": 30.00018140589569
+    }
+  ],
+  "racer": {
+    "schema": "kfb.racer-gears/1",
+    "active": false,
+    "gear": 1,
+    "rpm": 900,
+    "speedKmh": 0,
+    "throttle": 0,
+    "brake": 0,
+    "mode": "drive",
+    "driveMode": "manual",
+    "tuned": true,
+    "shiftUntil": 0,
+    "flight": null,
+    "loadMs": 1540,
+    "loaded": 38,
+    "decoded": [
+      {
+        "id": "L3_mid_original",
+        "duration": 5.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "L2_low",
+        "duration": 5.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "L3_mid",
+        "duration": 5.954829931972789,
+        "sampleRate": 44100
+      },
+      {
+        "id": "L1_idle",
+        "duration": 5.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "L5_overrun",
+        "duration": 5.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "L4_high_original",
+        "duration": 5.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "L4_high",
+        "duration": 5.9222448979591835,
+        "sampleRate": 44100
+      },
+      {
+        "id": "O1_upshift",
+        "duration": 2,
+        "sampleRate": 44100
+      },
+      {
+        "id": "O2b_backfire_loud",
+        "duration": 1.48,
+        "sampleRate": 44100
+      },
+      {
+        "id": "crackle-1",
+        "duration": 0.44598639455782313,
+        "sampleRate": 44100
+      },
+      {
+        "id": "crackle-2",
+        "duration": 0.44598639455782313,
+        "sampleRate": 44100
+      },
+      {
+        "id": "crackle-3",
+        "duration": 0.44598639455782313,
+        "sampleRate": 44100
+      },
+      {
+        "id": "O2c_backfire_double",
+        "duration": 1.48,
+        "sampleRate": 44100
+      },
+      {
+        "id": "S1_accel_upshifts",
+        "duration": 8,
+        "sampleRate": 44100
+      },
+      {
+        "id": "S2_brake_downshifts",
+        "duration": 5,
+        "sampleRate": 44100
+      },
+      {
+        "id": "O5_boost",
+        "duration": 2,
+        "sampleRate": 44100
+      },
+      {
+        "id": "crackle-4",
+        "duration": 0.44598639455782313,
+        "sampleRate": 44100
+      },
+      {
+        "id": "O4_downshift_blip",
+        "duration": 2,
+        "sampleRate": 44100
+      },
+      {
+        "id": "F1_prop_loop",
+        "duration": 5.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "F2_jet_antigrav_loop",
+        "duration": 5.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "F3_wind_rush_loop",
+        "duration": 5.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "F4_takeoff",
+        "duration": 3,
+        "sampleRate": 44100
+      },
+      {
+        "id": "H4_exit",
+        "duration": 2,
+        "sampleRate": 44100
+      },
+      {
+        "id": "H1_charge",
+        "duration": 4,
+        "sampleRate": 44100
+      },
+      {
+        "id": "H2_jump",
+        "duration": 3,
+        "sampleRate": 44100
+      },
+      {
+        "id": "H3_tunnel_loop",
+        "duration": 5.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P06_shift_flame_pop_a",
+        "duration": 0.9959863945578231,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P05_antigrav_hum_loop_b",
+        "duration": 3.35,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P02_turbine_fan_loop_a",
+        "duration": 3.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P06_shift_flame_pop_b",
+        "duration": 0.9959863945578231,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P04_boost_ignite_a",
+        "duration": 1.48,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P02_turbine_fan_loop_b",
+        "duration": 3.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P05_antigrav_hum_loop_a",
+        "duration": 3.35,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P01_jet_thrust_loop_a",
+        "duration": 3.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P04_boost_ignite_b",
+        "duration": 1.48,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P01_jet_thrust_loop_b",
+        "duration": 3.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P03_exhaust_rumble_loop_a",
+        "duration": 3.95,
+        "sampleRate": 44100
+      },
+      {
+        "id": "P03_exhaust_rumble_loop_b",
+        "duration": 3.95,
+        "sampleRate": 44100
+      }
+    ],
+    "activeLoops": 0,
+    "activeOneShots": 0,
+    "rms": 0,
+    "limiterReductionDb": -0.00012332235928624868,
+    "moduleCreatedAudioContexts": 0,
+    "loopCrossfadeSeconds": 0.05,
+    "clock": "injected AudioContext.currentTime / host tick",
+    "events": [
+      {
+        "type": "one-shot",
+        "id": "P04_boost_ignite_a",
+        "at": 2.9589342403628116,
+        "rate": 1.0261852842482948,
+        "gain": 0.6827727556228638
+      }
+    ],
+    "earAcceptance": "OPEN",
+    "duckDb": 0
+  },
+  "combat": {
+    "schema": "kfb.combat-sfx/1",
+    "active": false,
+    "loaded": 54,
+    "decode": [
+      {
+        "id": "C01_punch_light_a",
+        "duration": 0.1649659863945578,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C01_punch_light_c_r",
+        "duration": 0.3294784580498866,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C01_punch_light_b",
+        "duration": 0.21306122448979592,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C02_punch_heavy_a",
+        "duration": 0.2139909297052154,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C02_punch_heavy_c_r",
+        "duration": 0.502766439909297,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C02_punch_heavy_b",
+        "duration": 0.32691609977324265,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C03_brass_knuckles_a",
+        "duration": 0.27798185941043085,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C04_swing_whoosh_a",
+        "duration": 0.382108843537415,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C03_brass_knuckles_b_r",
+        "duration": 0.7729478458049887,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C03_brass_knuckles_c_r",
+        "duration": 0.5659863945578232,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C04_swing_whoosh_b",
+        "duration": 0.1926077097505669,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C05_blaster_primary_b",
+        "duration": 0.42099773242630384,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C05_blaster_primary_a",
+        "duration": 0.5631065759637188,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C04_swing_whoosh_c",
+        "duration": 0.31285714285714283,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C05_blaster_primary_c",
+        "duration": 0.43126984126984125,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C06_rocket_launch_a",
+        "duration": 0.506734693877551,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C06_rocket_launch_c",
+        "duration": 0.6429931972789116,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C06_rocket_launch_b",
+        "duration": 0.7153287981859411,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C07_bomb_fuse_a",
+        "duration": 1.863061224489796,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C07_bomb_fuse_c",
+        "duration": 1.940997732426304,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C08_explosion_small_a",
+        "duration": 0.6406122448979592,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C08_explosion_small_b",
+        "duration": 1.48,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C09_explosion_big_a",
+        "duration": 0.9978231292517007,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C07_bomb_fuse_b",
+        "duration": 1.8761678004535147,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C08_explosion_small_c",
+        "duration": 0.7417913832199546,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C09_explosion_big_c",
+        "duration": 1.0632426303854876,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C09_explosion_big_b",
+        "duration": 1.0836054421768708,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C10_hit_confirm_a",
+        "duration": 0.25002267573696146,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C10_hit_confirm_b",
+        "duration": 0.23607709750566894,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C11_fluff_ball_burst_b_r",
+        "duration": 0.9819954648526077,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C10_hit_confirm_c_r",
+        "duration": 0.2400453514739229,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C11_fluff_ball_burst_c_r",
+        "duration": 0.9259863945578232,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C11_fluff_ball_burst_a",
+        "duration": 0.3548526077097506,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C12_tree_shake_a",
+        "duration": 0.7201814058956916,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C12_tree_shake_c",
+        "duration": 0.36426303854875286,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C12_tree_shake_b_r",
+        "duration": 0.36707482993197277,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C13_bot_angry_a",
+        "duration": 0.9191383219954649,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C13_bot_angry_b",
+        "duration": 0.9720861678004535,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C14_bot_collapse_c",
+        "duration": 1.0264625850340137,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C14_bot_collapse_a",
+        "duration": 0.8264852607709751,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C13_bot_angry_c",
+        "duration": 0.9973696145124716,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C14_bot_collapse_b",
+        "duration": 1.1187074829931973,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C15_wood_splinter_a",
+        "duration": 0.5317687074829932,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C15_wood_splinter_b",
+        "duration": 0.5943990929705215,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C15_wood_splinter_c",
+        "duration": 0.49204081632653063,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C16_stone_crumble_b",
+        "duration": 0.6657142857142857,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C16_stone_crumble_a",
+        "duration": 1.1098866213151928,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C16_stone_crumble_c",
+        "duration": 0.7187301587301588,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C17_crystal_shatter_a",
+        "duration": 0.6619954648526077,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C17_crystal_shatter_b",
+        "duration": 0.7393424036281179,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C17_crystal_shatter_c",
+        "duration": 0.5139909297052154,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C18_domino_topple_a",
+        "duration": 1.4450793650793652,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C18_domino_topple_b",
+        "duration": 1.3489342403628117,
+        "sampleRate": 44100
+      },
+      {
+        "id": "C18_domino_topple_c",
+        "duration": 1.2190929705215419,
+        "sampleRate": 44100
+      }
+    ],
+    "activeSources": 0,
+    "queued": 0,
+    "demoUntil": null,
+    "combatActive": false,
+    "duckDb": 0,
+    "room": "outdoor",
+    "experimentalLayers": false,
+    "rms": 0,
+    "limiterReductionDb": -0.00012332235928624868,
+    "moduleCreatedAudioContexts": 0,
+    "clock": "injected AudioContext.currentTime / host tick",
+    "earAcceptance": "OPEN",
+    "log": [
+      {
+        "type": "layer",
+        "family": "C09",
+        "id": "C09_explosion_big_b",
+        "layer": "full",
+        "at": 22.957120181405898,
+        "rate": 1.0130869857406817,
+        "gain": 0.9085126966445167,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 9000
+      },
+      {
+        "type": "event",
+        "event": "explosionLarge",
+        "id": "impact:flight-1-1.944671201814059-1",
+        "at": 22.957120181405898,
+        "ids": [
+          "C09_explosion_big_b"
+        ],
+        "composition": "PHYSICAL_DONOR_COMPOSITION"
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-1",
+        "cascadeId": "flight-1-1.944671201814059-crash",
+        "phase": "impact",
+        "material": "wood",
+        "at": 22.947120181405896,
+        "status": "PLAYED",
+        "ids": [
+          "C09_explosion_big_b"
+        ]
+      },
+      {
+        "type": "layer",
+        "family": "C15",
+        "id": "C15_wood_splinter_a",
+        "layer": "full",
+        "at": 23.12546485260771,
+        "rate": 1.0352530636414863,
+        "gain": 0.46802996851697193,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 9000
+      },
+      {
+        "type": "event",
+        "event": "woodBreak",
+        "id": "fracture:flight-1-1.944671201814059-2",
+        "at": 23.12546485260771,
+        "ids": [
+          "C15_wood_splinter_a"
+        ],
+        "composition": "PHYSICAL_DONOR_COMPOSITION"
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-2",
+        "cascadeId": "flight-1-1.944671201814059-crash",
+        "phase": "fracture",
+        "material": "wood",
+        "at": 23.11546485260771,
+        "status": "PLAYED",
+        "ids": [
+          "C15_wood_splinter_a"
+        ]
+      },
+      {
+        "type": "layer",
+        "family": "C15",
+        "id": "C15_wood_splinter_a",
+        "layer": "tail",
+        "at": 23.555034013605443,
+        "rate": 0.9757647947767212,
+        "gain": 0.08483994197798424,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 9000
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-3",
+        "cascadeId": "flight-1-1.944671201814059-crash",
+        "phase": "contact",
+        "material": "wood",
+        "at": 23.54503401360544,
+        "status": "PLAYED_DERIVED_TAIL",
+        "ids": [
+          "C15_wood_splinter_a"
+        ]
+      },
+      {
+        "type": "layer",
+        "family": "C15",
+        "id": "C15_wood_splinter_b",
+        "layer": "tail",
+        "at": 23.96138321995465,
+        "rate": 0.9993576684673237,
+        "gain": 0.08736150949270445,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 9000
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-4",
+        "cascadeId": "flight-1-1.944671201814059-crash",
+        "phase": "contact",
+        "material": "wood",
+        "at": 23.95138321995465,
+        "status": "PLAYED_DERIVED_TAIL",
+        "ids": [
+          "C15_wood_splinter_b"
+        ]
+      },
+      {
+        "type": "layer",
+        "family": "C09",
+        "id": "C09_explosion_big_a",
+        "layer": "full",
+        "at": 24.158752834467123,
+        "rate": 1.026336164835492,
+        "gain": 1.0017535320070443,
+        "position": {
+          "x": 5,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 8368.7685546875
+      },
+      {
+        "type": "event",
+        "event": "explosionLarge",
+        "id": "impact:flight-1-1.944671201814059-5",
+        "at": 24.158752834467123,
+        "ids": [
+          "C09_explosion_big_a"
+        ],
+        "composition": "PHYSICAL_DONOR_COMPOSITION"
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-5",
+        "cascadeId": "flight-1-1.944671201814059-secondary",
+        "phase": "impact",
+        "material": "stone",
+        "at": 24.14875283446712,
+        "status": "PLAYED",
+        "ids": [
+          "C09_explosion_big_a"
+        ]
+      },
+      {
+        "type": "layer",
+        "family": "C16",
+        "id": "C16_stone_crumble_a",
+        "layer": "full",
+        "at": 24.361927437641725,
+        "rate": 0.9870809081471972,
+        "gain": 0.4602615032047561,
+        "position": {
+          "x": 5,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 8368.7685546875
+      },
+      {
+        "type": "event",
+        "event": "stoneBreak",
+        "id": "fracture:flight-1-1.944671201814059-6",
+        "at": 24.361927437641725,
+        "ids": [
+          "C16_stone_crumble_a"
+        ],
+        "composition": "PHYSICAL_DONOR_COMPOSITION"
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-6",
+        "cascadeId": "flight-1-1.944671201814059-secondary",
+        "phase": "fracture",
+        "material": "stone",
+        "at": 24.351927437641724,
+        "status": "PLAYED",
+        "ids": [
+          "C16_stone_crumble_a"
+        ]
+      },
+      {
+        "type": "layer",
+        "family": "C15",
+        "id": "C15_wood_splinter_c",
+        "layer": "tail",
+        "at": 24.657981859410434,
+        "rate": 0.9922182488752047,
+        "gain": 0.0869226489933564,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 9000
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-7",
+        "cascadeId": "flight-1-1.944671201814059-crash",
+        "phase": "contact",
+        "material": "wood",
+        "at": 24.647981859410432,
+        "status": "PLAYED_DERIVED_TAIL",
+        "ids": [
+          "C15_wood_splinter_c"
+        ]
+      },
+      {
+        "type": "layer",
+        "family": "C16",
+        "id": "C16_stone_crumble_a",
+        "layer": "tail",
+        "at": 25.058526077097508,
+        "rate": 1.0341638308012484,
+        "gain": 0.09383530433380613,
+        "position": {
+          "x": 5,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 8368.7685546875
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-8",
+        "cascadeId": "flight-1-1.944671201814059-secondary",
+        "phase": "contact",
+        "material": "stone",
+        "at": 25.048526077097506,
+        "status": "PLAYED_DERIVED_TAIL",
+        "ids": [
+          "C16_stone_crumble_a"
+        ]
+      },
+      {
+        "type": "layer",
+        "family": "C15",
+        "id": "C15_wood_splinter_b",
+        "layer": "tail",
+        "at": 25.610000000000003,
+        "rate": 1.0227675478499794,
+        "gain": 0.09438282170478555,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 9000
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-9",
+        "cascadeId": "flight-1-1.944671201814059-crash",
+        "phase": "contact",
+        "material": "wood",
+        "at": 25.6,
+        "status": "PLAYED_DERIVED_TAIL",
+        "ids": [
+          "C15_wood_splinter_b"
+        ]
+      },
+      {
+        "type": "layer",
+        "family": "C16",
+        "id": "C16_stone_crumble_c",
+        "layer": "tail",
+        "at": 26.161473922902495,
+        "rate": 1.0365510733996603,
+        "gain": 0.07057875928285937,
+        "position": {
+          "x": 5,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 8368.7685546875
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-10",
+        "cascadeId": "flight-1-1.944671201814059-secondary",
+        "phase": "contact",
+        "material": "stone",
+        "at": 26.151473922902493,
+        "status": "PLAYED_DERIVED_TAIL",
+        "ids": [
+          "C16_stone_crumble_c"
+        ]
+      },
+      {
+        "type": "layer",
+        "family": "C15",
+        "id": "C15_wood_splinter_a",
+        "layer": "tail",
+        "at": 27.06124716553288,
+        "rate": 0.9696893924368931,
+        "gain": 0.04137019272958595,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 9000
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-11",
+        "cascadeId": "flight-1-1.944671201814059-crash",
+        "phase": "settle",
+        "material": "wood",
+        "at": 27.051247165532878,
+        "status": "PLAYED_DERIVED_TAIL",
+        "ids": [
+          "C15_wood_splinter_a"
+        ]
+      },
+      {
+        "type": "layer",
+        "family": "C16",
+        "id": "C16_stone_crumble_b",
+        "layer": "tail",
+        "at": 27.659160997732428,
+        "rate": 0.9630361094736232,
+        "gain": 0.047817195167279454,
+        "position": {
+          "x": 5,
+          "y": 0,
+          "z": -6
+        },
+        "lowpassHz": 8368.7685546875
+      },
+      {
+        "type": "destruction",
+        "id": "flight-1-1.944671201814059-12",
+        "cascadeId": "flight-1-1.944671201814059-secondary",
+        "phase": "settle",
+        "material": "stone",
+        "at": 27.649160997732427,
+        "status": "PLAYED_DERIVED_TAIL",
+        "ids": [
+          "C16_stone_crumble_b"
+        ]
+      }
+    ]
+  }
+}
