@@ -26,3 +26,9 @@ Der mechanische Gate ist grün. Inhaltlich zeigen alle Runden aber genau das Mus
 Beispiel Runde 01: „The Ordinary World: Dysfunction isn't just a state…“ / „The Ordinary World: Stasis Loop. Cancel any Quest progression…“.
 
 Das sind keine Sticheleien, Ausreden oder Pointen eines Ehepaars, sondern drei vorgelesene Kartenfragmente. Bis Georg festlegt, wie eine gültige Karten-Zeile in der Sprechblase klingt, bitte nicht weiterschreiben. Die Figur spielt die Karte in ihrer Situation, statt sie vorzulesen. WS0 meldet sich mit der Regel.
+
+## Nachtrag Schrift (Georg sah die Demo im Vorschaufenster)
+Die Demo fällt ohne geladene Webfonts auf `cursive` zurück, auf dem Mac ist das eine Kalligrafie-Schrift. Das darf nie passieren:
+- Shantell Sans lokal mitliefern (OFL) oder sicher laden.
+- Fallback-Kette `"Shantell Sans", "Comic Neue", system-ui, sans-serif`, niemals `cursive`.
+- Seitentitel und Erklärtext der Demo ebenfalls in Shantell bzw. einer neutralen Sans.
