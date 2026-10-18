@@ -7359,6 +7359,21 @@
    "applies": "Hub q81–q86"
   },
   {
+   "id": "V-524",
+   "date": "2026-10-18",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "B39 Ein-/Aussteigen Dieselpunk-Fahrzeuge R1 (Georg 18.10.: bisher buggy und nicht sauber konzipiert) → WSB, Briefing replies/BRIEF_WSB_B39_VEHICLE_ENTER_EXIT_R1.md: erst Konzept je Öffnungstyp (Tür seitlich / Dachluke-Haube / offen), Figur verschwindet nur durch echte Öffnung; Cartoon-Choreografie mit Antizipation, Sprungbogen, Overlap der Öffnung, Fahrzeug-Federn ≤ 8 %, Staub-Puff nach V-499; Anker entry/exit/opening/hinge/driver_hidden, Fahrzeug- und Figuren-Clips, Zeitplan kfb.vehicle-enter-exit/1 für WS1; Test 3 Fahrzeuge × FrizzleBob/Orc Brute; QA-Liste V-520.",
+   "values": {},
+   "owner": "WSB · WS1 (Laufzeit)",
+   "check": "Bildstreifen + Nahbild Öffnung",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Einsteigen als Cartoon-Moment statt Teleport.",
+   "applies": "B39"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7446,7 +7461,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:876",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:877",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
