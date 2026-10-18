@@ -53,3 +53,26 @@ Im Spiel schweben die Fundstücke auf Hüfthöhe der Medium-Figur und drehen und
   - `data/loot_items.r1.json`, die GLBs und die Aufstellungen sind neu gebaut.
 - **Noch nicht neu gerendert:** Laut V-443 erst mit Bühne v1.2 (Schwebe-Modus auf Hüfthöhe und Schatten-Naht-Fix V-440). Die Bögen oben zeigen deshalb noch den Stand vor ×1,25.
 - Nach dem v1.2-Lauf liste ich hier jede Einzelansicht in voller Auflösung auf.
+
+## Nachtrag 18.10. · Aufstellungen als kompaktes Raster (WS0)
+`lineup/B28_<gruppe>_lineup.glb` ist jetzt ein Raster mit etwa 4:3 Grundfläche. Die Teile-GLBs selbst sind unverändert (byte-gleich).
+
+| Gruppe | Teile | Raster | Zellabstand | Grundfläche |
+|---|---|---|---|---|
+| food | 11 | 4×3 | 1,84 u | 6,3 × 4,7 u |
+| drink | 7 | 3×3 | 1,18 u | 3,1 × 2,9 u |
+| sweet | 12 | 4×3 | 1,05 u | 3,7 × 2,7 u |
+| tool_prop | 12 | 4×3 | 2,25 u | 7,5 × 5,3 u |
+
+Der Zellabstand ist 1,5 × die größte Grundfläche der Gruppe. Alles steht auf dem Boden (min y = 0). Der Bogen folgt nach dem v1.2-Go.
+
+## Abnahme auf Bühne v1.2 (18.10.) · 4 Raster PASS (Schweben auf Hüfthöhe automatisch über `KFB_Pickup`, V-437)
+Bühne **v1.2.1** (`--stage v1.2`, kfb-stage-light.v1.1, alle Standard-Ansichten, Maßstabszelle mit FrizzleBob 1,81 m + DemonLord 2,85 m). **Diese Bilder sind privat** (DemonLord in der Maßstabszelle ist ein Kauf-Asset), die Fundstücke selbst bleiben öffentlich.
+
+### Einzelansichten in voller Auflösung (1600 × 1200)
+- `_privat_kauf_asset/renders/proof_stage_v12/drink/`: Bogen `B28_drink_lineup_contact_sheet.png` · Einzelansichten: `B28_drink_lineup_back.png`, `B28_drink_lineup_detail_low.png`, `B28_drink_lineup_detail_right.png`, `B28_drink_lineup_far.png`, `B28_drink_lineup_front.png`, `B28_drink_lineup_near_face.png`, `B28_drink_lineup_scale_ref.png`, `B28_drink_lineup_threeq.png`, `B28_drink_lineup_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12/food/`: Bogen `B28_food_lineup_contact_sheet.png` · Einzelansichten: `B28_food_lineup_back.png`, `B28_food_lineup_detail_low.png`, `B28_food_lineup_detail_right.png`, `B28_food_lineup_far.png`, `B28_food_lineup_front.png`, `B28_food_lineup_near_face.png`, `B28_food_lineup_scale_ref.png`, `B28_food_lineup_threeq.png`, `B28_food_lineup_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12/sweet/`: Bogen `B28_sweet_lineup_contact_sheet.png` · Einzelansichten: `B28_sweet_lineup_back.png`, `B28_sweet_lineup_detail_low.png`, `B28_sweet_lineup_detail_right.png`, `B28_sweet_lineup_far.png`, `B28_sweet_lineup_front.png`, `B28_sweet_lineup_near_face.png`, `B28_sweet_lineup_scale_ref.png`, `B28_sweet_lineup_threeq.png`, `B28_sweet_lineup_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12/tool_prop/`: Bogen `B28_tool_prop_lineup_contact_sheet.png` · Einzelansichten: `B28_tool_prop_lineup_back.png`, `B28_tool_prop_lineup_detail_low.png`, `B28_tool_prop_lineup_detail_right.png`, `B28_tool_prop_lineup_far.png`, `B28_tool_prop_lineup_front.png`, `B28_tool_prop_lineup_near_face.png`, `B28_tool_prop_lineup_scale_ref.png`, `B28_tool_prop_lineup_threeq.png`, `B28_tool_prop_lineup_top.png`
+
+Die älteren Bögen in `renders/proof_stage/` (v1.1, lange Reihe, vor ×1,25) sind überholt.

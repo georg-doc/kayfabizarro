@@ -94,3 +94,38 @@ Bereit sind die Bühnen-GLBs `kit/proof/B29_proof_<3x3_maze|2x2_round|lineup_row
 2. **W1:** Das Scan-Relief zeigt senkrechte Fugen (die Plattenstöße des Scans). Sie wiederholen sich je Kachel als ruhige Linien. Behalten (wirkt wie Lehmplatten) oder herausfiltern?
 3. **Liberty Island:** Der Scan sieht nach Luftbild-Fotogrammetrie aus (Stil 3D-Kartendaten). Trotz „Royalty Free“ bitte prüfen, ob die Quelle erlaubt ist, bevor Arbeit hineinfließt. Danach Browser-Fassung + Entlichten.
 4. **Polar-Labyrinth:** Wie in `curved_ring_r3` (r = 3C, 22,5°) weitere Radien erzeugen (Skript-Parameter)?
+
+## Nachtrag 18.10. · WS0-Entscheidungen (V-446)
+1. **Maße bestätigt:** Zelle 4 u, Höhe 3,6 u, Dicke 0,95 → 0,62 u. Das Tor bleibt ohne Sturz; eine Bogen-Variante kann später kommen.
+2. **W1 neu:**
+   - Alles, was über die Höhe konstant ist, ist herausgenommen (Spalten-Median). Damit sind die senkrechten Plattenfugen und Scan-Streifen weg.
+   - Die großräumige 2D-Unruhe (5–25 cm) bleibt erhalten (×0,6). Ihr zeilenkonstanter Höhenverlauf ist entfernt, sonst gäbe es eine waagrechte Kachelnaht.
+   - Nahtprüfung: Kante 0,0040 / 0,0020 gegenüber innen 0,0036, also unauffällig.
+   - Sichtbar bleiben einzelne kleine Löcher aus dem Scan.
+   - Vorschau: `renders/skins_preview_2x2.png`. Die Bühnen-GLBs in `kit/proof/` sind neu gebaut.
+3. **Liberty Island: gestoppt.** Die Rechte an der Quelle sind unklar. Es bleiben nur das Intake (`data/intake.json`) und das Intake-GLB (privat, `KFB_Landmark_liberty_island.r0.glb`). Hier passiert nichts weiter.
+4. **Polar-Ringe** mit etwa gleicher Segmentlänge (Ziel ≈ 4,7 u, Segmentzahl als Vielfaches von 4):
+
+| Ring | Radius | Segmente | Winkel | Bogenlänge | Dreiecke |
+|---|---|---|---|---|---|
+| `curved_ring_r2` | 8 u | 12 | 30° | 4,19 u | 1 428 |
+| `curved_ring_r3` | 12 u | 16 | 22,5° | 4,71 u | 1 632 |
+| `curved_ring_r4` | 16 u | 20 | 18° | 5,03 u | 1 700 |
+| `curved_ring_r5` | 20 u | 28 | 12,86° | 4,49 u | 1 496 |
+
+   Fugentest Vollkreis je Ring: **0 offene Kanten** (`data/seamtest.r1.json`, `ring_r2`…`ring_r5`). Die übrigen Layouts sind weiter 0.
+
+Die Bögen warten weiter auf das Go für v1.2.
+
+## Abnahme auf Bühne v1.2 (18.10.) · 6 Bögen PASS (3 Layouts × W1/W2; G2–G6 PASS, G4 WARN)
+Bühne **v1.2.1** (`--stage v1.2`, kfb-stage-light.v1.1, alle Standard-Ansichten, Maßstabszelle mit FrizzleBob 1,81 m + DemonLord 2,85 m). **Diese Bilder sind privat** (DemonLord in der Maßstabszelle ist ein Kauf-Asset), der Baukasten bleibt öffentlich.
+
+### Einzelansichten in voller Auflösung (1600 × 1200)
+- `_privat_kauf_asset/renders/proof_stage_v12/2x2_round_W1/`: Bogen `B29_proof_2x2_round_W1_contact_sheet.png` · Einzelansichten: `B29_proof_2x2_round_W1_back.png`, `B29_proof_2x2_round_W1_detail_low.png`, `B29_proof_2x2_round_W1_far.png`, `B29_proof_2x2_round_W1_front.png`, `B29_proof_2x2_round_W1_near_face.png`, `B29_proof_2x2_round_W1_scale_ref.png`, `B29_proof_2x2_round_W1_side.png`, `B29_proof_2x2_round_W1_threeq.png`, `B29_proof_2x2_round_W1_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12/2x2_round_W2/`: Bogen `B29_proof_2x2_round_W2_contact_sheet.png` · Einzelansichten: `B29_proof_2x2_round_W2_back.png`, `B29_proof_2x2_round_W2_detail_low.png`, `B29_proof_2x2_round_W2_far.png`, `B29_proof_2x2_round_W2_front.png`, `B29_proof_2x2_round_W2_near_face.png`, `B29_proof_2x2_round_W2_scale_ref.png`, `B29_proof_2x2_round_W2_side.png`, `B29_proof_2x2_round_W2_threeq.png`, `B29_proof_2x2_round_W2_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12/3x3_maze_W1/`: Bogen `B29_proof_3x3_maze_W1_contact_sheet.png` · Einzelansichten: `B29_proof_3x3_maze_W1_back.png`, `B29_proof_3x3_maze_W1_detail_low.png`, `B29_proof_3x3_maze_W1_far.png`, `B29_proof_3x3_maze_W1_front.png`, `B29_proof_3x3_maze_W1_near_face.png`, `B29_proof_3x3_maze_W1_scale_ref.png`, `B29_proof_3x3_maze_W1_side.png`, `B29_proof_3x3_maze_W1_threeq.png`, `B29_proof_3x3_maze_W1_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12/3x3_maze_W2/`: Bogen `B29_proof_3x3_maze_W2_contact_sheet.png` · Einzelansichten: `B29_proof_3x3_maze_W2_back.png`, `B29_proof_3x3_maze_W2_detail_low.png`, `B29_proof_3x3_maze_W2_far.png`, `B29_proof_3x3_maze_W2_front.png`, `B29_proof_3x3_maze_W2_near_face.png`, `B29_proof_3x3_maze_W2_scale_ref.png`, `B29_proof_3x3_maze_W2_side.png`, `B29_proof_3x3_maze_W2_threeq.png`, `B29_proof_3x3_maze_W2_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12/lineup_row_W1/`: Bogen `B29_proof_lineup_row_W1_contact_sheet.png` · Einzelansichten: `B29_proof_lineup_row_W1_back.png`, `B29_proof_lineup_row_W1_detail_low.png`, `B29_proof_lineup_row_W1_far.png`, `B29_proof_lineup_row_W1_front.png`, `B29_proof_lineup_row_W1_near_face.png`, `B29_proof_lineup_row_W1_scale_ref.png`, `B29_proof_lineup_row_W1_side.png`, `B29_proof_lineup_row_W1_threeq.png`, `B29_proof_lineup_row_W1_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12/lineup_row_W2/`: Bogen `B29_proof_lineup_row_W2_contact_sheet.png` · Einzelansichten: `B29_proof_lineup_row_W2_back.png`, `B29_proof_lineup_row_W2_detail_low.png`, `B29_proof_lineup_row_W2_far.png`, `B29_proof_lineup_row_W2_front.png`, `B29_proof_lineup_row_W2_near_face.png`, `B29_proof_lineup_row_W2_scale_ref.png`, `B29_proof_lineup_row_W2_side.png`, `B29_proof_lineup_row_W2_threeq.png`, `B29_proof_lineup_row_W2_top.png`
+
+**Maßstabszelle:** Die Mauer (2,22 m) verdeckt FrizzleBob (1,81 m) vollständig. DemonLord (2,85 m mit Hörnern) schaut mit dem Kopf darüber. Das entspricht V-446/V-439 (nur Medium verdecken). Soll auch Large verdeckt werden, wären 4,8 u (≈ 3,0 m) nötig.
