@@ -33,8 +33,17 @@
 - **Schrift:**
   - Über das Schild „DETECTOR TOWER“ kommt eine neue dunkle Schildplatte mit erhabener Schrift „BLOB CORP“: creme-gelb, in Georgs Schrift Georg Comic Pro.
   - Nicht in den Meshy-Atlas malen. Reste der alten Buchstaben dürfen nicht durchscheinen.
+- **Orb (Georg-Nachtrag):**
+  - Die orange Kugel im Ring wird ein eigenes Objekt `KFB_Orb`, Pivot in der Mitte, geschlossen.
+  - Sie ist Teil der Materialisieren- und Verschwinden-Animation, zum Beispiel erscheint sie als Letztes und verschwindet als Erstes.
+  - Sie wabert und pulsiert bedrohlich: Material `kfb_orb_pulse` mit Emission, die WS1 animiert; dazu ein leichtes Wabern der Form (Shape Key `wobble`).
+  - Variante „Auge“: Skin mit KFB-Cartoon-Auge (Sklera = Orb, Iris/Pupille, E2-Lider), Anker `KFB_EyeAim`. Damit schaut sich der Orb um und scannt die Umgebung (Blick-Logik WS1, Augen-Modul `kfb-proof-eyes`).
+  - Lider (Georg): Claymation-E2-Lider in Anthrazit (≈ #34363a, `eyeRig.lid.colour`).
+    - Sie blinzeln.
+    - Modus „Starren“: zusammengekniffenes Auge (Ober- und Unterlid halb zu), das Spieler/Kamera bedrohlich anstarrt.
+    - Prüfstand: offen / blinzelnd / zusammengekniffen.
+  - Beide Varianten auf dem Prüfstand zeigen.
 - **Rest:**
-  - Die orange Kugel im Ring bleibt als Leuchtfeuer-Akzent.
   - Knet-Material KFB, keine neuen Formen außer Schild und Deckel.
 - **Taktische Ankunftspunkte:**
   - `KFB_Spawn_1..3` im Halbkreis vor der Vorderseite (Spielerseite), 3–5 m vor der Tür, links / Mitte / rechts.
@@ -46,6 +55,12 @@
   - AG1: Glatzkopf.
   - AG2 und AG3: Frisuren aus der 3D-Asset-Suche, CC0 bevorzugt, Lizenz im RETURN.
   - AGL: KayKit Rig_Large im gleichen Outfit, Ork-Kopf aus `50_BLENDER/ORC` unbemalt in Hautfarbe.
+- **Ernte-Variante (V-531):**
+  - Jeder Agent hat optional einen Roboter-Unterarm mit schwarzem Trichter.
+  - Logik wie beim Spieler-Arm V-510: Der Robo-Unterarm ersetzt Unterarm und Hand ganz, keine Manschette. Basis ist der Bot-Arm B31, Trichter schwarz statt bunt.
+  - Anker `KFB_Nozzle` für das Saug-Modul.
+  - Prüfstand: AG1 mit Arm.
+- **Waffen-Halterung (V-536):** Blaster und Trichter sitzen als Verlängerung des Unterarms in der Faustkugel (`KFB_Grip`), Mündungsachse = Unterarmachse.
 - **Blaster:**
   - Schwarzer Cartoon-Blaster aus der Asset-Suche (CC0), kein Eigenbau.
   - Anker `KFB_Muzzle` und Griff in der rechten Hand.
@@ -55,7 +70,7 @@
   - Das Zucken am Boden macht später WS1 additiv; du lieferst die Liegepose als Endbild.
 
 **Abnahme-Bilder (Prüfstand)**
-1. Turm: Tür zu, Tür weg mit Licht, Schild nah, Schnitt unten.
+1. Turm: Tür zu, Tür weg mit Licht, Schild nah, Schnitt unten, Orb normal und als Auge (Blick links / Mitte / rechts).
 2. Large Rig im Türrahmen (Abstand sichtbar).
 3. Line-up AG1–3 + AGL mit Blastern, Augen offen, halb, zu.
 4. Je ein Standbild Schuss-Pose und Opfer liegend.

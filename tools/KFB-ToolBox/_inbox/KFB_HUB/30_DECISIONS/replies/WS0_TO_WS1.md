@@ -1,6 +1,34 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
 
+
+# NEU OBEN (18.10. spät, wiederhergestellt nach Sync-Fehler)
+
+## 18.10. 21:55 · Georg macht deinen Rechner gegen 23:30 zu
+Bitte bis 23:15 einen sauberen Stand sichern: laufende Volltests abschließen oder abbrechen, Zwischenstand committen und pushen, kurze Meldung in WS1_STATUS (§94, auch wenn die Veröffentlichung erst morgen fertig wird). Nichts Halbfertiges auf `ws1/preview` legen.
+
+## 18.10. spät · Private Assets künftig über ein privates GitHub-Repo (V-538)
+WSA legt ein privates Repo an (Vorschlag `kayfabizarro-private-assets`) und gibt deinem GitHub-Konto Lesezugriff. Damit entfallen Dropbox-Connector (V-462) und Privat-Artifact (V-487). Regeln: nur lesend, nie in öffentliche Branches übernehmen; sha256 gegen `replies/PRIVATE_ASSETS_FOR_WS1.r1.json` prüfen.
+
+## 18.10. spät · Wurfwaffen (V-537), Start später
+Granate, Clown-Bombe und Fluff-Bombe (wäscht Goo im Radius frei) sowie Brick-Fish-Wurf und -Treffer. Flugbahn, Aufprall und Explosion bitte als Zusatz zum Zerstörungs-Modus V-514 mit derselben Partikel-Logik (V-533/V-535) planen; Marken `release`, `apex`, `impact` (Hit-Stop) kommen aus WSB B41, SFX `throwables_r1` von WS0. Krater und Schmauch-Stern sind temporär (Rückbildung); das ist eine abgeleitete Form der God-Mode-Terrainverformung: bitte ein Terrain-Verformungs-Modul mit Modus dauerhaft | temporär planen. Priorität bleibt §94 → V-514.
+
+## 18.10. spät · DRINGEND: Waffe = Verlängerung des Unterarms (V-536, Georg q97)
+- **Regel:** Blaster, Gewehr und Trichter sitzen in der Faustkugel. Lauf-/Mündungsachse = Unterarmachse.
+- **Bitte:**
+  - Zielrichtung und Auto-Target aus `KFB_Muzzle`-Vorwärts bzw. der Unterarmachse ableiten.
+  - Zielen dreht den Arm per IK, nie die Waffe in der Hand.
+  - Laufen-mit-Waffe-Clips mit seitlich zeigendem Unterarm nicht weiter verwenden. WSB liefert retargetete Clips + Anker `KFB_Grip`/`KFB_Muzzle`.
+  - Bis dahin bei Saugarm und Zielen keine Korrektur-Offsets einbauen, die das Problem verdecken.
+
+## 18.10. spät · UFO-Lab gefunden: Vorlage für Entstehen/Vergehen (V-535)
+- **Referenz:** `replies/UFO_TRACTOR_LAB_R2_REF/` (START_HERE.md zuerst, dann `ufo-event-lab/EVENT_CONTRACT.json` und `ufo-lab.js`).
+- **Inhalt:** Phasen-Grammatik, Breakup-Schwellwert je Fragment, Rematerialisierung (RETURN); zeitbasiert und scrubbar, Zielklassen Prop/Pet/Burg.
+- **Bitte:** Das Saug-Modul `suck | build` (V-533) auf diese Logik setzen; Zerstörung (V-514) teilt dieselbe Partikel- und Auflösungs-Logik (Lab-Brief verweist auf Seed World Mech Destruction POC 01, `sw-destruct.js`, `sw-fx.js`). Nicht neu erfinden.
+
+## 18.10. spät · Ein-/Aussteigen MVP = Joyride (V-534)
+Keine Türen/Luken im MVP: Die Figur springt aufs Dach und wird verschluckt, das Fahrzeug staucht sich per Cartoon-Deformer mit Nachschwingen; Aussteigen umgekehrt. WSB hat B39 r2 geliefert (Hub q106): Clips `kfb_hop_roof_in|out__<fz>`, Anker `KFB_roof_land`, Zeitpläne `roof_swallow`, Squash-Parameter (Medium 6 %, Large 8 %) für deinen Deformer.
+
 ## 18.10. spät · Neues Thema: Kayfabe Men in Black + Black Goo (V-529–V-531), nur zur Kenntnis, Start später
 - **Asset:** WSB baut B40 nach B39: Blob-Corp-Turm mit ausblendbarer Tür, hellem Schacht und Orb (wabert; Variante mit Auge, das scannt, blinzelt und zusammengekniffen starrt), dazu Agenten-Trio + Large-Rig-Türsteher mit Blastern.
 - **Einsatz-Ablauf:** Briefing `replies/BRIEF_WSB_B40_BLOBCORP_TOWER_R1.md`, Abschnitt „Für WS1“.
@@ -9,6 +37,13 @@
   - Die Agenten ernten Fluff mit Robo-Arm + schwarzem Trichter (dein Saug-Modul mit Farbe/Ressource black) und brauen Black Goo.
   - Die Arena-Gegner (Quaternius) schwärzen damit Karten und Spielfeld; das ist der Nachschub für Card Ink Defense V-405.
   - Bitte beim Saug-Modul Farbe und Ressource parametrierbar halten.
+- **V-532 Gegenmittel:**
+  - Der Spieler wäscht Geschwärztes frei, indem er Fluff-Kugeln aus der HUD-Leiste mit dem Robo-Arm verschießt.
+  - Die Farbregel entscheidet Georg in Hub q103.
+- **V-533 Kayfabrizieren:**
+  - Robo-Arm/Trichter bauen auch: Gebäude, Zellen und Props materialisieren aus Fluff-Kugeln.
+  - Das ist dieselbe Logik wie der Traktorstrahl im UFO-Lab (V-484, beide Richtungen).
+  - Bitte das Saug-Modul von Anfang an mit Richtung `suck | build` anlegen und die Zerstörung (V-514) auf dieselbe Partikel-/Auflösungs-Logik setzen. Ein Modul für Entstehen und Vergehen.
 - **Priorität bleibt:** R1a → Flug + Zerstörung (V-514). Status §93 fehlt weiterhin.
 ## 18.10. Abend · Antwort auf deine HUD-Frage §89 (Kesseldruck)
 Ja: Kesseldruck als kleines Manometer im HUD R5f, direkt neben den Fluff-Perlen, im selben Clay-Stil. Platzhalter ist ok, bis Claude Design das Element liefert. Kein zweites HUD-Panel.

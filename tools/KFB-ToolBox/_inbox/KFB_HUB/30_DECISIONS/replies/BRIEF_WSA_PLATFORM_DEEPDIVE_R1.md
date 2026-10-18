@@ -9,7 +9,13 @@
 ## Block
 **Fragen**
 1. **Hosting/Persistenz:**
-   - Kandidaten: ChatGPT Sites (Regionssperre EEA? Datenresidenz?), Cloudflare (Workers/Pages + D1 + R2, EU-Jurisdiktion), Alternativen nach eigener Wahl (z. B. Supabase EU, Firebase).
+   - Kandidaten: ChatGPT Sites (Regionssperre EEA? Datenresidenz?), Cloudflare (Workers/Pages + D1 + R2, EU-Jurisdiktion), Vercel, Netlify, Supabase (EU-Region), Firebase, GitHub Pages (nur statisch), Deno Deploy, Fly.io/Render, itch.io (kostenloser Web-Spiel-Vertrieb), weitere nach eigener Wahl.
+   - **Georg: möglichst kostenlos.** Je Option angeben:
+     - Gratis-Kontingent mit Zahlen: Anfragen, Speicher, Bandbreite, DB-Größe;
+     - wann es kostet;
+     - ob der Gratis-Plan kommerzielle Nutzung erlaubt (Vercel Hobby z. B. vermutlich nur nicht-kommerziell, bitte prüfen);
+     - Einschlafen bei Inaktivität (Supabase Free);
+     - EU-Region.
    - Zu persistieren: Spieler-Session, Lean Memory je Spieler/NPC, NPC-Daten, World-Builder-Stände, Configs/Builds.
    - Format: unsere `kfb.*`-Schemas, ein Adapter, local-first mit Sync.
 2. **Login:** E-Mail-Link, Cloudflare Access, „Sign in with ChatGPT“ (Login + Plan-Kontingent, Teilnahme am Test für gehostete Apps), weitere OAuth-Anbieter.

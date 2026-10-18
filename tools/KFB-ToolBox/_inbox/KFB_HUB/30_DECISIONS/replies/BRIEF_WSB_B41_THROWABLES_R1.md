@@ -43,7 +43,17 @@
 - Prüfstand: die 3 Wurfkörper einzeln + in der Faust (Achsenlinie).
 - Streifen: Wurf Medium + Large je Clip; Brick-Fish-Duell (Wurf → Treffer bzw. Ausweichen) mit 2 Figuren.
 
+**Spuren nach Explosion (Georg-Nachtrag)**
+- Krater bzw. Delle im Terrain: 3 Größen (Granate, Bombe, Fluff-Bombe nur flache Mulde).
+  - Als Knet-Mulde mit aufgeworfenem Rand.
+  - Lieferung als Höhen-Stempel (Graustufen-Heightmap 512²) + kleines Rand-Mesh, damit WS1 den Boden verformen kann.
+- Schmauch- und Explosionsspur: schwarzer Stern um das Aufprall-Zentrum, klassisch Comic.
+  - Als Decal-Textur (Alpha, 3 Varianten, gezackte Strahlen, Knet-Körnung, nicht digital-glatt).
+  - Bei der Fluff-Bombe stattdessen ein bunter Fluff-Stern.
+- Aus dem Krater ploppen Fluff-Kugeln heraus (Beute); Anker `KFB_Loot_Origin` im Kraterzentrum.
+- Alles temporär: Krater und Stern bilden sich zurück (Knet glättet sich, Spur verblasst). Die Stempel bitte so liefern, dass WS1 sie über die Zeit ausblenden kann (Höhe × Faktor 1→0).
+
 **Für WS1 / WSV (nicht WSB)**
-- **WS1:** Flugbahn, Aufprall und Explosion als Zusatz zum Zerstörungs-Modus (V-514), dieselbe Partikel- und Auflösungs-Logik (V-533/V-535). Fluff-Bombe = Goo-Freiwaschen in einem Radius.
+- **WS1:** Flugbahn, Aufprall und Explosion als Zusatz zum Zerstörungs-Modus (V-514), dieselbe Partikel- und Auflösungs-Logik (V-533/V-535). Fluff-Bombe = Goo-Freiwaschen in einem Radius. Krater: Terrain-Delle per Höhen-Stempel + Stern-Decal, Fluff ploppt aus dem Krater (Ernte-Logik V-484). Temporär mit Rückbildung. Das ist eine abgeleitete Form der God-Mode-Terrainverformung: ein Terrain-Verformungs-Modul (dauerhaft für Terraforming, temporär mit Rückbildung für Einschläge und Fahrspuren; Joyride hat dafür nichts, nur haftende Knetkrümel in clay-vfx.v1.js).
 - **WSV:** Das Brick-Fish-Duell ist ein Kandidat für ein Comic-Motion-Video.
 - **SFX:** `40_AUDIO/elevenlabs_r1/throwables_r1` macht WS0.
