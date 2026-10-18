@@ -7734,6 +7734,21 @@
    "applies": "Pilot jetzt"
   },
   {
+   "id": "V-549",
+   "date": "2026-10-19",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "KayKit Fluff-Farm (Georg 19.10.): Farm-Szenerie mit den 4 Farmern aus KayKit Mystery Series 6 / Character 12 (Promo Juni 2026, Kauf-Asset, privat), Schubkarren, Möhren, Salat & Co., helles Kornfeld, Zäune, KayKit Nature, roter KayKit-Traktor (später KFB-Fahrzeug) – bunt, cozy, lebendig. Dazu immer 3 aktive Cube Pets als Hof-/Kayfabe-Nutztiere (Pet-Studio-Rigging, KFB-Augen, vorerst ohne Mund) und bunter Fluff aller Sorten an Bäumen und auf dem Feld mit Fallobst-Animation. Erstes Diorama, das WSB als Scenelet (kfb.scenelet/1) für die Bühne (V-548) liefert. Brief B44.",
+   "values": {},
+   "owner": "WSB (B44) · WS0 (Bühne) · Georg (Farmer-Pack von Patreon)",
+   "check": "Scenelet Fluff-Farm in der Bühne",
+   "source": "Georg 19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Erste cozy Welt-Szene als Scenelet – Test für Farm-, Pet- und Fluff-Kreislauf.",
+   "applies": "B44 jetzt"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7821,7 +7836,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:914",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:915",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

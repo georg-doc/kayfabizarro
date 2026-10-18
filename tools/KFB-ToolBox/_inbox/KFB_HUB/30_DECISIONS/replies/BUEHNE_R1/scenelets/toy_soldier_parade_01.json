@@ -1,0 +1,129 @@
+{
+ "schema": "kfb.scenelet/1",
+ "id": "toy_soldier_parade_01",
+ "title": "Spielzeugsoldat · Parade mit Gewehr",
+ "kind": "vignette",
+ "version": 1,
+ "status": "review",
+ "source": {
+  "from": "wsb-b11",
+  "ref": "50_BLENDER/B11 r5c (Squad 1, Stern)",
+  "converter": "manual"
+ },
+ "units": "kaykit",
+ "up": "y",
+ "forward": "+z",
+ "assets": {
+  "toy_soldier": {
+   "ref": "assets/toy_soldier_squad1.r5c.glb.b64.txt",
+   "sha256": "55bf7522c6c07773296413e2c9ad8a4867e32070125bfb8423ef775433e5932c",
+   "private": true,
+   "rig": "Rig_Medium",
+   "encoding": "base64"
+  }
+ },
+ "actors": [
+  {
+   "id": "soldier_1",
+   "asset": "toy_soldier",
+   "role": "lead",
+   "p": [
+    0,
+    0,
+    0
+   ],
+   "ry": 0,
+   "s": 1,
+   "card": null,
+   "clip": "kfb_salute_squad_a",
+   "loop": true,
+   "phase": 0,
+   "attachments": [
+    {
+     "id": "rifle",
+     "node": "Squad_Rifle",
+     "bone": "hand.l",
+     "axis": "carry",
+     "note": "Trage-Pose (King's Guard), Ausnahme von V-536"
+    }
+   ],
+   "audio": {
+    "signature": [
+     {
+      "on": "step",
+      "sfx": "interactions_r1/I0x_toy_step"
+     }
+    ],
+    "melody": {
+     "leitmotif": "toy_soldier",
+     "scale": "march_major",
+     "instrument": "snare_fife"
+    }
+   }
+  }
+ ],
+ "props": [],
+ "timeline": {
+  "clock": {
+   "bpm": null,
+   "fps": 30
+  },
+  "tracks": [],
+  "cues": []
+ },
+ "cameras": [
+  {
+   "id": "threeq",
+   "preset": "threeq"
+  },
+  {
+   "id": "front",
+   "preset": "front"
+  },
+  {
+   "id": "side",
+   "preset": "side"
+  },
+  {
+   "id": "near_face",
+   "preset": "near_face"
+  }
+ ],
+ "light": {
+  "rig": "kfb-stage-light.v1.1",
+  "mood": "MOODS_MESA",
+  "tod": "day"
+ },
+ "palette": null,
+ "audio": {
+  "ambience": [],
+  "music": null
+ },
+ "world": {
+  "anchor": [
+   0,
+   0,
+   0
+  ],
+  "footprint": {
+   "shape": "circle",
+   "r": 0.6
+  },
+  "tags": [
+   "toy",
+   "military",
+   "parade"
+  ]
+ },
+ "review": {
+  "gates": [
+   "G1",
+   "G3"
+  ],
+  "refs": [
+   "V-509",
+   "V-536",
+   "Hub q53/q71"
+  ]
+ }
+}

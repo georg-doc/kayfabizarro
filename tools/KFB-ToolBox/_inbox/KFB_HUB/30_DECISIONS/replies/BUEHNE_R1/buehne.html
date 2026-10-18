@@ -1,0 +1,310 @@
+<title>KFB Bühne</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: Werkbank – links die Live-Bühne (3D), rechts eine Seitenleiste mit Scenelet, Editor, Abnahme; Donor Resident Atlas S17 (Paper) */
+:root {
+  --page: #cfccc4; --panel: #efece6; --surface: #f6f4ef; --input: #fffdf8; --rail: #e3e0d9; --hover: #dedbd4;
+  --ink: #1f2022; --muted: #5c6065; --line: #c9c5bc;
+  --ok: #4d6b55; --warn: #8a5a12; --err: #a33d3d; --accent: #2c5f8a;
+  --shadow: 0 6px 24px rgba(31,32,34,.10);
+  --f-ui: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --page: #17181a; --panel: #212326; --surface: #1b1d20; --input: #26292d; --rail: #2b2e32; --hover: #30343a;
+  --ink: #ecebe6; --muted: #a6a9ad; --line: #3a3e44; --ok: #7fa889; --warn: #d9a54f; --err: #e07a7a; --accent: #7fb0dc;
+  --shadow: 0 6px 24px rgba(0,0,0,.35); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --page: #17181a; --panel: #212326; --surface: #1b1d20; --input: #26292d; --rail: #2b2e32; --hover: #30343a;
+  --ink: #ecebe6; --muted: #a6a9ad; --line: #3a3e44; --ok: #7fa889; --warn: #d9a54f; --err: #e07a7a; --accent: #7fb0dc;
+  --shadow: 0 6px 24px rgba(0,0,0,.35); color-scheme: dark }
+html, body { height: 100% }
+body { background: var(--page); color: var(--ink); font: 14px/1.45 var(--f-ui); }
+#app { display: grid; grid-template-rows: auto 1fr; height: 100%; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 12px; gap: 12px; box-sizing: border-box }
+header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+header h1 { font-size: 17px; font-weight: 600; margin: 0; letter-spacing: .01em }
+header .sub { color: var(--muted); font-size: 13px }
+select, button, input, textarea { font: inherit; color: var(--ink) }
+select, input[type=text], textarea { background: var(--input); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px }
+button { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; cursor: pointer }
+button:hover { background: var(--hover) } button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px }
+button[aria-pressed="true"] { background: var(--ink); color: var(--panel); border-color: var(--ink) }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto }
+.chip { font: 500 12px/1 var(--f-mono); padding: 5px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted) }
+.chip.ok { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 45%, var(--line)) }
+.chip.bad { color: var(--err); border-color: color-mix(in srgb, var(--err) 45%, var(--line)) }
+.chip.busy { color: var(--warn) }
+main { display: grid; grid-template-columns: minmax(0,1fr) 340px; gap: 12px; min-height: 0 }
+@media (max-width: 860px) { main { grid-template-columns: 1fr; grid-template-rows: minmax(320px, 60vh) auto } #app { height: auto } }
+.stage { position: relative; background: #f3ece0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; min-height: 320px; box-shadow: var(--shadow) }
+.stage canvas { display: block; width: 100%; height: 100% }
+.stage .msg { position: absolute; inset: 0; display: grid; place-items: center; color: #5c6065; font: 500 13px var(--f-mono); pointer-events: none }
+.transport { position: absolute; left: 10px; right: 10px; bottom: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: color-mix(in srgb, var(--panel) 92%, transparent); border: 1px solid var(--line); border-radius: 8px; padding: 8px }
+.transport input[type=range] { flex: 1 1 160px; min-width: 120px; accent-color: var(--accent) }
+.transport .t { font: 500 12px var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; min-width: 92px }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--rail) }
+.seg button { border: 0; border-radius: 0; background: transparent; padding: 5px 9px } .seg button + button { border-left: 1px solid var(--line) }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--panel) }
+aside { display: flex; flex-direction: column; gap: 10px; min-height: 0; overflow: auto }
+details { background: var(--panel); border: 1px solid var(--line); border-radius: 8px }
+summary { cursor: pointer; padding: 10px 12px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center }
+summary::after { content: "▾"; color: var(--muted); font-size: 12px } details:not([open]) summary::after { content: "▸" }
+.body { padding: 0 12px 12px; display: grid; gap: 8px }
+.kv { display: grid; grid-template-columns: 96px minmax(0,1fr); gap: 4px 10px; font-size: 13px }
+.kv dt { color: var(--muted) } .kv dd { margin: 0; overflow-wrap: anywhere }
+.mono { font-family: var(--f-mono); font-size: 12px; font-variant-numeric: tabular-nums }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center }
+.hint { color: var(--muted); font-size: 12px }
+textarea { width: 100%; box-sizing: border-box; min-height: 64px; resize: vertical }
+.verd { display: grid; gap: 6px }
+.verd .it { border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 8px; font-size: 13px }
+.verd .it b { font-family: var(--f-mono); font-size: 12px }
+.verd .it b.PASS { color: var(--ok) } .verd .it b.TUNE { color: var(--warn) } .verd .it b.FAIL { color: var(--err) }
+pre.json { margin: 0; max-height: 220px; overflow: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 8px; font: 11px/1.4 var(--f-mono) }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto } }
+</style>
+
+<div id="app">
+  <header>
+    <h1>KFB Bühne</h1>
+    <span class="sub">Scenelets live prüfen, justieren, abnehmen · Prüfstand-Licht, Knete, KFB-Augen</span>
+    <label class="sub" for="selScenelet">Scenelet</label>
+    <select id="selScenelet"></select>
+    <div class="chips" id="chips"><span class="chip busy">lädt …</span></div>
+  </header>
+  <main>
+    <section class="stage" id="stage" aria-label="3D-Bühne">
+      <canvas id="cv"></canvas>
+      <div class="msg" id="msg">Bühne lädt …</div>
+      <div class="transport">
+        <button id="btnPlay" aria-pressed="true" title="Abspielen / Pause">❚❚ Pause</button>
+        <select id="selClip" aria-label="Clip"></select>
+        <input type="range" id="scrub" min="0" max="1000" value="0" aria-label="Zeitleiste">
+        <span class="t" id="tlabel">0.00 / 0.00 s</span>
+        <div class="seg" id="segCam" role="group" aria-label="Kamera">
+          <button data-cam="front">vorn</button><button data-cam="threeq" aria-pressed="true">¾</button><button data-cam="side">Seite</button><button data-cam="near_face">nah</button>
+        </div>
+        <div class="seg" id="segTod" role="group" aria-label="Tageszeit">
+          <button data-tod="1" aria-pressed="true">Tag</button><button data-tod="0.5">Gold</button><button data-tod="0">Nacht</button>
+        </div>
+      </div>
+    </section>
+    <aside>
+      <details open>
+        <summary>Scenelet</summary>
+        <div class="body">
+          <dl class="kv" id="info"></dl>
+          <details><summary class="hint">JSON (kfb.scenelet/1)</summary><div class="body"><pre class="json" id="json"></pre></div></details>
+        </div>
+      </details>
+      <details open>
+        <summary>Editor</summary>
+        <div class="body">
+          <div class="row">
+            <label for="selNode" class="hint">Teil</label>
+            <select id="selNode"></select>
+          </div>
+          <div class="row">
+            <button id="btnEdit" aria-pressed="false">Verschieben</button>
+            <button id="btnRot" aria-pressed="false">Drehen</button>
+            <button id="btnReset">Zurücksetzen</button>
+          </div>
+          <div class="mono" id="nodeVals">–</div>
+          <div class="row"><button id="btnSaveFix">Korrektur speichern</button><span class="hint" id="fixState"></span></div>
+          <p class="hint">Am Gizmo ziehen. Gespeichert wird ins Scenelet (Korrektur je Teil), nicht in den Browser.</p>
+        </div>
+      </details>
+      <details open>
+        <summary>Abnahme</summary>
+        <div class="body">
+          <div class="seg" id="segVerdict" role="group" aria-label="Urteil">
+            <button data-v="PASS">PASS</button><button data-v="TUNE">TUNE</button><button data-v="FAIL">FAIL</button>
+          </div>
+          <label for="note" class="hint">Notiz</label>
+          <textarea id="note" placeholder="Was soll anders sein? (z. B. „Gewehr 2 cm tiefer in die Faust“)"></textarea>
+          <div class="row"><button id="btnSend">Abnahme senden</button><span class="hint" id="sendState"></span></div>
+          <div class="verd" id="verdicts"><p class="hint">Noch keine Abnahmen zu diesem Scenelet.</p></div>
+        </div>
+      </details>
+    </aside>
+  </main>
+</div>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { TransformControls } from 'three/addons/controls/TransformControls.js';
+import { createStageLight, applyTone, MOODS_MESA } from './stage/vendor/kfb-stage-light.v1.1.js';
+import { applyClay } from './stage/vendor/kfb-clay.v1.1.js';
+import { mountEyes, findEyeSeat } from './stage/kfb-proof-eyes.v1.js';
+
+const $ = (id) => document.getElementById(id);
+const COVE = '#f2e8d8', BG = '#f3ece0';
+const state = { scenelet: null, root: null, mixer: null, actions: {}, clip: null, playing: true, tod: 1, eyes: null,
+  nodes: {}, rest: {}, sel: null, verdict: null, db: null, unsubV: null };
+
+/* renderer, scene, cove (Prüfstand-Look) */
+const cv = $('cv'), stageEl = $('stage');
+const renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true });
+renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+applyTone(renderer, 'aces', 1);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(BG);
+const camera = new THREE.PerspectiveCamera(30, 1, 0.01, 200);
+const orbit = new OrbitControls(camera, cv); orbit.enableDamping = true;
+const ground = new THREE.Mesh(new THREE.CircleGeometry(30, 64).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: COVE, roughness: 0.95 }));
+ground.receiveShadow = true; ground.name = 'proof_cove'; scene.add(ground);
+try { applyClay(ground, THREE, { profile: 'background', seed: 'buehne_cove', scaleRef: 1.81, relief: false }); } catch (e) { console.warn('cove clay', e); }
+const actorsGroup = new THREE.Group(); scene.add(actorsGroup);
+let fit = { center: { x: 0, y: 0.8, z: 0 }, radius: 3 };
+const rig = createStageLight({ moods: MOODS_MESA, tod: () => state.tod, groundColor: () => COVE, fit: () => fit,
+  figures: () => [{ object3d: actorsGroup, status: () => ({ status: 'OK', shown: true }) }], figureLight: { distance: 3.4, up: 2.2 }, mapSize: 2048 });
+scene.add(rig.object3d);
+const tc = new TransformControls(camera, cv); tc.setSize(0.8); scene.add(tc.getHelper());
+tc.addEventListener('dragging-changed', (e) => { orbit.enabled = !e.value; });
+tc.addEventListener('objectChange', () => showNode());
+
+function resize() { const r = stageEl.getBoundingClientRect(); const w = Math.max(1, r.width), h = Math.max(1, r.height); renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+new ResizeObserver(resize).observe(stageEl);
+
+/* camera presets around the actor bounds */
+let bounds = new THREE.Box3(new THREE.Vector3(-0.5, 0, -0.5), new THREE.Vector3(0.5, 1.6, 0.5));
+function setCam(name) {
+  const c = bounds.getCenter(new THREE.Vector3()), s = bounds.getSize(new THREE.Vector3()), h = Math.max(s.y, 0.5);
+  const d = h * 2.6, dirs = { front: [0, 0.12, 1], threeq: [0.62, 0.22, 0.78], side: [1, 0.12, 0], near_face: [0.25, 0.08, 1] };
+  const v = new THREE.Vector3(...(dirs[name] || dirs.threeq)).normalize();
+  const target = name === 'near_face' ? new THREE.Vector3(c.x, bounds.min.y + h * 0.82, c.z) : c.clone();
+  camera.position.copy(target).addScaledVector(v, name === 'near_face' ? h * 0.9 : d); orbit.target.copy(target); orbit.update();
+  document.querySelectorAll('#segCam button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cam === name)));
+}
+$('segCam').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) setCam(b.dataset.cam); });
+$('segTod').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; state.tod = +b.dataset.tod; document.querySelectorAll('#segTod button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); });
+
+/* chips (gate-lite) */
+function chips(list) { $('chips').replaceChildren(...list.map(([t, k]) => { const s = document.createElement('span'); s.className = 'chip ' + (k || ''); s.textContent = t; return s; })); }
+
+/* load scenelet */
+const loader = new GLTFLoader();
+async function loadIndex() {
+  const idx = await (await fetch('scenelets/index.json')).json();
+  $('selScenelet').replaceChildren(...idx.items.map((it) => { const o = document.createElement('option'); o.value = it.file; o.textContent = it.title; return o; }));
+  $('selScenelet').onchange = () => loadScenelet($('selScenelet').value);
+  if (idx.items[0]) await loadScenelet(idx.items[0].file);
+}
+async function loadScenelet(file) {
+  $('msg').hidden = false; $('msg').textContent = 'Scenelet lädt …'; chips([['lädt …', 'busy']]);
+  tc.detach(); actorsGroup.clear(); state.actions = {}; state.mixer = null; state.nodes = {}; state.rest = {}; state.eyes = null;
+  const sc = await (await fetch(file)).json(); state.scenelet = sc;
+  renderInfo(sc); $('json').textContent = JSON.stringify(sc, null, 1);
+  const a = sc.actors[0], asset = sc.assets[a.asset];
+  let g;
+  if (asset.encoding === 'base64') {   /* artifacts do not serve .glb: the model ships as base64 text */
+    const b64 = (await (await fetch(asset.ref)).text()).replace(/\s+/g, '');
+    const bin = Uint8Array.from(atob(b64), (ch) => ch.charCodeAt(0));
+    g = await loader.parseAsync(bin.buffer, '');
+  } else g = await loader.loadAsync(asset.ref);
+  const root = g.scene; root.position.set(...(a.p || [0, 0, 0])); root.rotation.y = THREE.MathUtils.degToRad(a.ry || 0); root.scale.setScalar(a.s || 1);
+  root.traverse((m) => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true; } });
+  actorsGroup.add(root); state.root = root;
+  const clay = applyClay(root, THREE, { profile: 'character', seed: sc.id, scaleRef: 'object' });
+  let eyesOK = false;
+  if (findEyeSeat(root, a.card).seat) { const ey = mountEyes(THREE, root, { card: a.card, applyClay, clayRef: clay?.scaleRef, seed: sc.id }); if (ey?.status === 'OK') { ey.setState('rest'); state.eyes = ey; eyesOK = true; } }
+  /* clips */
+  state.mixer = new THREE.AnimationMixer(root);
+  for (const c of g.animations) state.actions[c.name] = state.mixer.clipAction(c);
+  $('selClip').replaceChildren(...g.animations.map((c) => { const o = document.createElement('option'); o.value = c.name; o.textContent = c.name; return o; }));
+  const first = a.clip && state.actions[a.clip] ? a.clip : g.animations[0]?.name;
+  if (first) { $('selClip').value = first; playClip(first); }
+  /* editable nodes: attachments + props */
+  const editable = (a.attachments || []).map((x) => x.node).filter(Boolean);
+  root.traverse((o) => { if (editable.includes(o.name)) { state.nodes[o.name] = o; state.rest[o.name] = { p: o.position.clone(), q: o.quaternion.clone() }; } });
+  $('selNode').replaceChildren(...Object.keys(state.nodes).map((n) => { const o = document.createElement('option'); o.value = n; o.textContent = n; return o; }));
+  state.sel = Object.keys(state.nodes)[0] || null; showNode();
+  /* bounds + light fit */
+  root.updateMatrixWorld(true); bounds = new THREE.Box3().setFromObject(root);
+  const c = bounds.getCenter(new THREE.Vector3()), r = bounds.getSize(new THREE.Vector3()).length() / 2;
+  fit = { center: { x: c.x, y: c.y, z: c.z }, radius: Math.max(0.6, r * 1.4) };
+  setCam('threeq');
+  await applySavedFix();
+  chips([[eyesOK ? 'G1 Augen ok' : 'G1 Augen fehlen', eyesOK ? 'ok' : 'bad'], [bounds.min.y > -0.02 && bounds.min.y < 0.05 ? 'G3 steht' : 'G3 prüfen', bounds.min.y > -0.02 && bounds.min.y < 0.05 ? 'ok' : 'busy'], [g.animations.length + ' Clips', 'ok'], ['Knete v1.1', 'ok']]);
+  $('msg').hidden = true;
+  subscribeVerdicts();
+}
+function renderInfo(sc) {
+  const a = sc.actors[0], rows = [['Titel', sc.title], ['Art', sc.kind], ['Status', sc.status], ['Quelle', sc.source?.ref || '–'], ['Darsteller', a.id + ' · ' + (sc.assets[a.asset]?.rig || '')],
+    ['Gewehr', (a.attachments || []).map((x) => x.node + ' an ' + x.bone + ' (' + x.axis + ')').join(', ') || '–'], ['Licht', sc.light?.rig + ' · ' + sc.light?.mood], ['Melodie', a.audio?.melody ? a.audio.melody.leitmotif + ' · ' + a.audio.melody.scale : '–'], ['Bezüge', (sc.review?.refs || []).join(', ')]];
+  $('info').replaceChildren(...rows.flatMap(([k, v]) => { const dt = document.createElement('dt'); dt.textContent = k; const dd = document.createElement('dd'); dd.textContent = v; return [dt, dd]; }));
+}
+
+/* transport */
+function playClip(name) {
+  Object.values(state.actions).forEach((x) => x.stop()); const act = state.actions[name]; if (!act) return;
+  act.reset(); act.setLoop(THREE.LoopRepeat, Infinity); act.play(); state.clip = act; act.paused = !state.playing;
+}
+$('selClip').onchange = () => playClip($('selClip').value);
+$('btnPlay').onclick = () => { state.playing = !state.playing; if (state.clip) state.clip.paused = !state.playing; $('btnPlay').setAttribute('aria-pressed', String(state.playing)); $('btnPlay').textContent = state.playing ? '❚❚ Pause' : '▶ Abspielen'; };
+$('scrub').oninput = () => { if (!state.clip) return; const d = state.clip.getClip().duration; state.clip.time = d * $('scrub').value / 1000; state.mixer.update(0); if (state.playing) $('btnPlay').click(); };
+
+/* editor */
+function showNode() {
+  const o = state.nodes[state.sel]; if (!o) { $('nodeVals').textContent = '–'; return; }
+  const p = o.position, e = new THREE.Euler().setFromQuaternion(o.quaternion), d = (r) => THREE.MathUtils.radToDeg(r).toFixed(1);
+  $('nodeVals').textContent = `p ${p.x.toFixed(3)} ${p.y.toFixed(3)} ${p.z.toFixed(3)} · r ${d(e.x)}° ${d(e.y)}° ${d(e.z)}°`;
+}
+$('selNode').onchange = () => { state.sel = $('selNode').value; if (tc.object) tc.attach(state.nodes[state.sel]); showNode(); };
+function setTool(mode) {
+  const on = tc.object && tc.mode === mode; if (on) { tc.detach(); } else if (state.nodes[state.sel]) { tc.setMode(mode); tc.setSpace('local'); tc.attach(state.nodes[state.sel]); }
+  $('btnEdit').setAttribute('aria-pressed', String(!!tc.object && tc.mode === 'translate')); $('btnRot').setAttribute('aria-pressed', String(!!tc.object && tc.mode === 'rotate'));
+}
+$('btnEdit').onclick = () => setTool('translate'); $('btnRot').onclick = () => setTool('rotate');
+$('btnReset').onclick = () => { const o = state.nodes[state.sel], r = state.rest[state.sel]; if (o && r) { o.position.copy(r.p); o.quaternion.copy(r.q); showNode(); } };
+
+/* db: corrections + verdicts */
+const ready = (async () => { try { return await window.claude?.use?.('db'); } catch (e) { return null; } })();
+async function applySavedFix() {
+  const db = await ready; state.db = db; if (!db) { $('fixState').textContent = 'Speichern nicht verfügbar (nicht angemeldet).'; return; }
+  try { const s = await db.doc('corrections/' + state.scenelet.id).get(); const nodes = s.exists ? s.data().nodes || {} : {};
+    for (const [n, v] of Object.entries(nodes)) { const o = state.nodes[n]; if (o && v.p && v.q) { o.position.fromArray(v.p); o.quaternion.fromArray(v.q); } }
+    if (Object.keys(nodes).length) $('fixState').textContent = 'Gespeicherte Korrektur geladen.'; showNode();
+  } catch (e) { console.warn(e); }
+}
+$('btnSaveFix').onclick = async () => {
+  const db = await ready; if (!db) { $('fixState').textContent = 'Speichern nicht verfügbar.'; return; }
+  const nodes = {}; for (const [n, o] of Object.entries(state.nodes)) nodes[n] = { p: o.position.toArray().map((v) => +v.toFixed(5)), q: o.quaternion.toArray().map((v) => +v.toFixed(6)) };
+  try { await db.doc('corrections/' + state.scenelet.id).set({ scenelet: state.scenelet.id, nodes, at: new Date().toISOString() }); $('fixState').textContent = 'Korrektur gespeichert.'; }
+  catch (e) { $('fixState').textContent = 'Nicht gespeichert: ' + (e?.code || e?.message || e); }
+};
+$('segVerdict').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; state.verdict = b.dataset.v; document.querySelectorAll('#segVerdict button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); });
+$('btnSend').onclick = async () => {
+  const db = await ready; if (!db) { $('sendState').textContent = 'Senden nicht verfügbar (nicht angemeldet).'; return; }
+  if (!state.verdict) { $('sendState').textContent = 'Bitte zuerst PASS, TUNE oder FAIL wählen.'; return; }
+  const cam = { pos: camera.position.toArray().map((v) => +v.toFixed(3)), target: orbit.target.toArray().map((v) => +v.toFixed(3)) };
+  try { await db.collection('reviews').add({ scenelet: state.scenelet.id, verdict: state.verdict, note: $('note').value.trim(), clip: state.clip?.getClip().name || null, t: state.clip ? +state.clip.time.toFixed(3) : null, camera: cam, at: new Date().toISOString(), status: 'neu' });
+    $('sendState').textContent = 'Abnahme gesendet. WS0 übernimmt sie in den Hub.'; $('note').value = ''; }
+  catch (e) { $('sendState').textContent = 'Nicht gesendet: ' + (e?.code || e?.message || e); }
+};
+async function subscribeVerdicts() {
+  const db = await ready; if (!db) return; state.unsubV?.();
+  state.unsubV = db.collection('reviews').where('scenelet', '==', state.scenelet.id).onSnapshot((snap) => {
+    const items = snap.docs.map((d) => d.data()).sort((a, b) => String(b.at).localeCompare(String(a.at)));
+    if (!items.length) { $('verdicts').replaceChildren(Object.assign(document.createElement('p'), { className: 'hint', textContent: 'Noch keine Abnahmen zu diesem Scenelet.' })); return; }
+    $('verdicts').replaceChildren(...items.map((v) => { const d = document.createElement('div'); d.className = 'it'; const b = document.createElement('b'); b.className = v.verdict; b.textContent = v.verdict; const s = document.createElement('span'); s.textContent = ' · ' + new Date(v.at).toLocaleString('de-DE') + (v.note ? ' · ' + v.note : ''); d.append(b, s); return d; }));
+  }, (e) => console.warn('reviews', e));
+}
+
+/* loop: clip, light, gentle blink */
+const clock = new THREE.Clock(); let blinkT = 3;
+function tick() {
+  const dt = Math.min(0.05, clock.getDelta());
+  if (state.mixer && state.playing) state.mixer.update(dt);
+  if (state.clip) { const d = state.clip.getClip().duration || 1, t = state.clip.time % d; if (state.playing) $('scrub').value = String(Math.round(1000 * t / d)); $('tlabel').textContent = `${t.toFixed(2)} / ${d.toFixed(2)} s`; }
+  if (state.eyes) { blinkT -= dt; if (blinkT < 0.12 && blinkT > 0) state.eyes.setState('closed'); else if (blinkT <= 0) { state.eyes.setState('rest'); blinkT = 2.5 + Math.random() * 3; } }
+  orbit.update(); rig.update(dt, { camera }); renderer.render(scene, camera); requestAnimationFrame(tick);
+}
+resize(); requestAnimationFrame(tick);
+loadIndex().catch((e) => { $('msg').hidden = false; $('msg').textContent = 'Scenelet konnte nicht geladen werden: ' + (e?.message || e); chips([['Fehler', 'bad']]); console.error(e); });
+</script>
