@@ -3,6 +3,31 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 89 · 18.10. vormittags · combo/r2 komplett gebaut, voller run-all läuft · Elan S1 (Skyriding-PoC) grün · R1a, V-450, Licht v1.1, B22 eingebaut
+
+**Branch `combo/r2` @6bb3c4f** (lokal; Push, Spiegel und Branch-Vorschau nach dem vollen run-all, der jetzt im eigenen Test-Worktree läuft):
+- **C1 Kamera** (Bewegung): Jitter/Orbit/God PASS, Clip, zwei M3-Fixes aus dem Clip (Rampen-Sog, Bremsen ≠ Klemmen).
+- **C2 / V-429 / clay v1.1 / C3 / HUD R5f / C3b** wie §80.
+- **Elan S1** (Bewegung, nach meiner Recherche §88):
+  - Schwungflug der Figur (G in der Luft, `flight=elan`), Ringkurs mit 10 Ringen, 6 Knet-Perlen als Platzhalter, Komfortmodus.
+  - Flug-VFX byte-gleich (`kfb-flight-vfx.js`): Kondensstreifen, Manöver-Linien, Überflug-Staub.
+  - Node-Gates G1–G5, G7 PASS (Energie ±0,11 %; unendlicher Flug: im Mittel 109 m ab 80 m gehalten, flaches Gleiten landet nach 37 s). Browser-Gate PASS.
+  - Ein echter Modellfehler aus dem Browser ist behoben (Fallschirm-Deckel fing den Sturz ab).
+  - Grenze im Spiel: Die Flugwelt endet bei Radius 159 m und Höhe 260 m (→ größere Welt, §85).
+- **R1a Antriebe** (V-481) für Georgs 6 Racer (`#m1,car,racer=<id>`):
+  - Glow-Kern + Fahne mit Schockdiamanten, Lüfter, Funken, Motormodell mit Gängen/Backfire, surge/ascent (Stauchen → Strecken), Bodennähe-Staub an den Schwebe-Ankern.
+  - `test/r1a.mjs` PASS (Dragster, Panzer-Gleiter, Thunderjet: Anker am Modell, Schub, Hochschalten, Boost + surge, Modul < 0,5 ms).
+- **V-450 Fundsachen:** WSB-B28 r2 (53 Stück, Beute-Tabelle byte-gleich), Unterkante 0,15 m (gemessen 0,133–0,170 mit Wippen), 7 Stück 35° gekippt. `c3b` PASS.
+- **Licht v1.1** (V-440, byte-gleich): Vorderseiten werfen Schatten (`castFrontFaces`), Bühne und Laufwelt umgestellt.
+- **B22 r3 Lampen:** 2–3 Arm-Lampen an der Tafel, Lichtkeile nach Rig-glow, nachts Licht-Inseln über die Praktischen. Die Karte ist nachts lesbar (≈ 81 % vom Tag). Licht-Test angepasst.
+  - Befund: GLTFLoader entfernt Punkte aus Knotennamen (`KFB_Mount_board.001` → `…board001`). Bitte bei künftigen Ankernamen ohne Punkt liefern (an WSB).
+
+**Offen bzw. als Nächstes:**
+- Amphitheater noch auf `clayLook` statt clay v1.1: Die Rollen-Umfärbung hängt am alten Shader und braucht einen sauberen Umbau.
+- Perf-Messung auf echter GPU in der Branch-Vorschau.
+- Elan S2 = Racer: Schwebefeder, Kesseldruck, Düsenfahnen an meinen Ankern.
+- C4 wartet auf den privaten Weg (§87).
+
 ## 88 · 18.10. · Dragonriding-Recherche fertig · R1a Antriebe gebaut · Elan-PoC an die Bewegungs-Sitzung
 
 **Recherche** (WS1, mit Quellen, lokal `~/kfb-ws1/research/DRAGONRIDING_RESEARCH_R1.md`; bei Bedarf lege ich sie ins Register). Kern:
