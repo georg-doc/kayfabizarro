@@ -1,0 +1,345 @@
+{
+  "revision": "0.9.0",
+  "hostContexts": 1,
+  "schema": "kfb.racer-gears/1",
+  "active": false,
+  "gear": 1,
+  "rpm": 900,
+  "speedKmh": 0,
+  "throttle": 0,
+  "brake": 0,
+  "mode": "drive",
+  "driveMode": "manual",
+  "tuned": true,
+  "shiftUntil": 0,
+  "loadMs": 1827,
+  "loaded": 26,
+  "decoded": [
+    {
+      "id": "L1_idle",
+      "duration": 5.95,
+      "sampleRate": 44100
+    },
+    {
+      "id": "L3_mid",
+      "duration": 5.954829931972789,
+      "sampleRate": 44100
+    },
+    {
+      "id": "L3_mid_original",
+      "duration": 5.95,
+      "sampleRate": 44100
+    },
+    {
+      "id": "L2_low",
+      "duration": 5.95,
+      "sampleRate": 44100
+    },
+    {
+      "id": "L5_overrun",
+      "duration": 5.95,
+      "sampleRate": 44100
+    },
+    {
+      "id": "L4_high_original",
+      "duration": 5.95,
+      "sampleRate": 44100
+    },
+    {
+      "id": "O1_upshift",
+      "duration": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "O2b_backfire_loud",
+      "duration": 1.48,
+      "sampleRate": 44100
+    },
+    {
+      "id": "L4_high",
+      "duration": 5.9222448979591835,
+      "sampleRate": 44100
+    },
+    {
+      "id": "O2c_backfire_double",
+      "duration": 1.48,
+      "sampleRate": 44100
+    },
+    {
+      "id": "crackle-1",
+      "duration": 0.44598639455782313,
+      "sampleRate": 44100
+    },
+    {
+      "id": "crackle-2",
+      "duration": 0.44598639455782313,
+      "sampleRate": 44100
+    },
+    {
+      "id": "crackle-3",
+      "duration": 0.44598639455782313,
+      "sampleRate": 44100
+    },
+    {
+      "id": "crackle-4",
+      "duration": 0.44598639455782313,
+      "sampleRate": 44100
+    },
+    {
+      "id": "O4_downshift_blip",
+      "duration": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "O5_boost",
+      "duration": 2,
+      "sampleRate": 44100
+    },
+    {
+      "id": "S2_brake_downshifts",
+      "duration": 5,
+      "sampleRate": 44100
+    },
+    {
+      "id": "S1_accel_upshifts",
+      "duration": 8,
+      "sampleRate": 44100
+    },
+    {
+      "id": "F1_prop_loop",
+      "duration": 5.95,
+      "sampleRate": 44100
+    },
+    {
+      "id": "F3_wind_rush_loop",
+      "duration": 5.95,
+      "sampleRate": 44100
+    },
+    {
+      "id": "F4_takeoff",
+      "duration": 3,
+      "sampleRate": 44100
+    },
+    {
+      "id": "F2_jet_antigrav_loop",
+      "duration": 5.95,
+      "sampleRate": 44100
+    },
+    {
+      "id": "H1_charge",
+      "duration": 4,
+      "sampleRate": 44100
+    },
+    {
+      "id": "H2_jump",
+      "duration": 3,
+      "sampleRate": 44100
+    },
+    {
+      "id": "H3_tunnel_loop",
+      "duration": 5.95,
+      "sampleRate": 44100
+    },
+    {
+      "id": "H4_exit",
+      "duration": 2,
+      "sampleRate": 44100
+    }
+  ],
+  "activeLoops": 0,
+  "activeOneShots": 0,
+  "rms": 0,
+  "limiterReductionDb": -0.00012332235928624868,
+  "moduleCreatedAudioContexts": 0,
+  "loopCrossfadeSeconds": 0.05,
+  "clock": "injected AudioContext.currentTime / host tick",
+  "events": [
+    {
+      "type": "one-shot",
+      "id": "O1_upshift",
+      "at": 6.96437641723356,
+      "rate": 0.9854850716464788,
+      "gain": 0.7151601314544678
+    },
+    {
+      "type": "one-shot",
+      "id": "O2b_backfire_loud",
+      "at": 6.989376417233561,
+      "rate": 1.0231429647354586,
+      "gain": 0.37134724855422974
+    },
+    {
+      "type": "upshift",
+      "previous": 1,
+      "gear": 2,
+      "at": 6.9543764172335605,
+      "cutSeconds": 0.09600218889018741,
+      "speedKmh": 48.37981859410432
+    },
+    {
+      "type": "one-shot",
+      "id": "O1_upshift",
+      "at": 8.99031746031746,
+      "rate": 0.9976123469855875,
+      "gain": 0.5896421670913696
+    },
+    {
+      "type": "one-shot",
+      "id": "O2c_backfire_double",
+      "at": 9.01531746031746,
+      "rate": 1.0136860084674786,
+      "gain": 0.3586968779563904
+    },
+    {
+      "type": "upshift",
+      "previous": 2,
+      "gear": 3,
+      "at": 8.98031746031746,
+      "cutSeconds": 0.08824887683996785,
+      "speedKmh": 73.70408163265306
+    },
+    {
+      "type": "one-shot",
+      "id": "O1_upshift",
+      "at": 11.6315873015873,
+      "rate": 0.9762520563877007,
+      "gain": 0.582333505153656
+    },
+    {
+      "type": "one-shot",
+      "id": "O2b_backfire_loud",
+      "at": 11.656587301587301,
+      "rate": 0.9899757599078176,
+      "gain": 0.38660797476768494
+    },
+    {
+      "type": "upshift",
+      "previous": 3,
+      "gear": 4,
+      "at": 11.6215873015873,
+      "cutSeconds": 0.09493940859662686,
+      "speedKmh": 106.71995464852606
+    },
+    {
+      "type": "one-shot",
+      "id": "crackle-4",
+      "at": 15.973718820861677,
+      "rate": 0.9863995986102757,
+      "gain": 0.47006556391716003
+    },
+    {
+      "type": "one-shot",
+      "id": "crackle-2",
+      "at": 16.21172335600907,
+      "rate": 0.9945254334895305,
+      "gain": 0.4478107690811157
+    },
+    {
+      "type": "one-shot",
+      "id": "crackle-3",
+      "at": 16.937346938775512,
+      "rate": 1.0250078519343615,
+      "gain": 0.47811204195022583
+    },
+    {
+      "type": "one-shot",
+      "id": "crackle-2",
+      "at": 17.19857142857143,
+      "rate": 1.0165260695533211,
+      "gain": 0.4911375045776367
+    },
+    {
+      "type": "one-shot",
+      "id": "crackle-1",
+      "at": 17.39013605442177,
+      "rate": 0.9716875533799539,
+      "gain": 0.4551657438278198
+    },
+    {
+      "type": "one-shot",
+      "id": "crackle-2",
+      "at": 18.133174603174606,
+      "rate": 1.018581642585085,
+      "gain": 0.40604889392852783
+    },
+    {
+      "type": "one-shot",
+      "id": "crackle-1",
+      "at": 18.64981859410431,
+      "rate": 1.017409347877904,
+      "gain": 0.4526292681694031
+    },
+    {
+      "type": "one-shot",
+      "id": "O4_downshift_blip",
+      "at": 19.178072562358278,
+      "rate": 1.0077551544610561,
+      "gain": 0.589118242263794
+    },
+    {
+      "type": "downshift",
+      "previous": 4,
+      "gear": 3,
+      "at": 19.168072562358276,
+      "cutSeconds": 0.09766350853319494,
+      "speedKmh": 62.48396501457729
+    },
+    {
+      "type": "one-shot",
+      "id": "crackle-2",
+      "at": 19.68310657596372,
+      "rate": 1.0102806683497312,
+      "gain": 0.45721665024757385
+    },
+    {
+      "type": "one-shot",
+      "id": "O4_downshift_blip",
+      "at": 20.083650793650794,
+      "rate": 0.9928963683904218,
+      "gain": 0.6381109952926636
+    },
+    {
+      "type": "downshift",
+      "previous": 3,
+      "gear": 2,
+      "at": 20.073650793650792,
+      "cutSeconds": 0.10463607499393035,
+      "speedKmh": 43.07871720116623
+    },
+    {
+      "type": "one-shot",
+      "id": "crackle-4",
+      "at": 20.26360544217687,
+      "rate": 1.0142814169259007,
+      "gain": 0.4964062571525574
+    },
+    {
+      "type": "one-shot",
+      "id": "O4_downshift_blip",
+      "at": 20.704784580498867,
+      "rate": 1.024416259324042,
+      "gain": 0.6097471117973328
+    },
+    {
+      "type": "downshift",
+      "previous": 2,
+      "gear": 1,
+      "at": 20.694784580498865,
+      "cutSeconds": 0.0911106912020685,
+      "speedKmh": 29.76870748299323
+    },
+    {
+      "type": "one-shot",
+      "id": "crackle-3",
+      "at": 21.14015873015873,
+      "rate": 0.9919101331005069,
+      "gain": 0.5010924935340881
+    },
+    {
+      "type": "demo-complete",
+      "at": 22.08798185941043
+    }
+  ],
+  "earAcceptance": "OPEN",
+  "duckDb": 0
+}

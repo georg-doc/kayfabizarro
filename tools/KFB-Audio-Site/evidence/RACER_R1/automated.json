@@ -1,0 +1,1262 @@
+{
+  "schema": "kfb.racer-independent-test/1",
+  "date": "2026-10-18",
+  "engineSha256": "e056fcc6d40615be5bed6f224f3d8ba1bdd74d5347c4d2c4d3bd0a08c7e9e26b",
+  "manifestSha256": "c8bfbd20b93bbc1cd862de65cc03cc41711c6e6c02cc83a8cec4db8580e4304e",
+  "boundary": "Mocked AudioContext state/graph checks plus FFmpeg real private-asset decode. Not browser AV, not sonic/HUMAN acceptance.",
+  "checks": [
+    {
+      "name": "manifest closed26 assets",
+      "pass": true
+    },
+    {
+      "name": "20-second demo has3 upshifts",
+      "pass": true,
+      "detail": [
+        {
+          "type": "upshift",
+          "previous": 1,
+          "gear": 2,
+          "at": 4.866666666666666,
+          "cutSeconds": 0.10726937051163965,
+          "speedKmh": 48.33333333333333
+        },
+        {
+          "type": "upshift",
+          "previous": 2,
+          "gear": 3,
+          "at": 6.9,
+          "cutSeconds": 0.10222260834649255,
+          "speedKmh": 73.75
+        },
+        {
+          "type": "upshift",
+          "previous": 3,
+          "gear": 4,
+          "at": 9.533333333333333,
+          "cutSeconds": 0.10542597540654164,
+          "speedKmh": 106.66666666666667
+        }
+      ]
+    },
+    {
+      "name": "20-second demo has3 downshifts",
+      "pass": true,
+      "detail": [
+        {
+          "type": "downshift",
+          "previous": 4,
+          "gear": 3,
+          "at": 17.083333333333332,
+          "cutSeconds": 0.09190262788906622,
+          "speedKmh": 62.50000000000002
+        },
+        {
+          "type": "downshift",
+          "previous": 3,
+          "gear": 2,
+          "at": 18,
+          "cutSeconds": 0.10324950400507049,
+          "speedKmh": 42.857142857142854
+        },
+        {
+          "type": "downshift",
+          "previous": 2,
+          "gear": 1,
+          "at": 18.616666666666667,
+          "cutSeconds": 0.10312819627579017,
+          "speedKmh": 29.642857142857135
+        }
+      ]
+    },
+    {
+      "name": "demo stops at20s",
+      "pass": true
+    },
+    {
+      "name": "demo stop leaves zero voices",
+      "pass": true
+    },
+    {
+      "name": "all ignition cuts80–110ms",
+      "pass": true,
+      "detail": [
+        0.10726937051163965,
+        0.10222260834649255,
+        0.10542597540654164,
+        0.09190262788906622,
+        0.10324950400507049,
+        0.10312819627579017
+      ]
+    },
+    {
+      "name": "all shots bound to declared source",
+      "pass": true
+    },
+    {
+      "name": "silent O2 never scheduled",
+      "pass": true
+    },
+    {
+      "name": "shots ±3pct pitch only",
+      "pass": true
+    },
+    {
+      "name": "shots finite bounded level",
+      "pass": true
+    },
+    {
+      "name": "crackle no immediate repeat within pool",
+      "pass": true,
+      "detail": [
+        "crackle-3",
+        "crackle-2",
+        "crackle-1",
+        "crackle-3",
+        "crackle-4",
+        "crackle-2",
+        "crackle-4",
+        "crackle-3"
+      ]
+    },
+    {
+      "name": "backfire no immediate repeat within pool",
+      "pass": true,
+      "detail": [
+        "O2b_backfire_loud",
+        "O2c_backfire_double"
+      ]
+    },
+    {
+      "name": "LoopGrid equal power901..6400 sampled221points",
+      "pass": true
+    },
+    {
+      "name": "RPM drops on upshift same speed",
+      "pass": true
+    },
+    {
+      "name": "external speed/throttle/brake/gear/RPM retained",
+      "pass": true,
+      "detail": {
+        "schema": "kfb.racer-gears/1",
+        "active": true,
+        "gear": 3,
+        "rpm": 3333,
+        "speedKmh": 99,
+        "throttle": 0.4,
+        "brake": 0.2,
+        "mode": "drive",
+        "driveMode": "manual",
+        "tuned": true,
+        "shiftUntil": 22.102370296586304,
+        "loadMs": 0.028041999999999234,
+        "loaded": 26,
+        "decoded": [],
+        "activeLoops": 11,
+        "activeOneShots": 1,
+        "rms": 0,
+        "limiterReductionDb": 0,
+        "moduleCreatedAudioContexts": 0,
+        "loopCrossfadeSeconds": 0.05,
+        "clock": "injected AudioContext.currentTime / host tick",
+        "events": [
+          {
+            "type": "one-shot",
+            "id": "O1_upshift",
+            "at": 4.876666666666666,
+            "rate": 1.0020658530574291,
+            "gain": 0.6970878547251836
+          },
+          {
+            "type": "one-shot",
+            "id": "O2b_backfire_loud",
+            "at": 4.901666666666666,
+            "rate": 1.00988843456842,
+            "gain": 0.40109765317168977
+          },
+          {
+            "type": "upshift",
+            "previous": 1,
+            "gear": 2,
+            "at": 4.866666666666666,
+            "cutSeconds": 0.10726937051163965,
+            "speedKmh": 48.33333333333333
+          },
+          {
+            "type": "one-shot",
+            "id": "O1_upshift",
+            "at": 6.91,
+            "rate": 0.978479967736639,
+            "gain": 0.6076892249713773
+          },
+          {
+            "type": "upshift",
+            "previous": 2,
+            "gear": 3,
+            "at": 6.9,
+            "cutSeconds": 0.10222260834649255,
+            "speedKmh": 73.75
+          },
+          {
+            "type": "one-shot",
+            "id": "O1_upshift",
+            "at": 9.543333333333333,
+            "rate": 0.9875912284152581,
+            "gain": 0.6591485991474952
+          },
+          {
+            "type": "one-shot",
+            "id": "O2c_backfire_double",
+            "at": 9.568333333333333,
+            "rate": 1.013332929746248,
+            "gain": 0.44717403372856046
+          },
+          {
+            "type": "upshift",
+            "previous": 3,
+            "gear": 4,
+            "at": 9.533333333333333,
+            "cutSeconds": 0.10542597540654164,
+            "speedKmh": 106.66666666666667
+          },
+          {
+            "type": "one-shot",
+            "id": "crackle-3",
+            "at": 14.043333333333333,
+            "rate": 1.0028167880000547,
+            "gain": 0.4300929225507098
+          },
+          {
+            "type": "one-shot",
+            "id": "crackle-2",
+            "at": 15.576666666666666,
+            "rate": 0.9716325315320864,
+            "gain": 0.4068179009666006
+          },
+          {
+            "type": "one-shot",
+            "id": "crackle-1",
+            "at": 16.110000000000003,
+            "rate": 0.9754042972670868,
+            "gain": 0.47133910609680857
+          },
+          {
+            "type": "one-shot",
+            "id": "crackle-3",
+            "at": 16.393333333333334,
+            "rate": 1.0045306209335103,
+            "gain": 0.4604348948458954
+          },
+          {
+            "type": "one-shot",
+            "id": "crackle-4",
+            "at": 16.67666666666667,
+            "rate": 1.0055455210478976,
+            "gain": 0.4050634562759988
+          },
+          {
+            "type": "one-shot",
+            "id": "O4_downshift_blip",
+            "at": 17.093333333333334,
+            "rate": 1.0075381766492502,
+            "gain": 0.6441672516607148
+          },
+          {
+            "type": "downshift",
+            "previous": 4,
+            "gear": 3,
+            "at": 17.083333333333332,
+            "cutSeconds": 0.09190262788906622,
+            "speedKmh": 62.50000000000002
+          },
+          {
+            "type": "one-shot",
+            "id": "crackle-2",
+            "at": 17.62666666666667,
+            "rate": 1.0029285669513046,
+            "gain": 0.4282134903330088
+          },
+          {
+            "type": "one-shot",
+            "id": "O4_downshift_blip",
+            "at": 18.01,
+            "rate": 1.0054721592366695,
+            "gain": 0.7019009812288319
+          },
+          {
+            "type": "downshift",
+            "previous": 3,
+            "gear": 2,
+            "at": 18,
+            "cutSeconds": 0.10324950400507049,
+            "speedKmh": 42.857142857142854
+          },
+          {
+            "type": "one-shot",
+            "id": "O4_downshift_blip",
+            "at": 18.62666666666667,
+            "rate": 1.0259760071104391,
+            "gain": 0.6193165137375829
+          },
+          {
+            "type": "downshift",
+            "previous": 2,
+            "gear": 1,
+            "at": 18.616666666666667,
+            "cutSeconds": 0.10312819627579017,
+            "speedKmh": 29.642857142857135
+          },
+          {
+            "type": "one-shot",
+            "id": "crackle-4",
+            "at": 18.693333333333335,
+            "rate": 0.9902611642424017,
+            "gain": 0.4144800362502187
+          },
+          {
+            "type": "one-shot",
+            "id": "crackle-3",
+            "at": 19.043333333333337,
+            "rate": 0.9871403124090283,
+            "gain": 0.4210564983691797
+          },
+          {
+            "type": "demo-complete",
+            "at": 20
+          },
+          {
+            "type": "one-shot",
+            "id": "O1_upshift",
+            "at": 22.01,
+            "rate": 1.0000147167081013,
+            "gain": 0.5804093605129382
+          },
+          {
+            "type": "upshift",
+            "previous": 1,
+            "gear": 3,
+            "at": 22,
+            "cutSeconds": 0.10237029658630448,
+            "speedKmh": 99
+          }
+        ],
+        "earAcceptance": "OPEN",
+        "duckDb": 0
+      }
+    },
+    {
+      "name": "invalid NaN telemetry rejected",
+      "pass": true
+    },
+    {
+      "name": "unknown mode rejected",
+      "pass": true
+    },
+    {
+      "name": "music gives−3dB duck",
+      "pass": true
+    },
+    {
+      "name": "dialogue gives−3dB duck not stacked",
+      "pass": true
+    },
+    {
+      "name": "duck releases with inactivity",
+      "pass": true
+    },
+    {
+      "name": "prop routes targets without extra context",
+      "pass": true
+    },
+    {
+      "name": "jet routes targets without extra context",
+      "pass": true
+    },
+    {
+      "name": "hyperdrive routes targets without extra context",
+      "pass": true
+    },
+    {
+      "name": "one-shot overload capped16",
+      "pass": true
+    },
+    {
+      "name": "stop cancels every active/future source",
+      "pass": true
+    },
+    {
+      "name": "stop beats pending start generation",
+      "pass": true
+    },
+    {
+      "name": "restart after cancel succeeds",
+      "pass": true
+    },
+    {
+      "name": "accelerate uses hosttick not wallclock",
+      "pass": true
+    },
+    {
+      "name": "brake reaches zero with finite RPM",
+      "pass": true
+    },
+    {
+      "name": "hosttime gap emits at most one overdue crackle",
+      "pass": true
+    },
+    {
+      "name": "repeat Start Stop never leaves owned sources",
+      "pass": true
+    },
+    {
+      "name": "invalid empty mode rejected",
+      "pass": true
+    },
+    {
+      "name": "runtime no context creation/DOM/timer owner",
+      "pass": true
+    },
+    {
+      "name": "private original SHA L1_idle",
+      "pass": true
+    },
+    {
+      "name": "private original SHA L2_low",
+      "pass": true
+    },
+    {
+      "name": "private original SHA L3_mid",
+      "pass": true
+    },
+    {
+      "name": "private original SHA L3_mid_original",
+      "pass": true
+    },
+    {
+      "name": "private original SHA L4_high",
+      "pass": true
+    },
+    {
+      "name": "private original SHA L4_high_original",
+      "pass": true
+    },
+    {
+      "name": "private original SHA L5_overrun",
+      "pass": true
+    },
+    {
+      "name": "private original SHA O1_upshift",
+      "pass": true
+    },
+    {
+      "name": "private original SHA O2b_backfire_loud",
+      "pass": true
+    },
+    {
+      "name": "private original SHA O2c_backfire_double",
+      "pass": true
+    },
+    {
+      "name": "private original SHA crackle-1",
+      "pass": true
+    },
+    {
+      "name": "private original SHA crackle-2",
+      "pass": true
+    },
+    {
+      "name": "private original SHA crackle-3",
+      "pass": true
+    },
+    {
+      "name": "private original SHA crackle-4",
+      "pass": true
+    },
+    {
+      "name": "private original SHA O4_downshift_blip",
+      "pass": true
+    },
+    {
+      "name": "private original SHA O5_boost",
+      "pass": true
+    },
+    {
+      "name": "private original SHA S1_accel_upshifts",
+      "pass": true
+    },
+    {
+      "name": "private original SHA S2_brake_downshifts",
+      "pass": true
+    },
+    {
+      "name": "private original SHA F1_prop_loop",
+      "pass": true
+    },
+    {
+      "name": "private original SHA F2_jet_antigrav_loop",
+      "pass": true
+    },
+    {
+      "name": "private original SHA F3_wind_rush_loop",
+      "pass": true
+    },
+    {
+      "name": "private original SHA F4_takeoff",
+      "pass": true
+    },
+    {
+      "name": "private original SHA H1_charge",
+      "pass": true
+    },
+    {
+      "name": "private original SHA H2_jump",
+      "pass": true
+    },
+    {
+      "name": "private original SHA H3_tunnel_loop",
+      "pass": true
+    },
+    {
+      "name": "private original SHA H4_exit",
+      "pass": true
+    },
+    {
+      "name": "asset hash L1_idle",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode L1_idle",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame L1_idle",
+      "pass": true
+    },
+    {
+      "name": "asset hash L2_low",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode L2_low",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame L2_low",
+      "pass": true
+    },
+    {
+      "name": "asset hash L3_mid",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode L3_mid",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame L3_mid",
+      "pass": true
+    },
+    {
+      "name": "asset hash L3_mid_original",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode L3_mid_original",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame L3_mid_original",
+      "pass": true
+    },
+    {
+      "name": "asset hash L4_high",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode L4_high",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame L4_high",
+      "pass": true
+    },
+    {
+      "name": "asset hash L4_high_original",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode L4_high_original",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame L4_high_original",
+      "pass": true
+    },
+    {
+      "name": "asset hash L5_overrun",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode L5_overrun",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame L5_overrun",
+      "pass": true
+    },
+    {
+      "name": "asset hash O1_upshift",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode O1_upshift",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame O1_upshift",
+      "pass": true
+    },
+    {
+      "name": "asset hash O2b_backfire_loud",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode O2b_backfire_loud",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame O2b_backfire_loud",
+      "pass": true
+    },
+    {
+      "name": "asset hash O2c_backfire_double",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode O2c_backfire_double",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame O2c_backfire_double",
+      "pass": true
+    },
+    {
+      "name": "asset hash crackle-1",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode crackle-1",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame crackle-1",
+      "pass": true
+    },
+    {
+      "name": "asset hash crackle-2",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode crackle-2",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame crackle-2",
+      "pass": true
+    },
+    {
+      "name": "asset hash crackle-3",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode crackle-3",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame crackle-3",
+      "pass": true
+    },
+    {
+      "name": "asset hash crackle-4",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode crackle-4",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame crackle-4",
+      "pass": true
+    },
+    {
+      "name": "asset hash O4_downshift_blip",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode O4_downshift_blip",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame O4_downshift_blip",
+      "pass": true
+    },
+    {
+      "name": "asset hash O5_boost",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode O5_boost",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame O5_boost",
+      "pass": true
+    },
+    {
+      "name": "asset hash S1_accel_upshifts",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode S1_accel_upshifts",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame S1_accel_upshifts",
+      "pass": true
+    },
+    {
+      "name": "asset hash S2_brake_downshifts",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode S2_brake_downshifts",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame S2_brake_downshifts",
+      "pass": true
+    },
+    {
+      "name": "asset hash F1_prop_loop",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode F1_prop_loop",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame F1_prop_loop",
+      "pass": true
+    },
+    {
+      "name": "asset hash F2_jet_antigrav_loop",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode F2_jet_antigrav_loop",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame F2_jet_antigrav_loop",
+      "pass": true
+    },
+    {
+      "name": "asset hash F3_wind_rush_loop",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode F3_wind_rush_loop",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame F3_wind_rush_loop",
+      "pass": true
+    },
+    {
+      "name": "asset hash F4_takeoff",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode F4_takeoff",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame F4_takeoff",
+      "pass": true
+    },
+    {
+      "name": "asset hash H1_charge",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode H1_charge",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame H1_charge",
+      "pass": true
+    },
+    {
+      "name": "asset hash H2_jump",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode H2_jump",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame H2_jump",
+      "pass": true
+    },
+    {
+      "name": "asset hash H3_tunnel_loop",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode H3_tunnel_loop",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame H3_tunnel_loop",
+      "pass": true
+    },
+    {
+      "name": "asset hash H4_exit",
+      "pass": true
+    },
+    {
+      "name": "FFmpeg decode H4_exit",
+      "pass": true
+    },
+    {
+      "name": "duration match within1frame H4_exit",
+      "pass": true
+    }
+  ],
+  "counts": {
+    "passed": 137,
+    "failed": 0
+  },
+  "failures": [],
+  "shifts": {
+    "up": [
+      {
+        "type": "upshift",
+        "previous": 1,
+        "gear": 2,
+        "at": 4.866666666666666,
+        "cutSeconds": 0.10726937051163965,
+        "speedKmh": 48.33333333333333
+      },
+      {
+        "type": "upshift",
+        "previous": 2,
+        "gear": 3,
+        "at": 6.9,
+        "cutSeconds": 0.10222260834649255,
+        "speedKmh": 73.75
+      },
+      {
+        "type": "upshift",
+        "previous": 3,
+        "gear": 4,
+        "at": 9.533333333333333,
+        "cutSeconds": 0.10542597540654164,
+        "speedKmh": 106.66666666666667
+      }
+    ],
+    "down": [
+      {
+        "type": "downshift",
+        "previous": 4,
+        "gear": 3,
+        "at": 17.083333333333332,
+        "cutSeconds": 0.09190262788906622,
+        "speedKmh": 62.50000000000002
+      },
+      {
+        "type": "downshift",
+        "previous": 3,
+        "gear": 2,
+        "at": 18,
+        "cutSeconds": 0.10324950400507049,
+        "speedKmh": 42.857142857142854
+      },
+      {
+        "type": "downshift",
+        "previous": 2,
+        "gear": 1,
+        "at": 18.616666666666667,
+        "cutSeconds": 0.10312819627579017,
+        "speedKmh": 29.642857142857135
+      }
+    ]
+  },
+  "assetMetrics": [
+    {
+      "id": "L1_idle",
+      "duration": 5.95,
+      "manifestDuration": 5.95,
+      "durationDeltaFrames": 0,
+      "peak": 0.23785768449306488,
+      "peakDbfs": -12.473656264404486,
+      "rmsDbfs": -30.600257396502823,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamJump": 0.010736845433712006,
+      "maxInternalSampleDelta": 0.2080119550228119,
+      "seamVsLargestInternalDelta": 0.05161648248791535
+    },
+    {
+      "id": "L2_low",
+      "duration": 5.95,
+      "manifestDuration": 5.95,
+      "durationDeltaFrames": 0,
+      "peak": 0.24272550642490387,
+      "peakDbfs": -12.297691682463224,
+      "rmsDbfs": -30.019381174327158,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamJump": 0.0038377949967980385,
+      "maxInternalSampleDelta": 0.10023518837988377,
+      "seamVsLargestInternalDelta": 0.03828790127328425
+    },
+    {
+      "id": "L3_mid",
+      "duration": 5.95484375,
+      "manifestDuration": 5.95484375,
+      "durationDeltaFrames": 0,
+      "peak": 0.16063176095485687,
+      "peakDbfs": -15.883371591648352,
+      "rmsDbfs": -24.968485335027268,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamJump": 0.0017342548817396164,
+      "maxInternalSampleDelta": 0.09190665744245052,
+      "seamVsLargestInternalDelta": 0.018869741648754445
+    },
+    {
+      "id": "L3_mid_original",
+      "duration": 5.95,
+      "manifestDuration": 5.95,
+      "durationDeltaFrames": 0,
+      "peak": 0.1569923311471939,
+      "peakDbfs": -16.082431234847295,
+      "rmsDbfs": -24.966791801389903,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamJump": 0.005745818838477135,
+      "maxInternalSampleDelta": 0.09685849212110043,
+      "seamVsLargestInternalDelta": 0.059321786997192164
+    },
+    {
+      "id": "L4_high",
+      "duration": 5.92225,
+      "manifestDuration": 5.92225,
+      "durationDeltaFrames": 0,
+      "peak": 0.2168741077184677,
+      "peakDbfs": -13.2758458934387,
+      "rmsDbfs": -25.035314816248295,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamJump": 0.0280156311346218,
+      "maxInternalSampleDelta": 0.16789428517222404,
+      "seamVsLargestInternalDelta": 0.16686470957533595
+    },
+    {
+      "id": "L4_high_original",
+      "duration": 5.95,
+      "manifestDuration": 5.95,
+      "durationDeltaFrames": 0,
+      "peak": 0.22332482039928436,
+      "peakDbfs": -13.021260132085386,
+      "rmsDbfs": -25.039901398115376,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamJump": 0.06616828590631485,
+      "maxInternalSampleDelta": 0.17566799372434616,
+      "seamVsLargestInternalDelta": 0.37666671374493227
+    },
+    {
+      "id": "L5_overrun",
+      "duration": 5.95,
+      "manifestDuration": 5.95,
+      "durationDeltaFrames": 0,
+      "peak": 0.23198460042476654,
+      "peakDbfs": -12.690816868778732,
+      "rmsDbfs": -26.883454299660826,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamJump": 0.0012716539204120636,
+      "maxInternalSampleDelta": 0.13985268399119377,
+      "seamVsLargestInternalDelta": 0.009092810263778256
+    },
+    {
+      "id": "O1_upshift",
+      "duration": 2,
+      "manifestDuration": 2,
+      "durationDeltaFrames": 0,
+      "peak": 0.2042158842086792,
+      "peakDbfs": -13.798209617569137,
+      "rmsDbfs": -25.987266920485617,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.0000649106441414915,
+      "maxInternalSampleDelta": 0.15404507517814636,
+      "seamVsLargestInternalDelta": 0.0004213743546583699
+    },
+    {
+      "id": "O2b_backfire_loud",
+      "duration": 1.48,
+      "manifestDuration": 1.48,
+      "durationDeltaFrames": 0,
+      "peak": 0.1433979570865631,
+      "peakDbfs": -16.869140715672955,
+      "rmsDbfs": -26.118700964670893,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.0009921907621901482,
+      "maxInternalSampleDelta": 0.05438536778092384,
+      "seamVsLargestInternalDelta": 0.018243707869861424
+    },
+    {
+      "id": "O2c_backfire_double",
+      "duration": 1.48,
+      "manifestDuration": 1.48,
+      "durationDeltaFrames": 0,
+      "peak": 0.236965611577034,
+      "peakDbfs": -12.506293483675073,
+      "rmsDbfs": -37.21540969939778,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.00018379792174982867,
+      "maxInternalSampleDelta": 0.048508454114198685,
+      "seamVsLargestInternalDelta": 0.003788987406548378
+    },
+    {
+      "id": "crackle-1",
+      "duration": 0.446,
+      "manifestDuration": 0.446,
+      "durationDeltaFrames": 0,
+      "peak": 0.22067098319530487,
+      "peakDbfs": -13.125095399898326,
+      "rmsDbfs": -32.48052002921863,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.00023368920756183797,
+      "maxInternalSampleDelta": 0.10209544003009796,
+      "seamVsLargestInternalDelta": 0.0022889289423009087
+    },
+    {
+      "id": "crackle-2",
+      "duration": 0.446,
+      "manifestDuration": 0.446,
+      "durationDeltaFrames": 0,
+      "peak": 0.2352287769317627,
+      "peakDbfs": -12.570190990507875,
+      "rmsDbfs": -34.24864568513661,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.0001575904075394874,
+      "maxInternalSampleDelta": 0.1178395226597786,
+      "seamVsLargestInternalDelta": 0.0013373306678649396
+    },
+    {
+      "id": "crackle-3",
+      "duration": 0.446,
+      "manifestDuration": 0.446,
+      "durationDeltaFrames": 0,
+      "peak": 0.23645581305027008,
+      "peakDbfs": -12.525000095680097,
+      "rmsDbfs": -32.91695063640623,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.00017112179193645716,
+      "maxInternalSampleDelta": 0.14883127808570862,
+      "seamVsLargestInternalDelta": 0.0011497703583376602
+    },
+    {
+      "id": "crackle-4",
+      "duration": 0.446,
+      "manifestDuration": 0.446,
+      "durationDeltaFrames": 0,
+      "peak": 0.22426563501358032,
+      "peakDbfs": -12.98474539480361,
+      "rmsDbfs": -32.77348065614311,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.003572657540644286,
+      "maxInternalSampleDelta": 0.08583805710077286,
+      "seamVsLargestInternalDelta": 0.04162090407579972
+    },
+    {
+      "id": "O4_downshift_blip",
+      "duration": 2,
+      "manifestDuration": 2,
+      "durationDeltaFrames": 0,
+      "peak": 0.24917811155319214,
+      "peakDbfs": -12.069802197654713,
+      "rmsDbfs": -28.16224115781518,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.00015682245702919317,
+      "maxInternalSampleDelta": 0.06775617599487305,
+      "seamVsLargestInternalDelta": 0.002314511625347032
+    },
+    {
+      "id": "O5_boost",
+      "duration": 2,
+      "manifestDuration": 2,
+      "durationDeltaFrames": 0,
+      "peak": 0.24454346299171448,
+      "peakDbfs": -12.232878840421456,
+      "rmsDbfs": -26.43766528323829,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.0005913115564908367,
+      "maxInternalSampleDelta": 0.07565158396027982,
+      "seamVsLargestInternalDelta": 0.007816248193842173
+    },
+    {
+      "id": "S1_accel_upshifts",
+      "duration": 8,
+      "manifestDuration": 8,
+      "durationDeltaFrames": 0,
+      "peak": 0.2606980800628662,
+      "peakDbfs": -11.677243344502479,
+      "rmsDbfs": -29.414888951710093,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.000002696255762657529,
+      "maxInternalSampleDelta": 0.17172350734472275,
+      "seamVsLargestInternalDelta": 0.000015701145430514573
+    },
+    {
+      "id": "S2_brake_downshifts",
+      "duration": 5,
+      "manifestDuration": 5,
+      "durationDeltaFrames": 0,
+      "peak": 0.24113582074642181,
+      "peakDbfs": -12.354765406969966,
+      "rmsDbfs": -33.88277618908812,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.0000018987695966643514,
+      "maxInternalSampleDelta": 0.06089140847325325,
+      "seamVsLargestInternalDelta": 0.00003118288185924279
+    },
+    {
+      "id": "F1_prop_loop",
+      "duration": 5.95,
+      "manifestDuration": 5.95,
+      "durationDeltaFrames": 0,
+      "peak": 0.1419239193201065,
+      "peakDbfs": -16.958888080518676,
+      "rmsDbfs": -24.96875441275028,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamJump": 0.001628383994102478,
+      "maxInternalSampleDelta": 0.009024165570735931,
+      "seamVsLargestInternalDelta": 0.18044704314635945
+    },
+    {
+      "id": "F2_jet_antigrav_loop",
+      "duration": 5.95,
+      "manifestDuration": 5.95,
+      "durationDeltaFrames": 0,
+      "peak": 0.2248576283454895,
+      "peakDbfs": -12.961847486167596,
+      "rmsDbfs": -25.041729059223165,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamJump": 0.0018987767398357391,
+      "maxInternalSampleDelta": 0.009783579036593437,
+      "seamVsLargestInternalDelta": 0.19407792718122485
+    },
+    {
+      "id": "F3_wind_rush_loop",
+      "duration": 5.95,
+      "manifestDuration": 5.95,
+      "durationDeltaFrames": 0,
+      "peak": 0.2332935780286789,
+      "peakDbfs": -12.641944321004049,
+      "rmsDbfs": -25.98621745775106,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamJump": 0.011468514800071716,
+      "maxInternalSampleDelta": 0.055739980190992355,
+      "seamVsLargestInternalDelta": 0.20575024893756674
+    },
+    {
+      "id": "F4_takeoff",
+      "duration": 3,
+      "manifestDuration": 3,
+      "durationDeltaFrames": 0,
+      "peak": 0.23418569564819336,
+      "peakDbfs": -12.608792713947793,
+      "rmsDbfs": -31.16449893737736,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.000015019619240774773,
+      "maxInternalSampleDelta": 0.06346691399812698,
+      "seamVsLargestInternalDelta": 0.00023665274226533257
+    },
+    {
+      "id": "H1_charge",
+      "duration": 4,
+      "manifestDuration": 4,
+      "durationDeltaFrames": 0,
+      "peak": 0.17366307973861694,
+      "peakDbfs": -15.205850029456098,
+      "rmsDbfs": -26.123865813603384,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.0007536509510828182,
+      "maxInternalSampleDelta": 0.1541745737195015,
+      "seamVsLargestInternalDelta": 0.004888295993955384
+    },
+    {
+      "id": "H2_jump",
+      "duration": 3,
+      "manifestDuration": 3,
+      "durationDeltaFrames": 0,
+      "peak": 0.22883053123950958,
+      "peakDbfs": -12.809720623433291,
+      "rmsDbfs": -28.008118890415375,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.0017611791032550173,
+      "maxInternalSampleDelta": 0.15745600592345,
+      "seamVsLargestInternalDelta": 0.011185213881973136
+    },
+    {
+      "id": "H3_tunnel_loop",
+      "duration": 5.95,
+      "manifestDuration": 5.95,
+      "durationDeltaFrames": 0,
+      "peak": 0.21630342304706573,
+      "peakDbfs": -13.298732154104078,
+      "rmsDbfs": -28.27852125918708,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamJump": 0.048666472313925624,
+      "maxInternalSampleDelta": 0.2489091232419014,
+      "seamVsLargestInternalDelta": 0.19551903795277642
+    },
+    {
+      "id": "H4_exit",
+      "duration": 2,
+      "manifestDuration": 2,
+      "durationDeltaFrames": 0,
+      "peak": 0.2389252781867981,
+      "peakDbfs": -12.434757993175287,
+      "rmsDbfs": -26.911726852542902,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamJump": 0.000009622073832815659,
+      "maxInternalSampleDelta": 0.005458749830722809,
+      "seamVsLargestInternalDelta": 0.0017626881852436114
+    }
+  ]
+}
