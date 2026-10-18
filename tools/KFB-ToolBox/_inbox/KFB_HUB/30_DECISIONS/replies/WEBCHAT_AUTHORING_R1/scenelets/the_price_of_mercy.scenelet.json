@@ -1,0 +1,151 @@
+{
+  "schema": "kfb.authoring-scene/1",
+  "id": "the_price_of_mercy",
+  "kind": "scenelet",
+  "status": "DESIGN",
+  "title": {
+    "v": "The Price of Mercy",
+    "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+    "status": "DESIGN"
+  },
+  "premise": {
+    "v": "Lady Dory genuinely helps a player leave an involuntary UFO encounter, then tries to turn the player's experience into public evidence against Lord Hunky. Her compassion collides with her claim to decide what a victim morally owes the truth.",
+    "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+    "status": "DESIGN"
+  },
+  "playerRole": {
+    "v": "The player owns the testimony and decides whether their UFO encounter may become publicly attributable evidence. Leaving is available without publication.",
+    "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+    "status": "DESIGN"
+  },
+  "characterIds": [
+    "lady_dory",
+    "lord_hunky"
+  ],
+  "beats": [
+    {
+      "v": "1 · Help: After an involuntary encounter, the player asks to return. Dory offers help without a condition.",
+      "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+      "status": "DESIGN"
+    },
+    {
+      "v": "2 · Contradiction: A proposed cockpit-screen account calls the encounter voluntary. Dory invokes her archive/Leak-Seed to contrast that claim with what the player experienced; the screen's statement is authored fiction, not settled lore.",
+      "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+      "status": "DESIGN"
+    },
+    {
+      "v": "3 · Overreach: Dory asks to publish the player's account to confront Hunky. As she presses, consent becomes, in her telling, a moral duty.",
+      "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+      "status": "DESIGN"
+    },
+    {
+      "v": "4 · Reversal: The player can object that claiming the right to speak for them repeats the coercion Dory condemns. Dory's moral certainty is challenged, but she does not withdraw her practical help.",
+      "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+      "status": "DESIGN"
+    },
+    {
+      "v": "5 · Choice and consequence: The player authorizes named public testimony or declines publication and returns privately. Dory honors either boundary in her actions, without a forced change of character.",
+      "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+      "status": "DESIGN"
+    }
+  ],
+  "choice": {
+    "question": {
+      "v": "May Lady Dory publish the player's encounter under the player's identity?",
+      "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+      "status": "DESIGN"
+    },
+    "options": [
+      {
+        "id": "publish",
+        "label": {
+          "v": "Permit publication",
+          "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+          "status": "DESIGN"
+        },
+        "playerAction": {
+          "v": "Consent to an attributable statement challenging Hunky's version.",
+          "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+          "status": "DESIGN"
+        },
+        "outcome": {
+          "v": "Hunky's version can be publicly challenged, but the player's identity is exposed to him. An actual world-state implementation is not included.",
+          "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+          "status": "DESIGN"
+        }
+      },
+      {
+        "id": "private_return",
+        "label": {
+          "v": "Return privately",
+          "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+          "status": "DESIGN"
+        },
+        "playerAction": {
+          "v": "Refuse publication and accept Dory's help to return.",
+          "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+          "status": "DESIGN"
+        },
+        "outcome": {
+          "v": "The player keeps their privacy. Dory loses the public testimony she wanted; the official version remains unchallenged by this witness. No penalty or blocked exit.",
+          "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+          "status": "DESIGN"
+        }
+      }
+    ],
+    "invariant": {
+      "v": "Dory helps in both branches. Neither branch confers a moral score, establishes canon about the Fluff Incident, or makes Dory automatically repent.",
+      "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+      "status": "DESIGN"
+    }
+  },
+  "composition": {
+    "v": "Conceptual layout on the existing UFO-cockpit stage: Dory faces the player at conversational distance; the cockpit monitor is the focal contradictory account; Hunky's position remains indirect, through the proposed display rather than an additional 3D actor. Player action centers on accepting or withholding consent. Specific monitor content, camera, asset identification and visual proof remain unassigned.",
+    "src": "WSA DESIGN 2026-10-18 · Georg's reviewed 'The Price of Mercy' chat draft; saved as proposal only",
+    "status": "DESIGN"
+  },
+  "assetRefs": [],
+  "runtimeRef": null,
+  "provenance": [
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "7122790f8d2f4936f4e53be21d6802d5a2665108",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json",
+      "role": "Dory's sourced identity, roles, flaws, Leak-Seed and pre-existing conflicts"
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "7122790f8d2f4936f4e53be21d6802d5a2665108",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lord_hunky.character.json",
+      "role": "Hunky's sourced authority and UFO frame"
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "7122790f8d2f4936f4e53be21d6802d5a2665108",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_NARRATIVE_R1.md",
+      "role": "Genesis/UFO source classification and still-open relationship/cause questions"
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "7122790f8d2f4936f4e53be21d6802d5a2665108",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/lady_dory.figure.json",
+      "role": "Candidate figure card; no visual or technical approval inferred"
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "7122790f8d2f4936f4e53be21d6802d5a2665108",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WEBCHAT_AUTHORING_R1/CONTRACT.md",
+      "role": "Proposal-only editorial authoring contract"
+    }
+  ],
+  "conflicts": [
+    "Existing character-source alternatives remain unresolved: empathic saboteur (CS-40/CS-52), moral enforcer/archivist (CS-41), witness (CS-57), and former high-society partner (CS-30). This scene uses friction among those descriptions, not a canon selection.",
+    "The exact nature of Hunky/Dory's relationship and why Dory was banished remain open (CS-04). No answer is supplied here."
+  ],
+  "todo": [
+    "Confirm the cockpit/monitor as an isolated visual source object and pin any reusable asset by commit, path, licence and visual evidence before 3D staging.",
+    "Decide precise return method, user-facing interface, and on-screen wording with existing UFO/World owners; no new gameplay runtime or state owner here.",
+    "Route any later consequences or memory receipts through existing authoritative social-memory/world owners rather than storing player values in this document.",
+    "Candidate figure card and stage light remain under their existing gates; scene has no accepted runtime or playable proof."
+  ]
+}
