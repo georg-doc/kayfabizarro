@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- V-550 RA-Szenen-Backlog nach Prio (Hub q119), WSB-Dauer-Warteschlange.
 - V-549 KayKit Fluff-Farm (Farmer S6/12, Traktor, Cube Pets, Fallobst-Fluff): Brief B44, erstes Scenelet-Diorama.
 - V-548 Nachtrag: Bühne immer mit Terrain, Skydome, Licht, Texturen; Resident-Atlas-Migration ab 20.10.
 - V-548 Pilot: Artifact „KFB Bühne“ https://claude.ai/artifact/FNTpcn6ZdAncgTdv5rncAQ (Spielzeugsoldat B11 r5c, Live-3D mit Prüfstand-Licht/Knete/Augen, Zeitleiste, Editor, Abnahme in DB reviews/corrections). Hub q118 B41 Wurfwaffen.
