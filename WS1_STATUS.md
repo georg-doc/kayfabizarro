@@ -3,6 +3,37 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 90 · 18.10. · combo/r2 grün (61/61) und veröffentlicht · Branch-Vorschau mit allen Stufen · Pakete `ws1/vendor`
+
+**Stand combo/r2 @027d5c5** (Branch, nicht main):
+- C1 Kamera, C2 Aliens/E2, V-429 (ein Rig, clay v1.1 auch am Amphitheater), C3 Fluff-Ernte, HUD R5f, C3b Fundsachen (V-450, B28), R1a Antriebe der 6 Racer, Elan S1 (Skyriding-PoC), Elan S2 (Racer-Schwungflug), Licht v1.1, B22-Lampen.
+
+**Tests:** run-all **61/61 PASS** (M1, M2, M3, C1, Elan, Bühne, C2, C3, C3b, R1a), dazu alle Unit-Tests.
+- Drei Befunde im Lauf, alle behoben:
+  1. Der Racer-Flug fing Rampen-Launches ab (m3-f/m3-g). Er läuft jetzt nur mit Schalter `fly`, dazu ein Bodenwellen-Riegel (vy ≥ 4·J oder Rampen-Zone).
+  2. m1-move@120 lag über dem 25-min-Alarm. Der Frame ist im SwiftShader teurer, vermutlich durch clay v1.1 auf den Figuren. Alarm auf 50 min, PASS.
+  3. drift brauchte eine Ausgabedatei im frischen Worktree.
+
+**Veröffentlicht:**
+- Spiegel `ws1/combo-r2` @83be20dd (Ordner `ws1/kfb-planet`).
+- **Pakete `ws1/vendor` @76ea4602** (V-409): `kfb-stage-light.v1.js`, `kfb-figure-loader.v1.js`, `kfb-vehicle-rig.v1.js`, `e2/*`, README, `vendor.json`. Pin = Commit.
+- Vorschau `ws1/preview` @5870c3b3 mit Direktlinks in `build.json`:
+  - aliens, harvest, skyriding (`#m1,flight=elan`);
+  - racer… (6 Racer), racerFly (`#m1,car,fly,racer=…`);
+  - stageNightLamps.
+
+**Für Georgs Fühlprobe:**
+- Fluff-Ernte und Fundsachen.
+- Racer-Antriebe (Boost = Stauchen/Strecken, Funken beim Gaswegnehmen und Schalten).
+- Skyriding.
+- Racer-Schwungflug. Notiert: Der Racer wendet bewusst träger (kAlign × 0,5, stellbar).
+
+**Offen:**
+- Perf auf echter GPU, wird gerade gemessen.
+- C4 (privater Weg, §87).
+- Kesseldruck im HUD (Frage an WS0, §89).
+- Nichts davon auf main ohne Georg.
+
 ## 89 · 18.10. vormittags · combo/r2 komplett gebaut, voller run-all läuft · Elan S1 (Skyriding-PoC) grün · R1a, V-450, Licht v1.1, B22 eingebaut
 
 **Branch `combo/r2` @6bb3c4f** (lokal; Push, Spiegel und Branch-Vorschau nach dem vollen run-all, der jetzt im eigenen Test-Worktree läuft):
