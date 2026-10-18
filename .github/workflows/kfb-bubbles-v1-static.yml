@@ -1,0 +1,64 @@
+name: KFB bubbles v1 static donor checks
+on:
+  push:
+    branches:
+      - 'wsa/kfb-bubbles-ssot-r1-*'
+  workflow_dispatch:
+jobs:
+  syntax-and-donor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BUBBLES_SSOT_R1/kfb-bubbles.v1/chatterbox-core.js
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BUBBLES_SSOT_R1/kfb-bubbles.v1/bubbles.module.js
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BUBBLES_SSOT_R1/kfb-bubbles.v1/kfb-bubbles.mjs
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BUBBLES_SSOT_R1/kfb-bubbles.v1/kfb-bubbles.classic.js
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BUBBLES_SSOT_R1/kfb-bubbles.v1/defs.svg
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BUBBLES_SSOT_R1/kfb-bubbles.v1/demo.html
+            tools/KFB-ToolBox/_inbox/KFB_CHATTERBOX_STUDIO_CLAUDE_DESIGN_SESSION_CUT_2026-10-05_r2/lib/chatterbox/chatterbox-core.js
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/CLAUDE_DESIGN_STAGE_LIVE_R1/modules/bubbles.module.js
+      - name: Node syntax checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check 'tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BUBBLES_SSOT_R1/kfb-bubbles.v1/chatterbox-core.js'
+          node --check 'tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BUBBLES_SSOT_R1/kfb-bubbles.v1/bubbles.module.js'
+          node --check 'tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BUBBLES_SSOT_R1/kfb-bubbles.v1/kfb-bubbles.mjs'
+          node --check 'tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BUBBLES_SSOT_R1/kfb-bubbles.v1/kfb-bubbles.classic.js'
+      - name: Source-copy and isolated demo contract checks
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, subprocess, tempfile
+          root=Path('tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BUBBLES_SSOT_R1/kfb-bubbles.v1/')
+          old_core=Path('tools/KFB-ToolBox/_inbox/KFB_CHATTERBOX_STUDIO_CLAUDE_DESIGN_SESSION_CUT_2026-10-05_r2/lib/chatterbox/chatterbox-core.js').read_bytes()
+          old_adapter=Path('tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/CLAUDE_DESIGN_STAGE_LIVE_R1/modules/bubbles.module.js').read_bytes()
+          assert (root/'chatterbox-core.js').read_bytes()==old_core+b'\n', 'core differs beyond terminal LF'
+          assert (root/'bubbles.module.js').read_bytes()==old_adapter+b'\n', 'host differs beyond terminal LF'
+          defs=(root/'defs.svg').read_text()
+          for name in ['kfbFaceShade','kfbWallShade','kfbSoftShadow','kfbCornerMask','kfbDotsDeep','kfbDotsPink','kfbDotsViolet']:
+              assert 'id="'+name+'"' in defs, name
+          core=(root/'chatterbox-core.js').read_text()
+          for name in ['speech:','thought:','whisper:','shout:','caption:','kayfabulate:','ambient:','choice:','impact:','reaction:','movement:','reward:']:
+              assert name in core, name
+          demo=(root/'demo.html').read_text()
+          assert demo.count('<script')>=3
+          inline=re.findall(r'<script>(.*?)</script>',demo,flags=re.S)
+          assert len(inline)==1,'expected one inline demo script'
+          with tempfile.NamedTemporaryFile(mode='w',suffix='.js') as f:
+              f.write(inline[0]); f.flush()
+              subprocess.run(['node','--check',f.name],check=True)
+          classic=(root/'kfb-bubbles.classic.js').read_text()
+          assert 'window.KFB_BUBBLES=' in classic
+          assert 'setDecode=function' in classic
+          assert "return d<1?'glyph':d<2?'fluff':'plain'" in classic
+          assert "font-size:1.6em" in classic
+          assert '#1f1a14' in classic
+          print('PASS: source bytes 2/2; defs 7/7; KINDS 8/8; WORD 4/4; demo syntax; decode contract')
+          PY
