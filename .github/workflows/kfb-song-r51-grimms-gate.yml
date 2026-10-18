@@ -1,0 +1,32 @@
+name: KFB Grimm R5.1 R3.4 gate
+on:
+  push:
+    branches: ["songs/grimms_kayfabe_legends_expansion_set_02-r5-2026-10-17"]
+permissions:
+  contents: read
+jobs:
+  r5-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: f0f07a27e9e98ee005fc35de61a070853fec2246
+          path: .kfb-register-readonly
+      - name: Collect prior R4 and Federal R5 corpus
+        shell: bash
+        run: |
+          mkdir -p .song-corpus
+          for b in songs/1001_kayfabe_nights-r4-2026-10-17 songs/frizzlebob_bloedsinnland_alice-r4-2026-10-17 songs/the_carnival_of_unsolved_problems_therapy-r4-2026-10-17 songs/dream_wrestling_with_kayfabe_freud-r4-2026-10-17 songs/the_kayfabe_money_trail_9_11-r4-2026-10-17 songs/federal_kayfabe-r5-2026-10-17; do
+            git fetch --depth=1 origin "refs/heads/${b}:refs/remotes/origin/${b}"
+            git ls-tree -r --name-only "refs/remotes/origin/${b}" | grep '\.suno\.txt$' | while IFS= read -r p; do
+              git show "refs/remotes/origin/${b}:$p" > ".song-corpus/$(echo "${b}" | tr / _)-$(basename "$p")"
+            done
+          done
+      - name: Original triplet checker
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py songs/grimms_kayfabe_legends_expansion_set_02/grimms_kayfabe_legends_expansion_set_02.r5.qa.deck.json songs/grimms_kayfabe_legends_expansion_set_02/grimms_kayfabe_legends_expansion_set_02.r5.qa.set.csv
+      - name: Original song gate
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/grimms_kayfabe_legends_expansion_set_02/grimms_kayfabe_legends_expansion_set_02.r5.1.suno.txt --deck registry/assets/v1/decks/grimms_kayfabe_legends_expansion_set_02.json --songlines songs/grimms_kayfabe_legends_expansion_set_02/grimms_kayfabe_legends_expansion_set_02.r5.1.songlines.json --media media/kfb/GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02_-_ADD_web.pdf.json --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2 .song-corpus
+
+      - name: Original style gate
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style songs/grimms_kayfabe_legends_expansion_set_02/grimms_kayfabe_legends_expansion_set_02.r5.1.style.txt --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
