@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-531 Black Fluff/Goo: Men in Black ernten Fluff mit Robo-Arm + schwarzem Trichter, brauen Goo für die Tinten-Gegner (Card Ink Defense V-405). B40-Brief ergänzt, WS1 informiert. Hub q102 Men-in-Black-Sounds.
 - V-530 Kayfabe Men in Black: Brief B40 (Turm, Tür+Licht, Trio+Türsteher, Blaster, Clips), SFX blobcorp_mib_r1. Hub q101 Eiffel r2c (gerade Farbkanten, Spitze aufgesetzt).
 - V-529 Blob-Corp-Teleportturm + Agenten-Trio als Konzept (TBD). Hub q100 B36 r4 Raumklinik gepostet; render.palette.mjs /@home/-Route repariert (B37-Paletten werden neu gerendert).
 - V-528 Songs R5.3: ein Track je Deck, Best-of nach Flow/Punch/Dramaturgie, song_gate R3.7 (bestOf), WSA-Briefing Batch 1 (20 Decks, 20 Stile).

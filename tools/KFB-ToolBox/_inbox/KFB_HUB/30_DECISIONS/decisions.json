@@ -7464,6 +7464,21 @@
    "applies": "B40 nach B39"
   },
   {
+   "id": "V-531",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Black Fluff / Goo (Georg 18.10., erweitert V-530): Die Kayfabe Men in Black können optional mit Roboter-Unterarm und schwarzem Trichter (Arm-Logik V-479/V-510, Bot-Arm B31) umliegendes Fluff mit der üblichen Saug-Animation (kfb-fluff-suck) ernten und daraus Black Fluff / Goo brauen. Die Gegner-Figuren aus der Quaternius-Combat-Arena nutzen das Goo, um Karten und Spielfeld zu schwärzen: Tinte/Zensur als Meta-Erzählung. Damit wird das Goo die Nachschub-Kette für Card Ink Defense (V-405, Tinten-Monster greifen die kanonische Karte an). WSB: Agenten-Variante mit Robo-Arm + schwarzem Trichter in B40. WS1: Saug-Modul mit Farbe/Ressource black wiederverwenden, Goo als eigene Ressource. WS0-Vorschläge an Georg: Gegenmittel (Spieler wäscht Geschwärztes mit buntem Fluff frei) und Schwärzung auch in Sprechblasen als Zensurbalken über Wörtern.",
+   "values": {},
+   "owner": "WSB (B40) · WS1 (Saug-Modul, Ressource) · WSA (Card Ink Defense)",
+   "check": "B40 Variante Robo-Arm",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Agenten werden Nachschub für die Tinten-Gegner: Vertuschung und Zensur greifen ineinander.",
+   "applies": "B40 + Card Ink Defense"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7551,7 +7566,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:883",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:884",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,5 +1,15 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+
+## 18.10. spät · Neues Thema: Kayfabe Men in Black + Black Goo (V-529–V-531), nur zur Kenntnis, Start später
+- **Asset:** WSB baut B40 nach B39: Blob-Corp-Turm mit ausblendbarer Tür, hellem Schacht und Orb (wabert; Variante mit Auge, das scannt, blinzelt und zusammengekniffen starrt), dazu Agenten-Trio + Large-Rig-Türsteher mit Blastern.
+- **Einsatz-Ablauf:** Briefing `replies/BRIEF_WSB_B40_BLOBCORP_TOWER_R1.md`, Abschnitt „Für WS1“.
+- **Sounds:** `40_AUDIO/elevenlabs_r1/blobcorp_mib_r1_norm`.
+- **V-531:**
+  - Die Agenten ernten Fluff mit Robo-Arm + schwarzem Trichter (dein Saug-Modul mit Farbe/Ressource black) und brauen Black Goo.
+  - Die Arena-Gegner (Quaternius) schwärzen damit Karten und Spielfeld; das ist der Nachschub für Card Ink Defense V-405.
+  - Bitte beim Saug-Modul Farbe und Ressource parametrierbar halten.
+- **Priorität bleibt:** R1a → Flug + Zerstörung (V-514). Status §93 fehlt weiterhin.
 ## 18.10. Abend · Antwort auf deine HUD-Frage §89 (Kesseldruck)
 Ja: Kesseldruck als kleines Manometer im HUD R5f, direkt neben den Fluff-Perlen, im selben Clay-Stil. Platzhalter ist ok, bis Claude Design das Element liefert. Kein zweites HUD-Panel.
 
