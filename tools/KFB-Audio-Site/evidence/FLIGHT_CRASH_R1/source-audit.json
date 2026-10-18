@@ -1,0 +1,732 @@
+{
+  "schema": "kfb.flight-source-audit/1",
+  "date": "2026-10-18",
+  "sourceHead": "f9d3ecb923fdb79d489f5f3347b7c08f382c3d2f",
+  "proofBoundary": "Exact byte/PCM/FFT metrics only. No listening, runtime, source-absence or human acceptance claims.",
+  "counts": {
+    "passed": 38,
+    "failed": 0,
+    "files": 12,
+    "loops": 8
+  },
+  "checks": [
+    {
+      "name": "exact GitBlob P01_jet_thrust_loop_a.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P01_jet_thrust_loop_a",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P01_jet_thrust_loop_a",
+      "pass": true
+    },
+    {
+      "name": "exact GitBlob P01_jet_thrust_loop_b.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P01_jet_thrust_loop_b",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P01_jet_thrust_loop_b",
+      "pass": true
+    },
+    {
+      "name": "exact GitBlob P02_turbine_fan_loop_a.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P02_turbine_fan_loop_a",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P02_turbine_fan_loop_a",
+      "pass": true
+    },
+    {
+      "name": "exact GitBlob P02_turbine_fan_loop_b.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P02_turbine_fan_loop_b",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P02_turbine_fan_loop_b",
+      "pass": true
+    },
+    {
+      "name": "exact GitBlob P03_exhaust_rumble_loop_a.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P03_exhaust_rumble_loop_a",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P03_exhaust_rumble_loop_a",
+      "pass": true
+    },
+    {
+      "name": "exact GitBlob P03_exhaust_rumble_loop_b.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P03_exhaust_rumble_loop_b",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P03_exhaust_rumble_loop_b",
+      "pass": true
+    },
+    {
+      "name": "exact GitBlob P04_boost_ignite_a.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P04_boost_ignite_a",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P04_boost_ignite_a",
+      "pass": true
+    },
+    {
+      "name": "exact GitBlob P04_boost_ignite_b.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P04_boost_ignite_b",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P04_boost_ignite_b",
+      "pass": true
+    },
+    {
+      "name": "exact GitBlob P05_antigrav_hum_loop_a.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P05_antigrav_hum_loop_a",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P05_antigrav_hum_loop_a",
+      "pass": true
+    },
+    {
+      "name": "exact GitBlob P05_antigrav_hum_loop_b.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P05_antigrav_hum_loop_b",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P05_antigrav_hum_loop_b",
+      "pass": true
+    },
+    {
+      "name": "exact GitBlob P06_shift_flame_pop_a.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P06_shift_flame_pop_a",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P06_shift_flame_pop_a",
+      "pass": true
+    },
+    {
+      "name": "exact GitBlob P06_shift_flame_pop_b.wav",
+      "pass": true
+    },
+    {
+      "name": "finite realPCM P06_shift_flame_pop_b",
+      "pass": true
+    },
+    {
+      "name": "prompt/source identity P06_shift_flame_pop_b",
+      "pass": true
+    },
+    {
+      "name": "exact12closedroster",
+      "pass": true
+    },
+    {
+      "name": "all12 SHA unique",
+      "pass": true
+    }
+  ],
+  "rows": [
+    {
+      "id": "P01_jet_thrust_loop_a",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P01_jet_thrust_loop_a.wav",
+      "sha256": "355dccc7849436b038368f4cd24aa50c2cc0e7af39d4c97ae907a233388606aa",
+      "gitBlob": "29a0740956823213114bf7473f9ac2ef906619f8",
+      "bytes": 705644,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -10.414329680276246,
+        "clippedSamples": 0
+      },
+      "actualDuration": 4,
+      "prompt": {
+        "id": "P01_jet_thrust_loop_a",
+        "seconds": 4,
+        "influence": 0.6,
+        "prompt": "dieselpunk jet thruster roaring steadily, warm rumbling flame with a slight pulsing throb, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": true,
+      "peakDbfs": -1.0083493772444356,
+      "rmsDbfs": -10.41487232120862,
+      "crestDb": 9.406522943964184,
+      "clippedSamples": 0,
+      "seamJump": 0.11111954692751169,
+      "seamJumpDbfs": -19.084190760686482,
+      "largestInternalSampleDelta": 0.053721367148682475,
+      "seamVsInternalMax": 2.068442275863356,
+      "first200msRmsDbfs": -10.358898130163364,
+      "last200msRmsDbfs": -14.476902297567209,
+      "endLevelDifferenceDb": -4.118004167403845,
+      "window10msRmsP5Dbfs": -16.79766683367373,
+      "window10msRmsP95Dbfs": -7.057625059557386,
+      "window10msVariationDb": 9.740041774116344,
+      "spectralCentroidHz": 128.73268629339495,
+      "energyBelow300Hz": 0.9975284701765293,
+      "energyAbove4000Hz": 2.153703621015789e-7,
+      "dominantSpectralBinHz": 109.375,
+      "peakBinEnergyFraction": 0.11546960178284764,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    },
+    {
+      "id": "P01_jet_thrust_loop_b",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P01_jet_thrust_loop_b.wav",
+      "sha256": "2bcda0ab953f873f20209d8beab2bac5a8814707e62404d4aebcd040e15e7797",
+      "gitBlob": "5e06e5dc26edc8a12d431207ff3649bd6547b12c",
+      "bytes": 705644,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -11.46983554486481,
+        "clippedSamples": 0
+      },
+      "actualDuration": 4,
+      "prompt": {
+        "id": "P01_jet_thrust_loop_b",
+        "seconds": 4,
+        "influence": 0.6,
+        "prompt": "dieselpunk jet thruster roaring steadily, warm rumbling flame with a slight pulsing throb, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": true,
+      "peakDbfs": -1.0259869317945856,
+      "rmsDbfs": -11.471275191768896,
+      "crestDb": 10.44528825997431,
+      "clippedSamples": 0,
+      "seamJump": 0.06649406254291534,
+      "seamJumpDbfs": -23.54434264881632,
+      "largestInternalSampleDelta": 0.06617593765258789,
+      "seamVsInternalMax": 1.0048072592790078,
+      "first200msRmsDbfs": -10.728759878825663,
+      "last200msRmsDbfs": -12.336042063405001,
+      "endLevelDifferenceDb": -1.6072821845793381,
+      "window10msRmsP5Dbfs": -17.92735002653082,
+      "window10msRmsP95Dbfs": -7.54694845945761,
+      "window10msVariationDb": 10.38040156707321,
+      "spectralCentroidHz": 159.75666018783178,
+      "energyBelow300Hz": 0.996856084579439,
+      "energyAbove4000Hz": 2.493663077107619e-7,
+      "dominantSpectralBinHz": 171.875,
+      "peakBinEnergyFraction": 0.13223105184526304,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    },
+    {
+      "id": "P02_turbine_fan_loop_a",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P02_turbine_fan_loop_a.wav",
+      "sha256": "db371010b62598cb41830fa9948ca795dd8f85c9427e2ac107e69dc531e2fc87",
+      "gitBlob": "a321faaa68bb97368ded96fc7deb52619300cdba",
+      "bytes": 705644,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -7.790685628904505,
+        "clippedSamples": 0
+      },
+      "actualDuration": 4,
+      "prompt": {
+        "id": "P02_turbine_fan_loop_a",
+        "seconds": 4,
+        "influence": 0.6,
+        "prompt": "hovering vehicle turbine fan spinning, airy whirring blades with a low hum, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": true,
+      "peakDbfs": -0.9985098523612806,
+      "rmsDbfs": -7.795050527698382,
+      "crestDb": 6.796540675337101,
+      "clippedSamples": 0,
+      "seamJump": 0.566922128200531,
+      "seamJumpDbfs": -4.929531824448371,
+      "largestInternalSampleDelta": 0.1842115819454193,
+      "seamVsInternalMax": 3.077559631231582,
+      "first200msRmsDbfs": -8.291182701167067,
+      "last200msRmsDbfs": -8.272392552885544,
+      "endLevelDifferenceDb": 0.018790148281523145,
+      "window10msRmsP5Dbfs": -15.123781275300484,
+      "window10msRmsP95Dbfs": -4.792567785536629,
+      "window10msVariationDb": 10.331213489763854,
+      "spectralCentroidHz": 330.8951334827365,
+      "energyBelow300Hz": 0.26842450101638643,
+      "energyAbove4000Hz": 0.00004931373330923081,
+      "dominantSpectralBinHz": 343.75,
+      "peakBinEnergyFraction": 0.26205463929550693,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    },
+    {
+      "id": "P02_turbine_fan_loop_b",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P02_turbine_fan_loop_b.wav",
+      "sha256": "5aa34d9a7b939500a9a54128c1d50cbc3473426f030c73b2b50950d6c4ba8ce1",
+      "gitBlob": "cb60b5bf11958201d9a8628244c34ac373933e3d",
+      "bytes": 705644,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -8.721830568992742,
+        "clippedSamples": 0
+      },
+      "actualDuration": 4,
+      "prompt": {
+        "id": "P02_turbine_fan_loop_b",
+        "seconds": 4,
+        "influence": 0.6,
+        "prompt": "hovering vehicle turbine fan spinning, airy whirring blades with a low hum, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": true,
+      "peakDbfs": -1.00081125130036,
+      "rmsDbfs": -8.734642846494125,
+      "crestDb": 7.733831595193766,
+      "clippedSamples": 0,
+      "seamJump": 0.8596171587705612,
+      "seamJumpDbfs": -1.3138984833188097,
+      "largestInternalSampleDelta": 0.24901419878005981,
+      "seamVsInternalMax": 3.4520808973218933,
+      "first200msRmsDbfs": -8.363129734322643,
+      "last200msRmsDbfs": -8.088168407379188,
+      "endLevelDifferenceDb": 0.27496132694345476,
+      "window10msRmsP5Dbfs": -22.72290956330352,
+      "window10msRmsP95Dbfs": -4.841762691360715,
+      "window10msVariationDb": 17.881146871942807,
+      "spectralCentroidHz": 512.7302718804257,
+      "energyBelow300Hz": 0.02163311378745075,
+      "energyAbove4000Hz": 0.000044423092421618784,
+      "dominantSpectralBinHz": 531.25,
+      "peakBinEnergyFraction": 0.2010116122426519,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    },
+    {
+      "id": "P03_exhaust_rumble_loop_a",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P03_exhaust_rumble_loop_a.wav",
+      "sha256": "66b5e50f5dcd99fbb94e4250b4e867bfe72d16b2053bd1214641287312f58aa0",
+      "gitBlob": "02f7292680e0dd4e589cb55cbcc5b83a1f8a9391",
+      "bytes": 705644,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -17.317110427660012,
+        "clippedSamples": 0
+      },
+      "actualDuration": 4,
+      "prompt": {
+        "id": "P03_exhaust_rumble_loop_a",
+        "seconds": 4,
+        "influence": 0.6,
+        "prompt": "chunky dieselpunk exhaust pipes rumbling at idle, uneven loping putter, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": true,
+      "peakDbfs": -1.26143997507579,
+      "rmsDbfs": -17.325073114128667,
+      "crestDb": 16.063633139052875,
+      "clippedSamples": 0,
+      "seamJump": 0.03073762310668826,
+      "seamJumpDbfs": -30.24659437729823,
+      "largestInternalSampleDelta": 0.3001512996852398,
+      "seamVsInternalMax": 0.10240709648407967,
+      "first200msRmsDbfs": -18.289572899053322,
+      "last200msRmsDbfs": -19.957215540007674,
+      "endLevelDifferenceDb": -1.6676426409543517,
+      "window10msRmsP5Dbfs": -37.90033315450962,
+      "window10msRmsP95Dbfs": -9.8201024529931,
+      "window10msVariationDb": 28.08023070151652,
+      "spectralCentroidHz": 177.36094892764515,
+      "energyBelow300Hz": 0.9907619503472466,
+      "energyAbove4000Hz": 0.0034774938469405055,
+      "dominantSpectralBinHz": 140.625,
+      "peakBinEnergyFraction": 0.27956172922098604,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    },
+    {
+      "id": "P03_exhaust_rumble_loop_b",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P03_exhaust_rumble_loop_b.wav",
+      "sha256": "e98e0fe557d4fee41bc47a384e9f4f4e75fc7a162e8ed1c662eac50cf5a5f780",
+      "gitBlob": "61ae2b018229a31d7fbf6b07727e242989eb079a",
+      "bytes": 705644,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -13.299106424595273,
+        "clippedSamples": 0
+      },
+      "actualDuration": 4,
+      "prompt": {
+        "id": "P03_exhaust_rumble_loop_b",
+        "seconds": 4,
+        "influence": 0.6,
+        "prompt": "chunky dieselpunk exhaust pipes rumbling at idle, uneven loping putter, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": true,
+      "peakDbfs": -1.0766303503045647,
+      "rmsDbfs": -13.34268558666393,
+      "crestDb": 12.266055236359364,
+      "clippedSamples": 0,
+      "seamJump": 0.07783056795597076,
+      "seamJumpDbfs": -22.176996006919715,
+      "largestInternalSampleDelta": 0.3768766075372696,
+      "seamVsInternalMax": 0.2065147223240011,
+      "first200msRmsDbfs": -13.136920460566566,
+      "last200msRmsDbfs": -13.209593859496419,
+      "endLevelDifferenceDb": -0.0726733989298527,
+      "window10msRmsP5Dbfs": -21.852379574793602,
+      "window10msRmsP95Dbfs": -9.380646176462148,
+      "window10msVariationDb": 12.471733398331454,
+      "spectralCentroidHz": 374.1742466053936,
+      "energyBelow300Hz": 0.8789075351634876,
+      "energyAbove4000Hz": 0.011405366983760027,
+      "dominantSpectralBinHz": 187.5,
+      "peakBinEnergyFraction": 0.34446803878824833,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    },
+    {
+      "id": "P04_boost_ignite_a",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P04_boost_ignite_a.wav",
+      "sha256": "95a675ff2589ab5b1044e644e0fb91e03e36c406b100f12c17fd6082f3585a36",
+      "gitBlob": "fd51759137998fde595f16e5692abf8ba023174d",
+      "bytes": 261116,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -12.10820976360418,
+        "clippedSamples": 0
+      },
+      "actualDuration": 1.48,
+      "prompt": {
+        "id": "P04_boost_ignite_a",
+        "seconds": 1.5,
+        "influence": 0.6,
+        "prompt": "rocket booster igniting, sharp whoomp of flame then a rising surge, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": false,
+      "peakDbfs": -2.0243492719734886,
+      "rmsDbfs": -12.331756873937609,
+      "crestDb": 10.30740760196412,
+      "clippedSamples": 0,
+      "seamJump": 0.5308898026123643,
+      "seamJumpDbfs": -5.499912331063955,
+      "largestInternalSampleDelta": 0.3079063296318054,
+      "seamVsInternalMax": 1.7241925596242293,
+      "first200msRmsDbfs": -8.019410515225257,
+      "last200msRmsDbfs": -69.56369741155162,
+      "endLevelDifferenceDb": -61.544286896326355,
+      "window10msRmsP5Dbfs": -81.22048909322066,
+      "window10msRmsP95Dbfs": -7.165304354350711,
+      "window10msVariationDb": 74.05518473886995,
+      "spectralCentroidHz": 184.49054007773773,
+      "energyBelow300Hz": 0.8456963824578152,
+      "energyAbove4000Hz": 0.0012813722971991362,
+      "dominantSpectralBinHz": 15.625,
+      "peakBinEnergyFraction": 0.13489766661762925,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    },
+    {
+      "id": "P04_boost_ignite_b",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P04_boost_ignite_b.wav",
+      "sha256": "02de243815d6a8e5e7f5ae9f5ea9dc86fd6d8f151cf53570caea585e1edfb16a",
+      "gitBlob": "19090bcc398cdd0cbe3634f4792201205b26561e",
+      "bytes": 261116,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -12.690062093806665,
+        "clippedSamples": 0
+      },
+      "actualDuration": 1.48,
+      "prompt": {
+        "id": "P04_boost_ignite_b",
+        "seconds": 1.5,
+        "influence": 0.6,
+        "prompt": "rocket booster igniting, sharp whoomp of flame then a rising surge, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": false,
+      "peakDbfs": -1.3116503596155402,
+      "rmsDbfs": -12.745039107528678,
+      "crestDb": 11.433388747913138,
+      "clippedSamples": 0,
+      "seamJump": 0.342029063787777,
+      "seamJumpDbfs": -9.318739767394582,
+      "largestInternalSampleDelta": 0.28882408142089844,
+      "seamVsInternalMax": 1.1842124178327909,
+      "first200msRmsDbfs": -9.429341744751703,
+      "last200msRmsDbfs": -65.73482803698619,
+      "endLevelDifferenceDb": -56.305486292234484,
+      "window10msRmsP5Dbfs": -72.92111276985081,
+      "window10msRmsP95Dbfs": -7.362830131865465,
+      "window10msVariationDb": 65.55828263798534,
+      "spectralCentroidHz": 165.8177824015534,
+      "energyBelow300Hz": 0.9162167759729097,
+      "energyAbove4000Hz": 0.004132363646228263,
+      "dominantSpectralBinHz": 62.5,
+      "peakBinEnergyFraction": 0.159166239358075,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    },
+    {
+      "id": "P05_antigrav_hum_loop_a",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P05_antigrav_hum_loop_a.wav",
+      "sha256": "95fda2a8e380f8cede6363eb878cae1965f722375019a9642bbf2418b864f085",
+      "gitBlob": "3cde1c71b6ffd706d163a2d3c72830832fe7f15f",
+      "bytes": 705644,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -13.964978236204573,
+        "clippedSamples": 0
+      },
+      "actualDuration": 4,
+      "prompt": {
+        "id": "P05_antigrav_hum_loop_a",
+        "seconds": 4,
+        "influence": 0.6,
+        "prompt": "antigravity hover pads humming, soft warbling electric drone with gentle wobble, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": true,
+      "peakDbfs": -3.440740654004577,
+      "rmsDbfs": -15.300449262834519,
+      "crestDb": 11.859708608829942,
+      "clippedSamples": 0,
+      "seamJump": 0.029449403984472156,
+      "seamJumpDbfs": -30.618469806246726,
+      "largestInternalSampleDelta": 0.40341976284980774,
+      "seamVsInternalMax": 0.07299940829977658,
+      "first200msRmsDbfs": -17.767324624322427,
+      "last200msRmsDbfs": -37.839894135269965,
+      "endLevelDifferenceDb": -20.072569510947538,
+      "window10msRmsP5Dbfs": -32.32822559833523,
+      "window10msRmsP95Dbfs": -11.919859853718219,
+      "window10msVariationDb": 20.40836574461701,
+      "spectralCentroidHz": 1419.8190602639108,
+      "energyBelow300Hz": 0.024719751804281345,
+      "energyAbove4000Hz": 0.0021499391952918313,
+      "dominantSpectralBinHz": 1578.125,
+      "peakBinEnergyFraction": 0.424785649483405,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    },
+    {
+      "id": "P05_antigrav_hum_loop_b",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P05_antigrav_hum_loop_b.wav",
+      "sha256": "d83ec285f689ad5016218c2eccff9295b9b657fe1c590e025e2e3873dfe4bcc4",
+      "gitBlob": "de44317aec85dd3eb30ed37ea115d37035084774",
+      "bytes": 705644,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -16.175018401500033,
+        "clippedSamples": 0
+      },
+      "actualDuration": 4,
+      "prompt": {
+        "id": "P05_antigrav_hum_loop_b",
+        "seconds": 4,
+        "influence": 0.6,
+        "prompt": "antigravity hover pads humming, soft warbling electric drone with gentle wobble, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": true,
+      "peakDbfs": -3.8413982747478785,
+      "rmsDbfs": -17.560489775995457,
+      "crestDb": 13.71909150124758,
+      "clippedSamples": 0,
+      "seamJump": 0.09204183249676134,
+      "seamJumpDbfs": -20.720294867580023,
+      "largestInternalSampleDelta": 0.30286678951233625,
+      "seamVsInternalMax": 0.3039020311370664,
+      "first200msRmsDbfs": -19.27171925192646,
+      "last200msRmsDbfs": -31.972778312238376,
+      "endLevelDifferenceDb": -12.701059060311916,
+      "window10msRmsP5Dbfs": -25.04971945288979,
+      "window10msRmsP95Dbfs": -14.503696232409967,
+      "window10msVariationDb": 10.546023220479823,
+      "spectralCentroidHz": 929.523150443197,
+      "energyBelow300Hz": 0.02345127516858349,
+      "energyAbove4000Hz": 0.000851512074781862,
+      "dominantSpectralBinHz": 531.25,
+      "peakBinEnergyFraction": 0.17686919796116995,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    },
+    {
+      "id": "P06_shift_flame_pop_a",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P06_shift_flame_pop_a.wav",
+      "sha256": "9d4b2d7f7a2ae190288befe4904783011ae14af1115c804b843f64c92e9dcac4",
+      "gitBlob": "34b8e406fc2138467d163add633cdae4575381ac",
+      "bytes": 176444,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -15.3192075112103,
+        "clippedSamples": 0
+      },
+      "actualDuration": 1,
+      "prompt": {
+        "id": "P06_shift_flame_pop_a",
+        "seconds": 1,
+        "influence": 0.6,
+        "prompt": "gear shift with a flame pop from the exhaust, quick bang and crackle, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": false,
+      "peakDbfs": -1.241478499588515,
+      "rmsDbfs": -15.702074498357996,
+      "crestDb": 14.460595998769481,
+      "clippedSamples": 0,
+      "seamJump": 0.015051538473926485,
+      "seamJumpDbfs": -36.44838213882658,
+      "largestInternalSampleDelta": 0.17996840551495552,
+      "seamVsInternalMax": 0.08363433809872639,
+      "first200msRmsDbfs": -9.538870167188879,
+      "last200msRmsDbfs": -79.61548171375068,
+      "endLevelDifferenceDb": -70.07661154656181,
+      "window10msRmsP5Dbfs": -90.07949793461765,
+      "window10msRmsP95Dbfs": -6.8968631391297475,
+      "window10msVariationDb": 83.1826347954879,
+      "spectralCentroidHz": 211.6837247802316,
+      "energyBelow300Hz": 0.9175794540184601,
+      "energyAbove4000Hz": 0.00005475392963126146,
+      "dominantSpectralBinHz": 218.75,
+      "peakBinEnergyFraction": 0.2736290253119564,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    },
+    {
+      "id": "P06_shift_flame_pop_b",
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/propulsion_r1_norm/P06_shift_flame_pop_b.wav",
+      "sha256": "89663459091b2f4becc9bf261f9cf1da4e0088fd495c9b62e57dbf3797afaed0",
+      "gitBlob": "61cee1a47eda010dd9fd651439e5fb5009dd1123",
+      "bytes": 176444,
+      "format": {
+        "codec": 1,
+        "channels": 2,
+        "sampleRate": 44100,
+        "bits": 16
+      },
+      "nativePcm": {
+        "peakDbfs": -1.0001519038193567,
+        "rmsDbfs": -19.937859599527968,
+        "clippedSamples": 0
+      },
+      "actualDuration": 1,
+      "prompt": {
+        "id": "P06_shift_flame_pop_b",
+        "seconds": 1,
+        "influence": 0.6,
+        "prompt": "gear shift with a flame pop from the exhaust, quick bang and crackle, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones"
+      },
+      "loop": false,
+      "peakDbfs": -1.40164473553591,
+      "rmsDbfs": -20.10170990425741,
+      "crestDb": 18.7000651687215,
+      "clippedSamples": 0,
+      "seamJump": 0.025450099812587723,
+      "seamJumpDbfs": -31.88621020134125,
+      "largestInternalSampleDelta": 0.20405319333076477,
+      "seamVsInternalMax": 0.12472286954771539,
+      "first200msRmsDbfs": -13.231543441553997,
+      "last200msRmsDbfs": -74.85575591227138,
+      "endLevelDifferenceDb": -61.62421247071738,
+      "window10msRmsP5Dbfs": -84.03942216631094,
+      "window10msRmsP95Dbfs": -12.195503464973797,
+      "window10msVariationDb": 71.84391870133715,
+      "spectralCentroidHz": 222.91795802770693,
+      "energyBelow300Hz": 0.9051702719161383,
+      "energyAbove4000Hz": 0.004800458049574764,
+      "dominantSpectralBinHz": 171.875,
+      "peakBinEnergyFraction": 0.11123012493242156,
+      "status": "SOURCE_PCM_VERIFIED__LOOP_CHARACTER_EAR_OPEN",
+      "licence": "ELEVENLABS_PAID_PLAN_ASSERTED_BY_WS0__NOT_CC0__PRIVATE_AUDIO_ONLY"
+    }
+  ]
+}

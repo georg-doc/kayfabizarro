@@ -1,0 +1,83 @@
+{
+  "schema": "kfb.flight-crash-delivery/1",
+  "date": "2026-10-18",
+  "site": {
+    "project": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
+    "url": "https://kfb-audio.frizzlebob.chatgpt.site/#flight",
+    "savedVersion": 20,
+    "visibleRevision": "0.10.0",
+    "nativeSource": "f0ae805e4b76fd1a02e2cf6416505a836d677bec",
+    "versionId": "appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_69a77e03461c8191aa7c6037414de952",
+    "deployment": "appgdep_6ad4e66a08208191b305e3f93a4ba925",
+    "status": "succeeded / exact revision browser verified",
+    "audience": "existing owner-only policy unchanged"
+  },
+  "actualChecks": {
+    "privateSourceAudit": {"passed": 38, "failed": 0},
+    "flightCrashRuntime": {"passed": 263, "failed": 0},
+    "racerRegression": {"passed": 185, "failed": 0},
+    "combatRegression": {"passed": 395, "failed": 0},
+    "siteValidation": {"passed": 172, "failed": 0},
+    "ambienceRegression": {"namedTests": 25, "failed": 0, "simulatedSeconds": 1800},
+    "footstepRegression": {"passed": 511, "failed": 0},
+    "hostedProfiles": ["jetpack", "jet", "turbine", "antigrav", "prop"],
+    "hostedDemoSeconds": 30,
+    "hostedCues": 13,
+    "hostedExplosiveRoots": 2,
+    "hostedDebrisContacts": 6,
+    "hostedDroppedLateCues": 0,
+    "hostedMaxDispatchDriftMs": 10.793650793647913,
+    "simulatedMaxDispatchDriftMs": 6.666666666666821,
+    "hostAudioContexts": 1,
+    "consumerCreatedAudioContexts": 0,
+    "hostedRacerDecodes": 38,
+    "hostedCombatDecodes": 54,
+    "endedRacerSources": 0,
+    "endedCombatSources": 0,
+    "manualControls": "five profiles, bank, climb, airbrake, propulsion-off, speech focus, Stop observed",
+    "startupTakeover": "local Chrome pending Flight load -> Combat ready cancels Flight; final source independently inspected"
+  },
+  "review": {
+    "tester": "independent audio_tester: source and runtime PASS",
+    "critic": "independent audio_critic: CONTINUE after startup takeover repair and silent cold-arm inspection",
+    "guard": "independent audio_guard: CONTINUE with bounded-history and source-gap qualifications",
+    "humanDecision": "PROCEED PASS; not HUMAN_ACCEPTED",
+    "worldIntegration": false,
+    "earAcceptance": "OPEN; no human listening verdict fabricated",
+    "paidGeneration": false
+  },
+  "privateDelivery": {
+    "status": "completed",
+    "dropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/WSA_AUDIO_FLIGHT_CRASH_R1_2026-10-18.zip",
+    "fileId": "id:KeQLaY5-IIAAAAAAAArufw",
+    "modifiedTime": "2026-10-18T15:38:34Z",
+    "bytes": 2669803,
+    "localArchiveSha256": "3039bacb9504f811c8fcf4fbdcbdbd5a4a51b931086195876803674e10cb6914",
+    "contents": "38 Racer/Flight + 54 Combat processed sources, manifests, consumer/notice, exact hosted audio proof",
+    "sharing": "existing namespace inheritance unchanged; no new shared link",
+    "clip": {
+      "file": "hosted-flight-crash-r1.webm",
+      "sha256": "f6f276834223bf90661d292986fb6e4a0d94c91bdb4a6096e82573316637f275",
+      "bytes": 400502,
+      "decodedSampleFrames": 1440000,
+      "sampleRate": 48000,
+      "channels": 2,
+      "containerDurationSeconds": 29.94,
+      "decodedDurationSeconds": 30,
+      "peakDbfs": -17.185684,
+      "rmsDbfs": -33.047141,
+      "nanSamples": 0,
+      "infiniteSamples": 0,
+      "scope": "audio-only capture of existing final mixed output; no microphone, second mixer or physical AV-sync proof"
+    }
+  },
+  "limitations": [
+    "Synthetic studio telemetry/cues, not World physics or actual game HitEvents.",
+    "One boom per retained cascade: 64 cascade records / 512 event IDs; Stop clears state.",
+    "24 is Combat voice ceiling, not combined Racer + Combat ceiling.",
+    "Quiet contact/settle excerpts use real composite material recordings, not independent clean donor contacts.",
+    "Nonexplosive impact, clean contacts/settles and jetpack-off gaps recorded for WS0; no paid calls.",
+    "Dispatch drift measures host scheduling, not acoustic device latency or visible contact sync."
+  ],
+  "nextGate": "WS1 maps actual returned World thrust/speed/bank/climb/airbrake and Hit/support/contact facts into the existing Audio consumers through one tiny adapter. No World writes in this delivery."
+}
