@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-541 V-540-Aufteilung (Issue #431): Cloud-Lane Large-Retarget + Carry-Griffe, WSB AGL-Figur + Opfer-Clips + Prüfstand; Anker-Aliase socket_* → KFB_*. B40 AG1–AG3 fertig.
 - Prüfstand v1.2.8: G1-Regel eyeRig.occludedBy "glasses" (Sonnenbrillen-Variante: Rig vollständig + 0 sichtbare Augenpixel = PASS). B40 AG1 mit KayKit-1H-Kampfset (Achse 0,000), 2H nur für späteres Gewehr. Hub q109 Blaster-Sounds, q110 Blob-Corp-Turm r2.
 - V-540 Blaster-Kampfset aus KayKit CombatRanged + Mündungs-FX/VFX/SFX (blaster_r1); B40-Brief und WS1-Hinweis ergänzt.
 - V-536 global bestätigt (auch Combat Arena); B31 r6b_final als Referenz. WS1b-Start als Task-Chip angelegt (Georg klickt).

@@ -7614,6 +7614,21 @@
    "applies": "nach B40-Agenten"
   },
   {
+   "id": "V-541",
+   "date": "2026-10-18",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "V-540-Aufteilung nach Antwort der Cloud-Blender-Lane (GitHub Issue #431): B40 bleibt beim Aufbau aus rohem KayKit CombatRanged (AG1–3 fertig, 1H, 16 Clips). Kanonische Anker KFB_Grip/KFB_Muzzle; socket_grip_r/socket_muzzle (DUEL-01) sind Aliase, Loader lesen beide. Clip-Exportnamen auf Motion-Library-IDs abbilden. Cloud-Lane: Large-Retarget des B40-1H-Sets für AGL + Large-Carry-Griffe. WSB: AGL-Figur, Mixamo-Opfer-Clips, Einbau + Prüfstand + Gegenmessung. Keine weiteren KayKit-Retargets ohne Absprache.",
+   "values": {},
+   "owner": "Cloud-Blender-Lane · WSB · WS1b (Aliase)",
+   "check": "Issue #431: Large-Slice gestartet",
+   "source": "Issue #431 · Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Zwei Blender-Werkstätten parallel ohne Doppelarbeit, mit gegenseitiger Messung.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7701,7 +7716,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:902",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:903",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
