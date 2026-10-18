@@ -1,0 +1,1452 @@
+{
+ "schema": "kfb.loot-items/1",
+ "version": "r1",
+ "date": "2026-10-18",
+ "scale_note": "V-443: alle Teile ×1,25 gegenüber dem ersten Bogen; Ursprung Bbox-Mitte (V-437)",
+ "decision": "V-434 (28. Nachtrag WS0)",
+ "units": "Rig_Medium-Einheiten (1 u = 0,616 m); Y oben",
+ "counts": {
+  "common": 30,
+  "rare": 12
+ },
+ "groups": {
+  "food": [
+   "burger",
+   "dinner_plate",
+   "stew_bowl",
+   "carrot",
+   "tomato",
+   "cheese_wedge",
+   "apple",
+   "sandwich",
+   "baguette",
+   "pretzel",
+   "jam_jar"
+  ],
+  "drink": [
+   "drink_can",
+   "milk_bottle",
+   "coffee_to_go",
+   "mug_pink",
+   "mug_red",
+   "thermos",
+   "teapot"
+  ],
+  "sweet": [
+   "cupcake",
+   "donut_pink",
+   "donut_chocolate",
+   "cookie",
+   "muffin",
+   "cinnamon_roll",
+   "croissant",
+   "cake_slice_strawberry",
+   "pie_slice_cherry",
+   "waffle",
+   "macaron_pink",
+   "cream_puff"
+  ],
+  "tool_prop": [
+   "giant_spoon",
+   "wobbly_hammer",
+   "giant_mallet",
+   "magnifying_glass",
+   "lantern",
+   "giant_scissors",
+   "rolling_pin",
+   "oven_glove",
+   "frisbee",
+   "radio",
+   "gold_nugget",
+   "golden_cog"
+  ]
+ },
+ "items": [
+  {
+   "id": "burger",
+   "name_de": "Burger",
+   "glb": "KFB_Loot_burger.r1.glb",
+   "rarity": "common",
+   "type": "food",
+   "mass_kg": 0.3,
+   "size_u": [
+    0.788,
+    0.711,
+    0.787
+   ],
+   "size_m": [
+    0.485,
+    0.438,
+    0.485
+   ],
+   "source": {
+    "pack": "KayKit Restaurant Bits 1.0 FREE",
+    "file": "food_burger.gltf",
+    "scale_factor": 0.8289
+   },
+   "licence": "KayKit Restaurant Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.6605,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.3553,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 87596,
+   "sha256": "7b20b00a6a55d029839b7c507e18540901ff601f5c1d613c83a9829faec392bc"
+  },
+  {
+   "id": "dinner_plate",
+   "name_de": "Tellergericht",
+   "glb": "KFB_Loot_dinner_plate.r1.glb",
+   "rarity": "common",
+   "type": "food",
+   "mass_kg": 0.6,
+   "size_u": [
+    0.962,
+    0.842,
+    0.881
+   ],
+   "size_m": [
+    0.593,
+    0.519,
+    0.543
+   ],
+   "source": {
+    "pack": "KayKit Restaurant Bits 1.0 FREE",
+    "file": "food_dinner.gltf",
+    "scale_factor": 0.9278
+   },
+   "licence": "KayKit Restaurant Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.7766,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.4211,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 67612,
+   "sha256": "8850f691d6f425e89c8c2905d97f0b6c4430527bda761533d05a07399e333909"
+  },
+  {
+   "id": "stew_bowl",
+   "name_de": "Eintopf-Schale",
+   "glb": "KFB_Loot_stew_bowl.r1.glb",
+   "rarity": "common",
+   "type": "food",
+   "mass_kg": 0.5,
+   "size_u": [
+    0.787,
+    0.306,
+    0.788
+   ],
+   "size_m": [
+    0.485,
+    0.189,
+    0.485
+   ],
+   "source": {
+    "pack": "KayKit Restaurant Bits 1.0 FREE",
+    "file": "food_stew.gltf",
+    "scale_factor": 0.8289
+   },
+   "licence": "KayKit Restaurant Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.5775,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.1532,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 46056,
+   "sha256": "d0c83fdf842051b05329e634571ec9ae186358bb553371c3191bd389459dd0c9"
+  },
+  {
+   "id": "carrot",
+   "name_de": "Karotte",
+   "glb": "KFB_Loot_carrot.r1.glb",
+   "rarity": "common",
+   "type": "food",
+   "mass_kg": 0.1,
+   "size_u": [
+    0.347,
+    0.788,
+    0.343
+   ],
+   "size_m": [
+    0.214,
+    0.485,
+    0.211
+   ],
+   "source": {
+    "pack": "KayKit Restaurant Bits 1.0 FREE",
+    "file": "food_ingredient_carrot.gltf",
+    "scale_factor": 0.6201
+   },
+   "licence": "KayKit Restaurant Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4632,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.3938,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 32920,
+   "sha256": "9ad766a73eee78c00a8c34eb8cab53d573751e262bb3bc99a19df067933d4ea3"
+  },
+  {
+   "id": "tomato",
+   "name_de": "Tomate",
+   "glb": "KFB_Loot_tomato.r1.glb",
+   "rarity": "common",
+   "type": "food",
+   "mass_kg": 0.1,
+   "size_u": [
+    0.525,
+    0.49,
+    0.525
+   ],
+   "size_m": [
+    0.323,
+    0.302,
+    0.323
+   ],
+   "source": {
+    "pack": "KayKit Restaurant Bits 1.0 FREE",
+    "file": "food_ingredient_tomato.gltf",
+    "scale_factor": 0.7
+   },
+   "licence": "KayKit Restaurant Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4448,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.245,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 36148,
+   "sha256": "0d02017e62aada06b7b50101edff1a37e5c212af49113fb172c5c71f39e82660"
+  },
+  {
+   "id": "cheese_wedge",
+   "name_de": "Käseecke",
+   "glb": "KFB_Loot_cheese_wedge.r1.glb",
+   "rarity": "common",
+   "type": "food",
+   "mass_kg": 0.3,
+   "size_u": [
+    0.453,
+    0.522,
+    0.7
+   ],
+   "size_m": [
+    0.279,
+    0.321,
+    0.431
+   ],
+   "source": {
+    "pack": "Tiny Treats Pleasant Picnic 1.0 FREE",
+    "file": "cheese_A.gltf",
+    "scale_factor": 1.8661
+   },
+   "licence": "Tiny Treats Pleasant Picnic 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4918,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.2609,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 28680,
+   "sha256": "b7bbfdff21cbbc5fd5dbf4b3048bbfc18c7d7f8d518dfcfaa997d707e36ed8e5"
+  },
+  {
+   "id": "apple",
+   "name_de": "Apfel",
+   "glb": "KFB_Loot_apple.r1.glb",
+   "rarity": "common",
+   "type": "food",
+   "mass_kg": 0.15,
+   "size_u": [
+    0.525,
+    0.425,
+    0.525
+   ],
+   "size_m": [
+    0.323,
+    0.262,
+    0.323
+   ],
+   "source": {
+    "pack": "Tiny Treats Pleasant Picnic 1.0 FREE",
+    "file": "apple.gltf",
+    "scale_factor": 1.1966
+   },
+   "licence": "Tiny Treats Pleasant Picnic 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4279,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.2127,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 30556,
+   "sha256": "1b6779fc63e5f9ccf249f3e92039d3f12d61f979fbf65bbd7f52fc11985f081b"
+  },
+  {
+   "id": "sandwich",
+   "name_de": "Sandwich",
+   "glb": "KFB_Loot_sandwich.r1.glb",
+   "rarity": "common",
+   "type": "food",
+   "mass_kg": 0.2,
+   "size_u": [
+    0.785,
+    0.55,
+    0.788
+   ],
+   "size_m": [
+    0.484,
+    0.339,
+    0.485
+   ],
+   "source": {
+    "pack": "Tiny Treats Pleasant Picnic 1.0 FREE",
+    "file": "sandwich.gltf",
+    "scale_factor": 1.262
+   },
+   "licence": "Tiny Treats Pleasant Picnic 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.6205,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.2752,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 45480,
+   "sha256": "4de481f0953698dc778fc2c6555783fd087ada68aa5326a56129f035c9d624a9"
+  },
+  {
+   "id": "baguette",
+   "name_de": "Baguette",
+   "glb": "KFB_Loot_baguette.r1.glb",
+   "rarity": "common",
+   "type": "food",
+   "mass_kg": 0.25,
+   "size_u": [
+    0.368,
+    0.27,
+    1.225
+   ],
+   "size_m": [
+    0.227,
+    0.166,
+    0.755
+   ],
+   "source": {
+    "pack": "Tiny Treats Baked Goods 1.0 FREE",
+    "file": "baguette.gltf",
+    "scale_factor": 0.9923
+   },
+   "licence": "Tiny Treats Baked Goods 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.6536,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.1348,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 31216,
+   "sha256": "a50c7664f5943d884e6cec88f4cbfe0bdadcba196cf62732ba14041cc206c42e"
+  },
+  {
+   "id": "pretzel",
+   "name_de": "Brezel",
+   "glb": "KFB_Loot_pretzel.r1.glb",
+   "rarity": "common",
+   "type": "food",
+   "mass_kg": 0.1,
+   "size_u": [
+    0.7,
+    0.534,
+    0.19
+   ],
+   "size_m": [
+    0.431,
+    0.329,
+    0.117
+   ],
+   "source": {
+    "pack": "Tiny Treats Bakery Interior 1.1 FREE",
+    "file": "pretzel.gltf",
+    "scale_factor": 1.2707
+   },
+   "licence": "Tiny Treats Bakery Interior 1.1 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4505,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.2671,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 36692,
+   "sha256": "9ffbeb51b3af2d00933295af8a6057386dc627a1f4704c34980482b00a6043f8"
+  },
+  {
+   "id": "jam_jar",
+   "name_de": "Marmeladenglas",
+   "glb": "KFB_Loot_jam_jar.r1.glb",
+   "rarity": "common",
+   "type": "food",
+   "mass_kg": 0.4,
+   "size_u": [
+    0.496,
+    0.613,
+    0.496
+   ],
+   "size_m": [
+    0.305,
+    0.377,
+    0.305
+   ],
+   "source": {
+    "pack": "Tiny Treats Pleasant Picnic 1.0 FREE",
+    "file": "jam.gltf",
+    "scale_factor": 1.271
+   },
+   "licence": "Tiny Treats Pleasant Picnic 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4654,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.3063,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 33080,
+   "sha256": "215b1fce541c836b86d3d46ebf888a02a79a7c52f823ac95397563f61e4b600f"
+  },
+  {
+   "id": "cupcake",
+   "name_de": "Cupcake",
+   "glb": "KFB_Loot_cupcake.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.1,
+   "size_u": [
+    0.434,
+    0.613,
+    0.434
+   ],
+   "size_m": [
+    0.267,
+    0.377,
+    0.267
+   ],
+   "source": {
+    "pack": "Tiny Treats Baked Goods 1.0 FREE",
+    "file": "cupcake.gltf",
+    "scale_factor": 1.2004
+   },
+   "licence": "Tiny Treats Baked Goods 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4337,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.3063,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 50300,
+   "sha256": "a773a9176ca6e58d6eeb8af851b848dad1a38b89239a6ff12b36643b5868970e"
+  },
+  {
+   "id": "donut_pink",
+   "name_de": "Donut rosa",
+   "glb": "KFB_Loot_donut_pink.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.08,
+   "size_u": [
+    0.612,
+    0.301,
+    0.613
+   ],
+   "size_m": [
+    0.377,
+    0.185,
+    0.377
+   ],
+   "source": {
+    "pack": "Tiny Treats Baked Goods 1.0 FREE",
+    "file": "donut_pink.gltf",
+    "scale_factor": 1.4687
+   },
+   "licence": "Tiny Treats Baked Goods 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4585,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.1503,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 47520,
+   "sha256": "9e03e5396ea34bf7b7a3a452e837ab039dc922d8ca7891af729e76e16f7a8348"
+  },
+  {
+   "id": "donut_chocolate",
+   "name_de": "Donut Schoko",
+   "glb": "KFB_Loot_donut_chocolate.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.08,
+   "size_u": [
+    0.612,
+    0.301,
+    0.613
+   ],
+   "size_m": [
+    0.377,
+    0.185,
+    0.377
+   ],
+   "source": {
+    "pack": "Tiny Treats Baked Goods 1.0 FREE",
+    "file": "donut_chocolate.gltf",
+    "scale_factor": 1.4687
+   },
+   "licence": "Tiny Treats Baked Goods 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4585,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.1503,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 47020,
+   "sha256": "09690be2ec070d8c04b52fac6c9a361e7aa13bc7748ae51ff51f9cc5b7ef8ccc"
+  },
+  {
+   "id": "cookie",
+   "name_de": "Keks",
+   "glb": "KFB_Loot_cookie.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.03,
+   "size_u": [
+    0.525,
+    0.175,
+    0.525
+   ],
+   "size_m": [
+    0.323,
+    0.108,
+    0.323
+   ],
+   "source": {
+    "pack": "Tiny Treats Baked Goods 1.0 FREE",
+    "file": "cookie.gltf",
+    "scale_factor": 1.0671
+   },
+   "licence": "Tiny Treats Baked Goods 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.3813,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.0873,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 35908,
+   "sha256": "e06dc8f9a2d18ae287f1bb2178b1e8022aaeecfe2de9d6dccc2a461238cc91d9"
+  },
+  {
+   "id": "muffin",
+   "name_de": "Muffin",
+   "glb": "KFB_Loot_muffin.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.1,
+   "size_u": [
+    0.613,
+    0.563,
+    0.612
+   ],
+   "size_m": [
+    0.377,
+    0.347,
+    0.377
+   ],
+   "source": {
+    "pack": "Tiny Treats Baked Goods 1.0 FREE",
+    "file": "muffin.gltf",
+    "scale_factor": 1.6073
+   },
+   "licence": "Tiny Treats Baked Goods 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.5164,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.2814,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 44916,
+   "sha256": "649bf5aea83f4543b2b4656e31d7d28b9ffc54d9d7f93b4c644d8be4b74274cb"
+  },
+  {
+   "id": "cinnamon_roll",
+   "name_de": "Zimtschnecke",
+   "glb": "KFB_Loot_cinnamon_roll.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.1,
+   "size_u": [
+    0.613,
+    0.369,
+    0.572
+   ],
+   "size_m": [
+    0.377,
+    0.227,
+    0.352
+   ],
+   "source": {
+    "pack": "Tiny Treats Baked Goods 1.0 FREE",
+    "file": "cinnamon_roll.gltf",
+    "scale_factor": 1.4548
+   },
+   "licence": "Tiny Treats Baked Goods 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4579,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.1846,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 39716,
+   "sha256": "a6bff40cb0935422c91aa653bc8357657092bb453bcd5785022ed51859ec9f81"
+  },
+  {
+   "id": "croissant",
+   "name_de": "Croissant",
+   "glb": "KFB_Loot_croissant.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.06,
+   "size_u": [
+    0.7,
+    0.292,
+    0.37
+   ],
+   "size_m": [
+    0.431,
+    0.18,
+    0.228
+   ],
+   "source": {
+    "pack": "Tiny Treats Baked Goods 1.0 FREE",
+    "file": "croissant.gltf",
+    "scale_factor": 0.9504
+   },
+   "licence": "Tiny Treats Baked Goods 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.422,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.146,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 33588,
+   "sha256": "c54c81c4fc9d13a7d9bf1271509d89f2881da0616ce1ba29ce4efd9ec60b0f5f"
+  },
+  {
+   "id": "cake_slice_strawberry",
+   "name_de": "Erdbeertorte (Stück)",
+   "glb": "KFB_Loot_cake_slice_strawberry.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.15,
+   "size_u": [
+    0.428,
+    0.613,
+    0.559
+   ],
+   "size_m": [
+    0.263,
+    0.377,
+    0.344
+   ],
+   "source": {
+    "pack": "Tiny Treats Baked Goods 1.0 FREE",
+    "file": "cake_strawberry_slice.gltf",
+    "scale_factor": 0.916
+   },
+   "licence": "Tiny Treats Baked Goods 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4665,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.3063,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 47628,
+   "sha256": "a24de476f745484fdb224c7ef314dc40220616f3546617a8d6d0cb396e977fbc"
+  },
+  {
+   "id": "pie_slice_cherry",
+   "name_de": "Kirschkuchen (Stück)",
+   "glb": "KFB_Loot_pie_slice_cherry.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.15,
+   "size_u": [
+    0.598,
+    0.33,
+    0.613
+   ],
+   "size_m": [
+    0.369,
+    0.203,
+    0.377
+   ],
+   "source": {
+    "pack": "Tiny Treats Baked Goods 1.0 FREE",
+    "file": "pie_cherry_slice.gltf",
+    "scale_factor": 1.0732
+   },
+   "licence": "Tiny Treats Baked Goods 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4589,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.1651,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 34028,
+   "sha256": "8c292bb309851f528f8dca4ab55991ffeb7587ff8eca6ce2993ce54f3da41a3e"
+  },
+  {
+   "id": "waffle",
+   "name_de": "Waffel",
+   "glb": "KFB_Loot_waffle.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.08,
+   "size_u": [
+    0.566,
+    0.143,
+    0.612
+   ],
+   "size_m": [
+    0.349,
+    0.088,
+    0.377
+   ],
+   "source": {
+    "pack": "Tiny Treats Baked Goods 1.0 FREE",
+    "file": "waffle.gltf",
+    "scale_factor": 1.0984
+   },
+   "licence": "Tiny Treats Baked Goods 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4231,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.0713,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 40668,
+   "sha256": "090433288484ca6d6a5c86301db5927c9a424c53132ef5b930f70d761c3ff1ee"
+  },
+  {
+   "id": "macaron_pink",
+   "name_de": "Macaron",
+   "glb": "KFB_Loot_macaron_pink.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.02,
+   "size_u": [
+    0.438,
+    0.35,
+    0.438
+   ],
+   "size_m": [
+    0.27,
+    0.216,
+    0.27
+   ],
+   "source": {
+    "pack": "Tiny Treats Bakery Interior 1.1 FREE",
+    "file": "macaron_pink.gltf",
+    "scale_factor": 1.75
+   },
+   "licence": "Tiny Treats Bakery Interior 1.1 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.3554,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.175,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 33244,
+   "sha256": "c43ae8354e2819415ec339b4defa0ff51a90f63e231eeab0e6cd16236250584a"
+  },
+  {
+   "id": "cream_puff",
+   "name_de": "Windbeutel",
+   "glb": "KFB_Loot_cream_puff.r1.glb",
+   "rarity": "common",
+   "type": "sweet",
+   "mass_kg": 0.05,
+   "size_u": [
+    0.525,
+    0.509,
+    0.525
+   ],
+   "size_m": [
+    0.323,
+    0.314,
+    0.323
+   ],
+   "source": {
+    "pack": "Tiny Treats Bakery Interior 1.1 FREE",
+    "file": "cream_puff.gltf",
+    "scale_factor": 1.7257
+   },
+   "licence": "Tiny Treats Bakery Interior 1.1 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4501,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.2545,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 32048,
+   "sha256": "48f67be9d0a2cdb3796fc0b363e580fb8e18ed2e80a50e331058462ee8dc4074"
+  },
+  {
+   "id": "drink_can",
+   "name_de": "Getränkedose",
+   "glb": "KFB_Loot_drink_can.r1.glb",
+   "rarity": "common",
+   "type": "drink",
+   "mass_kg": 0.35,
+   "size_u": [
+    0.393,
+    0.613,
+    0.393
+   ],
+   "size_m": [
+    0.242,
+    0.377,
+    0.242
+   ],
+   "source": {
+    "pack": "Tiny Treats Pleasant Picnic 1.0 FREE",
+    "file": "drink_can.gltf",
+    "scale_factor": 1.2095
+   },
+   "licence": "Tiny Treats Pleasant Picnic 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.4136,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.3063,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 31392,
+   "sha256": "6501e69ee2321071f17a111a85766a1a4238bb73f4a95b36362d8bea9d907bf7"
+  },
+  {
+   "id": "milk_bottle",
+   "name_de": "Milchflasche",
+   "glb": "KFB_Loot_milk_bottle.r1.glb",
+   "rarity": "common",
+   "type": "drink",
+   "mass_kg": 1.0,
+   "size_u": [
+    0.678,
+    0.875,
+    0.621
+   ],
+   "size_m": [
+    0.417,
+    0.539,
+    0.383
+   ],
+   "source": {
+    "pack": "Tiny Treats Bakery Interior 1.1 FREE",
+    "file": "milk.gltf",
+    "scale_factor": 1.868
+   },
+   "licence": "Tiny Treats Bakery Interior 1.1 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.6345,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.4375,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 36900,
+   "sha256": "0b6a08f896f8ac3c24ffd6b5f5ff7596d4275ab0ca96479f03de9b8fa6c5d852"
+  },
+  {
+   "id": "coffee_to_go",
+   "name_de": "Kaffee zum Mitnehmen",
+   "glb": "KFB_Loot_coffee_to_go.r1.glb",
+   "rarity": "common",
+   "type": "drink",
+   "mass_kg": 0.3,
+   "size_u": [
+    0.584,
+    0.7,
+    0.584
+   ],
+   "size_m": [
+    0.36,
+    0.431,
+    0.36
+   ],
+   "source": {
+    "pack": "Tiny Treats Bakery Interior 1.1 FREE",
+    "file": "coffee_cup_takeaway.gltf",
+    "scale_factor": 1.7073
+   },
+   "licence": "Tiny Treats Bakery Interior 1.1 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.5412,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.35,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 31772,
+   "sha256": "53ad6ba1a176a78b7d4161c4ef6ab8423eedcb6c6c98bbee923b69559ab3c340"
+  },
+  {
+   "id": "mug_pink",
+   "name_de": "Tasse rosa",
+   "glb": "KFB_Loot_mug_pink.r1.glb",
+   "rarity": "common",
+   "type": "drink",
+   "mass_kg": 0.3,
+   "size_u": [
+    0.525,
+    0.314,
+    0.387
+   ],
+   "size_m": [
+    0.323,
+    0.193,
+    0.238
+   ],
+   "source": {
+    "pack": "Tiny Treats Bakery Interior 1.1 FREE",
+    "file": "mug_A_pink.gltf",
+    "scale_factor": 0.8972
+   },
+   "licence": "Tiny Treats Bakery Interior 1.1 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.362,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.157,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 35252,
+   "sha256": "8452898ae4ef011e2bdb73417020037f5be187f6573318f7770fa442ff7903ee"
+  },
+  {
+   "id": "mug_red",
+   "name_de": "Becher rot",
+   "glb": "KFB_Loot_mug_red.r1.glb",
+   "rarity": "common",
+   "type": "drink",
+   "mass_kg": 0.3,
+   "size_u": [
+    0.525,
+    0.359,
+    0.385
+   ],
+   "size_m": [
+    0.323,
+    0.221,
+    0.237
+   ],
+   "source": {
+    "pack": "Tiny Treats Charming Kitchen 1.1 FREE",
+    "file": "mug_red.gltf",
+    "scale_factor": 1.0256
+   },
+   "licence": "Tiny Treats Charming Kitchen 1.1 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.3716,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.1795,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 32580,
+   "sha256": "1a1c2193926b8f600c963e917a373bf10b61e51e1f0eb8b9ca280f2e95b15aa5"
+  },
+  {
+   "id": "thermos",
+   "name_de": "Thermoskanne",
+   "glb": "KFB_Loot_thermos.r1.glb",
+   "rarity": "common",
+   "type": "drink",
+   "mass_kg": 0.8,
+   "size_u": [
+    0.681,
+    0.875,
+    0.517
+   ],
+   "size_m": [
+    0.419,
+    0.539,
+    0.319
+   ],
+   "source": {
+    "pack": "Tiny Treats Pleasant Picnic 1.0 FREE",
+    "file": "thermos.gltf",
+    "scale_factor": 1.2508
+   },
+   "licence": "Tiny Treats Pleasant Picnic 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.6117,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.4375,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 45912,
+   "sha256": "0f4657dfe9271b4c5aea329b12ecacda1f2ed855a2710a07600a63ade7ae9d30"
+  },
+  {
+   "id": "teapot",
+   "name_de": "Teekanne",
+   "glb": "KFB_Loot_teapot.r1.glb",
+   "rarity": "common",
+   "type": "drink",
+   "mass_kg": 0.8,
+   "size_u": [
+    0.788,
+    0.526,
+    0.531
+   ],
+   "size_m": [
+    0.485,
+    0.324,
+    0.327
+   ],
+   "source": {
+    "pack": "Tiny Treats Pleasant Picnic 1.0 FREE",
+    "file": "teapot.gltf",
+    "scale_factor": 0.8565
+   },
+   "licence": "Tiny Treats Pleasant Picnic 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.5429,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.2631,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "",
+   "bytes": 43880,
+   "sha256": "268389fdc87ce9697fcc13e7e3f1d0d2ad6256522d3bbf65f2a36d7712ca9b4f"
+  },
+  {
+   "id": "giant_spoon",
+   "name_de": "Riesenlöffel",
+   "glb": "KFB_Loot_giant_spoon.r1.glb",
+   "rarity": "rare",
+   "type": "tool",
+   "mass_kg": 2.0,
+   "size_u": [
+    0.726,
+    2.25,
+    0.244
+   ],
+   "size_m": [
+    0.448,
+    1.386,
+    0.15
+   ],
+   "source": {
+    "pack": "Tiny Treats Charming Kitchen 1.1 FREE",
+    "file": "spoon.gltf",
+    "scale_factor": 2.6602
+   },
+   "licence": "Tiny Treats Charming Kitchen 1.1 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 1.1885,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 1.125,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "übergroß (≈ 1,1 m): Löffel so groß wie ein Paddel",
+   "bytes": 30468,
+   "sha256": "89aa29cdd8386e947945f21a7db9bff2b3c8f5b9f586034c0100e24062619669"
+  },
+  {
+   "id": "wobbly_hammer",
+   "name_de": "Wackelhammer",
+   "glb": "KFB_Loot_wobbly_hammer.r1.glb",
+   "rarity": "rare",
+   "type": "tool",
+   "mass_kg": 1.5,
+   "size_u": [
+    0.99,
+    1.5,
+    0.594
+   ],
+   "size_m": [
+    0.61,
+    0.924,
+    0.366
+   ],
+   "source": {
+    "pack": "KayKit RPG Tools Bits 1.0 FREE",
+    "file": "hammer.gltf",
+    "scale_factor": 1.8218
+   },
+   "licence": "KayKit RPG Tools Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.9465,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.75,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "Wackeln zur Laufzeit (Cartoon-Deformer), Asset unverändert",
+   "bytes": 44772,
+   "sha256": "650c450e53b31e0bf02092fc022d5612fa64eaeeb32f4e810475799872008f89"
+  },
+  {
+   "id": "giant_mallet",
+   "name_de": "Riesen-Holzhammer",
+   "glb": "KFB_Loot_giant_mallet.r1.glb",
+   "rarity": "rare",
+   "type": "tool",
+   "mass_kg": 3.0,
+   "size_u": [
+    1.306,
+    2.0,
+    0.884
+   ],
+   "size_m": [
+    0.805,
+    1.232,
+    0.545
+   ],
+   "source": {
+    "pack": "KayKit RPG Tools Bits 1.0 FREE",
+    "file": "mallet.gltf",
+    "scale_factor": 2.0336
+   },
+   "licence": "KayKit RPG Tools Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 1.2737,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 1.0,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "übergroß, Cartoon-Klopper",
+   "bytes": 46112,
+   "sha256": "b740c72a47c1ab60faabeabfd2baee7d8e5acce5f6c475facaedc808a09a3daa"
+  },
+  {
+   "id": "magnifying_glass",
+   "name_de": "Riesenlupe",
+   "glb": "KFB_Loot_magnifying_glass.r1.glb",
+   "rarity": "rare",
+   "type": "tool",
+   "mass_kg": 0.8,
+   "size_u": [
+    0.67,
+    1.375,
+    0.182
+   ],
+   "size_m": [
+    0.413,
+    0.847,
+    0.112
+   ],
+   "source": {
+    "pack": "KayKit RPG Tools Bits 1.0 FREE",
+    "file": "magnifying_glass.gltf",
+    "scale_factor": 1.4474
+   },
+   "licence": "KayKit RPG Tools Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.7702,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.6875,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "übergroß",
+   "bytes": 53560,
+   "sha256": "aa7b067a0a0b8477a9a44f9fcd5c9c67c02f29615c80ecedafc864b752cb805d"
+  },
+  {
+   "id": "lantern",
+   "name_de": "Laterne",
+   "glb": "KFB_Loot_lantern.r1.glb",
+   "rarity": "rare",
+   "type": "prop",
+   "mass_kg": 1.0,
+   "size_u": [
+    0.68,
+    1.0,
+    0.68
+   ],
+   "size_m": [
+    0.419,
+    0.616,
+    0.419
+   ],
+   "source": {
+    "pack": "KayKit RPG Tools Bits 1.0 FREE",
+    "file": "lantern.gltf",
+    "scale_factor": 0.9035
+   },
+   "licence": "KayKit RPG Tools Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.6938,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.5,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "Licht zur Laufzeit möglich",
+   "bytes": 65256,
+   "sha256": "7e84485903b52b6b11b5a3ef93a635ee877553da55c1f534270146ce5ee9f263"
+  },
+  {
+   "id": "giant_scissors",
+   "name_de": "Riesenschere",
+   "glb": "KFB_Loot_giant_scissors.r1.glb",
+   "rarity": "rare",
+   "type": "tool",
+   "mass_kg": 1.2,
+   "size_u": [
+    0.616,
+    1.625,
+    0.101
+   ],
+   "size_m": [
+    0.379,
+    1.001,
+    0.062
+   ],
+   "source": {
+    "pack": "KayKit RPG Tools Bits 1.0 FREE",
+    "file": "scissors.gltf",
+    "scale_factor": 1.3519
+   },
+   "licence": "KayKit RPG Tools Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.8703,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.8125,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "übergroß",
+   "bytes": 58256,
+   "sha256": "a34ae5faf2427cfd566107095ed0a2f1a264b8e8293997a00bc64443d7faeb77"
+  },
+  {
+   "id": "rolling_pin",
+   "name_de": "Nudelholz",
+   "glb": "KFB_Loot_rolling_pin.r1.glb",
+   "rarity": "rare",
+   "type": "tool",
+   "mass_kg": 0.8,
+   "size_u": [
+    1.5,
+    0.387,
+    0.387
+   ],
+   "size_m": [
+    0.924,
+    0.238,
+    0.238
+   ],
+   "source": {
+    "pack": "Tiny Treats Bakery Interior 1.1 FREE",
+    "file": "dough_roller.gltf",
+    "scale_factor": 1.5
+   },
+   "licence": "Tiny Treats Bakery Interior 1.1 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.7983,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.1934,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "Cartoon-Waffe",
+   "bytes": 33500,
+   "sha256": "10fe61e2497dd23aca0dac4903060e160c5cf7770d7af3cfcbb08087e4a65a6f"
+  },
+  {
+   "id": "oven_glove",
+   "name_de": "Topfhandschuh",
+   "glb": "KFB_Loot_oven_glove.r1.glb",
+   "rarity": "rare",
+   "type": "prop",
+   "mass_kg": 0.2,
+   "size_u": [
+    0.636,
+    0.281,
+    0.75
+   ],
+   "size_m": [
+    0.392,
+    0.173,
+    0.462
+   ],
+   "source": {
+    "pack": "Tiny Treats Charming Kitchen 1.1 FREE",
+    "file": "oven_glove.gltf",
+    "scale_factor": 1.4325
+   },
+   "licence": "Tiny Treats Charming Kitchen 1.1 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.5115,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.1406,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "als Box-Handschuh denkbar",
+   "bytes": 33516,
+   "sha256": "737785ccf48730ff462792efa5403db43f0d669cffc5a99b0a416d5ca3e8ef52"
+  },
+  {
+   "id": "frisbee",
+   "name_de": "Frisbee",
+   "glb": "KFB_Loot_frisbee.r1.glb",
+   "rarity": "rare",
+   "type": "prop",
+   "mass_kg": 0.2,
+   "size_u": [
+    0.75,
+    0.183,
+    0.75
+   ],
+   "size_m": [
+    0.462,
+    0.113,
+    0.462
+   ],
+   "source": {
+    "pack": "Tiny Treats Pleasant Picnic 1.0 FREE",
+    "file": "frisbee.gltf",
+    "scale_factor": 0.9375
+   },
+   "licence": "Tiny Treats Pleasant Picnic 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.5382,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.0915,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "Wurf-Requisit",
+   "bytes": 32368,
+   "sha256": "7fb2ddfdfb64238ca9ee8d403ae58dd49fe1fe5158ec2c19c4d89da133e9972e"
+  },
+  {
+   "id": "radio",
+   "name_de": "Kofferradio",
+   "glb": "KFB_Loot_radio.r1.glb",
+   "rarity": "rare",
+   "type": "prop",
+   "mass_kg": 1.5,
+   "size_u": [
+    0.875,
+    0.645,
+    0.52
+   ],
+   "size_m": [
+    0.539,
+    0.397,
+    0.32
+   ],
+   "source": {
+    "pack": "Tiny Treats Pleasant Picnic 1.0 FREE",
+    "file": "radio.gltf",
+    "scale_factor": 0.7927
+   },
+   "licence": "Tiny Treats Pleasant Picnic 1.0 FREE (Isa Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.6023,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.3223,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "spielt Musik zur Laufzeit",
+   "bytes": 52644,
+   "sha256": "da6b83f5ba50dcfb4df0f27586622c61126fdc8fd0a51db65dca12a2e3849e89"
+  },
+  {
+   "id": "gold_nugget",
+   "name_de": "Goldklumpen",
+   "glb": "KFB_Loot_gold_nugget.r1.glb",
+   "rarity": "rare",
+   "type": "prop",
+   "mass_kg": 3.0,
+   "size_u": [
+    0.573,
+    0.625,
+    0.53
+   ],
+   "size_m": [
+    0.353,
+    0.385,
+    0.326
+   ],
+   "source": {
+    "pack": "KayKit Resource Bits 1.0 FREE",
+    "file": "Gold_Nugget_Large.gltf",
+    "scale_factor": 1.3425
+   },
+   "licence": "KayKit Resource Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.5,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.3125,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "Schatz",
+   "bytes": 35444,
+   "sha256": "f19b1787ce5a7fc42bae7e6e4d28f400b573bd9918ba97f8068582a43d4020f9"
+  },
+  {
+   "id": "golden_cog",
+   "name_de": "Zahnrad",
+   "glb": "KFB_Loot_golden_cog.r1.glb",
+   "rarity": "rare",
+   "type": "prop",
+   "mass_kg": 1.5,
+   "size_u": [
+    0.816,
+    0.875,
+    0.328
+   ],
+   "size_m": [
+    0.503,
+    0.539,
+    0.202
+   ],
+   "source": {
+    "pack": "KayKit Resource Bits 1.0 FREE",
+    "file": "Parts_Cog.gltf",
+    "scale_factor": 2.1875
+   },
+   "licence": "KayKit Resource Bits 1.0 FREE (Kay Lousberg), CC0 1.0",
+   "public": true,
+   "anchor": "KFB_Pickup (Bbox-Mitte, extras.kfb.radius_u)",
+   "pickup_radius_u": 0.6203,
+   "pivot": "Bbox-Mitte (V-437: Schweben/Drehen ohne Eiern); zum Hinlegen auf den Boden um ground_offset_u anheben",
+   "ground_offset_u": 0.4375,
+   "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
+   "note": "Maschinen-Teil (Quest)",
+   "bytes": 36332,
+   "sha256": "9a263e333cb3b56d8851b1d8adb2b93fd998704e4fd5fada9223435f2159e710"
+  }
+ ]
+}
