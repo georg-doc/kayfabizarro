@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- WSA-Audio-Update b116 für den laufenden Chat: Reihenfolge b114 → b113 → b115, ElevenLabs-Sets, Ablage-Regeln (öffentlich nur CC0/eigen/ElevenLabs; Sonniss/400 Sounds/NC nur per Manifest aus Dropbox), kein neues Repo.
 - V-463 Slice Kayfabrick-Bots + Fluff-Kreislauf + Utopia-Baustelle → WSB B31 (32. Nachtrag): 6 Farben × Helm, abgenutzt in Knete, Arbeits-Clips (rollen/Sisyphos, tragen, schieben), Lorekeeper rollt mit, Gerüst-Baukasten aus KayKit um Monumente.
 - ElevenLabs combat_r1: 18 Kampf-/Zerstörungs-Ereignisse × 3 Varianten (+8 Neu-Takes), spitzennormiert (leise Takes waren sauber, nur leise), Branch assets/kfb-elevenlabs-sfx-r1-2026-10-18; Brief b115 ergänzt. Verbrauch bisher ≈ 7.200 Credits.
 - V-462 Private Dateien für WS1 über den claude.ai-Dropbox-Connector (Manifest 39 Dateien ≈ 546 MB, getestet); kein privates Repo nötig. Georg: bis 60.000 ElevenLabs-Credits für Sound-Design freigegeben.
