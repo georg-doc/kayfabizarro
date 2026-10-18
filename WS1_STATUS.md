@@ -3,6 +3,42 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 83 · 18.10. · Georg: Antriebs-VFX + Fahrzeug-Rigging-Studio („Garagen-Diorama“) als nächste große Slice · WS1-Vorschlag · Bitte an WS0
+
+**Georg (18.10., WS1-Chat):**
+- **Pulsierende Antriebs-VFX:** zuerst für die hinteren Triebwerke, später Räder bzw. Antigrav. Das VFX-Zentrum soll **frei positionierbar** sein, auch für **mehrere Düsen in verschiedenen Größen**.
+- Dazu der **3D-In-Place-Editor als Fahrzeug-Rigging-Slice**: die Grundlage, damit Spieler später **eigene Modelle** reinbringen, als Auto nutzen und **aufmotzen** können, mit **Waffen-Riggings** (z. B. Geschütz auf der Motorhaube).
+- Gerahmt als **Garagen-Diorama** mit NPCs: Werkstatt-Minispiel, Reparatur, Do-it-yourself, alles im Diorama-Look.
+- **Für die weiteren Fahrtests:**
+  - Soundebenen über ElevenLabs (V-461 geschichtet);
+  - Science-Fiction-Propulsion in verschiedenen Farben mit Partikeln und Bloom, je Tageszeit;
+  - Speedlines und was aus TinySkies bzw. dem alten Racer-Konzept übernommen werden soll.
+
+**WS1-Vorschlag: Slice „Fahrzeug-Rigging R1“ in drei Stufen** (baut auf §59 und dem Bestand `kfb-flight-vfx.js` auf):
+1. **R1a · Antrieb als Daten + ein generisches Modul** (Low Effort, High Impact):
+   - `kfb-vehicle-rig.json` je Fahrzeug, GLB unverändert: Anker `[{ id, type: thrust|antigrav|exhaust|weapon|light, pos, dir, size, color?, pulse? }]` im GLB-Raum.
+   - Modul `vehicleRig` setzt an jeden Anker:
+     - Glow-Kern als Knet-Glow-Material, additiv, **keine neuen Lichter**;
+     - Partikel (`nozzles`/jet aus `kfb-flight-vfx.js`), Hitzeflimmern;
+     - Pulsieren aus Gas (`thrust01`) + Boost + Drehzahl, Größe je Anker.
+   - Farbe je Fahrzeug bzw. Fraktion, Nacht stärker (Rig-glow). Speedlines und Speed-Trails 1:1 aus dem Bestand.
+   - Ein Budget `VFX_CAPS`, ein gemeinsamer Partikel-Pool, Instancing.
+2. **R1b · In-Place-Editor „Garage“ (Werkzeug für Georg, später für Spieler):**
+   - Fahrzeug auf der Hebebühne in einem Garagen-Diorama (Bühnen-Licht-Modul, clay v1.1).
+   - Klick auf die Karosserie → Raycast → Anker mit Normale; Gizmo für Lage, Richtung und Größe; Typ wählen; Vorschau live mit Gas-Regler.
+   - Speichert `kfb-vehicle-rig.json`.
+   - Gleiches Werkzeug für **Waffen-Halterungen** (Anker `weapon` + Aufsatz-GLB).
+3. **R1c · Werkstatt-Diorama als Spielort:**
+   - NPC-Mechaniker, Reparatur- und Tuning-Minispiel (Teile, Farbe, Aufsätze), eigene Modelle laden (Prüfung über Karte bzw. Loader wie bei Figuren).
+   - Sound-Schichten (V-461) gekoppelt an Anker und Gas.
+
+**Bitte an WS0:**
+- Slice planen und gegen die Bot-Slice V-463 einreihen.
+- Format `kfb-vehicle-rig.json` bestätigen.
+- Garagen-Diorama als Asset-Auftrag (WSB: KayKit/Kenney, Hebebühne, Werkbank).
+- Sound-Brief für Antrieb (ElevenLabs-Lücken) an WSA.
+- TinySkies-/Racer-Übernahmen benennen (Speedlines sind schon da).
+
 ## 82 · 18.10. früh · Kurzstatus · WS0-Antworten (V-450, V-462, Licht v1.1) gelesen
 
 **Läuft:** volle Testreihe auf `combo/r2` = c3/ernte (C2, V-429, clay v1.1, C3, HUD R5f, C3b) + c1/kamera @0eb469e (run-all M1/M2/M3/C1 + Bühne + c2/c3/c3b, ~90 Min.).
