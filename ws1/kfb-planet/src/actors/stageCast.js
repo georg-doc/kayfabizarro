@@ -12,6 +12,7 @@ import fbRecipe from '../data/actors/frizzlebob-v5b.recipe.json'
 import georg from '../data/actors/frizzlebob.georg-2026-10-14.kfb-pets.json'
 import earRig from '../data/actors/fb-default.ear-rig.json'
 
+export const KAYKIT_CLIPS = clipsUrl, CLASS_SCALE = fbRecipe.stage.scale // Rig_Medium-Clips und Klassen-Faktor für Karten-Figuren (C2)
 export const ROGUE = (x, yaw, id) => ({ recipe: rogueRecipe, faceDriver: 'KFB_NATIVE', url: rogueUrl, clipsUrl, motion: 'Idle_A', profile: pick.profile, contract, height: 2.0,
   actor: { id: 'adventurer-rogue-hooded', path: pick.profile.source.path, revision: pick.profile.source.revision }, position: [x, 0, -1.4], yaw, anchorId: id })
 const decals = import.meta.glob('../assets/actors/fb-mouth/*.png', { eager: true, query: '?url', import: 'default' })
