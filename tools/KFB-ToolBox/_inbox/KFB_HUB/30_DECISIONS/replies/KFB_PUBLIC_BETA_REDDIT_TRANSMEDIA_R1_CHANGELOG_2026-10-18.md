@@ -9,3 +9,11 @@
 - **GATES:** WorldBuilder R4 remains `STOPPED / NO MVP / F-R39 FAIL`. Current GPT Site public-beta URL/actual integrated features/download rights were not verified. No Reddit account/subreddit/page was created and no text published. No Site UI tab nor Cloudflare deployment was changed. No merge/main write.
 - **Owner/receiving path:** existing KFB marketing/Production Control intake, not a new product or runtime. See `KFB_PUBLIC_BETA_REDDIT_TRANSMEDIA_R1_2026-10-18.md` in the same folder.
 - **Next single gate:** Georg/WS0 review the subreddit workbench direction and choose one source-backed ink → card → 3D example for the first pre-beta post.
+
+## 2026-10-18 · R1.1 · Georg's author-physician-NotebookLM provenance expansion
+
+- **AUTHOR FIRSTHAND CONTEXT / PROPOSAL** Georg added the credible cross-community origin: comic artist **and physician**, technical/coding curiosity, source-grounded NotebookLM exploration with his original drawings, essays, notes, background research and source articles; collage/AI co-creation was then editorially carried into Cut & Play, songs and the 3D world through additional tools.
+- **CONCEPT NOT FEATURE CLAIM:** clearly distinguish NotebookLM's source-grounded exploration from model fine-tuning, exact style cloning, hand-drawn originals, code/asset engines and subsequent human curation. One demonstrated asset lineage needed before publicly making a step-by-step claim.
+- **REDDIT CHANNEL PROPOSAL:** r/notebooklm is a workflow/process community with relevant existing examples, but genuine anti-astroturfing moderation. Propose a source→notebook→human edit→card→(verified scene) process post, not a link dump. Owned r/KayfaBizarro remains optional WIP archive subject to actual setup. Check rules at posting.
+- **POST ARTIFACT:** added one conditional EN NotebookLM-first community text and cross-channel framing to the existing primary concept. No subreddit, post, link, GPT Site release, public beta or product UI tab was created; no publishing approved.
+- **NEXT SINGLE GATE:** select one genuine rights-clean source-backed panel/essay→NotebookLM→Card→verified 3D output for an annotated development post.
