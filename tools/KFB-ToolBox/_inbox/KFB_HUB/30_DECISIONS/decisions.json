@@ -6279,6 +6279,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-452",
+   "date": "2026-10-18",
+   "area": "Gizmo",
+   "verdict": "TUNE",
+   "text": "Mauer-Baukasten B29 (Hub q25): Richtung PASS. Notizen: die Dreiecke/Kerben in den Wänden („kaputt“) sind ok als Option, aber nicht als Standard – Höhenunterschiede organischer; Oberflächen-Textur stärker; Skins als Optionen: Backstein (versetzt, Fugen, leicht unregelmäßig modelliert), felsig (Claymation-Stil), später unregelmäßige Holzlatten.",
+   "values": {},
+   "owner": "WSB (B29 r3)",
+   "check": "Bögen über Abnahme-Bühne",
+   "source": "Hub q25 · V-446",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gleichförmige Kerben wirken technisch; organische Höhen und stärkere Skins passen zum Knete-Look.",
+   "applies": "B29 r3"
+  },
+  {
+   "id": "V-453",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "PASS",
+   "text": "Fundsachen r2 (Hub q26) PASS. Ergänzung: Werkzeuge mit Stiel/länglicher Form wie Hammer ebenfalls schräg schweben/drehen (Flag extras.kfb.pickup.floatTilt; Bühne liest das Flag).",
+   "values": {},
+   "owner": "WSB (Flags setzen) · WS1 (C3b)",
+   "check": "-",
+   "source": "Hub q26 · V-450",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Griff-Werkzeuge lesen sich schräg besser als Pickup.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-454",
+   "date": "2026-10-18",
+   "area": "Figuren",
+   "verdict": "PASS",
+   "text": "Ninja-Nahkampf-Probe (Hub q27) PASS: Stich = Grundangriff, Flugtritt = Spezial, aufrechte Kampf-Ruhepose nachholen (erst Motion Library v2 durchsuchen; Mixamo nur durch Georg selbst, Adobe-Login), linke Hand später per IK.",
+   "values": {},
+   "owner": "WSB → WS1 (Kampf-Slice)",
+   "check": "Clip-Probe",
+   "source": "Hub q27 · V-442",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg bestätigt die Clip-Auswahl; die Hocke verdeckt die Augen.",
+   "applies": "vor dem Kampf-Slice"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6366,7 +6411,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:799",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:801",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

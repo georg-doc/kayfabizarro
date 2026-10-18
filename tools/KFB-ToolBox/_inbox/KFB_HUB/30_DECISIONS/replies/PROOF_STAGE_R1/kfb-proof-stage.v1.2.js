@@ -378,7 +378,8 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
         root.updateMatrixWorld(true); const bb = bodyBounds(THREE, root, (m) => isUnder(m, it)); if (bb.isEmpty()) continue;
         // V-450 (Georg 18.10.): every item keeps the SAME clearance above the floor; elongated items float tilted (35°)
         const sz0 = bb.getSize(new THREE.Vector3()), dims = [['x', sz0.x], ['y', sz0.y], ['z', sz0.z]].sort((a, b) => b[1] - a[1]); let tilt = null;
-        if (it !== root && dims[0][1] >= 2 * dims[1][1]) { const ax = dims[0][0] === 'z' ? new THREE.Vector3(1, 0, 0) : new THREE.Vector3(0, 0, 1); it.rotateOnWorldAxis(ax, THREE.MathUtils.degToRad(35)); it.updateMatrixWorld(true); root.updateMatrixWorld(true); bb.copy(bodyBounds(THREE, root, (m) => isUnder(m, it))); tilt = dims[0][0]; }
+        let flagTilt = false; it.traverse((o) => { if (o.userData?.kfb?.pickup?.floatTilt === true || o.userData?.floatTilt === true) flagTilt = true; });   // V-453: tools with a handle (hammer, …) tilt by flag
+        if (it !== root && (dims[0][1] >= 2 * dims[1][1] || flagTilt)) { const ax = dims[0][0] === 'z' ? new THREE.Vector3(1, 0, 0) : new THREE.Vector3(0, 0, 1); it.rotateOnWorldAxis(ax, THREE.MathUtils.degToRad(35)); it.updateMatrixWorld(true); root.updateMatrixWorld(true); bb.copy(bodyBounds(THREE, root, (m) => isUnder(m, it))); tilt = dims[0][0]; }
         const cy = (bb.min.y + bb.max.y) / 2, hh = (bb.max.y - bb.min.y) / 2, target = flt.clear_m + hh, sy = (it.parent || it).getWorldScale(new THREE.Vector3()).y || 1;
         it.position.y += (target - cy) / (it === root ? 1 : sy); it.updateMatrixWorld(true);
         flt.items.push({ name: it.name || '?', target_m: +target.toFixed(4), tilted: tilt, half_m: +hh.toFixed(3) });
