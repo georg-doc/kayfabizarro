@@ -37,7 +37,10 @@ Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch 
 - **WS1 setzt die Düsen-Anker heuristisch selbst**, halb- bzw. vollautomatisch für alle Dieselpunk-Modelle (1–6 Triebwerke je Fahrzeug). Das VFX-Zentrum wird nach Triebwerksgröße skaliert, Georg tunt nur im Einzelfall nach.
   - Erst eine **Auswahl von 6 Fahrzeugen mit verschiedenen Antrieben**; Georg wählt aus einer kurzen Präsentation.
   - Die zwei neuen Fahrzeuge sind einbezogen.
-- **Räder vorerst weglassen:** Alle schweben leicht über dem Boden. Geschwindigkeit, Rampensprung und Abheben stellt der Antrieb dar.
+- **Fahrzeuge ohne Räder** schweben leicht über dem Boden. Geschwindigkeit, Rampensprung und Abheben zeigt der Antrieb.
+- **Fahrzeuge mit Rädern** haben echten, plausiblen Bodenkontakt (Georg-Korrektur 18.10.): beim normalen Fahren und im Stand sitzen die Räder auf. Die Kontaktpunkte kommen aus den Ankern `kfb_wheel_*`, Federung und Neigung je Rad, bei verschmolzenen Rädern (`kfb_fused`) über die Karosserie. Einheitlich schummeln ist nur der Rückfall, falls es sonst unverhältnismäßig wird.
+- **Ein Bodennähe-Partikel-Layer für alle:** Wer in Bodennähe fährt oder fliegt, wirbelt je Terraintyp das Gleiche auf: Kügelchen, Krumen, Staub- und Rauchwolken (`skim` aus `kfb-flight-vfx.js`). Stärke nach Höhe über Grund und Tempo. Performant, Knet-Look optional bzw. als Mix.
+- **Wechsel Fahren ↔ Flug** sauber: Räder heben ab, der Antrieb übernimmt, Bodenpartikel blenden mit der Höhe aus.
 - **Antriebs-Animation und VFX synchron mit dem Motorgeräusch:**
   - Gangwechsel bzw. Hochschalten, Knattern (Backfire) und Bremsen sind sichtbar.
   - Partikel **performant und immersiv**, ausdrücklich nicht zwingend Knetkugeln.
