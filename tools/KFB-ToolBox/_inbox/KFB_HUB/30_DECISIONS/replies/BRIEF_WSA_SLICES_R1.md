@@ -15,7 +15,7 @@ Georg: "speech-bubble style, comic words etc. as an SSOT module too – we've wo
 2. Byte comparison against both copies. Where they differ, report the difference and take the newer source; don't change anything by eye.
 3. **Fluff-o-lect hook (V-500):** the bubble text can be rendered per word in three stages: glyph / fluff word / plain text.
    - The reference implementation is in WS0's probe `KFB_HUB/40_AUDIO/kfb_language_r1/probe_r6.html` (functions stageOf, fluffify, glyph).
-   - Glyph font is only a parameter for now. PottyMouth BB is not licensed for the game, so build a placeholder glyph set for now.
+   - Glyph font is only a parameter for now. **R7 rule:** each glyph run is about 1.6 em and as wide as the word it replaces (measured in the bubble font, justified; the glyph count grows with word length; punctuation stays attached) — see probe_r7.html fitGlyphs. PottyMouth BB is not licensed for the game, so build a placeholder glyph set for now.
 4. A demo page with all KINDS + comic words + the three decode stages.
 5. A README with "how to use this in the game, the tools and the Hub".
 Branch `wsa/kfb-bubbles-ssot-r1-<date>`, return `WSA_KFB_BUBBLES_SSOT_R1_RETURN.md`.
