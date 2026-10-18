@@ -7449,6 +7449,21 @@
    "applies": "nach Georgs OK"
   },
   {
+   "id": "V-530",
+   "date": "2026-10-18",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Kayfabe Men in Black (Georg 18.10., konkretisiert V-529; Name ist Georgs Entscheidung): Turm so groß, dass der Large Rig bequem mit Abstand oben durch die Tür tritt (lichte Höhe ≥ 3,4 m). Tür (Georgs Markierung) ausblendbar, dahinter strahlend helles Licht; im Licht ploppen die Agenten nacheinander auf und gehen an drei taktische Positionen um die Vorder-/Spielerseite, mit schwarzen Blastern; Large-Rig-Türsteher an der Tür. „Blitzdingsen“: als Intervention im Triplet-Dialog (dramaturgisch vor Reveal oder Closure) Ruf „Humbug!“ als Comic-Wort (gebogen, ohne Sprechblase), weißer Blitzstrahl auf die Kopfmitte von NPC/Spieler → Rückstoß-Fall, zuckend am Boden, langsames Aufrappeln, orientierungslos herumlaufen, dann normal weiter; Agenten steigen ein, Turm dematerialisiert (VFX+SFX). Clips aus Georgs Mixamo-Downloads (Knocked Out/Falling Back Death, Getting Up, Dizzy Idle, Drunk Walk, Drawing/Shooting Gun); Zucken additiv bei WS1. Meshy-Turm laut Meshy CC0. Brief B40 an WSB (nach B39), SFX-Set blobcorp_mib_r1 von WS0, Ablauf-Logik WS1 später, „Humbug!“-Comic-Wort als Baustein für WSA später.",
+   "values": {},
+   "owner": "WSB (B40) · WS0 (SFX) · WS1 (Ablauf) · WSA (Comic-Wort)",
+   "check": "B40 Prüfstand-Bilder",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein komplettes Comic-Ereignis statt Einzelteile: Auftritt, Gag, Abgang.",
+   "applies": "B40 nach B39"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7536,7 +7551,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:882",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:883",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
