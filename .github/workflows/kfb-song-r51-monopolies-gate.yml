@@ -1,0 +1,39 @@
+name: KFB Monopolies R5.1 R3.4 gates
+on:
+  push:
+    branches: ["songs/kayfabizarro_monopolies_manipulation_murder_vol-r5-2026-10-17"]
+permissions:
+  contents: read
+jobs:
+  r5-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: f0f07a27e9e98ee005fc35de61a070853fec2246
+          path: .kfb-register-readonly
+      - name: Earlier R4 and R5 song corpus
+        shell: bash
+        run: |
+          mkdir -p .song-corpus
+          for b in songs/1001_kayfabe_nights-r4-2026-10-17 songs/frizzlebob_bloedsinnland_alice-r4-2026-10-17 songs/the_carnival_of_unsolved_problems_therapy-r4-2026-10-17 songs/dream_wrestling_with_kayfabe_freud-r4-2026-10-17 songs/the_kayfabe_money_trail_9_11-r4-2026-10-17 songs/federal_kayfabe-r5-2026-10-17 songs/grimms_kayfabe_legends_expansion_set_02-r5-2026-10-17; do
+            git fetch --depth=1 origin "refs/heads/${b}:refs/remotes/origin/${b}"
+            git ls-tree -r --name-only "refs/remotes/origin/${b}" | grep '\.suno\.txt$' | while IFS= read -r p; do
+              git show "refs/remotes/origin/${b}:$p" > ".song-corpus/$(echo "${b}" | tr / _)-$(basename "$p")"
+            done
+          done
+      - name: Part one canonical triplets
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py songs/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.r5.qa.deck.json songs/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.part1.r5.qa.set.csv
+      - name: Part one canonical lyrics
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.part1.r5.1.suno.txt --deck registry/assets/v1/decks/kayfabizarro_monopolies_manipulation_murder_vol.json --songlines songs/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.part1.r5.1.songlines.json --media 'media/kfb/Kayfabizarro_-_Monopolies,_Manipulation_&_Murder_Vol._II - ADD web.pdf.json' --cards 1-28 --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2 .song-corpus
+      - name: Part two canonical triplets
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py songs/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.r5.qa.deck.json songs/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.part2.r5.qa.set.csv
+      - name: Part two canonical lyrics
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.part2.r5.1.suno.txt --deck registry/assets/v1/decks/kayfabizarro_monopolies_manipulation_murder_vol.json --songlines songs/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.part2.r5.1.songlines.json --media 'media/kfb/Kayfabizarro_-_Monopolies,_Manipulation_&_Murder_Vol._II - ADD web.pdf.json' --cards 29-56 --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2 .song-corpus
+
+      - name: Original style gate part1
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style songs/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.part1.r5.1.style.txt --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
+
+      - name: Original style gate part2
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style songs/kayfabizarro_monopolies_manipulation_murder_vol/kayfabizarro_monopolies_manipulation_murder_vol.part2.r5.1.style.txt --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
