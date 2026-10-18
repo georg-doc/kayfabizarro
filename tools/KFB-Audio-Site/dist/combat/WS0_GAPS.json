@@ -1,0 +1,20 @@
+{
+  "schema": "kfb.ws0-audio-wishes/1",
+  "status": "REQUEST_ONLY_NO_GENERATION",
+  "estimateCreditsPerSecond": 40,
+  "note": "Independent requested layers missing from audited combat_r1_norm only; broader stock-library matching may cover some. WS0 alone generates. Each prompt requests isolated physical cartoon-clay foley, no music, no arcade/chiptune/xylophone and no reverb; variants must be distinct recordings.",
+  "items": [
+    {"event":"block/shield","layer":"attack/body","prompt":"A soft clay shield catches a fist: one damped low-mid thunk with a tiny squash and short restrained metallic edge, warm physical cartoon material, dry isolated, no beep, no music, no ringing melody.","seconds":1.2,"variants":3},
+    {"event":"bot alert","layer":"servo gesture","prompt":"Small cardboard-and-clay construction robot notices something: short rising mechanical servo whirr with an expressive muted motor gulp, dry isolated, no melodic alarm or UI beep, no music.","seconds":1.0,"variants":3},
+    {"event":"bot hurt","layer":"body response","prompt":"Small cartoon construction robot recoils from one hit: muffled metal-clay crunch and strained motor grunt, warm dry isolated, short, no voice words, no arcade tones, no music.","seconds":1.0,"variants":3},
+    {"event":"rocket flight","layer":"continuous","prompt":"Steady soft cartoon rocket exhaust hiss with low-mid airy engine body, even continuous texture, no launch or explosion, no pitch rise, loopable, dry isolated, no music or beeps.","seconds":4.0,"variants":3},
+    {"event":"bomb throw","layer":"motion/release","prompt":"One heavy round clay bomb leaves a soft hand: muffled cloth release and short weighty airy whoosh, no fuse or explosion, dry isolated, warm physical cartoon foley, no music or tones.","seconds":0.8,"variants":3},
+    {"event":"metal destruction","layer":"bend/body","prompt":"One thick toy metal panel buckles inward: short low-mid dull clang and creaking bend, heavy warm cartoon-world physical material, dry isolated, no glass or musical ring, no music.","seconds":1.5,"variants":3},
+    {"event":"cartoon glass","layer":"fracture/tail","prompt":"One thick safe cartoon glass object cracks with soft crunchy fragments settling, physical and restrained, not magical sparkling chimes, dry isolated, no music, no arcade tones.","seconds":1.5,"variants":3},
+    {"event":"clay-ground impact","layer":"contact/body","prompt":"One small heavy clay chunk lands on soft compacted clay soil: muffled cardboard-and-clay thud, low-mid weight, tiny dusty crumble, no sharp click, no squeak, dry isolated, no music.","seconds":1.0,"variants":3},
+    {"event":"debris settling","layer":"tail only","prompt":"Only a handful of small irregular clay-and-stone debris pieces rolling and coming to rest, a few soft varied low clacks and sandy scrapes, no initial impact or explosion, dry isolated, no music or chimes.","seconds":2.0,"variants":3},
+    {"event":"domino single","layer":"single contact","prompt":"Exactly one giant clay stone domino lands against another with a rounded weighty muffled clack and brief low tail, no chain or repeated contacts, dry isolated, no music or arcade tones.","seconds":1.0,"variants":3},
+    {"event":"tree shake","layer":"leaf tail only","prompt":"Only one brief warm rustle of broad soft leaves after a tree is shaken, papery clay-diorama foley, no trunk knock, no fruit impacts, no wind bed, dry isolated, no music.","seconds":1.5,"variants":3},
+    {"event":"tree fruit falling","layer":"fruit contact tail","prompt":"Only two or three soft round fruits dropping onto cushioned clay soil and bouncing gently with irregular spacing, warm muted low-mid soft plops, no wood knock or leaves, dry isolated, no music.","seconds":1.5,"variants":3}
+  ]
+}

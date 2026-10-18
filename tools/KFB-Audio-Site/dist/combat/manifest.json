@@ -1,0 +1,1891 @@
+{
+  "schema": "kfb.combat-sfx/1",
+  "privateAudio": true,
+  "sourceHead": "f9d3ecb923fdb79d489f5f3347b7c08f382c3d2f",
+  "rights": "WS0 paid-plan assertion; Georg private Dropbox/public code-only decision",
+  "assets": [
+    {
+      "id": "C01_punch_light_a",
+      "family": "C01",
+      "file": "private-assets/C01_punch_light_a.ogg",
+      "sha256": "80b4ffe0c39796e32971472e98cefaa9751bb8c871ab1c078984283898d6d3a2",
+      "bytes": 5128,
+      "duration": 0.16496875,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C01_punch_light_a.wav",
+      "sourceSha256": "5e4c2058bafcbe7021cd6e71aff9410fe47dd027d25e30adba39f4fec72f9ef3",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2992333143598172,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.025
+        },
+        "body": {
+          "offset": 0.015000000000000001,
+          "duration": 0.025
+        },
+        "tail": {
+          "offset": 0.02,
+          "duration": 0.14496874999999998
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C01_punch_light_b",
+      "family": "C01",
+      "file": "private-assets/C01_punch_light_b.ogg",
+      "sha256": "492017968fb37ef53e6053fad2cf236475491552afb14d4eee64e64df910fb43",
+      "bytes": 5343,
+      "duration": 0.2130625,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C01_punch_light_b.wav",
+      "sourceSha256": "496fd850b424dcc9921346762ed8dff5e2ddef22c769f13b35373c68d545ff84",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.16628089919669184,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.025
+        },
+        "body": {
+          "offset": 0.015000000000000001,
+          "duration": 0.025
+        },
+        "tail": {
+          "offset": 0.02,
+          "duration": 0.19306249999999997
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C01_punch_light_c_r",
+      "family": "C01",
+      "file": "private-assets/C01_punch_light_c_r.ogg",
+      "sha256": "859ca026c4ac24c1c218cab4663f52ed8be71f867fb0977e572d0660b91a5d62",
+      "bytes": 6341,
+      "duration": 0.3295,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C01_punch_light_c_r.wav",
+      "sourceSha256": "2e5dfebea5c9b521b24ecd168f6beff7067fc4f1720f29b82698037a11c18de1",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2587434839761778,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.025
+        },
+        "body": {
+          "offset": 0.015000000000000001,
+          "duration": 0.028107
+        },
+        "tail": {
+          "offset": 0.023107,
+          "duration": 0.306393
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C02_punch_heavy_a",
+      "family": "C02",
+      "file": "private-assets/C02_punch_heavy_a.ogg",
+      "sha256": "05864061e3f8ec440518d8005befb4bd186667693946f76be043903a3f2bd03b",
+      "bytes": 5333,
+      "duration": 0.246,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C02_punch_heavy_a.wav",
+      "sourceSha256": "77ec0d121216d14dbfb910735dcec96d3f15f8011ccc872218ba203770f4e684",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.14862807858912122,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.025
+        },
+        "body": {
+          "offset": 0.015000000000000001,
+          "duration": 0.051939
+        },
+        "tail": {
+          "offset": 0.046938999999999995,
+          "duration": 0.199061
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C02_punch_heavy_b",
+      "family": "C02",
+      "file": "private-assets/C02_punch_heavy_b.ogg",
+      "sha256": "b3b3bd309b0770a7e5342ada8bf1cd4f7034292a850b32ecd1b7c45121bd162a",
+      "bytes": 6056,
+      "duration": 0.3269375,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C02_punch_heavy_b.wav",
+      "sourceSha256": "0e2a7cf4db489d7226fcd9e19c67960d49d7445574b7d15ab17891c4fb526632",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2722880476625842,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.025
+        },
+        "body": {
+          "offset": 0.015000000000000001,
+          "duration": 0.043934
+        },
+        "tail": {
+          "offset": 0.038933999999999996,
+          "duration": 0.2880035
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C02_punch_heavy_c_r",
+      "family": "C02",
+      "file": "private-assets/C02_punch_heavy_c_r.ogg",
+      "sha256": "5a29ca3625bb54ee2283c5ad9356c46dcc37d3f60b0a44adecb6c03f8cf7316f",
+      "bytes": 7588,
+      "duration": 0.50278125,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C02_punch_heavy_c_r.wav",
+      "sourceSha256": "dff6472fe43d251e15f6a35d00d7362bd78900072386db15f739817b5c021c10",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.48873750142468925,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.025
+        },
+        "body": {
+          "offset": 0.015000000000000001,
+          "duration": 0.171463
+        },
+        "tail": {
+          "offset": 0.166463,
+          "duration": 0.33631825
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C03_brass_knuckles_a",
+      "family": "C03",
+      "file": "private-assets/C03_brass_knuckles_a.ogg",
+      "sha256": "b33a5a58d8755eadbe490bd21c6d08374a43079e0f22dcfe3272eda31b73b987",
+      "bytes": 5706,
+      "duration": 0.31,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C03_brass_knuckles_a.wav",
+      "sourceSha256": "0fb95e240b633ae977252322515cd344c702d6e157c9dd324f66d1eaf5380b49",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.259382018323031,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.032041
+        },
+        "body": {
+          "offset": 0.022040999999999998,
+          "duration": 0.083447
+        },
+        "tail": {
+          "offset": 0.085488,
+          "duration": 0.224512
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C03_brass_knuckles_b_r",
+      "family": "C03",
+      "file": "private-assets/C03_brass_knuckles_b_r.ogg",
+      "sha256": "e8a6e3b636884b586479f780ec6c78c393c744161ac5400453501c67cf85fce6",
+      "bytes": 9839,
+      "duration": 0.77296875,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C03_brass_knuckles_b_r.wav",
+      "sourceSha256": "c2af0e58e8917ccaf42d1befe9d3fb17acbed87a8046988c51cbffbfc30059d5",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.35221870574885666,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.136417
+        },
+        "body": {
+          "offset": 0.126417,
+          "duration": 0.24283500000000002
+        },
+        "tail": {
+          "offset": 0.349252,
+          "duration": 0.42371675
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C03_brass_knuckles_c_r",
+      "family": "C03",
+      "file": "private-assets/C03_brass_knuckles_c_r.ogg",
+      "sha256": "a462befb8cdac2f5b18a640ecdbdce265fa82790d1078e88ffe8c25bff26a39b",
+      "bytes": 7664,
+      "duration": 0.598,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C03_brass_knuckles_c_r.wav",
+      "sourceSha256": "9fbd5ca775f9de25197cced09333ad951c41f5c9af70f25fedb4079c2d6945a1",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.24945253701353237,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.069342
+        },
+        "body": {
+          "offset": 0.059342,
+          "duration": 0.15356000000000003
+        },
+        "tail": {
+          "offset": 0.19290200000000002,
+          "duration": 0.40509799999999996
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C04_swing_whoosh_a",
+      "family": "C04",
+      "file": "private-assets/C04_swing_whoosh_a.ogg",
+      "sha256": "d1575dab70ea6d241b4f9b9a10bedcadcf66fab2e79f72ffdcf42681d655fdb8",
+      "bytes": 6761,
+      "duration": 0.382125,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C04_swing_whoosh_a.wav",
+      "sourceSha256": "dffad69e4d6a9039246f9afcee53d535167f2f60d832215e6573e589db42a356",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.1632475769384706,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.10805
+        },
+        "body": {
+          "offset": 0.09805,
+          "duration": 0.094694
+        },
+        "tail": {
+          "offset": 0.172744,
+          "duration": 0.20938099999999998
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C04_swing_whoosh_b",
+      "family": "C04",
+      "file": "private-assets/C04_swing_whoosh_b.ogg",
+      "sha256": "f39dfd3dd1436c0cbc39ab521dfe839d74724636f495a125b4f2f80996468202",
+      "bytes": 5180,
+      "duration": 0.192625,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C04_swing_whoosh_b.wav",
+      "sourceSha256": "446ab118994a89fa53c1e94c26143d0ccdf764b6e2886e2b8f8a182ebe20e0a8",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.1638194764826994,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.025
+        },
+        "body": {
+          "offset": 0.015000000000000001,
+          "duration": 0.031689
+        },
+        "tail": {
+          "offset": 0.026689,
+          "duration": 0.16593599999999997
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C04_swing_whoosh_c",
+      "family": "C04",
+      "file": "private-assets/C04_swing_whoosh_c.ogg",
+      "sha256": "66d189ed5d8579281caf77f4332459d876e7de9a0b9c5888c88d16dc3680bb58",
+      "bytes": 6083,
+      "duration": 0.312875,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C04_swing_whoosh_c.wav",
+      "sourceSha256": "969b51115c4c632b75c061a2388ee9ae6b9467645bcb2014d63428df3c9ce16e",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.14160639097470726,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.04034
+        },
+        "body": {
+          "offset": 0.03034,
+          "duration": 0.041474000000000004
+        },
+        "tail": {
+          "offset": 0.051814,
+          "duration": 0.26106100000000004
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C05_blaster_primary_a",
+      "family": "C05",
+      "file": "private-assets/C05_blaster_primary_a.ogg",
+      "sha256": "791fd67ecb653b4048983ebaecbd6e6e4ae2ea361fef61a0f944a8ab14279ccc",
+      "bytes": 8839,
+      "duration": 0.563125,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C05_blaster_primary_a.wav",
+      "sourceSha256": "746372b1f275b27ae30895b2bdc87a89d55f7c92fc2d745e8d2568cd7b0d4747",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.20948593074167393,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.091519
+        },
+        "body": {
+          "offset": 0.08151900000000001,
+          "duration": 0.179842
+        },
+        "tail": {
+          "offset": 0.24136100000000002,
+          "duration": 0.321764
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C05_blaster_primary_b",
+      "family": "C05",
+      "file": "private-assets/C05_blaster_primary_b.ogg",
+      "sha256": "76aab42dfb60b6560d050b0ae45e16c66d1760598c0cd49a393bae81e61415ae",
+      "bytes": 7097,
+      "duration": 0.421,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C05_blaster_primary_b.wav",
+      "sourceSha256": "817d8884b3b167480207fca7eb2a8341097b6d8f3605dc5186963a6df1e4e5ba",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.19818136651362747,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.068912
+        },
+        "body": {
+          "offset": 0.058912,
+          "duration": 0.153288
+        },
+        "tail": {
+          "offset": 0.1922,
+          "duration": 0.22879999999999998
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C05_blaster_primary_c",
+      "family": "C05",
+      "file": "private-assets/C05_blaster_primary_c.ogg",
+      "sha256": "762f244bd2a4fc58a24821dc67b9a052797f7ded899621469a3e7efbec856206",
+      "bytes": 7339,
+      "duration": 0.43128125,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C05_blaster_primary_c.wav",
+      "sourceSha256": "4b6b6369b0b31bb65e0781af9d2b3c4efe95767612b7b42e25609642750fb909",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.20764841523667574,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.111769
+        },
+        "body": {
+          "offset": 0.101769,
+          "duration": 0.11621300000000001
+        },
+        "tail": {
+          "offset": 0.19798200000000002,
+          "duration": 0.23329924999999999
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C06_rocket_launch_a",
+      "family": "C06",
+      "file": "private-assets/C06_rocket_launch_a.ogg",
+      "sha256": "ee30bdbc1b35100b35f15fde16ae474627e9d1d765f2f87da79e5aa3b187b79d",
+      "bytes": 7946,
+      "duration": 0.50675,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C06_rocket_launch_a.wav",
+      "sourceSha256": "c5454df3db86c1bfdb60de2241cfdf646319917fcd22d5e61a924bf9e330e680",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.22425292830088236,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.150907
+        },
+        "body": {
+          "offset": 0.140907,
+          "duration": 0.126508
+        },
+        "tail": {
+          "offset": 0.24741500000000002,
+          "duration": 0.25933500000000004
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C06_rocket_launch_b",
+      "family": "C06",
+      "file": "private-assets/C06_rocket_launch_b.ogg",
+      "sha256": "7ee1cd4ff671c025612a7bb4284376c90fc55aca44a0d3fc51cfdb70bdecb9ea",
+      "bytes": 9516,
+      "duration": 0.71534375,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C06_rocket_launch_b.wav",
+      "sourceSha256": "072da4e59df1dc24ef39fe75ba17aa8a6b8863e9a7928246a3a6c65465d229b1",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.168334110711256,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.26898
+        },
+        "body": {
+          "offset": 0.25898,
+          "duration": 0.21185900000000002
+        },
+        "tail": {
+          "offset": 0.450839,
+          "duration": 0.26450474999999996
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C06_rocket_launch_c",
+      "family": "C06",
+      "file": "private-assets/C06_rocket_launch_c.ogg",
+      "sha256": "b756df9ae0201e45778fd908f7b7b666be851ea40df847c519618c77e4f3e8db",
+      "bytes": 8398,
+      "duration": 0.643,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C06_rocket_launch_c.wav",
+      "sourceSha256": "7a086d30d63651b3bec5046936deac6d8da9fa2e06d2684ef3457bfd8cf0d149",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.20095506627347362,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.218322
+        },
+        "body": {
+          "offset": 0.20832199999999998,
+          "duration": 0.15127000000000004
+        },
+        "tail": {
+          "offset": 0.339592,
+          "duration": 0.303408
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C07_bomb_fuse_a",
+      "family": "C07",
+      "file": "private-assets/C07_bomb_fuse_a.ogg",
+      "sha256": "9ae37c9b9c59fbedb37e2b7c2693c8651577d502ed02167119e898e2c5df65e7",
+      "bytes": 19018,
+      "duration": 1.8630625,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C07_bomb_fuse_a.wav",
+      "sourceSha256": "54ba95be56858ba948639685721ac31f3d65798ce38f46cc72622cd9f529e421",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2399959374161824,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.806054
+        },
+        "body": {
+          "offset": 0.796054,
+          "duration": 0.7227669999999999
+        },
+        "tail": {
+          "offset": 1.498821,
+          "duration": 0.3642415000000001
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C07_bomb_fuse_b",
+      "family": "C07",
+      "file": "private-assets/C07_bomb_fuse_b.ogg",
+      "sha256": "87e08ac0052b76dffad2bdfd69fbe20bd08202c31fbdbd459e4c7792878e61f7",
+      "bytes": 19410,
+      "duration": 1.8761875,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C07_bomb_fuse_b.wav",
+      "sourceSha256": "9ad4cd5d88ffcd5a115019122a3807451efc3fa2535dcd10f049eb2e54d9297f",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.25868266427533093,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.85678
+        },
+        "body": {
+          "offset": 0.84678,
+          "duration": 0.6787980000000001
+        },
+        "tail": {
+          "offset": 1.505578,
+          "duration": 0.3706094999999998
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C07_bomb_fuse_c",
+      "family": "C07",
+      "file": "private-assets/C07_bomb_fuse_c.ogg",
+      "sha256": "4bd9f1c70500dbbd8aca516ca1ed950302a1cbbe0965a664c3e9785598c68281",
+      "bytes": 19809,
+      "duration": 1.941,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C07_bomb_fuse_c.wav",
+      "sourceSha256": "7f8290bda32b09fb71d9a557d08332f7666243e98addaccc1914a1a42382b94c",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2613062277364182,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.912313
+        },
+        "body": {
+          "offset": 0.902313,
+          "duration": 0.740431
+        },
+        "tail": {
+          "offset": 1.622744,
+          "duration": 0.3182560000000001
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C08_explosion_small_a",
+      "family": "C08",
+      "file": "private-assets/C08_explosion_small_a.ogg",
+      "sha256": "fadf1e0343e7cedf587253ff098545a159df9eca8dc3637cf951b89014a27c48",
+      "bytes": 7725,
+      "duration": 0.640625,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C08_explosion_small_a.wav",
+      "sourceSha256": "f47c2c990a5067544a9b8f2a489335d8b2d165872abd7197bd419f0ca0ea7d0f",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.5633820082337573,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.05805
+        },
+        "body": {
+          "offset": 0.048049999999999995,
+          "duration": 0.18571400000000002
+        },
+        "tail": {
+          "offset": 0.213764,
+          "duration": 0.42686100000000005
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C08_explosion_small_b",
+      "family": "C08",
+      "file": "private-assets/C08_explosion_small_b.ogg",
+      "sha256": "e7c10a43f770b032d6022282cdaa10674b733efde306c37cdbea546ebc174544",
+      "bytes": 15329,
+      "duration": 1.48,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C08_explosion_small_b.wav",
+      "sourceSha256": "fcea45f89995022a12e6166d3bb535c02b1198054b656a13905162f288cc8cd4",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.25325938381337576,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.427664
+        },
+        "body": {
+          "offset": 0.417664,
+          "duration": 0.304309
+        },
+        "tail": {
+          "offset": 0.701973,
+          "duration": 0.778027
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C08_explosion_small_c",
+      "family": "C08",
+      "file": "private-assets/C08_explosion_small_c.ogg",
+      "sha256": "fbf1ea20908d65e4ddb93e34a256ddb2bc8bee51a2545d67d3e061c7406c5043",
+      "bytes": 9539,
+      "duration": 0.7418125,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C08_explosion_small_c.wav",
+      "sourceSha256": "20519fee98a851c0b8e991d77e9252bb60c3ad7eb06bad0261bfd11533fc0d3a",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.3059241743939216,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.169388
+        },
+        "body": {
+          "offset": 0.159388,
+          "duration": 0.231768
+        },
+        "tail": {
+          "offset": 0.371156,
+          "duration": 0.3706565
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C09_explosion_big_a",
+      "family": "C09",
+      "file": "private-assets/C09_explosion_big_a.ogg",
+      "sha256": "00b149130f6464bc25718d0993cdc2940cd114bec2b1e0dac86caf5988206532",
+      "bytes": 9420,
+      "duration": 0.99784375,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C09_explosion_big_a.wav",
+      "sourceSha256": "24676a99b8d8f7c747f4c998e5f7aff064fe83e2527137d0456937eac4d04c8e",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.25145613329816274,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.230295
+        },
+        "body": {
+          "offset": 0.220295,
+          "duration": 0.326485
+        },
+        "tail": {
+          "offset": 0.52678,
+          "duration": 0.47106375
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C09_explosion_big_b",
+      "family": "C09",
+      "file": "private-assets/C09_explosion_big_b.ogg",
+      "sha256": "9f8a9b4b6b59bf39366fb1990220f87e108aee6f6e1908fd406600c1782b8a07",
+      "bytes": 10024,
+      "duration": 1.083625,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C09_explosion_big_b.wav",
+      "sourceSha256": "7c5be930ac4422fe014f7f348b540f2f15058fbe28eb5434f4b56daee57a1e65",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.23816923369251325,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.248844
+        },
+        "body": {
+          "offset": 0.238844,
+          "duration": 0.39857099999999995
+        },
+        "tail": {
+          "offset": 0.6174149999999999,
+          "duration": 0.4662100000000001
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C09_explosion_big_c",
+      "family": "C09",
+      "file": "private-assets/C09_explosion_big_c.ogg",
+      "sha256": "85fe4ef5b71d53b9dbc853517af640a7b878169a7393fb1e6cc05dfbd1c8dd96",
+      "bytes": 9696,
+      "duration": 1.06325,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C09_explosion_big_c.wav",
+      "sourceSha256": "8b82cc2d7cb1e7161ff1d99b019d7a45d0143b695908ca47b1ebe83df7e97dcb",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2477981518988875,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.187846
+        },
+        "body": {
+          "offset": 0.177846,
+          "duration": 0.36571400000000004
+        },
+        "tail": {
+          "offset": 0.52356,
+          "duration": 0.53969
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C10_hit_confirm_a",
+      "family": "C10",
+      "file": "private-assets/C10_hit_confirm_a.ogg",
+      "sha256": "fc47b9069bba8cd7ae1efefbbb1dd91d5496cba37595c979ad989b34fda47428",
+      "bytes": 5611,
+      "duration": 0.25003125,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C10_hit_confirm_a.wav",
+      "sourceSha256": "5e04b689b33de2bcda18d3ef6e614160c3bfca94beb46f168cd7a69c4074115c",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.20702787315851176,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.069615
+        },
+        "body": {
+          "offset": 0.059614999999999994,
+          "duration": 0.051088
+        },
+        "tail": {
+          "offset": 0.09070299999999999,
+          "duration": 0.15932824999999998
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C10_hit_confirm_b",
+      "family": "C10",
+      "file": "private-assets/C10_hit_confirm_b.ogg",
+      "sha256": "a2aec3eebe3453ace97329982ee020d46de1ea3a17bf1bc95fed52963f9bb45c",
+      "bytes": 5583,
+      "duration": 0.23609375,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C10_hit_confirm_b.wav",
+      "sourceSha256": "8f9ab6af2c4b2593de1227a41c9edcd61f42c7ae30f742c160c4393fc3e5c616",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2013846246745775,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.046395
+        },
+        "body": {
+          "offset": 0.036395,
+          "duration": 0.03292500000000001
+        },
+        "tail": {
+          "offset": 0.04932,
+          "duration": 0.18677375
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C10_hit_confirm_c_r",
+      "family": "C10",
+      "file": "private-assets/C10_hit_confirm_c_r.ogg",
+      "sha256": "59b6f11051cac652f1f4493463a47e3f635ab0857647648cb62bd7063bc7e609",
+      "bytes": 6140,
+      "duration": 0.2400625,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C10_hit_confirm_c_r.wav",
+      "sourceSha256": "0356045aa8ad897903a3c7dcfa694ad34b3260751e174422effe5ae35091a4eb",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.19280667037777016,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.043651
+        },
+        "body": {
+          "offset": 0.033651,
+          "duration": 0.036598000000000006
+        },
+        "tail": {
+          "offset": 0.050249,
+          "duration": 0.1898135
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C11_fluff_ball_burst_a",
+      "family": "C11",
+      "file": "private-assets/C11_fluff_ball_burst_a.ogg",
+      "sha256": "7659120fb8c85d61275b42b47b5d54ba4920fafc366bc7f16ef370d3ecdbacd3",
+      "bytes": 7374,
+      "duration": 0.354875,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C11_fluff_ball_burst_a.wav",
+      "sourceSha256": "4b0053507027f691a79115c29812d234fdc97beac80c9a73f17d1f0e7bb62cce",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.284926427787484,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.072063
+        },
+        "body": {
+          "offset": 0.062063,
+          "duration": 0.07689399999999999
+        },
+        "tail": {
+          "offset": 0.118957,
+          "duration": 0.235918
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C11_fluff_ball_burst_b_r",
+      "family": "C11",
+      "file": "private-assets/C11_fluff_ball_burst_b_r.ogg",
+      "sha256": "c808473b6cda7fc309047bf7c0ee86d42c40ab82ab6718f74bae1bb27c5f83c5",
+      "bytes": 13301,
+      "duration": 1.014,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C11_fluff_ball_burst_b_r.wav",
+      "sourceSha256": "dc4a2e126649a0f7550b066b58ddd40faacb84fecc0368241f8ca1acdd84be88",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.24226591160924257,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.116984
+        },
+        "body": {
+          "offset": 0.10698400000000001,
+          "duration": 0.26816300000000004
+        },
+        "tail": {
+          "offset": 0.355147,
+          "duration": 0.658853
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C11_fluff_ball_burst_c_r",
+      "family": "C11",
+      "file": "private-assets/C11_fluff_ball_burst_c_r.ogg",
+      "sha256": "fee773cb978244c0796c8c1a2e17c0b387175d3a73935800c2492d95e3697817",
+      "bytes": 12591,
+      "duration": 0.958,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C11_fluff_ball_burst_c_r.wav",
+      "sourceSha256": "680677f62bcd4d21cb7395e0f2ade552cb988ea711977186e1c762f49f012066",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.3674118612695902,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.298435
+        },
+        "body": {
+          "offset": 0.288435,
+          "duration": 0.43090700000000004
+        },
+        "tail": {
+          "offset": 0.699342,
+          "duration": 0.25865799999999994
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C12_tree_shake_a",
+      "family": "C12",
+      "file": "private-assets/C12_tree_shake_a.ogg",
+      "sha256": "969ffcdb4af2f085aff77a47a6cff8a6b7ddf2731b85f6aedba310f7942b627f",
+      "bytes": 9536,
+      "duration": 0.7201875,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C12_tree_shake_a.wav",
+      "sourceSha256": "e9724100dcef69ead23620a14c1f68efba7bfc763d85f71a1887132d39f314ed",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.24169334426272018,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.27356
+        },
+        "body": {
+          "offset": 0.26356,
+          "duration": 0.12421799999999998
+        },
+        "tail": {
+          "offset": 0.367778,
+          "duration": 0.3524095
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C12_tree_shake_b_r",
+      "family": "C12",
+      "file": "private-assets/C12_tree_shake_b_r.ogg",
+      "sha256": "e6e0911e0e08c96ca1b867838e0a1627cf2b051673ddfe3910677bc6c5185b56",
+      "bytes": 6222,
+      "duration": 0.36709375,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C12_tree_shake_b_r.wav",
+      "sourceSha256": "48799543f8dc6a8ad8ddd3eeeb10422b39446d70ab8afe256d66c3801754b1c9",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.21717854054585845,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.034082
+        },
+        "body": {
+          "offset": 0.024082,
+          "duration": 0.093333
+        },
+        "tail": {
+          "offset": 0.097415,
+          "duration": 0.26967875
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C12_tree_shake_c",
+      "family": "C12",
+      "file": "private-assets/C12_tree_shake_c.ogg",
+      "sha256": "c8175a62e292a2c1afe232cfc6045761198fed683423cd712339a366a305b9e8",
+      "bytes": 6525,
+      "duration": 0.36428125,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C12_tree_shake_c.wav",
+      "sourceSha256": "2c980e7a9c44d3e5d9fe50a4eabf28d9bfee087ddb64bb5461e1f8426a21bc42",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.28465128842199994,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.025
+        },
+        "body": {
+          "offset": 0.015000000000000001,
+          "duration": 0.072347
+        },
+        "tail": {
+          "offset": 0.06734699999999999,
+          "duration": 0.29693425
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C13_bot_angry_a",
+      "family": "C13",
+      "file": "private-assets/C13_bot_angry_a.ogg",
+      "sha256": "ddccedb5cce9a1537dba8e8a8185b7937db369691b690c333d4f98bb2d064452",
+      "bytes": 11309,
+      "duration": 0.91915625,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C13_bot_angry_a.wav",
+      "sourceSha256": "0557574ddce89790678f44a24f511e45e9f53ea0596cbf8afccc30e65e13feef",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.21657491256499134,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.247438
+        },
+        "body": {
+          "offset": 0.23743799999999998,
+          "duration": 0.40682500000000005
+        },
+        "tail": {
+          "offset": 0.624263,
+          "duration": 0.29489325
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C13_bot_angry_b",
+      "family": "C13",
+      "file": "private-assets/C13_bot_angry_b.ogg",
+      "sha256": "4ef9331f36472f3adb1c6498870f56f301e1d4904d664ab4cbb9f173d31e8534",
+      "bytes": 11598,
+      "duration": 0.97209375,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C13_bot_angry_b.wav",
+      "sourceSha256": "9f18597e424b84c54232096115f426307a7a33b6629dceac6811ec2006059487",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2047880973786223,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.320907
+        },
+        "body": {
+          "offset": 0.310907,
+          "duration": 0.31435399999999997
+        },
+        "tail": {
+          "offset": 0.6052609999999999,
+          "duration": 0.36683275000000004
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C13_bot_angry_c",
+      "family": "C13",
+      "file": "private-assets/C13_bot_angry_c.ogg",
+      "sha256": "f0fe548c863fcfd36a0228eb5f08f228964e12f5a6b41523a601708f21ccda75",
+      "bytes": 11985,
+      "duration": 0.997375,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C13_bot_angry_c.wav",
+      "sourceSha256": "9280ec7cee38f3030184b0b70972fa0f54a1477057654f33a0b410862a29ce6a",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.200767224409055,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.398209
+        },
+        "body": {
+          "offset": 0.38820899999999997,
+          "duration": 0.373991
+        },
+        "tail": {
+          "offset": 0.7422,
+          "duration": 0.25517500000000004
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C14_bot_collapse_a",
+      "family": "C14",
+      "file": "private-assets/C14_bot_collapse_a.ogg",
+      "sha256": "9ef0c6fd8ebcd8de4830e532fbc86a0cfe5af6f3e46c6e415de894fce9ddb3f1",
+      "bytes": 12548,
+      "duration": 0.8265,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C14_bot_collapse_a.wav",
+      "sourceSha256": "51248a288ab7f5bf9e4985338b794dd523c77b54a1263ff1b78f4c905c39a57c",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.21693812784948255,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.166667
+        },
+        "body": {
+          "offset": 0.156667,
+          "duration": 0.38977300000000004
+        },
+        "tail": {
+          "offset": 0.52644,
+          "duration": 0.30006
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C14_bot_collapse_b",
+      "family": "C14",
+      "file": "private-assets/C14_bot_collapse_b.ogg",
+      "sha256": "e1a4cc26f386adbab18aadaa9af1f12adbaa5190ae4842940e19c27baf8268c2",
+      "bytes": 13325,
+      "duration": 1.11871875,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C14_bot_collapse_b.wav",
+      "sourceSha256": "d3b900c704c5eedda017abbf3a7465dd9b519b7d1e670155eb0d511ff26b9d68",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2329685640902127,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.265215
+        },
+        "body": {
+          "offset": 0.25521499999999997,
+          "duration": 0.39659900000000003
+        },
+        "tail": {
+          "offset": 0.631814,
+          "duration": 0.48690475
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C14_bot_collapse_c",
+      "family": "C14",
+      "file": "private-assets/C14_bot_collapse_c.ogg",
+      "sha256": "42376b5820131e7356681a70d06ed57a15732bdd3922f6bef0cca07c44387414",
+      "bytes": 13150,
+      "duration": 1.02646875,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C14_bot_collapse_c.wav",
+      "sourceSha256": "976595b013191c9feaede8f964c0682c0c2402ef58bfea8ad852fb1e4abf2855",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.22175957220529305,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.275828
+        },
+        "body": {
+          "offset": 0.265828,
+          "duration": 0.340431
+        },
+        "tail": {
+          "offset": 0.586259,
+          "duration": 0.44020975000000007
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C15_wood_splinter_a",
+      "family": "C15",
+      "file": "private-assets/C15_wood_splinter_a.ogg",
+      "sha256": "89e860585e66a44b8acb851f4ef235e73dbf4d1021354f9ef6beb43d8252b3c4",
+      "bytes": 8700,
+      "duration": 0.53178125,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C15_wood_splinter_a.wav",
+      "sourceSha256": "83a58cc1aa9cfb8c9db2f4309136e2eff5ee86f5e512ce6fb93f15a9260b081a",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.20323553049671775,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.076349
+        },
+        "body": {
+          "offset": 0.066349,
+          "duration": 0.148209
+        },
+        "tail": {
+          "offset": 0.194558,
+          "duration": 0.33722325
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C15_wood_splinter_b",
+      "family": "C15",
+      "file": "private-assets/C15_wood_splinter_b.ogg",
+      "sha256": "0b19c4561144f9e463ed9618319f7fd000aa60b2c07722ad8828bdfc7bf256a9",
+      "bytes": 9892,
+      "duration": 0.59440625,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C15_wood_splinter_b.wav",
+      "sourceSha256": "34eeafefba8e306b405775125f48f566fb0335568c89d3ce177babaebe32eaea",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.20990253801517855,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.09449
+        },
+        "body": {
+          "offset": 0.08449000000000001,
+          "duration": 0.381088
+        },
+        "tail": {
+          "offset": 0.445578,
+          "duration": 0.14882825000000002
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C15_wood_splinter_c",
+      "family": "C15",
+      "file": "private-assets/C15_wood_splinter_c.ogg",
+      "sha256": "80d3ff0c88a8fc86e7f2b6a794d11d5dff4e6a1bbb11f787f46e85bb02ec5bc1",
+      "bytes": 8467,
+      "duration": 0.4920625,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C15_wood_splinter_c.wav",
+      "sourceSha256": "7e5903bc2cf2ca324be2bb587defa37d2a9ca3ea5657047dada6e154e85f7d9a",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.20313926459980344,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.109342
+        },
+        "body": {
+          "offset": 0.099342,
+          "duration": 0.15367400000000003
+        },
+        "tail": {
+          "offset": 0.23301600000000003,
+          "duration": 0.2590465
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C16_stone_crumble_a",
+      "family": "C16",
+      "file": "private-assets/C16_stone_crumble_a.ogg",
+      "sha256": "687cac0ac9cf53dfae1addd3db5efa9817fbfd431477fa13965adda0ebfd9f7b",
+      "bytes": 14849,
+      "duration": 1.10990625,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C16_stone_crumble_a.wav",
+      "sourceSha256": "5dd36def5fd836564464427417fa84f6e3d519b00890c3de438e61b0a86d455e",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2113214943009618,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.258027
+        },
+        "body": {
+          "offset": 0.248027,
+          "duration": 0.40430900000000003
+        },
+        "tail": {
+          "offset": 0.632336,
+          "duration": 0.4775702500000001
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C16_stone_crumble_b",
+      "family": "C16",
+      "file": "private-assets/C16_stone_crumble_b.ogg",
+      "sha256": "2c281f330fb753861439523b61ef6a2294d9401c710fe09b0fa8b5abb4f9125f",
+      "bytes": 11127,
+      "duration": 0.66571875,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C16_stone_crumble_b.wav",
+      "sourceSha256": "7f9166c38c51b828a62529d29222ae7639ec33b6a87276d9b8bc41f2ea60af6f",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2280982355617933,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.176735
+        },
+        "body": {
+          "offset": 0.166735,
+          "duration": 0.18612199999999998
+        },
+        "tail": {
+          "offset": 0.33285699999999996,
+          "duration": 0.33286175000000007
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C16_stone_crumble_c",
+      "family": "C16",
+      "file": "private-assets/C16_stone_crumble_c.ogg",
+      "sha256": "61bec6b787b8aeae34a232c3a1f752f1bf208ae7fb051773b384e2951b6a73c1",
+      "bytes": 11048,
+      "duration": 0.71875,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C16_stone_crumble_c.wav",
+      "sourceSha256": "6b056de07896f8cb99c3c8c8f974388bc2090366145d75cd8c5e975467d50942",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.23379042672787848,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.164127
+        },
+        "body": {
+          "offset": 0.154127,
+          "duration": 0.29263000000000006
+        },
+        "tail": {
+          "offset": 0.426757,
+          "duration": 0.291993
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C17_crystal_shatter_a",
+      "family": "C17",
+      "file": "private-assets/C17_crystal_shatter_a.ogg",
+      "sha256": "ed387e863883f659e998a681af6f61c1ababf19304d8aaa4b6dcf6b3aa35f4b5",
+      "bytes": 9983,
+      "duration": 0.694,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C17_crystal_shatter_a.wav",
+      "sourceSha256": "c4c57b201050699d91b0eb1bea04116ddf367978107af12c58631e6384cb17c8",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.27273074708194295,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.127982
+        },
+        "body": {
+          "offset": 0.11798200000000002,
+          "duration": 0.190499
+        },
+        "tail": {
+          "offset": 0.288481,
+          "duration": 0.40551899999999996
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C17_crystal_shatter_b",
+      "family": "C17",
+      "file": "private-assets/C17_crystal_shatter_b.ogg",
+      "sha256": "34fcf9617207a882ec691b5be1c426d2cd498c92dcff09088d22cfc113b14124",
+      "bytes": 10528,
+      "duration": 0.73934375,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C17_crystal_shatter_b.wav",
+      "sourceSha256": "0506b515a28c760023a417535eaf21f4defe5d2975e19507a00e27493a471404",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.26078214673310723,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.307846
+        },
+        "body": {
+          "offset": 0.297846,
+          "duration": 0.14739200000000002
+        },
+        "tail": {
+          "offset": 0.425238,
+          "duration": 0.31410574999999996
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C17_crystal_shatter_c",
+      "family": "C17",
+      "file": "private-assets/C17_crystal_shatter_c.ogg",
+      "sha256": "3562d9cf3542808bae8cf9af7386ef06b764fe72cd8d3781de4b06b36bf8ee99",
+      "bytes": 8628,
+      "duration": 0.546,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C17_crystal_shatter_c.wav",
+      "sourceSha256": "812034c46259ec11efba50efb166b3790985837893b51262261248acebbbd8eb",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.2566196211066271,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.054354
+        },
+        "body": {
+          "offset": 0.044354,
+          "duration": 0.22947800000000002
+        },
+        "tail": {
+          "offset": 0.253832,
+          "duration": 0.29216800000000004
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C18_domino_topple_a",
+      "family": "C18",
+      "file": "private-assets/C18_domino_topple_a.ogg",
+      "sha256": "aa7e75bbdb57341e0ed0b2ca76dd583299b3d05b9f5d43a61973ffd73cc2f79a",
+      "bytes": 16094,
+      "duration": 1.44509375,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C18_domino_topple_a.wav",
+      "sourceSha256": "434b6c09a7e0800111578ac4946cf3094d95d01ecc24c1be94f2fe6b6b9d10ff",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.20445268998610272,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.49839
+        },
+        "body": {
+          "offset": 0.48839,
+          "duration": 0.500454
+        },
+        "tail": {
+          "offset": 0.9688439999999999,
+          "duration": 0.47624975000000014
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C18_domino_topple_b",
+      "family": "C18",
+      "file": "private-assets/C18_domino_topple_b.ogg",
+      "sha256": "d80c8bd3a93b616342c8296205df2129cf7deae385c82ebac37f88ca6f43a488",
+      "bytes": 14666,
+      "duration": 1.3489375,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C18_domino_topple_b.wav",
+      "sourceSha256": "78be64087d9c51eb859fb38612617d17337757b38b164dd4329f3fb98e83d7a5",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.20000678323862928,
+        "trimStart": 0.007,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.419916
+        },
+        "body": {
+          "offset": 0.409916,
+          "duration": 0.48036300000000004
+        },
+        "tail": {
+          "offset": 0.870279,
+          "duration": 0.4786584999999999
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    },
+    {
+      "id": "C18_domino_topple_c",
+      "family": "C18",
+      "file": "private-assets/C18_domino_topple_c.ogg",
+      "sha256": "2ebfd9352ec501dc8a6e9fd74703bdca21be69647b5ad909e1d441e1d84bc1d9",
+      "bytes": 13922,
+      "duration": 1.21909375,
+      "sourceDropboxPath": "ns:1174592111//CLAUDE/KFB_HUB/40_AUDIO/elevenlabs_r1/combat_r1_norm/C18_domino_topple_c.wav",
+      "sourceSha256": "191b8d96da230112cd3ee7f67066b1d1b9e99c76e8b642df86eb1a7debcfbaa0",
+      "licence": "LicenseRef-ElevenLabs-PaidPlan-Commercial",
+      "publicAudio": false,
+      "processing": {
+        "gain": 0.19938859072693957,
+        "trimStart": 0,
+        "peakCap": 0.2,
+        "activeEnergyRmsTargetDbfs": -25,
+        "neverBoost": true
+      },
+      "windows": {
+        "attack": {
+          "offset": 0,
+          "duration": 0.467029
+        },
+        "body": {
+          "offset": 0.457029,
+          "duration": 0.42732499999999995
+        },
+        "tail": {
+          "offset": 0.864354,
+          "duration": 0.35473975000000013
+        }
+      },
+      "layerStatus": "DERIVED_COMPOSITE_EXCERPTS_NOT_INDEPENDENT_TAKES_EAR_OPEN"
+    }
+  ],
+  "excludedSuperseded": [
+    {
+      "id": "C01_punch_light_c",
+      "replacedBy": "C01_punch_light_c_r",
+      "sha256": "6046e6109267bcafe6b4ec0892e479ddbbcfd3ba12dbf347b23607f19b598526"
+    },
+    {
+      "id": "C02_punch_heavy_c",
+      "replacedBy": "C02_punch_heavy_c_r",
+      "sha256": "4ef8aa3b69f1653971df91b5394b9aa441b8a49083f11d18cb450e0ab224352d"
+    },
+    {
+      "id": "C03_brass_knuckles_b",
+      "replacedBy": "C03_brass_knuckles_b_r",
+      "sha256": "899a1f2cb0414c6684e1934dc8db13f6b118b906d6618c470d69c797ac0070b3"
+    },
+    {
+      "id": "C03_brass_knuckles_c",
+      "replacedBy": "C03_brass_knuckles_c_r",
+      "sha256": "75404530e53bbbb85658ac81ebd18c60a8a67c9e8447c77fa33e2a8e5c84b764"
+    },
+    {
+      "id": "C10_hit_confirm_c",
+      "replacedBy": "C10_hit_confirm_c_r",
+      "sha256": "7ceec1d6f8d99d1a60d4627be670ffc14d9ef970ae1548437aefb128478159c2"
+    },
+    {
+      "id": "C11_fluff_ball_burst_b",
+      "replacedBy": "C11_fluff_ball_burst_b_r",
+      "sha256": "54626dd2ede2c6a3a2c4b3741fe01145a8f4ac91d868596416b9b5be7ed57c10"
+    },
+    {
+      "id": "C11_fluff_ball_burst_c",
+      "replacedBy": "C11_fluff_ball_burst_c_r",
+      "sha256": "7a1295d7822e393583742c9a768c2995cf6f7e2bff97623181db3833fa1d422c"
+    },
+    {
+      "id": "C12_tree_shake_b",
+      "replacedBy": "C12_tree_shake_b_r",
+      "sha256": "471bc51a01844ef66f32e4b63617900b8b9bab9314402393ddd8a930b49e9f0b"
+    }
+  ],
+  "notes": [
+    "C18 chain only: never per-domino contact",
+    "C07 finite fuse shot: no unverified looping",
+    "Derived layers are experimental composite excerpts, not independent recordings"
+  ]
+}
