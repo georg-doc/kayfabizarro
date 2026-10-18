@@ -1,3 +1,48 @@
+# Current Return · V-538 · 2026-10-18
+
+Status: PRIVATE_REPOSITORY_AND_OWNER_ROUNDTRIP_PASS · WS1_OWN_IDENTITY_FETCH_PENDING · RUNTIME_LICENSE_HOLD · PRIVATE_BUILD_NOT_CONNECTED.
+
+## Current evidence (supersedes historical blockers below)
+
+- Private repository: https://github.com/georg-doc/kayfabizarro-private-assets
+- Private branch: intake/v538-2026-10-18
+- Asset implementation: 9791df2b1187b7df9b47cb5c7ce2b8ce09d14cdf
+- Final private evidence head: e466995404e585a0cd72bebe359246b2c0e6e995
+- Manifest SHA-256: f1a1111424fefd18636f1f86342cb11a646f971b306422c0e659a56685a569b4
+- Public coordination branch: wsa/v538-private-assets-2026-10-18. No PR, merge or Live promotion.
+- Access: georg-doc owner/admin, pull and push confirmed by authenticated GitHub get_user_login/get_repo, browser and GitHub Desktop. No collaborator/deploy-key grant made. Owner evidence is not proof of WS1's separate runtime identity.
+- On this executor: gh is not installed; the explicitly requested SSH identity check returned Permission denied (publickey), so no SSH identity is claimed. No token, key or email collected. WS1_STATUS was not located in the register tools/handoff or preview trees and was not replaced with a WSA identity claim. WS1's sole writer must supply the actual owning status/ref and authenticated identity.
+- Exact closed roster: 41 files / 748749550 bytes, including 40 GLBs in Git LFS and one JSON. Uploaded through authenticated GitHub Desktop; bundled Git LFS 3.7.1, no extra CLI installation.
+- Fresh private HTTPS clone in a separate remote-verification checkout downloaded real LFS contents. Exact implementation head confirmed, clean worktree, 40 LFS objects. Compared every path/size/SHA against the freshly fetched canonical manifest (blob 54efe1a579daccde1be7449a77f20afaa6a5d3ca): **41/41 sha256 ok**. This is georg-doc's owner roundtrip, not WS1's own-credential test.
+- Independent tester/critic/guard /root/asset_guard verified the real roster with zero failures; valid fixture exit0 and six negative fixtures exit1 (missing, pointer-only, altered, duplicate, unmanifested, traversal). Verifier is a trusted fixed-manifest integrity check and follows symlinks; no adversarial containment claim.
+- After both implementation and evidence pushes, exact remote branch head and intended files were fetched. Evidence head e466995404e585a0cd72bebe359246b2c0e6e995 and manifest/build contract/evidence/handoff/report/provenance files match local Git blobs.
+
+## Changed private files and remaining rights
+
+Private assets preserve source-relative paths under assets/. Added .gitattributes, .gitignore, README.md, manifest.lock.json, BUILD_CONTRACT.md, tools/verify_assets.py, provenance/{RIM_R1,B24,B26,B27}/RETURN.md, EVIDENCE_V538.json, WS1_READONLY_HANDOFF.md, PLATFORM_DEEPDIVE_R1.md, and provenance/KayKitMysterySeries4/{License.txt,evidence.json}. No raw assets or full research report were copied into this public coordination branch.
+
+New local evidence: original KayKit Monthly Mystery Series4 package includes the January2024 Space Ranger model and bundled CC0 declaration (license SHA256 7e06cc08e1b881b1a6a4827cbe6000d40d3db1d9aa894ad5fce19ac6b8ba3b8a; source model 302f8aef4af43d0fb00abe8f7a237fbdf5baed356c8c11efe5e038f3177ca854). RIM_R1 Return explicitly names that suit in Dory/Hunky. Component-level provenance improves; full composite mapping/rights remain unproven. All41 entries remain UNRESOLVED_RUNTIME_HOLD, preserving private storage. Meshy entitlement/reference/community obligations and Unity purchase/EULA evidence remain open.
+
+## Existing Stage observation and boundary
+
+Exact existing URL https://kfb-ws1-staging.frizzlebob.chatgpt.site/ was opened in the authenticated browser. Current visible page shows five archived WS1 builds and newer advertised head 5870c3b3ebfb54b9c19f669d599413c8d656bd4d (combo/r2@027d5c5, 61/61tests,19.1MB). The running older game remains preserved; it was not silently replaced. No current403 displayed. A separate read-only GitHub request returned200 with58/60 core requests remaining on this executor; that is not proof about the prior Site's egress or earlier403 cause.
+
+Same Site project appgprj_6ad2ac305b788191af0bdfc68823a300, savedv4, audiencecustom. No source edit, deployment, audience change or private-build installation. Automatic approval review rejected escalation of the privileged Site source workflow because the403 had not been established and Site modification was outside the stated access-check/V538 repair scope. Read-only diagnosis continued; no bypass. Existing private build seam remains NOT_CONNECTED; raw748.7MB intake is not an approved browser bundle.
+
+Private platform report is now stored in the private repo and updated on its existing Page:
+https://chatgpt.com/space/page_6f22e45b00408191979fc64b640b11f6
+KISS remains: existing Site guest-play acceptance + local save/export first; optional cloud sync and bounded live AI later; Steam/ChatGPT companion later. No hosting migration or cost incurred by this intake.
+
+## One next gate
+
+Actual WS1 executor must return its authenticated GitHub username and source, then retrieve the pinned private head with its own read-only access outside the public repo and verify canonical manifest hashes, returning only **41/41 sha256 ok** when proven. Private WS1_READONLY_HANDOFF.md contains the steps. If WS1 authenticates as georg-doc, no invitation to that same owner is needed; any machine credential must still be scoped and actual LFS retrieval tested. Do not infer identity from commit authorship.
+
+Thereafter resolve the runtime allowlist and get the exact current WS1 source/build Return before the sole WS1 writer connects licensed optimized derivatives. V-538 is not claimed fully complete, and no public acceptance or HUMAN_ACCEPTED is claimed.
+
+---
+
+# Historical Return (preserved)
+
 # V-538 · Private Assets Recovery Return · 2026-10-18
 
 Status: LOCAL_PREPARED · REMOTE_REPOSITORY_ACCESS_BLOCKED · NO_SITE_CHANGE.
