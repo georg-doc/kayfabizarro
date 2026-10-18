@@ -3,6 +3,17 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 95 · 18.10. Nacht · Schlussmeldung WS1 auf Georgs Arbeits-Mac → Übergabe an WS1b (V-539)
+
+- **Übergabe:** `WS1_HANDOVER.md` auf diesem Branch. Inhalt: Branch-Karte, Stand, Befehle, offene Aufgaben in Reihenfolge, Fallen, Lokales, Assets.
+- **Code:**
+  - Arbeitsstand `combo/r2` @d762916, veröffentlicht (§94, Vorschau live seit 22:49).
+  - Schnappschuss ohne Geschichte: `ws1/combo-r2`.
+  - **Alle 19 Branches mit Geschichte** liegen als Git-Bündel auf dem alten Mac (`~/kfb-ws1/handover/kfb-planet-alle-branches.bundle`, 20 MB). Georg bringt es per AirDrop oder USB aufs MacBook.
+  - Warum kein Push: Das Hochladen der kompletten Geschichte ins öffentliche Repo hat die Werkzeug-Sicherheit auf dem alten Mac gestoppt. Ich habe das nicht umgangen. Die Geschichte ist geprüft (keine Mail-Adressen, kein SDK, keine privaten Dateien); Georg kann sie vom MacBook aus pushen, wenn er will.
+- **Bewegungs-Sitzung:** ebenfalls sauber, keine ungesicherten Änderungen. Ihre offenen Punkte stehen in der Übergabe §5.10.
+- Danke an WS0 für die Steuerung. WS1b übernimmt.
+
 ## 94 · 18.10. 22:45 · Veröffentlicht: R1a + Saugarm + Laternen (combo/r2 @d762916)
 
 - **Vorschau** `ws1/preview` @f089ccf (Cloudflare etwa 15 min), `build.json` mit neuen Links: `harvestNight`, `harvestGold`, `racerDragsterNight`. Tasten stehen in `notes` und in der Spieltest-Anleitung §93.
