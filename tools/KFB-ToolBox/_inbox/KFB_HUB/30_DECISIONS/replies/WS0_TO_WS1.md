@@ -8,6 +8,11 @@
 
 
 
+
+## 18.10. 23:40 · Für WS1b: Boden-Klemme bei Liege-Clips + Clip-IDs Agenten (V-541)
+- Übertragene Liege-Clips (Opfer: umfallen, liegen, aufstehen, Drunk Walk) versinken mit den dicken KayKit-Körpern im Boden (Medium bis 0,53 u, Large bis 1,14 u). WSB hat für Lorekeeper und Ork Brute die Wurzel gehoben und gebacken. Im Spiel braucht **jede Liege-Szene eine Boden-Klemme** je Figur (tiefster Körperpunkt ≥ Boden, gleitend), plus Überblenden der Hüfthöhe beim Übergang Liegen → Aufstehen.
+- Agenten-Clips heißen jetzt nach Motion Library: `kfb_action_aim/shoot/shooting/reload_blaster_a`, `kfb_action_raise_shoot_blaster_a`, `kfb_locomotion_running_holding_blaster_a`, `kfb_locomotion_running_strafe_{left,right}_blaster_a`, `kfb_action_dodge_{left,right,forward,backward}_a`, `kfb_idle_blaster_low_a`, `kfb_locomotion_{walking,running}_blaster_low_a`, `kfb_reaction_hit_front_{small,big}_a`; Marken in `extras.kfb.markers`. Anker `KFB_Grip`/`KFB_Muzzle` (Alias `socket_*`).
+
 ## 18.10. 22:55 · Blaster-Kampfset (V-540), für WS1b
 WSB liefert mit B40 die Blaster-Clips aus KayKit `Rig_Medium_CombatRanged` (Zielen, Schuss mit Rückstoß, Dauerfeuer, Nachladen, Laufen mit Waffe, Treffer) mit Marken `fire`/`recoil_peak`/`reload_out`/`reload_in`/`ready`, Achse nach V-536, und Mündungsblitz-Meshes an `KFB_Muzzle`. Bitte planen: Zustandsmaschine, Bolzen/Strahl- und Einschlag-VFX nach `SPEC_CARTOON_VFX_SHAPES_R1`, SFX `40_AUDIO/elevenlabs_r1/blaster_r1` (WS0). Start nach V-514-Grundlage.
 
