@@ -1,10 +1,10 @@
 # KFB Atmosphere · source and licence register · V-458
 
-Checked 2026-10-18. `licence-register.json` records every source URL, author, original SHA256, derivative SHA256, duration and exact extraction window. No paid generation. SOURCE_VERIFIED is not HUMAN_ACCEPTED.
+Checked 2026-10-18, updated for Hub b116. All **36 files in this new Atmosphere set are CC0**; canonical delivery `media/3D_Assets/Audio/KFB_Ambience_CC0_r1/` includes `LICENCES.json`. `licence-register.json` records source URL, author, original SHA256, derivative SHA256, duration and extraction window. No paid generation. SOURCE_VERIFIED is not HUMAN_ACCEPTED.
 
 ## Own stock first
 
-- Chequered Ink: existing `Environment/ambient_wind.wav` and `water_babbling_loop.wav`, pinned main c746a9567e0ea20a24b8969fe9130ac0756e7a7e. Both byte-identical to the publisher-linked 400 Sounds archive. Publisher https://ci.itch.io/400-sounds-pack permits commercial game incorporation; optional credit, not CC0, no repackaging unchanged as an asset collection. Archive SHA256: `6824581dd5ed3f5162e85090b11155562759291b72fc5f6cc92bed67e7025e24`. Our normalized excerpts are game-runtime components, not an asset-pack offer.
+- Chequered Ink: inspected existing `Environment/ambient_wind.wav` and `water_babbling_loop.wav`, pinned main c746a9567e0ea20a24b8969fe9130ac0756e7a7e. Both byte-identical to the publisher-linked 400 Sounds archive (archive SHA256 `6824581dd5ed3f5162e85090b11155562759291b72fc5f6cc92bed67e7025e24`). Custom commercial-use licence, NOT CC0. After Hub b116 these are **manifest-only / not shipped in this set**, and their two normalized excerpts have been removed from the new branch tip and Site 0.8.1. Georg's Dropbox path is not known and has not been invented. Existing older repo/footstep stock is outside this delivery and was not rewritten.
 - Two repo ElevenLabs rain sources are quarantined: creation-plan/commercial-rights receipt not available here. They are NOT copied into the release. Supplying that receipt can reopen admission; no key is required.
 
 ## CC0 additions · primary licence pages

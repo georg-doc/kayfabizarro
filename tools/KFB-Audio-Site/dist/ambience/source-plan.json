@@ -3,26 +3,6 @@
   "checked": "2026-10-18",
   "rows": [
     {
-      "id": "own-wind",
-      "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/Audio/Environment/ambient_wind.wav",
-      "sourcePath": "media/3D_Assets/Audio/Environment/ambient_wind.wav",
-      "blob": "9e259a43528d292cf2d61796893df9b2ddb80eb6",
-      "file": "own-wind.wav",
-      "license": "LicenseRef-ChequeredInk-Commercial",
-      "page": "https://ci.itch.io/400-sounds-pack",
-      "author": "Chequered Ink"
-    },
-    {
-      "id": "own-river",
-      "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/Audio/Environment/water_babbling_loop.wav",
-      "sourcePath": "media/3D_Assets/Audio/Environment/water_babbling_loop.wav",
-      "blob": "75e65bbd9b5c150c45b00f1001f121824acfeaf0",
-      "file": "own-river.wav",
-      "license": "LicenseRef-ChequeredInk-Commercial",
-      "page": "https://ci.itch.io/400-sounds-pack",
-      "author": "Chequered Ink"
-    },
-    {
       "id": "park-birds",
       "url": "https://opengameart.org/sites/default/files/park_ambience_birds.wav",
       "file": "park-birds.wav",
@@ -161,6 +141,24 @@
       "status": "PLAN_AT_CREATION_RECEIPT_REQUIRED",
       "role": "weather-rain",
       "shipping": false
+    },
+    {
+      "id": "own-wind",
+      "sourcePath": "media/3D_Assets/Audio/Environment/ambient_wind.wav",
+      "sha256": "1baa0f00560002d23b84d8cc2e521ac88fa691a4f0b5c43dd9f8bd83b663cb71",
+      "license": "LicenseRef-ChequeredInk-Commercial",
+      "shipping": false,
+      "dropboxPath": null,
+      "reason": "V-458 follow-up / Hub b116: non-CC0 stock is manifest-only in public deliveries; Georg Dropbox location required. No raw donor uploaded by this slice."
+    },
+    {
+      "id": "own-river",
+      "sourcePath": "media/3D_Assets/Audio/Environment/water_babbling_loop.wav",
+      "sha256": "5b6888c9c6d6ad0cf33453f280ac42f5818c3b80fa304f6d48fd5f86eaff6162",
+      "license": "LicenseRef-ChequeredInk-Commercial",
+      "shipping": false,
+      "dropboxPath": null,
+      "reason": "V-458 follow-up / Hub b116: non-CC0 stock is manifest-only in public deliveries; Georg Dropbox location required. No raw donor uploaded by this slice."
     }
   ],
   "excluded": [

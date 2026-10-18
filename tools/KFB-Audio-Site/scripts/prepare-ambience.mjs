@@ -10,7 +10,7 @@ function add(id,source,start,seconds,role,extra={}){const row=sourceRows.find(r=
  const bytes=fs.readFileSync(target),a={id,file:'assets/'+id+'.ogg',sha256:hash(bytes),bytes:bytes.length,duration:duration(target.pathname),role,source:row.id,sourceSha256:row.sha256,sourceWindow:{start,seconds:length},license:row.license,licenseUrl:row.page,author:row.author,status:'SOURCE_VERIFIED_RUNTIME_UNVERIFIED',...extra};delete a.input;assets.push(a);}
 for(const [id,src,starts,len] of [['meadow','park-birds',[10,100],60],['forest','park-birds',[40,140],60],['wind','park-wind',[5,55],45],['pond','frogs',[5,100],60],['jungle','jungle',[1,16],40]])for(let i=0;i<starts.length;i++)add(id+'-'+(i+1),src,starts[i],len,'bed',{note:id==='jungle'?'Overlapping excerpts of morning recording; authentic night variant remains a gap':'Distinct source windows, not separate recording sessions'});
 for(let i=1;i<=4;i++)add('wave-'+i,'wave-'+i,0,15,'water');
-add('river','own-river',0,8,'water');add('river-long','park-river',15,60,'water');add('waterfall','waterfall',0,10,'water');add('gust','own-wind',0,12,'wind');
+add('river-long','park-river',15,60,'water');add('waterfall','waterfall',0,10,'water');
 for(let i=1;i<=4;i++)add('rain-'+i,'rain',0,60,'weather',{input:'rain-'+i+'.ogg'});
 for(let i=0;i<6;i++)add('bird-'+(i+1),'birds',i*3.4,2.5,'event',{pool:'birds',species:'unidentified field-recorded bird phrase'});
 for(let i=0;i<3;i++)add('chirp-'+(i+1),'bird-chirp',i*.9,.85,'event',{pool:'birds',species:'unidentified field-recorded bird phrase'});

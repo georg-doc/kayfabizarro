@@ -8,7 +8,8 @@ const ambience = await createAmbience({
   audioContext: existingAudioContext,
   destinations: {GLOBAL_BED: existingGlobalBedBus, LOCAL_AMBIENCE: existingLocalAmbienceBus},
   assetBaseUrl: new URL('./ambience/', existingAudioAssetRoot),
-  onWind: ({value,at}) => existingVisualWind.set(value,at)
+  onWind: ({value,at}) => existingVisualWind.set(value,at),
+  onWeather: ({snow}) => existingAudioOwner.setWeatherFilter({snow})
 });
 await ambience.setContext({biome:'pond',timeOfDay:'evening',weather:'rain-light',wind:0.35});
 await ambience.start();
@@ -26,7 +27,7 @@ Presets: `meadow`, `jungle`, `beach`, `forest`, `pond`; times `morning/day/eveni
 
 Listener position/orientation belongs to the existing context listener; water coordinates and animal positions are in the same metre-based space. Inverse-distance HRTF; water gets a distance-dependent low-pass. Move an emitter by replacing its array; old voices fade out. For beach add `kind:'beach'`; `waterfall` is also supported.
 
-Mix policy: desired total ambience attenuation −5 dB under audible music/soundbed or active dialogue. If the existing bus already ducks −4.25 dB for voice, module adds only −0.75 dB, NOT another −5. Host must provide actual already-applied voice duck in dB. Attack 180 ms, release 1.2 s. Do not pass a music selection as “audible” when playback is silent. The Site samples the existing SCORE bus, not a second music runtime. Snow applies 900 Hz low-pass to this module only; a World adapter can separately request its existing owner’s global snow filter — this module never hijacks music/footsteps.
+Mix policy: desired total ambience attenuation −5 dB under audible music/soundbed or active dialogue. If the existing bus already ducks −4.25 dB for voice, module adds only −0.75 dB, NOT another −5. Host must provide actual already-applied voice duck in dB. Attack 180 ms, release 1.2 s. Do not pass a music selection as “audible” when playback is silent. The Site samples the existing SCORE bus with 600 ms hold, not a second music runtime. Snow applies 900 Hz low-pass to this module and invokes `onWeather` for the existing owner's global filter. The Site owner applies 4.2 kHz after its master (all semantic buses), restored to 20 kHz on Stop, with 1.5 s ramps. Browser-native TTS lives outside Web Audio and cannot be filtered. WS1 supplies the equivalent owner callback; the ambience module never reconnects someone else's graph.
 
 Beds: 32–40 s excerpts, 8 s overlap, random offsets, alternating variants; slow ±10% drift every 12–25 s. Rain: equal-power light/heavy gains over 3 s, 4 s segment overlaps. Fauna: shifted exponential intervals with 5 s minimum gap, no same immediate variant, pitch .97–1.03, randomized room placement. Pool hazard rates/minute at day: birds 5/3/.7/3/2 by biome; night multiplies birds .03 and crickets/frogs 1.6. Heavy weather reduces fauna to .25. Minimum gap makes actual mean rate lower than the raw hazard rate. 24 voice cap; host pauses drop backlog rather than burst. No species-identification guarantee.
 

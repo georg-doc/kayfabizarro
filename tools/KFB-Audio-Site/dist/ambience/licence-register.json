@@ -4,28 +4,6 @@
   "checked": "2026-10-18",
   "sources": [
     {
-      "id": "own-wind",
-      "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/Audio/Environment/ambient_wind.wav",
-      "sourcePath": "media/3D_Assets/Audio/Environment/ambient_wind.wav",
-      "blob": "9e259a43528d292cf2d61796893df9b2ddb80eb6",
-      "file": "own-wind.wav",
-      "license": "LicenseRef-ChequeredInk-Commercial",
-      "page": "https://ci.itch.io/400-sounds-pack",
-      "author": "Chequered Ink",
-      "sha256": "1baa0f00560002d23b84d8cc2e521ac88fa691a4f0b5c43dd9f8bd83b663cb71"
-    },
-    {
-      "id": "own-river",
-      "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/Audio/Environment/water_babbling_loop.wav",
-      "sourcePath": "media/3D_Assets/Audio/Environment/water_babbling_loop.wav",
-      "blob": "75e65bbd9b5c150c45b00f1001f121824acfeaf0",
-      "file": "own-river.wav",
-      "license": "LicenseRef-ChequeredInk-Commercial",
-      "page": "https://ci.itch.io/400-sounds-pack",
-      "author": "Chequered Ink",
-      "sha256": "5b6888c9c6d6ad0cf33453f280ac42f5818c3b80fa304f6d48fd5f86eaff6162"
-    },
-    {
       "id": "park-birds",
       "url": "https://opengameart.org/sites/default/files/park_ambience_birds.wav",
       "file": "park-birds.wav",
@@ -429,24 +407,6 @@
       "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
     },
     {
-      "id": "river",
-      "file": "assets/river.ogg",
-      "sha256": "e11bc75979fdcc19877f7aff17b63071eb16515e974e75dbb5a2938e2a38e061",
-      "bytes": 52210,
-      "duration": 4.02,
-      "role": "water",
-      "source": "own-river",
-      "sourceSha256": "5b6888c9c6d6ad0cf33453f280ac42f5818c3b80fa304f6d48fd5f86eaff6162",
-      "sourceWindow": {
-        "start": 0,
-        "seconds": 4.02
-      },
-      "license": "LicenseRef-ChequeredInk-Commercial",
-      "licenseUrl": "https://ci.itch.io/400-sounds-pack",
-      "author": "Chequered Ink",
-      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
-    },
-    {
       "id": "river-long",
       "file": "assets/river-long.ogg",
       "sha256": "7605bf0a56cc38a525daad604a046f7b03bcec445435f6b4b0189cb4fb3b9f74",
@@ -480,24 +440,6 @@
       "license": "CC0-1.0",
       "licenseUrl": "https://freesound.org/people/A.Deathy/sounds/44880/",
       "author": "A.Deathy",
-      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
-    },
-    {
-      "id": "gust",
-      "file": "assets/gust.ogg",
-      "sha256": "536a9d4af0bdb1b863e3a54b0344ef2be9d6023a17260c3d3afc04e3f389a515",
-      "bytes": 80258,
-      "duration": 8.61,
-      "role": "wind",
-      "source": "own-wind",
-      "sourceSha256": "1baa0f00560002d23b84d8cc2e521ac88fa691a4f0b5c43dd9f8bd83b663cb71",
-      "sourceWindow": {
-        "start": 0,
-        "seconds": 8.61
-      },
-      "license": "LicenseRef-ChequeredInk-Commercial",
-      "licenseUrl": "https://ci.itch.io/400-sounds-pack",
-      "author": "Chequered Ink",
       "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
     },
     {
@@ -906,6 +848,24 @@
       "status": "PLAN_AT_CREATION_RECEIPT_REQUIRED",
       "role": "weather-rain",
       "shipping": false
+    },
+    {
+      "id": "own-wind",
+      "sourcePath": "media/3D_Assets/Audio/Environment/ambient_wind.wav",
+      "sha256": "1baa0f00560002d23b84d8cc2e521ac88fa691a4f0b5c43dd9f8bd83b663cb71",
+      "license": "LicenseRef-ChequeredInk-Commercial",
+      "shipping": false,
+      "dropboxPath": null,
+      "reason": "V-458 follow-up / Hub b116: non-CC0 stock is manifest-only in public deliveries; Georg Dropbox location required. No raw donor uploaded by this slice."
+    },
+    {
+      "id": "own-river",
+      "sourcePath": "media/3D_Assets/Audio/Environment/water_babbling_loop.wav",
+      "sha256": "5b6888c9c6d6ad0cf33453f280ac42f5818c3b80fa304f6d48fd5f86eaff6162",
+      "license": "LicenseRef-ChequeredInk-Commercial",
+      "shipping": false,
+      "dropboxPath": null,
+      "reason": "V-458 follow-up / Hub b116: non-CC0 stock is manifest-only in public deliveries; Georg Dropbox location required. No raw donor uploaded by this slice."
     }
   ],
   "excluded": [
