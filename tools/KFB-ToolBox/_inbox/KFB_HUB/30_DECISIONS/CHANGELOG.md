@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- B11 r3 Größen-Fix (WSB: variant.scale ging beim Umhängen verloren; jetzt am Knoten, Nr. 1 1,60 m … Nr. 6 2,25 m, +41 %), Front-Reihe mit FrizzleBob → Hub q47.
 - WSB B11 r3 Spielzeugsoldaten (Tschako mit Nummer Stern/Kreis, Royal Blue, Aufziehschlüssel dreht, Marsch + Gruß, Trupp 1–6 mit Augen) → Hub q46 (Stern oder Kreis). Dalton-Größen in den Reihen nicht sichtbar → WSB prüft variant.scale + Front-Reihe mit FrizzleBob, danach eigene Größen-Frage.
 - V-486 Sprach-Probe R1 gebaut: 3 Stimmen (FrizzleBob 06 flow, Lily = Dory, Callum = Hunky) × 32 Silben + 4 Laute per ElevenLabs-TTS, Demo-Artifact https://claude.ai/artifact/Ms1RhWbn4Tu8gU9RjnQXFR (Sprecher, Gefühl, Dekodier-Regler mit Runen, Zeitleisten-Cues, Dory↔Hunky-Kabbelei) → Hub q45. Quelle 40_AUDIO/kfb_language_r1/.
 - V-487 WS1-Integrationsplan R1 + privates Paket-Artifact (P1+P2, 111 Dateien, Round-Trip geprüft) statt Dropbox für WS1. V-488 Songs: neutraler Erzähler + „Stay Fluffy, Folks!“ (song_gate R3.6). WSB B35: Rustwing Cruiser II fertig, Rust Runner II = gleiche Quelle wie rust_runner (Hub q44).
