@@ -12,7 +12,7 @@
 ## Block
 **Wurfkörper**
 - **Cartoon-Bombe:**
-  - Quelle: `clown_bomb` aus KayKit Mystery Series 6 / 11 Clown (Kauf-Asset, privat). Ablage `_privat_kauf_asset`.
+  - Quelle: `clown_bomb` aus KayKit Mystery Series 4 / 11 Clown (Kauf-Asset, privat). Ablage `_privat_kauf_asset`.
   - Anker `KFB_Fuse` (Zündschnur-Spitze für den Funken-VFX).
 - **Granate:**
   - Cartoon-Granate aus der 3D-Asset-Suche (CC0 bevorzugt, Lizenz im RETURN), kein Eigenbau.
