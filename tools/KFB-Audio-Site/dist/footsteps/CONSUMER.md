@@ -1,29 +1,25 @@
-# V-389 · Audio-owned footstep micro-proof
+# Footsteps · game consumer seam
 
-Existing Site only: https://kfb-audio.frizzlebob.chatgpt.site/#footsteps
-Owner project `appgprj_6ac1c73dc28881919123106bd6d3e90e`.
-Source baseline: hosted source commit `d3c1df83347367ce49634a2d29972f773c322574`, Site 0.7.1 / version 11. This slice is additive 0.7.2, not a rollback to the remembered 0.5.1.
+Audio owns source selection, shaping, gain and playback. Game owns real contacts, support, gait, surface and cue time. No World runtime is changed by this Audio slice.
 
-## Consumer seam (later; no World writes)
+```js
+import {createFootstepConsumer} from './footsteps/consumer.mjs';
+const steps = await createFootstepConsumer({
+  audioContext: existingAudioContext,
+  destination: existingBuses.PLAYER_CRITICAL,
+  defaultSurface: 'wood'
+});
+steps.start(); // existing host already resumed by its user gesture
+steps.setSurface('foley-carpet'); // same stable ids as the Site selection
+steps.emit({type:'footstep', id:'contact-471', at:existingAudioContext.currentTime,
+  foot:'l', grounded:true, moving:true});
+steps.stop();
+```
 
-`createFootstepAudio({audioContext, destination, rows})` accepts only the existing AudioContext and its `PLAYER_CRITICAL` bus. In this Site, `await window.KFBAudioSite.resume()` returns that existing graph. It creates no AudioContext and never schedules a music clock. Existing SCORE ducking stays untouched.
+One support contact produces one sample. Four numbered files are alternative takes, NOT four gait speeds, L/R assignments or a four-step loop. No immediate repeated take. ±3% pitch and only ±0.18 dB random level variation. Repeated cue ids are ignored. No step while stationary/airborne. Cue timestamps belong to the injected context; use the host's existing contact/audio scheduling adapter for device-output latency. This module creates neither a context nor a timer/clock and imports no DOM, WB2 or Site UI.
 
-`ContactTimeline.advance({owner, phase, duration, time, points, moving, surfaceAt})` consumes unwrapped native clip phase plus the same context time. `owner` is one arbitration token for the current gait, not both blending actions. `surfaceAt(foot)` queries actual left/right foot positions; this fixture has a deliberately tiny material-plane query, not a World terrain controller. A future adapter supplies actual support facts. Stationary or airborne state emits no footstep. Hidden/background backlogs are discarded.
+Available walking ids: wood (default), carpet-wood (processed Wood experiment), sand, stone, wet-clay, foley-carpet, foley-concrete, foley-gravel, foley-vinyl, digital-grass, digital-gravel, digital-snow, digital-wood.
 
-`support(grounded, time, surface)` emits LAND only on authoritative false→true. The fixture's 0.9 s ballistic support owns height; Jump_Idle and Jump_Land are presentation only. An animation callback must never emit a landing. Resume gait after landing is not implemented in the synthetic fixture: it returns to idle deliberately.
+Separate accent: emit({type:'creak',id:'floor-creak-3',at:existingAudioContext.currentTime}). The one creak file is deliberately NOT a footstep variant. Landing is not inferred from animation and is not newly implemented by this adapter.
 
-## Measured contacts, not a BPM metronome
-
-Unmodified ToolBox donor: `tools/KFB-ToolBox/_inbox/KFB_TOOLBOX_CLAUDE_DESIGN_SESSION_CUT_2026-10-01_r1/kfb-lib/locomotion-profiles.v1.js`, using `measureClip()` on real Mannequin_Medium with the one THREE mixer. Raw full planted intervals remain in diagnostics. Stable-plant qualification requires >=70 ms, including joined wrap intervals, because native Walking_A also contains brief height-threshold grazes. Result: two qualified contacts/cycle, walk 112.5 steps/min and run 150 steps/min at native rate. No invented jog/sprint and no gait inferred from audio duration. Changing cadence later must follow the real animation phase/playback and support owner.
-
-The specimen is an in-place contact/treadmill preview, not a locomotion/stride-distance controller. `stanceSpeed` is measured source metadata, not a claim of validated World traversal or friction.
-
-## One cue timeline
-
-`timeline.packet()` exports an Audio-owned candidate `kfb.performance/1` SFX cue seam, with `sfx[]`, `vfx[]`, `lights[]`. Current SFX times are the absolute injected AudioContext seconds; downstream video must subtract an explicit chosen performance origin. No video or game clock is started here. VFX/light arrays are intentionally empty, not placeholder effects. Canonical cross-owner schema admission and karaoke dance contacts are deferred; do not replace an existing performance document with this small packet.
-
-## Evidence boundaries
-
-The visible drift is contact-crossing → AudioBufferSource scheduled start, plus a separate source onset estimate at 3.5% of decoded peak. It is not speaker/OS output latency and not a measurement of filter group delay. 60 Hz contact measurement adds up to one source sample interval (~16.7 ms) of uncertainty. Browser frame dispatch may add delay; all raw event times are downloadable. Maximum eight simultaneous one-shots, 120 ms same-foot refractory, 160 ms landing overlap suppression, immediate-repeat-free bank choice.
-
-Georg still judges sonic character. Runtime/decode proof is not HUMAN_ACCEPTED. No paid generation, no motor batch, no World/WB2/PR #348, no merge or Live promotion.
+Package the sibling audio.mjs, sample-shape.mjs, contact-core.mjs, both source manifests and required assets with this module. The Chequered Ink receipt in LICENCES.md must travel with game incorporation; these assets are not CC0 and must not be sold or redistributed unchanged as your own asset pack. Do not interpret this seam as an installed/verified World integration.

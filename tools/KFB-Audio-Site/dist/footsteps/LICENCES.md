@@ -46,3 +46,13 @@ No source audio was added or replaced. R2's 20 verified Kenney donors and all so
 
 Sand is now a softer 620 Hz / 32 ms-attack / 280 ms-tail interpretation of the same CC0 snow donors, not a new sand field recording. All four banks are level-matched AFTER filtering and envelope (target per-step RMS .010, pre-host gain), with a .12 sample peak ceiling. No paid generation or new licence. RMS matching is an engineering proxy, not equal perceptual loudness certification. Walk uses first sustained support hand-over on a fixed ground plane; the audio-owned preview applies vertical sole grounding without changing source GLBs or any World animation owner.
 
+# 2026-10-18 · 0.7.6 · Wood reference + imported Footsteps
+
+Georg accepted current contact timing but rejected equal perceived loudness: Cozy was louder/harder than Wood. Wood is now the unchanged default/reference; former Cozy is reduced 6 dB; a processed Wood-based carpet experiment is 3 dB below reference, not a new recording. These are new listening candidates, not human acceptance.
+
+All 33 imported WAVs from georg-doc/kayfabizarro commit c746a9567e0ea20a24b8969fe9130ac0756e7a7e match the original author's linked Dropbox preview archive BYTE-FOR-BYTE (33/33 Git blob hashes). Archive SHA256: 6824581dd5ed3f5162e85090b11155562759291b72fc5f6cc92bed67e7025e24. Author link checked 2026-10-18: https://ci.itch.io/400-sounds-pack → Dropbox “400 Sounds Pack”. 32 steps are eight banks of four alternative takes; foley_creak_1.wav is one separate accent, not a gait.
+
+Chequered Ink permits game use, including commercial use, with optional credit; it forbids selling/redistributing unchanged assets as one's own asset pack. NOT CC0. Used as incorporated game/Site sound content with this receipt; no standalone asset pack is offered. imported-sources.json pins every path/blob. Native source WAV bytes are preserved; playback trims leading silence and shapes/attenuates them using the same injected host only. New Foley banks -2 dB, Digital banks -4 dB relative to Wood's reference energy, plus conservative peak ceiling. Equal perceived loudness remains a listening gate, not a claim from RMS.
+
+GAME_DEV_CLI_UNAVAILABLE · OPTIONAL FALLBACK USED. Repository-native decode/PCM/geometry/browser checks replace the optional helper; no paid provider calls, new context or World writes.
+

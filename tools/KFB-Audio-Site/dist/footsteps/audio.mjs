@@ -1,11 +1,21 @@
 import {chooseIndex} from './contact-core.mjs';
-import {shapePCM} from './sample-shape.mjs?v=0.7.5';
+import {shapePCM} from './sample-shape.mjs?v=0.7.6';
 // Injected host only. No context creation, DOM, timers or music ownership.
 export const SURFACES={
  sand:{prefix:'footstep_snow_',cutoff:620,tail:.28,gain:.78,attack:.032},
  stone:{prefix:'footstep_concrete_',cutoff:950,tail:.19,gain:.72},
  wood:{prefix:'footstep_wood_',cutoff:780,tail:.22,gain:.72},
- 'wet-clay':{prefix:'grass-',cutoff:450,tail:.24,gain:.5,attack:.024}
+ 'wet-clay':{prefix:'grass-',cutoff:450,tail:.24,gain:.5,attack:.024,levelDb:-6},
+ 'carpet-wood':{prefix:'footstep_wood_',cutoff:580,highpass:110,tail:.19,attack:.028,levelDb:-3},
+ 'foley-carpet':{prefix:'foley_footstep_carpet_',cutoff:900,tail:.28,attack:.022,count:4,imported:true,levelDb:-2},
+ 'foley-concrete':{prefix:'foley_footstep_concrete_',cutoff:950,tail:.22,attack:.016,count:4,imported:true,levelDb:-2},
+ 'foley-gravel':{prefix:'foley_footstep_gravel_',cutoff:1100,tail:.30,attack:.018,count:4,imported:true,levelDb:-2},
+ 'foley-vinyl':{prefix:'foley_footstep_vinyl_',cutoff:850,tail:.24,attack:.018,count:4,imported:true,levelDb:-2},
+ 'digital-grass':{prefix:'digital_footstep_grass_',cutoff:1100,tail:.25,attack:.018,count:4,imported:true,levelDb:-4},
+ 'digital-gravel':{prefix:'digital_footstep_gravel_',cutoff:1100,tail:.25,attack:.018,count:4,imported:true,levelDb:-4},
+ 'digital-snow':{prefix:'digital_footstep_snow_',cutoff:1000,tail:.25,attack:.020,count:4,imported:true,levelDb:-4},
+ 'digital-wood':{prefix:'digital_footstep_wood_',cutoff:900,tail:.25,attack:.020,count:4,imported:true,levelDb:-4},
+ creak:{prefix:'foley_creak_',cutoff:1200,tail:.5,attack:.025,count:1,imported:true,levelDb:-6,role:'accent'}
 };
 export async function createFootstepAudio({audioContext:ctx,destination,rows}){
  if(!ctx||!destination)throw Error('Existing host AudioContext and semantic bus required');
@@ -16,17 +26,17 @@ export async function createFootstepAudio({audioContext:ctx,destination,rows}){
  try{for(const [surface,config] of Object.entries(SURFACES)){
   banks[surface]=[];
   for(const row of rows.filter(r=>r.file.startsWith(config.prefix))){
-   const r=await fetch(new URL('./assets/'+row.file,import.meta.url));if(!r.ok)throw Error('Missing '+row.file);
+   const r=await fetch(new URL('./assets/'+(config.imported?'imported/':'')+row.file,import.meta.url));if(!r.ok)throw Error('Missing '+row.file);
    const b=await ctx.decodeAudioData(await r.arrayBuffer());let peak=0,onset=b.length;
    for(let ch=0;ch<b.numberOfChannels;ch++)for(const v of b.getChannelData(ch))peak=Math.max(peak,Math.abs(v));
    for(let ch=0;ch<b.numberOfChannels;ch++){const pcm=b.getChannelData(ch);for(let i=0;i<pcm.length;i++)if(Math.abs(pcm[i])>peak*.035){onset=Math.min(onset,i);break;}}
-   const trim=Math.max(0,onset/b.sampleRate-.002);
-   const shaped=shapePCM(Array.from({length:b.numberOfChannels},(_,ch)=>b.getChannelData(ch)),b.sampleRate,config),processed=ctx.createBuffer(b.numberOfChannels,shaped.channels[0].length,b.sampleRate);
+   const trim=config.imported?Math.max(0,onset/b.sampleRate-.002):0;
+   const shaped=shapePCM(Array.from({length:b.numberOfChannels},(_,ch)=>b.getChannelData(ch).subarray(Math.floor(trim*b.sampleRate))),b.sampleRate,config),processed=ctx.createBuffer(b.numberOfChannels,shaped.channels[0].length,b.sampleRate);
    shaped.channels.forEach((pcm,ch)=>processed.copyToChannel(pcm,ch));
    banks[surface].push({buffer:processed,trim:0,gain:1,onset:shaped.onsetSeconds,file:row.file});
-   metrics.push({surface,file:row.file,duration:b.duration,sampleRate:b.sampleRate,peak,trimSeconds:0,onsetAfterTrimMs:shaped.onsetSeconds*1000,processedRms:shaped.rms,processedPeak:shaped.peak});
+   metrics.push({surface,file:row.file,duration:b.duration,sampleRate:b.sampleRate,peak,trimSeconds:trim,onsetAfterTrimMs:shaped.onsetSeconds*1000,processedRms:shaped.rms,processedPeak:shaped.peak,levelDb:config.levelDb||0});
   }
-  if(banks[surface].length!==5)throw Error('Exactly five donors required: '+surface);
+  if(banks[surface].length!==(config.count||5))throw Error('Unexpected variant count: '+surface);
  }}catch(e){output.disconnect();capture.disconnect();throw e;}
  function stop(){armed=false;output.gain.cancelScheduledValues(ctx.currentTime);output.gain.setValueAtTime(0,ctx.currentTime);for(const s of live)try{s.stop();}catch{}live.clear();}
  function play(cue){

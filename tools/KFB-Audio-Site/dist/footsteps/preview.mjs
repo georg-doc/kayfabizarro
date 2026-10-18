@@ -3,8 +3,8 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {measureClip} from './vendor/locomotion-profiles.v1.js';
 import {entries,ContactTimeline} from './contact-core.mjs';
-import {createFootstepAudio} from './audio.mjs?v=0.7.5';
-import {makeSoles,measureSoleContacts} from './sole-contacts.mjs?v=0.7.5';
+import {createFootstepAudio} from './audio.mjs?v=0.7.6';
+import {makeSoles,measureSoleContacts} from './sole-contacts.mjs?v=0.7.6';
 const $=id=>document.getElementById(id);
 let host,audio,scene,renderer,camera,controls,actor,mixer,feet,active,profiles={},clips={},mode='idle',figure='Medium',playing=false,lastTime=null,loops=0,epoch=0,jump=null,recording=null,demo=null,initPromise,audioPromise;
 const timeline=new ContactTimeline(),events=[],actions=[],frameGaps=[],models={};
@@ -48,7 +48,7 @@ function cue(c,now){if(!c||!audio)return;const p=feet[c.foot==='r'?'r':'l'].getW
 function snapshot(){
  const ds=events.map(e=>e.onsetEstimateErrorMs).sort((a,b)=>a-b),rs=avSamples.map(e=>Math.abs(e.avErrorMs)).sort((a,b)=>a-b);
  const duplicate=events.filter((e,i)=>events.slice(0,i).some(p=>p.key===e.key)).length,rate=Number($('footTempo').value),focus=window.KFBAudioSite?.musicContext.getSnapshot();
- return {revision:'0.7.5-sole-contact-r3',playing,mode,figure,rate,surface:$('footSurface').value,hostContexts:window.KFBAudioSite?.audioContextsCreated,clock:'existing AudioContext output timestamp / native clip sampled from shared origin',bus:'PLAYER_CRITICAL',profiles,decode:audio?.metrics||[],audioState:audio?.state()||null,counts:{events:events.length,steps:events.filter(e=>e.kind==='footstep').length,landings:events.filter(e=>e.kind==='land').length,duplicateKeys:duplicate,suppressed:timeline.suppressed},cadenceStepsPerSecond:profiles[active?.getClip().name]?.qualifiedCadenceSpm/60*rate||0,sourceOnsetEstimateMs:{max:ds.at(-1)||0},renderedSoleToEstimatedOnsetMs:{max:rs.at(-1)||0,p95:rs[Math.floor(rs.length*.95)]||0},avSamples,outputLagMs:host?(host.ctx.currentTime-outputTime())*1000:0,frameGapMsMax:Math.max(0,...frameGaps),musicFocus:focus,events,actions,cues:timeline.packet(),limits:'Soles measured from rendered skinned vertices; source-onset estimate (not an acoustic measurement); device queue compensated via output timestamp. Acoustic speaker latency not independently recorded.'};
+ return {revision:'0.7.6-sole-contact-r3',playing,mode,figure,rate,surface:$('footSurface').value,hostContexts:window.KFBAudioSite?.audioContextsCreated,clock:'existing AudioContext output timestamp / native clip sampled from shared origin',bus:'PLAYER_CRITICAL',profiles,decode:audio?.metrics||[],audioState:audio?.state()||null,counts:{events:events.length,steps:events.filter(e=>e.kind==='footstep').length,landings:events.filter(e=>e.kind==='land').length,duplicateKeys:duplicate,suppressed:timeline.suppressed},cadenceStepsPerSecond:profiles[active?.getClip().name]?.qualifiedCadenceSpm/60*rate||0,sourceOnsetEstimateMs:{max:ds.at(-1)||0},renderedSoleToEstimatedOnsetMs:{max:rs.at(-1)||0,p95:rs[Math.floor(rs.length*.95)]||0},avSamples,outputLagMs:host?(host.ctx.currentTime-outputTime())*1000:0,frameGapMsMax:Math.max(0,...frameGaps),musicFocus:focus,events,actions,cues:timeline.packet(),limits:'Soles measured from rendered skinned vertices; source-onset estimate (not an acoustic measurement); device queue compensated via output timestamp. Acoustic speaker latency not independently recorded.'};
 }
 function renderMetrics(){const s=snapshot();$('footMetrics').textContent=(playing?'Playing':'Stopped')+' · '+figure+' · '+mode+' · '+s.cadenceStepsPerSecond.toFixed(2)+' steps/s · '+s.counts.steps+' steps · '+s.counts.duplicateKeys+' duplicates · '+(s.hostContexts??0)+' AudioContext';$('footDiagnostics').textContent=JSON.stringify(s,null,2);}
 function stop(stopMedia=true){playing=false;demo=null;jump=null;if(actor)actor.position.y=0;timeline.previous=null;timeline.grounded=true;audio?.stop();setMode('idle');if(recording)stopRecording();if(stopMedia)for(const media of $('footsteps').querySelectorAll('video,audio'))media.pause();$('footStop').disabled=false;$('footPlay').disabled=false;status('Stopped · live audio and footstep media stopped');renderMetrics();}
@@ -59,7 +59,7 @@ function frame(){
   frameGaps.push(dt*1000);if(frameGaps.length>2000)frameGaps.shift();
   if(demo){const stage=Math.floor((now-demo.start)/4);if(stage!==demo.stage){demo.stage=stage;
    if(stage>=4){stop();status('16 s proof complete · clip and measurements ready');}
-   else {$('footSurface').value=['sand','stone','wood','wet-clay'][stage];log('fixture surface');}
+   else {$('footSurface').value=['wood','carpet-wood','foley-carpet','digital-wood'][stage];log('fixture surface');}
   }}
   if(playing){
    if(dt>.1){timeline.previous=null;status('Long frame: stale contacts discarded');}
@@ -101,7 +101,7 @@ async function init(){
 }
 async function enableAudio(p){
  host=await(p||window.KFBAudioSite.resume());
- if(!audioPromise)audioPromise=(async()=>{const s=await(await fetch(new URL('./sources.json',import.meta.url))).json();audio=await createFootstepAudio({audioContext:host.ctx,destination:host.buses.PLAYER_CRITICAL,rows:[...s.rows,...s.r2Rows]});})().catch(e=>{audioPromise=null;throw e;});
+ if(!audioPromise)audioPromise=(async()=>{const s=await(await fetch(new URL('./sources.json',import.meta.url))).json(),i=await(await fetch(new URL('./imported-sources.json',import.meta.url))).json();audio=await createFootstepAudio({audioContext:host.ctx,destination:host.buses.PLAYER_CRITICAL,rows:[...s.rows,...s.r2Rows,...i.rows]});})().catch(e=>{audioPromise=null;throw e;});
  await audioPromise;lastTime=host.ctx.currentTime;$('footRecord').disabled=false;$('footJump').disabled=!clips.Jump_Idle||!clips.Jump_Land;
 }
 function startRecording(){
@@ -133,6 +133,7 @@ export async function command(action,arg){
  }
  if(action==='jump'&&playing&&!jump&&clips.Jump_Idle&&clips.Jump_Land){jump={start:host.ctx.currentTime};timeline.support(false,jump.start,$('footSurface').value);setMode('air');}
  if(action==='record'&&audio)recording?stopRecording():startRecording();
+ if(action==='creak'){await enableAudio(arg);audio.arm();audio.play({kind:'creak',surface:'creak',time:host.ctx.currentTime+.03,key:'manual-creak:'+host.ctx.currentTime});status('Knarren · einzelner Akzent, kein Schritt');}
  log(action+(typeof arg==='string'?':'+arg:''));
 }
 document.addEventListener('visibilitychange',()=>{if(document.hidden){generation++;stop();renderMetrics();}});

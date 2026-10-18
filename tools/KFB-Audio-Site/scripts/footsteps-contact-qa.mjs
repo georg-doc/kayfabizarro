@@ -24,5 +24,5 @@ const basePath=new URL('../',import.meta.url),audio=readFileSync(new URL('dist/f
 check(!/new\s+(AudioContext|OfflineAudioContext)/.test(audio+preview),'no context creation');
 for(const token of ["cutoff:620","cutoff:950","cutoff:780","tail:.28","tail:.19","tail:.22"])check(audio.includes(token),'surface tone '+token);
 check(audio.includes("cutoff:450,tail:.24,gain:.5,attack:.024"),'explicitly requested softer Cozy default only');
-check(preview.includes("rows:[...s.rows,...s.r2Rows]"),'same original donors');check(preview.includes("['play','pause','ended','seeking']"),'clip/live interlock');check(audio.includes('output.gain.setValueAtTime(0'),'stop gate');
+check(preview.includes("rows:[...s.rows,...s.r2Rows,...i.rows]"),'retained and imported source rows');check(preview.includes("['play','pause','ended','seeking']"),'clip/live interlock');check(audio.includes('output.gain.setValueAtTime(0'),'stop gate');
 console.log(JSON.stringify({status:'PASS',checks,results},null,2));
