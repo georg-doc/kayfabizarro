@@ -7674,6 +7674,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-545",
+   "date": "2026-10-19",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "Käpt’n Kayfa Bizarro r2 (Georg, Hub q111): Aufgemalter Eigenbau-Körper funktioniert nicht (nur die Hose war gut) → Körper von KayKit Adventurers 2.0 FREE Barbarian; Bären-Helm und Bären-Schal entfernen; Kopf bleibt Survivalist mit Augenklappe. Ein gemeinsames Braun: Hände wie die Armschienen, Hut, Stiefel und Schaft. Hose rot-weiß längs gestreift. Gürtel mit 3 goldenen Beschlägen statt grauen. Hut größer und richtig auf dem Kopf sitzend (lag nur obenauf). Referenz B42/georg_refs/GEORG_barbarian_body_ref.webp.",
+   "values": {},
+   "owner": "WSB (B42 r2)",
+   "check": "B42 r2 Prüfstand",
+   "source": "Hub q111",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Fertiges Asset statt Aufmalen – Georgs Auge für Silhouette.",
+   "applies": "B42 r2"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7761,7 +7776,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:907",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:908",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
