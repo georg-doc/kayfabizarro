@@ -38,6 +38,8 @@ TONE = {
     "romantic_kayfabe": ["she asked for it", "asked for it", "no means yes"],
 }
 STOP = GRAMMAR | EXTRA | FLUFF
+OWN_TEXT_WARN, OWN_TEXT_FAIL = 0.30, 1.01   # R3.5 (Georg 18.10.: Richtwert, nicht sklavisch) – nur Hinweis, kein FAIL
+FUNC_EXTRA = {"don't", "doesn't", "didn't", "aren't", "isn't", "wasn't", "weren't", "can't", "won't", "till", "until", "before", "after", "both", "each", "too", "also"}  # R3.5: Funktionswörter
 # C13 (R3.4, V-435): object-acting + slop
 THINGS = r"(ledger|ledgers|audit|audits|receipt|receipts|record|records|file|files|paper|papers|money|number|numbers|desk|door|office|stage|night|day|clock|watch|pocket watch|time|truth|silence|story|stories|deck|card|cards|question|answer|mind|dream|verdict|bell|seat|ticket|fee|whistle|crown|city|book|books|history|archive|evidence|page|pages|entry|entries|tablet|tablets|world|memory|account|accounting|figures|keys|blueprints|map|ink|coin|vault)"
 ACTS = r"(begins?|began|knows?|remembers?|waits?|whispers?|stands?|stood|wanders?|reach(es)?|summons?|commissions?|asks?|tells?|refuses?|keeps?|kept|holds?|buys?|offers?|appeals?|convicts?|disputes?|demands?|bills?|forgets?|lies|sleeps?|dreams?|wants?|hides?|watches|listens?|counts?|confess(es)?|never|cannot|can't|still|is late|precedes?|expose[sd]?|remain[s]?)"
@@ -136,10 +138,22 @@ def gate_lyrics(a):
         deck_vocab |= vocab(t)
     for e in songlines.values():
         deck_vocab |= vocab(e.get("songLine") or "")
-    if a.media:  # A2/V-377: Bildwörter aus artworkPrompt sind erlaubt
+    art = {}
+    if a.media:  # A2/V-377: Bildwörter aus artworkPrompt sind erlaubt – R3.5: nur die der EIGENEN Karte
         mj = json.load(open(a.media, encoding="utf-8"))
         for c in (mj.get("cards") or []) if isinstance(mj, dict) else mj:
-            deck_vocab |= vocab(str(c.get("artworkPrompt") or c.get("imageMotif") or ""))
+            t = str(c.get("artworkPrompt") or c.get("imageMotif") or "")
+            deck_vocab |= vocab(t)
+            if c.get("cardNumber") is not None:
+                art[str(c.get("cardNumber"))] = t
+            if c.get("name") or c.get("cardName"):
+                art["N:" + str(c.get("name") or c.get("cardName")).strip().casefold()] = t
+
+    def own_vocab(c):  # R3.5 (Georg 18.10.): Kartenteil nur aus Wörtern der eigenen Karte
+        t = " ".join(str(c.get(k) or "") for k in ("cardName", "lore", "power"))
+        t += " " + (art.get(str(c.get("cardNumber"))) or art.get("N:" + str(c.get("cardName") or "").strip().casefold(), ""))
+        e = songlines.get(c.get("cardNumber")) or songlines.get(str(c.get("cardNumber"))) or {}
+        return vocab(t + " " + str(e.get("songLine") or ""))
     F = lambda rule, msg: fails.append(f"FAIL {rule}: {msg}")
     W = lambda rule, msg: warns.append(f"WARN {rule}: {msg}")
 
@@ -261,12 +275,19 @@ def gate_lyrics(a):
         if not 80 <= len(part) <= 95:
             F("A4", f"Karte {c.get('cardNumber')}: Kartenteil {len(part)} Zeichen (80-95): {part[:50]!r}")
         toks = WORD.findall(part)
-        foreign = [t for t in toks if t.lower() not in STOP and not (stems(t) & deck_vocab)]
+        ov = own_vocab(c)
+        foreign = [t for t in toks if t.lower() not in STOP and t.lower() not in FUNC_EXTRA and not (stems(t) & ov)]
         fl = [t for t in toks if t.lower() in FLUFF]
         if len(fl) > 1:
             F("A2", f"Karte {c.get('cardNumber')}: mehr als ein Fluff-Wort")
-        if foreign:
-            F("A2", f"Karte {c.get('cardNumber')}: Wörter nicht aus der Karte: {foreign}")
+        if foreign:  # R3.5: ein einzelnes fremdes Wort = Hinweis, ab zwei = FAIL (Georg 18.10.: Flow vor Buchstabe)
+            (F if len(foreign) > 1 else W)("A2", f"Karte {c.get('cardNumber')}: Wörter nicht aus der eigenen Karte: {foreign}")
+    # R3.5: Anteil eigener Text (Rahmen + Opener) an allen Wörtern – Georg 18.10.: Karte im Fokus
+    _allw = sum(len(WORD.findall(b)) for b in body)
+    _own = sum(len(WORD.findall(b)) for b in intro + outro + middle) + sum(len(WORD.findall(op)) for _, op in openers)
+    if _allw:
+        _sh = _own / _allw
+        (F if _sh > OWN_TEXT_FAIL else W if _sh > OWN_TEXT_WARN else (lambda *x: None))("A2", f"eigener Text (Rahmen + Opener) {_sh:.0%} aller Wörter (Warnung > {OWN_TEXT_WARN:.0%}, FAIL > {OWN_TEXT_FAIL:.0%})")
     # B7 (KayfabeTip 1): "and then" verboten, wörtliches "therefore" höchstens einmal im Opener-/Rahmentext
     bridge_text = " ".join([op for _, op in openers] + intro + outro).casefold()
     if re.search(r"\band then\b", " ".join(body).casefold()):
