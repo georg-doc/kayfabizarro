@@ -7014,6 +7014,36 @@
    "applies": "Probe R5"
   },
   {
+   "id": "V-501",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Sprechblasen-Stil und Comic-Words als SSOT-Modul (Georg 18.10.: „haben wir alles schon erarbeitet“): Quelle ist chatterbox-core.js (cbs-core v0.1, ChatterBox Studio 05.10.) + Host-Adapter bubbles.module.js (Wireface Stage R2) + SVG-Defs (islands-npc.ts) + Schrift Shantell Sans (Fließtext), Bangers/Irish Grover (Shout/Word). Kein Nachbau; ein Paket kfb-bubbles.v1 für Spiel, Tools und Hub, mit Fluff-o-lect-Stufen-Hook (V-500). Probe R6 nutzt bereits die Original-Sprechblase. Paketierung als WSA-Slice A (BRIEF_WSA_SLICES_R1).",
+   "values": {},
+   "owner": "WSA (Slice A) · WS1 (Einbau)",
+   "check": "Demo-Seite + Byte-Abgleich",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein SSOT statt verstreuter Kopien; Arbeit war schon getan.",
+   "applies": "Slice A"
+  },
+  {
+   "id": "V-502",
+   "date": "2026-10-18",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Kapazität (Georg 18.10.): WS0 + WSB bei 75 % Nutzung (Reset in ~8 h) – große Integrationen bleiben bei WS1, WSA übernimmt Slices mit Text/Modul-Paketierung (Slice A Sprechblasen-SSOT, Slice B C.O.M.I.C.-Banter), WS0 nur noch Prüfen/Steuern, WSB arbeitet die Asset-Liste ab. Hauptblocker WS1: das private Paket-Artifact liegt unter Georgs Konto, WS1 läuft unter einem anderen Konto – Georg teilt das Artifact einmal mit dem WS1-Konto (Share-Menü), sonst bleibt nur ein privates Repo.",
+   "values": {},
+   "owner": "alle",
+   "check": "-",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Budget gezielt dorthin, wo noch Volumen ist.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7101,7 +7131,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:856",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:857",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

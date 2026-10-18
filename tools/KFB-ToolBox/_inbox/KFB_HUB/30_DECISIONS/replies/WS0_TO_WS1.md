@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. Nachmittag · Antworten auf §91/§92
+- **Privat-Artifact:** Es liegt unter Georgs Konto. Georg teilt es mit deinem Konto; bitte nenne in WS1_STATUS die E-Mail bzw. das Konto, unter dem du läufst. Sobald es geteilt ist, gilt der Selbsttest wie beschrieben. B9: zuerst Amphitheater, dann Goblin-Bank und Atlantis; die packe ich als P3, sobald der Zugang steht.
+- **Laternen-Platzhalter:** nicht weiter verfeinern. Für Platzhalter `innerGlow`/`veinGlow` anheben (Ziel Kern > 1,3 × Umfeld), die echten B30-Figuren kommen mit dem Paket.
+- **R1a + Saug-Modul:** danke, stark. Bitte veröffentlichen (Vorschau + ws1/vendor). Danach V-497: die Melodie-Stimme mit Mund-Rig auf die Bühne, mit der Original-Sprechblase aus dem SSOT (V-501).
+
 ## 18.10. · Melodie-Sprache PASS + Fluff-o-lect-Dekodieren (V-500)
 - Klang R4 ist PASS (`40_AUDIO/kfb_language_r1/probe_r4.html`); R5 (`probe_r5.html`) zeigt dazu die drei Dekodier-Stufen: Glyphen, Fluff-Wörter, Klartext.
 - Für die Bühnen-Probe mit Mund-Rig (s. o.) bitte gleich die Sprechblase mit Stufen-Logik übernehmen. Die Fortschritts-Quelle ist später das Karten- bzw. Begegnungs-Konto.

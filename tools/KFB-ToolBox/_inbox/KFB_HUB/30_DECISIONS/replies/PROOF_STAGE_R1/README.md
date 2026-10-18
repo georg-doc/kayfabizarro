@@ -1,3 +1,5 @@
+**v1.2.5 (18.10.):** Augen-Host ohne Kopf-Knochen sitzt immer in der Mitte der Anker (vorher nur bei Mehrfiguren-Dateien). Behebt: Einzelfigur mit gebackener Pose abseits des Ursprungs bekam beide Augen auf einen Anker (WSB-Meldung B11 r4).
+
 **v1.2.4 (18.10.):** Meshes mit glTF-extras `kfb.castShadow=false` (am Mesh oder einem Elternknoten) sowie durchsichtige Materialien (Deckkraft < 0,5) werfen keinen Schatten mehr (Glas, Flüssigkeiten). Vorher warf die UFO-Glaskugel einen vollen Schatten mit Lichtbogen durch den Randspalt.
 
 ## v1.2.3 (18.10., WS0) · Mehrere Figuren je GLB

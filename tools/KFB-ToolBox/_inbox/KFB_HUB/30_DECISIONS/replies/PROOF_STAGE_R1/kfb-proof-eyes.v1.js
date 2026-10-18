@@ -110,7 +110,7 @@ export function mountEyes(THREE, figure, { card = null, applyClay = null, clayRe
     /* own host: a Group on the head bone (or the figure root) with an invisible proxy box named 'body' (the EyeRig contract) */
     const hb = headBone(figure), bone = hb || figure;
     const inner = new THREE.Group(); inner.name = 'KFB_EyeHost'; bone.add(inner);
-    if (anchorFrame && !hb) {                                           // v1.2.3 multi-figure: no head bone -> host at the anchors' centre, turned to their gaze
+    if (!hb) {                                                          // v1.2.5: no head bone (multi-figure or baked pose off the origin) -> host at the anchors' centre, turned to their gaze; before, both eyes landed on one anchor when the figure stood off the origin
       const c = new THREE.Vector3(), p = new THREE.Vector3(), q = new THREE.Quaternion(), sc = new THREE.Vector3();
       for (const a of found.anchors) c.add(a.node.getWorldPosition(p)); c.multiplyScalar(1 / found.anchors.length);
       found.anchors[0].node.getWorldQuaternion(q); bone.getWorldScale(sc);

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-501 Sprechblasen/Comic-Words SSOT (chatterbox-core + bubbles.module + Defs, Shantell Sans); Probe R6 mit Original-Sprechblase. V-502 Kapazitätsplan: WSA-Slices A/B (BRIEF_WSA_SLICES_R1), WS1-Blocker = Privat-Artifact unter anderem Konto. Abnahme-Bühne v1.2.5 (Augen ohne Kopf-Knochen an Anker-Mitte). WS1 §92: R1a fertig, Saug-Modul + Ton, Laternen eingebaut.
 - V-500 Melodie-Sprache R4 PASS; Fluff-o-lect-Dekodieren in 3 Stufen (PottyMouth-Glyphen → Fluff-Wörter → Triplet) als Spielfeature, Probe R5 → Hub q52; Font-Lizenz PottyMouth fürs Spiel offen.
 - Abnahme-Bühne v1.2.4: extras kfb.castShadow=false und durchsichtige Materialien (Deckkraft < 0,5) werfen keinen Schatten (Glaskugel warf vollen Schatten mit Lichtbogen). Kuppel r4b (eine Kugel mit Fenster, Fensterkante lesbar) neu gerendert → Hub q51.
 - V-499 SPEC_CARTOON_VFX_SHAPES_R1 (Rauch/Dampf/Blasen/Wolken/Gedankenblasen) verbindlich; Kuppel r4 (eine Kugel mit Fenster, drehend) geprüft – kleine Vorschau-Korrektur r4b (weißer Bogen im Schatten, Fensterkante lesbarer) vor dem Hub.
