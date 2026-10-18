@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Hub v19: Reiter Text-Studio live (V-483 Stufe 1) – 16 Songs in Collection texts (Style, Lyrics, Karten inkl. Bildwörter), Beat-Analyse mit Kartenwort-Markierung, Länge, eigener-Text-Anteil, Kritiker per sample (Claude des Betrachters), Speichern/Zur Prüfung an WS0. B31 r3 von WSB zurück (Kopf-Schmutz kühlgrau, Augenrahmen Fluff-Farbe, Saugdüse + Beute + Ausrüstung, Waffen-Clips) → Hub q43.
 - V-486 (TBD) KFB-Sprache: Fantasiesprache + Triplet-Sprechblase statt Live-TTS, Silbenbank je Figur (ElevenLabs), Emotion, Zeitleisten-Cues, Dekodieren über Deck-Vollständigkeit; Probe R1 geplant.
 - V-485 song_gate R3.5: Kartenwörter je eigener Karte (vorher Deck-weit); 1 fremdes Wort = Hinweis, ≥ 2 = FAIL; eigener Text > 30 % = Hinweis. r46: Kartenteile 99–100 % eigene Kartenwörter, 16/16 PASS.
 - V-484 UFO-Ernte (Traktorstrahl, Farbe des Gebiets-Fluffs, Neigung zum Vorkommen, gleiche Saug-Logik), Ton ufo_harvest_r1 (10 Takes, ~860 Credits).
