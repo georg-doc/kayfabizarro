@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-529 Blob-Corp-Teleportturm + Agenten-Trio als Konzept (TBD). Hub q100 B36 r4 Raumklinik gepostet; render.palette.mjs /@home/-Route repariert (B37-Paletten werden neu gerendert).
 - V-528 Songs R5.3: ein Track je Deck, Best-of nach Flow/Punch/Dramaturgie, song_gate R3.7 (bestOf), WSA-Briefing Batch 1 (20 Decks, 20 Stile).
 - V-527 WSV Video- & Motion-Studio als eigene Sitzung (Remotion + HyperFrames + HeyGen), Gründungsbriefing VIDEO_R1/BRIEF_WSV_VIDEO_STUDIO_R2.md.
 - V-526 Hub q81/q87/q88/q92/q94/q95 umgesetzt: weichere Belohnungs-Sounds (q96), Werkstatt r4 Sci-Fi-absurd, Barks erlaubt, HeyGen P1+P3, HyperFrames auf Mac mini.

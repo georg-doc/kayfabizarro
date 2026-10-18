@@ -58,10 +58,18 @@ const hsl = (h, s, l) => { const a = s * Math.min(l, 1 - l), f = (n) => { const 
 const diagEntry = (id) => ({ id, roles: Object.fromEntries(Object.entries(DIAG_HUES).map(([r, h]) => [r, [hsl(h, 0.9, 0.72), hsl(h, 0.9, 0.5), hsl(h, 0.9, 0.3)]])) });
 
 /* static server (as render.mjs): ephemeral 127.0.0.1 port, root KFB_HUB, never KFB Open World */
-const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.glb': 'model/gltf-binary', '.png': 'image/png' };
+const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.glb': 'model/gltf-binary', '.png': 'image/png', '.jpg': 'image/jpeg', '.bin': 'application/octet-stream' };
+/* scale figures + idle clips from sources.json scale_ref live outside the hub: served via /@home/ allow-list only (as render.mjs) */
+const allow = new Set();
+try { const SRC = JSON.parse(fs.readFileSync(path.join(STAGE_DIR, 'sources.json'), 'utf8'));
+  for (const v of Object.values(SRC.scale_ref || {})) if (v && typeof v === 'object') for (const k of ['glb', 'anim']) if (v[k]) { const f = expand(v[k]); if (!f.startsWith(HUB) && f.startsWith(HOME + path.sep) && fs.existsSync(f) && !forbidden(f)) allow.add(f); }
+} catch (e) { console.warn('sources.json not read: ' + e.message); }
 const server = http.createServer((req, res) => {
-  const u = decodeURIComponent(new URL(req.url, 'http://x').pathname), c = path.join(HUB, u);
-  if (!c.startsWith(HUB) || forbidden(c) || !fs.existsSync(c) || fs.statSync(c).isDirectory()) { res.writeHead(404); res.end(); return; }
+  const u = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+  let c = null;
+  if (u.startsWith('/@home/')) { const h = path.join(HOME, u.slice(7)); if (allow.has(h)) c = h; }
+  else { const h = path.join(HUB, u); if (h.startsWith(HUB) && !forbidden(h)) c = h; }
+  if (!c || !fs.existsSync(c) || fs.statSync(c).isDirectory()) { res.writeHead(404); res.end(); return; }
   res.writeHead(200, { 'content-type': TYPES[path.extname(c).toLowerCase()] || 'application/octet-stream', 'cache-control': 'no-store' }); fs.createReadStream(c).pipe(res);
 });
 await new Promise((r) => server.listen(0, '127.0.0.1', r));
