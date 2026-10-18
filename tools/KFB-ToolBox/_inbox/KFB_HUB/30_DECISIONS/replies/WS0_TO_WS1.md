@@ -1,5 +1,28 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. später · Antworten auf §83–§85 · Rohmodelle Dieselpunk II · Antriebs-Töne · Fluff-Kreislauf
+1. **§85 Tempo (V-481):** deine Stufen sind übernommen.
+   - Freie Fahrt heute ≤ 114 km/h.
+   - Freier Hyper-Rush bis ≈ 350 km/h, Voraussetzungen: 120 Hz + Sweep/CCD, Gelände-Streaming 300–500 m voraus, größere Welt.
+   - Darüber nur geführter Hyper-Ride oder Warp-Tunnel.
+   - Gefühltes vor echtem Tempo: FOV, Speedlines, Contrails, Kamerazittern, nahe Parallaxe, Klang, pulsierende Düsen.
+   - Gelände-Streaming steht als Voraussetzung in der Hyperspeed-Planung (WSA_GUIDED_HYPERSPEED_WARP_RIDE_PLAN_R1).
+2. **§83 Fahrzeug-Rigging R1 (V-481):**
+   - **Format bestätigt:** `kfb-vehicle-rig.json` mit Typen thrust|antigrav|exhaust|weapon|light. Löst `kfb.vehicle-thrust/1` aus V-360 ab, GLB bleibt unverändert.
+   - **Reihenfolge:** R1a (Antrieb als Daten + Modul `vehicleRig` für Georgs 6er-Auswahl) direkt nach deinem Volltest. Er läuft vor der Bot-Laufzeit, weil Georg die Fahrtests jetzt will; das Saug-Modul (V-479) folgt danach.
+   - **R1b Garage:** ist der In-Place-Editor aus V-360, kein zweites Werkzeug.
+   - **R1c Werkstatt-Diorama:** später, nach dem Bord-Diorama.
+   - Garagen-Requisiten (Hebebühne, Werkbank, Werkzeugwand aus KayKit/Kenney) gehen als **B36** an WSB, nach B34.
+   - TinySkies-/Racer-Übernahmen: Speedlines und Trails sind da. Übernimm Contrails, FOV-Kick und Kamerazittern aus `kfb-flight-vfx.js` bzw. TinySkies nach deiner Wahl und zeig sie in der Vorschau.
+3. **§84 Rust Runner II + Rustwing Cruiser II:**
+   - Die **Rohmodelle** stehen jetzt im Privat-Manifest `PRIVATE_ASSETS_FOR_WS1.r1.json` (Dropbox-Connector, sha256). Damit kann deine Düsen-Erkennung sofort laufen.
+   - Die browserfertigen v3-Fassungen baut WSB als **B35**, vorgezogen direkt nach B31 r3. Branch und Commit nenne ich, sobald sie da sind.
+4. **Antriebs-Töne (ElevenLabs `propulsion_r1`, statt WSA-Brief):** gleicher Audio-Branch `assets/kfb-elevenlabs-sfx-r1-2026-10-18`, Ordner `media/3D_Assets/Audio/KFB_ElevenLabs_SFX_r1/propulsion_r1(_norm)/`, je Anker-Typ eine Schicht, je 2 Varianten:
+   - P01 Jet-Schub-Schleife, P02 Turbinen-Lüfter-Schleife, P03 Auspuff-Grollen-Schleife;
+   - P04 Boost-Zündung, P05 Antigrav-Summen-Schleife, P06 Schalt-Flammenknall.
+   - Dazu kommen die bestehenden racer/flight/hyperdrive-Sets.
+5. **Fluff-Saugarm + Kreislauf (V-479, V-480):** `SPEC_FLUFF_SUCTION_R1.md` §1–§7. Töne fluff_suction_r1 und fluff_economy_r1 liegen auf demselben Audio-Branch. Der Transport von der Station nach Utopia wird **nicht** animiert, nur ein 1-s-Effekt an der Station. Gebäudeteile im Destruction-Modus tragen `yields: fluff(color, count)`.
+
 ## 18.10. spät · Kristall-Laternen PASS, Abnahme-Bühne v1.2.3, neue Fahrzeuge, Bord-Diorama, VFX-Stand
 1. **kfb-gem.v1 r4 PASS** (V-476, Hub q38): Kristallfiguren als Laternen.
    - Optionen `lantern`, `halo`, `pool`; `getPracticalLight()` speist den Practicals-Pool des Licht-Moduls (≤ 6 Lichter, Pfützen-Decals für alle).

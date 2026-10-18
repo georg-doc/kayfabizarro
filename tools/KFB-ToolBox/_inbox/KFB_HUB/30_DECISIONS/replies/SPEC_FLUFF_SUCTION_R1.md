@@ -55,3 +55,29 @@ Ein Ablauf, drei Herkünfte. Dauer etwa 1,2–1,8 s pro Kugel.
 1. Bildstreifen der 6 Phasen je Herkunft (Baum, Erde, Wasser) auf der Abnahme-Bühne.
 2. 10-s-Clip: Bot saugt drei Kugeln, dann Tank voll.
 3. Gates: kein Durchdringen der Düse, die Kugel behält ihr Volumen bis zum Einsaugen (Cartoon: Darstellung staucht, Volumen nicht).
+
+## 7 · Fluff-Kreislauf (Georg 18.10., V-480)
+**Meta-Erzählung:**
+1. Bots saugen Fluff und liefern ihn an der **Ladestation** ab.
+2. Ist die Station voll, schickt ein pseudowissenschaftlich-absurder Cartoon-Mechanismus den Fluff direkt ins **Hauptquartier nach Utopia**.
+3. Dort wird er auf Förderbändern und in Fabrikeinheiten zu Rohstoff verarbeitet.
+4. Daraus entstehen **plastikartige, schlecht funktionierende, aber massenproduktionstaugliche und profitable** Werkzeuge und Bauteile.
+5. Aus genau diesen Bauteilen bestehen die **Gebäudekomplexe**, die der Spieler im Destruction-Modus fliegend, fahrend oder laufend zerstört.
+6. Zerstörte Teile zerfallen durch Explosion oder Schüsse wieder in **Fluff-Kügelchen**, die nach der normalen Ernte-Logik geerntet werden. Der Kreis schließt sich.
+
+**Darstellung, nach Aufwand gestuft (WS0-Empfehlung):**
+- Der **Transport wird nicht animiert**, keine Flugbahn und kein Rohrnetz.
+- An der Station gibt es nur einen 1-s-Effekt:
+  - Tank-Füllstand fällt auf null;
+  - kurze Schimmer-Säule über der Station (additives Sprite aus dem gemeinsamen VFX-Budget);
+  - Ton E01.
+- Kein neues Asset.
+- **Utopia-Fabrik** nur als Kulisse und Klang, wenn der Spieler dort ist (E02-Schleife). Eigene Fabrik-Assets erst, wenn die Utopia-Zone gebaut wird.
+- **Zerstörung:** Gebäudeteile tragen in der Destruction-Logik das Feld `yields: fluff(color, count)`. Beim Bruch zuerst Plastik-Knacken (E04), dann Fluff-Kügelchen (E05), die liegen bleiben und eingesaugt oder aufgesammelt werden.
+
+**Ton (fertig):** `40_AUDIO/elevenlabs_r1/fluff_economy_r1/` mit 5 Ereignissen × 2:
+- E01 Station schickt ab;
+- E02 Fabrik-Schleife;
+- E03 Plastikteile klappern;
+- E04 Plastik bricht, Fluff pufft heraus;
+- E05 Kügelchen springen.

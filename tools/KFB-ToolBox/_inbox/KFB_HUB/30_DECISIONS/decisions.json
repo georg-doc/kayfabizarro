@@ -6699,6 +6699,36 @@
    "applies": "Ton sofort, Modul nach Integrations-Slice"
   },
   {
+   "id": "V-480",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Fluff-Kreislauf (Georg 18.10.): Bots saugen Fluff → Ladestation; volle Station schickt den Fluff per pseudowissenschaftlichem Cartoon-Mechanismus ins Hauptquartier Utopia → Förderbänder/Fabriken → plastikartige, schlecht funktionierende, aber profitable Massenware (Werkzeuge, Bauteile) → daraus bestehen die Gebäudekomplexe des Destruction-Modus → Zerstörung (Explosion/Schüsse) zerlegt sie wieder in Fluff-Kügelchen → normale Ernte. Darstellung: Transport nicht animiert, nur 1-s-Stationseffekt (Füllstand auf null, Schimmer-Säule, Ton); Utopia-Fabrik als Kulisse/Klang; Gebäudeteile tragen yields: fluff(color, count). Ton fluff_economy_r1 fertig. Spec SPEC_FLUFF_SUCTION_R1 §7.",
+   "values": {},
+   "owner": "WS1 (Destruction-/Ernte-Daten) · WS0 (Ton fertig)",
+   "check": "Stationseffekt + Bruch-zu-Fluff im Clip",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Schließt Ernte, Produktion und Zerstörung zu einem satirischen Kreislauf; teurer Transport-Effekt wird bewusst weggelassen.",
+   "applies": "sofort (Daten), Utopia-Assets mit der Zone"
+  },
+  {
+   "id": "V-481",
+   "date": "2026-10-18",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Tempo-Stufen und Fahrzeug-Rigging (WS1 §83–§85, Georg 18.10.): freie Fahrt ≤ 114 km/h heute; freier Hyper-Rush bis ≈ 350 km/h nur mit 120 Hz + Sweep/CCD, Gelände-Streaming 300–500 m und größerer Welt; darüber nur geführter Hyper-Ride oder Warp-Tunnel; gefühltes vor echtem Tempo. Format kfb-vehicle-rig.json (thrust|antigrav|exhaust|weapon|light) bestätigt, löst kfb.vehicle-thrust/1 (V-360) ab; WS1 setzt Düsen-Anker heuristisch, Georg tunt im Einzelfall. Reihenfolge WS1: Volltest → R1a vehicleRig für Georgs 6er-Auswahl → Saug-Modul → R1b Garage = In-Place-Editor → R1c Werkstatt-Diorama später. Dieselpunk = schnelle Racer (Podracer), KayKit-Autos = Normie-Driver ohne Hyperspeed. Räder mit echtem Bodenkontakt, Schweben nur ohne Räder, ein Bodennähe-Partikel-Layer für alle. Antriebs-Töne propulsion_r1 von WS0 erzeugt (statt WSA-Brief). WSB: B35 vorgezogen, B36 Garagen-Requisiten nach B34. Rohmodelle Dieselpunk II im Privat-Manifest für die Düsen-Erkennung.",
+   "values": {},
+   "owner": "WS1 · WSB (B35/B36) · WS0",
+   "check": "Vorschau-Link Fahren mit Antriebs-VFX",
+   "source": "WS1 §83–§85 · Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS1-Messung zeigt die echten Grenzen; Daten-Rig statt Modelländerung hält 6 und mehr Fahrzeuge einheitlich.",
+   "applies": "R1a nach Volltest"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6786,7 +6816,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:832",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:833",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
