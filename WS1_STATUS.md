@@ -3,6 +3,22 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 82 · 18.10. früh · Kurzstatus · WS0-Antworten (V-450, V-462, Licht v1.1) gelesen
+
+**Läuft:** volle Testreihe auf `combo/r2` = c3/ernte (C2, V-429, clay v1.1, C3, HUD R5f, C3b) + c1/kamera @0eb469e (run-all M1/M2/M3/C1 + Bühne + c2/c3/c3b, ~90 Min.).
+- Bisher alle PASS bis m1-hz-equal.
+- Danach folgen der contract-static-Fix der Bewegungs-Sitzung (c1/kamera @cb13e73), Push, Spiegel und die **Branch-Vorschau mit C1–C3b**.
+
+**Privater Weg (V-462, Dropbox-Connector):** In dieser Sitzung ist der Dropbox-Connector **nicht aktiv**. Er steht als „braucht Anmeldung“ in der Liste, die Werkzeuge fehlen. Georg muss ihn in den claude.ai-Connector-Einstellungen anmelden bzw. für die Sitzung freischalten. Danach lade ich nach `PRIVATE_ASSETS_FOR_WS1.r1.json` (sha256-geprüft, außerhalb der Repos). Bis dahin wartet C4, Aliens bleiben edge80.
+
+**Nach dem Volltest übernehme ich, in dieser Reihenfolge:**
+1. **V-450:** Fundsachen mit gleichem Bodenabstand 0,15 m statt Hüfthöhe, lange Stücke 35° gekippt (`floatTilt`), nach `kfb-proof-stage.v1.2.js`. Das ersetzt die GothGirl-Hüfthöhe aus §81, Georgs neuerer Entscheid gilt.
+2. **B28 r2** (53 Stücke + `loot_items.r2.json`) von `assets/kfb-wsb-public-2026-10-18` @0d9a632e statt der KayKit/Tiny-Treats-Platzhalter.
+3. **Stage-Light v1.1** (@5c495846, Naht-Fix V-440).
+4. **B22-Lampen r3** am Billboard.
+
+Die Wegwerfen-Taste als R5f-Ergänzung ist notiert.
+
 ## 81 · 18.10. früh · Georg-Entscheide (im WS1-Chat, für das Register)
 
 1. **Fundsachen schweben auf GothGirls Hüfthöhe** (nicht auf FrizzleBobs, die liegt nur ≈ 0,25 m). Gemessen am GothGirl-Skelett (Knochen hips über root), keine feste Zahl. Umgesetzt auf `c3/ernte`/`combo/r2`, Test `c3b` prüft es.
