@@ -1,6 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-537 Nachtrag: Krater/Spuren temporär mit Rückbildung = abgeleitete Form der God-Mode-Terrainverformung (ein Modul, dauerhaft | temporär).
+- V-537 Nachtrag: Krater/Dellen + sternförmige Schmauchspur, Fluff ploppt aus dem Krater (Brief B41 ergänzt).
 - V-537 Wurfwaffen (Granate, Clown-Bombe, Fluff-Bombe) + Brick-Fish-Choreografie: Brief B41, SFX throwables_r1.
 - V-536 Waffe/Trichter global als Unterarm-Verlängerung in der Faustkugel (Hub q97). Hub umsortiert: Blocker oben, Sound/Stimme unten.
 - SFX beam_ufo_r2 (UFO, Traktorstrahl nach Lab-Grammatik, Bau-/Teleportstrahl; 30 Dateien) → Hub q105. B39 r2 roof_swallow geprüft → Hub q106. WSB startet B40 (Mac mini 36 GB frei).
