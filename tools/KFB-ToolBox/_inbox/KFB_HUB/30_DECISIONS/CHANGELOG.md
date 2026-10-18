@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- WSB B34 r1 C.O.M.I.C.-Requisiten (Herd, Staffelei kfb_canvas, 3 Alien-Pflanzen, Experimentiertisch, Werkzeugwand, Fluff-Flicken, Tisch+Hocker mit Sitz-Ankern, Glastank mit kfb_tank_float, Kuppel als Glasglocke) → Hub q49 (Kuppel-Form, Dorys Ecke). Tank zeigt dunkles Rechteck am Boden → B34 r1b vor B36; Hunkys Ecke folgt danach.
 - WSB B32 r1 Hexen-Duo A/B (Augen ×1,25 hinter Brille), Alchemie-Mini-Diorama, Kessel auf Holzfeuer (Flammen Platzhalter, Flüssigkeit in Fluff-Farbe), Hexentürme KayKit (niedlich statt gruselig) → Hub q48.
 - B11 r3 Größen-Fix (WSB: variant.scale ging beim Umhängen verloren; jetzt am Knoten, Nr. 1 1,60 m … Nr. 6 2,25 m, +41 %), Front-Reihe mit FrizzleBob → Hub q47.
 - WSB B11 r3 Spielzeugsoldaten (Tschako mit Nummer Stern/Kreis, Royal Blue, Aufziehschlüssel dreht, Marsch + Gruß, Trupp 1–6 mit Augen) → Hub q46 (Stern oder Kreis). Dalton-Größen in den Reihen nicht sichtbar → WSB prüft variant.scale + Front-Reihe mit FrizzleBob, danach eigene Größen-Frage.
