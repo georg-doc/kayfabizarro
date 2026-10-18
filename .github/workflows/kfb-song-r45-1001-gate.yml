@@ -1,0 +1,27 @@
+name: KFB 1001_kayfabe_nights R4.5 canonical writer gate
+on:
+  push:
+    branches: ["songs/1001_kayfabe_nights-r4-2026-10-17"]
+permissions:
+  contents: read
+jobs:
+  lyrics-r44:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: f0f07a27e9e98ee005fc35de61a070853fec2246
+          path: .kfb-register-readonly
+      - name: Canonical original triplet check
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py songs/1001_kayfabe_nights/1001_kayfabe_nights.r31.qa.deck.json songs/1001_kayfabe_nights/1001_kayfabe_nights.r31.qa.set.csv
+      - name: Canonical lyric check part one
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/1001_kayfabe_nights/1001_kayfabe_nights.part1.r4.5.suno.txt --deck registry/assets/v1/decks/1001_kayfabe_nights.json --media media/kfb/1001_Kayfabe_Nights_-_ADD_web_ID.pdf.json --songlines songs/1001_kayfabe_nights/1001_kayfabe_nights.part1.r4.4.songlines.json --cards 5-32 --tone 1001_kayfabe_nights --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
+      - name: Canonical lyric check part two
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/1001_kayfabe_nights/1001_kayfabe_nights.part2.r4.5.suno.txt --deck registry/assets/v1/decks/1001_kayfabe_nights.json --media media/kfb/1001_Kayfabe_Nights_-_ADD_web_ID.pdf.json --songlines songs/1001_kayfabe_nights/1001_kayfabe_nights.part2.r4.4.songlines.json --cards 33-60 --tone 1001_kayfabe_nights --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
+
+      - name: Original style gate part1
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style songs/1001_kayfabe_nights/1001_kayfabe_nights.part1.r4.5.style.txt --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
+
+      - name: Original style gate part2
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style songs/1001_kayfabe_nights/1001_kayfabe_nights.part2.r4.5.style.txt --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
