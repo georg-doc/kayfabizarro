@@ -7479,6 +7479,21 @@
    "applies": "B40 + Card Ink Defense"
   },
   {
+   "id": "V-532",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "TBD",
+   "text": "Gegenmittel zu Black Goo (Georg 18.10., ja zur Hub-Frage): Der Spieler wäscht Geschwärztes mit seinem Robo-Arm + Trichter (V-510) frei und verschießt dabei Fluff-Kugeln aus Sammlung/HUD-Leiste, ähnlich dem Clearen in der Combat-Arena. Kreislauf: Agenten saugen Farbe ab, Gegner schwärzen, Spieler färbt zurück. Offen in Hub q103 die Farbregel (A jede Farbe, B passende Farbe, C erst A, später B per Spielknoten; WS0 empfiehlt C). WS0-Vorschlag Zensurbalken in Blasen/Karten-Texten als Rückschritt im Fluff-o-lect, nie über Titeln/Namen, höchstens 1–2 je Blase: Hub q104.",
+   "values": {},
+   "owner": "WS1 (Schuss aus HUD-Leiste) · WSA (Zensurbalken in kfb-bubbles) · Georg (q103/q104)",
+   "check": "Hub q103, q104",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Spieler antwortet auf Zensur mit Farbe – mit denselben Werkzeugen wie Ernte und Arena.",
+   "applies": "nach q103/q104"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7566,7 +7581,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:884",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:885",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
