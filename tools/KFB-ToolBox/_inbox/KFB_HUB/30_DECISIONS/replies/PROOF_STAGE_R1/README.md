@@ -1,3 +1,5 @@
+**v1.2.4 (18.10.):** Meshes mit glTF-extras `kfb.castShadow=false` (am Mesh oder einem Elternknoten) sowie durchsichtige Materialien (Deckkraft < 0,5) werfen keinen Schatten mehr (Glas, Flüssigkeiten). Vorher warf die UFO-Glaskugel einen vollen Schatten mit Lichtbogen durch den Randspalt.
+
 ## v1.2.3 (18.10., WS0) · Mehrere Figuren je GLB
 - Every subtree with its own eye anchors (`KFB_Eye_L/R/C_anchor`, `eye_anchor.l/r`, also with the GLTFLoader suffix `_1`, `_2` …) gets its own EyeRig v6 + E2 set. Figure root = the highest node above the anchors that repeats no side. One figure per file (or anchors directly under the root) works exactly as before; FrizzleBob and the B26 ninja render pixel-identical.
 - All figures use the file's card (`--card`), or the existing anchor defaults. A subtree without a head bone gets its eye host at the centre of its anchors, turned to their gaze. The old host on the figure root could put both eyes on one anchor when the figure stood off the origin.

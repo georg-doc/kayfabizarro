@@ -367,7 +367,9 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     const hidden = [];
     for (const n of card?.originals?.remove || []) root.traverse((o) => { if (o.name === n) { o.visible = false; hidden.push(n); } });
     const faceParts = applyCardFaceParts(THREE, root, card, exportOriginal);
-    root.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false; } });
+    // v1.2.4: respect glTF extras.kfb.castShadow=false (glass, liquids) on the mesh or any ancestor
+    const noCast = (o) => { const ms = Array.isArray(o.material) ? o.material : [o.material]; if (ms.every((m) => m && m.transparent && m.opacity < 0.5)) return true; for (let n = o; n; n = n.parent) { const k = n.userData && n.userData.kfb; if (k && k.castShadow === false) return true; } return false; };
+    root.traverse((o) => { if (o.isMesh) { o.castShadow = !noCast(o); o.receiveShadow = true; o.frustumCulled = false; } });
     root.updateMatrixWorld(true);
     /* GEM_R1 (V-460): gem nodes (extras kfb.material 'gem' on the node or an ancestor) skip clay and get kfb-gem.v1; one handle per gem node,
        the material is shared per colour (gemTint, else ruby/sapphire by kfb.side white|light / black|dark); environment = PMREM of this mood */
