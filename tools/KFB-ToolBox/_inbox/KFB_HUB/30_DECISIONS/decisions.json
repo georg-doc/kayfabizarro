@@ -7254,6 +7254,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-517",
+   "date": "2026-10-18",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Neue Meshy-Modelle von Georg (18.10.): (1) Eiffelturm als neues Landmark, surreal im Cartoon-Stil koloriert (Story-Mode-Farben/Harmonie-Regel, Knet) → WSB B37 mit 2–3 Farbvarianten. (2) Feuerturm (fire_tower, 1,25 Mio. Flächen) als Vampirturm → WSB B38: Browser-Fassung, Thron-Modul + Vampire_NoEyes oben, Glut-Stimmung behalten, in den Knet-Look und das Licht-Rig geholt. Ersetzt die Bausatz-/Kandidaten-Wege aus q70/q73. Weitere neue Dateien (Detector Tower, Inferno Tower, Sphinx Cat) noch ohne Auftrag.",
+   "values": {},
+   "owner": "WSB",
+   "check": "Bühne + Hub",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs eigene Meshy-Modelle statt Bausatz.",
+   "applies": "B38, B37"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7341,7 +7356,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:870",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:871",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
