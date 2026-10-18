@@ -32,6 +32,19 @@ Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch 
    - NPC-Mechaniker, Reparatur- und Tuning-Minispiel (Teile, Farbe, Aufsätze), eigene Modelle laden (Prüfung über Karte bzw. Loader wie bei Figuren).
    - Sound-Schichten (V-461) gekoppelt an Anker und Gas.
 
+**Georg, Nachtrag (18.10.):**
+- **Dieselpunk-Fahrzeuge sind die erste Wahl** für die schnellen Racer (gedacht wie Podracer bei Star Wars). Die KayKit-Autos bleiben „Normie-Driver“ im Stadtverkehr, ohne Hyperspeed.
+- **WS1 setzt die Düsen-Anker heuristisch selbst**, halb- bzw. vollautomatisch für alle Dieselpunk-Modelle (1–6 Triebwerke je Fahrzeug). Das VFX-Zentrum wird nach Triebwerksgröße skaliert, Georg tunt nur im Einzelfall nach.
+  - Erst eine **Auswahl von 6 Fahrzeugen mit verschiedenen Antrieben**; Georg wählt aus einer kurzen Präsentation.
+  - Die zwei neuen Fahrzeuge sind einbezogen.
+- **Räder vorerst weglassen:** Alle schweben leicht über dem Boden. Geschwindigkeit, Rampensprung und Abheben stellt der Antrieb dar.
+- **Antriebs-Animation und VFX synchron mit dem Motorgeräusch:**
+  - Gangwechsel bzw. Hochschalten, Knattern (Backfire) und Bremsen sind sichtbar.
+  - Partikel **performant und immersiv**, ausdrücklich nicht zwingend Knetkugeln.
+  - Was andere Star-/Kart-Racer bei Antriebs-VFX machen, als Vorlage ansehen.
+
+WS1 hat die Düsen-Erkennung bereits gestartet: Geometrie-Heuristik über alle Dieselpunk-GLBs, ohne Blender. Die Präsentation für Georg folgt als private Seite.
+
 **Bitte an WS0:**
 - Slice planen und gegen die Bot-Slice V-463 einreihen.
 - Format `kfb-vehicle-rig.json` bestätigen.
