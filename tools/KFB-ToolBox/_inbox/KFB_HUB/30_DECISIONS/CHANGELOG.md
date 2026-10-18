@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- WSB: floatTilt für alle Werkzeuge (9/53, V-453); Kampf-Ruhepose: in Motion Library v2 keine echte Kampfhaltung, bester Kandidat offensive_idle_a → Hub q30; B7 r3 (Stein A zurückgesetzt + Risse, Holz B1 Seil / B2 Stoßzähne) → Hub q29; Sockelrand R1: Varianten kaum sichtbar, Ursache dünner Ring + Dorys Kragen → Hub q28 (a neuer Wulst / b nur Kragen glätten). WSB-Platte 40 GB frei: schwere Läufe nur mit Reserve.
 - Hub q25 Mauer PASS Richtung (V-452: Kerben nur Option, organischere Höhen, stärkere Textur, Skins Backstein/felsig/Holzlatten), q26 Fundsachen PASS (V-453: Griff-Werkzeuge wie Hammer auch schräg, Bühne liest floatTilt-Flag), q27 Ninja-Probe PASS (V-454). Hub ohne offene Fragen.
 - WSB B28 r2 (53 Fundsachen, Paket-Varianten-Ketten, floatTilt; Burger/Tellergericht sind Paket-Originale) → Hub q26; Ninja-Nahkampf-Probe (Motion Library v2, Stich/Flugtritt gut, Hocke-Ruhepose verdeckt Augen) → Hub q27. Öffentlicher Branch aktualisiert.
 - Hub-Antworten: q22 Pubs/Bento PASS, q24 Inseln PASS (V-451); q23 Fundsachen PASS mit Notiz (V-450: gleicher Bodenabstand 15 cm, längliche Teile 35° schräg – Bühne v1.2.1 umgesetzt; Paket-Varianten statt selbst gebauter Gerichte → WSB B28 r2). G6 misst nur noch Säume ≥ 5 px in der Kontaktzone (Schattenspitzen getrennt); B29 r2 alle 4 Proben PASS, Hub q25. Öffentlicher Branch @e64f7986 (B29 r2, Licht/Bühne).
