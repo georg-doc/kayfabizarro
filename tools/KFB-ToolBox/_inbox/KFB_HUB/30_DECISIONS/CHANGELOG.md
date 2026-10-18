@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- SPEC_SCENELET_R1_DRAFT (kfb.scenelet/1) aus Resident-Atlas-S17-Analyse; B41 r1 eingegangen (Explosionen S1/S3 zurück an WSB wegen Kugel-Formen).
 - V-548 Bühne/Scenelets in der Asset-Bibliothek (privates Artifact, kfb.scenelet/1, Live-3D-Abnahme, Resident-Atlas als Daten-, Editor- und Design-Donor), Pilot Spielzeugsoldat. Hub q116 Detonator-Sounds, q117 Käpt’n r2b + Insel r2.
 - V-546 Nachtrag: Detonator färbt Welt-Fluff schwarz (Zensur-Kreislauf mit Fluff-Bombe). V-547: Käpt’n-Hut −10 %, Thron PASS, Insel r2 mit mehr Kenney Pirate Kit.
 - V-546 B41 freigegeben + Humbug-Detonator (Flächen-Blitzdings, große Variante für AGL), SFX detonator_r1. Hub q115 Thron-Fahrzeug.
