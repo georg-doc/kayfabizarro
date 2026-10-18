@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. · Melodie-Sprache PASS + Fluff-o-lect-Dekodieren (V-500)
+- Klang R4 ist PASS (`40_AUDIO/kfb_language_r1/probe_r4.html`); R5 (`probe_r5.html`) zeigt dazu die drei Dekodier-Stufen: Glyphen, Fluff-Wörter, Klartext.
+- Für die Bühnen-Probe mit Mund-Rig (s. o.) bitte gleich die Sprechblase mit Stufen-Logik übernehmen. Die Fortschritts-Quelle ist später das Karten- bzw. Begegnungs-Konto.
+- Schrift: PottyMouth nur in der Probe. Fürs Spiel wartet die Font-Lizenz bzw. eigene Glyphen auf Georg; bis dahin Platzhalter-Glyphen erlaubt.
+
 ## 18.10. · Cartoon-Effektformen verbindlich (V-499)
 - `replies/SPEC_CARTOON_VFX_SHAPES_R1.md` gilt für alle Rauch-, Dampf-, Blasen-, Wolken- und Gedankenblasen-Effekte im Spiel: Mesh-Puffs instanziert, Noise-Verformung, Auflösung über Noise-Schwelle bzw. Speckle (V-403), Toon-Stufen über das Licht-Modul.
 - Gilt auch für Kessel-Dampf, Tank-Blasen und Fluff-Wolken.
