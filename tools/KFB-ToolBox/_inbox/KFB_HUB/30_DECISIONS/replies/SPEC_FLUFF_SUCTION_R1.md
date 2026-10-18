@@ -81,3 +81,27 @@ Ein Ablauf, drei Herkünfte. Dauer etwa 1,2–1,8 s pro Kugel.
 - E03 Plastikteile klappern;
 - E04 Plastik bricht, Fluff pufft heraus;
 - E05 Kügelchen springen.
+
+## 8 · UFO-Ernte: ganze Gebiete abernten (Georg 18.10., V-484)
+**Bild:** Hunky fliegt wie ein Bauer übers Feld. Mit der C.O.M.I.C. und einem hin und wieder flackernden Traktorstrahl erntet er ganze Gebiete. Die Fluff-Kügelchen ploppen cartoonig aus Boden, Pflanzen und Wasser und werden in die runde Mündung unten am UFO gesaugt. Das ist sein täglicher Job: Ernte von Low-Vibrational Fluff auf der Erde, Meta-Erzählung V05.
+
+**Darstellung (eine Logik mit dem Saugarm, §2):**
+- **Strahl-Shader:** Vorlage ist Georgs Beam- und Materialisierungs-Animation aus dem UFO-Lab. Sie läuft in beide Richtungen: ein Modell zerfällt in Knetkügelchen bzw. Partikel oder baut sich daraus auf. Fundort noch zu bestätigen; WS1 bzw. Georg nennen den Pfad.
+- Dieselbe Strahl-Logik dient für Ernte (aufsaugen) und Transport (abbeamen, hinbeamen; siehe V-475 Bord-Diorama).
+- **Farbe:** Strahl und Kügelchen tragen die Farbe des **primären Fluffs** des Gebiets. Die Zone bzw. Karten-Zone liefert die Farbe als Datum.
+- **Flug:**
+  - Das UFO neigt sich glaubwürdig zum Fluff-Vorkommen; der Strahlkegel ist auf den Schwerpunkt der Kugeln ausgerichtet.
+  - Leichtes Pendeln; der Strahl flackert unregelmäßig, nie im Takt (V-456).
+- **Ablauf je Kugel:**
+  - wie §2 (Stretch, Plopp, gestreckter Flug, Einsaugen), nur in den Strahlkegel statt zur Düse;
+  - viele Kugeln gestaffelt als Strom;
+  - in der Mündung ein kurzer Squash, der Tank-Zähler steigt.
+- **Leistung:** als instanzierte Partikel im gemeinsamen VFX-Budget (V-357). Ab einer Obergrenze werden mehrere Kugeln zu einer Partikelwolke zusammengefasst, damit Gebiete mit vielen Kugeln performant bleiben.
+- **Modul:** `kfb-fluff-suck` bekommt einen zweiten Sauger-Typ `beam` (Kegel statt Düse); Bots, Spieler und UFO teilen den Code.
+
+**Ton (fertig):** `40_AUDIO/elevenlabs_r1/ufo_harvest_r1/` mit 5 Ereignissen × 2:
+- U01 Strahl an;
+- U02 Ernte-Schleife mit Flackern;
+- U03 Plopp-Strom;
+- U04 Einschlucken in die Mündung;
+- U05 Strahl aus.

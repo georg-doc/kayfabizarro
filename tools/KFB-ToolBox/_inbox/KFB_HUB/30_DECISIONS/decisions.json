@@ -6759,6 +6759,21 @@
    "applies": "Stufe 1 jetzt"
   },
   {
+   "id": "V-484",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "UFO-Ernte (Georg 18.10.): Hunky erntet mit der C.O.M.I.C. ganze Gebiete wie ein Bauer übers Feld – flackernder Traktorstrahl, Kügelchen ploppen cartoonig aus Boden/Pflanzen/Wasser und werden in die runde Mündung gesaugt; Farbe = primärer Fluff des Gebiets (Zonen-Datum); UFO neigt sich glaubwürdig zum Vorkommen, Strahlkegel auf den Kugel-Schwerpunkt. Vorlage Beam-/Materialisierungs-Shader aus Georgs UFO-Lab (beide Richtungen: zerfällt in Knetkügelchen/baut sich auf), Fundort noch zu bestätigen. Ein Modul mit dem Saugarm: kfb-fluff-suck mit Sauger-Typ beam; instanzierte Partikel im VFX-Budget, ab Obergrenze als Wolke. Ton ufo_harvest_r1 fertig. Spec SPEC_FLUFF_SUCTION_R1 §8.",
+   "values": {},
+   "owner": "WS1 (Modul) · WS0 (Ton fertig) · Georg (UFO-Lab-Pfad)",
+   "check": "Clip: UFO erntet ein Feld",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gibt Hunkys Job ein Spielbild und nutzt denselben Saug- und Beam-Code für Bots, Spieler und UFO.",
+   "applies": "mit dem Saug-Modul"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6846,7 +6861,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:834",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:835",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
