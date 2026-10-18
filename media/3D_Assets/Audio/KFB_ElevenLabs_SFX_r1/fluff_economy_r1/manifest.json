@@ -1,0 +1,160 @@
+{
+ "set": "fluff_economy_r1",
+ "runs": [
+  {
+   "at": "2026-10-18T06:21:56",
+   "results": [
+    {
+     "id": "E01_station_send_a",
+     "ok": true,
+     "file": "E01_station_send_a.mp3",
+     "bytes": 33061,
+     "sha256": "b82e1835c13564ae2921789212cf9799826bf365555250bacfce22645686732d",
+     "cost_header": "20",
+     "request": {
+      "text": "robot charging station full of fluff zaps its load away with a pseudo-scientific transporter fizz, rising warble then a soft vacuum pfump, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 2.0
+     }
+    },
+    {
+     "id": "E01_station_send_b",
+     "ok": true,
+     "file": "E01_station_send_b.mp3",
+     "bytes": 33061,
+     "sha256": "17fd962e66b4e1fc7f78f80f67b1fb4a0007102a62a804f1288eaa30f4b8148d",
+     "cost_header": "20",
+     "request": {
+      "text": "robot charging station full of fluff zaps its load away with a pseudo-scientific transporter fizz, rising warble then a soft vacuum pfump, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 2.0
+     }
+    },
+    {
+     "id": "E02_factory_loop_a",
+     "ok": true,
+     "file": "E02_factory_loop_a.mp3",
+     "bytes": 97009,
+     "sha256": "a44aed2e4cda44be407c493c60f791f9bdf9c0b6521040800eb819cb6ec9b447",
+     "cost_header": "60",
+     "request": {
+      "text": "busy cartoon factory with conveyor belts, rhythmic plastic stamping presses, little pneumatic hisses and clanks, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 6.0
+     }
+    },
+    {
+     "id": "E02_factory_loop_b",
+     "ok": true,
+     "file": "E02_factory_loop_b.mp3",
+     "bytes": 97009,
+     "sha256": "07becaee80aa16e45f96171a35b03748e9984cf0219531ee8b0aa08345f5b07f",
+     "cost_header": "60",
+     "request": {
+      "text": "busy cartoon factory with conveyor belts, rhythmic plastic stamping presses, little pneumatic hisses and clanks, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 6.0
+     }
+    },
+    {
+     "id": "E03_plastic_clatter_a",
+     "ok": true,
+     "file": "E03_plastic_clatter_a.mp3",
+     "bytes": 24702,
+     "sha256": "00af89f82201d13385b8eb29f9606be37c71cb0653bf1448caf62094f4b9a720",
+     "cost_header": "15",
+     "request": {
+      "text": "pile of cheap hollow plastic building parts clattering together, light and tinny, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.5
+     }
+    },
+    {
+     "id": "E03_plastic_clatter_b",
+     "ok": true,
+     "file": "E03_plastic_clatter_b.mp3",
+     "bytes": 24702,
+     "sha256": "75d4b62b2af7099bd3b7c81f84be4332db08298bec532da97e75fa16b03b1ca9",
+     "cost_header": "15",
+     "request": {
+      "text": "pile of cheap hollow plastic building parts clattering together, light and tinny, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.5
+     }
+    },
+    {
+     "id": "E04_plastic_crumble_a",
+     "ok": true,
+     "file": "E04_plastic_crumble_a.mp3",
+     "bytes": 40585,
+     "sha256": "2ff9f1ac4c1ee15cd079b6b466bbe94cfdcdbbcb0c7f460046c0b6418844a169",
+     "cost_header": "25",
+     "request": {
+      "text": "cheap plastic building section cracking and crumbling apart after a hit, hollow plastic snaps then soft fluffy puffs bursting out, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 2.5
+     }
+    },
+    {
+     "id": "E04_plastic_crumble_b",
+     "ok": true,
+     "file": "E04_plastic_crumble_b.mp3",
+     "bytes": 40585,
+     "sha256": "e2da2cbd6ab9fb60cba40dde16b86de9f44b483344a90b57a936cb103c1a1215",
+     "cost_header": "25",
+     "request": {
+      "text": "cheap plastic building section cracking and crumbling apart after a hit, hollow plastic snaps then soft fluffy puffs bursting out, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 2.5
+     }
+    },
+    {
+     "id": "E05_fluff_scatter_a",
+     "ok": true,
+     "file": "E05_fluff_scatter_a.mp3",
+     "bytes": 24702,
+     "sha256": "c49b623556e6c36745d350c6eba490a3728c9092e3957c39541c368129036778",
+     "cost_header": "15",
+     "request": {
+      "text": "handful of soft fluffy balls scattering and bouncing on the ground, squishy little boings, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.5
+     }
+    },
+    {
+     "id": "E05_fluff_scatter_b",
+     "ok": true,
+     "file": "E05_fluff_scatter_b.mp3",
+     "bytes": 24702,
+     "sha256": "426546ea77385de13d1f52cf3bcd8c7f70f0e0d15c554cbd4a31f5f3c0ef1596",
+     "cost_header": "15",
+     "request": {
+      "text": "handful of soft fluffy balls scattering and bouncing on the ground, squishy little boings, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.5
+     }
+    }
+   ]
+  }
+ ]
+}

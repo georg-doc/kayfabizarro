@@ -1,0 +1,190 @@
+{
+ "set": "propulsion_r1",
+ "runs": [
+  {
+   "at": "2026-10-18T06:22:22",
+   "results": [
+    {
+     "id": "P01_jet_thrust_loop_a",
+     "ok": true,
+     "file": "P01_jet_thrust_loop_a.mp3",
+     "bytes": 65244,
+     "sha256": "b893a9c558fc316da1629b8ec73f27dc995050752b7c6f7efb860b9d8ce934e4",
+     "cost_header": "40",
+     "request": {
+      "text": "dieselpunk jet thruster roaring steadily, warm rumbling flame with a slight pulsing throb, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 4.0
+     }
+    },
+    {
+     "id": "P01_jet_thrust_loop_b",
+     "ok": true,
+     "file": "P01_jet_thrust_loop_b.mp3",
+     "bytes": 65244,
+     "sha256": "8415b3a4e9df108c48a42d4a968e3b235c246eff2c6eca50afcd9ad9c94e1547",
+     "cost_header": "40",
+     "request": {
+      "text": "dieselpunk jet thruster roaring steadily, warm rumbling flame with a slight pulsing throb, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 4.0
+     }
+    },
+    {
+     "id": "P02_turbine_fan_loop_a",
+     "ok": true,
+     "file": "P02_turbine_fan_loop_a.mp3",
+     "bytes": 65244,
+     "sha256": "1081ae76466d54599da0ba2d7cac40ae08c937358446c31f8c12257ad7486511",
+     "cost_header": "40",
+     "request": {
+      "text": "hovering vehicle turbine fan spinning, airy whirring blades with a low hum, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 4.0
+     }
+    },
+    {
+     "id": "P02_turbine_fan_loop_b",
+     "ok": true,
+     "file": "P02_turbine_fan_loop_b.mp3",
+     "bytes": 65244,
+     "sha256": "90f2f0b7bebccd97837231046532b6084bb85e9f7279c67cfc429578ce4770b0",
+     "cost_header": "40",
+     "request": {
+      "text": "hovering vehicle turbine fan spinning, airy whirring blades with a low hum, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 4.0
+     }
+    },
+    {
+     "id": "P03_exhaust_rumble_loop_a",
+     "ok": true,
+     "file": "P03_exhaust_rumble_loop_a.mp3",
+     "bytes": 65244,
+     "sha256": "2c6b9399b5ba7ad24556c0e978385f0cc4f6e33ed9e3bb91d77de513a0772efb",
+     "cost_header": "40",
+     "request": {
+      "text": "chunky dieselpunk exhaust pipes rumbling at idle, uneven loping putter, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 4.0
+     }
+    },
+    {
+     "id": "P03_exhaust_rumble_loop_b",
+     "ok": true,
+     "file": "P03_exhaust_rumble_loop_b.mp3",
+     "bytes": 65244,
+     "sha256": "b0955983b73d4461ecb1bb8c346831ab88db21357dff1ea1b2ec73b9e96f1a32",
+     "cost_header": "40",
+     "request": {
+      "text": "chunky dieselpunk exhaust pipes rumbling at idle, uneven loping putter, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 4.0
+     }
+    },
+    {
+     "id": "P04_boost_ignite_a",
+     "ok": true,
+     "file": "P04_boost_ignite_a.mp3",
+     "bytes": 24702,
+     "sha256": "935f099bad9e1cfda1745cb1d031fd9fc4962bd47ed4c8a1dfbedbbc21e50f22",
+     "cost_header": "15",
+     "request": {
+      "text": "rocket booster igniting, sharp whoomp of flame then a rising surge, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.5
+     }
+    },
+    {
+     "id": "P04_boost_ignite_b",
+     "ok": true,
+     "file": "P04_boost_ignite_b.mp3",
+     "bytes": 24702,
+     "sha256": "454233d716f385e73c91ac0766111a850ac2759928580cd5e2470f3f35a497d0",
+     "cost_header": "15",
+     "request": {
+      "text": "rocket booster igniting, sharp whoomp of flame then a rising surge, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.5
+     }
+    },
+    {
+     "id": "P05_antigrav_hum_loop_a",
+     "ok": true,
+     "file": "P05_antigrav_hum_loop_a.mp3",
+     "bytes": 65244,
+     "sha256": "0b8ad157e5c671f3deb53d364f774418ada2bfe1b41ce939c2e9bdc0a10290a0",
+     "cost_header": "40",
+     "request": {
+      "text": "antigravity hover pads humming, soft warbling electric drone with gentle wobble, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 4.0
+     }
+    },
+    {
+     "id": "P05_antigrav_hum_loop_b",
+     "ok": true,
+     "file": "P05_antigrav_hum_loop_b.mp3",
+     "bytes": 65244,
+     "sha256": "82fcc1112f7f614cf2ad5937611014265f581681361289537322d35680c91936",
+     "cost_header": "40",
+     "request": {
+      "text": "antigravity hover pads humming, soft warbling electric drone with gentle wobble, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 4.0
+     }
+    },
+    {
+     "id": "P06_shift_flame_pop_a",
+     "ok": true,
+     "file": "P06_shift_flame_pop_a.mp3",
+     "bytes": 17179,
+     "sha256": "b0d1960ce0f166b478ff5d8f53e24fcd7b90d68fba3ba2b1499c3c95713508ba",
+     "cost_header": "10",
+     "request": {
+      "text": "gear shift with a flame pop from the exhaust, quick bang and crackle, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.0
+     }
+    },
+    {
+     "id": "P06_shift_flame_pop_b",
+     "ok": true,
+     "file": "P06_shift_flame_pop_b.mp3",
+     "bytes": 17179,
+     "sha256": "b03c231fde7920ad29c79dc64872706f509b1ebe5603dc5bcc7faa0ccb101646",
+     "cost_header": "10",
+     "request": {
+      "text": "gear shift with a flame pop from the exhaust, quick bang and crackle, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.0
+     }
+    }
+   ]
+  }
+ ]
+}
