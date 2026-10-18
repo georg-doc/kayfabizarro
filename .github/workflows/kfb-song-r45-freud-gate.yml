@@ -1,0 +1,22 @@
+name: KFB Freud R4.5 canonical writer gate
+on:
+  push:
+    branches: ["songs/dream_wrestling_with_kayfabe_freud-r4-2026-10-17"]
+permissions:
+  contents: read
+jobs:
+  r44:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: f0f07a27e9e98ee005fc35de61a070853fec2246
+          path: .kfb-register-readonly
+      - name: Original triplet set check
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.r31.qa.deck.json songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.r31.qa.set.csv
+      - name: Canonical R3.3 lyric check
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.r4.5.suno.txt --deck registry/assets/v1/decks/dream_wrestling_with_kayfabe_freud.json --songlines songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.r4.4.songlines.json --media media/kfb/Dream_Wrestling_with_Kayfabe_Freud_-_ADD_web_ID.pdf.json --cards 1-56 --tone dream_wrestling_with_kayfabe_freud --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
+
+      - name: Original style gate
+        run: python3 .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.r4.5.style.txt --corpus .kfb-register-readonly/tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2
