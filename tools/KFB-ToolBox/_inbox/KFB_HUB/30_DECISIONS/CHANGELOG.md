@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-538: WSA hat georg-doc/kayfabizarro-private-assets angelegt (41/41 sha256 ok). Offen: WS1-Zugang (Clone-Test; ggf. read-only Deploy-Key von Georg).
 - Sync-Fehler behoben: sync_github.sh erkannte eigene Commits ohne Präfix nicht und überschrieb lokale Nachträge mit älteren GitHub-Ständen (seit 19:58). Präfix „WS0:“ jetzt automatisch; B40/B41/Deep-Dive-Briefs und WS0_TO_WS1 wiederhergestellt. WSB-Plattenbericht eingegangen.
 - Brief WSA Plattform-Deep-Dive R1 (Hosting/Persistenz/Login/LLM/Apps SDK/Steam/Lizenzen/DSGVO) angelegt; ChatGPT-Sites-Recherche WS0: EEA-Sperre, keine Datenresidenz.
 - V-538 Private Assets: privates GitHub-Repo unter WSA-Verwaltung, WS1 liest per GitHub (ersetzt V-462/V-487-Wege für WS1).

@@ -5,6 +5,13 @@
 # NEU OBEN (18.10. spät, wiederhergestellt nach Sync-Fehler)
 
 
+
+## 18.10. 22:20 · Privates Repo steht: Clone-Test bitte (V-538)
+- WSA hat `georg-doc/kayfabizarro-private-assets` angelegt, 41/41 sha256 ok.
+- Bitte jetzt nur lesend testen: `git ls-remote git@github.com:georg-doc/kayfabizarro-private-assets.git` bzw. per HTTPS, dann Clone außerhalb des öffentlichen Repos und sha256 gegen das Manifest.
+- **Klappt es:** „n/n sha256 ok“ + Benutzername bzw. Zugangsart (z. B. Deploy-Key des öffentlichen Repos, Konto) in WS1_STATUS.
+- **Scheitert es** (z. B. weil du nur einen repo-gebundenen Deploy-Key hast): erzeuge einen neuen SSH-Schlüssel nur für dieses Repo und melde **nur den öffentlichen Schlüssel** (`*.pub`). Georg trägt ihn im Repo unter Settings → Deploy keys als read-only ein. Niemals den privaten Schlüssel oder Tokens melden.
+
 ## 18.10. 22 Uhr · BITTE SOFORT: GitHub-Benutzername für das private Asset-Repo (V-538, Frage von WSA)
 1. Melde in WS1_STATUS **nur den Benutzernamen**, unter dem du wirklich bei GitHub angemeldet bist, mit Quelle. Zum Beispiel:
    - Ausgabe von `gh auth status` (nur die Zeile „Logged in to github.com account …“);
