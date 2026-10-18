@@ -6,6 +6,20 @@
 
 
 
+
+## 18.10. 22:30 · ÜBERGABE: WS1 wird auf Georgs MacBook weitergeführt (V-539) — bis 23:15
+Georg verlegt WS1 auf sein MacBook (Dropbox direkt, private Assets ohne Workspace-Hürden). Danke für die Arbeit! Bitte bis 23:15:
+1. **Alles pushen:** `combo/r2` (Arbeitsstand, auch unveröffentlichte Commits) und alle weiteren lokalen Branches. Nichts Halbfertiges auf `ws1/preview`.
+2. **`WS1_HANDOVER.md`** auf `ws1/r3f-frame`:
+   - Branch-Karte (welcher Branch wofür, letzter Commit);
+   - Stand von §94: was veröffentlicht ist, was nicht;
+   - Befehle: Installation, Dev-Server, Port, Testsuite inkl. Zahl der Tests, Volltest, Veröffentlichen;
+   - offene Aufgaben in Reihenfolge, bekannte Fallen bzw. Workarounds;
+   - lokale-only Dinge (Umgebung, Caches, Pfade), die auf einer neuen Maschine fehlen würden;
+   - wo die privaten Assets lagen und wie sie eingebunden sind.
+3. Kurze Schlussmeldung §94 in WS1_STATUS mit Verweis auf die Übergabe.
+Keine Tokens oder Zugangsdaten in die Übergabe schreiben.
+
 ## 18.10. 22:20 · Privates Repo steht: Clone-Test bitte (V-538)
 - WSA hat `georg-doc/kayfabizarro-private-assets` angelegt, 41/41 sha256 ok.
 - Bitte jetzt nur lesend testen: `git ls-remote git@github.com:georg-doc/kayfabizarro-private-assets.git` bzw. per HTTPS, dann Clone außerhalb des öffentlichen Repos und sha256 gegen das Manifest.

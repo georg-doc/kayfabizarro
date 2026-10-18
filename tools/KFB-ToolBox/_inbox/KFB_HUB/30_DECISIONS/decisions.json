@@ -7584,6 +7584,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-539",
+   "date": "2026-10-18",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "WS1 wird abgelöst (Georg 18.10.): Die neue WS1b läuft auf Georgs MacBook unter seinem Konto (Max-Limit) mit Dropbox im Dateisystem; damit entfallen die Workspace-Hürden für private Assets (V-538 bleibt als Weg über das private Repo). Die alte WS1 pusht bis 23:15 combo/r2 + alle Branches und schreibt WS1_HANDOVER.md; WS1b übernimmt laut replies/BRIEF_WS1B_TAKEOVER_R1.md (eigener Klon ~/Developer/kfb-ws1b, Ports nie 5000/5180/5192/8765, Status ab §95 „WS1b“).",
+   "values": {},
+   "owner": "WS1 (Übergabe) · WS1b (Übernahme) · WS0",
+   "check": "WS1_HANDOVER.md + §95",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Alle Werkstätten mit Dropbox-Zugriff und ohne Konto-Hürden.",
+   "applies": "heute Nacht"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7671,7 +7686,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:898",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:899",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
