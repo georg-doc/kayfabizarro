@@ -6369,6 +6369,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-458",
+   "date": "2026-10-18",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "Umgebungs-Atmo (Georg 18.10.): Vogelgezwitscher (verschiedene, wechselnd, cozy), Dschungel, Regen/Blitz/Donner (zeitlich mit dem Wetter, Tiny Skies als Basis), Schnee, Wind (Brise/Böen/Sturm), Wasser (Fluss, Strand, ferner Wasserfall), Grillen/Frösche/Wildtiere – nicht-repetitiv und organisch, zusammen mit Songs/Soundbed, für Biom-/Kartenzonen-/Diorama-Gefühl. Architektur: ein Modul kfb-ambience.v1 (Audio-Besitzer WSA, Einbau WS1) mit fünf Schichten Bett/Ereignisse (Poisson, keine Sofort-Wiederholung)/Wetter (Donner = Blitz + Entfernung/343 m/s)/Wind (gleicher Parameter wie Bild-Wind V-449)/Wasser-Emitter (positional); Ducking −4 bis −6 dB unter Musik und Dialog. Quellen: eigener Bestand → CC0 (Freesound CC0, OpenGameArt, Kenney) → Sonniss GDC (über Georg) → Lücken per ElevenLabs; Tiny-Skies-Dateien nur Referenz (Lizenz unklar), keine NC/ND-Quellen.",
+   "values": {},
+   "owner": "WSA (Modul + Presets) → WS1 · WS0 (ElevenLabs-Lücken)",
+   "check": "Ton-Studio ATMOSPHÄRE: 3 min je Biom ohne hörbare Wiederholung, Donner synchron, Lizenz-Register",
+   "source": "Georg 18.10. · b114",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Atmo trägt Immersion und Biom-Gefühl; mit Schichten und Zufall wird sie lebendig statt geloopt, gekoppelt an Wetter und Wind.",
+   "applies": "WSA jetzt, Einbau nach C3b"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6456,7 +6471,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:807",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:810",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
