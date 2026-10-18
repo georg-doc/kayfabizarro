@@ -7543,7 +7543,7 @@
    "date": "2026-10-18",
    "area": "Figuren",
    "verdict": "RULE",
-   "text": "Waffen-/Werkzeug-Halterung global (Georg, Hub q97 TUNE, dringend): Blaster, Gewehr, Trichter und jedes Ziel-Werkzeug sitzen als Verlängerung des Unterarms in der Faustkugel. Lauf-/Mündungsachse = Unterarmachse (Ellbogen → Handgelenk), Mündung vor der Faust, kein seitlicher Versatz. Sonst zielen alle Figuren beim Laufen mit Waffe zur Seite, und Mündung, Zielen und Auto-Target brechen. Gilt für alle Rigs und Clips (Gehen/Laufen/Joggen mit Waffe, Zielen, Feuern), für den Spieler-Roboterarm (B31 r6, Fix konzeptionell ok), die Agenten-Blaster (B40), die Bots und die Arena-Gegner. WSB: Halterung je Waffe = Anker KFB_Grip in der Faustkugel, KFB_Muzzle auf der Unterarmachse; die Laufen-mit-Waffe-Clips so retargeten, dass der Unterarm nach vorn in Zielrichtung zeigt; Prüfbild mit Achsenlinie Ellbogen → Mündung je Clip. WS1: Zielrichtung und Auto-Target aus der Unterarmachse bzw. KFB_Muzzle-Vorwärts, Zielen dreht den Arm (IK), nie die Waffe in der Hand. Ausnahme: reine Trage-Posen ohne Zielen (z. B. King’s-Guard-Gewehr, V-509).",
+   "text": "Waffen-/Werkzeug-Halterung global (Georg, Hub q97 TUNE, dringend): Blaster, Gewehr, Trichter und jedes Ziel-Werkzeug sitzen als Verlängerung des Unterarms in der Faustkugel. Lauf-/Mündungsachse = Unterarmachse (Ellbogen → Handgelenk), Mündung vor der Faust, kein seitlicher Versatz. Sonst zielen alle Figuren beim Laufen mit Waffe zur Seite, und Mündung, Zielen und Auto-Target brechen. Gilt für alle Rigs und Clips (Gehen/Laufen/Joggen mit Waffe, Zielen, Feuern), für den Spieler-Roboterarm (B31 r6, Fix konzeptionell ok), die Agenten-Blaster (B40), die Bots und die Arena-Gegner. WSB: Halterung je Waffe = Anker KFB_Grip in der Faustkugel, KFB_Muzzle auf der Unterarmachse; die Laufen-mit-Waffe-Clips so retargeten, dass der Unterarm nach vorn in Zielrichtung zeigt; Prüfbild mit Achsenlinie Ellbogen → Mündung je Clip. WS1: Zielrichtung und Auto-Target aus der Unterarmachse bzw. KFB_Muzzle-Vorwärts, Zielen dreht den Arm (IK), nie die Waffe in der Hand. Ausnahme: reine Trage-Posen ohne Zielen (z. B. King’s-Guard-Gewehr, V-509). Georg bestätigt: global für alle Projekte, auch die Combat Arena (Gegner- und Spieler-Waffen, KFB-Combat-Arena) und alle späteren Waffen und Wurfkörper (V-537). Referenz-Umsetzung: B31 r6b_final (Mündung 0,000 u neben der Achse, Anker KFB_Grip an hand.r, KFB_Muzzle an lowerarm.r, glTF lokal +Y = Unterarmachse).",
    "values": {},
    "owner": "WSB (Halterung + Clips) · WS1 (Zielen/Auto-Target)",
    "check": "Prüfbild Achsenlinie je Clip",
@@ -7686,7 +7686,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:899",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:900",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
