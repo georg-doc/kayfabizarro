@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Songs R4.5/R5.1 (16 Tracks) von WSA geliefert; WS0-Gates mit CI-Kartenbereichen: 14 PASS, Style 16/16 PASS; 1001 Teil 2 (Kartenerkennung/C9/C11) und Romantic (Opener doppelt) zurück an WSA (b118); externer Kritiker für 13 Tracks gestartet (SONG_CRITICS_R3). Export-Brief Resident Atlas → Szenen-Packs (b117).
 - V-469 Halloween-Zone: Vampir auf Thron-Turm (flache Krone, Zinnen) über Friedhof/Krypta, Monstrosity als tragikomisches Faust-/Frankenstein-Monster mit Mistgabel/Schild, Dorf-/Mistgabel-Ereignis später; WSB 34. Nachtrag.
 - V-466 Duo-Prinzip (Farbvarianten A/B, auch Orks blau-weiß), V-467 Hexen-Duo + Fluff-Alchemie (Kessel auf Lagerfeuer, Fluff einwerfen → Karten synthetisieren; Pilze psychedelisch), V-468 Friedhofs-Diorama → WSB B32/B33 (33. Nachtrag). Hub q36 Kristall-Schachfiguren (kfb-gem.v1: Tag/Dämmerung/Nacht, Zustände, Zerspringen).
 - V-465 Szenen-Packs kfb.scene-pack/1 (Inventur: ~13 Formate im Resident Atlas S17/#369/Performance; Spec SPEC_SCENE_PACK_R1). Lizenz-Befund: ALLE KayKit-Pakete inkl. Mystery Series, Character Animations und Dungeon Legacy sind laut beiliegender License.txt CC0 → Hub-Frage an Georg, ob die Privat-Regel für KayKit fällt.
