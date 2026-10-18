@@ -6474,6 +6474,21 @@
    "applies": "WSB jetzt, WS1 später"
   },
   {
+   "id": "V-465",
+   "date": "2026-10-18",
+   "area": "Worldbuilder",
+   "verdict": "RULE",
+   "text": "Szenen-Packs (Georg 18.10.): fortgeschrittene Scenelets/Setups/Animationssätze aus dem Resident Atlas (Orkband, Disco, Tanz, Friedhof, Duell …), das Pharaoh-Mumien-Duett und künftige Baustellen werden als einheitliche Packs kfb.scene-pack/1 verfügbar (replies/SPEC_SCENE_PACK_R1.md): Anker + Footprint, Figuren über Figurenkarten, eine Zeitbasis (performance/1), Clips aus dem gepinnten Motion-Katalog, Lizenz je Abhängigkeit, Vorschau. Asset-Bibliothek listet sie, God-Mode setzt sie an Monument-/Diorama-Anker (Browse → Preview → Place → Accept/Revert, kfb.world/1). Erstellung vorerst Claude Design mit Export, kein neues Werkzeug (V-390); ToolBox-Konsolidierung später. Erstes Pack: Orkband.",
+   "values": {},
+   "owner": "WS0 (Spec, Export-Brief) · WSA (Librarian-Kind) · WS1 (God-Mode-Platzierung/Abspielen) · Claude Design (Export)",
+   "check": "Orkband-Pack: aus Bibliothek an Monument-Anker setzen, songsynchron, Accept/Revert, Speichern/Laden",
+   "source": "Georg 18.10. · Inventur 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die besten Szenen liegen verstreut in 13 Formaten; ein Pack-Format macht sie in der Welt einsetzbar.",
+   "applies": "Spec jetzt, Umsetzung nach den laufenden Slices"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6561,7 +6576,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:821",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:822",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

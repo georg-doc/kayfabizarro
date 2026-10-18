@@ -63,7 +63,7 @@ try {
     save('gem_capture_strip.png', await G((a) => window.KFB_GEM.sheet(a), { title: 'kfb-gem.v1 · captured: Cartoon-Bruch (wenige große Scherben, springen, verblassen, ≤ 1,2 s)', sub: 'Rubin-Dame + Saphir-Springer · Schnitt der echten Hülle (Morph-Chess-Bruch, 8 Scherben je Figur) · Bühne v1.2, Tag · Ausblenden ab 0,72 s, weg bei 1,2 s', cells, cols: 5, tw: 576, th: 432 }));
   }
   if (ONLY.has('perf')) {
-    for (const [n, view, mood] of [['gem_perf32', 'front', 'day'], ['gem_perf32', 'front', 'night'], ['gem_start', 'threeq', 'day']]) {
+    for (const [n, view, mood] of (process.env.PERF_SET === 'quick' ? [['gem_perf32', 'front', 'night'], ['gem_perf32', 'front', 'day']] : [['gem_perf32', 'front', 'day'], ['gem_perf32', 'front', 'night'], ['gem_start', 'threeq', 'day'], ['gem_perf32', 'front', 'day']])) {
       await G((a) => window.KFB_GEM.load(a), { glbUrl: url(n), mood, id: n });
       const p = await G((a) => window.KFB_GEM.perf(a), { view, frames: 60 });
       report[`perf_${n}_${view}_${mood}`] = p; console.log(n, view, mood, JSON.stringify(p));

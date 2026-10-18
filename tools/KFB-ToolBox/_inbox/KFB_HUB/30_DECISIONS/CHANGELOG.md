@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-465 Szenen-Packs kfb.scene-pack/1 (Inventur: ~13 Formate im Resident Atlas S17/#369/Performance; Spec SPEC_SCENE_PACK_R1). Lizenz-Befund: ALLE KayKit-Pakete inkl. Mystery Series, Character Animations und Dungeon Legacy sind laut beiliegender License.txt CC0 → Hub-Frage an Georg, ob die Privat-Regel für KayKit fällt.
 - V-464 Spielzeugsoldaten: Original-Hut mit großer Nummer (Stern oder Kreis), royales Blau, Gewehr-Marsch, Aufziehschlüssel, Trupp Nr. 1–6 wie die Daltons mit Kommando-Triplets; Schirmmütze = Verkehrspolizist. Spec NPC-Patrouillen/Begegnungen/POIs (Fahrplan + Spieler-Umfeld). WSB B11 r3.
 - WSA-Audio-Update b116 für den laufenden Chat: Reihenfolge b114 → b113 → b115, ElevenLabs-Sets, Ablage-Regeln (öffentlich nur CC0/eigen/ElevenLabs; Sonniss/400 Sounds/NC nur per Manifest aus Dropbox), kein neues Repo.
 - V-463 Slice Kayfabrick-Bots + Fluff-Kreislauf + Utopia-Baustelle → WSB B31 (32. Nachtrag): 6 Farben × Helm, abgenutzt in Knete, Arbeits-Clips (rollen/Sisyphos, tragen, schieben), Lorekeeper rollt mit, Gerüst-Baukasten aus KayKit um Monumente.

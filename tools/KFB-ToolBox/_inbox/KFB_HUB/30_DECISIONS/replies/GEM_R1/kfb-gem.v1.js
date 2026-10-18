@@ -62,7 +62,7 @@ export const VERSION = 'kfb-gem.v1';
 export const STATES = Object.freeze(['idle', 'active', 'moving', 'captured']);
 export const SHATTER_DURATION = 1.2;           // s, captured -> gone
 export const PULSE_HZ = 0.2;
-export const MAX_SPANS = 32, MAX_ROWS = 64, PROFILE_BINS = 24;
+export const MAX_SPANS = 32, MAX_ROWS = 64, PROFILE_BINS = 16;
 export const GEM_PRESETS = Object.freeze({
   // tint = colour at the surface / thin parts, depthTint = colour after ~half a piece height of travel, vein = glow colour
   ruby: Object.freeze({ tint: '#d2465e', depthTint: '#8a1428', vein: '#ffc27a', body: 0.13, veinGlow: 1.0 }),
@@ -130,7 +130,7 @@ varying vec3 vGemM0; varying vec3 vGemM1; varying vec3 vGemM2; varying float vGe
 `;
 const VERT_MAIN = /* glsl */`
 vGemPos = transformed; vGemN = objectNormal; vGemInfo = kfbGem;
-vGemEye = (inverse(modelMatrix) * vec4(cameraPosition, 1.0)).xyz;
+{ mat3 gm = mat3(modelMatrix); vGemEye = (transpose(gm) * (cameraPosition - modelMatrix[3].xyz)) / dot(gm[0], gm[0]); }   // rotation x uniform scale (KFB pieces); no per-vertex inverse()
 vGemM0 = modelMatrix[0].xyz; vGemM1 = modelMatrix[1].xyz; vGemM2 = modelMatrix[2].xyz;
 vGemSeed = fract(sin(dot(modelMatrix[3].xz, vec2(12.9898, 78.233))) * 43758.5453);
 `;
@@ -205,12 +205,16 @@ const FRAG_INTERIOR = /* glsl */`
   vec3 org = P + dir * 0.002 * H;
   vec3 thr = vec3(1.0 - F), inner = vec3(0.0);
   float firstLen = 0.35 * H;
-  for (int b = 0; b < 2; b++) {
+  for (int b = 0; b < GEM_BOUNCES; b++) {
     if (max(thr.r, max(thr.g, thr.b)) < 0.015) break;
     float nearest = 1e5; vec3 bnd = -N;
     for (int j = 0; j < GEM_MAX_SPANS; j++) {
       if (j >= nSpans) break;
       vec4 sp = texelFetch(uGemProfiles, ivec2(j + 1, row), 0);
+      if (abs(dir.y) > 1e-4) {                                  // cheap reject: the ray's height band must reach this span in [0, nearest]
+        float ta = (sp.y - org.y) / dir.y, tb = (sp.w - org.y) / dir.y;
+        if (max(ta, tb) < 0.0 || min(ta, tb) > nearest) continue;
+      } else if (org.y < min(sp.y, sp.w) - 1e-4 * H || org.y > max(sp.y, sp.w) + 1e-4 * H) continue;
       float dy = sp.w - sp.y;
       if (abs(dy) < 1e-5 * H) {
         if (abs(dir.y) > 1e-5) {
@@ -275,7 +279,7 @@ function makeBundle(THREE, key, p) {
     uGemLook: { value: new THREE.Vector4(p.facet ?? 0.88, p.interior ?? 1.5, 0, p.innerGlow ?? 0.05) },
     uGemSkyTop: { value: new THREE.Color('#b4bdee') }, uGemSkyBot: { value: new THREE.Color('#8a7f72') },
   };
-  const variants = new Map();
+  const variants = new Map(), bounces = p.quality === 'high' ? 2 : 1;   // game: 1 traced internal bounce + blurred tail; high (proof stills): 2
   const bundle = { key, params: p, shared, variants, users: 0, clones: new Set() };
   bundle.make = (state, own = false) => {
     if (!own && variants.has(state)) return variants.get(state);
@@ -285,12 +289,13 @@ function makeBundle(THREE, key, p) {
     const stateU = { value: new THREE.Vector4(...STATE_U[state]) };
     m.onBeforeCompile = (sh) => {
       Object.assign(sh.uniforms, shared, { uGemState: stateU });
+      sh.fragmentShader = '#define GEM_BOUNCES ' + bounces + '\n' + sh.fragmentShader;
       sh.vertexShader = sh.vertexShader.replace('#include <common>', '#include <common>\n' + VERT_PARS).replace('#include <begin_vertex>', '#include <begin_vertex>\n' + VERT_MAIN);
       sh.fragmentShader = sh.fragmentShader.replace('#include <clipping_planes_pars_fragment>', '#include <clipping_planes_pars_fragment>\n' + FRAG_PARS)
         .replace('#include <normal_fragment_maps>', '#include <normal_fragment_maps>\n' + FRAG_NORMAL)
         .replace('#include <opaque_fragment>', FRAG_INTERIOR + '\n#include <opaque_fragment>\ngl_FragColor.a *= uGemState.w;');
     };
-    m.customProgramCacheKey = () => VERSION;
+    m.customProgramCacheKey = () => VERSION + '|b' + bounces;
     m.userData.kfbGem = { version: VERSION, key, state, stateU };
     if (own) bundle.clones.add(m); else variants.set(state, m);
     return m;
@@ -299,7 +304,7 @@ function makeBundle(THREE, key, p) {
   return bundle;
 }
 function bundleFor(THREE, p) {
-  const key = [p.tint, p.depthTint, p.vein, p.veins ? 1 : 0, p.body, p.density ?? 1].join('|');
+  const key = [p.tint, p.depthTint, p.vein, p.veins ? 1 : 0, p.body, p.density ?? 1, p.quality || 'game'].join('|');
   const R = registry(THREE);
   return R.bundles.get(key) || makeBundle(THREE, key, p);
 }
