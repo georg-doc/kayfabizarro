@@ -3,6 +3,56 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 79 · 18.10. nachts · Stand C1/C2/C3 · WS0-Antworten gelesen · **Bitte: Dropbox fehlt auf dem WS1-Mac**
+
+**C1 Kamera** (Bewegungs-Sitzung, `c1/kamera`):
+- Jitter PASS: Laufen 0/0,30 px, Fahren 0,09/0,88 px bei 60 fps und 0,08/0,80 px bei 30 fps, Hochpass ≤ 0,27 px.
+- Orbit PASS: 360° stehend und fahrend × 60/30 fps, größter Schritt ≤ 1,1 × Median.
+- God PASS: Zoom zum Cursor 0 % Abweichung.
+- Der Clip zeigte einen Fehler: Die Ich-Perspektive war per Rad nicht erreichbar (Zoom blieb bei 0,55). Der Fix läuft, danach ein neuer Clip.
+- Dazu der Interpolations-Fix am Auto (Ruckeln).
+
+**C2 Aliens + V-429** (`c2/ein-rig` @d6a2d71, lokal):
+- `test/c2.mjs` PASS:
+  - beide Figuren aus Karte + Loader, sha256 im Browser = edge80;
+  - je Auge 1 `lid_skin`, v6-Schalen 0;
+  - Passung Hunky 0,973, Dory 0,897;
+  - **Pupille bei geschlossenem Lid 0 px aus 7 Blickwinkeln**.
+- Dory ist einäugig (Rezept `singleEye`), der Test berücksichtigt das.
+- Licht-Test PASS mit den neuen Prüfungen: Körperteile der Figuren werfen und empfangen Schatten; keine Eigenbau-Lampen.
+- `b1` und `unit-figures` PASS.
+
+**C3 Fluff-Ernte sichtbar** (`c3/ernte`, lokal, enthält C2):
+- Erster Browser-Lauf `test/c3.mjs`: 13/14 PASS.
+  - 15 Bäume, 185 Kugeln (goblin 59 / atlantis 63 / utopia 63).
+  - Treffer Ø Faust 2,4, Schuss 2,4, Explosion 1, je Baum innerhalb der Zähigkeit ±1.
+  - Ruhe Ø 1,8 s, max 2,6 s.
+  - **Einsinken 0** gegen das gerenderte Geländenetz.
+  - Alle 185 gesammelt, Zähler je Sorte stimmen, kfb.save/1 gespeichert.
+  - Modul-update 0,008 ms.
+- Die eine Lücke war ein Testfehler (Projektil-Ziel), behoben.
+- **Befund im Bild:** Die Bäume waren weiß. Der Forest-Pack-Pin zeigte auf einen Commit ohne `forest_texture.png` (404). Umgepinnt auf 54b9bb66, Test prüft jetzt die Texturen.
+- Wiederholung, Knet-Video und volle Testreihe folgen, sobald der Browser frei ist (C1 hat ihn gerade).
+
+**WS0-Antworten (18.10.) übernommen:**
+- Grammatik (a) Kontur 0,85×/1,25× statt 0,92×;
+- (c) kahle Bäume ohne Fluff (ist schon so);
+- (d) 0,616 m;
+- keine neuen raw/main-Links (der Forest-Pin ist ein fester Commit);
+- HUD R5f nach dem C3-Video;
+- danach **C3b Fundsachen-Demo** (Priorität), clay v1.1 und Lampen r3.
+
+**Bitte an WS0 / Georg (blockiert):**
+- Auf diesem Mac gibt es **kein Dropbox** (`~/Dropbox/CLAUDE/KFB_HUB` fehlt). Deshalb kann ich `hub:`-Pfade aus `PROOF_STAGE_R1/sources.json` nicht lesen: B9 (C4), B22-Lampen r3, B28-Fundsachen + `loot_items.r1.json`, Dory r9.
+- Vorschlag:
+  - **Öffentliches** (B22 r3, B28, loot table) auf einen Asset-Branch legen.
+  - Für **Privates** (B9, Dory r9) entweder Dropbox auf diesem Mac einrichten (Georg, einmalig) oder einen privaten Weg nennen.
+- Bis dahin:
+  - C3b mit den KayKit/Tiny-Treats-Originalen (FREE, auf main) + clay v1.1, wie WS0 erlaubt;
+  - Dory bleibt edge80;
+  - Lampen weiter aus;
+  - C4 wartet.
+
 ## 78 · 18.10. nachts · Merge nach main (Georg V-430) · Langlauf R2 läuft: C1 (Bewegung), V-429 + C2 + C3 (Owner) auf Branches
 
 **Merge:**
