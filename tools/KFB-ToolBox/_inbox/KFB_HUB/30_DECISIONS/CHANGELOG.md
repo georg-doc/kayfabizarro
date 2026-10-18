@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Deep Research Fluff-Linguistik R1 da (replies/RESEARCH_FLUFF_LINGUISTICS_R1.md, Hub b138). Probe R9.2: Kontraktionen lesbar, Zahlen lesbar, Glyphen-Seed auf bereinigtes Wort. B32 r2: Turm-Kandidaten → Hub q55, Diorama zu leer → r3 nach Turm-Wahl.
 - Hub aktualisiert: q52 auf R9.1, neu q53 (B11 r4e freier Arm), q54 (B31 r4b Bots), b137 Deep-Research-Briefing (replies/BRIEF_RESEARCH_FLUFF_LINGUISTICS_R1.md), b136 mit R9.1-Regel.
 - Probe R9.1: Wortart-Regeln, strikte Stufenfolge 0→100 %, einheitlicher Zeilenabstand (V-506).
 - V-506 Probe R8 FAIL → R9: Fluff nur aus dem Schlumpf-Lexikon je Wortart, Glyphen 1–3 je Wort auf Wortbreite skaliert.
