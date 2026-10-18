@@ -7404,6 +7404,21 @@
    "applies": "laufend"
   },
   {
+   "id": "V-527",
+   "date": "2026-10-18",
+   "area": "Video",
+   "verdict": "RULE",
+   "text": "WSV als eigene Claude-Code-Sitzung „Video- & Motion-Studio“ (Georg 18.10.): Remotion (React + Three.js-Baustein für unsere 3D-Szenen) + HyperFrames + HeyGen-Videoproduktion (Video Agent, Seedance/Veo; keine Avatare); Werkzeuge, Workflows und Lessons Learned additiv persistiert (Projekt-Skill .claude/skills/kfb-video/, KFB_HUB/60_VIDEO/LESSONS.md, Bausteine components/) für die produktiven Slices; zuerst auf Georgs Mac, später ggf. Mac mini. Gründungsbriefing replies/VIDEO_R1/BRIEF_WSV_VIDEO_STUDIO_R2.md: S0 Einrichtung + Lizenz, S1 Pharaoh-Mumien-Duett 30 s, S2 Karten-Promo-Baustein, S3 HeyGen P1/P3 nach MCP-Einrichtung.",
+   "values": {},
+   "owner": "WSV (neu) · WS0 (Steuerung)",
+   "check": "Hub (Video + Standbilder)",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Video-Wissen an einem Ort sammeln und wiederverwenden.",
+   "applies": "WSV S0"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7491,7 +7506,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:879",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:880",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
