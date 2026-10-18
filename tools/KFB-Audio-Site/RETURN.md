@@ -1,3 +1,9 @@
+# CURRENT · WOOD DEFAULT / CARPET / SUPPLIED FOOTSTEP BANKS · 2026-10-18
+
+Georg accepted 0.7.5 contact timing, rejected subjective level balance, and chose Wood as reference. Same private Audio Site v16 / visible 0.7.6 is Chrome verified: Wood default, carpet experiment, 32 imported steps + separate creak, 13 selectable surfaces, one host context. 1067 assertions PASS; new sound/levels NOT HUMAN_ACCEPTED. Audio-owned game seam prepared; no World installation. Exact [current Return](WSA_FOOTSTEPS_WOOD_CARPET_RETURN.md). Next gate: WS0 current Wood/carpet listening review.
+
+---
+
 # CURRENT · SAND + LEVEL MATCH + FIRST WALK CONTACT · 2026-10-18
 
 Georg TUNE: softer Sand without large surface-level differences; Walk contact correction. Existing Site saved v15 / visible 0.7.5, authenticated Chrome verified. 401 assertions PASS; no human acoustic acceptance. Exact [current Return](WSA_FOOTSTEPS_SAND_WALK_RETURN.md), current four-surface clip linked there. Next gate: WS0 listens to current comparison.

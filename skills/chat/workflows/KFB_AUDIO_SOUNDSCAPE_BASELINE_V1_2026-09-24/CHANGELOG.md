@@ -137,3 +137,12 @@ Existing Audio Site updated in place to version 13 / source 0.7.3; published sou
 - Softer sand from retained CC0 donors, fixed-window post-shaping energy matching, grounded first-support Walk preview.
 - 401 assertions PASS; 30-contact current clip. Human perceived sound/AV remains open.
 - Owner Return tools/KFB-Audio-Site/WSA_FOOTSTEPS_SAND_WALK_RETURN.md; next WS0 current comparison review. No Hub/World writes.
+
+
+## 2026-10-18 · Wood default / carpet / supplied Footsteps
+
+- Same private Audio Site v16, source 0.7.6, managed 4444d29751de8bb24bd007f4abbc7289ac202cde; authenticated Chrome verified.
+- Wood reference; softer Wood-derived carpet; 32 real new step takes + one separate creak; 33/33 original-author archive hashes, custom Chequered Ink licence (NOT CC0).
+- Accepted contact algorithm unchanged; 1067 assertions, 13 actual surface controls, current linked 30-contact comparison.
+- Audio-owned DOM-free game consumer ready, not installed in World. Cold first bank load remains a UX limitation; new subjective sound acceptance open.
+- Exact owner Return tools/KFB-Audio-Site/WSA_FOOTSTEPS_WOOD_CARPET_RETURN.md; next WS0 listening review; no Hub/World writes.

@@ -116,7 +116,7 @@ export async function command(action,arg){
  if(action==='reset'){generation++;stop();timeline.reset();events.length=0;actions.length=0;frameGaps.length=0;log('reset');return;}
  if(action==='export'){download(new Blob([JSON.stringify(snapshot(),null,2)],{type:'application/json'}),'kfb-footsteps-contact-fix-evidence.json');return;}
  const request=generation;
- if(action==='play'||action==='demo')$('footStop').disabled=false;
+ if(action==='play'||action==='demo'||action==='creak')$('footStop').disabled=false;
  await init();
  if(request!==generation)return;
  if(action==='inspect'){stop();status('Original '+figure+' source isolated · audio off');}
@@ -133,7 +133,7 @@ export async function command(action,arg){
  }
  if(action==='jump'&&playing&&!jump&&clips.Jump_Idle&&clips.Jump_Land){jump={start:host.ctx.currentTime};timeline.support(false,jump.start,$('footSurface').value);setMode('air');}
  if(action==='record'&&audio)recording?stopRecording():startRecording();
- if(action==='creak'){await enableAudio(arg);audio.arm();audio.play({kind:'creak',surface:'creak',time:host.ctx.currentTime+.03,key:'manual-creak:'+host.ctx.currentTime});status('Knarren · einzelner Akzent, kein Schritt');}
+ if(action==='creak'){await enableAudio(arg);if(request!==generation)return;audio.arm();const accent=audio.play({kind:'creak',surface:'creak',time:host.ctx.currentTime+.03,key:'manual-creak:'+host.ctx.currentTime});if(accent)events.push(accent);status('Knarren · einzelner Akzent, kein Schritt');}
  log(action+(typeof arg==='string'?':'+arg:''));
 }
 document.addEventListener('visibilitychange',()=>{if(document.hidden){generation++;stop();renderMetrics();}});
