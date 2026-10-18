@@ -6729,6 +6729,36 @@
    "applies": "R1a nach Volltest"
   },
   {
+   "id": "V-482",
+   "date": "2026-10-18",
+   "area": "Worldbuilder",
+   "verdict": "RULE",
+   "text": "Das Schiff von Hunky & Dory heißt C.O.M.I.C. (Consciousness-Operated Metaphysical Infinite Canvas; Hub q40, Quelle CTC-Instruction-Sets) – mit TARDIS-Logik: über das UFO-Cockpit sind beliebige Räume/Dungeons betretbar (je Raum ein Szenen-Pack, Cockpit als Knoten, V-465). Norman und der Brain-Cyborg (B10) tauchen kontextuell auf; Norman schwebt für absurde Experimente in einem schwebenden Glastank (Wassertreten/Floating-Schleife, Mixamo über Georg) – POI für Hunkys Experimente. Glastank in WSB B34. Offen: CTC sagt, FrizzleBob hat die C.O.M.I.C. gebaut.",
+   "values": {},
+   "owner": "WS0 (Spec) · WSB (B34 Tank) · WS1 (Raum-Knoten)",
+   "check": "Bord-Diorama-Abnahme",
+   "source": "Hub q40",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Name und Raum-Logik aus Georgs Kanon; TARDIS-Knoten macht das Cockpit zum Tor für Szenen-Packs.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-483",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Text-Studio als Tab im Production Hub (Hub q41 Go, Reihenfolge wie empfohlen): (1) Lyrics-Editor mit Karten-Markierung je Zeile + Kritiker-Knopf (LLM-Aufruf mit SONG_CRITIC-Vorlage), (2) Style-Pool + NPC-Sätze, (3) Stimmen-Tab zuletzt. Kein neues Tool (V-390); die Gates song_gate.py und triplet_set_check.py bleiben die verbindliche Prüfung. Dazu Hub q42: Fluff-Transport Station → Utopia nur andeuten (1-s-Stationseffekt, V-480 bestätigt).",
+   "values": {},
+   "owner": "WS0 (Bau)",
+   "check": "Text-Studio-Tab Stufe 1 im Hub",
+   "source": "Hub q41, q42",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg will Texte selbst führen; Tab im Hub statt neuem Werkzeug, Gates bleiben Schiedsrichter.",
+   "applies": "Stufe 1 jetzt"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6816,7 +6846,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:833",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:834",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -29,7 +29,11 @@ Keine neue Plattform und kein neues Tool (V-390). Wiederverwendet werden:
 - Hat surreale Hobbys: kocht absurde, exotische Gerichte, malt an der Staffelei, züchtet absurde Pflanzen.
 - Warm, fragend, „mercy outranks protocol“ (HD-Blatt).
 
-**Offen für Georg:** Ist „Opus“ der Name des Schiffs? So stand es in der Spracheingabe. Bis zur Antwort steht hier „das UFO“.
+**Das Schiff heißt C.O.M.I.C.** (Hub q40, Georg): *Consciousness-Operated Metaphysical Infinite Canvas*. Quelle: `gvw/VaultGvW/cancel_this_planet/ctc_instruction_sets_a_o_v1.md` (dort von FrizzleBob mit Quantumund und Mizzie gebaut); in den Golden-Strips „Inside the C.O.M.I.C. cockpit / psyop control room“.
+- **TARDIS-Logik:** Das Cockpit ist die Tür zu beliebigen Räumen, Dungeons usw. Alles ist durch das UFO-Cockpit betretbar, innen größer als außen. Das passt zu den Szenen-Packs (V-465): Jeder Raum ist ein eigenes Pack, das Cockpit ist der Knoten.
+- **Gäste je nach Kontext:** Norman und der Brain-Cyborg (B10) tauchen kontextuell auf.
+- **Norman im Glastank:** Norman schwebt für absurde Experimente in einem schwebenden Glastank (Wassertreten bzw. Floating-Schleife, Mixamo). Der Tank ist ein POI für Hunkys Experimente.
+- [OFFEN] Laut CTC-Text hat FrizzleBob die C.O.M.I.C. gebaut, geflogen wird sie von Hunky & Dory. Ob das ein Kanon-Knoten ist (gestohlen, geerbt, gehackt), entscheidet Georg bei Gelegenheit.
 
 ## 2 · Raum
 - **UFO-Cockpit-Bühne:** Fassung A (Meshy), Maßstab 8 m pro Einheit, Monitor als Bildfläche (V-259). Auf dem Monitor laufen Karten, Reports und Hypernormalisation-Loops (V-256).
@@ -55,7 +59,7 @@ Jeder POI hat:
 |---|---|---|---|
 | Hunky | Navigationskonsole bedienen, Steuerung checken | Cockpit-Konsole der UFO-Bühne | Reports am Monitor ablesen |
 | Hunky | Maschine flicken (DIY, Fluff-Pflaster) | B31-Werkzeuge, Fluff-Ballen, Schraubenschlüssel | am Rumpf außen werkeln |
-| Hunky | Bizarres Experiment | B32-Alchemie-Kolben, Glaskugeln, blubbernde Flasche | Strahl-Experiment |
+| Hunky | Bizarres Experiment | B32-Alchemie-Kolben, Glaskugeln, blubbernde Flasche; **schwebender Glastank mit Norman** (q40) | Strahl-Experiment |
 | Dory | Kochen: absurde Suppen und exotische Gerichte | Herdplatte mit glühender Kochstelle, Topf mit Dampf; Kessel-Logik aus B32 | Gewürzregal |
 | Dory | Malen an der Staffelei | Staffelei mit Leinwand, darauf eine Karte als Motiv (Bildflächen-Modul) | Galerie |
 | Dory | Absurde Pflanzen züchten (Alien-Garten, V05) | Pilze und Pflanzen aus Halloween-/Natur-Kits, psychedelisch eingefärbt (V-467) | wachsende Pflanze |

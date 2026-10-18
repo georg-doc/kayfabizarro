@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Hub q40 → V-482 Schiff C.O.M.I.C. (TARDIS-Räume, Norman im Glastank, Brain-Cyborg); q41 → V-483 Text-Studio Go (Stufe 1 Lyrics + Markierung + Kritiker); q42 Transport nur andeuten.
 - V-480 Fluff-Kreislauf (Station → Utopia → Plastik-Bauteile → Destruction → Fluff), Ton fluff_economy_r1. V-481 Tempo-Stufen + Fahrzeug-Rigging (kfb-vehicle-rig.json bestätigt), Ton propulsion_r1, B35 vorgezogen, B36 Garage; Rohmodelle Dieselpunk II im Privat-Manifest. Hub q40–q42 offen.
 - Hub q39 B31 TUNE → V-478 (Kopf-Textur, Augenrahmen in Fluff-Farbe, Werkzeug-Slot) und V-479 Fluff-Saugarm (SPEC_FLUFF_SUCTION_R1; ElevenLabs-Set fluff_suction_r1 erzeugt, 14 Takes, ~19 s ≈ 750 Credits). WSB B31 r3 sofort (37. Nachtrag).
 - V-477 Rust Runner II + Rustwing Cruiser II → WSB B35 (36. Nachtrag); Abnahme-Bühne v1.2.3 Augen je Figur in Mehrfiguren-Dateien (B31-Demo G1 4/4). Hub q39 B31 Bots + Baustelle zur Abnahme.
