@@ -54,6 +54,10 @@
  *     gem.setEnvironment(renderer, mood, { ground })   = setGemEnvironment for all gems of this THREE
  *   setGemEnvironment({ THREE, renderer, mood, ground })  mood = kfb-stage-light moodAt(tod, MOODS_MESA) (or a MOODS entry)
  *   gemPresetForSide(side)   'white' | 'light' -> 'ruby', 'black' | 'dark' -> 'sapphire'
+ *   options: quality 'game' (default: 1 traced internal bounce + the blurred Morph Chess tail) | 'high' (2 bounces, stills only);
+ *            facet, interior, body, veinGlow, innerGlow, density, roughness (look tuning; defaults = presets)
+ * Cost (GEM_R1 probe, M1 Max, headless ANGLE/Metal, warm GPU, 1600 x 1200, 32 pieces): about +3.9 ms GPU per frame when the gems cover
+ *   13 % of the frame (vs. MeshStandardMaterial on the same meshes), about +2.5 ms in the full board view (1.3 % coverage).
  * Sharing: every state variant (idle / active / moving) of a colour is one material shared by all pieces in that state; all
  * gem materials compile to ONE program (customProgramCacheKey). Per-piece variation (pulse phase) comes from the object's
  * world position and the geometry attribute, never from per-object uniforms.

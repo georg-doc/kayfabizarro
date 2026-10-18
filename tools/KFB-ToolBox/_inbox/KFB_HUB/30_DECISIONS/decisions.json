@@ -6489,6 +6489,51 @@
    "applies": "Spec jetzt, Umsetzung nach den laufenden Slices"
   },
   {
+   "id": "V-466",
+   "date": "2026-10-18",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Duo-Prinzip (Georg 18.10.): Figuren treten im Zweifel als Duo in zwei Farbvarianten auf (Zwillinge, Schwestern, verlorener/abtrünniger Zwilling wie 4GTN/Forgotten, Mumien A/B), werden zusammen gestaltet und spielen zusammen in Szenen; erleichtert mehrere Stimmen in den Tracks. KayKit liefert dafür Textur B (Hexe, Ork Raider, Ork Brute – blau-weiße Variante für Brute und Medium-Ork ausdrücklich gewünscht).",
+   "values": {},
+   "owner": "WSB · WSA (Charakterblätter) · Writers Room",
+   "check": "Duo-Bögen je Figur",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Duos geben Szenen Dynamik und den Songs mehrere Stimmen; die Farbvarianten liegen schon vor.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-467",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Hexen-Duo + Fluff-Alchemie (Georg 18.10.; V-368): zwei Hexen (Textur A/B) als Meta-Spielfiguren an einer Alchemie-Station (Trankbank, Mörser, Besen, Tränke, Körbe leer/voll mit Pilzen, Hexentürme als Miniatur-Requisiten); Hexenkessel auf Holz-Lagerfeuer mit Flammenanimation, köchelt dauerhaft; Fluffkugeln werden hineingeworfen, um fehlende Karten eines Decks zu synthetisieren, in dem man schon eine Karte hat (Rezept nach V-368). Erreichbarkeit: Reise oder Teleport, später entscheiden. Pilze mit psychedelischer Rolle: Zutat für Experimente und veränderte Wahrnehmung (psychedelischer Shader für ein paar Minuten, WoW-Logik), analog zur Sonnenbrille à la „Sie leben“ (Billboards zeigen anderes) – als Gimmick/Minispiel.",
+   "values": {},
+   "owner": "WSB (B32 Assets) · WS1 (Kessel-VFX, Alchemie-Logik, Pilz-Shader später) · WS0 (Rezept-Spec)",
+   "check": "Bögen Hexen-Duo + Station; Kessel-Probe",
+   "source": "Georg 18.10. · V-368",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Hexen verankern den Fluff-Kreislauf als Spielziel; Pilze und Kessel bringen Ritual und Gimmick.",
+   "applies": "WSB jetzt, Spiel später"
+  },
+  {
+   "id": "V-468",
+   "date": "2026-10-18",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Friedhofs-Diorama (Georg 18.10.): aus KayKit Halloween Bits, organischer und lebhafter als die bisherige Resident-Szene (graveyard-01: 4 tanzende Skelette), im Miniatur-Diorama-Look mit Knete, Platzierung unregelmäßig (V-456), Anker für die Skelett-Szene; späteres Szenen-Pack (V-465).",
+   "values": {},
+   "owner": "WSB (B33) → WS1 / Pack",
+   "check": "Diorama-Bogen",
+   "source": "Georg 18.10. · V-465",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Halloween Bits liefern alles für ein lebendiges Friedhofs-Diorama; die Skelett-Szene gibt es schon.",
+   "applies": "nach B32"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6576,7 +6621,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:822",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:823",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
