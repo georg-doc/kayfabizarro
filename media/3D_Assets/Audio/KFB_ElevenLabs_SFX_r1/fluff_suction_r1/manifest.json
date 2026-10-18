@@ -1,0 +1,220 @@
+{
+ "set": "fluff_suction_r1",
+ "runs": [
+  {
+   "at": "2026-10-18T06:07:50",
+   "results": [
+    {
+     "id": "S01_suck_start_a",
+     "ok": true,
+     "file": "S01_suck_start_a.mp3",
+     "bytes": 20105,
+     "sha256": "152a7378b9f04c096423c653fd4aac1e4009a956d795917b96314c4df1f75287",
+     "cost_header": "12",
+     "request": {
+      "text": "small robot vacuum arm revving up, rising airy whoosh with a soft mechanical whirr, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.2
+     }
+    },
+    {
+     "id": "S01_suck_start_b",
+     "ok": true,
+     "file": "S01_suck_start_b.mp3",
+     "bytes": 20105,
+     "sha256": "a94f6cbf0d77df1a4c6b4265c24f1955460b182fcee0e1f9fce52e11bace3e4a",
+     "cost_header": "12",
+     "request": {
+      "text": "small robot vacuum arm revving up, rising airy whoosh with a soft mechanical whirr, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.2
+     }
+    },
+    {
+     "id": "S02_suck_loop_a",
+     "ok": true,
+     "file": "S02_suck_loop_a.mp3",
+     "bytes": 48944,
+     "sha256": "20018d26d1dfc8ac5e70a6ee465d8666ab58eb724ad37583fab7969e96d3f11c",
+     "cost_header": "30",
+     "request": {
+      "text": "steady airy vacuum suction hum from a small robot arm nozzle, gentle wobble, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 3.0
+     }
+    },
+    {
+     "id": "S02_suck_loop_b",
+     "ok": true,
+     "file": "S02_suck_loop_b.mp3",
+     "bytes": 48944,
+     "sha256": "b8c4d534ecd047ecf232d69f037f139994fe0363827561125e1497c0c485d952",
+     "cost_header": "30",
+     "request": {
+      "text": "steady airy vacuum suction hum from a small robot arm nozzle, gentle wobble, seamless loop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 3.0
+     }
+    },
+    {
+     "id": "S03_pop_tree_a",
+     "ok": true,
+     "file": "S03_pop_tree_a.mp3",
+     "bytes": 17179,
+     "sha256": "17173f9e5b5aa67b70e7fd43cbea086870ef6b7d3994dcd3a3dd5fd7e92bedd3",
+     "cost_header": "10",
+     "request": {
+      "text": "soft fluffy ball stretching like rubber then popping off a tree branch, squeaky stretch and a cork-like plop, leaves rustle, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.0
+     }
+    },
+    {
+     "id": "S03_pop_tree_b",
+     "ok": true,
+     "file": "S03_pop_tree_b.mp3",
+     "bytes": 17179,
+     "sha256": "907a317bab3103f146fe7b51fd4d5379022a78857f9b80971990fcd9e7440dd6",
+     "cost_header": "10",
+     "request": {
+      "text": "soft fluffy ball stretching like rubber then popping off a tree branch, squeaky stretch and a cork-like plop, leaves rustle, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.0
+     }
+    },
+    {
+     "id": "S04_pop_ground_a",
+     "ok": true,
+     "file": "S04_pop_ground_a.mp3",
+     "bytes": 17179,
+     "sha256": "1b2e38d7e5e9b4ce4f5e3fc124080aa180d5ce38f11b3f7a308518e7973746b3",
+     "cost_header": "10",
+     "request": {
+      "text": "soft fluffy ball stretching out of soft earth then popping free, muddy squelch and a cork-like plop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.0
+     }
+    },
+    {
+     "id": "S04_pop_ground_b",
+     "ok": true,
+     "file": "S04_pop_ground_b.mp3",
+     "bytes": 17179,
+     "sha256": "afa9596ad4c4d78de77fa39317b2a9fc5d4c08e7cfb90dadcae15eb4ee18c6e0",
+     "cost_header": "10",
+     "request": {
+      "text": "soft fluffy ball stretching out of soft earth then popping free, muddy squelch and a cork-like plop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.0
+     }
+    },
+    {
+     "id": "S05_pop_water_a",
+     "ok": true,
+     "file": "S05_pop_water_a.mp3",
+     "bytes": 20105,
+     "sha256": "f3846a27674f27d98cf5a6bb6a31418320cb55b96598d8cd3d8fb82ec40c5c4e",
+     "cost_header": "12",
+     "request": {
+      "text": "soft fluffy ball stretching out of water then popping free, wet slurp, droplets splash, cork-like plop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.2
+     }
+    },
+    {
+     "id": "S05_pop_water_b",
+     "ok": true,
+     "file": "S05_pop_water_b.mp3",
+     "bytes": 20105,
+     "sha256": "5aebba39b716500f2c1e4ccc27159a46b698c5f816c39cd118f696630555e5ac",
+     "cost_header": "12",
+     "request": {
+      "text": "soft fluffy ball stretching out of water then popping free, wet slurp, droplets splash, cork-like plop, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.2
+     }
+    },
+    {
+     "id": "S06_slurp_in_a",
+     "ok": true,
+     "file": "S06_slurp_in_a.mp3",
+     "bytes": 17179,
+     "sha256": "0dfe3c0e7820b59170757eaf71e5628fa3eedb81f18e1ce82c36421c289dcba1",
+     "cost_header": "10",
+     "request": {
+      "text": "stretched fluffy ball sucked into a vacuum tube, rubbery slurp travelling through a pipe, ends with a soft thunk, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.0
+     }
+    },
+    {
+     "id": "S06_slurp_in_b",
+     "ok": true,
+     "file": "S06_slurp_in_b.mp3",
+     "bytes": 17179,
+     "sha256": "5d8069db60a98432caed3851a45898dae6170eab2b86384a5ba33dfd4ede06fc",
+     "cost_header": "10",
+     "request": {
+      "text": "stretched fluffy ball sucked into a vacuum tube, rubbery slurp travelling through a pipe, ends with a soft thunk, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.0
+     }
+    },
+    {
+     "id": "S07_tank_full_a",
+     "ok": true,
+     "file": "S07_tank_full_a.mp3",
+     "bytes": 17179,
+     "sha256": "5efb1f416d079484da62f6dbd8f8519c9852035cab8880687bf0855f0cea3997",
+     "cost_header": "10",
+     "request": {
+      "text": "small robot fluff tank full, satisfied little mechanical burp and a soft bell ding, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.0
+     }
+    },
+    {
+     "id": "S07_tank_full_b",
+     "ok": true,
+     "file": "S07_tank_full_b.mp3",
+     "bytes": 17179,
+     "sha256": "b433061a964473bb242145f8e53bd3bac8ffc5802012fc20153d6fd9984bea70",
+     "cost_header": "10",
+     "request": {
+      "text": "small robot fluff tank full, satisfied little mechanical burp and a soft bell ding, cartoon clay world, comedic, warm and physical, dry, isolated, no music, no retro arcade or chiptune tones",
+      "model_id": "eleven_text_to_sound_v2",
+      "prompt_influence": 0.6,
+      "loop": false,
+      "duration_seconds": 1.0
+     }
+    }
+   ]
+  }
+ ]
+}
