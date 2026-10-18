@@ -16,6 +16,12 @@
  *                     model eyes listed in card.originals.remove are hidden by the stage.
  *   none            -> status 'NO_ANCHORS': the page shows the red label "KEINE AUGEN-ANKER", the export fails.
  *
+ * v1.2.3 (WS0 18.10., WSB B31 demo): several figures in one GLB. GLTFLoader makes duplicate node names unique (KFB_Eye_L_anchor ->
+ * KFB_Eye_L_anchor_1, _2 …), so anchors also match with a _N suffix. findEyeFigures() groups the anchors into figure subtrees (the highest
+ * node above an anchor whose anchors repeat no side); mountEyesAll() mounts one EyeRig v6 + E2 set per subtree (same card/defaults for
+ * each, host frame at the anchors when the subtree has no head bone) and returns one handle over all of them. One figure (or anchors that
+ * cannot be grouped) -> exactly mountEyes(root) as before.
+ *
  * Eye states (same table as E2_ATTACH_R1/proof.html): rest (v6 rest 0.12/0.06), half (0.5/0.5), closed (1/1). Gaze centre, no blink,
  * no life, no kinetics: a proof image is a still. Lid colour = card lid colour as is (WS0 16.10., V-417: no x0.72); without one the
  * v6 base-darkened colour. Lid material = kfb-clay v1.1 'character' (seed card id + ':lid'), like the figure.
@@ -33,8 +39,8 @@ export function findEyeSeat(figure, card) {
   const kfb = [], cleanup = [];
   figure.traverse((o) => {
     const n = o.name || '';
-    let m = /^KFB_Eye_([LRC])_anchor$/i.exec(n); if (m) kfb.push({ node: o, side: m[1].toUpperCase() });
-    m = /^eye_?anchor\.?([lr])$/i.exec(n); if (m) cleanup.push({ node: o, side: m[1].toUpperCase() });
+    let m = /^KFB_Eye_([LRC])_anchor(?:_\d+)?$/i.exec(n); if (m) kfb.push({ node: o, side: m[1].toUpperCase() });   // v1.2.3: _N = GLTFLoader duplicate suffix
+    m = /^eye_?anchor\.?([lr])(?:_\d+)?$/i.exec(n); if (m) cleanup.push({ node: o, side: m[1].toUpperCase() });
   });
   if (kfb.length) return { seat: 'kfb-anchor', anchors: kfb };
   if (cleanup.length) return { seat: 'eye-anchor', anchors: cleanup };
@@ -63,7 +69,7 @@ function rigOptions(card) {
 }
 
 const worldScale = (THREE, o) => { const s = new THREE.Vector3(); o.updateWorldMatrix(true, false); o.matrixWorld.decompose(new THREE.Vector3(), new THREE.Quaternion(), s); return (Math.abs(s.x) + Math.abs(s.y) + Math.abs(s.z)) / 3; };
-function findNode(root, name) { let hit = null; const k = SAN(name); root.traverse((o) => { if (!hit && SAN(o.name) === k) hit = o; }); return hit; }
+function findNode(root, name) { let hit = null; const k = SAN(name); root.traverse((o) => { if (!hit && SAN(o.name) === k) hit = o; }); if (!hit) root.traverse((o) => { if (!hit && SAN(o.name).replace(/_\d+$/, '') === k) hit = o; }); return hit; }   // v1.2.3: _N fallback
 function headBone(root) { let h = null; root.traverse((o) => { if (!h && o.isBone && /^head$/i.test(o.name)) h = o; }); return h; }
 
 /* Card radius for a KFB anchor, in world units. */
@@ -86,7 +92,7 @@ function kfbAnchorRadius(THREE, figure, card, a) {
  * opts: { card, applyClay (kfb-clay applyClay), clayRef (figure height, world), seed }
  * returns { status: 'OK'|'NO_ANCHORS'|'NO_RADIUS'|'ERROR', seat, reason, rig, skin, eyes(), setState(name), report }
  */
-export function mountEyes(THREE, figure, { card = null, applyClay = null, clayRef = 1.8, seed = 'kfb' } = {}) {
+export function mountEyes(THREE, figure, { card = null, applyClay = null, clayRef = 1.8, seed = 'kfb', anchorFrame = false } = {}) {
   const found = findEyeSeat(figure, card);
   if (!found.seat) return { status: 'NO_ANCHORS', seat: null, reason: found.reason };
   figure.updateMatrixWorld(true);
@@ -102,8 +108,15 @@ export function mountEyes(THREE, figure, { card = null, applyClay = null, clayRe
     radiusSrc = 'facehost + card eyeRig.settings.anchor (ring ' + (ro.anchor.ring ?? '-') + ')';
   } else {
     /* own host: a Group on the head bone (or the figure root) with an invisible proxy box named 'body' (the EyeRig contract) */
-    const bone = headBone(figure) || figure;
-    const inner = new THREE.Group(); inner.name = 'KFB_EyeHost'; bone.add(inner); inner.updateMatrixWorld(true);
+    const hb = headBone(figure), bone = hb || figure;
+    const inner = new THREE.Group(); inner.name = 'KFB_EyeHost'; bone.add(inner);
+    if (anchorFrame && !hb) {                                           // v1.2.3 multi-figure: no head bone -> host at the anchors' centre, turned to their gaze
+      const c = new THREE.Vector3(), p = new THREE.Vector3(), q = new THREE.Quaternion(), sc = new THREE.Vector3();
+      for (const a of found.anchors) c.add(a.node.getWorldPosition(p)); c.multiplyScalar(1 / found.anchors.length);
+      found.anchors[0].node.getWorldQuaternion(q); bone.getWorldScale(sc);
+      new THREE.Matrix4().compose(c, q, sc).premultiply(new THREE.Matrix4().copy(bone.matrixWorld).invert()).decompose(inner.position, inner.quaternion, inner.scale);
+    }
+    inner.updateMatrixWorld(true);
     const box = new THREE.Mesh(new THREE.BoxGeometry(1, 2, 1), new THREE.MeshBasicMaterial({ visible: false }));
     box.name = 'body'; box.castShadow = box.receiveShadow = false; box.userData.noMeasure = true; inner.add(box); inner.updateMatrixWorld(true);
     ro.anchor = { dx: 0.3, dy: 0, ring: 0.5, track: 0.15 };            // R = U·ring = 0.5 local; eyes are re-placed on the anchors below
@@ -166,4 +179,47 @@ export function mountEyes(THREE, figure, { card = null, applyClay = null, clayRe
     settings: { pupilStyle: ro.pupilStyle, pupilSize: ro.pupilSize, gloss: ro.gloss, inset: ro.inset, lidFit: ro.lidFit, anchor: found.seat === 'card-facehost' ? ro.anchor : 'seat from anchors' },
   });
   return { status: 'OK', seat: found.seat, rig, skin, host, eyes: visibleEyes, setState, report };
+}
+
+/* v1.2.3: figure subtrees with their own eye anchors. A figure root is the highest node above an anchor (below the file root) whose
+   anchors repeat no side (at most one L, one R, one C). Returns { multi, seat, figures: [{ root, anchors }] }; multi only with >= 2 groups. */
+export function findEyeFigures(root, card) {
+  const found = findEyeSeat(root, card), none = { multi: false, seat: found.seat, figures: [] };
+  if ((found.seat !== 'kfb-anchor' && found.seat !== 'eye-anchor') || found.anchors.length < 2) return none;
+  const under = (o, r) => { for (let n = o; n; n = n.parent) if (n === r) return true; return false; };
+  const dup = (node) => { const c = {}; for (const a of found.anchors) if (under(a.node, node)) { if (c[a.side]) return true; c[a.side] = 1; } return false; };
+  const groups = new Map();
+  for (const a of found.anchors) {
+    let top = null;
+    for (let n = a.node.parent; n && n !== root; n = n.parent) { if (dup(n)) break; top = n; }
+    if (!top) return none;                                              // anchor hangs directly under the root or under a mixed node: one figure, as before
+    if (!groups.has(top)) groups.set(top, []); groups.get(top).push(a);
+  }
+  if (groups.size < 2) return none;
+  return { multi: true, seat: found.seat, figures: [...groups].map(([r, anchors]) => ({ root: r, anchors })) };
+}
+
+/* v1.2.3: one EyeRig v6 + E2 set per figure subtree; a single figure goes through mountEyes(root) unchanged (byte-identical renders).
+   The multi handle has the mountEyes interface (status, seat, eyes(), setState(), report()) plus figures[] (one mountEyes handle each). */
+export function mountEyesAll(THREE, root, opts = {}) {
+  const F = findEyeFigures(root, opts.card);
+  if (!F.multi) return mountEyes(THREE, root, opts);
+  const figures = F.figures.map((f, i) => ({ index: i, name: f.root.name || 'figure_' + i, root: f.root, anchors: f.anchors.map((a) => a.node.name), h: mountEyes(THREE, f.root, { ...opts, anchorFrame: true }) }));
+  const ok = figures.filter((f) => f.h.status === 'OK');
+  const bad = figures.filter((f) => f.h.status !== 'OK');
+  const eyes = () => ok.flatMap((f) => f.h.eyes());
+  const setState = (name, frames) => { for (const f of ok) f.h.setState(name, frames); };
+  const report = () => {
+    const per = figures.map((f) => (f.h.status === 'OK' ? { figure: f.name, status: 'OK', ...f.h.report() } : { figure: f.name, status: f.h.status, reason: f.h.reason || null, anchors: f.anchors }));
+    const okR = per.filter((r) => r.status === 'OK');
+    return {
+      version: EYES_VERSION, seat: F.seat, multi: true, figureCount: figures.length, figuresOK: okR.length,
+      anchors: figures.flatMap((f) => f.anchors), radiusSource: okR[0]?.radiusSource || null,
+      eyes: okR.reduce((n, r) => n + r.eyes, 0), lidSkins: okR.reduce((n, r) => n + r.lidSkins, 0), v6ShellsVisible: okR.reduce((n, r) => n + r.v6ShellsVisible, 0),
+      fit: okR.flatMap((r) => r.fit), lidColour: okR[0]?.lidColour || null, aperture: okR.flatMap((r) => r.aperture), settings: okR[0]?.settings || null,
+      figures: per,
+    };
+  };
+  return { status: ok.length ? 'OK' : bad[0].h.status, multi: true, seat: F.seat, reason: bad.length ? bad.map((f) => `${f.name}: ${f.h.status} ${f.h.reason || ''}`.trim()).join(' · ') : null,
+    figures, eyes, setState, report };
 }

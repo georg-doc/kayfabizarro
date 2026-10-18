@@ -1,5 +1,9 @@
 /* KFB Proof Stage v1.2 · kfb.proof-stage/1 · the ONE acceptance stage (Abnahme-Bühne) for every workstation (WS0 PROOF_STAGE_R1, 18.10.2026)
  *
+ * v1.2.3 (WS0 18.10., WSB B31): several figures per GLB. Every subtree with its own KFB_Eye_* / eye_anchor.* anchors (GLTFLoader suffix
+ *   _1, _2 … allowed) gets its own EyeRig v6 + E2 set (kfb-proof-eyes mountEyesAll); all eye states apply to all of them. near_face frames
+ *   the main (tallest) figure; G1 measures every figure on its own (figure alone, camera along its gaze, rest; half/closed reported) and
+ *   passes only when all mounted figures pass (also for stage/prop files with >= 2 figures). Single-figure files are unchanged.
  * v1.2 = v1.1 + rig scale reference for --type stage and prop (Georg 18.10.: "a Medium-rig figure should plausibly walk through doors and
  *   entrances; a Large-rig figure would have to bend slightly"): 'scale_ref' shows two real figures in clay instead of the flat FrizzleBob
  *   silhouette: Medium = FrizzleBob (Rig_Medium), Large = a KayKit Rig_Large character (sources.json scale_ref), both at their bind-pose
@@ -40,7 +44,7 @@
  */
 import { createStageLight, createContactAO, applyTone, MOODS_MESA, SCHEMA as LIGHT_SCHEMA, VERSION as LIGHT_VERSION, castFrontFaces, fitAround, measureShadowSeam, sunDirection } from './vendor/kfb-stage-light.v1.1.js';
 import { applyClay, resolveProfile, SKIP_DEFAULT, VERSION as CLAY_VERSION } from './vendor/kfb-clay.v1.1.js';
-import { mountEyes, findEyeSeat, LID_STATES, EYES_VERSION } from './kfb-proof-eyes.v1.js';
+import { mountEyes, mountEyesAll, findEyeSeat, LID_STATES, EYES_VERSION } from './kfb-proof-eyes.v1.js';
 import { moodAt, createPracticals } from './vendor/kfb-stage-light.v1.1.js';
 /* GEM_R1 (V-460): nodes with glTF extras kfb.material = 'gem' skip clay and get kfb-gem.v1 (vendored from 30_DECISIONS/replies/GEM_R1) */
 import { createGem, setGemEnvironment, gemPresetForSide, VERSION as GEM_VERSION } from './vendor/kfb-gem.v1.js';
@@ -94,8 +98,8 @@ function eyeBounds(THREE, eyes) {
 }
 /* head region: vertices whose strongest bone is the head bone or a descendant (ear chains excluded) and that sit above the head bone
    (the neck pivot), plus rigid meshes under it and the eyes */
-function headBounds(THREE, root, eyes) {
-  let head = null; root.traverse((o) => { if (!head && o.isBone && /^head$/i.test(o.name)) head = o; });
+function headBounds(THREE, root, eyes, headRx = /^head$/i) {
+  let head = null; root.traverse((o) => { if (!head && o.isBone && headRx.test(o.name)) head = o; });
   if (!head) return null;
   const ok = new Set(); head.traverse((b) => { if (b.isBone && !/(^|[._])ear/i.test(b.name)) ok.add(b); });
   const box = new THREE.Box3(), v = new THREE.Vector3(); root.updateMatrixWorld(true);
@@ -205,7 +209,12 @@ function meshTopology(m, q) {
 export function runGates(THREE, S) {
   const { root, type, eyes, clay, loadErrors } = S, G = {};
   // G1 eyes
-  if (type === 'character') {
+  if (eyes?.multi) {                                                     // v1.2.3: several figures in one file, every figure must have eyes
+    const r = eyes.report(), pf = S.eyePixels?.perFigure || [], nOK = pf.filter((f) => f.ok).length, n = r.figureCount;
+    G.G1 = { name: 'Augen vorhanden je Figur (EyeRig v6 + E2)', result: nOK === n ? 'PASS' : 'FAIL', figures: n, figuresOK: nOK,
+      detail: `${nOK}/${n} Figuren mit Augen · seat ${r.seat} · ${r.eyes} Auge(n) · ${r.lidSkins} E2-Lidhaut · v6-Schalen sichtbar ${r.v6ShellsVisible} · Augenpixel je Figur (Figur allein, Kamera in Blickrichtung, Ruhe): ` +
+        pf.map((f) => `${f.figure}${f.main ? ' (Haupt)' : ''} ${f.status === 'OK' ? f.rest.join(' / ') : f.status}${f.ok ? '' : ' FEHLT'}`).join(' · ') + ` (min ${pf[0]?.minPerEye ?? '-'} je Auge)` };
+  } else if (type === 'character') {
     const r = eyes?.status === 'OK' ? eyes.report() : null;
     const px = S.eyePixels || { total: 0, perEye: [] };
     const minPx = 0.0012 * W * H;
@@ -381,7 +390,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     /* eyes: every figure, always; props only if the file has anchors */
     let eyes = null;
     const seatProbe = findEyeSeat(root, card);
-    if (type === 'character' || seatProbe.seat) eyes = mountEyes(THREE, root, { card, applyClay, clayRef: clayH.scaleRef, seed: String(seedVal) });
+    if (type === 'character' || seatProbe.seat) eyes = mountEyesAll(THREE, root, { card, applyClay, clayRef: clayH.scaleRef, seed: String(seedVal) });   // v1.2.3: one set per figure subtree (one figure = mountEyes as before)
     if (eyes?.status === 'OK') eyes.setState('rest');
     castFrontFaces(root);                                                 // v1.2 / light v1.1: front faces cast (no lit seam at the contact line)
     /* v1.2 float (V-437): found items float with their centre at the Medium rig's hip height (derived from the scale figure's hips bone) */
@@ -500,7 +509,16 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     const lineup = type === 'prop' && (aspect > LINEUP_ASPECT || nItems >= MULTI_ITEMS), grid = lineup && Math.min(size.x, size.z) > 3 * Hs;
     S = { mood, tod: TODV, gemHandles, gemMeshes, refreshGemLights, root, turntable, aoProxies, aoSkipped, scene, float: flt, lineup, grid, items: itemBoxes.map((x) => x.it), lineupAspect: aspect, lineupYaw: size.z > size.x ? Math.PI / 2 : 0, minCaster, cyl, sunDir, rig, ao, cove, coveClay, sil: type === 'character' || !figs.length ? sil : null, silRoot: sil, eyes, clay, type, id, card, bounds: B, Hs, rxz, s, loadErrors, skipClay, hidden, faceParts, units, k, eyePixels: null, entrance, scaleEntrance, scaleFig, figWarn, view: null, fitBase: fit, fitNow: fit };
     S.head = type === 'character' ? headBounds(THREE, root, eyes) : null;
-    if (eyes?.status === 'OK') S.eyePixels = measureEyePixels();
+    if (eyes?.multi) {                                                    // v1.2.3: near_face frames the main (tallest) figure; G1 measures every figure
+      const hts = eyes.figures.map((f) => { const b = bodyBounds(THREE, root, (m) => isUnder(m, f.root)); return b.isEmpty() ? 0 : b.max.y - b.min.y; });
+      S.mainFigure = eyes.figures[hts.indexOf(Math.max(...hts))]; S.figureHeights = hts;
+      if (type === 'character') {
+        const mf = S.mainFigure, mh = mf.h.status === 'OK' ? mf.h : null;
+        S.head = headBounds(THREE, mf.root, mh, /^head(_\d+)?$/i);
+        if (!S.head) { const b = bodyBounds(THREE, root, (m) => isUnder(m, mf.root)); if (!b.isEmpty()) { b.min.y = b.max.y - (b.max.y - b.min.y) * 0.35; S.head = b.union(eyeBounds(THREE, mh)); } }
+      }
+      S.eyePixels = measureFigureEyes();
+    } else if (eyes?.status === 'OK') S.eyePixels = measureEyePixels();
     const gates = runGates(THREE, S);
     /* v1.2 G6 Schattensaum: measured on the four turntable views against a no-bias reference (measureShadowSeam, light v1.1) */
     S.seam = ['front', 'threeq', 'side', 'back'].map((v) => ({ view: v, ...measureShadowSeam({ gl: renderer, scene: S.scene, camera: frame(v, 'rest'), sun: S.rig.lights.sun, isFloor: (o) => o.name === 'proof_cove' }) }));
@@ -705,6 +723,50 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     const per = S.eyes.eyes().map(() => 0);
     for (let i = 0; i < px.length; i += 4) { const r = px[i], g = px[i + 1], b = px[i + 2]; if (r > 200 && g < 50 && b < 50) per[0]++; else if (g > 200 && r < 50 && b < 50 && per.length > 1) per[1]++; else if (b > 200 && r < 50 && g < 50 && per.length > 2) per[2]++; }
     return { total: per.reduce((a, b) => a + b, 0), perEye: per };
+  }
+  /* v1.2.3 multi-figure: one mask per figure and eye state, the figure alone (as on its own proof): only the meshes of its subtree are drawn
+     (black, depth counts, so its own head, visor, helmet and arms occlude), its eyes coloured, all other scenery and figures hidden (a bot
+     pushing a ball with its face is fine). Camera along the figure's mean gaze, eye box x 2.5 fills 60 % of the frame height (as near_face).
+     G1 uses the rest state; half and closed are reported. */
+  function measureFigureEyes() {
+    const minPx = 0.0012 * W * H, t = Math.tan((FOV * Math.PI) / 360), figs = S.eyes.figures, res = figs.map(() => ({})), cams = figs.map(() => null);
+    for (const st of ['rest', 'half', 'closed']) {
+      frame('near_face', st);
+      figs.forEach((f, i) => {
+        if (f.h.status !== 'OK') return;
+        const ev = f.h.eyes(), eb = eyeBounds(THREE, f.h), c = eb.getCenter(new THREE.Vector3()), es = eb.getSize(new THREE.Vector3()), F = 2.5 * Math.max(es.x, es.y, es.z, 1e-3);
+        const g = new THREE.Vector3(), q = new THREE.Quaternion(); for (const e of ev) g.add(new THREE.Vector3(0, 0, 1).applyQuaternion(e.getWorldQuaternion(q))); g.normalize();
+        const d = (F / FILL.face) / (2 * t), cam = new THREE.PerspectiveCamera(FOV, W / H, 0.02, d + 20 * F);
+        cam.position.copy(c).addScaledVector(g, d); if (Math.abs(g.y) > 0.95) cam.up.set(0, 0, -1); cam.lookAt(c); cam.updateMatrixWorld(true);
+        res[i][st] = eyeMask(cam, ev, f.root);
+        if (st === 'rest') { cams[i] = cam; res[i].camera = { gaze: g.toArray().map((v) => +v.toFixed(3)), distance_m: +d.toFixed(3), face_m: +F.toFixed(3) }; }
+      });
+    }
+    frame('near_face', 'rest'); S.figureCams = cams;
+    const out = [], perEye = [];
+    figs.forEach((f, i) => {
+      const rec = { figure: f.name, status: f.h.status, main: f === S.mainFigure, height_m: +S.figureHeights[i].toFixed(3), anchors: f.anchors };
+      if (f.h.status !== 'OK') { out.push({ ...rec, ok: false, reason: f.h.reason || null }); return; }
+      const rep = f.h.report(), r = res[i], nE = Math.max(1, rep.eyes), minPerEye = Math.round(minPx / nE);
+      const ok = rep.eyes >= 1 && rep.lidSkins === rep.eyes && rep.v6ShellsVisible === 0 && r.rest.length === rep.eyes && r.rest.every((p) => p >= minPx / nE);
+      perEye.push(...r.rest);
+      out.push({ ...rec, ok, eyes: rep.eyes, lidSkins: rep.lidSkins, v6ShellsVisible: rep.v6ShellsVisible, minPerEye, rest: r.rest, half: r.half, closed: r.closed, camera: r.camera });
+    });
+    return { total: perEye.reduce((a, b) => a + b, 0), perEye, mode: 'per figure: figure alone, camera along its gaze (multi-figure)', mainFigure: S.mainFigure?.name || null, perFigure: out };
+  }
+  /* mask render for measureFigureEyes: the given eyes coloured (red/green/blue per eye), the meshes under 'only' black (depth counts), the rest hidden */
+  function eyeMask(cam, ev, only) {
+    const keep = new Map(), black = new THREE.MeshBasicMaterial({ color: 0x000000 }), cols = [0xff0000, 0x00ff00, 0x0000ff], hiddenMat = new THREE.MeshBasicMaterial({ visible: false });
+    const eyeMats = ev.map((_, i) => new THREE.MeshBasicMaterial({ color: cols[i % 3] }));
+    S.scene.traverse((o) => { if (o.isMesh || o.isSprite) { const m0 = [].concat(o.material)[0]; keep.set(o, o.material); o.material = (o.userData.noMeasure || m0?.visible === false || (m0?.transparent && m0.opacity < 0.02) || (only && !isUnder(o, only))) ? hiddenMat : black; } });
+    ev.forEach((e, i) => e.traverse((m) => { if (m.isMesh) m.material = eyeMats[i]; }));
+    const bg = S.scene.background, tm = renderer.toneMapping; S.scene.background = new THREE.Color(0); renderer.toneMapping = THREE.NoToneMapping;
+    renderer.render(S.scene, cam);
+    const gl = renderer.getContext(), px = new Uint8Array(W * H * 4); gl.readPixels(0, 0, W, H, gl.RGBA, gl.UNSIGNED_BYTE, px);
+    renderer.toneMapping = tm; S.scene.background = bg; keep.forEach((m, o) => { o.material = m; }); black.dispose(); hiddenMat.dispose(); eyeMats.forEach((m) => m.dispose());
+    const per = ev.map(() => 0);
+    for (let i = 0; i < px.length; i += 4) { const r = px[i], g = px[i + 1], b = px[i + 2]; if (r > 200 && g < 50 && b < 50) per[0]++; else if (g > 200 && r < 50 && b < 50 && per.length > 1) per[1]++; else if (b > 200 && r < 50 && g < 50 && per.length > 2) per[2]++; }
+    return per;
   }
   function info() {
     if (!S) return null;

@@ -6624,6 +6624,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-475",
+   "date": "2026-10-18",
+   "area": "Worldbuilder",
+   "verdict": "RULE",
+   "text": "Bord-Diorama „Hunky & Dory an Bord“ (Georg 18.10.): animiertes Diorama-Scenelet auf der UFO-Bühne (V-252–V-259) als Probe für POI-Logik + Duett-Triplets im geschlossenen Raum und als Bühne für den Comic-Motion-Slice (kfb.performance/1, V-359/V-389). Figuren-Kanon ergänzt: Ehepaar seit Jahrtausenden in Duldungsstarre; Hunky = missverstandenes Genie und Ex-Terraforming-Koryphäe, hasst den Job, will die Welt sprengen, muss aber Fluff ernten – Evil Mastermind, in Wahrheit überforderter Hausmeister am Rand der Galaxis (Gefängnisplanet Erde), schiebt Genesis/Fluff Incident anderen zu, DIY-Bastler mit Fluff-Flicken; Dory = Ex-Socialite, will an den Academy-Hof im Zentrum, wirft ihm Erfolglosigkeit vor, surreale Hobbys (absurde Gerichte kochen, malen, absurde Pflanzen). Je Figur 3 POIs + gemeinsamer Tisch; Banter = kartenbasierte Triplets durch die Alien-Linse (Dory sticht → Hunky rechtfertigt → Punch). Glaskuppel ein-/ausblendbar mit Glasschimmer (ohne Bloom), Transporterstrahl als Zeitleisten-Ereignis (Darstellung staucht, nicht Volumen). Format: kfb.scene-pack/1 Typ diorama, POI-Block aus SPEC_NPC_PATROL_R1, kein neues Tool. WSB B34 Bord-Requisiten nach B32; WS1 Laufzeit nach dem Integrations-Slice. Offen: heißt das Schiff „Opus“?",
+   "values": {},
+   "owner": "WSB (B34) · WS1 · WS0 (Banter-Set, Kamera)",
+   "check": "Totale mit Kuppel + POI-Lineup; 30-s-Clip",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein geschlossener Raum mit zwei starken Figuren testet POI-, Banter- und Performance-Logik billig und liefert zugleich Comic-Szenen und Meta-Erzählung.",
+   "applies": "B34 nach B32; WS1 nach Integrations-Slice"
+  },
+  {
+   "id": "V-476",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "PASS",
+   "text": "Kristallfiguren kfb-gem.v1 r4 (Hub q38): Leuchten von innen wie Fackeln – heißer Kern in den dünnen Teilen, Lichtpfütze je Figur, Streulicht über den Practicals-Pool (≤ 6 Lichter, Pfützen für alle), Glut im Pulstief, Adern in Glutfarbe, Spiegelung außen nachts 12 %; Tag pixelgleich r2. Grenzen bekannt: Saphir im Pulstief schwächer.",
+   "values": {},
+   "owner": "WS0 → WS1 (Modul MIT, liegt in der Abnahme-Bühne)",
+   "check": "Hub q38 PASS",
+   "source": "Georg 18.10. „chess ist PASS :)“",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Fackel-Notiz umgesetzt und abgenommen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6711,7 +6741,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:829",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:830",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

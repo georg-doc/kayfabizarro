@@ -1,3 +1,11 @@
+## v1.2.3 (18.10., WS0) · Mehrere Figuren je GLB
+- Every subtree with its own eye anchors (`KFB_Eye_L/R/C_anchor`, `eye_anchor.l/r`, also with the GLTFLoader suffix `_1`, `_2` …) gets its own EyeRig v6 + E2 set. Figure root = the highest node above the anchors that repeats no side. One figure per file (or anchors directly under the root) works exactly as before; FrizzleBob and the B26 ninja render pixel-identical.
+- All figures use the file's card (`--card`), or the existing anchor defaults. A subtree without a head bone gets its eye host at the centre of its anchors, turned to their gaze. The old host on the figure root could put both eyes on one anchor when the figure stood off the origin.
+- All eye states (rest, half, closed) apply to all figures. `near_face` frames the main figure (the tallest). On a character file that is its head; on stage and prop files it is the upper third, as before.
+- **G1 per figure:** each figure is measured alone (its own meshes occlude, the scenery does not), with the camera looking along its gaze. Every mounted figure needs ≥ 0.12 % of the frame per figure in eye pixels at rest. On stage and prop files with ≥ 2 figures, G1 is PASS/FAIL instead of N/A.
+- The manifest lists the figures in `render.eyes.figures[]` and `render.eyePixels.perFigure[]` (rest/half/closed, camera, main figure).
+- Tested on the B31 demo `KFB_Utopia_Baustelle_Demo.r1.glb` (`--type stage --card kayfabrick_bot_two.figure.r2.json`): 4/4 bots have eyes, PASS.
+
 ## v1.2 (18.10., WS0) · Rig-Maßstab, Schattensaum, Schweben
 `proof-stage.html` and `render.mjs` now use `kfb-proof-stage.v1.2.js` + `vendor/kfb-stage-light.v1.1.js`. v1.1 stays frozen: `node render.mjs … --stage v1.1` (page `proof-stage.v1.1.html`); v1 as before.
 - **scale_ref for stage/prop:** two real figures in clay (profile `character`, same light; FrizzleBob with its figure card: EyeRig v6 + E2 eyes at rest, card brows/nose/mouth) instead of the flat silhouette. Medium = FrizzleBob, Large = KayKit DemonLord (Rig_Large, purchased: local path in `sources.json` → `scale_ref`, never copied, renders private). Height = bind-pose bbox × 0.616 m/u; shown in their rig's own `Idle_A` clip (the bind pose is a T-pose).

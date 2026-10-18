@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-475 Bord-Diorama Hunky & Dory (SPEC_HD_SHIP_DIORAMA_R1): POIs, Banter-Triplets, Glaskuppel, Transporterstrahl, Comic-Motion; WSB B34 nach B32 (35. Nachtrag). V-476 Kristallfiguren r4 PASS (Hub q38).
 - V-474 Songs R4.6/R5.2: 16/16 Gate PASS + frischer Kritiker pass (mit Style-Datei) → Hub b120–b135 (Stimme männlich, FrizzleBob spricht); 1001 Teil 2 „crime scene“ korrigiert, song_gate R3.4c (Lore-Wendung erlaubt Spielwort). V-473 Briefing externer Kritiker (Codex, Effort High) als Hub b119. Kristallfiguren r3 geprüft → r4 beauftragt (Lichtkegel am Boden, Puls-Untergrenze, Adern in Glutfarbe, weniger Spiegelung).
 - song_gate R3.4b: Rahmen (Intro/Outro) darf keine Kartennamen des Bereichs nennen (FAIL C10) + Hinweis, wenn ein Intro-Beat als spätere Karte erkannt wird (Ursache des 1001-Teil-2-Fehlers, gefunden vom Autor). Kristallfiguren r3 beauftragt: echtes Leuchten von innen wie Fackeln (Kern heiß, Rand dunkler, Außenlicht nachts reduziert, Halo optional).
 - V-472 Externer Kritiker R4.5/R5.1: 13/13 revise (A4 58, B7 52, A2 39, C9 35, A3 35 Flags); WS0-Writers-Room R4.6/R5.2 gestartet (16 Autoren, Gate-Runner gate_track.py), danach frische Kritiker mit Style-Datei.
