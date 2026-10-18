@@ -7074,6 +7074,21 @@
    "applies": "B11 r4e"
   },
   {
+   "id": "V-505",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Fluff-o-lect-Kodierung R8 (Georg 18.10.): (1) Fluff-Wort und Glyphenfolge passen zum ersetzten Wort – gleiche Breite (in der Blasenschrift gemessen, Stauchung 0,7–1,3), Fluff-Wort mit gleicher Buchstabenzahl ±1 und derselben Grammatik-Endung (loved→flufed, running→flufing, nations→fluuffs, goodness→fluffery); Glyphenzahl wächst mit der Wortlänge. (2) Alles in Tinte #1f1a14 auf echter Sprechblasen-Farbe (ChatterBox PAPER #f8ecd0 + 15 % Figurenfarbe), keine Abdunklung. (3) Satzfluss-Wörter des Triplets (Verknüpfungen because/so/but/until, Pronomen, Artikel, Hilfsverben, Präpositionen) bleiben in jeder Stufe lesbar. Gilt für kfb-bubbles.v1 (V-501).",
+   "values": {},
+   "owner": "WS0 (Probe) · WSA Slice A",
+   "check": "Probe R8",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Kodierung muss sichtbar auf das Wort abbilden und den Satzbau lesbar lassen.",
+   "applies": "Probe R8"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7161,7 +7176,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:860",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:861",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

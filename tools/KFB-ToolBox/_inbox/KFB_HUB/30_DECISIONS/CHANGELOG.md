@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-505 Sprachprobe R8: Fluff/Glyphen in Wortbreite und -länge mit Grammatik-Endung, alles Tinte auf PAPER-Blasenfarbe, Satzfluss-Wörter bleiben lesbar.
 - V-504 B11 r4d FAIL: erst Arm+Hand exakt per Keypoint-Overlay, dann Gewehr einpassen (r4e).
 - V-503 B11 r4d: Haltearm bogig nach unten gestreckt (Gewehr-Rollung r4c bleibt).
 - Sprachprobe R7 (Georg 18.10.): PottyMouth-Glyphen größer (1,6 em) und jede Glyphenfolge so breit wie das ersetzte Wort (in Shantell gemessen, Anzahl wächst mit der Wortlänge, Blocksatz auf Wortbreite); Satzzeichen bleiben am Glyphenblock. Regel für kfb-bubbles.v1 (V-500/V-501).
