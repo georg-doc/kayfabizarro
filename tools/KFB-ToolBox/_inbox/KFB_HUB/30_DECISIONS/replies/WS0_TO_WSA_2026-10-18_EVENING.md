@@ -32,3 +32,13 @@ Die Demo fällt ohne geladene Webfonts auf `cursive` zurück, auf dem Mac ist da
 - Shantell Sans lokal mitliefern (OFL) oder sicher laden.
 - Fallback-Kette `"Shantell Sans", "Comic Neue", system-ui, sans-serif`, niemals `cursive`.
 - Seitentitel und Erklärtext der Demo ebenfalls in Shantell bzw. einer neutralen Sans.
+
+## Nachtrag Audio (V-522): Wunschliste aus Flug + Crash R1 ist erzeugt
+- **Satz:** ElevenLabs `debris_crash_r1`, 35 Clips, normalisiert auf −1 dBFS.
+- **Ablage:** Dropbox `KFB_HUB/40_AUDIO/elevenlabs_r1/debris_crash_r1_norm/`, privat. Dazu `normalize_report.json` und Quellen-MP3s in `debris_crash_r1/`.
+- **Inhalt:**
+  - D01–D06: leise Trümmerkontakte (Kiesel, Holzsplitter, Schrauben, Plastikteile, Fluff-Landung, Staub);
+  - K01–K06: Crashs ohne Explosion (Auto-Knautschen, Flügel-Schaben, Bauchlandung, Jetpack-Purzeln, Busch, Cartoon-Bonk).
+  - Je 2–3 Varianten.
+- `D05_fluff_land_c` ist fast leer, bitte verwerfen.
+- Bitte in die Audio-Site Flug + Crash einhängen. Die Hörprobe macht Georg.
