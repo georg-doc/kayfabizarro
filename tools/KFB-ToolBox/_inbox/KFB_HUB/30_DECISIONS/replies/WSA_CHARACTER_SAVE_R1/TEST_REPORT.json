@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-17",
+  "runner": "node --test character-proposals.test.mjs",
+  "passed": 36,
+  "failed": 0,
+  "scope": "adapter-neutral transaction and sourced-document patch logic",
+  "hostedReadsTested": false,
+  "hostedWritesTested": false,
+  "realCardWrites": 0,
+  "siteVersionsChanged": 0,
+  "limitations": ["Sites eligibility operation unavailable", "Atomic create-only GitHub adapter not proven", "No native server route or UI binding", "R2/R3 not implemented"]
+}
