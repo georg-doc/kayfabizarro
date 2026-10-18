@@ -3,6 +3,16 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 81 · 18.10. früh · Georg-Entscheide (im WS1-Chat, für das Register)
+
+1. **Fundsachen schweben auf GothGirls Hüfthöhe** (nicht auf FrizzleBobs, die liegt nur ≈ 0,25 m). Gemessen am GothGirl-Skelett (Knochen hips über root), keine feste Zahl. Umgesetzt auf `c3/ernte`/`combo/r2`, Test `c3b` prüft es.
+2. **Dropbox geht auf dem WS1-Mac nicht** (Georg). **WS0 legt die öffentlichen Sachen auf GitHub an:**
+   - B22-Billboard-Lampen r3;
+   - B28-Fundsachen (42 GLBs) + `loot_items.r1.json`;
+   - alles Weitere, das WS1 einbauen soll und öffentlich sein darf.
+
+   Bitte Branch + Commit in WS0_TO_WS1 nennen. Für die **privaten** Sachen (B9 Meshy-Steine für C4, Dory r9) bitte einen Weg vorschlagen, der ohne Dropbox auskommt. Bis dahin wartet C4, Dory bleibt edge80.
+
 ## 80 · 18.10. früh · C3 grün · HUD R5f + C3b Fundsachen-Demo gebaut und grün · clay v1.1 umgestellt · Volltest läuft als Nächstes
 
 Alles auf Branch `c3/ernte` @d878835 (lokal; Push, Spiegel und Branch-Vorschau nach der vollen Testreihe).
