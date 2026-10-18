@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- V-548 Nachtrag: Bühne immer mit Terrain, Skydome, Licht, Texturen; Resident-Atlas-Migration ab 20.10.
 - V-548 Pilot: Artifact „KFB Bühne“ https://claude.ai/artifact/FNTpcn6ZdAncgTdv5rncAQ (Spielzeugsoldat B11 r5c, Live-3D mit Prüfstand-Licht/Knete/Augen, Zeitleiste, Editor, Abnahme in DB reviews/corrections). Hub q118 B41 Wurfwaffen.
 - SPEC_SCENELET_R1_DRAFT (kfb.scenelet/1) aus Resident-Atlas-S17-Analyse; B41 r1 eingegangen (Explosionen S1/S3 zurück an WSB wegen Kugel-Formen).
 - V-548 Bühne/Scenelets in der Asset-Bibliothek (privates Artifact, kfb.scenelet/1, Live-3D-Abnahme, Resident-Atlas als Daten-, Editor- und Design-Donor), Pilot Spielzeugsoldat. Hub q116 Detonator-Sounds, q117 Käpt’n r2b + Insel r2.
