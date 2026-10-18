@@ -1,12 +1,12 @@
 {
  "schema": "kfb.ws1-build/1",
- "commit": "combo/r2@027d5c5 (Branch, nicht main: C1 Kamera, C2 Aliens/E2, V-429/clay v1.1, C3 Fluff-Ernte, HUD R5f, C3b Fundsachen V-450, R1a Antriebe, Elan S1/S2, Licht v1.1, B22-Lampen)",
- "date": "2026-10-18T10:30:00+02:00",
+ "commit": "combo/r2@d762916 (Branch, nicht main: R1a Antrieb mit Ton/Bremse/Gelände-Staub, Fluff-Saugarm T mit Ton, Kristall-Laternen nachts, dazu C1–C3b, Elan S1/S2, Licht v1.1, B22-Lampen)",
+ "date": "2026-10-18T22:45:00+02:00",
  "tests": {
-  "suite": "run-all combo/r2: 61 Prüfungen (M1/M2/M3/C1/Elan/Bühne/C2/C3/C3b/R1a) + Unit-Tests",
+  "suite": "run-all combo/r2: 62 Prüfungen (M1/M2/M3/C1/Elan/Bühne/C2/C3/C3b/C3s Saugarm/C3g Laternen/R1a) + Unit-Tests",
   "passed": 61,
-  "total": 61,
-  "info": "m1-rueckwand nur Bericht; m1-move@120 mit verlängertem Alarm"
+  "total": 62,
+  "info": "m1-rueckwand nur Bericht; m1-move@120 mit verlängertem Alarm; FAIL c3g: Laternen-Platzhalter glühen nachts zu schwach (Kern 1,06 × Umfeld, Ziel 1,15; echte B30-Figuren fehlen) – Optik, kein Spielfehler"
  },
  "links": {
   "stage": "#stage,actors=fb,light=l1",
@@ -32,7 +32,10 @@
   "racerSkycruiser": "#m1,car,racer=ironclad_skycruiser",
   "racerGraffiti": "#m1,car,racer=graffiti_jet_cruiser",
   "racerRustwing": "#m1,car,racer=rustwing_cruiser",
-  "stageNightLamps": "#stage,actors=fb,light=l1,tod=night"
+  "stageNightLamps": "#stage,actors=fb,light=l1,tod=night",
+  "harvestNight": "#m1,harvest,tod=night",
+  "harvestGold": "#m1,harvest,tod=gold",
+  "racerDragsterNight": "#m1,car,racer=crimson_flame_dragster,tod=night"
  },
- "notes": "Langlauf R2 auf combo/r2 (Branch, nicht main). Fluff-Ernte: V Faust, B Schuss, N Bombe, I aufheben, Rucksack unten links. Racer: Shift Boost (Stauchen/Strecken), Leertaste Sprung; mit fly: Rampe/Doppel-Leertaste = Schwungflug, Pfeile/RMB Nase. Skyriding (flight=elan): G in der Luft, Leertaste steigen, Shift Schub, Leertaste+A/D Rolle, K Komfort."
+ "notes": "combo/r2 (Branch, nicht main). Fluff-Ernte (#m1,harvest): V Faust, B Blaster, N Bombe, T Saugarm (saugt bis zu 6 Kügelchen vor dir ein), I Fundsache aufheben, Rucksack unten links; nachts (tod=night) leuchten Kristall-Laternen am Weg. Racer: W Gas, Shift Boost (Stauchen/Strecken), S Bremse (Nase taucht), Motor mit Ton (mute = stumm); mit fly: Rampe/Doppel-Leertaste = Schwungflug, Pfeile/RMB Nase. Skyriding (flight=elan): G in der Luft, Leertaste steigen, Shift Schub, Leertaste+A/D Rolle, K Komfort. Ton startet nach der ersten Taste."
 }
