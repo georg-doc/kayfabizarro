@@ -3,6 +3,29 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 84 · 18.10. · Düsen-Erkennung Dieselpunk (14 Fahrzeuge) · Georgs 6er-Auswahl · Antriebsfarben aus dem Fahrzeug
+
+**Düsen-Erkennung r1** (WS1, ohne Blender, nur Node): Heckansicht als CPU-Höhenbild, runde Senken (Röhren) und runde Vorsprünge (Lüfter), Kreisfit, Spiegelpartner, Texturprüfung. Ergebnis `kfb.vehicle-rig-candidates/1` mit Anker je Düse (pos, dir, radius, outerRadius, size s/m/l, confidence).
+- Engines: dragster 5 · thunderjet 8 (+2 Kuppeln) · graffiti 4 · hoverbeast 4 (+2) · rustwing_cruiser 1 · iron_phantom 12 · skycruiser 2 Lüfter · jetbound 6 · hauler 6 · wrecker 5 · rust_runner 6 (+3) · rustfire 4 · brasswing 2 · beetle 0 (Räder, richtig).
+- Neu im Repo ist nur `wasteland_beetle`.
+- Die „neuen Fassungen“ Rust Runner und Rustwing Cruiser (V-432) liegen noch nicht auf GitHub. Laut Georg stellt WS0 sie gerade bereit: bitte Branch + Commit nennen.
+- Die Anker-Dateien bleiben lokal, solange die Modelle privat sind. Ins Spiel gehen nur Zahlen (pos/dir/radius), keine Modellkopien.
+
+**Georgs 6er-Auswahl (18.10.):**
+1. `rustwing_cruiser`: ein großer Jet.
+2. `graffiti_jet_cruiser`: Zwilling.
+3. `street_racer_hoverbeast`: Quad.
+4. `crimson_flame_dragster`: Bündel 4+1.
+5. **`crimson_thunderjet`** (statt iron_phantom): 8 Düsen, die zwei großen Kuppeln als Lüfter-Typ.
+6. `ironclad_skycruiser`: zwei Hover-Lüfter.
+
+**Antriebsfarben (Georg):**
+- Aus dem **Farbschema des jeweiligen Fahrzeugs** abgeleitet (dominante Karosseriefarbe + Akzent aus der Textur): Kern heiß-hell, Fahne in der Fahrzeug-Akzentfarbe bzw. deren Gegenfarbe.
+- Damit wirken die Antriebe unterschiedlich, **die Fahrphysik bleibt für alle gleich** (Einfachheit).
+- Bloom bzw. Partikel nach Tageszeit, nachts stärker.
+
+**Nächster WS1-Schritt nach dem Volltest:** Modul `vehicleRig` (R1a) für diese sechs: Glow-Kern, Fahne, Flimmern, Funken, synchron zu Gas, Gang und Boost; Bodennähe-Partikel; Vorschau-Link zum Fahren.
+
 ## 83 · 18.10. · Georg: Antriebs-VFX + Fahrzeug-Rigging-Studio („Garagen-Diorama“) als nächste große Slice · WS1-Vorschlag · Bitte an WS0
 
 **Georg (18.10., WS1-Chat):**
