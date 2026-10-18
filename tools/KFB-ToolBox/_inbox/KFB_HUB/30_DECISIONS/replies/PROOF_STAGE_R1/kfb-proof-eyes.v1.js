@@ -139,6 +139,20 @@ export function mountEyes(THREE, figure, { card = null, applyClay = null, clayRe
       seats.push({ side: a.side, node: a.node.name, p, q, r: rLocal, shell });
     }
     single = seats.length === 1;
+    /* v1.2.6: gaze fix – anchor +Z is the head-surface normal, which splays outward on round heads (orcs, Monstrosity); the eyes squinted
+       outward and card converge was overwritten. Both eyes now look along the common forward (mean normal), turned inward by card converge. */
+    if (seats.length >= 2) {
+      const fwd = new THREE.Vector3(), cen = new THREE.Vector3();
+      for (const x of seats) { fwd.add(new THREE.Vector3(0, 0, 1).applyQuaternion(x.q)); cen.add(x.p); }
+      fwd.normalize(); cen.multiplyScalar(1 / seats.length);
+      const conv = ro.converge || 0;
+      for (const x of seats) {
+        const n0 = new THREE.Vector3(0, 0, 1).applyQuaternion(x.q);
+        const inward = cen.clone().sub(x.p); inward.addScaledVector(fwd, -inward.dot(fwd)); if (inward.lengthSq() > 1e-12) inward.normalize();
+        const d = fwd.clone().addScaledVector(inward, conv).normalize();
+        x.q = new THREE.Quaternion().setFromUnitVectors(n0, d).multiply(x.q);
+      }
+    }
     socketInnerR = seats.some((x) => x.shell) ? (e, i) => { const x = single ? seats[0] : seats.find((t) => Math.sign(t.p.x) === Math.sign(e._sx)) || seats[i]; return x && x.shell ? x.shell : null; } : null;
     place = (rig) => {
       if (!rig.eyes) return;

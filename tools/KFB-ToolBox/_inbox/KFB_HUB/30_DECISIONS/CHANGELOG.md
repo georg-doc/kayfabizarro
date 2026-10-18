@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-518 Abnahme-Bühne v1.2.6: Augen schielen nicht mehr nach außen (gemeinsame Blickrichtung + converge). B38 Feuerturm-Vampir eingegangen.
 - V-517 B37 Eiffel-Landmark (surreal Cartoon), B38 Feuerturm als Vampirturm. Hub q74–q78 (Hexe r3b, Spieler-Arm r5d, Monstrosity, Ork-Duo, Werkstatt r2c).
 - V-516 q71 B11 → Georg im Resident Atlas (Pose-JSON + helleres Blau), q72 Friedhof vorerst so, q73 neues Meshy-Modell für den Vampirturm. Vampire_NoEyes fertig.
 - V-515 Probe R10.1: Schlumpf zuerst, nur 2 Schlüsselwörter als Glyphen, max. 2 Glyphen je Wort. B11 r5 TUNE (Kolben-Knick, Faust greift nicht, Gewehr an der Wange).

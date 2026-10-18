@@ -182,3 +182,6 @@ To check a file that is not in the list, drop in the GLB and, optionally, its `k
   - `kfb-stage-light.v1` (blob cd8bda8c);
   - `kfb-clay.v1.1` from `CLAY_SSOT_R1`.
 - **Private assets** (KayKit Mystery / CharacterTemplate): the renders stay in `evidence/_privat/`, local only. Never publish them.
+
+## v1.2.6 (18.10.)
+- Blickrichtung: Beide Augen schauen entlang der gemeinsamen Vorwärtsrichtung (Mittel der Anker-Normalen), nach innen gedreht um card converge. Vorher übernahm jedes Auge die Flächennormale seines Ankers – auf runden Köpfen (Orks, Monstrosity) schielten die Pupillen nach außen, converge wurde überschrieben. Beleg: Orc Brute B / Raider B near_face (scratchpad eye126), Spielzeugsoldat G1 PASS.

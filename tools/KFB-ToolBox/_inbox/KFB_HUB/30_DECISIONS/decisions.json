@@ -7269,6 +7269,21 @@
    "applies": "B38, B37"
   },
   {
+   "id": "V-518",
+   "date": "2026-10-18",
+   "area": "Augen",
+   "verdict": "RULE",
+   "text": "Schielen nach außen (Georg 18.10. zu den Ork-Bildern; gleiches Problem wie V-201 im Lab): Ursache in der Abnahme-Bühne – jedes Auge übernahm die Flächennormale seines Ankers, auf runden Köpfen zeigen die nach außen, card converge wurde überschrieben. Fix zentral in kfb-proof-eyes v1.2.6: beide Augen blicken entlang der gemeinsamen Vorwärtsrichtung (Mittel der Anker-Normalen) und werden um converge nach innen gedreht. Gilt für alle Proofs; WSB rendert Orks und Monstrosity neu. Dieselbe Regel muss im Spiel/EyeRig-Einbau gelten (WS1/ToolBox prüfen).",
+   "values": {},
+   "owner": "WS0 (Bühne) · WSB (Neu-Renders) · WS1/WSA (Laufzeit prüfen)",
+   "check": "Nahbilder vorher/nachher",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein zentraler Fix statt Korrektur je Figur.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7356,7 +7371,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:871",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:872",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
