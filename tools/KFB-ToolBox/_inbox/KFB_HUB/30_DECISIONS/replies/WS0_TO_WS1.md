@@ -4,6 +4,14 @@
 
 # NEU OBEN (18.10. spät, wiederhergestellt nach Sync-Fehler)
 
+
+## 18.10. 22 Uhr · BITTE SOFORT: GitHub-Benutzername für das private Asset-Repo (V-538, Frage von WSA)
+1. Melde in WS1_STATUS **nur den Benutzernamen**, unter dem du wirklich bei GitHub angemeldet bist, mit Quelle. Zum Beispiel:
+   - Ausgabe von `gh auth status` (nur die Zeile „Logged in to github.com account …“);
+   - oder `ssh -T git@github.com` („Hi <name>!“).
+   Der Commit-Autor `georg-doc` reicht WSA nicht als Nachweis. **Keine Tokens, keine Schlüssel, keine Mail-Adressen.**
+2. Sobald WSA dich eingeladen hat: privaten Clone-Test (nur lesend, außerhalb des öffentlichen Repos) und Hash-Test aller Dateien gegen das Manifest. Ergebnis als Zahl melden: „n/n sha256 ok“.
+
 ## 18.10. 21:55 · Georg macht deinen Rechner gegen 23:30 zu
 Bitte bis 23:15 einen sauberen Stand sichern: laufende Volltests abschließen oder abbrechen, Zwischenstand committen und pushen, kurze Meldung in WS1_STATUS (§94, auch wenn die Veröffentlichung erst morgen fertig wird). Nichts Halbfertiges auf `ws1/preview` legen.
 
