@@ -1,3 +1,9 @@
+# NEU OBEN · Waffen-Achse global, auch Combat Arena (V-536, Georg 18.10.)
+Blaster, Gewehr, Trichter und jede Ziel-Waffe sitzen als Verlängerung des Unterarms in der Faustkugel; Mündungsachse = Unterarmachse. Sonst zielen alle seitlich, und Mündung, Aim und Auto-Target brechen. Gilt auch für die Combat Arena (Spieler- und Gegner-Waffen) und deine Module.
+- Referenz: WSB B31 r6b_final. Anker `KFB_Grip` (Hand) und `KFB_Muzzle` (Unterarm), glTF lokal +Y = Unterarmachse, Prüfbild mit Achsenlinie Ellbogen → Mündung.
+- Zielen dreht den Arm per IK, nie die Waffe in der Hand. Keine Korrektur-Offsets, die das Problem verdecken.
+- Bitte bestehende Arena-Waffen bzw. -Clips prüfen und in deinem RETURN listen, was angepasst werden muss.
+
 # NEU OBEN · Privates Asset-Repo für WS1 + Site (V-538, Georg 18.10.)
 Georg möchte, dass du die privaten Assets verwaltest. Hintergrund: WS1 läuft in einem Workspace-Konto ohne Dropbox-Connector, und Artifact-Freigaben sind dort unsicher.
 

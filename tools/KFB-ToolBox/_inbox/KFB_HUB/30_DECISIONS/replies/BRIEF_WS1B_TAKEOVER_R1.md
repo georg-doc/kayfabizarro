@@ -8,7 +8,9 @@
 
 ## Block
 **Einrichtung (einmalig)**
-- **Repo:** eigener Klon nach `~/Developer/kfb-ws1b/`. Den Arbeitsordner `~/Developer/kayfabizarro-publish` (Branch `cloudflare-live`, gehört WS0) nicht benutzen.
+- **Repo:** Du läufst in einem eigenen Git-Worktree des Repos `kayfabizarro`, das die App für dich angelegt hat. Den Hauptordner `~/Developer/kayfabizarro-publish` (Branch `cloudflare-live`, gehört WS0) nicht umschalten oder ändern.
+- **Steuerung:** WS0 hat dich gestartet, reviewt und steuert dich (Nachrichten von WS0 kommen als Session-Nachricht). Melde jeden Abschnitt kurz an WS0 und in WS1_STATUS.
+- **Übergabe abwarten:** Falls `WS1_HANDOVER.md` auf `ws1/r3f-frame` noch fehlt, prüfe zuerst nur lesend die Branches (`combo/r2`, `ws1/combo-r2`, `ws1/vendor`) und melde den Stand an WS0. Nichts überschreiben, was die alte WS1 noch pushen könnte.
 - **Branches:**
   - Arbeitsstand von `combo/r2` holen; die alte WS1 pusht den vor der Übergabe.
   - Veröffentlichung wie gehabt auf `ws1/combo-r2`, `ws1/preview` und `ws1/vendor`.
