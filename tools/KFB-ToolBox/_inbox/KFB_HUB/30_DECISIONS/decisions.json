@@ -7693,7 +7693,7 @@
    "date": "2026-10-19",
    "area": "Spiel",
    "verdict": "RULE",
-   "text": "B41 freigegeben + Humbug-Detonator (Georg 19.10.): Wurfwaffen-Brief B41 geht an WSB. Zusätzlich eine Flächen-Granate im Stil eines Thermal-Detonators, aber eigenes KFB-Design (kein Film-Vorbild) für Hunky & Dory und die Men in Black, große Variante für den Large-Türsteher. Flächen-/Nuke-Logik mit VFX und SFX, KFB-cartoonig gespielt: automatischer Blitzdings-/„Humbug!“-Effekt für alle NPCs und den Spieler im Umkreis (Opfer-Kette V-530), saftige Explosion, die auch Destruction-Mech-POC (V-514) und Combat-Arena-Integration nutzen. WSB: Prop 2 Größen + Explosions-Formen + großer Krater; WS1b: Flächenwirkung + Animation; WS0: SFX-Set detonator_r1.",
+   "text": "B41 freigegeben + Humbug-Detonator (Georg 19.10.): Wurfwaffen-Brief B41 geht an WSB. Zusätzlich eine Flächen-Granate im Stil eines Thermal-Detonators, aber eigenes KFB-Design (kein Film-Vorbild) für Hunky & Dory und die Men in Black, große Variante für den Large-Türsteher. Flächen-/Nuke-Logik mit VFX und SFX, KFB-cartoonig gespielt: automatischer Blitzdings-/„Humbug!“-Effekt für alle NPCs und den Spieler im Umkreis (Opfer-Kette V-530), saftige Explosion, die auch Destruction-Mech-POC (V-514) und Combat-Arena-Integration nutzen. WSB: Prop 2 Größen + Explosions-Formen + großer Krater; WS1b: Flächenwirkung + Animation; WS0: SFX-Set detonator_r1. Nachtrag Georg: Der Detonator färbt alle Welt-Fluff-Kugeln im Umkreis in schwarze Fluff-/Goo-Kugeln um (Zensur löscht Erinnerung und Farbe); Gegenstück ist die Fluff-Bombe. Regeln: nur Welt-Fluff, nie das Inventar bzw. die HUD-Leiste; schwarz bleibt, bis Agenten bzw. Tinten-Gegner es einsaugen (Goo-Nachschub) oder der Spieler es freiwäscht (kleiner Bonus); Umfärben als organische Welle vom Zentrum nach außen (Speckle V-403), mit Entsättigungs-Sound.",
    "values": {},
    "owner": "WSB (B41) · WS1b · WS0 (SFX)",
    "check": "B41 Prüfstand + Hub-Hörprobe",
@@ -7702,6 +7702,21 @@
    "superseded_by": [],
    "why": "Eine Massen-Variante des Blitzdings-Gags, wiederverwendbar für Zerstörung und Arena.",
    "applies": "B41 jetzt"
+  },
+  {
+   "id": "V-547",
+   "date": "2026-10-19",
+   "area": "Welt",
+   "verdict": "TUNE",
+   "text": "Hub-Runde 19.10.: q114 Käpt’n r2 TUNE – Hut jetzt ein klein wenig zu groß, sonst „sieht alles cool aus“ (Hut ≈ 10 % kleiner, Sitz bleibt). q115 Thron-Fahrzeug PASS. Pirateninsel (q112): Georg möchte prüfen, ob das Kenney Pirate Kit Szenerie, Wachturm und Schiffe besser trägt → r2 stärker aus dem Kit: hölzerner Wachturm (tower-watch) statt Steinburg-Turm, zusätzlich Wrack am Strand, Ruderboot am Steg, Pfahlhütte (structure), Flaschenpost, Schaufel + Schatz-Loch; Knet-Insel bleibt, Fernrohr weiter offen.",
+   "values": {},
+   "owner": "WSB",
+   "check": "Käpt’n r2b + Insel r2 im Hub",
+   "source": "Hub q112/q114/q115 · Georg 19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Feinschliff nach Georgs Blick, Kit-Treue für einen einheitlichen Look.",
+   "applies": "vor B41"
   },
   {
    "id": "V-427",
@@ -7791,7 +7806,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:909",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:910",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

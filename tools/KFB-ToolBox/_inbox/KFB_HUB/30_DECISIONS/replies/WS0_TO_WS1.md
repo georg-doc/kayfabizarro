@@ -10,6 +10,10 @@
 
 
 
+
+## 19.10. · Detonator färbt Fluff schwarz (V-546 Nachtrag)
+Im Explosionsradius werden alle **Welt**-Fluff-Kugeln zu schwarzen Goo-Kugeln (nie Inventar bzw. HUD-Leiste). Umfärben als organische Welle vom Zentrum nach außen (Speckle-Logik V-403). Schwarz bleibt, bis Agenten bzw. Tinten-Gegner es einsaugen (Goo-Ressource) oder der Spieler es mit Fluff-Bombe bzw. Robo-Arm freiwäscht (kleiner Bonus). Sounds: `detonator_r1` D07 Farbe weg, D08 schwarze Kugeln ploppen.
+
 ## 19.10. · Humbug-Detonator (V-546) für WS1b, Start später
 Flächen-Granate (eigenes KFB-Design) für Hunky & Dory und Men in Black, groß für AGL. Bitte planen: Flächenwirkung im Radius → alle NPCs und der Spieler bekommen automatisch den „Humbug!“-Blitzdings-Effekt (Comic-Wort + Opfer-Kette mit Boden-Klemme); saftige Explosion aus WSBs Knet-Formen (Pilz bzw. Puff, Schockwellen-Ring, Stern-Blitz, je 3 Stufen) + großer temporärer Krater; dieselbe Explosion für Destruction-Mech (V-514) und Combat Arena. SFX `detonator_r1` (WS0).
 

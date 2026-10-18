@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- V-546 Nachtrag: Detonator färbt Welt-Fluff schwarz (Zensur-Kreislauf mit Fluff-Bombe). V-547: Käpt’n-Hut −10 %, Thron PASS, Insel r2 mit mehr Kenney Pirate Kit.
 - V-546 B41 freigegeben + Humbug-Detonator (Flächen-Blitzdings, große Variante für AGL), SFX detonator_r1. Hub q115 Thron-Fahrzeug.
 - V-545 Käpt’n r2: Barbarian-Körper, gemeinsames Braun, rot-weiße Hose, goldene Beschläge, größerer Hut (q111 TUNE). Hub q112 Pirateninsel gepostet.
 - Hub-Antworten: V-544 PASS-Sammlung (Sounds, Hexenplatz, Werkstatt, Eiffel, Dach-Einstieg, Waffen-Achse, Blob-Corp-Turm), V-543 Schwebe-Thron als Fahrzeug (q98).
