@@ -6114,6 +6114,66 @@
    "applies": "sofort"
   },
   {
+   "id": "V-441",
+   "date": "2026-10-18",
+   "area": "Insel",
+   "verdict": "PASS",
+   "text": "Insel-Paletten (Hub q17): Richtung PASS, beide Unterfragen damit bestätigt – Bodenfarbe aus der Stimmung statt aus den Inselfarben, Sechs-Farben-Regel weit gefasst (Unterseite darf Akzentfarbe sein). Nächster Schritt: WSB backt die Paletten in die B27-Inseln (r2, Knete), WS1 übernimmt.",
+   "values": {},
+   "owner": "WSB (B27 r2) → WS1",
+   "check": "Bögen über Abnahme-Bühne",
+   "source": "Hub q17 · replies/ISLAND_PALETTES_R1/",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg bestätigt die Paletten-Richtung; jetzt in die Inseln backen statt weiter zu entwerfen.",
+   "applies": "sofort, nach Pubs"
+  },
+  {
+   "id": "V-442",
+   "date": "2026-10-18",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "Ninja-NPCs B26 (Hub q19, TUNE): Katana in der Faust um 180° drehen, damit die Schneide richtig zeigt (Doppelklingen des weißen Ninja mitprüfen). Georg: Es gibt ein Ninja-Mixamo-Animationspaket – suchen, auf das KayKit-Medium-Rig übertragen, ggf. anpassen; zugleich Vorbereitung/POC für den Nahkampf-Slice. Bento ohne Einwand.",
+   "values": {},
+   "owner": "WSB (B26 r2, Animations-POC)",
+   "check": "Bogen r2; Animations-Probe als Clip",
+   "source": "Hub q19",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Falsch gehaltene Klinge fällt sofort auf; ein vorhandenes Animationspaket spart Eigenbau für den Nahkampf.",
+   "applies": "nach Pubs-Neuskalierung"
+  },
+  {
+   "id": "V-443",
+   "date": "2026-10-18",
+   "area": "Prozess",
+   "verdict": "TUNE",
+   "text": "Abnahme im Hub (Hub q20, Georg): in der kleinen Hub-Ansicht kaum etwas erkennbar, Schrift kaum lesbar, keine echte Vergrößerung → Hub v18: Vollbild-Betrachter mit Mausrad-/Pinch-Zoom bis 8×, Ziehen, 1:1, Einpassen; künftig Abnahmebilder in voller Auflösung und zusätzlich als Einzelansichten (je Ansicht ein Bild), nicht nur als 3×3-Bogen. Fundsachen B28: in Cartoon-Logik etwas größer (WS0: ×1,25), schwebend vorlegen (V-437), mit Schatten-Fix (V-440). Auch Pubs: Referenzfigur war zu klein zu sehen (V-438 Bühne v1.2).",
+   "values": {},
+   "owner": "WS0 (Hub, Vorlage) · WSB (B28 ×1,25)",
+   "check": "Georg kann im Hub zoomen; neue Bögen",
+   "source": "Hub q20",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Abnahme, die man nicht erkennen kann, ist keine Abnahme; deshalb Zoom und Einzelansichten.",
+   "applies": "sofort (Hub v18 live)"
+  },
+  {
+   "id": "V-444",
+   "date": "2026-10-18",
+   "area": "Bühne",
+   "verdict": "TUNE",
+   "text": "Abnahme-Bühne (Hub q15, Georg 17.10., bisher nicht umgesetzt): statt neutraler Hohlkehle KFB-Gelände in Knete, leicht wellig, mit Material-Codes; Umgebungs-Requisiten (ein paar kleine Steine, Farbtupfer wie Knete-Fluff-Kugeln), entferntere Gelände-Hügel; Horizont mit sauberem Übergang (Distanz-Nebel) zu einem Skydome im Tiny-Skies-Stil (kein Shader-Trick). Warmes Licht ist so gut. Gates und einheitliche Darstellung bleiben; die Umgebung hält Abstand zum Objekt, damit es lesbar bleibt. Umsetzung als Bühne v1.3 nach v1.2.",
+   "values": {},
+   "owner": "WS0 (Bühne v1.3)",
+   "check": "Bögen v1.3 von FrizzleBob, einem Pub, einer Fundsache; Georg",
+   "source": "Hub q15 · V-341 · V-403",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die neutrale Hohlkehle zeigt nicht, wie ein Teil in der KFB-Welt wirkt; die Abnahme soll repräsentativ sein (V-431).",
+   "applies": "Bühne v1.3 nach v1.2"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6201,7 +6261,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:790",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:791",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

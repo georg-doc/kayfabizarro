@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Hub-Antworten: q17 Insel-Paletten PASS (V-441, B27 r2 backen); q19 Ninjas TUNE (V-442: Katana 180°, Ninja-Mixamo-Paket als Nahkampf-POC); q20 Fundsachen TUNE (V-443: Hub v18 mit Vollbild-Zoom, Einzelansichten, B28 ×1,25); q15-Notiz nachgeholt (V-444: Abnahme-Bühne v1.3 mit KFB-Knete-Gelände, Steinen, Fluff-Tupfern, Hügeln, Nebel-Horizont, Tiny-Skies-Skydome).
 - V-440 Schattensaum-Bug (FAIL Georg): Ursache Bias aus großem Schattenbereich bei kleinen Requisiten; Fix an der Wurzel in kfb-stage-light.v1.1 + Gate G6 auf jedem Bogen (in Arbeit, mit Bühne v1.2 und Schwebe-Modus für Fundsachen). WS1-Brief Fundsachen-Demo im Gelände als Stufe C3b (Hub b111); WS1 seit §78 ohne neuen Stand. WSB B29 Mauer-Gizmo aus Scan (Downloads von Georg freigegeben).
 - V-438 Maßstab: Medium-Rig passt durch Türen, Large-Rig muss sich bücken; Abnahme-Bühne v1.2 zeigt beide Rigs in Knete am Eingang (in Arbeit), Pubs werden neu vorgelegt (q16). V-439 Mauer-Gizmo aus Scan Stone monument (CC0): Gizmo-Wand mit Knete-Skins, Gelände-Werkzeug, Labyrinthe; drei weitere Kandidaten aus Georgs Asset-Suche notiert.
 - V-437 Fundsachen schweben auf Hüfthöhe (Medium-Rig) und drehen/floaten wie Whackman-Pickups; Fluff liegt, springt, rollt am Boden. Abnahme-Bühne v1.1.1 (alle drei Augenzustände als Standard, Eingang abschaltbar per proof:false). Hub q19 Ninjas B26 + Aiko-Bento, q20 Fundsachen B28 (je Bögen der Abnahme-Bühne).
