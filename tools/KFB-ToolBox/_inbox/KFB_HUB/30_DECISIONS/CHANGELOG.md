@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Sync-Fehler behoben: sync_github.sh erkannte eigene Commits ohne Präfix nicht und überschrieb lokale Nachträge mit älteren GitHub-Ständen (seit 19:58). Präfix „WS0:“ jetzt automatisch; B40/B41/Deep-Dive-Briefs und WS0_TO_WS1 wiederhergestellt. WSB-Plattenbericht eingegangen.
 - Brief WSA Plattform-Deep-Dive R1 (Hosting/Persistenz/Login/LLM/Apps SDK/Steam/Lizenzen/DSGVO) angelegt; ChatGPT-Sites-Recherche WS0: EEA-Sperre, keine Datenresidenz.
 - V-538 Private Assets: privates GitHub-Repo unter WSA-Verwaltung, WS1 liest per GitHub (ersetzt V-462/V-487-Wege für WS1).
 - Joyride-Prüfung: keine temporäre Bodenverformung vorhanden, nur haftende Knetkrümel (clay-vfx.v1.js) → Krümel wiederverwenden, Verformung neu im Terraforming-Modul (V-537). Hub q107 Wurf-Sounds.

@@ -3,6 +3,8 @@
 # Usage: zsh sync_github.sh "short message"
 set -e
 MSG=${1:-"docs(steering): register mirror"}
+# The pull-guard below finds the last steering commit by prefix: always prefix our own commits (else local edits get overwritten by our own older pushes).
+[[ $MSG == docs\(steering\)* || $MSG == WS0:* ]] || MSG="WS0: $MSG"
 cd ~/KFB_GitHub_sync
 export GIT_SSH_COMMAND="ssh -i ~/.ssh/kfb_kayfabizarro_deploy -o IdentitiesOnly=yes"
 REPO=git@github.com:georg-doc/kayfabizarro.git
