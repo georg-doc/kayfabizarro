@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-506 Probe R8 FAIL → R9: Fluff nur aus dem Schlumpf-Lexikon je Wortart, Glyphen 1–3 je Wort auf Wortbreite skaliert.
 - V-505 Sprachprobe R8: Fluff/Glyphen in Wortbreite und -länge mit Grammatik-Endung, alles Tinte auf PAPER-Blasenfarbe, Satzfluss-Wörter bleiben lesbar.
 - V-504 B11 r4d FAIL: erst Arm+Hand exakt per Keypoint-Overlay, dann Gewehr einpassen (r4e).
 - V-503 B11 r4d: Haltearm bogig nach unten gestreckt (Gewehr-Rollung r4c bleibt).

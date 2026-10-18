@@ -7089,6 +7089,21 @@
    "applies": "Probe R8"
   },
   {
+   "id": "V-506",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "FAIL",
+   "text": "Probe R8 FAIL (Georg 18.10.: „fluuuffff – das Triplet bietet keinerlei Entsprechung … passt hinten und vorne nicht zu den Dekodierregeln“). WS0-Fehler: Buchstabenzahl per Auffüllen (fluuuffff, fuf, flufed) und bis zu 12 Glyphen widersprachen V-500. Korrektur R9, verbindlich: (1) Fluff-Stufe = festes Schlumpf-Lexikon je Wortart – fluff (Nomen/Verb), fluffs, fluffed, fluffing, fluffy (Adjektiv), fluffily (Adverb), fluffery (Abstrakt-Nomen); nichts erfunden, nichts aufgefüllt. (2) Glyphen 1–3 je Wort nach Wortlänge (≤3/≤6/länger); die Wortbreite wird durch Skalieren der Glyphen erreicht (0,85–1,35 × Größe, Breite 0,85–1,25), nicht durch mehr Glyphen. (3) Bleibt aus R8: Tinte #1f1a14 auf PAPER-Blasenfarbe, Satzfluss-Wörter immer lesbar. Ersetzt V-505 Punkt 1.",
+   "values": {},
+   "owner": "WS0 (Probe) · WSA Slice A",
+   "check": "Probe R9",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Dekodierregeln V-500 gelten; Länge nie durch Fantasie-Formen erzwingen.",
+   "applies": "Probe R9"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7176,7 +7191,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:861",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:862",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
