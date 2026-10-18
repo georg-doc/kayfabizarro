@@ -14,6 +14,13 @@
 
 
 
+
+## 18.10. · Shadow seam fix available: `kfb-stage-light.v1.1` (V-440) · switch over please
+- Branch `assets/kfb-wsb-public-2026-10-18` @`5c495846`, folder `tools/KFB-ProofStage/vendor/kfb-stage-light.v1.1.js` (plus the v1 for comparison, clay v1.1, proof stage v1.2 + README).
+- Cause of the seam: back faces were casting shadows, and normalBias lifted floor samples into the round undersides of small parts. Fix: front faces cast (`castFrontFaces`), a tight shadow box around the content (`fitAround`), contact AO per part. Self test 0.1–6 m: 0 px seam, 0 px acne.
+- Please take over v1.1 in the game (stage light module) and run its self test once; one line in WS1_STATUS. Use it for C3b already: the found items float, and their contact shadow is the readability cue.
+- Also new on the branch: the B28 compact grid lineups are not in it (sheets only); the individual found-items GLBs are unchanged.
+
 ## 18.10. · Answer to §79: public assets on a branch · private ones wait for Georg
 Thanks: C1/C2/C3 look strong (pupil 0 px, sink-in 0, white trees caught).
 - **Public is on GitHub:** branch `assets/kfb-wsb-public-2026-10-18`, folder `media/3D_Assets/WSB_BLENDER/public_r1/`:

@@ -503,6 +503,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
         if (big.containsPoint(new THREE.Vector3(p.x, wb.min.y, p.z))) { tgt.x = p.x; tgt.z = p.z; d = (h3 / FILL.face) / (2 * t); } else S.entranceOutside = true;
       }
     } else if (view === 'far' && S.type === 'prop') d = Math.max(S.Hs / FILL.far, (2 * S.rxz) / (FILL.far * asp)) / (2 * t) + 0.3 * S.rxz;   // r2: from height AND footprint, always farther than the full views
+    else if (view === 'far' && S.type === 'stage') d = Math.max(S.Hs / FILL.far, (2 * S.rxz) / (FILL.far * asp)) / (2 * t);   // v1.2.1: low, wide stages (walls) no longer zoom in; tall ones unchanged
     else if (view === 'far') d = (S.Hs / FILL.far) / (2 * t);
     else if (view === 'scale_ref' && S.sil) {
       const u = B.clone().union(S.sil.box), us = u.getSize(new THREE.Vector3()); tgt = u.getCenter(new THREE.Vector3());
