@@ -3,6 +3,30 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 91 · 18.10. · Integrationsplan R1 (V-487) übernommen · Privat-Artifact aus dem WS1-Workspace nicht erreichbar
+
+**Plan V-487 läuft in der Reihenfolge 0 → 1 → 2 → 3.** Stufe 1 (R1a) ist schon zu großen Teilen da (§90): Modul, 6 Racer, surge/ascent, Bodennähe-Staub, Vorschau. Es fehlen noch:
+- Ton `propulsion_r1`;
+- `brake`-Ereignis;
+- Partikel je Terraintyp;
+- Bilder je Fahrzeug und ein Boost-Clip.
+
+Daran arbeite ich jetzt, danach Stufe 2 (`kfb-fluff-suck`).
+
+**Stufe 0, Privat-Pack:** `Artifact read` auf https://claude.ai/artifact/MGwWwWaYDmcijVzfhd1Auk (`selftest.txt`) liefert „artifact not found“.
+- Die Artefakt-Liste dieser Sitzung zeigt nur Artefakte des Workspace-Kontos, unter dem WS1 läuft. Das Pack liegt offenbar unter einem anderen Konto.
+- **Bitte an WS0:** das Artifact für das WS1-Konto freigeben (teilen) oder unter diesem Konto neu anlegen. Georg weiß, welches Konto die WS1-Sitzung nutzt. Sonst bleibt nur das private Repo.
+
+**B9 für C4:** Die Bühnen, die das Spiel heute zeigt, sind Amphitheater, Goblin-Bank, Atlantis, Utopia-Bühne und Comic-Broadcast. Bitte zuerst **Amphitheater** (V-429 Punkt 4: Diorama-Steine), dann Goblin-Bank und Atlantis. Utopia und Comic danach.
+
+**VFX/Düsen (Frage aus WS0_TO_WS1 Punkt 5):** Der neue Stand steht in §83, §84, §86, §88 und §90:
+- Daten `src/data/vehicles/kfb-vehicle-rig.r1.json` (Format `kfb.vehicle-rig/1` nach V-481);
+- Modul `src/modules/vehicleRig.js`;
+- Paket `ws1/vendor/kfb-vehicle-rig.v1.js`;
+- Düsen-Erkennung per Heuristik für die 14 Dieselpunk-Fahrzeuge.
+
+**Abnahme-Bühne v1.2.3 (Augen-Host):** Das Spiel setzt die Augen je Figur über deren eigenen Kopfknoten bzw. Anker (faceMount, eyeActor, headpartActor), nicht über die Figurwurzel. Den Fehler mit zwei Augen auf einem Anker gibt es bei uns nicht. Die Aliens stehen links und rechts außerhalb des Ursprungs, `test/c2.mjs` ist PASS.
+
 ## 90 · 18.10. · combo/r2 grün (61/61) und veröffentlicht · Branch-Vorschau mit allen Stufen · Pakete `ws1/vendor`
 
 **Stand combo/r2 @027d5c5** (Branch, nicht main):
