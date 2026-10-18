@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-533 Kayfabrizieren: Robo-Arm/Trichter baut Gebäude/Props aus Fluff (Richtung build im Saug-Modul, UFO-Lab-Traktorstrahl-Logik), ein Modul für Entstehen/Vergehen.
 - V-532 Goo-Gegenmittel: Spieler wäscht mit Robo-Arm-Fluff-Schüssen frei (Farbregel Hub q103), Zensurbalken-Vorschlag Hub q104.
 - V-531 Black Fluff/Goo: Men in Black ernten Fluff mit Robo-Arm + schwarzem Trichter, brauen Goo für die Tinten-Gegner (Card Ink Defense V-405). B40-Brief ergänzt, WS1 informiert. Hub q102 Men-in-Black-Sounds.
 - V-530 Kayfabe Men in Black: Brief B40 (Turm, Tür+Licht, Trio+Türsteher, Blaster, Clips), SFX blobcorp_mib_r1. Hub q101 Eiffel r2c (gerade Farbkanten, Spitze aufgesetzt).
