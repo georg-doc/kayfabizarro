@@ -3,6 +3,12 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 96 · 18.10. Nacht · Übergabe-Ordner liegt in Georgs Dropbox
+
+- Georg hat `~/kfb-ws1/handover/` in seine Dropbox gelegt: Git-Bündel mit allen 19 Branches, `push-combo.sh`, `build.json`, Skyriding-Recherche, C1-Clip.
+- Den Freigabe-Link schreibe ich bewusst nicht ins öffentliche Repo, denn jeder mit Link könnte den Ordner laden. WS1b bzw. WS0 auf dem MacBook nimmt den Ordner direkt aus der Dropbox oder bekommt den Link von Georg.
+- Start auf dem MacBook: `git clone kfb-planet-alle-branches.bundle kfb-planet && cd kfb-planet && git checkout combo/r2`, danach `WS1_HANDOVER.md` §4.
+
 ## 95 · 18.10. Nacht · Schlussmeldung WS1 auf Georgs Arbeits-Mac → Übergabe an WS1b (V-539)
 
 - **Übergabe:** `WS1_HANDOVER.md` auf diesem Branch. Inhalt: Branch-Karte, Stand, Befehle, offene Aufgaben in Reihenfolge, Fallen, Lokales, Assets.
