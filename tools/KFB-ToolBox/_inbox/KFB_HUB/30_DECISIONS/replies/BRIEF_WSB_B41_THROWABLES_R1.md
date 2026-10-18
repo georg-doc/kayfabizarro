@@ -1,5 +1,5 @@
 # BRIEF WSB · B41 · Wurfwaffen + Brick-Fish-Choreografie · R1 · 2026-10-18 · WS0
-**Reihenfolge:** nach V-536 (Halterung) und B40. Register: V-537. Auf die Platte achten, Läufe klein halten.
+**Reihenfolge:** freigegeben von Georg 19.10. (nach B40/B42/B43). Register: V-537. Auf die Platte achten, Läufe klein halten.
 
 **Tier 0**
 1. Drei Wurfkörper, alle mit `KFB_Grip` in der Faustkugel (V-536):
@@ -21,6 +21,21 @@
   - Frankensteining aus Bomben-Körper + Fluff-Kugel-Look (Knet, Fluff-Akzentfarbe als Material `kfb_role_fluff_<farbe>`, umschaltbar).
   - Sie platzt in eine Fluff-Wolke und wäscht Black Goo frei (V-532).
 - **Alle:** Knet-Material, `KFB_Grip` in der Faust (Achse wie V-536), Größe passend zur Faust von Medium und Large.
+
+**Humbug-Detonator (V-546, Georg-Nachtrag)**
+- Eine Flächen-Granate im Stil eines „Thermal-Detonators“, aber eigenes KFB-Design ohne Film-Vorbild (IP): Knet-Kugel mit Band, blinkendem Lämpchen und Schalter bzw. Kappe.
+- Für Hunky & Dory und die Men in Black. **Große Variante** für den Large-Türsteher AGL, passend zu seiner Faust.
+- Anker: `KFB_Grip` (V-536), `KFB_Blink` (Lämpchen für Blink-VFX), `KFB_Arm` (Schalter bzw. Kappe für die Scharf-Geste).
+- **Explosions-Formen** als Knet-Meshes nach `SPEC_CARTOON_VFX_SHAPES_R1`, keine gestapelten Kugeln:
+  - Cartoon-Pilzwolke bzw. Puffwolke;
+  - flacher Schockwellen-Ring;
+  - Stern-Blitz.
+  - Je 3 Stufen (Aufblähen, Höhepunkt, Zerfasern) als Shape Keys oder Einzel-Meshes. Die Animation macht WS1b.
+- **Großer Krater-Stempel** (temporär, wie oben) plus Schmauch-Stern groß.
+- **Wirkung (WS1b):**
+  - Flächenwirkung im Radius;
+  - alle NPCs und der Spieler im Umkreis bekommen automatisch den „Humbug!“-Blitzdings-Effekt (Comic-Wort, Opfer-Kette fallen → liegen → aufrappeln → benommen, V-530);
+  - dieselbe saftige Explosion nutzen Destruction-Mech-POC (V-514) und Combat Arena.
 
 **Wurf-Clips** (Mixamo, privat, `~/Dropbox/Mac/Downloads/`)
 - Grenade Throw, Run And Throw Grenade, Throw, Throwing, Goalie Throw, Goalkeeper Overhand Throw, Frisbee Throw.

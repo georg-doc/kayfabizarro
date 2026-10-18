@@ -9,6 +9,10 @@
 
 
 
+
+## 19.10. · Humbug-Detonator (V-546) für WS1b, Start später
+Flächen-Granate (eigenes KFB-Design) für Hunky & Dory und Men in Black, groß für AGL. Bitte planen: Flächenwirkung im Radius → alle NPCs und der Spieler bekommen automatisch den „Humbug!“-Blitzdings-Effekt (Comic-Wort + Opfer-Kette mit Boden-Klemme); saftige Explosion aus WSBs Knet-Formen (Pilz bzw. Puff, Schockwellen-Ring, Stern-Blitz, je 3 Stufen) + großer temporärer Krater; dieselbe Explosion für Destruction-Mech (V-514) und Combat Arena. SFX `detonator_r1` (WS0).
+
 ## 18.10. 23:40 · Für WS1b: Boden-Klemme bei Liege-Clips + Clip-IDs Agenten (V-541)
 - Übertragene Liege-Clips (Opfer: umfallen, liegen, aufstehen, Drunk Walk) versinken mit den dicken KayKit-Körpern im Boden (Medium bis 0,53 u, Large bis 1,14 u). WSB hat für Lorekeeper und Ork Brute die Wurzel gehoben und gebacken. Im Spiel braucht **jede Liege-Szene eine Boden-Klemme** je Figur (tiefster Körperpunkt ≥ Boden, gleitend), plus Überblenden der Hüfthöhe beim Übergang Liegen → Aufstehen.
 - Agenten-Clips heißen jetzt nach Motion Library: `kfb_action_aim/shoot/shooting/reload_blaster_a`, `kfb_action_raise_shoot_blaster_a`, `kfb_locomotion_running_holding_blaster_a`, `kfb_locomotion_running_strafe_{left,right}_blaster_a`, `kfb_action_dodge_{left,right,forward,backward}_a`, `kfb_idle_blaster_low_a`, `kfb_locomotion_{walking,running}_blaster_low_a`, `kfb_reaction_hit_front_{small,big}_a`; Marken in `extras.kfb.markers`. Anker `KFB_Grip`/`KFB_Muzzle` (Alias `socket_*`).

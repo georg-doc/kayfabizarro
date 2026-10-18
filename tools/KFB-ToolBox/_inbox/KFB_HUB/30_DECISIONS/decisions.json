@@ -7689,6 +7689,21 @@
    "applies": "B42 r2"
   },
   {
+   "id": "V-546",
+   "date": "2026-10-19",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "B41 freigegeben + Humbug-Detonator (Georg 19.10.): Wurfwaffen-Brief B41 geht an WSB. Zusätzlich eine Flächen-Granate im Stil eines Thermal-Detonators, aber eigenes KFB-Design (kein Film-Vorbild) für Hunky & Dory und die Men in Black, große Variante für den Large-Türsteher. Flächen-/Nuke-Logik mit VFX und SFX, KFB-cartoonig gespielt: automatischer Blitzdings-/„Humbug!“-Effekt für alle NPCs und den Spieler im Umkreis (Opfer-Kette V-530), saftige Explosion, die auch Destruction-Mech-POC (V-514) und Combat-Arena-Integration nutzen. WSB: Prop 2 Größen + Explosions-Formen + großer Krater; WS1b: Flächenwirkung + Animation; WS0: SFX-Set detonator_r1.",
+   "values": {},
+   "owner": "WSB (B41) · WS1b · WS0 (SFX)",
+   "check": "B41 Prüfstand + Hub-Hörprobe",
+   "source": "Georg 19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Massen-Variante des Blitzdings-Gags, wiederverwendbar für Zerstörung und Arena.",
+   "applies": "B41 jetzt"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7776,7 +7791,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:908",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:909",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
