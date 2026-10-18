@@ -6849,6 +6849,21 @@
    "applies": "B34 r2 vor B36"
   },
   {
+   "id": "V-490",
+   "date": "2026-10-18",
+   "area": "Worldbuilder",
+   "verdict": "TUNE",
+   "text": "UFO-Kuppel C.O.M.I.C. (Georg 18.10.): halbrund statt Glocke, fast komplett durchsichtig, wie ein Cabrio-Dach entlang der Kuppelrundung vor- und zurückrollbar. Umsetzung WSB B34 r3: Halbkugel auf niedrigem Glasring (wegen der Monitor-Rückwand am Außenrand), Glas Alpha ~0,06–0,08 ohne Eigenfarbe; 5–7 verschachtelte Segmente kfb_dome_seg_<n> um die Querachse, Clips kfb_dome_open_a/close_a (~1,6 s, gestaffelt, Überschwinger) + Winkel als extras für einen 0..1-Regler im Spiel; Schimmer vom Spiel. Alternative nur mit Bild: Rückwand absenken.",
+   "values": {},
+   "owner": "WSB (B34 r3) · WS1 (Schimmer, Regler)",
+   "check": "3 Zustände + Seitenprofil",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Bild der Kuppel: halbrund, unsichtbar, zum Öffnen wie ein Cabrio.",
+   "applies": "B34 r3 vor B36"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6936,7 +6951,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:847",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:848",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

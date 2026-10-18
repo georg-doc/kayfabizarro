@@ -119,3 +119,10 @@ Jeder POI hat:
   - Geometrie und Anker von WSB (B34 r2);
   - Shader (Tönung, Wabern) und Blasen-Partikel von WS1 im gemeinsamen VFX-Budget (V-357);
   - Blubber-Ton optional über ElevenLabs.
+
+
+## 9 · Kuppel als Cabrio-Dach (Georg 18.10., V-490)
+- Halbrund, auf einem niedrigen Glasring über der Monitor-Rückwand; fast komplett durchsichtig.
+- 5–7 verschachtelte Segmente rollen entlang der Rundung nach hinten (offen) bzw. nach vorn (zu), gestaffelt mit kleinem Überschwinger.
+- Im Spiel ein 0..1-Regler; Schimmer und Glanz macht der Shader.
+- Ersetzt das Ein-/Ausblenden aus §2.

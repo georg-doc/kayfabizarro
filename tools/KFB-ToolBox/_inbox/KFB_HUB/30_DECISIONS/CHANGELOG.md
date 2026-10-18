@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-490 UFO-Kuppel TUNE: halbrund auf Glasring, fast unsichtbar, Cabrio-Segmente zum Auf-/Zurollen → WSB B34 r3 (41. Nachtrag).
 - WSB B34 r2 Glastank (V-489): Glas klar, Flüssigkeit eigenes Mesh kfb_tank_liquid (92 %), kfb_tank_float mittig (Kopf 0,5 u unter Oberfläche) + float_range, 7 Blasen-Anker mit Rate/Größe/Seed → Hub q49 Bild ersetzt.
 - V-489 Normans Glastank TUNE: durchsichtig, wabernde Story-Mode-Tönung, nicht-repetitive Blasen, Norman mittig im Medium („Psyop Soup“) → WSB B34 r2 (40. Nachtrag), WS1-Shader vorgemerkt.
 - WSB B34 r1b: dunkles Rechteck im Tank war Z-Fighting (drei Flächen auf einer Ebene), behoben; Hunkys Ecke + Tank-Probe in Hub q49 ergänzt.
