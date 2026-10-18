@@ -8,7 +8,7 @@
 
 ## Block
 **Einrichtung (einmalig)**
-- **Repo:** Du läufst in einem eigenen Git-Worktree des Repos `kayfabizarro`, das die App für dich angelegt hat. Den Hauptordner `~/Developer/kayfabizarro-publish` (Branch `cloudflare-live`, gehört WS0) nicht umschalten oder ändern.
+- **Repo:** Arbeits-Repo ist `kfb-planet`, geklont aus dem Übergabe-Bündel nach `~/Developer/kfb-planet` (Branch `combo/r2` @d762916). Veröffentlicht wird über die `ws1/*`-Branches im Repo `kayfabizarro`; dafür hast du einen eigenen Git-Worktree, den die App angelegt hat. Den Hauptordner `~/Developer/kayfabizarro-publish` (Branch `cloudflare-live`, gehört WS0) nicht umschalten oder ändern.
 - **Steuerung:** WS0 hat dich gestartet, reviewt und steuert dich (Nachrichten von WS0 kommen als Session-Nachricht). Melde jeden Abschnitt kurz an WS0 und in WS1_STATUS.
 - **Übergabe abwarten:** Falls `WS1_HANDOVER.md` auf `ws1/r3f-frame` noch fehlt, prüfe zuerst nur lesend die Branches (`combo/r2`, `ws1/combo-r2`, `ws1/vendor`) und melde den Stand an WS0. Nichts überschreiben, was die alte WS1 noch pushen könnte.
 - **Branches:**
