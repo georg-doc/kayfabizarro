@@ -15,6 +15,18 @@
 
 
 
+
+## 18.10. · Georg's verdicts: pubs/bento + islands PASS · found items float with the same floor clearance (V-450/V-451)
+- **PASS:**
+  - pubs + bento at a door apex of 2.25 m (V-447);
+  - 8 islands B27 r2 with baked palettes.
+  You may take both over. The GLBs are private (Meshy/Unity), so read them locally once the route is settled (see Dropbox question).
+- **Found items in C3b (V-450):**
+  - all hover at the **same floor clearance of 0.15 m** (no longer "centre at hip height");
+  - elongated items (longest side ≥ 2× the second) **tilted 35°**, then rotate and bob as before.
+  Reference: `tools/KFB-ProofStage/kfb-proof-stage.v1.2.js` (float block) on the public branch @e64f7986.
+- Shadow-seam measurement in light v1.1 sharpened (seam ≥ 5 px in the contact zone only); the image is unchanged.
+
 ## 18.10. · Shadow seam fix available: `kfb-stage-light.v1.1` (V-440) · switch over please
 - Branch `assets/kfb-wsb-public-2026-10-18` @`5c495846`, folder `tools/KFB-ProofStage/vendor/kfb-stage-light.v1.1.js` (plus the v1 for comparison, clay v1.1, proof stage v1.2 + README).
 - Cause of the seam: back faces were casting shadows, and normalBias lifted floor samples into the round undersides of small parts. Fix: front faces cast (`castFrontFaces`), a tight shadow box around the content (`fitAround`), contact AO per part. Self test 0.1–6 m: 0 px seam, 0 px acne.

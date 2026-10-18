@@ -234,9 +234,9 @@ export function runGates(THREE, S) {
   // G3 floor contact (v1.2 float pose: hover height instead, V-437)
   const minY = S.bounds.min.y;
   if (S.float?.on) {
-    const F = S.float, bad = F.items.filter((it) => Math.abs(it.centre_m - it.target_m) > 0.01 || it.minY_m <= 0.005), cl = F.items.filter((it) => it.clamped);
-    G.G3 = { name: 'Schwebehöhe Fundstück (V-437) ±1 cm', result: bad.length || !F.items.length ? 'FAIL' : 'PASS', minY_m: +minY.toFixed(4),
-      detail: `Mitte auf Hüfthöhe Medium-Rig ${F.hip_m.toFixed(3).replace('.', ',')} m · ${F.items.length} Teil(e)${cl.length ? ` · ${cl.length} höher, damit sie den Boden nicht berühren (halbe Höhe + 2 cm): ${cl.map((it) => it.name.replace(/^KFB_Loot_/, '')).join(', ')}` : ''} · tiefster Punkt y = ${(minY * 100).toFixed(1)} cm${bad.length ? ' · ABWEICHUNG: ' + bad.map((it) => it.name).join(', ') : ''}` };
+    const F = S.float, bad = F.items.filter((it) => Math.abs(it.centre_m - it.target_m) > 0.01 || Math.abs(it.minY_m - F.clear_m) > 0.01), cl = F.items.filter((it) => it.tilted);
+    G.G3 = { name: 'Schweben Fundstück (V-437/V-450) ±1 cm', result: bad.length || !F.items.length ? 'FAIL' : 'PASS', minY_m: +minY.toFixed(4),
+      detail: `gleicher Bodenabstand ${(F.clear_m * 100).toFixed(0)} cm für alle (V-450; Medium-Hüfte ${F.hip_m.toFixed(2).replace('.', ',')} m) · ${F.items.length} Teil(e)${cl.length ? ` · ${cl.length} länglich, 35° schräg: ${cl.map((it) => it.name.replace(/^KFB_Loot_/, '')).join(', ')}` : ''} · tiefster Punkt y = ${(minY * 100).toFixed(1)} cm${bad.length ? ' · ABWEICHUNG: ' + bad.map((it) => it.name).join(', ') : ''}` };
   } else
   G.G3 = { name: 'Bodenkontakt ±1 cm', result: Math.abs(minY) <= 0.01 ? 'PASS' : 'FAIL', detail: `tiefster Punkt y = ${(minY * 100).toFixed(2)} cm (${minY > 0.01 ? 'schwebt' : minY < -0.01 ? 'versinkt' : 'steht'})`, minY_m: +minY.toFixed(4) };
   // G4 outliers, islands, holes (warnings)
@@ -371,13 +371,17 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     const flt = { on: floatOn, mode: floatOn ? 'float' : 'ground', requested: pose, pickups: pickupItems.length, hip_m: null, hipSource: null, items: [] };
     if (floatOn) {
       const Mf = figs.find((f) => f.rig === 'medium');
+      flt.clear_m = 0.15;   // V-450: constant floor clearance for all found items (≈ Medium hip 0.25 m minus half a typical small item)
       flt.hip_m = Mf?.hip_m ?? 0.25; flt.hipSource = Mf?.hip_m != null ? `${Mf.label}: Knochen hips, Bindepose, × ${U2M} m/u` : 'Ersatzwert 0,25 m (Medium-Figur nicht geladen)';
       const items = pickupItems.length ? pickupItems : [root];
       for (const it of items) {
         root.updateMatrixWorld(true); const bb = bodyBounds(THREE, root, (m) => isUnder(m, it)); if (bb.isEmpty()) continue;
-        const cy = (bb.min.y + bb.max.y) / 2, hh = (bb.max.y - bb.min.y) / 2, target = Math.max(flt.hip_m, hh + 0.02), sy = (it.parent || it).getWorldScale(new THREE.Vector3()).y || 1;
+        // V-450 (Georg 18.10.): every item keeps the SAME clearance above the floor; elongated items float tilted (35°)
+        const sz0 = bb.getSize(new THREE.Vector3()), dims = [['x', sz0.x], ['y', sz0.y], ['z', sz0.z]].sort((a, b) => b[1] - a[1]); let tilt = null;
+        if (it !== root && dims[0][1] >= 2 * dims[1][1]) { const ax = dims[0][0] === 'z' ? new THREE.Vector3(1, 0, 0) : new THREE.Vector3(0, 0, 1); it.rotateOnWorldAxis(ax, THREE.MathUtils.degToRad(35)); it.updateMatrixWorld(true); root.updateMatrixWorld(true); bb.copy(bodyBounds(THREE, root, (m) => isUnder(m, it))); tilt = dims[0][0]; }
+        const cy = (bb.min.y + bb.max.y) / 2, hh = (bb.max.y - bb.min.y) / 2, target = flt.clear_m + hh, sy = (it.parent || it).getWorldScale(new THREE.Vector3()).y || 1;
         it.position.y += (target - cy) / (it === root ? 1 : sy); it.updateMatrixWorld(true);
-        flt.items.push({ name: it.name || '?', target_m: +target.toFixed(4), clamped: target > flt.hip_m + 1e-6, half_m: +hh.toFixed(3) });
+        flt.items.push({ name: it.name || '?', target_m: +target.toFixed(4), tilted: tilt, half_m: +hh.toFixed(3) });
       }
       root.updateMatrixWorld(true);
       for (const r of flt.items) { const it = items.find((x) => (x.name || '?') === r.name); const bb = bodyBounds(THREE, root, (m) => isUnder(m, it)); r.centre_m = +((bb.min.y + bb.max.y) / 2).toFixed(4); r.minY_m = +bb.min.y.toFixed(4); }
@@ -462,7 +466,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     S.seam = ['front', 'threeq', 'side', 'back'].map((v) => ({ view: v, ...measureShadowSeam({ gl: renderer, scene: S.scene, camera: frame(v, 'rest'), sun: S.rig.lights.sun, isFloor: (o) => o.name === 'proof_cove' }) }));
     const seamTot = S.seam.reduce((a, r) => a + r.seamPx, 0), sh = S.rig.info().shadow;
     gates.gates.G6 = { name: 'Schattensaum (kein heller Saum zwischen Teil und Schatten)', result: seamTot === 0 ? 'PASS' : 'FAIL',
-      detail: `Saum ${S.seam.map((r) => `${r.view} ${r.seamPx} px`).join(' · ')}${S.seam.some((r) => r.isolatedPx) ? ` (Einzelpixel unter ${S.seam[0].minCluster} px: ${S.seam.map((r) => r.isolatedPx).join('/')})` : ''} · Schwelle ${S.seam[0].thresh} Luma, Umriss-Toleranz ${S.seam[0].erode} px · Texel ${(sh.texel * 1000).toFixed(2)} mm · normalBias ${(sh.normalBias * 1000).toFixed(2)} mm (1,5 Texel) · ${sh.mapSize}² · Vorderseiten werfen`, seamPx: seamTot, perView: S.seam };
+      detail: `Saum ${S.seam.map((r) => `${r.view} ${r.seamPx} px`).join(' · ')}${S.seam.some((r) => r.isolatedPx) ? ` (Einzelpixel unter ${S.seam[0].minCluster} px: ${S.seam.map((r) => r.isolatedPx).join('/')})` : ''}${S.seam.some((r) => r.tipPx) ? ` · Schattenspitzen fern vom Kontakt (kein Saum): ${S.seam.map((r) => r.tipPx || 0).join('/')} px` : ''} · Kontaktzone ${S.seam[0].contactPx ?? '-'} px · Schwelle ${S.seam[0].thresh} Luma, Umriss-Toleranz ${S.seam[0].erode} px · Texel ${(sh.texel * 1000).toFixed(2)} mm · normalBias ${(sh.normalBias * 1000).toFixed(2)} mm (1,5 Texel) · ${sh.mapSize}² · Vorderseiten werfen`, seamPx: seamTot, perView: S.seam };
     gates.status = Object.values(gates.gates).some((g) => g.result === 'FAIL') ? 'FAIL' : 'PASS';
     S.gates = gates;
     return { status: gates.status, gates: gates.gates, info: info() };

@@ -6249,6 +6249,36 @@
    "applies": "nach C3b"
   },
   {
+   "id": "V-450",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "TUNE",
+   "text": "Fundsachen (Hub q23, PASS mit Notiz): alle schweben mit dem GLEICHEN Abstand zum Boden (WS0: 15 cm Bodenabstand statt „Mitte auf Hüfthöhe“), Karotte und längliche Requisiten schweben und drehen sich schräg (35°). Essens-Logik der Pakete übernehmen statt selbst Teller/Gerichte zusammenzubasteln: halbe/leere Teller, Pizza mit Karton (voll/leer) und Stücke usw. als vorhandene Paket-Varianten. Bühne v1.2.1 setzt Bodenabstand und Schräglage automatisch (G3 prüft ±1 cm).",
+   "values": {},
+   "owner": "WSB (B28 r2: Paket-Varianten, keine Eigen-Kompositionen) · WS1 (C3b) · WS0 (Bühne)",
+   "check": "B28-r2-Bögen; WS1-Clip",
+   "source": "Hub q23",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gleicher Bodenabstand liest sich als eine Familie von Pickups; Paket-Varianten sind stimmiger als selbst gebaute Gerichte.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-451",
+   "date": "2026-10-18",
+   "area": "Bühne",
+   "verdict": "PASS",
+   "text": "Hub q22: Pubs + Bento mit Türscheitel 2,25 m PASS, Maßstab ok (Salty bleibt ×0,95). Hub q24: 8 Inseln mit eingebackenen Paletten PASS („nice!“) → WS1 übernimmt B27 r2.",
+   "values": {},
+   "owner": "WS1 (Einbau) · WSB",
+   "check": "-",
+   "source": "Hub q22 · q24 · V-447 · V-441",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Abnahme; damit sind Pubs, Bento und Inseln freigegeben.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6336,7 +6366,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:798",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:799",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
