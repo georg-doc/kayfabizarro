@@ -161,6 +161,7 @@ float gemNoise(vec3 x) {
    shifted by half a band (staggered like a brilliant cut instead of a grid) */
 vec3 gemFacet(vec3 n, float amt, float rot) {
   float S = 6.2831853 / 10.0, E = 3.1415927 / 5.0;
+  if (dot(n.xz, n.xz) < 1e-8) return n;                     // straight up/down: no azimuth (atan(0, 0) is undefined)
   float az = atan(n.z, n.x) + rot, el = asin(clamp(n.y, -1.0, 1.0));
   float sec = floor(az / S), odd = mod(sec, 2.0), ua = az / S - sec;
   float eb = el / E + 0.5 * odd, ue = eb - floor(eb);
@@ -177,7 +178,9 @@ vec3 gemNL; float gemCos;
 const FRAG_NORMAL = /* glsl */`
 {
   float rot = uGemParams.z * 0.5236 + uGemState.z * uGemTime * 0.35;
-  gemNL = gemFacet(normalize(vGemN), uGemLook.x, rot);
+  vec3 n0 = dot(vGemN, vGemN) > 1e-12 ? normalize(vGemN) : vec3(0.0, 1.0, 0.0);
+  gemNL = gemFacet(n0, uGemLook.x, rot);
+  if (any(isnan(gemNL))) gemNL = n0;
   normal = normalize(mat3(viewMatrix) * gemToWorld(gemNL));
 }
 `;
@@ -255,7 +258,8 @@ const FRAG_INTERIOR = /* glsl */`
   float rimF = pow(1.0 - gemCos, 2.5);
   emit += mix(vec3(1.0), uGemVein, 0.8) * rimF * rimF * uGemState.y * 0.45;            // active: soft rim, tinted
   emit += uGemVein * uGemLook.w * (0.6 + 0.4 * pulse) * (0.35 + 0.65 * rimF) * (1.0 + uGemState.y);   // faint inner glow, mostly at grazing angles
-  outgoingLight += inner * uGemLook.y + emit;
+  vec3 gemAdd = inner * uGemLook.y + emit;
+  if (!any(isnan(gemAdd)) && !any(isinf(gemAdd))) outgoingLight += max(gemAdd, vec3(0.0));
 }
 `;
 
@@ -423,7 +427,7 @@ function bakeShatter(THREE, shards, H, seed, duration = SHATTER_DURATION) {
     const out = new V3(s.center.x, 0, s.center.z); if (out.lengthSq() < 1e-8) out.set(rnd() - 0.5, 0, rnd() - 0.5); out.normalize();
     const ang = (rnd() - 0.5) * 0.9; out.applyAxisAngle(new V3(0, 1, 0), ang);
     const hfrac = Math.max(0, Math.min(1, s.center.y / H));
-    const vel = out.multiplyScalar((0.55 + 0.6 * rnd()) * H).add(new V3(0, (0.55 + 0.5 * rnd() + 0.3 * hfrac) * H, 0));
+    const vel = out.multiplyScalar((0.4 + 0.45 * rnd()) * H).add(new V3(0, (0.35 + 0.35 * rnd() + 0.2 * hfrac) * H, 0));
     const spin = new V3(rnd() - 0.5, rnd() - 0.5, rnd() - 0.5).normalize(); let w = 5 + 7 * rnd(), bounces = 0;
     const F = new Float32Array(frames * 7);
     for (let f = 0; f < frames; f++) {
