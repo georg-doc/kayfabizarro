@@ -6339,6 +6339,36 @@
    "applies": "Planung; Download nach Georgs OK"
   },
   {
+   "id": "V-456",
+   "date": "2026-10-18",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Grundsatz (Georg 18.10., q29): handgemachte Details wie Seile, Wicklungen, Fugen, Steine nie regelmäßig oder symmetrisch – immer leicht unregelmäßig, versetzt, unterschiedlich (gilt für alle Bauten und Skins). Dazu Cartoon-Logik: lieber größer und weniger kleinteilig.",
+   "values": {},
+   "owner": "WSB · WS1 · alle",
+   "check": "Abnahme-Sichtprüfung",
+   "source": "Hub q29 · q31",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Regelmäßige Wiederholung verrät Prozedur und wirkt technisch; KFB soll handgeknetet wirken.",
+   "applies": "sofort, dauerhaft"
+  },
+  {
+   "id": "V-457",
+   "date": "2026-10-18",
+   "area": "Bühne",
+   "verdict": "TUNE",
+   "text": "Hub-Antworten q28–q31: (q28) Sockelrand V1 schlank für Dory und ebenso für Hunky; E2 und 80°-Sockel unverändert. (q29) B7: Steinrahmen A ok, Holz B1 mit Seil – aber Seile zu regelmäßig/symmetrisch (V-456); MASSSTAB FAIL: B7 ist kein kleiner PC, sondern ein riesiges „Deep Kayfabe“-Computer-Artefakt/Zeremonien-Bühne (Hitchhiker’s Guide, Deep Thought) → neu skalieren, Treppenstufen begehbar für das Medium-Rig (Stufenhöhe ≈ 0,3 m). (q30) Kampf-Ruhepose „Drohend stehen“ reicht. (q31) Mauer: nur Backstein funktioniert (andere zu offensichtlich wiederholend) – Ziegel größer skalieren (Cartoon-Logik), obere Kante weniger wellig: lange Schwünge, unregelmäßig.",
+   "values": {},
+   "owner": "WSB (Rand V1, B7 r4, B29 r4)",
+   "check": "Bögen über Abnahme-Bühne",
+   "source": "Hub q28–q31",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Abnahme; B7 ist als monumentale Bühne gedacht, nicht als Requisit.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6426,7 +6456,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:803",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:807",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
