@@ -1,0 +1,22 @@
+{
+ "schema": "kfb.figure-variant/1",
+ "id": "lady_dory.e2-edge80",
+ "base": "lady_dory",
+ "baseSha256": "74420ad9785c276bf0083e730214fa3494d08a03dc8dca0bfd890c15d7a04883",
+ "vRef": [
+  "V-422",
+  "V-430"
+ ],
+ "why": "E2-Lider PASS mit Sockelrand 80° (V-422); B15-Rand FAIL, also edge80 verwenden (V-430). Sockel-Design sonst unverändert, in Blender neu gebacken (WS0 E2_ATTACH_R1 R1e).",
+ "body": {
+  "glb": {
+   "repo": "georg-doc/kayfabizarro",
+   "ref": "docs/kfb-decisions-register-2026-10-11",
+   "commit": "fd20d925bbbbb1423481ec6894039ea8ade88075",
+   "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/E2_ATTACH_R1/assets/variants/LadyDory_edge80.r4e.glb",
+   "sha256": "da32c6637e2ea4ea74d83355c104344d28db2185dbe3fc136de9cbf5fe0c4c14",
+   "bytes": 4661612
+  }
+ },
+ "todo": "WS0: Karte auf den edge80-Körper umstellen (oder Dory r7), dann entfällt diese Datei."
+}
