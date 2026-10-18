@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- WS0-Fehler: Rand-Vergleichsbild für q28 war um 27 % gestaucht (Vergleichsseite von WSB, Modelle unbetroffen) und ging ungeprüft an Georg; korrigiertes Bild in q28 mit Hinweis, Seitenverhältnis-Prüfung als feste Regel. B30: Figurensätze A (Poly Haven) / M (Morph Chess, MIT ok mit Lizenzdatei) → Hub q33; Steinbrett zurück an WSB (wirkte wie Holztablett, Farben braun/creme statt Stein + KFB-Palette). Ninja-POC r2 mit Kampf-Ruhepose fertig.
 - V-459 Hub q32 PASS: Sockelrand V1, Mauer r4 Backstein, B7 r4 riesig + Seil.
 - V-458 Umgebungs-Atmo je Biom (Modul kfb-ambience.v1, fünf Schichten, Donner synchron zum Blitz, Wind an Bild-Wind gekoppelt, Ducking unter Songs); WSA-Brief b114; Bestand gesichtet (Environment-Ordner, ElevenLabs-Regen-Loops; Tiny-Skies-Sounds nur Referenz).
 - WSB V-457 Teil 1: Sockelrand V1 schlank (Dory r10_rimV1, Hunky edge80_rimV1; nur Rand-Ring geändert) → Figurenkarten + sources.json umgestellt; Mauer r4 nur Backstein ×1,7, Krone lange schiefe Schwünge; B7 r4 ×12,33 nach Stufenhöhe 0,30 m (vorher unskaliert ~0,7 m), Seil unregelmäßig → Hub q32. B30 Zwischenstand (Poly-Haven-Satz, Steinbrett, 28 Dominos, Props), Morph-Chess-Satz in Arbeit.
