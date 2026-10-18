@@ -106,3 +106,16 @@ Jeder POI hat:
 1. Hub-Bildpaar: Totale mit Kuppel (an/aus) und POI-Lineup beider Figuren.
 2. 30-s-Clip: zwei POI-Wechsel je Figur, eine Banter-Runde, ein Strahl-Ereignis.
 3. Gates: Augen an beiden Figuren, Schattensaum, keine schwebenden Props, Kuppel ohne Z-Fighting.
+
+
+## 8 · Normans Glastank (Georg 18.10., V-489)
+- **Glas:** durchsichtig, ohne Eigenfarbe.
+- **Medium:** leichte, wabernde Farbtönung in den Fluff- bzw. Story-Mode-Farben (Tragic, Comic, Absurd, Heroic, Mystical, Forbidden).
+  - Die Farbe wandert langsam und unregelmäßig.
+  - Je Experiment eine Grundfarbe, z. B. „Psyop Soup“.
+- **Blasen:** blubbern nicht-repetitiv. Zufällige Emission aus 5–7 Bodenpunkten plus zwei auf Normans Höhe, wechselnde Größe und Tempo, nie im Takt (V-456).
+- **Norman:** schwebt mittig, ganz im Medium, mit sanftem Auf und Ab um `kfb_tank_float` (±0,15 u). Wassertreten bzw. Floating-Schleife (Mixamo über Georg).
+- **Aufteilung:**
+  - Geometrie und Anker von WSB (B34 r2);
+  - Shader (Tönung, Wabern) und Blasen-Partikel von WS1 im gemeinsamen VFX-Budget (V-357);
+  - Blubber-Ton optional über ElevenLabs.

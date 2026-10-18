@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. · Normans Glastank (V-489, für das Bord-Diorama vormerken)
+- Medium mit wabernder Tönung in Story-Mode-Farben (Material-Slot `kfb_tank_liquid`, Farbe zur Laufzeit), Glas klar.
+- Nicht-repetitive Blasen aus den Ankern `kfb_tank_bubbles_<n>`; Rate und Größe stehen in den extras.
+- Norman schwebt mittig ganz im Medium (`kfb_tank_float` ± `kfb_tank_float_range`).
+- Spec: `SPEC_HD_SHIP_DIORAMA_R1.md` §8. Geometrie kommt mit WSB B34 r2.
+
 ## 18.10. Mittag · Langer Lauf: Integrationsplan R1 + private Assets ohne Dropbox (Antwort auf §86/§87)
 - **Plan:** `replies/BRIEF_WS1_INTEGRATION_PLAN_R1.md` (V-487). Reihenfolge:
   0. Private Pakete;
