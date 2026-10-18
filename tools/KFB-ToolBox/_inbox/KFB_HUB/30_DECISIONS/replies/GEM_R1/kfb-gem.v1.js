@@ -65,8 +65,8 @@ export const PULSE_HZ = 0.2;
 export const MAX_SPANS = 32, MAX_ROWS = 64, PROFILE_BINS = 24;
 export const GEM_PRESETS = Object.freeze({
   // tint = colour at the surface / thin parts, depthTint = colour after ~half a piece height of travel, vein = glow colour
-  ruby: Object.freeze({ tint: '#d2465e', depthTint: '#8a1428', vein: '#ff8a70', body: 0.30 }),
-  sapphire: Object.freeze({ tint: '#4a6fd8', depthTint: '#1a2f86', vein: '#8fd4ff', body: 0.30 }),
+  ruby: Object.freeze({ tint: '#d2465e', depthTint: '#8a1428', vein: '#ffc27a', body: 0.13, veinGlow: 1.0 }),
+  sapphire: Object.freeze({ tint: '#4a6fd8', depthTint: '#1a2f86', vein: '#a8e0ff', body: 0.14, veinGlow: 0.55 }),
 });
 export const gemPresetForSide = (side) => (/^(black|dark)$/i.test(String(side || '')) ? 'sapphire' : 'ruby');
 /* per-state uniforms: x vein boost, y rim, z shimmer, w opacity */
@@ -157,11 +157,17 @@ float gemNoise(vec3 x) {
   return mix(mix(mix(gemHash(i), gemHash(i + vec3(1, 0, 0)), f.x), mix(gemHash(i + vec3(0, 1, 0)), gemHash(i + vec3(1, 1, 0)), f.x), f.y),
              mix(mix(gemHash(i + vec3(0, 0, 1)), gemHash(i + vec3(1, 0, 1)), f.x), mix(gemHash(i + vec3(0, 1, 1)), gemHash(i + vec3(1, 1, 1)), f.x), f.y), f.z);
 }
-/* cut look on a smooth hull: snap the local normal to 12 azimuth sectors x 7 elevation bands around the piece axis */
+/* cut look on a smooth hull: snap the local normal to 10 azimuth sectors x 5 elevation bands around the piece axis, odd sectors
+   shifted by half a band (staggered like a brilliant cut instead of a grid) */
 vec3 gemFacet(vec3 n, float amt, float rot) {
-  float S = 6.2831853 / 12.0, E = 3.1415927 / 7.0;
+  float S = 6.2831853 / 10.0, E = 3.1415927 / 5.0;
   float az = atan(n.z, n.x) + rot, el = asin(clamp(n.y, -1.0, 1.0));
-  float azq = (floor(az / S) + 0.5) * S - rot, elq = clamp(floor(el / E + 0.5) * E, -1.5707, 1.5707);
+  float sec = floor(az / S), odd = mod(sec, 2.0), ua = az / S - sec;
+  float eb = el / E + 0.5 * odd, ue = eb - floor(eb);
+  float azq = (sec + 0.5) * S - rot, elq = clamp((floor(eb) + 0.5 - 0.5 * odd) * E, -1.5707, 1.5707);
+  /* soft edges: within 14 % of a facet border the smooth normal comes back, so surface noise near a border cannot speckle */
+  float wa = smoothstep(0.0, 0.14, min(ua, 1.0 - ua)), we = smoothstep(0.0, 0.14, min(ue, 1.0 - ue));
+  azq = mix(az - rot, azq, wa); elq = mix(el, elq, we);
   vec3 f = vec3(cos(elq) * cos(azq), sin(elq), cos(elq) * sin(azq));
   return normalize(mix(n, f, amt));
 }
@@ -236,9 +242,10 @@ const FRAG_INTERIOR = /* glsl */`
     vec3 d0 = refract(I, N, 1.0 / 1.76), so = P / H + vec3(uGemParams.z * 3.7, 0.0, uGemParams.z * 1.9);
     for (int k = 0; k < 3; k++) {
       float t = 0.025 + 0.06 * float(k); if (t * H > firstLen) break;
-      vec3 p = so + d0 * t; float wb = gemNoise(p * 2.1 + 19.0);
-      float a = gemNoise(p * 3.2) + 0.5 * gemNoise(p * 6.8 + 5.0);
-      vein = max(vein, (1.0 - smoothstep(0.0, 0.02 + 0.03 * wb, abs(a - 0.74))) * (1.0 - 0.3 * float(k)));
+      vec3 p = so + d0 * t; float wb = gemNoise(p * 2.3 + 19.0);
+      float mask = smoothstep(0.30, 0.50, gemNoise(p * 1.4 + 31.0));          // veins only in parts of the stone
+      float a = gemNoise(p * 5.5) + 0.5 * gemNoise(p * 11.0 + 5.0);
+      vein = max(vein, mask * (1.0 - smoothstep(0.0, 0.006 + 0.012 * wb, abs(a - 0.74))) * (1.0 - 0.3 * float(k)));
     }
   }
   float pulse = 0.5 + 0.5 * sin(6.2831853 * ${PULSE_HZ.toFixed(2)} * uGemTime + 6.2831853 * (uGemParams.z + vGemInfo.z + vGemSeed));
@@ -246,8 +253,8 @@ const FRAG_INTERIOR = /* glsl */`
   inner = mix(inner, inner * 0.4, vein * 0.5);
   vec3 emit = uGemVein * vein * glow;
   float rimF = pow(1.0 - gemCos, 2.5);
-  emit += mix(vec3(1.0), uGemVein, 0.55) * rimF * uGemState.y * 0.55;
-  emit += uGemVein * uGemLook.w * (0.6 + 0.4 * pulse) * uGemState.x * (0.35 + 0.65 * rimF);   // faint inner glow, mostly at grazing angles
+  emit += mix(vec3(1.0), uGemVein, 0.8) * rimF * rimF * uGemState.y * 0.45;            // active: soft rim, tinted
+  emit += uGemVein * uGemLook.w * (0.6 + 0.4 * pulse) * (0.35 + 0.65 * rimF) * (1.0 + uGemState.y);   // faint inner glow, mostly at grazing angles
   outgoingLight += inner * uGemLook.y + emit;
 }
 `;
@@ -259,9 +266,9 @@ function makeBundle(THREE, key, p) {
     uGemProfiles: { value: R.profiles.tex }, uGemTime: R.time,
     uGemSigma: { value: new THREE.Vector3(...sg) }, uGemVein: { value: new THREE.Color(p.vein) },
     // x seed phase, y veins on, z facet rotation seed, w vein glow
-    uGemParams: { value: new THREE.Vector4(hash01(p.seed), p.veins ? 1 : 0, hash01('rot' + p.seed), p.veinGlow ?? 0.9) },
+    uGemParams: { value: new THREE.Vector4(hash01(p.seed), p.veins ? 1 : 0, hash01('rot' + p.seed), p.veinGlow ?? 0.7) },
     // x facet amount, y interior gain, z -, w faint inner glow
-    uGemLook: { value: new THREE.Vector4(p.facet ?? 0.82, p.interior ?? 1.0, 0, p.innerGlow ?? 0.05) },
+    uGemLook: { value: new THREE.Vector4(p.facet ?? 0.88, p.interior ?? 1.5, 0, p.innerGlow ?? 0.05) },
     uGemSkyTop: { value: new THREE.Color('#b4bdee') }, uGemSkyBot: { value: new THREE.Color('#8a7f72') },
   };
   const variants = new Map();
@@ -300,7 +307,8 @@ export function gemEnvironment({ THREE, renderer, mood, ground = '#9a8a78' }) {
   const key = JSON.stringify([mood.sun, +(+mood.sunI).toFixed(4), mood.hemiSky, +(+mood.hemiI).toFixed(4), +(+(mood.bounce ?? 1)).toFixed(4), sd.map((v) => +v.toFixed(4)), ground]);
   if (R.envs.has(key)) return R.envs.get(key);
   const scene = new THREE.Scene(), C = (h, k) => new THREE.Color(h).multiplyScalar(k);
-  const top = C(mood.hemiSky, mood.hemiI), bot = C(ground, (mood.bounce ?? 1) * mood.hemiI * 0.9), hor = top.clone().lerp(bot, 0.5).multiplyScalar(1.05);
+  // the dome is kept dim (jewel contrast needs dark areas, Morph Chess studio idea); the cards carry the brightness
+  const top = C(mood.hemiSky, mood.hemiI * 0.5), bot = C(ground, (mood.bounce ?? 1) * mood.hemiI * 0.35), hor = top.clone().lerp(bot, 0.5);
   const dome = new THREE.Mesh(new THREE.SphereGeometry(10, 48, 24), new THREE.ShaderMaterial({
     side: THREE.BackSide, depthWrite: false, uniforms: { top: { value: top }, bot: { value: bot }, hor: { value: hor } },
     vertexShader: 'varying vec3 vD; void main(){ vD = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
@@ -319,11 +327,12 @@ export function gemEnvironment({ THREE, renderer, mood, ground = '#9a8a78' }) {
   };
   // jewelry studio cards (Morph Chess material.js), scaled by how bright the mood is: day sparkles, night stays dim
   const L = Math.min(1.2, 0.18 * mood.sunI + 0.55 * mood.hemiI);
-  card('#ffffff', 4.2 * L, [2, 4], [-3, 3, 4]);
-  card('#fff4ed', 1.6 * L, [1.2, 5], [4, 1, 1]);
-  card('#ffffff', 2.0 * L, [3, 2], [0, 5, -2]);
-  card('#ffffff', 1.1 * L, [2, 4], [-2, 0, -4]);
-  card('#ffffff', 1.8 * L, [1.5, 3], [3, -1, -4]);
+  card('#ffffff', 6.0 * L, [2, 4], [-3, 3, 4]);
+  card('#fff4ed', 2.6 * L, [1.2, 5], [4, 1, 1]);
+  card('#ffffff', 3.0 * L, [3, 2], [0, 5, -2]);
+  card('#ffffff', 1.8 * L, [2, 4], [-2, 0, -4]);
+  card('#ffffff', 2.8 * L, [1.5, 3], [3, -1, -4]);
+  card('#ffffff', 2.2 * L, [1.2, 3], [-4.2, 0.8, -1]);
   card(mood.sun, 9 * mood.sunI, [1.8, 1.8], sd.map((v) => v * 8), disc, true);       // the mood's sun, as a soft disc
   const pm = new THREE.PMREMGenerator(renderer), rt = pm.fromScene(scene, 0.02, 0.1, 30); pm.dispose();
   scene.traverse((o) => { o.geometry?.dispose(); o.material?.dispose(); }); soft.dispose(); disc.dispose();
@@ -470,7 +479,7 @@ export function createGem({ THREE, tint, depthTint, veins = true, seed = 0, pres
       if (!STATES.includes(s)) throw new Error('kfb-gem.v1: unknown state ' + s);
       if (s === 'captured') { if (!shatter) startShatter(); state = 'captured'; return handle; }
       if (shatter) stopShatter();
-      state = s; for (const m of meshes) { m.visible = true; m.material = bundle.make(s); }
+      state = s; for (const m of meshes) m.material = bundle.make(s);
       return handle;
     },
     update(dt = 0) {
@@ -510,14 +519,15 @@ export function createGem({ THREE, tint, depthTint, veins = true, seed = 0, pres
         const sm = new THREE.Mesh(s.geometry, mat); sm.userData.kfbGemShard = true; sm.userData.noMeasure = true; sm.castShadow = true; sm.receiveShadow = true; sm.frustumCulled = false;
         sm.position.copy(s.center); s.mesh = sm; group.add(sm);
       }
-      (m.parent || m).add(group); m.visible = false;
+      // the intact piece is hidden through its material, not m.visible: hosts that frame or measure by visible meshes keep a stable box
+      (m.parent || m).add(group); shatter.hidden = shatter.hidden || new THREE.MeshBasicMaterial({ visible: false }); m.material = shatter.hidden;
       shatter.items.push({ mesh: m, group, shards });
     });
   }
   function stopShatter() {
     if (!shatter) return;
-    for (const it of shatter.items) { it.group.removeFromParent(); it.mesh.visible = true; }
-    bundle.clones.delete(shatter.mat); shatter.mat.dispose(); shatter = null;
+    for (const it of shatter.items) { it.group.removeFromParent(); it.mesh.material = bundle.make(state === 'captured' || state === 'gone' ? 'idle' : state); }
+    bundle.clones.delete(shatter.mat); shatter.mat.dispose(); shatter.hidden?.dispose(); shatter = null;
   }
   return handle;
 }

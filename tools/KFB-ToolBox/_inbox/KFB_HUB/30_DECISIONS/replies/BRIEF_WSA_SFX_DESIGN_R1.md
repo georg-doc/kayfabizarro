@@ -2,6 +2,15 @@
 
 **Georg:** the last combat-arena attempts were "very disappointing": only the first matching tones were played superficially, "xylophone pling-plong", nothing immersive. Everything should be considered together: research in public repos and in our GitHub, plus the missing sound pads (time- or event-driven) generated to fit exactly via ElevenLabs. Georg has credits and wants to invest in this, where there are no good public or procedural browser sound layers.
 
+**Already there (WS0, 18.10.):** `combat_r1`, 18 events × 3 variants, peak-normalised WAVs (`combat_r1_norm/`):
+- punch light/heavy, brass knuckles, swing whoosh, blaster, rocket, fuse, explosion small/large, hit confirmation;
+- fluff burst, tree shake;
+- bot angry/collapse;
+- wood splinter, stone crumble, crystal shatter, domino chain.
+
+Branch `assets/kfb-elevenlabs-sfx-r1-2026-10-18`. Take them in as the first layers. The request list only needs what is still missing.
+**Budget:** Georg has approved up to 60,000 ElevenLabs credits for sound design.
+
 **Tier 0:**
 1. **Each event = layers, not a single file:** transient (attack) + body + tail/debris, each with 3–4 variants. Combine them randomly at runtime, pitch ±4 %, volume ±2 dB, never the same combination twice in a row. Distance → low-pass + quieter; room/biome → a short reverb send (ambience module V-458).
 2. **Character:** cartoon clay world: punchy, warm, squishy-material, comedic but **physical** (thud, crunch, whoosh, debris). **No** retro arcade/chiptune/xylophone tones for hits and destruction. Arcade packs at most for UI.

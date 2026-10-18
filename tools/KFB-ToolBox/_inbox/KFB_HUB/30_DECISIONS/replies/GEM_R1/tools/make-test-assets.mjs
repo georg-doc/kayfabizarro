@@ -4,6 +4,7 @@
 //   gem_pair.glb        4 queens: white idle, white active, black idle, black active (states are set by the harness)
 //   gem_capture.glb     one white queen + one black knight (capture strip)
 //   gem_start.glb       board r3 + 32 pieces in the starting position (b30_start_position.r1.json)
+//   gem_perf32.glb      32 pieces, 4 rows of 8, no board (shader cost)
 //   node make-test-assets.mjs <outDir>
 import fs from 'node:fs';
 import path from 'node:path';
@@ -27,6 +28,9 @@ const layouts = {
   ],
   gem_capture: [{ glb: gem('queen', 'white'), name: 'W_queen', t: [0, 0, 0] }, { glb: gem('knight', 'black'), name: 'B_knight', t: [6.5, 0, 0], yaw: 55 }],
 };
+// 32 pieces in 4 rows of 8 (perf measurement: the pieces fill most of a lineup frame)
+layouts.gem_perf32 = [];
+for (let r = 0; r < 4; r++) for (let c = 0; c < 8; c++) { const t = TYPES[(c + r) % 6], side = r < 2 ? 'white' : 'black'; layouts.gem_perf32.push({ glb: gem(t, side), name: `P${r}${c}_${side}_${t}`, t: [c * 3.0 + (r % 2) * 1.5, 0, -r * 2.8] }); }
 const start = JSON.parse(fs.readFileSync(path.join(B30, 'data/b30_start_position.r1.json'), 'utf8'));
 layouts.gem_start = [{ glb: path.join(B30, 'board/KFB_ChessBoard.r3.glb'), name: 'board', t: [0, 0, 0] }];
 for (const [sq, s] of Object.entries(start.squares)) if (s.piece) layouts.gem_start.push({ glb: path.join(HUB, '50_BLENDER', s.piece.glb), name: `${sq}_${s.piece.side}_${s.piece.type}`, t: s.center_u, yaw: s.piece.rot_y_deg || 0 });

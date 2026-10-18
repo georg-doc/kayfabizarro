@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFB Gem Probe</title><link rel="icon" href="data:,">
+<style>:root{--bg:#ece6dc;--ink:#2a2622}@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1d1b19;--ink:#ece7df}}:root[data-theme="dark"]{--bg:#1d1b19;--ink:#ece7df}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:14px system-ui,sans-serif}canvas{max-width:100%;height:auto;display:block}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+</head><body>
+<canvas id="cv" width="1600" height="1200"></canvas>
+<script type="module">
+/* KFB GEM_R1 probe page (headless, driven by tools/gem-proof.mjs). Uses the ONE proof stage (kfb-proof-stage.v1.2 + light v1.1, gem hook)
+   for state sheets (idle / active / moving), the capture frame strip and the shader-cost measurement. No own light, no own camera presets. */
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { createProofStage, W, H } from '../PROOF_STAGE_R1/kfb-proof-stage.v1.2.js';
+
+const stage = createProofStage({ THREE, GLTFLoader, canvas: document.getElementById('cv') });
+let loaded = null;
+const handles = () => { const S = stage.debug(); return S ? [...S.gemHandles.entries()].map(([node, h]) => ({ node, h, path: (() => { const a = []; for (let n = node; n; n = n.parent) a.push(n.name || ''); return a.join('<'); })() })) : []; };
+async function load({ glbUrl, mood = 'day', type = 'prop', id = 'gem_probe' }) {
+  const r = await stage.load({ glbUrl, type, id, units: 'kaykit', mood });
+  loaded = { mood, id };
+  return { status: r.status, gates: Object.fromEntries(Object.entries(r.gates).map(([k, g]) => [k, g.result + ' ' + g.detail.slice(0, 160)])), handles: handles().map((x) => x.path) };
+}
+/* states: { regex-on-path: state } */
+function setStates(map) { const out = []; for (const { h, path } of handles()) for (const [re, st] of Object.entries(map)) if (new RegExp(re).test(path)) { h.setState(st); out.push(path + ' -> ' + st); } return out; }
+function advance(seconds, step = 1 / 60) { const hs = handles(); const n = Math.round(seconds / step); for (let i = 0; i < n; i++) for (const { h } of hs) h.update(step); return hs.map(({ h }) => h.info()); }
+function render(view = 'front') { stage.render(view, 'rest'); return stage.dataURL(); }
+async function sheet({ title, sub = '', cells, cols = 2, tw = 800, th = 600 }) {
+  const gap = 14, cap = 28, top = 76, rows = Math.ceil(cells.length / cols), Wd = cols * tw + (cols + 1) * gap, Hd = top + rows * (th + cap + gap) + 30;
+  const c = document.createElement('canvas'); c.width = Wd; c.height = Hd; const g = c.getContext('2d');
+  g.fillStyle = '#f4efe6'; g.fillRect(0, 0, Wd, Hd); g.fillStyle = '#2a2622'; g.font = '600 26px system-ui, Helvetica, Arial'; g.fillText(title, gap, 36);
+  g.font = '15px system-ui, Helvetica, Arial'; g.fillStyle = '#5d564d'; g.fillText(sub, gap, 60);
+  for (let i = 0; i < cells.length; i++) {
+    const x = gap + (i % cols) * (tw + gap), y = top + Math.floor(i / cols) * (th + cap + gap), im = new Image(); im.src = cells[i].url; await im.decode();
+    const cr = cells[i].crop || [0, 0, W, H]; g.drawImage(im, cr[0], cr[1], cr[2], cr[3], x, y, tw, th);
+    g.fillStyle = '#2a2622'; g.fillRect(x, y + th, tw, cap); g.fillStyle = '#fff'; g.font = '15px system-ui, Helvetica, Arial'; g.fillText(cells[i].caption, x + 8, y + th + 19);
+  }
+  g.fillStyle = '#6d665d'; g.font = '12px ui-monospace, Menlo, monospace'; g.fillText('kfb-gem.v1 · kfb-proof-stage.v1.2 · kfb-stage-light.v1.1 MOODS_MESA · ACES 1 · three r' + THREE.REVISION + ' · 1600×1200', gap, Hd - 10);
+  return c.toDataURL('image/png');
+}
+/* shader cost: the same frame with the gem materials vs. a plain MeshStandardMaterial on the same meshes (same colour). GPU time via
+   EXT_disjoint_timer_query_webgl2 when available, else wall time with a pixel read as sync. */
+async function perf({ view = 'front', frames = 40, warm = 8 } = {}) {
+  const S = stage.debug(), gl = stage.renderer.getContext(), ext = gl.getExtension('EXT_disjoint_timer_query_webgl2'), px = new Uint8Array(4);
+  const cam = (() => { stage.render(view, 'rest'); return null; })();
+  const gemMeshes = S.gemMeshes.map((g) => g.mesh), keep = gemMeshes.map((m) => m.material);
+  const plain = new Map(); for (const m of gemMeshes) { const k = m.material; if (!plain.has(k)) plain.set(k, new THREE.MeshStandardMaterial({ color: k.color, roughness: 0.12, metalness: 0 })); }
+  const sync = () => gl.readPixels(0, 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px);
+  async function run(label) {
+    for (let i = 0; i < warm; i++) stage.render(view, 'rest'); sync();
+    let gpu = null;
+    if (ext) {
+      const qs = [];
+      for (let i = 0; i < frames; i++) { const q = gl.createQuery(); gl.beginQuery(ext.TIME_ELAPSED_EXT, q); stage.render(view, 'rest'); gl.endQuery(ext.TIME_ELAPSED_EXT); qs.push(q); }
+      sync(); const t = [];
+      for (const q of qs) { for (let k = 0; k < 200 && !gl.getQueryParameter(q, gl.QUERY_RESULT_AVAILABLE); k++) await new Promise((r) => setTimeout(r, 5)); if (gl.getQueryParameter(q, gl.QUERY_RESULT_AVAILABLE) && !gl.getParameter(ext.GPU_DISJOINT_EXT)) t.push(gl.getQueryParameter(q, gl.QUERY_RESULT) / 1e6); gl.deleteQuery(q); }
+      if (t.length) { t.sort((a, b) => a - b); gpu = { median_ms: +t[t.length >> 1].toFixed(3), min_ms: +t[0].toFixed(3), n: t.length }; }
+    }
+    const t0 = performance.now(); for (let i = 0; i < frames; i++) { stage.render(view, 'rest'); sync(); } const wall = (performance.now() - t0) / frames;
+    return { label, gpu, wall_ms_per_frame_synced: +wall.toFixed(3) };
+  }
+  const gem = await run('gem');
+  gemMeshes.forEach((m) => { m.material = plain.get(m.material); });
+  const std = await run('MeshStandardMaterial');
+  gemMeshes.forEach((m, i) => { m.material = keep[i]; }); plain.forEach((m) => m.dispose());
+  // coverage: share of frame pixels covered by gem meshes (mask render)
+  const keepAll = new Map(), white = new THREE.MeshBasicMaterial({ color: 0xffffff }), black = new THREE.MeshBasicMaterial({ color: 0x000000 }), hid = new THREE.MeshBasicMaterial({ visible: false });
+  S.scene.traverse((o) => { if (o.isMesh || o.isSprite) { keepAll.set(o, o.material); o.material = gemMeshes.includes(o) ? white : (o.material?.visible === false || o.name === 'contact-ao') ? hid : black; } });
+  const bg = S.scene.background, tm = stage.renderer.toneMapping; S.scene.background = new THREE.Color(0); stage.renderer.toneMapping = THREE.NoToneMapping;
+  stage.render(view, 'rest'); const all = new Uint8Array(W * H * 4); gl.readPixels(0, 0, W, H, gl.RGBA, gl.UNSIGNED_BYTE, all);
+  S.scene.background = bg; stage.renderer.toneMapping = tm; keepAll.forEach((m, o) => { o.material = m; }); white.dispose(); black.dispose(); hid.dispose();
+  let cov = 0; for (let i = 0; i < all.length; i += 4) if (all[i] > 128) cov++;
+  return { view, frames, timerQuery: !!ext, gem, std, gemPixels: cov, gemCoverage: +(cov / (W * H)).toFixed(4), meshes: gemMeshes.length, gpu: stage.info()?.gpu };
+}
+window.KFB_GEM = { load, setStates, advance, render, sheet, perf, handles: () => handles().map((x) => x.path) };
+window.KFB_GEM_READY = true;
+</script></body></html>

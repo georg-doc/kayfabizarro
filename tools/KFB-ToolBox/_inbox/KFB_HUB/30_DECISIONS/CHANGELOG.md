@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- ElevenLabs combat_r1: 18 Kampf-/Zerstörungs-Ereignisse × 3 Varianten (+8 Neu-Takes), spitzennormiert (leise Takes waren sauber, nur leise), Branch assets/kfb-elevenlabs-sfx-r1-2026-10-18; Brief b115 ergänzt. Verbrauch bisher ≈ 7.200 Credits.
 - V-462 Private Dateien für WS1 über den claude.ai-Dropbox-Connector (Manifest 39 Dateien ≈ 546 MB, getestet); kein privates Repo nötig. Georg: bis 60.000 ElevenLabs-Credits für Sound-Design freigegeben.
 - V-461 Sound-Design R1 (Kampf/Zerstörung/Flug/Hyperdrive, geschichtete Ereignisse statt Arcade-Pling); WSA-Brief b115. Privates Repo: GitHub-Integration darf keine Repos anlegen (403) → Georg legt kfb-private-assets an, WS0-Deploy-Key bereit.
 - V-460 Schach: Satz M (Morph Chess) kristallin-morphend statt Knete (bewusster Stilbruch, magisch), Brett r2 übernommen, Farben aus der Zonen-Palette; Modul kfb-gem.v1 (WS0) in Arbeit.
