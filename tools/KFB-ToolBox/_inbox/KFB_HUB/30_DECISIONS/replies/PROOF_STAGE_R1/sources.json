@@ -2,6 +2,11 @@
  "schema": "kfb.proof-sources/1",
  "note": "Local resolver: figure card id -> GLB on this Mac. Paths starting with 'hub:' are relative to ~/Dropbox/CLAUDE/KFB_HUB, '~/' = home. The card body.glb.path is a repo path and is not loadable locally; this table is the bridge until the GLBs sit on a fixed asset branch. private = purchased asset, local only (never publish the renders).",
  "fb_silhouette": "hub:30_DECISIONS/replies/CLAY_SSOT_R1/assets/FB_TEMPLATE_LOOK_v5b.glb",
+ "scale_ref": {
+  "note": "v1.2 scale figures for stage/prop scale_ref. Height = bind-pose bbox x 0.616 m/u; shown in the rig's own idle clip (bind pose is a T-pose). Large = purchased KayKit Mystery asset: local path only, never copy it into a public folder; renders stay private.",
+  "medium": { "glb": "hub:30_DECISIONS/replies/CLAY_SSOT_R1/assets/FB_TEMPLATE_LOOK_v5b.glb", "anim": "~/Dropbox/Mac/Documents/Codex/2026-10-10/kf/work/kayfabizarro-wsa-incomplete/media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Medium/Rig_Medium_General.glb", "clip": "Idle_A", "time": 0, "label": "FrizzleBob (Rig_Medium)" },
+  "large": { "glb": "~/Dropbox/Mac/Documents/Codex/2026-10-10/kf/work/kayfabizarro-wsa-incomplete/media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb", "anim": "~/Dropbox/Mac/Documents/Codex/2026-10-10/kf/work/kayfabizarro-wsa-incomplete/media/3D_Assets/KayKit_Character_Animations_1.1/Animations/gltf/Rig_Large/Rig_Large_General.glb", "clip": "Idle_A", "time": 0, "label": "DemonLord (Rig_Large)", "private": true }
+ },
  "cards": "hub:30_DECISIONS/replies/FIGURES_R1/figures/",
  "figures": {
   "frizzlebob": {

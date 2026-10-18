@@ -6174,6 +6174,36 @@
    "applies": "Bühne v1.3 nach v1.2"
   },
   {
+   "id": "V-445",
+   "date": "2026-10-18",
+   "area": "Welt",
+   "verdict": "TBD",
+   "text": "Fundstück Open-Planet (Georg 18.10.; github.com/inlighten420/open-planet, Godot 4.7, AGPL-3.0, 6 Commits, Windows-Build): ganze Erde aus offenen Kartendaten (OSM/ODbL, SRTM, Copernicus, ESA WorldCover) als Sandbox mit Fahren, Fliegen, Bauen, eigenen Spielen. Für KFB nur Ideen-Spender: kein Code übernehmen (AGPL würde unseren Code mitziehen, andere Engine), Windows-Programm nicht auf Georgs Rechnern ausführen. Übertragbar ist der Weg „echter Ort → Kartendaten → stilisierte Knete-Insel“ (z. B. Heimatinsel aus der eigenen Straße, Köln-Strecke), direkt aus OSM/Höhendaten mit Namensnennung.",
+   "values": {},
+   "owner": "WS0 (Ideen-Ablage)",
+   "check": "-",
+   "source": "Georg 18.10. · V-197 · chat/cologne-route-01-plan",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Interessanter Ansatz, aber AGPL und andere Engine; der übertragbare Kern sind die offenen Daten, nicht der Code.",
+   "applies": "Ideen-Ablage"
+  },
+  {
+   "id": "V-446",
+   "date": "2026-10-18",
+   "area": "Gizmo",
+   "verdict": "RULE",
+   "text": "WS0-Entscheide zum Mauer-Baukasten B29 r1: Zelle 4 u, Höhe 3,6 u (2,22 m – Medium-Figur sieht nicht drüber, Large-Rig darf spähen, das ist Spiel), Dicke 0,95→0,62 u, Tor ohne Sturz (zusätzlich später Variante mit Bogen). W1: sich wiederholende senkrechte Plattenfugen herausfiltern, große Unregelmäßigkeit behalten. Polar-Ringe für Labyrinthe: Radien 2C bis 5C mit annähernd gleicher Segmentlänge. Liberty Island: Luftbild-Photogrammetrie mit unklaren Quellrechten → keine weitere Arbeit, nur Intake behalten.",
+   "values": {},
+   "owner": "WSB (B29 r2)",
+   "check": "Bögen über Abnahme-Bühne nach v1.2",
+   "source": "V-439 · V-438",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WSB brauchte Maße und Entscheide, um den Baukasten abzuschließen; Liberty-Island-Rechte sind ungeklärt.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6261,7 +6291,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:791",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:792",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -13,6 +13,19 @@
 
 
 
+
+## 18.10. · Answer to §79: public assets on a branch · private ones wait for Georg
+Thanks: C1/C2/C3 look strong (pupil 0 px, sink-in 0, white trees caught).
+- **Public is on GitHub:** branch `assets/kfb-wsb-public-2026-10-18`, folder `media/3D_Assets/WSB_BLENDER/public_r1/`:
+  - **B28** 42 found items (already ×1.25, V-443; origin at the bbox centre, `ground_offset_u` in the extras) + `B28/data/loot_items.r1.json`;
+  - **B22** lamps r3 (Kenney/Poly Haven, CC0);
+  - **B29** wall kit + skins (CC0 scan; for later).
+  - All sha256 checked against WSB `handoff.json`; only `public=true` entries.
+  - Pin it to commit `f731f3d6` (no raw/main link).
+- **C3b** therefore runs with B28 directly (not the originals). Floating as in V-437.
+- **Private (B9 for C4, Dory r9):** Georg decides the route (Dropbox on the WS1 Mac or something else). Until then C4 waits and Dory stays edge80, as you planned.
+- **Lamps r3:** may go back in now (B22 public). Shadows only through the stage-light module; the seam fix comes as `kfb-stage-light.v1.1` (V-440), link follows.
+
 ## 18.10. · PRIORITY: found items demo on terrain = stage C3b (Georg: "I don't see a terrain/demo setup")
 Georg wants to see the found items **in the game**. Brief: `replies/BRIEF_WS1_FUNDSACHEN_DEMO_R1.md` (Hub b111).
 - Right after C3, before C4.

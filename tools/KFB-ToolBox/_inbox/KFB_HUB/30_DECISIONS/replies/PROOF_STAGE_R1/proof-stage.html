@@ -36,7 +36,7 @@ aside h2{margin:2px 0 6px;font-size:14px;font-weight:650}
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
 </head><body>
 <header>
-  <h1>KFB Abnahme-Bühne v1.1</h1>
+  <h1>KFB Abnahme-Bühne v1.2</h1>
   <p>Eine Bühne für alle Abnahmen: gleiches Licht (kfb-stage-light, Mesa-Tag, ACES 1), gleicher Knet (kfb-clay v1.1), gleiche Hohlkehle, feste Kameras, 1600 × 1200, immer KFB-Augen mit E2-Lid.</p>
 </header>
 <div class="bar">
@@ -64,11 +64,11 @@ aside h2{margin:2px 0 6px;font-size:14px;font-weight:650}
   </aside>
 </main>
 <script type="module">
-/* KFB Abnahme-Bühne v1.1 (PROOF_STAGE_R1; v1.1 = stage/prop 3 x 3 layout with views top + detail_low; v1 page: proof-stage.v1.html). The page and the CLI (render.mjs, headless) drive the same object: window.KFB_PROOF.
+/* KFB Abnahme-Bühne v1.2 (PROOF_STAGE_R1; v1.2 = rig scale reference in scale_ref for stage/prop; v1.1 page: proof-stage.v1.1.html; v1 page: proof-stage.v1.html). The page and the CLI (render.mjs, headless) drive the same object: window.KFB_PROOF.
    No overlays are drawn into the 1600 x 1200 frame; labels live in the page UI and in the caption bars of the contact sheet. */
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { createProofStage, contactSheet, VIEWS, EYE_STATES, MODULES, SHEET_SLOTS, PROP_SLOTS, slotsFor, DEFAULT_VIEWS, W, H } from './kfb-proof-stage.v1.1.js';
+import { createProofStage, contactSheet, VIEWS, EYE_STATES, MODULES, SHEET_SLOTS, PROP_SLOTS, slotsFor, DEFAULT_VIEWS, W, H } from './kfb-proof-stage.v1.2.js';
 
 const Q = new URLSearchParams(location.search), HEADLESS = Q.has('headless');
 const $ = (id) => document.getElementById(id), msg = (s) => { $('msg').textContent = s; };
@@ -89,7 +89,7 @@ let SOURCES = null, CUR = null, view = 'front', eyes = 'rest';
 try { SOURCES = await (await fetch('./sources.json', { cache: 'no-store' })).json(); for (const [k, v] of Object.entries(SOURCES.figures)) $('srcSel').insertAdjacentHTML('beforeend', `<option value="${k}">${k}${v.private ? ' (privat)' : ''} · ${v.type}</option>`); } catch (e) { SOURCES = { figures: {} }; }
 
 /** load({ id, cardUrl, card, glbUrl, type, units }) -> { status, gates, info, input } */
-async function load({ id = null, cardUrl = null, card = null, glbUrl = null, type = null, units = 'kaykit', glbName = null } = {}) {
+async function load({ id = null, cardUrl = null, card = null, glbUrl = null, type = null, units = 'kaykit', glbName = null, pose = 'auto' } = {}) {
   const src = id && SOURCES.figures[id];
   if (!cardUrl && !card && src && (src.card || src.type === 'character')) cardUrl = srcUrl(src.card || SOURCES.cards + id + '.figure.json');
   let cardText = null;
@@ -111,7 +111,10 @@ async function load({ id = null, cardUrl = null, card = null, glbUrl = null, typ
     try { const r = await fetch(HUB + enc(m[1]), { cache: 'no-store' }); if (r.ok) { const ex = await r.json(); exportOriginal = ex?.pets?.[0]?.original || null; exportSrc = m[1]; } } catch (e) { /* stays null */ }
   }
   const fileId = String(glbName || glbUrl).split(/[\\/]/).pop().replace(/\.(glb|gltf)([?#].*)?$/i, '').replace(/[^\w.-]+/g, '_');
-  const res = await stage.load({ glbUrl: blobUrl, card, type, id: id || card?.id || fileId, units, fbUrl: srcUrl(SOURCES.fb_silhouette), exportOriginal });
+  /* v1.2: scale figures (sources.json scale_ref: Medium = FrizzleBob, Large = KayKit Rig_Large; '~/' paths only via the CLI server) */
+  const SR = SOURCES.scale_ref || {}, figSpec = (r) => SR[r] ? { glbUrl: srcUrl(SR[r].glb), animUrl: srcUrl(SR[r].anim), clip: SR[r].clip, time: SR[r].time || 0, label: SR[r].label, glbName: SR[r].glb } : null;
+  const scaleFigures = { medium: figSpec('medium'), large: figSpec('large') };
+  const res = await stage.load({ glbUrl: blobUrl, card, type, id: id || card?.id || fileId, units, fbUrl: srcUrl(SOURCES.fb_silhouette), exportOriginal, scaleFigures, pose });
   const cardBody = card?.body?.glb?.sha256 || null;
   const input = { id: res.info.id, type, card: cardUrl || (card ? '(Datei)' : null), cardSha256: cardSha, cardSchema: card?.schema || null, cardApproval: card?.approval?.status || null,
     glb: glbName || (src ? src.glb : glbUrl), glbSha256: glbSha, glbBytes: buf.byteLength, cardBodySha256: cardBody,
@@ -124,20 +127,21 @@ function sheetHead(status) {
   const i = CUR.info, inp = CUR.input;
   return {
     title: `KFB Abnahme · ${inp.displayName} (${inp.id}) · ${inp.type}${inp.cardApproval && inp.cardApproval !== 'approved' ? ' · Karte: ' + inp.cardApproval : ''}${inp.private ? ' · PRIVAT (Kauf-Asset, nur lokal)' : ''}`,
-    sub: `GLB ${String(inp.glb).split('/').slice(-2).join('/')} · sha256 ${String(inp.glbSha256).slice(0, 12)}…${inp.glbMatchesCard === false ? ' (≠ Karte ' + String(inp.cardBodySha256).slice(0, 8) + '…)' : inp.glbMatchesCard ? ' (= Karte)' : ''} · Höhe ${i.height_m} m · Augen ${i.eyes.seat || i.eyes.status} · Clay ${i.clay.version} ${i.clay.profile} Seed „${i.clay.seed}“`,
+    sub: `GLB ${String(inp.glb).split('/').slice(-2).join('/')} · sha256 ${String(inp.glbSha256).slice(0, 12)}…${inp.glbMatchesCard === false ? ' (≠ Karte ' + String(inp.cardBodySha256).slice(0, 8) + '…)' : inp.glbMatchesCard ? ' (= Karte)' : ''} · Höhe ${i.height_m} m · Augen ${i.eyes.seat || i.eyes.status} · Clay ${i.clay.version} ${i.clay.profile} Seed „${i.clay.seed}“${i.pose?.on ? ` · schwebt: Mitte auf Hüfthöhe Medium-Rig ${String(i.pose.hip_m.toFixed(2)).replace('.', ',')} m (V-437)` : ''}`,
     gates: CUR.gates, status,
-    foot: `${i.version} · ${i.modules.clay} · kfb-stage-light.v1 MOODS_MESA Tag · ACES 1 · ${i.modules.eyeRig} + ${i.modules.lid} · three ${i.modules.three} · ${W}×${H} · ${new Date().toISOString().slice(0, 10)}`,
+    foot: `${i.version} · ${i.modules.clay} · ${i.light.module} MOODS_MESA Tag · ACES 1 · ${i.modules.eyeRig} + ${i.modules.lid} · three ${i.modules.three} · ${W}×${H} · ${new Date().toISOString().slice(0, 10)}`,
   };
 }
 /** sheet(renders: { 'view|eyes': dataURL }) -> dataURL of the fixed-layout contact sheet */
 async function sheet(renders, status = CUR.status) {
   const images = {}, hasEyes = CUR.info.eyes && CUR.info.eyes.seat != null;
   for (const [k, u] of Object.entries(renders)) { const im = new Image(); im.src = u; await im.decode(); const kk = hasEyes ? k : k.split('|')[0] + '|-'; images[kk] = im; }
-  return contactSheet({ images, head: sheetHead(status), hasEyes, type: CUR.info.type, entrance: !!CUR.info.entrance }).toDataURL('image/png');
+  return contactSheet({ images, head: sheetHead(status), hasEyes, type: CUR.info.type, entrance: !!CUR.info.entrance, scaleLabel: stage.info()?.scaleRef?.label || null }).toDataURL('image/png');
 }
 function manifest(files = {}) {
   return { schema: 'kfb.proof-manifest/1', stage: CUR.info.version, created: new Date().toISOString(), input: CUR.input, modules: CUR.info.modules,
-    status: CUR.status, gates: CUR.gates, render: { light: CUR.info.light, clay: CUR.info.clay, eyes: CUR.info.eyes, eyePixels: CUR.info.eyePixels, frame: CUR.info.frame, gpu: CUR.info.gpu, size_m: CUR.info.size_m, head_m: CUR.info.head_m, hiddenOriginals: CUR.info.hiddenOriginals, cardFaceParts: CUR.info.cardFaceParts, entrance: CUR.info.entrance, loadErrors: CUR.info.loadErrors },
+    status: CUR.status, gates: CUR.gates, render: { light: CUR.info.light, pose: CUR.info.pose, shadowSeam: CUR.info.shadowSeam, contactAO: CUR.info.contactAO, clay: CUR.info.clay, eyes: CUR.info.eyes, eyePixels: CUR.info.eyePixels, frame: CUR.info.frame, gpu: CUR.info.gpu, size_m: CUR.info.size_m, head_m: CUR.info.head_m, hiddenOriginals: CUR.info.hiddenOriginals, cardFaceParts: CUR.info.cardFaceParts, entrance: CUR.info.entrance, loadErrors: CUR.info.loadErrors },
+    scaleRef: stage.info()?.scaleRef || null,
     files };
 }
 window.KFB_PROOF = { stage, load, render, sheet, manifest, info: () => CUR && CUR.info, VIEWS, EYE_STATES, SHEET_SLOTS, PROP_SLOTS, DEFAULT_VIEWS, MODULES };

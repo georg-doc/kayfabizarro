@@ -3,7 +3,8 @@
 // node_modules, read only, as in the CLAY_SSOT golden test) and writes PNGs + contact sheet + proof_manifest.json.
 //
 //   node render.mjs --card <figure.json | id> [--glb <path>] [--type character|prop|stage] [--views front,threeq,...] [--eyes rest,half,closed]
-//                   [--units kaykit|m] [--stage v1.1|v1] --out <dir>
+//                   [--units kaykit|m] [--stage v1.2|v1.1|v1] [--pose auto|float|ground] --out <dir>
+//   --pose (v1.2): auto = found items with a KFB_Pickup node float at the Medium rig's hip height (V-437); float / ground force it.
 //   Default views: character = front,threeq,side,back,near_face,far,scale_ref · prop/stage (v1.1) = front,threeq,side,back,top,near_face,
 //   detail_low,far,scale_ref (3 x 3 sheet, no empty cells). --stage v1 drives proof-stage.v1.html (kfb-proof-stage.v1, frozen).
 //   node render.mjs --id frizzlebob --out out/fb                (id from sources.json: card + GLB resolved locally)
@@ -34,7 +35,8 @@ for (let i = 0; i < argv.length; i++) { const k = argv[i]; if (k.startsWith('--'
 const die = (m, code = 2) => { console.error('render.mjs: ' + m); process.exit(code); };
 if (A.help || (!A.card && !A.glb && !A.id) || !A.out) die('usage: node render.mjs --card <figure.json|id> [--glb <path>] [--type character|prop|stage] [--views a,b] [--eyes rest,half,closed] [--units kaykit|m] --out <dir>');
 let views = A.views ? String(A.views).split(',').map((s) => s.trim()).filter(Boolean) : null;   // default per type after load (DEFAULT_VIEWS)
-const STAGE = String(A.stage || 'v1.1'); if (!['v1', 'v1.1'].includes(STAGE)) die('--stage v1 | v1.1');
+const STAGE = String(A.stage || 'v1.2'); if (!['v1', 'v1.1', 'v1.2'].includes(STAGE)) die('--stage v1 | v1.1 | v1.2');   // v1.2 = proof-stage.html; v1.1 / v1 = frozen pages
+if (A.pose && !['auto', 'float', 'ground'].includes(String(A.pose))) die('--pose auto | float | ground');
 const eyes = String(A.eyes || 'rest,half,closed').split(',').map((s) => s.trim()).filter(Boolean);  // v1.1.1: default = all three eye states (uniform sheets)
 for (const v of views || []) if (!ALL_VIEWS.includes(v)) die('unknown view ' + v + ' (' + ALL_VIEWS.join(', ') + ')');
 for (const e of eyes) if (!ALL_EYES.includes(e)) die('unknown eye state ' + e + ' (' + ALL_EYES.join(', ') + ')');
@@ -54,6 +56,8 @@ const urlFor = (file) => {
   die('file must be under $HOME: ' + f);
 };
 for (const v of Object.values(SOURCES.figures)) { const f = expand(v.glb); if (!f.startsWith(HUB) && fs.existsSync(f) && !forbidden(f)) allow.add(f); }
+/* v1.2 scale figures + their idle clips (sources.json scale_ref), served by local path only */
+for (const v of Object.values(SOURCES.scale_ref || {})) if (v && typeof v === 'object') for (const k of ['glb', 'anim']) if (v[k]) { const f = expand(v[k]); if (!f.startsWith(HUB) && f.startsWith(HOME + path.sep) && fs.existsSync(f) && !forbidden(f)) allow.add(f); }
 
 let id = A.id || null, cardUrl = null, glbUrl = null, glbPath = null, cardPath = null;
 if (A.card && !/[\\/]|\.json$/i.test(A.card)) id = A.card;                     // --card <id>
@@ -77,7 +81,7 @@ const server = http.createServer((req, res) => {
 });
 await new Promise((r) => server.listen(0, '127.0.0.1', r));
 const PORT = server.address().port; if ([5180, 5192, 8765].includes(PORT)) { server.close(); die('port collision ' + PORT); }
-const PAGE = `http://127.0.0.1:${PORT}/${path.relative(HUB, path.join(HERE, STAGE === 'v1' ? 'proof-stage.v1.html' : 'proof-stage.html')).split(path.sep).map(encodeURIComponent).join('/')}?headless=1`;
+const PAGE = `http://127.0.0.1:${PORT}/${path.relative(HUB, path.join(HERE, { v1: 'proof-stage.v1.html', 'v1.1': 'proof-stage.v1.1.html', 'v1.2': 'proof-stage.html' }[STAGE])).split(path.sep).map(encodeURIComponent).join('/')}?headless=1`;
 
 /* ---------- run ---------- */
 const PW = process.env.KFB_PLAYWRIGHT_DIR ? path.resolve(process.env.KFB_PLAYWRIGHT_DIR) : LAB;   // a folder whose node_modules has playwright-core
@@ -93,7 +97,7 @@ try {
   await page.waitForFunction(() => window.KFB_PROOF_READY === true, null, { timeout: 30000 });
   const t0 = Date.now();
   let r;
-  try { r = await page.evaluate((a) => window.KFB_PROOF.load(a), { id: id && SOURCES.figures[id] ? id : null, cardUrl, glbUrl, type: A.type || null, units: A.units || 'kaykit', glbName: glbPath ? path.relative(HUB, glbPath).startsWith('..') ? glbPath.replace(HOME, '~') : 'hub:' + path.relative(HUB, glbPath) : null }); }
+  try { r = await page.evaluate((a) => window.KFB_PROOF.load(a), { id: id && SOURCES.figures[id] ? id : null, cardUrl, glbUrl, type: A.type || null, units: A.units || 'kaykit', pose: String(A.pose || 'auto'), glbName: glbPath ? path.relative(HUB, glbPath).startsWith('..') ? glbPath.replace(HOME, '~') : 'hub:' + path.relative(HUB, glbPath) : null }); }
   catch (e) { throw new Error('load failed: ' + e.message); }
   const fid = r.input.id, hasEyes = !!(r.info.eyes && r.info.eyes.seat);
   console.log(`${fid} · ${r.input.type} · ${r.info.height_m} m · eyes ${r.info.eyes.seat || r.info.eyes.status} · clay ${r.info.clay.version}/${r.info.clay.profile} · ${Date.now() - t0} ms`);
@@ -119,7 +123,7 @@ try {
   if (glbPath) man.input.glbSha256_node = sha(glbPath); if (cardPath) man.input.cardSha256_node = sha(cardPath);
   man.cli = { command: 'node render.mjs ' + argv.join(' '), views, eyes: hasEyes ? eyes : null, node: process.version, chrome: process.env.KFB_CHROME ? path.basename(path.dirname(process.env.KFB_CHROME)) : 'channel chrome', ms: Date.now() - t0, pageErrors: errors };
   man.vendor = Object.fromEntries(fs.readdirSync(path.join(HERE, 'vendor')).filter((f) => f.endsWith('.js')).map((f) => [f, sha(path.join(HERE, 'vendor', f))]));
-  man.vendor['kfb-proof-stage.v1.js'] = sha(path.join(HERE, 'kfb-proof-stage.v1.js')); man.vendor['kfb-proof-stage.v1.1.js'] = sha(path.join(HERE, 'kfb-proof-stage.v1.1.js')); man.cli.stagePage = STAGE; man.vendor['kfb-proof-eyes.v1.js'] = sha(path.join(HERE, 'kfb-proof-eyes.v1.js'));
+  for (const f of ['kfb-proof-stage.v1.js', 'kfb-proof-stage.v1.1.js', 'kfb-proof-stage.v1.2.js']) man.vendor[f] = sha(path.join(HERE, f)); man.cli.stagePage = STAGE; man.vendor['kfb-proof-eyes.v1.js'] = sha(path.join(HERE, 'kfb-proof-eyes.v1.js'));
   man.staleFilesInOut = [...before].filter((f) => !files[f] && f !== 'proof_manifest.json');
   if (man.staleFilesInOut.length) console.log('  note: files from an earlier run stay in the folder (not part of this manifest): ' + man.staleFilesInOut.join(', '));
   fs.writeFileSync(path.join(OUT, 'proof_manifest.json'), JSON.stringify(man, null, 1));
