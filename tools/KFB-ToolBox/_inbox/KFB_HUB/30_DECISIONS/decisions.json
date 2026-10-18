@@ -6324,6 +6324,21 @@
    "applies": "vor dem Kampf-Slice"
   },
   {
+   "id": "V-455",
+   "date": "2026-10-18",
+   "area": "Welt",
+   "verdict": "TBD",
+   "text": "„Die Welt als Spielzeug“ – Schach-Diorama (Georg 18.10.): abgenutztes, leicht ramponiertes steinernes Schachbrett als Diorama; Schachfiguren spielen berühmte Partien animiert durch (PGN, z. B. Morphys Opernpartie 1858, Unsterbliche Partie 1851, Carrolls Schachproblem aus „Alice hinter den Spiegeln“), Züge cartoonig hüpfend mit passenden Deformern (Squash & Stretch, Springer im Bogen, Schlagen mit Bonk); Bauernumwandlung als Morph. Dazu KayKit Board Game Bits (CC0) als surreale Umgebung: Domino-Schlangen/Parcours zum Umkippen, Würfel, Münzen, Meeples, Sanduhr. Alle Requisiten wirken lebendig (Atmen, Pulsieren, Schweben) über ein gemeinsames Modul, zusammen mit Wind für Requisiten-Gruppen (Blätter, Tannen; V-449). Figurenquelle: Poly Haven „Chess Set“ (CC0, Marmor, 77k Polys) → Knete, cartoonig; Spender für Morph-/Edelstein-Look: Morph Chess (MIT, Three.js, sehr jung) nur als Ideen-Spender, Glas-Sound CC BY-NC nicht verwenden; Zuglogik chess.js (BSD-2). Später Mini-Spiel „Kayfabe-Schach“ (Calvinball trifft KFB-Schach trifft Alice): z. B. den gegnerischen König per Kopftreffer ausschalten, bevor der erste Bauer seinen Zug beendet hat.",
+   "values": {},
+   "owner": "WS0 (Plan) → WSB (Brett + Figuren in Knete, Dominos) → WS1 (Partie-Animation, Domino-Physik)",
+   "check": "Bogen Brett+Figuren; Clip einer Partie",
+   "source": "Georg 18.10. · V-449",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Schach ist das Spielzeug-Motiv schlechthin und passt direkt zu Alice hinter den Spiegeln; vorhandene CC0-Teile machen es billig.",
+   "applies": "Planung; Download nach Georgs OK"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6411,7 +6426,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:801",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:803",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
