@@ -8,3 +8,4 @@
 - A3/meaning: fixed shifted or flipped meanings in card 2 (friction→drama), card 4 (conditional "if they don't challenge"), card 16 (now "legitimate if trauma is followed to its darkest consequence"; tone rule E16b) and card 22. Removed rule leaks: card 3 "bind both characters" and card 28 "distance but healing damage".
 - songlines: carried over unchanged, except card 20 (A7, slash→"and"), which gets the new line text. introType stays "confession".
 - The style file is unchanged. Gate: PASS (3357 characters, 28/28 cards, 13 openers = 46 %).
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

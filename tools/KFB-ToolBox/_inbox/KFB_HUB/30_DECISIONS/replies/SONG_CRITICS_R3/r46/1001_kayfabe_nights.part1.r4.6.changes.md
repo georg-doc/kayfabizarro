@@ -13,3 +13,4 @@
 - B26/B27 B7: no more noun-verb-preposition-colon template. Openers follow people (Sinbad pours, The greedy brother, Their plan B, Nobody bribes him, In that grave). Callbacks: Roc, knives, Sinbad, zero, cave, corner->genie.
 - Openers 12/28 (43 %). Every card part is 80-95 characters and every line is at most 105. Songlines r4.6: entries for 17 (E16b) and 26 (A7) carried over with the new line text; introType misdirection.
 - Gate: gate_track.py PASS. The style file is unchanged.
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

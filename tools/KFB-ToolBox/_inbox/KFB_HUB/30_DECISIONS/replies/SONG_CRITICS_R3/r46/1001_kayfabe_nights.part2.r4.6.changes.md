@@ -8,3 +8,4 @@
 - A4: card 58 now includes "unfair reset". Cards 39, 40, 52, 53, 59, 60 now use more of the card's own wording to stay within 80-95 characters (52 "if King orders it", 59 "to be continued next night", 60 "keep it on, true face").
 - Card 52 meaning: "match ends by the King" -> "the bell, if King orders it", as in the card.
 - Style file unchanged. No new songlines (no A7 changes; the r4.4 songlines still apply).
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

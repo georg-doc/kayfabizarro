@@ -7,3 +7,4 @@
 - A4 card 27: joke kept ("not a conspiracy, just excellent planning!"); A3 card 28: power rule replaced by lore claim (patents treatments).
 - C13b / B7b outro: new punch about us and money with intro callback (red string, Thanksgiving, corkboard).
 - All card lines 80-95 chars, every line with opener <= 105. Style file unchanged. Songlines r5.2: A7 lines for 9/24/27 and A5 for 28 updated, part-2 entries carried over.
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

@@ -11,3 +11,4 @@
 - Oedipus: single colon, the opener carries the link. Couch: no misattributed opener.
 - Length: 4995 characters (< 5000), so openers sit at 25% (13/52), the lower edge; 5000 is the hard limit.
 - Songlines r4.6: A7 entries 10/12/40 carried over with the new lines. Style file unchanged.
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

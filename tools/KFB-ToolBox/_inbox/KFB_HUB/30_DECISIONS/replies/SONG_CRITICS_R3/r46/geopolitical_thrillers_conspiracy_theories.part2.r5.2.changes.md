@@ -9,3 +9,4 @@
 - A3 40: "false choice" removed. E16b 51: ironic frame restored ("notice grid patterns in the sky? You're a conspiracy theorist"), "solar energy blocked" removed.
 - D13: style file unchanged (inputs/…part2.r5.1.style.txt, passed the style gate).
 - Songlines r5.2: 35/38/51 updated, 42 (five hundred) + 47 (slash sung as "and") added as A7; introType scene.
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

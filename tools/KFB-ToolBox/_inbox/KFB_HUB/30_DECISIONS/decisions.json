@@ -6804,6 +6804,36 @@
    "applies": "Probe nach Text-Studio Stufe 1"
   },
   {
+   "id": "V-487",
+   "date": "2026-10-18",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Langer Lauf während Georgs Abwesenheit (Georg 18.10.): WS1 bekommt die großen Integrationen nach BRIEF_WS1_INTEGRATION_PLAN_R1 (0 private Pakete, 1 Antrieb R1a + Cartoon-Deformer surge/ascent/brake (§86 freigegeben) + Bodennähe-Partikel + propulsion_r1, 2 Fluff-Ernte: kfb-fluff-suck nozzle/beam, Bots/Stationen/Beute, Destruction-yields, UFO-Strahl, 3 Kristall-Laternen); WSB weiter B11 r3 → B32 → B34 → B36 → B33; WS0 steuert + Sprach-Probe. Private Assets für Claude-Sitzungen ohne Dropbox: privates claude.ai-Artifact als Paket (Base64-Teile + Entpack-Skript, sha256), WS1 holt per Artifact read – ersetzt V-462 für WS1. Gilt nicht für ChatGPT/WSA (kein claude.ai-Konto). B9 auf Anfrage in eigenen Paketen (Artifact-Grenze 256 MB).",
+   "values": {},
+   "owner": "WS1 · WSB · WS0",
+   "check": "WS1_STATUS je Stufe mit Vorschau + Clip",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg ist weg, WS1 hat Budget; private Pakete per Artifact brauchen keine Einrichtung von Georg.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-488",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Songs ohne festen Erzähler (Georg 18.10.): Weil andere Figuren die Songs performen, nennt kein Rahmen (Intro, Outro, Opener) FrizzleBob oder eine feste Erzählerfigur (uncle/rabbit); Karten namens FrizzleBob bleiben. Schluss neu: „Stay Fluffy, Folks!“. song_gate R3.6, SONG_SPEC und Writer-Prompt angepasst; die 16 r46-Tracks werden umgestellt und neu in den Hub gelegt. Damit entfällt der Grund, nur die Männerstimme zu nehmen (V-474).",
+   "values": {},
+   "owner": "WS0 Writers Room",
+   "check": "gate_track 16/16 PASS, Hub-Karten aktualisiert",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Songs werden von verschiedenen Figuren gesungen; ein namentlicher Erzähler passt dann nicht.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6891,7 +6921,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:838",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:839",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

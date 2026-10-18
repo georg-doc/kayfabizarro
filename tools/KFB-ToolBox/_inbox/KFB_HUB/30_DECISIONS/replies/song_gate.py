@@ -38,6 +38,7 @@ TONE = {
     "romantic_kayfabe": ["she asked for it", "asked for it", "no means yes"],
 }
 STOP = GRAMMAR | EXTRA | FLUFF
+END_LINE = "Stay Fluffy, Folks!"
 OWN_TEXT_WARN, OWN_TEXT_FAIL = 0.30, 1.01   # R3.5 (Georg 18.10.: Richtwert, nicht sklavisch) – nur Hinweis, kein FAIL
 FUNC_EXTRA = {"don't", "doesn't", "didn't", "aren't", "isn't", "wasn't", "weren't", "can't", "won't", "till", "until", "before", "after", "both", "each", "too", "also"}  # R3.5: Funktionswörter
 # C13 (R3.4, V-435): object-acting + slop
@@ -162,8 +163,8 @@ def gate_lyrics(a):
     bs = beats_of(text)
     if not bs or bs[0].strip() != "[Spoken Word]":
         F("C8", "erster Beat ist nicht [Spoken Word]")
-    if bs[-1].strip() != "Stay Fluffy!":
-        F("C12", "letzter Beat ist nicht 'Stay Fluffy!' allein")
+    if bs[-1].strip() != END_LINE:   # R3.6 (Georg 18.10.): „Stay Fluffy, Folks!“
+        F("C12", f"letzter Beat ist nicht {END_LINE!r} allein")
     for i, b in enumerate(bs):
         if "\n" in b:
             F("C8", f"Beat {i}: mehrere Zeilen ohne Leerzeile: {b.splitlines()[0][:60]!r}")
@@ -192,7 +193,7 @@ def gate_lyrics(a):
     outro = [b for j, b in frame if j > last_card]
     middle = [b for j, b in frame if first_card < j < last_card]
     if not outro:
-        F("C12", "kein Outro-Beat vor 'Stay Fluffy!'")
+        F("C12", f"kein Outro-Beat vor {END_LINE!r}")
     def is_refrain(b):
         if not refrain:
             return False
@@ -247,8 +248,8 @@ def gate_lyrics(a):
     for p in INTRO_FORBIDDEN:
         if p in frame_text.casefold():
             F("C9", f"Formel im Rahmen: {p!r}")
-    if frame_text.casefold().count("frizzlebob") > 1:
-        F("C9", "FrizzleBob mehr als einmal im Rahmen")
+    if "frizzlebob" in frame_text.casefold() or re.search(r"\b(uncle|onkel)\b(?!\s+sam)|\brabbit\b(?!\s+holes?)", frame_text, re.I):   # R3.6: neutraler Erzähler, andere Figuren performen
+        F("C9", "Rahmen nennt FrizzleBob bzw. eine feste Erzählerfigur (uncle/rabbit) – Erzähler bleibt namenlos")
 
     # C13 (R3.4): Objekt-Acting + Slop im Rahmen (Intro/Outro); Opener werden unten geprüft
     for b in intro + outro:

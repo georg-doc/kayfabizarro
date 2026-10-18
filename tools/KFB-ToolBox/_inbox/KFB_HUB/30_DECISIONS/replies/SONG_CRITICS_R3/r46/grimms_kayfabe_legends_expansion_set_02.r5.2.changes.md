@@ -10,3 +10,4 @@
 - All card parts now 80–85 chars so the longer frame fits under 5000; every line incl. opener ≤ 105.
 - Songlines r5.2: same six entries (A7 ampersands, A5 typo, A6 subtitle) with updated songLine text; introType misdirection.
 - Style file unchanged. Opener share 29 % (character budget leaves no room for more).
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

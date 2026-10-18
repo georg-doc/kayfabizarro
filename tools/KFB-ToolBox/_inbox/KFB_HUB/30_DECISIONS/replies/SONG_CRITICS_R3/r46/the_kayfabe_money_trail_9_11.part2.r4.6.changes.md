@@ -7,3 +7,4 @@
 - B7/C13a: replaced every flagged opener (auditors, FAA team, probe, map, keys remain, second signature, entries provoke, analyst, report disappears, insurers invoice). New openers (16/32) use art images or links: giant eye, keys in hand, bloodhounds, courtesy, referee, eagle, rug, ladder, circled, deer, mouse, eraser, papers.
 - B7b callbacks: 32 Keys (31), 43 "looked" (40), 56 eraser (55), 59 papers (44), plus outro to intro.
 - songlines r4.6: A7 entries updated (40, 42, 48, 49, 52, 53, 55, 56, 57). The r4.4 A7 entries for 35, 38, 41, 43, 44, 50, 58, 60 were dropped because those lines no longer contain a spoken number. Style file unchanged.
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

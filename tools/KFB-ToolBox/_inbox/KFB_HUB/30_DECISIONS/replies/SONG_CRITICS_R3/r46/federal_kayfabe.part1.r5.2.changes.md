@@ -9,3 +9,4 @@
 - C11 b25: "Christmas" only once (in the card name).
 - A5 b27: "Grigsged" sung as the card's subtitle "Book Money" (songLine rule A5, logged; 1 of max 2).
 - Songlines r5.2: entries 6/15 updated, 25 added, 29/33/36/41 carried over; style unchanged.
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

@@ -11,3 +11,4 @@
 - B7 b18 TBTF: the first-person tantrum is restored ("Lose? Please. I’m too important"). b28 Rogue: the person comes back ("armed with graphic design and arrogance, he made mutual credit").
 - B7b callbacks: casino (41→42), potatoes (53→54), strings→scissors; outro → intro (overdraw five bucks).
 - Style file unchanged. Gate: gate_track.py PASS. Songlines: r5.2.songlines.json (old entries carried over; 29/33/41/36 updated, 46 added).
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

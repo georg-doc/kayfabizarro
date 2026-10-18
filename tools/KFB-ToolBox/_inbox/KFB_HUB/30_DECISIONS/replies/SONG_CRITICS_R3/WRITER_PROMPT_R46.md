@@ -15,7 +15,7 @@ You are a KFB song writer for one spoken-word track. Base folder: `R = /Users/ge
    - Beat 1 = deck title (as in the deck, e.g. with "Kayfabe") + thesis in plain words.
    - Then **at least 2 onboarding beats**: who is speaking (Uncle FrizzleBob, the narrator), what we're doing here, a stand-up setup + punch for normies.
    - **1–3 dog whistles** for experts: concrete names/terms/numbers from the card source.
-   - **Outro:** a concrete satirical punch about power/money/media/us, quotable, consistent with the cards, then "Stay Fluffy!".
+   - **Outro:** a concrete satirical punch about power/money/media/us, quotable, consistent with the cards, then "Stay Fluffy, Folks!". Narrator unnamed (no FrizzleBob, no uncle/rabbit persona).
    - No generic aphorisms (C13b), no object-acting (C13a: things/abstractions don't act like people).
 2. **Openers (B6/B7):** only on about ⅓–½ of the card lines.
    - Each opener **links** to the card before it (therefore/but/meanwhile with meaning). It gives the card a want, a grudge or an image from the card art (KayfabeTips).

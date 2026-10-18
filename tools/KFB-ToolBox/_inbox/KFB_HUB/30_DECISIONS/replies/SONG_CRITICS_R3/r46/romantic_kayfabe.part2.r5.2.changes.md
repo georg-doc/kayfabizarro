@@ -8,3 +8,4 @@
 - A4: every card part is 80–95 characters and every card line, opener included, is ≤105 characters.
 - A7: card 33 is spoken as "Act One" and logged in r5.2.songlines.json; the old entries are kept. introType = confession.
 - Style file unchanged (romantic_kayfabe.part2.r5.1.style.txt).
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

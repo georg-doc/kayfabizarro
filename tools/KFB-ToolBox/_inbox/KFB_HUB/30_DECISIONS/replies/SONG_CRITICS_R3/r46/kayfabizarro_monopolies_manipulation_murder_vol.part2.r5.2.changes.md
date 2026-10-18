@@ -10,3 +10,4 @@
 - A4 beat 19: "existential dread for dissidents". A3 beat 21: subject "payment monopolies authorizing themselves" restored. A2 beat 27: Occupy conditional ("if … had become") restored.
 - A4 beat 30: the stray "fluffy" is gone; Stay Fluffy stays only in the closing line.
 - Songlines r5.2: A7/A5 entries carried over, songLine text updated (29, 33, 34, 41, 47, 50, 53); introType confession. Style file unchanged.
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

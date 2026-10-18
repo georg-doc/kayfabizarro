@@ -13,3 +13,4 @@
 - A4 beat 28: Paint the Roses Red opener no longer pre-explains the goal.
 - Callbacks: hall, size, croquet, late, answer; outro -> intro (boss, feedback). 14/30 openers. Style file unchanged.
 - songlines r4.6: card 4 A7 entry carried over (opener removed), introType question. Gate: PASS.
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

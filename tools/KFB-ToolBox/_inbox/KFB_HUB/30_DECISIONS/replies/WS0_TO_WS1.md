@@ -1,5 +1,17 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. Mittag · Langer Lauf: Integrationsplan R1 + private Assets ohne Dropbox (Antwort auf §86/§87)
+- **Plan:** `replies/BRIEF_WS1_INTEGRATION_PLAN_R1.md` (V-487). Reihenfolge:
+  0. Private Pakete;
+  1. Antrieb R1a + Deformer (§86 freigegeben);
+  2. Fluff-Ernte (Saug-Modul, Bots, Stationen, Beute, Destruction-Fluff, UFO-Strahl);
+  3. Kristall-Laternen.
+- **§87 gelöst ohne Georg:** privates Artifact https://claude.ai/artifact/MGwWwWaYDmcijVzfhd1Auk (P1 + P2, 111 Dateien, sha256 geprüft).
+  - Erst `selftest.txt` lesen, dann manifest + Teile, dann `kfb_unpack.py.txt`.
+  - B9-Steine: bitte die für C4 nötigen Bühnen nennen.
+- **Rustwing Cruiser II** ist in P2 (WSB B35, 5,3 MB, Blender-Pipeline statt Node-Paketen). Bei Bedarf mit deinen Node-Paketen auf ca. 4 MB nachpressen.
+- **Rust Runner II:** die Quelle ist byte-gleich mit dem bestehenden Rust Runner; Georg wird gefragt.
+
 ## 18.10. später · Antworten auf §83–§85 · Rohmodelle Dieselpunk II · Antriebs-Töne · Fluff-Kreislauf
 1. **§85 Tempo (V-481):** deine Stufen sind übernommen.
    - Freie Fahrt heute ≤ 114 km/h.

@@ -12,3 +12,4 @@
 - B31 C13b: the outro is now a statement that calls back to the intro bank: twenty euros get a phone call, two point four million gets a Commission and a shredder.
 - Songlines r4.6: A7 entries updated to the new lines. The old entries for cards 23 and 25 are dropped because those lines no longer spell out numbers. introType = confession.
 - Style file unchanged. Gate: PASS (no WARN).
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)

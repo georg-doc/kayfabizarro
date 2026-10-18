@@ -10,3 +10,4 @@
 - A4 (32 and 15 others): every line is ≤ 105 characters and every card part is 80–95. The keyword tails are rewritten as phrases (Wait… What?, Juggling Act, Regretometer, Therapist and Client: "two chairs facing, a speaker and a witness"). Future Self has no opener, so there is no double colon. Openers no longer name a second card.
 - D13: the style file is unchanged (it passed the style gate). Songlines r4.6: the A7 entries 38 and 40 are carried over with their new lines, introType confession, metaSkipped 48.
 - Gate: `gate_track.py` PASS (4979 characters, 47/47 cards, intro 4, outro 2, 17 openers).
+- neutral narrator + Stay Fluffy, Folks! (Georg 18.10.)
