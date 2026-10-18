@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-459 Hub q32 PASS: Sockelrand V1, Mauer r4 Backstein, B7 r4 riesig + Seil.
 - V-458 Umgebungs-Atmo je Biom (Modul kfb-ambience.v1, fünf Schichten, Donner synchron zum Blitz, Wind an Bild-Wind gekoppelt, Ducking unter Songs); WSA-Brief b114; Bestand gesichtet (Environment-Ordner, ElevenLabs-Regen-Loops; Tiny-Skies-Sounds nur Referenz).
 - WSB V-457 Teil 1: Sockelrand V1 schlank (Dory r10_rimV1, Hunky edge80_rimV1; nur Rand-Ring geändert) → Figurenkarten + sources.json umgestellt; Mauer r4 nur Backstein ×1,7, Krone lange schiefe Schwünge; B7 r4 ×12,33 nach Stufenhöhe 0,30 m (vorher unskaliert ~0,7 m), Seil unregelmäßig → Hub q32. B30 Zwischenstand (Poly-Haven-Satz, Steinbrett, 28 Dominos, Props), Morph-Chess-Satz in Arbeit.
 - ElevenLabs r1 komplett (≈3.700 Credits gesamt): Racer + neue Fehlzündungen (O2 war stumm) + Referenz-Abfolgen S1 Beschleunigen/S2 Bremsen, Flug (4), Hyperdrive (4); Branch assets/kfb-elevenlabs-sfx-r1-2026-10-18 (ohne Schlüssel). Georg: Racer-Rest cool, Gänge/Hochschalten/Knistern brauchen Abfolgen wie in der Race-Demo → WSA-Brief b113 (Gang-Modell, Zündunterbrechung, Knall-Zufall, Overrun-Knistern, Limiter).
