@@ -3,7 +3,8 @@
 // node_modules, read only, as in the CLAY_SSOT golden test) and writes PNGs + contact sheet + proof_manifest.json.
 //
 //   node render.mjs --card <figure.json | id> [--glb <path>] [--type character|prop|stage] [--views front,threeq,...] [--eyes rest,half,closed]
-//                   [--units kaykit|m] [--stage v1.2|v1.1|v1] [--pose auto|float|ground] --out <dir>
+//                   [--units kaykit|m] [--stage v1.2|v1.1|v1] [--pose auto|float|ground] [--mood day|dusk|night] --out <dir>
+//   --mood (v1.2, GEM_R1): kfb-stage-light MOODS_MESA timeOfDay: day = 1 (default, unchanged), dusk = 0.5 (gold), night = 0.
 //   --pose (v1.2): auto = found items with a KFB_Pickup node float at the Medium rig's hip height (V-437); float / ground force it.
 //   Default views: character = front,threeq,side,back,near_face,far,scale_ref · prop/stage (v1.1) = front,threeq,side,back,top,near_face,
 //   detail_low,far,scale_ref (3 x 3 sheet, no empty cells). --stage v1 drives proof-stage.v1.html (kfb-proof-stage.v1, frozen).
@@ -37,6 +38,8 @@ if (A.help || (!A.card && !A.glb && !A.id) || !A.out) die('usage: node render.mj
 let views = A.views ? String(A.views).split(',').map((s) => s.trim()).filter(Boolean) : null;   // default per type after load (DEFAULT_VIEWS)
 const STAGE = String(A.stage || 'v1.2'); if (!['v1', 'v1.1', 'v1.2'].includes(STAGE)) die('--stage v1 | v1.1 | v1.2');   // v1.2 = proof-stage.html; v1.1 / v1 = frozen pages
 if (A.pose && !['auto', 'float', 'ground'].includes(String(A.pose))) die('--pose auto | float | ground');
+if (A.mood && !['day', 'dusk', 'night'].includes(String(A.mood))) die('--mood day | dusk | night');
+if (A.mood && A.mood !== 'day' && STAGE !== 'v1.2') die('--mood needs --stage v1.2');
 const eyes = String(A.eyes || 'rest,half,closed').split(',').map((s) => s.trim()).filter(Boolean);  // v1.1.1: default = all three eye states (uniform sheets)
 for (const v of views || []) if (!ALL_VIEWS.includes(v)) die('unknown view ' + v + ' (' + ALL_VIEWS.join(', ') + ')');
 for (const e of eyes) if (!ALL_EYES.includes(e)) die('unknown eye state ' + e + ' (' + ALL_EYES.join(', ') + ')');
@@ -97,7 +100,7 @@ try {
   await page.waitForFunction(() => window.KFB_PROOF_READY === true, null, { timeout: 30000 });
   const t0 = Date.now();
   let r;
-  try { r = await page.evaluate((a) => window.KFB_PROOF.load(a), { id: id && SOURCES.figures[id] ? id : null, cardUrl, glbUrl, type: A.type || null, units: A.units || 'kaykit', pose: String(A.pose || 'auto'), glbName: glbPath ? path.relative(HUB, glbPath).startsWith('..') ? glbPath.replace(HOME, '~') : 'hub:' + path.relative(HUB, glbPath) : null }); }
+  try { r = await page.evaluate((a) => window.KFB_PROOF.load(a), { id: id && SOURCES.figures[id] ? id : null, cardUrl, glbUrl, type: A.type || null, units: A.units || 'kaykit', pose: String(A.pose || 'auto'), ...(A.mood && A.mood !== 'day' ? { mood: String(A.mood) } : {}), glbName: glbPath ? path.relative(HUB, glbPath).startsWith('..') ? glbPath.replace(HOME, '~') : 'hub:' + path.relative(HUB, glbPath) : null }); }
   catch (e) { throw new Error('load failed: ' + e.message); }
   const fid = r.input.id, hasEyes = !!(r.info.eyes && r.info.eyes.seat);
   console.log(`${fid} · ${r.input.type} · ${r.info.height_m} m · eyes ${r.info.eyes.seat || r.info.eyes.status} · clay ${r.info.clay.version}/${r.info.clay.profile} · ${Date.now() - t0} ms`);

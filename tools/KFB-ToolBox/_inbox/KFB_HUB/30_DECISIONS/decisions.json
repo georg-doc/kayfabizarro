@@ -6429,6 +6429,21 @@
    "applies": "WSA jetzt"
   },
   {
+   "id": "V-462",
+   "date": "2026-10-18",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Private Dateien für WS1 ohne Dropbox-App und ohne neues Repo (Georg kann gerade nichts einrichten): WS1 holt sie über den claude.ai-Dropbox-Connector (download_link → Einmal-URL → curl, sha256-Prüfung) anhand des Manifests replies/PRIVATE_ASSETS_FOR_WS1.r1.json. Ersetzt den Vorschlag eines privaten GitHub-Repos (Integration darf keine Repos anlegen, keine Push-Rechte auf das Stunt-Racer-Repo). Dateien nie in öffentliche Branches.",
+   "values": {},
+   "owner": "WS1 · WS0 (Manifest pflegen)",
+   "check": "WS1 lädt B9 und startet C4",
+   "source": "Georg 18.10. · V-427 · V-433",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Funktioniert sofort ohne Einrichtung; die Dateien bleiben in Georgs Dropbox, nichts wird veröffentlicht.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6516,7 +6531,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:816",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:817",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

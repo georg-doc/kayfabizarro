@@ -41,6 +41,9 @@
 import { createStageLight, createContactAO, applyTone, MOODS_MESA, SCHEMA as LIGHT_SCHEMA, VERSION as LIGHT_VERSION, castFrontFaces, fitAround, measureShadowSeam, sunDirection } from './vendor/kfb-stage-light.v1.1.js';
 import { applyClay, resolveProfile, SKIP_DEFAULT, VERSION as CLAY_VERSION } from './vendor/kfb-clay.v1.1.js';
 import { mountEyes, findEyeSeat, LID_STATES, EYES_VERSION } from './kfb-proof-eyes.v1.js';
+import { moodAt } from './vendor/kfb-stage-light.v1.1.js';
+/* GEM_R1 (V-460): nodes with glTF extras kfb.material = 'gem' skip clay and get kfb-gem.v1 (vendored from 30_DECISIONS/replies/GEM_R1) */
+import { createGem, setGemEnvironment, gemPresetForSide, VERSION as GEM_VERSION } from './vendor/kfb-gem.v1.js';
 
 export const SCHEMA = 'kfb.proof-stage/1';
 export const VERSION = 'kfb-proof-stage.v1.2';
@@ -62,7 +65,9 @@ export const LINEUP_ASPECT = 2.5;
    is seen from 12° so the rows don't hide each other (float: hover reads through the detached shadow), a single row from 1.5° in float */
 export const MULTI_ITEMS = 4, EL_GRID = 12;
 const FILL = { full: 0.8, face: 0.6, far: 0.4, scale: 0.7 };
-export const MODULES = ({ stage: VERSION, clay: CLAY_VERSION, light: LIGHT_SCHEMA + ' (' + LIGHT_VERSION + ')', eyes: EYES_VERSION, eyeRig: 'pet-eye-rig.v6', lid: 'clay-skin-attach.v1 + clay-eyelid.v3 (E2)', three: null });  // three is filled in by createProofStage
+/* GEM_R1: --mood day|dusk|night = kfb-stage-light timeOfDay on MOODS_MESA (day = 1 = the stage default, dusk = 0.5 gold, night = 0) */
+export const MOOD_TOD = Object.freeze({ day: 1, dusk: 0.5, night: 0 });
+export const MODULES = ({ stage: VERSION, clay: CLAY_VERSION, gem: GEM_VERSION, light: LIGHT_SCHEMA + ' (' + LIGHT_VERSION + ')', eyes: EYES_VERSION, eyeRig: 'pet-eye-rig.v6', lid: 'clay-skin-attach.v1 + clay-eyelid.v3 (E2)', three: null });  // three is filled in by createProofStage
 
 /* ---------- deterministic random (EyeRig v6 uses Math.random for timers) ---------- */
 const fnv = (s) => { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); } return h >>> 0; };
@@ -268,7 +273,8 @@ export function runGates(THREE, S) {
       eligible++; if (mt.userData?.kfbClay?.version === CLAY_VERSION) clayed++; else missing.push(m.name);
     }
   });
-  G.G5 = { name: 'Clay-Modul aktiv', result: clay && clayed > 0 && clayed === eligible ? 'PASS' : 'FAIL', detail: `${CLAY_VERSION} · Profil ${clay?.profile} · Seed ${clay?.seedLabel} · ${clayed}/${eligible} Materialien` + (missing.length ? ' · ohne Clay: ' + missing.slice(0, 5).join(', ') : '') };
+  const gemOnly = eligible === 0 && (S.gemMeshes?.length || 0) > 0;   // GEM_R1: an asset made only of gem nodes has nothing to clay
+  G.G5 = { name: 'Clay-Modul aktiv', result: clay && ((clayed > 0 && clayed === eligible) || gemOnly) ? 'PASS' : 'FAIL', detail: `${CLAY_VERSION} · Profil ${clay?.profile} · Seed ${clay?.seedLabel} · ${clayed}/${eligible} Materialien` + (missing.length ? ' · ohne Clay: ' + missing.slice(0, 5).join(', ') : '') };
   const fail = Object.values(G).some((g) => g.result === 'FAIL');
   return { status: fail ? 'FAIL' : 'PASS', gates: G };
 }
@@ -332,8 +338,10 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
       height_m: bind.max.y - bind.min.y, height_u: (bind.max.y - bind.min.y) / U2M, hip_m: hipBind, posedHeight_m: size.y };
   }
 
-  async function load({ glbUrl, card = null, type = 'character', id = null, seed = null, units = 'kaykit', fbUrl = null, exportOriginal = null, scaleFigures = null, pose = 'auto' } = {}) {
+  async function load({ glbUrl, card = null, type = 'character', id = null, seed = null, units = 'kaykit', fbUrl = null, exportOriginal = null, scaleFigures = null, pose = 'auto', mood = 'day' } = {}) {
     if (S) dispose();
+    if (!(mood in MOOD_TOD)) throw new Error('mood day | dusk | night');
+    const TODV = MOOD_TOD[mood];
     id = id || card?.id || (String(glbUrl).split('/').pop() || 'asset').replace(/\.glb.*$/i, '');
     /* v1.2: scale figures for stage/prop are loaded first; the seeded random starts afterwards, so everything after it matches v1.1 */
     const figWarn = [], figs = [];
@@ -352,10 +360,18 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     const faceParts = applyCardFaceParts(THREE, root, card, exportOriginal);
     root.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false; } });
     root.updateMatrixWorld(true);
+    /* GEM_R1 (V-460): gem nodes (extras kfb.material 'gem' on the node or an ancestor) skip clay and get kfb-gem.v1; one handle per gem node,
+       the material is shared per colour (gemTint, else ruby/sapphire by kfb.side white|light / black|dark); environment = PMREM of this mood */
+    const gemNodeOf = (m) => { for (let n = m; n; n = n.parent) { if (n.userData?.kfb?.material === 'gem') return n; if (n === root) break; } return null; };
+    const gemHandles = new Map(), gemMeshes = [];
+    root.traverse((m) => { if (!m.isMesh) return; const gn = gemNodeOf(m); if (!gn) return; const kf = gn.userData.kfb;
+      let h = gemHandles.get(gn); if (!h) { h = kf.gemTint ? createGem({ THREE, tint: kf.gemTint, depthTint: kf.gemDepthTint, seed: gn.name || 'gem' }) : createGem({ THREE, preset: gemPresetForSide(kf.side), seed: gn.name || 'gem' }); gemHandles.set(gn, h); }
+      h.apply(m); gemMeshes.push({ mesh: m, node: gn.name || '?', side: kf.side || null, tint: kf.gemTint || gemPresetForSide(kf.side) }); });
+    if (gemMeshes.length) setGemEnvironment({ THREE, renderer, mood: moodAt(TODV, MOODS_MESA), ground: COVE });
     /* clay */
     const profile = type === 'character' ? resolveProfile(card?.material?.clayProfile || 'character').id : 'midground';
     const seedVal = seed ?? card?.material?.claySeed ?? card?.id ?? id;
-    const skipClay = (m) => SKIP_DEFAULT.test(pathOf(m, root)) || !!m.userData.noClay || !visibleChain(m);
+    const skipClay = (m) => SKIP_DEFAULT.test(pathOf(m, root)) || !!m.userData.noClay || !visibleChain(m) || !!m.userData.kfbGem;
     const clayH = applyClay(root, THREE, { profile, seed: seedVal, scaleRef: type === 'character' ? 'object' : FB_HEIGHT, skip: skipClay });
     const clay = { ...clayH.info(), seedLabel: String(seedVal), handle: clayH };
     /* eyes: every figure, always; props only if the file has anchors */
@@ -403,14 +419,14 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     const mods = [{ object3d: turntable, status: () => ({ status: 'OK', shown: true }) }];
     const fs = Math.max(0.6, Hs / 1.8);
     /* v1.2: shadow box fitted tightly around the subject (rotation-invariant cylinder around the turntable axis) and its cast shadow, not the cove */
-    const sunDir = sunDirection(MOODS_MESA.day.elev, MOODS_MESA.day.az), tp = turntable.position;
+    const sunDir = mood === 'day' ? sunDirection(MOODS_MESA.day.elev, MOODS_MESA.day.az) : moodAt(TODV, MOODS_MESA).sunDir, tp = turntable.position;
     const cyl = new THREE.Box3(new THREE.Vector3(tp.x - rxz, B.min.y, tp.z - rxz), new THREE.Vector3(tp.x + rxz, B.max.y, tp.z + rxz));
     const fit = fitAround([cyl], sunDir);
     /* items = top-level children with meshes (one for a building or figure, one per item in a lineup): per-item contact AO, smallest caster */
     const items = root.children.filter((ch) => { let has = false; ch.traverse((m) => { if (m.isMesh && visibleChain(m) && !m.userData.eyeRig) has = true; }); return has; });
     const itemBoxes = (items.length ? items : [root]).map((it) => ({ it, b: bodyBounds(THREE, root, (m) => isUnder(m, it)) })).filter((x) => !x.b.isEmpty());
     const minCaster = Math.max(0.02, Math.min(...itemBoxes.map((x) => x.b.max.y - x.b.min.y), Hs));
-    const rig = createStageLight({ moods: MOODS_MESA, tod: () => 1, groundColor: () => COVE, fit: () => (S && S.fitNow) || fit, figures: () => mods, figureLight: { distance: 3.4 * fs, up: 2.2 * fs }, mapSize: 4096, minCaster: () => minCaster });
+    const rig = createStageLight({ moods: MOODS_MESA, tod: () => TODV, groundColor: () => COVE, fit: () => (S && S.fitNow) || fit, figures: () => mods, figureLight: { distance: 3.4 * fs, up: 2.2 * fs }, mapSize: 4096, minCaster: () => minCaster });
     scene.add(rig.object3d);
     /* contact AO on the real floor footprint (vertices in the lowest band), not the whole box (T-pose arms, lamp arms); v1.2: one per item
        that touches the floor (lineups get one per item, floating items none) */
@@ -465,7 +481,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     }
     const aspect = Math.max(size.x, size.z) / Math.max(0.05, Math.min(size.x, size.z)), nItems = itemBoxes.length;
     const lineup = type === 'prop' && (aspect > LINEUP_ASPECT || nItems >= MULTI_ITEMS), grid = lineup && Math.min(size.x, size.z) > 3 * Hs;
-    S = { root, turntable, aoProxies, aoSkipped, scene, float: flt, lineup, grid, items: itemBoxes.map((x) => x.it), lineupAspect: aspect, lineupYaw: size.z > size.x ? Math.PI / 2 : 0, minCaster, cyl, sunDir, rig, ao, cove, coveClay, sil: type === 'character' || !figs.length ? sil : null, silRoot: sil, eyes, clay, type, id, card, bounds: B, Hs, rxz, s, loadErrors, skipClay, hidden, faceParts, units, k, eyePixels: null, entrance, scaleEntrance, scaleFig, figWarn, view: null, fitBase: fit, fitNow: fit };
+    S = { mood, tod: TODV, gemHandles, gemMeshes, root, turntable, aoProxies, aoSkipped, scene, float: flt, lineup, grid, items: itemBoxes.map((x) => x.it), lineupAspect: aspect, lineupYaw: size.z > size.x ? Math.PI / 2 : 0, minCaster, cyl, sunDir, rig, ao, cove, coveClay, sil: type === 'character' || !figs.length ? sil : null, silRoot: sil, eyes, clay, type, id, card, bounds: B, Hs, rxz, s, loadErrors, skipClay, hidden, faceParts, units, k, eyePixels: null, entrance, scaleEntrance, scaleFig, figWarn, view: null, fitBase: fit, fitNow: fit };
     S.head = type === 'character' ? headBounds(THREE, root, eyes) : null;
     if (eyes?.status === 'OK') S.eyePixels = measureEyePixels();
     const gates = runGates(THREE, S);
@@ -474,6 +490,13 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     const seamTot = S.seam.reduce((a, r) => a + r.seamPx, 0), sh = S.rig.info().shadow;
     gates.gates.G6 = { name: 'Schattensaum (kein heller Saum zwischen Teil und Schatten)', result: seamTot === 0 ? 'PASS' : 'FAIL',
       detail: `Saum ${S.seam.map((r) => `${r.view} ${r.seamPx} px`).join(' · ')}${S.seam.some((r) => r.isolatedPx) ? ` (Einzelpixel unter ${S.seam[0].minCluster} px: ${S.seam.map((r) => r.isolatedPx).join('/')})` : ''}${S.seam.some((r) => r.tipPx) ? ` · Schattenspitzen fern vom Kontakt (kein Saum): ${S.seam.map((r) => r.tipPx || 0).join('/')} px` : ''} · Kontaktzone ${S.seam[0].contactPx ?? '-'} px · Schwelle ${S.seam[0].thresh} Luma, Umriss-Toleranz ${S.seam[0].erode} px · Texel ${(sh.texel * 1000).toFixed(2)} mm · normalBias ${(sh.normalBias * 1000).toFixed(2)} mm (1,5 Texel) · ${sh.mapSize}² · Vorderseiten werfen`, seamPx: seamTot, perView: S.seam };
+    /* GEM_R1 G7 Edelstein (only when the asset has gem nodes, so existing sheets stay identical): gem material present, no clay applied */
+    if (gemMeshes.length) {
+      const bad = gemMeshes.filter(({ mesh }) => [].concat(mesh.material).some((mt) => !mt || mt.userData?.kfbGem?.version !== GEM_VERSION || !!mt.userData?.kfbClay));
+      const sides = [...new Set(gemMeshes.map((g) => g.tint))];
+      gates.gates.G7 = { name: 'Edelstein (Gem-Knoten: kfb-gem, kein Knet)', result: bad.length ? 'FAIL' : 'PASS',
+        detail: `${GEM_VERSION} · ${gemMeshes.length - bad.length}/${gemMeshes.length} Gem-Meshes mit Edelstein-Material, ohne Knet · Farben ${sides.join(', ')} · Stimmung ${mood}${bad.length ? ' · FEHLT: ' + bad.slice(0, 6).map((g) => g.node).join(', ') : ''}`, gemMeshes: gemMeshes.length, bad: bad.length };
+    }
     gates.status = Object.values(gates.gates).some((g) => g.result === 'FAIL') ? 'FAIL' : 'PASS';
     S.gates = gates;
     return { status: gates.status, gates: gates.gates, info: info() };
@@ -673,7 +696,8 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
       schema: SCHEMA, version: VERSION, modules: { ...MODULES }, id: S.id, type: S.type, units: S.units, unitScale: S.k,
       size_m: S.bounds.getSize(new THREE.Vector3()).toArray().map((v) => +v.toFixed(3)), height_m: +S.Hs.toFixed(3),
       hiddenOriginals: S.hidden, cardFaceParts: S.faceParts, entrance: S.entrance ? { id: S.entrance.id, outsideBounds: !!S.entranceOutside, node: S.entrance.node.name, pos_u: S.entrance.pos.toArray(), forward_xz: S.entrance.fwd, width_m: S.entrance.width_m } : null, clay: { version: CLAY_VERSION, profile: S.clay.profile, seed: S.clay.seedLabel, scaleRef: S.clay.scaleRef, meshes: S.clay.meshes, cove: 'background, relief off (neutral)' },
-      light: { module: LIGHT_VERSION, moods: 'MOODS_MESA', tod: 1, tone: 'ACES Filmic', exposure: 1, shadow: 'PCFSoft, fitAround (subject + cast shadow), front faces cast, mapSize 4096', shadowNow: S.rig.info().shadow, minCaster_m: +S.minCaster.toFixed(3), figureLight: true, rim: false, mood: S.rig.info().mood },
+      light: { module: LIGHT_VERSION, moods: 'MOODS_MESA', tod: S.tod, ...(S.mood !== 'day' ? { moodName: S.mood } : {}), tone: 'ACES Filmic', exposure: 1, shadow: 'PCFSoft, fitAround (subject + cast shadow), front faces cast, mapSize 4096', shadowNow: S.rig.info().shadow, minCaster_m: +S.minCaster.toFixed(3), figureLight: true, rim: false, mood: S.rig.info().mood },
+      ...(S.gemMeshes.length ? { gem: { version: GEM_VERSION, meshes: S.gemMeshes.length, handles: S.gemHandles.size, colours: [...new Set(S.gemMeshes.map((g) => g.tint))] } } : {}),
       pose: S.float, lineup: S.lineup ? { aspect: +S.lineupAspect.toFixed(2), items: S.items.length, grid: !!S.grid, elevation_deg: S.grid ? EL_GRID : S.float?.on ? EL_FLOAT : 'standard', slots: 'side -> detail_right; near_face = Mitte, detail_low = links' } : null, defaultViews: viewsFor(S.type, S.lineup), shadowSeam: S.seam || null, contactAO: { items: S.aoProxies.length, skippedHollow: S.aoSkipped },
       eyes: r || { status: S.eyes?.status || 'none', reason: S.eyes?.reason || null }, eyePixels: S.eyePixels,
       head_m: S.head ? S.head.getSize(new THREE.Vector3()).toArray().map((v) => +v.toFixed(3)) : null,
@@ -698,6 +722,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
   function dispose() {
     if (!S) return;
     S.scene.traverse((o) => { if (o.isMesh) { o.geometry?.dispose?.(); [].concat(o.material).forEach((m) => m?.dispose?.()); } });
+    for (const h of S.gemHandles?.values() || []) h.dispose();
     S.rig.dispose(); S.ao.dispose(); S = null;
   }
   return { renderer, load, render, info, dispose, debug: () => S, gates: () => S?.gates || null, get loaded() { return !!S; }, dataURL: () => renderer.domElement.toDataURL('image/png') };

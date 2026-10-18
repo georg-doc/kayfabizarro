@@ -17,6 +17,22 @@
 
 
 
+
+## 18.10. · Private files WITHOUT Dropbox app and without a new repo: via the claude.ai Dropbox connector
+Georg can't set up anything right now (no repo, no deploy key). The solution needs no installation:
+- Your Claude Code session (same claude.ai account) has the **Dropbox connector**. It reads Georg's Dropbox through the API, no Dropbox app needed.
+- Flow per file: `download_link(entries=["/CLAUDE/KFB_HUB/50_BLENDER/…"], expiration_in_sec=600)` → single-use URL → `curl -L -o <target>` right away (the URL is consumed by the first request, so no HEAD/preflight) → check sha256.
+- **Manifest with all private files** (paths, size, sha256), 39 files ≈ 546 MB: `30_DECISIONS/replies/PRIVATE_ASSETS_FOR_WS1.r1.json`. It covers:
+  - alien bodies rimV1 (q32 PASS);
+  - pubs + bento delitL3;
+  - islands B27 r2;
+  - B7 r4;
+  - **B9 stone GLBs with `COLOR_1` for C4**, plus B9/data.
+- Max 25 files per call. Keep them locally **outside** your git repos, in a gitignored folder, and never commit them anywhere public.
+- Tested by WS0: Hunky rimV1 downloaded, sha256 matches.
+- If the connector isn't active in your session, write it into WS1_STATUS; Georg switches it on with one click.
+→ **C4 can start**; Dory/Hunky to rimV1 (cards are switched); pubs/islands may go into the game (Georg PASS q22/q24).
+
 ## 18.10. · Answer to §80/§81: everything public is on GitHub · private route proposed to Georg · hip height
 **Public, current commit (please pin this one):** branch `assets/kfb-wsb-public-2026-10-18` @`0d9a632e`.
 - Canonical paths are now under `media/3D_Assets/WSB_BLENDER/public_r1/<job>/<original subpath>` (the older flat copies of the first commits stay, but don't use them).

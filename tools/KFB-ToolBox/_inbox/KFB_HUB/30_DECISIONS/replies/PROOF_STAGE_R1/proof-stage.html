@@ -89,7 +89,7 @@ let SOURCES = null, CUR = null, view = 'front', eyes = 'rest';
 try { SOURCES = await (await fetch('./sources.json', { cache: 'no-store' })).json(); for (const [k, v] of Object.entries(SOURCES.figures)) $('srcSel').insertAdjacentHTML('beforeend', `<option value="${k}">${k}${v.private ? ' (privat)' : ''} · ${v.type}</option>`); } catch (e) { SOURCES = { figures: {} }; }
 
 /** load({ id, cardUrl, card, glbUrl, type, units }) -> { status, gates, info, input } */
-async function load({ id = null, cardUrl = null, card = null, glbUrl = null, type = null, units = 'kaykit', glbName = null, pose = 'auto' } = {}) {
+async function load({ id = null, cardUrl = null, card = null, glbUrl = null, type = null, units = 'kaykit', glbName = null, pose = 'auto', mood = 'day' } = {}) {
   const src = id && SOURCES.figures[id];
   if (!cardUrl && !card && src && (src.card || src.type === 'character')) cardUrl = srcUrl(src.card || SOURCES.cards + id + '.figure.json');
   let cardText = null;
@@ -111,7 +111,7 @@ async function load({ id = null, cardUrl = null, card = null, glbUrl = null, typ
   const SR = SOURCES.scale_ref || {}, figSpec = async (r) => { if (!SR[r]) return null; let fc = null; if (SR[r].card) { try { const q = await fetch(srcUrl(SR[r].card), { cache: 'no-store' }); if (q.ok) fc = await q.json(); } catch (e) { /* no card */ } }
     return { glbUrl: srcUrl(SR[r].glb), animUrl: srcUrl(SR[r].anim), clip: SR[r].clip, time: SR[r].time || 0, label: SR[r].label, glbName: SR[r].glb, card: fc, cardName: SR[r].card || null, exportOriginal: fc ? (await cardExport(fc)).exportOriginal : null }; };
   const scaleFigures = { medium: await figSpec('medium'), large: await figSpec('large') };
-  const res = await stage.load({ glbUrl: blobUrl, card, type, id: id || card?.id || fileId, units, fbUrl: srcUrl(SOURCES.fb_silhouette), exportOriginal, scaleFigures, pose });
+  const res = await stage.load({ glbUrl: blobUrl, card, type, id: id || card?.id || fileId, units, fbUrl: srcUrl(SOURCES.fb_silhouette), exportOriginal, scaleFigures, pose, mood });
   const cardBody = card?.body?.glb?.sha256 || null;
   const input = { id: res.info.id, type, card: cardUrl || (card ? '(Datei)' : null), cardSha256: cardSha, cardSchema: card?.schema || null, cardApproval: card?.approval?.status || null,
     glb: glbName || (src ? src.glb : glbUrl), glbSha256: glbSha, glbBytes: buf.byteLength, cardBodySha256: cardBody,
@@ -137,7 +137,7 @@ function sheetHead(status) {
     title: `KFB Abnahme · ${inp.displayName} (${inp.id}) · ${inp.type}${inp.cardApproval && inp.cardApproval !== 'approved' ? ' · Karte: ' + inp.cardApproval : ''}${inp.private ? ' · PRIVAT (Kauf-Asset, nur lokal)' : ''}`,
     sub: `GLB ${String(inp.glb).split('/').slice(-2).join('/')} · sha256 ${String(inp.glbSha256).slice(0, 12)}…${inp.glbMatchesCard === false ? ' (≠ Karte ' + String(inp.cardBodySha256).slice(0, 8) + '…)' : inp.glbMatchesCard ? ' (= Karte)' : ''} · Höhe ${i.height_m} m · Augen ${i.eyes.seat || i.eyes.status} · Clay ${i.clay.version} ${i.clay.profile} Seed „${i.clay.seed}“${i.pose?.on ? ` · schwebt: Mitte auf Hüfthöhe Medium-Rig ${String(i.pose.hip_m.toFixed(2)).replace('.', ',')} m (V-437)` : ''}`,
     gates: CUR.gates, status,
-    foot: `${i.version} · ${i.modules.clay} · ${i.light.module} MOODS_MESA Tag · ACES 1 · ${i.modules.eyeRig} + ${i.modules.lid} · three ${i.modules.three} · ${W}×${H} · ${new Date().toISOString().slice(0, 10)}`,
+    foot: `${i.version} · ${i.modules.clay} · ${i.light.module} MOODS_MESA ${{ dusk: 'Abend (Gold)', night: 'Nacht' }[i.light.moodName] || 'Tag'} · ACES 1 · ${i.modules.eyeRig} + ${i.modules.lid} · three ${i.modules.three} · ${W}×${H} · ${new Date().toISOString().slice(0, 10)}`,
   };
 }
 /** sheet(renders: { 'view|eyes': dataURL }) -> dataURL of the fixed-layout contact sheet */
