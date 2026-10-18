@@ -1,33 +1,43 @@
-# kfb-bubbles.v1 — presentation SSOT candidate (V-501)
+# kfb-bubbles.v1 · R10.1 (PR #424)
 
-**Status:** isolated package, DESIGN/INTEGRATION CANDIDATE — not accepted into game/tool/Hub runtime. Ownership remains with the existing KFB ChatterBox presentation core and the Wireface host adapter. No new dialogue, audio, camera or world state owner.
+Reusable ChatterBox/Wireface presentation package for WS1b. The original `chatterbox-core.js`, `bubbles.module.js` and shape/word geometry remain unchanged. The view adapter supplies R10.1 decoding, readable font fallbacks and V-519 paper. No dialogue, audio, animation, progression or World owner is added. No merge, game admission or human visual acceptance is implied.
 
-## Sources (copied unchanged)
+## Open and build
 
-- `chatterbox-core.js`: Dropbox `/CLAUDE/KFB Wireface Stage R2/vendor/chatterbox/chatterbox-core.js` (2026-10-14), equivalent GitHub `tools/KFB-ToolBox/_inbox/KFB_CHATTERBOX_STUDIO_CLAUDE_DESIGN_SESSION_CUT_2026-10-05_r2/lib/chatterbox/chatterbox-core.js` @ f59a8a1affb3038bba903d26182c2e007cda1d07 except **one additional terminal LF** in Dropbox. Original global `window.KFB_CB` and its full API intact, including layout, silhouette, clayFront and comicWord.
-- `bubbles.module.js`: Dropbox `/CLAUDE/KFB Wireface Stage R2/modules/bubbles.module.js` (2026-10-14), equivalent GitHub `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/CLAUDE_DESIGN_STAGE_LIVE_R1/modules/bubbles.module.js` @ 19e67ae9a5b21b37e8c368f3fde598f495bac1ff except one terminal LF. Original import `three`, `create(o)`, 520ms stagger, 300ms flip, headWorld projector untouched.
-- `defs.svg` comes from unchanged <defs> tree in ChatterBox Studio v2 source (GitHub register), including `kfbFaceShade`, `kfbWallShade`, `kfbSoftShadow`, `kfbCornerMask`, four `kfbDots*` patterns and clay shading filters. `injectDefs()` is idempotent.
-- `Shantell Sans` (body), `Bangers` / `Irish Grover` (impact/word), loaded once through Google Fonts. Font availability depends on host network; fallback fonts retained. Use OFL when locally vendoring fonts; **no font binary vendored here**.
+`demo.single.html` is the requested complete single-file demo: scripts, Shantell Sans, Bangers and their full OFL licenses are inline. It makes no external resource requests. `demo.html` uses the same sources as separate local files. Both show the original eight kinds/four word classes and the original R10.1 sample lines. No private PottyMouth font is included; the existing Unicode alphabet is the default and a cleared host font can be supplied separately.
 
-## Browser usage
+Run `node build.mjs` after source changes. This deterministically generates `kfb-bubbles.classic.js` and `demo.single.html`; do not maintain either as a second source fork. Run `node build.mjs --check` and `node test.mjs` for local/CI validation. `browser-tests.html` runs the actual DOM, narrow viewport and original 3D-head projection checks using the donor's exact Three.js0.186.1 dependency. It is an internal test fixture; the single-file demo has no Three or network dependency.
 
-**Classic:** Load `chatterbox-core.js` then `kfb-bubbles.classic.js`. For `create({host,maxPx,...})`, pass an existing global `THREE` before instantiating; original Wireface `actor.headWorld()`, `update(dt,{camera,pads,avoid})`, `say(actor,parts,color)`, `clear`, `dispose` API still applies. `window.KFB_BUBBLES` has `create`, `loadFonts`, `injectDefs`, `stageOf`, `renderWords`, `fluffify`, `fitCoded`.
+## Use the existing host
 
-**ES module / Vite-like bundler:** `import { create, renderWords, stageOf } from './kfb-bubbles.mjs'`; install/provide the existing `three` package resolved by the unchanged host adapter. Side-effect import of bundled core exposes `window.KFB_CB`. **Browser-native bare imports require an import map**; the build does not introduce a new copy of Three.js.
+ES module: `import * as B from './kfb-bubbles.mjs'`. The receiving application's existing `three` dependency/import map resolves the unchanged Wireface host. Classic: load `chatterbox-core.js`, `fluffolect-r101.js`, the receiving host's existing `THREE` global, then `kfb-bubbles.classic.js`; use `window.KFB_BUBBLES`. Do not install a second Three/runtime owner.
 
 ```js
-const bubbles = create({ host: overlayHost, maxPx: 420, stage: 'glyph' });
-bubbles.say(actor, ['Subject', 'Connector', 'Reframe'], '#8faac1');
-bubbles.update(deltaSeconds, { camera, pads, avoid });
-bubbles.setDecode('auto', 0.65); // or glyph | fluff | plain
+await B.loadFonts(); // packaged OFL fonts, bounded wait, readable sans fallback
+const bubbles = B.create({host: overlayHost, maxPx:420,
+  cards: [{id:'card-id', text:canonicalCardText}],
+  decks: [{id:'deck-id', cardIds:canonicalDeckCardIds}],
+  state: {encounters:globalWordEncounters, owned:ownedCardIds}
+});
+bubbles.say(actor, [subject, connector, reframe], speakerColor);
+bubbles.update(deltaSeconds, {camera, pads, avoid});
+bubbles.setLanguageState({encounters:globalWordEncounters, owned:ownedCardIds});
+bubbles.setAssist(true); // view only; the host continues recording encounters
+bubbles.setPaper({storyMode:true, tint:speakerColor, light:sceneLight, timeOfDay:dayPhase});
 ```
 
-**Tools/Hub:** Use the same package's font+defs loader and `renderWords(element, plaintext, {stage,progress,glyphFont})` to render text without a Three host; the bubble geometry, kind variants and comic words remain `window.KFB_CB` authority. Avoid copying a new layout algorithm. `demo.html` isolates 8 kinds + 4 comicWord classes + decode stages; it is **not** a public Stage acceptance or 3D Wireface integration.
+State is a caller-owned read-only snapshot. The adapter never increments encounters, grants cards, writes storage or owns game time. Pass actual card texts/IDs and actual deck memberships; three distinct owned cards in the relevant deck unlock its content. `setLanguageState` updates the display after an authoritative host change. Default stage is `state`. `setDecode('glyph'|'fluff'|'plain')` and `setDecode('auto',0..1)` are explicit preview overrides; protected roles remain plain. The R10.1 `stageOf(word,percent)` signature replaces the old unaccepted R9 helper signature.
 
-## Fluff-o-lect hook — R9 / R9.1 source constraints
+For text-only tools, `B.renderWords(element,plaintext,{decoder,assist})` uses a decoder from `B.createDecoder({cards,decks,state})`. Titles/names/numbers/FLOW are analyzed on a complete part before wrapped rows are rendered. Glyphs preserve their original word advance, use one symbol up to six letters and two above six, never adjacent duplicates, transform-only enlargement and the source's horizontal clamp. Font size/line height do not grow. Fluff remains readable at full text size: the existing core budgets the larger of each source/Fluff word before wrapping, then its own cuts are mapped to real words. Geometry and head placement remain in the original core/host.
 
-Plain flow words stay visible; punctuation is outside the encoded word. Morphology maps strictly to `fluff, fluffs, fluffed, fluffing, fluffy, fluffily, fluffery`; never invent padded pseudo-words. Each 1–4, 5–8, 9+ letter source word maps to 1, 2 or 3 nonlicensed glyphs, rendered at **1.6em**, with horizontal `scaleX` derived from canvas measurement of the original word using computed bubble font. All glyph ink is `#1f1a14`, bubble PAPER `#fbf2df`. `stageOf(index,total,progress)` supports per-word decoding through glyph → fluff → plain. Glyph family is an overridable parameter; PottyMouth BB is **not licensed**. The Dropbox `probe_r9.html` was discoverable but its text extractor stripped executable JS; this hook implements the written R9/R9.1 contract, not a source-byte port of `fitCoded()`.
+## V-519 and fonts
 
-## QA limits / exact usage
+Default paper is bright warm white `#fffdf8`; the previous fixed beige is no longer the active view default. Optional Story tint is a14% pastel mix. The host provides light/day phase; the view applies a small bounded adjustment and enforces at least7:1 contrast against INK `#1f1a14`. `B.paperColor` and `B.contrast` are pure helpers. Every host update applies the view color to the original shape's first face; no shape math or head anchor changes.
 
-Source byte comparison against both copies is recorded; all eight kinds and four word classes draw only using copied `KFB_CB`. Full real browser demonstration / Site visual QA and headWorld-anchored 3D test remain for receiving integration. No acceptance or publication claim without opening that exact host.
+At initialization the exported core font configuration is set to `"Shantell Sans", "Comic Neue", system-ui, sans-serif`; comic-word/shout artwork retains Bangers/Irish Grover with the same safe fallback tail. The raw frozen donor strings are preserved for provenance, but do not govern active fallback. `fonts.css` and local files contain the official unmodified Shantell Sans/Bangers builds, with complete OFL licenses and hash receipts in `FONT_SOURCES.json`. Await fonts before first layout; unavailable fonts return promptly to the safe fallback. No Google Fonts request or private font binary is required.
+
+## Source and actual evidence
+
+`R101_SOURCE.json` pins the actual local `probe_r10_1.html` SHA256 and five verbatim ranges (lines396–470): helpers; `analyze`, `fluffify`, FLOW/IRR_PAST/ADJ_Y/COMPOUND; `unlockStage`/`setKeys`; `stageAt`; `fitCoded`. The probe's audio, sample progression storage and embedded private font were not copied. The factory state binding, font/paper view and width reservation are explicitly bounded seams.
+
+`SOURCE_AUDIT.md` retains the original donor arbitration. Current tests and screenshots are in `evidence/` and the owning `WSA_KFB_BUBBLES_SSOT_R1_RETURN.md`. Source-isolated forms were opened before changes. The browser fixture uses real Three.js camera/project math and the original Wireface host, not a pretend projector. This does not claim actual WS1b integration, a game visual PASS, public deployment, audio playback or Georg acceptance. Next owner action: WS1b consumes the pinned package for V-497; WS0 can inspect the single file directly.
