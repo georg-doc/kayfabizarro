@@ -26,7 +26,6 @@
     "FONT_SOURCES.json": "56b27783e4f23d956a49b9d7748456cef1721a60a651d0c47ec39dc9f4a17bca",
     "R101_SOURCE.json": "6daec9ff50498ee94a4b329156abb1b7615cb77d14dea9700662984e3f7f58aa",
     "browser-tests.html": "830243f77f10c7cb1302408d70dbd4c05d720dab30a24911a0469112221646a2",
-    "browser-tests.local.html": "e2803b1822a020507c20c7decec82708969750104ce3eedc01f11432777e3d1d",
     "bubbles.module.js": "18f5e7f218fbb3bd4d4f89f5aae27f11bd43b6d1522bd912f9014e7193768558",
     "build.mjs": "4f0c67446a62e543ee83c0bc767356d48edd5e7d3d9ac350b328ed2ed781cfd3",
     "chatterbox-core.js": "3adcc02019a6787cfdcfa074bd43e40c71479c508c5ef31faf17331a7d1474df",
@@ -39,5 +38,6 @@
     "kfb-bubbles.classic.js": "31c66dc87d182f386fca1759b542337d9f37216b04f7099fded9bbb3fbc4ba67",
     "kfb-bubbles.mjs": "9905ccec04519bbfc6ca025d2261505612194e84cb4c591957a9ced169054a48",
     "test.mjs": "9a4a16329c9d4a47ebfdabcd0ef55ccfe41ea9cee335c8bad228a962cdc8cafa"
-  }
+  },
+  "localFixtureNote": "Browser fixture used a local copy of the exact donor Three0.186.1 package instead of the same-version CDN URL; no test logic changes."
 }
