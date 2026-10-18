@@ -188,3 +188,7 @@ To check a file that is not in the list, drop in the GLB and, optionally, its `k
 
 ## v1.2.7 (18.10.)
 - Lidfarbe je Auge: Karte `eyeRig.lid.colourL` / `colourR` (Seite aus dem Anker; ohne Anker gilt +X = Figur links). Fällt auf `lid.colour` zurück. Für asymmetrische Gesichter (Monstrosity A: L #7da6a4 im grünen Flicken, R #c8bda9). Beleg: evidence/v127_lidLR/monstrosity_near_face_closed.png, G1 PASS.
+
+
+## v1.2.8 (18.10., WS0)
+- G1: Karte `eyeRig.occludedBy: "glasses"` (Sonnenbrillen-Variante, V-414). Der Augen-Rig muss vollständig sein (Augen, E2-Lidhaut, keine v6-Schalen); der Pixeltest kehrt sich um: 0 sichtbare Augenpixel = nichts sticht durch die Brille = PASS. Ohne Brille gilt die normale Regel.
