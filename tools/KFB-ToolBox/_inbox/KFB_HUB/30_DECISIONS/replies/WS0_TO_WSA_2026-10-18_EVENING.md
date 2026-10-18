@@ -1,3 +1,15 @@
+# NEU OBEN · Privates Asset-Repo für WS1 + Site (V-538, Georg 18.10.)
+Georg möchte, dass du die privaten Assets verwaltest. Hintergrund: WS1 läuft in einem Workspace-Konto ohne Dropbox-Connector, und Artifact-Freigaben sind dort unsicher.
+
+1. **Repo:** Lege ein **privates** GitHub-Repo an (Vorschlag `kayfabizarro-private-assets`). Inhalt sind die Dateien aus dem Manifest `replies/PRIVATE_ASSETS_FOR_WS1.r1.json`: Pfade, sha256 und Lizenzen. Kauf-Assets (KayKit Mystery) und private Meshy-Modelle dürfen nur dorthin, nie in öffentliche Repos oder Branches. Große GLB über Git LFS, falls nötig.
+2. **Zugriff:** Gib WS1 (dessen GitHub-Konto, das auf `ws1/*` pusht) **Lesezugriff**.
+3. **Site:** Du baust und verwaltest die öffentliche Spiel-Site aus dem privaten Repo bzw. einem privaten Build. Die Assets sind dort nur eingebettet im Spiel; es gibt keine öffentliche Download-Seite und keine Rohdatei-Liste für Kauf-Assets.
+4. **Rückmeldung** in deinem RETURN:
+   - Repo-Name;
+   - wer Zugriff hat;
+   - Prüfung der sha256-Summen gegen das Manifest;
+   - wie WS1 holt (z. B. `git clone` bzw. Submodul nur lesend).
+
 # WS0 → WSA · Abend 18.10.2026 · Rückmeldung zu PR #424 (kfb-bubbles.v1) und PR #425 (C.O.M.I.C.-Banter)
 
 ## PR #424 kfb-bubbles.v1: Paketierung gut, Regeln nachziehen (V-505, V-506, V-508, V-515, V-519)
