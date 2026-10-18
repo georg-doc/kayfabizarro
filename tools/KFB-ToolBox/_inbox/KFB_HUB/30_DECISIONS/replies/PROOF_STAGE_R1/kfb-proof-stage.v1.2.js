@@ -48,11 +48,19 @@ export const W = 1600, H = 1200, FOV = 30;
 export const U2M = 0.616;                     // m per KayKit unit (V-345)
 export const FB_HEIGHT = 1.81;                // m, FrizzleBob (figure card, V-345)
 export const COVE = '#f2e8d8', BG = '#f3ece0', SILHOUETTE = '#6f655b';
-export const VIEWS = Object.freeze(['front', 'threeq', 'side', 'back', 'near_face', 'far', 'scale_ref', 'top', 'detail_low']);
+export const VIEWS = Object.freeze(['front', 'threeq', 'side', 'back', 'near_face', 'far', 'scale_ref', 'top', 'detail_low', 'detail_right']);
 export const DEFAULT_VIEWS = Object.freeze({ character: ['front', 'threeq', 'side', 'back', 'near_face', 'far', 'scale_ref'], prop: ['front', 'threeq', 'side', 'back', 'top', 'near_face', 'detail_low', 'far', 'scale_ref'], stage: ['front', 'threeq', 'side', 'back', 'top', 'near_face', 'detail_low', 'far', 'scale_ref'] });
 export const EYE_STATES = Object.freeze(Object.keys(LID_STATES));
-const AZ = { front: 0, threeq: 35, side: 90, back: 180, near_face: 0, far: 20, scale_ref: 0, top: 0, detail_low: 0 };
-const EL = { front: 5, threeq: 6, side: 5, back: 5, near_face: 3, far: 8, scale_ref: 4, top: 85, detail_low: 6 };
+const AZ = { front: 0, threeq: 35, side: 90, back: 180, near_face: 0, far: 20, scale_ref: 0, top: 0, detail_low: 0, detail_right: 0 };
+const EL = { front: 5, threeq: 6, side: 5, back: 5, near_face: 3, far: 8, scale_ref: 4, top: 85, detail_low: 6, detail_right: 6 };
+/* v1.2 r2: float pose keeps the eye-level views low, so the gap between a hovering item and its floor shadow reads (WS0 review) */
+const EL_FLOAT = 1.5, FLOAT_LOW = new Set(['front', 'threeq', 'side', 'back', 'near_face', 'detail_low', 'detail_right']);
+/* v1.2 r2: a prop whose footprint is > 2.5 x longer than wide is a lineup: front/threeq/back/details framed on the content width of the view,
+   and 'side' (everything stacked into one clump) is replaced by 'detail_right'; near_face = middle, detail_low = left half */
+export const LINEUP_ASPECT = 2.5;
+/* multi-item props (>= 4 top-level items, e.g. WSB's compact B28 grids) get the same layout; a grid (content deeper than 3 x its height)
+   is seen from 12° so the rows don't hide each other (float: hover reads through the detached shadow), a single row from 1.5° in float */
+export const MULTI_ITEMS = 4, EL_GRID = 12;
 const FILL = { full: 0.8, face: 0.6, far: 0.4, scale: 0.7 };
 export const MODULES = ({ stage: VERSION, clay: CLAY_VERSION, light: LIGHT_SCHEMA + ' (' + LIGHT_VERSION + ')', eyes: EYES_VERSION, eyeRig: 'pet-eye-rig.v6', lid: 'clay-skin-attach.v1 + clay-eyelid.v3 (E2)', three: null });  // three is filled in by createProofStage
 
@@ -291,8 +299,10 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
   async function loadFigure(spec, rig, warnings) {
     const { scene: fig } = await loadGLB(spec.glbUrl);
     fig.name = 'proof_scale_' + rig;
-    fig.traverse((o) => { if (/^FB_Eye_[LR]$/.test(o.name)) o.visible = false; });
+    const fcard = spec.card || null;
+    fig.traverse((o) => { if (/^FB_Eye_[LR]$/.test(o.name) || (fcard?.originals?.remove || []).includes(o.name)) o.visible = false; });
     fig.scale.setScalar(U2M); fig.updateMatrixWorld(true);
+    const faceParts = fcard ? applyCardFaceParts(THREE, fig, fcard, spec.exportOriginal || null) : [];   // brows/nose/mouth as on the figure card
     const bind = new THREE.Box3().setFromObject(fig, true), V = new THREE.Vector3();
     let hips = null; fig.traverse((o) => { if (!hips && o.isBone && /^hips$/i.test(o.name)) hips = o; });
     const hipBind = hips ? hips.getWorldPosition(V).y - bind.min.y : null;
@@ -311,9 +321,13 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     const holder = new THREE.Group(); holder.name = 'proof_scale_' + rig + '_holder'; holder.add(fig);
     fig.position.set(-pc.x, -posed.min.y, -pc.z);                                           // holder origin = box centre on the floor, feet at y 0
     fig.traverse((o) => { o.userData.noMeasure = true; if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false; } });
-    const clay = applyClay(fig, THREE, { profile: 'character', seed: 'proof_scale_' + rig, scaleRef: 'object' }); castFrontFaces(fig);
+    const clay = applyClay(fig, THREE, { profile: 'character', seed: fcard?.material?.claySeed ?? fcard?.id ?? 'proof_scale_' + rig, scaleRef: 'object' }); castFrontFaces(fig);
+    /* v1.2 r2 (WS0/Georg: figures always with eyes): EyeRig v6 + E2 lid skin at the figure's eye seat, state rest, exactly as a character proof */
+    let eyes = null;
+    if (findEyeSeat(fig, fcard).seat) { eyes = mountEyes(THREE, fig, { card: fcard, applyClay, clayRef: clay.scaleRef, seed: String(fcard?.id || rig) }); if (eyes?.status === 'OK') eyes.setState('rest'); else warnings.push(`${rig}: Augen ${eyes?.status} ${eyes?.reason || ''}`); }
+    else if (rig === 'medium') warnings.push('medium: keine Augen-Anker (Karte/GLB)');
     const fb = feet.isEmpty() ? null : { minX: feet.min.x - pc.x, maxX: feet.max.x - pc.x, minZ: feet.min.z - pc.z, maxZ: feet.max.z - pc.z };
-    return { rig, holder, fig, label: spec.label || rig, glb: spec.glbName || spec.glbUrl, pose, size, feet: fb, clay: clay.info(),
+    return { rig, holder, fig, label: spec.label || rig, glb: spec.glbName || spec.glbUrl, card: spec.cardName || null, faceParts, eyes: eyes?.status === 'OK' ? eyes.report() : null, pose, size, feet: fb, clay: clay.info(),
       height_m: bind.max.y - bind.min.y, height_u: (bind.max.y - bind.min.y) / U2M, hip_m: hipBind, posedHeight_m: size.y };
   }
 
@@ -322,6 +336,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     id = id || card?.id || (String(glbUrl).split('/').pop() || 'asset').replace(/\.glb.*$/i, '');
     /* v1.2: scale figures for stage/prop are loaded first; the seeded random starts afterwards, so everything after it matches v1.1 */
     const figWarn = [], figs = [];
+    if (type !== 'character' && scaleFigures) seedRandom('kfb-proof|scale-figures');   // EyeRig v6 draws timers from Math.random
     if (type !== 'character' && scaleFigures) for (const rig of ['medium', 'large']) {
       if (!scaleFigures[rig]?.glbUrl) { figWarn.push(rig + ': keine GLB in sources.json scale_ref'); continue; }
       try { figs.push(await loadFigure(scaleFigures[rig], rig, figWarn)); } catch (e) { figWarn.push(`${rig}: ${e.message}`); }
@@ -436,7 +451,9 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
       const figAo = createContactAO({ targets: () => figAoProxies, strength: 0.42 }); scene.add(figAo.object3d);
       scaleFig = { group: g, figs, ao: figAo, aoMods: figAoProxies, warnings: figWarn, placement: null };
     }
-    S = { root, turntable, aoProxies, scene, float: flt, minCaster, cyl, sunDir, rig, ao, cove, coveClay, sil: type === 'character' || !figs.length ? sil : null, silRoot: sil, eyes, clay, type, id, card, bounds: B, Hs, rxz, s, loadErrors, skipClay, hidden, faceParts, units, k, eyePixels: null, entrance, scaleEntrance, scaleFig, figWarn, view: null, fitBase: fit, fitNow: fit };
+    const aspect = Math.max(size.x, size.z) / Math.max(0.05, Math.min(size.x, size.z)), nItems = itemBoxes.length;
+    const lineup = type === 'prop' && (aspect > LINEUP_ASPECT || nItems >= MULTI_ITEMS), grid = lineup && Math.min(size.x, size.z) > 3 * Hs;
+    S = { root, turntable, aoProxies, scene, float: flt, lineup, grid, items: itemBoxes.map((x) => x.it), lineupAspect: aspect, lineupYaw: size.z > size.x ? Math.PI / 2 : 0, minCaster, cyl, sunDir, rig, ao, cove, coveClay, sil: type === 'character' || !figs.length ? sil : null, silRoot: sil, eyes, clay, type, id, card, bounds: B, Hs, rxz, s, loadErrors, skipClay, hidden, faceParts, units, k, eyePixels: null, entrance, scaleEntrance, scaleFig, figWarn, view: null, fitBase: fit, fitNow: fit };
     S.head = type === 'character' ? headBounds(THREE, root, eyes) : null;
     if (eyes?.status === 'OK') S.eyePixels = measureEyePixels();
     const gates = runGates(THREE, S);
@@ -453,7 +470,20 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
   function camFor(view) {
     const cam = new THREE.PerspectiveCamera(FOV, W / H, 0.02, 400), t = Math.tan((FOV * Math.PI) / 360), asp = W / H;
     const B = S.bounds, c = B.getCenter(new THREE.Vector3()); let tgt = c.clone(), d;
-    if (view === 'near_face') {
+    const LU = S.lineup && ['front', 'threeq', 'back', 'near_face', 'detail_low', 'detail_right'].includes(view);
+    if (LU) {                                                             // lineup: frame the content of this view (turned), not the diagonal
+      S.root.updateMatrixWorld(true); const wb = bodyBounds(THREE, S.root), w = wb.max.x - wb.min.x;
+      const part = { near_face: [0.25, 0.75], detail_low: [0, 0.5], detail_right: [0.5, 1] }[view];
+      let pb = wb;
+      if (part) {                                                         // whole items whose centre lies in that part (no item cut at the split)
+        pb = new THREE.Box3();
+        for (const it of S.items) { const ib = bodyBounds(THREE, S.root, (m) => isUnder(m, it)); if (ib.isEmpty()) continue; const cx = (ib.min.x + ib.max.x) / 2; if (cx >= wb.min.x + part[0] * w && cx <= wb.min.x + part[1] * w) pb.union(ib); }
+      }
+      const b = pb.isEmpty() ? wb : pb, bs = b.getSize(new THREE.Vector3()), fl = part ? 0.85 : FILL.full; tgt = b.getCenter(new THREE.Vector3());
+      const e0 = ((S.grid ? Math.max(EL[view], EL_GRID) : S.float?.on ? Math.min(EL[view], EL_FLOAT) : EL[view]) * Math.PI) / 180;
+      const hEff = bs.y * Math.cos(e0) + bs.z * Math.sin(e0);              // a deep grid seen from above also needs vertical room
+      d = Math.max(hEff / fl, bs.x / (fl * asp)) / (2 * t) + bs.z / 2;
+    } else if (view === 'near_face') {
       const hb = S.head || new THREE.Box3(new THREE.Vector3(B.min.x, B.max.y - (B.max.y - B.min.y) * 0.35, B.min.z), B.max.clone());
       const hs = hb.getSize(new THREE.Vector3()); tgt = hb.getCenter(new THREE.Vector3());
       d = Math.max(hs.y / FILL.face, hs.x / (FILL.face * asp) * 0.75) / (2 * t) + hs.z * 0.25;
@@ -471,7 +501,8 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
         const p = (S.entrance.node.parent || S.entrance.node).localToWorld(S.entrance.pos.clone()), big = wb.clone().expandByScalar(0.2 * S.Hs);
         if (big.containsPoint(new THREE.Vector3(p.x, wb.min.y, p.z))) { tgt.x = p.x; tgt.z = p.z; d = (h3 / FILL.face) / (2 * t); } else S.entranceOutside = true;
       }
-    } else if (view === 'far') d = (S.Hs / FILL.far) / (2 * t);
+    } else if (view === 'far' && S.type === 'prop') d = Math.max(S.Hs / FILL.far, (2 * S.rxz) / (FILL.far * asp)) / (2 * t) + 0.3 * S.rxz;   // r2: from height AND footprint, always farther than the full views
+    else if (view === 'far') d = (S.Hs / FILL.far) / (2 * t);
     else if (view === 'scale_ref' && S.sil) {
       const u = B.clone().union(S.sil.box), us = u.getSize(new THREE.Vector3()); tgt = u.getCenter(new THREE.Vector3());
       d = Math.max(us.y / FILL.scale, us.x / (FILL.scale * asp)) / (2 * t) + us.z / 2;
@@ -500,14 +531,16 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
         P.camera = { fill: +pick.fill.toFixed(3), doorFullyVisible: !!best, figuresFullyVisible: !!pick.figs, distance_m: +d.toFixed(2) };
       }
     } else d = Math.max(S.Hs / FILL.full, (2 * S.rxz) / (FILL.full * asp)) / (2 * t) + 0.3 * S.rxz;
-    const el = (EL[view] * Math.PI) / 180;
+    const elDeg = S.grid && FLOAT_LOW.has(view) ? Math.max(EL[view], EL_GRID) : S.float?.on && FLOAT_LOW.has(view) ? Math.min(EL[view], EL_FLOAT) : EL[view];
+    const el = (elDeg * Math.PI) / 180;
     cam.position.set(tgt.x, tgt.y + d * Math.sin(el), tgt.z + d * Math.cos(el)); cam.lookAt(tgt); cam.updateMatrixWorld(true);
     return cam;
   }
   function frame(view, eyesState) {
     const entYaw = view === 'detail_low' && S.entrance ? Math.atan2(S.entrance.fwd[0], S.entrance.fwd[1])
       : view === 'scale_ref' && S.scaleFig && S.scaleEntrance ? Math.atan2(S.scaleEntrance.fwd[0], S.scaleEntrance.fwd[1]) : 0;   // entrance faces the camera
-    S.turntable.rotation.y = (-AZ[view] * Math.PI) / 180 - entYaw; for (const p of S.aoProxies) p.rotation.y = S.turntable.rotation.y; S.turntable.updateMatrixWorld(true);   // AO reads object3d.rotation.y
+    const luYaw = S.lineup && view !== 'top' && view !== 'scale_ref' ? S.lineupYaw : 0;   // long axis of a lineup across the frame
+    S.turntable.rotation.y = (-AZ[view] * Math.PI) / 180 - entYaw - luYaw; for (const p of S.aoProxies) p.rotation.y = S.turntable.rotation.y; S.turntable.updateMatrixWorld(true);   // AO reads object3d.rotation.y
     if (S.sil) S.sil.root.visible = view === 'scale_ref';
     S.view = view; S.fitNow = S.fitBase;
     if (S.scaleFig) { S.scaleFig.group.visible = view === 'scale_ref'; if (view === 'scale_ref') placeFigures(); }
@@ -628,7 +661,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
       size_m: S.bounds.getSize(new THREE.Vector3()).toArray().map((v) => +v.toFixed(3)), height_m: +S.Hs.toFixed(3),
       hiddenOriginals: S.hidden, cardFaceParts: S.faceParts, entrance: S.entrance ? { id: S.entrance.id, outsideBounds: !!S.entranceOutside, node: S.entrance.node.name, pos_u: S.entrance.pos.toArray(), forward_xz: S.entrance.fwd, width_m: S.entrance.width_m } : null, clay: { version: CLAY_VERSION, profile: S.clay.profile, seed: S.clay.seedLabel, scaleRef: S.clay.scaleRef, meshes: S.clay.meshes, cove: 'background, relief off (neutral)' },
       light: { module: LIGHT_VERSION, moods: 'MOODS_MESA', tod: 1, tone: 'ACES Filmic', exposure: 1, shadow: 'PCFSoft, fitAround (subject + cast shadow), front faces cast, mapSize 4096', shadowNow: S.rig.info().shadow, minCaster_m: +S.minCaster.toFixed(3), figureLight: true, rim: false, mood: S.rig.info().mood },
-      pose: S.float, shadowSeam: S.seam || null, contactAO: { items: S.aoProxies.length },
+      pose: S.float, lineup: S.lineup ? { aspect: +S.lineupAspect.toFixed(2), items: S.items.length, grid: !!S.grid, elevation_deg: S.grid ? EL_GRID : S.float?.on ? EL_FLOAT : 'standard', slots: 'side -> detail_right; near_face = Mitte, detail_low = links' } : null, defaultViews: viewsFor(S.type, S.lineup), shadowSeam: S.seam || null, contactAO: { items: S.aoProxies.length },
       eyes: r || { status: S.eyes?.status || 'none', reason: S.eyes?.reason || null }, eyePixels: S.eyePixels,
       head_m: S.head ? S.head.getSize(new THREE.Vector3()).toArray().map((v) => +v.toFixed(3)) : null,
       scaleRef: scaleRefInfo(),
@@ -646,7 +679,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     return { medium_m: M ? +M.height_m.toFixed(3) : null, large_m: L ? +L.height_m.toFixed(3) : null, medium_u: M ? +M.height_u.toFixed(3) : null, large_u: L ? +L.height_u.toFixed(3) : null,
       mediumHip_m: M?.hip_m != null ? +M.hip_m.toFixed(3) : null, atEntrance: P.atEntrance, entranceId: P.entranceId, entranceProofFlag: S.scaleEntrance ? S.scaleEntrance.proof : null,
       front_m: P.front_m ?? null, movedForward_m: P.movedForward_m ?? null, lateral_m: P.lateral_m ?? null, door: P.door || null, camera: P.camera || null, figures: P.figures,
-      sources: F.figs.map((f) => ({ rig: f.rig, label: f.label, glb: f.glb, pose: f.pose, posedHeight_m: +f.posedHeight_m.toFixed(3), clay: `${f.clay.version}/${f.clay.profile}` })),
+      sources: F.figs.map((f) => ({ rig: f.rig, label: f.label, glb: f.glb, card: f.card, eyes: f.eyes ? `${f.eyes.seat} · ${f.eyes.eyes} Auge(n) · ${f.eyes.lidSkins} E2-Lidhaut · rest` : 'keine', faceParts: f.faceParts, pose: f.pose, posedHeight_m: +f.posedHeight_m.toFixed(3), clay: `${f.clay.version}/${f.clay.profile}` })),
       notes: P.notes, trace: P.trace ? P.trace.slice(0, 30) : undefined, warnings: F.warnings, label };
   }
   function dispose() {
@@ -669,14 +702,21 @@ export const PROP_SLOTS = Object.freeze([
   ['back', 'rest'], ['top', 'rest'], ['near_face', 'rest'],
   ['detail_low', 'rest'], ['far', 'rest'], ['scale_ref', 'rest'],
 ]);
-export const slotsFor = (type) => (type === 'character' ? SHEET_SLOTS : PROP_SLOTS);
-const VIEW_LABEL = { front: 'vorn 0°', threeq: '¾ 35°', side: 'Seite 90°', back: 'hinten 180°', near_face: 'Gesicht nah', far: 'Totale', scale_ref: 'Größe vs. FrizzleBob 1,81 m', top: 'von oben', detail_low: 'Detail unten (unteres Drittel)' };
+/* v1.2 r2: lineup layout (side -> detail_right), still 3 x 3 */
+export const LINEUP_SLOTS = Object.freeze([
+  ['front', 'rest'], ['threeq', 'rest'], ['detail_right', 'rest'],
+  ['back', 'rest'], ['top', 'rest'], ['near_face', 'rest'],
+  ['detail_low', 'rest'], ['far', 'rest'], ['scale_ref', 'rest'],
+]);
+export const slotsFor = (type, lineup = false) => (type === 'character' ? SHEET_SLOTS : lineup ? LINEUP_SLOTS : PROP_SLOTS);
+export const viewsFor = (type, lineup = false) => (type !== 'character' && lineup ? LINEUP_SLOTS.map(([v]) => v) : DEFAULT_VIEWS[type] || DEFAULT_VIEWS.character);
+const VIEW_LABEL = { front: 'vorn 0°', threeq: '¾ 35°', side: 'Seite 90°', back: 'hinten 180°', near_face: 'Gesicht nah', far: 'Totale', scale_ref: 'Größe vs. FrizzleBob 1,81 m', top: 'von oben', detail_low: 'Detail unten (unteres Drittel)', detail_right: 'Detail rechts (rechte Hälfte)' };
 const EYE_LABEL = { rest: 'Augen Ruhe', half: 'Augen halb', closed: 'Augen zu' };
 /**
  * contactSheet({ images: { 'view|eyes': HTMLImageElement|Canvas }, head: { title, sub, gates, foot }, hasEyes }) -> canvas (2000 x 1370)
  */
-export function contactSheet({ images, head, hasEyes = true, type = 'character', entrance = false, scaleLabel = null }) {
-  const isChar = type === 'character', SLOTS = slotsFor(type);
+export function contactSheet({ images, head, hasEyes = true, type = 'character', entrance = false, scaleLabel = null, lineup = false }) {
+  const isChar = type === 'character', SLOTS = slotsFor(type, lineup);
   const cols = isChar ? 4 : 3, tw = isChar ? 464 : 624, th = isChar ? 348 : 468, gap = 16, cap = 30, top = 104, foot = 46, Wd = cols * tw + (cols + 1) * gap, rows = 3;
   const Hd = top + rows * (th + cap + gap) + foot;
   const c = document.createElement('canvas'); c.width = Wd; c.height = Hd; const g = c.getContext('2d');
@@ -698,7 +738,7 @@ export function contactSheet({ images, head, hasEyes = true, type = 'character',
     else { g.fillStyle = '#9a9288'; g.font = '15px system-ui, -apple-system, Helvetica, Arial, sans-serif'; g.fillText(show ? 'nicht angefordert' : '–', cx + tw / 2 - 50, cy + th / 2); }
     g.fillStyle = '#2a2622'; g.fillRect(cx, cy + th, tw, cap);
     g.fillStyle = '#fff'; g.font = '15px system-ui, -apple-system, Helvetica, Arial, sans-serif';
-    const vl = !isChar && view === 'near_face' ? 'Detail oben (oberes Drittel)' : !isChar && view === 'detail_low' && entrance ? 'Detail unten · Eingang (unteres Drittel)' : !isChar && view === 'scale_ref' && scaleLabel ? scaleLabel : VIEW_LABEL[view];
+    const vl = !isChar && lineup && view === 'near_face' ? 'Detail Mitte' : !isChar && lineup && view === 'detail_low' ? 'Detail links (linke Hälfte)' : !isChar && view === 'near_face' ? 'Detail oben (oberes Drittel)' : !isChar && view === 'detail_low' && entrance ? 'Detail unten · Eingang (unteres Drittel)' : !isChar && view === 'scale_ref' && scaleLabel ? scaleLabel : VIEW_LABEL[view];
     g.fillText(show ? `${vl}${isChar && hasEyes ? ' · ' + EYE_LABEL[eyes] : ''}` : '', cx + 10, cy + th + 20);
   });
   g.fillStyle = '#6d665d'; g.font = '13px ui-monospace, Menlo, monospace'; g.fillText(head.foot || '', gap, Hd - 18);

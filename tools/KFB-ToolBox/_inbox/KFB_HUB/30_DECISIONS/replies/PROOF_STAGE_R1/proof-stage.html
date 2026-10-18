@@ -104,16 +104,13 @@ async function load({ id = null, cardUrl = null, card = null, glbUrl = null, typ
   const blobUrl = URL.createObjectURL(new Blob([buf], { type: 'model/gltf-binary' }));
   /* card face parts: values live on the card; if a part has no transform, the card's own source (a kfb.pets export, "KFB_HUB/…json#pets[0]…")
      is read for pets[0].original.<part> (FIGURES_R1 cards copied brows only; Georg's export also has nose and mouth) */
-  let exportOriginal = null, exportSrc = null;
-  for (const k of ['brows', 'nose', 'mouth']) {
-    const pt = card?.[k]; if (!pt || pt.owner !== 'original-mesh' || pt.transform || exportOriginal) continue;
-    const m = /KFB_HUB\/([^#\s]+\.kfb-pets\.json)/.exec(pt.source || ''); if (!m) continue;
-    try { const r = await fetch(HUB + enc(m[1]), { cache: 'no-store' }); if (r.ok) { const ex = await r.json(); exportOriginal = ex?.pets?.[0]?.original || null; exportSrc = m[1]; } } catch (e) { /* stays null */ }
-  }
+  const { exportOriginal, exportSrc } = await cardExport(card);
   const fileId = String(glbName || glbUrl).split(/[\\/]/).pop().replace(/\.(glb|gltf)([?#].*)?$/i, '').replace(/[^\w.-]+/g, '_');
   /* v1.2: scale figures (sources.json scale_ref: Medium = FrizzleBob, Large = KayKit Rig_Large; '~/' paths only via the CLI server) */
-  const SR = SOURCES.scale_ref || {}, figSpec = (r) => SR[r] ? { glbUrl: srcUrl(SR[r].glb), animUrl: srcUrl(SR[r].anim), clip: SR[r].clip, time: SR[r].time || 0, label: SR[r].label, glbName: SR[r].glb } : null;
-  const scaleFigures = { medium: figSpec('medium'), large: figSpec('large') };
+  /* the Medium figure carries its figure card (eyes = EyeRig v6 + E2 at its KFB_Eye anchors, card face parts) like any character proof */
+  const SR = SOURCES.scale_ref || {}, figSpec = async (r) => { if (!SR[r]) return null; let fc = null; if (SR[r].card) { try { const q = await fetch(srcUrl(SR[r].card), { cache: 'no-store' }); if (q.ok) fc = await q.json(); } catch (e) { /* no card */ } }
+    return { glbUrl: srcUrl(SR[r].glb), animUrl: srcUrl(SR[r].anim), clip: SR[r].clip, time: SR[r].time || 0, label: SR[r].label, glbName: SR[r].glb, card: fc, cardName: SR[r].card || null, exportOriginal: fc ? (await cardExport(fc)).exportOriginal : null }; };
+  const scaleFigures = { medium: await figSpec('medium'), large: await figSpec('large') };
   const res = await stage.load({ glbUrl: blobUrl, card, type, id: id || card?.id || fileId, units, fbUrl: srcUrl(SOURCES.fb_silhouette), exportOriginal, scaleFigures, pose });
   const cardBody = card?.body?.glb?.sha256 || null;
   const input = { id: res.info.id, type, card: cardUrl || (card ? '(Datei)' : null), cardSha256: cardSha, cardSchema: card?.schema || null, cardApproval: card?.approval?.status || null,
@@ -121,6 +118,17 @@ async function load({ id = null, cardUrl = null, card = null, glbUrl = null, typ
     glbMatchesCard: cardBody ? cardBody === glbSha : null, faceTransformsFrom: exportSrc ? 'card + card source ' + exportSrc : 'card', private: !!src?.private, displayName: card?.displayName || res.info.id };
   CUR = { ...res, input, card };
   return { status: res.status, gates: res.gates, info: res.info, input };
+}
+/* card face parts: values live on the card; if a part has no transform, the card's own source (a kfb.pets export, "KFB_HUB/…json#pets[0]…")
+   is read for pets[0].original.<part> (FIGURES_R1 cards copied brows only; Georg's export also has nose and mouth) */
+async function cardExport(card) {
+  let exportOriginal = null, exportSrc = null;
+  for (const k of ['brows', 'nose', 'mouth']) {
+    const pt = card?.[k]; if (!pt || pt.owner !== 'original-mesh' || pt.transform || exportOriginal) continue;
+    const m = /KFB_HUB\/([^#\s]+\.kfb-pets\.json)/.exec(pt.source || ''); if (!m) continue;
+    try { const r = await fetch(HUB + enc(m[1]), { cache: 'no-store' }); if (r.ok) { const ex = await r.json(); exportOriginal = ex?.pets?.[0]?.original || null; exportSrc = m[1]; } } catch (e) { /* stays null */ }
+  }
+  return { exportOriginal, exportSrc };
 }
 function render(v = 'front', e = 'rest') { stage.render(v, e); return stage.dataURL(); }
 function sheetHead(status) {
@@ -136,11 +144,11 @@ function sheetHead(status) {
 async function sheet(renders, status = CUR.status) {
   const images = {}, hasEyes = CUR.info.eyes && CUR.info.eyes.seat != null;
   for (const [k, u] of Object.entries(renders)) { const im = new Image(); im.src = u; await im.decode(); const kk = hasEyes ? k : k.split('|')[0] + '|-'; images[kk] = im; }
-  return contactSheet({ images, head: sheetHead(status), hasEyes, type: CUR.info.type, entrance: !!CUR.info.entrance, scaleLabel: stage.info()?.scaleRef?.label || null }).toDataURL('image/png');
+  return contactSheet({ images, head: sheetHead(status), hasEyes, type: CUR.info.type, entrance: !!CUR.info.entrance, scaleLabel: stage.info()?.scaleRef?.label || null, lineup: !!CUR.info.lineup }).toDataURL('image/png');
 }
 function manifest(files = {}) {
   return { schema: 'kfb.proof-manifest/1', stage: CUR.info.version, created: new Date().toISOString(), input: CUR.input, modules: CUR.info.modules,
-    status: CUR.status, gates: CUR.gates, render: { light: CUR.info.light, pose: CUR.info.pose, shadowSeam: CUR.info.shadowSeam, contactAO: CUR.info.contactAO, clay: CUR.info.clay, eyes: CUR.info.eyes, eyePixels: CUR.info.eyePixels, frame: CUR.info.frame, gpu: CUR.info.gpu, size_m: CUR.info.size_m, head_m: CUR.info.head_m, hiddenOriginals: CUR.info.hiddenOriginals, cardFaceParts: CUR.info.cardFaceParts, entrance: CUR.info.entrance, loadErrors: CUR.info.loadErrors },
+    status: CUR.status, gates: CUR.gates, render: { light: CUR.info.light, pose: CUR.info.pose, lineup: CUR.info.lineup, shadowSeam: CUR.info.shadowSeam, contactAO: CUR.info.contactAO, clay: CUR.info.clay, eyes: CUR.info.eyes, eyePixels: CUR.info.eyePixels, frame: CUR.info.frame, gpu: CUR.info.gpu, size_m: CUR.info.size_m, head_m: CUR.info.head_m, hiddenOriginals: CUR.info.hiddenOriginals, cardFaceParts: CUR.info.cardFaceParts, entrance: CUR.info.entrance, loadErrors: CUR.info.loadErrors },
     scaleRef: stage.info()?.scaleRef || null,
     files };
 }
@@ -177,7 +185,7 @@ const download = (name, url) => { const a = document.createElement('a'); a.href 
 $('pngBtn').onclick = () => { if (CUR?.status !== 'PASS') return; draw(); download(`${CUR.input.id}_${view}${CUR.info.eyes.seat ? '_' + eyes : ''}.png`, stage.dataURL()); };
 $('allBtn').onclick = async () => {
   if (CUR?.status !== 'PASS') return; const renders = {}, files = {}, hasEyes = !!CUR.info.eyes.seat;
-  const combos = []; for (const [v, e] of slotsFor(CUR.info.type)) if (hasEyes || e === 'rest') combos.push([v, e]);
+  const combos = []; for (const [v, e] of slotsFor(CUR.info.type, !!CUR.info.lineup)) if (hasEyes || e === 'rest') combos.push([v, e]);
   for (const [v, e] of combos) { const u = render(v, e), n = `${CUR.input.id}_${v}${hasEyes ? '_' + e : ''}.png`; renders[`${v}|${e}`] = u; files[n] = { view: v, eyes: hasEyes ? e : null }; download(n, u); await new Promise((r) => setTimeout(r, 150)); }
   const sh = await sheet(renders); download(`${CUR.input.id}_contact_sheet.png`, sh); files[`${CUR.input.id}_contact_sheet.png`] = { sheet: true };
   download('proof_manifest.json', URL.createObjectURL(new Blob([JSON.stringify(manifest(files), null, 1)], { type: 'application/json' }))); draw();

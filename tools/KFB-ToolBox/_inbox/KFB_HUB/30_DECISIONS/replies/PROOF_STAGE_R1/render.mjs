@@ -27,7 +27,7 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const HUB = path.resolve(HERE, '../../..');
 const HOME = process.env.HOME;
 const LAB = path.join(HOME, 'Dropbox/CLAUDE/KFB Island Worldbuilder Lab');
-const ALL_VIEWS = ['front', 'threeq', 'side', 'back', 'near_face', 'far', 'scale_ref', 'top', 'detail_low'], ALL_EYES = ['rest', 'half', 'closed'];
+const ALL_VIEWS = ['front', 'threeq', 'side', 'back', 'near_face', 'far', 'scale_ref', 'top', 'detail_low', 'detail_right'], ALL_EYES = ['rest', 'half', 'closed'];
 
 /* ---------- args ---------- */
 const argv = process.argv.slice(2), A = {};
@@ -102,7 +102,7 @@ try {
   const fid = r.input.id, hasEyes = !!(r.info.eyes && r.info.eyes.seat);
   console.log(`${fid} · ${r.input.type} · ${r.info.height_m} m · eyes ${r.info.eyes.seat || r.info.eyes.status} · clay ${r.info.clay.version}/${r.info.clay.profile} · ${Date.now() - t0} ms`);
   for (const [k, g] of Object.entries(r.gates)) console.log(`  ${k} ${g.result.padEnd(4)} ${g.name}: ${g.detail}`);
-  if (!views) views = (await page.evaluate(() => window.KFB_PROOF.DEFAULT_VIEWS || null))?.[r.input.type] || ['front', 'threeq', 'side', 'back', 'near_face', 'far', 'scale_ref'];
+  if (!views) views = r.info.defaultViews || (await page.evaluate(() => window.KFB_PROOF.DEFAULT_VIEWS || null))?.[r.input.type] || ['front', 'threeq', 'side', 'back', 'near_face', 'far', 'scale_ref'];   // v1.2: lineups swap side for detail_right
   const combos = []; for (const v of views) for (const e of hasEyes ? eyes : ['rest']) combos.push([v, e]);
   const renders = {}, files = {};
   if (r.status === 'PASS') {

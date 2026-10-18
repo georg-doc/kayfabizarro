@@ -6219,6 +6219,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-448",
+   "date": "2026-10-18",
+   "area": "Audio",
+   "verdict": "PASS",
+   "text": "Schritte-Probe (Audio Site 0.7.6, Hub q18): PASS – Georg bevorzugt die gelieferten Foley- (Teppich, Beton, Kies, Vinyl) und Digital-Bänke (Gras, Kies, Schnee, Holz); Kontakt-Timing 0.7.5 bleibt. Nächste Schritte: Untergrund-Tabelle auf KFB-Bodentypen, Lazy-Load gegen den 8-s-Kaltstart, Consumer-Naht an WS1 (C3b); ElevenLabs-Motor-Set (b69) frei. Lizenz: 400 Sounds Pack (Chequered Ink) ist nicht CC0 – Einbau ins Spiel erlaubt, Weitergabe der unveränderten Dateien nicht; keine weiteren Roh-WAVs auf öffentliche Branches, die auf main liegenden gehen ins Repo-Inventar (V-427/V-433).",
+   "values": {},
+   "owner": "WSA (Ton-Studio) → WS1",
+   "check": "Untergrund-Tabelle + Ladezeiten, WS1-Einbau in C3b",
+   "source": "Hub q18 · b112",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Ohr hat entschieden; die echten Aufnahmen klingen besser als die synthetischen Varianten.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6306,7 +6321,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:793",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:794",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
