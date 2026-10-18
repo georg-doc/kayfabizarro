@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-19
+- Hub-Antworten: V-544 PASS-Sammlung (Sounds, Hexenplatz, Werkstatt, Eiffel, Dach-Einstieg, Waffen-Achse, Blob-Corp-Turm), V-543 Schwebe-Thron als Fahrzeug (q98).
+
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
 - V-542 Käpt’n Kayfa Bizarro + Pirateninsel: Brief B42. Administratives (Push-Weg WS1b, Bündel, Dropbox-Rest, Deep-Dive) auf Wiedervorlage; heute nur Spieltest-Nötiges.
 - V-541 V-540-Aufteilung (Issue #431): Cloud-Lane Large-Retarget + Carry-Griffe, WSB AGL-Figur + Opfer-Clips + Prüfstand; Anker-Aliase socket_* → KFB_*. B40 AG1–AG3 fertig.

@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-18",
+ "updated": "2026-10-19",
  "entries": [
   {
    "id": "V-001",
@@ -7644,6 +7644,36 @@
    "applies": "B42 nach B40"
   },
   {
+   "id": "V-543",
+   "date": "2026-10-19",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Schwebe-Thron als Fahrzeug (Georg, Hub q98 TUNE): Der Vampir-Thron schwebt nur, damit man ihn als Sessel erkennt; Standard: schwebt/floatet und dreht sich langsam auf seinem Zero-Grav-Sessel. Daraus Farbvarianten, die andere NPCs und auch der Spieler als Fahrzeug für Fahren und Fliegen nutzen, analog zu den Dieselpunk-Racern (VFX leicht anpassen), ähnliche Logik wie die frühere Badewanne – aber ohne kompliziertes Lenkrad-Rig. WSB: Thron als eigenes Fahrzeug-Asset mit Sitz-Anker, Farbvarianten über Rollen-Materialien, Antigrav-Düsen-Anker (kfb-vehicle-rig antigrav); WS1b: Fahrzeugmodus über vehicleRig, Leerlauf schweben + langsam drehen, Einsteigen per Joyride-Logik (V-534).",
+   "values": {},
+   "owner": "WSB · WS1b",
+   "check": "Thron-Fahrzeug fährt/fliegt in der Vorschau",
+   "source": "Hub q98",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein vorhandenes Asset wird zum Fahrzeug – mehr Spiel ohne neue Modelle.",
+   "applies": "nach B42"
+  },
+  {
+   "id": "V-544",
+   "date": "2026-10-19",
+   "area": "Prozess",
+   "verdict": "PASS",
+   "text": "Hub-Abnahmen Georg 18./19.10.: PASS q82–q86 (Fluff-o-lect-Schicht, Atmosphäre, Interaktionen, Kreaturen, Wetter/Tageszeit), q96 Belohnung weich, q102 Men-in-Black-Sounds, q105 UFO/Beam/Kayfabrizieren-Sounds, q99 Hexenplatz r4, q100 Werkstatt r4 Raumklinik (inkl. CC-BY-Hebebühne mit Namensnennung), q101 Eiffel r2c, q106 Ein-/Aussteigen per Dach, q108 Waffen-Achse B31 r6b, q110 Blob-Corp-Turm r2 (Notiz: im Türrahmen gehört der Large-Rig-Türsteher im Anzug mit Sonnenbrille und angepasstem Ork-Kopf, nicht der Ork – mit AGL erfüllt). TUNE q98 → V-543.",
+   "values": {},
+   "owner": "alle",
+   "check": "Assets in die Privatpakete/WS1b",
+   "source": "Hub 18./19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Abnahmen verbindlich gemacht.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7731,7 +7761,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:904",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:907",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
