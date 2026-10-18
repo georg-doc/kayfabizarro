@@ -1,0 +1,11 @@
+# federal_kayfabe.part1 r5.1 → r5.2 (critic flags, gate PASS)
+- C9 b2 (intro): new onboarding: narrator + "kayfabe = staged fight sold as real" + "what we do here"; stand-up setup/punch (basement twenty = prison vs. banker's laptop million = loan); dog whistle: Aldrich's private rail car to Jekyll Island.
+- C9 b31 (outro): no longer restates card 28; punch about us ("we call that price stability") with the 1913 / thirty-times dog whistle (card 27) and a callback to the intro's basement twenty.
+- B7/B6 b10/b13: the one-word card-echo openers are gone. 13 new linked openers with art images (presto, lion, board, clown, spider, Capitol, snow, coop, anvil) and callbacks (print, Warning, bank, old money, loan, hidden).
+- B7 b12: no opener before Jefferson any more (attribution clear).
+- A4 b3 "watch it burn"; b6 Galbraith as one sayable clause; b21 Warburg as one complete thought; b24 Wilson 94 chars, no stacked colons.
+- A3 b6: the "paralyzes" power recitation removed.
+- A2 b7 "state mask"; b9 "first private U.S. bank"; b10 "let the elite own it; history agreed"; b16 "he was the market"; b18 "the public has to believe this was their idea"; b19 question restored; b29 tax sentence follows the card.
+- C11 b25: "Christmas" only once (in the card name).
+- A5 b27: "Grigsged" sung as the card's subtitle "Book Money" (songLine rule A5, logged; 1 of max 2).
+- Songlines r5.2: entries 6/15 updated, 25 added, 29/33/36/41 carried over; style unchanged.

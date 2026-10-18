@@ -6594,6 +6594,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-473",
+   "date": "2026-10-18",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Externer Kritiker Game Design / Art Direction / Cartoon-Animation / Immersion (Georg 18.10.): explorativ und ergebnisoffen, aber kernstärkend statt neuer Baustellen. Stufe 1 jetzt über OpenAI Codex (stärkstes Reasoning-Modell, Effort High) auf Repo-Basis: UNDERSTANDING, CRITIQUE, TOP10 (je Spielermoment + Andockstelle Modul/JSON + was Georg im God-Mode setzt), bis zu 3 modulare Entwürfe mit Beispiel-JSON, index.json – nur auf Branch proposals/external-critic-r1-*, kein Code. Stufe 2 nach spielbarem Integrations-Slice als Spieltest. WS0 prüft, jeder Vorschlag als PASS/TUNE/FAIL-Frage in den Hub; integriert wird nur nach PASS mit eigener Vorlagen-Zeile. Briefing replies/BRIEF_EXTERNAL_CRITIC_ART_GAME_R1.md (Hub b119).",
+   "values": {},
+   "owner": "externer Kritiker (Codex) · WS0",
+   "check": "Lieferung auf proposals-Branch, Hub-Fragen",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Blick von außen findet blinde Flecken; als Vorschlagsliste mit Andockstellen bleibt er prüfbar und reißt keine neuen Baustellen auf.",
+   "applies": "Stufe 1 sofort, Stufe 2 nach Integrations-Slice"
+  },
+  {
+   "id": "V-474",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "PASS",
+   "text": "Songs R4.6/R5.2 (16 Tracks, Writers Room V-472): alle 16 Gate PASS mit CI-Kartenbereich + Songlines und frischer blinder Kritiker pass mit Style-Datei (kein Wert ≤ 2; Ø 3,7–4,3). WS0-Nachkorrektur 1001 Teil 2: „crime scene“ wieder vollständig (sonst las sich die Zeile als Anklage gegen eine Gruppe, E16b); song_gate R3.4c erlaubt Spielwörter, wenn die Zeile die eigene Lore-Wendung der Karte behält. Hub-Karten b120–b135 tragen je die Style-Variante mit männlicher Stimme, weil FrizzleBob im Intro spricht (Kritiker-Muster D13 bei den Frauen-Varianten).",
+   "values": {},
+   "owner": "WS0 · Georg (Suno)",
+   "check": "Hub b120–b135",
+   "source": "Georg 18.10. „neue suno songs ohne fail/regresse“ · V-472",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Doppelter Pass (mechanisch + blinder Kritiker) ist die vereinbarte Schwelle; die Stimm-Variante folgt dem Sprecher im Text.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6681,7 +6711,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:827",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:829",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

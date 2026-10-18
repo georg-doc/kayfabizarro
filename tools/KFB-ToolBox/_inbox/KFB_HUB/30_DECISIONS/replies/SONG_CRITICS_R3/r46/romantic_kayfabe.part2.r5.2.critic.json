@@ -1,0 +1,29 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "romantic_kayfabe.part2.r5.2.suno.txt",
+  "critic": "claude-opus-5-5/blind-critic-r46",
+  "blind": true,
+  "scores": {
+    "cardTruth": 4,
+    "performance": 3,
+    "arc": 4,
+    "sayability": 4,
+    "tone": 5,
+    "styleFit": 4
+  },
+  "flags": [
+    {"beat": 5, "rule": "C9", "observation": "Intro runs four onboarding beats after the title line; the spec allows one to three."},
+    {"beat": 5, "rule": "C13a", "observation": "'your Black Moment and your HEA both show up, if they pay their way' makes story beats act like people."},
+    {"beat": 34, "rule": "C9", "observation": "Outro punch works for normies but carries no expert dog whistle; no insider reference from deck, lore or Truby."},
+    {"beat": 11, "rule": "A4", "observation": "Triple-colon chain 'Cute, sure, but: Black Moment One: The Doubt:' blurs where opener, name and lore start when spoken."},
+    {"beat": 10, "rule": "A4", "observation": "'must face this specific opponent' has no subject; the fragment sounds cryptic by ear."},
+    {"beat": 26, "rule": "B6", "observation": "'Sunset deleted, so' repeats the 'so' opener family five beats after 'So, a cardboard Ex', again at beat 33; 'so' thrice."},
+    {"beat": 30, "rule": "B7b", "observation": "'Cat and dog, bigger' and 'Off the plaza' call back to art images never sung; listeners cannot catch the reference."},
+    {"beat": 15, "rule": "B7", "observation": "'Or skip the summit' frames the Happy For Now as a lesser shortcut; the card source rates it equal to the HEA."},
+    {"beat": 25, "rule": "A3", "observation": "Line is power text only; the card's lore claim about sunsets substituting for depth is absent."},
+    {"beat": 26, "rule": "A2", "observation": "'what they want and are terrified to ask for' merges the card's two-sided contrast into a single object."},
+    {"beat": 23, "rule": "A4", "observation": "'not because of a dropped phone' dangles; the communication clause is cut, so the line lacks closure."},
+    {"beat": 2, "rule": "D13", "observation": "Style A sets a female lead while the lyric is first-person Uncle FrizzleBob; voice and persona clash."}
+  ],
+  "verdict": "pass"
+}

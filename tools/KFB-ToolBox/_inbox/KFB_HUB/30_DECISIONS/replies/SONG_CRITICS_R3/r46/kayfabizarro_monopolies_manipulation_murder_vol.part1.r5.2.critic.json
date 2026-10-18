@@ -1,0 +1,29 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "kayfabizarro_monopolies_manipulation_murder_vol.part1.r5.2.suno.txt",
+  "critic": "claude-opus-5-5/blind-subagent-r46",
+  "blind": true,
+  "scores": {
+    "cardTruth": 4,
+    "performance": 4,
+    "arc": 4,
+    "sayability": 3,
+    "tone": 4,
+    "styleFit": 5
+  },
+  "flags": [
+    {"beat": 4, "rule": "C9", "observation": "\"Insiders, listen for\" announces the dog whistles as a checklist; named openly they stop working as whistles and read like a syllabus."},
+    {"beat": 11, "rule": "C9", "observation": "Intro promises \"twenty-two thirty-two\", but the German Debt Clock line never sounds it; the insider cue goes unpaid."},
+    {"beat": 7, "rule": "C13a", "observation": "\"Paris wanted in.\" gives a city a want; a place acts like a person in an opener."},
+    {"beat": 9, "rule": "A4", "observation": "\"to sustain illusion\" drops the article; the clipped ending stumbles in one breath."},
+    {"beat": 12, "rule": "A4", "observation": "\"just the illusion printers aren't running\" loses its verb; \"illusion printers\" parses as a compound noun, meaning blurs."},
+    {"beat": 13, "rule": "A2", "observation": "\"savior of the crisis\" cuts the card's framing of him as hailed for fixing it; read literally, he saved the crisis itself."},
+    {"beat": 16, "rule": "A4", "observation": "\"Union Banking Corp.\" keeps the abbreviation with a period; spoken delivery of \"Corp.\" is ambiguous."},
+    {"beat": 17, "rule": "B7b", "observation": "Callback \"Schacht drew it up\" relies on the BIS-commission link that beat 15 cut; listeners get no connection."},
+    {"beat": 21, "rule": "A4", "observation": "\"for internationalization\" is truncated; what gets internationalized stays unsaid, so the line ends without closure."},
+    {"beat": 24, "rule": "E16b", "observation": "Card's institutional target was dropped; \"Vultures love ruins\" beside \"war-torn nation\" leaves the satire's aim unnamed near victims."},
+    {"beat": 26, "rule": "A4", "observation": "\"no interest in dictated financial policy? Acquainted with harder arguments.\" two subjectless fragments; who is acquainted stays unclear."},
+    {"beat": 29, "rule": "B7", "observation": "The turn to the Vatican bank arrives without a bridge; bare \"IOR\" stays unexplained, normies cannot place it."}
+  ],
+  "verdict": "pass"
+}

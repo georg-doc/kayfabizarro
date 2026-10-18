@@ -1,0 +1,12 @@
+# kayfabizarro_monopolies_manipulation_murder_vol.part2 · r5.1 → r5.2 (WRITER_PROMPT_R46)
+- C9 beat 1: thesis now covers the whole range: bankers launder dirty billions, print clean ones and freeze yours (drug money, fiat, CBDC/freezes).
+- C9 beat 2: onboarding is now 3 beats: FrizzleBob as narrator plus the card premise; stand-up setup (debit card frozen over one croissant) and punch (cartels, nobody froze a thing). Dog whistles: UNODC, nineteen seventy-one.
+- C13a outro: "branches passed through" replaced by a punch with people as subjects (wash a trillion = liquidity; one croissant abroad = suspect); calls back the intro image (croissant).
+- B7 beats 6/9/18/24/27/30: removed time hops ("After …") and one-word labels (Police/Doctrine/Control/Cashless/Referendum/Protest/Penalty clause/At the counter). 11 new linking openers (Never frozen, Iraq wasn't enough, Hence the champagne, Or just print it, Planners took notes, Want out?, Donate instead?, Fine unpaid?, They voted no, No mob, one macaw, Bankers hate this). None appears in the corpus.
+- B7b callbacks: Iraq (card 31), fine (card 47), bankers (card 38), plus outro→intro.
+- A4 beat 5: "helped funnel" restored. A2 beat 6: "teach future enemies" restored. A4: every whole line ≤105 characters; no double colon after an opener.
+- A3 beat 7: "washed" verb restored. A3 beats 14/25/28: power commands removed (socialize losses, build panopticon, expose illusion), replaced with the lore claims.
+- A4 beat 15: CBDC quote has its verb again ("the central bank will have absolute control"); the "Control." label is gone.
+- A4 beat 19: "existential dread for dissidents". A3 beat 21: subject "payment monopolies authorizing themselves" restored. A2 beat 27: Occupy conditional ("if … had become") restored.
+- A4 beat 30: the stray "fluffy" is gone; Stay Fluffy stays only in the closing line.
+- Songlines r5.2: A7/A5 entries carried over, songLine text updated (29, 33, 34, 41, 47, 50, 53); introType confession. Style file unchanged.

@@ -1,0 +1,30 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "federal_kayfabe.part2.r5.2.suno.txt",
+  "critic": "claude-opus-5-5 / blind external critic instance r46",
+  "blind": true,
+  "scores": {
+    "cardTruth": 4,
+    "performance": 3,
+    "arc": 4,
+    "sayability": 4,
+    "tone": 5,
+    "styleFit": 4
+  },
+  "flags": [
+    {"beat": 2, "rule": "C13", "observation": "\"Uncle FrizzleBob here, your narrator\" plus card count and \"one breath each\" is production meta that could front any deck track."},
+    {"beat": 2, "rule": "D13", "observation": "Style B specifies a dry female lead, while this beat names Uncle FrizzleBob as the narrator; voice and frame clash."},
+    {"beat": 4, "rule": "C9", "observation": "\"For insiders:\" announces the dog whistles, then lists three references in 113 characters; no setup or punch, hard in one breath."},
+    {"beat": 7, "rule": "A2", "observation": "\"exacerbated the panic\" fuses two card clauses; on the card the exacerbated object is the greatest economic disaster, not the panic."},
+    {"beat": 15, "rule": "A4", "observation": "\"for Wall Street banks it exerts final dominance\" has inverted, clumsy word order that stalls the spoken line."},
+    {"beat": 17, "rule": "A3", "observation": "The card's core claim, the bundled predatory loan, is dropped; only the casino aftermath remains."},
+    {"beat": 20, "rule": "A4", "observation": "\"Rescued, the hippo.\" inverted fragment trips the spoken flow and reads as clipped stage direction."},
+    {"beat": 23, "rule": "A2", "observation": "\"financial control of each political system\" shifts the card's meaning of dominating each country's political system."},
+    {"beat": 24, "rule": "A3", "observation": "The concrete G7-to-G20 expansion from the card is dropped; the line ends on an abstraction."},
+    {"beat": 25, "rule": "B7", "observation": "Beats 21 to 29 run nine cards without any opener; the pivot from cartel cards to resistance cards gets no bridge."},
+    {"beat": 30, "rule": "B7b", "observation": "All card callbacks in openers (beats 6, 18, 20, 30) point only to the immediately preceding card; no longer-range callback."},
+    {"beat": 32, "rule": "A4", "observation": "\"if you trust money to stay power, you trust it to your enemy\" is garbled syntax, not graspable in one hearing."},
+    {"beat": 36, "rule": "B6", "observation": "\"So, scissors out.\" is the third So-opener, only four lines after \"So trust no printer.\"; same family too close."}
+  ],
+  "verdict": "pass"
+}

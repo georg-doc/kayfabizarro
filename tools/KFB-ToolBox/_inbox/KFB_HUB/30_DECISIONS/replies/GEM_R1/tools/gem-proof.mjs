@@ -74,6 +74,55 @@ try {
     cells.push({ url: await G((v) => window.KFB_GEM.render(v), 'front'), caption: 'Nacht · vorn · t = 5,2 s · lantern: getPracticalLight() -> Practicals-Pool (Licht-Modul), nur wenn WS1 es erlaubt' });
     save('gem_lanterns_night.png', await G((a) => window.KFB_GEM.sheet(a), { title: 'kfb-gem.v1 r2 · Laternen bei Nacht (4 Figuren frei auf dem Boden, ohne Brett)', sub: 'Bühne v1.2 + Licht v1.1, MOODS_MESA Nacht · Adern + Innenleuchten nach Stimmung (glow 1), Puls 0,12 Hz · unten rechts: optionales Praktisches Licht über den Hook', cells, cols: 2 }));
   }
+  if (ONLY.has('r3')) {
+    const R = (v) => G((x) => window.KFB_GEM.render(x), v), cap = (m) => ({ day: 'Tag', dusk: 'Abend', night: 'Nacht' })[m];
+    let cells = [];
+    for (const [mood, t] of [['night', 1.0], ['dusk', 1.0]]) {
+      await G((a) => window.KFB_GEM.load(a), { glbUrl: url('gem_lanterns'), mood, id: 'gem_lanterns' }); await G((x) => window.KFB_GEM.advance(x), t);
+      if (mood === 'night') {
+        cells.push({ url: await R('front'), caption: `Nacht · vorn · t = ${t} s · OHNE Halo (nur emissive)` });
+        await G((on) => window.KFB_GEM.setHalo(on), true);
+        cells.push({ url: await R('front'), caption: `Nacht · vorn · t = ${t} s · MIT Halo (halo: true)` });
+        await G((x) => window.KFB_GEM.advance(x), 4.2);
+        cells.push({ url: await R('threeq'), caption: 'Nacht · ¾ · t = 5,2 s (andere Pulsphase) · mit Halo' });
+      } else { await G((on) => window.KFB_GEM.setHalo(on), true); cells.push({ url: await R('front'), caption: 'Abend (glow 0,4) · vorn · t = 1 s · mit Halo: teilweise Eigenleuchten' }); }
+    }
+    save('gem_r3_lanterns.png', await G((a) => window.KFB_GEM.sheet(a), { title: 'kfb-gem.v1 r3 · Laternen: Leuchten von innen (4 Figuren frei, ohne Brett)', sub: 'Bühne v1.2 + Licht v1.1, MOODS_MESA · heißer Kern -> dunklerer Rand, Glühen folgt der Anatomie (Dünne), Flackern über dem 0,12-Hz-Puls · Halo ohne Post-Processing', cells, cols: 2 }));
+    cells = [];
+    await G((a) => window.KFB_GEM.load(a), { glbUrl: url('gem_capture'), mood: 'night', id: 'gem_queen_knight' }); await G((x) => window.KFB_GEM.advance(x), 1.0);
+    cells.push({ url: await R('front'), caption: 'Nacht · Dame (Rubin) + Springer (Saphir) · vorn · ohne Halo' });
+    cells.push({ url: await R('near_face'), caption: 'Nacht · Detail Mitte (Kronenspitzen, Mähne/Ohren) · ohne Halo' });
+    await G((on) => window.KFB_GEM.setHalo(on), true);
+    cells.push({ url: await R('threeq'), caption: 'Nacht · ¾ · mit Halo' });
+    await G((x) => window.KFB_GEM.advance(x), 4.2);
+    cells.push({ url: await R('front'), caption: 'Nacht · vorn · t = 5,2 s · mit Halo' });
+    save('gem_r3_closeup_queen_knight_night.png', await G((a) => window.KFB_GEM.sheet(a), { title: 'kfb-gem.v1 r3 · Nahaufnahme Dame + Springer bei Nacht', sub: 'Bühne v1.2 + Licht v1.1, MOODS_MESA Nacht · Kern weiß-gold / weiß-eis, Rand dunkler, dünne Teile am hellsten', cells, cols: 2 }));
+  }
+  if (ONLY.has('r4')) {
+    const R = (v) => G((x) => window.KFB_GEM.render(x), v), L = (mood, glb, id) => G((a) => window.KFB_GEM.load(a), { glbUrl: url(glb), mood, id });
+    const adv = async (t) => { await G((x) => window.KFB_GEM.advance(x), t); return G(() => window.KFB_GEM.refreshLights()); };
+    let cells = [];
+    for (const [mood, dark] of [['night', false], ['night', true]]) {
+      await L(mood, 'gem_lanterns', 'gem_lanterns'); if (dark) await G((on) => window.KFB_GEM.nightDark(on), true);
+      report['r4_lights_' + (dark ? 'dark' : 'night')] = await adv(1.0);
+      cells.push({ url: await R('front'), caption: `${dark ? 'Nacht dunkel (Hemi −50 %, nur Laternentest)' : 'Nacht'} · vorn · t = 1,0 s · Lichtpfütze + Praktische Lichter + Halo` });
+      await adv(4.2);
+      cells.push({ url: await R('threeq'), caption: `${dark ? 'Nacht dunkel' : 'Nacht'} · ¾ · t = 5,2 s (tiefe Pulsphase: Glut statt aus)` });
+    }
+    await L('dusk', 'gem_lanterns', 'gem_lanterns'); await adv(1.0);
+    cells.push({ url: await R('front'), caption: 'Abend (glow 0,4) · vorn · t = 1,0 s' });
+    cells.push({ url: await R('threeq'), caption: 'Abend · ¾ · t = 1,0 s' });
+    save('gem_r4_lanterns.png', await G((a) => window.KFB_GEM.sheet(a), { title: 'kfb-gem.v1 r4 · Laternen: Licht in die Umgebung, Glut im Pulstief (4 Figuren frei, ohne Brett)', sub: 'Bühne v1.2 + Licht v1.1, MOODS_MESA · Bodenpfütze je Figur (Gem-Modul) + getPracticalLight() -> Practicals-Pool des Licht-Moduls (≤ 6 Lichter) · Adern in Glutfarbe · Spiegelung außen 12 %', cells, cols: 2 }));
+    cells = [];
+    await L('night', 'gem_capture', 'gem_queen_knight'); await adv(1.0);
+    cells.push({ url: await R('front'), caption: 'Nacht · Dame + Springer · vorn · t = 1,0 s' });
+    cells.push({ url: await R('near_face'), caption: 'Nacht · Detail Mitte · t = 1,0 s' });
+    await adv(4.2);
+    cells.push({ url: await R('threeq'), caption: 'Nacht · ¾ · t = 5,2 s (Pulstief)' });
+    await L('night', 'gem_capture', 'gem_queen_knight'); await G((on) => window.KFB_GEM.nightDark(on), true); await adv(1.0);
+    cells.push({ url: await R('front'), caption: 'Nacht dunkel (Hemi −50 %) · vorn · t = 1,0 s' });
+    save('gem_r4_closeup_queen_knight_night.png', await G((a) => window.KFB_GEM.sheet(a), { title: 'kfb-gem.v1 r4 · Nahaufnahme Dame + Springer bei Nacht', sub: 'Bühne v1.2 + Licht v1.1, MOODS_MESA Nacht · Glühen von innen, Lichtpfütze am Boden, Streulicht auf Nachbar und Wand', cells, cols: 2 }));
+  }
   if (ONLY.has('perf')) {
     for (const [n, view, mood] of (process.env.PERF_SET === 'quick' ? [['gem_perf32', 'front', 'night'], ['gem_perf32', 'front', 'day']] : [['gem_perf32', 'front', 'day'], ['gem_perf32', 'front', 'night'], ['gem_start', 'threeq', 'day'], ['gem_perf32', 'front', 'day']])) {
       await G((a) => window.KFB_GEM.load(a), { glbUrl: url(n), mood, id: n });

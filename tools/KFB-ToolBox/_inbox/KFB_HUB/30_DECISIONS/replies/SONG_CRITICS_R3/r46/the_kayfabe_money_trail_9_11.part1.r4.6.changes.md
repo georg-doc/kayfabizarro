@@ -1,0 +1,14 @@
+# the_kayfabe_money_trail_9_11.part1 · r4.5 → r4.6 (critic flags)
+- B1 C9: beat 1 now "The Kayfabe Money Trail, Nine-Eleven" + thesis.
+- B2 C9: new speaker/tone beat (Uncle FrizzleBob, card by card, never joking about the dead, E16b); stand-up beat explains "puts" as bets against two airlines; dog whistles: "of little practical significance", "two point four million".
+- B3/B4/B5 A4/B7: removed the "Audit:" and "Coin toss:" labels and the "!," collision; "Detectives, meet:" links card 2 to card 3.
+- B6 A3: "nullify investigation" removed. B7 A2: lease line keeps only the July lease plus three point two billion (no merge with 1998).
+- B8/B9 B7/C13a/A4: the invented insurer-bill thread is gone; card 6 now ends on own money plus control of the empire; "Tiny stake:" bridges to the doubled insurance.
+- B10 A2: control is now maintained, not handed back. B11: North Tower impact zone restored. B12: "first financial company" restored.
+- B13/15/16/19/27 C13a: every thing-acting opener ("purchase orders survive", "data surfaces", "recovery exposes", "frenzy feeds", "inquiry meets a verdict") removed; openers are now people/image/twist bridges ("But off camera:", "Flip the bet:", "Stateside:", "To empty chairs:").
+- B17 A3: the Convar Director's ironic Tuesday-morning shopping quote is back ("About the surge:" calls back to card 13).
+- B22/B30 A4: every line is at most 105 characters; every card part is 80–95.
+- B25 A2: Krongard line now says "former firm of the CIA's Executive Director". B27 A2: SEC line keeps the inversion ("those who had advanced knowledge didn't trade. So WHO had knowledge?").
+- B31 C13b: the outro is now a statement that calls back to the intro bank: twenty euros get a phone call, two point four million gets a Commission and a shredder.
+- Songlines r4.6: A7 entries updated to the new lines. The old entries for cards 23 and 25 are dropped because those lines no longer spell out numbers. introType = confession.
+- Style file unchanged. Gate: PASS (no WARN).

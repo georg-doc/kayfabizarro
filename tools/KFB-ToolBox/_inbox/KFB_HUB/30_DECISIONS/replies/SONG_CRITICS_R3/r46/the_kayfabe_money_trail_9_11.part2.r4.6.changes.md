@@ -1,0 +1,9 @@
+# the_kayfabe_money_trail_9_11.part2 · r4.5 → r4.6 (gate PASS)
+- C9 b1: title with "Kayfabe" plus a plain thesis, no open question. b2: FrizzleBob confession and the premise (32 cards on the people paid to check the books). b3–4: stand-up (a shoebox of receipts versus two point three trillion and a bigger budget). b5: dog whistles (Zakheim, Ptech, Rumsfeld speech on September tenth). introType = confession.
+- C9/C13b outro: a receipt gets a letter from the taxman, eight point five trillion never gets a single hearing (matches card 53), "who pays for both" (us); calls back to intro receipt/taxman. Removed the "institutions get hearings" contradiction.
+- A2 reversals: 30 now "to stop rogue trading"; 34 keeps "later"; 40 "the Commission never looked into Ptech"; 49 keeps the order (just moved back in, then 34 killed); 50 "due to the loss of accountants in the attack".
+- A3/A4: 33 restores "the man financing Ptech"; 41 is lore only (the timing now sits in the intro, no "24 hours" fragment); 43 credits the quote to Minnery's director; 46/47 sayable; 53 uses lore "Rumsfeld's war… losing even more money"; 60 back to verb plus turn ("changed everything? Right: it made the house infinitely rich").
+- E16b: no opener on 49–53 (deaths stretch, no implied causation); 45 still without "remote flight tech".
+- B7/C13a: replaced every flagged opener (auditors, FAA team, probe, map, keys remain, second signature, entries provoke, analyst, report disappears, insurers invoice). New openers (16/32) use art images or links: giant eye, keys in hand, bloodhounds, courtesy, referee, eagle, rug, ladder, circled, deer, mouse, eraser, papers.
+- B7b callbacks: 32 Keys (31), 43 "looked" (40), 56 eraser (55), 59 papers (44), plus outro to intro.
+- songlines r4.6: A7 entries updated (40, 42, 48, 49, 52, 53, 55, 56, 57). The r4.4 A7 entries for 35, 38, 41, 43, 44, 50, 58, 60 were dropped because those lines no longer contain a spoken number. Style file unchanged.

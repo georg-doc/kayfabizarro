@@ -1,0 +1,13 @@
+# dream_wrestling_with_kayfabe_freud r4.5 -> r4.6 (critic r4.5 flags)
+- C9 beat 1: deck title "Kayfabe-Freud" plus the "kicks out at two" thesis in plain words ("Nobody gets cured"). The coined slogan is gone.
+- C9 onboarding: who is speaking (Uncle FrizzleBob, reading the dream book) plus a stand-up setup and punch (therapist, nightmares, payment plan). introType = confession.
+- C9 dog whistles: "nineteen hundred dream book" (Traumdeutung date), "three-count" (wrestling), "Royal Road" stays in card 40.
+- B7b outro: wellness gurus and the three-count, "monster kicks out at two" calls back to intro beat 1, and "bill" calls back to the payment plan.
+- B7: removed the label openers (Blocked? Retreat / Until seven / Patient / Yet the case / The patient asks / Parent / Before ink / A censored gap / The detective finds hunger). The 13 new openers twist or follow from the card before, or use art images (dragon, barricade, cape).
+- B7b callbacks in openers: yesterday, cold logic, Mother, burglar, riddle, clown, spooky, wish.
+- A4: the Id and Gap lines are now under 105 characters; Tooth Extractor restores "isn't about dentists"; Examination restores "why are you back here?"
+- A3 card 40: "paved with bad intentions, dirty jokes" is restored.
+- A2: Preconscious drops "of the room"; Condensation is "You can smash five faces" (you as the agent).
+- Oedipus: single colon, the opener carries the link. Couch: no misattributed opener.
+- Length: 4995 characters (< 5000), so openers sit at 25% (13/52), the lower edge; 5000 is the hard limit.
+- Songlines r4.6: A7 entries 10/12/40 carried over with the new lines. Style file unchanged.

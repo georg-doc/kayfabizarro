@@ -41,7 +41,7 @@
 import { createStageLight, createContactAO, applyTone, MOODS_MESA, SCHEMA as LIGHT_SCHEMA, VERSION as LIGHT_VERSION, castFrontFaces, fitAround, measureShadowSeam, sunDirection } from './vendor/kfb-stage-light.v1.1.js';
 import { applyClay, resolveProfile, SKIP_DEFAULT, VERSION as CLAY_VERSION } from './vendor/kfb-clay.v1.1.js';
 import { mountEyes, findEyeSeat, LID_STATES, EYES_VERSION } from './kfb-proof-eyes.v1.js';
-import { moodAt } from './vendor/kfb-stage-light.v1.1.js';
+import { moodAt, createPracticals } from './vendor/kfb-stage-light.v1.1.js';
 /* GEM_R1 (V-460): nodes with glTF extras kfb.material = 'gem' skip clay and get kfb-gem.v1 (vendored from 30_DECISIONS/replies/GEM_R1) */
 import { createGem, setGemEnvironment, gemPresetForSide, VERSION as GEM_VERSION } from './vendor/kfb-gem.v1.js';
 
@@ -364,8 +364,12 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
        the material is shared per colour (gemTint, else ruby/sapphire by kfb.side white|light / black|dark); environment = PMREM of this mood */
     const gemNodeOf = (m) => { for (let n = m; n; n = n.parent) { if (n.userData?.kfb?.material === 'gem') return n; if (n === root) break; } return null; };
     const gemHandles = new Map(), gemMeshes = [];
-    root.traverse((m) => { if (!m.isMesh) return; const gn = gemNodeOf(m); if (!gn) return; const kf = gn.userData.kfb;
-      let h = gemHandles.get(gn); if (!h) { h = kf.gemTint ? createGem({ THREE, tint: kf.gemTint, depthTint: kf.gemDepthTint, seed: gn.name || 'gem' }) : createGem({ THREE, preset: gemPresetForSide(kf.side), seed: gn.name || 'gem' }); gemHandles.set(gn, h); }
+    /* GEM_R1 r4: with mood glow (dusk, night) gems are lanterns: floor light pool + halo (gem module), real spill via getPracticalLight()
+       -> the light module's practicals pool below. Day: none of this exists (day renders stay identical). */
+    const gemGlow = moodAt(TODV, MOODS_MESA).glow || 0, lit = gemGlow > 0.001, gemLook = lit ? { lantern: true, halo: true, pool: true } : {};
+    const gemCand = []; root.traverse((m) => { if (m.isMesh) gemCand.push(m); });   // collected first: lantern pools are added as children during apply
+    gemCand.forEach((m) => { const gn = gemNodeOf(m); if (!gn) return; const kf = gn.userData.kfb;
+      let h = gemHandles.get(gn); if (!h) { h = kf.gemTint ? createGem({ THREE, tint: kf.gemTint, depthTint: kf.gemDepthTint, seed: gn.name || 'gem', ...gemLook }) : createGem({ THREE, preset: gemPresetForSide(kf.side), seed: gn.name || 'gem', ...gemLook }); gemHandles.set(gn, h); }
       h.apply(m); gemMeshes.push({ mesh: m, node: gn.name || '?', side: kf.side || null, tint: kf.gemTint || gemPresetForSide(kf.side) }); });
     if (gemMeshes.length) setGemEnvironment({ THREE, renderer, mood: moodAt(TODV, MOODS_MESA), ground: COVE });
     /* clay */
@@ -428,6 +432,19 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     const minCaster = Math.max(0.02, Math.min(...itemBoxes.map((x) => x.b.max.y - x.b.min.y), Hs));
     const rig = createStageLight({ moods: MOODS_MESA, tod: () => TODV, groundColor: () => COVE, fit: () => (S && S.fitNow) || fit, figures: () => mods, figureLight: { distance: 3.4 * fs, up: 2.2 * fs }, mapSize: 4096, minCaster: () => minCaster });
     scene.add(rig.object3d);
+    /* GEM_R1 r4: practical lights from the gem lanterns (kfb-stage-light createPracticals pool, max POOL lights, no shadows), local to the
+       turntable so they turn with the pieces; weight = mood glow. refreshGemLights() re-reads intensities after the gems' time advanced. */
+    let gemPrac = null;
+    const refreshGemLights = () => {
+      if (gemPrac) { gemPrac.object3d.removeFromParent(); gemPrac.dispose(); gemPrac = null; }
+      if (!lit || !gemHandles.size) return null;
+      const rot = turntable.rotation.y; turntable.rotation.y = 0; turntable.updateMatrixWorld(true);
+      const list = [...gemHandles.values()].map((h) => h.getPracticalLight()).filter(Boolean).map((l) => { const p = turntable.worldToLocal(new THREE.Vector3(...l.pos)); return { ...l, pos: p.toArray(), intensity: l.intensity / Math.max(1e-3, l.glowWeight) }; });
+      turntable.rotation.y = rot; turntable.updateMatrixWorld(true);
+      gemPrac = createPracticals({ practicals: list, weight: () => gemGlow }); turntable.add(gemPrac.object3d); gemPrac.object3d.traverse((o) => { o.userData.noMeasure = true; }); gemPrac.update(0, {});
+      return gemPrac.info();
+    };
+    refreshGemLights();
     /* contact AO on the real floor footprint (vertices in the lowest band), not the whole box (T-pose arms, lamp arms); v1.2: one per item
        that touches the floor (lineups get one per item, floating items none) */
     const aoProxies = [], aoSkipped = [];
@@ -481,7 +498,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     }
     const aspect = Math.max(size.x, size.z) / Math.max(0.05, Math.min(size.x, size.z)), nItems = itemBoxes.length;
     const lineup = type === 'prop' && (aspect > LINEUP_ASPECT || nItems >= MULTI_ITEMS), grid = lineup && Math.min(size.x, size.z) > 3 * Hs;
-    S = { mood, tod: TODV, gemHandles, gemMeshes, root, turntable, aoProxies, aoSkipped, scene, float: flt, lineup, grid, items: itemBoxes.map((x) => x.it), lineupAspect: aspect, lineupYaw: size.z > size.x ? Math.PI / 2 : 0, minCaster, cyl, sunDir, rig, ao, cove, coveClay, sil: type === 'character' || !figs.length ? sil : null, silRoot: sil, eyes, clay, type, id, card, bounds: B, Hs, rxz, s, loadErrors, skipClay, hidden, faceParts, units, k, eyePixels: null, entrance, scaleEntrance, scaleFig, figWarn, view: null, fitBase: fit, fitNow: fit };
+    S = { mood, tod: TODV, gemHandles, gemMeshes, refreshGemLights, root, turntable, aoProxies, aoSkipped, scene, float: flt, lineup, grid, items: itemBoxes.map((x) => x.it), lineupAspect: aspect, lineupYaw: size.z > size.x ? Math.PI / 2 : 0, minCaster, cyl, sunDir, rig, ao, cove, coveClay, sil: type === 'character' || !figs.length ? sil : null, silRoot: sil, eyes, clay, type, id, card, bounds: B, Hs, rxz, s, loadErrors, skipClay, hidden, faceParts, units, k, eyePixels: null, entrance, scaleEntrance, scaleFig, figWarn, view: null, fitBase: fit, fitNow: fit };
     S.head = type === 'character' ? headBounds(THREE, root, eyes) : null;
     if (eyes?.status === 'OK') S.eyePixels = measureEyePixels();
     const gates = runGates(THREE, S);

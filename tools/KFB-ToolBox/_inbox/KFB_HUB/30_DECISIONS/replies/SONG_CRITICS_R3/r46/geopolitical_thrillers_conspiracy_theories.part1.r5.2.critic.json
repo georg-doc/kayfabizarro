@@ -1,0 +1,31 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "geopolitical_thrillers_conspiracy_theories.part1.r5.2.suno.txt",
+  "critic": "claude-opus-5-5/blind-critic-r46",
+  "blind": true,
+  "scores": {
+    "cardTruth": 4,
+    "performance": 4,
+    "arc": 4,
+    "sayability": 4,
+    "tone": 4,
+    "styleFit": 4
+  },
+  "flags": [
+    {"beat": 2, "rule": "D13", "observation": "\"I'm Uncle FrizzleBob\" sets a male narrator; Style A specifies a female lead, so voice and persona clash in variant A."},
+    {"beat": 4, "rule": "C9", "observation": "\"If you already know Flexner, Gehlen and Gladio\" announces the dog whistles as a roster; all three are card words anyway, so no insider reward."},
+    {"beat": 4, "rule": "C13", "observation": "\"Everybody else: dance, I'll keep it short.\" is generic filler that could appear in any song at all."},
+    {"beat": 15, "rule": "A4", "observation": "\"D.U.M.B.s\" as a dotted acronym leaves delivery ambiguous: spelled letters or one word."},
+    {"beat": 16, "rule": "A4", "observation": "\"the contractors wear Rolexes\" lands without its contrast half from the card, so the punch is weaker than printed."},
+    {"beat": 18, "rule": "E16b", "observation": "Opener \"Gehlen orders fear.\" states a link not on either card as fact inside the frame."},
+    {"beat": 18, "rule": "A4", "observation": "\"keep people afraid, do the terrorizing\" compresses the card's twist into a flat list; the reversal logic is lost."},
+    {"beat": 22, "rule": "B7", "observation": "\"Hoover, plus sand.\" winks at the listener and adds an image not in the card art; strains the straight-face tip."},
+    {"beat": 25, "rule": "A2", "observation": "\"Flexner standardized medicine\" makes a person the agent where the card credits a report; minor shift."},
+    {"beat": 26, "rule": "A5", "observation": "\"Genial.\" left as printed; sung in English it reads as friendly, flipping the intended German sense."},
+    {"beat": 27, "rule": "A4", "observation": "\"mob looks like scouts selling cookies\" lost its comparative subject; the punch reads as a non sequitur."},
+    {"beat": 30, "rule": "B7", "observation": "\"The pig banker grins.\" describes the card's own art; no therefore/but link from the previous card."},
+    {"beat": 31, "rule": "A3", "observation": "Event line drops the card's timing claim, so \"not a conspiracy, just excellent planning!\" has no setup to invert."},
+    {"beat": 33, "rule": "E16b", "observation": "\"the folks on the corkboard own the company\" can read as affirming the corkboard figures really rule, not parodying the frame."}
+  ],
+  "verdict": "pass"
+}

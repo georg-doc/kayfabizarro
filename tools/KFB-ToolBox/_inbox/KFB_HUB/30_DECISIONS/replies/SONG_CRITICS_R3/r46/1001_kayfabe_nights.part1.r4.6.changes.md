@@ -1,0 +1,15 @@
+# 1001_kayfabe_nights.part1 r4.5 -> r4.6 (critic 1001_kayfabe_nights.part1.r4.5.critic.json)
+- B2 C9 onboarding: the intro now has 4 beats: title + thesis, who is speaking (Uncle FrizzleBob, ring announcer) and what we're doing (reading the deck card by card), a stand-up setup + punch (streaming bosses / Shahryār with an axe), and a kayfabe explanation for normies.
+- B2 C9 dog whistle: Manifesto quote "History is a Work, Folklore is a Shoot" (card 2), plus King Shahryār. Outro: cliffhanger satire on streaming bosses and us, with a callback to the intro (axe, still watching), then Stay Fluffy!.
+- B3 A4: dropped the opener on the first card, so the name is no longer said twice.
+- B6/B9 B7/A2/C13a: dropped the false causal links (Dunyazad->Vizier, "stolen commission buys"). New openers: "Their father:" (Vizier) and "What he came for:" (Sorcerer's want -> Lamp).
+- B9 A3: the Lamp's power is no longer read out as a list; only the aside "three wishes, No DQ" remains.
+- B10 A4: Princess written as a full sentence: "wants the guy ... not the Vizier's son".
+- B12/B14 A4: Island-Whale ends on "good luck selling this to the crowd"; Diamond Valley gets its verb back ("the floor is literally knives and snakes").
+- B15 B6/A2: Giant opener "Worse than knives:" (new family). Line from the card plus art: "tusked boar with a club; his Squash Match ... destroys his Jobbers" (E16b alias stays, no "monster").
+- B19/B23 C13a: object-acting openers replaced by people: "Who starts from zero?" (Ali Baba), "The cave's landlord:" (Captain).
+- B20 A3: removed the label tails (Aladdin Push, Morgiana valet, Old Man chokehold, Ali Baba opportunist, Captain stable leader, Grunts overwhelmed). Art images used instead (ferret, toad-grandpa, wolf, rat mob).
+- B21 A8: Cassim no longer carries "the botch, password"; now "behind a boulder" (art). B27 A8: "tank class" removed.
+- B26/B27 B7: no more noun-verb-preposition-colon template. Openers follow people (Sinbad pours, The greedy brother, Their plan B, Nobody bribes him, In that grave). Callbacks: Roc, knives, Sinbad, zero, cave, corner->genie.
+- Openers 12/28 (43 %). Every card part is 80-95 characters and every line is at most 105. Songlines r4.6: entries for 17 (E16b) and 26 (A7) carried over with the new line text; introType misdirection.
+- Gate: gate_track.py PASS. The style file is unchanged.

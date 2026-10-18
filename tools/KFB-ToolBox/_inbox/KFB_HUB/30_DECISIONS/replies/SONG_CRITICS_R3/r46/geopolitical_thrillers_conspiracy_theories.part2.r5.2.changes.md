@@ -1,0 +1,11 @@
+# geopolitical_thrillers_conspiracy_theories.part2 r5.1 → r5.2 (gate PASS)
+- C9/C13 beat 1: full deck title + plain thesis ("conspiracy business is kayfabe, staged fight, real ticket sales"); no abstraction acting.
+- C9 onboarding: FrizzleBob as speaker + what we do (read straight, spot fear vs. sales pitch); cousin-Kevin stand-up with a punch ("You're a livestream"); dog whistles Langley binaural beats, Admiral Byrd's ice wall, magenta saucer 1933.
+- C11: "forward-" stem removed; frame words max 2×.
+- B7: all echo/label/time-hop openers removed (Instant., After the Twitter Files, Hat., Buried., Aircraft., Unplug.). 12 new linked openers, e.g. One sheep blinked (31→32), Skip surgery (33→34), Worn, not shelved (43→44), Less heavenly storage (46→47), Or go in person (48→49), Same shrug at sea (51→52), I stay home / Going out? (52→53→54). None found in the corpus.
+- B7b: callbacks Older than Mockingbird (→29), Less heavenly storage (→46); outro calls back to the intro (Kevin, livestream, breakfast) with a money/media punch.
+- A4 30: dangling "disinformation" removed; 35: verb restored ("it irradiates you like beef"); 42: garble + "holy espionage" removed; 49: verb + "never poke the ice wall" punch restored; 54: "won't declassify history? We accessorize it" motive restored.
+- A2 33: billionaires' dream no longer the actor, peasantry restored; 34: "whoever holds the DARPA contract"; 45: "cosmic church politics" → "soap opera the church tried to bury"; 50: stole / spark separated.
+- A3 40: "false choice" removed. E16b 51: ironic frame restored ("notice grid patterns in the sky? You're a conspiracy theorist"), "solar energy blocked" removed.
+- D13: style file unchanged (inputs/…part2.r5.1.style.txt, passed the style gate).
+- Songlines r5.2: 35/38/51 updated, 42 (five hundred) + 47 (slash sung as "and") added as A7; introType scene.

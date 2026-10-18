@@ -1,0 +1,23 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "romantic_kayfabe.part1.r5.2.suno.txt",
+  "critic": "claude-opus-5-5 (separate blind critic instance, no room context)",
+  "blind": true,
+  "scores": {"cardTruth": 4, "performance": 4, "arc": 4, "sayability": 3, "tone": 4, "styleFit": 4},
+  "flags": [
+    {"beat": 2, "rule": "D13", "observation": "Style A sets a female lead, but the speaker announces \"I'm Uncle FrizzleBob\"; voice and persona clash in variant A."},
+    {"beat": 3, "rule": "C13a", "observation": "\"My dating profile promised\" lets a thing act like a person in the intro; mild object-acting."},
+    {"beat": 16, "rule": "B7", "observation": "\"Hyena grabs a mask\" is a scene cut with no therefore/but link to The Big Misunderstanding."},
+    {"beat": 17, "rule": "B6", "observation": "\"Jokes out, corset on\" repeats the opener family of \"Mask off, club down\" only seven lines later."},
+    {"beat": 17, "rule": "B7", "observation": "\"corset\" is not in the card art for The Historical Cage; invented image in the opener."},
+    {"beat": 20, "rule": "E16b", "observation": "Card's risk caveat is cut; \"legitimate if trauma is followed\" now reads as plain endorsement of dark romance."},
+    {"beat": 22, "rule": "A4", "observation": "\"their own wound, fear of commitment, or they are just a prop\" parses as three alternatives; the requirement is lost."},
+    {"beat": 27, "rule": "A3", "observation": "The card's core claim about the character ceasing to perform is dropped; \"the character simply is\" lands cryptic."},
+    {"beat": 29, "rule": "A3", "observation": "\"tools for emotional truth\" has lost its subject from the card; the clause dangles and closes nothing."},
+    {"beat": 30, "rule": "B6", "observation": "\"Equal? Smash a wall\" reuses the one-word-question opener family two beats after \"Hush? Feathers up\"."},
+    {"beat": 30, "rule": "E16b", "observation": "Cheerful \"Smash a wall\" right before \"a transgression of limits\" in the erotica run sounds glib about crossing limits."},
+    {"beat": 32, "rule": "B6", "observation": "\"Loss? Ink out\" is the third same-family opener within four beats; the template becomes an audible tic."},
+    {"beat": 33, "rule": "C9", "observation": "Outro punch runs 123 characters in two clauses; strong satire on dating companies, but not one-breath quotable."}
+  ],
+  "verdict": "pass"
+}

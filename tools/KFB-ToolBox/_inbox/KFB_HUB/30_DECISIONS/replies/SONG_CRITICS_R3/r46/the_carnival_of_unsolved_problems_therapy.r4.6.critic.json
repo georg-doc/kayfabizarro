@@ -1,0 +1,27 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "the_carnival_of_unsolved_problems_therapy.r4.6.suno.txt",
+  "critic": "claude-opus-5-5 (separate blind critic instance)",
+  "blind": true,
+  "scores": {
+    "cardTruth": 4,
+    "performance": 4,
+    "arc": 4,
+    "sayability": 4,
+    "tone": 5,
+    "styleFit": 4
+  },
+  "flags": [
+    {"beat": 4, "rule": "C9", "observation": "Expert dog whistles thin: only \"constellation work\" counts as insider reference; no precise name, date or quote in the intro."},
+    {"beat": 52, "rule": "C9", "observation": "Outro punch lands on money, but carries no expert dog whistle; \"two grand a weekend\" stays generic workshop satire."},
+    {"beat": 53, "rule": "C11", "observation": "\"guru\" appears three times in non-card frame text (beats 3, 52, 53), above the twice limit."},
+    {"beat": 34, "rule": "B7", "observation": "\"Down in the sawdust:\" only sets a place; no therefore/but link from Clown Shoe Shuffle, reads as and-then."},
+    {"beat": 30, "rule": "B7", "observation": "\"Collapsed? Sell it:\" bridge is cryptic; the logic leading into Spiritual Ego Check is not audible on first hearing."},
+    {"beat": 41, "rule": "B6", "observation": "\"No way out?\" sits two lines after \"No apology, so:\"; same No-opener family inside the ten-line distance."},
+    {"beat": 47, "rule": "C13b", "observation": "Question-plus-one-word-colon cadence (\"No words? Excuses:\", \"Collapsed? Sell it:\", \"Not family? Work:\") recurs about six times; mechanical tic."},
+    {"beat": 28, "rule": "A3", "observation": "\"a machine measuring imagined past decisions\" carries the power wording where the art image sits; reads as rule paraphrase."},
+    {"beat": 22, "rule": "A4", "observation": "Trailing lone noun in \"an armored guard, paranoia\" makes a list fragment; same stacking pattern hampers one-breath phrasing elsewhere."},
+    {"beat": 2, "rule": "D13", "observation": "Style A specifies a female lead while the narrator says \"I'm FrizzleBob, your carny rabbit\"; voice persona mismatch."}
+  ],
+  "verdict": "pass"
+}

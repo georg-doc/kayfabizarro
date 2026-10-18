@@ -1,0 +1,10 @@
+# romantic_kayfabe.part2 r5.1 → r5.2 (no critic JSON yet; gate: PASS)
+- B6: "House rules." is gone, and so is every other r5.1 opener. All 13 new openers were checked against the whole corpus (inputs, r46, OPENER_ARC_R2) and match nothing.
+- B7: each opener links to the card before it through an image or a turn: Jumbotron→kitchen, waltz→heat, weather→house, cute→but, rubble, summit, plaza, kiss→no fight, cardboard Ex, shell shed. Callbacks: Collision (33→41), Sunset (48→49), weather (31→32). One-word labels such as "Trauma.", "Rival." and "Wager." were removed.
+- C9: beat 1 gives the full deck title plus the thesis. Onboarding: FrizzleBob on the mic, Kayfabe explained for normies, a stand-up joke (Jumbotron proposal / toilet queue). Dog whistles: Truby, Black Moment, HEA.
+- C9 outro: a media/money punch (networks film the proposal, nobody films who makes the coffee), with a callback to the stadium in the intro and to the Intimate Kitchen.
+- C13a: "love stories fake plenty" became "romance writers fake plenty" (people act, not abstractions).
+- A (meaning restored): 33 the encounter must face a specific opponent; 34 continuing *requires* destroying the old identity (no longer an instruction); 39 *destroying* reputation proves loyalty; 46 "not because of a dropped phone" (the meaning had been flipped); 50 love or lose the self; 56 Truby's logic, Kayfabe drops.
+- A4: every card part is 80–95 characters and every card line, opener included, is ≤105 characters.
+- A7: card 33 is spoken as "Act One" and logged in r5.2.songlines.json; the old entries are kept. introType = confession.
+- Style file unchanged (romantic_kayfabe.part2.r5.1.style.txt).

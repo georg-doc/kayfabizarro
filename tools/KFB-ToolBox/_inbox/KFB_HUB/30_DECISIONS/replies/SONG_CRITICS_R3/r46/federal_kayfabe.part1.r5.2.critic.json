@@ -1,0 +1,28 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "federal_kayfabe.part1.r5.2.suno.txt",
+  "critic": "claude-opus-5-5 / blind critic instance r46",
+  "blind": true,
+  "scores": {
+    "cardTruth": 4,
+    "performance": 4,
+    "arc": 4,
+    "sayability": 3,
+    "tone": 5,
+    "styleFit": 5
+  },
+  "flags": [
+    {"beat": 8, "rule": "A4", "observation": "Opener plus card line reaches 106 characters; beats 10, 13, 18, 24, 26, 29, 33 also exceed 100, not one breath."},
+    {"beat": 8, "rule": "A2", "observation": "\"backed by your grandparents’ promises\" shifts the card's claim about who pays the money back."},
+    {"beat": 10, "rule": "B7", "observation": "\"In English: a lion.\" plays as a riddle; the bridge from the previous card is unclear on first listen."},
+    {"beat": 10, "rule": "A3", "observation": "Line loses the bankers creating the loan out of nowhere; \"war debts, and a private bank\" blurs the causal claim."},
+    {"beat": 18, "rule": "B7", "observation": "\"Grab a board\" leaves the board image unanchored; the listener cannot tell which board is meant."},
+    {"beat": 19, "rule": "B7", "observation": "\"Conductor? A clown.\" is the third question-and-snap opener; with beats 29 and 31 the cadence turns formulaic."},
+    {"beat": 24, "rule": "C11", "observation": "\"money\" appears three times in frame and opener text (beats 1, 3, 24), over the limit of two."},
+    {"beat": 26, "rule": "A3", "observation": "The card's claim concerns the Federal Reserve Act; the line never names it, so normies miss which act."},
+    {"beat": 33, "rule": "A3", "observation": "The card's lead claim, notes backed by future taxation, is dropped; only the gamble half survives."},
+    {"beat": 34, "rule": "A4", "observation": "Outro beat runs 132 characters in three clauses; the punch is hard to land as one quotable breath."},
+    {"beat": 34, "rule": "C9", "observation": "\"The Fed's printer\" sits uneasily beside beat 30's \"isn’t printed\"; the punch slightly contradicts the deck's own claim."}
+  ],
+  "verdict": "pass"
+}

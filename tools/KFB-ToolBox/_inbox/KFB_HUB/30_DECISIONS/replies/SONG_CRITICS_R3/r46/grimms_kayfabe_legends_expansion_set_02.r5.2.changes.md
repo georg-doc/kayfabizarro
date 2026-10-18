@@ -1,0 +1,12 @@
+# grimms_kayfabe_legends_expansion_set_02 r5.1 → r5.2 (gate PASS, 4996 chars, 52/52 cards, 15 openers)
+- Beat 1 (C9/C13b): deck title incl. subtitle "The Fairy Tale Screwjob" + plain thesis; aphorism "nasty catch" removed.
+- Beat 2 (C9): two onboarding beats: speaker (Uncle FrizzleBob, uncut Grimm as wrestling promos), stand-up setup/punch (soft Cinderella vs. heel cut for the shoe → Black Friday). Dog whistles: Screwjob, promos. Phone joke removed.
+- Outro (C9/B7b/C13b): "refund policy" removed; money/us punch calling back intro heel + shoe ("monthly installments").
+- B7: all one-word echo openers removed (Turnip, Kywitt, Fairest, Gingerbread, White horses, Goose in danger, Falada:); new openers link to the previous card (botch→push, kill count→flies, luck→worry, escape→running) or are callbacks (door, false bride, respect, salad, turnip, rampion, feast, Black Friday).
+- C13a: "Blood speaks." replaced with "Still running:".
+- A3 power labels/rules removed: 8 beard trap, 10 cut-your-way-out, 18 identity theft, 29 accidental genius, 34 stat line, 37 donkey transformation (now "only a bray").
+- A8: 17 'Child' gone ("two exiled"), 39 "First Born for this" → "her first born for it", 44 'opponent' gone.
+- A4 fragments fixed: 11 "lost items" → "fair wages" (art), 15 "false bride truths" → full lore couplet, 21 "golden cage alarm" → "alarm and all", 19 shortened (was 109 chars).
+- All card parts now 80–85 chars so the longer frame fits under 5000; every line incl. opener ≤ 105.
+- Songlines r5.2: same six entries (A7 ampersands, A5 typo, A6 subtitle) with updated songLine text; introType misdirection.
+- Style file unchanged. Opener share 29 % (character budget leaves no room for more).

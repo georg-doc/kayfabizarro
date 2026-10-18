@@ -1,0 +1,42 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "1001_kayfabe_nights.part1.r4.6.suno.txt",
+  "critic": "claude-opus-5-5 / independent blind critic subagent",
+  "blind": true,
+  "scores": {
+    "cardTruth": 4,
+    "performance": 4,
+    "arc": 4,
+    "sayability": 4,
+    "tone": 5,
+    "styleFit": 4
+  },
+  "flags": [
+    {
+      "beat": 2,
+      "rule": "C13",
+      "observation": "\"one card per line\" describes process, not premise; the sentence is portable to any Kayfabe deck song and has no stand-up punch."
+    },
+    {
+      "beat": 17,
+      "rule": "A3",
+      "observation": "\"his Squash Match instantly destroys his Jobbers\" recites the power effect as a rule and fuses lore and power into a new claim."
+    },
+    {
+      "beat": 29,
+      "rule": "C11",
+      "observation": "Third opener ending on \"him\" (\"No genie for him\", \"The Roc drops him\", \"Nobody bribes him\"); opener cadence starts to repeat."
+    },
+    {
+      "beat": 33,
+      "rule": "C9",
+      "observation": "Outro punch is concrete and calls back the intro axe and streaming bosses, but carries no insider dog whistle for experts."
+    },
+    {
+      "beat": 2,
+      "rule": "D13",
+      "observation": "Style A asks for a female talk-sung lead while beat 2 casts Uncle FrizzleBob as the male ring announcer; voice and persona clash."
+    }
+  ],
+  "verdict": "pass"
+}

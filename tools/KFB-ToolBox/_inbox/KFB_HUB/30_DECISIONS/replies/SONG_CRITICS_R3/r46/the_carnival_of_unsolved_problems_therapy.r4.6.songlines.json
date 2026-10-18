@@ -1,0 +1,36 @@
+{
+  "deckId": "the_carnival_of_unsolved_problems_therapy",
+  "version": "R4.6",
+  "bindingSpec": "R3.4",
+  "metaSkipped": [
+    48
+  ],
+  "songLineChanges": [
+    {
+      "cardNumber": 38,
+      "rule": "A7",
+      "cardName": "Therapist & Client",
+      "songName": "Therapist and Client",
+      "songLine": "Therapist and Client, structure holds chaos; two chairs facing, a speaker and a witness.",
+      "reason": "Render ampersand as spoken 'and'"
+    },
+    {
+      "cardNumber": 40,
+      "rule": "A7",
+      "cardName": "7-Day Witness",
+      "songName": "Seven-Day Witness",
+      "songLine": "Seven-Day Witness, boring reveals truth; a calendar of eyes, a pattern across time.",
+      "reason": "Write numbered card title as sung"
+    }
+  ],
+  "nonA7Changes": 0,
+  "metaSkipReasons": {
+    "48": "Back cover / manifesto, not playable attraction"
+  },
+  "introType": "confession",
+  "refrain": "",
+  "droppedEntries": {
+    "44": "R4.4 A6 rewrite 'The Guarantee' removed: card now sung with its printed name FrizzleBob’s Guarantee (critic A1 flag)"
+  },
+  "sourceCritic": "the_carnival_of_unsolved_problems_therapy.r4.5.critic.json"
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "grimms_kayfabe_legends_expansion_set_02.r5.2.suno.txt",
+  "critic": "claude-opus-5-5 / blind external critic instance r46",
+  "blind": true,
+  "scores": {
+    "cardTruth": 4,
+    "performance": 4,
+    "arc": 4,
+    "sayability": 4,
+    "tone": 4,
+    "styleFit": 4
+  },
+  "flags": [
+    {"beat": 3, "rule": "C9", "observation": "\"Black Friday!\" lands as a rimshot; the heel-for-shoe image never names the sale logic, so normies must supply the link themselves."},
+    {"beat": 2, "rule": "C9", "observation": "Expert layer in the intro is thin: \"uncut Grimm\" and \"promos\" only, no precise name, date or quote for insiders."},
+    {"beat": 7, "rule": "C11", "observation": "\"still\" appears three times outside card text (beats 7, 49, 56), above the twice-per-word limit."},
+    {"beat": 4, "rule": "B6", "observation": "Openers on 15 of 52 cards, below the one-third floor; the first three cards run bare after the intro."},
+    {"beat": 10, "rule": "B7", "observation": "Beats 10-16 and 18-24 each run seven cards with no opener; no therefore/but bridge carries these stretches."},
+    {"beat": 50, "rule": "B7", "observation": "\"Turnip line, reused\" comments on the deck recycling its own text; ironic distance against Tip 4, straight face."},
+    {"beat": 35, "rule": "A3", "observation": "\"friendly eyes on her\" loses the instruction, so the literal-obedience story of the card is hard to follow by ear."},
+    {"beat": 27, "rule": "A3", "observation": "The self-acting detail of the stick is cut; \"a stick that beats people is better\" now reads as plain violence, not magic."},
+    {"beat": 22, "rule": "A2", "observation": "\"till his name is guessed\" turns the card's conditional self-destruction into a duration for the spinning; logic drifts from source."},
+    {"beat": 12, "rule": "A4", "observation": "\"cock screamed\" without article breaks the four-animal rhythm and invites an unintended snicker."},
+    {"beat": 37, "rule": "A4", "observation": "105 characters with opener colon plus name colon; the same over-95 double-colon pattern recurs in beats 33, 46, 50, 52, 54."},
+    {"beat": 0, "rule": "D13", "observation": "Both style variants are single-genre (Balkan brass, nu-disco); no genre fusion is named, though BPM, voice and instruments fit."}
+  ],
+  "verdict": "pass"
+}

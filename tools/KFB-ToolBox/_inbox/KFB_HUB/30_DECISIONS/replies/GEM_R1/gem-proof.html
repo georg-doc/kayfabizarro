@@ -84,6 +84,10 @@ function practicals(on) {
   prac = createPracticals({ practicals: list.map((l) => ({ ...l, intensity: l.intensity / Math.max(1e-3, l.glowWeight) })), weight: () => S.rig.mood()?.glow ?? 0 });
   S.scene.add(prac.object3d); prac.update(0, {}); return list;
 }
-window.KFB_GEM = { load, practicals, setStates, advance, render, sheet, perf, handles: () => handles().map((x) => x.path) };
+/* r4: night_dark = the same stage with the hemisphere at -50 % (lantern test only, not a mood); refresh = practical lights re-read */
+function nightDark(on) { const S = stage.debug(); if (!on || S.rig._dark) return; const u = S.rig.update; S.rig.update = (dt, ctx) => { u(dt, ctx); S.rig.lights.hemi.intensity *= 0.5; }; S.rig._dark = true; return true; }
+function refreshLights() { return stage.debug().refreshGemLights?.() || null; }
+function setHalo(on) { const hs = handles(); hs.forEach(({ h }) => { h.halo = !!on; }); return hs.length; }
+window.KFB_GEM = { load, practicals, setHalo, nightDark, refreshLights, setStates, advance, render, sheet, perf, handles: () => handles().map((x) => x.path) };
 window.KFB_GEM_READY = true;
 </script></body></html>

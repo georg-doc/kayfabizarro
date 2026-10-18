@@ -308,8 +308,13 @@ def gate_lyrics(a):
         F("A7", f"Ziffer/Symbol {m.group()!r}: …{whole[max(0, m.start() - 20):m.start() + 20]!r}…")
     low = whole.casefold()
     names = " ".join((c.get("cardName") or "").casefold() for c in deck.get("cards", []))
+    lores = " ".join(str(c.get("lore") or "").casefold() for c in deck.get("cards", []))
     for w in sorted(GAME_WORDS):
-        if re.search(rf"\b{w}\b", low) and not re.search(rf"\b{w}\b", names):
+        if re.search(rf"\b{w}\b", names):
+            continue
+        # R3.4c: allowed when the lyric keeps the card's own lore phrase (e.g. "crime scene")
+        bad = [m for m in re.finditer(rf"(\w+)\s+{w}\b", low) if f"{m.group(1)} {w}" not in lores]
+        if bad or re.search(rf"(^|[^\w\s])\s*{w}\b", low):
             F("A8", f"Spielwort {w!r}")
     for p in GAME_PHRASES:
         if p in low and p not in names:

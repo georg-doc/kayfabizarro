@@ -1,0 +1,15 @@
+# frizzlebob_bloedsinnland_alice r4.5 -> r4.6 (critic r4.5 flags)
+- C9 beat 1: thesis no longer convicts Alice; deck title + plain thesis (court: sentence before evidence, sense forbidden).
+- C9 beat 2: three onboarding beats: who speaks (uncle, rabbit on the box, listener = jury), stand-up setup/punch (boss meeting = Wonderland), dog whistle "ten and six" + raven riddle; outro dog whistle "Mary Ann".
+- C9 beat 2 "poem about tarts" removed; poem now only "makes no sense", as on the card. Knave (not Alice) is the guilty one throughout.
+- C9 beat 34: new outro on power/us (Knave convicted on nonsense, boss pardoned, the rest of us called Mary Ann), callback to intro meeting/feedback.
+- A4 beat 3 "Alice chases a summons to:" dropped; White Rabbit line without opener.
+- A3 beats 4/5/8: bare labels "Hookah haze", "Gaslight", "Narcolepsy" removed.
+- A4 beat 13: Rabbit Hole line grammatical ("in a falling vortex").
+- B7 beats 13/15/20/31: place and time hops replaced; every opener links to the card before it (rejection, teapot, Queen's grudge, "but behind her back", sticky -> hurry, riddle unsolved -> culprit).
+- A3 beats 17/24/26: time loop, coin flip and slate rules now asides/images; single "SCREECH".
+- C13a beat 20 "the verdict returns" removed.
+- A8/A2 beats 22/23: no Giant/Micro, no second bottle; cake/bottle use only card words.
+- A4 beat 28: Paint the Roses Red opener no longer pre-explains the goal.
+- Callbacks: hall, size, croquet, late, answer; outro -> intro (boss, feedback). 14/30 openers. Style file unchanged.
+- songlines r4.6: card 4 A7 entry carried over (opener removed), introType question. Gate: PASS.

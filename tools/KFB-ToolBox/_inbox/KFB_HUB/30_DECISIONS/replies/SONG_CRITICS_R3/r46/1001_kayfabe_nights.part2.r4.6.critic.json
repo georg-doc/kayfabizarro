@@ -1,0 +1,29 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "1001_kayfabe_nights.part2.r4.6.suno.txt",
+  "critic": "claude-opus-5-5/blind-critic-instance-r46",
+  "blind": true,
+  "scores": {
+    "cardTruth": 4,
+    "performance": 4,
+    "arc": 4,
+    "sayability": 3,
+    "tone": 4,
+    "styleFit": 4
+  },
+  "flags": [
+    {"beat": 5, "rule": "C9", "observation": "Intro runs four onboarding beats after beat 1; spec allows one to three."},
+    {"beat": 5, "rule": "C9", "observation": "Dog whistles are announced (\"Wrestling nerds, watch for\") rather than embedded; the promised \"ref bump\" is never sung in any card line."},
+    {"beat": 15, "rule": "A3", "observation": "\"cheap heat for opponent\" reads as the power rule restated, with the game-table word opponent."},
+    {"beat": 18, "rule": "E16b", "observation": "Cutting the card's last word leaves \"The Jewish Physician\" next to \"it's a crime\"; reads as an accusation against a named group."},
+    {"beat": 23, "rule": "A3", "observation": "\"enforcer destroys corruption\" recites the power effect as a rule, not as aside or inversion."},
+    {"beat": 24, "rule": "A3", "observation": "\"witty verse boosts faces\" is the stat-boost power paraphrased as a rule."},
+    {"beat": 25, "rule": "A4", "observation": "\"the bell, if King orders it\" is a rule condition with a dropped article; 103 characters with opener, past one breath."},
+    {"beat": 27, "rule": "A3", "observation": "Tail stubs like \"clue\", \"rage\", \"audit\", \"filibuster\" end lines as power-label tags; recurring list cadence flattens the delivery."},
+    {"beat": 29, "rule": "A3", "observation": "\"damage intended for another\" recites the scapegoat power mechanic verbatim minus one word."},
+    {"beat": 30, "rule": "A8", "observation": "\"Bizarro sell\" compresses a game effect into an opaque term; closure lost for listeners."},
+    {"beat": 16, "rule": "A4", "observation": "105 characters including opener; together with beats 12 and 18, several spoken lines exceed one breath versus the golden."},
+    {"beat": 0, "rule": "D13", "observation": "Style A asks for a female talk-sing voice while beat 2 has the narrator say \"I'm Uncle FrizzleBob\"; voice and speaker clash."}
+  ],
+  "verdict": "pass"
+}

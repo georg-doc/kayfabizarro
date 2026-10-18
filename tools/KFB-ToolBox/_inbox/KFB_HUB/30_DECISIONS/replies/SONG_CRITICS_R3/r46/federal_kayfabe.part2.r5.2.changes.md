@@ -1,0 +1,13 @@
+# federal_kayfabe.part2 r5.1 → r5.2 (WRITER_PROMPT_R46)
+- C9 beat 1: question replaced by a plain thesis ("the Fed breaks the economy, says sorry, and the public pays the bill").
+- C9 beat 2: three onboarding beats now: narrator plus format, an overdraft stand-up setup and punch, and dog whistles ($42.22 an ounce, General Counsel Alvarez, Carroll Quigley); introType is now scene.
+- C9 beat 35: outro punch calls back to the overdraft ("ask your bank for the Bernanke deal: one sorry, zero consequences").
+- A2 b8 Gold Certificates: "representing assets they don't possess" restored. b11 Board: "laugh at Congressional funding" restored. b13 NY Fed: the NY Fed is the subject again.
+- A4 b15 Subprime: casino and table images restored. A4 b23 Audit: simile completed ("vampires fight mirrors"); the double-colon opener is gone.
+- A2 b22 Global Governance: the "they say" attribution is kept. A2 b26 Ellen Brown: "cuts parasites, not funding" restored.
+- A5 b20: "Int." spelled out as "International" (logged as an A5 rewrite, 1 of max 3). A7 b10: "$422" is sung as "Four-Twenty-Two Dollar" (songline updated).
+- A4 sayability: every card line is ≤105 characters with its opener (was up to 115); card parts are 84–95 characters.
+- B7 labels removed ("Global.", "Choice.", "Trust.", "Committee.", "Street account."). Openers on 11 of 32 lines are now bridges or images from the card art (dance ended, fish shrugs, snake, "Who owns it?", hippo, puppets' strings, scissors).
+- B7 b18 TBTF: the first-person tantrum is restored ("Lose? Please. I’m too important"). b28 Rogue: the person comes back ("armed with graphic design and arrogance, he made mutual credit").
+- B7b callbacks: casino (41→42), potatoes (53→54), strings→scissors; outro → intro (overdraw five bucks).
+- Style file unchanged. Gate: gate_track.py PASS. Songlines: r5.2.songlines.json (old entries carried over; 29/33/41/36 updated, 46 added).
