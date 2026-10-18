@@ -7284,6 +7284,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-519",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Sprechblasen-Hintergrund (Georg 18.10.): Standard weiß/hell/Papier; optional pastellige Story-Mode-Tönung (Lesbarkeit zuerst); angepasst an Farb-Tageszeit/Licht der Szene; Tinte #1f1a14 behält immer ausreichenden Kontrast (Untergrenze im Modul prüfen). Gilt für kfb-bubbles.v1 und das Spiel; die bisherigen festen Werte (#f8ecd0 + 15 % Figurenfarbe in der Probe, #fbf2df im WSA-Paket) werden durch diese Logik ersetzt.",
+   "values": {},
+   "owner": "WSA (kfb-bubbles) · WS1",
+   "check": "Demo mit Story-Modes und Tageszeiten",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Lesbarkeit zuerst, Stimmung als Tönung.",
+   "applies": "kfb-bubbles"
+  },
+  {
+   "id": "V-520",
+   "date": "2026-10-18",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "Hub q74–q80 (Georg 18.10., „macht endlich fucking QA“): q77 Ork-Duo PASS; TUNE: Spieler-Arm (Löcher, nicht 1:1 Roboter-Unterarm – Georgs Referenz mit Schnittlinie unter B31/_privat_kauf_asset/georg_refs/; Trichter-Mesh/Textur/Schatten-Bugs; animierte Spirale gut), Monstrosity (geschlossenes Lid weiß), Vampirturm (Vampir mittig, Sessel schwebt frei, nichts steckt im Turm), Werkstatt („lieblos und schlampig“ – Storytelling, Platzierungs-Grammatik), Hexen-Diorama (zu konstruiert; Platzierungs-Grammatik, Dreier-Gruppen, Boden-Streu, Geschichte des Ortes), Eiffel (Farben wechselnd und gut verteilt; Palette als Parameter über Biome/Cartoon-Paletten/Deck-Farben). Verbindliche QA-Liste vor jeder Meldung (WSB) und vor jedem Hub-Post (WS0): Löcher sichtbar prüfen, Normalen/UV/Schatten nah, alle Augenzustände inkl. Lidfarbe, Platzierungslogik, Georgs Wortlaut abgehakt, ein Look + Storytelling.",
+   "values": {},
+   "owner": "WSB · WS0",
+   "check": "QA-Liste im RETURN",
+   "source": "Hub q74–q80",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg sieht Fehler, die durch QA hätten auffallen müssen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7371,7 +7401,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:872",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:873",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
