@@ -1,0 +1,162 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "the_kayfabe_money_trail_9_11.part2.r4.5.suno.txt",
+ "critic": "claude-fresh-instance",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 2,
+  "arc": 2,
+  "sayability": 3,
+  "tone": 3,
+  "styleFit": 3
+ },
+ "flags": [
+  {
+   "beat": 0,
+   "rule": "D13",
+   "observation": "No style text accompanies the candidate; groove, BPM range and genre rotation cannot be verified."
+  },
+  {
+   "beat": 1,
+   "rule": "C9",
+   "observation": "Beat 1 drops \"Kayfabe\" from the deck title and states the thesis as an unanswered question, which the cold start forbids."
+  },
+  {
+   "beat": 2,
+   "rule": "C9",
+   "observation": "Stand-up setup is relatable, but the punch \"make for a much stranger audit\" lands flat and name-drops Ptech, FAA, CBOE to normies."
+  },
+  {
+   "beat": 2,
+   "rule": "C9",
+   "observation": "Intro never says who speaks or what the premise is; expert dog whistles are only deck names, no insider date, quote or term."
+  },
+  {
+   "beat": 3,
+   "rule": "B7",
+   "observation": "\"The auditors turn another page\" is an additive and-then bridge with no therefore/but link to anything before it."
+  },
+  {
+   "beat": 4,
+   "rule": "A2",
+   "observation": "Cut inverts the card: source says software \"to stop rogue trading\"; the line has JP Morgan seeking software for rogue trading."
+  },
+  {
+   "beat": 6,
+   "rule": "B7",
+   "observation": "Opener stages an FAA team examining blueprints; card and artwork put Ptech itself in the FAA basement. Scene is invented."
+  },
+  {
+   "beat": 7,
+   "rule": "C13a",
+   "observation": "\"the probe gets too close\" gives an abstraction human agency."
+  },
+  {
+   "beat": 7,
+   "rule": "A3",
+   "observation": "Lore claim \"the very man financing Ptech\" is dropped while the power phrase \"blocked by bosses\" carries the line."
+  },
+  {
+   "beat": 8,
+   "rule": "A2",
+   "observation": "Dropping \"later\" from the lore implies the named investor was already on the watch list while funding Ptech; claim strengthened."
+  },
+  {
+   "beat": 11,
+   "rule": "C13a",
+   "observation": "\"The map points upstairs\" makes an object act; cryptic bridge without content."
+  },
+  {
+   "beat": 13,
+   "rule": "A4",
+   "observation": "\"Those keys remain with: Tom Ridge's Rubber Stamp\" does not parse as a spoken sentence; the listener loses the thread."
+  },
+  {
+   "beat": 14,
+   "rule": "A2",
+   "observation": "Lore point \"The Commission never looked into Ptech\" shrinks to a dangling \"Commission\"; the conflict-of-interest claim is lost."
+  },
+  {
+   "beat": 14,
+   "rule": "B7",
+   "observation": "\"A second signature appears\" is additive and passive; no causal or twisting link."
+  },
+  {
+   "beat": 15,
+   "rule": "A3",
+   "observation": "Leftover power fragment \"twenty-four hours\" is cut from \"before a catastrophe\"; the card's timing joke vanishes."
+  },
+  {
+   "beat": 17,
+   "rule": "C13a",
+   "observation": "\"The missing entries provoke\" has bookkeeping entries acting like people."
+  },
+  {
+   "beat": 17,
+   "rule": "A4",
+   "observation": "\"why care?\" detaches the quote from the director who asked it; listener cannot tell who speaks."
+  },
+  {
+   "beat": 20,
+   "rule": "B7",
+   "observation": "\"The analyst reviews\" is an empty generic role with no want, wound or grudge and no link to the previous card."
+  },
+  {
+   "beat": 20,
+   "rule": "A4",
+   "observation": "\"PNAC's transformation, biological warfare, genotypes\" is a noun list, not a sayable claim."
+  },
+  {
+   "beat": 21,
+   "rule": "A4",
+   "observation": "Reordered quote ends on a dangling \"a long one\"; the PNAC sentence loses its logic when spoken."
+  },
+  {
+   "beat": 23,
+   "rule": "E16b",
+   "observation": "\"Those figures reach\" ties budget figures to the 34 killed bookkeepers, implying a causation the card does not state."
+  },
+  {
+   "beat": 23,
+   "rule": "A2",
+   "observation": "\"killed, office moved\" reverses the card order; source says the office had just moved back before the deaths."
+  },
+  {
+   "beat": 24,
+   "rule": "A2",
+   "observation": "\"due to loss\" omits \"of accountants\"; it reads as financial loss and erases the people who died."
+  },
+  {
+   "beat": 27,
+   "rule": "A3",
+   "observation": "Lore claim about Rumsfeld's war \"losing even more money\" is dropped; line rests on power text and misses the callback to beat 15."
+  },
+  {
+   "beat": 27,
+   "rule": "B7",
+   "observation": "\"After the report disappears\" is a temporal and-then bridge and misstates beat 24, where the report was never produced."
+  },
+  {
+   "beat": 31,
+   "rule": "B7",
+   "observation": "\"Insurers receive an invoice\" invents an event found in neither card text nor artwork."
+  },
+  {
+   "beat": 34,
+   "rule": "A4",
+   "observation": "\"house infinitely rich\" lacks a verb; the card turn \"They told you\" and \"They were right\" is cut, blunting the deck's own punch."
+  },
+  {
+   "beat": 35,
+   "rule": "C9",
+   "observation": "\"Powerful institutions get hearings\" contradicts beat 27 and card 53, \"without a single Congressional hearing\"; the punch undercuts itself."
+  },
+  {
+   "beat": 35,
+   "rule": "C13b",
+   "observation": "\"People are fined for missing receipts.\" could close any bureaucracy song; no deck name, number or image anchors the outro."
+  }
+ ],
+ "verdict": "revise"
+}

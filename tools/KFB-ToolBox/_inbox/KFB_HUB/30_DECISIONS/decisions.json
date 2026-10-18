@@ -6549,6 +6549,36 @@
    "applies": "nach B32"
   },
   {
+   "id": "V-470",
+   "date": "2026-10-18",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "KayKit-Lizenz (Hub q35): trotz CC0-Lizenzdateien bleiben die Mystery-Series-Pakete privat, weil Georg sie teils gekauft bzw. über Patreon bezogen hat – „eher privat wenn möglich“. Regel V-427 gilt weiter (KayKit ohne _FREE privat); WS1 holt sie über den Dropbox-Connector (V-462).",
+   "values": {},
+   "owner": "alle",
+   "check": "-",
+   "source": "Hub q35",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Wunsch, gekaufte Pakete privat zu halten, auch wenn die Lizenz mehr erlauben würde.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-471",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "TUNE",
+   "text": "Kristall-Schachfiguren (Hub q36, TUNE): Leuchten in der Nacht verstärken – die Figuren als pulsierende, morphende Laternen auch außerhalb des Bretts einsetzbar; beim Bewegen hüpfen sie weiter nach ihren Schachzügen (Springer im L usw.) und können dem Spieler folgen, wenn er mit ihnen interagiert/gespielt hat – „Kleiner-Prinz-Logik“ (was man sich vertraut gemacht hat): bei KFB für Freundschaft, Zuneigung, hochschwingenden Fluff.",
+   "values": {},
+   "owner": "WS0 (kfb-gem Nacht-Leuchten) · WS1 (Begleiter-Logik später)",
+   "check": "Nacht-Bogen mit stärkerem Leuchten; Begleiter-Probe",
+   "source": "Hub q36 · V-460",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Leuchtende, folgsame Kristallfiguren werden zu Weltbegleitern und tragen das Freundschafts-/Fluff-Motiv.",
+   "applies": "gem-Tune jetzt, Begleiter später"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6636,7 +6666,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:824",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:826",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

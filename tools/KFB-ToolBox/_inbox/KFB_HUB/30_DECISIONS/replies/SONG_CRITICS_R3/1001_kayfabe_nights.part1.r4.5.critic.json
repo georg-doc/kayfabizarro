@@ -1,0 +1,37 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "1001_kayfabe_nights.part1.r4.5.suno.txt",
+  "critic": "claude-fresh-instance",
+  "blind": true,
+  "scores": {
+    "cardTruth": 3,
+    "performance": 3,
+    "arc": 3,
+    "sayability": 3,
+    "tone": 4,
+    "styleFit": 4
+  },
+  "flags": [
+    {"beat": 2, "rule": "C9", "observation": "Onboarding is one joke beat; nothing says who is speaking or what the listener is doing here, despite ample character budget."},
+    {"beat": 2, "rule": "C9", "observation": "No expert dog whistle from wrestling lore or history in the intro; only the name \"Shahryār\" rewards insiders."},
+    {"beat": 3, "rule": "A4", "observation": "\"Under Shahryār's deadline: Shahryār, the Destroyer\" says the name twice in one breath; opener on the first card bridges nothing."},
+    {"beat": 6, "rule": "B7", "observation": "\"Dunyazad buys her sister time for: The Grand Vizier\" builds a causal link the cards do not support; logic is muddled."},
+    {"beat": 9, "rule": "A2", "observation": "\"The stolen commission buys\" contradicts card 10, where the Sorcerer got \"screwed out of the commission\"; nothing stolen, nothing bought."},
+    {"beat": 9, "rule": "C13a", "observation": "Object-acting in the opener: an abstraction performs a purchase in \"The stolen commission buys\"."},
+    {"beat": 9, "rule": "A3", "observation": "\"cosmic heat, three wishes, No DQ\" recites almost the whole power text as a list, not as an aside."},
+    {"beat": 10, "rule": "A4", "observation": "Cutting \"She doesn't want the Vizier's son\" to \"not the Vizier's son\" makes the princess sound like she is not the son."},
+    {"beat": 12, "rule": "A4", "observation": "\"ring collapse, a dried ring\" is a power-name tail plus a fragment; meaning is lost, reads as padding."},
+    {"beat": 14, "rule": "A4", "observation": "\"floor literally knives, razor terrain\" drops the verb and appends the power name; fragment, not a sentence."},
+    {"beat": 15, "rule": "B6", "observation": "\"The sailor hunts an exit from\" repeats the opener family of beat 12 \"The sailor loses his shore to\" only three lines apart."},
+    {"beat": 15, "rule": "A2", "observation": "\"monster heel\": monster is absent from card 17 lore and power; \"the squash match destroys them\" has no referent."},
+    {"beat": 19, "rule": "C13a", "observation": "\"The wreck leads to another bargain\": a thing as agent; no earlier bargain exists for \"another\" to refer to."},
+    {"beat": 20, "rule": "A3", "observation": "\"hardcore valet, daggers\" tacks power name onto the line; same label-tail pattern in beats 7, 16, 19, 24, 25."},
+    {"beat": 21, "rule": "A8", "observation": "\"the botch, password\" keeps the game reference from \"play a 'Password' card\" as a bare label without image."},
+    {"beat": 23, "rule": "C13a", "observation": "Object-acting in the opener: a place behaves like a person in \"The cave attracts a claimant\"."},
+    {"beat": 26, "rule": "A4", "observation": "\"The thieves mark the door before:\" ends on a dangling preposition; same noun-verb-preposition-colon template in beats 6, 9, 12, 15."},
+    {"beat": 26, "rule": "B7", "observation": "Openers mostly follow props (commission, wreck, cave, jar, door) rather than people; KayfabeTip 3 largely unmet."},
+    {"beat": 27, "rule": "B7", "observation": "\"Behind the jar waits\" links unrelated tales by location only; an and-then bridge, neither therefore nor but."},
+    {"beat": 27, "rule": "A8", "observation": "\"tank class\" is a gaming class term kept as a label in the line."}
+  ],
+  "verdict": "revise"
+}

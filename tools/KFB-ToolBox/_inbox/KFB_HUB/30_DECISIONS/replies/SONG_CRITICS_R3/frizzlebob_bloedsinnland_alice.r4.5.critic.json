@@ -1,0 +1,28 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "frizzlebob_bloedsinnland_alice.r4.5.suno.txt",
+  "critic": "claude-fresh-instance",
+  "blind": true,
+  "scores": {"cardTruth": 3, "performance": 3, "arc": 3, "sayability": 3, "tone": 4, "styleFit": 3},
+  "flags": [
+    {"beat": 0, "rule": "D13", "observation": "No style file among critic inputs; genre family, 100-130 BPM and danceability cannot be verified. Lyric format matches the golden."},
+    {"beat": 1, "rule": "C9", "observation": "Thesis \"Alice gets a guilty verdict before the trial\" misattributes: the cards convict the Knave; Alice is never sentenced in the card source."},
+    {"beat": 2, "rule": "C9", "observation": "Single onboarding beat: the stand-up joke lands, but nobody says who speaks or what happens here; intro and outro carry no expert dog whistle."},
+    {"beat": 2, "rule": "C9", "observation": "\"a poem about tarts\" is unsupported; the card source only says the evidence is a poem that makes no sense."},
+    {"beat": 3, "rule": "A4", "observation": "Opener \"Alice chases a summons to:\" reads ungrammatically against the card name and has no link to the rabbit's lateness."},
+    {"beat": 4, "rule": "A3", "observation": "Bare rule labels tacked on as tags: \"Hookah haze\" here, \"Gaslight\" in beat 5, \"Narcolepsy\" in beat 8."},
+    {"beat": 13, "rule": "A4", "observation": "\"marmalade jar fall\" breaks grammar at line end; four nouns plus a stray verb are hard to say in one breath."},
+    {"beat": 13, "rule": "B7", "observation": "Openers mostly navigate places (\"Into the hole:\", \"One sip:\"); few give a card a want, wound or grudge."},
+    {"beat": 17, "rule": "A3", "observation": "\"time loop, repeat the last sentence\" recites the power as a game instruction, not as an aside or inversion."},
+    {"beat": 20, "rule": "C13a", "observation": "Opener \"the verdict returns\" lets an abstraction act like a person."},
+    {"beat": 20, "rule": "B7", "observation": "\"After croquet\" is temporal sequencing, an and-then link; same pattern in beat 15 \"Past the clocks, she enters\"."},
+    {"beat": 22, "rule": "A8", "observation": "\"Giant can intimidate the King\" and \"the Giant grows\" use the game state Giant; beat 23 uses \"Micro\" the same way."},
+    {"beat": 23, "rule": "A2", "observation": "\"Micro hides inside the other bottle\": the card hides inside other cards; the second bottle is a new image."},
+    {"beat": 24, "rule": "A3", "observation": "\"heads grow, tails shrink, edge a neck like a serpent\" recites the coin-flip mechanic; unparseable for a listener without the rule."},
+    {"beat": 26, "rule": "A3", "observation": "Slate-Pencil line recites the annoyance rule; \"SCREECH, screech\" doubles the sound word."},
+    {"beat": 28, "rule": "A4", "observation": "Opener \"The soldiers hide their mistake with:\" pre-explains the card goal \"conceal a mistake\", breaking closure."},
+    {"beat": 31, "rule": "B7", "observation": "Opener \"She tries the riddle before:\" dangles; the tarts card neither follows from nor twists the riddle."},
+    {"beat": 34, "rule": "C9", "observation": "Outro callback works but restates the intro parking joke; the power statement in beat 33 stays inside the deck plot."}
+  ],
+  "verdict": "revise"
+}

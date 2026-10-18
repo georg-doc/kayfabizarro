@@ -1,0 +1,35 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "kayfabizarro_monopolies_manipulation_murder_vol.part2.r5.1.suno.txt",
+  "critic": "claude-fresh-instance",
+  "blind": true,
+  "scores": {
+    "cardTruth": 3,
+    "performance": 2,
+    "arc": 3,
+    "sayability": 3,
+    "tone": 4,
+    "styleFit": 3
+  },
+  "flags": [
+    {"beat": 0, "rule": "D13", "observation": "No style text accompanies the candidate; danceable groove, BPM and genre rotation cannot be verified."},
+    {"beat": 1, "rule": "C9", "observation": "Thesis \"offshore finance makes the bill somebody else's problem\" covers only the BCCI page; drug money, fiat, CBDC and exit cards fall outside it."},
+    {"beat": 2, "rule": "C9", "observation": "Only one onboarding beat; no speaker, no card-game premise. Punch \"considerably longer ledger\" is vague and needs prior BCCI knowledge; normies miss it."},
+    {"beat": 5, "rule": "A4", "observation": "\"BCCI funnel millions\" is ungrammatical; source \"helped funnel\" lost its auxiliary in the cut."},
+    {"beat": 6, "rule": "A2", "observation": "\"CIA used BCCI for offshore finance and future enemies\" drops the teaching verb; the cut turns the claim into CIA using future enemies."},
+    {"beat": 6, "rule": "A4", "observation": "Opener plus double colon gives 118 characters with two name-like stops before the claim; not one breath."},
+    {"beat": 6, "rule": "B7", "observation": "\"After Price Waterhouse\" is a temporal and-then link, not therefore/but; same pattern at beat 30 with \"After BCCI\"."},
+    {"beat": 7, "rule": "A3", "observation": "Card verb \"washed\" dropped; \"cartel drug capital through international financial markets\" is a verbless fragment, the claim carried only by the name."},
+    {"beat": 9, "rule": "B7", "observation": "One-word labels \"Police.\", \"Doctrine.\", \"Control.\", \"Protest.\" tag topics; none bridges from the previous card by consequence or twist (tips 1 and 2)."},
+    {"beat": 9, "rule": "E17", "observation": "Opener micro-arc flatter than the golden take: topic labels at fixed every-third-beat spacing, no escalating sequence across a page."},
+    {"beat": 14, "rule": "A3", "observation": "\"socialize all losses across Eurozone\" recites the power as a command; same at beat 25 \"build exact same panopticon\" and beat 28 \"expose illusion\"."},
+    {"beat": 15, "rule": "A4", "observation": "BIS quote collapses into \"central bank absolute control\": verbless, attribution gone, card punch lost; opener \"Control.\" doubles the word."},
+    {"beat": 18, "rule": "B7", "observation": "Opener \"Cashless.\" repeats the card name; beat 24 \"Referendum.\" and beat 27 \"Protest.\" repeat words already in their card lines."},
+    {"beat": 19, "rule": "A4", "observation": "\"dissidents dread\" reads as an unfinished verb phrase; source \"existential dread for dissidents\" loses its sense in the cut."},
+    {"beat": 21, "rule": "A3", "observation": "Subject \"Tech-payment monopolies\" dropped; \"fine customers for spreading misinformation\" now sounds like a rule instruction, with \"fine\" doubled."},
+    {"beat": 27, "rule": "A2", "observation": "Conditional \"If Occupy had become\" dropped; \"world would be different\" now floats without its condition, which alters the card's claim."},
+    {"beat": 30, "rule": "A4", "observation": "Isolated \"fluffy\" between \"cash is resistance\" and \"starve the beast\" carries no sense; opener and card name stack two colons."},
+    {"beat": 31, "rule": "C13a", "observation": "\"Four hundred branches passed through the system\": branches act as agents, so the outro setup rests on object-acting."}
+  ],
+  "verdict": "revise"
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "geopolitical_thrillers_conspiracy_theories.part1.r5.1.suno.txt",
+  "critic": "claude-fresh-instance",
+  "blind": true,
+  "scores": {"cardTruth": 3, "performance": 2, "arc": 3, "sayability": 3, "tone": 3, "styleFit": 4},
+  "flags": [
+    {"beat": 2, "rule": "C9", "observation": "One setup-punch, but no beat says who speaks or what the satirical premise is; insider references stop at the card names Rhodes and Milner."},
+    {"beat": 3, "rule": "B7", "observation": "Opener \"At the dinner table.\" restates beat 2's \"At family dinner\" without advancing; no therefore/but link into the first card."},
+    {"beat": 6, "rule": "A4", "observation": "Line ends in the fragment \"sovereign natural resources\"; the card's claim about uppity states vanishes, leaving an unexplained noun pile."},
+    {"beat": 8, "rule": "A2", "observation": "Cut to \"owns companies\" drops the card's turn \"that dictate it\"; the line loses its punch."},
+    {"beat": 9, "rule": "A4", "observation": "Stacked colon chain \"Milner's round table: The Five Star Slush Fund:\" sounds like a renamed card; 112 characters, hard in one breath."},
+    {"beat": 9, "rule": "B7", "observation": "Callback opener is a bare name label with no causal or twist link from BlackRock's Aladdin AI to the slush fund."},
+    {"beat": 13, "rule": "A4", "observation": "Ending \"surface world to destroy itself.\" drops the card's waiting verb; the fragment reads garbled."},
+    {"beat": 14, "rule": "E16b", "observation": "\"white peacekeepers\" turns the card's uniform colour (\"The peacekeepers wear white\") into a phrase heard as race; singles out a group."},
+    {"beat": 20, "rule": "A2", "observation": "\"disguised elite debauchery\" flips the card: the operation was disguised as debauchery, not the debauchery disguised."},
+    {"beat": 21, "rule": "B7", "observation": "\"Cecil's original deal:\" calls back card 1 but gives no logical link to deepfake extortion; the double colon stalls the breath."},
+    {"beat": 23, "rule": "A4", "observation": "\"Flexner medicine, petroleum-based patentable extraction\" is a noun stack; the Flexner Report claim no longer reads as a sentence."},
+    {"beat": 24, "rule": "B7", "observation": "Openers \"Cold war.\", \"Patent.\", \"Chemical.\", \"Lab bench.\" are one-word topic labels at fixed three-beat spacing: props, not people, no therefore/but."},
+    {"beat": 26, "rule": "E16b", "observation": "Victim line compressed to \"dead babies for tests\"; the card's stealing and radiation context dropped, leaving bare shock wording."},
+    {"beat": 28, "rule": "E16b", "observation": "Name cut to \"The Scamdemic\"; dropping \"Board Game\" removes the parody marker, so a health-conspiracy label is voiced straight."},
+    {"beat": 29, "rule": "A4", "observation": "Card's ironic turn \"It's not a conspiracy; it's just excellent planning!\" shrinks to \"planning.\" and the joke no longer lands."},
+    {"beat": 30, "rule": "A3", "observation": "Line recites the power rule \"automatically reclassify them as anxiety-related\"; the lore's claim about patenting oncology treatments is gone."},
+    {"beat": 31, "rule": "C13b", "observation": "Outro \"isn't selling research. He's selling a subscription\" is a generic isn't-X-it's-Y aphorism; fits any conspiracy song, names no deck image."},
+    {"beat": 31, "rule": "B7b", "observation": "Outro calls back neither the intro's dinner-table uncle nor the PowerPoint, and does not echo the deck title."}
+  ],
+  "verdict": "revise"
+}

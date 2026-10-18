@@ -1,0 +1,132 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "geopolitical_thrillers_conspiracy_theories.part2.r5.1.suno.txt",
+ "critic": "claude-fresh-instance",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 2,
+  "arc": 3,
+  "sayability": 3,
+  "tone": 4,
+  "styleFit": 3
+ },
+ "flags": [
+  {
+   "beat": 0,
+   "rule": "D13",
+   "observation": "No style text with variants A and B, genre or BPM accompanies the candidate; danceability and genre rotation cannot be verified."
+  },
+  {
+   "beat": 1,
+   "rule": "C13",
+   "observation": "\"a thriller has to meet a fact-check\" lets an abstraction act like a person; reads as a generic aphorism more than the deck's thesis."
+  },
+  {
+   "beat": 1,
+   "rule": "C9",
+   "observation": "Intro has only two beats and no onboarding: no speaker, no statement of what this track does or of the satirical premise."
+  },
+  {
+   "beat": 2,
+   "rule": "C9",
+   "observation": "Stand-up setup with the neighbour at three a.m. gets no punch; the second sentence is earnest, and the dog whistles are only card names."
+  },
+  {
+   "beat": 6,
+   "rule": "C11",
+   "observation": "Outside card text the stem forward- appears three times (forwards, forwarded, forwarding) across beats 2 and 6."
+  },
+  {
+   "beat": 9,
+   "rule": "B7",
+   "observation": "Opener \"Instant.\" merely echoes \"instantly\" in the same line; no therefore/but link from Smart Dust."
+  },
+  {
+   "beat": 12,
+   "rule": "B7",
+   "observation": "\"After the Twitter Files:\" is temporal sequencing, an and-then link; no causal or twist tie to the lockdown card."
+  },
+  {
+   "beat": 18,
+   "rule": "B7",
+   "observation": "\"Hat.\" is a one-word label echoing the card's own hat; no bridge from Vatican Secret Archives before it."
+  },
+  {
+   "beat": 21,
+   "rule": "B7",
+   "observation": "\"Buried.\" repeats \"buried\" from the same line; no causal or twist link from The Akashic Records."
+  },
+  {
+   "beat": 24,
+   "rule": "B7",
+   "observation": "\"Aircraft.\" is a bare label with no link to Operation Highjump; openers rarely sell a card as a character with a want."
+  },
+  {
+   "beat": 30,
+   "rule": "B7",
+   "observation": "\"Unplug.\" echoes \"unplugged\" in the line; a signpost, not a bridge from The Satire Sanity Shield."
+  },
+  {
+   "beat": 31,
+   "rule": "B7b",
+   "observation": "Outro calls back to the merch card, not to an intro image such as the neighbour or the forwarded meme."
+  },
+  {
+   "beat": 4,
+   "rule": "A4",
+   "observation": "\"independent thought suspicious; disinformation.\" ends on a dangling noun; the labeling mechanic is lost and the clause reads unexplained."
+  },
+  {
+   "beat": 7,
+   "rule": "A2",
+   "observation": "\"billionaire dream escapes death\" makes the dream the actor; card states the dream is to escape death, and \"peasantry\" is dropped."
+  },
+  {
+   "beat": 8,
+   "rule": "A2",
+   "observation": "Card says \"whoever holds the DARPA contract\"; the line \"report to DARPA\" shifts the claim's target."
+  },
+  {
+   "beat": 9,
+   "rule": "A4",
+   "observation": "\"like a side of beef, stops thinking\" has no verb or subject; with \"irradiates you\" cut, the image does not parse."
+  },
+  {
+   "beat": 14,
+   "rule": "A3",
+   "observation": "\"false choice\" is the power label recited as a closing tag."
+  },
+  {
+   "beat": 16,
+   "rule": "A4",
+   "observation": "\"accused of secret society\" is garbled grammar, and \"holy espionage\" is the power label appended as a list item."
+  },
+  {
+   "beat": 19,
+   "rule": "A2",
+   "observation": "\"cosmic church politics\" fuses \"cosmic politics\" and \"the church tried to bury\" into a new claim."
+  },
+  {
+   "beat": 23,
+   "rule": "A4",
+   "observation": "\"Admiral Byrd south\" is verbless; the card's \"never poke the ice wall again\" punch shrinks to \"treaty and an ice wall\"."
+  },
+  {
+   "beat": 24,
+   "rule": "A2",
+   "observation": "\"OSS stole black-budget spark\" merges two card sentences; the spark that ignited aerospace supremacy becomes the stolen object."
+  },
+  {
+   "beat": 25,
+   "rule": "E16b",
+   "observation": "Card's ironic frame \"you're just a crazy conspiracy theorist\" is cut; \"solar energy blocked\" from the power now reads as flat assertion."
+  },
+  {
+   "beat": 28,
+   "rule": "A4",
+   "observation": "\"accessorize history ironically\" loses its motive once \"If they won't declassify history\" is cut; the line feels clipped."
+  }
+ ],
+ "verdict": "revise"
+}
