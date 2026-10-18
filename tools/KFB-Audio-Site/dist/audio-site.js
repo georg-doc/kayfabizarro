@@ -106,7 +106,7 @@ function getContextSnapshot(){
 function exposeApi(){
  const musicPcm=new Float32Array(256);
  let audibleMusicUntil=0;
- window.KFBAudioSite={version:'0.8.1',get audioContext(){return graph?.ctx||null},get audioContextsCreated(){return audioContextsCreated},resume:resumeGraph,async setAuditionDry(active,isCurrent=()=>true){await resumeGraph();if(!isCurrent())return;rampGain(graph.master.gain,active?0:1,0.08)},musicContext:{get contract(){return interaction},setState:setContextState,setVoiceActive,getSnapshot:getContextSnapshot},adaptiveMusic:{startDeck:startAdaptiveDeck,stop:()=>adaptive.stop(),setPreset:name=>adaptive.setPreset(name),setBoundary:mode=>adaptive.setBoundary(mode),getSnapshot:()=>adaptive.snapshot()}};
+ window.KFBAudioSite={version:'0.9.0',get audioContext(){return graph?.ctx||null},get audioContextsCreated(){return audioContextsCreated},resume:resumeGraph,async setAuditionDry(active,isCurrent=()=>true){await resumeGraph();if(!isCurrent())return;rampGain(graph.master.gain,active?0:1,0.08)},musicContext:{get contract(){return interaction},setState:setContextState,setVoiceActive,getSnapshot:getContextSnapshot},adaptiveMusic:{startDeck:startAdaptiveDeck,stop:()=>adaptive.stop(),setPreset:name=>adaptive.setPreset(name),setBoundary:mode=>adaptive.setBoundary(mode),getSnapshot:()=>adaptive.snapshot()}};
  window.KFBAudioSite.registerAudioTick=fn=>{audioTickConsumers.add(fn);return()=>audioTickConsumers.delete(fn)};
  window.KFBAudioSite.setWeatherFilter=({snow=false}={})=>{if(!graph)return;const p=graph.weatherFilter.frequency;hold(p,graph.ctx.currentTime);p.linearRampToValueAtTime(snow?4200:20000,graph.ctx.currentTime+1.5)};
  Object.defineProperty(window.KFBAudioSite,'weatherFilterHz',{get:()=>graph?.weatherFilter.frequency.value||20000});
@@ -223,4 +223,4 @@ function bind(){
 
 function renderAll(){renderCatalog();fillSelect($('#deckA'));fillSelect($('#deckB'));$('#deckB').selectedIndex=Math.min(1,$('#deckB').options.length-1);fillSelect($('#pRefs'),false);fillPromptStyles();renderSources();setFadeGains(0,0);filesChanged([]);renderContext();renderAdaptive()}
 
-load().then(()=>Promise.all([import('./footsteps/panel.mjs?v=0.8.1'),import('./ambience/panel.mjs?v=0.8.1')])).catch(e=>{document.body.insertAdjacentHTML('beforeend','<pre style="padding:20px;color:#f88">'+escapeHtml(e.stack||e)+'</pre>')});
+load().then(()=>Promise.all([import('./footsteps/panel.mjs?v=0.9.0'),import('./ambience/panel.mjs?v=0.9.0'),import('./racer/panel.mjs?v=0.9.0')])).catch(e=>{document.body.insertAdjacentHTML('beforeend','<pre style="padding:20px;color:#f88">'+escapeHtml(e.stack||e)+'</pre>')});
