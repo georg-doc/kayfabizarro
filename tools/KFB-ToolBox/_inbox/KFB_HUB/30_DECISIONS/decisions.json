@@ -6234,6 +6234,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-449",
+   "date": "2026-10-18",
+   "area": "Welt",
+   "verdict": "TBD",
+   "text": "Umgebungs-Leben (Georg 18.10., Machbarkeit): (1) bunte Luftballons (KayKit-Clown-Ballons) steigen als Zufalls- bzw. Auslöse-Ereignis hinter Horizont oder Hügelkuppe auf und treiben mit dem Wind heran – machbar performant als InstancedMesh (ein Draw-Call je Ballon-Form), Bewegung aus dem gemeinsamen Wind-Feld, Schnur als Linie/Shader, Spawn hinter der Kuppe per Horizont-Test, Abbau außer Sicht; (2) Wind-Puppen/Gebläse-Tänzer (Tube Men) mit den KFB-Pflanzen – Röhre als instanzierte Kette mit Biege-Shader, gleiches Wind-Modul; (3) perspektivisch Fundsachen-Schwarm als Meta-Entität: Snacks/Candy als instanzierter Boids-Schwarm, der durch die Landschaft saust und Formen bildet (Zielpunkte aus einem Mesh, z. B. Riesen-Burger) – Spender: Geo-Nodes-Rigid-Body-Clip (r/geometrynodes). Reihenfolge: nach C3b als Slice „Umgebungs-Leben“ mit einem Wind-Modul für Pflanzen, Fluff, Ballons, Tänzer.",
+   "values": {},
+   "owner": "WS0 (Plan) → WS1 (Laufzeit) · WSB (Ballons/Tänzer-Assets in Knete)",
+   "check": "Perf-Probe: 200 Ballons + 20 Tänzer + Schwarm 300 Teile ≥ 55 fps",
+   "source": "Georg 18.10. · Claude-Design-Billboard-Slice",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bewegte Umgebung macht die Welt lebendig; mit Instanzierung und einem gemeinsamen Wind-Modul bleibt es billig.",
+   "applies": "nach C3b"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6321,7 +6336,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:794",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:798",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

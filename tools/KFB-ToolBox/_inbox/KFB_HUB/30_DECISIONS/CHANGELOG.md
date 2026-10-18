@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-449 Umgebungs-Leben (Ballons hinter der Kuppe, Wind-Tänzer, Fundsachen-Schwarm) als machbar eingeplant, Slice nach C3b. ElevenLabs-Generator 40_AUDIO/elevenlabs_r1/sfx_gen.py + racer_r1.json (10 Sounds, ≈1.600 Credits); Schlüssel nur aus dem Mac-Schlüsselbund – Eintrag noch nicht im Anmelde-Schlüsselbund gefunden.
 - Hub: q22 Pubs + Bento (Türscheitel 2,25 m, beide Rigs am Eingang), q23 Fundsachen (×1,25, schwebend, ohne Saum), q24 Inseln r2 mit Paletten – alle Bögen v1.2.1 von WS0 geprüft. B29 zurückgehalten (Labyrinth-Probe war ein geschlossener Kasten; Totale bei flachen Bühnen zoomte hinein → v1.2.1 behoben); WSB baut echte Labyrinth-Proben (5×5 eckig, polar, Baukasten-Reihe). Licht v1.1 + Bühne v1.2 + öffentliche WSB-Stände auf assets/kfb-wsb-public-2026-10-18 @5c495846 für WS1.
 - Bühne v1.2.1: Größenfiguren-Pfade auf die Worldbuilder-Lab-Kopien (auf beiden Macs, sha256 gleich); fehlende Größenfigur = G2 FAIL (WSB fand einen 404, der als PASS durchlief). WSB rendert neu.
 - Abnahme-Bühne v1.2 + Licht v1.1 FREIGEGEBEN (WS0 geprüft: Pelican mit FrizzleBob mit Augen + DemonLord an der Tür, Pubs jetzt 2,25 m Türscheitel, B28-Raster lesbar mit Detail links/Mitte/rechts, Schweben über abgelöste Schatten sichtbar, G6 grün). WSB rendert Pubs/Bento, B28, B27 r2, B29. Tür-Messwerkzeug PROOF_STAGE_R1/tools/door.mjs.
