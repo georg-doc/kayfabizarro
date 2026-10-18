@@ -12,6 +12,14 @@
 
 
 
+
+## 18.10. · PRIORITY: found items demo on terrain = stage C3b (Georg: "I don't see a terrain/demo setup")
+Georg wants to see the found items **in the game**. Brief: `replies/BRIEF_WS1_FUNDSACHEN_DEMO_R1.md` (Hub b111).
+- Right after C3, before C4.
+- Items float at hip height and rotate; fluff rolls on the ground; pick up into the backpack and throw away.
+- Use stage-light v1.1 as soon as WS0 sends it: the shadow seam is being fixed at the root.
+- Since §78 (01:23) there has been no new status from you. Please report the current stage (C1/C2) briefly in WS1_STATUS.
+
 ## 18.10. · Addendum to the found items: presentation (V-437)
 Georg: **Props, food, drinks and similar found items float at hip height of the Medium rig** and rotate slowly with a gentle bob (pickup principle as in Whackman). **Fluff, in contrast, lies on the ground**: it bounces, rolls and comes to rest (the C3 physics stays as it is).
 - Hover height = hip height of the Medium rig (derive it from the rig, not a fixed number); ±5 % bob, ~1 turn per 3 s, phase randomised per item so they don't move in sync.

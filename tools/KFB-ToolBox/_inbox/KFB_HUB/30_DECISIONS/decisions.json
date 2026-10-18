@@ -6099,6 +6099,21 @@
    "applies": "Planung; Download nach Georgs OK"
   },
   {
+   "id": "V-440",
+   "date": "2026-10-18",
+   "area": "Licht",
+   "verdict": "FAIL",
+   "text": "Schattensaum-Bug erneut (Georg 18.10., B28-Bogen Tomate/Käse): heller Saum zwischen Objektfuß und Schlagschatten (Peter-Panning). Ursache laut WS0: kfb-stage-light.v1 leitet normalBias aus der Texelgröße des ganzen Schattenbereichs ab; bei kleinen Requisiten in einem großen Bereich wird der Versatz sichtbar; der Selbsttest prüfte nur eine 0,5-m-Kugel. Fix an der Wurzel: kfb-stage-light.v1.1 mit größenrobustem Bias, enger Einpassung auf das Objekt, Selbsttest mit 0,1/0,3/1/6 m, neues Gate G6 „Schattensaum“ auf jedem Abnahmebogen. Außerdem: Fundsachen-Bögen zeigen die Teile schwebend auf Hüfthöhe (V-437); Gelände-Demo als WS1-Stufe C3b.",
+   "values": {},
+   "owner": "WS0 (Licht-Modul v1.1, Bühne v1.2) → WS1/WSB/ToolBox übernehmen v1.1",
+   "check": "G6 grün auf allen Regressionsbögen; Zoom-Ausschnitte vorher/nachher; Georg",
+   "source": "Georg 18.10. · V-203 · V-392",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Selbsttest von V-392 deckte nur eine Objektgröße ab; kleine Requisiten fielen durch das Raster, und der Fehler kam wieder.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6186,7 +6201,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:789",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:790",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

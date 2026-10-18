@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-440 Schattensaum-Bug (FAIL Georg): Ursache Bias aus großem Schattenbereich bei kleinen Requisiten; Fix an der Wurzel in kfb-stage-light.v1.1 + Gate G6 auf jedem Bogen (in Arbeit, mit Bühne v1.2 und Schwebe-Modus für Fundsachen). WS1-Brief Fundsachen-Demo im Gelände als Stufe C3b (Hub b111); WS1 seit §78 ohne neuen Stand. WSB B29 Mauer-Gizmo aus Scan (Downloads von Georg freigegeben).
 - V-438 Maßstab: Medium-Rig passt durch Türen, Large-Rig muss sich bücken; Abnahme-Bühne v1.2 zeigt beide Rigs in Knete am Eingang (in Arbeit), Pubs werden neu vorgelegt (q16). V-439 Mauer-Gizmo aus Scan Stone monument (CC0): Gizmo-Wand mit Knete-Skins, Gelände-Werkzeug, Labyrinthe; drei weitere Kandidaten aus Georgs Asset-Suche notiert.
 - V-437 Fundsachen schweben auf Hüfthöhe (Medium-Rig) und drehen/floaten wie Whackman-Pickups; Fluff liegt, springt, rollt am Boden. Abnahme-Bühne v1.1.1 (alle drei Augenzustände als Standard, Eingang abschaltbar per proof:false). Hub q19 Ninjas B26 + Aiko-Bento, q20 Fundsachen B28 (je Bögen der Abnahme-Bühne).
 - V-436 Styles tanzbar: D13b (100–130 BPM, kein Noir/Downtempo, Genre-Rotation über 5 Songs), song_gate style; WSA-Brief b110 ergänzt.
