@@ -56,11 +56,16 @@
     ],
     "glbCurrent": {
       "source": "local-private",
+      "path": "hub:50_BLENDER/RIM_R1/_privat_kauf_asset/LadyDory_RigMedium.toolbox.r10_rimV1.glb",
+      "sha256": "a590cac43fbee780c82cf7517095f3b0331d389468a98da293b15ffd8d599730",
+      "bytes": 4662160,
+      "why": "V-457 (Hub q28): Sockelrand V1 schlank; E2-Lidhaut, Augen und 80°-Kante unverändert (WSB rim_diff.py)",
+      "note": "Kauf-Asset-Anteil (Space-Ranger-Anzug) → nicht ins öffentliche Repo; laden über lokalen Resolver (PROOF_STAGE_R1/sources.json) bzw. später privaten Speicher (V-427). body.glb bleibt als Herkunft (r4)."
+    },
+    "glbPrevious": {
       "path": "hub:50_BLENDER/B14/_privat_kauf_asset/LadyDory_RigMedium.toolbox.r9.glb",
       "sha256": "b41aa5da45780304d9c01fca83fcda0cf1f09e0f8c7ee8d53f33208413bc1e3c",
-      "bytes": 4661960,
-      "why": "V-422/V-430: r5-Kopf + edge80-Sockel, Normalen repariert (r9)",
-      "note": "Kauf-Asset-Anteil (Space-Ranger-Anzug) → nicht ins öffentliche Repo; laden über lokalen Resolver (PROOF_STAGE_R1/sources.json) bzw. später privaten Speicher (V-427). body.glb bleibt als Herkunft (r4)."
+      "bytes": 4661960
     }
   },
   "originals": {

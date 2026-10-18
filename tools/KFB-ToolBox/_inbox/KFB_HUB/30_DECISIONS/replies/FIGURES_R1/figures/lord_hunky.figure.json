@@ -58,11 +58,16 @@
     ],
     "glbCurrent": {
       "source": "local-private",
+      "path": "hub:50_BLENDER/RIM_R1/_privat_kauf_asset/LordHunky_edge80.r4e_rimV1.glb",
+      "sha256": "3f793b0627bfa747511b3efa61b31205f162fd366ee28874c7792348eabb09b8",
+      "bytes": 3918308,
+      "why": "V-457 (Hub q28): Sockelrand V1 schlank; E2-Lidhaut, Augen und 80°-Kante unverändert (WSB rim_diff.py)",
+      "note": "Kauf-Asset-Anteil (Space-Ranger-Anzug) → nicht ins öffentliche Repo; laden über lokalen Resolver (PROOF_STAGE_R1/sources.json) bzw. später privaten Speicher (V-427). body.glb bleibt als Herkunft (r4)."
+    },
+    "glbPrevious": {
       "path": "hub:30_DECISIONS/replies/E2_ATTACH_R1/assets/variants/LordHunky_edge80.r4e.glb",
       "sha256": "99a6dba47d229da92c0317d524989653e7bf8adb148ca85d061678b84963e5d3",
-      "bytes": 3917916,
-      "why": "V-422 Sockelrand 80°",
-      "note": "Kauf-Asset-Anteil (Space-Ranger-Anzug) → nicht ins öffentliche Repo; laden über lokalen Resolver (PROOF_STAGE_R1/sources.json) bzw. später privaten Speicher (V-427). body.glb bleibt als Herkunft (r4)."
+      "bytes": 3917916
     }
   },
   "originals": {
