@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Bühne v1.2.2: kein Box-Kontaktschatten unter hohlen Grundrissen (< 40 % belegt; L-Mauer zeigte dunklen Fleck im leeren Innenraum). WSB B29 r3 (organische Krone Standard, W1-Wiederholfehler behoben, W2 unregelmäßige Ziegel, W4 Fels, modelliertes Relief als Probe) → Neu-Render + Vergleich modelliert/flach für Georg.
 - V-455 Schach-Diorama „Die Welt als Spielzeug“ (berühmte Partien animiert, Domino-Parcours, lebendige Requisiten, später Kayfabe-Schach) eingeplant; Kandidat Poly Haven Chess Set (CC0). ElevenLabs-Test: Schlüssel weiter nicht im Anmelde-Schlüsselbund lesbar; Skript nimmt zusätzlich ~/KFB_Geheim/elevenlabs.txt (außerhalb Dropbox).
 - WSB: floatTilt für alle Werkzeuge (9/53, V-453); Kampf-Ruhepose: in Motion Library v2 keine echte Kampfhaltung, bester Kandidat offensive_idle_a → Hub q30; B7 r3 (Stein A zurückgesetzt + Risse, Holz B1 Seil / B2 Stoßzähne) → Hub q29; Sockelrand R1: Varianten kaum sichtbar, Ursache dünner Ring + Dorys Kragen → Hub q28 (a neuer Wulst / b nur Kragen glätten). WSB-Platte 40 GB frei: schwere Läufe nur mit Reserve.
 - Hub q25 Mauer PASS Richtung (V-452: Kerben nur Option, organischere Höhen, stärkere Textur, Skins Backstein/felsig/Holzlatten), q26 Fundsachen PASS (V-453: Griff-Werkzeuge wie Hammer auch schräg, Bühne liest floatTilt-Flag), q27 Ninja-Probe PASS (V-454). Hub ohne offene Fragen.

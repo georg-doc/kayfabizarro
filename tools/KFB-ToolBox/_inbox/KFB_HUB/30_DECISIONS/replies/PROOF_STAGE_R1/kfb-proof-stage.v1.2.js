@@ -414,11 +414,17 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     scene.add(rig.object3d);
     /* contact AO on the real floor footprint (vertices in the lowest band), not the whole box (T-pose arms, lamp arms); v1.2: one per item
        that touches the floor (lineups get one per item, floating items none) */
-    const aoProxies = [];
+    const aoProxies = [], aoSkipped = [];
     for (const { it, b } of itemBoxes) {
       if (b.min.y > 0.02) continue;                                       // floating: no contact AO
       const ih = b.max.y - b.min.y, band = b.min.y + Math.max(0.03, 0.04 * ih), fp = bodyBounds(THREE, root, (m) => isUnder(m, it), (v) => v.y <= band);
       const fpS = fp.isEmpty() ? new THREE.Vector3(0.3, 0.01, 0.3) : fp.getSize(new THREE.Vector3()), fpC = fp.isEmpty() ? b.getCenter(new THREE.Vector3()) : fp.getCenter(new THREE.Vector3());
+      // v1.2.2: hollow footprints (L-walls, rings, mazes) get no box AO – a blob in the empty middle reads as a defect; the shadow map already gives contact
+      if (!fp.isEmpty() && fpS.x * fpS.z > 0.5) { const N = 8, occ = new Uint8Array(N * N), v = new THREE.Vector3(); root.updateMatrixWorld(true);
+        it.traverse((m) => { if (!m.isMesh || m.userData.noMeasure) return; const P = m.geometry.attributes.position; const step = Math.max(1, Math.floor(P.count / 40000));
+          for (let i = 0; i < P.count; i += step) { v.fromBufferAttribute(P, i).applyMatrix4(m.matrixWorld); if (v.y > band) continue;
+            const cx = Math.min(N - 1, Math.max(0, Math.floor((v.x - fp.min.x) / fpS.x * N))), cz = Math.min(N - 1, Math.max(0, Math.floor((v.z - fp.min.z) / fpS.z * N))); occ[cz * N + cx] = 1; } });
+        let filled = 0; for (const o of occ) filled += o; if (filled / (N * N) < 0.4) { aoSkipped.push({ item: it.name || '?', fill: +(filled / (N * N)).toFixed(2) }); continue; } }
       const aoProxy = new THREE.Group(); aoProxy.name = 'proof_ao_footprint';
       const aoBox = new THREE.Mesh(new THREE.BoxGeometry(Math.max(Math.min(0.12, ih), fpS.x * 1.25), 0.01, Math.max(Math.min(0.12, ih), fpS.z * 1.35)), new THREE.MeshBasicMaterial({ visible: false }));
       aoBox.userData.noMeasure = true; aoBox.castShadow = aoBox.receiveShadow = false; aoProxy.add(aoBox);
@@ -459,7 +465,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     }
     const aspect = Math.max(size.x, size.z) / Math.max(0.05, Math.min(size.x, size.z)), nItems = itemBoxes.length;
     const lineup = type === 'prop' && (aspect > LINEUP_ASPECT || nItems >= MULTI_ITEMS), grid = lineup && Math.min(size.x, size.z) > 3 * Hs;
-    S = { root, turntable, aoProxies, scene, float: flt, lineup, grid, items: itemBoxes.map((x) => x.it), lineupAspect: aspect, lineupYaw: size.z > size.x ? Math.PI / 2 : 0, minCaster, cyl, sunDir, rig, ao, cove, coveClay, sil: type === 'character' || !figs.length ? sil : null, silRoot: sil, eyes, clay, type, id, card, bounds: B, Hs, rxz, s, loadErrors, skipClay, hidden, faceParts, units, k, eyePixels: null, entrance, scaleEntrance, scaleFig, figWarn, view: null, fitBase: fit, fitNow: fit };
+    S = { root, turntable, aoProxies, aoSkipped, scene, float: flt, lineup, grid, items: itemBoxes.map((x) => x.it), lineupAspect: aspect, lineupYaw: size.z > size.x ? Math.PI / 2 : 0, minCaster, cyl, sunDir, rig, ao, cove, coveClay, sil: type === 'character' || !figs.length ? sil : null, silRoot: sil, eyes, clay, type, id, card, bounds: B, Hs, rxz, s, loadErrors, skipClay, hidden, faceParts, units, k, eyePixels: null, entrance, scaleEntrance, scaleFig, figWarn, view: null, fitBase: fit, fitNow: fit };
     S.head = type === 'character' ? headBounds(THREE, root, eyes) : null;
     if (eyes?.status === 'OK') S.eyePixels = measureEyePixels();
     const gates = runGates(THREE, S);
@@ -668,7 +674,7 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
       size_m: S.bounds.getSize(new THREE.Vector3()).toArray().map((v) => +v.toFixed(3)), height_m: +S.Hs.toFixed(3),
       hiddenOriginals: S.hidden, cardFaceParts: S.faceParts, entrance: S.entrance ? { id: S.entrance.id, outsideBounds: !!S.entranceOutside, node: S.entrance.node.name, pos_u: S.entrance.pos.toArray(), forward_xz: S.entrance.fwd, width_m: S.entrance.width_m } : null, clay: { version: CLAY_VERSION, profile: S.clay.profile, seed: S.clay.seedLabel, scaleRef: S.clay.scaleRef, meshes: S.clay.meshes, cove: 'background, relief off (neutral)' },
       light: { module: LIGHT_VERSION, moods: 'MOODS_MESA', tod: 1, tone: 'ACES Filmic', exposure: 1, shadow: 'PCFSoft, fitAround (subject + cast shadow), front faces cast, mapSize 4096', shadowNow: S.rig.info().shadow, minCaster_m: +S.minCaster.toFixed(3), figureLight: true, rim: false, mood: S.rig.info().mood },
-      pose: S.float, lineup: S.lineup ? { aspect: +S.lineupAspect.toFixed(2), items: S.items.length, grid: !!S.grid, elevation_deg: S.grid ? EL_GRID : S.float?.on ? EL_FLOAT : 'standard', slots: 'side -> detail_right; near_face = Mitte, detail_low = links' } : null, defaultViews: viewsFor(S.type, S.lineup), shadowSeam: S.seam || null, contactAO: { items: S.aoProxies.length },
+      pose: S.float, lineup: S.lineup ? { aspect: +S.lineupAspect.toFixed(2), items: S.items.length, grid: !!S.grid, elevation_deg: S.grid ? EL_GRID : S.float?.on ? EL_FLOAT : 'standard', slots: 'side -> detail_right; near_face = Mitte, detail_low = links' } : null, defaultViews: viewsFor(S.type, S.lineup), shadowSeam: S.seam || null, contactAO: { items: S.aoProxies.length, skippedHollow: S.aoSkipped },
       eyes: r || { status: S.eyes?.status || 'none', reason: S.eyes?.reason || null }, eyePixels: S.eyePixels,
       head_m: S.head ? S.head.getSize(new THREE.Vector3()).toArray().map((v) => +v.toFixed(3)) : null,
       scaleRef: scaleRefInfo(),
