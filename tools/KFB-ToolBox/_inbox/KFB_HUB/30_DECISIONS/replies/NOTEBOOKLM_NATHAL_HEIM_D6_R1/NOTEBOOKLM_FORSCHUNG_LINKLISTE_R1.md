@@ -17,25 +17,160 @@
 
 ## NATHAL · Original und Trainingspraxis
 
-- **N01 · NATHAL-Training – Hannes Schmid** — [A, Anbieter-Primärdarstellung]\n  https://www.nathal-training.de/\n  Relevanz: Selbstbeschreibung, Ziele, Erlebnisberichte.\n- **N02 · Was ist NATHAL? – Visualisierung und zwei Begleitgestalten** — [A, Anbieter-Primärdarstellung]\n  https://www.nathal-training.de/was-ist-nathal\n  Relevanz: Innere Bildfolge, Dialog, Anspruch auf Intuition.\n- **N03 · NATHAL FAQ – Symbolgestalten, Hemisphären, Initiation** — [A, Anbieter-Primärdarstellung]\n  https://www.nathal-training.de/faqs---h%C3%A4ufige-fragen\n  Relevanz: Wesensdefinition und beanspruchte Mechanismen.\n- **N04 · NATHAL Seminare – Grundkurs und Aufbauprogramme** — [A, Anbieter-Primärdarstellung]\n  https://www.nathal-training.de/seminare\n  Relevanz: Praktische Kursstruktur, auch Farben/Töne/Musik.\n- **N05 · NATHAL Praxisbeispiele und Erfahrungsberichte** — [B, Anbieter-Fallberichte]\n  https://www.nathal-training.de/praxis\n  Relevanz: Beobachtete Erlebnisse und subjektive Erfahrungen.\n- **N06 · NATHAL-Gründer / biografischer Hintergrund** — [B, Anbieter-Primärdarstellung]\n  https://www.nathal-training.de/wie-funktioniert-nathal\n  Relevanz: Gertje Lathan, Trainertradition.\n- **N07 · NATHAL Institut – Originalseite** — [A, Instituts-Primärquelle]\n  https://www.nathal.de/\n  Relevanz: Eigenverständnis und Verbindungen zur Forschung.\n- **N08 · NATHAL – Die Gründer** — [B, Instituts-Primärquelle]\n  https://www.nathal.de/gruender/\n  Relevanz: Gertje und Philippe Lathan.\n- **N09 · NATHAL – Publikationen und EEG-Behauptungen** — [A, Instituts-Claim-Katalog]\n  https://www.nathal.de/publikationen/\n  Relevanz: Genannte Aufsätze, historische und neue EEG-Claims.\n- **N10 · NATHAL Berlin – Ablauf der Übungen** — [A, Anbieter-Primärdarstellung]\n  https://www.nathal-berlin.de/wie-laufen-die-nathal-uebungen-ab/\n  Relevanz: Drei öffentlich skizzierte Phasen und Erfahrungen.\n- **N11 · NATHAL – Lizenztrainer** — [B, Institutsverzeichnis]\n  https://www.nathal.de/lizenztrainer/\n  Relevanz: Offizielle Lehr-/Autorisierungsstruktur.\n- **N12 · Grenzwissensymposium 2024 – Hannes Schmid/NATHAL/Heim-Brücke** — [B, Konferenz-/Veranstaltungsprogramm]\n  https://www.grenzwissen.at/symposium-2024/\n  Relevanz: Dokumentierte Vermittlerrolle und Themenverbindung; kein Wirksamkeitsbeweis.\n
+- **N01 · NATHAL-Training – Hannes Schmid** — [A, Anbieter-Primärdarstellung]
+  https://www.nathal-training.de/
+  Relevanz: Selbstbeschreibung, Ziele, Erlebnisberichte.
+- **N02 · Was ist NATHAL? – Visualisierung und zwei Begleitgestalten** — [A, Anbieter-Primärdarstellung]
+  https://www.nathal-training.de/was-ist-nathal
+  Relevanz: Innere Bildfolge, Dialog, Anspruch auf Intuition.
+- **N03 · NATHAL FAQ – Symbolgestalten, Hemisphären, Initiation** — [A, Anbieter-Primärdarstellung]
+  https://www.nathal-training.de/faqs---h%C3%A4ufige-fragen
+  Relevanz: Wesensdefinition und beanspruchte Mechanismen.
+- **N04 · NATHAL Seminare – Grundkurs und Aufbauprogramme** — [A, Anbieter-Primärdarstellung]
+  https://www.nathal-training.de/seminare
+  Relevanz: Praktische Kursstruktur, auch Farben/Töne/Musik.
+- **N05 · NATHAL Praxisbeispiele und Erfahrungsberichte** — [B, Anbieter-Fallberichte]
+  https://www.nathal-training.de/praxis
+  Relevanz: Beobachtete Erlebnisse und subjektive Erfahrungen.
+- **N06 · NATHAL-Gründer / biografischer Hintergrund** — [B, Anbieter-Primärdarstellung]
+  https://www.nathal-training.de/wie-funktioniert-nathal
+  Relevanz: Gertje Lathan, Trainertradition.
+- **N07 · NATHAL Institut – Originalseite** — [A, Instituts-Primärquelle]
+  https://www.nathal.de/
+  Relevanz: Eigenverständnis und Verbindungen zur Forschung.
+- **N08 · NATHAL – Die Gründer** — [B, Instituts-Primärquelle]
+  https://www.nathal.de/gruender/
+  Relevanz: Gertje und Philippe Lathan.
+- **N09 · NATHAL – Publikationen und EEG-Behauptungen** — [A, Instituts-Claim-Katalog]
+  https://www.nathal.de/publikationen/
+  Relevanz: Genannte Aufsätze, historische und neue EEG-Claims.
+- **N10 · NATHAL Berlin – Ablauf der Übungen** — [A, Anbieter-Primärdarstellung]
+  https://www.nathal-berlin.de/wie-laufen-die-nathal-uebungen-ab/
+  Relevanz: Drei öffentlich skizzierte Phasen und Erfahrungen.
+- **N11 · NATHAL – Lizenztrainer** — [B, Institutsverzeichnis]
+  https://www.nathal.de/lizenztrainer/
+  Relevanz: Offizielle Lehr-/Autorisierungsstruktur.
+- **N12 · Grenzwissensymposium 2024 – Hannes Schmid/NATHAL/Heim-Brücke** — [B, Konferenz-/Veranstaltungsprogramm]
+  https://www.grenzwissen.at/symposium-2024/
+  Relevanz: Dokumentierte Vermittlerrolle und Themenverbindung; kein Wirksamkeitsbeweis.
+
 ## NATHAL-Umfeld · Fachpublikationen (Publikation ≠ Nachweis der Herkunftsbehauptung)
 
-- **P01 · Intuitive Innovation: Unconventional Modeling and Systems Neurology (2024)** — [A, Peer-reviewed REVIEW]\n  https://www.mdpi.com/2227-7390/12/21/3308\n  Relevanz: Literaturüberblick; ausdrücklich keine neue kontrollierte EEG-Replikation.\n- **P02 · Performance Analysis of a Solar-Powered Multi-Purpose Supply Container (2022)** — [B, Technische Modellierungsstudie]\n  https://www.mdpi.com/2071-1050/14/9/5525\n  Relevanz: Versorgungscontainer, nicht Nachweis nichtlokaler Entwurfsmethode.\n- **P03 · AdaGram in Python: Multi-Sense Embedding in Text and Scientific Formulas (2025)** — [B, Methoden-/NLP-Paper]\n  https://www.mdpi.com/2227-7390/13/14/2241\n  Relevanz: Formel-/Textrepräsentation, nicht Manuskript-Entzifferungsbeweis.\n- **P04 · Solar-driven atmospheric water yields under climate stress (2026)** — [B, Peer-reviewed Modellierungsartikel]\n  https://link.springer.com/article/10.1007/s12665-025-12789-x\n  Relevanz: Wasser-/Klimadatenmodell, keine EEG-Primärstudie.\n
+- **P01 · Intuitive Innovation: Unconventional Modeling and Systems Neurology (2024)** — [A, Peer-reviewed REVIEW]
+  https://www.mdpi.com/2227-7390/12/21/3308
+  Relevanz: Literaturüberblick; ausdrücklich keine neue kontrollierte EEG-Replikation.
+- **P02 · Performance Analysis of a Solar-Powered Multi-Purpose Supply Container (2022)** — [B, Technische Modellierungsstudie]
+  https://www.mdpi.com/2071-1050/14/9/5525
+  Relevanz: Versorgungscontainer, nicht Nachweis nichtlokaler Entwurfsmethode.
+- **P03 · AdaGram in Python: Multi-Sense Embedding in Text and Scientific Formulas (2025)** — [B, Methoden-/NLP-Paper]
+  https://www.mdpi.com/2227-7390/13/14/2241
+  Relevanz: Formel-/Textrepräsentation, nicht Manuskript-Entzifferungsbeweis.
+- **P04 · Solar-driven atmospheric water yields under climate stress (2026)** — [B, Peer-reviewed Modellierungsartikel]
+  https://link.springer.com/article/10.1007/s12665-025-12789-x
+  Relevanz: Wasser-/Klimadatenmodell, keine EEG-Primärstudie.
+
 ## Burkhard Heim · 6D-Theorie und 6 Dimensionen in Farbe
 
-- **H01 · Heim-Theorien – historischer Überblick und Originale** — [A, Archivinhaltsdarstellung]\n  https://burkhardheim.de/heimtheorien\n  Relevanz: 6D Feldtheorie, Metron, Syntrometrie, spätere Erweiterungen.\n- **H02 · Heims Massenformel – interaktive Rekonstruktion und historische Programme** — [A, Quellenbasierte Simulation]\n  https://burkhardheim.de/massenformel\n  Relevanz: Theorie, Programmherkunft, Grenzen der Vorhersage.\n- **H03 · Heim – offene Fragen** — [B, Offenes Prüfregister]\n  https://burkhardheim.de/fragen\n  Relevanz: Gegenfragen und Unsicherheiten.\n- **H04 · Heim – Medienarchiv und Primärtextsuche** — [A, Archiv/Primärquellen-Finder]\n  https://burkhardheim.de/media\n  Relevanz: Vorträge, Manuskripte, Scans (Einzeldokumente zusätzlich importieren).\n- **H05 · Heim – Links und Netzwerk weiterer Quellen** — [B, Linkverzeichnis]\n  https://burkhardheim.de/links\n  Relevanz: Auch Hannes Schmid und dessen 6D-in-Farbe-Kanäle.\n- **H06 · Heim – Netzwerk und Chronik** — [B, Archivübersicht]\n  https://burkhardheim.de/netzwerk\n  Relevanz: historische Personen und Hannes Schmid.\n- **H07 · Heim's Mass Formula – Reconsidered (reproduzierbarer Code-Audit)** — [B, Unabhängige offene Reimplementierung]\n  https://github.com/lambdamikel/heim-mass-formula-reconsidered\n  Relevanz: Sensitivität, Treffer-Slot-Dichte, Grenzen.\n- **H08 · 6 Dimensionen in Farbe – deutscher YouTube-Kanal** — [A, Videokanal, Sekundärvermittlung]\n  https://www.youtube.com/@6DimensioneninFarbe\n  Relevanz: Kanal-Link; für NotebookLM einzelne untertitelte Videos auswählen.\n- **H09 · 6 D in Color – englischer YouTube-Kanal** — [B, Videokanal, Sekundärvermittlung]\n  https://www.youtube.com/@6DinColor\n  Relevanz: Kanal-Link; Einzelvideos statt Kanal importieren.\n
+- **H01 · Heim-Theorien – historischer Überblick und Originale** — [A, Archivinhaltsdarstellung]
+  https://burkhardheim.de/heimtheorien
+  Relevanz: 6D Feldtheorie, Metron, Syntrometrie, spätere Erweiterungen.
+- **H02 · Heims Massenformel – interaktive Rekonstruktion und historische Programme** — [A, Quellenbasierte Simulation]
+  https://burkhardheim.de/massenformel
+  Relevanz: Theorie, Programmherkunft, Grenzen der Vorhersage.
+- **H03 · Heim – offene Fragen** — [B, Offenes Prüfregister]
+  https://burkhardheim.de/fragen
+  Relevanz: Gegenfragen und Unsicherheiten.
+- **H04 · Heim – Medienarchiv und Primärtextsuche** — [A, Archiv/Primärquellen-Finder]
+  https://burkhardheim.de/media
+  Relevanz: Vorträge, Manuskripte, Scans (Einzeldokumente zusätzlich importieren).
+- **H05 · Heim – Links und Netzwerk weiterer Quellen** — [B, Linkverzeichnis]
+  https://burkhardheim.de/links
+  Relevanz: Auch Hannes Schmid und dessen 6D-in-Farbe-Kanäle.
+- **H06 · Heim – Netzwerk und Chronik** — [B, Archivübersicht]
+  https://burkhardheim.de/netzwerk
+  Relevanz: historische Personen und Hannes Schmid.
+- **H07 · Heim's Mass Formula – Reconsidered (reproduzierbarer Code-Audit)** — [B, Unabhängige offene Reimplementierung]
+  https://github.com/lambdamikel/heim-mass-formula-reconsidered
+  Relevanz: Sensitivität, Treffer-Slot-Dichte, Grenzen.
+- **H08 · 6 Dimensionen in Farbe – deutscher YouTube-Kanal** — [A, Videokanal, Sekundärvermittlung]
+  https://www.youtube.com/@6DimensioneninFarbe
+  Relevanz: Kanal-Link; für NotebookLM einzelne untertitelte Videos auswählen.
+- **H09 · 6 D in Color – englischer YouTube-Kanal** — [B, Videokanal, Sekundärvermittlung]
+  https://www.youtube.com/@6DinColor
+  Relevanz: Kanal-Link; Einzelvideos statt Kanal importieren.
+
 ## Aby Warburg · Mnemosyne, Bilddenken, Kosmos
 
-- **W01 · Warburg Institute – Bilderatlas Mnemosyne** — [A, Institutionelles Archiv]\n  https://warburg.sas.ac.uk/library-collections/warburg-institute-archive/bilderatlas-mnemosyne\n  Relevanz: Originales Arbeitsprinzip und Tafelgeschichte.\n- **W02 · Cornell / Warburg – interaktiver Atlas** — [A, Akademische digitale Bildquelle]\n  https://warburg.library.cornell.edu/panels/\n  Relevanz: Zehn Bildtafeln und kuratierte Wege.\n- **W03 · Cornell – Panel B: Mensch und Kosmos** — [A, Akademische Einzeltafel]\n  https://warburg.library.cornell.edu/panels/panel-b/\n  Relevanz: Besonders treffende Mensch-Kosmos-Beziehungsbilder.\n- **W04 · Cornell – Methodeneinführung** — [B, Institutionelle Einführung]\n  https://warburg.library.cornell.edu/about/\n  Relevanz: Pathosformeln, Bildnachbarschaften und kulturelle Erinnerung.\n
+- **W01 · Warburg Institute – Bilderatlas Mnemosyne** — [A, Institutionelles Archiv]
+  https://warburg.sas.ac.uk/library-collections/warburg-institute-archive/bilderatlas-mnemosyne
+  Relevanz: Originales Arbeitsprinzip und Tafelgeschichte.
+- **W02 · Cornell / Warburg – interaktiver Atlas** — [A, Akademische digitale Bildquelle]
+  https://warburg.library.cornell.edu/panels/
+  Relevanz: Zehn Bildtafeln und kuratierte Wege.
+- **W03 · Cornell – Panel B: Mensch und Kosmos** — [A, Akademische Einzeltafel]
+  https://warburg.library.cornell.edu/panels/panel-b/
+  Relevanz: Besonders treffende Mensch-Kosmos-Beziehungsbilder.
+- **W04 · Cornell – Methodeneinführung** — [B, Institutionelle Einführung]
+  https://warburg.library.cornell.edu/about/
+  Relevanz: Pathosformeln, Bildnachbarschaften und kulturelle Erinnerung.
+
 ## Markus Gabriel · Sinnfelder / New Realism
 
-- **G01 · Markus Gabriel: Fields of Sense (Verlagsseite)** — [A, Buch-Originalbeschreibung]\n  https://www.degruyterbrill.com/document/doi/10.1515/9780748692903/html\n  Relevanz: Ontologischer Pluralismus; nicht nur subjektive Sichtweisen.\n- **G02 · Fields of Sense – Rezension Notre Dame Philosophical Reviews** — [A, Philosophische Fachrezension]\n  https://ndpr.nd.edu/reviews/fields-of-sense-a-new-realist-ontology/\n  Relevanz: Argumente und kritische Rekonstruktion.\n- **G03 · Graham Harman interviewt Markus Gabriel** — [B, Autorengespräch]\n  https://euppublishingblog.com/2016/09/23/graham-harman-interviews-markus-gabriel/\n  Relevanz: Selbstverständnis und Diskussion.\n- **G04 · Markus Gabriel's New Realism – wissenschaftlicher Sammelband** — [B, Akademische Sekundärliteratur]\n  https://link.springer.com/book/10.1007/978-3-031-69526-1\n  Relevanz: Kritische Folgepositionen.\n
+- **G01 · Markus Gabriel: Fields of Sense (Verlagsseite)** — [A, Buch-Originalbeschreibung]
+  https://www.degruyterbrill.com/document/doi/10.1515/9780748692903/html
+  Relevanz: Ontologischer Pluralismus; nicht nur subjektive Sichtweisen.
+- **G02 · Fields of Sense – Rezension Notre Dame Philosophical Reviews** — [A, Philosophische Fachrezension]
+  https://ndpr.nd.edu/reviews/fields-of-sense-a-new-realist-ontology/
+  Relevanz: Argumente und kritische Rekonstruktion.
+- **G03 · Graham Harman interviewt Markus Gabriel** — [B, Autorengespräch]
+  https://euppublishingblog.com/2016/09/23/graham-harman-interviews-markus-gabriel/
+  Relevanz: Selbstverständnis und Diskussion.
+- **G04 · Markus Gabriel's New Realism – wissenschaftlicher Sammelband** — [B, Akademische Sekundärliteratur]
+  https://link.springer.com/book/10.1007/978-3-031-69526-1
+  Relevanz: Kritische Folgepositionen.
+
 ## Psychologie, Imagination, innerer Dialog und überprüfbare Kreativität
 
-- **M01 · The Dialogical Jung: Otherness within the Self** — [A, Psychologischer Fachaufsatz]\n  https://pmc.ncbi.nlm.nih.gov/articles/PMC4217608/\n  Relevanz: Jungs aktive Imagination und innere Alterität.\n- **M02 · Hubert Hermans: The Dialogical Self (2001)** — [A, Psychologischer Theorieartikel]\n  https://journals.sagepub.com/doi/10.1177/1354067X0173001\n  Relevanz: Multiperspektivische Ich-Positionen.\n- **M03 · Eugene Gendlin: On Emotion in Therapy** — [A, Methodischer Originaltext]\n  https://focusing.org/gendlin/docs/gol_2068.html\n  Relevanz: Felt Sense / emotionales Erleben vor Begriffsbildung.\n- **M04 · Imagination and the creative process – systematic review (2026)** — [A, Systematischer Forschungsüberblick]\n  https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1686856/full\n  Relevanz: 42 Studien über Imagination/Kreativitätsprozess.\n- **M05 · Creative cognition: default/executive networks (2022)** — [B, Neurowissenschaftliche Primärstudie]\n  https://doi.org/10.1016/j.cortex.2022.08.008\n  Relevanz: Ideengenerierung und nachfolgende Evaluation.\n- **M06 · Mental imagery and creativity – meta-analytic review (2003)** — [B, Metaanalyse]\n  https://pubmed.ncbi.nlm.nih.gov/12648387/\n  Relevanz: Empirische Kreativitäts-/Imagery-Assoziationen.\n- **M07 · Mental Imagery in Worry – systematic review (2024)** — [B, Systematischer Forschungsüberblick]\n  https://pubmed.ncbi.nlm.nih.gov/38640775/\n  Relevanz: Mental imagery und kognitive Effekte.\n- **M08 · Guided imagery in palliative settings – Review (2024)** — [C, Systematischer Forschungsüberblick]\n  https://pubmed.ncbi.nlm.nih.gov/38350116/\n  Relevanz: Anwendung in spezifischer klinischer Population, keine ESP-Aussage.\n
+- **M01 · The Dialogical Jung: Otherness within the Self** — [A, Psychologischer Fachaufsatz]
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC4217608/
+  Relevanz: Jungs aktive Imagination und innere Alterität.
+- **M02 · Hubert Hermans: The Dialogical Self (2001)** — [A, Psychologischer Theorieartikel]
+  https://journals.sagepub.com/doi/10.1177/1354067X0173001
+  Relevanz: Multiperspektivische Ich-Positionen.
+- **M03 · Eugene Gendlin: On Emotion in Therapy** — [A, Methodischer Originaltext]
+  https://focusing.org/gendlin/docs/gol_2068.html
+  Relevanz: Felt Sense / emotionales Erleben vor Begriffsbildung.
+- **M04 · Imagination and the creative process – systematic review (2026)** — [A, Systematischer Forschungsüberblick]
+  https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1686856/full
+  Relevanz: 42 Studien über Imagination/Kreativitätsprozess.
+- **M05 · Creative cognition: default/executive networks (2022)** — [B, Neurowissenschaftliche Primärstudie]
+  https://doi.org/10.1016/j.cortex.2022.08.008
+  Relevanz: Ideengenerierung und nachfolgende Evaluation.
+- **M06 · Mental imagery and creativity – meta-analytic review (2003)** — [B, Metaanalyse]
+  https://pubmed.ncbi.nlm.nih.gov/12648387/
+  Relevanz: Empirische Kreativitäts-/Imagery-Assoziationen.
+- **M07 · Mental Imagery in Worry – systematic review (2024)** — [B, Systematischer Forschungsüberblick]
+  https://pubmed.ncbi.nlm.nih.gov/38640775/
+  Relevanz: Mental imagery und kognitive Effekte.
+- **M08 · Guided imagery in palliative settings – Review (2024)** — [C, Systematischer Forschungsüberblick]
+  https://pubmed.ncbi.nlm.nih.gov/38350116/
+  Relevanz: Anwendung in spezifischer klinischer Population, keine ESP-Aussage.
+
 ## Erweiterte Kosmologien, Gateway und Audio-Techniken
 
-- **X01 · Analysis and Assessment of Gateway Process (US-Army-Dokument, 1983)** — [A, Historische amtliche Dokumentquelle]\n  https://www.govinfo.gov/app/details/GOVPUB-D101-PURL-gpo152943\n  Relevanz: Monroe/Gateway-Claims; Dokumentexistenz ist kein Effektbeweis.\n- **X02 · David Bohm: Wholeness and the Implicate Order** — [B, Philosophisch-physikalisches Buch]\n  https://www.routledge.com/Wholeness-and-the-Implicate-Order/Bohm/p/book/9780415289795\n  Relevanz: Implizite/entfaltete Ordnung, Ganzheit.\n- **X03 · Rupert Sheldrake: Morphic Resonance – Introduction** — [B, Theorie im Original]\n  https://www.sheldrake.org/research/morphic-resonance/introduction\n  Relevanz: Originalformulierung einer spekulativen Gedächtnis-/Feldhypothese.\n- **X04 · Binaural Beats – systematic review (2024)** — [B, Forschungsüberblick]\n  https://www.mdpi.com/2076-3417/14/13/5675\n  Relevanz: Audio-Entrainment-Evidenz, nicht NATHAL-spezifisch.\n
+- **X01 · Analysis and Assessment of Gateway Process (US-Army-Dokument, 1983)** — [A, Historische amtliche Dokumentquelle]
+  https://www.govinfo.gov/app/details/GOVPUB-D101-PURL-gpo152943
+  Relevanz: Monroe/Gateway-Claims; Dokumentexistenz ist kein Effektbeweis.
+- **X02 · David Bohm: Wholeness and the Implicate Order** — [B, Philosophisch-physikalisches Buch]
+  https://www.routledge.com/Wholeness-and-the-Implicate-Order/Bohm/p/book/9780415289795
+  Relevanz: Implizite/entfaltete Ordnung, Ganzheit.
+- **X03 · Rupert Sheldrake: Morphic Resonance – Introduction** — [B, Theorie im Original]
+  https://www.sheldrake.org/research/morphic-resonance/introduction
+  Relevanz: Originalformulierung einer spekulativen Gedächtnis-/Feldhypothese.
+- **X04 · Binaural Beats – systematic review (2024)** — [B, Forschungsüberblick]
+  https://www.mdpi.com/2076-3417/14/13/5675
+  Relevanz: Audio-Entrainment-Evidenz, nicht NATHAL-spezifisch.
+
 ## Nicht als wissenschaftliche Quellen zu importieren – KFB-interne Produktionsreferenzen
 
 Die folgenden **privaten GitHub-Dokumente** sind Quellen für unser Spielkonzept und die bis hierhin erfolgte Recherche. NotebookLM kann einen privaten GitHub-Link nicht zwangsläufig abrufen: bei Bedarf die jeweiligen Markdown-Dateien **mit GitHub-Zugriff herunterladen und als MD-Datei hochladen**, statt den Link als öffentliche Webseite einzutragen.
