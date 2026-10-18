@@ -31,7 +31,7 @@ const check = (name, ok, detail = null) => {
 };
 
 try {
-  check('site source 0.8.1', html.includes('data-kfb-audio-site="0.8.1"'));
+  check('site source 0.10.0', html.includes('data-kfb-audio-site="0.10.0"'));
   check('catalog version', catalog.version === '2.0.0', catalog.version);
   check('54 catalog tracks', catalog.tracks.length === 54, catalog.tracks.length);
   check('44 RoadTrip tracks', catalog.tracks.filter(track => track.collection === 'roadtrip-v2').length === 44);

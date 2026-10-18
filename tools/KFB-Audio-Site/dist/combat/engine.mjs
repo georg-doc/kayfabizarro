@@ -7,10 +7,11 @@ export async function createCombat({audioContext:ctx,destination,manifest,assetB
  const buffers=new Map(provided||[]),live=new Set(),seen=new Set(),last=new Map(),lastAt=new Map(),log=[],loaded=[],input=ctx.createGain(),comp=ctx.createDynamicsCompressor(),ceiling=ctx.createWaveShaper(),focus=ctx.createGain(),meter=ctx.createAnalyser();
  comp.threshold.value=-12;comp.knee.value=4;comp.ratio.value=20;comp.attack.value=.003;comp.release.value=.12;const curve=new Float32Array(4097);for(let i=0;i<curve.length;i++)curve[i]=Math.tanh((i/4096*2-1)*1.4)*.45/Math.tanh(1.4);ceiling.curve=curve;ceiling.oversample='4x';input.gain.value=.65;input.connect(comp).connect(ceiling).connect(focus).connect(meter).connect(destination);meter.fftSize=1024;const pcm=new Float32Array(1024);
  let active=false,generation=0,duckDb=0,queue=[],demoUntil=null,activityUntil=0,room='outdoor',experimental=false;
+ const cascades=new Map(),destructionSeen=new Set();
  const now=()=>ctx.currentTime,record=e=>{log.push(e);if(log.length>1000)log.shift();};
  async function prepare(){let i=0;const worker=async()=>{while(i<manifest.assets.length){const a=manifest.assets[i++];if(buffers.has(a.id))continue;const r=await fetch(new URL(a.file,assetBaseUrl));if(!r.ok)throw Error('Private asset unavailable '+a.id);const bytes=await r.arrayBuffer(),h=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('');if(h!==a.sha256)throw Error('Private SHA mismatch '+a.id);const b=await ctx.decodeAudioData(bytes);buffers.set(a.id,b);loaded.push({id:a.id,duration:b.duration,sampleRate:b.sampleRate});}};await Promise.all(Array.from({length:4},worker));}
  async function start(){const g=++generation;await prepare();if(g===generation)active=true;return snapshot();}
- function stop(){generation++;active=false;queue=[];demoUntil=null;activityUntil=0;for(const v of [...live]){try{v.s.stop();}catch{}cleanup(v);}onActivity(false);return snapshot();}
+ function stop(){generation++;active=false;queue=[];demoUntil=null;activityUntil=0;cascades.clear();destructionSeen.clear();for(const v of [...live]){try{v.s.stop();}catch{}cleanup(v);}onActivity(false);return snapshot();}
  function cleanup(v){live.delete(v);for(const n of v.nodes)n.disconnect();}
  function pick(family,key){const pool=manifest.assets.filter(a=>a.family===family),previous=last.get(key),choices=pool.filter(a=>a.id!==previous),a=choices[Math.floor(random()*choices.length)]||pool[0];if(a)last.set(key,a.id);return a;}
  function play(family,{at=now()+.01,gain=1,position={x:0,y:0,z:-1},layer='full',key=family}={}){
@@ -19,7 +20,23 @@ export async function createCombat({audioContext:ctx,destination,manifest,assetB
   if(room!=='outdoor'){const delay=ctx.createDelay(.1),wet=ctx.createGain();delay.delayTime.value=room==='small-room'?.027:.045;wet.gain.value=room==='small-room'?.10:.06;pan.connect(delay).connect(wet).connect(input);nodes.push(delay,wet);}
   const v={s,nodes,end:at+duration+.1};live.add(v);s.onended=()=>cleanup(v);s.start(at,window.offset,window.duration);s.stop(at+duration+.02);activityUntil=Math.max(activityUntil,at+duration+.2);record({type:'layer',family,id:a.id,layer,at,rate,gain:volume,position,lowpassHz:filter.frequency.value});return a.id;
  }
+ function destruction(e){
+  if(!e.id||typeof e.id!=='string'||!e.cascadeId||typeof e.cascadeId!=='string'||!['impact','fracture','contact','settle'].includes(e.phase))throw Error('Destruction needs unique id, cascadeId and actual phase');
+  if(!e.position||!['x','y','z'].every(k=>Number.isFinite(e.position[k]))||('energy' in e&&!Number.isFinite(e.energy)))throw Error('Invalid destruction facts');
+  if(!active)return null;if(destructionSeen.has(e.id))return {status:'DUPLICATE'};destructionSeen.add(e.id);if(destructionSeen.size>512)destructionSeen.delete(destructionSeen.values().next().value);
+  const t=now(),strength=clamp(e.energy??.6,0,1),family={wood:'C15',stone:'C16',crystal:'C17'}[e.material],root=cascades.get(e.cascadeId)||{impact:false,fractures:0,contacts:0,settled:false,lastFracture:-Infinity,contactsRecent:[],last:t};root.last=t;cascades.set(e.cascadeId,root);if(cascades.size>64)cascades.delete(cascades.keys().next().value);
+  const outcome=(status,ids=[])=>{record({type:'destruction',id:e.id,cascadeId:e.cascadeId,phase:e.phase,material:e.material,at:t,status,ids});return {status,ids};};
+  if(e.phase==='impact'){if(e.explosive!==true)return outcome('SOURCE_GAP_NONEXPLOSIVE_IMPACT');if(root.impact)return outcome('COALESCED');root.impact=true;return outcome('PLAYED',emit({type:strength>.65?'explosionLarge':'explosionSmall',id:'impact:'+e.id,position:e.position,intensity:Math.max(.2,strength)})||[]);}
+  if(!family)return outcome('SOURCE_GAP');
+  if(e.phase==='fracture'){if(root.fractures>=2||t-root.lastFracture<.15)return outcome('COALESCED');root.fractures++;root.lastFracture=t;return outcome('PLAYED',emit({type:{wood:'woodBreak',stone:'stoneBreak',crystal:'crystalBreak'}[e.material],id:'fracture:'+e.id,position:e.position,intensity:.35+.3*strength})||[]);}
+  if(strength<.1||root.settled)return outcome('COALESCED');
+  if(e.phase==='contact'){root.contactsRecent=root.contactsRecent.filter(c=>t-c.at<.15);if(root.contacts>=10||root.contactsRecent.some(c=>Math.hypot(...['x','y','z'].map(k=>e.position[k]-c.position[k]))<=3))return outcome('COALESCED');root.contacts++;root.contactsRecent.push({at:t,position:{...e.position}});}
+  if(e.phase==='settle')root.settled=true;
+  const id=play(family,{at:t+.01,gain:(e.phase==='settle'?.07:.12)*Math.sqrt(strength),position:e.position,layer:'tail',key:'contact-'+family});
+  return outcome(id?'PLAYED_DERIVED_TAIL':'VOICE_BUDGET',[id].filter(Boolean));
+ }
  function emit(e){
+  if(e?.type==='destruction')return destruction(e);
   if(!e||!EVENTS[e.type])throw Error('Unsupported combat event (no placeholder fallback)');
   if(e.position&&!['x','y','z'].every(k=>Number.isFinite(e.position[k])))throw Error('Invalid combat position');
   if(e.id!==undefined){if(typeof e.id!=='string'||!e.id)throw Error('Event id must be nonempty');if(seen.has(e.id))return null;seen.add(e.id);if(seen.size>512)seen.delete(seen.values().next().value);}
