@@ -45,3 +45,30 @@
 ## One next gate
 
 WS0/source-owning Game Design lead assesses the one proposed G1+G4 two-minute encounter for *actual fun and recognizable response*, then selects one source-backed design fixture for a separately authorized proof. This report does not authorize implementation.
+
+
+## 2026-10-19 · Additive Minigame Recovery R0.1–R0.5 cross-read
+
+**New source-alignment file:** `MINIGAME_RECOVERY_WS0_WS1_ALIGNMENT_R1.md`, blob `b51bc838847f7a732863be652a30749471a09811` on this Draft PR #435; exact UTF-8 GitHub create/readback **1/1 PASS** at checkpoint `65836290329637e351f8552f8551ac28a1662d3c`.
+
+### Direct source-read counts and method
+- Original long-form Minigame authoring branch: **5/5** v0.3/v0.4/v0.5/v0.6/v0.7.1 Markdown files successfully fetched at `planning/kfb-fluff-crafting-almanac-ideation-2026-10-09@b75faea954188f5dcd57133a996abe3321a7c7db`. Individual blob hashes in source-alignment document.
+- Recovery PR #400: **7/7** Recovery / Return / R0.1–R0.5 docs fetched directly at `recovery/kfb-minigames-fluff-source-bridge-2026-10-15@c98551da936ccd556cf566b66cea2d0404d7128d`.
+- Current WS0: `DECISIONS.md` parsed for V-228, V-333/334, V-368/369/371, V-396, V-405, V-514, V-527, V-531/532/533, V-539 and current V-540; `ARCHITECTURE_R1.md`, explicit `WS0_ACK_CARD_INK_DEFENSE_R0_5_2026-10-17.md`, V-514 briefing, WSV R2 video briefing independently fetched.
+- Current WS1: `ws1/r3f-frame@1ebebb9b411e66b880c0f3978a2135fb0e3cb8ab`; `WS1_STATUS.md` §94–96 and `WS1_HANDOVER.md` read. `combo/r2@d762916` and 61/62 are **WS1's reported results**, not tests newly run.
+- PR #400 verified OPEN/DRAFT; its PR discussion returned Cloudflare bot comment, not documented human source review. **Independent acceptance of R0.5 nevertheless exists** in separate WS0 ACK/V-405.
+- The Recovery source list names original long-form **v0.3–v0.7.1**, not a verified separate v0.8/v0.9 corpus.
+
+**Editorial/source alignment assertions: 9/9 PASS** (source text and previously fetched branch/data consistency, NOT game tests):
+- source packets exactly 12: PASS
+- WS0 ACK source pin: PASS
+- V-228 owner boundary: PASS
+- WS1/WS1b handover: PASS
+- no fabricated minigame v0.8/v0.9: PASS
+- no game implementation claim: PASS
+- no duplicate WSV owner: PASS
+- no duplicate card/loot state: PASS
+- new source doc readback: PASS
+
+**New gameplay, audiovisual/browser, original asset-isolation, Blender, current WS1b local test, Stage/Cloudflare public URL proof, CI: 0.**
+**Next gate:** WS0 one source-backed playable encounter selection/triage for a later dedicated WS1b proof, not another WS0 Card Ink ACK.
