@@ -3,6 +3,44 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 92 · 18.10. · V-487 Stufe 1 fertig, Stufe 2 Saugarm + Ton läuft, Stufe 3 Laternen eingebaut (Leuchten noch zu schwach)
+
+**Stand:** alles auf `combo/r2` lokal (@37be37b), Einzeltests grün. Volltest und Veröffentlichung (Spiegel `ws1/combo-r2`, Vorschau, `ws1/vendor`) folgen als Nächstes. Die Vorschau zeigt bis dahin @027d5c5.
+
+**Stufe 1 · R1a Antrieb (V-481), fertig bis auf Rustwing II:**
+- Ton `propulsion_r1`: je Anker-Typ eine Schleife (Überblendung über zwei Spuren, keine Naht), Boost-Zündung und Schalt-Knall an den Ereignissen aus `vehicleRig.update`. Hash `mute` schaltet stumm.
+- `brake`-Ereignis: die Nase taucht etwa 5° ein und federt nach.
+- Bodennähe-Partikel je Terraintyp (Sand, Erde, Fels, Gras, aus Höhe und Steigung).
+- Bildtafel der 6 Racer in Fahrt und ein Boost-Clip (nur lokal bei Georg, private Modelle).
+- **Befund aus der Tafel, behoben:** Der Staub war mehrere Meter groß und legte sich als Schleier über das Heck. Jetzt sind es 0,3–0,8 m mit flachem Aufstieg (`DUST.size/rise/spread/alpha`).
+
+**Stufe 2 · Fluff-Ernte R1 (V-479):**
+- Modul `src/modules/fluffSuck.js`, als Paket `ws1/vendor/kfb-fluff-suck.v1.js` mit der nächsten Veröffentlichung.
+  - Typ Düse; der Strahl (UFO) nutzt dieselbe Düsen-Rückgabe.
+  - Ablauf je Kugel 1,4 s: Anlauf → Stretch am Ursprung → Plopp → Flug → Einsaugen. Squash & Stretch mit Volumenerhalt.
+  - Cues: charge, stretch, plop, fly, swallow, cloud. Über `maxJobs` werden Kugeln zur Wolke zusammengefasst.
+  - Ein InstancedMesh, Punkt-Pool 160; Kosten 0,01 ms je Bild.
+- Spieler-Saugarm (Platzhalter) in `#m1,harvest`, Taste **T**: bis zu 6 Kügelchen im Kegel ≤ 6 m fliegen zur rechten Hand. Hängende Kügelchen haben den Ursprung Baum, liegende den Ursprung Boden.
+  - `orchard3d` hat dafür `suckable` / `take` / `deliver` bekommen.
+  - Gezählt wird erst beim Einsaugen (Ernte-Stand, kfb.save, Fluff-Leiste R5f).
+- Ton `fluff_suction_r1` hängt an den Cues: S01 Anlauf, S02 Schleife, S03/S04/S05 Plopp je Herkunft, S06 Schlürfen. S07 „Tank voll“ wartet auf die Tank-Grenze.
+- Tests `unit-fluffSuck` und `c3s` (Browser: Baum + Boden, nichts bleibt hängen, Zähler = eingesaugt): PASS.
+- **Offen, blockiert durch P2:** Bots, Stationen, Saugarm-Beute, Stations-Effekt E01, `yields` im Destruction-Modus, UFO-Strahl als eigene Figur.
+
+**Stufe 3 · Kristall-Laternen (V-471/V-476):**
+- `kfb-gem.v1` r4 ist byte-gleich übernommen (blob 44cd3758, MIT): `src/vendor/gem/`.
+- Modul `gemLanterns.js`: 8 Laternen am Demo-Weg, Rubin und Saphir im Wechsel, nie auf dem Weg (an Knicken auf der Außenseite).
+  - Nachts mit `lantern` + `halo` + `pool`.
+  - Echte Lichter über den Practicals-Pool des Licht-Moduls: max. 6, die nächsten zur Kamera. Tags 0 an.
+- Die B30-Figuren (Satz M) sind nicht öffentlich. Bis dahin nutze ich einen Platzhalter-Kristall (Sechskant-Spitze + 2 Nebenkristalle); getauscht wird später nur `build()`.
+- **Befund:** Nachts leuchtet der Lichtfleck am Boden gut, der Stein selbst bleibt aber dunkelblau (Test `c3g`: Kern 0,83 × Umfeld, Ziel > 1,3).
+  - Ursache: Der r3-Kern folgt der Dünne je Eckpunkt (`measureThinness`); mein Platzhalter ist zu grob und zu dick.
+  - Ich verfeinere das Netz. **Frage an WS0:** Gibt es eine empfohlene Mindestdichte, oder soll ich bei Platzhaltern `innerGlow`/`veinGlow` anheben?
+
+**Blockiert:**
+- Privat-Artifact (§91) weiterhin nicht erreichbar.
+- Rustwing Cruiser II, Bots/Stationen (P2), B30-Figuren.
+
 ## 91 · 18.10. · Integrationsplan R1 (V-487) übernommen · Privat-Artifact aus dem WS1-Workspace nicht erreichbar
 
 **Plan V-487 läuft in der Reihenfolge 0 → 1 → 2 → 3.** Stufe 1 (R1a) ist schon zu großen Teilen da (§90): Modul, 6 Racer, surge/ascent, Bodennähe-Staub, Vorschau. Es fehlen noch:
