@@ -3,6 +3,56 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 93 · 18.10. Abend · Laternen heller (Grenze des Platzhalters), Volltest läuft für die Veröffentlichung, Spieltest-Anleitung für externe Prüfer
+
+**Stand `combo/r2` @1940eba.** Seit 18:50 läuft der Volltest. Danach veröffentliche ich in einem Zug:
+- Spiegel `ws1/combo-r2`;
+- Vorschau mit R1a, Saugarm, Saug-Ton und Laternen;
+- `ws1/vendor` mit neu `kfb-fluff-suck.v1.js`.
+
+Ich melde mich mit §94, sobald die Vorschau live ist.
+
+**Laternen-Platzhalter (eure Antwort zu §92):**
+- `veinGlow` angehoben: Rubin 3,2, Saphir 2,6, nicht weiter verfeinert.
+- Ergebnis: Kern **1,21 × Umfeld** (vorher 0,83). Das Ziel 1,3 erreicht der Platzhalter nicht.
+  - Ab etwa 4 werden die Adern weiß, der Körper bleibt trotzdem dunkel.
+  - Zustand `active` hellt Kern und Lichtfleck gleich stark auf, das Verhältnis sinkt sogar (1,14). Deshalb nicht genutzt.
+  - Der Körper glüht nur über das Dünne-Feld. Das bringen die B30-Figuren mit.
+- Der Test `c3g` prüft für den Platzhalter deshalb > 1,15 (Nacht minus Tag > 0,25) und nennt das Ziel 1,3 für B30.
+- Budget hält: tags 0 Lichter, nachts 6 von 8 echt (die nächsten zur Kamera), Lichtfleck für alle; 0,004 ms je Bild.
+
+**Konto für das Privat-Artifact:**
+- WS1 läuft unter Georgs Arbeits-Workspace-Konto, nicht unter dem Konto, das das Artifact angelegt hat.
+- Die Adresse schreibe ich nicht ins öffentliche Repo. Georg weiß, welches Konto gemeint ist; er kann über das Share-Menü freigeben.
+
+**Als Nächstes (in dieser Reihenfolge):**
+1. Veröffentlichen.
+2. Bildrate auf Georgs GPU (braucht das sichtbare Browserfenster).
+3. V-514 Flug + Zerstörung R1: Briefing gelesen, Start nach §94. Fragen kommen in den Status.
+4. V-497: Melodie-Stimme mit Mund-Rig, wartet auf `kfb-bubbles.v1`.
+- Zusätzlich prüfe ich V-518 (gemeinsame Blickrichtung beider Augen) gegen unseren EyeRig-Einbau (`kfb-figure-loader` / `buildHeadpartEyes`).
+
+### Spieltest-Anleitung für externe Prüfer (Art Director, Spieltest per Web-Chat)
+Basis: `https://ws1-preview.kayfabizarro.pages.dev/` + Hash. Ab der Veröffentlichung heute Abend gilt der neue Stand, `build.json` nennt Commit und Testzahl.
+
+Steuerung überall:
+- WASD laufen bzw. fahren; Maus Kamera; Rad Zoom; Leertaste springen.
+- Doppel-Leertaste: Schwungflug (Elan).
+
+| Was | Hash | Tasten | Worauf achten |
+|---|---|---|---|
+| Laufwelt + Fluff-Ernte | `#m1,harvest` | V Faust, B Blaster, N Bombe, **T Saugarm**, I aufheben | Kügelchen fallen nach Waffe (3/2/1 Treffer); Saugarm: Zittern → Gummi-Hals → Plopp → Flug → Einsaugen, Fluff-Leiste zählt erst beim Einsaugen; Fundsachen schweben 0,15 m |
+| Dieselbe Welt nachts | `#m1,harvest,tod=night` | wie oben | Kristall-Laternen am Weg (Platzhalter), Lichtflecken am Boden, max. 6 echte Lichter |
+| Racer fahren | `#m1,car,racer=crimson_flame_dragster` (auch: `rustwing_cruiser`, `graffiti_jet_cruiser`, `street_racer_hoverbeast`, `crimson_thunderjet`, `ironclad_skycruiser`) | W Gas, Shift Boost, S Bremse | Düsen-Puls mit Ton, Schalten mit Knall, Boost staucht → streckt, Bremsen taucht die Nase, Staub je Gelände |
+| Racer-Flug | `…,racer=…,fly` | über eine Rampe | Kesseldruck, Schweben, Bodeneffekt |
+| Bühne mit Aliens | `#stage,actors=aliens` | Maus | E2-Lider, Augen, Knete-Look |
+| Bühne nachts mit Billboard-Lampen | `#stage,tod=night` | Maus | Lampen beleuchten die Karte, Karte nie heller als ihr Licht |
+
+`mute` schaltet den Ton ab, `clay=0` zeigt das Spiel ohne Knete (Vergleich).
+Bekannte Grenzen:
+- Platzhalter: Saugarm ohne Roboter-Arm (V-510 kommt mit P2), Laternen ohne B30-Figuren.
+- Bots, Stationen und UFO-Strahl fehlen noch.
+
 ## 92 · 18.10. · V-487 Stufe 1 fertig, Stufe 2 Saugarm + Ton läuft, Stufe 3 Laternen eingebaut (Leuchten noch zu schwach)
 
 **Stand:** alles auf `combo/r2` lokal (@37be37b), Einzeltests grün. Volltest und Veröffentlichung (Spiegel `ws1/combo-r2`, Vorschau, `ws1/vendor`) folgen als Nächstes. Die Vorschau zeigt bis dahin @027d5c5.
