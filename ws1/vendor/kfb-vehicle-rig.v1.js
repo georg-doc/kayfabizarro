@@ -8,7 +8,7 @@
 // Leistung: keine Lichter (ein Licht-Rig, V-385/V-429), kein Nachbearbeitungs-Bloom; Leuchten über additive Materialien ohne Tonemapping im Kern;
 // je Düse 2 Draw Calls, Funken 1 Draw Call je Fahrzeug, keine Allokation im Bild. Modul nach Host-Vertrag R1.2.
 // Bodennähe-Partikel (Georg 18.10.): an den Schwebe-Ankern (kfb_hover_*) wirbelt der Racer in Bodennähe Staub und Krumen in der Geländefarbe auf, Stärke nach
-// Höhe über Grund und Tempo, blendet mit der Höhe aus (gleicher Layer für alle Fahrzeuge). Weltraum-Pool `world` (der Wirt hängt ihn in die Szene), normal geblendet.
+// Höhe über Grund und Tempo, blendet mit der Höhe aus (gleicher Layer für alle Fahrzeuge); Farbe je Untergrund über groundColorAt(x, z) (Terraintyp). Weltraum-Pool `world` (der Wirt hängt ihn in die Szene), normal geblendet.
 // options: { anchors, hover?: [[x,y,z]…] (GLB-Raum), glow: { core, plume, spark }, unit (m je GLB-Einheit), engine?: ENGINE-Teilwerte, seed }
 import * as THREE from 'three'
 
@@ -66,9 +66,12 @@ export function createEngine(cfg = {}) {
   }
 }
 
-export const DUST = Object.freeze({ count: 160, hMax: 2.2, rate: 46, life: [0.5, 1.1], size: [5, 12], minSpeed: 0.06 })
-const DUST_FRAG = /* glsl */`uniform vec3 uColor; varying float vLife;
-void main(){ if (vLife <= 0.) discard; vec2 p = gl_PointCoord - 0.5; float k = smoothstep(0.5, 0.15, length(p)); gl_FragColor = vec4(uColor * (0.85 + 0.25*vLife), k * vLife * 0.75); }`
+// size: Punktgröße × 300·unit / Abstand (R1a-Bilder 18.10.: 5–12 ergab mehrere Meter große Wolken über dem Heck → ≈ 0,3–0,8 m), Staub steigt flach auf
+export const DUST = Object.freeze({ count: 160, hMax: 2.2, rate: 46, life: [0.5, 1.1], size: [1.0, 2.4], rise: [0.3, 0.9], spread: [0.4, 1.2], alpha: 0.55, minSpeed: 0.06 })
+const DUST_VERT = /* glsl */`attribute float aLife; attribute float aSize; attribute vec3 aColor; varying float vLife; varying vec3 vColor; uniform float uScale;
+void main(){ vLife = aLife; vColor = aColor; vec4 mv = modelViewMatrix * vec4(position,1.); gl_PointSize = aSize * uScale * (0.4 + aLife) / max(0.2, -mv.z); gl_Position = projectionMatrix * mv; }`
+const DUST_FRAG = /* glsl */`varying float vLife; varying vec3 vColor;
+void main(){ if (vLife <= 0.) discard; vec2 p = gl_PointCoord - 0.5; float k = smoothstep(0.5, 0.15, length(p)); gl_FragColor = vec4(vColor * (0.85 + 0.25*vLife), k * vLife * 0.55); }`
 
 export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1, engine = {}, seed = 1 } = {}) {
   const root = new THREE.Group(); root.name = 'vehicle-rig'
@@ -105,49 +108,55 @@ export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1
     sp.vel[j * 3] = d.x * s + (rand() - 0.5) * s * 0.5; sp.vel[j * 3 + 1] = d.y * s + (rand() - 0.2) * s * 0.5; sp.vel[j * 3 + 2] = d.z * s + (rand() - 0.5) * s * 0.5
     sp.max[j] = 0.25 + 0.35 * rand(); sp.life[j] = 1; sp.size[j] = (1.5 + 2.5 * rand()) * Math.max(0.6, u.r / unit) } }
   // Stauchen → Strecken (surge) und Steigen (ascent): eine gedämpfte Feder auf der Gruppe stretch, Anticipation als kurze Gegenbewegung vor dem Impuls
-  const spr = { z: 0, vz: 0, y: 0, vy: 0, queue: [] }
+  const spr = { z: 0, vz: 0, y: 0, vy: 0, p: 0, vp: 0, queue: [] }
   const springStep = (dt) => { const w = 2 * Math.PI * 3.2, d = 0.42
     for (const q of spr.queue) q.t -= dt
     while (spr.queue.length && spr.queue[0].t <= 0) { const q = spr.queue.shift(); spr[q.axis === 'z' ? 'vz' : 'vy'] += q.kick }
     spr.vz += (-2 * d * w * spr.vz - w * w * spr.z) * dt; spr.z += spr.vz * dt; spr.vy += (-2 * d * w * spr.vy - w * w * spr.y) * dt; spr.y += spr.vy * dt
+    spr.vp += (-2 * 0.38 * w * spr.vp - w * w * spr.p) * dt; spr.p += spr.vp * dt; spr.p = Math.max(-1, Math.min(1, spr.p)); stretch.rotation.x = spr.p * 0.4 // brake: Nase taucht (≈ 5°), Heck hebt, federt nach
     spr.z = Math.max(-0.16, Math.min(0.2, spr.z)); spr.y = Math.max(-0.16, Math.min(0.2, spr.y))
     const ez = 1 + spr.z, ey = 1 + spr.y // Volumen erhalten: x · y · z = 1
     stretch.scale.set(1 / Math.sqrt(ez * ey), ey / Math.sqrt(ez), ez / Math.sqrt(ey)) }
   const surge = (strength = 1) => { spr.vz -= 1.6 * strength; spr.queue.push({ t: 0.1, axis: 'z', kick: 3.4 * strength }) } // erst stauchen, nach 0,1 s strecken
+  const brakeDip = (strength = 1) => { spr.vp += 9 * strength }
   const ascent = (strength = 1) => { spr.vy -= 1.5 * strength; spr.queue.push({ t: 0.09, axis: 'y', kick: 3.1 * strength }) }
   // Bodennähe-Staub: Weltraum-Pool, Schwebe-Anker als Gruppen unter stretch (folgen Verformung und Lage)
   const hov = hover.map((p, i) => { const o = new THREE.Object3D(); o.name = 'hover:' + i; o.position.fromArray(p).multiplyScalar(unit); stretch.add(o); return o })
-  const du = { pos: new Float32Array(DUST.count * 3), vel: new Float32Array(DUST.count * 3), life: new Float32Array(DUST.count), max: new Float32Array(DUST.count), size: new Float32Array(DUST.count), next: 0, acc: 0 }
-  const dg = new THREE.BufferGeometry(); dg.setAttribute('position', new THREE.BufferAttribute(du.pos, 3)); dg.setAttribute('aLife', new THREE.BufferAttribute(du.life, 1)); dg.setAttribute('aSize', new THREE.BufferAttribute(du.size, 1))
-  const dm = new THREE.ShaderMaterial({ vertexShader: SPARK_VERT, fragmentShader: DUST_FRAG, uniforms: { uColor: { value: new THREE.Color('#cdb48c') }, uScale: { value: 300 * unit } }, transparent: true, depthWrite: false })
+  const du = { pos: new Float32Array(DUST.count * 3), vel: new Float32Array(DUST.count * 3), life: new Float32Array(DUST.count), max: new Float32Array(DUST.count), size: new Float32Array(DUST.count), col: new Float32Array(DUST.count * 3), next: 0, acc: 0 }
+  const dg = new THREE.BufferGeometry(); dg.setAttribute('position', new THREE.BufferAttribute(du.pos, 3)); dg.setAttribute('aLife', new THREE.BufferAttribute(du.life, 1)); dg.setAttribute('aSize', new THREE.BufferAttribute(du.size, 1)); dg.setAttribute('aColor', new THREE.BufferAttribute(du.col, 3))
+  const dustCol = new THREE.Color('#cdb48c'), _c = new THREE.Color()
+  const dm = new THREE.ShaderMaterial({ vertexShader: DUST_VERT, fragmentShader: DUST_FRAG, uniforms: { uScale: { value: 300 * unit } }, transparent: true, depthWrite: false })
   const world = new THREE.Points(dg, dm); world.name = 'vehicle-rig-dust'; world.frustumCulled = false; world.renderOrder = 2
   const _w = new THREE.Vector3()
-  const dustStep = (dt, speed01, groundAt) => {
+  const dustStep = (dt, speed01, groundAt, colorAt) => {
     if (groundAt && hov.length && speed01 > DUST.minSpeed) for (const o of hov) {
       o.getWorldPosition(_w); const gy = groundAt(_w.x, _w.z); if (gy == null) continue; const h = _w.y - gy, k = Math.max(0, 1 - h / (DUST.hMax * unit * 1.6)) * Math.min(1, speed01 * 1.6)
       du.acc += DUST.rate * k * dt
       while (du.acc >= 1) { du.acc -= 1; const j = du.next; du.next = (du.next + 1) % DUST.count
         du.pos[j * 3] = _w.x + (rand() - 0.5) * 0.6 * unit; du.pos[j * 3 + 1] = gy + 0.05; du.pos[j * 3 + 2] = _w.z + (rand() - 0.5) * 0.6 * unit
-        const a = rand() * Math.PI * 2, sp = (0.6 + rand()) * unit; du.vel[j * 3] = Math.cos(a) * sp; du.vel[j * 3 + 1] = (0.8 + rand() * 1.4) * unit; du.vel[j * 3 + 2] = Math.sin(a) * sp
+        const a = rand() * Math.PI * 2, sp = (DUST.spread[0] + rand() * (DUST.spread[1] - DUST.spread[0])) * unit; du.vel[j * 3] = Math.cos(a) * sp; du.vel[j * 3 + 1] = (DUST.rise[0] + rand() * (DUST.rise[1] - DUST.rise[0])) * unit; du.vel[j * 3 + 2] = Math.sin(a) * sp
+        const cc = colorAt ? _c.set(colorAt(_w.x, _w.z) || dustCol) : dustCol, jit = 0.9 + 0.2 * rand(); du.col[j * 3] = cc.r * jit; du.col[j * 3 + 1] = cc.g * jit; du.col[j * 3 + 2] = cc.b * jit
         du.max[j] = DUST.life[0] + (DUST.life[1] - DUST.life[0]) * rand(); du.life[j] = 1; du.size[j] = (DUST.size[0] + (DUST.size[1] - DUST.size[0]) * rand()) }
     }
     for (let j = 0; j < DUST.count; j++) { if (du.life[j] <= 0) continue; du.life[j] -= dt / du.max[j]; if (du.life[j] < 0) du.life[j] = 0
       du.vel[j * 3 + 1] -= 1.8 * unit * dt; for (let k = 0; k < 3; k++) { du.vel[j * 3 + k] *= 1 - Math.min(1, dt * 1.2); du.pos[j * 3 + k] += du.vel[j * 3 + k] * dt } }
-    dg.attributes.position.needsUpdate = true; dg.attributes.aLife.needsUpdate = true; dg.attributes.aSize.needsUpdate = true
+    dg.attributes.position.needsUpdate = true; dg.attributes.aLife.needsUpdate = true; dg.attributes.aSize.needsUpdate = true; dg.attributes.aColor.needsUpdate = true
   }
   const eng = createEngine(engine), state = { thrust: PLUME.idle, boost: 0, angle: 0, last: [], events: { shift: 0, backfire: 0, surge: 0 } }
   return {
     object3d: root,
     stretch,
     world, // Weltraum-Staub: der Wirt hängt ihn in die Szene
-    setDustColor(hex) { dm.uniforms.uColor.value.set(hex) },
+    setDustColor(hex) { dustCol.set(hex) },
     engine: eng,
+    get thrust() { return state.thrust }, get boostLevel() { return state.boost }, // für Klang (ein Signal mit Fahne und Deformer)
     surge(s) { surge(s); state.events.surge++ },
     ascent,
+    brake(s) { brakeDip(s); state.events.brake = (state.events.brake || 0) + 1 },
     // in: throttle 0..1, speed01 0..1, boost bool, brake bool. Gibt die Ereignisse dieses Bildes zurück (shift/backfire) – für Klang und Deformer
     update(dt, inp = {}) {
       dt = Math.min(dt || 0, 0.1); shared.uTime.value += dt
-      const { throttle = 0, speed01 = 0, boost = false, brake = false, groundAt = null } = inp
+      const { throttle = 0, speed01 = 0, boost = false, brake = false, groundAt = null, groundColorAt = null } = inp
       const ev = eng.step(dt, { speed01, throttle }); state.last = ev
       for (const e of ev) { if (e.type === 'shift' && e.up) { state.events.shift++; units.forEach((u) => u.type !== 'fan' && emit(u, 3, 4 * unit)); surge(0.45) }
         if (e.type === 'backfire' && Math.random() < ENGINE.backfireChance) { state.events.backfire++; units.forEach((u) => u.type !== 'fan' && emit(u, 8, 7 * unit)) } }
@@ -166,7 +175,7 @@ export function createVehicleRig({ anchors = [], hover = [], glow = {}, unit = 1
       for (let j = 0; j < SPARKS; j++) { if (sp.life[j] <= 0) continue; sp.life[j] -= dt / sp.max[j]; if (sp.life[j] < 0) sp.life[j] = 0
         sp.vel[j * 3 + 1] -= 4 * unit * dt; for (let k = 0; k < 3; k++) sp.pos[j * 3 + k] += sp.vel[j * 3 + k] * dt }
       sg.attributes.position.needsUpdate = true; sg.attributes.aLife.needsUpdate = true; sg.attributes.aSize.needsUpdate = true
-      springStep(dt); dustStep(dt, speed01, groundAt)
+      springStep(dt); dustStep(dt, speed01, groundAt, groundColorAt)
       return ev
     },
     info: () => ({ schema: VEHICLE_RIG_SCHEMA, anchors: units.length, thrust: +state.thrust.toFixed(3), gear: eng.gear, rpm: +eng.rpm.toFixed(3), boost: +state.boost.toFixed(2), events: { ...state.events }, stretch: [+stretch.scale.x.toFixed(3), +stretch.scale.y.toFixed(3), +stretch.scale.z.toFixed(3)], drawCalls: units.reduce((n, u) => n + u.mats.length, 0) + 1 + (hov.length ? 1 : 0), dust: du.life.reduce((n, v) => n + (v > 0 ? 1 : 0), 0) }),

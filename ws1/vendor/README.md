@@ -82,6 +82,24 @@ rig.surge(1); rig.ascent(0.9)   // Stauchen → Strecken
 - Anker-Typen heute: `thrust` (Glow-Kern + Fahne mit Schockdiamanten) und `fan` (drehende Lüfterscheibe). Geplant: `antigrav`, `exhaust`, `weapon`, `light`.
 - Keine Lichter und kein Bloom-Pass; je Düse 1–2 Draw Calls, Funken und Staub je 1.
 
+## Fluff-Saugen · `kfb-fluff-suck.v1.js` (V-479, V-487 Stufe 2)
+Ein Saug-Modul für Bots, Spieler-Saugarm und UFO. Je Kugel läuft ein Cartoon-Ablauf von 1,4 s mit Squash & Stretch, das Volumen bleibt erhalten:
+Anlauf 0,3 s → Stretch am Ursprung 0,4 s → Plopp 0,1 s → Flug 0,4 s → Einsaugen 0,2 s. Gezählt wird erst beim Einsaugen.
+
+```js
+import { createFluffSuck } from './kfb-fluff-suck.v1.js'
+const suck = createFluffSuck({ maxJobs: 24, onCue: (cue, job) => sfx(cue, job.origin) })   // cues: charge, stretch, plop, fly, swallow-start, swallow, cloud
+scene.add(suck.object3d)
+suck.suck({ pos: [x, y, z], r: 0.12, color: '#93be3c' }, () => ({ pos: nozzleWorldPos }), 'tree' /* | 'ground' | 'water' */, { onSwallow: (ball) => tank.add(ball) })
+suck.update(dt)   // je Bild; suck.stats() → started, swallowed, clouded, plops je Herkunft, active
+```
+
+- Ein InstancedMesh für alle fliegenden Kugeln, ein Punkt-Pool (160) für Ursprungs-Effekte (Blätter, Krümel, Spritzer); keine Lichter.
+- Über `maxJobs` werden weitere Kugeln zu einer Wolke zusammengefasst: Sie zählen sofort und erzeugen nur einen Puff, damit Gebiete mit vielen Kugeln flüssig bleiben.
+- Strahl-Typ (UFO): dieselbe Düsen-Rückgabe, nur mit der Mündung des Kegels als `pos`.
+- Ton im Spiel: ElevenLabs `fluff_suction_r1` (S01–S06) hängt an den Cues (`src/audio/suckAudio.js` in kfb-planet).
+
 ## Herkunft
 - Gebaut und getestet in `kfb-planet`. Tests: `test/unit/figures.mjs` und `test/light.mjs`, dazu die Bühnenprobe `#stage,actors=aliens,light=l1`.
 - Die E2-Dateien sind byte-gleich mit WS0 `E2_ATTACH_R1`: clay-skin-attach.v1 blob `80b3ddce`, clay-eyelid.v3 `3c2bd9ae`, v2 `8f1ab9e0`, v1 `5f39e135`.
+- `src/vendor/gem/kfb-gem.v1.js` (nur im Spiel, kein eigenes Paket) ist byte-gleich mit WS0 `GEM_R1/kfb-gem.v1.js` r4, blob `44cd3758` (MIT).
