@@ -1,0 +1,189 @@
+{
+  "schema": "kfb.webchat-proposal/1",
+  "id": "lady_dory_mercy_protocol_2026_10_18_c1da80f431ea498397a9c511",
+  "subjectId": "lady_dory_mercy_protocol",
+  "kind": "scenelet",
+  "state": "PROPOSAL",
+  "intent": "Georg: vollständigen Webchat-Workflow mit Lady Dory testen; aktuelles Blatt lesen, ein Scenelet als DESIGN entwickeln und als GitHub-Änderungsvorschlag sichern; kein Merge und keine bestehenden Werte überschreiben.",
+  "baseCommit": "4908ef44a0f0c0f606cfdba7ad402f916a9042d7",
+  "baseBlobs": {
+    "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WEBCHAT_AUTHORING_R1/scenelets/lady_dory_mercy_protocol.scenelet.json": null
+  },
+  "targets": [
+    "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WEBCHAT_AUTHORING_R1/scenelets/lady_dory_mercy_protocol.scenelet.json"
+  ],
+  "changes": [
+    {
+      "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/WEBCHAT_AUTHORING_R1/scenelets/lady_dory_mercy_protocol.scenelet.json",
+      "pointer": "/",
+      "before": null,
+      "after": {
+        "schema": "kfb.authoring-scene/1",
+        "id": "lady_dory_mercy_protocol",
+        "kind": "scenelet",
+        "status": "DESIGN",
+        "title": {
+          "v": "Das Protokoll der Barmherzigkeit",
+          "src": "DESIGN · WSA Webchat 2026-10-18, Georgs Scenelet-Testauftrag; abgeleitet aus lady_dory.character.json @ 4908ef44a0f0c0f606cfdba7ad402f916a9042d7 und META_NARRATIVE_R1.md §3/5/9; keine Kanon-Festlegung",
+          "status": "DESIGN"
+        },
+        "premise": {
+          "v": {
+            "setup": "Nach der ersten unfreiwilligen Verbindung zum UFO trifft der Spieler Lady Dory an einem Durchgang. Sie will ihm eine Pause vom Verhör verschaffen – allerdings so, dass ihre Barmherzigkeit makellos dokumentiert ist.",
+            "want": "Dory will einem einzelnen Menschen helfen und zugleich die Überlegenheit ihres moralischen Urteils bewahren.",
+            "friction": "Das erfundene Ausnahmeformular verlangt einen Schuldigen; Dorys Hilfe würde den Spieler zum Beweisstück ihrer eigenen Tugend machen.",
+            "contradiction": "Sie erkennt Macht im Moralismus und übt sie selbst aus. Das ist ein Szenenvorschlag, keine Ergänzung ihrer kanonischen Biografie.",
+            "duration": "ca. 60–90 Sekunden, redaktioneller Richtwert"
+          },
+          "src": "DESIGN · WSA Webchat 2026-10-18, Georgs Scenelet-Testauftrag; abgeleitet aus lady_dory.character.json @ 4908ef44a0f0c0f606cfdba7ad402f916a9042d7 und META_NARRATIVE_R1.md §3/5/9; keine Kanon-Festlegung",
+          "status": "DESIGN"
+        },
+        "playerRole": {
+          "v": {
+            "role": "Betroffener und Gesprächspartner; keine Prüfung auf die moralisch richtige Antwort.",
+            "choices": [
+              {
+                "id": "ask_why",
+                "label": "Warum braucht Barmherzigkeit einen Schuldigen?",
+                "consequence": "Dory muss ihr Formular und ihre eigene Ausnahme gemeinsam hinterfragen."
+              },
+              {
+                "id": "take_exception",
+                "label": "Die Ausnahme annehmen.",
+                "consequence": "Dory hilft sofort, bemerkt aber, dass ihre großzügige Geste den Spieler isoliert."
+              },
+              {
+                "id": "decline_label",
+                "label": "Die Hilfe annehmen, die Bezeichnung ablehnen.",
+                "consequence": "Dory kann Hilfe ohne Etikett gewähren; ihr Bedürfnis nach einem makellosen Archiv bleibt sichtbar."
+              }
+            ],
+            "boundaries": "Keine Inventarverluste, keine Charakterwert- oder Spieler-Erinnerungsänderung; Folgen sind zunächst nur alternative Schlussbeats."
+          },
+          "src": "DESIGN · WSA Webchat 2026-10-18, Georgs Scenelet-Testauftrag; abgeleitet aus lady_dory.character.json @ 4908ef44a0f0c0f606cfdba7ad402f916a9042d7 und META_NARRATIVE_R1.md §3/5/9; keine Kanon-Festlegung",
+          "status": "DESIGN"
+        },
+        "characterIds": [
+          "lady_dory"
+        ],
+        "beats": [
+          {
+            "v": {
+              "action": "Dory hält den Spieler am Durchgang an und bietet Schutz vor dem nächsten Protokollschritt an.",
+              "line": "Darling, you may rest. I shall explain why you deserve it.",
+              "cause": "Ihre empathische Einmischung eröffnet die Begegnung."
+            },
+            "src": "DESIGN · WSA Webchat 2026-10-18, Georgs Scenelet-Testauftrag; abgeleitet aus lady_dory.character.json @ 4908ef44a0f0c0f606cfdba7ad402f916a9042d7 und META_NARRATIVE_R1.md §3/5/9; keine Kanon-Festlegung",
+            "status": "DESIGN"
+          },
+          {
+            "v": {
+              "action": "Sie entdeckt im erfundenen Ausnahmeformular das Feld für die Verantwortlichen und bittet den Spieler um einen Namen.",
+              "line": "A small formality. Whose fault is your distress?",
+              "cause": "Die angebotene Hilfe verlangt plötzlich ein moralisches Urteil."
+            },
+            "src": "DESIGN · WSA Webchat 2026-10-18, Georgs Scenelet-Testauftrag; abgeleitet aus lady_dory.character.json @ 4908ef44a0f0c0f606cfdba7ad402f916a9042d7 und META_NARRATIVE_R1.md §3/5/9; keine Kanon-Festlegung",
+            "status": "DESIGN"
+          },
+          {
+            "v": {
+              "action": "Der Spieler fragt nach, nimmt die Ausnahme an oder lehnt das Etikett ab; Dory muss konkret reagieren.",
+              "line": "Interesting. You would prefer mercy without a verdict?",
+              "cause": "Die Wahl trifft Dorys Widerspruch zwischen Fürsorge und moralischer Kontrolle."
+            },
+            "src": "DESIGN · WSA Webchat 2026-10-18, Georgs Scenelet-Testauftrag; abgeleitet aus lady_dory.character.json @ 4908ef44a0f0c0f606cfdba7ad402f916a9042d7 und META_NARRATIVE_R1.md §3/5/9; keine Kanon-Festlegung",
+            "status": "DESIGN"
+          },
+          {
+            "v": {
+              "action": "Bei Zustimmung grenzt Dory den Spieler als Ausnahme vom Rest ab und hört ihre eigene Herablassung. Bei Nachfrage oder Ablehnung erkennt sie, dass ihr Formular das Leid erst sortiert.",
+              "line": "I seem to have rescued you from everyone. How terribly exclusive.",
+              "cause": "Beide Wege führen zu einem sichtbaren Preis ihrer vermeintlich reinen Lösung."
+            },
+            "src": "DESIGN · WSA Webchat 2026-10-18, Georgs Scenelet-Testauftrag; abgeleitet aus lady_dory.character.json @ 4908ef44a0f0c0f606cfdba7ad402f916a9042d7 und META_NARRATIVE_R1.md §3/5/9; keine Kanon-Festlegung",
+            "status": "DESIGN"
+          },
+          {
+            "v": {
+              "action": "Dory streicht das Schuld-Feld durch und gibt den Durchgang frei. Kein endgültiger Charakterwandel: Sie ordnet die Streichung anschließend sorgfältig ins Archiv ein.",
+              "line": "There. No verdict. I shall file that under exceptional paperwork.",
+              "cause": "Eine kleine konkrete Hilfe wird möglich, während ihr altes Kontrollmuster als komischer Rest bestehen bleibt."
+            },
+            "src": "DESIGN · WSA Webchat 2026-10-18, Georgs Scenelet-Testauftrag; abgeleitet aus lady_dory.character.json @ 4908ef44a0f0c0f606cfdba7ad402f916a9042d7 und META_NARRATIVE_R1.md §3/5/9; keine Kanon-Festlegung",
+            "status": "DESIGN"
+          }
+        ],
+        "composition": {
+          "v": {
+            "focalAction": "Dory, Spieler und ein noch unproduziertes Ausnahmeformular am Durchgang; das Durchstreichen ist der Wendepunkt.",
+            "spatialRelations": "Dory steht zuerst zwischen Spieler und Durchgang; am Ende tritt sie zur Seite. Keine neue Raum-Topologie wird kanonisiert.",
+            "purpose": "Macht zeigt sich als blockierter Weg, Fürsorge als freigegebener Raum.",
+            "presentation": "Nur redaktionelles Blocking. Spätere Figur ausschließlich aus ihrer Karte, Licht ausschließlich aus gemeinsamem Bühnenmodul; keine Clips oder privaten Lichtpresets erfunden."
+          },
+          "src": "DESIGN · WSA Webchat 2026-10-18, Georgs Scenelet-Testauftrag; abgeleitet aus lady_dory.character.json @ 4908ef44a0f0c0f606cfdba7ad402f916a9042d7 und META_NARRATIVE_R1.md §3/5/9; keine Kanon-Festlegung",
+          "status": "DESIGN"
+        },
+        "assetRefs": [],
+        "runtimeRef": null,
+        "provenance": [
+          {
+            "repo": "georg-doc/kayfabizarro",
+            "commit": "4908ef44a0f0c0f606cfdba7ad402f916a9042d7",
+            "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json",
+            "note": "Aktuell gelesen; CS-40/41 nur wie hier zusammengefasst, keine Behauptung, Dropbox-Originale gelesen zu haben."
+          },
+          {
+            "repo": "georg-doc/kayfabizarro",
+            "commit": "4908ef44a0f0c0f606cfdba7ad402f916a9042d7",
+            "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_NARRATIVE_R1.md",
+            "note": "§3: Rolle und Beziehungsstatus offen; §5 UFO-Verbindung; §9 Kanonklassen."
+          },
+          {
+            "repo": "georg-doc/kayfabizarro",
+            "commit": "4908ef44a0f0c0f606cfdba7ad402f916a9042d7",
+            "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/lady_dory.figure.json",
+            "note": "Nur Kartenstatus gelesen; keine Darstellung, keine neuen Modell-/Rig-/Lichtwerte."
+          }
+        ],
+        "conflicts": [
+          "Role: 'Empathic Saboteur — no official job' (CS-40, CS-52) vs 'Moral Inquisitor, archive-wielder' / moral_enforcer_archivar (CS-41) vs 'witness' (CS-57) vs Georg 'former high-socialite partner' (CS-30).",
+          "Colour: #c8682a orange (CS-40) and suit orange-red (V-261) vs CtP palette #8E44AD, random per session (CS-41).",
+          "Ort innerhalb des UFOs, Grund/Form der Verbindung und Dorys offizielle Rolle bleiben offen; der Durchgang ist DESIGN, kein bestätigter Garten oder neuer Runtime-Raum."
+        ],
+        "todo": [
+          "Georg bewertet Ton, Spielerwahl und Schlussgag; DESIGN bleibt bis ausdrücklicher Übernahme bestehen.",
+          "Bestehenden Raum/Prop und autorisierte Performance-Clips prüfen; noch keine Asset- oder Runtime-Verweise vorhanden.",
+          "Englische Dialogentwürfe sind freie Szene, keine Karten-Triplets oder freigegebenen Voice-Samples.",
+          "Keine Spiellogik-/Memory-Anbindung und keine 3D-Vorschau in diesem Vorschlag."
+        ]
+      },
+      "reason": "Neues separat gespeichertes DESIGN-Scenelet; Figurenblatt und Figurenkarte bleiben unverändert."
+    }
+  ],
+  "conflicts": [
+    "Role: 'Empathic Saboteur — no official job' (CS-40, CS-52) vs 'Moral Inquisitor, archive-wielder' / moral_enforcer_archivar (CS-41) vs 'witness' (CS-57) vs Georg 'former high-socialite partner' (CS-30).",
+    "Colour: #c8682a orange (CS-40) and suit orange-red (V-261) vs CtP palette #8E44AD, random per session (CS-41).",
+    "Ort innerhalb des UFOs, Grund/Form der Verbindung und Dorys offizielle Rolle bleiben offen; der Durchgang ist DESIGN, kein bestätigter Garten oder neuer Runtime-Raum."
+  ],
+  "createdAt": "2026-10-18T00:30:27Z",
+  "provenance": [
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "4908ef44a0f0c0f606cfdba7ad402f916a9042d7",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lady_dory.character.json",
+      "note": "Aktuell gelesen; CS-40/41 nur wie hier zusammengefasst, keine Behauptung, Dropbox-Originale gelesen zu haben."
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "4908ef44a0f0c0f606cfdba7ad402f916a9042d7",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/META_NARRATIVE_R1.md",
+      "note": "§3: Rolle und Beziehungsstatus offen; §5 UFO-Verbindung; §9 Kanonklassen."
+    },
+    {
+      "repo": "georg-doc/kayfabizarro",
+      "commit": "4908ef44a0f0c0f606cfdba7ad402f916a9042d7",
+      "path": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/figures/lady_dory.figure.json",
+      "note": "Nur Kartenstatus gelesen; keine Darstellung, keine neuen Modell-/Rig-/Lichtwerte."
+    }
+  ]
+}
