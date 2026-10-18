@@ -6789,6 +6789,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-486",
+   "date": "2026-10-18",
+   "area": "Audio",
+   "verdict": "TBD",
+   "text": "KFB-Sprache statt Live-TTS (Georg 18.10.): NPCs sprechen eine cartoonige Fantasiesprache (Fluff-o-lect-Laute, wie Simlish/Animalese bzw. die erst unverständliche Roboter-Sprache in WoW), die Bedeutung steht als Triplet in der Sprechblase. Text wird deterministisch auf Silben abgebildet (gleiches Wort = gleicher Laut), Emotion/Debatten-Hitze über Tempo, Tonhöhe, Lautstärke; Silben-Einsätze als Cues der Ereignis-Zeitleiste (V-389) für Mund, Augen-als-Schauspieler, Gesten. Je Figur eine eigene Silbenbank aus ElevenLabs (TTS liest Silbenlisten, automatisch geschnitten). Meta: Dekodieren über das Kartensammeln – unvollständiges Deck zeigt Teile der Blase als Glyphen, vollständiges Deck dekodiert, dann spielt der echte Song. Löst Aussprache-, Kosten-, Latenz- und Schlüsselproblem von Live-TTS. Probe R1 von WS0: 3 Stimmen (FrizzleBob, Dory, Hunky), Demo-Seite mit Triplet-Eingabe, Sprecher, Emotion, Dekodier-Regler.",
+   "values": {},
+   "owner": "WS0 (Probe) · WS1 (später Laufzeit) · WSA (Audio-Site)",
+   "check": "Georg hört die Probe im Hub",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Live-TTS ist im Browser teuer, langsam, braucht einen offenen Schlüssel und spricht Kartennamen falsch; eine eigene Sprache ist steuerbar, immersiv und meta-narrativ nutzbar.",
+   "applies": "Probe nach Text-Studio Stufe 1"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6876,7 +6891,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:836",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:837",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
