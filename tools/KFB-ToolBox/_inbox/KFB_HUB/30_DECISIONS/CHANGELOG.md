@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-492 KFB-Sprache R1 FAIL (Georg) → R2 melodisch: Web-Audio-Instrumentenstimme je Figur, Wort = Motiv, Gefühl = Tempo/Lage/Tonleiter, durchgehend ohne Schnitte; gleiche Artifact-URL, Hub q45 aktualisiert. Tank-Blubber ElevenLabs tank_bubbles_r1 (Schleifen ruhig/Psyop-Soup, Plopps, Gluckser, Pumpen-Summen) erzeugt und auf dem Audio-Branch.
 - V-491 Glastank kleiner, Maß aus dem Bewegungsraum der Wassertreten-/Floating-Animation (nichts sticht heraus) → WSB B34 r3 (42. Nachtrag).
 - V-490 UFO-Kuppel TUNE: halbrund auf Glasring, fast unsichtbar, Cabrio-Segmente zum Auf-/Zurollen → WSB B34 r3 (41. Nachtrag).
 - WSB B34 r2 Glastank (V-489): Glas klar, Flüssigkeit eigenes Mesh kfb_tank_liquid (92 %), kfb_tank_float mittig (Kopf 0,5 u unter Oberfläche) + float_range, 7 Blasen-Anker mit Rate/Größe/Seed → Hub q49 Bild ersetzt.

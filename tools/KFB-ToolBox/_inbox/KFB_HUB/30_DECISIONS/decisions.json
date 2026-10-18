@@ -6879,6 +6879,21 @@
    "applies": "mit B34 r3"
   },
   {
+   "id": "V-492",
+   "date": "2026-10-18",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "KFB-Sprache melodisch statt sprachlich (Georg 18.10. zu Probe R1: klang wie kaputte Sprachausgabe, abgeschnittene nervige Laute): keine Silben, keine Sprach-Aufnahmen, keine Fantasie-Wörter. Jede Figur „singt“ ihre Triplet-Zeile als eine durchgehende Melodie auf ihrem eigenen Instrument (Glissando zwischen Tönen, keine harten Schnitte); jedes Wort = festes Motiv aus der Tonleiter der Stimmung (Kodierung), Gefühl über Tempo/Lage/Tonleiter, Frage steigend, Punkt fallend; Bedeutung in der Sprechblase, Dekodieren über Karten bleibt. Probe R2 (Web Audio, live erzeugt): FrizzleBob gedämpfte Posaune, Dory Okarina, Hunky Fagott-Kazoo → Hub q45. Silbenbänke R1 und TTS-Phrasen verworfen.",
+   "values": {},
+   "owner": "WS0 (Probe) · WS1 (Laufzeit nach PASS)",
+   "check": "Georg hört R2 (Hub q45)",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Sprachähnliches Brabbeln wirkt wie ein Fehler; Melodie ist steuerbar, nicht nervig und bleibt Cartoon (Peanuts-Posaune, Animal-Crossing-Logik ohne Silben).",
+   "applies": "Probe R2"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6966,7 +6981,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:849",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:850",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
