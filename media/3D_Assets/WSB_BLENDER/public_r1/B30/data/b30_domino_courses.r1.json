@@ -1,0 +1,1151 @@
+{
+ "schema": "kfb.domino-course/1",
+ "units": "KFB-u (0,616 m), glTF-Achsen; Boden y = 0",
+ "tile_size_u": [
+  2.435,
+  4.87,
+  0.63
+ ],
+ "spacing_u": 2.679,
+ "spacing_rule": "0,55 × Steinhöhe",
+ "courses": {
+  "s_curve": {
+   "note": "S-Kurve, Amplitude 6 u, Länge 50 u",
+   "tiles": [
+    {
+     "tile": "KFB_Domino_0-0",
+     "pos_u": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rot_y_deg": 36.68,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-1",
+     "pos_u": [
+      1.6,
+      0.0,
+      2.148
+     ],
+     "rot_y_deg": 35.64,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-2",
+     "pos_u": [
+      3.121,
+      0.0,
+      4.353
+     ],
+     "rot_y_deg": 32.32,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-3",
+     "pos_u": [
+      4.461,
+      0.0,
+      6.67
+     ],
+     "rot_y_deg": 26.16,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-4",
+     "pos_u": [
+      5.475,
+      0.0,
+      9.146
+     ],
+     "rot_y_deg": 16.53,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-5",
+     "pos_u": [
+      5.975,
+      0.0,
+      11.771
+     ],
+     "rot_y_deg": 3.76,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-6",
+     "pos_u": [
+      5.823,
+      0.0,
+      14.439
+     ],
+     "rot_y_deg": -9.87,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-1",
+     "pos_u": [
+      5.065,
+      0.0,
+      17.003
+     ],
+     "rot_y_deg": -21.37,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-2",
+     "pos_u": [
+      3.881,
+      0.0,
+      19.403
+     ],
+     "rot_y_deg": -29.36,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-3",
+     "pos_u": [
+      2.443,
+      0.0,
+      21.662
+     ],
+     "rot_y_deg": -34.14,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-4",
+     "pos_u": [
+      0.876,
+      0.0,
+      23.834
+     ],
+     "rot_y_deg": -36.37,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-5",
+     "pos_u": [
+      -0.733,
+      0.0,
+      25.975
+     ],
+     "rot_y_deg": -36.47,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-6",
+     "pos_u": [
+      -2.308,
+      0.0,
+      28.142
+     ],
+     "rot_y_deg": -34.43,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-2",
+     "pos_u": [
+      -3.761,
+      0.0,
+      30.391
+     ],
+     "rot_y_deg": -29.91,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-3",
+     "pos_u": [
+      -4.974,
+      0.0,
+      32.777
+     ],
+     "rot_y_deg": -22.22,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-4",
+     "pos_u": [
+      -5.778,
+      0.0,
+      35.328
+     ],
+     "rot_y_deg": -11.01,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-5",
+     "pos_u": [
+      -5.989,
+      0.0,
+      37.991
+     ],
+     "rot_y_deg": 2.54,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-6",
+     "pos_u": [
+      -5.543,
+      0.0,
+      40.626
+     ],
+     "rot_y_deg": 15.51,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-3",
+     "pos_u": [
+      -4.567,
+      0.0,
+      43.116
+     ],
+     "rot_y_deg": 25.45,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-4",
+     "pos_u": [
+      -3.249,
+      0.0,
+      45.447
+     ],
+     "rot_y_deg": 31.89,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-5",
+     "pos_u": [
+      -1.74,
+      0.0,
+      47.659
+     ],
+     "rot_y_deg": 35.44,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-6",
+     "pos_u": [
+      -0.143,
+      0.0,
+      49.81
+     ],
+     "rot_y_deg": 36.58,
+     "branch": null
+    }
+   ],
+   "count": 22
+  },
+  "spiral": {
+   "note": "archimedische Spirale von außen (r ≈ 24 u) nach innen (r = 8 u), Windungsabstand 1,3 × Höhe",
+   "tiles": [
+    {
+     "tile": "KFB_Domino_0-0",
+     "pos_u": [
+      -0.0,
+      0.0,
+      20.662
+     ],
+     "rot_y_deg": -96.54,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-1",
+     "pos_u": [
+      -2.659,
+      0.0,
+      20.357
+     ],
+     "rot_y_deg": -100.28,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-2",
+     "pos_u": [
+      -5.256,
+      0.0,
+      19.708
+     ],
+     "rot_y_deg": -107.78,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-3",
+     "pos_u": [
+      -7.745,
+      0.0,
+      18.726
+     ],
+     "rot_y_deg": -115.33,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-4",
+     "pos_u": [
+      -10.084,
+      0.0,
+      17.424
+     ],
+     "rot_y_deg": -122.91,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-5",
+     "pos_u": [
+      -12.229,
+      0.0,
+      15.824
+     ],
+     "rot_y_deg": -130.59,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-6",
+     "pos_u": [
+      -14.139,
+      0.0,
+      13.949
+     ],
+     "rot_y_deg": -138.32,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-1",
+     "pos_u": [
+      -15.78,
+      0.0,
+      11.835
+     ],
+     "rot_y_deg": -146.06,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-2",
+     "pos_u": [
+      -17.121,
+      0.0,
+      9.519
+     ],
+     "rot_y_deg": -153.87,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-3",
+     "pos_u": [
+      -18.132,
+      0.0,
+      7.041
+     ],
+     "rot_y_deg": -161.76,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-4",
+     "pos_u": [
+      -18.792,
+      0.0,
+      4.447
+     ],
+     "rot_y_deg": -169.67,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-5",
+     "pos_u": [
+      -19.09,
+      0.0,
+      1.787
+     ],
+     "rot_y_deg": -177.67,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-6",
+     "pos_u": [
+      -19.009,
+      0.0,
+      -0.888
+     ],
+     "rot_y_deg": 174.29,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-2",
+     "pos_u": [
+      -18.558,
+      0.0,
+      -3.525
+     ],
+     "rot_y_deg": 166.18,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-3",
+     "pos_u": [
+      -17.734,
+      0.0,
+      -6.072
+     ],
+     "rot_y_deg": 158.01,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-4",
+     "pos_u": [
+      -16.559,
+      0.0,
+      -8.476
+     ],
+     "rot_y_deg": 149.79,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-5",
+     "pos_u": [
+      -15.048,
+      0.0,
+      -10.684
+     ],
+     "rot_y_deg": 141.47,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-6",
+     "pos_u": [
+      -13.234,
+      0.0,
+      -12.652
+     ],
+     "rot_y_deg": 133.14,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-3",
+     "pos_u": [
+      -11.153,
+      0.0,
+      -14.335
+     ],
+     "rot_y_deg": 124.7,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-4",
+     "pos_u": [
+      -8.846,
+      0.0,
+      -15.69
+     ],
+     "rot_y_deg": 116.18,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-5",
+     "pos_u": [
+      -6.364,
+      0.0,
+      -16.689
+     ],
+     "rot_y_deg": 107.64,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-6",
+     "pos_u": [
+      -3.76,
+      0.0,
+      -17.307
+     ],
+     "rot_y_deg": 99.01,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_4-4",
+     "pos_u": [
+      -1.093,
+      0.0,
+      -17.525
+     ],
+     "rot_y_deg": 90.28,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_4-5",
+     "pos_u": [
+      1.576,
+      0.0,
+      -17.333
+     ],
+     "rot_y_deg": 81.46,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_4-6",
+     "pos_u": [
+      4.184,
+      0.0,
+      -16.733
+     ],
+     "rot_y_deg": 72.6,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_5-5",
+     "pos_u": [
+      6.667,
+      0.0,
+      -15.737
+     ],
+     "rot_y_deg": 63.65,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_5-6",
+     "pos_u": [
+      8.964,
+      0.0,
+      -14.365
+     ],
+     "rot_y_deg": 54.62,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_6-6",
+     "pos_u": [
+      11.016,
+      0.0,
+      -12.648
+     ],
+     "rot_y_deg": 45.5,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-0",
+     "pos_u": [
+      12.769,
+      0.0,
+      -10.627
+     ],
+     "rot_y_deg": 36.29,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-1",
+     "pos_u": [
+      14.173,
+      0.0,
+      -8.349
+     ],
+     "rot_y_deg": 26.97,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-2",
+     "pos_u": [
+      15.188,
+      0.0,
+      -5.874
+     ],
+     "rot_y_deg": 17.57,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-3",
+     "pos_u": [
+      15.783,
+      0.0,
+      -3.266
+     ],
+     "rot_y_deg": 8.1,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-4",
+     "pos_u": [
+      15.939,
+      0.0,
+      -0.595
+     ],
+     "rot_y_deg": -1.49,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-5",
+     "pos_u": [
+      15.645,
+      0.0,
+      2.064
+     ],
+     "rot_y_deg": -11.19,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-6",
+     "pos_u": [
+      14.904,
+      0.0,
+      4.635
+     ],
+     "rot_y_deg": -20.98,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-1",
+     "pos_u": [
+      13.736,
+      0.0,
+      7.041
+     ],
+     "rot_y_deg": -30.89,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-2",
+     "pos_u": [
+      12.168,
+      0.0,
+      9.208
+     ],
+     "rot_y_deg": -40.92,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-3",
+     "pos_u": [
+      10.245,
+      0.0,
+      11.068
+     ],
+     "rot_y_deg": -51.04,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-4",
+     "pos_u": [
+      8.024,
+      0.0,
+      12.559
+     ],
+     "rot_y_deg": -61.32,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-5",
+     "pos_u": [
+      5.572,
+      0.0,
+      13.625
+     ],
+     "rot_y_deg": -71.71,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-6",
+     "pos_u": [
+      2.966,
+      0.0,
+      14.23
+     ],
+     "rot_y_deg": -82.21,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-2",
+     "pos_u": [
+      0.294,
+      0.0,
+      14.347
+     ],
+     "rot_y_deg": -92.86,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-3",
+     "pos_u": [
+      -2.352,
+      0.0,
+      13.965
+     ],
+     "rot_y_deg": -103.66,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-4",
+     "pos_u": [
+      -4.88,
+      0.0,
+      13.09
+     ],
+     "rot_y_deg": -114.6,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-5",
+     "pos_u": [
+      -7.193,
+      0.0,
+      11.749
+     ],
+     "rot_y_deg": -125.68,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_2-6",
+     "pos_u": [
+      -9.203,
+      0.0,
+      9.985
+     ],
+     "rot_y_deg": -136.92,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-3",
+     "pos_u": [
+      -10.828,
+      0.0,
+      7.861
+     ],
+     "rot_y_deg": -148.36,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-4",
+     "pos_u": [
+      -11.994,
+      0.0,
+      5.455
+     ],
+     "rot_y_deg": -159.95,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-5",
+     "pos_u": [
+      -12.652,
+      0.0,
+      2.864
+     ],
+     "rot_y_deg": -171.72,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_3-6",
+     "pos_u": [
+      -12.76,
+      0.0,
+      0.192
+     ],
+     "rot_y_deg": 176.31,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_4-4",
+     "pos_u": [
+      -12.31,
+      0.0,
+      -2.443
+     ],
+     "rot_y_deg": 164.16,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_4-5",
+     "pos_u": [
+      -11.31,
+      0.0,
+      -4.922
+     ],
+     "rot_y_deg": 151.79,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_4-6",
+     "pos_u": [
+      -9.797,
+      0.0,
+      -7.126
+     ],
+     "rot_y_deg": 139.18,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_5-5",
+     "pos_u": [
+      -7.836,
+      0.0,
+      -8.942
+     ],
+     "rot_y_deg": 126.33,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_5-6",
+     "pos_u": [
+      -5.518,
+      0.0,
+      -10.273
+     ],
+     "rot_y_deg": 113.25,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_6-6",
+     "pos_u": [
+      -2.958,
+      0.0,
+      -11.039
+     ],
+     "rot_y_deg": 99.92,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-0",
+     "pos_u": [
+      -0.29,
+      0.0,
+      -11.187
+     ],
+     "rot_y_deg": 86.3,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-1",
+     "pos_u": [
+      2.336,
+      0.0,
+      -10.696
+     ],
+     "rot_y_deg": 72.36,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-2",
+     "pos_u": [
+      4.764,
+      0.0,
+      -9.581
+     ],
+     "rot_y_deg": 58.12,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-3",
+     "pos_u": [
+      6.837,
+      0.0,
+      -7.897
+     ],
+     "rot_y_deg": 43.55,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-4",
+     "pos_u": [
+      8.414,
+      0.0,
+      -5.741
+     ],
+     "rot_y_deg": 28.59,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-5",
+     "pos_u": [
+      9.371,
+      0.0,
+      -3.248
+     ],
+     "rot_y_deg": 13.24,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-6",
+     "pos_u": [
+      9.626,
+      0.0,
+      -0.59
+     ],
+     "rot_y_deg": -2.52,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-1",
+     "pos_u": [
+      9.138,
+      0.0,
+      2.034
+     ],
+     "rot_y_deg": -18.78,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-2",
+     "pos_u": [
+      7.925,
+      0.0,
+      4.412
+     ],
+     "rot_y_deg": -35.54,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-3",
+     "pos_u": [
+      6.07,
+      0.0,
+      6.329
+     ],
+     "rot_y_deg": -52.86,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-4",
+     "pos_u": [
+      3.722,
+      0.0,
+      7.595
+     ],
+     "rot_y_deg": -70.8,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-5",
+     "pos_u": [
+      1.096,
+      0.0,
+      8.061
+     ],
+     "rot_y_deg": -79.94,
+     "branch": null
+    }
+   ],
+   "count": 68
+  },
+  "branch": {
+   "note": "gerade 20 u, dann Abzweig ±25° je 20 u; der letzte Stamm-Stein trifft beide Äste",
+   "tiles": [
+    {
+     "tile": "KFB_Domino_0-0",
+     "pos_u": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rot_y_deg": 0.0,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-1",
+     "pos_u": [
+      0.0,
+      0.0,
+      2.679
+     ],
+     "rot_y_deg": 0.0,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-2",
+     "pos_u": [
+      0.0,
+      0.0,
+      5.357
+     ],
+     "rot_y_deg": 0.0,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-3",
+     "pos_u": [
+      0.0,
+      0.0,
+      8.036
+     ],
+     "rot_y_deg": 0.0,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-4",
+     "pos_u": [
+      0.0,
+      0.0,
+      10.714
+     ],
+     "rot_y_deg": 0.0,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-5",
+     "pos_u": [
+      0.0,
+      0.0,
+      13.393
+     ],
+     "rot_y_deg": 0.0,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-6",
+     "pos_u": [
+      0.0,
+      0.0,
+      16.071
+     ],
+     "rot_y_deg": 0.0,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_1-1",
+     "pos_u": [
+      0.0,
+      0.0,
+      18.75
+     ],
+     "rot_y_deg": 0.0,
+     "branch": null
+    },
+    {
+     "tile": "KFB_Domino_0-3",
+     "pos_u": [
+      -1.984,
+      0.0,
+      21.177
+     ],
+     "rot_y_deg": -6.57,
+     "branch": "left"
+    },
+    {
+     "tile": "KFB_Domino_0-4",
+     "pos_u": [
+      -2.264,
+      0.0,
+      23.605
+     ],
+     "rot_y_deg": -16.21,
+     "branch": "left"
+    },
+    {
+     "tile": "KFB_Domino_0-5",
+     "pos_u": [
+      -3.396,
+      0.0,
+      26.032
+     ],
+     "rot_y_deg": -25.0,
+     "branch": "left"
+    },
+    {
+     "tile": "KFB_Domino_0-6",
+     "pos_u": [
+      -4.528,
+      0.0,
+      28.46
+     ],
+     "rot_y_deg": -25.0,
+     "branch": "left"
+    },
+    {
+     "tile": "KFB_Domino_1-1",
+     "pos_u": [
+      -5.66,
+      0.0,
+      30.887
+     ],
+     "rot_y_deg": -25.0,
+     "branch": "left"
+    },
+    {
+     "tile": "KFB_Domino_1-2",
+     "pos_u": [
+      -6.792,
+      0.0,
+      33.315
+     ],
+     "rot_y_deg": -25.0,
+     "branch": "left"
+    },
+    {
+     "tile": "KFB_Domino_1-3",
+     "pos_u": [
+      -7.924,
+      0.0,
+      35.742
+     ],
+     "rot_y_deg": -25.0,
+     "branch": "left"
+    },
+    {
+     "tile": "KFB_Domino_1-1",
+     "pos_u": [
+      1.984,
+      0.0,
+      21.177
+     ],
+     "rot_y_deg": 6.57,
+     "branch": "right"
+    },
+    {
+     "tile": "KFB_Domino_1-2",
+     "pos_u": [
+      2.264,
+      0.0,
+      23.605
+     ],
+     "rot_y_deg": 16.21,
+     "branch": "right"
+    },
+    {
+     "tile": "KFB_Domino_1-3",
+     "pos_u": [
+      3.396,
+      0.0,
+      26.032
+     ],
+     "rot_y_deg": 25.0,
+     "branch": "right"
+    },
+    {
+     "tile": "KFB_Domino_1-4",
+     "pos_u": [
+      4.528,
+      0.0,
+      28.46
+     ],
+     "rot_y_deg": 25.0,
+     "branch": "right"
+    },
+    {
+     "tile": "KFB_Domino_1-5",
+     "pos_u": [
+      5.66,
+      0.0,
+      30.887
+     ],
+     "rot_y_deg": 25.0,
+     "branch": "right"
+    },
+    {
+     "tile": "KFB_Domino_1-6",
+     "pos_u": [
+      6.792,
+      0.0,
+      33.315
+     ],
+     "rot_y_deg": 25.0,
+     "branch": "right"
+    },
+    {
+     "tile": "KFB_Domino_2-2",
+     "pos_u": [
+      7.924,
+      0.0,
+      35.742
+     ],
+     "rot_y_deg": 25.0,
+     "branch": "right"
+    }
+   ],
+   "count": 22
+  }
+ }
+}

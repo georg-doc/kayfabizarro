@@ -159,3 +159,95 @@ Bühne **v1.2.1** (`--stage v1.2`, kfb-stage-light.v1.1, alle Standard-Ansichten
 - Die Stelle ist die Spitze des langen, dünnen Schattens am rechten Rand (Mauer am Ausgang). Es ist kein Spalt in der Geometrie: Unterseiten sind geschlossen, 0 offene Kanten. Wahrscheinlich ist es die Auflösungsgrenze der Schattenkarte (Texel 7,5 mm) an einer schmalen Schattenspitze.
 - Ich habe nichts „passend geschoben“. WS0 entscheidet: Grenzfall der Bühne prüfen, oder ich verlege den Ausgang (anderer Seed).
 - Die älteren Bögen in `proof_stage_v12/` (3x3/2x2/Reihe aus r1) sind überholt.
+
+### Nachtrag · Rechteck-Labyrinth neu gerendert (Bühne mit G6-Fix kfb-stage-light.v1.1, WS0) · W1 + W2 **PASS**
+G6 zählt einen Saum jetzt erst ab 5 px und nur in der Kontaktzone (≤ 10 px zur Silhouette). Spitzen dünner Schatten werden getrennt gemeldet. Das Bild selbst ist unverändert.
+- `_privat_kauf_asset/renders/proof_stage_v12_r2/maze5x5_W1/`: Bogen `B29_proof_maze5x5_W1_contact_sheet.png` · Einzelansichten: `B29_proof_maze5x5_W1_back.png`, `B29_proof_maze5x5_W1_detail_low.png`, `B29_proof_maze5x5_W1_far.png`, `B29_proof_maze5x5_W1_front.png`, `B29_proof_maze5x5_W1_near_face.png`, `B29_proof_maze5x5_W1_scale_ref.png`, `B29_proof_maze5x5_W1_side.png`, `B29_proof_maze5x5_W1_threeq.png`, `B29_proof_maze5x5_W1_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12_r2/maze5x5_W2/`: Bogen `B29_proof_maze5x5_W2_contact_sheet.png` · Einzelansichten: `B29_proof_maze5x5_W2_back.png`, `B29_proof_maze5x5_W2_detail_low.png`, `B29_proof_maze5x5_W2_far.png`, `B29_proof_maze5x5_W2_front.png`, `B29_proof_maze5x5_W2_near_face.png`, `B29_proof_maze5x5_W2_scale_ref.png`, `B29_proof_maze5x5_W2_side.png`, `B29_proof_maze5x5_W2_threeq.png`, `B29_proof_maze5x5_W2_top.png`
+
+Damit sind alle 4 r2-Bögen **PASS**.
+
+## r3 · Georg q25 / V-452: organische Krone, kräftigeres Relief, Ziegel + Fels · Bühne v1.2.1 · 4 × PASS
+**Skripte:** `scripts/b29_wallkit_r3.py`, `scripts/b29_skins_r3.py`, `scripts/b29_r3_proofs.py`; `b29_seamtest.py` hat jetzt ein optionales Versions-Argument. Kit r1 und Häute r1 bleiben unverändert liegen.
+
+1. **Krone organisch (Standard):**
+   - Je Teil eine weiche, unregelmäßige Welle aus 3 Sinus-Anteilen, ±0,32 u (≈ ±20 cm). Startwert = Teilname, Ringstücke mit und ohne Kappe gleich.
+   - An den Anschlüssen exakt H, dadurch fugenlos.
+   - Keine V-Kerben mehr: Der Scan-Hochpass mit seinen schmalen Spitzen ist raus.
+   - Neu `straight_b` / `straight_c` (gleiche Anschlüsse, andere Welle), damit lange Läufe nicht gleich aussehen.
+   - `broken` (V-Kerben) bleibt **nur als Option** und ist im Standard-Labyrinth nicht mehr drin.
+   - Kit: `kit_r3/KFB_Wall_*.r3.glb` (28 Teile), `data/wall_kit.r3.json`.
+   - Fugentest `data/seamtest.r3.json`: **alle 0** (2×2, rund, 3×3, Ringe r2–r5).
+2. **Relief kräftiger** (`skins_r3/`):
+   - **W1 Lehmstein:** Normalstärke 6 → 12.
+     - **Befund und Fix:** Die sichtbare Wiederholung (Georgs Beobachtung, auch beim B7-Stein) kam aus W1 r1. Die großräumige Scan-Unruhe auf dem kleinen Scan-Ausschnitt dominierte und doppelte sich durch die Nahtlos-Blende 2 × 2, das ergab senkrechte Streifen.
+     - Jetzt nur das feine Scan-Relief plus eine eigene periodische Knet-Unruhe. Keine Streifen mehr.
+   - **W2 Ziegel r3:** Läuferverband. Stoßfugen je Reihe ±6 cm versetzt, Lagerfugen ±1,5 cm, Kissenprofil, Kipp- und Höhen-Jitter je Ziegel, leicht angeschlagene Kanten, tiefe Fuge 3 cm.
+   - **W4 Fels (neu, Knete-Stil):** 16 weiche Kissen-Steine je Kachel 2 × 2 u, Daumen-Dellen, weiche Fugen.
+   - W3 Feldstein unverändert.
+   - Unregelmäßige Holzlatten kommen später (wie gewünscht).
+3. **Modelliertes Relief (Bühnen- und Nah-Fassung):**
+   - Kurzer Mauerlauf (Ende, gerade a/b/c, Ecke, Ende) je Haut W1/W2/W4.
+   - Unterteilt (Stufe 3) und entlang der Normale aus der Höhenkarte verschoben, triplanar gemischt. Der Boden bleibt auf y = 0.
+   - Amplitude: W1 0,06 u, W2 0,07 u, W4 0,10 u.
+   - Das Laufzeit-Kit bleibt schlank (triplanar). **WS0 entscheidet**, ob ein modelliertes Nah-LOD gewünscht ist.
+   - Dreiecke: maze5x5_W1 49.224, relief_run_W1_relief 710.592, relief_run_W2_relief 710.592, relief_run_W4_relief 710.592.
+
+### Bühnen-Bögen · Bühne v1.2.2 (aktuell, Kasten-AO-Fix bei hohlen Grundrissen) · 7 × PASS (privat, DemonLord in der Maßstabszelle)
+**Vergleich für den Nah-LOD-Entscheid (q31):** `B29/_privat_kauf_asset/renders/proof_stage_v12_r3/B29_r3_modelliert_vs_flach.png`.
+- Links modelliert, rechts flach (nur Kit + Normal-Map wie zur Laufzeit), gleiche Teile und gleicher Startwert. Zeilen: W1 Lehmstein · W2 Ziegel · W4 Fels.
+- Ausschnitt aus der Einzelansicht `detail_low`.
+- **Befund:**
+  - Flach liest sich das Relief nur als feine Zeichnung. Die Silhouette bleibt glatt.
+  - Modelliert werfen Ziegel und Steine eigene Schatten, die Kanten werden unruhig.
+  - Kosten: das 96-Fache an Dreiecken (7.402 → 710.592 je Lauf mit 6 Teilen, Unterteilung Stufe 3). Ein Nah-LOD bräuchte eine gröbere Stufe oder eine Verschiebung erst zur Laufzeit.
+  - Kleiner Schönheitsfehler bei W2 modelliert: An einzelnen Ziegel-Unterkanten sieht man feine, fransige Schattenstriche. Ursache ist das Kanten-Rauschen der Höhenkarte bei dieser Unterteilung. Es ließe sich glätten, falls modelliert gewählt wird.
+
+- `B29/_privat_kauf_asset/renders/proof_stage_v12_r3/maze5x5_W1/` (49224 Dreiecke): Bogen `B29_proof_maze5x5_W1_contact_sheet.png` · Einzelansichten: `B29_proof_maze5x5_W1_back.png`, `B29_proof_maze5x5_W1_detail_low.png`, `B29_proof_maze5x5_W1_far.png`, `B29_proof_maze5x5_W1_front.png`, `B29_proof_maze5x5_W1_near_face.png`, `B29_proof_maze5x5_W1_scale_ref.png`, `B29_proof_maze5x5_W1_side.png`, `B29_proof_maze5x5_W1_threeq.png`, `B29_proof_maze5x5_W1_top.png`
+- `B29/_privat_kauf_asset/renders/proof_stage_v12_r3/relief_run_W1_relief/` (710592 Dreiecke): Bogen `B29_proof_relief_run_W1_relief_contact_sheet.png` · Einzelansichten: `B29_proof_relief_run_W1_relief_back.png`, `B29_proof_relief_run_W1_relief_detail_low.png`, `B29_proof_relief_run_W1_relief_far.png`, `B29_proof_relief_run_W1_relief_front.png`, `B29_proof_relief_run_W1_relief_near_face.png`, `B29_proof_relief_run_W1_relief_scale_ref.png`, `B29_proof_relief_run_W1_relief_side.png`, `B29_proof_relief_run_W1_relief_threeq.png`, `B29_proof_relief_run_W1_relief_top.png`
+- `B29/_privat_kauf_asset/renders/proof_stage_v12_r3/relief_run_W1_flat/` (7402 Dreiecke): Bogen `B29_proof_relief_run_W1_flat_contact_sheet.png` · Einzelansichten: `B29_proof_relief_run_W1_flat_back.png`, `B29_proof_relief_run_W1_flat_detail_low.png`, `B29_proof_relief_run_W1_flat_far.png`, `B29_proof_relief_run_W1_flat_front.png`, `B29_proof_relief_run_W1_flat_near_face.png`, `B29_proof_relief_run_W1_flat_scale_ref.png`, `B29_proof_relief_run_W1_flat_side.png`, `B29_proof_relief_run_W1_flat_threeq.png`, `B29_proof_relief_run_W1_flat_top.png`
+- `B29/_privat_kauf_asset/renders/proof_stage_v12_r3/relief_run_W2_relief/` (710592 Dreiecke): Bogen `B29_proof_relief_run_W2_relief_contact_sheet.png` · Einzelansichten: `B29_proof_relief_run_W2_relief_back.png`, `B29_proof_relief_run_W2_relief_detail_low.png`, `B29_proof_relief_run_W2_relief_far.png`, `B29_proof_relief_run_W2_relief_front.png`, `B29_proof_relief_run_W2_relief_near_face.png`, `B29_proof_relief_run_W2_relief_scale_ref.png`, `B29_proof_relief_run_W2_relief_side.png`, `B29_proof_relief_run_W2_relief_threeq.png`, `B29_proof_relief_run_W2_relief_top.png`
+- `B29/_privat_kauf_asset/renders/proof_stage_v12_r3/relief_run_W2_flat/` (7402 Dreiecke): Bogen `B29_proof_relief_run_W2_flat_contact_sheet.png` · Einzelansichten: `B29_proof_relief_run_W2_flat_back.png`, `B29_proof_relief_run_W2_flat_detail_low.png`, `B29_proof_relief_run_W2_flat_far.png`, `B29_proof_relief_run_W2_flat_front.png`, `B29_proof_relief_run_W2_flat_near_face.png`, `B29_proof_relief_run_W2_flat_scale_ref.png`, `B29_proof_relief_run_W2_flat_side.png`, `B29_proof_relief_run_W2_flat_threeq.png`, `B29_proof_relief_run_W2_flat_top.png`
+- `B29/_privat_kauf_asset/renders/proof_stage_v12_r3/relief_run_W4_relief/` (710592 Dreiecke): Bogen `B29_proof_relief_run_W4_relief_contact_sheet.png` · Einzelansichten: `B29_proof_relief_run_W4_relief_back.png`, `B29_proof_relief_run_W4_relief_detail_low.png`, `B29_proof_relief_run_W4_relief_far.png`, `B29_proof_relief_run_W4_relief_front.png`, `B29_proof_relief_run_W4_relief_near_face.png`, `B29_proof_relief_run_W4_relief_scale_ref.png`, `B29_proof_relief_run_W4_relief_side.png`, `B29_proof_relief_run_W4_relief_threeq.png`, `B29_proof_relief_run_W4_relief_top.png`
+- `B29/_privat_kauf_asset/renders/proof_stage_v12_r3/relief_run_W4_flat/` (7402 Dreiecke): Bogen `B29_proof_relief_run_W4_flat_contact_sheet.png` · Einzelansichten: `B29_proof_relief_run_W4_flat_back.png`, `B29_proof_relief_run_W4_flat_detail_low.png`, `B29_proof_relief_run_W4_flat_far.png`, `B29_proof_relief_run_W4_flat_front.png`, `B29_proof_relief_run_W4_flat_near_face.png`, `B29_proof_relief_run_W4_flat_scale_ref.png`, `B29_proof_relief_run_W4_flat_side.png`, `B29_proof_relief_run_W4_flat_threeq.png`, `B29_proof_relief_run_W4_flat_top.png`
+
+Der dunkle Fleck in der Draufsicht der ersten r3-Fassung war ein Bühnenfehler (Kasten-AO unter hohlen Grundrissen). In v1.2.2 ist er behoben; alle Bögen oben sind neu gerendert.
+- Vergleich nur modelliert (aus dem ersten Lauf, Bild gleich): `B29/_privat_kauf_asset/renders/proof_stage_v12_r3/B29_r3_relief_vergleich.png`.
+
+### Speicher (WS0 18.10.)
+- **Freier Platz vor r3:** 40 GB; nach dem Aufräumen und nach r3: 41 GB. Alle Läufe headless und nacheinander, mit Abbruchgrenze 35 GB (nicht erreicht).
+- **Eigene Arbeitsdateien dieser Sitzung (Scratch):** vorher 2,7 GB, jetzt 1,8 GB. Nichts aus Georgs Ordnern oder Quellen gelöscht.
+  - **Gelöscht** (eigene, reproduzierbare Zwischenstände, ~0,95 GB):
+    - `scratch/b8` 809 MB (B8-Dezimierungs-Zwischenstände, per `B8/scripts/b8_stage.py` neu erzeugbar);
+    - `scratch/rescale` 54 MB;
+    - `scratch/b24delit` 40 MB;
+    - `scratch/b26delit` 8 MB;
+    - 4 × `tree*.json` à 10 MB (Ordnerlisten).
+  - **Behalten:**
+    - `scratch/b2web` 1,3 GB (Wurzel des laufenden Browser-Servers, Bühnen-Spiegel);
+    - `scratch/b29/scan_measure.npz` (Quelle für die Häute);
+    - kleinere Job-Ordner b1web 103 MB, b7 94 MB, b11 80 MB, b24 30 MB, b18 21 MB, Rest < 20 MB.
+- **Eigene Ausgaben in `50_BLENDER/`:** zusammen 3,2 GB, unter anderem B9 538 MB, B8 532 MB, B24 449 MB, B29 ~0,4 GB (davon r3-Probe-GLBs ~100 MB), B27 246 MB, B7 157 MB. Nichts davon gelöscht, das entscheidet WS0.
+
+## r4 · Georg q31 (V-457, V-456): nur Ziegel, Ziegel größer, Krone als lange, unregelmäßige Schwünge · Bühne v1.2.2 · 3 × PASS
+**Skripte:** `scripts/b29_wallkit_r4.py`, `scripts/b29_skins_r4.py`, `scripts/b29_r4_proofs.py`. r3 bleibt liegen; W1/W4 sind zurückgestellt (Georg: wirken zu repetitiv).
+- **Krone r4:**
+  - Je Teil **ein** langer, schiefer Schwung, meist ein Buckel, gelegentlich eine flache Mulde. Höhe ±0,08…0,20 u, Lage und Schiefe zufällig je Teilname.
+  - An den Anschlüssen exakt H mit waagrechter Tangente, also kein Knick an der Fuge.
+  - Keine Sinus-Welle mehr. `broken` bleibt Option.
+  - Kit `kit_r4/KFB_Wall_*.r4.glb` (28 Teile), `data/wall_kit.r4.json`. Fugentest `data/seamtest.r4.json`: **alle 0**.
+- **Ziegel r4** (`skins_r4/`, nur W2):
+  - Nominal 0,85 × 0,34 u (≈ 52 × 21 cm), also ×1,7. Kachel 3,4 × 1,7 u, Fuge 4,5 cm.
+  - Unregelmäßig (V-456): Stoßfugen je Reihe ±14 cm, Lagerfugen ±2,4 cm, Reihenversatz ±12 cm, Kipp- und Höhen-Jitter je Ziegel.
+  - Weichere Kantenschläge: Die Fransen aus r3 sind weg.
+  - Modelliert 0,10 u tief.
+- **Fix G3:** Das tiefere Relief drückte am Fuß Punkte 1,1 cm unter den Boden (erster Lauf G3 FAIL, Bogen `…_contact_sheet_FAIL_vor_G3_fix.png`). Jetzt wird nichts mehr unter y = 0 verschoben. Danach PASS.
+- **Dreiecke:** maze5x5_W2 49224, relief_run_W2_relief 710592, relief_run_W2_flat 7402.
+
+### Bögen (privat)
+- `B29/_privat_kauf_asset/renders/proof_stage_v12_r4/maze5x5_W2/`: Bogen `B29_proof_maze5x5_W2_contact_sheet.png` · Einzelansichten: `B29_proof_maze5x5_W2_back.png`, `B29_proof_maze5x5_W2_detail_low.png`, `B29_proof_maze5x5_W2_far.png`, `B29_proof_maze5x5_W2_front.png`, `B29_proof_maze5x5_W2_near_face.png`, `B29_proof_maze5x5_W2_scale_ref.png`, `B29_proof_maze5x5_W2_side.png`, `B29_proof_maze5x5_W2_threeq.png`, `B29_proof_maze5x5_W2_top.png`
+- `B29/_privat_kauf_asset/renders/proof_stage_v12_r4/relief_run_W2_relief/`: Bogen `B29_proof_relief_run_W2_relief_contact_sheet.png` · Einzelansichten: `B29_proof_relief_run_W2_relief_back.png`, `B29_proof_relief_run_W2_relief_detail_low.png`, `B29_proof_relief_run_W2_relief_far.png`, `B29_proof_relief_run_W2_relief_front.png`, `B29_proof_relief_run_W2_relief_near_face.png`, `B29_proof_relief_run_W2_relief_scale_ref.png`, `B29_proof_relief_run_W2_relief_side.png`, `B29_proof_relief_run_W2_relief_threeq.png`, `B29_proof_relief_run_W2_relief_top.png`
+- `B29/_privat_kauf_asset/renders/proof_stage_v12_r4/relief_run_W2_flat/`: Bogen `B29_proof_relief_run_W2_flat_contact_sheet.png` · Einzelansichten: `B29_proof_relief_run_W2_flat_back.png`, `B29_proof_relief_run_W2_flat_detail_low.png`, `B29_proof_relief_run_W2_flat_far.png`, `B29_proof_relief_run_W2_flat_front.png`, `B29_proof_relief_run_W2_flat_near_face.png`, `B29_proof_relief_run_W2_flat_scale_ref.png`, `B29_proof_relief_run_W2_flat_side.png`, `B29_proof_relief_run_W2_flat_threeq.png`, `B29_proof_relief_run_W2_flat_top.png`
+
+## Georg q32 PASS (V-459)
+r4 Ziegel freigegeben: modelliert als Nahstufe, flach (Normal-Map) in der Ferne. Kit r4 + skins_r4 sind im Handoff öffentlich.

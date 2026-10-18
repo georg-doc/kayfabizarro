@@ -11,7 +11,7 @@
   "stew",
   "waffle"
  ],
- "r2_note": "V-450: Pack-Varianten als variantGroup (gleicher Maßstab wie das Ausgangsteil); floatTilt für längliche Teile (≥ 2:1)",
+ "r2_note": "V-450: Pack-Varianten als variantGroup (gleicher Maßstab wie das Ausgangsteil); floatTilt für längliche Teile (≥ 2:1) und alle Werkzeuge mit Griff (V-453)",
  "scale_note": "V-443: alle Teile ×1,25 gegenüber dem ersten Bogen; Ursprung Bbox-Mitte (V-437)",
  "decision": "V-434 (28. Nachtrag WS0)",
  "units": "Rig_Medium-Einheiten (1 u = 0,616 m); Y oben",
@@ -1129,9 +1129,9 @@
    "ground_offset_u": 0.75,
    "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
    "note": "Wackeln zur Laufzeit (Cartoon-Deformer), Asset unverändert",
-   "floatTilt": false,
-   "bytes": 44772,
-   "sha256": "650c450e53b31e0bf02092fc022d5612fa64eaeeb32f4e810475799872008f89"
+   "floatTilt": true,
+   "bytes": 44800,
+   "sha256": "a2cf0286eef3307c6def013d7e59623bc65eca6bc61197840d9d402925cc044e"
   },
   {
    "id": "giant_mallet",
@@ -1163,9 +1163,9 @@
    "ground_offset_u": 1.0,
    "clay": "zur Laufzeit (kfb-clay.v1.1), nicht eingebacken",
    "note": "übergroß, Cartoon-Klopper",
-   "floatTilt": false,
-   "bytes": 46112,
-   "sha256": "b740c72a47c1ab60faabeabfd2baee7d8e5acce5f6c475facaedc808a09a3daa"
+   "floatTilt": true,
+   "bytes": 46140,
+   "sha256": "421e8044946164c6fb7dd40e2b31d0c34869e250f350bee3d068bf7ea1e2088a"
   },
   {
    "id": "magnifying_glass",
