@@ -62,6 +62,18 @@ try {
     }
     save('gem_capture_strip.png', await G((a) => window.KFB_GEM.sheet(a), { title: 'kfb-gem.v1 · captured: Cartoon-Bruch (wenige große Scherben, springen, verblassen, ≤ 1,2 s)', sub: 'Rubin-Dame + Saphir-Springer · Schnitt der echten Hülle (Morph-Chess-Bruch, 8 Scherben je Figur) · Bühne v1.2, Tag · Ausblenden ab 0,72 s, weg bei 1,2 s', cells, cols: 5, tw: 576, th: 432 }));
   }
+  if (ONLY.has('lanterns')) {
+    const r = await G((a) => window.KFB_GEM.load(a), { glbUrl: url('gem_lanterns'), mood: 'night', id: 'gem_lanterns' }); report.lanterns = r;
+    const cells = [];
+    await G((s) => window.KFB_GEM.advance(s), 1.0);
+    cells.push({ url: await G((v) => window.KFB_GEM.render(v), 'front'), caption: 'Nacht · vorn · t = 1,0 s · nur Eigenleuchten (emissive), kein Licht' });
+    await G((s) => window.KFB_GEM.advance(s), 4.2);
+    cells.push({ url: await G((v) => window.KFB_GEM.render(v), 'front'), caption: 'Nacht · vorn · t = 5,2 s (halbe Pulsperiode 0,12 Hz später) · nur emissive' });
+    cells.push({ url: await G((v) => window.KFB_GEM.render(v), 'threeq'), caption: 'Nacht · ¾ · t = 5,2 s · nur emissive' });
+    report.lanternLights = await G((on) => window.KFB_GEM.practicals(on), true);
+    cells.push({ url: await G((v) => window.KFB_GEM.render(v), 'front'), caption: 'Nacht · vorn · t = 5,2 s · lantern: getPracticalLight() -> Practicals-Pool (Licht-Modul), nur wenn WS1 es erlaubt' });
+    save('gem_lanterns_night.png', await G((a) => window.KFB_GEM.sheet(a), { title: 'kfb-gem.v1 r2 · Laternen bei Nacht (4 Figuren frei auf dem Boden, ohne Brett)', sub: 'Bühne v1.2 + Licht v1.1, MOODS_MESA Nacht · Adern + Innenleuchten nach Stimmung (glow 1), Puls 0,12 Hz · unten rechts: optionales Praktisches Licht über den Hook', cells, cols: 2 }));
+  }
   if (ONLY.has('perf')) {
     for (const [n, view, mood] of (process.env.PERF_SET === 'quick' ? [['gem_perf32', 'front', 'night'], ['gem_perf32', 'front', 'day']] : [['gem_perf32', 'front', 'day'], ['gem_perf32', 'front', 'night'], ['gem_start', 'threeq', 'day'], ['gem_perf32', 'front', 'day']])) {
       await G((a) => window.KFB_GEM.load(a), { glbUrl: url(n), mood, id: n });

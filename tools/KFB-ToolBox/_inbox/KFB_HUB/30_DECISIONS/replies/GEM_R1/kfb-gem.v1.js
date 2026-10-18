@@ -52,6 +52,12 @@
  *     gem.update(dt)       advances time (pulse, shimmer, shatter); deterministic, no clock reads
  *     gem.dispose()
  *     gem.setEnvironment(renderer, mood, { ground })   = setGemEnvironment for all gems of this THREE
+ *     gem.getPracticalLight()   r2, option lantern: true: { id, type:'crystal', pos:[x,y,z] m, color, intensity, range, flicker:null } in the
+ *                               practicals format of kfb-stage-light createPracticals (V-385: one rig; WS1 decides whether it becomes a real
+ *                               pool light), intensity follows the mood glow and the same pulse as the shader; null without lantern
+ * r2 (Georg TUNE 18.10.: night = pulsing, morphing lanterns): vein + inner glow scale with the mood's glow weight (MOODS_MESA glow: day 0
+ *   = unchanged, dusk 0.4, night 1 = clearly luminous through emissive alone, no bloom); the pulse slows from 0.2 Hz (day) to 0.12 Hz
+ *   (night) with more amplitude; at night facets and veins drift slowly (idle morph). The mood comes in through setGemEnvironment.
  *   setGemEnvironment({ THREE, renderer, mood, ground })  mood = kfb-stage-light moodAt(tod, MOODS_MESA) (or a MOODS entry)
  *   gemPresetForSide(side)   'white' | 'light' -> 'ruby', 'black' | 'dark' -> 'sapphire'
  *   options: quality 'game' (default: 1 traced internal bounce + the blurred Morph Chess tail) | 'high' (2 bounces, stills only);
@@ -65,7 +71,8 @@
 export const VERSION = 'kfb-gem.v1';
 export const STATES = Object.freeze(['idle', 'active', 'moving', 'captured']);
 export const SHATTER_DURATION = 1.2;           // s, captured -> gone
-export const PULSE_HZ = 0.2;
+export const PULSE_HZ = 0.2, PULSE_HZ_NIGHT = 0.12;
+const NIGHT_VEIN = 2.4, NIGHT_INNER = 2.5, NIGHT_CORE = 0.075;   // r2: night multipliers (x mood glow weight)
 export const MAX_SPANS = 32, MAX_ROWS = 64, PROFILE_BINS = 16;
 export const GEM_PRESETS = Object.freeze({
   // tint = colour at the surface / thin parts, depthTint = colour after ~half a piece height of travel, vein = glow colour
@@ -83,7 +90,7 @@ function registry(THREE) {
   const data = new Float32Array((1 + MAX_SPANS) * MAX_ROWS * 4);
   const tex = new THREE.DataTexture(data, 1 + MAX_SPANS, MAX_ROWS, THREE.RGBAFormat, THREE.FloatType);
   tex.minFilter = tex.magFilter = THREE.NearestFilter; tex.generateMipmaps = false; tex.needsUpdate = true;
-  R = { time: { value: 0 }, profiles: { tex, data, rows: new Map(), next: 0 }, bundles: new Map(), envs: new Map(), env: null };
+  R = { time: { value: 0 }, mood: { value: new THREE.Vector4(0, 0, 0, 0) }, profiles: { tex, data, rows: new Map(), next: 0 }, bundles: new Map(), envs: new Map(), env: null };   // mood.x = glow weight 0..1
   REG.set(THREE, R);
   return R;
 }
@@ -136,13 +143,13 @@ const VERT_MAIN = /* glsl */`
 vGemPos = transformed; vGemN = objectNormal; vGemInfo = kfbGem;
 { mat3 gm = mat3(modelMatrix); vGemEye = (transpose(gm) * (cameraPosition - modelMatrix[3].xyz)) / dot(gm[0], gm[0]); }   // rotation x uniform scale (KFB pieces); no per-vertex inverse()
 vGemM0 = modelMatrix[0].xyz; vGemM1 = modelMatrix[1].xyz; vGemM2 = modelMatrix[2].xyz;
-vGemSeed = fract(sin(dot(modelMatrix[3].xz, vec2(12.9898, 78.233))) * 43758.5453);
+vGemSeed = fract(dot(floor(modelMatrix[3].xz * 4.0 + 0.5), vec2(0.1031, 0.0973)));   // r2: exact in float32, so getPracticalLight() pulses in phase
 `;
 const FRAG_PARS = /* glsl */`
 #define GEM_MAX_SPANS ${MAX_SPANS}
 uniform sampler2D uGemProfiles; uniform float uGemTime; uniform vec4 uGemState;
-uniform vec3 uGemSigma; uniform vec3 uGemVein; uniform vec4 uGemParams; uniform vec4 uGemLook;
-uniform vec3 uGemSkyTop; uniform vec3 uGemSkyBot;
+uniform vec3 uGemSigma; uniform vec3 uGemVein; uniform vec3 uGemTintL; uniform vec4 uGemParams; uniform vec4 uGemLook;
+uniform vec3 uGemSkyTop; uniform vec3 uGemSkyBot; uniform vec4 uGemMood;
 varying vec3 vGemPos; varying vec3 vGemN; varying vec3 vGemEye; varying vec4 vGemInfo;
 varying vec3 vGemM0; varying vec3 vGemM1; varying vec3 vGemM2; varying float vGemSeed;
 vec3 gemToWorld(vec3 d) { return normalize(vGemM0 * d.x + vGemM1 * d.y + vGemM2 * d.z); }
@@ -181,7 +188,7 @@ vec3 gemNL; float gemCos;
 /* after normal_fragment_maps: faceted normal, in local space for the trace and in view space for three's lighting */
 const FRAG_NORMAL = /* glsl */`
 {
-  float rot = uGemParams.z * 0.5236 + uGemState.z * uGemTime * 0.35;
+  float rot = uGemParams.z * 0.5236 + uGemState.z * uGemTime * 0.35 + uGemMood.x * uGemTime * 0.06;   // r2: night = slow idle morph
   vec3 n0 = dot(vGemN, vGemN) > 1e-12 ? normalize(vGemN) : vec3(0.0, 1.0, 0.0);
   gemNL = gemFacet(n0, uGemLook.x, rot);
   if (any(isnan(gemNL))) gemNL = n0;
@@ -250,7 +257,7 @@ const FRAG_INTERIOR = /* glsl */`
   /* veins: procedural mineral sheets seen along the refracted ray (3 depths, parallax), fixed in the piece */
   float vein = 0.0;
   if (uGemParams.y > 0.5) {
-    vec3 d0 = refract(I, N, 1.0 / 1.76), so = P / H + vec3(uGemParams.z * 3.7, 0.0, uGemParams.z * 1.9);
+    vec3 d0 = refract(I, N, 1.0 / 1.76), so = P / H + vec3(uGemParams.z * 3.7, uGemMood.x * uGemTime * 0.015, uGemParams.z * 1.9);
     for (int k = 0; k < 3; k++) {
       float t = 0.025 + 0.06 * float(k); if (t * H > firstLen) break;
       vec3 p = so + d0 * t; float wb = gemNoise(p * 2.3 + 19.0);
@@ -259,13 +266,17 @@ const FRAG_INTERIOR = /* glsl */`
       vein = max(vein, mask * (1.0 - smoothstep(0.0, 0.006 + 0.012 * wb, abs(a - 0.74))) * (1.0 - 0.3 * float(k)));
     }
   }
-  float pulse = 0.5 + 0.5 * sin(6.2831853 * ${PULSE_HZ.toFixed(2)} * uGemTime + 6.2831853 * (uGemParams.z + vGemInfo.z + vGemSeed));
-  float glow = uGemParams.w * (0.7 + 0.6 * pulse) * uGemState.x;
+  float NG = uGemMood.x;                                       // r2: mood glow weight (day 0, dusk 0.4, night 1)
+  float pulse = 0.5 + 0.5 * sin(6.2831853 * mix(${PULSE_HZ.toFixed(2)}, ${PULSE_HZ_NIGHT.toFixed(2)}, NG) * uGemTime + 6.2831853 * (uGemParams.z + vGemInfo.z + vGemSeed));
+  float pk = mix(0.7, 0.45, NG) + mix(0.6, 1.1, NG) * pulse;  // more amplitude at night
+  float glow = uGemParams.w * pk * uGemState.x * (1.0 + ${NIGHT_VEIN.toFixed(2)} * NG);
   inner = mix(inner, inner * 0.4, vein * 0.5);
   vec3 emit = uGemVein * vein * glow;
   float rimF = pow(1.0 - gemCos, 2.5);
   emit += mix(vec3(1.0), uGemVein, 0.8) * rimF * rimF * uGemState.y * 0.45;            // active: soft rim, tinted
-  emit += uGemVein * uGemLook.w * (0.6 + 0.4 * pulse) * (0.35 + 0.65 * rimF) * (1.0 + uGemState.y);   // faint inner glow, mostly at grazing angles
+  emit += uGemVein * uGemLook.w * (0.6 + 0.4 * pulse) * (0.35 + 0.65 * rimF) * (1.0 + uGemState.y) * (1.0 + ${NIGHT_INNER.toFixed(2)} * NG);   // inner glow, mostly at grazing angles
+  /* r2 lantern core: light from inside the stone, seen through the absorption colour (thin parts glow most), pulsing; 0 by day */
+  emit += mix(uGemVein, uGemTintL, 0.8) * NG * ${NIGHT_CORE.toFixed(2)} * pk * (0.45 + 0.55 * exp(-uGemSigma.y * 0.12 * firstLen / H) ) * uGemState.x;
   vec3 gemAdd = inner * uGemLook.y + emit;
   if (!any(isnan(gemAdd)) && !any(isinf(gemAdd))) outgoingLight += max(gemAdd, vec3(0.0));
 }
@@ -282,6 +293,7 @@ function makeBundle(THREE, key, p) {
     // x facet amount, y interior gain, z -, w faint inner glow
     uGemLook: { value: new THREE.Vector4(p.facet ?? 0.88, p.interior ?? 1.5, 0, p.innerGlow ?? 0.05) },
     uGemSkyTop: { value: new THREE.Color('#b4bdee') }, uGemSkyBot: { value: new THREE.Color('#8a7f72') },
+    uGemMood: R.mood, uGemTintL: { value: new THREE.Color(p.tint) },
   };
   const variants = new Map(), bounces = p.quality === 'high' ? 2 : 1;   // game: 1 traced internal bounce + blurred tail; high (proof stills): 2
   const bundle = { key, params: p, shared, variants, users: 0, clones: new Set() };
@@ -355,7 +367,7 @@ export function gemEnvironment({ THREE, renderer, mood, ground = '#9a8a78' }) {
 }
 export function setGemEnvironment({ THREE, renderer, mood, ground }) {
   const R = registry(THREE), env = gemEnvironment({ THREE, renderer, mood, ground });
-  R.env = env.texture;
+  R.env = env.texture; R.mood.value.x = Math.max(0, Math.min(1, mood.glow ?? 0));
   for (const b of R.bundles.values()) {
     b.shared.uGemSkyTop.value.copy(env.sky.top); b.shared.uGemSkyBot.value.copy(env.sky.bot);
     for (const m of [...b.variants.values(), ...b.clones]) if (m.envMap !== env.texture) { m.envMap = env.texture; m.needsUpdate = true; }
@@ -464,7 +476,7 @@ const SHARD_CACHE = new WeakMap();
 /**
  * createGem({ THREE, tint, depthTint, veins = true, seed, preset, vein, ... }) -> handle (see header)
  */
-export function createGem({ THREE, tint, depthTint, veins = true, seed = 0, preset = null, vein = null, ...look } = {}) {
+export function createGem({ THREE, tint, depthTint, veins = true, seed = 0, preset = null, vein = null, lantern = false, lanternStrength = 1, ...look } = {}) {
   if (!THREE) throw new Error('kfb-gem.v1: THREE missing');
   const P = GEM_PRESETS[preset || (tint ? '' : 'ruby')] || {};
   const params = { ...P, ...look, tint: tint || P.tint || '#d2465e', depthTint: depthTint || P.depthTint || tint || '#8a1428', vein: vein || P.vein || '#ff8a70', veins: !!veins, seed: String(preset || tint || 'gem'), name: preset || 'custom' };
@@ -507,6 +519,21 @@ export function createGem({ THREE, tint, depthTint, veins = true, seed = 0, pres
       return handle;
     },
     setEnvironment(renderer, mood, opts = {}) { return setGemEnvironment({ THREE, renderer, mood, ...opts }); },
+    get lantern() { return lantern; }, set lantern(v) { lantern = !!v; },
+    /* r2: practical light offer (V-385 one rig: the game decides whether this becomes a pool light). Format = kfb-stage-light createPracticals
+       entry; intensity = lanternStrength x mood glow weight x the shader's own pulse (same formula, same phase), colour = vein mixed warm. */
+    getPracticalLight() {
+      if (!lantern || !meshes.length || state === 'gone') return null;
+      const m = meshes.find((x) => x.geometry?.attributes?.kfbGem) || meshes[0], g = m.geometry; g.computeBoundingBox();
+      const b = g.boundingBox, local = new THREE.Vector3((b.min.x + b.max.x) / 2, b.min.y + 0.55 * (b.max.y - b.min.y), (b.min.z + b.max.z) / 2);
+      m.updateWorldMatrix(true, false); const pos = local.applyMatrix4(m.matrixWorld), ws = new THREE.Vector3().setFromMatrixScale(m.matrixWorld).x;
+      const NG = R.mood.value.x, e = m.matrixWorld.elements, seedPos = (Math.floor(e[12] * 4 + 0.5) * 0.1031 + Math.floor(e[14] * 4 + 0.5) * 0.0973) % 1;
+      const ph = bundle.shared.uGemParams.value.z + (g.attributes.kfbGem?.getZ(0) || 0) + (seedPos < 0 ? seedPos + 1 : seedPos);
+      const hz = PULSE_HZ + (PULSE_HZ_NIGHT - PULSE_HZ) * NG, pulse = 0.5 + 0.5 * Math.sin(2 * Math.PI * hz * R.time.value + 2 * Math.PI * ph);
+      const pk = (0.7 + (0.45 - 0.7) * NG) + (0.6 + (1.1 - 0.6) * NG) * pulse;
+      const col = new THREE.Color(params.vein).lerp(new THREE.Color('#ffcf9c'), 0.5);
+      return { id: 'kfb-gem:' + m.uuid, type: 'crystal', pos: pos.toArray().map((v) => +v.toFixed(4)), color: '#' + col.getHexString(), intensity: +(lanternStrength * NG * pk / 1.55).toFixed(4), range: +(1.6 * (b.max.y - b.min.y) * ws).toFixed(3), flicker: null, pulse: +pulse.toFixed(4), glowWeight: NG };
+    },
     info() { return { version: VERSION, state, key: bundle.key, meshes: meshes.length, time: +t.toFixed(3), shards: shatter ? shatter.items.reduce((a, it) => a + it.shards.length, 0) : 0 }; },
     dispose() {
       if (disposed) return; disposed = true; stopShatter();

@@ -5,6 +5,7 @@
 //   gem_capture.glb     one white queen + one black knight (capture strip)
 //   gem_start.glb       board r3 + 32 pieces in the starting position (b30_start_position.r1.json)
 //   gem_perf32.glb      32 pieces, 4 rows of 8, no board (shader cost)
+//   gem_lanterns.glb    r2: 4 pieces loose on the floor (night lantern sheet)
 //   node make-test-assets.mjs <outDir>
 import fs from 'node:fs';
 import path from 'node:path';
@@ -28,6 +29,11 @@ const layouts = {
   ],
   gem_capture: [{ glb: gem('queen', 'white'), name: 'W_queen', t: [0, 0, 0] }, { glb: gem('knight', 'black'), name: 'B_knight', t: [6.5, 0, 0], yaw: 55 }],
 };
+// r2: lanterns, 4 pieces loose on the floor (no board), for the night sheet
+layouts.gem_lanterns = [
+  { glb: gem('queen', 'white'), name: 'L_queen_white', t: [0, 0, 0], yaw: 10 }, { glb: gem('knight', 'black'), name: 'L_knight_black', t: [4.6, 0, -1.6], yaw: 60 },
+  { glb: gem('rook', 'white'), name: 'L_rook_white', t: [8.4, 0, 0.8], yaw: -20 }, { glb: gem('king', 'black'), name: 'L_king_black', t: [12.6, 0, -0.9], yaw: 25 },
+];
 // 32 pieces in 4 rows of 8 (perf measurement: the pieces fill most of a lineup frame)
 layouts.gem_perf32 = [];
 for (let r = 0; r < 4; r++) for (let c = 0; c < 8; c++) { const t = TYPES[(c + r) % 6], side = r < 2 ? 'white' : 'black'; layouts.gem_perf32.push({ glb: gem(t, side), name: `P${r}${c}_${side}_${t}`, t: [c * 3.0 + (r % 2) * 1.5, 0, -r * 2.8] }); }

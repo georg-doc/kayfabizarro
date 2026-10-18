@@ -1,0 +1,37 @@
+{
+  "schema": "kfb.song-critic.v1",
+  "song": "dream_wrestling_with_kayfabe_freud.r4.5.suno.txt",
+  "critic": "claude-fresh-instance",
+  "blind": true,
+  "scores": {
+    "cardTruth": 4,
+    "performance": 3,
+    "arc": 2,
+    "sayability": 3,
+    "tone": 4,
+    "styleFit": 3
+  },
+  "flags": [
+    {"beat": 0, "rule": "D13", "observation": "No style text accompanies the candidate; style fit judged only on lyric cadence and format against the golden example."},
+    {"beat": 1, "rule": "C9", "observation": "\"bills for bad dreams\" is a coined slogan, not the deck thesis in plain words; the title premise \"Kicks Out at Two\" never surfaces."},
+    {"beat": 2, "rule": "C9", "observation": "Only one onboarding beat; nobody says who speaks or what the listener is doing here. Punch \"It was free.\" lands ambiguously."},
+    {"beat": 2, "rule": "C9", "observation": "No expert dog whistle anywhere in intro or outro; deck insider material (dates, terms, quotes) appears only inside card lines."},
+    {"beat": 55, "rule": "B7b", "observation": "Outro callback targets card imagery (teeth, cards 4 and 17); link to \"charged me for a nightmare\" is thematic, not an intro image."},
+    {"beat": 3, "rule": "B7", "observation": "Across sixteen openers almost none carry so/but/until/except logic from the previous card; most are labels echoing their own card (Tip 1 unmet)."},
+    {"beat": 9, "rule": "B7", "observation": "Opener \"Blocked? Retreat:\" repeats the card's own word \"blocked\"; no therefore/but link to the preceding Displacement card."},
+    {"beat": 14, "rule": "B7", "observation": "\"Until seven:\" pre-announces \"seven A.M.\" from the same line; no twist relation to Somatic Stimulus before it."},
+    {"beat": 15, "rule": "B7", "observation": "\"Patient:\" is a bare label with no causal or twist relation to The Alarm Clock before it."},
+    {"beat": 31, "rule": "B7", "observation": "\"Yet the case:\" is semantically unclear, and a second colon after \"ultimate plot twist\" makes the beat hard to parse aloud."},
+    {"beat": 39, "rule": "B7", "observation": "\"The patient asks:\" contradicts the card: \"lie down, don't look at me\" is the analyst speaking, not the patient."},
+    {"beat": 45, "rule": "B7", "observation": "\"Parent:\" duplicates \"the internalized parent\" in the same line; a label, not a bridge."},
+    {"beat": 50, "rule": "B7", "observation": "\"Before ink:\" plus \"before the Censor\" doubles the word in one breath; ink is not an artworkPrompt image word."},
+    {"beat": 43, "rule": "A4", "observation": "114 characters with \"The detective finds hunger:\"; hunger repeats at line end. Not sayable in one breath."},
+    {"beat": 47, "rule": "A4", "observation": "110 characters; \"A censored gap: The Gap\" stacks the same word twice before the card even starts."},
+    {"beat": 19, "rule": "A4", "observation": "\"losing a tooth in a dream, not dentists\" drops the verb from \"isn't about dentists\"; the clause garbles when spoken."},
+    {"beat": 27, "rule": "A4", "observation": "\"why back?\" is a clipped stub of \"Why are you back here?\"; stumbles in performance."},
+    {"beat": 42, "rule": "A3", "observation": "Cutting \"Paved with\" leaves \"Royal Road to Unconscious, bad intentions and dirty jokes\" without the card's claim linking road and jokes."},
+    {"beat": 4, "rule": "A2", "observation": "\"kicked out of the room\" adds \"of the room\", which is not in the card lore."},
+    {"beat": 7, "rule": "A2", "observation": "\"five faces smash into one monster\" makes the faces the agent; card says \"you can smash five faces\"."}
+  ],
+  "verdict": "revise"
+}

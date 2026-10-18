@@ -1,0 +1,112 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "federal_kayfabe.part2.r5.1.suno.txt",
+ "critic": "claude-fresh-instance",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 3,
+  "arc": 3,
+  "sayability": 3,
+  "tone": 4,
+  "styleFit": 4
+ },
+ "flags": [
+  {
+   "beat": 1,
+   "rule": "C9",
+   "observation": "Thesis arrives only as an open question, \"who paid when the banks crashed?\"; no plain statement of the deck thesis follows in the intro."
+  },
+  {
+   "beat": 2,
+   "rule": "C9",
+   "observation": "Single onboarding beat: no speaker, no premise of what we are doing; the car setup has no clear punch a normie can catch."
+  },
+  {
+   "beat": 2,
+   "rule": "C9",
+   "observation": "Dog whistles limited to names from the next two cards; card-source insider details (birthday toast, General Counsel, Carroll Quigley) unused."
+  },
+  {
+   "beat": 35,
+   "rule": "C9",
+   "observation": "Punch hinges on \"I lose my keys\", a muddled consequence of a totaled car; the beat-1 question who paid stays implicit."
+  },
+  {
+   "beat": 8,
+   "rule": "A2",
+   "observation": "\"gold for assets they do not possess\" garbles the card: certificates represent assets the Fed lacks, not gold traded away for them."
+  },
+  {
+   "beat": 11,
+   "rule": "A2",
+   "observation": "Dropping \"laugh at\" leaves \"Congressional funding\" as a bare fragment that reads as if the Board receives it; card meaning lost."
+  },
+  {
+   "beat": 13,
+   "rule": "A2",
+   "observation": "Actor shifted: on the card the NY Fed exerts dominance; the line makes the Wall Street banks the subject."
+  },
+  {
+   "beat": 15,
+   "rule": "A4",
+   "observation": "Image words casino and table cut; \"collapsed, public never leaves\" no longer says what collapsed or what the public never leaves."
+  },
+  {
+   "beat": 22,
+   "rule": "A2",
+   "observation": "Card reports a claim, \"They say the crashes they engineer\"; the line drops the attribution and states engineered crashes as fact."
+  },
+  {
+   "beat": 23,
+   "rule": "A4",
+   "observation": "Simile truncated: \"like vampires fight\" ends without its object; two colons in a row make the beat stumble."
+  },
+  {
+   "beat": 26,
+   "rule": "A2",
+   "observation": "Card says \"cuts parasites, not funding\"; \"cut funding parasites\" blurs or inverts that claim, closing clause is a passive fragment."
+  },
+  {
+   "beat": 20,
+   "rule": "A5",
+   "observation": "\"Int.\" is a printed abbreviation, not a sung word; the spoken form is left open."
+  },
+  {
+   "beat": 10,
+   "rule": "A7",
+   "observation": "\"Four Hundred Twenty-Two\" drops the dollar of the card name \"$422\"; amount not written out as sung."
+  },
+  {
+   "beat": 10,
+   "rule": "A4",
+   "observation": "115 characters with opener and a long spelled number; not sayable in one breath. Beats 4, 23, 24 also exceed 110."
+  },
+  {
+   "beat": 22,
+   "rule": "B7",
+   "observation": "\"Global.\" opener only repeats the card name; no therefore or but link from the Feudal Endgame."
+  },
+  {
+   "beat": 33,
+   "rule": "B7",
+   "observation": "\"Choice.\" repeats the last word of its own line; same label pattern at beat 30 and beat 19: labels, not bridges."
+  },
+  {
+   "beat": 24,
+   "rule": "B7",
+   "observation": "\"Street account.\" is an opaque opener, neither bridge nor callback, and pre-echoes \"accounting\" in the same line."
+  },
+  {
+   "beat": 18,
+   "rule": "B7",
+   "observation": "The card is a first-person tantrum, \"Lose? Please.\"; the line flattens it to third person and the character voice is gone."
+  },
+  {
+   "beat": 28,
+   "rule": "B7",
+   "observation": "The person behind the card vanishes; \"mutual credit, graphic design and arrogance\" reads as a noun list with no want or grudge."
+  }
+ ],
+ "verdict": "revise"
+}

@@ -1,0 +1,147 @@
+{
+ "schema": "kfb.song-critic.v1",
+ "song": "grimms_kayfabe_legends_expansion_set_02.r5.1.suno.txt",
+ "critic": "claude-fresh-instance",
+ "blind": true,
+ "scores": {
+  "cardTruth": 3,
+  "performance": 2,
+  "arc": 2,
+  "sayability": 3,
+  "tone": 4,
+  "styleFit": 4
+ },
+ "flags": [
+  {
+   "beat": 1,
+   "rule": "C9",
+   "observation": "Names the title but omits the subtitle 'The Fairy Tale Screwjob'; the wrestling screwjob premise never reaches the listener."
+  },
+  {
+   "beat": 1,
+   "rule": "C13b",
+   "observation": "'every good bargain has a nasty catch' is a generic aphorism that could open any song at all."
+  },
+  {
+   "beat": 2,
+   "rule": "C9",
+   "observation": "Only one onboarding beat: no speaker, no card-karaoke premise, no kayfabe layer; listener is not told what happens here."
+  },
+  {
+   "beat": 2,
+   "rule": "C9",
+   "observation": "Stand-up punch 'My last phone upgrade was' reads as praise for the phone; setup and punch do not connect."
+  },
+  {
+   "beat": 2,
+   "rule": "C9",
+   "observation": "No expert dog whistle in the intro; Grimm or wrestling insider references are absent from the frame."
+  },
+  {
+   "beat": 6,
+   "rule": "B7",
+   "observation": "Opener 'Turnip.' only repeats the card name; no therefore/but link to the previous card."
+  },
+  {
+   "beat": 12,
+   "rule": "B7",
+   "observation": "'Goose in danger' has no goose in The Seven Kids; callback carries no cause or twist."
+  },
+  {
+   "beat": 12,
+   "rule": "A3",
+   "observation": "'eaten, cut your way out of the belly, fill with stones' recites the power as an instruction."
+  },
+  {
+   "beat": 10,
+   "rule": "A3",
+   "observation": "'beard trap yields gold or lose beard' recites power label and rule; grammar breaks mid-clause."
+  },
+  {
+   "beat": 13,
+   "rule": "A4",
+   "observation": "Trailing 'lost items' is a power residue fragment; the line ends without sense."
+  },
+  {
+   "beat": 17,
+   "rule": "A4",
+   "observation": "'false bride truths' is a compressed power fragment, hard to parse by ear."
+  },
+  {
+   "beat": 18,
+   "rule": "B7",
+   "observation": "Openers 'Kywitt.', 'Fairest.', 'Gingerbread.', 'White horses.' echo the card's own words; no Yes-and bridge between cards."
+  },
+  {
+   "beat": 19,
+   "rule": "A8",
+   "observation": "'two Child exiled for food' keeps the card-type term 'Child' and breaks grammar."
+  },
+  {
+   "beat": 20,
+   "rule": "A3",
+   "observation": "'identity theft' is the power label recited as a tag."
+  },
+  {
+   "beat": 21,
+   "rule": "A4",
+   "observation": "109 characters with opener; three stacked clauses exceed one breath."
+  },
+  {
+   "beat": 23,
+   "rule": "A4",
+   "observation": "'but the golden cage alarm' is a verbless fragment; meaning is lost when spoken."
+  },
+  {
+   "beat": 31,
+   "rule": "A3",
+   "observation": "'accidental genius' is the printed power label; the rest reads as rule summary."
+  },
+  {
+   "beat": 33,
+   "rule": "B7",
+   "observation": "Opener 'Falada:' reads as a speaker tag; the dead horse has no link to the dog tale."
+  },
+  {
+   "beat": 36,
+   "rule": "A3",
+   "observation": "'high strength, low intelligence' recites the stat line of the power."
+  },
+  {
+   "beat": 39,
+   "rule": "A3",
+   "observation": "'donkey transformation' is the power label tacked on as a tag."
+  },
+  {
+   "beat": 41,
+   "rule": "A8",
+   "observation": "'trade First Born for this' keeps game residue; 'this' points at the card, not a story object."
+  },
+  {
+   "beat": 46,
+   "rule": "A8",
+   "observation": "'opponent before the ball' uses the game word 'opponent'; fragment carries no image."
+  },
+  {
+   "beat": 48,
+   "rule": "C13a",
+   "observation": "Opener 'Blood speaks.' gives blood a speaking role in frame text; object-acting outside card text."
+  },
+  {
+   "beat": 55,
+   "rule": "C9",
+   "observation": "Outro recaps card 50, then 'Ask for the refund policy'; no clear statement about power, money, media or us."
+  },
+  {
+   "beat": 55,
+   "rule": "B7b",
+   "observation": "Outro calls back The Fisherman's Wife, not an image from the intro (silver, stone, phone)."
+  },
+  {
+   "beat": 55,
+   "rule": "C13b",
+   "observation": "'Ask for the refund policy' is a stock quip that fits any song about a bad deal."
+  }
+ ],
+ "verdict": "revise"
+}

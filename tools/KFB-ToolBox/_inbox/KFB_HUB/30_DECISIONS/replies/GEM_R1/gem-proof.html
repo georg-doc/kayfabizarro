@@ -12,6 +12,7 @@ html,body{margin:0;background:var(--bg);color:var(--ink);font:14px system-ui,san
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { createProofStage, W, H } from '../PROOF_STAGE_R1/kfb-proof-stage.v1.2.js';
+import { createPracticals } from '../PROOF_STAGE_R1/vendor/kfb-stage-light.v1.1.js';
 
 const stage = createProofStage({ THREE, GLTFLoader, canvas: document.getElementById('cv') });
 let loaded = null;
@@ -71,6 +72,18 @@ async function perf({ view = 'front', frames = 120, warm = 10 } = {}) {
   let cov = 0; for (let i = 0; i < all.length; i += 4) if (all[i] > 128) cov++;
   return { view, frames, timerQuery: !!ext, runs, gemPixels: cov, gemCoverage: +(cov / (W * H)).toFixed(4), meshes: gemMeshes.length, gpu: stage.info()?.gpu };
 }
-window.KFB_GEM = { load, setStates, advance, render, sheet, perf, handles: () => handles().map((x) => x.path) };
+/* r2: lantern hook test. getPracticalLight() of every gem (lantern on) feeds the light module's practicals pool (weight = mood glow),
+   exactly as WS1 could do it; off = emissive only. */
+let prac = null;
+function practicals(on) {
+  const S = stage.debug(); if (prac) { prac.object3d.removeFromParent(); prac.dispose(); prac = null; }
+  const hs = handles(); hs.forEach(({ h }) => { h.lantern = !!on; });
+  if (!on) return [];
+  stage.render('front', 'rest');                                  // positions in the front turntable pose (the sheet cell is a front view)
+  const list = hs.map(({ h }) => h.getPracticalLight()).filter(Boolean);
+  prac = createPracticals({ practicals: list.map((l) => ({ ...l, intensity: l.intensity / Math.max(1e-3, l.glowWeight) })), weight: () => S.rig.mood()?.glow ?? 0 });
+  S.scene.add(prac.object3d); prac.update(0, {}); return list;
+}
+window.KFB_GEM = { load, practicals, setStates, advance, render, sheet, perf, handles: () => handles().map((x) => x.path) };
 window.KFB_GEM_READY = true;
 </script></body></html>

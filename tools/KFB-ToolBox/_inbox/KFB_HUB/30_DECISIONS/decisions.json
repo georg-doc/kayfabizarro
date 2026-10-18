@@ -6579,6 +6579,21 @@
    "applies": "gem-Tune jetzt, Begleiter später"
   },
   {
+   "id": "V-472",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Songs R4.5/R5.1 (16 Tracks): WS0-Gates mit CI-Kartenbereichen 14 PASS, aber der externe Kritiker gibt allen 13 geprüften „revise“ (Muster: Zeilen zu lang A4, Opener als Etiketten B7, Kartenzeilen verdrehen Sinn/lesen Regeln A2/A3, Intro ohne zwei Ebenen C9). Damit Georg Songs ohne FAIL/Regress bekommt, übernimmt WS0 die Überarbeitungsrunde R4.6/R5.2 als Writers Room in Claude (ein Autor je Track, Rollen getrennt nach V-411: Autor schreibt, frischer Kritiker urteilt, Gate mechanisch via SONG_CRITICS_R3/gate_track.py mit CI-Kartenbereich + Songlines). Nur Tracks mit Gate PASS + Kritiker pass gehen als Suno-Karten in den Hub. WSA-Brief b118 dadurch erledigt.",
+   "values": {},
+   "owner": "WS0 (Writers Room + Kritiker) · WSA (Plugin-Lernen aus den Flags)",
+   "check": "Gate PASS + Kritiker pass je Track",
+   "source": "Georg 18.10. · V-411 · V-435",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die WSA-Schleife landet bei 3er-Noten; ein direkter Writers Room mit sofortigem Gate und frischem Kritiker ist schneller und hält die Rollen trotzdem getrennt.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6666,7 +6681,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:826",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:827",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
