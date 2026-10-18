@@ -7524,6 +7524,21 @@
    "applies": "B39 r2"
   },
   {
+   "id": "V-535",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "UFO-Lab-Fundort bestätigt (Georg 18.10., offen seit V-484): KFB_UFO_TRACTOR_BEAM_EVENT_LAB_2026-10-07 (WSA-Session 06./07.10., r2 nach Georgs Review), Kopie als Referenz in replies/UFO_TRACTOR_LAB_R2_REF/ (nur Code + Screens; UFO/Audio werden gepinnt aus dem Repo geladen). Inhalt: EVENT_CONTRACT.json (Phasen ARRIVE→HOVER→LOCK→CHARGE→DEMAT→TRANSFER→COMPLETE→[RETURN]→DEPART, Hooks, Zielklassen Prop/Pet/Burg), Beam als Shader-Kegel, Breakup-Schwellwert je Fragment (Spitze/Ränder zuerst, leuchtender Übergangsrand), Rematerialisierung (RETURN), zeitbasiert und scrubbar. Das ist die Vorlage für das eine Entstehen-/Vergehen-Modul (V-533: suck|build) sowie für Blob-Corp-Turm (V-530), Goo-Freiwaschen (V-532) und Zerstörung (V-514; der Lab-Brief verweist dafür auf Seed World Mech Destruction POC 01, sw-destruct.js/sw-fx.js).",
+   "values": {},
+   "owner": "WS1 (Modul) · WSA (Hooks/Audio)",
+   "check": "Clip: Requisit kayfabriziert + zerlegt mit Lab-Logik",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Vorhandene, von Georg abgenommene Logik statt Neuerfindung.",
+   "applies": "sofort als Referenz"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7611,7 +7626,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:887",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:888",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

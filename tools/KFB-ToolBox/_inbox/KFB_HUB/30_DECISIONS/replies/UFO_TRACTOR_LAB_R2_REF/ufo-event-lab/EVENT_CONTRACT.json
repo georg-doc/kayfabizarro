@@ -1,0 +1,58 @@
+{
+  "schema": "kfb.ufo-tractor-beam.event-contract.v1",
+  "status": "PROPOSAL · isolated lab r2 · 2026-10-07 · input for Work/WSA Architecture Freeze",
+  "source": "ufo-event-lab/ufo-lab.js · schedule() + CLS",
+  "invariants": [
+    "event is a pure function of t (seeded, scrubbable, no per-frame random)",
+    "lab renders an event, it does not resolve one: no world state, no persistence, no ownership transfer",
+    "UFO width constant 7 m across all target classes",
+    "transfer != destruction: abducted state must stay separate from damage state"
+  ],
+  "phases": [
+    { "id": "ARRIVE",   "hook": "ufo.arrive",             "event": "UFO_APPROACHING",            "duration": "2.6" },
+    { "id": "HOVER",    "hook": "ufo.hover",              "event": "UFO_HOVERING",               "duration": "1.1" },
+    { "id": "LOCK",     "hook": "beam.lock",              "event": "TRACTOR_BEAM_TARGET_LOCKED", "duration": "0.9" },
+    { "id": "CHARGE",   "hook": "beam.charge",            "event": "ABDUCTION_STARTED",          "duration": "1.1" },
+    { "id": "DEMAT",    "hook": "beam.transfer.start",    "event": "ABDUCTION_MATERIAL_BREAKUP", "duration": "Dd/2" },
+    { "id": "TRANSFER", "hook": "beam.transfer.loop",     "event": null,                         "duration": "Dd/2 + 1.2*Ft" },
+    { "id": "COMPLETE", "hook": "beam.transfer.complete", "event": "ABDUCTION_COMPLETED",        "duration": "1.0" },
+    { "id": "RETURN",   "hook": "ufo.drop",               "event": "ABDUCTED_OBJECT_RETURNED",   "duration": "0.35 + 0.6 + Dd + 1.2*Ft + 0.8", "optional": "ending=return" },
+    { "id": "DEPART",   "hook": "ufo.depart",             "event": "UFO_DEPARTING",              "duration": "2.4" }
+  ],
+  "subHooks": [
+    { "hook": "ufo.drop · pop", "at": "RETURN.t0 + 0.95 + Ttr", "meaning": "object fully rematerialized (layer sound)" }
+  ],
+  "endings": ["return", "keep"],
+  "targetClasses": {
+    "prop":   { "Dd": 1.5, "Ft": 0.95, "particles": 520,  "particleSize_m": [0.055, 0.11], "hoverClear_m": 4.4, "lift_m": 1.0,  "spinTurns": 1.3,  "beamFoot_m": 2.5,  "totalReturn_s": 16.1 },
+    "pet":    { "Dd": 1.9, "Ft": 1.15, "particles": 860,  "particleSize_m": [0.065, 0.13], "hoverClear_m": 4.8, "lift_m": 0.75, "spinTurns": 1.15, "beamFoot_m": 2.6,  "totalReturn_s": 17.4 },
+    "castle": { "Dd": 3.6, "Ft": 1.7,  "particles": 3400, "particleSize_m": [0.2, 0.44],   "hoverClear_m": 5.5, "lift_m": 0.3,  "spinTurns": 0.75, "beamFoot_m": 16.1, "totalReturn_s": 22.1 }
+  },
+  "beam": {
+    "emitterRadius_m": 0.6,
+    "footRadius": "max(1.25*R + 0.4, emitterRadius + 0.3*beamLength)",
+    "emitterHeight": "per UFO model: raycast at aperture ring, highest hull hit + 0.08 m (inside hull)",
+    "attachedTo": "UFO body space (follows tilt + squash)",
+    "footprintAppearsAt": "reach >= 0.85",
+    "variants": ["shader (default)", "kenney-mesh (backup, outer shell only, unlit)"]
+  },
+  "audioHooks": [
+    { "hook": "ufo.arrive",             "main": "whoosh_1 @0.85",      "layer": null,           "gain": 0.55 },
+    { "hook": "ufo.hover",              "main": "white_noise_long loop · LP 380 Hz", "layer": null, "gain": 0.10 },
+    { "hook": "beam.lock",              "main": "lowThreeTone",        "layer": null,           "gain": 0.5 },
+    { "hook": "beam.charge",            "main": "phaserUp3",           "layer": null,           "gain": 0.5 },
+    { "hook": "beam.transfer.start",    "main": "phaseJump2",          "layer": null,           "gain": 0.55 },
+    { "hook": "beam.transfer.loop",     "main": "white_noise_long loop · BP 500→2400 Hz", "layer": null, "gain": 0.14 },
+    { "hook": "beam.transfer.complete", "main": "zapTwoTone",          "layer": "air_burst",    "gain": 0.5 },
+    { "hook": "ufo.drop",               "main": "phaserDown2",         "layer": "elastic_twang (pop)", "gain": 0.5 },
+    { "hook": "ufo.depart",             "main": "phaserUp6",           "layer": "whoosh_2",     "gain": 0.45 }
+  ],
+  "audioStatus": "proposal, NOT auditioned by ear · pinned shortlist @ d04e0b8f2c2c34e9176f7eb75a77f19487d17698",
+  "openForFreeze": [
+    "who owns the event clock at runtime (world event system vs. UFO actor)",
+    "target eligibility + states: unavailable / locked / transferred / returned",
+    "where the abducted object lives while 'kept' (inventory, registry, despawn)",
+    "audio routing through the KFB Audio owner instead of the preview AudioContext",
+    "shared Beam Emitter for Tractor / Destruction / Terraform"
+  ]
+}
