@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-515 Probe R10.1: Schlumpf zuerst, nur 2 Schlüsselwörter als Glyphen, max. 2 Glyphen je Wort. B11 r5 TUNE (Kolben-Knick, Faust greift nicht, Gewehr an der Wange).
 - V-514 WS1-Block Flug + Zerstörung R1 (BRIEF_WS1_FLIGHT_DESTRUCTION_R1, SpellSpill-Referenz in replies/SPELLSPILL_R2_REF). Probe R10 veröffentlicht.
 - Hub q52–q68 beantwortet: V-508 Fluff-o-lect-Entscheide, V-509 B11 FAIL (King’s-Guard-Haltung), V-510 Spieler-Arm als Roboter-Unterarm, V-511 Assets statt Eigenbau, V-512 Friedhof/Hexenhaus/Vampir, V-513 EyeRig-Varianten. B33 Vampirturm r2 eingegangen.
 - V-507 Fluff-o-lect-Spec R1 (Entwurf), Hub b139 + Fragen q59–q68. B36 Werkstatt → q56, B33 Friedhof mit KFB-Augen → q57, Vampir ohne augenfreie Version → q58.
