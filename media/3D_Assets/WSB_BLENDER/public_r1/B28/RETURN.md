@@ -76,3 +76,37 @@ Bühne **v1.2.1** (`--stage v1.2`, kfb-stage-light.v1.1, alle Standard-Ansichten
 - `_privat_kauf_asset/renders/proof_stage_v12/tool_prop/`: Bogen `B28_tool_prop_lineup_contact_sheet.png` · Einzelansichten: `B28_tool_prop_lineup_back.png`, `B28_tool_prop_lineup_detail_low.png`, `B28_tool_prop_lineup_detail_right.png`, `B28_tool_prop_lineup_far.png`, `B28_tool_prop_lineup_front.png`, `B28_tool_prop_lineup_near_face.png`, `B28_tool_prop_lineup_scale_ref.png`, `B28_tool_prop_lineup_threeq.png`, `B28_tool_prop_lineup_top.png`
 
 Die älteren Bögen in `renders/proof_stage/` (v1.1, lange Reihe, vor ×1,25) sind überholt.
+
+## r2 · Pack-Varianten, floatTilt, neue Raster (V-450, Georg q23 PASS mit Hinweisen) · 18.10.
+- **Eigene Zusammenstellungen:** Es gab keine. „Burger“ (`food_burger`) und „Tellergericht“ (`food_dinner`, Keule mit Karotten) sind **Original-Teile** des KayKit-Restaurant-Packs.
+- **Pizza:** gibt es in keinem der freien Packs.
+- **Neu (Georgs Wunsch):** Pack-Varianten als Folge, Feld `variantGroup` in `data/loot_items.r2.json` (id, order, state, scale_from). Alle Varianten einer Folge haben **denselben Maßstab** wie das Ausgangsteil, damit das Stück zur Torte passt.
+
+| variantGroup | Folge |
+|---|---|
+| `apple` | Apfel → Apfel angeschnitten → Apfelstück |
+| `baguette` | Baguette → Baguette (halb) → Baguette-Scheibe |
+| `cake_strawberry` | Erdbeertorte → Erdbeertorte angeschnitten → Erdbeertorte (Stück) |
+| `dinner` | Tellergericht → Teller leer gegessen |
+| `pie_cherry` | Kirschkuchen → Kirschkuchen angeschnitten → Kirschkuchen (Stück) |
+| `stew` | Eintopf-Schale → Schale leer gegessen |
+| `waffle` | Waffel → Waffelstapel |
+
+- **11 neue GLBs** aus den Packs:
+  - Erdbeertorte und Kirschkuchen ganz und angeschnitten;
+  - Baguette halb und Scheibe;
+  - Apfel angeschnitten und Stück;
+  - Teller und Schale leer gegessen (`plate_dirty`, `bowl_dirty`);
+  - Waffelstapel.
+- **Bestand jetzt:** 41 häufig + 12 selten = 53 Teile.
+- **floatTilt:** `extras.kfb.pickup.floatTilt = true` (und `floatTilt` in der Tabelle) bei Teilen, deren längste Kante mindestens doppelt so lang ist wie die zweitlängste: carrot, baguette, giant_spoon, magnifying_glass, giant_scissors, rolling_pin, baguette_half. Das GLB selbst ist nicht gedreht; das Kippen um 35° machen Bühne bzw. WS1.
+- **Raster** (Varianten-Folgen nebeneinander): food 5×4 (17), drink 3×3 (7), sweet 5×4 (17), tool_prop 4×3 (12).
+- **Tabelle:** `loot_items.r2.json` ersetzt r1; der Handoff verweist auf r2.
+
+### Bühne v1.2.1 (aktuell, Schwebe-Abstand 0,15 m für alle) · 4 × PASS
+- `_privat_kauf_asset/renders/proof_stage_v12_r2/drink/`: Bogen `B28_drink_lineup_contact_sheet.png` · Einzelansichten: `B28_drink_lineup_back.png`, `B28_drink_lineup_detail_low.png`, `B28_drink_lineup_detail_right.png`, `B28_drink_lineup_far.png`, `B28_drink_lineup_front.png`, `B28_drink_lineup_near_face.png`, `B28_drink_lineup_scale_ref.png`, `B28_drink_lineup_threeq.png`, `B28_drink_lineup_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12_r2/food/`: Bogen `B28_food_lineup_contact_sheet.png` · Einzelansichten: `B28_food_lineup_back.png`, `B28_food_lineup_detail_low.png`, `B28_food_lineup_detail_right.png`, `B28_food_lineup_far.png`, `B28_food_lineup_front.png`, `B28_food_lineup_near_face.png`, `B28_food_lineup_scale_ref.png`, `B28_food_lineup_threeq.png`, `B28_food_lineup_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12_r2/sweet/`: Bogen `B28_sweet_lineup_contact_sheet.png` · Einzelansichten: `B28_sweet_lineup_back.png`, `B28_sweet_lineup_detail_low.png`, `B28_sweet_lineup_detail_right.png`, `B28_sweet_lineup_far.png`, `B28_sweet_lineup_front.png`, `B28_sweet_lineup_near_face.png`, `B28_sweet_lineup_scale_ref.png`, `B28_sweet_lineup_threeq.png`, `B28_sweet_lineup_top.png`
+- `_privat_kauf_asset/renders/proof_stage_v12_r2/tool_prop/`: Bogen `B28_tool_prop_lineup_contact_sheet.png` · Einzelansichten: `B28_tool_prop_lineup_back.png`, `B28_tool_prop_lineup_detail_low.png`, `B28_tool_prop_lineup_detail_right.png`, `B28_tool_prop_lineup_far.png`, `B28_tool_prop_lineup_front.png`, `B28_tool_prop_lineup_near_face.png`, `B28_tool_prop_lineup_scale_ref.png`, `B28_tool_prop_lineup_threeq.png`, `B28_tool_prop_lineup_top.png`
+
+Bilder privat (DemonLord in der Maßstabszelle). Die Bögen in `proof_stage_v12/` (r1-Tabelle) sind überholt.
