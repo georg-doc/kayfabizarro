@@ -1,3 +1,9 @@
+# CURRENT · RACER GEARS SOURCE AUDIT / STORAGE CHOICE · 2026-10-18
+
+22 existing files pinned/decoded/hashed. No Racer runtime or RACER panel implemented yet; no additional public audio binaries or paid calls. Public Code+Manifest/private audio versus explicit public-file rights exception awaiting Georg. Existing Atmosphere Site remains v18/source0.8.1, media stopped. [Racer intake and exact next gate](evidence/RACER_R1/RETURN.md).
+
+---
+
 # CURRENT · V-458 ATMOSPHERE / HUB b116 · 2026-10-18
 
 Same private Audio Site v18 / source 0.8.1, native source 33c70dc8e9c1c3b78d3c53e26d78d024d60d033f; exact URL #atmosphere Chrome verified. Draft PR #420 / code-evidence c65cb5b594e8b232533454af5fd821273e782078. 36 CC0 files + canonical LICENCES.json, one injected AudioContext; 24 named automated tests, 172 Site + 511 Footstep assertions, 26 final hosted cases PASS. Source gaps and human 3-minute ear gate OPEN. b116 non-CC0 stock manifest-only, no paid calls or World/Hub/merge. [Full current Return](WSA_AMBIENCE_V458_RETURN.md). Next acceptance gate: WS0/Georg ear review; ordered independent follow-up Racer gears then layered Combat.
