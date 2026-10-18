@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- ElevenLabs Racer-Satz R1 erzeugt (10 Sounds, ≈1.600 Credits; Schlüssel aus ~/KFB_Geheim, nie geloggt): 40_AUDIO/elevenlabs_r1/racer_r1/. WS0-Messung: Fehlzündung O2 fast stumm (−50 dBFS) → neu erzeugen; Loops brauchen Überblendung an der Naht (L4 Sprung, L5 Pegelabfall 7 dB); mehrere Spitzen bei 1,0 (Limiter nötig). Georgs Ohr-Check vor Übergabe an WSA. Hub q31 Mauer modelliert vs. flach.
 - V-455 Start: Poly Haven Chess Set (CC0, 19,7 MB, md5 geprüft) nach Georgs OK geladen nach 50_BLENDER/B30/_src/; WSB 31. Nachtrag B30 (Steinbrett, Figuren in Knete animationsbereit, Maßstab Bauer ≈ Medium, Domino-Parcours physikfähig, Board-Game-Bits als Umgebung).
 - Bühne v1.2.2: kein Box-Kontaktschatten unter hohlen Grundrissen (< 40 % belegt; L-Mauer zeigte dunklen Fleck im leeren Innenraum). WSB B29 r3 (organische Krone Standard, W1-Wiederholfehler behoben, W2 unregelmäßige Ziegel, W4 Fels, modelliertes Relief als Probe) → Neu-Render + Vergleich modelliert/flach für Georg.
 - V-455 Schach-Diorama „Die Welt als Spielzeug“ (berühmte Partien animiert, Domino-Parcours, lebendige Requisiten, später Kayfabe-Schach) eingeplant; Kandidat Poly Haven Chess Set (CC0). ElevenLabs-Test: Schlüssel weiter nicht im Anmelde-Schlüsselbund lesbar; Skript nimmt zusätzlich ~/KFB_Geheim/elevenlabs.txt (außerhalb Dropbox).
