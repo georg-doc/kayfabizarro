@@ -6669,6 +6669,36 @@
    "applies": "B35 nach B11 r3"
   },
   {
+   "id": "V-478",
+   "date": "2026-10-18",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "B31 Fluff-Bots (Hub q39, TUNE): (1) dunkle Köpfe wirken seltsam – Kopf-Kappe in hellem Körpergrau wie Rumpf, Schmutz neutral-kühlgrau statt braun und am Kopf höchstens halb so stark, kein Swatch-Bluten (WS0-Befund: Original-UVs der Kappe zeigen auf dunkles/braunes Atlas-Feld und/oder Bake-Bluten und brauner AO-Schmutz); (2) äußere Augenrahmen in der jeweiligen Fluff-Farbe; (3) Werkzeug-Slot kfb_tool_socket am Cyber-Arm für spätere absurde Werkzeuge. WSB B31 r3 sofort vor B11 r3.",
+   "values": {},
+   "owner": "WSB (B31 r3)",
+   "check": "6-Farben-Bögen mit/ohne Helm neu, Kopf vorher/nachher",
+   "source": "Hub q39",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Abnahme-Notiz; der Befund zeigt eine konkrete Ursache statt Raten.",
+   "applies": "B31 r3 sofort"
+  },
+  {
+   "id": "V-479",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Fluff-Saugarm (Georg, Hub q39): Bots saugen Fluff-Kugeln mit dem Cyber-Arm von Bäumen, aus Terrain und Wasser; besiegt der Spieler einen Saugarm-Bot, erbeutet er den Saugarm als Ernte-Werkzeug (Effizienz, Wert TBD, Eintrag in der Loot-Tabelle). Saug-Animation Cartoon: Anlauf → Kugel streckt sich am Ursprung → Plopp (Baum/Erde/Wasser je eigener Effekt) → gestreckter Flug → Einsaugen mit wandernder Beule im Arm → optional Tank voll; prozedural in einem Modul kfb-fluff-suck für Bots und Spieler, Phasen als Cues der Ereignis-Zeitleiste (V-389), VFX im gemeinsamen Budget (V-357). Ton R1 fertig (ElevenLabs fluff_suction_r1, 7 Ereignisse × 2). Spec replies/SPEC_FLUFF_SUCTION_R1.md. WSB: Saugdüse + kfb_nozzle + Beute-Modell in B31 r3; WS1: Modul nach dem Integrations-Slice.",
+   "values": {},
+   "owner": "WSB · WS1 · WS0 (Ton fertig)",
+   "check": "Phasen-Streifen je Herkunft + 10-s-Clip",
+   "source": "Georg 18.10. Hub q39",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Macht die Bots spielerisch relevant und gibt der Ernte ein erbeutbares Werkzeug; ein Modul für alle.",
+   "applies": "Ton sofort, Modul nach Integrations-Slice"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6756,7 +6786,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:831",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:832",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Hub q39 B31 TUNE → V-478 (Kopf-Textur, Augenrahmen in Fluff-Farbe, Werkzeug-Slot) und V-479 Fluff-Saugarm (SPEC_FLUFF_SUCTION_R1; ElevenLabs-Set fluff_suction_r1 erzeugt, 14 Takes, ~19 s ≈ 750 Credits). WSB B31 r3 sofort (37. Nachtrag).
 - V-477 Rust Runner II + Rustwing Cruiser II → WSB B35 (36. Nachtrag); Abnahme-Bühne v1.2.3 Augen je Figur in Mehrfiguren-Dateien (B31-Demo G1 4/4). Hub q39 B31 Bots + Baustelle zur Abnahme.
 - V-475 Bord-Diorama Hunky & Dory (SPEC_HD_SHIP_DIORAMA_R1): POIs, Banter-Triplets, Glaskuppel, Transporterstrahl, Comic-Motion; WSB B34 nach B32 (35. Nachtrag). V-476 Kristallfiguren r4 PASS (Hub q38).
 - V-474 Songs R4.6/R5.2: 16/16 Gate PASS + frischer Kritiker pass (mit Style-Datei) → Hub b120–b135 (Stimme männlich, FrizzleBob spricht); 1001 Teil 2 „crime scene“ korrigiert, song_gate R3.4c (Lore-Wendung erlaubt Spielwort). V-473 Briefing externer Kritiker (Codex, Effort High) als Hub b119. Kristallfiguren r3 geprüft → r4 beauftragt (Lichtkegel am Boden, Puls-Untergrenze, Adern in Glutfarbe, weniger Spiegelung).
