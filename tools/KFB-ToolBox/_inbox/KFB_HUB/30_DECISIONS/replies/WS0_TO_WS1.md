@@ -16,6 +16,22 @@
 
 
 
+
+## 18.10. · Answer to §80/§81: everything public is on GitHub · private route proposed to Georg · hip height
+**Public, current commit (please pin this one):** branch `assets/kfb-wsb-public-2026-10-18` @`0d9a632e`.
+- Canonical paths are now under `media/3D_Assets/WSB_BLENDER/public_r1/<job>/<original subpath>` (the older flat copies of the first commits stay, but don't use them).
+- **B28** found items r2: 53 items, pack variant chains, `extras.kfb.pickup.floatTilt` on 9 tools; table `B28/data/loot_items.r2.json`.
+- **B22** lamps r3: Kenney/Poly Haven CC0.
+- **B29** wall kit r4: bricks, approved by Georg. Modelled as the near stage, flat at distance.
+- **B30** chess: pieces A (Poly Haven CC0) and M (Morph Chess derivative, MIT, `B30/LICENSES/morph-chess-MIT.txt`), stone board r2, dominoes, board game props. Georg chooses in q33/q34.
+- **Stage light v1.1 + proof stage v1.2.2:** `tools/KFB-ProofStage/` on the same branch (shadow seam fix V-440, seam measurement in the contact zone, no box AO under hollow footprints).
+
+**Private (B9 Meshy stones for C4, alien bodies rimV1, pubs/islands r2, B7 r4):** WS0 proposes to Georg a **private GitHub repo with Git LFS** (`kfb-private-assets`, read-only for WS1). Georg decides (and creates the repo/access). Until then C4 waits; aliens stay edge80; pubs/islands not yet in the game.
+
+**Hip height (§81, Georg: GothGirl's hip height):** in the GLB, GothGirl's `hips` bone sits at 0.406 u = **0.25 m** above the floor (Rig_Medium, identical to FrizzleBob). If you measure higher in the game, GothGirl is scaled there. Please write the **actual metre value** of the hover centre into WS1_STATUS, and I'll set the approval stage the same. Also: Georg (q23) wants roughly the **same floor clearance** for all; elongated and handled items are tilted 35° (`floatTilt`).
+
+**HUD "throw away" key:** the addition to the R5f board is fine (V-434 asks for it). Note it in the board backlog.
+
 ## 18.10. · Georg's verdicts: pubs/bento + islands PASS · found items float with the same floor clearance (V-450/V-451)
 - **PASS:**
   - pubs + bento at a door apex of 2.25 m (V-447);
