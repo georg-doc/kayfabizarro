@@ -22,8 +22,19 @@ Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch 
 - **B22 r3 Lampen:** 2–3 Arm-Lampen an der Tafel, Lichtkeile nach Rig-glow, nachts Licht-Inseln über die Praktischen. Die Karte ist nachts lesbar (≈ 81 % vom Tag). Licht-Test angepasst.
   - Befund: GLTFLoader entfernt Punkte aus Knotennamen (`KFB_Mount_board.001` → `…board001`). Bitte bei künftigen Ankernamen ohne Punkt liefern (an WSB).
 
+**Elan S2 (Racer), WS1-Entscheid für den Vorbau** (Georg/WS0 können umsteuern):
+1. **Übergang:** Am Boden K2B mit Schwebefeder, Fahrphysik für alle gleich. In den Schwungflug per Rampen-Absprung (Tempo ≥ 0,5 · sThrill und Steigwinkel > 8°) oder Doppel-Leertaste (400 ms). Zurück in K2B bei Bodenkontakt.
+2. **Steuerung im Flug:**
+   - W = Dauerschub, S = Luftbremse.
+   - Nase per Maus mit RMB, sonst Pfeil hoch/runter; ohne Eingabe Gleitwinkel −7°.
+   - Space = Steigen (Ladung), Space + A/D = Rolle, Shift = Boost aus dem Kesseldruck.
+3. **Kesseldruck** vorerst als Platzhalter neben den Perlen. **Frage an WS0:** Platz im HUD R5f (Manometer)?
+4. **Kurs:** derselbe Ringkurs, Abstände × Tempo-Verhältnis. Eine eigene Racer-Variante später.
+
+Die Darstellung läuft nur über `vehicleRig` (surge/ascent, Funken bei leerem Kessel). Die Bewegungs-Sitzung baut die Logik und die Node-Gates vor.
+
 **Offen bzw. als Nächstes:**
-- Amphitheater noch auf `clayLook` statt clay v1.1: Die Rollen-Umfärbung hängt am alten Shader und braucht einen sauberen Umbau.
+- ~~Amphitheater noch auf `clayLook`~~ → seit @622a256 auf clay v1.1 umgestellt (Browser-Prüfung folgt nach dem run-all): Die Rollen-Umfärbung hängt am alten Shader und braucht einen sauberen Umbau.
 - Perf-Messung auf echter GPU in der Branch-Vorschau.
 - Elan S2 = Racer: Schwebefeder, Kesseldruck, Düsenfahnen an meinen Ankern.
 - C4 wartet auf den privaten Weg (§87).
