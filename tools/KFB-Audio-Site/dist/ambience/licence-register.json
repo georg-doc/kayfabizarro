@@ -1,0 +1,917 @@
+{
+  "schema": "kfb-ambience.v1",
+  "sourceCommit": "c746a9567e0ea20a24b8969fe9130ac0756e7a7e",
+  "checked": "2026-10-18",
+  "sources": [
+    {
+      "id": "own-wind",
+      "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/Audio/Environment/ambient_wind.wav",
+      "sourcePath": "media/3D_Assets/Audio/Environment/ambient_wind.wav",
+      "blob": "9e259a43528d292cf2d61796893df9b2ddb80eb6",
+      "file": "own-wind.wav",
+      "license": "LicenseRef-ChequeredInk-Commercial",
+      "page": "https://ci.itch.io/400-sounds-pack",
+      "author": "Chequered Ink",
+      "sha256": "1baa0f00560002d23b84d8cc2e521ac88fa691a4f0b5c43dd9f8bd83b663cb71"
+    },
+    {
+      "id": "own-river",
+      "url": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/c746a9567e0ea20a24b8969fe9130ac0756e7a7e/media/3D_Assets/Audio/Environment/water_babbling_loop.wav",
+      "sourcePath": "media/3D_Assets/Audio/Environment/water_babbling_loop.wav",
+      "blob": "75e65bbd9b5c150c45b00f1001f121824acfeaf0",
+      "file": "own-river.wav",
+      "license": "LicenseRef-ChequeredInk-Commercial",
+      "page": "https://ci.itch.io/400-sounds-pack",
+      "author": "Chequered Ink",
+      "sha256": "5b6888c9c6d6ad0cf33453f280ac42f5818c3b80fa304f6d48fd5f86eaff6162"
+    },
+    {
+      "id": "park-birds",
+      "url": "https://opengameart.org/sites/default/files/park_ambience_birds.wav",
+      "file": "park-birds.wav",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/park-ambiences",
+      "author": "Thimras",
+      "sha256": "dc1a5ac34b89cab7f8f261b53a23da7c1c5e3cc895aae4cb6fb4a1a04001b2af"
+    },
+    {
+      "id": "park-river",
+      "url": "https://opengameart.org/sites/default/files/park_ambience_river.wav",
+      "file": "park-river.wav",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/park-ambiences",
+      "author": "Thimras",
+      "sha256": "da0c0c9b1249a83a1611cc116d5737b0864a8db9f45f1ae8dcc079d0f7c0bbbf"
+    },
+    {
+      "id": "park-wind",
+      "url": "https://opengameart.org/sites/default/files/park_ambience_wind.wav",
+      "file": "park-wind.wav",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/park-ambiences",
+      "author": "Thimras",
+      "sha256": "5c381856745b4706e7eba55eb9271a61a530e90c05df8126adb2db89ecfa6c5a"
+    },
+    {
+      "id": "birds",
+      "url": "https://opengameart.org/sites/default/files/birds-isaiah658_0.ogg",
+      "file": "birds.ogg",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/ambient-bird-sounds",
+      "author": "isaiah658",
+      "sha256": "359e4e3f9da9d75aac64cede511c7e3ef8b461f9d9f8c230f8f80e44c4b3e35f"
+    },
+    {
+      "id": "bird-chirp",
+      "url": "https://opengameart.org/sites/default/files/birdchirping071414_0.mp3",
+      "file": "bird-chirp.mp3",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/bird-chirping-sounds",
+      "author": "syncopika",
+      "sha256": "40310829b1f5a295731a974f7da783be5a46e77b9859a930cce19eca13430cb6"
+    },
+    {
+      "id": "crickets",
+      "url": "https://opengameart.org/sites/default/files/crickets_1.mp3",
+      "file": "crickets.mp3",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/crickets-ambient-noise-loopable",
+      "author": "Wolfgang_ / Ted Kerr",
+      "sha256": "5b5bd1f744087888c5623543c3ff80be9c2ce106093993e7c8a8492b0280b2c0"
+    },
+    {
+      "id": "frogs",
+      "url": "https://cdn.freesound.org/previews/687/687211_284673-hq.mp3",
+      "file": "frogs.mp3",
+      "license": "CC0-1.0",
+      "page": "https://freesound.org/people/Traviow/sounds/687211/",
+      "author": "Traviow",
+      "quality": "public HQ preview, not original WAV",
+      "sha256": "c297cd52c3f6dbe601392dd24bf76a5531512d90e0426980d796369b88248920"
+    },
+    {
+      "id": "thunder",
+      "url": "https://cdn.freesound.org/previews/472/472480_723384-hq.mp3",
+      "file": "thunder.mp3",
+      "license": "CC0-1.0",
+      "page": "https://freesound.org/people/denalwa/sounds/472480/",
+      "author": "denalwa",
+      "quality": "public HQ preview, not original WAV",
+      "sha256": "038ac71eacb76283805c8080f454aa93b82d8e773d2c10f7d9e2501d18bfb9b6"
+    },
+    {
+      "id": "waterfall",
+      "url": "https://cdn.freesound.org/previews/44/44880_227630-hq.mp3",
+      "file": "waterfall.mp3",
+      "license": "CC0-1.0",
+      "page": "https://freesound.org/people/A.Deathy/sounds/44880/",
+      "author": "A.Deathy",
+      "quality": "public HQ preview",
+      "sha256": "ce0a17e5144768da4a2760a5ad8d862c926e46cacde2f9e63f3368da72cc8909"
+    },
+    {
+      "id": "jungle",
+      "url": "https://cdn.freesound.org/previews/644/644886_3288322-hq.mp3",
+      "file": "jungle.mp3",
+      "license": "CC0-1.0",
+      "page": "https://freesound.org/people/seventhsamurai/sounds/644886/",
+      "author": "seventhsamurai",
+      "quality": "public HQ preview; recorded 7:30am, minor handling noises; night-specific source gap",
+      "sha256": "61d9d3261706c02bfe8d453afef5195b861bc10e5336c44ddfd4a428b81d831c"
+    },
+    {
+      "id": "wave-1",
+      "url": "https://opengameart.org/sites/default/files/wave_01_cc0-18363__jasinski__alkaibeach.flac",
+      "file": "wave-1.flac",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/beach-ocean-waves",
+      "author": "jasinski / submitted by qubodup",
+      "sha256": "fcfca178eca2eac536e8c2a4ed5cf8096e44c921acd587047b3d9f1d7845435c"
+    },
+    {
+      "id": "wave-2",
+      "url": "https://opengameart.org/sites/default/files/wave_02_cc0-18363__jasinski__alkaibeach.flac",
+      "file": "wave-2.flac",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/beach-ocean-waves",
+      "author": "jasinski / submitted by qubodup",
+      "sha256": "53b5c28c0edc36f049e77e65f2cf8a86135103328c44c1507c416e6469d18096"
+    },
+    {
+      "id": "wave-3",
+      "url": "https://opengameart.org/sites/default/files/wave_03_cc0-18363__jasinski__alkaibeach.flac",
+      "file": "wave-3.flac",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/beach-ocean-waves",
+      "author": "jasinski / submitted by qubodup",
+      "sha256": "fc795f95f352b354867d69a587daecb8815334e28e3b56a7798c5f3005349054"
+    },
+    {
+      "id": "wave-4",
+      "url": "https://opengameart.org/sites/default/files/wave_04_cc0-18363__jasinski__alkaibeach.flac",
+      "file": "wave-4.flac",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/beach-ocean-waves",
+      "author": "jasinski / submitted by qubodup",
+      "sha256": "3c490e736365fdd617ce8405470d8878fc6146d9a8dba448d622addb01cfff3b"
+    },
+    {
+      "id": "rain",
+      "url": "https://opengameart.org/sites/default/files/Rain%20OGG.zip",
+      "file": "rain.zip",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/rain-loopable",
+      "author": "Ylmir",
+      "sha256": "e68f3e1c77493cf43bec84cebff5043bff6be9ce16d59b24caa988cd460aa75b"
+    }
+  ],
+  "assets": [
+    {
+      "id": "meadow-1",
+      "file": "assets/meadow-1.ogg",
+      "sha256": "21924d4340a487b0c93a1ad5a5954707bbaaf195f982ea22e031edfcceea583a",
+      "bytes": 726497,
+      "duration": 60,
+      "role": "bed",
+      "source": "park-birds",
+      "sourceSha256": "dc1a5ac34b89cab7f8f261b53a23da7c1c5e3cc895aae4cb6fb4a1a04001b2af",
+      "sourceWindow": {
+        "start": 10,
+        "seconds": 60
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/park-ambiences",
+      "author": "Thimras",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "note": "Distinct source windows, not separate recording sessions"
+    },
+    {
+      "id": "meadow-2",
+      "file": "assets/meadow-2.ogg",
+      "sha256": "fa720f8348bbd829ec7a74b7f63608604201607ea94ac322ae0fef80f5706c4b",
+      "bytes": 725376,
+      "duration": 60,
+      "role": "bed",
+      "source": "park-birds",
+      "sourceSha256": "dc1a5ac34b89cab7f8f261b53a23da7c1c5e3cc895aae4cb6fb4a1a04001b2af",
+      "sourceWindow": {
+        "start": 100,
+        "seconds": 60
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/park-ambiences",
+      "author": "Thimras",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "note": "Distinct source windows, not separate recording sessions"
+    },
+    {
+      "id": "forest-1",
+      "file": "assets/forest-1.ogg",
+      "sha256": "04493acf9e6060b76048ad7d390b90e23a119add284bf685f6f82f725f6b2138",
+      "bytes": 726291,
+      "duration": 60,
+      "role": "bed",
+      "source": "park-birds",
+      "sourceSha256": "dc1a5ac34b89cab7f8f261b53a23da7c1c5e3cc895aae4cb6fb4a1a04001b2af",
+      "sourceWindow": {
+        "start": 40,
+        "seconds": 60
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/park-ambiences",
+      "author": "Thimras",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "note": "Distinct source windows, not separate recording sessions"
+    },
+    {
+      "id": "forest-2",
+      "file": "assets/forest-2.ogg",
+      "sha256": "aa60d63562b1e0056f1724ab4b9edb8c42f44c9ac33bb1b2124c4b1936264e78",
+      "bytes": 715779,
+      "duration": 60,
+      "role": "bed",
+      "source": "park-birds",
+      "sourceSha256": "dc1a5ac34b89cab7f8f261b53a23da7c1c5e3cc895aae4cb6fb4a1a04001b2af",
+      "sourceWindow": {
+        "start": 140,
+        "seconds": 60
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/park-ambiences",
+      "author": "Thimras",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "note": "Distinct source windows, not separate recording sessions"
+    },
+    {
+      "id": "wind-1",
+      "file": "assets/wind-1.ogg",
+      "sha256": "1451b9a040694cd5f0f6508a1828be01867b45b277afdb281ec8d525d690a0d8",
+      "bytes": 559768,
+      "duration": 45,
+      "role": "bed",
+      "source": "park-wind",
+      "sourceSha256": "5c381856745b4706e7eba55eb9271a61a530e90c05df8126adb2db89ecfa6c5a",
+      "sourceWindow": {
+        "start": 5,
+        "seconds": 45
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/park-ambiences",
+      "author": "Thimras",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "note": "Distinct source windows, not separate recording sessions"
+    },
+    {
+      "id": "wind-2",
+      "file": "assets/wind-2.ogg",
+      "sha256": "83ca74a9f86d5b201b543179c387018ef529eccbbc5621156459e5121494d508",
+      "bytes": 554765,
+      "duration": 45,
+      "role": "bed",
+      "source": "park-wind",
+      "sourceSha256": "5c381856745b4706e7eba55eb9271a61a530e90c05df8126adb2db89ecfa6c5a",
+      "sourceWindow": {
+        "start": 55,
+        "seconds": 45
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/park-ambiences",
+      "author": "Thimras",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "note": "Distinct source windows, not separate recording sessions"
+    },
+    {
+      "id": "pond-1",
+      "file": "assets/pond-1.ogg",
+      "sha256": "fb7705dc3c58ab4ed1d61a5d6a7986d25e5e98f360b6bb566957b807d29a55c3",
+      "bytes": 715962,
+      "duration": 60,
+      "role": "bed",
+      "source": "frogs",
+      "sourceSha256": "c297cd52c3f6dbe601392dd24bf76a5531512d90e0426980d796369b88248920",
+      "sourceWindow": {
+        "start": 5,
+        "seconds": 60
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://freesound.org/people/Traviow/sounds/687211/",
+      "author": "Traviow",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "note": "Distinct source windows, not separate recording sessions"
+    },
+    {
+      "id": "pond-2",
+      "file": "assets/pond-2.ogg",
+      "sha256": "f41bfcd48a9fe110b8b5f44ba00073c3e764844dd0654982382ee17a8b1c0c05",
+      "bytes": 721253,
+      "duration": 60,
+      "role": "bed",
+      "source": "frogs",
+      "sourceSha256": "c297cd52c3f6dbe601392dd24bf76a5531512d90e0426980d796369b88248920",
+      "sourceWindow": {
+        "start": 100,
+        "seconds": 60
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://freesound.org/people/Traviow/sounds/687211/",
+      "author": "Traviow",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "note": "Distinct source windows, not separate recording sessions"
+    },
+    {
+      "id": "jungle-1",
+      "file": "assets/jungle-1.ogg",
+      "sha256": "fb17613af09b1ed2d3598c60f3fd0b4f64ce7f7b6afdc8fc774acf1389584291",
+      "bytes": 483893,
+      "duration": 40,
+      "role": "bed",
+      "source": "jungle",
+      "sourceSha256": "61d9d3261706c02bfe8d453afef5195b861bc10e5336c44ddfd4a428b81d831c",
+      "sourceWindow": {
+        "start": 1,
+        "seconds": 40
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://freesound.org/people/seventhsamurai/sounds/644886/",
+      "author": "seventhsamurai",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "note": "Overlapping excerpts of morning recording; authentic night variant remains a gap"
+    },
+    {
+      "id": "jungle-2",
+      "file": "assets/jungle-2.ogg",
+      "sha256": "62df96951a1970d5cc9b61c684dc284c815a2408d1cb7697fde974601bccab9f",
+      "bytes": 479482,
+      "duration": 40,
+      "role": "bed",
+      "source": "jungle",
+      "sourceSha256": "61d9d3261706c02bfe8d453afef5195b861bc10e5336c44ddfd4a428b81d831c",
+      "sourceWindow": {
+        "start": 16,
+        "seconds": 40
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://freesound.org/people/seventhsamurai/sounds/644886/",
+      "author": "seventhsamurai",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "note": "Overlapping excerpts of morning recording; authentic night variant remains a gap"
+    },
+    {
+      "id": "wave-1",
+      "file": "assets/wave-1.ogg",
+      "sha256": "7400a1206b2ac99a4490b0974914d1d89e31f2da003e90a624baa107a511a17f",
+      "bytes": 47688,
+      "duration": 4,
+      "role": "water",
+      "source": "wave-1",
+      "sourceSha256": "fcfca178eca2eac536e8c2a4ed5cf8096e44c921acd587047b3d9f1d7845435c",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 4
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/beach-ocean-waves",
+      "author": "jasinski / submitted by qubodup",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "wave-2",
+      "file": "assets/wave-2.ogg",
+      "sha256": "464dc30ba15e149f4e6b83bfc62ad173651f22097beb07a81699f41d688bdcd5",
+      "bytes": 31302,
+      "duration": 2.5,
+      "role": "water",
+      "source": "wave-2",
+      "sourceSha256": "53b5c28c0edc36f049e77e65f2cf8a86135103328c44c1507c416e6469d18096",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 2.5
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/beach-ocean-waves",
+      "author": "jasinski / submitted by qubodup",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "wave-3",
+      "file": "assets/wave-3.ogg",
+      "sha256": "fedb02b40149ef15fbd1bb396aa3dcc97210a0f35c1b1f0fee2d8771d0ff62fc",
+      "bytes": 28890,
+      "duration": 2.25,
+      "role": "water",
+      "source": "wave-3",
+      "sourceSha256": "fc795f95f352b354867d69a587daecb8815334e28e3b56a7798c5f3005349054",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 2.25
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/beach-ocean-waves",
+      "author": "jasinski / submitted by qubodup",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "wave-4",
+      "file": "assets/wave-4.ogg",
+      "sha256": "298d6eae23f287390d4e7a089de39d85da1a29732de38f8d6b93ad5d8e21d2b8",
+      "bytes": 44281,
+      "duration": 3.43,
+      "role": "water",
+      "source": "wave-4",
+      "sourceSha256": "3c490e736365fdd617ce8405470d8878fc6146d9a8dba448d622addb01cfff3b",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 3.51
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/beach-ocean-waves",
+      "author": "jasinski / submitted by qubodup",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "river",
+      "file": "assets/river.ogg",
+      "sha256": "e11bc75979fdcc19877f7aff17b63071eb16515e974e75dbb5a2938e2a38e061",
+      "bytes": 52210,
+      "duration": 4.02,
+      "role": "water",
+      "source": "own-river",
+      "sourceSha256": "5b6888c9c6d6ad0cf33453f280ac42f5818c3b80fa304f6d48fd5f86eaff6162",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 4.02
+      },
+      "license": "LicenseRef-ChequeredInk-Commercial",
+      "licenseUrl": "https://ci.itch.io/400-sounds-pack",
+      "author": "Chequered Ink",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "river-long",
+      "file": "assets/river-long.ogg",
+      "sha256": "7605bf0a56cc38a525daad604a046f7b03bcec445435f6b4b0189cb4fb3b9f74",
+      "bytes": 698734,
+      "duration": 60,
+      "role": "water",
+      "source": "park-river",
+      "sourceSha256": "da0c0c9b1249a83a1611cc116d5737b0864a8db9f45f1ae8dcc079d0f7c0bbbf",
+      "sourceWindow": {
+        "start": 15,
+        "seconds": 60
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/park-ambiences",
+      "author": "Thimras",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "waterfall",
+      "file": "assets/waterfall.ogg",
+      "sha256": "b42246affe1ae7b189f58624cd3df835e37758661fe58544e0adb3a87fe2b749",
+      "bytes": 125103,
+      "duration": 10,
+      "role": "water",
+      "source": "waterfall",
+      "sourceSha256": "ce0a17e5144768da4a2760a5ad8d862c926e46cacde2f9e63f3368da72cc8909",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 10
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://freesound.org/people/A.Deathy/sounds/44880/",
+      "author": "A.Deathy",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "gust",
+      "file": "assets/gust.ogg",
+      "sha256": "536a9d4af0bdb1b863e3a54b0344ef2be9d6023a17260c3d3afc04e3f389a515",
+      "bytes": 80258,
+      "duration": 8.61,
+      "role": "wind",
+      "source": "own-wind",
+      "sourceSha256": "1baa0f00560002d23b84d8cc2e521ac88fa691a4f0b5c43dd9f8bd83b663cb71",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 8.61
+      },
+      "license": "LicenseRef-ChequeredInk-Commercial",
+      "licenseUrl": "https://ci.itch.io/400-sounds-pack",
+      "author": "Chequered Ink",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "rain-1",
+      "file": "assets/rain-1.ogg",
+      "sha256": "ea33cbdd68dd813bde58bcd6b372132f18f1295cc3c00a2434906f9cc56db09c",
+      "bytes": 329700,
+      "duration": 27,
+      "role": "weather",
+      "source": "rain",
+      "sourceSha256": "e68f3e1c77493cf43bec84cebff5043bff6be9ce16d59b24caa988cd460aa75b",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 27
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/rain-loopable",
+      "author": "Ylmir",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "rain-2",
+      "file": "assets/rain-2.ogg",
+      "sha256": "3118c9ee3550f618ce7e5a2d9a44373e7b43caff04bb8a412ee5e4786577b2ad",
+      "bytes": 318293,
+      "duration": 26,
+      "role": "weather",
+      "source": "rain",
+      "sourceSha256": "e68f3e1c77493cf43bec84cebff5043bff6be9ce16d59b24caa988cd460aa75b",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 26
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/rain-loopable",
+      "author": "Ylmir",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "rain-3",
+      "file": "assets/rain-3.ogg",
+      "sha256": "5f5a1f67716cfece87635f418949ab38376fb52259f35ccd1559b3a10eb37476",
+      "bytes": 545915,
+      "duration": 45,
+      "role": "weather",
+      "source": "rain",
+      "sourceSha256": "e68f3e1c77493cf43bec84cebff5043bff6be9ce16d59b24caa988cd460aa75b",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 45
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/rain-loopable",
+      "author": "Ylmir",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "rain-4",
+      "file": "assets/rain-4.ogg",
+      "sha256": "d753bb865946f3919dcf0adee1964b1a6bfa2899775e0ad05d47d8bf56f4e51e",
+      "bytes": 456678,
+      "duration": 37.5,
+      "role": "weather",
+      "source": "rain",
+      "sourceSha256": "e68f3e1c77493cf43bec84cebff5043bff6be9ce16d59b24caa988cd460aa75b",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 37.5
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/rain-loopable",
+      "author": "Ylmir",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED"
+    },
+    {
+      "id": "bird-1",
+      "file": "assets/bird-1.ogg",
+      "sha256": "25b75ce23ae46f2c7baa10a6270f66a0c98d6eca6cd440a2942439eb1b913d22",
+      "bytes": 34049,
+      "duration": 2.5,
+      "role": "event",
+      "source": "birds",
+      "sourceSha256": "359e4e3f9da9d75aac64cede511c7e3ef8b461f9d9f8c230f8f80e44c4b3e35f",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 2.5
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/ambient-bird-sounds",
+      "author": "isaiah658",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "birds",
+      "species": "unidentified field-recorded bird phrase"
+    },
+    {
+      "id": "bird-2",
+      "file": "assets/bird-2.ogg",
+      "sha256": "ec51827b876fef9c6dff61d77190cabe94fca191301a6d1e9fb5453bbfa2dc83",
+      "bytes": 35413,
+      "duration": 2.5,
+      "role": "event",
+      "source": "birds",
+      "sourceSha256": "359e4e3f9da9d75aac64cede511c7e3ef8b461f9d9f8c230f8f80e44c4b3e35f",
+      "sourceWindow": {
+        "start": 3.4,
+        "seconds": 2.5
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/ambient-bird-sounds",
+      "author": "isaiah658",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "birds",
+      "species": "unidentified field-recorded bird phrase"
+    },
+    {
+      "id": "bird-3",
+      "file": "assets/bird-3.ogg",
+      "sha256": "247d2c019fa1ce9a1359c936bfece2f05bffb19f1dd2b7d45eb572378cc7b9da",
+      "bytes": 35336,
+      "duration": 2.5,
+      "role": "event",
+      "source": "birds",
+      "sourceSha256": "359e4e3f9da9d75aac64cede511c7e3ef8b461f9d9f8c230f8f80e44c4b3e35f",
+      "sourceWindow": {
+        "start": 6.8,
+        "seconds": 2.5
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/ambient-bird-sounds",
+      "author": "isaiah658",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "birds",
+      "species": "unidentified field-recorded bird phrase"
+    },
+    {
+      "id": "bird-4",
+      "file": "assets/bird-4.ogg",
+      "sha256": "8b11361f09788cba55662ef3c444357c467bb230a1fd52b39fc5671a6ee956b1",
+      "bytes": 34194,
+      "duration": 2.5,
+      "role": "event",
+      "source": "birds",
+      "sourceSha256": "359e4e3f9da9d75aac64cede511c7e3ef8b461f9d9f8c230f8f80e44c4b3e35f",
+      "sourceWindow": {
+        "start": 10.2,
+        "seconds": 2.5
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/ambient-bird-sounds",
+      "author": "isaiah658",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "birds",
+      "species": "unidentified field-recorded bird phrase"
+    },
+    {
+      "id": "bird-5",
+      "file": "assets/bird-5.ogg",
+      "sha256": "2ed5a22bbbf6256770c04cfe5570ff20032abd5d42c6814e4826cab4101fc473",
+      "bytes": 34575,
+      "duration": 2.5,
+      "role": "event",
+      "source": "birds",
+      "sourceSha256": "359e4e3f9da9d75aac64cede511c7e3ef8b461f9d9f8c230f8f80e44c4b3e35f",
+      "sourceWindow": {
+        "start": 13.6,
+        "seconds": 2.5
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/ambient-bird-sounds",
+      "author": "isaiah658",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "birds",
+      "species": "unidentified field-recorded bird phrase"
+    },
+    {
+      "id": "bird-6",
+      "file": "assets/bird-6.ogg",
+      "sha256": "84efaa6a99b8ea8d85e3b6afa71df45891348eef31b2e76a95f862e6854cc5a6",
+      "bytes": 34935,
+      "duration": 2.5,
+      "role": "event",
+      "source": "birds",
+      "sourceSha256": "359e4e3f9da9d75aac64cede511c7e3ef8b461f9d9f8c230f8f80e44c4b3e35f",
+      "sourceWindow": {
+        "start": 17,
+        "seconds": 2.5
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/ambient-bird-sounds",
+      "author": "isaiah658",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "birds",
+      "species": "unidentified field-recorded bird phrase"
+    },
+    {
+      "id": "chirp-1",
+      "file": "assets/chirp-1.ogg",
+      "sha256": "1b4b515d06fe5f8a6c689b6c5e8c9ecd4f286f3311378b615925b59ceb489905",
+      "bytes": 11354,
+      "duration": 0.85,
+      "role": "event",
+      "source": "bird-chirp",
+      "sourceSha256": "40310829b1f5a295731a974f7da783be5a46e77b9859a930cce19eca13430cb6",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 0.85
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/bird-chirping-sounds",
+      "author": "syncopika",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "birds",
+      "species": "unidentified field-recorded bird phrase"
+    },
+    {
+      "id": "chirp-2",
+      "file": "assets/chirp-2.ogg",
+      "sha256": "582975c7f35fcf1ef9007d8b57cfdb48a8e8f44acba39e40fda7eaa7f01c87a2",
+      "bytes": 11231,
+      "duration": 0.85,
+      "role": "event",
+      "source": "bird-chirp",
+      "sourceSha256": "40310829b1f5a295731a974f7da783be5a46e77b9859a930cce19eca13430cb6",
+      "sourceWindow": {
+        "start": 0.9,
+        "seconds": 0.85
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/bird-chirping-sounds",
+      "author": "syncopika",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "birds",
+      "species": "unidentified field-recorded bird phrase"
+    },
+    {
+      "id": "chirp-3",
+      "file": "assets/chirp-3.ogg",
+      "sha256": "864634716251f1fbe4296b36411ab00cd8b430f1c619d73ad63233f3431fd9e1",
+      "bytes": 11212,
+      "duration": 0.85,
+      "role": "event",
+      "source": "bird-chirp",
+      "sourceSha256": "40310829b1f5a295731a974f7da783be5a46e77b9859a930cce19eca13430cb6",
+      "sourceWindow": {
+        "start": 1.8,
+        "seconds": 0.85
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/bird-chirping-sounds",
+      "author": "syncopika",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "birds",
+      "species": "unidentified field-recorded bird phrase"
+    },
+    {
+      "id": "cricket-1",
+      "file": "assets/cricket-1.ogg",
+      "sha256": "9f37304430f696f45a784ec01fb43dbd95d09d270486a744b401e59d0921235b",
+      "bytes": 32538,
+      "duration": 2.1,
+      "role": "event",
+      "source": "crickets",
+      "sourceSha256": "5b5bd1f744087888c5623543c3ff80be9c2ce106093993e7c8a8492b0280b2c0",
+      "sourceWindow": {
+        "start": 0,
+        "seconds": 2.1
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/crickets-ambient-noise-loopable",
+      "author": "Wolfgang_ / Ted Kerr",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "crickets"
+    },
+    {
+      "id": "cricket-2",
+      "file": "assets/cricket-2.ogg",
+      "sha256": "0c85d8313314f0f14b647a162dff5c32ed6c46039b6910421d954091bfbeceed",
+      "bytes": 31951,
+      "duration": 2.1,
+      "role": "event",
+      "source": "crickets",
+      "sourceSha256": "5b5bd1f744087888c5623543c3ff80be9c2ce106093993e7c8a8492b0280b2c0",
+      "sourceWindow": {
+        "start": 2.7,
+        "seconds": 2.1
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/crickets-ambient-noise-loopable",
+      "author": "Wolfgang_ / Ted Kerr",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "crickets"
+    },
+    {
+      "id": "cricket-3",
+      "file": "assets/cricket-3.ogg",
+      "sha256": "6dae4d2584a2d6f8dcb603450ec40b820db1739c938acf1acf4dc57600c8bc38",
+      "bytes": 32071,
+      "duration": 2.1,
+      "role": "event",
+      "source": "crickets",
+      "sourceSha256": "5b5bd1f744087888c5623543c3ff80be9c2ce106093993e7c8a8492b0280b2c0",
+      "sourceWindow": {
+        "start": 5.4,
+        "seconds": 2.1
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://opengameart.org/content/crickets-ambient-noise-loopable",
+      "author": "Wolfgang_ / Ted Kerr",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "crickets"
+    },
+    {
+      "id": "frog-1",
+      "file": "assets/frog-1.ogg",
+      "sha256": "2aad5484c22364d728c2bac4b419c91720ccbd20e693bb46e7661eac84664995",
+      "bytes": 52278,
+      "duration": 4,
+      "role": "event",
+      "source": "frogs",
+      "sourceSha256": "c297cd52c3f6dbe601392dd24bf76a5531512d90e0426980d796369b88248920",
+      "sourceWindow": {
+        "start": 20,
+        "seconds": 4
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://freesound.org/people/Traviow/sounds/687211/",
+      "author": "Traviow",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "frogs"
+    },
+    {
+      "id": "frog-2",
+      "file": "assets/frog-2.ogg",
+      "sha256": "bdd7dc516464d7cc702061d824cf6b1929dcdaa5842d158dddce5071c1cdbff8",
+      "bytes": 51529,
+      "duration": 4,
+      "role": "event",
+      "source": "frogs",
+      "sourceSha256": "c297cd52c3f6dbe601392dd24bf76a5531512d90e0426980d796369b88248920",
+      "sourceWindow": {
+        "start": 57,
+        "seconds": 4
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://freesound.org/people/Traviow/sounds/687211/",
+      "author": "Traviow",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "frogs"
+    },
+    {
+      "id": "frog-3",
+      "file": "assets/frog-3.ogg",
+      "sha256": "3ae9e44e4c49ffccf4ef860f38f28c59bd6cb6a0e70109310a0ffc3ee7025137",
+      "bytes": 52192,
+      "duration": 4,
+      "role": "event",
+      "source": "frogs",
+      "sourceSha256": "c297cd52c3f6dbe601392dd24bf76a5531512d90e0426980d796369b88248920",
+      "sourceWindow": {
+        "start": 94,
+        "seconds": 4
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://freesound.org/people/Traviow/sounds/687211/",
+      "author": "Traviow",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "pool": "frogs"
+    },
+    {
+      "id": "thunder",
+      "file": "assets/thunder.ogg",
+      "sha256": "47194e2d53805e380099d360326dbaad4fc4229113e3ce57f7042f1c61f8b7d4",
+      "bytes": 150524,
+      "duration": 12,
+      "role": "thunder",
+      "source": "thunder",
+      "sourceSha256": "038ac71eacb76283805c8080f454aa93b82d8e773d2c10f7d9e2501d18bfb9b6",
+      "sourceWindow": {
+        "start": 4.48,
+        "seconds": 12
+      },
+      "license": "CC0-1.0",
+      "licenseUrl": "https://freesound.org/people/denalwa/sounds/472480/",
+      "author": "denalwa",
+      "status": "SOURCE_VERIFIED_RUNTIME_UNVERIFIED",
+      "arrivalAnchorSeconds": 0.02,
+      "onsetDetection": {
+        "windowSeconds": 0.02,
+        "thresholdFractionOfPeakRms": 0.35,
+        "sourceOnsetSeconds": 4.5
+      },
+      "note": "Single rain/thunder recording, cropped at first substantial envelope; dry alternative claps remain a gap; physical perceptual onset needs ear review"
+    }
+  ],
+  "quarantined": [
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_heavy_rain__#2-1791081920535.mp3",
+      "blob": "b6cf3e907eab5edb8adac609be887a51a636617c",
+      "status": "PLAN_AT_CREATION_RECEIPT_REQUIRED",
+      "role": "weather-rain",
+      "shipping": false
+    },
+    {
+      "path": "media/3D_Assets/Audio/ElevenLabs Audio/Seamless_light_stead_#3-1791081817907.mp3",
+      "blob": "f1673eb0a641fe60680477b889c8dc5869eafa05",
+      "status": "PLAN_AT_CREATION_RECEIPT_REQUIRED",
+      "role": "weather-rain",
+      "shipping": false
+    }
+  ],
+  "excluded": [
+    "Tiny Skies audio: reference only; licence unclear",
+    "Jukebox ambient songs: music, not ambience",
+    "BBC NC / NC / ND",
+    "Sonniss: Georg download only"
+  ]
+}
