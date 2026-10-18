@@ -25,3 +25,12 @@ https://github.com/georg-doc/kayfabizarro/actions/runs/39032118683. Source candi
 - **CI on tested source:** https://github.com/georg-doc/kayfabizarro/actions/runs/39070727763: 2/2 original-script steps SUCCESS, triplet checker `0 FAIL`, central song_gate lyrics PASS (52/52 cards, 4984 chars, intro 2, outro 1, openers 16); WARN E16b missing dedicated tone map, nonblocking. Original canonical script from register `bfcf60f8faed39d5cbae3f715737cee95e890765`; no private fork.
 - **Unresolved:** source-level sayability/power fragments in protected A card cores explicitly deferred, no invented rewrite or manufactured critic. No Stage, Site, public browser review, Hub submission, Georg PASS.
 - **ONE next gate:** WS0 performs fresh independent judge-only critic pass two on this exact R4.4 candidate; write scores/flags without text edits, then route to Georg. Any protected-core changes require separate authorized scope.
+
+
+## R4.5 V-435/V-436 · concrete intro/outro + R3.4 style gates · 18 October 2026
+- **Owner:** KFB Triplets Writer's Room. Repo `georg-doc/kayfabizarro`; branch `songs/dream_wrestling_with_kayfabe_freud-r4-2026-10-17`; original-gate tested candidate commit `55695fd394d8436d2b4d399f5df7850da3206297`. Previous R4.4 files and canonical card assets left unchanged.
+- **New files:** `songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.r4.5.suno.txt`, `songs/dream_wrestling_with_kayfabe_freud/dream_wrestling_with_kayfabe_freud.r4.5.style.txt`; `.github/workflows/kfb-song-r45-freud-gate.yml`.
+- **Core invariant:** 52/52 original card cores unchanged; revised only intro, outro, editorial opener prefixes and isolated A/B danceable styles (plus introType metadata in R5). Shared central original `song_gate.py` and `triplet_set_check.py` pinned at `f0f07a27e9e98ee005fc35de61a070853fec2246`.
+- **Actual CI gate evidence:** https://github.com/georg-doc/kayfabizarro/actions/runs/39085601602 **SUCCESS 3/3 named canonical triplet, lyric and style checks**, candidate source `55695fd394d8436d2b4d399f5df7850da3206297`. Previous failed diagnostics retained; no artificial critic. Nonblocking E16b warns no dedicated Freud tone mapping.
+- **Not accepted:** independent context-isolated WS0 judge-only critic and Georg human artistic PASS remain pending. No PR, merge, Hub, Stage, audio or Site acceptance surface.
+- **ONE next gate:** WS0 evaluates these source-verified two-level frames, performs fresh blind external §F judge-only critique via original `song_gate.py critic`, then sends this R4.5 version to Georg.
