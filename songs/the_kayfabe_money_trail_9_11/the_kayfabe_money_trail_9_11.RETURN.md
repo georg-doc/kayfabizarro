@@ -27,3 +27,12 @@ https://github.com/georg-doc/kayfabizarro/actions/runs/39032451068. Candidate 42
 - **Pinned read-only canonical source:** register head `bfcf60f8faed39d5cbae3f715737cee95e890765`, same-path original `replies/song_gate.py` plus `triplet_set_check.py` (not copies/new ownership).
 - **Unresolved:** A2/A3/A4 protected-core issues deliberately kept, no independent critic pass two, no Georg PASS, no Hub publication. No soundtrack/media produced by this text-only slice.
 - **ONE next gate:** WS0 independent blind judge-only critic pass two per final R4.4 part, canonical `song_gate.py critic`, no new lyric edits; then WS0 hands candidates to Georg.
+
+
+## R4.5 · V-435/V-436 intro/outro, openers and danceable styles · 18 October 2026
+- **Owner:** KFB Triplets song Writer's Room; **repo:** `georg-doc/kayfabizarro`; **branch:** `songs/the_kayfabe_money_trail_9_11-r4-2026-10-17`; **tested lyric/style commit:** `6f9de73a59bd086a379602001fdd0de79ad2612c`. Existing R4.4 lyrics and all canonical card source data retained unchanged.
+- **New files:** `songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.part1.r4.5.suno.txt`, `songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.part1.r4.5.style.txt`, `songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.part2.r4.5.suno.txt`, `songs/the_kayfabe_money_trail_9_11/the_kayfabe_money_trail_9_11.part2.r4.5.style.txt`; original-gate GitHub Actions workflow `.github/workflows/kfb-song-r45-money-gate.yml`.
+- **Card-core invariance:** 60/60 existing R4.4 card-beat cores retained verbatim; editorial changes confined to intro/outro and selected opener prefixes. The tracks end with standalone `Stay Fluffy!`.
+- **R3.4 original gates:** pinned unchanged central `song_gate.py` and `triplet_set_check.py` at register `f0f07a27e9e98ee005fc35de61a070853fec2246`. Real GitHub Actions run https://github.com/georg-doc/kayfabizarro/actions/runs/39085272277 on source commit `6f9de73a59bd086a379602001fdd0de79ad2612c`: **PASS 6/6 named canonical triplet, lyrics and style test steps**. Earlier failing runs remain visible. Mechanical green is not an artistic pass.
+- **Outstanding:** independent WS0 blind critic per §F and Georg acceptance NOT performed; no PR, merge, Stage, Hub route or audio published. Source-only revision does not change product routing.
+- **ONE next gate:** WS0 verifies the concrete two-level frames and dance styles in these R4.5 files, commissions fresh judge-only critic(s) with `song_gate.py critic`, then routes to Georg for human decision.
