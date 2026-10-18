@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-534 Ein-/Aussteigen MVP = Joyride (aufs Dach springen, verschluckt werden, Fahrzeug-Squash); richtiges Einsteigen mit Türen aus B39 R1 ins Backlog (WS0-QA: schwarze Türen, ausgefranste Kanten).
 - V-533 Kayfabrizieren: Robo-Arm/Trichter baut Gebäude/Props aus Fluff (Richtung build im Saug-Modul, UFO-Lab-Traktorstrahl-Logik), ein Modul für Entstehen/Vergehen.
 - V-532 Goo-Gegenmittel: Spieler wäscht mit Robo-Arm-Fluff-Schüssen frei (Farbregel Hub q103), Zensurbalken-Vorschlag Hub q104.
 - V-531 Black Fluff/Goo: Men in Black ernten Fluff mit Robo-Arm + schwarzem Trichter, brauen Goo für die Tinten-Gegner (Card Ink Defense V-405). B40-Brief ergänzt, WS1 informiert. Hub q102 Men-in-Black-Sounds.

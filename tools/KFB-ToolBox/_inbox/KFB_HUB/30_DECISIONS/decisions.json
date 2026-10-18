@@ -7509,6 +7509,21 @@
    "applies": "nach R1a/V-514"
   },
   {
+   "id": "V-534",
+   "date": "2026-10-18",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Ein-/Aussteigen im MVP = Joyride-Logik ohne Türen/Luken (Georg 18.10., ersetzt den Tür-Ansatz aus B39 R1 fürs MVP): Die Figur springt cartoonig hoch, landet auf dem Dach und wird verschluckt (ploppt ins Dach); das Fahrzeug reagiert per Squash/Cartoon-Deformer mit Nachschwingen. Aussteigen umgekehrt. WSB liefert Clips kfb_hop_roof_in|out (Medium/Large), Anker KFB_roof_land, Zeitpläne roof_swallow und Squash-Parameter; WS1 spielt das mit dem Cartoon-Deformer (V-487). Echte Türen/Luken (B39 R1: schwarze Türen, ausgefranste Kanten) kommen ins Backlog (Georg: das richtige Einsteigen später), die Dateien bleiben privat.",
+   "values": {},
+   "owner": "WSB (B39 r2) · WS1 (Deformer)",
+   "check": "Streifen roof_swallow mit Clay",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Schneller, lustiger und robuster als Türen: kein Durchstich-Risiko im MVP.",
+   "applies": "B39 r2"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7596,7 +7611,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:886",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:887",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
