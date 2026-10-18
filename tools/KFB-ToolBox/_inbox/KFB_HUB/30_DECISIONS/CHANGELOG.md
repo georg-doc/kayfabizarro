@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-523 Sound-Batch R1: 104 ElevenLabs-Clips in 6 Sätzen, Hörproben Hub q81–q86. Recherche HeyGen + Voice-Cast läuft.
 - V-522 ElevenLabs debris_crash_r1 (35 Clips, normalisiert) für die Audio-Site.
 - V-521 WSA Flug + Crash R1 (Audio-Site v20, PR #428) – Anschluss durch WS1 im Block V-514.
 - V-519 Sprechblasen-Hintergrund (Papier, pastellige Story-Modes, Tageszeit/Licht). V-520 Hub q74–q80 + QA-Liste. WSA PR #424 Regeln auf R10.1 nachziehen, PR #425 Banter angehalten (Vorlese-Muster).

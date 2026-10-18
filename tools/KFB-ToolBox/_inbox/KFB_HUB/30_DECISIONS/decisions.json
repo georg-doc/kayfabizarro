@@ -7344,6 +7344,21 @@
    "applies": "WSA"
   },
   {
+   "id": "V-523",
+   "date": "2026-10-18",
+   "area": "Audio",
+   "verdict": "RULE",
+   "text": "Sound-Batch R1 (Georg 18.10.: „alle Vorschläge nach Prio durchproduzieren“, ElevenLabs-Guthaben ≈ 82 Tsd.): 104 Clips in 6 Sätzen, ≈ 10,5 Tsd. Credits, alle OK und normalisiert (40_AUDIO/elevenlabs_r1/<satz>_norm/): reward_r1 (Karte, Entschlüsseln Glyphe→Fluff→Klartext, Bündel, Deck-Fanfare, Fluff, Hub-Ping), fluffolect_layer_r1 (Gefühls-Einwürfe je Figur instrumental – FrizzleBob Posaune, Dory Okarina, Hunky Fagott/Kazoo –, Atem, Leitmotiv-Stingers; keine Sprache, V-492), atmos_dioramas_r1 (7 Loops), interactions_r1, creatures_r1 (Ork-Grollen als Tuba), weather_time_r1. Hörproben je eine Variante im Hub q81–q86; Einbau WSA (Audio-Site) bzw. WS1 (Spiel).",
+   "values": {},
+   "owner": "WS0 (erzeugt) · Georg (Hörprobe) · WSA/WS1 (Einbau)",
+   "check": "Hub q81–q86",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Belohnung, Atmosphäre und Figuren-Leben als Ton.",
+   "applies": "Hub q81–q86"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7431,7 +7446,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:875",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:876",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
