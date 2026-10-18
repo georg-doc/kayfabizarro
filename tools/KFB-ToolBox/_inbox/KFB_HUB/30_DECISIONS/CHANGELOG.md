@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-540 Blaster-Kampfset aus KayKit CombatRanged + Mündungs-FX/VFX/SFX (blaster_r1); B40-Brief und WS1-Hinweis ergänzt.
 - V-536 global bestätigt (auch Combat Arena); B31 r6b_final als Referenz. WS1b-Start als Task-Chip angelegt (Georg klickt).
 - V-539 WS1 → WS1b auf Georgs MacBook: Übergabe-Auftrag an WS1, Übernahme-Brief BRIEF_WS1B_TAKEOVER_R1.
 - V-538: WSA hat georg-doc/kayfabizarro-private-assets angelegt (41/41 sha256 ok). Offen: WS1-Zugang (Clone-Test; ggf. read-only Deploy-Key von Georg).

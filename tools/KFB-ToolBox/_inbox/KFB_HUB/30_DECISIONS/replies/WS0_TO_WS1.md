@@ -7,6 +7,10 @@
 
 
 
+
+## 18.10. 22:55 · Blaster-Kampfset (V-540), für WS1b
+WSB liefert mit B40 die Blaster-Clips aus KayKit `Rig_Medium_CombatRanged` (Zielen, Schuss mit Rückstoß, Dauerfeuer, Nachladen, Laufen mit Waffe, Treffer) mit Marken `fire`/`recoil_peak`/`reload_out`/`reload_in`/`ready`, Achse nach V-536, und Mündungsblitz-Meshes an `KFB_Muzzle`. Bitte planen: Zustandsmaschine, Bolzen/Strahl- und Einschlag-VFX nach `SPEC_CARTOON_VFX_SHAPES_R1`, SFX `40_AUDIO/elevenlabs_r1/blaster_r1` (WS0). Start nach V-514-Grundlage.
+
 ## 18.10. 22:30 · ÜBERGABE: WS1 wird auf Georgs MacBook weitergeführt (V-539) — bis 23:15
 Georg verlegt WS1 auf sein MacBook (Dropbox direkt, private Assets ohne Workspace-Hürden). Danke für die Arbeit! Bitte bis 23:15:
 1. **Alles pushen:** `combo/r2` (Arbeitsstand, auch unveröffentlichte Commits) und alle weiteren lokalen Branches. Nichts Halbfertiges auf `ws1/preview`.

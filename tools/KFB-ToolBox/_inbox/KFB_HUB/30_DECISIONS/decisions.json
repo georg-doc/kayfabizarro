@@ -7599,6 +7599,21 @@
    "applies": "heute Nacht"
   },
   {
+   "id": "V-540",
+   "date": "2026-10-18",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Blaster-Kampfset komplett (Georg 18.10., baut auf V-536): Die Blaster werden direkt mit allen Kampf-Clips und -Zuständen aus dem KayKit Character Animations Pack gebaut – Rig_Medium_CombatRanged (Ranged_1H/2H Aiming, Shoot mit Rückstoß, Shooting-Loop, Reload), Running_HoldingRifle, Strafe/Dodge aus MovementAdvanced, Hit_A/B – als Zustandsmaschine Idle-mit-Waffe → Zielen → Schuss (Rückstoß) → Dauerfeuer → Nachladen → Laufen/Gehen mit Waffe → Treffer. Large Rig hat keine Ranged-Clips: Retarget der Medium-Clips bzw. Mixamo (Shooting Gun, Drawing Gun, Pistol To Idle). Marken je Clip: fire, recoil_peak, reload_out/in, ready. Dazu Mündungs-FX (Cartoon-Mündungsblitz-Formen in Knet, 3 Varianten, an KFB_Muzzle), VFX (Bolzen/Strahl, Einschlag-Puffs nach SPEC_CARTOON_VFX_SHAPES_R1) und SFX (Set blaster_r1, WS0). Quelle des Packs: Dropbox …/3D ASSETS/KayKit_Character_Animations_1.1. Frühere Animationsstände aus dem ursprünglichen Blender-MCP-Chat fragt Georg ab.",
+   "values": {},
+   "owner": "WSB (Clips + Mündungsblitz-Meshes) · WS1b (Zustandsmaschine, VFX) · WS0 (SFX)",
+   "check": "Streifen je Zustand Medium/Large mit Achsenlinie",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein vollständiges, lesbares Kampf-Verb statt einzelner Posen.",
+   "applies": "nach B40-Agenten"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7686,7 +7701,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:900",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:901",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

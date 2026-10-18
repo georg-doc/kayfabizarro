@@ -61,6 +61,7 @@
   - Anker `KFB_Nozzle` für das Saug-Modul.
   - Prüfstand: AG1 mit Arm.
 - **Waffen-Halterung (V-536):** Blaster und Trichter sitzen als Verlängerung des Unterarms in der Faustkugel (`KFB_Grip`), Mündungsachse = Unterarmachse.
+- **Kampfset (V-540):** Blaster mit allen Clips aus KayKit `Rig_Medium_CombatRanged` (Ranged_1H/2H Aiming, Shoot inkl. Rückstoß, Shooting-Loop, Reload), `Running_HoldingRifle`, Strafe/Dodge, Hit_A/B. Für den Large Rig retargeten (keine eigenen Ranged-Clips) bzw. Mixamo. Marken: `fire`, `recoil_peak`, `reload_out`, `reload_in`, `ready`. Achse nach V-536 in jedem Zustand. Dazu Mündungsblitz-Meshes (Cartoon-Stern bzw. -Blüte in Knet, 3 Varianten, an `KFB_Muzzle`).
 - **Blaster:**
   - Schwarzer Cartoon-Blaster aus der Asset-Suche (CC0), kein Eigenbau.
   - Anker `KFB_Muzzle` und Griff in der rechten Hand.
