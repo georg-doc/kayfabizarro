@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "checks": 80,
+  "browserChecks": 23,
+  "duration": 15.906,
+  "channels": 2,
+  "sampleRate": 48000,
+  "peak": 0.0435791015625,
+  "peakDb": -27.21443455039125,
+  "rms": 0.00187590419174105,
+  "rmsDb": -54.53578692319788,
+  "clipped": 0,
+  "contactToScheduleMs": {
+    "max": 11.1563687077183,
+    "p95": 11.15614618371108
+  },
+  "renderToEnvelopeEstimateMs": {
+    "max": 10,
+    "p95": 10
+  },
+  "limits": "Schedule and fade estimates only; no physical output-latency measurement. WS0 sonic/AV review pending."
+}

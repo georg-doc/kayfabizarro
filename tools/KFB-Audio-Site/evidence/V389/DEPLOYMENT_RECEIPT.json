@@ -1,0 +1,27 @@
+{
+  "project_id":"appgprj_6ac1c73dc28881919123106bd6d3e90e",
+  "version_number":12,
+  "version_id":"appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_79505544f2fc819190cad8ce519e8fa4",
+  "deployment_id":"appgdep_6ad2e324825c8191a40875c7e3a24f94",
+  "status":"succeeded",
+  "source_commit":"3e5849b0a0375664e9463a5663bbdcfec1847f4c",
+  "source_marker":"0.7.2",
+  "url":"https://kfb-audio.frizzlebob.chatgpt.site/#footsteps",
+  "archive_sha256":"01bf26277006c5f259eb02fb8c765294da2369558001261a44a94841ae7df99b",
+  "archive_files":80,
+  "audience":"Existing owner-private audience preserved",
+  "hostedVerification":{
+    "method":"Authorized HTTP using the native Site service credential; no access-policy changes",
+    "exactSourceAndMediaMatches":6,
+    "htmlRevision072":true,
+    "htmlSourceCharactersRemoved":0,
+    "htmlHostingScriptCharactersAdded":938,
+    "note":"HTML is not byte-identical: hosting inserts its authentication/bootstrap script. Both strict checker attempts returned nonzero for HTML; six JS/media hashes matched. No browser rendering claim is inferred from this.",
+    "signedInBrowser":"BLOCKED_LOGIN"
+  },
+  "media":[
+    {"url":"https://kfb-audio.frizzlebob.chatgpt.site/footsteps/proof/footstep-v389.mp3","bytes":365228,"sha256":"7a9aae89d2389ad6380b7c902ddf52a5acd0c08b679f9810398e2993c2524513"},
+    {"url":"https://kfb-audio.frizzlebob.chatgpt.site/footsteps/proof/footstep-v389.mp4","bytes":832659,"sha256":"69664bcddb0b1b53b8f6da6092654d43da67bbadd98870be341631ae74e2b2dd"}
+  ],
+  "wavAnalysis":{"durationSeconds":22.766,"sampleRate":48000,"channels":2,"peakLinear":0.331756591796875,"rmsLinear":0.012884189343065717,"clippedSamples":0,"note":"Derived from actual browser capture; preserve media timestamps/silent gaps when converting WebM."}
+}

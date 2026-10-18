@@ -1,3 +1,15 @@
+## 2026-10-17 · Locomotion-footstep-first V-378 handoff
+
+R2 PR #413 now carries `FOOTSTEP_PILOT_R1.{md,json}` and `FOOTSTEP_TEST_REPORT_R1.md`. It proposes measured foot-contact events, authoritative under-foot material and playback via existing KFB Audio owner. 28/28 donor files and 26/26 static checks PASS; 2 exact Kenney carpet duplicate pairs detected. Only proposed paid pilot is 4 × 1s isolated soft-clay step and 2 × 1.5s Clay landing sounds, approximately 280 credits, not authorized or produced. No new runtime and no Site/Stage/merge. Next gate is owner-only real Rig_Medium contact-to-sound micro-proof.
+
+## 2026-10-17 · KFB Racer V-378 R2 donor-first sound inventory
+
+On Draft PR #413, current KFB Audio source audit confirms 27/27 mapped donor paths, 26 unique files, 20 source audition candidates, 7 conditional unmet sound roles, 20/20 SHA-identical duplicate Classic Arcade pairs, and 18/18 static tests. `tools/KFB-ToolBox/audio/racer_grid_r1/{R2_DONOR_AUDIT.md,R2_CANDIDATES.json,R2_PROMPTS_PROPOSED.json,R2_CREDIT_BUDGET.md,R2_TEST_REPORT.md,R2_RETURN.md}`. At fixed 40 credits/sec, 2-variant pilot 1,160; seven gaps 3,080; optional add-ons ceiling 4,840. The old 48-render R1 is frozen, not executed; no audio generated, no new Site/Stage/Live. Next gate = donor source-isolated listening A/B; keep existing preferred V8 idle and audio runtime intact.
+
+## 2026-10-17 · V-378 KFB Racer ElevenLabs Motor Grid R1 (source-prepared)
+
+Dedicated `audio/kfb-racer-motor-grid-r1-v378-2026-10-17` branch contains verbatim 12 effect prompts, 4-variant/48-candidate model-v2 batch config, resumable credential-gated Python generator, 10/10 passing Actions unit tests and 16/16 source checks. No ElevenLabs credential, API request, real MP3, Stage, runtime change or merge. Legacy audio donors preserved. See `tools/KFB-ToolBox/audio/racer_grid_r1/RETURN.md`; next WS0 gate = authorized API batch and 48-file audible/measured QA.
+
 ## 2026-10-08 · ChatterBox Voice becomes next-runtime-MVP acceptance seam
 
 - Georg authorized the new Voice Layer for the first runtime MVP after the current Four-Island A/B visual gate.

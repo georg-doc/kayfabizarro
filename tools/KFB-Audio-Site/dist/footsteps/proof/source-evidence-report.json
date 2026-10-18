@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "checks": 33,
+  "passed": [
+    "pinned donor bytes: grass-0.ogg",
+    "pinned donor bytes: grass-1.ogg",
+    "pinned donor bytes: grass-2.ogg",
+    "pinned donor bytes: grass-3.ogg",
+    "pinned donor bytes: grass-4.ogg",
+    "pinned donor bytes: concrete-1.wav",
+    "pinned donor bytes: concrete-2.wav",
+    "pinned donor bytes: concrete-3.wav",
+    "pinned donor bytes: concrete-4.wav",
+    "pinned donor bytes: gravel-1.wav",
+    "pinned donor bytes: gravel-2.wav",
+    "pinned donor bytes: gravel-3.wav",
+    "pinned donor bytes: gravel-4.wav",
+    "pinned donor bytes: land-0.ogg",
+    "pinned donor bytes: land-1.ogg",
+    "pinned donor bytes: Mannequin_Medium.glb",
+    "pinned donor bytes: General.glb",
+    "pinned donor bytes: MovementBasic.glb",
+    "pinned donor bytes: KayKit-License.txt",
+    "15 real audio decodes",
+    "one host AudioContext",
+    "no duplicate event keys",
+    "one support landing",
+    "all three material banks sounded",
+    "walk 112.5 qualified contacts/min",
+    "run 150 qualified contacts/min",
+    "source-onset scheduling bound <40ms",
+    "no immediate same-bank sample repeat",
+    "no accumulated within-gait phase drift",
+    "contact-core.mjs: zero context construction",
+    "contact-core.mjs: DOM-free",
+    "audio.mjs: zero context construction",
+    "audio.mjs: DOM-free"
+  ],
+  "fixture": {
+    "events": 38,
+    "steps": 37,
+    "landings": 1,
+    "duplicateKeys": 0,
+    "suppressed": 0
+  },
+  "decode": 15,
+  "contactToScheduleMs": {
+    "max": 13.704954649150558,
+    "p95": 13.704732125130903
+  },
+  "contactToSourceOnsetMs": {
+    "max": 17.704732125130903,
+    "p95": 16.97913635786685
+  },
+  "maxPhaseIntervalErrorSeconds": 1.0658141036401503e-14,
+  "limitations": [
+    "Scheduling/source threshold only, not acoustic output latency or filter group delay.",
+    "Raw contacts sampled at approximately 60Hz.",
+    "Sonic character not HUMAN_ACCEPTED."
+  ]
+}

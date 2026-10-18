@@ -1,0 +1,48 @@
+{
+  "project_id": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
+  "version": {
+    "id": "appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_585f7684ef64819186911ba5b51d1406",
+    "project_id": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
+    "version_number": 13,
+    "source": {
+      "commit_sha": "6c2b672506f9df38bf3b448dc7e3b828a56a7380"
+    },
+    "archive_storage": {
+      "archive_format": "tar",
+      "sediment_file_id": "file_000000002f0881f485497762a2a505ce",
+      "content_hash": "sha256:ef1730e0fdbfb9093fe43e99c80e3748267732aa2d08f7d069d8f3e6014cb1a3",
+      "size_bytes": 15124480,
+      "file_count": 104
+    },
+    "screenshot_url": null,
+    "deployment_id": "appgdep_6ad3f329c1308191944df353a65920fb"
+  },
+  "deployment": {
+    "id": "appgdep_6ad3f329c1308191944df353a65920fb",
+    "project_id": "appgprj_6ac1c73dc28881919123106bd6d3e90e",
+    "title": "KFB Audio",
+    "version_id": "appgprj_6ac1c73dc28881919123106bd6d3e90e~appgver_585f7684ef64819186911ba5b51d1406",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://kfb-audio.frizzlebob.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ac1c73dc28881919123106bd6d3e90e",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-17T22:14:20.879045+00:00"
+  },
+  "source": "6c2b672506f9df38bf3b448dc7e3b828a56a7380",
+  "url": "https://kfb-audio.frizzlebob.chatgpt.site/#footsteps",
+  "visibleSource": "0.7.3",
+  "hostedObservations": 8,
+  "media": {
+    "duration": 15.933333,
+    "width": 640,
+    "height": 480,
+    "readyState": 4,
+    "error": null
+  },
+  "limits": "Canvas motion-region + HUD recording; physical AV drift and sonic acceptance await WS0. No full-browser screen recording.",
+  "recordingSha256": "a74ca6e48e5874c935fa3a47117df3a6902e99d297174b6204b59eb71f0b5a1b"
+}

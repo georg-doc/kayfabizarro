@@ -1,3 +1,30 @@
+## 2026-10-17 · V-378 CURRENT NEXT GATE: LOCOMOTION FOOTSTEP FIRST
+
+Georg revised priority from bulk motor/SciFi or laborious all-donor auditions to one contact-timed Footstep pilot. Source: `tools/KFB-ToolBox/audio/racer_grid_r1/FOOTSTEP_PILOT_R1.md`, machine input `FOOTSTEP_PILOT_R1.json`, report `FOOTSTEP_TEST_REPORT_R1.md`.
+
+Owners unchanged: existing KFB Audio & Soundscape / one AudioContext, Animation Lab motion/contact metadata, Ground/Travel physics and terrain support. 28/28 sound-bank paths and 26/26 structural checks PASS; **0** real runtime event, audio generation or API calls. Start with actual grass/concrete/gravel donor samples on Rig_Medium, then optional 4 isolated Clay steps + 2 Clay landings (7 s total, 280 *estimated* credits) only after explicit spending approval. No bulk pre-audition obligation; legacy 48-file R1 remains HOLD and R2 SciFi/Racer plan is retained for later. Branch-only Hub card metadata, no Site/Stage/Live publication.
+
+**One next gate:** `WS0_LOCOMOTION_FOOT_CONTACT_ADAPTER_MICRO_PROOF`.
+
+---
+
+## 2026-10-17 · V-378 R2 DONOR-FIRST SOURCE AUDIT · REPLACES R1 BATCH EXECUTION PRIORITY
+
+Owner: existing KFB Audio & Soundscape; retained branch `audio/kfb-racer-motor-grid-r1-v378-2026-10-17`, Draft PR #413. Current R2 Return: `tools/KFB-ToolBox/audio/racer_grid_r1/R2_RETURN.md`. Source grid: `R2_CANDIDATES.json` and `R2_DONOR_AUDIT.md`, with 7 unapproved prompts and credit report. **27/27 primary donor paths exist; 20 audition-first, 7 conditional gaps; 20/20 SHA-proven duplicate Classic Arcade pairs; 18/18 R2 static checks.** Pilot budget 1,160 credits, full conditional 3,080 (+1,760 optional). `R1 --execute` **ON HOLD**, no new MP3/API calls and no new sound owner/Site. One next gate = `WS0_SOURCE_ISOLATED_A_B_PILOT_SELECTION` (hear isolated sources before paid generation). KFB Hub board source update on this **unmerged branch only**; existing live Site and Cloudflare unchanged.
+
+---
+
+## 2026-10-17 · SOURCE PREPARED · V-378 KFB RACER MOTOR GRID R1
+
+Owner: existing KFB Racer audio assets / KFB Audio playback; runtime Race telemetry remains unchanged.
+GitHub delivery branch: `audio/kfb-racer-motor-grid-r1-v378-2026-10-17`.
+Return: `tools/KFB-ToolBox/audio/racer_grid_r1/RETURN.md`.
+Prompts: `media/3D_Assets/Audio/KFB Racer/grid_r1/SOURCE.json`.
+
+State: **12 prompts × 4 variants planned, 0/48 MP3 generated** because authenticated ElevenLabs access is unavailable in this chat. Secure CLI generator/checkpoint prepared. Legacy preferred V8 audio is protected. Static 16/16 and genuine GH Actions 10/10 Python tests PASS; actual API/audio and listening QA NOT_RUN. No Stage/merge/Live. Only next gate: WS0 authenticated batch run + pitch/loop seam QA + Georg sound selection. Do not treat this source package as completed sound production.
+
+---
+
 ## CURRENT ADDITIVE DECISION · 2026-10-12 · WORLD MONUMENTS01 CLAUDE DESIGN PASS / TUNE LATER
 
 Georg has accepted the uploaded **WORLD MONUMENTS01 Claude Design session cut r1** as **PASS · TUNE LATER** for the next Claude Code / WSA implementation intake.

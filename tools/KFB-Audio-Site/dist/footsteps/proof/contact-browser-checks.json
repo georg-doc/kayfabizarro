@@ -1,0 +1,41 @@
+[
+  {
+    "case": "Medium Walk sole sync",
+    "pass": true,
+    "measured": {
+      "max": 9.805112522062842,
+      "p95": 6.956749152292829
+    }
+  },
+  {
+    "case": "Medium Run brisk",
+    "pass": true,
+    "max": 11.567888390942471
+  },
+  {
+    "case": "Large Walk relaxed",
+    "pass": true,
+    "max": 11.567888390942471
+  },
+  {
+    "case": "Large Run",
+    "pass": true,
+    "max": 11.567888390942471
+  },
+  {
+    "case": "Recording play stops live sources",
+    "pass": true
+  },
+  {
+    "case": "Recording pause keeps live silent",
+    "pass": true
+  },
+  {
+    "case": "Schritte shortcut from Catalog",
+    "pass": true
+  },
+  {
+    "case": "Stop output meter",
+    "pass": true
+  }
+]

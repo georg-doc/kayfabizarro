@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "checks": 39,
+  "results": [
+    {
+      "family": "Medium",
+      "clip": "Walking_A",
+      "points": [
+        {
+          "foot": "l",
+          "phase": 0.45136186770428016,
+          "clearance": 0.0005717604037006607
+        },
+        {
+          "foot": "r",
+          "phase": 0.9494163424124513,
+          "clearance": 0.000880666995340687
+        }
+      ],
+      "gap": 0.4980544747081712,
+      "vertices": {
+        "l": 761,
+        "r": 759
+      }
+    },
+    {
+      "family": "Medium",
+      "clip": "Running_A",
+      "points": [
+        {
+          "foot": "l",
+          "phase": 0.21761658031088082,
+          "clearance": 0.0016823880343899405
+        },
+        {
+          "foot": "r",
+          "phase": 0.7202072538860104,
+          "clearance": 0.0008426503725366789
+        }
+      ],
+      "gap": 0.5025906735751295,
+      "vertices": {
+        "l": 761,
+        "r": 759
+      }
+    },
+    {
+      "family": "Large",
+      "clip": "Walking_A",
+      "points": [
+        {
+          "foot": "l",
+          "phase": 0.47470817120622566,
+          "clearance": 0.0019288608421677012
+        },
+        {
+          "foot": "r",
+          "phase": 0.9416342412451362,
+          "clearance": 0.0011799263585791087
+        }
+      ],
+      "gap": 0.4669260700389106,
+      "vertices": {
+        "l": 761,
+        "r": 761
+      }
+    },
+    {
+      "family": "Large",
+      "clip": "Running_A",
+      "points": [
+        {
+          "foot": "r",
+          "phase": 0.24124513618677043,
+          "clearance": 0
+        },
+        {
+          "foot": "l",
+          "phase": 0.7392996108949417,
+          "clearance": 0
+        }
+      ],
+      "gap": 0.4980544747081712,
+      "vertices": {
+        "l": 761,
+        "r": 761
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema": "kfb.racer.motor_grid.source.r1",
+  "decision": "V-378",
+  "sourceDate": "2026-10-17",
+  "owner": "KFB Racer audio assets (existing KFB Audio playback owner; Race owns telemetry)",
+  "status": "GENERATION_PENDING__NO_AUDIO_CREATED",
+  "model_id": "eleven_text_to_sound_v2",
+  "output_format": "mp3_44100_128",
+  "prompt_influence": 0.85,
+  "variant_count": 4,
+  "source_repo": "georg-doc/kayfabizarro",
+  "relative_output_dir": "media/3D_Assets/Audio/KFB Racer/grid_r1/",
+  "loop_policy": "Loop true ONLY for IDs 01-05 and 12; no pitch sweeps on loops",
+  "sound_effects": [
+    {
+      "id": "01_idle",
+      "label": "Idle",
+      "text": "Seamless loop, small chunky cartoon hot-rod engine idling at a steady low RPM, lumpy and friendly, slight rattle of loose parts, dry close-mic, constant pitch, no revving, no music, no ambience",
+      "loop": true,
+      "duration_seconds": 10
+    },
+    {
+      "id": "02_low",
+      "label": "Low",
+      "text": "Seamless loop, the same small chunky cartoon hot-rod engine at a steady low-mid RPM under light throttle, constant pitch, dry close-mic, no revving, no music",
+      "loop": true,
+      "duration_seconds": 10
+    },
+    {
+      "id": "03_mid",
+      "label": "Mid",
+      "text": "Seamless loop, the same small chunky cartoon hot-rod engine at a steady mid RPM under full load, punchy exhaust, constant pitch, dry close-mic, no revving, no music",
+      "loop": true,
+      "duration_seconds": 10
+    },
+    {
+      "id": "04_high",
+      "label": "High",
+      "text": "Seamless loop, the same small chunky cartoon hot-rod engine at a steady high RPM under full load, buzzy and slightly strained, constant pitch, dry close-mic, no music",
+      "loop": true,
+      "duration_seconds": 10
+    },
+    {
+      "id": "05_coast",
+      "label": "Coast",
+      "text": "Seamless loop, the same small chunky cartoon hot-rod engine coasting off throttle at mid RPM, burbling overrun, constant pitch, dry close-mic, no music",
+      "loop": true,
+      "duration_seconds": 10
+    },
+    {
+      "id": "06_backfire",
+      "label": "Backfire",
+      "text": "single cartoon exhaust backfire pop with a tiny crackle tail, dry, isolated",
+      "loop": false,
+      "duration_seconds": 1.25
+    },
+    {
+      "id": "07_shift",
+      "label": "Shift",
+      "text": "quick mechanical gear shift clunk of a cartoon toy car, short, dry, isolated",
+      "loop": false,
+      "duration_seconds": 1
+    },
+    {
+      "id": "08_boost",
+      "label": "Boost",
+      "text": "short airy whoosh of a cartoon turbo boost kicking in, rising, isolated",
+      "loop": false,
+      "duration_seconds": 1.75
+    },
+    {
+      "id": "09_landing",
+      "label": "Landing",
+      "text": "soft rubbery bounce thud of a toy car landing on soft clay ground, springy, isolated",
+      "loop": false,
+      "duration_seconds": 1.5
+    },
+    {
+      "id": "10_wall_bump",
+      "label": "Wall bump",
+      "text": "cartoon car bonking into a wall, squishy clay impact with a short springy boing tail, isolated",
+      "loop": false,
+      "duration_seconds": 1.5
+    },
+    {
+      "id": "11_drift_start",
+      "label": "Drift start",
+      "text": "short cartoon tire squeal starting a drift on asphalt, dry, isolated",
+      "loop": false,
+      "duration_seconds": 1.75
+    },
+    {
+      "id": "12_hover",
+      "label": "Hover",
+      "text": "Seamless loop, soft humming antigrav hover engine, steady and warm, slight wobble, constant pitch, no music",
+      "loop": true,
+      "duration_seconds": 10
+    }
+  ]
+}
