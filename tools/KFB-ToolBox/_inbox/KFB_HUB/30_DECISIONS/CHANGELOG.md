@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-521 WSA Flug + Crash R1 (Audio-Site v20, PR #428) – Anschluss durch WS1 im Block V-514.
 - V-519 Sprechblasen-Hintergrund (Papier, pastellige Story-Modes, Tageszeit/Licht). V-520 Hub q74–q80 + QA-Liste. WSA PR #424 Regeln auf R10.1 nachziehen, PR #425 Banter angehalten (Vorlese-Muster).
 - V-518 Abnahme-Bühne v1.2.6: Augen schielen nicht mehr nach außen (gemeinsame Blickrichtung + converge). B38 Feuerturm-Vampir eingegangen.
 - V-517 B37 Eiffel-Landmark (surreal Cartoon), B38 Feuerturm als Vampirturm. Hub q74–q78 (Hexe r3b, Spieler-Arm r5d, Monstrosity, Ork-Duo, Werkstatt r2c).

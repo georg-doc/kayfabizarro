@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. Abend · Ton für Flug + Zerstörung liegt bereit (V-521)
+WSA hat Flug + Crash R1 fertig: Audio-Site v20, Bereich #flight; PR #428, Branch `audio/flight-crash-r1-2026-10-18`, Return `tools/KFB-Audio-Site/WSA_FLIGHT_CRASH_R1_RETURN.md`. Jetpack/Jet/Propeller/Turbine/Antigrav auf Schub/Banking/Steigen/Luftbremse; Einschlag, Bruch und Trümmer geschichtet. Bitte im Block V-514 die echten Flug- und Kollisionsereignisse über den kleinen Audio-Adapter anschließen. Und: bitte Status §93 – seit §92 (13:43) fehlt eine Meldung.
+
 ## 18.10. Abend · Georg: „ja“ zu Flug + Zerstörung R1 (V-514)
 Briefing `replies/BRIEF_WS1_FLIGHT_DESTRUCTION_R1.md`, Referenzen in `replies/SPELLSPILL_R2_REF/`. Start nach R1a-Veröffentlichung und Status §93. Fragen bitte in WS1_STATUS.
 
