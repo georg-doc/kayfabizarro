@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- V-477 Rust Runner II + Rustwing Cruiser II → WSB B35 (36. Nachtrag); Abnahme-Bühne v1.2.3 Augen je Figur in Mehrfiguren-Dateien (B31-Demo G1 4/4). Hub q39 B31 Bots + Baustelle zur Abnahme.
 - V-475 Bord-Diorama Hunky & Dory (SPEC_HD_SHIP_DIORAMA_R1): POIs, Banter-Triplets, Glaskuppel, Transporterstrahl, Comic-Motion; WSB B34 nach B32 (35. Nachtrag). V-476 Kristallfiguren r4 PASS (Hub q38).
 - V-474 Songs R4.6/R5.2: 16/16 Gate PASS + frischer Kritiker pass (mit Style-Datei) → Hub b120–b135 (Stimme männlich, FrizzleBob spricht); 1001 Teil 2 „crime scene“ korrigiert, song_gate R3.4c (Lore-Wendung erlaubt Spielwort). V-473 Briefing externer Kritiker (Codex, Effort High) als Hub b119. Kristallfiguren r3 geprüft → r4 beauftragt (Lichtkegel am Boden, Puls-Untergrenze, Adern in Glutfarbe, weniger Spiegelung).
 - song_gate R3.4b: Rahmen (Intro/Outro) darf keine Kartennamen des Bereichs nennen (FAIL C10) + Hinweis, wenn ein Intro-Beat als spätere Karte erkannt wird (Ursache des 1001-Teil-2-Fehlers, gefunden vom Autor). Kristallfiguren r3 beauftragt: echtes Leuchten von innen wie Fackeln (Kern heiß, Rand dunkler, Außenlicht nachts reduziert, Halo optional).

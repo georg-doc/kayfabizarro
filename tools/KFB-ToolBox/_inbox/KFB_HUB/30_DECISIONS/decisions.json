@@ -6654,6 +6654,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-477",
+   "date": "2026-10-18",
+   "area": "Fahren",
+   "verdict": "RULE",
+   "text": "Zwei neue Dieselpunk-Fahrzeuge von Georg (18.10.): Rust Runner II und Rustwing Cruiser II (Meshy, je ~100 MB, neue Fassungen neben den bestehenden rust_runner/rustwing_cruiser) → WSB B35 direkt nach B11 r3, Pipeline exakt wie die 14 v3-Fahrzeuge (browser.v3.glb ~4 MB, kfb.vehicle-asset/0.2, V-321-Maßstab, Anker entry/driver_hidden/hover|wheel, hop-in-hidden), Lieferung wie die 14 auf eigenem Asset-Zweig, WS1 nimmt sie in die Lineup. Düsen-Anker kommen aus dem In-Place-Editor (V-360). Dazu Abnahme-Bühne v1.2.3: Augen für jede Figur einer Mehrfiguren-Datei (G1 je Figur), Augenradius pro Anker (kfb_eye_radius) hat bei Mehrfiguren Vorrang.",
+   "values": {},
+   "owner": "WSB (B35) · WS1 (Lineup)",
+   "check": "Abnahme-Bühne mit FrizzleBob + Größenvergleich",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS1 hat die neuen Modelle noch nicht; gleicher Weg wie die 14 hält Format und Maßstab einheitlich.",
+   "applies": "B35 nach B11 r3"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6741,7 +6756,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:830",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:831",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
