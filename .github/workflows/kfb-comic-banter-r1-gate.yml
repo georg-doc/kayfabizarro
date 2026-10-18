@@ -1,0 +1,32 @@
+name: KFB C.O.M.I.C. banter R1 source-card gate
+on:
+  push:
+    branches:
+      - 'wsa/comic-banter-r1-*'
+  workflow_dispatch:
+jobs:
+  source-card-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout gate inputs only
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/OPENER_ARC_R2/opener_pool_r2.py
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/COMIC_BANTER_R1/monomyth.check-input.csv
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/COMIC_BANTER_R1/cosmic.check-input.csv
+            tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/COMIC_BANTER_R1/philosophy.check-input.csv
+            media/kfb/Kayfabizarro_Monomyth_Mayhem_WEB_v1.pdf.json
+            media/kfb/Cosmic_Grift_-_Dark_Journalism_-_ADD_web_ID.pdf.json
+            media/kfb/Kayfabizarro_Philosophy_-_ADD_web.pdf.json
+      - name: Run exact register R2 gate for three deck subsets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 'tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py' 'media/kfb/Kayfabizarro_Monomyth_Mayhem_WEB_v1.pdf.json' 'tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/COMIC_BANTER_R1/monomyth.check-input.csv'
+          python3 'tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py' 'media/kfb/Cosmic_Grift_-_Dark_Journalism_-_ADD_web_ID.pdf.json' 'tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/COMIC_BANTER_R1/cosmic.check-input.csv'
+          python3 'tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/triplet_set_check.py' 'media/kfb/Kayfabizarro_Philosophy_-_ADD_web.pdf.json' 'tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/COMIC_BANTER_R1/philosophy.check-input.csv'
