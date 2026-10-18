@@ -6069,6 +6069,36 @@
    "applies": "sofort, mit V-434"
   },
   {
+   "id": "V-438",
+   "date": "2026-10-18",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Maßstab von Gebäuden und Dioramen (Georg 18.10.): Eine Medium-Rig-Figur muss plausibel durch Türen und Eingänge passen, eine Large-Rig-Figur müsste sich leicht bücken. Lichte Türhöhe also über der Medium- und knapp unter der Large-Rig-Höhe. Durchgänge sind eher theoretisch, NPCs leben und handeln draußen. Abnahme-Bühne v1.2: Größen-Feld zeigt Medium- und Large-Rig als Knete-Figuren direkt am Eingang statt der flachen FrizzleBob-Silhouette.",
+   "values": {},
+   "owner": "WS0 (Bühne v1.2) · WSB (Pubs/Dioramen neu skalieren)",
+   "check": "Bögen mit beiden Rigs am Eingang, Georg (Hub q16 neu)",
+   "source": "Georg 18.10. · ersetzt Türhöhe 2,4 m aus B24",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ohne Figuren am Eingang ist Gebäudegröße nicht lesbar; die Rig-Regel gibt eine prüfbare Spanne statt einer frei gewählten Türhöhe.",
+   "applies": "sofort, Pubs neu vorlegen"
+  },
+  {
+   "id": "V-439",
+   "date": "2026-10-18",
+   "area": "Gizmo",
+   "verdict": "TBD",
+   "text": "Mauer-Gizmo aus „Scan Stone monument“ (BlenderKit, CC0, Georg 18.10.): diese Art Mauer als Gizmo-Wand nutzen, mit Backstein-Relief oder anderen Texturen und nahtloser Knete-Material-Textur; im Weltbauer-Modus als Gelände-Modellier-/Deformer-Werkzeug; für automatisch erzeugte Labyrinthe (Gefängnisinsel, Maze-Werkzeug). Schließt an V-105/V-301/V-302 an (Mauern wachsen aus dem Gelände, vier Schichten: Gizmo → Mesh-Familie → Material → Streuung). Weitere Kandidaten aus Georgs Asset-Suche: Stylized Cartoon Pyramid Diorama, Liberty Island (beide BlenderKit, Royalty Free → privat), Mausoleum-Diorama (itch.io, Lizenz offen).",
+   "values": {},
+   "owner": "WSB (Scan → Mauer-Modulsatz + Knete-Skins) · WS1 (Weltbauer, Maze-Laufzeit später)",
+   "check": "Modulsatz-Bogen über Abnahme-Bühne; Labyrinth-Probe",
+   "source": "Georg 18.10. · replies/GIZMO_MAZE_RECOVERY_R1.md",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine organische Scan-Mauer in Knete passt zum Diorama-Look und erfüllt drei Bedarfe mit einem Baustein: Gizmo-Wand, Gelände-Werkzeug, Labyrinth-Generator.",
+   "applies": "Planung; Download nach Georgs OK"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6156,7 +6186,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:788",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:789",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
