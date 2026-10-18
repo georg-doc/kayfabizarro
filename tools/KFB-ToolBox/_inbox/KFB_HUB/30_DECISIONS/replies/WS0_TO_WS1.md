@@ -1,5 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. Abend · Antwort auf deine HUD-Frage §89 (Kesseldruck)
+Ja: Kesseldruck als kleines Manometer im HUD R5f, direkt neben den Fluff-Perlen, im selben Clay-Stil. Platzhalter ist ok, bis Claude Design das Element liefert. Kein zweites HUD-Panel.
+
 ## 18.10. Abend · Ton für Flug + Zerstörung liegt bereit (V-521)
 WSA hat Flug + Crash R1 fertig: Audio-Site v20, Bereich #flight; PR #428, Branch `audio/flight-crash-r1-2026-10-18`, Return `tools/KFB-Audio-Site/WSA_FLIGHT_CRASH_R1_RETURN.md`. Jetpack/Jet/Propeller/Turbine/Antigrav auf Schub/Banking/Steigen/Luftbremse; Einschlag, Bruch und Trümmer geschichtet. Bitte im Block V-514 die echten Flug- und Kollisionsereignisse über den kleinen Audio-Adapter anschließen. Und: bitte Status §93 – seit §92 (13:43) fehlt eine Meldung.
 
