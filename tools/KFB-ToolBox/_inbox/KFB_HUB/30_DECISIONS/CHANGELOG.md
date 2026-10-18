@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-18 · Neue Modelle, Pubs, Inseln
+- Brief WSA Plattform-Deep-Dive R1 (Hosting/Persistenz/Login/LLM/Apps SDK/Steam/Lizenzen/DSGVO) angelegt; ChatGPT-Sites-Recherche WS0: EEA-Sperre, keine Datenresidenz.
 - V-538 Private Assets: privates GitHub-Repo unter WSA-Verwaltung, WS1 liest per GitHub (ersetzt V-462/V-487-Wege für WS1).
 - Joyride-Prüfung: keine temporäre Bodenverformung vorhanden, nur haftende Knetkrümel (clay-vfx.v1.js) → Krümel wiederverwenden, Verformung neu im Terraforming-Modul (V-537). Hub q107 Wurf-Sounds.
 - V-537 Nachtrag: Krater/Spuren temporär mit Rückbildung = abgeleitete Form der God-Mode-Terrainverformung (ein Modul, dauerhaft | temporär).
