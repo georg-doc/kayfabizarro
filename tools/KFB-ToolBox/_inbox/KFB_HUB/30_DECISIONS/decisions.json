@@ -7104,6 +7104,21 @@
    "applies": "Probe R9"
   },
   {
+   "id": "V-507",
+   "date": "2026-10-18",
+   "area": "Dialog",
+   "verdict": "TBD",
+   "text": "Fluff-o-lect-Spec R1 als Entwurf (replies/SPEC_FLUFF_O_LECT_R1_DRAFT.md): Georgs 4 Doc-Tabs (Forschungsbericht, Research R1, Browser-Sprachmelodien Design R1, Wortmotive v1) + Perplexity-Motivtabelle (kfb_word_motifs_v1) + WS0-Recherche zusammengeführt; 21 Widersprüche benannt; konfliktfreie Regeln R1-01…25 gelten als Arbeitsgrundlage, Änderungen an abgenommener Melodie/Dekodierung (Δ1–Δ12: Töne je Wort, Leitmotive, Tonleiter, Kartentitel, Eigennamen, Komposita, W-Fragen, Freischaltung, Glyphen-Lizenz, Assist, Sprache) erst nach Georgs Antworten (Hub q59–q68). Datenformat kfb.fluffolect/1. Nächster Schritt WS0: Probe R10 mit A/B-Schaltern.",
+   "values": {},
+   "owner": "WS0 · WSA · WS1",
+   "check": "Hub q59–q68",
+   "source": "Georg 18.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Spec statt vier konkurrierender Quellen; Änderungen nur mit Georg.",
+   "applies": "q59–q68"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7191,7 +7206,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:865",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:866",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
