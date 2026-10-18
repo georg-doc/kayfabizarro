@@ -1,0 +1,43 @@
+{
+  "testedImplementationHead": "c21aca539189af8d463c9793bb5b0c0651dd3bb8",
+  "sourceBlocks": "5/5 verbatim original probe ranges",
+  "donors": "2/2 source-exact excluding preexisting extra terminal LF",
+  "nodeGroups": "12/12 PASS",
+  "browserChecks": "13/13 PASS; Chrome actual UI run",
+  "guard": "/root/asset_guard: CONTINUE after short-word layout seam correction; independently reran node/build and compared original probe; read browser evidence, did not rerun browser",
+  "resources": {
+    "singleFileExternalRequests": 0,
+    "viewports": [
+      375,
+      768,
+      1280
+    ],
+    "hostDependency": "Three.js 0.186.1, exact original Wireface importmap version",
+    "localTestDependency": "Official npm package, no production install"
+  },
+  "notClaimed": [
+    "WS1b game integration",
+    "Georg visual acceptance",
+    "public deployment",
+    "merge",
+    "audio playback"
+  ],
+  "sha256": {
+    "FONT_SOURCES.json": "56b27783e4f23d956a49b9d7748456cef1721a60a651d0c47ec39dc9f4a17bca",
+    "R101_SOURCE.json": "6daec9ff50498ee94a4b329156abb1b7615cb77d14dea9700662984e3f7f58aa",
+    "browser-tests.html": "830243f77f10c7cb1302408d70dbd4c05d720dab30a24911a0469112221646a2",
+    "browser-tests.local.html": "e2803b1822a020507c20c7decec82708969750104ce3eedc01f11432777e3d1d",
+    "bubbles.module.js": "18f5e7f218fbb3bd4d4f89f5aae27f11bd43b6d1522bd912f9014e7193768558",
+    "build.mjs": "4f0c67446a62e543ee83c0bc767356d48edd5e7d3d9ac350b328ed2ed781cfd3",
+    "chatterbox-core.js": "3adcc02019a6787cfdcfa074bd43e40c71479c508c5ef31faf17331a7d1474df",
+    "defs.svg": "bf3e238b2183058c89d7def2ce6309b69bca74622ea4a4d88281c4d9c218c055",
+    "demo.html": "516989974c929a6ce77fec05214bddbe02ca97a450ba49884f9fcdcde9c44a52",
+    "demo.js": "278c31862458032cea9e726d39457f5fbc372e75442ae6442be79aaf3d9401e8",
+    "demo.single.html": "cae33de171eb1849106134cec468e33a2acf9852aaf7b1dda4cf9b65dca6a5fb",
+    "fluffolect-r101.js": "92056e1ad010872f160121781b38c70f24770050612f9e5ffac014184237ed04",
+    "fonts.css": "e8384b6e84bbcd4d08d97ead17b0dabe640ec53609dd996702722e59f36974d3",
+    "kfb-bubbles.classic.js": "31c66dc87d182f386fca1759b542337d9f37216b04f7099fded9bbb3fbc4ba67",
+    "kfb-bubbles.mjs": "9905ccec04519bbfc6ca025d2261505612194e84cb4c591957a9ced169054a48",
+    "test.mjs": "9a4a16329c9d4a47ebfdabcd0ef55ccfe41ea9cee335c8bad228a962cdc8cafa"
+  }
+}
