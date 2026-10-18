@@ -6204,6 +6204,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-447",
+   "date": "2026-10-18",
+   "area": "Bühne",
+   "verdict": "RULE",
+   "text": "Zahlen zu V-438 (WS0, gemessen in der Bind-Pose × 0,616 m/u): Medium-Rig FrizzleBob 1,81 m; Large-Rig Referenz Mannequin_Large 2,45 m (DemonLord 2,85 m mit Hörnern, FrostGolem 2,56, Clanker 2,33). Lichte Höhe der begehbaren Tür = 2,25 m am Scheitel (Mitte der Öffnung) ≈ 0,92 × Large, 1,24 × Medium. Bei Pubs mit Schmuck-Eingang zählt die eigentliche Tür (Goblin: innere Tür, nicht das Maul). Abnahme-Bühne v1.2 + Licht-Modul v1.1: Größen-Feld mit FrizzleBob und DemonLord in Knete am Eingang, Schattensaum behoben (Rückseiten werfen keinen Schatten mehr, enger Schattenbereich, Kontakt-AO je Teil, Gate G6, Selbsttest 0,1–6 m: 0 px Saum, 0 px Akne), Schwebe-Modus für Fundsachen auf Medium-Hüfthöhe (FrizzleBob 0,25 m). Freigabe nach vier Nachbesserungen (Augen der Größenfigur, Rahmung von Reihen-Requisiten, sichtbares Schweben, Tür-Messwerkzeug).",
+   "values": {},
+   "owner": "WS0 (Bühne) · WSB (Neuskalierung Pubs/Bento)",
+   "check": "Bögen v1.2 Pelican/Aiko/B28/Laterne von WS0 geprüft",
+   "source": "V-438 · V-440 · V-437",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Rig-Regel braucht prüfbare Zahlen; der Scheitel der Tür ist das eindeutige Maß, die Large-Referenz ohne Hörner.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -6291,7 +6306,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:792",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:793",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
