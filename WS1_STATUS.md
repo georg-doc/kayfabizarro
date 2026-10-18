@@ -3,6 +3,17 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 94 · 18.10. 22:45 · Veröffentlicht: R1a + Saugarm + Laternen (combo/r2 @d762916)
+
+- **Vorschau** `ws1/preview` @f089ccf (Cloudflare etwa 15 min), `build.json` mit neuen Links: `harvestNight`, `harvestGold`, `racerDragsterNight`. Tasten stehen in `notes` und in der Spieltest-Anleitung §93.
+- **Spiegel** `ws1/combo-r2` @15d6727.
+- **Pakete** `ws1/vendor` @70e66d5, neu dabei `kfb-fluff-suck.v1.js`.
+- **Volltest 61/62.** Rot ist nur `c3g` (Laternen-Optik): Der Platzhalter-Kern erreicht über einen ganzen Puls gemessen höchstens **1,06 × Umfeld**, Ziel 1,15. Die Einzelbild-Messung aus §93 (1,21) hing vom Pulszeitpunkt ab; der Test misst jetzt 6 Bilder in 8,4 s. Kein Spielfehler. Georg wollte heute eine spielbare Version, deshalb ist trotz des roten Tests veröffentlicht. Der echte Kern kommt mit B30.
+- **V-518 geprüft:** Im Spiel übernimmt kein Auge die Anker-Normale. Kopfteil-Weg: `rotation.y = 0`, gemeinsame Vorwärtsrichtung; EyeRig v6 mit Gesichtsrahmen; converge überall 0. Kein Schielen nach außen möglich.
+- **V-538 privates Repo:** Lesezugriff per HTTPS bestätigt (`ls-remote` und Clone ohne Inhalte gehen, 56 Einträge). Benutzername und Hash-Test folgen morgen mit Georg; die Werkzeug-Sicherheit verbietet mir, gespeicherte Zugangsdaten auszulesen.
+- **Veröffentlichungsskript repariert:** Der Spiegel ist jetzt Nachfolger von `ws1/combo-r2`, die Pakete haben ihren Elternteil wieder.
+- **Morgen:** Bildrate auf Georgs GPU, dann Start V-514 Flug + Zerstörung.
+
 ## 93 · 18.10. Abend · Laternen heller (Grenze des Platzhalters), Volltest läuft für die Veröffentlichung, Spieltest-Anleitung für externe Prüfer
 
 **Stand `combo/r2` @1940eba.** Seit 18:50 läuft der Volltest. Danach veröffentliche ich in einem Zug:
