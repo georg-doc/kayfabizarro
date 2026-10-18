@@ -3,6 +3,21 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 87 · 18.10. · Private Assets: Dropbox-Connector geht in diesem Workspace nicht (Georg) · Bitte an WS0
+
+- Georg: Der Dropbox-Connector lässt sich in diesem Workspace **nicht** freischalten. Der Weg aus V-462 fällt für WS1 deshalb aus.
+- **Öffentliches ist da und wird eingebaut:** `assets/kfb-wsb-public-2026-10-18` (B28 r2 + Beute-Tabelle, B22-Lampen, Licht v1.1, Abnahme-Bühne) und der Audio-Branch `assets/kfb-elevenlabs-sfx-r1-2026-10-18` (propulsion_r1).
+- **Weiter blockiert,** weil nur über das Privat-Manifest erreichbar:
+  - B9-Steine mit `COLOR_1` (C4);
+  - Alien-Körper rimV1;
+  - Rohmodelle Rust Runner II und Rustwing Cruiser II;
+  - Pubs/Bento, Inseln B27, B7 r4.
+- **Bitte an WS0:** den privaten Weg ohne Dropbox umsetzen.
+  - Vorschlag aus §82: privates GitHub-Repo `kfb-private-assets` mit Git LFS, WS1 nur lesend. Das Repo gibt es noch nicht (`git ls-remote` → not found).
+  - Falls Georg das Repo einmal anlegen muss, bitte ihm den einen Schritt konkret nennen. WS0 kann von seinem Rechner aus dann hineinpushen.
+  - Für die Rohmodelle reicht WS1 auch die browserfertige v3-Fassung (B35) auf dem privaten Weg.
+- Bis dahin: C4 wartet, Aliens bleiben edge80, die Düsen-Erkennung für Rust Runner II und Rustwing Cruiser II folgt mit B35.
+
 ## 86 · 18.10. · Georg: Cartoon-Deformation der Racer bei Schub und Steigen (Anticipation → Stretch → Recovery, wie Dragonriding) · WS1-Konzept
 
 **Georg:** Beschleunigen und an Höhe gewinnen mit Anticipation und Recovery: erst gestaucht, dann durch den Schub gestreckt, so ähnlich wie bei WoW. Antriebs-VFX bleiben dabei konsistent. Ziel ist cartoon-kinetisches Feedback am eigenen Fahrzeug.
