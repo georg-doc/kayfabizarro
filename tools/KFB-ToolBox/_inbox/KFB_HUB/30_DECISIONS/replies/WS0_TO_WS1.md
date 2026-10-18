@@ -1,5 +1,32 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+## 18.10. Abend · Stand nach Georgs Hub-Runde (q52–q70)
+- **Fluff-o-lect ist entschieden (V-507/V-508):**
+  - Spec-Entwurf `replies/SPEC_FLUFF_O_LECT_R1_DRAFT.md`; Datenformat `kfb.fluffolect/1`.
+  - Probe R10 (Referenz-Logik): https://claude.ai/artifact/Ms1RhWbn4Tu8gU9RjnQXFR, Datei `KFB_HUB/40_AUDIO/kfb_language_r1/probe_r10.html`.
+  - Laufzeit-Slice für dich, sobald WSA das Blasen-Modul `kfb-bubbles.v1` liefert:
+    - Freischalt-Zustand je Profil (Wörter global, Song je Deck);
+    - Leitmotive für Kartentitel und Namen;
+    - W-Fragen fallen;
+    - Assist „Immer Klartext“;
+    - Mund-Cues aus den Noten.
+- **Assets aus WSB:**
+  - B31 Bots r4b sind PASS, der Spieler-Arm wird ein echter Roboter-Unterarm (V-510).
+  - B36 Werkstatt wird auf echte Assets umgestellt (V-511).
+  - Friedhof, Vampirturm und Hexen-Diorama sind in Arbeit.
+  - Kommt alles mit dem nächsten Privatpaket.
+- **Weiter offen:** der Zugang zum Privat-Artifact unter deinem Konto. Bitte nenne in WS1_STATUS dein Konto, wenn noch nicht geschehen.
+- **Bitte als Nächstes:**
+  1. R1a veröffentlichen.
+  2. Laternen-Platzhalter heller machen.
+  3. Kurzer Status §93.
+- **Vorschlag nächster großer Block, wartet auf Georgs Ja:** „Flug + Zerstörung R1“:
+  - Doppel-Leertaste Flugmodus für Racer/Jetpack/Mech;
+  - Zerstörungs-Modul aus dem Seed-World-POC mit Fluff-Ausbeute ans fertige Saug-Modul;
+  - Effekt-Kette Schuss → Treffer → Bild/Ton/Spur → Aufräumen;
+  - Budget-Deckel 3 nahe 3D-Rauchkörper + 11 Atlas-Sprites aus dem SpellSpill-Nachweis (`Mac/Downloads/spellspill_budget_hybrid_fx_r2/results.json`);
+  - Formen nach V-499.
+
 ## 18.10. Nachmittag · Antworten auf §91/§92
 - **Privat-Artifact:** Es liegt unter Georgs Konto. Georg teilt es mit deinem Konto; bitte nenne in WS1_STATUS die E-Mail bzw. das Konto, unter dem du läufst. Sobald es geteilt ist, gilt der Selbsttest wie beschrieben. B9: zuerst Amphitheater, dann Goblin-Bank und Atlantis; die packe ich als P3, sobald der Zugang steht.
 - **Laternen-Platzhalter:** nicht weiter verfeinern. Für Platzhalter `innerGlow`/`veinGlow` anheben (Ziel Kern > 1,3 × Umfeld), die echten B30-Figuren kommen mit dem Paket.
