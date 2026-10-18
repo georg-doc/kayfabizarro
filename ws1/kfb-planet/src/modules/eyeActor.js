@@ -44,10 +44,10 @@ function needsAutoFaceColor(profile) {
 // Zähler für den Vertragstest (Muster probeModule/test/host.mjs)
 export const eyeActorLog = { create: 0, update: 0, dispose: 0, lastCtx: null, freed: null }
 
-// options: { url, clipsUrl?, motion: 'bind'|Clipname, profile, contract, actor: { id, path, revision }, height | classScale, position, yaw, anchorId }
+// options: { url, clipsUrl?, motion: 'bind'|Clipname, profile, contract, actor: { id, path, revision }, height | classScale, position, yaw, anchorId, receiveShadow }
 export function createEyeActor(options) {
   eyeActorLog.create++
-  const { url, clipsUrl = null, motion = 'bind', contract, actor, height = 2.65, classScale = null, position = [0, 0, 0], yaw = 0, anchorId = null } = options
+  const { url, clipsUrl = null, motion = 'bind', contract, actor, height = 2.65, classScale = null, position = [0, 0, 0], yaw = 0, anchorId = null, receiveShadow = false } = options
   const profile = JSON.parse(JSON.stringify(options.profile)) // Studio arbeitet auf einer Kopie (ensureProfile)
   const root = new THREE.Group(); root.name = 'eyeActor:' + actor.id
   root.position.fromArray(position); root.rotation.y = yaw
@@ -90,7 +90,8 @@ export function createEyeActor(options) {
     // Schattenwurf auf den Boden wie faceMountActor (Georg 15.10.: GothGirl ohne Schatten neben FB irritiert): feste Teile werfen Schatten,
     // dünne bzw. durchscheinende Teile und Shader-Materialien (Augen-Rig) nicht. Empfangen bleibt aus wie im Studio: Eigenschatten im Gesicht
     // brach den Bildvergleich mit dem Studio (f1 faceVsStudio 2,4 → 13,6). Kontaktschatten (contact-ao, auf FB abgestimmt) bleibt FB-eigen.
-    figure.traverse((n) => { if (!n.isMesh) return; const mt = n.material, thin = !!(n.userData.petOverlay || (mt && (mt.isShaderMaterial || (mt.transparent && (mt.opacity == null || mt.opacity < 0.98))))); n.castShadow = !thin })
+    // V-429 (ein Rig): auf der Bühne mit Licht-Modul empfangen feste Teile Schatten wie alle anderen Objekte (receiveShadow), Augen-Rig (Shader) nicht.
+    figure.traverse((n) => { if (!n.isMesh) return; const mt = n.material, thin = !!(n.userData.petOverlay || (mt && (mt.isShaderMaterial || (mt.transparent && (mt.opacity == null || mt.opacity < 0.98))))); n.castShadow = !thin; n.receiveShadow = receiveShadow && !(mt && mt.isShaderMaterial) })
     // Blasen-Anker knapp über dem Kopf (Figur steht auf y = 0, Höhe = height)
     head.position.set(0, (state.height ?? height) * 1.02, 0)
     state.status = eyes.eyeFrame() ? 'OK' : 'EYES_MISSING'

@@ -59,6 +59,11 @@ export function createTerrain(options = {}) {
   return {
     object3d: root,
     height: H,
+    // C3: Höhe der tatsächlich gerenderten Dreiecke (PlaneGeometry-Raster, Teilung a-b-d / b-c-d) statt der glatten Funktion H, damit liegende
+    // Kügelchen exakt auf der sichtbaren Fläche sitzen (Einsinken 0 gegen das Netz, nicht gegen H)
+    surfaceAt: (x, z) => { const c = (2 * T.R) / T.seg, u0 = (x + T.R) / c, v0 = (z + T.R) / c, ix = Math.min(T.seg - 1, Math.max(0, Math.floor(u0))), iz = Math.min(T.seg - 1, Math.max(0, Math.floor(v0)))
+      const x0 = -T.R + ix * c, z0 = -T.R + iz * c, u = u0 - ix, v = v0 - iz, ha = H(x0, z0), hb = H(x0, z0 + c), hc = H(x0 + c, z0 + c), hd = H(x0 + c, z0)
+      return u + v <= 1 ? ha + (hd - ha) * u + (hb - ha) * v : hc + (hb - hc) * (1 - u) + (hd - hc) * (1 - v) },
     info: () => info,
     // Rapier-Trimesh in Weltkoordinaten (das Gelände liegt im Ursprung, ohne Drehung/Skalierung)
     colliderData: () => ({ vertices: new Float32Array(pos.array), indices: new Uint32Array(geo.index.array) }),

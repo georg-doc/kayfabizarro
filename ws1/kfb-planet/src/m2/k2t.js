@@ -52,7 +52,7 @@ export const STUCK = { window: 0.7, minProgress: 1 * K, nudge: 5 * K, nudgeS: [0
 // (> abortSteer für abortHold s, Tastatur = voller Einschlag), Launch-Zusatzimpuls launchVy an der Lippe. Kräfte der 2D-Simulation × FS (m/s²).
 // „Pull“ = Neugier, kein Sog: außerhalb der Zone wirkt nichts. Tempi × K (P2 rechnete in alten KFB-Metern).
 export const PUSH = { capture: { lateralK: 0.65, yawK: 0.75, maxForce: 0.95, maxYaw: 0.72, speedMin: 7 * K, speedMax: 27 * K }, commit: { lateralK: 1.05, yawK: 1.15, maxForce: 1.35, maxYaw: 1.05, speedMin: 10 * K, speedMax: 26 * K },
-  abortHold: 0.32, FS: 4, launchVy: 2.2 * K }
+  abortHold: 0.32, FS: 4, launchVy: 2.2 * K, alignMax: 0.8 }
 // Wandfahrt (V-379 Entscheid 1): nur bei Kontakt mit markierter Fläche (sweep.ride), flach (|Anlauf| < maxInto) und schnell genug. Dann Zwei-Rad an der
 // Wand (lab-v7 vehicle-twowheel.v1.js wallride: holdMs 1400, Kippwinkel = Umfallwinkel + (90° − Umfallwinkel) × WALL_LEAN 0,45 – M2Car setzt leanRad aus
 // dem Wagen), Gierung parallel zur Wand, leichter Zug zur Wand; Freigabe nach hold, bei Wandende (contactLoss s ohne Kontakt) oder Weglenken (abortHold s).
@@ -106,8 +106,10 @@ export function stepK2t(d, inp, dt, env) {
   d.yaw += yawRate * dt * (d.speed >= 0 ? 1 : -1)
   // Rampen-Zone (Stufe F)
   { const z = A3 && !d.air && env.zone ? env.zone(d.x, d.z) : null, Zs = d.zone || (d.zone = { id: null, abortT: 0, aborted: false, seg: null })
-    if (!z || z.id !== Zs.id) { Zs.id = z?.id ?? null; Zs.abortT = 0; Zs.aborted = false }
-    Zs.seg = z && !Zs.aborted ? z.seg : null
+    if (!z || z.id !== Zs.id) { Zs.id = z?.id ?? null; Zs.abortT = 0; Zs.aborted = false; Zs.engaged = false }
+    // eingefangen wird nur, wer schon grob in Spurrichtung fährt (C1 17.10.: quer über die Anlaufspur gefahren → Wagen auf die Rampe gedreht = Sog)
+    if (z && !Zs.engaged && Math.abs(Math.atan2(Math.sin(d.yaw - z.dir), Math.cos(d.yaw - z.dir))) < PUSH.alignMax) Zs.engaged = true
+    Zs.seg = z && Zs.engaged && !Zs.aborted ? z.seg : null
     if (z && !Zs.aborted) { Zs.abortT = steerIn && z.seg === 'capture' ? Zs.abortT + dt : Math.max(0, Zs.abortT - 2 * dt); if (Zs.abortT >= PUSH.abortHold) { Zs.aborted = true; d.events.push({ type: 'zone', phase: 'abort', id: z.id }) } }
     if (Zs.seg) { const P = PUSH[Zs.seg], err = Math.atan2(Math.sin(d.yaw - z.dir), Math.cos(d.yaw - z.dir)), want = clamp(-(z.e / K) * 0.24, -0.7, 0.7)
       d.yaw += clamp(P.yawK * (want - err), -P.maxYaw, P.maxYaw) * dt
@@ -195,7 +197,9 @@ export function stepK2t(d, inp, dt, env) {
   // m3-d 17.10. – Prall und Rückprall ergaben nie ein Dauer-Klemmen). T1 = Rück-Nudge über nudgeS[n] s mit gleichmäßiger Drehung weg von der Wand
   // (jede Teildrehung durch env.blocked geprüft); nach tries Versuchen binnen windowS → T3.
   { const U = STUCK, St = d.stuck || (d.stuck = { tries: [], safe: [], safeT: 0, clock: 0, airT: 0, hist: [], nudge: null }); St.clock += dt
-    const pushing = (inp.gas || inp.brake) && !d.air, win = Math.round(U.window / dt)
+    // „drückt“ = Gas (auch nach einem Rückprall) bzw. Bremse/Rückwärts aus dem Stand oder rückwärts – Bremsen aus der Vorwärtsfahrt ist Anhalten, kein Klemmen
+    // (C1-Clip 18.10.: S zum Anhalten löste T1-Stöße und am Ende einen Respawn aus)
+    const pushing = !d.air && (inp.gas || (inp.brake && d.speed <= 0.5 * K)), win = Math.round(U.window / dt)
     St.airT = d.air ? St.airT + dt : 0
     if (!d.air && !St.nudge && Math.abs(d.speed) > 3 * K && (St.safeT += dt) >= U.safeEvery) { St.safeT = 0; St.safe.push({ x: d.x, y: d.y, z: d.z, yaw: d.yaw, t: St.clock }); if (St.safe.length > 40) St.safe.shift() }
     St.tries = St.tries.filter((t) => St.clock - t < U.windowS)
