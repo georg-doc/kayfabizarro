@@ -132,3 +132,52 @@ This intake should be visible via **existing KFB Production Control Site records
 Existing source projects remain canonical. No main merge, public social posting, community creation, public launch, or Cloudflare deployment authorized. Stage/public mirror not required for an editorial planning slice.
 
 **One next gate:** Georg / WS0 review the WIP-owned-subreddit concept and select the first real source-backed ink→card→world post, with links/claims subsequently verified before publishing.
+
+## 10 · Additive 2026-10-18: the author / doctor / NotebookLM-to-transmedia angle
+
+**Georg's additional firsthand origin context, DESIGN input, not independently audited production provenance:** he is both a comic artist and a physician, with coding/technical curiosity. He uploaded / provided his own drawings, essays, authored texts, background notes, source articles and research to NotebookLM, using source-grounded analysis, recombination, collage and AI co-creation to explore his established motifs and voice. Subsequent development moved through comic-card decks and other tools/creative curation into songs, 3D scenes, residents and gameplay concepts. This **does not** imply NotebookLM alone generated or trained the complete game, fine-tuned a custom model on his style, generated every visual, or authored the original art. Exact notebook-to-artifact provenance should be demonstrated on one real sample rather than advertised abstractly.
+
+This is potentially stronger than the identity `doctor turned AI game developer`, which sounds like a generic career-pivot story. The meaningful combination is: **a doctor who draws comics, researches systems and stories, and used a source-grounded notebook as one bridge between his existing authorial work and a playable transmedia world**. Medicine is biography and one source of interests, not a clinical product claim.
+
+**Honest workflow explainer for r/notebooklm and other workflow communities:**
+1. Source corpus, deliberately selected: one identified original drawn panel, essay passage, annotation and/or rights-cleared article, with provenance labels and dates.
+2. NotebookLM source-grounded exploration: cross-reference recurring ideas, contradictions, themes and character positions; collect concrete quotations/citations and a proposed thematic collage.
+3. Human edit and cross-tool co-creation: what Georg kept, redrew, rejected, rewrote or recombined. Be explicit where another generative image/song/code tool performs the next step. **NotebookLM retrieval from uploaded sources is not model fine-tuning or a magic style clone.**
+4. Specific output: before/after original ink → one actual printable card → an audible line or song → one verified 3D Resident/location/encounter (only show the stages actually backed by files/screenshots).
+5. Reader takeaway: when does source grounding retain a recognizable author's style, and when does it create bland, mechanical imitation? Invite workflow critique, not validation or clicks.
+
+**Input-format accuracy:** current Google support permits image uploads as sources; normal imported web-URL content uses scraped webpage text and does not include embedded images or videos. For a visual provenance demonstration upload the actual original image/PDF as an image/PDF source; do not presume images referenced only by an article URL are in notebook context. Distinguish original copyrighted research excerpts from public redistribution: citation/attribution and permissions still apply.
+
+### Channel fit
+
+- **Owned `r/KayfaBizarro` WIP:** full illustrated evolution journal, bibliography/provenance notes, short recordings, editorial choices, free eligible decks, direct verified GPT Site route when beta ships, bug/feedback posts. Cross-link outward selectively.
+- **`r/notebooklm`:** one genuine how-it-works post, focused on source selection, citation/grounding, authorial control, visual-input boundaries and transformation example. Avoid game-ad framing, repeated branded links and requests to join the owned subreddit. Include at most one contextual link **if current subreddit rules/moderators permit**. Existing community discussions of AI graphic-novel and comicbook workflows show topic relevance; a September 2025 moderator response specifically removed covert product advertising.
+- **Comic / indie-dev / interactive-narrative / music communities:** distinct concrete proofs, not the NotebookLM tooling story pasted unchanged; the owned subreddit is the optional full archive.
+- **Physician / medical-learning communities:** ONLY when actual medical-learning or artistic-medical content fits their purpose; biography alone is not permission to advertise a game. Do not imply medical endorsement.
+
+### Proposed NotebookLM-community contribution (EN, workflow-first, no game CTA)
+
+**Title:** I'm a physician and comic artist. I used NotebookLM to remix my own comics and essays into a playable world.
+
+I draw comics, write essays and work as a physician. Over time I built up a fairly unruly archive of my own characters, research notes, articles and recurring arguments.
+
+Instead of asking an AI to invent a new art style, I tried putting that material into NotebookLM and seeing which connections it could actually trace back to my sources. Some of the results were useful. Some were impressively confident ways of misunderstanding a joke.
+
+The interesting bit was what happened next. I used those source-grounded connections as raw material for a Cut & Play comic-card experiment, then kept translating the characters and ideas through dialogue, songs and, eventually, a little 3D game.
+
+I'm putting together a before-and-after walkthrough: one original drawing, the source passages I gave NotebookLM, the useful (and useless) connections it made, and the card/world scene that came out the other end. I'll distinguish what the notebook did from what I rewrote, drew or built with other tools.
+
+For anyone who uses NotebookLM with their own creative archive: how do you keep it faithful to the material without letting it flatten your voice?
+
+**Editorial gate:** Do not post until actual source excerpts and screenshots exist for one traceable example. If no source use can be demonstrated for a given game asset, say so. Any external KFB/subreddit link depends on current community rules and may be best omitted.
+
+### Research anchors checked 2026-10-18
+
+- Google NotebookLM/Gemini Notebook supported file and image sources, URLs and their limits: https://support.google.com/gemininotebook/answer/16215270?hl=de-DE
+- r/notebooklm real example, graphic novels with Gemini+NotebookLM: https://www.reddit.com/r/notebooklm/comments/1q3x0wv/making_graphic_novels_with_gemini_and_notebooklm/
+- r/notebooklm actual short-story comicbook workflow: https://www.reddit.com/r/notebooklm/comments/1rldto3/short_story_comicbook_workflow/
+- r/notebooklm overt complaints of repeated stealth promotions and moderator removal: https://www.reddit.com/r/notebooklm/comments/1nqifgd
+- NotebookLM source coverage / citation caveats raised in community on 2026-10-12: https://www.reddit.com/r/notebooklm/comments/1x3w5pk/notebooklm_can_ignore_half_your_sources_and_still/
+- Official community rules page: https://www.reddit.com/r/notebooklm/about/rules (site extraction did not expose an authoritative complete rules list; verify in Reddit UI at publishing time).
+
+**Single next gate (unchanged in substance):** pick one real, rights-clean, source-grounded ink → NotebookLM source exercise → edited card → (if present) in-game scene chain to form the first annotated WIP post, then tailor a separate process-only notebook-community post to it.
