@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- V-558 Böse Rollenspielgruppe als Spiegel (Monster-Lager, Demon Lord, Horde/Allianz mit geteilten Orks, Fraktionswahl, Helden als Trash-Mobs im Dungeon) – Erweiterung nach B48.
 - V-556 Rollenspiel-Gruppe als Meta-RPG-Hub vor dem Dungeon-Portal (Schritt 2 später: Platons Höhle als Kino-Innenraum); V-557 Zauber Primär Frostblitz / Sekundär Feuerball → Flammenwerfer-Ableitung. Brief B48. V-555 auf Gummiarm ×2,0–2,3 präzisiert (Georg bestätigt).
 - V-555 Cartoon-Streckarm für starre Legacy-Arme (Trompeter + Sänger der Ork-Band), Faust am Griff, 0 Durchdringung. B46 r1c (Hex-Fehler behoben) → Hub q123; Ork-Band r1 TUNE zurück an WSB. Hub v20/v20.1: Briefing-Schnellfilter, Plan/Stand 19.10., direkte Spiel-Einstiege (nackte Vorschau-Adresse = alter Hex-Spike).
 - V-554 Gefängnis-Labyrinth + Panoptikum (Mauer-Gizmo, Umbau-Animation, Blob-Corp-Turm mit Auge/Scheinwerfer, Raben/Fledermäuse): Brief B47.

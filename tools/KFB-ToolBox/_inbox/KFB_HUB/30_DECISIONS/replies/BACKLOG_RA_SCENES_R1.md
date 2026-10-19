@@ -34,3 +34,4 @@ Arbeitsteilung: **WS0** konvertiert die Daten und baut Bühne + Laufzeit. **WSB*
 ## Nachtrag 19.10. (V-555–V-557)
 - WSB-Warteschlange neu: Ork-Band r1b (Gummiarm ×2,0–2,3) → B45 King → B47 Labyrinth → **B48 Rollenspiel-Lager** → Gunfight → Disco → Clown → Wrestling → Ninja.
 - B48 Schritt 2 (Platons Höhle als Innenraum, Schattenspiel-Kino) bleibt hier als P2-Szene notiert.
+- **Nach B48 (V-558):** B49 Monster-Lager (Spiegel von B48, düster-cartoonig, Skelette, Orks, Tiefling, Demon Lord als Anführer, Ork-Banner/-Waffen). Vorher Fraktions-Mapping Horde/Allianz im Hub (welche Orks wohin; hellblaue Brute + kleiner hellblauer Ork zusammen). Inventur Large Skeleton (Georg besorgt ggf.).

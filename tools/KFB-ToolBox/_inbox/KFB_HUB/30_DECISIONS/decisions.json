@@ -7869,6 +7869,21 @@
    "applies": "B48 Zauber-Clips"
   },
   {
+   "id": "V-558",
+   "date": "2026-10-19",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Böse Rollenspielgruppe als Spiegel (Georg 19.10., Erweiterung nach B48): Monster-Gruppe im ähnlichen Lager-Setting, düsterer, aber cartoonig – Skelett-Pack (Large Skeleton besorgt Georg ggf.), Orks, Tiefling, alle bösen Figuren außer dem Vampir; Large-Rig-Modelle, ein Demon Lord befehligt die Armee. Horde-/Allianz-Logik wie bei World of Warcraft: die Orks werden aufgeteilt – hellblauer Ork-Brute + kleinerer hellblauer Ork auf einer Seite, die übrigen Orks auf der anderen; Fraktions-Mapping als Tabelle. Der Spieler wählt, ob er mit den Monstern gegen die Helden zieht oder umgekehrt. Satirische Dungeon-Besetzung: auch die Heldengruppe kann in Dungeon-Räumen als Hack-and-Slay-Trash-Mob herumlungern und ihre Kayfabe-Rolle spielen. Ableiten statt kopieren: ähnliches Setup, dunklere Items, mehr Ork-Waffen und Ork-Banner.",
+   "values": {},
+   "owner": "WS0 (Mapping, Spec) · WSB (Brief B49 nach B48) · WS1b (Fraktionswahl)",
+   "check": "erst nach B48-PASS: Fraktions-Mapping im Hub, dann Brief B49",
+   "source": "Georg 19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Zwei Gruppen mit getauschten Rollen machen aus dem RPG-Hub ein Fraktionsspiel und aus Helden wie Monstern Kayfabe-Darsteller.",
+   "applies": "nach B48"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7956,7 +7971,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:923",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:924",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
