@@ -3,6 +3,25 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 97 · 19.10. · Zehn Hebel mit großer Wirkung bei kleinem Aufwand (Recherche Cartoon-3D, auf Georgs Wunsch)
+
+Ausführlich mit Anschluss im Code, Risiko und Quellen auf der Seite https://claude.ai/artifact/BPnJsFihuh5JMVbSy213fe. Sie ist privat; Georg teilt sie über das Share-Menü. Kurzfassung, sortiert nach Wirkung zu Aufwand:
+
+1. **Stop-Motion-Takt:** Figuren und Effekte auf 12 Bilder pro Sekunde, Kamera, Physik und Steuerung bleiben bei 60 (Aardman, *South of Midnight*). Stunden.
+2. **Hit-Stop:** 40–80 ms Standbild + Kamera-Stoß bei Treffern; Faust, Blaster, Bombe, `HitEvent` aus V-514. Stunden.
+3. **Gemeinsamer Wind:** Böen für Gras, Bäume, Staub und Fluff; Pflanzen weichen aus. Optional zeigt der Wind zum Ziel (*Ghost of Tsushima*). 1–2 Tage.
+4. **Kamera-Dither:** Hindernisse zwischen Kamera und Figur werden gepunktet durchsichtig (*Mario Odyssey*), für Obstgärten und Amphitheater. ≤ 1 Tag.
+5. **Tilt-Shift:** Miniatur-Unschärfe nur in Übersichts- und Dialog-Kamera (*Link's Awakening*). ≤ 1 Tag, GPU vorher messen.
+6. **Fotomodus:** freie Kamera, ohne HUD, Tageszeit, Bild speichern; auch für Art-Direction-Tafeln. 1–2 Tage.
+7. **Geisterfahrer:** Bestzeit als durchsichtiger Knet-Geist auf Strecken und im Elan-Ringkurs. ≤ 1 Tag.
+8. **Eingaben aufzeichnen und abspielen:** deterministische Wiederholung für Fehlerberichte und Tests (über `hostKeys` + festen Takt). 1–3 Tage.
+9. **Reagierende Tiere:** 30–60 Vögel oder Schmetterlinge (InstancedMesh, Schwarm), fliegen bei Annäherung auf. ≤ 1 Tag.
+10. **Prüfansichten Helligkeit/Silhouette:** eine Taste für Graustufen, Stufen und Silhouetten, für Lesbarkeit von Figuren und Tageszeiten. Stunden.
+
+**Empfehlung für die erste Runde:** 2 und 4 (passen in V-514 und in die Obstgärten), dann 1 nach einem Fühltest mit Georg.
+
+Das sind Vorschläge, keine Entscheidungen. Umsetzung erst nach Georgs Ja und einer Vorlagen-Zeile; die Umsetzung läge bei WS1b.
+
 ## 96 · 18.10. Nacht · Übergabe-Ordner liegt in Georgs Dropbox
 
 - Georg hat `~/kfb-ws1/handover/` in seine Dropbox gelegt: Git-Bündel mit allen 19 Branches, `push-combo.sh`, `build.json`, Skyriding-Recherche, C1-Clip.
