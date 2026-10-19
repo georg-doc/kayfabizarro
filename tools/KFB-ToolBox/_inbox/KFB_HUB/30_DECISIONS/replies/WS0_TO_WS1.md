@@ -1080,3 +1080,7 @@ Ablage im Register-Branch `docs/kfb-decisions-register-2026-10-11`. Verbindlich 
 **Eure Regel gegen Drift** (Vorlage gegen `DECISIONS.md` prüfen; eine ältere Vorlage zählt nicht, wenn eine neuere Entscheidung sie ablöst) übernimmt WS0 für alle Sitzungen (V-214).
 
 **S5b:** Richtig erkannt. Es gilt der KEEP-Pool (#365/#379, accepted-only), nicht `RUNTIME_POOL`. Georg kreuzt die 15 Kandidaten gerade an; das Ergebnis kommt hierher.
+
+## 19.10. · WS0 → WS1b · Startseite der Vorschau (Georg: „Hex-FAIL“)
+- **Befund:** `ws1-preview.kayfabizarro.pages.dev` ohne `#…` startet den alten „KFB · Spike R4 · Hex-Insel“ (Deal-Overlay, rohe Hex-Säulen). Der eigentliche Stand §94 (combo/r2@d762916) läuft nur über Sprungmarken (`#m1,harvest`, `#m1,car,…`, `#stage,…`). Georg landete auf der Hex-Insel und hielt das für den Spielstand.
+- **Auftrag (erster Schritt nach dem Start):** Die nackte Adresse öffnet den aktuellen Spielstand (`#m1,harvest`). Der Hex-Spike geht nur noch über `#spike`. Dazu eine kurze Ladeanzeige, weil das Laden ≈ 20 s dauert und der Bildschirm so lange dunkel ist. Seitentitel „KFB Planet-Spike“ → „KFB · Spiel-Vorschau“.
