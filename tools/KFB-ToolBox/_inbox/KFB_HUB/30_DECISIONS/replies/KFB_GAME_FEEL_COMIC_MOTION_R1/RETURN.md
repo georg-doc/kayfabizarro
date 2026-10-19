@@ -84,3 +84,19 @@ This addendum supersedes any earlier suggestion in this Return that minigame sou
 
 **Updated one next gate (replaces older wording about an unqualified generic encounter):**
 WS0 Game Design checks ONE real-source, currently WS1b-feasible, approximately two-minute **Fluff interaction → visible Resident/card response** encounter against the existing R3F preview/owner. Make clear which parts already run (source harvesting/suction reported by WS1), which are planned (Card PDF reveal/Almanac, later R0.5 Defense) and whether this would make play genuinely fun. No implementation authorization from this Return.
+
+
+---
+
+## CURRENT ADDENDUM · 2026-10-19 · Roadster Thrust Lab source/physics donor triage for WS0
+
+**User request:** check in the Roadster: Thrust Lab comparison and comments for WS0, including separately supplied Reddit shortlink. **Outcome: DESIGN / SOURCE-READ ONLY, DEFERRED DONOR, NOT CANON, NOT IMPLEMENTED.**
+
+- **Primary new review:** `ROADSTER_THRUST_LAB_WS0_DONOR_NOTE_R1.md` in this same directory and existing Draft PR #435. It compares the real external source to KFB Joyride/Track Core/Race/two-wheel stunt/WS1 mobility and ranks three narrowly scoped possible later seams: **physical 360° wall adhesion; time-limited optional airborne landing stabilization; directional force/torque thrusters**. Explicitly *not* a call to clone the donor's physics runtime, Tesla car, GLB, neon HUD or sound engine.
+- External donor: `bkhan23544/roadster-thrust-lab@b90fec1499d61573e0cf1946fcfb949f3ecf5702`, inspected README + relevant `script.js` code and six-file tree. No LICENSE file found in checked tree; source availability alone is not a compatible reuse license.
+- User-provided Reddit `https://www.reddit.com/r/threejs/s/PCUiHHvkXT` stored as **UNRESOLVED source pointer** only; redirect and author/content match not verified.
+- Source-doc creation/readback checkpoint: `e940a5a3fb0def6ea3058e0da1bfb70bcf8507a5` with blob `c4bb2cf10376c078e144a9ae3a9b0ec6ac9e378e` (1/1 exact source-file readback). Test-report evidence checkpoint: `b73ac6c70f24f8d40f8440830571fccb8f261c8c` with report blob `641fd7ef3fb0f684931aff1cc0f35dfadf4ef5fc` (1/1 branch/file readback). **8/8 newly run editorial/source assertions PASS**; previous 16/16 + 9/9 not rerun.
+- Gameplay, browser, screenshots, executable physics, CI, performance, Stage, Site and asset/donor visual isolation tests: **0**. No new runtime files, deployment, PR opening, branch, permissions, merge, register-main, Hub metadata or Live work.
+- **Existing single WS0 next gate remains unchanged:** choose one actual-source, presently WS1b-feasible two-minute **Fluff acquisition → meaningful Resident/Card response** encounter. Roadster is an optional **later** vehicle/stunt physics donor to assess only after explicit separate intake authorization; it must not displace this gate or change the WS1/WS1b owner.
+
+**Recovery:** current branch/PR HEAD after final changelog write is authoritative; do not treat a checkpoint above as the final tip. The owner and review path are unchanged.
