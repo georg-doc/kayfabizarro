@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- B48 r1b → Hub q130 (Portal im Fels, Zauber-Streifen von vorn, Bögen mit Station nach WS0-TUNE); Hub q129 Löschfreigabe veralteter öffentlicher B48-Stände (wartet auf Georg).
 - B45 r1c → Hub q127 (Rüstung golden, Zweihänder bis Brust); Hub q126 Herkunft Krone. B47 r1b → Hub q128 (düster: Mauern grau-braun, dunkle Pfützen/Geröll; Chief Warden am Pult).
 - B45 r1 (King A/B, Dark Knight, Castle-Platzhalter, Kronen-Gag) geprüft → TUNE: Rüstung kräftig golden (Georgs Wortlaut), Zweihänder bis Brusthöhe. WS0-Festlegungen: occludedBy-Aliase helmet/visor (Prüfstand v1.2.9), KFB_CrownSeat für krönbare Figuren, V-536 bleibt (Schlagbaum + Guard am Knauf ok; 2H-Angriffe über KayKit-Large-2H-Clips).
 - Ork-Band r1b (Gummiarm, Spiel-Pose-Bögen, Karten proof-r1) → Hub q125; Drehung des Sängers in Schlag 8 = Original v5 (WSB gemessen). Prüfstand v1.2.9: near_face zielt auf die Augen-Anker (Legacy-Köpfe wurden unten abgeschnitten).
