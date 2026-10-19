@@ -567,6 +567,9 @@ export function createProofStage({ THREE, GLTFLoader, canvas = null }) {
     } else if (view === 'near_face') {
       const hb = S.head || new THREE.Box3(new THREE.Vector3(B.min.x, B.max.y - (B.max.y - B.min.y) * 0.35, B.min.z), B.max.clone());
       const hs = hb.getSize(new THREE.Vector3()); tgt = hb.getCenter(new THREE.Vector3());
+      /* v1.2.9: aim at the face, not the head box centre: tall crania/topknots (Legacy orcs) pushed eyes and mouth out of the bottom of the frame */
+      const eb = eyeBounds(THREE, S.mainFigure?.h?.status === 'OK' ? S.mainFigure.h : S.eyes);
+      if (!eb.isEmpty()) { const ec = eb.getCenter(new THREE.Vector3()); tgt.x = ec.x; tgt.z = ec.z; tgt.y = Math.min(tgt.y, Math.max(hb.min.y + hs.y * 0.12, ec.y - hs.y * 0.3)); }
       d = Math.max(hs.y / FILL.face, hs.x / (FILL.face * asp) * 0.75) / (2 * t) + hs.z * 0.25;
     } else if (view === 'top') {
       const bs = B.getSize(new THREE.Vector3());

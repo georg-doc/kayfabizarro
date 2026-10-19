@@ -270,6 +270,7 @@ const loader = new GLTFLoader();
 const glbCache = new Map();
 async function loadAsset(asset) {
   const key = asset.b64 || asset.ref; if (glbCache.has(key)) return glbCache.get(key);
+  if (!asset.b64 && /^(manifest|dropbox):/.test(asset.ref || '')) throw new Error('noch nicht geliefert');
   const p = (async () => {
     if (asset.b64 || asset.encoding === 'base64') {   /* Artifacts liefern kein .glb: Base64-Text */
       const txt = (await (await fetch(asset.b64 || asset.ref)).text()).replace(/\s+/g, '');
@@ -287,6 +288,8 @@ const deg = THREE.MathUtils.degToRad;
 function place(o, x) { o.position.set(...(x.p || [0, 0, 0])); if (x.q) o.quaternion.fromArray(x.q); else o.rotation.set(0, deg(x.ry || 0), 0); o.scale.setScalar(x.s || 1); }
 function findClip(names, want) { if (!want) return null; if (names.includes(want)) return want; const lw = want.toLowerCase(); return names.find((n) => n.toLowerCase() === lw) || names.find((n) => n.toLowerCase().includes(lw) || lw.includes(n.toLowerCase())) || null; }
 
+let castReg = null;
+async function loadCastReg() { if (castReg) return castReg; try { castReg = await (await fetch('scenelets/cast.json')).json(); } catch (e) { castReg = { actors: {} }; } return castReg; }
 async function loadIndex() {
   const idx = await (await fetch('scenelets/index.json')).json();
   $('selScenelet').replaceChildren(...idx.items.map((it) => { const o = document.createElement('option'); o.value = it.file; o.textContent = it.title; return o; }));
@@ -299,7 +302,7 @@ async function loadScenelet(file) {
   try { localStorage.setItem('buehne-sc', file); } catch (e) {}
   $('msg').hidden = false; $('msg').textContent = 'Scenelet lädt …'; chips([['lädt …', 'busy']]);
   tc.detach(); actorsGroup.clear(); state.actors = []; state.props = []; state.nodes = {}; state.rest = {}; state.tracks = []; stopAmbience();
-  const sc = await (await fetch(file)).json(); state.sc = sc; state.len = sc.timeline?.clock?.length || 8;
+  const sc = await (await fetch(file)).json(); sc.assets = sc.assets || {}; state.sc = sc; state.len = sc.timeline?.clock?.length || 8;
   renderInfo(sc); $('json').textContent = JSON.stringify(sc, null, 1);
   const problems = [];
   /* props zuerst (Diorama = Bühne) */
@@ -316,26 +319,32 @@ async function loadScenelet(file) {
   }
   /* actors */
   let eyesOK = 0, eyesWant = 0;
+  const reg = await loadCastReg();
+  let lib = null;
+  if (sc.clipLibrary?.b64) { try { lib = await loadAsset(sc.clipLibrary); } catch (e) { problems.push('Clip-Bibliothek fehlt'); } }
   for (const a of sc.actors || []) {
-    const asset = sc.assets[a.asset]; if (!asset) { problems.push('Asset fehlt: ' + a.asset); continue; }
+    let asset = sc.assets?.[a.asset], castCard = null;
+    if (!asset && a.cast) { const ce = reg.actors?.[a.cast]; if (ce?.b64) { asset = ce; castCard = ce.card || null; } }
+    if (!asset) { problems.push(a.cast ? a.id + ': Darsteller „' + a.cast + '“ noch nicht bühnenfertig' : 'Asset fehlt: ' + a.asset); placeholder(a); continue; }
     try {
       const g = await loadAsset(asset); const root = skClone(g.scene); place(root, a); root.name = 'actor:' + a.id;
       root.traverse((m) => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true; } });
       actorsGroup.add(root);
-      const card = await loadCard(a.card);
+      const card = await loadCard(a.card || castCard);
       const clay = applyClay(root, THREE, { profile: card?.material?.clayProfile || 'character', seed: sc.id + ':' + a.id, scaleRef: 'object' });
       let eyes = null;
       if (findEyeSeat(root, card).seat) { eyesWant++; const ey = mountEyes(THREE, root, { card, applyClay, clayRef: clay?.scaleRef, seed: sc.id + ':' + a.id }); if (ey?.status === 'OK') { ey.setState('rest'); eyes = ey; eyesOK++; } }
       else if (card?.eyeRig?.required) { eyesWant++; problems.push(a.id + ': Augen-Anker fehlen'); }
       const mixer = new THREE.AnimationMixer(root), actions = {};
       for (const c of g.animations) actions[c.name] = mixer.clipAction(c);
+      if (lib) for (const c of lib.animations) if (!actions[c.name]) actions[c.name] = mixer.clipAction(c);   /* Clip-Bibliothek (gleiches Rig) */
       const names = Object.keys(actions);
       const base = findClip(names, a.clip) || names[0] || null;
       if (a.clip && !findClip(names, a.clip)) problems.push(a.id + ': Clip „' + a.clip + '“ fehlt');
       state.actors.push({ id: a.id, def: a, root, mixer, actions, names, base, override: null, cur: null, eyes, blink: 1 + Math.random() * 3 });
       state.nodes['actor:' + a.id] = root;
       for (const at of a.attachments || []) if (at.node) root.traverse((o) => { if (o.name === at.node) state.nodes[a.id + '/' + at.node] = o; });
-    } catch (e) { problems.push(a.id + ': ' + e.message); console.warn(e); }
+    } catch (e) { problems.push(a.id + ': ' + e.message); placeholder(a); }
   }
   for (const [n, o] of Object.entries(state.nodes)) state.rest[n] = { p: o.position.clone(), q: o.quaternion.clone() };
   /* tracks: Bahnen + Squash an benannten Knoten (z. B. fluff@KFB_Fluff_Spawn_*) */
@@ -372,6 +381,14 @@ async function loadScenelet(file) {
   if (state.sound) startAmbience();
   subscribeVerdicts();
 }
+function placeholder(a) {
+  const g = new THREE.Group(); g.name = 'placeholder:' + a.id; place(g, a);
+  const m = new THREE.Mesh(new THREE.CapsuleGeometry(0.35, 1.2, 6, 12), new THREE.MeshStandardMaterial({ color: '#b9b2a6', roughness: 0.9, transparent: true, opacity: 0.55 }));
+  m.position.y = 0.95; g.add(m);
+  const cv2 = document.createElement('canvas'); cv2.width = 512; cv2.height = 96; const x = cv2.getContext('2d'); x.fillStyle = 'rgba(31,32,34,.82)'; x.fillRect(0, 0, 512, 96); x.fillStyle = '#fff'; x.font = '600 34px sans-serif'; x.textAlign = 'center'; x.fillText((a.cast || a.id) + ' · folgt', 256, 60);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cv2), depthTest: false })); sp.scale.set(2.4, 0.45, 1); sp.position.y = 2.15; g.add(sp);
+  actorsGroup.add(g);
+}
 function renderInfo(sc) {
   const rows = [['Titel', sc.title], ['Art', sc.kind], ['Status', sc.status], ['Quelle', (sc.source?.from || '') + ' · ' + (sc.source?.ref || '–')],
     ['Einheit', (sc.units || 'm') + (sc.m_per_u ? ' (1 u = ' + sc.m_per_u.toFixed(3) + ' m)' : '') + ' · ' + (sc.space || 'gltf')],
@@ -388,7 +405,7 @@ function activeClip(ac, T) {
   if (ac.override) return { name: ac.override, t: T, loop: true };
   let best = null;
   for (const c of state.sc.timeline?.cues || []) if (c.actor === ac.id && c.clip && c.t <= T && (!best || c.t >= best.t)) best = c;
-  if (best) { const n = findClip(ac.names, best.clip); if (n) { const d = ac.actions[n].getClip().duration || 1; const loop = best.loop ?? false; return { name: n, t: T - best.t, loop: loop || false, dur: d }; } }
+  if (best) { const n = findClip(ac.names, best.clip); if (n) { const d = ac.actions[n].getClip().duration || 1; const loop = best.loop ?? false; const lt = T - best.t; return { name: n, t: best.reverse ? d - lt : lt, loop: loop || false, dur: d }; } }
   const ph = (ac.def.phase || 0); return ac.base ? { name: ac.base, t: T + ph * (ac.actions[ac.base].getClip().duration || 1), loop: true } : null;
 }
 function evalScene(T, force) {
