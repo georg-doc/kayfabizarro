@@ -37,3 +37,15 @@
 - Streifen je Lager-Clip und je Zauber-Clip.
 - Diorama-Totale + Feuerkreis-Nahbild.
 - QA V-520 (a)–(h), besonders (g) Material folgt Flächen und (h) „Werkzeug wird wirklich benutzt“ (Hand am Schleifstein, Löffel im Topf, Stab-Spitze auf der Achse). Lizenzen im RETURN.
+
+## Inventur WSB (19.10.) · Ergebnis + WS0-Festlegung
+- **Vorhanden:**
+  - CC0: Adventurers 2.0 FREE (Barbarian, Knight, Mage, Ranger, Rogue, Rogue_Hooded + Waffen, Zauberbuch), RPG Tools Bits (map, grindstone, lantern, journal, Werkzeuge), Dungeon Pack 1.1 (wall_doorway/arched/gated, Fackeln, chest(_gold), Münzen, stool, barrel), Kenney Survival (Zelte, bedroll, campfire), Kenney Nature (cliff_blockCave_*, campfire), Quaternius Fantasy Props (Cauldron, Pot, Coin_Pile), Medium-Skelette.
+  - Privat: Kleriker (Font, Tome), Horter A/B, Hiker-Zelt, Pizzakarton (Restaurant Bits).
+- **Fehlt:** Large-Barbar, Large-Skelett, Todesritter (Kandidat: Black Knight aus Mystery S5, für B45 ohnehin geprüft).
+- **Festlegung WS0:**
+  1. Portal = `cliff_blockCave_*` (Kenney) + `wall_doorway`/`wall_arched` (Dungeon Pack) eingemauert, Fackeln daneben.
+  2. Zelte: Kenney tent-canvas (öffentlich) als Standard, Hiker-Zelt (privat) als Akzent.
+  3. Truhe halbvoll: `chest_gold` + `coin_stack_*`; Kochen: Cauldron/Pot.
+  4. Die Large-Gäste sind optional. B48 wird **ohne** sie gebaut, mit benannten Plätzen `seat_large_*`. Sobald Georg Large-Barbar bzw. Large-Skelett lädt, rücken sie ein. Den Black Knight nach der B45-Prüfung als Todesritter-Platzhalter verwenden.
+  5. Für den öffentlichen Zweig nur CC0-Teile verwenden; die privaten Teile laufen über die private Base64-Spur (V-538).
