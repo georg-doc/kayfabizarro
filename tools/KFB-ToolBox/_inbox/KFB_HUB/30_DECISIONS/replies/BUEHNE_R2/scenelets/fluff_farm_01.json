@@ -1,0 +1,935 @@
+{
+ "schema": "kfb.scenelet/1",
+ "id": "fluff_farm_01",
+ "title": "KayKit Fluff-Farm",
+ "kind": "diorama",
+ "version": 1,
+ "status": "review",
+ "source": {
+  "from": "wsb-b44",
+  "ref": "50_BLENDER/B44",
+  "decision": "V-549"
+ },
+ "units": "u",
+ "m_per_u": 0.616381042,
+ "up": "y",
+ "forward": "+z",
+ "space": "gltf",
+ "assets": {
+  "fluff_farm_diorama": {
+   "ref": "dropbox:50_BLENDER/B44/_privat_kauf_asset/KFB_FluffFarm.r1.glb",
+   "b64": "scenelets/fluff_farm_01/fluff_farm_diorama.glb.b64.txt",
+   "sha256": "76872a4d37ba98ef82582112bbbfaa3ff0afb66458cbdda4d73f046574c01479",
+   "bytes": 3174092,
+   "private": true,
+   "license": "gemischt: KayKit Forest/Bits CC0 + KayKit Mystery S6 Farmers (Kauf) → privat",
+   "encoding": "base64"
+  },
+  "farmer_hut": {
+   "ref": "dropbox:50_BLENDER/B44/_privat_kauf_asset/KFB_Farmer_farmer_hut.r1b.glb",
+   "b64": "scenelets/fluff_farm_01/farmer_hut.glb.b64.txt",
+   "sha256": "c039eee09fa006f7203215a01d149247b87fe617e3679691c3be3b568479941b",
+   "bytes": 562360,
+   "private": true,
+   "license": "KayKit Mystery S6 Farmers (Kauf) → privat",
+   "rig": "Rig_Medium",
+   "encoding": "base64"
+  },
+  "farmer_daumen": {
+   "ref": "dropbox:50_BLENDER/B44/_privat_kauf_asset/KFB_Farmer_farmer_daumen.r1.glb",
+   "b64": "scenelets/fluff_farm_01/farmer_daumen.glb.b64.txt",
+   "sha256": "d03d17e99de8400bfdac1339b2f01d1d49447041666a8e5f4c96825751169e79",
+   "bytes": 605664,
+   "private": true,
+   "license": "KayKit Mystery S6 Farmers (Kauf) → privat",
+   "rig": "Rig_Medium",
+   "encoding": "base64"
+  },
+  "farmer_harke": {
+   "ref": "dropbox:50_BLENDER/B44/_privat_kauf_asset/KFB_Farmer_farmer_harke.r1b.glb",
+   "b64": "scenelets/fluff_farm_01/farmer_harke.glb.b64.txt",
+   "sha256": "a0d317985871bdb843f9444a458c41b4838360f993d609fcb8424f7eeb6d8733",
+   "bytes": 606404,
+   "private": true,
+   "license": "KayKit Mystery S6 Farmers (Kauf) → privat",
+   "rig": "Rig_Medium",
+   "encoding": "base64"
+  },
+  "farmer_karre": {
+   "ref": "dropbox:50_BLENDER/B44/_privat_kauf_asset/KFB_Farmer_farmer_karre.r1.glb",
+   "b64": "scenelets/fluff_farm_01/farmer_karre.glb.b64.txt",
+   "sha256": "66517a9bc4ae915bb1c9f1955ac61e2776b444c4fcf2eace82425f87e820397a",
+   "bytes": 605136,
+   "private": true,
+   "license": "KayKit Mystery S6 Farmers (Kauf) → privat",
+   "rig": "Rig_Medium",
+   "encoding": "base64"
+  },
+  "wheelbarrow_carrots": {
+   "ref": "dropbox:50_BLENDER/B44/_privat_kauf_asset/KFB_Farm_Wheelbarrow_Carrots.r1.glb",
+   "b64": "scenelets/fluff_farm_01/wheelbarrow_carrots.glb.b64.txt",
+   "sha256": "2aba04bc33acea114b25114451329e1acb9f50384c513780f7b36f7fce657583",
+   "bytes": 98128,
+   "private": true,
+   "license": "KayKit Mystery S6 Farmers (Kauf) → privat",
+   "encoding": "base64"
+  },
+  "tractor": {
+   "ref": "dropbox:50_BLENDER/B44/props/KFB_Vehicle_Tractor.r1.glb",
+   "b64": "scenelets/fluff_farm_01/tractor.glb.b64.txt",
+   "sha256": "23071a5b31727a1f5f790c5958bf3ac190b24c8eb0794ee13f791d0760740770",
+   "bytes": 275984,
+   "private": false,
+   "license": "KayKit Bits Bundle 1 (Halloween Bits) – CC0",
+   "encoding": "base64"
+  },
+  "pet_cow": {
+   "ref": "dropbox:50_BLENDER/B44/props/KFB_CubePet_cow.r1.glb",
+   "b64": "scenelets/fluff_farm_01/pet_cow.glb.b64.txt",
+   "sha256": "df9fc4ee1d9d87de572251398a734b6027b6deaaf06f74dcf1117d05656908da",
+   "bytes": 66496,
+   "private": false,
+   "license": "Kenney Cube Pets 1.0 – CC0",
+   "rig": "node-anim",
+   "encoding": "base64"
+  },
+  "pet_pig": {
+   "ref": "dropbox:50_BLENDER/B44/props/KFB_CubePet_pig.r1.glb",
+   "b64": "scenelets/fluff_farm_01/pet_pig.glb.b64.txt",
+   "sha256": "2fea366f78031cf0a3851f7fe86e4ffe246d7de5392acbd0499549c25e2093ec",
+   "bytes": 65968,
+   "private": false,
+   "license": "Kenney Cube Pets 1.0 – CC0",
+   "rig": "node-anim",
+   "encoding": "base64"
+  },
+  "pet_chick": {
+   "ref": "dropbox:50_BLENDER/B44/props/KFB_CubePet_chick.r1.glb",
+   "b64": "scenelets/fluff_farm_01/pet_chick.glb.b64.txt",
+   "sha256": "6849a4aa812f222e609689e3cca6799c5f5d7844841bd7fccfb8b48f0989d82e",
+   "bytes": 69428,
+   "private": false,
+   "license": "Kenney Cube Pets 1.0 – CC0",
+   "rig": "node-anim",
+   "encoding": "base64"
+  }
+ },
+ "actors": [
+  {
+   "id": "farmerin_hut",
+   "asset": "farmer_hut",
+   "p": [
+    -1.2,
+    1.224,
+    4.2
+   ],
+   "ry": -15,
+   "s": 1,
+   "card": "scenelets/fluff_farm_01/farmer_hut.figure.json",
+   "clip": "Waving",
+   "loop": true,
+   "phase": 0.0,
+   "role": "lead",
+   "note": "Hut schwenken (Hut starr in der rechten Hand, 0 Durchstich im Clip)"
+  },
+  {
+   "id": "farmer_daumen",
+   "asset": "farmer_daumen",
+   "p": [
+    5.2,
+    1.217,
+    5.6
+   ],
+   "ry": 30,
+   "s": 1,
+   "card": "scenelets/fluff_farm_01/farmer_daumen.figure.json",
+   "clip": "Cheering",
+   "loop": true,
+   "phase": 0.0,
+   "note": "Daumen hoch / Jubel neben der Salat-Schubkarre"
+  },
+  {
+   "id": "farmerin_harke",
+   "asset": "farmer_harke",
+   "p": [
+    -6.0,
+    1.223,
+    5.6
+   ],
+   "ry": 10,
+   "s": 1,
+   "card": "scenelets/fluff_farm_01/farmer_harke.figure.json",
+   "clip": "Idle_B",
+   "loop": true,
+   "phase": 0.0,
+   "note": "auf die Mistgabel gestützt (Gabel senkrecht in der Faust, 0 Durchstich in Idle_B)"
+  },
+  {
+   "id": "farmer_karre",
+   "asset": "farmer_karre",
+   "p": [
+    2.6,
+    1.209,
+    8.0
+   ],
+   "ry": 160,
+   "s": 1,
+   "card": "scenelets/fluff_farm_01/farmer_karre.figure.json",
+   "clip": "kfb_locomotion_wheelbarrow_walk_a",
+   "loop": true,
+   "phase": 0.0,
+   "note": "Schubkarre mit Möhren schieben (Motion Library)",
+   "attachments": [
+    {
+     "id": "karre",
+     "asset": "wheelbarrow_carrots",
+     "figure_socket": "hand.l+hand.r",
+     "prop_socket": "Griffe (Mesh-Suche „wheelbarrow“)",
+     "mode": "cart",
+     "note": "wie B31 Karren-Halterung (Griffhöhe aus Handmitte)"
+    }
+   ],
+   "audio": {
+    "signature": [
+     {
+      "on": "walk",
+      "sfx": {
+       "set": "farm_r1",
+       "id": "F07_wheelbarrow_roll_a"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "kuh",
+   "asset": "pet_cow",
+   "p": [
+    10.2,
+    1.217,
+    1.8
+   ],
+   "ry": -40,
+   "s": 1,
+   "card": "scenelets/fluff_farm_01/cube_pet_cow.figure.json",
+   "clip": "idle",
+   "loop": true,
+   "phase": 0.0,
+   "procedural": [
+    {
+     "kind": "bob",
+     "node": "body",
+     "amp_u": 0.04,
+     "period_s": 1.6
+    }
+   ],
+   "mouth": null,
+   "audio": {
+    "signature": [
+     {
+      "every_s": [
+       8,
+       16
+      ],
+      "sfx": {
+       "set": "farm_r1",
+       "id": "F03_cow_moo_a"
+      }
+     },
+     {
+      "every_s": [
+       8,
+       16
+      ],
+      "sfx": {
+       "set": "farm_r1",
+       "id": "F03_cow_moo_b"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "schwein",
+   "asset": "pet_pig",
+   "p": [
+    -1.6,
+    1.195,
+    8.2
+   ],
+   "ry": 25,
+   "s": 1,
+   "card": "scenelets/fluff_farm_01/cube_pet_pig.figure.json",
+   "clip": "eat",
+   "loop": true,
+   "phase": 0.0,
+   "procedural": [
+    {
+     "kind": "bob",
+     "node": "body",
+     "amp_u": 0.03,
+     "period_s": 1.2
+    }
+   ],
+   "mouth": null,
+   "audio": {
+    "signature": [
+     {
+      "every_s": [
+       6,
+       12
+      ],
+      "sfx": {
+       "set": "farm_r1",
+       "id": "F04_pig_oink_a"
+      }
+     },
+     {
+      "every_s": [
+       6,
+       12
+      ],
+      "sfx": {
+       "set": "farm_r1",
+       "id": "F04_pig_oink_b"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "kueken",
+   "asset": "pet_chick",
+   "p": [
+    3.4,
+    1.221,
+    2.2
+   ],
+   "ry": -60,
+   "s": 1,
+   "card": "scenelets/fluff_farm_01/cube_pet_chick.figure.json",
+   "clip": "idle",
+   "loop": true,
+   "phase": 0.0,
+   "procedural": [
+    {
+     "kind": "hop",
+     "node": "root",
+     "height_u": 0.18,
+     "every_s": [
+      2.5,
+      5.0
+     ],
+     "squash_pct": 8
+    }
+   ],
+   "mouth": null,
+   "audio": {
+    "signature": [
+     {
+      "on": "hop",
+      "sfx": {
+       "set": "farm_r1",
+       "id": "F05_chick_peep_a"
+      }
+     },
+     {
+      "every_s": [
+       5,
+       10
+      ],
+      "sfx": {
+       "set": "farm_r1",
+       "id": "F05_chick_peep_b"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "props": [
+  {
+   "id": "diorama",
+   "asset": "fluff_farm_diorama",
+   "p": [
+    0,
+    0,
+    0
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "stage"
+  },
+  {
+   "id": "traktor",
+   "asset": "tractor",
+   "p": [
+    7.4,
+    1.22,
+    0.6
+   ],
+   "ry": 200,
+   "s": 1,
+   "role": "story",
+   "audio": {
+    "loop": {
+     "set": "farm_r1",
+     "id": "F06_tractor_idle_a",
+     "gain": -16
+    }
+   },
+   "vehicle": {
+    "anchors": {
+     "kfb_wheel_FL": [
+      0.9284,
+      0.5994,
+      1.3297
+     ],
+     "kfb_wheel_FR": [
+      -0.9285,
+      0.5994,
+      1.3297
+     ],
+     "kfb_wheel_RL": [
+      1.0014,
+      0.952,
+      -1.1343
+     ],
+     "kfb_wheel_RR": [
+      -1.0014,
+      0.952,
+      -1.1343
+     ],
+     "kfb_steering": [
+      0.0,
+      1.9862,
+      0.1554
+     ],
+     "kfb_camera_follow": [
+      0.0,
+      3.0,
+      -6.0863
+     ],
+     "kfb_entry": [
+      2.0256,
+      0.0,
+      -0.8446
+     ],
+     "KFB_roof_land": [
+      0.0,
+      1.5816,
+      -0.8446
+     ],
+     "kfb_seat_rig_medium": [
+      0.0,
+      1.2516,
+      -0.5746
+     ]
+    },
+    "seat_fit": "offen: Farmer passt mit Sit_Chair_Idle bzw. Driving (Mixamo, retargetet) nicht durchstichfrei auf den KayKit-Traktor (Lenkrad ↔ Kopf/Arme, Gehäuse ↔ Beine) → im Fahrzeug-Job lösen"
+   }
+  }
+ ],
+ "timeline": {
+  "clock": {
+   "bpm": null,
+   "fps": 30,
+   "length": 12.0
+  },
+  "tracks": [
+   {
+    "id": "fallobst_1",
+    "target": "fluff@KFB_Fluff_Spawn_Tree0_0",
+    "kind": "path",
+    "path": [
+     {
+      "kind": "arc",
+      "from": [
+       5.71,
+       3.488,
+       -5.873
+      ],
+      "to": [
+       6.61,
+       1.427,
+       -5.273
+      ],
+      "t0": 2.0,
+      "time_s": 0.55,
+      "arc_apex_above_line_u": 0.05,
+      "note": "Fall vom Ast (fast senkrecht)"
+     },
+     {
+      "kind": "arc",
+      "from": [
+       6.61,
+       1.427,
+       -5.273
+      ],
+      "to": [
+       7.31,
+       1.427,
+       -4.823
+      ],
+      "t0": 2.55,
+      "time_s": 0.38,
+      "arc_apex_above_line_u": 0.45
+     },
+     {
+      "kind": "arc",
+      "from": [
+       7.31,
+       1.427,
+       -4.823
+      ],
+      "to": [
+       7.71,
+       1.427,
+       -4.573
+      ],
+      "t0": 2.93,
+      "time_s": 0.24,
+      "arc_apex_above_line_u": 0.16
+     },
+     {
+      "kind": "roll",
+      "from": [
+       7.71,
+       1.427,
+       -4.573
+      ],
+      "dir_xz": [
+       0.85,
+       0.53
+      ],
+      "dist_u": 0.6,
+      "t0": 3.17,
+      "time_s": 0.6,
+      "ease": "outQuad"
+     }
+    ]
+   },
+   {
+    "id": "fallobst_1_squash",
+    "target": "fluff@KFB_Fluff_Spawn_Tree0_0",
+    "kind": "squash",
+    "events": [
+     {
+      "t": 2.55,
+      "squash_pct": 22,
+      "duration_s": 0.12
+     },
+     {
+      "t": 2.93,
+      "squash_pct": 12,
+      "duration_s": 0.1
+     },
+     {
+      "t": 3.17,
+      "squash_pct": 6,
+      "duration_s": 0.08
+     }
+    ],
+    "pivot": "ground"
+   }
+  ],
+  "cues": [
+   {
+    "t": 2.0,
+    "marker": "fluff_drop",
+    "spawn": "KFB_Fluff_Spawn_Tree0_0"
+   },
+   {
+    "t": 2.55,
+    "marker": "bounce_1",
+    "sfx": {
+     "set": "farm_r1",
+     "id": "F08_fruit_drop_bounce_a",
+     "gain": -12
+    }
+   },
+   {
+    "t": 2.93,
+    "marker": "bounce_2",
+    "sfx": {
+     "set": "farm_r1",
+     "id": "F08_fruit_drop_bounce_b",
+     "gain": -18
+    }
+   },
+   {
+    "t": 3.77,
+    "marker": "rest",
+    "sfx": {
+     "set": "fluff_economy_r1",
+     "id": "E05_fluff_scatter_a",
+     "gain": -16
+    }
+   }
+  ]
+ },
+ "cameras": [
+  {
+   "id": "spielkamera",
+   "preset": "custom",
+   "az_deg": -25,
+   "el_deg": 32,
+   "fov": 32,
+   "frame": "ganzes Diorama"
+  },
+  {
+   "id": "hof",
+   "preset": "custom",
+   "target": [
+    4.0,
+    2.2,
+    3.5
+   ],
+   "az_deg": -10,
+   "el_deg": 16,
+   "fov": 30
+  },
+  {
+   "id": "feld",
+   "preset": "custom",
+   "target": [
+    -7.5,
+    2.2,
+    -1.0
+   ],
+   "az_deg": -35,
+   "el_deg": 20,
+   "fov": 30
+  }
+ ],
+ "light": {
+  "rig": "kfb-stage-light.v1.1",
+  "mood": "MOODS_MESA",
+  "tod": "day",
+  "skydome": "Hinweis: heller Sommerhimmel, warmes Mittagslicht (Bühne/WS0)"
+ },
+ "palette": {
+  "set": "island-palettes/1",
+  "entry": "biom_03_Backyard",
+  "note": "Vorschlag; Diorama-Farben sind gebacken (Knet), Fluff je Kugel in den 6 Fluff-Farben"
+ },
+ "audio": {
+  "ambience": [
+   {
+    "set": "farm_r1",
+    "id": "F01_farm_morning_atmos_a",
+    "gain": -12,
+    "loop": true
+   },
+   {
+    "set": "farm_r1",
+    "id": "F02_wind_in_corn_a",
+    "gain": -18,
+    "loop": true,
+    "near": "Farm_Wheat"
+   }
+  ],
+  "music": null
+ },
+ "world": {
+  "anchor": [
+   0,
+   0,
+   0
+  ],
+  "footprint": {
+   "shape": "superellipse",
+   "ax_u": 15.0,
+   "ay_u": 11.0,
+   "n": 4
+  },
+  "lift_u": 0.6239,
+  "entrances": [
+   {
+    "id": "KFB_Entrance_Front",
+    "p": [
+     1.0,
+     1.049,
+     10.6
+    ],
+    "forward": [
+     0,
+     0,
+     1
+    ],
+    "note": "Feldweg vorn (Spielkamera-Seite)"
+   },
+   {
+    "id": "KFB_Entrance_East",
+    "p": [
+     13.6,
+     1.168,
+     -2.4
+    ],
+    "forward": [
+     1,
+     0,
+     0
+    ],
+    "note": "Hofeinfahrt rechts (Traktor)"
+   }
+  ],
+  "fluff_spawns": [
+   {
+    "id": "KFB_Fluff_Spawn_Tree0_0",
+    "p": [
+     5.71,
+     3.818,
+     -5.873
+    ],
+    "ball_centre": [
+     5.71,
+     3.488,
+     -5.873
+    ],
+    "colour": "heroic",
+    "size": "S",
+    "stem_u": 0.12
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree0_1",
+    "p": [
+     4.192,
+     3.606,
+     -7.59
+    ],
+    "ball_centre": [
+     4.192,
+     3.211,
+     -7.59
+    ],
+    "colour": "absurd",
+    "size": "M",
+    "stem_u": 0.12
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree0_2",
+    "p": [
+     2.096,
+     5.032,
+     -5.604
+    ],
+    "ball_centre": [
+     2.096,
+     4.387,
+     -5.604
+    ],
+    "colour": "mystical",
+    "size": "M",
+    "stem_u": 0.37
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree1_0",
+    "p": [
+     9.811,
+     3.959,
+     -8.178
+    ],
+    "ball_centre": [
+     9.811,
+     3.629,
+     -8.178
+    ],
+    "colour": "mystical",
+    "size": "S",
+    "stem_u": 0.12
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree1_1",
+    "p": [
+     8.246,
+     3.907,
+     -8.609
+    ],
+    "ball_centre": [
+     8.246,
+     3.112,
+     -8.609
+    ],
+    "colour": "comic",
+    "size": "M",
+    "stem_u": 0.52
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree1_2",
+    "p": [
+     7.898,
+     3.911,
+     -6.939
+    ],
+    "ball_centre": [
+     7.898,
+     3.516,
+     -6.939
+    ],
+    "colour": "forbidden",
+    "size": "M",
+    "stem_u": 0.12
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree1_3",
+    "p": [
+     9.304,
+     2.825,
+     -6.587
+    ],
+    "ball_centre": [
+     9.304,
+     2.495,
+     -6.587
+    ],
+    "colour": "tragic",
+    "size": "S",
+    "stem_u": 0.12
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree2_0",
+    "p": [
+     0.964,
+     3.661,
+     -8.762
+    ],
+    "ball_centre": [
+     0.964,
+     3.331,
+     -8.762
+    ],
+    "colour": "forbidden",
+    "size": "S",
+    "stem_u": 0.12
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree2_1",
+    "p": [
+     -0.214,
+     3.788,
+     -7.97
+    ],
+    "ball_centre": [
+     -0.214,
+     3.393,
+     -7.97
+    ],
+    "colour": "tragic",
+    "size": "M",
+    "stem_u": 0.12
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree2_2",
+    "p": [
+     0.503,
+     3.702,
+     -6.992
+    ],
+    "ball_centre": [
+     0.503,
+     3.307,
+     -6.992
+    ],
+    "colour": "heroic",
+    "size": "M",
+    "stem_u": 0.12
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree3_0",
+    "p": [
+     -13.665,
+     3.913,
+     1.132
+    ],
+    "ball_centre": [
+     -13.665,
+     3.583,
+     1.132
+    ],
+    "colour": "heroic",
+    "size": "S",
+    "stem_u": 0.12
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree3_1",
+    "p": [
+     -14.285,
+     3.72,
+     3.145
+    ],
+    "ball_centre": [
+     -14.285,
+     3.325,
+     3.145
+    ],
+    "colour": "absurd",
+    "size": "M",
+    "stem_u": 0.12
+   },
+   {
+    "id": "KFB_Fluff_Spawn_Tree3_2",
+    "p": [
+     -12.611,
+     3.889,
+     2.426
+    ],
+    "ball_centre": [
+     -12.611,
+     3.494,
+     2.426
+    ],
+    "colour": "mystical",
+    "size": "M",
+    "stem_u": 0.12
+   }
+  ],
+  "fluff_nests": [
+   {
+    "id": "Nest_0",
+    "p": [
+     -9.2,
+     1.211,
+     -1.5
+    ],
+    "balls": 3
+   },
+   {
+    "id": "Nest_1",
+    "p": [
+     -4.6,
+     1.223,
+     -6.8
+    ],
+    "balls": 3
+   },
+   {
+    "id": "Nest_2",
+    "p": [
+     -11.6,
+     1.191,
+     -7.4
+    ],
+    "balls": 3
+   }
+  ],
+  "placement": "Strahl auf die Hofplatte, Paar-Durchdringung 0 (außer gewollte Auflagen: Beet↔Pflanze, Stiel↔Fluff)",
+  "tags": [
+   "farm",
+   "cozy",
+   "fluff",
+   "kaykit"
+  ]
+ },
+ "review": {
+  "hub": null,
+  "gates": [
+   "G1",
+   "G2",
+   "G3",
+   "G5",
+   "G6"
+  ],
+  "axisLines": true
+ }
+}

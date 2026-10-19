@@ -1,0 +1,131 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "toy_soldier_squad",
+ "displayName": "Zinnsoldaten-Trupp Nr. 1–6",
+ "aliases": [
+  "toy-soldier-cop",
+  "ordnungshueter"
+ ],
+ "role": "npc",
+ "story": "V-464 (Georg 18.10.): Trupp aus sechs Aufzieh-Zinnsoldaten, Nummer groß am Tschako; Dalton-Gag: Nr. 1 ist der Anführer und der Kleinste, Nr. 6 der Größte. Die r2-Schirmmütze bleibt als eigene Rolle „Verkehrspolizist“ (B11 r2).",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B11/_privat_kauf_asset/squad_r4/ToySoldier_Squad_{number}_star.r4.glb (lokal, privat)",
+   "onMain": false,
+   "note": "KayKit Mystery Series 6 Toy Soldier (Kauf-Asset)"
+  },
+  "rawSource": {
+   "path": "KFB Island Worldbuilder Lab/public/assets/figures-b2/toysoldier/ToySoldier_NoEyes.glb",
+   "sha256": "siehe B11/data/b11_r3_sources.sha256.txt"
+  },
+  "rig": "Rig_Medium",
+  "variants": [
+   {
+    "param": "variant.number",
+    "values": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "how": "Zahl am Tschako (eigenes Mesh je Datei)",
+    "leader": 1
+   }
+  ],
+  "badge": {
+   "standard": "star",
+   "note": "Stern ist Standard (Georg q46 PASS, V-494); keine Kreis-Variante mehr"
+  },
+  "size": {
+   "scale": 1.0,
+   "note": "keine Größenstaffel (Georg: Missverständnis, V-494); alle Trupp-Mitglieder gleich groß"
+  },
+  "rifle_hold": "wie KayKit-Promo artwork.png: Gewehr (2,3 u) schräg vor dem Körper, Kolben unten zwischen den Stiefeln, Bajonett links am Kopf vorbei über die Krempe, linke Hand am Schloss (hand.l); rechter Arm schwingt"
+ },
+ "originals": {
+  "remove": [
+   "Original-Augen (Lab-NoEyes)"
+  ],
+  "keep": [
+   "KayKit-Tschako (rot) mit Federbusch",
+   "Kopf mit Schnurrbart, Brauen, roten Wangen",
+   "Aufziehschlüssel ToySoldier_WindupKey (dreht sich im Marsch)"
+  ]
+ },
+ "eyeRig": {
+  "required": true,
+  "version": "pet-eye-rig.v6",
+  "seat": "anchor",
+  "anchors": {
+   "L": "KFB_Eye_L_anchor (Bone head)",
+   "R": "KFB_Eye_R_anchor (Bone head)",
+   "from": "eye_anchor.l/r der NoEyes-Basis, glTF +Z frontal"
+  },
+  "settings": {
+   "R": 0.08,
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.34,
+   "gloss": 0.1,
+   "lidFit": 0.9,
+   "converge": 0.18,
+   "life": {
+    "on": true,
+    "wander": 0.09,
+    "tremor": 0.045
+   },
+   "blink": {
+    "minGap": 2.5,
+    "maxGap": 6.5,
+    "dur": 0.12
+   }
+  },
+  "lid": {
+   "colour": "#c9a99f",
+   "colourMode": "face-base-darkened"
+  },
+  "source": "eye-rig-medium.batch-1.json#toy-soldier (AUTO_CANDIDATE) → Anker-Sitz; Georg-Blick offen"
+ },
+ "animation": {
+  "clips": [
+   {
+    "name": "kfb_march_squad_a",
+    "loop": true,
+    "from": "KayKit Walking_A: steife Beine, linker Arm schwingt, rechter trägt das Gewehr senkrecht (Promo-Haltung r2); Schlüssel ½ Umdrehung je Schleife"
+   },
+   {
+    "name": "kfb_salute_squad_a",
+    "loop": false
+   }
+  ]
+ },
+ "voice": {
+  "cast": "toy-soldier, am_eric (vorhanden)"
+ },
+ "material": {
+  "clayProfile": "character",
+  "uniform": "Royal Blue #4f7fea → #18338f (rote Palettenfelder umgefärbt)"
+ },
+ "approval": {
+  "status": "proof-r3",
+  "by": null,
+  "date": null,
+  "vRef": [
+   "V-464",
+   "V-412",
+   "V-425"
+  ]
+ },
+ "todo": [
+  "Georg: Stern oder Kreis",
+  "Georg: Größen je Nummer (V-060 beachten)"
+ ],
+ "roles": {
+  "squad": "B11 r3 (Tschako + Nummer)",
+  "traffic_cop": "B11 r2 ToySoldierCop_rank1–3.r2.glb (Schirmmütze), nicht Standard"
+ },
+ "meta": {
+  "rev": "r4"
+ }
+}

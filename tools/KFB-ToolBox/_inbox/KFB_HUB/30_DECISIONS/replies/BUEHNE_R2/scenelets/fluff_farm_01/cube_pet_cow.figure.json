@@ -1,0 +1,53 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "cube_pet_cow_b44",
+ "displayName": "Kuh (Cube Pet)",
+ "role": "pet",
+ "story": "B44 (V-549): Kenney Cube Pet als Hoftier, KFB-Augen statt aufgemalter Augenscheiben, kein Mund.",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B44/props/KFB_CubePet_cow.r1.glb",
+   "onMain": false
+  },
+  "rig": "Knoten-Animation (Kenney, ohne Skin)"
+ },
+ "eyeRig": {
+  "required": true,
+  "version": "pet-eye-rig.v6",
+  "seat": "anchor",
+  "anchors": {
+   "L": "eye_anchor.l",
+   "R": "eye_anchor.r",
+   "from": "B44 b44_pets_tractor.py: Kenney-Augenscheiben entfernt"
+  },
+  "settings": {
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.42,
+   "converge": 0.12,
+   "life": {
+    "on": true
+   }
+  },
+  "lid": {
+   "colour": "#e1e1ec",
+   "colourMode": "skin-measured",
+   "note": "Farbe der größten Gesichtsfläche"
+  }
+ },
+ "mouth": {
+  "owner": "none",
+  "note": "vorerst ohne Mund (Brief B44)"
+ },
+ "material": {
+  "clayProfile": "character"
+ },
+ "approval": {
+  "status": "proof-r1",
+  "vRef": [
+   "V-549"
+  ]
+ },
+ "licenses": {
+  "body": "Kenney Cube Pets 1.0 – CC0"
+ }
+}

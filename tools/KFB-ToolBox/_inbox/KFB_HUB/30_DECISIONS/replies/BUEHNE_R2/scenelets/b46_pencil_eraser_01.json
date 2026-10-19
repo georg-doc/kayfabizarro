@@ -1,0 +1,284 @@
+{
+ "schema": "kfb.scenelet/1",
+ "id": "b46_pencil_eraser_01",
+ "title": "Bleistift & Radiergummi",
+ "kind": "vignette",
+ "version": 1,
+ "status": "review",
+ "source": {
+  "from": "wsb-b46",
+  "ref": "50_BLENDER/B46",
+  "decision": "V-553"
+ },
+ "units": "u",
+ "m_per_u": 0.616381042,
+ "up": "y",
+ "forward": "+z",
+ "space": "gltf",
+ "assets": {
+  "pencil": {
+   "ref": "dropbox:50_BLENDER/B46/props/KFB_Prop_Pencil.r1.glb",
+   "b64": "scenelets/b46_pencil_eraser_01/pencil.glb.b64.txt",
+   "sha256": "8e3934d63625cc21183159f1ec55543c9e9dd6ed8e3f92201b6fedd5ac4340a5",
+   "bytes": 98416,
+   "private": false,
+   "license": "KayKit RPG Tools Bits 1.0 FREE pencil_B_long – CC0 (Kay Lousberg); Mund KFB R3 clay_neutral_r3 (eigen)",
+   "rig": "KFB_Squash/head",
+   "clips": [
+    "Idle",
+    "Hop",
+    "Joy",
+    "Scare",
+    "Write"
+   ],
+   "encoding": "base64"
+  },
+  "eraser": {
+   "ref": "dropbox:50_BLENDER/B46/props/KFB_Prop_Eraser.r1.glb",
+   "b64": "scenelets/b46_pencil_eraser_01/eraser.glb.b64.txt",
+   "sha256": "479091b2c540ae6089d85ddb321bd2adad0a66cbd9df7f55b604e964c9d6fe93",
+   "bytes": 235328,
+   "private": false,
+   "license": "Eigenbau WSB (Knet-Block, kein lokales CC0-Asset); Mund KFB R3 clay_neutral_r3 (eigen)",
+   "rig": "KFB_Squash/head",
+   "clips": [
+    "Idle",
+    "Hop",
+    "Joy",
+    "Scare",
+    "Erase"
+   ],
+   "encoding": "base64"
+  }
+ },
+ "actors": [
+  {
+   "id": "bleistift",
+   "asset": "pencil",
+   "p": [
+    -0.9,
+    0,
+    0
+   ],
+   "ry": 20,
+   "s": 1,
+   "card": "scenelets/b46_pencil_eraser_01/pencil.figure.json",
+   "clip": "Idle",
+   "loop": true,
+   "phase": 0.0,
+   "role": "lead",
+   "procedural": {
+    "idle": "Clip Idle (atmen); Hüpfen/Squash/Neigen auch prozedural am Knochen head möglich, Drehpunkt Boden"
+   },
+   "note": "zeichnet Karten (Write: Spitze am Boden, kritzelt)"
+  },
+  {
+   "id": "radiergummi",
+   "asset": "eraser",
+   "p": [
+    0.9,
+    0,
+    0
+   ],
+   "ry": -20,
+   "s": 1,
+   "card": "scenelets/b46_pencil_eraser_01/eraser.figure.json",
+   "clip": "Idle",
+   "loop": true,
+   "phase": 0.4,
+   "procedural": {
+    "idle": "Clip Idle (atmen); prozedural am Knochen head möglich"
+   },
+   "note": "radiert Tinte weg (Erase: reibt hin und her, Kante bleibt über dem Boden)"
+  }
+ ],
+ "props": [],
+ "timeline": {
+  "clock": {
+   "bpm": null,
+   "fps": 30,
+   "length": 8.0
+  },
+  "tracks": [],
+  "cues": [
+   {
+    "t": 0.5,
+    "actor": "bleistift",
+    "clip": "Write"
+   },
+   {
+    "t": 1.0,
+    "actor": "radiergummi",
+    "clip": "Scare"
+   },
+   {
+    "t": 2.6,
+    "actor": "radiergummi",
+    "clip": "Erase"
+   },
+   {
+    "t": 3.0,
+    "actor": "bleistift",
+    "clip": "Hop"
+   },
+   {
+    "t": 5.0,
+    "actor": "bleistift",
+    "clip": "Joy"
+   },
+   {
+    "t": 5.2,
+    "actor": "radiergummi",
+    "clip": "Joy"
+   },
+   {
+    "t": 6.6,
+    "actor": "bleistift",
+    "clip": "Idle",
+    "loop": true
+   },
+   {
+    "t": 6.6,
+    "actor": "radiergummi",
+    "clip": "Idle",
+    "loop": true
+   }
+  ],
+  "note": "Vorschlag: Bleistift kritzelt, Radiergummi erschrickt und radiert es weg, Bleistift hüpft, beide freuen sich. Marken je Clip im GLB (extras.kfb.markers)."
+ },
+ "cameras": [
+  {
+   "id": "zwei",
+   "preset": "custom",
+   "target": [
+    0,
+    0.8,
+    0
+   ],
+   "az_deg": 0,
+   "el_deg": 12,
+   "fov": 30,
+   "frame": "beide Figuren"
+  }
+ ],
+ "light": {
+  "rig": "kfb-stage-light.v1.1",
+  "mood": "MOODS_MESA",
+  "tod": "day",
+  "note": "kein Gegenlicht, keine Emission (V-385)"
+ },
+ "palette": {
+  "note": "Rollen-Materialien kfb_role_pencil_0/1, wood, graphite, metal, eraser_0/1, eraserbase_0 (umschaltbar per Materialname)"
+ },
+ "world": {
+  "anchor": [
+   0,
+   0,
+   0
+  ],
+  "footprint": {
+   "shape": "rect",
+   "w_u": 4,
+   "d_u": 3
+  },
+  "note": "freie Bühne; später auf Karte bzw. Black-Goo-Fläche (V-531)"
+ },
+ "review": {
+  "hub": null,
+  "gates": [
+   "G1",
+   "G2",
+   "G3",
+   "G5",
+   "G6"
+  ],
+  "axisLines": true
+ },
+ "ground_lift_u": {
+  "Idle_KFB_Pencil": [],
+  "Hop_KFB_Pencil": [],
+  "Joy_KFB_Pencil": [],
+  "Scare_KFB_Pencil": [],
+  "Write_KFB_Pencil": [],
+  "Idle_KFB_Eraser": [],
+  "Hop_KFB_Eraser": [],
+  "Joy_KFB_Eraser": [
+   [
+    29,
+    0.0256
+   ],
+   [
+    33,
+    0.0168
+   ]
+  ],
+  "Scare_KFB_Eraser": [
+   [
+    6,
+    0.0086
+   ],
+   [
+    8,
+    0.0085
+   ],
+   [
+    10,
+    0.0086
+   ],
+   [
+    12,
+    0.0085
+   ],
+   [
+    14,
+    0.0069
+   ],
+   [
+    28,
+    0.0018
+   ]
+  ],
+  "Erase_KFB_Eraser": [
+   [
+    8,
+    0.0435
+   ],
+   [
+    12,
+    0.0458
+   ],
+   [
+    17,
+    0.0458
+   ],
+   [
+    22,
+    0.0458
+   ],
+   [
+    27,
+    0.0458
+   ],
+   [
+    32,
+    0.0458
+   ],
+   [
+    37,
+    0.0458
+   ],
+   [
+    42,
+    0.0458
+   ],
+   [
+    47,
+    0.0458
+   ],
+   [
+    54,
+    0.0435
+   ]
+  ]
+ }
+}

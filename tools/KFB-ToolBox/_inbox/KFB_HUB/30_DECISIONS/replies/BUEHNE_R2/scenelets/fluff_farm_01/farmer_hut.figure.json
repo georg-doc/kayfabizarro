@@ -1,0 +1,49 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "kfb_farmer_hut",
+ "displayName": "Farmerin mit Hut in der Hand (rotes Haar)",
+ "role": "npc",
+ "story": "B44 (V-549) Fluff-Farm: KayKit Mystery S6 „12 – Farmers“, KFB-Augen statt Pillenaugen, Mund aufgemalt (Original).",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B44/_privat_kauf_asset/KFB_Farmer_farmer_hut.r1.glb (privat, Kauf-Asset)",
+   "onMain": false
+  },
+  "rig": "Rig_Medium"
+ },
+ "eyeRig": {
+  "required": true,
+  "version": "pet-eye-rig.v6",
+  "seat": "anchor",
+  "anchors": {
+   "L": "eye_anchor.l",
+   "R": "eye_anchor.r",
+   "from": "B44 b44_farmers.py: Pillenaugen gelöscht, Kappe am Anker"
+  },
+  "settings": {
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.4,
+   "converge": 0.12,
+   "life": {
+    "on": true
+   }
+  },
+  "lid": {
+   "colour": "#f2a87e",
+   "colourMode": "skin-measured",
+   "note": "Median der Haut-Texel im Ring 1,3–2,4 × Augenradius (Variante-Textur)"
+  }
+ },
+ "material": {
+  "clayProfile": "character"
+ },
+ "approval": {
+  "status": "proof-r1",
+  "vRef": [
+   "V-549"
+  ]
+ },
+ "licenses": {
+  "body": "KayKit Mystery Monthly S6 „12 – June 2026 – Farmers“ (Kauf) → privat"
+ }
+}
