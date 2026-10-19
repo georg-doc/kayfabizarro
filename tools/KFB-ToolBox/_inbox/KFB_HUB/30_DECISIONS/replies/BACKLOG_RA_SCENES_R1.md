@@ -29,3 +29,8 @@ Arbeitsteilung: **WS0** konvertiert die Daten und baut Bühne + Laufzeit. **WSB*
 6. MIB-Einsatz, Brick-Fish-Duell.
 
 **Mac mini dauerhaft beschäftigt (WSB-Warteschlange):** B44 Fluff-Farm → Ork-Band-Assets → King Kayfabian + Dark Knight + Castle (B45) → Gefängnis-Labyrinth + Panoptikum (B47) → Gunfight-Assets (Kampfset) → Disco-Assets → Clown + Zirkuszelt → Wrestling-Ring mit Gummiseilen → Ninja.
+
+
+## Nachtrag 19.10. (V-555–V-557)
+- WSB-Warteschlange neu: Ork-Band r1b (Gummiarm ×2,0–2,3) → B45 King → B47 Labyrinth → **B48 Rollenspiel-Lager** → Gunfight → Disco → Clown → Wrestling → Ninja.
+- B48 Schritt 2 (Platons Höhle als Innenraum, Schattenspiel-Kino) bleibt hier als P2-Szene notiert.
