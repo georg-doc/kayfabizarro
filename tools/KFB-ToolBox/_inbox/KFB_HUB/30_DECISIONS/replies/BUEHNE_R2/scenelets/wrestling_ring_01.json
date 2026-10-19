@@ -1,0 +1,336 @@
+{
+ "schema": "kfb.scenelet/1",
+ "rev": "R2",
+ "id": "wrestling_ring_01",
+ "title": "Wrestling · Orc Raider gegen Orc Brute im Ring mit Gummiseilen",
+ "kind": "fight",
+ "version": 1,
+ "status": "review",
+ "source": {
+  "from": "wsb-b50-wrestling",
+  "ref": "50_BLENDER/B50/wrestling",
+  "ra": "65_SCENELETS/ra/ra_fight_01.scenelet.json",
+  "data": "BLENDER MCP/FIGHT_SANDBOX_03/KFB_Fight_Cartoon_Contact_03.json (Kopie im Scenelet)",
+  "decision": "V-550 Backlog P3 · V-559"
+ },
+ "units": "u",
+ "m_per_u": 0.616381042,
+ "space": "gltf",
+ "up": "y",
+ "forward": "+z",
+ "clock": {
+  "fps": 30
+ },
+ "assets": {
+  "raider": {
+   "ref": "dropbox:50_BLENDER/B50/wrestling/_privat_kauf_asset/KFB_Fight_raider.r1.glb",
+   "b64": "scenelets/wrestling_ring_01/raider.glb.b64.txt",
+   "sha256": "eca6063b7c8c9cff937cd12e5b52ba69bef92ad1f58188c11962837e7954bb66",
+   "bytes": 1112000,
+   "private": true,
+   "license": "KayKit Mystery S6 (Kauf) → privat; Kampf-Clips Motion Library v2/v4 (Mixamo-Ableitung, nur Laufzeit)",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "fight_raider.figure.json",
+   "encoding": "base64"
+  },
+  "brute": {
+   "ref": "dropbox:50_BLENDER/B50/wrestling/_privat_kauf_asset/KFB_Fight_brute.r1.glb",
+   "b64": "scenelets/wrestling_ring_01/brute.glb.b64.txt",
+   "sha256": "123c3e60a3e42ce20c900e96b405e08f0444913ce25a1edac624e37e5945ba7a",
+   "bytes": 1533804,
+   "private": true,
+   "license": "KayKit Mystery S6 (Kauf) → privat; Kampf-Clips Motion Library v2/v4 (Mixamo-Ableitung, nur Laufzeit)",
+   "preview": false,
+   "rig": "Rig_Large",
+   "card": "fight_brute.figure.json",
+   "encoding": "base64"
+  },
+  "ring": {
+   "ref": "dropbox:50_BLENDER/B50/wrestling/diorama/KFB_Wrestling_Ring.r1.glb",
+   "b64": "scenelets/wrestling_ring_01/ring.glb.b64.txt",
+   "sha256": "069e7aaa71763dbc837c98247bdf3926fe3b40973e1cb1567a738f355b865d26",
+   "bytes": 647448,
+   "private": false,
+   "license": "eigen (WSB), CC0",
+   "preview": false,
+   "kind": "stage",
+   "size": "Raider-Paar (K 1)",
+   "clips": [
+    "kfb_ring_rope_rebound_N",
+    "kfb_ring_rope_rebound_E",
+    "kfb_ring_rope_rebound_S",
+    "kfb_ring_rope_rebound_W"
+   ],
+   "encoding": "base64"
+  },
+  "ring_x151": {
+   "ref": "dropbox:50_BLENDER/B50/wrestling/diorama/KFB_Wrestling_Ring_x151.r1.glb",
+   "b64": "scenelets/wrestling_ring_01/ring_x151.glb.b64.txt",
+   "sha256": "8207f1f82fcb398d210f44ebce27b34c5666b2c5bfaaecded26718a3311439d3",
+   "bytes": 656676,
+   "private": false,
+   "license": "eigen (WSB), CC0",
+   "preview": false,
+   "kind": "stage",
+   "size": "Raider gegen Brute (K 1,51)",
+   "clips": [
+    "kfb_ring_rope_rebound_N",
+    "kfb_ring_rope_rebound_E",
+    "kfb_ring_rope_rebound_S",
+    "kfb_ring_rope_rebound_W"
+   ],
+   "encoding": "base64"
+  }
+ },
+ "stage": {
+  "asset": "ring_x151",
+  "p": [
+   0,
+   0,
+   0
+  ],
+  "ry": 0,
+  "mat_top_u": 1.208,
+  "anchors": {
+   "center": [
+    0,
+    1.208,
+    0
+   ],
+   "rope_mid": {
+    "N": "KFB_Rope_N_Mid",
+    "E": "KFB_Rope_E_Mid",
+    "S": "KFB_Rope_S_Mid",
+    "W": "KFB_Rope_W_Mid"
+   }
+  },
+  "alt": {
+   "raider_pair": "ring (K 1)"
+  },
+  "scale_rule": "K = Höhe größerer/kleinerer Kämpfer (unsere Figuren: Brute 3,70 u / Raider 2,46 u = 1,51). Die Sandkasten-Regel ×2,568 (Rig-Maßstab) passt nicht zu den KayKit-Figuren. Seile sind gehäutet, darum je K eine fertige Datei statt Laufzeit-Skalierung."
+ },
+ "actors": [
+  {
+   "id": "A",
+   "cast": "orc_raider",
+   "asset": "raider",
+   "card": "scenelets/wrestling_ring_01/fight_raider.figure.json",
+   "role": "fighter_a",
+   "p": [
+    -3.0,
+    1.208,
+    0
+   ],
+   "ry_rule": "rotation.y = D − forwardYawDeg(clip) (Kontaktdaten facing)",
+   "clip": "kfb_action_boxing_a"
+  },
+  {
+   "id": "B",
+   "cast": "orc_brute",
+   "asset": "brute",
+   "card": "scenelets/wrestling_ring_01/fight_brute.figure.json",
+   "role": "fighter_b",
+   "p": [
+    3.5,
+    1.208,
+    0
+   ],
+   "ry_rule": "wie A, D = Richtung zum Gegner",
+   "clip": "kfb_action_boxing_a"
+  }
+ ],
+ "timeline": {
+  "clock": {
+   "fps": 30,
+   "length": 10.0
+  },
+  "script": [
+   {
+    "t": 0.0,
+    "beat": "stance",
+    "A": "kfb_action_boxing_a",
+    "B": "kfb_action_boxing_a"
+   },
+   {
+    "t": 1.0,
+    "beat": "attack",
+    "attacker": "A",
+    "attack": "kfb_action_punching_a",
+    "reaction": "kfb_reaction_taking_punch_a",
+    "contactFrame": 37,
+    "hitstop_frames": 4
+   },
+   {
+    "t": 3.0,
+    "beat": "attack",
+    "attacker": "B",
+    "attack": "kfb_action_hook_punch_a",
+    "reaction": "kfb_reaction_shoved_reaction_with_spin_a",
+    "then": "A taumelt zur Ost-Seite"
+   },
+   {
+    "t": 4.6,
+    "beat": "ropes",
+    "actor": "A",
+    "side": "E",
+    "ring_clip": "kfb_ring_rope_rebound_E",
+    "launch_at": 0.42,
+    "note": "A kreuzt die Seil-Ebene Ost → Seil-Clip; bei launch läuft A zurück zur Mitte (kfb_locomotion_run_a)"
+   },
+   {
+    "t": 6.0,
+    "beat": "attack",
+    "attacker": "A",
+    "attack": "kfb_action_flying_kick_a",
+    "reaction": "kfb_reaction_fall_flat_a",
+    "contactFrame": "aus Kontaktdaten",
+    "then": "B liegt; lift aus Kontaktdaten (Brute sauber)"
+   },
+   {
+    "t": 9.0,
+    "beat": "end",
+    "A": "kfb_action_boxing_a",
+    "B": "kfb_reaction_getting_up_a (optional) oder liegen bleiben"
+   }
+  ],
+  "rules": {
+   "contact": "KFB_Fight_Cartoon_Contact_03.json runtimeRules (placement, separation, impact/hit-stop 4 Bilder, squash, puff)",
+   "rope_rebound": "Kämpfer-Kapsel kreuzt die Seil-Ebene einer Seite → kfb_ring_rope_rebound_<side>; bei Marke launch Kämpfer mit Eindring-Geschwindigkeit ×1,2 zur Mitte schleudern",
+   "rope_clips": {
+    "kfb_ring_rope_rebound_N": {
+     "len_s": 1.4,
+     "markers": {
+      "contact": 0.0,
+      "max_stretch": 0.25,
+      "launch": 0.42,
+      "settle": 1.4
+     },
+     "peak_out_u": 1.6610000000000003,
+     "overshoot_in_u": 0.589
+    },
+    "kfb_ring_rope_rebound_E": {
+     "len_s": 1.4,
+     "markers": {
+      "contact": 0.0,
+      "max_stretch": 0.25,
+      "launch": 0.42,
+      "settle": 1.4
+     },
+     "peak_out_u": 1.6610000000000003,
+     "overshoot_in_u": 0.589
+    },
+    "kfb_ring_rope_rebound_S": {
+     "len_s": 1.4,
+     "markers": {
+      "contact": 0.0,
+      "max_stretch": 0.25,
+      "launch": 0.42,
+      "settle": 1.4
+     },
+     "peak_out_u": 1.6610000000000003,
+     "overshoot_in_u": 0.589
+    },
+    "kfb_ring_rope_rebound_W": {
+     "len_s": 1.4,
+     "markers": {
+      "contact": 0.0,
+      "max_stretch": 0.25,
+      "launch": 0.42,
+      "settle": 1.4
+     },
+     "peak_out_u": 1.6610000000000003,
+     "overshoot_in_u": 0.589
+    }
+   }
+  },
+  "cues": [
+   {
+    "beat": "attack",
+    "at": "contactFrame",
+    "sfx": "punch_thud"
+   },
+   {
+    "beat": "ropes",
+    "at": "max_stretch",
+    "sfx": "rope_twang"
+   },
+   {
+    "beat": "attack",
+    "reaction": "kfb_reaction_fall_flat_a",
+    "sfx": "body_slam"
+   }
+  ]
+ },
+ "cameras": [
+  {
+   "id": "totale",
+   "az_deg": -30,
+   "el_deg": 34,
+   "fov": 30,
+   "target": [
+    0,
+    1.208,
+    0
+   ],
+   "span_u": 20
+  },
+  {
+   "id": "ring_nah",
+   "az_deg": -18,
+   "el_deg": 26,
+   "fov": 30,
+   "span_u": 9.5
+  },
+  {
+   "id": "seile_ost",
+   "az_deg": -35,
+   "el_deg": 24,
+   "fov": 30,
+   "span_u": 8
+  }
+ ],
+ "light": {
+  "rig": "kfb-stage-light.v1.1",
+  "mood": "MOODS_MESA",
+  "tod": "day",
+  "note": "keine Emission (V-385)"
+ },
+ "world": {
+  "anchor": [
+   0,
+   0,
+   0
+  ],
+  "placement": "grammar-r2",
+  "tags": [
+   "fight",
+   "ring",
+   "cartoon-contact"
+  ],
+  "terrain": {
+   "biome": "sand"
+  }
+ },
+ "open": [
+  "Clown-Hammer als Requisite: Kontaktdaten 0.3 nennen Durchstich in Ausholen/Nachschwung (Hammer-Space-Vorschlag) – in r1 nicht gesetzt",
+  "Liege-Hebung Raider: Georgs Wahl aus lying_options (Kontaktdaten §3) offen"
+ ],
+ "review": {
+  "gates": [
+   "G1",
+   "G2",
+   "G3",
+   "G5",
+   "G6"
+  ],
+  "qa": [
+   "V-520 a–h"
+  ],
+  "views": [
+   "_privat_kauf_asset/renders/B50_wrestling_totale.png",
+   "_privat_kauf_asset/renders/B50_wrestling_streifen.png",
+   "renders/B50_ring_seil_rueckfeder.png"
+  ]
+ }
+}

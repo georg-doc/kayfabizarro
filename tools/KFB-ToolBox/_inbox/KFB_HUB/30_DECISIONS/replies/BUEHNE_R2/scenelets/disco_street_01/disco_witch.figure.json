@@ -1,0 +1,57 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "kfb_disco_witch",
+ "displayName": "Hexe · tanzt Samba",
+ "role": "dancer",
+ "story": "B50 Disco (ra_disco_01): Straßenparty, bpm 100, HIT 1 alle Chicken Dance",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_witch.r1.glb",
+   "sha256": "41f3f0ec4e8a9db37f7e3c1c176eeba9b83df0b4da5a0d977b87c36ec1e33374",
+   "onMain": false,
+   "private": true
+  },
+  "rig": "Rig_Medium"
+ },
+ "eyeRig": {
+  "required": true,
+  "version": "pet-eye-rig.v6",
+  "seat": "cap",
+  "anchors": {
+   "L": "eye_anchor.l",
+   "R": "eye_anchor.r",
+   "from": "B50 Disco: KayKit-Augen ersetzt"
+  },
+  "settings": {
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.42,
+   "converge": 0.12,
+   "life": {
+    "on": true
+   }
+  },
+  "lid": {
+   "colour": "#f5bc98",
+   "colourMode": "skin-measured"
+  }
+ },
+ "mouth": {
+  "owner": "original-mesh",
+  "note": "KayKit-Original"
+ },
+ "material": {
+  "clayProfile": "character"
+ },
+ "approval": {
+  "status": "proof-r1",
+  "vRef": [
+   "V-548",
+   "V-550",
+   "V-552",
+   "V-559"
+  ]
+ },
+ "licenses": {
+  "body": "KayKit Mystery (Kauf) → privat; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat"
+ }
+}

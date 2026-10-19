@@ -1,0 +1,58 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "kfb_disco_knight",
+ "displayName": "Black Knight · tanzt House/Slide (ohne Zweihänder, Umhang gekürzt)",
+ "role": "dancer",
+ "story": "B50 Disco (ra_disco_01): Straßenparty, bpm 100, HIT 1 alle Chicken Dance",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_knight.r1.glb",
+   "sha256": "137836392a2c50a091cc2d5484cd012f65843712987a334612fc1dcfc7a2fe3c",
+   "onMain": false,
+   "private": true
+  },
+  "rig": "Rig_Large"
+ },
+ "eyeRig": {
+  "required": true,
+  "version": "pet-eye-rig.v6",
+  "seat": "cap",
+  "anchors": {
+   "L": "eye_anchor.l",
+   "R": "eye_anchor.r",
+   "from": "B45 Augenschlitz ins Visier geschnitten (Boolean), Augen halb verdeckt von den Schlitzkanten"
+  },
+  "settings": {
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.42,
+   "converge": 0.12,
+   "life": {
+    "on": true
+   }
+  },
+  "lid": {
+   "colour": "#35373c",
+   "colourMode": "slit-dark",
+   "note": "Lid = Dunkel des Schlitzes: geschlossen verschwinden die Augen im Visier"
+  }
+ },
+ "mouth": {
+  "owner": "none",
+  "note": "geschlossener Helm, kein Mund"
+ },
+ "material": {
+  "clayProfile": "character"
+ },
+ "approval": {
+  "status": "proof-r1",
+  "vRef": [
+   "V-548",
+   "V-550",
+   "V-552",
+   "V-559"
+  ]
+ },
+ "licenses": {
+  "body": "KayKit Mystery S5 Black Knight (B45 r1c); Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat"
+ }
+}

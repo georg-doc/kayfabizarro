@@ -289,20 +289,20 @@ function place(o, x) { o.position.set(...(x.p || [0, 0, 0])); if (x.q) o.quatern
 function findClip(names, want) { if (!want) return null; if (names.includes(want)) return want; const lw = want.toLowerCase(); return names.find((n) => n.toLowerCase() === lw) || names.find((n) => n.toLowerCase().includes(lw) || lw.includes(n.toLowerCase())) || null; }
 
 let castReg = null;
-async function loadCastReg() { if (castReg) return castReg; try { castReg = await (await fetch('scenelets/cast.json')).json(); } catch (e) { castReg = { actors: {} }; } return castReg; }
+async function loadCastReg() { if (castReg) return castReg; try { castReg = await (await fetch('scenelets/cast.json', { cache: 'no-cache' })).json(); } catch (e) { castReg = { actors: {} }; } return castReg; }
 async function loadIndex() {
-  const idx = await (await fetch('scenelets/index.json')).json();
+  const idx = await (await fetch('scenelets/index.json', { cache: 'no-cache' })).json();   /* nach Updates nie alte Szenenliste */
   $('selScenelet').replaceChildren(...idx.items.map((it) => { const o = document.createElement('option'); o.value = it.file; o.textContent = it.title; return o; }));
   $('selScenelet').onchange = () => loadScenelet($('selScenelet').value);
   let first = idx.items[0]?.file; try { const s = localStorage.getItem('buehne-sc'); if (s && idx.items.some((i) => i.file === s)) first = s; } catch (e) {}
-  if (first) { $('selScenelet').value = first; await loadScenelet(first); }
+  if (first) { $('selScenelet').value = first; await loadScenelet($('selScenelet').value || first); }
 }
 
 async function loadScenelet(file) {
   try { localStorage.setItem('buehne-sc', file); } catch (e) {}
   $('msg').hidden = false; $('msg').textContent = 'Scenelet lädt …'; chips([['lädt …', 'busy']]);
   tc.detach(); actorsGroup.clear(); clearBeams(); state.actors = []; state.props = []; state.nodes = {}; state.rest = {}; state.tracks = []; stopAmbience();
-  const sc = await (await fetch(file)).json(); sc.assets = sc.assets || {}; state.sc = sc; state.len = sc.timeline?.clock?.length || 8;
+  const sc = await (await fetch(file, { cache: 'no-cache' })).json(); sc.assets = sc.assets || {}; state.sc = sc; state.len = sc.timeline?.clock?.length || 8;
   renderInfo(sc); $('json').textContent = JSON.stringify(sc, null, 1);
   const problems = [];
   /* props zuerst (Diorama = Bühne); 'stage' (Duell-Boden u. ä.) zählt als Bühnen-Requisite */
@@ -311,7 +311,8 @@ async function loadScenelet(file) {
     const asset = sc.assets[pr.asset]; if (!asset) { problems.push('Asset fehlt: ' + pr.asset); continue; }
     if (asset.preview) { problems.push('Vorschau-Datei: ' + pr.asset); }
     try {
-      const g = await loadAsset(asset); const root = g.scene.clone(true); place(root, pr); root.name = 'prop:' + pr.id;
+      const g = await loadAsset(asset); let skinned = false; g.scene.traverse((o) => { if (o.isSkinnedMesh) skinned = true; });
+      const root = skinned ? skClone(g.scene) : g.scene.clone(true); place(root, pr); root.name = 'prop:' + pr.id;   /* gehäutete Requisiten (Gummiseil-Ring) brauchen SkeletonUtils */
       root.traverse((m) => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true; } });
       actorsGroup.add(root);
       try { applyClay(root, THREE, { profile: pr.role === 'stage' ? 'midground' : 'character', seed: sc.id + ':' + pr.id, scaleRef: 'object' }); } catch (e) { console.warn('clay prop', e); }

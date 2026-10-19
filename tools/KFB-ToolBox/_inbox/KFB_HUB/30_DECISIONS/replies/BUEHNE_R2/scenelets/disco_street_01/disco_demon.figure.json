@@ -1,0 +1,57 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "kfb_disco_demon",
+ "displayName": "Demon Lord · tanzt Hip Hop",
+ "role": "dancer",
+ "story": "B50 Disco (ra_disco_01): Straßenparty, bpm 100, HIT 1 alle Chicken Dance",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_demon.r1.glb",
+   "sha256": "9e242074592065a7f7a22ef4c1b24d36d994b32e612054ebcd5fee8c82e48aa2",
+   "onMain": false,
+   "private": true
+  },
+  "rig": "Rig_Large"
+ },
+ "eyeRig": {
+  "required": true,
+  "version": "pet-eye-rig.v6",
+  "seat": "cap",
+  "anchors": {
+   "L": "eye_anchor.l",
+   "R": "eye_anchor.r",
+   "from": "B50 Disco: KayKit-Augen ersetzt"
+  },
+  "settings": {
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.42,
+   "converge": 0.12,
+   "life": {
+    "on": true
+   }
+  },
+  "lid": {
+   "colour": "#db4948",
+   "colourMode": "skin-measured"
+  }
+ },
+ "mouth": {
+  "owner": "original-mesh",
+  "note": "KayKit-Original"
+ },
+ "material": {
+  "clayProfile": "character"
+ },
+ "approval": {
+  "status": "proof-r1",
+  "vRef": [
+   "V-548",
+   "V-550",
+   "V-552",
+   "V-559"
+  ]
+ },
+ "licenses": {
+  "body": "KayKit Mystery (Kauf) → privat; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat"
+ }
+}

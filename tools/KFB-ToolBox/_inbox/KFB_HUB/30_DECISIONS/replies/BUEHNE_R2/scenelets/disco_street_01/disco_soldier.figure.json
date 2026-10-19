@@ -1,0 +1,67 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "kfb_disco_soldier",
+ "displayName": "Spielzeugsoldat Nr. 1 · tanzt Chicken/House",
+ "role": "dancer",
+ "story": "B50 Disco (ra_disco_01): Straßenparty, bpm 100, HIT 1 alle Chicken Dance",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_soldier.r1.glb",
+   "sha256": "32f6c6c3f63fb0ff4cdc937172c8f327cffde29a04880e5dfe942bcff7de4d6e",
+   "onMain": false,
+   "private": true
+  },
+  "rig": "Rig_Medium"
+ },
+ "eyeRig": {
+  "required": true,
+  "version": "pet-eye-rig.v6",
+  "seat": "anchor",
+  "anchors": {
+   "L": "KFB_Eye_L_anchor (Bone head)",
+   "R": "KFB_Eye_R_anchor (Bone head)",
+   "from": "eye_anchor.l/r der NoEyes-Basis, glTF +Z frontal"
+  },
+  "settings": {
+   "R": 0.08,
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.34,
+   "gloss": 0.1,
+   "lidFit": 0.9,
+   "converge": 0.18,
+   "life": {
+    "on": true,
+    "wander": 0.09,
+    "tremor": 0.045
+   },
+   "blink": {
+    "minGap": 2.5,
+    "maxGap": 6.5,
+    "dur": 0.12
+   }
+  },
+  "lid": {
+   "colour": "#c9a99f",
+   "colourMode": "face-base-darkened"
+  },
+  "source": "eye-rig-medium.batch-1.json#toy-soldier (AUTO_CANDIDATE) → Anker-Sitz; Georg-Blick offen"
+ },
+ "mouth": {
+  "owner": "original-mesh"
+ },
+ "material": {
+  "clayProfile": "character"
+ },
+ "approval": {
+  "status": "proof-r1",
+  "vRef": [
+   "V-548",
+   "V-550",
+   "V-552",
+   "V-559"
+  ]
+ },
+ "licenses": {
+  "body": "KayKit Mystery S6 Toy Soldier (B11 r5c, Trage-Gewehr ab); Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat"
+ }
+}

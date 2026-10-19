@@ -1,0 +1,757 @@
+{
+ "schema": "kfb.scenelet/1",
+ "rev": 2,
+ "id": "disco_street_01",
+ "title": "Disco · Straßenparty",
+ "kind": "dance",
+ "version": 1,
+ "status": "review",
+ "source": {
+  "from": "wsb-b50-disco",
+  "ref": "50_BLENDER/B50/disco",
+  "ra": "65_SCENELETS/ra/ra_disco_01.scenelet.json",
+  "decision": "V-548 / V-550 / V-552 / V-559 (B50 Block 3 Disco)"
+ },
+ "units": "u",
+ "m_per_u": 0.616381042,
+ "space": "gltf",
+ "up": "y",
+ "forward": "+z",
+ "clock": {
+  "fps": 30
+ },
+ "assets": {
+  "minion": {
+   "ref": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_minion.r1.glb",
+   "b64": "scenelets/disco_street_01/minion.glb.b64.txt",
+   "sha256": "4b38709b7dcef4d016f18221b16ca19a6ffac5ef719daba38d2679060198207e",
+   "bytes": 433728,
+   "private": true,
+   "license": "KayKit Skeletons (Kay Lousberg) CC0 1.0; Tanz-Clips Mixamo-Ableitung → privat; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "disco_minion.figure.json",
+   "encoding": "base64"
+  },
+  "avian": {
+   "ref": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_avian.r1.glb",
+   "b64": "scenelets/disco_street_01/avian.glb.b64.txt",
+   "sha256": "7e70a59109f1b775b680324735f1614143cfd86a829223a43f652c9875fdead4",
+   "bytes": 952680,
+   "private": true,
+   "license": "KayKit Mystery (Kauf) → privat; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "disco_avian.figure.json",
+   "encoding": "base64"
+  },
+  "teen": {
+   "ref": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_teen.r1.glb",
+   "b64": "scenelets/disco_street_01/teen.glb.b64.txt",
+   "sha256": "18ac0c6a5f725e9d6de7c4a8b28b4357d83c3a4c57df096053218c43fc33aeb2",
+   "bytes": 980800,
+   "private": true,
+   "license": "KayKit Mystery (Kauf) → privat; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "disco_teen.figure.json",
+   "encoding": "base64"
+  },
+  "soldier": {
+   "ref": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_soldier.r1.glb",
+   "b64": "scenelets/disco_street_01/soldier.glb.b64.txt",
+   "sha256": "32f6c6c3f63fb0ff4cdc937172c8f327cffde29a04880e5dfe942bcff7de4d6e",
+   "bytes": 970840,
+   "private": true,
+   "license": "KayKit Mystery S6 Toy Soldier (B11 r5c, Trage-Gewehr ab); Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "disco_soldier.figure.json",
+   "encoding": "base64"
+  },
+  "witch": {
+   "ref": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_witch.r1.glb",
+   "b64": "scenelets/disco_street_01/witch.glb.b64.txt",
+   "sha256": "41f3f0ec4e8a9db37f7e3c1c176eeba9b83df0b4da5a0d977b87c36ec1e33374",
+   "bytes": 1001016,
+   "private": true,
+   "license": "KayKit Mystery (Kauf) → privat; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "disco_witch.figure.json",
+   "encoding": "base64"
+  },
+  "knight": {
+   "ref": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_knight.r1.glb",
+   "b64": "scenelets/disco_street_01/knight.glb.b64.txt",
+   "sha256": "137836392a2c50a091cc2d5484cd012f65843712987a334612fc1dcfc7a2fe3c",
+   "bytes": 1139628,
+   "private": true,
+   "license": "KayKit Mystery S5 Black Knight (B45 r1c); Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat",
+   "preview": false,
+   "rig": "Rig_Large",
+   "card": "disco_knight.figure.json",
+   "encoding": "base64"
+  },
+  "demon": {
+   "ref": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_demon.r1.glb",
+   "b64": "scenelets/disco_street_01/demon.glb.b64.txt",
+   "sha256": "9e242074592065a7f7a22ef4c1b24d36d994b32e612054ebcd5fee8c82e48aa2",
+   "bytes": 1262868,
+   "private": true,
+   "license": "KayKit Mystery (Kauf) → privat; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat",
+   "preview": false,
+   "rig": "Rig_Large",
+   "card": "disco_demon.figure.json",
+   "encoding": "base64"
+  },
+  "radio": {
+   "ref": "dropbox:50_BLENDER/B50/disco/props/KFB_Disco_Radio.r1.glb",
+   "b64": "scenelets/disco_street_01/radio.glb.b64.txt",
+   "sha256": "d0f48801bbc5b8c2d50da92258dc1e265cf0a926d90675863839c6aff18e749b",
+   "bytes": 53388,
+   "private": false,
+   "license": "Tiny Treats Pleasant Picnic 1.0 FREE (Isa Lousberg), CC0",
+   "preview": false,
+   "kind": "prop",
+   "encoding": "base64"
+  },
+  "speaker": {
+   "ref": "dropbox:50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_Speaker.r1.glb",
+   "b64": "scenelets/disco_street_01/speaker.glb.b64.txt",
+   "sha256": "697dc65f9547dc110a1ddfdedc05d11d6aae9bf44aae7de4bec9a136725971a9",
+   "bytes": 30592,
+   "private": true,
+   "license": "KayKit Mystery S6 GothGirl_Speaker (Kauf) → privat",
+   "preview": false,
+   "kind": "prop",
+   "encoding": "base64"
+  },
+  "drum_pult": {
+   "ref": "dropbox:50_BLENDER/B50/disco/props/KFB_Disco_DrumPult.r1.glb",
+   "b64": "scenelets/disco_street_01/drum_pult.glb.b64.txt",
+   "sha256": "60fb8b87ab0fb2586c619e9658859b4278bba1cee59d238b62f6032e6e1bf899",
+   "bytes": 143812,
+   "private": false,
+   "license": "eigen (WSB), CC0 – Ersatz für Drum Machine 2 (CC-BY), WS0 19.10.",
+   "preview": false,
+   "kind": "prop",
+   "width_m": 2.1,
+   "roles": {
+    "lamp": "Lämpchen leuchten im Takt (Laufzeit)",
+    "pads": "Pads blinken auf Cues"
+   },
+   "encoding": "base64"
+  },
+  "disco_ball": {
+   "ref": "dropbox:50_BLENDER/B50/disco/props/KFB_Disco_Ball.r1.glb",
+   "b64": "scenelets/disco_street_01/disco_ball.glb.b64.txt",
+   "sha256": "1dec8328c462a732a9e462b55ce362ceccffb1658e569813b1ced5042868963a",
+   "bytes": 184592,
+   "private": false,
+   "license": "eigen (WSB), CC0",
+   "preview": false,
+   "kind": "prop",
+   "anchors": [
+    "KFB_Spin"
+   ],
+   "spin": "Disco_Ball_Tiles dreht um KFB_Spin (Laufzeit), Funkeln/Lichtflecken zur Laufzeit (V-385)",
+   "encoding": "base64"
+  },
+  "ground": {
+   "ref": "dropbox:50_BLENDER/B50/props/KFB_Duel_Ground.glb",
+   "b64": "scenelets/disco_street_01/ground.glb.b64.txt",
+   "sha256": "62570be74b287764fe2dfdacc9eaa400a8bccd43ad9f1aa630b2b448105eb7f3",
+   "bytes": 168944,
+   "private": false,
+   "license": "eigen (WSB), CC0",
+   "preview": false,
+   "kind": "stage",
+   "placeholder": true,
+   "encoding": "base64"
+  }
+ },
+ "actors": [
+  {
+   "id": "minion",
+   "p": [
+    -5.54,
+    0,
+    2.7
+   ],
+   "ry": 32,
+   "s": 1,
+   "clip": "bounce",
+   "loop": true,
+   "phase": 0.0,
+   "role": "comic hype figure next to the radio",
+   "faction": null,
+   "cast": "skeleton_minion",
+   "note": "zwischen den Hits Laufzeit-Hüpfen; bei HIT 1 kfb_dance_chicken_a (im GLB)",
+   "asset": "minion",
+   "card": "scenelets/disco_street_01/disco_minion.figure.json",
+   "clip_runtime": "grooves.legacy-bounce-v1 (prozedural, Laufzeit)"
+  },
+  {
+   "id": "avian",
+   "p": [
+    -2.29,
+    0,
+    3.38
+   ],
+   "ry": 12,
+   "s": 1,
+   "clip": "kfb_dance_wave_hip_hop_a",
+   "loop": true,
+   "phase": 0.0,
+   "role": "sharp, athletic dancer",
+   "faction": null,
+   "cast": "avian_swordsman",
+   "note": "Avian Swordsman",
+   "asset": "avian",
+   "card": "scenelets/disco_street_01/disco_avian.figure.json"
+  },
+  {
+   "id": "teen",
+   "p": [
+    0.14,
+    0,
+    4.32
+   ],
+   "ry": 0,
+   "s": 1,
+   "clip": "kfb_dance_house_b",
+   "loop": true,
+   "phase": 0.0,
+   "role": "teenage party resident",
+   "faction": null,
+   "cast": "protagonist_a",
+   "note": "Protagonist_A · teenager",
+   "asset": "teen",
+   "card": "scenelets/disco_street_01/disco_teen.figure.json"
+  },
+  {
+   "id": "soldier",
+   "p": [
+    4.19,
+    0,
+    3.24
+   ],
+   "ry": -16,
+   "s": 1,
+   "clip": "kfb_dance_chicken_a",
+   "loop": true,
+   "phase": 0.0,
+   "role": "stiff comic contrast",
+   "faction": null,
+   "cast": "toy_soldier",
+   "note": "Toy Soldier",
+   "asset": "soldier",
+   "card": "scenelets/disco_street_01/disco_soldier.figure.json"
+  },
+  {
+   "id": "witch",
+   "p": [
+    2.03,
+    0,
+    1.22
+   ],
+   "ry": -6,
+   "s": 1,
+   "clip": "kfb_dance_samba_a",
+   "loop": true,
+   "phase": 0.0,
+   "role": "loose, flowing dancer",
+   "faction": null,
+   "cast": "witch",
+   "note": "Witch",
+   "asset": "witch",
+   "card": "scenelets/disco_street_01/disco_witch.figure.json"
+  },
+  {
+   "id": "knight",
+   "p": [
+    -2.97,
+    0,
+    -3.1
+   ],
+   "ry": 18,
+   "s": 1,
+   "clip": "kfb_dance_house_a",
+   "loop": true,
+   "phase": 0.0,
+   "role": "heavy groove, rear-left visual anchor",
+   "faction": null,
+   "cast": "black_knight",
+   "note": "Disco-Fassung: ohne Zweihänder, Umhang gekürzt (V-506), damit er beim Tanzen nicht durch den Boden schleift",
+   "asset": "knight",
+   "card": "scenelets/disco_street_01/disco_knight.figure.json"
+  },
+  {
+   "id": "demon",
+   "p": [
+    4.86,
+    0,
+    -2.7
+   ],
+   "ry": -22,
+   "s": 1,
+   "clip": "kfb_dance_hip_hop_a",
+   "loop": true,
+   "phase": 0.0,
+   "role": "big theatrical dancer, rear-right",
+   "faction": null,
+   "cast": "demon_lord",
+   "note": "Demon Lord",
+   "asset": "demon",
+   "card": "scenelets/disco_street_01/disco_demon.figure.json"
+  }
+ ],
+ "props": [
+  {
+   "id": "radio",
+   "asset": "radio",
+   "p": [
+    -7.56,
+    0,
+    2.03
+   ],
+   "ry": 48,
+   "s": 1,
+   "role": "story",
+   "pose": "ground",
+   "note": "Tiny Treats radio"
+  },
+  {
+   "id": "speaker.a",
+   "asset": "speaker",
+   "p": [
+    -8.91,
+    0,
+    -1.22
+   ],
+   "ry": 42,
+   "s": 1,
+   "role": "story",
+   "pose": "ground",
+   "note": "Goth Girl speaker"
+  },
+  {
+   "id": "speaker.b",
+   "asset": "speaker",
+   "p": [
+    8.37,
+    0,
+    0.27
+   ],
+   "ry": -48,
+   "s": 1,
+   "role": "story",
+   "pose": "ground",
+   "note": "Goth Girl speaker"
+  },
+  {
+   "id": "drum",
+   "asset": "drum_pult",
+   "p": [
+    0.95,
+    0.0,
+    -2.9
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "story",
+   "pose": "ground",
+   "note": "eigenes Drum-Pult, 2,1 m breit (statt Drum Machine 2)"
+  },
+  {
+   "id": "disco_ball",
+   "asset": "disco_ball",
+   "p": [
+    0,
+    0,
+    0
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "story",
+   "note": "hängt 7,5 u über der Mitte an einem Seil mit Lichterkette zwischen zwei Holzmasten (glTF z ±7,6 u), dreht um KFB_Spin"
+  }
+ ],
+ "timeline": {
+  "clock": {
+   "bpm": 100,
+   "phase": 0,
+   "length": 38.4
+  },
+  "tracks": [
+   {
+    "prop": "disco_ball",
+    "kind": "spin",
+    "node": "Disco_Ball_Tiles",
+    "pivot": "KFB_Spin",
+    "rps": 0.25
+   },
+   {
+    "prop": "drum_pult",
+    "kind": "beat_pulse",
+    "material_role": "lamp",
+    "bpm": 100
+   }
+  ],
+  "cues": [
+   {
+    "t": 0.0,
+    "actor": "avian",
+    "clip": "kfb_dance_wave_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 8.1,
+    "actor": "avian",
+    "clip": "kfb_dance_step_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 19.2,
+    "actor": "avian",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true,
+    "note": "HIT 1 · alle Chicken Dance, gleiche Phase"
+   },
+   {
+    "t": 25.5,
+    "actor": "avian",
+    "clip": "kfb_dance_locking_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 33.6,
+    "actor": "avian",
+    "clip": "kfb_idle_happy_a",
+    "loop": true,
+    "note": "HIT 2 · alle Happy Idle, gleiche Phase (Platzhalter für den fehlenden Cheer)"
+   },
+   {
+    "t": 0.6,
+    "actor": "demon",
+    "clip": "kfb_dance_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 11.7,
+    "actor": "demon",
+    "clip": "kfb_dance_step_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 19.2,
+    "actor": "demon",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true,
+    "note": "HIT 1 · alle Chicken Dance, gleiche Phase"
+   },
+   {
+    "t": 28.5,
+    "actor": "demon",
+    "clip": "kfb_dance_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 35.4,
+    "actor": "demon",
+    "clip": "kfb_dance_hip_hop_b",
+    "loop": true,
+    "note": "WSB: kfb_dance_locking_hip_hop_a → kfb_dance_hip_hop_b"
+   },
+   {
+    "t": 9.6,
+    "actor": "knight",
+    "clip": "kfb_dance_house_a",
+    "loop": true
+   },
+   {
+    "t": 15.6,
+    "actor": "knight",
+    "clip": "kfb_dance_slide_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 19.2,
+    "actor": "knight",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true,
+    "note": "HIT 1 · alle Chicken Dance, gleiche Phase"
+   },
+   {
+    "t": 28.2,
+    "actor": "knight",
+    "clip": "kfb_dance_hip_hop_b",
+    "loop": true,
+    "note": "WSB: kfb_dance_locking_hip_hop_a → kfb_dance_hip_hop_b"
+   },
+   {
+    "t": 33.6,
+    "actor": "knight",
+    "clip": "kfb_idle_happy_a",
+    "loop": true,
+    "note": "HIT 2 · alle Happy Idle, gleiche Phase (Platzhalter für den fehlenden Cheer)"
+   },
+   {
+    "t": 0.0,
+    "actor": "minion",
+    "clip": "bounce",
+    "loop": true,
+    "runtime": "legacy-bounce-v1"
+   },
+   {
+    "t": 19.2,
+    "actor": "minion",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true,
+    "note": "HIT 1 · alle Chicken Dance, gleiche Phase"
+   },
+   {
+    "t": 1.8,
+    "actor": "monstrosity",
+    "clip": "kfb_dance_slide_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 15.0,
+    "actor": "monstrosity",
+    "clip": "kfb_dance_house_b",
+    "loop": true
+   },
+   {
+    "t": 19.2,
+    "actor": "monstrosity",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true,
+    "note": "HIT 1 · alle Chicken Dance, gleiche Phase"
+   },
+   {
+    "t": 24.9,
+    "actor": "monstrosity",
+    "clip": "kfb_dance_wave_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 31.5,
+    "actor": "monstrosity",
+    "clip": "kfb_dance_step_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 0.15,
+    "actor": "soldier",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true
+   },
+   {
+    "t": 9.3,
+    "actor": "soldier",
+    "clip": "kfb_dance_house_a",
+    "loop": true
+   },
+   {
+    "t": 14.85,
+    "actor": "soldier",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true
+   },
+   {
+    "t": 19.2,
+    "actor": "soldier",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true,
+    "note": "HIT 1 · alle Chicken Dance, gleiche Phase"
+   },
+   {
+    "t": 31.8,
+    "actor": "soldier",
+    "clip": "kfb_dance_house_a",
+    "loop": true
+   },
+   {
+    "t": 33.6,
+    "actor": "soldier",
+    "clip": "kfb_idle_happy_a",
+    "loop": true,
+    "note": "HIT 2 · alle Happy Idle, gleiche Phase (Platzhalter für den fehlenden Cheer)"
+   },
+   {
+    "t": 2.4,
+    "actor": "teen",
+    "clip": "kfb_dance_house_b",
+    "loop": true
+   },
+   {
+    "t": 12.45,
+    "actor": "teen",
+    "clip": "kfb_dance_slide_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 19.2,
+    "actor": "teen",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true,
+    "note": "HIT 1 · alle Chicken Dance, gleiche Phase"
+   },
+   {
+    "t": 30.0,
+    "actor": "teen",
+    "clip": "kfb_dance_house_b",
+    "loop": true
+   },
+   {
+    "t": 34.5,
+    "actor": "teen",
+    "clip": "kfb_dance_slide_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 1.2,
+    "actor": "witch",
+    "clip": "kfb_dance_samba_a",
+    "loop": true
+   },
+   {
+    "t": 12.6,
+    "actor": "witch",
+    "clip": "kfb_dance_wave_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 19.2,
+    "actor": "witch",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true,
+    "note": "HIT 1 · alle Chicken Dance, gleiche Phase"
+   },
+   {
+    "t": 30.6,
+    "actor": "witch",
+    "clip": "kfb_dance_samba_a",
+    "loop": true
+   },
+   {
+    "t": 30.6,
+    "actor": "witch",
+    "clip": "kfb_dance_house_a",
+    "loop": true
+   }
+  ],
+  "script": null
+ },
+ "cameras": [
+  {
+   "id": "hit1_ensemble",
+   "az_deg": 28,
+   "el_deg": 38,
+   "fov": 30,
+   "target": [
+    0,
+    2.595796903176007,
+    0
+   ],
+   "span_u": 16.9,
+   "note": "Abnahme HIT 1 (t 19,2 s)"
+  },
+  {
+   "id": "nah",
+   "preset": "near_face"
+  }
+ ],
+ "light": {
+  "rig": "kfb-stage-light.v1.1",
+  "mood": "MOODS_MESA",
+  "tod": "day",
+  "note": "Discolicht/Funkeln zur Laufzeit; im GLB keine Emission (V-385)"
+ },
+ "world": {
+  "anchor": [
+   0,
+   0,
+   0
+  ],
+  "placement": "grammar-r2",
+  "tags": [
+   "disco",
+   "party",
+   "street"
+  ],
+  "terrain": {
+   "biome": "meadow"
+  },
+  "reserved": {
+   "band": {
+    "zone": {
+     "min": [
+      9.8,
+      -5.4
+     ],
+     "max": [
+      15.6,
+      2.7
+     ]
+    },
+    "note": "room for the ORB band on the right, not mounted in this pass"
+   }
+  }
+ },
+ "review": {
+  "gates": [
+   "G1",
+   "G2",
+   "G3",
+   "G5",
+   "G6"
+  ],
+  "qa": [
+   "V-520 a–h"
+  ],
+  "views": [
+   "_privat_kauf_asset/renders/r1/B50_disco_hit1_ensemble.png",
+   "_privat_kauf_asset/renders/r1/B50_disco_nah_je_figur.png"
+  ]
+ },
+ "todo": [
+  "Monstrosity: Alternative zum Knight (Georg 25.09.), hier nicht gesetzt",
+  "Darsteller mc: noch nicht in der Besetzungsliste (KayKit Driver + FrizzleBob-Kopf (graft-mount.v1 · graft-driver))",
+  "Legacy-Darsteller (Minion u. a.): procedural bounce statt Clips (grooves.legacy-bounce-v1)",
+  "Kollisions-Schubsen (resident-collide) fehlt der Bühne",
+  "mc/DJ (FrizzleBob) sobald in der Besetzungsliste → seat_mc"
+ ],
+ "clipLibrary": {
+  "ref": "manifest:media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library_Rig_Medium.glb@032c9d50",
+  "rig": "Rig_Medium",
+  "large": "manifest:media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library_Rig_Large.glb"
+ },
+ "audio": {
+  "ambience": [],
+  "music": {
+   "song": "rubbish-groove-2min-a-extend-01",
+   "bpm": 100,
+   "playlist": "./data/disco-playlist-01.json"
+  }
+ },
+ "stage": {
+  "asset": "ground",
+  "p": [
+   0,
+   0,
+   0
+  ],
+  "ry": 0,
+  "note": "PLATZHALTER-Boden; RA-Welt: meadow, placement grammar-r2, Band-Zone rechts frei",
+  "anchors": {
+   "seat_mc": [
+    0.95,
+    0,
+    -4.4
+   ]
+  }
+ }
+}

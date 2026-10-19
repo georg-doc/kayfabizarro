@@ -1,0 +1,135 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "kfb_fight_brute",
+ "displayName": "Orc Brute · Ringer",
+ "role": "fighter",
+ "story": "B50 Wrestling (ra_fight_01 / Backlog P3): Raider gegen Brute im Ring mit Gummiseilen",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B50/wrestling/_privat_kauf_asset/KFB_Fight_brute.r1.glb",
+   "sha256": "123c3e60a3e42ce20c900e96b405e08f0444913ce25a1edac624e37e5945ba7a",
+   "onMain": false,
+   "private": true
+  },
+  "rig": "Rig_Large"
+ },
+ "eyeRig": {
+  "required": true,
+  "none": null,
+  "version": "pet-eye-rig.v6",
+  "module": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "ref": "main",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "seat": "anchor",
+  "anchors": {
+   "L": "eye_anchor.l",
+   "R": "eye_anchor.r",
+   "from": "EYE-CLEANUP-01 OrcBrute_NoEyes"
+  },
+  "lid": {
+   "type": "skin",
+   "colour": "#78b04a",
+   "colourMode": "as rendered in the R2 clay proofs (?lid=%2378b04a); measured skin was #82c061 (eye-cleanup-01)",
+   "fit": 0.9,
+   "futureE2": {
+    "module": "tools/KFB-ToolBox/eye-actor-studio-v1/clay-eyelid/clay-eyelid.v2.js",
+    "ref": "eyes/kfb-clay-eyelid-e2-2026-10-16",
+    "commit": "e1e60edff3973a396e120c2206e559981154b3be",
+    "status": "construction PASS (V-348); integration as hull on EyeRig v6 still open (V-348 steps 2-4)"
+   }
+  },
+  "irisColour": null,
+  "pupil": {
+   "style": "matte-cute",
+   "size": 0.42,
+   "gloss": 0.1,
+   "form": null
+  },
+  "settings": {
+   "R": 0.072,
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.42,
+   "gloss": 0.1,
+   "lidFit": 0.9,
+   "converge": 0.12,
+   "inset": 0,
+   "life": {
+    "on": true
+   }
+  },
+  "source": "Blender run R2 clay proofs OrcBrute_r2_01…03_*_KFB-Augen_Knete.png (16.10.): MeshyModels/_blender_run_r2/proof/proof_r2.html#buildEyesOrc (sha256 c3320553…) + proof/orc.txt (lid #78b04a, hide KFB_OriginalEye_L/R). These are the images of the round where Georg wrote \"Orc passt\" (V-346 Nachtrag r3) – link image↔verdict inferred by WS0, confirm (G4).",
+  "alternatives": [
+   {
+    "id": "georg-large-2026-09-20",
+    "values": {
+     "anchor": {
+      "dx": 0.295,
+      "dy": -0.26,
+      "ring": 0.175,
+      "track": 0.15
+     },
+     "inset": 0.9,
+     "lidFit": 0.9,
+     "converge": 0.18,
+     "splay": 0,
+     "oval": {
+      "w": 1,
+      "h": 0.9,
+      "d": 0.91,
+      "tilt": 0
+     },
+     "trackingMode": "life",
+     "fixedGaze": [
+      0,
+      0
+     ],
+     "blink": {
+      "minGap": 2.5,
+      "maxGap": 6.5,
+      "dur": 0.12
+     },
+     "life": {
+      "on": true,
+      "wander": 0.09,
+      "tremor": 0.045
+     },
+     "kinetics": {
+      "enabled": false,
+      "gain": 1,
+      "a": 0,
+      "c": 0,
+      "j": 0
+     }
+    },
+    "source": "Georg-reviewed Large profile: KFB Island Worldbuilder Lab/public/assets/figures-b2/eye-profiles/rig-large-reviewed.v1.json#profiles[orc-brute] (status ADJUSTED_APPROVED, eyeProfileVisuallyApproved true, acceptedBy Georg 2026-09-20; origin tools/KFB-ToolBox/_inbox/eye-rig-large.batch.json @52532aee). These values belong to the FaceHost seat (dx/dy on the head ellipsoid), not to the new anchors."
+   }
+  ],
+  "todo": [
+   "Georg confirms G4 (these exact images = \"Orc passt\"); then Figure Workshop save with animated life/blink → replace settings.",
+   "Repo copy of the proofs: assets/kfb-blender-run-r1-2026-10-16 · media/3D_Assets/MeshyModels/blender_run_r2/proofs/orc/"
+  ]
+ },
+ "mouth": {
+  "owner": "original-mesh",
+  "set": null,
+  "rest": null,
+  "note": "mesh mouth + teeth stay; decal sets may be offered in the dropdown but are off by default (BRIEF_WSA_ALIENS_TOOLBOX_R4.md §5)",
+  "manifest": "assets/kfb-mouth-sets-r3-2026-10-16 @eb1100f9 · media/3D_Assets/Textures/KFB-Mouth-Sets_R3/mouth_sets.manifest.json"
+ },
+ "material": {
+  "clayProfile": "character"
+ },
+ "approval": {
+  "status": "proof-r1",
+  "vRef": [
+   "V-548",
+   "V-550",
+   "V-559"
+  ]
+ },
+ "licenses": {
+  "body": "KayKit Mystery S6 (Kauf) → privat (Ork-Band r1b ohne Instrument); Kampf-Clips Motion Library v2/v4 (Mixamo-Ableitung, nur Laufzeit)"
+ }
+}

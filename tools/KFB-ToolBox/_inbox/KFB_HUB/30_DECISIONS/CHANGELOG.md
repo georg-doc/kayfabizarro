@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- Clown → Hub q134 (Requisiten-Gesicht gemessen, Süßes korrigiert). Wrestling-Ring mit Gummiseilen → Hub q135. Ninja-Katana: Regel-Frage V-536 → Hub q136 (Klinge quer vs. Unterarmachse); WSB baut KayKit-Haltung als Kandidat. Bühne v2.3: Disco + Wrestling spielbar (gehäutete Requisiten via SkeletonUtils, Szenenliste no-cache).
 - Gunfight r2 (Karabiner einhändig, Minigun, Würfel) → an q132 (Gewehr-Entscheid A/B/C für Georg). Disco r1b (7 Tänzer, eigenes Drum-Pult + Kugel an Lichterkette) → Hub q133. Cast: 18 von 29 ready.
 - Gunfight r1b → Hub q131. Bühne v2.2: erste RA-Szene live (gunfight_duel_01, Hero Man rot/blau) mit Clip-Spuren je Darsteller, Schuss-Strahlen ab KFB_Muzzle, Scenelet-Kameras mit span_u; Platzhalter-Böden werden in der Welt-Ansicht ausgeblendet.
 - Gunfight r1 (B50/ra_duel_01, Hero Man rot/blau) geprüft → TUNE: Fehlschuss sichtbar vorbei, Streifen aus erhöhter ¾-Sicht. WSB-Fund geprüft: Lab-Ordner public/assets/organ-o1 ist gitignored und kein Repo → nicht veröffentlicht. Bekannt offen: Mystery-S6-Kaufassets liegen in georg-doc/kayfabizarro media/3D_Assets (Repo-privat-Plan V-427 wartet auf Georg).

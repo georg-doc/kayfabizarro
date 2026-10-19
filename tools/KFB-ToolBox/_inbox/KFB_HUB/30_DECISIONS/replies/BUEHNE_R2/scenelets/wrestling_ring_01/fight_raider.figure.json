@@ -1,0 +1,57 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "kfb_fight_raider",
+ "displayName": "Orc Raider · Ringer",
+ "role": "fighter",
+ "story": "B50 Wrestling (ra_fight_01 / Backlog P3): Raider gegen Brute im Ring mit Gummiseilen",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B50/wrestling/_privat_kauf_asset/KFB_Fight_raider.r1.glb",
+   "sha256": "eca6063b7c8c9cff937cd12e5b52ba69bef92ad1f58188c11962837e7954bb66",
+   "onMain": false,
+   "private": true
+  },
+  "rig": "Rig_Medium"
+ },
+ "eyeRig": {
+  "required": true,
+  "version": "pet-eye-rig.v6",
+  "seat": "anchor",
+  "anchors": {
+   "L": "eye_anchor.l",
+   "R": "eye_anchor.r",
+   "from": "WSB EYE-CLEANUP-02-Verfahren (island, 2×66 Flächen), Radius = Anker-Skala"
+  },
+  "lid": {
+   "colour": "#82c461",
+   "colourMode": "gemessene Haut (Median)"
+  },
+  "settings": {
+   "R": 0.075,
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.38,
+   "gloss": 0.1,
+   "lidFit": 0.9,
+   "converge": 0.12,
+   "inset": 0,
+   "life": {
+    "on": true
+   }
+  }
+ },
+ "mouth": null,
+ "material": {
+  "clayProfile": "character"
+ },
+ "approval": {
+  "status": "proof-r1",
+  "vRef": [
+   "V-548",
+   "V-550",
+   "V-559"
+  ]
+ },
+ "licenses": {
+  "body": "KayKit Mystery S6 (Kauf) → privat (Ork-Band r1b ohne Instrument); Kampf-Clips Motion Library v2/v4 (Mixamo-Ableitung, nur Laufzeit)"
+ }
+}
