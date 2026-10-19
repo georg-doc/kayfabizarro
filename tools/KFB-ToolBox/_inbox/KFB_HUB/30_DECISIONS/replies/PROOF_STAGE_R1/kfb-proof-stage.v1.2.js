@@ -220,12 +220,13 @@ export function runGates(THREE, S) {
     const minPx = 0.0012 * W * H;
     /* v1.2.8 (WS0 18.10., B40 agents): card eyeRig.occludedBy 'glasses' = eyes deliberately hidden behind sunglasses (V-414). The rig must
        still be complete; the pixel test flips: 0 visible eye pixels = nothing pokes through the frame -> PASS. */
-    const occl = S.card?.eyeRig?.occludedBy === 'glasses';
+    /* v1.2.9: aliases helmet | visor (B45 King B with closed helmet) behave like glasses */
+    const occBy = S.card?.eyeRig?.occludedBy, occl = ['glasses', 'helmet', 'visor'].includes(occBy);
     const rigOK = !!r && r.eyes >= 1 && r.lidSkins === r.eyes && r.v6ShellsVisible === 0;
     const ok = occl ? rigOK && px.perEye.every((p) => p === 0)
       : rigOK && px.perEye.length === r.eyes && px.perEye.every((p) => p >= minPx / Math.max(1, r.eyes));
     if (occl) {
-      G.G1 = { name: 'Augen hinter Sonnenbrille (Karte occludedBy glasses)', result: ok ? 'PASS' : 'FAIL',
+      G.G1 = { name: 'Augen verdeckt (Karte occludedBy ' + occBy + ')', result: ok ? 'PASS' : 'FAIL',
         detail: !r ? (eyes?.status || 'keine Augen') : `seat ${r.seat} · ${r.eyes} Auge(n) · ${r.lidSkins} E2-Lidhaut · v6-Schalen sichtbar ${r.v6ShellsVisible} · sichtbare Augenpixel near_face ${px.perEye.join(' / ') || 0} (Soll 0: nichts sticht durch)` };
     } else
     G.G1 = { name: 'Augen vorhanden (EyeRig v6 + E2)', result: ok ? 'PASS' : 'FAIL',

@@ -193,6 +193,7 @@ To check a file that is not in the list, drop in the GLB and, optionally, its `k
 ## v1.2.9 (19.10., WS0)
 - **near_face zielt aufs Gesicht:** Ziel ist die Mitte der Augen-Anker, leicht nach unten versetzt (Augen-Mitte − 0,3 × Kopfhöhe, untere Grenze Kopf-Unterkante + 12 %), nicht mehr die Mitte der Kopf-Box. Grund: Bei hohen Schädeln bzw. Zöpfen (Legacy-Orks) lagen Augen, Mund und Mikro unten außerhalb des Bildes (Leader-Bogen Ork-Band r1b).
 - Figuren ohne Augen-Anker bleiben wie v1.2.8. Gegentest Bleistift B46: unverändert (sein Kopf-Knochen umfasst den ganzen Körper).
+- **occludedBy-Aliase:** `helmet` und `visor` wirken wie `glasses` (Rig vollständig, 0 sichtbare Augenpixel = PASS), z. B. King B mit geschlossenem Helm.
 - G1-Augenpixel werden in derselben Nah-Ansicht gemessen, die Werte steigen dadurch leicht (Augen größer im Bild).
 
 ## v1.2.8 (18.10., WS0)
