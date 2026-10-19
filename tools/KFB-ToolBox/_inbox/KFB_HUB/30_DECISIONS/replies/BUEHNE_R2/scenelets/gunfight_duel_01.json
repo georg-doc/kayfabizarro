@@ -1,0 +1,634 @@
+{
+ "schema": "kfb.scenelet/1",
+ "rev": "R2",
+ "id": "gunfight_duel_01",
+ "title": "Gunfight-Duell · Hero Man rot gegen Hero Man blau (duel5)",
+ "kind": "duel",
+ "version": 1,
+ "status": "review",
+ "source": {
+  "from": "wsb-b50",
+  "ref": "50_BLENDER/B50",
+  "ra": "65_SCENELETS/ra/ra_duel_01.scenelet.json (resident-atlas gunfight-duel-01)",
+  "decision": "V-536 / V-540 / V-541 / V-550 / V-559 (B50 Block 2, Gunfight r1)"
+ },
+ "units": "u",
+ "m_per_u": 0.616381042,
+ "space": "gltf",
+ "up": "y",
+ "forward": "+z",
+ "clock": {
+  "fps": 30
+ },
+ "assets": {
+  "heroman_red": {
+   "ref": "dropbox:50_BLENDER/B50/_privat_kauf_asset/KFB_HeroMan_red.r1.glb",
+   "b64": "scenelets/gunfight_duel_01/heroman_red.glb.b64.txt",
+   "sha256": "7d28fda45a327f9e76e52bb6d790f43400022d05b27a10ce59dafa4b2d732e05",
+   "bytes": 947340,
+   "private": true,
+   "license": "KayKit Mystery S6 Ultra Turbo Hero Man + Blaster (Kauf → privat); Clips KayKit Character Animations 1.1 (Georg 17.10.: wie Kauf-Asset → privat)",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "heroman_red.figure.json",
+   "encoding": "base64"
+  },
+  "heroman_blue": {
+   "ref": "dropbox:50_BLENDER/B50/_privat_kauf_asset/KFB_HeroMan_blue.r1.glb",
+   "b64": "scenelets/gunfight_duel_01/heroman_blue.glb.b64.txt",
+   "sha256": "d0e70d1df4a2b98635d9fc3a26571b3a85703612c3062d1a8a62affa44ed7dcd",
+   "bytes": 984080,
+   "private": true,
+   "license": "KayKit Mystery S6 Ultra Turbo Hero Man + Blaster (Kauf → privat); Clips KayKit Character Animations 1.1 (Georg 17.10.: wie Kauf-Asset → privat); Blau = umgefärbter Atlas (WSB)",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "heroman_blue.figure.json",
+   "encoding": "base64"
+  },
+  "blaster": {
+   "ref": "dropbox:50_BLENDER/B50/_privat_kauf_asset/KFB_HeroMan_Blaster.r1.glb",
+   "b64": "scenelets/gunfight_duel_01/blaster.glb.b64.txt",
+   "sha256": "f2b66443a8c088fa805052bf0eb66ad5c36439887bec17212955a5ad8459cc90",
+   "bytes": 47804,
+   "private": true,
+   "license": "KayKit Mystery S6 UltraTurboHeroMan_Blaster (Kauf → privat)",
+   "preview": false,
+   "anchors": [
+    "KFB_Grip",
+    "KFB_Muzzle"
+   ],
+   "note": "steckt schon an lowerarm.r im Figur-GLB; einzeln für Waffenwechsel",
+   "encoding": "base64"
+  },
+  "duel_ground": {
+   "ref": "dropbox:50_BLENDER/B50/props/KFB_Duel_Ground.glb",
+   "b64": "scenelets/gunfight_duel_01/duel_ground.glb.b64.txt",
+   "sha256": "62570be74b287764fe2dfdacc9eaa400a8bccd43ad9f1aa630b2b448105eb7f3",
+   "bytes": 168944,
+   "private": false,
+   "license": "eigen (WSB), CC0",
+   "preview": false,
+   "kind": "stage",
+   "placeholder": true,
+   "encoding": "base64"
+  },
+  "beam_A": {
+   "ref": "dropbox:50_BLENDER/B50/props/KFB_BlasterBeam_A.glb",
+   "b64": "scenelets/gunfight_duel_01/beam_A.glb.b64.txt",
+   "sha256": "aa394976381a96a95c8f6d2026a36d42412fc3c7c54aca861cf5f023f8133cba",
+   "bytes": 14860,
+   "private": false,
+   "license": "eigen (WSB), CC0",
+   "preview": false,
+   "kind": "projectile",
+   "length_u": 1.0,
+   "axis": "glTF +Z, Mitte im Ursprung",
+   "encoding": "base64"
+  },
+  "beam_B": {
+   "ref": "dropbox:50_BLENDER/B50/props/KFB_BlasterBeam_B.glb",
+   "b64": "scenelets/gunfight_duel_01/beam_B.glb.b64.txt",
+   "sha256": "75af4accc317bce29365c20cc5d342222d367645f6665fbcf6dd37afc9cf9bf9",
+   "bytes": 14860,
+   "private": false,
+   "license": "eigen (WSB), CC0",
+   "preview": false,
+   "kind": "projectile",
+   "length_u": 1.0,
+   "axis": "glTF +Z, Mitte im Ursprung",
+   "encoding": "base64"
+  }
+ },
+ "stage": {
+  "asset": "duel_ground",
+  "p": [
+   0,
+   0,
+   0
+  ],
+  "ry": 0,
+  "anchors": {
+   "mark_A": [
+    -3.3,
+    0,
+    0
+   ],
+   "mark_B": [
+    3.3,
+    0,
+    0
+   ]
+  },
+  "note": "PLATZHALTER (Sand-Raster); RA-Welt: placement grammar-r2, biome desert"
+ },
+ "actors": [
+  {
+   "id": "A",
+   "cast": "hero_man",
+   "variant": "red",
+   "asset": "heroman_red",
+   "card": "scenelets/gunfight_duel_01/heroman_red.figure.json",
+   "role": "duelist_a",
+   "p": [
+    -3.3,
+    0,
+    0
+   ],
+   "ry": 83.42,
+   "ry_face": 90.0,
+   "clip": "kfb_action_aim_blaster_a",
+   "socket_muzzle": "KFB_Muzzle"
+  },
+  {
+   "id": "B",
+   "cast": "hero_man",
+   "variant": "blue",
+   "asset": "heroman_blue",
+   "card": "scenelets/gunfight_duel_01/heroman_blue.figure.json",
+   "role": "duelist_b",
+   "p": [
+    3.3,
+    0,
+    0
+   ],
+   "ry": -96.58,
+   "ry_face": -90.0,
+   "clip": "kfb_action_aim_blaster_a",
+   "socket_muzzle": "KFB_Muzzle"
+  }
+ ],
+ "aim": {
+  "note": "Lauf = Unterarmachse (V-536). Im KayKit-Ziel-Clip zeigt die Mündung 10,5° seitlich und 6,4° nach unten; ry hier gedreht, damit der Lauf waagrecht auf den Gegner zeigt. Im Spiel besser per Arm-IK auf das Ziel.",
+  "muzzle_local_blender": [
+   -0.196,
+   -1.416,
+   0.901
+  ],
+  "muzzle_fwd_local_blender": [
+   0.181,
+   -0.977,
+   -0.112
+  ]
+ },
+ "timeline": {
+  "clock": {
+   "fps": 30,
+   "length": 8.6
+  },
+  "script": [
+   {
+    "s": "A",
+    "o": "miss"
+   },
+   {
+    "s": "B",
+    "o": "hit"
+   },
+   {
+    "s": "A",
+    "o": "dodge"
+   },
+   {
+    "s": "B",
+    "o": "dodge"
+   },
+   {
+    "s": "A",
+    "o": "kill"
+   }
+  ],
+  "shots": [
+   {
+    "beat": 1,
+    "shooter": "A",
+    "outcome": "miss",
+    "t_fire": 0.6,
+    "t_impact": 0.742,
+    "projectile": "beam_A",
+    "path": {
+     "type": "line",
+     "from": {
+      "actor": "A",
+      "socket": "KFB_Muzzle"
+     },
+     "to": [
+      5.5,
+      1.2149999999999999,
+      0.8
+     ],
+     "to_preview": [
+      5.5,
+      1.2149999999999999,
+      0.8
+     ],
+     "speed_u_s": 40.0,
+     "note": "Beam: gerade (Spec R2 path: line); Bogen nur für Würfel (r2)"
+    }
+   },
+   {
+    "beat": 2,
+    "shooter": "B",
+    "outcome": "hit",
+    "t_fire": 2.2,
+    "t_impact": 2.343,
+    "projectile": "beam_B",
+    "path": {
+     "type": "line",
+     "from": {
+      "actor": "B",
+      "socket": "KFB_Muzzle"
+     },
+     "to": {
+      "actor": "A",
+      "bone": "chest"
+     },
+     "to_preview": [
+      -3.3,
+      0.965,
+      0.0
+     ],
+     "speed_u_s": 40.0,
+     "note": "Beam: gerade (Spec R2 path: line); Bogen nur für Würfel (r2)"
+    }
+   },
+   {
+    "beat": 3,
+    "shooter": "A",
+    "outcome": "dodge",
+    "t_fire": 3.8,
+    "t_impact": 3.942,
+    "projectile": "beam_A",
+    "path": {
+     "type": "line",
+     "from": {
+      "actor": "A",
+      "socket": "KFB_Muzzle"
+     },
+     "to": [
+      5.8,
+      0.815,
+      0.0
+     ],
+     "to_preview": [
+      5.8,
+      0.815,
+      0.0
+     ],
+     "speed_u_s": 40.0,
+     "note": "Beam: gerade (Spec R2 path: line); Bogen nur für Würfel (r2)"
+    }
+   },
+   {
+    "beat": 4,
+    "shooter": "B",
+    "outcome": "dodge",
+    "t_fire": 5.4,
+    "t_impact": 5.543,
+    "projectile": "beam_B",
+    "path": {
+     "type": "line",
+     "from": {
+      "actor": "B",
+      "socket": "KFB_Muzzle"
+     },
+     "to": [
+      -5.8,
+      0.815,
+      0.0
+     ],
+     "to_preview": [
+      -5.8,
+      0.815,
+      0.0
+     ],
+     "speed_u_s": 40.0,
+     "note": "Beam: gerade (Spec R2 path: line); Bogen nur für Würfel (r2)"
+    }
+   },
+   {
+    "beat": 5,
+    "shooter": "A",
+    "outcome": "kill",
+    "t_fire": 7.0,
+    "t_impact": 7.143,
+    "projectile": "beam_A",
+    "path": {
+     "type": "line",
+     "from": {
+      "actor": "A",
+      "socket": "KFB_Muzzle"
+     },
+     "to": {
+      "actor": "B",
+      "bone": "chest"
+     },
+     "to_preview": [
+      3.3,
+      0.965,
+      0.0
+     ],
+     "speed_u_s": 40.0,
+     "note": "Beam: gerade (Spec R2 path: line); Bogen nur für Würfel (r2)"
+    }
+   }
+  ],
+  "tracks": [
+   {
+    "actor": "A",
+    "kind": "clips",
+    "keys": [
+     {
+      "t": 0.0,
+      "clip": "kfb_action_aim_blaster_a",
+      "hold_end": true
+     },
+     {
+      "t": 0.6,
+      "clip": "kfb_action_shoot_blaster_a",
+      "note": "fire = Clip-Start"
+     },
+     {
+      "t": 1.016,
+      "clip": "kfb_action_aim_blaster_a",
+      "offset_s": 0.5,
+      "hold_end": true,
+      "blend": 0.1
+     },
+     {
+      "t": 2.343,
+      "clip": "kfb_reaction_hit_front_small_a",
+      "blend": 0.05
+     },
+     {
+      "t": 3.01,
+      "clip": "kfb_action_aim_blaster_a",
+      "offset_s": 0.5,
+      "hold_end": true,
+      "blend": 0.15
+     },
+     {
+      "t": 3.8,
+      "clip": "kfb_action_shoot_blaster_a",
+      "note": "fire = Clip-Start"
+     },
+     {
+      "t": 4.216,
+      "clip": "kfb_action_aim_blaster_a",
+      "offset_s": 0.5,
+      "hold_end": true,
+      "blend": 0.1
+     },
+     {
+      "t": 5.3,
+      "clip": "kfb_action_dodge_left_a",
+      "blend": 0.05,
+      "note": "clear bei 5.45 s < Einschlag 5.543 s"
+     },
+     {
+      "t": 5.717,
+      "clip": "kfb_action_aim_blaster_a",
+      "offset_s": 0.5,
+      "hold_end": true,
+      "blend": 0.15
+     },
+     {
+      "t": 7.0,
+      "clip": "kfb_action_shoot_blaster_a",
+      "note": "fire = Clip-Start"
+     },
+     {
+      "t": 7.416,
+      "clip": "kfb_action_aim_blaster_a",
+      "offset_s": 0.5,
+      "hold_end": true,
+      "blend": 0.1
+     }
+    ]
+   },
+   {
+    "actor": "B",
+    "kind": "clips",
+    "keys": [
+     {
+      "t": 0.0,
+      "clip": "kfb_action_aim_blaster_a",
+      "hold_end": true
+     },
+     {
+      "t": 0.742,
+      "clip": "kfb_reaction_flinch_a",
+      "blend": 0.04,
+      "note": "Zucken weg von der Bahn, kein Treffer-Clip"
+     },
+     {
+      "t": 1.242,
+      "clip": "kfb_action_aim_blaster_a",
+      "offset_s": 0.5,
+      "hold_end": true,
+      "blend": 0.1
+     },
+     {
+      "t": 2.2,
+      "clip": "kfb_action_shoot_blaster_a",
+      "note": "fire = Clip-Start"
+     },
+     {
+      "t": 2.616,
+      "clip": "kfb_action_aim_blaster_a",
+      "offset_s": 0.5,
+      "hold_end": true,
+      "blend": 0.1
+     },
+     {
+      "t": 3.7,
+      "clip": "kfb_action_dodge_right_a",
+      "blend": 0.05,
+      "note": "clear bei 3.85 s < Einschlag 3.942 s"
+     },
+     {
+      "t": 4.117,
+      "clip": "kfb_action_aim_blaster_a",
+      "offset_s": 0.5,
+      "hold_end": true,
+      "blend": 0.15
+     },
+     {
+      "t": 5.4,
+      "clip": "kfb_action_shoot_blaster_a",
+      "note": "fire = Clip-Start"
+     },
+     {
+      "t": 5.816,
+      "clip": "kfb_action_aim_blaster_a",
+      "offset_s": 0.5,
+      "hold_end": true,
+      "blend": 0.1
+     },
+     {
+      "t": 7.143,
+      "clip": "kfb_reaction_death_backward_a",
+      "blend": 0.05,
+      "hold_end": true,
+      "note": "down = Einschlag + 0,5 s"
+     }
+    ]
+   },
+   {
+    "actor": "B",
+    "kind": "path",
+    "t0": 4.15,
+    "t1": 4.65,
+    "path": {
+     "type": "line",
+     "to": [
+      3.3,
+      0.0,
+      0.0
+     ]
+    },
+    "note": "Ausweich-Clip verschiebt die Wurzel 0,81 u seitlich → zurück auf die Startmarke"
+   },
+   {
+    "actor": "A",
+    "kind": "path",
+    "t0": 5.75,
+    "t1": 6.25,
+    "path": {
+     "type": "line",
+     "to": [
+      -3.3,
+      0.0,
+      0.0
+     ]
+    },
+    "note": "Ausweich-Clip verschiebt die Wurzel 0,81 u seitlich → zurück auf die Startmarke"
+   }
+  ],
+  "cues": [
+   {
+    "t": 0.6,
+    "sfx": "blaster_fire",
+    "actor": "A"
+   },
+   {
+    "t": 0.742,
+    "sfx": "blaster_whiff"
+   },
+   {
+    "t": 2.2,
+    "sfx": "blaster_fire",
+    "actor": "B"
+   },
+   {
+    "t": 2.343,
+    "sfx": "blaster_hit",
+    "actor": "A"
+   },
+   {
+    "t": 3.8,
+    "sfx": "blaster_fire",
+    "actor": "A"
+   },
+   {
+    "t": 3.942,
+    "sfx": "blaster_whiff"
+   },
+   {
+    "t": 5.4,
+    "sfx": "blaster_fire",
+    "actor": "B"
+   },
+   {
+    "t": 5.543,
+    "sfx": "blaster_whiff"
+   },
+   {
+    "t": 7.0,
+    "sfx": "blaster_fire",
+    "actor": "A"
+   },
+   {
+    "t": 7.143,
+    "sfx": "blaster_hit",
+    "actor": "B"
+   }
+  ],
+  "rules": {
+   "hit": "Einschlag = Strecke / 40 u/s; Treffer-Clip beim Einschlag",
+   "dodge": "Ziel muss bis zum Einschlag „clear“ (Marke 0,15 s) erreicht haben",
+   "kill": "Sterbe-Clip beim Einschlag, Ende halten",
+   "miss": "Strahl 0,6 u an der linken Seite des Ziels vorbei (Schulterhöhe), Ziel zuckt (kfb_reaction_flinch_a, flinch_peak 0,09)"
+  }
+ },
+ "cameras": [
+  {
+   "id": "totale",
+   "target": [
+    0,
+    0.811186532242502,
+    0
+   ],
+   "az_deg": 35,
+   "el_deg": 40,
+   "fov": 30,
+   "span_u": 6.3
+  },
+  {
+   "id": "draufsicht",
+   "target": [
+    0,
+    0,
+    0
+   ],
+   "az_deg": 0,
+   "el_deg": 89,
+   "fov": 30,
+   "span_u": 5.2
+  },
+  {
+   "id": "nah",
+   "preset": "near_face"
+  }
+ ],
+ "light": {
+  "rig": "kfb-stage-light.v1.1",
+  "mood": "MOODS_MESA",
+  "tod": "day",
+  "note": "Strahl- und Mündungs-Leuchten zur Laufzeit; im GLB keine Emission (V-385)"
+ },
+ "world": {
+  "anchor": [
+   0,
+   0,
+   0
+  ],
+  "placement": "grammar-r2",
+  "tags": [
+   "duel",
+   "western",
+   "combat"
+  ],
+  "terrain": {
+   "biome": "desert"
+  }
+ },
+ "next": {
+  "r2": "Spielzeugsoldat (Gewehr) + Combat Mech (Minigun) als zweites Paar; Würfel-Wurfkörper mit KFB_Grip, Wurf im Bogen (path: arc) wie B41"
+ },
+ "review": {
+  "gates": [
+   "G1",
+   "G2",
+   "G3",
+   "G5",
+   "G6"
+  ],
+  "qa": [
+   "V-520 a–h"
+  ],
+  "strip": [
+   "_privat_kauf_asset/renders/r1/B50_duel5_streifen.png",
+   "_privat_kauf_asset/renders/r1/B50_duel5_draufsicht.png"
+  ]
+ }
+}

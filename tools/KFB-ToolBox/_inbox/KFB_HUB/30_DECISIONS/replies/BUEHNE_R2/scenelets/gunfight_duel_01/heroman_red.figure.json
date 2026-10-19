@@ -1,0 +1,69 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "kfb_heroman_red",
+ "displayName": "Ultra Turbo Hero Man · rot",
+ "role": "duelist",
+ "story": "B50 Gunfight r1 (ra_duel_01): zwei Hero Men im Blaster-Duell, Rollen-Varianten rot/blau",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B50/_privat_kauf_asset/KFB_HeroMan_red.r1.glb",
+   "sha256": "7d28fda45a327f9e76e52bb6d790f43400022d05b27a10ce59dafa4b2d732e05",
+   "onMain": false,
+   "private": true
+  },
+  "rig": "Rig_Medium"
+ },
+ "eyeRig": {
+  "required": true,
+  "version": "pet-eye-rig.v6",
+  "seat": "cap",
+  "anchors": {
+   "L": "eye_anchor.l",
+   "R": "eye_anchor.r",
+   "from": "B50: hinter dem Visier, 0,10 u"
+  },
+  "settings": {
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.42,
+   "converge": 0.12,
+   "life": {
+    "on": true
+   }
+  },
+  "lid": {
+   "colour": "#1a1a1a",
+   "colourMode": "visor-measured",
+   "note": "kein Gesicht sichtbar – Lid = Visierfarbe"
+  },
+  "occludedBy": "visor",
+  "visorDepth_u": 0.1
+ },
+ "mouth": {
+  "owner": "none",
+  "note": "Visier, kein Mund sichtbar"
+ },
+ "material": {
+  "clayProfile": "character",
+  "variant": "red"
+ },
+ "sockets": {
+  "KFB_Grip": "hand.r, V-536",
+  "KFB_Muzzle": "lowerarm.r, Mündung auf der Unterarmachse (V-536/V-540)"
+ },
+ "weapon": {
+  "blaster": "kfb_blaster_body an lowerarm.r",
+  "muzzle_off_axis_u": 0.0
+ },
+ "approval": {
+  "status": "proof-r1",
+  "vRef": [
+   "V-536",
+   "V-540",
+   "V-541",
+   "V-559"
+  ]
+ },
+ "licenses": {
+  "body": "KayKit Mystery Series 6 „Ultra Turbo Hero Man“ + Blaster (Kauf → privat); Clips KayKit Character Animations 1.1 (laut Georg 17.10. wie Kauf-Asset → privat)"
+ }
+}

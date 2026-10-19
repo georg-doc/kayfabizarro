@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- Gunfight r1b → Hub q131. Bühne v2.2: erste RA-Szene live (gunfight_duel_01, Hero Man rot/blau) mit Clip-Spuren je Darsteller, Schuss-Strahlen ab KFB_Muzzle, Scenelet-Kameras mit span_u; Platzhalter-Böden werden in der Welt-Ansicht ausgeblendet.
 - Gunfight r1 (B50/ra_duel_01, Hero Man rot/blau) geprüft → TUNE: Fehlschuss sichtbar vorbei, Streifen aus erhöhter ¾-Sicht. WSB-Fund geprüft: Lab-Ordner public/assets/organ-o1 ist gitignored und kein Repo → nicht veröffentlicht. Bekannt offen: Mystery-S6-Kaufassets liegen in georg-doc/kayfabizarro media/3D_Assets (Repo-privat-Plan V-427 wartet auf Georg).
 - B48 r1b → Hub q130 (Portal im Fels, Zauber-Streifen von vorn, Bögen mit Station nach WS0-TUNE); Hub q129 Löschfreigabe veralteter öffentlicher B48-Stände (wartet auf Georg).
 - B45 r1c → Hub q127 (Rüstung golden, Zweihänder bis Brust); Hub q126 Herkunft Krone. B47 r1b → Hub q128 (düster: Mauern grau-braun, dunkle Pfützen/Geröll; Chief Warden am Pult).

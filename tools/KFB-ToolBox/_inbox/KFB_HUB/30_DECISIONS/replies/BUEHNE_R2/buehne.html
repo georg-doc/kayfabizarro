@@ -250,7 +250,7 @@ function setScCam(id) {
   if (k.pos && k.target) { camera.position.fromArray(k.pos); orbit.target.fromArray(k.target); }
   else {
     const t = k.target ? new THREE.Vector3(...k.target) : bounds.getCenter(new THREE.Vector3());
-    const s = bounds.getSize(new THREE.Vector3()), fov = k.fov || 32, span = k.target ? Math.max(4, Math.max(s.x, s.z) * 0.35) : Math.max(s.x, s.z, s.y);
+    const s = bounds.getSize(new THREE.Vector3()), fov = k.fov || 32, span = k.span_u ? k.span_u * 0.8 : k.target ? Math.max(4, Math.max(s.x, s.z) * 0.35) : Math.max(s.x, s.z, s.y);
     const dist = k.dist || (span * 0.62) / Math.tan(THREE.MathUtils.degToRad(fov / 2));
     const az = THREE.MathUtils.degToRad(k.az_deg ?? 30), el = THREE.MathUtils.degToRad(k.el_deg ?? 25);
     camera.position.set(t.x + dist * Math.cos(el) * Math.sin(az), t.y + dist * Math.sin(el), t.z + dist * Math.cos(el) * Math.cos(az)); orbit.target.copy(t);
@@ -301,12 +301,13 @@ async function loadIndex() {
 async function loadScenelet(file) {
   try { localStorage.setItem('buehne-sc', file); } catch (e) {}
   $('msg').hidden = false; $('msg').textContent = 'Scenelet lädt …'; chips([['lädt …', 'busy']]);
-  tc.detach(); actorsGroup.clear(); state.actors = []; state.props = []; state.nodes = {}; state.rest = {}; state.tracks = []; stopAmbience();
+  tc.detach(); actorsGroup.clear(); clearBeams(); state.actors = []; state.props = []; state.nodes = {}; state.rest = {}; state.tracks = []; stopAmbience();
   const sc = await (await fetch(file)).json(); sc.assets = sc.assets || {}; state.sc = sc; state.len = sc.timeline?.clock?.length || 8;
   renderInfo(sc); $('json').textContent = JSON.stringify(sc, null, 1);
   const problems = [];
-  /* props zuerst (Diorama = Bühne) */
-  for (const pr of sc.props || []) {
+  /* props zuerst (Diorama = Bühne); 'stage' (Duell-Boden u. ä.) zählt als Bühnen-Requisite */
+  const propList = [...(sc.props || [])]; if (sc.stage?.asset && !/PLATZHALTER/i.test(sc.stage.note || '')) propList.unshift({ id: 'stage', asset: sc.stage.asset, p: sc.stage.p, ry: sc.stage.ry, role: 'stage' });
+  for (const pr of propList) {
     const asset = sc.assets[pr.asset]; if (!asset) { problems.push('Asset fehlt: ' + pr.asset); continue; }
     if (asset.preview) { problems.push('Vorschau-Datei: ' + pr.asset); }
     try {
@@ -349,6 +350,7 @@ async function loadScenelet(file) {
   for (const [n, o] of Object.entries(state.nodes)) state.rest[n] = { p: o.position.clone(), q: o.quaternion.clone() };
   /* tracks: Bahnen + Squash an benannten Knoten (z. B. fluff@KFB_Fluff_Spawn_*) */
   for (const tr of sc.timeline?.tracks || []) {
+    const kind = tr.kind || tr.type; if (!tr.target || !['path', 'squash'].includes(kind)) continue;   /* Clip-Spuren laufen über activeClip */
     const name = String(tr.target || '').split('@').pop(); let node = null;
     actorsGroup.traverse((o) => { if (!node && o.name === name) node = o; });
     if (node) state.tracks.push({ tr, node, base: node.position.clone(), baseS: node.scale.clone() }); else problems.push('Spur-Ziel fehlt: ' + tr.target);
@@ -393,7 +395,7 @@ function renderInfo(sc) {
   const rows = [['Titel', sc.title], ['Art', sc.kind], ['Status', sc.status], ['Quelle', (sc.source?.from || '') + ' · ' + (sc.source?.ref || '–')],
     ['Einheit', (sc.units || 'm') + (sc.m_per_u ? ' (1 u = ' + sc.m_per_u.toFixed(3) + ' m)' : '') + ' · ' + (sc.space || 'gltf')],
     ['Darsteller', (sc.actors || []).map((a) => a.id).join(', ') || '–'], ['Requisiten', (sc.props || []).map((p) => p.id).join(', ') || '–'],
-    ['Zeitleiste', (sc.timeline?.clock?.length || '–') + ' s · ' + (sc.timeline?.cues?.length || 0) + ' Cues · ' + (sc.timeline?.tracks?.length || 0) + ' Spuren'],
+    ['Zeitleiste', (sc.timeline?.clock?.length || '–') + ' s · ' + (sc.timeline?.cues?.length || 0) + ' Cues · ' + (sc.timeline?.tracks?.length || 0) + ' Spuren' + (sc.timeline?.shots?.length ? ' · ' + sc.timeline.shots.length + ' Schüsse' : '')],
     ['Licht', (sc.light?.rig || '–') + ' · ' + (sc.light?.mood || '')], ['Gelände', biomeColor(sc) + ' · ' + (sc.palette?.entry || sc.world?.terrain?.biome || 'Standard')],
     ['Ton', (sc.audio?.ambience || []).map((x) => x.id).join(', ') || '–'], ['Abnahme', sc.review?.hub || '–']];
   const dl = $('info'); dl.replaceChildren(...rows.flatMap(([k, v]) => { const dt = document.createElement('dt'); dt.textContent = k; const dd = document.createElement('dd'); dd.textContent = v; return [dt, dd]; }));
@@ -403,6 +405,11 @@ function renderInfo(sc) {
 /* ---------- scene evaluation (deterministisch: Scrubben = Abspielen) ---------- */
 function activeClip(ac, T) {
   if (ac.override) return { name: ac.override, t: T, loop: true };
+  const trk = (state.sc.timeline?.tracks || []).find((x) => x.kind === 'clips' && x.actor === ac.id);
+  if (trk) {   /* Clip-Spur je Darsteller (WSB-Duell): letzter Schlüssel t <= T, offset_s, hold_end */
+    let k = null; for (const x of trk.keys || []) if (x.t <= T && (!k || x.t >= k.t)) k = x;
+    if (k) { const n = findClip(ac.names, k.clip); if (n) return { name: n, t: T - k.t + (k.offset_s || 0), loop: !!k.loop }; }
+  }
   let best = null;
   for (const c of state.sc.timeline?.cues || []) if (c.actor === ac.id && c.clip && c.t <= T && (!best || c.t >= best.t)) best = c;
   if (best) { const n = findClip(ac.names, best.clip); if (n) { const d = ac.actions[n].getClip().duration || 1; const loop = best.loop ?? false; const lt = T - best.t; return { name: n, t: best.reverse ? d - lt : lt, loop: loop || false, dur: d }; } }
@@ -418,16 +425,39 @@ function evalScene(T, force) {
     act.paused = true; ac.mixer.update(0);
   }
   for (const k of state.tracks) evalTrack(k, T);
+  evalShots(T);
   if (state.sound) for (const c of state.sc.timeline?.cues || []) {
     const id = (c.t ?? 0) + ':' + (c.marker || c.clip || '');
-    if (c.sfx && c.t <= T && !state.firedCues.has(id) && T - c.t < 0.25 && !force) { state.firedCues.add(id); playSfx(c.sfx); }
+    if (c.sfx && typeof c.sfx === 'object' && c.t <= T && !state.firedCues.has(id) && T - c.t < 0.25 && !force) { state.firedCues.add(id); playSfx(c.sfx); }
   }
+}
+const beamGroup = new THREE.Group(); scene.add(beamGroup); const beamMeshes = [];
+function clearBeams() { beamGroup.clear(); beamMeshes.length = 0; }
+function shotPoint(ref) {
+  if (Array.isArray(ref)) return actorsGroup.localToWorld(new THREE.Vector3(...ref));
+  const ac = state.actors.find((a) => a.id === ref?.actor); if (!ac) return null;
+  let node = null; const want = ref.socket || ref.bone; ac.root.traverse((o) => { if (!node && want && o.name === want) node = o; });
+  return (node || ac.root).getWorldPosition(new THREE.Vector3());
+}
+function evalShots(T) {   /* Schüsse: gerader Strahl ab KFB_Muzzle (Vorschau; Leuchten zur Laufzeit) */
+  const shots = state.sc.timeline?.shots || []; if (!shots.length) return;
+  shots.forEach((s, i) => {
+    let m = beamMeshes[i];
+    if (!m) { m = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 1, 8, 1, true), new THREE.MeshBasicMaterial({ color: s.shooter === 'B' ? '#5fd0e8' : '#f2c14e', transparent: true, opacity: 0.9 })); m.visible = false; beamGroup.add(m); beamMeshes[i] = m; }
+    const t0 = s.t_fire, t1 = (s.t_impact ?? t0 + 0.15) + 0.12;
+    if (T < t0 || T > t1) { m.visible = false; return; }
+    const a = shotPoint(s.path?.from), b = shotPoint(s.path?.to_preview || s.path?.to); if (!a || !b) { m.visible = false; return; }
+    const u = Math.min(1, (T - t0) / Math.max(0.01, (s.t_impact ?? t0 + 0.15) - t0)), tip = a.clone().lerp(b, u), len = a.distanceTo(tip);
+    if (len < 0.01) { m.visible = false; return; }
+    m.visible = true; m.position.copy(a).add(tip).multiplyScalar(0.5); m.scale.set(1, len, 1);
+    m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), tip.clone().sub(a).normalize());
+  });
 }
 function evalTrack(k, T) {
   const tr = k.tr, n = k.node, par = n.parent;
   const toLocal = (v) => { const w = new THREE.Vector3(...v); return par ? par.worldToLocal(w) : w; };
   if (tr.kind === 'path' || tr.type === 'path') {
-    const segs = tr.path || [tr]; let done = false;
+    const segs = Array.isArray(tr.path) ? tr.path : [tr]; let done = false;
     for (const s of segs) {
       const t0 = s.t0 ?? 0, dur = s.time_s || 1; if (T < t0) { if (!done) n.position.copy(k.base); break; }
       const u = Math.min(1, (T - t0) / dur); done = true;
