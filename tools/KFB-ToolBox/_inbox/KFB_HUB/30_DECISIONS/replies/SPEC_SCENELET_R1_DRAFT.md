@@ -94,3 +94,8 @@
 - Ninja-Schwertkampf und Wrestling-Ring mit Gummiseilen gibt es im RA noch nicht; das werden neue Scenelets.
 - Kameras sind im RA nur im Code; der Konverter setzt Presets.
 - Asset-Manifest-IDs: Vorschlag `manifest:<pack>/<name>@<commit>` bzw. `dropbox:<pfad>` für private Assets.
+
+
+## Für R2 notiert (19.10., V-559)
+- **cast registry:** eine globale Darsteller-Liste (`cast/<actorId>`: GLB, Figurenkarte, Clip-Satz, Lizenz). Scenelets verweisen nur auf `actorId` + `role` (+ Kostüm-/Requisiten-Varianten); keine Kopien je Szene. Mehrfachauftritt erlaubt (z. B. 6× Skelett mit Seed-Varianz).
+- **Besetzungstabelle:** Figur → Szenen → Rolle, Clips, Requisiten (Beispiel: Graveyard-Skelette = Friedhof + Skeleton Dance + Monster-Raid; Monstrosity = nur Raid). Fraktion (V-558 Horde/Allianz) als Feld je Rolle.

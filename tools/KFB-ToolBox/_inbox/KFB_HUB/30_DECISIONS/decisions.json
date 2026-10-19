@@ -7884,6 +7884,21 @@
    "applies": "nach B48"
   },
   {
+   "id": "V-559",
+   "date": "2026-10-19",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Besetzungs- und Rollen-Mapping (Georg 19.10.): Eine Darsteller-Liste für alle Szenen. Dieselben Figuren treten in mehreren Resident-Atlas-Szenen bzw. Dioramen in unterschiedlichen Rollen auf, auch mehrfach, z. B. die Graveyard-Skelette auf dem Friedhof (inkl. Skeleton Dance) und als Monster beim Dungeon Raid. Rollen sind szenenabhängig: Die Monstrosity wohnt nicht auf dem Friedhof, ist aber beim Raid gegen die Helden dabei. Umsetzung: eine Besetzungstabelle (Figur → Szenen → Rolle, Clips, Requisiten) als Teil von kfb.scenelet/1 R2 (cast registry mit wiederverwendbaren Darsteller-IDs statt Kopien je Szene).",
+   "values": {},
+   "owner": "WS0 (Spec R2, Tabelle) · WSB (Darsteller einmal optimieren) · WS1b (Laufzeit)",
+   "check": "Besetzungstabelle im Hub + Spec R2",
+   "source": "Georg 19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Einmal optimierte Darsteller, viele Rollen: spart Arbeit und macht Wiedererkennung über die Szenen zum Running Gag.",
+   "applies": "Spec R2"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7971,7 +7986,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:924",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:925",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
