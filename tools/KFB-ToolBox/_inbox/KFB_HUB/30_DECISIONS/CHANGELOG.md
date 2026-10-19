@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- B44 Fluff-Farm r1 → Hub q121 (Traktor-Sitz offen, Fahrzeug-Job); SFX farm_r1 → Hub q122; WSB b31_anim-Faktor korrigiert (xzLegacy für alte Ansichten).
 - Combat-Arena-Statusbericht R1 (replies/COMBAT_ARENA_STATUS_R1.md) + Verteilungsvorschlag Hub q120; PR #22 (WSA-Audit) im Arena-Repo nicht auffindbar.
 - V-552 Quaternius-Gegner gleichberechtigt + Combat-Arena-Anpassung (Status folgt); V-553 Bleistift + Radiergummi (Brief B46). Clown jongliert existiert (J3–J5), nur optimieren.
 - V-551 King Kayfabian + Dark-Knight-Torwächter + KFB-Castle + Kronen-Gag: Brief B45; Backlog ergänzt (auch Clown/Zirkus).
