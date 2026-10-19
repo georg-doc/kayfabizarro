@@ -72,3 +72,14 @@ WS0/source-owning Game Design lead assesses the one proposed G1+G4 two-minute en
 
 **New gameplay, audiovisual/browser, original asset-isolation, Blender, current WS1b local test, Stage/Cloudflare public URL proof, CI: 0.**
 **Next gate:** WS0 one source-backed playable encounter selection/triage for a later dedicated WS1b proof, not another WS0 Card Ink ACK.
+
+
+## 2026-10-19 · Roadster: Thrust Lab external stunt-physics donor note (additive)
+
+- New file: `ROADSTER_THRUST_LAB_WS0_DONOR_NOTE_R1.md` on **same** Draft PR #435. Exact GitHub branch/file readback after create at `e940a5a3fb0def6ea3058e0da1bfb70bcf8507a5`, donor-note blob `c4bb2cf10376c078e144a9ae3a9b0ec6ac9e378e`: **1/1 PASS**.
+- External source read directly: donor `bkhan23544/roadster-thrust-lab@b90fec1499d61573e0cf1946fcfb949f3ecf5702`, `script.js` blob `0ae179664f6aacabab521d2daa6c7bb8aca7e486` and `README.md` blob `11b8ae49db800b5192e387cc54f87954bd03cd4f`; source tree inspected (6 paths, no LICENSE file in tree); key `updatePhysics(h)` suspension/grip/air-control/landing-support lines read. This was code **reading**, not execution.
+- WS0 architecture V-228, V-010 Joyride look direction, KFB Track Core canon, Joyride J17 RETURN, two-wheel stunt source and Race RECOVERY/PR references cross-checked for owner distinction. No new KFB compatibility claim.
+- Georg's Reddit shortlink recorded verbatim: `https://www.reddit.com/r/threejs/s/PCUiHHvkXT`. Direct resolution/post identity **NOT VERIFIED**, not attributed to the Roadster author.
+- **8/8 actually executed source-text/editorial assertions PASS** (donor SHA, PR, owner, three seams, license, unresolved Reddit URL, not-a-runtime-or-Stage claim, original one-next-gate preservation). Existing historical 16/16 and 9/9 editorial checks are unchanged, **not rerun** by this addendum.
+- Donor browser playtest 0, KFB browser 0, physics/runtime/CI 0, screenshots 0, target-GPU performance 0, Site/Stage verification 0, external assets/code imported 0.
+- **Status:** external engineering design/reference **DEFERRED**, not an acceptance, implementation or new roadmap priority. **The single next WS0 gate is unchanged:** choose one genuine source-backed Fluff acquisition → meaningful Resident/Card response encounter against current WS1b capabilities.
