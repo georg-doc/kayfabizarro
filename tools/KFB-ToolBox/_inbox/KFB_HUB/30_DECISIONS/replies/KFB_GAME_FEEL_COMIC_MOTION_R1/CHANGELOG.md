@@ -19,3 +19,13 @@
 - Appended to `TEST_REPORT_R1.md` (+9/9 source/editorial assertions) and `RETURN.md`, retaining prior R1 source history.
 - Corrected R1 ideation interpretation: V-371 wind/postcards are planned; V-405 Card Ink ACK already exists; V-527 WSV already owns video; WS1/WS1b is sole productive R3F game world. v0.8/v0.9 separate originals not independently proven.
 - Retained a single next gate: WS0 checks one source-backed Fluff acquisition → meaningful response game-encounter candidate against current WS1b scope before authorizing proof. PR #400, register, runtime, other concept strands, Site/Cloudflare unchanged.
+
+
+## 2026-10-19 · Roadster: Thrust Lab × KFB physics donor check-in for WS0 · DESIGN ONLY
+
+- Georg requested check-in of analysis/comments for WS0 and supplied `https://www.reddit.com/r/threejs/s/PCUiHHvkXT` as an additional URL. That Reddit shortlink's destination/identity remains **UNRESOLVED** and was not conflated with other indexed Roadster posts.
+- Added `ROADSTER_THRUST_LAB_WS0_DONOR_NOTE_R1.md`: source-specific comparison against accepted Joyride J17 look, Race driving history, Track Core tunnel/ramp ownership, KFB measured two-wheel wallride and current WS1/WS1b runtime boundary. External `bkhan23544/roadster-thrust-lab@b90fec1499d61573e0cf1946fcfb949f3ecf5702` README, physics code and six-file tree inspected.
+- Prioritized physical wall adhesion, bounded voluntary landing assist and optional directional force/torque thrusters as **deferred** future receiving-owner candidates, **not** an automatic new workstream, physics engine or UI/audio skin. License permission and real browser feel remain unverified.
+- Evidence: source-doc create/readback 1/1; report checkpoint write/readback 1/1; **8/8 actual source-text assertions**; prior 16/16 + 9/9 tests retained as history. Executable gameplay/physics/CI/Stage/Site/performance tests 0.
+- Appended `TEST_REPORT_R1.md` and `RETURN.md`; no previous concept content rewritten, no runtime or protected other branches modified, no PR/merge, no public Stage or Site action.
+- The single WS0 next gate remains one source-backed **Fluff acquisition → meaningful Resident/Card response** encounter; Roadster stays a later research reference only.
