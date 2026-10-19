@@ -54,3 +54,31 @@ Georg muss nichts neu freigeben; der Auftrag zur Gesamtprobe liegt vor. Quellenw
 - R1, 19.10.: zu enge Eingrenzung nur auf Schatten — **SUPERSEDED**.
 - R1.1, 19.10.: falsche Erweiterung zum Motion-Konzept — **SUPERSEDED**.
 - R1.2, 19.10.: Georgs tatsächlichen Gesamtumfang Terrain/Banden/Rampen gesichert; WS1/GitHub als POC-Quelle korrigiert; bestätigte Farb-/Schattenregeln erhalten; nicht verfügbare Ursprungsdetails ausdrücklich offen. Kein Motion-/Video-Auftrag aus dieser Zustimmung.
+
+
+---
+
+## 19.10.2026 · ADDITIVER DESIGN-PIN R1.3 – organische Farbflächen + echte palettenbasierte Shadow Maps
+
+Georg hat die zuvor diskutierte Terrain-Farb-/Schattenrichtung **konkretisiert**. **Der bereits festgehaltene Gesamtauftrag und WS1/WS1b-Einzelowner bleiben unverändert.** Die Quelllücke betrifft weiterhin nur den noch nicht eindeutig identifizierten vollständigen Banden-/Rampen-Ursprungsentwurf und den exakten WS1-POC.
+
+**Ausführliches technisch/gestalterisches Ergänzungsdokument für WS0 und Claude Code:**
+`replies/WS0_CARTOON_TERRAIN_PALETTE_SHADOW_DESIGN_R1_2026-10-19.md`
+(blobs/readback: erster Commit `aeeb02704a875eddc99104c2a5f87377c9445a98`; blob `574edcb7e962b8a0eb2080a1636e0c2cd12ac36b`).
+**Begleitender Provenance-Testbericht:**
+`replies/WS0_CARTOON_TERRAIN_PALETTE_SHADOW_TEST_REPORT_R1_2026-10-19.md`
+(blob `c14aadd06729bd28ca6cee87c5eaf0575297435e`).
+
+**Korrigierte Sachlogik:**
+- Form/Collider: bestehender WS1-Owner; 3–4 breite unregelmäßige Farbflächen werden **nicht nach Höhe**, sondern über unabhängige maskierte Color Fields plus szenen-/biomgebundene Farbro​llen verteilt. Auf senkrechten Flächen müssen passende Tangential-Projektionen existieren. Domain-Warp nur als **unsichtbare Konturformung**, kein sichtbares Noise-/Gradient-Gesprenkel.
+- Vordere Tonmasse ist eine ruhige **eigene grafische Farbmaske**, von echter Schlagschatten-Visibility verschieden und nicht als Bildschirm-Vignette/Blob.
+- **Echte 3D-Shadowmaps mit den vorhandenen Animations-/Fahrzeug-/Terrain-Geometrien**; Receiver wählt Shadow-/Contact-/Edge-Farben aus seiner vorhandenen Bühnen-/Biompalette. Keine geklebten runden Fake-Schatten, keine schwarzgraue Standard-Multiply-Lösung; zwei gedeckelte, klare Schatten-Wertstufen sind Designoption.
+- Spärliche farbige Cliff-/Bandenkanten dort, wo reale sichtbare Formbrüche vorliegen, keine globale schwarze Tusche.
+- **Banden, nicht-stufige Rampen, Terrainform, organische Farbflächen, Schatten und Fahrkontakt gehören in einen gemeinsamen bestehenden WS1b-MVP-Vergleich.** Keine Shadow-only-Aufspaltung, keine neue Runtime, kein WB2-R4-Restart.
+
+**Tatsächliche Prüfung:** 12/12 dokumentarische Source-Text-Assertions PASS; GitHub-Readbacks der Design- und Testdatei exakt. Shader-/3D-/Browser-/Performance-Tests 0. Keine source-isolierten Visuals in diesem Turn; keine Georg-Produktabnahme, keine Site/Cloudflare-Publikation.
+
+**Genau ein nächster Gate (unverändert):** WS0 pinnt Original-Banden/Rampen-/Terrain-Entwurf und echten WS1-GitHub-POC und lässt WS1b eine einzige reversible Gesamt-Terrain-Variante im bestehenden MVP vornehmen. Claude Code liest als ausführender, von WS0 autorisierter Builder das neue Dokument, übernimmt aber keine eigene Runtime-Ownership.
+
+## Additiver Changelog
+- R1.3, 19.10.: vollständige Farbflächen-/Kanten-/Foreground-/Shadow-Designspezifikation und Testbericht als **neue Begleitdateien** hinzugefügt; Parent-Issue #439 bleibt bestehen. Keine alten R1/R1.1-Fehlfassungen reaktiviert.
