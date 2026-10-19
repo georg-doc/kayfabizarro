@@ -7809,6 +7809,21 @@
    "applies": "B46"
   },
   {
+   "id": "V-554",
+   "date": "2026-10-19",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Gefängnis-Labyrinth mit Panoptikum (Georg 19.10., baut auf V-105/V-300/V-301/V-302/V-446): funktional aus dem Mauer-Gizmo bzw. Baukasten B29 r4 bauen, eckig und polar, mit animierter Rekonstruktion bzw. Umbau (Mauern wachsen aus dem Gelände bzw. versinken) nach der analysierten Generator-Logik (Greybox-Backtracker, Incompetech nach Lizenzprüfung). Panoptikum: passende Stein-Turmbasis + Blob-Corp-Turm mit Panoptikum-Auge, Glühen und animiertem Suchscheinwerfer-Strahl. Erst eigenständig, das Meshy-Diorama später. Props: Steine, Geröll, Schmutz, dunkle Pfützen, kahle dunkle Bäume; schwarze Mini-Geier bzw. Raben fliegen herum – auch als stilisierte Fledermäuse für den Vampirturm. Brief B47.",
+   "values": {},
+   "owner": "WSB (B47) · WS1b (Umbau-Laufzeit, Scheinwerfer-Licht)",
+   "check": "B47 Prüfstand + Umbau-Streifen",
+   "source": "Georg 19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Labyrinth-Strang wird endlich gebaut: Kafka-Gefängnis mit überwachendem Auge.",
+   "applies": "B47 nach B46"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7896,7 +7911,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:920",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:921",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
