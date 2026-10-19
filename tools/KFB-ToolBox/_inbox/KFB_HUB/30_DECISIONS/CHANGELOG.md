@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- V-552 Quaternius-Gegner gleichberechtigt + Combat-Arena-Anpassung (Status folgt); V-553 Bleistift + Radiergummi (Brief B46). Clown jongliert existiert (J3–J5), nur optimieren.
 - V-551 King Kayfabian + Dark-Knight-Torwächter + KFB-Castle + Kronen-Gag: Brief B45; Backlog ergänzt (auch Clown/Zirkus).
 - V-550 RA-Szenen-Backlog nach Prio (Hub q119), WSB-Dauer-Warteschlange.
 - V-549 KayKit Fluff-Farm (Farmer S6/12, Traktor, Cube Pets, Fallobst-Fluff): Brief B44, erstes Scenelet-Diorama.

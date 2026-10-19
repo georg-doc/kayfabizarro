@@ -7779,6 +7779,36 @@
    "applies": "B45 in der Warteschlange"
   },
   {
+   "id": "V-552",
+   "date": "2026-10-19",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Figuren-Bestand gleichberechtigt (Georg 19.10.): Die kleinen Quaternius-Gegner (Combat Arena) werden grundsätzlich genauso aufgenommen wie KayKit Medium/Large/Legacy, unsere Frankensteinings und die Cube Pets – je Figurenkarte, KFB-Augen (Lid = Haut gemessen), Clay, Rig-Zuordnung bzw. Clip-Mapping, Prüfstand, Scenelet-tauglich. Die Combat Arena (KayKit-Charaktere dort noch nicht bzw. nur teilweise funktional, Combat-VFX/SFX teils vorhanden) wird auf die neuen Ranged-/Melee-/Wurf-Sets (V-536/V-537/V-540) angepasst und für die Integration (Spiel + Bühne) vorbereitet; Statusbericht WS0 folgt.",
+   "values": {},
+   "owner": "WS0 (Status/Plan) · WSA (Arena-Repo) · WSB (Figuren-Optimierung)",
+   "check": "Arena-Status + Migrationsliste",
+   "source": "Georg 19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Figuren-Standard für alle Quellen – sonst bleibt die Arena eine Insel.",
+   "applies": "Arena-Plan"
+  },
+  {
+   "id": "V-553",
+   "date": "2026-10-19",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Neue Prop-Charaktere (Georg 19.10.): Bleistift mit Radierer-Kopf (KayKit-Bleistift lang mit Radierer-Spitze als Körper), KFB-Eye-Rig + Mund, klassisch gelb-orange Flächen bzw. Streifen; Radiergummi mit KFB-Eye-Rig + Mund, klassisch blau (unten) und rosa (oben). Brief B46; Bezug Karten-/Comic-Welt (zeichnen bzw. Tinte wegradieren).",
+   "values": {},
+   "owner": "WSB (B46)",
+   "check": "B46 Prüfstand",
+   "source": "Georg 19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Charaktere aus der Zeichen-Welt der Karten.",
+   "applies": "B46"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7866,7 +7896,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:917",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:918",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
