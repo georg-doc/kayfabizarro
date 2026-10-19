@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- Ninja-Duell r1 (KayKit-Melee-Haltung als V-536-Kandidat, Hammer-Space beim Flugtritt) → Hub q137; Vergleichsbilder an q136. WSB-Warteschlange (Gunfight → Disco → Clown → Wrestling → Ninja) abgearbeitet; weiter B50 Friedhof, Sci-Fi.
 - Clown → Hub q134 (Requisiten-Gesicht gemessen, Süßes korrigiert). Wrestling-Ring mit Gummiseilen → Hub q135. Ninja-Katana: Regel-Frage V-536 → Hub q136 (Klinge quer vs. Unterarmachse); WSB baut KayKit-Haltung als Kandidat. Bühne v2.3: Disco + Wrestling spielbar (gehäutete Requisiten via SkeletonUtils, Szenenliste no-cache).
 - Gunfight r2 (Karabiner einhändig, Minigun, Würfel) → an q132 (Gewehr-Entscheid A/B/C für Georg). Disco r1b (7 Tänzer, eigenes Drum-Pult + Kugel an Lichterkette) → Hub q133. Cast: 18 von 29 ready.
 - Gunfight r1b → Hub q131. Bühne v2.2: erste RA-Szene live (gunfight_duel_01, Hero Man rot/blau) mit Clip-Spuren je Darsteller, Schuss-Strahlen ab KFB_Muzzle, Scenelet-Kameras mit span_u; Platzhalter-Böden werden in der Welt-Ansicht ausgeblendet.
