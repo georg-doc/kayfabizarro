@@ -1056,7 +1056,7 @@ WHY = {
  'V-554':('Der Labyrinth-Strang wird endlich gebaut: Kafka-Gefängnis mit überwachendem Auge.','B47 nach B46'),
  'V-555':('Starre Legacy-Arme erreichen den Mund nicht; der Streckarm macht aus der Grenze einen Cartoon-Gag statt Durchdringung.','Ork-Band r1b'),
  'V-556':('Ein sozialer Hub, der die Rollenspiel-Decks trägt: Warten statt Raid ist der Satire-Kern, Platons Höhle der philosophische Anschluss.','B48'),
- 'V-557':('Ein Zauber-Clip-Satz für Magierin und Hexen, aus dem Fernwaffen bis zum Flammenwerfer abgeleitet werden.','B48 Zauber-Clips')
+ 'V-557':('Ein Zauber-Clip-Satz für Magierin und Hexen, aus dem Fernwaffen bis zum Flammenwerfer abgeleitet werden.','B48 Zauber-Clips'),
  'V-427':('Gekaufte Assets liegen öffentlich (Repo + GitHub Pages); privat schalten ohne Umzug würde Viewer, Librarian, Audio, ToolBox und 3D-Bühnen brechen.','nach Georgs Entscheid'),
  'V-084':('Prozedurale Primitive können keine Claymation; Regress.','ab 10.10.'),
 }

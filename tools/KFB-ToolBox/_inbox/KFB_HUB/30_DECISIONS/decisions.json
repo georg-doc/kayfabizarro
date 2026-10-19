@@ -7828,7 +7828,7 @@
    "date": "2026-10-19",
    "area": "Figuren",
    "verdict": "RULE",
-   "text": "Cartoon-Streckarm für starre Legacy-Arme (Georg 19.10., Ork-Band): Wo ein starrer Legacy-Arm (Rig_Legacy) ein gehaltenes Ding nicht ohne Durchdringung an Mund bzw. Gesicht bringt (Trompeter Legacy Orc A; Sänger Legacy Orc B mit Mikro), wird der Arm-Knochen beim Spielen bzw. Singen ×1,4–1,5 gestreckt (Gag, mit Ein- und Ausfedern). Das Werkzeug sitzt an einem eigenen Hand-Knochen ohne Verzerrung, Faust am KFB_Grip (V-536 bleibt), Mundstück bzw. Mikrokopf ≤ 0,02–0,05 u vor dem Mund, 0 Durchdringung (V-520 d). Nur für Legacy-Arme, die nachweislich zu kurz sind (Mess-Suche); Figuren mit echten Armen nutzen normale Posen.",
+   "text": "Cartoon-Streckarm für starre Legacy-Arme (Georg 19.10., Ork-Band): Wo ein starrer Legacy-Arm (Rig_Legacy) ein gehaltenes Ding nicht ohne Durchdringung an Mund bzw. Gesicht bringt (Trompeter Legacy Orc A; Sänger Legacy Orc B mit Mikro), wird der Arm beim Spielen bzw. Singen als klassischer Cartoon-Gummiarm ×2,0–2,3 ausgefahren (Georg bestätigt 19.10. nach Mess-Suche: ×1,4–1,5 geht durch Kinn/Kiefer); weicher Ellbogen-Bogen aus zwei Knochen, gleich dick, Ein- und Ausfedern 5 Bilder mit Overshoot. Das Werkzeug sitzt an einem eigenen Hand-Knochen ohne Verzerrung, Faust am KFB_Grip (V-536 bleibt), Mundstück bzw. Mikrokopf ≤ 0,02–0,05 u vor dem Mund, 0 Durchdringung (V-520 d). Nur für Legacy-Arme, die nachweislich zu kurz sind (Mess-Suche); Figuren mit echten Armen nutzen normale Posen.",
    "values": {},
    "owner": "WSB (Ork-Band r1b)",
    "check": "Nahbild je Schlag: Faust am Griff, Mund ≤ Abstand, 0 Durchdringung",
@@ -7837,6 +7837,36 @@
    "superseded_by": [],
    "why": "Starre Legacy-Arme erreichen den Mund nicht; der Streckarm macht aus der Grenze einen Cartoon-Gag statt Durchdringung.",
    "applies": "Ork-Band r1b"
+  },
+  {
+   "id": "V-556",
+   "date": "2026-10-19",
+   "area": "Welt",
+   "verdict": "RULE",
+   "text": "Rollenspiel-Gruppe als Meta-RPG-Hub (Georg 19.10.): KayKit Adventurers + Kleriker (Brunnen, Buch) + Horter (2 Varianten) + große Gäste (Barbar, Todesritter, Skelett) campen vor einem in den Fels gemauerten Dungeon-Portal: Lagerfeuer, alte Zelte (RPG-Bits, sonst Hiker-Zelte), Karte, Werkzeuge, Schleifstein, Kochen, Geld zählen, halbvolle Schatztruhe. Sie planen den nächsten Raid, warten aber ewig auf Mitglieder, die sich verspäten (Pizza, Arbeit, kein Freigang) – der epische Raid findet nie statt, alle erzählen vollmundig von Heldentaten. Gespräche metanarrativ wie am Spieltisch, in Triplet-Form. Hub für rollenspielartige Decks (z. B. Platons Dungeon Raid: Philosophen als Heldengruppe). Zwei Schritte: (1) Lager vor halb offenem Höhlen-Portal; (2) später Platons Höhle als Innenraum mit Kino-/Schattenspiel-Illusion und Hinaustreten ans Licht. Modular für 2–6 Figuren, in anderen Biomen (z. B. Eis-Dungeon) als Dungeon- oder Raid-Gruppe mit NPCs; im Resident Atlas erweiterbar.",
+   "values": {},
+   "owner": "WSB (B48) · WS0 (Triplets, Scenelet) · WS1b (Einbau)",
+   "check": "B48 Prüfbögen in Lager-Pose + Diorama + Scenelet",
+   "source": "Georg 19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein sozialer Hub, der die Rollenspiel-Decks trägt: Warten statt Raid ist der Satire-Kern, Platons Höhle der philosophische Anschluss.",
+   "applies": "B48"
+  },
+  {
+   "id": "V-557",
+   "date": "2026-10-19",
+   "area": "Kampf",
+   "verdict": "RULE",
+   "text": "Zauber als Primär-/Sekundärwaffe (Georg 19.10.): Magierin (und unsere Hexen, gleiches Rig) – Primär Frostblitz aus dem Zauberstab (Stab-Spitze auf der Unterarmachse, V-536), Sekundär Feuerball als geworfener Zauber aus der Hand (Stab kurz verstaut, beide Hände, Cartoon-Logik). Effekt-Kette wie SpellSpill (V-499/V-514). Aus derselben Animation folgt der Flammenwerfer: anderes Werkzeug (Trichter, Blaster, Stab), andere Sprache, gleicher Clip.",
+   "values": {},
+   "owner": "WSB (Clips + Anker) · WS1b/WSA (Laufzeit-VFX)",
+   "check": "Streifen Frostblitz + Feuerball mit Marken charge/release/recover",
+   "source": "Georg 19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein Zauber-Clip-Satz für Magierin und Hexen, aus dem Fernwaffen bis zum Flammenwerfer abgeleitet werden.",
+   "applies": "B48 Zauber-Clips"
   },
   {
    "id": "V-427",
@@ -7926,7 +7956,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:922",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:923",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
