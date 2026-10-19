@@ -1,0 +1,827 @@
+{
+ "schema": "kfb.scenelet/1",
+ "rev": "R3",
+ "id": "ra_graveyard_01",
+ "title": "Friedhof · tanzende Skelette",
+ "kind": "dance",
+ "version": 1,
+ "status": "review",
+ "source": {
+  "from": "resident-atlas-s17",
+  "ref": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-10-04_r2/data/graveyard-01.json",
+  "converter": "ra2scenelet@0.2",
+  "decision": "V-550",
+  "wsb": "50_BLENDER/B50/graveyard",
+  "brief": "BRIEF_WSB_B50_CAST_RA_R1 Punkt 4"
+ },
+ "units": "u",
+ "m_per_u": 0.616381042,
+ "space": "gltf",
+ "up": "y",
+ "forward": "+z",
+ "clock": {
+  "fps": 30
+ },
+ "assets": {
+  "warrior": {
+   "ref": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_warrior.r1.glb",
+   "b64": "scenelets/ra_graveyard_01/warrior.glb.b64.txt",
+   "sha256": "c180f5c318cdceedaf15a65506badb09ce626777038514f342264f6788cbbdab",
+   "bytes": 2171904,
+   "private": true,
+   "license": "KayKit Skeletons (Kay Lousberg) CC0 1.0; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat; Death_A/Idle_A/Spawn_Ground KayKit CC0",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "gy_warrior.figure.json",
+   "publicVariant": "dropbox:50_BLENDER/B50/graveyard/figures/KFB_Skeleton_warrior.r1.glb",
+   "encoding": "base64"
+  },
+  "rogue": {
+   "ref": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_rogue.r1.glb",
+   "b64": "scenelets/ra_graveyard_01/rogue.glb.b64.txt",
+   "sha256": "7456fb2ccdbebad88f6a7966b8afb4df39d0bbd5a5d9787aa68cd18d1c71b450",
+   "bytes": 2204968,
+   "private": true,
+   "license": "KayKit Skeletons (Kay Lousberg) CC0 1.0; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat; Death_A/Idle_A/Spawn_Ground KayKit CC0",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "gy_rogue.figure.json",
+   "publicVariant": "dropbox:50_BLENDER/B50/graveyard/figures/KFB_Skeleton_rogue.r1.glb",
+   "encoding": "base64"
+  },
+  "mage": {
+   "ref": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_mage.r1.glb",
+   "b64": "scenelets/ra_graveyard_01/mage.glb.b64.txt",
+   "sha256": "286df6b08b73cbf63f2f9e50e1037410fe1a73d39ef9fca965e7126eb00e3cdf",
+   "bytes": 2064684,
+   "private": true,
+   "license": "KayKit Skeletons (Kay Lousberg) CC0 1.0; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat; Death_A/Idle_A/Spawn_Ground KayKit CC0",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "gy_mage.figure.json",
+   "publicVariant": "dropbox:50_BLENDER/B50/graveyard/figures/KFB_Skeleton_mage.r1.glb",
+   "encoding": "base64"
+  },
+  "minion": {
+   "ref": "dropbox:50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_minion.r1.glb",
+   "b64": "scenelets/ra_graveyard_01/minion.glb.b64.txt",
+   "sha256": "697cbf209ae85d70dd2a354f1330c10a432147a3e432190cf4fe54380701ef39",
+   "bytes": 1981104,
+   "private": true,
+   "license": "KayKit Skeletons (Kay Lousberg) CC0 1.0; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat; Death_A/Idle_A/Spawn_Ground KayKit CC0",
+   "preview": false,
+   "rig": "Rig_Medium",
+   "card": "gy_minion.figure.json",
+   "publicVariant": "dropbox:50_BLENDER/B50/graveyard/figures/KFB_Skeleton_minion.r1.glb",
+   "encoding": "base64"
+  },
+  "diorama": {
+   "ref": "dropbox:50_BLENDER/B50/graveyard/diorama/KFB_Graveyard_Diorama.r1.glb",
+   "b64": "scenelets/ra_graveyard_01/diorama.glb.b64.txt",
+   "sha256": "cc2955d12953065c2fbbc574621f2383de468e0c0497b0c9c4996e0beced6b3c",
+   "bytes": 1001376,
+   "private": false,
+   "license": "KayKit Halloween Bits 1.0 FREE (Kay Lousberg) CC0 1.0; Boden eigen (WSB) CC0",
+   "preview": false,
+   "kind": "stage",
+   "ownGround": true,
+   "anchors": [
+    "KFB_DanceFloor",
+    "KFB_Start_warrior",
+    "KFB_Start_rogue",
+    "KFB_Start_mage",
+    "KFB_Start_minion",
+    "KFB_Gate",
+    "KFB_Crypt_Door"
+   ],
+   "encoding": "base64"
+  }
+ },
+ "actors": [
+  {
+   "id": "warrior",
+   "p": [
+    11.8,
+    0,
+    -6.6
+   ],
+   "ry": 40,
+   "s": 1,
+   "clip": "kfb_dance_chicken_a",
+   "loop": true,
+   "phase": 0.0,
+   "role": "dancer",
+   "faction": null,
+   "cast": "skeleton_warrior",
+   "note": "Skeleton Warrior",
+   "asset": "warrior",
+   "card": "scenelets/ra_graveyard_01/gy_warrior.figure.json"
+  },
+  {
+   "id": "rogue",
+   "p": [
+    7.2,
+    0,
+    -7.8
+   ],
+   "ry": 55,
+   "s": 1,
+   "clip": "kfb_dance_chicken_a",
+   "loop": true,
+   "phase": 0.0,
+   "role": "dancer",
+   "faction": null,
+   "cast": "skeleton_rogue",
+   "note": "Skeleton Rogue",
+   "asset": "rogue",
+   "card": "scenelets/ra_graveyard_01/gy_rogue.figure.json"
+  },
+  {
+   "id": "mage",
+   "p": [
+    9.6,
+    0,
+    -10.2
+   ],
+   "ry": 35,
+   "s": 1,
+   "clip": "kfb_dance_chicken_a",
+   "loop": true,
+   "phase": 0.0,
+   "role": "dancer",
+   "faction": null,
+   "cast": "skeleton_mage",
+   "note": "Skeleton Mage",
+   "asset": "mage",
+   "card": "scenelets/ra_graveyard_01/gy_mage.figure.json"
+  },
+  {
+   "id": "minion",
+   "p": [
+    9.83,
+    0,
+    -5.6
+   ],
+   "ry": 20,
+   "s": 1,
+   "clip": "kfb_dance_chicken_a",
+   "loop": true,
+   "phase": 0.0,
+   "role": "dancer",
+   "faction": null,
+   "cast": "skeleton_minion",
+   "note": "Skeleton Minion (neu, WSB: vorn am Platz)",
+   "asset": "minion",
+   "card": "scenelets/ra_graveyard_01/gy_minion.figure.json"
+  }
+ ],
+ "props": [],
+ "timeline": {
+  "clock": {
+   "bpm": 120,
+   "phase": 0,
+   "length": 80.0
+  },
+  "tracks": [],
+  "cues": [
+   {
+    "t": 0.0,
+    "actor": "mage",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true
+   },
+   {
+    "t": 0.0,
+    "actor": "minion",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true
+   },
+   {
+    "t": 0.0,
+    "actor": "rogue",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true
+   },
+   {
+    "t": 0.0,
+    "actor": "warrior",
+    "clip": "kfb_dance_chicken_a",
+    "loop": true
+   },
+   {
+    "t": 16.0,
+    "actor": "mage",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 16.0,
+    "actor": "minion",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 16.0,
+    "actor": "rogue",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 16.0,
+    "actor": "warrior",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 16.458,
+    "actor": "mage",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 16.5,
+    "actor": "minion",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 16.5,
+    "actor": "rogue",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 16.5,
+    "actor": "warrior",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 19.198,
+    "actor": "mage",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 19.198,
+    "actor": "minion",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 19.198,
+    "actor": "rogue",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 19.198,
+    "actor": "warrior",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 19.531,
+    "actor": "minion",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 19.531,
+    "actor": "rogue",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 19.531,
+    "actor": "warrior",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 19.573,
+    "actor": "mage",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 20.0,
+    "actor": "mage",
+    "clip": "kfb_dance_house_a",
+    "loop": true
+   },
+   {
+    "t": 20.0,
+    "actor": "minion",
+    "clip": "kfb_dance_house_a",
+    "loop": true
+   },
+   {
+    "t": 20.0,
+    "actor": "rogue",
+    "clip": "kfb_dance_house_a",
+    "loop": true
+   },
+   {
+    "t": 20.0,
+    "actor": "warrior",
+    "clip": "kfb_dance_house_a",
+    "loop": true
+   },
+   {
+    "t": 36.0,
+    "actor": "mage",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 36.0,
+    "actor": "minion",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 36.0,
+    "actor": "rogue",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 36.0,
+    "actor": "warrior",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 36.458,
+    "actor": "mage",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 36.5,
+    "actor": "minion",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 36.5,
+    "actor": "rogue",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 36.5,
+    "actor": "warrior",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 39.198,
+    "actor": "mage",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 39.198,
+    "actor": "minion",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 39.198,
+    "actor": "rogue",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 39.198,
+    "actor": "warrior",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 39.531,
+    "actor": "minion",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 39.531,
+    "actor": "rogue",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 39.531,
+    "actor": "warrior",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 39.573,
+    "actor": "mage",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 40.0,
+    "actor": "mage",
+    "clip": "kfb_dance_samba_a",
+    "loop": true
+   },
+   {
+    "t": 40.0,
+    "actor": "minion",
+    "clip": "kfb_dance_samba_a",
+    "loop": true
+   },
+   {
+    "t": 40.0,
+    "actor": "rogue",
+    "clip": "kfb_dance_samba_a",
+    "loop": true
+   },
+   {
+    "t": 40.0,
+    "actor": "warrior",
+    "clip": "kfb_dance_samba_a",
+    "loop": true
+   },
+   {
+    "t": 56.0,
+    "actor": "mage",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 56.0,
+    "actor": "minion",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 56.0,
+    "actor": "rogue",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 56.0,
+    "actor": "warrior",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 56.458,
+    "actor": "mage",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 56.5,
+    "actor": "minion",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 56.5,
+    "actor": "rogue",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 56.5,
+    "actor": "warrior",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 59.198,
+    "actor": "mage",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 59.198,
+    "actor": "minion",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 59.198,
+    "actor": "rogue",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 59.198,
+    "actor": "warrior",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 59.531,
+    "actor": "minion",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 59.531,
+    "actor": "rogue",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 59.531,
+    "actor": "warrior",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 59.573,
+    "actor": "mage",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 60.0,
+    "actor": "mage",
+    "clip": "kfb_dance_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 60.0,
+    "actor": "minion",
+    "clip": "kfb_dance_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 60.0,
+    "actor": "rogue",
+    "clip": "kfb_dance_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 60.0,
+    "actor": "warrior",
+    "clip": "kfb_dance_hip_hop_a",
+    "loop": true
+   },
+   {
+    "t": 76.0,
+    "actor": "mage",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 76.0,
+    "actor": "minion",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 76.0,
+    "actor": "rogue",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 76.0,
+    "actor": "warrior",
+    "clip": "Death_A",
+    "loop": false,
+    "note": "Zerfall: Kopfbedeckung fällt bei Marke drop ab"
+   },
+   {
+    "t": 76.458,
+    "actor": "mage",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 76.5,
+    "actor": "minion",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 76.5,
+    "actor": "rogue",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 76.5,
+    "actor": "warrior",
+    "sfx": "bone_clatter"
+   },
+   {
+    "t": 79.198,
+    "actor": "mage",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 79.198,
+    "actor": "minion",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 79.198,
+    "actor": "rogue",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 79.198,
+    "actor": "warrior",
+    "clip": "kfb_rise_reverse_a",
+    "loop": false,
+    "note": "Zusammensetzen (Death_A rückwärts gebacken), Kopfbedeckung springt bei pop_in zurück"
+   },
+   {
+    "t": 79.531,
+    "actor": "minion",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 79.531,
+    "actor": "rogue",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 79.531,
+    "actor": "warrior",
+    "sfx": "bone_click"
+   },
+   {
+    "t": 79.573,
+    "actor": "mage",
+    "sfx": "bone_click"
+   }
+  ],
+  "script": null,
+  "rules": {
+   "collapse": "Death_A (0,79 s), liegt bis 4 s nach dem Zerfall minus Clip-Länge",
+   "reassemble": "kfb_rise_reverse_a endet genau beim nächsten Tanz-Cue",
+   "riseAlt": "Spawn_Ground (KayKit CC0) als Alternative"
+  }
+ },
+ "cameras": [
+  {
+   "id": "totale",
+   "preset": "threeq"
+  },
+  {
+   "id": "nah",
+   "preset": "near_face"
+  }
+ ],
+ "light": {
+  "rig": "kfb-stage-light.v1.1",
+  "mood": "MOODS_MESA",
+  "tod": "day"
+ },
+ "world": {
+  "anchor": [
+   0,
+   0,
+   0
+  ],
+  "placement": "grammar-r2",
+  "tags": [
+   "graveyard",
+   "halloween",
+   "skeleton",
+   "dance"
+  ],
+  "terrain": {
+   "biome": "graveyard"
+  },
+  "pack": {
+   "id": "KayKit_HalloweenBits",
+   "root": "media/3D_Assets/KayKit_HalloweenBits/",
+   "commit": "10a2c5e2",
+   "parts": [
+    "arch",
+    "arch_gate",
+    "bench",
+    "bench_decorated",
+    "bone_A",
+    "bone_B",
+    "bone_C",
+    "candle",
+    "candle_melted",
+    "candle_thin",
+    "candle_triple",
+    "coffin",
+    "coffin_decorated",
+    "crypt",
+    "fence",
+    "fence_broken",
+    "fence_gate",
+    "fence_pillar",
+    "fence_pillar_broken",
+    "fence_seperate",
+    "fence_seperate_broken",
+    "floor_dirt",
+    "floor_dirt_grave",
+    "floor_dirt_small",
+    "grave_A",
+    "grave_A_destroyed",
+    "grave_B",
+    "gravemarker_A",
+    "gravemarker_B",
+    "gravestone",
+    "lantern_hanging",
+    "lantern_standing",
+    "path_A",
+    "path_B",
+    "path_C",
+    "path_D",
+    "pillar",
+    "plaque",
+    "plaque_candles",
+    "post",
+    "post_lantern",
+    "post_skull",
+    "pumpkin_orange",
+    "pumpkin_orange_jackolantern",
+    "pumpkin_orange_small",
+    "pumpkin_yellow",
+    "pumpkin_yellow_jackolantern",
+    "pumpkin_yellow_small",
+    "ribcage",
+    "shrine",
+    "shrine_candles",
+    "skull",
+    "skull_candle",
+    "tree_dead_large",
+    "tree_dead_large_decorated",
+    "tree_dead_medium",
+    "tree_dead_small",
+    "tree_pine_orange_large",
+    "tree_pine_orange_medium",
+    "tree_pine_orange_small",
+    "tree_pine_yellow_large",
+    "tree_pine_yellow_medium",
+    "tree_pine_yellow_small"
+   ]
+  }
+ },
+ "review": {
+  "hub": null,
+  "gates": [
+   "G1",
+   "G2",
+   "G3",
+   "G5",
+   "G6"
+  ],
+  "qa": [
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h"
+  ],
+  "views": [
+   "_privat_mixamo/renders/B50_friedhof_diorama.png",
+   "_privat_mixamo/renders/B50_friedhof_zerfall.png",
+   "_privat_mixamo/renders/B50_friedhof_zusammensetzen.png"
+  ]
+ },
+ "todo": [
+  "Bühne: Diorama hat eigenen Boden (Bühnenboden tiefer legen)"
+ ],
+ "clipLibrary": {
+  "ref": "manifest:media/3D_Assets/Animations/KFB_Motion_Library/KFB_Motion_Library_Rig_Medium.glb@032c9d50",
+  "rig": "Rig_Medium"
+ },
+ "audio": {
+  "ambience": [],
+  "music": {
+   "track": "bone-rattle-boogie",
+   "title": "Bone Rattle Boogie",
+   "prompts": "docs/SUNO_GRAVEYARD_TRACKS_02.md"
+  }
+ },
+ "stage": {
+  "asset": "diorama",
+  "p": [
+   9.533,
+   0.0,
+   -8.2
+  ],
+  "ry": 0,
+  "note": "Diorama-Ursprung = Tanzplatz-Mitte (Schwerpunkt der Startpunkte); eigener Boden: Bühnenboden 3 cm tiefer legen (Z-Fighting)"
+ }
+}

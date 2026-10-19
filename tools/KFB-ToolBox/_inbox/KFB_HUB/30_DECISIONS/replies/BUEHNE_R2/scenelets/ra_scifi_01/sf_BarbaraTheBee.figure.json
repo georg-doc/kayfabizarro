@@ -1,0 +1,71 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "kfb_astronaut_barbarathebee",
+ "displayName": "Astronaut Barbara the Bee",
+ "role": "resident",
+ "story": "B50 Sci-Fi (ra_scifi_01): Alien-Außenposten, Bewohner vor der Station",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B50/scifi/figures/KFB_Astronaut_BarbaraTheBee.r1.glb",
+   "sha256": "f94e3b9a545d3603d6805610054ea9b8f8bd392eda809aaddcd2739c2982be7d",
+   "onMain": false,
+   "private": false
+  },
+  "rig": "Quaternius"
+ },
+ "eyeRig": {
+  "required": true,
+  "version": "pet-eye-rig.v6",
+  "seat": "cap",
+  "anchors": {
+   "L": "eye_anchor.l",
+   "R": "eye_anchor.r",
+   "from": "B50 Sci-Fi: Quaternius-Augäpfel (lose Kugeln) ersetzt, L/R gespiegelt"
+  },
+  "settings": {
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.42,
+   "converge": 0.12,
+   "life": {
+    "on": true
+   }
+  },
+  "lid": {
+   "colour": "#303030",
+   "colourMode": "skin-measured"
+  }
+ },
+ "mouth": {
+  "owner": "original-mesh",
+  "note": "Quaternius-Original (aufgemalt/modelliert)"
+ },
+ "material": {
+  "clayProfile": "character"
+ },
+ "clips": [
+  "Idle",
+  "Wave",
+  "Yes",
+  "No",
+  "Walk",
+  "Run",
+  "Jump",
+  "Jump_Idle",
+  "Jump_Land",
+  "Duck",
+  "Punch",
+  "HitReact",
+  "Death"
+ ],
+ "approval": {
+  "status": "proof-r1",
+  "vRef": [
+   "V-550",
+   "V-552",
+   "V-385"
+  ]
+ },
+ "licenses": {
+  "body": "Quaternius Ultimate Space Kit, CC0 1.0; KFB-Augen-Anker und Boden-Korrektur eigen (WSB)"
+ }
+}

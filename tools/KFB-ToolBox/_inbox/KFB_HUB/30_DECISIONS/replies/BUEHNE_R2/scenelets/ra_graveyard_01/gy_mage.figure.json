@@ -1,0 +1,80 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "kfb_skeleton_mage",
+ "displayName": "Skeleton Mage · tanzt auf dem Friedhof",
+ "role": "dancer",
+ "story": "B50 Friedhof (ra_graveyard_01): tanzende Skelette, bpm 120, Zerfall und Zusammensetzen je 16 s",
+ "body": {
+  "glb": {
+   "path": "KFB_HUB/50_BLENDER/B50/graveyard/_privat_mixamo/KFB_Skeleton_mage.r1.glb",
+   "sha256": "286df6b08b73cbf63f2f9e50e1037410fe1a73d39ef9fca965e7126eb00e3cdf",
+   "onMain": false,
+   "private": true
+  },
+  "rig": "Rig_Medium"
+ },
+ "eyeRig": {
+  "required": true,
+  "version": "pet-eye-rig.v6",
+  "seat": "cap",
+  "anchors": {
+   "L": "eye_anchor.l",
+   "R": "eye_anchor.r",
+   "from": "B50 Friedhof: KayKit-Leuchtaugen ersetzt (keine Emission, V-385)"
+  },
+  "settings": {
+   "pupilStyle": "matte-cute",
+   "pupilSize": 0.42,
+   "converge": 0.12,
+   "life": {
+    "on": true
+   }
+  },
+  "lid": {
+   "colour": "#dfbc99",
+   "colourMode": "skin-measured"
+  }
+ },
+ "mouth": {
+  "owner": "original-mesh",
+  "note": "KayKit-Kiefer (Jaw) bleibt"
+ },
+ "material": {
+  "clayProfile": "character"
+ },
+ "behaviour": {
+  "collapse": "Death_A",
+  "reassemble": "kfb_rise_reverse_a",
+  "riseAlt": "Spawn_Ground",
+  "dances": [
+   "kfb_dance_chicken_a",
+   "kfb_dance_house_a",
+   "kfb_dance_samba_a",
+   "kfb_dance_hip_hop_a"
+  ],
+  "headgearDrop": "Hut fällt bei drop ab (KFB_*_Dropped), springt im Rückwärts-Clip bei pop_in zurück"
+ },
+ "clipMarks": {
+  "Death_A": {
+   "drop": 0.458,
+   "ready": 0.792
+  },
+  "kfb_rise_reverse_a": {
+   "pop_in": 0.375,
+   "ready": 0.792,
+   "note": "Death_A rückwärts (Zusammensetzen)"
+  }
+ },
+ "approval": {
+  "status": "proof-r1",
+  "vRef": [
+   "V-548",
+   "V-550",
+   "V-552",
+   "V-385"
+  ]
+ },
+ "licenses": {
+  "body": "KayKit Skeletons (Kay Lousberg) CC0 1.0; Tanz-Clips Motion Library v2 (Mixamo-Ableitung, nur Laufzeit) → privat"
+ }
+}

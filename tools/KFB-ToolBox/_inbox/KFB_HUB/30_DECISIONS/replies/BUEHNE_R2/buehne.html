@@ -195,7 +195,7 @@ function buildTerrain(color, flatR, extent) {
     const x = pos.getX(i), z = pos.getZ(i), r = Math.hypot(x, z);
     const k = THREE.MathUtils.smoothstep(r, flatR, flatR * 2.2);                       /* flach unter der Szene, sanfte Hügel außen */
     const h = (vnoise(x / sc, z / sc) * 0.7 + vnoise(x / (sc * 0.4), z / (sc * 0.4)) * 0.3 - 0.35) * extent * 0.06;
-    pos.setY(i, -0.004 + k * Math.max(-0.02 * extent, h));
+    pos.setY(i, -0.03 + k * Math.max(-0.02 * extent, h));   /* 3 cm unter 0: Dioramen mit eigenem Boden ohne Z-Fighting */
   }
   g.computeVertexNormals();
   terrain = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color, roughness: 0.96 })); terrain.receiveShadow = true; terrain.name = 'kfb_terrain';
@@ -308,6 +308,7 @@ async function loadScenelet(file) {
   /* props zuerst (Diorama = Bühne); 'stage' (Duell-Boden u. ä.) zählt als Bühnen-Requisite */
   const propList = [...(sc.props || [])]; if (sc.stage?.asset && !/PLATZHALTER/i.test(sc.stage.note || '')) propList.unshift({ id: 'stage', asset: sc.stage.asset, p: sc.stage.p, ry: sc.stage.ry, role: 'stage' });
   for (const pr of propList) {
+    if (pr.inDiorama) continue;   /* im Diorama-GLB schon verbacken */
     const asset = sc.assets[pr.asset]; if (!asset) { problems.push('Asset fehlt: ' + pr.asset); continue; }
     if (asset.preview) { problems.push('Vorschau-Datei: ' + pr.asset); }
     try {

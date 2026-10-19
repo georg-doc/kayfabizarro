@@ -1,0 +1,857 @@
+{
+ "schema": "kfb.scenelet/1",
+ "rev": "R3",
+ "id": "ra_scifi_01",
+ "title": "Sci-Fi · Alien-Außenposten",
+ "kind": "diorama",
+ "version": 1,
+ "status": "review",
+ "source": {
+  "from": "resident-atlas-s17",
+  "ref": "tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-10-04_r2/data/scifi-pack-01.json",
+  "converter": "ra2scenelet@0.2",
+  "decision": "V-550",
+  "wsb": "50_BLENDER/B50/scifi",
+  "brief": "BRIEF_WSB_B50_CAST_RA_R1 Punkt 5"
+ },
+ "units": "u",
+ "m_per_u": 0.616381042,
+ "space": "gltf",
+ "up": "y",
+ "forward": "+z",
+ "clock": {
+  "fps": 30
+ },
+ "assets": {
+  "barbara": {
+   "ref": "dropbox:50_BLENDER/B50/scifi/figures/KFB_Astronaut_BarbaraTheBee.r1.glb",
+   "b64": "scenelets/ra_scifi_01/barbara.glb.b64.txt",
+   "sha256": "f94e3b9a545d3603d6805610054ea9b8f8bd392eda809aaddcd2739c2982be7d",
+   "bytes": 1104508,
+   "private": false,
+   "license": "Quaternius Ultimate Space Kit, CC0 1.0; KFB-Augen-Anker und Boden-Korrektur eigen (WSB)",
+   "preview": false,
+   "rig": "Quaternius",
+   "card": "sf_BarbaraTheBee.figure.json",
+   "encoding": "base64"
+  },
+  "fernando": {
+   "ref": "dropbox:50_BLENDER/B50/scifi/figures/KFB_Astronaut_FernandoTheFlamingo.r1.glb",
+   "b64": "scenelets/ra_scifi_01/fernando.glb.b64.txt",
+   "sha256": "42402a96cb48dfdf9c52e06a3791aeab2efdb474ceabb2959030f44bf4b44ce9",
+   "bytes": 1053236,
+   "private": false,
+   "license": "Quaternius Ultimate Space Kit, CC0 1.0; KFB-Augen-Anker und Boden-Korrektur eigen (WSB)",
+   "preview": false,
+   "rig": "Quaternius",
+   "card": "sf_FernandoTheFlamingo.figure.json",
+   "encoding": "base64"
+  },
+  "finn": {
+   "ref": "dropbox:50_BLENDER/B50/scifi/figures/KFB_Astronaut_FinnTheFrog.r1.glb",
+   "b64": "scenelets/ra_scifi_01/finn.glb.b64.txt",
+   "sha256": "e4a1b6e4b76e7f860c897fab394bc7763dd5bca9be9df36b74b5f8663e0b7f79",
+   "bytes": 1083908,
+   "private": false,
+   "license": "Quaternius Ultimate Space Kit, CC0 1.0; KFB-Augen-Anker und Boden-Korrektur eigen (WSB)",
+   "preview": false,
+   "rig": "Quaternius",
+   "card": "sf_FinnTheFrog.figure.json",
+   "encoding": "base64"
+  },
+  "rae": {
+   "ref": "dropbox:50_BLENDER/B50/scifi/figures/KFB_Astronaut_RaeTheRedPanda.r1.glb",
+   "b64": "scenelets/ra_scifi_01/rae.glb.b64.txt",
+   "sha256": "43f0e5973e4695a5e6f5bcfbd9d770a9467613b2898db5a40e7aea189fbd33fc",
+   "bytes": 1103440,
+   "private": false,
+   "license": "Quaternius Ultimate Space Kit, CC0 1.0; KFB-Augen-Anker und Boden-Korrektur eigen (WSB)",
+   "preview": false,
+   "rig": "Quaternius",
+   "card": "sf_RaeTheRedPanda.figure.json",
+   "encoding": "base64"
+  },
+  "diorama": {
+   "ref": "dropbox:50_BLENDER/B50/scifi/diorama/KFB_SciFi_Outpost.r1.glb",
+   "b64": "scenelets/ra_scifi_01/diorama.glb.b64.txt",
+   "sha256": "bb7d98e8490d797d0deeb642df47a3f208d553464f5519f68617decc3087f778",
+   "bytes": 1882368,
+   "private": false,
+   "license": "Quaternius Ultimate Space Kit, CC0 1.0; Boden eigen (WSB)",
+   "preview": false,
+   "kind": "stage",
+   "ownGround": true,
+   "anchors": [
+    "KFB_Start_barbara",
+    "KFB_Start_fernando",
+    "KFB_Start_finn",
+    "KFB_Start_rae",
+    "KFB_Station_Front"
+   ],
+   "encoding": "base64"
+  }
+ },
+ "actors": [
+  {
+   "id": "barbara",
+   "p": [
+    -5.9,
+    0,
+    2.91
+   ],
+   "ry": -27,
+   "s": 1,
+   "clip": "Idle",
+   "loop": true,
+   "phase": 0.0,
+   "role": "resident",
+   "faction": null,
+   "cast": "astronaut_barbarathebee",
+   "note": "Barbara the Bee",
+   "asset": "barbara",
+   "card": "scenelets/ra_scifi_01/sf_BarbaraTheBee.figure.json"
+  },
+  {
+   "id": "fernando",
+   "p": [
+    -2.03,
+    0,
+    3.88
+   ],
+   "ry": -9,
+   "s": 1,
+   "clip": "Idle",
+   "loop": true,
+   "phase": 0.0,
+   "role": "resident",
+   "faction": null,
+   "cast": "astronaut_fernandotheflamingo",
+   "note": "Fernando the Flamingo",
+   "asset": "fernando",
+   "card": "scenelets/ra_scifi_01/sf_FernandoTheFlamingo.figure.json"
+  },
+  {
+   "id": "finn",
+   "p": [
+    2.03,
+    0,
+    3.88
+   ],
+   "ry": 9,
+   "s": 1,
+   "clip": "Idle",
+   "loop": true,
+   "phase": 0.0,
+   "role": "resident",
+   "faction": null,
+   "cast": "astronaut_finnthefrog",
+   "note": "Finn the Frog",
+   "asset": "finn",
+   "card": "scenelets/ra_scifi_01/sf_FinnTheFrog.figure.json"
+  },
+  {
+   "id": "rae",
+   "p": [
+    5.9,
+    0,
+    2.91
+   ],
+   "ry": 27,
+   "s": 1,
+   "clip": "Idle",
+   "loop": true,
+   "phase": 0.0,
+   "role": "resident",
+   "faction": null,
+   "cast": "astronaut_raetheredpanda",
+   "note": "Rae the Red Panda",
+   "asset": "rae",
+   "card": "scenelets/ra_scifi_01/sf_RaeTheRedPanda.figure.json"
+  }
+ ],
+ "props": [
+  {
+   "id": "station_0_Base_Large",
+   "asset": "station_0_Base_Large",
+   "p": [
+    -5,
+    0,
+    -8
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "stage",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "station_1_Connector",
+   "asset": "station_1_Connector",
+   "p": [
+    -1,
+    0,
+    -8
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "stage",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "station_2_GeodesicDome",
+   "asset": "station_2_GeodesicDome",
+   "p": [
+    5,
+    0,
+    -8
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "stage",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "station_3_House_Single",
+   "asset": "station_3_House_Single",
+   "p": [
+    -18,
+    0,
+    -6
+   ],
+   "ry": 90,
+   "s": 1,
+   "role": "stage",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "station_4_Roof_Radar",
+   "asset": "station_4_Roof_Radar",
+   "p": [
+    -18,
+    0,
+    -6
+   ],
+   "ry": 90,
+   "s": 1,
+   "role": "stage",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "station_5_House_Cylinder",
+   "asset": "station_5_House_Cylinder",
+   "p": [
+    18,
+    0,
+    -6
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "stage",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "station_6_Roof_Antenna",
+   "asset": "station_6_Roof_Antenna",
+   "p": [
+    18,
+    0,
+    -6
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "stage",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "station_7_SolarPanel_Structure",
+   "asset": "station_7_SolarPanel_Structure",
+   "p": [
+    -8,
+    0,
+    -20
+   ],
+   "ry": 20,
+   "s": 1,
+   "role": "stage",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "station_8_SolarPanel_Ground",
+   "asset": "station_8_SolarPanel_Ground",
+   "p": [
+    6.6,
+    0,
+    -1.4
+   ],
+   "ry": -20,
+   "s": 1,
+   "role": "stage",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "station_9_SolarPanel_Ground",
+   "asset": "station_9_SolarPanel_Ground",
+   "p": [
+    8.3,
+    0,
+    -2.3
+   ],
+   "ry": -28,
+   "s": 1,
+   "role": "stage",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "station_10_SolarPanel_Ground",
+   "asset": "station_10_SolarPanel_Ground",
+   "p": [
+    9.8,
+    0,
+    -3.6
+   ],
+   "ry": -36,
+   "s": 1,
+   "role": "stage",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_0_Tree_Blob_1",
+   "asset": "trees_0_Tree_Blob_1",
+   "p": [
+    -20,
+    0,
+    -15
+   ],
+   "ry": 10,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_1_Tree_Blob_2",
+   "asset": "trees_1_Tree_Blob_2",
+   "p": [
+    1,
+    0,
+    -23
+   ],
+   "ry": 40,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_2_Tree_Swirl_1",
+   "asset": "trees_2_Tree_Swirl_1",
+   "p": [
+    21,
+    0,
+    -16
+   ],
+   "ry": -30,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_3_Tree_Swirl_2",
+   "asset": "trees_3_Tree_Swirl_2",
+   "p": [
+    -22,
+    0,
+    6
+   ],
+   "ry": 60,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_4_Tree_Spikes_1",
+   "asset": "trees_4_Tree_Spikes_1",
+   "p": [
+    19,
+    0,
+    5
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_5_Tree_Spiral_1",
+   "asset": "trees_5_Tree_Spiral_1",
+   "p": [
+    -12,
+    0,
+    10
+   ],
+   "ry": 20,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_6_Tree_Spiral_2",
+   "asset": "trees_6_Tree_Spiral_2",
+   "p": [
+    7,
+    0,
+    -18
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_7_Tree_Light_1",
+   "asset": "trees_7_Tree_Light_1",
+   "p": [
+    13,
+    0,
+    10
+   ],
+   "ry": -40,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_8_Tree_Light_2",
+   "asset": "trees_8_Tree_Light_2",
+   "p": [
+    -15,
+    0,
+    12
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_9_Tree_Floating_1",
+   "asset": "trees_9_Tree_Floating_1",
+   "p": [
+    -17,
+    0,
+    -1
+   ],
+   "ry": 70,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_10_Tree_Floating_2",
+   "asset": "trees_10_Tree_Floating_2",
+   "p": [
+    23,
+    0,
+    -5
+   ],
+   "ry": -60,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_11_Tree_Lava_1",
+   "asset": "trees_11_Tree_Lava_1",
+   "p": [
+    -24,
+    0,
+    -8
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_12_Tree_Lava_2",
+   "asset": "trees_12_Tree_Lava_2",
+   "p": [
+    15,
+    0,
+    -22
+   ],
+   "ry": 30,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "trees_13_Tree_Lava_3",
+   "asset": "trees_13_Tree_Lava_3",
+   "p": [
+    -3,
+    0,
+    -1.5
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_0_Rock_Large_1",
+   "asset": "rocks_0_Rock_Large_1",
+   "p": [
+    12,
+    0,
+    -24
+   ],
+   "ry": 15,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_1_Rock_Large_2",
+   "asset": "rocks_1_Rock_Large_2",
+   "p": [
+    -18,
+    0,
+    -24
+   ],
+   "ry": -20,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_2_Rock_2",
+   "asset": "rocks_2_Rock_2",
+   "p": [
+    -8,
+    0,
+    7
+   ],
+   "ry": 30,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_3_Rock_3",
+   "asset": "rocks_3_Rock_3",
+   "p": [
+    10,
+    0,
+    7
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_4_Rock_4",
+   "asset": "rocks_4_Rock_4",
+   "p": [
+    0,
+    0,
+    12
+   ],
+   "ry": 50,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_5_Plant_1",
+   "asset": "rocks_5_Plant_1",
+   "p": [
+    -5,
+    0,
+    9
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_6_Plant_3",
+   "asset": "rocks_6_Plant_3",
+   "p": [
+    5,
+    0,
+    10
+   ],
+   "ry": 40,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_7_Bush_1",
+   "asset": "rocks_7_Bush_1",
+   "p": [
+    -10,
+    0,
+    -14
+   ],
+   "ry": 20,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_8_Bush_2",
+   "asset": "rocks_8_Bush_2",
+   "p": [
+    11,
+    0,
+    -13
+   ],
+   "ry": -30,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_9_Grass_1",
+   "asset": "rocks_9_Grass_1",
+   "p": [
+    -3,
+    0,
+    7
+   ],
+   "ry": 0,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_10_Grass_2",
+   "asset": "rocks_10_Grass_2",
+   "p": [
+    3,
+    0,
+    7.5
+   ],
+   "ry": 60,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_11_Grass_3",
+   "asset": "rocks_11_Grass_3",
+   "p": [
+    8,
+    0,
+    4
+   ],
+   "ry": 20,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  },
+  {
+   "id": "rocks_12_Grass_1",
+   "asset": "rocks_12_Grass_1",
+   "p": [
+    -9,
+    0,
+    3
+   ],
+   "ry": 90,
+   "s": 1,
+   "role": "scatter",
+   "pose": "ground",
+   "inDiorama": "diorama"
+  }
+ ],
+ "timeline": {
+  "clock": {
+   "bpm": null,
+   "phase": 0,
+   "length": 8.0
+  },
+  "tracks": [],
+  "cues": [
+   {
+    "t": 0.0,
+    "actor": "barbara",
+    "clip": "Idle",
+    "loop": true
+   },
+   {
+    "t": 0.0,
+    "actor": "fernando",
+    "clip": "Idle",
+    "loop": true
+   },
+   {
+    "t": 0.0,
+    "actor": "finn",
+    "clip": "Idle",
+    "loop": true
+   },
+   {
+    "t": 0.0,
+    "actor": "rae",
+    "clip": "Idle",
+    "loop": true
+   },
+   {
+    "t": 1.0,
+    "actor": "barbara",
+    "clip": "Wave",
+    "loop": false
+   },
+   {
+    "t": 3.0,
+    "actor": "barbara",
+    "clip": "Idle",
+    "loop": true
+   },
+   {
+    "t": 2.5,
+    "actor": "fernando",
+    "clip": "Yes",
+    "loop": false
+   },
+   {
+    "t": 4.0,
+    "actor": "fernando",
+    "clip": "Idle",
+    "loop": true
+   },
+   {
+    "t": 4.5,
+    "actor": "rae",
+    "clip": "No",
+    "loop": false
+   },
+   {
+    "t": 6.0,
+    "actor": "rae",
+    "clip": "Idle",
+    "loop": true
+   }
+  ],
+  "script": null
+ },
+ "cameras": [
+  {
+   "id": "totale",
+   "preset": "threeq"
+  },
+  {
+   "id": "nah",
+   "preset": "near_face"
+  }
+ ],
+ "light": {
+  "rig": "kfb-stage-light.v1.1",
+  "mood": "MOODS_MESA",
+  "tod": "day"
+ },
+ "world": {
+  "anchor": [
+   0,
+   0,
+   0
+  ],
+  "placement": "grammar-r2",
+  "tags": [
+   "scifi",
+   "alien",
+   "outpost"
+  ],
+  "terrain": {
+   "biome": "scifi",
+   "color": "#9fb8a0"
+  },
+  "scale": {
+   "rule": "Welt skaliert so, dass die gemessene Astronautenhöhe = figureH der Diorama",
+   "astronautH": 2.7056,
+   "figureH": 2.3
+  }
+ },
+ "review": {
+  "hub": null,
+  "gates": [
+   "G1",
+   "G2",
+   "G3",
+   "G5",
+   "G6"
+  ],
+  "qa": [
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h"
+  ],
+  "views": [
+   "renders/B50_scifi_aussenposten.png",
+   "renders/proof_BarbaraTheBee/",
+   "renders/proof_FernandoTheFlamingo/",
+   "renders/proof_FinnTheFrog/",
+   "renders/proof_RaeTheRedPanda/"
+  ]
+ },
+ "todo": [
+  "Planeten am Himmel (sky[]) als Himmels-Requisiten",
+  "Mechs und Raumschiffe (orbit) als zweite Ebene",
+  "Maßstab: Astronauten und Umgebung in Quaternius-Originalgröße (Astronaut ≈ 2,6 u); falls die RA-Regel figureH 2,3 gelten soll, Diorama und Figuren gemeinsam ×0,85"
+ ],
+ "stage": {
+  "asset": "diorama",
+  "p": [
+   0,
+   0,
+   0
+  ],
+  "ry": 0,
+  "note": "Diorama-Ursprung = Welt-Ursprung; alle props darin verbacken; eigener Boden r 30: Bühnenboden 3 cm tiefer legen"
+ },
+ "clipNote": "Clips je Astronaut (Quaternius, CC0): Idle, Wave, Yes, No, Walk, Run, Jump, Jump_Idle, Jump_Land, Duck, Punch, HitReact, Death; Waffen-Clips und Pistole entfernt"
+}
