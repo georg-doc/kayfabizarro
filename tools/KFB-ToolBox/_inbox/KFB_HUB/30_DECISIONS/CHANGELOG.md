@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- Besetzungsliste KFB_HUB/60_CAST/cast.r1.json (28 Darsteller) + clips.r1.json (46 Aliase); Konverter 60_CAST/ra2scenelet.py → 5 RA-Scenelet-Entwürfe in 65_SCENELETS/ra/ (Friedhof, Disco, Duell, Kampf, Sci-Fi). Brief B50 (WSB-Lücken-Job: pending-Darsteller einmal bühnenfertig).
 - Scenelet-Spec R2 (replies/SPEC_SCENELET_R2.md): 24 WSB-Anmerkungen, cast registry, stretch, seats, QA g/h. Bühne v2 (replies/BUEHNE_R2, Artifact FNTpcn6ZdAncgTdv5rncAQ): Welt mit Gelände/Himmel/Licht, mehrere Darsteller, Zeitleiste mit Cues/Bahnen/Squash, Ton; Szenen Fluff-Farm, Bleistift+Radiergummi, Spielzeugsoldat. Hub q124 (Fraktion der hellblauen Orks). Sync sperrt jetzt *.b64.txt/*.mp4 fürs öffentliche Register. Speicher MacBook: 19 GB tote Git-Temp-Packs entfernt (56 → 75 GB frei).
 - V-559 Besetzungs- und Rollen-Mapping: ein Darsteller-Pool, Rollen je Szene (Graveyard-Skelette auch im Raid, Monstrosity nur im Raid); cast registry in Scenelet-Spec R2.
 - V-558 Böse Rollenspielgruppe als Spiegel (Monster-Lager, Demon Lord, Horde/Allianz mit geteilten Orks, Fraktionswahl, Helden als Trash-Mobs im Dungeon) – Erweiterung nach B48.
