@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- V-551 King Kayfabian + Dark-Knight-Torwächter + KFB-Castle + Kronen-Gag: Brief B45; Backlog ergänzt (auch Clown/Zirkus).
 - V-550 RA-Szenen-Backlog nach Prio (Hub q119), WSB-Dauer-Warteschlange.
 - V-549 KayKit Fluff-Farm (Farmer S6/12, Traktor, Cube Pets, Fallobst-Fluff): Brief B44, erstes Scenelet-Diorama.
 - V-548 Nachtrag: Bühne immer mit Terrain, Skydome, Licht, Texturen; Resident-Atlas-Migration ab 20.10.
