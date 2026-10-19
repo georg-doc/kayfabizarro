@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- V-555 Cartoon-Streckarm für starre Legacy-Arme (Trompeter + Sänger der Ork-Band), Faust am Griff, 0 Durchdringung. B46 r1c (Hex-Fehler behoben) → Hub q123; Ork-Band r1 TUNE zurück an WSB. Hub v20/v20.1: Briefing-Schnellfilter, Plan/Stand 19.10., direkte Spiel-Einstiege (nackte Vorschau-Adresse = alter Hex-Spike).
 - V-554 Gefängnis-Labyrinth + Panoptikum (Mauer-Gizmo, Umbau-Animation, Blob-Corp-Turm mit Auge/Scheinwerfer, Raben/Fledermäuse): Brief B47.
 - B44 Fluff-Farm r1 → Hub q121 (Traktor-Sitz offen, Fahrzeug-Job); SFX farm_r1 → Hub q122; WSB b31_anim-Faktor korrigiert (xzLegacy für alte Ansichten).
 - Combat-Arena-Statusbericht R1 (replies/COMBAT_ARENA_STATUS_R1.md) + Verteilungsvorschlag Hub q120; PR #22 (WSA-Audit) im Arena-Repo nicht auffindbar.

@@ -7824,6 +7824,21 @@
    "applies": "B47 nach B46"
   },
   {
+   "id": "V-555",
+   "date": "2026-10-19",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Cartoon-Streckarm für starre Legacy-Arme (Georg 19.10., Ork-Band): Wo ein starrer Legacy-Arm (Rig_Legacy) ein gehaltenes Ding nicht ohne Durchdringung an Mund bzw. Gesicht bringt (Trompeter Legacy Orc A; Sänger Legacy Orc B mit Mikro), wird der Arm-Knochen beim Spielen bzw. Singen ×1,4–1,5 gestreckt (Gag, mit Ein- und Ausfedern). Das Werkzeug sitzt an einem eigenen Hand-Knochen ohne Verzerrung, Faust am KFB_Grip (V-536 bleibt), Mundstück bzw. Mikrokopf ≤ 0,02–0,05 u vor dem Mund, 0 Durchdringung (V-520 d). Nur für Legacy-Arme, die nachweislich zu kurz sind (Mess-Suche); Figuren mit echten Armen nutzen normale Posen.",
+   "values": {},
+   "owner": "WSB (Ork-Band r1b)",
+   "check": "Nahbild je Schlag: Faust am Griff, Mund ≤ Abstand, 0 Durchdringung",
+   "source": "Georg 19.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Starre Legacy-Arme erreichen den Mund nicht; der Streckarm macht aus der Grenze einen Cartoon-Gag statt Durchdringung.",
+   "applies": "Ork-Band r1b"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -7911,7 +7926,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:921",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:922",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
