@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- B45 r1c → Hub q127 (Rüstung golden, Zweihänder bis Brust); Hub q126 Herkunft Krone. B47 r1b → Hub q128 (düster: Mauern grau-braun, dunkle Pfützen/Geröll; Chief Warden am Pult).
 - B45 r1 (King A/B, Dark Knight, Castle-Platzhalter, Kronen-Gag) geprüft → TUNE: Rüstung kräftig golden (Georgs Wortlaut), Zweihänder bis Brusthöhe. WS0-Festlegungen: occludedBy-Aliase helmet/visor (Prüfstand v1.2.9), KFB_CrownSeat für krönbare Figuren, V-536 bleibt (Schlagbaum + Guard am Knauf ok; 2H-Angriffe über KayKit-Large-2H-Clips).
 - Ork-Band r1b (Gummiarm, Spiel-Pose-Bögen, Karten proof-r1) → Hub q125; Drehung des Sängers in Schlag 8 = Original v5 (WSB gemessen). Prüfstand v1.2.9: near_face zielt auf die Augen-Anker (Legacy-Köpfe wurden unten abgeschnitten).
 - Besetzungsliste KFB_HUB/60_CAST/cast.r1.json (28 Darsteller) + clips.r1.json (46 Aliase); Konverter 60_CAST/ra2scenelet.py → 5 RA-Scenelet-Entwürfe in 65_SCENELETS/ra/ (Friedhof, Disco, Duell, Kampf, Sci-Fi). Brief B50 (WSB-Lücken-Job: pending-Darsteller einmal bühnenfertig).
