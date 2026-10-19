@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-19
+- V-560 Cartoon-Brawl (Massenschlägerei in der Staubwolke, Wolke nach V-499 statt Knetkugel) → Brief B51 an WSB (nächster Bau).
 - Friedhof r1b (Augen-Symmetrie, brow_sym) → Hub q138; Sci-Fi r1 (4 Astronauten, CC0, Originalgröße V-060) → Hub q139; B48 r1c Felswand geschlossen → q130 ergänzt. Bühne v2.4: 8 Szenen (neu Friedhof + Sci-Fi; Gelände 3 cm unter 0, im Diorama verbackene Requisiten übersprungen). WSB-Hinweis: eigene Zwischendateien gelöscht (regenerierbar) – Regel bekräftigt, künftig _work/.
 - Ninja-Duell r1 (KayKit-Melee-Haltung als V-536-Kandidat, Hammer-Space beim Flugtritt) → Hub q137; Vergleichsbilder an q136. WSB-Warteschlange (Gunfight → Disco → Clown → Wrestling → Ninja) abgearbeitet; weiter B50 Friedhof, Sci-Fi.
 - Clown → Hub q134 (Requisiten-Gesicht gemessen, Süßes korrigiert). Wrestling-Ring mit Gummiseilen → Hub q135. Ninja-Katana: Regel-Frage V-536 → Hub q136 (Klinge quer vs. Unterarmachse); WSB baut KayKit-Haltung als Kandidat. Bühne v2.3: Disco + Wrestling spielbar (gehäutete Requisiten via SkeletonUtils, Szenenliste no-cache).
