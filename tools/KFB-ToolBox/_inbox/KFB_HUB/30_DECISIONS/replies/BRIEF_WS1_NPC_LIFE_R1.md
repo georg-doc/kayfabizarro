@@ -11,6 +11,18 @@
    - Spieler geht weg und kommt zurück → alle sind dort, wo der Plan sie sieht;
    - kein Pop-in im Sichtfeld, ≥ 55 fps.
 
+
+## Schritt 0 · Inventur vor dem Bau (Georg 20.10.: „alles dabei haben, was wir aus AI-Town und den anderen Recherche-Slices gelernt bzw. konzeptionell skizziert hatten“)
+Zuerst alle vorhandenen NPC-Recherchen und -Konzepte sichten und in `30_DECISIONS/CANON_3D/sources/WS_NPC_INVENTUR_R1.md` zusammenfassen: je Quelle die Kernideen, „übernommen“ bzw. „nicht übernommen, weil“ und die Lücken. Bekannte Quellen:
+- `30_DECISIONS/replies/SPEC_NPC_PATROL_R1.md` und `replies/NPC_PERFORMANCE_PROOF_R1/`;
+- `KFB Island Worldbuilder Lab/docs/KFB_LEBENSSCHICHT_PLAN_R1.md` (Lebensschicht);
+- `KFB Stunt Car Race/ChatGPT_web/…/02_NEW_SLICES/P19_BUDDY_NPCS/KFB_P19_BUDDY_NPCS_SOCIAL_TOY_WORLD_v0_1.md`;
+- `KFB Resident Card Speculation Scene/npc-card-spec-01_2026-09-24/docs/` (NPC-Karten-Spec);
+- Register: V-319 (Leben um die Dioramen), V-426/V-463 (Bots), V-449 (Umgebungsleben), V-464, V-496;
+- **AI-Town-Recherche** (Georg erwähnt sie; WS0 hat sie weder auf der Platte noch auf den Standard-Branches gefunden): auf GitHub in allen Branches von georg-doc suchen, sonst Georg nach dem Ort fragen. Kernfragen: Gedächtnis bzw. Tagesplan der Agenten, Planung, Reflexion, soziale Begegnungen; was davon KISS-tauglich für KFB ist (Fahrplan statt LLM-Agenten pro Figur).
+
+Erst nach der Inventur wird gebaut; die Inventur zählt als Teil der Abgabe.
+
 ## Block
 **Daten:**
 - `kfb.npc-route/1` und `kfb.encounter-table/1` laut Spec.
