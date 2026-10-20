@@ -37,4 +37,11 @@
 - Nur selbst geprüfte Bilder und Clips an Georg.
 - Ports wie bisher; `KFB Open World/` nie anfassen.
 
+**Flächengrammatik (V-568, Kanon Gebiet 17), Pflicht für #439:**
+- Vor jedem Umbau die 4 Diagnose-Ansichten (Albedo unbeleuchtet, Grau, Material-ID, final) aus derselben Kamera.
+- Umbau in 5 Pässen: Entstören → Hauptformen → Übergänge → Haptik und Distanz → Vergleich A/B/C/D.
+- Sprenkel nur über Übergangs-, Ursachen- und Ruhemasken, als Cluster mit Formalphabet.
+- Ufer-Grammatik in vier Zonen.
+- Regeln erst an einer Musterregion kalibrieren, dann ausrollen.
+
 **Meldung:** je Probe ein Abschnitt in `WS1_STATUS` (ws1/r3f-frame) mit Bildern A/B.

@@ -8019,6 +8019,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-568",
+   "date": "2026-10-20",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Flächengrammatik (Perplexity Runde 2, Georg 20.10.: organische, fließende Formen mit innerer Logik statt Tarnfleck; Übergänge und Sprenkel sauber): Kanon-Gebiet 17 – jede Fläche mit Ursache/Aufgabe; Makro/Meso/Mikro getrennt; Konturen erst entwerfen (Ovale, Keile, Lappen, Bänder, Zungen), dann schwach verzerren; Übergang als eigene Zone (Hauptkontur, Ausläufer, Satelliten, gerichtet); Sprenkel mit Formalphabet, nur über Übergangs-/Ursachen-/Ruhemasken, Cluster statt Konfetti (präzisiert V-403); Geländehöhe nie, Neigung maßvoll, Material-Höhenblending ja; Ufer-Grammatik; Variation im Material < zwischen Materialien; Diagnose-SOP mit 4 Ansichten; Umbau in 5 Pässen mit A/B/C/D-Vergleich; Kalibrierung an Musterregion. Zahlen im Kanon: Invarianten = FAIL, Prozente/Anzahlen = kalibrierbare Startwerte. Kritiker: Diagnose-Ansichten + Spieltempo-Pass.",
+   "values": {},
+   "owner": "WS1 (#439, Paket E) · WS0 (Kanon)",
+   "check": "A/B/C/D-Vergleich aus derselben Spielkamera an einer Musterregion",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Übergänge und Sprenkel wirkten als Tarnmuster mit Airbrush-Rändern; es fehlte die Logik, welche Flächen zusammengehören und warum sie ausfransen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8106,7 +8121,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:952",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:957",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

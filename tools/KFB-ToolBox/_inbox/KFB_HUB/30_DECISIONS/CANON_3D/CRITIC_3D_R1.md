@@ -28,6 +28,8 @@ Ein roter Gate-Lauf geht nie an den Kritiker, sondern zurück an den Bau.
    - a) **Silhouette:** alles schwarz vor Grau, liest sich die Geometrie?
    - b) **Graustufen:** ohne Farbe; gibt es klare Hell-, Mittel- und Dunkelmassen, und liegt der stärkste Kontrast auf dem Fokus?
    - c) **Thumbnail:** stark verkleinert und leicht unscharf; bleiben Fokus, Weg, Spielfläche und Tiefe lesbar?
+8. **Terrain-Lieferungen (V-568):** zusätzlich die 4 Diagnose-Ansichten aus derselben Spielkamera (Albedo unbeleuchtet, Grau-Material, Material-ID, final) und der Vergleich A/B/C/D. Befunde: Tarnfleck bzw. Konfetti, Halo am Ufer, Flecken, die wie eigene Biome wirken, Variation innerhalb eines Materials stärker als zwischen Materialien, Flimmern bzw. wanderndes Muster bei Kamerafahrt.
+9. **Spielgeschwindigkeit (V-568):** mindestens ein Pass bei bewegter Spielkamera in Spieltempo, nicht nur im Standbild.
 7. **Kontakt-Schatten:** Der Schatten berührt die Basis, folgt der Silhouette, ist kein Blob und wird vom Terrain empfangen.
 
 Alter Silhouetten-Pass (V-565): Kamera 2, alle Objekte schwarz vor Grau. Lies ab, was dort steht: Fokus, Gruppen, Figuren. Verschmilzt etwas mit dem Terrain oder mit dem Nachbarn, ist das ein Befund für K3/K7.
