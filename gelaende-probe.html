@@ -117,7 +117,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <div class="row"><label for="palA">Biom</label><select id="palA"></select></div>
         <div class="swatches" id="swA" aria-hidden="true"></div>
         <label class="check"><input type="checkbox" id="org" checked> Farbflächen organisch (ohne Höhenbänder)</label>
-        <div class="row"><label for="fstage">Flächen-Stufe</label><select id="fstage"><option value="2">C+D: große Flächen + Übergänge + Sprenkel</option><option value="1">C: große Flächen + Übergänge</option><option value="0">B: nur große Flächen</option></select></div>
+        <div class="row"><label for="fstage">Flächen-Stufe</label><select id="fstage"><option value="3">Farbflächen v3 (Stand vorher)</option><option value="2">C+D: große Flächen + Übergänge + Sprenkel</option><option value="1">C: große Flächen + Übergänge</option><option value="0">B: nur große Flächen</option></select></div>
         <div class="row"><label for="dbg">Prüfansicht</label><select id="dbg"><option value="0">Endbild</option><option value="1">nur Grundfarbe (ohne Licht/Schatten)</option><option value="2">graue Form (nur Licht)</option><option value="3">Material-Masken</option></select></div>
         <div class="row"><label for="soft">Farbbänder</label><output id="o_soft"></output><input type="range" id="soft" min="0" max="1" step="0.01"></div>
         <div class="row"><label for="cliff">Felsen ab Steigung</label><output id="o_cliff"></output><input type="range" id="cliff" min="15" max="60" step="1"></div>
@@ -266,6 +266,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   float rfbm(vec2 q){ float s=0.0, a=1.0, n=0.0, oc=uEther>0.5?min(uOct,4.0):uOct; for(int i=0;i<7;i++){ if(float(i)>=oc) break; float sn=snoise(q);
     float r=uEther>0.5 ? max(0.0,(1.0-sqrt(sn*sn+0.06))/0.7551) : 1.0-abs(sn); s+=a*r*r; n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=(uEther>0.5?0.45:0.5); } return s/n; }
   // Schichten (N4): je Paar eine dicke (1,3) und eine dünne (0,7) Lage, Lagen leicht wellig geneigt, Kanten gerundet
+  float gLod=0.0; // Abstand zum Auto (m): in der Ferne (grobe Ringe) Terrassen weicher, sonst Sägezähne; abstandsbasiert, damit Nah- und Ferngitter dieselbe Höhe haben
   float strU(float s){ float k=floor(s*0.5)*2.0, t=s-k; return k+(t<1.3? t/1.3 : 1.0+(t-1.3)/0.7); }
   float strS(float u){ float k=floor(u*0.5)*2.0, t=u-k; return k+(t<1.0? t*1.3 : 1.3+(t-1.0)*0.7); }
   float hgt(vec2 p){
@@ -279,7 +280,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     h=clamp(h,0.0,1.0);
     if(uValley>0.0) h=pow(h,1.0+uValley*1.6);
     if(uPlateau<0.999 && h>uPlateau) h=uPlateau+(h-uPlateau)*0.12;
-    if(uSteps>=1.0){ if(uEther>0.5){ float tw=0.35*snoise(p/(uScale*2.5)+uSeed*0.11+23.0); float u=strU(h*uSteps+tw); float f=fract(u); float w=max(mix(0.5,0.03,uSharp),0.3); f=smoothstep(0.5-w,0.5+w,f); h=(strS(floor(u)+f)-tw)/uSteps; }
+    if(uSteps>=1.0){ if(uEther>0.5){ float tw=0.35*snoise(p/(uScale*2.5)+uSeed*0.11+23.0); float u=strU(h*uSteps+tw); float f=fract(u); float w=max(max(mix(0.5,0.03,uSharp),0.16), 0.5*smoothstep(80.0,450.0,gLod)); f=smoothstep(0.5-w,0.5+w,f); h=(strS(floor(u)+f)-tw)/uSteps; }
       else { float s=h*uSteps; float f=fract(s); float w=mix(0.5,0.03,uSharp); f=smoothstep(0.5-w,0.5+w,f); h=(floor(s)+f)/uSteps; } }
     return dioMod(p, h*uAmp);
   }`;
@@ -287,6 +288,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   const rot = (x, y) => [1.6 * x - 1.2 * y + 3.1, 1.2 * x + 1.6 * y + 1.7]; // mat2(1.6,1.2,-1.2,1.6) spaltenweise wie in GLSL
   function fbm(x, y) { let s = 0, a = 1, n = 0; const oc = S.ether ? Math.min(S.oct, 5) : S.oct; for (let i = 0; i < 7 && i < oc; i++) { s += a * snoise(x, y); n += a; [x, y] = rot(x, y); a *= 0.5 } return s / n }
   function rfbm(x, y) { let s = 0, a = 1, n = 0; const oc = S.ether ? Math.min(S.oct, 4) : S.oct; for (let i = 0; i < 7 && i < oc; i++) { const sn = snoise(x, y); const r = S.ether ? Math.max(0, (1 - Math.sqrt(sn * sn + 0.06)) / 0.7551) : 1 - Math.abs(sn); s += a * r * r; n += a; [x, y] = rot(x, y); a *= S.ether ? 0.45 : 0.5 } return s / n }
+  const LODC = { x: 0, z: 0 }; // Auto-Position für die abstandsabhängige Terrassen-Rundung (identisch zu gLod im Shader)
   const strU = (s) => { const k = Math.floor(s * 0.5) * 2, t = s - k; return k + (t < 1.3 ? t / 1.3 : 1 + (t - 1.3) / 0.7) }, strS = (u) => { const k = Math.floor(u * 0.5) * 2, t = u - k; return k + (t < 1 ? t * 1.3 : 1.3 + (t - 1) * 0.7) };
   const sstep = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t) };
   function hgt(px, py) {
@@ -299,7 +301,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     h = Math.min(1, Math.max(0, h));
     if (S.valley > 0) h = Math.pow(h, 1 + S.valley * 1.6);
     if (S.plateau < 0.999 && h > S.plateau) h = S.plateau + (h - S.plateau) * 0.12;
-    if (S.steps >= 1) { if (S.ether) { const tw = 0.35 * snoise(px / (S.scale * 2.5) + S.sx * 0.11 + 23, py / (S.scale * 2.5) + S.sy * 0.11 + 23), u = strU(h * S.steps + tw); let f = fract(u); const w = Math.max(0.5 + (0.03 - 0.5) * S.sharp, 0.3); f = sstep(0.5 - w, 0.5 + w, f); h = (strS(Math.floor(u) + f) - tw) / S.steps }
+    if (S.steps >= 1) { if (S.ether) { const tw = 0.35 * snoise(px / (S.scale * 2.5) + S.sx * 0.11 + 23, py / (S.scale * 2.5) + S.sy * 0.11 + 23), u = strU(h * S.steps + tw); let f = fract(u); const w = Math.max(Math.max(0.5 + (0.03 - 0.5) * S.sharp, 0.16), 0.5 * sstep(80, 450, Math.hypot(px - LODC.x, py - LODC.z))); f = sstep(0.5 - w, 0.5 + w, f); h = (strS(Math.floor(u) + f) - tw) / S.steps }
       else { const s = h * S.steps; let f = fract(s); const w = 0.5 + (0.03 - 0.5) * S.sharp; f = sstep(0.5 - w, 0.5 + w, f); h = (Math.floor(s) + f) / S.steps } }
     return dioModJS(px, py, h * S.amp);
   }
@@ -334,7 +336,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   const vert = `${GLSL_NOISE}\n${GLSL_HEIGHT}
   uniform vec2 uOffset; uniform vec2 uCarW; uniform float uHole, uDrop, uNE; uniform mat4 uShadowM; uniform float uEdges; varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv;
   void main(){
-    vec2 p=position.xz+uOffset; float h=hgt(p); float e=uNE;
+    vec2 p=position.xz+uOffset; gLod=distance(p,uCarW); float h=hgt(p); float e=uNE;
     float hx=hgt(p+vec2(e,0.0)), hz=hgt(p+vec2(0.0,e));
     vN=normalize(vec3(h-hx, e, h-hz)); vH=h; vW=vec3(p.x,h,p.y);
     // Etherington: Licht folgt der großen Form (Formnormale über ~6 m), nicht jeder Delle → keine splittrigen Licht-Scherben an den Hängen
@@ -386,7 +388,14 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     // Flächengrammatik (Georg 20.10. + Perplexity-Feedback): Makro entscheidet WO ein Material liegt, Meso formt Kontur/Übergang, Mikro ändert die
     // Lesbarkeit nicht. Übergang = eigenes Band um die Grenze (|d| < w): dort Gegeninseln des Nachbarmaterials und Sprenkel, sonst Ruhe.
     vec3 idc=vec3(0.5); float shoreK=0.0;
-    if(uOrg>0.5){ vec2 pw=vW.xz+6.0*vec2(snoise(vW.xz/90.0+3.7), snoise(vW.xz/90.0-8.3))+1.5*vec2(snoise(vW.xz/23.0+1.1), snoise(vW.xz/23.0-4.4)); float sd=uSeed.x*0.37+uSeed.y*0.11;
+    if(uOrg>0.5 && uFS>2.5){ vec2 pw=vW.xz+5.0*vec2(snoise(vW.xz/70.0+3.7), snoise(vW.xz/70.0-8.3)); float sd=uSeed.x*0.37+uSeed.y*0.11;
+      vec3 o=mid;
+      o=mix(o, low,  cover(blobL(pw, 120.0, 0.6, 0.32, 0.5, sd, 0.10, 0.0)));                      // große Flächen
+      o=mix(o, high, cover(blobL(pw+vec2(37.0,-11.0), 64.0, 0.45, 0.26, 0.46, sd+3.1, 0.10, 0.0))); // mittlere, hellere Kleckse darin/darüber
+      o=mix(o, mix(o, sand, 0.65), cover(blobL(pw+vec2(-9.0,23.0), 28.0, 0.3, 0.22, 0.42, sd+7.7, 0.08, 0.0)));  // kleine trockene Flecken
+      o=mix(o, mix(o*0.84, cliff, 0.18), 0.8*cover(blobL(vW.xz, 6.5, 0.5, 0.12, 0.24, sd+1.3, 0.0, 1.0))); // Tupfen, gehäuft in Nestern (natürliche Verteilung)
+      c = uWater>0.005 ? mix(c, o, smoothstep(uWater+0.03-w, uWater+0.05+w, hn)) : o; }
+    else if(uOrg>0.5){ vec2 pw=vW.xz+6.0*vec2(snoise(vW.xz/90.0+3.7), snoise(vW.xz/90.0-8.3))+1.5*vec2(snoise(vW.xz/23.0+1.1), snoise(vW.xz/23.0-4.4)); float sd=uSeed.x*0.37+uSeed.y*0.11;
       float dM=blobL(pw, 120.0, 0.6, 0.32, 0.5, sd, 0.10, 0.0);                          // Makro: zweites Material (low) auf dem Grundton (mid)
       float mat=cover(dM);
       float band=1.0-smoothstep(0.0, 10.0, abs(dM));                                       // Übergangszone um die Grenze
@@ -431,7 +440,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       c=mix(c, mix(c*0.82, uContact*1.25, 0.2), 1.0-smoothstep(-fw,fw,edge)); }   // ca. 15–20 L* dunkler (R10), nicht mehr dominierend
     float slope=1.0-vN.y; float cw=0.01+0.05*uSoft;
     vec3 cl=cliff;
-    if(uStrata>0.5){ float band=step(0.5,fract(vW.y/(uAmp*0.06+0.6))); cl=mix(cliff*0.82, cliff*1.08, band); }
+    if(uStrata>0.5){ float sy=vW.y/(uAmp*0.06+0.6); float sw=fwidth(sy)*1.5+1e-4; float band=smoothstep(0.5-sw,0.5+sw,fract(sy))*(1.0-smoothstep(1.0-sw,1.0,fract(sy))); band=mix(band,0.5,smoothstep(0.15,0.4,sw)); cl=mix(cliff*0.82, cliff*1.08, band); }   // geglättet; in der Ferne gemittelt statt flimmernder Zähne
     // organisch: keine Schnittkante am Hang – die Fläche läuft über die Wand weiter und wird mit der Steigung nur weich felsiger/dunkler
     if(uOrg>0.5) c=mix(c, mix(c, cl, 0.55)*0.92, smoothstep(uCliff-0.10, uCliff+0.22, slope));
     else c=mix(c, cl, smoothstep(uCliff-cw, uCliff+cw, slope));
@@ -491,7 +500,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     gl_FragColor=vec4(mix(col, sky, f),1.0);
   }`;
   U.uHole = { value: -1 }; U.uDrop = { value: 0 }; U.uNE = { value: 1.2 }; U.uCarW = { value: new THREE.Vector2() }; U.uGridWorld = { value: 0 }; U.uGS = { value: 8 }; U.uGShape = { value: 1 }; U.uGFill = { value: 0 }; U.uGCol = { value: 0 }; U.uClay = { value: 0 }; U.uGTex = { value: 0 }; U.uRing = { value: 1 };
-  U.uEdges = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 2 }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
+  U.uEdges = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 3 }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
   U.uDio = { value: new THREE.Vector4(0, 70, 11, 0) }; U.uDioB = { value: new THREE.Vector4(0, 1.4, 7.5, -Math.PI / 2) };
   U.uEdge = { value: new THREE.TextureLoader().load('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABLAAD/4QMpaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjAtYzA2MCA2MS4xMzQ3NzcsIDIwMTAvMDIvMTItMTc6MzI6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0REUzNjgzODFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0REUzNjgzOTFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRERTM2ODM2MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRERTM2ODM3MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAAwICAgICAwICAwUDAwMFBQQDAwQF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', (t) => { t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping; t.needsUpdate = true }) };
   const geo = new THREE.PlaneGeometry(SIZE, SIZE, SEG, SEG).rotateX(-Math.PI / 2);
@@ -613,14 +622,14 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     const r = { schema: 'kfb.terrain-recipe/1', status: 'Entwurf (Gelände-Probe)', seed: S.seed, units: 'm',
       form: { featureSize: S.scale, height: S.amp, octaves: S.oct, ridge: +S.ridge.toFixed(2), warp: +S.warp.toFixed(2), calmHillyVariation: +S.macro.toFixed(2) },
       stylize: { flatValleys: +S.valley.toFixed(2), plateauAt: S.plateau >= 0.999 ? null : +S.plateau.toFixed(2), terraces: S.steps, terraceEdge: +S.sharp.toFixed(2), etheringtonRound: S.ether, rockClusters: S.rockc, waterLevel: +S.water.toFixed(2) },
-      color: { organicFields: S.org, surfaceStage: ['B makro', 'C +übergänge', 'D +sprenkel'][S.fstage], biome: S.palA, biomeTravel: S.mix ? S.palB : null, bandSoftness: +S.soft.toFixed(2), cliffSlopeDeg: S.cliff, strata: S.strata, steppedLight: S.toon, palette: PALETTES[S.palA] },
+      color: { organicFields: S.org, surfaceStage: ['B makro', 'C +übergänge', 'D +sprenkel', 'v3'][S.fstage], biome: S.palA, biomeTravel: S.mix ? S.palB : null, bandSoftness: +S.soft.toFixed(2), cliffSlopeDeg: S.cliff, strata: S.strata, steppedLight: S.toon, palette: PALETTES[S.palA] },
       world: { viewRings: S.rings, gridWorld: S.gridworld, gridSpacing: S.gs, gridShape: ['eckig', 'geschwungen', 'kreise'][S.gshape], gridFill: ['linien', 'schachbrett', 'schachbrett+linien'][S.gfill], checkerColors: S.gcol ? 'bunt' : 'zwei', checkerTexture: S.gtex ? 'edge3' : null, clayLook: S.clay,
         diorama: { on: S.dio, palette: S.dpal, plinthAndBerm: S.berm, colourRingSpeckle: S.ring, stoneBand: S.stones, props: S.props, grounding: S.ground, realShadows: S.shadows, contactCrumbs: S.crumbs, foregroundMass: S.fgmass, colouredEdges: S.edges }, testTempo: S.tempo },
       sky: { timeOfDay: S.tod, paintedClouds: S.painted, clayClouds: S.puffs, cloudCover: +S.cover.toFixed(2), contrails: S.trails },
       noise: 'simplex2d (Ashima/Gustavson), fbm mit Drehung je Oktave, Grat = (1-|n|)^2, Wechselzone = snoise(p/(6·featureSize))' };
     $('recipe').value = JSON.stringify(r, null, 2);
   }
-  function save() { try { localStorage.setItem('kfb-gelaende-probe-3', JSON.stringify(S)) } catch (e) {} }
+  function save() { try { localStorage.setItem('kfb-gelaende-probe-4', JSON.stringify(S)) } catch (e) {} }
   function setUI(p) {
     for (const k of NUM) if (p[k] != null) $(k).value = p[k];
     for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
@@ -641,7 +650,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   });
 
   // Start: gespeicherter Stand oder Vorlage
-  let stored = null; try { stored = JSON.parse(localStorage.getItem('kfb-gelaende-probe-3') || 'null') } catch (e) { stored = null }
+  let stored = null; try { stored = JSON.parse(localStorage.getItem('kfb-gelaende-probe-4') || 'null') } catch (e) { stored = null }
   setUI(PRESETS[DEFAULT]); $('grid').checked = false;
   if (stored && typeof stored === 'object') { setUI(stored); markPreset(null) } else markPreset(DEFAULT);
   update();
@@ -710,7 +719,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   window.__GU = GU;
   function addGrounding(mat) { const prev = mat.onBeforeCompile, prevKey = mat.customProgramCacheKey
     mat.onBeforeCompile = (sh, r) => { if (prev) prev.call(mat, sh, r); Object.assign(sh.uniforms, GU)
-      sh.vertexShader = GLSL_NOISE + '\n' + GLSL_HEIGHT + '\nuniform vec2 uGOff; varying float vGA; varying float vGD;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n  { vec3 wpG = (modelMatrix * vec4(transformed, 1.0)).xyz; vGA = wpG.y - hgt(wpG.xz + uGOff); vGD = normalize(mat3(modelMatrix) * objectNormal).y; }')
+      sh.vertexShader = GLSL_NOISE + '\n' + GLSL_HEIGHT + '\nuniform vec2 uGOff; varying float vGA; varying float vGD;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n  { vec3 wpG = (modelMatrix * vec4(transformed, 1.0)).xyz; gLod = length(wpG.xz); vGA = wpG.y - hgt(wpG.xz + uGOff); vGD = normalize(mat3(modelMatrix) * objectNormal).y; }')
       sh.fragmentShader = 'uniform vec3 uContact; uniform float uGBand, uGOn; varying float vGA; varying float vGD;\n' + sh.fragmentShader.replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
   if (uGOn > 0.5) { vec3 cc = mix(diffuseColor.rgb * 0.55, uContact, 0.45); diffuseColor.rgb = mix(cc, diffuseColor.rgb, smoothstep(0.0, uGBand, vGA)); diffuseColor.rgb = mix(diffuseColor.rgb, cc, smoothstep(0.1, -0.7, vGD) * 0.45); }`) }
     mat.customProgramCacheKey = () => (prevKey ? prevKey.call(mat) : '') + '|kfb-ground'; mat.needsUpdate = true }
@@ -757,7 +766,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   // Felsgruppen an Steilhängen (Etherington R2): Dreiergruppen 1 : 0,6 : 0,35 (N5 ≤ 3 Hauptformen), 40–50 % eingesunken (S1), Ei auf dem breiten Ende +
   // nach oben schmaler (N2/N3), gemeinsame Neigung ≤ 15° mit Abständen ≥ 5° und genau einer Ausnahme 25–45° je Gruppe (N1), Brösel hangabwärts ≤ 12 % (E3)
   function etherRockGeo(seed) { let z = seed; const r = () => { z = (z * 16807) % 2147483647; return z / 2147483647 }; for (let k = 0; k < 4; k++) r()
-    const g = new THREE.IcosahedronGeometry(1, 2), pa = g.attributes.position, v = new THREE.Vector3()
+    const g = new THREE.IcosahedronGeometry(1, 1), pa = g.attributes.position, v = new THREE.Vector3()
     // Block statt Kugel: 8 Schnittebenen (große, flache Facetten), Ober- und Seitenschnitte, unten abgeflacht zum Aufsitzen; leicht länglich
     const cuts = [...Array(8)].map((_, k) => ({ n: (k === 0 ? new THREE.Vector3(r() * 0.3 - 0.15, 1, r() * 0.3 - 0.15) : new THREE.Vector3(r() - 0.5, r() * 0.8 - 0.2, r() - 0.5)).normalize(), d: k === 0 ? 0.5 + r() * 0.15 : 0.5 + r() * 0.25 }))
     const sx = 1.0 + 0.35 * r(), sz = 0.75 + 0.2 * r()
@@ -770,7 +779,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     for (let i = 0; i < pa.count; i++) { const a = acc.get(key(i)), l = Math.hypot(a[0], a[1], a[2]) || 1; nr.setXYZ(i, a[0] / l, a[1] / l, a[2] / l) }
     return g }
   const ROCKC = { dirty: true, cx: 1e9, cz: 1e9, meshes: [], crumbs: null };
-  { const mat = new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0 }); addGrounding(mat)
+  { const mat = new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0, flatShading: true }); addGrounding(mat)
     ROCKC.meshes = [11, 29, 47].map((sd) => { const m = new THREE.InstancedMesh(etherRockGeo(sd), mat, 420); m.castShadow = m.receiveShadow = true; m.frustumCulled = false; m.count = 0; worldRoot.add(m); return m })
     ROCKC.crumbs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), crumbs.material, 2200); ROCKC.crumbs.castShadow = ROCKC.crumbs.receiveShadow = true; ROCKC.crumbs.frustumCulled = false; ROCKC.crumbs.count = 0; worldRoot.add(ROCKC.crumbs)
     ROCKC.mat = mat; for (const m of ROCKC.meshes) castFront(m); castFront(ROCKC.crumbs); castFront(crumbs) }
@@ -919,7 +928,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     const sx = Math.floor(P.x / STEP) * STEP, sz = Math.floor(P.z / STEP) * STEP;
     U.uOffset.value.set(sx, sz); terrain.position.set(sx - P.x, 0, sz - P.z); water.position.copy(terrain.position); U.uCarW.value.set(P.x, P.z);
     for (const R of RINGS) { const rx = Math.floor(P.x / R.step) * R.step, rz = Math.floor(P.z / R.step) * R.step; R.u.uOffset.value.set(rx, rz); R.m.position.set(rx - P.x, 0, rz - P.z) } water.visible = S.water > 0.005;
-    worldRoot.position.set(-P.x, 0, -P.z);
+    worldRoot.position.set(-P.x, 0, -P.z); LODC.x = P.x; LODC.z = P.z;
     if (ROCKC.dirty || Math.hypot(P.x - ROCKC.cx, P.z - ROCKC.cz) > 40) buildRocks(P.x, P.z);
     carRoot.position.set(0, P.y - C.hover * 0.55, 0); carRoot.rotation.y = P.yaw;
     tilt.rotation.set(-P.vPitch, 0, P.vRoll);
