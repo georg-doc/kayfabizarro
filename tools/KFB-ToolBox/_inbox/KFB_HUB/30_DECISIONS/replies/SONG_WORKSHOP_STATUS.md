@@ -88,3 +88,41 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
    - Comic-Motion-Mapping je Song (Karte → Beat → Panel) als eigene Datei. Die Zuordnung Karte → Beat liegt schon in den Songlines.
    - Zeitmarken erst aus echtem Suno-Audio bzw. den Stems.
 5. **Weitere Decks:** in Gruppen von 3–5 nach demselben Ablauf, danach jeweils der Album-Vergleich.
+
+## §4 · 20.10.2026 · Writers' Room als Werkbank (Artefakt)
+**Seite:** https://claude.ai/artifact/9bSQcnqNd91qKXfhra5puM (privat; Teilen über das Share-Menü).
+
+**Was die Seite kann:**
+- Songs ansehen, bearbeiten und speichern, mit Versionen.
+- Die Karten des Decks mit „Einfügen“ übernehmen.
+- Text, Style A/B und Titel für Suno kopieren.
+- Suno-Einstellungen festhalten (Weirdness, Style Influence, Vocal Gender, Exclude) sowie Takes mit Bewertung.
+- Gate- und Kritikerstand anzeigen, mit Hinweis, ob das Gate noch für den aktuellen Text gilt.
+- Regeln (hart/Richtwert/Handwerk/offen) und Lessons pflegen; die Album-Ansicht zeigt Dubletten.
+
+**Speicherstand:**
+- 60 Songs: 3 Piloten mit Gate und Kritik, 17 aus WSA-Batch 1, 27 neu ausgewählt, 13 Bestand R3 mit alten Texten;
+- 60 Kartensätze, 26 Regeln und 6 Lessons.
+
+**Auswahl der 27 neuen Decks:**
+- Rating 9 bevorzugt, verifizierte Zuordnung bevorzugt;
+- witzige oder zugängliche Decks, Bandbreite über Mythos, Geschichte, Musik, Alltagskomik, Literatur und Politik;
+- Medizin bewusst nur mit 4 von 38 Decks;
+- Quellkonflikte und unverifizierte Zuordnungen sind am Song als Flag markiert.
+
+**ChatGPT-Brücke ohne Sync-Instanz:**
+- Prompt-Paket aus der Seite kopieren (Regeln, Karten, Entwurf, festes Antwortformat), in ChatGPT einfügen und die Antwort unter „Import“ zurückholen.
+- Direktes Schreiben von ChatGPT in den Speicher ist nicht möglich, weil er eine Claude-Anmeldung braucht.
+
+**Claude in der Seite:** „Ideen mit Claude“ läuft über claude.ai, ohne Code-Instanz.
+
+**Gate-Schritt (Claude Code):**
+1. Songs mit `needsGate` lesen.
+2. Die Karten-Zuordnung (songlines r4) ableiten.
+3. `song_gate.py` und den Kritiker laufen lassen.
+4. `gate`/`critic` zurückschreiben und `needsGate` löschen.
+
+**Suno (Recherche 20.10.):**
+- keine offizielle API und kein offizieller MCP; die Nutzungsbedingungen verbieten automatisierten Zugriff;
+- inoffizielle Wrapper würden das Konto gefährden;
+- also von Hand. Limits: Lyrics 5.000, Style 1.000, Titel 100 Zeichen. Stems erst im Premier-Plan.
