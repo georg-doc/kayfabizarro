@@ -3,6 +3,27 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 111 · 21.10. · Bodenkontakt-Fix + Test, HUD-Ebene, Spiegel ws1/terrain-439 · Ohren/Brauen-Befund · Schattenkonzept R1 (Entwurf) · Probe fährt mit Spiel-Physik
+
+**Spiegel:** `terrain/439` @319f67f liegt jetzt als `ws1/terrain-439` auf GitHub (Baum wie `ws1/combo-r2`: `ws1/kfb-planet/`). Volle Reihe mit GPU: 55 PASS. Rot nur Bekanntes: `c2`/`orbit` nur im GPU-Lauf (Zeitverhalten; in der Software-Darstellung auf diesem und dem Ausgangsstand PASS), `drift` braucht `test/out/drift/drift-report.json` (alter Mac), sieben alte Handtests (episode, gizmo, prison, probe, smoke, tower, turns) brauchen einen separaten Server auf :8765 und gehören nicht zu `npm test`.
+
+**Bodenkontakt (Georg 21.10.: „Figur schwebt“, Kanon K4 kein Schweben):**
+- Ursache: Während des Ladens hält `post()` die Figur ohne Schwerkraft auf `START` (+0,3 K über dem Boden). Bei der Freigabe wurde die Schwerkraft nicht zurückgesetzt; schlief der Körper bis dahin, blieb er hängen bis zur ersten Eingabe (je nach Ladezeit, daher nur manchmal).
+- Fix `M1Player`: beim Übergang nicht-frei → frei `setGravityScale(1)` + `wakeUp()`.
+- Neuer Test `test/m1-ground.mjs` (in `npm test`): Unterkante gegen Boden für Start, nachgestelltes Startrennen (eingefroren, Körper gezielt schlafen gelegt, freigeben), drei Hangstellen (Toleranz 1,5 cm + 12 cm × tan Steigung), Partnerin auf der Bühne, Bäume/Laternen nicht schwebend, Fundsachen nicht eingesunken (V-450). **Gegentest ohne Fix: FAIL (Start +29,6 cm, Freigabe +29,9 cm), mit Fix: PASS.**
+
+**HUD:** Ebene = Fenster (Bauteile skaliert) – Leiste klebt unten statt mittig; Info-Taste/Tastenliste rechts unten (links sitzt der Rucksack). Georg 21.10.: Später das **komplette HUD** einbauen (Minimap, fraktaler Almanach als Fächer, Musik, Einstellungen; Info-i in Einstellungen oder anderes HUD-Element), als Screenshot-Basis für neue Action-Icons (Gemini, gemeinsame Icon-Sprache) – nach Gelände + Schatten im Spiel.
+
+**Ohren/Brauen (Georg-Screenshot von hinten):**
+- Die schwarzen Spitzen an den Ohransätzen sind die **Augenbrauen**: Sie ragen an den Schläfen über den Kopfumriss und sind von hinten sichtbar (Ausblende-Probe: ohne Brauen weg, ohne Augen bleiben sie). → **Bitte als ToolBox-Job** (P08-Export, „Fixes nur noch in der neuen ToolBox“): Brauen schmaler bzw. enger an den Kopf. Gehört zum Paket aus §110 (Büschel/Brauen/Mund empfangen keinen Schatten).
+- Der Ohrenschatten auf dem Oberkopf ist echt, verschwimmt aber unter der weichen VSM-Stufe zu einem formlosen Schleier → Regel für Selbstschatten gehört ins Schattenkonzept.
+
+**Kanon-Befund:** `createContactAO` (schwarzer Fleck auf einer Ebene) läuft im **Standard-Look** von M1 noch (in `look=terrain2` aus) – das ist der nach V-564 verbotene Blob-/Decal-Schatten. Bitte entscheiden: sofort entfernen oder bis zum neuen Schattenkonzept stehen lassen (ohne ihn steht die Figur unter VSM hell auf hellem Grund).
+
+**Schattenkonzept R1 (Entwurf, Georg 21.10.: „am KayKit-Creator orientieren, konsistent, auch für Racer und Boden aus Blender, mit dem neuen Terrain“):** `CANON_3D/sources/WS1_SCHATTENKONZEPT_R1_ENTWURF.md` im Register. Kern: KayKit erdet über die **Farbe** (Gradient-Atlas, Fuß im dunklen Teil; an fünf Pack-Modellen gemessen), der Echtzeitschatten ist Beiwerk. Vorschlag: Wirkung übernehmen (dunkler Fuß im Knet-Shader aus dem echten Bodenabstand, schmale Stufe, nie schwarz; echter Schatten leiser, kontakthart; Mulden/Wülste als Blender-Geometrie; Draufsicht-Verdeckungskarte für feste Objekte; Figuren werfen/empfangen vollständig; Racer im Flug echter Schatten + Landelicht als V-572-Pfütze). **Fünf offene Fragen an WS0** (eingebackener Verlauf vs. Kanon M2, Kleinteile ohne Wurf vs. V-429, zwei Schattenkarten = „ein Rig“?, VSM vs. weiche PCF, Verdeckungskarte „mit Ursache“?). Georgs Richtung: neues Gelände (Probe) als Basis im Spiel statt der grünen Wiese.
+
+**Gelände-Probe:** Der Racer fährt jetzt mit der **Spiel-Physik** (Georg: „gleiche Controls und Physik wie in der Stage, nichts neu bauen“): `k2t` (M2/M3: A/D, Q/E Drift, ⇧ Boost, Sprung, X, Hang, Landung, Steckenbleiben) und Racer-Flug (Elan S2) unverändert aus `kfb-planet-t439` @c506bab gebündelt und eingebettet (`probe/mkdrive.py`), fester Takt 1/60, Rig-Einheit 0,616 m wie im Spiel. Die Probe liefert nur Boden und Wände (Stufen > 1,2 m). Wolken jetzt als drei Himmelsebenen im Kuppelstil mit Parallaxe und Formationen; Kulissen mit Flanken und Biomflächen je Umriss; Himmelsverlauf zur Sonne, Sonnenstand, Polarlicht, Blendenflecken. Vorschau `ws1/preview` @22e21695.
+
 ## 110 · 20.10. · Schatten #439 behoben (lokal, terrain/439) · V-572 Laternen im Spiel · Korrektur zu §109
 
 **Schatten** (WS1b-Diagnose `WS1B_SHADOW_DIAG_R1`, Georg-Befunde) auf `terrain/439` (lokal, `fabc082` + Folgecommit):
