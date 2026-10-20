@@ -3,6 +3,62 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 106 · 20.10. · R12 + R13 bei WS0 · Probe: Anti-Zacken, Himmel v2, Erdung, Polka-Dot · Georgs Urteile
+
+**Neu in `CANON_3D/sources/` (Register):**
+- **`WS1_R12_CARTOON_ANIMATION_ABGLEICH_R1.md`** (`71c33520`): Abgleich von Georgs Datei „cartoon animation.md“ mit dem Kanon.
+  - Schon im Kanon: Szenen-Satz, Farb-Skript, Ortsbiografie, 70/20/10, ein Rig.
+  - **8 Lücken:**
+    1. Comedy Contract
+    2. Familiar-Absurd 60/25/15
+    3. Material-Cast mit Karton als Regel-Ebene
+    4. Landmark-Pass
+    5. Backplate/Himmel als 5. Tiefenebene
+    6. Biom-Familien
+    7. Prop-Budget nach Rollen
+    8. Golden Frames
+  - 3 Fragen an Georg: B1, B2, B3.
+- **`WS1_R13_HIMMEL_HORIZONT_FERNE_R1.md`** (`0fde6f0b`): 23 Regeln, ein tinyskies-Abschnitt, 11 Prüfkriterien.
+  - tinyskies hat **keine Lizenz**: nur Ideen übernehmen, keinen Code.
+  - **WS0 bitte entscheiden:**
+    - F1: Tiefen- und Höhennebel im einen Rig? Das ist dieselbe Frage wie R11 F5.
+    - F2: Zählt die farbige Distanzrampe als Material oder als Licht (Gebiet 6)?
+    - F3: Zählt die Horizontbank als Kulisse oder als Wolkenmasse (R10-22)?
+
+**Gelände-Probe** (`ws1/preview@c93c87ff`). Georgs Urteile heute in Kurzform:
+- Er findet v3-Kleckse und Knet-Steine besser als die reduzierte Flächengrammatik und als Polygon-Steine.
+- Er mahnt mehrfach die Erdung an, will keine Zacken und keine Pixelschatten.
+
+Umgesetzt:
+- **Zacken an Bergen = Aliasing.** Grobe Gitter bekamen Detail und harte Knicke, die feiner sind als der Gitterabstand. Lösung: **Band-Begrenzung je Gitter.**
+  - Oktaven mit Wellenlänge unter ca. 3–4 Gitterabständen werden ausgeblendet.
+  - Tafelkante und Stufen bekommen eine Mindestbreite von ca. 2 Gitterabständen.
+  - Die Gitter gehen zum Rand hin ins nächstgröbere über.
+  - JS und Nahgitter rechnen identisch, Physik und Platzierung bleiben gleich.
+  - **Regelvorschlag K-G1:** Kein Höhenmerkmal schmaler als 2 Gitterabstände des Meshes, das es zeigt.
+- **Horizont-Balken weg** (R13 H5/H6/H13):
+  - eine `skyColor(dir)` für Kuppel, Gelände, Wasser und Kulissen;
+  - Bodendunst unter dem Horizont statt Fläche;
+  - exponentieller Nebel plus Höhennebel, an der Geländekante voll;
+  - in der Übersicht immer Ringgitter.
+- **Kulissen und Himmelskörper:** 3 Kulissenringe (+5° / +3° / +1,5°) und als surreales Element (H21) ein Knet-Riesenmond oder Ringplanet gegenüber der Sonne, unten im Dunst.
+- **Schatten** weich (bilineare PCF).
+- **Erdung:** greift jetzt auch für `InstancedMesh` (Felsgruppen, Brösel) und das Auto, kräftiger (1,3 m Band).
+- **Felsgruppen:** sitzen nach dem tiefsten Bodenpunkt und sind halb in den Hang gekippt (Etherington S1).
+- **Polka-Dot-Welt** (Georg: „wie würde Yayoi Kusama das Terrain gestalten“):
+  - Punkte sind angeschnittene Kugeln auf zwei gedrehten, verbogenen 3D-Gittern, mit 35–45 % Bedeckung.
+  - Die Farben kommen aus der Biom-Palette (Georg: Paletten behalten).
+  - Varianten: Biom, Konfetti, Netz.
+  - Gelände und alle geerdeten Props tragen Punkte.
+  - Nur als Hommage in der Probe; im Spiel ohne den Namen der Künstlerin und ohne ihre Werktitel.
+
+**Offen:**
+- G6-Messung;
+- Übertragung nach `terrain2`;
+- Linien-Lösung für Kantenakzente;
+- schwebende Kulissen-Inseln (R13 Vorschlag B);
+- Puffs mit flacher Basis (H18).
+
 ## 105 · 20.10. · Flächengrammatik R1 · Prüfansichten in der Probe · Vergleich A/B/C/D
 
 **Georg:** „wird schon besser :)“. Dazu kam externes Feedback aus seinem Perplexity-Chat zur Flächengrammatik. WS1 hat es mit den eigenen Befunden zusammengeführt:
