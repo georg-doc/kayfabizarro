@@ -1,0 +1,304 @@
+{
+  "schema": "kfb.songlines.r4",
+  "deckId": "the_biological_metropolis",
+  "deckTitle": "The Biological Metropolis",
+  "revision": "r5b",
+  "sourcePins": {
+    "deck": {
+      "path": "registry/assets/v1/decks/the_biological_metropolis.json",
+      "sha256": "76fe5fd89f90e1c2b66858d2ac1c962670d605b8a1b1aeb8866aabb7f9f58666",
+      "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3"
+    },
+    "media": {
+      "path": "media/kfb/The_Biological_Metropolis_-_ADD_web_ID.pdf.json",
+      "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/073b79c3fb4052f7f4691976663ffc0c9449f7f3/media/kfb/The_Biological_Metropolis_-_ADD_web_ID.pdf.json",
+      "sha256": "e0c6d91411eff14bfa2148f0c2c6b122f2893d217c444e0e9b9bcde5a750297b"
+    }
+  },
+  "performer": null,
+  "performers": [
+    {
+      "model": "CombatMech",
+      "asset": "KayKit_Mystery_Series6/1 - July 2024 - Combat Mech · Textur alt",
+      "role": "der Koloss, in dem eine ganze Stadt arbeitet"
+    }
+  ],
+  "residentHome": "Kanzel eines riesigen Mechs, Rohre, Rohrpost, Bordsprechanlage",
+  "structure": "the pilot behind the colossus' eyes finds the joysticks are not connected; each organ states its card and the pilot resolves it into an everyday target (smartwatch, breathing coach, seminar, boss, podcast); the memo makes him the press secretary; the outro names who actually profits from the illusion of control",
+  "introType": "confession",
+  "selectionMode": "BEST_OF",
+  "bestOf": [
+    1,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    19,
+    21,
+    23,
+    24,
+    26,
+    28,
+    30,
+    32
+  ],
+  "bestOfReason": [
+    "Hook 1: the body runs the civilization while you are busy.",
+    "Departments 5, 7, 10, 9, 28: each organ's claim resolved into an everyday target (watch, coach, seminar, Friday, streaming).",
+    "Security 11, 19: memory and friendly fire, resolved as the company that fires the whistleblower.",
+    "Medicine knows that move 21, 23, 24, 30: looking beats the book; nobody wants to hear it was their own hands; the meeting; the podcast.",
+    "Perception 26: guessing to fill the gap, also how we read the news.",
+    "Turn 6: the memo - press secretary, not president.",
+    "Landing 32: the bill comes anyway."
+  ],
+  "omitted": {
+    "3": "machine-vs-body thesis carried by the mech frame itself",
+    "4": "rules-heavy start card",
+    "8": "second filter joke after the liver",
+    "12": "slow broadcast overlaps the intercom device",
+    "13": "energy motor breaks the department rhythm",
+    "14": "doubles the memo reveal",
+    "16": "abstract in a spoken line",
+    "20": "library callback already lands with 11",
+    "22": "dilutes the Semmelweis chain",
+    "25": "overlaps department reports",
+    "27": "standing wave fights the landing",
+    "29": "stage meta-joke clashes with the resident frame",
+    "31": "cut for length",
+    "2": "the citizen line repeats the pilot's own confession",
+    "15": "DNA/cancer cards cut: too heavy for a quick satirical resolution",
+    "17": "inflammation cut so autoimmune carries friendly fire",
+    "18": "cancer cut (tone)"
+  },
+  "orderMode": "edited",
+  "orderReason": "Gut 10 before Liver 9 (calls, then Friday); Night Shift 28 closes the daily departments; Humoralist 30 after the Semmelweis chain as today's podcast; Brain 6 is the turn.",
+  "metaSkipped": [],
+  "cards": [
+    {
+      "cardNumber": 1,
+      "beats": [
+        3
+      ],
+      "cardText": "The City Inside has been running the civilization while you were busy with other things."
+    },
+    {
+      "cardNumber": 5,
+      "beats": [
+        4
+      ],
+      "cardText": "The Heart: the brain can modify the rate. The brain cannot generate it."
+    },
+    {
+      "cardNumber": 7,
+      "beats": [
+        5
+      ],
+      "cardText": "The Lungs: seventy square meters folded into your chest, the only manual override."
+    },
+    {
+      "cardNumber": 10,
+      "beats": [
+        6
+      ],
+      "cardText": "The Gut: eighty percent of the phone calls go up to the brain. The subway runs the city."
+    },
+    {
+      "cardNumber": 9,
+      "beats": [
+        7
+      ],
+      "cardText": "The Liver: Prometheus was anatomically correct. It's the only organ that grows back."
+    },
+    {
+      "cardNumber": 28,
+      "beats": [
+        8
+      ],
+      "cardText": "The Night Shift: sleep is the janitorial shift washing the thoughts out of the carpet."
+    },
+    {
+      "cardNumber": 11,
+      "beats": [
+        10
+      ],
+      "cardText": "The Immune System: a library of every murder attempt. It remembers things you have forgotten."
+    },
+    {
+      "cardNumber": 19,
+      "beats": [
+        11
+      ],
+      "cardText": "Autoimmune: the discrimination fails, not the weapon. The gun works fine, pointed the wrong way."
+    },
+    {
+      "cardNumber": 21,
+      "beats": [
+        13
+      ],
+      "cardText": "Andreas Vesalius looked at the body instead of the book. Everyone else was wrong."
+    },
+    {
+      "cardNumber": 23,
+      "beats": [
+        14
+      ],
+      "cardText": "Ignaz Semmelweis saved the mothers. The doctors committed him. He died of the infection."
+    },
+    {
+      "cardNumber": 24,
+      "beats": [
+        15
+      ],
+      "cardText": "The Semmelweis Problem: evidence available, implication uncomfortable, we reject the finding."
+    },
+    {
+      "cardNumber": 30,
+      "beats": [
+        16
+      ],
+      "cardText": "The Humoralist: wrong in the facts, right in the vibe. It was the first Kayfabe."
+    },
+    {
+      "cardNumber": 26,
+      "beats": [
+        17
+      ],
+      "cardText": "The Blind Eye: you have a hole in your vision. The brain fills it in with best guesses."
+    },
+    {
+      "cardNumber": 6,
+      "beats": [
+        19,
+        20
+      ],
+      "cardText": [
+        "The Brain: the decision was already underway five hundred milliseconds before you made it.",
+        "You are the press secretary, not the president."
+      ]
+    },
+    {
+      "cardNumber": 32,
+      "beats": [
+        22
+      ],
+      "cardText": "The Scorekeeper: the body keeps the score because the body is the score."
+    }
+  ],
+  "songLineChanges": [
+    {
+      "cardNumber": 6,
+      "rule": "A7",
+      "songLine": "The decision was already underway five hundred milliseconds before you made it.",
+      "reason": "500ms written out"
+    },
+    {
+      "cardNumber": 7,
+      "rule": "A7",
+      "songLine": "The Lungs: seventy square meters folded into your chest.",
+      "reason": "70 written out"
+    },
+    {
+      "cardNumber": 10,
+      "rule": "A7",
+      "songLine": "Eighty percent of the phone calls go up to the brain.",
+      "reason": "80% written out"
+    }
+  ],
+  "cues": [],
+  "refrain": "",
+  "bpmException": null,
+  "visualMotifs": [
+    {
+      "cardNumber": 1,
+      "motif": "rabbit cross-section revealing industrial cityscape",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 5,
+      "motif": "badger playing massive drum kit connected to steam boiler",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 6,
+      "motif": "five owls in judge wigs arguing over burning map in library",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 7,
+      "motif": "two giant broccoli trees exchanging blue and red birds",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 9,
+      "motif": "grim beaver managing flaming oil drums at river's edge",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 10,
+      "motif": "giant intestinal tube as subway tunnel, zombie commuters boarding",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 11,
+      "motif": "armored rats with riot shields spotlighting a cartoon virus",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 19,
+      "motif": "crazed dog in spin biting itself surrounded by fire",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 21,
+      "motif": "mole in Elizabethan ruff holding bone, stomping on Galen textbook",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 23,
+      "motif": "raccoon in lab coat washing hands in lime bucket while silhouettes mock",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 24,
+      "motif": "barn door with BLÖDSINN sign bursting open with rays of light",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 26,
+      "motif": "camera lens puncturing canvas where tree image is painted over the gap",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 28,
+      "motif": "mice in janitor overalls cleaning inside glowing skull while brain sleeps in hammock",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 30,
+      "motif": "tortoise carrying four colored potion bottles, one spilling",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 32,
+      "motif": "spiky black sea-urchin creature writing with feather quill in leather-bound ledger",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    }
+  ]
+}

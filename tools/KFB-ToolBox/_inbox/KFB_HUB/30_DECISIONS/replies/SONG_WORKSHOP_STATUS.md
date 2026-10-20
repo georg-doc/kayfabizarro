@@ -210,3 +210,32 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
 **Nächster Schritt:**
 1. Georg hört die drei Piloten in Suno: Text und Style A/B aus dem Writers' Room kopieren, Takes dort festhalten.
 2. Danach die erste Gruppe aus WSA-Batch 1 (3–5 Decks) nach dem r5-Muster.
+
+## §9 · 20.10.2026 · Georgs Urteil zu Metropolis r5a: „AI slop“ → Klartext-Regel, Metropolis r5b
+**Georg:**
+- r5a ist schwer verständlich, Object-Acting, Leerphrasen, besonders am Schluss („Every colossus … thinks it is marching … marched by a badger with a drum … Listen to the drum“).
+- Der Koloss war als Idee gut. Metaphern, Allegorien und Karten müssen aber satirisch, interessant und provokant aufgelöst werden, mit Handelndem, Verantwortung und Alltagsbezug.
+- Keine Leerstellen wie „Somebody climbed into my cockpit“.
+
+**Ursachen:**
+- drei Bildebenen übereinander;
+- Kartenbild-Details, die man ohne Bild nicht versteht;
+- Rätselsätze und ein Aphorismus-Schluss;
+- Gate-Regex zu eng; Blind-Kritiker aus derselben Modellfamilie hat es gelobt (7× ja).
+
+**Neue harte Regeln (Writers' Room r31/r32):**
+- Klartext und Auflösung jeder Allegorie;
+- ein Bildrahmen pro Song;
+- Kartenbilder nur, wenn der Satz ohne Bild trägt.
+
+**Metropolis r5b** (die eine Revision):
+- Pilot hinter den Augen, Joysticks ohne Anschluss.
+- Jede Karte bekommt eine Alltagspointe mit Verantwortlichem: Smartwatch-Trophäe, Atemcoach für 90 Euro, Seminar verkauft Intuition, Firma feuert Whistleblower, Meeting zum toten Projekt, Humoralist mit Podcast.
+- Outro: die einzigen mit Kontrolle sind die Joystick-Verkäufer (Tracker, Coaches, Wunderpulver), und sie kontrollieren dein Geld.
+- Gate R4.2 PASS (3106 Zeichen, 15 Karten).
+
+**Nächster Schritt:**
+1. Georgs Urteil zu r5b.
+2. Dann dieselbe Prüfung für Brain Wrestling r5a und Protopia r5b (Tierbeschreibungen aus Kartenbildern, Spruch-Schlüsse).
+3. Gate um Aphorismus-Schluss-, Parolen- und „denkende Objekte“-Muster erweitern.
+4. Zweitkritik aus anderer Modellfamilie (ChatGPT) einführen.
