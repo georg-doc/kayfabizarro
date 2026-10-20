@@ -49,6 +49,7 @@ ALIASES = {'figure-fine': 'character', 'fine': 'character', 'figure': 'character
 # Rolle → Profil (wenn nicht angegeben): Figuren fein, Umgebung Mittelgrund, Boden/Ferne ruhig
 ROLE_PROFILE = {'figure': 'character', 'ground': 'background', 'sky': 'background', 'water': 'midground'}
 SOURCE_PULL = {'own': 1.0, 'kit': 0.85, 'meshy': MAX_PULL}   # Anteil Farbton/Sättigung zur Rolle; Helligkeit bleibt (eigene Teile: Rollenton direkt)
+NOISE_GAIN = 1.6   # gemessen (K1): Blender-Noise Detail 0 hat Median-Gradient 0,47/Zelle bei σ 0,126 → ×1,6, damit die Neigung ≈ slope wie kfbNoiseD/1,5
 SKIP = ('eye', 'pupil', 'iris', 'lid', 'mouth', 'teeth', 'tongue', 'lash', 'decal', 'kfb_screen_slot')   # Z. 98 SKIP_DEFAULT
 
 
@@ -118,7 +119,7 @@ def _noise_height(nt, P, size, amp, seed_off, loc, octave2=True):
     if octave2:
         h2 = octave(2.07 / size, loc[1] - 200); mad = nt.nodes.new('ShaderNodeMath'); mad.operation = 'MULTIPLY_ADD'; mad.location = (loc[0] + 360, loc[1] - 100)
         nt.links.new(h2, mad.inputs[0]); mad.inputs[1].default_value = 0.5; nt.links.new(h, mad.inputs[2]); h = _math(nt, 'DIVIDE', mad.outputs[0], 1.5, (loc[0] + 520, loc[1] - 100))
-    return _math(nt, 'MULTIPLY', h, 2.0 * amp * size / 1.5, (loc[0] + 680, loc[1]))
+    return _math(nt, 'MULTIPLY', h, NOISE_GAIN * 2.0 * amp * size / 1.5, (loc[0] + 680, loc[1]))
 
 
 def _dent_height(nt, P, d, seed_off, loc):
@@ -134,6 +135,10 @@ def _dent_height(nt, P, d, seed_off, loc):
     mask = _math(nt, 'LESS_THAN', sep.outputs[0], min(1.0, d['density'] * 1.2), (loc[0] + 340, loc[1] - 160))
     depth = _math(nt, 'MULTIPLY', sep.outputs[1], 0.7, (loc[0] + 500, loc[1] - 200)); depth = _math(nt, 'ADD', depth, 0.65, (loc[0] + 660, loc[1] - 200))   # 0,65 … 1,35
     h = _math(nt, 'MULTIPLY', e, mask, (loc[0] + 820, loc[1])); h = _math(nt, 'MULTIPLY', h, depth, (loc[0] + 980, loc[1]))
+    ve = _n(nt, 'ShaderNodeTexVoronoi', (loc[0], loc[1] - 320), voronoi_dimensions='3D', feature='DISTANCE_TO_EDGE'); ve.inputs['Scale'].default_value = 1.0 / d['size']; ve.inputs['Randomness'].default_value = 1.0
+    nt.links.new(off.outputs[0], ve.inputs['Vector'])   # Zellrand: Delle weich auf 0 (Blender-Voronoi kennt nur die nächste Zelle; das Web-Modul summiert 27 Zellen, ohne Naht)
+    fr = _n(nt, 'ShaderNodeMapRange', (loc[0] + 180, loc[1] - 320), interpolation_type='SMOOTHSTEP'); fr.inputs['From Min'].default_value = 0.0; fr.inputs['From Max'].default_value = 0.22
+    nt.links.new(ve.outputs['Distance'], fr.inputs['Value']); h = _math(nt, 'MULTIPLY', h, fr.outputs['Result'], (loc[0] + 1060, loc[1] - 80))
     return _math(nt, 'MULTIPLY', h, -D * d['size'], (loc[0] + 1140, loc[1]))
 
 
