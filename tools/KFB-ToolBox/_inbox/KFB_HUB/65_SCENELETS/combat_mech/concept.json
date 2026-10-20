@@ -1,0 +1,113 @@
+{
+  "scene": "resident-combat-mech",
+  "source": "RA S17 data/cast.js combat-mech (NPC_SETTINGS_01 · COMBAT-MECH-01) + lib/atlas.js hover/spin (1:1); Minigun-Halterung nach V-536 (Rang vor RA), Asset cast combat_mech r2",
+  "one_sentence": "Diese Szene zeigt den weißen Combat Mech zweimal, am Boden und im Flug, weil er als Wache beides kann und bereit ist, und der Spieler soll zuerst den schwebenden Flug-Mech mit seinem echten Schatten sehen.",
+  "story": "Der weiße Combat Mech hält Wache: am Boden breitbeinig mit Minigun rechts und Axt links, daneben derselbe Mech im Flug, Flügel als Jetpack, Minigun im Anschlag, Lauf dreht. Er kann beides und ist bereit.",
+  "image_idea": "Der weiße Mech steht auf seinem hellen, festgetretenen Fleck im violetten Gelände; schräg dahinter schwebt sein Flug-Zwilling knapp einen Meter darüber, Flügel gespreizt, sein echter Schatten liegt auf demselben hellen Boden.",
+  "focal": "mech_flight",
+  "read_order": [
+    "mech_flight",
+    "minigun_flight_spin",
+    "flight_shadow_on_standplatz",
+    "mech_ground+minigun+axe",
+    "edge_stones"
+  ],
+  "space": {
+    "raum": "Flacher Absatz im offenen Canyon-Gelände, hinten sanft steigend, vorn und zur Flugseite offen; vorn dunkle Tonfläche, Mitte die zwei Instanzen nach Quelle (Boden −1,4/0,35 r 18°, Flug 1,6/−0,3 r −20° y 0,95), hinten Gelände ohne Mauer; Negativraum Himmel + Flugraum ≥ 30 %; hell Figur ×2 + Standplatz, mittel Violett, dunkel Tonfläche/Schatten. Landmarke: Flug-Mech höchstes Element, Terrain-Teile < 1,0 u.",
+    "wertstruktur": {
+      "hell": "die weiße Figur zweimal, der Standplatz",
+      "mittel": "violetter Boden",
+      "dunkel": "Vordergrund-Tonfläche und die Schatten",
+      "staerkster_kontrast": "weißer Flug-Mech gegen violetten Boden bzw. Himmel, dazu sein dunkler Schatten auf dem hellsten Standplatz, also auf dem Fokus",
+      "ruhig": "violetter Boden, Tonfläche, Himmel"
+    },
+    "tiefenebenen": {
+      "vordergrund": "rahmt: offene, dunkle Tonfläche, keine Objekte",
+      "mittelgrund": "trägt die Handlung: beide Instanzen, Standplatz und Schatten: höchste Klarheit, stärkster Kontrast",
+      "hintergrund": "vereinfacht: sanft steigendes Gelände und Himmel, keine Kulisse",
+      "terrain": "nie die lauteste Fläche: alle Terrain-Teile unter 1,0 u und im Wert unter der Figur"
+    },
+    "verteilung_70_20_10": {
+      "ruhe_70": "violetter Boden, Tonfläche und Himmel",
+      "struktur_20": "Standplatz mit Sprenkelband, Trittmulden, Kantensteine, Gras-Gruppen",
+      "bedeutung_10": "beide Mechs mit Minigun und Axt, der Schatten des Flug-Mechs (hier liegt der stärkste Kontrast)"
+    }
+  },
+  "color_script": {
+    "stimmung": "heller Tag, wachsam und bereit: Der kann beides",
+    "terrain": "Violett #8b68c7 (~60 %), helle Farbflächen #a582d9, dunkle Vordergrund-Tonfläche #7b5bb8; ruhig",
+    "sekundaer": "festgetretener Standplatz #e9d8c0, creme Kantensteine #e2d0bc",
+    "akzent": "Grün #1f7a3e nur an der Figur (Panzerteile, Textur A): Figur und Fokus. Keine Umgebungsfläche im Akzent. Das Weiß der Figur ist der hellste Wert im Bild.",
+    "verboten": "Akzent-Grün im Terrain; Düsen-, Flammen- oder Landemarken-Farben; Promo-Blau als Boden; Umtönen der Figur",
+    "licht": "ein Rig kfb-stage-light.v1.1, MESA day (Sonne #ffdcae, 38°); der echte Schatten des Flug-Mechs fällt ≈ 1,2 u versetzt; keine Praktikals; kein Blob"
+  },
+  "form_dna": {
+    "grundformen": [
+      "flacher runder Absatz mit sanft steigendem Hang dahinter",
+      "abgeflachte Kugeln (Gras-Polster, Steinchen-Nester)",
+      "weiche Keile (Absatzkante, Schürze bergab)"
+    ],
+    "sekundaer": [
+      "flache Trittmulden unter dem Boden-Mech",
+      "runde Knet-Findlinge stone_S/M"
+    ],
+    "verboten": "scharfe Prismen: Sockel, Landeplattform, Hangar, Plattenrand",
+    "kantenrundung": "Absatzkante weich, ohne Stufe; Steine rund; Standplatz-Rand nur als Sprenkel",
+    "unregelmaessigkeit": "kontrolliert: Bröckel bergab gehäuft, Gras nach außen dichter; Gruppen 3/5"
+  },
+  "life_anchor": {
+    "elemente": [
+      "Flug-Mech schwebt ± 0,09 u in 1,9 s und pendelt ± 3° (Quelle hover)",
+      "Minigun-Lauf dreht 2,4 U/s (Quelle spin)",
+      "Boden-Mech läuft Idle_B in Schleife (Quelle)",
+      "lila Gras wiegt in Wind-Gruppen (Kit §5/§6)"
+    ],
+    "glaubwuerdig": "Der echte Schatten wandert mit dem Schweben auf dem hellen Standplatz und verbindet die Flug-Instanz mit dem Boden."
+  },
+  "palette_roles": {
+    "ground": "#8b68c7",
+    "tiers": "#a582d9",
+    "tiers2": "#7b5bb8",
+    "path": "#e9d8c0",
+    "rock": "#e2d0bc",
+    "accent": "#1f7a3e",
+    "sky": "#96bede"
+  },
+  "light": {
+    "rig": "kfb-stage-light.v1.1",
+    "mood_set": "mesa",
+    "mood": "day",
+    "practicals": []
+  },
+  "material_codes": [
+    "Violetter Knet-Boden mit lila Gras-Büscheln (Dreiergruppen nur außerhalb des Standplatzes, außen dichter; Wind-Gruppen, Deformer stark)",
+    "Festgetretener Standplatz (Knet-Flecken Pfad-Ton, Trittmulden unter dem Boden-Mech, zwischen den Instanzen am dichtesten, Rand lose, dann Sprenkel; statisch)",
+    "Creme Kantensteine (stone_S/M-Nester ungerade an der Absatzkante, bergab gehäuft, Moos in Fugen; statisch)"
+  ],
+  "biography": {
+    "1": "flacher Absatz im violetten Canyon-Gelände, hinten sanft steigend, vorn offen",
+    "2": "Standplatz festgetreten, zwischen Boden- und Flug-Instanz am hellsten, Trittmulden, Sprenkel nach außen; Gebrauchsspuren (V-566, nur Knet-Oberfläche und Terrain, Silhouette 1:1): Figur und Minigun (Hero, Landmarke): keine Spur an der Figur: Figur und Waffen teilen das Figurenmaterial und werden nie umgetönt (Besetzungsregel (nie umtönen)); Standplatz (Terrain): Trittmulden unter dem Boden-Mech (Abnutzung: Die Wache steht hier breitbeinig); Standplatz (Terrain): heller, festgetretener Kern zwischen beiden Instanzen (Abnutzung: Wechsel zwischen Boden und Flug (Biografie Schicht 2)); Absatzkante (Terrain): Moos in den Steinfugen, Bröckel bergab (Moos und Vergehen an der Kante)",
+    "3": "Absatzkante bröckelt in creme Steinchen, bergab mehr",
+    "4": "lila Gras außen, Moos in Steinfugen, nichts auf dem Standplatz"
+  },
+  "signature": {
+    "hero": "minigun",
+    "echo": [
+      "minigun_flight",
+      "axe"
+    ]
+  },
+  "story_beat": "Schleife nach Quelle: Boden-Mech Idle_B (nicht gefroren); Flug-Mech gefroren Jump_Idle + Running_HoldingRifle @0,25 s, Flügel ±38°, Schweben ±0,09 u / 1,9 s, Pendeln ±3°; Minigun-Lauf 2,4 U/s; kein Start/Landung (nicht in der Quelle)",
+  "cast": [
+    "combat_mech (Boden + Flug, KFB-Augen Visier-Nische an beiden)"
+  ],
+  "cameras": [
+    "top45_standplatz",
+    "eye_1H_front_to_flight",
+    "foot_ground_mech_treads",
+    "side_silhouette_hover_shadow",
+    "face_both_instances",
+    "game_orbit_V-257_keyart_0.22_0.2_1"
+  ],
+  "contact_geometry": "Boden-Mech: Trittmulden + Steinchen-Dreier bergab vor jedem Fuß; Flug-Mech: kein Kontakt, echter Schatten auf dem Standplatz; Kantennester: Moos + Steinchen bergab"
+}

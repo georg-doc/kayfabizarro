@@ -1,0 +1,115 @@
+{
+  "scene": "resident-gunfight-duel-01",
+  "source": "RA S17 data/gunfight-duel-01.json + lib/gunfight-duel-01.js (1:1)",
+  "one_sentence": "Diese Szene zeigt ein Probeduell zweier Helden in einer Sandsenke hinter den Dünen der Bikini-Bucht, weil sie sich hier immer auf denselben zwei Standplätzen treffen, und der Spieler soll zuerst die leere Schusslinie zwischen den Duellanten sehen.",
+  "story": "Sandsenke hinter den Dünen der Bikini-Bucht: das Testgelände, wo Helden immer auf denselben zwei Standplätzen Probeduelle schießen; Bahn ausgetreten, erst Starren, dann Strahlen, einer weicht aus, einer fällt.",
+  "image_idea": "Zwei Duellanten an den Enden einer hellen, ausgetretenen Bahn in einer Sandsenke, niedrige Dünen rahmen wie Ränge, dazwischen nur leerer Boden, bis der erste Strahl ihn kreuzt.",
+  "focal": "shot_line",
+  "read_order": [
+    "shot_line",
+    "duelist_A",
+    "duelist_B",
+    "stand_spots",
+    "dune_frame"
+  ],
+  "space": {
+    "raum": "Vorn offener Sand quer zur Bahn, dunkle Tonfläche (#439); Mitte Bahn entlang x, A −D/2, B +D/2 (D = 3,6 H), ebene Sohle = Quell-Ellipse (R = D/2 + 1,1 H, Tiefe ×0,62); hinten Dünen außerhalb der Ellipse, B-Seite höher (asymmetrisch); Negativraum Bahn ≥ 2,6 H; hell Bahn + Strahlen, mittel Sand, dunkel Dünen-Schattenseiten + Steine.",
+    "wertstruktur": {
+      "hell": "Bahn (Pfad-Ton) und die Strahlen",
+      "mittel": "Sand",
+      "dunkel": "Schattenseiten der Dünen im Goldlicht, Vordergrund-Tonfläche, violette Steine",
+      "staerkster_kontrast": "die helle, leere Bahn zwischen den Duellanten, geschnitten von den Schattenstreifen; dort kreuzt der Strahl, also auf dem Fokus",
+      "ruhig": "Sandsohle, Dünenflächen, Vordergrund"
+    },
+    "tiefenebenen": {
+      "vordergrund": "rahmt: offener Sand quer zur Bahn, dunkle Tonfläche",
+      "mittelgrund": "trägt die Handlung: Bahn mit A, B und den Standplätzen: höchste Klarheit, stärkster Kontrast",
+      "hintergrund": "vereinfacht: Dünen außerhalb der Ellipse (B-Seite höher), Gras auf den Kämmen unter Kopfhöhe",
+      "terrain": "nie die lauteste Fläche: Sand und Aqua-Flächen bleiben unter dem Wert der Bahn"
+    },
+    "verteilung_70_20_10": {
+      "ruhe_70": "Sandsohle, Dünenflächen und Vordergrund",
+      "struktur_20": "Bahn mit Sprenkelband, Standplatz-Mulden, Steinnester, Dünengras",
+      "bedeutung_10": "die Duellanten mit ihren Blastern, die Schusslinie mit Strahl und Puff (hier liegt der stärkste Kontrast)"
+    }
+  },
+  "color_script": {
+    "stimmung": "Showdown am späten Nachmittag, die Stille vor dem Schuss, Cartoon-Western",
+    "terrain": "Sand #f0cf7e (~60 %), organische Aqua-Farbflächen #5cc3bf, vorn die dunklere Tonfläche (#439); ruhig",
+    "sekundaer": "ausgetretene Bahn #fff1d2, violette Steinnester #9a6fd0, Dünengras",
+    "akzent": "(1) Standplatz-Sprenkel A #f2708a und B #46adb2: Interaktion (Startpunkte). (2) Strahlen #9fe6ff / #ffe89a nur auf der Schusslinie: Gefahr. (3) Hero rot und blau: Figur. Nie an Dünen oder Steinen.",
+    "verboten": "Startscheiben, Bahn-Streifen, Platzhalter-Ellipse #d6ccb8; Akzentfarben in Dünen oder Steinen; Emission an den Strahlen; Figuren umtönen",
+    "licht": "ein Rig kfb-stage-light.v1.1, MESA gold (tiefe warme Sonne quer zur Bahn, lange Schatten als Streifen), Figurenlicht nach Regel 11; keine Praktikals"
+  },
+  "form_dna": {
+    "grundformen": [
+      "runde, niedrige Dünenhügel",
+      "flache ovale Senke (Sohle = Quell-Ellipse)",
+      "abgeflachte Kugeln (runde Findlinge, Gras-Polster)"
+    ],
+    "sekundaer": [
+      "weiche Sandkeile an den Steinnestern",
+      "flache Trittmulden an den Bahnenden"
+    ],
+    "verboten": "exakte Zylinder und Scheiben: Startmarken, Platzhalter-Ellipse, Deckung, Fässer",
+    "kantenrundung": "Bahnkanten als Sprenkel, keine Linie; Dünenkämme weich; Steine rund",
+    "unregelmaessigkeit": "kontrolliert: B-Seite höher und mit mehr Steinen, A-Seite flach; kein Spiegelbild; Gruppen 3/5"
+  },
+  "life_anchor": {
+    "elemente": [
+      "Dünengras-Büschel wiegen in Wind-Gruppen mit starker Biegung im Abendwind (Kit §6/§8)",
+      "Dodge und Treffer-Puff wirbeln Pfad-Ton auf (Quelle)",
+      "der Strahl kreuzt die leere Bahn (Quelle)"
+    ],
+    "glaubwuerdig": "Nur das Gras bewegt sich im Standoff; das macht die Stille vor dem ersten Schuss hörbar."
+  },
+  "palette_roles": {
+    "ground": "#f0cf7e",
+    "path": "#fff1d2",
+    "tiers": "#5cc3bf",
+    "stone": "#9a6fd0",
+    "frame": "#f2708a",
+    "tiers2": "#46adb2",
+    "sky": "#8fd6ec"
+  },
+  "light": {
+    "rig": "kfb-stage-light.v1.1",
+    "mood_set": "mesa",
+    "mood": "gold",
+    "practicals": []
+  },
+  "material_codes": [
+    "Sand-Boden mit Aqua-Farbflächen (Dünengras-Dreier nur auf Kämmen, Sohle/Bahn frei, Wind-Gruppen mit starker Biegung)",
+    "ausgetretene Bahn (gestampfter Pfad-Ton, gerade, Kanten als Sprenkel, Mulden an den Enden mit Farbsprenkel A/B; Dodge/Puff wirbeln Pfad-Ton auf)",
+    "violette Steinnester (runde Knet-Findlinge + Kiesel am Dünenfuß, ungerade, B-Seite mehr, ruhig mit Moos in Fugen)"
+  ],
+  "biography": {
+    "1": "flache Sandsenke zwischen niedrigen Dünen, hinten rechts höher; Sohle = Quell-Ellipse",
+    "2": "gerade ausgetretene Bahn, Standplätze am tiefsten getreten, Farbsprenkel A/B; Gebrauchsspuren (V-566, nur Knet-Oberfläche und Terrain, Silhouette 1:1): Duellanten und Blaster (Hero, Landmarke): keine Spur an Figuren oder Waffen: Sie werden nie umgetönt (Besetzungsregel (nie umtönen)); Bahn (Terrain): gerade ausgetreten, heller als der Sand (Abnutzung: immer dieselbe Probestrecke); Standplätze (Terrain): am tiefsten getretene Mulden (Abnutzung: immer dieselben zwei Standplätze); Standplatz-Sprenkel A/B (Terrain): zum Rand blasser, Sand weht darüber (Farbverlust durch Sandverwehung); Steinnester (Terrain): Moos in den Fugen, Sandkeil bergab (Moos am Dünenfuß, Sand rieselt von der Düne)",
+    "3": "violette Steine am Dünenfuß, B-Seite mehr; Sand weht über Bahnkanten",
+    "4": "Dünengras-Büschel auf Kämmen, Moos in Nest-Fugen, auf der Bahn nichts"
+  },
+  "signature": {
+    "hero": "weapon.A.blaster",
+    "echo": [
+      "weapon.B.blaster"
+    ]
+  },
+  "story_beat": "duel5: Standoff 0,9 s → A miss → B hit → A dodge → B dodge → A kill, Pause 0,35 s; Schusskette Ausholen/Mündung/Geschoss im selben Bild, Knet-Puff + Hit-Stop + Squash + Rückstoß, Puff aus Gesichtszone 0,18 H geschoben",
+  "cast": [
+    "hero_man rot (A, KFB-Augen hinter Visier)",
+    "hero_man blau (B, KFB-Augen hinter Visier)",
+    "toy_soldier duel_carbine (nach V-562)",
+    "combat_mech weiß (KFB-Augen Nische)",
+    "combat_mech oliv (Karte fehlt)"
+  ],
+  "cameras": [
+    "top45_lane",
+    "eye_1H_behind_A_along_lane",
+    "foot_stand_B",
+    "side_cross_lane_dunes",
+    "face_heroes_soldier_mech",
+    "game_orbit_V-257"
+  ],
+  "contact_geometry": "Steinnester: Sandkeil bergab + Moos; Figuren in den Standplatz-Mulden direkt auf Terrain; Sohle eben für Fall/Dodge"
+}

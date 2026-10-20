@@ -1,0 +1,119 @@
+{
+  "scene": "scifi-pack-01",
+  "source": "RA S17 data/scifi-pack-01.json + lib/scifi-pack.js + lib/modefamily.js MEASURED (1:1); Teilmaße aus 50_BLENDER/B50/scifi/data/diorama.json",
+  "one_sentence": "Diese Szene zeigt einen Außenposten auf einem violetten Alienplaneten, vor dem vier Astronauten zum Empfang stehen, weil vier Familien ihr Zuhause auf den trockenen Geländerücken gebaut haben, und der Spieler soll zuerst die orange Kuppel oben auf dem Rücken sehen.",
+  "story": "Vier Familien haben ihren Außenposten auf den trockenen Rücken eines violetten Alienplaneten gebaut; Radar- und Funk-Modul an den Flanken, Alienbäume und altes Gestein ringsum, drei Planeten am Himmel. Die vier stehen vorn am Rundgang und empfangen dich.",
+  "image_idea": "Die orange Kuppel sitzt oben auf dem violetten Rücken; davor stehen die vier Astronauten auf ihrem hellen Trampelpfad wie zum Empfang; drei blasse Planeten im Nachthimmel.",
+  "focal": "station_2_GeodesicDome",
+  "read_order": [
+    "station_2_GeodesicDome",
+    "residents_x4",
+    "base_large+connector+solar_x3",
+    "radar_module_west|radio_module_east",
+    "outer_ring_trees_rocks",
+    "planets"
+  ],
+  "space": {
+    "raum": "Vorn Vorfeld (Felsen, Pflanzen, Gras am Wegrand) mit dunkler Tonfläche, Mitte Rücken mit Station und heller Rundgang-Pfad mit den vier Figuren, hinten Solar-Gestell, große Felsen und Bäume vor flach abfallendem Gelände und Nachthimmel; Negativraum die offene Ebene links/rechts der Station + Himmel (Orbit-Raum der Schiffe); hell Kuppel/Pfad/Fels, mittel Violett, dunkel Tonfläche/Außenring/Himmel. Landmarke: Rücken +2,4 u unter der Station, Kuppel 5 % eingesunken → Scheitel ≈ 7,42 u; Außenmodule 10–15 %, Bäume 5–10 %, Felsen 25–45 % eingesunken → Antenne ≤ 7,18, Tree_Swirl_1 ≤ 6,98, Rock_Large_2 ≤ 6,16.",
+    "wertstruktur": {
+      "hell": "Kuppel, Pfad, Felsen, Planeten",
+      "mittel": "violetter Boden, Station",
+      "dunkel": "Vordergrund-Tonfläche, Außenring, Nachthimmel",
+      "staerkster_kontrast": "helle Kuppel gegen den dunklen Nachthimmel und die vier Astronauten auf dem hellen Pfad vor der dunklen Tonfläche, also auf dem Fokus. Prüfpunkt Value-Pass: Fels #e2d0bc ist im Wert heller als die Kuppel; die Felsen bleiben deshalb tief eingesunken im Außenring, und die Kuppel gewinnt über Höhe, Isolation und Himmelskontrast (≥ 2 Mittel).",
+      "ruhig": "violette Ebene, Tonflächen und Himmel; Bäume als kontrastarme Silhouetten"
+    },
+    "tiefenebenen": {
+      "vordergrund": "rahmt: Vorfeld: drei Felsen, zwei Pflanzen, Gras am Wegrand in der dunklen Tonfläche; wenige große, dunklere Formen rahmen",
+      "mittelgrund": "trägt die Handlung: Rücken mit Station, heller Rundgang-Pfad, die vier Astronauten: höchste Klarheit, stärkster Kontrast",
+      "hintergrund": "vereinfacht: Solar-Gestell, Rock_Large_1/2, hintere Bäume, flach abfallendes Gelände, Nachthimmel mit Planeten",
+      "terrain": "nie die lauteste Fläche: die violette Ebene bleibt unter dem Wert von Kuppel und Pfad"
+    },
+    "verteilung_70_20_10": {
+      "ruhe_70": "violette Ebene, Tonflächen und Himmel",
+      "struktur_20": "Halle, Röhre, Radar- und Funk-Modul, Solar, Bäume, Felsen, Pfad",
+      "bedeutung_10": "Kuppel und die vier Astronauten (hier liegt der stärkste Kontrast)"
+    }
+  },
+  "color_script": {
+    "stimmung": "fremde, ruhige Nacht, bewohnt und einladend: Hier draußen wohnt jemand",
+    "terrain": "Violett #8b68c7 (~60 %), helle Farbflächen #a582d9, dunkle Vordergrund-Tonfläche #7b5bb8; ruhig",
+    "sekundaer": "Station und Module #ef5a22, Pfad #e9d8c0, Fels und Planeten #e2d0bc, Alienbäume #1f7a3e als kontrastarme Silhouetten im Außenring",
+    "akzent": "Kuppel #e8743a (hellerer Ton, fängt den Key): Landmarke und Erzählkern. Dazu die vier Astronauten in Figurenfarben auf dem hellsten Pfad: Figur. Die grüne Rolle accent der Bäume trägt nach V-566 keine Akzent-Bedeutung; die Bäume laufen als Sekundär und bekommen im Gate keine Akzent-Rolle ohne Bedeutung (M4). Tree_Lava_3 am Stationsfuß führt nur als Linie, nie heller als die Kuppel.",
+    "verboten": "Konverter-Grau #9fb8a0; rohe Kit-Farben; Grün oder Orange an Deko heller als die Kuppel; Leuchtfarbe an Tree_Light; Chroma > 0,195; Figuren umtönen",
+    "licht": "ein Rig kfb-stage-light.v1.1, MESA night (Mond-Key #93a6ee, Figurenlicht 1,7); keine Praktikals (Quelle); echte Schatten nach Empfänger getönt, auch unter den Schiffen kein Blob"
+  },
+  "form_dna": {
+    "grundformen": [
+      "flacher runder Geländerücken in der Ebene",
+      "abgeflachte Kugeln (Kuppel, Kugelkronen, Gras-Polster, Findlinge)",
+      "weiche Keile (Erdkeile an Halle, Kuppel und Modulen; Flanken ≤ 25°)"
+    ],
+    "sekundaer": [
+      "gerundete Röhren- und Kastenkörper (Halle, Röhre, Module nach kfb_clay_bpy.apply)",
+      "Spiral- und Tropfenkronen der Alienbäume"
+    ],
+    "verboten": "scharfe Prismen: Landeplattform, Plattenrand, Stufe am Rücken (House_Cylinder bleibt Quellform, aber mit Knet-Kanten, nie glatte CAD-Fläche)",
+    "kantenrundung": "Station und Module über kfb_clay_bpy.apply rund; Felsen als runde Findlinge; Flanken ohne Stufe",
+    "unregelmaessigkeit": "kontrolliert: Außenring lückig, kein geschlossener Kranz; Bröckel hinten und westlich mehr; Tree_Swirl_2 links, Tree_Spikes_1 Ost (Quelle, nicht gespiegelt)"
+  },
+  "life_anchor": {
+    "elemente": [
+      "die drei Planeten drehen sich langsam (0,08 rad/s, Quelle)",
+      "lila Gras-Büschel wiegen in Wind-Gruppen, der Deformer biegt stark (Kit §5/§6)",
+      "Baumkronen wippen schwach, ein Baum je Gruppe (Kit §5)"
+    ],
+    "glaubwuerdig": "Wind im Gras und in den Kronen plus der langsame Himmel zeigen, dass der Planet lebt, während die Station still steht."
+  },
+  "palette_roles": {
+    "ground": "#8b68c7",
+    "tiers": "#a582d9",
+    "tiers2": "#7b5bb8",
+    "path": "#e9d8c0",
+    "rock": "#e2d0bc",
+    "structures": "#ef5a22",
+    "structures2": "#e8743a",
+    "accent": "#1f7a3e",
+    "sky": "#96bede"
+  },
+  "light": {
+    "rig": "kfb-stage-light.v1.1",
+    "mood_set": "mesa",
+    "mood": "night",
+    "practicals": []
+  },
+  "material_codes": [
+    "Violetter Knet-Boden mit lila Gras-Büscheln (3–5er Gruppen am Pfadrand und am Fuß jedes Felsens/Baums, dicht in Mulden, frei auf Pfad/Vorplatz; Wind-Gruppen, Deformer stark)",
+    "Stations-Knete (Kit-Formen nach kfb_clay_bpy.apply, runde Kanten, Rollenton; Kern oben auf dem Rücken, Module an den Flanken; statisch, nur Planeten drehen 0,08 rad/s)",
+    "Alien-Flora und Fels (Bäume im lückigen Außenring, Kronen wippen schwach in Wind-Gruppen; Felsen 25–45 % eingegraben, statisch)"
+  ],
+  "biography": {
+    "1": "trockener Geländerücken +2,4 u in der violetten Ebene, Station oben, Module an den Flanken, Grundgestein ragt heraus",
+    "2": "Rundgang hell getreten, am Empfang und an den vier Startplätzen (Landestellen) am hellsten, Sprenkel nach außen; Erdkeil an Halle, Kuppel und Modulen; Gebrauchsspuren (V-566, nur Knet-Oberfläche und Terrain, Silhouette 1:1): Kuppel (Hero, Landmarke): Farbverlust an der Wetterseite oben (Wind und Staub auf dem offenen, trockenen Rücken); Kuppel (Hero, Landmarke): violetter Staubfleck am Fuß, Moos in der Fuge (Fleck: Staub vom Rundgang; Moos im Schatten am Stationsfuß); Halle (Gebäude): Knete am Fuß abgerieben und staubig, Erdkeil (Abnutzung: täglicher Rundgang an der Halle vorbei); Radar-Modul (Echo): Farbverlust an der Westseite, Erdkeil mit Steinchen (Westseite verwittert stärker (Biografie Schicht 3)); Funk-Modul (Echo): Staubfleck am Fuß, Moos in der Fuge (steht unten an der Flanke, wo der Staub liegen bleibt)",
+    "3": "Flanken bröckeln in creme Steinchen, hinten und westlich mehr",
+    "4": "Moos in den Fugen am Stationsfuß, lila Gras am Pfadrand und um Felsen, nichts auf Pfad und Empfang"
+  },
+  "signature": {
+    "hero": "station_2_GeodesicDome",
+    "echo": [
+      "station_3_House_Single+station_4_Roof_Radar",
+      "station_5_House_Cylinder+station_6_Roof_Antenna"
+    ]
+  },
+  "story_beat": "Eingefroren: Aufstellen (home) – alle vier Astronaut/Idle an Theta 117/99/81/63, Blick nach außen. Spielbar wie Quelle: Rundgang gegen den Uhrzeigersinn im gemessenen Tempo, Aktionen, Mech (0,18 s versetzt, Squash 0,2+0,42 s), Raumschiff (Steigen 2,4 s in Orbit), Rückkehr landet erst, dann Tausch",
+  "cast": [
+    "astronaut_barbarathebee",
+    "astronaut_fernandotheflamingo",
+    "astronaut_finnthefrog",
+    "astronaut_raetheredpanda",
+    "mech_* / spaceship_* (gesperrt bis KFB-Augen je Variante)"
+  ],
+  "cameras": [
+    "top45_ridge_loop",
+    "eye_1H_reception_to_dome",
+    "foot_dome_connector",
+    "side_east_antenna_vs_dome",
+    "face_fernando_finn",
+    "game_orbit_V-257_key_0.35_0.5_1"
+  ],
+  "contact_geometry": "Halle/Kuppel/Röhre: Erdkeil + Steinchen-Dreier bergab; Radar/Funk-Modul: Erdkeil + Steinchen-Dreier; Solar: Gras-Büschel; Bäume: 3–5 Gras-Büschel; Felsen: Moos + Steinchen bergab; Figuren direkt auf dem Pfad"
+}

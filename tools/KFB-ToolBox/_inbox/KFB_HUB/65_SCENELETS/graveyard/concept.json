@@ -1,0 +1,123 @@
+{
+  "scene": "resident-graveyard-01",
+  "source": "RA S17 data/graveyard-01.json + lib/graveyard.js (1:1, Layout = Nachbau KayKit sample.png); Bodenkacheln entfallen (Kanon 15), Umriss wird Terrain-Farbfläche",
+  "one_sentence": "Diese Szene zeigt Skelette, die nachts im Vorhof der Gruft tanzen, zerfallen und sich wieder zusammensetzen, weil auf diesem alten Hangfriedhof der Tod nur eine Pause im Takt ist, und der Spieler soll zuerst die hohe Gruft mit den bleichen Tänzern davor sehen.",
+  "story": "Alter eingezäunter Friedhof am Hang, Gruft hinten, Bogentor vorn: nachts tanzen die Skelette im Vorhof der Gruft, taumeln, zerfallen in Takt 9, die Knochen fliegen, in Takt 10 setzen sie sich wieder zusammen; vor dem Tor Sarg am offenen Grab, Kürbisse leuchten.",
+  "image_idea": "Bleiche Skelette tanzen auf dunkler Friedhofserde vor der hohen Gruft; der Friedhof liegt schief im Hang: links Kiefern auf der Höhe, rechts sackt der Boden ab und der Zaun zerfällt.",
+  "focal": "crypt",
+  "read_order": [
+    "crypt",
+    "dancers",
+    "path",
+    "jackolanterns",
+    "edges"
+  ],
+  "space": {
+    "raum": "Vorn Außenstreu vor dem Tor in dunkler Tonfläche (#439); Mitte Einfriedung, Tanzzone als Negativraum, dunkles Erdfeld mit Quell-Umriss; hinten Gruft auf höherem Grund vor Kiefern, links Kiefernhain auf dem Hügel, keine Mauer; Gelände steigt nach hinten links, fällt nach rechts (bricht die Achse Tor–Gruft); hell Skelette + Pflaster-Kern, mittel Wiese/Steine, dunkel Erdfeld-Ränder/Hain/Hang rechts/Eisen.",
+    "wertstruktur": {
+      "hell": "Skelette (Knochenweiß + Figurenlicht der Nacht) und der Pflaster-Kern",
+      "mittel": "violette Wiese, Grabsteine, Gruft",
+      "dunkel": "Erdfeld-Ränder, Kiefernhain links, Hang rechts unten, Eisenzaun, Vordergrund-Tonfläche",
+      "staerkster_kontrast": "bleiche Skelette auf dem dunkelsten Erdfeld direkt vor der Gruft; die Gruft gewinnt zusätzlich über Höhe und die Weglinie. Kürbislichter bleiben kleiner und nie heller als die Skelette.",
+      "ruhig": "Wiese außen, Erdfeld, Hügel; die Außenstreu vor dem Tor in der dunklen Tonfläche"
+    },
+    "tiefenebenen": {
+      "vordergrund": "rahmt: Außenstreu vor dem Tor (Sarg, offenes Grab, Laternen, Kürbisse, Kreuze, Bank) in der dunklen Tonfläche: leise, rahmt den Eingang",
+      "mittelgrund": "trägt die Handlung: Einfriedung und Vorhof mit den Tänzern, Weg zur Gruft: höchste Klarheit, stärkster Kontrast; die Gruft sitzt als Endpunkt an der Grenze zum Hintergrund",
+      "hintergrund": "vereinfacht: Kiefern hinter der Gruft und der Kiefernhain auf dem Hügel, vereinfacht, weniger Sättigung",
+      "terrain": "nie die lauteste Fläche: Wiese und Erdfeld bleiben unter dem Wert der Skelette; kein Raster, kein lauter Bodenkontrast"
+    },
+    "verteilung_70_20_10": {
+      "ruhe_70": "violette Wiese außen, Erdfeld und Hügel",
+      "struktur_20": "Zaun und Tor, Grabsteine, Schreine, Pflasterweg, Außenstreu, Kiefern",
+      "bedeutung_10": "Gruft, die Skelette mit den fliegenden Knochen, die Kürbislichter (hier liegt der stärkste Kontrast)"
+    }
+  },
+  "color_script": {
+    "stimmung": "Spuk-Nacht, gruselig-komisch: Der Tod ist nur eine Pause im Takt",
+    "terrain": "Violett #8b68c7 (Wiese), dunkles Erdfeld #7b5bb8 mit Quell-Umriss, Hügel #a582d9; vorn die dunklere Tonfläche (#439); ruhig",
+    "sekundaer": "Grabstein-Knete #ab7de7, Eisen #67489a, Holz #ce826b, Pflaster #e9d8c0; Kiefern und Kürbisse #ef5a22 / #f7cd36 als Strukturrolle",
+    "akzent": "(1) Knochenweiß der Skelette: Figur, hellster Wert im Vorhof. (2) Kürbislicht #ff8a2a nur an den 4 Kürbislaternen und der Galgen-Laterne: echte Praktikals, rahmen den Eingang und den Weg (Ziel). (3) Moos-Grün #1f7a3e in den Pflasterfugen entlang des Wegs, führt zur Gruft (Weg zum Ziel), ≤ 10 %. Moos an den übrigen Steinfüßen bleibt klein und auf der Schattenseite, im Wert unter dem Fokus.",
+    "verboten": "Licht in Kerzen und lantern_standing; Quell-Mond, Quell-Hintergrund #17131f, Biom-Boden #7d8458; Akzent-Grün außerhalb der Fugen; unbeleuchtete Deko-Kürbisse heller als die Strukturrolle; Figuren umtönen",
+    "licht": "ein Rig kfb-stage-light.v1.1, MESA night (Mond #93a6ee, 38°, Füllung #3b3878, Figurenlicht 1,7, glow 1); Praktikals nur aus der Quelle; echte Mondschatten nach Empfänger getönt"
+  },
+  "form_dna": {
+    "grundformen": [
+      "schiefer Hang mit runder Hügelkuppe hinten links",
+      "abgeflachte Kugeln (Kiefernkronen, Gras-Polster, Bröckel)",
+      "weiche Keile (Erdkeile an Gruft, Bänken und Särgen, Hangschürze rechts)"
+    ],
+    "sekundaer": [
+      "rund geknetete Steinkörper (Gruft, Grabsteine, Schreine, Pfeiler aus dem Kit, gerundet)",
+      "ins Erdfeld gedrückte Pflasterplatten"
+    ],
+    "verboten": "scharfe Prismen und Raster: Kachelplatten 0,53, rechteckiges Erdfeld, sichtbares Gitter",
+    "kantenrundung": "Grabstein-Knete rund geknetet, Pflaster bündig gedrückt; Zaunfelder in Kit-Form, aber Knet-Kanten; Erdfeld-Rand nur als Sprenkel",
+    "unregelmaessigkeit": "kontrolliert über die Biografie: links gepflegt, rechts Verfall; Pfeiler sinken verschieden tief ein; Erdfeld nach Quell-Umriss ausgefranst; Gruppen 3/5/7"
+  },
+  "life_anchor": {
+    "elemente": [
+      "Skelette tanzen, taumeln, zerfallen in Takt 9 mit Knochenflug und setzen sich in Takt 10 wieder zusammen (Quelle)",
+      "violette Gras-Büschel wiegen in Wind-Gruppen und im Takt (Kit §6/§7)",
+      "Kiefernkronen wobbeln leicht im Wind (§5)"
+    ],
+    "glaubwuerdig": "Der Takt treibt Tänzer und Gras gleichzeitig; der Wind in den Kronen hält die Nacht lebendig, wenn die Skelette zerfallen."
+  },
+  "palette_roles": {
+    "ground": "#8b68c7",
+    "earth": "#7b5bb8",
+    "hill": "#a582d9",
+    "path": "#e9d8c0",
+    "stone": "#ab7de7",
+    "iron": "#67489a",
+    "wood": "#ce826b",
+    "structures": "#ef5a22",
+    "pad": "#f7cd36",
+    "accent": "#1f7a3e",
+    "sky": "#96bede"
+  },
+  "light": {
+    "rig": "kfb-stage-light.v1.1",
+    "mood_set": "mesa",
+    "mood": "night",
+    "practicals": [
+      "jackolantern x4 (Gesicht, #ff8a2a)",
+      "post_lantern (6.8/2.4/5.8)",
+      "bench_decorated (15.6/1.6/-5, offen)"
+    ]
+  },
+  "material_codes": [
+    "violette Knete-Erde (Wiese, Erdfeld, Hügel; violette Gras-Büschel 3/5/7 am Zaunfuß und unter Kiefern, rechts dichter, frei auf Weg/Tanzzone; Wind-Gruppen + Takt; Moos still in Fugen)",
+    "Grabstein-Knete (Gruft, Grabsteine, Schreine, Pfeiler, Pflaster; runde Kanten, Pflaster bündig: innen dicht, außen lose, dann Sprenkel; statisch)",
+    "Holz, Eisen und Kiefern (Kit-Form → Eingangsprüfung → Knete + Rollenton; Kronen wobbeln leicht, kahle Bäume kaum, Tor nur per setGate)"
+  ],
+  "biography": {
+    "1": "Hang steigt nach hinten links, Friedhof auf flacherer Stelle, Gruft höher als das Tor",
+    "2": "Weg Tor→Gruft begangen, Andachtsecke besucht, Vorhof zertreten (Erdfeld am dunkelsten), offenes Grab als Terrain-Mulde; Gebrauchsspuren (V-566, nur Knet-Oberfläche und Terrain, Silhouette 1:1): Gruft (Hero, Landmarke): Moos auf der Schattenseite und in den Fugen am Fuß (Moos: feuchte Nordseite am Hang); Gruft (Hero, Landmarke): Knete am Eingang heller abgegriffen (Abnutzung: Hier endet der begangene Weg); Gruft (Hero, Landmarke): Erdspritzer am Sockel (Fleck: Regen spritzt vom Erdfeld hoch); Schrein mit Kerzen (Echo): Wachsfleck am Fuß (Fleck: Kerzen der Andachtsecke); Schrein (Echo): Moos in den Fugen, Farbverlust oben (nah am feuchten Hang, offen unter dem Himmel); Torbogen: Pfeiler unten abgewetzt, Gras außen (Abnutzung: Zugang, jeder geht hier durch)",
+    "3": "rechts sackt der Boden ab, Zaun-Lauf 3 zerfallen, Steinbänder bröckeln, Pflaster franst aus",
+    "4": "Moos in Pflasterfugen und an Steinfüßen (Schattenseite), Gras am Zaunfuß und unter Kiefern, Tanzzone frei"
+  },
+  "signature": {
+    "hero": "crypt",
+    "echo": [
+      "shrine",
+      "shrine_candles"
+    ]
+  },
+  "story_beat": "Phrase 10 Takte: 1–8 Tanz (Roster rotiert je Phrase, jedes Skelett anderer Tanz, Taumeln), 9 Zerfall (Death_A, Rogue/Minion Death_B, Versatz 0/0,5/0,25/0,75 Schläge, Knochenflug), 10 Zusammensetzen rückwärts; Titel 120/112/126 BPM gesetzt",
+  "cast": [
+    "skeleton_warrior",
+    "skeleton_rogue",
+    "skeleton_mage",
+    "skeleton_minion (optional)"
+  ],
+  "cameras": [
+    "top45_front_right_offaxis",
+    "eye_1H_path_branch_to_crypt",
+    "foot_crypt_path_end",
+    "side_right_fence_run3",
+    "face_warrior_mage_plus_bar9",
+    "game_orbit_V-257"
+  ],
+  "contact_geometry": "Gruft: Erdkeil + Steinchen-Dreier bergab, Moos Schattenseite; Grabsteine/Kreuze/Schreine/Tafeln: Steinchen-Dreier bergab; Zaunpfeiler/Torbogen: Gras außen, Steinchen innen; Bäume: Gras am Stammfuß; Bänke/Särge: Erdkeil hangseitig; Kürbisse: 1–2 Gras-Büschel; Pflaster: Moos in Fugen; Figuren direkt auf dem Erdfeld"
+}

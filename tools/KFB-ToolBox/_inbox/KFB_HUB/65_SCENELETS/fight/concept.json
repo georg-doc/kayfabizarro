@@ -1,0 +1,112 @@
+{
+  "scene": "resident-fight-sandbox-02",
+  "source": "RA S17 data/fight-sandbox-02.json + fight/KFB_Fight_Cartoon_Contact.json 0.2 + lib/fight-sandbox-02.js (1:1)",
+  "one_sentence": "Diese Szene zeigt eine Cartoon-Rauferei zweier Orks im Ring der Ork-Band, weil Raider und Brute hier nach Cartoon-Regel kämpfen, bei der niemand den anderen berührt, und der Spieler soll zuerst den hellen Knet-Puff am Kontaktpunkt sehen.",
+  "story": "Am O-Town-Rand steht der Ring der Ork-Band im Boden; Raider (Gitarrist) und Brute (Drummer) raufen nach Cartoon-Regel: niemand berührt, Hit-Stop, Squash, Knet-Puff und Rückstoß verkaufen den Treffer, zum Schluss die Staubwolke.",
+  "image_idea": "Mitten im Ring auf festgetretenem Petrol-Boden mit hellen Scharrspuren platzt zwischen zwei Orks ein heller Knet-Puff; goldene Gummiseile rahmen; außen ruhiger Boden mit Gras-Büscheln.",
+  "focal": "contact_puff",
+  "read_order": [
+    "contact_puff|dust_cloud",
+    "fighters",
+    "ring_ropes_posts",
+    "corner_nests",
+    "rising_ground"
+  ],
+  "space": {
+    "raum": "Vorn offen, Ecke vorn rechts kahl, dunkle Tonfläche (#439); Mitte Ring nach Quelle, Kampf-Anker in der Ringmitte, Inneres frei bis auf die Kämpfer; hinten sanft steigendes Gelände ohne Mauer; hell Puff + Scharrspuren, mittel Petrol, dunkel Gras + Vordergrund.",
+    "wertstruktur": {
+      "hell": "Puff bzw. Wolke, Scharrspuren in der Ringmitte",
+      "mittel": "Petrol-Boden",
+      "dunkel": "Gras-Büschel außen, Vordergrund-Tonfläche, Schatten der Pfosten",
+      "staerkster_kontrast": "creme Puff gegen den Petrol-Ringboden in der Ringmitte (Quelle: heller als der Ringboden), also auf dem Fokus",
+      "ruhig": "Petrol-Boden um den Ring und die Vordergrund-Tonfläche"
+    },
+    "tiefenebenen": {
+      "vordergrund": "rahmt: offen, dunkle Tonfläche, die kahle Ecke vorn rechts",
+      "mittelgrund": "trägt die Handlung: Ring mit den zwei Kämpfern, Puff und Seilen: höchste Klarheit, stärkster Kontrast",
+      "hintergrund": "vereinfacht: sanft steigendes Gelände mit Gras, ohne Mauer und Zuschauer, weniger Detail",
+      "terrain": "nie die lauteste Fläche: Petrol bleibt unter dem Wert des Puffs; Scharrspuren nur in der Mitte dicht"
+    },
+    "verteilung_70_20_10": {
+      "ruhe_70": "Petrol-Boden um den Ring und die Vordergrund-Tonfläche",
+      "struktur_20": "Pfosten und Seile, Scharrspuren, die Eck-Steinnester, Gras-Gruppen",
+      "bedeutung_10": "Knet-Puff bzw. Staubwolke, die zwei Kämpfer, der Clownhammer (hier liegt der stärkste Kontrast)"
+    }
+  },
+  "color_script": {
+    "stimmung": "Mittags-Rauferei, Spaß ohne Schmerz: Am Ende steht jeder wieder auf",
+    "terrain": "Petrol #3aa596 ringsum und als Ringboden (~60 %), Gras #2f8f83 außerhalb der Seile, vorn die dunklere Tonfläche (#439); ruhig",
+    "sekundaer": "Pfosten und Gummiseile #e9b53b (goldene Rahmung), Eck-Steinnester #e0679f, Scharrspuren #f3e6c8",
+    "akzent": "(1) Knet-Puff und Staubwolke im Pfad-Ton #f3e6c8 als hellster Wert: Erzählkern und Fokus. (2) Orange #f08a2c nur am Clownhammer (Interaktion, Prop-Treffer), ≤ 10 %.",
+    "verboten": "Emission an Puff und Wolke; Orange an Deko; rot-blaue Matte oder Schürze; Quell-Grau der Pfosten #8a7a66; Figuren umtönen",
+    "licht": "ein Rig kfb-stage-light.v1.1, MESA day (hohe Sonne, kurze Schatten), Figurenlicht nach Regel 11; keine Praktikals; echte Schatten nach Empfänger getönt"
+  },
+  "form_dna": {
+    "grundformen": [
+      "flacher runder Platz mit sanft steigendem Hang dahinter",
+      "abgeflachte Kugeln (Puff und Wolke als eine Masse mit Beulen, Gras-Polster, Bröckel)",
+      "weiche Keile (Erdkeile an den Pfosten, Hangschürze)"
+    ],
+    "sekundaer": [
+      "gerundete Pfosten, tief eingegraben",
+      "weich durchhängende Gummiseile"
+    ],
+    "verboten": "scharfe Prismen: Matte, Podest, Ringboden-Platte, Schürze, Stufen",
+    "kantenrundung": "Pfosten mit Knet-Kanten (Eingangsprüfung); Ringboden ohne Kante, Scharrspuren laufen als Sprenkel aus",
+    "unregelmaessigkeit": "kontrolliert: Ecke vorn rechts kahl, größtes Nest hinten rechts, kleines vorn links; Gras 3/5/7"
+  },
+  "life_anchor": {
+    "elemente": [
+      "Gummiseile federn und schicken die Kämpfer zurück in den Ring (Georg 04.10.)",
+      "Puff und Staubwolke steigen aus dem Bodenton auf, die Wolke driftet 2 m in 2–3 s (Quelle)",
+      "Gras-Büschel wiegen in Wind-Gruppen; eine Seil-Landung stößt die nächste Gruppe an (Kit §6/§8)"
+    ],
+    "glaubwuerdig": "Jeder Treffer bewegt Seile, Staub und Gras; Hit-Stop und Squash verkaufen den Kontakt, der nie stattfindet."
+  },
+  "palette_roles": {
+    "ground": "#3aa596",
+    "path": "#f3e6c8",
+    "stone": "#e0679f",
+    "tiers": "#2f8f83",
+    "frame": "#e9b53b",
+    "accent": "#f08a2c",
+    "sky": "#a8d8b9"
+  },
+  "light": {
+    "rig": "kfb-stage-light.v1.1",
+    "mood_set": "mesa",
+    "mood": "day",
+    "practicals": []
+  },
+  "material_codes": [
+    "Petrol-Boden mit Gras-Büscheln (3er/5er-Gruppen außerhalb der Seile, außen dichter, Wind-Gruppen; Seil-Landung stößt die nächste Gruppe an)",
+    "festgetretener Ringboden (Petrol + creme Scharr-Sprenkel, Mitte dicht, zu den Seilen auslaufend; Puff und Wolke steigen in diesem Ton auf)",
+    "Ring-Gerät (Pfosten + Gummiseile, Eingangsprüfung → Knete frame-Ton, Pfosten tief eingegraben, Seile federn zurück; Clownhammer accent)"
+  ],
+  "biography": {
+    "1": "flacher Platz am O-Town-Rand, hinten sanft steigend, keine Matte",
+    "2": "Ringboden festgetreten mit Scharr-Sprenkeln, Mitte am dichtesten; Pfosten tief im Boden mit Erdkeil; Gebrauchsspuren (V-566, nur Knet-Oberfläche und Terrain, Silhouette 1:1): Ring (Hero, Landmarke): Pfosten unten mit Erdspritzern und Erdkeil (Fleck: tief eingeschlagen, Scharren der Kämpfer); Ring (Hero, Landmarke): Gummiseile in der Mitte heller abgerieben (Abnutzung: Die Kämpfer federn immer an derselben Stelle hinein); Ring (Hero, Landmarke): Moos am hinteren rechten Pfosten (Moos: Hangseite, wenig begangen); Clownhammer (Echo): Schlagfläche matt abgerieben (Abnutzung durch Prop-Treffer)",
+    "3": "außerhalb der Seile magenta Bröckel, hinten rechts (Hangseite) mehr",
+    "4": "Gras-Büschel außerhalb der Seile, Moos in Nest-Fugen, im Ring nichts"
+  },
+  "signature": {
+    "hero": "fight-ring",
+    "echo": [
+      "clown_hammer"
+    ]
+  },
+  "story_beat": "6 Proof-Posten der Quelle: headbutt (Standard) → kick_knockdown → flying_kick → prop_hit (Clownhammer) → dust_cloud_brawl (Wolke 2 m / 2–3 s, Auswurf + benommen) → shoulder_throw (nur Brute|Brute); je Treffer 4 Bilder Hit-Stop, Squash 1,1/0,9 über 6 Bilder, Puff 0,25 m × Maßstab, Rückstoß weg vom Angreifer",
+  "cast": [
+    "orc_raider (fight, KFB-Augen)",
+    "orc_brute (fight, KFB-Augen)"
+  ],
+  "cameras": [
+    "top45_ring",
+    "eye_1H_entrance_front_left_to_center",
+    "foot_post_back_right",
+    "side_right_rope_silhouette",
+    "face_raider_brute_guard_t0",
+    "game_orbit_V-257"
+  ],
+  "contact_geometry": "Pfosten: Erdkeil + Steinchen-Dreier bergab, hinten rechts zusätzlich Moos; Figuren direkt auf Terrain; Ringinneres eben für liegende Posen"
+}

@@ -1,0 +1,115 @@
+{
+  "scene": "resident-band-module-01",
+  "source": "RA S17 data/resident-band-module-01.json + lib/band-module.js + lib/band-workshop.js (1:1, baseplate false); Ort = reserved.band in data/resident-disco-01.json",
+  "one_sentence": "Diese Szene zeigt die Hausband The KayfaBizarros live am rechten Rand des O-Town-Platzes, weil sie jeden Abend den Song spielt, zu dem der Platz tanzt, und der Spieler soll zuerst den Leader am Mikro sehen, zu dem das Banner hinführt.",
+  "story": "Rechts am O-Town-Platz spielt jeden Abend die Hausband: Leader singt und hüpft am Mikro, Raider an der Gitarre, Brute an der Kriegstrommel, Legacy-Ork A an der Trompete; das Banner steckt hinter ihnen im Boden; es läuft der Song, zu dem der Platz tanzt.",
+  "image_idea": "Die Band steht auf einem hellen, abgetretenen Fleck am Rand des Petrol-Platzes vor dem ansteigenden Hang; Banner hinten links im Boden, Leader vorn am Mikro, Brute trommelt dahinter.",
+  "focal": "leader",
+  "read_order": [
+    "banner",
+    "leader",
+    "drummer+wardrum",
+    "guitarist",
+    "trumpeter"
+  ],
+  "space": {
+    "raum": "Bandrahmen Front +z (Weltdrehung offen): vorn offen zum Platz, Sprenkel in die Tanzfläche; Mitte Leader/Gitarrist/Brute/Trompeter nach Quelle; hinten Banner am Hangfuß, Gelände steigt an, keine Mauer; Footprint = ebene Terrasse im Terrain, kein Podest; hell Fleck, mittel Petrol, dunkel Hang + Brute.",
+    "wertstruktur": {
+      "hell": "abgetretener Spielfleck, am hellsten in der Leader-Zone",
+      "mittel": "Petrol-Boden",
+      "dunkel": "der Hang hinten und die Masse Brute mit Trommel",
+      "staerkster_kontrast": "Leader auf dem hellsten Fleck vor der dunklen Masse aus Brute und Trommel, also auf dem Fokus; das Banner-Tuch sitzt als Akzent darüber",
+      "ruhig": "Petrol-Boden ringsum und der Hang"
+    },
+    "tiefenebenen": {
+      "vordergrund": "rahmt: offen zum Platz: dunklerer Petrol-Boden der Tanzfläche, der Spielfleck läuft als Sprenkel hinein; keine Objekte, keine Kante",
+      "mittelgrund": "trägt die Handlung: Leader, Gitarrist, Brute mit Trommel, Trompeter: höchste Klarheit, stärkster Kontrast",
+      "hintergrund": "vereinfacht: Banner am Hangfuß als einzige klare Form, dahinter der Hang #229484 mit Gras, vereinfacht",
+      "terrain": "nie die lauteste Fläche: Hang und Petrol bleiben unter dem Wert des Spielflecks"
+    },
+    "verteilung_70_20_10": {
+      "ruhe_70": "Petrol-Boden ringsum und der Hang",
+      "struktur_20": "Spielfleck mit Sprenkelband, Trommel und Instrumente, Steinbänder am Hangfuß, Gras-Gruppen",
+      "bedeutung_10": "Leader (Fokus), Gitarrist, Brute, Trompeter und das Banner-Tuch (hier liegt der stärkste Kontrast)"
+    }
+  },
+  "color_script": {
+    "stimmung": "derselbe laue Partyabend wie am Disco-Platz: live und laut, die Musik kommt von hier",
+    "terrain": "Petrol #3aa596 ringsum (~60 %), Hang #229484 als dunkle Rückwand, Gras #2f8f83 am Hang; ruhig",
+    "sekundaer": "Pfad-Ton #f3e6c8 im Spielfleck, Trommel und Instrumente #e9b53b (leicht getönt), Kleinteile #c9508f, Steine #e0679f am Hangfuß",
+    "akzent": "Orange #f08a2c nur am Banner-Tuch: Landmarke und Revier der Band, die Diagonale führt am Stab herab zum Leader (Erzählkern), ≤ 10 %. Der Leader selbst gewinnt über Figurenfarben auf dem hellsten Boden.",
+    "verboten": "Orange oder Gold an Gras, Steinen oder Hang; Bühnen- oder Spotlicht-Farben; Figuren umtönen",
+    "licht": "ein Rig kfb-stage-light.v1.1, MESA gold wie am Disco-Platz; keine Praktikals (Quelle); echte Schatten nach Empfänger getönt"
+  },
+  "form_dna": {
+    "grundformen": [
+      "ebene runde Terrasse vor einem sanften Hangrücken",
+      "abgeflachte Kugeln (Gras-Polster am Hang, Bröckel am Hangfuß)",
+      "weiche Keile (Erdkeil am Bannerfuß, Erdkragen an der Trommel, Hangschürze)"
+    ],
+    "sekundaer": [
+      "gerundete Trommel- und Instrumentenkörper nach Eingangsprüfung",
+      "schlanker gerundeter Stab mit weich fallendem Tuch (Banner)"
+    ],
+    "verboten": "scharfe Prismen: Podest, Theke, Bühnenkante, sichtbare Terrassenstufe",
+    "kantenrundung": "weich wie das Terrain; Terrassenrand ohne Kante, Kit-Kanten über kfb_clay_bpy.apply gerundet",
+    "unregelmaessigkeit": "kontrolliert: Spielfleck vorn glatt, hinten und seitlich loser; Bröckel rechts hinter dem Trompeter mehr; Gruppen 3/5"
+  },
+  "life_anchor": {
+    "elemente": [
+      "Gras-Büschel am Hang wiegen in Wind-Gruppen und im Bass der Band (Kit §6/§7)",
+      "Leader-Bounce, Trommelschlägel, Gitarre und Trompete bewegen sich mit der Quell-Aktion auf der Song-Uhr (Rubbish Groove, 100 BPM)"
+    ],
+    "glaubwuerdig": "Figuren und Gras folgen derselben Uhr wie die Tanzfläche nebenan."
+  },
+  "palette_roles": {
+    "ground": "#3aa596",
+    "path": "#f3e6c8",
+    "hill": "#229484",
+    "stone": "#e0679f",
+    "tiers": "#2f8f83",
+    "frame": "#e9b53b",
+    "structures": "#c9508f",
+    "accent": "#f08a2c",
+    "sky": "#a8d8b9"
+  },
+  "light": {
+    "rig": "kfb-stage-light.v1.1",
+    "mood_set": "mesa",
+    "mood": "gold",
+    "practicals": []
+  },
+  "material_codes": [
+    "Petrol-Boden mit Hang (Gras-Büschel 3–5er am Hang, oben dichter, frei im Footprint; Wind-Gruppen + Bass)",
+    "abgetretener Spielfleck (Knete Pfad-Ton, vorn glatt/hell, hinten/seitlich loser, dann Sprenkel; statisch)",
+    "Ork-Gerät (Kit-Form → Eingangsprüfung → Knete + Rollenton; bewegt sich nur mit der Quell-Aktion)"
+  ],
+  "biography": {
+    "1": "ebene Terrasse rechts am Platz vor dem Hang",
+    "2": "hell abgetreten, Sprenkel nach außen; Erdkragen am Trommelfuß (Trommel auf Quellhöhe); Banner eingerammt, Erdkeil; Gebrauchsspuren (V-566, nur Knet-Oberfläche und Terrain, Silhouette 1:1): Banner (Hero, Landmarke): Tuch unten mit Erdspritzern (Fleck: steckt im Boden am Hangfuß, Füße wirbeln Erde auf); Banner (Hero, Landmarke): Tuch-Orange oben leicht ausgeblichen (Farbverlust: steht jeden Abend draußen); Banner (Hero, Landmarke): Erdkeil und Erdspuren am Stabfuß (eingerammt, 0,21 im Boden (Quelle)); Kriegstrommel (Echo): Fell in der Mitte heller abgegriffen (Abnutzung durch die Schlägel, R auf 1, L auf 2); Kriegstrommel (Echo): Erdkragen am Fuß (Gewicht und Schläge drücken sie in den Boden (Trommel bleibt auf Quellhöhe))",
+    "3": "Hangfuß bröckelt in magenta Steinchen, rechts mehr",
+    "4": "Moos in Steinfugen, Gras am Hang, nichts im Footprint"
+  },
+  "signature": {
+    "hero": "banner",
+    "echo": [
+      "wardrum"
+    ]
+  },
+  "story_beat": "Rubbish Groove 100 BPM, Phase 0,465 s; Leader bounce 8, Trommel v5c 2 (R 1, L 2), Gitarre Guitar A 8, Trompete Kontrapunkt 8; Standbild Trommler-Schlagbild R (Bild 0)",
+  "cast": [
+    "orc_legacy_b (leader)",
+    "orc_raider (guitarist)",
+    "orc_brute (drummer)",
+    "orc_legacy_a (trumpeter, optional)"
+  ],
+  "cameras": [
+    "top45_front_left_band",
+    "eye_1H_plaza_to_leader",
+    "foot_wardrum_drummer_R",
+    "side_left_banner",
+    "face_leader_trumpeter",
+    "game_orbit_V-257"
+  ],
+  "contact_geometry": "Bannerfuß: Erdkeil + Steinchen-Dreier bergab; Trommelfuß: Erdkragen + Bröckel (Trommel auf Quellhöhe); Figuren direkt auf dem Spielfleck"
+}

@@ -1,0 +1,121 @@
+{
+  "scene": "resident-disco-01",
+  "source": "RA S17 data/resident-disco-01.json + disco-ball-core-01.json (1:1)",
+  "one_sentence": "Diese Szene zeigt eine Straßenparty auf dem O-Town-Platz, weil hier jeden lauen Abend das ganze Viertel unter der frei schwebenden Disco-Kugel tanzt, und der Spieler soll zuerst die Disco-Kugel über dem hellen Tanzkreis sehen.",
+  "story": "O-Town-Straßenplatz, jeden lauen Abend Party: FrizzleBob am halb versunkenen Pult, Radio und zwei hüpfende Boxen, die Kugel schwebt frei, das Viertel tanzt.",
+  "image_idea": "Die Kugel schwebt frei über einem hellen, abgetanzten Kreis im Petrol-Boden; Lichtkegel auf den Tänzern; Boden nach außen dunkler und wilder.",
+  "focal": "discoball",
+  "read_order": [
+    "discoball",
+    "beams",
+    "dance_circle",
+    "drum+mc",
+    "speakers"
+  ],
+  "space": {
+    "raum": "Vorn offen mit dunkler Tonfläche (#439), Mitte Tanzring nach Quelle, hinten Ritter/Demon + Pult vor sanft steigendem Gelände, rechts Band-Zone frei; hell Mitte, mittel Petrol, dunkel Ränder.",
+    "wertstruktur": {
+      "hell": "Tanzkreis-Kern (Pfad-Ton) mit den Lichtpfützen, die Kugel",
+      "mittel": "Petrol-Boden",
+      "dunkel": "Ränder, Vordergrund-Tonfläche, die dunklen Boxen als Rahmen",
+      "staerkster_kontrast": "Kugel und Lichtpfützen gegen den dunkleren Petrol-Rand, also auf dem Fokus",
+      "ruhig": "Petrol-Fläche und Vordergrund-Tonfläche"
+    },
+    "tiefenebenen": {
+      "vordergrund": "rahmt: offene, dunklere Tonfläche zum Spieler hin; die Boxen links und rechts rahmen als große, dunkle Formen",
+      "mittelgrund": "trägt die Handlung: Tanzring mit Kugel, Lichtpfützen und Tänzern: höchste Klarheit, stärkster Kontrast",
+      "hintergrund": "vereinfacht: Ritter, Demon Lord und Pult vor dem sanft steigenden Gelände; Grasrand kontrastarm, weniger Detail",
+      "terrain": "nie die lauteste Fläche: Petrol bleibt unter dem Wert des Tanzkreises; keine Disco-Farbe im Boden"
+    },
+    "verteilung_70_20_10": {
+      "ruhe_70": "Petrol-Boden ringsum und Vordergrund-Tonfläche, großflächig, Textur erlaubt, keine Konkurrenz",
+      "struktur_20": "Pflasterkern mit Sprenkelband, die drei Gruppen (Box A + Radio, Pult, Box B), Steinbänder, Grasrand",
+      "bedeutung_10": "Disco-Kugel, Lichtpfützen und die 8 Tänzer (hier liegt der stärkste Kontrast)"
+    }
+  },
+  "color_script": {
+    "stimmung": "lauer Partyabend, warm und einladend: Hier ist immer Party, du darfst mittanzen",
+    "terrain": "Petrol #3aa596 ringsum (~60 %), vorn die dunklere Tonfläche (#439), Grasrand #2f8f83; großflächig und kontrastarm",
+    "sekundaer": "Pfad-Ton #f3e6c8 im abgetanzten Kern, Magenta-Stein #e0679f an der Pflasterkante, Drum Machine #e9b53b (leicht getönt), Boxen zum Grasrand-Ton getönt",
+    "akzent": "Die Kugel-Lichter (#ff5fa8 #4fd6ff #ffd24f #9a6bff #5cff9a) nur als echte Lichtpfützen auf dem Tanzkreis: Erzählkern und Fokus. Orange #f08a2c nur am Radio (Interaktion: Musikquelle, Minion springt dort), ≤ 10 %. Nie an Gras, Steinen, Boxen oder Pflaster.",
+    "verboten": "Disco-Farbe auf dem Boden außer den echten Lichtpfützen; Orange an Deko; Töne außerhalb der O-Town-Rollen; Figuren umtönen",
+    "licht": "ein Rig kfb-stage-light.v1.1, MESA gold (tiefe orange Sonne, violette Füllung, glow 0,4); einziges Praktikal ist die Kugel (DISCO, 10 Strahlen, 3 Spots); echte Schatten nach Empfänger getönt"
+  },
+  "form_dna": {
+    "grundformen": [
+      "flache runde Terrasse mit sanft steigendem Hangrücken dahinter",
+      "abgeflachte Kugeln (Gras-Polster, Rand-Bröckel)",
+      "weiche Keile (Erdkeil an der Drum Machine, Schürze am Platzrand)"
+    ],
+    "sekundaer": [
+      "abgerundete Knet-Platten (gestampftes Pflaster)",
+      "gerundete Kistenkörper (Boxen, Radio, Drum Machine nach Eingangsprüfung)"
+    ],
+    "verboten": "scharfe Prismen: Bühnenkante, Podest, Stufen, Pfeiler und Gerüst unter der Kugel",
+    "kantenrundung": "alle Knet-Kanten weich wie das Terrain; Kit-Kanten der Musik-Geräte über kfb_clay_bpy.apply gerundet; Platzrand ohne Linie, nur Sprenkel",
+    "unregelmaessigkeit": "kontrolliert: Platten in der Mitte dicht und glatt, nach außen loser und ungleicher; Bröckel hangseitig mehr; Gruppen ungerade, Abstände ≥ 30 % verschieden"
+  },
+  "life_anchor": {
+    "elemente": [
+      "Gras-Büschel am Platzrand wiegen in Wind-Gruppen und im Bass mit (Kit §6/§7)",
+      "Boxen, Radio und Drum Machine pulsieren im Takt (Quelle)",
+      "Kugel-Impuls in Takt 9, die Lichtkegel wandern über die Tänzer (Quelle)"
+    ],
+    "glaubwuerdig": "Der Bass bewegt Gerät und Gras im selben Takt, in dem das Viertel tanzt."
+  },
+  "palette_roles": {
+    "ground": "#3aa596",
+    "path": "#f3e6c8",
+    "stone": "#e0679f",
+    "tiers": "#2f8f83",
+    "frame": "#e9b53b",
+    "accent": "#f08a2c",
+    "sky": "#a8d8b9"
+  },
+  "light": {
+    "rig": "kfb-stage-light.v1.1",
+    "mood_set": "mesa",
+    "mood": "gold",
+    "practicals": [
+      "discoball DISCO"
+    ]
+  },
+  "material_codes": [
+    "Petrol-Boden mit Gras-Büscheln (3–5er Gruppen, außen dichter, Wind-Gruppen + Bass)",
+    "gestampftes Pflaster (Knet-Platten, Mitte dicht/glatt, Rand lose, dann Sprenkel)",
+    "Musik-Gerät (Kit-Form → Eingangsprüfung → Knete + Rollenton, pulsiert im Takt)"
+  ],
+  "biography": {
+    "1": "flache Terrasse, hinten sanft steigend",
+    "2": "abgetanzter heller Kern, Sprenkel nach außen, Drum Machine 1,9 m eingesunken; Gebrauchsspuren (V-566, nur Knet-Oberfläche und Terrain, Silhouette 1:1): Disco-Kugel (Hero, Landmarke): Spiegelfacetten oben blasser (Farbverlust: Sie hängt jeden Abend unter freiem Himmel); Disco-Kugel (Hero, Landmarke): feiner Staubfilm in den unteren Facettenfugen (Fleck: Staub, den das Tanzen Abend für Abend aufwirbelt); Drum Machine (Pult): Knet-Oberfläche an den Tasten heller abgegriffen (Abnutzung durch FrizzleBobs Hände); Drum Machine (Pult): Erdspritzer und Moos am eingesunkenen Fuß (steht seit Jahren 1,9 m im Boden); Boxen (Echos): Kanten matt abgerieben, Steinchen bergab (Abnutzung vom Hüpfen im Bass)",
+    "3": "Pflasterkante bröckelt in magenta Steinchen, hangseitig mehr",
+    "4": "Moos in Fugen, Gras-Dreier außen, nichts auf der Tanzfläche"
+  },
+  "signature": {
+    "hero": "discoball",
+    "echo": [
+      "speaker.a",
+      "speaker.b"
+    ]
+  },
+  "story_beat": "16 Takte; HIT 1 Takt 9 alle Chicken Dance + Kugel-Impuls; HIT 2 Takt 15 Call and Response",
+  "cast": [
+    "minion",
+    "avian",
+    "teen",
+    "soldier (nach V-562)",
+    "witch",
+    "knight|monstrosity",
+    "demon",
+    "mc"
+  ],
+  "cameras": [
+    "top45_circle",
+    "eye_1H_entrance_left_to_ball",
+    "foot_drum_machine",
+    "side_right_edge_bandzone",
+    "face_witch_soldier",
+    "game_orbit_V-257"
+  ],
+  "contact_geometry": "Boxen: Steinchen-Dreier bergab; Radio: Gras-Büschel; Drum Machine: Erdkeil + Bröckel"
+}

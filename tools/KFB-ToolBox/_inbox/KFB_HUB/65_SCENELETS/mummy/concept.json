@@ -1,0 +1,114 @@
+{
+  "scene": "mummy (NPC_SETTINGS_01 · MUMMY-01)",
+  "source": "RA S17 data/cast.js Rezept mummy + lib/atlas.js parts + docs/NPC_SETTINGS_01/MUMMY_01_RETURN.md (1:1)",
+  "one_sentence": "Diese Szene zeigt eine Begrüßung in einer oben offenen Grabkammer im Canyon, weil die Gruft bewohnt ist und Mummy_A aus dem offenen Sarkophag winkt, während Mummy_B mit dem Ankh herankommt, und der Spieler soll zuerst den orange-goldenen Sarkophag sehen.",
+  "story": "Oben offene Grabkammer im violetten Canyon-Fels: Sarkophag mit aufgeschobenem Deckel, Mummy_A steht darin und grüßt, Mummy_B stapft mit dem Ankh über den Sand heran; Goldkrüge links und rechts, eine Vase umgekippt. Gruselig-komisch, willkommen.",
+  "image_idea": "In einer oben offenen Grabkammer im violetten Canyon leuchtet der orange-goldene Sarkophag vor dunklen Terracotta-Wänden; Mummy_A winkt aus dem offenen Sarg, Mummy_B stapft mit erhobenem Ankh über den hellen Sand heran.",
+  "focal": "sarcophagus",
+  "read_order": [
+    "sarcophagus",
+    "mummy_a_raised_hand",
+    "mummy_b+ankh",
+    "pot_gold_l+vase_gold_r",
+    "vase_lying"
+  ],
+  "space": {
+    "raum": "Vorn Sandrampe ohne Stufen (Mummy_B kommt von dort), dunkle Tonfläche (#439) dahinter; Mitte ebene Sandsohle mit Gefäßen nach Quelle; hinten Sarkophag + Mummy_A vor der Rückwand, Seitenwände nach vorn abfallend, Wand-Oberkante unter Kopfhöhe; Negativraum = Weg Mummy_B → Sarkophag (~3,7 m); hell Sohle + Himmel, mittel Violett außen, dunkel Wand-Innenflächen.",
+    "wertstruktur": {
+      "hell": "sonnige Sandsohle und Himmel",
+      "mittel": "violettes Gelände über der Kammerkante",
+      "dunkel": "Innenflächen der Wände (#935649 am Wandfuß)",
+      "staerkster_kontrast": "orange-goldener Sarkophag mit Mummy_A vor der dunkelsten Rückwand, also auf dem Fokus",
+      "ruhig": "Sandsohle, Wandflächen, Gelände außen"
+    },
+    "tiefenebenen": {
+      "vordergrund": "rahmt: Sandrampe, dahinter die dunkle Tonfläche: rahmt den Zugang, über den Mummy_B kommt",
+      "mittelgrund": "trägt die Handlung: ebene Sohle mit Mummy_B, den Gefäßen und dem freien Weg: höchste Klarheit; der Sarkophag steht als Endpunkt an der Grenze zum Hintergrund",
+      "hintergrund": "vereinfacht: Rück- und Seitenwände in ruhigen Bändern, Oberkante unter Kopfhöhe",
+      "terrain": "nie die lauteste Fläche: Wände und Sohle bleiben unter dem Wertkontrast des Sarkophags"
+    },
+    "verteilung_70_20_10": {
+      "ruhe_70": "Sandsohle, Wandflächen und Gelände außen",
+      "struktur_20": "Wandbänder mit Fugen, Bröckel, Gras an der Kante, schlichte Vasen, der Weg",
+      "bedeutung_10": "Sarkophag mit Mummy_A, Mummy_B mit Ankh, Goldkrug und Goldvase (hier liegt der stärkste Kontrast)"
+    }
+  },
+  "color_script": {
+    "stimmung": "sonniger Tag, gruselig-komisch: Die Gruft ist bewohnt, und man ist willkommen",
+    "terrain": "Violett #8b68c7 rings um die Kammer, Sand #e2d0bc als Sohle und Rampe (~60 % des Kammerbilds), dunklere Tonfläche (#439) jenseits der Rampe; ruhig",
+    "sekundaer": "Wandbänder #b56d5b und #935649, lila Gras #a582d9 an der Kante, Moos #7b5bb8 in den Fugen",
+    "akzent": "Orange #ef5a22 am Sarkophag: Landmarke und Erzählkern. Gold #e8743a an Goldkrug und Goldvase: der Schatz (Erzählkern-Echos), führen zum Fokus. Zusammen ≤ 10 %.",
+    "verboten": "Promo-Hintergrund 0xd29a68 als Fläche; Orange oder Gold an schlichten Vasen, Ankh oder Wänden; Fackel- oder Lampenlicht; Texturaugen; Figuren umtönen",
+    "licht": "ein Rig kfb-stage-light.v1.1, MESA day (hohe Sonne in die offene Kammer, Wände im Eigenschatten, Hemisphere-Füllung im Sandton), Figurenlicht nach Regel 11 mit Catchlight; keine Praktikals"
+  },
+  "form_dna": {
+    "grundformen": [
+      "weiche Mulde im Canyon-Körper (Kammer-Schnitt, Wände nach vorn abfallend)",
+      "weiche Keile (Rampe, Sandverwehungen, Sandkeile)",
+      "abgeflachte Kugeln (Gras-Polster an der Kante, Bröckel am Wandfuß)"
+    ],
+    "sekundaer": [
+      "leicht wellige waagrechte Wandbänder",
+      "gerundete Gefäßkörper (Krüge, Vasen nach Eingangsprüfung)"
+    ],
+    "verboten": "scharfe Prismen: Mauern, Säulen, Dach, Stufen, Platte",
+    "kantenrundung": "runde Knet-Kanten; die Wandkante bröckelt statt einer Linie; Rampe ohne Stufe",
+    "unregelmaessigkeit": "kontrolliert: Bänder leicht wellig, hinten am höchsten; rechte Ecke mehr Bröckel; Gruppen ungerade"
+  },
+  "life_anchor": {
+    "elemente": [
+      "lila Gras-Büschel an der Kammerkante wiegen in Wind-Gruppen (Kit §6/§8)",
+      "die gehobene Hand von Mummy_A (Waving, Quelle) reagiert auf den Ankömmling"
+    ],
+    "glaubwuerdig": "Die Sandverwehungen liegen in derselben Windrichtung wie das Gras; so wirkt der Wind echt, auch wenn der Moment eingefroren ist."
+  },
+  "palette_roles": {
+    "ground": "#8b68c7",
+    "stageFloor": "#e2d0bc",
+    "wall": "#b56d5b",
+    "wall_dark": "#935649",
+    "tiers": "#a582d9",
+    "tiers2": "#7b5bb8",
+    "frame": "#ef5a22",
+    "structures2": "#e8743a",
+    "sky": "#96bede"
+  },
+  "light": {
+    "rig": "kfb-stage-light.v1.1",
+    "mood_set": "mesa",
+    "mood": "day",
+    "practicals": []
+  },
+  "material_codes": [
+    "Canyon-Wand (Knet-Schnitt, waagrechte Bänder violette Kappe → Terracotta, wellig um die Kammer, hinten am höchsten; Moos in Fugen, lila Gras-Dreier an der Kante wiegen in Wind-Gruppen)",
+    "Sand-Boden (ebene Sohle + Rampe ohne Stufen, Trittmulde als Relief, Verwehungen an Sockel und Gefäßen, umgekippte Vase halb zugeweht)",
+    "Grab-Gerät (Sarkophag/Krüge/Vasen/Ankh Kit-Form → Eingangsprüfung → Knete + Rollenton; Deckel aufgeschoben nach Quelle)"
+  ],
+  "biography": {
+    "1": "Kammer in den Canyon-Körper geschlagen, oben offen, Schichtbänder, Sandboden, Rampe vorn",
+    "2": "Trittmulde von der Rampe zum Sarkophag, Sandkeil am Sockel, Boden vor dem Sarg glatt; Gebrauchsspuren (V-566, nur Knet-Oberfläche und Terrain, Silhouette 1:1): Sarkophag (Hero, Landmarke): Sand im Fuß angeweht (Sandkeil) (Wind trägt Sand in die offene Kammer); Sarkophag (Hero, Landmarke): Deckel oben leicht ausgeblichen (Farbverlust: hohe Sonne in der oben offenen Kammer); Sarkophag (Hero, Landmarke): Abrieb an der Deckelkante (Abnutzung: Der Deckel wurde aufgeschoben (Lage bleibt Quelle)); Goldkrug und Goldvase (Echos): Gold oben stumpf, Sandverwehung am Fuß (Fleck: Staub und Sand in der Kammer); Kammerwände (Terrain): Moos in den Fugen, bröckelnde Kante (Moos im Eigenschatten, Vergehen der Wandkante)",
+    "3": "Wandkanten bröckeln, Terracotta-/Violett-Steinchen am Wandfuß, rechte Ecke mehr, Vase halb zugeweht",
+    "4": "Sohle kahl, lila Gras an der Kante, Moos in Wandfugen"
+  },
+  "signature": {
+    "hero": "sarcophagus",
+    "echo": [
+      "pot_gold_l",
+      "vase_gold_r"
+    ]
+  },
+  "story_beat": "Eingefroren „Begrüßung“: Mummy_B Walking_A @ 0,64 s (Ankh oben, handslot.l), Mummy_A Waving @ 0,5 s im Sarkophag; Deckel off (−0,75/0,02/0,05) rot 4°",
+  "cast": [
+    "mummy_b (KFB-Augen EYE-CLEANUP-01, Lid #f6bd99)",
+    "mummy_a (KFB-Augen im schwarzen Band, Lid #111618)"
+  ],
+  "cameras": [
+    "top45_chamber",
+    "eye_1H_ramp_to_sarcophagus",
+    "foot_sarcophagus_base_vase_l",
+    "side_right_wall_vase_lying",
+    "face_mummy_a_b",
+    "game_orbit_V-257 + keyArt [0.06,0.2,1]"
+  ],
+  "contact_geometry": "Sarkophag: Sandkeil rundum + Steinchen-Dreier an der Rückwandseite; Goldkrug/Goldvase: Sandkeil + Steinchen; gelehnte Vase: Sandkeil; umgekippte Vase halb im Sand; Wandfuß Bröckel + Moos; Mummy_B direkt auf Sand"
+}
