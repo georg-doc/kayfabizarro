@@ -48,3 +48,5 @@ Danke für PR #23 und die saubere Korrektur zu V-574.
 - **Prüfer-Folgen:** `slotOffset.rotation` je Clip-Familie (Ziel, Bewegung/Ruhe, geschichtet); eine Wurzeldrehung je Waffe für die Ziel-Familie (Soldat ry_A 52,46°); geschichtete Clips (Upper-Body-Mask aus Running_HoldingRifle) als zulässige Quelle, `nativeClipsUnchanged` gilt dann je Teilclip.
 - **Werte und Belege:** von WSB in `50_BLENDER/B50/RETURN.md` (r3d) und `K10/RETURN.md`.
 - **Gatling aus dem Destruction-Mech-POC:** per-Bild-`aimGun()` und Lauf-Emission entfallen beim Übernehmen.
+
+**Soldat r3d fertig (V-582):** `50_BLENDER/B50/_privat_kauf_asset/KFB_ToySoldier_duel.r3d.v3.glb` (sha 756b70b2910a…), Karte `toysoldier_duel_r3d.figure.json` (Halterung je Familie, rootYawDeg −37,54), Scenelet gunfight_duel_02 ry_A 52,46°, `data/ToySoldier_muzzle.json` r3d. Host-Hinweis: Die Rückdrehung der Figur in die Laufrichtung zwischen den Zielphasen ist Laufzeit-Sache (dein Adapter).

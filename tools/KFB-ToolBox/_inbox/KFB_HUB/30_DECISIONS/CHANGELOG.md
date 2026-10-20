@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- Soldat r3d angenommen (V-582): Ziel-Familie mit Stützhand + Figur −37,54° (ry_A 52,46°), Schaft 25° gerollt gegen Kinn-Durchstich, natürliche Haltung bei Laufen/Strafe/Treffer/Idle, Ausweichen/großer Treffer geschichtet, Sterben r3b; 0 Durchstich (Ausnahme Dauerfeuer Bild 8, 1,4 cm, nicht sichtbar), Boden ≥ 0; Karte, Scenelet, Handoff, muzzle.json auf r3d.
 - V-582 2H-Waffen in drei Clip-Familien (Georg bei WSB): Zielen mit Hand am Gewehr + ganze Figur gedreht, natürliche Haltung bei Laufen/Strafe/kleinem Treffer/Ruhe, Ausweichen/großer Treffer geschichtet (Upper-Body aus Running_HoldingRifle); gilt auch für Gatling (Boden + Flug aus Destruction-Mech-POC); Action-Figure-Gun danach. Kanon 9 + WSA-Notiz nachgezogen.
 - WSB K10 §1 Handwaffen + Blaster nach V-581 angenommen: alle Kit-Fernkampfwaffen brauchen dieselbe Halterung +90° um Y; Gun_Pistol (CC0) + Hero-Man-Blaster (privat, 6 cm Versatz wegen Visier-Horn), Lauf 1,3° zur Zielrichtung, fire.1h 0,2667 s; Action-Figure-Gun → 2H. r3d: eine Drehung für alle Clips, Positions-Versätze nur bei sichtbarer Durchdringung (V-574).
 - V-581 Kit-Waffen einpassen (Georg, Weg a): feste gemessene Halterungsdrehung je Waffe bei Kit-Achsen-Unstimmigkeit (Ranged-Clips +X vs. Waffe +Z), keine Wurzeldrehung; Priorität Handguns/Blaster, dann Gewehr (Soldat r3d), Armbrust, Gatling (linke Stützhand). WSA: Prüfer slotOffset.rotation, Armbrust ohne Mündungsfeuer (release-Effekt), CC0-Quelle per Dropbox-Pfad + sha256.
