@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- Georg 20.10.: Drum Machine 2 (CC-BY, Peter Simcoe, aus Georgs Repo @5f268e8) für die Disco freigegeben → WSB baut als prop_buried nach Konzeptblatt, Asset-Pass mit Namensnennung.
 - V-574 Kit-Waffen as-is (Georg): Soldat r3 = Original-Gewehr am KayKit-Hand-Slot mit KayKit-Clips unverändert; Einhand/Unterarmachse für Kit-Waffen aufgehoben; r2e gestoppt.
 - Soldat r2d (Weg B, Original-Gewehr ungestaucht, Rücken-Variante mit Knet-Schlaufe) Kritiker REWORK 6,0: Fremdschatten der versteckten Gewehr-Instanz (Bug), Rückengewehr mit Luftspalt, drei Durchdringungs-Fragen nur per Nahkamera zu belegen → WSB r2e.
 - V-573 r2d Entscheid WS0 = B: Original-Gewehr ungestaucht nur in den 4 Schuss-Clips (Arm gestreckt, Kolben unter der Achsel), sonst am Rücken wie B11 r5c; Umschalten per Clip-Marken weaponDraw/weaponStow. (WSB-Befund: voller Kolben steckt mit Chibi-Arm in allen 18 Clips im Rumpf.)
