@@ -50,3 +50,46 @@
     - "Dionysos": no deck or card in the registry mentions Dionysos.
   - Currently the Caveman is the resident of *The Biology of Rebellion*.
   - Sheet: `caveman.character.proposal.json` (new; there is no register sheet).
+
+## Status 20.10. (night): Lorekeeper, Toy Soldier, uniqueness
+**#4 Mission Control: Georg's idea is the Lorekeeper.**
+- Role: guide, mentor, meta figure and quest giver. FrizzleBob, as the player avatar, receives the quests.
+- Entered in the Writers' Room as VORSCHLAG; FrizzleBob is kept under `previousPerformers`.
+- Consequence: *Kraziest Philosophical Kayfabe-Theories* (Lorekeeper so far) becomes free.
+
+**#6 Caveman: one more candidate.** *Kraziest Philosophical Kayfabe-Theories* (Descartes' doubt demon, The Room of the Mind …). He is the critical thinker with Plato's cave in his name. The deck is among the 60.
+- Chain if Georg agrees: Lorekeeper → Mission Control, Caveman → Philosophy, *Biology of Rebellion* free.
+- On Dionysos: *Wine, Woad & Warrior Chiefs* (Barbarian, longhouse with wine barrels) is the only deck among the 60 that mentions wine, and it is about Gauls, not Dionysos.
+
+**#7 Toy Soldier (Georg): "could work for the geopolitical decks, but not all of them; every song/deck/character should be as unique as possible."**
+- Currently resident of *Symphonic Savagery* (props: rifle, trumpet, gift box; one texture).
+- Geopolitical decks among the 60:
+  - *Power Pyramid Plumbing & Global Psyop Wrestling*: Round Table, NATO "Peacekeepers", Gladio, Paperclip, Gehlen; Frost Golem.
+  - *Secret Spy Suplexes*: Marksman.
+  - *Ruled by Organized Kayfabe-Krime*: Orc Raider ×2.
+  - *Federal Kayfabe*: Santa.
+  - *The Kayfabe Money Trail: 9/11*: Hoarder.
+  - *Siege Kompendium*: Monstrosity, military history.
+- WS-Song proposal: Toy Soldier → *Power Pyramid Plumbing*, as the wind-up pawn on the power pyramid's map table.
+  - Frost Golem becomes free.
+  - *Symphonic Savagery* would need a new resident, or the Toy Soldier stays there with the trumpet and the geopolitics deck gets someone else. Georg decides.
+
+**Uniqueness audit (60 songs, 55 distinct models).** The same model is used several times:
+
+| Model | Count | Decks |
+|---|---:|---|
+| MagicalGirl | 3 | 1001 Nights, Grimms 02, Coming-of-Age |
+| MonsterCostume | 3 | Brain-Flipper, Monopolies Vol. II, How To Stage A Cover-Up |
+| Superhero | 2 | Cinematic 2, MedKayfab Clinical Cases |
+| Witch | 2 | Jung & Shinn, Romantic Kayfabe |
+| BlackKnight | 2 | Ethics (with Paladin), Nibelungen |
+| Tiefling | 2 | Mind Traps, Plot Pusher Posse |
+| Hoarder | 2 | Museum of Modern Mess, Money Trail 9/11 |
+| GothGirl | 2 | Dream-Freud, Ego Mania |
+| Norman | 2 | Bullshit Jobs, What Work Was For |
+
+- Norman is decided by Georg; the two decks belong together.
+- GothGirl × 2 fits her new profile (dark psychology).
+- Texture variants (e.g. MagicalGirl) can differentiate, but they don't make a figure unique.
+- Free slots to fill this: Frost Golem (if #7), the Caveman shift (#6), and figures from the Dramatis Personae: Lord Hunky, Lady Dory, Brain-Cyborg, Vampire.
+- Proposal: *How To Stage A Cover-Up* → Goth Girl? It fits conspiracy, psyops and sarcasm, but it would be her third deck. Alternatively Lady Dory (keeper of secrets on the UFO). Georg decides.

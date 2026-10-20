@@ -324,3 +324,25 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
 3. Goth-Girl-Decks.
 4. #1/#2 (4GTN-Tausch).
 5. Katana.
+
+## §13 · 20.10.2026 · Lorekeeper für Mission Control, Toy Soldier, Einzigartigkeit
+**Georg (Vorschläge):**
+- Lorekeeper als Bewohner von Mission Control (Guide, Mentor, Meta-Figur, Questgeber).
+- Toy Soldier für geopolitische Decks, aber nicht für alle: jeder Song, jedes Deck und jede Figur möglichst einzigartig.
+
+**Umgesetzt (als VORSCHLAG):**
+- Writers' Room: Mission Control → Lorekeeper (v5), FrizzleBob unter `previousPerformers`.
+- Philosophy (v4) ist offen.
+- Bewohnerliste nachgezogen.
+
+**Im Alignment ergänzt:**
+- #6 Caveman: Kette Philosophy ← Caveman.
+- #7 Toy Soldier: Vorschlag *Power Pyramid Plumbing*.
+- Einzigartigkeits-Audit: 9 Modelle mehrfach belegt.
+
+**Nächster Schritt:** Georg entscheidet:
+1. Kette Lorekeeper/Caveman;
+2. wohin der Toy Soldier geht und wer *Symphonic Savagery* übernimmt;
+3. welche Mehrfachbelegungen aufgelöst werden.
+
+Danach Writers' Room auf BESTÄTIGT setzen.

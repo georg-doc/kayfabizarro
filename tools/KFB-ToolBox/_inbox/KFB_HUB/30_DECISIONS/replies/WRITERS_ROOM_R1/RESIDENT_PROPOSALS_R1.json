@@ -256,9 +256,9 @@
    "status": "VORSCHLAG",
    "performers": [
     {
-     "model": "FrizzleBob",
-     "asset": "KFB · FrizzleBob v5",
-     "role": "Onkel FrizzleBob als Missionsleiter"
+     "model": "Lorekeeper",
+     "asset": "KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper",
+     "role": "Guide, Mentor, Meta-Figur und Questgeber (Georg 20.10.)"
     }
    ],
    "home": "Kontrollpult aus Pappe und Lichterketten",
@@ -267,9 +267,16 @@
    "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
    "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht",
    "previous": {
-    "status": "VORSCHLAG"
+    "status": "VORSCHLAG",
+    "performers": [
+     {
+      "model": "FrizzleBob",
+      "asset": "KFB · FrizzleBob v5",
+      "role": "Onkel FrizzleBob als Missionsleiter"
+     }
+    ]
    },
-   "openQuestion": "Georg 20.10.: FrizzleBob = Meta, vorerst Default-Spieler-Avatar. Bleibt er Bewohner seines eigenen Decks oder kommt ein anderer Bewohner?"
+   "openQuestion": "Georg 20.10.: Lorekeeper als Bewohner (Questgeber); FrizzleBob = Spieler-Avatar, bekommt die Quests."
   },
   "geopolitical_thrillers_conspiracy_theories": {
    "status": "VORSCHLAG",
@@ -434,7 +441,11 @@
    "meta": "Descartes, Zeno und Rokos Basilisk tauchen als Stimmen aus den Büchern auf; er streitet mit ihnen.",
    "musicDirection": "Bossa-Electro, Moll-Färbung erlaubt, tanzbar",
    "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
-   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht",
+   "previous": {
+    "status": "VORSCHLAG"
+   },
+   "openQuestion": "Lorekeeper wechselt evtl. zu Mission Control. Kandidat: Caveman (kritischer Denker, Platos Höhle) – WS-Song-Vorschlag."
   },
   "kayfabizarro_pulitzer_punk": {
    "status": "VORSCHLAG",
