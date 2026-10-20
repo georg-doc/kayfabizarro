@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WSB K9 erstes Gate: Melee_1H_Attack_Chop vermessen (30 fps, 1,067 s, Ausholen 0,50 s, Schlag 0,10 s, Erholung 0,37 s, harter Stopp ohne Nachschwung, Hüpfer 0,1 u); Kritiker REWORK 8/7/6 nur wegen fehlender Belege → 3 Zusatzbilder (near_face, Knete nah, Scheitel von vorn). Kanon Gebiet 9: Blender-Bone-Parent nicht für Waffen-Messung. WS-NPC-Brief Schritt 0 Inventur inkl. AI-Town. WS1b: Startschalter nur in dist, 4 Commits warten auf Georgs Key-Ja.
 - V-580: NPC-Alltag → neue WS1-Sitzung WS-NPC (Brief replies/BRIEF_WS1_NPC_LIFE_R1.md); Song-Workbench in die Audio-Site (V-390); Gewehrhaltung WSA/WSB bewusst parallel, Best-of-Breed später durch Georg.
 - WS1b kombinierte Vorschau (combo/r2 + preview-start + fluff-pickup) 35/39 grün, Push wartet auf Georgs direkte Deploy-Key-Bestätigung in der WS1b-Sitzung. Entscheid Startschalter: nur in der Vorschau-Schicht (ws1/preview index.html), nicht in der Quelle (WS1 §110); Ladeanzeige bleibt in der Quelle.
 - WSB K9 gestartet (Georg, Web-Chat-Plan „KayKit Cartoon Animation · Vorarbeit R2“, planning/kfb-kaykit-cartoon-performance-r1-2026-10-20 @2e25eec): erstes Gate = Original-Clip Melee_1H_Attack_Chop isoliert vermessen (Bahnen, Kontakte, Phasen) + Sichtbild mit KFB-Augen; keine Varianten, kein Push, nichts in der Arena.
