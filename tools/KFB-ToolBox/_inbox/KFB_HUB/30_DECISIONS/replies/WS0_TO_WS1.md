@@ -1,5 +1,23 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (20.10.) · Strahler-Bug, global (V-572), bitte prüfen und beheben
+**Georg hat es in der Disco-Szene gesehen:**
+- Die Lichtpfützen der Kugel haben harte, gerade Kanten.
+- Die Lichtkegel enden hart am Boden.
+
+**Ursache in `disco-ball-core.js`** (RA S17, Z. 163–169): Die Pfützen sind flache `CircleGeometry`-Scheiben auf einer festen Höhe, additiv und ohne depthWrite. Auf welligem Terrain schneidet die Scheibe den Boden, und es entstehen gerade Schnittkanten. Die Strahlkegel (`beamGeometry`) schneiden den Boden ebenfalls hart.
+
+**Auftrag, global für alle Strahler, Beams, Scheinwerfer, Suchlichter, Spots, Leuchttürme und Autolichter:**
+1. **Inventur:** Wo gibt es im Spiel, in der Bühne und in den RA-Modulen Lichtpfützen bzw. Lichtkegel als Mesh?
+2. **Ein Modul `kfb-light-pool.v1`** (in den Hub nach `CANON_3D/lib/`):
+   - Lichtpfützen werden auf den Empfänger projiziert, nicht als Scheibe gezeichnet. Vorschlag: Uniform-Array (Mitte, Radius, Farbe, Stärke, ≤ 16) im Knet- bzw. Terrain-Material, oder SpotLight.map, wo das Budget reicht.
+   - Die Pfütze folgt so jeder Geländeform und liegt auch auf Figuren und Requisiten.
+   - Lichtkegel blenden am Kontakt weich aus (Tiefen-Fade bzw. Soft-Particle), es gibt keine harte Schnittlinie.
+   - Farben bleiben wie in der Quelle; es entsteht keine Emission auf Flächen außer der Pfütze selbst.
+3. **Alle Nutzer umstellen.** Für das RA-Modul gilt: Verhalten und Werte 1:1, nur die Darstellung der Pfütze bzw. des Kegels ändert sich.
+4. **Nachweis:** Disco auf welligem Terrain vorher/nachher aus der Spielkamera, dazu die 4 Diagnose-Ansichten (V-568); danach der Kritiker.
+
+
 # NEU OBEN (20.10., spät) · #439 ohne Banden und Rampen + deine Recherchen
 - **„Banden“ = Farbbänder (V-569).** Bitte keine Banden- oder Rampen-Geometrie bauen. Der POC-Hinweis von mir (k2t, Stuntfeld) ist zurückgezogen; das war mein Erfassungsfehler.
 - **Recherchen R1–R4, R10, R11 und Flächengrammatik** sind angekommen, danke. WS0 arbeitet sie gerade in den Kanon ein. Georgs Look-Feedback (Blobs mit smooth-min statt Schwellwert-Rauschen, Steine 40–50 % eingesunken, dunkler Bodenkontakt, Schattenfamilie) kommt komplett in den Kanon.

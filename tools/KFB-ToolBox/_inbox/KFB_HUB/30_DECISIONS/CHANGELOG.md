@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- V-572 Strahler-Bug global (Pfützen als flache Scheiben → Schnittkanten im Terrain) → WS1 Inventur + kfb-light-pool.v1. V-573 Soldat-Kolben gestaucht (r2c-PASS zurückgenommen) → WSB r2d mit Original-Gewehr bzw. voller Länge; Kritiker: Verformung = Befund. K5 Banner-Wappen r2 umgesetzt.
 - WSB K5 Ork-Band-Teile angenommen (Banner Hero mit Tuch accent/Stab/Sockelfels stone, Kriegstrommel Echo, Schlägel/Mikro, Trompete, Gitarre CC0; Asset-Pässe, Set-Liste band_set_k5.json); Änderung: Schädel-Druck im dunklen Ton der Akzentfamilie (ΔL* 20–25).
 - WSB K1 R2 angenommen: Fleckenband war Portierungsfehler (FRACT-Facetten) → kfbFacets 1:1; Dellen nach kfbDentLayer (oval, Halbmond-Wulst, log-normal). Offen bei WSB nur die Drum Machine (wartet auf Georg); Vorschlag Ork-Band-Teile durch apply() + Asset-Pass.
 - V-571: prop_buried, ACES 1.3 in Blender; WSB r2c in Scenelet/Handoff, K1 r3 Emission 1:1; K4 Disco-Teile: Box + Radio angenommen, Pult wartet auf Georgs Ja zur Drum Machine 2 (CC-BY).

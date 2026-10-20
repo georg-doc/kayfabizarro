@@ -8079,6 +8079,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-572",
+   "date": "2026-10-20",
+   "area": "Licht",
+   "verdict": "FAIL",
+   "text": "Strahler-Bug (Georg 20.10., Disco-Szene): Lichtpfützen der Discokugel sind flache CircleGeometry-Scheiben auf fester Höhe → auf welligem Terrain gerade Schnittkanten; Lichtkegel schneiden den Boden hart. Globaler Auftrag an WS1: Inventur aller Strahler/Beams/Scheinwerfer/Spots, ein Modul kfb-light-pool.v1 (Pfützen auf den Empfänger projiziert, Kegel mit Tiefen-Fade), alle Nutzer umstellen (RA-Verhalten 1:1). Kanon Gebiet 7 ergänzt.",
+   "values": {},
+   "owner": "WS1",
+   "check": "Disco auf welligem Terrain vorher/nachher + Diagnose-Ansichten + Kritiker",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Mesh-Scheiben als Lichtpfützen funktionieren nur auf flachem Boden; im Terrain brauchen Licht-Effekte Projektion.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-573",
+   "date": "2026-10-20",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "Spielzeugsoldat: Karabiner-Kolben seit Gunfight r2 hinter dem Griff auf 25 % gestaucht – liest sich als abgeschnitten (Georg 20.10.), von WS0 in der Abnahme übersehen. Regel: keine Stauchung/Kürzung von Kit-Formen, um ein anderes Objekt vorzutäuschen (präzisiert V-506); passendes Original-Teil nehmen. r2d: eigenes Gewehr des Mystery-S6-Soldaten 1:1, sonst KayKit-Gewehr in voller Länge, Kolben am Unterarm/unter der Achsel, Unterarmachse, Kopf aufrecht. r2c-PASS damit zurückgenommen. Kritiker: Verformung als Befund.",
+   "values": {},
+   "owner": "WSB",
+   "check": "Prüfbogen r2d mit Nahansicht Waffe/Hand + Kritiker",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Skalieren war erlaubt, aber nicht, um eine andere Form vorzutäuschen; WS0 und Kritiker haben nicht auf die Waffe nah geschaut.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8166,7 +8196,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:963",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:966",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
