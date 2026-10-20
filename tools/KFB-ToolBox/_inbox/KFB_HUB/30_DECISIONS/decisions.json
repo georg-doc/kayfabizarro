@@ -8109,6 +8109,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-574",
+   "date": "2026-10-20",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Kit-Waffen as-is (Georg 20.10.: „Was bastelt ihr da mit der Rifle rum? Warum nehmt ihr das nicht as-is und passt das sauber ein?“): Original-Kit-Waffe unverändert am vorgesehenen Hand-Slot, KayKit-eigene Clips unverändert (2H-Gewehr = Kolben an der Schulter), kein Nachposieren je Bild, keine Zweitinstanz; Korrektur nur bei sichtbarer Durchdringung per Slot-Offset. Für Kit-Waffen gelten Einhand (q132 A) und Unterarmachse (V-536) nicht mehr. Spielzeugsoldat r3 danach; r2b/r2c/r2d Archiv.",
+   "values": {},
+   "owner": "WSB",
+   "check": "Prüfbogen r3 + Kritiker",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eigene Haltungsvorgaben gegen die Kit-Proportionen erzeugten Runde um Runde Gebastel; das Kit bringt eine funktionierende Haltung mit.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8196,7 +8211,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:966",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:969",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
