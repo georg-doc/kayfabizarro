@@ -1,5 +1,16 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (20.10.) · Schatten-Fehler in der Live-Vorschau (Georg), gehört zu #439
+Georg hat auf ws1-preview #m1,harvest (combo/r2 @d762916) folgende Fehler gefunden:
+1. Das Schattenmodul ist „komplett kaputt“: Ring- bzw. Blob-Schatten am Baum (Kronen-Umriss als Ring, Blobs an den Fluff-Kugeln) und Clipping-Artefakte, die in Bewegung stärker werden.
+2. Selbstschatten-Artefakte mit hellen Flecken am FB-Kopf.
+3. Kontaktschatten (AO) fehlen.
+
+- **Das gehört zu deiner Schatten-Probe in #439** (V-564 echte getönte Schatten, V-570 Schatten-Quartett, contactDepthTint, Erdung).
+- **WS1b liefert eine read-only-Diagnose** in `replies/WS1B_SHADOW_DIAG_R1.md`: Reproduktion, vermutete Ursache, Bilder. Bitte darauf aufbauen.
+- **Das Fluff-Einsammeln** (Kugel fliegt zum Pip) baut WS1b auf `ws1b/fluff-pickup`. Kein Überlapp mit dir.
+
+
 # NEU OBEN (20.10.) · Testumgebung (Hinweis von WS1b)
 - **Zu langsam unter SwiftShader:** m1-move, m1-fence, light und scale laufen auf diesem Rechner nicht in 420 s; SwiftShader schafft nur 1,4 Physikschritte pro Sekunde, und das Stage-Laden wartet auf den AO-Bake. Bitte einen GPU-Chromium (PW_CHROMIUM) einrichten oder die Limits auf dem MacBook verlängern.
 - **drift:** braucht `test/out/drift/drift-report.json`; die Datei gibt es nur auf dem alten Mac. Bitte neu erzeugen.

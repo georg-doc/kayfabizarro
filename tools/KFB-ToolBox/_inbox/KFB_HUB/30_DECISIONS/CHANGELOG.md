@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- Georg-Befunde Live-Vorschau (combo/r2): Schatten kaputt (Ring/Blob am Baum, Clipping, Selbstschatten FB-Kopf), AO fehlt → WS1 (#439), WS1b liefert read-only-Diagnose WS1B_SHADOW_DIAG_R1.md; Fluff-Einsammeln beim Drüberlaufen fehlt → WS1b auf ws1b/fluff-pickup nach V-340/HUD-R4 §3.4 (Kugel fliegt zum Pip, Squash-and-Bounce).
 - V-575: R12 + R13 als Kanon-Anhang B, neues Gebiet 18 Himmel/Horizont/Ferne (skyColor, kein Nebelbalken, Bodendunst, Sonne = Key), WS1 W6; Gate-Fix SINK-Steine (Kommentar-Bug) + Regressionstest; Recherche-Backlog: R1–R4, R10–R13 erledigt.
 - WS1b Task 1 live (Georg bestätigte Deploy-Key direkt): ws1/preview bd6e396, ws1b/preview-start d05efbd, ws1/r3f-frame §108 (19bd3381) mit Belegen ws1/proofs/2026-10-20-ws1b-start/; GPU-Live: bare URL → Spiel #m1,harvest, Ladeanzeige 4,9–10,4 s, #spike = alter Spike. WS1b pausiert.
 - Georg: WS1b darf den Deploy-Key kfb_kayfabizarro_deploy je Befehl benutzen (GIT_SSH_COMMAND, nichts in Dateien/Config) → Push ws1/preview, ws1b/preview-start, ws1/r3f-frame §108, dann Live-Prüfung mit GPU.
