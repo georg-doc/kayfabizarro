@@ -1,0 +1,5 @@
+# Workshop blueprint R1 · factual documentation check (2026-10-20)
+Scope: proposal only; **no executable code changed**.
+Grounded inputs freshly read from GitHub: `skills/chat/START_HERE.md`, `skills/chat/CHAT_GITHUB_KFB_STAGE_WORKFLOW.md`, `skills/chat/FRESH_CHAT_SLICE_PROTOCOL.md`, current WSA plan/Return, `SONG_SPEC_R3.md`, `TRIPLET_SET_SPEC_R2.md`, `song_gate.py`, decisions V-361/362/363/364/372/373/374/376/411/419/424/528, the separate independent execution guard and prior JSON-first alignment proposal.
+Checks required before writing this proposal: 1) one existing owner, 2) R2 spoken mode protected, 3) current R3.7 gate not silently relaxed, 4) independent critic separate session, 5) existing stage/audio owners preserved, 6) Alice explicitly not template, 7) source provenance and selection preserved, 8) one next WS0 gate. These are **documentation assertions**, not empirical runtime tests.
+Not run: Python `song_gate.py`, critic, authoring batch, provider audio, stems, comic visual/browser tests, deployment and Stage. Existing 20-deck plan and WR1 candidate remain untouched.
