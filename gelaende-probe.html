@@ -215,6 +215,1102 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
+<script>/* KFB_DRIVE_BEGIN · Fahrphysik aus dem Spiel, unverändert gebündelt (kfb-planet-t439 @c506bab: m2/k2t.js, m2/racerFlight.js, m1/elan.js) */
+var KFBDrive = (function(exports) {
+	Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+	//#region src/worldScale.js
+	var M_PER_RIG = .616381042;
+	var CLASS_K = .947;
+	+(2.94 * M_PER_RIG).toFixed(3);
+	var WORLD_K = M_PER_RIG / CLASS_K;
+	var worldKFor = (hash = "") => /(^|[#,])wscale=legacy(,|$)/.test(hash) ? 1 : WORLD_K;
+	//#endregion
+	//#region src/m1/m1Scale.js
+	var K = worldKFor(typeof location !== "undefined" ? location.hash : "");
+	var G = K === 1 ? 14 : 9.81;
+	var JUMP_K = Math.sqrt(G * K / 14);
+	K ** 3;
+	K ** 5;
+	//#endregion
+	//#region src/m2/k2t.js
+	var GK = G / 14;
+	var FLOW = {
+		accel: 18.5 * K,
+		brake: 28 * K,
+		reverseAccel: 10.5 * K,
+		drag: .95,
+		maxForward: 41 * K,
+		maxReverse: 9 * K,
+		steerBase: -13.8,
+		lateralDamping: 3.05,
+		centrifugalGain: .085,
+		bounceBase: 4.6 * K,
+		bounceSpeed: .085,
+		retention: .985
+	};
+	var FEEL = {
+		driftMinSpeed: 7.5 * K,
+		driftSteerScale: 1.28,
+		driftDampingScale: .28,
+		driftYawGain: 1.32,
+		regripSeconds: .34,
+		regripDampingScale: 1.85,
+		boostAccelScale: 1.55,
+		boostMaxForward: 48.5 * K,
+		boostPitchBias: .035,
+		accelPitchGain: .0075 / K,
+		lateralRollGain: .0028 / K,
+		hoverBase: .045 * K,
+		jumpImpulse: 7.8 * JUMP_K,
+		jumpGravity: 19 * GK
+	};
+	var ASSIST = {
+		wallReflect: .4,
+		wallKeep: .995,
+		flyGravity: 13.3 * GK,
+		squash: 1,
+		soft: {
+			back: .08,
+			keep: .6,
+			lat: .25,
+			squash: .5
+		}
+	};
+	var SQUASH_LOOK = Object.freeze({
+		x: .12,
+		y: -.18,
+		z: .06
+	});
+	var SLOPE = {
+		g: G,
+		lateral: .5,
+		stopBelow: .4 * K,
+		flatNy: .99,
+		takeoffGap: .08 * K
+	};
+	var TURN = {
+		below: 10 * K,
+		yaw: .3,
+		ramp: 3
+	};
+	var ASSIST_M3 = { on: true };
+	var LAND = {
+		flySteer: .35,
+		grip: .3,
+		gripDamp: 14,
+		align: 12,
+		bounceVN: 13 * K,
+		bounce: .18,
+		boostT: .45,
+		boostOn: true
+	};
+	var STUCK = {
+		window: .7,
+		minProgress: 1 * K,
+		nudge: 5 * K,
+		nudgeS: [.6, 1],
+		yawNudge: .9,
+		tries: 3,
+		windowS: 4,
+		safeAge: 1.2,
+		safeEvery: .25,
+		dropH: 1.2 * K,
+		flyMax: 8
+	};
+	var PUSH = {
+		capture: {
+			lateralK: .65,
+			yawK: .75,
+			maxForce: .95,
+			maxYaw: .72,
+			speedMin: 7 * K,
+			speedMax: 27 * K
+		},
+		commit: {
+			lateralK: 1.05,
+			yawK: 1.15,
+			maxForce: 1.35,
+			maxYaw: 1.05,
+			speedMin: 10 * K,
+			speedMax: 26 * K
+		},
+		abortHold: .32,
+		FS: 4,
+		launchVy: 2.2 * K,
+		alignMax: .8
+	};
+	var RIDE = {
+		speedMin: 8 * K,
+		maxInto: .55,
+		holdS: 1.4,
+		leanRad: 1.2,
+		rise: .25,
+		fall: .8,
+		minRate: 1.2,
+		contactLoss: .25,
+		grace: .5,
+		abortHold: .32,
+		pull: 1.5 * K,
+		pullIn: 4 * K
+	};
+	var TRICK = {
+		minSpeed: 6 * K,
+		lockS: 2.2,
+		holdS: 1.4,
+		freeLeanRad: .8,
+		airMin: .15
+	};
+	var ATT = {
+		ground: 14,
+		air: 2.5,
+		follow: .5,
+		maxPitch: 25 * Math.PI / 180
+	};
+	var clamp$1 = (x, a, b) => Math.min(b, Math.max(a, x));
+	var fx0 = (d) => Math.sin(d.yaw);
+	var fz0 = (d) => Math.cos(d.yaw);
+	function createK2t(x, y, z, yaw) {
+		return {
+			x,
+			y,
+			z,
+			yaw,
+			speed: 0,
+			latV: 0,
+			drift: 0,
+			driftDir: 0,
+			regrip: 0,
+			vy: 0,
+			vyG: 0,
+			squash: 0,
+			squashV: 0,
+			events: [],
+			signals: {
+				speed: 0,
+				longAccel: 0,
+				lateral: 0,
+				bank: 0,
+				drift: 0
+			},
+			air: false,
+			pitch: 0,
+			roll: 0,
+			up: [
+				0,
+				1,
+				0
+			],
+			hits: 0
+		};
+	}
+	function stepK2t(d, inp, dt, env) {
+		d.events.length = 0;
+		const v0 = d.speed, yaw0 = d.yaw;
+		const steerIn = (inp.left ? 1 : 0) - (inp.right ? 1 : 0), slow = !d.air && steerIn ? Math.max(0, 1 - Math.abs(d.speed) / TURN.below) : 0;
+		d.landBoostT = Math.max(0, (d.landBoostT || 0) - dt);
+		d.gripT = Math.max(0, (d.gripT || 0) - dt);
+		d.boosting = (!!inp.boost || d.landBoostT > 0) && d.speed > 4 * K;
+		const maxF = d.boosting ? FEEL.boostMaxForward : FLOW.maxForward, acc = FLOW.accel * (d.boosting ? FEEL.boostAccelScale : 1);
+		if (d.speed > maxF && !inp.brake) d.speed = Math.max(maxF, d.speed - FLOW.accel * dt);
+		else if (inp.gas) d.speed = Math.min(maxF, d.speed + acc * (slow ? Math.min(1, slow * TURN.ramp) : 1) * dt);
+		else if (inp.brake) d.speed -= (d.speed > 0 ? FLOW.brake : FLOW.reverseAccel) * dt;
+		else d.speed *= Math.pow(FLOW.drag, dt * 4);
+		d.speed = Math.max(-FLOW.maxReverse, d.speed);
+		const speedFactor = 1 / (1 + Math.abs(d.speed) * .048 / K);
+		const A3 = ASSIST_M3.on;
+		let yawRate = d.air ? A3 ? steerIn * LAND.flySteer : 0 : -steerIn * FLOW.steerBase * Math.PI / 180 * speedFactor * 8.2 * (1 + TURN.yaw * slow);
+		const wantDrift = (inp.driftL ? -1 : 0) + (inp.driftR ? 1 : 0);
+		if (wantDrift && !d.air && Math.abs(d.speed) > FEEL.driftMinSpeed) {
+			if (!d.drift) d.driftDir = wantDrift;
+			d.drift = Math.min(1, d.drift + dt * 3.4);
+			d.regrip = FEEL.regripSeconds;
+			yawRate *= FEEL.driftSteerScale;
+			yawRate += -d.driftDir * FEEL.driftYawGain * .42 * Math.min(1, Math.abs(d.speed) / (22 * K)) * d.drift;
+			const target = -d.driftDir * 7.5 * K * d.drift;
+			d.latV += (target - d.latV) * Math.min(1, 9 * dt / 7.5);
+		} else {
+			d.drift = Math.max(0, d.drift - dt * 2.6);
+			d.regrip = Math.max(0, d.regrip - dt);
+		}
+		d.yaw += yawRate * dt * (d.speed >= 0 ? 1 : -1);
+		{
+			const z = A3 && !d.air && env.zone ? env.zone(d.x, d.z) : null, Zs = d.zone || (d.zone = {
+				id: null,
+				abortT: 0,
+				aborted: false,
+				seg: null
+			});
+			if (!z || z.id !== Zs.id) {
+				Zs.id = z?.id ?? null;
+				Zs.abortT = 0;
+				Zs.aborted = false;
+				Zs.engaged = false;
+			}
+			if (z && !Zs.engaged && Math.abs(Math.atan2(Math.sin(d.yaw - z.dir), Math.cos(d.yaw - z.dir))) < PUSH.alignMax) Zs.engaged = true;
+			Zs.seg = z && Zs.engaged && !Zs.aborted ? z.seg : null;
+			if (z && !Zs.aborted) {
+				Zs.abortT = steerIn && z.seg === "capture" ? Zs.abortT + dt : Math.max(0, Zs.abortT - 2 * dt);
+				if (Zs.abortT >= PUSH.abortHold) {
+					Zs.aborted = true;
+					d.events.push({
+						type: "zone",
+						phase: "abort",
+						id: z.id
+					});
+				}
+			}
+			if (Zs.seg) {
+				const P = PUSH[Zs.seg], err = Math.atan2(Math.sin(d.yaw - z.dir), Math.cos(d.yaw - z.dir)), want = clamp$1(-(z.e / K) * .24, -.7, .7);
+				d.yaw += clamp$1(P.yawK * (want - err), -P.maxYaw, P.maxYaw) * dt;
+				d.latV += clamp$1(-P.lateralK * (z.e / K) * PUSH.FS, -P.maxForce * PUSH.FS, P.maxForce * PUSH.FS) * K * dt;
+				if (d.speed < P.speedMin && inp.gas) d.speed += clamp$1((P.speedMin - d.speed) * 1.5, 0, 4.2 * K) * dt;
+				else if (d.speed > P.speedMax && !d.boosting) d.speed -= clamp$1((d.speed - P.speedMax) * 1.25, 0, 5.5 * K) * dt;
+			}
+		}
+		if (d.ride) {
+			const R = d.ride, n = R.n;
+			let tx = -n[2], tz = n[0];
+			if (tx * fx0(d) + tz * fz0(d) < 0) {
+				tx = -tx;
+				tz = -tz;
+			}
+			const want = Math.atan2(tx, tz), e = Math.atan2(Math.sin(want - d.yaw), Math.cos(want - d.yaw));
+			d.yaw += e * Math.min(1, 10 * dt);
+			R.aligned = Math.abs(e) < .08;
+			d.latV = -R.side * (R.touched ? RIDE.pull : RIDE.pullIn);
+			R.t += dt;
+			R.contactT += dt;
+			R.abortT = steerIn === R.side ? R.abortT + dt : 0;
+			const why = R.t >= RIDE.holdS ? "hold" : R.contactT > RIDE.contactLoss ? "end" : R.abortT >= RIDE.abortHold ? "abort" : d.air ? "air" : null;
+			if (why) {
+				d.events.push({
+					type: "twoWheel",
+					phase: "release",
+					why,
+					t: +R.t.toFixed(2)
+				});
+				d.rideLast = {
+					why,
+					t: R.t
+				};
+				d.ride = null;
+			}
+		}
+		if (d.freeTip) {
+			d.freeTip.t += dt;
+			if (d.freeTip.t >= TRICK.holdS || d.air || d.ride) {
+				d.events.push({
+					type: "trick",
+					kind: "recover",
+					side: d.freeTip.side
+				});
+				d.freeTip = null;
+			}
+		}
+		{
+			const tgt = d.ride ? -d.ride.side * RIDE.leanRad : d.freeTip ? -d.freeTip.side * TRICK.freeLeanRad : 0, rate = Math.abs(tgt) > Math.abs(d.lean || 0) ? 1 / RIDE.rise : 1 / RIDE.fall, l0 = d.lean || 0, gap = tgt - l0;
+			let stp = gap * Math.min(1, rate * dt);
+			if (Math.abs(stp) < RIDE.minRate * dt) stp = Math.sign(gap) * Math.min(Math.abs(gap), RIDE.minRate * dt);
+			d.lean = l0 + stp;
+		}
+		const damp = FLOW.lateralDamping * (d.drift > .05 ? FEEL.driftDampingScale : d.regrip > 0 ? FEEL.regripDampingScale : 1);
+		if (!d.air) {
+			d.latV += -yawRate * d.speed * FLOW.centrifugalGain * dt;
+			d.latV -= d.latV * Math.min(1, damp * dt);
+			d.latV = clamp$1(d.latV, -11 * K, 11 * K);
+		}
+		if (!d.air && d.gripT > 0 && Math.abs(d.speed) > 1 * K) {
+			const err = Math.atan2(d.latV, Math.abs(d.speed)), k = Math.min(1, LAND.align * dt);
+			d.yaw += err * k * Math.sign(d.speed);
+			d.latV -= Math.abs(d.speed) * Math.tan(err * k);
+			d.latV *= Math.max(0, 1 - LAND.gripDamp * dt);
+		}
+		const fx = Math.sin(d.yaw), fz = Math.cos(d.yaw), lx = fz, lz = -fx;
+		let delta = [
+			(fx * d.speed + lx * d.latV) * dt,
+			0,
+			(fz * d.speed + lz * d.latV) * dt
+		];
+		d.trickT = Math.max(0, (d.trickT || 0) - dt);
+		const trickSide = (inp.right ? 1 : 0) - (inp.left ? 1 : 0);
+		const jumpEdge = !!inp.jump && !d.jumpHeld;
+		d.jumpHeld = !!inp.jump;
+		d.airT = d.air ? (d.airT || 0) + dt : 0;
+		if (A3 && !d.ride && !d.trickT && trickSide && Math.abs(d.speed) >= TRICK.minSpeed && (d.air && jumpEdge && d.airT >= TRICK.airMin || !d.air && inp.tip)) {
+			d.trickT = TRICK.lockS;
+			d.tricks = (d.tricks || 0) + 1;
+			if (d.air) d.events.push({
+				type: "trick",
+				kind: "tumble",
+				side: trickSide,
+				speed: clamp$1(Math.abs(d.speed) / FLOW.maxForward, 0, 1)
+			});
+			else {
+				d.freeTip = {
+					side: trickSide,
+					t: 0
+				};
+				d.events.push({
+					type: "trick",
+					kind: "twoWheel",
+					side: trickSide
+				});
+			}
+		}
+		if (inp.jump && !d.air) {
+			d.vy = FEEL.jumpImpulse;
+			d.air = true;
+			d.events.push({
+				type: "takeoff",
+				vy: d.vy,
+				speed: Math.abs(d.speed),
+				jump: true
+			});
+		}
+		if (d.air) {
+			d.vy -= ASSIST.flyGravity * dt;
+			delta[1] = d.vy * dt;
+		}
+		if (d.yaw !== yaw0 && env.blocked && env.blocked(d.x, d.y, d.z, d.yaw) && !env.blocked(d.x, d.y, d.z, yaw0)) {
+			d.yaw = yaw0;
+			d.turnBlocked = (d.turnBlocked || 0) + 1;
+		}
+		const sw = env.sweep([
+			d.x,
+			d.y,
+			d.z
+		], delta);
+		const wallN = sw.hit ? sw.n : null;
+		if (sw.hit && sw.n && Math.abs(sw.n[1]) < .7 && sw.ride && d.ride) {
+			d.ride.contactT = Math.min(d.ride.contactT, 0);
+			if (d.ride.aligned) d.ride.touched = true;
+		} else if (sw.hit && sw.n && Math.abs(sw.n[1]) < .7 && sw.ride && A3 && !d.air && Math.abs(d.speed) >= RIDE.speedMin && Math.abs(fx * sw.n[0] + fz * sw.n[2]) < RIDE.maxInto) {
+			const side = lx * sw.n[0] + lz * sw.n[2] > 0 ? 1 : -1;
+			d.ride = {
+				side,
+				n: [
+					sw.n[0],
+					sw.n[1],
+					sw.n[2]
+				],
+				t: 0,
+				contactT: -RIDE.grace,
+				abortT: 0,
+				touched: false
+			};
+			d.rides = (d.rides || 0) + 1;
+			d.events.push({
+				type: "twoWheel",
+				phase: "capture",
+				side
+			});
+		} else if (sw.hit && sw.n && Math.abs(sw.n[1]) < .7) {
+			const into = fx * sw.n[0] + fz * sw.n[2];
+			const SOFT = sw.soft ? ASSIST.soft : null;
+			if (into < -.2) {
+				const e = clamp$1(Math.abs(d.speed) / (30 * K), .3, 1.2);
+				d.squashV += ASSIST.squash * e * (SOFT ? SOFT.squash : 1);
+				d.events.push({
+					type: "railImpact",
+					side: lx * sw.n[0] + lz * sw.n[2] > 0 ? 1 : -1,
+					strength: clamp$1(Math.abs(d.speed) * -into / (30 * K), 0, 1) * (SOFT ? .5 : 1),
+					contact: true,
+					frontal: into < -.7,
+					soft: !!SOFT,
+					speed: Math.abs(d.speed),
+					normal: [
+						sw.n[0],
+						sw.n[1],
+						sw.n[2]
+					]
+				});
+				d.speed = into < -.7 ? -Math.abs(d.speed) * (SOFT ? SOFT.back : A3 ? ASSIST.wallReflect : .35) : d.speed * (SOFT ? SOFT.keep : ASSIST.wallKeep);
+				d.latV += Math.sign(lx * sw.n[0] + lz * sw.n[2]) * (FLOW.bounceBase + Math.abs(d.speed) * FLOW.bounceSpeed) * (SOFT ? SOFT.lat : 1);
+				d.yaw += Math.sign(fx * sw.n[2] - fz * sw.n[0]) * .02;
+				d.hits++;
+			}
+		}
+		d.x += sw.delta[0];
+		d.z += sw.delta[2];
+		d.y += sw.delta[1];
+		const g = env.ground(d.x, d.z, d.y + 1.5 * K);
+		const want = g ? g.y + FEEL.hoverBase : -Infinity;
+		if (d.air) {
+			if (d.y <= want && d.vy <= 0) {
+				const vN = -d.vy;
+				d.events.push({
+					type: "landing",
+					strength: clamp$1(vN / (12 * K), 0, 1)
+				});
+				d.squashV += .9 * clamp$1(vN / (12 * K), .3, 1.4);
+				d.y = want;
+				if (A3 && vN > LAND.bounceVN) d.vy = vN * LAND.bounce;
+				else {
+					d.vy = 0;
+					d.air = false;
+					if (A3) {
+						d.gripT = LAND.grip;
+						if (LAND.boostOn) d.landBoostT = LAND.boostT;
+					}
+				}
+			}
+		} else if (!g || want < d.y + (d.vyG - ASSIST.flyGravity * dt) * dt - SLOPE.takeoffGap) {
+			d.air = true;
+			d.vy = d.vyG + (d.zone?.seg === "commit" ? PUSH.launchVy : 0);
+			if (d.zone?.seg === "commit") {
+				d.events.push({
+					type: "launch",
+					id: d.zone.id
+				});
+				d.launches = (d.launches || 0) + 1;
+			}
+			d.events.push({
+				type: "takeoff",
+				vy: d.vy,
+				speed: Math.abs(d.speed)
+			});
+		} else {
+			d.vyG = Math.min(12 * K, Math.abs(d.speed) * .7 + 1 * K, Math.max(-15 * K, (want - d.y) / dt));
+			d.y = want;
+		}
+		if (g?.floor != null && d.y < g.floor - .05 * K) {
+			d.y = g.floor;
+			if (d.vy < 0) d.vy = 0;
+			d.air = false;
+			d.rescues = (d.rescues || 0) + 1;
+		}
+		{
+			let t = g && !d.air ? g.n : null, rate = ATT.ground;
+			if (!A3) {
+				if (t) rate = 1e6;
+				else t = d.up;
+			}
+			if (!t) {
+				const vh = Math.max(Math.abs(d.speed), 1 * K), p = clamp$1(Math.atan2(d.vy, vh) * ATT.follow, -ATT.maxPitch, ATT.maxPitch), c = Math.cos(p), s = Math.sin(p);
+				t = [
+					-fx * s,
+					c,
+					-fz * s
+				];
+				rate = ATT.air;
+			}
+			const k = Math.min(1, rate * dt), u = [
+				d.up[0] + (t[0] - d.up[0]) * k,
+				d.up[1] + (t[1] - d.up[1]) * k,
+				d.up[2] + (t[2] - d.up[2]) * k
+			], l = Math.hypot(...u) || 1;
+			d.up = [
+				u[0] / l,
+				u[1] / l,
+				u[2] / l
+			];
+		}
+		if (g && !d.air) {
+			d.speed += SLOPE.g * (fx * g.n[0] + fz * g.n[2]) * dt;
+			d.latV += SLOPE.g * SLOPE.lateral * (lx * g.n[0] + lz * g.n[2]) * dt;
+			if (!inp.gas && !inp.brake && Math.abs(d.speed) < SLOPE.stopBelow && g.n[1] > SLOPE.flatNy) {
+				d.speed = 0;
+				d.latV *= .5;
+			}
+		}
+		{
+			const U = STUCK, St = d.stuck || (d.stuck = {
+				tries: [],
+				safe: [],
+				safeT: 0,
+				clock: 0,
+				airT: 0,
+				hist: [],
+				nudge: null
+			});
+			St.clock += dt;
+			const pushing = !d.air && (inp.gas || inp.brake && d.speed <= .5 * K), win = Math.round(U.window / dt);
+			St.airT = d.air ? St.airT + dt : 0;
+			if (!d.air && !St.nudge && Math.abs(d.speed) > 3 * K && (St.safeT += dt) >= U.safeEvery) {
+				St.safeT = 0;
+				St.safe.push({
+					x: d.x,
+					y: d.y,
+					z: d.z,
+					yaw: d.yaw,
+					t: St.clock
+				});
+				if (St.safe.length > 40) St.safe.shift();
+			}
+			St.tries = St.tries.filter((t) => St.clock - t < U.windowS);
+			if (pushing && !St.nudge) {
+				St.hist.push([d.x, d.z]);
+				if (St.hist.length > win) St.hist.shift();
+			} else if (!St.nudge) St.hist.length = 0;
+			const respawn = () => {
+				const p = [...St.safe].reverse().find((q) => St.clock - q.t >= U.safeAge) || St.safe[0] || env.home?.();
+				if (!p) return;
+				d.events.push({
+					type: "respawn",
+					from: [
+						d.x,
+						d.y,
+						d.z
+					],
+					to: [
+						p.x,
+						p.y,
+						p.z
+					]
+				});
+				d.x = p.x;
+				d.z = p.z;
+				d.y = p.y + U.dropH;
+				d.vy = 0;
+				d.air = true;
+				d.yaw = p.yaw;
+				d.speed = 0;
+				d.latV = 0;
+				d.squashV += .6;
+				St.tries = [];
+				St.hist = [];
+				St.nudge = null;
+				St.safe = St.safe.filter((q) => q !== p);
+				d.rescues = (d.rescues || 0) + 1;
+				d.t3 = (d.t3 || 0) + 1;
+			};
+			if (!A3) {
+				St.hist.length = 0;
+				St.nudge = null;
+			} else if (St.airT > U.flyMax) respawn();
+			else if (St.nudge) {
+				const N = St.nudge;
+				N.t -= dt;
+				d.speed = -N.dir * U.nudge;
+				d.latV *= .5;
+				d.yaw += N.turn / N.T * dt;
+				if (N.t <= 0) {
+					St.nudge = null;
+					St.hist = [];
+				}
+			} else if (St.hist.length >= win && Math.hypot(d.x - St.hist[0][0], d.z - St.hist[0][1]) < U.minProgress) {
+				St.tries.push(St.clock);
+				d.t1 = (d.t1 || 0) + 1;
+				St.hist = [];
+				if (St.tries.length >= U.tries) respawn();
+				else {
+					const dir = inp.gas ? 1 : -1, side = wallN ? Math.sign(lx * wallN[0] + lz * wallN[2]) || (St.tries.length % 2 ? 1 : -1) : St.tries.length % 2 ? 1 : -1, T = U.nudgeS[Math.min(U.nudgeS.length - 1, St.tries.length - 1)];
+					St.nudge = {
+						t: T,
+						T,
+						dir,
+						turn: side * U.yawNudge * dir
+					};
+					d.events.push({
+						type: "nudge",
+						tier: 1
+					});
+				}
+			}
+		}
+		{
+			const S = d.signals, up = d.up;
+			S.speed = clamp$1(Math.abs(d.speed) / FLOW.maxForward, 0, 1);
+			S.longAccel = clamp$1((d.speed - v0) / dt / FLOW.accel, -1, 1);
+			S.lateral = clamp$1(-d.latV / (11 * K), -1, 1);
+			S.bank = clamp$1(-(lx * up[0] + lz * up[2]), -1, 1);
+			S.drift = d.driftDir * d.drift;
+		}
+		d.squashV += (-d.squash * 180 - d.squashV * 9) * dt;
+		d.squash += d.squashV * dt;
+		d.pitch += ((inp.gas ? -1 : inp.brake ? 1 : 0) * Math.abs(d.speed) * FEEL.accelPitchGain * .55 + (d.boosting ? -FEEL.boostPitchBias : 0) - d.pitch) * Math.min(1, dt * 6);
+		d.roll += (-d.latV * FEEL.lateralRollGain * 6 - d.roll) * Math.min(1, dt * 5);
+		return d;
+	}
+	function attitude(d) {
+		const u = d.up, l = Math.hypot(u[0], u[1], u[2]) || 1, ux = u[0] / l, uy = u[1] / l, uz = u[2] / l;
+		const fx = Math.sin(d.yaw), fz = Math.cos(d.yaw), fd = fx * ux + fz * uz, nx = fx - fd * ux, ny = -fd * uy, nz = fz - fd * uz, nl = Math.hypot(nx, ny, nz) || 1;
+		uy * nz / nl - uz * ny / nl;
+		const ry = uz * nx / nl - ux * nz / nl;
+		ux * ny / nl - uy * nx / nl;
+		const D = 180 / Math.PI;
+		return {
+			pitchDeg: Math.asin(clamp$1(ny / nl, -1, 1)) * D - d.pitch * D,
+			rollDeg: Math.asin(clamp$1(ry, -1, 1)) * D + d.roll * D,
+			upY: uy
+		};
+	}
+	//#endregion
+	//#region src/m1/elan.js
+	var ELAN = Object.freeze({
+		sStall: 12,
+		sThrill: 40,
+		sDive: 60,
+		sBoostMax: 85,
+		thetaDive: 40 * Math.PI / 180,
+		kDive: 1.25,
+		c1: .06,
+		c2: .02,
+		kAlign: 4,
+		wLow: 2.2,
+		wHigh: 1,
+		vSinkMax: 8,
+		pitchRate: 1.6,
+		pitchMax: 80 * Math.PI / 180,
+		autoLevel: .35,
+		cruise: -7 * Math.PI / 180,
+		stallNose: -10 * Math.PI / 180,
+		bankMax: Math.PI / 3,
+		charges: 6,
+		ascentUp: 12,
+		ascentFwd: 3,
+		surge: 10,
+		lockS: .6,
+		rollS: .55,
+		rollFwd: 12,
+		rollSide: 4,
+		rollCd: 6,
+		rollWindow: .15,
+		regenGround: 3,
+		regenAir: 8,
+		regenThrill: 4,
+		thrillAfter: .5,
+		skimH: 4,
+		skimS: 20,
+		regenSkim: 6
+	});
+	var RACER = Object.freeze({
+		kAlignK: .5,
+		sinkK: 1.5,
+		thrust: 3,
+		airBrake: 10,
+		boostAcc: 8,
+		drain: .25,
+		fill: .08,
+		fillThrill: .15,
+		fillSkim: .2,
+		boilS: 1.5,
+		h0: .45,
+		hoverW: 6,
+		hoverZeta: .7,
+		groundDrag: .7,
+		cruise: -12 * Math.PI / 180,
+		landK: 1.2
+	});
+	var clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+	var lerp = (a, b, t) => a + (b - a) * t;
+	var smoothstep = (a, b, x) => {
+		const t = clamp((x - a) / (b - a), 0, 1);
+		return t * t * (3 - 2 * t);
+	};
+	var len = (v) => Math.hypot(v[0], v[1], v[2]);
+	function createElan({ pos, yaw = 0, speed = 22, J = 1, g = 9.81, profile = "figure", h0 = RACER.h0 } = {}) {
+		const s = speed * J;
+		return {
+			J,
+			g,
+			pos: [...pos],
+			v: [
+				Math.sin(yaw) * s,
+				0,
+				Math.cos(yaw) * s
+			],
+			pitch: 0,
+			yaw,
+			bank: 0,
+			charges: ELAN.charges,
+			regen: 0,
+			skimT: 0,
+			thrillT: 0,
+			lock: 0,
+			rollT: 0,
+			rollDir: 0,
+			rollCd: 0,
+			spaceT: -1,
+			prevSteer: 0,
+			kick: 0,
+			kickV: 0,
+			mode: "GLIDE",
+			grounded: false,
+			events: [],
+			hit: null,
+			profile,
+			h0: h0 * J,
+			P: 1,
+			boilT: 0,
+			boosting: false,
+			landed: false
+		};
+	}
+	var elanSpeed = (st) => len(st.v);
+	function elanStep(st, inp, dt, env, opt = {}) {
+		const E = ELAN, J = st.J, g = st.g, ab = opt.abilities !== false, R = st.profile === "racer";
+		st.events.length = 0;
+		st.hit = null;
+		const hNow = env?.ground ? st.pos[1] - env.ground(st.pos[0], st.pos[2]) : Infinity;
+		let s = len(st.v);
+		const pitchIn = ((inp.noseUp ? 1 : 0) - (inp.noseDown ? 1 : 0)) * (inp.invert ? -1 : 1);
+		if (inp.mousePitch != null) st.pitch = clamp(inp.mousePitch, -E.pitchMax, E.pitchMax);
+		else if (pitchIn) st.pitch = clamp(st.pitch + pitchIn * E.pitchRate * dt, -E.pitchMax, E.pitchMax);
+		else st.pitch += ((R && !inp.thrust ? RACER.cruise : E.cruise) - st.pitch) * Math.min(1, E.autoLevel * dt);
+		const steer = (inp.left ? 1 : 0) - (inp.right ? 1 : 0), w = lerp(E.wLow, E.wHigh, clamp(s / (E.sDive * J), 0, 1)) * steer;
+		st.yaw += w * dt;
+		st.bank += (clamp(Math.atan2(s * w, g), -E.bankMax, E.bankMax) - st.bank) * Math.min(1, 6 * dt);
+		const L = clamp(s / (E.sStall * J), 0, 1);
+		if (L < 1 && !pitchIn) st.pitch += (E.stallNose - st.pitch) * Math.min(1, (1 - L) * 2 * dt);
+		const cp = Math.cos(st.pitch), nose = [
+			Math.sin(st.yaw) * cp,
+			Math.sin(st.pitch),
+			Math.cos(st.yaw) * cp
+		];
+		const dir = s > 1e-6 ? [
+			st.v[0] / s,
+			st.v[1] / s,
+			st.v[2] / s
+		] : nose, theta = Math.asin(clamp(dir[1], -1, 1));
+		let grav = -g * Math.sin(theta) * (theta < -E.thetaDive ? E.kDive : 1);
+		if (theta < 0) grav *= 1 - smoothstep(.95 * E.sDive * J, E.sDive * J, s);
+		const c1 = opt.noDrag ? 0 : E.c1 * (R && hNow < 1.5 * st.h0 ? RACER.groundDrag : 1), c2 = opt.noDrag ? 0 : E.c2 / J;
+		s = Math.max(0, s + (grav - c1 * s - c2 * Math.max(0, s - E.sDive * J) ** 2) * dt);
+		if (R) {
+			st.boilT = Math.max(0, st.boilT - dt);
+			s += ((inp.thrust ? RACER.thrust : 0) - (inp.airBrake ? RACER.airBrake : 0)) * J * dt;
+			s = Math.max(0, s);
+			if (!inp.boost) st.boilLatch = false;
+			if (!!inp.boost && st.boilT <= 0 && !st.boilLatch && st.P > 0) {
+				if (!st.boosting) {
+					st.events.push({ type: "surge" });
+					st.kick += 4;
+				}
+				st.boosting = true;
+				s += RACER.boostAcc * J * dt;
+				st.P = Math.max(0, st.P - RACER.drain * dt);
+				if (st.P <= 0) {
+					st.boilT = RACER.boilS;
+					st.boosting = false;
+					st.boilLatch = true;
+					st.events.push({ type: "boil" });
+				}
+			} else st.boosting = false;
+		}
+		const k = 1 - Math.exp(-E.kAlign * (R ? RACER.kAlignK : 1) * L * dt);
+		const nd = [
+			dir[0] + (nose[0] - dir[0]) * k,
+			dir[1] + (nose[1] - dir[1]) * k,
+			dir[2] + (nose[2] - dir[2]) * k
+		], nl = len(nd) || 1;
+		st.v = [
+			nd[0] / nl * s,
+			nd[1] / nl * s,
+			nd[2] / nl * s
+		];
+		if (L < 1 && st.pitch > -E.thetaDive * .5) st.v[1] = Math.max(-E.vSinkMax * (R ? RACER.sinkK : 1) * J, st.v[1] - g * (1 - L) * dt);
+		if (R && hNow < 3 * st.h0) {
+			const w = RACER.hoverW;
+			st.v[1] += (w * w * (st.h0 - hNow) - 2 * RACER.hoverZeta * w * st.v[1]) * dt;
+		}
+		st.lock = Math.max(0, st.lock - dt);
+		st.rollCd = Math.max(0, st.rollCd - dt);
+		const spaceEdge = !!inp.space && !st.spaceHeld, shiftEdge = !!inp.shift && !st.shiftHeld;
+		st.spaceHeld = !!inp.space;
+		st.shiftHeld = !!inp.shift;
+		const steerEdge = steer !== 0 && st.prevSteer === 0;
+		st.prevSteer = steer;
+		if (ab) {
+			if (spaceEdge && st.spaceT < 0) st.spaceT = 0;
+			if (st.spaceT >= 0) {
+				if (steerEdge && st.rollCd <= 0) {
+					st.rollT = E.rollS;
+					st.rollDir = -steer;
+					st.rollCd = E.rollCd;
+					st.spaceT = -1;
+					const f = E.rollFwd * J;
+					st.v = st.v.map((x, i) => x + nose[i] * f);
+					st.kick += 6;
+					st.events.push({
+						type: "roll",
+						dir: st.rollDir
+					});
+				} else if ((st.spaceT += dt) >= E.rollWindow) {
+					st.spaceT = -1;
+					if (st.charges >= 1 && st.lock <= 0) {
+						st.charges -= 1;
+						st.lock = E.lockS;
+						st.v[1] += E.ascentUp * J;
+						const f = E.ascentFwd * J;
+						st.v[0] += Math.sin(st.yaw) * f;
+						st.v[2] += Math.cos(st.yaw) * f;
+						st.events.push({ type: "ascent" });
+					}
+				}
+			}
+			if (!R && shiftEdge && st.charges >= 1 && st.lock <= 0) {
+				st.charges -= 1;
+				st.lock = E.lockS;
+				st.v = st.v.map((x, i) => x + nose[i] * E.surge * J);
+				st.kick += 4;
+				st.events.push({ type: "surge" });
+			}
+		}
+		let side = [
+			0,
+			0,
+			0
+		];
+		if (st.rollT > 0) {
+			const a = Math.min(dt, st.rollT);
+			st.rollT -= dt;
+			const r = [
+				Math.cos(st.yaw),
+				0,
+				-Math.sin(st.yaw)
+			], m = E.rollSide * J * a / E.rollS * st.rollDir;
+			side = r.map((x) => x * m);
+		}
+		s = len(st.v);
+		if (s > E.sBoostMax * J) st.v = st.v.map((x) => x * E.sBoostMax * J / s);
+		const want = [
+			st.v[0] * dt + side[0],
+			st.v[1] * dt,
+			st.v[2] * dt + side[2]
+		];
+		const sw = env?.sweep ? env.sweep(st.pos, want) : {
+			delta: want,
+			hit: false
+		};
+		if (sw.hit) {
+			st.hit = sw.n;
+			const n = sw.n, into = st.v[0] * n[0] + st.v[1] * n[1] + st.v[2] * n[2];
+			if (into < 0) st.v = st.v.map((x, i) => x - into * n[i]);
+		}
+		st.pos = [
+			st.pos[0] + sw.delta[0],
+			st.pos[1] + sw.delta[1],
+			st.pos[2] + sw.delta[2]
+		];
+		const gy = env?.ground ? env.ground(st.pos[0], st.pos[2]) : -Infinity, h = st.pos[1] - gy;
+		st.grounded = h <= .02 * J;
+		if (st.grounded) {
+			st.pos[1] = gy;
+			if (st.v[1] < 0) st.v[1] = 0;
+		}
+		s = len(st.v);
+		st.thrillT = s >= E.sThrill * J ? st.thrillT + dt : 0;
+		const thrill = st.thrillT >= E.thrillAfter, every = st.grounded ? E.regenGround : thrill ? E.regenThrill : E.regenAir;
+		if (st.charges < E.charges) {
+			st.regen += dt;
+			if (st.regen >= every) {
+				st.regen -= every;
+				st.charges += 1;
+				st.events.push({
+					type: "charge",
+					why: st.grounded ? "ground" : thrill ? "thrill" : "air"
+				});
+			}
+		} else st.regen = 0;
+		const skim = !st.grounded && h < E.skimH * J && s >= E.skimS * J;
+		if (skim && st.charges < E.charges) {
+			st.skimT += dt;
+			if (st.skimT >= E.regenSkim) {
+				st.skimT -= E.regenSkim;
+				st.charges += 1;
+				st.events.push({
+					type: "charge",
+					why: "skim"
+				});
+			}
+		} else if (!skim) st.skimT = 0;
+		st.kickV += (-64 * st.kick - 16 * st.kickV) * dt;
+		st.kick += st.kickV * dt;
+		if (st.profile === "racer") {
+			if (!st.boosting && st.boilT <= 0) st.P = Math.min(1, st.P + (skim ? RACER.fillSkim : thrill ? RACER.fillThrill : RACER.fill) * dt);
+			if (!st.landed && h < RACER.landK * st.h0 && st.v[1] <= 0) {
+				st.landed = true;
+				st.events.push({ type: "land" });
+			}
+		}
+		st.mode = st.grounded ? "GROUND" : st.rollT > 0 ? "ROLL" : s < E.sStall * J ? "STALL" : theta < -E.thetaDive ? "DIVE" : "GLIDE";
+		st.h = h;
+		st.thrill = thrill;
+		st.skim = skim;
+		return st;
+	}
+	//#endregion
+	//#region src/m2/racerFlight.js
+	var RFLY = Object.freeze({
+		climbMin: 8 * Math.PI / 180,
+		speedK: .5,
+		vyMin: 4,
+		doubleS: .4,
+		boilPulseS: .25
+	});
+	var createRacerFlight = (J = 1, g = 9.81) => ({
+		J,
+		g,
+		st: null,
+		charges: ELAN.charges,
+		lastJump: -1e9,
+		t: 0,
+		jumpHeld: false,
+		boilPulse: 0,
+		surgeN: 0,
+		ascentN: 0,
+		flights: 0,
+		lands: 0,
+		events: []
+	});
+	function racerTakeoff(F, d, why) {
+		const J = F.J, st = createElan({
+			pos: [
+				d.x,
+				d.y,
+				d.z
+			],
+			yaw: d.yaw,
+			speed: 0,
+			J,
+			g: F.g,
+			profile: "racer"
+		}), s = d.speed, l = d.latV || 0;
+		st.v = [
+			Math.sin(d.yaw) * s + Math.cos(d.yaw) * l,
+			d.vy || 0,
+			Math.cos(d.yaw) * s - Math.sin(d.yaw) * l
+		];
+		if (why === "double") st.v[1] = Math.max(st.v[1], 0) + ELAN.ascentUp * J;
+		st.pitch = Math.atan2(st.v[1], Math.max(.001, Math.hypot(st.v[0], st.v[2])));
+		st.charges = F.charges;
+		F.st = st;
+		F.flights++;
+		F.events.push({
+			type: "fly",
+			why
+		});
+		return st;
+	}
+	function racerLand(F, d) {
+		const st = F.st;
+		if (!st) return;
+		d.x = st.pos[0];
+		d.y = st.pos[1];
+		d.z = st.pos[2];
+		d.yaw = st.yaw;
+		d.speed = st.v[0] * Math.sin(st.yaw) + st.v[2] * Math.cos(st.yaw);
+		d.latV = st.v[0] * Math.cos(st.yaw) - st.v[2] * Math.sin(st.yaw);
+		d.vy = st.v[1];
+		d.vyG = 0;
+		d.air = true;
+		d.pitch = 0;
+		d.roll = 0;
+		F.charges = st.charges;
+		F.st = null;
+		F.lands++;
+		F.events.push({ type: "land" });
+	}
+	function racerFlightStep(F, d, k, dt, env) {
+		F.t += dt;
+		F.events.length = 0;
+		F.boilPulse = Math.max(0, F.boilPulse - dt);
+		const jumpEdge = !!k.jump && !F.jumpHeld;
+		F.jumpHeld = !!k.jump;
+		if (!F.st) {
+			if (jumpEdge) {
+				if (d.air && !k.left && !k.right && F.t - F.lastJump <= RFLY.doubleS) {
+					F.lastJump = -1e9;
+					racerTakeoff(F, d, "double");
+				} else F.lastJump = F.t;
+			}
+			if (!F.st) return false;
+		}
+		const st = F.st;
+		d.events.length = 0;
+		elanStep(st, {
+			thrust: !!k.gas && !k.noseUp,
+			airBrake: !!k.brake && !k.noseDown,
+			noseUp: !!k.noseUp,
+			noseDown: !!k.noseDown,
+			left: !!k.left,
+			right: !!k.right,
+			space: !!k.jump,
+			boost: !!k.boost,
+			mousePitch: k.mousePitch ?? null
+		}, dt, env);
+		for (const e of st.events) {
+			if (e.type === "surge") F.surgeN++;
+			if (e.type === "ascent") F.ascentN++;
+			if (e.type === "boil") F.boilPulse = RFLY.boilPulseS;
+		}
+		d.x = st.pos[0];
+		d.y = st.pos[1];
+		d.z = st.pos[2];
+		d.yaw = st.yaw;
+		d.air = true;
+		d.pitch = -st.pitch;
+		d.roll = -st.bank;
+		d.up = [
+			0,
+			1,
+			0
+		];
+		d.speed = Math.hypot(st.v[0], st.v[2]);
+		d.vy = st.v[1];
+		d.latV = 0;
+		F.charges = st.charges;
+		if (st.events.some((e) => e.type === "land")) racerLand(F, d);
+		return true;
+	}
+	function racerAfterK2t(F, d) {
+		if (F.st) return;
+		if (!d.events.find((x) => x.type === "takeoff" && !x.jump)) return;
+		const s = Math.abs(d.speed), climb = Math.atan2(d.vy || 0, Math.max(.001, s));
+		const zone = d.events.some((x) => x.type === "launch");
+		if (d.speed > 0 && s >= RFLY.speedK * ELAN.sThrill * F.J && climb > RFLY.climbMin && ((d.vy || 0) >= RFLY.vyMin * F.J || zone)) racerTakeoff(F, d, zone ? "zone" : "ramp");
+	}
+	var racerDrive = (F, k) => {
+		const st = F.st;
+		return st ? {
+			gas: !!k.gas && !k.noseUp,
+			brake: !!k.brake && !k.noseDown || F.boilPulse > 0,
+			boost: st.boosting,
+			jump: false,
+			air: true,
+			fly: true,
+			boil: st.boilT > 0,
+			surgeN: F.surgeN,
+			ascentN: F.ascentN,
+			P: st.P,
+			speed01: Math.min(1, elanSpeed(st) / (ELAN.sDive * F.J))
+		} : null;
+	};
+	//#endregion
+	exports.ASSIST = ASSIST;
+	exports.ASSIST_M3 = ASSIST_M3;
+	exports.ATT = ATT;
+	exports.CLASS_K = CLASS_K;
+	exports.FEEL = FEEL;
+	exports.FLOW = FLOW;
+	exports.G = G;
+	exports.JUMP_K = JUMP_K;
+	exports.K = K;
+	exports.LAND = LAND;
+	exports.M_PER_RIG = M_PER_RIG;
+	exports.PUSH = PUSH;
+	exports.RFLY = RFLY;
+	exports.RIDE = RIDE;
+	exports.SLOPE = SLOPE;
+	exports.SQUASH_LOOK = SQUASH_LOOK;
+	exports.STUCK = STUCK;
+	exports.TRICK = TRICK;
+	exports.TURN = TURN;
+	exports.WORLD_K = WORLD_K;
+	exports.attitude = attitude;
+	exports.createK2t = createK2t;
+	exports.createRacerFlight = createRacerFlight;
+	exports.racerAfterK2t = racerAfterK2t;
+	exports.racerDrive = racerDrive;
+	exports.racerFlightStep = racerFlightStep;
+	exports.racerLand = racerLand;
+	exports.racerTakeoff = racerTakeoff;
+	exports.stepK2t = stepK2t;
+	return exports;
+})({});
+
+/* KFB_DRIVE_END */</script>
 <script>
 (() => {
   // ---------- Paletten (Platzhalter, Cartoon) ----------
@@ -1172,7 +2268,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
 
   // ---------- Fahrzeuge (Rig-Daten wie im Spiel: kfb-vehicle-rig.r1, GLB-Raum +Z vorn, +X links, Einheit 0,58 m) ----------
   const RACERS = [{"id":"rustwing_cruiser","name":"11 Flossen-Kreuzer","box":{"c":[0.0,1.0297,0.0002],"h":[1.5573,0.9268,4.039]},"hover":[[1.0303,0.0006,2.6928],[-1.0303,0.0008,2.6928],[1.0224,0.1596,-2.6928],[-1.0224,0.1593,-2.6928]],"glow":{"core":"#ceddf3","plume":"#2ec7fa","spark":"#3d6eff"},"anchors":[{"type":"thrust","pos":[-0.002,1.471,-4.18],"dir":[0,0,-1],"r":0.305}]},{"id":"graffiti_jet_cruiser","name":"04 Graffiti-Kreuzer","box":{"c":[0.0,1.2521,0.0008],"h":[2.3429,1.1268,4.0425]},"hover":[[1.4916,0.0033,2.6956],[-1.4916,0.0015,2.6956],[1.6755,0.2762,-2.6956],[-1.6755,0.2655,-2.6956]],"glow":{"core":"#ced1f3","plume":"#2e83fa","spark":"#4d3dff"},"anchors":[{"type":"thrust","pos":[1.44,2.005,-3.842],"dir":[0.008,0.039,-0.999],"r":0.139},{"type":"thrust","pos":[-1.446,2.004,-3.842],"dir":[0.039,0.055,-0.998],"r":0.139},{"type":"thrust","pos":[0.5,1.745,-3.538],"dir":[0,0,-1],"r":0.129},{"type":"thrust","pos":[-0.51,1.749,-3.537],"dir":[0,0,-1],"r":0.126}]},{"id":"street_racer_hoverbeast","name":"13 Stra\u00dfen-Biest","box":{"c":[0.0,1.3131,0.001],"h":[2.9433,1.1819,4.0386]},"hover":[[1.1026,0.0,2.6932],[-1.1026,0.0,2.6932],[1.1954,0.3066,-2.6932],[-1.1954,0.3067,-2.6932]],"glow":{"core":"#f3cee3","plume":"#fa2ee9","spark":"#ffae3d"},"anchors":[{"type":"thrust","pos":[0.517,1.46,-3.968],"dir":[-0.014,-0.029,-0.999],"r":0.234},{"type":"thrust","pos":[-0.527,1.474,-3.967],"dir":[-0.016,0.002,-1],"r":0.234},{"type":"thrust","pos":[2.384,1.244,-2.361],"dir":[-0.002,0.005,-1],"r":0.211},{"type":"thrust","pos":[-2.384,1.243,-2.364],"dir":[0.004,0.013,-1],"r":0.214}]},{"id":"crimson_flame_dragster","name":"02 Flammen-Dragster","box":{"c":[0.0,1.4446,0.0],"h":[1.9852,1.3002,4.0339]},"hover":[[1.3574,0.0,2.6895],[-1.3574,0.0,2.6895],[1.4091,0.2132,-2.6895],[-1.4091,0.2133,-2.6895]],"glow":{"core":"#f3ddce","plume":"#fa3f2e","spark":"#ffae3d"},"anchors":[{"type":"thrust","pos":[0.813,1.493,-4.182],"dir":[-0.022,0.001,-1],"r":0.264},{"type":"thrust","pos":[-0.819,1.495,-4.179],"dir":[0.028,0.003,-1],"r":0.264},{"type":"thrust","pos":[1.661,0.946,-4.173],"dir":[-0.036,-0.008,-0.999],"r":0.267},{"type":"thrust","pos":[-1.668,0.947,-4.172],"dir":[0.038,-0.011,-0.999],"r":0.267},{"type":"thrust","pos":[-0.003,1.716,-3.671],"dir":[0,0,-1],"r":0.428}]},{"id":"crimson_thunderjet","name":"03 Donner-Jet","box":{"c":[0.0,1.3839,-0.0027],"h":[1.5471,1.2454,4.0316]},"hover":[[0.9738,0.6288,2.6895],[-0.9738,0.6315,2.6895],[1.1057,0.4151,-2.6895],[-1.1057,0.4151,-2.6895]],"glow":{"core":"#f3d7ce","plume":"#fa2e3f","spark":"#ff8e3d"},"anchors":[{"type":"thrust","pos":[0.917,2.215,-3.978],"dir":[0.172,-0.038,-0.984],"r":0.135},{"type":"thrust","pos":[-0.927,2.211,-3.975],"dir":[-0.065,0.07,-0.995],"r":0.136},{"type":"thrust","pos":[1.087,1.001,-4.025],"dir":[0.026,0.023,-0.999],"r":0.132},{"type":"thrust","pos":[-1.095,1.003,-4.025],"dir":[0.095,0.046,-0.994],"r":0.133},{"type":"thrust","pos":[1.451,1.03,-4.093],"dir":[0.224,0.248,-0.943],"r":0.076},{"type":"thrust","pos":[-1.464,1.03,-4.089],"dir":[0.067,0.378,-0.923],"r":0.074},{"type":"thrust","pos":[1.498,1.358,-4.096],"dir":[-0.09,0.551,-0.83],"r":0.069},{"type":"thrust","pos":[-1.519,1.359,-4.111],"dir":[0.293,0.428,-0.855],"r":0.091},{"type":"fan","pos":[0.859,1.509,-3.975],"dir":[-0.064,-0.021,-0.998],"r":0.254},{"type":"fan","pos":[-0.866,1.508,-3.975],"dir":[0.024,0.016,-1],"r":0.252}]},{"id":"ironclad_skycruiser","name":"06 Panzer-Gleiter","box":{"c":[0.0,1.1664,0.0012],"h":[1.8222,1.0497,4.0254]},"hover":[[1.1746,0.0654,2.685],[-1.1746,0.0651,2.685],[1.0902,0.2694,-2.685],[-1.0902,0.2722,-2.685]],"glow":{"core":"#f3eece","plume":"#fa9b2e","spark":"#ffae3d"},"anchors":[{"type":"fan","pos":[1.36,1.05,-4.034],"dir":[0.002,0.043,-0.999],"r":0.188},{"type":"fan","pos":[-1.364,1.05,-4.028],"dir":[-0.022,-0.026,-0.999],"r":0.187}]}];
-  const UNIT = 0.58, carSel = $('car');
+  const UNIT = window.KFBDrive.M_PER_RIG, carSel = $('car');   // Rig-Einheit wie im Spiel (0,616 m, V-345)
   RACERS.forEach((r) => { const o = document.createElement('option'); o.value = r.id; o.textContent = r.name.replace(/^\d+\s/, ''); carSel.appendChild(o) });
   const loader = new THREE.GLTFLoader(), cache = new Map();
   // Kontakt-AO-Pass: Props (Ebene 2) von oben weiß in eine kleine Karte, dann zweimal weichgezeichnet (ca. 1,2 m Hof)
@@ -1363,84 +2459,76 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   window.__rockc = ROCKC;
   window.__probe = { TPL, stoneGroup, propGroup, dioGroup, get amph() { return amph } }; // Prüfhilfe
   window.__syncDio();
-  $('toDio').addEventListener('click', () => { P.x = DIO.x; P.z = DIO.z - DIO.R - 32; P.yaw = 0; P.vf = 0; P.vl = 0; P.fly = false; P.vy = 0; P.y = groundAt(P.x, P.z) + C.hover; $('dioMsg').textContent = dioErr || 'Vor dem Diorama abgesetzt.'; setTimeout(() => { $('dioMsg').textContent = dioErr }, 2500) });
+  $('toDio').addEventListener('click', () => { placeCar(DIO.x, DIO.z - DIO.R - 32, 0); $('dioMsg').textContent = dioErr || 'Vor dem Diorama abgesetzt.'; setTimeout(() => { $('dioMsg').textContent = dioErr }, 2500) });
 
   // ---------- Spielzeug-Physik: Schweben mit Feder, Hangabtrieb, Sprung über Kuppen; Flug nach dem Elan-Prinzip ----------
   const TEMPO = { spiel: [31.7, 46], hyper: [97, 139], warp: [278, 333] }; // m/s: Höchsttempo, mit Boost
   const C = { hover: 0.7, vmax: 31.7, vboost: 46, acc: 13, brake: 24, rev: 8, drag: 2.2, grip: 7, g: 9.81, L: 2.2, W: 1.1 };
-  const P = { x: 0, z: 0, y: 0, vy: 0, yaw: 0, vf: 0, vl: 0, fly: false, air: false, pitch: 0, boost: 1, odo: 0, sq: 0, sqv: 0, vPitch: 0, vRoll: 0, wasBoost: false, steer: 0 };
   const groundAt = (x, z) => { const g = S.vox ? (S.voxsmooth ? voxSmooth(x, z) : voxTop(x, z)) : hgt(x, z); return S.water > 0.005 ? Math.max(g, S.water * S.amp + 0.1) : g }; // ohne Wasser keine Wasserfläche (sonst liegt sie auf flachen Talböden)
-  P.y = groundAt(0, 0) + C.hover;
-  const keys = {}; let lastSpace = 0;
-  function toggleFly() { if (!P.fly) { P.fly = true; P.pitch = 0.32; P.vf = Math.max(P.vf, 20); P.y += 0.6; P.sqv += 2 } else { P.fly = false; P.air = true; P.vy = Math.sin(P.pitch) * P.vf; P.vf *= Math.cos(P.pitch) } }
-  function resetCar() { P.fly = false; P.vf = 0; P.vl = 0; P.vy = 0; P.pitch = 0; P.y = groundAt(P.x, P.z) + C.hover }
+  // ---------- Fahren wie im Spiel (Georg 21.10.: „gleiche Controls und Physik wie in der Stage, nichts verlieren oder neu bauen“) ----------
+  // k2t (M2 Fahren + M3 Fahrhilfe: Gas/Bremse, A/D lenken, Q/E Drift, ⇧ Boost, Leertaste Sprung, X Kippen, Hang, Landung, Steckenbleiben) und
+  // Racer-Flug (Elan S2: Doppel-Leertaste in der Luft oder Rampe; W Schub, S Luftbremse, A/D gieren, Pfeil hoch/runter Nase, Leertaste steigen,
+  // Leertaste+A/D Fassrolle, ⇧ Kessel-Boost) laufen UNVERÄNDERT aus dem Spielcode (eingebettet, siehe KFB_DRIVE). Fester Takt 1/60 s wie im Spiel.
+  // Die Probe liefert nur den Boden (Höhenfeld) und Wände (zu hohe Stufen, z. B. Voxel). Einheit = J17-Meter wie im Spiel (Fahrzeug-Rig 0,616 m).
+  const KD = window.KFBDrive, DSTEP = 1 / 60, RIDE = 0.7 * KD.M_PER_RIG;   // Fahrhöhe wie M2TUNE.rideHeight (0,7 Rig)
+  const BASE = { f: { ...KD.FLOW }, e: { ...KD.FEEL } };
+  const applyTempo = () => { const T = TEMPO[S.tempo] || TEMPO.spiel, k = T[0] / TEMPO.spiel[0];   // Test-Tempo der Probe: nur die Tempi skaliert, Kurven/Drift bleiben
+    for (const n of ['accel', 'brake', 'reverseAccel', 'maxForward', 'maxReverse']) KD.FLOW[n] = BASE.f[n] * k; KD.FEEL.boostMaxForward = BASE.e.boostMaxForward * k }
+  const gN = (x, z) => { const e = 0.4 * KD.K, n = [groundAt(x - e, z) - groundAt(x + e, z), 2 * e, groundAt(x, z - e) - groundAt(x, z + e)], l = Math.hypot(...n); return [n[0] / l, n[1] / l, n[2] / l] };
+  const DENV = {
+    ground: (x, z) => { const g = groundAt(x, z); return { y: g + RIDE, n: gN(x, z), floor: g + RIDE } },
+    sweep: (from, delta) => { const tx = from[0] + delta[0], tz = from[2] + delta[2], base = from[1] - RIDE, g = groundAt(tx, tz); const h = Math.hypot(delta[0], delta[2])
+      if (h > 1e-6 && g - base > 1.2) { const n = [-delta[0] / h, 0, -delta[2] / h]; return { delta: [0, delta[1], 0], hit: true, n, soft: false, ride: false } }   // Stufe höher als 1,2 m = Wand
+      return { delta, hit: false, n: null, soft: false, ride: false } },
+    home: () => ({ x: P.x, y: groundAt(P.x, P.z) + RIDE, z: P.z, yaw: P.yaw }),
+  };
+  const FENV = { ground: (x, z) => DENV.ground(x, z).y, sweep: DENV.sweep };
+  let D = KD.createK2t(0, groundAt(0, 0) + RIDE, 0, 0), F = KD.createRacerFlight(KD.K / KD.WORLD_K, KD.G), dAcc = 0;
+  const NOSE = { up: false, down: false };
+  const P = { x: 0, z: 0, y: D.y, vy: 0, yaw: 0, vf: 0, vl: 0, fly: false, air: false, pitch: 0, boost: 1, odo: 0, sq: 0, vPitch: 0, vRoll: 0, steer: 0, thrust: 0, boosting: false };
+  function placeCar(x, z, yaw = P.yaw) { D = KD.createK2t(x, groundAt(x, z) + RIDE, z, yaw); F = KD.createRacerFlight(KD.K / KD.WORLD_K, KD.G); dAcc = 0; syncP(0) }
+  function resetCar() { placeCar(P.x, P.z, P.yaw) }
+  const keys = {};
   const typing = (t) => t && (t.tagName === 'SELECT' || t.tagName === 'TEXTAREA' || (t.tagName === 'INPUT' && t.type !== 'range' && t.type !== 'checkbox'));
   window.addEventListener('keydown', (e) => {
     if (mode !== 'drive' || typing(e.target)) return;
-    if (['Space', 'KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) e.preventDefault();
+    if (['Space', 'KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyQ', 'KeyE', 'KeyX', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) e.preventDefault();
+    if (e.code === 'ArrowUp' || e.code === 'KeyW') NOSE.up = e.code === 'ArrowUp'; if (e.code === 'ArrowDown' || e.code === 'KeyS') NOSE.down = e.code === 'ArrowDown';   // wie im Spiel: zuletzt gedrückt entscheidet Schub/Nase
     if (e.repeat) return; keys[e.code] = true;
-    if (e.code === 'Space') { const now = performance.now(); if (now - lastSpace < 400) { toggleFly(); lastSpace = 0 } else { lastSpace = now; if (!P.fly && !P.air) { P.vy = 7.5; P.air = true; P.sqv -= 2.5 } } }
-    if (e.code === 'KeyF') toggleFly();
     if (e.code === 'KeyR') resetCar();
   });
   window.addEventListener('keyup', (e) => { keys[e.code] = false });
   window.addEventListener('blur', () => { for (const k in keys) keys[k] = false });
-
+  function syncP(dt) {
+    const px = P.x, pz = P.z; P.x = D.x; P.z = D.z; P.y = D.y; P.yaw = D.yaw; P.vf = D.speed; P.vl = D.latV || 0; P.vy = D.vy || 0; P.air = !!D.air; P.fly = !!F.st
+    P.odo += Math.hypot(P.x - px, P.z - pz); P.sq = -0.18 * (D.squash || 0)   // Knet-Squash aus k2t (SQUASH_LOOK y)
+    const at = KD.attitude ? KD.attitude(D) : null, tp = at?.pitch ?? D.pitch ?? 0, tr = at?.roll ?? D.roll ?? 0
+    const u = D.up || [0, 1, 0], fx = Math.sin(D.yaw), fz = Math.cos(D.yaw), lx = Math.cos(D.yaw), lz = -Math.sin(D.yaw)
+    const gp = Math.atan2(u[0] * fx + u[2] * fz, u[1]), gr = Math.atan2(u[0] * lx + u[2] * lz, u[1])   // Bodenneigung aus der Wagen-Normale
+    const k = dt ? Math.min(1, dt * 12) : 1; P.vPitch += ((P.fly ? -tp : gp - tp) - P.vPitch) * k; P.vRoll += ((P.fly ? tr : -gr + tr) - P.vRoll) * k
+  }
   function step(dt) {
-    const fx = Math.sin(P.yaw), fz = Math.cos(P.yaw), lx = Math.cos(P.yaw), lz = -Math.sin(P.yaw);
-    const thr = keys.KeyW || keys.ArrowUp ? 1 : 0, brk = keys.KeyS || keys.ArrowDown ? 1 : 0;
-    const steer = ((keys.KeyA || keys.ArrowLeft) ? 1 : 0) - ((keys.KeyD || keys.ArrowRight) ? 1 : 0);
-    P.steer += (steer - P.steer) * Math.min(1, dt * 8);
-    const boosting = (keys.ShiftLeft || keys.ShiftRight) && P.boost > 0.02;
-    P.boost = Math.max(0, Math.min(1, P.boost + (boosting ? -0.22 : 0.1) * dt));
-    if (boosting && !P.wasBoost) { P.sq -= 0.08; P.sqv += 3.2 } P.wasBoost = boosting;
-    if (!P.fly) {
-      const T = TEMPO[S.tempo] || TEMPO.spiel, vmax = boosting ? T[1] : T[0], ak = T[0] / C.vmax;
-      if (thr) P.vf += (P.vf < vmax ? C.acc * ak * (boosting ? 1.7 : 1) : -C.drag * 3 * ak) * dt;
-      else if (brk) P.vf -= (P.vf > 0.2 ? C.brake : (P.vf > -C.rev ? C.acc * 0.6 : 0)) * dt;
-      else P.vf -= Math.sign(P.vf) * Math.min(Math.abs(P.vf), C.drag * dt);
-      const gF = groundAt(P.x + fx * C.L, P.z + fz * C.L), gB = groundAt(P.x - fx * C.L, P.z - fz * C.L);
-      if (!P.air) P.vf -= C.g * ((gF - gB) / (2 * C.L)) * 0.7 * dt;
-      const turn = P.steer * (1.7 - 0.9 * Math.min(1, Math.abs(P.vf) / 35)) * Math.min(1, Math.abs(P.vf) / 4) * (P.vf < 0 ? -1 : 1);
-      P.yaw += turn * dt * (P.air ? 0.5 : 1);
-      P.vl += -turn * P.vf * 0.06 * dt; P.vl *= Math.exp(-(P.air ? 0.4 : C.grip) * dt);
-      const nx = P.x + (fx * P.vf + lx * P.vl) * dt, nz = P.z + (fz * P.vf + lz * P.vl) * dt, gN = groundAt(nx, nz);
-      if (gN - (P.y - C.hover) > 1.8 && !P.air) { P.vf *= -0.3; P.vl *= -0.3; P.sqv -= 2 } // Wand: abprallen
-      else { P.odo += Math.hypot(nx - P.x, nz - P.z); P.x = nx; P.z = nz }
-      const gC = groundAt(P.x, P.z), target = Math.max(gC, (gF + gB) / 2) + C.hover;
-      if (P.air || P.y > target + 0.3) { P.vy -= C.g * dt; P.air = P.y > target + 0.05 || P.vy > 0 } else { P.vy += (55 * (target - P.y) - 10 * P.vy) * dt }
-      P.y += P.vy * dt;
-      if (P.y < target - 0.35) { if (P.vy < -5) P.sqv -= Math.min(4, -P.vy * 0.25); P.y = target - 0.35; P.vy = Math.max(P.vy, 0); P.air = false }
-      const gLf = groundAt(P.x + lx * C.W, P.z + lz * C.W), gRt = groundAt(P.x - lx * C.W, P.z - lz * C.W);
-      const pT = P.air ? Math.atan2(P.vy, Math.max(4, Math.abs(P.vf))) * 0.5 : Math.atan2(gF - gB, 2 * C.L);
-      const rT = (P.air ? 0 : Math.atan2(gLf - gRt, 2 * C.W)) - P.steer * Math.min(1, Math.abs(P.vf) / 25) * 0.18;
-      P.vPitch += (pT - P.vPitch) * Math.min(1, dt * 8); P.vRoll += (rT - P.vRoll) * Math.min(1, dt * 6);
-    } else {
-      P.pitch = Math.max(-1.1, Math.min(1.0, P.pitch + (brk - thr) * 1.1 * dt));
-      const Tf = TEMPO[S.tempo] || TEMPO.spiel, dk = 0.0035 * (31.7 / Tf[0]) ** 2; // Luftwiderstand passt sich dem Test-Tempo an
-      P.vf += (-C.g * Math.sin(P.pitch) - dk * P.vf * P.vf + (boosting ? 16 * Tf[0] / 31.7 : 0)) * dt;
-      if (P.vf < 9) P.pitch -= (9 - P.vf) * 0.22 * dt; // Strömungsabriss: Nase fällt
-      P.vf = Math.max(0, P.vf);
-      P.yaw += P.steer * 1.15 * dt;
-      const h = P.vf * Math.cos(P.pitch), nx = P.x + fx * h * dt, nz = P.z + fz * h * dt;
-      P.odo += h * dt; P.x = nx; P.z = nz; P.y += P.vf * Math.sin(P.pitch) * dt;
-      const g = groundAt(P.x, P.z);
-      if (P.y < g + C.hover) { if (P.pitch > -0.45) { P.fly = false; P.air = false; P.vy = 0; P.vf *= Math.cos(P.pitch); P.pitch = 0; P.sqv -= 2.5 } else { P.vf *= 0.45; P.pitch = 0.25; P.sqv -= 4 } P.y = g + C.hover }
-      P.y = Math.min(P.y, g + 450);
-      P.vPitch += (P.pitch - P.vPitch) * Math.min(1, dt * 10); P.vRoll += (-P.steer * 0.55 - P.vRoll) * Math.min(1, dt * 5);
-    }
-    // Cartoon-Feder: Stauchen und Strecken (Volumen bleibt)
-    P.sqv += (-90 * P.sq - 9 * P.sqv) * dt; P.sq += P.sqv * dt; P.sq = Math.max(-0.25, Math.min(0.3, P.sq));
-    P.thrust = P.fly ? 0.45 + (boosting ? 0.55 : 0) : thr * 0.7 + (boosting ? 0.5 : 0) + 0.15; P.boosting = boosting;
+    applyTempo();
+    const fin = { gas: !!(keys.KeyW || keys.ArrowUp), brake: !!(keys.KeyS || keys.ArrowDown), left: !!(keys.KeyA || keys.ArrowLeft), right: !!(keys.KeyD || keys.ArrowRight),
+      jump: !!keys.Space, boost: !!(keys.ShiftLeft || keys.ShiftRight), noseUp: !!(keys.ArrowUp && NOSE.up), noseDown: !!(keys.ArrowDown && NOSE.down), mousePitch: null }
+    P.steer += ((fin.left ? 1 : 0) - (fin.right ? 1 : 0) - P.steer) * Math.min(1, dt * 8);
+    dAcc = Math.min(dAcc + dt, 0.25)
+    while (dAcc >= DSTEP) { dAcc -= DSTEP
+      const flew = KD.racerFlightStep(F, D, fin, DSTEP, FENV)
+      if (!flew) { KD.stepK2t(D, { gas: fin.gas, brake: fin.brake, left: fin.left, right: fin.right, driftL: !!keys.KeyQ, driftR: !!keys.KeyE, boost: fin.boost, jump: fin.jump, tip: !!keys.KeyX }, DSTEP, DENV); KD.racerAfterK2t(F, D) }
+      if (!Number.isFinite(D.x + D.y + D.z)) { placeCar(P.x, P.z); break } }
+    syncP(dt)
+    const dr = KD.racerDrive(F, fin); P.boosting = dr ? !!dr.boost : fin.boost; P.boost = F.st ? Math.max(0, Math.min(1, (F.st.P ?? 1))) : 1
+    P.thrust = P.fly ? 0.45 + (P.boosting ? 0.55 : 0) : (fin.gas ? 0.7 : 0) + (P.boosting ? 0.5 : 0) + 0.15;
   }
 
   // ---------- Kamera ----------
   let mode = 'over', yaw = 0.8, pitch = 0.5, dist = 60, look = 0;
-  window.__hgt = (x, z) => hgt(x, z); window.__RINGS = RINGS; window.__terrain = terrain; window.__S = S; window.__probeCam = (y, p, d) => { yaw = y; pitch = p; dist = d }; window.__probeTP = (x, z) => { P.x = x; P.z = z; P.vf = 0; P.fly = false; P.y = groundAt(x, z) + C.hover }; // Prüfhilfe (feste Kameras für Bildvergleiche)
+  window.__hgt = (x, z) => hgt(x, z); window.__RINGS = RINGS; window.__terrain = terrain; window.__S = S; window.__probeCam = (y, p, d) => { yaw = y; pitch = p; dist = d }; window.__probeTP = (x, z) => placeCar(x, z); window.__probeDrive = () => ({ D, F, P }); // Prüfhilfe (feste Kameras für Bildvergleiche)
   const camOver = $('camOver'), camDrive = $('camDrive'), hint = $('hint');
   function setMode(m) {
     mode = m; camOver.setAttribute('aria-pressed', m === 'over'); camDrive.setAttribute('aria-pressed', m === 'drive');
-    hint.textContent = m === 'over' ? 'Ziehen: drehen · Rad/zwei Finger: zoomen' : 'W/A/S/D fahren · ⇧ Boost · 2× Leertaste fliegen · Ziehen: umschauen';
+    hint.textContent = m === 'over' ? 'Ziehen: drehen · Rad/zwei Finger: zoomen' : 'W/S Gas/Bremse · A/D lenken · Q/E Driften · ⇧ Boost · Leertaste springen, in der Luft 2× fliegen · Pfeile Nase · R zurück';
     if (m === 'drive') { look = 0; if (document.activeElement && document.activeElement !== document.body) document.activeElement.blur() }
   }
   camOver.addEventListener('click', () => setMode('over')); camDrive.addEventListener('click', () => setMode('drive'));
@@ -1491,7 +2579,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     for (const R of RINGS) { const rx = Math.floor(P.x / R.step) * R.step, rz = Math.floor(P.z / R.step) * R.step; R.u.uOffset.value.set(rx, rz); R.m.position.set(rx - P.x, 0, rz - P.z) } water.visible = S.water > 0.005;
     worldRoot.position.set(-P.x, 0, -P.z);
     if (ROCKC.dirty || Math.hypot(P.x - ROCKC.cx, P.z - ROCKC.cz) > 40) buildRocks(P.x, P.z);
-    carRoot.position.set(0, P.y - C.hover * 0.55, 0); carRoot.rotation.y = P.yaw;
+    carRoot.position.set(0, P.y, 0);   // wie im Spiel: Ursprung = Unterseite auf Fahrhöhe carRoot.rotation.y = P.yaw;
     tilt.rotation.set(-P.vPitch, 0, P.vRoll);
     const s = P.sq; squash.scale.set(1 / Math.sqrt(1 + s), 1 / Math.sqrt(1 + s), 1 + s);
     const t = now / 1000;
@@ -1545,7 +2633,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (FLARE.update(dt)) { renderer.autoClear = false; renderer.render(FLARE.sc, FLARE.cam); renderer.autoClear = true }
     frames++; if (now - fpsT > 500) { $('hudFps').textContent = `${Math.round(frames * 1000 / (now - fpsT))} fps`; frames = 0; fpsT = now }
     $('hudSpeed').textContent = `${Math.round(Math.abs(P.vf) * 3.6)} km/h`;
-    const alt = Math.max(0, P.y - C.hover - groundAt(P.x, P.z));
+    const alt = Math.max(0, P.y - RIDE - groundAt(P.x, P.z));
     $('hudMode').textContent = loading ? 'Racer lädt …' : loadErr ? 'Fehler' : P.fly ? `Flug · ${Math.round(alt)} m` : P.air ? `Sprung · ${alt.toFixed(1).replace('.', ',')} m` : 'Boden';
     $('hudBoost').textContent = `Boost ${Math.round(P.boost * 100)} %`;
     $('hudDist').textContent = `${(P.odo / 1000).toFixed(1).replace('.', ',')} km`;
