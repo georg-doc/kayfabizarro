@@ -218,7 +218,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
-<script>/* KFB_DRIVE_BEGIN · Fahrphysik aus dem Spiel, unverändert gebündelt (kfb-planet-t439 @c506bab: m2/k2t.js, m2/racerFlight.js, m1/elan.js, camera/followCam.js; three = globales THREE) */
+<script>/* KFB_DRIVE_BEGIN · Fahrphysik aus dem Spiel, unverändert gebündelt (kfb-planet-t439 @eac5cb0: m2/k2t.js, m2/racerFlight.js, m1/elan.js, camera/followCam.js; three = globales THREE) */
 var KFBDrive = (function(exports, three) {
 	Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 	//#region \0rolldown/runtime.js
@@ -2799,7 +2799,15 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   // ---------- Spielzeug-Physik: Schweben mit Feder, Hangabtrieb, Sprung über Kuppen; Flug nach dem Elan-Prinzip ----------
   const TEMPO = { spiel: [31.7, 46], hyper: [97, 139], warp: [278, 333] }; // m/s: Höchsttempo, mit Boost
   const C = { hover: 0.7, vmax: 31.7, vboost: 46, acc: 13, brake: 24, rev: 8, drag: 2.2, grip: 7, g: 9.81, L: 2.2, W: 1.1 };
-  const groundAt = (x, z) => { const g = S.vox ? (S.voxsmooth ? voxSmooth(x, z) : voxTop(x, z)) : hgt(x, z); return S.water > 0.005 ? Math.max(g, S.water * S.amp + 0.1) : g }; // ohne Wasser keine Wasserfläche (sonst liegt sie auf flachen Talböden)
+  /* Boden = gezeichnete Fläche (Georg 21.10.: Wagen steckte in Hügeln): das Gelände ist ein Dreiecksgitter mit 2,34 m Kante; in Mulden liegen die Dreiecke
+     über der glatten Formel (Wagen sank ein), auf Kuppen darunter (schwebte). Darum dieselbe Interpolation wie der Grafikchip (PlaneGeometry: Diagonale u+v=1);
+     Eckhöhen je Bild zwischengespeichert (Leeren am Anfang von frame). */
+  const MH = new Map(), MS = SIZE / SEG;
+  const mhv = (i, k) => { const key = i * 65536 + k; let h = MH.get(key); if (h === undefined) { h = hgt(i * MS, k * MS); MH.set(key, h) } return h };
+  const meshH = (x, z) => { const fx = x / MS, fz = z / MS, i = Math.floor(fx), k = Math.floor(fz), u = fx - i, v = fz - k, ha = mhv(i + 1, k), hb = mhv(i, k + 1)
+    if (u + v <= 1) { const h0 = mhv(i, k); return h0 + (ha - h0) * u + (hb - h0) * v } const h1 = mhv(i + 1, k + 1); return h1 + (hb - h1) * (1 - u) + (ha - h1) * (1 - v) };
+  window.__meshH = meshH;
+  const groundAt = (x, z) => { const g = S.vox ? (S.voxsmooth ? voxSmooth(x, z) : voxTop(x, z)) : meshH(x, z); return S.water > 0.005 ? Math.max(g, S.water * S.amp + 0.1) : g }; // ohne Wasser keine Wasserfläche (sonst liegt sie auf flachen Talböden)
   // ---------- Fahren wie im Spiel (Georg 21.10.: „gleiche Controls und Physik wie in der Stage, nichts verlieren oder neu bauen“) ----------
   // k2t (M2 Fahren + M3 Fahrhilfe: Gas/Bremse, A/D lenken, Q/E Drift, ⇧ Boost, Leertaste Sprung, X Kippen, Hang, Landung, Steckenbleiben) und
   // Racer-Flug (Elan S2: Doppel-Leertaste in der Luft oder Rampe; W Schub, S Luftbremse, A/D gieren, Pfeil hoch/runter Nase, Leertaste steigen,
@@ -2827,13 +2835,18 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   const HV = { a: new THREE.Vector3(), b: new THREE.Vector3(), n: new THREE.Vector3(), p: [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()] }
   const LIFT = { key: null, pts: [], v: new THREE.Vector3(), y: 0 };
   function liftPoints() { /* Unterseite als 7×11 Raster: je Zelle der tiefste Modellpunkt im Wagen-Raum (ohne Glühen/Schatten) */
-    carRoot.updateMatrixWorld(true); const inv = new THREE.Matrix4().copy(carRoot.matrixWorld).invert(), v = new THREE.Vector3(), all = []
+    carRoot.updateMatrixWorld(true); const inv = new THREE.Matrix4().copy(carHolder.matrixWorld).invert(), v = new THREE.Vector3(), all = []   /* im Modell-Raum: Punkte neigen sich mit (Lage, Squash, Wippen) */
     carHolder.traverse((o) => { if (!o.isMesh || !o.visible || !o.geometry?.attributes?.position) return; const pa = o.geometry.attributes.position, st = Math.max(1, Math.floor(pa.count / 6000))
       for (let i = 0; i < pa.count; i += st) { v.fromBufferAttribute(pa, i).applyMatrix4(o.matrixWorld).applyMatrix4(inv); all.push(v.clone()) } })
     if (!all.length) return []; const bb = new THREE.Box3().setFromPoints(all), NX = 7, NZ = 11, cell = new Array(NX * NZ).fill(null)
     for (const p of all) { const i = Math.min(NX - 1, Math.floor((p.x - bb.min.x) / (bb.max.x - bb.min.x + 1e-6) * NX)), k = Math.min(NZ - 1, Math.floor((p.z - bb.min.z) / (bb.max.z - bb.min.z + 1e-6) * NZ)), c = i * NZ + k
       if (!cell[c] || p.y < cell[c].y) cell[c] = p }
-    return cell.filter(Boolean) }
+    /* Zellecken statt Zellpunkt (am Steilhang ragte sonst ein anderer Punkt derselben Zelle hinein): jede Ecke liegt auf der tiefsten Höhe der angrenzenden Zellen */
+    const out = [], dx = (bb.max.x - bb.min.x) / NX, dz = (bb.max.z - bb.min.z) / NZ
+    for (let i = 0; i <= NX; i++) for (let k = 0; k <= NZ; k++) { let y = Infinity
+      for (const [a, b] of [[i - 1, k - 1], [i - 1, k], [i, k - 1], [i, k]]) if (a >= 0 && b >= 0 && a < NX && b < NZ && cell[a * NZ + b]) y = Math.min(y, cell[a * NZ + b].y)
+      if (y < Infinity) out.push(new THREE.Vector3(bb.min.x + i * dx, y, bb.min.z + k * dz)) }
+    return out }
   const DENV = {
     ground: (x, z) => { const hv = carInfo?.hover; let gc = surfAt(x, z)
       if (!hv || hv.length < 4) return { y: gc + RIDE, n: gN(x, z), floor: gc + RIDE }
@@ -2935,7 +2948,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
 
   // ---------- Kamera ----------
   let mode = 'over', yaw = 0.8, pitch = 0.5, dist = 60, look = 0;
-  window.__hgt = (x, z) => hgt(x, z); window.__RINGS = RINGS; window.__terrain = terrain; window.__S = S; window.__probeCam = (y, p, d) => { yaw = y; pitch = p; dist = d }; window.__probeTP = (x, z) => placeCar(x, z); window.__probeDrive = () => ({ D, F, P, carRoot, tilt, camera, OBST, DENV, OB, placeCar }); // Prüfhilfe (feste Kameras für Bildvergleiche)
+  window.__hgt = (x, z) => hgt(x, z); window.__LIFT = LIFT; window.__RINGS = RINGS; window.__terrain = terrain; window.__S = S; window.__probeCam = (y, p, d) => { yaw = y; pitch = p; dist = d }; window.__probeTP = (x, z) => placeCar(x, z); window.__probeDrive = () => ({ D, F, P, carRoot, tilt, camera, OBST, DENV, OB, placeCar }); // Prüfhilfe (feste Kameras für Bildvergleiche)
   const camOver = $('camOver'), camDrive = $('camDrive'), hint = $('hint');
   function setMode(m) {
     mode = m; camOver.setAttribute('aria-pressed', m === 'over'); camDrive.setAttribute('aria-pressed', m === 'drive');
@@ -2983,6 +2996,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     LP.setPools(neu ? pools : []) }
   let FLOWT = 0;
   function frame(now) {
+    MH.clear();   /* Eckhöhen nur je Bild merken: Regler ändern das Gelände jederzeit */
     const dt = Math.min(0.1, (now - last) / 1000); last = now;
     acc += dt; while (acc >= 1 / 120) { step(1 / 120); acc -= 1 / 120 }
     const sx = Math.floor(P.x / STEP) * STEP, sz = Math.floor(P.z / STEP) * STEP;
@@ -3012,7 +3026,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
        in der gezeichneten Lage gegen den Boden geprüft; ragt eine Ecke (Flügel, Bug) hinein, hebt die Darstellung den Wagen an – sofort hoch, sanft zurück. Physik bleibt k2t. */
     if (carHolder && carInfo) { if (LIFT.key !== carInfo) { LIFT.key = carInfo; LIFT.pts = liftPoints() }
       carRoot.updateMatrixWorld(true); let pen = 0
-      for (const p of LIFT.pts) { LIFT.v.copy(p).applyMatrix4(carRoot.matrixWorld); pen = Math.max(pen, surfAt(LIFT.v.x + P.x, LIFT.v.z + P.z) + 0.04 - LIFT.v.y) }
+      for (const p of LIFT.pts) { LIFT.v.copy(p).applyMatrix4(carHolder.matrixWorld); pen = Math.max(pen, surfAt(LIFT.v.x + P.x, LIFT.v.z + P.z) + 0.04 - LIFT.v.y) }
       LIFT.y = pen > LIFT.y ? pen : LIFT.y + (pen - LIFT.y) * Math.min(1, dt * 5); carRoot.position.y += LIFT.y }
     updateSpeedlines(dt, t); CARDS.update(dt, t);
     if (mode === 'over') {
