@@ -432,3 +432,14 @@ Das Gate lässt das durch, weil es solche Muster nicht als Slop kennt.
 - Gate-Kandidaten (für WS0, nicht umgesetzt):
   - „Congratulations“ und „of course“ im Outro als REVIEW;
   - Kommentar-Post nach mehr als einem Drittel der Karten als WARN.
+
+## §18 · 20.10.2026 · Zurück zum Golden Sample (take05) – BBBW r7a als Probe
+**Georg:** Pures Vorlesen ist die alte FAIL-Richtung. Gefordert sind Connective Flow, Mini-Brücken, Insider-Callbacks und Cadence. Dafür gibt es schon das Golden Sample `OPENER_ARC_R2/epistemic_sabotage.take05.final.suno.txt`.
+
+**WS-Song:** Ich hatte take05 und SONG_SPEC_R3 §B6/B7/C9 nicht als Grundlage genommen; das war ein Regress.
+
+**BBBW r7a:** im take05-Takt gebaut, Gate PASS, 1961 Zeichen, 24 Karten, Eigentext 17 %.
+- Kartenzeilen im Telegrammstil, Mini-Opener mit 1–4 Wörtern (Click, SMACK!, THUD., Too much/Too little, Ow. For real., Shh., Two point nine nine.).
+- Beat 1 = Titel + These, Outro = Rückruf auf das Intro.
+
+**Nächster Schritt:** Georgs Urteil zu r7a. Danach Metropolis und Protopia im selben Takt.

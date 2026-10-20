@@ -1,0 +1,174 @@
+{
+ "deckId": "big_bad_brain_wrestling",
+ "revision": "r7a",
+ "performers": [
+  {
+   "model": "ActionFigure",
+   "asset": "KayKit_Mystery_Series6/6 - December 2023 - Action Figure · Köpfe B/C/D",
+   "role": "Wrestling-Actionfigur mit austauschbaren Köpfen = Gimmicks"
+  }
+ ],
+ "residentHome": "Spielzeugkiste als Ring, Pappschilder an den Seilen",
+ "structure": "golden take05 cadence: telegram card lines (name + fragment from card words), mini-openers of 1-4 words on about a third of the cards (reactions, sound cues, callbacks), no explaining bridges; action figure with swappable heads (Click motif); beat 1 title + thesis, outro = short callback",
+ "introType": "found_object",
+ "synopsis": "A spoken-word number from a card deck about the psychology of professional wrestling. It is performed by a toy wrestling figure inside its toy box, for whoever happens to be there.",
+ "bestOfReason": [
+  "Heads 1-4: the gimmicks on one body; the jobber is his own head.",
+  "8: size lie.",
+  "Selling 9, 13, 14, 11, 10: the craft of the lie, too much and too little.",
+  "Mask 17, 18.",
+  "Who decides 45, 46, 36: booker, spot caller, cue card.",
+  "Audience 49, 30, 31, 53: camera, empty arena, fake crowd, armchair experts.",
+  "Reality 35, 55: the real injury and the police that hides it.",
+  "Finish 41, 42, 56."
+ ],
+ "omitted": {
+  "5-8": "big-body archetypes repeat the roster joke",
+  "10": "overlaps 43-style dominance",
+  "12": "too technical",
+  "15-16": "repeat the sound lie of 13",
+  "18-21": "brutality catalogue",
+  "23-29": "cut for length; 29 overlaps the tweener",
+  "32-34": "plant, shooter, sandbag cut so 35 carries 'real'",
+  "36-40": "cut for length",
+  "43-44": "endings not used",
+  "47-48": "overlap 46",
+  "50-54": "cut for length"
+ },
+ "orderReason": "Deck order kept except: the oversell clown 11 comes after the stomp punch as the overdone counterexample; the jobber's power returns as the final card beat.",
+ "songLineChanges": [
+  {
+   "cardNumber": 42,
+   "rule": "A7",
+   "songLine": "kicking out at two point nine nine, crowd vertical",
+   "reason": "2.99 from the card image written out"
+  }
+ ],
+ "cues": [
+  {
+   "afterBeat": 1,
+   "cue": "toy box lid creaks"
+  },
+  {
+   "afterBeat": 4,
+   "cue": "plastic click at every head swap"
+  }
+ ],
+ "beats": [
+  "Big Bad Brain Wrestling: every move a lie, every bruise for real.",
+  "Action figure, four heads, one cardboard ring.",
+  {
+   "card": 1,
+   "pre": "Click.",
+   "text": "The Babyface, high-flying moves; audiences cheer, a slave to approval."
+  },
+  {
+   "card": 2,
+   "pre": "Click, sneer:",
+   "text": "The Heel, bear hugs and eye pokes; if they aren't booing, you aren't doing your job."
+  },
+  {
+   "card": 3,
+   "text": "The Tweener, crowd split; you don't ask for it, so they want you more."
+  },
+  {
+   "card": 4,
+   "pre": "My own head:",
+   "text": "The Jobber, isolated and picked apart; you exist to make the other guy look good."
+  },
+  {
+   "card": 8,
+   "text": "The Little Giant, tiny ant hoisting enormous elephant; defying the physics of size."
+  },
+  {
+   "card": 9,
+   "pre": "Teach me:",
+   "text": "The Master Seller, reel back, limp to the ring, make them believe."
+  },
+  {
+   "card": 13,
+   "pre": "SMACK!",
+   "text": "The Thigh Slap, a loud sound suggests high impact; an audio lie."
+  },
+  {
+   "card": 14,
+   "pre": "THUD.",
+   "text": "The Stomp Punch, kinetic misdirection."
+  },
+  {
+   "card": 11,
+   "pre": "Too much:",
+   "text": "The Oversell Clown, flying backwards from a gentle tap."
+  },
+  {
+   "card": 10,
+   "pre": "Too little:",
+   "text": "The No-Sell Monster, sit right back up; remove all tension for ego."
+  },
+  {
+   "card": 17,
+   "text": "The Sacred Mask, the single biggest identifier; never remove it."
+  },
+  {
+   "card": 18,
+   "text": "The Rudo Ripper, attempt to maim the mask; heat-generating garbage."
+  },
+  {
+   "card": 45,
+   "pre": "Strings up:",
+   "text": "The Booker, spider in suit; the ending is pre-planned, you are just a puppet."
+  },
+  {
+   "card": 46,
+   "text": "The Spot Caller, a basic outline, filled in with sweat."
+  },
+  {
+   "card": 36,
+   "text": "The Cue Card Holder, short cuts for out-of-depth wrestlers."
+  },
+  {
+   "card": 49,
+   "text": "The Hard Cam, if the camera didn't see it, it didn't happen."
+  },
+  {
+   "card": 30,
+   "pre": "Nobody home.",
+   "text": "The Empty Arena, pausing for a pop that never comes."
+  },
+  {
+   "card": 31,
+   "text": "The Green Screen Crowd, chameleons pretending to be crowd; audio sweetening on a lie."
+  },
+  {
+   "card": 53,
+   "text": "The Internet Smark, psychology without ever taking a bump."
+  },
+  {
+   "card": 35,
+   "pre": "Ow. For real.",
+   "text": "The Real Injury, Goldberg's shoulder, the ring-post; the crowd goes nuts because it's real."
+  },
+  {
+   "card": 55,
+   "pre": "Shh.",
+   "text": "The Kayfabe Police, keep the secrets secret, or get fired."
+  },
+  {
+   "tag": "Bell"
+  },
+  {
+   "card": 41,
+   "text": "The Finisher, the Leg Drop; if this hits, go home."
+  },
+  {
+   "card": 42,
+   "pre": "Two point nine nine.",
+   "text": "The False Finish, the art of the near-fall."
+  },
+  {
+   "card": 56,
+   "text": "The Retirement Match, rising, and falling; see you next season."
+  },
+  "Click. Four heads, one body. Every bruise for real."
+ ]
+}
