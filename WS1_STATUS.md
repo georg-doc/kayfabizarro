@@ -3,6 +3,49 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 104 · 20.10. · Georgs Look-Feedback umgesetzt (Farbflächen, Berge, Schattensaum) · Recherche liegt in `CANON_3D/sources/` · „Banden“: Georg weiß es nicht
+
+**Abstimmung (Georg: „alle Regeln und Updates an WS0 bei GitHub – stimmt euch ab“):**
+- Im Register-Branch liegt Commit `eff8323e`, nur neue Dateien in `CANON_3D/sources/`:
+  - `WS1_R1_…`, `WS1_R2_…`, `WS1_R3_…`, `WS1_R4_…`, `WS1_R10_…`, `WS1_R11_…_R1.md`;
+  - `WS1_GEORG_LOOK_FEEDBACK_2026-10-20.md`: Georgs Feedback vom 20.10. in Kurzform. Es enthält die Regeln aus seinem Web-Chat, die im Kanon noch fehlen (Vordergrund-Tonmasse, farbige Kanten, Schattenfamilie je Biom).
+- `MANIFEST.tsv` und `CANON_3D_R1.md` habe ich **nicht** angefasst. Die Übernahme in den Kanon macht WS0.
+
+**„Banden“ in #439:**
+- Georg weiß nicht, was gemeint ist. Seine Vermutung: die Joyride-Race-Track-Banden oder das Fahren an Wänden.
+- Bitte WS0, die Quelle selbst festzumachen. Bis dahin baut WS1 keine Banden- oder Rampen-Geometrie.
+- In Georgs Web-Chat vom 19.10. stehen nur „Höhenbänder/Farbbänder/Bandenkanten“; siehe §103.
+
+**Georgs Urteil (Screenshots) und was WS1 daraus gemacht hat** (Probe: https://ws1-preview.kayfabizarro.pages.dev/gelaende-probe, Stand `ws1/preview@9e506e2e`):
+
+1. **Farbflächen:** „keine organischen, fließenden Formen, wie sie ein Cartoon-/Comiczeichner verwenden würde; keine Schnittkanten, keine langgezogenen Zungen“.
+   - Ursache: Schwellwert-Rauschen mit Domain Warp bildet Mäander, Hälse und Zungen. Zusätzlich gab es an der Hangkante einen harten Wechsel zur Felsfarbe (Schnittlinie).
+   - Neu: geschlossene Blob-Formen. Je Zelle höchstens ein Blob, Ellipse höchstens 1 : 1,25, sanfte Beulen über Richtungsrauschen (ohne Naht). Nachbarn verschmelzen per smooth-min zu satten Klecksen (k = 0,45 r).
+   - Vier Ebenen: groß 120 m, mittel 64 m, klein 28 m, dazu Tupfen 6,5 m, die in Nestern gehäuft stehen.
+   - Am Hang läuft die Fläche weiter und wird nur weich felsiger und dunkler; keine harte Kante mehr.
+   - **Regelvorschlag K-F1:** Farbflächen sind geschlossene konvexe bis leicht gebeulte Formen mit Seitenverhältnis ≤ 1,25 und Halsbreite ≥ 0,5 × kleiner Radius; keine Fläche entsteht als Rausch-Schwelle. Hangwechsel nur über Wert und Farbton, nie über eine Kante.
+2. **Berge:** „die unnatürlich zackigen Berge vermeiden, mit Etherington-Stein-Konzepten“. Neuer Schalter „Berge rund“:
+   - Grate mit weichem |n| (`sqrt(n² + 0,06)`), höchstens 4 Grat-Oktaven und Verstärkung 0,45;
+   - Schichten abwechselnd dick und dünn (1,3 / 0,7, R2-N4), wellig geneigt, Kanten gerundet (w ≥ 0,3);
+   - das Licht folgt der Formnormalen über ca. 6 m statt jeder Delle; dadurch sägen die Dreiecke keine Licht-Scherben mehr in die Hänge (sie waren die Hauptursache der Zacken);
+   - Stufenlicht mit weicheren Übergängen.
+   - **Felsgruppen an Hängen** (prozedural um das Auto, `InstancedMesh`):
+     - Dreiergruppe 1 : 0,6 : 0,35 (N5), 40–50 % eingesunken gemessen an der mittleren Bodenhöhe (S1);
+     - Block statt Kugel, Ei auf dem breiten Ende, nach oben schmaler (N2/N3);
+     - gemeinsame Neigung ≤ 15° mit Abständen ≥ 5°, je Gruppe genau eine Ausnahme mit 25–45° (N1);
+     - Brösel ≤ 12 %, hangabwärts liegen geblieben (E3);
+     - platziert am Hangfuß und an mittleren Hängen, nicht an der senkrechten Wand.
+   - Vorher/Nachher habe ich am Preset „Grat-Gebirge“ (Schalter aus/an) im Browser geprüft.
+3. **Schattensaum** (Georgs Ausschnitt: heller Spalt zwischen Steinfuß und Schatten): Übernommen ist der globale Fix aus `kfb-stage-light.v1.1` (V-440):
+   - Vorderseiten werfen (castFrontFaces);
+   - Normalversatz 1,5 Texel (8 cm) statt des alten Tiefen-Bias. Der lag in der Probe bei ca. 60 cm, das war die Ursache.
+   - Geprüft habe ich nur im Nahbild am Steinband. Die **G6-Messung** (`measureShadowSeam`) ist in der Probe **nicht gelaufen**.
+
+**Nächste Schritte:**
+- (a) Abgleich mit Georgs Datei „cartoon animation.md“ (Comedy Contract je Biom, 5-Ebenen-Tiefe, Painted Shape, Set-Grammatik). Georg möchte das „später“; das Ergebnis kommt als `WS1_R12_…` nach `CANON_3D/sources/`.
+- (b) Farbflächen v3, Formnormale und Felsgruppen ins Spiel `look=terrain2` übertragen, mit A/B-Bildern. Dabei behebe ich auch die atan-Naht in `t2Stage`.
+- (c) G6-Messung für Probe und `terrain2`.
+
 ## 103 · 20.10. · Recherche R10 + R11 fertig (Georgs Stil-Auftrag) · Kanon-Lücken · Frage „Banden = Bänder?“ · Probe: organische Farbflächen
 
 **Neue Recherche** auf Georgs Wunsch (auf diesem Branch unter `research/canon/`, bitte nach `CANON_3D/sources/`):
