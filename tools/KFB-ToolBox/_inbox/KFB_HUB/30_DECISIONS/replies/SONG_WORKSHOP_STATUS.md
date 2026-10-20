@@ -389,3 +389,26 @@ Danach Batches über die Signatur-Songs, zuerst die 10 neuen.
 **Offene Fragen an Georg:**
 - MedKayfab: eigenes Ensemble oder Varianten?
 - Was passiert mit dem sensiblen Bücher-Deck?
+
+## §16 · 20.10.2026 · Piloten nach Alice-Mechanik + Klartext (Signatur-Bewohner)
+**Neue Fassungen** (alle Gate R4.2 PASS, `SONGS_WORKSHOP_R1/<deck>/<deck>.<rev>.*`):
+
+| Deck | Fassung | Bewohner | Zeichen | Karten |
+|---|---|---|---:|---:|
+| The Biological Metropolis | r6b | Combat Mech als Cyborg-Cop | 3282 | 21 |
+| Embrace Protopia | r6a | 4GTN Forgotten, abgekündigtes Vorgängermodell im Repair-Café | 2832 | 20 |
+| Big Bad Brain Wrestling | r6a | Actionfigur mit Wechselköpfen | 2213 | 21 |
+
+**Muster** (aus Georgs Alice-Vorlage, nicht kopiert):
+- Karte = Name + Behauptung; das Bild nur, wo der Satz es ohne Bild trägt.
+- Kurze kausale Verbinder zwischen den Karten.
+- Ein Alltagsvergleich am Anfang, den das Outro mit Kartenbildern auflöst:
+  - Metropolis: Manager → Pressesprecher, Beschwerden kommen 500 ms zu spät.
+  - Protopia: Handy nicht mehr unterstützt → „Support ended … still open Saturdays“.
+  - BBBW: Meeting mit vorab entschiedenem Plan → Montag als Probe, „the booker answers next season“.
+
+**Offen:**
+- Eigentext liegt bei 37–38 % (Richtwert ≤ 30 %, WARN): Das sind die Einwürfe des Bewohners. Georgs Ohr entscheidet, ob sie tragen.
+- Writers' Room: Die drei Songs stehen auf `gate_pass` (v6); die alten Fassungen liegen unter `versions`. Die Kritik ist ausstehend.
+
+**Nächster Schritt:** Georg liest bzw. hört die Piloten (Suno nur durch Georg). Danach kommen die 10 neuen Signatur-Songs.

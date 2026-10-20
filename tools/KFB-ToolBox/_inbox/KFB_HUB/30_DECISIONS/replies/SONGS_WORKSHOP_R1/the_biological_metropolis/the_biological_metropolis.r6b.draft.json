@@ -1,0 +1,191 @@
+{
+ "deckId": "the_biological_metropolis",
+ "revision": "r6b",
+ "performers": [
+  {
+   "model": "CombatMech",
+   "asset": "KayKit_Mystery_Series6/1 - July 2024 - Combat Mech · Textur alt",
+   "role": "leicht dystopischer Cyborg-Cop auf Streife (Utopia/Dystopia-Rolle)"
+  }
+ ],
+ "residentHome": "sein Bezirk: die Stadt im Körper, auf Streife von Abteilung zu Abteilung",
+ "structure": "Alice mechanics, tight: card = name + claim (+ image only where it carries), short causal connectors; cyborg cop on patrol as garnish; opening analogy (asking for the manager, getting a statement) paid off with The Brain (press secretary) and the outro (complaints arrive 500 ms late)",
+ "introType": "scene",
+ "synopsis": "A spoken-word number from a card deck that describes the human body as a city. It is performed by a small armored police cyborg on patrol through that city, for whoever happens to be there.",
+ "bestOfReason": [
+  "1, 2: the city runs itself, the citizen was never asked.",
+  "5, 7, 10, 8, 28: departments that need no police.",
+  "11, 17, 19: his own unit heals, burns, bites itself.",
+  "15, 18: the real threats are inside; the spider has the better record.",
+  "31, 20: emergency mode as normal; training from his teens.",
+  "21, 23, 24, 30: looking beats the book; the institution rejects the finding; the quack stays on the payroll.",
+  "26: guessing to fill the gap.",
+  "6: no manager, only a press secretary (pays off the opening).",
+  "32: the body keeps the score."
+ ],
+ "omitted": {
+  "3": "manual card overlaps the cop's rulebook joke",
+  "4": "rules-heavy start",
+  "8": "second filter after the liver",
+  "9": "cut for length",
+  "12": "slow broadcast cut",
+  "13": "energy motor breaks the patrol",
+  "14": "doubles the memo",
+  "16": "abstract",
+  "22": "dilutes Semmelweis",
+  "25": "factory overlaps departments",
+  "27": "standing wave fights the landing",
+  "29": "stage meta-joke",
+  "31": "cut for length"
+ },
+ "orderReason": "Patrol order: district, departments, alarm (immune → inflammation → autoimmune), inside threats (DNA → cancer), training (thymus), cold cases, method (blind eye), memo (brain), score.",
+ "songLineChanges": [
+  {
+   "cardNumber": 6,
+   "rule": "A7",
+   "songLine": "The decision was already underway five hundred milliseconds before you made it.",
+   "reason": "500ms written out"
+  },
+  {
+   "cardNumber": 7,
+   "rule": "A7",
+   "songLine": "The Lungs: seventy square meters folded into your chest.",
+   "reason": "70 written out"
+  },
+  {
+   "cardNumber": 10,
+   "rule": "A7",
+   "songLine": "Eighty percent of the phone calls go up to the brain.",
+   "reason": "80% written out"
+  }
+ ],
+ "cues": [
+  {
+   "afterBeat": 1,
+   "cue": "police radio squelch on the backbeat"
+  }
+ ],
+ "beats": [
+  "Unit Nine, Metropolis Police. Step behind the tape; you're in my district now.",
+  "Ever asked for the manager and got a statement? Every night I send my report to the top floor. Nobody has ever answered.",
+  {
+   "card": 1,
+   "pre": "My beat:",
+   "text": "The City Inside: it has been running the civilization while you were busy thinking about other things. You are the other things."
+  },
+  {
+   "card": 2,
+   "pre": "Its people:",
+   "text": "The Citizen: you have never once told this city what to do. It has never once asked your permission.",
+   "post": "No permit. I let it slide."
+  },
+  {
+   "card": 5,
+   "pre": "Noise complaint, boiler room:",
+   "text": "The Heart: the brain can modify the rate. The brain cannot generate it. The badger drums alone.",
+   "post": "I wrote him up. He kept drumming."
+  },
+  {
+   "card": 7,
+   "pre": "Next door:",
+   "text": "The Lungs: the only autonomic function with a manual override.",
+   "post": "The one switch they let me touch."
+  },
+  {
+   "card": 10,
+   "pre": "Underground:",
+   "text": "The Gut, zombie commuters boarding: eighty percent of the phone calls go up to the brain. The subway runs the city.",
+   "post": "Nobody has a ticket."
+  },
+  {
+   "card": 8,
+   "pre": "Downstream:",
+   "text": "The Kidneys: the original doping agency.",
+   "post": "Finally, colleagues."
+  },
+  {
+   "card": 28,
+   "pre": "After dark:",
+   "text": "The Night Shift: sleep is not rest. It is the janitorial shift washing the thoughts out of the carpet.",
+   "post": "I skip it. Somebody has to watch."
+  },
+  {
+   "card": 11,
+   "pre": "Then the alarm. My unit:",
+   "text": "The Immune System, armored rats with riot shields: a library of every murder attempt. It remembers things you have forgotten."
+  },
+  {
+   "card": 17,
+   "pre": "We go in hard:",
+   "text": "Inflammation: the response that heals the wound becomes the mechanism that burns the city.",
+   "post": "The paperwork says success."
+  },
+  {
+   "card": 19,
+   "pre": "Some nights it's us:",
+   "text": "Autoimmune, crazed dog biting itself: the gun works fine; it's just pointed the wrong way."
+  },
+  {
+   "card": 15,
+   "pre": "Meanwhile, no badge:",
+   "text": "DNA Replication: one error per billion letters. You have had cancer many times; the spider usually eats it.",
+   "post": "Better record than mine."
+  },
+  {
+   "card": 18,
+   "pre": "When the spider misses:",
+   "text": "Cancer, giant crab with fortress built on shell: it is not a disease; it is a competitor."
+  },
+  {
+   "card": 31,
+   "pre": "Upstairs, the alarm never stops:",
+   "text": "The Cortisol Architect, hamster in tie drowning in alarm clocks: the comfort zone is a chemical state."
+  },
+  {
+   "card": 20,
+   "pre": "My training:",
+   "text": "The Aging Thymus: your immune repertoire was built when you were a teenager. Hope you read good books.",
+   "post": "I read comics."
+  },
+  "Cold cases, top shelf.",
+  {
+   "card": 21,
+   "text": "Andreas Vesalius: he looked at the body instead of the book. Everyone else was wrong."
+  },
+  {
+   "card": 23,
+   "pre": "Next file:",
+   "text": "Ignaz Semmelweis: he saved the mothers. The doctors committed him.",
+   "post": "I'd have arrested him too. Disturbing the peace."
+  },
+  {
+   "card": 24,
+   "pre": "Case closed by",
+   "text": "The Semmelweis Problem: the evidence is available. The implication is uncomfortable. We reject the finding."
+  },
+  {
+   "card": 30,
+   "pre": "Still on the payroll:",
+   "text": "The Humoralist: wrong in the facts, right in the vibe. It was the first Kayfabe."
+  },
+  {
+   "card": 26,
+   "pre": "My method:",
+   "text": "The Blind Eye: the brain fills it in with best guesses. Trust, but verify.",
+   "post": "I skip the verify."
+  },
+  {
+   "card": 6,
+   "pre": "Then the top floor answers. A memo:",
+   "text": "The Brain: the decision was already underway five hundred milliseconds before you made it. You are the press secretary, not the president."
+  },
+  "So there is no manager. Just a statement. I filed my report anyway.",
+  {
+   "card": 32,
+   "pre": "Filed with",
+   "text": "The Scorekeeper, sea urchin writing with feather quill: the body keeps the score because the body is the score."
+  },
+  "Night shift in my district: the badger drums, the janitors wash the carpet, the spider eats the errors, and a cop with a minigun writes to a press secretary.",
+  "Complaints go upstairs, of course. They arrive five hundred milliseconds late."
+ ]
+}

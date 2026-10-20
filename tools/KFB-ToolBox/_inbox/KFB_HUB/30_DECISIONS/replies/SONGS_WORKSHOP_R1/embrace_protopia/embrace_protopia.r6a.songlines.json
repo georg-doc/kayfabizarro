@@ -1,0 +1,355 @@
+{
+  "schema": "kfb.songlines.r4",
+  "deckId": "embrace_protopia",
+  "deckTitle": "Protopia Sketchbook — Deck C: EMBRACE",
+  "revision": "r6a",
+  "sourcePins": {
+    "deck": {
+      "path": "registry/assets/v1/decks/embrace_protopia.json",
+      "sha256": "e986128e48da6f79fbb5e69eeb6244374598779acc4918ce09ae47f512ca6fa3",
+      "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3"
+    },
+    "media": {
+      "path": "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json",
+      "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/073b79c3fb4052f7f4691976663ffc0c9449f7f3/media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_%281%29_web_H.pdf.json",
+      "sha256": "c482d20009c2454b7858256fc2adfa9f4660edf5cc74b50e2560bd9987604ee3"
+    }
+  },
+  "performer": null,
+  "performers": [
+    {
+      "model": "4GTN_Forgotten",
+      "asset": "KayKit_Mystery_Series6/7 - January 2026 - 4GTN · Forgotten",
+      "role": "Vorläufermodell, 'guter' Zwilling im Protopia-Maker-Space (Georg 20.10.)"
+    }
+  ],
+  "residentHome": "Maker-Space im Moos: Werkbank, Reparaturcafé",
+  "structure": "Alice mechanics: card = name + claim (+ image where it carries), short causal connectors; the discontinued predecessor model of Utopia's CEO runs the repair café; opening analogy (phone no longer supported, still works) paid off in the outro (support ended, the door still opens); conflict with the twin only as short jabs",
+  "introType": "scene",
+  "selectionMode": "BEST_OF",
+  "bestOf": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    8,
+    13,
+    15,
+    17,
+    18,
+    19,
+    22,
+    26,
+    27,
+    42,
+    43,
+    46,
+    47,
+    55,
+    56
+  ],
+  "bestOfReason": [
+    "Plan 1, 3, 2: process, ugly first draft, pencil.",
+    "Repair 5, 7, 8: one fixable thing, boring wins that compound.",
+    "Who knows how 13, 15: the neighbour with the wrench beats polish (jab at the twin).",
+    "Together 17, 19, 18: the invitation, the clumsy first meeting, shared hands.",
+    "Strangers 26, 27: first hello, the bell nobody answers.",
+    "Done vs dream 22: the mud ball vs the twin's dream castle.",
+    "Disobedience and tests 43, 42: right to repair, tiny stripe.",
+    "Price 46, 47, 55: no certainty, ongoing, no applause.",
+    "Landing 56: one workable thing now."
+  ],
+  "omitted": {
+    "10-12": "9 carries the breath",
+    "14": "doubles 13",
+    "16": "doubles 18",
+    "20": "rope overlaps 18",
+    "21-24": "present-tense cards; the garden is the present",
+    "25": "doubles 26",
+    "28": "cut for length; 26/27 carry strangers",
+    "29-32": "curiosity block cut for length",
+    "34-36": "33 carries keeping score",
+    "37-40": "making by hand is the whole frame",
+    "41": "overlaps 43",
+    "44-45": "overlap 42 and 46",
+    "48": "refers to the sister decks' bargain",
+    "49-54": "56 lands the pencil"
+  },
+  "orderMode": "edited",
+  "orderReason": "",
+  "metaSkipped": [],
+  "cards": [
+    {
+      "cardNumber": 1,
+      "beats": [
+        3
+      ],
+      "cardText": "The Open Notebook: the future is a process of slow, incremental improvement you participate in."
+    },
+    {
+      "cardNumber": 3,
+      "beats": [
+        4
+      ],
+      "cardText": "The Ugly First Draft: starting before you are ready produces better results than waiting for a perfect plan."
+    },
+    {
+      "cardNumber": 2,
+      "beats": [
+        5
+      ],
+      "cardText": "The Erasable Line: the ability to correct beats the appearance of certainty."
+    },
+    {
+      "cardNumber": 5,
+      "beats": [
+        6
+      ],
+      "cardText": "The Fixable Thing, iguana oiling a hinge while city burns: a specific, local, finishable task."
+    },
+    {
+      "cardNumber": 7,
+      "beats": [
+        7
+      ],
+      "cardText": "The Boring Win: maintenance and repair are systematically undervalued because they are undramatic."
+    },
+    {
+      "cardNumber": 8,
+      "beats": [
+        8
+      ],
+      "cardText": "The Compounding: small consistent improvements outperform heroic one-offs."
+    },
+    {
+      "cardNumber": 13,
+      "beats": [
+        9
+      ],
+      "cardText": "The Person Nearby, boar in overalls sharing a wrench: real know-how is learned by doing."
+    },
+    {
+      "cardNumber": 15,
+      "beats": [
+        10
+      ],
+      "cardText": "The Unimpressive Source: polish and credentials can be inversely related to hands-on competence."
+    },
+    {
+      "cardNumber": 17,
+      "beats": [
+        11
+      ],
+      "cardText": "The Invitation, pelican stapling BRING GLOVES flyers: specific and social."
+    },
+    {
+      "cardNumber": 19,
+      "beats": [
+        12
+      ],
+      "cardText": "The Awkward Start, pigeon, emu, duck, and crow over coffee carafe: groups that form, not groups that stay imagined."
+    },
+    {
+      "cardNumber": 18,
+      "beats": [
+        13
+      ],
+      "cardText": "The Shared Hands, octopus hammering roof beams with all eight arms: mutual aid is older than money."
+    },
+    {
+      "cardNumber": 26,
+      "beats": [
+        14
+      ],
+      "cardText": "The First Hello: low-stakes contact reliably reduces prejudice."
+    },
+    {
+      "cardNumber": 27,
+      "beats": [
+        15
+      ],
+      "cardText": "The Risk of Being Soft-Blocked: social rejection registers in the brain like physical pain."
+    },
+    {
+      "cardNumber": 22,
+      "beats": [
+        16
+      ],
+      "cardText": "The Done Thing, dung beetle pushing a real mud ball away from a holographic dream castle: a completed small action changes the world more than a large intended one."
+    },
+    {
+      "cardNumber": 43,
+      "beats": [
+        17
+      ],
+      "cardText": "The Quiet Sabotage, crow repairing a DO NOT REPAIR panel: small principled noncompliance."
+    },
+    {
+      "cardNumber": 42,
+      "beats": [
+        18
+      ],
+      "cardText": "The Pilot Move, pigeon laying a tiny crosswalk stripe: small reversible experiments."
+    },
+    {
+      "cardNumber": 46,
+      "beats": [
+        19
+      ],
+      "cardText": "The Comfort of Maybe, toad choosing between DOOM and SAVED armchairs: giving up the relief of certainty."
+    },
+    {
+      "cardNumber": 47,
+      "beats": [
+        20
+      ],
+      "cardText": "The Ongoing Effort: durable improvement is maintained, not achieved once."
+    },
+    {
+      "cardNumber": 55,
+      "beats": [
+        21
+      ],
+      "cardText": "The Quiet Start, mole digging on, no crowd: action not requiring applause."
+    },
+    {
+      "cardNumber": 56,
+      "beats": [
+        22
+      ],
+      "cardText": "The Core Question: one workable thing you can do now."
+    }
+  ],
+  "songLineChanges": [],
+  "cues": [
+    {
+      "afterBeat": 1,
+      "cue": "trowel in soil, a wheelbarrow squeak on the backbeat"
+    }
+  ],
+  "refrain": "",
+  "bpmException": null,
+  "visualMotifs": [
+    {
+      "cardNumber": 1,
+      "motif": "eager beaver gripping oversized pencil, blank notebook open",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 2,
+      "motif": "grinning raccoon erasing a blueprint mid-sketch",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 3,
+      "motif": "possum proudly holding a chaotic crossed-out treasure map",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 5,
+      "motif": "iguana in tool belt oiling a hinge while city burns behind",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 7,
+      "motif": "turtle in raincoat trimming a fence in the rain, unbothered",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 8,
+      "motif": "badger with ruler laying checkmarks across a growing grid of tiles",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 13,
+      "motif": "boar in overalls leaning over fence sharing a wrench with porcupine mechanic",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 15,
+      "motif": "scruffy capybara being interviewed by tiny clipboard-holding bird about expertise",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 17,
+      "motif": "frazzled pelican stapling BRING GLOVES flyers to a lamppost",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 18,
+      "motif": "octopus in denim vest hammering roof beams with all eight arms at once",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 19,
+      "motif": "pigeon, emu, duck, and crow awkwardly huddled over coffee carafe on bare table",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 22,
+      "motif": "dung beetle in patched jacket pushing a real mud ball away from a holographic dream castle",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 26,
+      "motif": "two prickly hedgehogs facing each other, one saying HI in a small speech bubble",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 27,
+      "motif": "panicked quokka ringing a giant bell alone, black puff of silence around it",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 42,
+      "motif": "city pigeon with a paint roller laying a tiny crosswalk stripe in the street",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 43,
+      "motif": "crow in tactical vest repairing a DO NOT REPAIR panel from behind, tools out",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 46,
+      "motif": "toad choosing between DOOM and SAVED armchairs, a question mark umbrella above in rain",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 47,
+      "motif": "camel with saddlebags standing before a long calendar, every week marked with a brick",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 55,
+      "motif": "mole emerging from dark earth tunnel, no crowd above, digging on regardless",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 56,
+      "motif": "giant golden paw gripping an oversized fountain pen, tiny aliens watching in awe",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    }
+  ]
+}
