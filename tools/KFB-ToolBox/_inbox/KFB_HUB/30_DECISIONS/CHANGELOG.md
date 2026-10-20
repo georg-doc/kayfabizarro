@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WSB K5 Ork-Band-Teile angenommen (Banner Hero mit Tuch accent/Stab/Sockelfels stone, Kriegstrommel Echo, Schlägel/Mikro, Trompete, Gitarre CC0; Asset-Pässe, Set-Liste band_set_k5.json); Änderung: Schädel-Druck im dunklen Ton der Akzentfamilie (ΔL* 20–25).
 - WSB K1 R2 angenommen: Fleckenband war Portierungsfehler (FRACT-Facetten) → kfbFacets 1:1; Dellen nach kfbDentLayer (oval, Halbmond-Wulst, log-normal). Offen bei WSB nur die Drum Machine (wartet auf Georg); Vorschlag Ork-Band-Teile durch apply() + Asset-Pass.
 - V-571: prop_buried, ACES 1.3 in Blender; WSB r2c in Scenelet/Handoff, K1 r3 Emission 1:1; K4 Disco-Teile: Box + Radio angenommen, Pult wartet auf Georgs Ja zur Drum Machine 2 (CC-BY).
 - Spielzeugsoldat r2c (V-562): Kritiker 8/8/7 (Mittel 7,67); K10-Befunde Fäustlingshand, Profil-Pupille und Aufziehschlüssel als Fehlbefunde einer Figurenabnahme verworfen → WS0 PASS. Kritiker-Auftrag um diese drei Fälle ergänzt. WSB stellt Scenelet gunfight_duel_02, Mündungslage und Handoff auf r2c um.
