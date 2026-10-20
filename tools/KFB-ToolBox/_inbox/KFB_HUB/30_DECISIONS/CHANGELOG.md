@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WSB K9 Gate 1 PASS nach Zusatzbelegen (near_face G1 mit Lidhäuten, Knete nah, Clearance Klinge↔Helm ≥ 6,8 cm in allen 33 Bildern, 0 Durchdringung). K10 startet mit Armbrust; Arena-Schema aus WSA-Paket (nur lesen).
 - WSB K10 Waffenklassen-Inventur freigegeben (Georg-Auftrag; Armbrust → Wurf → 1H → Magie → Bogen): Waffenkarten im Format von WSAs Profilprüfer (PR #23), Original-Clips vermessen, Prüfbilder mit near_face; Kit as-is, Anker +Z; Bogen-Sehne über Blendshape Draw aus Handabstand; Laufzeit bei WSA, kein Push.
 - WSB K9 erstes Gate: Melee_1H_Attack_Chop vermessen (30 fps, 1,067 s, Ausholen 0,50 s, Schlag 0,10 s, Erholung 0,37 s, harter Stopp ohne Nachschwung, Hüpfer 0,1 u); Kritiker REWORK 8/7/6 nur wegen fehlender Belege → 3 Zusatzbilder (near_face, Knete nah, Scheitel von vorn). Kanon Gebiet 9: Blender-Bone-Parent nicht für Waffen-Messung. WS-NPC-Brief Schritt 0 Inventur inkl. AI-Town. WS1b: Startschalter nur in dist, 4 Commits warten auf Georgs Key-Ja.
 - V-580: NPC-Alltag → neue WS1-Sitzung WS-NPC (Brief replies/BRIEF_WS1_NPC_LIFE_R1.md); Song-Workbench in die Audio-Site (V-390); Gewehrhaltung WSA/WSB bewusst parallel, Best-of-Breed später durch Georg.
