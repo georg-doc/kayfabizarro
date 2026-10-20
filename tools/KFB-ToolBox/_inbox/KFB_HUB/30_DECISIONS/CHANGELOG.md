@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- V-573 r2d Entscheid WS0 = B: Original-Gewehr ungestaucht nur in den 4 Schuss-Clips (Arm gestreckt, Kolben unter der Achsel), sonst am Rücken wie B11 r5c; Umschalten per Clip-Marken weaponDraw/weaponStow. (WSB-Befund: voller Kolben steckt mit Chibi-Arm in allen 18 Clips im Rumpf.)
 - V-572 Strahler-Bug global (Pfützen als flache Scheiben → Schnittkanten im Terrain) → WS1 Inventur + kfb-light-pool.v1. V-573 Soldat-Kolben gestaucht (r2c-PASS zurückgenommen) → WSB r2d mit Original-Gewehr bzw. voller Länge; Kritiker: Verformung = Befund. K5 Banner-Wappen r2 umgesetzt.
 - WSB K5 Ork-Band-Teile angenommen (Banner Hero mit Tuch accent/Stab/Sockelfels stone, Kriegstrommel Echo, Schlägel/Mikro, Trompete, Gitarre CC0; Asset-Pässe, Set-Liste band_set_k5.json); Änderung: Schädel-Druck im dunklen Ton der Akzentfamilie (ΔL* 20–25).
 - WSB K1 R2 angenommen: Fleckenband war Portierungsfehler (FRACT-Facetten) → kfbFacets 1:1; Dellen nach kfbDentLayer (oval, Halbmond-Wulst, log-normal). Offen bei WSB nur die Drum Machine (wartet auf Georg); Vorschlag Ork-Band-Teile durch apply() + Asset-Pass.
