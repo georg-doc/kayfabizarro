@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- Terrain #439 geht an WS1 (Georg 20.10., Token-Budget): Brief replies/BRIEF_WS1_TERRAIN_439_R1.md (Branch terrain/439 ab combo/r2, look=terrain2, eigener Banden-/Rampen-POC + Georgs Terrain-Design R1). WS1b nur Vorschau-Startseite, dann Pause.
 - V-561 präzisiert: Georg gibt keine Szenen-Konzepte frei (keine Händchen), WS0 verantwortet Art Direction + Kritiker; Szenen-Dioramen pausieren, Fokus Spiel. WS1b vorbereitet: kfb-planet aus dem Übergabe-Bündel nach ~/Developer/kfb-planet (combo/r2 @d762916); Start-Chip mit Auftrag 1 Vorschau-Startseite, Auftrag 2 Terrainkonzept #439 als umschaltbare Variante.
 - V-561 Georgs FAIL der Szenen-Dioramen (Farm, Labyrinth, RPG-Lager, Clown, Disco, Sci-Fi; Friedhof/B41 TUNE): kein Szenenbau ohne Konzeptblatt + Design-Urteil vor dem Hub. V-562 Spielzeugsoldat ohne Augen; q132=A, q136=A (Ausnahme Hiebwaffen), q124 hellblau=Allianz. PASS: B46, Ork-Band, B45, Gunfight r1, Wrestling, Ninja, B51, B42 r2b, alle Sound-Sets.
 
