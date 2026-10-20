@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WS1 V-572: kfb-light-pool.v1.js im Kanon (Pfützen als Kegel-Projektion auf jeden Empfänger, Kegel mit weichem Ende) + Inventur (disco-ball-core, ufo-lab, kfb-gem Laternen im Spiel, globe-v13, tinyskies-Leuchtturm); Umstellung der Nutzer folgt nach WS1-Plan.
 - WS1b-Schattendiagnose (WS1B_SHADOW_DIAG_R1.md): Schatten-Frustum r 3,37 m um FB schneidet Kronen (Ring), receive/castShadow an FB-Teilen aus, Kontakt-Strahl trifft Spielerkapsel → an WS1 (#439) mit Kanon-Hinweis kein Blob-Ersatz. GPU-Playwright auf dem MacBook möglich.
 - Georg-Befunde Live-Vorschau (combo/r2): Schatten kaputt (Ring/Blob am Baum, Clipping, Selbstschatten FB-Kopf), AO fehlt → WS1 (#439), WS1b liefert read-only-Diagnose WS1B_SHADOW_DIAG_R1.md; Fluff-Einsammeln beim Drüberlaufen fehlt → WS1b auf ws1b/fluff-pickup nach V-340/HUD-R4 §3.4 (Kugel fliegt zum Pip, Squash-and-Bounce).
 - V-575: R12 + R13 als Kanon-Anhang B, neues Gebiet 18 Himmel/Horizont/Ferne (skyColor, kein Nebelbalken, Bodendunst, Sonne = Key), WS1 W6; Gate-Fix SINK-Steine (Kommentar-Bug) + Regressionstest; Recherche-Backlog: R1–R4, R10–R13 erledigt.
