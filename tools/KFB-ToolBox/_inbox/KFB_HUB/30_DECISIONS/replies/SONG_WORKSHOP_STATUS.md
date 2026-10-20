@@ -412,3 +412,23 @@ Danach Batches über die Signatur-Songs, zuerst die 10 neuen.
 - Writers' Room: Die drei Songs stehen auf `gate_pass` (v6); die alten Fassungen liegen unter `versions`. Die Kritik ist ausstehend.
 
 **Nächster Schritt:** Georg liest bzw. hört die Piloten (Suno nur durch Georg). Danach kommen die 10 neuen Signatur-Songs.
+
+## §17 · 20.10.2026 · Georg verwirft die Piloten aus §16
+**Georg:** „viel zu viel bemühtes Erklärbär-pseudo-satire-cliché storytelling … triviale AI-slop-Phrasen und Scaffolding aus jeder Zeile.“
+
+**Diagnose (WS-Song):** Ich habe das Gerüst aus Georgs Alice als Schablone über alle drei Songs gelegt:
+- Einstieg mit Alltags-Analogie „Ever …? Congratulations …“;
+- Schluss „… welcome, of course“;
+- Doppelpunkt-Verbinder vor jeder Karte;
+- Kommentarpointe hinter jeder Karte;
+- ein Outro, das die Satire erklärt.
+
+Das Gate lässt das durch, weil es solche Muster nicht als Slop kennt.
+
+**Folgen:**
+- Lesson l12 im Writers' Room.
+- Die drei Songs stehen dort wieder auf `draft`.
+- Kein weiterer Vollsong ohne vorherige kurze Probe, die Georg sieht.
+- Gate-Kandidaten (für WS0, nicht umgesetzt):
+  - „Congratulations“ und „of course“ im Outro als REVIEW;
+  - Kommentar-Post nach mehr als einem Drittel der Karten als WARN.
