@@ -1,0 +1,150 @@
+{
+  "schema": "kfb.eye-rig-actor-catalog/0.1-candidate",
+  "owner": "KFB ToolBox / Rigging",
+  "rigClass": "Rig_Large",
+  "revisionPolicy": "existing reviewed Large actors retain prior source pins; Mystery monthly coverage extension added 2026-10-02 pins main@2c92dd13cbc379ad3a6028144b8976bb3d6a840d + exact GLB blobs; added Large actors start UNREVIEWED",
+  "sourceEvidence": [
+    "tools/resident_atlas_s6/docs/ATLAS_NEXT_SLICES.md",
+    "tools/resident_atlas_s6/data/cast.js",
+    "tools/resident_atlas_s6/tools/orc-monstrosity-probe.html",
+    "tools/asset_registry/librarian/_handover/KAYKIT_REFERENCE_ATLAS_2026-09-15/KAYKIT_PACK_COVERAGE_MATRIX.md"
+  ],
+  "actorCount": 8,
+  "actors": [
+    {
+      "id": "monstrosity",
+      "label": "Monstrosity",
+      "initials": "MO",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "blob": "ff8e7d74026b808a3bedeab4bece830df116a4bc",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "resident-atlas+large-probe",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large"
+    },
+    {
+      "id": "black-knight",
+      "label": "Black Knight",
+      "initials": "BK",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "blob": "ce20440309951a9d85d246b6ff6b0fa399f6c9d8",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large"
+    },
+    {
+      "id": "demon-lord",
+      "label": "Demon Lord",
+      "initials": "DL",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "blob": "7dfc03c272e77c1cdcd488bf3b396f6600faa440",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "resident-atlas",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large"
+    },
+    {
+      "id": "orc-brute",
+      "label": "Orc Brute",
+      "initials": "OB",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "blob": "1b56aac3d98cc978bd1311ddc61f1260a870494d",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "resident-atlas+large-probe",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large"
+    },
+    {
+      "id": "frost-golem",
+      "label": "FrostGolem",
+      "initials": "FG",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2025 - FrostGolem/characters/FrostGolem.glb",
+      "blob": "7a03a6a205868386f561c4147638517ae59c88d5",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "kaykit-mystery-monthly-source-inventory",
+      "packId": "kaykit-mystery-series6",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large-mystery-coverage"
+    },
+    {
+      "id": "gtn",
+      "label": "4GTN",
+      "initials": "4G",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb",
+      "blob": "fa7a7e418ba90703fdabaf272867a46dda5047ab",
+      "rigEvidence": "direct GLB + Resident Atlas: Rig_Large",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "kaykit-mystery-monthly-source-inventory",
+      "packId": "kaykit-mystery-series6",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large-mystery-coverage"
+    },
+    {
+      "id": "gtn-forgotten",
+      "label": "4GTN Forgotten",
+      "initials": "4F",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN_Forgotten.glb",
+      "blob": "a514ef273142a90fa35e9e4c1cdbfd58f900b93f",
+      "rigEvidence": "Resident Atlas cast: Rig_Large",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "kaykit-mystery-monthly-source-inventory",
+      "packId": "kaykit-mystery-series6",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large-mystery-coverage"
+    },
+    {
+      "id": "clanker",
+      "label": "Clanker",
+      "initials": "CK",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2025 - Clanker/characters/Clanker.glb",
+      "blob": "40e994974c70d6844118ae04785a9d7b9b8c77b1",
+      "rigEvidence": "source Clanker.fbx: Rig_Large string x10, Rig_Medium x0",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "provenance": "kaykit-mystery-monthly-source-inventory",
+      "packId": "kaykit-mystery-series6",
+      "cleanup": {
+        "mode": "auto-mirrored-front-pair"
+      },
+      "faceColor": null,
+      "reviewGroup": "large-mystery-coverage"
+    }
+  ]
+}

@@ -7944,6 +7944,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-563",
+   "date": "2026-10-20",
+   "area": "Prozess",
+   "verdict": "RULE",
+   "text": "3D-Kanon ist Pflicht (Georg 20.10.: „ALLE Recherchen und Regeln vollständig als SSOT für jeden 3D-Job, Scenelets, Demos und Abnahmen … nicht nur als optionale Tipps“). Einzige Quelle: CANON_3D/CANON_3D_R1.md (14 Fachgebiete, je Quelle, Kern, Prüfung, Kritiker-Kriterium); verstreute Lab-/Spender-Regelwerke und Recherchen (Etherington R2, QA_RULEBOOK_ENVIRONMENT, NotebookLM P1–P3, Motion-/Lokomotion-/Choreo-Recherche, Clay-HOWTO, LESSONS_SHADOWS …) eingefroren nach CANON_3D/sources/ (MANIFEST mit Herkunft + Prüfsumme). Werkzeug: CANON_3D/lib/kfb_env.py (Grammatik nest_ok/relax + Gate: Konzeptblatt, Scheibe/Platte, flacher Teller, Geschichte/Rolle/Schicht je Objekt, Schweben/Einsinken je Objektart, Gruppen-Zahlenregeln, Negativraum, Landmarke, Staffel, Signatur, Kit-Mix, Klone) + kfb_env_bpy.py (Blender, headless getestet). Konzeptblatt-Vorlage KONZEPTBLATT_R1.md (WS0 schreibt, Georg gibt nicht frei). Blinder Kritiker CRITIC_3D_R1.md (K1–K10, feste Kameras, Stopp-Regel): Phase 1 jede 3D-Lieferung inkl. Abnahmen, Phase 2 (später, Tokens) nur Spielszenen – Wechsel entscheidet Georg; überholt für 3D den Kritiker-Takt aus V-312. Jeder 3D-Brief trägt die drei Kanon-Zeilen in Tier 0. Recherche-Lücken (Inszenierung, Etherington-Originale, Set-Dressing, Farbtheorie, P5/P6 …) in RESEARCH_BACKLOG_R1.md → WS1 mit parallelen Chats; Blender-Werkzeuge → WSB. Gegenlicht: V-392/LIGHT_MODEL_R2 gilt vor V-385 Regel 1.",
+   "values": {},
+   "owner": "WS0 (Kanon, Konzeptblätter) · WS1 (Recherche + Laufzeit-Werkzeuge, parallele Chats) · WSB (Blender-Werkzeuge)",
+   "check": "Kanon-Gate grün + Kritiker PASS vor jedem Hub-Eintrag",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Recherchen und Regeln lagen verstreut als Text ohne Verweis in der „einen Karte“ (V-228 archivierte die alte SSOT-Liste); Briefs und Gates sahen sie nie – deshalb die Szenen-FAILs vom 08.10. und 19.10.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-564",
+   "date": "2026-10-20",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Bodenfarbe und Schatten (Widersprüche V-396 ↔ V-441 ↔ Bodenfarb-Vorschlag sowie Paletten-Schatten ↔ LIGHT_MODEL_R2), von WS0 als Art Direction entschieden nach Georgs Terrain-Design 19.10. (#439): Boden = organische Farbflächen aus der Stimmung (V-441), unabhängig von der Höhe; satte Grüntöne als Boden gesperrt; größter edgePalette-Anteil gilt nur noch für Schürze und Steine am Bühnenrand (V-396 eingeschränkt). Schatten = echte Shadow-Map-Schatten aus dem einen Rig, getönt nach der Palette des Empfängers (castShadowTint), Kontakt max statt Summe; keine Blob-/Scheiben-Schatten; eine Sonne bleibt (LIGHT_MODEL_R2).",
+   "values": {},
+   "owner": "WS1 (#439, Kanon)",
+   "check": "A/B im Spiel nach BRIEF_WS1_TERRAIN_439",
+   "source": "WS0 20.10. (Georg: entscheidet nicht abstrakt)",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Drei Boden- und zwei Schatten-Regeln widersprachen sich; Georg entscheidet nicht abstrakt, WS0 setzt sein Terrain-Design.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8031,7 +8061,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:944",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:945",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

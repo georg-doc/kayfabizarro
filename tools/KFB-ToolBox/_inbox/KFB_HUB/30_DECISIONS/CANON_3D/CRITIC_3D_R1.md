@@ -1,0 +1,66 @@
+# Kritiker 3D · R1 · 2026-10-20 · WS0 (V-563)
+
+**Wer:** ein frischer, blinder Kritiker (neuer Kontext, Subagent). Er sieht **nur**:
+- die Bilder aus den festen Kameras;
+- das Konzeptblatt der Szene;
+- diese Datei und den Kanon `CANON_3D_R1.md`.
+
+Erklärungen, Code und Absichten der Bauenden sieht er nicht. Er schlägt keinen Code vor.
+
+**Wann:**
+- **Phase 1 (bis es läuft, Georg 20.10.):** jede 3D-Lieferung, also Abnahmen, Proofs, Scenelets, Demos, Residents und Dioramen.
+- **Phase 2 (später, Tokens sparen):** nur produktive Spielszenen, also Residents und Dioramen im Spiel. Abnahmen laufen dann nur über das Gate.
+- **Den Wechsel** zu Phase 2 entscheidet Georg.
+
+**Vorher:** Das mechanische Gate ist grün:
+- `lib/kfb_env.py` bzw. `kfb_env_bpy.run()` für die Umgebung;
+- `PROOF_STAGE_R1` G1–G7 für Figuren, Material, Licht und Boden.
+
+Ein roter Gate-Lauf geht nie an den Kritiker, sondern zurück an den Bau.
+
+## Feste Kameras (je Szene)
+1. Übersicht schräg von oben, 45°.
+2. Augenhöhe Figur (1 H über Boden) vom Hauptweg auf den Fokus.
+3. Nahaufnahme Fuß einer Ankergruppe (Erdung).
+4. Seitenansicht Rand (Silhouette).
+5. Nur bei Figuren: Gesicht nah (Augen, Lider), Proof-Stage-Preset `near_face`.
+
+## Bewertung 0–10 je Kriterium
+Herkunft: QA_RULEBOOK_ENVIRONMENT_R1 §3, ergänzt um den Kanon.
+
+| Nr. | Kriterium | 10 = | 0 = |
+|---|---|---|---|
+| K1 | **Geschichte lesbar** | Ohne Text erkennbar, was hier los ist; das Konzeptblatt (Bildidee, Story-Beat) ist sichtbar eingelöst | zufällige Deko |
+| K2 | **Farbkonzept** | Palettenrollen V-402 und 60/30/10 halten; Akzente führen zum Fokus; Bodenfarbe nach Kanon | bunt ohne Rolle, grelles Grün, Mittelgrau |
+| K3 | **Komposition** | Gruppen 1 : 3 : Rest, Anker, Stützen und Akzent; Negativraum atmet; keine Reihe, kein Teppich, keine Scheibe | hingewürfelt, Props auf einem Teller |
+| K4 | **Erdung (Etherington)** | Eingraben, Kontakt und Überlappen mit Ursache an jedem Objekt; Speckle-Übergang statt Verlauf | aufgeklebt, schwebend, harte Fußkante, Blob-Schatten |
+| K5 | **Modell-Verständnis** | Jedes Element steht, wo es nach Ortsbiografie hingehört (Entstehen, Nutzen, Vergehen, Bewachsen) | Arten und Props ohne Standortlogik |
+| K6 | **Eine Welt** | ein Licht-Rig, ein Knet-Material, eine Palette; Kits lesen sich zusammen | Stilbruch, fremdes Licht, fremdes Material |
+| K7 | **Vielfalt ohne Rauschen** | Abwechslung in Größe, Drehung und Art, trotzdem ruhig; Signatur 1 Hero + ≤ 2 Echos | monoton oder wirr |
+| K8 | **Referenz-Nähe** | Hält den Vergleich mit Georgs Referenz bzw. dem RA-Original 1:1 aus | kein Bezug, Quelle „verbessert“ |
+| K9 | **Innerweltliche Logik** | Jedes Element hat erkennbar Herkunft und Grund; die Szene trägt aus jedem Winkel | nur für einen Winkel arrangiert |
+| K10 | **Figuren** (nur wenn vorhanden) | KFB-Augen und E2-Lider an jeder Variante, Blick lesbar, Pose und Kontakt glaubwürdig, Knete sichtbar | Augen fehlen, Schielen, Gleiten, Puppenpose |
+
+**Bestanden:**
+- Gate grün;
+- Mittelwert ≥ 8;
+- kein Kriterium unter 6;
+- K9 ≥ 7;
+- K10 ≥ 7, wenn Figuren vorhanden sind.
+
+## Ausgabe des Kritikers
+1. Punkte K1–K10.
+2. Mängelliste: was, wo (Kamera und Bildbereich), welche Regel (Kanon-Abschnitt bzw. V-Nummer).
+3. Gesamturteil PASS oder REWORK.
+
+Keine Adjektive, kein Lob, keine Code-Vorschläge.
+
+## Stopp-Regel
+Herkunft: QA_RULEBOOK_ENVIRONMENT_R1 §5.
+- **Zwei Reparaturen ohne Punktgewinn** am selben Kriterium: Stopp. Bericht an WS0 mit Bildern, Punkten und vermuteter Ursache.
+- **Ein Kriterium unter 4** nach der ersten Runde: Das Konzept ist falsch, zurück zum Konzeptblatt.
+
+Georg sieht nur Szenen, die bestanden haben, oder einen Stopp-Bericht.
+
+## Auftrag an den Kritiker (zum Kopieren in den Subagent-Prompt)
+> Du bist der blinde 3D-Kritiker für KFB. Lies `CANON_3D/CRITIC_3D_R1.md` und `CANON_3D/CANON_3D_R1.md` und das Konzeptblatt `<pfad>`. Sieh dir die Bilder `<pfade>` an. Bewerte K1–K10 nach der Tabelle, liste Mängel mit Kamera, Bildbereich und Regel. Urteil PASS oder REWORK nach der Bestanden-Regel. Keine Code-Vorschläge, keine Adjektive.

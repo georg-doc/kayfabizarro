@@ -1,0 +1,719 @@
+{
+  "schema": "kfb.eye-rig-mystery-monthly-coverage/1",
+  "date": "2026-10-02",
+  "sourceContainer": "media/3D_Assets/KayKit_Mystery_Series6/",
+  "inventorySource": "tools/asset_registry/librarian/_handover/KAYKIT_REFERENCE_ATLAS_2026-09-15/KAYKIT_PACK_COVERAGE_MATRIX.md",
+  "scope": "owned monthly Mystery Series 4 + 5 + 6 + current Series 7 physical character GLBs; excludes non-monthly extras such as Santa/Mummy/CharacterTemplate",
+  "sourceRevision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+  "status": "CATALOG_COMPLETE_PROFILE_REVIEW_OPEN",
+  "counts": {
+    "total": 49,
+    "Rig_Medium": 41,
+    "Rig_Large": 8
+  },
+  "paladin": {
+    "models": [
+      "Paladin.glb",
+      "Paladin_with_Helmet.glb"
+    ],
+    "embeddedPalette": "A",
+    "additionalPalette": "B",
+    "kingCandidatePalette": "B",
+    "note": "Palette B is Georg's light/blonde King candidate. EyeRig profile is geometry-based; no duplicate skeleton invented for palette B.",
+    "paletteBlobs": {
+      "A": "d3e67d9902caa5a75927ad2e0fdcd3e2f162da34",
+      "B": "eb45816ada5c84bc91abc0225e3b25f5998accc1"
+    },
+    "workbenchKingActorId": "paladin-king",
+    "kingPaletteVisible": true
+  },
+  "actors": [
+    {
+      "id": "gothgirl",
+      "label": "GothGirl",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/GothGirl/characters/GothGirl.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "clown",
+      "label": "Clown",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2024 - Clown/characters/Clown.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "toy-soldier",
+      "label": "Toy Soldier",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "farmer-a",
+      "label": "Farmer A",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_A.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "farmer-b",
+      "label": "Farmer B",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2026 - Farmers/Farmer_B.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "caveman",
+      "label": "Caveman",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "lorekeeper",
+      "label": "Lorekeeper",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper/Lorekeeper.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "witch",
+      "label": "Witch",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2024 - Witch/characters/Witch.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "avian",
+      "label": "Avian Swordsman",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman/AvianSwordsman.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "ultra-turbo-hero-man",
+      "label": "Ultra Turbo Hero Man",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/UltraTurboHeroMan/characters/UltraTurboHeroMan.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "cleric",
+      "label": "Cleric",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2025 - Cleric/Cleric.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "animatronic-creepy",
+      "label": "Animatronic Creepy",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Creepy.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "animatronic-normal",
+      "label": "Animatronic Normal",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2023 - Animatronic/characters/gltf/Animatronic_Normal.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "action-figure",
+      "label": "Action Figure",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2023 - Action Figure/character/gltf/ActionFigure.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "magical-girl",
+      "label": "Magical Girl",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2026 - Magical Girl/MagicalGirl.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "monster",
+      "label": "Monster Costume",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/character/gltf/Monster.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "ninja",
+      "label": "Ninja",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2024 - Ninja/character/Ninja.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "protagonist-a",
+      "label": "Protagonist A",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_A.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "protagonist-b",
+      "label": "Protagonist B",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2025 - Protagonists/characters/Protagonist_B.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "vampire",
+      "label": "Vampire",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2024 - Vampire/characters/Vampire.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "werewolf-wolf",
+      "label": "Werewolf Wolf",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/characters/gltf/Werewolf_Wolf.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "driver",
+      "label": "Driver",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2023 - Driver/character/gltf/Driver.glb",
+      "blob": null,
+      "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "orc-raider",
+      "label": "Orc Raider",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2023 - Orc Raider/character/OrcRaider.glb",
+      "blob": "875c648a9d01929bff06fcb9de54416ae32da1f7",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "combat-mech",
+      "label": "Combat Mech",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/characters/CombatMech.glb",
+      "blob": "143381c33c0476631e9707f35466501c5de1f8fa",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "paladin",
+      "label": "Paladin",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/characters/gltf/Paladin.glb",
+      "blob": "9c6189759277fc999136f3759eac0d0e1b65ced1",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": [
+        {
+          "id": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_A.png",
+          "blob": "d3e67d9902caa5a75927ad2e0fdcd3e2f162da34",
+          "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+          "role": "embedded/default"
+        },
+        {
+          "id": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_B.png",
+          "blob": "eb45816ada5c84bc91abc0225e3b25f5998accc1",
+          "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+          "role": "Georg: light/blonde King candidate"
+        }
+      ]
+    },
+    {
+      "id": "paladin-helmet",
+      "label": "Paladin · Helmet",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/characters/gltf/Paladin_with_Helmet.glb",
+      "blob": "ea7c357503787cd8300368d047fc6311a6a23295",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": [
+        {
+          "id": "A",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_A.png",
+          "blob": "d3e67d9902caa5a75927ad2e0fdcd3e2f162da34",
+          "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+          "role": "embedded/default"
+        },
+        {
+          "id": "B",
+          "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_B.png",
+          "blob": "eb45816ada5c84bc91abc0225e3b25f5998accc1",
+          "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+          "role": "Georg: light/blonde King candidate"
+        }
+      ]
+    },
+    {
+      "id": "marksman",
+      "label": "Marksman",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2026 - Marksman/Marksman.glb",
+      "blob": "cdc8f71c5d0596412cfb0072d6c6f5eb060d5459",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "hiker",
+      "label": "Hiker",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/11 - May 2025 - Hiker/characters/Hiker.glb",
+      "blob": "8e02bab3cf5f1d52f003514983ba3df8cc591049",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "robot-one",
+      "label": "Robot One",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2024 - Robot/characters/Robot_One.glb",
+      "blob": "b31e123c4aa4038aaa4f1c76f003570e4507eee8",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "robot-two",
+      "label": "Robot Two",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2024 - Robot/characters/Robot_Two.glb",
+      "blob": "efc62b90d30aa471ee19797063562a97534287f0",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "tiefling",
+      "label": "Tiefling",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/12 - June 2025 - Tiefling/characters/Tiefling.glb",
+      "blob": "93869958034bac9ef940c59404e7d28be67a78b5",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "superhero",
+      "label": "Superhero",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2024 - Superhero/characters/Superhero.glb",
+      "blob": "b3ccb663be12646c25d885ca146e3ec147cd15ca",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "monster-costume-alt",
+      "label": "Monster Costume · Alt",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2023 - Monster Costume/character/gltf/MonsterCostume.glb",
+      "blob": "905375e634b224d54dba614706b8656d48467457",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "werewolf-man",
+      "label": "Werewolf Man",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2023 - Werewolf/characters/gltf/Werewolf_Man.glb",
+      "blob": "7f97094d16a0e03c40c4932b7a6da18a128471e7",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "plant-warrior",
+      "label": "Plant Warrior",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/5 - November 2025 - Plant Warrior/PlantWarrior.glb",
+      "blob": "137a58c7db34efee63375ffec824ef1465c97aec",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "helper-a",
+      "label": "Helper A",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2024 - Helpers/characters/Helper_A.glb",
+      "blob": "c78b9ad7d863e4de8303f7e5b8085139da381289",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "helper-b",
+      "label": "Helper B",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2024 - Helpers/characters/Helper_B.glb",
+      "blob": "eb4d26eb2804507eef6406d98fa734bb7a8537c6",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "space-ranger",
+      "label": "Space Ranger",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2024 - Space Ranger/character/SpaceRanger.glb",
+      "blob": "bdc8efb8e09787f82a098b6175e8c228b3de8a12",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "space-ranger-flight",
+      "label": "Space Ranger · Flight Mode",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2024 - Space Ranger/character/SpaceRanger_FlightMode.glb",
+      "blob": "f93bb54ac3a3242e0007d39b25aa6a6010a8be0a",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "hoarder",
+      "label": "Hoarder",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2026 - Hoarder/Hoarder.glb",
+      "blob": "9d8f4369933dbdb761bb33871bb3880975f93c29",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": "Resident Atlas cast: Rig_Medium",
+      "appearanceVariants": null
+    },
+    {
+      "id": "survivalist",
+      "label": "Survivalist",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2024 - Survivalist/character/Survivalist.glb",
+      "blob": "5105ebebab09e198df906827774aee43b7a9d4c4",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Medium",
+      "jointCount": 23,
+      "reviewGroup": "medium-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "monstrosity",
+      "label": "Monstrosity",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/4 - October 2025 - Monstrosity/Monstrosity.glb",
+      "blob": "ff8e7d74026b808a3bedeab4bece830df116a4bc",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "reviewGroup": "large",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "black-knight",
+      "label": "Black Knight",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/3 - September 2024 - Black Knight/characters/BlackKnight.glb",
+      "blob": "ce20440309951a9d85d246b6ff6b0fa399f6c9d8",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "reviewGroup": "large",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "demon-lord",
+      "label": "Demon Lord",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/DemonLord/characters/DemonLord.glb",
+      "blob": "7dfc03c272e77c1cdcd488bf3b396f6600faa440",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "reviewGroup": "large",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "orc-brute",
+      "label": "Orc Brute",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/2 - August 2025 - Orc Brute/OrcBrute.glb",
+      "blob": "1b56aac3d98cc978bd1311ddc61f1260a870494d",
+      "revision": "986699c81340dc3b266bf921441f93bf18127f6b",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "reviewGroup": "large",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "frost-golem",
+      "label": "FrostGolem",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2025 - FrostGolem/characters/FrostGolem.glb",
+      "blob": "7a03a6a205868386f561c4147638517ae59c88d5",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "reviewGroup": "large-mystery-coverage",
+      "rigEvidence": null,
+      "appearanceVariants": null
+    },
+    {
+      "id": "gtn",
+      "label": "4GTN",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb",
+      "blob": "fa7a7e418ba90703fdabaf272867a46dda5047ab",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "reviewGroup": "large-mystery-coverage",
+      "rigEvidence": "direct GLB + Resident Atlas: Rig_Large",
+      "appearanceVariants": null
+    },
+    {
+      "id": "gtn-forgotten",
+      "label": "4GTN Forgotten",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN_Forgotten.glb",
+      "blob": "a514ef273142a90fa35e9e4c1cdbfd58f900b93f",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "reviewGroup": "large-mystery-coverage",
+      "rigEvidence": "Resident Atlas cast: Rig_Large",
+      "appearanceVariants": null
+    },
+    {
+      "id": "clanker",
+      "label": "Clanker",
+      "path": "media/3D_Assets/KayKit_Mystery_Series6/9 - March 2025 - Clanker/characters/Clanker.glb",
+      "blob": "40e994974c70d6844118ae04785a9d7b9b8c77b1",
+      "revision": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d",
+      "rigClass": "Rig_Large",
+      "jointCount": 23,
+      "reviewGroup": "large-mystery-coverage",
+      "rigEvidence": "source Clanker.fbx: Rig_Large string x10, Rig_Medium x0",
+      "appearanceVariants": null
+    }
+  ],
+  "containerCoverage": {
+    "status": "ALL_53_GLBS_CLASSIFIED",
+    "definition": "53 non-animation, non-asset GLB candidates in media/3D_Assets/KayKit_Mystery_Series6 at main@2c92dd13...; monthly physical coverage remains the existing 49.",
+    "counts": {
+      "candidateGlbs": 53,
+      "monthlyPhysical": 49,
+      "supportedNonMonthlyExtras": 2,
+      "customOrTemplateUnsupported": 2,
+      "supportedPhysicalTotal": 51,
+      "virtualWorkbenchAppearanceVariants": 1
+    },
+    "supportedNonMonthlyExtras": [
+      {
+        "id": "mummy-a",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_A.glb",
+        "blob": "f844b3da5d7a27e61f29a4d251b6140840f493cc",
+        "rigClass": "Rig_Medium",
+        "jointCount": 23,
+        "evidence": "direct GLB JSON: skin Rig_Medium · 23 joints · 0 embedded animations"
+      },
+      {
+        "id": "mummy-b",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/KayKit Mummy/characters/Mummy_B.glb",
+        "blob": "539552ecf8bade98f624bcaa18c5a420082f7c90",
+        "rigClass": "Rig_Medium",
+        "jointCount": 23,
+        "evidence": "direct GLB JSON: skin Rig_Medium · 23 joints · 0 embedded animations"
+      }
+    ],
+    "customOrTemplateUnsupported": [
+      {
+        "id": "santa",
+        "label": "Santa",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/Santa/characters/Santa.glb",
+        "blob": "df3613f049da5d3bcace5ac2f3fe2523f1886dd5",
+        "skinName": "Rig",
+        "jointCount": 41,
+        "animationCount": 95,
+        "evidence": "Asset Registry rigfacts blob 23e93cf956c01414a5fdeaaf9c39f63f2219a4a7",
+        "status": "UNSUPPORTED_CURRENT_MEDIUM_LARGE_WORKBENCH",
+        "reason": "custom 41-joint embedded-animation rig; do not mislabel as Rig_Medium or Rig_Large"
+      },
+      {
+        "id": "character-template",
+        "label": "CharacterTemplate",
+        "path": "media/3D_Assets/KayKit_Mystery_Series6/CharacterTemplate/gltf/CharacterTemplate.glb",
+        "blob": "eea184bb7928c2e075a8da98d9d37228bf96d642",
+        "skinName": "Rig",
+        "jointCount": 41,
+        "animationCount": 95,
+        "evidence": "Asset Registry rigfacts blob 23e93cf956c01414a5fdeaaf9c39f63f2219a4a7",
+        "status": "EXCLUDED_TEMPLATE_CUSTOM_RIG",
+        "reason": "template/source rig, not a normal Medium/Large character roster entry"
+      }
+    ],
+    "virtualWorkbenchAppearanceVariants": [
+      {
+        "id": "paladin-king",
+        "geometrySourceActorId": "paladin",
+        "palette": "B",
+        "modelPath": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/characters/gltf/Paladin.glb",
+        "modelBlob": "9c6189759277fc999136f3759eac0d0e1b65ced1",
+        "texturePath": "media/3D_Assets/KayKit_Mystery_Series6/10 - April 2024 - Paladin/textures/paladin_texture_B.png",
+        "textureBlob": "eb45816ada5c84bc91abc0225e3b25f5998accc1",
+        "role": "light/blonde King candidate",
+        "countedAsPhysicalMonthlyGlb": false
+      }
+    ]
+  }
+}

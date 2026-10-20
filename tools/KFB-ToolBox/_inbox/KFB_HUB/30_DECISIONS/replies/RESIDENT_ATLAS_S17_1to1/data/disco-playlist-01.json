@@ -1,0 +1,1238 @@
+{
+ "schema": "kfb.disco-playlist/1",
+ "id": "disco-playlist-01",
+ "title": "Resident Disco · Rotation 01",
+ "rule": "beatPos = tempoMap vorhanden ? lineare Interpolation zwischen gemessenen Ankern [Zeit s, Schlag] : (songTime − phaseOffset) · bpm / 60. Eine Uhr je Titel, der Titelwechsel setzt die Phrase auf Takt 1.",
+ "source": {
+  "repo": "georg-doc/kayfabizarro",
+  "folder": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/",
+  "commit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+  "note": "Georg nannte den Ordner „…JukeBox v2neu“; auf main liegen die Titel in „KFB RoadTrip JukeBox v2“ (Commit 5f268e80, 2026-09-25 01:28Z)."
+ },
+ "rotation": [
+  "rubbish-groove",
+  "skeleton-shuffle",
+  "orc-cumbia",
+  "demon-afro-strut",
+  "witch-hat-acid",
+  "toy-soldier-brass",
+  "desert-preacher",
+  "brave-new-world-news"
+ ],
+ "tracks": [
+  {
+   "id": "rubbish-groove",
+   "title": "Rubbish Groove",
+   "style": "Beweis-Uhr (ORB/MUSIC-PERF)",
+   "repoPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Rubbish Groove 2min A extend 01.mp3",
+   "commit": "c19e291e78463a095e1b41802d37e4ec236cd897",
+   "gitBlob": "368eb5ae8fafcfba1cce3ba3f80488378fe056b0",
+   "bpm": 100,
+   "phaseOffset": 0.465,
+   "beatsPerBar": 4,
+   "tempoMap": null,
+   "status": "stabil",
+   "measured": {
+    "source": "ORB-P1 librosa (unverändert übernommen)",
+    "crossCheck": "KFB-Beatmessung 01 im Browser: 100,00 BPM, 30-s-Fenster 100/100/100/100, erster Schlag 0,462 s — deckt sich mit librosa 0,461–0,465 s. Darauf ist der Kick-Versatz 0,048 s kalibriert."
+   }
+  },
+  {
+   "id": "skeleton-shuffle",
+   "title": "Skeleton Shuffle Deluxe 01",
+   "style": "Psych-Disco-Funk",
+   "repoPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Skeleton Shuffle Deluxe 01.mp3",
+   "commit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+   "gitBlob": "0ff611590d15cd9192da0364e5de9378e2110c88",
+   "bytes": 2863660,
+   "duration": 119.56,
+   "bpm": 111.8,
+   "phaseOffset": 0.009,
+   "beatsPerBar": 4,
+   "promptBpm": 112,
+   "status": "driftet",
+   "tempoMap": [
+    [
+     0.009,
+     0
+    ],
+    [
+     4.298,
+     8
+    ],
+    [
+     8.588,
+     16
+    ],
+    [
+     12.911,
+     24
+    ],
+    [
+     17.207,
+     32
+    ],
+    [
+     21.491,
+     40
+    ],
+    [
+     25.763,
+     48
+    ],
+    [
+     30.04,
+     56
+    ],
+    [
+     34.314,
+     64
+    ],
+    [
+     38.59,
+     72
+    ],
+    [
+     42.868,
+     80
+    ],
+    [
+     47.148,
+     88
+    ],
+    [
+     51.432,
+     96
+    ],
+    [
+     55.717,
+     104
+    ],
+    [
+     60.007,
+     112
+    ],
+    [
+     64.302,
+     120
+    ],
+    [
+     68.595,
+     128
+    ],
+    [
+     72.882,
+     136
+    ],
+    [
+     77.171,
+     144
+    ],
+    [
+     81.465,
+     152
+    ],
+    [
+     85.763,
+     160
+    ],
+    [
+     90.067,
+     168
+    ],
+    [
+     94.382,
+     176
+    ],
+    [
+     98.716,
+     184
+    ],
+    [
+     103.062,
+     192
+    ],
+    [
+     107.407,
+     200
+    ],
+    [
+     111.748,
+     208
+    ],
+    [
+     116.078,
+     216
+    ],
+    [
+     119.317,
+     222
+    ]
+   ],
+   "measured": {
+    "method": "KFB-Beatmessung 01 (docs/DISCO_BEAT_MEASURE_01.md): Flux-Tempo-Raster → Kick-Hüllkurve 120 Hz → Beat-Verfolgung mit Phasen-/Periodenkorrektur → geglättet über ±12 Schläge → Anker alle 8 Schläge",
+    "fluxBpm": 111.96,
+    "flux30s": [
+     112.36,
+     112.26,
+     111.96,
+     110.96
+    ],
+    "tracked30s": [
+     111.9,
+     112.21,
+     112.23,
+     111.96,
+     111.94,
+     111.39,
+     110.52
+    ],
+    "fitBpm": 111.803,
+    "maxDevFromLinearMs": 201,
+    "trackedBeats": 223,
+    "confidence": 0.81,
+    "kickContrast": 2.99,
+    "kickSlots": [
+     0.76,
+     1,
+     0.77,
+     0.94
+    ],
+    "halfDouble": [],
+    "firstOnset": 0.012,
+    "downbeat": "Setzung, nicht gemessen: Takt 1 = erster verfolgter Schlag. Die Kick-Verteilung über die vier Schläge trennt den Taktanfang nicht sicher (kickSlots). Im Panel mit „Takt ± 1 Schlag“ verschiebbar."
+   }
+  },
+  {
+   "id": "orc-cumbia",
+   "title": "Orc Cumbia Wobble 01",
+   "style": "Digital Chicha",
+   "repoPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Orc Cumbia Wobble 01.mp3",
+   "commit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+   "gitBlob": "f48e7a10fd807f2b3cc31090658c67c75210d113",
+   "bytes": 2923400,
+   "duration": 119.2,
+   "bpm": 97.61,
+   "phaseOffset": 0.182,
+   "beatsPerBar": 4,
+   "promptBpm": 98,
+   "status": "stabil",
+   "tempoMap": [
+    [
+     0.182,
+     0
+    ],
+    [
+     5.099,
+     8
+    ],
+    [
+     10.015,
+     16
+    ],
+    [
+     14.932,
+     24
+    ],
+    [
+     19.848,
+     32
+    ],
+    [
+     24.762,
+     40
+    ],
+    [
+     29.676,
+     48
+    ],
+    [
+     34.59,
+     56
+    ],
+    [
+     39.505,
+     64
+    ],
+    [
+     44.421,
+     72
+    ],
+    [
+     49.337,
+     80
+    ],
+    [
+     54.254,
+     88
+    ],
+    [
+     59.171,
+     96
+    ],
+    [
+     64.09,
+     104
+    ],
+    [
+     69.005,
+     112
+    ],
+    [
+     73.924,
+     120
+    ],
+    [
+     78.844,
+     128
+    ],
+    [
+     83.768,
+     136
+    ],
+    [
+     88.685,
+     144
+    ],
+    [
+     93.599,
+     152
+    ],
+    [
+     98.511,
+     160
+    ],
+    [
+     103.426,
+     168
+    ],
+    [
+     108.349,
+     176
+    ],
+    [
+     113.276,
+     184
+    ],
+    [
+     118.204,
+     192
+    ],
+    [
+     118.82,
+     193
+    ]
+   ],
+   "measured": {
+    "method": "KFB-Beatmessung 01 (docs/DISCO_BEAT_MEASURE_01.md): Flux-Tempo-Raster → Kick-Hüllkurve 120 Hz → Beat-Verfolgung mit Phasen-/Periodenkorrektur → geglättet über ±12 Schläge → Anker alle 8 Schläge",
+    "fluxBpm": 97.63,
+    "flux30s": [
+     97.83,
+     97.63,
+     97.63,
+     97.53
+    ],
+    "tracked30s": [
+     97.63,
+     97.68,
+     97.64,
+     97.62,
+     97.55,
+     97.58
+    ],
+    "fitBpm": 97.615,
+    "maxDevFromLinearMs": 16,
+    "trackedBeats": 194,
+    "confidence": 0.63,
+    "kickContrast": 4.48,
+    "kickSlots": [
+     0.97,
+     0.84,
+     1,
+     0.79
+    ],
+    "halfDouble": [
+     [
+      195.27,
+      0.52
+     ]
+    ],
+    "firstOnset": 0.012,
+    "downbeat": "Setzung, nicht gemessen: Takt 1 = erster verfolgter Schlag. Die Kick-Verteilung über die vier Schläge trennt den Taktanfang nicht sicher (kickSlots). Im Panel mit „Takt ± 1 Schlag“ verschiebbar."
+   }
+  },
+  {
+   "id": "demon-afro-strut",
+   "title": "Demon Lord Afro-Strut 01",
+   "style": "Psych-Afrobeat",
+   "repoPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Demon Lord Afro-Strut 01.mp3",
+   "commit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+   "gitBlob": "530908085f34ef8c11901e2007bb915ad06492be",
+   "bytes": 2836256,
+   "duration": 118.76,
+   "bpm": 103.18,
+   "phaseOffset": 0.039,
+   "beatsPerBar": 4,
+   "promptBpm": 108,
+   "status": "leicht schwankend",
+   "tempoMap": [
+    [
+     0.039,
+     0
+    ],
+    [
+     4.695,
+     8
+    ],
+    [
+     9.349,
+     16
+    ],
+    [
+     14.001,
+     24
+    ],
+    [
+     18.652,
+     32
+    ],
+    [
+     23.302,
+     40
+    ],
+    [
+     27.952,
+     48
+    ],
+    [
+     32.603,
+     56
+    ],
+    [
+     37.259,
+     64
+    ],
+    [
+     41.92,
+     72
+    ],
+    [
+     46.583,
+     80
+    ],
+    [
+     51.252,
+     88
+    ],
+    [
+     55.917,
+     96
+    ],
+    [
+     60.578,
+     104
+    ],
+    [
+     65.241,
+     112
+    ],
+    [
+     69.906,
+     120
+    ],
+    [
+     74.573,
+     128
+    ],
+    [
+     79.225,
+     136
+    ],
+    [
+     83.857,
+     144
+    ],
+    [
+     88.482,
+     152
+    ],
+    [
+     93.108,
+     160
+    ],
+    [
+     97.738,
+     168
+    ],
+    [
+     102.373,
+     176
+    ],
+    [
+     107.02,
+     184
+    ],
+    [
+     111.68,
+     192
+    ],
+    [
+     116.359,
+     200
+    ],
+    [
+     118.118,
+     203
+    ]
+   ],
+   "measured": {
+    "method": "KFB-Beatmessung 01 (docs/DISCO_BEAT_MEASURE_01.md): Flux-Tempo-Raster → Kick-Hüllkurve 120 Hz → Beat-Verfolgung mit Phasen-/Periodenkorrektur → geglättet über ±12 Schläge → Anker alle 8 Schläge",
+    "fluxBpm": 103.46,
+    "flux30s": [
+     103.26,
+     104.46,
+     103.56,
+     103.56
+    ],
+    "tracked30s": [
+     103.12,
+     103.22,
+     102.96,
+     102.97,
+     103.41,
+     103.61
+    ],
+    "fitBpm": 103.178,
+    "maxDevFromLinearMs": 68,
+    "trackedBeats": 204,
+    "confidence": 0.74,
+    "kickContrast": 1.55,
+    "kickSlots": [
+     0.98,
+     0.6,
+     1,
+     0.31
+    ],
+    "halfDouble": [],
+    "firstOnset": 0.012,
+    "downbeat": "Setzung, nicht gemessen: Takt 1 = erster verfolgter Schlag. Die Kick-Verteilung über die vier Schläge trennt den Taktanfang nicht sicher (kickSlots). Im Panel mit „Takt ± 1 Schlag“ verschiebbar."
+   }
+  },
+  {
+   "id": "witch-hat-acid",
+   "title": "Witch Hat Acid Picnic 01",
+   "style": "Acid House",
+   "repoPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Witch Hat Acid Picnic 01.mp3",
+   "commit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+   "gitBlob": "c4a5aa0ccc81befd50b4450ee5f9d2ff83d9e0cf",
+   "bytes": 2971817,
+   "duration": 121.16,
+   "bpm": 125.45,
+   "phaseOffset": 0.056,
+   "beatsPerBar": 4,
+   "promptBpm": 122,
+   "status": "leicht schwankend",
+   "tempoMap": [
+    [
+     0.056,
+     0
+    ],
+    [
+     3.895,
+     8
+    ],
+    [
+     7.735,
+     16
+    ],
+    [
+     11.574,
+     24
+    ],
+    [
+     15.414,
+     32
+    ],
+    [
+     19.253,
+     40
+    ],
+    [
+     23.093,
+     48
+    ],
+    [
+     26.935,
+     56
+    ],
+    [
+     30.783,
+     64
+    ],
+    [
+     34.631,
+     72
+    ],
+    [
+     38.474,
+     80
+    ],
+    [
+     42.31,
+     88
+    ],
+    [
+     46.141,
+     96
+    ],
+    [
+     49.968,
+     104
+    ],
+    [
+     53.788,
+     112
+    ],
+    [
+     57.591,
+     120
+    ],
+    [
+     61.399,
+     128
+    ],
+    [
+     65.209,
+     136
+    ],
+    [
+     69.019,
+     144
+    ],
+    [
+     72.828,
+     152
+    ],
+    [
+     76.639,
+     160
+    ],
+    [
+     80.462,
+     168
+    ],
+    [
+     84.299,
+     176
+    ],
+    [
+     88.147,
+     184
+    ],
+    [
+     91.996,
+     192
+    ],
+    [
+     95.84,
+     200
+    ],
+    [
+     99.684,
+     208
+    ],
+    [
+     103.528,
+     216
+    ],
+    [
+     107.365,
+     224
+    ],
+    [
+     111.197,
+     232
+    ],
+    [
+     115.019,
+     240
+    ],
+    [
+     118.842,
+     248
+    ],
+    [
+     120.751,
+     252
+    ]
+   ],
+   "measured": {
+    "method": "KFB-Beatmessung 01 (docs/DISCO_BEAT_MEASURE_01.md): Flux-Tempo-Raster → Kick-Hüllkurve 120 Hz → Beat-Verfolgung mit Phasen-/Periodenkorrektur → geglättet über ±12 Schläge → Anker alle 8 Schläge",
+    "fluxBpm": 125.02,
+    "flux30s": [
+     124.32,
+     124.92,
+     125.02,
+     125.02
+    ],
+    "tracked30s": [
+     125.02,
+     125.01,
+     124.82,
+     125.53,
+     125.98,
+     125.33,
+     124.87,
+     125.43
+    ],
+    "fitBpm": 125.45,
+    "maxDevFromLinearMs": 69,
+    "trackedBeats": 253,
+    "confidence": 0.53,
+    "kickContrast": 3.08,
+    "kickSlots": [
+     0.86,
+     1,
+     0.89,
+     0.91
+    ],
+    "halfDouble": [
+     [
+      62.51,
+      1.04
+     ]
+    ],
+    "firstOnset": 7.042,
+    "downbeat": "Setzung, nicht gemessen: Takt 1 = erster verfolgter Schlag. Die Kick-Verteilung über die vier Schläge trennt den Taktanfang nicht sicher (kickSlots). Im Panel mit „Takt ± 1 Schlag“ verschiebbar."
+   }
+  },
+  {
+   "id": "toy-soldier-brass",
+   "title": "Toy Soldier Brass Riot 01",
+   "style": "Balkan-Electro-Swing",
+   "repoPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/Toy Soldier Brass Riot 01.mp3",
+   "commit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+   "gitBlob": "d6278517b940b764d6ad79dc201115a9ffc756f9",
+   "bytes": 2935255,
+   "duration": 119.96,
+   "bpm": 130.28,
+   "phaseOffset": 0.363,
+   "beatsPerBar": 4,
+   "promptBpm": 126,
+   "status": "driftet",
+   "tempoMap": [
+    [
+     0.363,
+     0
+    ],
+    [
+     4.064,
+     8
+    ],
+    [
+     7.764,
+     16
+    ],
+    [
+     11.465,
+     24
+    ],
+    [
+     15.165,
+     32
+    ],
+    [
+     18.866,
+     40
+    ],
+    [
+     22.566,
+     48
+    ],
+    [
+     26.264,
+     56
+    ],
+    [
+     29.958,
+     64
+    ],
+    [
+     33.654,
+     72
+    ],
+    [
+     37.35,
+     80
+    ],
+    [
+     41.073,
+     88
+    ],
+    [
+     44.797,
+     96
+    ],
+    [
+     48.514,
+     104
+    ],
+    [
+     52.224,
+     112
+    ],
+    [
+     55.93,
+     120
+    ],
+    [
+     59.624,
+     128
+    ],
+    [
+     63.307,
+     136
+    ],
+    [
+     66.977,
+     144
+    ],
+    [
+     70.638,
+     152
+    ],
+    [
+     74.303,
+     160
+    ],
+    [
+     77.989,
+     168
+    ],
+    [
+     81.705,
+     176
+    ],
+    [
+     85.433,
+     184
+    ],
+    [
+     89.145,
+     192
+    ],
+    [
+     92.829,
+     200
+    ],
+    [
+     96.487,
+     208
+    ],
+    [
+     100.121,
+     216
+    ],
+    [
+     103.756,
+     224
+    ],
+    [
+     107.406,
+     232
+    ],
+    [
+     111.064,
+     240
+    ],
+    [
+     114.727,
+     248
+    ],
+    [
+     118.389,
+     256
+    ],
+    [
+     119.761,
+     259
+    ]
+   ],
+   "measured": {
+    "method": "KFB-Beatmessung 01 (docs/DISCO_BEAT_MEASURE_01.md): Flux-Tempo-Raster → Kick-Hüllkurve 120 Hz → Beat-Verfolgung mit Phasen-/Periodenkorrektur → geglättet über ±12 Schläge → Anker alle 8 Schläge",
+    "fluxBpm": 129.71,
+    "flux30s": [
+     128.71,
+     129.61,
+     130.11,
+     130.71
+    ],
+    "tracked30s": [
+     129.71,
+     129.71,
+     129.87,
+     129.26,
+     130.55,
+     129.7,
+     130.76,
+     131.35
+    ],
+    "fitBpm": 130.285,
+    "maxDevFromLinearMs": 152,
+    "trackedBeats": 260,
+    "confidence": 0.53,
+    "kickContrast": 2.39,
+    "kickSlots": [
+     0.84,
+     1,
+     0.83,
+     0.88
+    ],
+    "halfDouble": [
+     [
+      64.86,
+      1.11
+     ]
+    ],
+    "firstOnset": 0.012,
+    "downbeat": "Setzung, nicht gemessen: Takt 1 = erster verfolgter Schlag. Die Kick-Verteilung über die vier Schläge trennt den Taktanfang nicht sicher (kickSlots). Im Panel mit „Takt ± 1 Schlag“ verschiebbar."
+   }
+  },
+  {
+   "id": "desert-preacher",
+   "title": "KFB Desert Preacher 01",
+   "style": "Rockabilly · Two-Beat",
+   "repoPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB Desert Preacher 01.mp3",
+   "commit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+   "gitBlob": "23b6253a7ac71517f6d0a61ee715ae771c916e28",
+   "bytes": 2852617,
+   "duration": 119.6,
+   "bpm": 107.01,
+   "phaseOffset": 0.476,
+   "beatsPerBar": 4,
+   "promptBpm": null,
+   "status": "stabil",
+   "tempoMap": [
+    [
+     0.476,
+     0
+    ],
+    [
+     4.97,
+     8
+    ],
+    [
+     9.465,
+     16
+    ],
+    [
+     13.946,
+     24
+    ],
+    [
+     18.422,
+     32
+    ],
+    [
+     22.903,
+     40
+    ],
+    [
+     27.392,
+     48
+    ],
+    [
+     31.882,
+     56
+    ],
+    [
+     36.37,
+     64
+    ],
+    [
+     40.856,
+     72
+    ],
+    [
+     45.342,
+     80
+    ],
+    [
+     49.83,
+     88
+    ],
+    [
+     54.316,
+     96
+    ],
+    [
+     58.8,
+     104
+    ],
+    [
+     63.283,
+     112
+    ],
+    [
+     67.767,
+     120
+    ],
+    [
+     72.252,
+     128
+    ],
+    [
+     76.74,
+     136
+    ],
+    [
+     81.231,
+     144
+    ],
+    [
+     85.723,
+     152
+    ],
+    [
+     90.211,
+     160
+    ],
+    [
+     94.691,
+     168
+    ],
+    [
+     99.17,
+     176
+    ],
+    [
+     103.65,
+     184
+    ],
+    [
+     108.128,
+     192
+    ],
+    [
+     112.605,
+     200
+    ],
+    [
+     117.08,
+     208
+    ],
+    [
+     119.318,
+     212
+    ]
+   ],
+   "measured": {
+    "method": "KFB-Beatmessung 01 (docs/DISCO_BEAT_MEASURE_01.md): Flux-Tempo-Raster → Kick-Hüllkurve 120 Hz → Beat-Verfolgung mit Phasen-/Periodenkorrektur → geglättet über ±12 Schläge → Anker alle 8 Schläge",
+    "fluxBpm": 107,
+    "flux30s": [
+     107,
+     107,
+     107,
+     107.1
+    ],
+    "tracked30s": [
+     106.79,
+     107.03,
+     106.99,
+     107.05,
+     106.92,
+     107.15,
+     107.23
+    ],
+    "fitBpm": 107.01,
+    "maxDevFromLinearMs": 27,
+    "trackedBeats": 213,
+    "confidence": 0.84,
+    "kickContrast": 4.21,
+    "kickSlots": [
+     1,
+     0.94,
+     0.94,
+     0.95
+    ],
+    "halfDouble": [],
+    "firstOnset": 0.012,
+    "downbeat": "Setzung, nicht gemessen: Takt 1 = erster verfolgter Schlag. Die Kick-Verteilung über die vier Schläge trennt den Taktanfang nicht sicher (kickSlots). Im Panel mit „Takt ± 1 Schlag“ verschiebbar."
+   }
+  },
+  {
+   "id": "brave-new-world-news",
+   "title": "KFB BraveNewWorldNews 01",
+   "style": "70s-TV-Werbung · Psych-Collage",
+   "repoPath": "media/3D_Assets/Sounds/KFB RoadTrip JukeBox v2/KFB BraveNewWorldNews 01.mp3",
+   "commit": "5f268e806a4f48b68944ce025ee8f1d2837a0590",
+   "gitBlob": "3cab9fca0af78f5967a3c6f40698e2154dd8b528",
+   "bytes": 2795810,
+   "duration": 120.2,
+   "bpm": 116.78,
+   "phaseOffset": 0.168,
+   "beatsPerBar": 4,
+   "promptBpm": null,
+   "status": "driftet",
+   "tempoMap": [
+    [
+     0.168,
+     0
+    ],
+    [
+     4.225,
+     8
+    ],
+    [
+     8.288,
+     16
+    ],
+    [
+     12.37,
+     24
+    ],
+    [
+     16.458,
+     32
+    ],
+    [
+     20.537,
+     40
+    ],
+    [
+     24.608,
+     48
+    ],
+    [
+     28.668,
+     56
+    ],
+    [
+     32.728,
+     64
+    ],
+    [
+     36.813,
+     72
+    ],
+    [
+     40.92,
+     80
+    ],
+    [
+     45.033,
+     88
+    ],
+    [
+     49.133,
+     96
+    ],
+    [
+     53.223,
+     104
+    ],
+    [
+     57.321,
+     112
+    ],
+    [
+     61.43,
+     120
+    ],
+    [
+     65.548,
+     128
+    ],
+    [
+     69.674,
+     136
+    ],
+    [
+     73.81,
+     144
+    ],
+    [
+     77.957,
+     152
+    ],
+    [
+     82.103,
+     160
+    ],
+    [
+     86.238,
+     168
+    ],
+    [
+     90.36,
+     176
+    ],
+    [
+     94.475,
+     184
+    ],
+    [
+     98.585,
+     192
+    ],
+    [
+     102.689,
+     200
+    ],
+    [
+     106.797,
+     208
+    ],
+    [
+     110.932,
+     216
+    ],
+    [
+     115.1,
+     224
+    ],
+    [
+     119.292,
+     232
+    ],
+    [
+     119.816,
+     233
+    ]
+   ],
+   "measured": {
+    "method": "KFB-Beatmessung 01 (docs/DISCO_BEAT_MEASURE_01.md): Flux-Tempo-Raster → Kick-Hüllkurve 120 Hz → Beat-Verfolgung mit Phasen-/Periodenkorrektur → geglättet über ±12 Schläge → Anker alle 8 Schläge",
+    "fluxBpm": 117.91,
+    "flux30s": [
+     117.91,
+     117.11,
+     117.11,
+     117.01
+    ],
+    "tracked30s": [
+     118.23,
+     117.79,
+     117.19,
+     117.25,
+     116.19,
+     116.27,
+     116.9
+    ],
+    "fitBpm": 116.78,
+    "maxDevFromLinearMs": 268,
+    "trackedBeats": 234,
+    "confidence": 0.76,
+    "kickContrast": 1.58,
+    "kickSlots": [
+     1,
+     0.85,
+     0.91,
+     0.64
+    ],
+    "halfDouble": [],
+    "firstOnset": 0.012,
+    "downbeat": "Setzung, nicht gemessen: Takt 1 = erster verfolgter Schlag. Die Kick-Verteilung über die vier Schläge trennt den Taktanfang nicht sicher (kickSlots). Im Panel mit „Takt ± 1 Schlag“ verschiebbar."
+   }
+  }
+ ]
+}

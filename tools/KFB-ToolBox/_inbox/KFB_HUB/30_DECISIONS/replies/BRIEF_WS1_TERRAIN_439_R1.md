@@ -16,7 +16,10 @@
 **Quellen (Register-Branch `docs/kfb-decisions-register-2026-10-11`, Ordner `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/`):**
 - `WS0_CARTOON_TERRAIN_PALETTE_SHADOW_DESIGN_R1_2026-10-19.md`: Georgs detailliertes Design, maßgeblich für Farbflächen, Schatten, Tonfläche und Kanten. Dazu den `..._TEST_REPORT_R1` lesen.
 - `WS0_COLOURED_3D_SHADOW_MVP_TRIAL_R1_2026-10-19.md` (R1.2): Gesamtumfang inklusive Banden und Rampen.
-- **Dein eigener POC für Banden und Rampen:** Diesen POC kennst nur du. Nenne zuerst Branch bzw. Commit in `WS1_STATUS` und baue darauf auf.
+- **POC für Banden und Rampen (präzisiert 20.10.):** Kein eigener Extra-POC ist belegt (#439: Quelle offen, Ursprung Gespräch „Funktionsvergleich Roadster KFB“ 19.10.). Basis ist, was im Spiel-Repo schon steht (combo/r2):
+  - Banden: `src/m2/k2t.js` (Wände, railImpact, Optik wie J17 joyride-drive.j10);
+  - Rampen: Stunt-Testfeld `src/m3/stuntData.js` + `stuntField.jsx` (@4701611), Rampen-Zonen M3-F (@8d25d62), Rampe zur Bühne m1-tune (@1befe7c).
+  - Die Rampen werden glatt statt stufig. Neue Formen nur mit Georgs Bild; nichts erfinden.
 - **Look-Regeln:**
   - J17-Goldstandard V-010; Fahrbahn #3d4a60, Banden #ef5a22 (V-102).
   - Ein Licht-Rig V-385/V-429, Schattensaum V-440/V-447.

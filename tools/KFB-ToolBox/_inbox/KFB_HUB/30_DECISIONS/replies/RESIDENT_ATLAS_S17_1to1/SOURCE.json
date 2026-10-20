@@ -1,0 +1,38 @@
+{
+ "schema": "kfb.claude-design-session-cut/1",
+ "project": "KFB_Resident_Atlas",
+ "exportedAt": "2026-10-04",
+ "revision": "r2",
+ "entry": "KFB_Resident_Atlas_S17.html",
+ "entryHash": "#__duel",
+ "sourceRevision": null,
+ "sourceRevisionNote": "Claude-Design-Workspace, kein Git-Arbeitsverzeichnis. Nicht geraten.",
+ "githubPush": "NOT_PERFORMED",
+ "githubRead": {
+  "repo": "georg-doc/kayfabizarro",
+  "motionLibrary": "media/3D_Assets/Animations/KFB_Motion_Library/ @ georg-doc-patch-3 (Branch, ungepinnt) · Katalog 2026-09-29b",
+  "arena": "georg-doc/KFB-Combat-Arena@main · modules/kfb-combat-def.js (Werte kopiert, ungepinnt)",
+  "arenaGunfight": "georg-doc/kayfabizarro@main · KFB Combat Arena/combat-arena-v2/gunfight.v2.js (ungepinnt)",
+  "combatMech": "2c92dd13cbc379ad3a6028144b8976bb3d6a840d"
+ },
+ "cdnExternal": [
+  "https://unpkg.com/three@0.184.0",
+  "https://fonts.googleapis.com (Space Grotesk, IBM Plex Mono)"
+ ],
+ "unpinnedRemote": [
+  "Motion Library @ georg-doc-patch-3",
+  "Arena-Kanon @ main (nur kopierte Zahlen, nicht geladen)",
+  "Übernommen aus S16: NoEyes-GLBs @ georg-doc-patch-3, graft-mount Leser-Assets @ raw main, KayKit_Mixed_Bag_1_FREE @ main, Skelette @ main"
+ ],
+ "localNotExported": [
+  "uploads/*, ref/atlas/* (nur Referenz-Überblendung)",
+  "KFB_Resident_Atlas_S5–S16 (im Projekt; S16 als eigenes ZIP r1)"
+ ],
+ "voiceInputUncertain": [
+  "„Bücher effects\" → Puff-/Treffer-Effekte",
+  "„laut Tricks\" → spätere Varianten (Loot/Show?)",
+  "„Zähne\" → Szene",
+  "„Regen\" → Ring",
+  "„zwei Medium Rings dir die Ringen\" → zwei Medium-Rig-Figuren, die ringen"
+ ]
+}

@@ -18,6 +18,7 @@ Eine Rolle ohne laufende Sitzung gibt es nicht. Was keinen Zuständigen hat, mac
 |---|---|
 | Entscheidungen | `build_decisions.py` → DECISIONS.md. Abgelöste Einträge zeigen auf ihren Nachfolger. |
 | Arbeitsregeln (Kurzfassung) | `KFB_WORKING_RULES_R1.md` |
+| **3D-Gestaltung (alles: Umgebung, Farbe, Licht, Knete, Figuren, Bewegung, VFX, Abnahme)** | `CANON_3D/CANON_3D_R1.md` (V-563): Pflicht für jeden 3D-Job, mit Gate `CANON_3D/lib/kfb_env.py` und Kritiker `CANON_3D/CRITIC_3D_R1.md` |
 | Struktur | diese Seite |
 | Host-Vertrag | `replies/KFB_HOST_CONTRACT_R3F_R1.md` (R1.2, V-215). Kopien gelten nicht. |
 | Billboard | `replies/BILLBOARD_STANDARD_R2.md` (R1 abgelöst) |
