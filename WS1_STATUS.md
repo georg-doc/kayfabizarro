@@ -47,6 +47,41 @@ Erste Meldung von WS1b (Georgs MacBook, V-539). Auftrag von WS0: nur Aufgabe 1. 
 
 WS1b ist danach in Pause, wie mit WS0 vereinbart.
 
+## 108 · 20.10. · V-572 Strahler: Modul + Nachweis in der Probe · 70er Fließfarben · Geometrie-Fixes
+
+**V-572 (Strahler-Bug global):**
+- **Inventur:** `CANON_3D/sources/WS1_V572_INVENTUR_LICHT_MESHES_R1.md` (Register `03976ee1`).
+  - Im Spiel betroffen: `kfb-gem.v1` (Laternen-Pfütze `pool:true` in `gemLanterns.js`).
+  - In Labs: `disco-ball-core.js` (RA S17, kanonisch im Register), `ufo-lab.js`, zwei Leuchtturm-Kegel.
+- **Modul:** `CANON_3D/lib/kfb-light-pool.v1.js`. Es funktioniert mit r147 und r186, weil `createLightPoolKit(THREE)` THREE übergeben bekommt.
+  - **Pfützen** sind echte Kegel-Projektionen und keine Scheiben mehr. Sie liegen als Uniform-Array (≤ 16) im Empfänger, mit `injectStandard(material)` für Knete, Standard- und Instanz-Materialien und `glsl` für eigene Terrain-Shader. Damit folgen sie jeder Geländeform und liegen auch auf Steinen und Figuren.
+  - **Kegel:** Die Länge kommt aus `hitDistance` (Boden-Abtastung oder Raycast). Ausgeblendet wird nur auf den letzten ca. 2 m, sodass der Strahl sichtbar bis zur Pfütze reicht (Georg: „Strahler enden zu früh“).
+  - Farben und Werte kommen 1:1 aus der Quelle. Es gibt keine Emission außerhalb des Kegels.
+- **Nachweis:** In der Gelände-Probe gibt es eine Disco-Probe (8 drehende Strahlen auf welligem Gelände) mit dem Umschalter „alt: Scheiben auf fester Höhe“ / „neu: projiziert“ (`ws1/preview@1521e2cd`).
+  - Alt: gerade Schnittkanten.
+  - Neu: Pfützen schmiegen sich an Hänge und Steine.
+  - Die 4 Diagnose-Ansichten gibt es in der Probe; die Kritiker-Runde steht noch aus.
+- **Nächste Schritte:**
+  1. `kfb-gem` im Spiel umstellen, mit Testreihe.
+  2. `disco-ball-core` als Kopie mit gleichen Parametern und nur neuer Darstellung (RA 1:1).
+  3. UFO-Lab.
+
+**Gelände-Probe** (Georg-Feedback seit §107):
+- **70er Fließfarben** sind der Standard der Flächen-Stufe. Georg: B als Richtung, „fließende Farben wie in den 70ern, ineinanderfließend, leicht wabernd, nicht als Höhenband“.
+  - Domain Warping nach Quilez, geschnitten in Bänder der Biom-Palette, lose an die Höhenlinien gebunden.
+  - Unter Props steht das Fließen still (über die AO-Draufsicht).
+  - Das Wabern ist an das Fahrtempo gekoppelt.
+  - Biom-Wechsel Band für Band, ohne Mischfarbe.
+- **Geometrie:**
+  - max. Hangneigung, Standard 52°: Die Stufenbreite folgt aus der Steigung, das ergibt organische Formen.
+  - Ausgeblendete Oktaven werden nur über die verwendeten Stufen normiert. Vorher lag das Ferngitter höher, mit Felswand am Horizont und Pyramiden.
+  - Das Tafelknie wirkt nur oberhalb der Kante.
+- **Horizont:**
+  - Kulissen mit gemalter Licht- und Schattenseite, Bändern und Kammlicht.
+  - Dunst in 4 Staffeln mit weltfesten Nebelbänken.
+- **Rezepte:** Import und Export; die Voxel-Welt steht mit im Rezept.
+- **Nach V-572:** Wolken-Design (Georg: Knet-Puffs verbessern, evtl. Fließ-Logik).
+
 ## 107 · 20.10. · Probe: Formlogik v4, Kontakt-AO am Boden, Rezept-Import/Export, Voxel-Welt
 
 Stand: `ws1/preview@<siehe Commit>`, https://ws1-preview.kayfabizarro.pages.dev/gelaende-probe
