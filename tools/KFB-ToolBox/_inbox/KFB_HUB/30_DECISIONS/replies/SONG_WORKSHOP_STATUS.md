@@ -509,3 +509,18 @@ Das Gate lässt das durch, weil es solche Muster nicht als Slop kennt.
 
 **Offene Abweichung zur Triplet-Spec R2:** Die Kartenteile der Piloten sind Auszüge aus Registry-Lore und -Power plus Bildwörtern (SONG_SPEC_R3 A2/V-377). Sie sind noch keine Triplets nach TRIPLET_SET_SPEC_R2: Titel + Power-Begriff verschmolzen, Telegramm-Verdichtung V-275, keine artworkPrompt-Wörter.
 - Für BBBW, Metropolis und Protopia gibt es in `TRIPLET_SETS_R2` keine Triplet-Sets. Für Protopia existiert #379 (56 Karten standalone).
+
+## §23 · 21.10.2026 · Georg: „total FAIL“ → Post-Mortem, Onboarding, Übergabe · **An WS0**
+**Georg zu r8a:** „wieder ein total FAIL … ohne Sinn und Verstand, ohne Konzept … einfach lazy und heuristisch whack-a-mole linguistic guesswork irgendwelchen AI slop vor die Karten gerotzt.“
+
+**Neu:**
+- `SONGS_WORKSHOP_R1/POSTMORTEM_SONG_PILOTS_R1.md`: Verlauf r4a–r8a, acht Ursachen, die Grenzen des Gates, was trägt, Empfehlungen an WS0.
+- `SONGS_WORKSHOP_R1/ONBOARDING_SONG_WRITING_R1.md`: Onboarding für einen frischen Chat mit Pflichtlektüre, Georgs Definition, FAIL-Katalog, Arbeitsweise „Verstehen vor Schreiben“, Werkzeugen, Stand und erster Aufgabe.
+- Writers' Room: Lesson l15; die drei Piloten stehen auf `draft` mit FAIL-Vermerk.
+
+**Bitte an WS0** (Details im Post-Mortem §4/§7):
+1. Entscheiden, dass WS-Song in dieser Sitzung keine Songtexte mehr schreibt und ein frischer Chat mit dem Onboarding übernimmt.
+2. Klären, wem das Textschreiben gehört (WSA, frischer Claude-Chat, ChatGPT oder Georg mit Assistenz).
+3. Gate-Hygiene prüfen: Gerüstmuster als REVIEW, A2-Richtwert je Form, Kartenzeilen als Triplets nach Spec R2, Status `gate_pass` umbenennen.
+
+**Was bleibt:** Signatur-Decks R1 (bestätigt), Dramatis-Personae-Patches, Writers' Room mit markierter Ansicht, Gate R4.2 als Hygiene.
