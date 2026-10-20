@@ -71,3 +71,41 @@ def run(concept=None, scene_kind='diorama', landmark=None, out_json=None, units_
     if raise_on_fail and not res['ok']:
         raise RuntimeError('KFB-Kanon-Gate FAIL:\n  ' + '\n  '.join(res['fail']))
     return res
+
+
+# ------------------------------------------------------------------ place() · Teil auf den Boden setzen (WSB K3, WS0-Ja 20.10.)
+# Einziger Baustein für „auf Boden setzen + Einsinken“; Jobs schreiben kein eigenes place() mehr.
+#   Einsinken nur aus kfb_env.SINK[kind] und kfb_env.SINK_CAP (V-570), nie hier definiert. Boden nur über den Raycast auf das kfb_ground-Objekt (_ground_z).
+#   Gemessen wird wie im Gate: Bodenhöhe unter der Mitte der Hülle, sink = (ground_z − Unterkante) / Höhe.
+#   Am Hang: liegt der Boden an der Talseite der Grundfläche tiefer als die Unterkante, wird so weit eingesunken, dass die Talseite aufliegt –
+#   höchstens bis zur Bandobergrenze (Fels/Stein zusätzlich bis SINK_CAP). Reicht das nicht, meldet place() 'downhill_gap' (Teil zu groß für den Hang).
+#   Arten mit offenem Band (grass, fluff, water_plant: 0–100 %) nehmen das untere Fünftel des Bands.
+STONE_KINDS = ('rock', 'rockgroup', 'stone_L', 'stone_M', 'stone_S')
+
+
+def place(ob, x, y, kind, ground=None, rz=0.0, seed=1, sink=None, role=None, layer=None, group=None, story=None, kit=None, signature=None):
+    """Setzt ob (Wurzel, Kinder zählen mit) auf (x, y) des Bodens und lässt es nach kfb_env.SINK[kind] einsinken. Liefert einen Bericht."""
+    import random, math
+    if kind not in kfb_env.SINK: raise ValueError(f'place: unbekannte Art {kind!r} (kfb_env.SINK)')
+    ground = ground or next((o for o in bpy.context.scene.objects if o.get('kfb_ground')), None)
+    if ground is None or not ground.get('kfb_ground'): raise ValueError('place: kein Boden mit kfb_ground in der Szene')
+    lo, hi = kfb_env.SINK[kind]
+    if kind in STONE_KINDS: hi = min(hi, kfb_env.SINK_CAP)
+    if hi - lo >= 0.99: hi = lo + 0.2 * (hi - lo)
+    if sink is None: sink = lo + (hi - lo) * random.Random(f'{seed}:{ob.name}:{kind}').random()
+    elif not (lo <= sink <= hi): raise ValueError(f'place: Einsinken {sink:.2f} außerhalb {lo:.2f}–{hi:.2f} ({kind})')
+    ob.location.x, ob.location.y = x, y; ob.rotation_euler.z = math.radians(rz); bpy.context.view_layer.update()
+    (x0, y0, z0), (x1, y1, z1) = _bounds(ob); cx, cy = (x0 + x1) / 2, (y0 + y1) / 2; h = max(z1 - z0, 1e-6); r = max(x1 - x0, y1 - y0) / 2
+    gc = _ground_z(ground, cx, cy, z1 + 10)
+    ring = [_ground_z(ground, cx + 0.7 * r * math.cos(a), cy + 0.7 * r * math.sin(a), z1 + 10) for a in [k * math.pi / 4 for k in range(8)]]
+    need = (gc - min(ring)) / h + 0.005                     # Einsinken, damit die Talseite aufliegt
+    gap = None
+    if need > sink:
+        if need <= hi: sink = need
+        else: sink = hi; gap = round((need - hi) * h, 4)
+    ob.location.z += (gc - sink * h) - z0; bpy.context.view_layer.update()
+    ob['kfb_kind'] = kind
+    for key, v in (('kfb_role', role), ('kfb_layer', layer), ('kfb_group', group), ('kfb_story', story), ('kfb_kit', kit), ('kfb_signature', signature)):
+        if v is not None: ob[key] = v
+    return {'id': ob.name, 'kind': kind, 'sink': round(sink, 4), 'band': [lo, hi], 'ground_z': round(gc, 4), 'bottom_z': round(gc - sink * h, 4), 'h': round(h, 4),
+            'slope_drop': round(gc - min(ring), 4), 'downhill_gap': gap, 'source': 'kfb_env.SINK' + (' + SINK_CAP' if kind in STONE_KINDS else '')}
