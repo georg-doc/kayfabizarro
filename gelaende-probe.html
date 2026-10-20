@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KFB Gelände-Probe</title>
+<style>html,body{margin:0}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root {
+  --ground: #eef1ec; --panel: #f8faf6; --ink: #1f1a14; --muted: #5d6157; --rule: #d5dbd1;
+  --accent: #2f63d8; --accent-soft: #dbe5fb; --chip: #e3e8df; --track: #cfd6ca;
+  --f-display: "Shantell Sans", "Comic Neue", system-ui, sans-serif;
+  --f-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --ground: #15181c; --panel: #1c2026; --ink: #e8ebe4; --muted: #a2a89c; --rule: #2e343b; --accent: #8fb0ff; --accent-soft: #1f2c47; --chip: #262b31; --track: #353c44; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --ground: #15181c; --panel: #1c2026; --ink: #e8ebe4; --muted: #a2a89c; --rule: #2e343b; --accent: #8fb0ff; --accent-soft: #1f2c47; --chip: #262b31; --track: #353c44; color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: var(--ground); color: var(--ink); font: 15px/1.45 var(--f-body); }
+.app { max-width: 1400px; margin: 0 auto; padding-inline: 16px; padding-block: 18px 28px; display: grid; gap: 14px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
+h1 { font: 700 26px/1.15 var(--f-display); margin: 0; }
+.sub { color: var(--muted); max-width: 70ch; margin: 0; }
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 14px; align-items: start; }
+.stage { position: relative; border-radius: 10px; overflow: hidden; background: #bfe3ef; aspect-ratio: 16 / 10; max-width: 100%; min-height: 300px; }
+.stage canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+.stage canvas:active { cursor: grabbing; }
+.hud { position: absolute; left: 10px; top: 10px; display: flex; flex-wrap: wrap; gap: 6px; pointer-events: none; }
+.hud span { font: 500 12px/1 var(--f-mono); background: rgba(20, 22, 26, .62); color: #fff; padding: 6px 8px; border-radius: 6px; font-variant-numeric: tabular-nums; }
+.camseg { position: absolute; right: 10px; top: 10px; display: flex; background: rgba(20, 22, 26, .62); border-radius: 8px; padding: 3px; gap: 2px; }
+.camseg button { font: 600 13px var(--f-body); color: #fff; background: transparent; border: 0; padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+.camseg button[aria-pressed="true"] { background: #fff; color: #1f1a14; }
+.hint { position: absolute; left: 10px; bottom: 10px; font-size: 12px; color: #fff; background: rgba(20, 22, 26, .5); padding: 4px 8px; border-radius: 6px; pointer-events: none; }
+.panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 14px; display: grid; gap: 16px; }
+.presets { display: flex; flex-wrap: wrap; gap: 6px; }
+.presets button, .btn { font: 600 13px var(--f-body); color: var(--ink); background: var(--chip); border: 1px solid transparent; padding: 6px 10px; border-radius: 999px; cursor: pointer; }
+.presets button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 9px; }
+legend { font: 500 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 0; margin-bottom: 8px; }
+.row { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; align-items: center; }
+.row label { font-size: 14px; }
+.row output { font: 500 12px var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; min-width: 5.5em; }
+.row input[type=range] { grid-column: 1 / -1; width: 100%; accent-color: var(--accent); }
+.row select { grid-column: 2; font: 14px var(--f-body); color: var(--ink); background: var(--ground); border: 1px solid var(--rule); border-radius: 6px; padding: 3px 6px; }
+.check { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.check input { accent-color: var(--accent); width: 16px; height: 16px; }
+.swatches { display: flex; gap: 4px; }
+.swatches i { flex: 1; height: 14px; border-radius: 3px; }
+.recipe { display: grid; gap: 8px; }
+.recipe textarea { width: 100%; height: 150px; resize: vertical; font: 500 11.5px/1.4 var(--f-mono); color: var(--ink); background: var(--ground); border: 1px solid var(--rule); border-radius: 6px; padding: 8px; }
+.recipe .bar { display: flex; gap: 8px; align-items: center; }
+.recipe .msg { font-size: 13px; color: var(--muted); }
+.notes { color: var(--muted); font-size: 13.5px; display: grid; gap: 4px; max-width: 90ch; }
+.notes p { margin: 0; }
+.keys { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.7; }
+kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; }
+@media (max-width: 900px) { .main { grid-template-columns: 1fr; } .stage { aspect-ratio: 4 / 3; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Gelände-Probe</h1>
+    <p class="sub">Cartoon-Gelände live gestalten und mit den sechs Dieselpunk-Racern endlos darüber fahren und fliegen. Form, Stilisierung und Biom-Farben bleiben während der Fahrt einstellbar; das Ergebnis lässt sich als Rezept kopieren.</p>
+  </header>
+
+  <div class="main">
+    <div class="stage" id="stage">
+      <canvas id="cv" aria-label="3D-Ansicht des Geländes; ziehen dreht, Mausrad oder zwei Finger zoomen"></canvas>
+      <div class="hud"><span id="hudSpeed">0 km/h</span><span id="hudMode">Boden</span><span id="hudBoost">Boost 100 %</span><span id="hudDist">0,0 km</span><span id="hudFps">– fps</span></div>
+      <div class="camseg" role="group" aria-label="Kamera">
+        <button type="button" id="camOver" aria-pressed="true">Übersicht</button>
+        <button type="button" id="camDrive" aria-pressed="false">Fahren</button>
+      </div>
+      <div class="hint" id="hint">Ziehen: drehen · Rad/zwei Finger: zoomen</div>
+    </div>
+
+    <form class="panel" id="panel" autocomplete="off">
+      <div>
+        <div class="presets" id="presets" role="group" aria-label="Vorlagen"></div>
+      </div>
+
+      <fieldset>
+        <legend>Form</legend>
+        <div class="row"><label for="scale">Formgröße</label><output id="o_scale"></output><input type="range" id="scale" min="60" max="400" step="5"></div>
+        <div class="row"><label for="amp">Höhe</label><output id="o_amp"></output><input type="range" id="amp" min="5" max="140" step="1"></div>
+        <div class="row"><label for="oct">Detailstufen</label><output id="o_oct"></output><input type="range" id="oct" min="1" max="7" step="1"></div>
+        <div class="row"><label for="ridge">Grate</label><output id="o_ridge"></output><input type="range" id="ridge" min="0" max="1" step="0.01"></div>
+        <div class="row"><label for="warp">Verwirbelung</label><output id="o_warp"></output><input type="range" id="warp" min="0" max="1.6" step="0.01"></div>
+        <div class="row"><label for="macro">Wechsel ruhig/bergig</label><output id="o_macro"></output><input type="range" id="macro" min="0" max="1" step="0.01"></div>
+        <div class="row"><label for="seed">Startwert</label><output id="o_seed"></output><input type="range" id="seed" min="1" max="999" step="1"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Stilisierung</legend>
+        <div class="row"><label for="valley">Flache Täler</label><output id="o_valley"></output><input type="range" id="valley" min="0" max="1" step="0.01"></div>
+        <div class="row"><label for="plateau">Tafelberge ab</label><output id="o_plateau"></output><input type="range" id="plateau" min="0.25" max="1" step="0.01"></div>
+        <div class="row"><label for="steps">Terrassen</label><output id="o_steps"></output><input type="range" id="steps" min="0" max="12" step="1"></div>
+        <div class="row"><label for="sharp">Terrassen-Kante</label><output id="o_sharp"></output><input type="range" id="sharp" min="0" max="1" step="0.01"></div>
+        <div class="row"><label for="water">Wasserstand</label><output id="o_water"></output><input type="range" id="water" min="0" max="0.5" step="0.01"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Farbe und Biom</legend>
+        <div class="row"><label for="palA">Biom</label><select id="palA"></select></div>
+        <div class="swatches" id="swA" aria-hidden="true"></div>
+        <div class="row"><label for="soft">Farbbänder</label><output id="o_soft"></output><input type="range" id="soft" min="0" max="1" step="0.01"></div>
+        <div class="row"><label for="cliff">Felsen ab Steigung</label><output id="o_cliff"></output><input type="range" id="cliff" min="15" max="60" step="1"></div>
+        <label class="check"><input type="checkbox" id="strata"> Gesteinsstreifen an Felsen</label>
+        <label class="check"><input type="checkbox" id="toon"> Licht in Stufen</label>
+        <label class="check"><input type="checkbox" id="mix"> Biom-Wechsel entlang der Strecke</label>
+        <div class="row"><label for="palB">Zweites Biom</label><select id="palB"></select></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Welt und Tempo</legend>
+        <label class="check"><input type="checkbox" id="rings"> Ringgitter: Sicht bis ~5 km statt 300 m</label>
+        <label class="check"><input type="checkbox" id="gridworld"> Gitter-Welt (Neon-Linien statt Farbflächen)</label>
+        <div class="row"><label for="gs">Gitterweite</label><output id="o_gs"></output><input type="range" id="gs" min="3" max="32" step="1" value="8"></div>
+        <div class="row"><label for="gshape">Linienform</label><select id="gshape"><option value="1">rund, geschwungen</option><option value="2">rund, Kreise</option><option value="0">eckig, Raster</option></select></div>
+        <div class="row"><label for="gfill">Gitter-Füllung</label><select id="gfill"><option value="0">Linien</option><option value="1">Schachbrett</option><option value="2">Schachbrett + Linien</option></select></div>
+        <div class="row"><label for="gcol">Schachbrett-Farben</label><select id="gcol"><option value="0">2 Töne</option><option value="1">bunt (Biom)</option></select></div>
+        <label class="check"><input type="checkbox" id="clay"> Knet-Optik (durchgehend, ohne Kachelmuster)</label>
+        <div class="row"><label for="tempo">Test-Tempo</label><select id="tempo"><option value="spiel">Spiel: 114 km/h, Boost 165</option><option value="hyper">Hyper-Rush: 350, Boost 500</option><option value="warp">Warp: 1000, Boost 1200</option></select></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Himmel</legend>
+        <div class="row"><label for="tod">Tageszeit</label><select id="tod"><option value="tag">Tag</option><option value="gold">Gold</option><option value="nacht">Nacht</option></select></div>
+        <label class="check"><input type="checkbox" id="painted" checked> Gemalte Wolken auf der Kuppel</label>
+        <label class="check"><input type="checkbox" id="puffs" checked> Knet-Wolken in Flughöhe</label>
+        <div class="row"><label for="cover">Wolken-Menge</label><output id="o_cover"></output><input type="range" id="cover" min="0" max="1" step="0.01" value="0.45"></div>
+        <label class="check"><input type="checkbox" id="trails" checked> Kondensstreifen im Flug</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Fahrzeug</legend>
+        <div class="row"><label for="car">Racer</label><select id="car"></select></div>
+        <p class="keys"><strong>Fahren:</strong> <kbd>W</kbd> Gas · <kbd>S</kbd> Bremse/rückwärts · <kbd>A</kbd> <kbd>D</kbd> lenken · <kbd>⇧</kbd> Boost · <kbd>Leertaste</kbd> Sprung · 2× <kbd>Leertaste</kbd> oder <kbd>F</kbd> Flug an/aus · <kbd>R</kbd> zurücksetzen</p>
+        <p class="keys"><strong>Im Flug:</strong> <kbd>S</kbd> Nase hoch (Steigen kostet Tempo) · <kbd>W</kbd> Nase runter (Sinken bringt Tempo) · <kbd>A</kbd> <kbd>D</kbd> Kurve · <kbd>⇧</kbd> Boost</p>
+        <label class="check"><input type="checkbox" id="grid"> Kachelraster 64 m zeigen</label>
+      </fieldset>
+
+      <div class="recipe">
+        <span style="font:500 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Rezept (kfb.terrain-recipe/1, Entwurf)</span>
+        <textarea id="recipe" readonly aria-label="Rezept als JSON"></textarea>
+        <div class="bar"><button type="button" class="btn" id="copy">Rezept kopieren</button><span class="msg" id="copyMsg" role="status"></span></div>
+      </div>
+    </form>
+  </div>
+
+  <div class="notes">
+    <p><strong>Was die Probe zeigt:</strong> ein Ausschnitt von 600 × 600 m um das Fahrzeug, gerechnet als reine Funktion aus Position und Startwert. Die Welt wandert mit, in jede Richtung, ohne Ende – so wie später die Kacheln im Spiel. Höchsttempo am Boden 114 km/h wie im Spiel, mit Boost etwa 165 km/h; im Sturzflug deutlich mehr.</p>
+    <p><strong>Welt und Tempo:</strong> Das Ringgitter legt zwei gröbere Gitter (2,4 km und 9,6 km) um das feine – vereinfachte Geometry Clipmaps; die Kosten bleiben bei jedem Tempo gleich. Die Gitter-Welt zeigt dasselbe Gelände als Neon-Linien (Weite und Linienform einstellbar). Test-Tempo nur für diese Probe; im Spiel gelten die Stufen aus §85.</p>
+    <p><strong>Himmel:</strong> zwei Wolken-Varianten zum Vergleich – gemalte Wolken auf der Kuppel (harte Kanten, Licht- und Schattenton, fast ohne Rechenkosten) und Knet-Wolken als 3D-Körper in Flughöhe (man fliegt an ihnen vorbei oder hindurch). Tageszeit-Farben angelehnt an die Stimmungen des Licht-Moduls, Kondensstreifen im Flug nach dem Vorbild von TinySkies, selbst gebaut.</p>
+    <p><strong>Grenzen:</strong> Gelände-Probe von WS1 (Entscheidungsgrundlage, nicht das Spiel). Spielzeug-Physik zum Ausprobieren, nicht die Fahrphysik des Spiels (keine Kollision mit Wänden außer einem Abprallen, kein Antriebston). Paletten sind Platzhalter. Steuerung nur mit Tastatur.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
+<script>
+(() => {
+  // ---------- Paletten (Platzhalter, Cartoon) ----------
+  const PALETTES = {
+    moos:   { name: 'Moos-Insel', water: '#4fb3c9', sand: '#e8d59a', low: '#86c65c', mid: '#5ea24c', high: '#8f9a5c', peak: '#f4f1e6', cliff: '#9b7b5e', sky: '#bfe3ef' },
+    mesa:   { name: 'Mesa',       water: '#3fa7a0', sand: '#f0c58a', low: '#e6a061', mid: '#cc6c42', high: '#a54d38', peak: '#f3d9b0', cliff: '#8c3f2f', sky: '#f6d6b8' },
+    wueste: { name: 'Wüste',      water: '#3fb8b0', sand: '#f4dc9a', low: '#efc97c', mid: '#e2ae5f', high: '#c98d4c', peak: '#fbe7bf', cliff: '#b0703d', sky: '#fbe9c8' },
+    schnee: { name: 'Schnee',     water: '#3a8fc4', sand: '#d9d2c0', low: '#8fb7a3', mid: '#6c8f88', high: '#a3afbd', peak: '#ffffff', cliff: '#6b6f7d', sky: '#d6e6f5' },
+    pastell:{ name: 'Pastell',    water: '#8ad3e6', sand: '#fbe3c2', low: '#b7e3a8', mid: '#f3b4c6', high: '#c6b3ee', peak: '#fff6fb', cliff: '#b28fc4', sky: '#fde7f0' },
+  };
+  const PAL_KEYS = ['water', 'sand', 'low', 'mid', 'high', 'peak', 'cliff', 'sky'];
+
+  // ---------- Vorlagen ----------
+  const PRESETS = {
+    'Sanfte Hügel':    { scale: 180, amp: 28, oct: 5, ridge: 0,    warp: 0.2,  macro: 0.5, seed: 42,  valley: 0.3,  plateau: 1,    steps: 0, sharp: 0.5,  water: 0.06, palA: 'moos',    palB: 'mesa',   soft: 0.35, cliff: 32, strata: false, toon: false, mix: false },
+    'Tafelberge':      { scale: 230, amp: 62, oct: 5, ridge: 0.15, warp: 0.5,  macro: 0.7, seed: 7,   valley: 0.65, plateau: 0.55, steps: 4, sharp: 0.85, water: 0,    palA: 'mesa',    palB: 'wueste', soft: 0.15, cliff: 30, strata: true,  toon: true,  mix: false },
+    'Terrassen-Insel': { scale: 160, amp: 40, oct: 4, ridge: 0,    warp: 0.3,  macro: 0.6, seed: 123, valley: 0.2,  plateau: 1,    steps: 7, sharp: 0.6,  water: 0.2,  palA: 'moos',    palB: 'pastell',soft: 0.1,  cliff: 34, strata: false, toon: true,  mix: false },
+    'Grat-Gebirge':    { scale: 260, amp: 95, oct: 6, ridge: 0.8,  warp: 0.25, macro: 0.8, seed: 311, valley: 0.5,  plateau: 1,    steps: 0, sharp: 0.5,  water: 0.04, palA: 'schnee',  palB: 'moos',   soft: 0.25, cliff: 36, strata: true,  toon: false, mix: false },
+    'Wirbel-Dünen':    { scale: 120, amp: 18, oct: 3, ridge: 0.5,  warp: 1.2,  macro: 0.3, seed: 58,  valley: 0,    plateau: 1,    steps: 0, sharp: 0.5,  water: 0,    palA: 'wueste',  palB: 'mesa',   soft: 0.3,  cliff: 40, strata: false, toon: false, mix: false },
+    'Biom-Reise':      { scale: 200, amp: 45, oct: 5, ridge: 0.3,  warp: 0.45, macro: 0.75,seed: 900, valley: 0.4,  plateau: 0.7,  steps: 3, sharp: 0.7,  water: 0.04, palA: 'moos',    palB: 'mesa',   soft: 0.2,  cliff: 32, strata: true,  toon: true,  mix: true },
+  };
+  const DEFAULT = 'Tafelberge';
+
+  // ---------- Rauschen (2D-Simplex nach Ashima/Gustavson, MIT) – JS und GLSL identisch ----------
+  const GLSL_NOISE = `
+  vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
+  vec2 mod289(vec2 x){return x-floor(x*(1.0/289.0))*289.0;}
+  vec3 permute(vec3 x){return mod289(((x*34.0)+1.0)*x);}
+  float snoise(vec2 v){
+    const vec4 C=vec4(0.211324865405187,0.366025403784439,-0.577350269189626,0.024390243902439);
+    vec2 i=floor(v+dot(v,C.yy)); vec2 x0=v-i+dot(i,C.xx);
+    vec2 i1=(x0.x>x0.y)?vec2(1.0,0.0):vec2(0.0,1.0);
+    vec4 x12=x0.xyxy+C.xxzz; x12.xy-=i1;
+    i=mod289(i);
+    vec3 p=permute(permute(i.y+vec3(0.0,i1.y,1.0))+i.x+vec3(0.0,i1.x,1.0));
+    vec3 m=max(0.5-vec3(dot(x0,x0),dot(x12.xy,x12.xy),dot(x12.zw,x12.zw)),0.0); m=m*m; m=m*m;
+    vec3 x=2.0*fract(p*C.www)-1.0; vec3 h=abs(x)-0.5; vec3 ox=floor(x+0.5); vec3 a0=x-ox;
+    m*=1.79284291400159-0.85373472095314*(a0*a0+h*h);
+    vec3 g; g.x=a0.x*x0.x+h.x*x0.y; g.yz=a0.yz*x12.xz+h.yz*x12.yw;
+    return 130.0*dot(m,g);
+  }`;
+  const m289 = (x) => x - Math.floor(x / 289) * 289, perm = (x) => m289((x * 34 + 1) * x), fract = (x) => x - Math.floor(x);
+  function snoise(vx, vy) {
+    const Cx = 0.211324865405187, Cy = 0.366025403784439, Cz = -0.577350269189626, Cw = 0.024390243902439;
+    const s = (vx + vy) * Cy; let ix = Math.floor(vx + s), iy = Math.floor(vy + s);
+    const t = (ix + iy) * Cx, x0x = vx - ix + t, x0y = vy - iy + t;
+    const i1x = x0x > x0y ? 1 : 0, i1y = x0x > x0y ? 0 : 1;
+    const x1x = x0x + Cx - i1x, x1y = x0y + Cx - i1y, x2x = x0x + Cz, x2y = x0y + Cz;
+    ix = m289(ix); iy = m289(iy);
+    const p0 = perm(perm(iy) + ix), p1 = perm(perm(iy + i1y) + ix + i1x), p2 = perm(perm(iy + 1) + ix + 1);
+    let m0 = Math.max(0.5 - (x0x * x0x + x0y * x0y), 0), m1 = Math.max(0.5 - (x1x * x1x + x1y * x1y), 0), m2 = Math.max(0.5 - (x2x * x2x + x2y * x2y), 0);
+    m0 = m0 * m0 * m0 * m0; m1 = m1 * m1 * m1 * m1; m2 = m2 * m2 * m2 * m2;
+    const g = (p, ax, ay, mm) => { const x = 2 * fract(p * Cw) - 1, h = Math.abs(x) - 0.5, a0 = x - Math.floor(x + 0.5); return mm * (1.79284291400159 - 0.85373472095314 * (a0 * a0 + h * h)) * (a0 * ax + h * ay) };
+    return 130 * (g(p0, x0x, x0y, m0) + g(p1, x1x, x1y, m1) + g(p2, x2x, x2y, m2));
+  }
+
+  // Höhenfunktion: eine Quelle der Wahrheit, zweimal geschrieben (GLSL für das Bild, JS für Kamera und Figur)
+  const GLSL_HEIGHT = `
+  uniform float uScale, uAmp, uOct, uRidge, uWarp, uMacro, uValley, uPlateau, uSteps, uSharp;
+  uniform vec2 uSeed;
+  float fbm(vec2 q){ float s=0.0, a=1.0, n=0.0; for(int i=0;i<7;i++){ if(float(i)>=uOct) break; s+=a*snoise(q); n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=0.5; } return s/n; }
+  float rfbm(vec2 q){ float s=0.0, a=1.0, n=0.0; for(int i=0;i<7;i++){ if(float(i)>=uOct) break; float r=1.0-abs(snoise(q)); s+=a*r*r; n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=0.5; } return s/n; }
+  float hgt(vec2 p){
+    vec2 q=p/uScale+uSeed;
+    if(uWarp>0.0){ q+=uWarp*vec2(fbm(q*0.6+vec2(5.2,1.3)), fbm(q*0.6+vec2(-3.7,8.1))); }
+    float b=clamp(fbm(q)*0.75+0.5,0.0,1.0);
+    float r=rfbm(q+vec2(17.0,-9.0));
+    float h=mix(b,r,uRidge);
+    float region=smoothstep(-0.35,0.45,snoise(p/(uScale*6.0)+uSeed*0.37+11.0));
+    h*=mix(1.0,mix(0.22,1.15,region),uMacro);
+    h=clamp(h,0.0,1.0);
+    if(uValley>0.0) h=pow(h,1.0+uValley*1.6);
+    if(uPlateau<0.999 && h>uPlateau) h=uPlateau+(h-uPlateau)*0.12;
+    if(uSteps>=1.0){ float s=h*uSteps; float f=fract(s); float w=mix(0.5,0.03,uSharp); f=smoothstep(0.5-w,0.5+w,f); h=(floor(s)+f)/uSteps; }
+    return h*uAmp;
+  }`;
+  const S = {};
+  const rot = (x, y) => [1.6 * x - 1.2 * y + 3.1, 1.2 * x + 1.6 * y + 1.7]; // mat2(1.6,1.2,-1.2,1.6) spaltenweise wie in GLSL
+  function fbm(x, y) { let s = 0, a = 1, n = 0; for (let i = 0; i < 7 && i < S.oct; i++) { s += a * snoise(x, y); n += a; [x, y] = rot(x, y); a *= 0.5 } return s / n }
+  function rfbm(x, y) { let s = 0, a = 1, n = 0; for (let i = 0; i < 7 && i < S.oct; i++) { const r = 1 - Math.abs(snoise(x, y)); s += a * r * r; n += a; [x, y] = rot(x, y); a *= 0.5 } return s / n }
+  const sstep = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t) };
+  function hgt(px, py) {
+    let qx = px / S.scale + S.sx, qy = py / S.scale + S.sy;
+    if (S.warp > 0) { const wx = fbm(qx * 0.6 + 5.2, qy * 0.6 + 1.3), wy = fbm(qx * 0.6 - 3.7, qy * 0.6 + 8.1); qx += S.warp * wx; qy += S.warp * wy }
+    const b = Math.min(1, Math.max(0, fbm(qx, qy) * 0.75 + 0.5)), r = rfbm(qx + 17, qy - 9);
+    let h = b + (r - b) * S.ridge;
+    const region = sstep(-0.35, 0.45, snoise(px / (S.scale * 6) + S.sx * 0.37 + 11, py / (S.scale * 6) + S.sy * 0.37 + 11));
+    h *= 1 + ((0.22 + (1.15 - 0.22) * region) - 1) * S.macro;
+    h = Math.min(1, Math.max(0, h));
+    if (S.valley > 0) h = Math.pow(h, 1 + S.valley * 1.6);
+    if (S.plateau < 0.999 && h > S.plateau) h = S.plateau + (h - S.plateau) * 0.12;
+    if (S.steps >= 1) { const s = h * S.steps; let f = fract(s); const w = 0.5 + (0.03 - 0.5) * S.sharp; f = sstep(0.5 - w, 0.5 + w, f); h = (Math.floor(s) + f) / S.steps }
+    return h * S.amp;
+  }
+
+  // ---------- three.js ----------
+  const cv = document.getElementById('cv'), stage = document.getElementById('stage');
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true }); }
+  catch (e) { stage.insertAdjacentHTML('beforeend', '<p style="position:absolute;inset:auto 10px 40px 10px;color:#fff;background:rgba(0,0,0,.6);padding:8px;border-radius:6px">WebGL ist in diesem Browser nicht verfügbar.</p>'); return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(55, 1.6, 0.5, 14000);
+  const SIZE = 600, SEG = 256;
+  const U = {
+    uScale: { value: 200 }, uAmp: { value: 50 }, uOct: { value: 5 }, uRidge: { value: 0 }, uWarp: { value: 0 }, uMacro: { value: 0 }, uValley: { value: 0 }, uPlateau: { value: 1 }, uSteps: { value: 0 }, uSharp: { value: 0.5 },
+    uSeed: { value: new THREE.Vector2() }, uOffset: { value: new THREE.Vector2() }, uWater: { value: 0.1 }, uSoft: { value: 0.3 }, uCliff: { value: 0.4 }, uStrata: { value: 0 }, uToon: { value: 0 }, uMix: { value: 0 }, uGrid: { value: 0 },
+    uFogNear: { value: 600 }, uFogFar: { value: 1600 }, uCam: { value: new THREE.Vector3() }, uTint: { value: new THREE.Color(1, 1, 1) }, uHorizon: { value: new THREE.Color() }, uMoodK: { value: 0 },
+  };
+  for (const k of PAL_KEYS) { U['uA_' + k] = { value: new THREE.Color() }; U['uB_' + k] = { value: new THREE.Color() } }
+  const palUniforms = PAL_KEYS.map((k) => `uniform vec3 uA_${k}; uniform vec3 uB_${k};`).join('\n');
+
+  const vert = `${GLSL_NOISE}\n${GLSL_HEIGHT}
+  uniform vec2 uOffset; uniform vec2 uCarW; uniform float uHole, uDrop, uNE; varying vec3 vW; varying vec3 vN; varying float vH;
+  void main(){
+    vec2 p=position.xz+uOffset; float h=hgt(p); float e=uNE;
+    float hx=hgt(p+vec2(e,0.0)), hz=hgt(p+vec2(0.0,e));
+    vN=normalize(vec3(h-hx, e, h-hz)); vH=h; vW=vec3(p.x,h,p.y);
+    float y=h;
+    // Ringgitter: der Teil eines groben Rings, der unter dem feineren Gitter liegt, sinkt weg (keine Doppelflächen, keine Risse am Rand)
+    if(uHole>0.0){ float cheb=max(abs(p.x-uCarW.x),abs(p.y-uCarW.y)); y-=uDrop*smoothstep(uHole,uHole-30.0,cheb); }
+    gl_Position=projectionMatrix*viewMatrix*modelMatrix*vec4(position.x,y,position.z,1.0);
+  }`;
+  const frag = `${GLSL_NOISE}
+  uniform float uScale, uAmp, uWater, uSoft, uCliff, uStrata, uToon, uMix, uGrid, uFogNear, uFogFar, uMoodK, uGridWorld, uGS, uGShape, uGFill, uGCol, uClay; uniform vec2 uSeed; uniform vec3 uCam; uniform vec2 uOffset; uniform vec3 uTint, uHorizon;
+  ${palUniforms}
+  varying vec3 vW; varying vec3 vN; varying float vH;
+  vec3 pick(vec3 a, vec3 b, float t){ return mix(a,b,t); }
+  void main(){
+    float t=uMix>0.5 ? smoothstep(-0.25,0.25,snoise(vW.xz/(uScale*9.0)+uSeed*0.21+40.0)) : 0.0;
+    vec3 water=pick(uA_water,uB_water,t), sand=pick(uA_sand,uB_sand,t), low=pick(uA_low,uB_low,t), mid=pick(uA_mid,uB_mid,t), high=pick(uA_high,uB_high,t), peak=pick(uA_peak,uB_peak,t), cliff=pick(uA_cliff,uB_cliff,t), sky=pick(uA_sky,uB_sky,t);
+    float hn=vH/uAmp, w=0.003+0.09*uSoft;
+    vec3 c=uWater>0.005 ? mix(water*0.7, sand, smoothstep(uWater-w, uWater+w, hn)) : sand;
+    c=mix(c, low,  smoothstep(uWater+0.04-w, uWater+0.04+w, hn));
+    c=mix(c, mid,  smoothstep(0.38-w, 0.38+w, hn));
+    c=mix(c, high, smoothstep(0.62-w, 0.62+w, hn));
+    c=mix(c, peak, smoothstep(0.84-w, 0.84+w, hn));
+    float slope=1.0-vN.y; float cw=0.01+0.05*uSoft;
+    vec3 cl=cliff;
+    if(uStrata>0.5){ float band=step(0.5,fract(vW.y/(uAmp*0.06+0.6))); cl=mix(cliff*0.82, cliff*1.08, band); }
+    c=mix(c, cl, smoothstep(uCliff-cw, uCliff+cw, slope));
+    vec3 N=normalize(vN); float clayTone=1.0;
+    if(uClay>0.5){
+      // Knet-Optik aus der Weltlage (keine Textur, keine Wiederholung): Dellen (Rauschen als Höhe), Daumen-Rillen (verbogene Ringe), fleckige Farbe
+      vec2 cp=vW.xz; float e=0.35;
+      float b0=snoise(cp*0.45)+0.5*snoise(cp*1.3+7.0), bx=snoise((cp+vec2(e,0.0))*0.45)+0.5*snoise((cp+vec2(e,0.0))*1.3+7.0), bz=snoise((cp+vec2(0.0,e))*0.45)+0.5*snoise((cp+vec2(0.0,e))*1.3+7.0);
+      vec2 cell=floor(cp/2.6); vec2 fc=fract(cp/2.6)-0.5+0.25*vec2(snoise(cell*3.1),snoise(cell*1.7+4.0));
+      float ridge=sin(length(fc)*42.0+snoise(cp*0.8)*3.0)*smoothstep(0.5,0.1,length(fc))*step(0.55,fract(sin(dot(cell,vec2(41.3,17.9)))*4375.85));
+      N=normalize(N+vec3(-(bx-b0)/e,0.0,-(bz-b0)/e)*0.10+vec3(ridge*0.04,0.0,ridge*0.03));
+      clayTone=0.94+0.06*snoise(cp*0.07+3.0)+0.04*snoise(cp*0.6)+0.025*snoise(cp*2.4); // dezent fleckig, feine Körnung
+    }
+    vec3 L=normalize(vec3(-0.55,0.75,0.35)); float l=max(dot(N,L),0.0);
+    if(uToon>0.5){ float s=l*3.0; l=(floor(s)+smoothstep(0.0,0.12,fract(s)))/3.0; }
+    vec3 col=c*clayTone*(0.42+0.20*N.y+0.62*l);
+    if(uGrid>0.5){ vec2 g=abs(fract(vW.xz/64.0+0.5)-0.5)*64.0; float line=1.0-smoothstep(0.25,0.9,min(g.x,g.y)); col=mix(col, vec3(1.0), line*0.55); }
+    col*=uTint; sky=mix(sky,uHorizon,uMoodK);
+    float d=distance(uCam.xz, vW.xz-uOffset); float f=smoothstep(uFogNear,uFogFar,d);
+    if(uGridWorld>0.5){
+      // Gitter-Welt: dunkle Fläche, leuchtende Linien alle 16 m plus Höhenlinien; Farben aus dem Biom (Neon), Linien verblassen in der Ferne
+      vec3 neon=mix(mid, vec3(1.0), 0.35)*1.25, neon2=mix(peak, cliff, 0.4);
+      // Linienform: 0 eckiges Raster, 1 geschwungen (Raster durch weiches Rauschen verbogen), 2 Kreise je Zelle; Profil rund: scharfer Kern + Leuchthof
+      vec2 q=vW.xz; if(uGShape>0.5 && uGShape<1.5) q+=vec2(snoise(vW.xz/70.0+3.0), snoise(vW.xz/70.0-5.0))*uGS*0.9;
+      vec2 g=q/uGS; float dl;
+      if(uGShape>1.5){ vec2 c=fract(g)-0.5; float r=length(c); dl=abs(r-0.36)/max(fwidth(r),1e-4); }
+      else { vec2 a=abs(fract(g-0.5)-0.5)/max(fwidth(g),vec2(1e-4)); dl=min(a.x,a.y); }
+      float line=(1.0-smoothstep(0.0,1.3,dl)) + exp(-dl*0.32)*0.38;
+      float hc=vW.y/(uAmp*0.08+1.0); float hf=abs(fract(hc-0.5)-0.5)/max(fwidth(hc),1e-4); float cont=(1.0-smoothstep(0.0,1.2,hf))*0.8 + exp(-hf*0.4)*0.2;
+      float fade=1.0-smoothstep(uFogNear*0.4, uFogFar, d);
+      vec3 base=mid*0.10*(0.5+0.6*l);
+      if(uGFill>0.5){
+        // Schachbrett in derselben Form wie die Linien (geschwungen/Kreise/eckig), Kanten gefiltert (kein Flimmern in der Ferne)
+        vec2 w=max(fwidth(g),vec2(1e-4)); vec2 ii=2.0*(abs(fract((g-0.5*w)*0.5)-0.5)-abs(fract((g+0.5*w)*0.5)-0.5))/w; float chk=0.5-0.5*ii.x*ii.y;
+        vec3 ca=mix(low,sand,0.25), cb=mix(mid,high,0.3);
+        if(uGCol>0.5){ vec2 cell=floor(g); float hsh=fract(sin(dot(cell,vec2(12.9898,78.233)))*43758.5453); vec3 cc=hsh<0.25?sand:hsh<0.5?low:hsh<0.75?mid:high; float far=smoothstep(0.25,0.6,max(w.x,w.y)); ca=mix(cc,(sand+low+mid+high)*0.25,far); cb=mix(cc*0.82,(sand+low+mid+high)*0.22,far); }
+        if(uGShape>1.5){ chk=1.0-smoothstep(0.30,0.36+fwidth(length(fract(g)-0.5)),length(fract(g)-0.5)); }
+        base=mix(cb,ca,chk)*clayTone*(0.42+0.20*N.y+0.62*l);
+      }
+      float lk=uGFill<0.5?1.0:(uGFill<1.5?0.0:0.55);
+      col=base + (neon*line*0.9 + neon2*cont*0.45*(uGFill<0.5?1.0:0.3))*fade*lk;
+      sky=sky*0.35;
+    }
+    gl_FragColor=vec4(mix(col, sky, f),1.0);
+  }`;
+  U.uHole = { value: -1 }; U.uDrop = { value: 0 }; U.uNE = { value: 1.2 }; U.uCarW = { value: new THREE.Vector2() }; U.uGridWorld = { value: 0 }; U.uGS = { value: 8 }; U.uGShape = { value: 1 }; U.uGFill = { value: 0 }; U.uGCol = { value: 0 }; U.uClay = { value: 0 };
+  const geo = new THREE.PlaneGeometry(SIZE, SIZE, SEG, SEG).rotateX(-Math.PI / 2);
+  const terrain = new THREE.Mesh(geo, new THREE.ShaderMaterial({ uniforms: U, vertexShader: vert, fragmentShader: frag }));
+  terrain.frustumCulled = false; scene.add(terrain);
+  // Ringgitter (vereinfachte Geometry Clipmaps): je Ring gleiche Eckpunktzahl, vierfache Kantenlänge; jeder Ring rastet auf sein eigenes Raster ein
+  const RINGS = [{ size: SIZE * 4, hole: SIZE / 2 - 12, drop: 10, po: 2 }, { size: SIZE * 16, hole: SIZE * 2 - 50, drop: 40, po: 4 }].map((R) => {
+    const u = Object.assign({}, U, { uOffset: { value: new THREE.Vector2() }, uHole: { value: R.hole }, uDrop: { value: R.drop }, uNE: { value: R.size / SEG } });
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(R.size, R.size, SEG, SEG).rotateX(-Math.PI / 2), new THREE.ShaderMaterial({ uniforms: u, vertexShader: vert, fragmentShader: frag, polygonOffset: true, polygonOffsetFactor: R.po, polygonOffsetUnits: R.po * 2 }));
+    m.frustumCulled = false; m.visible = false; scene.add(m); return { m, u, step: R.size / SEG };
+  });
+
+  const waterMat = new THREE.ShaderMaterial({
+    uniforms: U, transparent: true, depthWrite: false,
+    vertexShader: `uniform float uWater, uAmp; varying vec3 vP; void main(){ vec3 p=position; p.y=uWater*uAmp+0.15; vec4 w=modelMatrix*vec4(p,1.0); vP=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
+    fragmentShader: `${GLSL_NOISE}\nuniform vec3 uA_water, uB_water, uA_sky, uB_sky, uCam, uTint, uHorizon; uniform float uFogNear, uFogFar, uMix, uScale, uMoodK; uniform vec2 uSeed, uOffset, uCarW; varying vec3 vP;
+      void main(){ vec2 wp=vP.xz+uCarW; float t=uMix>0.5 ? smoothstep(-0.25,0.25,snoise(wp/(uScale*9.0)+uSeed*0.21+40.0)) : 0.0;
+        vec3 w=mix(uA_water,uB_water,t)*uTint, sky=mix(mix(uA_sky,uB_sky,t),uHorizon,uMoodK); float rip=0.04*snoise(wp*0.08);
+        float d=distance(uCam.xz, vP.xz); float f=smoothstep(uFogNear,uFogFar,d); gl_FragColor=vec4(mix(w*(1.0+rip), sky, f), mix(0.82,1.0,f)); }`,
+  });
+  const water = new THREE.Mesh(new THREE.PlaneGeometry(SIZE, SIZE, 1, 1).rotateX(-Math.PI / 2), waterMat); // mit Ringgitter auf 16-fache Größe skaliert water.frustumCulled = false; scene.add(water);
+
+  // Licht nur für die Fahrzeuge (das Gelände rechnet sein Licht selbst, gleiche Sonnenrichtung)
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  const hemi = new THREE.HemisphereLight('#ffffff', '#8a7a62', 0.95); scene.add(hemi);
+  const sun = new THREE.DirectionalLight('#fff4e6', 1.35); sun.position.set(-55, 75, 35); scene.add(sun);
+
+  // ---------- Himmel: Tageszeiten (Farben wie die Stimmungen des Licht-Moduls: Tag, Gold, Nacht) ----------
+  const MOODS = {
+    tag:   { k: 0,    zenith: '#6fa8dc', horizon: '#cfe8f2', lit: '#ffffff', shade: '#c4d3e6', tint: [1, 1, 1],          hemi: ['#ffffff', 0.95], sun: ['#fff4e6', 1.35], stars: 0 },
+    gold:  { k: 0.75, zenith: '#5e6fb3', horizon: '#f5b98c', lit: '#ffe2bd', shade: '#c98b8f', tint: [1.04, 0.86, 0.72], hemi: ['#f6c9a2', 0.8],  sun: ['#ffb877', 1.3],  stars: 0 },
+    nacht: { k: 0.9,  zenith: '#121838', horizon: '#3a3e76', lit: '#9aa2d6', shade: '#3b406e', tint: [0.42, 0.48, 0.78], hemi: ['#5a5f9a', 0.5],  sun: ['#a9bcff', 0.45], stars: 1 },
+  };
+  const SKY = { uZenith: { value: new THREE.Color() }, uHorizon: U.uHorizon, uLit: { value: new THREE.Color() }, uShade: { value: new THREE.Color() }, uTime: { value: 0 }, uCover: { value: 0.45 }, uPainted: { value: 1 }, uStars: { value: 0 }, uCamXZ: { value: new THREE.Vector2() } };
+  const dome = new THREE.Mesh(new THREE.SphereGeometry(900, 48, 24), new THREE.ShaderMaterial({
+    uniforms: SKY, side: THREE.BackSide, depthWrite: false,
+    vertexShader: `varying vec3 vDir; void main(){ vDir=position; vec4 p=projectionMatrix*modelViewMatrix*vec4(position,1.0); gl_Position=p.xyww; }`,
+    fragmentShader: `${GLSL_NOISE}
+    uniform vec3 uZenith, uHorizon, uLit, uShade; uniform float uTime, uCover, uPainted, uStars; uniform vec2 uCamXZ; varying vec3 vDir;
+    float fbm4(vec2 q){ float s=0.0, a=0.5; for(int i=0;i<4;i++){ s+=a*snoise(q); q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(1.7,9.2); a*=0.5; } return s; }
+    void main(){
+      vec3 d=normalize(vDir); float h=max(d.y,0.0);
+      vec3 col=d.y>0.0 ? mix(uHorizon, uZenith, pow(smoothstep(0.0,0.85,h),0.7)) : uHorizon*0.94;
+      if(uStars>0.5 && d.y>0.0){ vec2 sp=d.xz/(d.y+1.0)*190.0; vec2 cell=floor(sp); float r=fract(sin(dot(cell,vec2(12.9898,78.233)))*43758.5453);
+        if(r>0.986){ float tw=0.6+0.4*sin(uTime*2.3+r*60.0); col+=vec3(smoothstep(0.16,0.0,length(fract(sp)-0.5))*tw*smoothstep(0.0,0.25,h)); } }
+      if(uPainted>0.5 && d.y>0.0){
+        // gemalte Cartoon-Wolken: Rauschen hart abgeschnitten, Licht- und Schattenseite als zwei Töne, dunklere Kante; ziehen mit dem Wind
+        vec2 p=d.xz/(d.y+0.12)*0.9+vec2(uTime*0.006,uTime*0.002)+uCamXZ*0.00022;
+        float n=fbm4(p*1.4)+0.5, n2=fbm4(p*1.4+vec2(0.07,0.05))+0.5;
+        float th=0.9-uCover*0.55, m=smoothstep(th,th+0.012,n);
+        vec3 cc=mix(uShade,uLit,step(n2+0.012,n));
+        cc=mix(cc,uShade*0.82,(m-smoothstep(th+0.012,th+0.03,n))*0.85);
+        col=mix(col,cc,m*smoothstep(0.0,0.1,d.y));
+      }
+      gl_FragColor=vec4(col,1.0);
+    }`,
+  }));
+  dome.renderOrder = -1; dome.frustumCulled = false; scene.add(dome);
+
+  // Knet-Wolken: dicke Kugeln, Stufenlicht, in Flughöhe; die Wolkenschicht wiederholt sich alle 1,2 km (endlos), driftet mit dem Wind
+  const gm = new THREE.DataTexture(new Uint8Array([120, 190, 255]), 3, 1, THREE.RedFormat); gm.minFilter = gm.magFilter = THREE.NearestFilter; gm.needsUpdate = true;
+  const puffMat = new THREE.MeshToonMaterial({ color: '#ffffff', gradientMap: gm, emissive: '#000000' });
+  const PUFF = []; let prng = 9; const rnd = () => { prng = (prng * 16807) % 2147483647; return prng / 2147483647 };
+  for (let c = 0; c < 26; c++) { const cx = rnd() * 1200, cz = rnd() * 1200, cy = rnd(), size = 14 + rnd() * 22, n = 5 + Math.floor(rnd() * 5)
+    for (let k = 0; k < n; k++) { const a = (k / n) * Math.PI * 2 + rnd(), rr = size * (0.25 + rnd() * 0.55); PUFF.push({ cx, cz, cy, ox: Math.cos(a) * rr, oz: Math.sin(a) * rr * 0.6, oy: rnd() * size * 0.25, r: size * (0.35 + rnd() * 0.3) * (k === 0 ? 1.3 : 1) }) } }
+  const puffs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 2), puffMat, PUFF.length); puffs.frustumCulled = false; scene.add(puffs);
+  const m4 = new THREE.Matrix4(), q0 = new THREE.Quaternion(), v3 = new THREE.Vector3(), s3 = new THREE.Vector3();
+  scene.fog = new THREE.Fog('#cfe8f2', 700, 1800);
+
+  // Kondensstreifen (Idee aus TinySkies, selbst gebaut): Punkte in Weltlage hinter den hinteren Schwebepunkten, nur im Flug
+  const TRAIL_N = 320, tPos = new Float32Array(TRAIL_N * 3), tLife = new Float32Array(TRAIL_N), tWorld = new Float32Array(TRAIL_N * 3); let tNext = 0, tAcc = 0;
+  const tGeo = new THREE.BufferGeometry(); tGeo.setAttribute('position', new THREE.BufferAttribute(tPos, 3)); tGeo.setAttribute('aLife', new THREE.BufferAttribute(tLife, 1));
+  const trailMat = new THREE.ShaderMaterial({ transparent: true, depthWrite: false, uniforms: { uCol: { value: new THREE.Color('#ffffff') }, uPx: { value: 600 } },
+    vertexShader: `attribute float aLife; varying float vL; uniform float uPx; void main(){ vL=aLife; vec4 mv=modelViewMatrix*vec4(position,1.0); gl_PointSize=uPx*(0.5+1.6*(1.0-aLife))/max(1.0,-mv.z); gl_Position=projectionMatrix*mv; }`,
+    fragmentShader: `uniform vec3 uCol; varying float vL; void main(){ if(vL<=0.0) discard; float k=smoothstep(0.5,0.1,length(gl_PointCoord-0.5)); gl_FragColor=vec4(uCol, k*vL*0.55); }` });
+  const trails = new THREE.Points(tGeo, trailMat); trails.frustumCulled = false; scene.add(trails);
+
+  // ---------- Steuerung ----------
+  const $ = (id) => document.getElementById(id);
+  const NUM = ['scale', 'amp', 'oct', 'ridge', 'warp', 'macro', 'seed', 'valley', 'plateau', 'steps', 'sharp', 'water', 'soft', 'cliff', 'cover', 'gs'];
+  const BOOL = ['strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay'];
+  const fmt = {
+    scale: (v) => `${v} m`, amp: (v) => `${v} m`, oct: (v) => `${v}`, ridge: (v) => `${Math.round(v * 100)} %`, warp: (v) => v.toFixed(2), macro: (v) => `${Math.round(v * 100)} %`, seed: (v) => `${v}`,
+    valley: (v) => `${Math.round(v * 100)} %`, plateau: (v) => (v >= 0.999 ? 'aus' : `${Math.round(v * 100)} % Höhe`), steps: (v) => (v < 1 ? 'aus' : `${v} Stufen`), sharp: (v) => `${Math.round(v * 100)} %`, water: (v) => `${Math.round(v * 100)} % Höhe`,
+    soft: (v) => (v < 0.15 ? 'hart' : v > 0.7 ? 'weich' : 'mittel'), cliff: (v) => `${v}°`, cover: (v) => `${Math.round(v * 100)} %`, gs: (v) => `${v} m`,
+  };
+  for (const k of Object.keys(PALETTES)) for (const sel of ['palA', 'palB']) { const o = document.createElement('option'); o.value = k; o.textContent = PALETTES[k].name; $(sel).appendChild(o) }
+  const presetBox = $('presets');
+  for (const name of Object.keys(PRESETS)) { const b = document.createElement('button'); b.type = 'button'; b.textContent = name; b.dataset.preset = name; b.setAttribute('aria-pressed', 'false'); b.addEventListener('click', () => applyPreset(name)); presetBox.appendChild(b) }
+
+  function readUI() {
+    for (const k of NUM) S[k] = parseFloat($(k).value);
+    for (const k of BOOL) S[k] = $(k).checked;
+    S.palA = $('palA').value; S.palB = $('palB').value; S.tod = $('tod').value; S.tempo = $('tempo').value; S.gshape = +$('gshape').value; S.gfill = +$('gfill').value; S.gcol = +$('gcol').value;
+    const sd = S.seed; S.sx = fract(Math.sin(sd * 12.9898) * 43758.5453) * 200 - 100; S.sy = fract(Math.sin(sd * 78.233) * 12345.6789) * 200 - 100;
+  }
+  function pushUniforms() {
+    U.uScale.value = S.scale; U.uAmp.value = S.amp; U.uOct.value = S.oct; U.uRidge.value = S.ridge; U.uWarp.value = S.warp; U.uMacro.value = S.macro; U.uValley.value = S.valley; U.uPlateau.value = S.plateau;
+    U.uSteps.value = S.steps; U.uSharp.value = S.sharp; U.uSeed.value.set(S.sx, S.sy); U.uWater.value = S.water; U.uSoft.value = S.soft; U.uCliff.value = 1 - Math.cos(S.cliff * Math.PI / 180);
+    U.uStrata.value = S.strata ? 1 : 0; U.uToon.value = S.toon ? 1 : 0; U.uMix.value = S.mix ? 1 : 0; U.uGrid.value = S.grid ? 1 : 0;
+    const A = PALETTES[S.palA], B = PALETTES[S.palB];
+    for (const k of PAL_KEYS) { U['uA_' + k].value.set(A[k]); U['uB_' + k].value.set(B[k]) }
+    const M = MOODS[S.tod] || MOODS.tag; U.uMoodK.value = M.k; U.uTint.value.setRGB(...M.tint); U.uHorizon.value.set(M.k ? M.horizon : A.sky);
+    SKY.uZenith.value.set(M.zenith); SKY.uLit.value.set(M.lit); SKY.uShade.value.set(M.shade); SKY.uStars.value = M.stars; SKY.uCover.value = S.cover; SKY.uPainted.value = S.painted ? 1 : 0;
+    U.uGridWorld.value = S.gridworld ? 1 : 0; U.uGS.value = S.gs; U.uGShape.value = S.gshape; U.uGFill.value = S.gfill; U.uGCol.value = S.gcol; U.uClay.value = S.clay ? 1 : 0; for (const R of RINGS) R.m.visible = S.rings; water.scale.set(S.rings ? 16 : 1, 1, S.rings ? 16 : 1);
+    puffMat.color.set(M.lit); puffMat.emissive.set(M.shade).multiplyScalar(0.35); trailMat.uniforms.uCol.value.set(M.lit); puffs.visible = S.puffs;
+    hemi.color.set(M.k ? M.hemi[0] : A.sky); hemi.intensity = M.hemi[1]; sun.color.set(M.sun[0]); sun.intensity = M.sun[1];
+    const hz = new THREE.Color(M.k ? M.horizon : A.sky); scene.fog.color.copy(hz); stage.style.background = '#' + hz.getHexString(); renderer.setClearColor(hz);
+    $('swA').innerHTML = ['water', 'sand', 'low', 'mid', 'high', 'peak', 'cliff'].map((k) => `<i style="background:${A[k]}"></i>`).join('');
+  }
+  function outputs() { for (const k of NUM) $('o_' + k).textContent = fmt[k](S[k]); $('palB').disabled = !S.mix }
+  function recipe() {
+    const r = { schema: 'kfb.terrain-recipe/1', status: 'Entwurf (Gelände-Probe)', seed: S.seed, units: 'm',
+      form: { featureSize: S.scale, height: S.amp, octaves: S.oct, ridge: +S.ridge.toFixed(2), warp: +S.warp.toFixed(2), calmHillyVariation: +S.macro.toFixed(2) },
+      stylize: { flatValleys: +S.valley.toFixed(2), plateauAt: S.plateau >= 0.999 ? null : +S.plateau.toFixed(2), terraces: S.steps, terraceEdge: +S.sharp.toFixed(2), waterLevel: +S.water.toFixed(2) },
+      color: { biome: S.palA, biomeTravel: S.mix ? S.palB : null, bandSoftness: +S.soft.toFixed(2), cliffSlopeDeg: S.cliff, strata: S.strata, steppedLight: S.toon, palette: PALETTES[S.palA] },
+      world: { viewRings: S.rings, gridWorld: S.gridworld, gridSpacing: S.gs, gridShape: ['eckig', 'geschwungen', 'kreise'][S.gshape], gridFill: ['linien', 'schachbrett', 'schachbrett+linien'][S.gfill], checkerColors: S.gcol ? 'bunt' : 'zwei', clayLook: S.clay, testTempo: S.tempo },
+      sky: { timeOfDay: S.tod, paintedClouds: S.painted, clayClouds: S.puffs, cloudCover: +S.cover.toFixed(2), contrails: S.trails },
+      noise: 'simplex2d (Ashima/Gustavson), fbm mit Drehung je Oktave, Grat = (1-|n|)^2, Wechselzone = snoise(p/(6·featureSize))' };
+    $('recipe').value = JSON.stringify(r, null, 2);
+  }
+  function save() { try { localStorage.setItem('kfb-gelaende-probe-2', JSON.stringify(S)) } catch (e) {} }
+  function setUI(p) {
+    for (const k of NUM) if (p[k] != null) $(k).value = p[k];
+    for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
+    if (p.palA) $('palA').value = p.palA; if (p.palB) $('palB').value = p.palB; if (p.tod) $('tod').value = p.tod; if (p.tempo) $('tempo').value = p.tempo; if (p.gshape != null) $('gshape').value = p.gshape; if (p.gfill != null) $('gfill').value = p.gfill; if (p.gcol != null) $('gcol').value = p.gcol;
+  }
+  function markPreset(name) { for (const b of presetBox.children) b.setAttribute('aria-pressed', b.dataset.preset === name ? 'true' : 'false') }
+  function applyPreset(name) { const grid = $('grid').checked; setUI(PRESETS[name]); $('grid').checked = grid; markPreset(name); update() }
+  function update() { readUI(); pushUniforms(); outputs(); recipe(); save() }
+  $('panel').addEventListener('input', (e) => { if (e.target.id === 'car') return; if (e.target.id !== 'grid') markPreset(null); update() });
+  $('panel').addEventListener('submit', (e) => e.preventDefault());
+  // Nach einer Auswahl im Panel geht der Fokus zurück an die Fahrt, sonst landen W/A/S/D im Auswahlfeld
+  $('panel').addEventListener('change', (e) => { if (mode === 'drive' && e.target.tagName === 'SELECT') e.target.blur() });
+  $('copy').addEventListener('click', async () => {
+    const t = $('recipe'), msg = $('copyMsg');
+    try { await navigator.clipboard.writeText(t.value); msg.textContent = 'Kopiert.' }
+    catch (e) { t.focus(); t.select(); msg.textContent = 'Markiert – mit ⌘C bzw. Strg+C kopieren.' }
+    setTimeout(() => { msg.textContent = '' }, 3000);
+  });
+
+  // Start: gespeicherter Stand oder Vorlage
+  let stored = null; try { stored = JSON.parse(localStorage.getItem('kfb-gelaende-probe-2') || 'null') } catch (e) { stored = null }
+  setUI(PRESETS[DEFAULT]); $('grid').checked = false;
+  if (stored && typeof stored === 'object') { setUI(stored); markPreset(null) } else markPreset(DEFAULT);
+  update();
+
+  // ---------- Fahrzeuge (Rig-Daten wie im Spiel: kfb-vehicle-rig.r1, GLB-Raum +Z vorn, +X links, Einheit 0,58 m) ----------
+  const RACERS = [{"id":"rustwing_cruiser","name":"11 Flossen-Kreuzer","box":{"c":[0.0,1.0297,0.0002],"h":[1.5573,0.9268,4.039]},"hover":[[1.0303,0.0006,2.6928],[-1.0303,0.0008,2.6928],[1.0224,0.1596,-2.6928],[-1.0224,0.1593,-2.6928]],"glow":{"core":"#ceddf3","plume":"#2ec7fa","spark":"#3d6eff"},"anchors":[{"type":"thrust","pos":[-0.002,1.471,-4.18],"dir":[0,0,-1],"r":0.305}]},{"id":"graffiti_jet_cruiser","name":"04 Graffiti-Kreuzer","box":{"c":[0.0,1.2521,0.0008],"h":[2.3429,1.1268,4.0425]},"hover":[[1.4916,0.0033,2.6956],[-1.4916,0.0015,2.6956],[1.6755,0.2762,-2.6956],[-1.6755,0.2655,-2.6956]],"glow":{"core":"#ced1f3","plume":"#2e83fa","spark":"#4d3dff"},"anchors":[{"type":"thrust","pos":[1.44,2.005,-3.842],"dir":[0.008,0.039,-0.999],"r":0.139},{"type":"thrust","pos":[-1.446,2.004,-3.842],"dir":[0.039,0.055,-0.998],"r":0.139},{"type":"thrust","pos":[0.5,1.745,-3.538],"dir":[0,0,-1],"r":0.129},{"type":"thrust","pos":[-0.51,1.749,-3.537],"dir":[0,0,-1],"r":0.126}]},{"id":"street_racer_hoverbeast","name":"13 Stra\u00dfen-Biest","box":{"c":[0.0,1.3131,0.001],"h":[2.9433,1.1819,4.0386]},"hover":[[1.1026,0.0,2.6932],[-1.1026,0.0,2.6932],[1.1954,0.3066,-2.6932],[-1.1954,0.3067,-2.6932]],"glow":{"core":"#f3cee3","plume":"#fa2ee9","spark":"#ffae3d"},"anchors":[{"type":"thrust","pos":[0.517,1.46,-3.968],"dir":[-0.014,-0.029,-0.999],"r":0.234},{"type":"thrust","pos":[-0.527,1.474,-3.967],"dir":[-0.016,0.002,-1],"r":0.234},{"type":"thrust","pos":[2.384,1.244,-2.361],"dir":[-0.002,0.005,-1],"r":0.211},{"type":"thrust","pos":[-2.384,1.243,-2.364],"dir":[0.004,0.013,-1],"r":0.214}]},{"id":"crimson_flame_dragster","name":"02 Flammen-Dragster","box":{"c":[0.0,1.4446,0.0],"h":[1.9852,1.3002,4.0339]},"hover":[[1.3574,0.0,2.6895],[-1.3574,0.0,2.6895],[1.4091,0.2132,-2.6895],[-1.4091,0.2133,-2.6895]],"glow":{"core":"#f3ddce","plume":"#fa3f2e","spark":"#ffae3d"},"anchors":[{"type":"thrust","pos":[0.813,1.493,-4.182],"dir":[-0.022,0.001,-1],"r":0.264},{"type":"thrust","pos":[-0.819,1.495,-4.179],"dir":[0.028,0.003,-1],"r":0.264},{"type":"thrust","pos":[1.661,0.946,-4.173],"dir":[-0.036,-0.008,-0.999],"r":0.267},{"type":"thrust","pos":[-1.668,0.947,-4.172],"dir":[0.038,-0.011,-0.999],"r":0.267},{"type":"thrust","pos":[-0.003,1.716,-3.671],"dir":[0,0,-1],"r":0.428}]},{"id":"crimson_thunderjet","name":"03 Donner-Jet","box":{"c":[0.0,1.3839,-0.0027],"h":[1.5471,1.2454,4.0316]},"hover":[[0.9738,0.6288,2.6895],[-0.9738,0.6315,2.6895],[1.1057,0.4151,-2.6895],[-1.1057,0.4151,-2.6895]],"glow":{"core":"#f3d7ce","plume":"#fa2e3f","spark":"#ff8e3d"},"anchors":[{"type":"thrust","pos":[0.917,2.215,-3.978],"dir":[0.172,-0.038,-0.984],"r":0.135},{"type":"thrust","pos":[-0.927,2.211,-3.975],"dir":[-0.065,0.07,-0.995],"r":0.136},{"type":"thrust","pos":[1.087,1.001,-4.025],"dir":[0.026,0.023,-0.999],"r":0.132},{"type":"thrust","pos":[-1.095,1.003,-4.025],"dir":[0.095,0.046,-0.994],"r":0.133},{"type":"thrust","pos":[1.451,1.03,-4.093],"dir":[0.224,0.248,-0.943],"r":0.076},{"type":"thrust","pos":[-1.464,1.03,-4.089],"dir":[0.067,0.378,-0.923],"r":0.074},{"type":"thrust","pos":[1.498,1.358,-4.096],"dir":[-0.09,0.551,-0.83],"r":0.069},{"type":"thrust","pos":[-1.519,1.359,-4.111],"dir":[0.293,0.428,-0.855],"r":0.091},{"type":"fan","pos":[0.859,1.509,-3.975],"dir":[-0.064,-0.021,-0.998],"r":0.254},{"type":"fan","pos":[-0.866,1.508,-3.975],"dir":[0.024,0.016,-1],"r":0.252}]},{"id":"ironclad_skycruiser","name":"06 Panzer-Gleiter","box":{"c":[0.0,1.1664,0.0012],"h":[1.8222,1.0497,4.0254]},"hover":[[1.1746,0.0654,2.685],[-1.1746,0.0651,2.685],[1.0902,0.2694,-2.685],[-1.0902,0.2722,-2.685]],"glow":{"core":"#f3eece","plume":"#fa9b2e","spark":"#ffae3d"},"anchors":[{"type":"fan","pos":[1.36,1.05,-4.034],"dir":[0.002,0.043,-0.999],"r":0.188},{"type":"fan","pos":[-1.364,1.05,-4.028],"dir":[-0.022,-0.026,-0.999],"r":0.187}]}];
+  const UNIT = 0.58, carSel = $('car');
+  RACERS.forEach((r) => { const o = document.createElement('option'); o.value = r.id; o.textContent = r.name.replace(/^\d+\s/, ''); carSel.appendChild(o) });
+  const loader = new THREE.GLTFLoader(), cache = new Map();
+  const carRoot = new THREE.Group(), tilt = new THREE.Group(), squash = new THREE.Group(); carRoot.add(tilt); tilt.add(squash); scene.add(carRoot);
+  const plumeGeo = new THREE.ConeGeometry(1, 1, 16, 1, true).translate(0, 0.5, 0).rotateX(-Math.PI / 2); // Fuß an der Düse, Spitze nach −Z
+  const coreGeo = new THREE.SphereGeometry(1, 12, 8), ringGeo = new THREE.RingGeometry(0.35, 1, 18).rotateY(Math.PI);
+  let plumes = [], carInfo = null, loading = false, loadErr = '';
+  const additive = (c, o) => new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: o, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
+  async function loadCar(id) {
+    const info = RACERS.find((r) => r.id === id) || RACERS[0]; loading = true; loadErr = '';
+    try {
+      let scn = cache.get(info.id);
+      if (!scn) {
+        // Modelle von derselben festen Adresse wie die Spielvorschau (öffentlicher Asset-Branch, Commit-Pin aus kfb-vehicle-rig.r1)
+        const url = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/9bd8e0376105b29375377ea3052e33528d50fbb6/media/3D_Assets/MeshyModels/vehicles/${info.id}/${info.id}_browser.v3.glb`;
+        const buf = await fetch(url).then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.arrayBuffer() });
+        scn = await new Promise((res, rej) => loader.parse(buf, '', (g) => res(g.scene), rej));
+        scn.traverse((m) => { if (m.isMesh) m.frustumCulled = false }); cache.set(info.id, scn);
+      }
+      while (squash.children.length) squash.remove(squash.children[0]);
+      for (const p of plumes) for (const m of p.mats) m.dispose();
+      const holder = new THREE.Group(); holder.scale.setScalar(UNIT); holder.add(scn); squash.add(holder);
+      plumes = info.anchors.map((a) => {
+        const dir = new THREE.Vector3(...a.dir).normalize(), q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, -1), dir), g = new THREE.Group();
+        g.position.set(...a.pos); g.quaternion.copy(q); holder.add(g);
+        if (a.type === 'fan') { const mat = additive(info.glow.plume, 0.55), ring = new THREE.Mesh(ringGeo, mat); ring.scale.setScalar(a.r); g.add(ring); return { g, type: 'fan', r: a.r, ring, mats: [mat] } }
+        const pm = additive(info.glow.plume, 0.55), cm = additive(info.glow.core, 0.9), cone = new THREE.Mesh(plumeGeo, pm), core = new THREE.Mesh(coreGeo, cm);
+        core.scale.setScalar(a.r * 0.75); g.add(cone, core); return { g, type: 'thrust', r: a.r, cone, core, mats: [pm, cm] };
+      });
+      carInfo = info;
+    } catch (e) { loadErr = 'Racer konnte nicht geladen werden (' + (e.message || e) + ')' }
+    loading = false;
+  }
+  carSel.addEventListener('change', () => { loadCar(carSel.value); try { localStorage.setItem('kfb-gelaende-probe-car', carSel.value) } catch (e) {} });
+  try { const c = localStorage.getItem('kfb-gelaende-probe-car'); if (c && RACERS.some((r) => r.id === c)) carSel.value = c } catch (e) {}
+  loadCar(carSel.value);
+
+  // ---------- Spielzeug-Physik: Schweben mit Feder, Hangabtrieb, Sprung über Kuppen; Flug nach dem Elan-Prinzip ----------
+  const TEMPO = { spiel: [31.7, 46], hyper: [97, 139], warp: [278, 333] }; // m/s: Höchsttempo, mit Boost
+  const C = { hover: 0.7, vmax: 31.7, vboost: 46, acc: 13, brake: 24, rev: 8, drag: 2.2, grip: 7, g: 9.81, L: 2.2, W: 1.1 };
+  const P = { x: 0, z: 0, y: 0, vy: 0, yaw: 0, vf: 0, vl: 0, fly: false, air: false, pitch: 0, boost: 1, odo: 0, sq: 0, sqv: 0, vPitch: 0, vRoll: 0, wasBoost: false, steer: 0 };
+  const groundAt = (x, z) => (S.water > 0.005 ? Math.max(hgt(x, z), S.water * S.amp + 0.1) : hgt(x, z)); // ohne Wasser keine Wasserfläche (sonst liegt sie auf flachen Talböden)
+  P.y = groundAt(0, 0) + C.hover;
+  const keys = {}; let lastSpace = 0;
+  function toggleFly() { if (!P.fly) { P.fly = true; P.pitch = 0.32; P.vf = Math.max(P.vf, 20); P.y += 0.6; P.sqv += 2 } else { P.fly = false; P.air = true; P.vy = Math.sin(P.pitch) * P.vf; P.vf *= Math.cos(P.pitch) } }
+  function resetCar() { P.fly = false; P.vf = 0; P.vl = 0; P.vy = 0; P.pitch = 0; P.y = groundAt(P.x, P.z) + C.hover }
+  const typing = (t) => t && (t.tagName === 'SELECT' || t.tagName === 'TEXTAREA' || (t.tagName === 'INPUT' && t.type !== 'range' && t.type !== 'checkbox'));
+  window.addEventListener('keydown', (e) => {
+    if (mode !== 'drive' || typing(e.target)) return;
+    if (['Space', 'KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) e.preventDefault();
+    if (e.repeat) return; keys[e.code] = true;
+    if (e.code === 'Space') { const now = performance.now(); if (now - lastSpace < 400) { toggleFly(); lastSpace = 0 } else { lastSpace = now; if (!P.fly && !P.air) { P.vy = 7.5; P.air = true; P.sqv -= 2.5 } } }
+    if (e.code === 'KeyF') toggleFly();
+    if (e.code === 'KeyR') resetCar();
+  });
+  window.addEventListener('keyup', (e) => { keys[e.code] = false });
+  window.addEventListener('blur', () => { for (const k in keys) keys[k] = false });
+
+  function step(dt) {
+    const fx = Math.sin(P.yaw), fz = Math.cos(P.yaw), lx = Math.cos(P.yaw), lz = -Math.sin(P.yaw);
+    const thr = keys.KeyW || keys.ArrowUp ? 1 : 0, brk = keys.KeyS || keys.ArrowDown ? 1 : 0;
+    const steer = ((keys.KeyA || keys.ArrowLeft) ? 1 : 0) - ((keys.KeyD || keys.ArrowRight) ? 1 : 0);
+    P.steer += (steer - P.steer) * Math.min(1, dt * 8);
+    const boosting = (keys.ShiftLeft || keys.ShiftRight) && P.boost > 0.02;
+    P.boost = Math.max(0, Math.min(1, P.boost + (boosting ? -0.22 : 0.1) * dt));
+    if (boosting && !P.wasBoost) { P.sq -= 0.08; P.sqv += 3.2 } P.wasBoost = boosting;
+    if (!P.fly) {
+      const T = TEMPO[S.tempo] || TEMPO.spiel, vmax = boosting ? T[1] : T[0], ak = T[0] / C.vmax;
+      if (thr) P.vf += (P.vf < vmax ? C.acc * ak * (boosting ? 1.7 : 1) : -C.drag * 3 * ak) * dt;
+      else if (brk) P.vf -= (P.vf > 0.2 ? C.brake : (P.vf > -C.rev ? C.acc * 0.6 : 0)) * dt;
+      else P.vf -= Math.sign(P.vf) * Math.min(Math.abs(P.vf), C.drag * dt);
+      const gF = groundAt(P.x + fx * C.L, P.z + fz * C.L), gB = groundAt(P.x - fx * C.L, P.z - fz * C.L);
+      if (!P.air) P.vf -= C.g * ((gF - gB) / (2 * C.L)) * 0.7 * dt;
+      const turn = P.steer * (1.7 - 0.9 * Math.min(1, Math.abs(P.vf) / 35)) * Math.min(1, Math.abs(P.vf) / 4) * (P.vf < 0 ? -1 : 1);
+      P.yaw += turn * dt * (P.air ? 0.5 : 1);
+      P.vl += -turn * P.vf * 0.06 * dt; P.vl *= Math.exp(-(P.air ? 0.4 : C.grip) * dt);
+      const nx = P.x + (fx * P.vf + lx * P.vl) * dt, nz = P.z + (fz * P.vf + lz * P.vl) * dt, gN = groundAt(nx, nz);
+      if (gN - (P.y - C.hover) > 1.8 && !P.air) { P.vf *= -0.3; P.vl *= -0.3; P.sqv -= 2 } // Wand: abprallen
+      else { P.odo += Math.hypot(nx - P.x, nz - P.z); P.x = nx; P.z = nz }
+      const gC = groundAt(P.x, P.z), target = Math.max(gC, (gF + gB) / 2) + C.hover;
+      if (P.air || P.y > target + 0.3) { P.vy -= C.g * dt; P.air = P.y > target + 0.05 || P.vy > 0 } else { P.vy += (55 * (target - P.y) - 10 * P.vy) * dt }
+      P.y += P.vy * dt;
+      if (P.y < target - 0.35) { if (P.vy < -5) P.sqv -= Math.min(4, -P.vy * 0.25); P.y = target - 0.35; P.vy = Math.max(P.vy, 0); P.air = false }
+      const gLf = groundAt(P.x + lx * C.W, P.z + lz * C.W), gRt = groundAt(P.x - lx * C.W, P.z - lz * C.W);
+      const pT = P.air ? Math.atan2(P.vy, Math.max(4, Math.abs(P.vf))) * 0.5 : Math.atan2(gF - gB, 2 * C.L);
+      const rT = (P.air ? 0 : Math.atan2(gLf - gRt, 2 * C.W)) - P.steer * Math.min(1, Math.abs(P.vf) / 25) * 0.18;
+      P.vPitch += (pT - P.vPitch) * Math.min(1, dt * 8); P.vRoll += (rT - P.vRoll) * Math.min(1, dt * 6);
+    } else {
+      P.pitch = Math.max(-1.1, Math.min(1.0, P.pitch + (brk - thr) * 1.1 * dt));
+      const Tf = TEMPO[S.tempo] || TEMPO.spiel, dk = 0.0035 * (31.7 / Tf[0]) ** 2; // Luftwiderstand passt sich dem Test-Tempo an
+      P.vf += (-C.g * Math.sin(P.pitch) - dk * P.vf * P.vf + (boosting ? 16 * Tf[0] / 31.7 : 0)) * dt;
+      if (P.vf < 9) P.pitch -= (9 - P.vf) * 0.22 * dt; // Strömungsabriss: Nase fällt
+      P.vf = Math.max(0, P.vf);
+      P.yaw += P.steer * 1.15 * dt;
+      const h = P.vf * Math.cos(P.pitch), nx = P.x + fx * h * dt, nz = P.z + fz * h * dt;
+      P.odo += h * dt; P.x = nx; P.z = nz; P.y += P.vf * Math.sin(P.pitch) * dt;
+      const g = groundAt(P.x, P.z);
+      if (P.y < g + C.hover) { if (P.pitch > -0.45) { P.fly = false; P.air = false; P.vy = 0; P.vf *= Math.cos(P.pitch); P.pitch = 0; P.sqv -= 2.5 } else { P.vf *= 0.45; P.pitch = 0.25; P.sqv -= 4 } P.y = g + C.hover }
+      P.y = Math.min(P.y, g + 450);
+      P.vPitch += (P.pitch - P.vPitch) * Math.min(1, dt * 10); P.vRoll += (-P.steer * 0.55 - P.vRoll) * Math.min(1, dt * 5);
+    }
+    // Cartoon-Feder: Stauchen und Strecken (Volumen bleibt)
+    P.sqv += (-90 * P.sq - 9 * P.sqv) * dt; P.sq += P.sqv * dt; P.sq = Math.max(-0.25, Math.min(0.3, P.sq));
+    P.thrust = P.fly ? 0.45 + (boosting ? 0.55 : 0) : thr * 0.7 + (boosting ? 0.5 : 0) + 0.15; P.boosting = boosting;
+  }
+
+  // ---------- Kamera ----------
+  let mode = 'over', yaw = 0.8, pitch = 0.5, dist = 60, look = 0;
+  const camOver = $('camOver'), camDrive = $('camDrive'), hint = $('hint');
+  function setMode(m) {
+    mode = m; camOver.setAttribute('aria-pressed', m === 'over'); camDrive.setAttribute('aria-pressed', m === 'drive');
+    hint.textContent = m === 'over' ? 'Ziehen: drehen · Rad/zwei Finger: zoomen' : 'W/A/S/D fahren · ⇧ Boost · 2× Leertaste fliegen · Ziehen: umschauen';
+    if (m === 'drive') { look = 0; if (document.activeElement && document.activeElement !== document.body) document.activeElement.blur() }
+  }
+  camOver.addEventListener('click', () => setMode('over')); camDrive.addEventListener('click', () => setMode('drive'));
+  const ptr = new Map(); let pinch0 = 0, dist0 = dist;
+  cv.addEventListener('pointerdown', (e) => { cv.setPointerCapture(e.pointerId); ptr.set(e.pointerId, { x: e.clientX, y: e.clientY }); if (ptr.size === 2) { const [a, b] = [...ptr.values()]; pinch0 = Math.hypot(a.x - b.x, a.y - b.y); dist0 = dist } });
+  cv.addEventListener('pointermove', (e) => {
+    const p = ptr.get(e.pointerId); if (!p) return;
+    if (ptr.size === 2) { p.x = e.clientX; p.y = e.clientY; const [a, b] = [...ptr.values()], d = Math.hypot(a.x - b.x, a.y - b.y); if (pinch0 > 0 && mode === 'over') dist = Math.min(1100, Math.max(8, dist0 * pinch0 / d)); return }
+    const dx = e.clientX - p.x, dy = e.clientY - p.y; p.x = e.clientX; p.y = e.clientY;
+    if (mode === 'over') { yaw -= dx * 0.005; pitch = Math.min(1.45, Math.max(0.04, pitch + dy * 0.004)) } else look -= dx * 0.006;
+  });
+  const endPtr = (e) => { ptr.delete(e.pointerId); pinch0 = 0 };
+  cv.addEventListener('pointerup', endPtr); cv.addEventListener('pointercancel', endPtr);
+  cv.addEventListener('wheel', (e) => { if (mode !== 'over') return; e.preventDefault(); dist = Math.min(1100, Math.max(8, dist * Math.exp(e.deltaY * 0.0012))) }, { passive: false });
+
+  function resize() { const w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix() }
+  new ResizeObserver(resize).observe(stage); resize();
+
+  // ---------- Schleife ----------
+  // Die Welt wandert mit dem Fahrzeug: abgetastet wird nur in ganzen Gitterschritten (kein Flimmern), die Feinbewegung macht das Gitter
+  let last = performance.now(), frames = 0, fpsT = last, acc = 0;
+  const STEP = SIZE / SEG, camPos = new THREE.Vector3(0, 6, -12), tmp = new THREE.Vector3();
+  function frame(now) {
+    const dt = Math.min(0.1, (now - last) / 1000); last = now;
+    acc += dt; while (acc >= 1 / 120) { step(1 / 120); acc -= 1 / 120 }
+    const sx = Math.floor(P.x / STEP) * STEP, sz = Math.floor(P.z / STEP) * STEP;
+    U.uOffset.value.set(sx, sz); terrain.position.set(sx - P.x, 0, sz - P.z); water.position.copy(terrain.position); U.uCarW.value.set(P.x, P.z);
+    for (const R of RINGS) { const rx = Math.floor(P.x / R.step) * R.step, rz = Math.floor(P.z / R.step) * R.step; R.u.uOffset.value.set(rx, rz); R.m.position.set(rx - P.x, 0, rz - P.z) } water.visible = S.water > 0.005;
+    carRoot.position.set(0, P.y - C.hover * 0.55, 0); carRoot.rotation.y = P.yaw;
+    tilt.rotation.set(-P.vPitch, 0, P.vRoll);
+    const s = P.sq; squash.scale.set(1 / Math.sqrt(1 + s), 1 / Math.sqrt(1 + s), 1 + s);
+    const t = now / 1000;
+    for (const p of plumes) {
+      if (p.type === 'fan') { p.ring.rotation.z += dt * (6 + 30 * (P.thrust || 0)); p.ring.material.opacity = 0.25 + 0.5 * (P.thrust || 0); continue }
+      const th = P.thrust || 0, fl = 0.85 + 0.15 * Math.sin(t * 37 + p.r * 50), len = p.r * (1.5 + 7 * th) * fl;
+      p.cone.scale.set(p.r * 0.85, p.r * 0.85, len); p.cone.material.opacity = 0.25 + 0.5 * th; p.core.material.opacity = 0.5 + 0.5 * th;
+    }
+    if (mode === 'over') {
+      U.uFogNear.value = S.rings ? 2500 : 700; U.uFogFar.value = S.rings ? 6500 : 1800; if (camera.fov !== 55) { camera.fov = 55; camera.updateProjectionMatrix() }
+      const ty = P.y; camera.position.set(Math.sin(yaw) * Math.cos(pitch) * dist, ty + Math.sin(pitch) * dist, Math.cos(yaw) * Math.cos(pitch) * dist);
+      camera.lookAt(0, ty, 0);
+    } else {
+      U.uFogNear.value = S.rings ? 1200 : 170; U.uFogFar.value = S.rings ? 4600 : 295;
+      if (!ptr.size) look *= Math.exp(-dt * 1.5);
+      camera.fov = 55 + Math.min(18, Math.abs(P.vf) * 0.06); camera.updateProjectionMatrix(); // FOV-Kick: mehr Tempo, weiterer Blick
+      const a = P.yaw + Math.PI + look, back = P.fly ? 14 : 11, up = P.fly ? 4.5 - Math.sin(P.vPitch) * 6 : 3.8;
+      tmp.set(Math.sin(a) * back, P.y + up, Math.cos(a) * back);
+      const gCam = groundAt(P.x + tmp.x, P.z + tmp.z) + 1.5; tmp.y = Math.max(tmp.y, gCam);
+      camPos.lerp(tmp, Math.min(1, dt * 6)); camPos.y = Math.max(camPos.y, gCam);
+      camera.position.copy(camPos); camera.lookAt(Math.sin(P.yaw) * 6, P.y + 1.2, Math.cos(P.yaw) * 6);
+    }
+    // Himmel folgt der Kamera; Nebel für die Knet-Wolken wie beim Gelände
+    dome.position.copy(camera.position); SKY.uTime.value = t; SKY.uCamXZ.value.set(P.x, P.z);
+    scene.fog.near = U.uFogNear.value * 2.2; scene.fog.far = U.uFogFar.value * 3.4; // Knet-Wolken bleiben weiter sichtbar als das Gelände
+    if (puffs.visible) { const base = S.amp + 45, wind = t * 3;
+      PUFF.forEach((f, i) => { const wx = ((((f.cx + wind - P.x) % 1200) + 1200) % 1200) - 600, wz = ((((f.cz - P.z) % 1200) + 1200) % 1200) - 600;
+        puffs.setMatrixAt(i, m4.compose(v3.set(wx + f.ox, base + f.cy * 80 + f.oy, wz + f.oz), q0, s3.set(f.r, f.r * 0.72, f.r))) }); puffs.instanceMatrix.needsUpdate = true }
+    // Kondensstreifen: im Flug alle 25 ms je ein Punkt an den hinteren Schwebepunkten; Weltlage gespeichert, gezeichnet relativ zum Fahrzeug
+    if (S.trails && P.fly && carInfo) { tAcc += dt; carRoot.updateMatrixWorld(true);
+      while (tAcc > 0.025) { tAcc -= 0.025; for (const hp of [carInfo.hover[2], carInfo.hover[3]]) { v3.set(hp[0] * 1.15, hp[1] + 0.4, hp[2]).multiplyScalar(UNIT); squash.localToWorld(v3)
+        tWorld[tNext * 3] = v3.x + P.x; tWorld[tNext * 3 + 1] = v3.y; tWorld[tNext * 3 + 2] = v3.z + P.z; tLife[tNext] = 1; tNext = (tNext + 1) % TRAIL_N } } }
+    for (let i = 0; i < TRAIL_N; i++) { if (tLife[i] > 0) tLife[i] = Math.max(0, tLife[i] - dt / 2.6); tPos[i * 3] = tWorld[i * 3] - P.x; tPos[i * 3 + 1] = tWorld[i * 3 + 1]; tPos[i * 3 + 2] = tWorld[i * 3 + 2] - P.z }
+    tGeo.attributes.position.needsUpdate = true; tGeo.attributes.aLife.needsUpdate = true;
+    U.uCam.value.copy(camera.position);
+    renderer.render(scene, camera);
+    frames++; if (now - fpsT > 500) { $('hudFps').textContent = `${Math.round(frames * 1000 / (now - fpsT))} fps`; frames = 0; fpsT = now }
+    $('hudSpeed').textContent = `${Math.round(Math.abs(P.vf) * 3.6)} km/h`;
+    const alt = Math.max(0, P.y - C.hover - groundAt(P.x, P.z));
+    $('hudMode').textContent = loading ? 'Racer lädt …' : loadErr ? 'Fehler' : P.fly ? `Flug · ${Math.round(alt)} m` : P.air ? `Sprung · ${alt.toFixed(1).replace('.', ',')} m` : 'Boden';
+    $('hudBoost').textContent = `Boost ${Math.round(P.boost * 100)} %`;
+    $('hudDist').textContent = `${(P.odo / 1000).toFixed(1).replace('.', ',')} km`;
+    if (loadErr) hint.textContent = loadErr;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+</body>
+</html>
