@@ -3,7 +3,7 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
-## 108 · 20.10. · WS1b · Vorschau-Start: Spiel statt Spike, Ladeanzeige, Titel (gebaut und getestet, Push wartet auf Georg)
+## 108 · 20.10. · WS1b · Vorschau-Start: Spiel statt Spike, Ladeanzeige, Titel (live und geprüft)
 
 Erste Meldung von WS1b (Georgs MacBook, V-539). Auftrag von WS0: nur Aufgabe 1. #439 (Cartoon-Gelände) macht die alte WS1, WS1b hat dafür nichts angefangen.
 
@@ -31,11 +31,17 @@ Erste Meldung von WS1b (Georgs MacBook, V-539). Auftrag von WS0: nur Aufgabe 1. 
   - Die Ladeanzeige auf `#m1,debug,replay`: Spieler bereit nach 65 s, die Anzeige ist bis dahin da und danach weg.
 - Lokal mit echter GPU (Port 8843): Die nackte Adresse wird zu `#m1,harvest` und die Ladeanzeige ist nach ~15 s weg, dann ist das Spiel zu sehen. `#spike` zeigt den alten Spike R4.
 
-**Commits, lokal bereit, Push wartet auf Georg:**
+**Commits, gepusht 20.10. ohne force** (über den Deploy-Key, nur je Befehl, freigegeben von Georg):
 - `ws1/preview` bd6e396: Elternteil 2aadeda6, nur `index.html` und `build.json`. `gelaende-probe.html` bleibt unverändert.
 - `ws1b/preview-start` d05efbd: Elternteil ist der Spiegel 15d6727, nur `ws1/kfb-planet/index.html` und `src/m1/M1World.jsx`. Das ist die Quelle der Vorschau; die alte WS1 kann sie in ihren Branch übernehmen.
-- Warum noch nicht gepusht: WS1b hat auf dem MacBook keinen GitHub-Zugang (HTTPS ohne Anmeldung, SSH-Standardschlüssel abgelehnt). Den Deploy-Key in `~/.ssh` habe ich ohne Georgs Ja nicht benutzt. Georg entscheidet: Deploy-Key per Einzelbefehl oder selbst pushen.
-- Live-Prüfung der Vorschau-Adresse (nackte Adresse, `#spike`, Ladeanzeige, Zeit) folgt direkt nach dem Push.
+- `ws1/r3f-frame`: dieser Abschnitt.
+
+**Live-Prüfung** https://ws1-preview.kayfabizarro.pages.dev/ (Browser mit echter GPU, nicht aus dem Cache, 6,9 MB übertragen):
+- Die nackte Adresse wird zu `#m1,harvest`, Titel „KFB · Spiel-Vorschau“.
+- Die Seite ist nach 1,9 s übertragen; bei 4,9 s zeigt das Bild die Ladeanzeige (statt schwarz).
+- Die Ladeanzeige verschwindet nach 10,4 s, dann stehen Spieler und Bühne.
+- `#spike` (frisch geladen): alter „KFB · Spike R4“ mit Kartenauswahl; die Ladeanzeige ist nach 8 s weg.
+- Bilder: `ws1/proofs/2026-10-20-ws1b-start/` (`live_ladeanzeige.jpg`, `live_spiel.jpg`, `live_spike.jpg`).
 
 **Hinweis für Volltests auf dem MacBook:** `m1-move`, `m1-fence`, `light` und `scale` brauchen dort ein GPU-Chromium (`PW_CHROMIUM`) oder längere Grenzen.
 
