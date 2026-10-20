@@ -217,9 +217,32 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
-<script>/* KFB_DRIVE_BEGIN · Fahrphysik aus dem Spiel, unverändert gebündelt (kfb-planet-t439 @c506bab: m2/k2t.js, m2/racerFlight.js, m1/elan.js) */
-var KFBDrive = (function(exports) {
+<script>/* KFB_DRIVE_BEGIN · Fahrphysik aus dem Spiel, unverändert gebündelt (kfb-planet-t439 @c506bab: m2/k2t.js, m2/racerFlight.js, m1/elan.js, camera/followCam.js; three = globales THREE) */
+var KFBDrive = (function(exports, three) {
 	Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+	//#region \0rolldown/runtime.js
+	var __create = Object.create;
+	var __defProp = Object.defineProperty;
+	var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+	var __getOwnPropNames = Object.getOwnPropertyNames;
+	var __getProtoOf = Object.getPrototypeOf;
+	var __hasOwnProp = Object.prototype.hasOwnProperty;
+	var __copyProps = (to, from, except, desc) => {
+		if (from && typeof from === "object" || typeof from === "function") for (var keys = __getOwnPropNames(from), i = 0, n = keys.length, key; i < n; i++) {
+			key = keys[i];
+			if (!__hasOwnProp.call(to, key) && key !== except) __defProp(to, key, {
+				get: ((k) => from[k]).bind(null, key),
+				enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable
+			});
+		}
+		return to;
+	};
+	var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(isNodeMode || !mod || !mod.__esModule || !__hasOwnProp.call(mod, "default") ? __defProp(target, "default", {
+		value: mod,
+		enumerable: true
+	}) : target, mod));
+	//#endregion
+	three = __toESM(three, 1);
 	//#region src/worldScale.js
 	var M_PER_RIG = .616381042;
 	var CLASS_K = .947;
@@ -1280,12 +1303,185 @@ var KFBDrive = (function(exports) {
 		} : null;
 	};
 	//#endregion
+	//#region src/camera/followCam.js
+	function smoothDamp(cur, target, st, key, smoothTime, dt, maxSpeed = Infinity) {
+		const T = Math.max(1e-4, smoothTime), w = 2 / T, x = w * dt, e = 1 / (1 + x + .48 * x * x + .235 * x * x * x);
+		let change = cur - target;
+		const maxC = maxSpeed * T;
+		change = Math.max(-maxC, Math.min(maxC, change));
+		const tgt = cur - change, v = st[key] || 0, temp = (v + w * change) * dt;
+		st[key] = (v - w * temp) * e;
+		let out = tgt + (change + temp) * e;
+		if (target - cur > 0 === out > target) {
+			out = target;
+			st[key] = (out - target) / Math.max(dt, 1e-6);
+		}
+		return out;
+	}
+	var wrap = (a) => Math.atan2(Math.sin(a), Math.cos(a));
+	var FOLLOW = Object.freeze({
+		omega: 7.5,
+		armIn: 8,
+		armOut: 3,
+		recenter: 1.6,
+		idleS: 1,
+		zoomStep: .0012,
+		zoomMin: .55,
+		zoomMax: 2.8,
+		zoomPov: .12,
+		rotate: .005,
+		pitchMin: -.15,
+		pitchMax: 1.25,
+		pad: .3
+	});
+	function createFollowCam(opts) {
+		const O = {
+			pitch0: .32,
+			maxArm: 7.5,
+			minClear: .4,
+			...opts
+		};
+		const st = {
+			yaw: null,
+			pitch: O.pitch0,
+			wantYaw: 0,
+			wantPitch: O.pitch0,
+			zoom: 1,
+			wantZoom: 1,
+			arm: O.base,
+			lastInput: -1e9,
+			t: 0,
+			v: {},
+			tgt: null,
+			init: false
+		};
+		const tmp = {
+			off: new three.Vector3(),
+			dir: new three.Vector3(),
+			p: new three.Vector3(),
+			look: new three.Vector3()
+		};
+		let drag = null;
+		const down = (e) => {
+			drag = {
+				x: e.clientX,
+				y: e.clientY
+			};
+		}, up = () => {
+			drag = null;
+		};
+		const move = (e) => {
+			if (!drag || !e.buttons) return;
+			api.orbit((e.clientX - drag.x) * -FOLLOW.rotate, (e.clientY - drag.y) * FOLLOW.rotate);
+			drag = {
+				x: e.clientX,
+				y: e.clientY
+			};
+		};
+		const wheel = (e) => {
+			const d = e.deltaMode === 1 ? e.deltaY * 40 : e.deltaMode === 2 ? e.deltaY * 800 : e.deltaY;
+			api.zoomBy(Math.max(-360, Math.min(360, d)));
+			e.preventDefault();
+		};
+		if (O.dom) {
+			O.dom.addEventListener("pointerdown", down);
+			window.addEventListener("pointerup", up);
+			O.dom.addEventListener("pointermove", move);
+			O.dom.addEventListener("wheel", wheel, { passive: false });
+		}
+		const api = {
+			state: st,
+			orbit(dYaw, dPitch) {
+				st.wantYaw = wrap(st.wantYaw + dYaw);
+				st.wantPitch = Math.max(FOLLOW.pitchMin, Math.min(FOLLOW.pitchMax, st.wantPitch + dPitch));
+				st.lastInput = st.t;
+			},
+			zoomBy(delta) {
+				if (st.wantZoom <= FOLLOW.zoomPov) {
+					if (delta > 0) st.wantZoom = FOLLOW.zoomMin;
+					return;
+				}
+				const z = st.wantZoom * Math.exp(delta * FOLLOW.zoomStep);
+				st.wantZoom = z < FOLLOW.zoomMin && st.wantZoom <= FOLLOW.zoomMin + 1e-6 ? FOLLOW.zoomPov : Math.max(FOLLOW.zoomMin, Math.min(FOLLOW.zoomMax, z));
+			},
+			pov: () => st.zoom <= FOLLOW.zoomPov + 1e-6,
+			reset() {
+				st.init = false;
+				st.v = {};
+			},
+			update(dt, camera, { target, heading, moving }) {
+				if (dt <= 0) return;
+				st.t += dt;
+				const T = 2 / FOLLOW.omega;
+				if (!st.init) {
+					st.tgt = target.clone();
+					st.yaw = st.wantYaw = wrap(heading + Math.PI);
+					st.pitch = st.wantPitch = O.pitch0;
+					st.zoom = st.wantZoom;
+					st.arm = O.base * st.zoom;
+					st.init = true;
+				}
+				if (moving && st.t - st.lastInput > FOLLOW.idleS) st.wantYaw = wrap(st.wantYaw + wrap(heading + Math.PI - st.wantYaw) * (1 - Math.exp(-FOLLOW.recenter * dt)));
+				st.yaw = wrap(st.yaw + smoothDamp(0, wrap(st.wantYaw - st.yaw), st.v, "yaw", T, dt));
+				st.pitch = smoothDamp(st.pitch, st.wantPitch, st.v, "pitch", T, dt);
+				if (st.wantZoom <= FOLLOW.zoomPov) {
+					st.zoom = FOLLOW.zoomPov;
+					st.v.zoom = 0;
+				} else {
+					if (st.zoom <= FOLLOW.zoomPov) {
+						st.zoom = FOLLOW.zoomMin;
+						st.arm = O.base * st.zoom;
+					}
+					st.zoom = smoothDamp(st.zoom, st.wantZoom, st.v, "zoom", T, dt);
+				}
+				const pov = api.pov();
+				if (pov !== st.povShown) {
+					st.povShown = pov;
+					O.onPov?.(pov);
+				}
+				for (const a of [
+					"x",
+					"y",
+					"z"
+				]) st.tgt[a] = smoothDamp(st.tgt[a], target[a], st.v, "t" + a, T * .35, dt);
+				const look = tmp.look.copy(st.tgt);
+				look.y += O.height;
+				if (pov) {
+					const yaw = st.yaw + Math.PI, c = Math.cos(st.pitch * .5), a = O.eyeAhead || 0, ex = st.tgt.x + Math.sin(heading) * a, ez = st.tgt.z + Math.cos(heading) * a;
+					camera.position.set(ex, st.tgt.y + O.eye, ez);
+					camera.lookAt(ex + Math.sin(yaw) * c, st.tgt.y + O.eye - Math.sin(st.pitch * .5) * .3, ez + Math.cos(yaw) * c);
+					return;
+				}
+				const want = O.base * st.zoom, cp = Math.cos(st.pitch);
+				tmp.dir.set(Math.sin(st.yaw) * cp, Math.sin(st.pitch), Math.cos(st.yaw) * cp).normalize();
+				const hit = O.collide ? O.collide(look, tmp.dir, want + FOLLOW.pad) : null, lim = hit != null ? Math.max(.6, Math.min(want, hit - FOLLOW.pad)) : want;
+				const rate = lim < st.arm ? FOLLOW.armIn : FOLLOW.armOut, step = (lim - st.arm) * (1 - Math.exp(-rate * dt));
+				st.arm += Math.sign(step) * Math.min(Math.abs(step), O.maxArm * dt);
+				const p = tmp.p.copy(look).addScaledVector(tmp.dir, st.arm);
+				const gy = O.ground ? O.ground(p.x, p.z) : -Infinity;
+				if (p.y < gy + O.minClear) p.y = gy + O.minClear;
+				camera.position.copy(p);
+				camera.lookAt(look);
+			},
+			detach() {
+				if (O.dom) {
+					O.dom.removeEventListener("pointerdown", down);
+					window.removeEventListener("pointerup", up);
+					O.dom.removeEventListener("pointermove", move);
+					O.dom.removeEventListener("wheel", wheel);
+				}
+			}
+		};
+		return api;
+	}
+	//#endregion
 	exports.ASSIST = ASSIST;
 	exports.ASSIST_M3 = ASSIST_M3;
 	exports.ATT = ATT;
 	exports.CLASS_K = CLASS_K;
 	exports.FEEL = FEEL;
 	exports.FLOW = FLOW;
+	exports.FOLLOW = FOLLOW;
 	exports.G = G;
 	exports.JUMP_K = JUMP_K;
 	exports.K = K;
@@ -1301,6 +1497,7 @@ var KFBDrive = (function(exports) {
 	exports.TURN = TURN;
 	exports.WORLD_K = WORLD_K;
 	exports.attitude = attitude;
+	exports.createFollowCam = createFollowCam;
 	exports.createK2t = createK2t;
 	exports.createRacerFlight = createRacerFlight;
 	exports.racerAfterK2t = racerAfterK2t;
@@ -1308,9 +1505,10 @@ var KFBDrive = (function(exports) {
 	exports.racerFlightStep = racerFlightStep;
 	exports.racerLand = racerLand;
 	exports.racerTakeoff = racerTakeoff;
+	exports.smoothDamp = smoothDamp;
 	exports.stepK2t = stepK2t;
 	return exports;
-})({});
+})({}, THREE);
 
 /* KFB_DRIVE_END */</script>
 <script>
@@ -2488,7 +2686,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   let rs = 1; const rr = () => { rs = (rs * 16807) % 2147483647; return rs / 2147483647 };
   const angGap = (a, b) => Math.abs(((a - b + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI);
   function tint(obj, col, k) { obj.traverse((o) => { const b = o.isMesh && o.material.userData.base; if (b) o.material.color.copy(b).lerp(col, k) }) }
-  function put(name, x, z, scale, sink, rotY, group) { const t = TPL[name]; if (!t) return; const o = t.clone(true); o.scale.setScalar(scale); o.rotation.y = rotY; o.position.set(x, surfH(x, z) - sink, z); group.add(o) }
+  function put(name, x, z, scale, sink, rotY, group) { const t = TPL[name]; if (!t) return; const o = t.clone(true); o.userData.kfbName = name; o.scale.setScalar(scale); o.rotation.y = rotY; o.position.set(x, surfH(x, z) - sink, z); group.add(o) }
   // Kontakt-Geometrie (V-565): jede Fuge Objekt/Boden durch kleine Knet-Brocken gebrochen (gequetschte Kugeln, Palettenton zwischen Boden und Kontakt)
   const CRUMB_N = 900, crumbs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0, flatShading: true }), CRUMB_N);
   crumbs.castShadow = crumbs.receiveShadow = true; crumbs.count = 0; worldRoot.add(crumbs); addGrounding(crumbs.material); addFlow(crumbs.material, 'rock');
@@ -2537,6 +2735,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     for (let i = 0; i < pa.count; i++) { const a = acc.get(key(i)), l = Math.hypot(a[0], a[1], a[2]) || 1; nr.setXYZ(i, a[0] / l, a[1] / l, a[2] / l) }
     return g }
   const ROCKC = { dirty: true, cx: 1e9, cz: 1e9, meshes: [], crumbs: null };
+  const OBST = { rocks: [] };   /* Kollision für die Fahrphysik (Georg 21.10.: man fährt durch Steine oder steckt darin) */
   { const mat = new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0 }); addGrounding(mat)
     ROCKC.meshes = [11, 29, 47].map((sd) => { const m = new THREE.InstancedMesh(etherRockGeo(sd), mat, 420); m.castShadow = m.receiveShadow = true; m.frustumCulled = false; m.count = 0; worldRoot.add(m); return m })
     ROCKC.crumbs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), crumbs.material, 2200); ROCKC.crumbs.castShadow = ROCKC.crumbs.receiveShadow = true; ROCKC.crumbs.frustumCulled = false; ROCKC.crumbs.count = 0; worldRoot.add(ROCKC.crumbs)
@@ -2545,7 +2744,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     LP.injectStandard(mat); for (const m of ROCKC.meshes) castFront(m); castFront(ROCKC.crumbs); castFront(crumbs) }
   const hh2 = (x, y) => { const t = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return t - Math.floor(t) };
   function buildRocks(px, pz) {
-    ROCKC.cx = px; ROCKC.cz = pz; ROCKC.dirty = false; for (const m of ROCKC.meshes) m.count = 0; ROCKC.crumbs.count = 0
+    ROCKC.cx = px; ROCKC.cz = pz; ROCKC.dirty = false; for (const m of ROCKC.meshes) m.count = 0; ROCKC.crumbs.count = 0; OBST.rocks.length = 0
     if (!S.rockc || S.gridworld) { for (const m of ROCKC.meshes) m.instanceMatrix.needsUpdate = true; ROCKC.crumbs.instanceMatrix.needsUpdate = true; return }
     const A = PALETTES[S.palA]; ROCKC.mat.color.set(A.cliff).lerp(new THREE.Color(A.mid), 0.15).multiplyScalar(0.9)
     const CS = 26, RAD = 175, tanMin = Math.tan((S.cliff - 10) * Math.PI / 180), tanMax = Math.tan(Math.min(S.cliff + 12, 70) * Math.PI / 180), e = 2, wl = S.water > 0.005 ? S.water * S.amp + 0.3 : -1e9
@@ -2572,7 +2771,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
         nrm.set(-gx, 1, -gz).normalize().lerp(up, 0.5).normalize(); q3.setFromUnitVectors(up, nrm); q1.premultiply(q3) // halb in den Hang gekippt
         pos.set(rx, Math.min(g + 0.8 * sc - sink * hgtR, gmin + 0.35 * sc), rz); scl.set(sc, sc, sc) // nie über dem tiefsten Bodenpunkt schweben
         const mesh = ROCKC.meshes[(((i * 7 + j * 3 + k) % 3) + 3) % 3]; if (mesh.count >= 420) continue
-        mesh.setMatrixAt(mesh.count++, m4.compose(pos, q1, scl))
+        mesh.setMatrixAt(mesh.count++, m4.compose(pos, q1, scl)); OBST.rocks.push({ x: rx, z: rz, y: pos.y, r: sc * 0.95, top: pos.y + sc })
         // Brösel: wenige, klein (≤ 12 % des Steins), meist hangabwärts liegen geblieben
         if (S.crumbs) for (let c = 0; c < 4 && ROCKC.crumbs.count < 2200; c++) { const a = down + (hh2(i + c, j * 2 + k) - 0.5) * 2.2, rr2 = sc * (0.75 + 0.6 * hh2(i * 2 + c, j + k)), cx2 = rx + Math.cos(a) * rr2, cz2 = rz + Math.sin(a) * rr2, cs2 = sc * (0.04 + 0.08 * hh2(c + i, k + j))
           ce.set(hh2(c, i) * 0.6, hh2(j, c) * 6.28, 0); cq.setFromEuler(ce); cs3.set(cs2 * 1.2, cs2 * 0.6, cs2); ROCKC.crumbs.setMatrixAt(ROCKC.crumbs.count++, cm4.compose(ccv.set(cx2, surfH(cx2, cz2) - cs2 * 0.15, cz2), cq, cs3)) }
@@ -2599,11 +2798,36 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   const applyTempo = () => { const T = TEMPO[S.tempo] || TEMPO.spiel, k = T[0] / TEMPO.spiel[0];   // Test-Tempo der Probe: nur die Tempi skaliert, Kurven/Drift bleiben
     for (const n of ['accel', 'brake', 'reverseAccel', 'maxForward', 'maxReverse']) KD.FLOW[n] = BASE.f[n] * k; KD.FEEL.boostMaxForward = BASE.e.boostMaxForward * k }
   const gN = (x, z) => { const e = 0.4 * KD.K, n = [groundAt(x - e, z) - groundAt(x + e, z), 2 * e, groundAt(x, z - e) - groundAt(x, z + e)], l = Math.hypot(...n); return [n[0] / l, n[1] / l, n[2] / l] };
+  // Boden und Hindernisse für k2t (Georg 21.10.: „Nase federt immer weiter“, „steckt in Stein oder fährt durch“):
+  //   Boden = Ebene durch die vier Schwebepunkte des Rigs (FL FR RL RR) statt eines Punkts → Lage folgt der Fahrzeuglänge, keine Einzelbuckel;
+  //   kleine Steine (Oberkante < 0,6 m über der Unterseite) werden überfahren (Kuppel-Höhe), große, Bäume und das Amphitheater sind Wände (Kreise)
+  const OB = { R: () => carInfo ? Math.hypot(carInfo.box.h[0], carInfo.box.h[2] * 0.5) * UNIT * 0.9 : 1.2, STEP: 0.6 }
+  function obstNear(x, z, R, out) { out.length = 0
+    for (const o of OBST.rocks) if (Math.abs(o.x - x) < R + o.r && Math.abs(o.z - z) < R + o.r) out.push(o)
+    if (S.dio) { for (const g of [stoneGroup, propGroup]) for (const c of g.children) { const n = c.userData.kfbName || '', sc = c.scale.x
+        if (/Bush/.test(n)) continue; const r = /Tree/.test(n) ? 0.45 * sc : 0.9 * sc, top = c.position.y + (/Tree/.test(n) ? 12 * sc : 1.2 * sc)
+        if (Math.abs(c.position.x - x) < R + r && Math.abs(c.position.z - z) < R + r) out.push({ x: c.position.x, z: c.position.z, y: c.position.y, r, top }) }
+      if (DIO.on && Math.hypot(DIO.x - x, DIO.z - z) < R + DIO.R) out.push({ x: DIO.x, z: DIO.z, y: DIO.y, r: DIO.R * 0.92, top: DIO.y + 30 }) }
+    return out }
+  const ON = [], ON2 = []
+  const surfAt = (x, z) => { let g = groundAt(x, z); for (const o of obstNear(x, z, 0, ON2)) { const d = Math.hypot(x - o.x, z - o.z); if (d < o.r && o.top - g < 3) g = Math.max(g, o.y + (o.top - o.y) * Math.sqrt(1 - (d / o.r) ** 2)) } return g }
+  const HV = { a: new THREE.Vector3(), b: new THREE.Vector3(), n: new THREE.Vector3(), p: [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()] }
   const DENV = {
-    ground: (x, z) => { const g = groundAt(x, z); return { y: g + RIDE, n: gN(x, z), floor: g + RIDE } },
+    ground: (x, z) => { const hv = carInfo?.hover; let gc = surfAt(x, z)
+      if (!hv || hv.length < 4) return { y: gc + RIDE, n: gN(x, z), floor: gc + RIDE }
+      const cy = Math.cos(D.yaw), sy = Math.sin(D.yaw); let sum = 0
+      for (let i = 0; i < 4; i++) { const lx = hv[i][0] * UNIT, lz = hv[i][2] * UNIT, wx = x + lx * cy + lz * sy, wz = z - lx * sy + lz * cy, h = surfAt(wx, wz); HV.p[i].set(wx, h, wz); sum += h }
+      HV.a.subVectors(HV.p[1], HV.p[2]); HV.b.subVectors(HV.p[0], HV.p[3]); HV.n.crossVectors(HV.a, HV.b).normalize(); if (HV.n.y < 0) HV.n.negate()   // Diagonalen FR−RL × FL−RR
+      if (HV.n.y < 0.35) HV.n.set(0, 1, 0)
+      const y = Math.max(gc, sum / 4) + RIDE; return { y, n: [HV.n.x, HV.n.y, HV.n.z], floor: y } },
     sweep: (from, delta) => { const tx = from[0] + delta[0], tz = from[2] + delta[2], base = from[1] - RIDE, g = groundAt(tx, tz); const h = Math.hypot(delta[0], delta[2])
       if (h > 1e-6 && g - base > 1.2) { const n = [-delta[0] / h, 0, -delta[2] / h]; return { delta: [0, delta[1], 0], hit: true, n, soft: false, ride: false } }   // Stufe höher als 1,2 m = Wand
-      return { delta, hit: false, n: null, soft: false, ride: false } },
+      const R = OB.R(); let dx = delta[0], dz = delta[2], hitN = null
+      for (const o of obstNear(tx, tz, R + 1, ON)) { if (o.top - base < OB.STEP) continue
+        const ex = from[0] + dx - o.x, ez = from[2] + dz - o.z, d = Math.hypot(ex, ez), m = o.r + R
+        if (d < m) { const nx = d > 1e-4 ? ex / d : -delta[0] / (h || 1), nz = d > 1e-4 ? ez / d : -delta[2] / (h || 1); dx = o.x + nx * m - from[0]; dz = o.z + nz * m - from[2]; hitN = [nx, 0, nz] } }   // aus dem Kreis schieben, Prall macht k2t
+      return { delta: [dx, delta[1], dz], hit: !!hitN, n: hitN, soft: false, ride: false } },
+    blocked: (x, y, z) => { const R = OB.R() * 0.9, base = y - RIDE; for (const o of obstNear(x, z, R, ON)) if (o.top - base >= OB.STEP && Math.hypot(x - o.x, z - o.z) < o.r + R) return true; return false },
     home: () => ({ x: P.x, y: groundAt(P.x, P.z) + RIDE, z: P.z, yaw: P.yaw }),
   };
   const FENV = { ground: (x, z) => DENV.ground(x, z).y, sweep: DENV.sweep };
@@ -2631,7 +2855,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     const u = TV.u.fromArray(D.up || [0, 1, 0]).normalize(), fw = TV.f.set(Math.sin(D.yaw), 0, Math.cos(D.yaw)); fw.addScaledVector(u, -fw.dot(u)).normalize()
     const x = TV.x.crossVectors(u, fw); TV.m.makeBasis(x, u, fw); TV.qw.setFromRotationMatrix(TV.m).multiply(TV.qe.setFromEuler(TV.e.set(D.pitch || 0, 0, D.roll || 0)))
     TV.qt.setFromAxisAngle(TV.Y, D.yaw).invert().multiply(TV.qw)                                   // ohne Gierung (die setzt carRoot)
-    if (!P.qTilt) P.qTilt = TV.qt.clone(); else P.qTilt.slerp(TV.qt, dt ? Math.min(1, dt * 14) : 1)
+    if (!P.qTilt) P.qTilt = TV.qt.clone(); else P.qTilt.slerp(TV.qt, dt ? Math.min(1, dt * (P.fly ? 14 : 6)) : 1)   /* Luftpolster schluckt kleine Wellen (Georg: Nase federt) */
     const nf = TV.f.set(0, 0, 1).applyQuaternion(P.qTilt), nr = TV.x.set(1, 0, 0).applyQuaternion(P.qTilt); P.vPitch = Math.asin(Math.max(-1, Math.min(1, nf.y))); P.vRoll = -Math.asin(Math.max(-1, Math.min(1, nr.y)))
   }
   function step(dt) {
@@ -2678,14 +2902,20 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       r.g.attributes.position.needsUpdate = true; r.g.attributes.aT.needsUpdate = true; r.m.visible = SPL.mat.uniforms.uK.value > 0.01 })
   }
 
+  // Folgekamera unverändert aus dem Spiel (followCam): kritisch gedämpft, Orbit per Ziehen, Zoom per Rad (bis Ich-Perspektive), Arm kürzt sich an Gelände/Steinen
+  const FCAMV = new THREE.Vector3(), FCAM = KD.createFollowCam({ dom: cv, base: 11.6, height: 1.4, eye: 1.5, eyeAhead: 1.6, pitch0: 0.33, minClear: 0.8,
+    onPov: (on) => { carRoot.visible = !on },
+    collide: (from, dir, dist) => { for (let t = 1; t <= dist; t += 0.5) { const x = from.x + dir.x * t, y = from.y + dir.y * t, z = from.z + dir.z * t; if (y < surfAt(x + P.x, z + P.z) + 0.4) return t } return null },
+    ground: (x, z) => surfAt(x + P.x, z + P.z) });
+
   // ---------- Kamera ----------
   let mode = 'over', yaw = 0.8, pitch = 0.5, dist = 60, look = 0;
-  window.__hgt = (x, z) => hgt(x, z); window.__RINGS = RINGS; window.__terrain = terrain; window.__S = S; window.__probeCam = (y, p, d) => { yaw = y; pitch = p; dist = d }; window.__probeTP = (x, z) => placeCar(x, z); window.__probeDrive = () => ({ D, F, P, carRoot, tilt, camera }); // Prüfhilfe (feste Kameras für Bildvergleiche)
+  window.__hgt = (x, z) => hgt(x, z); window.__RINGS = RINGS; window.__terrain = terrain; window.__S = S; window.__probeCam = (y, p, d) => { yaw = y; pitch = p; dist = d }; window.__probeTP = (x, z) => placeCar(x, z); window.__probeDrive = () => ({ D, F, P, carRoot, tilt, camera, OBST, DENV, OB, placeCar }); // Prüfhilfe (feste Kameras für Bildvergleiche)
   const camOver = $('camOver'), camDrive = $('camDrive'), hint = $('hint');
   function setMode(m) {
     mode = m; camOver.setAttribute('aria-pressed', m === 'over'); camDrive.setAttribute('aria-pressed', m === 'drive');
     hint.textContent = m === 'over' ? 'Ziehen: drehen · Rad/zwei Finger: zoomen' : 'W/S Gas/Bremse · A/D lenken · Q/E Driften · ⇧ Boost · Leertaste springen, in der Luft 2× fliegen · Pfeile Nase · R zurück';
-    if (m === 'drive') { look = 0; if (document.activeElement && document.activeElement !== document.body) document.activeElement.blur() }
+    if (m === 'drive') { look = 0; FCAM.reset(); if (document.activeElement && document.activeElement !== document.body) document.activeElement.blur() }
   }
   camOver.addEventListener('click', () => setMode('over')); camDrive.addEventListener('click', () => setMode('drive'));
   const ptr = new Map(); let pinch0 = 0, dist0 = dist;
@@ -2760,13 +2990,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       camera.lookAt(0, ty, 0);
     } else {
       U.uFogNear.value = S.rings ? 1200 : 170; U.uFogFar.value = S.rings ? 4500 : 292; // Nebel voll VOR der Geländekante (300 m bzw. 4,8 km)
-      if (!ptr.size) look *= Math.exp(-dt * 1.5);
       camera.fov = 55 + Math.min(18, Math.abs(P.vf) * 0.06); camera.updateProjectionMatrix(); // FOV-Kick: mehr Tempo, weiterer Blick
-      const a = P.yaw + Math.PI + look, back = P.fly ? 14 : 11, up = P.fly ? 4.5 - Math.sin(P.vPitch) * 6 : 3.8;
-      tmp.set(Math.sin(a) * back, P.y + up, Math.cos(a) * back);
-      const gCam = groundAt(P.x + tmp.x, P.z + tmp.z) + 1.5; tmp.y = Math.max(tmp.y, gCam);
-      camPos.lerp(tmp, Math.min(1, dt * 6)); camPos.y = Math.max(camPos.y, gCam);
-      camera.position.copy(camPos); camera.lookAt(Math.sin(P.yaw) * 6, P.y + 1.2, Math.cos(P.yaw) * 6);
+      FCAM.update(dt, camera, { target: FCAMV.set(0, carRoot.position.y, 0), heading: P.yaw, moving: Math.abs(P.vf) > 0.6 })   /* Kamera aus dem Spiel (followCam C1/V-408) */
     }
     if (window.__camOverride) window.__camOverride(camera, P);   // Prüfhilfe: freie Kamera
     // Himmel folgt der Kamera; Nebel für die Knet-Wolken wie beim Gelände
