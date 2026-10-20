@@ -480,7 +480,7 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
 
   // Himmel v2 (R13 H1–H6, H19): EINE Himmelsfunktion für Kuppel, Gelände, Wasser und Kulissen → Nebel = Himmel in Blickrichtung, kein Balken
   const GLSL_SKY = `
-  uniform vec3 uZenith, uSkyMid, uSkyGround, uSunDir, uSunCol, uAntiTint, uAirTint; uniform float uHzGlow, uSunHalo, uSky2, uFogB, uFogHa, uFogHb, uEdgeR;
+  uniform vec3 uZenith, uSkyMid, uSkyGround, uSunDir, uSunCol, uAntiTint, uAirTint; uniform float uHzGlow, uSunHalo, uSky2, uFogB, uFogHa, uFogHb, uEdgeR; uniform vec2 uAirOff;
   vec3 skyColor(vec3 d){
     float y=d.y;
     vec3 up=mix(uHorizon, uSkyMid, smoothstep(0.0,0.208,y)); up=mix(up, uZenith, smoothstep(0.208,0.82,y));
@@ -497,10 +497,14 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     float fd=1.0-exp(-t*uFogB);                                               /* exponentiell (H7) */
     float ry=sign(rd.y)*max(abs(rd.y),1e-3);
     float fh=(uFogHa/uFogHb)*exp(-cameraPosition.y*uFogHb)*(1.0-exp(-t*ry*uFogHb))/ry;   /* Höhennebel (H8) */
+    vec2 wq=(wp.xz+uAirOff)/650.0; float bank=0.5+0.5*(snoise(wq)*0.7+snoise(wq*2.3+3.1)*0.3);   /* Nebelbänke statt gleichmäßiger Wand (weltfest) */
+    fd=1.0-pow(1.0-fd, mix(0.7,1.45,bank)); fh*=mix(0.5,1.8,bank);
     float f=1.0-(1.0-fd)*exp(-max(fh,0.0));
-    f=clamp(f*mix(1.0,1.2,1.0-ndl),0.0,1.0);                                 /* Schattenseiten mehr Luft (H11) */
+    f=clamp(f*mix(1.0,1.2,1.0-ndl),0.0,1.0);
+    float fs=f*4.0; float lay=floor(fs); f=mix(f, (lay+smoothstep(0.0,0.35,fract(fs)))/4.0, 0.45);   /* gemalte Luft-Staffeln: 4 leicht abgestufte Schichten */                                 /* Schattenseiten mehr Luft (H11) */
     f=max(f, smoothstep(uEdgeR*0.85, uEdgeR, length(v.xz)));                  /* Geländekante verschwindet im Himmel (H13) */
     vec3 sky=skyColor(rd); vec3 air=mix(mix(sky,uAirTint,0.35), sky, smoothstep(0.3,0.9,f));   /* farbige Staffel (H9) */
+    air*=mix(vec3(1.0), vec3(0.95,0.97,1.03), clamp(lay/3.0,0.0,1.0)*(1.0-smoothstep(0.85,1.0,f)));   /* jede Schicht etwas kühler, am Horizont wieder Himmel */
     return mix(col, air, f);
   }`;
   // Polka-Dot-Schicht (Kusama-Hommage, Georg 20.10.): zwei Punktgrößen auf gedrehten, leicht verbogenen 3D-Gittern (keine Reihen sichtbar),
@@ -754,7 +758,7 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     if(uSky2>0.5 && uGridWorld<0.5) gl_FragColor=vec4(applyAir(col, vW-vec3(uCarW.x,0.0,uCarW.y), l),1.0); else gl_FragColor=vec4(mix(col, sky, f),1.0);
   }`;
   U.uHole = { value: -1 }; U.uDrop = { value: 0 }; U.uNE = { value: 1.2 }; U.uCarW = { value: new THREE.Vector2() }; U.uGridWorld = { value: 0 }; U.uGS = { value: 8 }; U.uGShape = { value: 1 }; U.uGFill = { value: 0 }; U.uGCol = { value: 0 }; U.uClay = { value: 0 }; U.uGTex = { value: 0 }; U.uRing = { value: 1 };
-  U.uEdges = { value: 1 }; U.uVox = { value: 0 }; U.uVoxTex = { value: 1 }; U.uAOMap = { value: null }; U.uAOOn = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 5 }; U.uTimeT = { value: 0 }; U.uFlow = { value: 1 }; U.uBands = { value: 4 }; U.uKus = { value: 0 }; Object.assign(U, { uZenith: { value: new THREE.Color() }, uSkyMid: { value: new THREE.Color() }, uSkyGround: { value: new THREE.Color() }, uSunDir: { value: new THREE.Vector3(-0.55, 0.75, 0.35).normalize() }, uSunCol: { value: new THREE.Color() }, uAntiTint: { value: new THREE.Color(0.92, 0.95, 1.0) }, uAirTint: { value: new THREE.Color() }, uHzGlow: { value: 0.06 }, uSunHalo: { value: 0.35 }, uSky2: { value: 1 }, uFogB: { value: 0.003 }, uFogHa: { value: 0.004 }, uFogHb: { value: 0.06 }, uEdgeR: { value: 292 }, uMoon: { value: 1 }, uMoonDir: { value: new THREE.Vector3() } }); U.uKusA = { value: new THREE.Color() }; U.uKusB = { value: new THREE.Color() }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
+  U.uEdges = { value: 1 }; U.uAirOff = { value: new THREE.Vector2() }; U.uVox = { value: 0 }; U.uVoxTex = { value: 1 }; U.uAOMap = { value: null }; U.uAOOn = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 5 }; U.uTimeT = { value: 0 }; U.uFlow = { value: 1 }; U.uBands = { value: 4 }; U.uKus = { value: 0 }; Object.assign(U, { uZenith: { value: new THREE.Color() }, uSkyMid: { value: new THREE.Color() }, uSkyGround: { value: new THREE.Color() }, uSunDir: { value: new THREE.Vector3(-0.55, 0.75, 0.35).normalize() }, uSunCol: { value: new THREE.Color() }, uAntiTint: { value: new THREE.Color(0.92, 0.95, 1.0) }, uAirTint: { value: new THREE.Color() }, uHzGlow: { value: 0.06 }, uSunHalo: { value: 0.35 }, uSky2: { value: 1 }, uFogB: { value: 0.003 }, uFogHa: { value: 0.004 }, uFogHb: { value: 0.06 }, uEdgeR: { value: 292 }, uMoon: { value: 1 }, uMoonDir: { value: new THREE.Vector3() } }); U.uKusA = { value: new THREE.Color() }; U.uKusB = { value: new THREE.Color() }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
   U.uDio = { value: new THREE.Vector4(0, 70, 11, 0) }; U.uDioB = { value: new THREE.Vector4(0, 1.4, 7.5, -Math.PI / 2) };
   U.uEdge = { value: new THREE.TextureLoader().load('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABLAAD/4QMpaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjAtYzA2MCA2MS4xMzQ3NzcsIDIwMTAvMDIvMTItMTc6MzI6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0REUzNjgzODFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0REUzNjgzOTFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRERTM2ODM2MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRERTM2ODM3MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAAwICAgICAwICAwUDAwMFBQQDAwQF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', (t) => { t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping; t.needsUpdate = true }) };
   const geo = new THREE.PlaneGeometry(SIZE, SIZE, SEG, SEG).rotateX(-Math.PI / 2);
@@ -829,7 +833,7 @@ ${GLSL_SKY}
     gold:  { k: 0.75, zenith: '#5e6fb3', horizon: '#f5b98c', lit: '#ffe2bd', shade: '#c98b8f', tint: [1.04, 0.86, 0.72], hemi: ['#f6c9a2', 0.8],  sun: ['#ffb877', 1.3],  stars: 0 },
     nacht: { k: 0.9,  zenith: '#121838', horizon: '#3a3e76', lit: '#9aa2d6', shade: '#3b406e', tint: [0.42, 0.48, 0.78], hemi: ['#5a5f9a', 0.5],  sun: ['#a9bcff', 0.45], stars: 1 },
   };
-  const SKY = { uZenith: U.uZenith, uSkyMid: U.uSkyMid, uSkyGround: U.uSkyGround, uSunDir: U.uSunDir, uSunCol: U.uSunCol, uAntiTint: U.uAntiTint, uAirTint: U.uAirTint, uHzGlow: U.uHzGlow, uSunHalo: U.uSunHalo, uSky2: U.uSky2, uFogB: U.uFogB, uFogHa: U.uFogHa, uFogHb: U.uFogHb, uEdgeR: U.uEdgeR, uMoon: U.uMoon, uMoonDir: U.uMoonDir, uHorizon: U.uHorizon, uLit: { value: new THREE.Color() }, uShade: { value: new THREE.Color() }, uTime: { value: 0 }, uCover: { value: 0.45 }, uPainted: { value: 1 }, uStars: { value: 0 }, uCamXZ: { value: new THREE.Vector2() } };
+  const SKY = { uAirOff: U.uAirOff, uZenith: U.uZenith, uSkyMid: U.uSkyMid, uSkyGround: U.uSkyGround, uSunDir: U.uSunDir, uSunCol: U.uSunCol, uAntiTint: U.uAntiTint, uAirTint: U.uAirTint, uHzGlow: U.uHzGlow, uSunHalo: U.uSunHalo, uSky2: U.uSky2, uFogB: U.uFogB, uFogHa: U.uFogHa, uFogHb: U.uFogHb, uEdgeR: U.uEdgeR, uMoon: U.uMoon, uMoonDir: U.uMoonDir, uHorizon: U.uHorizon, uLit: { value: new THREE.Color() }, uShade: { value: new THREE.Color() }, uTime: { value: 0 }, uCover: { value: 0.45 }, uPainted: { value: 1 }, uStars: { value: 0 }, uCamXZ: { value: new THREE.Vector2() } };
   const dome = new THREE.Mesh(new THREE.SphereGeometry(900, 48, 24), new THREE.ShaderMaterial({
     uniforms: SKY, side: THREE.BackSide, depthWrite: false,
     vertexShader: `varying vec3 vDir; void main(){ vDir=position; vec4 p=projectionMatrix*modelViewMatrix*vec4(position,1.0); gl_Position=p.xyww; }`,
@@ -880,10 +884,18 @@ ${GLSL_SKY}
     const u = Object.assign({}, SKY, { uHorizon: U.uHorizon, uK: { value: k }, uSil: { value: new THREE.Color() }, uTop: { value: top } })
     const m = new THREE.Mesh(g, new THREE.ShaderMaterial({ uniforms: u, side: THREE.BackSide, depthWrite: true,
       vertexShader: `varying vec3 vWk; varying float vHk; void main(){ vec4 w=modelMatrix*vec4(position,1.0); vWk=w.xyz; vHk=position.y; gl_Position=projectionMatrix*viewMatrix*w; }`,
-      fragmentShader: `uniform vec3 uHorizon; ${GLSL_SKY}
+      fragmentShader: `${GLSL_NOISE}\nuniform vec3 uHorizon; ${GLSL_SKY}
       uniform float uK, uTop; uniform vec3 uSil; varying vec3 vWk; varying float vHk;
-      void main(){ vec3 rd=normalize(vWk-cameraPosition); float base=1.0-smoothstep(0.0,0.35,vHk/max(1.0,uTop));   /* Fuß im Bodendunst */
-        gl_FragColor=vec4(mix(uSil, skyColor(rd), clamp(uK+(1.0-uK)*base,0.0,1.0)),1.0); }` }))
+      void main(){ vec3 rd=normalize(vWk-cameraPosition); float hN=clamp(vHk/max(1.0,uTop),0.0,1.0); float base=1.0-smoothstep(0.0,0.35,hN);   /* Fuß im Bodendunst */
+        /* Form statt Fläche: gemalte Licht- und Schattenseite zur Sonne (3 Stufen), Gesteinsbänder, hellere Kammlinie */
+        vec2 d2=normalize(vWk.xz-cameraPosition.xz); vec3 nr=vec3(-d2.x,0.0,-d2.y); vec3 tg=vec3(-d2.y,0.0,d2.x);
+        float nA=snoise(d2*5.0+vec2(hN*1.3,uK*7.0))*0.8+0.2*snoise(d2*13.0-vec2(uK*3.0,hN));
+        vec3 fn=normalize(nr+vec3(0.0,0.35+0.5*hN,0.0)+tg*nA*0.9);
+        float lit=clamp(dot(fn,uSunDir)*0.6+0.5,0.0,1.0); float ls=lit*3.0; lit=(floor(ls)+smoothstep(0.0,0.25,fract(ls)))/3.0;
+        vec3 col=uSil*mix(0.74,1.2,lit);
+        float sb=fract(hN*3.2+0.35*snoise(d2*3.0+vec2(4.0,uK))); col*=mix(1.0,0.9,smoothstep(0.42,0.5,sb)*(1.0-smoothstep(0.92,1.0,sb)));
+        col=mix(col, col*1.12+0.02, smoothstep(0.86,1.0,hN));
+        gl_FragColor=vec4(mix(col, skyColor(rd), clamp(uK*0.92+(1.0-uK)*base,0.0,1.0)),1.0); }` }))
     m.frustumCulled = false; m.renderOrder = 1; scene.add(m); return { m, u, ix } });
 
   // Knet-Wolken: dicke Kugeln, Stufenlicht, in Flughöhe; die Wolkenschicht wiederholt sich alle 1,2 km (endlos), driftet mit dem Wind
@@ -1320,7 +1332,7 @@ ${GLSL_SKY}
     for (let i = 0; i < 8; i++) { const a = t * 0.5 + i * Math.PI / 4, tilt = 0.55 + 0.35 * Math.sin(t * 0.7 + i * 1.3);
       _dD.set(Math.cos(a) * Math.sin(tilt), -Math.cos(tilt), Math.sin(a) * Math.sin(tilt)).normalize(); _dO.set(gx, gy, gz).addScaledVector(_dD, 1.2)
       const b = DISCO.beams[i], od = DISCO.olds[i];
-      if (neu) { const len = LP.hitDistance(_dO, _dD, { ground: surfH, maxLen: 70 }) * 1.06; LP.aimBeam(b, _dO, _dD, len); b.material.uniforms.uFade.value = 0.7; od.visible = false
+      if (neu) { const len = LP.hitDistance(_dO, _dD, { ground: surfH, maxLen: 70 }) + 0.6; LP.aimBeam(b, _dO, _dD, len); b.material.uniforms.uFade.value = Math.max(0.6, 1 - 2.2 / len); b.material.uniforms.uOp.value = 0.42; od.visible = false   /* Strahl reicht sichtbar bis an die Pfütze, blendet nur auf den letzten ~2 m aus */
         pools.push({ origin: _dS.set(_dO.x - P.x, _dO.y, _dO.z - P.z).clone(), dir: _dD.clone(), angle: 0.11, soft: 0.45, color: DISCO.pal[i], intensity: 2.2, range: 90 }) }
       else { const len = (_dO.y - floorY) / Math.max(0.05, -_dD.y); LP.aimBeam(b, _dO, _dD, len); b.material.uniforms.uFade.value = 1.01; od.visible = true; const r = Math.tan(0.11) * len; od.position.set(_dO.x + _dD.x * len, floorY, _dO.z + _dD.z * len); od.scale.set(r, 1, r) } }
     LP.setPools(neu ? pools : []) }
@@ -1357,7 +1369,7 @@ ${GLSL_SKY}
       camera.position.copy(camPos); camera.lookAt(Math.sin(P.yaw) * 6, P.y + 1.2, Math.cos(P.yaw) * 6);
     }
     // Himmel folgt der Kamera; Nebel für die Knet-Wolken wie beim Gelände
-    updateVox();
+    updateVox(); U.uAirOff.value.set(P.x, P.z);
     { const rOn = !S.vox && (mode === 'over' || S.rings); for (const R of RINGS) R.m.visible = rOn; water.scale.set(rOn ? 16 : 1, 1, rOn ? 16 : 1)
       const edge = S.vox ? VOX.N * S.voxs * 0.46 : rOn ? 4700 : 292; U.uEdgeR.value = edge; U.uFogB.value = Math.LN2 / (0.6 * edge); U.uFogHb.value = 1 / Math.max(4, 0.25 * S.amp); U.uFogHa.value = rOn ? 0.0006 : 0.004
       for (const K of KUL) { K.m.position.set(camera.position.x, 0, camera.position.z); K.m.scale.setScalar(rOn ? 17 : 1) } }
