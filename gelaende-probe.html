@@ -2528,7 +2528,10 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     for (const k of PAL_KEYS) { U['uA_' + k].value.set(A[k]); U['uB_' + k].value.set(B[k]) }
     const M = MOODS[S.tod] || MOODS.tag; U.uMoodK.value = M.k; U.uTint.value.setRGB(...M.tint); U.uHorizon.value.set(M.k ? M.horizon : A.sky);
     SKY.uZenith.value.set(M.zenith); SKY.uCForm.value = S.cform ?? 4; U.uSGrad.value = S.sgrad ?? 0.6; SKY.uAurora.value = S.aurora === 2 ? (M.stars ? 1 : 0.55) : S.aurora === 1 ? M.stars : 0;
-    { const el = (S.sunel ?? 49) * Math.PI / 180, az = Math.atan2(35, -55); U.uSunDir.value.set(Math.cos(el) * Math.cos(az), Math.sin(el), Math.cos(el) * Math.sin(az)); sun.position.copy(U.uSunDir.value).multiplyScalar(160) }   // Sonnenstand (Regler), Richtung wie bisher
+    { const el = (S.sunel ?? 49) * Math.PI / 180, az = Math.atan2(35, -55); U.uSunDir.value.set(Math.cos(el) * Math.cos(az), Math.sin(el), Math.cos(el) * Math.sin(az));
+      /* Schattenlicht ≠ sichtbare Sonne (Schattenkonzept R1, KayKit: festes, hohes Schlüssellicht; Georg 21.10.: riesiger Wagenschatten bei Sonnenstand 12°):
+         Himmel, Sonnenscheibe und Geländelicht folgen dem Regler, geworfen wird nie flacher als 42° – gleiche Himmelsrichtung, kompakte Schatten */
+      const es = Math.max(el, 42 * Math.PI / 180); sun.position.set(Math.cos(es) * Math.cos(az), Math.sin(es), Math.cos(es) * Math.sin(az)).multiplyScalar(160) }   // Sonnenstand (Regler), Richtung wie bisher
     { const hz = U.uHorizon.value, ze = U.uZenith.value; U.uSkyMid.value.copy(hz).lerp(ze, 0.45); U.uSkyGround.value.copy(hz).multiplyScalar(0.9).lerp(new THREE.Color(A.low), 0.15); U.uSunCol.value.set(M.sun[0]); U.uAirTint.value.copy(hz).lerp(ze, 0.5); U.uSky2.value = S.sky2 ? 1 : 0; U.uMoon.value = S.moon
       const md = new THREE.Vector3(-U.uSunDir.value.x, 0, -U.uSunDir.value.z).normalize(); md.y = Math.tan(6 * Math.PI / 180); U.uMoonDir.value.copy(md.normalize())
       if (typeof KUL !== 'undefined') { const airB = new THREE.Color().copy(U.uSkyMid.value).lerp(new THREE.Color(A.sky), 0.3), sunT = new THREE.Color(M.sun[0]).lerp(hz, 0.5)   // Luft des Bioms: 70 % Himmel-Mitte + 30 % Rolle sky (U8)
