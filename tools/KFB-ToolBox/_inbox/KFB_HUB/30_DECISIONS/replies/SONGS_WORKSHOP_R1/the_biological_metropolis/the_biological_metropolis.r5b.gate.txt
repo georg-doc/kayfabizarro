@@ -2,18 +2,18 @@
 gate song_gate.py sha256 1dd02afa466358e77e15eb7ba6518d4a614e493e425f492c6d1c99695f8c8917
 deck pin registry/assets/v1/decks/the_biological_metropolis.json sha256 76fe5fd89f90e1c2b66858d2ac1c962670d605b8a1b1aeb8866aabb7f9f58666
 media pin media/kfb/The_Biological_Metropolis_-_ADD_web_ID.pdf.json sha256 e0c6d91411eff14bfa2148f0c2c6b122f2893d217c444e0e9b9bcde5a750297b
-lyrics sha256 f4501f90ab9775cdf432aabeadb10bfe0e064ecab69184617140865605e0a264 · 3148 Zeichen (Unicode len)
+lyrics sha256 7dcb99e64dc89f08a096232ca83d9bb784883694c179a17abb9fdac69656e93c · 2941 Zeichen (Unicode len)
 style sha256 fb9502bb027614887f030418e58cfbb9367e0e2d80a8590c5996b263a3d46a53
 
 $ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r5b.suno.txt --deck registry/assets/v1/decks/the_biological_metropolis.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r5b.songlines.json --media media/kfb/The_Biological_Metropolis_-_ADD_web_ID.pdf.json --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_BESTOF_R1
 exit 0
-song_gate R4.2 lyrics · the_biological_metropolis.r5b.suno.txt · 3148 Zeichen · 15/15 Karten · Intro 2 · Brücken 4 · Outro 2 · Performer-Einschübe 14 · R4-Zuordnung
-lyrics sha256 f4501f90ab9775cdf432aabeadb10bfe0e064ecab69184617140865605e0a264
+song_gate R4.2 lyrics · the_biological_metropolis.r5b.suno.txt · 2941 Zeichen · 15/15 Karten · Intro 2 · Brücken 4 · Outro 2 · Performer-Einschübe 14 · R4-Zuordnung
+lyrics sha256 7dcb99e64dc89f08a096232ca83d9bb784883694c179a17abb9fdac69656e93c
 WARN A4: Karte 5: Kartenteil 71 Zeichen (Richtwert 80-95): 'The Heart: the brain can modify the rate. The brai'
 WARN A4: Karte 19: Kartenteil 96 Zeichen (Richtwert 80-95): 'Autoimmune: the discrimination fails, not the weap'
 WARN A4: Karte 6: Kartenteil 47 Zeichen (Richtwert 80-95): 'You are the press secretary, not the president.'
 WARN A4: Karte 32: Kartenteil 72 Zeichen (Richtwert 80-95): 'The Scorekeeper: the body keeps the score because '
-WARN A2: eigener Text (Rahmen + Performer) 59% aller Wörter (Richtwert <= 30%)
+WARN A2: eigener Text (Rahmen + Performer) 56% aller Wörter (Richtwert <= 30%)
 WARN C11: Wort 'joysticks' 3x im eigenen Text
 WARN C11: Wort 'own' 3x im eigenen Text
 REVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [1, 5, 7, 10, 9, 28, 11, 19, 21, 23, 24, 30, 26, 6, 32]
