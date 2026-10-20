@@ -3,6 +3,33 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 110 · 20.10. · Schatten #439 behoben (lokal, terrain/439) · V-572 Laternen im Spiel · Korrektur zu §109
+
+**Schatten** (WS1b-Diagnose `WS1B_SHADOW_DIAG_R1`, Georg-Befunde) auf `terrain/439` (lokal, `fabc082` + Folgecommit):
+- **Ring- und Lochschatten an Kronen:**
+  - Der Schattenkasten ist jetzt mindestens 16 m groß (vorher 3,37 m).
+  - Die Sonne steht um Kronenhöhe ÷ sin(Höhe) + 4 m zurück. Damit schneidet die Nah-Ebene keine Krone mehr ab, und auch Nachbarbäume werfen.
+  - `kfb-stage-light.v1.1` hat dafür eine kleine Ergänzung bekommen (**v1.1b**): `fit().margin`, `shadowSoft` (PCF-Radius, r186) und `shadowIntensity`.
+  - Georg wollte die Schatten weicher und heller: Radius 3, Intensität 0,82.
+- **Ohren werfen Schatten** (V-429). Im Bild ist der FB-Schatten jetzt mit Ohren zu sehen.
+- **Nicht im Spiel lösbar:** Haarbüschel, Brauen, Schnurrbart und Mund empfangen keinen Schatten, weil sie ShaderMaterials aus dem ToolBox-Figurenaufbau sind (P08-Parität). → **Bitte als ToolBox-Job** (WSA bzw. WS0): Diese Materialien brauchen die Schatten-Chunks, oder sie müssen Standard- bzw. Knet-Materialien werden.
+- **Kontakt:** `GROUND_AT` trifft nur noch feste Körper und nicht mehr die eigene Spielerkapsel; der Fleck lag vorher auf 1,23 m. Laut Kanon gibt es keinen Blob-Ersatz; der Kontakt kommt aus dem echten Schatten.
+- **Tests:**
+  - `contract-static`, `host`, `deps` und `light` sind PASS. `light` lief mit echter GPU über `PW_GPU=1` in `test/_page.mjs` (Hinweis WS1b).
+  - Die Volltest-Reihe mit GPU steht noch aus, deshalb gibt es noch keinen Push bzw. Spiegel.
+
+**V-572 im Spiel:** Die Laternen-Pfützen sind jetzt eine Projektion mit `kfb-light-pool.v1` auf Gelände, Weg, Steine, Obstgarten und Fundsachen. Bisher war das `kfb-gem` mit `pool:true` als flache Scheibe. Stärke und Farbe kommen 1:1 aus dem Practicals-Angebot. Bei Nacht ist das im Bild geprüft.
+- Offen: `disco-ball-core` (RA-Kopie) und das UFO-Lab.
+
+**Korrektur zu §109:** Die Startweiche „nackte Adresse → `#m1,harvest`“ gehört **nicht** in den Quell-`index.html`, weil Tests das Spiel ohne Hash öffnen. Sie gehört wie bei WS1b in den Vorschau-Schritt. Ich habe sie wieder herausgenommen. Die WS1-Regel bleibt: Spiel-Builds öffne ich nur noch mit Hash.
+
+**Gelände-Probe** (seit §108):
+- Schatten mit 16er-Vogel-Scheibe, pro Bildpunkt gedreht.
+- Kontakt-Hof ohne Plateau, dazu Dithering gegen 8-Bit-Stufen.
+- Cartoon-Wasser: deckend, mit Schaumband.
+- Fließfarben laufen über die Boden-Familie (Steine, Brösel), gedämpft. Bäume sind wahlweise dabei, Bedeutungsträger bleiben eigen.
+  - **Regelvorschlag K-FL1:** „Was zum Boden gehört, fließt mit; was Bedeutung trägt, bleibt eigen. Props nehmen die Fließfarben gedämpft und heller über ihr eigenes Material auf.“ Georg mag diese eigene Lesart.
+
 ## 109 · 20.10. · FAIL (Georg): alte Hex-Insel wieder sichtbar – Ursache WS1, behoben im #439-Zweig
 
 **Georg:** „Ich sehe hier wieder diese alte Hex-Landschaft, die wir nie wieder zeigen wollten (WS0 ausdrücklich gesagt) … betrachte ich als Fail, bitte an WS0 melden.“
