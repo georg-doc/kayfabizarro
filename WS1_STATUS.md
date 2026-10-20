@@ -3,6 +3,44 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 108 · 20.10. · WS1b · Vorschau-Start: Spiel statt Spike, Ladeanzeige, Titel (gebaut und getestet, Push wartet auf Georg)
+
+Erste Meldung von WS1b (Georgs MacBook, V-539). Auftrag von WS0: nur Aufgabe 1. #439 (Cartoon-Gelände) macht die alte WS1, WS1b hat dafür nichts angefangen.
+
+**Was sich ändert** (kfb-planet `36661e6` auf combo/r2 @d762916; combo/r2 selbst bleibt unberührt):
+- Wer die Vorschau ohne Hash öffnet, landet im Spiel (`#m1,harvest`), nicht mehr im alten „Spike R4 · Hex-Insel“. Den Spike gibt es nur noch über `#spike`, alle anderen Hashes bleiben gleich.
+- Ladeanzeige, damit das Bild nicht mehr ~20 s schwarz bleibt: dunkle Fläche mit drei hüpfenden Punkten und „KFB · Spiel lädt …“, über dem HUD.
+  - In der Laufwelt verschwindet sie, sobald Spieler und Bühne stehen (im Fahrmodus auch der Racer), bei einem Ladefehler ebenso. `M1World` sendet dafür das DOM-Ereignis `kfb-ready`.
+  - In anderen Ansichten verschwindet sie mit dem ersten Canvas. Spätestens nach 120 s ist sie in jedem Fall weg.
+- Seitentitel „KFB · Spiel-Vorschau“.
+- Ohne `debug` gibt es weiterhin keine `__kfb`-Globals (s0 grün).
+
+**Tests** (MacBook, Playwright-Chromium mit SwiftShader, Vergleich gegen einen unveränderten Build von combo/r2 @d762916 in eigenem Worktree):
+- npm-Kette (37 Prüfungen): 34 PASS.
+  - `stage` und `cast` lasen Pfade des alten Macs (`~/kfb-ws1/…`). Mit `KFB_REPO_LIVE` (Registry von `ws1/r3f-frame`) bzw. `KFB_REPO`: PASS.
+  - `c3` scheiterte im ersten Lauf am Projektil-Treffer (Zeitverhalten). Im zweiten Lauf PASS auf beiden Builds.
+- Rot, aber nicht von dieser Änderung:
+  - `c3g` ist auf beiden Builds rot, mit gleichen Werten (Laternen-Platzhalter, bekannt seit §94).
+  - `light` läuft auf beiden Builds in die Zeitgrenze von 420 s.
+  - `scale` wackelt an derselben Grenze. Bis zur sichtbaren Figur dauert es neu 538 s, alt 582 s; die Figur wartet auf das Kontakt-AO-Backen, das unter SwiftShader sehr langsam ist.
+  - `drift` braucht `test/out/drift/drift-report.json`, das nur auf dem alten Mac liegt.
+- M1-Teil von run-all:
+  - `m1-contract` PASS.
+  - `m1-rank-fence` PASS mit dem gecachten, gepinnten Theater-GLB (`AMPH_GLB`).
+  - `m1-move` und `m1-fence` lassen sich auf dieser Maschine nicht durchführen: SwiftShader schafft hier 1,4 Physik-Schritte/s, und der unveränderte Build kam in 400 s nicht einmal bis „Spieler bereit“.
+  - Die Ladeanzeige auf `#m1,debug,replay`: Spieler bereit nach 65 s, die Anzeige ist bis dahin da und danach weg.
+- Lokal mit echter GPU (Port 8843): Die nackte Adresse wird zu `#m1,harvest` und die Ladeanzeige ist nach ~15 s weg, dann ist das Spiel zu sehen. `#spike` zeigt den alten Spike R4.
+
+**Commits, lokal bereit, Push wartet auf Georg:**
+- `ws1/preview` bd6e396: Elternteil 2aadeda6, nur `index.html` und `build.json`. `gelaende-probe.html` bleibt unverändert.
+- `ws1b/preview-start` d05efbd: Elternteil ist der Spiegel 15d6727, nur `ws1/kfb-planet/index.html` und `src/m1/M1World.jsx`. Das ist die Quelle der Vorschau; die alte WS1 kann sie in ihren Branch übernehmen.
+- Warum noch nicht gepusht: WS1b hat auf dem MacBook keinen GitHub-Zugang (HTTPS ohne Anmeldung, SSH-Standardschlüssel abgelehnt). Den Deploy-Key in `~/.ssh` habe ich ohne Georgs Ja nicht benutzt. Georg entscheidet: Deploy-Key per Einzelbefehl oder selbst pushen.
+- Live-Prüfung der Vorschau-Adresse (nackte Adresse, `#spike`, Ladeanzeige, Zeit) folgt direkt nach dem Push.
+
+**Hinweis für Volltests auf dem MacBook:** `m1-move`, `m1-fence`, `light` und `scale` brauchen dort ein GPU-Chromium (`PW_CHROMIUM`) oder längere Grenzen.
+
+WS1b ist danach in Pause, wie mit WS0 vereinbart.
+
 ## 107 · 20.10. · Probe: Formlogik v4, Kontakt-AO am Boden, Rezept-Import/Export, Voxel-Welt
 
 Stand: `ws1/preview@<siehe Commit>`, https://ws1-preview.kayfabizarro.pages.dev/gelaende-probe
