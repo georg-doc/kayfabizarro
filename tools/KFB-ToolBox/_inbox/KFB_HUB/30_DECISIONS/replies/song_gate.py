@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KFB Song-Tor R4.0 (SONG_SPEC_R4, V-576): EIN Prüfskript für alle Deck-Songs. Keine Kopien je Deck, kein Schatten-Parser.
+"""KFB Song-Tor R4.1 (SONG_SPEC_R4, V-576; R4.1: Zitat-Satzzeichen, "swap" bei transferable): EIN Prüfskript für alle Deck-Songs. Keine Kopien je Deck, kein Schatten-Parser.
 R4 ersetzt R3.7 (V-528). R2 (gesprochene Triplets) und triplet_set_check.py bleiben unverändert.
 
   python3 song_gate.py lyrics <track.suno.txt> --deck <deck.json> [--songlines <x.songlines.json>] [--media <deck.pdf.json>]
@@ -25,7 +25,7 @@ import argparse, hashlib, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from triplet_set_check import GRAMMAR, FLUFF, vocab, stems  # gleiche Wortlogik wie das Triplet-Tor
 
-GATE_VERSION = "R4.0"
+GATE_VERSION = "R4.1"
 SONGLINES_R4 = "kfb.songlines.r4"
 WORD = re.compile(r"[A-Za-z]+(?:[-'][A-Za-z]+)*")
 GAME_WORDS = {"actor", "actors", "token", "tokens", "scene", "scenes", "zerg", "equipped", "discard", "discards", "dice",
@@ -408,11 +408,15 @@ def gate_lyrics(a):
 
     # Deck-Identität (V-576 C9-ACK): Titel optional; hart sind deckId/Titel in Metadaten (oben S1)
     tw = {w.lower() for w in WORD.findall(deck_title) if w.lower() not in STOP and len(w) > 3}
-    where = [j for j in sung if tw and len(tw & {w.lower() for w in WORD.findall(bs[j])}) >= max(1, min(2, len(tw)))]
-    if not where:
-        out("REVIEW", "C9", f"Decktitel {deck_title!r} wird im Song nicht genannt (erlaubt; Identität über Performer/Outro?)")
-    else:
+    hits = {j: tw & {w.lower() for w in WORD.findall(bs[j])} for j in sung}
+    where = [j for j, h in hits.items() if tw and len(h) >= max(1, min(2, len(tw)))]
+    part = [(j, sorted(h)) for j, h in hits.items() if h and j not in where]
+    if where:
         out("INFO", "C9", f"Decktitel-Wörter in Beat {where[:4]}")
+    elif part:
+        out("REVIEW", "C9", f"Decktitel {deck_title!r} nur teilweise genannt: {part[:3]} (erlaubt)")
+    else:
+        out("REVIEW", "C9", f"Decktitel {deck_title!r} wird im Song nicht genannt (erlaubt; Identität über Performer/Outro?)")
     if r4 and intro_type is not None and intro_type not in INTRO_TYPES:
         out("REVIEW", "C9", f"introType {intro_type!r} außerhalb der alten Liste (frei, nur Signal)")
     if a.corpus and intro_type:
@@ -633,9 +637,12 @@ def gate_critic(a):
         for k, ob, lim in obs_all:
             if len(ob.split()) > lim:
                 F(f"{k}: observation länger als {lim} Wörter")
-            if SUGGEST.search(ob):
-                F(f"{k}: klingt nach Textvorschlag ({SUGGEST.search(ob).group()!r}); Kritiker urteilt nur")
+            # R4.1: die Frage "transferable" fragt selbst nach dem Austausch – "swap" beschreibt dort, es schlägt nichts vor
+            sg = SUGGEST.search(re.sub(r"\bswap\w*", "", ob, flags=re.I) if k == "transferable" else ob)
+            if sg:
+                F(f"{k}: klingt nach Textvorschlag ({sg.group()!r}); Kritiker urteilt nur")
             for q in quotes_of(ob):
+                q = q.strip().rstrip(",.;:!?")   # R4.1: Satzzeichen-Konvention innerhalb von Anführungszeichen
                 if q.casefold() not in source.casefold():
                     F(f"{k}: Zitat {q!r} steht nicht im Kandidaten (Ersatztext?)")
         rec = crit.get("recommendation")

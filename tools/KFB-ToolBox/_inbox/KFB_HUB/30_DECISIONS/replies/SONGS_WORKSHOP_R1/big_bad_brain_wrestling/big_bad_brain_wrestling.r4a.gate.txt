@@ -1,0 +1,36 @@
+# Gate-Bericht big_bad_brain_wrestling.r4a · 2026-10-20
+gate song_gate.py sha256 13fcdf867ba9049011a4872f176f3d4b81dd26d2dbef4e4846a36907dc674918
+deck pin registry/assets/v1/decks/big_bad_brain_wrestling.json sha256 54f986f67f1f29c3b070c08c457d67fe46bad7727141c5929982fbc053d81a0a
+media pin media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json sha256 6e84e0c398bb57ad6feede12a3fda8b7a118ced3fa45ba04cb0bb0f6453aed1d
+lyrics sha256 2fcd162ced43bf79582fb4b4a2c6d71d07e1a689a68ca4ee8c75404e7ef01fc5 · 2969 Zeichen (Unicode len)
+style sha256 11010c607c651de511ce176d793ef185324465beb46076d280c7e13a903231d6
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r4a.suno.txt --deck registry/assets/v1/decks/big_bad_brain_wrestling.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r4a.songlines.json --media media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_BESTOF_R1
+exit 0
+song_gate R4.1 lyrics · big_bad_brain_wrestling.r4a.suno.txt · 2969 Zeichen · 20/20 Karten · Intro 3 · Brücken 5 · Outro 2 · Performer-Einschübe 15 · R4-Zuordnung
+lyrics sha256 2fcd162ced43bf79582fb4b4a2c6d71d07e1a689a68ca4ee8c75404e7ef01fc5
+WARN A4: Karte 4: Kartenteil 73 Zeichen (Richtwert 80-95): 'When defeated, you may choose who defeats you. Tha'
+WARN A4: Karte 14: Kartenteil 73 Zeichen (Richtwert 80-95): 'The Stomp Punch: stomping on the mat when punching'
+WARN A4: Karte 22: Kartenteil 78 Zeichen (Richtwert 80-95): 'The Snake Bag: the bag has a live snake. Terrify t'
+WARN A4: Karte 45: Kartenteil 61 Zeichen (Richtwert 80-95): 'The Booker: the ending is pre-planned. You are jus'
+WARN A4: Karte 49: Kartenteil 60 Zeichen (Richtwert 80-95): "The Hard Cam: if the camera didn't see it, it didn"
+WARN A4: Karte 35: Kartenteil 96 Zeichen (Richtwert 80-95): "The Real Injury: Goldberg's shoulder smashed into "
+WARN A4: Karte 41: Kartenteil 77 Zeichen (Richtwert 80-95): 'The Finisher: the Leg Drop. The most important mom'
+WARN A2: eigener Text (Rahmen + Performer) 42% aller Wörter (Richtwert <= 30%)
+REVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [1, 2, 3, 4, 9, 11, 13, 14, 17, 22, 45, 46, 49, 30, 31, 35, 55, 41, 42, 56]
+REVIEW C9: introType 'confession' schon in the_kayfabe_money_trail_9_11.part2.r4.6.songlines.json
+REVIEW C9: introType 'confession' schon in the_kayfabe_money_trail_9_11.part1.r4.6.songlines.json
+REVIEW B6: Performer-Text in 71% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)
+INFO S2: deck gepinnt 54f986f67f1f
+INFO S2: media gepinnt 6e84e0c398bb
+INFO C9P: Performer verifiziert: The Jobber (big_bad_brain_wrestling#4)
+INFO C9: Decktitel-Wörter in Beat [2]
+INFO B7b: Rahmen-Beat 1 ruft Karte 4 auf (Callback)
+INFO E16b: kein Ton-Eintrag für dieses Deck; Deck-Hinweise in SONG_SPEC E16b prüfen
+PASS
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r4a.style.txt --deck registry/assets/v1/decks/big_bad_brain_wrestling.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r4a.songlines.json --batch tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r4a.style.txt tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r4b.style.txt
+exit 0
+song_gate R4.1 style · big_bad_brain_wrestling.r4a.style.txt · Familie A rock · 2 Variante(n) · 340, 290 Zeichen
+PASS
+

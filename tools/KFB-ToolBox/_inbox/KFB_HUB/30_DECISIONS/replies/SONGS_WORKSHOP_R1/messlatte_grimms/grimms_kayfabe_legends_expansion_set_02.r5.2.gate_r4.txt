@@ -1,0 +1,23 @@
+# Messlatte · grimms_kayfabe_legends_expansion_set_02 r5.2 (vorhandener, quellengestützter Song) · R4-Lauf 2026-10-20
+Lyrics: tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3/r46/grimms_kayfabe_legends_expansion_set_02.r5.2.suno.txt · Critic v1: tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3/r46/grimms_kayfabe_legends_expansion_set_02.r5.2.critic.json (pass, 4/4/4/4/4/4)
+gate song_gate.py sha256 6eb89bec755f1d23015333a533abc2694d346b269892b7f2347a58d49c938565
+
+$ python3 song_gate.py lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3/r46/grimms_kayfabe_legends_expansion_set_02.r5.2.suno.txt --deck registry/assets/v1/decks/grimms_kayfabe_legends_expansion_set_02.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3/r46/grimms_kayfabe_legends_expansion_set_02.r5.2.songlines.json --media media/kfb/GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02_-_ADD_web.pdf.json
+song_gate R4.0 lyrics · grimms_kayfabe_legends_expansion_set_02.r5.2.suno.txt · 4987 Zeichen · 52/52 Karten · Intro 3 · Brücken 0 · Outro 1 · Performer-Einschübe 15 · Titel-Zuordnung
+lyrics sha256 5eedc488329f39a1e34ed65984da77a769649eb0222ab393de89fe50a7ab7266
+INFO S5: Altbestand: Zuordnung über Kartentitel (R3.7-Weg)
+INFO C9: Decktitel-Wörter in Beat [1]
+INFO A2: eigener Text (Rahmen + Performer) 11% aller Wörter (Richtwert <= 30%)
+PASS
+exit 0
+
+$ python3 song_gate.py style tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3/inputs/grimms_kayfabe_legends_expansion_set_02.r5.1.style.txt
+song_gate R4.0 style · grimms_kayfabe_legends_expansion_set_02.r5.1.style.txt · Familie A balkan · 2 Variante(n) · 204, 200 Zeichen
+PASS
+exit 0
+
+$ python3 song_gate.py critic tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3/r46/grimms_kayfabe_legends_expansion_set_02.r5.2.critic.json --lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3/r46/grimms_kayfabe_legends_expansion_set_02.r5.2.suno.txt --source registry/assets/v1/decks/grimms_kayfabe_legends_expansion_set_02.json media/kfb/GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02_-_ADD_web.pdf.json
+song_gate R4.0 critic v1 · grimms_kayfabe_legends_expansion_set_02.r5.2.critic.json · 12 Flags · verdict pass
+PASS
+exit 0
+

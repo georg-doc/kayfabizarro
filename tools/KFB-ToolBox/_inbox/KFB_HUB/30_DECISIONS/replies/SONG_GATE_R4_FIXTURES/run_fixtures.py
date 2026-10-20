@@ -46,6 +46,8 @@ CASES += [
     ("Kritiker v2 sah Quelle = FAIL", CRIT("critic_v2_unblind"), 1, "inputs nur aus"),
     ("Kritiker v2 READY trotz Übertragbarkeit = FAIL", CRIT("critic_v2_inconsistent"), 1, "READY_FOR_WS0 trotz"),
     ("Kritiker v2 erfundenes Zitat = FAIL", CRIT("critic_v2_fake_quote"), 1, "steht nicht im Kandidaten"),
+    ("R4.1: Zitat mit Komma + 'swapping' bei transferable = PASS", CRIT("critic_v2_r41_ok"), 0, "critic v2"),
+    ("R4.1: 'e.g.' bleibt verboten = FAIL", CRIT("critic_v2_eg"), 1, "klingt nach Textvorschlag ('e.g.')"),
 ]
 # Regression: Altbestand (R3.7 PASS) bleibt PASS unter R4, Titel-Zuordnung
 REG = [("grimms_kayfabe_legends_expansion_set_02", "SONG_CRITICS_R3/r46/grimms_kayfabe_legends_expansion_set_02.r5.2", "GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02_-_ADD_web.pdf.json"),

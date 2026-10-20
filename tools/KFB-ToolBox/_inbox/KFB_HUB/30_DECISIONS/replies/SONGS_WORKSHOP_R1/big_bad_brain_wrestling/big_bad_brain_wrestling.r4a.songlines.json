@@ -1,0 +1,362 @@
+{
+  "schema": "kfb.songlines.r4",
+  "deckId": "big_bad_brain_wrestling",
+  "deckTitle": "Big Bad Brain Wrestling",
+  "revision": "r4a",
+  "sourcePins": {
+    "deck": {
+      "path": "registry/assets/v1/decks/big_bad_brain_wrestling.json",
+      "sha256": "54f986f67f1f29c3b070c08c457d67fe46bad7727141c5929982fbc053d81a0a",
+      "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3"
+    },
+    "media": {
+      "path": "media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json",
+      "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/073b79c3fb4052f7f4691976663ffc0c9449f7f3/media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json",
+      "sha256": "6e84e0c398bb57ad6feede12a3fda8b7a118ced3fa45ba04cb0bb0f6453aed1d"
+    }
+  },
+  "performer": {
+    "name": "The Jobber",
+    "deckId": "big_bad_brain_wrestling",
+    "cardNumber": 4,
+    "stance": "veteran who loses for a living; proud craftsman of defeat, tender and dry, telling the trade's secrets on a borrowed entrance theme"
+  },
+  "structure": "locker-room confession on a borrowed entrance theme: the roster, how the trick works, who decides, when it gets real, the finish, his one choice",
+  "introType": "confession",
+  "selectionMode": "BEST_OF",
+  "bestOf": [
+    1,
+    2,
+    3,
+    4,
+    9,
+    11,
+    13,
+    14,
+    17,
+    22,
+    30,
+    31,
+    35,
+    41,
+    42,
+    45,
+    46,
+    49,
+    55,
+    56
+  ],
+  "bestOfReason": [
+    "Roster 1-4: face, heel, tweener and the performer's own card - who is who before anyone touches.",
+    "The trick 9, 11, 13, 14: selling, overselling, the audio lie, the stomp - he shows the craft and still asks to be believed.",
+    "Mind games 17, 22: the sacred mask and the snake bag - fear and identity before the bell.",
+    "Who decides 45, 46, 49: booker, spot caller, hard cam - the ending is written, the middle is sweat, the lens decides what happened.",
+    "The empty years 30, 31: the pop that never comes and the fake crowd - the one sad stretch.",
+    "When it gets real 35, 55: the unplanned injury and the police that keep the secret he is busy telling.",
+    "Finish 41, 42, 56: the finisher, the near-fall, the retirement that is never final."
+  ],
+  "omitted": {
+    "5-8": "big-body archetypes repeat the roster joke",
+    "10": "no-seller doubles 43-style dominance",
+    "12": "limb work too technical for a spoken line",
+    "15-16": "chop cards repeat the sound-lie idea of 13",
+    "18-21": "mask ripper, strong style, limp arm, juice: strong but would turn the song into a catalogue of brutality",
+    "23-29": "managers, tag and crowd-reading cards cut for length; 29 overlaps the tweener",
+    "32-34": "plant, shooter, sandbag cut so 35 carries 'real' alone",
+    "36-40": "cue card, wizard, uninterested genius, trash talker, finger poke cut for length",
+    "43-44": "squash and draw are endings the song does not use",
+    "47-48": "rehearsal and rest hold overlap 46",
+    "50-54": "ring post, steps, announcer's table, smark, botch cut for length"
+  },
+  "orderMode": "edited",
+  "orderReason": "",
+  "metaSkipped": [],
+  "cards": [
+    {
+      "cardNumber": 1,
+      "beats": [
+        4
+      ],
+      "cardText": "The Babyface: high-flying moves, because audiences cheer for that. A slave to approval."
+    },
+    {
+      "cardNumber": 2,
+      "beats": [
+        5
+      ],
+      "cardText": "The Heel: brutal, sneaky moves. If they aren't booing, you aren't doing your job."
+    },
+    {
+      "cardNumber": 3,
+      "beats": [
+        6
+      ],
+      "cardText": "The Tweener: the audience decides to cheer for you on their own. You don't ask for it."
+    },
+    {
+      "cardNumber": 4,
+      "beats": [
+        7,
+        8
+      ],
+      "cardText": [
+        "The Jobber: isolated and picked apart. You exist to make the other guy look good.",
+        "When defeated, you may choose who defeats you. That is your only control."
+      ]
+    },
+    {
+      "cardNumber": 9,
+      "beats": [
+        10
+      ],
+      "cardText": "The Master Seller: maintain the illusion of peril. Limp to the ring. Make them believe."
+    },
+    {
+      "cardNumber": 11,
+      "beats": [
+        11
+      ],
+      "cardText": "The Oversell Clown: reacting to an attack far beyond reality. A mockery of the sport."
+    },
+    {
+      "cardNumber": 13,
+      "beats": [
+        12
+      ],
+      "cardText": "The Thigh Slap: slapping the thigh when kicking. A loud sound suggests impact. An audio lie."
+    },
+    {
+      "cardNumber": 14,
+      "beats": [
+        13
+      ],
+      "cardText": "The Stomp Punch: stomping on the mat when punching. Kinetic misdirection."
+    },
+    {
+      "cardNumber": 17,
+      "beats": [
+        15
+      ],
+      "cardText": "The Sacred Mask: kayfabe sacred to their identity. The biggest identifier. Never remove it."
+    },
+    {
+      "cardNumber": 22,
+      "beats": [
+        16
+      ],
+      "cardText": "The Snake Bag: the bag has a live snake. Terrify them before the match starts."
+    },
+    {
+      "cardNumber": 45,
+      "beats": [
+        18
+      ],
+      "cardText": "The Booker: the ending is pre-planned. You are just a puppet."
+    },
+    {
+      "cardNumber": 46,
+      "beats": [
+        19
+      ],
+      "cardText": "The Spot Caller: calling moves in the ring. A basic outline, filled in with sweat."
+    },
+    {
+      "cardNumber": 49,
+      "beats": [
+        20
+      ],
+      "cardText": "The Hard Cam: if the camera didn't see it, it didn't happen."
+    },
+    {
+      "cardNumber": 30,
+      "beats": [
+        22
+      ],
+      "cardText": "The Empty Arena: taped in empty arenas, pausing for a pop that never comes. Surreal."
+    },
+    {
+      "cardNumber": 31,
+      "beats": [
+        23
+      ],
+      "cardText": "The Green Screen Crowd: a failed attempt to hide the emptiness. Audio sweetening on a lie."
+    },
+    {
+      "cardNumber": 35,
+      "beats": [
+        25
+      ],
+      "cardText": "The Real Injury: Goldberg's shoulder smashed into the ring-post. The crowd goes nuts: it's real."
+    },
+    {
+      "cardNumber": 55,
+      "beats": [
+        26
+      ],
+      "cardText": "The Kayfabe Police: protecting the business. Keep the secrets secret, or get fired."
+    },
+    {
+      "cardNumber": 41,
+      "beats": [
+        28
+      ],
+      "cardText": "The Finisher: the Leg Drop. The most important moment. If this hits, go home."
+    },
+    {
+      "cardNumber": 42,
+      "beats": [
+        29
+      ],
+      "cardText": "The False Finish: the art of the near-fall, kicking out at two point nine nine, crowd vertical."
+    },
+    {
+      "cardNumber": 56,
+      "beats": [
+        31
+      ],
+      "cardText": "The Retirement Match: leaning on the fourth wall. Rising, and falling. See you next season."
+    }
+  ],
+  "songLineChanges": [
+    {
+      "cardNumber": 42,
+      "rule": "A7",
+      "songLine": "kicking out at two point nine nine, crowd vertical",
+      "reason": "2.99 from the card image written out"
+    }
+  ],
+  "cues": [
+    {
+      "afterBeat": 2,
+      "cue": "borrowed entrance theme cuts out early"
+    },
+    {
+      "afterBeat": 28,
+      "cue": "three slaps of the mat, then the band hits"
+    }
+  ],
+  "refrain": "",
+  "bpmException": null,
+  "visualMotifs": [
+    {
+      "cardNumber": 1,
+      "motif": "Heroic golden retriever wrestler soaring off ropes",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 2,
+      "motif": "Sneering weasel wrestler eye-poking bear opponent",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 3,
+      "motif": "Cool cat wrestler half-hero half-villain, crowd split",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 4,
+      "motif": "Goat wrestler being beaten while nobly choosing attacker",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 9,
+      "motif": "Opossum wrestler theatrically staggering from tiny tap",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 11,
+      "motif": "Chicken wrestler flying backwards from a gentle tap, spinning",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 13,
+      "motif": "Kangaroo kicker mid-slap with massive SMACK! bubble",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 14,
+      "motif": "Donkey punching while stomping, THUD clouds explode",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 17,
+      "motif": "Masked axolotl wrestler, mask glowing, opponent reaching for it",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 22,
+      "motif": "Cobra slithering from canvas bag toward trembling opponent",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 30,
+      "motif": "Ghost wrestling alone in silent arena, silence visualized",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 31,
+      "motif": "Chameleons on green screen pretending to be crowd",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 35,
+      "motif": "Bull wrestler clutching shoulder, match improvising around him",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 41,
+      "motif": "Wrestling leg drop hitting with nuclear force. Crowd exploding",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 42,
+      "motif": "Zebra kicking out at 2.99, crowd vertical",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 45,
+      "motif": "Spider in suit moving wrestlers like marionettes",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 46,
+      "motif": "Cricket wrestler whispering next move mid-hold to opponent",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 49,
+      "motif": "Wrestler adjusting to face single giant camera",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 55,
+      "motif": "Cop wrestler handcuffing character-breaker, stern authority",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 56,
+      "motif": "Phoenix wrestler lying down in defeat, crowd cheering, already rising",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    }
+  ]
+}

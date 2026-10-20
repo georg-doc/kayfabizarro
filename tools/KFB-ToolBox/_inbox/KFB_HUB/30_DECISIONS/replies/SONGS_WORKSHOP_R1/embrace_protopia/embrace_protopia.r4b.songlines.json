@@ -1,0 +1,409 @@
+{
+  "schema": "kfb.songlines.r4",
+  "deckId": "embrace_protopia",
+  "deckTitle": "Protopia Sketchbook — Deck C: EMBRACE",
+  "revision": "r4b",
+  "sourcePins": {
+    "deck": {
+      "path": "registry/assets/v1/decks/embrace_protopia.json",
+      "sha256": "e986128e48da6f79fbb5e69eeb6244374598779acc4918ce09ae47f512ca6fa3",
+      "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3"
+    },
+    "media": {
+      "path": "media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json",
+      "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/073b79c3fb4052f7f4691976663ffc0c9449f7f3/media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_%281%29_web_H.pdf.json",
+      "sha256": "c482d20009c2454b7858256fc2adfa9f4660edf5cc74b50e2560bd9987604ee3"
+    }
+  },
+  "performer": {
+    "name": "The Invitation",
+    "deckId": "embrace_protopia",
+    "cardNumber": 17,
+    "stance": "frazzled amateur organizer with a staple gun; talks fast, apologises a lot, keeps going anyway"
+  },
+  "structure": "one week told in order, cards woven into her speech without labels: Wednesday flyers, Thursday doors, Saturday at the bench, Sunday notes, Monday's stripe, back to the two armchairs",
+  "introType": "found_object",
+  "selectionMode": "BEST_OF",
+  "bestOf": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    15,
+    17,
+    18,
+    19,
+    26,
+    27,
+    28,
+    33,
+    34,
+    42,
+    43,
+    46,
+    47,
+    55,
+    56
+  ],
+  "bestOfReason": [
+    "Night of the flyers 3, 1, 2, 17: the ugly flyer, the open page, pencil, and the performer's own card naming time, place, task.",
+    "Doors 26, 27, 13, 15, 28: the first hello, the door that stays shut, the badly dressed neighbour who knows how, going first.",
+    "Saturday 19, 5, 6, 18, 7, 8: the clumsy start, one fixable thing, a repair not a revolution, shared hands, a boring win that compounds.",
+    "Afterwards 9, 33, 34: one breath against the feed, your own notes, the honest count.",
+    "Sneaking it in 42, 43: the tiny pilot stripe, mild disobedience.",
+    "Price and close 46, 47, 55, 56: trading certainty for agency, showing up again, nobody claps, pick up the pencil."
+  ],
+  "omitted": {
+    "4": "iteration covered by 2 and 47",
+    "10-12": "body and attention cards; 9 carries the one breath",
+    "14": "doubles 13",
+    "16": "doubles 18",
+    "20": "rope image overlaps 18",
+    "21-24": "present-tense cards; the week itself is told in the present",
+    "25": "doubles 26",
+    "29-32": "curiosity block cut for length",
+    "35-36": "record cards; 33 and 34 carry it",
+    "37-40": "making-by-hand block cut for length",
+    "41": "side door overlaps 43",
+    "44-45": "proof and certainty overlap 42 and 46",
+    "48": "refers to the other two decks' bargain",
+    "49-54": "design-signature cards; 56 lands the pencil instead"
+  },
+  "orderMode": "edited",
+  "orderReason": "Cards follow one week in time instead of deck order: the flyer (3) before the idea on it (1, 2); the performer's own card (17) closes the flyer night; door cards (26, 27, 13, 15, 28) before the Saturday cards; 9 moves to the moment someone checks the news during the repair.",
+  "metaSkipped": [],
+  "cards": [
+    {
+      "cardNumber": 3,
+      "beats": [
+        3
+      ],
+      "cardText": "Make the first version bad on purpose. Bad is how you know it is real."
+    },
+    {
+      "cardNumber": 1,
+      "beats": [
+        4
+      ],
+      "cardText": "the future is a process of slow, incremental improvement you participate in."
+    },
+    {
+      "cardNumber": 2,
+      "beats": [
+        5
+      ],
+      "cardText": "pencil means you expect to be wrong and stay anyway."
+    },
+    {
+      "cardNumber": 17,
+      "beats": [
+        6
+      ],
+      "cardText": "The Invitation. Turn watching into showing up. Name a time, a place, a task."
+    },
+    {
+      "cardNumber": 26,
+      "beats": [
+        8
+      ],
+      "cardText": "lower the bar to contact. Most cooperation starts embarrassingly small."
+    },
+    {
+      "cardNumber": 27,
+      "beats": [
+        9
+      ],
+      "cardText": "They might not respond. Your nervous system thinks that is death. It is not."
+    },
+    {
+      "cardNumber": 13,
+      "beats": [
+        10
+      ],
+      "cardText": "Authority is overrated, proximity is underrated. Ask the one who actually does the thing."
+    },
+    {
+      "cardNumber": 15,
+      "beats": [
+        11
+      ],
+      "cardText": "real know-how is often badly dressed and lives three doors down."
+    },
+    {
+      "cardNumber": 28,
+      "beats": [
+        12
+      ],
+      "cardText": "Go first. Every ally was a stranger until somebody did."
+    },
+    {
+      "cardNumber": 19,
+      "beats": [
+        14
+      ],
+      "cardText": "A pigeon, an emu, a duck and a crow huddled over a coffee carafe: the first small, clumsy gathering. Clumsy is the entry fee."
+    },
+    {
+      "cardNumber": 5,
+      "beats": [
+        15
+      ],
+      "cardText": "one broken thing close enough to touch."
+    },
+    {
+      "cardNumber": 6,
+      "beats": [
+        16
+      ],
+      "cardText": "A repair you can finish this week, not a revolution you can only announce."
+    },
+    {
+      "cardNumber": 18,
+      "beats": [
+        17
+      ],
+      "cardText": "split a problem the way your ancestors raised a barn."
+    },
+    {
+      "cardNumber": 9,
+      "beats": [
+        18
+      ],
+      "cardText": "Take the one breath the feed is built to deny you."
+    },
+    {
+      "cardNumber": 7,
+      "beats": [
+        19
+      ],
+      "cardText": "small fixes do not trend. They just hold."
+    },
+    {
+      "cardNumber": 8,
+      "beats": [
+        20
+      ],
+      "cardText": "One repair a week is fifty-two a year. Nobody clapped, and the place is different."
+    },
+    {
+      "cardNumber": 33,
+      "beats": [
+        22
+      ],
+      "cardText": "Write down what you actually saw, not what the headline said you would see."
+    },
+    {
+      "cardNumber": 34,
+      "beats": [
+        23
+      ],
+      "cardText": "Count the whole thing, including the times it worked and nobody noticed."
+    },
+    {
+      "cardNumber": 42,
+      "beats": [
+        25
+      ],
+      "cardText": "Run a tiny version. Low stakes, real feedback, no permission needed."
+    },
+    {
+      "cardNumber": 43,
+      "beats": [
+        26
+      ],
+      "cardText": "improvement often looks like mild disobedience to a stuck system."
+    },
+    {
+      "cardNumber": 46,
+      "beats": [
+        28
+      ],
+      "cardText": "The Comfort of Maybe: trade the warm baths of hopeless and handled for the cold shower of it depends on us."
+    },
+    {
+      "cardNumber": 47,
+      "beats": [
+        29
+      ],
+      "cardText": "there is no final version. The cost is showing up again next week."
+    },
+    {
+      "cardNumber": 55,
+      "beats": [
+        30
+      ],
+      "cardText": "Nobody will clap. Start anyway. The clapping was never the point."
+    },
+    {
+      "cardNumber": 56,
+      "beats": [
+        32
+      ],
+      "cardText": "Forget the brochure. Ignore the loop. Pick up the pencil."
+    }
+  ],
+  "songLineChanges": [],
+  "cues": [
+    {
+      "afterBeat": 1,
+      "cue": "staple gun clacks on the backbeat"
+    },
+    {
+      "afterBeat": 12,
+      "cue": "street noise, a bus pulls away"
+    }
+  ],
+  "refrain": "",
+  "bpmException": null,
+  "visualMotifs": [
+    {
+      "cardNumber": 1,
+      "motif": "eager beaver gripping oversized pencil, blank notebook open",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 2,
+      "motif": "grinning raccoon erasing a blueprint mid-sketch",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 3,
+      "motif": "possum proudly holding a chaotic crossed-out treasure map",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 5,
+      "motif": "iguana in tool belt oiling a hinge while city burns behind",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 6,
+      "motif": "squirrel with goggles writing a short to-do list, acorn as anchor",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 7,
+      "motif": "turtle in raincoat trimming a fence in the rain, unbothered",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 8,
+      "motif": "badger with ruler laying checkmarks across a growing grid of tiles",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 9,
+      "motif": "sloth hanging from branch exhaling a slow blue cloud over a frantic city below",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 13,
+      "motif": "boar in overalls leaning over fence sharing a wrench with porcupine mechanic",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 15,
+      "motif": "scruffy capybara being interviewed by tiny clipboard-holding bird about expertise",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 17,
+      "motif": "frazzled pelican stapling BRING GLOVES flyers to a lamppost",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 18,
+      "motif": "octopus in denim vest hammering roof beams with all eight arms at once",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 19,
+      "motif": "pigeon, emu, duck, and crow awkwardly huddled over coffee carafe on bare table",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 26,
+      "motif": "two prickly hedgehogs facing each other, one saying HI in a small speech bubble",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 27,
+      "motif": "panicked quokka ringing a giant bell alone, black puff of silence around it",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 28,
+      "motif": "first tapir in a group extending a leaf to a ghost-outline tapir not yet arrived",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 33,
+      "motif": "grumpy bear in glasses writing intently in a notebook, surrounded by crumpled newspapers",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 34,
+      "motif": "raven chalking tally marks on a wall, one highlighted row that nobody circled",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 42,
+      "motif": "city pigeon with a paint roller laying a tiny crosswalk stripe in the street",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 43,
+      "motif": "crow in tactical vest repairing a DO NOT REPAIR panel from behind, tools out",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 46,
+      "motif": "toad choosing between DOOM and SAVED armchairs, a question mark umbrella above in rain",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 47,
+      "motif": "camel with saddlebags standing before a long calendar, every week marked with a brick",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 55,
+      "motif": "mole emerging from dark earth tunnel, no crowd above, digging on regardless",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 56,
+      "motif": "giant golden paw gripping an oversized fountain pen, tiny aliens watching in awe",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    }
+  ]
+}

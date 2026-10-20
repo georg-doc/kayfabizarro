@@ -106,4 +106,8 @@ c = copy.deepcopy(crit); c["recommendation"] = "READY_FOR_WS0"; c["questions"]["
 wj("critic_v2_inconsistent.critic.json", c)
 c = copy.deepcopy(crit); c["questions"]["outro"]["observation"] = "\"the parade ends in glory\" lands flat."
 wj("critic_v2_fake_quote.critic.json", c)
+c = copy.deepcopy(crit); c["questions"]["transferable"]["observation"] = "Swapping the props would not move this; \"showed up on schedule,\" is tied to the parade."
+wj("critic_v2_r41_ok.critic.json", c)
+c = copy.deepcopy(crit); c["questions"]["performer"]["observation"] = "Voice works, e.g. the umbrella line."
+wj("critic_v2_eg.critic.json", c)
 print("fixtures geschrieben")

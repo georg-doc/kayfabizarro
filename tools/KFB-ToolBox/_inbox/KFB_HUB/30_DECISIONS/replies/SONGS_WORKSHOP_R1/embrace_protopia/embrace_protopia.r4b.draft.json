@@ -1,0 +1,182 @@
+{
+  "deckId": "embrace_protopia",
+  "revision": "r4b",
+  "performer": {
+    "name": "The Invitation",
+    "deckId": "embrace_protopia",
+    "cardNumber": 17,
+    "stance": "frazzled amateur organizer with a staple gun; talks fast, apologises a lot, keeps going anyway"
+  },
+  "structure": "one week told in order, cards woven into her speech without labels: Wednesday flyers, Thursday doors, Saturday at the bench, Sunday notes, Monday's stripe, back to the two armchairs",
+  "introType": "found_object",
+  "synopsis": "A spoken-word number from a card deck about protopia: the future as slow, small improvement people take part in. A performer tells how they organised a first small repair job in their street, from putting up flyers to the first Saturday.",
+  "bestOfReason": [
+    "Night of the flyers 3, 1, 2, 17: the ugly flyer, the open page, pencil, and the performer's own card naming time, place, task.",
+    "Doors 26, 27, 13, 15, 28: the first hello, the door that stays shut, the badly dressed neighbour who knows how, going first.",
+    "Saturday 19, 5, 6, 18, 7, 8: the clumsy start, one fixable thing, a repair not a revolution, shared hands, a boring win that compounds.",
+    "Afterwards 9, 33, 34: one breath against the feed, your own notes, the honest count.",
+    "Sneaking it in 42, 43: the tiny pilot stripe, mild disobedience.",
+    "Price and close 46, 47, 55, 56: trading certainty for agency, showing up again, nobody claps, pick up the pencil."
+  ],
+  "omitted": {
+    "4": "iteration covered by 2 and 47",
+    "10-12": "body and attention cards; 9 carries the one breath",
+    "14": "doubles 13",
+    "16": "doubles 18",
+    "20": "rope image overlaps 18",
+    "21-24": "present-tense cards; the week itself is told in the present",
+    "25": "doubles 26",
+    "29-32": "curiosity block cut for length",
+    "35-36": "record cards; 33 and 34 carry it",
+    "37-40": "making-by-hand block cut for length",
+    "41": "side door overlaps 43",
+    "44-45": "proof and certainty overlap 42 and 46",
+    "48": "refers to the other two decks' bargain",
+    "49-54": "design-signature cards; 56 lands the pencil instead"
+  },
+  "orderReason": "Cards follow one week in time instead of deck order: the flyer (3) before the idea on it (1, 2); the performer's own card (17) closes the flyer night; door cards (26, 27, 13, 15, 28) before the Saturday cards; 9 moves to the moment someone checks the news during the repair.",
+  "songLineChanges": [],
+  "cues": [
+    {
+      "afterBeat": 1,
+      "cue": "staple gun clacks on the backbeat"
+    },
+    {
+      "afterBeat": 12,
+      "cue": "street noise, a bus pulls away"
+    }
+  ],
+  "beats": [
+    "Wednesday, eleven at night, one staple gun, two hundred flyers. If you walked home tonight, you've seen one. Sorry about your lamppost.",
+    "Every living room on this street has two armchairs. One says doom, one says saved. Both very comfortable. The third option has no chair. Some people call it protopia. I call it Saturday.",
+    {
+      "card": 3,
+      "pre": "Yes, I made the flyer myself, and yes, it's ugly.",
+      "text": "Make the first version bad on purpose. Bad is how you know it is real."
+    },
+    {
+      "card": 1,
+      "pre": "Small print at the bottom:",
+      "text": "the future is a process of slow, incremental improvement you participate in.",
+      "post": "Nobody reads small print. That's why I put the truth there."
+    },
+    {
+      "card": 2,
+      "pre": "Time and place in pencil, because",
+      "text": "pencil means you expect to be wrong and stay anyway."
+    },
+    {
+      "card": 17,
+      "pre": "And on top, in letters you can read from a bus:",
+      "text": "The Invitation. Turn watching into showing up. Name a time, a place, a task.",
+      "post": "Saturday, nine, the bench by the bus stop. Bring gloves."
+    },
+    "Thursday I did the doors.",
+    {
+      "card": 26,
+      "pre": "First door, a prickly man. I said hi. You",
+      "text": "lower the bar to contact. Most cooperation starts embarrassingly small.",
+      "post": "He said hi back."
+    },
+    {
+      "card": 27,
+      "pre": "Second door, lights on, nothing.",
+      "text": "They might not respond. Your nervous system thinks that is death. It is not."
+    },
+    {
+      "card": 13,
+      "pre": "Third door, a wrench and a terrible hat.",
+      "text": "Authority is overrated, proximity is underrated. Ask the one who actually does the thing."
+    },
+    {
+      "card": 15,
+      "pre": "Turns out",
+      "text": "real know-how is often badly dressed and lives three doors down."
+    },
+    {
+      "card": 28,
+      "pre": "After that I knocked first everywhere.",
+      "text": "Go first. Every ally was a stranger until somebody did."
+    },
+    "Saturday, nine. Four of them came. Last time it was me and a thermos, so this is a movement.",
+    {
+      "card": 19,
+      "text": "A pigeon, an emu, a duck and a crow huddled over a coffee carafe: the first small, clumsy gathering. Clumsy is the entry fee."
+    },
+    {
+      "card": 5,
+      "pre": "The bench has a loose slat, so that's our",
+      "text": "one broken thing close enough to touch."
+    },
+    {
+      "card": 6,
+      "pre": "Not world peace. A slat.",
+      "text": "A repair you can finish this week, not a revolution you can only announce."
+    },
+    {
+      "card": 18,
+      "pre": "Eight hands, one slat, and we",
+      "text": "split a problem the way your ancestors raised a barn."
+    },
+    {
+      "card": 9,
+      "pre": "Somebody checks the news. Phone down.",
+      "text": "Take the one breath the feed is built to deny you."
+    },
+    {
+      "card": 7,
+      "pre": "Done by ten. Nobody filmed it, because",
+      "text": "small fixes do not trend. They just hold."
+    },
+    {
+      "card": 8,
+      "pre": "Next week, the hinge on the hall.",
+      "text": "One repair a week is fifty-two a year. Nobody clapped, and the place is different."
+    },
+    "Sunday I wrote it all down.",
+    {
+      "card": 33,
+      "text": "Write down what you actually saw, not what the headline said you would see."
+    },
+    {
+      "card": 34,
+      "text": "Count the whole thing, including the times it worked and nobody noticed."
+    },
+    "Monday, the crossing by the school. Three years of petitions, no stripe.",
+    {
+      "card": 42,
+      "pre": "There's a little white stripe there now. No idea who.",
+      "text": "Run a tiny version. Low stakes, real feedback, no permission needed."
+    },
+    {
+      "card": 43,
+      "pre": "Strictly speaking,",
+      "text": "improvement often looks like mild disobedience to a stuck system."
+    },
+    "Back to the armchairs.",
+    {
+      "card": 46,
+      "text": "The Comfort of Maybe: trade the warm baths of hopeless and handled for the cold shower of it depends on us."
+    },
+    {
+      "card": 47,
+      "pre": "And",
+      "text": "there is no final version. The cost is showing up again next week."
+    },
+    {
+      "card": 55,
+      "text": "Nobody will clap. Start anyway. The clapping was never the point."
+    },
+    {
+      "tag": "Applause"
+    },
+    {
+      "card": 56,
+      "pre": "Who's clapping? Stop that.",
+      "text": "Forget the brochure. Ignore the loop. Pick up the pencil."
+    },
+    "Doom gets the subscriptions. Rescue gets the tickets. A Saturday with a loose slat earns nothing, which is how you know it's yours.",
+    "Same bench, next week, nine. Bring gloves."
+  ],
+  "revisionNote": "r4b answers critic v2 (REVISE, transferable=yes, label-plus-definition scaffold): card titles dropped except 17 and 46 (A1 ACK), card text kept verbatim inside the narration; armchair image from card 46 art opens and returns; vague corner beat made concrete."
+}

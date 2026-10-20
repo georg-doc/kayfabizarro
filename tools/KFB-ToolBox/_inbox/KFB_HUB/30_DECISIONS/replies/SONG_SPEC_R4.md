@@ -1,7 +1,9 @@
 # KFB Suno song spec R4.0: Comic Performance (V-576) · 20.10.2026
 
+**R4.1 (20.10., gate only):** the critic check ignores punctuation at the end of a quote (`"…carefully,"`). In the answer to `transferable`, "swap/swapping" describes the question and is no longer read as a text suggestion. "e.g." stays forbidden. Fixtures: 34/34.
+
 **This file replaces SONG_SPEC_R3 (R3.7) for song mode.** R3 stays in the repo as history. `TRIPLET_SET_SPEC_R2` (spoken triplets) and `triplet_set_check.py` are **unchanged**; nothing here applies to them.
-Gate: `replies/song_gate.py` **R4.0** (one script, no per-deck copies, no shadow parser). Fixtures: `replies/SONG_GATE_R4_FIXTURES/` (`python3 run_fixtures.py`).
+Gate: `replies/song_gate.py` **R4.1** (one script, no per-deck copies, no shadow parser). Fixtures: `replies/SONG_GATE_R4_FIXTURES/` (`python3 run_fixtures.py`).
 Basis: WS0 decision matrix V-576 (ACK with TUNE) on Georg's rule-reconciliation request, building on V-361, V-362, V-374, V-376, V-528.
 
 **Tier 0 – what is standardised:** the production handoff, not the artwork. Card truth is hard; dramaturgy is free. Every deck song is its own musical work, performed by a performer with a personality of their own. Georg's Alice song (`SONGS_BESTOF_R1/ALICE_USER_EXEMPLAR_2026-10-20.md`) is a reference, not a template: no default court, jury, electro-swing or catchphrase.
@@ -71,6 +73,7 @@ F3. Schema (exact fields):
    - Quotes only from the candidate.
    - The sha256 must match the submitted revision.
    - Gate: `song_gate.py critic <x.critic.json> --lyrics … --style … --synopsis …`.
+F3b. **A critique the gate rejects is discarded** and run again in a **fresh** process on the same revision (as in R3 F21). Keep the rejected JSON as `*.critic.discardedN.json`. The writer does not use it for revision.
 F4. **Source check is a separate test:** S1–S6 in the lyrics gate; WS0 audits the facts. The critic does not certify card truth.
 F5. **Album diversity** after every 3–5 tracks (not blind): `song_gate.py album <songlines…>` (genres, BPM, performers, openings/closings) plus a short editor's note in `SONG_WORKSHOP_STATUS.md`.
 F6. `kfb.song-critic.v1` (R3 §F) remains valid for existing critiques; the gate checks both schemas.

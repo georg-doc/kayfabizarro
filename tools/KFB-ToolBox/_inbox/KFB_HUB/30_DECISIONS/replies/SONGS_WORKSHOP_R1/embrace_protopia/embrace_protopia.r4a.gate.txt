@@ -1,0 +1,42 @@
+# Gate-Bericht embrace_protopia.r4a · 2026-10-20
+gate song_gate.py sha256 6eb89bec755f1d23015333a533abc2694d346b269892b7f2347a58d49c938565
+deck pin registry/assets/v1/decks/embrace_protopia.json sha256 e986128e48da6f79fbb5e69eeb6244374598779acc4918ce09ae47f512ca6fa3
+media pin media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json sha256 c482d20009c2454b7858256fc2adfa9f4660edf5cc74b50e2560bd9987604ee3
+lyrics sha256 eea5dcfa213fc6d0a5fde60f630c6d42185df865fb4a22751a49dd6cda5ed0c5 · 3472 Zeichen (Unicode len)
+style sha256 b6a8af7da60f9fb1a2771fa0b663831a2fcda63c6ffe0379a2fa066d2ffbb29b
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r4a.suno.txt --deck registry/assets/v1/decks/embrace_protopia.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r4a.songlines.json --media 'media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json' --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_BESTOF_R1
+exit 0
+song_gate R4.0 lyrics · embrace_protopia.r4a.suno.txt · 3472 Zeichen · 24/24 Karten · Intro 2 · Brücken 5 · Outro 2 · Performer-Einschübe 16 · R4-Zuordnung
+lyrics sha256 eea5dcfa213fc6d0a5fde60f630c6d42185df865fb4a22751a49dd6cda5ed0c5
+WARN A4: Karte 17: Kartenteil 76 Zeichen (Richtwert 80-95): 'The Invitation: turn watching into showing up. Nam'
+WARN A4: Karte 27: Kartenteil 108 Zeichen (Richtwert 80-95): 'The Risk of Being Soft-Blocked: they might not res'
+WARN A4: Karte 13: Kartenteil 99 Zeichen (Richtwert 80-95): 'The Person Nearby: authority is overrated, proximi'
+WARN A4: Karte 28: Kartenteil 75 Zeichen (Richtwert 80-95): 'The Widened Circle: go first. Every ally was a str'
+WARN A4: Karte 6: Kartenteil 103 Zeichen (Richtwert 80-95): 'The Right-Sized Move: choose a repair you can fini'
+WARN A4: Karte 18: Kartenteil 103 Zeichen (Richtwert 80-95): 'The Shared Hands: mutual aid is older than money. '
+WARN A4: Karte 8: Kartenteil 99 Zeichen (Richtwert 80-95): 'The Compounding: one repair a week is fifty-two a '
+WARN A4: Karte 33: Kartenteil 99 Zeichen (Richtwert 80-95): 'The Logged Observation: write down what you actual'
+WARN A4: Karte 34: Kartenteil 96 Zeichen (Richtwert 80-95): 'The Honest Denominator: count the whole thing, inc'
+WARN A4: Karte 46: Kartenteil 107 Zeichen (Richtwert 80-95): 'The Comfort of Maybe: trade the warm baths of hope'
+WARN A4: Karte 56: Kartenteil 76 Zeichen (Richtwert 80-95): 'The Core Question: forget the brochure. Ignore the'
+WARN A2: eigener Text (Rahmen + Performer) 36% aller Wörter (Richtwert <= 30%)
+WARN C11: Wort 'saturday' 4x im eigenen Text
+WARN C11: Wort 'door' 4x im eigenen Text
+WARN C11: Wort 'nine' 3x im eigenen Text
+WARN C11: Wort 'slat' 3x im eigenen Text
+WARN C11: Wort 'bench' 3x im eigenen Text
+REVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [3, 1, 2, 17, 26, 27, 13, 15, 28, 19, 5, 6, 18, 9, 7, 8, 33, 34, 42, 43, 46, 47, 55, 56]
+REVIEW C9: Decktitel 'Protopia Sketchbook — Deck C: EMBRACE' nur teilweise genannt: [(2, ['protopia'])] (erlaubt)
+REVIEW B6: Performer-Text in 67% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)
+INFO S2: deck gepinnt e986128e48da
+INFO S2: media gepinnt c482d20009c2
+INFO C9P: Performer verifiziert: The Invitation (embrace_protopia#17)
+INFO E16b: kein Ton-Eintrag für dieses Deck; Deck-Hinweise in SONG_SPEC E16b prüfen
+PASS
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r4a.style.txt --deck registry/assets/v1/decks/embrace_protopia.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r4a.songlines.json --batch tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r4a.style.txt tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r4a.style.txt
+exit 0
+song_gate R4.0 style · embrace_protopia.r4a.style.txt · Familie A afro · 2 Variante(n) · 367, 263 Zeichen
+PASS
+

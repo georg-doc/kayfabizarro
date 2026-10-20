@@ -1,0 +1,171 @@
+{
+  "deckId": "big_bad_brain_wrestling",
+  "revision": "r4a",
+  "performer": {
+    "name": "The Jobber",
+    "deckId": "big_bad_brain_wrestling",
+    "cardNumber": 4,
+    "stance": "veteran who loses for a living; proud craftsman of defeat, tender and dry, telling the trade's secrets on a borrowed entrance theme"
+  },
+  "structure": "locker-room confession on a borrowed entrance theme: the roster, how the trick works, who decides, when it gets real, the finish, his one choice",
+  "introType": "confession",
+  "synopsis": "A spoken-word number from a card deck about the psychology of professional wrestling. A performer who loses matches for a living walks the audience through the roles, tricks and business of the show on the night of a match.",
+  "bestOfReason": [
+    "Roster 1-4: face, heel, tweener and the performer's own card - who is who before anyone touches.",
+    "The trick 9, 11, 13, 14: selling, overselling, the audio lie, the stomp - he shows the craft and still asks to be believed.",
+    "Mind games 17, 22: the sacred mask and the snake bag - fear and identity before the bell.",
+    "Who decides 45, 46, 49: booker, spot caller, hard cam - the ending is written, the middle is sweat, the lens decides what happened.",
+    "The empty years 30, 31: the pop that never comes and the fake crowd - the one sad stretch.",
+    "When it gets real 35, 55: the unplanned injury and the police that keep the secret he is busy telling.",
+    "Finish 41, 42, 56: the finisher, the near-fall, the retirement that is never final."
+  ],
+  "omitted": {
+    "5-8": "big-body archetypes repeat the roster joke",
+    "10": "no-seller doubles 43-style dominance",
+    "12": "limb work too technical for a spoken line",
+    "15-16": "chop cards repeat the sound-lie idea of 13",
+    "18-21": "mask ripper, strong style, limp arm, juice: strong but would turn the song into a catalogue of brutality",
+    "23-29": "managers, tag and crowd-reading cards cut for length; 29 overlaps the tweener",
+    "32-34": "plant, shooter, sandbag cut so 35 carries 'real' alone",
+    "36-40": "cue card, wizard, uninterested genius, trash talker, finger poke cut for length",
+    "43-44": "squash and draw are endings the song does not use",
+    "47-48": "rehearsal and rest hold overlap 46",
+    "50-54": "ring post, steps, announcer's table, smark, botch cut for length"
+  },
+  "songLineChanges": [
+    {
+      "cardNumber": 42,
+      "rule": "A7",
+      "songLine": "kicking out at two point nine nine, crowd vertical",
+      "reason": "2.99 from the card image written out"
+    }
+  ],
+  "cues": [
+    {
+      "afterBeat": 2,
+      "cue": "borrowed entrance theme cuts out early"
+    },
+    {
+      "afterBeat": 28,
+      "cue": "three slaps of the mat, then the band hits"
+    }
+  ],
+  "beats": [
+    "Jobbers don't get entrance music. I borrowed somebody's tonight, so we'll be quick before he wants it back.",
+    "Twenty years I've been losing on Big Bad Brain Wrestling. Clean, every night, on purpose. Nobody alive does it better.",
+    "You, front row, with the sign. You paid to watch me lose. Good. Let me tell you who does it to me.",
+    {
+      "card": 1,
+      "pre": "The golden boy.",
+      "text": "The Babyface: high-flying moves, because audiences cheer for that. A slave to approval."
+    },
+    {
+      "card": 2,
+      "pre": "His best friend backstage.",
+      "text": "The Heel: brutal, sneaky moves. If they aren't booing, you aren't doing your job."
+    },
+    {
+      "card": 3,
+      "text": "The Tweener: the audience decides to cheer for you on their own. You don't ask for it."
+    },
+    {
+      "card": 4,
+      "pre": "And me.",
+      "text": "The Jobber: isolated and picked apart. You exist to make the other guy look good."
+    },
+    {
+      "card": 4,
+      "cont": true,
+      "text": "When defeated, you may choose who defeats you. That is your only control."
+    },
+    "Now I'll show you how the trick works. Then I'll still make you believe it.",
+    {
+      "card": 9,
+      "pre": "That's where I live.",
+      "text": "The Master Seller: maintain the illusion of peril. Limp to the ring. Make them believe."
+    },
+    {
+      "card": 11,
+      "pre": "Don't overdo it, kid.",
+      "text": "The Oversell Clown: reacting to an attack far beyond reality. A mockery of the sport."
+    },
+    {
+      "card": 13,
+      "pre": "Hear that?",
+      "text": "The Thigh Slap: slapping the thigh when kicking. A loud sound suggests impact. An audio lie."
+    },
+    {
+      "card": 14,
+      "pre": "Same family:",
+      "text": "The Stomp Punch: stomping on the mat when punching. Kinetic misdirection."
+    },
+    "Some guys get in your head before you touch.",
+    {
+      "card": 17,
+      "text": "The Sacred Mask: kayfabe sacred to their identity. The biggest identifier. Never remove it."
+    },
+    {
+      "card": 22,
+      "pre": "And some bring a bag.",
+      "text": "The Snake Bag: the bag has a live snake. Terrify them before the match starts."
+    },
+    "You want to know who wins? Not us. Ask upstairs.",
+    {
+      "card": 45,
+      "text": "The Booker: the ending is pre-planned. You are just a puppet."
+    },
+    {
+      "card": 46,
+      "pre": "In the ring we keep it quiet.",
+      "text": "The Spot Caller: calling moves in the ring. A basic outline, filled in with sweat."
+    },
+    {
+      "card": 49,
+      "pre": "And we turn to the lens.",
+      "text": "The Hard Cam: if the camera didn't see it, it didn't happen."
+    },
+    "I did a whole year of this next one.",
+    {
+      "card": 30,
+      "text": "The Empty Arena: taped in empty arenas, pausing for a pop that never comes. Surreal."
+    },
+    {
+      "card": 31,
+      "pre": "So they fixed it.",
+      "text": "The Green Screen Crowd: a failed attempt to hide the emptiness. Audio sweetening on a lie."
+    },
+    "Then one night, nobody books it.",
+    {
+      "card": 35,
+      "text": "The Real Injury: Goldberg's shoulder smashed into the ring-post. The crowd goes nuts: it's real."
+    },
+    {
+      "card": 55,
+      "pre": "Which is why I never told you any of this.",
+      "text": "The Kayfabe Police: protecting the business. Keep the secrets secret, or get fired."
+    },
+    {
+      "tag": "Bell"
+    },
+    {
+      "card": 41,
+      "pre": "Here it comes.",
+      "text": "The Finisher: the Leg Drop. The most important moment. If this hits, go home."
+    },
+    {
+      "card": 42,
+      "pre": "It hits. And still,",
+      "text": "The False Finish: the art of the near-fall, kicking out at two point nine nine, crowd vertical."
+    },
+    {
+      "tag": "Crowd Cheering"
+    },
+    {
+      "card": 56,
+      "pre": "Then I lie down.",
+      "text": "The Retirement Match: leaning on the fourth wall. Rising, and falling. See you next season."
+    },
+    "My pick for tonight is you, front row, sign and all. You knew the ending, and you stood up at two point nine anyway.",
+    "Out there they all sell it and swear it's real. In here we tell you it's fake and give you everything. Choose your liars carefully."
+  ]
+}
