@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WSB K7 r2 angenommen (Bäume tree_sec #376442 = accent Chroma ×0,6, L ×0,9); Felsen eine Stufe dunkler (mittlerer stone-Ton, V-566 Fokus gewinnt). K6: Gruftdach iron dunkel freigegeben.
 - WSB K7 Sci-Fi-Teile angenommen (38 Quaternius CC0 as-is, apply + Spuren + Pass, Set 41 Slots 1:1, Welt ×0,85); Änderung: Bäume/Kraut auf Sekundärrolle (Chroma ×0,6), Kuppel bleibt Akzent; Connector-Saum so lassen; Einsinken/Kontakt macht WS1.
 - Friedhof: Georg 20.10. – Bodenkacheln bleiben, es fehlt der glaubwürdige Übergang zum Terrain (Steinchen, Staub, Sprenkel, ausfransende Außenkacheln) → Konzeptblatt-Korrektur; WS0 hat das RA-Layout live exportiert (65_SCENELETS/graveyard/ra_layout_export.json, 176 Teile) → WSB K6 mit Übergangsband-Vorschlag. Drum Machine Fuß-Streifen r2 verstärkt.
 - WSB K4 Drum Machine 2 angenommen (Original aus Georgs Repo, Byte-gleich; prop_buried 86 %, RA-Lage 1:1, CC-BY-Credit). Fuß-Streifen kräftiger; Kontakt-Geometrie setzt WS1 beim Einpassen. WSB-Liste leer → neu K6 Friedhof-Teile, K7 Sci-Fi-Teile nach Konzeptblatt (as-is + apply + Pass).
