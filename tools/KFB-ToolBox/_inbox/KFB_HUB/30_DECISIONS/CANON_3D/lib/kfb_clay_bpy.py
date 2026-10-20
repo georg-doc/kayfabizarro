@@ -18,7 +18,9 @@
 #     maxSlope nur über die Amplituden; Sichtbarkeits-Bänder (LOD nach Bildschirmgröße) entfallen – Blender rendert feste Ansichten.
 #   Farbe: Rollenton als Grundfarbe (eigene Teile) bzw. Farbton/Sättigung zur Rolle gezogen, Helligkeit bleibt (Kit-/Meshy-Texturen); Meshy höchstens
 #     MAX_PULL (V-286 „nur leicht tönen“), Kit kräftiger (Gebiet 15: Kit-Farben auf die Rollen umtönen).
-#   Abweichung zum Web-Modul: Emission immer 0 (V-385; das Gate M2 wertet Emission als eingebackenes Licht), keine AO-/Licht-Texturen (werden entfernt).
+#   Emission wie das Web-Modul (WS0 20.10., SSOT kfb-clay.v1.1 Z. 324, V-429/V-431): Profile mit emissive=true (midground, background) übernehmen die
+#   Emission des Quellmaterials (Farbe, Textur, Stärke) unverändert; character setzt sie auf 0. Es wird nie Emission hinzugefügt. Gate M2 lässt Emission
+#   nur an kfb-clay-Profilen zu. Keine AO-/Licht-Texturen (werden entfernt).
 import bpy, json, math, os, hashlib, colorsys
 
 VERSION = 'kfb-clay.v1.1'; SCHEMA = 'kfb.clay/1'; MODULE = 'kfb_clay_bpy/1'
@@ -152,7 +154,7 @@ def _facet_height(nt, P, size, slope, seed_off, loc):
     h = _math(nt, 'MULTIPLY', h, press, (loc[0] + 660, loc[1])); return _math(nt, 'MULTIPLY', h, slope * size, (loc[0] + 820, loc[1]))
 
 
-def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, base_hex=None, image=None, vcol=None, role_hex=None, pull=0.0, src_rough=1.0):
+def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, base_hex=None, image=None, vcol=None, role_hex=None, pull=0.0, src_rough=1.0, emission=None):
     """Ein Knet-Material. ref_world = Bezugslänge in Welt-Einheiten; k = Welt-Länge je Objekt-Einheit / Bezugslänge (wie uClayK)."""
     pid = resolve_profile(profile); Pp = PROFILES[pid]; sd = seed_from(seed); so = (sd % 9973) / 9973 * 50.0
     m = bpy.data.materials.new(f'kfb-clay:{pid}:{name}'); m.use_nodes = True; nt = m.node_tree; nt.nodes.clear()
@@ -190,6 +192,9 @@ def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, 
     bs.inputs['Roughness'].default_value = max(ROUGH_FLOOR, Pp['roughMin'], min(1.0, src_rough)); bs.inputs['Metallic'].default_value = 0.0
     bs.inputs['Sheen Weight'].default_value = min(SHEEN_MAX, Pp['sheen']); bs.inputs['Sheen Roughness'].default_value = 0.9; bs.inputs['Specular IOR Level'].default_value = 0.5
     bs.inputs['Emission Strength'].default_value = 0.0; bs.inputs['Coat Weight'].default_value = 0.0
+    if Pp['emissive'] and emission and (emission.get('image') or any(c > 0 for c in emission['color'][:3])) and emission['strength'] > 0:   # Z. 324: P.emissive && src.emissive → kopieren
+        bs.inputs['Emission Color'].default_value = tuple(emission['color'][:3]) + (1,); bs.inputs['Emission Strength'].default_value = emission['strength']
+        if emission.get('image'): et = _n(nt, 'ShaderNodeTexImage', (1500, 300)); et.image = emission['image']; nt.links.new(et.outputs['Color'], bs.inputs['Emission Color'])
     m['kfb_material'] = f'{VERSION}/{pid}'; m['kfb_clay'] = json.dumps({'schema': SCHEMA, 'module': MODULE, 'profile': pid, 'seed': sd, 'k': round(k, 6), 'ref_world': round(ref_world, 4), 'role_hex': role_hex, 'pull': round(pull, 3)})
     return m
 
@@ -197,10 +202,12 @@ def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, 
 # ------------------------------------------------------------------ Anwenden
 def _src_info(mat):
     """Grundfarbe/Bild/Vertexfarbe/Rauheit aus einem importierten Material (glTF-Principled)."""
-    if mat is None or not mat.use_nodes: return dict(base_hex=None, image=None, vcol=None, rough=1.0)
-    bs = next((n for n in mat.node_tree.nodes if n.type == 'BSDF_PRINCIPLED'), None); img = None; vcol = None; base = None; rough = 1.0
+    if mat is None or not mat.use_nodes: return dict(base_hex=None, image=None, vcol=None, rough=1.0, emission=None)
+    bs = next((n for n in mat.node_tree.nodes if n.type == 'BSDF_PRINCIPLED'), None); img = None; vcol = None; base = None; rough = 1.0; em = None
     if bs:
         rough = bs.inputs['Roughness'].default_value
+        ec = bs.inputs['Emission Color']; eimg = next((l.from_node.image for l in ec.links if l.from_node.type == 'TEX_IMAGE'), None) if ec.is_linked else None
+        em = {'color': list(ec.default_value), 'strength': bs.inputs['Emission Strength'].default_value, 'image': eimg}
         bc = bs.inputs['Base Color']
         if bc.is_linked:
             stack = [bc.links[0].from_node]
@@ -211,7 +218,7 @@ def _src_info(mat):
                 stack += [l.from_node for i in n.inputs for l in i.links]
         else:
             c = bc.default_value; base = '#' + ''.join('%02x' % int(round(255 * (x * 12.92 if x <= 0.0031308 else 1.055 * x ** (1 / 2.4) - 0.055))) for x in c[:3])
-    return dict(base_hex=base, image=img, vcol=vcol, rough=rough)
+    return dict(base_hex=base, image=img, vcol=vcol, rough=rough, emission=em)
 
 
 def _world_height(objs):
@@ -239,7 +246,7 @@ def apply(ob, role, palette, tone=1, profile=None, seed=None, source='kit', pull
                 si = _src_info(src); own = source == 'own' or (si['image'] is None and si['vcol'] is None)
                 cache[key] = build_material(f'{ob.name}:{src.name if src else "none"}', pid, seed if seed is not None else ob.name, ref, k,
                                             base_hex=rhex if own else si['base_hex'], image=None if own else si['image'], vcol=None if own else si['vcol'],
-                                            role_hex=None if own else rhex, pull=0.0 if own else p, src_rough=si['rough'])
+                                            role_hex=None if own else rhex, pull=0.0 if own else p, src_rough=si['rough'], emission=si['emission'])
             slot.material = cache[key]; rep['replaced'] += 1
         if not o.material_slots:
             m = build_material(f'{ob.name}:none', pid, seed if seed is not None else ob.name, ref, k, base_hex=rhex); o.data.materials.append(m); rep['replaced'] += 1

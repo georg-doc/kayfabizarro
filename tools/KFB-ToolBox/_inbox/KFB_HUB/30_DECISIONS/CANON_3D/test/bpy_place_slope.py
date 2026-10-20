@@ -16,6 +16,7 @@ bpy.ops.mesh.primitive_uv_sphere_add(radius=0.6, location=(-3, 1, 5)); ball = bp
 bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=3, radius=1.0, location=(3, -1, 5)); rock = bpy.context.object; rock.name = 'fels'
 rock.scale = (1.4, 0.9, 0.7); bpy.ops.object.transform_apply(scale=True)
 for i, v in enumerate(rock.data.vertices): v.co *= 1 + 0.12 * math.sin(i * 1.7)   # unregelmäßig
+rock.data.update(); g.data.update(); bpy.context.view_layer.update()   # Hüllbox nach der Verformung neu
 R = [kfb_env_bpy.place(ball, -3, 1, 'stone_M', seed='t1', role='stone', layer=1, group='g1', story='Test: Kugel am Hang'),
      kfb_env_bpy.place(rock, 3, -1, 'rock', rz=30, seed='t1', role='stone', layer=1, group='g1', story='Test: Fels am Hang')]
 for r in R:

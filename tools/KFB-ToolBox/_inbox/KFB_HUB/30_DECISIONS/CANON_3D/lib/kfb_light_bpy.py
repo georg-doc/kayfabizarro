@@ -10,7 +10,7 @@
 #   Hemisphäre: three-Hemisphäre ist Bestrahlung, Blender-Welt Strahldichte → Weltstärke = hemiI / π (K1).
 #   Figurenlicht: three-Spot in cd (E = I / d², Z. 189: intensity = figI · d²); Blender-Punkt/Spot: Bestrahlung = P / (4π² d²) → P = 4π² · figI · d².
 #     (Blender-Konvention: Punktlicht P ≙ Sonne P / (4π² d²). Im K1-Paar ohne Figurenlicht geprüft; das Figurenlicht selbst ist noch nicht am Bild verglichen.)
-#   Ton: three ACESFilmic, Belichtung 1 (Z. 159–160; three skaliert intern mit 1/0,6) → AgX + Look „AgX - Punchy“, Belichtung log2(1/0,6) = +0,74 Blenden.
+#   Ton: three ACESFilmic, Belichtung 1 (Z. 159–160; three skaliert intern mit 1/0,6) → Blender-Ansicht „ACES 1.3“, Belichtung log2(1/0,6) = +0,74 Blenden (AgX Punchy nur noch als Ausweich).
 #   Schatten: three PCFSoft mit engem Kasten (fitShadow/fitAround) → Blender-Sonne mit kleinem Winkel (SUN_ANGLE_DEG 2°, Näherung für den weichen Rand).
 import math
 
@@ -44,6 +44,7 @@ STAGE_GROUND = '#f2e8d8'      # Proof Stage v1.2 Hohlkehle (Hemi-Boden der Prüf
 STAGE_BACKGROUND = '#f3ece0'  # Proof Stage v1.2 Hintergrund
 SUN_ANGLE_DEG = 2.0
 EXPOSURE = math.log2(1 / 0.6)
+TONE_DEFAULT = 'aces'  # 'aces' = Blender-Ansicht „ACES 1.3“ (OCIO), 'agx' = AgX Punchy. Messung K1 (20.10.): Wand Web 201/181/159, ACES 189/168/143, AgX 162/144/127 → ACES
 ROLE_NAMES = ('kfb_sun', 'kfb_figure_light')
 
 
@@ -142,13 +143,21 @@ def setup(scene, mood_set='mesa', mood='day', tod=None, ground=STAGE_GROUND, bac
         fig = bpy.data.objects.new('kfb_figure_light', fl); scene.collection.objects.link(fig); fig['kfb_light_rig'] = 'figure'; fig.location = pos
         fig.rotation_euler = (aim - pos).to_track_quat('-Z', 'Y').to_euler()
     # Ton (Z. 159–160)
+    tone_used = None
     if tone:
-        scene.view_settings.view_transform = 'AgX'; scene.view_settings.exposure = EXPOSURE
-        try: scene.view_settings.look = 'AgX - Punchy'
-        except Exception: pass
+        mode = TONE_DEFAULT if tone is True else tone
+        if mode == 'aces':
+            try: scene.view_settings.view_transform = 'ACES 1.3'; scene.view_settings.look = 'None'; tone_used = 'ACES 1.3, +0.74 EV (= three ACESFilmic 1)'
+            except Exception: mode = 'agx'
+        if mode == 'agx':
+            scene.view_settings.view_transform = 'AgX'
+            try: scene.view_settings.look = 'AgX - Punchy'
+            except Exception: pass
+            tone_used = 'AgX Punchy, +0.74 EV (≈ three ACES 1)'
+        scene.view_settings.exposure = EXPOSURE
     info = {'schema': SCHEMA, 'module': MODULE, 'source': SOURCE, 'mood_set': mood_set if isinstance(mood_set, str) else 'custom', 'mood': mood if tod is None else None,
             'tod': round(M['tod'], 3), 'sun': M['sun'], 'sunI': round(M['sunI'], 3), 'elev': round(M['elev'], 2), 'az': M['az'], 'hemiSky': M['hemiSky'], 'hemiI': round(M['hemiI'], 3),
             'ground': ground, 'bounce': M['bounce'], 'figI': round(M['figI'], 3), 'figure_light': bool(fig), 'rim': False, 'glow': round(M['glow'], 3),
-            'shadowLen': round(shadow_length(M['elev']), 3), 'tone': 'AgX Punchy, +0.74 EV (≈ three ACES 1)' if tone else None}
+            'shadowLen': round(shadow_length(M['elev']), 3), 'tone': tone_used}
     scene['kfb_light'] = MODULE
     return info
