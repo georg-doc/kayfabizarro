@@ -32,6 +32,12 @@
    Alte Builds nur anfassen, wenn sie neu gebaut werden.
 4. **K4 erste Szene nach Kanon:** sobald WS0 das erste Konzeptblatt liefert.
 
+**Einpassung (Kanon Gebiet 15, Georg 20.10.):** Dioramen und Scenelet-Sets haben **keinen eigenen Boden und keine Platte**.
+- **Lieferung:** Teile + Set-Liste (`role`, `layer`, Band, Signatur) zum Einpassen ins Spielterrain.
+- **Material:** Knete aus K1, Farben nur aus Rollen.
+- **Licht:** keine eingebackenen Licht- oder AO-Texturen.
+- **Proofs** auf Knet-Terrain mit derselben Palette wie das Biom, nie auf neutralem Teller.
+
 **Regeln:**
 - Schwere Läufe headless.
 - Downloads und Installationen nur mit Georgs direktem OK.

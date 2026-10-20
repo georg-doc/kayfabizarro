@@ -3,7 +3,7 @@
 
 **Tier 0**
 1. Lies `30_DECISIONS/CANON_3D/CANON_3D_R1.md`. Alles Gestalterische in 3D folgt diesem Kanon, das gilt auch für deine Spielszenen. Fehlt Wissen, wird es recherchiert und als Regel eingetragen.
-2. Deine Arbeitspakete: **A Recherche** R1–R3 zuerst, dann R4–R8 aus `CANON_3D/RESEARCH_BACKLOG_R1.md`. **B Werkzeuge** W1–W4 unten.
+2. **Zuerst E Einpassung** (Georgs Hauptproblem): Dioramen und Scenelets liegen auf dem Terrain herum, mit anderen Farben, Texturen, anderem Licht und anderer Geometrie. Sie werden ins Terrain eingepasst und als ein Gesamtbild gestaltet (Kanon Gebiet 15). Danach **A Recherche** R1–R3, dann R4–R8 (`CANON_3D/RESEARCH_BACKLOG_R1.md`), und **B Werkzeuge** W1–W4.
 3. **Abgabe je Paket:**
    - Datei in `CANON_3D/sources/` (Recherche) bzw. Code mit Tests;
    - Meldung in `WS1_STATUS`;
@@ -17,6 +17,16 @@
 - Chat 4: W3 + W4.
 
 Jeder Chat bekommt diesen Brief + den Kanon als Startlektüre.
+
+**E · Einpassung ins Terrain (Kanon Gebiet 15):**
+- **Laufzeit-Einpassung:**
+  - Das Terrain läuft in jede Szene hinein, mit Schürze bzw. Erdkeil am Sockel und `footprint`-Absenkung.
+  - Die Szene nimmt die Rollen-Töne der Biom-Palette des Terrains an; Meshy- und Kit-Farben werden auf Rollen umgetönt.
+  - Ein Knet-Material, eingebackenes Licht bzw. AO wird entfernt, nur das eine Rig.
+  - Ränder laufen über Steinbänder (Grammatik §4) und Sprenkel in beide Richtungen aus.
+- **Probe:** eine bestehende Szene (Vorschlag Ork-Band, PASS-Bestand) vorher/nachher im echten Terrain aus Spielkamera und den 4 Kritiker-Kameras.
+- **Messung** mit W1-Export + `kfb_env` (B1, E1/E2, M1–M3).
+- **Recherche-Frage dazu in R1:** Wie verschmelzen stilisierte Spiele handgebaute Sets mit prozeduralem Gelände (Tiny Glade, Townscaper, Animal Crossing, Ghibli-Layouts)?
 
 **A · Recherche:**
 - **Format je Ergebnis:**
