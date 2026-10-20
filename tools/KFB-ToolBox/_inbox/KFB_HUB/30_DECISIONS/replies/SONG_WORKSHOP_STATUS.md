@@ -443,3 +443,13 @@ Das Gate lässt das durch, weil es solche Muster nicht als Slop kennt.
 - Beat 1 = Titel + These, Outro = Rückruf auf das Intro.
 
 **Nächster Schritt:** Georgs Urteil zu r7a. Danach Metropolis und Protopia im selben Takt.
+
+## §19 · 20.10.2026 · BBBW r7b: Stand-up-Anekdote mit Cartoon-Kausalität
+**Georg zu r7a:** „nein“. Gefordert ist plausible Cartoon-Kausalität wie bei South Park: therefore/but, aber nicht wörtlich. Der Träger dafür ist die anekdotische Stand-up-Routine („My neighbor raised a … / So I had to … / Meanwhile …“). Quellen: KayfabeTips Tip 1 und Tell-Frame (`media/prompts/KAYFABE_TIPS_corpus_v1.md`), dazu Georgs NotebookLM und Google-Doc (ohne Login nicht lesbar).
+
+**r7b (Probe):** Die Actionfigur erzählt, wie der Junge, dem sie gehört, im Wohnzimmer eine Liga betreibt.
+- Jede Karte ist das nächste verursachte oder verdrehte Ereignis; Akteure sind die Schwester, Mom, der Hund und der Cousin.
+- Rückrufe: Der Hund liefert erst die Konserven-Crowd und dann die echte Verletzung; der verlorene Arm kommt im Outro wieder.
+- Gate PASS, 2011 Zeichen, 17 Karten. Eigentext 50 % (WARN, Richtwert ≤ 30 %). Mit der Routine steigt der Anteil; WS0 sollte den Richtwert für diese Form neu bewerten.
+
+**Nächster Schritt:** Georgs Urteil zu r7b.

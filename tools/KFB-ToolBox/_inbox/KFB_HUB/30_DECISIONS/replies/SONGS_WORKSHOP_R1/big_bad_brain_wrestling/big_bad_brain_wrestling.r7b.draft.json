@@ -1,0 +1,145 @@
+{
+ "deckId": "big_bad_brain_wrestling",
+ "revision": "r7b",
+ "performers": [
+  {
+   "model": "ActionFigure",
+   "asset": "KayKit_Mystery_Series6/6 - December 2023 - Action Figure · Köpfe B/C/D",
+   "role": "Wrestling-Actionfigur mit austauschbaren Köpfen = Gimmicks"
+  }
+ ],
+ "residentHome": "Spielzeugkiste als Ring, Pappschilder an den Seilen",
+ "structure": "stand-up anecdote with plausible cartoon causality (KayfabeTip 1: therefore/but, never and-then, not verbatim): the action figure tells how the kid who owns him ran a wrestling federation in the living room; every card is the next caused or twisted event (sister, mom, dog, cousin); callbacks dog -> real injury, arm -> outro",
+ "introType": "found_object",
+ "synopsis": "A spoken-word number from a card deck about the psychology of professional wrestling. It is performed by a toy wrestling figure inside its toy box, for whoever happens to be there.",
+ "bestOfReason": [
+  "1-4: the heads as gimmicks, the sister as crowd, the jobber is his own head.",
+  "9, 13, 14, 11: learning to sell, noise, mom's ban, the sister oversells.",
+  "45: the kid as booker.",
+  "30, 31, 53: empty house, the dog as crowd track, the cousin as smark.",
+  "35, 55: the dog's real bite and the family's silence.",
+  "41, 42, 56: finish, near-fall, replaced at Christmas."
+ ],
+ "omitted": {
+  "5-8": "big-body archetypes repeat the roster joke",
+  "10": "overlaps 43-style dominance",
+  "12": "too technical",
+  "15-16": "repeat the sound lie of 13",
+  "18-21": "brutality catalogue",
+  "23-29": "cut for length; 29 overlaps the tweener",
+  "32-34": "plant, shooter, sandbag cut so 35 carries 'real'",
+  "36-40": "cut for length",
+  "43-44": "endings not used",
+  "47-48": "overlap 46",
+  "50-54": "cut for length"
+ },
+ "orderReason": "Deck order kept except: the oversell clown 11 comes after the stomp punch as the overdone counterexample; the jobber's power returns as the final card beat.",
+ "songLineChanges": [
+  {
+   "cardNumber": 42,
+   "rule": "A7",
+   "songLine": "kicking out at two point nine nine, crowd vertical",
+   "reason": "2.99 from the card image written out"
+  }
+ ],
+ "cues": [
+  {
+   "afterBeat": 1,
+   "cue": "toy box lid creaks"
+  },
+  {
+   "afterBeat": 4,
+   "cue": "plastic click at every head swap"
+  }
+ ],
+ "beats": [
+  "Big Bad Brain Wrestling: every move a lie, every bruise for real.",
+  "The kid who owns me got me for his birthday: four heads, one body, a cardboard ring.",
+  {
+   "card": 1,
+   "pre": "First he clicks on the golden head:",
+   "text": "The Babyface, high-flying moves; audiences cheer, a slave to approval."
+  },
+  {
+   "card": 2,
+   "pre": "His sister yawns, so he clicks the sneer:",
+   "text": "The Heel, eye pokes; if they aren't booing, you aren't doing your job."
+  },
+  {
+   "card": 3,
+   "pre": "Now she cheers for the wrong one:",
+   "text": "The Tweener, you don't ask for it, so they want you more."
+  },
+  {
+   "card": 4,
+   "pre": "Somebody has to lose. Guess which head:",
+   "text": "The Jobber, isolated and picked apart; you exist to make the other guy look good."
+  },
+  {
+   "card": 9,
+   "pre": "Losing hurts, so I learn to fake it:",
+   "text": "The Master Seller, reel back, limp to the ring, make them believe."
+  },
+  {
+   "card": 13,
+   "pre": "Faking needs noise:",
+   "text": "The Thigh Slap, a loud sound suggests high impact; an audio lie."
+  },
+  {
+   "card": 14,
+   "pre": "Mom bans slapping, so we stomp:",
+   "text": "The Stomp Punch, kinetic misdirection."
+  },
+  {
+   "card": 11,
+   "pre": "The sister tries it and lands in the fish tank:",
+   "text": "The Oversell Clown, flying backwards from a gentle tap."
+  },
+  {
+   "card": 45,
+   "pre": "Meanwhile the kid writes every ending on the cereal box:",
+   "text": "The Booker, spider in suit; the ending is pre-planned, you are just a puppet."
+  },
+  {
+   "card": 30,
+   "pre": "He invites the whole class. Nobody comes:",
+   "text": "The Empty Arena, pausing for a pop that never comes."
+  },
+  {
+   "card": 31,
+   "pre": "So he records the dog barking and plays it back:",
+   "text": "The Green Screen Crowd, audio sweetening on a lie."
+  },
+  {
+   "card": 53,
+   "pre": "His cousin reviews the show online, never once picked me up:",
+   "text": "The Internet Smark, psychology without ever taking a bump."
+  },
+  {
+   "card": 35,
+   "pre": "But the dog wants a real match. One bite, no arm:",
+   "text": "The Real Injury, unplanned; the crowd goes nuts because it's real."
+  },
+  {
+   "card": 55,
+   "pre": "Mom says we never speak of the arm:",
+   "text": "The Kayfabe Police, keep the secrets secret, or get fired."
+  },
+  {
+   "card": 41,
+   "pre": "One arm left, so the kid books the big finish:",
+   "text": "The Finisher, the Leg Drop; if this hits, go home."
+  },
+  {
+   "card": 42,
+   "pre": "It hits. The sister counts very slowly:",
+   "text": "The False Finish, the art of the near-fall."
+  },
+  {
+   "card": 56,
+   "pre": "At Christmas a new figure arrives:",
+   "text": "The Retirement Match, rising, and falling; see you next season."
+  },
+  "Back in the drawer: four heads, one arm. Every bruise for real."
+ ]
+}
