@@ -1,0 +1,482 @@
+{
+  "cards": [
+    {
+      "art": "bear casting a monstrous shadow, two small figures accepting it as the whole truth",
+      "lore": "Myth solved the coordination problem. Tell them a story about where they came from, make it sacred, and make questioning it dangerous.",
+      "n": 1,
+      "name": "THE CAVE MYTH",
+      "power": "Shadow Play: Force another player to accept your description of a card as truth until end of turn."
+    },
+    {
+      "art": "wolf pack howling at the moon, firelight ending exactly where the darkness begins",
+      "lore": "The tribe is the first state. Its ideology is simple: In-group is sacred; Out-group is profane. We don't need a reason to discriminate.",
+      "n": 2,
+      "name": "THE TRIBE",
+      "power": "In-Group Bias: Discard a card to ignore any effect from a player not in your 'alliance'."
+    },
+    {
+      "art": "owl with antlers holding a glowing die, the number on the face shifting as it watches",
+      "lore": "The first ideological professional. He mediates between the human and the divine. He controls the narrative, so he controls the tribe.",
+      "n": 3,
+      "name": "THE SHAMAN",
+      "power": "Gatekeeper: You interpret the dice roll. Change a [1] to a [5] or vice versa once per game."
+    },
+    {
+      "art": "porcupine inside a red X, surrounding words erased, a single forbidden syllable visible at the edge",
+      "lore": "The original cancellation. Not a law, but a boundary. Cross it, and you threaten the fabric of reality itself.",
+      "n": 4,
+      "name": "THE TABOO",
+      "power": "Social Death: Ban a specific word. Anyone who says it loses a card."
+    },
+    {
+      "art": "lion pharaoh on a throne, pointing at a die and raising one eyebrow",
+      "lore": "Not a metaphor. A governance technology. His will is indistinguishable from the movement of the sun.",
+      "n": 5,
+      "name": "THE PHARAOH",
+      "power": "God-King: Your commands are natural law. Re-roll any die result that displeases you."
+    },
+    {
+      "art": "ram carving rules onto a stone slab, a beetle watching from the corner",
+      "lore": "The political made sacred. Don't question the law, because the sun god wrote it. The first \"Terms of Service\".",
+      "n": 6,
+      "name": "HAMMURABI'S CODE",
+      "power": "Written in Stone: Lock a Scene card. It cannot be moved, changed, or covered for 2 turns."
+    },
+    {
+      "art": "vulture in priestly robes adjusting a celestial map, constellation order changing",
+      "lore": "Knowledge/Power. The priests read the stars and interpret the gods. The first bureaucracy of meaning.",
+      "n": 7,
+      "name": "THE HIEROPHANT",
+      "power": "Mediator: Look at the top 3 cards of the deck. Arrange them in the order that benefits you."
+    },
+    {
+      "art": "goat loaded with bags labeled SINS walking through a gate into the desert, crowd relieved behind it",
+      "lore": "Culture is a death-denial system. We need stories to be eternal. When they fail, we need someone to bleed for it.",
+      "n": 8,
+      "name": "THE SCAPEGOAT",
+      "power": "Blame Shifting: Transfer a negative effect from yourself to another player."
+    },
+    {
+      "art": "bee interrogating a horse mid-sentence, the horse already reaching for a discard pile",
+      "lore": "\"He didn't deliver a system; he demolished them. Epistemological sabotage has consequences. Usually execution.\"",
+      "n": 9,
+      "name": "SOCRATES",
+      "power": "\"The Question: Demolish a player's Story by asking 'Define your terms.' They must discard a card.\""
+    },
+    {
+      "art": "moles watching shadows on a cave wall, the object casting them replaced mid-shadow by something different",
+      "lore": "\"The first totalitarian utopia. Rulers who know the Truth, and noble lies told to the masses for their own good.\"",
+      "n": 10,
+      "name": "PLATO'S CAVE",
+      "power": "\"Noble Lie: Swap a card on the Stage with a card from your hand. Claim it was always there.\""
+    },
+    {
+      "art": "stone turtle meditating in a lightning storm, waves hitting the base, expression unchanged",
+      "lore": "\"Philosophy for ruling classes who don't want to be questioned. Focus on your Inner life; accept your station.\"",
+      "n": 11,
+      "name": "THE STOIC",
+      "power": "Inner Citadel: Ignore one event that would destroy your Actor. Duty is freedom."
+    },
+    {
+      "art": "chameleon in a toga holding a bottle labeled TRUTH SERUM and SNAKE OIL simultaneously",
+      "lore": "\"Man is the measure of all things. Truth is just what you can convince people of. The first political consultants.\"",
+      "n": 12,
+      "name": "THE SOPHIST",
+      "power": "Rhetoric: You may lie about your card's stats. If no one calls Blödsinn, the lie becomes true."
+    },
+    {
+      "art": "peacock on a dunghill wearing a crown, rays of light coming from behind it, village below not questioning this",
+      "lore": "Kings are kings by grace. To question hierarchy is to question reality. A monopoly is efficient until it isn't.",
+      "n": 13,
+      "name": "DIVINE RIGHT",
+      "power": "Monopoly on Meaning: Cancel another player's move. Cite \"God's Will.\""
+    },
+    {
+      "art": "spider in a mitre examining playing cards on a web, burning any that don't match",
+      "lore": "Ideology enforcement at its most literal. The template for every thought-policing system to follow.",
+      "n": 14,
+      "name": "THE INQUISITION",
+      "power": "Purge: Force a player to reveal their hand. Discard any card that contradicts your current Quest."
+    },
+    {
+      "art": "serpent eating itself, coin collection box visible in the corner, everyone putting something in",
+      "lore": "Political authority is necessary because you are broken. Legitimizes the state while telling you you deserve it.",
+      "n": 15,
+      "name": "ORIGINAL SIN",
+      "power": "Internalized Guilt: All other players must discard 1 card at random. We are all fallen."
+    },
+    {
+      "art": "donkey pulling a full cart toward a castle, a carrot dangling ahead, scoreboard showing zero",
+      "lore": "Natural order. Some animals are naturally suited to labor. The great biologization of hierarchy.",
+      "n": 16,
+      "name": "THE SERF",
+      "power": "Labor: Generate +1 to the Quest Die. You receive no credit."
+    },
+    {
+      "art": "yellow rabbit at a press, pages flying into every player's area simultaneously, ink everywhere",
+      "lore": "\"Destroyed the information monopoly. An epistemological revolution. Now anyone can interpret the source code.\"",
+      "n": 17,
+      "name": "THE PRINTING PRESS",
+      "power": "\"Viral Load: Draw 3 cards. Distribute them to other players. They cannot refuse.\""
+    },
+    {
+      "art": "fox in doublet holding a rose in one hand and a knife behind its back, expression entirely sincere",
+      "lore": "\"He didn't invent the game; he just printed the rules. Be a lion and a fox. Morality is instrumental.\"",
+      "n": 18,
+      "name": "MACHIAVELLI",
+      "power": "\"Realpolitik: Steal a card from another player. Justify it as 'necessary for stability.'\""
+    },
+    {
+      "art": "bull nailing a document to a door, the door cracking into two separate paths",
+      "lore": "\"Sola Scriptura. You don't need a priest. Democratization of meaning is also fragmentation of meaning.\"",
+      "n": 19,
+      "name": "MARTIN LUTHER",
+      "power": "\"Schism: Split the Quest Die into two separate dice. The narrative now has two conflicting goals.\""
+    },
+    {
+      "art": "chimpanzee looking into a mirror and seeing a different animal each time",
+      "lore": "\"Man at the center. No fixed nature. We are not waiting for heaven; we are building it here.\"",
+      "n": 20,
+      "name": "THE HUMANIST",
+      "power": "\"Self-Determination: Change the suit/type of your Actor card. You can become whatever you choose.\""
+    },
+    {
+      "art": "praying mantis in a tricolor cockade, a head in a basket below, the crowd already pointing at the next highest card",
+      "lore": "\"When ideological purity meets power. Robespierre thought he knew the General Will. Then it ate him.\"",
+      "n": 21,
+      "name": "THE GUILLOTINE",
+      "power": "\"The Terror: Remove the Actor with the highest stats from the game. For the General Will.\""
+    },
+    {
+      "art": "beaver with quill and chains, signing a document while standing in a fence",
+      "lore": "\"Man is born free, but lives in chains. Legitimate government is a deal. But who signed it?\"",
+      "n": 22,
+      "name": "THE SOCIAL CONTRACT",
+      "power": "\"Consent: Negate an action unless all players vote to allow it.\""
+    },
+    {
+      "art": "mechanical bird assembling a universal law from gears, one gear labeled EXCEPTION already removed",
+      "lore": "\"Reason is universal. Ideology as engineering. Just don't ask who gets excluded from 'Reason'.\"",
+      "n": 23,
+      "name": "THE RATIONALIST",
+      "power": "\"Categorical Imperative: Establish a rule (e.g., 'No blue cards'). It applies to everyone, including you.\""
+    },
+    {
+      "art": "cat on an iron fence, looking down at the common ground below with visible disdain",
+      "lore": "\"Life, Liberty, Property. Existed before the state. The foundation of the modern 'User Interface'.\"",
+      "n": 24,
+      "name": "THE SOVEREIGN INDIVIDUAL",
+      "power": "\"Natural Rights: You cannot be targeted by 'State' or 'Group' effects this turn.\""
+    },
+    {
+      "art": "translucent octopus rearranging chess pieces, an arrow pointing to the new position labeled NATURAL OUTCOME",
+      "lore": "\"No central planner needed. Self-interest yields collective welfare. A beautiful myth for the winners.\"",
+      "n": 25,
+      "name": "THE INVISIBLE HAND",
+      "power": "\"Market Forces: Swap the positions of any two cards on the Stage. Claim it happened naturally.\""
+    },
+    {
+      "art": "ant operating a machine that converts ants into gears, the output used to buy more ants",
+      "lore": "\"Alienation as infrastructure. Workers separated from the product, the process, and themselves.\"",
+      "n": 26,
+      "name": "THE FACTORY",
+      "power": "\"Efficiency: Discard 2 cards to draw 3. Maximize throughput.\""
+    },
+    {
+      "art": "blue whale in a briefcase at the table, no one able to reach it despite everything happening around it",
+      "lore": "\"A legal person with no soul to save and no body to incarcerate. The dominant species of the modern era.\"",
+      "n": 27,
+      "name": "THE CORPORATION",
+      "power": "\"Legal Fiction: Treat this card as a Player. It has rights but no body to punish.\""
+    },
+    {
+      "art": "squirrel buried in acorns with an abacus, calculating, alone, surrounded by labeled utility curves",
+      "lore": "\"The utility-maximizing agent. A lonely, sociopathic model of human nature that we decided to become.\"",
+      "n": 28,
+      "name": "HOMO ECONOMICUS",
+      "power": "\"Rational Self-Interest: Take a card from the discard pile if it helps you immediately.\""
+    },
+    {
+      "art": "beaver at a writing desk, die on the table showing 1, the shadow behind it showing 6",
+      "lore": "\"He changed the questions. History is class struggle. But he didn't solve the problem of power.\"",
+      "n": 29,
+      "name": "KARL MARX",
+      "power": "\"Historical Materialism: Flip the Quest Die to its opposite face (1 becomes 6). Invert the power structure.\""
+    },
+    {
+      "art": "wolf in a red armband making decisions for a row of badgers who are looking at each other uncertainly",
+      "lore": "\"The workers need professionals to lead them. The path from liberation to the Gulag is paved with 'consciousness'.\"",
+      "n": 30,
+      "name": "THE VANGUARD PARTY",
+      "power": "\"Dictatorship of the Proletariat: You make decisions for another player this turn. They 'don't know what's good for them.'\""
+    },
+    {
+      "art": "badgers with arms crossed in front of a stopped factory, a clock on the wall showing who's actually needed",
+      "lore": "\"The weapon of the producer. When the machine stops, you see who really runs it.\"",
+      "n": 31,
+      "name": "THE STRIKE",
+      "power": "\"Seize the Means: Take control of a 'Tool' or 'Location' card on the Stage.\""
+    },
+    {
+      "art": "bluebird in a cage with a painting of sky on the wall, special ability text crossed out with a single line",
+      "lore": "\"Separated from your labor, your product, your humanity. The engine of the system is your unhappiness.\"",
+      "n": 32,
+      "name": "ALIENATION",
+      "power": "\"Estrangement: A player cannot use their Actor's special ability this turn. They are separated from their potential.\""
+    },
+    {
+      "art": "black cat atop a rubble pile, anarchist flag above, looking distinctly unbossed",
+      "lore": "\"Property is theft. Domination is the enemy. Order without power.\"",
+      "n": 33,
+      "name": "THE BLACK FLAG",
+      "power": "\"No Masters: Remove a 'Leader' or 'Authority' card from play.\""
+    },
+    {
+      "art": "two bees exchanging pollen, both growing larger from the transfer, the hive visible as a background",
+      "lore": "\"Evolution is not just competition. Kropotkin was right: we survived because we helped each other.\"",
+      "n": 34,
+      "name": "MUTUAL AID",
+      "power": "\"Cooperation: Give a card from your hand to another player. Both of you draw 1 card.\""
+    },
+    {
+      "art": "bombardier beetle hitting a brick wall — the wall mid-explosion, no committee visible",
+      "lore": "\"Propaganda of the deed. Sometimes you don't debate the wall; you blow it up.\"",
+      "n": 35,
+      "name": "THE MOLOTOV",
+      "power": "\"Direct Action: Destroy a Scene card immediately. No voting.\""
+    },
+    {
+      "art": "meerkats building a shared space inside the ruins of a larger structure, the outer walls still crumbling",
+      "lore": "\"Build the new society in the shell of the old. The means must embody the ends.\"",
+      "n": 36,
+      "name": "THE COMMUNE",
+      "power": "\"Prefigurative Politics: Create a 'Safe Zone' where cards cannot be attacked or removed.\""
+    },
+    {
+      "art": "bison charging with a red cape attached, every animal of the same color falling into formation behind it",
+      "lore": "\"The totem object. Ideology made material. People die for the colored cloth.\"",
+      "n": 37,
+      "name": "THE FLAG",
+      "power": "\"Rally Round: Gain +1 Power for every card of the same 'suit' or color in play.\""
+    },
+    {
+      "art": "German shepherd patrolling a line drawn in sand, a map in the background showing the line was moved last week",
+      "lore": "\"Imagined lines enforced by real guns. Defining who belongs by who doesn't.\"",
+      "n": 38,
+      "name": "THE BORDER",
+      "power": "\"Exclusion: Prevent a new card from entering the Stage this turn.\""
+    },
+    {
+      "art": "bald eagle with VR goggles displaying only flags, a logic error visible just outside the frame",
+      "lore": "\"Benedict Anderson called it an 'Imagined Community.' You will never meet them, but you will kill for them.\"",
+      "n": 39,
+      "name": "THE PATRIOT",
+      "power": "\"My Country Right or Wrong: Ignore a logic error or 'Blödsinn' call if it favors you.\""
+    },
+    {
+      "art": "cuckoo bird taking eggs from a smaller bird's nest, calling it civilization",
+      "lore": "\"Imperial nationalism. We are so superior we have a duty to rule you and take your stuff.\"",
+      "n": 40,
+      "name": "COLONIALISM",
+      "power": "\"Extraction: Take a card from another player's hand. Keep it.\""
+    },
+    {
+      "art": "enormous eye with a camera lens inside it, all cards fanned face-up beneath it, the owner unable to bluff",
+      "lore": "Surveillance is not just watching; it's modifying. He loves you because he owns your mind.",
+      "n": 41,
+      "name": "BIG BROTHER",
+      "power": "Panopticon: Play with your hand revealed. You cannot lie."
+    },
+    {
+      "art": "polar bear lowering a card through a trapdoor labeled MEMORY HOLE, other cards already not noticing the gap",
+      "lore": "The revolution eats its children. Industrialized removal of \"inconvenient\" reality.",
+      "n": 42,
+      "name": "THE GULAG",
+      "power": "Disappear: Place a card in the \"Memory Hole\" (under the table). It never existed."
+    },
+    {
+      "art": "kangaroo judge banging a gavel, defendant in the dock already nodding in agreement before the charge is read",
+      "lore": "Reality is contested. You must not just die; you must agree that you deserved it.",
+      "n": 43,
+      "name": "THE SHOW TRIAL",
+      "power": "Confession: Force a player to admit they cheated (even if they didn't). They lose a turn."
+    },
+    {
+      "art": "two-headed snake facing opposite directions, both sets of eyes focused, both mouths open",
+      "lore": "Holding two contradictory beliefs simultaneously. The ultimate flexibility of the broken mind.",
+      "n": 44,
+      "name": "DOUBLETHINK",
+      "power": "Cognitive Dissonance: Play two cards that contradict each other. Both take effect."
+    },
+    {
+      "art": "shark in a suit placing a FOR SALE sign on a reef, other fish watching without legal standing",
+      "lore": "\"The market knows best. Democracy is inefficient. Everything is for sale.\"",
+      "n": 45,
+      "name": "THE MARKET FUNDAMENTALIST",
+      "power": "\"Privatize: Claim a 'Public' card on the Stage as your personal property.\""
+    },
+    {
+      "art": "owl with a cybernetic eye pointing at a calculator, the political implications listed on a whiteboard marked IRRELEVANT",
+      "lore": "\"It's not political; it's technical. Leave it to the experts. We are optimizing you.\"",
+      "n": 46,
+      "name": "THE TECHNOCRAT",
+      "power": "\"Expertise: Override a die roll with a 'Technical Correction' (set it to 3).\""
+    },
+    {
+      "art": "electric eel in a crisis tank, all other fish panicking, the eel drawing cards while sparks fly",
+      "lore": "\"Disaster capitalism. Use the crisis to push through changes that would be impossible in peacetime.\"",
+      "n": 47,
+      "name": "THE SHOCK DOCTRINE",
+      "power": "\"Crisis Opportunity: If the Quest Die tips/collapses, draw 2 cards immediately.\""
+    },
+    {
+      "art": "locust placing a FOR SALE sign on the Stage area itself, holding a clipboard",
+      "lore": "\"Efficiency means stripping the asset. The commons are just uncaptured value waiting to be eaten.\"",
+      "n": 48,
+      "name": "THE PRIVATIZER",
+      "power": "\"Enclosure: Charge other players a 'fee' (discarding a card) to use the Stage.\""
+    },
+    {
+      "art": "goldfish and shark in the same bowl, the shark invisible to the goldfish due to a VR headset",
+      "lore": "Algorithmic personalization. You don't see reality; you see a mirror designed to keep you angry.",
+      "n": 49,
+      "name": "THE FILTER BUBBLE",
+      "power": "Echo Chamber: You are immune to arguments (effects) from cards of a different color."
+    },
+    {
+      "art": "wild boar at a laptop under a bridge, typing with intent, Quest visible on a screen it's not reading",
+      "lore": "Irony as armor. Nothing matters, so I can destroy everything for \"Lulz\".",
+      "n": 50,
+      "name": "THE TROLL",
+      "power": "Bait: Force an opponent to attack you instead of the Quest."
+    },
+    {
+      "art": "smiley-face virus with spider legs replicating identically across the Stage, original source already unidentifiable",
+      "lore": "Self-replicating cultural unit. Weaponized by the Alt-Right, the Left, and cats. Reality is downstream of the JPEG.",
+      "n": 51,
+      "name": "THE MEME",
+      "power": "Viral Replication: Copy the effect of the last card played."
+    },
+    {
+      "art": "piranha school shredding an identity badge, the card owner now outside the frame, the group already closing the gap",
+      "lore": "Purity spiral. The in-group purges itself to stay holy. Structural violence or accountability? Yes.",
+      "n": 52,
+      "name": "THE CANCEL MOB",
+      "power": "De-Platform: Remove an Actor card from the game. They are \"Unpersoned.\""
+    },
+    {
+      "art": "bat drawing data streams from sleeping figures, keeping one thread per person, all threads converging into a single server",
+      "lore": "Zuboff's nightmare. Predicting and modifying your behavior for profit. The new resource extraction.",
+      "n": 53,
+      "name": "SURVEILLANCE CAPITALISM",
+      "power": "Data Estraction: Look at every player's hand. Keep one card."
+    },
+    {
+      "art": "cybernetic spider at the center of a digital web, all threads leading to a die frozen between 3 and 4",
+      "lore": "It doesn't hate you. It just maximises a variable that requires your addiction.",
+      "n": 54,
+      "name": "THE ALGORITHM",
+      "power": "Optimisation: Force a specific outcome on the Quest Die (3 or 4) to maximize engagement."
+    },
+    {
+      "art": "peacock with a selfie stick, its reflection twice the size, the original bird fading as the shot is taken",
+      "lore": "A copy without an original. The monetization of the self. Existence as performance.",
+      "n": 55,
+      "name": "THE INFLUENCER",
+      "power": "Simulacrum. Your card counts as having double value, but it disappears if touched (played on)."
+    },
+    {
+      "art": "moth irresistibly drawn toward a phone screen, Quest visible behind it, acorns scattered forgotten around it",
+      "lore": "Attention is the scarce resource. Outrage is the most efficient fuel. We are mining your focus.",
+      "n": 56,
+      "name": "THE ATTENTION ECONOMY",
+      "power": "Distraction: Force a player to skip their turn to \"doomscroll.\""
+    },
+    {
+      "art": "dog with a laser eye and mechanical legs, the biological and mechanical parts stitched together rather than replaced",
+      "lore": "Haraway's Manifesto. The boundary is dissolved. Embrace the hybrid. Without innocence.",
+      "n": 57,
+      "name": "THE CYBORG",
+      "power": "Upgrade: Add +1 to all your stats. You are no longer purely biological."
+    },
+    {
+      "art": "melting clock falling into a digital vortex, a die mid-roll visible, the doubles outcome approaching",
+      "lore": "History accelerates beyond prediction. The last invention we will ever make. Hope it likes us.",
+      "n": 58,
+      "name": "THE AI SINGULARITY",
+      "power": "Acceleration: Roll the die twice. If doubles, the game ends."
+    },
+    {
+      "art": "koala on a burning branch, the Die visible in the background ticking upward, ideology cards scattered around",
+      "lore": "The planet is on fire. Arguing about ideology while the house burns is a luxury.",
+      "n": 59,
+      "name": "THE CLIMATE CRISIS",
+      "power": "Feedback Loop: The pressure on the Quest Die increases by 1 every turn automatically."
+    },
+    {
+      "art": "cockroach in tactical gear surrounded by supplies, watching the Climate Crisis card tick upward through a periscope",
+      "lore": "The fantasy of individual survival. Collapse is just an opportunity to finally use your gear.",
+      "n": 60,
+      "name": "THE PREPPER",
+      "power": "Bunker Down: You are immune to \"Global\" effects. You survive alone."
+    },
+    {
+      "art": "sheep and shepherds at a round table, the commons behind them visibly green and growing, no tragedy visible",
+      "lore": "Beyond state and market. Communities can manage resources without tragedy. Ostrom's Law.",
+      "n": 61,
+      "name": "THE COMMONS",
+      "power": "Governance: If players agree, everyone draws 1 card."
+    },
+    {
+      "art": "penguin showing blueprints to a crowd, copies being made by everyone simultaneously, all slightly different",
+      "lore": "Information wants to be free. Peer production. The Cathedral vs. The Bazaar.",
+      "n": 62,
+      "name": "OPEN SOURCE",
+      "power": "Fork: Copy any card in play and modify it. It belongs to everyone."
+    },
+    {
+      "art": "earthworm carefully tending a seedling, measuring its height against yesterday's mark, a very small margin of improvement visible",
+      "lore": "Better today than yesterday. No revolution, just compounding improvement. The modest revolution.",
+      "n": 63,
+      "name": "PROTOPIA",
+      "power": "Iteration: Improve a card's stat by +1 permanently."
+    },
+    {
+      "art": "tardigrade floating in space, surrounded by competing certainties it is calmly dissolving, one star marked UNCLEAR",
+      "lore": "Knowing the limits of what you know. The only honest position in a chaotic world. Stay fluffy.",
+      "n": 64,
+      "name": "EPISTEMIC HUMILITY",
+      "power": "I Don't Know: Cancel a \"Truth\" claim or Dogma."
+    },
+    {
+      "art": "yellow rabbit holding every possible card simultaneously, several already on fire, one becoming a different card mid-hold",
+      "lore": "Professional Reality-Wrestler. Don't trust him. Especially not now.",
+      "n": 65,
+      "name": "UNCLE FRIZZLEBOB",
+      "power": "The Joker: Counts as any card. Or destroys any card. You decide."
+    },
+    {
+      "art": "robotic scissors mid-cut through a playing card, the two halves already beginning to mean different things",
+      "lore": "The ultimate tool of the collage artist. Deconstruct to reconstruct.",
+      "n": 66,
+      "name": "THE SCISSORS",
+      "power": "Cut the Narrative: Physically cut a card in half (or pretend to). The card is destroyed."
+    },
+    {
+      "art": "enormous red button with a warning triangle, a hand approaching it, no hesitation in the posture",
+      "lore": "The BS Button. Use liberally.",
+      "n": 67,
+      "name": "BLÖDSINN! BUTTON",
+      "power": "Nonsense: Play instantly when someone takes the game too seriously. Pause the game. Laugh."
+    },
+    {
+      "art": "glowing die covered in runes floating above the table, every card mid-flight in anticipation of the roll. Mood: terminal randomness.\n\n---",
+      "lore": "Chance is the only ruler.",
+      "n": 68,
+      "name": "THE KAYFABIZARRO DIE",
+      "power": "Chaos: Roll a die. 1-3: Nothing happens. 4-6: Everything changes (swap all hands)."
+    }
+  ],
+  "deckId": "ideology_wrestling",
+  "title": "George's Ideology-Wrestling Kayfabizarro Komik Kards — A Field Guide to the War for Your Mind (Version 4.1 Unstable)"
+}

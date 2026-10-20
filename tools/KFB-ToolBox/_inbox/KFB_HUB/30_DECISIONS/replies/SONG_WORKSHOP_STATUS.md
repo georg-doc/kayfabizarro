@@ -366,3 +366,26 @@ Danach Writers' Room auf BESTÄTIGT setzen.
 **Writers' Room:** noch nicht umgestellt. Nach Georgs OK werden die Songs von „60 Decks“ auf „Signatur-Decks“ umgestellt; die alten Einträge bleiben als Historie erhalten.
 
 **Nächster Schritt:** Georg prüft die 25 Vorschläge und klärt die MedKayfab-Frage.
+
+## §15 · 20.10.2026 · Signatur-Decks freigegeben, Writers' Room umgestellt
+**Georg:** „ja, gefällt mir – können wir so machen“.
+
+**Umgesetzt:**
+- **Writers' Room:** 70 Songs. Davon sind 62 Signatur-Songs (Bewohner BESTÄTIGT, je Song ein Feld `signature`); 10 neue Decks samt Karten (Welle 3 „Signatur neu“).
+- **Welle 8 „Varianten später“:** 8 Decks. Ihre bisherige Figur hat jetzt ein eigenes Signatur-Deck; *What Work Was For* bleibt Normans Zweitdeck.
+- **Zuhause/Meta:** Wo die Figur gewechselt hat, sind Zuhause und Meta mit „(Vorschlag)“ markiert. Die alte Belegung steht unter `resident.previous`.
+- **Seite:** Version 3, mit den Wellen 3 und 8 als Filter.
+- **Export:** `WRITERS_ROOM_R1/export_2026-10-20c` mit 185 Dokumenten; Karten 70/70 MATCH.
+- **Prüfung:** Signatur-Check 62/62 ohne Abweichung.
+
+**Alignment-Konflikte:** #1–#7 sind damit aufgelöst. Offen bleibt nur die Katana-Notiz.
+
+**Nächster Schritt:** Texte schreiben, zuerst die Piloten:
+1. Metropolis r6a fertigstellen (Combat Mech);
+2. BBBW und Protopia nach Klartext-Regeln überarbeiten; Protopia hat jetzt 4GTN Forgotten als Bewohner.
+
+Danach Batches über die Signatur-Songs, zuerst die 10 neuen.
+
+**Offene Fragen an Georg:**
+- MedKayfab: eigenes Ensemble oder Varianten?
+- Was passiert mit dem sensiblen Bücher-Deck?

@@ -5,7 +5,7 @@
 - One figure (or a fixed duo) gets exactly one signature deck, and no deck is used twice. A script checks both.
 - FrizzleBob is the meta figure and player avatar, so he gets no signature deck.
 - **Basis** column: `BESTÄTIGT` is carried over from the confirmed resident list (60 set); `GEORG…` comes from Georg's statements in chat; `VORSCHLAG` is a WS-Song proposal for Georg to decide.
-- The Writers' Room is **not** switched over yet. That happens after Georg's OK.
+- **Confirmed by Georg on 20.10.** ("yes, I like it, we can do it like that"). The Writers' Room has been switched over, export `WRITERS_ROOM_R1/export_2026-10-20c`.
 
 ## Signature decks (62 figures)
 | # | Figure | Model | Deck | Cards | in the 60 | Basis | Why |

@@ -108,3 +108,17 @@
 
 - **Kant:** the registry has no deck of its own for him. He appears only as the card "Kantian Noumena Blindfold" in *The Pharaoh Script* and in the Morale & Ethics material.
 - **Consequence for the Caveman:** he does not have to take the Lorekeeper's deck. Each philosophy deck can get its own figure.
+
+## Status 20.10. (night, 2): resolved through the signature decks (Georg: "I like it")
+| # | Result |
+|---|---|
+| #1 | 4GTN → *Forget Utopia* |
+| #2 | 4GTN Forgotten → *Embrace Protopia* |
+| #3 | Goth Girl → *Project Gateway Kayfabe* |
+| #4 | FrizzleBob = player avatar; Lorekeeper → *Mission Control* |
+| #5 | Norman → *Bullshit Jobs* (+ *What Work Was For*) |
+| #6 | Caveman → *Philosopher Dungeon Raid* |
+| #7 | Toy Soldier → *Power Pyramid Plumbing* |
+| Uniqueness | 62 signature decks, no figure used twice |
+
+Still open: the Katana note for 4GTN (styleNote of 17.10.).

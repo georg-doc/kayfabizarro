@@ -1,0 +1,131 @@
+{
+  "cardCount": 56,
+  "critic": {
+    "critic": "claude-sonnet-5/blind-subagent",
+    "flags": [
+      {
+        "beat": 20,
+        "observation": "\"Goldberg's shoulder smashed into the ring-post\" names a real wrestler inside an otherwise fictional animal cast, a sudden drop into real-world specificity."
+      },
+      {
+        "beat": 29,
+        "observation": "\"Stay Fluffy, Folks!\" follows the quiet \"Close the lid gently.\" with an upbeat sign-off, a tone swing right at the close."
+      },
+      {
+        "beat": 13,
+        "observation": "\"And there is a canvas bag in the corner nobody opens.\" breaks the animal-teacher pattern built across prior beats, bringing in an inanimate object rather than an animal body."
+      },
+      {
+        "beat": 17,
+        "observation": "\"And one big eye on the shelf.\" again drops the animal cast for an object, forming with beat 13 a mixed roster of teachers."
+      },
+      {
+        "beat": 7,
+        "observation": "\"That one is mine. The others are on loan.\" states the performer's whole situation in two short sentences."
+      },
+      {
+        "beat": 8,
+        "observation": "\"the opossum by the crayons, staggering from a tiny tap\" renders the wrestling sell technique as a literal animal behavior, a concrete image for an abstract term."
+      }
+    ],
+    "questions": {
+      "fractalCards": {
+        "answer": "partly",
+        "observation": "Each card is voiced through an animal body performing its trait, but the card text itself describes the technique in third person rather than the animal making a first-person claim about itself."
+      },
+      "individuality": {
+        "answer": "yes",
+        "observation": "Each wrestling concept rides a specific animal body, \"The kangaroo next to him swears by this one\" for the thigh slap, \"The donkey answers with a thud\" for the stomp, a concrete device rather than a generic trope list."
+      },
+      "outro": {
+        "answer": "partly",
+        "observation": "\"Close the lid gently.\" lands as tender, but the following \"Stay Fluffy, Folks!\" turns the close into an upbeat sign-off, a tone jump right after the quiet final image."
+      },
+      "performer": {
+        "answer": "yes",
+        "observation": "The voice carries resignation and dry humor: \"I'm plastic. Performing is the whole job.\" and \"That one is mine. The others are on loan.\" give it a steady, specific personality."
+      },
+      "resident": {
+        "answer": "yes",
+        "observation": "The figure speaks to \"Whoever holds the box.\" from inside its own toy-box world, performing whether \"nobody is\" there or someone is, not reciting facts outward to an audience."
+      },
+      "standalone": {
+        "answer": "yes",
+        "observation": "Every named item gets a plain-language gloss right where it lands, as with \"high-flying moves, because audiences cheer for that,\" so the jargon rarely leans on outside knowledge."
+      },
+      "storyBetweenCards": {
+        "answer": "yes",
+        "observation": "The cards move from character types through selling tricks and production fakery to a turn, \"Then one night a head really cracks.\", then to the finisher and close, a real arc, not a flat list."
+      },
+      "transferable": {
+        "answer": "no",
+        "observation": "The wrestling vocabulary, the animal cast, and the toy-box frame are bound together closely enough that none of it reads as a label sitting on top of a different subject."
+      }
+    },
+    "recommendation": "READY_FOR_WS0",
+    "revision": "r5a",
+    "schema": "kfb.song-critic.v3"
+  },
+  "deckId": "big_bad_brain_wrestling",
+  "deckType": "Wrestling psychology satire",
+  "editorNote": "Bewohner-Performance r5a (R4.2). Stage-Fassung r4a/r4b bleibt im Repo. Dossier/Songlines: replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/",
+  "flags": [],
+  "form": "resident monologue in the toy box: the figure swaps heads and each head is a card cutting its own promo; the card-art animals of the toy box are the rest of the roster; ends on the jobber's only choice",
+  "gate": {
+    "cards": "20/20 Karten",
+    "chars": 3283,
+    "exit": 0,
+    "lyricsSha": "d2aaff93c45844213896977966ac6007dd505f887355d92aaf34668a20c6c59c",
+    "ranAt": "2026-10-20T23:30:00Z",
+    "report": "exit 0\nsong_gate R4.2 lyrics · big_bad_brain_wrestling.r5a.suno.txt · 3283 Zeichen · 20/20 Karten · Intro 2 · Brücken 2 · Outro 2 · Performer-Einschübe 21 · R4-Zuordnung\nWARN A4: Karte 4: Kartenteil 73 Zeichen (Richtwert 80-95): 'When defeated, you may choose who defeats you. Tha'\nWARN A4: Karte 14: Kartenteil 73 Zeichen (Richtwert 80-95): 'The Stomp Punch: stomping on the mat when punching'\nWARN A4: Karte 22: Kartenteil 78 Zeichen (Richtwert 80-95): 'The Snake Bag: the bag has a live snake. Terrify t'\nWARN A4: Karte 45: Kartenteil 61 Zeichen (Richtwert 80-95): 'The Booker: the ending is pre-planned. You are jus'\nWARN A4: Karte 49: Kartenteil 60 Zeichen (Richtwert 80-95): \"The Hard Cam: if the camera didn't see it, it didn\"\nWARN A4: Karte 35: Kartenteil 96 Zeichen (Richtwert 80-95): \"The Real Injury: Goldberg's shoulder smashed into \"\nWARN A4: Karte 41: Kartenteil 77 Zeichen (Richtwert 80-95): 'The Finisher: the Leg Drop. The most important mom'\nWARN A2: eigener Text (Rahmen + Performer) 49% aller Wörter (Richtwert <= 30%)\nWARN C11: Wort 'lid' 3x im eigenen Text\nWARN C11: Wort 'head' 5x im eigenen Text\nWARN C11: Wort \"it's\" 3x im eigenen Text\nWARN C11: Wort 'click' 3x im eigenen Text\nREVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [1, 2, 3, 4, 9, 13, 14, 11, 17, 22, 45, 46, 49, 30, 31, 35, 55, 41, 42, 56]\nREVIEW B6: Performer-Text in 100% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)\nPASS\nexit 0\nsong_gate R4.2 style · big_bad_brain_wrestling.r5a.style.txt · Familie A rock · 2 Variante(n) · 357, 298 Zeichen\nPASS",
+    "version": "R4.2"
+  },
+  "genreTag": "comedy",
+  "lyrics": "[Spoken Word]\n\nLid's open. A kid is back, or you are, or nobody is and the box just creaked. I perform anyway. I'm plastic. Performing is the whole job.\n\nBig Bad Brain Wrestling, it says on the lid. One body, four heads, a cardboard ring. Every head is somebody else, and every one of them swears the fight is real.\n\nClick. Golden head. The Babyface: high-flying moves, because audiences cheer for that. A slave to approval.\n\nClick. Sneer head. The Heel: brutal, sneaky moves. If they aren't booing, you aren't doing your job.\n\nClick. Sunglasses. The Tweener: the audience decides to cheer for you on their own. You don't ask for it.\n\nAnd the head that came in the package. The Jobber: isolated and picked apart. You exist to make the other guy look good.\n\nThat one is mine. The others are on loan.\n\nMy teacher is the opossum by the crayons, staggering from a tiny tap: The Master Seller: maintain the illusion of peril. Limp to the ring. Make them believe.\n\nThe kangaroo next to him swears by this one: The Thigh Slap: slapping the thigh when kicking. A loud sound suggests impact. An audio lie.\n\nThe donkey answers with a thud: The Stomp Punch: stomping on the mat when punching. Kinetic misdirection.\n\nThe chicken overdoes it, every time. The Oversell Clown: reacting to an attack far beyond reality. A mockery of the sport.\n\nThe axolotl keeps her mask on, even in the dark. The Sacred Mask: kayfabe sacred to their identity. The biggest identifier. Never remove it.\n\nAnd there is a canvas bag in the corner nobody opens. The Snake Bag: the bag has a live snake. Terrify them before the match starts.\n\nWho decides how it ends? Look up. Whoever holds the box.\n\nOr the spider in the suit, pulling strings: The Booker: the ending is pre-planned. You are just a puppet.\n\nThe cricket calls the next move into my ear. The Spot Caller: calling moves in the ring. A basic outline, filled in with sweat.\n\nAnd one big eye on the shelf. The Hard Cam: if the camera didn't see it, it didn't happen.\n\nMost nights it's this one. The Empty Arena: taped in empty arenas, pausing for a pop that never comes. Surreal.\n\nSo the chameleons on the wall pretend to be a crowd. The Green Screen Crowd: a failed attempt to hide the emptiness. Audio sweetening on a lie.\n\nThen one night a head really cracks. The Real Injury: Goldberg's shoulder smashed into the ring-post. The crowd goes nuts: it's real.\n\nThe cop in the corner is writing me up for telling you this. The Kayfabe Police: protecting the business. Keep the secrets secret, or get fired.\n\n[Bell]\n\nHere it comes. The Finisher: the Leg Drop. The most important moment. If this hits, go home.\n\nIt hits. And the zebra still kicks out, The False Finish: the art of the near-fall, kicking out at two point nine nine, crowd vertical.\n\nSo I lie down the way the phoenix does. The Retirement Match: leaning on the fourth wall. Rising, and falling. See you next season.\n\nOne line on the package is still true. When defeated, you may choose who defeats you. That is your only control.\n\nSo whoever opened the lid: it's you. You knew the ending and stayed for the near-fall anyway.\n\nOut there they swear it's real. In here it says plastic on the label, and I still give you everything. Close the lid gently. All my heads are in here.\n\nStay Fluffy, Folks!",
+  "needsGate": false,
+  "order": 2,
+  "origin": "pilot",
+  "performer": null,
+  "rating": 9,
+  "resident": {
+    "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+    "confirmedBy": "Georg 20.10.: Signatur-Decks R1 freigegeben („gefällt mir, können wir so machen“)",
+    "home": "Spielzeugkiste als Ring, Pappschilder an den Seilen",
+    "meta": "Die Figur wechselt die Köpfe und wird jedes Mal eine andere Karte, die ihre Promo hält – der Jobber, der Heel, der Babyface sind dieselbe Plastikhand.",
+    "musicDirection": "Glam-Rock-Stomp",
+    "performers": [
+      {
+        "asset": "KayKit_Mystery_Series6/6 - December 2023 - Action Figure · Köpfe B/C/D",
+        "model": "ActionFigure",
+        "role": "Wrestling-Actionfigur mit austauschbaren Köpfen = austauschbaren Gimmicks"
+      }
+    ],
+    "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht",
+    "status": "BESTÄTIGT"
+  },
+  "revision": "r5a",
+  "signature": {
+    "basis": "BESTÄTIGT",
+    "figure": "Action Figure",
+    "set": "SIGNATURE_DECKS_R1",
+    "why": "Wrestling-Archetypen als Actionfigur"
+  },
+  "status": "critic_ready",
+  "styleA": "Glam rock stomp at 118 BPM: pounding floor toms and handclaps on two and four, fuzzed power chords, honky-tonk piano, booming bass, a toy piano doubling the riff, a short gang shout on the big hits. One weathered male tenor speak-singing close to the mic, tired and warm, cracking upward on the peaks. Roomy drums, saturated tape, dry intimate vocal on top.",
+  "styleB": "Boom-bap hip-hop at 100 BPM: dusty swung drums, a looped vinyl brass sample, upright bass, scratched stabs, plastic clicks as percussion, sparse Rhodes chords. One gravelly male voice, conversational and late on the beat, half laughing at himself. Crisp vocal, long drop-outs before the last lines.",
+  "styleDirection": "",
+  "suno": {
+    "chosenStyle": "A",
+    "excludeStyles": "",
+    "notes": "",
+    "styleInfluence": 50,
+    "vocalGender": "",
+    "weirdness": 50
+  },
+  "takes": [],
+  "title": "Big Bad Brain Wrestling",
+  "updatedAt": "2026-10-20T23:30:00Z",
+  "updatedBy": null,
+  "viral": 9,
+  "wave": 0
+}

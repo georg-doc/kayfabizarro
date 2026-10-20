@@ -1,0 +1,139 @@
+{
+  "cardCount": 56,
+  "critic": {
+    "critic": "claude-sonnet-5/blind-subagent",
+    "flags": [
+      {
+        "beat": 16,
+        "observation": "\"A pigeon, an emu, a duck and a crow\" are named as a group here, yet \"pigeon\" and \"crow\" reappear as solo characters in beats 21 and 22."
+      },
+      {
+        "beat": 21,
+        "observation": "\"The city pigeon walks the crossings\" reuses the word \"pigeon\" from the Saturday gathering four beats earlier, leaving it unclear if this is the same bird."
+      },
+      {
+        "beat": 22,
+        "observation": "\"the crow, who never forgets a face\" reuses a name from the Saturday gathering's four birds, again leaving it unclear whether this is the same crow returning."
+      },
+      {
+        "beat": 29,
+        "observation": "\"Stay Fluffy, Folks!\" lands as a generic catchphrase sign-off, breaking from the specific, earthy voice built through wheelbarrow, compost and gate imagery all the way through."
+      },
+      {
+        "beat": 10,
+        "observation": "From here through many following beats the gardener narrates animal maxims with little personal reaction, risking her voice thinning into a list of quotations."
+      }
+    ],
+    "questions": {
+      "fractalCards": {
+        "answer": "yes",
+        "observation": "Each animal states a thesis that mirrors its own trait: the badger's tunnel habit becomes \"One repair a week is fifty-two a year,\" the mole's blind digging becomes \"Nobody will clap.\""
+      },
+      "individuality": {
+        "answer": "yes",
+        "observation": "Each animal's maxim grows out of its own behavior (badger's tunnel, mole's blind digging, turtle's slow pace), so the satire of doom-scrolling versus small repair stays tied to a specific cast."
+      },
+      "outro": {
+        "answer": "partly",
+        "observation": "The closing callback to the gate and lettuce lands, but the final tag \"Stay Fluffy, Folks!\" breaks from the earthy, specific voice into a generic catchphrase register."
+      },
+      "performer": {
+        "answer": "yes",
+        "observation": "She is dry and sardonic, grounded in physical objects like a trowel, compost heap and squeaky gate, and narrates with a confident private logic rather than addressing an audience directly."
+      },
+      "resident": {
+        "answer": "yes",
+        "observation": "She speaks from inside her own allotment, gate, wheelbarrow, compost, shed, to whoever happens to be there, never breaking into a generic stage-facing stand-up address."
+      },
+      "standalone": {
+        "answer": "yes",
+        "observation": "The gardener addresses whoever may or may not be at her gate, uses her own wheelbarrow and lettuce as recurring props, and closes with a callback, so no outside context is needed to follow it."
+      },
+      "storyBetweenCards": {
+        "answer": "yes",
+        "observation": "The cards move from defining incremental improvement, through small individual repairs, to a call for a gathering, the gathering itself, and a closing meditation on patience and no applause."
+      },
+      "transferable": {
+        "answer": "no",
+        "observation": "The maxims are built tightly around incremental-improvement themes (process, repair, showing up), so moving this to another topic would need new content for nearly every animal, not just a few words."
+      }
+    },
+    "recommendation": "READY_FOR_WS0",
+    "revision": "r5b",
+    "schema": "kfb.song-critic.v3"
+  },
+  "deckId": "embrace_protopia",
+  "deckType": "Protopian action-invitation deck",
+  "editorNote": "Bewohner-Performance r5b (R4.2). Stage-Fassung r4a/r4b bleibt im Repo. Dossier/Songlines: replies/SONGS_WORKSHOP_R1/embrace_protopia/",
+  "flags": [],
+  "form": "resident monologue in the allotment, in scenes (plan, repair, attention, who knows how, gathering, strangers, dusk, price): each animal from the card art lives its card – its own nature is the claim; neighbours react to each other",
+  "gate": {
+    "cards": "23/23 Karten",
+    "chars": 4258,
+    "exit": 0,
+    "lyricsSha": "dfa5b121ac2df109192b5ea2af6d3fc9e07e87d15096fa7deae3ea80d2e408d8",
+    "ranAt": "2026-10-20T23:30:00Z",
+    "report": "exit 0\nsong_gate R4.2 lyrics · embrace_protopia.r5b.suno.txt · 4258 Zeichen · 23/23 Karten · Intro 2 · Brücken 1 · Outro 2 · Performer-Einschübe 23 · R4-Zuordnung\nWARN A4: Karte 1: Kartenteil 76 Zeichen (Richtwert 80-95): 'the future is a process of slow, incremental impro'\nWARN A4: Karte 3: Kartenteil 70 Zeichen (Richtwert 80-95): 'make the first version bad on purpose. Bad is how '\nWARN A4: Karte 4: Kartenteil 65 Zeichen (Richtwert 80-95): 'Do not finish it. Improve it once, then leave it b'\nWARN A4: Karte 5: Kartenteil 39 Zeichen (Richtwert 80-95): 'one broken thing close enough to touch.'\nWARN A4: Karte 6: Kartenteil 74 Zeichen (Richtwert 80-95): 'A repair you can finish this week, not a revolutio'\nWARN A4: Karte 7: Kartenteil 41 Zeichen (Richtwert 80-95): 'small fixes do not trend. They just hold.'\nWARN A4: Karte 8: Kartenteil 38 Zeichen (Richtwert 80-95): 'One repair a week is fifty-two a year.'\nWARN A4: Karte 9: Kartenteil 50 Zeichen (Richtwert 80-95): 'take the one breath the feed is built to deny you.'\nWARN A4: Karte 15: Kartenteil 64 Zeichen (Richtwert 80-95): 'real know-how is often badly dressed and lives thr'\nWARN A4: Karte 17: Kartenteil 60 Zeichen (Richtwert 80-95): 'Turn watching into showing up. Name a time, a plac'\nWARN A4: Karte 19: Kartenteil 125 Zeichen (Richtwert 80-95): 'A pigeon, an emu, a duck and a crow huddled over a'\nWARN A4: Karte 18: Kartenteil 53 Zeichen (Richtwert 80-95): 'split a problem the way your ancestors raised a ba'\nWARN A4: Karte 26: Kartenteil 71 Zeichen (Richtwert 80-95): 'Lower the bar to contact. Most cooperation starts '\nWARN A4: Karte 27: Kartenteil 76 Zeichen (Richtwert 80-95): 'they might not respond. Your nervous system thinks'\nWARN A4: Karte 33: Kartenteil 75 Zeichen (Richtwert 80-95): 'Write down what you actually saw, not what the hea'\nWARN A4: Karte 42: Kartenteil 68 Zeichen (Richtwert 80-95): 'Run a tiny version. Low stakes, real feedback, no '\nWARN A4: Karte 43: Kartenteil 65 Zeichen (Richtwert 80-95): 'improvement often looks like mild disobedience to '\nWARN A4: Karte 47: Kartenteil 66 Zeichen (Richtwert 80-95): 'there is no final version. The cost is showing up '\nWARN A4: Karte 55: Kartenteil 65 Zeichen (Richtwert 80-95): 'Nobody will clap. Start anyway. The clapping was n'\nWARN A4: Karte 56: Kartenteil 57 Zeichen (Richtwert 80-95): 'Forget the brochure. Ignore the loop. Pick up the '\nWARN A2: eigener Text (Rahmen + Performer) 63% aller Wörter (Richtwert <= 30%)\nWARN C11: Wort 'gate' 4x im eigenen Text\nWARN C11: Wort 'street' 3x im eigenen Text\nWARN C11: Wort 'garden' 3x im eigenen Text\nREVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 15, 17, 19, 18, 26, 27, 33, 42, 43, 46, 47, 55, 56]\nREVIEW C9: Decktitel 'Protopia Sketchbook — Deck C: EMBRACE' nur teilweise genannt: [(2, ['protopia'])] (erlaubt)\nREVIEW B6: Performer-Text in 100% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)\nPASS\nexit 0\nsong_gate R4.2 style · embrace_protopia.r5b.style.txt · Familie A afro · 2 Variante(n) · 389, 288 Zeichen\nPASS",
+    "version": "R4.2"
+  },
+  "genreTag": "education",
+  "lyrics": "[Spoken Word]\n\nMind the wheelbarrow. If you came in through the gate, grab a trowel. If nobody came, I'll talk to the lettuce. It listens better than the news.\n\nOut on the street, every living room has two armchairs, one says doom, one says saved. Mine went on the compost. Some call what's left protopia. I call it the next small job.\n\nThe beaver, who builds his dam one stick a night, has drawn the whole future on one page and taps it: the future is a process of slow, incremental improvement you participate in.\n\nSo the raccoon steals the eraser, rubs out half of it, and grins: draw the next step in pencil. Pencil means you expect to be wrong and stay anyway.\n\nWhich offends the possum, who plays dead at every meeting, then comes back to life with his crossed-out map: make the first version bad on purpose. Bad is how you know it is real.\n\nAbove them the woodpecker hammers the same hole in the plum tree, ninth spring running: Do not finish it. Improve it once, then leave it better and open.\n\nSo we stop drawing and fix something.\n\nThe iguana stays cold-blooded while the city smokes behind him and oils my gate: one broken thing close enough to touch.\n\nNot world peace. A hinge. A repair you can finish this week, not a revolution you can only announce.\n\nThe turtle carries her house on her back and never hurries; she trims the fence in the rain: small fixes do not trend. They just hold.\n\nThe badger, who digs the same tunnel every year, lays a checkmark on a tile, then another: One repair a week is fifty-two a year.\n\nBut the radio starts shouting. The sloth in the apple tree, slowest animal alive, breathes out slow and blue: take the one breath the feed is built to deny you.\n\nNext door the boar, who roots up every garden on the street, has also fixed every garden on the street: Authority is overrated, proximity is underrated. Ask the one who actually does the thing.\n\nHe sends me to the capybara on the bench, friends with every species, interviewed by none: real know-how is often badly dressed and lives three doors down.\n\nThe pelican, who will carry anything in his beak, carries a staple gun to my shed: Turn watching into showing up. Name a time, a place, a task. Saturday, nine. Bring gloves.\n\nSo on Saturday: A pigeon, an emu, a duck and a crow huddled over a coffee carafe: the first small, clumsy gathering. Clumsy is the entry fee. Four birds, and not one of them flies in formation.\n\nThen the octopus turns up late, one hammer in every arm, and we split a problem the way your ancestors raised a barn.\n\nThe hedgehogs at the hedge keep their spines up, until one lowers them for a tiny hi. Lower the bar to contact. Most cooperation starts embarrassingly small.\n\nThe quokka, who smiles at everyone, rings the big bell anyway, and nobody comes: they might not respond. Your nervous system thinks that is death. It is not.\n\nAt dusk the bear, who sleeps through every news cycle, writes in his notebook with yesterday's papers in the compost: Write down what you actually saw, not what the headline said you would see.\n\nThe city pigeon walks the crossings all day, so she paints one tiny stripe on the worst one: Run a tiny version. Low stakes, real feedback, no permission needed.\n\nAnd the crow, who never forgets a face, fixes the panel marked do not repair while the guard looks away: improvement often looks like mild disobedience to a stuck system.\n\nThe toad sits between the two armchairs under a question-mark umbrella, getting rained on, smiling. Toads like rain: trade the warm baths of hopeless and handled for the cold shower of it depends on us.\n\nThe camel, who stores water for the long road, lays one brick for every week on the calendar: there is no final version. The cost is showing up again next week.\n\nAnd the mole digs on in the dark, where no one could clap even if they wanted to: Nobody will clap. Start anyway. The clapping was never the point.\n\nThen a golden paw hands me a pen: Forget the brochure. Ignore the loop. Pick up the pencil.\n\nDoom gets the subscriptions. Rescue gets the tickets. A garden with a squeaky gate earns nothing, which is how you know it's yours.\n\nIf you're still at the gate, gloves are on the wheelbarrow. If you're not, the lettuce and I start without you.\n\nStay Fluffy, Folks!",
+  "needsGate": false,
+  "order": 3,
+  "origin": "pilot",
+  "performer": null,
+  "rating": 9,
+  "resident": {
+    "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+    "confirmedBy": "Georg 20.10.: Signatur-Decks R1 freigegeben („gefällt mir, können wir so machen“)",
+    "home": "Maker-Space im Moos: Werkbank, Reparaturcafé (Vorschlag)",
+    "meta": "Der vergessene Vorgänger repariert beim Reden; die Karten liegen als Werkzeuge herum und erklären sich, wenn er sie braucht. (Vorschlag)",
+    "musicDirection": "Highlife, sonnig",
+    "performers": [
+      {
+        "asset": "KayKit_Mystery_Series6/7 - January 2026 - 4GTN · Forgotten",
+        "model": "4GTN_Forgotten",
+        "role": "Vorläufermodell, 'guter' Zwilling im Protopia-Maker-Space"
+      }
+    ],
+    "previous": {
+      "home": "Kleingarten mit Erdbeet, Schubkarre und Werkbank",
+      "meta": "Sie arbeitet beim Reden; die Karten liegen als Werkzeuge und Samen herum und erklären sich selbst, wenn sie gebraucht werden.",
+      "performers": [
+        {
+          "asset": "KayKit_Mystery_Series6/12 - June 2026 - Farmers · Textur A",
+          "model": "Farmer_A",
+          "role": "Gärtnerin, die alles im Kleinen repariert"
+        }
+      ],
+      "status": "BESTÄTIGT"
+    },
+    "source": "Signatur-Decks R1 (SIGNATURE_DECKS_R1.json)",
+    "status": "BESTÄTIGT"
+  },
+  "revision": "r5b",
+  "signature": {
+    "basis": "GEORG-KANON",
+    "figure": "4GTN Forgotten",
+    "set": "SIGNATURE_DECKS_R1",
+    "why": "Vorläufer/guter Zwilling im Protopia-Maker-Space; Tausch #2 wartet auf Georgs Ja"
+  },
+  "status": "critic_ready",
+  "styleA": "Ghanaian highlife at 112 BPM: two interlocking clean electric guitars, bright trumpet and saxophone riffs, bubbling melodic bass, bell pattern, congas, shaker, light kit, a hand trowel scraping on the offbeat. One warm female alto, talking while she works, a little out of breath, landing each line with a smile; short group answers on a few phrases. Sunny live-room mix, nothing polished.",
+  "styleB": "Cumbia at 104 BPM: accordion lead, guacharaca scraper, rubbery bass, timbales and congas, offbeat piano, a squeaky wooden rattle. One bright female voice, chatty and quick, with soft laughs between lines. Warm tape mix, room for the voice, a short accordion break before the last section.",
+  "styleDirection": "",
+  "suno": {
+    "chosenStyle": "A",
+    "excludeStyles": "",
+    "notes": "",
+    "styleInfluence": 50,
+    "vocalGender": "",
+    "weirdness": 50
+  },
+  "takes": [],
+  "title": "Protopia Sketchbook — Deck C: EMBRACE",
+  "updatedAt": "2026-10-20T23:30:00Z",
+  "updatedBy": null,
+  "viral": 9,
+  "wave": 0
+}

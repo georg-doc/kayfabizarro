@@ -1,0 +1,398 @@
+{
+  "cards": [
+    {
+      "art": "needle-thin scout ship with cockpit eye",
+      "lore": "The first thing in any system that matters. Everything awful that follows begins with their report.",
+      "n": 1,
+      "name": "THE NEEDLE (Scout)",
+      "power": "Play to view opponent's hand. If caught, discard your entire deck."
+    },
+    {
+      "art": "butterfly-winged starship",
+      "lore": "Piloted by a \"young\" Vael—which means it's only been alive for a few centuries.",
+      "n": 2,
+      "name": "THE WHISPER (Vael Variant)",
+      "power": "Bypass all electronic traps. The ship literally out-vibes the radar."
+    },
+    {
+      "art": "snarling-jaw warship",
+      "lore": "Ossian scouts interpret \"survey the system\" as \"establish the Hegemony's claim by shooting the scenery.\"",
+      "n": 3,
+      "name": "THE FANG (Ossian Variant)",
+      "power": "Deal 2 damage to a neutral target just to establish dominance."
+    },
+    {
+      "art": "dart-fast courier vessel",
+      "lore": "The galaxy's nervous system, crewed by fatalists hauling diplomatic secrets worth more than their lives.",
+      "n": 4,
+      "name": "THE ARROW (Courier)",
+      "power": "Move an objective instantly. The ship takes 1 damage per transit until it vaporizes."
+    },
+    {
+      "art": "cargo-laden freighter hulk",
+      "lore": "The circulatory system of a dying galaxy. If they stop arriving, the sector is already dead.",
+      "n": 5,
+      "name": "THE HAULER (Freighter)",
+      "power": "Generate 3 Resource tokens. Extrapolate opponent's strategy based on their discards."
+    },
+    {
+      "art": "agile escort fighter",
+      "lore": "Where junior officers learn to juggle combat, politics, and broken engines before they inevitably get court-martialed.",
+      "n": 6,
+      "name": "THE LANCE (Escort)",
+      "power": "Block one attack against a Hauler. Farm mid-level management stress."
+    },
+    {
+      "art": "stub-nosed warship",
+      "lore": "Pure, unadulterated aggression shoved into an undersized hull.",
+      "n": 7,
+      "name": "THE REAVER (Ossian Lance)",
+      "power": "Double attack power, half defense. Cannot retreat. Ever."
+    },
+    {
+      "art": "dollar-bristling cruiser",
+      "lore": "Why fire a torpedo when you can just delete the enemy's bank account from orbit?",
+      "n": 8,
+      "name": "COMMERCE PROTECTOR (Dreshkai Lance)",
+      "power": "Cancel opponent's attack by burying them in legal injunctions and electronic warfare."
+    },
+    {
+      "art": "vortex-belching capital warship",
+      "lore": "A floating geopolitical argument. Too expensive to lose, too massive to hide.",
+      "n": 9,
+      "name": "THE THRONE (Capital Ship)",
+      "power": "Instantly claim a system. Opponent must spend 5 turns complaining to the galactic UN."
+    },
+    {
+      "art": "cathedral-spired dreadnought",
+      "lore": "A ship with a kill-count so high it constitutes a distinct gravitational anomaly.",
+      "n": 10,
+      "name": "WARLORD-CLASS (Ossian Throne)",
+      "power": "Eradicate target system. Costs the industrial output of your entire hand."
+    },
+    {
+      "art": "city-mantled ark-world",
+      "lore": "A sovereign community in transit. The ultimate geopolitical headache for every border guard.",
+      "n": 11,
+      "name": "THE WORLD (Ark)",
+      "power": "Relocate your home base. Becomes politically immune to standard attacks."
+    },
+    {
+      "art": "ship-silhouetted-by-absence",
+      "lore": "Officially, it doesn't exist. Unofficially, it just overthrew your planetary government.",
+      "n": 12,
+      "name": "THE SHADOW (Ghost Ship)",
+      "power": "Execute an action completely off the record. If accused, deny everything."
+    },
+    {
+      "art": "green earth-like world ringed by warships",
+      "lore": "A paradise that everyone wants, resulting in an eternal, bloody stalemate. Only 1,200 exist; 49 caused wars.",
+      "n": 13,
+      "name": "THE CRADLE WORLD",
+      "power": "Generate infinite diplomatic disputes. Draw 2 conflict cards per turn."
+    },
+    {
+      "art": "choked industrial planet",
+      "lore": "Where civilizations dump their working class to breathe heavy metals and build empires.",
+      "n": 14,
+      "name": "THE FORGE WORLD",
+      "power": "Triple production speed, but discard 1 population card every turn."
+    },
+    {
+      "art": "dust-buried monoliths and reaching hands",
+      "lore": "The galaxy's archaeological record. What killed them is probably still down there waiting for you.",
+      "n": 15,
+      "name": "THE TOMB WORLD",
+      "power": "Draw a high-level Tech card. Flip a coin; on tails, your active crew dies horribly."
+    },
+    {
+      "art": "mushroom-blanketed planet",
+      "lore": "A Mycel biological weapon disguised as agriculture. Unstoppable, inevitable ecology.",
+      "n": 16,
+      "name": "THE BLOOM WORLD",
+      "power": "Terraforms target zone. No non-Mycel cards can be played here ever again."
+    },
+    {
+      "art": "asteroid-bolted spaceport",
+      "lore": "A cosmopolitan cesspool where bartenders have better geopolitical intel than four-star admirals.",
+      "n": 17,
+      "name": "THE VOID STATION",
+      "power": "Swap hands with an opponent in the neutral zone. Ignore all faction laws."
+    },
+    {
+      "art": "impossible cube-world fragmenting",
+      "lore": "The world that breaks the physics engine. Careers end here; legends begin here.",
+      "n": 18,
+      "name": "THE ANOMALY WORLD",
+      "power": "Roll a die. Whatever happens, the Dreshkai Insurance actuaries won't cover it."
+    },
+    {
+      "art": "octopus diplomat over orbital map",
+      "lore": "A legal dispute maintained for 12,000 years. Peace through mutual bureaucratic exhaustion.",
+      "n": 19,
+      "name": "OVERLAPPING CLAIM (Diplomatic Zone)",
+      "power": "Freeze target planet. No one can use it until a treaty is broken."
+    },
+    {
+      "art": "rhino union steward at megaphone",
+      "lore": "8,400 years ago, the working class struck fear into warlords. The only good thing the Hegemony ever did.",
+      "n": 20,
+      "name": "THE IRONWORKERS' COMPACT (Historical Site)",
+      "power": "Instigate a labor strike on opponent's Forge World. Production halts."
+    },
+    {
+      "art": "spacesuit fox meeting tentacle alien",
+      "lore": "Making civilizational choices with zero precedent. 17 successes, 9 wars, 2 dead crews. High risk of getting eaten.",
+      "n": 21,
+      "name": "FIRST CONTACT",
+      "power": "Introduce a new rule to the game. Neither player understands how it works yet."
+    },
+    {
+      "art": "cat-faced agent absconding with crate",
+      "lore": "The fine line between \"legitimate recovery\" and \"state-sponsored piracy.\"",
+      "n": 22,
+      "name": "THE RETRIEVAL",
+      "power": "Steal an artifact from opponent's discard pile. Claim it was yours all along."
+    },
+    {
+      "art": "rabbit and frog in cramped cockpit",
+      "lore": "Years in isolation treating phenomena as data points. They make terrible dinner guests.",
+      "n": 23,
+      "name": "THE LONG SURVEY",
+      "power": "Skip two turns. Return with a massive hand advantage and severe social anxiety."
+    },
+    {
+      "art": "badger sniper at podium-rally",
+      "lore": "Changing the course of history while leaving zero receipts. 60% of all politics is just this.",
+      "n": 24,
+      "name": "THE INTERVENTION",
+      "power": "Sabotage an opponent's play, completely off the record."
+    },
+    {
+      "art": "freighter dodging laser net",
+      "lore": "Because access is a right that force can deny, but cannot legitimate denying.",
+      "n": 25,
+      "name": "THE BLOCKADE RUN",
+      "power": "Force a delivery through an opponent's defense. Survive on sheer luck."
+    },
+    {
+      "art": "lone scout entering dark spiral",
+      "lore": "The charts end here. The win condition is simply coming back alive.",
+      "n": 26,
+      "name": "DEEP FRONTIER MISSION",
+      "power": "Draw blindly from the deck. You might win the game, you might instantly die."
+    },
+    {
+      "art": "drifting empty pod",
+      "lore": "Their final transmissions are the only data we have. We wish we didn't have them.",
+      "n": 27,
+      "name": "THE MISSING SURVEY TEAM",
+      "power": "Place an anomaly. Any opponent who lands here loses a turn to sheer dread."
+    },
+    {
+      "art": "cloaked figures around glowing dossier",
+      "lore": "The intel the six powers collectively agreed to be terrifying to exploit. Achieved exactly once in 12,000 years.",
+      "n": 28,
+      "name": "THE CLASSIFIED BRIEFING",
+      "power": "Lock down a piece of information. All six players must agree to reveal it (they won't)."
+    },
+    {
+      "art": "pink iris portal",
+      "lore": "Eight exist. One is natural. Seven show signs of engineering. The Vael refuse to elaborate.",
+      "n": 29,
+      "name": "STABLE TRANSIT POINT",
+      "power": "Teleport across the board instantly. No fuel cost."
+    },
+    {
+      "art": "pulsing biological wormhole",
+      "lore": "Its transit window is a matter of timing; its destination is a matter of prayer.",
+      "n": 30,
+      "name": "BREATHING GATE",
+      "power": "Portal opens randomly. Transit is pure gambling."
+    },
+    {
+      "art": "ripple-tear in spacetime",
+      "lore": "The wound left behind by a cosmic explosion—or something far worse that didn't make the history books.",
+      "n": 31,
+      "name": "EVENT SCAR",
+      "power": "Drive architectures interact with this unpredictably. Reroll all dice."
+    },
+    {
+      "art": "glowing geometric star alignment",
+      "lore": "A 40,000-year-old structured broadcast. It's not a song. It's navigational infrastructure. But for who?",
+      "n": 32,
+      "name": "THE SINGING SYSTEMS",
+      "power": "Hypnotize opponent's navigation."
+    },
+    {
+      "art": "dark void with hinted shapes",
+      "lore": "It is not empty. The things inside know you are there. It is larger on the inside.",
+      "n": 33,
+      "name": "THE DRIFT",
+      "power": "Reduce visibility. Opponent plays next card blind."
+    },
+    {
+      "art": "layered concentric wave",
+      "lore": "A gravitational oscillation from something impossibly huge. The Vael have been measuring it for 30,000 years.",
+      "n": 34,
+      "name": "THE RESONANCE",
+      "power": "A pulsing 11,000-year timer. When it triggers, reset the board."
+    },
+    {
+      "art": "stampede of stone hurtling forward",
+      "lore": "They don't deviate for obstacles. Obstacles deviate for them.",
+      "n": 35,
+      "name": "GREY MIGRATION",
+      "power": "Unstoppable force. Ignore all obstacles and defenses in this column."
+    },
+    {
+      "art": "ghost cityscape behind small observer",
+      "lore": "You remember things that didn't happen to you. The Mycel know why, and they are terrified.",
+      "n": 36,
+      "name": "THE MEMORY WORLDS",
+      "power": "Force an opponent to play using your strategy from three turns ago."
+    },
+    {
+      "art": "ship pleating spacetime",
+      "lore": "Twelve thousand years old. The standard cheat code for an agonizingly vast universe.",
+      "n": 37,
+      "name": "THE FOLD DRIVE",
+      "power": "Move fast, burn stellarite. Leave a highly detectable energy wake."
+    },
+    {
+      "art": "two pigeons linked by quantum thread",
+      "lore": "The Dreshkai's second-largest revenue stream. Physics monetized to the maximum.",
+      "n": 38,
+      "name": "ENTANGLEMENT NETWORK",
+      "power": "Instant communication. Bypass Courier transit times."
+    },
+    {
+      "art": "bird with mechanical arm",
+      "lore": "Merging flesh and metal until neither substrate remembers what it used to be.",
+      "n": 39,
+      "name": "BIOTIC INTEGRATION",
+      "power": "Upgrade one unit. Statistically likely to either become a god or explode."
+    },
+    {
+      "art": "wired biological archive",
+      "lore": "The ultimate biological cheat code: turning your mind into software.",
+      "n": 40,
+      "name": "SORN ARCHIVIST PROCESS",
+      "power": "Transfer consciousness. Survive physical destruction."
+    },
+    {
+      "art": "scientists probing alien geometry",
+      "lore": "Replicating the Prior's tech will instantly break the galactic balance of power. Everyone is trying; everyone is terrified.",
+      "n": 41,
+      "name": "PRIOR-ARCHITECTURE (Reverse Engineering)",
+      "power": "Risk total annihilation for a +10 advantage."
+    },
+    {
+      "art": "human and robot in transfer halo",
+      "lore": "The most philosophically contested tech. Did you arrive, or just a copy of you?",
+      "n": 42,
+      "name": "CONSCIOUSNESS TRANSFER",
+      "power": "Swap control of two units. Warning: Identity integrity cannot be verified."
+    },
+    {
+      "art": "caged star",
+      "lore": "The Ossian Hegemony has a classified weapons program for this. Try not to think about it.",
+      "n": 43,
+      "name": "STELLAR ENGINEERING",
+      "power": "Alter the lifecycle of a star. Use it as a weapon or a battery."
+    },
+    {
+      "art": "roots interlaced with data nodes",
+      "lore": "The oldest nodes are digging up memories that predate all current civilizations.",
+      "n": 44,
+      "name": "THE MEMORY TECHNOLOGY",
+      "power": "Recover information stored in the physical structure of the galaxy."
+    },
+    {
+      "art": "octopus banker counting coins",
+      "lore": "Commerce is a weapon. They own the networks, they set the rates, they own you.",
+      "n": 45,
+      "name": "DRESHKAI COMMUNION",
+      "power": "Monopolize trade routes. Win via compound interest and insurance fraud."
+    },
+    {
+      "art": "rhino warlord with rifle",
+      "lore": "Militarily directed, hierarchically organized, spectacularly productive in the art of killing.",
+      "n": 46,
+      "name": "OSSIAN HEGEMONY",
+      "power": "Absolute military dominance. Every negotiation is a hostage situation."
+    },
+    {
+      "art": "glowing winged elder",
+      "lore": "They don't need Capital Ships. They are the Capital Ships. They know what's coming.",
+      "n": 47,
+      "name": "THE VAEL",
+      "power": "Ignore the rules of the game entirely because you know a secret."
+    },
+    {
+      "art": "long-necked bird above city grid",
+      "lore": "The ultimate archivists. They pay premium rates for uncertainty reduction.",
+      "n": 48,
+      "name": "THE SORN",
+      "power": "Harvest data from every action played. Hoard the galaxy's secrets."
+    },
+    {
+      "art": "raccoon crew on hacked frigate",
+      "lore": "Access is a right. Dispersed, decentralized, and utterly impossible to govern.",
+      "n": 49,
+      "name": "THE UNBOUND",
+      "power": "Improvise. Adapt. Field-expedient modifications that bypass regulations."
+    },
+    {
+      "art": "towering fungal entity",
+      "lore": "Their terraforming is irreversible. They are the galaxy's memory, running on spores.",
+      "n": 50,
+      "name": "THE MYCEL VERDANCY",
+      "power": "Spread network presence. Overtake enemy bases passively."
+    },
+    {
+      "art": "spiral mega-architecture",
+      "lore": "They modified the galactic core, left behind stable wormholes, and vanished. Or did they?",
+      "n": 51,
+      "name": "THE PRIOR (Ancient Builders)",
+      "power": "Leave behind artifacts that drive current civilizations insane."
+    },
+    {
+      "art": "bright mushrooms over hollow soil",
+      "lore": "The face the network shows you while it eats the soil beneath your feet.",
+      "n": 52,
+      "name": "THE FRUITING BODIES",
+      "power": "Engage in diplomacy while the network secretly devours the planet underground."
+    },
+    {
+      "art": "massive tuning-fork antennae",
+      "lore": "They aren't just observing the Resonance. They are designed to interact with it.",
+      "n": 53,
+      "name": "THE RESONANCE ARRAYS",
+      "power": "Harness the 11,000-year frequency. End the current era."
+    },
+    {
+      "art": "ancient observatory aimed at core",
+      "lore": "The oldest observatory in the galaxy. What exactly was it built to watch for?",
+      "n": 54,
+      "name": "GALACTIC CORE OBSERVATORY",
+      "power": "Look into the deep past. See what's coming."
+    },
+    {
+      "art": "blue-glowing pedestal in sealed chamber",
+      "lore": "The Vael's unshared archive. The Sorn couldn't steal it; the Dreshkai couldn't buy it.",
+      "n": 55,
+      "name": "THE VAEL'S DEEP ARCHIVE",
+      "power": "Uncover the galaxy's final secret. Game over."
+    },
+    {
+      "art": "rabbit MC reading from ancient slab",
+      "lore": "\"We are not the first ones here, and we are not the last ones coming.\"",
+      "n": 56,
+      "name": "THE THIRTY-THOUSAND-YEAR NOTE",
+      "power": "The Vael haven't updated this file in 30,000 years because the answer hasn't changed."
+    }
+  ],
+  "deckId": "kosmik_kayfabizarro_sci_fi_space_opera",
+  "title": "Kosmik Kayfabizarro Kollektive (Vol II)"
+}

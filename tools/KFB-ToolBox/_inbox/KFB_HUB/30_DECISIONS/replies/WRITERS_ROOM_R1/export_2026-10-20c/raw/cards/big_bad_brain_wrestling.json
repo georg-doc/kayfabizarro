@@ -1,0 +1,398 @@
+{
+  "cards": [
+    {
+      "art": "Heroic golden retriever wrestler soaring off ropes",
+      "lore": "Use exciting, high-flying moves because audiences cheer for that. A slave to approval.",
+      "n": 1,
+      "name": "The Babyface",
+      "power": "+1 Dice if the crowd is cheering. If you cheat, you lose the game immediately."
+    },
+    {
+      "art": "Sneering weasel wrestler eye-poking bear opponent",
+      "lore": "Brutal, sneaky moves. Bear hugs and eye pokes. If they aren't booing, you aren't doing your job.",
+      "n": 2,
+      "name": "The Heel",
+      "power": "Cancel an opponent's successful attack by cheating. Gain 1 Heat token."
+    },
+    {
+      "art": "Cool cat wrestler half-hero half-villain, crowd split",
+      "lore": "The audience decides to cheer for you on their own. You don't ask for it, which makes them want you more.",
+      "n": 3,
+      "name": "The Tweener",
+      "power": "Flip a coin at start of turn to decide if you are Face or Heel."
+    },
+    {
+      "art": "Goat wrestler being beaten while nobly choosing attacker",
+      "lore": "Isolated and picked apart. You exist to make the other guy look [good].",
+      "n": 4,
+      "name": "The Jobber",
+      "power": "When defeated, you may choose who defeats you. That is your only control."
+    },
+    {
+      "art": "Massive gorilla wrestler unmoved as opponent bounces off",
+      "lore": "400-pound gorilla. Slow, but strong enough to hurl you like a ragdoll. Visual shorthand for 'You Can't Win'.",
+      "n": 5,
+      "name": "The Immovable Object",
+      "power": "Immune to all 'Throw' attacks. Cannot use 'Aerial' moves."
+    },
+    {
+      "art": "Flying squirrel wrestler mid-corkscrew",
+      "lore": "Agile and fast. Focus on strikes. If you stand still, you die.",
+      "n": 6,
+      "name": "The Aerial Ace",
+      "power": "Dodge any attack on a roll of 5+. If you fail, take double damage."
+    },
+    {
+      "art": "Enormous rhino airborne off turnbuckle, ring buckling",
+      "lore": "Risk of injury is high. A 400-pounder leaping off the top rope is a tragedy waiting to happen.",
+      "n": 7,
+      "name": "The Powerhouse Botch",
+      "power": "Roll d6. On 1, you crush yourself. On 6, you crush everyone."
+    },
+    {
+      "art": "Tiny ant hoisting enormous elephant opponent overhead",
+      "lore": "Smaller wrestlers showing surprising strength. Defying the ph[ysics of size].",
+      "n": 8,
+      "name": "The Little Giant",
+      "power": "Can lift characters size 'Large' or 'Huge'. Surprise factor doubles damage."
+    },
+    {
+      "art": "Opossum wrestler theatrically staggering from tiny tap",
+      "lore": "Maintain the illusion of peril. Reel back. Limp to the ring. Make them believe.",
+      "n": 9,
+      "name": "The Master Seller",
+      "power": "Convert received damage into 'Sympathy' tokens."
+    },
+    {
+      "art": "Rhinoceros rising slowly from devastation, opponent terrified",
+      "lore": "Sit right back up just to prove how dangerous you are. Remove all tension for ego.",
+      "n": 10,
+      "name": "The No-Sell Monster",
+      "power": "Ignore the first 3 damage of any turn. Intimidate opponent creates 'Fear' status."
+    },
+    {
+      "art": "Chicken wrestler flying backwards from a gentle tap, spinning",
+      "lore": "Reacting to an attack far beyond reality. A mockery of the sport. See: Michaels vs. Hogan.",
+      "n": 11,
+      "name": "The Oversell Clown",
+      "power": "Opponent looks ridiculous. Their next attack roll is halved."
+    },
+    {
+      "art": "Fox wrestler methodically targeting bear's knee",
+      "lore": "Knowing a shooter required to perform their finisher. Cruel, logical, effective.",
+      "n": 12,
+      "name": "The Limb Target",
+      "power": "Called Shot: Target legs to reduce enemy speed to 0. Target arms to prevent lifting."
+    },
+    {
+      "art": "Kangaroo kicker mid-slap with massive SMACK! bubble",
+      "lore": "Slapping the thigh when kicking. A loud sound suggests high impact. It's an audio lie.",
+      "n": 13,
+      "name": "The Thigh Slap",
+      "power": "Add +2 to Damage Perception. The move didn't hurt, but it sounds like it did."
+    },
+    {
+      "art": "Donkey punching while stomping, THUD clouds explode",
+      "lore": "Stomping on the mat when punching. Kinetic misdirection.",
+      "n": 14,
+      "name": "The Stomp Punch",
+      "power": "Stun enemy with noise. They lose their next Action."
+    },
+    {
+      "art": "Walrus wrestler absorbing chops, chest glowing with energy",
+      "lore": "The echo chamber of the torso. Loud noise, but requires many strikes to actually bruise.",
+      "n": 15,
+      "name": "The Echo Chest",
+      "power": "Absorb strikes to charge \"Adrenaline.\""
+    },
+    {
+      "art": "Two bulls facing off trading chest chops, both bleeding",
+      "lore": "5 minutes doing nothing but chop. A test of endurance and st[rong style pride].",
+      "n": 16,
+      "name": "The Chop Fest",
+      "power": "Both players lose 1 HP per turn until one quits. No other moves allowed."
+    },
+    {
+      "art": "Masked axolotl wrestler, mask glowing, opponent reaching for it",
+      "lore": "Kayfabe sacred to their identity. The single biggest identifier. Never remove it.",
+      "n": 17,
+      "name": "The Sacred Mask",
+      "power": "Cannot be targeted by \"Psychology\" attacks while masked. If unmasked, Game Over."
+    },
+    {
+      "art": "Hyena ripping at sacred mask, crowd in horror",
+      "lore": "Attempt to maim the mask. Disrespectful, ruthless, heat-generating garbage.",
+      "n": 18,
+      "name": "The Rudo Ripper",
+      "power": "Attempt to unmask opponent. Success = Instant disqualification (but you win the feud)."
+    },
+    {
+      "art": "Badger bleeding and smiling, rising with harder strikes",
+      "lore": "Convey envy. We work harder. We are better conditioned. We will show off until we are in danger.",
+      "n": 19,
+      "name": "The Strong Style Spirit",
+      "power": "The more damage you take, the harder you hit back. Convey envy through pain."
+    },
+    {
+      "art": "Wolf wrestler refusing handshake, arms limp, opponent confused",
+      "lore": "Rejection of traditional start. A telltale sign of a shooter. No help for inferior opponents.",
+      "n": 20,
+      "name": "The Limp Arm",
+      "power": "Refuse the \"Lockup.\" Treat the match as a Shoot Fight."
+    },
+    {
+      "art": "Bat cutting own forehead, laughing at opponent's horror",
+      "lore": "Busting himself open to nullify threats. You can't hurt me if I hurt me first.",
+      "n": 21,
+      "name": "The Juice Lover",
+      "power": "Self-inflict 1 damage to gain immunity to \"Intimidation.\""
+    },
+    {
+      "art": "Cobra slithering from canvas bag toward trembling opponent",
+      "lore": "The bag has a live snake. Terrify them before the match starts.",
+      "n": 22,
+      "name": "The Snake Bag",
+      "power": "Deploy Snake. Opponent must roll for \"Terror\" every turn."
+    },
+    {
+      "art": "Sloth wrestler dodging attacks with minimal movement, opponent furious",
+      "lore": "Hands in pockets. It looks like a chore. The apathy makes them furious.",
+      "n": 23,
+      "name": "The Lazy Genius",
+      "power": "Use 0 Energy to dodge. Attacks enrage opponent (Opponent attacks blindly)."
+    },
+    {
+      "art": "Peacock wrestler flicking opponent's ego into dust",
+      "lore": "Harming the opponent's dignity rather than their body. Psychological dominance.",
+      "n": 24,
+      "name": "The Exotic",
+      "power": "Attack opponent's \"Dignity\" instead of HP."
+    },
+    {
+      "art": "Cheetah exploding off corner tag with crowd erupting",
+      "lore": "Fresh partner for payback. The explosive release of tension.",
+      "n": 25,
+      "name": "The Hot Tag",
+      "power": "When tagged in, take 3 actions immediately."
+    },
+    {
+      "art": "Turtle wrestler taking beatings, slowly building sympathy aura",
+      "lore": "The Ricky Morton role. Isolated and picked apart. You are the bait.",
+      "n": 26,
+      "name": "The Victim",
+      "power": "Accumulate 'Sympathy' tokens while taking damage. Counter-attack."
+    },
+    {
+      "art": "Three wolves surrounding lone opponent in ring corners",
+      "lore": "Knowing each other's strengths. Brawler, Flyer, Powerhouse. The collective front.",
+      "n": 27,
+      "name": "The Wolfpack",
+      "power": "Triple attack on an isolated target. \"The Numbers Game.\""
+    },
+    {
+      "art": "Owl in suit ringside whispering precise instructions",
+      "lore": "Knowing what to pull off. The backbone. A night off for the opponent.",
+      "n": 28,
+      "name": "The Savant Manager",
+      "power": "Reroll any one die per turn. You know the moves better than they do."
+    },
+    {
+      "art": "Monkey wrestler reading crowd and transforming mid-move",
+      "lore": "Play up to the crowd. If they want a heel, give them a heel. If they want a clown, honk your nose.",
+      "n": 29,
+      "name": "The Pop Hunter",
+      "power": "Change Fighting Style mid-match to match Crowd Preference."
+    },
+    {
+      "art": "Ghost wrestling alone in silent arena, silence visualized",
+      "lore": "Taped in empty arenas. Pausing for a pop that never comes. Surreal and bizarre.",
+      "n": 30,
+      "name": "The Empty Arena",
+      "power": "All 'Charisma' rolls fail. Silence amplifies the sound of impacts."
+    },
+    {
+      "art": "Chameleons on green screen pretending to be crowd",
+      "lore": "A failed attempt to hide the emptiness. Audio sweetening on a lie.",
+      "n": 31,
+      "name": "The Green Screen Crowd",
+      "power": "Pipe in noise. Create artificial \"Heat.\""
+    },
+    {
+      "art": "Mole wrestler in audience disguise diving into ring",
+      "lore": "Wrestlers taking seats as audience members. Gambling on the outcome while part of the show.",
+      "n": 32,
+      "name": "The Plant",
+      "power": "Interfere from the outside without disqualification. \"I'm just a Fan!\""
+    },
+    {
+      "art": "Bear wrestler grabbing opponent's collar with dead-serious eyes",
+      "lore": "Refusing to respond. Stiff the re-seller. Degrade into a shoot fight.",
+      "n": 33,
+      "name": "The Shooter",
+      "power": "Force opponent to Sell. If they refuse, inflict Real Damage."
+    },
+    {
+      "art": "Hippo wrestler going completely limp while opponent strains",
+      "lore": "Refusing to cooperate. Dead weight. Extremely unprofessional.",
+      "n": 34,
+      "name": "The Sandbag",
+      "power": "Opponent must roll Strength 6 to perform any move."
+    },
+    {
+      "art": "Bull wrestler clutching shoulder, match improvising around him",
+      "lore": "Goldberg's shoulder smashed into the ring-post. Unplanned. The crowd goes nuts because it's real.",
+      "n": 35,
+      "name": "The Real Injury",
+      "power": "Lose 2 Turns. The match must be improvised around you."
+    },
+    {
+      "art": "Beaver holding cue card ringside, wrestler reading it mid-move",
+      "lore": "Short cuts for out-of-depth wrestlers. Visible spot-calling.",
+      "n": 36,
+      "name": "The Cue Card Holder",
+      "power": "Reveal opponent's next move."
+    },
+    {
+      "art": "Raven wrestler emerging from smoke in dark entrance",
+      "lore": "Terrify him before the match. Get under their skin with smoke and mirrors.",
+      "n": 37,
+      "name": "The Undead Wizard",
+      "power": "Intimidate. Opponent starts match with -2 Willpower."
+    },
+    {
+      "art": "Lion wrestler yawning while recovering, opponent bewildered",
+      "lore": "Loaf around. Do as little as possible. Lash out at the crowds who ignored you.",
+      "n": 38,
+      "name": "The Uninterested Genius",
+      "power": "Loaf around. Regain Stamina while doing nothing. 'Wake up' only at critical health."
+    },
+    {
+      "art": "Parrot wrestler screaming into announcer's face mid-match",
+      "lore": "Speaks his mind. Shouting at Michael Cole. Hilarious and entertaining abuse.",
+      "n": 39,
+      "name": "The Trash Talker",
+      "power": "Verbal Assault. Inflict psychological damage every turn."
+    },
+    {
+      "art": "Gorilla flooring opponent with single finger poke, crowd stunned",
+      "lore": "The Poke of Doom. A test of strength? No, a test of gullibility.",
+      "n": 40,
+      "name": "The Finger Poke",
+      "power": "Instant Pin if opponent consents."
+    },
+    {
+      "art": "Wrestling leg drop hitting with nuclear force. Crowd exploding",
+      "lore": "The Leg Drop. The most important moment. If this hits, go home.",
+      "n": 41,
+      "name": "The Finisher",
+      "power": "+5 Damage. Can only be used once per match."
+    },
+    {
+      "art": "Zebra kicking out at 2.99, crowd vertical",
+      "lore": "Making an exciting comeback. The art of the near-fall.",
+      "n": 42,
+      "name": "The False Finish",
+      "power": "Survive a pinfall attempt. Crowd Excitement doubles."
+    },
+    {
+      "art": "Rhino steamrolling through opponent in seconds flat",
+      "lore": "No-selling. Sit right back up. Total dominance.",
+      "n": 43,
+      "name": "The Squash",
+      "power": "Win match in Turn 1 against any \"Jobber\" class card."
+    },
+    {
+      "art": "Tiger and bear both standing drained, sunset bell ringing",
+      "lore": "Stalemate. 60 minutes. Strong style spirit means no one loses.",
+      "n": 44,
+      "name": "The Time Limit Draw",
+      "power": "End the game with no winner. Both players keep their dignity."
+    },
+    {
+      "art": "Spider in suit moving wrestlers like marionettes",
+      "lore": "The ending is pre-planned. You are just a puppet.",
+      "n": 45,
+      "name": "The Booker",
+      "power": "Decide the winner before the game starts. Players must act it out."
+    },
+    {
+      "art": "Cricket wrestler whispering next move mid-hold to opponent",
+      "lore": "Calling moves in the ring. A basic outline, filled in with sweat.",
+      "n": 46,
+      "name": "The Spot Caller",
+      "power": "Improvisation. Change the plan mid-match to suit the flow."
+    },
+    {
+      "art": "Two wrestlers rehearsing from choreography sheet",
+      "lore": "Hogan vs Warrior. Heavily choreographed for weeks. It paid off.",
+      "n": 47,
+      "name": "The Rehearsal",
+      "power": "+3 Coordination. The match is perfect, but lacks \"Soul.\""
+    },
+    {
+      "art": "Two wrestlers locked in dull hold, audience texting",
+      "lore": "Slow down. Give the audience a chance to catch up. Or go get popcorn.",
+      "n": 48,
+      "name": "The Rest Hold",
+      "power": "Pause the game. Both players regain Stamina. Audience gets bored (-1 Hype)."
+    },
+    {
+      "art": "Wrestler adjusting to face single giant camera",
+      "lore": "Playing to the crowd watching at home. If the camera didn't see it, it didn't happen.",
+      "n": 49,
+      "name": "The Hard Cam",
+      "power": "All moves must be performed facing Left."
+    },
+    {
+      "art": "Fox missing charge, smashing face-first into steel post",
+      "lore": "Smashed into the post. The hardest object in the building.",
+      "n": 50,
+      "name": "The Ring Post",
+      "power": "Unforgiving Steel. If you miss a charge, you take max damage."
+    },
+    {
+      "art": "Deer slamming steel steps into opponent outside ring",
+      "lore": "Brawling and hardcore techniques. Weaponized furniture.",
+      "n": 51,
+      "name": "The Steel Steps",
+      "power": "+2 Damage. Counts as 'Environment' not 'Weapon' (usually)."
+    },
+    {
+      "art": "Hippo driving opponent through announcer's table. Broadcaster fleeing",
+      "lore": "Breakable furniture. Shouting at Michael Cole while destroying his desk.",
+      "n": 52,
+      "name": "The Announcer's Table",
+      "power": "Destructible Terrain. Break to create a 'Holy Sh*t' moment."
+    },
+    {
+      "art": "Toad typing furiously in crowd, surrounded by complaint speech bubbles",
+      "lore": "Fans talking about \"psychology\" without ever taking a bump. Keyboard warriors.",
+      "n": 53,
+      "name": "The Internet Smark",
+      "power": "Critique the match. If the match has \"bad psychology\" cancel the result."
+    },
+    {
+      "art": "Octopus tangled in ropes, audience pointing and chanting",
+      "lore": "Incoherent collection of moves. It just looks messy.",
+      "n": 54,
+      "name": "The Botched Spot",
+      "power": "Confusion. End turn immediately. Audience chants \"You F*cked Up.\""
+    },
+    {
+      "art": "Cop wrestler handcuffing character-breaker, stern authority",
+      "lore": "Protecting the business. Keep the secrets secret, or get fired.",
+      "n": 55,
+      "name": "The Kayfabe Police",
+      "power": "Arrest anyone breaking character. Enforce the Lie."
+    },
+    {
+      "art": "Phoenix wrestler lying down in defeat, crowd cheering, already rising",
+      "lore": "Leaning on the fourth wall. Rising... and falling. See you next season.",
+      "n": 56,
+      "name": "The Retirement Match",
+      "power": "Lose the game on purpose to boost opponent's XP. (Come back next week anyway)."
+    }
+  ],
+  "deckId": "big_bad_brain_wrestling",
+  "title": "Big Bad Brain Wrestling"
+}
