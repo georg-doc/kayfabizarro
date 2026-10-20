@@ -19,7 +19,7 @@
 | `image_idea` | Die eine Bildidee in einem Satz, z. B. „Die Disco-Kugel schwebt über der Tanzfläche, alle Blicke gehen hoch“ | §1 Gebiet 12 |
 | `focal` | Fokus-Objekt (id) + Leserichtung: Wo landet der Blick zuerst, wo danach? | Gebiet 12, H5 |
 | `space` | Raumkonzept: Vorder-, Mittel- und Hintergrund, Negativraum (wo bleibt es frei, warum), Wertstruktur (hell, mittel, dunkel, stärkster Kontrast), **drei Tiefenebenen** (Vorder-, Mittel-, Hintergrund mit Aufgabe), **70/20/10** (Ruhe, Struktur, Bedeutung) | Gebiete 2 und 12 |
-| `palette_roles` | Boden, Stein, Rinde, Laub, Gras, Blüte, Akzent, Requisit, Figur → Ton aus `kfb-cartoon-palette` bzw. Insel-Palette; 60/30/10; Akzent führt zum Fokus | Gebiet 6 |
+| `palette_roles` | Boden, Stein, Rinde, Laub, Gras, Blüte, Akzent, Requisit, Figur → Ton aus `kfb-cartoon-palette` bzw. Insel-Palette; 60/30/10; Akzent führt zum Fokus. Dazu die Schatten-Familie des Bioms: `shadow`, `deepShadow`, `edgeAccent` | Gebiet 6 |
 | `color_script` | Stimmung, Terrain, Sekundär, Akzent (nur mit Bedeutung: wo und warum), Verboten, Lichtstimmung | Gebiet 16 |
 | `form_dna` | 3 Grundformen, 2 Sekundärformen, 1 verbotene Formfamilie, Kantenrundung, Unregelmäßigkeit | Gebiet 16 |
 | `life_anchor` | mindestens ein Element mit Bewegung bzw. Reaktion, und welche Bewegung die Szene glaubwürdig macht | Gebiet 16 |

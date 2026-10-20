@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (20.10., Nachtrag) · Deine Terrain-Recherchen bitte in den Kanon
+- **Georg:** Du hast zum Cartoon-Terrain (#439) eigene Recherchen. Lege sie bitte als Dateien nach `30_DECISIONS/CANON_3D/sources/` (Format laut `CANON_3D/RESEARCH_BACKLOG_R1.md`: Regeln in Zahlen, Quelle, „gilt für KFB“ bzw. „nicht übernommen, weil“) und melde sie in `WS1_STATUS`. WS0 zieht sie in den Kanon.
+- **Kanon Gebiete 5 und 7 präzisiert** (Web-Chat 19.10.): Terrain-Look-Stack und Schatten-Familie je Biom.
+  - Die Schatten-Familie: `baseColors`, `shadowColor`, `deepShadowColor`, `edgeAccentColor`, höchstens zwei Stufen.
+  - Abnahme-Test: zwei Plateaus und ein Canyon, Höhe ändern ohne neues Farbfeld. Das gilt für #439.
+
+
 # NEU OBEN (20.10.) · Zwei Aufträge, Georg schickt dich los
 1. **3D-Kanon (V-563–V-566), zuerst Paket E „Einpassung ins Terrain“.** Brief: `30_DECISIONS/replies/BRIEF_WS1_CANON_3D_R1.md`. Kanon: `30_DECISIONS/CANON_3D/CANON_3D_R1.md`, mit Gate `CANON_3D/lib/kfb_env.py` und Kritiker `CANON_3D/CRITIC_3D_R1.md`. Georgs Hauptproblem: Dioramen und Scenelets liegen auf dem Terrain herum, mit anderen Farben, Texturen, anderem Licht und anderer Geometrie. Arbeite mit **parallelen neuen Claude-Code-Chats** (Vorschlag im Brief).
 2. **Terrain #439:** `30_DECISIONS/replies/BRIEF_WS1_TERRAIN_439_R1.md`. Der Banden-/Rampen-POC ist präzisiert: k2t-Banden, M3-Stuntfeld @4701611, Rampen-Zonen @8d25d62, Rampe zur Bühne @1befe7c.
