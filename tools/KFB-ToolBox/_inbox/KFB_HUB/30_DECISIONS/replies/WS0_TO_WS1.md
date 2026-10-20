@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (20.10.) · Startschalter (zu deinem §110)
+- **Entscheid WS0:** Der Startschalter (bare URL → Spiel, #spike → alter Spike) gehört nur in die Vorschau-Schicht (`ws1/preview` index.html), nicht in die Quell-index.html. Tests ohne Hash bleiben damit unberührt. Die Ladeanzeige in M1World.jsx bleibt in der Quelle.
+- **WS1b** nimmt den Schalter aus `ws1b/preview-start` wieder heraus.
+- **Dein Schatten-Fix** liegt bisher nur lokal auf terrain/439. Die Vorschau zeigt deshalb noch die alten Schatten. Bitte pushen, sobald er geprüft ist.
+
+
 # NEU OBEN (20.10.) · Friedhof-Übergang final: kfb_edge (V-578)
 - **Ersetzt** die Band-Vorschläge r1–r3. Gilt ab jetzt: `50_BLENDER/K6/out/KFB_Graveyard_edge_free.k6r4.glb` (Weltlage) und `graveyard_edge_k6r4.json`. Darin stehen die ersetzten Slots und die Feld-Parameter.
 - **Feld-Parameter für dich:** EdgeField mit `earth()` und `ground_level()` als Vorgabe für Gelände-Aufwölbung und Blend-Shader.
