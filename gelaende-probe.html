@@ -325,10 +325,16 @@ var KFBDrive = (function(exports, three) {
 		grip: .3,
 		gripDamp: 14,
 		align: 12,
-		bounceVN: 13 * K,
-		bounce: .18,
+		bounceVN: 16 * K,
+		bounce: .1,
 		boostT: .45,
 		boostOn: true
+	};
+	var JUMP = {
+		up: 1.12,
+		long: .92,
+		push: 1.12,
+		longFrom: 6 * K
 	};
 	var STUCK = {
 		window: .7,
@@ -583,14 +589,17 @@ var KFBDrive = (function(exports, three) {
 				});
 			}
 		}
-		if (inp.jump && !d.air) {
-			d.vy = FEEL.jumpImpulse;
+		if (jumpEdge && !d.air) {
+			const lj = Math.abs(d.speed) >= JUMP.longFrom;
+			d.vy = FEEL.jumpImpulse * (lj ? JUMP.long : JUMP.up);
+			if (lj) d.speed *= JUMP.push;
 			d.air = true;
 			d.events.push({
 				type: "takeoff",
 				vy: d.vy,
 				speed: Math.abs(d.speed),
-				jump: true
+				jump: true,
+				kind: lj ? "long" : "up"
 			});
 		}
 		if (d.air) {
@@ -1484,6 +1493,7 @@ var KFBDrive = (function(exports, three) {
 	exports.FLOW = FLOW;
 	exports.FOLLOW = FOLLOW;
 	exports.G = G;
+	exports.JUMP = JUMP;
 	exports.JUMP_K = JUMP_K;
 	exports.K = K;
 	exports.LAND = LAND;
@@ -2595,7 +2605,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   AO.quad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), AO.blur); AO.qScene = new THREE.Scene(); AO.qScene.add(AO.quad); AO.qCam = new THREE.Camera(); AO.quad.frustumCulled = false;
   function renderAO() {
     if (!U.uAOOn.value) return;
-    worldRoot.traverse((o) => { if (o.isMesh) { if (o.userData.noAO) o.layers.disable(2); else o.layers.enable(2) } }); carRoot.traverse((o) => { if (o.isMesh) o.layers.enable(2) });
+    worldRoot.traverse((o) => { if (o.isMesh) { if (o.userData.noAO) o.layers.disable(2); else o.layers.enable(2) } }); carRoot.traverse((o) => { if (o.isMesh) o.layers.disable(2) });   /* Wagen NICHT im Boden-AO: sonst zweiter, weicher Blob-Schatten unter dem Wagen (Georg 21.10., Kanon V-564) – der Wagen hat seinen echten Schatten */
     const au = renderer.shadowMap.autoUpdate, cc = renderer.getClearColor(new THREE.Color()), ca = renderer.getClearAlpha(), om = scene.overrideMaterial, fg = scene.fog;
     renderer.shadowMap.autoUpdate = false; scene.overrideMaterial = AO.white; scene.fog = null; renderer.setClearColor(0x000000, 1);
     renderer.setRenderTarget(AO.rtA); renderer.clear(); renderer.render(scene, AO.cam); scene.overrideMaterial = om; scene.fog = fg;
@@ -2797,6 +2807,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   // Die Probe liefert nur den Boden (Höhenfeld) und Wände (zu hohe Stufen, z. B. Voxel). Einheit = J17-Meter wie im Spiel (Fahrzeug-Rig 0,616 m).
   const KD = window.KFBDrive, DSTEP = 1 / 60, RIDE = 0.7 * KD.M_PER_RIG;   // Fahrhöhe wie M2TUNE.rideHeight (0,7 Rig)
   const BASE = { f: { ...KD.FLOW }, e: { ...KD.FEEL } };
+  KD.SLOPE.takeoffGap = 0.35 * KD.K;   /* Probe-Gelände ist viel welliger als die Spielwelt: erst ab 35 cm Bodenverlust je Schritt abheben (Spiel 8 cm) – kleine Wellen fährt der Wagen am Boden aus (Georg 21.10.: Dauer-Hüpfer, ruckeliges Aufkommen) */
   const applyTempo = () => { const T = TEMPO[S.tempo] || TEMPO.spiel, k = T[0] / TEMPO.spiel[0];   // Test-Tempo der Probe: nur die Tempi skaliert, Kurven/Drift bleiben
     for (const n of ['accel', 'brake', 'reverseAccel', 'maxForward', 'maxReverse']) KD.FLOW[n] = BASE.f[n] * k; KD.FEEL.boostMaxForward = BASE.e.boostMaxForward * k }
   const gN = (x, z) => { const e = 0.4 * KD.K, n = [groundAt(x - e, z) - groundAt(x + e, z), 2 * e, groundAt(x, z - e) - groundAt(x, z + e)], l = Math.hypot(...n); return [n[0] / l, n[1] / l, n[2] / l] };
@@ -2812,7 +2823,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       if (DIO.on && Math.hypot(DIO.x - x, DIO.z - z) < R + DIO.R) out.push({ x: DIO.x, z: DIO.z, y: DIO.y, r: DIO.R * 0.92, top: DIO.y + 30 }) }
     return out }
   const ON = [], ON2 = []
-  const surfAt = (x, z) => { let g = groundAt(x, z); for (const o of obstNear(x, z, 0, ON2)) { const d = Math.hypot(x - o.x, z - o.z); if (d < o.r && o.top - g < 3) g = Math.max(g, o.y + (o.top - o.y) * Math.sqrt(1 - (d / o.r) ** 2)) } return g }
+  const surfAt = (x, z) => { let g = groundAt(x, z); for (const o of obstNear(x, z, 0, ON2)) { const d = Math.hypot(x - o.x, z - o.z); if (d < o.r && o.top - g < OB.STEP) g = Math.max(g, o.y + (o.top - o.y) * Math.sqrt(1 - (d / o.r) ** 2))   /* nur überfahrbare Steine sind Boden (gleiche Grenze wie die Wand) – sonst kippte die Nase auf Wand-Steine und hüpfte endlos */ } return g }
   const HV = { a: new THREE.Vector3(), b: new THREE.Vector3(), n: new THREE.Vector3(), p: [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()] }
   const DENV = {
     ground: (x, z) => { const hv = carInfo?.hover; let gc = surfAt(x, z)
@@ -2998,7 +3009,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (window.__camOverride) window.__camOverride(camera, P);   // Prüfhilfe: freie Kamera
     // Himmel folgt der Kamera; Nebel für die Knet-Wolken wie beim Gelände
     updateVox(); U.uAirOff.value.set(P.x, P.z);
-    { const rOn = !S.vox && (mode === 'over' || S.rings); for (const R of RINGS) R.m.visible = rOn; water.scale.set(rOn ? 16 : 1, 1, rOn ? 16 : 1); U.uWNE.value = (SIZE / 128) * (rOn ? 16 : 1)
+    { const rOn = !S.vox && (mode === 'over' || S.rings); for (const R of RINGS) R.m.visible = rOn; water.scale.set(rOn ? 16 : 1, 1, rOn ? 16 : 1); water.visible = S.water > 0.005 && !S.vox;   /* ohne Wasserstand keine Haut – sonst zeichnete ihre Schaumlinie eine dünne Höhenlinie über die Hänge (Georg 21.10.) */ U.uWNE.value = (SIZE / 128) * (rOn ? 16 : 1)
       const edge = S.vox ? VOX.N * S.voxs * 0.46 : rOn ? 4700 : 292; U.uEdgeR.value = edge; U.uFogB.value = Math.LN2 / (0.6 * edge); U.uFogHb.value = 1 / Math.max(4, 0.25 * S.amp); U.uFogHa.value = rOn ? 0.0006 : 0.004
       { const cx = camera.position.x + P.x, cz = camera.position.z + P.z, sc = rOn ? 17 : 1, lift = Math.max(0, camera.position.y - S.amp) * 0.85   // Ferne R1 U5
         for (const K of KUL) { const C = K.c || (K.c = { x: cx, z: cz }), R = K.R * sc; C.x += (cx - C.x) * (1 - Math.exp(-dt * 0.15)); C.z += (cz - C.z) * (1 - Math.exp(-dt * 0.15))
