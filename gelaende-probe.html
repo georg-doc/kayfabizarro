@@ -2199,7 +2199,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (!RC.dirty) $('recipe').value = JSON.stringify(r, null, 2);
     RC.last = r;
   }
-  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1 })) } catch (e) {} }
+  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1, mig41: 1 })) } catch (e) {} }
   function setUI(p) {
     for (const k of NUM) if (p[k] != null) $(k).value = p[k];
     for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
@@ -2262,7 +2262,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   // Start: gespeicherter Stand oder Vorlage
   let stored = null; try { stored = JSON.parse(localStorage.getItem('kfb-gelaende-probe-7') || 'null') } catch (e) { stored = null }
   if (stored && !stored.mig39) { stored.puffs = false; stored.cstretch = 1; stored.mig39 = 1 }
-  if (stored && !stored.mig40) { stored.cform = 4; stored.mig40 = 1 }   // einmalig: Kuppel wie vorher (Georg 21.10.: Ebenen wirken wie verschobene Formen)   // einmalig: Ebenen-Wolken aus (Georg 21.10.: verschmiert), Himmelsebenen übernehmen
+  if (stored && !stored.mig40) { stored.cform = 4; stored.mig40 = 1 }
+  if (stored && !stored.mig41) { stored.fstage = 5; stored.mig41 = 1 }   // einmalig: neues Gelände (70er Fließfarben) als Standard – gespeichertes v3 stammte aus der Zeit vor Stufe 5 (Georg 21.10.)   // einmalig: Kuppel wie vorher (Georg 21.10.: Ebenen wirken wie verschobene Formen)   // einmalig: Ebenen-Wolken aus (Georg 21.10.: verschmiert), Himmelsebenen übernehmen
   setUI(PRESETS[DEFAULT]); $('grid').checked = false;
   if (stored && typeof stored === 'object') { setUI(stored); markPreset(null) } else markPreset(DEFAULT);
   update();
@@ -2293,6 +2294,11 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   const coreGeo = new THREE.SphereGeometry(1, 12, 8), ringGeo = new THREE.RingGeometry(0.35, 1, 18).rotateY(Math.PI);
   let plumes = [], carInfo = null, loading = false, loadErr = '';
   const additive = (c, o) => new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: o, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
+  // Düsenglühen (Georg 21.10.: „von hinten merkt man kaum, dass das animiert ist“): Kamera-zugewandtes Glühen am Düsenausgang, von hinten am stärksten
+  const GLOWTEX = (() => { const c = document.createElement('canvas'); c.width = c.height = 64; const g = c.getContext('2d'), r = g.createRadialGradient(32, 32, 0, 32, 32, 32)
+    r.addColorStop(0, 'rgba(255,255,255,1)'); r.addColorStop(0.25, 'rgba(255,255,255,0.75)'); r.addColorStop(0.6, 'rgba(255,255,255,0.18)'); r.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = r; g.fillRect(0, 0, 64, 64)
+    const t = new THREE.CanvasTexture(c); return t })();
+  let carHolder = null;
   async function loadCar(id) {
     const info = RACERS.find((r) => r.id === id) || RACERS[0]; loading = true; loadErr = '';
     try {
@@ -2306,13 +2312,17 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       }
       while (squash.children.length) squash.remove(squash.children[0]);
       for (const p of plumes) for (const m of p.mats) m.dispose();
-      const holder = new THREE.Group(); holder.scale.setScalar(UNIT); holder.add(scn); squash.add(holder);
+      const holder = new THREE.Group(); holder.scale.setScalar(UNIT); holder.add(scn); squash.add(holder); carHolder = holder;
       plumes = info.anchors.map((a) => {
         const dir = new THREE.Vector3(...a.dir).normalize(), q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, -1), dir), g = new THREE.Group();
         g.position.set(...a.pos); g.quaternion.copy(q); holder.add(g);
         if (a.type === 'fan') { const mat = additive(info.glow.plume, 0.55), ring = new THREE.Mesh(ringGeo, mat); ring.scale.setScalar(a.r); g.add(ring); return { g, type: 'fan', r: a.r, ring, mats: [mat] } }
         const pm = additive(info.glow.plume, 0.55), cm = additive(info.glow.core, 0.9), cone = new THREE.Mesh(plumeGeo, pm), core = new THREE.Mesh(coreGeo, cm);
-        core.scale.setScalar(a.r * 0.75); g.add(cone, core); return { g, type: 'thrust', r: a.r, cone, core, mats: [pm, cm] };
+        core.scale.setScalar(a.r * 0.75); g.add(cone, core)
+        const gm = new THREE.SpriteMaterial({ map: GLOWTEX, color: info.glow.plume, blending: THREE.AdditiveBlending, transparent: true, depthWrite: false, opacity: 0.6 }), glow = new THREE.Sprite(gm)
+        const hm = new THREE.SpriteMaterial({ map: GLOWTEX, color: '#ffffff', blending: THREE.AdditiveBlending, transparent: true, depthWrite: false, opacity: 0.8 }), hot = new THREE.Sprite(hm)
+        glow.position.set(0, 0, -0.12 * a.r); hot.position.set(0, 0, -0.05 * a.r); g.add(glow, hot)
+        return { g, type: 'thrust', r: a.r, cone, core, glow, hot, mats: [pm, cm, gm, hm] };
       });
       carInfo = info;
     } catch (e) { loadErr = 'Racer konnte nicht geladen werden (' + (e.message || e) + ')' }
@@ -2526,6 +2536,35 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     P.thrust = P.fly ? 0.45 + (P.boosting ? 0.55 : 0) : (fin.gas ? 0.7 : 0) + (P.boosting ? 0.5 : 0) + 0.15;
   }
 
+  const GV = { p: new THREE.Vector3(), d: new THREE.Vector3(), c: new THREE.Vector3(), q: new THREE.Quaternion() }, HOV = { k: 1, q: new THREE.Quaternion(), e: new THREE.Euler() };
+  // Speedlines wie tinyskies (Georg 21.10.): je eine durchgehende, geschwungene Linie von den äußeren Heckkanten, die der Fahrlinie folgt und hinten
+  // ausdünnt; weltfeste Punkte (Abstand ≥ 0,3 m), Länge über das Alter (0,38 s), Band immer zur Kamera gedreht; sichtbar ab ~55 % Höchsttempo, mit Boost, im Flug
+  const SPL = (() => { const N = 72
+    const mat = new THREE.ShaderMaterial({ transparent: true, depthWrite: false, side: THREE.DoubleSide, uniforms: { uK: { value: 0 }, uCol: { value: new THREE.Color('#ffffff') } },
+      vertexShader: 'attribute float aT; attribute float aS; varying float vT; varying float vS; void main(){ vT=aT; vS=aS; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
+      fragmentShader: 'uniform float uK; uniform vec3 uCol; varying float vT; varying float vS; void main(){ float a=uK*pow(1.0-clamp(vT,0.0,1.0),1.4)*(1.0-smoothstep(0.55,1.0,abs(vS))); if(a<0.01) discard; gl_FragColor=vec4(uCol,a*0.9); }' })
+    const mk = () => { const g = new THREE.BufferGeometry(), pos = new Float32Array(N * 6), at = new Float32Array(N * 2), as = new Float32Array(N * 2), idx = []
+      for (let i = 0; i < N - 1; i++) { const a = i * 2; idx.push(a, a + 1, a + 2, a + 1, a + 3, a + 2) } for (let i = 0; i < N; i++) { as[i * 2] = -1; as[i * 2 + 1] = 1 }
+      g.setIndex(idx); g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setAttribute('aT', new THREE.BufferAttribute(at, 1)); g.setAttribute('aS', new THREE.BufferAttribute(as, 1))
+      const m = new THREE.Mesh(g, mat); m.frustumCulled = false; m.renderOrder = 6; scene.add(m); return { m, g, pos, at, pts: [] } }
+    return { N, mat, R: [mk(), mk()], v: new THREE.Vector3(), a: new THREE.Vector3(), b: new THREE.Vector3(), c: new THREE.Vector3() } })();
+  function updateSpeedlines(dt, t) {
+    const box = carInfo?.box; if (!box || !carHolder) return; carRoot.updateMatrixWorld(true)
+    const k = Math.max(sstep(0.55, 0.92, Math.abs(P.vf) / KD.FLOW.maxForward), P.boosting && Math.abs(P.vf) > 6 ? 1 : 0, P.fly ? sstep(8, 18, Math.abs(P.vf)) : 0)
+    SPL.mat.uniforms.uK.value += (k - SPL.mat.uniforms.uK.value) * Math.min(1, dt * 4); SPL.mat.uniforms.uCol.value.set(SKY.uLit.value).lerp(new THREE.Color('#ffffff'), 0.6)
+    const LIFE = 0.38, W = 0.05
+    SPL.R.forEach((r, j) => { const sd = j ? 1 : -1, lp = SPL.v.set(sd * box.h[0] * 0.92, box.c[1] - box.h[1] * 0.2, box.c[2] - box.h[2] * 0.97); carHolder.localToWorld(lp)
+      const ax = lp.x + P.x, ay = lp.y, az = lp.z + P.z, h = r.pts[0]
+      if (!h || r.pts.length < 2 || Math.hypot(ax - r.pts[1].x, ay - r.pts[1].y, az - r.pts[1].z) > 0.3) r.pts.unshift({ x: ax, y: ay, z: az, t }); else { h.x = ax; h.y = ay; h.z = az; h.t = t }
+      while (r.pts.length > SPL.N || (r.pts.length > 2 && t - r.pts[r.pts.length - 1].t > LIFE)) r.pts.pop()
+      const n = r.pts.length, pos = r.pos, at = r.at
+      for (let i = 0; i < SPL.N; i++) { const q = r.pts[Math.min(i, n - 1)], qa = r.pts[Math.max(0, Math.min(i, n - 1) - 1)], qb = r.pts[Math.min(n - 1, Math.min(i, n - 1) + 1)]
+        const cx = q.x - P.x, cy = q.y, cz = q.z - P.z; SPL.a.set(qa.x - qb.x, qa.y - qb.y, qa.z - qb.z); SPL.b.set(camera.position.x - cx, camera.position.y - cy, camera.position.z - cz)
+        SPL.c.crossVectors(SPL.a, SPL.b); const l = SPL.c.length() || 1, age = Math.min(1, (t - q.t) / LIFE), w = W * (1 - age) * (i >= n ? 0 : 1) * sstep(3, 8, SPL.b.length())   // vor der Kamera ausblenden (sonst Balken im Bild)
+        SPL.c.multiplyScalar(w / l); pos.set([cx - SPL.c.x, cy - SPL.c.y, cz - SPL.c.z, cx + SPL.c.x, cy + SPL.c.y, cz + SPL.c.z], i * 6); at[i * 2] = at[i * 2 + 1] = i >= n ? 1 : age }
+      r.g.attributes.position.needsUpdate = true; r.g.attributes.aT.needsUpdate = true; r.m.visible = SPL.mat.uniforms.uK.value > 0.01 })
+  }
+
   // ---------- Kamera ----------
   let mode = 'over', yaw = 0.8, pitch = 0.5, dist = 60, look = 0;
   window.__hgt = (x, z) => hgt(x, z); window.__RINGS = RINGS; window.__terrain = terrain; window.__S = S; window.__probeCam = (y, p, d) => { yaw = y; pitch = p; dist = d }; window.__probeTP = (x, z) => placeCar(x, z); window.__probeDrive = () => ({ D, F, P, carRoot, tilt, camera }); // Prüfhilfe (feste Kameras für Bildvergleiche)
@@ -2591,7 +2630,17 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       if (p.type === 'fan') { p.ring.rotation.z += dt * (6 + 30 * (P.thrust || 0)); p.ring.material.opacity = 0.25 + 0.5 * (P.thrust || 0); continue }
       const th = P.thrust || 0, fl = 0.85 + 0.15 * Math.sin(t * 37 + p.r * 50), len = p.r * (1.5 + 7 * th) * fl;
       p.cone.scale.set(p.r * 0.85, p.r * 0.85, len); p.cone.material.opacity = 0.25 + 0.5 * th; p.core.material.opacity = 0.5 + 0.5 * th;
+      if (p.glow) { p.g.getWorldPosition(GV.p); GV.d.set(0, 0, -1).applyQuaternion(p.g.getWorldQuaternion(GV.q)); GV.c.copy(camera.position).sub(GV.p).normalize()
+        const back = Math.max(0, GV.d.dot(GV.c)), fl2 = 0.8 + 0.2 * Math.sin(t * 53 + p.r * 31) * Math.sin(t * 17.3 + p.r * 7)   // von hinten (Kamera im Strahl) am stärksten
+        p.glow.scale.setScalar(p.r * (2.2 + 2.6 * th) * (0.85 + 0.3 * back) * fl2); p.glow.material.opacity = (0.22 + 0.6 * back) * (0.35 + 0.65 * th)
+        p.hot.scale.setScalar(p.r * (0.9 + 0.9 * th) * fl2); p.hot.material.opacity = (0.35 + 0.55 * back) * (0.4 + 0.6 * th) }
     }
+    // Schweben (Georg 21.10.: „nicht einfach in der Luft rumstehen“): unregelmäßiges Wippen auf dem Luftpolster, leichtes Nicken/Rollen; im Stand stärker,
+    // bei Tempo ruhig, im Sprung aus; Teil der Darstellung (Physik bleibt k2t)
+    { const sp = Math.min(1, Math.abs(P.vf) / 22), rest = P.fly ? 0.25 : P.air ? 0 : 1 - 0.75 * sp; HOV.k += (rest - HOV.k) * Math.min(1, dt * 3)
+      const w = 2 * Math.PI, bob = (Math.sin(t * w * 0.85) * 0.6 + Math.sin(t * w * 1.63 + 1.3) * 0.4) * 0.075 * HOV.k
+      carRoot.position.y += bob; HOV.q.setFromEuler(HOV.e.set(0.022 * HOV.k * Math.sin(t * w * 0.71 + 0.7), 0, 0.028 * HOV.k * Math.sin(t * w * 0.53 + 2.1))); tilt.quaternion.multiply(HOV.q) }
+    updateSpeedlines(dt, t);
     if (mode === 'over') {
       U.uFogNear.value = 1500; U.uFogFar.value = 4500; // Übersicht: Ringe immer an, Nebel ist an der Ringkante (4,8 km) voll → keine sichtbare Geländekante if (camera.fov !== 55) { camera.fov = 55; camera.updateProjectionMatrix() }
       const ty = P.y; camera.position.set(Math.sin(yaw) * Math.cos(pitch) * dist, ty + Math.sin(pitch) * dist, Math.cos(yaw) * Math.cos(pitch) * dist);
