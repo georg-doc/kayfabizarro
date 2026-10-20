@@ -34,8 +34,8 @@
 | 2 | 3 pilots (stage version r4a/b) | done, superseded by the resident principle |
 | 3 | Writers' Room + 60-deck selection + export + KFB Audio integration plan | done |
 | 4 | Residents for 60 decks | done, Georg confirmed 20.10. |
-| 5 | **3 pilots as resident performances (r5)** + critic v3 | **in progress** |
-| 6 | Georg listens to the 3 pilots in Suno | after 5 |
+| 5 | 3 pilots as resident performances (r5) + critic v3 | done (Metropolis r5a, BBBW r5a, Protopia r5b: READY_FOR_WS0) |
+| 6 | **Georg listens to the 3 pilots in Suno** | **next** |
 | 7 | Next groups of 3–5 decks (WSA batch 1 first) | after 6 |
 | 8 | WS0 ACK for R4.2 + feed contract, then the KFB Audio pilot | waiting for WS0 |
 

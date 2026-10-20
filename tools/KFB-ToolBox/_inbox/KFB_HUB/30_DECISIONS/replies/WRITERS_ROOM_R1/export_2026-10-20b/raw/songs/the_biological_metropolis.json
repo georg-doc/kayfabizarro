@@ -1,0 +1,121 @@
+{
+  "cardCount": 32,
+  "critic": {
+    "critic": "claude-sonnet-5/blind-subagent",
+    "flags": [
+      {
+        "beat": 6,
+        "observation": "The badger drums alone while \"the brain cannot generate\" the rhythm, a clear in-world claim distinct from the other organ voices."
+      },
+      {
+        "beat": 20,
+        "observation": "The Semmelweis Problem is stated by an unnamed sign on a barn door, the only card not voiced by an animal or figure."
+      },
+      {
+        "beat": 22,
+        "observation": "The Blind Eye addresses \"you\" directly mid-sequence, shifting from organ-report mode into direct audience commentary."
+      },
+      {
+        "beat": 29,
+        "observation": "\"Stay Fluffy, Folks!\" arrives right after a body-keeps-the-score closing, a tonal jump from philosophical to sign-off."
+      },
+      {
+        "beat": 17,
+        "observation": "The archive transition line names no specific figure, reading more generic next to the vivid animal personifications around it."
+      }
+    ],
+    "questions": {
+      "fractalCards": {
+        "answer": "yes",
+        "observation": "Each organ is voiced by its own figure making claims about itself, such as the gut subway line \"The subway runs the city.\""
+      },
+      "individuality": {
+        "answer": "yes",
+        "observation": "Specific inventions like the badger drumming alone, the crab \"with a fortress on its back\", and \"The Semmelweis Problem\" avoid generic body-trivia listing."
+      },
+      "outro": {
+        "answer": "partly",
+        "observation": "\"Listen to the drum\" closes the drum/heart motif, but \"Stay Fluffy, Folks!\" lands as a separate sign-off tag that breaks the register right after."
+      },
+      "performer": {
+        "answer": "yes",
+        "observation": "The voice is dry and self-doubting, unsure if anyone is present (\"Or nobody did, and I am talking to my own pipes\"), then fiercely possessive about breath (\"In. Out. Mine.\")."
+      },
+      "resident": {
+        "answer": "yes",
+        "observation": "The piece opens and closes inside its own cockpit, addressing whoever climbed in, consistent with a figure performing in its own home space."
+      },
+      "standalone": {
+        "answer": "yes",
+        "observation": "The cockpit/colossus conceit and the City Inside premise are established in the first four beats, giving newcomers full context before any organ speaks."
+      },
+      "storyBetweenCards": {
+        "answer": "yes",
+        "observation": "Reports escalate from calm organ check-ins (heart, lungs, liver, gut) to sirens and immune warfare, then pivot to a historical argument over authorship before landing on free will."
+      },
+      "transferable": {
+        "answer": "no",
+        "observation": "The content is organ-specific (heart, lungs, liver, gut, immune system, named historical physicians) and could not move to another topic without full new material."
+      }
+    },
+    "recommendation": "READY_FOR_WS0",
+    "revision": "r5a",
+    "schema": "kfb.song-critic.v3"
+  },
+  "deckId": "the_biological_metropolis",
+  "deckType": "Body-as-city biology cards",
+  "editorNote": "Bewohner-Performance r5a (R4.2). Stage-Fassung r4a/r4b bleibt im Repo. Dossier/Songlines: replies/SONGS_WORKSHOP_R1/the_biological_metropolis/",
+  "flags": [],
+  "form": "resident monologue in the cockpit: the colossus discovers the levers are painted on; the departments report over the intercom as the animals from their card art; the owls' memo is the turn",
+  "gate": {
+    "cards": "19/19 Karten",
+    "chars": 3384,
+    "exit": 0,
+    "lyricsSha": "62244ec50b912b6a75eb4dcfc08ed14daa4a6948c570e20eac1ed8a51ceadaad",
+    "ranAt": "2026-10-20T23:30:00Z",
+    "report": "exit 0\nsong_gate R4.2 lyrics · the_biological_metropolis.r5a.suno.txt · 3384 Zeichen · 19/19 Karten · Intro 2 · Brücken 4 · Outro 2 · Performer-Einschübe 17 · R4-Zuordnung\nWARN A4: Karte 15: Kartenteil 96 Zeichen (Richtwert 80-95): 'DNA Replication: one error per billion letters; yo'\nWARN A4: Karte 19: Kartenteil 96 Zeichen (Richtwert 80-95): 'Autoimmune: the discrimination fails, not the weap'\nWARN A4: Karte 6: Kartenteil 47 Zeichen (Richtwert 80-95): 'You are the press secretary, not the president.'\nWARN A4: Karte 32: Kartenteil 72 Zeichen (Richtwert 80-95): 'The Scorekeeper: the body keeps the score because '\nWARN A2: eigener Text (Rahmen + Performer) 51% aller Wörter (Richtwert <= 30%)\nWARN C11: Wort 'two' 3x im eigenen Text\nWARN C11: Wort 'drum' 3x im eigenen Text\nREVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [1, 2, 5, 7, 9, 10, 28, 11, 15, 18, 17, 19, 21, 23, 24, 30, 26, 6, 32]\nREVIEW C9: Decktitel 'The Biological Metropolis' nur teilweise genannt: [(2, ['metropolis'])] (erlaubt)\nREVIEW C9: introType 'confession' schon in the_kayfabe_money_trail_9_11.part2.r4.6.songlines.json\nREVIEW C9: introType 'confession' schon in the_kayfabe_money_trail_9_11.part1.r4.6.songlines.json\nREVIEW B6: Performer-Text in 85% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)\nPASS\nexit 0\nsong_gate R4.2 style · the_biological_metropolis.r5a.style.txt · Familie A funk · 2 Variante(n) · 372, 269 Zeichen\nPASS",
+    "version": "R4.2"
+  },
+  "genreTag": "education",
+  "lyrics": "[Spoken Word]\n\nSomebody climbed into my cockpit again. Or nobody did, and I am talking to my own pipes. Either way, keep your hands off the levers. They are painted on.\n\nI am a colossus, a whole metropolis on two legs. I walk, I fight, I hold very still for statues. I have not once decided anything.\n\nLook through the hatch. The City Inside has been running the civilization while you were busy with other things.\n\nTurns out that means me. The Citizen: you never once told this city what to do. It never once asked your permission.\n\nThe intercom crackles. The departments report whether I ask or not.\n\nCardiac, down in the boiler room, a badger on a drum kit: The Heart: the brain can modify the rate. The brain cannot generate it. The badger drums alone.\n\nDeck two, two broccoli trees trading birds: The Lungs: seventy square meters folded into your chest, the only manual override. That one I get to touch. In. Out. Mine.\n\nA grim beaver at the oil drums, does not look up: The Liver: Prometheus was anatomically correct. It's the only organ that grows back.\n\nThe subway, full of commuters who do not get off: The Gut: eighty percent of the phone calls go up to the brain. The subway runs the city.\n\nAt night the mice come out with mops. The Night Shift: sleep is the janitorial shift washing the thoughts out of the carpet.\n\nThen the sirens. The rats in riot gear take the intercom.\n\nThe Immune System: a library of every murder attempt. It remembers things you have forgotten.\n\nThe spider in the copy room answers for the typos: DNA Replication: one error per billion letters; you have had cancer, the spider usually eats it.\n\nThen a voice from the shoreline, a crab with a fortress on its back: Cancer: evolution occurring inside you. It is not a disease; it is a competitor.\n\nAnd my firefighters, with flamethrowers: Inflammation: the response that heals the wound becomes the mechanism that burns the city.\n\nThe dog in the corner bites his tail. Autoimmune: the discrimination fails, not the weapon. The gun works fine, pointed the wrong way.\n\nIn the archive, old voices argue about who drew my blueprints.\n\nA mole in a ruff, stomping on a textbook: Andreas Vesalius looked at the body instead of the book. Everyone else was wrong.\n\nA raccoon washing his hands while the shadows laugh: Ignaz Semmelweis saved the mothers. The doctors committed him. He died of the infection.\n\nAnd the barn door with the big sign on it: The Semmelweis Problem: evidence available, implication uncomfortable, we reject the finding.\n\nThe tortoise with four potions still thinks he built me. The Humoralist: wrong in the facts, right in the vibe. It was the first Kayfabe.\n\nAbout you, by the way. The Blind Eye: you have a hole in your vision. The brain fills it in with best guesses. So if nobody is really standing there, I have painted you in.\n\nLast report, from the owls upstairs in their judge wigs: The Brain: the decision was already underway five hundred milliseconds before you made it.\n\nYou are the press secretary, not the president.\n\nHalf a second. When I hold still for a statue, somebody else already picked the pose.\n\nThe Scorekeeper: the body keeps the score because the body is the score.\n\nEvery colossus in every square thinks it is marching. Most of us are being marched by a badger with a drum.\n\nSo whoever climbed in: leave the levers. Listen to the drum.\n\nStay Fluffy, Folks!",
+  "needsGate": false,
+  "order": 1,
+  "origin": "pilot",
+  "performer": null,
+  "rating": 9,
+  "resident": {
+    "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+    "confirmedBy": "Georg 20.10. (Gesamtfreigabe im Chat)",
+    "home": "Kanzel eines riesigen Mechs, Wände voller Leitungen und Rohrpost",
+    "meta": "Der Mech spricht von innen, als hätte er gerade erst gemerkt, dass er die Hebel gar nicht steuert; Herz-Dachs, Leber-Biber und Nachtschicht-Mäuse melden sich über die Bordsprechanlage selbst.",
+    "musicDirection": "Funk mit Maschinenpuls, tanzbar",
+    "performers": [
+      {
+        "asset": "KayKit_Mystery_Series6/1 - July 2024 - Combat Mech · Textur alt",
+        "model": "CombatMech",
+        "role": "der Koloss selbst – in ihm arbeitet eine ganze Stadt"
+      }
+    ],
+    "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht",
+    "status": "BESTÄTIGT"
+  },
+  "revision": "r5a",
+  "status": "critic_ready",
+  "styleA": "Tight seventies funk at 104 BPM with a machine pulse: clavinet riffs, choppy wah guitar, slap bass, dry drums with a steady kick like heavy footsteps, three-piece horn stabs, hissing hi-hat. One deep male baritone, unhurried and a little metallic, talking close to the mic, surprised by his own lines. Punchy analog mix; sudden stops where only bass and kick keep walking.",
+  "styleB": "Big beat at 122 BPM: chopped breakbeat drums, distorted acid bassline, sampled brass hits, clanking metal percussion, rising filter sweeps. One deadpan male voice with a thin radio filter on the asides. Loud compressed mix, hard cuts to silence before each new section.",
+  "styleDirection": "",
+  "suno": {
+    "chosenStyle": "A",
+    "excludeStyles": "",
+    "notes": "",
+    "styleInfluence": 50,
+    "vocalGender": "",
+    "weirdness": 50
+  },
+  "takes": [],
+  "title": "The Biological Metropolis",
+  "updatedAt": "2026-10-20T23:30:00Z",
+  "updatedBy": null,
+  "viral": 9,
+  "wave": 0
+}

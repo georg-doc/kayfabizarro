@@ -181,3 +181,32 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
 1. Kritik v3 auswerten (läuft, blind, frisch).
 2. Höchstens eine Revision.
 3. Dann Georg in Suno.
+
+## §8 · 20.10.2026 · Piloten r5 abgeschlossen (Bewohner-Performance, Kritik v3)
+| Track | Bewohner | Gate R4.2 | Kritik v3 (8 Fragen) | Ergebnis |
+|---|---|---|---|---|
+| Metropolis **r5a** | Combat Mech (alt) | PASS · 3384 Zeichen · 19 Karten | 7× ja, Outro teilweise, nicht übertragbar | **READY_FOR_WS0** |
+| Brain Wrestling **r5a** | Action Figure | PASS · 3283 Zeichen · 20 Karten | 6× ja, Outro und fraktale Karten teilweise, nicht übertragbar | **READY_FOR_WS0** |
+| Protopia r5a | Farmer A | PASS | gültige Kritik: REVISE (fractalCards nein, übertragbar ja) | überarbeitet |
+| Protopia **r5b** | Farmer A | PASS · 4258 Zeichen · 23 Karten | 6× ja, Outro teilweise, fractalCards ja, nicht übertragbar | **READY_FOR_WS0** |
+
+**Belege und Prozess:**
+- Je Track liegen `*.gate.txt` und `*.critic.json` im Repo.
+- Eine Protopia-r5a-Kritik wurde verworfen (Flag über 30 Wörter) und liegt als `*.critic.discarded1.json` daneben.
+- Die beiden Kritiken zu Protopia r5a gingen auseinander (READY gegen REVISE). Gilt nur als Signal; Georgs Ohr und WS0 entscheiden.
+
+**Lehren (im Writers' Room als Lessons l08–l10):**
+- Fraktal heißt: Die eigene Natur der Figur ist ihre Karte.
+- Ein Kritiker ist eine Stimme, kein Urteil.
+- Die offene Ansprache trägt, aber nicht als Formel wiederholen.
+
+**Writers' Room und Export:**
+- Die drei Piloten stehen als r5 im Writers' Room; die Bühnenfassungen r4 liegen im Versionsverlauf.
+- Export `WRITERS_ROOM_R1/export_2026-10-20b/`: 164 Dokumente, Karten 60/60 MATCH, Gate gilt für den gespeicherten Text.
+- Der Pilot-Feed BBBW ist auf r5a aktualisiert (`supersedes` r4a).
+
+**Offen bei allen dreien:** Das Outro wird nur wegen „Stay Fluffy, Folks!“ als „teilweise“ bewertet. Die Frage liegt bei Georg (darf der Bewohner es vorbereiten?).
+
+**Nächster Schritt:**
+1. Georg hört die drei Piloten in Suno: Text und Style A/B aus dem Writers' Room kopieren, Takes dort festhalten.
+2. Danach die erste Gruppe aus WSA-Batch 1 (3–5 Decks) nach dem r5-Muster.
