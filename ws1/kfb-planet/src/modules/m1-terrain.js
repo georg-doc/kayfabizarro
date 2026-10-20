@@ -9,6 +9,8 @@
 import * as THREE from 'three'
 import { makeClayFamily } from '../vendor/billboard/billboard-clay.js'
 import { K } from '../m1/m1Scale.js'
+import { applyTerrain2, terrain2Berm, TERRAIN2_CFG } from '../look/terrain2.js'
+import { applyTerrain3 } from '../look/terrain3.js'
 
 // V-345: ganzes Gelände × K (gleiche Form in J17-Metern); Zahlen = alte WS1-Werte
 export const GROUND_Y = -0.125 * K // = Boden des Amphitheater-Moduls (modules/amphitheater.js: (minY − floorY)·s + 0,11)
@@ -41,28 +43,36 @@ export function createTerrain(options = {}) {
   terrainLog.create++
   const T = { ...TERRAIN, ...(options.terrain || {}) }
   const noise = T.seed === TERRAIN.seed ? DEFAULT_NOISE : makeNoise(T.seed)
-  const H = (x, z) => terrainHeight(x, z, T, noise)
+  const T2 = options.look === 'terrain2', T3 = options.look === 'terrain3'
+  const H = T2 ? (x, z) => terrainHeight(x, z, T, noise) + terrain2Berm(x, z) : (x, z) => terrainHeight(x, z, T, noise) // #439: Erdwall um den Bühnenfuß nur in der Variante
   const root = new THREE.Group(); root.name = 'm1-terrain'
   const geo = new THREE.PlaneGeometry(T.R * 2, T.R * 2, T.seg, T.seg); geo.rotateX(-Math.PI / 2)
   const pos = geo.attributes.position
   for (let i = 0; i < pos.count; i++) pos.setY(i, H(pos.getX(i), pos.getZ(i)))
   geo.computeVertexNormals()
-  const fam = makeClayFamily('G', { uClayNear: { value: 30 * K }, uClayFar: { value: 90 * K }, uClayScale: { value: 1.4 * K }, uClayAmt: { value: 0.45 } }, { oct: 2, near: true, stick: false })
+  const fam = makeClayFamily('G', { uClayNear: { value: 30 * K }, uClayFar: { value: 90 * K }, uClayScale: { value: 1.4 * K }, uClayAmt: { value: T2 ? TERRAIN2_CFG.clayAmt : T3 ? 0.25 : 0.45 } }, { oct: 2, near: true, stick: false }) // #439: Knete ruhiger (keine Flecken über den Farbflächen)
   const mat = fam.std(options.biome?.top || '#9aab62', 0.95)
+  const t2 = T2 ? applyTerrain2(mat, { world: options.world, ring: options.ring }) : null // #439: Farbflächen + Palettenschatten (Variante, Standard unverändert)
+  const t3 = T3 ? applyTerrain3(mat, { palette: options.palette, hMin: GROUND_Y, hMax: GROUND_Y + T.hillAmp * 1.6 }) : null // #439 terrain3: Fließfarben der Gelände-Probe + Palettenschatten
   const mesh = new THREE.Mesh(geo, mat); mesh.name = 'm1-terrain-clay'; mesh.receiveShadow = true
   root.add(mesh)
   // Steigung (Grad) bis hillR, für die Prüfung „begehbar“ (Controller slopeMaxAngle)
   let maxSlope = 0
   for (let k = 0; k < 4000; k++) { const a = (k * 2.399963) % (Math.PI * 2), r = T.hillR * Math.sqrt((k + 0.5) / 4000), x = Math.cos(a) * r, z = Math.sin(a) * r, e = 0.5
     const gx = (H(x + e, z) - H(x - e, z)) / (2 * e), gz = (H(x, z + e) - H(x, z - e)) / (2 * e); maxSlope = Math.max(maxSlope, Math.atan(Math.hypot(gx, gz)) * 180 / Math.PI) }
-  const info = { diameterWalkable: T.hillR * 2, diameterTotal: T.R * 2, flatR: T.flatR, groundY: GROUND_Y, tris: T.seg * T.seg * 2, maxSlopeDeg: +maxSlope.toFixed(1) }
+  const info = { look: t2 ? 'terrain2' : 'standard', palette: t2?.palette || null, diameterWalkable: T.hillR * 2, diameterTotal: T.R * 2, flatR: T.flatR, groundY: GROUND_Y, tris: T.seg * T.seg * 2, maxSlopeDeg: +maxSlope.toFixed(1) }
   return {
     object3d: root,
     height: H,
+    // C3: Höhe der tatsächlich gerenderten Dreiecke (PlaneGeometry-Raster, Teilung a-b-d / b-c-d) statt der glatten Funktion H, damit liegende
+    // Kügelchen exakt auf der sichtbaren Fläche sitzen (Einsinken 0 gegen das Netz, nicht gegen H)
+    surfaceAt: (x, z) => { const c = (2 * T.R) / T.seg, u0 = (x + T.R) / c, v0 = (z + T.R) / c, ix = Math.min(T.seg - 1, Math.max(0, Math.floor(u0))), iz = Math.min(T.seg - 1, Math.max(0, Math.floor(v0)))
+      const x0 = -T.R + ix * c, z0 = -T.R + iz * c, u = u0 - ix, v = v0 - iz, ha = H(x0, z0), hb = H(x0, z0 + c), hc = H(x0 + c, z0 + c), hd = H(x0 + c, z0)
+      return u + v <= 1 ? ha + (hd - ha) * u + (hb - ha) * v : hc + (hb - hc) * (1 - u) + (hd - hc) * (1 - v) },
     info: () => info,
     // Rapier-Trimesh in Weltkoordinaten (das Gelände liegt im Ursprung, ohne Drehung/Skalierung)
     colliderData: () => ({ vertices: new Float32Array(pos.array), indices: new Uint32Array(geo.index.array) }),
-    update() { terrainLog.update++ },
+    update(dt = 1 / 60) { terrainLog.update++; t3?.update(dt) },
     dispose() { terrainLog.dispose++; geo.dispose(); mat.dispose(); terrainLog.freed = { geometries: 1, materials: 1 }; root.clear() },
   }
 }

@@ -18,6 +18,8 @@
 import * as THREE from 'three'
 import { bodyGeometry, faceGeometry, buildPalette, STYLES, makeClayFamily } from '../vendor/billboard/billboard-clay.js'
 import { createCardContent, placeholderCanvas, BB_RES } from './surfaceContent'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { applyClay } from '../vendor/clay/kfb-clay.v1.1.js'
 
 // Spender billboard-stage.js Z. 6–12 (Insel-Biome), 1:1. buildPalette nimmt accent → Rahmen, paper → Zierleiste, rock → Pfosten, top → Boden.
 export const BIOMES = Object.freeze([
@@ -61,23 +63,30 @@ export function createBillboard(options = {}) {
   const faceMat = new THREE.MeshStandardMaterial({ roughness: 1, metalness: 0 })
   const face = new THREE.Mesh(undefined, faceMat); face.name = 'face'; g.add(face)
   const state = { info: null, disposed: false }
-  // L3 Regel 7 · Billboard-Lampen nach den Lampenarmen der Highway-Tafel (vendor/billboard-clay.js, STYLES.highway): zwei Schwanenhälse über dem Rahmen,
-  // Leuchtköpfe als Emissive-Material, Stärke folgt dem Nachtgewicht (setGlow). Das Licht selbst (Pool-Licht auf Rahmen und Karte) kommt aus dem
-  // Bühnen-Licht-Modul (createPracticals) an lampPoints(): keine eigene Lampe in der Tafel (V-392).
-  const lampMat = new THREE.MeshStandardMaterial({ color: '#e9c14a', roughness: 1, metalness: 0, emissive: '#ffd58a', emissiveIntensity: 0 })
-  const armMat = new THREE.MeshStandardMaterial({ color: '#3a342a', roughness: 1, metalness: 0 })
-  const lamps = new THREE.Group(); lamps.name = 'billboard-lamps'; g.add(lamps)
-  const heads = []
-  function buildLamps(W, H) {
-    lamps.clear(); heads.length = 0; const top = STYLES.plain.gb + H + 0.45, zf = FACE_Z
-    for (const sx of [-1, 1]) {
-      const x = sx * W * 0.28, post = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.07, 0.7, 10), armMat); post.position.set(x, top + 0.3, zf - 0.1)
-      const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.0, 10), armMat); arm.rotation.x = Math.PI / 2; arm.position.set(x, top + 0.62, zf + 0.38)
-      const head = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.34, 0.32, 16, 1, true), armMat); head.position.set(x, top + 0.5, zf + 0.9); head.rotation.x = -0.5
-      const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.2, 14, 10), lampMat); bulb.position.set(x, top + 0.42, zf + 0.92)
-      ;[post, arm, head, bulb].forEach((m) => { m.castShadow = m !== bulb; lamps.add(m) }); heads.push(bulb)
+  // B22 r3 (WSB, V-429/V-430, CC0: Poly-Haven-Flutlicht + Kenney-Arm + Lichtkeil): je nach Tafelbreite 2 bzw. 3 Arm-Lampen an der Oberkante, Anker
+  // KFB_Mount_board auf (x, Oberkante, Fläche), Maßstab = Tafelhöhe / 3 u (Vorlage 6 × 3 u). Lichtkeile (extras.noClay) leuchten nach dem Rig-glow
+  // (tags dezent, nachts kräftig); KFB_LightOrigin → lampPoints() für die Praktischen des Licht-Moduls (Licht-Inseln, keine eigene Lampe in der Tafel).
+  // Knete: kfb-clay.v1.1 midground, Glüh-Teile ausgenommen. options.lamps === false schaltet sie ab.
+  const LAMP_URL = 'https://raw.githubusercontent.com/georg-doc/kayfabizarro/0d9a632ee5b2ef4577b95a852f05e0bbf76f7b5d/media/3D_Assets/WSB_BLENDER/public_r1/B22/KFB_BillboardLamp_arm.r3.glb'
+  const lamps = new THREE.Group(); lamps.name = 'billboard-lamps-b22'; g.add(lamps)
+  const lampState = { src: null, wedges: [], origins: [], glow: 0, status: options.lamps === false ? 'OFF' : 'LOADING' }
+  const lampLoad = options.lamps === false ? null : new GLTFLoader().loadAsync(LAMP_URL).then((gl) => { lampState.src = gl.scene; lampState.status = 'OK'; if (state.dims) placeLamps(state.dims.W, state.dims.H) }).catch((e) => { lampState.status = 'ERROR: ' + (e?.message || e) })
+  function placeLamps(W, H) {
+    if (!lampState.src) return
+    lamps.clear(); lampState.wedges.length = 0; lampState.origins.length = 0
+    const n = W / H > 2.2 ? 3 : 2, xs = n === 3 ? [-W * 0.33, 0, W * 0.33] : [-W * 0.28, W * 0.28], k = H / 3
+    for (const x of xs) {
+      const L = lampState.src.clone(true); let mount = null; L.traverse((o) => { if (!mount && /^KFB_Mount_board/.test(o.name)) mount = o }); if (!mount) continue // GLTFLoader entfernt Punkte aus Namen (KFB_Mount_board.001 → …board001)
+      L.updateMatrixWorld(true); const m = mount.getWorldPosition(new THREE.Vector3())
+      const holder = new THREE.Group(); holder.scale.setScalar(k); holder.position.set(x, STYLES.plain.gb + H, FACE_Z); L.position.sub(m); holder.add(L); lamps.add(holder)
+      L.traverse((o) => { if (!o.isMesh) return; o.castShadow = !o.userData.noClay; o.receiveShadow = !o.userData.noClay
+        if (/Glow_wedge/.test(o.name)) { o.material = o.material.clone(); o.material.transparent = true; o.material.depthWrite = false; o.userData.op0 = o.material.opacity ?? 0.42; lampState.wedges.push(o) } })
+      L.traverse((o) => { if (/KFB_LightOrigin/.test(o.name)) lampState.origins.push(o) })
+      applyClay(L, THREE, { profile: 'midground', seed: 'b22-lamp', skip: (o) => !!o.userData.noClay || /Glow|light/i.test(o.material?.name || '') })
     }
+    setLampGlow(lampState.glow)
   }
+  function setLampGlow(w) { lampState.glow = w; for (const o of lampState.wedges) { o.visible = w > 0.02; o.material.opacity = o.userData.op0 * Math.min(1, 0.25 + w) } }
 
   // Träger formt sich nach dem Seitenverhältnis des Inhalts (R2 „responsiv“, fitFace) und gibt seine Info zurück
   function fit(meta) {
@@ -87,7 +96,7 @@ export function createBillboard(options = {}) {
     body.geometry = bodyGeometry(W, H, P, 'plain', r) // geteilter Cache des Spenders, nicht freigeben
     face.geometry = faceGeometry(W, H, r)
     face.position.set(0, STYLES.plain.gb + H / 2, FACE_Z)
-    buildLamps(W, H)
+    placeLamps(W, H)
     state.info = { source: meta.source, W: +W.toFixed(4), H: +H.toFixed(4), aspect: +meta.aspect.toFixed(4), gb: STYLES.plain.gb, cornerR: +r.toFixed(4), palette: { biome: palName, frame: P.frame, trim: P.trim, post: P.post }, canvas: meta.canvas,
       top: +(STYLES.plain.gb + H + 0.45 + 0.08).toFixed(3), faceCenter: [0, STYLES.plain.gb + H / 2, FACE_Z], fontScale: meta.fontScale, card: meta.card }
     return state.info
@@ -125,14 +134,16 @@ export function createBillboard(options = {}) {
     setPalette,
     fading: () => !!fade.own,
     info: () => state.info,
-    setGlow(w) { lampMat.emissiveIntensity = 2.2 * Math.max(0, Math.min(1, w)) },
-    lampPoints: () => heads.map((h) => h.getWorldPosition(new THREE.Vector3()).toArray()),
+    lamps: () => ({ status: lampState.status, count: lamps.children.length, glow: lampState.glow }),
+    lampLoad,
+    setGlow(w) { setLampGlow(Math.max(0, Math.min(1, w))) },
+    lampPoints: () => lampState.origins.map((o) => o.getWorldPosition(new THREE.Vector3()).toArray()),
     update(dt) { billboardLog.update++; stepFade(dt || 0) }, // ruhend bis auf die Paletten-Überblendung: kein Takt, keine Lesefolge (R2 §4)
     dispose() {
       billboardLog.dispose++; state.disposed = true
       content.dispose() // Inhalt gibt seine Textur frei
-      endFade(); faceMat.dispose(); bodyMat.dispose(); lampMat.dispose(); armMat.dispose(); lamps.traverse((m) => m.geometry?.dispose()) // Geometrien gehören dem Cache von billboard-clay.js (wie im Spender); die Überblend-Kopie ist eigen
-      billboardLog.freed = { textures: 1, materials: 4 }
+      endFade(); faceMat.dispose(); bodyMat.dispose(); // Geometrien gehören dem Cache von billboard-clay.js (wie im Spender); die Überblend-Kopie ist eigen
+      billboardLog.freed = { textures: 1, materials: 2 }
       g.clear()
     },
   }

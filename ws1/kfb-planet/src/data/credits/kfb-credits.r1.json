@@ -1,0 +1,21 @@
+{
+ "schema": "kfb.creator-credits/1",
+ "note": "Creator Credits (Georg 21.10.): jede übernommene oder inspirierende Quelle wird hier gewürdigt – im Spiel als KayKit-Holzschild (Inspektion zeigt Artist, Quelle, FrizzleBob-Kommentar), im Abspann „KFB Hall of Kayfabe Kreators“ und im Subreddit. use = code | asset | idea. fbComment ist ein Platzhalter für FrizzleBobs Kudos (Ton: spielerisch, ehrlich).",
+ "credits": [
+  { "id": "kaykit", "creator": "Kay Lousberg (KayKit)", "what": "Figuren, Natur- und Dungeon-Packs; Vorbild für Licht und Erdung (dunkler Fuß)", "use": "asset+idea", "license": "CC0", "link": "https://kaylousberg.com", "fbComment": "Kay, deine Bäume stehen so fest, da trau sogar ich mich hin." },
+  { "id": "threejs", "creator": "three.js-Autoren (mrdoob u. a.)", "what": "Render-Engine, Beispiele", "use": "code", "license": "MIT", "link": "https://github.com/mrdoob/three.js", "fbComment": "Ohne euch wäre ich nur ein Strichmännchen." },
+  { "id": "r3f", "creator": "Poimandres (pmndrs)", "what": "React Three Fiber, drei, react-three-rapier, ecctrl-Umfeld", "use": "code", "license": "MIT", "link": "https://github.com/pmndrs", "fbComment": "" },
+  { "id": "rapier", "creator": "Dimforge", "what": "Rapier-Physik", "use": "code", "license": "Apache-2.0", "link": "https://rapier.rs", "fbComment": "" },
+  { "id": "ecctrl", "creator": "Erdong Chen (ecctrl)", "what": "Figuren-Controller", "use": "code", "license": "MIT", "link": "https://github.com/pmndrs/ecctrl", "fbComment": "" },
+  { "id": "ashima-noise", "creator": "Ian McEwan, Ashima Arts / Stefan Gustavson", "what": "2D-Simplex-Rauschen (snoise) in Gelände, Himmel, Wolken, Fluid", "use": "code", "license": "MIT", "link": "https://github.com/ashima/webgl-noise", "fbComment": "" },
+  { "id": "quilez", "creator": "Inigo Quilez", "what": "Domain Warping – Grundlage der 70er Fließfarben", "use": "idea", "license": "Artikel (Idee)", "link": "https://iquilezles.org/articles/warp/", "fbComment": "" },
+  { "id": "tinyskies", "creator": "Danny Limanseta (tinyskies)", "what": "Inspiration für Himmel, Speedlines, Blendenflecken, Wolkenzug", "use": "idea", "license": "keine Lizenz – nur Idee", "link": "https://github.com/dannylimanseta/tinyskies", "fbComment": "" },
+  { "id": "alisavakis", "creator": "Harry Alisavakis", "what": "Sky-Shader und Gradient-Nebel (Bauplan Himmel R2)", "use": "idea/code", "license": "CC0", "link": "https://halisavakis.com", "fbComment": "" },
+  { "id": "vanhoorn", "creator": "Kelvin van Hoorn", "what": "Skybox-Tutorial (Bauplan Himmel R2)", "use": "idea/code", "license": "MIT", "link": "https://kelvinvanhoorn.com", "fbComment": "" },
+  { "id": "campo-santo", "creator": "Campo Santo (Firewatch)", "what": "Inspiration Himmel/Luftperspektive", "use": "idea", "license": "Talk/Blog (Idee)", "link": "https://www.camposanto.com", "fbComment": "" },
+  { "id": "roystan", "creator": "Erik Roystan Ross", "what": "Toon-Water-Tutorial (Inspiration Fluid)", "use": "idea", "license": "Tutorial (Idee)", "link": "https://roystan.net/articles/toon-water/", "fbComment": "" },
+  { "id": "gurney", "creator": "James Gurney", "what": "Luftperspektive, Wolken über Verläufen", "use": "idea", "license": "Blog (Idee)", "link": "https://gurneyjourney.blogspot.com", "fbComment": "" },
+  { "id": "noble-lozzi", "creator": "Maurice Noble, Art Lozzi (Looney Tunes, Hanna-Barbera)", "what": "Hintergrund-Vorbilder: Wüsten, Staffelung, Fläche + Verlauf", "use": "idea", "license": "Kunstgeschichte (Idee)", "link": "", "fbComment": "" },
+  { "id": "etherington", "creator": "Etherington (Erdung/Landform-Konzepte)", "what": "Gelände: Formen statt Zacken, Erdung", "use": "idea", "license": "Idee", "link": "", "fbComment": "" }
+ ]
+}
