@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- Soldat r3 as-is: Kritiker 7/8/7, übrige Befunde nur „nicht ausschließbar“, Einhand-Laufen = KayKit as-is → PASS nach Messwert Bajonettspitze ≥ 0 (WSB). WS1b-Push blockiert (kein GitHub-Zugang auf dem MacBook; Deploy-Key nicht angefasst) → wartet auf Georgs Entscheid (a) Deploy-Key per Einzelbefehl oder (b) Georg pusht.
 - WS1b Task 1 Tests: 30/37 grün, alle Rotfälle identisch auf unverändertem combo/r2 bzw. SwiftShader-Zeitlimit/alte Mac-Pfade → WS0-Go für Push ws1/preview + ws1b/preview-start, dann Live-Prüfung mit GPU und Pause. Testumgebungs-Hinweise an WS1. Soldat r3 as-is beim Kritiker; Sterbe-Clips: Gewehr bei impact loslassen (weaponDrop).
 - Georg 20.10.: Drum Machine 2 (CC-BY, Peter Simcoe, aus Georgs Repo @5f268e8) für die Disco freigegeben → WSB baut als prop_buried nach Konzeptblatt, Asset-Pass mit Namensnennung.
 - V-574 Kit-Waffen as-is (Georg): Soldat r3 = Original-Gewehr am KayKit-Hand-Slot mit KayKit-Clips unverändert; Einhand/Unterarmachse für Kit-Waffen aufgehoben; r2e gestoppt.
