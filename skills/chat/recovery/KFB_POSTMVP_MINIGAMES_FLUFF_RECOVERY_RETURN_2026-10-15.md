@@ -76,6 +76,18 @@
 
 ---
 
+## CURRENT ADDENDUM · 2026-10-20 · Resident Life / Daily Intent / Aggro / Lean Memory R0.6
+
+**User-design intention:** All NPCs have source-authored personal motives, Home/Work/Social POIs, daily Activity/Intent, physically viable route/path options with no rigid repetition, NPC-to-NPC meetings, interrupt/resume and eventual player interactions. Patrol mobs (e.g. 3 Skeleton Warriors) may walk by, guard or attack according to notice/aggro. All actual Residents, including Lorekeeper, can be hit with cartoon feedback. **Proposed standard provocation ladder:** first Combat-valid hit = surprise + 1 Fluff ball, second = stronger warning + 3 Fluff balls, third = source-resident-dependent defence/attack/escape/aid; later cartoon KO + drop + sink/despawn/return and *same resident identity* returns with Lean Memory of the actual player encounter and altered future regard/reactions. Fluff awards are finite per source encounter with idempotent receipts and real WS1 bounce Wallet, not a farmable corpse/respawn reward fountain. Peaceful work and social behavior remain possible; Chill non-permadeath and story Card availability protected.
+
+**Persisted new design and actual source audit:** [R0.6 Resident Life / Daily Intent / Aggro / Lean Memory](./KFB_RESIDENT_LIFE_POI_DAILY_ACTIVITY_AGGRO_MEMORY_R0_6_2026-10-20.md), initial readback blob `620a97027752f046720423d01250fbeead044283`; source index updated. Existing `RESIDENT_LIFE_SEMANTIC_MODEL_PREP` + `RESIDENT_REACTION_ENCOUNTER_MATRIX_PREP` + `RESIDENT_PERFORMANCE_EVENT_CONTRACT_PREP` + source Overworld `mob-ai.js` describe Identity/Affect/Activity/Encounter, POI route candidates and reusable event/pose/movement grammar. WS0 current V-394/399/416 owns `kfb.character/1` + Dramatis Personae, not an invented resident trait database. Sibling six-tier reputation v1.1 is a derivation from one social-event store. Source owner is WS1 R3F (`ws1/r3f-frame` observed HEAD `75daae0fe8b4b963043a21afe4d2d5daa3f0bd18`); current `ws1/kfb-planet/src/world/interactable.js` has dynamic owner-controlled POI interaction, `world/save.js` real `kfb.save/1` but no demonstrated NPC durable relation/KO ledger, `world/fluff.js` real deterministic six-mode Fluff bounce/auto-claim. Use those, not a second runtime / old WB2 implementation.
+
+**Execution sequencing only, NO new game task:** Phase A 2 Residents (Farmer, Lorekeeper), daily POIs, routes & activity; Phase B 3-Skeleton group encounter; Phase C universal graded 3-hit Fluff/aggro with source character roles; Phase D KO/respawn + owner-approved versioned Lean Memory + relationship; Phase E optional wider simulation/rumors. No source-approved acting montage, path, Combat damage, Save migration, browser or Site proof in this chat; no source assets rendered. Routine NPC life could be considered early after WS0 prioritisation, while current WS1 MVP L3/Look/active tasks remain protected.
+
+**Exactly one new decision gate:** `WS0_RESIDENT_LIFE_ESCALATION_R0_6_INTAKE` — WS0 reads this document and chooses whether a small source-isolated Phase A WS1 scene should be scheduled when capacity permits; no merge/Live or forced implementation. Existing R0.5/Fluff gates continue separately.
+
+---
+
 ## Exact changed files
 1. `skills/chat/recovery/KFB_POSTMVP_MINIGAMES_FLUFF_SOURCE_RECOVERY_2026-10-15.md` — full five-source map, brief concept reconstruction and Claude Code cold-start/read guidance. Verified blob `c689d13a4602f633d4bd7221063c220e3e8e3c2c`; source-only QA **14/14** static checks.
 2. `skills/chat/START_HERE.md` — *additive* first-paragraph index to this recovery; existing October 12/8 decisions retained. Verified blob `1dcb0f98ba6236cce39e8536b113528a10cb52cd`.
