@@ -148,3 +148,7 @@ Georg's new direction: [Card Ink Defense R0.5](./KFB_CARD_INK_DEFENSE_OPEN_WORLD
 
 ## R0.7 · 2026-10-20 · Resident choreography / KKIT motion integration
 Additive companion to R0.6: [Resident Life Choreography x KKIT R0.7](./KFB_RESIDENT_LIFE_CHOREOGRAPHY_KKIT_ANIMATION_R0_7_2026-10-20.md) and [WS0 intake R0.7](./WS0_RESIDENT_LIFE_ANIMATION_CHOREOGRAPHY_INTAKE_R0_7_2026-10-20.md). Source-backed Farmer B / Lorekeeper, source labels Digging + Idle_A, eight-channel PerformanceCue, semantic beat→motion choreography, locomotion/contact authority, interrupted activity resume, future skeleton formation and Combat/KO animation bridges. All proposal/no runtime; source-isolated asset proofs outstanding. WS0_RESIDENT_LIFE_ESCALATION_R0_6_INTAKE remains ONE next gate.
+
+
+## R0.8 · AI Town / Generative Agents / Yuka research reconstruction · 2026-10-20
+Read [full provenance, donor ranking & KFB architecture](./KFB_AI_TOWN_GENERATIVE_NPC_DONOR_RECONSTRUCTION_R0_8_2026-10-20.md) and [WS0 intake](./WS0_AI_TOWN_NPC_SOCIAL_MEMORY_RESEARCH_INTAKE_R0_8_2026-10-20.md). Confirms older AI Town/Social-AIDA/NPC-LIFE line, external AI Town conversation states, Smallville memory/reflection/planning and Yuka steering/perception; no second runtime/nav/LLM swarm. Alleged NotebookLM notebook NOT located/verified. Prior PR #210 and #272 open; only proposal. Single WS0_RESIDENT_LIFE_ESCALATION_R0_6_INTAKE gate continues.
