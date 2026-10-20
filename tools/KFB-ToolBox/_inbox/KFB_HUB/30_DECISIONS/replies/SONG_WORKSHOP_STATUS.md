@@ -248,3 +248,29 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
 - eine ganze Stadt von Piloten an unverbundenen Joysticks, „Rush hour looks exactly the same“;
 - dann: zweiunddreißig Abteilungen in einem Deck, mit Freunden ausschneiden und herausfinden, wer bei euch die Stadt regiert.
 - Gate PASS (3148 Zeichen).
+
+## §10 · 20.10.2026 · Combat Mech als Cyborg-Cop (Georg: A) + Dramatis Personae
+**Georgs Vorgabe:**
+- Die Karteninhalte sind der Kern; dazu die Garnitur, eine tragikomische Rolle der Figur.
+- Combat Mech ist ein leicht dystopischer Cyborg-Cop im Utopia/Dystopia-Realm, mit Ideologien, Fehlannahmen und verkürzten Perspektiven, mit tiefen Wahrheiten, satirischen Brüchen und einer subtilen Fehlerschleife.
+- Kein proprietäres KFB-Storytelling.
+- Den Aufbau entwickeln wir gemeinsam mit den Dramatis Personae.
+
+**Metropolis r6a:**
+- Entwurf mit Alice-Mechanik (Karte = Beat mit Name, Bild und Behauptung) und Cop-Brücken; 33 % eigener Text.
+- Gate PASS.
+- Als Arbeitsmaterial für die Figur, noch nicht zur Kritik.
+
+**Dramatis Personae gefunden:**
+- `FIGURES_R1/characters/` (11 Sheets, `kfb.character/1`) und `figures/` (13 Figure Cards).
+
+**Combat-Mech-Sheet:**
+- Neu als Vorschlag: `SONGS_WORKSHOP_R1/personae/combat_mech.character.proposal.json` (8 GEORG, 36 DESIGN, 7 SOURCE, 20 todo).
+- Zusatzfeld `worldview` vorgeschlagen.
+
+**Abgleich Bewohnerliste ↔ Dramatis Personae:**
+- `personae/RESIDENT_DP_ALIGNMENT_R1.md` mit 5 Konflikten zur Entscheidung (4GTN, 4GTN Forgotten, Goth Girl, FrizzleBob, Norman).
+
+**Nächster Schritt:**
+1. Georg liest die DESIGN-Felder des Combat-Mech-Sheets gegen und entscheidet die Konflikte 1–5.
+2. Danach wird Metropolis aus dem Sheet heraus fertig geschrieben und von einem Kritiker aus einer anderen Modellfamilie geprüft.

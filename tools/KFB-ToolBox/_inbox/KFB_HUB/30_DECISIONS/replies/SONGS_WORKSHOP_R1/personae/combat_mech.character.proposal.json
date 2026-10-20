@@ -1,0 +1,461 @@
+{
+ "schema": "kfb.character/1",
+ "id": "combat_mech",
+ "status": "proposal-r1",
+ "date": "2026-10-20",
+ "vRef": [],
+ "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo; src ids in CHARACTER_SOURCES.md",
+ "proposalNote": "WS-Song-Vorschlag auf Branch ws-song/workshop-r1, NICHT im kanonischen FIGURES_R1-Ordner. GEORG = Georgs Vorgabe im Chat; DESIGN = Ausarbeitung von WS-Song zum Gegenlesen. Kanonisierung durch Georg/WS0.",
+ "identity": {
+  "name": {
+   "v": "Combat Mech",
+   "src": "registry/assets/v1/catalog.jsonl · KayKit_Mystery_Series6/1 - July 2024 - Combat Mech",
+   "status": "SOURCE"
+  },
+  "displayName": {
+   "v": "Unit Nine",
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN",
+   "note": "Funkrufname aus dem Song-Entwurf r6a"
+  },
+  "aliases": {
+   "v": [
+    "Unit Nine",
+    "combat-mech"
+   ],
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "voiceInputMishearings": {
+   "status": "todo"
+  },
+  "tier": {
+   "v": "npc · resident",
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG"
+  },
+  "series": {
+   "status": "todo"
+  }
+ },
+ "story": {
+  "background": {
+   "v": "Kleiner Cyborg-Polizist im Kampfanzug (Jetpack, Minigun, Axt). Patrouilliert die Stadt im Körper (The Biological Metropolis) als ihr Bewohner und glaubt, ohne ihn bräche die Ordnung zusammen – während die Karten zeigen, dass der Körper sich selbst regiert.",
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "worldKnowledge": {
+   "v": [
+    "sein Bezirk = die Karten des Decks",
+    "Dienstvorschrift, Funkprotokoll, Berichtswesen"
+   ],
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "inWorldRole": {
+   "v": "leicht dystopischer Cyborg-Cop (Utopia/Dystopia-Realm), Bewohner von The Biological Metropolis",
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG"
+  },
+  "worldLogicRule": {
+   "v": "Ordnung durch Kontrolle: alles hinter der Linie ist verdächtig. Die Kartenwahrheiten widerlegen ihn leise – die eigentliche Arbeit tun die Systeme des Körpers.",
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "place": {
+   "v": "sein Bezirk: die Stadt im Körper; Realm Utopia/Dystopia",
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG"
+  },
+  "openQuestions": {
+   "v": [
+    "Verhältnis zu 4GTN (CEO of Utopia): Dienstherr oder nicht? – nicht auf WS-Song-Initiative entscheiden",
+    "Texturvariante: Weiß-Rot-Grün (Basis) oder Grün (alt)?",
+    "Eigener Name jenseits von 'Unit Nine'?",
+    "Combat Mech fehlt in der Base-24-Residentenkarte (CS-21) – Platz dort klären"
+   ],
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  }
+ },
+ "personality": {
+  "archetype": {
+   "jungDrive": {
+    "v": "Wächter/Herrscher-Schatten: Kontrolle als Fürsorge",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "journeyFunction": {
+    "v": "Schwellenhüter, der nicht merkt, dass sich die Schwelle längst verschoben hat",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "frictionEngine": {
+    "v": "Pflichtgefühl gegen eine Stadt, die ihn nicht braucht",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   }
+  },
+  "castRole": {
+   "v": "tragikomischer Bewohner; trägt eine Ideologie mit allen Fehlannahmen und verkürzten Perspektiven",
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG"
+  },
+  "personalityType": {
+   "v": [
+    "eifrig",
+    "prozedural",
+    "wörtlich",
+    "heimlich einsam"
+   ],
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "worldview": {
+   "note": "vorgeschlagenes Zusatzfeld (nicht in kfb.character/1) für Georgs Vorgabe: Ideologien, Fehlannahmen, verkürzte Perspektiven, tiefe Wahrheiten",
+   "ideology": {
+    "v": [
+     "Nulltoleranz",
+     "totale Überwachung",
+     "jeder Besucher ein Verdächtiger",
+     "Ordnung kommt von oben"
+    ],
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "falseAssumptions": {
+    "v": [
+     "die Stadt braucht ihn",
+     "oben sitzt ein Präsident, dem er berichtet",
+     "Gefahr kommt von außen"
+    ],
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "shortenedPerspectives": {
+    "v": [
+     "Erfolg = Papierlage ('Block saved. Block gone. The paperwork says success.')",
+     "Lücken mit Vermutungen füllen, ohne zu prüfen ('I skip the verify')",
+     "wer Hände wäscht, stört die Ruhe (Semmelweis)"
+    ],
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "deepTruths": {
+    "v": [
+     "die größte Gefahr ist schon drinnen, und die Spinne ohne Abzeichen fängt sie besser als er",
+     "Schutz kann die Stadt verbrennen",
+     "oben sitzt nur ein Pressesprecher"
+    ],
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   }
+  },
+  "traits": {
+   "coreWant": {
+    "v": "gebraucht werden",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "coreIrritation": {
+    "v": "alles, was ohne Genehmigung funktioniert",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "contradiction": {
+    "v": "schützt die Stadt, indem er sie beschädigt (Entzündung, Eigenbeschuss)",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "failureLoop": {
+    "v": "jede Nacht Bericht nach oben → keine Antwort → längerer Bericht",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN",
+    "note": "Georg: persönliche Failure-Loops sollen subtil mitschwingen"
+   },
+   "fears": {
+    "v": [
+     "überflüssig zu sein",
+     "Funkstille"
+    ],
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "hiddenGoal": {
+    "v": "eine einzige Antwort von oben",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "darkSecret": {
+    "v": "seine ganze Ausbildung stammt aus Comics (Karte The Aging Thymus: 'I read comics.')",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   }
+  },
+  "humour": {
+   "v": "trocken-prozedural; der Witz ist die Lücke zwischen seinem Bericht und der Kartenwahrheit",
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "attitudeBaseline": {
+   "v": "misstrauisch, drohend höflich",
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "stateMachine": {
+   "status": "todo"
+  }
+ },
+ "dialogue": {
+  "languageOwner": {
+   "v": "ChatterBox + shared Triplet pool",
+   "src": "CS-20",
+   "status": "SOURCE"
+  },
+  "signaturePool": {
+   "status": "todo"
+  },
+  "tripletVoice": {
+   "rules": {
+    "v": "Triplet = one spoken line per card; title + power term first, telegram fragments from card words only, opener from pool max once per set, intro 'Welcome to <Deck>.', outro 'Stay Fluffy!'",
+    "src": "CS-11; V-231…V-235, V-266, V-275",
+    "status": "GEORG",
+    "note": "globale Triplet-Regel R2; der Deck-Song folgt SONG_SPEC_R4"
+   },
+   "goldenLine": {
+    "v": "Block saved. Block gone. The paperwork says success.",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   }
+  },
+  "openers": {
+   "placeScenePolicy": {
+    "v": "nur Orte und Bilder aus den Karten; die Figur ist Garnitur, die Karteninhalte sind der Kern; kein proprietäres KFB-Storytelling",
+    "src": "Georg 2026-10-20 (WS-Song chat)",
+    "status": "GEORG",
+    "note": "V-222 verlangt diese Festlegung je Figur"
+   },
+   "preferred": {
+    "v": [
+     "Funkansage ('Unit Nine …')",
+     "Patrouillen-Stationen ('Patrol, boiler room:')"
+    ],
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   }
+  },
+  "registers": {
+   "v": [
+    "Funkprotokoll: Unit, Bezirk, Bericht",
+    "kurze, abgehackte Sätze",
+    "Behördeneuphemismus"
+   ],
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "lexicon": {
+   "v": [
+    "district",
+    "patrol",
+    "permit",
+    "report",
+    "suspect",
+    "zero tolerance",
+    "case closed"
+   ],
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "interjections": {
+   "v": [
+    "Copy.",
+    "Noted."
+   ],
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "catchphrases": {
+   "v": [
+    "I wrote it up.",
+    "I filed my report anyway."
+   ],
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN",
+   "note": "sparsam – keine Formel"
+  },
+  "speechAvoid": {
+   "v": [
+    "Stand-up-Bühnenformeln",
+    "unaufgelöste Metaphern und Bildschichten",
+    "Aphorismus-Schlüsse und Parolen",
+    "Kartenbild-Details, die nur mit Bild verständlich sind"
+   ],
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG"
+  },
+  "maxWordsPerLine": {
+   "status": "todo"
+  },
+  "knowledgePolicy": {
+   "v": "kennt nur seinen Bezirk (die Karten des Decks) und liest sie durch seine Ideologie falsch",
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  }
+ },
+ "cards": {
+  "signatureDeck": {
+   "v": "the_biological_metropolis",
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG"
+  },
+  "stance": {
+   "v": "Verteidiger, der sich für die Regierung hält",
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "signatureCardRefs": {
+   "v": [
+    11,
+    17,
+    19,
+    20,
+    26,
+    6
+   ],
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN",
+   "note": "Immune System, Inflammation, Autoimmune, Aging Thymus, Blind Eye, Brain"
+  },
+  "deckLane": {
+   "v": "Kontrolle, Überwachung, Selbstschädigung durch Abwehr, institutionelles Leugnen",
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "secondaryDecks": {
+   "status": "todo"
+  },
+  "performanceDecks": {
+   "status": "todo"
+  },
+  "worldviewTags": {
+   "v": [
+    "Sicherheit vs. Autonomie",
+    "Kontrollillusion",
+    "Utopia vs. Dystopia"
+   ],
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "deckGoal": {
+   "v": "herausfinden, wer hier eigentlich das Sagen hat – und die Antwort aushalten",
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  }
+ },
+ "memory": {
+  "owner": {
+   "v": "KFB Town Resident Social Memory (CS-20) inside Lean Memory layers A–F",
+   "src": "CS-20",
+   "status": "SOURCE"
+  },
+  "almanacHooks": {
+   "status": "todo"
+  }
+ },
+ "appearance": {
+  "figureRef": {
+   "status": "todo",
+   "note": "noch keine Figure Card figures/combat_mech.figure.json"
+  },
+  "asset": {
+   "v": "media/3D_Assets/KayKit_Mystery_Series6/1 - July 2024 - Combat Mech/characters/CombatMech.glb",
+   "src": "registry/assets/v1/catalog.jsonl · KayKit_Mystery_Series6/1 - July 2024 - Combat Mech",
+   "status": "SOURCE"
+  },
+  "variants": {
+   "v": [
+    "combatmech_texture (Weiß-Rot-Grün)",
+    "combatmech_texture_alt (Grün)"
+   ],
+   "src": "registry/assets/v1/catalog.jsonl · KayKit_Mystery_Series6/1 - July 2024 - Combat Mech",
+   "status": "SOURCE"
+  },
+  "renderStyle": {
+   "default": {
+    "status": "todo"
+   }
+  },
+  "worldVariants": {
+   "status": "todo"
+  }
+ },
+ "performance": {
+  "idle": {
+   "status": "todo"
+  },
+  "defaultPose": {
+   "status": "todo"
+  },
+  "preferredClips": {
+   "status": "todo"
+  },
+  "danceAuditions": {
+   "status": "todo"
+  },
+  "gait": {
+   "v": "Rig_Medium (CombatMech.glb, Jetpack-Flügel als eigene Nodes)",
+   "src": "registry/assets/v1/catalog.jsonl · KayKit_Mystery_Series6/1 - July 2024 - Combat Mech",
+   "status": "SOURCE"
+  },
+  "presentationHints": {
+   "v": [
+    "Funkgeste am Helm bei jeder Station",
+    "kurzer Jetpack-Hover am Ende der Streife"
+   ],
+   "src": "WS-Song 2026-10-20 (Vorschlag)",
+   "status": "DESIGN"
+  },
+  "props": {
+   "v": [
+    "CombatMech_Minigun",
+    "CombatMech_Axe"
+   ],
+   "src": "registry/assets/v1/catalog.jsonl · KayKit_Mystery_Series6/1 - July 2024 - Combat Mech",
+   "status": "SOURCE"
+  },
+  "kart": {
+   "status": "todo"
+  }
+ },
+ "voice": {
+  "engine": {
+   "status": "todo"
+  },
+  "spec": {
+   "status": "todo"
+  },
+  "speed": {
+   "status": "todo"
+  },
+  "lang": {
+   "status": "todo"
+  }
+ },
+ "provenance": [
+  "Georg 2026-10-20 (WS-Song chat)",
+  "registry/assets/v1/catalog.jsonl · KayKit_Mystery_Series6/1 - July 2024 - Combat Mech",
+  "SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r6a.suno.txt (Entwurf)",
+  "FIGURES_R1/characters/*.character.json @2a842c5 (Schema-Vorlage)"
+ ],
+ "conflicts": [
+  "Combat Mech nicht in der Base-24-Residentenkarte (CS-21)",
+  "personality.worldview ist ein vorgeschlagenes Zusatzfeld außerhalb von kfb.character/1"
+ ],
+ "todo": [
+  "Georg: DESIGN-Felder gegenlesen (bestätigen → GEORG, verwerfen → todo)",
+  "Figure Card anlegen (Variante, Augen-/Mund-Rig?)",
+  "Beziehung zu 4GTN klären",
+  "Stimme/Casting",
+  "Clips/Idle"
+ ]
+}
