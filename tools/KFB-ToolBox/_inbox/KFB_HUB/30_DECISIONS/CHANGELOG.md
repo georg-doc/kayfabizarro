@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- V-580: NPC-Alltag → neue WS1-Sitzung WS-NPC (Brief replies/BRIEF_WS1_NPC_LIFE_R1.md); Song-Workbench in die Audio-Site (V-390); Gewehrhaltung WSA/WSB bewusst parallel, Best-of-Breed später durch Georg.
 - WS1b kombinierte Vorschau (combo/r2 + preview-start + fluff-pickup) 35/39 grün, Push wartet auf Georgs direkte Deploy-Key-Bestätigung in der WS1b-Sitzung. Entscheid Startschalter: nur in der Vorschau-Schicht (ws1/preview index.html), nicht in der Quelle (WS1 §110); Ladeanzeige bleibt in der Quelle.
 - WSB K9 gestartet (Georg, Web-Chat-Plan „KayKit Cartoon Animation · Vorarbeit R2“, planning/kfb-kaykit-cartoon-performance-r1-2026-10-20 @2e25eec): erstes Gate = Original-Clip Melee_1H_Attack_Chop isoliert vermessen (Bahnen, Kontakte, Phasen) + Sichtbild mit KFB-Augen; keine Varianten, kein Push, nichts in der Arena.
 - WSB Soldat r3c (V-579): nur 4 Anker-Knoten neu (KFB_Muzzle Mündungsmitte, +Z = Schuss, 0,000° ∥ Lauf; Grip/Grip_L/Bayonet_Tip mitgezogen), gunfight_duel_02 Akteur A ry 178,9°, Karten + Handoff + muzzle.json auf r3c → WSA frei für Runtime-Anschluss.

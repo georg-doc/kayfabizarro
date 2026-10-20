@@ -8199,6 +8199,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-580",
+   "date": "2026-10-20",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Georg 20.10.: (1) NPC-Alltag als dritte parallele WS1-Sitzung „WS-NPC“: Tagesroutinen über POIs mit Aktivitäts-Clips, Fahrplan statt Simulation, Gruppen mit Rollen, einfacher Verhaltensautomat – Grundlage SPEC_NPC_PATROL_R1 + neu kfb.npc-day/1; Gate R1 eine Zone, Soldaten 1–6, 3 Bots, 1 Resident mit Tagesplan, kein Pop-in, ≥ 55 fps (Brief replies/BRIEF_WS1_NPC_LIFE_R1.md). (2) Song-Workbench (WS-Song mit WS1) wird Teil der Sound-Werkstatt/Audio-Site, keine neue Site (V-390). (3) Gewehrhaltung: WSA-Arena und WSB-Soldat r3c laufen bewusst parallel und korrigieren sich nicht gegenseitig; Zusammenführung später Best-of-Breed durch Georg.",
+   "values": {},
+   "owner": "WS-NPC (neu) · WS-Song · WSA · WSB · WS0",
+   "check": "Gate R1 NPC; Workbench in der Audio-Site",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Parallel arbeiten, aber integrieren: neue Sitzungen bekommen klare Grenzen, und Zusammenführungen entscheidet Georg.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8286,7 +8301,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:990",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:994",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
