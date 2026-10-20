@@ -37,6 +37,14 @@ CASES = [  # (Name, Argumente, erwarteter Exit, erwartete Zeichenkette)
     ("STYLE nennt Performer = FAIL", ["style", os.path.join(H, "style_names_performer.style.txt"), "--deck", DECK, "--songlines", os.path.join(H, "title_omitted_pass.songlines.json")], 1, "FAIL V-362"),
     ("STYLE ohne BPM = nur WARN", ["style", os.path.join(H, "style_no_bpm.style.txt")], 0, "WARN D13b: Variante 1: keine BPM-Angabe"),
 ]
+LYR42 = lambda n: lyr(n) + ["--catalog", os.path.join(H, "catalog_fixture.jsonl")]
+CASES += [
+    ("R4.2: Bewohner-Duo aus Katalog = PASS", LYR42("resident_pass"), 0, "INFO C9B: Bewohner verifiziert: Mummy_A"),
+    ("R4.2: unbekannter Bewohner = FAIL", LYR42("resident_unknown_fail"), 1, "FAIL C9B: Bewohner-Modell 'Pharaoh_Ghost'"),
+    ("R4.2: FrizzleBob als Hausfigur = PASS", LYR42("resident_frizzlebob_pass"), 0, "INFO C9B: Bewohner FrizzleBob: KFB FrizzleBob v5"),
+    ("R4.2: Bühnenformel = REVIEW", lyr("stage_formula_review_pass"), 0, "REVIEW C9R: Bühnenformel 'good evening'"),
+    ("R4.2: Publikums-Cue = REVIEW", lyr("title_omitted_pass"), 0, "REVIEW C9R: Publikums-Cue [Crowd Cheering]"),
+]
 CRIT = lambda n: ["critic", os.path.join(H, n + ".critic.json"), "--lyrics", os.path.join(H, "title_omitted_pass.suno.txt"),
                   "--style", os.path.join(H, "style_ok.style.txt"), "--synopsis", os.path.join(H, "title_omitted_pass.synopsis.txt")]
 CASES += [
@@ -48,6 +56,8 @@ CASES += [
     ("Kritiker v2 erfundenes Zitat = FAIL", CRIT("critic_v2_fake_quote"), 1, "steht nicht im Kandidaten"),
     ("R4.1: Zitat mit Komma + 'swapping' bei transferable = PASS", CRIT("critic_v2_r41_ok"), 0, "critic v2"),
     ("R4.1: 'e.g.' bleibt verboten = FAIL", CRIT("critic_v2_eg"), 1, "klingt nach Textvorschlag ('e.g.')"),
+    ("R4.2: Kritiker v3 gültig", CRIT("critic_v3_ok"), 0, "critic v3"),
+    ("R4.2: Kritiker v3 ohne fractalCards = FAIL", CRIT("critic_v3_missing"), 1, "questions braucht genau"),
 ]
 # Regression: Altbestand (R3.7 PASS) bleibt PASS unter R4, Titel-Zuordnung
 REG = [("grimms_kayfabe_legends_expansion_set_02", "SONG_CRITICS_R3/r46/grimms_kayfabe_legends_expansion_set_02.r5.2", "GRIMMS_KAYFABE_LEGENDS_EXPANSION_SET_02_-_ADD_web.pdf.json"),

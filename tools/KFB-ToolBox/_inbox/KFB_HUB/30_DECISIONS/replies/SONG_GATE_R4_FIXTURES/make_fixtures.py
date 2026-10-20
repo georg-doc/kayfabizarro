@@ -110,4 +110,21 @@ c = copy.deepcopy(crit); c["questions"]["transferable"]["observation"] = "Swappi
 wj("critic_v2_r41_ok.critic.json", c)
 c = copy.deepcopy(crit); c["questions"]["performer"]["observation"] = "Voice works, e.g. the umbrella line."
 wj("critic_v2_eg.critic.json", c)
+# R4.2 – Bewohner, offene Ansprache, Kritiker v3
+w("catalog_fixture.jsonl", "\n".join(json.dumps({"kind": "model-3d", "name": n, "path": f"media/3D_Assets/fixture/{n}.gltf"}) for n in ["Mummy_A", "Mummy_B", "Clown"]) + "\n")
+res_beats = [beats[0], "Dust off the lid, whoever you are. We keep the parade down here now, in the dark, where it cannot rain.",
+             "My sister wraps, I unwrap, and every Sunday we argue about who marched first."] + beats[3:5] + beats[6:]
+case("resident_pass", res_beats, mutate=lambda s: (s.update(performer=None, performers=[{"model": "Mummy_A", "asset": "KayKit Mummy · A", "role": "erzählt"}, {"model": "Mummy_B", "asset": "KayKit Mummy · B", "role": "widerspricht"}], cues=[]),
+                                                   [c.update(beats=[c["beats"][0] - 1]) for c in s["cards"] if c["beats"][0] > 5]))
+case("resident_unknown_fail", res_beats, mutate=lambda s: (s.update(performer=None, performers=[{"model": "Pharaoh_Ghost", "asset": "", "role": ""}], cues=[]),
+                                                           [c.update(beats=[c["beats"][0] - 1]) for c in s["cards"] if c["beats"][0] > 5]))
+case("resident_frizzlebob_pass", [beats[0], "FrizzleBob here, under the umbrella, counting floats again. Pull up a crate if you stay."] + res_beats[2:5] + res_beats[5:],
+     mutate=lambda s: (s.update(performer=None, performers=[{"model": "FrizzleBob", "asset": "KFB FrizzleBob v5", "role": ""}], cues=[]),
+                       [c.update(beats=[c["beats"][0] - 1]) for c in s["cards"] if c["beats"][0] > 5]))
+case("stage_formula_review_pass", [beats[0], "Good evening, everyone! Hold your umbrella up high, tonight you are the weather."] + beats[2:])
+c = copy.deepcopy(crit); c["schema"] = "kfb.song-critic.v3"
+c["questions"]["resident"] = {"answer": "partly", "observation": "Speaks from a parade life, though the umbrella line still assumes a crowd."}
+c["questions"]["fractalCards"] = {"answer": "yes", "observation": "The elephant and the float boast about themselves."}
+wj("critic_v3_ok.critic.json", c)
+c2 = copy.deepcopy(c); del c2["questions"]["fractalCards"]; wj("critic_v3_missing.critic.json", c2)
 print("fixtures geschrieben")

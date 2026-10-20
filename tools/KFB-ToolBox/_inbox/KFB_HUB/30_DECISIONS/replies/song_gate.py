@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KFB Song-Tor R4.1 (SONG_SPEC_R4, V-576; R4.1: Zitat-Satzzeichen, "swap" bei transferable): EIN Prüfskript für alle Deck-Songs. Keine Kopien je Deck, kein Schatten-Parser.
+"""KFB Song-Tor R4.2 (SONG_SPEC_R4, V-576; R4.1: Zitat-Satzzeichen, "swap" bei transferable; R4.2: Bewohner im Diorama, offene Ansprache, Kritiker v3): EIN Prüfskript für alle Deck-Songs. Keine Kopien je Deck, kein Schatten-Parser.
 R4 ersetzt R3.7 (V-528). R2 (gesprochene Triplets) und triplet_set_check.py bleiben unverändert.
 
   python3 song_gate.py lyrics <track.suno.txt> --deck <deck.json> [--songlines <x.songlines.json>] [--media <deck.pdf.json>]
@@ -25,7 +25,7 @@ import argparse, hashlib, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from triplet_set_check import GRAMMAR, FLUFF, vocab, stems  # gleiche Wortlogik wie das Triplet-Tor
 
-GATE_VERSION = "R4.1"
+GATE_VERSION = "R4.2"
 SONGLINES_R4 = "kfb.songlines.r4"
 WORD = re.compile(r"[A-Za-z]+(?:[-'][A-Za-z]+)*")
 GAME_WORDS = {"actor", "actors", "token", "tokens", "scene", "scenes", "zerg", "equipped", "discard", "discards", "dice",
@@ -66,6 +66,11 @@ CUE_TAGS = {"spoken word", "intro", "outro", "verse", "pre-chorus", "chorus", "h
             "stop", "end", "applause", "crowd cheering", "cheering crowd", "crowd", "crowd chant", "crowd boos", "boos",
             "bell", "ring bell", "laughter", "audience laughter", "gasp", "record scratch"}
 TAG_LINE = re.compile(r"^\[([^\[\]]{1,40})\]$")
+# R4.2 (Georg 20.10.): Bewohner performt im Diorama-Zuhause, für wen auch immer da ist
+STAGE_FORMULAS = ["good morning", "good evening", "good night, everybody", "tonight", "ladies and gentlemen", "front row", "round of applause",
+                  "give it up for", "thank you, thank you", "make some noise", "is this thing on"]
+CROWD_TAGS = {"applause", "crowd cheering", "cheering crowd", "crowd", "crowd chant", "crowd boos", "boos", "laughter", "audience laughter"}
+KFB_HOUSE_FIGURES = {"frizzlebob": "KFB FrizzleBob v5 (V-244) – Hausfigur, nicht im Asset-Katalog"}
 NAMED_FIGURE = re.compile(r"frizzlebob|\b(uncle|onkel)\b(?!\s+sam)|\brabbit\b(?!\s+holes?)", re.I)
 
 
@@ -183,6 +188,36 @@ def check_performer(p, a, out):
     return card
 
 
+def check_performers(ps, a, out):
+    """R4.2: Bewohner = Figur(en) aus registry/assets/v1/catalog.jsonl (model-3d, Name exakt) oder KFB-Hausfigur."""
+    if not ps:
+        return []
+    cat = a.catalog or os.path.join(os.path.dirname(registry_dir(a)), "catalog.jsonl")
+    names = set()
+    if os.path.isfile(cat):
+        for line in open(cat, encoding="utf-8"):
+            try:
+                r = json.loads(line)
+            except Exception:
+                continue
+            if r.get("kind") == "model-3d":
+                names.add(str(r.get("name", "")).casefold())
+    else:
+        out("WARN", "C9B", f"Asset-Katalog nicht gefunden ({cat}); Bewohner ungeprüft")
+    ok = []
+    for p in ps:
+        m = str((p or {}).get("model") or "").strip()
+        if not m:
+            out("FAIL", "C9B", f"Bewohner ohne model: {p!r}")
+        elif m.casefold() in KFB_HOUSE_FIGURES:
+            out("INFO", "C9B", f"Bewohner {m}: {KFB_HOUSE_FIGURES[m.casefold()]}"); ok.append(m)
+        elif names and m.casefold() not in names:
+            out("FAIL", "C9B", f"Bewohner-Modell {m!r} nicht im Asset-Katalog (model-3d)")
+        else:
+            out("INFO", "C9B", f"Bewohner verifiziert: {m} ({p.get('asset') or 'Variante offen'})"); ok.append(m)
+    return ok
+
+
 def gate_lyrics(a):
     text = open(a.lyrics, encoding="utf-8").read()
     deck = json.load(open(a.deck, encoding="utf-8"))
@@ -239,6 +274,9 @@ def gate_lyrics(a):
             if m.get("visualVerified") is not False and not m.get("visualEvidence"):
                 out("FAIL", "S3", f"visualMotif Karte {m.get('cardNumber')}: visualVerified ohne visualEvidence (nur JSON gelesen -> false)")
     performer = check_performer(sj.get("performer") if isinstance(sj, dict) else None, a, out)
+    residents = check_performers((sj.get("performers") or []) if isinstance(sj, dict) else [], a, out)
+    if r4 and not residents and not performer:
+        out("REVIEW", "C9B", "kein Bewohner (performers) angegeben – R4.2: Bewohner des Decks performt")
 
     # ---- Form ----
     if len(text) >= 5000:
@@ -440,10 +478,18 @@ def gate_lyrics(a):
     for p in INTRO_FORBIDDEN:
         if p in frame_text.casefold():
             out("FAIL", "C9", f"Formel im Rahmen: {p!r}")
+    # R4.2: offene Ansprache – Bühnenformeln und Publikums-Cues als Signal
+    for p in STAGE_FORMULAS:
+        if re.search(rf"\b{re.escape(p)}\b", frame_text.casefold()):
+            out("REVIEW", "C9R", f"Bühnenformel {p!r}: setzt ein Publikum voraus – Bewohner spricht für wen auch immer da ist")
+    for j in tag_beats:
+        t = bs[j].strip()[1:-1].strip().casefold()
+        if t in CROWD_TAGS and not (isinstance(sj, dict) and sj.get("diegeticCrowd")):
+            out("REVIEW", "C9R", f"Publikums-Cue [{bs[j].strip()[1:-1]}] in Beat {j}: gehört er zur Welt des Decks? (sonst weglassen; begründet: songlines.diegeticCrowd)")
     # Benannte Figur im Rahmen nur, wenn sie der verifizierte Performer ist (V-576)
     for j, b in frame + perf_bits:
         m = NAMED_FIGURE.search(b)
-        if m and not (performer and norm_name(m.group(0)) in norm_name(performer.get("cardName"))):
+        if m and not ((performer and norm_name(m.group(0)) in norm_name(performer.get("cardName"))) or any(norm_name(m.group(0)) in norm_name(x) for x in residents)):
             out("FAIL", "C9P", f"Rahmen nennt Figur {m.group(0)!r} ohne passenden verifizierten Performer (Beat {j})")
     # Kartennamen im Rahmen
     sel_nums = {int(c.get("cardNumber", 0)) for c in selected}
@@ -584,6 +630,9 @@ V2_QUESTIONS = {   # V-576 Leitfragen; Antwort "yes|partly|no"
     "transferable": "Wäre der Text mit wenigen Änderungen auf ein anderes Deck übertragbar? (yes = Warnzeichen)",
 }
 ANSWERS = {"yes", "partly", "no"}
+V3_QUESTIONS = dict(V2_QUESTIONS, **{   # R4.2: Bewohner-Performance
+    "resident": "Spricht hier eine Figur aus ihrer eigenen Welt – egal, ob andere zuhören oder nur eine Person?",
+    "fractalCards": "Treten die Karten als Figuren dieser Welt auf, die etwas über sich behaupten?"})
 
 
 def quotes_of(ob):
@@ -599,7 +648,8 @@ def gate_critic(a):
     nb = len(beats_of(song))
     fails = []
     F = lambda m: fails.append("FAIL F: " + m)
-    if crit.get("schema") == "kfb.song-critic.v2":
+    if crit.get("schema") in ("kfb.song-critic.v2", "kfb.song-critic.v3"):
+        QS = V3_QUESTIONS if crit.get("schema") == "kfb.song-critic.v3" else V2_QUESTIONS
         source = song
         for p in (a.style, a.synopsis):
             if p:
@@ -618,8 +668,8 @@ def gate_critic(a):
         if not inp or inp - V2_INPUTS or "lyrics" not in inp:
             F(f"inputs nur aus {sorted(V2_INPUTS)} (lyrics Pflicht); Quelle/Dossier/Entwürfe sind nicht blind: {sorted(inp)}")
         qs = crit.get("questions") or {}
-        if set(qs) != set(V2_QUESTIONS):
-            F(f"questions braucht genau {sorted(V2_QUESTIONS)}")
+        if set(qs) != set(QS):
+            F(f"questions braucht genau {sorted(QS)}")
         obs_all = []
         for k, q in qs.items():
             if not isinstance(q, dict) or set(q) != {"answer", "observation"}:
@@ -648,10 +698,10 @@ def gate_critic(a):
         rec = crit.get("recommendation")
         if rec not in ("REVISE", "READY_FOR_WS0"):
             F("recommendation muss REVISE oder READY_FOR_WS0 sein")
-        neg = [k for k in V2_QUESTIONS if k != "transferable" and (qs.get(k) or {}).get("answer") == "no"]
+        neg = [k for k in QS if k != "transferable" and (qs.get(k) or {}).get("answer") == "no"]
         if rec == "READY_FOR_WS0" and (neg or (qs.get("transferable") or {}).get("answer") == "yes"):
             F(f"READY_FOR_WS0 trotz 'no' bei {neg} oder transferable=yes")
-        print(f"song_gate {GATE_VERSION} critic v2 · {os.path.basename(a.critic)} · {len(crit.get('flags') or [])} Flags · {rec}")
+        print(f"song_gate {GATE_VERSION} critic {crit.get('schema')[-2:]} · {os.path.basename(a.critic)} · {len(crit.get('flags') or [])} Flags · {rec}")
     else:
         source = song
         for src in (a.source or []):
@@ -734,6 +784,8 @@ def gate_style(a):
     banned_names = []
     if isinstance(sj, dict) and sj.get("performer"):
         banned_names.append(str(sj["performer"].get("name") or ""))
+    if isinstance(sj, dict):
+        banned_names += [str(p.get("model") or "") for p in (sj.get("performers") or [])]
     if a.deck:
         deck = json.load(open(a.deck, encoding="utf-8"))
         banned_names.append(str(deck.get("title") or ""))
@@ -824,7 +876,7 @@ if __name__ == "__main__":
     sub = ap.add_subparsers(dest="cmd", required=True)
     l = sub.add_parser("lyrics")
     l.add_argument("lyrics"); l.add_argument("--deck", required=True); l.add_argument("--songlines"); l.add_argument("--media")
-    l.add_argument("--registry"); l.add_argument("--cards"); l.add_argument("--tone"); l.add_argument("--corpus", nargs="*")
+    l.add_argument("--registry"); l.add_argument("--catalog"); l.add_argument("--cards"); l.add_argument("--tone"); l.add_argument("--corpus", nargs="*")
     c = sub.add_parser("critic")
     c.add_argument("critic"); c.add_argument("--lyrics", required=True); c.add_argument("--style"); c.add_argument("--synopsis")
     c.add_argument("--source", nargs="*")

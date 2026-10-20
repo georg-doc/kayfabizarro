@@ -143,3 +143,23 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
 **Pilot:** BBBW-Feed `kfb.song.writers-room-feed/1`.
 
 **Nächster Gate:** `WS0_WRITERS_ROOM_EXPORT_ACK_R1`, danach Push nur mit Georgs Bestätigung.
+
+## §6 · 20.10.2026 · Bewohner-Prinzip (Georg) + Spec/Gate R4.2
+**Georgs Klarstellung:**
+- Der Song gehört dem Bewohner-NPC des Decks, der ihn im Diorama-Zuhause performt.
+- Die Ansprache ist offen, die Karten treten fraktal auf.
+- Keine Stand-up-Bühne.
+
+**60 Bewohner-Vorschläge:**
+- Figuren aus dem Asset-Katalog inklusive Texturvarianten; Duos wie Mumien, Orks, Werwolf, 4GTN.
+- Georg hat sie am 20.10. bestätigt, im Writers' Room stehen sie auf BESTÄTIGT.
+- Datei: `WRITERS_ROOM_R1/RESIDENT_PROPOSALS_R1.json`.
+
+**Spec und Gate:**
+- SONG_SPEC_R4 → R4.2: Abschnitt B (Bewohner).
+- Gate R4.2: C9B Bewohner gegen Katalog; C9R Bühnenformeln und Publikums-Cues als REVIEW.
+- Kritiker v3 mit zwei neuen Fragen. Fixtures 41/41.
+
+**Prozess und Fahrplan für WS0:** `SONG_WORKSHOP_PROCESS.md`.
+
+**Nächster Schritt:** die drei Piloten als Bewohner-Performance (r5).
