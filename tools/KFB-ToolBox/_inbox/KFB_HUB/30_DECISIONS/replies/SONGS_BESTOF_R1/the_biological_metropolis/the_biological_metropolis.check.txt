@@ -1,0 +1,12 @@
+# WR1 factual static checks · not the official Python gate
+- Canonical registry blob: 4a308c2c50f58bb2dc30380b5776e2b1b5a349dd
+- Printed PDF JSON blob: 779f1be59017065003812753e40f0478a0e9e1f0
+- 32/32 card titles matched in deck order (JS source-based check).
+- 32/32 card cores within 80–95 characters.
+- Exact lyric Unicode length: 3696, below 5000 (BMP-only lyric).
+- 10/32 nonempty openers. Two unique musical alternatives at 112/116 BPM.
+- Last beat: Stay Fluffy, Folks!; opening beat [Spoken Word].
+- NOT RUN: original Python song_gate.py R3.7 lyrics or style, triplet_set_check.py, full earlier-song corpus regression.
+- NOT RUN: independent blind critic and WS0 acceptance.
+- NOT INSPECTED: actual printed PDF page imagery.
+- NOT GENERATED: Suno sound, Hub track card, Stage/Site; credits used = 0.
