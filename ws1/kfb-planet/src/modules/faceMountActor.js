@@ -126,7 +126,7 @@ export function createFaceMountActor(options) {
     }
     // P08 Z. 1901–1903 + _mouthNoShadow
     fig.traverse((n) => { if (!n.isMesh) return; const mt = n.material, thin = !!(n.userData.petOverlay || (mt && (mt.isShaderMaterial || (mt.transparent && (mt.opacity == null || mt.opacity < 0.98))))); n.castShadow = !thin; n.receiveShadow = !(mt && mt.isShaderMaterial) })
-    fig.traverse((n) => { if (n.isMesh && /(^|[^a-z])ears?([^a-z]|$)/i.test(n.name || '')) n.castShadow = false }) // _earCast (aus)
+    // _earCast (P08: aus) – im Spiel an: alle Figurenteile werfen und empfangen (V-429; WS1b-Schattendiagnose 20.10.: Schatten ohne Ohren)
     try { f.shadowOff && f.shadowOff() } catch (e) { log('shadowOff: ' + e.message) }
     { const add = (o) => o?.traverse?.((n) => { if (n.isMesh) n.receiveShadow = false }); add(f.mouth && f.mouth.mesh); (f.orig?.mouth?.items || []).forEach((it) => { if (it.mesh && !/head|skull/i.test(it.mesh.name || '')) add(it.mesh) }) }
     // Kontaktschatten vor den Haaren (P08 _mountAO); Backen läuft in der Bindepose, der Clip startet erst danach

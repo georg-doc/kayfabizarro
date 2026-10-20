@@ -3,7 +3,7 @@
 // Figuren per Hash: actors=none (Standard) | fb (FrizzleBob nach Georgs Export, V-240, links; rechts GothGirl V-269, cast=fb für beidseitig FrizzleBob)
 // | rogue (F1-Prüffigur als Platzhalter für Stellproben, kein Darsteller). Karte: card=<deck>:<n>, Biom: biome=<Name>.
 // Dialog D1 per Hash: dialog=<n> spielt n Karten des Decks der Startkarte ab (Sprechblasen an den Figuren, Spielerwahl am Bildrand).
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { stagePaletteFor, FADE_S } from './stagePalette'
@@ -27,13 +27,13 @@ import { figureFor } from './actors/figureCard'
 import { createRefusedFigure } from './modules/refusedFigure'
 import { StageOrbitCam, ORBIT } from './StageOrbitCam'
 import { skyAtTod, skyLookB, SKY_TINT } from './stageLight'
-import { createStageLight, createContactAO, createPracticals, applyTone, parseTod, moodAt, selfTest, MOOD_SETS } from './vendor/light/kfb-stage-light.v1.js'
+import { createStageLight, createContactAO, createPracticals, applyTone, parseTod, moodAt, castFrontFaces, selfTest, MOOD_SETS } from './vendor/light/kfb-stage-light.v1.1.js'
 import { useHostKeys, PRIO } from './hostKeys'
 import EDGES from './data/stages/kfb-stage-edges.r1.json'
 import { stitchFor } from './world/terrainStitch'
 import { createStageGround } from './modules/stageGround'
 import { evaluate, createFrameSampler, overlayLine } from './world/perfBudget'
-import { createClayLook } from './modules/clayLook'
+import { createClaySSOT } from './modules/claySSOT'
 import { createVehicleLineup } from './modules/vehicleLineup'
 import { mountCompareBar, toggleClean } from './compareBar'
 import { worldKFor } from './worldScale'
@@ -71,7 +71,7 @@ const CAM_VIEW = { ...cam, focus: () => cardFocus() } // cardFocus steht weiter 
 export const playerPosFor = (c, fov = 38, d = 3.2, ndcY = -0.9) => { const [px, py, pz] = c.pos, [tx, ty, tz] = c.target, L = Math.hypot(tx - px, ty - py, tz - pz), k = d / L
   return [px + (tx - px) * k, py + (ty - py) * k + ndcY * d * Math.tan((fov / 2) * Math.PI / 180) - 1.05, pz + (tz - pz) * k] }
 const PLAYER_POS = playerPosFor(cam, 38, 3.2 * K)
-const ACTORS = ['none', 'fb', 'rogue'].includes(/actors=(\w+)/.exec(hash)?.[1]) ? /actors=(\w+)/.exec(hash)[1] : 'none' // unbekannter Wert → keine Figuren (Prüfer 9, Befund 7)
+const ACTORS = ['none', 'fb', 'rogue', 'aliens'].includes(/actors=(\w+)/.exec(hash)?.[1]) ? /actors=(\w+)/.exec(hash)[1] : 'none' // unbekannter Wert → keine Figuren (Prüfer 9, Befund 7)
 // Bühnen-Palette (V-270): nach der Karte (Deck-Genre → Insel-Palette → Rollen, Story-Tint), Hash palette=<Insel> zum Vergleichen, plain = ohne Tint (Bildpaar)
 // Look-Slice (V-402/V-406, Georg 17.10.): mit light=l1 trägt die Bühne EINE Bühnenpalette mit Rollen aus den drei Joyride-Welten (world=canyon|bucht|otown,
 // Standard canyon = Joyride-Standard: violetter Boden, orange Bögen), voll nach Rollen umgefärbt (Variante B, pamt 1); die Karte färbt nur noch Akzente.
@@ -101,12 +101,14 @@ function applyPalette(card, fadeS = FADE_S) {
 // Kandidaten ohne Karte (cast=<KayKit-id>) nur im Casting-Vergleich mit uncarded=1.
 const UNCARDED = /(^|[#,])uncarded=1(,|$)/.test(hash)
 const pick = (id) => figureFor(id, { allowUncarded: UNCARDED })
-const FIG_L = /actors=fb/.test(hash) ? pick('frizzlebob') : null
+// C2 (V-409/V-422): actors=aliens stellt Lord Hunky (links) und Lady Dory (rechts) aus ihren Karten auf (E2-Lider, Sockelrand 80°)
+const ALIENS = ACTORS === 'aliens'
+const FIG_L = /actors=fb/.test(hash) ? pick('frizzlebob') : ALIENS ? pick('lord_hunky') : null
 // Standard (V-269, Georg 15.10.): rechts GothGirl, sobald FrizzleBob links steht; cast=<id> wählt einen anderen Kandidaten, cast=fb lässt FrizzleBob beidseitig
 export { CAST_IDS } // für Prüfungen und Skripte wie bisher
 const CAST_ARG = /cast=([\w-]+)/.exec(hash)?.[1] || null
 const CAST_ID = CAST_ARG === 'fb' ? null : CAST_IDS.includes(CAST_ARG) ? CAST_ARG : /actors=fb/.test(hash) ? 'gothgirl' : null
-const FIG_R = CAST_ID ? pick(CAST_ID) : FIG_L
+const FIG_R = ALIENS ? pick('lady_dory') : CAST_ID ? pick(CAST_ID) : FIG_L
 export const FIGURES = { left: FIG_L && { ok: FIG_L.ok, id: FIG_L.id, status: FIG_L.status, reason: FIG_L.reason }, right: FIG_R && { ok: FIG_R.ok, id: FIG_R.id || CAST_ID, status: FIG_R.status, reason: FIG_R.reason } }
 // Marken der Figuren je Stellung (Bühnenmitte = Ursprung, +z zum Publikum): near = G4-Standard vor der Tafel (Georg 14.10.), two = bisherige Stellung
 // Marken je Meshy-Bühne in Modell-Einheiten u (skalieren mit dem Bühnen-Maßstab mit): freie Fläche vor der Kartenwand laut Kamera-Notiz der Slot-Datei
@@ -124,8 +126,9 @@ export const STAGE_MARKS = Object.freeze({
 })
 // Stellung: place=near (Figuren vor der Tafel, enger; Standard) | place=two (bisherige Stellung hinten). Ohne Angabe folgt sie der Kamera (cam=two → two).
 const NEAR = (/place=(\w+)/.exec(hash)?.[1] || (CAM === 'two' ? 'two' : 'near')) === 'near'
+const RIG_SHADOW = /(^|[#,])light=l1(,|$)/.test(hash) // V-429 ein Rig: mit Licht-Modul empfangen auch die Figuren Schatten
 const stageMark = (m) => ({ ...m, x: m.x * K, z: m.z * K }) // alte WS1-Bühnenmeter → J17
-const at = (fig, m, id) => (fig === null ? { ...ROGUE(m.x, m.yaw, id), position: [m.x, 0, m.z], worldScale: K } : fig.ok && fig.build ? { ...fig.build(m.x, m.yaw, id), position: [m.x, 0, m.z], worldScale: K }
+const at = (fig, m, id) => (fig === null ? { ...ROGUE(m.x, m.yaw, id), position: [m.x, 0, m.z], worldScale: K } : fig.ok && fig.build ? { ...fig.build(m.x, m.yaw, id), position: [m.x, 0, m.z], worldScale: K, receiveShadow: RIG_SHADOW }
   : { refused: true, id: fig.id || id, reason: fig.reason || 'abgelehnt', position: [m.x, 0, m.z], yaw: m.yaw, scale: K }), MARKS = SCENE ? { left: sceneMark(SCENE_MARKS[SCENE].left), right: sceneMark(SCENE_MARKS[SCENE].right) } : LINEUP ? { left: stageMark({ x: -1.3, z: 8, yaw: 0 }), right: stageMark({ x: 1.3, z: 8, yaw: 0 }) } : { left: stageMark(STAGE_MARKS[NEAR ? 'near' : 'two'].left), right: stageMark(STAGE_MARKS[NEAR ? 'near' : 'two'].right) }
 const L = at(FIG_L, MARKS.left, 'stage-left'), R = at(FIG_R, MARKS.right, 'stage-right')
 const NDIALOG = /actors=none|^(?!.*actors=)/.test(hash) ? 0 : PREVIEW_CARDS ? PREVIEW_CARDS.length : +(/dialog=(\d+)/.exec(hash)?.[1] || 0) // Dialog nur mit Figuren (sonst Blasen ohne Anker)
@@ -185,13 +188,14 @@ const LOOK = L1 && !/look=a/.test(hash) ? 'b' : 'a'
 // Knet: mit L1 Standard für alle Figuren (V-346), clay=1 nur KayKit, clay=0 aus. Figuren-Samt ≤ 0,05 (Regel 1, gegen den hellen Saum)
 const CLAY = L1 ? !/(^|[#,])clay=0(,|$)/.test(hash) : /(^|[#,])clay=(1|all)(,|$)/.test(hash)
 const CLAY_FB = L1 ? !/(^|[#,])clay=(0|1)(,|$)/.test(hash) : /(^|[#,])clay=all(,|$)/.test(hash)
-const FIG_TUNE = { sheen: 0.04 }, CLAY_TUNE = { gothgirl: { sheen: 0.04, colorK: 0.95 } }, VEHICLE_TUNE = { sheen: 0 }
-const CLAYS = { targets: () => [...(CLAY_FB ? [{ module: mods.left, tune: FIG_TUNE }] : []), ...(CAST_ID ? [{ module: mods.right, tune: CLAY_TUNE[CAST_ID] || FIG_TUNE }] : [])], profile: 'figure' }
-const makeClay = (o) => { const m = createClayLook(o); mods.clay = m; return m }
+// V-429: Knete aus dem zentralen Modul kfb-clay.v1.1 (Profil und Seed aus der Figurenkarte, keine WS1-Werte mehr); Fahrzeuge = midground
+const cardOf = (f) => (f?.ok ? f.card : null)
+const CLAYS = { targets: () => [...(CLAY_FB ? [{ module: mods.left, card: cardOf(FIG_L), profile: 'character', seed: 'stage-left' }] : []), ...(CAST_ID || ALIENS ? [{ module: mods.right, card: cardOf(FIG_R), profile: 'character', seed: 'stage-right' }] : [])] }
+const makeClay = (o) => { const m = createClaySSOT(o); mods.clay = m; return m }
 const LINEUP_OPTS = { figure: () => mods.left, gap: 0.9 * K }
 const makeLineup = (o) => { const m = createVehicleLineup(o); mods.amph = m; mods.lineup = m; expose('StageMods', mods); return m }
-const CLAYV = { targets: () => (mods.lineup ? [mods.lineup] : []), profile: 'vehicle', tune: VEHICLE_TUNE }
-const makeClayV = (o) => { const m = createClayLook(o); mods.clayV = m; return m }
+const CLAYV = { targets: () => (mods.lineup ? [{ module: mods.lineup, profile: 'midground', seed: 'lineup' }] : []) }
+const makeClayV = (o) => { const m = createClaySSOT(o); mods.clayV = m; return m }
 // Bühnen-Ränder (kfb.stage-edges/1, WS0 @d4e24f15): Hemi-Boden = größter Flächenanteil der edgePalette, in OKLCH höchstens +10 % L (V-396);
 // Amphitheater: mittlerer Bühnenboden-Ton der Palette, Aufstellung: Bodenfläche
 const EDGE_ID = { goblin: 'goblin_bank', atlantis: 'atlantis', comic: 'comic_broadcast', utopia: 'utopia_stage' }
@@ -210,10 +214,10 @@ const STITCH = SCENE && L1 && edge ? stitchFor(edge, { scale: SCENE_S, floorY_u:
 const GROUND_OPTS = { stitch: STITCH, zoneColor: PAL0?.amph?.ground || GROUND, seed: SCENE || 'stage' }
 const makeStageGround = (o) => { const m = createStageGround(o); mods.ground = m; return m }
 const makeAO = (o) => { const m = createContactAO(o); mods.blobs = m; return m }
-// Praktische: Meshy-Bühnen aus den Rändern (u → m wie der Slot), Amphitheater = die zwei Billboard-Lampen; Stärke = Rig-glow (nachts Inseln)
+// Praktische: Meshy-Bühnen aus den Rändern (u → m wie der Slot); Amphitheater = die B22-Arm-Lampen der Tafel (WSB-Assets, V-429 erfüllt); Stärke = Rig-glow
 const toMeters = (u) => [u[0] * SCENE_S, (u[1] - MESHY_STAGES[SCENE].floorY) * SCENE_S, u[2] * SCENE_S]
 const SCENE_PRACT = SCENE ? (edge?.practicals || []).map((p) => ({ ...p, pos: toMeters(p.pos) })) : null
-const PRACT = { practicals: () => SCENE_PRACT || (mods.billboard?.lampPoints?.() || []).map((pos, i) => ({ id: 'bb-lamp-' + i, type: 'lamp', pos, color: '#ffd9a0', intensity: 1, range: 6 * K, halo: { size: 0.45 * K } })),
+const PRACT = { practicals: () => SCENE_PRACT || (mods.billboard?.lampPoints?.() || []).map((pos, i) => ({ id: 'bb-lamp-' + i, type: 'lamp', pos, color: '#ffd98a', intensity: 1, range: 6 * K, halo: { size: 0.45 * K } })),
   weight: () => moodAt(lightState.tod, MOOD_SET).glow }
 const makePract = (o) => { const m = createPracticals(o); mods.practicals = m; return m }
 // F1 · Leistungsanzeige (V-370-Budget, perfBudget.js): Hash perf → Zeile unten am Rand mit p95, fps, Draw Calls, Dreiecken; kein finales HUD (§44.3)
@@ -230,9 +234,11 @@ function PerfOverlay() {
 function LightL3() {
   const { gl } = useThree()
   useEffect(() => { const undo = applyTone(gl, L1_TM, 1)
-    expose('StageLight', { state: lightState, set: (t) => { lightState.tod = t }, info: () => lightState.current, selfTest: () => selfTest(gl), gl: () => ({ calls: gl.info.render.calls, tris: gl.info.render.triangles, programs: gl.info.programs?.length ?? null }) })
+    expose('StageLight', { state: lightState, set: (t) => { lightState.tod = t }, info: () => lightState.current, selfTest: () => selfTest(gl), renderer: () => gl, three: () => THREE, gl: () => ({ calls: gl.info.render.calls, tris: gl.info.render.triangles, programs: gl.info.programs?.length ?? null }) })
     return undo }, [gl])
-  useFrame(() => { const M = moodAt(lightState.tod, MOOD_SET); mods.billboard?.setGlow?.(M.glow)
+  const { scene } = useThree(), cff = useRef(0)
+  useFrame((_, dt) => { if ((cff.current -= dt) <= 0) { cff.current = 1; castFrontFaces(scene) } // v1.1 (V-440): Vorderseiten werfen Schatten (Saum-Fix), nachgeladene Teile jede Sekunde
+    mods.billboard?.setGlow?.(moodAt(lightState.tod, MOOD_SET).glow) // B22-Lichtkeile nach Rig-glow
     lightState.current = { look: LOOK, tm: L1_TM, lset: LSET, ground: GROUND, ...(mods.light?.info?.() || {}) } })
   return null
 }
