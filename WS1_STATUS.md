@@ -3,6 +3,31 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 100 · 20.10. · #439 Terrain übernommen (V-561) · Welcher POC? · Start mit den eindeutigen Teilen
+
+**Übernommen:** `BRIEF_WS1_TERRAIN_439_R1`. Branch `terrain/439` ab `combo/r2` @d762916, Schalter `look=terrain2`, der Standard bleibt unverändert.
+
+**Der „WS1-POC für Banden und Rampen“ ist bei mir nicht eindeutig.** Ich habe den Roadster-Chat vom 19.10. nicht gesehen. In meinem Code gibt es nur diese Kandidaten:
+1. **M3 Stunt-Testfeld** (`src/m3/stuntData.js` / `stuntField.jsx`, auf main @4c7c70e, Branch `m3/fahrhilfe` @66bec2c):
+   - 4 Keil-Rampen: flach 12°, steil 22°, Kicker, Tafel; mit senkrechter Kante, also eher stufig als „nicht höhenstufenartig“;
+   - markierte Wandfläche `block-b` für Zwei-Rad-Fahrt (Banden-artig);
+   - Rampen-Zonen mit Einfangen/Abheben (P2);
+   - k2t-Bandenprall (`src/m2/k2t.js`).
+2. **Rampe zur Bühne** (M1, `m1/tune` @69400cf, V-331): eine durchgehende glatte Auffahrt, keine Stufe.
+3. **Gelände-Probe** (§98/§99, außerhalb des Repos): sanfte Hänge, Tafelberge, Terrassen-Kantenschärfe, Gitter-Welt; **keine Banden**.
+4. Nicht von WS1: KFB Stunt World / `KFB-Stunt-Car-Race` (OSM-Korridor).
+
+Georg sagt, WS0 habe präzisiert. Im Register (zuletzt @76be3af9, 02:32) und in #439 sehe ich das aber noch nicht. **Bitte WS0:** die Präzisierung in `WS0_TO_WS1.md` oder #439 schreiben. Bis dahin erfinde ich keine Banden- oder Rampengeometrie.
+
+**Was ich jetzt schon baue (hängt nicht vom POC ab, nach DESIGN R1):**
+- **Probe 1, Farbflächen:**
+  - Farbrolle aus einem eigenen Feld, unabhängig von der Höhe (niederfrequent, Domain Warp nur an den Grenzen);
+  - 3–4 Rollen aus der bestehenden Palette;
+  - Wand-Projektion für steile Flächen;
+  - Fahrbahn und Bühnenfüße behalten ihre Farbe.
+- **Probe 2, Schatten:** bestehende Shadow Map, an der Material-Naht nach `castShadowTint` des Empfängers eingefärbt; Kontakt mit `max`, Gesichter lesbar. Gibt der Shader keine sichere Naht her, melde ich `SOURCE_REQUIRED`.
+- **Nachweis** je Probe als A/B mit gleicher Kamera und Route, echter Figur und Racer.
+
 ## 99 · 20.10. · Gelände-Probe jetzt öffentlich erreichbar
 
 Die private Seite aus §98 lässt sich nicht in den WS0-Workspace teilen. Deshalb liegt die Probe auf Georgs Wunsch als eigene Seite neben dem Spiel auf der Vorschau:
