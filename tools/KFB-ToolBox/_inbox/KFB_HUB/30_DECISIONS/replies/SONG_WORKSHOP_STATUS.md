@@ -453,3 +453,22 @@ Das Gate lässt das durch, weil es solche Muster nicht als Slop kennt.
 - Gate PASS, 2011 Zeichen, 17 Karten. Eigentext 50 % (WARN, Richtwert ≤ 30 %). Mit der Routine steigt der Anteil; WS0 sollte den Richtwert für diese Form neu bewerten.
 
 **Nächster Schritt:** Georgs Urteil zu r7b.
+
+## §20 · 21.10.2026 · Muster bestätigt („gefällt mir schon ganz gut“) → Metropolis und Protopia nachgezogen
+**Georg zu BBBW r7b:** „gefällt mir schon ganz gut“. Georg hat außerdem eine Gemini-Zusammenfassung seines NotebookLM übergeben (Beat-Grammatiken BG-1–8, Operatoren OP/UP/FW, Fallbacks). Sie liegt als Referenz in `SONGS_WORKSHOP_R1/MODULAR_COMEDY_RESEARCH_SUMMARY_R1.md`; über eine Spec-Aufnahme entscheidet WS0.
+
+**Neu, beide Gate PASS:**
+
+| Deck | Fassung | Bewohner | Zeichen | Karten | Eigentext |
+|---|---|---|---:|---:|---:|
+| The Biological Metropolis | r7a | Cyborg-Cop, erste Nachtschicht | 3028 | 19 | 40 % |
+| Embrace Protopia | r7a | The Forgotten eröffnet ein Repair-Café | 3247 | 19 | 39 % |
+
+- **Metropolis:** Kette Dachs → Lunge → U-Bahn → Katzen → Mäuse → Riot-Ratten → Feuer → Polizeihund → Spinne → Krebs → Archiv → Captain → Eulen. Outro: „minigun still loaded, city still fine without me“.
+- **Protopia:** Opossum → Waschbär → Leguan/Tür → Schildkröte → Dachs → Eber gegen den Berater des Zwillings → Pelikan → vier Vögel → Oktopus → Igel → Quokka → Taube → Krähe gegen das Utopia-Schild → Kröte → Maulwurf → goldene Pfote. Outro: Tür/Samstag.
+
+**Writers' Room:** alle drei Songs v8 auf `gate_pass`; die verworfenen r6-Fassungen liegen unter `versions`. Neu ist Lesson l13 (Anekdote + Cartoon-Kausalität).
+
+**Hinweis an WS0:** Diese Form trägt 39–50 % Eigentext; der Richtwert ≤ 30 % (A2 WARN) passt dazu nicht.
+
+**Nächster Schritt:** Georgs Urteil zu Metropolis und Protopia r7a, danach die 10 neuen Signatur-Songs.

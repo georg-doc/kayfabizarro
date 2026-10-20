@@ -1,0 +1,168 @@
+{
+ "deckId": "the_biological_metropolis",
+ "revision": "r7a",
+ "performers": [
+  {
+   "model": "CombatMech",
+   "asset": "KayKit_Mystery_Series6/1 - July 2024 - Combat Mech · Textur alt",
+   "role": "leicht dystopischer Cyborg-Cop auf Streife (Utopia/Dystopia-Rolle)"
+  }
+ ],
+ "residentHome": "sein Bezirk: die Stadt im Körper, auf Streife von Abteilung zu Abteilung",
+ "structure": "stand-up anecdote with plausible cartoon causality (KayfabeTip 1): the cyborg cop's first night on patrol in the body-city; each card is the next caused or twisted event (badger, subway, cats, mice, riot rats, salamander, K-9, spider, crab, hamster, archive, captain, owls, urchin); outro callback minigun / city fine without him",
+ "introType": "scene",
+ "synopsis": "A spoken-word number from a card deck that describes the human body as a city. It is performed by a small armored police cyborg on patrol through that city, for whoever happens to be there.",
+ "bestOfReason": [
+  "1, 2: the city runs itself, the citizen was never asked.",
+  "5, 7, 10, 8, 28: departments that need no police.",
+  "11, 17, 19: his own unit heals, burns, bites itself.",
+  "15, 18: the real threats are inside; the spider has the better record.",
+  "31, 20: emergency mode as normal; training from his teens.",
+  "21, 23, 24, 30: looking beats the book; the institution rejects the finding; the quack stays on the payroll.",
+  "26: guessing to fill the gap.",
+  "6: no manager, only a press secretary (pays off the opening).",
+  "32: the body keeps the score."
+ ],
+ "omitted": {
+  "3": "manual card overlaps the cop's rulebook joke",
+  "4": "rules-heavy start",
+  "8": "second filter after the liver",
+  "9": "cut for length",
+  "12": "slow broadcast cut",
+  "13": "energy motor breaks the patrol",
+  "14": "doubles the memo",
+  "16": "abstract",
+  "22": "dilutes Semmelweis",
+  "25": "factory overlaps departments",
+  "27": "standing wave fights the landing",
+  "29": "stage meta-joke",
+  "31": "cut for length"
+ },
+ "orderReason": "Patrol order: district, departments, alarm (immune → inflammation → autoimmune), inside threats (DNA → cancer), training (thymus), cold cases, method (blind eye), memo (brain), score.",
+ "songLineChanges": [
+  {
+   "cardNumber": 6,
+   "rule": "A7",
+   "songLine": "The decision was already underway five hundred milliseconds before you made it.",
+   "reason": "500ms written out"
+  },
+  {
+   "cardNumber": 7,
+   "rule": "A7",
+   "songLine": "The Lungs: seventy square meters folded into your chest.",
+   "reason": "70 written out"
+  },
+  {
+   "cardNumber": 10,
+   "rule": "A7",
+   "songLine": "Eighty percent of the phone calls go up to the brain.",
+   "reason": "80% written out"
+  }
+ ],
+ "cues": [
+  {
+   "afterBeat": 1,
+   "cue": "police radio squelch on the backbeat"
+  }
+ ],
+ "beats": [
+  "The Biological Metropolis: a city that runs itself, and a cop who thinks it's his.",
+  "First night on the job they gave me a minigun and a district: you.",
+  {
+   "card": 1,
+   "pre": "Orientation was short:",
+   "text": "The City Inside: it has been running the civilization while you were busy thinking about other things. You are the other things."
+  },
+  {
+   "card": 2,
+   "pre": "So I ask who's in charge. Nobody:",
+   "text": "The Citizen: you have never once told this city what to do. It has never once asked your permission."
+  },
+  {
+   "card": 5,
+   "pre": "Fine. I start with a noise complaint in the boiler room:",
+   "text": "The Heart: the brain can modify the rate. The brain cannot generate it. The badger drums alone."
+  },
+  {
+   "card": 7,
+   "pre": "I try to unplug the badger and everything goes blue, so they show me the one switch I'm allowed to touch:",
+   "text": "The Lungs: the only autonomic function with a manual override."
+  },
+  {
+   "card": 10,
+   "pre": "Back on my feet, I chase a suspect into the subway:",
+   "text": "The Gut, zombie commuters boarding: eighty percent of the phone calls go up to the brain. The subway runs the city."
+  },
+  {
+   "card": 8,
+   "pre": "The subway dumps me at the water works, where two cats test everything that floats by:",
+   "text": "The Kidneys: the original doping agency."
+  },
+  {
+   "card": 28,
+   "pre": "At midnight the lights go out and mice in overalls mop up my evidence:",
+   "text": "The Night Shift: sleep is not rest. It is the janitorial shift washing the thoughts out of the carpet."
+  },
+  {
+   "card": 11,
+   "pre": "So I call for backup:",
+   "text": "The Immune System, armored rats with riot shields: a library of every murder attempt. It remembers things you have forgotten."
+  },
+  {
+   "card": 17,
+   "pre": "They find one splinter and set the block on fire:",
+   "text": "Inflammation: the response that heals the wound becomes the mechanism that burns the city."
+  },
+  {
+   "card": 19,
+   "pre": "The fire spooks our police dog:",
+   "text": "Autoimmune, crazed dog biting itself: the gun works fine; it's just pointed the wrong way."
+  },
+  {
+   "card": 15,
+   "pre": "Meanwhile, in the copy room, a spider eats the typos:",
+   "text": "DNA Replication: one error per billion letters. You have had cancer many times; the spider usually eats it."
+  },
+  {
+   "card": 18,
+   "pre": "One night the spider takes a break:",
+   "text": "Cancer, giant crab with fortress built on shell: it is not a disease; it is a competitor."
+  },
+  {
+   "card": 31,
+   "pre": "Now the alarm never stops:",
+   "text": "The Cortisol Architect, hamster in tie drowning in alarm clocks: the comfort zone is a chemical state."
+  },
+  {
+   "card": 21,
+   "pre": "I dig through the archive for answers:",
+   "text": "Andreas Vesalius: he looked at the body instead of the book. Everyone else was wrong."
+  },
+  {
+   "card": 23,
+   "pre": "Next file, a man who washed his hands:",
+   "text": "Ignaz Semmelweis: he saved the mothers. The doctors committed him."
+  },
+  {
+   "card": 24,
+   "pre": "I take both files to the captain:",
+   "text": "The Semmelweis Problem: the evidence is available. The implication is uncomfortable. We reject the finding."
+  },
+  {
+   "card": 30,
+   "pre": "Turns out the captain has his own method:",
+   "text": "The Humoralist: wrong in the facts, right in the vibe. It was the first Kayfabe."
+  },
+  {
+   "card": 6,
+   "pre": "So I go over his head, straight to the top floor:",
+   "text": "The Brain, five owls in judge wigs: the decision was already underway five hundred milliseconds before you made it. You are the press secretary, not the president."
+  },
+  {
+   "card": 32,
+   "pre": "I file a complaint anyway:",
+   "text": "The Scorekeeper, sea urchin writing with feather quill: the body keeps the score because the body is the score."
+  },
+  "End of shift: minigun still loaded, city still fine without me."
+ ]
+}

@@ -1,0 +1,48 @@
+# Gate-Bericht embrace_protopia.r7a · 2026-10-20
+gate song_gate.py sha256 0128b003c53a9e58df9995963d957ec31568953790d5b9f44740d643e1213370
+deck pin registry/assets/v1/decks/embrace_protopia.json sha256 e986128e48da6f79fbb5e69eeb6244374598779acc4918ce09ae47f512ca6fa3
+media pin media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json sha256 c482d20009c2454b7858256fc2adfa9f4660edf5cc74b50e2560bd9987604ee3
+lyrics sha256 3ea19c75f866fad01300f86a6637021c994becf4d34e2430de06e6af8a19e29c · 3248 Zeichen (Unicode len)
+style sha256 0589b62495c5652d824d2703366fff9ded029d101ee5557fbe35e3356c9b3781
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r7a.suno.txt --deck registry/assets/v1/decks/embrace_protopia.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r7a.songlines.json --media 'media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json' --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_BESTOF_R1
+exit 0
+song_gate R4.2 lyrics · embrace_protopia.r7a.suno.txt · 3248 Zeichen · 19/19 Karten · Intro 2 · Brücken 0 · Outro 1 · Performer-Einschübe 19 · R4-Zuordnung
+lyrics sha256 3ea19c75f866fad01300f86a6637021c994becf4d34e2430de06e6af8a19e29c
+WARN A4: Karte 3: Kartenteil 167 Zeichen (Richtwert 80-95): 'The Ugly First Draft, possum proudly holding a cha'
+WARN A4: Karte 2: Kartenteil 102 Zeichen (Richtwert 80-95): 'The Erasable Line, grinning raccoon erasing: the a'
+WARN A4: Karte 5: Kartenteil 150 Zeichen (Richtwert 80-95): 'The Fixable Thing, iguana in tool belt oiling a hi'
+WARN A4: Karte 7: Kartenteil 135 Zeichen (Richtwert 80-95): 'The Boring Win, turtle in raincoat trimming a fenc'
+WARN A4: Karte 8: Kartenteil 74 Zeichen (Richtwert 80-95): 'The Compounding: small consistent improvements out'
+WARN A4: Karte 13: Kartenteil 70 Zeichen (Richtwert 80-95): 'The Person Nearby: real know-how is tacit knowledg'
+WARN A4: Karte 15: Kartenteil 132 Zeichen (Richtwert 80-95): 'The Unimpressive Source, scruffy capybara being in'
+WARN A4: Karte 17: Kartenteil 111 Zeichen (Richtwert 80-95): 'The Invitation, pelican stapling BRING GLOVES flye'
+WARN A4: Karte 19: Kartenteil 115 Zeichen (Richtwert 80-95): 'The Awkward Start, pigeon, emu, duck, and crow ove'
+WARN A4: Karte 18: Kartenteil 99 Zeichen (Richtwert 80-95): 'The Shared Hands, octopus hammering roof beams wit'
+WARN A4: Karte 26: Kartenteil 101 Zeichen (Richtwert 80-95): 'The First Hello, two prickly hedgehogs: low-stakes'
+WARN A4: Karte 27: Kartenteil 126 Zeichen (Richtwert 80-95): 'The Risk of Being Soft-Blocked, quokka ringing a g'
+WARN A4: Karte 42: Kartenteil 126 Zeichen (Richtwert 80-95): 'The Pilot Move, city pigeon laying a tiny crosswal'
+WARN A4: Karte 43: Kartenteil 111 Zeichen (Richtwert 80-95): 'The Quiet Sabotage, crow repairing a DO NOT REPAIR'
+WARN A4: Karte 46: Kartenteil 104 Zeichen (Richtwert 80-95): 'The Comfort of Maybe, toad choosing between DOOM a'
+WARN A4: Karte 47: Kartenteil 73 Zeichen (Richtwert 80-95): 'The Ongoing Effort: durable improvement is maintai'
+WARN A4: Karte 55: Kartenteil 74 Zeichen (Richtwert 80-95): 'The Quiet Start, mole digging on, no crowd: action'
+WARN A4: Karte 56: Kartenteil 106 Zeichen (Richtwert 80-95): 'The Core Question, giant golden paw gripping an ov'
+WARN A2: eigener Text (Rahmen + Performer) 39% aller Wörter (Richtwert <= 30%)
+WARN C11: Wort 'door' 5x im eigenen Text
+WARN C11: Wort 'nobody' 3x im eigenen Text
+WARN C11: Wort 'next' 3x im eigenen Text
+REVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [1, 3, 2, 5, 7, 8, 13, 15, 17, 19, 18, 26, 27, 42, 43, 46, 47, 55, 56]
+REVIEW B7b: Outro greift kein Wort/Bild aus dem Intro auf
+REVIEW B6: Performer-Text in 100% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)
+INFO S2: deck gepinnt e986128e48da
+INFO S2: media gepinnt c482d20009c2
+INFO C9B: Bewohner verifiziert: 4GTN_Forgotten (KayKit_Mystery_Series6/7 - January 2026 - 4GTN · Forgotten)
+INFO C9: Decktitel-Wörter in Beat [1]
+INFO E16b: kein Ton-Eintrag für dieses Deck; Deck-Hinweise in SONG_SPEC E16b prüfen
+PASS
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r7a.style.txt --deck registry/assets/v1/decks/embrace_protopia.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r7a.songlines.json
+exit 0
+song_gate R4.2 style · embrace_protopia.r7a.style.txt · Familie A afro · 2 Variante(n) · 356, 287 Zeichen
+PASS
+
