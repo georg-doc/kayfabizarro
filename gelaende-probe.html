@@ -65,9 +65,9 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
 @media (max-width: 900px) { .main { grid-template-columns: 1fr; } .stage { aspect-ratio: 4 / 3; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
 </style>
-
 </head>
 <body>
+
 <div class="app">
   <header>
     <h1>Gelände-Probe</h1>
@@ -108,6 +108,8 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <div class="row"><label for="steps">Terrassen</label><output id="o_steps"></output><input type="range" id="steps" min="0" max="12" step="1"></div>
         <div class="row"><label for="sharp">Terrassen-Kante</label><output id="o_sharp"></output><input type="range" id="sharp" min="0" max="1" step="0.01"></div>
         <div class="row"><label for="water">Wasserstand</label><output id="o_water"></output><input type="range" id="water" min="0" max="0.5" step="0.01"></div>
+        <label class="check"><input type="checkbox" id="ether" checked> Berge rund (Etherington: weiche Grate, Schichten ungleich dick)</label>
+        <label class="check"><input type="checkbox" id="rockc" checked> Felsgruppen an Steilhängen (3er-Gruppen, eingesunken)</label>
       </fieldset>
 
       <fieldset>
@@ -245,7 +247,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
 
   // Höhenfunktion: eine Quelle der Wahrheit, zweimal geschrieben (GLSL für das Bild, JS für Kamera und Figur)
   const GLSL_HEIGHT = `
-  uniform float uScale, uAmp, uOct, uRidge, uWarp, uMacro, uValley, uPlateau, uSteps, uSharp;
+  uniform float uScale, uAmp, uOct, uRidge, uWarp, uMacro, uValley, uPlateau, uSteps, uSharp, uEther;
   uniform vec2 uSeed;
   uniform vec4 uDio; uniform vec4 uDioB; // uDio: x, z, Fußradius, Sockelhöhe · uDioB: an(0/1), Keilhöhe, Keilbreite, Öffnungsrichtung (rad)
   float dioMod(vec2 p, float h){
@@ -257,8 +259,13 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       h+=uDioB.y*vary*(d<0.0?1.0:1.0-smoothstep(0.0,uDioB.z,d))*open; }   // Erdkeil am Sockel, vorne offen
     return h;
   }
-  float fbm(vec2 q){ float s=0.0, a=1.0, n=0.0; for(int i=0;i<7;i++){ if(float(i)>=uOct) break; s+=a*snoise(q); n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=0.5; } return s/n; }
-  float rfbm(vec2 q){ float s=0.0, a=1.0, n=0.0; for(int i=0;i<7;i++){ if(float(i)>=uOct) break; float r=1.0-abs(snoise(q)); s+=a*r*r; n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=0.5; } return s/n; }
+  // Etherington (R2): runde Grate statt Messerkanten (weiches |n|), feinste Grat-Oktaven weg, Detail leiser → keine Zacken-Silhouette
+  float fbm(vec2 q){ float s=0.0, a=1.0, n=0.0, oc=uEther>0.5?min(uOct,5.0):uOct; for(int i=0;i<7;i++){ if(float(i)>=oc) break; s+=a*snoise(q); n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=0.5; } return s/n; }
+  float rfbm(vec2 q){ float s=0.0, a=1.0, n=0.0, oc=uEther>0.5?min(uOct,4.0):uOct; for(int i=0;i<7;i++){ if(float(i)>=oc) break; float sn=snoise(q);
+    float r=uEther>0.5 ? max(0.0,(1.0-sqrt(sn*sn+0.06))/0.7551) : 1.0-abs(sn); s+=a*r*r; n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=(uEther>0.5?0.45:0.5); } return s/n; }
+  // Schichten (N4): je Paar eine dicke (1,3) und eine dünne (0,7) Lage, Lagen leicht wellig geneigt, Kanten gerundet
+  float strU(float s){ float k=floor(s*0.5)*2.0, t=s-k; return k+(t<1.3? t/1.3 : 1.0+(t-1.3)/0.7); }
+  float strS(float u){ float k=floor(u*0.5)*2.0, t=u-k; return k+(t<1.0? t*1.3 : 1.3+(t-1.0)*0.7); }
   float hgt(vec2 p){
     vec2 q=p/uScale+uSeed;
     if(uWarp>0.0){ q+=uWarp*vec2(fbm(q*0.6+vec2(5.2,1.3)), fbm(q*0.6+vec2(-3.7,8.1))); }
@@ -270,13 +277,15 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     h=clamp(h,0.0,1.0);
     if(uValley>0.0) h=pow(h,1.0+uValley*1.6);
     if(uPlateau<0.999 && h>uPlateau) h=uPlateau+(h-uPlateau)*0.12;
-    if(uSteps>=1.0){ float s=h*uSteps; float f=fract(s); float w=mix(0.5,0.03,uSharp); f=smoothstep(0.5-w,0.5+w,f); h=(floor(s)+f)/uSteps; }
+    if(uSteps>=1.0){ if(uEther>0.5){ float tw=0.35*snoise(p/(uScale*2.5)+uSeed*0.11+23.0); float u=strU(h*uSteps+tw); float f=fract(u); float w=max(mix(0.5,0.03,uSharp),0.3); f=smoothstep(0.5-w,0.5+w,f); h=(strS(floor(u)+f)-tw)/uSteps; }
+      else { float s=h*uSteps; float f=fract(s); float w=mix(0.5,0.03,uSharp); f=smoothstep(0.5-w,0.5+w,f); h=(floor(s)+f)/uSteps; } }
     return dioMod(p, h*uAmp);
   }`;
   const S = {};
   const rot = (x, y) => [1.6 * x - 1.2 * y + 3.1, 1.2 * x + 1.6 * y + 1.7]; // mat2(1.6,1.2,-1.2,1.6) spaltenweise wie in GLSL
-  function fbm(x, y) { let s = 0, a = 1, n = 0; for (let i = 0; i < 7 && i < S.oct; i++) { s += a * snoise(x, y); n += a; [x, y] = rot(x, y); a *= 0.5 } return s / n }
-  function rfbm(x, y) { let s = 0, a = 1, n = 0; for (let i = 0; i < 7 && i < S.oct; i++) { const r = 1 - Math.abs(snoise(x, y)); s += a * r * r; n += a; [x, y] = rot(x, y); a *= 0.5 } return s / n }
+  function fbm(x, y) { let s = 0, a = 1, n = 0; const oc = S.ether ? Math.min(S.oct, 5) : S.oct; for (let i = 0; i < 7 && i < oc; i++) { s += a * snoise(x, y); n += a; [x, y] = rot(x, y); a *= 0.5 } return s / n }
+  function rfbm(x, y) { let s = 0, a = 1, n = 0; const oc = S.ether ? Math.min(S.oct, 4) : S.oct; for (let i = 0; i < 7 && i < oc; i++) { const sn = snoise(x, y); const r = S.ether ? Math.max(0, (1 - Math.sqrt(sn * sn + 0.06)) / 0.7551) : 1 - Math.abs(sn); s += a * r * r; n += a; [x, y] = rot(x, y); a *= S.ether ? 0.45 : 0.5 } return s / n }
+  const strU = (s) => { const k = Math.floor(s * 0.5) * 2, t = s - k; return k + (t < 1.3 ? t / 1.3 : 1 + (t - 1.3) / 0.7) }, strS = (u) => { const k = Math.floor(u * 0.5) * 2, t = u - k; return k + (t < 1 ? t * 1.3 : 1.3 + (t - 1) * 0.7) };
   const sstep = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t) };
   function hgt(px, py) {
     let qx = px / S.scale + S.sx, qy = py / S.scale + S.sy;
@@ -288,7 +297,8 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     h = Math.min(1, Math.max(0, h));
     if (S.valley > 0) h = Math.pow(h, 1 + S.valley * 1.6);
     if (S.plateau < 0.999 && h > S.plateau) h = S.plateau + (h - S.plateau) * 0.12;
-    if (S.steps >= 1) { const s = h * S.steps; let f = fract(s); const w = 0.5 + (0.03 - 0.5) * S.sharp; f = sstep(0.5 - w, 0.5 + w, f); h = (Math.floor(s) + f) / S.steps }
+    if (S.steps >= 1) { if (S.ether) { const tw = 0.35 * snoise(px / (S.scale * 2.5) + S.sx * 0.11 + 23, py / (S.scale * 2.5) + S.sy * 0.11 + 23), u = strU(h * S.steps + tw); let f = fract(u); const w = Math.max(0.5 + (0.03 - 0.5) * S.sharp, 0.3); f = sstep(0.5 - w, 0.5 + w, f); h = (strS(Math.floor(u) + f) - tw) / S.steps }
+      else { const s = h * S.steps; let f = fract(s); const w = 0.5 + (0.03 - 0.5) * S.sharp; f = sstep(0.5 - w, 0.5 + w, f); h = (Math.floor(s) + f) / S.steps } }
     return dioModJS(px, py, h * S.amp);
   }
   // Diorama-Fuß (identisch zum GLSL dioMod): Sockelfläche auf Bühnenhöhe, Erdkeil vorne offen
@@ -312,7 +322,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(55, 1.6, 0.5, 14000);
   const SIZE = 600, SEG = 256;
   const U = {
-    uScale: { value: 200 }, uAmp: { value: 50 }, uOct: { value: 5 }, uRidge: { value: 0 }, uWarp: { value: 0 }, uMacro: { value: 0 }, uValley: { value: 0 }, uPlateau: { value: 1 }, uSteps: { value: 0 }, uSharp: { value: 0.5 },
+    uScale: { value: 200 }, uAmp: { value: 50 }, uOct: { value: 5 }, uRidge: { value: 0 }, uWarp: { value: 0 }, uMacro: { value: 0 }, uValley: { value: 0 }, uPlateau: { value: 1 }, uSteps: { value: 0 }, uSharp: { value: 0.5 }, uEther: { value: 1 },
     uSeed: { value: new THREE.Vector2() }, uOffset: { value: new THREE.Vector2() }, uWater: { value: 0.1 }, uSoft: { value: 0.3 }, uCliff: { value: 0.4 }, uStrata: { value: 0 }, uToon: { value: 0 }, uMix: { value: 0 }, uGrid: { value: 0 },
     uFogNear: { value: 600 }, uFogFar: { value: 1600 }, uCam: { value: new THREE.Vector3() }, uTint: { value: new THREE.Color(1, 1, 1) }, uHorizon: { value: new THREE.Color() }, uMoodK: { value: 0 },
   };
@@ -325,6 +335,8 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     vec2 p=position.xz+uOffset; float h=hgt(p); float e=uNE;
     float hx=hgt(p+vec2(e,0.0)), hz=hgt(p+vec2(0.0,e));
     vN=normalize(vec3(h-hx, e, h-hz)); vH=h; vW=vec3(p.x,h,p.y);
+    // Etherington: Licht folgt der großen Form (Formnormale über ~6 m), nicht jeder Delle → keine splittrigen Licht-Scherben an den Hängen
+    if(uEther>0.5){ float eF=max(6.0,uNE*2.5); float ha=hgt(p+vec2(eF,0.0)), hb=hgt(p-vec2(eF,0.0)), hc=hgt(p+vec2(0.0,eF)), hd=hgt(p-vec2(0.0,eF)); vN=normalize(mix(vN, normalize(vec3(hb-ha, 2.0*eF, hd-hc)), 0.75)); }
     vCurv=0.0; if(uEdges>0.5){ float e2=max(2.5,uNE*1.5); vCurv=(hgt(p+vec2(e2,0.0))+hgt(p-vec2(e2,0.0))+hgt(p+vec2(0.0,e2))+hgt(p-vec2(0.0,e2)))*0.25-h; } // <0: Grat/Kante (konvex)
     float y=h;
     // Ringgitter: der Teil eines groben Rings, der unter dem feineren Gitter liegt, sinkt weg (keine Doppelflächen, keine Risse am Rand)
@@ -333,7 +345,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     gl_Position=projectionMatrix*viewMatrix*wp4;
   }`;
   const frag = `${GLSL_NOISE}
-  uniform float uScale, uAmp, uWater, uSoft, uCliff, uStrata, uToon, uMix, uGrid, uFogNear, uFogFar, uMoodK, uGridWorld, uGS, uGShape, uGFill, uGCol, uClay, uGTex, uRing;
+  uniform float uScale, uAmp, uWater, uSoft, uCliff, uStrata, uToon, uMix, uGrid, uFogNear, uFogFar, uMoodK, uGridWorld, uGS, uGShape, uGFill, uGCol, uClay, uGTex, uRing, uEther;
   uniform vec4 uDio; uniform vec4 uDioB; uniform sampler2D uEdge; uniform vec2 uSeed; uniform vec3 uCam; uniform vec2 uOffset; uniform vec3 uTint, uHorizon;
   ${palUniforms}
   uniform sampler2D uShadowMap; uniform float uShadowOn; uniform vec3 uContact; uniform float uEdges, uFg, uOrg;
@@ -344,6 +356,20 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   float sminK(float a, float b, float k){ float h=clamp(0.5+0.5*(b-a)/k,0.0,1.0); return mix(b,a,h)-k*h*(1.0-h); }
   // Ringkante ohne Naht: Rauschen über die Richtung (Einheitsvektor) statt über den Winkel
   float ringE(vec2 p){ vec2 d2=p-uDio.xy; float r=length(d2); vec2 dir=d2/max(r,1e-3); float tz=snoise(dir*2.2+vec2(21.0,4.0))*0.65+snoise(dir*5.1+vec2(-3.0,9.0))*0.35; return (r-uDio.z)-4.5*(1.0+0.7*tz); }
+  // Cartoon-Flächen (Georg 20.10.): geschlossene, runde Formen wie vom Zeichner – je Zelle höchstens ein Blob (Ellipse ≤ 1:1,25, sanfte Beulen über
+  // Richtungsrauschen, keine Naht), Nachbarn per smooth-min zu satten Klecksen verschmolzen; keine Mäander, keine Zungen, keine dünnen Hälse
+  float blobL(vec2 p, float cs, float pr, float r0, float r1, float sd0, float lobA, float clus){
+    vec2 b=floor(p/cs); float d=1e5;
+    for(int j=-1;j<=1;j++) for(int i=-1;i<=1;i++){ vec2 cell=b+vec2(float(i),float(j));
+      float h1=h21(cell+sd0), h2=h21(cell*1.37+sd0*1.9+5.1), h3=h21(cell*2.11-3.7+sd0*0.7), h4=h21(cell*0.73+11.0+sd0*2.3);
+      vec2 cc=(cell+0.5+(vec2(h1,h2)-0.5)*0.6)*cs;
+      float pp=clus>0.5 ? pr*smoothstep(-0.15,0.65,snoise(cc/90.0+sd0)) : pr; if(h3>pp) continue;
+      float rad=cs*mix(r0,r1,h4); vec2 q=p-cc; float an=h1*6.283; q=vec2(cos(an)*q.x-sin(an)*q.y, sin(an)*q.x+cos(an)*q.y); q.x*=0.8+0.4*h2;
+      float lq=length(q); float lob=lobA>0.0 ? lobA*snoise(q/max(lq,1e-3)*1.3+vec2(h3*40.0,h4*40.0)) : 0.0;
+      d=sminK(d, lq-rad*(1.0+lob), rad*0.45); }
+    return d;
+  }
+  float cover(float d){ float fw=fwidth(d)+1e-4; return 1.0-smoothstep(-fw,fw,d); }
   void main(){
     float t=uMix>0.5 ? smoothstep(-0.25,0.25,snoise(vW.xz/(uScale*9.0)+uSeed*0.21+40.0)) : 0.0;
     vec3 water=pick(uA_water,uB_water,t), sand=pick(uA_sand,uB_sand,t), low=pick(uA_low,uB_low,t), mid=pick(uA_mid,uB_mid,t), high=pick(uA_high,uB_high,t), peak=pick(uA_peak,uB_peak,t), cliff=pick(uA_cliff,uB_cliff,t), sky=pick(uA_sky,uB_sky,t);
@@ -355,10 +381,12 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     c=mix(c, peak, smoothstep(0.84-w, 0.84+w, hn));
     // Organische Farbflächen (Georg 19.10., WS0-Design R1): Farbe unabhängig von der Höhe – breite Flächen aus einem eigenen Feld, Grenzen per
     // Domain Warp geschwungen, 4 Rollen; nur das Ufer folgt dem Wasserstand (physisch)
-    if(uOrg>0.5){ vec2 wq=vec2(snoise(vW.xz/260.0+3.7), snoise(vW.xz/260.0-8.3))*0.65; vec2 q=vW.xz/95.0+wq+uSeed*0.013;
-      float a=snoise(q)*0.65+snoise(q*2.03+5.1)*0.35, b=snoise(q*0.8+vec2(13.0,-7.0))*0.65+snoise(q*1.7+vec2(-4.0,2.0))*0.35;
-      float aw=fwidth(a)*1.2+1e-4, bw=fwidth(b)*1.2+1e-4;
-      vec3 o=mix(mid, low, smoothstep(-aw,aw,a)); o=mix(o, high, smoothstep(0.22-bw,0.22+bw,b)); o=mix(o, sand, 1.0-smoothstep(-0.5-bw,-0.5+bw,b));
+    if(uOrg>0.5){ vec2 pw=vW.xz+5.0*vec2(snoise(vW.xz/70.0+3.7), snoise(vW.xz/70.0-8.3)); float sd=uSeed.x*0.37+uSeed.y*0.11;
+      vec3 o=mid;
+      o=mix(o, low,  cover(blobL(pw, 120.0, 0.6, 0.32, 0.5, sd, 0.10, 0.0)));                      // große Flächen
+      o=mix(o, high, cover(blobL(pw+vec2(37.0,-11.0), 64.0, 0.45, 0.26, 0.46, sd+3.1, 0.10, 0.0))); // mittlere, hellere Kleckse darin/darüber
+      o=mix(o, mix(o, sand, 0.65), cover(blobL(pw+vec2(-9.0,23.0), 28.0, 0.3, 0.22, 0.42, sd+7.7, 0.08, 0.0)));  // kleine trockene Flecken
+      o=mix(o, mix(o*0.84, cliff, 0.18), 0.8*cover(blobL(vW.xz, 6.5, 0.5, 0.12, 0.24, sd+1.3, 0.0, 1.0))); // Tupfen, gehäuft in Nestern (natürliche Verteilung)
       c = uWater>0.005 ? mix(c, o, smoothstep(uWater+0.03-w, uWater+0.05+w, hn)) : o; }
     // Bühnen-Farbring: organische Kante + Tropfen in beide Richtungen, die weich mit der Kante verschmelzen (smooth-min, eine Distanzfunktion,
     // je Fleck die 3×3 Nachbarzellen → nie an Zellgrenzen abgeschnitten); Größen schief verteilt (viele kleine, wenige große), Form gedreht/gestreckt/gewellt,
@@ -380,10 +408,10 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       c=mix(c, mix(c*0.7, uContact*1.25, 0.35), 1.0-smoothstep(-fw,fw,edge)); }
     float slope=1.0-vN.y; float cw=0.01+0.05*uSoft;
     vec3 cl=cliff;
-    if(uOrg>0.5){ vec2 wc=abs(vN.x)>abs(vN.z) ? vec2(vW.z,vW.y) : vec2(vW.x,vW.y); float wb=snoise(wc/38.0+vec2(31.0,7.0)); float wbw=fwidth(wb)*1.2+1e-4;
-      cl=mix(cliff, mix(cliff, high, 0.45), smoothstep(-wbw, wbw, wb)); }   // Wände: eigenes Feld entlang der Wand (Wand-Projektion), nicht nach Höhe
     if(uStrata>0.5){ float band=step(0.5,fract(vW.y/(uAmp*0.06+0.6))); cl=mix(cliff*0.82, cliff*1.08, band); }
-    c=mix(c, cl, smoothstep(uCliff-cw, uCliff+cw, slope));
+    // organisch: keine Schnittkante am Hang – die Fläche läuft über die Wand weiter und wird mit der Steigung nur weich felsiger/dunkler
+    if(uOrg>0.5) c=mix(c, mix(c, cl, 0.55)*0.92, smoothstep(uCliff-0.10, uCliff+0.22, slope));
+    else c=mix(c, cl, smoothstep(uCliff-cw, uCliff+cw, slope));
     vec3 N=normalize(vN); float clayTone=1.0;
     if(uClay>0.5){
       // Knet-Optik aus der Weltlage (keine Textur, keine Wiederholung): Dellen (Rauschen als Höhe), Daumen-Rillen (verbogene Ringe), fleckige Farbe
@@ -395,7 +423,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       clayTone=0.94+0.06*snoise(cp*0.07+3.0)+0.04*snoise(cp*0.6)+0.025*snoise(cp*2.4); // dezent fleckig, feine Körnung
     }
     vec3 L=normalize(vec3(-0.55,0.75,0.35)); float l=max(dot(N,L),0.0);
-    if(uToon>0.5){ float s=l*3.0; l=(floor(s)+smoothstep(0.0,0.12,fract(s)))/3.0; }
+    if(uToon>0.5){ float s=l*3.0; l=(floor(s)+smoothstep(0.0,uEther>0.5?0.4:0.12,fract(s)))/3.0; }   // rund: weichere Stufenübergänge, sonst sägen die Dreiecke durch
     vec3 col=c*clayTone*(0.42+0.20*N.y+0.62*l);
     // Farbige Kanten nur an echten Formbrüchen (konvexe Grate, Plateaukanten): dunklerer Palettenton der Fläche, nie Schwarz, keine Tusche überall
     if(uEdges>0.5){ float ce=-vCurv/(uAmp*0.02+0.15); float ew=fwidth(ce)*1.2+1e-4; float ek=smoothstep(0.55-ew, 0.55+ew, ce)*smoothstep(0.04,0.12,1.0-vN.y);
@@ -523,7 +551,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   // ---------- Steuerung ----------
   const $ = (id) => document.getElementById(id);
   const NUM = ['scale', 'amp', 'oct', 'ridge', 'warp', 'macro', 'seed', 'valley', 'plateau', 'steps', 'sharp', 'water', 'soft', 'cliff', 'cover', 'gs'];
-  const BOOL = ['strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org'];
+  const BOOL = ['strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc'];
   const fmt = {
     scale: (v) => `${v} m`, amp: (v) => `${v} m`, oct: (v) => `${v}`, ridge: (v) => `${Math.round(v * 100)} %`, warp: (v) => v.toFixed(2), macro: (v) => `${Math.round(v * 100)} %`, seed: (v) => `${v}`,
     valley: (v) => `${Math.round(v * 100)} %`, plateau: (v) => (v >= 0.999 ? 'aus' : `${Math.round(v * 100)} % Höhe`), steps: (v) => (v < 1 ? 'aus' : `${v} Stufen`), sharp: (v) => `${Math.round(v * 100)} %`, water: (v) => `${Math.round(v * 100)} % Höhe`,
@@ -547,7 +575,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     for (const k of PAL_KEYS) { U['uA_' + k].value.set(A[k]); U['uB_' + k].value.set(B[k]) }
     const M = MOODS[S.tod] || MOODS.tag; U.uMoodK.value = M.k; U.uTint.value.setRGB(...M.tint); U.uHorizon.value.set(M.k ? M.horizon : A.sky);
     SKY.uZenith.value.set(M.zenith); SKY.uLit.value.set(M.lit); SKY.uShade.value.set(M.shade); SKY.uStars.value = M.stars; SKY.uCover.value = S.cover; SKY.uPainted.value = S.painted ? 1 : 0;
-    U.uGridWorld.value = S.gridworld ? 1 : 0; U.uGS.value = S.gs; U.uGShape.value = S.gshape; U.uGFill.value = S.gfill; U.uGCol.value = S.gcol; U.uClay.value = S.clay ? 1 : 0; U.uGTex.value = S.gtex; U.uRing.value = S.ring ? 1 : 0; U.uShadowOn.value = S.shadows ? 1 : 0; U.uEdges.value = S.edges ? 1 : 0; U.uFg.value = S.fgmass ? 1 : 0; U.uOrg.value = S.org ? 1 : 0; renderer.shadowMap.enabled = !!S.shadows; sun.castShadow = !!S.shadows; U.uContact.value.set(PALETTES[S.palA].cliff).multiplyScalar(0.55); if (window.__GU) window.__GU.uGOn.value = S.ground ? 1 : 0; window.__syncDio?.(); for (const R of RINGS) R.m.visible = S.rings; water.scale.set(S.rings ? 16 : 1, 1, S.rings ? 16 : 1);
+    U.uGridWorld.value = S.gridworld ? 1 : 0; U.uGS.value = S.gs; U.uGShape.value = S.gshape; U.uGFill.value = S.gfill; U.uGCol.value = S.gcol; U.uClay.value = S.clay ? 1 : 0; U.uGTex.value = S.gtex; U.uRing.value = S.ring ? 1 : 0; U.uShadowOn.value = S.shadows ? 1 : 0; U.uEdges.value = S.edges ? 1 : 0; U.uFg.value = S.fgmass ? 1 : 0; U.uOrg.value = S.org ? 1 : 0; U.uEther.value = S.ether ? 1 : 0; if (window.__rockc) window.__rockc.dirty = true; renderer.shadowMap.enabled = !!S.shadows; sun.castShadow = !!S.shadows; U.uContact.value.set(PALETTES[S.palA].cliff).multiplyScalar(0.55); if (window.__GU) window.__GU.uGOn.value = S.ground ? 1 : 0; window.__syncDio?.(); for (const R of RINGS) R.m.visible = S.rings; water.scale.set(S.rings ? 16 : 1, 1, S.rings ? 16 : 1);
     puffMat.color.set(M.lit); puffMat.emissive.set(M.shade).multiplyScalar(0.35); trailMat.uniforms.uCol.value.set(M.lit); puffs.visible = S.puffs;
     hemi.color.set(M.k ? M.hemi[0] : A.sky); hemi.intensity = M.hemi[1]; sun.color.set(M.sun[0]); sun.intensity = M.sun[1];
     const hz = new THREE.Color(M.k ? M.horizon : A.sky); scene.fog.color.copy(hz); stage.style.background = '#' + hz.getHexString(); renderer.setClearColor(hz);
@@ -557,7 +585,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   function recipe() {
     const r = { schema: 'kfb.terrain-recipe/1', status: 'Entwurf (Gelände-Probe)', seed: S.seed, units: 'm',
       form: { featureSize: S.scale, height: S.amp, octaves: S.oct, ridge: +S.ridge.toFixed(2), warp: +S.warp.toFixed(2), calmHillyVariation: +S.macro.toFixed(2) },
-      stylize: { flatValleys: +S.valley.toFixed(2), plateauAt: S.plateau >= 0.999 ? null : +S.plateau.toFixed(2), terraces: S.steps, terraceEdge: +S.sharp.toFixed(2), waterLevel: +S.water.toFixed(2) },
+      stylize: { flatValleys: +S.valley.toFixed(2), plateauAt: S.plateau >= 0.999 ? null : +S.plateau.toFixed(2), terraces: S.steps, terraceEdge: +S.sharp.toFixed(2), etheringtonRound: S.ether, rockClusters: S.rockc, waterLevel: +S.water.toFixed(2) },
       color: { organicFields: S.org, biome: S.palA, biomeTravel: S.mix ? S.palB : null, bandSoftness: +S.soft.toFixed(2), cliffSlopeDeg: S.cliff, strata: S.strata, steppedLight: S.toon, palette: PALETTES[S.palA] },
       world: { viewRings: S.rings, gridWorld: S.gridworld, gridSpacing: S.gs, gridShape: ['eckig', 'geschwungen', 'kreise'][S.gshape], gridFill: ['linien', 'schachbrett', 'schachbrett+linien'][S.gfill], checkerColors: S.gcol ? 'bunt' : 'zwei', checkerTexture: S.gtex ? 'edge3' : null, clayLook: S.clay,
         diorama: { on: S.dio, palette: S.dpal, plinthAndBerm: S.berm, colourRingSpeckle: S.ring, stoneBand: S.stones, props: S.props, grounding: S.ground, realShadows: S.shadows, contactCrumbs: S.crumbs, foregroundMass: S.fgmass, colouredEdges: S.edges }, testTempo: S.tempo },
@@ -651,7 +679,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   }
   // Erdung (Grounding): unten am Objekt und an nach unten gerichteten Flächen (Kronen-Unterseiten) dunkler im Kontaktton der Palette, nie schwarz;
   // die Bodenhöhe kommt aus derselben Höhenformel wie das Gelände (im Vertex-Shader)
-  const GU = { uScale: U.uScale, uAmp: U.uAmp, uOct: U.uOct, uRidge: U.uRidge, uWarp: U.uWarp, uMacro: U.uMacro, uValley: U.uValley, uPlateau: U.uPlateau, uSteps: U.uSteps, uSharp: U.uSharp, uSeed: U.uSeed, uDio: U.uDio, uDioB: U.uDioB, uContact: U.uContact, uGOff: { value: new THREE.Vector2() }, uGBand: { value: 0.8 }, uGOn: { value: 1 } };
+  const GU = { uScale: U.uScale, uAmp: U.uAmp, uOct: U.uOct, uRidge: U.uRidge, uWarp: U.uWarp, uMacro: U.uMacro, uValley: U.uValley, uPlateau: U.uPlateau, uSteps: U.uSteps, uSharp: U.uSharp, uEther: U.uEther, uSeed: U.uSeed, uDio: U.uDio, uDioB: U.uDioB, uContact: U.uContact, uGOff: { value: new THREE.Vector2() }, uGBand: { value: 0.8 }, uGOn: { value: 1 } };
   window.__GU = GU;
   function addGrounding(mat) { const prev = mat.onBeforeCompile, prevKey = mat.customProgramCacheKey
     mat.onBeforeCompile = (sh, r) => { if (prev) prev.call(mat, sh, r); Object.assign(sh.uniforms, GU)
@@ -699,6 +727,58 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     crumbs.instanceMatrix.needsUpdate = true; crumbs.material.color.set(A.sand).lerp(new THREE.Color(A.cliff), 0.45).multiplyScalar(0.85);
     const leaf = new THREE.Color(A.mid), rock = new THREE.Color(A.cliff); stoneGroup.children.forEach((o) => tint(o, rock, S.dpal ? 0.55 : 0)); propGroup.children.forEach((o) => tint(o, leaf, S.dpal ? 0.35 : 0));
   };
+  // Felsgruppen an Steilhängen (Etherington R2): Dreiergruppen 1 : 0,6 : 0,35 (N5 ≤ 3 Hauptformen), 40–50 % eingesunken (S1), Ei auf dem breiten Ende +
+  // nach oben schmaler (N2/N3), gemeinsame Neigung ≤ 15° mit Abständen ≥ 5° und genau einer Ausnahme 25–45° je Gruppe (N1), Brösel hangabwärts ≤ 12 % (E3)
+  function etherRockGeo(seed) { let z = seed; const r = () => { z = (z * 16807) % 2147483647; return z / 2147483647 }; for (let k = 0; k < 4; k++) r()
+    const g = new THREE.IcosahedronGeometry(1, 1), pa = g.attributes.position, v = new THREE.Vector3()
+    // Block statt Kugel: 8 Schnittebenen (große, flache Facetten), Ober- und Seitenschnitte, unten abgeflacht zum Aufsitzen; leicht länglich
+    const cuts = [...Array(8)].map((_, k) => ({ n: (k === 0 ? new THREE.Vector3(r() * 0.3 - 0.15, 1, r() * 0.3 - 0.15) : new THREE.Vector3(r() - 0.5, r() * 0.8 - 0.2, r() - 0.5)).normalize(), d: k === 0 ? 0.5 + r() * 0.15 : 0.5 + r() * 0.25 }))
+    const sx = 1.0 + 0.35 * r(), sz = 0.75 + 0.2 * r()
+    for (let i = 0; i < pa.count; i++) { v.fromBufferAttribute(pa, i); v.y = Math.max(v.y, -0.6); const w = 1 + 0.2 * -v.y; v.x *= w * sx; v.z *= w * sz; v.y *= 0.8
+      for (const c of cuts) { const k = v.dot(c.n); if (k > c.d) v.addScaledVector(c.n, c.d - k) } pa.setXYZ(i, v.x, v.y, v.z) }
+    g.computeVertexNormals(); return g }
+  const ROCKC = { dirty: true, cx: 1e9, cz: 1e9, meshes: [], crumbs: null };
+  { const mat = new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0, flatShading: true }); addGrounding(mat)
+    ROCKC.meshes = [11, 29, 47].map((sd) => { const m = new THREE.InstancedMesh(etherRockGeo(sd), mat, 420); m.castShadow = m.receiveShadow = true; m.frustumCulled = false; m.count = 0; worldRoot.add(m); return m })
+    ROCKC.crumbs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), crumbs.material, 2200); ROCKC.crumbs.castShadow = ROCKC.crumbs.receiveShadow = true; ROCKC.crumbs.frustumCulled = false; ROCKC.crumbs.count = 0; worldRoot.add(ROCKC.crumbs)
+    ROCKC.mat = mat }
+  const hh2 = (x, y) => { const t = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return t - Math.floor(t) };
+  function buildRocks(px, pz) {
+    ROCKC.cx = px; ROCKC.cz = pz; ROCKC.dirty = false; for (const m of ROCKC.meshes) m.count = 0; ROCKC.crumbs.count = 0
+    if (!S.rockc || S.gridworld) { for (const m of ROCKC.meshes) m.instanceMatrix.needsUpdate = true; ROCKC.crumbs.instanceMatrix.needsUpdate = true; return }
+    const A = PALETTES[S.palA]; ROCKC.mat.color.set(A.cliff).lerp(new THREE.Color(A.mid), 0.15).multiplyScalar(0.9)
+    const CS = 26, RAD = 175, tanMin = Math.tan((S.cliff - 10) * Math.PI / 180), tanMax = Math.tan(Math.min(S.cliff + 22, 75) * Math.PI / 180), e = 2, wl = S.water > 0.005 ? S.water * S.amp + 0.3 : -1e9
+    const up = new THREE.Vector3(0, 1, 0), ax = new THREE.Vector3(), q1 = new THREE.Quaternion(), q2 = new THREE.Quaternion(), m4 = new THREE.Matrix4(), pos = new THREE.Vector3(), scl = new THREE.Vector3()
+    const i0 = Math.floor((px - RAD) / CS), i1 = Math.floor((px + RAD) / CS), j0 = Math.floor((pz - RAD) / CS), j1 = Math.floor((pz + RAD) / CS), sd = S.seed * 0.731
+    for (let i = i0; i <= i1; i++) for (let j = j0; j <= j1; j++) {
+      const hA = hh2(i + sd, j), hB = hh2(i * 1.7 - 3.1, j * 0.9 + sd), hC = hh2(i * 0.37 + 9.2 + sd, j * 2.3), hD = hh2(i * 2.9 + sd * 1.3, j * 1.1 - 7.7)
+      const x = (i + 0.2 + 0.6 * hA) * CS, z = (j + 0.2 + 0.6 * hB) * CS; if ((x - px) ** 2 + (z - pz) ** 2 > RAD * RAD) continue
+      if (DIO.on && Math.hypot(x - DIO.x, z - DIO.z) < DIO.R + 16) continue
+      const h0 = hgt(x, z); if (h0 < wl) continue
+      const gx = (hgt(x + e, z) - hgt(x - e, z)) / (2 * e), gz = (hgt(x, z + e) - hgt(x, z - e)) / (2 * e), gm = Math.hypot(gx, gz)
+      if (gm < tanMin || gm > tanMax || hC > 0.8) continue // Hangfuß und mittlere Hänge, nicht an der senkrechten Wand
+      const down = Math.atan2(-gz, -gx), contour = down + Math.PI / 2, big = (2.6 + 4.0 * hD) * (1.25 - 0.45 * Math.min(1, (gm - tanMin) / Math.max(0.01, tanMax - tanMin))) // flacher → größere Findlinge, steiler → kleiner
+      // gemeinsame Neigungsrichtung aus einem weiten Feld → Nachbargruppen lehnen sich in dieselbe Richtung
+      const leanDir = 1.3 + 2.2 * snoise(x / 400 + 5.0, z / 400 - 2.0), base = [4, 10, 15], ord = hA < 0.33 ? [0, 1, 2] : hA < 0.66 ? [1, 2, 0] : [2, 0, 1], exc = hB < 0.5 ? 1 : 2
+      const off = [[0, 0], [0.95, 0.15], [-0.75, 0.35]], sizes = [1, 0.6, 0.35]
+      for (let k = 0; k < 3; k++) {
+        const sc = big * sizes[k] * (0.9 + 0.2 * hh2(i + k, j - k)), ox = off[k][0] * big, oy = off[k][1] * big
+        const rx = x + Math.cos(contour) * ox + Math.cos(down) * oy, rz = z + Math.sin(contour) * ox + Math.sin(down) * oy
+        let g = hgt(rx, rz); for (let a = 0; a < 4; a++) g += hgt(rx + Math.cos(a * 1.571) * sc * 0.8, rz + Math.sin(a * 1.571) * sc * 0.8); g /= 5 // mittlere Bodenhöhe: hangab sieht man mehr Stein, hangauf weniger
+        const sink = 0.4 + 0.1 * hh2(i * 3 + k, j * 5), hgtR = 1.6 * sc
+        const isExc = k === exc, lean = (isExc ? 25 + 20 * hC : base[ord[k]]) * Math.PI / 180, ld = isExc ? leanDir + Math.PI * 0.8 : leanDir + (hh2(i, j + k) - 0.5) * 0.4
+        ax.set(Math.sin(ld), 0, -Math.cos(ld)); q1.setFromAxisAngle(ax, lean); q2.setFromAxisAngle(up, hh2(i - k, j) * 6.283); q1.multiply(q2)
+        pos.set(rx, g + 0.8 * sc - sink * hgtR, rz); scl.set(sc, sc, sc)
+        const mesh = ROCKC.meshes[(((i * 7 + j * 3 + k) % 3) + 3) % 3]; if (mesh.count >= 420) continue
+        mesh.setMatrixAt(mesh.count++, m4.compose(pos, q1, scl))
+        // Brösel: wenige, klein (≤ 12 % des Steins), meist hangabwärts liegen geblieben
+        if (S.crumbs) for (let c = 0; c < 4 && ROCKC.crumbs.count < 2200; c++) { const a = down + (hh2(i + c, j * 2 + k) - 0.5) * 2.2, rr2 = sc * (0.75 + 0.6 * hh2(i * 2 + c, j + k)), cx2 = rx + Math.cos(a) * rr2, cz2 = rz + Math.sin(a) * rr2, cs2 = sc * (0.04 + 0.08 * hh2(c + i, k + j))
+          ce.set(hh2(c, i) * 0.6, hh2(j, c) * 6.28, 0); cq.setFromEuler(ce); cs3.set(cs2 * 1.2, cs2 * 0.6, cs2); ROCKC.crumbs.setMatrixAt(ROCKC.crumbs.count++, cm4.compose(ccv.set(cx2, hgt(cx2, cz2) - cs2 * 0.15, cz2), cq, cs3)) }
+      }
+    }
+    for (const m of ROCKC.meshes) m.instanceMatrix.needsUpdate = true; ROCKC.crumbs.instanceMatrix.needsUpdate = true
+  }
+  window.__rockc = ROCKC;
   window.__probe = { TPL, stoneGroup, propGroup, dioGroup, get amph() { return amph } }; // Prüfhilfe
   window.__syncDio();
   $('toDio').addEventListener('click', () => { P.x = DIO.x; P.z = DIO.z - DIO.R - 32; P.yaw = 0; P.vf = 0; P.vl = 0; P.fly = false; P.vy = 0; P.y = groundAt(P.x, P.z) + C.hover; $('dioMsg').textContent = dioErr || 'Vor dem Diorama abgesetzt.'; setTimeout(() => { $('dioMsg').textContent = dioErr }, 2500) });
@@ -808,6 +888,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     U.uOffset.value.set(sx, sz); terrain.position.set(sx - P.x, 0, sz - P.z); water.position.copy(terrain.position); U.uCarW.value.set(P.x, P.z);
     for (const R of RINGS) { const rx = Math.floor(P.x / R.step) * R.step, rz = Math.floor(P.z / R.step) * R.step; R.u.uOffset.value.set(rx, rz); R.m.position.set(rx - P.x, 0, rz - P.z) } water.visible = S.water > 0.005;
     worldRoot.position.set(-P.x, 0, -P.z);
+    if (ROCKC.dirty || Math.hypot(P.x - ROCKC.cx, P.z - ROCKC.cz) > 40) buildRocks(P.x, P.z);
     carRoot.position.set(0, P.y - C.hover * 0.55, 0); carRoot.rotation.y = P.yaw;
     tilt.rotation.set(-P.vPitch, 0, P.vRoll);
     const s = P.sq; squash.scale.set(1 / Math.sqrt(1 + s), 1 / Math.sqrt(1 + s), 1 + s);
@@ -858,6 +939,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   requestAnimationFrame(frame);
 })();
 </script>
+
 
 </body>
 </html>
