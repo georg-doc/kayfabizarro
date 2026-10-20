@@ -3,6 +3,40 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 107 · 20.10. · Probe: Formlogik v4, Kontakt-AO am Boden, Rezept-Import/Export, Voxel-Welt
+
+Stand: `ws1/preview@<siehe Commit>`, https://ws1-preview.kayfabizarro.pages.dev/gelaende-probe
+
+- **Anti-Zacken, 2. Stufe:** Die Kantenbreite von Tafel und Stufe richtet sich nach der Steigung. Am Vertex wird die Steigung der Rohhöhe (`gG`) gemessen, dann gilt w ≥ 1,6 · Gitterabstand · Stufen · gG.
+  - Steile Wände werden weich, flache Terrassen bleiben scharf.
+  - JS und Shader rechnen identisch.
+  - Ringe sparen Arbeit: Oktaven-Abbruch und keine Formnormale.
+- **Formlogik v4** (Georg: „Flächengrammatik stimmt noch nicht“): Farbe aus der großen Landform.
+  - Das Laplace-Signal von `hlow` über 28 m liefert die Talbänder.
+  - Daraus entstehen vier Töne: Talband, Unterhang, Grundton und Rücken/Kuppe.
+  - Ränder organisch geschwungen; Kleckse nur leise, Sprenkel nur an Talrändern.
+  - v3 bleibt wählbar. Georgs Urteil steht aus.
+- **Kontakt-AO am Boden** (Georg mehrfach; KayKit-Referenz): Eine Draufsicht aller Props (Ebene 2) wird weiß gezeichnet und zweimal weichgezeichnet. Das ergibt einen weichen dunklen Hof ums Fußende, keine Blob-Schatten. Damit gibt es Erdung auf beiden Seiten, am Objekt und am Boden.
+  - Historie: Damals lief das über `edge3` als Kantenmaske plus Kontakt-AO in den Fugen (Texturkonzept vom 25.07.).
+- **Rezepte importieren und exportieren** (`kfb.terrain-recipe/1`):
+  - Rezeptfeld, Datei öffnen und speichern, gemerkte Rezepte im Browser.
+  - Eine eigene Palette wird als Biom „Aus Rezept“ übernommen.
+  - Alte Rezepte: später hinzugekommene Gelände-Zusätze gelten als aus.
+  - Georgs Gitter-Rezept (Mesa, geschwungen, Schachbrett) ist getestet.
+- **Voxel-Welt** (Georg: „wie damals im Rollercoaster, Höhenabstufungen je Track anpassbar“; Referenz three.js `webgl_instancing_dynamic`):
+  - Eine Höhenkarte entsteht auf der GPU (192² Zellen, Float-RT). Sie wird nur bei Zellwechsel oder Einstellungsänderung neu gerechnet.
+  - 36 864 Säulen in **einem** instanzierten Draw Call. Die Säulen lesen ihre Höhe selbst und reichen nur bis unter den tiefsten Nachbarn.
+  - Wählbar: Kante 1–4 m, Höhenstufe 0,5 / 1 / 2 m oder Würfel.
+  - `edge3` je Fläche zufällig gedreht und gespiegelt. An den Seiten ist es je Höhenstufe wiederholt, dadurch werden die Schichten sichtbar.
+  - Physik: JS rechnet dieselbe quantisierte Säulenhöhe. Optional gibt es eine geglättete Fahrhöhe (bilinear zwischen den Säulen = Rampen statt Stufen).
+  - Steine, Brösel und Props sitzen auf den Säulen (`surfH`).
+  - Steht im Rezept als `world.voxel`, damit es sich je Track einstellen lässt.
+- **Offen:**
+  - Georgs Urteil zu v4 und zur Voxel-Welt;
+  - Bildrate auf Georgs Mac (zuletzt 15 fps vor der Optimierung);
+  - G6-Messung;
+  - Übertragung nach `terrain2`.
+
 ## 106 · 20.10. · R12 + R13 bei WS0 · Probe: Anti-Zacken, Himmel v2, Erdung, Polka-Dot · Georgs Urteile
 
 **Neu in `CANON_3D/sources/` (Register):**
