@@ -290,3 +290,12 @@ Diese Entscheide schließen die offenen Punkte oben; was dort noch offen steht, 
 - Fliegender Schädel: Er ist ein Requisit (Halloween Bits) und bekommt keine Augen. Agiert er als Figur, sind Augen Pflicht.
 - Der Minion bleibt draußen, weil sein Weg in der Quelle nur erschlossen wäre.
 - Hangneigung: höchstens so steil, wie die geraden Zaunteile ohne Schweben tragen (WS1 misst).
+
+### Georg-Korrektur 20.10. (gilt vor dem WS0-Entscheid zu den Bodenplatten)
+- **Die Bodenkacheln bleiben** (floor_dirt, floor_dirt_small, floor_dirt_grave; Lage 1:1 laut `ra_layout_export.json`).
+- **Neu ist nur der glaubwürdige Übergang zum Terrain:**
+  - Die Kachelkante sinkt leicht ein bzw. das Terrain läuft an (Erdkeil).
+  - Rundherum ein Übergangsband nach Kanon Gebiet 17 (4): Steinchen-Nester aus dem Steinkit, Staub bzw. Erdkrümel und Sprenkel in beide Richtungen.
+  - Außenkacheln franzen zum Rand hin aus: einzelne lose bzw. gekippte Platten, Lücken, Moos in den Fugen. Nie eine gerade Plattenkante gegen den Boden.
+- **Das offene Grab** bleibt `floor_dirt_grave` mit einer echten Mulde darunter.
+- **Layout-Export** aus dem laufenden RA (176 Teile, Weltlage): `65_SCENELETS/graveyard/ra_layout_export.json`.

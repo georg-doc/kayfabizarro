@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- Friedhof: Georg 20.10. – Bodenkacheln bleiben, es fehlt der glaubwürdige Übergang zum Terrain (Steinchen, Staub, Sprenkel, ausfransende Außenkacheln) → Konzeptblatt-Korrektur; WS0 hat das RA-Layout live exportiert (65_SCENELETS/graveyard/ra_layout_export.json, 176 Teile) → WSB K6 mit Übergangsband-Vorschlag. Drum Machine Fuß-Streifen r2 verstärkt.
 - WSB K4 Drum Machine 2 angenommen (Original aus Georgs Repo, Byte-gleich; prop_buried 86 %, RA-Lage 1:1, CC-BY-Credit). Fuß-Streifen kräftiger; Kontakt-Geometrie setzt WS1 beim Einpassen. WSB-Liste leer → neu K6 Friedhof-Teile, K7 Sci-Fi-Teile nach Konzeptblatt (as-is + apply + Pass).
 - WS1 V-572: kfb-light-pool.v1.js im Kanon (Pfützen als Kegel-Projektion auf jeden Empfänger, Kegel mit weichem Ende) + Inventur (disco-ball-core, ufo-lab, kfb-gem Laternen im Spiel, globe-v13, tinyskies-Leuchtturm); Umstellung der Nutzer folgt nach WS1-Plan.
 - WS1b-Schattendiagnose (WS1B_SHADOW_DIAG_R1.md): Schatten-Frustum r 3,37 m um FB schneidet Kronen (Ring), receive/castShadow an FB-Teilen aus, Kontakt-Strahl trifft Spielerkapsel → an WS1 (#439) mit Kanon-Hinweis kein Blob-Ersatz. GPU-Playwright auf dem MacBook möglich.
