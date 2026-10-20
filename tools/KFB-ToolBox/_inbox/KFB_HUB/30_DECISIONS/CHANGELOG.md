@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WSB K10 §1 Handwaffen + Blaster nach V-581 angenommen: alle Kit-Fernkampfwaffen brauchen dieselbe Halterung +90° um Y; Gun_Pistol (CC0) + Hero-Man-Blaster (privat, 6 cm Versatz wegen Visier-Horn), Lauf 1,3° zur Zielrichtung, fire.1h 0,2667 s; Action-Figure-Gun → 2H. r3d: eine Drehung für alle Clips, Positions-Versätze nur bei sichtbarer Durchdringung (V-574).
 - V-581 Kit-Waffen einpassen (Georg, Weg a): feste gemessene Halterungsdrehung je Waffe bei Kit-Achsen-Unstimmigkeit (Ranged-Clips +X vs. Waffe +Z), keine Wurzeldrehung; Priorität Handguns/Blaster, dann Gewehr (Soldat r3d), Armbrust, Gatling (linke Stützhand). WSA: Prüfer slotOffset.rotation, Armbrust ohne Mündungsfeuer (release-Effekt), CC0-Quelle per Dropbox-Pfad + sha256.
 - WSB K9 Gate 1 PASS nach Zusatzbelegen (near_face G1 mit Lidhäuten, Knete nah, Clearance Klinge↔Helm ≥ 6,8 cm in allen 33 Bildern, 0 Durchdringung). K10 startet mit Armbrust; Arena-Schema aus WSA-Paket (nur lesen).
 - WSB K10 Waffenklassen-Inventur freigegeben (Georg-Auftrag; Armbrust → Wurf → 1H → Magie → Bogen): Waffenkarten im Format von WSAs Profilprüfer (PR #23), Original-Clips vermessen, Prüfbilder mit near_face; Kit as-is, Anker +Z; Bogen-Sehne über Blendshape Draw aus Handabstand; Laufzeit bei WSA, kein Push.
