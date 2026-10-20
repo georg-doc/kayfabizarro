@@ -180,7 +180,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <label class="check"><input type="checkbox" id="flare" checked> Blendenflecken (Blick zur Sonne)</label>
         <div class="row"><label for="moon">Himmelskörper</label><select id="moon"><option value="1">Knet-Riesenmond</option><option value="2">Ringplanet (Knete)</option><option value="0">keiner</option></select></div>
         <label class="check"><input type="checkbox" id="painted" checked> Gemalte Wolken am Himmel (3 Ebenen mit Parallaxe)</label>
-        <div class="row"><label for="cform">Wolkenformation</label><select id="cform"><option value="0">gemischt</option><option value="1">Haufenwolken</option><option value="2">Schäfchenwolken</option><option value="3">Wolkenbänke am Horizont</option></select></div>
+        <div class="row"><label for="cform">Wolkenformation</label><select id="cform"><option value="4" selected>nur Kuppel (wie vorher)</option><option value="0">gemischt (3 Ebenen, Versuch)</option><option value="1">Haufenwolken</option><option value="2">Schäfchenwolken</option><option value="3">Wolkenbänke am Horizont</option></select></div>
         <label class="check"><input type="checkbox" id="puffs"> Wolkenschicht in Flughöhe (Ebene, Versuch)</label>
         <div class="row"><label for="cover">Wolken-Menge</label><output id="o_cover"></output><input type="range" id="cover" min="0" max="1" step="0.01" value="0.45"></div>
         <div class="row"><label for="cstretch">Wolken-Streckung (Flugrichtung)</label><output id="o_cstretch"></output><input type="range" id="cstretch" min="1" max="4" step="0.1" value="1"></div>
@@ -1961,11 +1961,11 @@ ${GLSL_SKY}
     ${GLSL_SKY}
     float fbm4(vec2 q){ float s=0.0, a=0.5; for(int i=0;i<4;i++){ s+=a*snoise(q); q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(1.7,9.2); a*=0.5; } return s; }
     /* eine Wolkenebene im Kuppelstil: Rauschen hart geschnitten, Licht-/Schattenton (Seite zur Sonne hell), dunklere Kante */
-    vec4 cloudLayer(vec3 d, float ph, float sc, vec2 wind, float par, float th, float sd, float edge){
+    vec4 cloudLayer(vec3 d, float ph, float sc, vec2 wind, float par, float th, float sd, float edge, float orig){
       vec2 p=d.xz/(d.y+ph)*sc+wind+uCamXZ*par+vec2(sd*17.0,-sd*9.0);
       float n=fbm4(p*1.4)+0.5; float fw=min(fwidth(n)*1.2,0.012); if(n<th-0.01) return vec4(0.0);   /* Kantenbreite in Pixeln (vor dem Ausstieg gemessen): scharf auch bei großen nahen Wolken */
-      float n2=fbm4(p*1.4+normalize(uSunDir.xz+1e-4)*0.086)+0.5;
-      float m=smoothstep(th,th+max(fw,0.0015),n);
+      float n2=fbm4(p*1.4+(orig>0.5 ? vec2(0.07,0.05) : normalize(uSunDir.xz+1e-4)*0.086))+0.5;   /* orig: Lichtversatz exakt wie die Kuppel vorher (Georg 21.10.: sah besser aus) */
+      float m=orig>0.5 ? smoothstep(th,th+0.012,n) : smoothstep(th,th+max(fw,0.0015),n);
       vec3 cc=mix(uShade,uLit,step(n2+0.012,n));
       cc=mix(cc,uShade*0.82,(m-smoothstep(th+0.012,th+0.03,n))*0.85*edge);   /* nahe Ebenen: schwächere Kante, sonst bleiben kleine Fetzen als Umriss-Geister */
       return vec4(cc,m); }
@@ -2003,13 +2003,13 @@ ${GLSL_SKY}
         // gemalte Cartoon-Wolken in mehreren Ebenen (Georg 21.10.: Optik der Kuppelwolken, verschiedene Formationen, Tiefe über Parallaxe und Zug):
         // je Ebene eigene Projektionshöhe, Größe, Windzug und Parallaxe; hinten zuerst, vorne deckt
         float mz=1.0; if(uMoon>0.5){ float ang=acos(clamp(dot(d,uMoonDir),-1.0,1.0)); mz=mix(0.25,1.0,smoothstep(0.16,0.42,ang)); }   /* vor dem Himmelskörper weniger Wolken */
-        float hf=smoothstep(0.0,0.1,d.y), mt=(1.0-mz)*0.4;                                              /* am Himmelskörper schrumpfen die Wolken (keine halbdurchsichtigen Geister) */
-        float fS=uCForm>2.5?0.6:uCForm>1.5?2.1:uCForm>0.5?0.75:1.0, fC=uCForm>2.5?0.1:uCForm>1.5?0.02:uCForm>0.5?0.07:0.0, fP=uCForm>2.5?0.04:0.12;
+        float orig=step(3.5,uCForm), hf=smoothstep(0.0,0.1,d.y)*mix(1.0,mz,orig), mt=(1.0-mz)*0.4*(1.0-orig);   /* Kuppel wie vorher: am Himmelskörper ausblenden wie früher */                                              /* am Himmelskörper schrumpfen die Wolken (keine halbdurchsichtigen Geister) */
+        float fS=uCForm>3.5?1.0:uCForm>2.5?0.6:uCForm>1.5?2.1:uCForm>0.5?0.75:1.0, fC=uCForm>3.5?0.0:uCForm>2.5?0.1:uCForm>1.5?0.02:uCForm>0.5?0.07:0.0, fP=uCForm>3.5?0.12:uCForm>2.5?0.04:0.12;
         vec4 L;
-        L=cloudLayer(d, fP, 0.9*fS, vec2(uTime*0.006,uTime*0.002), 0.00022, 0.9-uCover*0.55-fC+mt, 0.0, 1.0);           col=mix(col,L.rgb,L.a*hf);
-        if(uCForm<2.5){
-        L=cloudLayer(d, 0.2, 0.5*fS, vec2(uTime*0.014,uTime*0.004), 0.0007, 0.95-uCover*0.5-fC+mt, 3.0, 0.5);           col=mix(col,L.rgb,L.a*hf);
-        L=cloudLayer(d, 0.32, 0.27*fS, vec2(uTime*0.03,uTime*0.009), 0.0016, 1.0-uCover*0.45-fC+mt, 7.0, 0.25);          col=mix(col,L.rgb,L.a*hf); }
+        L=cloudLayer(d, fP, 0.9*fS, vec2(uTime*0.006,uTime*0.002), 0.00022, 0.9-uCover*0.55-fC+mt, 0.0, 1.0, 1.0);           col=mix(col,L.rgb,L.a*hf);
+        if(uCForm<2.5){   /* Zusatzebenen (Versuch) nur bei gemischt/Haufen/Schäfchen */
+        L=cloudLayer(d, 0.2, 0.5*fS, vec2(uTime*0.014,uTime*0.004), 0.0007, 0.95-uCover*0.5-fC+mt, 3.0, 0.5, 0.0);           col=mix(col,L.rgb,L.a*hf);
+        L=cloudLayer(d, 0.32, 0.27*fS, vec2(uTime*0.03,uTime*0.009), 0.0016, 1.0-uCover*0.45-fC+mt, 7.0, 0.25, 0.0);          col=mix(col,L.rgb,L.a*hf); }
       }
       gl_FragColor=vec4(col,1.0);
     }`,
@@ -2174,7 +2174,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     const A = PALETTES[S.palA], B = PALETTES[S.palB];
     for (const k of PAL_KEYS) { U['uA_' + k].value.set(A[k]); U['uB_' + k].value.set(B[k]) }
     const M = MOODS[S.tod] || MOODS.tag; U.uMoodK.value = M.k; U.uTint.value.setRGB(...M.tint); U.uHorizon.value.set(M.k ? M.horizon : A.sky);
-    SKY.uZenith.value.set(M.zenith); SKY.uCForm.value = S.cform || 0; U.uSGrad.value = S.sgrad ?? 0.6; SKY.uAurora.value = S.aurora === 2 ? (M.stars ? 1 : 0.55) : S.aurora === 1 ? M.stars : 0;
+    SKY.uZenith.value.set(M.zenith); SKY.uCForm.value = S.cform ?? 4; U.uSGrad.value = S.sgrad ?? 0.6; SKY.uAurora.value = S.aurora === 2 ? (M.stars ? 1 : 0.55) : S.aurora === 1 ? M.stars : 0;
     { const el = (S.sunel ?? 49) * Math.PI / 180, az = Math.atan2(35, -55); U.uSunDir.value.set(Math.cos(el) * Math.cos(az), Math.sin(el), Math.cos(el) * Math.sin(az)); sun.position.copy(U.uSunDir.value).multiplyScalar(160) }   // Sonnenstand (Regler), Richtung wie bisher
     { const hz = U.uHorizon.value, ze = U.uZenith.value; U.uSkyMid.value.copy(hz).lerp(ze, 0.45); U.uSkyGround.value.copy(hz).multiplyScalar(0.9).lerp(new THREE.Color(A.low), 0.15); U.uSunCol.value.set(M.sun[0]); U.uAirTint.value.copy(hz).lerp(ze, 0.5); U.uSky2.value = S.sky2 ? 1 : 0; U.uMoon.value = S.moon
       const md = new THREE.Vector3(-U.uSunDir.value.x, 0, -U.uSunDir.value.z).normalize(); md.y = Math.tan(6 * Math.PI / 180); U.uMoonDir.value.copy(md.normalize())
@@ -2194,12 +2194,12 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       color: { polkaDot: ['aus', 'biom', 'konfetti', 'netz'][S.kus], organicFields: S.org, surfaceStage: ['B makro', 'C +übergänge', 'D +sprenkel', 'v3', 'v4 formlogik', '70er fliessfarben'][S.fstage], flowSpeed: S.flow, flowWithSpeed: S.flowspeed, flowOverTrees: S.flowtree, bandDensity: S.bands, biome: S.palA, biomeTravel: S.mix ? S.palB : null, bandSoftness: +S.soft.toFixed(2), cliffSlopeDeg: S.cliff, strata: S.strata, steppedLight: S.toon, palette: PALETTES[S.palA] },
       world: { voxel: { on: S.vox, size: S.voxs, step: S.voxhSel < 0 ? 'cube' : S.voxh, smoothDrive: S.voxsmooth, edge3: S.voxtex }, viewRings: S.rings, gridWorld: S.gridworld, gridSpacing: S.gs, gridShape: ['eckig', 'geschwungen', 'kreise'][S.gshape], gridFill: ['linien', 'schachbrett', 'schachbrett+linien'][S.gfill], checkerColors: S.gcol ? 'bunt' : 'zwei', checkerTexture: S.gtex ? 'edge3' : null, clayLook: S.clay,
         diorama: { on: S.dio, palette: S.dpal, plinthAndBerm: S.berm, colourRingSpeckle: S.ring, stoneBand: S.stones, props: S.props, grounding: S.ground, realShadows: S.shadows, contactCrumbs: S.crumbs, foregroundMass: S.fgmass, colouredEdges: S.edges }, testTempo: S.tempo },
-      sky: { timeOfDay: S.tod, paintedClouds: S.painted, clayClouds: S.puffs, cloudCover: +S.cover.toFixed(2), cloudStretch: +(+S.cstretch || 2.4).toFixed(1), sunElevation: S.sunel, skyGradient: S.sgrad, aurora: ['aus', 'nachts', 'immer'][S.aurora], lensFlare: S.flare, cloudFormation: ['gemischt', 'haufen', 'schaefchen', 'baenke'][S.cform || 0], contrails: S.trails, v2: S.sky2, backdrops: S.kul, body: ['keiner', 'knet-mond', 'ringplanet'][S.moon] },
+      sky: { timeOfDay: S.tod, paintedClouds: S.painted, clayClouds: S.puffs, cloudCover: +S.cover.toFixed(2), cloudStretch: +(+S.cstretch || 2.4).toFixed(1), sunElevation: S.sunel, skyGradient: S.sgrad, aurora: ['aus', 'nachts', 'immer'][S.aurora], lensFlare: S.flare, cloudFormation: ['gemischt', 'haufen', 'schaefchen', 'baenke', 'kuppel'][S.cform ?? 4], contrails: S.trails, v2: S.sky2, backdrops: S.kul, body: ['keiner', 'knet-mond', 'ringplanet'][S.moon] },
       noise: 'simplex2d (Ashima/Gustavson), fbm mit Drehung je Oktave, Grat = (1-|n|)^2, Wechselzone = snoise(p/(6·featureSize))' };
     if (!RC.dirty) $('recipe').value = JSON.stringify(r, null, 2);
     RC.last = r;
   }
-  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1 })) } catch (e) {} }
+  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1 })) } catch (e) {} }
   function setUI(p) {
     for (const k of NUM) if (p[k] != null) $(k).value = p[k];
     for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
@@ -2238,7 +2238,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     bool('rings', w.viewRings, false); bool('gridworld', w.gridWorld, false); num('gs', w.gridSpacing); idx('gshape', ['eckig', 'geschwungen', 'kreise'], w.gridShape); idx('gfill', ['linien', 'schachbrett', 'schachbrett+linien'], w.gridFill);
     if (w.checkerColors) p.gcol = w.checkerColors === 'bunt' ? 1 : 0; p.gtex = w.checkerTexture === 'edge3' ? 1 : 0; bool('clay', w.clayLook, false); if (w.testTempo) p.tempo = w.testTempo;
     bool('dio', d.on, false); bool('dpal', d.palette, true); bool('berm', d.plinthAndBerm, true); bool('ring', d.colourRingSpeckle, true); bool('stones', d.stoneBand, true); bool('props', d.props, true); bool('ground', d.grounding, true); bool('shadows', d.realShadows, true); bool('crumbs', d.contactCrumbs, true); bool('fgmass', d.foregroundMass, false); bool('edges', d.colouredEdges, false);
-    if (sk.timeOfDay) p.tod = sk.timeOfDay; bool('painted', sk.paintedClouds, true); bool('puffs', sk.clayClouds, true); num('cover', sk.cloudCover); num('cstretch', sk.cloudStretch); num('sunel', sk.sunElevation); num('sgrad', sk.skyGradient); bool('flare', sk.lensFlare, true); if (sk.cloudFormation) p.cform = { gemischt: 0, haufen: 1, schaefchen: 2, baenke: 3 }[sk.cloudFormation] ?? 0; if (sk.aurora) p.aurora = { aus: 0, nachts: 1, immer: 2 }[sk.aurora] ?? 1; bool('trails', sk.contrails, true);
+    if (sk.timeOfDay) p.tod = sk.timeOfDay; bool('painted', sk.paintedClouds, true); bool('puffs', sk.clayClouds, true); num('cover', sk.cloudCover); num('cstretch', sk.cloudStretch); num('sunel', sk.sunElevation); num('sgrad', sk.skyGradient); bool('flare', sk.lensFlare, true); if (sk.cloudFormation) p.cform = { gemischt: 0, haufen: 1, schaefchen: 2, baenke: 3, kuppel: 4 }[sk.cloudFormation] ?? 4; if (sk.aurora) p.aurora = { aus: 0, nachts: 1, immer: 2 }[sk.aurora] ?? 1; bool('trails', sk.contrails, true);
     bool('sky2', sk.v2, true); bool('kul', sk.backdrops, true); p.moon = Math.max(0, ['keiner', 'knet-mond', 'ringplanet'].indexOf(sk.body));
     return p }
   const say = (t) => { $('copyMsg').textContent = t; clearTimeout(say.t); say.t = setTimeout(() => { $('copyMsg').textContent = '' }, 4000) };
@@ -2261,7 +2261,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
 
   // Start: gespeicherter Stand oder Vorlage
   let stored = null; try { stored = JSON.parse(localStorage.getItem('kfb-gelaende-probe-7') || 'null') } catch (e) { stored = null }
-  if (stored && !stored.mig39) { stored.puffs = false; stored.cstretch = 1; stored.mig39 = 1 }   // einmalig: Ebenen-Wolken aus (Georg 21.10.: verschmiert), Himmelsebenen übernehmen
+  if (stored && !stored.mig39) { stored.puffs = false; stored.cstretch = 1; stored.mig39 = 1 }
+  if (stored && !stored.mig40) { stored.cform = 4; stored.mig40 = 1 }   // einmalig: Kuppel wie vorher (Georg 21.10.: Ebenen wirken wie verschobene Formen)   // einmalig: Ebenen-Wolken aus (Georg 21.10.: verschmiert), Himmelsebenen übernehmen
   setUI(PRESETS[DEFAULT]); $('grid').checked = false;
   if (stored && typeof stored === 'object') { setUI(stored); markPreset(null) } else markPreset(DEFAULT);
   update();
