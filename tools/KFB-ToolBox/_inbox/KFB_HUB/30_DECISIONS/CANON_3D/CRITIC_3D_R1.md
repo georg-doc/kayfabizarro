@@ -24,20 +24,26 @@ Ein roter Gate-Lauf geht nie an den Kritiker, sondern zurück an den Bau.
 3. Nahaufnahme Fuß einer Ankergruppe (Erdung).
 4. Seitenansicht Rand (Silhouette).
 5. Nur bei Figuren: Gesicht nah (Augen, Lider), Proof-Stage-Preset `near_face`.
-6. **Silhouetten-Pass (V-565):** Kamera 2, alle Objekte schwarz vor Grau. Lies ab, was dort steht: Fokus, Gruppen, Figuren. Verschmilzt etwas mit dem Terrain oder mit dem Nachbarn, ist das ein Befund für K3/K7.
+6. **Drei Pflicht-Pässe (V-565/V-566)** aus Spielkamera und in echter Bildschirmgröße:
+   - a) **Silhouette:** alles schwarz vor Grau, liest sich die Geometrie?
+   - b) **Graustufen:** ohne Farbe; gibt es klare Hell-, Mittel- und Dunkelmassen, und liegt der stärkste Kontrast auf dem Fokus?
+   - c) **Thumbnail:** stark verkleinert und leicht unscharf; bleiben Fokus, Weg, Spielfläche und Tiefe lesbar?
+7. **Kontakt-Schatten:** Der Schatten berührt die Basis, folgt der Silhouette, ist kein Blob und wird vom Terrain empfangen.
+
+Alter Silhouetten-Pass (V-565): Kamera 2, alle Objekte schwarz vor Grau. Lies ab, was dort steht: Fokus, Gruppen, Figuren. Verschmilzt etwas mit dem Terrain oder mit dem Nachbarn, ist das ein Befund für K3/K7.
 
 ## Bewertung 0–10 je Kriterium
 Herkunft: QA_RULEBOOK_ENVIRONMENT_R1 §3, ergänzt um den Kanon.
 
 | Nr. | Kriterium | 10 = | 0 = |
 |---|---|---|---|
-| K1 | **Geschichte lesbar** | Ohne Text erkennbar, was hier los ist; das Konzeptblatt (Bildidee, Story-Beat) ist sichtbar eingelöst | zufällige Deko |
-| K2 | **Farbkonzept** | Palettenrollen V-402 und 60/30/10 halten; Akzente führen zum Fokus; Bodenfarbe nach Kanon | bunt ohne Rolle, grelles Grün, Mittelgrau |
-| K3 | **Komposition** | Gruppen 1 : 3 : Rest, Anker, Stützen und Akzent; Negativraum atmet; keine Reihe, kein Teppich, keine Scheibe | hingewürfelt, Props auf einem Teller |
+| K1 | **Geschichte lesbar** | Ohne Text erkennbar, was hier los ist; der Ein-Satz des Konzeptblatts ist sichtbar eingelöst; die Szene liest sich als ein handgemachtes Objekt | zufällige Deko |
+| K2 | **Farbkonzept** | Farb-Skript der Szene eingelöst; Palettenrollen V-402 und 60/30/10; Akzentfarbe nur mit Bedeutung; Terrain nie die lauteste Fläche | bunt ohne Rolle, grelles Grün, Mittelgrau |
+| K3 | **Komposition und Bildanatomie** | Der Fokus gewinnt über ≥ 2 Mittel; drei Tiefenebenen lesbar; Gruppen 1 : 3 : Rest; Negativraum atmet; keine Reihe, kein Teppich, keine Scheibe; Graustufen- und Thumbnail-Pass bestanden | hingewürfelt, Props auf einem Teller |
 | K4 | **Erdung (Etherington)** | Eingraben, Kontakt und Überlappen mit Ursache an jedem Objekt; Kontakt-Geometrie bricht jede Fuge; Speckle-Übergang statt Verlauf | aufgeklebt, schwebend, harte Fußkante, Blob-Schatten |
 | K5 | **Modell-Verständnis** | Jedes Element steht, wo es nach Ortsbiografie hingehört (Entstehen, Nutzen, Vergehen, Bewachsen) | Arten und Props ohne Standortlogik |
 | K6 | **Eine Welt** | ein Licht-Rig, ein Knet-Material, eine Palette; Kits lesen sich zusammen | Stilbruch, fremdes Licht, fremdes Material |
-| K7 | **Vielfalt ohne Rauschen** | 70/30: 70 % ruhig, 30 % Detail am Fokus; Abwechslung in Größe, Drehung und Art; Signatur 1 Hero + ≤ 2 Echos; Silhouette lesbar | monoton oder wirr |
+| K7 | **Vielfalt ohne Rauschen** | 70/20/10: Ruhe, Struktur, Bedeutung; Form-DNA einheitlich; Lebensanker sichtbar; Abwechslung in Größe, Drehung und Art; Signatur 1 Hero + ≤ 2 Echos; Silhouette lesbar | monoton oder wirr |
 | K8 | **Referenz-Nähe** | Hält den Vergleich mit Georgs Referenz bzw. dem RA-Original 1:1 aus | kein Bezug, Quelle „verbessert“ |
 | K9 | **Innerweltliche Logik** | Jedes Element hat erkennbar Herkunft und Grund; die Szene trägt aus jedem Winkel | nur für einen Winkel arrangiert |
 | K10 | **Figuren** (nur wenn vorhanden) | KFB-Augen und E2-Lider an jeder Variante, Blick lesbar, Pose und Kontakt glaubwürdig, Knete sichtbar | Augen fehlen, Schielen, Gleiten, Puppenpose |

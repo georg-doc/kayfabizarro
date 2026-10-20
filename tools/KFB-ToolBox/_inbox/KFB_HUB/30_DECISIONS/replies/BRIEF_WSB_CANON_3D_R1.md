@@ -36,6 +36,7 @@
 - **Lieferung:** Teile + Set-Liste (`role`, `layer`, Band, Signatur) zum Einpassen ins Spielterrain.
 - **Material:** Knete aus K1, Farben nur aus Rollen.
 - **Eingangsprüfung (V-565):** Kein Meshy- oder Kit-Asset geht roh in eine Szene; erst `kfb_clay_bpy.apply()` (Knet-Profil + Rollenfarbe).
+- **Asset-Pass (V-566):** Je Asset liegt `<asset>.asset_pass.json` bei: Ursprung und Lizenz, Knet-Profil, Rollenfarbe, Form-DNA, Gebrauchsspuren, Maßstab, erlaubte Platzierung. K1 schreibt den Pass mit.
 - **Kontakt-Geometrie (V-565):** an jeder Fuge `kfb_env.contact()`. Gras als Büschel in Gruppen, mit Wind-Gruppen-ID (Environment-Kit §6).
 - **Licht:** keine eingebackenen Licht- oder AO-Texturen.
 - **Proofs** auf Knet-Terrain mit derselben Palette wie das Biom, nie auf neutralem Teller.

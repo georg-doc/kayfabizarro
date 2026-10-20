@@ -48,7 +48,7 @@ def export(concept=None, scene_kind='diorama', landmark=None, units_per_H=1.0):
         objs.append({'id': ob.name, 'kind': ob['kfb_kind'], 'role': ob.get('kfb_role'), 'layer': ob.get('kfb_layer'), 'story': ob.get('kfb_story'),
                      'group': ob.get('kfb_group'), 'signature': ob.get('kfb_signature'), 'kit': ob.get('kfb_kit'), 'asset': ob.data.name if ob.data else ob.name,
                      'c': [cx, cy, (z0 + z1) / 2], 'r': max(x1 - x0, y1 - y0) / 2, 'h': z1 - z0, 'bottom_z': z0, 'ground_z': g,
-                     'rot_z': round(ob.matrix_world.to_euler().z * 57.2958, 1), 'color': ob.get('kfb_color')})
+                     'rot_z': round(ob.matrix_world.to_euler().z * 57.2958, 1), 'color': ob.get('kfb_color'), 'meaning': ob.get('kfb_meaning'), 'asset_pass': ob.get('kfb_asset_pass')})
         objs[-1]['material'], objs[-1]['baked_light'] = _material_info(ob)
     for ob in bpy.context.scene.objects:   # unmarkierte flache Scheiben/Platten (Georg 20.10.: Props auf eine Scheibe)
         if ob.type != 'MESH' or ob is ground or ob.get('kfb_kind') or ob.parent: continue

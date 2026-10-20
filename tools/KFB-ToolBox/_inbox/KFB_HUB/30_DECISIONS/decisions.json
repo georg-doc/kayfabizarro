@@ -7989,6 +7989,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-566",
+   "date": "2026-10-20",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Bildanatomie (externe Prüfung Perplexity, von Georg eingereicht; Georg: „bitte entsprechend in Kanon aufnehmen“). Leitsatz: eine Szene ist fertig, wenn sie als ein einziges handgemachtes Objekt gelesen werden kann. Neues Kanon-Gebiet 16: Ein-Satz je Szene (Ereignis, Ursache, erster Blick), der Fokus gewinnt über ≥ 2 Mittel, Wertstruktur vor Farbe, drei Tiefenebenen (Terrain nie die lauteste Fläche), Farb-Skript je Szene mit Akzentfarbe = Bedeutung, Form-DNA je Biom, Lebensanker. 70/20/10 ersetzt 70/30. Gebrauchsspuren ≥ 2 mit Ursache an Hero/Gebäude/Landmarke (RA-Quellen nur über Knete und Terrain). Materialantwort je kfb-clay-Profil. Asset-Pass je Import (Gate M5), Akzent ohne Bedeutung = Gate M4. Kritiker: drei Pflicht-Pässe Silhouette/Graustufen/Thumbnail in Spielkamera + Kontakt-Schatten. Abnahme-Ablauf: Konzept → Blockout → Value-Pass → Asset-Pass → Terrain → Licht → Life → Gate → Kritiker → Georg. Silhouette-Rescue ohne Rim-Licht (V-392 bleibt).",
+   "values": {},
+   "owner": "WS0 (Kanon, Konzeptblätter) · WS1 · WSB",
+   "check": "Konzeptblätter mit den neuen Pflichtfeldern (K0) + Kritiker-Pässe",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die bauliche Logik stand, aber es fehlte die Bild-Ebene (Fokus, Wertmassen, Tiefe, Form, Leben) – daran scheitern auch korrekt platzierte Szenen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8076,7 +8091,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:948",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:950",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

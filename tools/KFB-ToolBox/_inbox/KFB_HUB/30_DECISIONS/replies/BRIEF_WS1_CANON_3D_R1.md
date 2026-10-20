@@ -25,7 +25,8 @@ Jeder Chat bekommt diesen Brief + den Kanon als Startlektüre.
   - Ein Knet-Material, eingebackenes Licht bzw. AO wird entfernt, nur das eine Rig.
   - Ränder laufen über Steinbänder (Grammatik §4) und Sprenkel in beide Richtungen aus.
   - **Kontakt-Geometrie (V-565):** Jede Fuge zwischen Objekt und Boden wird durch kleine Knet-Elemente gebrochen (`kfb_env.contact`).
-  - **70/30:** Das Terrain bleibt großflächig ruhig.
+  - **70/20/10 + Bildanatomie (V-566, Kanon Gebiet 16):** Das Terrain ist nie die lauteste Fläche.
+  - **Abgabe** mit Graustufen- und Thumbnail-Pass aus der Spielkamera.
 - **Probe:** eine bestehende Szene (Vorschlag Ork-Band, PASS-Bestand) vorher/nachher im echten Terrain aus Spielkamera und den 4 Kritiker-Kameras.
 - **Messung** mit W1-Export + `kfb_env` (B1, E1/E2, M1–M3).
 - **Recherche-Frage dazu in R1:** Wie verschmelzen stilisierte Spiele handgebaute Sets mit prozeduralem Gelände (Tiny Glade, Townscaper, Animal Crossing, Ghibli-Layouts)?

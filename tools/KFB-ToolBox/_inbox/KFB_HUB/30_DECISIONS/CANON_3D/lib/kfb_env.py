@@ -13,7 +13,8 @@
 #                 "role": "ground|stone|bark|leaf|grass|bloom|accent|prop|figure", "layer": 1..4, "story": "wer/womit/warum",
 #                 "group": "g1", "c": [x, y, z], "r": footprint-radius, "h": höhe, "bottom_z": mesh-unterkante, "ground_z": gelände unter dem fuß,
 #                 "signature": "hero|echo|null", "asset": "kit/datei", "kit": "kaykit|kenney|quaternius|kfb|meshy", "rot_z": deg,
-#                 "material": "kfb-clay.v1.1/<profil>", "baked_light": false, "color": "#rrggbb" (Rollenton) }] }
+#                 "material": "kfb-clay.v1.1/<profil>", "baked_light": false, "color": "#rrggbb" (Rollenton),
+#                 "meaning": "ziel|gefahr|interaktion|figur|erzählkern" (Pflicht bei role accent), "asset_pass": "<pfad>.asset_pass.json" (Pflicht bei Kit/Meshy) }] }
 import json, math, random
 
 # ------------------------------------------------------------------ Zahlen der Quellen
@@ -28,7 +29,7 @@ RULES = dict(size_tol=0.10, spread=0.30, line_tol=0.05, neighbour_r=4.5, overlap
 NEST = dict(sizes=(1.0, 0.62, 0.38), med=(-1.2, 0.1, 1.3), small=(-0.6, 0.7, -2.0, 2.05, 3.1), k=0.86, spread=1.75)
 LAYERS = {1: 'Entstehen', 2: 'Nutzen', 3: 'Vergehen', 4: 'Bewachsen'}
 ROLES = {'ground', 'stone', 'bark', 'leaf', 'grass', 'bloom', 'accent', 'prop', 'figure', 'water'}
-CONCEPT_FIELDS = ('story', 'image_idea', 'focal', 'space', 'palette_roles', 'material_codes', 'biography', 'story_beat')
+CONCEPT_FIELDS = ('one_sentence', 'story', 'image_idea', 'focal', 'space', 'color_script', 'form_dna', 'life_anchor', 'palette_roles', 'material_codes', 'biography', 'story_beat')
 ENV_KINDS = {'rock', 'rockgroup', 'tree', 'bush', 'grass', 'prop', 'building', 'stone_L', 'stone_M', 'stone_S', 'fluff', 'water_plant'}
 
 
@@ -169,6 +170,8 @@ def gate(scene, R=RULES):
         oid = o.get('id', '?')
         if (o.get('kind') in ENV_KINDS or o.get('material') is not None) and not str(o.get('material') or '').startswith('kfb-clay'): F('M1', f"{oid}: Material {o.get('material')!r} statt kfb-clay (fremde Textur liegt auf dem Terrain)")
         if o.get('baked_light'): F('M2', f'{oid}: eingebackenes Licht/AO – nur das eine Rig (V-385)')
+        if o.get('role') == 'accent' and not o.get('meaning') and o.get('id') != scene.get('landmark'): F('M4', f'{oid}: Akzentfarbe ohne Bedeutung (Ziel, Gefahr, Interaktion, Figur, Erzählkern), V-566')
+        if o.get('kit') in ('kaykit', 'kenney', 'quaternius', 'meshy', 'tinytreats') and o.get('kind') in ENV_KINDS and not o.get('asset_pass'): F('M5', f'{oid}: Asset-Pass fehlt (Ursprung, Knet-Profil, Rolle, Form-DNA, Spuren, Maßstab), V-566')
         if pal and o.get('color') and str(o['color']).lower() not in pal: F('M3', f"{oid}: Farbe {o['color']} nicht aus der Palette der Szene")
     # C1 Kontakt-Geometrie (V-565): jede Fuge Objekt–Boden wird von kleineren Elementen gebrochen (Steinchen, Moos, Gras, Erdkeil), Etherington „Überlappen“
     for o in env:
