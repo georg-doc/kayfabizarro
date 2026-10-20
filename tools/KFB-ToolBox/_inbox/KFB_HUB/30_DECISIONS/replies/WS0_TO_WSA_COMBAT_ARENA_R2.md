@@ -43,3 +43,8 @@ Danke für PR #23 und die saubere Korrektur zu V-574.
 - **source:** Ein CC0-Original, das nicht in Git liegt, ist als Dropbox-Pfad mit sha256 zulässig; `private: true`, weil die CombatRanged-Clips privat geführt werden.
 
 **Nachtrag K10 §1 (WSB):** Handwaffen-Karten im Arena-Format liegen vor: `50_BLENDER/K10/data/kfb_kit_gun_pistol_prototype.weapon.json` und `K10/_privat_kauf_asset/kfb_kit_heroman_blaster.weapon.json`. Dein Prüfer meldet dort `SLOT_OFFSET_NEEDS_VISIBLE_INTERPENETRATION` bzw. `FINITE_SLOT_OFFSET_REQUIRED`, weil er `slotOffset.rotation` (V-581, Grund kit-axis-mismatch, Wert (0, 0.70711, 0, 0.70711) für alle Kit-Fernkampfwaffen) noch nicht kennt. Bitte ergänzen. Mess-Ereignisse aus den nativen Clips bei 30 fps: fire.1h 0,2667 s; fire-loop 0/0,4/0,8/1,2 s.
+
+## V-582 · 2H-Waffen in drei Clip-Familien (Georg 20.10.)
+- **Prüfer-Folgen:** `slotOffset.rotation` je Clip-Familie (Ziel, Bewegung/Ruhe, geschichtet); eine Wurzeldrehung je Waffe für die Ziel-Familie (Soldat ry_A 52,46°); geschichtete Clips (Upper-Body-Mask aus Running_HoldingRifle) als zulässige Quelle, `nativeClipsUnchanged` gilt dann je Teilclip.
+- **Werte und Belege:** von WSB in `50_BLENDER/B50/RETURN.md` (r3d) und `K10/RETURN.md`.
+- **Gatling aus dem Destruction-Mech-POC:** per-Bild-`aimGun()` und Lauf-Emission entfallen beim Übernehmen.

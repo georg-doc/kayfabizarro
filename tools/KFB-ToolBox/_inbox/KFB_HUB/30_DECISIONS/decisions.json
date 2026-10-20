@@ -8229,6 +8229,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-582",
+   "date": "2026-10-20",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "2H-Waffen in drei Clip-Familien (Georg 20.10. direkt bei WSB, Endentscheid „kombiniert“; erweitert V-581): (1) Zielen/Schießen/Nachladen (Ranged_2H_*): Hand am Gewehr – eine feste Stützhand-Halterung, linke Hand am Vorderschaft, die GANZE Figur samt Füßen wird vom Host um die gemessene Laufabweichung gedreht (Soldat +37,54° → ry_A 52,46°), Rückstoß entlang des Laufs; keine Arm-IK, kein Nachdrehen je Bild. (2) Laufen, seitlich Laufen, kleiner Treffer, Ruhe: je Clip eine feste natürliche Haltung (Gewehr etwa waagrecht, neigt sich nur mit dem Arm, nie im Boden). (3) Ausweichen und großer Treffer: Beine aus dem KayKit-Clip, Oberkörper + Gewehr aus Running_HoldingRifle (Upper-Body-Mask, Rezept KAYKIT_LOCO_SET_01). Positions-Versätze nur bei sichtbarer Durchdringung mit Beleg (V-574); Sterben mit r3b-Fallbahn. Gilt für alle 2H-Waffen inkl. Gatling (CombatMech_Minigun, Boden + Flugkampf aus dem Destruction-Mech-POC; dessen per-Bild-aimGun und Lauf-Emission werden beim Übernehmen geradegerückt). Action-Figure-Character mit eigener Gun danach prüfen. WSA-Prüfer: slotOffset.rotation je Clip-Familie, Wurzeldrehung je Waffe für die Ziel-Familie, geschichtete Clips als Quelle.",
+   "values": {},
+   "owner": "WSB (Messung, Halterungen) · WSA (Prüfer, Laufzeit)",
+   "check": "Soldat r3d mit Durchstich-/Bodenprüfung",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Mit einer einzigen Halterung lassen sich Zielen und Stützhand nicht vereinen; Georg kombiniert je Clip-Familie.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8316,7 +8331,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:998",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1000",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
