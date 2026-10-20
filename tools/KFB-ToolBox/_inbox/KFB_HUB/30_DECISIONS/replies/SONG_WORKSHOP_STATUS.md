@@ -346,3 +346,23 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
 3. welche Mehrfachbelegungen aufgelöst werden.
 
 Danach Writers' Room auf BESTÄTIGT setzen.
+
+## §14 · 20.10.2026 · Signatur-Decks über alle 134 Decks
+**Georg:** Basis sind die 130+ Decks auf GitHub. Jede Figur bekommt zuerst ein Signatur-Deck; Varianten folgen später für schwächere Decks.
+
+**Ergebnis:** `SONGS_WORKSHOP_R1/signature/SIGNATURE_DECKS_R1.{json,md}`.
+- 62 Figuren bzw. feste Duos, jedes Deck genau einmal vergeben (per Skript geprüft).
+- Herkunft der Zuordnungen:
+  - 13 aus Georgs Aussagen;
+  - 24 aus der bestätigten Bewohnerliste;
+  - 25 neue Vorschläge.
+- Nicht vergeben:
+  - 16 Decks für Varianten später;
+  - 45 MedKayfab-Decks (Frage an Georg);
+  - 5 Doppelversionen;
+  - 1 sensibles Deck;
+  - 4 Dateien ohne Karten.
+
+**Writers' Room:** noch nicht umgestellt. Nach Georgs OK werden die Songs von „60 Decks“ auf „Signatur-Decks“ umgestellt; die alten Einträge bleiben als Historie erhalten.
+
+**Nächster Schritt:** Georg prüft die 25 Vorschläge und klärt die MedKayfab-Frage.

@@ -1,0 +1,1165 @@
+{
+ "schema": "kfb.song.signature-decks/1",
+ "date": "2026-10-20",
+ "basis": "Georg 20.10.: von allen 130+ GitHub-Decks ausgehen; jede Figur bekommt erst ein Signatur-Deck, Varianten später für schwächere Decks",
+ "registry": "registry/assets/v1/decks (134 Dateien, davon 4 ohne Karten)",
+ "rules": [
+  "eine Figur (bzw. ein festes Duo) = genau ein Signatur-Deck; kein Deck doppelt",
+  "FrizzleBob = Meta/Spieler-Avatar, kein Signatur-Deck",
+  "Status BESTÄTIGT = übernommen aus der von Georg bestätigten Bewohnerliste (60er-Set); GEORG/GEORG-IDEE/GEORG-KANON = aus Georgs Chat-Aussagen; VORSCHLAG = WS-Song, Georg entscheidet"
+ ],
+ "signature": [
+  {
+   "figure": "Norman",
+   "models": [
+    "Norman (DP)"
+   ],
+   "source": "DP",
+   "deck": "bullshit_jobs_uncut",
+   "deckTitle": "Bullshit Jobs Uncut: A Field Report from Before the Timesheet",
+   "cards": 56,
+   "in60": true,
+   "basis": "GEORG",
+   "why": "Georg 20.10.: Norman für die Arbeits-Decks; What Work Was For als Zweitdeck",
+   "previousIn60": []
+  },
+  {
+   "figure": "Combat Mech",
+   "models": [
+    "CombatMech"
+   ],
+   "source": "KayKit",
+   "deck": "the_biological_metropolis",
+   "deckTitle": "The Biological Metropolis",
+   "cards": 32,
+   "in60": true,
+   "basis": "GEORG",
+   "why": "Georg: leicht dystopischer Cyborg-Cop; Pilot r6a",
+   "previousIn60": [
+    "the_biological_metropolis"
+   ]
+  },
+  {
+   "figure": "4GTN",
+   "models": [
+    "4GTN"
+   ],
+   "source": "KayKit",
+   "deck": "forget_utopia",
+   "deckTitle": "Forget Utopia",
+   "cards": 56,
+   "in60": true,
+   "basis": "GEORG-KANON",
+   "why": "CEO von Utopia (Georg 20.10.); Tausch #1 wartet auf Georgs Ja",
+   "previousIn60": [
+    "wrinkle_rumble"
+   ]
+  },
+  {
+   "figure": "4GTN Forgotten",
+   "models": [
+    "4GTN_Forgotten"
+   ],
+   "source": "KayKit",
+   "deck": "embrace_protopia",
+   "deckTitle": "Protopia Sketchbook — Deck C: EMBRACE",
+   "cards": 56,
+   "in60": true,
+   "basis": "GEORG-KANON",
+   "why": "Vorläufer/guter Zwilling im Protopia-Maker-Space; Tausch #2 wartet auf Georgs Ja",
+   "previousIn60": [
+    "wrinkle_rumble"
+   ]
+  },
+  {
+   "figure": "Lorekeeper",
+   "models": [
+    "Lorekeeper"
+   ],
+   "source": "KayKit",
+   "deck": "frizzlebob_s_mission_control",
+   "deckTitle": "Uncle FrizzleBob’s Mission Control Deck",
+   "cards": 56,
+   "in60": true,
+   "basis": "GEORG-IDEE",
+   "why": "Guide, Mentor, Questgeber (Georg 20.10.); FB als Spieler bekommt die Quests",
+   "previousIn60": [
+    "frizzlebob_s_mission_control",
+    "kayfabizarro_philosophy"
+   ]
+  },
+  {
+   "figure": "Mumien (Duo)",
+   "models": [
+    "Mummy_A",
+    "Mummy_B"
+   ],
+   "source": "KayKit",
+   "deck": "pharaoh_piledriver",
+   "deckTitle": "Pharaoh Piledriver",
+   "cards": 52,
+   "in60": true,
+   "basis": "GEORG",
+   "why": "Sheet performanceDecks [GEORG]",
+   "previousIn60": [
+    "pharaoh_piledriver"
+   ]
+  },
+  {
+   "figure": "Orc Brute",
+   "models": [
+    "OrcBrute"
+   ],
+   "source": "KayKit",
+   "deck": "the_uruk_rumble",
+   "deckTitle": "The Uruk Rumble",
+   "cards": 54,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Gilgamesh & Enkidu; Kraft, Loyalität, Lärm",
+   "previousIn60": [
+    "the_uruk_rumble"
+   ]
+  },
+  {
+   "figure": "Caveman",
+   "models": [
+    "Caveman"
+   ],
+   "source": "KayKit",
+   "deck": "philosopher_dungeon_raid",
+   "deckTitle": "Plato's Dungeon Raids: The Odyssey Edition",
+   "cards": 20,
+   "in60": false,
+   "basis": "GEORG-IDEE",
+   "why": "Platos Höhle/Dungeon Raid mit Philosophen als RPG-Klassen; Boss The Last Man + The Comfort Trap = Hunkys Fluff-Ernte, gegen die sein kritisches Denken steht",
+   "previousIn60": [
+    "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc"
+   ]
+  },
+  {
+   "figure": "Toy Soldier",
+   "models": [
+    "ToySoldier"
+   ],
+   "source": "KayKit",
+   "deck": "geopolitical_thrillers_conspiracy_theories",
+   "deckTitle": "Power Pyramid Plumbing & Global Psyop Wrestling – Expansion Deck 01",
+   "cards": 56,
+   "in60": true,
+   "basis": "GEORG-IDEE",
+   "why": "Georg: geopolitische Decks; der Aufzieh-Bauer auf dem Kartentisch von Round Table, Gladio, NATO-Peacekeepers",
+   "previousIn60": [
+    "symphonic_savagery"
+   ]
+  },
+  {
+   "figure": "Goth Girl",
+   "models": [
+    "GothGirl"
+   ],
+   "source": "KayKit",
+   "deck": "project_gateway_kayfabe",
+   "deckTitle": "Project Gateway Kayfabe",
+   "cards": 60,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "Okkultes + Psyops + Conspiracy in einem Deck: Stargate Viewer, Spoon Bender, Operation Midnight Climax, Gateway Process",
+   "previousIn60": [
+    "dream_wrestling_with_kayfabe_freud",
+    "frizzlebob_s_ego_mania_narcissist"
+   ]
+  },
+  {
+   "figure": "Lord Hunky",
+   "models": [
+    "Lord Hunky (DP, Space-Ranger-Körper)"
+   ],
+   "source": "DP",
+   "deck": "cosmic_grift_dark_journalism",
+   "deckTitle": "Cosmic Grift – Dark Journalism",
+   "cards": 60,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "Alien-Overlord liest die UFO File über sich selbst; Atlantean Automatons, Shadow Rules",
+   "previousIn60": []
+  },
+  {
+   "figure": "Lady Dory",
+   "models": [
+    "Lady Dory (DP, Space-Ranger-Körper)"
+   ],
+   "source": "DP",
+   "deck": "the_kayfabizarro_manifesto_cover_up",
+   "deckTitle": "How To Stage A Cover-Up",
+   "cards": 60,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "ihre Sheet-Achse containment/disclosure; Official Seal of Humbug, Kangaroo Commission",
+   "previousIn60": []
+  },
+  {
+   "figure": "Brain-Cyborg",
+   "models": [
+    "Brain-Cyborg (DP)"
+   ],
+   "source": "DP",
+   "deck": "kayfabizarro_philosophy",
+   "deckTitle": "The Kraziest Philosophical Kayfabe-Theories Expansion",
+   "cards": 68,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "The Floating Space-Brain, Fake Memory Implant, Room of the Mind: das Gehirn im Tank als Bewohner",
+   "previousIn60": []
+  },
+  {
+   "figure": "Barbarian",
+   "models": [
+    "Barbarian"
+   ],
+   "source": "KayKit",
+   "deck": "woad_and_warriors",
+   "deckTitle": "Wine, Woad & Warrior Chiefs",
+   "cards": 52,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Gallier, Druiden, Weinfässer",
+   "previousIn60": [
+    "woad_and_warriors"
+   ]
+  },
+  {
+   "figure": "Knight",
+   "models": [
+    "Knight"
+   ],
+   "source": "KayKit",
+   "deck": "platos_dungeon_raid_hero_set_01",
+   "deckTitle": "Plato's Dungeon Raid: Bring Your Own Legend — Hero Set 01",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Bring Your Own Legend: Heldenstufen",
+   "previousIn60": [
+    "platos_dungeon_raid_hero_set_01"
+   ]
+  },
+  {
+   "figure": "Ranger",
+   "models": [
+    "Ranger"
+   ],
+   "source": "KayKit",
+   "deck": "observation_underground",
+   "deckTitle": "Observation Underground — ADD",
+   "cards": 48,
+   "in60": false,
+   "basis": "VORSCHLAG",
+   "why": "der Späher, der selbst beobachtet wird: Observationsökonomie, Taschenspion, Phantom-Vibration; Plato v05 wird Variante",
+   "previousIn60": [
+    "platos_dungeon_raid_v05"
+   ]
+  },
+  {
+   "figure": "Mage",
+   "models": [
+    "Mage"
+   ],
+   "source": "KayKit",
+   "deck": "academic_anarchy_intellectual",
+   "deckTitle": "Unseal the Academic Anarchy — Academic Alphas vs Brain Benders",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Absent-Minded Professor bis Magnificent Bastard",
+   "previousIn60": [
+    "academic_anarchy_intellectual"
+   ]
+  },
+  {
+   "figure": "Rogue",
+   "models": [
+    "Rogue"
+   ],
+   "source": "KayKit",
+   "deck": "kayfabizarro_monopolies_manipulation_murder_vol",
+   "deckTitle": "Monopolies, Manipulation & Murder Vol. II",
+   "cards": 56,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "der kleine Dieb über die großen: Riksbank, Fiat Flood, Taxation Illusion",
+   "previousIn60": []
+  },
+  {
+   "figure": "Rogue (Hooded)",
+   "models": [
+    "Rogue_Hooded"
+   ],
+   "source": "KayKit",
+   "deck": "trust_and_betrayal",
+   "deckTitle": "Trust & Betrayal — The 'Trust Me, Bro' Edition",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Oath-Breaker, In the Back",
+   "previousIn60": [
+    "trust_and_betrayal"
+   ]
+  },
+  {
+   "figure": "Orc Raider",
+   "models": [
+    "OrcRaider"
+   ],
+   "source": "KayKit",
+   "deck": "shadow_politics",
+   "deckTitle": "Ruled by Organized Kayfabe-Krime",
+   "cards": 48,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Ruled by Organized Kayfabe-Krime",
+   "previousIn60": [
+    "shadow_politics"
+   ]
+  },
+  {
+   "figure": "Paladin",
+   "models": [
+    "Paladin"
+   ],
+   "source": "KayKit",
+   "deck": "kayfabizarro_1_morale_ethics",
+   "deckTitle": "Beyond the Banalities of Good vs Evil — Uncle FrizzleBob's KAYFABIZARRO Komik Kards for Monster Morality Wrestling & Flexible Kayfabizarro Ethiks",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Knight Templar, Goody Two-Shoes, Purity Personified; Black Knight geht zu den Nibelungen",
+   "previousIn60": [
+    "kayfabizarro_1_morale_ethics"
+   ]
+  },
+  {
+   "figure": "Black Knight",
+   "models": [
+    "BlackKnight"
+   ],
+   "source": "KayKit",
+   "deck": "nibelungen_booster_pack_design",
+   "deckTitle": "Nibelungen Booster Pack",
+   "cards": 60,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Ring, Fluch, Hagen",
+   "previousIn60": [
+    "kayfabizarro_1_morale_ethics",
+    "nibelungen_booster_pack_design"
+   ]
+  },
+  {
+   "figure": "Protagonist A",
+   "models": [
+    "Protagonist_A"
+   ],
+   "source": "KayKit",
+   "deck": "kayfabizarro_improv_comedy",
+   "deckTitle": "The Great Kayfabe Improv Komedy SKETCHBOOK",
+   "cards": 60,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "Improv: Yes-and, Sudden Tilt",
+   "previousIn60": [
+    "kayfabizarro_improv_comedy"
+   ]
+  },
+  {
+   "figure": "Protagonist B",
+   "models": [
+    "Protagonist_B"
+   ],
+   "source": "KayKit",
+   "deck": "kreative_kayfab_creative_hero_journey",
+   "deckTitle": "Kreative Kayfab-Kicks & Boomerang Brain Boosters",
+   "cards": 52,
+   "in60": false,
+   "basis": "VORSCHLAG",
+   "why": "Editor Reflex, Imposter Syndrome, Unfinished Sentence",
+   "previousIn60": [
+    "kayfabizarro_improv_comedy"
+   ]
+  },
+  {
+   "figure": "Marksman",
+   "models": [
+    "Marksman"
+   ],
+   "source": "KayKit",
+   "deck": "secret_spy_suplexes",
+   "deckTitle": "Secret Spy Suplexes",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Sleeper Agent, Burned Asset",
+   "previousIn60": [
+    "secret_spy_suplexes"
+   ]
+  },
+  {
+   "figure": "Clown",
+   "models": [
+    "Clown"
+   ],
+   "source": "KayKit",
+   "deck": "the_carnival_of_unsolved_problems_therapy",
+   "deckTitle": "The Carnival of Unsolved Problems",
+   "cards": 48,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Jahrmarkt der ungelösten Probleme",
+   "previousIn60": [
+    "the_carnival_of_unsolved_problems_therapy"
+   ]
+  },
+  {
+   "figure": "Hiker",
+   "models": [
+    "Hiker"
+   ],
+   "source": "KayKit",
+   "deck": "kayfabizarro_monomyth_mayhem",
+   "deckTitle": "Monomyth Mayhem",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Heldenreise als Wanderung",
+   "previousIn60": [
+    "kayfabizarro_monomyth_mayhem"
+   ]
+  },
+  {
+   "figure": "Magical Girl",
+   "models": [
+    "MagicalGirl"
+   ],
+   "source": "KayKit",
+   "deck": "the_kayfabe_crucible_coming_of_age",
+   "deckTitle": "Kayfabe Koming-of-Age Wrestling All-Stars",
+   "cards": 48,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "Coming-of-Age: Blanket of Innocence, Mask of the Gimmick; 1001 Nights/Grimms nicht mehr bei ihr",
+   "previousIn60": [
+    "1001_kayfabe_nights",
+    "grimms_kayfabe_legends_expansion_set_02",
+    "the_kayfabe_crucible_coming_of_age"
+   ]
+  },
+  {
+   "figure": "Robot One",
+   "models": [
+    "Robot_One"
+   ],
+   "source": "KayKit",
+   "deck": "medkayfab_cardiology",
+   "deckTitle": "MedKayfab: Cardiology Expansion",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Herzrhythmus als Maschinentakt",
+   "previousIn60": [
+    "medkayfab_cardiology"
+   ]
+  },
+  {
+   "figure": "Robot Two",
+   "models": [
+    "Robot_Two"
+   ],
+   "source": "KayKit",
+   "deck": "ignore_dystopia",
+   "deckTitle": "IGNORE DYSTOPIA — Anatomy of a Trap (Deck B)",
+   "cards": 56,
+   "in60": false,
+   "basis": "VORSCHLAG",
+   "why": "Deck B der Trilogie (Doomsday Clock, Perpetual Almost); 4GTN/Forgotten haben A und C",
+   "previousIn60": [
+    "forget_utopia"
+   ]
+  },
+  {
+   "figure": "Tiefling",
+   "models": [
+    "Tiefling"
+   ],
+   "source": "KayKit",
+   "deck": "plot_pusher_posse",
+   "deckTitle": "Dramatic Drops & Krazy Konflikts",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Conflict Ball, Idiot Ball; Mind Traps geht an den Ninja",
+   "previousIn60": [
+    "mind_traps",
+    "plot_pusher_posse"
+   ]
+  },
+  {
+   "figure": "Farmer A",
+   "models": [
+    "Farmer_A"
+   ],
+   "source": "KayKit",
+   "deck": "reality_redrawn",
+   "deckTitle": "Reality Redrawn",
+   "cards": 60,
+   "in60": false,
+   "basis": "VORSCHLAG",
+   "why": "Peasant Bank Run, Paper Receipt, Defaulting King, Kantian Noumena: der Bauer, dessen Kornschein Geld wurde (Kant-Deck)",
+   "previousIn60": [
+    "embrace_protopia"
+   ]
+  },
+  {
+   "figure": "Farmer B",
+   "models": [
+    "Farmer_B"
+   ],
+   "source": "KayKit",
+   "deck": "the_bards_barnyard_beatdown",
+   "deckTitle": "The Bard's Barnyard Beatdown",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Shakespeares Schäfer und Narren",
+   "previousIn60": [
+    "the_bards_barnyard_beatdown"
+   ]
+  },
+  {
+   "figure": "Driver",
+   "models": [
+    "Driver"
+   ],
+   "source": "KayKit",
+   "deck": "programming_the_whole_child",
+   "deckTitle": "Programming the Whole Child",
+   "cards": 60,
+   "in60": false,
+   "basis": "VORSCHLAG",
+   "why": "der Schulbusfahrer, der die Kinder zur Programmierung fährt: Social Engineer, Data Merchant, S.E.L. (The Worm)",
+   "previousIn60": []
+  },
+  {
+   "figure": "Superhero",
+   "models": [
+    "Superhero"
+   ],
+   "source": "KayKit",
+   "deck": "cinematic_kayfabizarro_2",
+   "deckTitle": "Cinematic Legacy & Motion Picture Kayfabe",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Kino-Kanon, Director's Cut",
+   "previousIn60": [
+    "cinematic_kayfabizarro_2",
+    "medkayfab_clinical_cases"
+   ]
+  },
+  {
+   "figure": "Monster",
+   "models": [
+    "Monster"
+   ],
+   "source": "KayKit",
+   "deck": "the_move_1",
+   "deckTitle": "THE MOVE: A Field Guide to Managed Reactions",
+   "cards": 56,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "das Monster, das jede Managed Reaction braucht: Manufactured Emergency, Invisible Threat, Scapegoat Engine",
+   "previousIn60": []
+  },
+  {
+   "figure": "Monster Costume",
+   "models": [
+    "MonsterCostume"
+   ],
+   "source": "KayKit",
+   "deck": "brain_flipper_image_spots",
+   "deckTitle": "The Brain-Flipper Pack",
+   "cards": 60,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Image-Spots: das Kostüm ist das Image",
+   "previousIn60": [
+    "brain_flipper_image_spots",
+    "kayfabizarro_monopolies_manipulation_murder_vol",
+    "the_kayfabizarro_manifesto_cover_up"
+   ]
+  },
+  {
+   "figure": "Cleric",
+   "models": [
+    "Cleric"
+   ],
+   "source": "KayKit",
+   "deck": "medkayfab_hospital_hierarchy",
+   "deckTitle": "The Hospital Hierarchy",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Klinik-Hierarchie als Priesterschaft",
+   "previousIn60": [
+    "medkayfab_hospital_hierarchy"
+   ]
+  },
+  {
+   "figure": "Werewolf (Mann/Wolf)",
+   "models": [
+    "Werewolf_Man",
+    "Werewolf_Wolf"
+   ],
+   "source": "KayKit",
+   "deck": "dream_wrestling_with_kayfabe_freud",
+   "deckTitle": "Dream-Wrestling with Kayfabe-Freud: Where the Id Always Kicks Out at Two!",
+   "cards": 56,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "Where the Id Always Kicks Out: Mann und Wolf sind Ich und Es",
+   "previousIn60": [
+    "help_i_am_a_human"
+   ]
+  },
+  {
+   "figure": "Vampire",
+   "models": [
+    "Vampire"
+   ],
+   "source": "KayKit",
+   "deck": "frizzlebob_s_ego_mania_narcissist",
+   "deckTitle": "It’s All About Me! (And Also FrizzleBob)",
+   "cards": 56,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "der Narzisst ohne Spiegelbild: Pond-Gazing Peacock, Selfie-Stick Swan; dazu Caveman-Backstory",
+   "previousIn60": [
+    "uncle_frizzlebob_s_tragic_flaws_id"
+   ]
+  },
+  {
+   "figure": "Monstrosity",
+   "models": [
+    "Monstrosity"
+   ],
+   "source": "KayKit",
+   "deck": "kayfabizarro_siege_tower_wall_siege_kampaigns",
+   "deckTitle": "Kayfabizarro Siege Kompendium",
+   "cards": 60,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Belagerungsmaschine als Monster",
+   "previousIn60": [
+    "kayfabizarro_siege_tower_wall_siege_kampaigns"
+   ]
+  },
+  {
+   "figure": "Animatronic (creepy)",
+   "models": [
+    "Animatronic_Creepy"
+   ],
+   "source": "KayKit",
+   "deck": "sonic_slaughterhouse",
+   "deckTitle": "Sonic Slaughterhouse — Music Industry",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "die Animatronic-Band der Musikindustrie; GothGirl-Sheet-Kandidat (DESIGN) überholt",
+   "previousIn60": [
+    "sonic_slaughterhouse"
+   ]
+  },
+  {
+   "figure": "Animatronic (normal)",
+   "models": [
+    "Animatronic_Normal"
+   ],
+   "source": "KayKit",
+   "deck": "unspoken_systems_kayfabizarro_meta_deck_01",
+   "deckTitle": "Unspoken Systems — Kayfabizarro Meta Deck 01",
+   "cards": 56,
+   "in60": false,
+   "basis": "VORSCHLAG",
+   "why": "Retcon, Memory Drift, Frame Control: die Figur, die ihr Skript für Erinnerung hält",
+   "previousIn60": [
+    "the_move_1"
+   ]
+  },
+  {
+   "figure": "Witch",
+   "models": [
+    "Witch"
+   ],
+   "source": "KayKit",
+   "deck": "grimms_kayfabe_legends_expansion_set_02",
+   "deckTitle": "Grimms' Kayfabe Legends — Expansion Set 02: The Fairy Tale Screwjob",
+   "cards": 52,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "Poison Comb, Golden Goose: die Hexe aus dem Märchen-Screwjob",
+   "previousIn60": [
+    "jung_and_shinn_a_guide_to_cosmic_cringe",
+    "romantic_kayfabe"
+   ]
+  },
+  {
+   "figure": "Plant Warrior",
+   "models": [
+    "PlantWarrior"
+   ],
+   "source": "KayKit",
+   "deck": "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc",
+   "deckTitle": "The Biology of Rebellion",
+   "cards": 36,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "Margulis/Endosymbiose, kooperative Evolution: Pflanze als Rebell",
+   "previousIn60": []
+  },
+  {
+   "figure": "Action Figure",
+   "models": [
+    "ActionFigure"
+   ],
+   "source": "KayKit",
+   "deck": "big_bad_brain_wrestling",
+   "deckTitle": "Big Bad Brain Wrestling",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Wrestling-Archetypen als Actionfigur",
+   "previousIn60": [
+    "big_bad_brain_wrestling"
+   ]
+  },
+  {
+   "figure": "Helper A",
+   "models": [
+    "Helper_A"
+   ],
+   "source": "KayKit",
+   "deck": "epistemic_sabotage",
+   "deckTitle": "Epistemic Sabotage: Let AI Read Your Comic",
+   "cards": 60,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Let AI Read Your Comic",
+   "previousIn60": [
+    "epistemic_sabotage"
+   ]
+  },
+  {
+   "figure": "Helper B",
+   "models": [
+    "Helper_B"
+   ],
+   "source": "KayKit",
+   "deck": "shadow_monopoly_blackrock_vanguard_co",
+   "deckTitle": "Shadow Monopoly: The Great Octopus Wrestling Match — BlackRock, Vanguard & Co",
+   "cards": 60,
+   "in60": false,
+   "basis": "VORSCHLAG",
+   "why": "Weihnachtshelfer in der Markenfabrik: Crimson Cola Bear, Processed Trough, Power Plumbing",
+   "previousIn60": [
+    "epistemic_sabotage"
+   ]
+  },
+  {
+   "figure": "Space Ranger",
+   "models": [
+    "SpaceRanger"
+   ],
+   "source": "KayKit",
+   "deck": "kosmik_kayfabizarro_sci_fi_space_opera",
+   "deckTitle": "Kosmik Kayfabizarro Kollektive (Vol II)",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Space Opera; Achtung: Lord Hunky/Lady Dory nutzen den Space-Ranger-Körper",
+   "previousIn60": [
+    "kosmik_kayfabizarro_sci_fi_space_opera"
+   ]
+  },
+  {
+   "figure": "Frost Golem",
+   "models": [
+    "FrostGolem"
+   ],
+   "source": "KayKit",
+   "deck": "kayfabizzaro_politics",
+   "deckTitle": "Politics — The Starter Set of Doom: 5,000 Years of Bad Ideas & One Very Tired Ballot Box",
+   "cards": 52,
+   "in60": false,
+   "basis": "VORSCHLAG",
+   "why": "der Staat als kältestes aller Ungeheuer: City-State, Caesar, Machiavelli, Bismarck, The Handler",
+   "previousIn60": [
+    "geopolitical_thrillers_conspiracy_theories"
+   ]
+  },
+  {
+   "figure": "Ninja",
+   "models": [
+    "Ninja"
+   ],
+   "source": "KayKit",
+   "deck": "mind_traps",
+   "deckTitle": "17 Kayfabe-Questions from Socrates to the FBI",
+   "cards": 56,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "17 Fangfragen von Sokrates bis zum FBI: Infiltration per Frage",
+   "previousIn60": [
+    "project_gateway_kayfabe"
+   ]
+  },
+  {
+   "figure": "Hoarder",
+   "models": [
+    "Hoarder"
+   ],
+   "source": "KayKit",
+   "deck": "museum_of_modern_mess",
+   "deckTitle": "Museum of Modern Mess",
+   "cards": 60,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Museum of Modern Mess",
+   "previousIn60": [
+    "museum_of_modern_mess",
+    "the_kayfabe_money_trail_9_11"
+   ]
+  },
+  {
+   "figure": "Survivalist",
+   "models": [
+    "Survivalist"
+   ],
+   "source": "KayKit",
+   "deck": "medkayfab_emergency_medicine",
+   "deckTitle": "The Golden Hour Gauntlet — Resuscitation, Rhythms & The Triage Tempest",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Golden Hour Gauntlet",
+   "previousIn60": [
+    "medkayfab_emergency_medicine"
+   ]
+  },
+  {
+   "figure": "Clanker",
+   "models": [
+    "Clanker"
+   ],
+   "source": "KayKit",
+   "deck": "ai_kayfabe",
+   "deckTitle": "Roko's Basilisk & The AI Kayfabe Takeover",
+   "cards": 56,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Roko's Basilisk & AI Takeover",
+   "previousIn60": [
+    "ai_kayfabe"
+   ]
+  },
+  {
+   "figure": "Avian Swordsman",
+   "models": [
+    "AvianSwordsman"
+   ],
+   "source": "KayKit",
+   "deck": "kayfabizarro_pulitzer_punk",
+   "deckTitle": "Pulitzer Punk — Kayfabizarro #05",
+   "cards": 60,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Pulitzer Punk",
+   "previousIn60": [
+    "kayfabizarro_pulitzer_punk"
+   ]
+  },
+  {
+   "figure": "Demon Lord",
+   "models": [
+    "DemonLord"
+   ],
+   "source": "KayKit",
+   "deck": "ideology_wrestling",
+   "deckTitle": "George's Ideology-Wrestling Kayfabizarro Komik Kards — A Field Guide to the War for Your Mind (Version 4.1 Unstable)",
+   "cards": 68,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Ideology Wrestling von Höhlenmythos bis Hierophant",
+   "previousIn60": [
+    "ideology_wrestling"
+   ]
+  },
+  {
+   "figure": "Santa",
+   "models": [
+    "Santa"
+   ],
+   "source": "KayKit",
+   "deck": "federal_kayfabe",
+   "deckTitle": "Federal Kayfabe",
+   "cards": 60,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Jekyll Island, Christmas Eve Smuggling",
+   "previousIn60": [
+    "federal_kayfabe"
+   ]
+  },
+  {
+   "figure": "UltraTurboHeroMan",
+   "models": [
+    "UltraTurboHeroMan"
+   ],
+   "source": "KayKit",
+   "deck": "anti_rules_toolkit",
+   "deckTitle": "The Anti-Rules Manifesto",
+   "cards": 57,
+   "in60": true,
+   "basis": "BESTÄTIGT",
+   "why": "Rules Lawyer, Optimizer",
+   "previousIn60": [
+    "anti_rules_toolkit"
+   ]
+  },
+  {
+   "figure": "Skeleton Mage",
+   "models": [
+    "Skeleton_Mage"
+   ],
+   "source": "KayKit Skeletons",
+   "deck": "symphonic_savagery",
+   "deckTitle": "Symphonic Savagery",
+   "cards": 56,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "dirigiert die toten Komponisten: Bach, Haydn, Händel, Toccata and Fugue",
+   "previousIn60": []
+  },
+  {
+   "figure": "Skeleton Minion",
+   "models": [
+    "Skeleton_Minion"
+   ],
+   "source": "KayKit Skeletons",
+   "deck": "uncle_frizzlebob_s_tragic_flaws_id",
+   "deckTitle": "Uncle FrizzleBob's Tragic Flaws",
+   "cards": 56,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "Yorick, The Prop: der Schädel, der endlich eine Sprechrolle will",
+   "previousIn60": []
+  },
+  {
+   "figure": "Skeleton Warrior",
+   "models": [
+    "Skeleton_Warrior"
+   ],
+   "source": "KayKit Skeletons",
+   "deck": "sonic_warfare_music_history_01",
+   "deckTitle": "The Iceberg Session Cards",
+   "cards": 48,
+   "in60": false,
+   "basis": "VORSCHLAG",
+   "why": "Bone Flute, War Drum: Musik als Waffe seit der Steinzeit",
+   "previousIn60": []
+  },
+  {
+   "figure": "Skeleton Rogue",
+   "models": [
+    "Skeleton_Rogue"
+   ],
+   "source": "KayKit Skeletons",
+   "deck": "the_kayfabe_money_trail_9_11",
+   "deckTitle": "The Kayfabe Money Trail: 9/11",
+   "cards": 60,
+   "in60": true,
+   "basis": "VORSCHLAG",
+   "why": "die Leiche im Keller der Geldspur: Put Options, CBOE Shredder",
+   "previousIn60": []
+  }
+ ],
+ "unassigned": {
+  "variantsLater": [
+   {
+    "deck": "1001_kayfabe_nights",
+    "title": "Uncle FrizzleBob's 1001 Kayfabe Nights",
+    "cards": 60,
+    "in60": true
+   },
+   {
+    "deck": "deep_state_plumbing",
+    "title": "Power, Plumbing & Pyramid Pimps",
+    "cards": 52,
+    "in60": false
+   },
+   {
+    "deck": "frizzlebob_s_kayfabizarro_kompendium_elender_wic",
+    "title": "Du Elender Wicht! — Uncle FrizzleBob’s Kayfabizarro Kompendium of Insults, Curses & Ritual Provocations",
+    "cards": 60,
+    "in60": false
+   },
+   {
+    "deck": "help_i_am_a_human",
+    "title": "Hilfe, ich bin ein Mensch! — Human Nature Science Wrestling",
+    "cards": 56,
+    "in60": true
+   },
+   {
+    "deck": "human_nature_uncut_hilfe_ich_bin_ein_mensch",
+    "title": "Human Nature Uncut — Hilfe ich bin ein Mensch",
+    "cards": 56,
+    "in60": false
+   },
+   {
+    "deck": "jung_and_shinn_a_guide_to_cosmic_cringe",
+    "title": "Jung and Shinn: A Guide to Cosmic Cringe",
+    "cards": 60,
+    "in60": true
+   },
+   {
+    "deck": "kayfabizarros_ontological_hazards",
+    "title": "Plato’s Dungeon Raids",
+    "cards": 47,
+    "in60": false
+   },
+   {
+    "deck": "platos_dungeon_raid_v05",
+    "title": "Plato's Dungeon Raid — Full Class Roster v05",
+    "cards": 56,
+    "in60": true
+   },
+   {
+    "deck": "protopia_web",
+    "title": "Propositum 2040: Forget Utopia, Ignore Dystopia, Embrace Protopia",
+    "cards": 56,
+    "in60": false
+   },
+   {
+    "deck": "romantic_kayfabe",
+    "title": "Romantic Love-Wrestling & Krass Kayfabe-Heartbreaks",
+    "cards": 56,
+    "in60": true
+   },
+   {
+    "deck": "saboteur_sketchbook_medicine_history_psyops_add_",
+    "title": "Medicine Madness: The Waiting Room Anarchy",
+    "cards": 56,
+    "in60": false
+   },
+   {
+    "deck": "shakespearean_animal_beatdown",
+    "title": "Shakespearean Animal Beatdown — The Shakespearean Expansion",
+    "cards": 7,
+    "in60": false
+   },
+   {
+    "deck": "the_importance_of_being_kayfab_earnest",
+    "title": "Oscar Wilde's Importance of KAYFAB-EARNEST",
+    "cards": 10,
+    "in60": false
+   },
+   {
+    "deck": "the_pharaoh_script_psychology_of_evil",
+    "title": "The Pharaoh Script — Psychology of Evil",
+    "cards": 60,
+    "in60": false
+   },
+   {
+    "deck": "what_work_was_for",
+    "title": "What Work Was For: A Field Report from Before the Timesheet — Vol. I",
+    "cards": 56,
+    "in60": true
+   },
+   {
+    "deck": "wrinkle_rumble",
+    "title": "Fractal Future Fantasy: The Wrinkle-Rumble Starter Kit",
+    "cards": 48,
+    "in60": true
+   }
+  ],
+  "medkayfab": {
+   "count": 45,
+   "note": "MedKayfab-Reihe (FrizzleBob-Sheet: private IP); Frage an Georg, ob die Figuren dort Signaturen bekommen oder ein eigenes Med-Ensemble",
+   "decks": [
+    "medkayfab_ancestral_medicine",
+    "medkayfab_atomic_elements",
+    "medkayfab_biochemistry",
+    "medkayfab_clinical_cases",
+    "medkayfab_dentistry",
+    "medkayfab_dermatology_01",
+    "medkayfab_diagnostic_tools",
+    "medkayfab_differential_diagnosis",
+    "medkayfab_disease_timelines",
+    "medkayfab_endocrinology",
+    "medkayfab_essential_pharmacology",
+    "medkayfab_gastrology",
+    "medkayfab_genetics",
+    "medkayfab_geriatrics",
+    "medkayfab_gross_anatomy",
+    "medkayfab_hematology",
+    "medkayfab_histology",
+    "medkayfab_immunology",
+    "medkayfab_intensive_care_medicine",
+    "medkayfab_internal_medicine",
+    "medkayfab_laboratory_medicine",
+    "medkayfab_microbiology_infectiology",
+    "medkayfab_neonatal_medicine",
+    "medkayfab_nephrology",
+    "medkayfab_neuroanatomy",
+    "medkayfab_neurology",
+    "medkayfab_nursing_care",
+    "medkayfab_obstetrics_gynaecology",
+    "medkayfab_oncology",
+    "medkayfab_ophthalmology",
+    "medkayfab_orthopedics_trauma",
+    "medkayfab_otolaryngology_ent",
+    "medkayfab_pathology",
+    "medkayfab_pediatrics",
+    "medkayfab_pharmacology_01",
+    "medkayfab_physiology",
+    "medkayfab_pneumology",
+    "medkayfab_psychiatry",
+    "medkayfab_radiology",
+    "medkayfab_science",
+    "medkayfab_surgery",
+    "medkayfab_the_bedside_ballet",
+    "medkayfab_thinking_traps",
+    "medkayfab_tropical_medicine",
+    "medkayfab_urology_01"
+   ]
+  },
+  "duplicatesOf": {
+   "medkayfab_dermatology_02": "medkayfab_dermatology_01",
+   "medkayfab_pharmacology_02": "medkayfab_pharmacology_01",
+   "medkayfab_urology_02": "medkayfab_urology_01",
+   "uncle_frizzlebob_s_tragic_flaws_shakespeare": "uncle_frizzlebob_s_tragic_flaws_id",
+   "the_move_id": "the_move_1"
+  },
+  "sensitive": {
+   "suppressed_book_deck": "Titel wie 'The Synagogue of Satan', 'The Myth of the 20th Century', 'Camp of the Saints' – braucht redaktionelle Entscheidung, keine Figur zugeordnet"
+  },
+  "noCards": [
+   "index",
+   "medkayfab_rules_comic_01",
+   "qa-report",
+   "town"
+  ]
+ },
+ "reserve": {
+  "note": "Quaternius Ultimate Monsters Bundle (u. a. Alien, Yeti, Wizard, Mushroom King, Dragon, Ghost) – noch nicht zugeordnet; Kandidaten für Variantenplätze",
+  "alienOld": "Alien war im 60er-Set Bewohner von Cosmic Grift"
+ }
+}
