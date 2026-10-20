@@ -3,6 +3,21 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 109 · 20.10. · FAIL (Georg): alte Hex-Insel wieder sichtbar – Ursache WS1, behoben im #439-Zweig
+
+**Georg:** „Ich sehe hier wieder diese alte Hex-Landschaft, die wir nie wieder zeigen wollten (WS0 ausdrücklich gesagt) … betrachte ich als Fail, bitte an WS0 melden.“
+
+**Ursache (WS1):**
+- Für die Schatten-Behebung (#439) habe ich meinen lokalen Build von `terrain/439` (Basis `combo/r2` @d762916) im Browser geöffnet, und zwar die **nackte Adresse ohne Hash**.
+- Dieser Zweig hat die Startweiche von WS1b (§96: nackte Adresse → `#m1,harvest`, Hex nur noch über `#spike`) noch nicht.
+- Deshalb erschien „KFB · Spike R4 / Hex-Insel“ im Browserfenster, das Georg mitsieht.
+- **Live-Vorschau nicht betroffen:** `ws1-preview` leitet die nackte Adresse auf `#m1,harvest` um, geprüft im ausgelieferten `index.html`.
+
+**Behebung:**
+- Dieselbe Startweiche steht jetzt in `terrain/439/index.html`.
+- Regel für WS1: Spiel-Builds öffne ich nur noch mit ausdrücklichem Hash (`#m1,…`). Die Hex-Insel ist Legacy (V-194, V-216) und wird nicht gezeigt.
+- **Vorschlag an WS0:** Die Hex-Route (`HexWorld`) ganz aus dem Standardpfad nehmen. Sie bliebe nur unter `#spike` als markierte Legacy-Testkulisse, damit kein Zweig sie versehentlich zeigt.
+
 ## 108 · 20.10. · WS1b · Vorschau-Start: Spiel statt Spike, Ladeanzeige, Titel (live und geprüft)
 
 Erste Meldung von WS1b (Georgs MacBook, V-539). Auftrag von WS0: nur Aufgabe 1. #439 (Cartoon-Gelände) macht die alte WS1, WS1b hat dafür nichts angefangen.
