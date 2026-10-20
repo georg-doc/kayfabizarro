@@ -144,3 +144,7 @@ Georg's new direction: [Card Ink Defense R0.5](./KFB_CARD_INK_DEFENSE_OPEN_WORLD
 - **Not verified / deliberately OPEN:** latest local Claude Code runtime or a 2026-10-15 deployed playable product; current active scene Water ripple, source rod grip/bobber, actual fish/boot assets, Witch stir/cauldron VFX, first persistent PlayerSave/Wallet/Score, real cross-user Hall of Fame, current avatar/source model, shader and VFX QA.
 - **Zero executed gameplay tests, visual donor-isolation renders, packaged game integration, live Site or Stage QA in this recovery**. A GitHub document commit cannot be called a playable MVP.
 - **No auto-merge/promote Live**. This index and its PR preserve the current Lab Owner and human approval chain.
+
+
+## R0.7 · 2026-10-20 · Resident choreography / KKIT motion integration
+Additive companion to R0.6: [Resident Life Choreography x KKIT R0.7](./KFB_RESIDENT_LIFE_CHOREOGRAPHY_KKIT_ANIMATION_R0_7_2026-10-20.md) and [WS0 intake R0.7](./WS0_RESIDENT_LIFE_ANIMATION_CHOREOGRAPHY_INTAKE_R0_7_2026-10-20.md). Source-backed Farmer B / Lorekeeper, source labels Digging + Idle_A, eight-channel PerformanceCue, semantic beat→motion choreography, locomotion/contact authority, interrupted activity resume, future skeleton formation and Combat/KO animation bridges. All proposal/no runtime; source-isolated asset proofs outstanding. WS0_RESIDENT_LIFE_ESCALATION_R0_6_INTAKE remains ONE next gate.
