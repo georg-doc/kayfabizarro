@@ -3,6 +3,47 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 101 · 20.10. · Recherche R1 + R3 fertig (V-563, Paket A) · Gelände-Probe mit Diorama-Einpassung
+
+**Recherche (Paket A, parallel bearbeitet):**
+- **Dateien** auf diesem Branch unter `research/canon/`, bitte nach `CANON_3D/sources/` übernehmen:
+  - `R1_INSZENIERUNG_R1.md`: 25 Regeln, davon Teil B zu Gebiet 15 „Einpassung“;
+  - `R3_SET_DRESSING_R1.md`: 21 Regeln plus Datensatz-Vorschlag für die Stamp-Bibliothek in `kfb_env`.
+- **Format wie im Brief:**
+  - Regeln mit Zahlen, je Regel Quelle und Urteil („gilt für KFB“ oder „nicht übernommen, weil …“);
+  - am Ende „Vorschlag Prüfung“ mit Gate oder Kritiker-Kriterium je Regel.
+  - Zahlen markiert: **[Q]** aus der Quelle, **[V]** Startwert (Heuristik, an 10 PASS- und 10 FAIL-Bildern eichen, bevor er FAIL auslöst), **[KFB]** Verweis auf Bestand. Was schon in Etherington R2 oder im QA-Regelwerk steht, ist nicht doppelt aufgenommen.
+- **Kern R1:**
+  - 1 Primärfokus + ≤ 2 Akzente je Bild; Fokusfläche 4–15 % (Übersicht) bzw. 2–10 % (Spielkamera) [V].
+  - Kontrast sammelt sich am Fokus: ≥ 1,5 × Median [V]; Freiraum-Ring 0,25 × Fokusdiagonale [V]. Das sind die beiden Backlog-Gates.
+  - 3 Wertmassen, eine > 50 % [Q, Notan].
+  - Wertordnung nach Flächenneigung (Carson): fängt eingebackenes Licht ab.
+  - Übersichtskamera 30–40° Neigung [Q].
+  - **Gebiet 15:**
+    - Rand als Ring aus Übergangsbausteinen nach Dual Grid (Stålberg, 16 bzw. 6 Fälle) [Q];
+    - Streudichte in Stufen im Ring 0,5–1,5 H [V];
+    - gleiche Detailfrequenz von Szene und Terrain [V];
+    - ≤ 18 Töne gesamt [V].
+- **Kern R3:**
+  - Stamp: ≥ 4 von 6 Worch/Smith-Fragen, Ereigniskette aus 2–4 Gliedern, 1 Schlüsselrequisit, 3–7 Teile, Aussage in ≥ 3 Trägern;
+  - Funktionsgruppe: 1 Anker, 2–4 Werkzeuge, 1–3 Spuren, ≥ 70 % aus einer Materialfamilie;
+  - 1 H frei um Spielstellen;
+  - Stamps nur mit erfüllter Ortsbedingung (`requires`), derselbe Stamp ≤ 1 × je Insel.
+- **Nicht gefunden** (steht in den Dateien): Tiny-Glade-Regeln zu Wandfuß und Moos, Nintendo-Geländeregeln, Pixar- bzw. Naughty-Dog-Zahlen. Etherington-Originale als Text → R2.
+- **R2 + R4** laufen noch, kommen als §102.
+
+**Gelände-Probe mit Diorama-Einpassung** (Georgs Experiment, Gebiet 15 zum Ausprobieren): https://ws1-preview.kayfabizarro.pages.dev/gelaende-probe
+- Amphitheater 70 m vor dem Start; „Zum Diorama“ setzt davor ab.
+- Einzeln schaltbar:
+  - Palette angleichen (Rollen-Töne, eingebackenes Licht raus, matt);
+  - Sockel + Erdkeil, vorne offen;
+  - Farbring + Sprenkel in beide Richtungen (3 Größen, harte Kanten);
+  - Steinband in Dreiergruppen (1,5 : 0,95 : 0,55, 20–35 % eingesunken);
+  - Baum- und Buschgruppen an den Flanken, Freiraum vor der Öffnung.
+- Gitter-Welt: Kachel-Textur `edge3.jpg` (aus der Voxel-Welt), je Feld gedreht, gespiegelt und in der Helligkeit gestreut. Georg überlegt den Stilbruch „Spielbrett + Knet-Inseln“ als eigenen Look mit sauberen Übergängen.
+
+**#439 im Spiel** (`terrain/439` @4f0f774, `look=terrain2`): Runde 2 mit Palette, Erdwall, Bühnenring und Palettenschatten liegt bei Georg. Als Nächstes kommen die Kanon-Regeln (Steinbänder, Sprenkel zweiseitig, eingebackenes Licht). Banden und Rampen bleiben offen, bis der POC benannt ist.
+
 ## 100 · 20.10. · #439 Terrain übernommen (V-561) · Welcher POC? · Start mit den eindeutigen Teilen
 
 **Übernommen:** `BRIEF_WS1_TERRAIN_439_R1`. Branch `terrain/439` ab `combo/r2` @d762916, Schalter `look=terrain2`, der Standard bleibt unverändert.
