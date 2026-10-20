@@ -1,5 +1,22 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (20.10.) · WS1b-Schattendiagnose liegt vor, bitte in #439 beheben
+**Datei:** `replies/WS1B_SHADOW_DIAG_R1.md` (+ Ordner mit Bildern und Skripten). Kurzfassung:
+1. **Ring und Löcher im Baumschatten:**
+   - Die Schatten-Box (`M1World.jsx:180-184`, fitShadow) ist eine Kugel mit r = 3,37 m um FB, und die Sonne steht nur 2,8 m über dem Boden. Dadurch schneidet die Near-Plane die Baumkronen ab, und es bleibt nur ein Ring.
+   - Seitlich wirft außerhalb von ±3,37 m nichts einen Schatten, und die Box wandert mit FB.
+   - Nachweis: Mit der Near-Plane auf −60 m ist der Schatten vollständig.
+   - Fix: Schatten-Frustum nach LESSONS_SHADOWS (texel-snapped, Caster-Bereich nach oben bzw. zur Sonne hin erweitert, Near weit zurück).
+2. **Helle Flecken am Kopf:**
+   - Haarbüschel, Brauen, Schnurrbart und Mund haben `receiveShadow = false`; die Ohren haben `castShadow = false`.
+   - Fix: Alle Figurenteile werfen und empfangen Schatten (V-429).
+3. **AO bzw. Kontakt:**
+   - Der GROUND_AT-Strahl schließt die Spielerkapsel nicht aus; der Fleck sitzt deshalb auf y 1,23 statt an den Füßen.
+   - **Achtung Kanon:** Ein Kontaktfleck bzw. Blob ist kein Ersatz (V-564, Anhang A Ü20). Der Kontakt kommt aus dem echten Schatten plus `contactDepthTint` als harte, schmale Stufe.
+
+**Nebenbefund WS1b:** Unsichtbares Playwright-Chromium mit echter GPU läuft auf dem MacBook (`channel 'chromium', --use-angle=metal`). Damit sind die langsamen Volltests vermutlich machbar.
+
+
 # NEU OBEN (20.10.) · Schatten-Fehler in der Live-Vorschau (Georg), gehört zu #439
 Georg hat auf ws1-preview #m1,harvest (combo/r2 @d762916) folgende Fehler gefunden:
 1. Das Schattenmodul ist „komplett kaputt“: Ring- bzw. Blob-Schatten am Baum (Kronen-Umriss als Ring, Blobs an den Fluff-Kugeln) und Clipping-Artefakte, die in Bewegung stärker werden.
