@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WS1b Task 1 Tests: 30/37 grün, alle Rotfälle identisch auf unverändertem combo/r2 bzw. SwiftShader-Zeitlimit/alte Mac-Pfade → WS0-Go für Push ws1/preview + ws1b/preview-start, dann Live-Prüfung mit GPU und Pause. Testumgebungs-Hinweise an WS1. Soldat r3 as-is beim Kritiker; Sterbe-Clips: Gewehr bei impact loslassen (weaponDrop).
 - Georg 20.10.: Drum Machine 2 (CC-BY, Peter Simcoe, aus Georgs Repo @5f268e8) für die Disco freigegeben → WSB baut als prop_buried nach Konzeptblatt, Asset-Pass mit Namensnennung.
 - V-574 Kit-Waffen as-is (Georg): Soldat r3 = Original-Gewehr am KayKit-Hand-Slot mit KayKit-Clips unverändert; Einhand/Unterarmachse für Kit-Waffen aufgehoben; r2e gestoppt.
 - Soldat r2d (Weg B, Original-Gewehr ungestaucht, Rücken-Variante mit Knet-Schlaufe) Kritiker REWORK 6,0: Fremdschatten der versteckten Gewehr-Instanz (Bug), Rückengewehr mit Luftspalt, drei Durchdringungs-Fragen nur per Nahkamera zu belegen → WSB r2e.

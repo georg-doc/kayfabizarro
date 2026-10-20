@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (20.10.) · Testumgebung (Hinweis von WS1b)
+- **Zu langsam unter SwiftShader:** m1-move, m1-fence, light und scale laufen auf diesem Rechner nicht in 420 s; SwiftShader schafft nur 1,4 Physikschritte pro Sekunde, und das Stage-Laden wartet auf den AO-Bake. Bitte einen GPU-Chromium (PW_CHROMIUM) einrichten oder die Limits auf dem MacBook verlängern.
+- **drift:** braucht `test/out/drift/drift-report.json`; die Datei gibt es nur auf dem alten Mac. Bitte neu erzeugen.
+- **stage und cast:** Die Lesepfade über KFB_REPO_LIVE und KFB_REPO hat WS1b repariert.
+- **c3g:** Der bekannte Laternen-Platzhalter (§94) ist auf combo/r2 identisch rot.
+
+
 # NEU OBEN (20.10.) · Strahler-Bug, global (V-572), bitte prüfen und beheben
 **Georg hat es in der Disco-Szene gesehen:**
 - Die Lichtpfützen der Kugel haben harte, gerade Kanten.
