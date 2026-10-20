@@ -3,6 +3,34 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 114 · 21.10. · terrain3 im Spiel, Fahrzeug-Probe auf Spiel-Physik und -Kamera, Himmel R2 (Recherche), Lizenzbefunde, nächste Schritte
+
+**Spiel `terrain/439` (lokal, Spiegel folgt nach grüner Volltest-Reihe; läuft gerade):**
+- **`#m1,look=terrain3[,palette=mesa|moos|wueste|schnee|pastell]`** (771494e, 4b0d1b5, + Folgecommit): Malweise der Gelände-Probe im Spiel.
+  - `src/look/terrain3.js`: 70er Fließfarben (GLSL_FLOW **1:1 aus der Probe**, erzeugt von `probe/port/gen_terrain3.py`, kein Abschreiben), Maßstab für die kleinere Spielwelt, Schatten im Palettenton des Empfängers (V-564, jetzt aus der Bodenfarbe + kühler Hauch – kein Rotsaum am Rand), optional „Farben fließen hangabwärts“.
+  - `src/modules/sky-r13.js`: Himmel v2 (skyColor, Sonnenscheibe, Kuppelwolken wie in der Probe), Sonne aus dem Licht-Rig.
+  - Weg (path3d) im Sandton der Palette mit Palettenschatten, Kanten ins Gelände gesenkt (kein Flimmern), Mitte auf Bodenhöhe (Ferse steckte im Weg).
+  - **Schatten nach Schattenkonzept R1 (Georg: „wie Kay Lousberg“):** VSM leiser (Intensität 0,62) und kontaktnäher (Radius 5 statt 7); **dunkler Fuß** an Figuren als weicher Verlauf aus dem echten Bodenabstand (zur Laufzeit, nicht eingebacken; eine harte Stufe las sich als Schuhsohle); **Selbstschatten auf Figuren gedämpft** (55 %, harte Kante am Arm). Kein Blob-Kontaktfleck in terrain3 (V-564).
+  - Standard-Look unverändert. Geländeform bleibt M1 (Bühne/Weg/Obstgarten darauf platziert).
+- Schnelltests grün (contract-static, deps, host, m1-ground, m1-scene, c3b).
+
+**Gelände-Probe (`ws1/preview`):**
+- **Fahrzeug = Spielcode:** k2t (M2/M3) + Racer-Flug **und jetzt auch die Folgekamera `followCam`** unverändert eingebettet (`probe/mkdrive.py`, three als Global). Boden über die **vier Schwebepunkte** des Rigs (Nase federt nicht mehr), **Kollision** mit Findlingen/Diorama-Steinen/Bäumen/Amphitheater (kleine Steine überfahrbar, große = Wand mit k2t-Prall; Test: kein Eindringen, keine Rettung), Schwebe-Animation als ruhiges Atmen, Düsenglühen von hinten, Speedlines als Bänder.
+- **Farben fließen hangabwärts:** Bandphase läuft entlang der Höhe → jede Stufe wandert zur tieferen Höhenlinie; an steilen Flanken senkrechte Läufe. Standard an.
+
+**Recherchen in `CANON_3D/sources`:** `WS1_HIMMEL_R2_RECHERCHE.md` (neu). Kein fertiger, lizenzsauberer Cartoon-Himmel für three.js; Baupläne: Harry Alisavakis (CC0), Kelvin van Hoorn (MIT). Konzept „Himmel R2“ = Umbau von Himmel v2 (weicher Grundverlauf, harte Wolken/Scheiben, gewellte Horizontbänder in der Dämmerung, Doppelhof je Sonnenhöhe, Vierzack-Sterne, Polarlicht, fünf Farbsätze). Georg ergänzt: Option „Glasur“ – psychedelische Farbstufen fließen wie Zuckerguss von der Kuppel zum Horizont (gleiches Prinzip wie Hangabwärts-Fließen).
+
+**Lizenzbefunde (bitte WS0):**
+1. **tinyskies hat keine Lizenz.** Die Travel-Globe-Dateien `travel/globe-v13/` (sky-presets, sky-atmosphere, lens-flare, day-night) sind laut eigenem Kopf „zeichengleich aus tinyskies“ → **nicht ins Spiel übernehmen**. WS1 baut Himmel/Effekte nur aus Ideen bzw. aus CC0/MIT-Quellen.
+2. **R13 (`R13_HIMMEL_HORIZONT_FERNE_R1.md`) enthält aus tinyskies abgeschriebene Wertetabellen** (Verlauf, Nebel, Wolkenformeln, Strahlen, Mond). In der Probe sind sie nicht verwendet. Bitte entscheiden: entfernen oder als „nur Analyse, nicht verwenden“ markieren.
+3. Frage: Dürfen CC0-/MIT-Codestücke direkt übernommen werden (mit `THIRD_PARTY.md`), oder nur Nachbau nach Beschreibung?
+
+**SKY3:** Georg 21.10.: Waber-Shader passt nicht zum Design; die Aquarell-Himmel sind Gemini-Platzhalter (nicht nahtlos).
+
+**Prozess-Notiz:** Während der Volltest-Reihe wurde einmal neu gebaut → Lauf abgebrochen und neu gestartet (Regel „nie in einem laufenden Test-Worktree bauen“ eingehalten ab da).
+
+**Als Nächstes:** (1) Volltest-Reihe → Spiegel `ws1/terrain-439` + Vorschau; (2) gesammelte Korrekturen (Ferse, weicher Fuß, Armschatten, Hangabwärts) bauen und prüfen; (3) **Leistungsanalyse** in Probe und Spiel (GPU-Zeit je Effekt, Georg sieht zeitweise 9–17 fps) → Priorisierung/Optimierung mit Georg; (4) Himmel R2 nach Georgs Antworten; (5) komplettes HUD (Minimap, Almanach-Fächer, Musik, Einstellungen) als Screenshot-Basis für neue Icons.
+
 ## 113 · 21.10. · Gelände-Probe: Ferne ohne Nebelband, Wolkenkörper, Fluid-Material, Fahrzeug-Darstellung, Effekt-Bildsprache (Entwurf)
 
 Alles in `ws1/preview` (gelaende-probe), Recherchen in `CANON_3D/sources`:
