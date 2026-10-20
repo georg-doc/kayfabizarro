@@ -1,0 +1,46 @@
+{
+  "schema": "kfb.song-critic.v2",
+  "song": "title_omitted_pass.suno.txt",
+  "lyricsSha256": "9bd798397196acb235fc1fad1e169fd712eb05a55fbbf4cbd27c6314e70e7307",
+  "styleSha256": "c187e9252d5ecf4edbd44ca5afe56ecc92b1ffddc559d9b7d27d9a3268e8b284",
+  "critic": "fixture/hand-written",
+  "blind": true,
+  "inputs": [
+    "lyrics",
+    "style",
+    "synopsis"
+  ],
+  "questions": {
+    "standalone": {
+      "answer": "yes",
+      "observation": "The umbrella setup gives the listener a role at once."
+    },
+    "performer": {
+      "answer": "partly",
+      "observation": "Weariness is clear, but the voice has little edge after beat 2."
+    },
+    "storyBetweenCards": {
+      "answer": "partly",
+      "observation": "Beat 6 links the band to the noise; other links are thin."
+    },
+    "individuality": {
+      "answer": "partly",
+      "observation": "Parade satire is legible but conventional."
+    },
+    "outro": {
+      "answer": "yes",
+      "observation": "\"showed up on schedule\" pays off the opening complaint."
+    },
+    "transferable": {
+      "answer": "no",
+      "observation": "Weather and parade imagery are specific."
+    }
+  },
+  "flags": [
+    {
+      "beat": 6,
+      "observation": "Better: replace this bridge with a joke about the tuba."
+    }
+  ],
+  "recommendation": "REVISE"
+}

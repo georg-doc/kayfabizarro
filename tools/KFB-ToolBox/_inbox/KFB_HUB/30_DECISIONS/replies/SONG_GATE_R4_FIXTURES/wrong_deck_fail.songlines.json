@@ -1,0 +1,78 @@
+{
+  "schema": "kfb.songlines.r4",
+  "deckId": "fixture_other",
+  "deckTitle": "Other Fixture",
+  "revision": "fx1",
+  "sourcePins": {
+    "deck": {
+      "path": "fixture_parade.json",
+      "sha256": "9691ed49a57b84f7c35854401e540093565d07e122b4f39130898cdaee3619bf"
+    },
+    "media": {
+      "path": "fixture_parade.pdf.json",
+      "sha256": "0d4ffcb0e8e5673aca1a842b9785054953e2d63cf789e065209eef8512afbe0a"
+    }
+  },
+  "performer": {
+    "name": "The Ringmaster",
+    "deckId": "fixture_parade",
+    "cardNumber": 1,
+    "stance": "tired parade veteran"
+  },
+  "selectionMode": "FULL_DECK",
+  "bestOf": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "bestOfReason": [
+    "full deck"
+  ],
+  "orderMode": "deck",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "beats": [
+        3
+      ],
+      "cardText": "The Ringmaster cracks the whip at the clock and sells tickets to the delay; everyone pays twice."
+    },
+    {
+      "cardNumber": 2,
+      "beats": [
+        4
+      ],
+      "cardText": "The Paper Elephant looks enormous on the poster, folds flat when it rains; the crowd applauds."
+    },
+    {
+      "cardNumber": 3,
+      "beats": [
+        7
+      ],
+      "cardText": "The Brass Accountant counts the trumpets, never the tunes; every note audited, nothing heard."
+    },
+    {
+      "cardNumber": 4,
+      "beats": [
+        8
+      ],
+      "cardText": "The Last Float arrives after the street is empty and declares the parade a total success."
+    }
+  ],
+  "songLineChanges": [],
+  "cues": [
+    {
+      "afterBeat": 5,
+      "cue": "crowd cheering swells under the band"
+    }
+  ],
+  "refrain": "",
+  "visualMotifs": [
+    {
+      "cardNumber": 2,
+      "motif": "folded paper elephant sagging in rain",
+      "visualVerified": false
+    }
+  ]
+}

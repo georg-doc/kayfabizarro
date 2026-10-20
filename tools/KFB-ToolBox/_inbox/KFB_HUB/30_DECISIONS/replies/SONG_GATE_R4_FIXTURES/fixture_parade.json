@@ -1,0 +1,35 @@
+{
+  "schema": "kfb.asset-deck.v2",
+  "deckId": "fixture_parade",
+  "title": "The Fixture Parade",
+  "cards": [
+    {
+      "cardNumber": 1,
+      "cardName": "The Ringmaster",
+      "lore": "Cracks the whip at the clock and sells tickets to the delay. Everyone pays twice.",
+      "power": "Opens the parade.",
+      "mappingVerified": true
+    },
+    {
+      "cardNumber": 2,
+      "cardName": "The Paper Elephant",
+      "lore": "Looks enormous on the poster, folds flat when it rains. The crowd still applauds the poster.",
+      "power": "Counts as two when dry.",
+      "mappingVerified": true
+    },
+    {
+      "cardNumber": 3,
+      "cardName": "The Brass Accountant",
+      "lore": "Counts the trumpets, never the tunes. Every note audited, nothing heard.",
+      "power": "Silences one brass band.",
+      "mappingVerified": true
+    },
+    {
+      "cardNumber": 4,
+      "cardName": "The Last Float",
+      "lore": "Arrives after the street is empty and declares the parade a total success.",
+      "power": "Ends the parade.",
+      "mappingVerified": true
+    }
+  ]
+}
