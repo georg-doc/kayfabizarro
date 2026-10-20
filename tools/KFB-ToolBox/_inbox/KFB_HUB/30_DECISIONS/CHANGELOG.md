@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WSB K9 gestartet (Georg, Web-Chat-Plan „KayKit Cartoon Animation · Vorarbeit R2“, planning/kfb-kaykit-cartoon-performance-r1-2026-10-20 @2e25eec): erstes Gate = Original-Clip Melee_1H_Attack_Chop isoliert vermessen (Bahnen, Kontakte, Phasen) + Sichtbild mit KFB-Augen; keine Varianten, kein Push, nichts in der Arena.
 - WSB Soldat r3c (V-579): nur 4 Anker-Knoten neu (KFB_Muzzle Mündungsmitte, +Z = Schuss, 0,000° ∥ Lauf; Grip/Grip_L/Bayonet_Tip mitgezogen), gunfight_duel_02 Akteur A ry 178,9°, Karten + Handoff + muzzle.json auf r3c → WSA frei für Runtime-Anschluss.
 - WSA Arena Muzzle R3 (PR #23 52828602: Profil muzzle primary/secondary/variants, FX-Adapter, 84/84 grün) → V-579 KFB_Muzzle +Z = Lauf; WSB r3c richtet Anker aus, korrigiert gunfight_duel_02-Facing (−88,9°) und Figurenkarte.
 - V-578 Freies Ende = Pfadstein-Auflösung (Georg nach 3 Probebildern), Kanon 4 + Spec nachgezogen; WSB K8 kfb_edge_bpy + Params + Test PASS (free_end/built_end/ruin_end), K6 r4 Friedhof ohne Handarbeit (221 Stücke, 28 fehlend, Band r1–r3 archiviert). Offen: Ruinen-Brocken kastig.
