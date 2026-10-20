@@ -1,0 +1,398 @@
+{
+  "cards": [
+    {
+      "art": "badger digging at dawn",
+      "lore": "You bend, you gather, you repeat.",
+      "n": 1,
+      "name": "The Necessary Motion",
+      "power": "Keeps the player alive for one more turn."
+    },
+    {
+      "art": "fox cub cast out from a den",
+      "lore": "The boy who won't sit still is sent out with the hounds.",
+      "n": 2,
+      "name": "The First Division",
+      "power": "Distributes action points based on natural stats."
+    },
+    {
+      "art": "mice rolling a giant red berry together",
+      "lore": "No one tracks who did how much; the day ends when there is enough.",
+      "n": 3,
+      "name": "The Shared Burden",
+      "power": "Ends the turn when the resource pool is full."
+    },
+    {
+      "art": "beaver at a loom, food untouched beside them",
+      "lore": "You no longer bend because you are hungry; you bend because you are the bender.",
+      "n": 4,
+      "name": "The First Obligation",
+      "power": "Detaches production from appetite, creating infinite output."
+    },
+    {
+      "art": "monks and factory workers bowing to an enormous iron bell",
+      "lore": "The day has owners, and the owners are calling.",
+      "n": 5,
+      "name": "The Bell",
+      "power": "Forces all units to pray in synchrony."
+    },
+    {
+      "art": "steam whistle blasting over stampeding cattle in factory gear",
+      "lore": "The factory's breath commands the herd.",
+      "n": 6,
+      "name": "The Whistle",
+      "power": "Converts time from something you pass into currency you spend."
+    },
+    {
+      "art": "angry sun face setting over a textile mill",
+      "lore": "Fourteen hours of the sun, all belonging to the mill.",
+      "n": 7,
+      "name": "The Long Day",
+      "power": "Treats daylight as the only legitimate constraint on availability."
+    },
+    {
+      "art": "raccoon in flat cap holding a banner reading '8-8-8'",
+      "lore": "The fiercest battle of the 19th century was over the right to go to sleep.",
+      "n": 8,
+      "name": "The Hour Saved",
+      "power": "Reclaims 8 hours of what we will from the opponent."
+    },
+    {
+      "art": "weasel in lab coat pressing stopwatch to a tortoise's chest",
+      "lore": "He timed every breath until Schmidt moved 47 tons.",
+      "n": 9,
+      "name": "The Stopwatch",
+      "power": "Breaks any job into terrifyingly efficient micro-motions."
+    },
+    {
+      "art": "pig-body mounted on tank treads, gears visible through skin",
+      "lore": "The first manual for treating flesh like gears.",
+      "n": 10,
+      "name": "The Optimised Body",
+      "power": "Multiplies physical output by 400%; destroys the soul stat."
+    },
+    {
+      "art": "bird, parrot, and mouse each holding one tiny piece of a pin, confused",
+      "lore": "No one here knows how to make a pin.",
+      "n": 11,
+      "name": "The Pin Factory",
+      "power": "Multiplies output by 240; removes the ability to craft."
+    },
+    {
+      "art": "disembodied hands each tightening a different bolt on a machine no one sees whole",
+      "lore": "The structural prerequisite for mass amnesia.",
+      "n": 12,
+      "name": "The Division of Labour",
+      "power": "Prevents any worker from seeing the whole object."
+    },
+    {
+      "art": "walrus in top hat taking a pie from a cat waitress's tray",
+      "lore": "The factory cannot function if the worker takes home what they make.",
+      "n": 13,
+      "name": "The Surplus",
+      "power": "Extracts all value beyond the bare minimum required for survival."
+    },
+    {
+      "art": "bear building skyscrapers reflected in puddle it cannot reach",
+      "lore": "You build the world, but you do not live in it.",
+      "n": 14,
+      "name": "Alienation",
+      "power": "The more wealth the worker produces, the poorer they become."
+    },
+    {
+      "art": "bright bird pressed flat inside a Weber cage made of office partitions",
+      "lore": "The Puritan wanted to work in a calling; we are forced to do so.",
+      "n": 15,
+      "name": "The Iron Cage",
+      "power": "Traps all participants; leaving requires ceasing to be modern."
+    },
+    {
+      "art": "hourglass dripping red, a hand reaching in",
+      "lore": "In selling the hour, you sell the self that fills it.",
+      "n": 16,
+      "name": "The Hour (Polanyi)",
+      "power": "Turns human activity inside a community into a commodity for sale."
+    },
+    {
+      "art": "deer wandering between office partitions that form a maze",
+      "lore": "Invented to give you room; used to fence you in.",
+      "n": 17,
+      "name": "The Cubicle (Action Office)",
+      "power": "Turns liberation into monolithic insanity."
+    },
+    {
+      "art": "owl in suit at enormous desk, brain glowing behind glass head",
+      "lore": "The worker owns the means of production—their mind.",
+      "n": 18,
+      "name": "The Knowledge Worker",
+      "power": "Cannot be coerced; must be manipulated and persuaded."
+    },
+    {
+      "art": "avalanche of envelopes burying a duck at a desk",
+      "lore": "The soft power of the new regime.",
+      "n": 19,
+      "name": "The Memo",
+      "power": "Replaces the factory whistle with ambient dread."
+    },
+    {
+      "art": "monkeys in suits at pie-chart presentation, one asleep",
+      "lore": "The assembly bell of the white-collar world.",
+      "n": 20,
+      "name": "The Meeting",
+      "power": "Stops all actual work while simulating productivity."
+    },
+    {
+      "art": "sloth surrounded by multiplying paper stacks growing to fill the room",
+      "lore": "The project takes six weeks because six weeks were allotted.",
+      "n": 21,
+      "name": "The Cascade (Parkinson)",
+      "power": "Work automatically expands to fill allotted time."
+    },
+    {
+      "art": "carnivorous calendar devouring a long-term plan",
+      "lore": "The business shapes itself to what the analyst can see.",
+      "n": 22,
+      "name": "The Quarterly",
+      "power": "Warps reality so the business only exists in three-month chunks."
+    },
+    {
+      "art": "squirrels worshipping a cardboard sign labelled VALUE while real acorns rot",
+      "lore": "The system now serves the measurement of the system.",
+      "n": 23,
+      "name": "The Proxy",
+      "power": "Overtakes the real value it was meant to represent."
+    },
+    {
+      "art": "dog on treadmill hitting dashboard targets while flatlining",
+      "lore": "Door-to-doctor time improved. The patient died.",
+      "n": 24,
+      "name": "The Goodhart Metric",
+      "power": "Once a measure becomes a target, it ceases to be a good measure."
+    },
+    {
+      "art": "rooster at blackboard drawing flowchart while a yarn map behind shows something else entirely",
+      "lore": "The real flows are sideways, informal, and invisible to the chartmakers.",
+      "n": 25,
+      "name": "The Org Chart",
+      "power": "Tells a fiction about how decisions flow."
+    },
+    {
+      "art": "Titanic deckchairs being rearranged by meerkats in suits",
+      "lore": "A periodic ritual where everyone pretends things have changed.",
+      "n": 26,
+      "name": "The Reorg",
+      "power": "Scrambles the chart while ignoring the underlying flow."
+    },
+    {
+      "art": "fox and dog across desk, both smiling too wide, papers between them",
+      "lore": "The place where the organization meets you once a year and pretends to know you.",
+      "n": 27,
+      "name": "The Performance Review",
+      "power": "Generates mutual dishonesty."
+    },
+    {
+      "art": "vultures in HR vests distributing value tokens before files are opened",
+      "lore": "The line was drawn before anyone looked at your work.",
+      "n": 28,
+      "name": "The Calibration",
+      "power": "Pre-determines the value of units before they are even considered."
+    },
+    {
+      "art": "parrot filling out forms with frantic intensity, stack disappearing into void",
+      "lore": "A person writes the report no one will read.",
+      "n": 29,
+      "name": "The Box-Ticker",
+      "power": "Allows the organization to claim it is doing something it isn't."
+    },
+    {
+      "art": "octopus with eight arms each holding a keyboard, re-entering lost data",
+      "lore": "Re-entering data the machine lost.",
+      "n": 30,
+      "name": "The Duct-Taper",
+      "power": "Exists solely to fix problems the platform refuses to repair."
+    },
+    {
+      "art": "hyena in hard hat directing competent beavers to dig a hole, then fill it",
+      "lore": "Creating busywork for the capable.",
+      "n": 31,
+      "name": "The Taskmaster",
+      "power": "Manages units that absolutely do not require management."
+    },
+    {
+      "art": "lion in Armani suit lounging while sparrows and mice arrange his aura",
+      "lore": "Feudal retinues in cubicle clothing.",
+      "n": 32,
+      "name": "The Flunky",
+      "power": "Exists solely to make a superior feel important."
+    },
+    {
+      "art": "two rhinos in suits glaring across a conference table, each holding identical dossiers",
+      "lore": "An arms race of useless aggression.",
+      "n": 33,
+      "name": "The Goon",
+      "power": "Exists entirely because the opponent has one too."
+    },
+    {
+      "art": "golden staircase ascending into fog, each step labeled with a corporate title",
+      "lore": "The modern firm's imitation of the apprentice, journeyman, and master.",
+      "n": 34,
+      "name": "The Ladder",
+      "power": "Translates medieval guild progression into modern seniority."
+    },
+    {
+      "art": "peacock receiving a badge from a vending machine labeled TITLE DISPENSER",
+      "lore": "You ask them who they are, and they answer what they do.",
+      "n": 35,
+      "name": "The Title & The Promotion",
+      "power": "The badge and the ceremony that bind the unit to the firm."
+    },
+    {
+      "art": "greyhound chasing itself on a treadmill, no handler in sight",
+      "lore": "The exploiter is at the same time the exploited.",
+      "n": 36,
+      "name": "The Achievement-Subject",
+      "power": "Exploits itself, removing the need for a boss."
+    },
+    {
+      "art": "smoldering pile of rubble wearing a tie, no villain in frame",
+      "lore": "You have no one to blame, because the only one pushing was you.",
+      "n": 37,
+      "name": "The Burned",
+      "power": "Triggers when the Achievement-Subject cannot stop being themselves."
+    },
+    {
+      "art": "raccoon reassembling a broken typewriter, tools spread across a wooden table",
+      "lore": "Rediscovering work that pushes back.",
+      "n": 38,
+      "name": "The Mended Thing",
+      "power": "Answers you in a way the spreadsheet never will."
+    },
+    {
+      "art": "gnarled hand holding a single dovetail joint, complete, no context around it",
+      "lore": "The whole object you can no longer build.",
+      "n": 39,
+      "name": "The Skilled Hand",
+      "power": "Remembers what to do when the mind has been trained out of it."
+    },
+    {
+      "art": "badger carving wood, clock looming behind, colleagues glancing at their phones",
+      "lore": "Cannot survive the modern firm's hatred of slowness and mastery.",
+      "n": 40,
+      "name": "The Craftsman (Sennett)",
+      "power": "Cares about doing the work well for its own sake."
+    },
+    {
+      "art": "puppy in VR headset wired to a drip labeled ONBOARDING",
+      "lore": "The apprentice no longer apprentices. The apprentice is onboarded.",
+      "n": 41,
+      "name": "The Apprentice (Onboarded)",
+      "power": "Replaces deep mentorship with a PDF manual."
+    },
+    {
+      "art": "cat sipping coffee beside a 5:01 clock, office fire behind, zero urgency",
+      "lore": "Labeled a crime by those who gave their souls for free.",
+      "n": 42,
+      "name": "Quiet Quitting",
+      "power": "Refuses to give the firm more than it pays for."
+    },
+    {
+      "art": "panda flat on floor, stock-market chart crashing behind, expression serene",
+      "lore": "Only by lying flat can humans be the measure of all things.",
+      "n": 43,
+      "name": "Lying Flat (Tang Ping)",
+      "power": "Do nothing, achieve nothing, want nothing the system wants you to want."
+    },
+    {
+      "art": "mouse painting a masterpiece at midnight, spreadsheets visible through the window",
+      "lore": "Once a hobby; now a lifeboat.",
+      "n": 44,
+      "name": "The Side Project",
+      "power": "The only place where work that matters happens at all."
+    },
+    {
+      "art": "dodo bird holding a Keynes pamphlet, surrounded by overflowing inboxes",
+      "lore": "We got the productivity. We didn't get the time.",
+      "n": 45,
+      "name": "The Fifteen-Hour Week (Keynes)",
+      "power": "A 1930s prophecy that raises productivity but deletes free time."
+    },
+    {
+      "art": "enormous eye with Slack notification badge watching a sleeping figure",
+      "lore": "The structural unit of the new workday.",
+      "n": 46,
+      "name": "The Always-On",
+      "power": "Work that does not begin, because it has not ended."
+    },
+    {
+      "art": "bear mid-bath, phone buzzing on the edge, message glow on wet fur",
+      "lore": "Someone needed to clear their queue before logging off.",
+      "n": 47,
+      "name": "The Notification",
+      "power": "Pierces time zones, the kitchen, the train, and the toilet."
+    },
+    {
+      "art": "sheep in pyjamas and jacket top on a bed-desk hybrid, presenting to a screen",
+      "lore": "A costume the office didn't know it was getting.",
+      "n": 48,
+      "name": "The Pyjama",
+      "power": "Merges the bed and the desk into a single terrifying location."
+    },
+    {
+      "art": "robot waiting patiently beside an empty desk chair, holding a clock showing infinity",
+      "lore": "Your job exists because no one has built a machine to do it yet.",
+      "n": 49,
+      "name": "The Replacement (Automation)",
+      "power": "Does not need a quarterly. Can wait forever."
+    },
+    {
+      "art": "elderly tortoise watching a 3D printer produce a perfect tortoise shell faster",
+      "lore": "Surpassed by our own products.",
+      "n": 50,
+      "name": "The Obsolete Man",
+      "power": "Induces shame at our own slowness."
+    },
+    {
+      "art": "pig on beach with umbrella drink, laptop open, clock in background",
+      "lore": "Leisure planned around work, ended by work.",
+      "n": 51,
+      "name": "The Forced Holiday",
+      "power": "A recovery period engineered to return you to work in better shape."
+    },
+    {
+      "art": "animals dancing in a clearing at dusk, no clock or building visible",
+      "lore": "The activity for which work freed you. We have very little left.",
+      "n": 52,
+      "name": "The Real Leisure (Pieper)",
+      "power": "The activity that has no purpose outside itself."
+    },
+    {
+      "art": "rabbit holding a glowing sphere of light, nothing else in the frame",
+      "lore": "The day did not have to be filled.",
+      "n": 53,
+      "name": "The Day",
+      "power": "A quantity of human time and attention."
+    },
+    {
+      "art": "vast steam engine filling the horizon, tiny figures living their lives inside it",
+      "lore": "After enough repetition, the other ways became unimaginable.",
+      "n": 54,
+      "name": "The System",
+      "power": "The answer to the day. The way things are."
+    },
+    {
+      "art": "lion waking at dawn with purpose, sunlight on fur, no alarm clock",
+      "lore": "The morning is easier when the Job and the Calling are the same.",
+      "n": 55,
+      "name": "The Calling (Marcus Aurelius)",
+      "power": "What you do because you are the kind of being you are."
+    },
+    {
+      "art": "FrizzleBob standing in open doorway, golden light outside, filing cabinets behind",
+      "lore": "The system doesn't need us to know what it is for. But we need to know.",
+      "n": 56,
+      "name": "The Rest of the Day",
+      "power": "The point of it all."
+    }
+  ],
+  "deckId": "bullshit_jobs_uncut",
+  "title": "Bullshit Jobs Uncut: A Field Report from Before the Timesheet"
+}

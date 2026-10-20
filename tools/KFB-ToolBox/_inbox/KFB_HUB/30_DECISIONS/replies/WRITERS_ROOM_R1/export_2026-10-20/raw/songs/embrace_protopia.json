@@ -1,0 +1,104 @@
+{
+  "cardCount": 56,
+  "critic": {
+    "critic": "claude-sonnet-5/blind-subagent",
+    "flags": [
+      {
+        "beat": 4,
+        "observation": "\"Nobody reads small print. That's why I put the truth there.\" exemplifies a recurring anecdote-plus-aphorism structure repeated across many beats."
+      },
+      {
+        "beat": 9,
+        "observation": "\"Your nervous system thinks that is death. It is not.\" states an abstract psychological claim flatly, without the concrete grounding used elsewhere."
+      },
+      {
+        "beat": 13,
+        "observation": "\"Last time it was me and a thermos, so this is a movement.\" references an unestablished prior event the standalone piece never otherwise supplies."
+      },
+      {
+        "beat": 14,
+        "observation": "\"A pigeon, an emu, a duck and a crow huddled over a coffee carafe\" shifts into whimsical animal imagery, tonally distinct from the grounded human narrative around it."
+      },
+      {
+        "beat": 26,
+        "observation": "\"improvement often looks like mild disobedience to a stuck system\" repeats the same anecdote-then-maxim pattern seen in multiple earlier beats, adding to a formulaic feel."
+      },
+      {
+        "beat": 35,
+        "observation": "\"Stay Fluffy, Folks!\" closes the piece with a tag line unconnected to the protopia, slat, or armchair imagery built up earlier."
+      }
+    ],
+    "questions": {
+      "individuality": {
+        "answer": "yes",
+        "observation": "The armchair conceit, \"doom, one says saved\", recurs and resolves in the outro, and concrete props like \"the bench has a loose slat\" keep the satire specific rather than generic self-help language."
+      },
+      "outro": {
+        "answer": "partly",
+        "observation": "\"Who's clapping? Stop that.\" lands as a sharp self-aware callback, but the closing \"Stay Fluffy, Folks!\" reads as a stock sign-off disconnected from the protopia and slat material built up before it."
+      },
+      "performer": {
+        "answer": "yes",
+        "observation": "A dry, self-deprecating voice carries the whole piece, shown in \"Yes, I made the flyer myself, and yes, it's ugly.\" Consistent diction and wit sustain one recognizable personality throughout."
+      },
+      "standalone": {
+        "answer": "yes",
+        "observation": "The piece defines its own central term on the spot, as in \"Some people call it protopia. I call it Saturday.\" No outside knowledge of a deck or prior song is assumed anywhere."
+      },
+      "storyBetweenCards": {
+        "answer": "yes",
+        "observation": "A weekday-by-weekday arc runs from flyers through doors, the Saturday repair, Sunday logging, to Monday's crossing stripe, giving the cards real sequence and cause-and-effect rather than a loose list."
+      },
+      "transferable": {
+        "answer": "no",
+        "observation": "Recurring concrete props such as \"the bench has a loose slat\" and \"the hinge on the hall\" anchor the piece to one specific street story, limiting how far it could move to another topic."
+      }
+    },
+    "recommendation": "READY_FOR_WS0",
+    "revision": "r4b"
+  },
+  "deckId": "embrace_protopia",
+  "deckType": "Protopian action-invitation deck",
+  "editorNote": "Pilot V-576. Dossier und Songlines im Repo: replies/SONGS_WORKSHOP_R1/embrace_protopia/",
+  "flags": [],
+  "form": "one week told in order, cards woven into her speech without labels: Wednesday flyers, Thursday doors, Saturday at the bench, Sunday notes, Monday's stripe, back to the two armchairs",
+  "gate": {
+    "cards": "24/24 Karten",
+    "chars": 3283,
+    "exit": 0,
+    "lyricsSha": "43e83cca48e6352156a942eead663d4a656eb07aad6087c845eacd27c39721d3",
+    "ranAt": "2026-10-20T21:00:00Z",
+    "report": "exit 0\nsong_gate R4.1 lyrics · embrace_protopia.r4b.suno.txt · 3283 Zeichen · 24/24 Karten · Intro 2 · Brücken 5 · Outro 2 · Performer-Einschübe 19 · R4-Zuordnung\nWARN A4: Karte 3: Kartenteil 70 Zeichen (Richtwert 80-95): 'Make the first version bad on purpose. Bad is how '\nWARN A4: Karte 1: Kartenteil 76 Zeichen (Richtwert 80-95): 'the future is a process of slow, incremental impro'\nWARN A4: Karte 2: Kartenteil 52 Zeichen (Richtwert 80-95): 'pencil means you expect to be wrong and stay anywa'\nWARN A4: Karte 17: Kartenteil 76 Zeichen (Richtwert 80-95): 'The Invitation. Turn watching into showing up. Nam'\nWARN A4: Karte 26: Kartenteil 71 Zeichen (Richtwert 80-95): 'lower the bar to contact. Most cooperation starts '\nWARN A4: Karte 27: Kartenteil 76 Zeichen (Richtwert 80-95): 'They might not respond. Your nervous system thinks'\nWARN A4: Karte 15: Kartenteil 64 Zeichen (Richtwert 80-95): 'real know-how is often badly dressed and lives thr'\nWARN A4: Karte 28: Kartenteil 55 Zeichen (Richtwert 80-95): 'Go first. Every ally was a stranger until somebody'\nWARN A4: Karte 19: Kartenteil 125 Zeichen (Richtwert 80-95): 'A pigeon, an emu, a duck and a crow huddled over a'\nWARN A4: Karte 5: Kartenteil 39 Zeichen (Richtwert 80-95): 'one broken thing close enough to touch.'\nWARN A4: Karte 6: Kartenteil 74 Zeichen (Richtwert 80-95): 'A repair you can finish this week, not a revolutio'\nWARN A4: Karte 18: Kartenteil 53 Zeichen (Richtwert 80-95): 'split a problem the way your ancestors raised a ba'\nWARN A4: Karte 9: Kartenteil 50 Zeichen (Richtwert 80-95): 'Take the one breath the feed is built to deny you.'\nWARN A4: Karte 7: Kartenteil 41 Zeichen (Richtwert 80-95): 'small fixes do not trend. They just hold.'\nWARN A4: Karte 33: Kartenteil 75 Zeichen (Richtwert 80-95): 'Write down what you actually saw, not what the hea'\nWARN A4: Karte 34: Kartenteil 72 Zeichen (Richtwert 80-95): 'Count the whole thing, including the times it work'\nWARN A4: Karte 42: Kartenteil 68 Zeichen (Richtwert 80-95): 'Run a tiny version. Low stakes, real feedback, no '\nWARN A4: Karte 43: Kartenteil 65 Zeichen (Richtwert 80-95): 'improvement often looks like mild disobedience to '\nWARN A4: Karte 46: Kartenteil 107 Zeichen (Richtwert 80-95): 'The Comfort of Maybe: trade the warm baths of hope'\nWARN A4: Karte 47: Kartenteil 66 Zeichen (Richtwert 80-95): 'there is no final version. The cost is showing up '\nWARN A4: Karte 55: Kartenteil 65 Zeichen (Richtwert 80-95): 'Nobody will clap. Start anyway. The clapping was n'\nWARN A4: Karte 56: Kartenteil 57 Zeichen (Richtwert 80-95): 'Forget the brochure. Ignore the loop. Pick up the '\nWARN A2: eigener Text (Rahmen + Performer) 48% aller Wörter (Richtwert <= 30%)\nWARN C11: Wort 'saturday' 4x im eigenen Text\nWARN C11: Wort 'nine' 3x im eigenen Text\nWARN C11: Wort 'slat' 4x im eigenen Text\nWARN C11: Wort 'bench' 3x im eigenen Text\nWARN C11: Wort 'door' 3x im eigenen Text\nREVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [3, 1, 2, 17, 26, 27, 13, 15, 28, 19, 5, 6, 18, 9, 7, 8, 33, 34, 42, 43, 46, 47, 55, 56]\nREVIEW C9: Decktitel 'Protopia Sketchbook — Deck C: EMBRACE' nur teilweise genannt: [(2, ['protopia'])] (erlaubt)\nREVIEW B6: Performer-Text in 79% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)\nPASS\nexit 0\nsong_gate R4.1 style · embrace_protopia.r4b.style.txt · Familie A afro · 2 Variante(n) · 367, 263 Zeichen\nPASS",
+    "version": "R4.1"
+  },
+  "genreTag": "education",
+  "lyrics": "[Spoken Word]\n\nWednesday, eleven at night, one staple gun, two hundred flyers. If you walked home tonight, you've seen one. Sorry about your lamppost.\n\nEvery living room on this street has two armchairs. One says doom, one says saved. Both very comfortable. The third option has no chair. Some people call it protopia. I call it Saturday.\n\nYes, I made the flyer myself, and yes, it's ugly. Make the first version bad on purpose. Bad is how you know it is real.\n\nSmall print at the bottom: the future is a process of slow, incremental improvement you participate in. Nobody reads small print. That's why I put the truth there.\n\nTime and place in pencil, because pencil means you expect to be wrong and stay anyway.\n\nAnd on top, in letters you can read from a bus: The Invitation. Turn watching into showing up. Name a time, a place, a task. Saturday, nine, the bench by the bus stop. Bring gloves.\n\nThursday I did the doors.\n\nFirst door, a prickly man. I said hi. You lower the bar to contact. Most cooperation starts embarrassingly small. He said hi back.\n\nSecond door, lights on, nothing. They might not respond. Your nervous system thinks that is death. It is not.\n\nThird door, a wrench and a terrible hat. Authority is overrated, proximity is underrated. Ask the one who actually does the thing.\n\nTurns out real know-how is often badly dressed and lives three doors down.\n\nAfter that I knocked first everywhere. Go first. Every ally was a stranger until somebody did.\n\nSaturday, nine. Four of them came. Last time it was me and a thermos, so this is a movement.\n\nA pigeon, an emu, a duck and a crow huddled over a coffee carafe: the first small, clumsy gathering. Clumsy is the entry fee.\n\nThe bench has a loose slat, so that's our one broken thing close enough to touch.\n\nNot world peace. A slat. A repair you can finish this week, not a revolution you can only announce.\n\nEight hands, one slat, and we split a problem the way your ancestors raised a barn.\n\nSomebody checks the news. Phone down. Take the one breath the feed is built to deny you.\n\nDone by ten. Nobody filmed it, because small fixes do not trend. They just hold.\n\nNext week, the hinge on the hall. One repair a week is fifty-two a year. Nobody clapped, and the place is different.\n\nSunday I wrote it all down.\n\nWrite down what you actually saw, not what the headline said you would see.\n\nCount the whole thing, including the times it worked and nobody noticed.\n\nMonday, the crossing by the school. Three years of petitions, no stripe.\n\nThere's a little white stripe there now. No idea who. Run a tiny version. Low stakes, real feedback, no permission needed.\n\nStrictly speaking, improvement often looks like mild disobedience to a stuck system.\n\nBack to the armchairs.\n\nThe Comfort of Maybe: trade the warm baths of hopeless and handled for the cold shower of it depends on us.\n\nAnd there is no final version. The cost is showing up again next week.\n\nNobody will clap. Start anyway. The clapping was never the point.\n\n[Applause]\n\nWho's clapping? Stop that. Forget the brochure. Ignore the loop. Pick up the pencil.\n\nDoom gets the subscriptions. Rescue gets the tickets. A Saturday with a loose slat earns nothing, which is how you know it's yours.\n\nSame bench, next week, nine. Bring gloves.\n\nStay Fluffy, Folks!",
+  "order": 3,
+  "origin": "pilot",
+  "performer": {
+    "cardNumber": 17,
+    "deckId": "embrace_protopia",
+    "name": "The Invitation",
+    "stance": "frazzled amateur organizer with a staple gun; talks fast, apologises a lot, keeps going anyway"
+  },
+  "rating": 9,
+  "revision": "r4b",
+  "status": "critic_ready",
+  "styleA": "Ghanaian highlife at 112 BPM: two interlocking clean electric guitars, bright trumpet and saxophone riffs, bubbling melodic bass, bell pattern, congas, shaker, light kit. One warm female alto, talking fast and a little out of breath, then landing each line with a smile; short group answers on a few phrases. Sunny live-room mix, everything audible, nothing polished.",
+  "styleB": "Cumbia at 104 BPM: accordion lead, guacharaca scraper, rubbery bass, timbales and congas, offbeat piano. One bright female voice, chatty and quick, with soft laughs between lines. Warm tape mix, room for the voice, a short accordion break before the last section.",
+  "styleDirection": "",
+  "suno": {
+    "chosenStyle": "A",
+    "excludeStyles": "",
+    "notes": "",
+    "styleInfluence": 50,
+    "vocalGender": "",
+    "weirdness": 50
+  },
+  "takes": [],
+  "title": "Protopia Sketchbook — Deck C: EMBRACE",
+  "updatedAt": "2026-10-20T21:00:00Z",
+  "updatedBy": null,
+  "viral": 9,
+  "wave": 0
+}

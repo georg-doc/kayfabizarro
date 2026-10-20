@@ -1,0 +1,597 @@
+{
+ "schema": "kfb.song.writers-room-feed/1",
+ "contentRevision": "bbbw-r4a-2026-10-20",
+ "status": "EDITORIAL_CANDIDATE_GATED",
+ "approval": {
+  "ws0": "PENDING",
+  "georgListening": "PENDING",
+  "suno": "NOT_GENERATED"
+ },
+ "deck": {
+  "deckId": "big_bad_brain_wrestling",
+  "title": "Big Bad Brain Wrestling",
+  "registry": {
+   "path": "registry/assets/v1/decks/big_bad_brain_wrestling.json",
+   "sha256": "54f986f67f1f29c3b070c08c457d67fe46bad7727141c5929982fbc053d81a0a",
+   "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3"
+  },
+  "media": {
+   "path": "media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json",
+   "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/073b79c3fb4052f7f4691976663ffc0c9449f7f3/media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json",
+   "sha256": "6e84e0c398bb57ad6feede12a3fda8b7a118ced3fa45ba04cb0bb0f6453aed1d"
+  },
+  "pdf": {
+   "path": "media/kfb/Big_Bad_Brain_Wrestling - ADD web.pdf"
+  }
+ },
+ "performer": {
+  "name": "The Jobber",
+  "deckId": "big_bad_brain_wrestling",
+  "cardNumber": 4,
+  "stance": "veteran who loses for a living; proud craftsman of defeat, tender and dry, telling the trade's secrets on a borrowed entrance theme"
+ },
+ "structure": "locker-room confession on a borrowed entrance theme: the roster, how the trick works, who decides, when it gets real, the finish, his one choice",
+ "song": {
+  "revision": "r4a",
+  "lyricsSha256": "2fcd162ced43bf79582fb4b4a2c6d71d07e1a689a68ca4ee8c75404e7ef01fc5",
+  "chars": 2969,
+  "beats": [
+   {
+    "i": 0,
+    "text": "[Spoken Word]",
+    "kind": "cue"
+   },
+   {
+    "i": 1,
+    "text": "Jobbers don't get entrance music. I borrowed somebody's tonight, so we'll be quick before he wants it back.",
+    "kind": "sung"
+   },
+   {
+    "i": 2,
+    "text": "Twenty years I've been losing on Big Bad Brain Wrestling. Clean, every night, on purpose. Nobody alive does it better.",
+    "kind": "sung"
+   },
+   {
+    "i": 3,
+    "text": "You, front row, with the sign. You paid to watch me lose. Good. Let me tell you who does it to me.",
+    "kind": "sung"
+   },
+   {
+    "i": 4,
+    "text": "The golden boy. The Babyface: high-flying moves, because audiences cheer for that. A slave to approval.",
+    "kind": "sung"
+   },
+   {
+    "i": 5,
+    "text": "His best friend backstage. The Heel: brutal, sneaky moves. If they aren't booing, you aren't doing your job.",
+    "kind": "sung"
+   },
+   {
+    "i": 6,
+    "text": "The Tweener: the audience decides to cheer for you on their own. You don't ask for it.",
+    "kind": "sung"
+   },
+   {
+    "i": 7,
+    "text": "And me. The Jobber: isolated and picked apart. You exist to make the other guy look good.",
+    "kind": "sung"
+   },
+   {
+    "i": 8,
+    "text": "When defeated, you may choose who defeats you. That is your only control.",
+    "kind": "sung"
+   },
+   {
+    "i": 9,
+    "text": "Now I'll show you how the trick works. Then I'll still make you believe it.",
+    "kind": "sung"
+   },
+   {
+    "i": 10,
+    "text": "That's where I live. The Master Seller: maintain the illusion of peril. Limp to the ring. Make them believe.",
+    "kind": "sung"
+   },
+   {
+    "i": 11,
+    "text": "Don't overdo it, kid. The Oversell Clown: reacting to an attack far beyond reality. A mockery of the sport.",
+    "kind": "sung"
+   },
+   {
+    "i": 12,
+    "text": "Hear that? The Thigh Slap: slapping the thigh when kicking. A loud sound suggests impact. An audio lie.",
+    "kind": "sung"
+   },
+   {
+    "i": 13,
+    "text": "Same family: The Stomp Punch: stomping on the mat when punching. Kinetic misdirection.",
+    "kind": "sung"
+   },
+   {
+    "i": 14,
+    "text": "Some guys get in your head before you touch.",
+    "kind": "sung"
+   },
+   {
+    "i": 15,
+    "text": "The Sacred Mask: kayfabe sacred to their identity. The biggest identifier. Never remove it.",
+    "kind": "sung"
+   },
+   {
+    "i": 16,
+    "text": "And some bring a bag. The Snake Bag: the bag has a live snake. Terrify them before the match starts.",
+    "kind": "sung"
+   },
+   {
+    "i": 17,
+    "text": "You want to know who wins? Not us. Ask upstairs.",
+    "kind": "sung"
+   },
+   {
+    "i": 18,
+    "text": "The Booker: the ending is pre-planned. You are just a puppet.",
+    "kind": "sung"
+   },
+   {
+    "i": 19,
+    "text": "In the ring we keep it quiet. The Spot Caller: calling moves in the ring. A basic outline, filled in with sweat.",
+    "kind": "sung"
+   },
+   {
+    "i": 20,
+    "text": "And we turn to the lens. The Hard Cam: if the camera didn't see it, it didn't happen.",
+    "kind": "sung"
+   },
+   {
+    "i": 21,
+    "text": "I did a whole year of this next one.",
+    "kind": "sung"
+   },
+   {
+    "i": 22,
+    "text": "The Empty Arena: taped in empty arenas, pausing for a pop that never comes. Surreal.",
+    "kind": "sung"
+   },
+   {
+    "i": 23,
+    "text": "So they fixed it. The Green Screen Crowd: a failed attempt to hide the emptiness. Audio sweetening on a lie.",
+    "kind": "sung"
+   },
+   {
+    "i": 24,
+    "text": "Then one night, nobody books it.",
+    "kind": "sung"
+   },
+   {
+    "i": 25,
+    "text": "The Real Injury: Goldberg's shoulder smashed into the ring-post. The crowd goes nuts: it's real.",
+    "kind": "sung"
+   },
+   {
+    "i": 26,
+    "text": "Which is why I never told you any of this. The Kayfabe Police: protecting the business. Keep the secrets secret, or get fired.",
+    "kind": "sung"
+   },
+   {
+    "i": 27,
+    "text": "[Bell]",
+    "kind": "cue"
+   },
+   {
+    "i": 28,
+    "text": "Here it comes. The Finisher: the Leg Drop. The most important moment. If this hits, go home.",
+    "kind": "sung"
+   },
+   {
+    "i": 29,
+    "text": "It hits. And still, The False Finish: the art of the near-fall, kicking out at two point nine nine, crowd vertical.",
+    "kind": "sung"
+   },
+   {
+    "i": 30,
+    "text": "[Crowd Cheering]",
+    "kind": "cue"
+   },
+   {
+    "i": 31,
+    "text": "Then I lie down. The Retirement Match: leaning on the fourth wall. Rising, and falling. See you next season.",
+    "kind": "sung"
+   },
+   {
+    "i": 32,
+    "text": "My pick for tonight is you, front row, sign and all. You knew the ending, and you stood up at two point nine anyway.",
+    "kind": "sung"
+   },
+   {
+    "i": 33,
+    "text": "Out there they all sell it and swear it's real. In here we tell you it's fake and give you everything. Choose your liars carefully.",
+    "kind": "sung"
+   },
+   {
+    "i": 34,
+    "text": "Stay Fluffy, Folks!",
+    "kind": "sung"
+   }
+  ]
+ },
+ "cardBeats": [
+  {
+   "cardNumber": 1,
+   "beats": [
+    4
+   ],
+   "cardText": "The Babyface: high-flying moves, because audiences cheer for that. A slave to approval.",
+   "card": {
+    "name": "The Babyface",
+    "page": 2,
+    "quadrant": 0
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 2,
+   "beats": [
+    5
+   ],
+   "cardText": "The Heel: brutal, sneaky moves. If they aren't booing, you aren't doing your job.",
+   "card": {
+    "name": "The Heel",
+    "page": 2,
+    "quadrant": 1
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 3,
+   "beats": [
+    6
+   ],
+   "cardText": "The Tweener: the audience decides to cheer for you on their own. You don't ask for it.",
+   "card": {
+    "name": "The Tweener",
+    "page": 2,
+    "quadrant": 2
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 4,
+   "beats": [
+    7,
+    8
+   ],
+   "cardText": [
+    "The Jobber: isolated and picked apart. You exist to make the other guy look good.",
+    "When defeated, you may choose who defeats you. That is your only control."
+   ],
+   "card": {
+    "name": "The Jobber",
+    "page": 2,
+    "quadrant": 3
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 9,
+   "beats": [
+    10
+   ],
+   "cardText": "The Master Seller: maintain the illusion of peril. Limp to the ring. Make them believe.",
+   "card": {
+    "name": "The Master Seller",
+    "page": 4,
+    "quadrant": 0
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 11,
+   "beats": [
+    11
+   ],
+   "cardText": "The Oversell Clown: reacting to an attack far beyond reality. A mockery of the sport.",
+   "card": {
+    "name": "The Oversell Clown",
+    "page": 4,
+    "quadrant": 2
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 13,
+   "beats": [
+    12
+   ],
+   "cardText": "The Thigh Slap: slapping the thigh when kicking. A loud sound suggests impact. An audio lie.",
+   "card": {
+    "name": "The Thigh Slap",
+    "page": 5,
+    "quadrant": 0
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 14,
+   "beats": [
+    13
+   ],
+   "cardText": "The Stomp Punch: stomping on the mat when punching. Kinetic misdirection.",
+   "card": {
+    "name": "The Stomp Punch",
+    "page": 5,
+    "quadrant": 1
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 17,
+   "beats": [
+    15
+   ],
+   "cardText": "The Sacred Mask: kayfabe sacred to their identity. The biggest identifier. Never remove it.",
+   "card": {
+    "name": "The Sacred Mask",
+    "page": 6,
+    "quadrant": 0
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 22,
+   "beats": [
+    16
+   ],
+   "cardText": "The Snake Bag: the bag has a live snake. Terrify them before the match starts.",
+   "card": {
+    "name": "The Snake Bag",
+    "page": 7,
+    "quadrant": 1
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 45,
+   "beats": [
+    18
+   ],
+   "cardText": "The Booker: the ending is pre-planned. You are just a puppet.",
+   "card": {
+    "name": "The Booker",
+    "page": 13,
+    "quadrant": 0
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 46,
+   "beats": [
+    19
+   ],
+   "cardText": "The Spot Caller: calling moves in the ring. A basic outline, filled in with sweat.",
+   "card": {
+    "name": "The Spot Caller",
+    "page": 13,
+    "quadrant": 1
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 49,
+   "beats": [
+    20
+   ],
+   "cardText": "The Hard Cam: if the camera didn't see it, it didn't happen.",
+   "card": {
+    "name": "The Hard Cam",
+    "page": 14,
+    "quadrant": 0
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 30,
+   "beats": [
+    22
+   ],
+   "cardText": "The Empty Arena: taped in empty arenas, pausing for a pop that never comes. Surreal.",
+   "card": {
+    "name": "The Empty Arena",
+    "page": 9,
+    "quadrant": 1
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 31,
+   "beats": [
+    23
+   ],
+   "cardText": "The Green Screen Crowd: a failed attempt to hide the emptiness. Audio sweetening on a lie.",
+   "card": {
+    "name": "The Green Screen Crowd",
+    "page": 9,
+    "quadrant": 2
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 35,
+   "beats": [
+    25
+   ],
+   "cardText": "The Real Injury: Goldberg's shoulder smashed into the ring-post. The crowd goes nuts: it's real.",
+   "card": {
+    "name": "The Real Injury",
+    "page": 10,
+    "quadrant": 2
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 55,
+   "beats": [
+    26
+   ],
+   "cardText": "The Kayfabe Police: protecting the business. Keep the secrets secret, or get fired.",
+   "card": {
+    "name": "The Kayfabe Police",
+    "page": 15,
+    "quadrant": 2
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 41,
+   "beats": [
+    28
+   ],
+   "cardText": "The Finisher: the Leg Drop. The most important moment. If this hits, go home.",
+   "card": {
+    "name": "The Finisher",
+    "page": 12,
+    "quadrant": 0
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 42,
+   "beats": [
+    29
+   ],
+   "cardText": "The False Finish: the art of the near-fall, kicking out at two point nine nine, crowd vertical.",
+   "card": {
+    "name": "The False Finish",
+    "page": 12,
+    "quadrant": 1
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  },
+  {
+   "cardNumber": 56,
+   "beats": [
+    31
+   ],
+   "cardText": "The Retirement Match: leaning on the fourth wall. Rising, and falling. See you next season.",
+   "card": {
+    "name": "The Retirement Match",
+    "page": 15,
+    "quadrant": 3
+   },
+   "visual": {
+    "source": "original PDF page/quadrant from registry",
+    "crop": "PENDING",
+    "visualVerified": false
+   }
+  }
+ ],
+ "cues": [
+  {
+   "afterBeat": 2,
+   "cue": "borrowed entrance theme cuts out early"
+  },
+  {
+   "afterBeat": 28,
+   "cue": "three slaps of the mat, then the band hits"
+  }
+ ],
+ "styles": {
+  "A": "Glam rock stomp at 118 BPM: pounding floor toms and handclaps on two and four, fuzzed power chords, honky-tonk piano, booming bass, a short gang shout on the big hits. One weathered male tenor speak-singing close to the mic, tired and warm, cracking upward on the peaks. Roomy reverb on the drums, saturated tape, dry intimate vocal on top.",
+  "B": "Boom-bap hip-hop at 100 BPM: dusty swung drums, a looped vinyl brass sample, upright bass, scratched stabs, sparse Rhodes chords. One gravelly male voice, conversational and late on the beat, half laughing at himself. Lo-fidelity drum bus, crisp vocal, long drop-outs before the last lines."
+ },
+ "suno": {
+  "chosenStyle": "A",
+  "excludeStyles": "",
+  "notes": "",
+  "styleInfluence": 50,
+  "vocalGender": "",
+  "weirdness": 50
+ },
+ "takes": [],
+ "receipts": {
+  "gate": "replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r4a.gate.txt",
+  "critic": "replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r4a.critic.json",
+  "songlines": "replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r4a.songlines.json",
+  "dossier": "replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r4a.dossier.md"
+ },
+ "audio": {
+  "clips": [],
+  "stems": "FUTURE_NOT_AVAILABLE",
+  "timestamps": "NONE – nur aus echtem Suno-Audio/Stems"
+ },
+ "consumerRule": "Default-Consumer liest nur ACCEPTED; dieser Feed ist Kandidat/Preview (wie kfb.voice.card-performance-packet/1)."
+}

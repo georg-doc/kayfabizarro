@@ -126,3 +126,20 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
 - keine offizielle API und kein offizieller MCP; die Nutzungsbedingungen verbieten automatisierten Zugriff;
 - inoffizielle Wrapper würden das Konto gefährden;
 - also von Hand. Limits: Lyrics 5.000, Style 1.000, Titel 100 Zeichen. Stems erst im Premier-Plan.
+
+## §5 · 20.10.2026 · Writers' Room: Export und Integrationsvorbereitung (WSA-Vorschlag)
+**Paket:** `replies/WRITERS_ROOM_R1/`, siehe `RETURN.md` und `WRITERS_ROOM_INTEGRATION_PLAN_R1.md`.
+
+**Phase A:**
+- Export aller 153 Dokumente, Manifest 155/155;
+- Karten 60/60 MATCH gegen die Registry;
+- Klassen: 3 Kandidaten mit Gate, 13 Altbestand R3, 44 Planungsplätze.
+
+**Phase B (erster Abgleich):**
+- 5 Decks mit Parallelmaterial in #379, als offen markiert;
+- kein Audio im Repo;
+- Wiederverwendung aus KFB Audio #365 festgelegt: Lesepfad über die Contents API, Writeback mit `expectedBlob`, Default nur ACCEPTED.
+
+**Pilot:** BBBW-Feed `kfb.song.writers-room-feed/1`.
+
+**Nächster Gate:** `WS0_WRITERS_ROOM_EXPORT_ACK_R1`, danach Push nur mit Georgs Bestätigung.

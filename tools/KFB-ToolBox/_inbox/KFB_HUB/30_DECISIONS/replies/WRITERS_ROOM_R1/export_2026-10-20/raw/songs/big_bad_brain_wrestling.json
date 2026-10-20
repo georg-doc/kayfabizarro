@@ -1,0 +1,104 @@
+{
+  "cardCount": 56,
+  "critic": {
+    "critic": "claude-sonnet-5/blind-subagent",
+    "flags": [
+      {
+        "beat": 4,
+        "observation": "First instance of the recurring pattern: \"The Babyface: high-flying moves, because audiences cheer for that.\" sets a template repeated almost unchanged through many later beats."
+      },
+      {
+        "beat": 15,
+        "observation": "\"Never remove it.\" ends the card as a blunt command, a sharper and shorter stinger than the explanatory cadence used in neighboring beats."
+      },
+      {
+        "beat": 25,
+        "observation": "\"Goldberg's shoulder smashed into the ring-post.\" is the only beat naming a real, identifiable person, breaking from the otherwise generic archetype names."
+      },
+      {
+        "beat": 29,
+        "observation": "\"kicking out at two point nine nine, crowd vertical\" packs a numeric detail and a fragment into one dense line, denser than the surrounding cards."
+      },
+      {
+        "beat": 32,
+        "observation": "\"You knew the ending, and you stood up at two point nine anyway.\" calls back to beat 29's near-fall count, tying the audience address to an earlier card."
+      },
+      {
+        "beat": 34,
+        "observation": "\"Stay Fluffy, Folks!\" lands with no earlier occurrence of \"Fluffy\" anywhere in this text, so it reads as an outside tag rather than an earned payoff."
+      }
+    ],
+    "questions": {
+      "individuality": {
+        "answer": "partly",
+        "observation": "Concrete details like the empty arena years and the real injury are specific to wrestling, but nearly every beat repeats the identical named-role-plus-one-line-definition shape, which flattens variety across the piece."
+      },
+      "outro": {
+        "answer": "partly",
+        "observation": "The line about choosing liars carefully closes the theme well, but the final sign-off reads as a stock tag with no earlier occurrence of that word anywhere else in the text."
+      },
+      "performer": {
+        "answer": "yes",
+        "observation": "The Jobber persona is consistent and wry, self-deprecating about borrowed entrance music and twenty years of losing, and speaks directly to the front-row listener throughout."
+      },
+      "standalone": {
+        "answer": "yes",
+        "observation": "Every named role carries its own one-line definition inline, including kayfabe itself, so a listener with no wrestling background can follow the whole piece without outside knowledge."
+      },
+      "storyBetweenCards": {
+        "answer": "yes",
+        "observation": "The cards build a real night: roles, then selling tricks, then booking and camera tricks, then a real injury, the bell, the finish, and a retirement beat addressed to one audience member."
+      },
+      "transferable": {
+        "answer": "no",
+        "observation": "The named items (Babyface, Heel, Jobber, Leg Drop, Goldberg) are wrestling-specific terms that anchor the whole structure to this one subject."
+      }
+    },
+    "recommendation": "READY_FOR_WS0",
+    "revision": "r4a"
+  },
+  "deckId": "big_bad_brain_wrestling",
+  "deckType": "Wrestling psychology satire",
+  "editorNote": "Pilot V-576. Dossier und Songlines im Repo: replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/",
+  "flags": [],
+  "form": "locker-room confession on a borrowed entrance theme: the roster, how the trick works, who decides, when it gets real, the finish, his one choice",
+  "gate": {
+    "cards": "20/20 Karten",
+    "chars": 2969,
+    "exit": 0,
+    "lyricsSha": "2fcd162ced43bf79582fb4b4a2c6d71d07e1a689a68ca4ee8c75404e7ef01fc5",
+    "ranAt": "2026-10-20T21:00:00Z",
+    "report": "exit 0\nsong_gate R4.1 lyrics · big_bad_brain_wrestling.r4a.suno.txt · 2969 Zeichen · 20/20 Karten · Intro 3 · Brücken 5 · Outro 2 · Performer-Einschübe 15 · R4-Zuordnung\nWARN A4: Karte 4: Kartenteil 73 Zeichen (Richtwert 80-95): 'When defeated, you may choose who defeats you. Tha'\nWARN A4: Karte 14: Kartenteil 73 Zeichen (Richtwert 80-95): 'The Stomp Punch: stomping on the mat when punching'\nWARN A4: Karte 22: Kartenteil 78 Zeichen (Richtwert 80-95): 'The Snake Bag: the bag has a live snake. Terrify t'\nWARN A4: Karte 45: Kartenteil 61 Zeichen (Richtwert 80-95): 'The Booker: the ending is pre-planned. You are jus'\nWARN A4: Karte 49: Kartenteil 60 Zeichen (Richtwert 80-95): \"The Hard Cam: if the camera didn't see it, it didn\"\nWARN A4: Karte 35: Kartenteil 96 Zeichen (Richtwert 80-95): \"The Real Injury: Goldberg's shoulder smashed into \"\nWARN A4: Karte 41: Kartenteil 77 Zeichen (Richtwert 80-95): 'The Finisher: the Leg Drop. The most important mom'\nWARN A2: eigener Text (Rahmen + Performer) 42% aller Wörter (Richtwert <= 30%)\nREVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [1, 2, 3, 4, 9, 11, 13, 14, 17, 22, 45, 46, 49, 30, 31, 35, 55, 41, 42, 56]\nREVIEW C9: introType 'confession' schon in the_kayfabe_money_trail_9_11.part2.r4.6.songlines.json\nREVIEW C9: introType 'confession' schon in the_kayfabe_money_trail_9_11.part1.r4.6.songlines.json\nREVIEW B6: Performer-Text in 71% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)\nPASS\nexit 0\nsong_gate R4.1 style · big_bad_brain_wrestling.r4a.style.txt · Familie A rock · 2 Variante(n) · 340, 290 Zeichen\nPASS",
+    "version": "R4.1"
+  },
+  "genreTag": "comedy",
+  "lyrics": "[Spoken Word]\n\nJobbers don't get entrance music. I borrowed somebody's tonight, so we'll be quick before he wants it back.\n\nTwenty years I've been losing on Big Bad Brain Wrestling. Clean, every night, on purpose. Nobody alive does it better.\n\nYou, front row, with the sign. You paid to watch me lose. Good. Let me tell you who does it to me.\n\nThe golden boy. The Babyface: high-flying moves, because audiences cheer for that. A slave to approval.\n\nHis best friend backstage. The Heel: brutal, sneaky moves. If they aren't booing, you aren't doing your job.\n\nThe Tweener: the audience decides to cheer for you on their own. You don't ask for it.\n\nAnd me. The Jobber: isolated and picked apart. You exist to make the other guy look good.\n\nWhen defeated, you may choose who defeats you. That is your only control.\n\nNow I'll show you how the trick works. Then I'll still make you believe it.\n\nThat's where I live. The Master Seller: maintain the illusion of peril. Limp to the ring. Make them believe.\n\nDon't overdo it, kid. The Oversell Clown: reacting to an attack far beyond reality. A mockery of the sport.\n\nHear that? The Thigh Slap: slapping the thigh when kicking. A loud sound suggests impact. An audio lie.\n\nSame family: The Stomp Punch: stomping on the mat when punching. Kinetic misdirection.\n\nSome guys get in your head before you touch.\n\nThe Sacred Mask: kayfabe sacred to their identity. The biggest identifier. Never remove it.\n\nAnd some bring a bag. The Snake Bag: the bag has a live snake. Terrify them before the match starts.\n\nYou want to know who wins? Not us. Ask upstairs.\n\nThe Booker: the ending is pre-planned. You are just a puppet.\n\nIn the ring we keep it quiet. The Spot Caller: calling moves in the ring. A basic outline, filled in with sweat.\n\nAnd we turn to the lens. The Hard Cam: if the camera didn't see it, it didn't happen.\n\nI did a whole year of this next one.\n\nThe Empty Arena: taped in empty arenas, pausing for a pop that never comes. Surreal.\n\nSo they fixed it. The Green Screen Crowd: a failed attempt to hide the emptiness. Audio sweetening on a lie.\n\nThen one night, nobody books it.\n\nThe Real Injury: Goldberg's shoulder smashed into the ring-post. The crowd goes nuts: it's real.\n\nWhich is why I never told you any of this. The Kayfabe Police: protecting the business. Keep the secrets secret, or get fired.\n\n[Bell]\n\nHere it comes. The Finisher: the Leg Drop. The most important moment. If this hits, go home.\n\nIt hits. And still, The False Finish: the art of the near-fall, kicking out at two point nine nine, crowd vertical.\n\n[Crowd Cheering]\n\nThen I lie down. The Retirement Match: leaning on the fourth wall. Rising, and falling. See you next season.\n\nMy pick for tonight is you, front row, sign and all. You knew the ending, and you stood up at two point nine anyway.\n\nOut there they all sell it and swear it's real. In here we tell you it's fake and give you everything. Choose your liars carefully.\n\nStay Fluffy, Folks!",
+  "order": 2,
+  "origin": "pilot",
+  "performer": {
+    "cardNumber": 4,
+    "deckId": "big_bad_brain_wrestling",
+    "name": "The Jobber",
+    "stance": "veteran who loses for a living; proud craftsman of defeat, tender and dry, telling the trade's secrets on a borrowed entrance theme"
+  },
+  "rating": 9,
+  "revision": "r4a",
+  "status": "critic_ready",
+  "styleA": "Glam rock stomp at 118 BPM: pounding floor toms and handclaps on two and four, fuzzed power chords, honky-tonk piano, booming bass, a short gang shout on the big hits. One weathered male tenor speak-singing close to the mic, tired and warm, cracking upward on the peaks. Roomy reverb on the drums, saturated tape, dry intimate vocal on top.",
+  "styleB": "Boom-bap hip-hop at 100 BPM: dusty swung drums, a looped vinyl brass sample, upright bass, scratched stabs, sparse Rhodes chords. One gravelly male voice, conversational and late on the beat, half laughing at himself. Lo-fidelity drum bus, crisp vocal, long drop-outs before the last lines.",
+  "styleDirection": "",
+  "suno": {
+    "chosenStyle": "A",
+    "excludeStyles": "",
+    "notes": "",
+    "styleInfluence": 50,
+    "vocalGender": "",
+    "weirdness": 50
+  },
+  "takes": [],
+  "title": "Big Bad Brain Wrestling",
+  "updatedAt": "2026-10-20T21:00:00Z",
+  "updatedBy": null,
+  "viral": 9,
+  "wave": 0
+}
