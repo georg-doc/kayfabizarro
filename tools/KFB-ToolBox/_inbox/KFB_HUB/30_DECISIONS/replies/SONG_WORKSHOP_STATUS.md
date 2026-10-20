@@ -472,3 +472,20 @@ Das Gate lässt das durch, weil es solche Muster nicht als Slop kennt.
 **Hinweis an WS0:** Diese Form trägt 39–50 % Eigentext; der Richtwert ≤ 30 % (A2 WARN) passt dazu nicht.
 
 **Nächster Schritt:** Georgs Urteil zu Metropolis und Protopia r7a, danach die 10 neuen Signatur-Songs.
+
+## §21 · 21.10.2026 · Mini-Brücken aus 1–3 Wörtern (r8a, alle drei Piloten)
+**Georg zu Metropolis/Protopia r7a:** „viel zu viel eigene Bastelei … ein, zwei, drei Worte, je weniger desto besser“.
+
+**r8a (alle Gate PASS):**
+
+| Deck | Zeichen | Karten | Eigentext |
+|---|---:|---:|---:|
+| BBBW | 1439 | 17 | 25 % |
+| Metropolis | 2335 | 19 | 16 % |
+| Protopia | 2539 | 19 | 15 % |
+
+- Die Geschichten aus r7 bleiben als Kette erhalten; erzählt werden sie nur noch über Mini-Brücken: „Sister yawns:“, „Fish tank!“, „Badger unplugged:“, „One splinter:“, „Dog panics:“, „Twin's consultant:“, „Bell. Silence.“
+- Beat 1 = Titel + These, danach eine Bewohner-Zeile mit 2–6 Wörtern. Das Outro ist ein kurzer Rückruf.
+- Writers' Room: v9, Lesson l14; die r7-Fassungen liegen unter `versions`.
+
+**Nächster Schritt:** Georgs Urteil, danach die 10 neuen Signatur-Songs in r8-Form.

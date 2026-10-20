@@ -1,0 +1,145 @@
+{
+ "deckId": "big_bad_brain_wrestling",
+ "revision": "r8a",
+ "performers": [
+  {
+   "model": "ActionFigure",
+   "asset": "KayKit_Mystery_Series6/6 - December 2023 - Action Figure · Köpfe B/C/D",
+   "role": "Wrestling-Actionfigur mit austauschbaren Köpfen = Gimmicks"
+  }
+ ],
+ "residentHome": "Spielzeugkiste als Ring, Pappschilder an den Seilen",
+ "structure": "cartoon causality through card order + mini-bridges of 1-3 words (Georg 21.10.: the fewer the better); beat 1 title + thesis, one short resident line, outro a short callback",
+ "introType": "found_object",
+ "synopsis": "A spoken-word number from a card deck about the psychology of professional wrestling. It is performed by a toy wrestling figure inside its toy box, for whoever happens to be there.",
+ "bestOfReason": [
+  "1-4: the heads as gimmicks, the sister as crowd, the jobber is his own head.",
+  "9, 13, 14, 11: learning to sell, noise, mom's ban, the sister oversells.",
+  "45: the kid as booker.",
+  "30, 31, 53: empty house, the dog as crowd track, the cousin as smark.",
+  "35, 55: the dog's real bite and the family's silence.",
+  "41, 42, 56: finish, near-fall, replaced at Christmas."
+ ],
+ "omitted": {
+  "5-8": "big-body archetypes repeat the roster joke",
+  "10": "overlaps 43-style dominance",
+  "12": "too technical",
+  "15-16": "repeat the sound lie of 13",
+  "18-21": "brutality catalogue",
+  "23-29": "cut for length; 29 overlaps the tweener",
+  "32-34": "plant, shooter, sandbag cut so 35 carries 'real'",
+  "36-40": "cut for length",
+  "43-44": "endings not used",
+  "47-48": "overlap 46",
+  "50-54": "cut for length"
+ },
+ "orderReason": "Deck order kept except: the oversell clown 11 comes after the stomp punch as the overdone counterexample; the jobber's power returns as the final card beat.",
+ "songLineChanges": [
+  {
+   "cardNumber": 42,
+   "rule": "A7",
+   "songLine": "kicking out at two point nine nine, crowd vertical",
+   "reason": "2.99 from the card image written out"
+  }
+ ],
+ "cues": [
+  {
+   "afterBeat": 1,
+   "cue": "toy box lid creaks"
+  },
+  {
+   "afterBeat": 4,
+   "cue": "plastic click at every head swap"
+  }
+ ],
+ "beats": [
+  "Big Bad Brain Wrestling: every move a lie, every bruise for real.",
+  "Birthday present. Four heads.",
+  {
+   "card": 1,
+   "text": "The Babyface, high-flying moves; audiences cheer, a slave to approval.",
+   "pre": "Click:"
+  },
+  {
+   "card": 2,
+   "text": "The Heel, eye pokes; if they aren't booing, you aren't doing your job.",
+   "pre": "Sister yawns:"
+  },
+  {
+   "card": 3,
+   "text": "The Tweener, you don't ask for it, so they want you more.",
+   "pre": "Now she cheers:"
+  },
+  {
+   "card": 4,
+   "text": "The Jobber, isolated and picked apart; you exist to make the other guy look good.",
+   "pre": "Somebody loses:"
+  },
+  {
+   "card": 9,
+   "text": "The Master Seller, reel back, limp to the ring, make them believe.",
+   "pre": "So, fake it:"
+  },
+  {
+   "card": 13,
+   "text": "The Thigh Slap, a loud sound suggests high impact; an audio lie.",
+   "pre": "Needs noise:"
+  },
+  {
+   "card": 14,
+   "text": "The Stomp Punch, kinetic misdirection.",
+   "pre": "Mom says no:"
+  },
+  {
+   "card": 11,
+   "text": "The Oversell Clown, flying backwards from a gentle tap.",
+   "pre": "Fish tank!"
+  },
+  {
+   "card": 45,
+   "text": "The Booker, spider in suit; the ending is pre-planned, you are just a puppet.",
+   "pre": "Cereal box script:"
+  },
+  {
+   "card": 30,
+   "text": "The Empty Arena, pausing for a pop that never comes.",
+   "pre": "Class invited:"
+  },
+  {
+   "card": 31,
+   "text": "The Green Screen Crowd, audio sweetening on a lie.",
+   "pre": "Dog on tape:"
+  },
+  {
+   "card": 53,
+   "text": "The Internet Smark, psychology without ever taking a bump.",
+   "pre": "Cousin, online:"
+  },
+  {
+   "card": 35,
+   "text": "The Real Injury, unplanned; the crowd goes nuts because it's real.",
+   "pre": "Real bite:"
+  },
+  {
+   "card": 55,
+   "text": "The Kayfabe Police, keep the secrets secret, or get fired.",
+   "pre": "Shh, Mom:"
+  },
+  {
+   "card": 41,
+   "text": "The Finisher, the Leg Drop; if this hits, go home.",
+   "pre": "One arm left:"
+  },
+  {
+   "card": 42,
+   "text": "The False Finish, the art of the near-fall.",
+   "pre": "Slow count:"
+  },
+  {
+   "card": 56,
+   "text": "The Retirement Match, rising, and falling; see you next season.",
+   "pre": "Christmas:"
+  },
+  "Drawer. Four heads, one arm."
+ ]
+}

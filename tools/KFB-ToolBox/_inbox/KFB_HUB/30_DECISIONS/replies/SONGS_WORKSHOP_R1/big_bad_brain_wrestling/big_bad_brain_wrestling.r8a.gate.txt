@@ -1,0 +1,42 @@
+# Gate-Bericht big_bad_brain_wrestling.r8a · 2026-10-20
+gate song_gate.py sha256 0128b003c53a9e58df9995963d957ec31568953790d5b9f44740d643e1213370
+deck pin registry/assets/v1/decks/big_bad_brain_wrestling.json sha256 54f986f67f1f29c3b070c08c457d67fe46bad7727141c5929982fbc053d81a0a
+media pin media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json sha256 6e84e0c398bb57ad6feede12a3fda8b7a118ced3fa45ba04cb0bb0f6453aed1d
+lyrics sha256 99d7452c287566c913b186c4c1d877c0af9886425ca035e126a2c9b5662c5085 · 1439 Zeichen (Unicode len)
+style sha256 14e2f967979d3de2cdcbdad4e7aaaa95925829df7994ea92f638a184b62a973d
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r8a.suno.txt --deck registry/assets/v1/decks/big_bad_brain_wrestling.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r8a.songlines.json --media media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_BESTOF_R1
+exit 0
+song_gate R4.2 lyrics · big_bad_brain_wrestling.r8a.suno.txt · 1439 Zeichen · 17/17 Karten · Intro 2 · Brücken 0 · Outro 1 · Performer-Einschübe 17 · R4-Zuordnung
+lyrics sha256 99d7452c287566c913b186c4c1d877c0af9886425ca035e126a2c9b5662c5085
+WARN A4: Karte 1: Kartenteil 70 Zeichen (Richtwert 80-95): 'The Babyface, high-flying moves; audiences cheer, '
+WARN A4: Karte 2: Kartenteil 70 Zeichen (Richtwert 80-95): "The Heel, eye pokes; if they aren't booing, you ar"
+WARN A4: Karte 3: Kartenteil 57 Zeichen (Richtwert 80-95): "The Tweener, you don't ask for it, so they want yo"
+WARN A4: Karte 9: Kartenteil 66 Zeichen (Richtwert 80-95): 'The Master Seller, reel back, limp to the ring, ma'
+WARN A4: Karte 13: Kartenteil 64 Zeichen (Richtwert 80-95): 'The Thigh Slap, a loud sound suggests high impact;'
+WARN A4: Karte 14: Kartenteil 38 Zeichen (Richtwert 80-95): 'The Stomp Punch, kinetic misdirection.'
+WARN A4: Karte 11: Kartenteil 55 Zeichen (Richtwert 80-95): 'The Oversell Clown, flying backwards from a gentle'
+WARN A4: Karte 45: Kartenteil 77 Zeichen (Richtwert 80-95): 'The Booker, spider in suit; the ending is pre-plan'
+WARN A4: Karte 30: Kartenteil 52 Zeichen (Richtwert 80-95): 'The Empty Arena, pausing for a pop that never come'
+WARN A4: Karte 31: Kartenteil 50 Zeichen (Richtwert 80-95): 'The Green Screen Crowd, audio sweetening on a lie.'
+WARN A4: Karte 53: Kartenteil 58 Zeichen (Richtwert 80-95): 'The Internet Smark, psychology without ever taking'
+WARN A4: Karte 35: Kartenteil 66 Zeichen (Richtwert 80-95): 'The Real Injury, unplanned; the crowd goes nuts be'
+WARN A4: Karte 55: Kartenteil 58 Zeichen (Richtwert 80-95): 'The Kayfabe Police, keep the secrets secret, or ge'
+WARN A4: Karte 41: Kartenteil 50 Zeichen (Richtwert 80-95): 'The Finisher, the Leg Drop; if this hits, go home.'
+WARN A4: Karte 42: Kartenteil 43 Zeichen (Richtwert 80-95): 'The False Finish, the art of the near-fall.'
+WARN A4: Karte 56: Kartenteil 63 Zeichen (Richtwert 80-95): 'The Retirement Match, rising, and falling; see you'
+REVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [1, 2, 3, 4, 9, 13, 14, 11, 45, 30, 31, 53, 35, 55, 41, 42, 56]
+REVIEW B6: Performer-Text in 100% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)
+INFO S2: deck gepinnt 54f986f67f1f
+INFO S2: media gepinnt 6e84e0c398bb
+INFO C9B: Bewohner verifiziert: ActionFigure (KayKit_Mystery_Series6/6 - December 2023 - Action Figure · Köpfe B/C/D)
+INFO C9: Decktitel-Wörter in Beat [1]
+INFO A2: eigener Text (Rahmen + Performer) 25% aller Wörter (Richtwert <= 30%)
+INFO E16b: kein Ton-Eintrag für dieses Deck; Deck-Hinweise in SONG_SPEC E16b prüfen
+PASS
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r8a.style.txt --deck registry/assets/v1/decks/big_bad_brain_wrestling.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r8a.songlines.json
+exit 0
+song_gate R4.2 style · big_bad_brain_wrestling.r8a.style.txt · Familie A rock · 2 Variante(n) · 357, 298 Zeichen
+PASS
+
