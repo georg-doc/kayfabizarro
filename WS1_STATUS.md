@@ -3,6 +3,35 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 105 · 20.10. · Flächengrammatik R1 · Prüfansichten in der Probe · Vergleich A/B/C/D
+
+**Georg:** „wird schon besser :)“. Dazu kam externes Feedback aus seinem Perplexity-Chat zur Flächengrammatik. WS1 hat es mit den eigenen Befunden zusammengeführt:
+- **`CANON_3D/sources/WS1_FLAECHENGRAMMATIK_R1.md`** (Register `98e2ac5a`): Invarianten FG-1 bis FG-11. Die wichtigsten:
+  - Makro/Meso/Mikro getrennt steuern;
+  - Übergang als eigenes Band mit Gegeninseln;
+  - Sprenkel nur mit Ursache und in Nestern;
+  - Variation innerhalb eines Materials schwächer als der Wechsel zwischen Materialien;
+  - Ufer ohne Halo;
+  - kein Licht in die Albedo;
+  - Abnahme-SOP mit vier Ansichten plus Vergleich A/B/C/D.
+- Bitte WS0 um Prüfung und Übernahme in `CANON_3D_R1` (Bereich Farbflächen/Material). FG-10 schlägt WS1 als feste Abnahme-SOP für jedes Terrain vor.
+
+**Gelände-Probe** (`ws1/preview@ec3595e8`, https://ws1-preview.kayfabizarro.pages.dev/gelaende-probe):
+- **Neu: Auswahl „Flächen-Stufe“** mit B (nur große Flächen), C (+ Übergänge: Gegeninseln, Meso-Tonvariation, trockene Flecken nur auf Kuppen) und C+D (+ Sprenkel nur an Grenzen).
+- **Neu: Auswahl „Prüfansicht“** mit Endbild, nur Grundfarbe, graue Form und Material-Masken.
+- **Ufer** mit schmaler dunklerer Kontaktkante; feuchte Abschnitte nur stellenweise; kein heller Saum mehr.
+- **Felsgruppen** als Knet-Blöcke statt Low-Poly.
+- **Befund aus der Prüfansicht:** Die scharfkantigen dunklen Keile, die das externe Feedback bemängelt, kamen von den farbigen Gratkanten (Krümmungsschwelle auf Dreiecken). Sie sind jetzt weicher und standardmäßig aus, bis eine Linien-Lösung nach R11 steht.
+- **Vordergrund-Tonmasse** abgeschwächt (ca. 15–20 L\*). In der freien Übersicht bleibt sie ein Fleck; ihr Platz ist bei festen Kameras (R10).
+- Gespeicherte Einstellungen wurden zurückgesetzt (neuer Speicher-Schlüssel), damit die neuen Vorgaben greifen.
+
+**Weiter offen:**
+- (a) Abgleich mit Georgs Datei „cartoon animation.md“ → `WS1_R12_…`;
+- (b) Übertragung ins Spiel `look=terrain2` mit A/B-Bildern;
+- (c) G6-Schattensaum-Messung;
+- (d) Linien-Lösung für Kantenakzente;
+- (e) Formenalphabet für Sprenkel.
+
 ## 104 · 20.10. · Georgs Look-Feedback umgesetzt (Farbflächen, Berge, Schattensaum) · Recherche liegt in `CANON_3D/sources/` · „Banden“: Georg weiß es nicht
 
 **Abstimmung (Georg: „alle Regeln und Updates an WS0 bei GitHub – stimmt euch ab“):**
