@@ -239,3 +239,12 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
 2. Dann dieselbe Prüfung für Brain Wrestling r5a und Protopia r5b (Tierbeschreibungen aus Kartenbildern, Spruch-Schlüsse).
 3. Gate um Aphorismus-Schluss-, Parolen- und „denkende Objekte“-Muster erweitern.
 4. Zweitkritik aus anderer Modellfamilie (ChatGPT) einführen.
+
+**§9 Nachtrag (Georg):**
+- Das Outro braucht keinen Adressaten.
+- Es soll ein satirisches KFB-Bild von Gesellschaft, Ideologie oder Torheit zeichnen, zum Nachdenken bringen, musikalisch gefällig bis schräg sein und neugierig aufs Spielen mit Freunden machen (Writers' Room r33).
+
+**Metropolis r5b, neues Outro:**
+- eine ganze Stadt von Piloten an unverbundenen Joysticks, „Rush hour looks exactly the same“;
+- dann: zweiunddreißig Abteilungen in einem Deck, mit Freunden ausschneiden und herausfinden, wer bei euch die Stadt regiert.
+- Gate PASS (3148 Zeichen).
