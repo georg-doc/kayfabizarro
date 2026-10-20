@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (20.10.) · Friedhof-Übergang final: kfb_edge (V-578)
+- **Ersetzt** die Band-Vorschläge r1–r3. Gilt ab jetzt: `50_BLENDER/K6/out/KFB_Graveyard_edge_free.k6r4.glb` (Weltlage) und `graveyard_edge_k6r4.json`. Darin stehen die ersetzten Slots und die Feld-Parameter.
+- **Feld-Parameter für dich:** EdgeField mit `earth()` und `ground_level()` als Vorgabe für Gelände-Aufwölbung und Blend-Shader.
+- **Werkzeug:** `CANON_3D/lib/kfb_edge_bpy.py` + `kfb_edge_params.json`, Kanon Gebiet 4. Für die Laufzeit bitte ein Gegenstück mit denselben Parametern bauen, für Wege und Kachelfelder im Spiel.
+
+
 # NEU OBEN (20.10.) · Friedhof-Einpassung: Teile und Übergangsband von WSB liegen bereit
 - **Teile:** `50_BLENDER/K6/out/` (45 GLB, Knete + Rolle + Asset-Pass). Set-Liste `graveyard_set_k6.json` mit 176 Slots, 1:1 aus dem RA-Export `65_SCENELETS/graveyard/ra_layout_export.json`.
 - **Georg:** Die Kacheln bleiben; nötig ist ein glaubwürdiger Übergang zum Terrain. Das Konzeptblatt hat dazu eine Korrektur.

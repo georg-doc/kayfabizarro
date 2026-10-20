@@ -7,6 +7,8 @@ Bezug:
 - Environment-Bauweise „Wie liegt was in der Landschaft“;
 - `src/clay/kfb-blend.ts`.
 
+**Nachtrag 20.10. (V-578, Georg):** Das freie Ende durch Verfall gilt jetzt als Pfadstein-Auflösung (heiler Rest bis zur geschwungenen Isolinie, dann pfadartige Stücke dicht → locker wie KayKit path_A → path_D). Das ersetzt „nur ganze große Platten / letzte 3 gestaffelt“. Werkzeug: `CANON_3D/lib/kfb_edge_bpy.py`.
+
 ## Grundsatz
 
 Überall, wo in der KFB-Welt etwas endet, wechselt oder abbricht, gilt **dieselbe Sprache**.

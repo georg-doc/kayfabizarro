@@ -1,0 +1,24 @@
+{
+ "schema": "kfb.edge-params/1",
+ "by": "WSB K8",
+ "date": "2026-10-20",
+ "basis": "SPEC_EDGE_RUBBLE_GRAMMAR_R1 (V-577, Kanon Gebiet 4) + Georg 20.10.: freies Ende = Platte in Pfad-artige Stücke geschnitten, gerundet, von dicht nach locker verteilt wie KayKit path_A → path_D",
+ "free_end": {
+  "path_stages": {"A": {"diam": 1.0, "gap_side": 0.025, "note": "KayKit path_A/B: 7 Steine r 0,4–0,67, Fugen 3–7 cm"},
+                  "D": {"diam": 0.4, "gap_side": 0.155, "note": "KayKit path_D: 6 Steine r 0,1–0,3, Abstände 23–40 cm"}},
+  "w_in": 1.0, "w_out": 0.2, "warp": [0.38, 0.12], "warp_scale": [0.55, 1.9],
+  "intact_below": 0.15, "stage_from": 0.15, "stage_to": 0.95,
+  "missing_from": 0.7, "missing_max": 0.45,
+  "fase": 0.05, "edge_wobble": 0.012, "chip_prob": 0.15, "chaikin": 2,
+  "thickness": 0.32, "sink_max": 0.04, "tilt_max_deg": 6, "drift_max": 0.28, "jitter": 0.05,
+  "earth": {"band": 0.55, "sprinkle_width": 0.45, "level_in": -0.02, "level_drop": 0.03},
+  "point_candidates": 500
+ },
+ "built_end": {
+  "wall_head": {"len_of_T": 0.6, "wide_of_T": 1.18, "high_of_H": 1.04, "round_of_T": 0.38, "segments": 4},
+  "kantenstein": {"len": 0.9, "gap": 0.04, "wide": 0.32, "high": 0.16, "round": 0.07, "segments": 3, "sink": 0.06},
+  "rubble": {"count": 3, "R": 0.12}
+ },
+ "ruin_end": {"break_len_of_H": 1.6, "keep_min_of_H": 0.22, "steps": [4, 6], "bevel_of_T": 0.08, "rubble": {"nests": 2, "count": [5, 7], "R": 0.16}},
+ "rubble": {"classes": {"S": [0.10, 0.16], "XS": [0.05, 0.09]}, "thickness_of_r": 0.7, "sink_frac": [0.3, 0.55]}
+}

@@ -8169,6 +8169,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-578",
+   "date": "2026-10-20",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Freies Ende durch Verfall präzisiert (Georg 20.10. direkt bei WSB nach drei Probebildern): heiler Rest bis zu einer geschwungenen Isolinie eines Abstandsfelds zum äußeren Umriss, dann pfadartige, verwittert gerundete Stücke aus demselben Material, dicht → locker wie KayKit path_A → path_D (≈ 1,0 → 0,4 u, Fuge 3 → 31 cm); ersetzt „nur ganze große Platten / letzte 3 gestaffelt“ aus V-577/SPEC_EDGE_RUBBLE_GRAMMAR_R1. Werkzeug kfb_edge_bpy (WSB K8, Test PASS); Friedhof K6 r4 damit ohne Handarbeit gebaut. Offen: Ruinen-Brocken noch kastig.",
+   "values": {},
+   "owner": "WSB · WS1 (Laufzeit + Shader aus EdgeField)",
+   "check": "K6 r4 im Spielterrain + Kritiker",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Strenge Ganzplatten ließen gerade Kanten auf dem Boden; die Pfadstein-Auflösung trägt den Übergang selbst.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8256,7 +8271,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:988",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:989",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
