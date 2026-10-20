@@ -124,34 +124,94 @@ def _noise_height(nt, P, size, amp, seed_off, loc, octave2=True):
     return _math(nt, 'MULTIPLY', h, NOISE_GAIN * 2.0 * amp * size / 1.5, (loc[0] + 680, loc[1]))
 
 
+def _vm(nt, op, a, b=None, loc=(0, 0), out=0):
+    """Vektor-Rechnung: a, b = Ausgang oder Konstante (Tupel/Zahl). out 0 = Vector, 1 = Value."""
+    m = nt.nodes.new('ShaderNodeVectorMath'); m.operation = op; m.location = loc
+    for i, x in enumerate((a, b)):
+        if x is None: continue
+        if isinstance(x, (int, float)): m.inputs[i].default_value = (x, x, x)
+        elif isinstance(x, tuple): m.inputs[i].default_value = x
+        else: nt.links.new(x, m.inputs[i])
+    if op == 'SCALE' and isinstance(b, (int, float)): m.inputs['Scale'].default_value = b
+    return m.outputs['Value'] if out else m.outputs['Vector']
+
+
+def _sep(nt, v, loc):
+    s = nt.nodes.new('ShaderNodeSeparateXYZ'); s.location = loc; nt.links.new(v, s.inputs[0]); return s.outputs
+
+
+def _smooth(nt, x, a, b, loc):
+    m = _n(nt, 'ShaderNodeMapRange', loc, interpolation_type='SMOOTHSTEP'); m.inputs['From Min'].default_value = a; m.inputs['From Max'].default_value = b
+    nt.links.new(x, m.inputs['Value']); return m.outputs['Result']
+
+
 def _dent_height(nt, P, d, seed_off, loc):
-    """Dellen-Lage: Voronoi-Zellen (Zellgröße d.size); Zelle trägt eine Delle mit Wahrscheinlichkeit density (Mittel des Cluster-Felds 1,2 → × 1,2, gekappt);
-    Schale −D·exp(−2,5 (r/R)²), R = radius (Zellen), D = slope·R/1,356 (wie kfbDentLayer, Medianwerte)."""
-    off = _n(nt, 'ShaderNodeVectorMath', (loc[0] - 180, loc[1]), operation='ADD'); off.inputs[1].default_value = (seed_off * 0.71, seed_off, seed_off * 0.29); nt.links.new(P, off.inputs[0])
-    vo = _n(nt, 'ShaderNodeTexVoronoi', loc, voronoi_dimensions='3D', feature='F1', distance='EUCLIDEAN'); vo.inputs['Scale'].default_value = 1.0 / d['size']; vo.inputs['Randomness'].default_value = 1.0
-    nt.links.new(off.outputs[0], vo.inputs['Vector'])
-    R = d['radius']; D = d['slope'] * R / 1.356
-    rr = _math(nt, 'DIVIDE', vo.outputs['Distance'], R, (loc[0] + 180, loc[1])); e = _math(nt, 'POWER', rr, 2.0, (loc[0] + 340, loc[1]))
-    e = _math(nt, 'MULTIPLY', e, -2.5, (loc[0] + 500, loc[1])); e = _math(nt, 'EXPONENT', e, None, (loc[0] + 660, loc[1]))
-    sep = _n(nt, 'ShaderNodeSeparateColor', (loc[0] + 180, loc[1] - 160)); nt.links.new(vo.outputs['Color'], sep.inputs['Color'])
-    mask = _math(nt, 'LESS_THAN', sep.outputs[0], min(1.0, d['density'] * 1.2), (loc[0] + 340, loc[1] - 160))
-    depth = _math(nt, 'MULTIPLY', sep.outputs[1], 0.7, (loc[0] + 500, loc[1] - 200)); depth = _math(nt, 'ADD', depth, 0.65, (loc[0] + 660, loc[1] - 200))   # 0,65 … 1,35
-    h = _math(nt, 'MULTIPLY', e, mask, (loc[0] + 820, loc[1])); h = _math(nt, 'MULTIPLY', h, depth, (loc[0] + 980, loc[1]))
-    ve = _n(nt, 'ShaderNodeTexVoronoi', (loc[0], loc[1] - 320), voronoi_dimensions='3D', feature='DISTANCE_TO_EDGE'); ve.inputs['Scale'].default_value = 1.0 / d['size']; ve.inputs['Randomness'].default_value = 1.0
-    nt.links.new(off.outputs[0], ve.inputs['Vector'])   # Zellrand: Delle weich auf 0 (Blender-Voronoi kennt nur die nächste Zelle; das Web-Modul summiert 27 Zellen, ohne Naht)
-    fr = _n(nt, 'ShaderNodeMapRange', (loc[0] + 180, loc[1] - 320), interpolation_type='SMOOTHSTEP'); fr.inputs['From Min'].default_value = 0.0; fr.inputs['From Max'].default_value = 0.22
-    nt.links.new(ve.outputs['Distance'], fr.inputs['Value']); h = _math(nt, 'MULTIPLY', h, fr.outputs['Result'], (loc[0] + 1060, loc[1] - 80))
-    return _math(nt, 'MULTIPLY', h, -D * d['size'], (loc[0] + 1140, loc[1]))
+    """r2 (K1 R2): Dellen-Lage wie kfbDentLayer (kfb-clay.v1.1 Z. 177–216) als Höhe, je Voronoi-Zelle (Zellgröße d.size) eine Delle:
+    Cluster-Feld 0,35 + 1,65·smoothstep(0,15, 0,85, ½(q2 + q4)) aus zwei groben Oktaven (2 und 4 Zellen) → Anteil density·Feld;
+    Achse a zufällig, Streckung e = 1 + (elong − 1)·√r, Radius log-normal R = radius·exp(sigma·n), Tiefe 0,65…1,35;
+    h = D·(−exp(−2,5 rr²)(1 − ½g) + rim·exp(−((rr − 1)/0,26)²)·(1 + g)²/4), g = t/(1 + |t|): Schale am Druckende tiefer, Wulst nur auf der Schubseite (Halbmond).
+    Abweichung: Blender-Voronoi kennt nur die nächste Zelle (Web: 27 Zellen) → R·e ≤ 0,5 Zellen und weiches Ausblenden zum Zellrand (keine Nähte)."""
+    x0, y0 = loc; sz = d['size']
+    off = _vm(nt, 'ADD', P, (seed_off * 0.71, seed_off, seed_off * 0.29), (x0 - 200, y0)); xs = _vm(nt, 'SCALE', off, 1.0 / sz, (x0 - 60, y0))   # x in Zellen
+    vo = _n(nt, 'ShaderNodeTexVoronoi', (x0 + 80, y0), voronoi_dimensions='3D', feature='F1', distance='EUCLIDEAN'); vo.inputs['Scale'].default_value = 1.0; vo.inputs['Randomness'].default_value = 1.0
+    nt.links.new(xs, vo.inputs['Vector'])
+    c = vo.outputs['Color']; q = _vm(nt, 'SUBTRACT', xs, vo.outputs['Position'], (x0 + 240, y0))
+    r3 = _vm(nt, 'FRACTION', _vm(nt, 'MULTIPLY_ADD', c, (13.7, 17.1, 11.3), loc=(x0 + 240, y0 - 120)), None, (x0 + 380, y0 - 120))
+    r4 = _vm(nt, 'FRACTION', _vm(nt, 'MULTIPLY', c, (29.3, 23.9, 31.7), (x0 + 240, y0 - 240)), None, (x0 + 380, y0 - 240))
+    r5 = _vm(nt, 'FRACTION', _vm(nt, 'MULTIPLY', c, (41.9, 47.3, 37.1), (x0 + 240, y0 - 360)), None, (x0 + 380, y0 - 360))
+    c_, r4_, r5_ = _sep(nt, c, (x0 + 520, y0 - 60)), _sep(nt, r4, (x0 + 520, y0 - 240)), _sep(nt, r5, (x0 + 520, y0 - 360))
+    # Cluster-Feld (grobe Oktaven 2 und 4 Zellen)
+    n2 = _n(nt, 'ShaderNodeTexNoise', (x0 + 80, y0 - 480), noise_dimensions='3D'); n2.inputs['Scale'].default_value = 0.5; n2.inputs['Detail'].default_value = 0.0; nt.links.new(xs, n2.inputs['Vector'])
+    n4 = _n(nt, 'ShaderNodeTexNoise', (x0 + 80, y0 - 640), noise_dimensions='3D'); n4.inputs['Scale'].default_value = 0.25; n4.inputs['Detail'].default_value = 0.0; nt.links.new(xs, n4.inputs['Vector'])
+    fld = _math(nt, 'MULTIPLY', _math(nt, 'ADD', n2.outputs['Fac'], n4.outputs['Fac'], (x0 + 240, y0 - 560)), 0.5, (x0 + 380, y0 - 560))
+    fld = _math(nt, 'MULTIPLY_ADD', _smooth(nt, fld, 0.15, 0.85, (x0 + 520, y0 - 560)), 1.65, (x0 + 680, y0 - 560)); fld.node.inputs[2].default_value = 0.35
+    mask = _math(nt, 'LESS_THAN', c_[0], _math(nt, 'MULTIPLY', fld, d['density'], (x0 + 840, y0 - 560)), (x0 + 1000, y0 - 480))
+    # Streckung, Radius, Tiefe
+    e = _math(nt, 'MULTIPLY_ADD', _math(nt, 'SQRT', r4_[1], None, (x0 + 680, y0 - 240)), d['elong'] - 1.0, (x0 + 840, y0 - 240)); e.node.inputs[2].default_value = 1.0
+    nrm = _n(nt, 'ShaderNodeClamp', (x0 + 1320, y0 - 360)); nrm.inputs['Min'].default_value = -2.2; nrm.inputs['Max'].default_value = 2.2
+    nt.links.new(_math(nt, 'MULTIPLY', _math(nt, 'SUBTRACT', _math(nt, 'ADD', _math(nt, 'ADD', r5_[0], r5_[1]), r5_[2]), 1.5), 2.0), nrm.inputs['Value'])
+    R = _math(nt, 'MULTIPLY', _math(nt, 'EXPONENT', _math(nt, 'MULTIPLY', nrm.outputs[0], d['sigma'], (x0 + 1480, y0 - 360)), None, (x0 + 1640, y0 - 360)), d['radius'], (x0 + 1800, y0 - 360))
+    R = _math(nt, 'MINIMUM', R, _math(nt, 'DIVIDE', 0.5, e, (x0 + 1000, y0 - 200)), (x0 + 1960, y0 - 300))   # R·e ≤ 0,5 Zellen (eine Zelle, s. o.)
+    depth = _math(nt, 'MULTIPLY_ADD', r4_[2], 0.7, (x0 + 680, y0 - 300)); depth.node.inputs[2].default_value = 0.65
+    # Geometrie der Delle
+    a = _vm(nt, 'NORMALIZE', _vm(nt, 'ADD', r3, (-0.5, -0.5, -0.5001), (x0 + 520, y0 - 120)), None, (x0 + 680, y0 - 120))
+    aq = _vm(nt, 'DOT_PRODUCT', a, q, (x0 + 840, y0 - 120), out=1)
+    kk = _math(nt, 'SUBTRACT', 1.0, _math(nt, 'DIVIDE', 1.0, e, (x0 + 1000, y0 - 160)), (x0 + 1160, y0 - 160))
+    sc = _n(nt, 'ShaderNodeVectorMath', (x0 + 1320, y0 - 120), operation='SCALE'); nt.links.new(a, sc.inputs[0]); nt.links.new(_math(nt, 'MULTIPLY', kk, aq, (x0 + 1160, y0 - 100)), sc.inputs['Scale'])
+    u = _vm(nt, 'SUBTRACT', q, sc.outputs[0], (x0 + 1480, y0 - 60)); lu = _vm(nt, 'LENGTH', u, None, (x0 + 1640, y0 - 60), out=1)
+    rr = _math(nt, 'DIVIDE', lu, R, (x0 + 1800, y0 - 60))
+    t = _math(nt, 'DIVIDE', aq, _math(nt, 'MULTIPLY', R, e, (x0 + 1800, y0 - 160)), (x0 + 1960, y0 - 120))
+    g = _math(nt, 'DIVIDE', t, _math(nt, 'ADD', _math(nt, 'ABSOLUTE', t, None, (x0 + 2120, y0 - 160)), 1.0, (x0 + 2280, y0 - 160)), (x0 + 2440, y0 - 120))
+    E1 = _math(nt, 'EXPONENT', _math(nt, 'MULTIPLY', _math(nt, 'POWER', rr, 2.0, (x0 + 1960, y0)), -2.5, (x0 + 2120, y0)), None, (x0 + 2280, y0))
+    bowl = _math(nt, 'MULTIPLY', E1, _math(nt, 'MULTIPLY_ADD', g, -0.5, (x0 + 2600, y0 - 60)), (x0 + 2760, y0)); bowl.node.inputs[1].links[0].from_node.inputs[2].default_value = 1.0
+    zr = _math(nt, 'DIVIDE', _math(nt, 'SUBTRACT', rr, 1.0, (x0 + 1960, y0 + 120)), 0.26, (x0 + 2120, y0 + 120))
+    E2 = _math(nt, 'EXPONENT', _math(nt, 'MULTIPLY', _math(nt, 'POWER', zr, 2.0, (x0 + 2280, y0 + 120)), -1.0, (x0 + 2440, y0 + 120)), None, (x0 + 2600, y0 + 120))
+    cr = _math(nt, 'MULTIPLY', _math(nt, 'POWER', _math(nt, 'ADD', g, 1.0, (x0 + 2600, y0 + 200)), 2.0, (x0 + 2760, y0 + 200)), 0.25, (x0 + 2920, y0 + 200))
+    rimh = _math(nt, 'MULTIPLY', _math(nt, 'MULTIPLY', E2, cr, (x0 + 3080, y0 + 160)), d['rim'], (x0 + 3240, y0 + 160))
+    h = _math(nt, 'SUBTRACT', rimh, bowl, (x0 + 3400, y0 + 60))                                     # −Schale + Wulst
+    h = _math(nt, 'MULTIPLY', h, _math(nt, 'LESS_THAN', rr, 1.5, (x0 + 3240, y0 - 60)), (x0 + 3560, y0))   # Schnitt bei rr = 1,5
+    D = _math(nt, 'MULTIPLY', _math(nt, 'MULTIPLY', R, d['slope'] / 1.356, (x0 + 3400, y0 - 200)), depth, (x0 + 3560, y0 - 200))
+    h = _math(nt, 'MULTIPLY', _math(nt, 'MULTIPLY', h, D, (x0 + 3720, y0)), mask, (x0 + 3880, y0))
+    ve = _n(nt, 'ShaderNodeTexVoronoi', (x0 + 80, y0 - 800), voronoi_dimensions='3D', feature='DISTANCE_TO_EDGE'); ve.inputs['Scale'].default_value = 1.0; ve.inputs['Randomness'].default_value = 1.0
+    nt.links.new(xs, ve.inputs['Vector']); h = _math(nt, 'MULTIPLY', h, _smooth(nt, ve.outputs['Distance'], 0.0, 0.22, (x0 + 240, y0 - 800)), (x0 + 4040, y0))
+    return _math(nt, 'MULTIPLY', h, sz, (x0 + 4200, y0))   # Zellen → Bezugslängen
 
 
 def _facet_height(nt, P, size, slope, seed_off, loc):
-    off = _n(nt, 'ShaderNodeVectorMath', (loc[0] - 180, loc[1]), operation='ADD'); off.inputs[1].default_value = (seed_off * 0.13, seed_off * 0.47, seed_off); nt.links.new(P, off.inputs[0])
-    vo = _n(nt, 'ShaderNodeTexVoronoi', loc, voronoi_dimensions='3D', feature='F1'); vo.inputs['Scale'].default_value = 1.0 / size; nt.links.new(off.outputs[0], vo.inputs['Vector'])
-    dot = _n(nt, 'ShaderNodeVectorMath', (loc[0] + 180, loc[1]), operation='DOT_PRODUCT'); nt.links.new(vo.outputs['Color'], dot.inputs[0]); nt.links.new(off.outputs[0], dot.inputs[1])
-    s = _n(nt, 'ShaderNodeSeparateColor', (loc[0] + 180, loc[1] - 160)); nt.links.new(vo.outputs['Color'], s.inputs['Color'])
-    press = _math(nt, 'GREATER_THAN', s.outputs[2], 0.45, (loc[0] + 340, loc[1] - 160))
-    h = _math(nt, 'FRACT', dot.outputs['Value'], None, (loc[0] + 340, loc[1])); h = _math(nt, 'SUBTRACT', h, 0.5, (loc[0] + 500, loc[1]))
-    h = _math(nt, 'MULTIPLY', h, press, (loc[0] + 660, loc[1])); return _math(nt, 'MULTIPLY', h, slope * size, (loc[0] + 820, loc[1]))
+    """r2 (K1 R2) wie kfbFacets (Z. 218–228): Zellen (Punkte 0,15 + 0,7·Zufall) leicht gekippt, Neigung (2r − 1)·slope, „gedrückt“ smoothstep(0,2, 0,7),
+    zum Zellrand weich auf 0 (smoothstep 0 … 0,35 von F2 − F1 ≈ 2·Randabstand). r1 nahm FRACT einer schrägen Ebene → Sägezahn-Streifen (das „Fleckenband“)."""
+    x0, y0 = loc
+    off = _vm(nt, 'ADD', P, (seed_off * 0.13, seed_off * 0.47, seed_off), (x0 - 200, y0)); xs = _vm(nt, 'SCALE', off, 1.0 / size, (x0 - 60, y0))
+    vo = _n(nt, 'ShaderNodeTexVoronoi', (x0 + 80, y0), voronoi_dimensions='3D', feature='F1'); vo.inputs['Scale'].default_value = 1.0; vo.inputs['Randomness'].default_value = 0.7; nt.links.new(xs, vo.inputs['Vector'])
+    q = _vm(nt, 'SUBTRACT', xs, vo.outputs['Position'], (x0 + 240, y0)); c = vo.outputs['Color']
+    v = _vm(nt, 'MULTIPLY_ADD', _vm(nt, 'FRACTION', _vm(nt, 'MULTIPLY', c, (19.3, 27.7, 23.1), (x0 + 240, y0 - 120)), None, (x0 + 380, y0 - 120)), (2.0, 2.0, 2.0), (x0 + 520, y0 - 120))
+    v.node.inputs[2].default_value = (-1.0, -1.0, -1.0)
+    h = _vm(nt, 'DOT_PRODUCT', v, q, (x0 + 680, y0), out=1)
+    press = _smooth(nt, _sep(nt, c, (x0 + 380, y0 - 260))[2], 0.2, 0.7, (x0 + 520, y0 - 260))
+    ve = _n(nt, 'ShaderNodeTexVoronoi', (x0 + 80, y0 - 380), voronoi_dimensions='3D', feature='DISTANCE_TO_EDGE'); ve.inputs['Scale'].default_value = 1.0; ve.inputs['Randomness'].default_value = 0.7
+    nt.links.new(xs, ve.inputs['Vector']); edge = _smooth(nt, ve.outputs['Distance'], 0.0, 0.175, (x0 + 240, y0 - 380))
+    h = _math(nt, 'MULTIPLY', _math(nt, 'MULTIPLY', h, press, (x0 + 840, y0)), edge, (x0 + 1000, y0))
+    return _math(nt, 'MULTIPLY', h, slope * size, (x0 + 1160, y0))
 
 
 def build_material(name, profile='midground', seed='kfb', ref_world=1.0, k=1.0, base_hex=None, image=None, vcol=None, role_hex=None, pull=0.0, src_rough=1.0, emission=None):

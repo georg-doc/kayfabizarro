@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- V-571: prop_buried, ACES 1.3 in Blender; WSB r2c in Scenelet/Handoff, K1 r3 Emission 1:1; K4 Disco-Teile: Box + Radio angenommen, Pult wartet auf Georgs Ja zur Drum Machine 2 (CC-BY).
 - Spielzeugsoldat r2c (V-562): Kritiker 8/8/7 (Mittel 7,67); K10-Befunde Fäustlingshand, Profil-Pupille und Aufziehschlüssel als Fehlbefunde einer Figurenabnahme verworfen → WS0 PASS. Kritiker-Auftrag um diese drei Fälle ergänzt. WSB stellt Scenelet gunfight_duel_02, Mündungslage und Handoff auf r2c um.
 - WSB: kfb_light_bpy angenommen (Hemi exakt umgerechnet), kfb_env_bpy.place() mit support= und Test PASS; Emission-Entscheid: Web-kfb-clay ist SSOT, Blender übernimmt background/midground-Emission, Gate M2 erlaubt kfb-clay-Emission. Soldat r2c beim Kritiker. K4 = Disco-Lieferteile nach Konzeptblatt.
 - WSB K2 Bestandsaufnahme (50_BLENDER/CANON_BASELINE_R1.md): alle 8 Alt-Szenen + B51 fallen durch (überall K0, S1/S3, S5/H5, M1/M5, eigene Scheibe/Platte B1/B2; E1 bis 73, E2/C1 bis 85). Gate-Adapter: kfb_support für Teile auf Gebautem (Bühne, Tisch).

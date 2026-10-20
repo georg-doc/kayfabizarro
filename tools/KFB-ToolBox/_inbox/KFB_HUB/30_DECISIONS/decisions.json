@@ -8064,6 +8064,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-571",
+   "date": "2026-10-20",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Gate-Art prop_buried (SINK 0,40–0,95) für bewusst tief versunkene Requisiten mit Geschichte (Disco-Drum-Machine RA y −1,9, „steht seit Jahren dort“). Blender-Tonemapping: kfb_light_bpy nutzt ACES 1.3 (Blender 5.2) als Vorgabe, AgX nur Ausweich (AgX Punchy machte helle warme Flächen grau). K4: Box + Radio angenommen; eigenes Pult für die Disco nicht passend – Original Drum Machine 2 (CC-BY, in Georgs Repo) braucht Georgs Ja.",
+   "values": {},
+   "owner": "WSB · WS0",
+   "check": "Pult = Original nach Georgs Ja",
+   "source": "WS0 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Das Gate muss Georgs bewusst versunkenes Pult erlauben; Blender soll dasselbe Tonemapping wie das Web zeigen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8151,7 +8166,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:958",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:963",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
