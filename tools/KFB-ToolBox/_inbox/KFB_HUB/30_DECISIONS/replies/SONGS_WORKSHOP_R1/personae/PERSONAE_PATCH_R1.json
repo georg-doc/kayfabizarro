@@ -1,0 +1,245 @@
+{
+ "schema": "kfb.character-patch/1",
+ "date": "2026-10-20",
+ "source": "Georg 2026-10-20 (WS-Song chat)",
+ "baseRef": "docs/kfb-decisions-register-2026-10-11@6efe3839a9dcd15a444743753fef9b387618fa1b",
+ "route": "Vorschlag auf ws-song/workshop-r1; Übernahme in FIGURES_R1 über den ToolBox/Personae-Proposal-Weg bzw. WS0 (kein direkter Register-Write)",
+ "characters": {
+  "4gtn_ceo": {
+   "basePath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_ceo.character.json",
+   "baseSha256": "f5a890d34d2607caab345f6a3e465a42bfc703d7e7a3a32053f7db38862ca00a",
+   "changes": [
+    {
+     "path": "story.ideology",
+     "old": null,
+     "new": {
+      "v": [
+       "Transhumanismus",
+       "Dark Enlightenment",
+       "Technocracy Inc.",
+       "Überwachungskapitalismus"
+      ],
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG"
+     }
+    },
+    {
+     "path": "story.mission",
+     "old": null,
+     "new": {
+      "v": "von der Galactic Academy eingesetzt, um fügsame, glückliche NPCs (Idiocracy) für die Fluff-Ernte nach Utopia zu locken und zu Cyborgs umzuwandeln",
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG"
+     }
+    },
+    {
+     "path": "story.employer",
+     "old": null,
+     "new": {
+      "v": "arbeitet mit/für Lord Hunky; oft widersprüchliche Zielvorgaben wegen der kafkaesken Natur der Galactic Academy im Zentrum der Galaxie",
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG"
+     }
+    },
+    {
+     "path": "performance.props",
+     "old": {
+      "v": [],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+     },
+     "new": {
+      "v": [
+       "4GTN_Katana"
+      ],
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG",
+      "note": "Katana als Kampfwaffe (wie Ninja). Ersetzt props [] vom 17.10.; appearance.styleNote 'neutral styling, no samurai stereotype' (17.10.) bleibt bestehen – Waffe ja, Samurai-Stereotyp nein. Bitte bestätigen."
+     }
+    },
+    {
+     "path": "cards.worldviewTags",
+     "old": {
+      "v": [
+       "transhumanism vs. co-creation",
+       "utopia vs. protopia"
+      ],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+     },
+     "new": {
+      "v": [
+       "transhumanism vs. co-creation",
+       "utopia vs. protopia",
+       "dark enlightenment",
+       "technocracy",
+       "surveillance capitalism",
+       "idiocracy"
+      ],
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG",
+      "note": "erweitert die Tags vom 17.10."
+     }
+    },
+    {
+     "path": "memory.relationships",
+     "old": {
+      "v": [
+       {
+        "with": "4gtn_forgotten",
+        "type": "twin, estranged; secret repair visits",
+        "status": "GEORG"
+       }
+      ],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+     },
+     "new": {
+      "v": [
+       {
+        "with": "4gtn_forgotten",
+        "type": "twin, estranged; secret repair visits",
+        "status": "GEORG"
+       },
+       {
+        "with": "lord_hunky",
+        "type": "works with/for; contradictory directives (Kafkaesque Galactic Academy)",
+        "status": "GEORG"
+       }
+      ],
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG",
+      "note": "Eintrag 4gtn_forgotten vom 17.10. unverändert übernommen"
+     }
+    }
+   ]
+  },
+  "4gtn_forgotten": {
+   "basePath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/4gtn_forgotten.character.json",
+   "baseSha256": "9ddceb0ed609f98a66adf1b13d6ae51ba2159631c4ab52837c085abec1c4fd33",
+   "changes": [
+    {
+     "path": "story.multiverse",
+     "old": null,
+     "new": {
+      "v": "Multiversum-Logik: zugleich lesbar als 4GTNs Vorläufermodell / Rogue Robot – der 'gute' Zwilling, positive AI-/Technologie-Version (grüne Re-Nature-/Moos-Variante) im Protopia-Maker-Space",
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG",
+      "note": "ergänzt, ersetzt nicht 'Built as a pair' (17.10.)"
+     }
+    },
+    {
+     "path": "personality.relationsPolicy",
+     "old": null,
+     "new": {
+      "v": "conflict is king: Beziehungen leben vom Konflikt",
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG"
+     }
+    },
+    {
+     "path": "memory.relationships",
+     "old": {
+      "v": [
+       {
+        "with": "4gtn_ceo",
+        "type": "twin, estranged; secret repair visits",
+        "status": "GEORG"
+       }
+      ],
+      "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+      "status": "GEORG"
+     },
+     "new": {
+      "v": [
+       {
+        "with": "4gtn_ceo",
+        "type": "twin, estranged; secret repair visits",
+        "status": "GEORG"
+       },
+       {
+        "with": "4gtn_ceo",
+        "type": "also his predecessor model (multiverse logic); conflict is king",
+        "status": "GEORG"
+       }
+      ],
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG",
+      "note": "Eintrag vom 17.10. unverändert übernommen, ergänzt"
+     }
+    }
+   ]
+  },
+  "lord_hunky": {
+   "basePath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/lord_hunky.character.json",
+   "baseSha256": "016780b1c9572f156d913226f45b226c6c6a86db1812faf3288e711e72f26aed",
+   "changes": [
+    {
+     "path": "story.academy",
+     "old": null,
+     "new": {
+      "v": "Galactic Academy im Zentrum der Galaxie; kafkaesk, erteilt widersprüchliche Zielvorgaben",
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG",
+      "note": "beantwortet openQuestion 'which Academy'"
+     }
+    },
+    {
+     "path": "story.academyStatus",
+     "old": null,
+     "new": {
+      "v": "verbannter / gescheiterter Terraformer der Academy",
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG"
+     }
+    },
+    {
+     "path": "story.subordinates",
+     "old": null,
+     "new": {
+      "v": [
+       {
+        "with": "4gtn_ceo",
+        "type": "4GTN arbeitet mit/für ihn (Utopia, Fluff-Ernte, Cyborg-Umwandlung)"
+       }
+      ],
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG"
+     }
+    }
+   ]
+  },
+  "norman": {
+   "basePath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/norman.character.json",
+   "baseSha256": "537c7c838cc2236478a4c5edbce1f7aa3fe5609d536ed9ba525e6304672377ee",
+   "changes": [
+    {
+     "path": "cards.signatureDeck",
+     "old": {
+      "v": null,
+      "status": "todo"
+     },
+     "new": {
+      "v": "bullshit_jobs_uncut",
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG"
+     }
+    },
+    {
+     "path": "cards.secondaryDecks",
+     "old": {
+      "v": null,
+      "status": "todo"
+     },
+     "new": {
+      "v": [
+       "what_work_was_for"
+      ],
+      "src": "Georg 2026-10-20 (WS-Song chat)",
+      "status": "GEORG"
+     }
+    }
+   ]
+  }
+ }
+}

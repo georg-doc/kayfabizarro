@@ -17,3 +17,14 @@
 | – | Combat Mech | no sheet yet | *The Biological Metropolis* | sheet proposal `combat_mech.character.proposal.json` |
 
 **Next step:** Georg decides 1–5. After that, the resident list and the Writers' Room are updated, additively, with the old values kept in the history.
+
+## Status 20.10. (evening)
+- **#5 Norman: decided (Georg).** Norman takes *Bullshit Jobs Uncut* and *What Work Was For*.
+  - Writers' Room and `RESIDENT_PROPOSALS_R1.json` are updated; the old Driver A/B entries are kept as `previous`.
+  - Home and fractal idea remain a proposal.
+- **#1 4GTN / #2 4GTN Forgotten: Georg's canon of 20.10. supports the swap.**
+  - 4GTN = CEO of Utopia (transhumanism, dark enlightenment, technocracy, surveillance capitalism; lures docile NPCs for the fluff harvest).
+  - Forgotten = predecessor model / "good" twin in the Protopia maker space.
+  - Proposal: 4GTN → *Forget Utopia*, 4GTN Forgotten → *Embrace Protopia*. Georg still has to confirm.
+- **#3 Goth Girl, #4 FrizzleBob:** open.
+- **Character canon of 20.10.:** recorded as a field patch in `PERSONAE_PATCH_R1.json` (4GTN, 4GTN Forgotten, Lord Hunky, Norman).

@@ -1,0 +1,404 @@
+{
+ "schema": "kfb.character/1",
+ "id": "4gtn_ceo",
+ "status": "draft-r1 + proposal 2026-10-20",
+ "date": "2026-10-17",
+ "vRef": [
+  "V-394",
+  "V-415"
+ ],
+ "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo",
+ "identity": {
+  "name": {
+   "v": "4GTN",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "displayName": {
+   "v": "4GTN",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "aliases": {
+   "v": [
+    "4GTN",
+    "Utopia CEO",
+    "The CEO"
+   ],
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "voiceInputMishearings": {
+   "v": null,
+   "status": "todo",
+   "note": "e.g. 'for G T N', 'Agatn' – check on first dictation"
+  },
+  "tier": {
+   "v": "npc",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "series": {
+   "v": [
+    "KFB Utopia / Protopia (V-122)"
+   ],
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  }
+ },
+ "story": {
+  "background": {
+   "v": "Built with his twin as a pair in Utopia's founding workshop to make the future together with people. Optimised himself upgrade by upgrade, deleting doubt, boredom and needing help; ended perfect, alone at the top, CEO of Utopia.",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "worldKnowledge": {
+   "v": [
+    "Utopia's optimisation programme",
+    "upgrade catalogue",
+    "press releases"
+   ],
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "inWorldRole": {
+   "v": "CEO of Utopia; face of transhumanist self-optimisation",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "worldLogicRule": {
+   "v": "Built as a pair to make the future together with people; split over transhumanism (self-optimisation) vs. co-creation.",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "place": {
+   "v": "Utopia (island/zone)",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "twin": {
+   "v": "twin: 4gtn_forgotten (banished)",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "openQuestions": {
+   "v": null,
+   "status": "todo"
+  },
+  "ideology": {
+   "v": [
+    "Transhumanismus",
+    "Dark Enlightenment",
+    "Technocracy Inc.",
+    "Überwachungskapitalismus"
+   ],
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG"
+  },
+  "mission": {
+   "v": "von der Galactic Academy eingesetzt, um fügsame, glückliche NPCs (Idiocracy) für die Fluff-Ernte nach Utopia zu locken und zu Cyborgs umzuwandeln",
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG"
+  },
+  "employer": {
+   "v": "arbeitet mit/für Lord Hunky; oft widersprüchliche Zielvorgaben wegen der kafkaesken Natur der Galactic Academy im Zentrum der Galaxie",
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG"
+  }
+ },
+ "personality": {
+  "archetype": {
+   "jungDrive": {
+    "v": null,
+    "status": "todo"
+   },
+   "journeyFunction": {
+    "v": null,
+    "status": "todo"
+   },
+   "frictionEngine": {
+    "v": "the twin bond neither will name",
+    "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+    "status": "GEORG"
+   }
+  },
+  "castRole": {
+   "v": "Utopia CEO (antagonist-tragicomic)",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "personalityType": {
+   "v": [
+    "perfectionist",
+    "polished",
+    "secretly lonely"
+   ],
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "traits": {
+   "coreWant": {
+    "v": "to be flawless",
+    "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+    "status": "GEORG"
+   },
+   "hiddenNeed": {
+    "v": "to be repaired, not replaced",
+    "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+    "status": "GEORG"
+   },
+   "secret": {
+    "v": "visits his twin's repair café at night in disguise, calls it 'a routine inspection'",
+    "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+    "status": "GEORG"
+   },
+   "failureLoop": {
+    "v": "upgrade → something rattles → hide it → upgrade again",
+    "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+    "status": "GEORG"
+   }
+  }
+ },
+ "dialogue": {
+  "languageOwner": {
+   "v": "ChatterBox + shared Triplet pool",
+   "src": "CS-20",
+   "status": "SOURCE"
+  },
+  "signaturePool": {
+   "v": null,
+   "status": "todo"
+  },
+  "signatureLines": {
+   "v": [
+    "We optimise people so they don't have to.",
+    "Routine inspection. Nothing personal."
+   ],
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "tripletVoice": {
+   "rules": {
+    "v": "SONG_SPEC_R3 / TRIPLET_SET_SPEC_R2 (card words only, opener layer)",
+    "src": "V-266, V-411",
+    "status": "SOURCE"
+   },
+   "goldenLine": {
+    "v": null,
+    "status": "todo"
+   }
+  }
+ },
+ "cards": {
+  "signatureDeck": {
+   "v": null,
+   "status": "todo",
+   "note": "candidates: Utopia/Forget Utopia, Ideation & Creation / Creative Disruption decks"
+  },
+  "stance": {
+   "v": null,
+   "status": "todo"
+  },
+  "signatureCardRefs": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckLane": {
+   "v": null,
+   "status": "todo"
+  },
+  "secondaryDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "performanceDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "worldviewTags": {
+   "v": [
+    "transhumanism vs. co-creation",
+    "utopia vs. protopia",
+    "dark enlightenment",
+    "technocracy",
+    "surveillance capitalism",
+    "idiocracy"
+   ],
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG",
+   "note": "erweitert die Tags vom 17.10."
+  },
+  "deckGoal": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "memory": {
+  "owner": {
+   "v": "KFB Town Resident Social Memory inside Lean Memory layers A–F",
+   "src": "CS-20; CS-26 §10",
+   "status": "SOURCE"
+  },
+  "valuesLiveIn": {
+   "v": [
+    "PLAYER_SAVE",
+    "NPC_MEMORY_VIEW",
+    "SOCIAL_RELATION",
+    "ENCOUNTER_RECEIPT",
+    "MOMENT_RECEIPT",
+    "CARD_COLLECTION_ENTRY",
+    "JOURNEY_ENTRY"
+   ],
+   "src": "CS-26 §11",
+   "status": "SOURCE"
+  },
+  "rememberable": {
+   "v": null,
+   "status": "todo"
+  },
+  "relationships": {
+   "v": [
+    {
+     "with": "4gtn_forgotten",
+     "type": "twin, estranged; secret repair visits",
+     "status": "GEORG"
+    },
+    {
+     "with": "lord_hunky",
+     "type": "works with/for; contradictory directives (Kafkaesque Galactic Academy)",
+     "status": "GEORG"
+    }
+   ],
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG",
+   "note": "Eintrag 4gtn_forgotten vom 17.10. unverändert übernommen"
+  }
+ },
+ "appearance": {
+  "figureRef": {
+   "v": "figures/4gtn_ceo.figure.json (draft by WSB B13)",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "figureStatus": {
+   "v": null,
+   "status": "todo",
+   "note": "WSB B13 pending"
+  },
+  "body": {
+   "v": {
+    "glb": "media/3D_Assets/KayKit_Mystery_Series6/7 - January 2026 - 4GTN/4GTN.glb",
+    "rig": "Rig_Large"
+   },
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "renderStyle": {
+   "default": {
+    "v": "clay",
+    "src": "V-394; V-346",
+    "status": "GEORG"
+   },
+   "clayProfile": {
+    "v": "figure",
+    "src": "V-340",
+    "status": "GEORG"
+   },
+   "alternatives": {
+    "v": [],
+    "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+    "status": "GEORG"
+   }
+  },
+  "outfit": {
+   "v": "none for now (Georg 17.10.)",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "eyeRig": {
+   "v": "KFB eye rig required (V-391); remove only original eyes",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "styleNote": {
+   "v": "neutral styling, no samurai stereotype",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  }
+ },
+ "performance": {
+  "idle": {
+   "v": null,
+   "status": "todo"
+  },
+  "defaultPose": {
+   "v": null,
+   "status": "todo"
+  },
+  "preferredClips": {
+   "v": [],
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  },
+  "props": {
+   "v": [
+    "4GTN_Katana"
+   ],
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG",
+   "note": "Katana als Kampfwaffe (wie Ninja). Ersetzt props [] vom 17.10.; appearance.styleNote 'neutral styling, no samurai stereotype' (17.10.) bleibt bestehen – Waffe ja, Samurai-Stereotyp nein. Bitte bestätigen."
+  },
+  "gait": {
+   "v": "Rig_Large standard",
+   "src": "KayKit Rig_Large",
+   "status": "SOURCE"
+  },
+  "lightByStoryMode": {
+   "table": {
+    "v": "LIGHT_MODEL_R2.md#B1",
+    "src": "V-387",
+    "status": "SOURCE"
+   },
+   "override": {
+    "v": null,
+    "status": "todo"
+   }
+  }
+ },
+ "voice": {
+  "engine": {
+   "v": null,
+   "status": "todo"
+  },
+  "spec": {
+   "v": null,
+   "status": "todo",
+   "note": "no voice cast yet (voice_casting.r1.json)"
+  },
+  "speed": {
+   "v": null,
+   "status": "todo"
+  },
+  "lang": {
+   "v": "en",
+   "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+   "status": "GEORG"
+  }
+ },
+ "provenance": {
+  "v": [
+   "V-415",
+   "replies/FIGURES_R1/STORY_4GTN_TWINS_R1.md",
+   "KayKit Mystery Series 6 · 7 - January 2026 - 4GTN"
+  ],
+  "src": "V-415; STORY_4GTN_TWINS_R1.md (Georg 17.10.: „passt so“)",
+  "status": "GEORG"
+ },
+ "conflicts": [],
+ "todo": [
+  "figure card from WSB B13",
+  "voice casting",
+  "signature pool / deck assignment",
+  "clips"
+ ]
+}

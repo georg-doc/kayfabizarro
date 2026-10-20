@@ -1,7 +1,7 @@
 {
  "schema": "kfb.song.resident-proposals/1",
  "date": "2026-10-20",
- "status": "VORSCHLAG – Georg bestätigt oder tauscht im Writers' Room",
+ "status": "Georg 20.10.: Gesamtfreigabe; Änderungen danach je Eintrag mit 'previous'",
  "source": "registry/assets/v1/catalog.jsonl (KayKit Mystery Series 6, Adventurers, Quaternius) + KFB FrizzleBob v5",
  "residents": {
   "1001_kayfabe_nights": {
@@ -95,19 +95,31 @@
    "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
   },
   "bullshit_jobs_uncut": {
-   "status": "VORSCHLAG",
+   "status": "BESTÄTIGT",
    "performers": [
     {
-     "model": "Driver",
-     "asset": "KayKit_Mystery_Series6/2 - August 2023 - Driver · Textur A",
-     "role": "Lieferfahrer in der Dauerschicht"
+     "model": "Norman",
+     "asset": "Dramatis Personae · FIGURES_R1/figures/norman.figure.json",
+     "role": "systemischer Verlierer, tragikomischer Crash-Test-Dummy"
     }
    ],
-   "home": "Auto mit Dachgepäckträger, Pylonen, Parkplatz",
-   "meta": "Er erzählt zwischen zwei Aufträgen; die Jobs aus dem Deck sind seine früheren Leben, die im Rückspiegel auftauchen.",
+   "home": "Crash-Test-Halle direkt neben dem Großraumbüro (Vorschlag)",
+   "meta": "Norman hat jeden Job aus den Karten schon einmal gemacht und ist mit jedem gegen die Wand gefahren; die Karten sind seine Arbeitszeugnisse (Vorschlag)",
    "musicDirection": "Delta-Blues-Shuffle, tanzbar",
    "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
-   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht",
+   "previous": {
+    "performers": [
+     {
+      "model": "Driver",
+      "asset": "KayKit_Mystery_Series6/2 - August 2023 - Driver · Textur A",
+      "role": "Lieferfahrer in der Dauerschicht"
+     }
+    ],
+    "home": "Auto mit Dachgepäckträger, Pylonen, Parkplatz",
+    "meta": "Er erzählt zwischen zwei Aufträgen; die Jobs aus dem Deck sind seine früheren Leben, die im Rückspiegel auftauchen."
+   },
+   "confirmedBy": "Georg 20.10.: Norman für die Arbeits-Decks"
   },
   "cinematic_kayfabizarro_2": {
    "status": "VORSCHLAG",
@@ -900,19 +912,31 @@
    "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
   },
   "what_work_was_for": {
-   "status": "VORSCHLAG",
+   "status": "BESTÄTIGT",
    "performers": [
     {
-     "model": "Driver",
-     "asset": "KayKit_Mystery_Series6/2 - August 2023 - Driver · Textur B",
-     "role": "Geschwister des Lieferfahrers"
+     "model": "Norman",
+     "asset": "Dramatis Personae · FIGURES_R1/figures/norman.figure.json",
+     "role": "systemischer Verlierer, tragikomischer Crash-Test-Dummy"
     }
    ],
-   "home": "Pausenraum der Spedition",
-   "meta": "Sie erzählt die Geschichte der Arbeit vom Dachs bis zur KI; die Karten sind Werkzeuge an der Wand.",
+   "home": "Pausenraum mit Stechuhr (Vorschlag)",
+   "meta": "Norman erzählt die Geschichte der Arbeit vom Dachs bis zur KI, als hätte er jede Stelle selbst gehabt (Vorschlag)",
    "musicDirection": "Funk-Shuffle",
    "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
-   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht",
+   "previous": {
+    "performers": [
+     {
+      "model": "Driver",
+      "asset": "KayKit_Mystery_Series6/2 - August 2023 - Driver · Textur B",
+      "role": "Geschwister des Lieferfahrers"
+     }
+    ],
+    "home": "Pausenraum der Spedition",
+    "meta": "Sie erzählt die Geschichte der Arbeit vom Dachs bis zur KI; die Karten sind Werkzeuge an der Wand."
+   },
+   "confirmedBy": "Georg 20.10.: Norman für die Arbeits-Decks"
   },
   "woad_and_warriors": {
    "status": "VORSCHLAG",

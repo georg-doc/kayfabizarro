@@ -1,0 +1,532 @@
+{
+ "schema": "kfb.character/1",
+ "id": "norman",
+ "status": "draft-r1 + proposal 2026-10-20",
+ "date": "2026-10-17",
+ "vRef": [
+  "V-394"
+ ],
+ "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo; src ids in CHARACTER_SOURCES.md",
+ "identity": {
+  "name": {
+   "v": "Norman",
+   "src": "CS-02; CS-33",
+   "status": "SOURCE"
+  },
+  "displayName": {
+   "v": "Norman",
+   "src": "CS-41 vocative_upgrade.allowed.NormanNPC",
+   "status": "SOURCE"
+  },
+  "aliases": {
+   "v": [
+    "NormanNPC",
+    "norman-prototype-dummy",
+    "Prototype Dummy",
+    "Rig_Medium actor #56"
+   ],
+   "src": "CS-41 normalization; CS-02",
+   "status": "SOURCE"
+  },
+  "voiceInputMishearings": {
+   "v": null,
+   "status": "todo"
+  },
+  "tier": {
+   "v": "prop-actor",
+   "src": "CS-02 role",
+   "status": "SOURCE"
+  },
+  "series": {
+   "v": [
+    "Cancel This Planet!",
+    "Hunky & Dory"
+   ],
+   "src": "CS-33; CS-02 performance.series; CS-41",
+   "status": "SOURCE"
+  }
+ },
+ "story": {
+  "background": {
+   "v": null,
+   "status": "todo",
+   "note": "CtP gives a stress profile (bills, rations, job loss, child hunger) but no bio"
+  },
+  "worldKnowledge": {
+   "v": [
+    "obedience_protocols: 'uh... i clicked yes and lost hours?'",
+    "scarcity_theater: 'less food, more bills'"
+   ],
+   "src": "CS-41 narrative_core adapters.norman",
+   "status": "SOURCE"
+  },
+  "inWorldRole": {
+   "v": "systemic_victim (CtP); tragicomic crash-test dummy; combat target / alien test subject as presentation intent only",
+   "src": "CS-41 characters.norman.role; CS-33; V-380",
+   "status": "SOURCE"
+  },
+  "worldLogicRule": {
+   "v": null,
+   "status": "todo",
+   "note": "BRIEF_WSA_NORMAN_TOOLBOX_R1 asks for a story note 'world logic first'; none delivered yet (CS-12)"
+  },
+  "place": {
+   "v": null,
+   "status": "todo"
+  },
+  "openQuestions": {
+   "v": [
+    "Is KFB Norman (yellow KayKit crash-test dummy, design open V-380) the same figure as CtP NormanNPC? CS-33 says canonical series role remains Norman from CtP"
+   ],
+   "src": "CS-33; V-380",
+   "status": "SOURCE"
+  }
+ },
+ "personality": {
+  "archetype": {
+   "jungDrive": {
+    "v": null,
+    "status": "todo"
+   },
+   "journeyFunction": {
+    "v": null,
+    "status": "todo"
+   },
+   "frictionEngine": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "castRole": {
+   "v": "systemic_victim",
+   "src": "CS-41 characters.norman.role",
+   "status": "SOURCE"
+  },
+  "personalityType": {
+   "v": [
+    "avatar",
+    "anxious_avoider"
+   ],
+   "src": "CS-41 characters.norman.archetypes",
+   "status": "SOURCE"
+  },
+  "traits": {
+   "coreWant": {
+    "v": null,
+    "status": "todo"
+   },
+   "triggers": {
+    "v": {
+     "states": [
+      "cognitive_dissonance",
+      "social_mask"
+     ],
+     "escalation": "lived_cost_realization → hesitant_accusation, concrete_cost, refusal_signal"
+    },
+    "src": "CS-41 characters.norman.triggers; CS-41 cross_character_triggers",
+    "status": "SOURCE"
+   },
+   "metaConflictAwareness": {
+    "v": "realizes_victimhood_is_also_power",
+    "src": "CS-41",
+    "status": "SOURCE"
+   },
+   "ironicVictory": {
+    "v": "survives_but_loses_humanity",
+    "src": "CS-41",
+    "status": "SOURCE"
+   },
+   "hiddenGoal": {
+    "v": null,
+    "status": "todo"
+   },
+   "darkSecret": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "humour": {
+   "v": "mumbled outsider; accidental truths leak",
+   "src": "CS-41 characters.norman.voice.speech_styles",
+   "status": "SOURCE"
+  },
+  "attitudeBaseline": {
+   "v": null,
+   "status": "todo"
+  },
+  "stateMachine": {
+   "v": {
+    "states": [
+     "calm",
+     "stressed",
+     "breakdown",
+     "recovered"
+    ],
+    "transitions": {
+     "calm": {
+      "to_stressed": [
+       "bill_spike",
+       "ration_cut"
+      ]
+     },
+     "stressed": {
+      "to_breakdown": [
+       "job_loss",
+       "child_hunger"
+      ],
+      "to_calm": [
+       "community_help"
+      ]
+     },
+     "breakdown": {
+      "to_recovered": [
+       "memory_blur_reset"
+      ]
+     }
+    },
+    "voiceModifiers": {
+     "stressed": {
+      "word_delta": -1,
+      "syntax": "hedged",
+      "tone": "anxious"
+     },
+     "breakdown": {
+      "word_delta": -3,
+      "syntax": "halting",
+      "tone": "shaken"
+     }
+    }
+   },
+   "src": "CS-41 character_state_machine.norman",
+   "status": "SOURCE"
+  }
+ },
+ "dialogue": {
+  "languageOwner": {
+   "v": "ChatterBox + shared Triplet pool",
+   "src": "CS-20",
+   "status": "SOURCE"
+  },
+  "signaturePool": {
+   "v": null,
+   "status": "todo"
+  },
+  "tripletVoice": {
+   "rules": {
+    "v": "Triplet = one spoken line per card; title + power term first, telegram fragments from card words only, opener from pool max once per set, intro 'Welcome to <Deck>.', outro 'Stay Fluffy!'",
+    "src": "CS-11; V-231…V-235, V-266, V-275",
+    "status": "GEORG"
+   },
+   "goldenLine": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "openers": {
+   "placeScenePolicy": {
+    "v": null,
+    "status": "todo",
+    "note": "V-222: per figure either 'free stage fiction' or 'only places from the card' must be set in the figure profile; no value found"
+   },
+   "preferred": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "registers": {
+   "v": [
+    "filler openers, naive questions, hesitant statements",
+    "simple clauses coloured by doubt or fear"
+   ],
+   "src": "CS-41 characters.norman.voice.speech_styles",
+   "status": "SOURCE"
+  },
+  "lexicon": {
+   "v": null,
+   "status": "todo"
+  },
+  "interjections": {
+   "v": [
+    "uh",
+    "um",
+    "so",
+    "y'know"
+   ],
+   "src": "CS-41 characters.norman.voice.interjections",
+   "status": "SOURCE"
+  },
+  "catchphrases": {
+   "v": null,
+   "status": "todo"
+  },
+  "speechAvoid": {
+   "v": null,
+   "status": "todo"
+  },
+  "maxWordsPerLine": {
+   "v": null,
+   "status": "todo"
+  },
+  "knowledgePolicy": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "cards": {
+  "signatureDeck": {
+   "v": "bullshit_jobs_uncut",
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG"
+  },
+  "stance": {
+   "v": null,
+   "status": "todo"
+  },
+  "signatureCardRefs": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckLane": {
+   "v": null,
+   "status": "todo"
+  },
+  "secondaryDecks": {
+   "v": [
+    "what_work_was_for"
+   ],
+   "src": "Georg 2026-10-20 (WS-Song chat)",
+   "status": "GEORG"
+  },
+  "performanceDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "worldviewTags": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckGoal": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "memory": {
+  "owner": {
+   "v": "KFB Town Resident Social Memory (CS-20) inside Lean Memory layers A–F",
+   "src": "CS-20 memory.owner; CS-26 §10",
+   "status": "SOURCE"
+  },
+  "valuesLiveIn": {
+   "v": [
+    "PLAYER_SAVE",
+    "NPC_MEMORY_VIEW",
+    "SOCIAL_RELATION",
+    "ENCOUNTER_RECEIPT",
+    "MOMENT_RECEIPT",
+    "CARD_COLLECTION_ENTRY",
+    "JOURNEY_ENTRY"
+   ],
+   "src": "CS-26 §11",
+   "status": "SOURCE"
+  },
+  "rememberable": {
+   "v": [
+    "EncounterReceipt refs",
+    "relation refs",
+    "salient MomentReceipts",
+    "unresolved threads",
+    "shared Card/song/world refs",
+    "canonical fact knowledge"
+   ],
+   "src": "CS-26 §10 C (NPC / SOCIAL MEMORY)",
+   "status": "SOURCE"
+  },
+  "beliefSources": {
+   "v": [
+    "signature-deck",
+    "heard-from",
+    "seen",
+    "guessed"
+   ],
+   "src": "CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A)",
+   "status": "DESIGN"
+  },
+  "rules": {
+   "v": [
+    "deck knowledge is authored knowledge, not Lean Memory; no receipt per card",
+    "song/gift/performance discoveries go through Lean Memory / Journey only, one idempotent acquisition per canonical id",
+    "generated summaries are caches; receipts and canonical facts stay authoritative"
+   ],
+   "src": "CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10",
+   "status": "SOURCE"
+  },
+  "relationships": {
+   "v": [
+    {
+     "with": "GodGPT (not in cast)",
+     "type": "stockholm_syndrome",
+     "triggers": {
+      "norman_to_godgpt": [
+       "pleads_for_mercy",
+       "parrots_propaganda",
+       "stockholm_loyalty"
+      ]
+     }
+    },
+    {
+     "with": "MephistoBro (not in cast)",
+     "type": "reluctant_truth_mentor",
+     "triggers": {
+      "norman_to_mephisto": [
+       "fails_to_understand",
+       "asks_plain_question",
+       "reveals_victimhood"
+      ]
+     }
+    },
+    {
+     "with": "lord_hunky",
+     "type": "scene hunky_vs_norman; scene norman_vs_system (norman, hunky, godgpt)"
+    }
+   ],
+   "src": "CS-41 relationship_dynamics; CS-41 YAML scenes",
+   "status": "SOURCE"
+  },
+  "almanacHooks": {
+   "v": null,
+   "status": "todo",
+   "note": "Fractal Almanac D-layer projection: collected cards, provenance, locations, Residents, Journey Entries (CS-26 §10 D); no character-specific hook found"
+  }
+ },
+ "appearance": {
+  "figureRef": {
+   "v": "figures/norman.figure.json",
+   "src": "CS-02",
+   "status": "SOURCE"
+  },
+  "figureStatus": {
+   "v": "open-design",
+   "src": "CS-02 norman.figure.json#approval.status",
+   "status": "SOURCE",
+   "note": "informational copy; the figure card is authoritative"
+  },
+  "renderStyle": {
+   "default": {
+    "v": "clay",
+    "src": "V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4",
+    "status": "GEORG"
+   },
+   "clayProfile": {
+    "v": "figure-fine",
+    "src": "CS-02 material.clayProfile (V-053/V-340)",
+    "status": "GEORG"
+   },
+   "alternatives": {
+    "v": [],
+    "src": "V-394 (other textures allowed only when listed here)",
+    "status": "GEORG",
+    "note": "runtime texture clean is a temporary measure (V-336), not a render alternative"
+   }
+  },
+  "colours": {
+   "v": {
+    "lid": "dark yellow",
+    "mouth": "yellow R3 mouth",
+    "brows": "BrowRig-v2 block brows",
+    "note": "old brown not binding"
+   },
+   "src": "V-380",
+   "status": "GEORG"
+  },
+  "worldVariants": {
+   "v": null,
+   "status": "todo",
+   "note": "per-world costume variants proposed in CS-44 (kfb.character-card/1 'variants'), none authored"
+  }
+ },
+ "performance": {
+  "idle": {
+   "v": null,
+   "status": "todo"
+  },
+  "defaultPose": {
+   "v": null,
+   "status": "todo"
+  },
+  "preferredClips": {
+   "v": null,
+   "status": "todo"
+  },
+  "danceAuditions": {
+   "v": null,
+   "status": "todo"
+  },
+  "gait": {
+   "v": "Rig_Medium standard (gait_v157)",
+   "src": "CS-08 §2b; CS-02 body.rig",
+   "status": "SOURCE"
+  },
+  "presentationHints": {
+   "v": null,
+   "status": "todo"
+  },
+  "props": {
+   "v": null,
+   "status": "todo"
+  },
+  "kart": {
+   "v": null,
+   "status": "todo"
+  },
+  "lightByStoryMode": {
+   "table": {
+    "v": "LIGHT_MODEL_R2.md#B1 (Comic · Heroic · Tragic · Absurd · Mystical · Forbidden) + rule 11 warm character light, L-9",
+    "src": "CS-06 B1, rule 11; V-386, V-387",
+    "status": "GEORG"
+   },
+   "overrides": {
+    "v": null,
+    "status": "todo",
+    "note": "no per-character light preset found in any source; global table applies"
+   }
+  }
+ },
+ "voice": {
+  "engine": {
+   "v": null,
+   "status": "todo"
+  },
+  "spec": {
+   "v": null,
+   "status": "todo",
+   "note": "voice_casting.r1.json has no Norman"
+  },
+  "speed": {
+   "v": null,
+   "status": "todo"
+  },
+  "lang": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "provenance": [
+  "CS-02",
+  "CS-06",
+  "CS-08",
+  "CS-12",
+  "CS-33",
+  "CS-41",
+  "CS-57"
+ ],
+ "conflicts": [
+  "CtP role 'systemic_victim' (CS-41) vs NIE handover 'NormanNPC (inquisitor)' (CS-57)."
+ ],
+ "todo": [
+  "story note (world logic first, CS-12)",
+  "confirm identity with CtP NormanNPC",
+  "voice casting",
+  "clips / idle",
+  "archetype"
+ ]
+}

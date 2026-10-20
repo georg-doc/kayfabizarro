@@ -274,3 +274,29 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
 **Nächster Schritt:**
 1. Georg liest die DESIGN-Felder des Combat-Mech-Sheets gegen und entscheidet die Konflikte 1–5.
 2. Danach wird Metropolis aus dem Sheet heraus fertig geschrieben und von einem Kritiker aus einer anderen Modellfamilie geprüft.
+
+## §11 · 20.10.2026 · Figuren-Kanon von Georg (4GTN, Forgotten, Lord Hunky, Norman) → Dramatis-Personae-Patch
+**Georg (Chat):**
+- **4GTN:**
+  - CEO von Utopia; Transhumanismus, Dark Enlightenment, Technocracy Inc., Überwachungskapitalismus.
+  - Katana als Kampfwaffe (wie Ninja).
+  - Eingesetzt von der Galactic Academy, um fügsame, glückliche NPCs (Idiocracy) für die Fluff-Ernte nach Utopia zu locken und zu Cyborgs zu machen.
+  - Arbeitet mit/für Lord Hunky, mit widersprüchlichen Vorgaben der kafkaesken Academy im Zentrum der Galaxie.
+- **Lord Hunky:** verbannter, gescheiterter Terraformer der Academy.
+- **4GTN Forgotten:** die grüne Moos-Variante als Vorläufermodell, Rogue Robot und „guter“ Zwilling im Protopia-Maker-Space; Multiversum-Logik, „conflict is king“.
+- **Norman:** gut für Bullshit Jobs und What Work Was For.
+
+**Persistiert (additiv, Vorschlagsweg):**
+- `SONGS_WORKSHOP_R1/personae/PERSONAE_PATCH_R1.json`: Feld-Patches mit GEORG-Status, Basis = Register @6efe383 (sha256 je Datei).
+- Fertige Vorschlags-Dokumente `*.character.proposal.json` für 4GTN, Forgotten, Lord Hunky und Norman.
+- Beziehungen vom 17.10. bleiben erhalten und werden ergänzt.
+
+**Konflikt markiert:** 4GTN `performance.props` war am 17.10. leer, `styleNote` lautet „no samurai stereotype“. Das Katana ist als Waffe eingetragen, das Styling bleibt neutral; Georg bestätigt.
+
+**Norman:** im Writers' Room und in der Bewohnerliste eingetragen. Gate R4.2 kennt Figuren aus den Dramatis Personae ohne Katalogmodell (Norman, Lord Hunky, Lady Dory, Brain-Cyborg); Fixtures 41/41.
+
+**Combat Mech:** offene Frage ergänzt, ob Unit Nine ein umgewandelter NPC ist, Utopias Sicherheitsdienst oder beides.
+
+**Nächster Schritt:**
+1. Georg bestätigt die Konflikte #1/#2 (4GTN → Forget Utopia, Forgotten → Protopia) und das Katana.
+2. Dann der Weg in die Register-Dramatis-Personae (ToolBox-Proposal-Branch oder WS0).

@@ -70,7 +70,9 @@ TAG_LINE = re.compile(r"^\[([^\[\]]{1,40})\]$")
 STAGE_FORMULAS = ["good morning", "good evening", "good night, everybody", "tonight", "ladies and gentlemen", "front row", "round of applause",
                   "give it up for", "thank you, thank you", "make some noise", "is this thing on"]
 CROWD_TAGS = {"applause", "crowd cheering", "cheering crowd", "crowd", "crowd chant", "crowd boos", "boos", "laughter", "audience laughter"}
-KFB_HOUSE_FIGURES = {"frizzlebob": "KFB FrizzleBob v5 (V-244) – Hausfigur, nicht im Asset-Katalog"}
+KFB_HOUSE_FIGURES = {"frizzlebob": "KFB FrizzleBob v5 (V-244) – Hausfigur, nicht im Asset-Katalog",   # Dramatis Personae (FIGURES_R1) ohne Katalog-Modell
+                     "norman": "Dramatis Personae FIGURES_R1/figures/norman.figure.json", "lord_hunky": "Dramatis Personae FIGURES_R1/figures/lord_hunky.figure.json",
+                     "lady_dory": "Dramatis Personae FIGURES_R1/figures/lady_dory.figure.json", "brain_cyborg": "Dramatis Personae FIGURES_R1/figures/brain_cyborg.figure.json"}
 NAMED_FIGURE = re.compile(r"frizzlebob|\b(uncle|onkel)\b(?!\s+sam)|\brabbit\b(?!\s+holes?)", re.I)
 
 
