@@ -1,0 +1,500 @@
+{
+ "schema": "kfb.character/1",
+ "id": "caveman",
+ "status": "proposal-r1 2026-10-20 (WS-Song)",
+ "date": "2026-10-20",
+ "vRef": [],
+ "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo; src ids in CHARACTER_SOURCES.md",
+ "identity": {
+  "name": {
+   "v": "Caveman",
+   "src": "registry/assets/v1/catalog.jsonl",
+   "status": "SOURCE"
+  },
+  "displayName": {
+   "v": "Caveman",
+   "src": "registry/assets/v1/catalog.jsonl",
+   "status": "SOURCE"
+  },
+  "aliases": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "voiceInputMishearings": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "tier": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "series": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  }
+ },
+ "story": {
+  "background": {
+   "v": "einer der Ureinwohner des KFB-Multiversums; im Fluff Incident (Claymation-Genesis-Satire) von Lord Hunky aus Knetgummi erschaffen; seine Frau ist angeblich mit dem Vampir durchgebrannt (tragikomische Backstory)",
+   "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+   "status": "GEORG"
+  },
+  "worldKnowledge": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "inWorldRole": {
+   "v": "durch sein kritisches Denken (aus Lord Hunkys Sicht) verantwortlich für ungeplanten High-Vibrational-Fluff und das Scheitern der Fluff-Harvesting-, Terra- und Clayforming-Pläne von Hunky/Academy",
+   "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+   "status": "GEORG"
+  },
+  "worldLogicRule": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "place": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "openQuestions": {
+   "v": [
+    "Plato's Cave(man) / Dungeon Raid (RPG-Archetypen als Philosophen) – welches Deck?",
+    "ggf. Dionysos – Deck/Karte noch nicht im Registry gefunden",
+    "stimmt das 'angeblich' – Version der Frau, des Vampirs?"
+   ],
+   "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+   "status": "GEORG"
+  }
+ },
+ "personality": {
+  "archetype": {
+   "jungDrive": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "journeyFunction": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "frictionEngine": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   }
+  },
+  "castRole": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "personalityType": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "traits": {
+   "clamp": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "method": {
+    "v": "kritisches Denken mit Keule: stellt die Frage, die keiner bestellt hat",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "coreWant": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "coreIrritation": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "contradiction": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "failureLoop": {
+    "v": "erzählt die Geschichte mit der Frau und dem Vampir jedes Mal etwas anders",
+    "src": "WS-Song 2026-10-20 (Vorschlag)",
+    "status": "DESIGN"
+   },
+   "fears": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "escalationStyle": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "hiddenGoal": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "darkSecret": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   }
+  },
+  "humour": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "attitudeBaseline": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "stateMachine": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  }
+ },
+ "dialogue": {
+  "languageOwner": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "signaturePool": {
+   "tripletRefs": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "signatureWeight": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "globalWeight": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "relationBias": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "transformBias": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "preferredOperators": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "fluffOlectBias": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "initiative": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   }
+  },
+  "tripletVoice": {
+   "rules": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "goldenLine": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   }
+  },
+  "openers": {
+   "placeScenePolicy": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "preferred": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   }
+  },
+  "registers": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "lexicon": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "interjections": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "catchphrases": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "speechAvoid": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "maxWordsPerLine": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "knowledgePolicy": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  }
+ },
+ "cards": {
+  "signatureDeck": {
+   "v": "Kandidat: Plato's Cave(man) / Dungeon Raid (vielleicht)",
+   "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+   "status": "GEORG"
+  },
+  "stance": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "signatureCardRefs": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "deckLane": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "secondaryDecks": {
+   "v": [
+    "Kandidat: Dionysos (ggf.)"
+   ],
+   "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+   "status": "GEORG"
+  },
+  "performanceDecks": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "worldviewTags": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "deckGoal": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  }
+ },
+ "memory": {
+  "owner": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "valuesLiveIn": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "rememberable": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "beliefSources": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "rules": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "relationships": {
+   "v": [
+    {
+     "with": "lord_hunky",
+     "type": "creation_vs_creator",
+     "note": "aus Knetgummi geformt; Hunky macht ihn für das Scheitern der Ernte verantwortlich"
+    },
+    {
+     "with": "Vampire (noch kein Sheet)",
+     "type": "rival",
+     "note": "angeblich mit seiner Frau durchgebrannt"
+    }
+   ],
+   "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+   "status": "GEORG"
+  },
+  "almanacHooks": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  }
+ },
+ "appearance": {
+  "figureRef": {
+   "v": "media/3D_Assets/KayKit_Mystery_Series6/8 - February 2025 - Caveman/characters/Caveman.glb",
+   "src": "registry/assets/v1/catalog.jsonl",
+   "status": "SOURCE"
+  },
+  "figureStatus": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "renderStyle": {
+   "default": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "clayProfile": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "alternatives": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   }
+  },
+  "colours": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "worldVariants": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  }
+ },
+ "performance": {
+  "idle": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "defaultPose": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "preferredClips": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "danceAuditions": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "gait": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "presentationHints": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "props": {
+   "v": [
+    "Caveman_Club",
+    "Caveman_Axe",
+    "Caveman_Spear"
+   ],
+   "src": "registry/assets/v1/catalog.jsonl",
+   "status": "SOURCE"
+  },
+  "kart": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "lightByStoryMode": {
+   "table": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   },
+   "overrides": {
+    "v": null,
+    "src": null,
+    "status": "todo"
+   }
+  }
+ },
+ "voice": {
+  "engine": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "spec": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "speed": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  },
+  "lang": {
+   "v": null,
+   "src": null,
+   "status": "todo"
+  }
+ },
+ "provenance": [
+  "Georg 2026-10-20 (WS-Song chat, 2)",
+  "registry/assets/v1/catalog.jsonl"
+ ],
+ "todo": [
+  "Georg-Review der DESIGN-Felder",
+  "Deck-Zuordnung (Konflikt #6 in RESIDENT_DP_ALIGNMENT_R1.md)",
+  "Vampire-Sheet"
+ ]
+}

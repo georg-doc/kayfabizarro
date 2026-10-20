@@ -242,7 +242,8 @@
     {
      "model": "FrizzleBob",
      "asset": "KFB · FrizzleBob v5",
-     "role": "Gast, der nie zu Wort kommt"
+     "role": "Spieler-Avatar (Georg 20.10.): der Gast, der nie zu Wort kommt",
+     "previousRole": "Gast, der nie zu Wort kommt"
     }
    ],
    "home": "Bühnenecke im eigenen Wohnzimmer, Lautsprecher, Hocker",
@@ -264,7 +265,11 @@
    "meta": "Er verteilt Quests an wen auch immer da ist; die Karten sind Missionen, die sich selbst melden.",
    "musicDirection": "Krautrock-Motorik, tanzbar",
    "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
-   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht",
+   "previous": {
+    "status": "VORSCHLAG"
+   },
+   "openQuestion": "Georg 20.10.: FrizzleBob = Meta, vorerst Default-Spieler-Avatar. Bleibt er Bewohner seines eigenen Decks oder kommt ein anderer Bewohner?"
   },
   "geopolitical_thrillers_conspiracy_theories": {
    "status": "VORSCHLAG",

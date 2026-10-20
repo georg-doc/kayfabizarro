@@ -206,7 +206,116 @@
       "src": "Georg 2026-10-20 (WS-Song chat)",
       "status": "GEORG"
      }
+    },
+    {
+     "path": "story.fluffIncident",
+     "old": null,
+     "new": {
+      "v": "Claymation-Genesis-Satire: im Fluff Incident formt Lord Hunky u. a. den Caveman aus Knetgummi",
+      "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+      "status": "GEORG"
+     }
+    },
+    {
+     "path": "story.failedPlans",
+     "old": null,
+     "new": {
+      "v": "Fluff-Harvesting-, Terraforming- und Clayforming-Pläne von Hunky/Academy scheitern (aus Hunkys Sicht) am ungeplanten High-Vibrational-Fluff, den das kritische Denken des Caveman erzeugt",
+      "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+      "status": "GEORG"
+     }
+    },
+    {
+     "path": "memory.relationships",
+     "old": {
+      "v": [
+       {
+        "with": "lady_dory",
+        "type": "toxic_marriage",
+        "sharedTrauma": "fluff_incident_guilt",
+        "dynamicAxes": [
+         "containment/disclosure",
+         "control/emergence"
+        ],
+        "baselineHeat": 0.62,
+        "triggers": {
+         "mutual": [
+          "competence_questioned",
+          "past_mistakes_mentioned"
+         ],
+         "hunky_to_dory": [
+          "dismisses_moral_concerns",
+          "ridicules_empathy"
+         ],
+         "dory_to_hunky": [
+          "exposes_control_delusion",
+          "withholds_recognition"
+         ]
+        }
+       },
+       {
+        "with": "norman",
+        "type": "scene hunky_vs_norman",
+        "note": "CS-41 YAML scene list"
+       },
+       {
+        "with": "GodGPT (not in cast)",
+        "type": "overlord_vs_underling",
+        "sharedTrauma": "audit_failures"
+       }
+      ],
+      "src": "CS-40 relationship; CS-41 relationship_dynamics",
+      "status": "SOURCE"
+     },
+     "new": {
+      "v": [
+       {
+        "with": "lady_dory",
+        "type": "toxic_marriage",
+        "sharedTrauma": "fluff_incident_guilt",
+        "dynamicAxes": [
+         "containment/disclosure",
+         "control/emergence"
+        ],
+        "baselineHeat": 0.62,
+        "triggers": {
+         "mutual": [
+          "competence_questioned",
+          "past_mistakes_mentioned"
+         ],
+         "hunky_to_dory": [
+          "dismisses_moral_concerns",
+          "ridicules_empathy"
+         ],
+         "dory_to_hunky": [
+          "exposes_control_delusion",
+          "withholds_recognition"
+         ]
+        }
+       },
+       {
+        "with": "norman",
+        "type": "scene hunky_vs_norman",
+        "note": "CS-41 YAML scene list"
+       },
+       {
+        "with": "GodGPT (not in cast)",
+        "type": "overlord_vs_underling",
+        "sharedTrauma": "audit_failures"
+       },
+       {
+        "with": "caveman",
+        "type": "creator_vs_creation",
+        "note": "formte ihn im Fluff Incident aus Knetgummi; sieht in seinem kritischen Denken die Ursache für ungeplanten High-Vibrational-Fluff und das Scheitern von Fluff-Harvesting-, Terra- und Clayforming"
+       }
+      ],
+      "src": "CS-40 relationship; CS-41 relationship_dynamics; Georg 2026-10-20 (WS-Song chat, 2)",
+      "status": "GEORG"
+     }
     }
+   ],
+   "notes": [
+    "story.openQuestions 'what happened in the Fluff Incident' bleibt stehen; story.fluffIncident beantwortet sie teilweise."
    ]
   },
   "norman": {
@@ -240,6 +349,85 @@
      }
     }
    ]
+  },
+  "frizzlebob": {
+   "basePath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/frizzlebob.character.json",
+   "baseSha256": "7c47d77b926883ce7ac030c9bc392e749fb5acace01d2ec7e40475d97eb29310",
+   "changes": [
+    {
+     "path": "story.metaStatus",
+     "old": null,
+     "new": {
+      "v": "Meta-Figur",
+      "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+      "status": "GEORG"
+     }
+    },
+    {
+     "path": "story.playerRole",
+     "old": null,
+     "new": {
+      "v": "vorerst der Default-Spieler-Avatar / -Charakter",
+      "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+      "status": "GEORG"
+     }
+    }
+   ],
+   "notes": [
+    "Konflikt markiert: cards.performanceDecks 'intro/MC of every deck song (stand-up opener)' [GEORG 17.10.] vs. Bewohner-Prinzip 20.10. (Songs performt der Deck-Bewohner, keine Stand-up-Bühne) und FB als Spieler-Avatar. Nicht überschrieben; Georg/WS0 klären.",
+    "story.inWorldRole (Herald/Guide) bleibt unverändert; playerRole ergänzt."
+   ]
+  },
+  "gothgirl": {
+   "basePath": "tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/FIGURES_R1/characters/gothgirl.character.json",
+   "baseSha256": "8b3e347e3c63c0a8b53b16e5aea571912c15f40c526e0e1a6e9d6d543e3d877d",
+   "changes": [
+    {
+     "path": "story.background",
+     "old": {
+      "v": null,
+      "status": "todo",
+      "note": "no bio found in any source"
+     },
+     "new": {
+      "v": "vereint Dark Psychology, Okkultes und Sarkasmus, dazu Conspiracy und Psyops",
+      "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+      "status": "GEORG"
+     }
+    },
+    {
+     "path": "cards.worldviewTags",
+     "old": {
+      "v": null,
+      "status": "todo"
+     },
+     "new": {
+      "v": [
+       "Dark Psychology",
+       "Okkultismus",
+       "Sarkasmus",
+       "Conspiracy",
+       "Psyops"
+      ],
+      "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+      "status": "GEORG"
+     }
+    }
+   ],
+   "notes": [
+    "dialogue.speechAvoid (DESIGN: 'goth caricature', 'generic sarcasm', 'constant darkness/death language') bleibt als Leitplanke: Sarkasmus konkret statt generisch, Okkultes ohne Gruft-Klischee.",
+    "cards.signatureDeck bleibt DESIGN 'sonic_slaughterhouse'; Deck-Kandidaten nach neuem Kanon in RESIDENT_DP_ALIGNMENT_R1.md (Konflikt #3)."
+   ]
   }
- }
+ },
+ "newCharacters": {
+  "caveman": {
+   "path": "SONGS_WORKSHOP_R1/personae/caveman.character.proposal.json",
+   "note": "kein Register-Sheet vorhanden; neu angelegt nach kfb.character/1-Struktur (Vorlage gothgirl, Blätter auf todo zurückgesetzt)"
+  }
+ },
+ "sources": [
+  "Georg 2026-10-20 (WS-Song chat)",
+  "Georg 2026-10-20 (WS-Song chat, 2)"
+ ]
 }

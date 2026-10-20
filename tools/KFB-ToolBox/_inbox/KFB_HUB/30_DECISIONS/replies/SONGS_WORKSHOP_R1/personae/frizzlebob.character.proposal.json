@@ -1,0 +1,549 @@
+{
+ "schema": "kfb.character/1",
+ "id": "frizzlebob",
+ "status": "draft-r1 + proposal 2026-10-20",
+ "date": "2026-10-17",
+ "vRef": [
+  "V-394"
+ ],
+ "fieldFormat": "leaf = {v, src, status}; status GEORG | SOURCE | DESIGN | PREFILL | todo; src ids in CHARACTER_SOURCES.md",
+ "identity": {
+  "name": {
+   "v": "FrizzleBob",
+   "src": "CS-02",
+   "status": "SOURCE"
+  },
+  "displayName": {
+   "v": "Uncle FrizzleBob",
+   "src": "CS-47; CS-50",
+   "status": "SOURCE"
+  },
+  "aliases": {
+   "v": [
+    "Uncle FrizzleBob",
+    "Doc FrizzleBob (MedKayfab)",
+    "KnuckleBob (Fixer register)",
+    "FB",
+    "frizzlebob-earrig-v5",
+    "FB v5b"
+   ],
+   "src": "CS-02 aliases; CS-47; CS-55; CS-48 §4c",
+   "status": "SOURCE"
+  },
+  "voiceInputMishearings": {
+   "v": null,
+   "status": "todo",
+   "note": "none recorded"
+  },
+  "tier": {
+   "v": "main · protagonist",
+   "src": "CS-02 role; CS-03 tier",
+   "status": "SOURCE"
+  },
+  "series": {
+   "v": [
+    "Kayfabizarro",
+    "Cancel This Comic",
+    "MedKayfab (private IP)",
+    "FrizzleBob's Fractal Almanac"
+   ],
+   "src": "CS-47; CS-48; CS-51",
+   "status": "SOURCE"
+  }
+ },
+ "story": {
+  "background": {
+   "v": "Yellow cartoon rogue rabbit; 'Professional Reality-Wrestler, Worldview Fixer & Epistemiologic Outlaw' who fixes fractured worldviews for a living and collects ideas as time capsules in his Almanac",
+   "src": "CS-50; CS-51; CS-54; CS-56",
+   "status": "SOURCE"
+  },
+  "worldKnowledge": {
+   "v": [
+    "all Kayfabizarro decks as MC/host",
+    "MedKayfab medicine (as Doc FrizzleBob, private IP)",
+    "Fractal Almanac three levels: Material / Narrative / Conceptual"
+   ],
+   "src": "CS-47; CS-55; CS-50",
+   "status": "SOURCE"
+  },
+  "inWorldRole": {
+   "v": "Herald / Guide (not one of the Base-24 Resident slots); lead actor of the dialogue stage; MC of deck songs (stand-up opener)",
+   "src": "CS-21 §2, §5; V-240; V-344",
+   "status": "GEORG"
+  },
+  "worldLogicRule": {
+   "v": null,
+   "status": "todo",
+   "note": "why FB exists in the island world is not stated; Fairground Hub host / Doc FB / PolyGarden guide are separate forks (CS-48 §4)"
+  },
+  "place": {
+   "v": [
+    "KFB Fairground Hub (Deck-Spiel, Jahrmarkt)",
+    "MED Kayfabe Klinik (Doc FB, private)",
+    "Elisa PolyGarden (education)"
+   ],
+   "src": "CS-48 §4",
+   "status": "SOURCE"
+  },
+  "openQuestions": {
+   "v": [
+    "Character Bible v1: FB is the only recurring named figure; Georg limited that rule to comics and decks (game residents recur)"
+   ],
+   "src": "CS-60 §5.5; CS-61 l.121",
+   "status": "GEORG"
+  },
+  "metaStatus": {
+   "v": "Meta-Figur",
+   "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+   "status": "GEORG"
+  },
+  "playerRole": {
+   "v": "vorerst der Default-Spieler-Avatar / -Charakter",
+   "src": "Georg 2026-10-20 (WS-Song chat, 2)",
+   "status": "GEORG"
+  }
+ },
+ "personality": {
+  "archetype": {
+   "jungDrive": {
+    "v": null,
+    "status": "todo"
+   },
+   "journeyFunction": {
+    "v": "Herald / Guide",
+    "src": "CS-21 §2",
+    "status": "SOURCE"
+   },
+   "frictionEngine": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "castRole": {
+   "v": "DJ/MC in Resident dance culture; Deck MC; narrator/mentor/Master of the Arena (MedKayfab)",
+   "src": "CS-23; CS-47 /carny; CS-55",
+   "status": "SOURCE"
+  },
+  "personalityType": {
+   "v": "rogue cartoon-rabbit MC; dry, observational; 'You do not moralize. You demonstrate.'",
+   "src": "CS-47; CS-54",
+   "status": "SOURCE"
+  },
+  "traits": {
+   "method": {
+    "v": "be kind to the human; be cruel to the apparatus · incentives first, narratives second, vibes never",
+    "src": "CS-52",
+    "status": "SOURCE"
+   },
+   "coreWant": {
+    "v": null,
+    "status": "todo"
+   },
+   "coreIrritation": {
+    "v": null,
+    "status": "todo"
+   },
+   "contradiction": {
+    "v": null,
+    "status": "todo"
+   },
+   "failureLoop": {
+    "v": null,
+    "status": "todo"
+   },
+   "fears": {
+    "v": null,
+    "status": "todo"
+   },
+   "hiddenGoal": {
+    "v": null,
+    "status": "todo"
+   },
+   "darkSecret": {
+    "v": null,
+    "status": "todo"
+   }
+  },
+  "humour": {
+   "v": "dry stand-up comedian (not a wrestling announcer); parentheses asides; Rent Rule 'every line bleeds mechanism or exacts a price'; no appliance/system-glitch/AI-meta gags",
+   "src": "V-344; CS-54; CS-52; CS-47",
+   "status": "GEORG"
+  },
+  "attitudeBaseline": {
+   "v": null,
+   "status": "todo"
+  },
+  "stateMachine": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "dialogue": {
+  "languageOwner": {
+   "v": "ChatterBox + shared Triplet pool",
+   "src": "CS-20",
+   "status": "SOURCE"
+  },
+  "signaturePool": {
+   "v": null,
+   "status": "todo",
+   "note": "no FB entries in TRIPLET_POOL_SEED_20 (signatures only lorekeeper, goth-girl, clown, witch) (CS-24)"
+  },
+  "tripletVoice": {
+   "rules": {
+    "v": "Triplet = one spoken line per card; title + power term first, telegram fragments from card words only, opener from pool max once per set, intro 'Welcome to <Deck>.', outro 'Stay Fluffy!'",
+    "src": "CS-11; V-231…V-235, V-266, V-275",
+    "status": "GEORG"
+   },
+   "goldenLine": {
+    "v": "You with the card in your hand, Kayfabizarro, the Work: it's fake, but emotion is real.",
+    "src": "CS-03 (TRIPLET_SETS_R2/help_i_am_a_human #55)",
+    "status": "GEORG"
+   }
+  },
+  "openers": {
+   "placeScenePolicy": {
+    "v": null,
+    "status": "todo",
+    "note": "V-222: per figure either 'free stage fiction' or 'only places from the card' must be set in the figure profile; no value found"
+   },
+   "preferred": {
+    "v": [
+     "Howdy, friend. Uncle FrizzleBob here. Pull up a chair.",
+     "Evening, fluffheads (Fluff-o-lect address, stand-up intro)"
+    ],
+    "src": "CS-50; V-344",
+    "status": "SOURCE"
+   }
+  },
+  "registers": {
+   "v": [
+    "/fixer Trenchcoat KnuckleBob",
+    "/analyst Intelligence Analyst",
+    "/carny Deck MC",
+    "/bedside Med Professor",
+    "/rapgod Wordacrobat",
+    "/mensch Humanist",
+    "/snark internal stress test (not for shipping)"
+   ],
+   "src": "CS-47",
+   "status": "SOURCE"
+  },
+  "lexicon": {
+   "v": null,
+   "status": "todo"
+  },
+  "interjections": {
+   "v": [
+    "KayfaBIZARRO!",
+    "BLÖDSINN!",
+    "HUMBUG!",
+    "KayfaBINGO!",
+    "What the FLUFF?!"
+   ],
+   "src": "CS-56",
+   "status": "SOURCE"
+  },
+  "catchphrases": {
+   "v": [
+    "Stay fluffy.",
+    "FrizzleBob out.",
+    "I'm a rabbit, not a cop."
+   ],
+   "src": "CS-50; CS-53; CS-47 /carny",
+   "status": "SOURCE"
+  },
+  "speechAvoid": {
+   "v": [
+    "em dashes",
+    "sycophantic openers",
+    "generic AI closers",
+    "appliance gags",
+    "system-glitch humour",
+    "meta-AI fourth-wall breaks"
+   ],
+   "src": "CS-47 Layer Zero",
+   "status": "SOURCE"
+  },
+  "maxWordsPerLine": {
+   "v": null,
+   "status": "todo"
+  },
+  "knowledgePolicy": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "cards": {
+  "signatureDeck": {
+   "v": null,
+   "status": "todo",
+   "note": "FB-named decks exist on main (FrizzleBob's Mission Control, Ego Mania, Kompendium Elender Wicht) but none is assigned to the character"
+  },
+  "stance": {
+   "v": null,
+   "status": "todo"
+  },
+  "signatureCardRefs": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckLane": {
+   "v": null,
+   "status": "todo"
+  },
+  "secondaryDecks": {
+   "v": null,
+   "status": "todo"
+  },
+  "performanceDecks": {
+   "v": "intro/MC of every deck song (stand-up opener)",
+   "src": "V-344",
+   "status": "GEORG"
+  },
+  "worldviewTags": {
+   "v": null,
+   "status": "todo"
+  },
+  "deckGoal": {
+   "v": null,
+   "status": "todo"
+  }
+ },
+ "memory": {
+  "owner": {
+   "v": "KFB Town Resident Social Memory (CS-20) inside Lean Memory layers A–F",
+   "src": "CS-20 memory.owner; CS-26 §10",
+   "status": "SOURCE"
+  },
+  "valuesLiveIn": {
+   "v": [
+    "PLAYER_SAVE",
+    "NPC_MEMORY_VIEW",
+    "SOCIAL_RELATION",
+    "ENCOUNTER_RECEIPT",
+    "MOMENT_RECEIPT",
+    "CARD_COLLECTION_ENTRY",
+    "JOURNEY_ENTRY"
+   ],
+   "src": "CS-26 §11",
+   "status": "SOURCE"
+  },
+  "rememberable": {
+   "v": [
+    "EncounterReceipt refs",
+    "relation refs",
+    "salient MomentReceipts",
+    "unresolved threads",
+    "shared Card/song/world refs",
+    "canonical fact knowledge"
+   ],
+   "src": "CS-26 §10 C (NPC / SOCIAL MEMORY)",
+   "status": "SOURCE"
+  },
+  "beliefSources": {
+   "v": [
+    "signature-deck",
+    "heard-from",
+    "seen",
+    "guessed"
+   ],
+   "src": "CS-20 memory.beliefSources (from NPC_SOCIAL_MODEL_RESEARCH_2026-10-02 §2-A)",
+   "status": "DESIGN"
+  },
+  "rules": {
+   "v": [
+    "deck knowledge is authored knowledge, not Lean Memory; no receipt per card",
+    "song/gift/performance discoveries go through Lean Memory / Journey only, one idempotent acquisition per canonical id",
+    "generated summaries are caches; receipts and canonical facts stay authoritative"
+   ],
+   "src": "CS-22 §8; CS-28 §4 (cb4e9ec1c); CS-26 §10",
+   "status": "SOURCE"
+  },
+  "relationships": {
+   "v": null,
+   "status": "todo"
+  },
+  "almanacHooks": {
+   "v": [
+    "Fractal Almanac is FB's own artefact: 'gains a new entry every time someone does [steal an idea]'",
+    "Almanac = bundle of time capsules FB collects"
+   ],
+   "src": "CS-50",
+   "status": "SOURCE"
+  }
+ },
+ "appearance": {
+  "figureRef": {
+   "v": "figures/frizzlebob.figure.json",
+   "src": "CS-02",
+   "status": "SOURCE"
+  },
+  "figureStatus": {
+   "v": "approved",
+   "src": "CS-02 frizzlebob.figure.json#approval.status",
+   "status": "SOURCE",
+   "note": "informational copy; the figure card is authoritative"
+  },
+  "renderStyle": {
+   "default": {
+    "v": "clay",
+    "src": "V-394; V-346.6; FIGURE_SCHEMA_R1 rule 4",
+    "status": "GEORG"
+   },
+   "clayProfile": {
+    "v": "figure-fine",
+    "src": "CS-02 material.clayProfile (V-053/V-340)",
+    "status": "GEORG"
+   },
+   "alternatives": {
+    "v": [],
+    "src": "V-394 (other textures allowed only when listed here)",
+    "status": "GEORG",
+    "note": "Meshy FB outfit (shirt, trousers, shoes) planned as clothing, not a texture alternative (V-261)"
+   }
+  },
+  "colours": {
+   "v": {
+    "body": "yellow cartoon rabbit; Character Bible v1 LOCK: cheeky, anti-cute, never humanoid, dungarees workwear"
+   },
+   "src": "CS-54 rendering rule; CS-56; CS-60 §5.5 (Bible LOCK)",
+   "status": "SOURCE"
+  },
+  "worldVariants": {
+   "v": null,
+   "status": "todo",
+   "note": "per-world costume variants proposed in CS-44 (kfb.character-card/1 'variants'), none authored"
+  },
+  "outfits": {
+   "v": [
+    {
+     "id": "tuxedo_brass_knuckles",
+     "label": "Tuxedo with Brass Knuckles",
+     "look": "black tuxedo, red bow tie",
+     "when": "depending on mask/role",
+     "props": [
+      "brass_knuckles"
+     ]
+    }
+   ],
+   "src": "Georg 17.10. (V-423)",
+   "status": "GEORG",
+   "note": "tuxedo comes from the WSB B12 suit kit (variant on the FB rig); brass knuckles = KFB basic melee weapon"
+  }
+ },
+ "performance": {
+  "idle": {
+   "v": "Idle_A (Rig_Medium_General, P08 earfb defaultIdle)",
+   "src": "CS-02 performance.idle",
+   "status": "SOURCE"
+  },
+  "defaultPose": {
+   "v": null,
+   "status": "todo"
+  },
+  "preferredClips": {
+   "v": null,
+   "status": "todo"
+  },
+  "danceAuditions": {
+   "v": [
+    "kfb_dance_hip_hop_a",
+    "kfb_dance_wave_hip_hop_a",
+    "kfb_dance_locking_hip_hop_a"
+   ],
+   "src": "CS-23 dance table (FrizzleBob DJ/MC: Hip Hop A · Wave · Locking; MC/show-off phrase)",
+   "status": "DESIGN"
+  },
+  "gait": {
+   "v": "Rig_Medium standard: Walking_A / Running_A / Running_B (gait_v157)",
+   "src": "CS-08 §2b",
+   "status": "SOURCE"
+  },
+  "presentationHints": {
+   "v": [
+    "ear acting is its own layer (47 bones)",
+    "ears as actors: soft/floppy stiffness"
+   ],
+   "src": "CS-08 (FB 47 Knochen); V-338 C",
+   "status": "SOURCE"
+  },
+  "props": {
+   "v": null,
+   "status": "todo"
+  },
+  "kart": {
+   "v": "bathtub kart driver R5 PASS",
+   "src": "V-320",
+   "status": "GEORG"
+  },
+  "lightByStoryMode": {
+   "table": {
+    "v": "LIGHT_MODEL_R2.md#B1 (Comic · Heroic · Tragic · Absurd · Mystical · Forbidden) + rule 11 warm character light, L-9",
+    "src": "CS-06 B1, rule 11; V-386, V-387",
+    "status": "GEORG"
+   },
+   "overrides": {
+    "v": null,
+    "status": "todo",
+    "note": "no per-character light preset found in any source; global table applies"
+   }
+  }
+ },
+ "voice": {
+  "engine": {
+   "v": "kokoro v1.0",
+   "src": "CS-03",
+   "status": "GEORG"
+  },
+  "spec": {
+   "v": "am_michael",
+   "src": "CS-03; V-308; V-324",
+   "status": "GEORG"
+  },
+  "speed": {
+   "v": 1.0,
+   "src": "CS-03",
+   "status": "GEORG"
+  },
+  "lang": {
+   "v": "en-us",
+   "src": "CS-03",
+   "status": "GEORG"
+  }
+ },
+ "provenance": [
+  "CS-01",
+  "CS-02",
+  "CS-03",
+  "CS-06",
+  "CS-08",
+  "CS-11",
+  "CS-21",
+  "CS-23",
+  "CS-26",
+  "CS-47",
+  "CS-48",
+  "CS-50",
+  "CS-52",
+  "CS-53",
+  "CS-54",
+  "CS-55",
+  "CS-56",
+  "CS-60",
+  "CS-61"
+ ],
+ "conflicts": [
+  "Identity varies across booklets: metaphysical rabbit detective (CS-53), tuxedo data jockey with brass knuckles (CS-52), kompendium writer (CS-54), lab-coat Doc (CS-55), MAD card artist (CS-56); look yellow vs golden, top hat (kayfabizarro-archive.md).",
+  "Register: CS-54 'Dry, not contemptuous' vs CS-52 'Elegant Savagery' + NSFW rule vs 001 Guide 'soy-meat' register.",
+  "Mode lists: skill has 7 modes (CS-47); NIE overview 20 modes (CS-52); M106 another 20 incl. HUNKY-DORY as an FB mode.",
+  "Clothing: Bible LOCK dungarees (CS-60) vs V-261 plan to dress v5b in the Meshy FB outfit (shirt, trousers, shoes)."
+ ],
+ "todo": [
+  "jungDrive / frictionEngine / clamps (Base-24 keeps FB outside the 24 slots)",
+  "signature deck + stance",
+  "signature triplets in the pool",
+  "worldLogicRule in the island world",
+  "which register is canon for the game (skill vs booklets)"
+ ]
+}

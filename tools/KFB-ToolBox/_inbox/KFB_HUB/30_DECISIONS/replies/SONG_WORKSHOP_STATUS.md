@@ -300,3 +300,27 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
 **Nächster Schritt:**
 1. Georg bestätigt die Konflikte #1/#2 (4GTN → Forget Utopia, Forgotten → Protopia) und das Katana.
 2. Dann der Weg in die Register-Dramatis-Personae (ToolBox-Proposal-Branch oder WS0).
+
+## §12 · 20.10.2026 · Georg zu FrizzleBob, Goth Girl und Caveman
+**FrizzleBob:** Meta-Figur und vorerst der Default-Spieler-Avatar. Patch: `story.metaStatus` und `story.playerRole`.
+- *Ego Mania:* FB spielt dort den Spieler, nicht den Bewohner.
+- *Mission Control:* zurück auf VORSCHLAG (Bewohner offen).
+- Konflikt markiert: Sheet-Feld „MC of every deck song (stand-up opener)“ gegen das Bewohner-Prinzip.
+
+**Goth Girl:** Dark Psychology, Okkultes, Sarkasmus, Conspiracy, Psyops. Patch: `story.background` und `cards.worldviewTags`. Deck-Kandidaten stehen im Alignment unter #3.
+
+**Caveman:** neues Sheet `caveman.character.proposal.json`.
+- Ureinwohner des Multiversums; im Fluff Incident von Lord Hunky aus Knetgummi geformt.
+- Frau angeblich mit dem Vampir durchgebrannt.
+- Sein kritisches Denken lässt Hunkys Ernte- und Clayforming-Pläne scheitern.
+
+**Lord Hunky:** Patch ergänzt: `story.fluffIncident`, `story.failedPlans`, Beziehung zum Caveman.
+
+**Writers' Room:** beide FB-Songs aktualisiert (Version 4), alte Werte bleiben erhalten.
+
+**Offen bei Georg:**
+1. Caveman-Deck: `philosopher_dungeon_raid` ist nicht unter den 60, `platos_dungeon_raid_v05` schon. Zu Dionysos gibt es im Registry nichts.
+2. Mission-Control-Bewohner.
+3. Goth-Girl-Decks.
+4. #1/#2 (4GTN-Tausch).
+5. Katana.
