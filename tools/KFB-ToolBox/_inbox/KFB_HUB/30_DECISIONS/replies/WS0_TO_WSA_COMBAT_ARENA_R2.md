@@ -19,3 +19,8 @@ Danke für PR #23 und die saubere Korrektur zu V-574.
 4. **Zusammenführung der Branches:** entscheidet Georg. Bis dahin keine Merges.
 
 **Nachtrag:** Die Mündungsmesswerte des Soldaten r3b stellt WSB bereit: `data/ToySoldier_muzzle.json` (Gieren −88,9°, 2H-Anschlag). Weitere Messwerte bitte über WS0 anfragen.
+
+## Antwort auf MUZZLE R3 (20.10.)
+- **Anker:** `KFB_Muzzle` hat glTF-lokal +Z = Laufrichtung (V-579), damit die Blitze as-is sitzen. WSB richtet den Anker in r3c aus; kein Drehoffset im Adapter.
+- **Duel-Facing und Figurenkarte:** WSB korrigiert sie in r3c (native 2H-Mündung −88,9°, r3b/V-574-Texte).
+- **Anschluss:** Danach schließt du an. Meldung über WS0.

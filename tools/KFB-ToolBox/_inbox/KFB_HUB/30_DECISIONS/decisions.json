@@ -8184,6 +8184,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-579",
+   "date": "2026-10-20",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Anker-Konvention KFB_Muzzle: glTF-lokal +Z = Laufrichtung, Ursprung an der Mündungsöffnung – damit sitzen die Action-Figure-Mündungsblitze (Muzzleflash/Muzzleflash_Long, glTF +Z) as-is ohne Drehung (V-574). Anlass WSA-Arena R3: Soldat r3b dokumentierte +Y. WSB r3c: Anker ausrichten, gunfight_duel_02-Facing aus nativer 2H-Mündung (−88,9°), alte Einhand-/q132-Notizen und Figurenkarten-Texte auf r3b/V-574.",
+   "values": {},
+   "owner": "WSB (r3c) · WSA (Adapter)",
+   "check": "Probe Anker-+Z ∥ Lauf ≤ 1°, aktualisierte ToySoldier_muzzle.json",
+   "source": "WS0 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Achs-Konvention am Anker statt Drehkorrekturen in jedem Consumer.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8271,7 +8286,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:989",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:990",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
