@@ -2079,7 +2079,7 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     }
     // Kontakt-AO auf dem Boden (Georg: dunkle, nie schwarze Zone rund um den Fuß jedes Props, wie KayKit): weichgezeichnete Draufsicht der Props, 80 m um das Auto
     if(uAOOn>0.5 && uGridWorld<0.5){ vec2 rel=vW.xz-uCarW; vec2 auv=vec2(rel.x+40.0, -rel.y+40.0)/80.0;
-      if(auv.x>0.0 && auv.x<1.0 && auv.y>0.0 && auv.y<1.0){ float ao=texture2D(uAOMap, auv).r*(1.0-smoothstep(0.42,0.5,max(abs(auv.x-0.5),abs(auv.y-0.5))));
+      if(auv.x>0.0 && auv.x<1.0 && auv.y>0.0 && auv.y<1.0){ vec2 aq=auv*1024.0+0.5; vec2 ai=floor(aq), af=fract(aq); af=af*af*(3.0-2.0*af); /* weiche Interpolation statt Knicke (Quilez), gegen Treppen */ float ao=texture2D(uAOMap, (ai+af-0.5)/1024.0).r*(1.0-smoothstep(0.42,0.5,max(abs(auv.x-0.5),abs(auv.y-0.5))));
         float aoK=0.62*(1.0-exp(-2.2*ao)); col=mix(col, mix(col*0.6, uContact, 0.35), aoK); } }   /* weiche Kurve statt Plateau mit Kante */
     if(uShadowOn>0.5){ vec3 sc=vSC.xyz/vSC.w; if(sc.x>0.0 && sc.x<1.0 && sc.y>0.0 && sc.y<1.0 && sc.z<1.0){ float sv=0.0; vec2 tx=vec2(1.25/2048.0); /* 5×5 Proben: ruhige Kante ohne Treppen */
       { float ign=fract(52.9829189*fract(dot(gl_FragCoord.xy, vec2(0.06711056,0.00583715))));   /* pro Bildpunkt gedreht: keine Stufen, kein Raster */
@@ -2597,7 +2597,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   RACERS.forEach((r) => { const o = document.createElement('option'); o.value = r.id; o.textContent = r.name.replace(/^\d+\s/, ''); carSel.appendChild(o) });
   const loader = new THREE.GLTFLoader(), cache = new Map();
   // Kontakt-AO-Pass: Props (Ebene 2) von oben weiß in eine kleine Karte, dann zweimal weichgezeichnet (ca. 1,2 m Hof)
-  const AO = { rtA: new THREE.WebGLRenderTarget(512, 512), rtB: new THREE.WebGLRenderTarget(512, 512), cam: new THREE.OrthographicCamera(-40, 40, 40, -40, 1, 600), white: new THREE.MeshBasicMaterial({ color: 0xffffff }) };
+  const AO = { rtA: new THREE.WebGLRenderTarget(1024, 1024), rtB: new THREE.WebGLRenderTarget(1024, 1024),   /* doppelte Auflösung (Georg 21.10.: Schatten pixelig) */ cam: new THREE.OrthographicCamera(-40, 40, 40, -40, 1, 600), white: new THREE.MeshBasicMaterial({ color: 0xffffff }) };
   AO.cam.position.set(0, 300, 0); AO.cam.up.set(0, 0, -1); AO.cam.lookAt(0, 0, 0); AO.cam.layers.set(2);
   AO.blur = new THREE.ShaderMaterial({ uniforms: { tMap: { value: null }, uDir: { value: new THREE.Vector2() } }, depthTest: false, depthWrite: false,
     vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.0,1.0); }',
@@ -2609,8 +2609,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     const au = renderer.shadowMap.autoUpdate, cc = renderer.getClearColor(new THREE.Color()), ca = renderer.getClearAlpha(), om = scene.overrideMaterial, fg = scene.fog;
     renderer.shadowMap.autoUpdate = false; scene.overrideMaterial = AO.white; scene.fog = null; renderer.setClearColor(0x000000, 1);
     renderer.setRenderTarget(AO.rtA); renderer.clear(); renderer.render(scene, AO.cam); scene.overrideMaterial = om; scene.fog = fg;
-    AO.blur.uniforms.tMap.value = AO.rtA.texture; AO.blur.uniforms.uDir.value.set(1 / 512, 0); renderer.setRenderTarget(AO.rtB); renderer.render(AO.qScene, AO.qCam);
-    AO.blur.uniforms.tMap.value = AO.rtB.texture; AO.blur.uniforms.uDir.value.set(0, 1 / 512); renderer.setRenderTarget(AO.rtA); renderer.render(AO.qScene, AO.qCam);
+    AO.blur.uniforms.tMap.value = AO.rtA.texture; AO.blur.uniforms.uDir.value.set(1 / 1024, 0); renderer.setRenderTarget(AO.rtB); renderer.render(AO.qScene, AO.qCam);
+    AO.blur.uniforms.tMap.value = AO.rtB.texture; AO.blur.uniforms.uDir.value.set(0, 1 / 1024); renderer.setRenderTarget(AO.rtA); renderer.render(AO.qScene, AO.qCam);
     renderer.setRenderTarget(null); renderer.setClearColor(cc, ca); renderer.shadowMap.autoUpdate = au; U.uAOMap.value = AO.rtA.texture }
   const carRoot = new THREE.Group(), tilt = new THREE.Group(), squash = new THREE.Group(); carRoot.add(tilt); tilt.add(squash); scene.add(carRoot);
   const plumeGeo = new THREE.ConeGeometry(1, 1, 16, 1, true).translate(0, 0.5, 0).rotateX(-Math.PI / 2); // Fuß an der Düse, Spitze nach −Z
@@ -2825,6 +2825,15 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   const ON = [], ON2 = []
   const surfAt = (x, z) => { let g = groundAt(x, z); for (const o of obstNear(x, z, 0, ON2)) { const d = Math.hypot(x - o.x, z - o.z); if (d < o.r && o.top - g < OB.STEP) g = Math.max(g, o.y + (o.top - o.y) * Math.sqrt(1 - (d / o.r) ** 2))   /* nur überfahrbare Steine sind Boden (gleiche Grenze wie die Wand) – sonst kippte die Nase auf Wand-Steine und hüpfte endlos */ } return g }
   const HV = { a: new THREE.Vector3(), b: new THREE.Vector3(), n: new THREE.Vector3(), p: [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()] }
+  const LIFT = { key: null, pts: [], v: new THREE.Vector3(), y: 0 };
+  function liftPoints() { /* Unterseite als 7×11 Raster: je Zelle der tiefste Modellpunkt im Wagen-Raum (ohne Glühen/Schatten) */
+    carRoot.updateMatrixWorld(true); const inv = new THREE.Matrix4().copy(carRoot.matrixWorld).invert(), v = new THREE.Vector3(), all = []
+    carHolder.traverse((o) => { if (!o.isMesh || !o.visible || !o.geometry?.attributes?.position) return; const pa = o.geometry.attributes.position, st = Math.max(1, Math.floor(pa.count / 6000))
+      for (let i = 0; i < pa.count; i += st) { v.fromBufferAttribute(pa, i).applyMatrix4(o.matrixWorld).applyMatrix4(inv); all.push(v.clone()) } })
+    if (!all.length) return []; const bb = new THREE.Box3().setFromPoints(all), NX = 7, NZ = 11, cell = new Array(NX * NZ).fill(null)
+    for (const p of all) { const i = Math.min(NX - 1, Math.floor((p.x - bb.min.x) / (bb.max.x - bb.min.x + 1e-6) * NX)), k = Math.min(NZ - 1, Math.floor((p.z - bb.min.z) / (bb.max.z - bb.min.z + 1e-6) * NZ)), c = i * NZ + k
+      if (!cell[c] || p.y < cell[c].y) cell[c] = p }
+    return cell.filter(Boolean) }
   const DENV = {
     ground: (x, z) => { const hv = carInfo?.hover; let gc = surfAt(x, z)
       if (!hv || hv.length < 4) return { y: gc + RIDE, n: gN(x, z), floor: gc + RIDE }
@@ -2832,7 +2841,10 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       for (let i = 0; i < 4; i++) { const lx = hv[i][0] * UNIT, lz = hv[i][2] * UNIT, wx = x + lx * cy + lz * sy, wz = z - lx * sy + lz * cy, h = surfAt(wx, wz); HV.p[i].set(wx, h, wz); sum += h }
       HV.a.subVectors(HV.p[1], HV.p[2]); HV.b.subVectors(HV.p[0], HV.p[3]); HV.n.crossVectors(HV.a, HV.b).normalize(); if (HV.n.y < 0) HV.n.negate()   // Diagonalen FR−RL × FL−RR
       if (HV.n.y < 0.35) HV.n.set(0, 1, 0)
-      const y = Math.max(gc, sum / 4) + RIDE; return { y, n: [HV.n.x, HV.n.y, HV.n.z], floor: y } },
+      // Rumpf frei halten (Georg 21.10.: Wagen steckte in Hügeln): Nase, Heck und Seitenmitten des Kastens abtasten – die Unterseite bleibt über allen Punkten
+      const bx = carInfo.box, hw = bx.h[0] * UNIT, zf = (bx.c[2] + bx.h[2]) * UNIT, zb = (bx.c[2] - bx.h[2]) * UNIT; let tip = -Infinity
+      for (const [lx, lz] of [[0, zf], [0, zb], [hw, 0], [-hw, 0], [hw * 0.7, zf * 0.8], [-hw * 0.7, zf * 0.8]]) tip = Math.max(tip, surfAt(x + lx * cy + lz * sy, z - lx * sy + lz * cy))
+      const y = Math.max(gc + RIDE, sum / 4 + RIDE, tip + RIDE * 0.35); return { y, n: [HV.n.x, HV.n.y, HV.n.z], floor: y } },
     sweep: (from, delta) => { const tx = from[0] + delta[0], tz = from[2] + delta[2], base = from[1] - RIDE, g = groundAt(tx, tz); const h = Math.hypot(delta[0], delta[2])
       if (h > 1e-6 && g - base > 1.2) { const n = [-delta[0] / h, 0, -delta[2] / h]; return { delta: [0, delta[1], 0], hit: true, n, soft: false, ride: false } }   // Stufe höher als 1,2 m = Wand
       const R = OB.R(); let dx = delta[0], dz = delta[2], hitN = null
@@ -2868,7 +2880,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     const u = TV.u.fromArray(D.up || [0, 1, 0]).normalize(), fw = TV.f.set(Math.sin(D.yaw), 0, Math.cos(D.yaw)); fw.addScaledVector(u, -fw.dot(u)).normalize()
     const x = TV.x.crossVectors(u, fw); TV.m.makeBasis(x, u, fw); TV.qw.setFromRotationMatrix(TV.m).multiply(TV.qe.setFromEuler(TV.e.set(D.pitch || 0, 0, D.roll || 0)))
     TV.qt.setFromAxisAngle(TV.Y, D.yaw).invert().multiply(TV.qw)                                   // ohne Gierung (die setzt carRoot)
-    if (!P.qTilt) P.qTilt = TV.qt.clone(); else P.qTilt.slerp(TV.qt, dt ? Math.min(1, dt * (P.fly ? 14 : 6)) : 1)   /* Luftpolster schluckt kleine Wellen (Georg: Nase federt) */
+    if (!P.qTilt) P.qTilt = TV.qt.clone(); else P.qTilt.slerp(TV.qt, dt ? Math.min(1, dt * (P.fly ? 14 : 10)) : 1)   /* Luftpolster schluckt kleine Wellen (Georg: Nase federt) */
     const nf = TV.f.set(0, 0, 1).applyQuaternion(P.qTilt), nr = TV.x.set(1, 0, 0).applyQuaternion(P.qTilt); P.vPitch = Math.asin(Math.max(-1, Math.min(1, nf.y))); P.vRoll = -Math.asin(Math.max(-1, Math.min(1, nr.y)))
   }
   function step(dt) {
@@ -2996,6 +3008,12 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     { const sp = Math.min(1, Math.abs(P.vf) / 22), rest = P.fly ? 0.25 : P.air ? 0 : 1 - 0.75 * sp; HOV.k += (rest - HOV.k) * Math.min(1, dt * 3)
       const w = 2 * Math.PI, bob = (Math.sin(t * w * 0.42) * 0.7 + Math.sin(t * w * 0.77 + 1.3) * 0.3) * 0.035 * HOV.k   /* ruhiges Atmen statt Hüpfen (Georg 21.10.: Dauer-Hüpfer) */
       carRoot.position.y += bob; HOV.q.setFromEuler(HOV.e.set(0.01 * HOV.k * Math.sin(t * w * 0.36 + 0.7), 0, 0.014 * HOV.k * Math.sin(t * w * 0.29 + 2.1))); tilt.quaternion.multiply(HOV.q) }
+    /* Rumpf nie im Hang (Georg 21.10.: Wagen steckte in Hügeln): die echte Unterseite des Modells (tiefster Punkt je Rasterzelle, einmal pro Wagen) wird jedes Bild
+       in der gezeichneten Lage gegen den Boden geprüft; ragt eine Ecke (Flügel, Bug) hinein, hebt die Darstellung den Wagen an – sofort hoch, sanft zurück. Physik bleibt k2t. */
+    if (carHolder && carInfo) { if (LIFT.key !== carInfo) { LIFT.key = carInfo; LIFT.pts = liftPoints() }
+      carRoot.updateMatrixWorld(true); let pen = 0
+      for (const p of LIFT.pts) { LIFT.v.copy(p).applyMatrix4(carRoot.matrixWorld); pen = Math.max(pen, surfAt(LIFT.v.x + P.x, LIFT.v.z + P.z) + 0.04 - LIFT.v.y) }
+      LIFT.y = pen > LIFT.y ? pen : LIFT.y + (pen - LIFT.y) * Math.min(1, dt * 5); carRoot.position.y += LIFT.y }
     updateSpeedlines(dt, t); CARDS.update(dt, t);
     if (mode === 'over') {
       U.uFogNear.value = 1500; U.uFogFar.value = 4500; /* Übersicht: Ringe immer an, Nebel ist an der Ringkante (4,8 km) voll → keine sichtbare Geländekante */ if (camera.fov !== 55) { camera.fov = 55; camera.updateProjectionMatrix() }
