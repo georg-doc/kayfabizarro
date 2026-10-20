@@ -3,6 +3,23 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 99 · 20.10. · Gelände-Probe jetzt öffentlich erreichbar
+
+Die private Seite aus §98 lässt sich nicht in den WS0-Workspace teilen. Deshalb liegt die Probe auf Georgs Wunsch als eigene Seite neben dem Spiel auf der Vorschau:
+
+**https://ws1-preview.kayfabizarro.pages.dev/gelaende-probe.html**
+
+Cloudflare braucht etwa 15 min nach dem Push (`ws1/preview` @84a60a6).
+
+- Das Spiel (`index.html`) bleibt unverändert; die Seite steht in `build.json` unter `extraPages.gelaendeProbe`.
+- Die Racer-Modelle kommen von denselben festen Adressen wie in der Spielvorschau (Asset-Branch, Pin 9bd8e037). Es wurde nichts neu veröffentlicht.
+- **Bedienung:**
+  - Vorlagen und Schieber rechts.
+  - Oben im Bild „Fahren“: W/A/S/D, ⇧ Boost, Leertaste Sprung, 2× Leertaste oder F zum Fliegen, R zurücksetzen.
+  - Unter „Welt und Tempo“: Ringgitter, Gitter-Welt (Schachbrett, Knet-Optik), Test-Tempo bis Warp.
+  - Unter „Himmel“: Tageszeit, gemalte und Knet-Wolken.
+  - „Rezept kopieren“ liefert den `kfb.terrain-recipe/1`-Entwurf als JSON.
+
 ## 98 · 20.10. · Gelände-Probe: Cartoon-Gelände, endlose Welt, Hochgeschwindigkeit (Recherche + Prototyp, auf Georgs Wunsch)
 
 Außerhalb des Spiel-Repos, als interaktive Seite: **https://claude.ai/artifact/5XEWSgg2FGerJqpKEriBhM** (Version 7). Die Seite ist privat; Georg teilt sie über das Share-Menü. Auf Georgs Mac läuft sie mit **60 fps**. Nichts davon ist im Spiel oder auf `combo/r2`, es ist Entscheidungsgrundlage für WS1b.
