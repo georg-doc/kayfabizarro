@@ -2089,7 +2089,13 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
         float aoK=0.62*(1.0-exp(-2.2*ao)); col=mix(col, mix(col*0.6, uContact, 0.35), aoK); } }   /* weiche Kurve statt Plateau mit Kante */
     if(uShadowOn>0.5){ vec3 sc=vSC.xyz/vSC.w; if(sc.x>0.0 && sc.x<1.0 && sc.y>0.0 && sc.y<1.0 && sc.z<1.0){ float sv=0.0; vec2 tx=vec2(1.25/2048.0); /* 5×5 Proben: ruhige Kante ohne Treppen */
       { float ign=fract(52.9829189*fract(dot(gl_FragCoord.xy, vec2(0.06711056,0.00583715))));   /* pro Bildpunkt gedreht: keine Stufen, kein Raster */
-        float rot=ign*6.2831853; for(int i=0;i<16;i++){ float fi=float(i); float r=sqrt((fi+0.5)/16.0)*1.7/2048.0; /* Halbschatten ~9 cm statt 18 (Georg 21.10.: Wagenschatten las sich als Fleck; KayKit = klare, leicht weiche Kante) */ float an=fi*2.3999632+rot; sv+=shBil(sc.xy+vec2(cos(an),sin(an))*r, sc.z-0.00015); } sv*=9.0/16.0; }   /* Vogel-Scheibe, 16 Proben: weicher, gleichmäßiger Auslauf */
+        float rot=ign*6.2831853;
+        /* Kontakthärtend (Schattenkonzept R1 „Filter“, PCSS-artig; Georg 21.10.: riesiger, verwaschener Wagenschatten): erst den Abstand zum Werfer suchen,
+           daraus die Halbschattenbreite – knapp unter dem Werfer fast hart (Wagen-Silhouette lesbar), weit weg weicher (Baumkronen). */
+        float zb=0.0, nb=0.0; for(int i=0;i<10;i++){ float fi=float(i); float r=sqrt((fi+0.5)/10.0)*7.0/2048.0; float an=fi*2.3999632+rot*1.7; float d=unpackRGBAToDepth(texture2D(uShadowMap, sc.xy+vec2(cos(an),sin(an))*r)); if(d<sc.z-0.00015){ zb+=d; nb+=1.0; } }
+        if(nb<0.5){ sv=9.0; } else { float gap=(sc.z-zb/nb)*395.0;   /* m zwischen Werfer und Empfänger (Schattenkamera nah 5, fern 400) */
+          float rT=clamp(gap*0.035/0.0537, 0.9, 6.0);   /* Halbschatten ≈ 3,5 cm je Meter Abstand, mindestens ein Texel (5,4 cm) */
+          for(int i=0;i<16;i++){ float fi=float(i); float r=sqrt((fi+0.5)/16.0)*rT/2048.0; float an=fi*2.3999632+rot; sv+=shBil(sc.xy+vec2(cos(an),sin(an))*r, sc.z-0.00015); } sv*=9.0/16.0; } }   /* Vogel-Scheibe, 16 Proben */
       sv=clamp(sv/9.0,0.0,1.0); col=mix(mix(col*0.64, uContact, 0.3), col, sv); /* kräftiger, weiter im Palettenton (KayKit-Kontrast, nie schwarz) */   /* heller, fügt sich ein */ } }   // echter Schatten, eingefärbt (kein Schwarz)
     if(uWater>0.005 && uGridWorld<0.5){ float wl=uWater*uAmp+0.15; float dz=vH-wl; float fw=fwidth(vH)*1.2+1e-3;
       /* Fluid (WASSER_R1 Stufe 1): unter dem Spiegel gestufte Tiefenfarbe (Grund wird zur Tiefe), darüber ein nasses, dunkleres Uferband, das atmet –
@@ -2097,8 +2103,16 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
       vec3 rdT=normalize(vW-vec3(uCarW.x,0.0,uCarW.y)-cameraPosition); float dep=max(-dz,0.0), Lp=dep/max(abs(rdT.y),0.15);
       float kd=1.0-exp(-Lp/uFlClar); float ks=kd*3.0; float kw=fwidth(ks)+1e-3; kd=(floor(ks)+smoothstep(0.5-kw,0.5+kw,fract(ks)))/3.0;
       float under=1.0-smoothstep(-fw,fw,dz);
-      if(uWKit>0.5){ vec3 kWet=vec3(0.478,0.416,0.306), kDeep=vec3(0.227,0.227,0.204);   /* Island Kit: wet #7a6a4e, deep #3a3a34 */
-        vec3 kb=mix(kDeep, kWet, smoothstep(wl-2.25, wl, vH)); col=mix(kb, col, smoothstep(wl-0.05, wl+0.55, vH)); under=0.0; }   /* Böschung farbig wie im Kit, nass bis 0,55 m über dem Spiegel */
+      if(uWKit>0.5){   /* Ufer im Design-Kontext (Georg 21.10.: „verschmierte Übergänge“ → sauber mit Farbfluss und Wasser-Shader): harte, gemalte Stufen statt Verläufe */
+        vec2 P=vW.xz; float wob=0.5+0.5*snoise(P*0.21+uSeed*0.3), aw=fwidth(dz)*1.2+1e-3;
+        float wetH=0.32+0.3*wob, wetB=1.0-smoothstep(wetH-aw, wetH+aw, dz);                 /* nasser Saum: hartes Band, Höhe wellig (gemalt) */
+        vec3 wetC=mix(col*0.7, uA_water*0.55, 0.22);                                         /* die Fließfarben laufen durch den Saum weiter, dunkler und kühler */
+        float dpT=max(-dz,0.0); vec2 gxT=dFdx(P), gyT=dFdy(P); float exT=dFdx(dpT), eyT=dFdy(dpT), dtT=gxT.x*gyT.y-gxT.y*gyT.x;
+        float sdT=dpT/max(length(abs(dtT)>1e-9 ? vec2(exT*gyT.y-gxT.y*eyT, gxT.x*eyT-exT*gyT.x)/dtT : vec2(0.0)),0.06), sw=fwidth(sdT)+1e-3, e1=0.9+0.45*wob;
+        vec3 kDeep=vec3(0.227,0.227,0.204);                                                   /* Island Kit deep #3a3a34 */
+        vec3 bed=mix(wetC*0.85, mix(kDeep, uA_water*0.4, 0.3), smoothstep(e1-sw, e1+sw, sdT)); /* Schelf | Tiefe: dieselbe Kante wie im Wasser */
+        float uw=1.0-smoothstep(-aw, aw, dz);
+        col=mix(col, wetC, wetB*(1.0-uw)); col=mix(col, bed, uw); under=0.0; }
       else col=mix(col, mix(col*uFlShal*1.6, uFlDeep, kd), under);
       float breath=0.08*sin(uTimeR*6.2832/4.5), wetH=(uFlKind>1.5 ? 0.6 : 0.38)+breath;
       float wet=(1.0-smoothstep(wetH-fw, wetH+fw, dz))*(1.0-under)*(1.0-uWKit);
@@ -2182,7 +2196,10 @@ ${window.KFB_FLUID.glsl}
         vec2 gx=dFdx(wp), gy=dFdy(wp); float ex=dFdx(dep), ey=dFdy(dep), det=gx.x*gy.y-gx.y*gy.x;
         vec2 gw=abs(det)>1e-9 ? vec2(ex*gy.y-gx.y*ey, gx.x*ey-ex*gy.x)/det : vec2(0.0);
         if(dep<-dw) discard;
-        if(uWKit>0.5){ float sd=max(dep,0.0)/max(length(gw),0.06);
+        if(uWKit>0.5){ float sdr=max(dep,0.0)/max(length(gw),0.06), wob=0.5+0.5*snoise(wp*0.21+uSeed*0.3), sw=fwidth(sdr)+1e-3, e1=0.9+0.45*wob, e2=2.6+0.6*wob;
+          /* Design-Kontext: der Kit rechnet Farbe, Schaum und Deckkraft stetig aus dem Uferabstand; gestuft eingespeist ergibt das drei klare Töne
+             (Flachwasser · Kante · Tiefe) mit gemalter, welliger Grenze – dieselbe Kantenlogik wie die Fließfarben-Bänder, Kit-Shader unverändert */
+          float sd=mix(0.25, 1.6, smoothstep(e1-sw, e1+sw, sdr)); sd=mix(sd, 3.2, smoothstep(e2-sw, e2+sw, sdr));
           vec4 kf=kitFluid(vec3(wp.x, wl, wp.y), vec2(0.0), sd, wp);
           vec3 kc=kf.rgb; if(uSky2>0.5) kc=applyAir(kc, vP, 1.0);
           gl_FragColor=vec4(kc, kf.a*smoothstep(-dw,dw,dep)); return; }
