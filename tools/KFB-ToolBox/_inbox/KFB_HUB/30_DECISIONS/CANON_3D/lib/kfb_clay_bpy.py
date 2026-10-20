@@ -243,7 +243,7 @@ def apply(ob, role, palette, tone=1, profile=None, seed=None, source='kit', pull
         for slot in o.material_slots:
             src = slot.material; key = (src.name if src else None, round(k, 5))
             if key not in cache:
-                si = _src_info(src); own = source == 'own' or (si['image'] is None and si['vcol'] is None)
+                si = _src_info(src); own = source == 'own' or (si['image'] is None and si['vcol'] is None and si['base_hex'] is None)   # r2 (K4): Kit mit reiner Grundfarbe wird angezogen (pull), nicht ersetzt
                 cache[key] = build_material(f'{ob.name}:{src.name if src else "none"}', pid, seed if seed is not None else ob.name, ref, k,
                                             base_hex=rhex if own else si['base_hex'], image=None if own else si['image'], vcol=None if own else si['vcol'],
                                             role_hex=None if own else rhex, pull=0.0 if own else p, src_rough=si['rough'], emission=si['emission'])

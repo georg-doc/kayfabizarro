@@ -73,6 +73,9 @@ K1–K3, K5 und K7–K9 sind n/a.
 - Schattenrichtung zwischen verschiedenen Kameras. Der Proof Stage hat ein festes Licht, die Kameras stehen in verschiedenen Azimuten; vergleiche nur innerhalb eines Bildes.
 - Einwärts konvergierende Pupillen beim Zielen bzw. Fokussieren auf Nahes. V-518 verbietet nur das Auswärts-Schielen.
 - Ein gewollter Ausdruck (z. B. zusammengekniffene Augen beim Zielen), solange beide Augen symmetrisch arbeiten.
+- Fäustlings- bzw. Kugelhände von Kit-Figuren (KayKit): Es gibt keine Finger zum Umgreifen. Den Griff liest man an der Lage der Hand am Griffstück.
+- Pupillen, die im exakten Profil (90°) nicht sichtbar sind: Bei einem kugeligen Auge mit Blick nach vorn steht die Pupille dort auf Kante.
+- Teile, die zur Figur gehören (z. B. der Aufziehschlüssel des Spielzeugsoldaten), sind kein Fremdteil.
 
 **Immer ein Befund:**
 - fehlende Augen bzw. Lider an irgendeiner Variante;
