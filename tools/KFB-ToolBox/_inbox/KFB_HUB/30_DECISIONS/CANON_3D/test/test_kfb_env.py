@@ -13,7 +13,7 @@ def good():
              'h': 4.0, 'bottom_z': -0.2, 'ground_z': 0.0, 'signature': 'hero', 'asset': 'barn', 'kit': 'kfb', 'material': 'kfb-clay.v1.1/env'}]
     for gi, (p, kind, layer, R) in enumerate([((6, 2), 'rock', 3, 0.7), ((-5, 4), 'bush', 4, 0.5), ((3, -6), 'prop', 2, 0.4)]):
         for i, it in enumerate(nest_ok(p, 5, R, seed=10 + gi, hang=0.4)):
-            h = it['r'] * 1.4; lo = {'rock': 0.3, 'bush': 0.08, 'prop': 0.03}[kind]
+            h = it['r'] * 1.4; lo = {'rock': 0.45, 'bush': 0.08, 'prop': 0.03}[kind]
             objs.append({'id': f'{kind}{i}', 'kind': kind, 'role': {'rock': 'stone', 'bush': 'leaf', 'prop': 'prop'}[kind], 'layer': layer,
                          'story': 'Ursache im Biom-Blatt', 'group': f'g{gi + 1}', 'c': it['c'], 'r': it['r'], 'h': h, 'bottom_z': -lo * h, 'ground_z': 0.0,
                          'signature': 'echo' if (i == 0 and gi < 2) else None, 'asset': f'{kind}_{i}', 'kit': 'kaykit', 'material': 'kfb-clay.v1.1/env', 'asset_pass': f'{kind}.asset_pass.json'})

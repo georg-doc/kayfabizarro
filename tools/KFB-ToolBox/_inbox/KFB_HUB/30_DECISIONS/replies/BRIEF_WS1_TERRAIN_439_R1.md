@@ -1,6 +1,11 @@
 # BRIEF WS1 · Cartoon-Terrainkonzept #439 im Spiel · R1 · 2026-10-20 · WS0
 **Register:** V-561 (Fokus Spiel), Issue georg-doc/kayfabizarro#439. **Owner:** WS1, wieder aktiv (Georg 20.10.). WS1b macht nur die Vorschau-Startseite und rührt das Terrain nicht an.
 
+**KORREKTUR 20.10. (WS0, V-569):** In Georgs Web-Chat vom 19.10. stehen „Höhenbänder“, „Farbbänder“ und „Bandenkanten“. Gemeint sind die **Farbbänder** und ihre Kanten, keine Strecken-Banden und keine Rampen-Geometrie. Georg kennt keine „Banden“.
+- Deshalb gibt es in #439 **keine Banden- und keine Rampen-Geometrie**. Der Abschnitt über den POC (k2t-Banden, Stuntfeld, Rampen-Zonen) entfällt.
+- „Rampen ohne Stufen“ bedeutet: Die Farbflächen folgen nicht den Höhenstufen, kein Schnittkuchen.
+- **Umfang #439:** Terrain-Look-Stack (Kanon Gebiete 5 und 17) plus echte, getönte Schatten (Gebiet 7) plus Vordergrund-Tonmasse plus selektive Kantenakzente.
+
 **Tier 0**
 1. Das ganze Terrainkonzept wird als **umschaltbare Variante** (`look=terrain2`) im bestehenden Spiel gebaut, auf einem eigenen Branch `terrain/439` ab `combo/r2`. Der Standard bleibt unverändert.
 2. **Teile:**

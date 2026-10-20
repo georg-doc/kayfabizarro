@@ -8034,6 +8034,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-569",
+   "date": "2026-10-20",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Korrektur #439: „Banden und Rampen“ war ein Erfassungsfehler – Georgs Web-Chat 19.10. spricht von Höhenbändern/Farbbändern/Bandenkanten (Kanten der Farbbänder); Georg kennt keine „Banden“ (WS1-Mitschrift 20.10.). #439 enthält KEINE Banden- und KEINE Rampen-Geometrie; „Rampen ohne Stufen“ = Farbflächen folgen nicht den Höhenstufen. Umfang #439 = Terrain-Look-Stack (Kanon 5/17), echte getönte Schatten, Vordergrund-Tonmasse, selektive Kantenakzente. WS0-Fehler: POC-Präzisierung (k2t-Banden, Stuntfeld) zurückgezogen.",
+   "values": {},
+   "owner": "WS1 (#439)",
+   "check": "Brief #439 korrigiert",
+   "source": "Georg 20.10. via WS1",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "„Bänder“ wurde beim Erfassen zu „Banden“; daraus entstand ein falscher Geometrie-Auftrag.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-570",
+   "date": "2026-10-20",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "WS1-Recherchen (R1 Inszenierung, R2 Etherington-Abgleich, R3 Set-Dressing, R4 Farbtheorie, R10 Cartoon-Hintergründe, R11 3D-Farbe/Licht, Flächengrammatik) + Georgs Look-Feedback 20.10. eingearbeitet: Kanon-Anhang A EINARBEITUNG_WS1_R1.md verbindlich (Ü1–Ü30). Georg: Farbflächen = geschlossene gerundete Blobs mit smooth-min, nie fbm-Schwellwert, keine Zungen/Hälse; Wand = Feld dunkler; keine zackigen Berge, Etherington-Steinregeln; Steine tiefer (Findling 40–50 %, Kappe 50 %); dunkler, nie schwarzer Kontaktton an jedem Requisit/Diorama; echte 3D-Schatten Pflicht; Vordergrund-Tonmasse wie Road Runner (Palettenrolle foregroundValue, nur feste Kameras); farbige Kantenakzente nur an vier Kantenarten (Color Hold); 4 Flächenfarben je Biom. Gate: SINK rock/stone_L 0,40–0,50, SINK_CAP 0,50, size_tol 0,20, Spread-TUNE 0,45. Gebiet 12 gefüllt (Fokus, Wertmassen, Tiefe; keine DOF/Vignette). Ein Bild-Gate kfb_view (WS1 W5). Kritiker-Kamera 1 auf 35°. Nicht übernommen: Rim/Gegenlicht, Farbsperren, kühle/gemalte/Blob-Schatten, schwarze Linien. Banden-Lesart der Einarbeitung verworfen (V-569 gilt).",
+   "values": {},
+   "owner": "WS0 (Kanon) · WS1 (W5, Laufzeit) · WSB",
+   "check": "Gate-Test grün; kfb_view an 10/10 Bildern geeicht",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS1 hat die Recherche-Lücken R1–R4 gefüllt und Georgs Look-Feedback mitgeschrieben; ohne Einarbeitung wären es wieder optionale Tipps.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8121,7 +8151,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:957",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:958",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

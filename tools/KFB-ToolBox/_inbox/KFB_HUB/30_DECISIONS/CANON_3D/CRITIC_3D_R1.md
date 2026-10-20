@@ -19,7 +19,7 @@ Erklärungen, Code und Absichten der Bauenden sieht er nicht. Er schlägt keinen
 Ein roter Gate-Lauf geht nie an den Kritiker, sondern zurück an den Bau.
 
 ## Feste Kameras (je Szene)
-1. Übersicht schräg von oben, 45°.
+1. Übersicht schräg von oben, 35° (V-570).
 2. Augenhöhe Figur (1 H über Boden) vom Hauptweg auf den Fokus.
 3. Nahaufnahme Fuß einer Ankergruppe (Erdung).
 4. Seitenansicht Rand (Silhouette).

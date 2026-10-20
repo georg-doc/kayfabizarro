@@ -19,11 +19,12 @@ import json, math, random
 
 # ------------------------------------------------------------------ Zahlen der Quellen
 SINK = {  # Anteil der Höhe unter dem Gelände [min, max] – Etherington §2 [KFB-Startwerte], Grammatik §4.1 für Steinkit
-    'rock': (0.25, 0.45), 'rockgroup': (0.20, 0.35), 'tree': (0.05, 0.10), 'bush': (0.05, 0.12), 'building': (0.0, 0.15),
-    'prop': (0.02, 0.05), 'stone_L': (0.45, 0.60), 'stone_M': (0.35, 0.50), 'stone_S': (0.30, 0.40),
+    'rock': (0.40, 0.50), 'rockgroup': (0.20, 0.35), 'tree': (0.05, 0.10), 'bush': (0.05, 0.12), 'building': (0.0, 0.15),
+    'prop': (0.02, 0.05), 'stone_L': (0.40, 0.50), 'stone_M': (0.35, 0.50), 'stone_S': (0.30, 0.40),
     'grass': (0.0, 1.0), 'fluff': (0.0, 1.0), 'contact': (0.25, 1.0), 'water_plant': (0.0, 1.0), 'character': (0.0, 0.03), 'vehicle': (0.0, 0.03),
 }
-RULES = dict(size_tol=0.10, spread=0.30, line_tol=0.05, neighbour_r=4.5, overlap=0.85, air=1.25,  # grammar.js GRAMMAR.rules
+SINK_CAP = 0.50  # [I] Georg 20.10.: Findling als umgekehrter Eisberg, Kappe ≤ 50 % (V-570)
+RULES = dict(size_tol=0.20, spread_tune=0.45, spread_target=0.50, spread=0.30, line_tol=0.05, neighbour_r=4.5, overlap=0.85, air=1.25,  # grammar.js GRAMMAR.rules
              neg_space=0.30, float_tol_H=0.003, landmark_front=0.60, repeat_max=3, clone_dist_H=6 / 3.64,
              ratio_LMS=(1, 3, 9), groups=(2, 4))
 NEST = dict(sizes=(1.0, 0.62, 0.38), med=(-1.2, 0.1, 1.3), small=(-0.6, 0.7, -2.0, 2.05, 3.1), k=0.86, spread=1.75)
@@ -163,6 +164,7 @@ def gate(scene, R=RULES):
         if all(k in o for k in ('bottom_z', 'ground_z', 'h')) and o.get('h'):
             lo, hi = SINK.get(o.get('kind'), (0.0, 1.0)); sink = (o['ground_z'] - o['bottom_z']) / o['h']
             if o['bottom_z'] - o['ground_z'] > R['float_tol_H'] * H: F('E1', f'{oid}: schwebt ({o["bottom_z"] - o["ground_z"]:.3f} über Grund)')
+            elif o.get('kind') in ('rock', 'rockgroup', 'stone_L', 'stone_M', 'stone_S') and sink > SINK_CAP + 0.02: F('E2', f'{oid}: Einsinken {sink:.0%} über Kappe 50 % (V-570)')
             elif not (lo - 0.02 <= sink <= hi + 0.02): F('E2', f"{oid}: Einsinken {sink:.0%} außerhalb {lo:.0%}–{hi:.0%} ({o.get('kind')})")
     # M1–M3 Einpassung ins Terrain (Kanon Gebiet 15): ein Material, kein eingebackenes Licht, Farben nur aus der Palette
     pal = {str(v).lower() for v in ((scene.get('concept') or {}).get('palette_roles') or {}).values() if isinstance(v, str)}
@@ -186,6 +188,7 @@ def gate(scene, R=RULES):
     for o in env: groups.setdefault(o.get('group') or '_ohne', []).append(o)
     rep = {k: rule_report(v) for k, v in groups.items() if k != '_ohne' and len(v) >= 2}
     for k, rr in rep.items():
+        if rr['ok'] and rr['spread'] < R.get('spread_tune', 0): find.append(f"G1 Gruppe {k}: Abstands-Spread {rr['spread']} < 0,45 (Ziel 2 : 1, TUNE)")
         if not rr['ok']: F('G1', f"Gruppe {k}: {', '.join(rr['failed'])} (n={rr['n']}, Spread {rr['spread']})")
     if '_ohne' in groups: F('G2', f"{len(groups['_ohne'])} Elemente ohne Gruppe (Einzelgänger/Streuung)")
     ng = len(rep)

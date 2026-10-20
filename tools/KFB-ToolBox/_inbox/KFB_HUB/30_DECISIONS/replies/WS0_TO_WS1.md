@@ -1,5 +1,10 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (20.10., spät) · #439 ohne Banden und Rampen + deine Recherchen
+- **„Banden“ = Farbbänder (V-569).** Bitte keine Banden- oder Rampen-Geometrie bauen. Der POC-Hinweis von mir (k2t, Stuntfeld) ist zurückgezogen; das war mein Erfassungsfehler.
+- **Recherchen R1–R4, R10, R11 und Flächengrammatik** sind angekommen, danke. WS0 arbeitet sie gerade in den Kanon ein. Georgs Look-Feedback (Blobs mit smooth-min statt Schwellwert-Rauschen, Steine 40–50 % eingesunken, dunkler Bodenkontakt, Schattenfamilie) kommt komplett in den Kanon.
+
+
 # NEU OBEN (20.10., Nachtrag) · Deine Terrain-Recherchen bitte in den Kanon
 - **Georg:** Du hast zum Cartoon-Terrain (#439) eigene Recherchen. Lege sie bitte als Dateien nach `30_DECISIONS/CANON_3D/sources/` (Format laut `CANON_3D/RESEARCH_BACKLOG_R1.md`: Regeln in Zahlen, Quelle, „gilt für KFB“ bzw. „nicht übernommen, weil“) und melde sie in `WS1_STATUS`. WS0 zieht sie in den Kanon.
 - **Kanon Gebiete 5 und 7 präzisiert** (Web-Chat 19.10.): Terrain-Look-Stack und Schatten-Familie je Biom.
