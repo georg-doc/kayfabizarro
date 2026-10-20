@@ -69,10 +69,15 @@ function beamGeometry(len, spread) {
   return g;
 }
 
-export function mountDiscoBall(def = {}, { parent, anchor = {}, renderer = null, budget = { lights: 4, shadowLights: 1 } } = {}) {
+/* V-572 (Strahler-Bug global, WS1 20.10.): optional ground + pools – ohne beides verhält sich die Kugel exakt wie bisher (RA 1:1).
+   ground: (x, z) => y   Strahlen enden am echten Boden (Abtastung entlang des Strahls) statt an der Ebene floorY.
+   pools: true           Bodenflecken und Bodenfänger werden NICHT als Scheiben gezeichnet; B.lightPools() liefert sie als Kegel für
+                         kfb-light-pool.v1 (Host: LP.setPools([...eigene, ...ball.lightPools()])) → Fleck folgt jeder Geländeform, liegt auf Figuren/Requisiten. */
+export function mountDiscoBall(def = {}, { parent, anchor = {}, renderer = null, budget = { lights: 4, shadowLights: 1 }, ground = null, pools = false } = {}) {
   const P = Object.assign({}, DEFAULTS, def.params || {});
   const id = def.id || 'disco-ball-core-01';
   const root = new THREE.Group();
+  const poolList = [];
   root.name = 'disco-ball-core:' + id;
   root.userData.entry = { id: 'discoball', scope: 'modul', kind: 'module', role: 'DISCO-BALL-CORE-01 · Welt-Objekt, frei platzierbar', a: 'atlas://generated/' + id };
   const frame = new THREE.Group(); frame.name = 'ball.frame'; root.add(frame);
@@ -315,9 +320,10 @@ export function mountDiscoBall(def = {}, { parent, anchor = {}, renderer = null,
       /* Bodenfänger unter der Kugel, auf Host-Bodenhöhe, Radius aus Projektorwinkel und Höhe */
       root.updateMatrixWorld(true);
       frame.getWorldPosition(_wp);
-      const hgt = Math.max(0.5, _wp.y - P.floorY);
+      const hgt = Math.max(0.5, _wp.y - (ground ? ground(_wp.x, _wp.z) : P.floorY));
       const rad = hgt * Math.tan(P.projAngle) * 0.92;
-      catcher.visible = S.floorCatch && proj.intensity > 0.01;
+      catcher.visible = S.floorCatch && proj.intensity > 0.01 && !pools;
+      if (pools && S.floorCatch && proj.intensity > 0.01) poolList.push({ origin: _wp.clone(), dir: new THREE.Vector3(0, -1, 0), angle: P.projAngle * 0.92, soft: 0.6, color: '#ffffff', intensity: Math.min(0.8, 0.075 * proj.intensity) * 1.4, range: hgt * 2 + 4 });
       if (catcher.visible) {
         const loc = root.worldToLocal(new THREE.Vector3(_wp.x, P.floorY + 0.004, _wp.z));
         catcher.position.copy(loc);
@@ -327,17 +333,19 @@ export function mountDiscoBall(def = {}, { parent, anchor = {}, renderer = null,
       /* Kegel */
       root.updateMatrixWorld(true);
       const rs = Math.max(1e-3, root.scale.x);
-      const hits = [];
+      const hits = []; poolList.length = 0;
       beams.forEach((b, i) => {
         const u = b.material.uniforms;
         const fl = 0.85 + 0.15 * Math.sin(t * (2.3 + i * 0.37) + i * 1.7);
         u.uAlpha.value = 0.62 * k * mx.beams * pulseK; u.uFlick.value = fl;
         b.getWorldQuaternion(_q); _d.set(0, -1, 0).applyQuaternion(_q); b.getWorldPosition(_bo);
         let L = P.beamMax, hit = false;
-        if (_d.y < -0.05) { const l = (_bo.y - P.floorY) / -_d.y; if (l < P.beamMax) { L = l; hit = true; } }
+        if (ground) { const st = 0.25; for (let tt = st; tt <= P.beamMax; tt += st) { const x = _bo.x + _d.x * tt, y = _bo.y + _d.y * tt, z = _bo.z + _d.z * tt; if (y <= ground(x, z)) { let a = tt - st, c = tt; for (let q = 0; q < 6; q++) { const m = (a + c) / 2; if (_bo.y + _d.y * m <= ground(_bo.x + _d.x * m, _bo.z + _d.z * m)) c = m; else a = m } L = c + 0.05; hit = true; break } } }
+        else if (_d.y < -0.05) { const l = (_bo.y - P.floorY) / -_d.y; if (l < P.beamMax) { L = l; hit = true; } }
         b.scale.setScalar(L / rs);
         const pool = b.userData.pool;
-        pool.visible = hit && mx.beams > 0;
+        pool.visible = hit && mx.beams > 0 && !pools;
+        if (pools && hit && mx.beams > 0) poolList.push({ origin: _bo.clone(), dir: _d.clone(), angle: Math.atan(P.beamSpread) * 1.45, soft: 0.5, color: b.material.uniforms.uColor.value.clone(), intensity: 1.6 * k * mx.beams * pulseK * fl, range: L + 3 });
         if (pool.visible) {
           _h.copy(_bo).addScaledVector(_d, L); _h.y = P.floorY + 0.006;
           pool.position.copy(root.worldToLocal(_h.clone()));
@@ -389,6 +397,7 @@ export function mountDiscoBall(def = {}, { parent, anchor = {}, renderer = null,
         glint.instanceColor.needsUpdate = true;
       }
     },
+    lightPools() { return poolList.slice() },   // V-572: Kegel für kfb-light-pool.v1 (nur mit pools: true)
     state() {
       const mx = MODE_MIX[S.mode];
       return { schema: BALL_SCHEMA, id, mode: S.mode, spin: +S.spin.toFixed(3), intensity: +S.intensity.toFixed(2), angleDeg: +(S.angle / D2R % 360).toFixed(1),
