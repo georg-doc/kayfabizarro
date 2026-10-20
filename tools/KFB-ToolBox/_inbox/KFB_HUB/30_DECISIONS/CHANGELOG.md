@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WSB-Nachreichung beantwortet (50_BLENDER/ANTWORT_WS0_2026-10-20_NACHREICHUNG.md): Wrestling r1b Clown-Hammer-Space und B51 r1 eingegangen; Zeit-Fund (n/24 s) wird an der Quelle korrigiert; B51 in K2; V-567 Hit-Stop-Feld freigegeben.
 - Konzeptblätter auf V-566 (Ein-Satz, Farb-Skript, Form-DNA, Lebensanker, Wertstruktur/Tiefenebenen/70-20-10, Gebrauchsspuren), alle 8 K0 ok; jetzt auch auf GitHub (Sync um 65_SCENELETS erweitert). Aufträge an WS1 (WS0_TO_WS1.md oben) und WSB (50_BLENDER/ANTWORT_WS0_2026-10-20_KANON.md).
 - V-566 Bildanatomie aus Perplexity-Prüfung: Kanon-Gebiet 16 (Ein-Satz, Fokus gewinnt, Werte vor Farbe, drei Tiefenebenen, Farb-Skript + Akzent = Bedeutung, Form-DNA, Lebensanker), 70/20/10, Gebrauchsspuren, Materialantwort, Asset-Pass (M5), Akzent-Gate (M4), Kritiker-Pässe Silhouette/Graustufen/Thumbnail + Kontakt-Schatten, Abnahme-Ablauf in 9 Pässen; Rim-Licht weiter nein. Quelle CANON_3D/sources/PERPLEXITY_REVIEW_CANON_2026-10-20.md.
 - Konzeptblätter für alle RA-Szenen (65_SCENELETS/<szene>/KONZEPTBLATT_*_R1.md + concept.json, alle K0 ok): Ork-Band + Disco + Fight O-Town, Friedhof (Nacht) + Sci-Fi (Nacht, Grat unter der Station) + Combat Mech + Mumie (offene Grabungsstätte) Canyon, Duell Bikini-Bucht; je Blatt WS0-Entscheide zu allen offenen Punkten (Quelle 1:1, nur Terrain-Einpassung neu). WS0-Daten-Nacharbeit: cast.r1 Legacy-Orks-Status, Mumien eintragen.

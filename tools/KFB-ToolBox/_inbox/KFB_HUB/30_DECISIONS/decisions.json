@@ -8004,6 +8004,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-567",
+   "date": "2026-10-20",
+   "area": "Motion",
+   "verdict": "RULE",
+   "text": "Hit-Stop als Clip-Marke freigegeben (WSB-Vorschlag VORSCHLAG_HIT_STOP_R1, Georg: „für WS0 anmelden“): Feld hitStop { strength 0…1, durationMs 40–80, dir }, Deckel 150 ms, nur Beteiligte frieren ein, Kamera-Stoß abschaltbar. Kein zweites System: die „4 Bilder“ der Kontaktdaten 0.3 = 67 ms bei 60 fps sind der Standardwert. Laufzeit WS1, Gefühl beurteilt Georg im Spiel (Hub q141). Dazu WSB-Zeit-Fund: glTF-Export schreibt Bild n als n/24 s → Korrektur an der Quelle (Marken bildgenau neu ausgeben), kein Bühnen-Offset.",
+   "values": {},
+   "owner": "WSB (Marken) · WS1 (Laufzeit)",
+   "check": "Wrestling r1b + B51 mit hitStop-Marke; Marken-Neuausgabe im RETURN",
+   "source": "Georg 19.10. / WS0 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Wucht braucht einen kurzen Stillstand; ein Feld statt zweier Systeme, und Zeitfehler werden an der Quelle behoben.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8091,7 +8106,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:950",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:952",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
