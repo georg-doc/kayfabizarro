@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WS1b Fluff-Einsammel-Flug (V-340) gebaut (ws1b/fluff-pickup bcf49f0: Knet-Kopie fliegt in den R5f-Slot, Squash-Bounce, Buchung beim Aufsammeln, reduced motion = sofort, ≤ 8 im Flug; Tests grün; Clip WS1B_FLUFF_PICKUP_R1/) → WS0-Go für Push + kombinierten Vorschau-Build. Offen HUD R5f/R6: Zähler im Phone-Layout.
 - WSB K7 r2 angenommen (Bäume tree_sec #376442 = accent Chroma ×0,6, L ×0,9); Felsen eine Stufe dunkler (mittlerer stone-Ton, V-566 Fokus gewinnt). K6: Gruftdach iron dunkel freigegeben.
 - WSB K7 Sci-Fi-Teile angenommen (38 Quaternius CC0 as-is, apply + Spuren + Pass, Set 41 Slots 1:1, Welt ×0,85); Änderung: Bäume/Kraut auf Sekundärrolle (Chroma ×0,6), Kuppel bleibt Akzent; Connector-Saum so lassen; Einsinken/Kontakt macht WS1.
 - Friedhof: Georg 20.10. – Bodenkacheln bleiben, es fehlt der glaubwürdige Übergang zum Terrain (Steinchen, Staub, Sprenkel, ausfransende Außenkacheln) → Konzeptblatt-Korrektur; WS0 hat das RA-Layout live exportiert (65_SCENELETS/graveyard/ra_layout_export.json, 176 Teile) → WSB K6 mit Übergangsband-Vorschlag. Drum Machine Fuß-Streifen r2 verstärkt.
