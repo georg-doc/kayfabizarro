@@ -2609,7 +2609,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   if (stored && !stored.mig39) { stored.puffs = false; stored.cstretch = 1; stored.mig39 = 1 }
   if (stored && !stored.mig40) { stored.cform = 4; stored.mig40 = 1 }
   if (stored && !stored.mig41) { stored.fstage = 5; stored.mig41 = 1 }
-  if (stored && !stored.mig43) { stored.fluid = 3; stored.mig43 = 1 }   /* einmalig: Island-Kit-Wasser als Standard (Georg 21.10.) */
+  if (stored && !stored.mig43) { stored.fluid = 3; if (!(stored.water > 0.005)) stored.water = 0.06; stored.mig43 = 1 }   /* einmalig: Island-Kit-Wasser als Standard, sichtbar (Georg 21.10.) */
   if (stored && !stored.mig42) { stored.trails = false; stored.mig42 = 1 }   /* einmalig: Punkt-Kondensstreifen aus, Speedline-Bänder übernehmen (Effekt-Bildsprache R1) */   // einmalig: neues Gelände (70er Fließfarben) als Standard – gespeichertes v3 stammte aus der Zeit vor Stufe 5 (Georg 21.10.)   // einmalig: Kuppel wie vorher (Georg 21.10.: Ebenen wirken wie verschobene Formen)   // einmalig: Ebenen-Wolken aus (Georg 21.10.: verschmiert), Himmelsebenen übernehmen
   setUI(PRESETS[DEFAULT]); $('grid').checked = false;
   if (stored && typeof stored === 'object') { setUI(stored); markPreset(null) } else markPreset(DEFAULT);
