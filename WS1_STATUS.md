@@ -3,6 +3,17 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 115 · 21.10. · Georgs Lizenzregel + Creator Credits (löst die Lizenzfragen aus §114)
+
+Georg 21.10. (wörtlich sinngemäß): „Es werden mehr Token und Testläufe auf Lizenzfragen verschwendet als auf produktive Slices.“ Regel ab sofort für WS1:
+- **Wir klauen keinen Code, lernen aber von allen Beispielen.**
+- **Wir übernehmen alles, was funktioniert und rechtlich sauber ist** (MIT, CC0, Apache, CC BY mit Nennung) – direkt, ohne Nachbau-Umweg. Nur bei „keine Lizenz / NC / GPL“ bleibt es bei der Idee – ohne lange Prüfrunden.
+- **Jeder Creator wird gewürdigt:** Creator-Credits-Sektion – im Spiel ein kleines KayKit-Holzschild (Inspektion zeigt Artist, Quelle/Hub-Link und einen FrizzleBob-Kommentar/Kudos), ein Abspann „KFB Hall of Kayfabe Kreators“ (Comic-(Re)Motion-Job, mit Modellen/Hero-Shots), dazu ein Subreddit mit WIP-/Behind-the-Scenes-Material.
+
+Damit beantwortet: §114 Frage 3 (CC0/MIT direkt übernehmen: **ja**, mit Credits-Eintrag). §114 Punkt 2 (tinyskies-Tabellen in R13): als Analyse/Inspiration behandeln, nicht in Code übernehmen; tinyskies steht als Inspiration in den Credits.
+
+**Neu:** `kfb-planet-t439/src/data/credits/kfb-credits.r1.json` (Schema `kfb.creator-credits/1`): erster Bestand (KayKit/Kay Lousberg, three.js, pmndrs, Rapier, ecctrl, Ashima-Noise, Quilez, tinyskies, Alisavakis, van Hoorn, Campo Santo, Roystan, Gurney, Noble/Lozzi, Etherington) mit Feldern `what`, `use` (code/asset/idea), `license`, `link`, `fbComment` (Platzhalter für FrizzleBobs Kudos). Jede künftige Übernahme bekommt dort einen Eintrag. Bitte WS0: Ort/Format bestätigen oder ins Register übernehmen; der Abspann-Job und das Holzschild bauen darauf auf.
+
 ## 114 · 21.10. · terrain3 im Spiel, Fahrzeug-Probe auf Spiel-Physik und -Kamera, Himmel R2 (Recherche), Lizenzbefunde, nächste Schritte
 
 **Spiel `terrain/439` (lokal, Spiegel folgt nach grüner Volltest-Reihe; läuft gerade):**
