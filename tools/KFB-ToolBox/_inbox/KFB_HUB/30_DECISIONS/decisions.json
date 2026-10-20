@@ -1,6 +1,6 @@
 {
  "schema": "kfb.decisions/1",
- "updated": "2026-10-19",
+ "updated": "2026-10-20",
  "entries": [
   {
    "id": "V-001",
@@ -7914,6 +7914,36 @@
    "applies": "B51"
   },
   {
+   "id": "V-561",
+   "date": "2026-10-20",
+   "area": "Prozess",
+   "verdict": "FAIL",
+   "text": "Georg 20.10. zu den Szenen-Dioramen (Hub q121/q128/q130/q133/q134/q139): „AI slop … konzeptlos, lieblos, leblos, kein Design, nur messen und raten und hinrotzen“. FAIL: B44 Fluff-Farm (Pfade neu erfunden), B47 Labyrinth, B48 RPG-Lager, Clown-Zelt, Disco (Kugel an Pfeilern statt schwebend, RA-Setting nicht umgesetzt), Sci-Fi-Außenposten (Modelle planlos auf eine Bühne geworfen). TUNE: Friedhof (zu symmetrisch), B41 Wurfwaffen (nicht beurteilbar: was ist was, selbst gebastelt?). Fehlerkette: WS0 hat nur technisch geprüft (Gates, Durchstich, Augen-PASS) und Dioramen ohne Konzept, Art Direction und Kritiker in den Hub gestellt; kein Kritiker hat die Szenen gesehen. Ab sofort: kein Dioramen- bzw. Szenenbau ohne Konzeptblatt (Georgs Vorlage bzw. RA-Setting wörtlich, Bildidee, Fokus, Komposition, Farbe) und ohne Design-Urteil vor dem Hub; WS0 gibt Szenen nicht mehr allein auf Messwerte frei.",
+   "values": {},
+   "owner": "WS0 · WSB",
+   "check": "Konzeptblatt + Kritiker-Urteil vor jedem Szenen-Hub-Post",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Messwerte ersetzen kein Design: Szenen brauchen Konzept und ein Urteil mit Blick, bevor sie Georg erreichen.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-562",
+   "date": "2026-10-20",
+   "area": "Figuren",
+   "verdict": "FAIL",
+   "text": "Spielzeugsoldat im Gunfight r2 ohne KFB-Augen (Georg 20.10. q132: „schon wieder keine Augen“) – von WS0 übersehen; Figur geht zurück an WSB (Augen-Rig wie B11 r4/r5, QA c). Entscheide dazu: q132 Gewehr = A Karabiner einhändig; q136 Katana = A Klinge quer (Ausnahme V-536 für Hiebwaffen, Ziel-Waffen bleiben auf der Unterarmachse); q124 hellblaue Orks = Allianz.",
+   "values": {},
+   "owner": "WSB",
+   "check": "Prüfbogen Soldat mit Augen",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Augen-Pflicht wurde bei einer Varianten-Figur nicht geprüft; dazu drei offene Regel-Entscheide Georgs.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8001,7 +8031,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:939",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:942",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

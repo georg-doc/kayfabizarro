@@ -1,5 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
+## 2026-10-20
+- V-561 Georgs FAIL der Szenen-Dioramen (Farm, Labyrinth, RPG-Lager, Clown, Disco, Sci-Fi; Friedhof/B41 TUNE): kein Szenenbau ohne Konzeptblatt + Design-Urteil vor dem Hub. V-562 Spielzeugsoldat ohne Augen; q132=A, q136=A (Ausnahme Hiebwaffen), q124 hellblau=Allianz. PASS: B46, Ork-Band, B45, Gunfight r1, Wrestling, Ninja, B51, B42 r2b, alle Sound-Sets.
+
 ## 2026-10-19
 - Abends (WS0 war offline): B51 Cartoon-Brawl r1 geprüft → Hub q140; WSB-Hit-Stop-Vorschlag → Hub q141 (V-561-Kandidat, wartet auf Georg); Antwort an WSB in 50_BLENDER/ANTWORT_WS0_2026-10-19_ABEND.md.
 - V-560 Cartoon-Brawl (Massenschlägerei in der Staubwolke, Wolke nach V-499 statt Knetkugel) → Brief B51 an WSB (nächster Bau).
