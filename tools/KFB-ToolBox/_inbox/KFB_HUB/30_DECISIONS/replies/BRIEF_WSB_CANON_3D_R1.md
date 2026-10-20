@@ -43,6 +43,7 @@
 
 **Regeln:**
 - Schwere Läufe headless.
+- Keine Workbench-Bilder mit Figuren (V-562: Workbench zeigt die Laufzeit-Augen nicht). Figuren nur über Proof Stage bzw. b31.
 - Downloads und Installationen nur mit Georgs direktem OK.
 - Gekaufte bzw. private Assets nie in öffentliche Dateien.
 - Zwischenstände in `_work/`.

@@ -55,6 +55,30 @@ Herkunft: QA_RULEBOOK_ENVIRONMENT_R1 §3, ergänzt um den Kanon.
 - K9 ≥ 7;
 - K10 ≥ 7, wenn Figuren vorhanden sind.
 
+## Figurenabnahme (einzelne Figur im Proof Stage, keine Szene)
+Kalibriert nach dem ersten Lauf am 20.10. (Spielzeugsoldat).
+
+**Es zählen nur:**
+- K4: Füße bzw. Kontakt, Schatten folgt der Silhouette, kein Blob;
+- K6: Knete sichtbar, ein Licht;
+- K10.
+
+K1–K3, K5 und K7–K9 sind n/a.
+
+**Keine Befunde in der Figurenabnahme:**
+- Kontakt-Geometrie bzw. Terrain am Fuß. Der Proof Stage ist der Standardboden; Gebiet 4/15 gilt erst in der Szene.
+- Kit-Facetten an KayKit-Figuren: Kit-Modelle werden nicht geknetet (QA_RULEBOOK §0b), die Knete kommt aus dem Material.
+- Schattenrichtung zwischen verschiedenen Kameras. Der Proof Stage hat ein festes Licht, die Kameras stehen in verschiedenen Azimuten; vergleiche nur innerhalb eines Bildes.
+- Einwärts konvergierende Pupillen beim Zielen bzw. Fokussieren auf Nahes. V-518 verbietet nur das Auswärts-Schielen.
+- Ein gewollter Ausdruck (z. B. zusammengekniffene Augen beim Zielen), solange beide Augen symmetrisch arbeiten.
+
+**Immer ein Befund:**
+- fehlende Augen bzw. Lider an irgendeiner Variante;
+- Waffe oder Requisit im Gesicht bzw. Körper (Durchdringung);
+- Waffe nicht auf der Unterarmachse (V-536, Ausnahme Hiebwaffen q136);
+- schwebende Füße;
+- fremdes Material ohne Knete.
+
 ## Ausgabe des Kritikers
 1. Punkte K1–K10.
 2. Mängelliste: was, wo (Kamera und Bildbereich), welche Regel (Kanon-Abschnitt bzw. V-Nummer).
