@@ -262,11 +262,13 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     return h;
   }
   // Etherington (R2): runde Grate statt Messerkanten (weiches |n|), feinste Grat-Oktaven weg, Detail leiser → keine Zacken-Silhouette
-  float fbm(vec2 q){ float s=0.0, a=1.0, n=0.0, oc=uEther>0.5?min(uOct,5.0):uOct; for(int i=0;i<7;i++){ if(float(i)>=oc) break; s+=a*snoise(q); n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=0.5; } return s/n; }
+  float gNE=2.34375; // Gitterabstand (m) des Meshes, das gerade rechnet; Grundwert = Nahgitter (600 m / 256), wie im JS
+  // Band-Begrenzung gegen Zacken (Aliasing): jedes Gitter bekommt nur Detail, das es abbilden kann (Wellenlänge ≥ 3–4 Gitterabstände)
+  float octW(float i, float f0){ float wl=uScale/(f0*pow(2.0,i)); return smoothstep(2.0,4.0,wl/gNE); }
+  float fbm(vec2 q){ float s=0.0, a=1.0, n=0.0, oc=uEther>0.5?min(uOct,5.0):uOct; for(int i=0;i<7;i++){ if(float(i)>=oc) break; s+=a*octW(float(i),1.0)*snoise(q); n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=0.5; } return s/n; }
   float rfbm(vec2 q){ float s=0.0, a=1.0, n=0.0, oc=uEther>0.5?min(uOct,4.0):uOct; for(int i=0;i<7;i++){ if(float(i)>=oc) break; float sn=snoise(q);
-    float r=uEther>0.5 ? max(0.0,(1.0-sqrt(sn*sn+0.06))/0.7551) : 1.0-abs(sn); s+=a*r*r; n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=(uEther>0.5?0.45:0.5); } return s/n; }
+    float r=uEther>0.5 ? max(0.0,(1.0-sqrt(sn*sn+0.06))/0.7551) : 1.0-abs(sn); float ow=octW(float(i),1.0); s+=a*mix(0.5,r*r,ow); n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=(uEther>0.5?0.45:0.5); } return s/n; }
   // Schichten (N4): je Paar eine dicke (1,3) und eine dünne (0,7) Lage, Lagen leicht wellig geneigt, Kanten gerundet
-  float gLod=0.0; // Abstand zum Auto (m): in der Ferne (grobe Ringe) Terrassen weicher, sonst Sägezähne; abstandsbasiert, damit Nah- und Ferngitter dieselbe Höhe haben
   float strU(float s){ float k=floor(s*0.5)*2.0, t=s-k; return k+(t<1.3? t/1.3 : 1.0+(t-1.3)/0.7); }
   float strS(float u){ float k=floor(u*0.5)*2.0, t=u-k; return k+(t<1.0? t*1.3 : 1.3+(t-1.0)*0.7); }
   float hgt(vec2 p){
@@ -279,16 +281,16 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     h*=mix(1.0,mix(0.22,1.15,region),uMacro);
     h=clamp(h,0.0,1.0);
     if(uValley>0.0) h=pow(h,1.0+uValley*1.6);
-    if(uPlateau<0.999 && h>uPlateau) h=uPlateau+(h-uPlateau)*0.12;
-    if(uSteps>=1.0){ if(uEther>0.5){ float tw=0.35*snoise(p/(uScale*2.5)+uSeed*0.11+23.0); float u=strU(h*uSteps+tw); float f=fract(u); float w=max(max(mix(0.5,0.03,uSharp),0.16), 0.5*smoothstep(80.0,450.0,gLod)); f=smoothstep(0.5-w,0.5+w,f); h=(strS(floor(u)+f)-tw)/uSteps; }
+    if(uPlateau<0.999){ float dP=h-uPlateau, kP=0.02+gNE/uAmp*0.6; h=uPlateau+dP*mix(1.0,0.12,smoothstep(-kP,kP,dP)); }   /* Tafelkante mit weichem Knie (Breite je Gitter) */
+    if(uSteps>=1.0){ if(uEther>0.5){ float tw=0.35*snoise(p/(uScale*2.5)+uSeed*0.11+23.0); float u=strU(h*uSteps+tw); float f=fract(u); float w=max(max(mix(0.5,0.03,uSharp),0.22), clamp(gNE*uSteps/uAmp*1.5,0.0,0.5));   /* Stufenkante ≥ ca. 2 Gitterabstände breit */ f=smoothstep(0.5-w,0.5+w,f); h=(strS(floor(u)+f)-tw)/uSteps; }
       else { float s=h*uSteps; float f=fract(s); float w=mix(0.5,0.03,uSharp); f=smoothstep(0.5-w,0.5+w,f); h=(floor(s)+f)/uSteps; } }
     return dioMod(p, h*uAmp);
   }`;
   const S = {};
   const rot = (x, y) => [1.6 * x - 1.2 * y + 3.1, 1.2 * x + 1.6 * y + 1.7]; // mat2(1.6,1.2,-1.2,1.6) spaltenweise wie in GLSL
-  function fbm(x, y) { let s = 0, a = 1, n = 0; const oc = S.ether ? Math.min(S.oct, 5) : S.oct; for (let i = 0; i < 7 && i < oc; i++) { s += a * snoise(x, y); n += a; [x, y] = rot(x, y); a *= 0.5 } return s / n }
-  function rfbm(x, y) { let s = 0, a = 1, n = 0; const oc = S.ether ? Math.min(S.oct, 4) : S.oct; for (let i = 0; i < 7 && i < oc; i++) { const sn = snoise(x, y); const r = S.ether ? Math.max(0, (1 - Math.sqrt(sn * sn + 0.06)) / 0.7551) : 1 - Math.abs(sn); s += a * r * r; n += a; [x, y] = rot(x, y); a *= S.ether ? 0.45 : 0.5 } return s / n }
-  const LODC = { x: 0, z: 0 }; // Auto-Position für die abstandsabhängige Terrassen-Rundung (identisch zu gLod im Shader)
+  function fbm(x, y) { let s = 0, a = 1, n = 0; const oc = S.ether ? Math.min(S.oct, 5) : S.oct; for (let i = 0; i < 7 && i < oc; i++) { s += a * octW(i) * snoise(x, y); n += a; [x, y] = rot(x, y); a *= 0.5 } return s / n }
+  function rfbm(x, y) { let s = 0, a = 1, n = 0; const oc = S.ether ? Math.min(S.oct, 4) : S.oct; for (let i = 0; i < 7 && i < oc; i++) { const sn = snoise(x, y); const r = S.ether ? Math.max(0, (1 - Math.sqrt(sn * sn + 0.06)) / 0.7551) : 1 - Math.abs(sn), ow = octW(i); s += a * (0.5 + (r * r - 0.5) * ow); n += a; [x, y] = rot(x, y); a *= S.ether ? 0.45 : 0.5 } return s / n }
+  const NE0 = 600 / 256, octW = (i) => sstep(2, 4, (S.scale / Math.pow(2, i)) / NE0); // wie octW/gNE im Shader (Nahgitter)
   const strU = (s) => { const k = Math.floor(s * 0.5) * 2, t = s - k; return k + (t < 1.3 ? t / 1.3 : 1 + (t - 1.3) / 0.7) }, strS = (u) => { const k = Math.floor(u * 0.5) * 2, t = u - k; return k + (t < 1 ? t * 1.3 : 1.3 + (t - 1) * 0.7) };
   const sstep = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t) };
   function hgt(px, py) {
@@ -300,8 +302,8 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     h *= 1 + ((0.22 + (1.15 - 0.22) * region) - 1) * S.macro;
     h = Math.min(1, Math.max(0, h));
     if (S.valley > 0) h = Math.pow(h, 1 + S.valley * 1.6);
-    if (S.plateau < 0.999 && h > S.plateau) h = S.plateau + (h - S.plateau) * 0.12;
-    if (S.steps >= 1) { if (S.ether) { const tw = 0.35 * snoise(px / (S.scale * 2.5) + S.sx * 0.11 + 23, py / (S.scale * 2.5) + S.sy * 0.11 + 23), u = strU(h * S.steps + tw); let f = fract(u); const w = Math.max(Math.max(0.5 + (0.03 - 0.5) * S.sharp, 0.16), 0.5 * sstep(80, 450, Math.hypot(px - LODC.x, py - LODC.z))); f = sstep(0.5 - w, 0.5 + w, f); h = (strS(Math.floor(u) + f) - tw) / S.steps }
+    if (S.plateau < 0.999) { const dP = h - S.plateau, kP = 0.02 + NE0 / S.amp * 0.6; h = S.plateau + dP * (1 + (0.12 - 1) * sstep(-kP, kP, dP)) }
+    if (S.steps >= 1) { if (S.ether) { const tw = 0.35 * snoise(px / (S.scale * 2.5) + S.sx * 0.11 + 23, py / (S.scale * 2.5) + S.sy * 0.11 + 23), u = strU(h * S.steps + tw); let f = fract(u); const w = Math.max(Math.max(0.5 + (0.03 - 0.5) * S.sharp, 0.22), Math.min(0.5, Math.max(0, NE0 * S.steps / S.amp * 1.5))); f = sstep(0.5 - w, 0.5 + w, f); h = (strS(Math.floor(u) + f) - tw) / S.steps }
       else { const s = h * S.steps; let f = fract(s); const w = 0.5 + (0.03 - 0.5) * S.sharp; f = sstep(0.5 - w, 0.5 + w, f); h = (Math.floor(s) + f) / S.steps } }
     return dioModJS(px, py, h * S.amp);
   }
@@ -336,7 +338,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   const vert = `${GLSL_NOISE}\n${GLSL_HEIGHT}
   uniform vec2 uOffset; uniform vec2 uCarW; uniform float uHole, uDrop, uNE; uniform mat4 uShadowM; uniform float uEdges; varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv;
   void main(){
-    vec2 p=position.xz+uOffset; gLod=distance(p,uCarW); float h=hgt(p); float e=uNE;
+    vec2 p=position.xz+uOffset; { float chb=max(abs(p.x-uCarW.x),abs(p.y-uCarW.y)); gNE=mix(uNE, uNE*4.0, smoothstep(uNE*100.0, uNE*126.0, chb)); } float h=hgt(p);   /* zum Rand hin wie das nächste, gröbere Gitter → keine Stufe an der Naht */ float e=uNE;
     float hx=hgt(p+vec2(e,0.0)), hz=hgt(p+vec2(0.0,e));
     vN=normalize(vec3(h-hx, e, h-hz)); vH=h; vW=vec3(p.x,h,p.y);
     // Etherington: Licht folgt der großen Form (Formnormale über ~6 m), nicht jeder Delle → keine splittrigen Licht-Scherben an den Hängen
@@ -373,6 +375,10 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       d=sminK(d, lq-rad*(1.0+lob), rad*0.45); }
     return d;
   }
+  // Schatten weich: jede Probe bilinear zwischen 4 Texeln (keine Treppen), 3×3 Proben im 1,5-Texel-Abstand
+  float shTex(vec2 uv, float z){ return step(z, unpackRGBAToDepth(texture2D(uShadowMap, uv))); }
+  float shBil(vec2 uv, float z){ vec2 ts=vec2(1.0/2048.0); vec2 g=uv*2048.0-0.5; vec2 f=fract(g); vec2 c=(floor(g)+0.5)*ts;
+    return mix(mix(shTex(c,z), shTex(c+vec2(ts.x,0.0),z), f.x), mix(shTex(c+vec2(0.0,ts.y),z), shTex(c+ts,z), f.x), f.y); }
   float cover(float d){ float fw=fwidth(d)+1e-4; return 1.0-smoothstep(-fw,fw,d); }
   void main(){
     float t=uMix>0.5 ? smoothstep(-0.25,0.25,snoise(vW.xz/(uScale*9.0)+uSeed*0.21+40.0)) : 0.0;
@@ -494,8 +500,8 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       sky=sky*0.35;
     }
     if(uShadowOn>0.5){ vec3 sc=vSC.xyz/vSC.w; if(sc.x>0.0 && sc.x<1.0 && sc.y>0.0 && sc.y<1.0 && sc.z<1.0){ float sv=0.0; vec2 tx=vec2(1.25/2048.0); /* 5×5 Proben: ruhige Kante ohne Treppen */
-      for(int i=-2;i<=2;i++) for(int j=-2;j<=2;j++) sv+=step(sc.z-0.00015, unpackRGBAToDepth(texture2D(uShadowMap, sc.xy+vec2(float(i),float(j))*tx)));
-      sv=smoothstep(0.15,0.85,sv/25.0); col=mix(mix(col*0.62, uContact, 0.38), col, sv); } }   // echter Schatten, eingefärbt (kein Schwarz)
+      for(int i=-1;i<=1;i++) for(int j=-1;j<=1;j++) sv+=shBil(sc.xy+vec2(float(i),float(j))*(1.5/2048.0), sc.z-0.00015);
+      sv=smoothstep(0.0,1.0,sv/9.0); col=mix(mix(col*0.62, uContact, 0.38), col, sv); } }   // echter Schatten, eingefärbt (kein Schwarz)
     if(uDbg>0.5 && uDbg<1.5) col=alb; if(uDbg>2.5) col=idc;   // Prüfansichten (gleiche Kamera): Grundfarbe · graue Form · Masken
     gl_FragColor=vec4(mix(col, sky, f),1.0);
   }`;
@@ -549,7 +555,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     float fbm4(vec2 q){ float s=0.0, a=0.5; for(int i=0;i<4;i++){ s+=a*snoise(q); q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(1.7,9.2); a*=0.5; } return s; }
     void main(){
       vec3 d=normalize(vDir); float h=max(d.y,0.0);
-      vec3 col=d.y>0.0 ? mix(uHorizon, uZenith, pow(smoothstep(0.0,0.85,h),0.7)) : uHorizon*0.94;
+      vec3 col=d.y>0.0 ? mix(uHorizon, uZenith, pow(smoothstep(0.0,0.85,h),0.7)) : uHorizon;   // unter dem Horizont exakt die Nebelfarbe (vorher ×0,94 = sichtbarer Balken)
       if(uStars>0.5 && d.y>0.0){ vec2 sp=d.xz/(d.y+1.0)*190.0; vec2 cell=floor(sp); float r=fract(sin(dot(cell,vec2(12.9898,78.233)))*43758.5453);
         if(r>0.986){ float tw=0.6+0.4*sin(uTime*2.3+r*60.0); col+=vec3(smoothstep(0.16,0.0,length(fract(sp)-0.5))*tw*smoothstep(0.0,0.25,h)); } }
       if(uPainted>0.5 && d.y>0.0){
@@ -674,7 +680,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         const url = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/9bd8e0376105b29375377ea3052e33528d50fbb6/media/3D_Assets/MeshyModels/vehicles/${info.id}/${info.id}_browser.v3.glb`;
         const buf = await fetch(url).then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.arrayBuffer() });
         scn = await new Promise((res, rej) => loader.parse(buf, '', (g) => res(g.scene), rej));
-        scn.traverse((m) => { if (m.isMesh) { m.frustumCulled = false; m.castShadow = true } }); castFront(scn); cache.set(info.id, scn);
+        scn.traverse((m) => { if (m.isMesh) { m.frustumCulled = false; m.castShadow = true } }); castFront(scn); scn.traverse((m) => { if (m.isMesh) for (const mm of [].concat(m.material)) addGrounding(mm) }); cache.set(info.id, scn);
       }
       while (squash.children.length) squash.remove(squash.children[0]);
       for (const p of plumes) for (const m of p.mats) m.dispose();
@@ -715,13 +721,13 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   }
   // Erdung (Grounding): unten am Objekt und an nach unten gerichteten Flächen (Kronen-Unterseiten) dunkler im Kontaktton der Palette, nie schwarz;
   // die Bodenhöhe kommt aus derselben Höhenformel wie das Gelände (im Vertex-Shader)
-  const GU = { uScale: U.uScale, uAmp: U.uAmp, uOct: U.uOct, uRidge: U.uRidge, uWarp: U.uWarp, uMacro: U.uMacro, uValley: U.uValley, uPlateau: U.uPlateau, uSteps: U.uSteps, uSharp: U.uSharp, uEther: U.uEther, uSeed: U.uSeed, uDio: U.uDio, uDioB: U.uDioB, uContact: U.uContact, uGOff: { value: new THREE.Vector2() }, uGBand: { value: 0.8 }, uGOn: { value: 1 } };
+  const GU = { uScale: U.uScale, uAmp: U.uAmp, uOct: U.uOct, uRidge: U.uRidge, uWarp: U.uWarp, uMacro: U.uMacro, uValley: U.uValley, uPlateau: U.uPlateau, uSteps: U.uSteps, uSharp: U.uSharp, uEther: U.uEther, uSeed: U.uSeed, uDio: U.uDio, uDioB: U.uDioB, uContact: U.uContact, uGOff: { value: new THREE.Vector2() }, uGBand: { value: 1.3 }, uGOn: { value: 1 } };
   window.__GU = GU;
   function addGrounding(mat) { const prev = mat.onBeforeCompile, prevKey = mat.customProgramCacheKey
     mat.onBeforeCompile = (sh, r) => { if (prev) prev.call(mat, sh, r); Object.assign(sh.uniforms, GU)
-      sh.vertexShader = GLSL_NOISE + '\n' + GLSL_HEIGHT + '\nuniform vec2 uGOff; varying float vGA; varying float vGD;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n  { vec3 wpG = (modelMatrix * vec4(transformed, 1.0)).xyz; gLod = length(wpG.xz); vGA = wpG.y - hgt(wpG.xz + uGOff); vGD = normalize(mat3(modelMatrix) * objectNormal).y; }')
+      sh.vertexShader = GLSL_NOISE + '\n' + GLSL_HEIGHT + '\nuniform vec2 uGOff; varying float vGA; varying float vGD;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n  { vec4 lpG = vec4(transformed, 1.0); vec3 lnG = objectNormal;\n#ifdef USE_INSTANCING\n  lpG = instanceMatrix * lpG; lnG = mat3(instanceMatrix) * lnG;\n#endif\n  vec3 wpG = (modelMatrix * lpG).xyz; vGA = wpG.y - hgt(wpG.xz + uGOff); vGD = normalize(mat3(modelMatrix) * lnG).y; }')
       sh.fragmentShader = 'uniform vec3 uContact; uniform float uGBand, uGOn; varying float vGA; varying float vGD;\n' + sh.fragmentShader.replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
-  if (uGOn > 0.5) { vec3 cc = mix(diffuseColor.rgb * 0.55, uContact, 0.45); diffuseColor.rgb = mix(cc, diffuseColor.rgb, smoothstep(0.0, uGBand, vGA)); diffuseColor.rgb = mix(diffuseColor.rgb, cc, smoothstep(0.1, -0.7, vGD) * 0.45); }`) }
+  if (uGOn > 0.5) { vec3 cc = mix(diffuseColor.rgb * 0.5, uContact, 0.5); diffuseColor.rgb = mix(cc, diffuseColor.rgb, smoothstep(-0.1, uGBand, vGA)); diffuseColor.rgb = mix(diffuseColor.rgb, cc, smoothstep(0.1, -0.7, vGD) * 0.55); /* dunkle (nie schwarze) Kontaktzone unten + Unterseiten */ }`) }
     mat.customProgramCacheKey = () => (prevKey ? prevKey.call(mat) : '') + '|kfb-ground'; mat.needsUpdate = true }
   const loadG = (url) => loader.loadAsync(url).then((g) => g.scene);
   Promise.all([loadG(AMPH_URL).then((m) => { amph = m; palettize(m) }), ...[...ROCKS, ...TREES, ...BUSHES].map((n) => loadG(FOREST + n + '.gltf').then((m) => { TPL[n] = m; m.traverse((o) => { if (o.isMesh) { o.castShadow = o.receiveShadow = true; o.material = o.material.clone(); o.material.userData.base = o.material.color.clone(); addGrounding(o.material) } }) }))])
@@ -766,7 +772,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   // Felsgruppen an Steilhängen (Etherington R2): Dreiergruppen 1 : 0,6 : 0,35 (N5 ≤ 3 Hauptformen), 40–50 % eingesunken (S1), Ei auf dem breiten Ende +
   // nach oben schmaler (N2/N3), gemeinsame Neigung ≤ 15° mit Abständen ≥ 5° und genau einer Ausnahme 25–45° je Gruppe (N1), Brösel hangabwärts ≤ 12 % (E3)
   function etherRockGeo(seed) { let z = seed; const r = () => { z = (z * 16807) % 2147483647; return z / 2147483647 }; for (let k = 0; k < 4; k++) r()
-    const g = new THREE.IcosahedronGeometry(1, 1), pa = g.attributes.position, v = new THREE.Vector3()
+    const g = new THREE.IcosahedronGeometry(1, 2), pa = g.attributes.position, v = new THREE.Vector3()
     // Block statt Kugel: 8 Schnittebenen (große, flache Facetten), Ober- und Seitenschnitte, unten abgeflacht zum Aufsitzen; leicht länglich
     const cuts = [...Array(8)].map((_, k) => ({ n: (k === 0 ? new THREE.Vector3(r() * 0.3 - 0.15, 1, r() * 0.3 - 0.15) : new THREE.Vector3(r() - 0.5, r() * 0.8 - 0.2, r() - 0.5)).normalize(), d: k === 0 ? 0.5 + r() * 0.15 : 0.5 + r() * 0.25 }))
     const sx = 1.0 + 0.35 * r(), sz = 0.75 + 0.2 * r()
@@ -779,7 +785,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     for (let i = 0; i < pa.count; i++) { const a = acc.get(key(i)), l = Math.hypot(a[0], a[1], a[2]) || 1; nr.setXYZ(i, a[0] / l, a[1] / l, a[2] / l) }
     return g }
   const ROCKC = { dirty: true, cx: 1e9, cz: 1e9, meshes: [], crumbs: null };
-  { const mat = new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0, flatShading: true }); addGrounding(mat)
+  { const mat = new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0 }); addGrounding(mat)
     ROCKC.meshes = [11, 29, 47].map((sd) => { const m = new THREE.InstancedMesh(etherRockGeo(sd), mat, 420); m.castShadow = m.receiveShadow = true; m.frustumCulled = false; m.count = 0; worldRoot.add(m); return m })
     ROCKC.crumbs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), crumbs.material, 2200); ROCKC.crumbs.castShadow = ROCKC.crumbs.receiveShadow = true; ROCKC.crumbs.frustumCulled = false; ROCKC.crumbs.count = 0; worldRoot.add(ROCKC.crumbs)
     ROCKC.mat = mat; for (const m of ROCKC.meshes) castFront(m); castFront(ROCKC.crumbs); castFront(crumbs) }
@@ -788,8 +794,8 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     ROCKC.cx = px; ROCKC.cz = pz; ROCKC.dirty = false; for (const m of ROCKC.meshes) m.count = 0; ROCKC.crumbs.count = 0
     if (!S.rockc || S.gridworld) { for (const m of ROCKC.meshes) m.instanceMatrix.needsUpdate = true; ROCKC.crumbs.instanceMatrix.needsUpdate = true; return }
     const A = PALETTES[S.palA]; ROCKC.mat.color.set(A.cliff).lerp(new THREE.Color(A.mid), 0.15).multiplyScalar(0.9)
-    const CS = 26, RAD = 175, tanMin = Math.tan((S.cliff - 10) * Math.PI / 180), tanMax = Math.tan(Math.min(S.cliff + 22, 75) * Math.PI / 180), e = 2, wl = S.water > 0.005 ? S.water * S.amp + 0.3 : -1e9
-    const up = new THREE.Vector3(0, 1, 0), ax = new THREE.Vector3(), q1 = new THREE.Quaternion(), q2 = new THREE.Quaternion(), m4 = new THREE.Matrix4(), pos = new THREE.Vector3(), scl = new THREE.Vector3()
+    const CS = 26, RAD = 175, tanMin = Math.tan((S.cliff - 10) * Math.PI / 180), tanMax = Math.tan(Math.min(S.cliff + 12, 70) * Math.PI / 180), e = 2, wl = S.water > 0.005 ? S.water * S.amp + 0.3 : -1e9
+    const up = new THREE.Vector3(0, 1, 0), nrm = new THREE.Vector3(), q3 = new THREE.Quaternion(), ax = new THREE.Vector3(), q1 = new THREE.Quaternion(), q2 = new THREE.Quaternion(), m4 = new THREE.Matrix4(), pos = new THREE.Vector3(), scl = new THREE.Vector3()
     const i0 = Math.floor((px - RAD) / CS), i1 = Math.floor((px + RAD) / CS), j0 = Math.floor((pz - RAD) / CS), j1 = Math.floor((pz + RAD) / CS), sd = S.seed * 0.731
     for (let i = i0; i <= i1; i++) for (let j = j0; j <= j1; j++) {
       const hA = hh2(i + sd, j), hB = hh2(i * 1.7 - 3.1, j * 0.9 + sd), hC = hh2(i * 0.37 + 9.2 + sd, j * 2.3), hD = hh2(i * 2.9 + sd * 1.3, j * 1.1 - 7.7)
@@ -805,11 +811,12 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       for (let k = 0; k < 3; k++) {
         const sc = big * sizes[k] * (0.9 + 0.2 * hh2(i + k, j - k)), ox = off[k][0] * big, oy = off[k][1] * big
         const rx = x + Math.cos(contour) * ox + Math.cos(down) * oy, rz = z + Math.sin(contour) * ox + Math.sin(down) * oy
-        let g = hgt(rx, rz); for (let a = 0; a < 4; a++) g += hgt(rx + Math.cos(a * 1.571) * sc * 0.8, rz + Math.sin(a * 1.571) * sc * 0.8); g /= 5 // mittlere Bodenhöhe: hangab sieht man mehr Stein, hangauf weniger
+        let g = hgt(rx, rz), gmin = g; for (let a = 0; a < 8; a++) { const hv = hgt(rx + Math.cos(a * 0.785) * sc * 1.3, rz + Math.sin(a * 0.785) * sc * 1.3); g += hv; gmin = Math.min(gmin, hv) } g /= 9 // Fußkreis 1,3 × Größe, 8 Richtungen
         const sink = 0.4 + 0.1 * hh2(i * 3 + k, j * 5), hgtR = 1.6 * sc
         const isExc = k === exc, lean = (isExc ? 25 + 20 * hC : base[ord[k]]) * Math.PI / 180, ld = isExc ? leanDir + Math.PI * 0.8 : leanDir + (hh2(i, j + k) - 0.5) * 0.4
         ax.set(Math.sin(ld), 0, -Math.cos(ld)); q1.setFromAxisAngle(ax, lean); q2.setFromAxisAngle(up, hh2(i - k, j) * 6.283); q1.multiply(q2)
-        pos.set(rx, g + 0.8 * sc - sink * hgtR, rz); scl.set(sc, sc, sc)
+        nrm.set(-gx, 1, -gz).normalize().lerp(up, 0.5).normalize(); q3.setFromUnitVectors(up, nrm); q1.premultiply(q3) // halb in den Hang gekippt
+        pos.set(rx, Math.min(g + 0.8 * sc - sink * hgtR, gmin + 0.2 * sc), rz); scl.set(sc, sc, sc) // nie über dem tiefsten Bodenpunkt schweben
         const mesh = ROCKC.meshes[(((i * 7 + j * 3 + k) % 3) + 3) % 3]; if (mesh.count >= 420) continue
         mesh.setMatrixAt(mesh.count++, m4.compose(pos, q1, scl))
         // Brösel: wenige, klein (≤ 12 % des Steins), meist hangabwärts liegen geblieben
@@ -928,7 +935,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     const sx = Math.floor(P.x / STEP) * STEP, sz = Math.floor(P.z / STEP) * STEP;
     U.uOffset.value.set(sx, sz); terrain.position.set(sx - P.x, 0, sz - P.z); water.position.copy(terrain.position); U.uCarW.value.set(P.x, P.z);
     for (const R of RINGS) { const rx = Math.floor(P.x / R.step) * R.step, rz = Math.floor(P.z / R.step) * R.step; R.u.uOffset.value.set(rx, rz); R.m.position.set(rx - P.x, 0, rz - P.z) } water.visible = S.water > 0.005;
-    worldRoot.position.set(-P.x, 0, -P.z); LODC.x = P.x; LODC.z = P.z;
+    worldRoot.position.set(-P.x, 0, -P.z);
     if (ROCKC.dirty || Math.hypot(P.x - ROCKC.cx, P.z - ROCKC.cz) > 40) buildRocks(P.x, P.z);
     carRoot.position.set(0, P.y - C.hover * 0.55, 0); carRoot.rotation.y = P.yaw;
     tilt.rotation.set(-P.vPitch, 0, P.vRoll);
@@ -940,11 +947,11 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       p.cone.scale.set(p.r * 0.85, p.r * 0.85, len); p.cone.material.opacity = 0.25 + 0.5 * th; p.core.material.opacity = 0.5 + 0.5 * th;
     }
     if (mode === 'over') {
-      U.uFogNear.value = S.rings ? 2500 : 700; U.uFogFar.value = S.rings ? 6500 : 1800; if (camera.fov !== 55) { camera.fov = 55; camera.updateProjectionMatrix() }
+      U.uFogNear.value = 1500; U.uFogFar.value = 4500; // Übersicht: Ringe immer an, Nebel ist an der Ringkante (4,8 km) voll → keine sichtbare Geländekante if (camera.fov !== 55) { camera.fov = 55; camera.updateProjectionMatrix() }
       const ty = P.y; camera.position.set(Math.sin(yaw) * Math.cos(pitch) * dist, ty + Math.sin(pitch) * dist, Math.cos(yaw) * Math.cos(pitch) * dist);
       camera.lookAt(0, ty, 0);
     } else {
-      U.uFogNear.value = S.rings ? 1200 : 170; U.uFogFar.value = S.rings ? 4600 : 295;
+      U.uFogNear.value = S.rings ? 1200 : 170; U.uFogFar.value = S.rings ? 4500 : 292; // Nebel voll VOR der Geländekante (300 m bzw. 4,8 km)
       if (!ptr.size) look *= Math.exp(-dt * 1.5);
       camera.fov = 55 + Math.min(18, Math.abs(P.vf) * 0.06); camera.updateProjectionMatrix(); // FOV-Kick: mehr Tempo, weiterer Blick
       const a = P.yaw + Math.PI + look, back = P.fly ? 14 : 11, up = P.fly ? 4.5 - Math.sin(P.vPitch) * 6 : 3.8;
@@ -954,6 +961,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       camera.position.copy(camPos); camera.lookAt(Math.sin(P.yaw) * 6, P.y + 1.2, Math.cos(P.yaw) * 6);
     }
     // Himmel folgt der Kamera; Nebel für die Knet-Wolken wie beim Gelände
+    { const rOn = mode === 'over' || S.rings; for (const R of RINGS) R.m.visible = rOn; water.scale.set(rOn ? 16 : 1, 1, rOn ? 16 : 1) }
     dome.position.copy(camera.position); SKY.uTime.value = t; SKY.uCamXZ.value.set(P.x, P.z);
     scene.fog.near = U.uFogNear.value * 2.2; scene.fog.far = U.uFogFar.value * 3.4; // Knet-Wolken bleiben weiter sichtbar als das Gelände
     if (puffs.visible) { const base = S.amp + 45, wind = t * 3;
