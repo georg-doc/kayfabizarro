@@ -1,0 +1,127 @@
+{
+  "schema": "kfb.terrain-look/1",
+  "version": "r1",
+  "ref": [
+    "V-561",
+    "#439",
+    "WS0_CARTOON_TERRAIN_PALETTE_SHADOW_DESIGN_R1_2026-10-19",
+    "V-305",
+    "V-406"
+  ],
+  "note": "Look-Variante terrain2 (Hash look=terrain2): Farbflächen unabhängig von der Höhe (Farbrollen aus dem Farbdrehbuch kfb-colorscript.r1, Welt wählbar), echte Shadow-Map-Schatten an der Material-Naht in den Schattenton des Empfängers umgefärbt. Alle Maße hier, damit sie stellbar bleiben.",
+  "world": "canyon",
+  "surfaceRoles": [
+    "top",
+    "hill0",
+    "under1",
+    "sand"
+  ],
+  "field": {
+    "wavelength": 60,
+    "warpWave": 200,
+    "warp": 0.55,
+    "seed": 439,
+    "roleShare": {
+      "third": 0.15,
+      "accent": -0.55
+    }
+  },
+  "wall": {
+    "slopeStart": 0.48,
+    "slopeEnd": 0.6
+  },
+  "shadow": {
+    "role": "under0",
+    "mix": 0.55,
+    "toon": [
+      0.35,
+      0.62
+    ],
+    "albedoKeep": 0.6
+  },
+  "contactBlobs": false,
+  "diorama": {
+    "note": "Einbettung des Amphitheaters (V-341, #439 Bühnenfuß): Erdwall um den Fuß (Unterkante verdeckt), vorne offen für die glatte Auffahrt; Farbring in der Bühnenrolle (Sand/Stein) mit organischen Zungen ins Farbfeld. Fuß je 64 Sektoren (ab +X gegen den Uhrzeigersinn in xz) gemessen am geladenen Modell (J17-Standardmaßstab, 20.10.).",
+    "foot": [
+      11.64,
+      11.53,
+      11.26,
+      10.63,
+      11.04,
+      11.13,
+      10.69,
+      10.76,
+      10.77,
+      10.91,
+      10.87,
+      9.99,
+      6.85,
+      6.91,
+      6.97,
+      6.97,
+      6.99,
+      7,
+      6.98,
+      6.97,
+      6.93,
+      9.35,
+      10.08,
+      10.32,
+      10.31,
+      10.1,
+      10.32,
+      10.4,
+      10.72,
+      11.25,
+      11.58,
+      11.73,
+      11.53,
+      11.38,
+      11.34,
+      11.44,
+      11.84,
+      11.68,
+      11.55,
+      11.67,
+      11.54,
+      11.85,
+      11.89,
+      11.76,
+      11.9,
+      11.87,
+      11.83,
+      11.85,
+      11.4,
+      12.03,
+      11.94,
+      11.7,
+      11.94,
+      11.95,
+      12.25,
+      12.08,
+      11.85,
+      12.3,
+      12.17,
+      12.06,
+      11.83,
+      11.91,
+      11.92,
+      11.54
+    ],
+    "entranceBelow": 8.5,
+    "berm": {
+      "height": 1.25,
+      "width": 7.5,
+      "tuck": 0.5,
+      "vary": 0.35
+    },
+    "ring": {
+      "width": 5.0,
+      "tongue": 0.7,
+      "roleStage": 4,
+      "roleRock": 5
+    }
+  },
+  "clayAmt": 0.18,
+  "surfaceNote": "Rollen 1. Rundgang zu ähnlich (top/hill1 fast gleich) → deutlich verschiedene Töne derselben Welt: Grundton, Hellton, Terrakotta, Creme (kleine Akzentflächen); Flächen 60 m statt 120 m"
+}

@@ -29,7 +29,7 @@ export function StageOrbitCam({ view, active = true, ref }) {
   const activeRef = useRef(active)
   const ctl = useMemo(() => {
     const c = new OrbitControls(camera, gl.domElement)
-    Object.assign(c, { enableDamping: true, dampingFactor: ORBIT.damping, rotateSpeed: ORBIT.rotate, zoomSpeed: ORBIT.zoom, panSpeed: ORBIT.pan, zoomToCursor: true, screenSpacePanning: true, minDistance: ORBIT.minDist, maxDistance: ORBIT.maxDist, maxPolarAngle: Math.PI * 0.55 }) // knapp unter die Waagrechte erlaubt (Standard-Blick ist fast waagrecht); den Boden schützt minY
+    Object.assign(c, { enableDamping: true, dampingFactor: ORBIT.damping, rotateSpeed: ORBIT.rotate, zoomSpeed: ORBIT.zoom, panSpeed: ORBIT.pan, enableZoom: false, /* Zoom selbst, s. u. (C1) */ screenSpacePanning: true, minDistance: ORBIT.minDist, maxDistance: ORBIT.maxDist, maxPolarAngle: Math.PI * 0.55 }) // knapp unter die Waagrechte erlaubt (Standard-Blick ist fast waagrecht); den Boden schützt minY
     return c
   }, [camera, gl])
   const glide = useMemo(() => ({ on: false, t: 0, a: null, b: null, fovA: null, fovB: null }), [])
@@ -53,6 +53,18 @@ export function StageOrbitCam({ view, active = true, ref }) {
   }
   useImperativeHandle(ref, () => ({ setActive, target: () => ctl.target.clone(), jump, active: () => activeRef.current }), [ctl, camera])
   useEffect(() => { if (active !== activeRef.current) setActive(active) }, [active, ctl, camera])
+  // Zoom zum Cursor (C1, V-408): Streckung um den Punkt unter dem Cursor (Strahl in die Szene, sonst Ebene in Zieltiefe) – Kamera und Ziel rücken
+  // gemeinsam auf ihn zu; die Blickrichtung bleibt, also bleibt der Punkt genau unter dem Cursor. Rad normalisiert (Raste ±120), Schritt exp(Δ·0,0012)
+  // wie V-088, gedämpft über die Bildzeit (kein Faktor je Bild). Grenzen minDist/maxDist über den Abstand Kamera–Ziel.
+  const zoom = useMemo(() => ({ want: 0, p: new THREE.Vector3() }), [])
+  useEffect(() => {
+    const ray = new THREE.Raycaster(), v = new THREE.Vector2(), dir = new THREE.Vector3()
+    const onWheel = (e) => { if (!activeRef.current) return; e.preventDefault(); const r = gl.domElement.getBoundingClientRect(); v.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(v, camera)
+      const hit = ray.intersectObjects(scene.children, true).find((h) => h.object.visible && h.object.name !== 'sky' && !h.object.isSprite)
+      if (hit) zoom.p.copy(hit.point); else { const d = camera.position.distanceTo(ctl.target); zoom.p.copy(ray.ray.origin).addScaledVector(ray.ray.direction, d) }
+      const d = e.deltaMode === 1 ? e.deltaY * 40 : e.deltaMode === 2 ? e.deltaY * 800 : e.deltaY; zoom.want += Math.max(-360, Math.min(360, d)) * 0.0012 }
+    gl.domElement.addEventListener('wheel', onWheel, { passive: false }); expose('StageZoom', zoom); return () => gl.domElement.removeEventListener('wheel', onWheel)
+  }, [gl, camera, scene, ctl, zoom])
   // Fokus auf Klick (V-257): Doppelklick setzt das Orbit-Ziel weich auf den getroffenen Punkt
   useEffect(() => {
     const ray = new THREE.Raycaster(), v = new THREE.Vector2()
@@ -75,6 +87,11 @@ export function StageOrbitCam({ view, active = true, ref }) {
       camera.position.lerpVectors(glide.a.pos, glide.b.pos, k); ctl.target.lerpVectors(glide.a.target, glide.b.target, k)
       if (glide.fovB != null && glide.fovB !== glide.fovA) { camera.fov = glide.fovA + (glide.fovB - glide.fovA) * k; camera.updateProjectionMatrix() }
       if (u >= 1) { glide.on = false; ctl.update(); ctl.enableDamping = true } }
+    // Dämpfung über die Bildzeit statt je Bild (C1: dieselbe Ruhe bei 30, 60 und 120 Hz)
+    ctl.dampingFactor = 1 - Math.pow(1 - ORBIT.damping, Math.min(dt, 0.1) * 60)
+    if (Math.abs(zoom.want) > 1e-5) { const k = 1 - Math.exp(-12 * Math.min(dt, 0.1)), step = zoom.want * k; zoom.want -= step
+      const d = camera.position.distanceTo(ctl.target), s = Math.max(ORBIT.minDist / d, Math.min(ORBIT.maxDist / d, Math.exp(step)))
+      camera.position.sub(zoom.p).multiplyScalar(s).add(zoom.p); ctl.target.sub(zoom.p).multiplyScalar(s).add(zoom.p) }
     ctl.update()
     if (camera.position.y < ORBIT.minY) camera.position.y = ORBIT.minY // nie unter das Gelände (V-203)
   })

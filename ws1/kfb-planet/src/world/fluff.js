@@ -2,7 +2,8 @@
 // (test/unit/fluff.mjs). Einheiten: Meter wie die Spielwelt (J17-Meter nach V-345; Werte unten sind in J17-Metern gedacht, M_PER_RIG = 0,616381042).
 // Inhalt: sechs Sorten = sechs Story-Modes (Farben V-292) · Gewichtung je Zone (Hauptsorte ≈ 40 %, jede andere ≥ 8 %) · Verteilung auf Bäume/Büsche
 // (Spawn-Punkte kommen vom Aufrufer) · Windfall mit einfachem Bounce-Integrator (fester Schritt, keine Physik-Engine) · Fluff-Böe (V-371) ·
-// Aufsammeln durch Drüberlaufen/-fahren (Kapsel gegen Durchtunneln) und im Bogen beim Driften (V-371).
+// Aufsammeln durch Drüberlaufen/-fahren (Kapsel gegen Durchtunneln) und im Bogen beim Driften (V-371) · C3: Windfall auf Gelände (stepBodyTerrain,
+// simulateTerrain; Prallen an der Geländenormale, Rollen bergab, Schlafen, Einsinken 0; test/unit/harvest.mjs).
 import { STORY_MODES, mulberry32 } from '../vendor/palette/kfb-cartoon-palette.js'
 
 // ---------------------------------------------------------------- Sorten (V-292 über kfb-cartoon-palette.js STORY_MODES, gleiche Hex-Werte wie das Register)
@@ -111,6 +112,72 @@ export function simulate(b, ground = 0, P = FALL, { trace = false } = {}) {
   const E = trace ? [energyOf(b, P)] : null; let steps = 0
   while (b.mode !== 'rest' && steps < Math.ceil(P.tMax / P.dt) + 1) { stepBody(b, ground, P); steps++; if (E) E.push(energyOf(b, P)) }
   return { body: b, seconds: steps * P.dt, steps, energies: E }
+}
+
+// ---------------------------------------------------------------- Windfall auf Gelände (C3, V-423; Brief WS1 Langlauf R2 Stufe 3: „bounce, roll and come to rest … no sinking in, sleep after settling“)
+// terrain = { heightAt(x, z), normalAt(x, z) → Einheitsnormale [nx, ny, nz], ny > 0 }. Radius je Körper b.r (sonst P.radius). Flug exakt ballistisch wie stepBody,
+// Kontakt per Abtasten in probes Teilstücken (gegen Durchtunneln an Buckeln) + Halbierung, Stoß an der Geländenormale (e, mu). Rollen: Hangabtrieb minus
+// Rollreibung nach Coulomb (rollMu·g·ny): bis zum Grenzwinkel atan(rollMu) ≈ 34° bleibt ein Kügelchen liegen, steiler rollt es weiter, bis der Hang flacher
+// wird oder tMax (dann timedOut). Schlafen erst unter vRest für tRest UND auf haltbarem Hang. Wächter je Schritt: Einsinken 0 (p.y ≥ h + r) und Energie
+// nimmt nie zu (ein Rollschritt, der mehr Energie bräuchte, wird gekürzt bzw. verworfen). stepBody/FALL bleiben unverändert (flacher Boden, alte Tests).
+export const TERRAIN_FALL = Object.freeze({ ...FALL, rollMu: 0.6745, vMax: 14, probes: 4 })
+// Zahl oder height(x, z) → terrain (Normale numerisch wie stepBody)
+export function terrainFrom(ground = 0) { const h = heightFn(ground); return { heightAt: h, normalAt: (x, z) => normalAt(h, x, z) } }
+const vlen = (v) => Math.hypot(v[0], v[1], v[2])
+
+export function stepBodyTerrain(b, terrain, P = TERRAIN_FALL) {
+  if (b.mode === 'rest') return b
+  const H = terrain.heightAt, N = terrain.normalAt, dt = P.dt, r = b.r ?? P.radius, g = P.g
+  b.t += dt
+  if (b.mode === 'air') {
+    if (b.p[1] < H(b.p[0], b.p[2]) + r) { b.p[1] = H(b.p[0], b.p[2]) + r; b.lifts = (b.lifts || 0) + 1 } // Start im Boden: aufsetzen (nur Fehlaufruf)
+    let left = dt
+    for (let k = 0; k < 4 && left > 1e-12; k++) {
+      const at = (tau) => [b.p[0] + b.v[0] * tau, b.p[1] + b.v[1] * tau - 0.5 * g * tau * tau, b.p[2] + b.v[2] * tau]
+      const f = (tau) => { const q = at(tau); return q[1] - (H(q[0], q[2]) + r) }
+      let lo = -1, hi = -1
+      for (let j = 1; j <= P.probes; j++) { const tj = (left * j) / P.probes; if (f(tj) < 0) { lo = (left * (j - 1)) / P.probes; hi = tj; break } }
+      if (hi < 0) { b.p = at(left); b.v[1] -= g * left; left = 0; break }
+      for (let i = 0; i < 30; i++) { const m = (lo + hi) / 2; if (f(m) >= 0) lo = m; else hi = m }
+      b.p = at(lo); b.v[1] -= g * lo; left -= lo
+      const n = N(b.p[0], b.p[2]), vn = dot(b.v, n), vt = [b.v[0] - vn * n[0], b.v[1] - vn * n[1], b.v[2] - vn * n[2]]
+      if (vn >= 0) { b.mode = 'roll'; b.v = vt; break } // streifend (Gelände steigt schneller als die Bahn): auf die Fläche legen
+      const vn2 = -P.e * vn, k2 = 1 - P.mu
+      b.v = [vt[0] * k2 + vn2 * n[0], vt[1] * k2 + vn2 * n[1], vt[2] * k2 + vn2 * n[2]]; b.bounces++
+      if (vn2 < P.vSettle) { b.mode = 'roll'; b.v = [vt[0] * k2, vt[1] * k2, vt[2] * k2]; break }
+    }
+    if (b.mode === 'air') return settleTerrain(b, N(b.p[0], b.p[2]), P)
+  }
+  // Rollen: Hangabtrieb g·(0,−1,0) minus Normalanteil, dann Coulomb-Rollreibung, Tempo-Deckel vMax, Höhe auf die Fläche, Geschwindigkeit tangential
+  const E0 = 0.5 * dot(b.v, b.v) + g * b.p[1], n = N(b.p[0], b.p[2])
+  let v = [b.v[0] + g * n[1] * n[0] * dt, b.v[1] + (g * n[1] * n[1] - g) * dt, b.v[2] + g * n[1] * n[2] * dt]
+  const sp = vlen(v), dec = P.rollMu * g * n[1] * dt
+  v = sp <= dec ? [0, 0, 0] : [v[0] * (sp - dec) / sp, v[1] * (sp - dec) / sp, v[2] * (sp - dec) / sp]
+  const s2 = vlen(v); if (s2 > P.vMax) v = [v[0] * P.vMax / s2, v[1] * P.vMax / s2, v[2] * P.vMax / s2]
+  const x = b.p[0] + v[0] * dt, z = b.p[2] + v[2] * dt, y = H(x, z) + r, n2 = N(x, z), vn = dot(v, n2)
+  v = [v[0] - vn * n2[0], v[1] - vn * n2[1], v[2] - vn * n2[2]]
+  const E1 = 0.5 * dot(v, v) + g * y
+  if (E1 <= E0) { b.p = [x, y, z]; b.v = v }
+  else { const ke = E0 - g * y, vv = dot(v, v); if (ke > 0 && vv > 0) { const k = Math.sqrt((2 * ke) / vv); b.p = [x, y, z]; b.v = [v[0] * k, v[1] * k, v[2] * k] } else b.v = [0, 0, 0] } // Energie-Wächter
+  const yMin = H(b.p[0], b.p[2]) + r
+  if (b.p[1] < yMin) { b.p[1] = yMin; b.lifts = (b.lifts || 0) + 1 } // Einsinken-Wächter (nur Rundung beim Übergang Flug → Rollen)
+  return settleTerrain(b, N(b.p[0], b.p[2]), P)
+}
+function settleTerrain(b, n, P) {
+  const hold = Math.hypot(n[0], n[2]) <= P.rollMu * n[1] + 1e-12 // tan(Hang) ≤ rollMu: Reibung hält
+  b.still = b.mode === 'roll' && vlen(b.v) < P.vRest && hold ? b.still + P.dt : 0
+  if (b.still >= P.tRest) { b.mode = 'rest'; b.v = [0, 0, 0] } else if (b.t >= P.tMax) { b.mode = 'rest'; b.v = [0, 0, 0]; b.timedOut = true }
+  return b
+}
+// bis zur Ruhe rechnen; Ergebnis { body, seconds (Ruhezeit), steps, bounces, path (Weglänge), maxSink (≤ 0 = nie eingesunken), timedOut, energies? }
+export function simulateTerrain(b, terrain, P = TERRAIN_FALL, { trace = false } = {}) {
+  const H = terrain.heightAt, r = b.r ?? P.radius, E = trace ? [energyOf(b, P)] : null, lim = Math.ceil(P.tMax / P.dt) + 1
+  let steps = 0, path = 0, maxSink = 0
+  while (b.mode !== 'rest' && steps < lim) {
+    const q = b.p.slice(); stepBodyTerrain(b, terrain, P); steps++
+    path += Math.hypot(b.p[0] - q[0], b.p[1] - q[1], b.p[2] - q[2]); maxSink = Math.max(maxSink, H(b.p[0], b.p[2]) + r - b.p[1]); if (E) E.push(energyOf(b, P))
+  }
+  return { body: b, seconds: steps * P.dt, steps, bounces: b.bounces, path, maxSink, timedOut: !!b.timedOut, energies: E }
 }
 
 // ---------------------------------------------------------------- Abwurf, Böe, Rütteln
