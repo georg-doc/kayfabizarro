@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WSA Combat Arena R2 (PR #23: Waffenprofil-Prüfer, 24 Action-Zuordnungen, 74/74 grün) beantwortet (replies/WS0_TO_WSA_COMBAT_ARENA_R2.md): Scenelet-Spec R2 §(6) um V-574-Ausnahme ergänzt; Mündungsfeuer = Action-Figure Muzzleflash (primär) / Muzzleflash_Long (sekundär) as-is am KFB_Muzzle (Georg 17.10.), Laser/Magie als Varianten; erster Consumer Soldat r3b. WSB K7 r3: Felsen stone_env #af7161, Kuppel gewinnt im Graubild.
 - WS1b Fluff-Einsammel-Flug (V-340) gebaut (ws1b/fluff-pickup bcf49f0: Knet-Kopie fliegt in den R5f-Slot, Squash-Bounce, Buchung beim Aufsammeln, reduced motion = sofort, ≤ 8 im Flug; Tests grün; Clip WS1B_FLUFF_PICKUP_R1/) → WS0-Go für Push + kombinierten Vorschau-Build. Offen HUD R5f/R6: Zähler im Phone-Layout.
 - WSB K7 r2 angenommen (Bäume tree_sec #376442 = accent Chroma ×0,6, L ×0,9); Felsen eine Stufe dunkler (mittlerer stone-Ton, V-566 Fokus gewinnt). K6: Gruftdach iron dunkel freigegeben.
 - WSB K7 Sci-Fi-Teile angenommen (38 Quaternius CC0 as-is, apply + Spuren + Pass, Set 41 Slots 1:1, Welt ×0,85); Änderung: Bäume/Kraut auf Sekundärrolle (Chroma ×0,6), Kuppel bleibt Akzent; Connector-Saum so lassen; Einsinken/Kontakt macht WS1.

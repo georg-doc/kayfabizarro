@@ -94,6 +94,8 @@ Im Scenelet:
 | `KFB_Eye_L/R/C_anchor` (Sitz center) | `eye_anchor.l/r` (Sitz cap) |
 
 - **(6) Elternknochen:** Läufe (Blaster, Gewehr, Trichter) an `lowerarm.*`, damit die Mündung auf der Unterarmachse bleibt, auch wenn das Handgelenk knickt. Wurfkörper, Instrumente und Werkzeuge an `hand.*`.
+  - **Ausnahme V-574 (20.10.):** Originale Kit-Waffen, z. B. KayKit-Gewehre und -Blaster, bleiben an ihrem vorgesehenen Hand-Slot (`handslot.*` bzw. `hand.*`) mit den unveränderten Kit-Clips. `axis: "kit"`, kein Erzwingen der Unterarmachse, keine Nachpose je Bild. V-536 (lowerarm, axis forearm) gilt nur für eigene Zielwerkzeuge (Trichter, Saugarm, eigene Blaster).
+  - **Mündungsfeuer (Georg 17.10., KAYFABRICK_BOTS_R1):** Primär `Muzzleflash`, sekundär `Muzzleflash_Long` aus KayKit Mystery S6 „Action Figure“, as-is am Anker `KFB_Muzzle`. Laser und Magie nur als Farb- bzw. VFX-Varianten davon.
 - **(15) Korrekturen:** `mode: "baked"` (Vorgabe, WSB backt in den Clip; das Feld ist dann nur Nachweis) oder `"runtime"` (Laufzeit wendet an). Fenster in Bildern (`window_f`, `ramp_f`), Achse lokal am Knochen.
 - **(17) Schattierungs-Textur:** Bei Rollen-Materialien setzt die Bühne `baseColorFactor` und lässt eine vorhandene Graustufen-`baseColorTexture` stehen (Rollenfarbe × Textur).
 - **Mehrere Darsteller mit gemischten Augen-Sitzen** in einer Datei muss die Bühne ab R2 können (je Darsteller eigene Karte).
