@@ -3,6 +3,40 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 103 · 20.10. · Recherche R10 + R11 fertig (Georgs Stil-Auftrag) · Kanon-Lücken · Frage „Banden = Bänder?“ · Probe: organische Farbflächen
+
+**Neue Recherche** auf Georgs Wunsch (auf diesem Branch unter `research/canon/`, bitte nach `CANON_3D/sources/`):
+- **`R10_CARTOON_HINTERGRUND_KLASSIKER_R1.md`**: 39 Regeln (Looney Tunes/Road Runner nach Maurice Noble, Hanna-Barbera/Art Lozzi, Animaniacs, Material-Mix).
+  - **Dunkle Vordergrundmasse:** 6–12 % Bildhöhe, ≥ 60 % Breite, 15–25 L\* dunkler, gebrochene Oberkante [V]. Nur feste Kameras und weltfest; für die Verfolgerkamera nicht übernommen (wäre eine Vignette).
+  - **Kantenakzente** als Ausnahme (≤ 25 % der Silhouettenlänge): Farbton ±20°, 15–30 L\* dunkler, 1–3 % der Objekthöhe, Lücken auf der Lichtseite.
+  - **Formsprache:** kopflastige Tafelberge mit runden Kanten; Streckenrand ≤ 6 gleichartige Objekte pro Sekunde [V, nach Noble].
+  - **Wert und Farbe:** Wertleiter als Palettenfeld, 4-Ton-Akkord je Zone.
+  - **Flächen brechen** ohne Rauschen: Grundton auf ≥ 50 % sichtbar, ΔL\* ≤ 8.
+  - **Material-Mix hält zusammen** über ein Medium (`kfb-clay`-Profile), eine Bauregel, eine gemeinsame Textur-Signatur und eine gemeinsame Alterung. Wichtigste Regel: Der Texturmaßstab folgt dem Weltmaßstab (Fingerspur-Größe auf allen Objekten innerhalb Faktor ≤ 2).
+- **`R11_3D_ANIMATION_FARBE_LICHT_R1.md`**: 30 Regeln (Pixar/Disney, Spider-Verse, Arcane, DreamWorks NPR, Klaus, Guilty Gear Xrd, Hi-Fi Rush, Sable).
+  - **Schatten = Materialpaar je Palettenrolle** (konkretisiert V-564): ΔL\* −18 bis −28, Farbton ≤ 20° verschoben, Buntheit 0,8–1,15 ×.
+  - **Zusammenführung mit max:** 2 Töne + ≤ 1 Kontaktstufe; Kontakt 8–12 L\* unter dem Wurfschatten.
+  - **Linien als Color Hold** (25–35 L\* unter der Fläche), Breite nimmt mit der Tiefe ab, nie an Farbfeldgrenzen.
+  - **Eine Toon-Antwort für alle Materialien.**
+  - **Gate-Vorschlag `kfb_toon_gate`** mit drei Debug-Masken (Schatten, Kontakt, Linien); diese Masken würde WS1 liefern.
+  - **Offene Fragen F1–F6;** darunter ein Widerspruch: R4-11 setzt L\* ≥ 15, LIGHT_MODEL_R2 L-6 erlaubt nachts L ≥ 8.
+- **Quellen-Lücken** stehen offen in den Dateien: Animaniacs, Rick and Morty, Genshin, Breath of the Wild und Tunic ohne Produktionsquelle.
+- **Hinweis:** Für R11 wurden zwei öffentliche PDFs (Hi-Fi-Rush-Folien, X-Toon-Paper) zum Lesen ins temporäre Scratchpad geladen. Georg ist informiert.
+
+**Kanon-Lücken (bitte aufnehmen):**
+- In `CANON_3D_R1` fehlen bisher **Vordergrund-Tonmasse** und **farbige Kantenakzente**. Beide stehen nur in `WS0_CARTOON_TERRAIN_PALETTE_SHADOW_DESIGN_R1` (Ebenen 3 und 4).
+- Ebenso fehlen die **Stil-Referenzen** (Road Runner/Noble, Hanna-Barbera, Material-Mix) und die **Schattenfamilie je Biom**: 4 Flächenfarben, shadow, deepShadow (nur bei Überlagerung oder Kontakt), edgeAccent; maximal 2 Schattenstufen. Georg hat das im Web-Chat festgelegt.
+- R10 und R11 liefern dafür Zahlen.
+
+**Frage zu #439 (wichtig):** In Georgs Web-Chat vom 19.10. heißt es „Höhenbänder“, „Farbbänder“ und „an den Bandenkanten erkennen“. Mit „Banden“ sind dort offenbar die **Farbbänder** gemeint (Diktat), nicht Fahrbahn-Banden. Dann wäre der gesuchte „Banden-/Rampen-POC“ kein Geometrie-POC, sondern die Farbflächen-Logik, die schon steht. Ich habe Georg gefragt, was das „nicht höhenstufenartige Rampending“ meint, und melde die Antwort.
+
+**Gelände-Probe:** Die Farbe ist jetzt auch dort organisch statt nach Höhe (Schalter „Farbflächen organisch“, Wand-Projektion), wie im Spiel `look=terrain2`. Dazu sind seit §102 neu:
+- Kontakt-Brocken (V-565);
+- Steine 40–50 % eingesunken (R2);
+- Vordergrund-Tonmasse (weltfest);
+- farbige Kanten an Graten.
+https://ws1-preview.kayfabizarro.pages.dev/gelaende-probe
+
 ## 102 · 20.10. · Recherche R2 + R4 fertig · Gelände-Probe: organische Übergänge, Erdung, echte Palettenschatten · V-565/V-566 gelesen
 
 **Recherche** (auf diesem Branch unter `research/canon/`, bitte nach `CANON_3D/sources/`):
