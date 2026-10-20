@@ -109,6 +109,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <div class="row"><label for="sharp">Terrassen-Kante</label><output id="o_sharp"></output><input type="range" id="sharp" min="0" max="1" step="0.01"></div>
         <div class="row"><label for="maxslope">Max. Hangneigung</label><output id="o_maxslope"></output><input type="range" id="maxslope" min="30" max="80" step="1" value="52"></div>
         <div class="row"><label for="water">Wasserstand</label><output id="o_water"></output><input type="range" id="water" min="0" max="0.5" step="0.01"></div>
+        <div class="row"><label for="fluid">Fluid</label><select id="fluid"><option value="0">Wasser</option><option value="1">Bubblegum Sea (blubbert)</option><option value="2">Giftsumpf (Säure)</option></select></div>
         <label class="check"><input type="checkbox" id="ether" checked> Berge rund (Etherington: weiche Grate, Schichten ungleich dick)</label>
         <label class="check"><input type="checkbox" id="rockc" checked> Felsgruppen an Steilhängen (3er-Gruppen, eingesunken)</label>
       </fieldset>
@@ -1680,6 +1681,7 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     gl_Position=projectionMatrix*viewMatrix*wp4;
   }`;
   const frag = `${GLSL_NOISE}
+  uniform vec3 uFlShal, uFlDeep, uFlGlow; uniform float uFlClar, uFlKind, uTimeR;
   uniform float uScale, uAmp, uWater, uSoft, uCliff, uStrata, uToon, uMix, uGrid, uFogNear, uFogFar, uMoodK, uGridWorld, uGS, uGShape, uGFill, uGCol, uClay, uGTex, uRing, uEther, uSteps;
   uniform vec4 uDio; uniform vec4 uDioB; uniform sampler2D uEdge; uniform vec2 uSeed; uniform vec3 uCam; uniform vec2 uOffset; uniform vec3 uTint, uHorizon; uniform vec2 uCarW;
   ${GLSL_SKY}
@@ -1873,14 +1875,23 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
       { float ign=fract(52.9829189*fract(dot(gl_FragCoord.xy, vec2(0.06711056,0.00583715))));   /* pro Bildpunkt gedreht: keine Stufen, kein Raster */
         float rot=ign*6.2831853; for(int i=0;i<16;i++){ float fi=float(i); float r=sqrt((fi+0.5)/16.0)*3.4/2048.0; float an=fi*2.3999632+rot; sv+=shBil(sc.xy+vec2(cos(an),sin(an))*r, sc.z-0.00015); } sv*=9.0/16.0; }   /* Vogel-Scheibe, 16 Proben: weicher, gleichmäßiger Auslauf */
       sv=clamp(sv/9.0,0.0,1.0); col=mix(mix(col*0.74, uContact, 0.26), col, sv);   /* heller, fügt sich ein */ } }   // echter Schatten, eingefärbt (kein Schwarz)
-    if(uWater>0.005 && uGridWorld<0.5){ float wl=uWater*uAmp+0.15; float dz=vH-wl; float fw=fwidth(vH)*1.2+1e-3; float foam=smoothstep(-fw,0.0,dz)*(1.0-smoothstep(0.32,0.32+fw,dz)); col=mix(col, mix(peak,vec3(1.0),0.55)*(0.85+0.2*l), foam*0.9); }   /* Ufer: helles Schaumband, klar gezeichnet */
+    if(uWater>0.005 && uGridWorld<0.5){ float wl=uWater*uAmp+0.15; float dz=vH-wl; float fw=fwidth(vH)*1.2+1e-3;
+      /* Fluid (WASSER_R1 Stufe 1): unter dem Spiegel gestufte Tiefenfarbe (Grund wird zur Tiefe), darüber ein nasses, dunkleres Uferband, das atmet –
+         es nimmt Licht und Schatten an wie Boden (kein heller Streifen auf eigener Ebene mehr) */
+      vec3 rdT=normalize(vW-vec3(uCarW.x,0.0,uCarW.y)-cameraPosition); float dep=max(-dz,0.0), Lp=dep/max(abs(rdT.y),0.15);
+      float kd=1.0-exp(-Lp/uFlClar); float ks=kd*3.0; float kw=fwidth(ks)+1e-3; kd=(floor(ks)+smoothstep(0.5-kw,0.5+kw,fract(ks)))/3.0;
+      float under=1.0-smoothstep(-fw,fw,dz); col=mix(col, mix(col*uFlShal*1.6, uFlDeep, kd), under);
+      float breath=0.08*sin(uTimeR*6.2832/4.5), wetH=(uFlKind>1.5 ? 0.6 : 0.38)+breath;
+      float wet=(1.0-smoothstep(wetH-fw, wetH+fw, dz))*(1.0-under);
+      vec3 wetC=uFlKind>1.5 ? mix(col, vec3(dot(col,vec3(0.33))), 0.6)*0.7 : uFlKind>0.5 ? mix(col*0.8, uFlShal, 0.25) : col*0.76;   /* Wasser: dunkler/nass · Kaugummi: rosa Schlieren · Säure: verätzt */
+      col=mix(col, wetC, wet); }
     col+=kfbLightPools(vW-vec3(uCarW.x,0.0,uCarW.y), N, c);   /* projizierte Lichtpfützen (kfb-light-pool.v1): folgen jeder Geländeform */
     if(uDbg>0.5 && uDbg<1.5) col=alb; if(uDbg>2.5) col=idc;   // Prüfansichten (gleiche Kamera): Grundfarbe · graue Form · Masken
     if(uSky2>0.5 && uGridWorld<0.5) gl_FragColor=vec4(applyAir(col, vW-vec3(uCarW.x,0.0,uCarW.y), l),1.0); else gl_FragColor=vec4(mix(col, sky, f),1.0);
     { float dn=fract(52.9829189*fract(dot(gl_FragCoord.xy+0.5, vec2(0.06711056,0.00583715)))); gl_FragColor.rgb+= (dn-0.5)/255.0; }   /* Dithering: bricht 8-Bit-Stufen in flachen Verläufen (Schatten, Dunst) */
   }`;
   U.uHole = { value: -1 }; U.uDrop = { value: 0 }; U.uNE = { value: 1.2 }; U.uCarW = { value: new THREE.Vector2() }; U.uGridWorld = { value: 0 }; U.uGS = { value: 8 }; U.uGShape = { value: 1 }; U.uGFill = { value: 0 }; U.uGCol = { value: 0 }; U.uClay = { value: 0 }; U.uGTex = { value: 0 }; U.uRing = { value: 1 };
-  U.uEdges = { value: 1 }; U.uAirOff = { value: new THREE.Vector2() }; U.uVox = { value: 0 }; U.uVoxTex = { value: 1 }; U.uAOMap = { value: null }; U.uAOOn = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 5 }; U.uFlowRock = { value: 0.85 }; U.uFlowTree = { value: 0 }; U.uTimeT = { value: 0 }; U.uFlow = { value: 1 }; U.uBands = { value: 4 }; U.uKus = { value: 0 }; Object.assign(U, { uZenith: { value: new THREE.Color() }, uSkyMid: { value: new THREE.Color() }, uSkyGround: { value: new THREE.Color() }, uSunDir: { value: new THREE.Vector3(-0.55, 0.75, 0.35).normalize() }, uSunCol: { value: new THREE.Color() }, uAntiTint: { value: new THREE.Color(0.92, 0.95, 1.0) }, uAirTint: { value: new THREE.Color() }, uHzGlow: { value: 0.06 }, uSunHalo: { value: 0.35 }, uSky2: { value: 1 }, uFogB: { value: 0.003 }, uFogHa: { value: 0.004 }, uFogHb: { value: 0.06 }, uEdgeR: { value: 292 }, uMoon: { value: 1 }, uMoonDir: { value: new THREE.Vector3() } }); U.uSGrad = { value: 0.6 }; U.uKul = { value: 0 }; U.uEdgeSun = { value: new THREE.Color() }; U.uEdgeAnti = { value: new THREE.Color() }; U.uKusA = { value: new THREE.Color() }; U.uKusB = { value: new THREE.Color() }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
+  U.uEdges = { value: 1 }; U.uAirOff = { value: new THREE.Vector2() }; U.uVox = { value: 0 }; U.uVoxTex = { value: 1 }; U.uAOMap = { value: null }; U.uAOOn = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 5 }; U.uFlowRock = { value: 0.85 }; U.uFlowTree = { value: 0 }; U.uTimeT = { value: 0 }; U.uFlow = { value: 1 }; U.uBands = { value: 4 }; U.uKus = { value: 0 }; Object.assign(U, { uZenith: { value: new THREE.Color() }, uSkyMid: { value: new THREE.Color() }, uSkyGround: { value: new THREE.Color() }, uSunDir: { value: new THREE.Vector3(-0.55, 0.75, 0.35).normalize() }, uSunCol: { value: new THREE.Color() }, uAntiTint: { value: new THREE.Color(0.92, 0.95, 1.0) }, uAirTint: { value: new THREE.Color() }, uHzGlow: { value: 0.06 }, uSunHalo: { value: 0.35 }, uSky2: { value: 1 }, uFogB: { value: 0.003 }, uFogHa: { value: 0.004 }, uFogHb: { value: 0.06 }, uEdgeR: { value: 292 }, uMoon: { value: 1 }, uMoonDir: { value: new THREE.Vector3() } }); U.uSGrad = { value: 0.6 }; U.uTimeR = { value: 0 }; U.uFlKind = { value: 0 }; U.uFlClar = { value: 0.6 }; U.uFlShal = { value: new THREE.Color() }; U.uFlDeep = { value: new THREE.Color() }; U.uFlGlow = { value: new THREE.Color() }; U.uWNE = { value: 4.7 }; U.uKul = { value: 0 }; U.uEdgeSun = { value: new THREE.Color() }; U.uEdgeAnti = { value: new THREE.Color() }; U.uKusA = { value: new THREE.Color() }; U.uKusB = { value: new THREE.Color() }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
   U.uDio = { value: new THREE.Vector4(0, 70, 11, 0) }; U.uDioB = { value: new THREE.Vector4(0, 1.4, 7.5, -Math.PI / 2) };
   U.uEdge = { value: new THREE.TextureLoader().load('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABLAAD/4QMpaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjAtYzA2MCA2MS4xMzQ3NzcsIDIwMTAvMDIvMTItMTc6MzI6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0REUzNjgzODFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0REUzNjgzOTFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRERTM2ODM2MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRERTM2ODM3MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAAwICAgICAwICAwUDAwMFBQQDAwQF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', (t) => { t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping; t.needsUpdate = true }) };
   const geo = new THREE.PlaneGeometry(SIZE, SIZE, SEG, SEG).rotateX(-Math.PI / 2);
@@ -1927,17 +1938,57 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     m.frustumCulled = false; m.visible = false; scene.add(m); return { m, u, step: R.size / SEG };
   });
 
+  // Fluid-Haut (WASSER_R1, Georg 21.10.: „wirkt nicht als Wasser … klar ein anderes Material, ein Fluid“): halbtransparent, Fresnel mit Spiegelung des
+  // eigenen Himmels (skyColor), Kräuselnormalen in echter Zeit (nicht an der Fahr-Uhr), gestochene Glanzlichter, Schaumringe am Ufer; Tiefe an der
+  // Oberfläche aus dem Höhenfeld (je Vertex, am Ufer je Pixel nachgeschärft) – kein Tiefen-Pass. Varianten Wasser / Bubblegum Sea / Giftsumpf.
   const waterMat = new THREE.ShaderMaterial({
-    uniforms: U, transparent: false, depthWrite: true,   // Cartoon-Wasser: deckend, klare Uferlinie (Georg: verwaschen wirkte wie ein Fehler)
-    vertexShader: `uniform float uWater, uAmp; varying vec3 vP; void main(){ vec3 p=position; p.y=uWater*uAmp+0.15; vec4 w=modelMatrix*vec4(p,1.0); vP=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
-    fragmentShader: `${GLSL_NOISE}\nuniform vec3 uA_water, uB_water, uA_sky, uB_sky, uCam, uTint, uHorizon; uniform float uFogNear, uFogFar, uMix, uScale, uMoodK, uTimeT; uniform vec2 uSeed, uOffset, uCarW; varying vec3 vP;
+    uniforms: U, transparent: true, depthWrite: false,
+    vertexShader: `${GLSL_NOISE}\n${GLSL_HEIGHT}
+      uniform float uWater, uWNE; uniform vec2 uCarW; varying vec3 vP; varying float vDep;
+      void main(){ float wl=uWater*uAmp+0.15; vec4 w=modelMatrix*vec4(position.x, wl, position.z, 1.0); gNE=uWNE; vec2 pa=w.xz+uCarW; vDep=wl-hgt(pa); vP=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
+    fragmentShader: `${GLSL_NOISE}\n${GLSL_HEIGHT}
+      uniform vec3 uHorizon, uFlShal, uFlDeep, uFlGlow; uniform float uWater, uFlKind, uFlClar, uTimeR, uMoodK; uniform vec2 uCarW; varying vec3 vP; varying float vDep;
 ${GLSL_SKY}
-      void main(){ vec2 wp=vP.xz+uCarW; float t=uMix>0.5 ? smoothstep(-0.25,0.25,snoise(wp/(uScale*9.0)+uSeed*0.21+40.0)) : 0.0;
-        vec3 w=mix(uA_water,uB_water,t)*uTint, sky=mix(mix(uA_sky,uB_sky,t),uHorizon,uMoodK); float rip=0.0;
-        { float ph=snoise(wp*0.025+vec2(uTimeT*0.01,0.0))*6.0+wp.x*0.05+wp.y*0.03; float ln=abs(fract(ph)-0.5); float lw=fwidth(ph)*1.2+1e-3; float streak=(1.0-smoothstep(0.03,0.03+lw,ln))*smoothstep(0.1,0.6,snoise(wp*0.012+3.0)); w=mix(w, mix(w,vec3(1.0),0.45), streak*0.8); }   /* gemalte Wellenstriche statt Unschärfe */
-        float d=distance(uCam.xz, vP.xz); float f=smoothstep(uFogNear,uFogFar,d); if(uSky2>0.5){ float fa=smoothstep(uEdgeR*0.85,uEdgeR,d); gl_FragColor=vec4(applyAir(w, vP, 1.0), 1.0); } else gl_FragColor=vec4(mix(w, sky, f), 1.0); }`,
+      float hh(vec2 c){ return fract(sin(dot(c, vec2(127.1, 311.7)))*43758.5453); }
+      void main(){
+        vec2 wp=vP.xz+uCarW; float wl=uWater*uAmp+0.15;
+        float dep=vDep; if(dep<1.6){ gNE=0.6; dep=wl-hgt(wp); }                                              /* am Ufer je Pixel: Schaumlinie sitzt genau */
+        float dw=fwidth(dep)+1e-3; if(dep<-dw) discard;
+        float gum=step(0.5,uFlKind)*step(uFlKind,1.5), acid=step(1.5,uFlKind);
+        vec3 rd=normalize(vP-cameraPosition);
+        float drift=mix(1.0, mix(0.3,0.6,acid), max(gum,acid)), str=mix(0.15, mix(0.04,0.08,acid), max(gum,acid))*smoothstep(0.0,0.8,dep)*(1.0-smoothstep(60.0,260.0,length(vP-cameraPosition)));   /* fern ruhig: kein Flimmern */
+        vec2 r1=wp/18.0+vec2(uTimeR*0.035,uTimeR*0.02)*drift, r2=wp/7.0-vec2(uTimeR*0.05,-uTimeR*0.03)*drift;
+        vec3 n=normalize(vec3(snoise(r1)*0.6+snoise(r2)*0.4, 1.0/max(str,1e-3)*0.15, snoise(r1+7.3)*0.6+snoise(r2-3.1)*0.4));
+        float F0=mix(0.08, mix(0.04,0.05,acid), max(gum,acid)), F=F0+(1.0-F0)*pow(1.0-max(dot(-rd,n),0.0),4.0);
+        vec3 rf=reflect(rd,n); vec3 sky=skyColor(vec3(rf.x,abs(rf.y),rf.z))*mix(0.7, mix(0.35,0.4,acid), max(gum,acid));
+        float k=1.0-exp(-max(dep,0.0)/max(abs(rd.y),0.15)/uFlClar);
+        vec3 body=mix(uFlShal, uFlDeep, k);
+        float Fs=F*3.0, Fw=fwidth(Fs)+0.02, Fq=(floor(Fs)+smoothstep(0.5-Fw,0.5+Fw,fract(Fs)))/3.0;              /* Spiegelung in harten Stufen (Cartoon) */
+        vec3 col=mix(body, sky, Fq*0.85);
+        float sp=pow(max(dot(rf,uSunDir),0.0), mix(220.0, mix(450.0,120.0,acid), max(gum,acid))); col+=step(0.55,sp)*mix(vec3(1.0),uSunCol,0.3)*(1.0-acid*0.7);   /* gestochenes Glanzlicht */
+        /* Ufer: Schaumlinie + 2–3 Ringe, die zum Land wandern (Wasser) · Wulst mit Glanzlinie (Kaugummi) · flackernde Zisch-Linie (Säure) */
+        float msk=smoothstep(-0.2,0.35,snoise(wp*0.35+uTimeR*0.05));
+        float line=1.0-smoothstep(0.05-dw,0.05+dw,dep);
+        float ring=step(0.72, sin(6.2832*(dep/0.22-uTimeR/3.5)))*(1.0-smoothstep(0.0,0.6,dep))*msk;
+        vec3 foamC=acid>0.5 ? vec3(0.9,1.0,0.48)*(0.8+0.3*sin(uTimeR*23.0+wp.x*3.0)) : gum>0.5 ? mix(uFlShal,vec3(1.0),0.6) : vec3(1.0);
+        col=mix(col, foamC, max(line, ring*(1.0-gum))*0.92);
+        if(gum>0.5){ float bulge=1.0-smoothstep(0.0,0.35,dep); col=mix(col, uFlShal*1.15, bulge*0.6); col=mix(col, vec3(1.0), (1.0-smoothstep(0.12-dw,0.12+dw,abs(dep-0.22)))*0.7); }
+        /* Blasen (Kaugummi groß und langsam, Säure klein und schnell): je Zelle eine Blase mit Phase; wachsen als Kuppel, zittern, platzen als Ring */
+        float bubA=0.0;
+        if(uFlKind>0.5 && dep>0.25){ float cs=mix(4.0,1.5,acid), life=mix(4.0,1.2,acid); vec2 cell=floor(wp/cs); float hsh=hh(cell);
+          vec2 ctr=(cell+0.25+0.5*vec2(hsh, hh(cell+3.1)))*cs; float ph=fract(uTimeR/life+hsh*7.0), rmax=mix(mix(0.6,1.4,hh(cell+9.2)), mix(0.15,0.35,hsh), acid);
+          float rr=rmax*smoothstep(0.0,0.7,ph)*(1.0+0.05*sin(uTimeR*31.0+hsh*20.0)*step(0.6,ph)), dd=length(wp-ctr);
+          bool act=hh(cell+17.7)<mix(0.35,0.55,acid);   /* nur ein Teil der Zellen blubbert (sonst Punktemuster) */
+          if(act && ph<0.86){ float in_=1.0-smoothstep(rr-0.03,rr+0.03,dd); vec3 bc=mix(uFlShal*1.25, vec3(1.0), smoothstep(0.55,0.15,length((wp-ctr)/max(rr,1e-3)-vec2(-0.3,0.3)))*0.85);
+            col=mix(col, bc, in_); col=mix(col, uFlDeep*0.9, in_*(1.0-smoothstep(0.0,0.08,rr-dd))*0.6); bubA=in_; }
+          else if(act){ float pr=rmax*(1.0+(ph-0.86)*6.0); float rg=1.0-smoothstep(0.02,0.06,abs(dd-pr)); col=mix(col, mix(uFlShal,vec3(1.0),0.5), rg*(1.0-(ph-0.86)/0.14)); } }
+        col+=uFlGlow*mix(0.0, 0.35+0.45*bubA, acid);                                                            /* Säure leuchtet, Blasen stärker */
+        float alpha=clamp(mix(mix(0.35,0.92,gum+acid*0.7), 1.0, max(F,k*mix(0.5,0.9,max(gum,acid)))), 0.0, 1.0); alpha=max(alpha, max(line,bubA));
+        alpha*=smoothstep(-dw,dw,dep);
+        if(uSky2>0.5) col=applyAir(col, vP, 1.0);
+        gl_FragColor=vec4(col, alpha); }`,
   });
-  const water = new THREE.Mesh(new THREE.PlaneGeometry(SIZE, SIZE, 1, 1).rotateX(-Math.PI / 2), waterMat); // mit Ringgitter auf 16-fache Größe skaliert water.frustumCulled = false; scene.add(water);
+  const water = new THREE.Mesh(new THREE.PlaneGeometry(SIZE, SIZE, 128, 128).rotateX(-Math.PI / 2), waterMat); water.frustumCulled = false; water.renderOrder = 3; scene.add(water);   /* mit Ringgitter auf 16-fache Größe skaliert (vorher stand scene.add hinter einem Zeilenkommentar: die Fläche wurde nie gezeichnet) */
 
   // Licht nur für die Fahrzeuge (das Gelände rechnet sein Licht selbst, gleiche Sonnenrichtung)
   renderer.outputEncoding = THREE.sRGBEncoding;
@@ -2217,7 +2268,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   function readUI() {
     for (const k of NUM) S[k] = parseFloat($(k).value);
     for (const k of BOOL) S[k] = $(k).checked;
-    S.palA = $('palA').value; S.palB = $('palB').value; S.tod = $('tod').value; S.tempo = $('tempo').value; S.gshape = +$('gshape').value; S.gfill = +$('gfill').value; S.gcol = +$('gcol').value; S.gtex = +$('gtex').value; S.fstage = +$('fstage').value; S.kus = +$('kus').value; S.moon = +$('moon').value; S.aurora = +$('aurora').value; S.cform = +$('cform').value; S.flow = +$('flow').value; S.flowtree = +$('flowtree').value; S.discoMode = +$('discoMode').value; S.bands = +$('bands').value; S.voxs = +$('voxs').value; S.voxh = +$('voxh').value < 0 ? S.voxs : +$('voxh').value; S.voxhSel = +$('voxh').value; S.dbg = +$('dbg').value;
+    S.palA = $('palA').value; S.palB = $('palB').value; S.tod = $('tod').value; S.tempo = $('tempo').value; S.gshape = +$('gshape').value; S.gfill = +$('gfill').value; S.gcol = +$('gcol').value; S.gtex = +$('gtex').value; S.fstage = +$('fstage').value; S.kus = +$('kus').value; S.moon = +$('moon').value; S.aurora = +$('aurora').value; S.cform = +$('cform').value; S.fluid = +$('fluid').value; S.flow = +$('flow').value; S.flowtree = +$('flowtree').value; S.discoMode = +$('discoMode').value; S.bands = +$('bands').value; S.voxs = +$('voxs').value; S.voxh = +$('voxh').value < 0 ? S.voxs : +$('voxh').value; S.voxhSel = +$('voxh').value; S.dbg = +$('dbg').value;
     const sd = S.seed; S.sx = fract(Math.sin(sd * 12.9898) * 43758.5453) * 200 - 100; S.sy = fract(Math.sin(sd * 78.233) * 12345.6789) * 200 - 100;
   }
   function pushUniforms() {
@@ -2237,7 +2288,10 @@ uniform vec3 uHorizon; ${GLSL_SKY}
           K.u.uKAirAnti.value.copy(anti[K.ix]); K.u.uKAirSun.value.copy(sun[K.ix]); K.u.uKAirBack.value.copy(K.ix < 2 ? anti[K.ix + 1] : hz); K.m.visible = !!S.kul })
         const k1 = new THREE.Color(A.cliff).lerp(new THREE.Color(A.mid), 0.3).multiplyScalar(0.92); U.uEdgeAnti.value.copy(k1).lerp(anti[0], 0.45); U.uEdgeSun.value.copy(k1).lerp(sun[0], 0.45); U.uKul.value = S.kul ? 1 : 0   // Brückenton = mittlerer Flächenton von K1 nach der Luft (U3)
         if (S.kul) U.uSkyGround.value.copy(U.uEdgeAnti.value) /* U4: unter dem Horizont nie heller als K1 */ } } SKY.uLit.value.set(M.lit); SKY.uShade.value.set(M.shade); SKY.uStars.value = M.stars; SKY.uCover.value = S.cover; SKY.uPainted.value = S.painted ? 1 : 0;
-    U.uGridWorld.value = S.gridworld ? 1 : 0; U.uGS.value = S.gs; U.uGShape.value = S.gshape; U.uGFill.value = S.gfill; U.uGCol.value = S.gcol; U.uClay.value = S.clay ? 1 : 0; U.uGTex.value = S.gtex; U.uRing.value = S.ring ? 1 : 0; U.uShadowOn.value = S.shadows ? 1 : 0; U.uEdges.value = S.edges ? 1 : 0; U.uFg.value = S.fgmass ? 1 : 0; U.uOrg.value = S.org ? 1 : 0; U.uTanMax.value = S.maxslope >= 80 ? 1e6 : Math.tan(S.maxslope * Math.PI / 180); U.uFlow.value = S.flow; U.uFlowTree.value = S.flowtree; U.uBands.value = S.bands; U.uVoxTex.value = S.voxtex ? 1 : 0; if (typeof VOX !== 'undefined') { VOX.dirty = true }  U.uAOOn.value = S.ground ? 1 : 0; U.uFS.value = S.fstage; U.uKus.value = S.kus; { const A = PALETTES[S.palA], K = [null, ['#f5c400', '#151313'], ['#d8262e', '#fbf3e8'], [A.mid, A.cliff]][S.kus]; if (K) { U.uKusA.value.set(K[0]); U.uKusB.value.set(K[1]) } if (window.__rockc) window.__rockc.kus = S.kus } U.uDbg.value = S.dbg; U.uEther.value = S.ether ? 1 : 0; if (window.__rockc) window.__rockc.dirty = true; renderer.shadowMap.enabled = !!S.shadows; sun.castShadow = !!S.shadows; U.uContact.value.set(PALETTES[S.palA].cliff).multiplyScalar(0.55); if (window.__GU) window.__GU.uGOn.value = S.ground ? 1 : 0; window.__syncDio?.(); for (const R of RINGS) R.m.visible = S.rings; water.scale.set(S.rings ? 16 : 1, 1, S.rings ? 16 : 1);
+    U.uGridWorld.value = S.gridworld ? 1 : 0; U.uGS.value = S.gs; U.uGShape.value = S.gshape; U.uGFill.value = S.gfill; U.uGCol.value = S.gcol; U.uClay.value = S.clay ? 1 : 0; U.uGTex.value = S.gtex; U.uRing.value = S.ring ? 1 : 0; U.uShadowOn.value = S.shadows ? 1 : 0; U.uEdges.value = S.edges ? 1 : 0; U.uFg.value = S.fgmass ? 1 : 0; U.uOrg.value = S.org ? 1 : 0; U.uTanMax.value = S.maxslope >= 80 ? 1e6 : Math.tan(S.maxslope * Math.PI / 180); U.uFlow.value = S.flow; U.uFlowTree.value = S.flowtree; U.uBands.value = S.bands; U.uVoxTex.value = S.voxtex ? 1 : 0; if (typeof VOX !== 'undefined') { VOX.dirty = true }  U.uAOOn.value = S.ground ? 1 : 0; U.uFS.value = S.fstage; U.uKus.value = S.kus; { const wl = S.water * S.amp + 0.15, k = S.fluid || 0, wc = new THREE.Color(A.water); U.uFlKind.value = k   /* Fluid-Parametersätze (WASSER_R1 §4) */
+      if (k === 1) { U.uFlShal.value.set('#ffb3dc'); U.uFlDeep.value.set('#d9468f'); U.uFlClar.value = Math.max(0.15, 0.05 * wl); U.uFlGlow.value.set('#ffd1ea') }
+      else if (k === 2) { U.uFlShal.value.set('#b6ff4a'); U.uFlDeep.value.set('#24401a'); U.uFlClar.value = Math.max(0.25, 0.12 * wl); U.uFlGlow.value.set('#9dff3a') }
+      else { U.uFlShal.value.copy(wc).multiplyScalar(1.3); U.uFlDeep.value.copy(wc).multiplyScalar(0.72); U.uFlClar.value = Math.min(3, Math.max(0.6, 0.35 * wl)); U.uFlGlow.value.set('#000000') } } { const A = PALETTES[S.palA], K = [null, ['#f5c400', '#151313'], ['#d8262e', '#fbf3e8'], [A.mid, A.cliff]][S.kus]; if (K) { U.uKusA.value.set(K[0]); U.uKusB.value.set(K[1]) } if (window.__rockc) window.__rockc.kus = S.kus } U.uDbg.value = S.dbg; U.uEther.value = S.ether ? 1 : 0; if (window.__rockc) window.__rockc.dirty = true; renderer.shadowMap.enabled = !!S.shadows; sun.castShadow = !!S.shadows; U.uContact.value.set(PALETTES[S.palA].cliff).multiplyScalar(0.55); if (window.__GU) window.__GU.uGOn.value = S.ground ? 1 : 0; window.__syncDio?.(); for (const R of RINGS) R.m.visible = S.rings; water.scale.set(S.rings ? 16 : 1, 1, S.rings ? 16 : 1);
     trailMat.uniforms.uCol.value.set(M.lit); puffs.visible = false; for (const L of CLOUDL) L.visible = S.puffs;
     hemi.color.set(M.k ? M.hemi[0] : A.sky); hemi.intensity = M.hemi[1]; sun.color.set(M.sun[0]); sun.intensity = M.sun[1];
     const hz = new THREE.Color(M.k ? M.horizon : A.sky); scene.fog.color.copy(hz); stage.style.background = '#' + hz.getHexString(); renderer.setClearColor(hz);
@@ -2700,7 +2754,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       carRoot.position.y += bob; HOV.q.setFromEuler(HOV.e.set(0.022 * HOV.k * Math.sin(t * w * 0.71 + 0.7), 0, 0.028 * HOV.k * Math.sin(t * w * 0.53 + 2.1))); tilt.quaternion.multiply(HOV.q) }
     updateSpeedlines(dt, t); CARDS.update(dt, t);
     if (mode === 'over') {
-      U.uFogNear.value = 1500; U.uFogFar.value = 4500; // Übersicht: Ringe immer an, Nebel ist an der Ringkante (4,8 km) voll → keine sichtbare Geländekante if (camera.fov !== 55) { camera.fov = 55; camera.updateProjectionMatrix() }
+      U.uFogNear.value = 1500; U.uFogFar.value = 4500; /* Übersicht: Ringe immer an, Nebel ist an der Ringkante (4,8 km) voll → keine sichtbare Geländekante */ if (camera.fov !== 55) { camera.fov = 55; camera.updateProjectionMatrix() }
       const ty = P.y; camera.position.set(Math.sin(yaw) * Math.cos(pitch) * dist, ty + Math.sin(pitch) * dist, Math.cos(yaw) * Math.cos(pitch) * dist);
       camera.lookAt(0, ty, 0);
     } else {
@@ -2716,13 +2770,13 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (window.__camOverride) window.__camOverride(camera, P);   // Prüfhilfe: freie Kamera
     // Himmel folgt der Kamera; Nebel für die Knet-Wolken wie beim Gelände
     updateVox(); U.uAirOff.value.set(P.x, P.z);
-    { const rOn = !S.vox && (mode === 'over' || S.rings); for (const R of RINGS) R.m.visible = rOn; water.scale.set(rOn ? 16 : 1, 1, rOn ? 16 : 1)
+    { const rOn = !S.vox && (mode === 'over' || S.rings); for (const R of RINGS) R.m.visible = rOn; water.scale.set(rOn ? 16 : 1, 1, rOn ? 16 : 1); U.uWNE.value = (SIZE / 128) * (rOn ? 16 : 1)
       const edge = S.vox ? VOX.N * S.voxs * 0.46 : rOn ? 4700 : 292; U.uEdgeR.value = edge; U.uFogB.value = Math.LN2 / (0.6 * edge); U.uFogHb.value = 1 / Math.max(4, 0.25 * S.amp); U.uFogHa.value = rOn ? 0.0006 : 0.004
       { const cx = camera.position.x + P.x, cz = camera.position.z + P.z, sc = rOn ? 17 : 1, lift = Math.max(0, camera.position.y - S.amp) * 0.85   // Ferne R1 U5
         for (const K of KUL) { const C = K.c || (K.c = { x: cx, z: cz }), R = K.R * sc; C.x += (cx - C.x) * (1 - Math.exp(-dt * 0.15)); C.z += (cz - C.z) * (1 - Math.exp(-dt * 0.15))
           const dx = cx - C.x, dz = cz - C.z, dl = Math.hypot(dx, dz), mx = 0.3 * R; if (dl > mx) { C.x = cx - dx * mx / dl; C.z = cz - dz * mx / dl }   // verzögert mitführen = Parallaxe, nie erreichbar
           K.m.position.set(C.x - P.x, lift, C.z - P.z); K.m.scale.setScalar(sc) } } }
-    dome.position.copy(camera.position); SKY.uTime.value = t; FLOWT += dt * (1 + (S.flowspeed ? Math.min(6, Math.hypot(P.vf, P.vl, P.fly ? P.vy : 0) / 8) : 0)); U.uTimeT.value = FLOWT;   // Fließuhr: im Stand sanft, mit Tempo schneller SKY.uCamXZ.value.set(P.x, P.z);
+    dome.position.copy(camera.position); SKY.uTime.value = t; FLOWT += dt * (1 + (S.flowspeed ? Math.min(6, Math.hypot(P.vf, P.vl, P.fly ? P.vy : 0) / 8) : 0)); U.uTimeT.value = FLOWT; U.uTimeR.value = t;   // Fließuhr: im Stand sanft, mit Tempo schneller SKY.uCamXZ.value.set(P.x, P.z);
     scene.fog.near = U.uFogNear.value * 2.2; scene.fog.far = U.uFogFar.value * 3.4; // Knet-Wolken bleiben weiter sichtbar als das Gelände
     { const cb = S.amp + 70, k = +S.cstretch || 2.4; let dh = P.yaw - CLOUDH.th; dh = Math.atan2(Math.sin(dh), Math.cos(dh)); CLOUDH.th += dh * (1 - Math.exp(-dt / 7))   // Richtung folgt der Flugrichtung langsam (≈7 s)
       const ax = Math.sin(CLOUDH.th), az = Math.cos(CLOUDH.th), cx = camera.position.x + P.x, cz = camera.position.z + P.z
