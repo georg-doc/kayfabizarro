@@ -3,6 +3,61 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 98 · 20.10. · Gelände-Probe: Cartoon-Gelände, endlose Welt, Hochgeschwindigkeit (Recherche + Prototyp, auf Georgs Wunsch)
+
+Außerhalb des Spiel-Repos, als interaktive Seite: **https://claude.ai/artifact/5XEWSgg2FGerJqpKEriBhM** (Version 7). Die Seite ist privat; Georg teilt sie über das Share-Menü. Auf Georgs Mac läuft sie mit **60 fps**. Nichts davon ist im Spiel oder auf `combo/r2`, es ist Entscheidungsgrundlage für WS1b.
+
+**Was die Probe kann:**
+- **Gelände als reine Funktion aus Position und Startwert:** 2D-Simplex-fbm, Grate, Verwirbelung, Wechsel ruhig/bergig, flache Täler, Tafelberge, Terrassen mit Kantenschärfe, Wasserstand.
+  - Farbe in Bändern nach Höhe und Steigung aus Biom-Paletten (Platzhalter: Moos, Mesa, Wüste, Schnee, Pastell), Felsen ab Steigung, Gesteinsstreifen, Licht in Stufen, Biom-Wechsel entlang der Strecke.
+  - 6 Vorlagen.
+  - **Rezept als JSON kopierbar** (Entwurf `kfb.terrain-recipe/1`).
+- **Endlos in jede Richtung:** Die Welt wandert mit dem Fahrzeug, abgetastet nur in ganzen Gitterschritten. Das behebt das Flimmern scharfer Kanten beim Fahren. Dazu ein verschobener Nullpunkt.
+- **Die 6 Racer aus `kfb-vehicle-rig.r1`** mit echten Maßen und Düsen-Ankern (Georg hat das Hochladen der Meshy-Modelle in die private Seite freigegeben):
+  - Spielzeug-Physik: Schweben mit Feder, Hangabtrieb, Sprünge über Kuppen, Wand-Abprallen;
+  - Flug nach Elan-Prinzip (2× Leertaste / F);
+  - Düsenflammen in Fahrzeugfarbe, Stauchen und Strecken, Verfolgerkamera mit FOV-Kick.
+  - **Die Physik fragt nur die Höhenformel ab, kein Kollisionsnetz.**
+- **Himmel:**
+  - Tageszeiten Tag/Gold/Nacht (angelehnt an die MOODS des Licht-Moduls);
+  - gemalte Cartoon-Wolken auf der Kuppel (hart abgeschnittenes Rauschen, Licht- und Schattenton, fast kostenlos);
+  - Knet-Wolken als 3D-Körper in Flughöhe (Instanced, Stufenlicht);
+  - Kondensstreifen im Flug.
+- **Ringgitter** (vereinfachte Geometry Clipmaps): zwei gröbere Ringe (2,4 km / 9,6 km) um das feine Gitter, Sicht ~5 km bei gleichbleibenden Kosten.
+- **Test-Tempo** bis Warp (1000/1200 km/h), nur in der Probe.
+- **Gitter-Welt:**
+  - Neon-Linien plus Höhenlinien; Gitterweite 3–32 m;
+  - Linienform geschwungen, Kreise oder eckig;
+  - Füllung: Linien, Schachbrett (2 Töne oder bunt aus Biom) oder beides.
+- **Knet-Optik:** prozedural aus der Weltlage (Dellen, Daumen-Rillen, fleckige Töne), ohne Textur und ohne Wiederholung.
+
+**Empfehlung zur Architektur für Hochgeschwindigkeit (Recherche):**
+
+| Ebene | Lösung | Begründung |
+|---|---|---|
+| Offene Welt | Mitwanderndes Ringgitter auf flacher Welt (Clipmaps/CDLOD), Höhe auf der GPU aus dem Rezept, Physik analytisch aus derselben Formel | konstante Kosten bei jedem Tempo, kein Kachel-Erzeugen auf der CPU, keine Collider-Streaming-Ruckler |
+| Rennen | Strecke als Spline-Band; das Gelände wird per Abstand zur Spline in der Formel flachgezogen | ein System für freie Welt und Rennen |
+| Hyper-Rush / Warp | Gitter-Welt als eigener Skin (z. B. „Kosmos“) | billigste Optik, stärkstes Tempogefühl |
+| Weltreise | Kugel (Travel Globe) nur in Flughöhe | am Boden bei hohem Tempo zu kurze Sicht: 3 m Augenhöhe auf R = 2 km → ~110 m; 400 m Voraussicht bräuchte R ≈ 27 km |
+| Vorzeige-Strecken / Dioramen | fest gebaute Module | — |
+
+**Geprüfte Repos:**
+- **ProceduralTerrains** (MIT, three.js): bestes Vorbild für das Rezept-Format.
+- **THREE.Terrain** (MIT): Streuen, Wind-Gras, Höhe/Steigung → Material.
+- **terrain-diffusion** (MIT): nur offline möglich, auf Realismus ausgelegt.
+- **cartoon-terrain-studio: Verdacht auf Malware-Falle.** README beschreibt ein Windows-Werkzeug mit externem Download, der Code ist etwas völlig anderes, 0 Sterne. **Nichts davon laden.**
+- **three-volumetric-clouds** (Nubis): keine Lizenz, archiviert, teuer und realistisch → nicht nutzen.
+- **TinySkies:** **keine Lizenz** (GitHub: license null) → nur als Ideen-Vorbild. Code nur mit Erlaubnis des Autors; Georg müsste fragen. Eigene Quellen zuerst: Travel Globe, Travel Combat (SKY3 ist schon im Spiel), `kfb-flight-vfx.js`.
+
+**Vorschlag für WS1b, nach V-514, wartet auf Georgs Ja:**
+1. `terrain=rezept` als Schalter in M1/M2: Rezept-Höhe in `m1-terrain` auf großer fester Fläche, flacher Platz ums Amphitheater bleibt. Etwa 1–2 Tage.
+2. Endlos-Welt als Ringgitter + analytische Physik + Floating Origin, Anker für Zonen/Dioramen/Gasthaus (persistiert), Teleport-Liste, Welt pro Reise neu gewürfelt (nicht persistiert). Etwa 3–5 Tage.
+3. Himmel: gemalte Kuppel-Wolken in SKY3, Knet-Wolken in Flughöhe, Tageszeit aus den MOODS.
+
+**Offene Fragen an WS0:**
+- Soll `kfb.terrain-recipe/1` ins Register (Vorlagen-Zeile)?
+- Wer pflegt die echten Biom-Paletten, damit die Platzhalter durch Story-Mode-Farben ersetzt werden?
+
 ## 97 · 19.10. · Zehn Hebel mit großer Wirkung bei kleinem Aufwand (Recherche Cartoon-3D, auf Georgs Wunsch)
 
 Ausführlich mit Anschluss im Code, Risiko und Quellen auf der Seite https://claude.ai/artifact/BPnJsFihuh5JMVbSy213fe. Sie ist privat; Georg teilt sie über das Share-Menü. Kurzfassung, sortiert nach Wirkung zu Aufwand:
