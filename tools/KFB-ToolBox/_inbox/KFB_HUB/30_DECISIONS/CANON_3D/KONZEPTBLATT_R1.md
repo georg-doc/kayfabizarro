@@ -17,9 +17,9 @@
 | `story` | 2–3 Sätze: Wer lebt bzw. spielt hier, was ist passiert, was soll man fühlen? | §1 Gebiet 1 |
 | `image_idea` | Die eine Bildidee in einem Satz, z. B. „Die Disco-Kugel schwebt über der Tanzfläche, alle Blicke gehen hoch“ | §1 Gebiet 12 |
 | `focal` | Fokus-Objekt (id) + Leserichtung: Wo landet der Blick zuerst, wo danach? | Gebiet 12, H5 |
-| `space` | Raumkonzept: Vorder-, Mittel- und Hintergrund, Negativraum (wo bleibt es frei, warum), Hell-Dunkel-Massen | Gebiete 2 und 12 |
+| `space` | Raumkonzept: Vorder-, Mittel- und Hintergrund, Negativraum (wo bleibt es frei, warum), Hell-Dunkel-Massen, **70/30**: wo sind die ruhigen 70 %, wo die 30 % Detail | Gebiete 2 und 12 |
 | `palette_roles` | Boden, Stein, Rinde, Laub, Gras, Blüte, Akzent, Requisit, Figur → Ton aus `kfb-cartoon-palette` bzw. Insel-Palette; 60/30/10; Akzent führt zum Fokus | Gebiet 6 |
-| `material_codes` | höchstens 3 Codes für den Ort, z. B. Kalkstein, Moos, Lianenholz | Gebiet 3 |
+| `material_codes` | höchstens 3 Codes für den Ort, z. B. Kalkstein, Moos, Lianenholz. Jeder Code nennt Form, Verteilung und Bewegung, z. B. „lila Gras-Büschel in Dreiergruppen, wiegen in Wind-Gruppen“ | Gebiet 3 |
 | `biography` | je Schicht ein Satz: Entstehen, Nutzen, Vergehen, Bewachsen; dazu die Signatur (1 Hero, 2 Echos) | Gebiet 3 |
 | `groups` | 2–4 Gruppen mit Anker, Stützen und Akzent, je mit Ortsgrund (Weg, Hang, Kante, Wasser, Landmarke) | Gebiet 2 |
 | `story_beat` | Was passiert zeitlich (Scenelet: Beats; Diorama: der eingefrorene Moment)? | Gebiete 1 und 13 |

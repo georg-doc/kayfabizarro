@@ -1,7 +1,7 @@
 # Gate-Selbsttest: eine regelkonforme Szene aus nest() muss PASS sein, die Fehlerklassen vom 19.10. müssen FAIL sein.
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'lib'))
-from kfb_env import gate, nest_ok, rule_report
+from kfb_env import gate, nest_ok, rule_report, contact
 
 CONCEPT = {'story': 'Alte Hofstelle am Hang', 'image_idea': 'Scheune als Anker, Fluff wächst aus den Fugen', 'focal': 'barn',
            'palette_roles': {'ground': '#b89a6a', 'stone': '#c09b72'}, 'material_codes': ['Kalkstein', 'Moos', 'Holz'], 'story_beat': 'Ernte',
@@ -21,6 +21,8 @@ def good():
                  'h': 0.2, 'bottom_z': -0.2, 'ground_z': 0.0, 'asset': 'moss', 'kit': 'kfb', 'material': 'kfb-clay.v1.1/env'})
     objs.append({'id': 'moss2', 'kind': 'grass', 'role': 'grass', 'layer': 1, 'story': 'Moos', 'group': 'g0', 'c': [-1.5, 5.8], 'r': 0.25,
                  'h': 0.15, 'bottom_z': -0.15, 'ground_z': 0.0, 'asset': 'moss_b', 'kit': 'kfb', 'material': 'kfb-clay.v1.1/env'})
+    for o in [x for x in objs if x['kind'] in ('building', 'rock', 'prop')]:
+        objs += [dict(c, bottom_z=-0.3 * c['h'], ground_z=0.0) for c in contact(o, 3, seed=len(objs))]
     return {'id': 'good', 'kind': 'diorama', 'concept': CONCEPT, 'landmark': 'barn', 'ground': {'kind': 'terrain', 'samples_z': [0, 0.6, 1.3, -0.4]},
             'area': {'min': [-12, -12], 'max': [12, 12]}, 'objects': objs}
 

@@ -24,6 +24,8 @@ Jeder Chat bekommt diesen Brief + den Kanon als Startlektüre.
   - Die Szene nimmt die Rollen-Töne der Biom-Palette des Terrains an; Meshy- und Kit-Farben werden auf Rollen umgetönt.
   - Ein Knet-Material, eingebackenes Licht bzw. AO wird entfernt, nur das eine Rig.
   - Ränder laufen über Steinbänder (Grammatik §4) und Sprenkel in beide Richtungen aus.
+  - **Kontakt-Geometrie (V-565):** Jede Fuge zwischen Objekt und Boden wird durch kleine Knet-Elemente gebrochen (`kfb_env.contact`).
+  - **70/30:** Das Terrain bleibt großflächig ruhig.
 - **Probe:** eine bestehende Szene (Vorschlag Ork-Band, PASS-Bestand) vorher/nachher im echten Terrain aus Spielkamera und den 4 Kritiker-Kameras.
 - **Messung** mit W1-Export + `kfb_env` (B1, E1/E2, M1–M3).
 - **Recherche-Frage dazu in R1:** Wie verschmelzen stilisierte Spiele handgebaute Sets mit prozeduralem Gelände (Tiny Glade, Townscaper, Animal Crossing, Ghibli-Layouts)?
@@ -54,7 +56,7 @@ Jeder Chat bekommt diesen Brief + den Kanon als Startlektüre.
   - der Rest geht als Liste an den Kritiker.
 
 **Entscheidungen, die du umsetzt (V-564):**
-- **Boden:** Farbflächen nach Georgs Terrain-Design vom 19.10. aus der Stimmung (V-441). Satte Grüntöne als Boden sind gesperrt. Der größte edgePalette-Anteil gilt nur noch für Schürze und Steine am Bühnenrand.
+- **Boden:** Farbflächen nach Georgs Terrain-Design vom 19.10. aus der Stimmung (V-441). Keine Farbsperre (V-565): jede Farbe ist erlaubt, auch lila Gras, wenn der Materialcode die Logik trägt (Büschel in Gruppen, Wind-Gruppen und Deformer nach Environment-Kit §5–§8). Einzige Grenze ist Chroma ≤ 0,195 gegen ACES-Ausbrennen. Der größte edgePalette-Anteil gilt nur noch für Schürze und Steine am Bühnenrand.
 - **Schatten:** echte Shadow-Map-Schatten aus dem einen Rig, getönt nach der Palette des Empfängers (castShadowTint), Kontakt mit max statt Summe. Keine Blob- oder Scheiben-Schatten. Das steht nicht im Widerspruch zu LIGHT_MODEL_R2: eine Sonne, ein Schatten, nur eingefärbt.
 
 **Regeln:**

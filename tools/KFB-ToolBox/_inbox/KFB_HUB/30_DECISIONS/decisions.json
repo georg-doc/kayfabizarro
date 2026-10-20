@@ -7963,7 +7963,7 @@
    "date": "2026-10-20",
    "area": "Look",
    "verdict": "RULE",
-   "text": "Bodenfarbe und Schatten (Widersprüche V-396 ↔ V-441 ↔ Bodenfarb-Vorschlag sowie Paletten-Schatten ↔ LIGHT_MODEL_R2), von WS0 als Art Direction entschieden nach Georgs Terrain-Design 19.10. (#439): Boden = organische Farbflächen aus der Stimmung (V-441), unabhängig von der Höhe; satte Grüntöne als Boden gesperrt; größter edgePalette-Anteil gilt nur noch für Schürze und Steine am Bühnenrand (V-396 eingeschränkt). Schatten = echte Shadow-Map-Schatten aus dem einen Rig, getönt nach der Palette des Empfängers (castShadowTint), Kontakt max statt Summe; keine Blob-/Scheiben-Schatten; eine Sonne bleibt (LIGHT_MODEL_R2).",
+   "text": "[Grün-Sperre abgelöst durch V-565] Bodenfarbe und Schatten (Widersprüche V-396 ↔ V-441 ↔ Bodenfarb-Vorschlag sowie Paletten-Schatten ↔ LIGHT_MODEL_R2), von WS0 als Art Direction entschieden nach Georgs Terrain-Design 19.10. (#439): Boden = organische Farbflächen aus der Stimmung (V-441), unabhängig von der Höhe; satte Grüntöne als Boden gesperrt; größter edgePalette-Anteil gilt nur noch für Schürze und Steine am Bühnenrand (V-396 eingeschränkt). Schatten = echte Shadow-Map-Schatten aus dem einen Rig, getönt nach der Palette des Empfängers (castShadowTint), Kontakt max statt Summe; keine Blob-/Scheiben-Schatten; eine Sonne bleibt (LIGHT_MODEL_R2).",
    "values": {},
    "owner": "WS1 (#439, Kanon)",
    "check": "A/B im Spiel nach BRIEF_WS1_TERRAIN_439",
@@ -7971,6 +7971,21 @@
    "supersedes": null,
    "superseded_by": [],
    "why": "Drei Boden- und zwei Schatten-Regeln widersprachen sich; Georg entscheidet nicht abstrakt, WS0 setzt sein Terrain-Design.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-565",
+   "date": "2026-10-20",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Korrektur V-564 + externe Prüfung (Gemini, von Georg eingereicht). (1) KEINE Farbsperre: die „Grün-Sperre“ war eine technische Beobachtung aus VORSCHLAG_BODENFARBE (sattes Moosgrün kippt unter ACES zu Limette), nie Georgs Regel. Georg 20.10.: Gras darf cartoonig z. B. lila sein, solange Materialcodes die Logik und das Look-and-Feel tragen (schön verteilte, vom Wind sanft bewegte Gruppen aus Grasblättern = SPEC_ENVIRONMENT_KIT_R1 §5–§8 Deformer, Wind-Gruppen, Büschel). Einzige Farbgrenze: Chroma ≤ 0,195 gegen ACES-Ausbrennen. (2) Übernommen aus der Prüfung: 70/30-Detailbalance (Terrain ruhig), Kontakt-Geometrie an jeder Objekt-Boden-Fuge (Gate C1, Operator kfb_env.contact), Silhouetten-Pass für den Kritiker, Eingangsprüfung: kein Meshy-/Kit-Asset roh (kfb_clay_bpy.apply vor dem Szenenbau). (3) Nicht übernommen: Rim-/Gegenlicht (V-385/V-392, LIGHT_MODEL_R2); Plastizität über Figurenlicht V-386, Wertkontrast und Knete; zeigt der Silhouetten-Pass Probleme, A/B an Georg.",
+   "values": {},
+   "owner": "WS0 (Kanon) · WS1 · WSB",
+   "check": "Kanon-Gate inkl. C1, Kritiker mit Silhouetten-Pass",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine technische Randnotiz war zur Farbsperre geworden; Georg meint Materialcode-Logik statt Farbverbot. Externe Prüfung brachte vier fehlende Prüfungen.",
    "applies": "sofort"
   },
   {
@@ -8061,7 +8076,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:945",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:948",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

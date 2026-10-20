@@ -20,7 +20,7 @@ import json, math, random
 SINK = {  # Anteil der Höhe unter dem Gelände [min, max] – Etherington §2 [KFB-Startwerte], Grammatik §4.1 für Steinkit
     'rock': (0.25, 0.45), 'rockgroup': (0.20, 0.35), 'tree': (0.05, 0.10), 'bush': (0.05, 0.12), 'building': (0.0, 0.15),
     'prop': (0.02, 0.05), 'stone_L': (0.45, 0.60), 'stone_M': (0.35, 0.50), 'stone_S': (0.30, 0.40),
-    'grass': (0.0, 1.0), 'fluff': (0.0, 1.0), 'water_plant': (0.0, 1.0), 'character': (0.0, 0.03), 'vehicle': (0.0, 0.03),
+    'grass': (0.0, 1.0), 'fluff': (0.0, 1.0), 'contact': (0.25, 1.0), 'water_plant': (0.0, 1.0), 'character': (0.0, 0.03), 'vehicle': (0.0, 0.03),
 }
 RULES = dict(size_tol=0.10, spread=0.30, line_tol=0.05, neighbour_r=4.5, overlap=0.85, air=1.25,  # grammar.js GRAMMAR.rules
              neg_space=0.30, float_tol_H=0.003, landmark_front=0.60, repeat_max=3, clone_dist_H=6 / 3.64,
@@ -62,6 +62,19 @@ def nest_ok(p, count=5, R=1.0, seed=1, hang=0.0, tries=16):
             s['c'] = [a['c'][0] + (s['c'][0] - a['c'][0]) * want / d, a['c'][1] + (s['c'][1] - a['c'][1]) * want / d]
             if rule_report(out)['ok']: return out
     raise ValueError(f'nest_ok: keine regelkonforme Gruppe nach {tries} Versuchen (count={count})')
+
+
+def contact(o, n=3, seed=1, hang=0.0, what='stone_S'):
+    """Kontakt-Geometrie (V-565, Etherington „Überlappen“): n kleine Knet-Elemente an der Fuß-Linie von o, bergab gehäuft, ungleiche Abstände.
+    Ergebnis-Objekte haben kind 'contact' (Mikro-Ebene, zählt nicht in die Gruppen-Zahlenregeln) und erben Gruppe/Schicht von o."""
+    rnd, out, r0 = random.Random(seed), [], max(0.06, 0.12 * o['r'])
+    for i in range(n):
+        a = hang + (-0.9 + 0.75 * i + (rnd.random() - 0.5) * 0.5); d = o['r'] * (0.95 + 0.25 * rnd.random()) + r0 * (0.6 + 0.9 * i)
+        r = r0 * (1.0, 0.7, 0.5, 0.4, 0.3)[min(i, 4)]
+        out.append({'id': f"{o.get('id', 'o')}_contact{i}", 'kind': 'contact', 'what': what, 'role': 'stone' if what.startswith('stone') else 'grass',
+                    'layer': 3 if what.startswith('stone') else 4, 'group': o.get('group'), 'story': f"bricht die Fuge von {o.get('id', 'o')} ({what})",
+                    'c': [o['c'][0] + math.cos(a) * d, o['c'][1] + math.sin(a) * d], 'r': r, 'h': r * 1.2, 'material': o.get('material')})
+    return out
 
 
 def relax(items, k=8, pull=0.85, gap=1.25, split=1.05):
@@ -157,6 +170,12 @@ def gate(scene, R=RULES):
         if (o.get('kind') in ENV_KINDS or o.get('material') is not None) and not str(o.get('material') or '').startswith('kfb-clay'): F('M1', f"{oid}: Material {o.get('material')!r} statt kfb-clay (fremde Textur liegt auf dem Terrain)")
         if o.get('baked_light'): F('M2', f'{oid}: eingebackenes Licht/AO – nur das eine Rig (V-385)')
         if pal and o.get('color') and str(o['color']).lower() not in pal: F('M3', f"{oid}: Farbe {o['color']} nicht aus der Palette der Szene")
+    # C1 Kontakt-Geometrie (V-565): jede Fuge Objekt–Boden wird von kleineren Elementen gebrochen (Steinchen, Moos, Gras, Erdkeil), Etherington „Überlappen“
+    for o in env:
+        if o.get('kind') not in ('building', 'rock', 'rockgroup', 'prop') or not o.get('h'): continue
+        near = [q for q in objs if q is not o and q.get('h', 0) < 0.35 * o['h'] and _d2(q['c'], o['c']) <= o['r'] * 1.5 + 0.5 * H]
+        if not near:
+            (F if o.get('kind') != 'prop' else (lambda c, m: find.append(f'{c} {m}')))('C1', f"{o.get('id', '?')}: keine Kontakt-Geometrie an der Fuge (kleine Knet-Elemente fehlen)")
     layers = {o.get('layer') for o in env}
     if env and len(layers & set(LAYERS)) < 4: find.append('S4 Ortsbiografie unvollständig: Schichten ' + ', '.join(LAYERS[l] for l in LAYERS if l not in layers) + ' fehlen')
     # Gruppen (H4/E4/E5 + Zahlen-Regeln §0)
