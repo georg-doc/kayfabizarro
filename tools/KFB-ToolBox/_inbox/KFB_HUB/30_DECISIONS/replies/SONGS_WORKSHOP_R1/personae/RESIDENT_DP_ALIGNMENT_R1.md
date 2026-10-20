@@ -93,3 +93,18 @@
 - Texture variants (e.g. MagicalGirl) can differentiate, but they don't make a figure unique.
 - Free slots to fill this: Frost Golem (if #7), the Caveman shift (#6), and figures from the Dramatis Personae: Lord Hunky, Lady Dory, Brain-Cyborg, Vampire.
 - Proposal: *How To Stage A Cover-Up* → Goth Girl? It fits conspiracy, psyops and sarcasm, but it would be her third deck. Alternatively Lady Dory (keeper of secrets on the UFO). Georg decides.
+
+**Addendum #6 (Georg: "there are a great many philosophy decks, including Kant etc.").** Philosophy decks in the registry (134 decks; ★ = among the 60):
+
+| Deck | Title | Resident so far |
+|---|---|---|
+| ★ `kayfabizarro_philosophy` | Kraziest Philosophical Kayfabe-Theories | Lorekeeper (→ Mission Control?) |
+| ★ `kayfabizarro_1_morale_ethics` | Beyond the Banalities of Good vs Evil | Paladin + Black Knight |
+| ★ `mind_traps` | 17 Kayfabe-Questions from Socrates to the FBI | Tiefling |
+| ★ `ideology_wrestling` | Ideology-Wrestling Field Guide | Demon Lord |
+| ★ `platos_dungeon_raid_v05` / `…_hero_set_01` | Plato's Dungeon Raid | Ranger / Knight |
+| `philosopher_dungeon_raid` | Plato's Dungeon Raids: The Odyssey Edition (20 cards) | – |
+| `kayfabizarros_ontological_hazards` | Plato's Dungeon Raids (47 cards) | – |
+
+- **Kant:** the registry has no deck of its own for him. He appears only as the card "Kantian Noumena Blindfold" in *The Pharaoh Script* and in the Morale & Ethics material.
+- **Consequence for the Caveman:** he does not have to take the Lorekeeper's deck. Each philosophy deck can get its own figure.
