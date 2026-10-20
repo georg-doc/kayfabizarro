@@ -263,6 +263,9 @@ function M1World() {
 
   useEffect(() => { useGame.setState({ dialog: null, choice: null }); return resetState }, []) // Spike-Startdialog gehört nicht in M1; Abbau leert den Szenen-Zustand
   useEffect(() => { let alive = true; const t = setInterval(() => { if (mods.amph?.status().status === 'OK' && alive) { setAmphReady(true); clearInterval(t) } }, 100); return () => { alive = false; clearInterval(t) } }, [])
+  // Ladeanzeige aus index.html schließen, sobald Spieler und Bühne stehen (im Fahrmodus auch das Auto); bei Ladefehler ebenso, damit nichts hängt
+  useEffect(() => { const t = setInterval(() => { const ps = mods.player?.status().status, as = mods.amph?.status().status
+    if (ps && ps !== 'LOADING' && as && as !== 'LOADING' && (!M2_ON || M2STATE.visualRoot || ps !== 'OK')) { clearInterval(t); requestAnimationFrame(() => dispatchEvent(new Event('kfb-ready'))) } }, 100); return () => clearInterval(t) }, [])
   useEffect(() => useGame.subscribe((s, p) => { if (s.lastChoice && s.lastChoice !== p.lastChoice) mods.dialog?.onChoice(s.lastChoice) }), [])
   useEffect(() => { keysUi.current = keyList(); return () => keysUi.current.remove() }, [])
   useEffect(() => { camera.fov = M1CAM.fov; camera.updateProjectionMatrix() }, [camera])
