@@ -176,7 +176,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <label class="check"><input type="checkbox" id="kul" checked> Kulissen am Horizont (3 Silhouettenringe)</label>
         <div class="row"><label for="moon">Himmelskörper</label><select id="moon"><option value="1">Knet-Riesenmond</option><option value="2">Ringplanet (Knete)</option><option value="0">keiner</option></select></div>
         <label class="check"><input type="checkbox" id="painted" checked> Gemalte Wolken auf der Kuppel</label>
-        <label class="check"><input type="checkbox" id="puffs" checked> Knet-Wolken in Flughöhe</label>
+        <label class="check"><input type="checkbox" id="puffs" checked> Wolkenschicht in Flughöhe (gemalt wie die Kuppelwolken)</label>
         <div class="row"><label for="cover">Wolken-Menge</label><output id="o_cover"></output><input type="range" id="cover" min="0" max="1" step="0.01" value="0.45"></div>
         <label class="check"><input type="checkbox" id="trails" checked> Kondensstreifen im Flug</label>
       </fieldset>
@@ -911,11 +911,50 @@ ${GLSL_SKY}
 
   // Knet-Wolken: dicke Kugeln, Stufenlicht, in Flughöhe; die Wolkenschicht wiederholt sich alle 1,2 km (endlos), driftet mit dem Wind
   const gm = new THREE.DataTexture(new Uint8Array([120, 190, 255]), 3, 1, THREE.RedFormat); gm.minFilter = gm.magFilter = THREE.NearestFilter; gm.needsUpdate = true;
-  const puffMat = new THREE.MeshToonMaterial({ color: '#ffffff', gradientMap: gm, emissive: '#000000' });
+  // Knet-Wolken v2 (Georg 20.10.: „wie die gemalten Kuppelwolken“; R13 H18): flacher Boden, Kuppe, Mitte am größten; gemalt in Licht-/Schattenton der Stimmung,
+  // dunklere Unterseite + leichte Randlinie, Puffs atmen langsam (Fließ-Logik), Ferne geht in die Himmelsfarbe über
+  const puffMat = new THREE.ShaderMaterial({ uniforms: Object.assign({}, SKY, { uHorizon: U.uHorizon, uTimeP: { value: 0 }, uLitC: SKY.uLit, uShadeC: SKY.uShade, uFar: { value: 2400 } }),
+    vertexShader: `${GLSL_NOISE}
+    attribute float aBase; uniform float uTimeP; varying vec3 vWp; varying vec3 vNw; varying float vBase;
+    void main(){ vec3 p=position; vec3 n=normal;
+      float w=snoise(n.xz*1.7+vec2(uTimeP*0.05, aBase*0.01))*0.08+snoise(n.xy*3.1-uTimeP*0.04)*0.04; p+=n*w;   /* langsames Quellen */
+      p.y=max(p.y,-0.3);                                                                                        /* flacher Boden je Puff */
+      vec4 wp=modelMatrix*instanceMatrix*vec4(p,1.0); vWp=wp.xyz; vNw=normalize(mat3(modelMatrix)*mat3(instanceMatrix)*(p.y<=-0.299?vec3(0.0,-1.0,0.0):n)); vBase=aBase;
+      gl_Position=projectionMatrix*viewMatrix*wp; }`,
+    fragmentShader: `uniform vec3 uHorizon; ${GLSL_SKY}
+    uniform vec3 uLitC, uShadeC; uniform float uFar; varying vec3 vWp; varying vec3 vNw; varying float vBase;
+    void main(){ vec3 n=normalize(vNw); vec3 vd=normalize(cameraPosition-vWp);
+      float l=dot(n,uSunDir)*0.5+0.5; float ls=l*3.0; l=(floor(ls)+smoothstep(0.0,0.2,fract(ls)))/3.0;      /* drei gemalte Töne */
+      vec3 shade=mix(uShadeC, uSkyMid, 0.35), col=mix(shade, uLitC, l);
+      col=mix(col, shade*0.88, smoothstep(6.0,0.0,vWp.y-vBase)*0.75);                                          /* dunklere Unterseite */
+      float rim=1.0-abs(dot(n,vd)); col=mix(col, shade*0.82, smoothstep(0.72,0.9,rim)*0.55);                  /* Randlinie wie die Kuppelwolken */
+      float d=length(vWp-cameraPosition); col=mix(col, skyColor(normalize(vWp-cameraPosition)), smoothstep(uFar*0.3,uFar,d));
+      gl_FragColor=vec4(col,1.0); }` });
   const PUFF = []; let prng = 9; const rnd = () => { prng = (prng * 16807) % 2147483647; return prng / 2147483647 };
-  for (let c = 0; c < 26; c++) { const cx = rnd() * 1200, cz = rnd() * 1200, cy = rnd(), size = 14 + rnd() * 22, n = 5 + Math.floor(rnd() * 5)
-    for (let k = 0; k < n; k++) { const a = (k / n) * Math.PI * 2 + rnd(), rr = size * (0.25 + rnd() * 0.55); PUFF.push({ cx, cz, cy, ox: Math.cos(a) * rr, oz: Math.sin(a) * rr * 0.6, oy: rnd() * size * 0.25, r: size * (0.35 + rnd() * 0.3) * (k === 0 ? 1.3 : 1) }) } }
-  const puffs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 2), puffMat, PUFF.length); puffs.frustumCulled = false; scene.add(puffs);
+  for (let c = 0; c < 26; c++) { const cx = rnd() * 1200, cz = rnd() * 1200, cy = rnd(), size = 16 + rnd() * 24, n = 7 + Math.floor(rnd() * 6), stretch = 1.3 + rnd() * 0.8
+    for (let k = 0; k < n; k++) { const a = rnd() * Math.PI * 2, dist = k === 0 ? 0 : size * (0.25 + rnd() * 0.6), r = size * (0.62 - 0.38 * (dist / size)) * (0.85 + rnd() * 0.3)   /* Mitte groß, außen klein */
+      PUFF.push({ cx, cz, cy, ox: Math.cos(a) * dist * stretch, oz: Math.sin(a) * dist * 0.7, oy: r * 0.3, r }) } }   /* oy = r·0,3: alle Puffs auf gemeinsamer Unterkante */
+  const puffs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 3), puffMat, PUFF.length); puffs.frustumCulled = false; scene.add(puffs);
+  { const ab = new Float32Array(PUFF.length); puffs.geometry.setAttribute('aBase', new THREE.InstancedBufferAttribute(ab, 1)) }
+  // Wolkenschicht in Flughöhe (Georg 20.10.: „gleiche Formsprache wie die Kuppelwolken, nicht knubbelig“): zwei waagrechte Ebenen, gemalt mit derselben
+  // Logik wie die Kuppel (Rauschen hart geschnitten, Licht-/Schattenton, dunklere Kante), weltfest, ziehen mit dem Wind; von unten Schattenton
+  const CLOUDL = [0, 1].map((li) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(2600, 2600, 1, 1).rotateX(-Math.PI / 2), new THREE.ShaderMaterial({
+      uniforms: Object.assign({}, SKY, { uHorizon: U.uHorizon, uLitC: SKY.uLit, uShadeC: SKY.uShade, uCoverC: SKY.uCover, uWind: { value: new THREE.Vector2() }, uLay: { value: li } }),
+      transparent: true, depthWrite: false, side: THREE.DoubleSide,
+      vertexShader: `varying vec3 vWc; void main(){ vec4 w=modelMatrix*vec4(position,1.0); vWc=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
+      fragmentShader: `${GLSL_NOISE}\nuniform vec3 uHorizon; ${GLSL_SKY}
+      uniform vec3 uLitC, uShadeC; uniform float uCoverC, uLay; uniform vec2 uWind; varying vec3 vWc;
+      float fbm4(vec2 q){ float s=0.0, a=0.5; for(int i=0;i<4;i++){ s+=a*snoise(q); q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(1.7,9.2); a*=0.5; } return s; }
+      void main(){ vec2 wp=vWc.xz+uWind+vec2(uLay*517.0,-uLay*311.0);
+        vec2 p=wp/260.0; float n=fbm4(p*1.4)+0.5; vec2 so=normalize(uSunDir.xz+1e-4)*0.07; float n2=fbm4(p*1.4+so)+0.5;
+        float th=0.93-uCoverC*0.5-uLay*0.04; float fw=fwidth(n)*1.2+1e-4; float m=smoothstep(th-fw,th+fw,n);
+        if(m<0.01) discard;
+        float below=step(vWc.y, cameraPosition.y)<0.5 ? 1.0 : 0.0;                                   /* von unten: Unterseite im Schattenton */
+        vec3 cc=mix(uShadeC,uLitC, below>0.5 ? 0.15 : step(n2+0.012,n));
+        cc=mix(cc,uShadeC*0.82,(m-smoothstep(th+0.012,th+0.03,n))*0.85);                              /* dunklere Kante wie die Kuppelwolken */
+        float d=length(vWc.xz-cameraPosition.xz); cc=mix(cc, skyColor(normalize(vWc-cameraPosition)), smoothstep(500.0,1250.0,d));
+        gl_FragColor=vec4(cc, m*(1.0-smoothstep(1000.0,1280.0,d))); }` }))
+    m.frustumCulled = false; m.renderOrder = 5; scene.add(m); return m });
   const m4 = new THREE.Matrix4(), q0 = new THREE.Quaternion(), v3 = new THREE.Vector3(), s3 = new THREE.Vector3();
   scene.fog = new THREE.Fog('#cfe8f2', 700, 1800);
 
@@ -958,7 +997,7 @@ ${GLSL_SKY}
       const md = new THREE.Vector3(-U.uSunDir.value.x, 0, -U.uSunDir.value.z).normalize(); md.y = Math.tan(6 * Math.PI / 180); U.uMoonDir.value.copy(md.normalize())
       if (typeof KUL !== 'undefined') KUL.forEach((K) => { K.u.uSil.value.set(A.cliff).lerp(new THREE.Color(A.mid), 0.3).lerp(hz, K.ix * 0.12); K.m.visible = !!S.kul }) } SKY.uLit.value.set(M.lit); SKY.uShade.value.set(M.shade); SKY.uStars.value = M.stars; SKY.uCover.value = S.cover; SKY.uPainted.value = S.painted ? 1 : 0;
     U.uGridWorld.value = S.gridworld ? 1 : 0; U.uGS.value = S.gs; U.uGShape.value = S.gshape; U.uGFill.value = S.gfill; U.uGCol.value = S.gcol; U.uClay.value = S.clay ? 1 : 0; U.uGTex.value = S.gtex; U.uRing.value = S.ring ? 1 : 0; U.uShadowOn.value = S.shadows ? 1 : 0; U.uEdges.value = S.edges ? 1 : 0; U.uFg.value = S.fgmass ? 1 : 0; U.uOrg.value = S.org ? 1 : 0; U.uTanMax.value = S.maxslope >= 80 ? 1e6 : Math.tan(S.maxslope * Math.PI / 180); U.uFlow.value = S.flow; U.uFlowTree.value = S.flowtree; U.uBands.value = S.bands; U.uVoxTex.value = S.voxtex ? 1 : 0; if (typeof VOX !== 'undefined') { VOX.dirty = true }  U.uAOOn.value = S.ground ? 1 : 0; U.uFS.value = S.fstage; U.uKus.value = S.kus; { const A = PALETTES[S.palA], K = [null, ['#f5c400', '#151313'], ['#d8262e', '#fbf3e8'], [A.mid, A.cliff]][S.kus]; if (K) { U.uKusA.value.set(K[0]); U.uKusB.value.set(K[1]) } if (window.__rockc) window.__rockc.kus = S.kus } U.uDbg.value = S.dbg; U.uEther.value = S.ether ? 1 : 0; if (window.__rockc) window.__rockc.dirty = true; renderer.shadowMap.enabled = !!S.shadows; sun.castShadow = !!S.shadows; U.uContact.value.set(PALETTES[S.palA].cliff).multiplyScalar(0.55); if (window.__GU) window.__GU.uGOn.value = S.ground ? 1 : 0; window.__syncDio?.(); for (const R of RINGS) R.m.visible = S.rings; water.scale.set(S.rings ? 16 : 1, 1, S.rings ? 16 : 1);
-    puffMat.color.set(M.lit); puffMat.emissive.set(M.shade).multiplyScalar(0.35); trailMat.uniforms.uCol.value.set(M.lit); puffs.visible = S.puffs;
+    trailMat.uniforms.uCol.value.set(M.lit); puffs.visible = false; for (const L of CLOUDL) L.visible = S.puffs;
     hemi.color.set(M.k ? M.hemi[0] : A.sky); hemi.intensity = M.hemi[1]; sun.color.set(M.sun[0]); sun.intensity = M.sun[1];
     const hz = new THREE.Color(M.k ? M.horizon : A.sky); scene.fog.color.copy(hz); stage.style.background = '#' + hz.getHexString(); renderer.setClearColor(hz);
     $('swA').innerHTML = ['water', 'sand', 'low', 'mid', 'high', 'peak', 'cliff'].map((k) => `<i style="background:${A[k]}"></i>`).join('');
@@ -1394,9 +1433,11 @@ ${GLSL_SKY}
       for (const K of KUL) { K.m.position.set(camera.position.x, 0, camera.position.z); K.m.scale.setScalar(rOn ? 17 : 1) } }
     dome.position.copy(camera.position); SKY.uTime.value = t; FLOWT += dt * (1 + (S.flowspeed ? Math.min(6, Math.hypot(P.vf, P.vl, P.fly ? P.vy : 0) / 8) : 0)); U.uTimeT.value = FLOWT;   // Fließuhr: im Stand sanft, mit Tempo schneller SKY.uCamXZ.value.set(P.x, P.z);
     scene.fog.near = U.uFogNear.value * 2.2; scene.fog.far = U.uFogFar.value * 3.4; // Knet-Wolken bleiben weiter sichtbar als das Gelände
+    { const cb = S.amp + 70; CLOUDL.forEach((L, i) => { L.position.set(0, cb + i * 42, 0); L.material.uniforms.uWind.value.set(P.x + t * (3 + i), P.z + t * 1.2) }) }   // Ebenen folgen dem Auto, Formen weltfest
     if (puffs.visible) { const base = S.amp + 45, wind = t * 3;
-      PUFF.forEach((f, i) => { const wx = ((((f.cx + wind - P.x) % 1200) + 1200) % 1200) - 600, wz = ((((f.cz - P.z) % 1200) + 1200) % 1200) - 600;
-        puffs.setMatrixAt(i, m4.compose(v3.set(wx + f.ox, base + f.cy * 80 + f.oy, wz + f.oz), q0, s3.set(f.r, f.r * 0.72, f.r))) }); puffs.instanceMatrix.needsUpdate = true }
+      const ab = puffs.geometry.attributes.aBase; puffMat.uniforms.uTimeP.value = t;
+      PUFF.forEach((f, i) => { const wx = ((((f.cx + wind - P.x) % 1200) + 1200) % 1200) - 600, wz = ((((f.cz - P.z) % 1200) + 1200) % 1200) - 600, by = base + f.cy * 80;
+        puffs.setMatrixAt(i, m4.compose(v3.set(wx + f.ox, by + f.oy, wz + f.oz), q0, s3.set(f.r, f.r * 0.8, f.r))); ab.array[i] = by }); puffs.instanceMatrix.needsUpdate = true; ab.needsUpdate = true }
     // Kondensstreifen: im Flug alle 25 ms je ein Punkt an den hinteren Schwebepunkten; Weltlage gespeichert, gezeichnet relativ zum Fahrzeug
     if (S.trails && P.fly && carInfo) { tAcc += dt; carRoot.updateMatrixWorld(true);
       while (tAcc > 0.025) { tAcc -= 0.025; for (const hp of [carInfo.hover[2], carInfo.hover[3]]) { v3.set(hp[0] * 1.15, hp[1] + 0.4, hp[2]).multiplyScalar(UNIT); squash.localToWorld(v3)
