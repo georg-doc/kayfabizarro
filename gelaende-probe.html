@@ -341,7 +341,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     float y=h;
     // Ringgitter: der Teil eines groben Rings, der unter dem feineren Gitter liegt, sinkt weg (keine Doppelflächen, keine Risse am Rand)
     if(uHole>0.0){ float cheb=max(abs(p.x-uCarW.x),abs(p.y-uCarW.y)); y-=uDrop*smoothstep(uHole,uHole-30.0,cheb); }
-    vec4 wp4=modelMatrix*vec4(position.x,y,position.z,1.0); vSC=uShadowM*wp4;
+    vec4 wp4=modelMatrix*vec4(position.x,y,position.z,1.0); vSC=uShadowM*(wp4+vec4(normalize(vN)*0.08,0.0)); /* Schattensaum-Fix wie kfb-stage-light v1.1: Normalversatz 1,5 Texel statt großem Tiefen-Bias */
     gl_Position=projectionMatrix*viewMatrix*wp4;
   }`;
   const frag = `${GLSL_NOISE}
@@ -461,7 +461,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       sky=sky*0.35;
     }
     if(uShadowOn>0.5){ vec3 sc=vSC.xyz/vSC.w; if(sc.x>0.0 && sc.x<1.0 && sc.y>0.0 && sc.y<1.0 && sc.z<1.0){ float sv=0.0; vec2 tx=vec2(1.25/2048.0); /* 5×5 Proben: ruhige Kante ohne Treppen */
-      for(int i=-2;i<=2;i++) for(int j=-2;j<=2;j++) sv+=step(sc.z-0.0015, unpackRGBAToDepth(texture2D(uShadowMap, sc.xy+vec2(float(i),float(j))*tx)));
+      for(int i=-2;i<=2;i++) for(int j=-2;j<=2;j++) sv+=step(sc.z-0.00015, unpackRGBAToDepth(texture2D(uShadowMap, sc.xy+vec2(float(i),float(j))*tx)));
       sv=smoothstep(0.15,0.85,sv/25.0); col=mix(mix(col*0.62, uContact, 0.38), col, sv); } }   // echter Schatten, eingefärbt (kein Schwarz)
     gl_FragColor=vec4(mix(col, sky, f),1.0);
   }`;
@@ -495,7 +495,9 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   const sun = new THREE.DirectionalLight('#fff4e6', 1.35); sun.position.set(-55, 75, 35); scene.add(sun);
   // Echte Schatten: Sonne als einziger Schattenwerfer, Ausschnitt 140 m um das Fahrzeug (Szene-Ursprung = Fahrzeug); der Boden liest die Karte selbst
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFShadowMap; scene.add(sun.target);
-  sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -55, right: 55, top: 55, bottom: -55, near: 5, far: 400 }); sun.shadow.bias = -0.0005;
+  sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -55, right: 55, top: 55, bottom: -55, near: 5, far: 400 }); sun.shadow.bias = -0.0001; sun.shadow.normalBias = 0.08; // V-440: kleiner Bias + Vorderseiten werfen → kein heller Saum am Fuß
+  // V-440 / kfb-stage-light v1.1 castFrontFaces: VORDERseiten werfen (three nimmt sonst die Rückseiten → heller Saum zwischen Fuß und Schatten)
+  const castFront = (root) => root.traverse((o) => { if (!o.isMesh || !o.castShadow) return; for (const m of [].concat(o.material)) if (m && m.side !== THREE.DoubleSide && m.shadowSide !== THREE.FrontSide) { m.shadowSide = THREE.FrontSide; m.needsUpdate = true } });
   sun.position.set(-55, 75, 35).normalize().multiplyScalar(160); sun.shadow.camera.updateProjectionMatrix();
 
   // ---------- Himmel: Tageszeiten (Farben wie die Stimmungen des Licht-Moduls: Tag, Gold, Nacht) ----------
@@ -638,7 +640,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         const url = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/9bd8e0376105b29375377ea3052e33528d50fbb6/media/3D_Assets/MeshyModels/vehicles/${info.id}/${info.id}_browser.v3.glb`;
         const buf = await fetch(url).then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.arrayBuffer() });
         scn = await new Promise((res, rej) => loader.parse(buf, '', (g) => res(g.scene), rej));
-        scn.traverse((m) => { if (m.isMesh) { m.frustumCulled = false; m.castShadow = true } }); cache.set(info.id, scn);
+        scn.traverse((m) => { if (m.isMesh) { m.frustumCulled = false; m.castShadow = true } }); castFront(scn); cache.set(info.id, scn);
       }
       while (squash.children.length) squash.remove(squash.children[0]);
       for (const p of plumes) for (const m of p.mats) m.dispose();
@@ -689,7 +691,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     mat.customProgramCacheKey = () => (prevKey ? prevKey.call(mat) : '') + '|kfb-ground'; mat.needsUpdate = true }
   const loadG = (url) => loader.loadAsync(url).then((g) => g.scene);
   Promise.all([loadG(AMPH_URL).then((m) => { amph = m; palettize(m) }), ...[...ROCKS, ...TREES, ...BUSHES].map((n) => loadG(FOREST + n + '.gltf').then((m) => { TPL[n] = m; m.traverse((o) => { if (o.isMesh) { o.castShadow = o.receiveShadow = true; o.material = o.material.clone(); o.material.userData.base = o.material.color.clone(); addGrounding(o.material) } }) }))])
-    .then(() => { amph?.traverse((o) => { if (o.isMesh) [].concat(o.material).forEach(addGrounding) }); if (amph) { const b = new THREE.Box3().setFromObject(amph), sz = b.getSize(new THREE.Vector3()); amph.scale.setScalar(23.4 / sz.x); amph.rotation.y = Math.PI; amph.updateMatrixWorld(true); const b2 = new THREE.Box3().setFromObject(amph), c2 = b2.getCenter(new THREE.Vector3()); amph.userData.off = new THREE.Vector3(-c2.x, -b2.min.y, -c2.z); dioGroup.add(amph) } window.__syncDio() })
+    .then(() => { castFront(scene); for (const k in TPL) castFront(TPL[k]); amph?.traverse((o) => { if (o.isMesh) [].concat(o.material).forEach(addGrounding) }); if (amph) { const b = new THREE.Box3().setFromObject(amph), sz = b.getSize(new THREE.Vector3()); amph.scale.setScalar(23.4 / sz.x); amph.rotation.y = Math.PI; amph.updateMatrixWorld(true); const b2 = new THREE.Box3().setFromObject(amph), c2 = b2.getCenter(new THREE.Vector3()); amph.userData.off = new THREE.Vector3(-c2.x, -b2.min.y, -c2.z); dioGroup.add(amph) } window.__syncDio() })
     .catch((e) => { dioErr = 'Modelle nicht geladen (' + (e?.message || e) + ') – nur in der öffentlichen Fassung verfügbar'; $('dioMsg').textContent = dioErr });
   let rs = 1; const rr = () => { rs = (rs * 16807) % 2147483647; return rs / 2147483647 };
   const angGap = (a, b) => Math.abs(((a - b + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI);
@@ -741,7 +743,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   { const mat = new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0, flatShading: true }); addGrounding(mat)
     ROCKC.meshes = [11, 29, 47].map((sd) => { const m = new THREE.InstancedMesh(etherRockGeo(sd), mat, 420); m.castShadow = m.receiveShadow = true; m.frustumCulled = false; m.count = 0; worldRoot.add(m); return m })
     ROCKC.crumbs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), crumbs.material, 2200); ROCKC.crumbs.castShadow = ROCKC.crumbs.receiveShadow = true; ROCKC.crumbs.frustumCulled = false; ROCKC.crumbs.count = 0; worldRoot.add(ROCKC.crumbs)
-    ROCKC.mat = mat }
+    ROCKC.mat = mat; for (const m of ROCKC.meshes) castFront(m); castFront(ROCKC.crumbs); castFront(crumbs) }
   const hh2 = (x, y) => { const t = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return t - Math.floor(t) };
   function buildRocks(px, pz) {
     ROCKC.cx = px; ROCKC.cz = pz; ROCKC.dirty = false; for (const m of ROCKC.meshes) m.count = 0; ROCKC.crumbs.count = 0
