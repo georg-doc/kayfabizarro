@@ -118,7 +118,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <div class="swatches" id="swA" aria-hidden="true"></div>
         <label class="check"><input type="checkbox" id="org" checked> Farbflächen organisch (ohne Höhenbänder)</label>
         <div class="row"><label for="kus">Polka-Dot-Welt</label><select id="kus"><option value="0">aus</option><option value="1">Punkte in Biom-Farben</option><option value="2">Konfetti in Biom-Farben (heller Grund)</option><option value="3">Infinity-Netz (dicht, klein)</option></select></div>
-        <div class="row"><label for="fstage">Flächen-Stufe</label><select id="fstage"><option value="3">Farbflächen v3 (Stand vorher)</option><option value="2">C+D: große Flächen + Übergänge + Sprenkel</option><option value="1">C: große Flächen + Übergänge</option><option value="0">B: nur große Flächen</option></select></div>
+        <div class="row"><label for="fstage">Flächen-Stufe</label><select id="fstage"><option value="4">Formlogik v4: Talbänder, Rücken, Kuppen</option><option value="3">Farbflächen v3 (Kleckse)</option><option value="2">C+D: große Flächen + Übergänge + Sprenkel</option><option value="1">C: große Flächen + Übergänge</option><option value="0">B: nur große Flächen</option></select></div>
         <div class="row"><label for="dbg">Prüfansicht</label><select id="dbg"><option value="0">Endbild</option><option value="1">nur Grundfarbe (ohne Licht/Schatten)</option><option value="2">graue Form (nur Licht)</option><option value="3">Material-Masken</option></select></div>
         <div class="row"><label for="soft">Farbbänder</label><output id="o_soft"></output><input type="range" id="soft" min="0" max="1" step="0.01"></div>
         <div class="row"><label for="cliff">Felsen ab Steigung</label><output id="o_cliff"></output><input type="range" id="cliff" min="15" max="60" step="1"></div>
@@ -266,16 +266,17 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     return h;
   }
   // Etherington (R2): runde Grate statt Messerkanten (weiches |n|), feinste Grat-Oktaven weg, Detail leiser → keine Zacken-Silhouette
+  float gG=0.0, gOcMax=7.0; /* gG = Steigung der Rohhöhe (normiert/m) am Vertex; gOcMax = Oktaven-Deckel für billige Hilfsrechnungen */
   float gNE=2.34375; // Gitterabstand (m) des Meshes, das gerade rechnet; Grundwert = Nahgitter (600 m / 256), wie im JS
   // Band-Begrenzung gegen Zacken (Aliasing): jedes Gitter bekommt nur Detail, das es abbilden kann (Wellenlänge ≥ 3–4 Gitterabstände)
   float octW(float i, float f0){ float wl=uScale/(f0*pow(2.0,i)); return smoothstep(2.0,4.0,wl/gNE); }
-  float fbm(vec2 q){ float s=0.0, a=1.0, n=0.0, oc=uEther>0.5?min(uOct,5.0):uOct; for(int i=0;i<7;i++){ if(float(i)>=oc) break; s+=a*octW(float(i),1.0)*snoise(q); n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=0.5; } return s/n; }
-  float rfbm(vec2 q){ float s=0.0, a=1.0, n=0.0, oc=uEther>0.5?min(uOct,4.0):uOct; for(int i=0;i<7;i++){ if(float(i)>=oc) break; float sn=snoise(q);
+  float fbm(vec2 q){ float s=0.0, a=1.0, n=0.0, oc=min(uEther>0.5?min(uOct,5.0):uOct, gOcMax); for(int i=0;i<7;i++){ if(float(i)>=oc) break; float ow=octW(float(i),1.0); if(ow<0.001){ n+=a*(1.0-pow(0.5,oc-float(i)))/0.5; break; } s+=a*ow*snoise(q); n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=0.5; } return s/n; }
+  float rfbm(vec2 q){ float s=0.0, a=1.0, n=0.0, oc=min(uEther>0.5?min(uOct,4.0):uOct, gOcMax), gr=uEther>0.5?0.45:0.5; for(int i=0;i<7;i++){ if(float(i)>=oc) break; float ow0=octW(float(i),1.0); if(ow0<0.001){ float ar=a*(1.0-pow(gr,oc-float(i)))/(1.0-gr); s+=0.5*ar; n+=ar; break; } float sn=snoise(q);
     float r=uEther>0.5 ? max(0.0,(1.0-sqrt(sn*sn+0.06))/0.7551) : 1.0-abs(sn); float ow=octW(float(i),1.0); s+=a*mix(0.5,r*r,ow); n+=a; q=mat2(1.6,1.2,-1.2,1.6)*q+vec2(3.1,1.7); a*=(uEther>0.5?0.45:0.5); } return s/n; }
   // Schichten (N4): je Paar eine dicke (1,3) und eine dünne (0,7) Lage, Lagen leicht wellig geneigt, Kanten gerundet
   float strU(float s){ float k=floor(s*0.5)*2.0, t=s-k; return k+(t<1.3? t/1.3 : 1.0+(t-1.3)/0.7); }
   float strS(float u){ float k=floor(u*0.5)*2.0, t=u-k; return k+(t<1.0? t*1.3 : 1.3+(t-1.0)*0.7); }
-  float hgt(vec2 p){
+  float hraw(vec2 p){
     vec2 q=p/uScale+uSeed;
     if(uWarp>0.0){ q+=uWarp*vec2(fbm(q*0.6+vec2(5.2,1.3)), fbm(q*0.6+vec2(-3.7,8.1))); }
     float b=clamp(fbm(q)*0.75+0.5,0.0,1.0);
@@ -285,19 +286,26 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     h*=mix(1.0,mix(0.22,1.15,region),uMacro);
     h=clamp(h,0.0,1.0);
     if(uValley>0.0) h=pow(h,1.0+uValley*1.6);
-    if(uPlateau<0.999){ float dP=h-uPlateau, kP=0.02+gNE/uAmp*0.6; h=uPlateau+dP*mix(1.0,0.12,smoothstep(-kP,kP,dP)); }   /* Tafelkante mit weichem Knie (Breite je Gitter) */
-    if(uSteps>=1.0){ if(uEther>0.5){ float tw=0.35*snoise(p/(uScale*2.5)+uSeed*0.11+23.0); float u=strU(h*uSteps+tw); float f=fract(u); float w=max(max(mix(0.5,0.03,uSharp),0.22), clamp(gNE*uSteps/uAmp*1.5,0.0,0.5));   /* Stufenkante ≥ ca. 2 Gitterabstände breit */ f=smoothstep(0.5-w,0.5+w,f); h=(strS(floor(u)+f)-tw)/uSteps; }
-      else { float s=h*uSteps; float f=fract(s); float w=mix(0.5,0.03,uSharp); f=smoothstep(0.5-w,0.5+w,f); h=(floor(s)+f)/uSteps; } }
+    return h;
+  }
+  float hlow(vec2 p){ float o=gOcMax; gOcMax=2.0; float h=hraw(p); gOcMax=o; return h; }   /* nur große Formen (Tal/Rücken) */
+  float hgt(vec2 p){
+    float h=hraw(p);
+    /* Anti-Zacken je Steigung: jede Kante (Tafel, Stufe) ist ≥ ca. 2 Gitterabstände breit, egal wie steil der Hang ist */
+    if(uPlateau<0.999){ float dP=h-uPlateau, kP=max(0.02, 1.6*gNE*gG); h=uPlateau+dP*mix(1.0,0.12,smoothstep(-kP,kP,dP)); }   /* Tafelkante mit weichem Knie (Breite je Gitter) */
+    if(uSteps>=1.0){ if(uEther>0.5){ float tw=0.35*snoise(p/(uScale*2.5)+uSeed*0.11+23.0); float u=strU(h*uSteps+tw); float f=fract(u); float w=max(max(mix(0.5,0.03,uSharp),0.16), clamp(1.6*gNE*uSteps*gG/0.7,0.0,0.5)); f=smoothstep(0.5-w,0.5+w,f); h=(strS(floor(u)+f)-tw)/uSteps; }
+      else { float s=h*uSteps; float f=fract(s); float w=max(mix(0.5,0.03,uSharp), clamp(1.6*gNE*uSteps*gG,0.0,0.5)); f=smoothstep(0.5-w,0.5+w,f); h=(floor(s)+f)/uSteps; } }
     return dioMod(p, h*uAmp);
   }`;
   const S = {};
   const rot = (x, y) => [1.6 * x - 1.2 * y + 3.1, 1.2 * x + 1.6 * y + 1.7]; // mat2(1.6,1.2,-1.2,1.6) spaltenweise wie in GLSL
-  function fbm(x, y) { let s = 0, a = 1, n = 0; const oc = S.ether ? Math.min(S.oct, 5) : S.oct; for (let i = 0; i < 7 && i < oc; i++) { s += a * octW(i) * snoise(x, y); n += a; [x, y] = rot(x, y); a *= 0.5 } return s / n }
-  function rfbm(x, y) { let s = 0, a = 1, n = 0; const oc = S.ether ? Math.min(S.oct, 4) : S.oct; for (let i = 0; i < 7 && i < oc; i++) { const sn = snoise(x, y); const r = S.ether ? Math.max(0, (1 - Math.sqrt(sn * sn + 0.06)) / 0.7551) : 1 - Math.abs(sn), ow = octW(i); s += a * (0.5 + (r * r - 0.5) * ow); n += a; [x, y] = rot(x, y); a *= S.ether ? 0.45 : 0.5 } return s / n }
+  let OCMAX = 7;
+  function fbm(x, y) { let s = 0, a = 1, n = 0; const oc = Math.min(S.ether ? Math.min(S.oct, 5) : S.oct, OCMAX); for (let i = 0; i < 7 && i < oc; i++) { const ow = octW(i); if (ow < 0.001) { n += a * (1 - Math.pow(0.5, oc - i)) / 0.5; break } s += a * ow * snoise(x, y); n += a; [x, y] = rot(x, y); a *= 0.5 } return s / n }
+  function rfbm(x, y) { let s = 0, a = 1, n = 0; const oc = Math.min(S.ether ? Math.min(S.oct, 4) : S.oct, OCMAX), gr = S.ether ? 0.45 : 0.5; for (let i = 0; i < 7 && i < oc; i++) { if (octW(i) < 0.001) { const ar = a * (1 - Math.pow(gr, oc - i)) / (1 - gr); s += 0.5 * ar; n += ar; break } const sn = snoise(x, y); const r = S.ether ? Math.max(0, (1 - Math.sqrt(sn * sn + 0.06)) / 0.7551) : 1 - Math.abs(sn), ow = octW(i); s += a * (0.5 + (r * r - 0.5) * ow); n += a; [x, y] = rot(x, y); a *= S.ether ? 0.45 : 0.5 } return s / n }
   const NE0 = 600 / 256, octW = (i) => sstep(2, 4, (S.scale / Math.pow(2, i)) / NE0); // wie octW/gNE im Shader (Nahgitter)
   const strU = (s) => { const k = Math.floor(s * 0.5) * 2, t = s - k; return k + (t < 1.3 ? t / 1.3 : 1 + (t - 1.3) / 0.7) }, strS = (u) => { const k = Math.floor(u * 0.5) * 2, t = u - k; return k + (t < 1 ? t * 1.3 : 1.3 + (t - 1) * 0.7) };
   const sstep = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t) };
-  function hgt(px, py) {
+  function hraw(px, py) {
     let qx = px / S.scale + S.sx, qy = py / S.scale + S.sy;
     if (S.warp > 0) { const wx = fbm(qx * 0.6 + 5.2, qy * 0.6 + 1.3), wy = fbm(qx * 0.6 - 3.7, qy * 0.6 + 8.1); qx += S.warp * wx; qy += S.warp * wy }
     const b = Math.min(1, Math.max(0, fbm(qx, qy) * 0.75 + 0.5)), r = rfbm(qx + 17, qy - 9);
@@ -306,9 +314,14 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     h *= 1 + ((0.22 + (1.15 - 0.22) * region) - 1) * S.macro;
     h = Math.min(1, Math.max(0, h));
     if (S.valley > 0) h = Math.pow(h, 1 + S.valley * 1.6);
-    if (S.plateau < 0.999) { const dP = h - S.plateau, kP = 0.02 + NE0 / S.amp * 0.6; h = S.plateau + dP * (1 + (0.12 - 1) * sstep(-kP, kP, dP)) }
-    if (S.steps >= 1) { if (S.ether) { const tw = 0.35 * snoise(px / (S.scale * 2.5) + S.sx * 0.11 + 23, py / (S.scale * 2.5) + S.sy * 0.11 + 23), u = strU(h * S.steps + tw); let f = fract(u); const w = Math.max(Math.max(0.5 + (0.03 - 0.5) * S.sharp, 0.22), Math.min(0.5, Math.max(0, NE0 * S.steps / S.amp * 1.5))); f = sstep(0.5 - w, 0.5 + w, f); h = (strS(Math.floor(u) + f) - tw) / S.steps }
-      else { const s = h * S.steps; let f = fract(s); const w = 0.5 + (0.03 - 0.5) * S.sharp; f = sstep(0.5 - w, 0.5 + w, f); h = (Math.floor(s) + f) / S.steps } }
+    return h;
+  }
+  function hgt(px, py) {
+    let h = hraw(px, py);
+    const om = OCMAX; OCMAX = 3; const a0 = hraw(px, py), gG = Math.hypot(hraw(px + NE0, py) - a0, hraw(px, py + NE0) - a0) / NE0; OCMAX = om; // wie gG im Shader
+    if (S.plateau < 0.999) { const dP = h - S.plateau, kP = Math.max(0.02, 1.6 * NE0 * gG); h = S.plateau + dP * (1 + (0.12 - 1) * sstep(-kP, kP, dP)) }
+    if (S.steps >= 1) { if (S.ether) { const tw = 0.35 * snoise(px / (S.scale * 2.5) + S.sx * 0.11 + 23, py / (S.scale * 2.5) + S.sy * 0.11 + 23), u = strU(h * S.steps + tw); let f = fract(u); const w = Math.max(Math.max(0.5 + (0.03 - 0.5) * S.sharp, 0.16), Math.min(0.5, 1.6 * NE0 * S.steps * gG / 0.7)); f = sstep(0.5 - w, 0.5 + w, f); h = (strS(Math.floor(u) + f) - tw) / S.steps }
+      else { const s = h * S.steps; let f = fract(s); const w = Math.max(0.5 + (0.03 - 0.5) * S.sharp, Math.min(0.5, 1.6 * NE0 * S.steps * gG)); f = sstep(0.5 - w, 0.5 + w, f); h = (Math.floor(s) + f) / S.steps } }
     return dioModJS(px, py, h * S.amp);
   }
   // Diorama-Fuß (identisch zum GLSL dioMod): Sockelfläche auf Bühnenhöhe, Erdkeil vorne offen
@@ -384,13 +397,16 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     float far=smoothstep(0.12,0.45,aw/max(csA,0.5)); cA=mix(cA, mode>2.5?0.5:0.36, far);   /* fern: Mischton statt Flimmern */
     return vec3(cA, sel, big); }`;
   const vert = `${GLSL_NOISE}\n${GLSL_HEIGHT}
-  uniform vec2 uOffset; uniform vec2 uCarW; uniform float uHole, uDrop, uNE; uniform mat4 uShadowM; uniform float uEdges; varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv;
+  uniform vec2 uOffset; uniform vec2 uCarW; uniform float uHole, uDrop, uNE; uniform mat4 uShadowM; uniform float uEdges; varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv; varying float vCL;
   void main(){
-    vec2 p=position.xz+uOffset; { float chb=max(abs(p.x-uCarW.x),abs(p.y-uCarW.y)); gNE=mix(uNE, uNE*4.0, smoothstep(uNE*100.0, uNE*126.0, chb)); } float h=hgt(p);   /* zum Rand hin wie das nächste, gröbere Gitter → keine Stufe an der Naht */ float e=uNE;
+    vec2 p=position.xz+uOffset; { float chb=max(abs(p.x-uCarW.x),abs(p.y-uCarW.y)); gNE=mix(uNE, uNE*4.0, smoothstep(uNE*100.0, uNE*126.0, chb)); }
+    { float om=gOcMax; gOcMax=3.0; float a0=hraw(p); gG=length(vec2(hraw(p+vec2(2.34375,0.0))-a0, hraw(p+vec2(0.0,2.34375))-a0))/2.34375; gOcMax=om; }
+    float h=hgt(p);   /* zum Rand hin wie das nächste, gröbere Gitter → keine Stufe an der Naht */ float e=uNE;
     float hx=hgt(p+vec2(e,0.0)), hz=hgt(p+vec2(0.0,e));
     vN=normalize(vec3(h-hx, e, h-hz)); vH=h; vW=vec3(p.x,h,p.y);
     // Etherington: Licht folgt der großen Form (Formnormale über ~6 m), nicht jeder Delle → keine splittrigen Licht-Scherben an den Hängen
-    if(uEther>0.5){ float eF=max(6.0,uNE*2.5); float ha=hgt(p+vec2(eF,0.0)), hb=hgt(p-vec2(eF,0.0)), hc=hgt(p+vec2(0.0,eF)), hd=hgt(p-vec2(0.0,eF)); vN=normalize(mix(vN, normalize(vec3(hb-ha, 2.0*eF, hd-hc)), 0.75)); }
+    if(uEther>0.5 && uNE<3.0){ float eF=max(6.0,uNE*2.5); float ha=hgt(p+vec2(eF,0.0)), hb=hgt(p-vec2(eF,0.0)), hc=hgt(p+vec2(0.0,eF)), hd=hgt(p-vec2(0.0,eF)); vN=normalize(mix(vN, normalize(vec3(hb-ha, 2.0*eF, hd-hc)), 0.75)); }
+    { float L=28.0; vCL=(hlow(p+vec2(L,0.0))+hlow(p-vec2(L,0.0))+hlow(p+vec2(0.0,L))+hlow(p-vec2(0.0,L)))*0.25-hlow(p); }   /* >0 Mulde/Tal, <0 Rücken (große Form) */
     vCurv=0.0; if(uEdges>0.5){ float e2=max(6.0,uNE*2.5); vCurv=(hgt(p+vec2(e2,0.0))+hgt(p-vec2(e2,0.0))+hgt(p+vec2(0.0,e2))+hgt(p-vec2(0.0,e2)))*0.25-h; } // <0: Grat/Kante (konvex)
     float y=h;
     // Ringgitter: der Teil eines groben Rings, der unter dem feineren Gitter liegt, sinkt weg (keine Doppelflächen, keine Risse am Rand)
@@ -405,7 +421,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   ${GLSL_KUS}
   ${palUniforms}
   uniform sampler2D uShadowMap; uniform float uShadowOn; uniform vec3 uContact; uniform float uEdges, uFg, uOrg, uFS, uDbg, uKus; uniform vec3 uKusA, uKusB;
-  varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv;
+  varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv; varying float vCL;
   #include <packing>
   vec3 pick(vec3 a, vec3 b, float t){ return mix(a,b,t); }
   float h21(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
@@ -444,7 +460,22 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     // Flächengrammatik (Georg 20.10. + Perplexity-Feedback): Makro entscheidet WO ein Material liegt, Meso formt Kontur/Übergang, Mikro ändert die
     // Lesbarkeit nicht. Übergang = eigenes Band um die Grenze (|d| < w): dort Gegeninseln des Nachbarmaterials und Sprenkel, sonst Ruhe.
     vec3 idc=vec3(0.5); float shoreK=0.0;
-    if(uOrg>0.5 && uFS>2.5){ vec2 pw=vW.xz+5.0*vec2(snoise(vW.xz/70.0+3.7), snoise(vW.xz/70.0-8.3)); float sd=uSeed.x*0.37+uSeed.y*0.11;
+    // Formlogik v4 (Georg 20.10.: „Flächen mit innerer Logik, die fließen“): Farbe folgt der großen Landform statt Zufallsklecksen –
+    // Talbänder fließen entlang der Mulden, Rücken und Kuppen heller, dazwischen der Grundton; Ränder organisch geschwungen, Kleckse nur als leise Variation
+    if(uOrg>0.5 && uFS>3.5){ float sd=uSeed.x*0.37+uSeed.y*0.11;
+      vec2 pw=vW.xz+8.0*vec2(snoise(vW.xz/120.0+3.7), snoise(vW.xz/120.0-8.3));
+      float pert=0.35*snoise(pw/60.0+sd)+0.15*snoise(pw/19.0-sd);
+      float cv=vCL/0.022+pert; float fwc=fwidth(cv)*1.2+1e-4;
+      float flow=smoothstep(0.55-fwc,0.55+fwc,cv), ridge=smoothstep(0.7-fwc,0.7+fwc,-cv);
+      float vrt=cover(blobL(pw+vec2(37.0,-11.0), 64.0, 0.45, 0.26, 0.46, sd+3.1, 0.10, 0.0));
+      vec3 o=mid; o=mix(o, o*1.06+0.012, vrt*0.6);
+      o=mix(o, mix(sand, low, 0.25), flow); o=mix(o, high, ridge);
+      float band=1.0-smoothstep(0.0,0.3,abs(cv-0.55));
+      float dts=0.8*cover(blobL(vW.xz, 6.5, 0.6, 0.12, 0.24, sd+1.3, 0.0, 1.0)+(1.0-band)*3.0);   /* Sprenkel nur an Talrändern */
+      o=mix(o, mix(o*0.86, cliff, 0.15), dts);
+      c = uWater>0.005 ? mix(c, o, smoothstep(uWater+0.03-w, uWater+0.05+w, hn)) : o;
+      idc=mix(vec3(0.6), vec3(0.2,0.5,0.9), flow); idc=mix(idc, vec3(0.95,0.8,0.2), ridge); idc=mix(idc, vec3(1.0), dts); }
+    else if(uOrg>0.5 && uFS>2.5){ vec2 pw=vW.xz+5.0*vec2(snoise(vW.xz/70.0+3.7), snoise(vW.xz/70.0-8.3)); float sd=uSeed.x*0.37+uSeed.y*0.11;
       vec3 o=mid;
       o=mix(o, low,  cover(blobL(pw, 120.0, 0.6, 0.32, 0.5, sd, 0.10, 0.0)));                      // große Flächen
       o=mix(o, high, cover(blobL(pw+vec2(37.0,-11.0), 64.0, 0.45, 0.26, 0.46, sd+3.1, 0.10, 0.0))); // mittlere, hellere Kleckse darin/darüber
@@ -561,7 +592,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     if(uSky2>0.5 && uGridWorld<0.5) gl_FragColor=vec4(applyAir(col, vW-vec3(uCarW.x,0.0,uCarW.y), l),1.0); else gl_FragColor=vec4(mix(col, sky, f),1.0);
   }`;
   U.uHole = { value: -1 }; U.uDrop = { value: 0 }; U.uNE = { value: 1.2 }; U.uCarW = { value: new THREE.Vector2() }; U.uGridWorld = { value: 0 }; U.uGS = { value: 8 }; U.uGShape = { value: 1 }; U.uGFill = { value: 0 }; U.uGCol = { value: 0 }; U.uClay = { value: 0 }; U.uGTex = { value: 0 }; U.uRing = { value: 1 };
-  U.uEdges = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 3 }; U.uKus = { value: 0 }; Object.assign(U, { uZenith: { value: new THREE.Color() }, uSkyMid: { value: new THREE.Color() }, uSkyGround: { value: new THREE.Color() }, uSunDir: { value: new THREE.Vector3(-0.55, 0.75, 0.35).normalize() }, uSunCol: { value: new THREE.Color() }, uAntiTint: { value: new THREE.Color(0.92, 0.95, 1.0) }, uAirTint: { value: new THREE.Color() }, uHzGlow: { value: 0.06 }, uSunHalo: { value: 0.35 }, uSky2: { value: 1 }, uFogB: { value: 0.003 }, uFogHa: { value: 0.004 }, uFogHb: { value: 0.06 }, uEdgeR: { value: 292 }, uMoon: { value: 1 }, uMoonDir: { value: new THREE.Vector3() } }); U.uKusA = { value: new THREE.Color() }; U.uKusB = { value: new THREE.Color() }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
+  U.uEdges = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 4 }; U.uKus = { value: 0 }; Object.assign(U, { uZenith: { value: new THREE.Color() }, uSkyMid: { value: new THREE.Color() }, uSkyGround: { value: new THREE.Color() }, uSunDir: { value: new THREE.Vector3(-0.55, 0.75, 0.35).normalize() }, uSunCol: { value: new THREE.Color() }, uAntiTint: { value: new THREE.Color(0.92, 0.95, 1.0) }, uAirTint: { value: new THREE.Color() }, uHzGlow: { value: 0.06 }, uSunHalo: { value: 0.35 }, uSky2: { value: 1 }, uFogB: { value: 0.003 }, uFogHa: { value: 0.004 }, uFogHb: { value: 0.06 }, uEdgeR: { value: 292 }, uMoon: { value: 1 }, uMoonDir: { value: new THREE.Vector3() } }); U.uKusA = { value: new THREE.Color() }; U.uKusB = { value: new THREE.Color() }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
   U.uDio = { value: new THREE.Vector4(0, 70, 11, 0) }; U.uDioB = { value: new THREE.Vector4(0, 1.4, 7.5, -Math.PI / 2) };
   U.uEdge = { value: new THREE.TextureLoader().load('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABLAAD/4QMpaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjAtYzA2MCA2MS4xMzQ3NzcsIDIwMTAvMDIvMTItMTc6MzI6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0REUzNjgzODFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0REUzNjgzOTFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRERTM2ODM2MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRERTM2ODM3MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAAwICAgICAwICAwUDAwMFBQQDAwQF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', (t) => { t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping; t.needsUpdate = true }) };
   const geo = new THREE.PlaneGeometry(SIZE, SIZE, SEG, SEG).rotateX(-Math.PI / 2);
@@ -718,14 +749,14 @@ ${GLSL_SKY}
     const r = { schema: 'kfb.terrain-recipe/1', status: 'Entwurf (Gelände-Probe)', seed: S.seed, units: 'm',
       form: { featureSize: S.scale, height: S.amp, octaves: S.oct, ridge: +S.ridge.toFixed(2), warp: +S.warp.toFixed(2), calmHillyVariation: +S.macro.toFixed(2) },
       stylize: { flatValleys: +S.valley.toFixed(2), plateauAt: S.plateau >= 0.999 ? null : +S.plateau.toFixed(2), terraces: S.steps, terraceEdge: +S.sharp.toFixed(2), etheringtonRound: S.ether, rockClusters: S.rockc, waterLevel: +S.water.toFixed(2) },
-      sky: { v2: S.sky2, backdrops: S.kul, body: ['keiner', 'knet-mond', 'ringplanet'][S.moon] }, color: { polkaDot: ['aus', 'biom', 'konfetti', 'netz'][S.kus], organicFields: S.org, surfaceStage: ['B makro', 'C +übergänge', 'D +sprenkel', 'v3'][S.fstage], biome: S.palA, biomeTravel: S.mix ? S.palB : null, bandSoftness: +S.soft.toFixed(2), cliffSlopeDeg: S.cliff, strata: S.strata, steppedLight: S.toon, palette: PALETTES[S.palA] },
+      sky: { v2: S.sky2, backdrops: S.kul, body: ['keiner', 'knet-mond', 'ringplanet'][S.moon] }, color: { polkaDot: ['aus', 'biom', 'konfetti', 'netz'][S.kus], organicFields: S.org, surfaceStage: ['B makro', 'C +übergänge', 'D +sprenkel', 'v3', 'v4 formlogik'][S.fstage], biome: S.palA, biomeTravel: S.mix ? S.palB : null, bandSoftness: +S.soft.toFixed(2), cliffSlopeDeg: S.cliff, strata: S.strata, steppedLight: S.toon, palette: PALETTES[S.palA] },
       world: { viewRings: S.rings, gridWorld: S.gridworld, gridSpacing: S.gs, gridShape: ['eckig', 'geschwungen', 'kreise'][S.gshape], gridFill: ['linien', 'schachbrett', 'schachbrett+linien'][S.gfill], checkerColors: S.gcol ? 'bunt' : 'zwei', checkerTexture: S.gtex ? 'edge3' : null, clayLook: S.clay,
         diorama: { on: S.dio, palette: S.dpal, plinthAndBerm: S.berm, colourRingSpeckle: S.ring, stoneBand: S.stones, props: S.props, grounding: S.ground, realShadows: S.shadows, contactCrumbs: S.crumbs, foregroundMass: S.fgmass, colouredEdges: S.edges }, testTempo: S.tempo },
       sky: { timeOfDay: S.tod, paintedClouds: S.painted, clayClouds: S.puffs, cloudCover: +S.cover.toFixed(2), contrails: S.trails },
       noise: 'simplex2d (Ashima/Gustavson), fbm mit Drehung je Oktave, Grat = (1-|n|)^2, Wechselzone = snoise(p/(6·featureSize))' };
     $('recipe').value = JSON.stringify(r, null, 2);
   }
-  function save() { try { localStorage.setItem('kfb-gelaende-probe-4', JSON.stringify(S)) } catch (e) {} }
+  function save() { try { localStorage.setItem('kfb-gelaende-probe-5', JSON.stringify(S)) } catch (e) {} }
   function setUI(p) {
     for (const k of NUM) if (p[k] != null) $(k).value = p[k];
     for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
@@ -746,7 +777,7 @@ ${GLSL_SKY}
   });
 
   // Start: gespeicherter Stand oder Vorlage
-  let stored = null; try { stored = JSON.parse(localStorage.getItem('kfb-gelaende-probe-4') || 'null') } catch (e) { stored = null }
+  let stored = null; try { stored = JSON.parse(localStorage.getItem('kfb-gelaende-probe-5') || 'null') } catch (e) { stored = null }
   setUI(PRESETS[DEFAULT]); $('grid').checked = false;
   if (stored && typeof stored === 'object') { setUI(stored); markPreset(null) } else markPreset(DEFAULT);
   update();
@@ -815,7 +846,7 @@ ${GLSL_SKY}
   window.__GU = GU;
   function addGrounding(mat) { const prev = mat.onBeforeCompile, prevKey = mat.customProgramCacheKey
     mat.onBeforeCompile = (sh, r) => { if (prev) prev.call(mat, sh, r); Object.assign(sh.uniforms, GU)
-      sh.vertexShader = GLSL_NOISE + '\n' + GLSL_HEIGHT + '\nuniform vec2 uGOff; varying float vGA; varying float vGD; varying vec3 vKW;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n  { vec4 lpG = vec4(transformed, 1.0); vec3 lnG = objectNormal;\n#ifdef USE_INSTANCING\n  lpG = instanceMatrix * lpG; lnG = mat3(instanceMatrix) * lnG;\n#endif\n  vec3 wpG = (modelMatrix * lpG).xyz; vKW = wpG + vec3(uGOff.x, 0.0, uGOff.y); vGA = wpG.y - hgt(wpG.xz + uGOff); vGD = normalize(mat3(modelMatrix) * lnG).y; }')
+      sh.vertexShader = GLSL_NOISE + '\n' + GLSL_HEIGHT + '\nuniform vec2 uGOff; varying float vGA; varying float vGD; varying vec3 vKW;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n  { vec4 lpG = vec4(transformed, 1.0); vec3 lnG = objectNormal;\n#ifdef USE_INSTANCING\n  lpG = instanceMatrix * lpG; lnG = mat3(instanceMatrix) * lnG;\n#endif\n  vec3 wpG = (modelMatrix * lpG).xyz; vKW = wpG + vec3(uGOff.x, 0.0, uGOff.y); { vec2 gp = wpG.xz + uGOff; float om = gOcMax; gOcMax = 3.0; float a0 = hraw(gp); gG = length(vec2(hraw(gp + vec2(2.34375, 0.0)) - a0, hraw(gp + vec2(0.0, 2.34375)) - a0)) / 2.34375; gOcMax = om; } vGA = wpG.y - hgt(wpG.xz + uGOff); vGD = normalize(mat3(modelMatrix) * lnG).y; }')
       sh.fragmentShader = 'uniform vec3 uContact; uniform float uGBand, uGOn, uKus; varying float vGA; varying float vGD; varying vec3 vKW;\n' + GLSL_NOISE + GLSL_KUS + '\n' + sh.fragmentShader.replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
   if (uKus > 0.5) { vec3 kd = kusDots(vKW, uKus > 2.5 ? 3.0 : 1.0); float lum = dot(diffuseColor.rgb, vec3(0.299, 0.587, 0.114)); vec3 dc = lum > 0.45 ? diffuseColor.rgb * 0.35 : mix(diffuseColor.rgb, vec3(1.0), 0.8); diffuseColor.rgb = mix(diffuseColor.rgb, dc, kd.x); }
   if (uGOn > 0.5) { vec3 cc = mix(diffuseColor.rgb * 0.5, uContact, 0.5); diffuseColor.rgb = mix(cc, diffuseColor.rgb, smoothstep(-0.1, uGBand, vGA)); diffuseColor.rgb = mix(diffuseColor.rgb, cc, smoothstep(0.1, -0.7, vGD) * 0.55); /* dunkle (nie schwarze) Kontaktzone unten + Unterseiten */ }`) }
