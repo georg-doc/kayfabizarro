@@ -760,6 +760,7 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     if(uShadowOn>0.5){ vec3 sc=vSC.xyz/vSC.w; if(sc.x>0.0 && sc.x<1.0 && sc.y>0.0 && sc.y<1.0 && sc.z<1.0){ float sv=0.0; vec2 tx=vec2(1.25/2048.0); /* 5×5 Proben: ruhige Kante ohne Treppen */
       for(int i=-1;i<=1;i++) for(int j=-1;j<=1;j++) sv+=shBil(sc.xy+vec2(float(i),float(j))*(1.5/2048.0), sc.z-0.00015);
       sv=smoothstep(0.0,1.0,sv/9.0); col=mix(mix(col*0.62, uContact, 0.38), col, sv); } }   // echter Schatten, eingefärbt (kein Schwarz)
+    if(uWater>0.005 && uGridWorld<0.5){ float wl=uWater*uAmp+0.15; float dz=vH-wl; float fw=fwidth(vH)*1.2+1e-3; float foam=smoothstep(-fw,0.0,dz)*(1.0-smoothstep(0.32,0.32+fw,dz)); col=mix(col, mix(peak,vec3(1.0),0.55)*(0.85+0.2*l), foam*0.9); }   /* Ufer: helles Schaumband, klar gezeichnet */
     col+=kfbLightPools(vW-vec3(uCarW.x,0.0,uCarW.y), N, c);   /* projizierte Lichtpfützen (kfb-light-pool.v1): folgen jeder Geländeform */
     if(uDbg>0.5 && uDbg<1.5) col=alb; if(uDbg>2.5) col=idc;   // Prüfansichten (gleiche Kamera): Grundfarbe · graue Form · Masken
     if(uSky2>0.5 && uGridWorld<0.5) gl_FragColor=vec4(applyAir(col, vW-vec3(uCarW.x,0.0,uCarW.y), l),1.0); else gl_FragColor=vec4(mix(col, sky, f),1.0);
@@ -813,13 +814,14 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
   });
 
   const waterMat = new THREE.ShaderMaterial({
-    uniforms: U, transparent: true, depthWrite: false,
+    uniforms: U, transparent: false, depthWrite: true,   // Cartoon-Wasser: deckend, klare Uferlinie (Georg: verwaschen wirkte wie ein Fehler)
     vertexShader: `uniform float uWater, uAmp; varying vec3 vP; void main(){ vec3 p=position; p.y=uWater*uAmp+0.15; vec4 w=modelMatrix*vec4(p,1.0); vP=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
-    fragmentShader: `${GLSL_NOISE}\nuniform vec3 uA_water, uB_water, uA_sky, uB_sky, uCam, uTint, uHorizon; uniform float uFogNear, uFogFar, uMix, uScale, uMoodK; uniform vec2 uSeed, uOffset, uCarW; varying vec3 vP;
+    fragmentShader: `${GLSL_NOISE}\nuniform vec3 uA_water, uB_water, uA_sky, uB_sky, uCam, uTint, uHorizon; uniform float uFogNear, uFogFar, uMix, uScale, uMoodK, uTimeT; uniform vec2 uSeed, uOffset, uCarW; varying vec3 vP;
 ${GLSL_SKY}
       void main(){ vec2 wp=vP.xz+uCarW; float t=uMix>0.5 ? smoothstep(-0.25,0.25,snoise(wp/(uScale*9.0)+uSeed*0.21+40.0)) : 0.0;
-        vec3 w=mix(uA_water,uB_water,t)*uTint, sky=mix(mix(uA_sky,uB_sky,t),uHorizon,uMoodK); float rip=0.04*snoise(wp*0.08);
-        float d=distance(uCam.xz, vP.xz); float f=smoothstep(uFogNear,uFogFar,d); if(uSky2>0.5){ float fa=smoothstep(uEdgeR*0.85,uEdgeR,d); gl_FragColor=vec4(applyAir(w*(1.0+rip), vP, 1.0), mix(0.82,1.0,fa)); } else gl_FragColor=vec4(mix(w*(1.0+rip), sky, f), mix(0.82,1.0,f)); }`,
+        vec3 w=mix(uA_water,uB_water,t)*uTint, sky=mix(mix(uA_sky,uB_sky,t),uHorizon,uMoodK); float rip=0.0;
+        { float ph=snoise(wp*0.025+vec2(uTimeT*0.01,0.0))*6.0+wp.x*0.05+wp.y*0.03; float ln=abs(fract(ph)-0.5); float lw=fwidth(ph)*1.2+1e-3; float streak=(1.0-smoothstep(0.03,0.03+lw,ln))*smoothstep(0.1,0.6,snoise(wp*0.012+3.0)); w=mix(w, mix(w,vec3(1.0),0.45), streak*0.8); }   /* gemalte Wellenstriche statt Unschärfe */
+        float d=distance(uCam.xz, vP.xz); float f=smoothstep(uFogNear,uFogFar,d); if(uSky2>0.5){ float fa=smoothstep(uEdgeR*0.85,uEdgeR,d); gl_FragColor=vec4(applyAir(w, vP, 1.0), 1.0); } else gl_FragColor=vec4(mix(w, sky, f), 1.0); }`,
   });
   const water = new THREE.Mesh(new THREE.PlaneGeometry(SIZE, SIZE, 1, 1).rotateX(-Math.PI / 2), waterMat); // mit Ringgitter auf 16-fache Größe skaliert water.frustumCulled = false; scene.add(water);
 
