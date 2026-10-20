@@ -1,0 +1,177 @@
+{
+  "deckId": "the_biological_metropolis",
+  "revision": "r6a",
+  "performers": [
+    {
+      "model": "CombatMech",
+      "asset": "KayKit_Mystery_Series6/1 - July 2024 - Combat Mech · Textur alt",
+      "role": "leicht dystopischer Cyborg-Cop auf Streife (Utopia/Dystopia-Rolle)"
+    }
+  ],
+  "residentHome": "sein Bezirk: die Stadt im Körper, auf Streife von Abteilung zu Abteilung",
+  "structure": "cyborg cop's patrol through his district; card beats in Alice mechanics (name, image, claim); his zero-tolerance ideology and false assumptions break on the cards; failure loop: nightly report to a president who never answers; the memo reveals there is only a press secretary; outro from card images",
+  "introType": "scene",
+  "synopsis": "A spoken-word number from a card deck that describes the human body as a city. It is performed by a small armored police cyborg on patrol through that city, for whoever happens to be there.",
+  "bestOfReason": [
+    "District 1, 2: the city runs itself, the citizen was never asked.",
+    "Patrol 5, 7, 10, 28: the departments that need no police.",
+    "His unit 11, 17, 19: memory, the fire that burns the city, friendly fire.",
+    "Threats inside 15, 18: copy errors and the competitor.",
+    "His training 20: built as a teenager.",
+    "Cold cases 21, 23, 24, 30: looking beats the book; the institution rejects the finding; the quack stays on the payroll.",
+    "His method 26: guessing to fill the gap.",
+    "Turn 6: no president, only a press secretary.",
+    "Landing 32: the body keeps the score."
+  ],
+  "omitted": {
+    "3": "manual card overlaps the cop's rulebook joke",
+    "4": "rules-heavy start",
+    "8": "second filter after the liver",
+    "9": "cut for length",
+    "12": "slow broadcast cut",
+    "13": "energy motor breaks the patrol",
+    "14": "doubles the memo",
+    "16": "abstract",
+    "22": "dilutes Semmelweis",
+    "25": "factory overlaps departments",
+    "27": "standing wave fights the landing",
+    "29": "stage meta-joke",
+    "31": "cut for length"
+  },
+  "orderReason": "Patrol order: district, departments, alarm (immune → inflammation → autoimmune), inside threats (DNA → cancer), training (thymus), cold cases, method (blind eye), memo (brain), score.",
+  "songLineChanges": [
+    {
+      "cardNumber": 6,
+      "rule": "A7",
+      "songLine": "The decision was already underway five hundred milliseconds before you made it.",
+      "reason": "500ms written out"
+    },
+    {
+      "cardNumber": 7,
+      "rule": "A7",
+      "songLine": "The Lungs: seventy square meters folded into your chest.",
+      "reason": "70 written out"
+    },
+    {
+      "cardNumber": 10,
+      "rule": "A7",
+      "songLine": "Eighty percent of the phone calls go up to the brain.",
+      "reason": "80% written out"
+    }
+  ],
+  "cues": [
+    {
+      "afterBeat": 1,
+      "cue": "police radio squelch on the backbeat"
+    }
+  ],
+  "beats": [
+    "Unit Nine, Biological Metropolis Police. Step behind the line. Whoever you are, you're in my district now.",
+    "Zero tolerance, full surveillance, every visitor a suspect. Every night I file my report to the president upstairs. He has never written back.",
+    {
+      "card": 1,
+      "pre": "My district:",
+      "text": "The City Inside, a rabbit cross-section revealing an industrial cityscape. It has been running the civilization while you were busy."
+    },
+    {
+      "card": 2,
+      "pre": "Its only resident:",
+      "text": "The Citizen, a hydra of animals erupting from the neck. You never once told this city what to do; it never once asked your permission.",
+      "post": "No permit for that. I let it slide."
+    },
+    {
+      "card": 5,
+      "pre": "Patrol, boiler room:",
+      "text": "The Heart, a badger on a massive drum kit. The brain can modify the rate; the brain cannot generate it. The badger drums alone.",
+      "post": "No license for the noise. I wrote it up."
+    },
+    {
+      "card": 7,
+      "pre": "Air supply:",
+      "text": "The Lungs, two giant broccoli trees exchanging blue and red birds: seventy square meters folded into your chest, the only manual override.",
+      "post": "The one door with a manual override. I keep my hand near it."
+    },
+    {
+      "card": 10,
+      "pre": "The tunnel:",
+      "text": "The Gut, zombie commuters boarding: eighty percent of the phone calls go up to the brain. The subway runs the city.",
+      "post": "Not one of them has a ticket. I checked."
+    },
+    {
+      "card": 28,
+      "pre": "After dark:",
+      "text": "The Night Shift, mice in janitor overalls cleaning inside a glowing skull. Sleep is the janitorial shift washing the thoughts out of the carpet.",
+      "post": "I stay awake. Somebody has to."
+    },
+    "Then the alarm. My unit.",
+    {
+      "card": 11,
+      "text": "The Immune System, armored rats with riot shields spotlighting a virus. A library of every murder attempt. It remembers things you have forgotten."
+    },
+    {
+      "card": 17,
+      "pre": "We go in hard:",
+      "text": "Inflammation, a fire salamander with a flamethrower: the response that heals the wound becomes the mechanism that burns the city.",
+      "post": "Block saved. Block gone. The paperwork says success."
+    },
+    {
+      "card": 19,
+      "pre": "Some nights it's us:",
+      "text": "Autoimmune, a crazed dog biting itself: the discrimination fails, not the weapon. The gun works fine; it's just pointed the wrong way."
+    },
+    {
+      "card": 15,
+      "pre": "The real threat is already inside:",
+      "text": "DNA Replication, a black spider weaving a double helix web: one error per billion letters. You have had cancer many times; the spider usually eats it.",
+      "post": "The spider has no badge, and a better record than mine."
+    },
+    {
+      "card": 18,
+      "pre": "When the spider misses:",
+      "text": "Cancer, a giant crab with a fortress built on its shell. Evolution occurring inside you. It is not a disease; it is a competitor."
+    },
+    {
+      "card": 20,
+      "pre": "My training?",
+      "text": "The Aging Thymus, an old elephant in a crumbling library. Your immune repertoire was built when you were a teenager. Hope you read good books.",
+      "post": "I read comics."
+    },
+    "Upstairs they keep cold-case files on the troublemakers.",
+    {
+      "card": 21,
+      "text": "Andreas Vesalius, a mole in an Elizabethan ruff stomping on a Galen textbook: he looked at the body instead of the book. Everyone else was wrong."
+    },
+    {
+      "card": 23,
+      "text": "Ignaz Semmelweis, a raccoon washing his hands in a lime bucket while silhouettes mock: he saved the mothers. The doctors committed him.",
+      "post": "I'd have arrested him too. Disturbing the peace."
+    },
+    {
+      "card": 24,
+      "pre": "Case closed by",
+      "text": "The Semmelweis Problem, a barn door bursting open with rays of light: the evidence is available, the implication is uncomfortable, we reject the finding."
+    },
+    {
+      "card": 30,
+      "pre": "Still on the payroll:",
+      "text": "The Humoralist, a tortoise carrying four potion bottles, one spilling: wrong in the facts, right in the vibe. It was the first Kayfabe."
+    },
+    {
+      "card": 26,
+      "pre": "My method:",
+      "text": "The Blind Eye: you have a hole in your vision. The brain fills it in with best guesses. Trust, but verify.",
+      "post": "I skip the verify."
+    },
+    "Then the president finally answered. A memo.",
+    {
+      "card": 6,
+      "text": "The Brain, five owls in judge wigs arguing over a burning map: the decision was already underway five hundred milliseconds before you made it. You are the press secretary, not the president."
+    },
+    "So there's nobody upstairs. Just a spokesman. I filed my report anyway.",
+    {
+      "card": 32,
+      "text": "The Scorekeeper, a sea urchin writing with a feather quill in a leather-bound ledger: the body keeps the score because the body is the score."
+    },
+    "Night shift, district nine: the badger drums, the mice mop, the spider eats the errors, and the cop with the minigun writes a report nobody reads."
+  ]
+}

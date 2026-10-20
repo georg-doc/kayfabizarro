@@ -1,0 +1,359 @@
+{
+  "schema": "kfb.songlines.r4",
+  "deckId": "the_biological_metropolis",
+  "deckTitle": "The Biological Metropolis",
+  "revision": "r6a",
+  "sourcePins": {
+    "deck": {
+      "path": "registry/assets/v1/decks/the_biological_metropolis.json",
+      "sha256": "76fe5fd89f90e1c2b66858d2ac1c962670d605b8a1b1aeb8866aabb7f9f58666",
+      "sourceCommit": "073b79c3fb4052f7f4691976663ffc0c9449f7f3"
+    },
+    "media": {
+      "path": "media/kfb/The_Biological_Metropolis_-_ADD_web_ID.pdf.json",
+      "rawPinned": "https://raw.githubusercontent.com/georg-doc/kayfabizarro/073b79c3fb4052f7f4691976663ffc0c9449f7f3/media/kfb/The_Biological_Metropolis_-_ADD_web_ID.pdf.json",
+      "sha256": "e0c6d91411eff14bfa2148f0c2c6b122f2893d217c444e0e9b9bcde5a750297b"
+    }
+  },
+  "performer": null,
+  "performers": [
+    {
+      "model": "CombatMech",
+      "asset": "KayKit_Mystery_Series6/1 - July 2024 - Combat Mech · Textur alt",
+      "role": "leicht dystopischer Cyborg-Cop auf Streife (Utopia/Dystopia-Rolle)"
+    }
+  ],
+  "residentHome": "sein Bezirk: die Stadt im Körper, auf Streife von Abteilung zu Abteilung",
+  "structure": "cyborg cop's patrol through his district; card beats in Alice mechanics (name, image, claim); his zero-tolerance ideology and false assumptions break on the cards; failure loop: nightly report to a president who never answers; the memo reveals there is only a press secretary; outro from card images",
+  "introType": "scene",
+  "selectionMode": "BEST_OF",
+  "bestOf": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    10,
+    11,
+    15,
+    17,
+    18,
+    19,
+    20,
+    21,
+    23,
+    24,
+    26,
+    28,
+    30,
+    32
+  ],
+  "bestOfReason": [
+    "District 1, 2: the city runs itself, the citizen was never asked.",
+    "Patrol 5, 7, 10, 28: the departments that need no police.",
+    "His unit 11, 17, 19: memory, the fire that burns the city, friendly fire.",
+    "Threats inside 15, 18: copy errors and the competitor.",
+    "His training 20: built as a teenager.",
+    "Cold cases 21, 23, 24, 30: looking beats the book; the institution rejects the finding; the quack stays on the payroll.",
+    "His method 26: guessing to fill the gap.",
+    "Turn 6: no president, only a press secretary.",
+    "Landing 32: the body keeps the score."
+  ],
+  "omitted": {
+    "3": "manual card overlaps the cop's rulebook joke",
+    "4": "rules-heavy start",
+    "8": "second filter after the liver",
+    "9": "cut for length",
+    "12": "slow broadcast cut",
+    "13": "energy motor breaks the patrol",
+    "14": "doubles the memo",
+    "16": "abstract",
+    "22": "dilutes Semmelweis",
+    "25": "factory overlaps departments",
+    "27": "standing wave fights the landing",
+    "29": "stage meta-joke",
+    "31": "cut for length"
+  },
+  "orderMode": "edited",
+  "orderReason": "Patrol order: district, departments, alarm (immune → inflammation → autoimmune), inside threats (DNA → cancer), training (thymus), cold cases, method (blind eye), memo (brain), score.",
+  "metaSkipped": [],
+  "cards": [
+    {
+      "cardNumber": 1,
+      "beats": [
+        3
+      ],
+      "cardText": "The City Inside, a rabbit cross-section revealing an industrial cityscape. It has been running the civilization while you were busy."
+    },
+    {
+      "cardNumber": 2,
+      "beats": [
+        4
+      ],
+      "cardText": "The Citizen, a hydra of animals erupting from the neck. You never once told this city what to do; it never once asked your permission."
+    },
+    {
+      "cardNumber": 5,
+      "beats": [
+        5
+      ],
+      "cardText": "The Heart, a badger on a massive drum kit. The brain can modify the rate; the brain cannot generate it. The badger drums alone."
+    },
+    {
+      "cardNumber": 7,
+      "beats": [
+        6
+      ],
+      "cardText": "The Lungs, two giant broccoli trees exchanging blue and red birds: seventy square meters folded into your chest, the only manual override."
+    },
+    {
+      "cardNumber": 10,
+      "beats": [
+        7
+      ],
+      "cardText": "The Gut, zombie commuters boarding: eighty percent of the phone calls go up to the brain. The subway runs the city."
+    },
+    {
+      "cardNumber": 28,
+      "beats": [
+        8
+      ],
+      "cardText": "The Night Shift, mice in janitor overalls cleaning inside a glowing skull. Sleep is the janitorial shift washing the thoughts out of the carpet."
+    },
+    {
+      "cardNumber": 11,
+      "beats": [
+        10
+      ],
+      "cardText": "The Immune System, armored rats with riot shields spotlighting a virus. A library of every murder attempt. It remembers things you have forgotten."
+    },
+    {
+      "cardNumber": 17,
+      "beats": [
+        11
+      ],
+      "cardText": "Inflammation, a fire salamander with a flamethrower: the response that heals the wound becomes the mechanism that burns the city."
+    },
+    {
+      "cardNumber": 19,
+      "beats": [
+        12
+      ],
+      "cardText": "Autoimmune, a crazed dog biting itself: the discrimination fails, not the weapon. The gun works fine; it's just pointed the wrong way."
+    },
+    {
+      "cardNumber": 15,
+      "beats": [
+        13
+      ],
+      "cardText": "DNA Replication, a black spider weaving a double helix web: one error per billion letters. You have had cancer many times; the spider usually eats it."
+    },
+    {
+      "cardNumber": 18,
+      "beats": [
+        14
+      ],
+      "cardText": "Cancer, a giant crab with a fortress built on its shell. Evolution occurring inside you. It is not a disease; it is a competitor."
+    },
+    {
+      "cardNumber": 20,
+      "beats": [
+        15
+      ],
+      "cardText": "The Aging Thymus, an old elephant in a crumbling library. Your immune repertoire was built when you were a teenager. Hope you read good books."
+    },
+    {
+      "cardNumber": 21,
+      "beats": [
+        17
+      ],
+      "cardText": "Andreas Vesalius, a mole in an Elizabethan ruff stomping on a Galen textbook: he looked at the body instead of the book. Everyone else was wrong."
+    },
+    {
+      "cardNumber": 23,
+      "beats": [
+        18
+      ],
+      "cardText": "Ignaz Semmelweis, a raccoon washing his hands in a lime bucket while silhouettes mock: he saved the mothers. The doctors committed him."
+    },
+    {
+      "cardNumber": 24,
+      "beats": [
+        19
+      ],
+      "cardText": "The Semmelweis Problem, a barn door bursting open with rays of light: the evidence is available, the implication is uncomfortable, we reject the finding."
+    },
+    {
+      "cardNumber": 30,
+      "beats": [
+        20
+      ],
+      "cardText": "The Humoralist, a tortoise carrying four potion bottles, one spilling: wrong in the facts, right in the vibe. It was the first Kayfabe."
+    },
+    {
+      "cardNumber": 26,
+      "beats": [
+        21
+      ],
+      "cardText": "The Blind Eye: you have a hole in your vision. The brain fills it in with best guesses. Trust, but verify."
+    },
+    {
+      "cardNumber": 6,
+      "beats": [
+        23
+      ],
+      "cardText": "The Brain, five owls in judge wigs arguing over a burning map: the decision was already underway five hundred milliseconds before you made it. You are the press secretary, not the president."
+    },
+    {
+      "cardNumber": 32,
+      "beats": [
+        25
+      ],
+      "cardText": "The Scorekeeper, a sea urchin writing with a feather quill in a leather-bound ledger: the body keeps the score because the body is the score."
+    }
+  ],
+  "songLineChanges": [
+    {
+      "cardNumber": 6,
+      "rule": "A7",
+      "songLine": "The decision was already underway five hundred milliseconds before you made it.",
+      "reason": "500ms written out"
+    },
+    {
+      "cardNumber": 7,
+      "rule": "A7",
+      "songLine": "The Lungs: seventy square meters folded into your chest.",
+      "reason": "70 written out"
+    },
+    {
+      "cardNumber": 10,
+      "rule": "A7",
+      "songLine": "Eighty percent of the phone calls go up to the brain.",
+      "reason": "80% written out"
+    }
+  ],
+  "cues": [
+    {
+      "afterBeat": 1,
+      "cue": "police radio squelch on the backbeat"
+    }
+  ],
+  "refrain": "",
+  "bpmException": null,
+  "visualMotifs": [
+    {
+      "cardNumber": 1,
+      "motif": "rabbit cross-section revealing industrial cityscape",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 2,
+      "motif": "human torso with hydra of animals erupting from neck",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 5,
+      "motif": "badger playing massive drum kit connected to steam boiler",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 6,
+      "motif": "five owls in judge wigs arguing over burning map in library",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 7,
+      "motif": "two giant broccoli trees exchanging blue and red birds",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 10,
+      "motif": "giant intestinal tube as subway tunnel, zombie commuters boarding",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 11,
+      "motif": "armored rats with riot shields spotlighting a cartoon virus",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 15,
+      "motif": "black spider weaving DNA double helix web with skull center",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 17,
+      "motif": "fire salamander with flamethrower burning house while firefighter lizard watches",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 18,
+      "motif": "giant crab with fortress structure built on shell at shoreline",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 19,
+      "motif": "crazed dog in spin biting itself surrounded by fire",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 20,
+      "motif": "old elephant in crumbling library among rotting shelves and yellow foam",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 21,
+      "motif": "mole in Elizabethan ruff holding bone, stomping on Galen textbook",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 23,
+      "motif": "raccoon in lab coat washing hands in lime bucket while silhouettes mock",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 24,
+      "motif": "barn door with BLÖDSINN sign bursting open with rays of light",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 26,
+      "motif": "camera lens puncturing canvas where tree image is painted over the gap",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 28,
+      "motif": "mice in janitor overalls cleaning inside glowing skull while brain sleeps in hammock",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 30,
+      "motif": "tortoise carrying four colored potion bottles, one spilling",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    },
+    {
+      "cardNumber": 32,
+      "motif": "spiky black sea-urchin creature writing with feather quill in leather-bound ledger",
+      "source": "pdf.json artworkPrompt",
+      "visualVerified": false
+    }
+  ]
+}

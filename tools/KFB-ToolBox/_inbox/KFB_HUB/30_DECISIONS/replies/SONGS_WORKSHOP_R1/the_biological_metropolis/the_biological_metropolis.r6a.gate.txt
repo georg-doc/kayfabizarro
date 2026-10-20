@@ -1,0 +1,50 @@
+# Gate-Bericht the_biological_metropolis.r6a · 2026-10-20
+gate song_gate.py sha256 1dd02afa466358e77e15eb7ba6518d4a614e493e425f492c6d1c99695f8c8917
+deck pin registry/assets/v1/decks/the_biological_metropolis.json sha256 76fe5fd89f90e1c2b66858d2ac1c962670d605b8a1b1aeb8866aabb7f9f58666
+media pin media/kfb/The_Biological_Metropolis_-_ADD_web_ID.pdf.json sha256 e0c6d91411eff14bfa2148f0c2c6b122f2893d217c444e0e9b9bcde5a750297b
+lyrics sha256 3a62bc2743da9ad59f4ec8d61c28fda611b082192c08487f43550c71ccbf1fa7 · 3948 Zeichen (Unicode len)
+style sha256 fb9502bb027614887f030418e58cfbb9367e0e2d80a8590c5996b263a3d46a53
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r6a.suno.txt --deck registry/assets/v1/decks/the_biological_metropolis.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r6a.songlines.json --media media/kfb/The_Biological_Metropolis_-_ADD_web_ID.pdf.json --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_BESTOF_R1
+exit 0
+song_gate R4.2 lyrics · the_biological_metropolis.r6a.suno.txt · 3948 Zeichen · 19/19 Karten · Intro 2 · Brücken 4 · Outro 1 · Performer-Einschübe 15 · R4-Zuordnung
+lyrics sha256 3a62bc2743da9ad59f4ec8d61c28fda611b082192c08487f43550c71ccbf1fa7
+WARN A4: Karte 1: Kartenteil 132 Zeichen (Richtwert 80-95): 'The City Inside, a rabbit cross-section revealing '
+WARN A4: Karte 2: Kartenteil 134 Zeichen (Richtwert 80-95): 'The Citizen, a hydra of animals erupting from the '
+WARN A4: Karte 5: Kartenteil 127 Zeichen (Richtwert 80-95): 'The Heart, a badger on a massive drum kit. The bra'
+WARN A4: Karte 7: Kartenteil 138 Zeichen (Richtwert 80-95): 'The Lungs, two giant broccoli trees exchanging blu'
+WARN A4: Karte 10: Kartenteil 115 Zeichen (Richtwert 80-95): 'The Gut, zombie commuters boarding: eighty percent'
+WARN A4: Karte 28: Kartenteil 144 Zeichen (Richtwert 80-95): 'The Night Shift, mice in janitor overalls cleaning'
+WARN A4: Karte 11: Kartenteil 146 Zeichen (Richtwert 80-95): 'The Immune System, armored rats with riot shields '
+WARN A4: Karte 17: Kartenteil 129 Zeichen (Richtwert 80-95): 'Inflammation, a fire salamander with a flamethrowe'
+WARN A4: Karte 19: Kartenteil 134 Zeichen (Richtwert 80-95): 'Autoimmune, a crazed dog biting itself: the discri'
+WARN A4: Karte 15: Kartenteil 150 Zeichen (Richtwert 80-95): 'DNA Replication, a black spider weaving a double h'
+WARN A4: Karte 18: Kartenteil 129 Zeichen (Richtwert 80-95): 'Cancer, a giant crab with a fortress built on its '
+WARN A4: Karte 20: Kartenteil 142 Zeichen (Richtwert 80-95): 'The Aging Thymus, an old elephant in a crumbling l'
+WARN A4: Karte 21: Kartenteil 145 Zeichen (Richtwert 80-95): 'Andreas Vesalius, a mole in an Elizabethan ruff st'
+WARN A4: Karte 23: Kartenteil 135 Zeichen (Richtwert 80-95): 'Ignaz Semmelweis, a raccoon washing his hands in a'
+WARN A4: Karte 24: Kartenteil 153 Zeichen (Richtwert 80-95): 'The Semmelweis Problem, a barn door bursting open '
+WARN A4: Karte 30: Kartenteil 135 Zeichen (Richtwert 80-95): 'The Humoralist, a tortoise carrying four potion bo'
+WARN A4: Karte 26: Kartenteil 106 Zeichen (Richtwert 80-95): 'The Blind Eye: you have a hole in your vision. The'
+WARN A4: Karte 6: Kartenteil 190 Zeichen (Richtwert 80-95): 'The Brain, five owls in judge wigs arguing over a '
+WARN A4: Karte 32: Kartenteil 141 Zeichen (Richtwert 80-95): 'The Scorekeeper, a sea urchin writing with a feath'
+WARN A2: eigener Text (Rahmen + Performer) 33% aller Wörter (Richtwert <= 30%)
+WARN C11: Wort 'district' 3x im eigenen Text
+WARN C11: Wort 'report' 3x im eigenen Text
+WARN C11: Wort 'upstairs' 3x im eigenen Text
+WARN C11: Wort 'spider' 3x im eigenen Text
+REVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [1, 2, 5, 7, 10, 28, 11, 17, 19, 15, 18, 20, 21, 23, 24, 30, 26, 6, 32]
+REVIEW B6: Performer-Text in 79% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)
+INFO S2: deck gepinnt 76fe5fd89f90
+INFO S2: media gepinnt e0c6d91411ef
+INFO C9B: Bewohner verifiziert: CombatMech (KayKit_Mystery_Series6/1 - July 2024 - Combat Mech · Textur alt)
+INFO C9: Decktitel-Wörter in Beat [1]
+INFO B7b: Rahmen-Beat 26 ruft Karte 28 auf (Callback)
+INFO E16b: kein Ton-Eintrag für dieses Deck; Deck-Hinweise in SONG_SPEC E16b prüfen
+PASS
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r6a.style.txt --deck registry/assets/v1/decks/the_biological_metropolis.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r6a.songlines.json --batch tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r5a.style.txt tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r5b.style.txt
+exit 0
+song_gate R4.2 style · the_biological_metropolis.r6a.style.txt · Familie A funk · 2 Variante(n) · 372, 269 Zeichen
+PASS
+
