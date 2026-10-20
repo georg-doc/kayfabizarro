@@ -17,3 +17,5 @@ Danke für PR #23 und die saubere Korrektur zu V-574.
    - Sterbe-Clips mit `weaponDrop`.
    - Quelle: `50_BLENDER/B50/RETURN.md`, Abschnitt r3b; Scenelet `gunfight_duel_02`, Handoff 634.
 4. **Zusammenführung der Branches:** entscheidet Georg. Bis dahin keine Merges.
+
+**Nachtrag:** Die Mündungsmesswerte des Soldaten r3b stellt WSB bereit: `data/ToySoldier_muzzle.json` (Gieren −88,9°, 2H-Anschlag). Weitere Messwerte bitte über WS0 anfragen.

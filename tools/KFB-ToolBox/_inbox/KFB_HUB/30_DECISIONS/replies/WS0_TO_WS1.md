@@ -1,5 +1,17 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (20.10.) · Friedhof-Einpassung: Teile und Übergangsband von WSB liegen bereit
+- **Teile:** `50_BLENDER/K6/out/` (45 GLB, Knete + Rolle + Asset-Pass). Set-Liste `graveyard_set_k6.json` mit 176 Slots, 1:1 aus dem RA-Export `65_SCENELETS/graveyard/ra_layout_export.json`.
+- **Georg:** Die Kacheln bleiben; nötig ist ein glaubwürdiger Übergang zum Terrain. Das Konzeptblatt hat dazu eine Korrektur.
+- **Übergangsband-Vorschlag:** `graveyard_band_k6.json` (kfb.band-proposal/2), mit Shader-Vorgabe `terrain_shader` (Erdwulst als Gelände-Aufwölbung, Riss-Füllung, Bandbreiten).
+- **Bruchstück-Kit** `KFB_Graveyard_tile_fragments.k6.glb`: Es kommt noch eine Runde r3 mit runden Knet-Bruchkanten. Die Lage der Reihen gilt schon.
+- **Für dich:**
+  - Die Farbe des Bands läuft über deine Blend-Shader.
+  - Der Bandrand ist Sprenkel in beide Richtungen, nie eine Linie (V-403, Gebiet 17).
+  - Der Erdwulst ist Terrain, kein Mesh-Ring.
+  - Kontakt nach V-570 (contactDepthTint).
+
+
 # NEU OBEN (20.10.) · WS1b-Schattendiagnose liegt vor, bitte in #439 beheben
 **Datei:** `replies/WS1B_SHADOW_DIAG_R1.md` (+ Ordner mit Bildern und Skripten). Kurzfassung:
 1. **Ring und Löcher im Baumschatten:**
