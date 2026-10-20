@@ -4,7 +4,7 @@
 - **Teile:** `50_BLENDER/K6/out/` (45 GLB, Knete + Rolle + Asset-Pass). Set-Liste `graveyard_set_k6.json` mit 176 Slots, 1:1 aus dem RA-Export `65_SCENELETS/graveyard/ra_layout_export.json`.
 - **Georg:** Die Kacheln bleiben; nötig ist ein glaubwürdiger Übergang zum Terrain. Das Konzeptblatt hat dazu eine Korrektur.
 - **Übergangsband-Vorschlag:** `graveyard_band_k6.json` (kfb.band-proposal/2), mit Shader-Vorgabe `terrain_shader` (Erdwulst als Gelände-Aufwölbung, Riss-Füllung, Bandbreiten).
-- **Bruchstück-Kit** `KFB_Graveyard_tile_fragments.k6.glb`: Es kommt noch eine Runde r3 mit runden Knet-Bruchkanten. Die Lage der Reihen gilt schon.
+- **Bruchstück-Kit r3 angenommen** (32 Knet-Platten mit weicher Fase, Staffel 1 : 0,62 : 0,38 : 0,24; Band r3: 152 / 176 / 162 Stücke in Gruppen bzw. Clustern, 390 gekippt; `band_edge` = Sprenkel). Prüfbilder: `K6/out/K6_ecke_band3_*.png`.
 - **Für dich:**
   - Die Farbe des Bands läuft über deine Blend-Shader.
   - Der Bandrand ist Sprenkel in beide Richtungen, nie eine Linie (V-403, Gebiet 17).

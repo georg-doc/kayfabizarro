@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- WSB K6 Band r3 angenommen: Bruchstücke als Knet-Platten (weiche Fase, wellige Kontur, Staffel), Reihen in nest-Gruppen, Splitter in 48 Clustern, 390 gekippt; Bandrand-Vorgabe Sprenkel. An WS1 zur Einpassung. WSB-Liste leer.
 - WSB K6 Friedhof angenommen (45 Teile, Set 176, 5 Praktikals); Übergangsband r2 aus Kachel-Bruchstücken (Georg-Korrektur zu r1: Steine wirkten draufgesetzt) – abgeleitete Bruchstücke unter V-574 ok, aber r3 mit runden Knet-Bruchkanten (keine Prismen/Fünfecke), Cluster statt Konfetti, Bandrand als Sprenkel. Band + Shader-Vorgabe an WS1.
 - WSA Combat Arena R2 (PR #23: Waffenprofil-Prüfer, 24 Action-Zuordnungen, 74/74 grün) beantwortet (replies/WS0_TO_WSA_COMBAT_ARENA_R2.md): Scenelet-Spec R2 §(6) um V-574-Ausnahme ergänzt; Mündungsfeuer = Action-Figure Muzzleflash (primär) / Muzzleflash_Long (sekundär) as-is am KFB_Muzzle (Georg 17.10.), Laser/Magie als Varianten; erster Consumer Soldat r3b. WSB K7 r3: Felsen stone_env #af7161, Kuppel gewinnt im Graubild.
 - WS1b Fluff-Einsammel-Flug (V-340) gebaut (ws1b/fluff-pickup bcf49f0: Knet-Kopie fliegt in den R5f-Slot, Squash-Bounce, Buchung beim Aufsammeln, reduced motion = sofort, ≤ 8 im Flug; Tests grün; Clip WS1B_FLUFF_PICKUP_R1/) → WS0-Go für Push + kombinierten Vorschau-Build. Offen HUD R5f/R6: Zähler im Phone-Layout.
