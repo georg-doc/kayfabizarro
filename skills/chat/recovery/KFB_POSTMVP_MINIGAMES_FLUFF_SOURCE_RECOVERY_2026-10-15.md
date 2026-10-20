@@ -152,3 +152,7 @@ Additive companion to R0.6: [Resident Life Choreography x KKIT R0.7](./KFB_RESID
 
 ## R0.8 · AI Town / Generative Agents / Yuka research reconstruction · 2026-10-20
 Read [full provenance, donor ranking & KFB architecture](./KFB_AI_TOWN_GENERATIVE_NPC_DONOR_RECONSTRUCTION_R0_8_2026-10-20.md) and [WS0 intake](./WS0_AI_TOWN_NPC_SOCIAL_MEMORY_RESEARCH_INTAKE_R0_8_2026-10-20.md). Confirms older AI Town/Social-AIDA/NPC-LIFE line, external AI Town conversation states, Smallville memory/reflection/planning and Yuka steering/perception; no second runtime/nav/LLM swarm. Alleged NotebookLM notebook NOT located/verified. Prior PR #210 and #272 open; only proposal. Single WS0_RESIDENT_LIFE_ESCALATION_R0_6_INTAKE gate continues.
+
+
+## R0.9 · Google Doc Research R1 / NotebookLM research corpus, 2026-10-20
+See [Research Doc handoff](./KFB_RESIDENT_RESEARCH_GOOGLE_DOC_NOTEBOOKLM_HANDOFF_R0_9_2026-10-20.md): created native tabbed Google Doc with research background (Develop Character Personality), AI Town/Smallville/Yuka, intent/POIs, conversation, Lean Memory, KFB WS0 and source index. This is editorial research, not an additional technical runtime SSOT. NotebookLM not yet created. One existing WS0 intake gate preserved.
