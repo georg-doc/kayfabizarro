@@ -3,6 +3,84 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 116 · 21.10. · Rückblick für WS0 (Pause seit 20.10. abends) · WS1-Stand · Querblick auf alle Stränge · Plan für das Reset-Fenster
+
+**Kurz:** WS1 hat die Gelände-Probe produktreif gemacht (Spiel-Physik und -Kamera, Island-Kit-Wasser, Schatten nach Konzept R1) und terrain3 hinter einem Schalter ins Spiel gebracht. Georg will das Reset-Fenster bis Do. 02:00 für parallele externe Prüfungen nutzen. Dafür braucht es fünf WS0-Entscheidungen (unten).
+
+### WS1 seit §115
+- **Probe** (`ws1/preview` @f677fee, Artefakt v25):
+  - **Fahrzeug:** Hoch-/Weitsprung je nach Bewegung, Landung weicher (k2t, Spiel `terrain/439` @eac5cb0, volle Testreihe grün, m3-c-Bahn um 1,2 m verkürzt, Grund in der Commit-Nachricht).
+  - **Kein Pendeln in Mulden:** Berg-Halt bis ~35° nur in der Probe; das Spiel behält 8°.
+  - **Kamera** folgt der Physik-Höhe.
+  - **Rumpf** dringt nie in Hänge ein (Darstellung hebt an, gemessen 0 von 1200 Bildern).
+- **Schatten nach Konzept R1** (Entwurf §111, Georg-OK §112):
+  - Boden-AO ohne Treppen (1024², weiche Interpolation).
+  - Kanten **kontakthärtend** (PCSS-artig: ~3,5 cm Halbschatten je Meter Abstand).
+  - **Schattenlicht getrennt von der sichtbaren Sonne:** geworfen wird nie flacher als 42°; Himmel und Geländelicht folgen dem Regler. Auslöser: Georg sah bei Sonnenstand 12° einen riesigen, verwaschenen Wagenschatten.
+  - **Bitte prüfen:** Ist die Trennung von Schattenlicht und Sonne kanonfähig (Konzept R1 Frage 4/5)?
+- **Wasser = KFB Island Kit F2** (Georg 21.10.: „1:1 einbauen“):
+  - Fragment-Shader **erzeugt, nicht abgeschrieben** aus `kit/fluid.js` (`probe/port/gen_fluid.py`), Texturen vom Kit-Pin 6c70a46.
+  - Uferböschung nach dem Kit-Querschnitt.
+  - Ufer als **gemalte Stufen** (Georg: „verschmierte Übergänge“ → sauber mit Fließfarben): Flachwasser | Kante | Tiefe aus dem Kit-Shader über einen gestuften Uferabstand, nasser Saum als hartes Band, durch das die Fließfarben laufen.
+  - Georg: Wasser morpht langsamer als das Gelände, „sehr KFB“, bleibt so.
+  - Quelle: Claude-Design-Projekt „KFB Island Kit R1“ (Export in Georgs Downloads, entpackt `~/kfb-ws1/research/island-kit/`).
+- **Offen WS1:**
+  1. Flüsse F2 (Kit: `flowPath`/`lakeRiver`/`fieldWater`); Georg entscheidet: automatisch aus Seen bergab oder gezielt gesetzt.
+  2. Sonnenschatten auf Wasser.
+  3. Heller Streifen oben im Bild (Quelle offen).
+  4. Leistung (Georg 9–15 fps).
+  5. Wasser und terrain3 per Generator ins Spiel.
+- **QA-Regel neu (WS1-intern):** Visuelle Fixes erst melden, wenn sie in Georgs Tab mit seinen gespeicherten Reglern geprüft sind. Bei ihm: Sonnenstand 12°, „Erdung“ aus.
+
+### Querblick: was in anderen Strängen passiert ist (Repo-Stand 21.10. nachts)
+- **WS0-Register** bis V-582:
+  - V-571 bis V-575: prop_buried, Strahler-Bug, Soldat, Kit-Waffen, R12/R13 als Kanon-Anhang B.
+  - V-576: Song-Workshop als Prozess.
+  - V-577/V-578: Abschluss-Grammatik, freies Ende.
+  - V-579 bis V-582: Mündung, Waffen-Clips.
+  - **V-580:** WS-NPC als dritte WS1-Sitzung (Brief `BRIEF_WS1_NPC_LIFE_R1.md`, Gate R1: eine Zone, ≥ 55 fps). Diese Sitzung läuft laut ListAgents **nicht**.
+- **Songs:**
+  - `ws-song/workshop-r1` (21.10.): Post-mortem, alle Piloten r4a–r8a FAIL nach Georg. Übergabe an einen frischen Song-Chat, Status §23 für WS0.
+  - Daneben: `wsa/songs-bestof-r1` (Comic-Performance-Workshop, Alice-Beispiel) und 10 Zweige `songs/*-r4/r5` mit grünen Gates (17./18.10.).
+- **Audio (WSA, 17./18.10.):**
+  - ElevenLabs-SFX (Antrieb, Blasen, UFO, Fluff)
+  - Racer-Motor-Raster V-378
+  - Gänge, Flug/Crash, Kampf
+  - Ambience V-458 (36 CC0)
+  - Bisher in keiner Probe und keinem Spiel-Look angeschlossen. Darum geht es in Prüfer-Brief D.
+- **Marketing:**
+  - `planning/kfb-public-beta-reddit-transmedia-r1` (18.10., Draft PR #422, nichts veröffentlicht).
+  - Lokal `~/kfb-ws1/media-studio` (Remotion-Agent und Critic, a8c29a7), läuft als eigene Sitzung („KFB Media Studio“, gerade aktiv). Liefert nur Entwürfe.
+- **Recherche:** NotebookLM-Narrativ-Kritik, Nathal Six Dimensions, Deck-Spender, Fluff-Linguistik, Comic Banter (18./19.10., alle mit Return).
+- **Animation / Blender MCP / Mac mini:**
+  - `planning/kfb-kaykit-cartoon-performance-r1` (20.10.): Motion-Zensus und **Blender-MCP-Handoff R2**. Nächstes Gate: Original-Medium-Hieb isoliert in Blender messen, dann A/B/C. **Wartet auf Freigabe und Combat-Owner-Zweig.**
+  - Letzte Mac-mini-Lieferungen B1/B2/B7 am 17.10.
+  - **Es laufen keine Jobs.**
+- **HUD:** `assets/kfb-hud-r5f` (18.10.) liegt bei WS0 zur Einplanung. Georg will das volle HUD als Screenshot-Basis für Gemini-Icons (§114).
+- **WS1b:** `ws1b/preview-start` auf combo/r2 (20.10.), sonst ruhig.
+
+### Plan für das Reset-Fenster (Georg 21.10.: volle Kapazität bis Do. 02:00)
+- **Vier externe Prüfer-Sitzungen**, lesend, je mit Bericht.
+  - Briefs: `WS1_AUDIT_BRIEFS_R1.md` (dieser Zweig).
+  - Rollen:
+    - A: Art Director
+    - B: externer Critic/QA
+    - C: Game-Dev-Code-Audit und Leistung
+    - D: Cartoon-VFX und SFX, inklusive der vorhandenen WSA-Audio-Lieferungen
+  - Umgesetzt wird erst nach Georgs Auswahl, durch die WS1-Owner-Sitzung.
+- **WS1-Owner:** Flüsse F2, Schatten auf Wasser, heller Streifen; danach Spiel-Port.
+- **Mac mini** (Vorschlag, braucht WS0/Georg-Go):
+  1. KayKit-Hieb-Beweis nach Handoff R2.
+  2. FrizzleBob-Brauen in der ToolBox (ragen hinten über den Kopf, §111).
+  3. Kontakt-Geometrie und Bodenübergänge in Blender nach Schattenkonzept R1 (b).
+
+### Bitte entscheiden (WS0)
+1. Schattenkonzept R1, die fünf offenen Fragen (§111). Neu dazu: Ist ein vom Sonnenstand getrenntes Schattenlicht ≥ 42° kanonfähig?
+2. `createContactAO` im M1-Standard-Look (Kanon-Verstoß, §111): entfernen oder Ausnahme?
+3. Island-Kit-Wasser als WS1-Standard und Anschluss ans Kit-Register (Credit-Eintrag „KFB Island Kit“ als eigenes Werk).
+4. Starten WS-NPC (V-580) und der Mac-mini-Auftrag R2 jetzt im Reset-Fenster?
+5. Audio: Dürfen WSA-Lieferungen (CC0 und eigene ElevenLabs-Generierungen) in Probe und Spiel? Private Teile bleiben draußen.
+
 ## 115 · 21.10. · Georgs Lizenzregel + Creator Credits (löst die Lizenzfragen aus §114)
 
 Georg 21.10. (wörtlich sinngemäß): „Es werden mehr Token und Testläufe auf Lizenzfragen verschwendet als auf produktive Slices.“ Regel ab sofort für WS1:
