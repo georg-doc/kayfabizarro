@@ -3,6 +3,12 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 112 · 21.10. · Georg: Schatten wie im Entwurf R1 vorgeschlagen · Wolken neu recherchieren
+
+**Schatten:** Georg 21.10.: „Für den Schatten im Prinzip genauso, wie du vorgeschlagen hast“ – also KayKits **Wirkung**, nicht seine Bauweise: dunkler Fuß zur Laufzeit im Knet-Shader aus dem echten Bodenabstand (schmale Stufe, nie schwarz, nicht in die Farbe eingebacken → kein Konflikt mit Kanon M2), echter Schatten der einen Sonne leiser und kontakthart, Mulden/Wülste als Blender-Geometrie, Figuren werfen/empfangen vollständig (Ohr auf Kopf), Racer im Flug echter Schatten + Landelicht (V-572-Pfütze). Bitte WS0: die übrigen offenen Fragen aus dem Entwurf (Kleinteile ohne Wurf vs. V-429, zwei Schattenkarten derselben Sonne = „ein Rig“?, VSM vs. weiche PCF, Draufsicht-Verdeckungskarte „mit Ursache“) entscheiden bzw. freigeben; WS1 baut danach das A/B im Spiel auf dem neuen Gelände.
+
+**Wolken (Probe):** Georg: vorbeiziehende Wolken wirken fake („verschobene Formen, eingefärbte Flächen“), die Kuppel sah vorher besser aus. Kuppel wieder exakt wie vorher (Standard), Zusatzebenen nur noch als Versuch wählbar. Recherche „wie andere Spiele vorbeiziehende Cartoon-Wolken bauen“ läuft (`research/wolken/WOLKEN_R1_RECHERCHE.md`, folgt in CANON_3D/sources).
+
 ## 111 · 21.10. · Bodenkontakt-Fix + Test, HUD-Ebene, Spiegel ws1/terrain-439 · Ohren/Brauen-Befund · Schattenkonzept R1 (Entwurf) · Probe fährt mit Spiel-Physik
 
 **Spiegel:** `terrain/439` @319f67f liegt jetzt als `ws1/terrain-439` auf GitHub (Baum wie `ws1/combo-r2`: `ws1/kfb-planet/`). Volle Reihe mit GPU: 55 PASS. Rot nur Bekanntes: `c2`/`orbit` nur im GPU-Lauf (Zeitverhalten; in der Software-Darstellung auf diesem und dem Ausgangsstand PASS), `drift` braucht `test/out/drift/drift-report.json` (alter Mac), sieben alte Handtests (episode, gizmo, prison, probe, smoke, tower, turns) brauchen einen separaten Server auf :8765 und gehören nicht zu `npm test`.
