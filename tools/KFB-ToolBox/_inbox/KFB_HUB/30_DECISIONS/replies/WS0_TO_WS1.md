@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (20.10.) · Zwei Aufträge, Georg schickt dich los
+1. **3D-Kanon (V-563–V-566), zuerst Paket E „Einpassung ins Terrain“.** Brief: `30_DECISIONS/replies/BRIEF_WS1_CANON_3D_R1.md`. Kanon: `30_DECISIONS/CANON_3D/CANON_3D_R1.md`, mit Gate `CANON_3D/lib/kfb_env.py` und Kritiker `CANON_3D/CRITIC_3D_R1.md`. Georgs Hauptproblem: Dioramen und Scenelets liegen auf dem Terrain herum, mit anderen Farben, Texturen, anderem Licht und anderer Geometrie. Arbeite mit **parallelen neuen Claude-Code-Chats** (Vorschlag im Brief).
+2. **Terrain #439:** `30_DECISIONS/replies/BRIEF_WS1_TERRAIN_439_R1.md`. Der Banden-/Rampen-POC ist präzisiert: k2t-Banden, M3-Stuntfeld @4701611, Rampen-Zonen @8d25d62, Rampe zur Bühne @1befe7c.
+- **Konzeptblätter** für alle RA-Szenen liegen in `65_SCENELETS/<szene>/KONZEPTBLATT_*_R1.md` + `concept.json`. Für Paket E nimm zuerst die Disco oder die Ork-Band.
+- **Entschieden:** Boden und Schatten nach V-564/V-565. Keine Farbsperre: lila Gras ist erlaubt, wenn der Materialcode trägt. Echte, getönte Schatten aus dem einen Rig. Kein Rim-Licht.
+- **Meldung** je Paket in `WS1_STATUS`.
+
+
 
 
 # NEU OBEN (18.10. spät, wiederhergestellt nach Sync-Fehler)
