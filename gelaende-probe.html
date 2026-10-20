@@ -135,6 +135,8 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
       <fieldset>
         <legend>Welt und Tempo</legend>
         <label class="check"><input type="checkbox" id="rings"> Ringgitter: Sicht bis ~5 km statt 300 m</label>
+        <label class="check"><input type="checkbox" id="disco"> Disco-Probe (V-572): Kugel mit Strahlen auf welligem Gelände</label>
+        <div class="row"><label for="discoMode">Strahler-Darstellung</label><select id="discoMode"><option value="1">neu: projiziert (kfb-light-pool.v1)</option><option value="0">alt: Scheiben auf fester Höhe</option></select></div>
         <label class="check"><input type="checkbox" id="vox"> Voxel-Welt (instanziert: ein Klotz je Bodensäule)</label>
         <div class="row"><label for="voxs">Voxel-Kante</label><select id="voxs"><option value="1">1 m</option><option value="2" selected>2 m</option><option value="3">3 m</option><option value="4">4 m</option></select></div>
         <div class="row"><label for="voxh">Höhenstufe</label><select id="voxh"><option value="0.5">0,5 m</option><option value="1" selected>1 m</option><option value="2">2 m</option><option value="-1">= Kante (Würfel)</option></select></div>
@@ -360,12 +362,120 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(55, 1.6, 0.5, 14000);
   const SIZE = 600, SEG = 256;
+  /* KFB_LIGHT_POOL_V1_BEGIN – Kopie von research/v572/kfb-light-pool.v1.js (Quelle), nicht hier ändern */
+// kfb-light-pool.v1 · WS1 · V-572 (Strahler-Bug global, Georg 20.10.)
+// Lichtpfützen als echte Kegel-Projektion auf jeden Empfänger (Terrain, Knete, Figuren) statt flacher Scheiben auf fester Höhe,
+// sichtbare Lichtkegel enden weich vor dem Kontakt (Länge per Boden-Abtastung oder Raycast, Alpha-Rampe am Ende) – keine harte Schnittlinie.
+// Farben und Werte kommen 1:1 aus der Quelle; Emission nur dort, wo der Kegel trifft (kein Leuchten anderer Flächen).
+//
+// Benutzung (three r147 global oder r186 als Modul):
+//   const LP = createLightPoolKit(THREE, { max: 16 })
+//   LP.injectStandard(material)            // MeshStandard/Lambert/Toon/Physical: Pfützen auf diesem Material
+//   terrainShader: '...' + LP.glsl + '...'  // eigene ShaderMaterials: Object.assign(uniforms, LP.uniforms), dann
+//                                           // col += kfbLightPools(worldPos, normal, albedo);
+//   LP.setPools([{ origin, dir, angle, soft, color, intensity, range }])   // jedes Bild oder bei Änderung
+//   const beam = LP.makeBeam({ color, opacity, radius }); LP.aimBeam(beam, origin, dir, length)
+//   const len = LP.hitDistance(origin, dir, { ground: (x, z) => y, objects: [...], maxLen })
+const LP_VERSION = 'kfb-light-pool.v1'
+
+function createLightPoolKit(THREE, { max = 16 } = {}) {
+  const MAX = Math.max(1, Math.min(32, max | 0))
+  const v4 = () => Array.from({ length: MAX }, () => new THREE.Vector4())
+  const uniforms = { uLPo: { value: v4() }, uLPd: { value: v4() }, uLPc: { value: v4() }, uLPr: { value: v4() }, uLPn: { value: 0 } }
+
+  // o.xyz Ursprung, o.w cos(Außenwinkel) · d.xyz Richtung, d.w cos(Innenwinkel) · c.rgb Farbe (linear), c.w Stärke · r.x Reichweite
+  const glsl = `
+  #ifndef KFB_LP
+  #define KFB_LP
+  #define KFB_LP_MAX ${MAX}
+  uniform vec4 uLPo[KFB_LP_MAX]; uniform vec4 uLPd[KFB_LP_MAX]; uniform vec4 uLPc[KFB_LP_MAX]; uniform vec4 uLPr[KFB_LP_MAX]; uniform int uLPn;
+  vec3 kfbLightPools(vec3 wp, vec3 n, vec3 albedo){
+    vec3 acc = vec3(0.0);
+    for (int i = 0; i < KFB_LP_MAX; i++) {
+      if (i >= uLPn) break;
+      vec3 L = wp - uLPo[i].xyz; float d = length(L); vec3 l = L / max(d, 1e-4);
+      float cone = smoothstep(uLPo[i].w, uLPd[i].w, dot(l, uLPd[i].xyz));          /* weicher Rand: Außen- → Innenwinkel */
+      float att = 1.0 - smoothstep(uLPr[i].x * 0.75, uLPr[i].x, d);
+      float lam = 0.35 + 0.65 * max(dot(n, -l), 0.0);                                /* Flächen zum Licht hin heller, Rückseiten nur wenig */
+      acc += uLPc[i].rgb * uLPc[i].w * cone * att * lam;
+    }
+    return albedo * acc;
+  }
+  #endif`
+
+  function setPools(list) {
+    const n = Math.min(MAX, list.length)
+    for (let i = 0; i < n; i++) {
+      const p = list[i], dir = (p.dir.clone ? p.dir.clone() : new THREE.Vector3(...p.dir)).normalize()
+      const outer = p.angle ?? 0.2, inner = outer * (1 - Math.min(0.95, Math.max(0.02, p.soft ?? 0.35)))
+      const c = p.color && p.color.isColor ? p.color : new THREE.Color(p.color ?? '#ffffff')
+      uniforms.uLPo.value[i].set(p.origin.x, p.origin.y, p.origin.z, Math.cos(outer))
+      uniforms.uLPd.value[i].set(dir.x, dir.y, dir.z, Math.cos(inner))
+      uniforms.uLPc.value[i].set(c.r, c.g, c.b, p.intensity ?? 1)
+      uniforms.uLPr.value[i].set(p.range ?? 60, 0, 0, 0)
+    }
+    uniforms.uLPn.value = n
+  }
+
+  // Standard-Materialien: Weltlage + Normale selbst rechnen (auch für InstancedMesh), Beitrag vor dem Ausgang addieren
+  function injectStandard(material) {
+    const prev = material.onBeforeCompile, prevKey = material.customProgramCacheKey
+    material.onBeforeCompile = (sh, r) => {
+      if (prev) prev.call(material, sh, r)
+      Object.assign(sh.uniforms, uniforms)
+      sh.vertexShader = 'varying vec3 vLPw; varying vec3 vLPn;\n' + sh.vertexShader.replace('#include <project_vertex>', `#include <project_vertex>
+  { vec4 lpP = vec4(transformed, 1.0); vec3 lpN = objectNormal;
+  #ifdef USE_INSTANCING
+    lpP = instanceMatrix * lpP; lpN = mat3(instanceMatrix) * lpN;
+  #endif
+    vLPw = (modelMatrix * lpP).xyz; vLPn = normalize(mat3(modelMatrix) * lpN); }`)
+      const out = sh.fragmentShader.includes('#include <opaque_fragment>') ? '#include <opaque_fragment>' : '#include <output_fragment>'
+      sh.fragmentShader = 'varying vec3 vLPw; varying vec3 vLPn;\n' + glsl + '\n' + sh.fragmentShader.replace(out, `outgoingLight += kfbLightPools(vLPw, normalize(vLPn), diffuseColor.rgb);\n${out}`)
+    }
+    material.customProgramCacheKey = () => (prevKey ? prevKey.call(material) : '') + '|kfb-lp'
+    material.needsUpdate = true
+    return material
+  }
+
+  // Sichtbarer Kegel: Spitze im Ursprung, Achse +Y der Geometrie (wird auf dir gedreht), Länge = Skalierung.
+  // Alpha: Kern heller als Rand (Blickwinkel), letzte 30 % der Länge laufen auf 0 aus → kein harter Schnitt am Boden.
+  const beamGeo = new THREE.CylinderGeometry(1, 0.0, 1, 32, 8, true).translate(0, 0.5, 0)
+  function makeBeam({ color = '#ffffff', opacity = 0.35, angle = 0.12, fadeStart = 0.7 } = {}) {
+    const mat = new THREE.ShaderMaterial({
+      uniforms: { uCol: { value: new THREE.Color(color) }, uOp: { value: opacity }, uFade: { value: fadeStart } },
+      vertexShader: 'varying float vT; varying vec3 vNv; varying vec3 vVd; void main(){ vT = position.y; vec4 mv = modelViewMatrix * vec4(position, 1.0); vNv = normalize(normalMatrix * normal); vVd = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }',
+      fragmentShader: 'uniform vec3 uCol; uniform float uOp, uFade; varying float vT; varying vec3 vNv; varying vec3 vVd; void main(){ float rim = abs(dot(normalize(vNv), normalize(vVd))); float a = uOp * pow(rim, 1.5) * (1.0 - smoothstep(uFade, 1.0, vT)) * smoothstep(0.0, 0.06, vT); gl_FragColor = vec4(uCol * a, a); }',
+      transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
+    })
+    const m = new THREE.Mesh(beamGeo, mat); m.frustumCulled = false; m.renderOrder = 3; m.userData.angle = angle
+    return m
+  }
+  const _up = new THREE.Vector3(0, 1, 0), _q = new THREE.Quaternion()
+  function aimBeam(mesh, origin, dir, length, radiusAtEnd) {
+    const d = dir.clone().normalize(), r = radiusAtEnd ?? Math.tan(mesh.userData.angle ?? 0.12) * length
+    mesh.position.copy(origin); mesh.quaternion.copy(_q.setFromUnitVectors(_up, d)); mesh.scale.set(r, length, r)
+  }
+  // Länge bis zum Kontakt: Boden-Abtastung (Höhenfunktion) und/oder Raycast gegen Objekte; Kegel endet knapp hinter dem Treffer
+  const _ray = new THREE.Raycaster()
+  function hitDistance(origin, dir, { ground = null, objects = null, maxLen = 80, step = 0.5 } = {}) {
+    const d = dir.clone().normalize(); let best = maxLen
+    if (ground) { let prev = 0; for (let t = step; t <= maxLen; t += step) { const x = origin.x + d.x * t, y = origin.y + d.y * t, z = origin.z + d.z * t; if (y <= ground(x, z)) { let a = prev, b = t; for (let k = 0; k < 6; k++) { const m = (a + b) / 2; if (origin.y + d.y * m <= ground(origin.x + d.x * m, origin.z + d.z * m)) b = m; else a = m } best = Math.min(best, b); break } prev = t } }
+    if (objects && objects.length) { _ray.set(origin, d); _ray.far = best; const hit = _ray.intersectObjects(objects, true)[0]; if (hit) best = Math.min(best, hit.distance) }
+    return best
+  }
+  function dispose() { beamGeo.dispose() }
+  return { VERSION: LP_VERSION, MAX, uniforms, glsl, setPools, injectStandard, makeBeam, aimBeam, hitDistance, dispose }
+}
+
+  /* KFB_LIGHT_POOL_V1_END */
+  const LP = createLightPoolKit(THREE, { max: 16 });
   const U = {
     uScale: { value: 200 }, uAmp: { value: 50 }, uOct: { value: 5 }, uRidge: { value: 0 }, uWarp: { value: 0 }, uMacro: { value: 0 }, uValley: { value: 0 }, uPlateau: { value: 1 }, uSteps: { value: 0 }, uSharp: { value: 0.5 }, uEther: { value: 1 }, uTanMax: { value: 1.28 },
     uSeed: { value: new THREE.Vector2() }, uOffset: { value: new THREE.Vector2() }, uWater: { value: 0.1 }, uSoft: { value: 0.3 }, uCliff: { value: 0.4 }, uStrata: { value: 0 }, uToon: { value: 0 }, uMix: { value: 0 }, uGrid: { value: 0 },
     uFogNear: { value: 600 }, uFogFar: { value: 1600 }, uCam: { value: new THREE.Vector3() }, uTint: { value: new THREE.Color(1, 1, 1) }, uHorizon: { value: new THREE.Color() }, uMoodK: { value: 0 },
   };
   for (const k of PAL_KEYS) { U['uA_' + k] = { value: new THREE.Color() }; U['uB_' + k] = { value: new THREE.Color() } }
+  Object.assign(U, LP.uniforms); // Lichtpfützen (V-572) auch im Gelände
   const palUniforms = PAL_KEYS.map((k) => `uniform vec3 uA_${k}; uniform vec3 uB_${k};`).join('\n');
 
   // Himmel v2 (R13 H1–H6, H19): EINE Himmelsfunktion für Kuppel, Gelände, Wasser und Kulissen → Nebel = Himmel in Blickrichtung, kein Balken
@@ -435,6 +545,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   uniform vec4 uDio; uniform vec4 uDioB; uniform sampler2D uEdge; uniform vec2 uSeed; uniform vec3 uCam; uniform vec2 uOffset; uniform vec3 uTint, uHorizon; uniform vec2 uCarW;
   ${GLSL_SKY}
   ${GLSL_KUS}
+  ${LP.glsl}
   ${palUniforms}
   uniform sampler2D uShadowMap, uAOMap; uniform float uShadowOn, uAOOn; uniform vec3 uContact; uniform float uEdges, uFg, uOrg, uFS, uDbg, uKus, uTimeT, uFlow, uBands; uniform vec3 uKusA, uKusB;
   varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv; varying float vCL; varying vec2 vVuv; varying float vVid; uniform float uVox, uVoxTex;
@@ -638,6 +749,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     if(uShadowOn>0.5){ vec3 sc=vSC.xyz/vSC.w; if(sc.x>0.0 && sc.x<1.0 && sc.y>0.0 && sc.y<1.0 && sc.z<1.0){ float sv=0.0; vec2 tx=vec2(1.25/2048.0); /* 5×5 Proben: ruhige Kante ohne Treppen */
       for(int i=-1;i<=1;i++) for(int j=-1;j<=1;j++) sv+=shBil(sc.xy+vec2(float(i),float(j))*(1.5/2048.0), sc.z-0.00015);
       sv=smoothstep(0.0,1.0,sv/9.0); col=mix(mix(col*0.62, uContact, 0.38), col, sv); } }   // echter Schatten, eingefärbt (kein Schwarz)
+    col+=kfbLightPools(vW-vec3(uCarW.x,0.0,uCarW.y), N, c);   /* projizierte Lichtpfützen (kfb-light-pool.v1): folgen jeder Geländeform */
     if(uDbg>0.5 && uDbg<1.5) col=alb; if(uDbg>2.5) col=idc;   // Prüfansichten (gleiche Kamera): Grundfarbe · graue Form · Masken
     if(uSky2>0.5 && uGridWorld<0.5) gl_FragColor=vec4(applyAir(col, vW-vec3(uCarW.x,0.0,uCarW.y), l),1.0); else gl_FragColor=vec4(mix(col, sky, f),1.0);
   }`;
@@ -795,7 +907,7 @@ ${GLSL_SKY}
   // ---------- Steuerung ----------
   const $ = (id) => document.getElementById(id);
   const NUM = ['scale', 'amp', 'oct', 'ridge', 'warp', 'macro', 'seed', 'valley', 'plateau', 'steps', 'sharp', 'maxslope', 'water', 'soft', 'cliff', 'cover', 'gs'];
-  const BOOL = ['strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex', 'flowspeed'];
+  const BOOL = ['strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex', 'flowspeed', 'disco'];
   const fmt = {
     scale: (v) => `${v} m`, amp: (v) => `${v} m`, oct: (v) => `${v}`, ridge: (v) => `${Math.round(v * 100)} %`, warp: (v) => v.toFixed(2), macro: (v) => `${Math.round(v * 100)} %`, seed: (v) => `${v}`,
     valley: (v) => `${Math.round(v * 100)} %`, plateau: (v) => (v >= 0.999 ? 'aus' : `${Math.round(v * 100)} % Höhe`), steps: (v) => (v < 1 ? 'aus' : `${v} Stufen`), maxslope: (v) => (v >= 80 ? 'aus' : `${v}°`), sharp: (v) => `${Math.round(v * 100)} %`, water: (v) => `${Math.round(v * 100)} % Höhe`,
@@ -808,7 +920,7 @@ ${GLSL_SKY}
   function readUI() {
     for (const k of NUM) S[k] = parseFloat($(k).value);
     for (const k of BOOL) S[k] = $(k).checked;
-    S.palA = $('palA').value; S.palB = $('palB').value; S.tod = $('tod').value; S.tempo = $('tempo').value; S.gshape = +$('gshape').value; S.gfill = +$('gfill').value; S.gcol = +$('gcol').value; S.gtex = +$('gtex').value; S.fstage = +$('fstage').value; S.kus = +$('kus').value; S.moon = +$('moon').value; S.flow = +$('flow').value; S.bands = +$('bands').value; S.voxs = +$('voxs').value; S.voxh = +$('voxh').value < 0 ? S.voxs : +$('voxh').value; S.voxhSel = +$('voxh').value; S.dbg = +$('dbg').value;
+    S.palA = $('palA').value; S.palB = $('palB').value; S.tod = $('tod').value; S.tempo = $('tempo').value; S.gshape = +$('gshape').value; S.gfill = +$('gfill').value; S.gcol = +$('gcol').value; S.gtex = +$('gtex').value; S.fstage = +$('fstage').value; S.kus = +$('kus').value; S.moon = +$('moon').value; S.flow = +$('flow').value; S.discoMode = +$('discoMode').value; S.bands = +$('bands').value; S.voxs = +$('voxs').value; S.voxh = +$('voxh').value < 0 ? S.voxs : +$('voxh').value; S.voxhSel = +$('voxh').value; S.dbg = +$('dbg').value;
     const sd = S.seed; S.sx = fract(Math.sin(sd * 12.9898) * 43758.5453) * 200 - 100; S.sy = fract(Math.sin(sd * 78.233) * 12345.6789) * 200 - 100;
   }
   function pushUniforms() {
@@ -922,7 +1034,7 @@ ${GLSL_SKY}
   AO.quad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), AO.blur); AO.qScene = new THREE.Scene(); AO.qScene.add(AO.quad); AO.qCam = new THREE.Camera(); AO.quad.frustumCulled = false;
   function renderAO() {
     if (!U.uAOOn.value) return;
-    worldRoot.traverse((o) => { if (o.isMesh) o.layers.enable(2) }); carRoot.traverse((o) => { if (o.isMesh) o.layers.enable(2) });
+    worldRoot.traverse((o) => { if (o.isMesh) { if (o.userData.noAO) o.layers.disable(2); else o.layers.enable(2) } }); carRoot.traverse((o) => { if (o.isMesh) o.layers.enable(2) });
     const au = renderer.shadowMap.autoUpdate, cc = renderer.getClearColor(new THREE.Color()), ca = renderer.getClearAlpha(), om = scene.overrideMaterial, fg = scene.fog;
     renderer.shadowMap.autoUpdate = false; scene.overrideMaterial = AO.white; scene.fog = null; renderer.setClearColor(0x000000, 1);
     renderer.setRenderTarget(AO.rtA); renderer.clear(); renderer.render(scene, AO.cam); scene.overrideMaterial = om; scene.fog = fg;
@@ -995,7 +1107,7 @@ ${GLSL_SKY}
     mat.customProgramCacheKey = () => (prevKey ? prevKey.call(mat) : '') + '|kfb-ground'; mat.needsUpdate = true }
   const loadG = (url) => loader.loadAsync(url).then((g) => g.scene);
   Promise.all([loadG(AMPH_URL).then((m) => { amph = m; palettize(m) }), ...[...ROCKS, ...TREES, ...BUSHES].map((n) => loadG(FOREST + n + '.gltf').then((m) => { TPL[n] = m; m.traverse((o) => { if (o.isMesh) { o.castShadow = o.receiveShadow = true; o.material = o.material.clone(); o.material.userData.base = o.material.color.clone(); addGrounding(o.material) } }) }))])
-    .then(() => { castFront(scene); for (const k in TPL) castFront(TPL[k]); amph?.traverse((o) => { if (o.isMesh) [].concat(o.material).forEach(addGrounding) }); if (amph) { const b = new THREE.Box3().setFromObject(amph), sz = b.getSize(new THREE.Vector3()); amph.scale.setScalar(23.4 / sz.x); amph.rotation.y = Math.PI; amph.updateMatrixWorld(true); const b2 = new THREE.Box3().setFromObject(amph), c2 = b2.getCenter(new THREE.Vector3()); amph.userData.off = new THREE.Vector3(-c2.x, -b2.min.y, -c2.z); dioGroup.add(amph) } window.__syncDio() })
+    .then(() => { castFront(scene); for (const k in TPL) castFront(TPL[k]); const lpSeen = new Set(); const lpIn = (o) => { if (o.isMesh) for (const mm of [].concat(o.material)) if (mm && !lpSeen.has(mm)) { lpSeen.add(mm); LP.injectStandard(mm) } }; for (const k in TPL) TPL[k].traverse(lpIn); amph?.traverse(lpIn); crumbs && LP.injectStandard(crumbs.material); amph?.traverse((o) => { if (o.isMesh) [].concat(o.material).forEach(addGrounding) }); if (amph) { const b = new THREE.Box3().setFromObject(amph), sz = b.getSize(new THREE.Vector3()); amph.scale.setScalar(23.4 / sz.x); amph.rotation.y = Math.PI; amph.updateMatrixWorld(true); const b2 = new THREE.Box3().setFromObject(amph), c2 = b2.getCenter(new THREE.Vector3()); amph.userData.off = new THREE.Vector3(-c2.x, -b2.min.y, -c2.z); dioGroup.add(amph) } window.__syncDio() })
     .catch((e) => { dioErr = 'Modelle nicht geladen (' + (e?.message || e) + ') – nur in der öffentlichen Fassung verfügbar'; $('dioMsg').textContent = dioErr });
   let rs = 1; const rr = () => { rs = (rs * 16807) % 2147483647; return rs / 2147483647 };
   const angGap = (a, b) => Math.abs(((a - b + Math.PI) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) - Math.PI);
@@ -1052,7 +1164,7 @@ ${GLSL_SKY}
   { const mat = new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0 }); addGrounding(mat)
     ROCKC.meshes = [11, 29, 47].map((sd) => { const m = new THREE.InstancedMesh(etherRockGeo(sd), mat, 420); m.castShadow = m.receiveShadow = true; m.frustumCulled = false; m.count = 0; worldRoot.add(m); return m })
     ROCKC.crumbs = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), crumbs.material, 2200); ROCKC.crumbs.castShadow = ROCKC.crumbs.receiveShadow = true; ROCKC.crumbs.frustumCulled = false; ROCKC.crumbs.count = 0; worldRoot.add(ROCKC.crumbs)
-    ROCKC.mat = mat; for (const m of ROCKC.meshes) castFront(m); castFront(ROCKC.crumbs); castFront(crumbs) }
+    ROCKC.mat = mat; LP.injectStandard(mat); for (const m of ROCKC.meshes) castFront(m); castFront(ROCKC.crumbs); castFront(crumbs) }
   const hh2 = (x, y) => { const t = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return t - Math.floor(t) };
   function buildRocks(px, pz) {
     ROCKC.cx = px; ROCKC.cz = pz; ROCKC.dirty = false; for (const m of ROCKC.meshes) m.count = 0; ROCKC.crumbs.count = 0
@@ -1193,6 +1305,25 @@ ${GLSL_SKY}
   // Die Welt wandert mit dem Fahrzeug: abgetastet wird nur in ganzen Gitterschritten (kein Flimmern), die Feinbewegung macht das Gitter
   let last = performance.now(), frames = 0, fpsT = last, acc = 0;
   const STEP = SIZE / SEG, camPos = new THREE.Vector3(0, 6, -12), tmp = new THREE.Vector3();
+  // ---------- Disco-Probe (V-572 Nachweis): Kugel 14 m über welligem Gelände, 8 drehende Strahlen; alt = Scheiben auf fester Höhe wie disco-ball-core, neu = kfb-light-pool.v1 ----------
+  const DISCO = { group: new THREE.Group(), beams: [], olds: [], x: 18, z: 42, pal: ['#ff4fa3', '#4fd8ff', '#ffe14f', '#8a5bff', '#5bff9a', '#ff8a3d', '#ff4fa3', '#4fd8ff'] };
+  { const ball = new THREE.Mesh(new THREE.IcosahedronGeometry(1.3, 1), new THREE.MeshStandardMaterial({ color: '#d9dde8', metalness: 0.7, roughness: 0.25, flatShading: true })); DISCO.ball = ball; DISCO.group.add(ball)
+    const discGeo = new THREE.CircleGeometry(1, 32).rotateX(-Math.PI / 2)
+    for (let i = 0; i < 8; i++) { const b = LP.makeBeam({ color: DISCO.pal[i], opacity: 0.32, angle: 0.11 }); DISCO.beams.push(b); DISCO.group.add(b)
+      const od = new THREE.Mesh(discGeo, new THREE.MeshBasicMaterial({ color: DISCO.pal[i], transparent: true, opacity: 0.55, depthWrite: false, blending: THREE.AdditiveBlending })); od.renderOrder = 2; DISCO.olds.push(od); DISCO.group.add(od) }
+    DISCO.group.traverse((o) => { o.userData.noAO = true }); DISCO.group.visible = false; worldRoot.add(DISCO.group) }
+  const _dO = new THREE.Vector3(), _dD = new THREE.Vector3(), _dS = new THREE.Vector3();
+  function updateDisco(t) {
+    if (!S.disco) { DISCO.group.visible = false; if (LP.uniforms.uLPn.value) LP.setPools([]); return }
+    DISCO.group.visible = true; const gx = DISCO.x, gz = DISCO.z, gy = surfH(gx, gz) + 14; DISCO.ball.position.set(gx, gy, gz); DISCO.ball.rotation.y = t * 0.6
+    const pools = [], neu = S.discoMode === 1, floorY = surfH(gx, gz) + 0.006;
+    for (let i = 0; i < 8; i++) { const a = t * 0.5 + i * Math.PI / 4, tilt = 0.55 + 0.35 * Math.sin(t * 0.7 + i * 1.3);
+      _dD.set(Math.cos(a) * Math.sin(tilt), -Math.cos(tilt), Math.sin(a) * Math.sin(tilt)).normalize(); _dO.set(gx, gy, gz).addScaledVector(_dD, 1.2)
+      const b = DISCO.beams[i], od = DISCO.olds[i];
+      if (neu) { const len = LP.hitDistance(_dO, _dD, { ground: surfH, maxLen: 70 }) * 1.06; LP.aimBeam(b, _dO, _dD, len); b.material.uniforms.uFade.value = 0.7; od.visible = false
+        pools.push({ origin: _dS.set(_dO.x - P.x, _dO.y, _dO.z - P.z).clone(), dir: _dD.clone(), angle: 0.11, soft: 0.45, color: DISCO.pal[i], intensity: 2.2, range: 90 }) }
+      else { const len = (_dO.y - floorY) / Math.max(0.05, -_dD.y); LP.aimBeam(b, _dO, _dD, len); b.material.uniforms.uFade.value = 1.01; od.visible = true; const r = Math.tan(0.11) * len; od.position.set(_dO.x + _dD.x * len, floorY, _dO.z + _dD.z * len); od.scale.set(r, 1, r) } }
+    LP.setPools(neu ? pools : []) }
   let FLOWT = 0;
   function frame(now) {
     const dt = Math.min(0.1, (now - last) / 1000); last = now;
@@ -1243,7 +1374,7 @@ ${GLSL_SKY}
     tGeo.attributes.position.needsUpdate = true; tGeo.attributes.aLife.needsUpdate = true;
     U.uCam.value.copy(camera.position); GU.uGOff.value.set(P.x, P.z); GU.uGOn.value = S.ground ? 1 : 0;
     if (S.shadows) { sun.updateMatrixWorld(); sun.target.updateMatrixWorld(); sun.shadow.updateMatrices(sun); U.uShadowM.value.copy(sun.shadow.matrix); U.uShadowMap.value = sun.shadow.map ? sun.shadow.map.texture : null }
-    renderAO(); renderer.render(scene, camera);
+    updateDisco(now / 1000); renderAO(); renderer.render(scene, camera);
     frames++; if (now - fpsT > 500) { $('hudFps').textContent = `${Math.round(frames * 1000 / (now - fpsT))} fps`; frames = 0; fpsT = now }
     $('hudSpeed').textContent = `${Math.round(Math.abs(P.vf) * 3.6)} km/h`;
     const alt = Math.max(0, P.y - C.hover - groundAt(P.x, P.z));
