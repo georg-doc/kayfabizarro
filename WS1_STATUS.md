@@ -3,6 +3,43 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 102 · 20.10. · Recherche R2 + R4 fertig · Gelände-Probe: organische Übergänge, Erdung, echte Palettenschatten · V-565/V-566 gelesen
+
+**Recherche** (auf diesem Branch unter `research/canon/`, bitte nach `CANON_3D/sources/`):
+- **`R2_ETHERINGTON_ABGLEICH_R1.md`**
+  - 21 Original-Tafeln von Lorenzo Etherington angesehen; Autor ist sein Bruder Robin, einen „Marc“ gibt es nicht.
+  - **Etherington nennt keine Prozentzahlen.** Alle Werte in SINK/RULES sind KFB- bzw. P3-Werte („keine Quelle gefunden“ bzw. „gilt für KFB“). Belegt sind nur Zählregeln: Abstand 2 : 1, drei Größen, ≤ 3 Primärformen je Cluster, fünf Tiefenstufen auf Steinflächen, acht Landmarken-Typen.
+  - **Korrekturvorschläge:**
+    - `spread`-Ziel 0,50 (Untergrenze 0,30 bleibt);
+    - `size_tol` 0,10 → 0,20;
+    - `stone_L` 0,45–0,60 → 0,40–0,50 mit Kappe ≤ 0,50 („Findlinge sitzen im Gelände, umgekehrter Eisberg“);
+    - Landmarke = „Ausnahme von der Umgebungsregel“ (8 Typen), nicht zwingend die höchste.
+    - Die drei letzten Punkte entscheidet Georg.
+  - 14 neue Regeln N1–N14 (Fels, Kiesel, Wurzeln, Hangbäume, Gras, Wasser, Verfall).
+  - Grammatik R1 §4 (5–15 % Einsinken, AO-Ring) widerspricht dem Stand und sollte als abgelöst markiert werden.
+- **`R4_FARBTHEORIE_COLOURSCRIPT_R1.md`**
+  - J17-Paletten in OKLCH gemessen: Boden-C ≤ 0,75 × Akzent-C (gemessen 0,61–0,73).
+  - **Befund:** In „bucht“ ist das Laub (C 0,180) bunter als der Akzent. Frage an Georg (J17 ist Goldstandard).
+  - 15 Regeln (Bacher, Gurney/Loomis/Pyle, Valve TF2, Pixar Eggleston/Romano, Mary Blair): 3 Wertgruppen, Wertbänder je Tiefenebene, Fokus mit höchstem Kontrast, ≤ 3 Farbtonfamilien + 1 Akzent, Akzent 3–10 % der Fläche, Schatten nie schwarz.
+  - Vorschlag zweistufiges `kfb_color_gate` (erst Palette, dann Bild) + Kritiker K2a–K2f.
+  - „Kühle Schatten“ und Tiefennebel nicht übernommen (V-564, LIGHT_MODEL_R2).
+
+**Gelände-Probe** (https://ws1-preview.kayfabizarro.pages.dev/gelaende-probe), nach Georgs Feedback:
+- **Übergänge organisch:**
+  - eine Distanzfunktion, Flecken weich vereinigt (außen) bzw. weich ausgestanzt (innen), je Fleck 3×3 Nachbarzellen;
+  - Größen schief verteilt, Formen gedreht, gestreckt und gewellt, Dichte zur Kante hin höher;
+  - Rauschen über die Richtung statt den Winkel.
+  - Die „Vektorpfad-Kanten“ (Zellgrenzen, Winkel-Naht) sind weg.
+- **Erdung:** Am Objekt unten und an Kronen-Unterseiten dunkler im Kontaktton der Palette, nie schwarz; die Bodenhöhe kommt aus derselben Höhenformel im Vertex-Shader.
+- **Echte 3D-Schatten:** eine Sonne, Shadow Map 110 m um das Fahrzeug, 5×5 PCF; auf dem Boden im Palettenton (castShadowTint-Prinzip wie V-564). Schaltbar.
+
+**V-565/V-566 gelesen, nächste Schritte daraus:**
+- Kontakt-Geometrie (kleine Knet-Brocken an jeder Objekt-Boden-Fuge);
+- 70/20/10 (Terrain nie die lauteste Fläche: den Sprenkel-Ring prüfe ich darauf);
+- Graustufen-, Silhouetten- und Thumbnail-Pass bei Abgaben;
+- keine Farbsperre, nur Chroma ≤ 0,195.
+- Danach dasselbe im Spiel (#439 `look=terrain2`).
+
 ## 101 · 20.10. · Recherche R1 + R3 fertig (V-563, Paket A) · Gelände-Probe mit Diorama-Einpassung
 
 **Recherche (Paket A, parallel bearbeitet):**
