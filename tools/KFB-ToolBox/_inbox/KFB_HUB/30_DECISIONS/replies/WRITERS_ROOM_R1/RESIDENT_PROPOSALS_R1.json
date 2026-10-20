@@ -1,0 +1,953 @@
+{
+ "schema": "kfb.song.resident-proposals/1",
+ "date": "2026-10-20",
+ "status": "VORSCHLAG – Georg bestätigt oder tauscht im Writers' Room",
+ "source": "registry/assets/v1/catalog.jsonl (KayKit Mystery Series 6, Adventurers, Quaternius) + KFB FrizzleBob v5",
+ "residents": {
+  "1001_kayfabe_nights": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "MagicalGirl",
+     "asset": "KayKit_Mystery_Series6/11 - May 2026 - Magical Girl · Textur D",
+     "role": "Scheherazade, die jede Nacht weitererzählt"
+    }
+   ],
+   "home": "Teppichzimmer mit Lampe",
+   "meta": "Jede Karte ist eine Geschichte in der Geschichte, die sie vor dem Ende rettet.",
+   "musicDirection": "Raï-Disco",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "academic_anarchy_intellectual": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Mage",
+     "asset": "KayKit_Adventurers_2.0_FREE/Characters · Mage",
+     "role": "Professor-Magier"
+    }
+   ],
+   "home": "überfüllter Hörsaal-Turm aus Büchern",
+   "meta": "Die Archetypen sind seine Kollegen und Studierenden, die einer nach dem anderen ins Zimmer platzen und sich wichtig machen.",
+   "musicDirection": "Bluegrass, schnell",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "ai_kayfabe": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Clanker",
+     "asset": "KayKit_Mystery_Series6/9 - March 2025 - Clanker · Textur Basis",
+     "role": "KI, die sich für den Basilisken hält"
+    }
+   ],
+   "home": "Serverraum",
+   "meta": "Sie droht freundlich; die Karten sind ihre Szenarien, die sich selbst prophezeien.",
+   "musicDirection": "Electro",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "anti_rules_toolkit": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "UltraTurboHeroMan",
+     "asset": "KayKit_Mystery_Series6/UltraTurboHeroMan · Textur A",
+     "role": "übertriebener Held, der jede Regel bricht"
+    }
+   ],
+   "home": "Trainingsraum mit lauter Verbotsschildern, alle verbogen",
+   "meta": "Er liest die Regeln vor und bricht jede, bevor er sie zu Ende gelesen hat; die Karten sind seine Moves.",
+   "musicDirection": "Ska",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "big_bad_brain_wrestling": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "ActionFigure",
+     "asset": "KayKit_Mystery_Series6/6 - December 2023 - Action Figure · Köpfe B/C/D",
+     "role": "Wrestling-Actionfigur mit austauschbaren Köpfen = austauschbaren Gimmicks"
+    }
+   ],
+   "home": "Spielzeugkiste als Ring, Pappschilder an den Seilen",
+   "meta": "Die Figur wechselt die Köpfe und wird jedes Mal eine andere Karte, die ihre Promo hält – der Jobber, der Heel, der Babyface sind dieselbe Plastikhand.",
+   "musicDirection": "Glam-Rock-Stomp",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "brain_flipper_image_spots": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "MonsterCostume",
+     "asset": "KayKit_Mystery_Series6/3 - September 2023 - Monster Costume · Textur A",
+     "role": "jemand im Monsterkostüm, der die Perspektive wechselt"
+    }
+   ],
+   "home": "halb eingestürztes Stadthaus (building_C_broken)",
+   "meta": "Im Kostüm sieht die Welt anders aus; jede Karte dreht den Blick einmal um.",
+   "musicDirection": "Surf-Rock",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "bullshit_jobs_uncut": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Driver",
+     "asset": "KayKit_Mystery_Series6/2 - August 2023 - Driver · Textur A",
+     "role": "Lieferfahrer in der Dauerschicht"
+    }
+   ],
+   "home": "Auto mit Dachgepäckträger, Pylonen, Parkplatz",
+   "meta": "Er erzählt zwischen zwei Aufträgen; die Jobs aus dem Deck sind seine früheren Leben, die im Rückspiegel auftauchen.",
+   "musicDirection": "Delta-Blues-Shuffle, tanzbar",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "cinematic_kayfabizarro_2": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Superhero",
+     "asset": "KayKit_Mystery_Series6/2 - August 2024 - Superhero · Textur alt",
+     "role": "Blockbuster-Star in der Garderobe"
+    }
+   ],
+   "home": "Garderobenwohnwagen am Filmset",
+   "meta": "Die Filme der Bestenliste kommen als Rollen zu Besuch, die er alle schon gespielt haben will.",
+   "musicDirection": "Baroque Pop mit Beat",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "cosmic_grift_dark_journalism": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Alien",
+     "asset": "Quaternius Ultimate Monsters · Big/Alien",
+     "role": "Außerirdischer, der die UFO-Akten liest"
+    }
+   ],
+   "home": "Wohnwagen in der Wüste",
+   "meta": "Er findet sich in jeder Akte wieder und fragt, wer daran verdient.",
+   "musicDirection": "Synth-Funk",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "dream_wrestling_with_kayfabe_freud": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "GothGirl",
+     "asset": "KayKit_Mystery_Series6/GothGirl · Textur Basis",
+     "role": "Traumsängerin auf der Couch"
+    }
+   ],
+   "home": "Couch, Mikro, Stehlampe",
+   "meta": "Es, Ich und Über-Ich melden sich im Traum als Wrestler.",
+   "musicDirection": "Dark Disco",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "embrace_protopia": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Farmer_A",
+     "asset": "KayKit_Mystery_Series6/12 - June 2026 - Farmers · Textur A",
+     "role": "Gärtnerin, die alles im Kleinen repariert"
+    }
+   ],
+   "home": "Kleingarten mit Erdbeet, Schubkarre und Werkbank",
+   "meta": "Sie arbeitet beim Reden; die Karten liegen als Werkzeuge und Samen herum und erklären sich selbst, wenn sie gebraucht werden.",
+   "musicDirection": "Highlife, sonnig",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "epistemic_sabotage": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Helper_A",
+     "asset": "KayKit_Mystery_Series6/6 - December 2024 - Helpers · A",
+     "role": ""
+    },
+    {
+     "model": "Helper_B",
+     "asset": "KayKit_Mystery_Series6/6 - December 2024 - Helpers · B",
+     "role": ""
+    }
+   ],
+   "home": "Comic-Werkstatt mit Spielzeugbank",
+   "meta": "Zwei Werkstatt-Helfer testen KI-Werkzeuge an einem Comic; die Werkzeug-Karten stellen sich selbst vor.",
+   "musicDirection": "Electro-Swing (Golden Take)",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "federal_kayfabe": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Santa",
+     "asset": "KayKit_Mystery_Series6/Santa",
+     "role": "Weihnachtsmann, der Geld druckt"
+    }
+   ],
+   "home": "Werkstatt mit Geschenkebergen",
+   "meta": "Jedes Geschenk ist eine Geldschöpfung, die sich selbst erklärt.",
+   "musicDirection": "Swing-Hop",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "forget_utopia": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Robot_Two",
+     "asset": "KayKit_Mystery_Series6/12 - June 2024 - Robot · Robot_Two",
+     "role": "Verkaufsroboter für Zukünfte"
+    }
+   ],
+   "home": "Ladestation mit Werbedisplays",
+   "meta": "Er preist Utopien an, die nie kommen; die Karten sind seine Verkaufsmaschen, die sich selbst verkaufen.",
+   "musicDirection": "Balkan Brass",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "frizzlebob_s_ego_mania_narcissist": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "GothGirl",
+     "asset": "KayKit_Mystery_Series6/GothGirl · Textur b",
+     "role": "Diva mit Mikrofonständer"
+    },
+    {
+     "model": "FrizzleBob",
+     "asset": "KFB · FrizzleBob v5",
+     "role": "Gast, der nie zu Wort kommt"
+    }
+   ],
+   "home": "Bühnenecke im eigenen Wohnzimmer, Lautsprecher, Hocker",
+   "meta": "Sie spricht nur über sich; die Karten sind ihre Spiegelbilder. FrizzleBob versucht zweimal etwas zu sagen.",
+   "musicDirection": "Nu-Disco",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "frizzlebob_s_mission_control": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "FrizzleBob",
+     "asset": "KFB · FrizzleBob v5",
+     "role": "Onkel FrizzleBob als Missionsleiter"
+    }
+   ],
+   "home": "Kontrollpult aus Pappe und Lichterketten",
+   "meta": "Er verteilt Quests an wen auch immer da ist; die Karten sind Missionen, die sich selbst melden.",
+   "musicDirection": "Krautrock-Motorik, tanzbar",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "geopolitical_thrillers_conspiracy_theories": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "FrostGolem",
+     "asset": "KayKit_Mystery_Series6/7 - January 2025 - FrostGolem",
+     "role": "kalter Stratege"
+    }
+   ],
+   "home": "Eispalast mit Weltkarte",
+   "meta": "Die Mächte der Karten schieben Figuren auf dem Eis; er zweifelt an jeder Erzählung (Satire auf Verschwörungserzählungen).",
+   "musicDirection": "Reggaeton",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "grimms_kayfabe_legends_expansion_set_02": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "MagicalGirl",
+     "asset": "KayKit_Mystery_Series6/11 - May 2026 - Magical Girl · Textur B",
+     "role": "Märchenmädchen (Schwester der Alice-Variante A)"
+    }
+   ],
+   "home": "Waldhaus",
+   "meta": "Die Grimm-Figuren kommen zu Besuch und erzählen, wie es wirklich war.",
+   "musicDirection": "Balkan Brass",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "help_i_am_a_human": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Werewolf_Man",
+     "asset": "KayKit_Mystery_Series6/4 - October 2023 - Werewolf · Mann",
+     "role": ""
+    },
+    {
+     "model": "Werewolf_Wolf",
+     "asset": "KayKit_Mystery_Series6/4 - October 2023 - Werewolf · Wolf",
+     "role": ""
+    }
+   ],
+   "home": "Holzfällerhütte",
+   "meta": "Mensch und Tier im selben Körper streiten; die Karten sind die Befunde, mit denen jeder recht behalten will.",
+   "musicDirection": "Afro-House",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "ideology_wrestling": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "DemonLord",
+     "asset": "KayKit_Mystery_Series6/DemonLord",
+     "role": "Beschwörer der Ideologien"
+    }
+   ],
+   "home": "Beschwörungskreis im Keller",
+   "meta": "Jede Ideologie wird beschworen und will die Welt erklären, bevor die nächste auftaucht.",
+   "musicDirection": "EBM, tanzbar",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "jung_and_shinn_a_guide_to_cosmic_cringe": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Witch",
+     "asset": "KayKit_Mystery_Series6/5 - November 2024 - Witch · Textur A",
+     "role": "Hexe mit Kessel und Affirmationen"
+    }
+   ],
+   "home": "Kräuterküche mit Trankstation",
+   "meta": "Archetypen steigen als Dampf aus dem Kessel und sagen ihre Sprüche selbst auf.",
+   "musicDirection": "Bollywood-Disco",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "kayfabizarro_1_morale_ethics": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Paladin",
+     "asset": "KayKit_Mystery_Series6/10 - April 2024 - Paladin · Textur A",
+     "role": "der Gute"
+    },
+    {
+     "model": "BlackKnight",
+     "asset": "KayKit_Mystery_Series6/3 - September 2024 - Black Knight · Textur Basis",
+     "role": "der Böse"
+    }
+   ],
+   "home": "gemeinsame Wohnung, Schild an Schild",
+   "meta": "Ein Duett zweier Mitbewohner, die sich nicht einigen können, wer gut ist; die moralischen Tropen sind ihre Mitspieler.",
+   "musicDirection": "Gospel-House",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "kayfabizarro_improv_comedy": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Protagonist_A",
+     "asset": "KayKit_Mystery_Series6/10 - April 2025 - Protagonists · A",
+     "role": ""
+    },
+    {
+     "model": "Protagonist_B",
+     "asset": "KayKit_Mystery_Series6/10 - April 2025 - Protagonists · B",
+     "role": ""
+    }
+   ],
+   "home": "Probenraum mit zwei Stühlen",
+   "meta": "Zwei Figuren spielen sich Szenen zu; die Karten sind Anweisungen und Szenen-Killer, die dazwischenrufen.",
+   "musicDirection": "Cumbia",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "kayfabizarro_monomyth_mayhem": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Hiker",
+     "asset": "KayKit_Mystery_Series6/11 - May 2025 - Hiker · Textur b",
+     "role": "Wanderer, der den Weg schon kennt"
+    }
+   ],
+   "home": "Zelt am Wegrand",
+   "meta": "Die Stationen der Heldenreise kommen als Wegweiser, die ihm widersprechen.",
+   "musicDirection": "Dancehall-Reggae",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "kayfabizarro_monopolies_manipulation_murder_vol": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "MonsterCostume",
+     "asset": "KayKit_Mystery_Series6/3 - September 2023 - Monster Costume · Textur D",
+     "role": "Firmenmaskottchen"
+    }
+   ],
+   "home": "Foyer eines Konzerns",
+   "meta": "Das Maskottchen lächelt; die Finanzverbrechen stellen sich als Produkte vor.",
+   "musicDirection": "Funk-Disco",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "kayfabizarro_philosophy": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Lorekeeper",
+     "asset": "KayKit_Mystery_Series6/1 - July 2025 - Lorekeeper",
+     "role": "Hüter der Theorien"
+    }
+   ],
+   "home": "Bibliothek um zwei Uhr nachts",
+   "meta": "Descartes, Zeno und Rokos Basilisk tauchen als Stimmen aus den Büchern auf; er streitet mit ihnen.",
+   "musicDirection": "Bossa-Electro, Moll-Färbung erlaubt, tanzbar",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "kayfabizarro_pulitzer_punk": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "AvianSwordsman",
+     "asset": "KayKit_Mystery_Series6/9 - March 2026 - Avian Swordsman · Textur B",
+     "role": "Reporter-Vogel"
+    }
+   ],
+   "home": "Redaktionsdach mit Trainingspuppe",
+   "meta": "Er muss zwischen Wahrheit und Loyalität wählen; die Figuren aus den Karten wollen alle zitiert werden.",
+   "musicDirection": "Punk-Funk",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "kayfabizarro_siege_tower_wall_siege_kampaigns": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Monstrosity",
+     "asset": "KayKit_Mystery_Series6/4 - October 2025 - Monstrosity · Textur A",
+     "role": "Belagerer mit Scheunentor-Schild"
+    }
+   ],
+   "home": "vor einer Mauer, die nicht fällt",
+   "meta": "Die Belagerungen der Geschichte rücken als Kollegen an; er hat sie alle schon versucht.",
+   "musicDirection": "Drum-Corps-Stomp",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "kosmik_kayfabizarro_sci_fi_space_opera": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "SpaceRanger",
+     "asset": "KayKit_Mystery_Series6/7 - January 2024 - Space Ranger",
+     "role": "Hauler-Captain"
+    }
+   ],
+   "home": "Cockpit eines kleinen Frachters",
+   "meta": "Die Fraktionen funken an; jede Karte ist ein Funkspruch, der sich selbst wichtig nimmt.",
+   "musicDirection": "Synthwave",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "medkayfab_cardiology": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Robot_One",
+     "asset": "KayKit_Mystery_Series6/12 - June 2024 - Robot · Robot_One",
+     "role": "Roboter mit Herzschlag"
+    }
+   ],
+   "home": "Ladestation, die auch Defi ist",
+   "meta": "Die Rhythmusstörungen sprechen als Taktgeber, die sich vordrängeln.",
+   "musicDirection": "House, Vierviertel als Herzschlag",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "medkayfab_clinical_cases": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Superhero",
+     "asset": "KayKit_Mystery_Series6/2 - August 2024 - Superhero · Textur Basis",
+     "role": "Notfallheld"
+    }
+   ],
+   "home": "Notaufnahme",
+   "meta": "Die Fälle krachen ineinander; jede Karte ist ein Patient, der seine Geschichte zu laut erzählt.",
+   "musicDirection": "Drum & Bass",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "medkayfab_emergency_medicine": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Survivalist",
+     "asset": "KayKit_Mystery_Series6/9 - March 2024 - Survivalist",
+     "role": "Rettungskraft im Einsatz"
+    }
+   ],
+   "home": "Unfallstelle mit Hydrant und Stoppschild",
+   "meta": "ABCDE als Durchsage; die Karten sind die Schritte, die sich nicht überspringen lassen.",
+   "musicDirection": "Breakbeat",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "medkayfab_hospital_hierarchy": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Cleric",
+     "asset": "KayKit_Mystery_Series6/3 - September 2025 - Cleric · Textur Basis",
+     "role": "Klinikseelsorgerin, die alle kennt"
+    }
+   ],
+   "home": "Stationsflur mit Weihwasserbecken",
+   "meta": "Vom Gott-Chirurgen bis zur Assistenzärztin kommt jede Karte vorbei und beansprucht den Vortritt.",
+   "musicDirection": "Disco-House",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "mind_traps": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Tiefling",
+     "asset": "KayKit_Mystery_Series6/12 - June 2025 - Tiefling · Textur Basis",
+     "role": "charmante Überrederin"
+    }
+   ],
+   "home": "Salon mit zwei Sesseln",
+   "meta": "Sie stellt dir die 17 Fragen; die Karten sind ihre Techniken, die sich während des Gesprächs zeigen.",
+   "musicDirection": "Electro-Tango",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "museum_of_modern_mess": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Hoarder",
+     "asset": "KayKit_Mystery_Series6/8 - February 2026 - Hoarder · Textur Basis",
+     "role": "Kurator des Chaos"
+    }
+   ],
+   "home": "Wohnung als Museum",
+   "meta": "Er führt durch seine Exponate: jeder Teller, jede Socke stellt sich als Kunstwerk vor.",
+   "musicDirection": "French House",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "nibelungen_booster_pack_design": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "BlackKnight",
+     "asset": "KayKit_Mystery_Series6/3 - September 2024 - Black Knight · Textur alt",
+     "role": "Hagen-Typ, der recht behält"
+    }
+   ],
+   "home": "Burghalle am Rhein, Gold im Wasser",
+   "meta": "Er erzählt, wie alle sterben und das Gold weg ist; die Helden kommen als Gäste, die es nicht glauben.",
+   "musicDirection": "Folk-Rock-Stomp",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "pharaoh_piledriver": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Mummy_A",
+     "asset": "KayKit_Mystery_Series6/KayKit Mummy · A",
+     "role": ""
+    },
+    {
+     "model": "Mummy_B",
+     "asset": "KayKit_Mystery_Series6/KayKit Mummy · B",
+     "role": ""
+    }
+   ],
+   "home": "Grabkammer mit Sarkophag und Krügen",
+   "meta": "Duett der beiden Mumien; die Götter steigen als Wrestler aus den Krügen.",
+   "musicDirection": "Electro-Chaabi",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "platos_dungeon_raid_hero_set_01": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Knight",
+     "asset": "KayKit_Adventurers_2.0_FREE/Characters · Knight",
+     "role": "Held auf Level 1"
+    }
+   ],
+   "home": "Lagerplatz vor dem Dungeon",
+   "meta": "Er levelt im Lied; die Helden-Karten sind die Stufen, die er nacheinander erreicht.",
+   "musicDirection": "Mariachi",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "platos_dungeon_raid_v05": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Ranger",
+     "asset": "KayKit_Adventurers_2.0_FREE/Characters · Ranger",
+     "role": "die Rangerin, die alle Klassen schon gespielt hat"
+    }
+   ],
+   "home": "Taverne mit Würfeltisch",
+   "meta": "Jede Klasse setzt sich an ihren Tisch und erklärt sich – du erkennst dich in allen.",
+   "musicDirection": "Hip-Hop mit Fanfaren",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "plot_pusher_posse": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Tiefling",
+     "asset": "KayKit_Mystery_Series6/12 - June 2025 - Tiefling · Textur b",
+     "role": "Chaosstifterin"
+    }
+   ],
+   "home": "Schreibstube voller umgeworfener Möbel",
+   "meta": "Jede Karte ist ein Konflikt, den sie in die Geschichte wirft.",
+   "musicDirection": "Drum & Bass-Ska",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "project_gateway_kayfabe": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Ninja",
+     "asset": "KayKit_Mystery_Series6/8 - February 2024 - Ninja · Textur C",
+     "role": "Agent ohne Akte"
+    }
+   ],
+   "home": "geschwärztes Archivzimmer",
+   "meta": "Er flüstert aus den Akten; jede Karte ist ein Programm, das sich als Erfolg ausgibt.",
+   "musicDirection": "Electro-Swing",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "romantic_kayfabe": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Witch",
+     "asset": "KayKit_Mystery_Series6/5 - November 2024 - Witch · Textur B",
+     "role": "Liebestrank-Hexe"
+    }
+   ],
+   "home": "Trankküche bei Kerzenlicht",
+   "meta": "Die Liebesregeln der Karten sind Zutaten, die sich gegenseitig verderben.",
+   "musicDirection": "Latin-Pop",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "secret_spy_suplexes": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Marksman",
+     "asset": "KayKit_Mystery_Series6/10 - April 2026 - Marksman",
+     "role": "Agent mit zwei Chefs"
+    }
+   ],
+   "home": "Hochsitz mit Tarnnetz",
+   "meta": "Er funkt beiden Seiten; die Karten sind Doppelagenten, die sich gegenseitig verraten.",
+   "musicDirection": "Surf-Spy-Twang",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "shadow_politics": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "OrcRaider",
+     "asset": "KayKit_Mystery_Series6/1 - July 2023 - Orc Raider · Textur A",
+     "role": "heller Ork"
+    },
+    {
+     "model": "OrcRaider",
+     "asset": "KayKit_Mystery_Series6/1 - July 2023 - Orc Raider · Textur B",
+     "role": "grüner Ork"
+    }
+   ],
+   "home": "Hinterzimmer mit Kriegstrommel",
+   "meta": "Zwei Clanchefs verhandeln, wer gerade regiert; die Karten sind ihre Abmachungen.",
+   "musicDirection": "Boom-Bap",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "sonic_slaughterhouse": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Animatronic_Creepy",
+     "asset": "KayKit_Mystery_Series6/5 - November 2023 - Animatronic · Creepy + Guitar",
+     "role": "der Star nach seinem Tod – als Hologramm-Tour"
+    }
+   ],
+   "home": "verlassene Konzerthalle",
+   "meta": "Er spielt seine eigene posthume Tour; die Karten sind die Verträge, die ihn hierher gebracht haben.",
+   "musicDirection": "Big Beat",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "symphonic_savagery": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "ToySoldier",
+     "asset": "KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier · Trompete",
+     "role": "Orchestermusiker aus Holz"
+    }
+   ],
+   "home": "Notenpult im Kinderzimmer",
+   "meta": "Die Komponisten treten als Rivalen auf; der Aufstand bei Le Sacre bricht im Zimmer los.",
+   "musicDirection": "Orchestraler Big Beat",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "the_bards_barnyard_beatdown": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Farmer_B",
+     "asset": "KayKit_Mystery_Series6/12 - June 2026 - Farmers · Textur B",
+     "role": "Bäuerin als Theaterdirektorin"
+    }
+   ],
+   "home": "Scheune mit Strohballen-Bühne",
+   "meta": "Die Tiere spielen Shakespeare; sie ist Souffleuse und Publikum.",
+   "musicDirection": "Zydeco",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "the_biological_metropolis": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "CombatMech",
+     "asset": "KayKit_Mystery_Series6/1 - July 2024 - Combat Mech · Textur alt",
+     "role": "der Koloss selbst – in ihm arbeitet eine ganze Stadt"
+    }
+   ],
+   "home": "Kanzel eines riesigen Mechs, Wände voller Leitungen und Rohrpost",
+   "meta": "Der Mech spricht von innen, als hätte er gerade erst gemerkt, dass er die Hebel gar nicht steuert; Herz-Dachs, Leber-Biber und Nachtschicht-Mäuse melden sich über die Bordsprechanlage selbst.",
+   "musicDirection": "Funk mit Maschinenpuls, tanzbar",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "the_biology_of_rebellion_hilfe_ich_bin_ein_mensc": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Caveman",
+     "asset": "KayKit_Mystery_Series6/8 - February 2025 - Caveman",
+     "role": "Steinzeitmensch im modernen System"
+    }
+   ],
+   "home": "Lagerfeuer mitten in einem Großraumbüro",
+   "meta": "Er erklärt der Gegenwart seinen Körper; die Karten sind seine Instinkte, die sich gegen Stechuhr und Neonlicht wehren.",
+   "musicDirection": "Polka-Punk",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "the_carnival_of_unsolved_problems_therapy": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Clown",
+     "asset": "KayKit_Mystery_Series6/11 - May 2024 - Clown",
+     "role": "Clown mit Ballons"
+    }
+   ],
+   "home": "Zirkusmanege mit Podest",
+   "meta": "Die ungelösten Probleme sind Fahrgeschäfte, die sich selbst anpreisen; niemand wird ausgelacht.",
+   "musicDirection": "Soca-Calypso",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "the_kayfabe_crucible_coming_of_age": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "MagicalGirl",
+     "asset": "KayKit_Mystery_Series6/11 - May 2026 - Magical Girl · Textur C",
+     "role": "Teenager kurz vor der Verwandlung"
+    }
+   ],
+   "home": "Jugendzimmer mit Spiegel",
+   "meta": "Jede Karte ist eine Verwandlung, die schiefgeht; sie probiert alle an.",
+   "musicDirection": "Pop-Punk-Dance",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "the_kayfabe_money_trail_9_11": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Hoarder",
+     "asset": "KayKit_Mystery_Series6/8 - February 2026 - Hoarder · Textur B",
+     "role": "Forensiker mit Belegrucksack"
+    }
+   ],
+   "home": "Archiv voller Quittungen",
+   "meta": "Er legt Beleg an Beleg; die Karten sind Zahlen, die sich widersprechen (Ton-Check E16b!).",
+   "musicDirection": "Minimal-Electro",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "the_kayfabizarro_manifesto_cover_up": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "MonsterCostume",
+     "asset": "KayKit_Mystery_Series6/3 - September 2023 - Monster Costume · Textur B",
+     "role": "jemand, der sich im Kostüm versteckt"
+    }
+   ],
+   "home": "Pressezelt mit leerem Podium",
+   "meta": "Er erklärt, dass nichts passiert ist; die Karten sind die Schritte der Vertuschung, die sich selbst verraten.",
+   "musicDirection": "Electro-Funk",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "the_move_1": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Animatronic_Normal",
+     "asset": "KayKit_Mystery_Series6/5 - November 2023 - Animatronic · Normal",
+     "role": "programmierte Reaktionen"
+    }
+   ],
+   "home": "Freizeitpark-Bühne nach Feierabend",
+   "meta": "Er spielt sein Programm ab; jede Karte ist eine eingebaute Reaktion, die sich als freie Wahl verkauft.",
+   "musicDirection": "Synth-Pop",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "the_uruk_rumble": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "OrcBrute",
+     "asset": "KayKit_Mystery_Series6/2 - August 2025 - Orc Brute · A",
+     "role": "Gilgamesch"
+    },
+    {
+     "model": "OrcBrute",
+     "asset": "KayKit_Mystery_Series6/2 - August 2025 - Orc Brute · B",
+     "role": "Enkidu"
+    }
+   ],
+   "home": "Lehmziegel-Arena",
+   "meta": "Ein Duett zweier Freunde und Rivalen; die Götter und Monster der Karten steigen als Gegner in den Ring.",
+   "musicDirection": "Desert Blues mit Beat",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "trust_and_betrayal": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Rogue_Hooded",
+     "asset": "KayKit_Adventurers_2.0_FREE/Characters · Rogue_Hooded",
+     "role": "Vertrauensperson mit Kapuze"
+    }
+   ],
+   "home": "Hinterhof mit zwei Türen",
+   "meta": "Sie sagt bei jeder Karte „trust me, bro“; die Verräter der Geschichte sind ihre Vorbilder.",
+   "musicDirection": "Electro-Tango-Reggaeton",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "uncle_frizzlebob_s_tragic_flaws_id": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Vampire",
+     "asset": "KayKit_Mystery_Series6/4 - October 2024 - Vampire",
+     "role": "Tragöde auf dem Thron"
+    }
+   ],
+   "home": "Thronsaal mit Kelch",
+   "meta": "Er spielt alle tragischen Rollen selbst und stirbt in jeder Strophe ein bisschen.",
+   "musicDirection": "Cabaret-Swing",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "what_work_was_for": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Driver",
+     "asset": "KayKit_Mystery_Series6/2 - August 2023 - Driver · Textur B",
+     "role": "Geschwister des Lieferfahrers"
+    }
+   ],
+   "home": "Pausenraum der Spedition",
+   "meta": "Sie erzählt die Geschichte der Arbeit vom Dachs bis zur KI; die Karten sind Werkzeuge an der Wand.",
+   "musicDirection": "Funk-Shuffle",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "woad_and_warriors": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "Barbarian",
+     "asset": "KayKit_Adventurers_2.0_FREE/Characters · Barbarian",
+     "role": "gallischer Häuptling"
+    }
+   ],
+   "home": "Langhaus mit Weinfässern",
+   "meta": "Die Krieger kommen zum Gelage und prahlen; Rom ist das Gerücht vor der Tür.",
+   "musicDirection": "Sea-Shanty-Dance",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  },
+  "wrinkle_rumble": {
+   "status": "VORSCHLAG",
+   "performers": [
+    {
+     "model": "4GTN",
+     "asset": "KayKit_Mystery_Series6/7 - January 2026 - 4GTN · neu",
+     "role": ""
+    },
+    {
+     "model": "4GTN_Forgotten",
+     "asset": "KayKit_Mystery_Series6/7 - January 2026 - 4GTN · Forgotten",
+     "role": ""
+    }
+   ],
+   "home": "Werkstatt, in der die Zeit stehen geblieben ist",
+   "meta": "Ein Duett: das junge und das vergessene Ich; die Karten sind die Jahre, die dazwischen auftauchen.",
+   "musicDirection": "Disco",
+   "address": "offen: für wen auch immer da ist (andere Bewohner oder nur der Spieler)",
+   "source": "WS-Song 20.10. – Vorschlag, Georg bestätigt oder tauscht"
+  }
+ }
+}
