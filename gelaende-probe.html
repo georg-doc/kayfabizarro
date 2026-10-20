@@ -186,7 +186,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <label class="check"><input type="checkbox" id="puffs"> Wolkenschicht in Flughöhe (Ebene, Versuch)</label>
         <div class="row"><label for="cover">Wolken-Menge</label><output id="o_cover"></output><input type="range" id="cover" min="0" max="1" step="0.01" value="0.45"></div>
         <div class="row"><label for="cstretch">Wolken-Streckung (Flugrichtung)</label><output id="o_cstretch"></output><input type="range" id="cstretch" min="1" max="4" step="0.1" value="1"></div>
-        <label class="check"><input type="checkbox" id="trails" checked> Kondensstreifen im Flug</label>
+        <label class="check"><input type="checkbox" id="trails"> Kondensstreifen im Flug (alte Punkt-Wölkchen)</label>
       </fieldset>
 
       <fieldset>
@@ -2311,7 +2311,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (!RC.dirty) $('recipe').value = JSON.stringify(r, null, 2);
     RC.last = r;
   }
-  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1, mig41: 1 })) } catch (e) {} }
+  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1, mig41: 1, mig42: 1 })) } catch (e) {} }
   function setUI(p) {
     for (const k of NUM) if (p[k] != null) $(k).value = p[k];
     for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
@@ -2375,7 +2375,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   let stored = null; try { stored = JSON.parse(localStorage.getItem('kfb-gelaende-probe-7') || 'null') } catch (e) { stored = null }
   if (stored && !stored.mig39) { stored.puffs = false; stored.cstretch = 1; stored.mig39 = 1 }
   if (stored && !stored.mig40) { stored.cform = 4; stored.mig40 = 1 }
-  if (stored && !stored.mig41) { stored.fstage = 5; stored.mig41 = 1 }   // einmalig: neues Gelände (70er Fließfarben) als Standard – gespeichertes v3 stammte aus der Zeit vor Stufe 5 (Georg 21.10.)   // einmalig: Kuppel wie vorher (Georg 21.10.: Ebenen wirken wie verschobene Formen)   // einmalig: Ebenen-Wolken aus (Georg 21.10.: verschmiert), Himmelsebenen übernehmen
+  if (stored && !stored.mig41) { stored.fstage = 5; stored.mig41 = 1 }
+  if (stored && !stored.mig42) { stored.trails = false; stored.mig42 = 1 }   /* einmalig: Punkt-Kondensstreifen aus, Speedline-Bänder übernehmen (Effekt-Bildsprache R1) */   // einmalig: neues Gelände (70er Fließfarben) als Standard – gespeichertes v3 stammte aus der Zeit vor Stufe 5 (Georg 21.10.)   // einmalig: Kuppel wie vorher (Georg 21.10.: Ebenen wirken wie verschobene Formen)   // einmalig: Ebenen-Wolken aus (Georg 21.10.: verschmiert), Himmelsebenen übernehmen
   setUI(PRESETS[DEFAULT]); $('grid').checked = false;
   if (stored && typeof stored === 'object') { setUI(stored); markPreset(null) } else markPreset(DEFAULT);
   update();
