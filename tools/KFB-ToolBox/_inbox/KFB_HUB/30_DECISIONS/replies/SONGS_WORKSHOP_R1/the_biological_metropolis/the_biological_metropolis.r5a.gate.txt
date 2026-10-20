@@ -1,0 +1,34 @@
+# Gate-Bericht the_biological_metropolis.r5a · 2026-10-20
+gate song_gate.py sha256 1dd02afa466358e77e15eb7ba6518d4a614e493e425f492c6d1c99695f8c8917
+deck pin registry/assets/v1/decks/the_biological_metropolis.json sha256 76fe5fd89f90e1c2b66858d2ac1c962670d605b8a1b1aeb8866aabb7f9f58666
+media pin media/kfb/The_Biological_Metropolis_-_ADD_web_ID.pdf.json sha256 e0c6d91411eff14bfa2148f0c2c6b122f2893d217c444e0e9b9bcde5a750297b
+lyrics sha256 62244ec50b912b6a75eb4dcfc08ed14daa4a6948c570e20eac1ed8a51ceadaad · 3384 Zeichen (Unicode len)
+style sha256 fb9502bb027614887f030418e58cfbb9367e0e2d80a8590c5996b263a3d46a53
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r5a.suno.txt --deck registry/assets/v1/decks/the_biological_metropolis.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r5a.songlines.json --media media/kfb/The_Biological_Metropolis_-_ADD_web_ID.pdf.json --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_BESTOF_R1
+exit 0
+song_gate R4.2 lyrics · the_biological_metropolis.r5a.suno.txt · 3384 Zeichen · 19/19 Karten · Intro 2 · Brücken 4 · Outro 2 · Performer-Einschübe 17 · R4-Zuordnung
+lyrics sha256 62244ec50b912b6a75eb4dcfc08ed14daa4a6948c570e20eac1ed8a51ceadaad
+WARN A4: Karte 15: Kartenteil 96 Zeichen (Richtwert 80-95): 'DNA Replication: one error per billion letters; yo'
+WARN A4: Karte 19: Kartenteil 96 Zeichen (Richtwert 80-95): 'Autoimmune: the discrimination fails, not the weap'
+WARN A4: Karte 6: Kartenteil 47 Zeichen (Richtwert 80-95): 'You are the press secretary, not the president.'
+WARN A4: Karte 32: Kartenteil 72 Zeichen (Richtwert 80-95): 'The Scorekeeper: the body keeps the score because '
+WARN A2: eigener Text (Rahmen + Performer) 51% aller Wörter (Richtwert <= 30%)
+WARN C11: Wort 'two' 3x im eigenen Text
+WARN C11: Wort 'drum' 3x im eigenen Text
+REVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [1, 2, 5, 7, 9, 10, 28, 11, 15, 18, 17, 19, 21, 23, 24, 30, 26, 6, 32]
+REVIEW C9: Decktitel 'The Biological Metropolis' nur teilweise genannt: [(2, ['metropolis'])] (erlaubt)
+REVIEW C9: introType 'confession' schon in the_kayfabe_money_trail_9_11.part2.r4.6.songlines.json
+REVIEW C9: introType 'confession' schon in the_kayfabe_money_trail_9_11.part1.r4.6.songlines.json
+REVIEW B6: Performer-Text in 85% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)
+INFO S2: deck gepinnt 76fe5fd89f90
+INFO S2: media gepinnt e0c6d91411ef
+INFO C9B: Bewohner verifiziert: CombatMech (KayKit_Mystery_Series6/1 - July 2024 - Combat Mech · Textur alt)
+INFO E16b: kein Ton-Eintrag für dieses Deck; Deck-Hinweise in SONG_SPEC E16b prüfen
+PASS
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r5a.style.txt --deck registry/assets/v1/decks/the_biological_metropolis.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r5a.songlines.json --batch tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r5a.style.txt tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r5a.style.txt
+exit 0
+song_gate R4.2 style · the_biological_metropolis.r5a.style.txt · Familie A funk · 2 Variante(n) · 372, 269 Zeichen
+PASS
+

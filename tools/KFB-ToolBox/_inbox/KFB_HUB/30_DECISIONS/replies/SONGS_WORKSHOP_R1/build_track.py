@@ -27,9 +27,8 @@ for b in d["beats"]:
         line = " ".join(x for x in (b.get("pre", ""), b["text"], b.get("post", "")) if x).strip()
         idx = len(beats)
         beats.append(line)
-        if b.get("cont"):   # Fortsetzung derselben Karte im nächsten Beat
-            prev = cards[-1]
-            assert prev["cardNumber"] == b["card"], "cont nur direkt nach derselben Karte"
+        if b.get("cont"):   # Fortsetzung derselben Karte in einem späteren Beat
+            prev = next(c for c in reversed(cards) if c["cardNumber"] == b["card"])
             prev["beats"].append(idx)
             prev["cardText"] = (prev["cardText"] if isinstance(prev["cardText"], list) else [prev["cardText"]]) + [b["text"]]
         else:
@@ -38,14 +37,14 @@ beats.append("Stay Fluffy, Folks!")
 stem = dp[: -len(".draft.json")]
 open(stem + ".suno.txt", "w", encoding="utf-8").write("\n\n".join(beats) + "\n")
 
-nums = [c["cardNumber"] for c in cards]
+nums = [c["cardNumber"] for c in cards]  # Reihenfolge des ersten Auftritts
 sel = sorted(nums)
 full = [c["cardNumber"] for c in deck["cards"] if c["cardNumber"] not in d.get("metaSkipped", [])]
 motif = lambda n: re.sub(r"\s*Mood:.*$", "", re.sub(r"^.*?Subject:\s*", "", art.get(n, ""))).strip().rstrip(".")
 sl = {"schema": "kfb.songlines.r4", "deckId": d["deckId"], "deckTitle": deck["title"], "revision": d["revision"],
       "sourcePins": {"deck": {"path": os.path.relpath(deck_path, ROOT), "sha256": sha(deck_path), "sourceCommit": deck.get("sourceCommit")},
                      "media": {"path": rep["path"], "rawPinned": rep.get("rawPinned"), "sha256": sha(media_path)}},
-      "performer": d.get("performer"), "structure": d.get("structure"), "introType": d.get("introType"),
+      "performer": d.get("performer"), "performers": d.get("performers", []), "residentHome": d.get("residentHome", ""), "structure": d.get("structure"), "introType": d.get("introType"),
       "selectionMode": "FULL_DECK" if sel == sorted(full) else "BEST_OF", "bestOf": sel, "bestOfReason": d.get("bestOfReason", []),
       "omitted": d.get("omitted", {}), "orderMode": "deck" if nums == sel else "edited", "orderReason": d.get("orderReason", ""),
       "metaSkipped": d.get("metaSkipped", []), "cards": cards, "songLineChanges": d.get("songLineChanges", []),

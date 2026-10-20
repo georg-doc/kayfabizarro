@@ -1,0 +1,176 @@
+{
+  "deckId": "the_biological_metropolis",
+  "revision": "r5a",
+  "performers": [
+    {
+      "model": "CombatMech",
+      "asset": "KayKit_Mystery_Series6/1 - July 2024 - Combat Mech · Textur alt",
+      "role": "der Koloss, in dem eine ganze Stadt arbeitet"
+    }
+  ],
+  "residentHome": "Kanzel eines riesigen Mechs, Rohre, Rohrpost, Bordsprechanlage",
+  "structure": "resident monologue in the cockpit: the colossus discovers the levers are painted on; the departments report over the intercom as the animals from their card art; the owls' memo is the turn",
+  "introType": "confession",
+  "synopsis": "A spoken-word number from a card deck that describes the human body as a city. It is performed by a giant walking machine in its own cockpit, for whoever happens to be there.",
+  "bestOfReason": [
+    "Hook 1-2: the city runs itself, the citizen was never asked.",
+    "Departments 5, 7, 9, 10, 28: organs report as their card-art animals.",
+    "Alarm 11, 15, 18, 17, 19: memory, copy errors, the competitor, friendly fire.",
+    "Archive 21, 23, 24, 30: looking beats the book; the institution rejects the finding.",
+    "Perception 26: the brain draws in what it cannot see (open-address joke).",
+    "Turn 6: the owls' memo - press secretary, not president.",
+    "Landing 32: the body is the score."
+  ],
+  "omitted": {
+    "3": "machine-vs-body thesis carried by the mech frame itself",
+    "4": "rules-heavy start card",
+    "8": "second filter joke after the liver",
+    "12": "slow broadcast overlaps the intercom device",
+    "13": "energy motor breaks the department rhythm",
+    "14": "doubles the memo reveal",
+    "16": "abstract in a spoken line",
+    "20": "library callback already lands with 11",
+    "22": "dilutes the Semmelweis chain",
+    "25": "overlaps department reports",
+    "27": "standing wave fights the landing",
+    "29": "stage meta-joke clashes with the resident frame",
+    "31": "cut for length"
+  },
+  "orderReason": "Brain card 6 moved to the turn; Night Shift 28 closes the departments; alarm block ordered DNA -> Cancer -> Inflammation -> Autoimmune; Blind Eye 26 placed after the archive as the open-address joke.",
+  "songLineChanges": [
+    {
+      "cardNumber": 6,
+      "rule": "A7",
+      "songLine": "The decision was already underway five hundred milliseconds before you made it.",
+      "reason": "500ms written out"
+    },
+    {
+      "cardNumber": 7,
+      "rule": "A7",
+      "songLine": "The Lungs: seventy square meters folded into your chest.",
+      "reason": "70 written out"
+    },
+    {
+      "cardNumber": 10,
+      "rule": "A7",
+      "songLine": "Eighty percent of the phone calls go up to the brain.",
+      "reason": "80% written out"
+    }
+  ],
+  "cues": [
+    {
+      "afterBeat": 3,
+      "cue": "intercom crackle, then the drum kit from the boiler room"
+    }
+  ],
+  "beats": [
+    "Somebody climbed into my cockpit again. Or nobody did, and I am talking to my own pipes. Either way, keep your hands off the levers. They are painted on.",
+    "I am a colossus, a whole metropolis on two legs. I walk, I fight, I hold very still for statues. I have not once decided anything.",
+    {
+      "card": 1,
+      "pre": "Look through the hatch.",
+      "text": "The City Inside has been running the civilization while you were busy with other things."
+    },
+    {
+      "card": 2,
+      "pre": "Turns out that means me.",
+      "text": "The Citizen: you never once told this city what to do. It never once asked your permission."
+    },
+    "The intercom crackles. The departments report whether I ask or not.",
+    {
+      "card": 5,
+      "pre": "Cardiac, down in the boiler room, a badger on a drum kit:",
+      "text": "The Heart: the brain can modify the rate. The brain cannot generate it. The badger drums alone."
+    },
+    {
+      "card": 7,
+      "pre": "Deck two, two broccoli trees trading birds:",
+      "text": "The Lungs: seventy square meters folded into your chest, the only manual override.",
+      "post": "That one I get to touch. In. Out. Mine."
+    },
+    {
+      "card": 9,
+      "pre": "A grim beaver at the oil drums, does not look up:",
+      "text": "The Liver: Prometheus was anatomically correct. It's the only organ that grows back."
+    },
+    {
+      "card": 10,
+      "pre": "The subway, full of commuters who do not get off:",
+      "text": "The Gut: eighty percent of the phone calls go up to the brain. The subway runs the city."
+    },
+    {
+      "card": 28,
+      "pre": "At night the mice come out with mops.",
+      "text": "The Night Shift: sleep is the janitorial shift washing the thoughts out of the carpet."
+    },
+    "Then the sirens. The rats in riot gear take the intercom.",
+    {
+      "card": 11,
+      "text": "The Immune System: a library of every murder attempt. It remembers things you have forgotten."
+    },
+    {
+      "card": 15,
+      "pre": "The spider in the copy room answers for the typos:",
+      "text": "DNA Replication: one error per billion letters; you have had cancer, the spider usually eats it."
+    },
+    {
+      "card": 18,
+      "pre": "Then a voice from the shoreline, a crab with a fortress on its back:",
+      "text": "Cancer: evolution occurring inside you. It is not a disease; it is a competitor."
+    },
+    {
+      "card": 17,
+      "pre": "And my firefighters, with flamethrowers:",
+      "text": "Inflammation: the response that heals the wound becomes the mechanism that burns the city."
+    },
+    {
+      "card": 19,
+      "pre": "The dog in the corner bites his tail.",
+      "text": "Autoimmune: the discrimination fails, not the weapon. The gun works fine, pointed the wrong way."
+    },
+    "In the archive, old voices argue about who drew my blueprints.",
+    {
+      "card": 21,
+      "pre": "A mole in a ruff, stomping on a textbook:",
+      "text": "Andreas Vesalius looked at the body instead of the book. Everyone else was wrong."
+    },
+    {
+      "card": 23,
+      "pre": "A raccoon washing his hands while the shadows laugh:",
+      "text": "Ignaz Semmelweis saved the mothers. The doctors committed him. He died of the infection."
+    },
+    {
+      "card": 24,
+      "pre": "And the barn door with the big sign on it:",
+      "text": "The Semmelweis Problem: evidence available, implication uncomfortable, we reject the finding."
+    },
+    {
+      "card": 30,
+      "pre": "The tortoise with four potions still thinks he built me.",
+      "text": "The Humoralist: wrong in the facts, right in the vibe. It was the first Kayfabe."
+    },
+    {
+      "card": 26,
+      "pre": "About you, by the way.",
+      "text": "The Blind Eye: you have a hole in your vision. The brain fills it in with best guesses.",
+      "post": "So if nobody is really standing there, I have painted you in."
+    },
+    {
+      "card": 6,
+      "pre": "Last report, from the owls upstairs in their judge wigs:",
+      "text": "The Brain: the decision was already underway five hundred milliseconds before you made it."
+    },
+    {
+      "card": 6,
+      "cont": true,
+      "text": "You are the press secretary, not the president."
+    },
+    "Half a second. When I hold still for a statue, somebody else already picked the pose.",
+    {
+      "card": 32,
+      "text": "The Scorekeeper: the body keeps the score because the body is the score."
+    },
+    "Every colossus in every square thinks it is marching. Most of us are being marched by a badger with a drum.",
+    "So whoever climbed in: leave the levers. Listen to the drum."
+  ]
+}

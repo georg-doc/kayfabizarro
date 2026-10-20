@@ -163,3 +163,21 @@ Werkzeuge: `build_track.py` (Draft → Text + Songlines) und `gate_report.py`.
 **Prozess und Fahrplan für WS0:** `SONG_WORKSHOP_PROCESS.md`.
 
 **Nächster Schritt:** die drei Piloten als Bewohner-Performance (r5).
+
+## §7 · 20.10.2026 · Piloten als Bewohner-Performance (r5a), Kritik läuft
+| Track | Bewohner | Zuhause / Mittel | STYLE A / B | Zeichen | Karten | Gate R4.2 |
+|---|---|---|---|---|---|---|
+| Metropolis r5a | Combat Mech (alt) | Kanzel, Abteilungen melden sich per Bordsprechanlage als Tiere aus ihren Kartenbildern; das Eulen-Memo ist die Wendung | funk 104 / big beat 122 | 3384 | 19 | PASS |
+| Brain Wrestling r5a | Action Figure | Spielzeugkiste, Kopfwechsel = Kartenwechsel; endet mit der einzigen Wahl des Jobbers | glam rock 118 / boom-bap 100 | 3283 | 20 | PASS |
+| Protopia r5a | Farmer A | Kleingarten; Tiere aus den Kartenbildern sind Nachbarn und sagen ihre Karte | highlife 112 / cumbia 104 | 3542 | 23 | PASS |
+
+**Kein Saalpublikum:**
+- keine Bühnenformeln, keine Crowd-Cues außer `[Bell]` in der Spielzeugkiste;
+- die Ansprache funktioniert mit und ohne Zuhörer: „Or nobody did …“, „If nobody came …“, „or nobody is and the box just creaked“.
+
+**Album-Notiz (nicht blind):** Alle drei nutzen Figuren aus den Kartenbildern als fraktale Kartenstimmen, das ist KFB-Bildsprache. Der Mechanismus ist jeweils ein anderer: Bordsprechanlage, Kopfwechsel, Gartenbesuch. Das wird beobachtet, damit es kein Schema wird.
+
+**Nächster Schritt:**
+1. Kritik v3 auswerten (läuft, blind, frisch).
+2. Höchstens eine Revision.
+3. Dann Georg in Suno.

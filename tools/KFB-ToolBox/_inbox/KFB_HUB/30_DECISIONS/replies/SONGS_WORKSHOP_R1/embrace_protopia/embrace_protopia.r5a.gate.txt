@@ -1,0 +1,47 @@
+# Gate-Bericht embrace_protopia.r5a · 2026-10-20
+gate song_gate.py sha256 1dd02afa466358e77e15eb7ba6518d4a614e493e425f492c6d1c99695f8c8917
+deck pin registry/assets/v1/decks/embrace_protopia.json sha256 e986128e48da6f79fbb5e69eeb6244374598779acc4918ce09ae47f512ca6fa3
+media pin media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json sha256 c482d20009c2454b7858256fc2adfa9f4660edf5cc74b50e2560bd9987604ee3
+lyrics sha256 d26cbb04ec08473f4e55f7c20711fa40d513bbb753f3e5b4211e9983f4250f53 · 3542 Zeichen (Unicode len)
+style sha256 4271326eeb552506b4404955c17a45b4c6fd8ead1c548e4291e2f68d7ef85765
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r5a.suno.txt --deck registry/assets/v1/decks/embrace_protopia.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r5a.songlines.json --media 'media/kfb/Deck_C_PROTOPIA_-_Protopia_Sketchbook_(1)_web_H.pdf.json' --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_BESTOF_R1
+exit 0
+song_gate R4.2 lyrics · embrace_protopia.r5a.suno.txt · 3542 Zeichen · 23/23 Karten · Intro 2 · Brücken 0 · Outro 2 · Performer-Einschübe 23 · R4-Zuordnung
+lyrics sha256 d26cbb04ec08473f4e55f7c20711fa40d513bbb753f3e5b4211e9983f4250f53
+WARN A4: Karte 1: Kartenteil 76 Zeichen (Richtwert 80-95): 'the future is a process of slow, incremental impro'
+WARN A4: Karte 3: Kartenteil 70 Zeichen (Richtwert 80-95): 'make the first version bad on purpose. Bad is how '
+WARN A4: Karte 4: Kartenteil 47 Zeichen (Richtwert 80-95): 'Improve it once, then leave it better and open.'
+WARN A4: Karte 5: Kartenteil 39 Zeichen (Richtwert 80-95): 'one broken thing close enough to touch.'
+WARN A4: Karte 6: Kartenteil 74 Zeichen (Richtwert 80-95): 'A repair you can finish this week, not a revolutio'
+WARN A4: Karte 7: Kartenteil 41 Zeichen (Richtwert 80-95): 'small fixes do not trend. They just hold.'
+WARN A4: Karte 9: Kartenteil 50 Zeichen (Richtwert 80-95): 'take the one breath the feed is built to deny you.'
+WARN A4: Karte 15: Kartenteil 64 Zeichen (Richtwert 80-95): 'real know-how is often badly dressed and lives thr'
+WARN A4: Karte 17: Kartenteil 60 Zeichen (Richtwert 80-95): 'Turn watching into showing up. Name a time, a plac'
+WARN A4: Karte 19: Kartenteil 125 Zeichen (Richtwert 80-95): 'A pigeon, an emu, a duck and a crow huddled over a'
+WARN A4: Karte 18: Kartenteil 53 Zeichen (Richtwert 80-95): 'split a problem the way your ancestors raised a ba'
+WARN A4: Karte 26: Kartenteil 71 Zeichen (Richtwert 80-95): 'Lower the bar to contact. Most cooperation starts '
+WARN A4: Karte 27: Kartenteil 76 Zeichen (Richtwert 80-95): 'they might not respond. Your nervous system thinks'
+WARN A4: Karte 33: Kartenteil 75 Zeichen (Richtwert 80-95): 'Write down what you actually saw, not what the hea'
+WARN A4: Karte 42: Kartenteil 68 Zeichen (Richtwert 80-95): 'Run a tiny version. Low stakes, real feedback, no '
+WARN A4: Karte 43: Kartenteil 65 Zeichen (Richtwert 80-95): 'improvement often looks like mild disobedience to '
+WARN A4: Karte 46: Kartenteil 107 Zeichen (Richtwert 80-95): 'The Comfort of Maybe: trade the warm baths of hope'
+WARN A4: Karte 47: Kartenteil 66 Zeichen (Richtwert 80-95): 'there is no final version. The cost is showing up '
+WARN A4: Karte 55: Kartenteil 65 Zeichen (Richtwert 80-95): 'Nobody will clap. Start anyway. The clapping was n'
+WARN A4: Karte 56: Kartenteil 57 Zeichen (Richtwert 80-95): 'Forget the brochure. Ignore the loop. Pick up the '
+WARN A2: eigener Text (Rahmen + Performer) 54% aller Wörter (Richtwert <= 30%)
+WARN C11: Wort 'gate' 3x im eigenen Text
+REVIEW C10: Reihenfolge redaktionell geändert (orderMode='edited'): [1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 15, 17, 19, 18, 26, 27, 33, 42, 43, 46, 47, 55, 56]
+REVIEW C9: Decktitel 'Protopia Sketchbook — Deck C: EMBRACE' nur teilweise genannt: [(2, ['protopia'])] (erlaubt)
+REVIEW B6: Performer-Text in 100% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)
+INFO S2: deck gepinnt e986128e48da
+INFO S2: media gepinnt c482d20009c2
+INFO C9B: Bewohner verifiziert: Farmer_A (KayKit_Mystery_Series6/12 - June 2026 - Farmers · Textur A)
+INFO E16b: kein Ton-Eintrag für dieses Deck; Deck-Hinweise in SONG_SPEC E16b prüfen
+PASS
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r5a.style.txt --deck registry/assets/v1/decks/embrace_protopia.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/embrace_protopia/embrace_protopia.r5a.songlines.json --batch tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.r5a.style.txt tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/the_biological_metropolis/the_biological_metropolis.r5a.style.txt
+exit 0
+song_gate R4.2 style · embrace_protopia.r5a.style.txt · Familie A afro · 2 Variante(n) · 389, 288 Zeichen
+PASS
+

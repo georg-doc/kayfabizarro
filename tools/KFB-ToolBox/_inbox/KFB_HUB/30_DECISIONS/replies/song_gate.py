@@ -844,7 +844,8 @@ def gate_album(a):
         vs = style_variants(sty) if sty else [""]
         bs = [b for b in beats_of(lyr) if not is_tag(b)] if lyr else []
         bpm = re.findall(r"(\d{2,3})\s*bpm", vs[0].casefold())
-        rows.append({"deck": sj.get("deckId"), "performer": (sj.get("performer") or {}).get("name", "–"),
+        perf = " + ".join(p.get("model", "") for p in (sj.get("performers") or [])) or (sj.get("performer") or {}).get("name", "–")
+        rows.append({"deck": sj.get("deckId"), "performer": perf,
                      "famA": style_family(vs[0]), "famB": style_family(vs[1]) if len(vs) > 1 else None, "bpmA": bpm[0] if bpm else "–",
                      "structure": sj.get("structure", "–"), "open": bs[0] if bs else "", "close": bs[-2] if len(bs) > 1 else "",
                      "cards": len(sj.get("bestOf") or []), "chars": len(lyr)})

@@ -1,0 +1,173 @@
+{
+  "deckId": "big_bad_brain_wrestling",
+  "revision": "r5a",
+  "performers": [
+    {
+      "model": "ActionFigure",
+      "asset": "KayKit_Mystery_Series6/6 - December 2023 - Action Figure · Köpfe B/C/D",
+      "role": "Wrestling-Actionfigur mit austauschbaren Köpfen = Gimmicks"
+    }
+  ],
+  "residentHome": "Spielzeugkiste als Ring, Pappschilder an den Seilen",
+  "structure": "resident monologue in the toy box: the figure swaps heads and each head is a card cutting its own promo; the card-art animals of the toy box are the rest of the roster; ends on the jobber's only choice",
+  "introType": "found_object",
+  "synopsis": "A spoken-word number from a card deck about the psychology of professional wrestling. It is performed by a toy wrestling figure inside its toy box, for whoever happens to be there.",
+  "bestOfReason": [
+    "Heads 1-4: babyface, heel, tweener and the head from the package (the jobber).",
+    "The trick 9, 13, 14, 11: the box neighbours from the card art teach selling and its lies.",
+    "Fear 17, 22: the mask that stays on, the bag nobody opens.",
+    "Who decides 45, 46, 49: the spider in a suit, the cricket, the eye on the shelf.",
+    "Alone 30, 31: the empty box and the fake crowd on the wall.",
+    "Real 35, 55: the cracked head, the cop who writes him up.",
+    "Finish 41, 42, 56 + the jobber's choice (4, second beat)."
+  ],
+  "omitted": {
+    "5-8": "big-body archetypes repeat the roster joke",
+    "10": "overlaps 43-style dominance",
+    "12": "too technical",
+    "15-16": "repeat the sound lie of 13",
+    "18-21": "brutality catalogue",
+    "23-29": "cut for length; 29 overlaps the tweener",
+    "32-34": "plant, shooter, sandbag cut so 35 carries 'real'",
+    "36-40": "cut for length",
+    "43-44": "endings not used",
+    "47-48": "overlap 46",
+    "50-54": "cut for length"
+  },
+  "orderReason": "Deck order kept except: the oversell clown 11 comes after the stomp punch as the overdone counterexample; the jobber's power returns as the final card beat.",
+  "songLineChanges": [
+    {
+      "cardNumber": 42,
+      "rule": "A7",
+      "songLine": "kicking out at two point nine nine, crowd vertical",
+      "reason": "2.99 from the card image written out"
+    }
+  ],
+  "cues": [
+    {
+      "afterBeat": 1,
+      "cue": "toy box lid creaks"
+    },
+    {
+      "afterBeat": 4,
+      "cue": "plastic click at every head swap"
+    }
+  ],
+  "beats": [
+    "Lid's open. A kid is back, or you are, or nobody is and the box just creaked. I perform anyway. I'm plastic. Performing is the whole job.",
+    "Big Bad Brain Wrestling, it says on the lid. One body, four heads, a cardboard ring. Every head is somebody else, and every one of them swears the fight is real.",
+    {
+      "card": 1,
+      "pre": "Click. Golden head.",
+      "text": "The Babyface: high-flying moves, because audiences cheer for that. A slave to approval."
+    },
+    {
+      "card": 2,
+      "pre": "Click. Sneer head.",
+      "text": "The Heel: brutal, sneaky moves. If they aren't booing, you aren't doing your job."
+    },
+    {
+      "card": 3,
+      "pre": "Click. Sunglasses.",
+      "text": "The Tweener: the audience decides to cheer for you on their own. You don't ask for it."
+    },
+    {
+      "card": 4,
+      "pre": "And the head that came in the package.",
+      "text": "The Jobber: isolated and picked apart. You exist to make the other guy look good."
+    },
+    "That one is mine. The others are on loan.",
+    {
+      "card": 9,
+      "pre": "My teacher is the opossum by the crayons, staggering from a tiny tap:",
+      "text": "The Master Seller: maintain the illusion of peril. Limp to the ring. Make them believe."
+    },
+    {
+      "card": 13,
+      "pre": "The kangaroo next to him swears by this one:",
+      "text": "The Thigh Slap: slapping the thigh when kicking. A loud sound suggests impact. An audio lie."
+    },
+    {
+      "card": 14,
+      "pre": "The donkey answers with a thud:",
+      "text": "The Stomp Punch: stomping on the mat when punching. Kinetic misdirection."
+    },
+    {
+      "card": 11,
+      "pre": "The chicken overdoes it, every time.",
+      "text": "The Oversell Clown: reacting to an attack far beyond reality. A mockery of the sport."
+    },
+    {
+      "card": 17,
+      "pre": "The axolotl keeps her mask on, even in the dark.",
+      "text": "The Sacred Mask: kayfabe sacred to their identity. The biggest identifier. Never remove it."
+    },
+    {
+      "card": 22,
+      "pre": "And there is a canvas bag in the corner nobody opens.",
+      "text": "The Snake Bag: the bag has a live snake. Terrify them before the match starts."
+    },
+    "Who decides how it ends? Look up. Whoever holds the box.",
+    {
+      "card": 45,
+      "pre": "Or the spider in the suit, pulling strings:",
+      "text": "The Booker: the ending is pre-planned. You are just a puppet."
+    },
+    {
+      "card": 46,
+      "pre": "The cricket calls the next move into my ear.",
+      "text": "The Spot Caller: calling moves in the ring. A basic outline, filled in with sweat."
+    },
+    {
+      "card": 49,
+      "pre": "And one big eye on the shelf.",
+      "text": "The Hard Cam: if the camera didn't see it, it didn't happen."
+    },
+    {
+      "card": 30,
+      "pre": "Most nights it's this one.",
+      "text": "The Empty Arena: taped in empty arenas, pausing for a pop that never comes. Surreal."
+    },
+    {
+      "card": 31,
+      "pre": "So the chameleons on the wall pretend to be a crowd.",
+      "text": "The Green Screen Crowd: a failed attempt to hide the emptiness. Audio sweetening on a lie."
+    },
+    {
+      "card": 35,
+      "pre": "Then one night a head really cracks.",
+      "text": "The Real Injury: Goldberg's shoulder smashed into the ring-post. The crowd goes nuts: it's real."
+    },
+    {
+      "card": 55,
+      "pre": "The cop in the corner is writing me up for telling you this.",
+      "text": "The Kayfabe Police: protecting the business. Keep the secrets secret, or get fired."
+    },
+    {
+      "tag": "Bell"
+    },
+    {
+      "card": 41,
+      "pre": "Here it comes.",
+      "text": "The Finisher: the Leg Drop. The most important moment. If this hits, go home."
+    },
+    {
+      "card": 42,
+      "pre": "It hits. And the zebra still kicks out,",
+      "text": "The False Finish: the art of the near-fall, kicking out at two point nine nine, crowd vertical."
+    },
+    {
+      "card": 56,
+      "pre": "So I lie down the way the phoenix does.",
+      "text": "The Retirement Match: leaning on the fourth wall. Rising, and falling. See you next season."
+    },
+    {
+      "card": 4,
+      "cont": true,
+      "pre": "One line on the package is still true.",
+      "text": "When defeated, you may choose who defeats you. That is your only control."
+    },
+    "So whoever opened the lid: it's you. You knew the ending and stayed for the near-fall anyway.",
+    "Out there they swear it's real. In here it says plastic on the label, and I still give you everything. Close the lid gently. All my heads are in here."
+  ]
+}
