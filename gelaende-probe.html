@@ -2500,13 +2500,16 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   });
   window.addEventListener('keyup', (e) => { keys[e.code] = false });
   window.addEventListener('blur', () => { for (const k in keys) keys[k] = false });
+  const TV = { u: new THREE.Vector3(), f: new THREE.Vector3(), x: new THREE.Vector3(), Y: new THREE.Vector3(0, 1, 0), m: new THREE.Matrix4(), qw: new THREE.Quaternion(), qe: new THREE.Quaternion(), qt: new THREE.Quaternion(), e: new THREE.Euler() };
   function syncP(dt) {
     const px = P.x, pz = P.z; P.x = D.x; P.z = D.z; P.y = D.y; P.yaw = D.yaw; P.vf = D.speed; P.vl = D.latV || 0; P.vy = D.vy || 0; P.air = !!D.air; P.fly = !!F.st
     P.odo += Math.hypot(P.x - px, P.z - pz); P.sq = -0.18 * (D.squash || 0)   // Knet-Squash aus k2t (SQUASH_LOOK y)
-    const at = KD.attitude ? KD.attitude(D) : null, tp = at?.pitch ?? D.pitch ?? 0, tr = at?.roll ?? D.roll ?? 0
-    const u = D.up || [0, 1, 0], fx = Math.sin(D.yaw), fz = Math.cos(D.yaw), lx = Math.cos(D.yaw), lz = -Math.sin(D.yaw)
-    const gp = Math.atan2(u[0] * fx + u[2] * fz, u[1]), gr = Math.atan2(u[0] * lx + u[2] * lz, u[1])   // Bodenneigung aus der Wagen-Normale
-    const k = dt ? Math.min(1, dt * 12) : 1; P.vPitch += ((P.fly ? -tp : gp - tp) - P.vPitch) * k; P.vRoll += ((P.fly ? tr : -gr + tr) - P.vRoll) * k
+    // Lage wie im Spiel (M2Car step): Basis aus Bodennormale d.up und Fahrtrichtung, dann Euler(d.pitch, 0, d.roll); relativ zur Gierung → tilt
+    const u = TV.u.fromArray(D.up || [0, 1, 0]).normalize(), fw = TV.f.set(Math.sin(D.yaw), 0, Math.cos(D.yaw)); fw.addScaledVector(u, -fw.dot(u)).normalize()
+    const x = TV.x.crossVectors(u, fw); TV.m.makeBasis(x, u, fw); TV.qw.setFromRotationMatrix(TV.m).multiply(TV.qe.setFromEuler(TV.e.set(D.pitch || 0, 0, D.roll || 0)))
+    TV.qt.setFromAxisAngle(TV.Y, D.yaw).invert().multiply(TV.qw)                                   // ohne Gierung (die setzt carRoot)
+    if (!P.qTilt) P.qTilt = TV.qt.clone(); else P.qTilt.slerp(TV.qt, dt ? Math.min(1, dt * 14) : 1)
+    const nf = TV.f.set(0, 0, 1).applyQuaternion(P.qTilt), nr = TV.x.set(1, 0, 0).applyQuaternion(P.qTilt); P.vPitch = Math.asin(Math.max(-1, Math.min(1, nf.y))); P.vRoll = -Math.asin(Math.max(-1, Math.min(1, nr.y)))
   }
   function step(dt) {
     applyTempo();
@@ -2516,7 +2519,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     dAcc = Math.min(dAcc + dt, 0.25)
     while (dAcc >= DSTEP) { dAcc -= DSTEP
       const flew = KD.racerFlightStep(F, D, fin, DSTEP, FENV)
-      if (!flew) { KD.stepK2t(D, { gas: fin.gas, brake: fin.brake, left: fin.left, right: fin.right, driftL: !!keys.KeyQ, driftR: !!keys.KeyE, boost: fin.boost, jump: fin.jump, tip: !!keys.KeyX }, DSTEP, DENV); KD.racerAfterK2t(F, D) }
+      if (!flew) { KD.stepK2t(D, { gas: fin.gas, brake: fin.brake, left: fin.left, right: fin.right, driftL: !!keys.KeyQ, driftR: !!keys.KeyE, boost: fin.boost, jump: fin.jump, tip: !!keys.KeyX }, DSTEP, DENV); if (S.rampfly) KD.racerAfterK2t(F, D) }   // Rampen-Abflug nur wie im Spiel mit #fly (sonst hob der Wagen an jeder steilen Düne ab); Doppel-Leertaste fliegt immer
       if (!Number.isFinite(D.x + D.y + D.z)) { placeCar(P.x, P.z); break } }
     syncP(dt)
     const dr = KD.racerDrive(F, fin); P.boosting = dr ? !!dr.boost : fin.boost; P.boost = F.st ? Math.max(0, Math.min(1, (F.st.P ?? 1))) : 1
@@ -2525,7 +2528,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
 
   // ---------- Kamera ----------
   let mode = 'over', yaw = 0.8, pitch = 0.5, dist = 60, look = 0;
-  window.__hgt = (x, z) => hgt(x, z); window.__RINGS = RINGS; window.__terrain = terrain; window.__S = S; window.__probeCam = (y, p, d) => { yaw = y; pitch = p; dist = d }; window.__probeTP = (x, z) => placeCar(x, z); window.__probeDrive = () => ({ D, F, P }); // Prüfhilfe (feste Kameras für Bildvergleiche)
+  window.__hgt = (x, z) => hgt(x, z); window.__RINGS = RINGS; window.__terrain = terrain; window.__S = S; window.__probeCam = (y, p, d) => { yaw = y; pitch = p; dist = d }; window.__probeTP = (x, z) => placeCar(x, z); window.__probeDrive = () => ({ D, F, P, carRoot, tilt, camera }); // Prüfhilfe (feste Kameras für Bildvergleiche)
   const camOver = $('camOver'), camDrive = $('camDrive'), hint = $('hint');
   function setMode(m) {
     mode = m; camOver.setAttribute('aria-pressed', m === 'over'); camDrive.setAttribute('aria-pressed', m === 'drive');
@@ -2580,8 +2583,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     for (const R of RINGS) { const rx = Math.floor(P.x / R.step) * R.step, rz = Math.floor(P.z / R.step) * R.step; R.u.uOffset.value.set(rx, rz); R.m.position.set(rx - P.x, 0, rz - P.z) } water.visible = S.water > 0.005;
     worldRoot.position.set(-P.x, 0, -P.z);
     if (ROCKC.dirty || Math.hypot(P.x - ROCKC.cx, P.z - ROCKC.cz) > 40) buildRocks(P.x, P.z);
-    carRoot.position.set(0, P.y, 0);   // wie im Spiel: Ursprung = Unterseite auf Fahrhöhe carRoot.rotation.y = P.yaw;
-    tilt.rotation.set(-P.vPitch, 0, P.vRoll);
+    carRoot.position.set(0, P.y, 0); carRoot.rotation.y = P.yaw;   // wie im Spiel: Ursprung = Unterseite auf Fahrhöhe
+    if (P.qTilt) tilt.quaternion.copy(P.qTilt); else tilt.rotation.set(-P.vPitch, 0, P.vRoll);
     const s = P.sq; squash.scale.set(1 / Math.sqrt(1 + s), 1 / Math.sqrt(1 + s), 1 + s);
     const t = now / 1000;
     for (const p of plumes) {
