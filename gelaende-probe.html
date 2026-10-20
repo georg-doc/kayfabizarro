@@ -120,6 +120,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <label class="check"><input type="checkbox" id="org" checked> Farbflächen organisch (ohne Höhenbänder)</label>
         <div class="row"><label for="kus">Polka-Dot-Welt</label><select id="kus"><option value="0">aus</option><option value="1">Punkte in Biom-Farben</option><option value="2">Konfetti in Biom-Farben (heller Grund)</option><option value="3">Infinity-Netz (dicht, klein)</option></select></div>
         <div class="row"><label for="flow">Wabern</label><select id="flow"><option value="0">steht</option><option value="0.5">langsam</option><option value="1" selected>mittel</option><option value="2.5">lebhaft</option></select></div>
+        <label class="check"><input type="checkbox" id="flowspeed" checked> Wabern an Fahrtempo koppeln</label>
         <div class="row"><label for="bands">Banddichte</label><select id="bands"><option value="2.5">breit</option><option value="4" selected>mittel</option><option value="6.5">fein</option></select></div>
         <div class="row"><label for="fstage">Flächen-Stufe</label><select id="fstage"><option value="5">70er Fließfarben (wabernd)</option><option value="4">Formlogik v4: Talbänder, Rücken, Kuppen</option><option value="3">Farbflächen v3 (Kleckse)</option><option value="2">C+D: große Flächen + Übergänge + Sprenkel</option><option value="1">C: große Flächen + Übergänge</option><option value="0">B: nur große Flächen</option></select></div>
         <div class="row"><label for="dbg">Prüfansicht</label><select id="dbg"><option value="0">Endbild</option><option value="1">nur Grundfarbe (ohne Licht/Schatten)</option><option value="2">graue Form (nur Licht)</option><option value="3">Material-Masken</option></select></div>
@@ -479,17 +480,22 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     // Talbänder fließen entlang der Mulden, Rücken und Kuppen heller, dazwischen der Grundton; Ränder organisch geschwungen, Kleckse nur als leise Variation
     // 70er Fließfarben (Georg 20.10.: „wie fließende Farben, harmonische Rundungen, ineinanderfließend, leicht wabernd – nicht als Höhenband“):
     // mehrfach in sich verbogenes Rauschfeld (Domain Warping nach Quilez), in Farbbänder der Biom-Palette geschnitten; die Verbiegung läuft langsam mit der Zeit
-    if(uOrg>0.5 && uFS>4.5){ float sd=uSeed.x*0.37+uSeed.y*0.11; float tt=uTimeT*0.012*uFlow;
+    if(uOrg>0.5 && uFS>4.5){ float sd=uSeed.x*0.37+uSeed.y*0.11; float tt=uTimeT*0.006*uFlow;
+      { vec2 rl=vW.xz-uCarW; vec2 au=vec2(rl.x+40.0,-rl.y+40.0)/80.0; if(uAOOn>0.5 && au.x>0.0 && au.x<1.0 && au.y>0.0 && au.y<1.0){ float hold=smoothstep(0.03,0.35,texture2D(uAOMap,au).r); tt*=1.0-hold*0.97; } }   /* unter und um Props stehen die Farben still: kein Durchfließen unter Steinen */
       vec2 p=vW.xz/210.0+vec2(sd*0.01, -sd*0.013);
       vec2 q=vec2(snoise(p+vec2(0.0,tt))*0.7+snoise(p*2.1+vec2(3.1,-tt))*0.3, snoise(p+vec2(5.2,1.3)-tt)*0.7+snoise(p*2.1+vec2(-1.7,4.4)+tt)*0.3);
       vec2 r=vec2(snoise(p+1.6*q+vec2(1.7,9.2)+0.5*tt), snoise(p+1.6*q+vec2(8.3,2.8)-0.4*tt));
       float f=snoise(p+1.4*r+vec2(-4.0,6.0))*0.75+0.25*snoise(p*1.9+r);
       float v=f*uBands+0.8*length(q)+tt*0.6+hn*uBands*0.9;   /* lose an die Höhenlinien gebunden: folgt der Landform, ohne reine Höhenstufe zu werden */ v+=0.22*sin(v*1.7+r.x*2.0);   /* ungleiche Bandbreiten */
       float idx=floor(v), k=fract(v); float aw=fwidth(v)*1.1+1e-4;
-      vec3 P0=peak, P1=sand, P2=low, P3=mid, P4=high, P5=mix(water,mid,0.35);
+      /* Biom-Wechsel Band für Band: jedes Band wechselt an einer eigenen Stelle die Palette (keine trübe Mischfarbe, Übergang fließt mit) */
       float i6=mod(idx,6.0), j6=mod(idx+1.0,6.0);
-      vec3 ca=i6<0.5?P0:(i6<1.5?P1:(i6<2.5?P2:(i6<3.5?P3:(i6<4.5?P4:P5))));
-      vec3 cb=j6<0.5?P0:(j6<1.5?P1:(j6<2.5?P2:(j6<3.5?P3:(j6<4.5?P4:P5))));
+      vec3 cAa=i6<0.5?uA_peak:(i6<1.5?uA_sand:(i6<2.5?uA_low:(i6<3.5?uA_mid:(i6<4.5?uA_high:mix(uA_water,uA_mid,0.35)))));
+      vec3 cBa=i6<0.5?uB_peak:(i6<1.5?uB_sand:(i6<2.5?uB_low:(i6<3.5?uB_mid:(i6<4.5?uB_high:mix(uB_water,uB_mid,0.35)))));
+      vec3 cAb=j6<0.5?uA_peak:(j6<1.5?uA_sand:(j6<2.5?uA_low:(j6<3.5?uA_mid:(j6<4.5?uA_high:mix(uA_water,uA_mid,0.35)))));
+      vec3 cBb=j6<0.5?uB_peak:(j6<1.5?uB_sand:(j6<2.5?uB_low:(j6<3.5?uB_mid:(j6<4.5?uB_high:mix(uB_water,uB_mid,0.35)))));
+      float hA=fract(sin(idx*12.9898+3.1)*43758.5453), hB=fract(sin((idx+1.0)*12.9898+3.1)*43758.5453);
+      vec3 ca=mix(cAa, cBa, smoothstep(hA*0.8, hA*0.8+0.2, t)), cb=mix(cAb, cBb, smoothstep(hB*0.8, hB*0.8+0.2, t));
       vec3 o=mix(ca, cb, smoothstep(1.0-aw, 1.0, k));                       /* klare, kantenglatte Bandgrenze */
       o=mix(o, mix(ca,cb,0.5), smoothstep(0.25,0.6,aw));                    /* fern: Mischton statt Flimmern */
       c = uWater>0.005 ? mix(c, o, smoothstep(uWater+0.03-w, uWater+0.05+w, hn)) : o;
@@ -789,7 +795,7 @@ ${GLSL_SKY}
   // ---------- Steuerung ----------
   const $ = (id) => document.getElementById(id);
   const NUM = ['scale', 'amp', 'oct', 'ridge', 'warp', 'macro', 'seed', 'valley', 'plateau', 'steps', 'sharp', 'maxslope', 'water', 'soft', 'cliff', 'cover', 'gs'];
-  const BOOL = ['strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex'];
+  const BOOL = ['strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex', 'flowspeed'];
   const fmt = {
     scale: (v) => `${v} m`, amp: (v) => `${v} m`, oct: (v) => `${v}`, ridge: (v) => `${Math.round(v * 100)} %`, warp: (v) => v.toFixed(2), macro: (v) => `${Math.round(v * 100)} %`, seed: (v) => `${v}`,
     valley: (v) => `${Math.round(v * 100)} %`, plateau: (v) => (v >= 0.999 ? 'aus' : `${Math.round(v * 100)} % Höhe`), steps: (v) => (v < 1 ? 'aus' : `${v} Stufen`), maxslope: (v) => (v >= 80 ? 'aus' : `${v}°`), sharp: (v) => `${Math.round(v * 100)} %`, water: (v) => `${Math.round(v * 100)} % Höhe`,
@@ -828,7 +834,7 @@ ${GLSL_SKY}
     const r = { schema: 'kfb.terrain-recipe/1', status: 'Entwurf (Gelände-Probe)', seed: S.seed, units: 'm',
       form: { featureSize: S.scale, height: S.amp, octaves: S.oct, ridge: +S.ridge.toFixed(2), warp: +S.warp.toFixed(2), calmHillyVariation: +S.macro.toFixed(2) },
       stylize: { flatValleys: +S.valley.toFixed(2), plateauAt: S.plateau >= 0.999 ? null : +S.plateau.toFixed(2), terraces: S.steps, terraceEdge: +S.sharp.toFixed(2), maxSlopeDeg: S.maxslope, etheringtonRound: S.ether, rockClusters: S.rockc, waterLevel: +S.water.toFixed(2) },
-      color: { polkaDot: ['aus', 'biom', 'konfetti', 'netz'][S.kus], organicFields: S.org, surfaceStage: ['B makro', 'C +übergänge', 'D +sprenkel', 'v3', 'v4 formlogik', '70er fliessfarben'][S.fstage], flowSpeed: S.flow, bandDensity: S.bands, biome: S.palA, biomeTravel: S.mix ? S.palB : null, bandSoftness: +S.soft.toFixed(2), cliffSlopeDeg: S.cliff, strata: S.strata, steppedLight: S.toon, palette: PALETTES[S.palA] },
+      color: { polkaDot: ['aus', 'biom', 'konfetti', 'netz'][S.kus], organicFields: S.org, surfaceStage: ['B makro', 'C +übergänge', 'D +sprenkel', 'v3', 'v4 formlogik', '70er fliessfarben'][S.fstage], flowSpeed: S.flow, flowWithSpeed: S.flowspeed, bandDensity: S.bands, biome: S.palA, biomeTravel: S.mix ? S.palB : null, bandSoftness: +S.soft.toFixed(2), cliffSlopeDeg: S.cliff, strata: S.strata, steppedLight: S.toon, palette: PALETTES[S.palA] },
       world: { voxel: { on: S.vox, size: S.voxs, step: S.voxhSel < 0 ? 'cube' : S.voxh, smoothDrive: S.voxsmooth, edge3: S.voxtex }, viewRings: S.rings, gridWorld: S.gridworld, gridSpacing: S.gs, gridShape: ['eckig', 'geschwungen', 'kreise'][S.gshape], gridFill: ['linien', 'schachbrett', 'schachbrett+linien'][S.gfill], checkerColors: S.gcol ? 'bunt' : 'zwei', checkerTexture: S.gtex ? 'edge3' : null, clayLook: S.clay,
         diorama: { on: S.dio, palette: S.dpal, plinthAndBerm: S.berm, colourRingSpeckle: S.ring, stoneBand: S.stones, props: S.props, grounding: S.ground, realShadows: S.shadows, contactCrumbs: S.crumbs, foregroundMass: S.fgmass, colouredEdges: S.edges }, testTempo: S.tempo },
       sky: { timeOfDay: S.tod, paintedClouds: S.painted, clayClouds: S.puffs, cloudCover: +S.cover.toFixed(2), contrails: S.trails, v2: S.sky2, backdrops: S.kul, body: ['keiner', 'knet-mond', 'ringplanet'][S.moon] },
@@ -866,7 +872,7 @@ ${GLSL_SKY}
     num('seed', r.seed); num('scale', f.featureSize); num('amp', f.height); num('oct', f.octaves); num('ridge', f.ridge); num('warp', f.warp); num('macro', f.calmHillyVariation);
     num('valley', st.flatValleys); p.plateau = typeof st.plateauAt === 'number' ? st.plateauAt : 1; num('steps', st.terraces); num('sharp', st.terraceEdge); p.maxslope = typeof st.maxSlopeDeg === 'number' ? st.maxSlopeDeg : 80; num('water', st.waterLevel);
     bool('ether', st.etheringtonRound, false); bool('rockc', st.rockClusters, false);
-    bool('org', c.organicFields, false); idx('fstage', ['B makro', 'C +übergänge', 'D +sprenkel', 'v3', 'v4 formlogik', '70er fliessfarben'], c.surfaceStage); num('flow', c.flowSpeed); num('bands', c.bandDensity); p.kus = Math.max(0, ['aus', 'biom', 'konfetti', 'netz'].indexOf(c.polkaDot));
+    bool('org', c.organicFields, false); idx('fstage', ['B makro', 'C +übergänge', 'D +sprenkel', 'v3', 'v4 formlogik', '70er fliessfarben'], c.surfaceStage); num('flow', c.flowSpeed); num('bands', c.bandDensity); bool('flowspeed', c.flowWithSpeed, true); p.kus = Math.max(0, ['aus', 'biom', 'konfetti', 'netz'].indexOf(c.polkaDot));
     if (c.palette && typeof c.palette === 'object') { const base = PALETTES[c.biome], keys = PAL_KEYS.filter((k) => /^#[0-9a-f]{6}$/i.test(c.palette[k] || ''))
       if (keys.length === PAL_KEYS.length && (!base || keys.some((k) => base[k].toLowerCase() !== c.palette[k].toLowerCase()))) { regRezeptPal(c.palette); p.palA = 'rezept' } }
     if (!p.palA && c.biome && PALETTES[c.biome]) p.palA = c.biome; if (c.biomeTravel && PALETTES[c.biomeTravel]) p.palB = c.biomeTravel; p.mix = c.biomeTravel != null;
@@ -1187,6 +1193,7 @@ ${GLSL_SKY}
   // Die Welt wandert mit dem Fahrzeug: abgetastet wird nur in ganzen Gitterschritten (kein Flimmern), die Feinbewegung macht das Gitter
   let last = performance.now(), frames = 0, fpsT = last, acc = 0;
   const STEP = SIZE / SEG, camPos = new THREE.Vector3(0, 6, -12), tmp = new THREE.Vector3();
+  let FLOWT = 0;
   function frame(now) {
     const dt = Math.min(0.1, (now - last) / 1000); last = now;
     acc += dt; while (acc >= 1 / 120) { step(1 / 120); acc -= 1 / 120 }
@@ -1223,7 +1230,7 @@ ${GLSL_SKY}
     { const rOn = !S.vox && (mode === 'over' || S.rings); for (const R of RINGS) R.m.visible = rOn; water.scale.set(rOn ? 16 : 1, 1, rOn ? 16 : 1)
       const edge = S.vox ? VOX.N * S.voxs * 0.46 : rOn ? 4700 : 292; U.uEdgeR.value = edge; U.uFogB.value = Math.LN2 / (0.6 * edge); U.uFogHb.value = 1 / Math.max(4, 0.25 * S.amp); U.uFogHa.value = rOn ? 0.0006 : 0.004
       for (const K of KUL) { K.m.position.set(camera.position.x, 0, camera.position.z); K.m.scale.setScalar(rOn ? 17 : 1) } }
-    dome.position.copy(camera.position); SKY.uTime.value = t; U.uTimeT.value = t; SKY.uCamXZ.value.set(P.x, P.z);
+    dome.position.copy(camera.position); SKY.uTime.value = t; FLOWT += dt * (1 + (S.flowspeed ? Math.min(6, Math.hypot(P.vf, P.vl, P.fly ? P.vy : 0) / 8) : 0)); U.uTimeT.value = FLOWT;   // Fließuhr: im Stand sanft, mit Tempo schneller SKY.uCamXZ.value.set(P.x, P.z);
     scene.fog.near = U.uFogNear.value * 2.2; scene.fog.far = U.uFogFar.value * 3.4; // Knet-Wolken bleiben weiter sichtbar als das Gelände
     if (puffs.visible) { const base = S.amp + 45, wind = t * 3;
       PUFF.forEach((f, i) => { const wx = ((((f.cx + wind - P.x) % 1200) + 1200) % 1200) - 600, wz = ((((f.cz - P.z) % 1200) + 1200) % 1200) - 600;
