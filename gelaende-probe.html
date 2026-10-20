@@ -117,6 +117,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <div class="row"><label for="palA">Biom</label><select id="palA"></select></div>
         <div class="swatches" id="swA" aria-hidden="true"></div>
         <label class="check"><input type="checkbox" id="org" checked> Farbflächen organisch (ohne Höhenbänder)</label>
+        <div class="row"><label for="kus">Polka-Dot-Welt</label><select id="kus"><option value="0">aus</option><option value="1">Kürbis: Gelb mit schwarzen Punkten</option><option value="2">Infinity: Rot mit weißen Punkten</option><option value="3">Biom-Töne als Punkte</option></select></div>
         <div class="row"><label for="fstage">Flächen-Stufe</label><select id="fstage"><option value="3">Farbflächen v3 (Stand vorher)</option><option value="2">C+D: große Flächen + Übergänge + Sprenkel</option><option value="1">C: große Flächen + Übergänge</option><option value="0">B: nur große Flächen</option></select></div>
         <div class="row"><label for="dbg">Prüfansicht</label><select id="dbg"><option value="0">Endbild</option><option value="1">nur Grundfarbe (ohne Licht/Schatten)</option><option value="2">graue Form (nur Licht)</option><option value="3">Material-Masken</option></select></div>
         <div class="row"><label for="soft">Farbbänder</label><output id="o_soft"></output><input type="range" id="soft" min="0" max="1" step="0.01"></div>
@@ -354,7 +355,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   uniform float uScale, uAmp, uWater, uSoft, uCliff, uStrata, uToon, uMix, uGrid, uFogNear, uFogFar, uMoodK, uGridWorld, uGS, uGShape, uGFill, uGCol, uClay, uGTex, uRing, uEther;
   uniform vec4 uDio; uniform vec4 uDioB; uniform sampler2D uEdge; uniform vec2 uSeed; uniform vec3 uCam; uniform vec2 uOffset; uniform vec3 uTint, uHorizon;
   ${palUniforms}
-  uniform sampler2D uShadowMap; uniform float uShadowOn; uniform vec3 uContact; uniform float uEdges, uFg, uOrg, uFS, uDbg;
+  uniform sampler2D uShadowMap; uniform float uShadowOn; uniform vec3 uContact; uniform float uEdges, uFg, uOrg, uFS, uDbg, uKus; uniform vec3 uKusA, uKusB;
   varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv;
   #include <packing>
   vec3 pick(vec3 a, vec3 b, float t){ return mix(a,b,t); }
@@ -464,6 +465,14 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     vec3 L=normalize(vec3(-0.55,0.75,0.35)); float l=max(dot(N,L),0.0);
     if(uToon>0.5){ float s=l*3.0; l=(floor(s)+smoothstep(0.0,uEther>0.5?0.4:0.12,fract(s)))/3.0; }   // rund: weichere Stufenübergänge, sonst sägen die Dreiecke durch
     vec3 col=c*clayTone*(0.42+0.20*N.y+0.62*l);
+    // Polka-Dot-Welt (Kusama-Hommage, Georg 20.10.): Punkte sind Kugeln im Raum, die das Gelände anschneidet → runde Punkte auf jeder Neigung,
+    // Größe variiert natürlich mit dem Schnitt; das Licht steckt in der Punktgröße (Schatten = dichtere, größere Punkte), Fläche fast flach
+    if(uKus>0.5){ float cs3=2.3; vec3 P3=vW/cs3; vec3 cl3=floor(P3); vec3 fp=fract(P3)-0.5;
+      vec3 hj=vec3(h21(cl3.xz+cl3.y*7.1), h21(cl3.zy*1.3+3.3), h21(cl3.yx*0.7-1.7)); vec3 o3=(hj-0.5)*0.24;
+      float big=0.5+0.5*snoise(vW.xz/140.0+uSeed*0.1);
+      float lt=clamp(l*0.85+0.15*N.y,0.0,1.0); float rad=mix(0.12,0.45,1.0-lt)*mix(0.7,1.15,big)*(0.85+0.3*hj.x);
+      float dd=length(fp-o3)-rad; float aa=fwidth(dd)+1e-4; float pdot=1.0-smoothstep(-aa,aa,dd); pdot=mix(pdot, 2.6*rad*rad, smoothstep(0.08,0.3,aa));   /* fern: Mischton statt Flimmern */
+      vec3 kb=uKusA*(0.9+0.12*lt), kd=uKusB*(0.92+0.1*lt); col=mix(kb, kd, pdot)*clayTone*(0.7+0.4*lt); }
     // Farbige Kanten nur an echten Formbrüchen (konvexe Grate, Plateaukanten): dunklerer Palettenton der Fläche, nie Schwarz, keine Tusche überall
     if(uEdges>0.5){ float ce=-vCurv/(uAmp*0.02+0.15); float ew=fwidth(ce)*1.2+1e-4; float ek=smoothstep(0.7, 1.3, ce)*smoothstep(0.06,0.16,1.0-vN.y);   /* weich + größerer Messbereich: keine scharfkantigen Dreiecks-Keile mehr (Prüfansicht „graue Form“) */
       col=mix(col, mix(col*0.62, uContact, 0.3), ek*0.6); }
@@ -506,7 +515,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     gl_FragColor=vec4(mix(col, sky, f),1.0);
   }`;
   U.uHole = { value: -1 }; U.uDrop = { value: 0 }; U.uNE = { value: 1.2 }; U.uCarW = { value: new THREE.Vector2() }; U.uGridWorld = { value: 0 }; U.uGS = { value: 8 }; U.uGShape = { value: 1 }; U.uGFill = { value: 0 }; U.uGCol = { value: 0 }; U.uClay = { value: 0 }; U.uGTex = { value: 0 }; U.uRing = { value: 1 };
-  U.uEdges = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 3 }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
+  U.uEdges = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 3 }; U.uKus = { value: 0 }; U.uKusA = { value: new THREE.Color() }; U.uKusB = { value: new THREE.Color() }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
   U.uDio = { value: new THREE.Vector4(0, 70, 11, 0) }; U.uDioB = { value: new THREE.Vector4(0, 1.4, 7.5, -Math.PI / 2) };
   U.uEdge = { value: new THREE.TextureLoader().load('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABLAAD/4QMpaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjAtYzA2MCA2MS4xMzQ3NzcsIDIwMTAvMDIvMTItMTc6MzI6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0REUzNjgzODFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0REUzNjgzOTFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRERTM2ODM2MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRERTM2ODM3MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAAwICAgICAwICAwUDAwMFBQQDAwQFBgUFBQUFBggGBwcHBwYICAkKCgoJCAwMDAwMDA4ODg4OEBAQEBAQEBAQEAEDBAQGBgYMCAgMEg4MDhIUEBAQEBQREBAQEBARERAQEBAQEBEQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ/8AAEQgAgACAAwERAAIRAQMRAf/EAG4AAAIDAQEBAQAAAAAAAAAAAAMEAQIHBQYACQEBAAAAAAAAAAAAAAAAAAAAABAAAQQBAgIIBgMBAQAAAAAAAQARAgMhEgYxBEFRYXGRoTITgSJCUiMHFAUWMxcRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AP0m/vP7uPKRJdmQePt3zWJmJmMHrQRHfMD9SAkd6wP1ICDetfTNBeO9a8NJBcbyqP1DxQRPeVY4SCAZ3rD70A5b2gPqQD/3Nb5mEFxvis/Ugie+KwHM0Axvusn1+aCJ79qhxn5oPS7c3LD+w0kSd0HA3xbONctJZBkPM3XG6ZEzxQTRbzDsZlA5Cd2GkUFrJWgesoAm+6MW1l0Ex5y+IzMoJPPWkNrKAf8AKudtRQRO+77ygDK26RzMoJjbzET6ygrdfzGltZQKHmuYjL1lAG7meYnkTKDUP1tbY0BKRKDu75f25oMnnAe9MdqBirl3YoGRARwgiUAcBAvOoRLnigXmJGSCBWSXQX9sjKCREHJ4oPvaEuCAldWGPFB9byzxQc67ljElAqa5BBp/65jmD9iDvb5/5yQZWIfnn3oOhRWAMICzrBi3SgpGvTx4oK2cuJoA/wAYB3CAc6REOgCZIIx6kBamkcIHKqCclASdMWQc7mqg7BAnKmICDRf19HSYIO5vaGqE0GUl43z70D3LTOEDgEXBKCfZ1FBc0BnQLXAAoEb5BiECwiCXQEFBkEBaq41nCB6uQMXQTL5ougUtqBOfFArbSIoPf7CrYxQdzeY+SSDKLoar5kdZQGoBiAgepYn5kDIAAcIPpWfKxQKXMX8kHPsrOrKAbAS7EB4SCAsKtWTwQHhWw7EEzi2EAJxZ3QK2sSg9/sQZj8EHa3lF659yDK7hpume1ASoAlA7TDLoCywEA9QOCgXs444IFrdLkFALQEBaacoHYVFm60Bo1EDCAcwBx4oFrRhApZWHKDQdiRPyoO1vAPCSDMLqibpjtQSKtBdBeNpigJ72ruQUsLnCAU5MEC1gEuCC1cCe5A1XFiCOhA7VpIygMREDCBW6D5CBSwMMoFiNRQaDsb5dKDsbuxXM9hQZjbcI2Sfi6ARvcZQDlYZcEEi3T0oCwnqHagpa7MUAYHOUBIzbAQHrscIHKiGdAeBEg3SgHcBHCBG2BkWQUFQgHQe92VENBB0t4FqpoMp5qbWTPagV/kMWdBaNrnrQFGUBayIoPrJ6h3IFpWscIJjdqkgNGwQOeCBui4SbqQOVz6QgvYBIOeKBWzAygpGOvig95s6AjoQP7xiDXL4oMm52H5JjtQc6cDFB9GZigOLiAgk82wbpQfRv1IBWkHggmgscoDWS1YCBjlpaRlA3C8RZygYF8ZNlBSyUSgFGemToPfbMkJmBCB/eEgK5E9RQZTzMnum3WgStYYKBUkhAKd+kt0IBm8k8UBIW8EDEJieCgMAAgsflygkXsEF67XyUBxbpDngguLhLKCDcCGQaDsaQaKDobyP4pfFBk3MSPvTI60Cd0zxQLysB4oE7yXYIF/dlGTFAzXIlA3U4aToGIXAnKCbL3wEAfcGpAxVIHKAs7DpZ0AxcwZ8oLRtcsTlBo+xLNWlB0d62NXPuKDJbrfzTfrQK3WeaBaUwAgDJiX6epAGyBdwgLyxL5QNGwjigiVzBwgHK+TO6D6u3Wc8UDMLpAgdCA3uE8UEYZwgrKTF0Gkfr6zUYN2IOlvuZjVP4oMguvmbpkg8UALbbDlj4IAH3JdB8EF4VzMsxPggN/HskPSfBBMeWsifSfBASVEyMgv3IF7KbXYRLdyAJrmCwB8EH0IyEuB8EDERY/A+CAhlazMfBASEyzEHwQUsMyNMQfBBpH67EoiDg9CD324/6Ac7AhkHh7dgRNkpaOJQD/wDPwcGCCw/X0R9HkgNDYEcPBAUbDjw0ICf4SH2eSCDsSP2eSAc9hR+zyQL2fr+JPo8kFR+vo/Z5ICx2BED0IPpbCH2IKf4EP6EFv8EB9CD1e2ttjktPysg//9k=', (t) => { t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping; t.needsUpdate = true }) };
   const geo = new THREE.PlaneGeometry(SIZE, SIZE, SEG, SEG).rotateX(-Math.PI / 2);
@@ -606,7 +615,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   function readUI() {
     for (const k of NUM) S[k] = parseFloat($(k).value);
     for (const k of BOOL) S[k] = $(k).checked;
-    S.palA = $('palA').value; S.palB = $('palB').value; S.tod = $('tod').value; S.tempo = $('tempo').value; S.gshape = +$('gshape').value; S.gfill = +$('gfill').value; S.gcol = +$('gcol').value; S.gtex = +$('gtex').value; S.fstage = +$('fstage').value; S.dbg = +$('dbg').value;
+    S.palA = $('palA').value; S.palB = $('palB').value; S.tod = $('tod').value; S.tempo = $('tempo').value; S.gshape = +$('gshape').value; S.gfill = +$('gfill').value; S.gcol = +$('gcol').value; S.gtex = +$('gtex').value; S.fstage = +$('fstage').value; S.kus = +$('kus').value; S.dbg = +$('dbg').value;
     const sd = S.seed; S.sx = fract(Math.sin(sd * 12.9898) * 43758.5453) * 200 - 100; S.sy = fract(Math.sin(sd * 78.233) * 12345.6789) * 200 - 100;
   }
   function pushUniforms() {
@@ -617,7 +626,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     for (const k of PAL_KEYS) { U['uA_' + k].value.set(A[k]); U['uB_' + k].value.set(B[k]) }
     const M = MOODS[S.tod] || MOODS.tag; U.uMoodK.value = M.k; U.uTint.value.setRGB(...M.tint); U.uHorizon.value.set(M.k ? M.horizon : A.sky);
     SKY.uZenith.value.set(M.zenith); SKY.uLit.value.set(M.lit); SKY.uShade.value.set(M.shade); SKY.uStars.value = M.stars; SKY.uCover.value = S.cover; SKY.uPainted.value = S.painted ? 1 : 0;
-    U.uGridWorld.value = S.gridworld ? 1 : 0; U.uGS.value = S.gs; U.uGShape.value = S.gshape; U.uGFill.value = S.gfill; U.uGCol.value = S.gcol; U.uClay.value = S.clay ? 1 : 0; U.uGTex.value = S.gtex; U.uRing.value = S.ring ? 1 : 0; U.uShadowOn.value = S.shadows ? 1 : 0; U.uEdges.value = S.edges ? 1 : 0; U.uFg.value = S.fgmass ? 1 : 0; U.uOrg.value = S.org ? 1 : 0; U.uFS.value = S.fstage; U.uDbg.value = S.dbg; U.uEther.value = S.ether ? 1 : 0; if (window.__rockc) window.__rockc.dirty = true; renderer.shadowMap.enabled = !!S.shadows; sun.castShadow = !!S.shadows; U.uContact.value.set(PALETTES[S.palA].cliff).multiplyScalar(0.55); if (window.__GU) window.__GU.uGOn.value = S.ground ? 1 : 0; window.__syncDio?.(); for (const R of RINGS) R.m.visible = S.rings; water.scale.set(S.rings ? 16 : 1, 1, S.rings ? 16 : 1);
+    U.uGridWorld.value = S.gridworld ? 1 : 0; U.uGS.value = S.gs; U.uGShape.value = S.gshape; U.uGFill.value = S.gfill; U.uGCol.value = S.gcol; U.uClay.value = S.clay ? 1 : 0; U.uGTex.value = S.gtex; U.uRing.value = S.ring ? 1 : 0; U.uShadowOn.value = S.shadows ? 1 : 0; U.uEdges.value = S.edges ? 1 : 0; U.uFg.value = S.fgmass ? 1 : 0; U.uOrg.value = S.org ? 1 : 0; U.uFS.value = S.fstage; U.uKus.value = S.kus; { const A = PALETTES[S.palA], K = [null, ['#f5c400', '#151313'], ['#d8262e', '#fbf3e8'], [A.mid, A.cliff]][S.kus]; if (K) { U.uKusA.value.set(K[0]); U.uKusB.value.set(K[1]) } if (window.__rockc) window.__rockc.kus = S.kus } U.uDbg.value = S.dbg; U.uEther.value = S.ether ? 1 : 0; if (window.__rockc) window.__rockc.dirty = true; renderer.shadowMap.enabled = !!S.shadows; sun.castShadow = !!S.shadows; U.uContact.value.set(PALETTES[S.palA].cliff).multiplyScalar(0.55); if (window.__GU) window.__GU.uGOn.value = S.ground ? 1 : 0; window.__syncDio?.(); for (const R of RINGS) R.m.visible = S.rings; water.scale.set(S.rings ? 16 : 1, 1, S.rings ? 16 : 1);
     puffMat.color.set(M.lit); puffMat.emissive.set(M.shade).multiplyScalar(0.35); trailMat.uniforms.uCol.value.set(M.lit); puffs.visible = S.puffs;
     hemi.color.set(M.k ? M.hemi[0] : A.sky); hemi.intensity = M.hemi[1]; sun.color.set(M.sun[0]); sun.intensity = M.sun[1];
     const hz = new THREE.Color(M.k ? M.horizon : A.sky); scene.fog.color.copy(hz); stage.style.background = '#' + hz.getHexString(); renderer.setClearColor(hz);
@@ -628,7 +637,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
     const r = { schema: 'kfb.terrain-recipe/1', status: 'Entwurf (Gelände-Probe)', seed: S.seed, units: 'm',
       form: { featureSize: S.scale, height: S.amp, octaves: S.oct, ridge: +S.ridge.toFixed(2), warp: +S.warp.toFixed(2), calmHillyVariation: +S.macro.toFixed(2) },
       stylize: { flatValleys: +S.valley.toFixed(2), plateauAt: S.plateau >= 0.999 ? null : +S.plateau.toFixed(2), terraces: S.steps, terraceEdge: +S.sharp.toFixed(2), etheringtonRound: S.ether, rockClusters: S.rockc, waterLevel: +S.water.toFixed(2) },
-      color: { organicFields: S.org, surfaceStage: ['B makro', 'C +übergänge', 'D +sprenkel', 'v3'][S.fstage], biome: S.palA, biomeTravel: S.mix ? S.palB : null, bandSoftness: +S.soft.toFixed(2), cliffSlopeDeg: S.cliff, strata: S.strata, steppedLight: S.toon, palette: PALETTES[S.palA] },
+      color: { polkaDot: ['aus', 'kuerbis', 'infinity', 'biom'][S.kus], organicFields: S.org, surfaceStage: ['B makro', 'C +übergänge', 'D +sprenkel', 'v3'][S.fstage], biome: S.palA, biomeTravel: S.mix ? S.palB : null, bandSoftness: +S.soft.toFixed(2), cliffSlopeDeg: S.cliff, strata: S.strata, steppedLight: S.toon, palette: PALETTES[S.palA] },
       world: { viewRings: S.rings, gridWorld: S.gridworld, gridSpacing: S.gs, gridShape: ['eckig', 'geschwungen', 'kreise'][S.gshape], gridFill: ['linien', 'schachbrett', 'schachbrett+linien'][S.gfill], checkerColors: S.gcol ? 'bunt' : 'zwei', checkerTexture: S.gtex ? 'edge3' : null, clayLook: S.clay,
         diorama: { on: S.dio, palette: S.dpal, plinthAndBerm: S.berm, colourRingSpeckle: S.ring, stoneBand: S.stones, props: S.props, grounding: S.ground, realShadows: S.shadows, contactCrumbs: S.crumbs, foregroundMass: S.fgmass, colouredEdges: S.edges }, testTempo: S.tempo },
       sky: { timeOfDay: S.tod, paintedClouds: S.painted, clayClouds: S.puffs, cloudCover: +S.cover.toFixed(2), contrails: S.trails },
@@ -639,7 +648,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   function setUI(p) {
     for (const k of NUM) if (p[k] != null) $(k).value = p[k];
     for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
-    if (p.palA) $('palA').value = p.palA; if (p.palB) $('palB').value = p.palB; if (p.tod) $('tod').value = p.tod; if (p.tempo) $('tempo').value = p.tempo; if (p.gshape != null) $('gshape').value = p.gshape; if (p.gfill != null) $('gfill').value = p.gfill; if (p.gcol != null) $('gcol').value = p.gcol; if (p.gtex != null) $('gtex').value = p.gtex; if (p.fstage != null) $('fstage').value = p.fstage; if (p.dbg != null) $('dbg').value = p.dbg;
+    if (p.palA) $('palA').value = p.palA; if (p.palB) $('palB').value = p.palB; if (p.tod) $('tod').value = p.tod; if (p.tempo) $('tempo').value = p.tempo; if (p.gshape != null) $('gshape').value = p.gshape; if (p.gfill != null) $('gfill').value = p.gfill; if (p.gcol != null) $('gcol').value = p.gcol; if (p.gtex != null) $('gtex').value = p.gtex; if (p.fstage != null) $('fstage').value = p.fstage; if (p.kus != null) $('kus').value = p.kus; if (p.dbg != null) $('dbg').value = p.dbg;
   }
   function markPreset(name) { for (const b of presetBox.children) b.setAttribute('aria-pressed', b.dataset.preset === name ? 'true' : 'false') }
   function applyPreset(name) { const grid = $('grid').checked; setUI(PRESETS[name]); $('grid').checked = grid; markPreset(name); update() }
@@ -793,7 +802,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
   function buildRocks(px, pz) {
     ROCKC.cx = px; ROCKC.cz = pz; ROCKC.dirty = false; for (const m of ROCKC.meshes) m.count = 0; ROCKC.crumbs.count = 0
     if (!S.rockc || S.gridworld) { for (const m of ROCKC.meshes) m.instanceMatrix.needsUpdate = true; ROCKC.crumbs.instanceMatrix.needsUpdate = true; return }
-    const A = PALETTES[S.palA]; ROCKC.mat.color.set(A.cliff).lerp(new THREE.Color(A.mid), 0.15).multiplyScalar(0.9)
+    const A = PALETTES[S.palA]; ROCKC.mat.color.set(A.cliff).lerp(new THREE.Color(A.mid), 0.15).multiplyScalar(0.9); if (S.kus) ROCKC.mat.color.copy(U.uKusB.value)
     const CS = 26, RAD = 175, tanMin = Math.tan((S.cliff - 10) * Math.PI / 180), tanMax = Math.tan(Math.min(S.cliff + 12, 70) * Math.PI / 180), e = 2, wl = S.water > 0.005 ? S.water * S.amp + 0.3 : -1e9
     const up = new THREE.Vector3(0, 1, 0), nrm = new THREE.Vector3(), q3 = new THREE.Quaternion(), ax = new THREE.Vector3(), q1 = new THREE.Quaternion(), q2 = new THREE.Quaternion(), m4 = new THREE.Matrix4(), pos = new THREE.Vector3(), scl = new THREE.Vector3()
     const i0 = Math.floor((px - RAD) / CS), i1 = Math.floor((px + RAD) / CS), j0 = Math.floor((pz - RAD) / CS), j1 = Math.floor((pz + RAD) / CS), sd = S.seed * 0.731
@@ -816,7 +825,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         const isExc = k === exc, lean = (isExc ? 25 + 20 * hC : base[ord[k]]) * Math.PI / 180, ld = isExc ? leanDir + Math.PI * 0.8 : leanDir + (hh2(i, j + k) - 0.5) * 0.4
         ax.set(Math.sin(ld), 0, -Math.cos(ld)); q1.setFromAxisAngle(ax, lean); q2.setFromAxisAngle(up, hh2(i - k, j) * 6.283); q1.multiply(q2)
         nrm.set(-gx, 1, -gz).normalize().lerp(up, 0.5).normalize(); q3.setFromUnitVectors(up, nrm); q1.premultiply(q3) // halb in den Hang gekippt
-        pos.set(rx, Math.min(g + 0.8 * sc - sink * hgtR, gmin + 0.2 * sc), rz); scl.set(sc, sc, sc) // nie über dem tiefsten Bodenpunkt schweben
+        pos.set(rx, Math.min(g + 0.8 * sc - sink * hgtR, gmin + 0.35 * sc), rz); scl.set(sc, sc, sc) // nie über dem tiefsten Bodenpunkt schweben
         const mesh = ROCKC.meshes[(((i * 7 + j * 3 + k) % 3) + 3) % 3]; if (mesh.count >= 420) continue
         mesh.setMatrixAt(mesh.count++, m4.compose(pos, q1, scl))
         // Brösel: wenige, klein (≤ 12 % des Steins), meist hangabwärts liegen geblieben
