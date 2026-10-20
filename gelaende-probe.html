@@ -181,6 +181,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <div class="row"><label for="moon">Himmelskörper</label><select id="moon"><option value="1">Knet-Riesenmond</option><option value="2">Ringplanet (Knete)</option><option value="0">keiner</option></select></div>
         <label class="check"><input type="checkbox" id="painted" checked> Gemalte Wolken am Himmel (3 Ebenen mit Parallaxe)</label>
         <div class="row"><label for="cform">Wolkenformation</label><select id="cform"><option value="4" selected>nur Kuppel (wie vorher)</option><option value="0">gemischt (3 Ebenen, Versuch)</option><option value="1">Haufenwolken</option><option value="2">Schäfchenwolken</option><option value="3">Wolkenbänke am Horizont</option></select></div>
+        <label class="check"><input type="checkbox" id="cards" checked> Wolken zum Vorbeifliegen (einzelne Wolkenkörper, Stufe 1)</label>
         <label class="check"><input type="checkbox" id="puffs"> Wolkenschicht in Flughöhe (Ebene, Versuch)</label>
         <div class="row"><label for="cover">Wolken-Menge</label><output id="o_cover"></output><input type="range" id="cover" min="0" max="1" step="0.01" value="0.45"></div>
         <div class="row"><label for="cstretch">Wolken-Streckung (Flugrichtung)</label><output id="o_cstretch"></output><input type="range" id="cstretch" min="1" max="4" step="0.1" value="1"></div>
@@ -1583,7 +1584,7 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
 
   // Himmel v2 (R13 H1–H6, H19): EINE Himmelsfunktion für Kuppel, Gelände, Wasser und Kulissen → Nebel = Himmel in Blickrichtung, kein Balken
   const GLSL_SKY = `
-  uniform vec3 uZenith, uSkyMid, uSkyGround, uSunDir, uSunCol, uAntiTint, uAirTint; uniform float uHzGlow, uSunHalo, uSky2, uFogB, uFogHa, uFogHb, uEdgeR, uSGrad; uniform vec2 uAirOff;
+  uniform vec3 uZenith, uSkyMid, uSkyGround, uSunDir, uSunCol, uAntiTint, uAirTint; uniform float uHzGlow, uSunHalo, uSky2, uFogB, uFogHa, uFogHb, uEdgeR, uSGrad, uKul; uniform vec3 uEdgeSun, uEdgeAnti; uniform vec2 uAirOff;
   vec3 skyColor(vec3 d){
     float y=d.y;
     vec3 up=mix(uHorizon, uSkyMid, smoothstep(0.0,0.208,y)); up=mix(up, uZenith, smoothstep(0.208,0.82,y));
@@ -1612,7 +1613,10 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     f=clamp(f*mix(1.0,1.2,1.0-ndl),0.0,1.0);
     float fs=f*4.0; float lay=floor(fs); f=mix(f, (lay+smoothstep(0.0,0.35,fract(fs)))/4.0, 0.45);   /* gemalte Luft-Staffeln: 4 leicht abgestufte Schichten */                                 /* Schattenseiten mehr Luft (H11) */
     f=max(f, smoothstep(uEdgeR*0.85, uEdgeR, length(v.xz)));                  /* Geländekante verschwindet im Himmel (H13) */
-    vec3 sky=skyColor(rd); vec3 air=mix(mix(sky,uAirTint,0.35), sky, smoothstep(0.3,0.9,f));   /* farbige Staffel (H9) */
+    vec3 sky=skyColor(rd);
+    if(uKul>0.5){ float azE=dot(normalize(rd.xz+1e-5), normalize(uSunDir.xz+1e-5))*0.5+0.5; vec3 edgeT=mix(uEdgeAnti,uEdgeSun,azE*azE);   /* Ferne R1 U3/U4: Mittelgrund-Brücke */
+      sky=mix(sky, edgeT, max(smoothstep(0.55,0.95,f), step(rd.y,0.0)*0.6)); }                                                          /* letzte Staffel und alles unter dem Horizont: Ton von K1, nie heller Himmel */
+    vec3 air=mix(mix(sky,uAirTint,0.35), sky, smoothstep(0.3,0.9,f));   /* farbige Staffel (H9) */
     air*=mix(vec3(1.0), vec3(0.95,0.97,1.03), clamp(lay/3.0,0.0,1.0)*(1.0-smoothstep(0.85,1.0,f)));   /* jede Schicht etwas kühler, am Horizont wieder Himmel */
     return mix(col, air, f);
   }`;
@@ -1876,7 +1880,7 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     { float dn=fract(52.9829189*fract(dot(gl_FragCoord.xy+0.5, vec2(0.06711056,0.00583715)))); gl_FragColor.rgb+= (dn-0.5)/255.0; }   /* Dithering: bricht 8-Bit-Stufen in flachen Verläufen (Schatten, Dunst) */
   }`;
   U.uHole = { value: -1 }; U.uDrop = { value: 0 }; U.uNE = { value: 1.2 }; U.uCarW = { value: new THREE.Vector2() }; U.uGridWorld = { value: 0 }; U.uGS = { value: 8 }; U.uGShape = { value: 1 }; U.uGFill = { value: 0 }; U.uGCol = { value: 0 }; U.uClay = { value: 0 }; U.uGTex = { value: 0 }; U.uRing = { value: 1 };
-  U.uEdges = { value: 1 }; U.uAirOff = { value: new THREE.Vector2() }; U.uVox = { value: 0 }; U.uVoxTex = { value: 1 }; U.uAOMap = { value: null }; U.uAOOn = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 5 }; U.uFlowRock = { value: 0.85 }; U.uFlowTree = { value: 0 }; U.uTimeT = { value: 0 }; U.uFlow = { value: 1 }; U.uBands = { value: 4 }; U.uKus = { value: 0 }; Object.assign(U, { uZenith: { value: new THREE.Color() }, uSkyMid: { value: new THREE.Color() }, uSkyGround: { value: new THREE.Color() }, uSunDir: { value: new THREE.Vector3(-0.55, 0.75, 0.35).normalize() }, uSunCol: { value: new THREE.Color() }, uAntiTint: { value: new THREE.Color(0.92, 0.95, 1.0) }, uAirTint: { value: new THREE.Color() }, uHzGlow: { value: 0.06 }, uSunHalo: { value: 0.35 }, uSky2: { value: 1 }, uFogB: { value: 0.003 }, uFogHa: { value: 0.004 }, uFogHb: { value: 0.06 }, uEdgeR: { value: 292 }, uMoon: { value: 1 }, uMoonDir: { value: new THREE.Vector3() } }); U.uSGrad = { value: 0.6 }; U.uKusA = { value: new THREE.Color() }; U.uKusB = { value: new THREE.Color() }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
+  U.uEdges = { value: 1 }; U.uAirOff = { value: new THREE.Vector2() }; U.uVox = { value: 0 }; U.uVoxTex = { value: 1 }; U.uAOMap = { value: null }; U.uAOOn = { value: 1 }; U.uFg = { value: 1 }; U.uOrg = { value: 1 }; U.uFS = { value: 5 }; U.uFlowRock = { value: 0.85 }; U.uFlowTree = { value: 0 }; U.uTimeT = { value: 0 }; U.uFlow = { value: 1 }; U.uBands = { value: 4 }; U.uKus = { value: 0 }; Object.assign(U, { uZenith: { value: new THREE.Color() }, uSkyMid: { value: new THREE.Color() }, uSkyGround: { value: new THREE.Color() }, uSunDir: { value: new THREE.Vector3(-0.55, 0.75, 0.35).normalize() }, uSunCol: { value: new THREE.Color() }, uAntiTint: { value: new THREE.Color(0.92, 0.95, 1.0) }, uAirTint: { value: new THREE.Color() }, uHzGlow: { value: 0.06 }, uSunHalo: { value: 0.35 }, uSky2: { value: 1 }, uFogB: { value: 0.003 }, uFogHa: { value: 0.004 }, uFogHb: { value: 0.06 }, uEdgeR: { value: 292 }, uMoon: { value: 1 }, uMoonDir: { value: new THREE.Vector3() } }); U.uSGrad = { value: 0.6 }; U.uKul = { value: 0 }; U.uEdgeSun = { value: new THREE.Color() }; U.uEdgeAnti = { value: new THREE.Color() }; U.uKusA = { value: new THREE.Color() }; U.uKusB = { value: new THREE.Color() }; U.uDbg = { value: 0 }; U.uShadowMap = { value: null }; U.uShadowM = { value: new THREE.Matrix4() }; U.uShadowOn = { value: 1 }; U.uContact = { value: new THREE.Color('#5a3b33') };
   U.uDio = { value: new THREE.Vector4(0, 70, 11, 0) }; U.uDioB = { value: new THREE.Vector4(0, 1.4, 7.5, -Math.PI / 2) };
   U.uEdge = { value: new THREE.TextureLoader().load('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABLAAD/4QMpaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjAtYzA2MCA2MS4xMzQ3NzcsIDIwMTAvMDIvMTItMTc6MzI6MDAgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0REUzNjgzODFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0REUzNjgzOTFCQjQxMUUzQkNDNkVFRUVFNEJDMEQzMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRERTM2ODM2MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRERTM2ODM3MUJCNDExRTNCQ0M2RUVFRUU0QkMwRDMzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAAwICAgICAwICAwUDAwMFBQQDAwQF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', (t) => { t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping; t.needsUpdate = true }) };
   const geo = new THREE.PlaneGeometry(SIZE, SIZE, SEG, SEG).rotateX(-Math.PI / 2);
@@ -1952,7 +1956,7 @@ ${GLSL_SKY}
     gold:  { k: 0.75, zenith: '#5e6fb3', horizon: '#f5b98c', lit: '#ffe2bd', shade: '#c98b8f', tint: [1.04, 0.86, 0.72], hemi: ['#f6c9a2', 0.8],  sun: ['#ffb877', 1.3],  stars: 0 },
     nacht: { k: 0.9,  zenith: '#121838', horizon: '#3a3e76', lit: '#9aa2d6', shade: '#3b406e', tint: [0.42, 0.48, 0.78], hemi: ['#5a5f9a', 0.5],  sun: ['#a9bcff', 0.45], stars: 1 },
   };
-  const SKY = { uSGrad: U.uSGrad, uAurora: { value: 0 }, uCForm: { value: 0 }, uAirOff: U.uAirOff, uZenith: U.uZenith, uSkyMid: U.uSkyMid, uSkyGround: U.uSkyGround, uSunDir: U.uSunDir, uSunCol: U.uSunCol, uAntiTint: U.uAntiTint, uAirTint: U.uAirTint, uHzGlow: U.uHzGlow, uSunHalo: U.uSunHalo, uSky2: U.uSky2, uFogB: U.uFogB, uFogHa: U.uFogHa, uFogHb: U.uFogHb, uEdgeR: U.uEdgeR, uMoon: U.uMoon, uMoonDir: U.uMoonDir, uHorizon: U.uHorizon, uLit: { value: new THREE.Color() }, uShade: { value: new THREE.Color() }, uTime: { value: 0 }, uCover: { value: 0.45 }, uPainted: { value: 1 }, uStars: { value: 0 }, uCamXZ: { value: new THREE.Vector2() } };
+  const SKY = { uKul: U.uKul, uEdgeSun: U.uEdgeSun, uEdgeAnti: U.uEdgeAnti, uSGrad: U.uSGrad, uAurora: { value: 0 }, uCForm: { value: 0 }, uAirOff: U.uAirOff, uZenith: U.uZenith, uSkyMid: U.uSkyMid, uSkyGround: U.uSkyGround, uSunDir: U.uSunDir, uSunCol: U.uSunCol, uAntiTint: U.uAntiTint, uAirTint: U.uAirTint, uHzGlow: U.uHzGlow, uSunHalo: U.uSunHalo, uSky2: U.uSky2, uFogB: U.uFogB, uFogHa: U.uFogHa, uFogHb: U.uFogHb, uEdgeR: U.uEdgeR, uMoon: U.uMoon, uMoonDir: U.uMoonDir, uHorizon: U.uHorizon, uLit: { value: new THREE.Color() }, uShade: { value: new THREE.Color() }, uTime: { value: 0 }, uCover: { value: 0.45 }, uPainted: { value: 1 }, uStars: { value: 0 }, uCamXZ: { value: new THREE.Vector2() } };
   const dome = new THREE.Mesh(new THREE.SphereGeometry(900, 48, 24), new THREE.ShaderMaterial({
     uniforms: SKY, side: THREE.BackSide, depthWrite: false,
     vertexShader: `varying vec3 vDir; void main(){ vDir=position; vec4 p=projectionMatrix*modelViewMatrix*vec4(position,1.0); gl_Position=p.xyww; }`,
@@ -2021,13 +2025,13 @@ ${GLSL_SKY}
     const topY = (a) => { const n1 = snoise(Math.cos(a) * 2.2 + sd, Math.sin(a) * 2.2 - sd), n2 = snoise(Math.cos(a) * 6.5 - sd, Math.sin(a) * 6.5 + sd)
       const mesa = Math.max(0, Math.min(1, (n1 * 0.5 + 0.5 - 0.42) * 6)); return top * (0.35 + 0.45 * mesa + 0.2 * (n2 * 0.5 + 0.5)) }
     const sl = new Float32Array(pa.count)   // Steigung der Silhouette je Spalte → Licht- und Schattenflanke (Georg 21.10.: Volumen statt Streifen)
-    for (let i = 0; i < pa.count; i++) { const a = Math.atan2(pa.getZ(i), pa.getX(i)), da = 0.004; sl[i] = (topY(a + da) - topY(a - da)) / (2 * da * R) / Math.tan(deg * Math.PI / 180); pa.setY(i, pa.getY(i) > 0 ? topY(a) : -60) }
+    for (let i = 0; i < pa.count; i++) { const a = Math.atan2(pa.getZ(i), pa.getX(i)), da = 0.004; sl[i] = (topY(a + da) - topY(a - da)) / (2 * da * R) / Math.tan(deg * Math.PI / 180); pa.setY(i, pa.getY(i) > 0 ? topY(a) : -400) }   // Fuß tief: beim Heben mit der Flughöhe bleibt keine Lücke
     g.setAttribute('aSl', new THREE.BufferAttribute(sl, 1)); { const tp = new Float32Array(pa.count); for (let i = 0; i < pa.count; i++) tp[i] = topY(Math.atan2(pa.getZ(i), pa.getX(i))); g.setAttribute('aTop', new THREE.BufferAttribute(tp, 1)) }   // Höhe des eigenen Umrisses je Spalte
-    const u = Object.assign({}, SKY, { uHorizon: U.uHorizon, uK: { value: k }, uSil: { value: new THREE.Color() }, uSilB: { value: new THREE.Color() }, uSilC: { value: new THREE.Color() }, uTop: { value: top } })
+    const u = Object.assign({}, SKY, { uHorizon: U.uHorizon, uK: { value: k }, uSil: { value: new THREE.Color() }, uSilB: { value: new THREE.Color() }, uSilC: { value: new THREE.Color() }, uTop: { value: top }, uKA: { value: [0.45, 0.65, 0.8][ix] }, uPW: { value: [0.6, 0.3, 0][ix] }, uKAirSun: { value: new THREE.Color() }, uKAirAnti: { value: new THREE.Color() }, uKAirBack: { value: new THREE.Color() } })
     const m = new THREE.Mesh(g, new THREE.ShaderMaterial({ uniforms: u, side: THREE.BackSide, depthWrite: true,
       vertexShader: `attribute float aSl, aTop; varying vec3 vWk; varying float vHk; varying float vSl; varying float vTop; void main(){ vec4 w=modelMatrix*vec4(position,1.0); vWk=w.xyz; vHk=position.y; vSl=aSl; vTop=aTop; gl_Position=projectionMatrix*viewMatrix*w; }`,
       fragmentShader: `${GLSL_NOISE}\nuniform vec3 uHorizon; ${GLSL_SKY}
-      uniform float uK, uTop; uniform vec3 uSil, uSilB, uSilC; varying vec3 vWk; varying float vHk; varying float vSl; varying float vTop;
+      uniform float uK, uTop, uKA, uPW; uniform vec3 uSil, uSilB, uSilC, uKAirSun, uKAirAnti, uKAirBack; varying vec3 vWk; varying float vHk; varying float vSl; varying float vTop;
       /* Flankenfeld (Georg 21.10.: keine durchgezogenen Streifen, flächig, Volumen): Grate und Rinnen laufen den Hang hinab.
          Abtastung auf einem Ring im Rauschraum (Winkel × Höhe) → keine Naht; Grate eher schmal, Flanken breit */
       float Rk(){ return 5.5+uK*4.0; }
@@ -2044,13 +2048,16 @@ ${GLSL_SKY}
         float pv=snoise(d2*Rk()*1.3+vec2(7.0,uK*5.0+hL*0.25));                                          /* hangabwärts gezogen, keine runden Kleckse */
         float vm=F*0.75+hL*1.05+0.1*pv; float vw=fwidth(vm)+0.02; float veg=1.0-smoothstep(0.72-vw,0.72+vw,vm);   /* Bewuchs unten und in den Rinnen */
         float cm=hL+F*0.3+0.06*pv; float cw=fwidth(cm)+0.02; float cap=smoothstep(1.08-cw,1.08+cw,cm)*smoothstep(0.45,0.7,vTop/max(1.0,uTop));   /* Kappe am Grat entlang, nur auf hohen Bergen */
-        vec3 base=mix(uSil, uSilB, veg*0.6); base=mix(base, uSilC, cap*0.5);                              /* Flächen ordnen sich dem Licht unter */
+        vec3 base=mix(uSil, uSilB, veg*uPW); base=mix(base, uSilC, cap*uPW*0.83);                         /* Biomflächen je Ring 0,6 / 0,3 / 0 (Ferne R1 U2) */
         vec3 col=mix(base*0.62, base*1.2, lit);
-        vec3 air=skyColor(rd);
-        vec3 far=mix(col, air, uK*0.72);                                                                /* Luftperspektive je Ring */
-        float ft=1.0-smoothstep(0.0,0.7,hN); col=mix(far, air, pow(ft,1.7)*0.97);                      /* heller Dunst über dem Fuß (Georg 21.10.), langer weicher Auslauf statt Kante */
+        /* Ferne R1 (Georg 21.10.: kein Nebelband): die ganze Ebene in EINEM Schritt zur Luft dieser Ebene (kühl, zur Sonne wärmer) – kein Fußdunst.
+           Talnebel nur in niedrigen Sätteln, in der Luft der nächsten hinteren Ebene (nie Himmel, ΔL* klein) */
+        float azK=dot(normalize(rd.xz+1e-5), normalize(uSunDir.xz+1e-5))*0.5+0.5; vec3 kAir=mix(uKAirAnti, uKAirSun, azK*azK);
+        vec3 far=mix(col, kAir, uKA);
+        float sad=(1.0-smoothstep(0.0,0.25,hL))*(1.0-smoothstep(0.35,0.55,vTop/max(1.0,uTop)));
+        col=mix(far, uKAirBack, 0.3*sad);
         gl_FragColor=vec4(col,1.0); }` }))
-    m.frustumCulled = false; m.renderOrder = 1; scene.add(m); return { m, u, ix } });
+    m.frustumCulled = false; m.renderOrder = 1; scene.add(m); return { m, u, ix, R } });
 
   // Knet-Wolken: dicke Kugeln, Stufenlicht, in Flughöhe; die Wolkenschicht wiederholt sich alle 1,2 km (endlos), driftet mit dem Wind
   const gm = new THREE.DataTexture(new Uint8Array([120, 190, 255]), 3, 1, THREE.RedFormat); gm.minFilter = gm.magFilter = THREE.NearestFilter; gm.needsUpdate = true;
@@ -2082,6 +2089,52 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   { const ab = new Float32Array(PUFF.length); puffs.geometry.setAttribute('aBase', new THREE.InstancedBufferAttribute(ab, 1)) }
   // Wolkenschicht in Flughöhe (Georg 20.10.: „gleiche Formsprache wie die Kuppelwolken, nicht knubbelig“): zwei waagrechte Ebenen, gemalt mit derselben
   // Logik wie die Kuppel (Rauschen hart geschnitten, Licht-/Schattenton, dunklere Kante), weltfest, ziehen mit dem Wind; von unten Schattenton
+  // Wolken zum Vorbeifliegen, Stufe 1 (WOLKEN_R1, Georg 21.10.): einzelne Wolkenkörper statt Rauschflächen. Jede Karte ist eine Haufenwolke aus
+  // 5 Kuppeln mit flacher Unterseite (Form im Shader aus der Saat), gemalt wie die Kuppelwolken: Licht-/Schattenton aus einer Kuppel-Normale zur Sonne,
+  // harte Kante mit dunklerem Saum, Unterseite im Schattenton, Silberrand im Gegenlicht; wächst/zerfasert langsam über die Schwelle, dreht sich nur
+  // um die Hochachse, Feld läuft um den Spieler mit (weltfest, Windzug), nah an der Kamera per Raster ausgeblendet, fern in die Himmelsfarbe. Ein Draw-Call.
+  const CARDS = (() => { const N = 32, base = new THREE.PlaneGeometry(2, 1).translate(0, 0.5, 0), g = new THREE.InstancedBufferGeometry()
+    g.index = base.index; g.setAttribute('position', base.attributes.position); g.setAttribute('uv', base.attributes.uv); g.instanceCount = N
+    const aC = new Float32Array(N * 3), aS = new Float32Array(N * 4); g.setAttribute('aC', new THREE.InstancedBufferAttribute(aC, 3)); g.setAttribute('aS', new THREE.InstancedBufferAttribute(aS, 4))
+    const rnd = (i, k) => fract(Math.sin(i * 127.1 + k * 311.7) * 43758.5453), world = []
+    for (let i = 0; i < N; i++) { const w = 60 + 90 * rnd(i, 1); world.push({ x: (rnd(i, 2) - 0.5) * 1800, z: (rnd(i, 3) - 0.5) * 1800, y: 55 + 110 * rnd(i, 4) }); aS.set([w, w * (0.42 + 0.18 * rnd(i, 5)), rnd(i, 6) * 100, rnd(i, 7)], i * 4) }
+    const mat = new THREE.ShaderMaterial({ uniforms: Object.assign({}, SKY, { uHorizon: U.uHorizon, uLitC: SKY.uLit, uShadeC: SKY.uShade, uT: { value: 0 } }),
+      vertexShader: `attribute vec3 aC; attribute vec4 aS; varying vec2 vP; varying vec3 vR; varying vec3 vF; varying vec3 vW; varying vec4 vS;
+        void main(){ vec3 tc=vec3(cameraPosition.x-aC.x,0.0,cameraPosition.z-aC.z); vF=normalize(tc+vec3(1e-4,0.0,0.0)); vR=vec3(vF.z,0.0,-vF.x);
+          vec3 w=aC+vR*position.x*aS.x*0.5+vec3(0.0,1.0,0.0)*position.y*aS.y; vW=w; vP=vec2(position.x, position.y); vS=aS; gl_Position=projectionMatrix*viewMatrix*vec4(w,1.0); }`,
+      fragmentShader: `${GLSL_NOISE}\nuniform vec3 uHorizon; ${GLSL_SKY}
+        uniform vec3 uLitC, uShadeC; uniform float uT; varying vec2 vP; varying vec3 vR; varying vec3 vF; varying vec3 vW; varying vec4 vS;
+        float h1(float n){ return fract(sin(n)*43758.5453); }
+        void main(){
+          float asp=vS.x*0.5/vS.y; vec2 p=vec2(vP.x*asp, vP.y);                                             /* Kartenraum in Höhen-Einheiten */
+          float sd=vS.z, grow=0.06*sin(uT*0.05+sd*6.3)+0.04*sin(uT*0.11+sd*2.1);                              /* langsam wachsen / zerfasern */
+          vec2 q=p+0.11*vec2(snoise(p*1.6+sd+uT*0.02), snoise(p*1.6-sd-uT*0.017))+0.04*vec2(snoise(p*4.1-sd), snoise(p*4.1+sd*1.7));   /* organische Kontur, lebt */
+          float d=1e3, kS=0.22*asp*0.5;
+          for(int k=0;k<4;k++){ float fk=float(k); float r=(k==1 ? 0.5 : 0.26+0.16*h1(sd+fk*3.7))*asp*0.5;                 /* eine große Kuppel + drei kleinere, ungleich */
+            vec2 c=vec2((h1(sd+fk*1.3)-0.5)*1.25*asp*0.6, r*0.7+0.08+0.12*h1(sd+fk*5.1));
+            float dk=length(q-c)-r*(1.0+grow); float hh=clamp(0.5+0.5*(dk-d)/kS,0.0,1.0); d=mix(dk,d,hh)-kS*hh*(1.0-hh); }   /* weich verschmelzen (smin) statt Kugelkette */
+          d=max(d, 0.12-q.y);                                                                                   /* flache Unterseite */
+          vec2 o=vec2(q.x/(asp*0.8), (q.y-0.38)/0.52); vec3 nb=normalize(vec3(o, sqrt(max(0.02,1.0-dot(o,o)))));   /* Licht aus EINER Hülle (gegen Knubbel) */
+          float fw=fwidth(d)*1.2+1e-4, m=1.0-smoothstep(-fw,fw,d);
+          if(m<0.5) discard;
+          float dist=length(vW-cameraPosition);
+          float dz=fract(52.9829189*fract(dot(gl_FragCoord.xy, vec2(0.06711056,0.00583715))));                 /* nah an der Kamera: Raster-Ausblendung */
+          if(dz > smoothstep(25.0, 70.0, dist)) discard;
+          vec3 nW=normalize(vR*nb.x+vec3(0.0,1.0,0.0)*nb.y+vF*nb.z);
+          vec3 shC=mix(uShadeC,uLitC,0.3); float l=dot(nW,uSunDir)+0.18*snoise(q*2.6+sd*3.0); float lw=fwidth(l)+0.01; vec3 cc=mix(shC, uLitC, smoothstep(-0.22-lw,-0.22+lw,l));   /* zwei Töne, Licht umgreifend (mehr Lichtseite), Grenze gemalt */
+          float bw=fwidth(q.y)+1e-4; cc=mix(cc, shC*0.94, 1.0-smoothstep(0.24-bw,0.24+bw,q.y));                  /* Unterseite als harte Fläche im Schattenton */
+          float edge=1.0-smoothstep(0.022-fw, 0.022+fw, -d); cc=mix(cc, uShadeC*0.85, edge*0.75);                 /* harter dunklerer Saum wie die Kuppelwolken */
+          float back=max(0.0,-dot(vF,uSunDir)); cc=mix(cc, mix(uLitC,uSunCol,0.35)*1.08, edge*smoothstep(0.35,0.8,back)*0.9);   /* Silberrand im Gegenlicht */
+          cc=mix(cc, skyColor(normalize(vW-cameraPosition)), 0.75*smoothstep(650.0,1250.0,dist));
+          gl_FragColor=vec4(cc,1.0); }`, side: THREE.DoubleSide })
+    const mesh = new THREE.Mesh(g, mat); mesh.frustumCulled = false; mesh.renderOrder = 2; scene.add(mesh)
+    function update(dt, t) { mesh.visible = !!S.cards; if (!mesh.visible) return; mat.uniforms.uT.value = t
+      const wx = 2.5, wz = 0.9, H = 900, base = S.amp
+      for (let i = 0; i < N; i++) { const c = world[i]; c.x += wx * dt; c.z += wz * dt
+        if (c.x - P.x > H) c.x -= 2 * H; else if (c.x - P.x < -H) c.x += 2 * H; if (c.z - P.z > H) c.z -= 2 * H; else if (c.z - P.z < -H) c.z += 2 * H   // Feld läuft um den Spieler mit
+        aC[i * 3] = c.x - P.x; aC[i * 3 + 1] = base + c.y; aC[i * 3 + 2] = c.z - P.z }
+      g.attributes.aC.needsUpdate = true }
+    return { update, mesh, N } })();
   const CLOUDH = { th: 0 };
   const CLOUDL = [0, 1].map((li) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(2600, 2600, 1, 1).rotateX(-Math.PI / 2), new THREE.ShaderMaterial({
       uniforms: Object.assign({}, SKY, { uHorizon: U.uHorizon, uLitC: SKY.uLit, uShadeC: SKY.uShade, uCoverC: SKY.uCover, uCM: { value: new THREE.Vector4(1 / 340, 0, 0, 1 / 340) }, uCO: { value: new THREE.Vector2(li * 1.52, -li * 0.91) }, uCarXZ: { value: new THREE.Vector2() }, uLay: { value: li } }),
@@ -2151,7 +2204,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   // ---------- Steuerung ----------
   const $ = (id) => document.getElementById(id);
   const NUM = ['scale', 'amp', 'oct', 'ridge', 'warp', 'macro', 'seed', 'valley', 'plateau', 'steps', 'sharp', 'maxslope', 'water', 'soft', 'cliff', 'cover', 'cstretch', 'sunel', 'sgrad', 'gs'];
-  const BOOL = ['strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex', 'flowspeed', 'disco', 'flare'];
+  const BOOL = ['strata', 'toon', 'mix', 'grid', 'painted', 'puffs', 'trails', 'rings', 'gridworld', 'clay', 'dio', 'dpal', 'berm', 'ring', 'stones', 'props', 'ground', 'shadows', 'crumbs', 'fgmass', 'edges', 'org', 'ether', 'rockc', 'sky2', 'kul', 'vox', 'voxsmooth', 'voxtex', 'flowspeed', 'disco', 'flare', 'cards'];
   const fmt = {
     scale: (v) => `${v} m`, amp: (v) => `${v} m`, oct: (v) => `${v}`, ridge: (v) => `${Math.round(v * 100)} %`, warp: (v) => v.toFixed(2), macro: (v) => `${Math.round(v * 100)} %`, seed: (v) => `${v}`,
     valley: (v) => `${Math.round(v * 100)} %`, plateau: (v) => (v >= 0.999 ? 'aus' : `${Math.round(v * 100)} % Höhe`), steps: (v) => (v < 1 ? 'aus' : `${v} Stufen`), maxslope: (v) => (v >= 80 ? 'aus' : `${v}°`), sharp: (v) => `${Math.round(v * 100)} %`, water: (v) => `${Math.round(v * 100)} % Höhe`,
@@ -2178,7 +2231,12 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     { const el = (S.sunel ?? 49) * Math.PI / 180, az = Math.atan2(35, -55); U.uSunDir.value.set(Math.cos(el) * Math.cos(az), Math.sin(el), Math.cos(el) * Math.sin(az)); sun.position.copy(U.uSunDir.value).multiplyScalar(160) }   // Sonnenstand (Regler), Richtung wie bisher
     { const hz = U.uHorizon.value, ze = U.uZenith.value; U.uSkyMid.value.copy(hz).lerp(ze, 0.45); U.uSkyGround.value.copy(hz).multiplyScalar(0.9).lerp(new THREE.Color(A.low), 0.15); U.uSunCol.value.set(M.sun[0]); U.uAirTint.value.copy(hz).lerp(ze, 0.5); U.uSky2.value = S.sky2 ? 1 : 0; U.uMoon.value = S.moon
       const md = new THREE.Vector3(-U.uSunDir.value.x, 0, -U.uSunDir.value.z).normalize(); md.y = Math.tan(6 * Math.PI / 180); U.uMoonDir.value.copy(md.normalize())
-      if (typeof KUL !== 'undefined') KUL.forEach((K) => { K.u.uSil.value.set(A.cliff).lerp(new THREE.Color(A.mid), 0.3).lerp(hz, K.ix * 0.12); K.u.uSilB.value.set(A.low).lerp(new THREE.Color(A.mid), 0.5).lerp(hz, K.ix * 0.12); K.u.uSilC.value.set(A.high).lerp(new THREE.Color(A.peak), 0.5).lerp(hz, K.ix * 0.12); K.m.visible = !!S.kul }) } SKY.uLit.value.set(M.lit); SKY.uShade.value.set(M.shade); SKY.uStars.value = M.stars; SKY.uCover.value = S.cover; SKY.uPainted.value = S.painted ? 1 : 0;
+      if (typeof KUL !== 'undefined') { const airB = new THREE.Color().copy(U.uSkyMid.value).lerp(new THREE.Color(A.sky), 0.3), sunT = new THREE.Color(M.sun[0]).lerp(hz, 0.5)   // Luft des Bioms: 70 % Himmel-Mitte + 30 % Rolle sky (U8)
+        const anti = [0, 0.5, 0.8].map((k) => airB.clone().lerp(hz, k).multiply(new THREE.Color(0.95, 0.97, 1.03))), sun = anti.map((c) => c.clone().lerp(sunT, 0.4))
+        KUL.forEach((K) => { K.u.uSil.value.set(A.cliff).lerp(new THREE.Color(A.mid), 0.3); K.u.uSilB.value.set(A.low).lerp(new THREE.Color(A.mid), 0.5); K.u.uSilC.value.set(A.high).lerp(new THREE.Color(A.peak), 0.5)
+          K.u.uKAirAnti.value.copy(anti[K.ix]); K.u.uKAirSun.value.copy(sun[K.ix]); K.u.uKAirBack.value.copy(K.ix < 2 ? anti[K.ix + 1] : hz); K.m.visible = !!S.kul })
+        const k1 = new THREE.Color(A.cliff).lerp(new THREE.Color(A.mid), 0.3).multiplyScalar(0.92); U.uEdgeAnti.value.copy(k1).lerp(anti[0], 0.45); U.uEdgeSun.value.copy(k1).lerp(sun[0], 0.45); U.uKul.value = S.kul ? 1 : 0   // Brückenton = mittlerer Flächenton von K1 nach der Luft (U3)
+        if (S.kul) U.uSkyGround.value.copy(U.uEdgeAnti.value) /* U4: unter dem Horizont nie heller als K1 */ } } SKY.uLit.value.set(M.lit); SKY.uShade.value.set(M.shade); SKY.uStars.value = M.stars; SKY.uCover.value = S.cover; SKY.uPainted.value = S.painted ? 1 : 0;
     U.uGridWorld.value = S.gridworld ? 1 : 0; U.uGS.value = S.gs; U.uGShape.value = S.gshape; U.uGFill.value = S.gfill; U.uGCol.value = S.gcol; U.uClay.value = S.clay ? 1 : 0; U.uGTex.value = S.gtex; U.uRing.value = S.ring ? 1 : 0; U.uShadowOn.value = S.shadows ? 1 : 0; U.uEdges.value = S.edges ? 1 : 0; U.uFg.value = S.fgmass ? 1 : 0; U.uOrg.value = S.org ? 1 : 0; U.uTanMax.value = S.maxslope >= 80 ? 1e6 : Math.tan(S.maxslope * Math.PI / 180); U.uFlow.value = S.flow; U.uFlowTree.value = S.flowtree; U.uBands.value = S.bands; U.uVoxTex.value = S.voxtex ? 1 : 0; if (typeof VOX !== 'undefined') { VOX.dirty = true }  U.uAOOn.value = S.ground ? 1 : 0; U.uFS.value = S.fstage; U.uKus.value = S.kus; { const A = PALETTES[S.palA], K = [null, ['#f5c400', '#151313'], ['#d8262e', '#fbf3e8'], [A.mid, A.cliff]][S.kus]; if (K) { U.uKusA.value.set(K[0]); U.uKusB.value.set(K[1]) } if (window.__rockc) window.__rockc.kus = S.kus } U.uDbg.value = S.dbg; U.uEther.value = S.ether ? 1 : 0; if (window.__rockc) window.__rockc.dirty = true; renderer.shadowMap.enabled = !!S.shadows; sun.castShadow = !!S.shadows; U.uContact.value.set(PALETTES[S.palA].cliff).multiplyScalar(0.55); if (window.__GU) window.__GU.uGOn.value = S.ground ? 1 : 0; window.__syncDio?.(); for (const R of RINGS) R.m.visible = S.rings; water.scale.set(S.rings ? 16 : 1, 1, S.rings ? 16 : 1);
     trailMat.uniforms.uCol.value.set(M.lit); puffs.visible = false; for (const L of CLOUDL) L.visible = S.puffs;
     hemi.color.set(M.k ? M.hemi[0] : A.sky); hemi.intensity = M.hemi[1]; sun.color.set(M.sun[0]); sun.intensity = M.sun[1];
@@ -2640,7 +2698,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     { const sp = Math.min(1, Math.abs(P.vf) / 22), rest = P.fly ? 0.25 : P.air ? 0 : 1 - 0.75 * sp; HOV.k += (rest - HOV.k) * Math.min(1, dt * 3)
       const w = 2 * Math.PI, bob = (Math.sin(t * w * 0.85) * 0.6 + Math.sin(t * w * 1.63 + 1.3) * 0.4) * 0.075 * HOV.k
       carRoot.position.y += bob; HOV.q.setFromEuler(HOV.e.set(0.022 * HOV.k * Math.sin(t * w * 0.71 + 0.7), 0, 0.028 * HOV.k * Math.sin(t * w * 0.53 + 2.1))); tilt.quaternion.multiply(HOV.q) }
-    updateSpeedlines(dt, t);
+    updateSpeedlines(dt, t); CARDS.update(dt, t);
     if (mode === 'over') {
       U.uFogNear.value = 1500; U.uFogFar.value = 4500; // Übersicht: Ringe immer an, Nebel ist an der Ringkante (4,8 km) voll → keine sichtbare Geländekante if (camera.fov !== 55) { camera.fov = 55; camera.updateProjectionMatrix() }
       const ty = P.y; camera.position.set(Math.sin(yaw) * Math.cos(pitch) * dist, ty + Math.sin(pitch) * dist, Math.cos(yaw) * Math.cos(pitch) * dist);
@@ -2660,7 +2718,10 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     updateVox(); U.uAirOff.value.set(P.x, P.z);
     { const rOn = !S.vox && (mode === 'over' || S.rings); for (const R of RINGS) R.m.visible = rOn; water.scale.set(rOn ? 16 : 1, 1, rOn ? 16 : 1)
       const edge = S.vox ? VOX.N * S.voxs * 0.46 : rOn ? 4700 : 292; U.uEdgeR.value = edge; U.uFogB.value = Math.LN2 / (0.6 * edge); U.uFogHb.value = 1 / Math.max(4, 0.25 * S.amp); U.uFogHa.value = rOn ? 0.0006 : 0.004
-      for (const K of KUL) { K.m.position.set(camera.position.x, 0, camera.position.z); K.m.scale.setScalar(rOn ? 17 : 1) } }
+      { const cx = camera.position.x + P.x, cz = camera.position.z + P.z, sc = rOn ? 17 : 1, lift = Math.max(0, camera.position.y - S.amp) * 0.85   // Ferne R1 U5
+        for (const K of KUL) { const C = K.c || (K.c = { x: cx, z: cz }), R = K.R * sc; C.x += (cx - C.x) * (1 - Math.exp(-dt * 0.15)); C.z += (cz - C.z) * (1 - Math.exp(-dt * 0.15))
+          const dx = cx - C.x, dz = cz - C.z, dl = Math.hypot(dx, dz), mx = 0.3 * R; if (dl > mx) { C.x = cx - dx * mx / dl; C.z = cz - dz * mx / dl }   // verzögert mitführen = Parallaxe, nie erreichbar
+          K.m.position.set(C.x - P.x, lift, C.z - P.z); K.m.scale.setScalar(sc) } } }
     dome.position.copy(camera.position); SKY.uTime.value = t; FLOWT += dt * (1 + (S.flowspeed ? Math.min(6, Math.hypot(P.vf, P.vl, P.fly ? P.vy : 0) / 8) : 0)); U.uTimeT.value = FLOWT;   // Fließuhr: im Stand sanft, mit Tempo schneller SKY.uCamXZ.value.set(P.x, P.z);
     scene.fog.near = U.uFogNear.value * 2.2; scene.fog.far = U.uFogFar.value * 3.4; // Knet-Wolken bleiben weiter sichtbar als das Gelände
     { const cb = S.amp + 70, k = +S.cstretch || 2.4; let dh = P.yaw - CLOUDH.th; dh = Math.atan2(Math.sin(dh), Math.cos(dh)); CLOUDH.th += dh * (1 - Math.exp(-dt / 7))   // Richtung folgt der Flugrichtung langsam (≈7 s)
