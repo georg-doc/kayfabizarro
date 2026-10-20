@@ -1,6 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- V-575: R12 + R13 als Kanon-Anhang B, neues Gebiet 18 Himmel/Horizont/Ferne (skyColor, kein Nebelbalken, Bodendunst, Sonne = Key), WS1 W6; Gate-Fix SINK-Steine (Kommentar-Bug) + Regressionstest; Recherche-Backlog: R1–R4, R10–R13 erledigt.
+- WS1b Task 1 live (Georg bestätigte Deploy-Key direkt): ws1/preview bd6e396, ws1b/preview-start d05efbd, ws1/r3f-frame §108 (19bd3381) mit Belegen ws1/proofs/2026-10-20-ws1b-start/; GPU-Live: bare URL → Spiel #m1,harvest, Ladeanzeige 4,9–10,4 s, #spike = alter Spike. WS1b pausiert.
 - Georg: WS1b darf den Deploy-Key kfb_kayfabizarro_deploy je Befehl benutzen (GIT_SSH_COMMAND, nichts in Dateien/Config) → Push ws1/preview, ws1b/preview-start, ws1/r3f-frame §108, dann Live-Prüfung mit GPU.
 - Soldat r3 PASS (Bajonett ≥ 0,077 u über Boden) → r3b: Einzelschuss-Fehler (Division durch ~0, Gewehr im Kopf) behoben, Sterbe-Clips mit weaponDrop; Scenelet gunfight_duel_02 + Handoff auf r3b, Mündung −89° (2H-Anschlag). Drum Machine 2 liegt nicht lokal: WSB braucht Georgs Ja direkt im WSB-Chat für den Download aus Georgs Repo (oder Datei in die Dropbox). WS1b Status als §108, drei Commits lokal, Push wartet auf Georg.
 - Soldat r3 as-is: Kritiker 7/8/7, übrige Befunde nur „nicht ausschließbar“, Einhand-Laufen = KayKit as-is → PASS nach Messwert Bajonettspitze ≥ 0 (WSB). WS1b-Push blockiert (kein GitHub-Zugang auf dem MacBook; Deploy-Key nicht angefasst) → wartet auf Georgs Entscheid (a) Deploy-Key per Einzelbefehl oder (b) Georg pusht.

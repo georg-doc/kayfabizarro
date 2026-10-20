@@ -20,7 +20,7 @@ import json, math, random
 # ------------------------------------------------------------------ Zahlen der Quellen
 SINK = {  # Anteil der Höhe unter dem Gelände [min, max] – Etherington §2 [KFB-Startwerte], Grammatik §4.1 für Steinkit
     'rock': (0.40, 0.50), 'rockgroup': (0.20, 0.35), 'tree': (0.05, 0.10), 'bush': (0.05, 0.12), 'building': (0.0, 0.15),
-    'prop': (0.02, 0.05), 'prop_buried': (0.40, 0.95),  # prop_buried: bewusst tief versunkenes Requisit mit Geschichte (z. B. Disco-Pult, RA y −1,9; V-571) 'stone_L': (0.40, 0.50), 'stone_M': (0.35, 0.50), 'stone_S': (0.30, 0.40),
+    'prop': (0.02, 0.05), 'prop_buried': (0.40, 0.95), 'stone_L': (0.40, 0.50), 'stone_M': (0.35, 0.50), 'stone_S': (0.30, 0.40),  # prop_buried: bewusst tief versunkenes Requisit mit Geschichte (Disco-Pult, RA y −1,9; V-571)
     'grass': (0.0, 1.0), 'fluff': (0.0, 1.0), 'contact': (0.25, 1.0), 'water_plant': (0.0, 1.0), 'character': (0.0, 0.03), 'vehicle': (0.0, 0.03),
 }
 SINK_CAP = 0.50  # [I] Georg 20.10.: Findling als umgekehrter Eisberg, Kappe ≤ 50 % (V-570)

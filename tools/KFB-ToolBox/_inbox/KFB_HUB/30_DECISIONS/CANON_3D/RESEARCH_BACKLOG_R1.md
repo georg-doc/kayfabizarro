@@ -22,3 +22,9 @@
 | R9 | **Style Guide 3D R2:** `STYLE_GUIDE_3D_R1` + `MOTION_GUIDE_R1` mit V-305…V-563 zusammenführen | veraltet (11.10.) | ersetzt beide, verweist auf diesen Kanon | 3 |
 
 **Prompts:** P5 und P6 stehen in `sources/KFB_DEEP_RESEARCH_PROMPTS_R1.md`. Für R1–R4 schreibt WS0 die Prompts im selben Format, sobald Georg die ausführende Stelle nennt.
+
+## Erledigt (20.10.)
+- R1 Inszenierung, R2 Etherington-Abgleich, R3 Set-Dressing, R4 Farbtheorie: WS1, Anhang A (V-570).
+- R10 Cartoon-Hintergründe, R11 3D-Farbe/Licht, Flächengrammatik: WS1, Anhang A.
+- R12 Cartoon-Animation-Abgleich, R13 Himmel/Horizont/Ferne: WS1, Anhang B (V-575).
+- Offen bleiben R5 (Inseln), R6 (Knete-Rendering), R7 (Augen-Acting), R8 (Lokomotion-Spec), R9 (Style Guide R2).

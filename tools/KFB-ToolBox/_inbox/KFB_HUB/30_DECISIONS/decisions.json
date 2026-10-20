@@ -8124,6 +8124,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-575",
+   "date": "2026-10-20",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "WS1-Recherchen R12 (Cartoon-Animation-Abgleich) und R13 (Himmel, Horizont, Ferne) als Kanon-Anhang B (EINARBEITUNG_WS1_R2.md, Ü31–Ü47) verbindlich; neues Kanon-Gebiet 18 „Himmel, Horizont, Ferne“: Himmel als Farbsatz je Stimmung mit Rolle horizon, [I] kein konstanter Streifen unter dem Horizont (Bodendunst), [I] eine Luftfunktion skyColor(dir) für alles, kein Nebelbalken, [I] Sonne in Key-Richtung, Knet-Wolken, Kulissenringe; RA-Himmel 1:1. Gate-Fix: SINK stone_L/M/S waren seit V-571 durch einen Kommentar auskommentiert (WS0-Fehler) → wiederhergestellt + Regressionstest. TinySkies-Lizenzlage an Georg gemeldet, kein Block (V-092).",
+   "values": {},
+   "owner": "WS0 (Kanon) · WS1 (W6 skyColor)",
+   "check": "Horizont-Pass + Y1–Y4",
+   "source": "WS0 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Der Himmel hatte im Kanon keinen Besitzer; der Nebelbalken ist der sichtbare Fehler davon.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8211,7 +8226,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:969",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:976",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

@@ -52,6 +52,7 @@ Jeder Chat bekommt diesen Brief + den Kanon als Startlektüre.
   - cast-IDs auflösbar;
   - Clips aus `clips.r1.json`.
 - **W5 Bild-Gate `CANON_3D/lib/kfb_view.py` (V-570):** ein Modul für alle Bildprüfungen aus R1, R4, R10 und R11 (Anhang A); misst auf Renders mit ID-, Tiefen-, Normalen- und Schattenpuffer. Jede Startwert-Grenze gilt als TUNE, bis sie an 10 PASS- und 10 FAIL-Bildern geeicht ist. `size_tol` 0,20 auch in `grammar.js`.
+- **W6 Himmel (V-575, Kanon Gebiet 18):** eine Funktion `skyColor(dir)` für Kuppel, Terrain-Luft, Wasser, Kulissen und Wolken. Kein Nebelbalken, unter dem Horizont Bodendunst, die Sonne in Key-Richtung; Prüfungen Y1–Y4 bzw. P1–P10 laut Anhang B.
 - **W4 Bewegung + VFX:**
   - Prüfung Squash ≤ 8 % (Stürze nach V-180) und Reihenfolge Augen → Kopf → Körper (Kopf 2–4 Frames nach den Augen);
   - die V-499-Checkliste als automatischer Test, soweit messbar;

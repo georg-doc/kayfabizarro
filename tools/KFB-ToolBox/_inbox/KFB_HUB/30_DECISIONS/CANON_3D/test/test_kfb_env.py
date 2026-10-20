@@ -38,4 +38,7 @@ if __name__ == '__main__':
     assert rule_report(nest_ok((0, 0), 3, 1.0, seed=3))['ok']
     assert g['ok'], g['fail']
     assert not b['ok'] and {'K0', 'B1', 'S1', 'E1', 'G1', 'H5', 'S5', 'M1'} <= {f.split()[0] for f in b['fail']}
+    import kfb_env  # Regression: alle Arten haben ein Einsinkband (V-571-Kommentar-Bug 20.10.)
+    for kk in ('rock', 'rockgroup', 'tree', 'bush', 'building', 'prop', 'prop_buried', 'stone_L', 'stone_M', 'stone_S', 'grass', 'fluff', 'contact'):
+        assert kk in kfb_env.SINK, f'SINK-Schlüssel fehlt: {kk}'
     print('OK')
