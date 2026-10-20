@@ -489,3 +489,23 @@ Das Gate lässt das durch, weil es solche Muster nicht als Slop kennt.
 - Writers' Room: v9, Lesson l14; die r7-Fassungen liegen unter `versions`.
 
 **Nächster Schritt:** Georgs Urteil, danach die 10 neuen Signatur-Songs in r8-Form.
+
+## §22 · 21.10.2026 · Markierte Ansicht (Kartentext/Triplet vs. Brücken vs. Rahmen)
+**Georg:** Er will die Original-Kartentexte (KFB Triplets) markiert sehen, um Mini-Opener, Brücken, Intro/Outro und Flow visuell beurteilen zu können.
+
+**Umgesetzt:**
+- `SONGS_WORKSHOP_R1/make_marked.py` erzeugt aus `draft.json` die Markierung `kfb.song.marked/1`. Dazu gehören je Beat die Teile card/bridge/post/frame/tag, der Wortanteil je Klasse und `lyricsSha`. Das Skript bricht ab, wenn die Markierung nicht exakt den Songtext ergibt.
+- `*.r8a.marked.json` liegt für die drei Piloten vor.
+- Writers' Room, Seite Version 4: Unter dem Songtext gibt es eine „Markierte Ansicht“ mit drei Farben, eine Legende mit Prozentanteilen und einen Hinweis, wenn der Text seit der Markierung geändert wurde.
+  - Die Songs stehen auf v10 mit dem Feld `marked`.
+
+**Wortanteile (Karte / Brücke / Rahmen):**
+
+| Deck | Karte | Brücke | Rahmen |
+|---|---:|---:|---:|
+| BBBW | 179 | 38 | 24 |
+| Metropolis | 316 | 39 | 25 |
+| Protopia | 318 | 35 | 24 |
+
+**Offene Abweichung zur Triplet-Spec R2:** Die Kartenteile der Piloten sind Auszüge aus Registry-Lore und -Power plus Bildwörtern (SONG_SPEC_R3 A2/V-377). Sie sind noch keine Triplets nach TRIPLET_SET_SPEC_R2: Titel + Power-Begriff verschmolzen, Telegramm-Verdichtung V-275, keine artworkPrompt-Wörter.
+- Für BBBW, Metropolis und Protopia gibt es in `TRIPLET_SETS_R2` keine Triplet-Sets. Für Protopia existiert #379 (56 Karten standalone).
