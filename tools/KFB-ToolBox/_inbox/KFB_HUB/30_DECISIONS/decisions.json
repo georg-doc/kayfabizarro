@@ -8214,6 +8214,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-581",
+   "date": "2026-10-20",
+   "area": "Figuren",
+   "verdict": "RULE",
+   "text": "Kit-Waffen sauber einpassen, Erweiterung V-574 (Georg 20.10., Weg a): Wo Kit-Clip und Kit-Waffe verschiedene Achsen nutzen (Ranged-Clips halten handslot lokal +X nach vorn, Kit-Waffen liegen lokal +Z), bekommt die Waffe EINE feste, gemessene Halterungsdrehung (slotOffset.rotation, Grund kit-axis-mismatch, ein Wert je Waffe für alle Clips, Beleg-Pflicht) – kein Nachdrehen je Bild, keine Wurzeldrehung der Figur. Grundsatz: so, wie der KayKit-Creator die Achsen vorgesehen hat; korrigiert wird nur die Unstimmigkeit. Gilt für alle Fernkampf-Kit-Waffen; Priorität 1 Handguns/Blaster (Primärwaffen der Combat Arena), dann Gewehr (Spielzeugsoldat: Wurzeldrehung 178,9° entfällt → r3d), Armbrust, Gatling (2H mit linker Stützhand in möglichst gleicher Position wie Gewehr). WSA erweitert den Profilprüfer um slotOffset.rotation.",
+   "values": {},
+   "owner": "WSB (Messung, Halterung) · WSA (Prüfer, Laufzeit)",
+   "check": "je Waffe Halterungs-Beleg, Lauf ∥ Blick ≤ 10°, Stützhand an der Waffe",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Kit-Clips und Kit-Waffen haben verschiedene Achsen; eine feste Halterungsdrehung passt sie ein, statt die Figur am Ziel vorbeischauen zu lassen.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8301,7 +8316,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:994",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:998",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
