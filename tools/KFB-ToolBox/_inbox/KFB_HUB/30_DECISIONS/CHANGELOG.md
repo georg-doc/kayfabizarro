@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-20
+- V-577 Abschluss-Grammatik verbindlich (SPEC_EDGE_RUBBLE_GRAMMAR_R1 wörtlich in Kanon 4, Werkzeug kfb_edge_bpy = WSB K8, Kritiker-Befund); K6-Band r3 zurückgenommen (verbotene Kleinteil-Zone, WS0-Fehler). V-576 Song-Workshop: WS0-ACK/TUNE zur Regel-Abstimmung, neue Sitzung WS-Song, Brief replies/BRIEF_SONG_WORKSHOP_R1.md.
 - WSB K6 Band r3 angenommen: Bruchstücke als Knet-Platten (weiche Fase, wellige Kontur, Staffel), Reihen in nest-Gruppen, Splitter in 48 Clustern, 390 gekippt; Bandrand-Vorgabe Sprenkel. An WS1 zur Einpassung. WSB-Liste leer.
 - WSB K6 Friedhof angenommen (45 Teile, Set 176, 5 Praktikals); Übergangsband r2 aus Kachel-Bruchstücken (Georg-Korrektur zu r1: Steine wirkten draufgesetzt) – abgeleitete Bruchstücke unter V-574 ok, aber r3 mit runden Knet-Bruchkanten (keine Prismen/Fünfecke), Cluster statt Konfetti, Bandrand als Sprenkel. Band + Shader-Vorgabe an WS1.
 - WSA Combat Arena R2 (PR #23: Waffenprofil-Prüfer, 24 Action-Zuordnungen, 74/74 grün) beantwortet (replies/WS0_TO_WSA_COMBAT_ARENA_R2.md): Scenelet-Spec R2 §(6) um V-574-Ausnahme ergänzt; Mündungsfeuer = Action-Figure Muzzleflash (primär) / Muzzleflash_Long (sekundär) as-is am KFB_Muzzle (Georg 17.10.), Laser/Magie als Varianten; erster Consumer Soldat r3b. WSB K7 r3: Felsen stone_env #af7161, Kuppel gewinnt im Graubild.

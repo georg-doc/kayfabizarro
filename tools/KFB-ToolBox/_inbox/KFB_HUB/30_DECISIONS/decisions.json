@@ -8139,6 +8139,36 @@
    "applies": "sofort"
   },
   {
+   "id": "V-576",
+   "date": "2026-10-20",
+   "area": "Dialog",
+   "verdict": "RULE",
+   "text": "Song-Workshop (Georg 20.10., Web-Chat-Vorschlag „KFB Comic Performance Workshop“, Alice-Beispiel): Prozess standardisieren, nicht die Kunst. WS0-ACK mit TUNE zur Regel-Abstimmung: Decktitel/Kartentitel im Text optional (künstlerische Wahl), hart bleiben Karten-Mapping cardNumber→Beat, echte IDs, bestOf, <5000 Zeichen, Deck-ID in Metadaten; Zeilenlängen/BPM/Opener-Quoten werden WARN/REVIEW; benannter KFB-Performer erlaubt, STYLE rein musikalisch (V-362); R2-Triplets unverändert. SONG_SPEC_R4 + song_gate.py R4 mit Fixtures, Blind-Kritiker kfb.song-critic.v2 (Performance), Album-Diversitätsvergleich. Owner: neue eigene Claude-Code-Sitzung WS-Song (WS1-Umfeld); Piloten: 1 Bestandssong + Biological Metropolis, Big Bad Brain Wrestling, Embrace Protopia. Brief replies/BRIEF_SONG_WORKSHOP_R1.md.",
+   "values": {},
+   "owner": "WS-Song (neu) · WS0 (Freigabe) · Georg (Suno)",
+   "check": "SONG_SPEC_R4 + Gate-Fixtures, dann 3 Piloten mit Kritiker",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Starre Song-Regeln erzeugten Schablonen; Kartentreue muss hart, die Performance frei sein.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-577",
+   "date": "2026-10-20",
+   "area": "Look",
+   "verdict": "RULE",
+   "text": "Abschluss-Grammatik verbindlich (Georg 20.10.: „10-mal besprochen … endlich sauber persistieren“): SPEC_EDGE_RUBBLE_GRAMMAR_R1 (Georg 08./09.10.) gilt wörtlich in Kanon Gebiet 4 – freies Ende durch Verfall = ganze große Platten, letzte 3 gestaffelt zurück, Rubbel in den Stufen, Verfallsstufen 70/15/10/5, KEINE lange Kleinteil-Zone; gebautes Ende = gerundete Abschlusskappe (Kantenstein/Bordsteinkopf/Wandkopf/Mauerende); Wandende im Raum = Kappe oder Ruinen-Abschluss. Ein Werkzeug kfb_edge_bpy (WSB K8) bzw. Laufzeit-Gegenstück (WS1), keine Szenen-Einzellösungen. WS0-Fehler: K6-Band r2/r3 (490 Kleinteile in 3 Reihen) ohne Spec-Abgleich abgenommen → Friedhof-Band r4 mit kfb_edge. Kritiker: Abschluss-Verstoß = immer Befund.",
+   "values": {},
+   "owner": "WSB (kfb_edge_bpy) · WS1 (Laufzeit) · WS0",
+   "check": "Test Kachelfeld-Ecke + freistehende Wand, dann Friedhof r4",
+   "source": "Georg 20.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Abschluss-Grammatik existierte seit dem 08.10., wurde aber nie als Werkzeug gebaut und bei Abnahmen nicht geprüft – deshalb wird jedes Mal neu gebastelt.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8226,7 +8256,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:976",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:988",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

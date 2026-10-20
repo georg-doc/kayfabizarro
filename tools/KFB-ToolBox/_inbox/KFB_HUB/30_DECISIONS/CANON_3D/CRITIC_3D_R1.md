@@ -78,6 +78,7 @@ K1–K3, K5 und K7–K9 sind n/a.
 - Teile, die zur Figur gehören (z. B. der Aufziehschlüssel des Spielzeugsoldaten), sind kein Fremdteil.
 
 **Immer ein Befund:**
+- Abschluss nicht nach V-577: lange Kleinteil-Zone statt gestaffelter ganzer Platten, aufgereihtes Rubbel, roh geschnittenes Ende, Wandende ohne Kappe oder Ruinen-Abschluss;
 - verformte bzw. gestauchte Kit-Teile, die ein anderes Objekt vortäuschen sollen (V-573);
 - fehlende Augen bzw. Lider an irgendeiner Variante;
 - Waffe oder Requisit im Gesicht bzw. Körper (Durchdringung);
