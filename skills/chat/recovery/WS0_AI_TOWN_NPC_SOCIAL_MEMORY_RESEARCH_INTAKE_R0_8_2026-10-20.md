@@ -1,0 +1,6 @@
+# WS0 · AI Town / Emergent Resident donor research R0.8 · request for review
+2026-10-20 · current recovery PR #400 · not a canon decision.
+Read R0.8 research reconstruction alongside R0.6 Resident Life and R0.7 KKIT choreography.
+External primary checked: a16z AI Town architecture (conversation invitation/walkingOver/participating; sparse summarized vector memories; one operation), Stanford Smallville Generative Agents (observation/memory/reflection/planning), Yuka JS (goal, steering, perception, path/navmesh). Adopt ideas, not second Convex/Pixi/agent engine, persistent separate memory store or competing 3D nav owner. Historical leads SimWorlds/Sketchbook and a supposed NotebookLM research notebook are not freshly proven; do not present them as verified documents.
+Internal prior pins: PR #210 NPC-LIFE-01 and PR #272 Resident AIDA/POI Social Memory both OPEN at current audit; source-specific code acceptance not claimed. Other Resident semantic/performance fixtures already cited R0.6/R0.7.
+Decision: WS0 ACK/TUNE/OBJECT one limited Farmer+Lorekeeper social encounter + selective Lean receipts, authoritative conversation and kfb.save ownership; defer more agents, rumors/skeletons/KO. Single next gate WS0_RESIDENT_LIFE_ESCALATION_R0_6_INTAKE. No runtime or Site/Stage authorization.
