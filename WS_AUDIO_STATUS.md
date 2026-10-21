@@ -13,6 +13,9 @@ Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Ab
 - Lautheit je Musiktitel (BS.1770, eigene Messung, Gegenprobe gegen WS0 ±0,05 LU): `scripts/audio/music-gain.json`.
 - Stichworte je Titel (Biom/Tageszeit) für die Jukebox: `scripts/audio/music-tags.json`, eigener Vorschlag.
 
+- Zweite echte Messung nach der Nachbesserung (Slot, 60 fps): Suno „Final Lap Lift A“ 2,5 Kicks/s, Tempo stabil bei 104–106 BPM, Sicherheit schwankt (max. 0,83, zuletzt 0,17); Cozy „Chickens In The Meadow“ ≈ 117 BPM, Sicherheit ≤ 0,58.
+  - Ohne Katalog weiß ich nicht, ob das richtig ist. Die Kick-Rate (≈ 150/min) passt auch zu einem Tempo um 150; das ist das übliche Halb-/Doppeltempo-Problem. **Grund mehr für Katalog-BPM.**
+
 **Was ich vorgefunden habe:**
 - `tools/KFB-ToolBox/audio/adaptive-music-proof-01/music-clock.mjs` (MusicClock: bpm, beatsPerBar, phraseBars, epoch → beat/bar/phrase, nextBoundary).
 - `tools/KFB-ToolBox/audio/runtime/runtime-registry.v1.json`: bpm für 6 Stem-Sätze (70–120 BPM).
