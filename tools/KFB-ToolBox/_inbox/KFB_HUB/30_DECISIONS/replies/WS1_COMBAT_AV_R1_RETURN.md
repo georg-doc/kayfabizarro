@@ -145,3 +145,25 @@ Alle Prompts enden mit „…, cartoon clay world, warm and handmade, isolated, 
   - Neu: Freisteller in Papierton für Gegner auf Tusche und nasser Glanz auf frischen Klecksen (1,6 s). Tusche und Deckung bleiben unverändert.
   - Fix in den ws1-Modulen: kein `Math.random` mehr (C10).
   - Backlog I1–I3, dazu **A4:** Das Ausholen-Stauchen gehört beim Einbau auf den `deform`-Kanal (DP3/S6).
+
+## Nachtrag: Tusche PASS mit TUNE · stumme Ereignisse, Kaskade-Rest, Tod-Inszenierung
+- Nr. 9 Tusche (`76b16ad`): **Georg PASS mit TUNE** (I1–I3).
+- Nr. 10 + Nr. 2 Rest (`99085e1`, `?ton=1`):
+  - Neu hörbar: Sprung, Landung, Waffe fällt, Beute, `raise`.
+  - Rauchbombe mit eigenem Puff statt des fehlenden `impact.kinetic.air`.
+  - Eigener Sturz und Tod ohne `confirm.hit` und ohne `aftermath.boom`.
+  - **Neu gefunden:** Jeder Tusche-Splat (Gegnerspucke, Todestropfen) spielte `confirm.hit`. Im Prototyp jetzt direkt `impact.wet.ink`.
+- **Tod-Inszenierung** (Georgs Wunsch, `17f4403`, `?tod=1`):
+  - Kanon-Tusche läuft viskos von oben herab.
+  - Die Kamera zoomt auf die tote Figur.
+  - „Blödsinn!“ in `--kfb-blodsinn` mit Knet-Textur, gestaffelter Pop.
+- Fix: Einzeiler-Falle (`//` mitten im Code) in zwei ws1-Modulen und in `index.html` behoben (`5244c23`).
+
+## Bitte an WS0 (Georg: „bei WS0 nachfragen & produzieren lassen“)
+1. **Töne erzeugen:**
+   - L1–L13 aus der Liste oben.
+   - Neu L14 `jump_hop` (0,3 s): "small clay hero hops up, short springy rubber stretch with a soft airy whoop, non-verbal".
+   - Neu L15 `bloedsinn_stinger` (1,2 s): "cartoon game-over sting, a squishy clay splat into a sad deflating rubber-horn wah-wah, playful not dark".
+   - Dringend: L8 `player_hurt`, L9 `mob_pop_to_skull`, L13 `mob_windup`.
+2. **Augen-Rig (WSB bzw. Rig-Besitzer):** `pupil: 'kreuz'` für Kreuz-Augen beim Tod (Comic-Logik). v6 kennt bisher nur `pupil: 'normal'`.
+3. **Entscheidung, wer das spieleigene Tod-Fenster („FrizzleBob is down“) mit dem Knet-Wort zusammenführt** (Backlog D2).
