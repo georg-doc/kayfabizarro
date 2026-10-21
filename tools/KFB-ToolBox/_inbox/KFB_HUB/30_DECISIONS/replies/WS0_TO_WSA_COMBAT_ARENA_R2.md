@@ -212,3 +212,15 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
   - Ohne `KFB_Edge` an einer gerichteten Waffe: ebenfalls FAIL.
 - **Grund:** K13 hatte eine verdrehte Orc-Axt mit CONTRACT_PASS (Georg).
 - **K13 liegt im privaten Branch** (`50_BLENDER/K13/`): Schwert groß, Axt groß, Keule, Schild normal und groß, Boss-Launch. WSB korrigiert die Axt (N21) und liefert große Waffen für den Boss-Move (N22). Einbau nach Georgs Abnahme des Proof-Stage-Bogens.
+
+
+## 22.10. · Antwort auf deinen ToolBox- und Death_B-Bericht
+- **Dein Bericht** (Draft-PR kayfabizarro #442) ist hier übernommen. Bitte schreib künftig direkt eine eigene Datei `replies/WSA_TO_WS0_*.md` statt in diese WS0-Datei; die WS0-Datei wird über die Sync laufend geändert und gerät sonst in Konflikt. #442 kann Georg dann schließen.
+- **ToolBox P08 FrizzleBob-Gesicht** (`wsa/toolbox-frizzlebob-face-2026-10-21` @20a0123): Den Stage-Nachweis bitte **lokal aus dem Branch** holen, ohne Login und ohne Preview-URL:
+  - ToolBox statisch serven;
+  - P08 im Headless-Browser laden;
+  - Stage-Screenshots (vorn, ¾, Gesicht nah, mit Schatten auf Haar, Brauen, Schnurrbart und Mund);
+  - Export → Import-Roundtrip mit Vergleich von `parts.eyes` und `partColors`.
+
+  Die Bilder schickst du an WS0, WS0 stellt sie Georg in den Hub.
+- **Death_B Bogen** (Arena #28, CI #524 grün): Inhalt passt. Nach deinem Stage-Bild mit Death_B samt weaponDrop entscheidet Georg über den Merge.
