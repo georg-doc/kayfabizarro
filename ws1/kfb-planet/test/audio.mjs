@@ -54,9 +54,14 @@ try {
     M.mods.groups = { events: () => [], steps: () => gs }; M.mods.npc = { steps: () => ns }; M.mods.fluffer = { hops: () => fh }
     const s0 = () => a.stats().npcSteps; await new Promise((r) => setTimeout(r, 300)); const old = s0()
     gs.push({ type: 'step', id: 'toy_3', foot: 'r', at: [p[0] + 4, p[2] + 1], speed: 1.2, group: 'toy_squad', t: 2 }, { type: 'step', id: 'bot_comic', foot: 'l', at: [p[0] + 2, p[2] - 2], speed: 1, group: 'bot_crew', t: 2.1 }, { type: 'step', id: 'far', foot: 'l', at: [p[0] + 80, p[2]], group: 'toy_squad', t: 2.2 })
+    a.fluffer({ type: 'windup' }, { x: p[0] - 3, y: p[1] + 1, z: p[2] }) // wieder feindlich (vorher im Test geheilt) → Goo-Gleiten statt hellem Hüpfer
     ns.push({ type: 'step', id: 'farmer_b', foot: 'l', at: [p[0] + 3, p[2] + 3], speed: 0.9, t: 50 }); fh.push({ type: 'hop', id: 'dark_fluffer_ghost', at: [p[0] - 3, p[2]], t: 3 })
-    await new Promise((r) => setTimeout(r, 400)); const n1 = s0(); await new Promise((r) => setTimeout(r, 300)); const n2 = s0()
-    Object.assign(M.mods, keep); return { old, played: n1 - old, again: n2 - n1, errors: a.stats().errors } })
+    await new Promise((r) => setTimeout(r, 400)); const n1 = s0(), pres = a.stats().presence; await new Promise((r) => setTimeout(r, 300)); const n2 = s0()
+    Object.assign(M.mods, keep); return { old, played: n1 - old, again: n2 - n1, pres, errors: a.stats().errors } })
+  // WS0-Lieferung Combat-AV L1–L13: neue Kampf-Ereignisse klingen
+  out.av13 = await A.page.evaluate(async () => { const a = window.__kfbAudio, p = window.__kfbM1.feet(), pos = { x: p[0] + 2, y: p[1] + 1, z: p[2] }, r = {}
+    for (const [k, e] of Object.entries({ kill: { type: 'kill' }, windup: { type: 'windup', side: 'enemy' }, block: { type: 'block' }, bite: { type: 'contact', target: 'player', weapon: 'bite' }, hurt: { type: 'contact', target: 'player' }, arrow: { type: 'contact', weapon: 'bow', confirmed: true }, magic: { type: 'contact', weapon: 'wand' }, dice: { type: 'fire', weapon: 'dice' } })) { const b = a.stats().bank.plays; a.k10({ ...e, position: pos }); r[k] = a.stats().bank.plays - b; await new Promise((x) => setTimeout(x, 80)) }
+    return r })
   await A.page.keyboard.press('Space'); await A.page.waitForTimeout(120); await A.page.keyboard.press('Space') // Doppel-Leertaste: Abheben (Schwebeflug)
   await A.page.keyboard.down('KeyW'); await A.page.waitForTimeout(3500); const fly = await stats(A.page); await A.page.keyboard.up('KeyW')
   out.foot = { arena, errs: A.errs, readyMs, before: before && { mode: before.mode, state: before.state, music: before.nowPlaying }, walk: pick(walk), fight: pick(fight), fly: pick(fly), adapters }
@@ -86,10 +91,12 @@ try {
     combatPlayed: f.fight.events.filter((e) => e.type === 'combat').length === 3 && f.fight.bank.plays > w.bank.plays,
     adaptersK10Fluffer: f.adapters.k10.every(Boolean) && f.adapters.fluffer.every((n) => n >= 1),
     combatAvEachWeapon: ['pistol', 'blaster', 'action-rifle', 'soldier-r3d', 'crossbow', 'smoke', 'blade', 'wand', 'staff', 'skeleton-staff', 'bow', 'bow-a'].every((k) => av[k] >= 1) && av.blaster === 3 && av.pistol === 2,
-    combatAvEnemyBladeSmoke: av.enemy === 1 && av.bladeSwing >= 1 && av.smoke === 1,
+    combatAvEnemyBladeSmoke: av.enemy === 1 && av.bladeSwing >= 1 && av.smoke === 2,
     combatAvGatling: av.gatlingLoopDuring === 12 && av.bankVoicesAfter <= 24,
     npcGroups: out.groups.n >= 18 && out.groups.plays >= 15 && out.groups.polled === 3 && out.groups.again === 3 && out.groups.errors.length === 0,
     npcStepsHops: out.steps.old === 0 && out.steps.played === 4 && out.steps.again === 0 && out.steps.errors.length === 0,
+    presenceLoops: out.steps.pres.includes('toyTick') && out.steps.pres.includes('fluffGlide'),
+    combatAv13: Object.values(out.av13).every((n) => n >= 1) && out.av13.bite === 2,
     duckUnderLoudSfx: f.fight.duckDb < 0,
     voicesBounded: Math.max(w.voices.total, f.fight.voices.total, c.end.voices.total) <= 96 && f.fight.voices.bank <= 24 && f.fight.voices.combat <= 24,
     flyOnFootMusicSuno: f.fly.mode2 !== 'fly' || f.fly.nowPlaying?.list === 'suno' || f.fly.music.changes >= 0,

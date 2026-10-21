@@ -203,9 +203,9 @@ export function combatAction(kind, { hit = false, pos = null, target = null } = 
   if (S.mode !== 'full') return; const C = S.combat, p = rel(target || pos) || { x: 0, y: 0, z: -1 }, id = kind + ':' + (S.bank.plays + Math.random()).toFixed(4)
   const layers = (L, o = {}) => { for (const [c, at, g, r] of L) play(c, { pos: o.pos ?? null, at: at + (o.at || 0), gain: g * (o.gain ?? 1), rate: r * jitter(0.05) }) }
   if (kind === 'punch') { layers(LAUNCH.melee)
-    if (hit) { const t = setTimeout(() => { C?.emit({ type: 'knuckles', id, position: p, intensity: 0.85 }); C?.emit({ type: 'treeShake', id: id + 's', position: p, intensity: 0.6 }) }, 60); void t; play('tree.leaves', { pos: target, at: 0.1 }) } }
+    if (hit) { const t = setTimeout(() => { C?.emit({ type: 'knuckles', id, position: p, intensity: 0.85 }); C?.emit({ type: 'treeShake', id: id + 's', position: p, intensity: 0.6 }) }, 60); void t; play('tree.leaves', { pos: target, at: 0.1 }); play('tree.fruit', { pos: target, at: 0.45 }) } }
   else if (kind === 'shoot') { layers(LAUNCH.blaster); if (hit && target && pos) { const fl = Math.hypot(target.x - pos.x, target.y - pos.y, target.z - pos.z) / 34; play('combat.boltImpact', { pos: target, at: fl }); play('tree.leaves', { pos: target, at: fl + 0.03, gain: 0.5 }) } }
-  else if (kind === 'blast') { if (hit) { C?.emit({ type: 'explosionSmall', id, position: p, material: 'wood', intensity: 0.8 }); play('tree.leaves', { pos: target, at: 0.08 }); play('debris.tail', { pos: target, at: 0.35 }) } else { play('k10.bomb', { pos }); play('debris.tail', { pos, at: 0.4 }) } }
+  else if (kind === 'blast') { if (hit) { C?.emit({ type: 'explosionSmall', id, position: p, material: 'wood', intensity: 0.8 }); play('tree.leaves', { pos: target, at: 0.08 }); play('debris.tail', { pos: target, at: 0.35 }); play('tree.fruit', { pos: target, at: 0.5, gain: 0.8 }) } else { play('k10.bomb', { pos }); play('debris.tail', { pos, at: 0.4 }) } }
   log({ type: 'combat', kind, hit })
 }
 // K10-Adapter für die Arena-Module (fire, cast, raise, release, contact, weaponDrop, jump, land, kill) mit der Cue-Tabelle aus Combat-AV R1:
@@ -219,7 +219,7 @@ export function k10(e) {
   if ((e.type === 'fire' || e.type === 'raise') && kind === 'melee') K10.meleeAt[side] = t
   let layers = plan.layers
   if (plan.loop === 'gatling') { // Feuerstoß: Schleife hält, solange Schüsse kommen; Einzelanschlag höchstens ~9/s
-    K10.gatlingUntil = t + 0.18; if (!K10.gatling) K10.gatling = play('av.gatlingLoop', { loop: true, gain: 0.5, fadeIn: 0.04 })
+    K10.gatlingUntil = t + 0.18; if (!K10.gatling) { play('k10.gatlingUp', {}); K10.gatling = play('av.gatlingLoop', { loop: true, gain: 0.5, fadeIn: 0.04 }); K10.gatlingSpin = play('k10.gatlingSpin', { loop: true, fadeIn: 0.15 }) } // L11 Anlauf + Drehen
     if (t - K10.gatlingShotAt < 0.11) layers = []; else K10.gatlingShotAt = t }
   let delay = 0
   if (plan.swingFirst && t - K10.meleeAt[side] > 0.3) { for (const [c, at, g, r] of LAUNCH.melee) play(c, { pos, at, gain: g, rate: r * jitter(0.06) }); K10.meleeAt[side] = t; delay = 0.06 } // Klinge: Schwung vor dem Treffer
@@ -229,18 +229,29 @@ export function k10(e) {
   if (delay > 0) setTimeout(fire, delay * 1000); else fire()
   log({ type: 'k10', e: e.type, w: kind, side }); return plan
 }
-function gatlingTick(t) { if (K10.gatling && t > K10.gatlingUntil) { stopLoop(K10.gatling, 0.12); K10.gatling = null } }
+function gatlingTick(t) { if (K10.gatling && t > K10.gatlingUntil) { stopLoop(K10.gatling, 0.12); stopLoop(K10.gatlingSpin, 0.2); K10.gatling = K10.gatlingSpin = null; play('k10.gatlingDown', {}) } } // L11 Auslauf
 const jitter = (p) => 1 + (Math.random() * 2 - 1) * p
 // Dark Fluffer (WS-NPC flufferSim.events): { type, at:[x,z] | pos } → Folge aus dark_fluffer_r1
 export function fluffer(e, pos = null) {
+  if (e?.type === 'healed') S.flufferHealed = true; if (e?.type === 'windup' || e?.type === 'spit') S.flufferHealed = false // neuer feindlicher Auftritt
   const seq = FLUFFER_SEQUENCE[e?.type]; if (!seq || S.mode !== 'full') return 0
   for (const [cue, dt] of seq) play(cue, { pos, at: dt }); log({ type: 'fluffer', e: e.type }); return seq.length
 }
 export function ui(name) { return play('ui.' + name) }
+// Präsenz-Schleifen: laufen, solange Ereignisse kommen (hold s), folgen der letzten Lage, blenden danach aus
+const PRES = new Map()
+export function presence(key, cue, pos, hold = 1, gain = 1) {
+  if (S.mode !== 'full' || !CTX) return; const t = CTX.currentTime; let p = PRES.get(key)
+  if (!p) { const v = play(cue, { pos, loop: true, fadeIn: 0.25, gain }); if (!v) return; p = { v }; PRES.set(key, p) }
+  p.until = t + hold; p.pos = pos; const r = rel(pos); if (p.v.pan && r) { p.v.pan.positionX.setTargetAtTime(r.x, t, 0.08); p.v.pan.positionY.setTargetAtTime(r.y, t, 0.08); p.v.pan.positionZ.setTargetAtTime(r.z, t, 0.08) }
+}
+function presenceTick(t) { for (const [k, p] of PRES) { if (t > p.until) { stopLoop(p.v, 0.5); PRES.delete(k); continue } const r = rel(p.pos); if (p.v.pan && r) { p.v.pan.positionX.setTargetAtTime(r.x, t, 0.1); p.v.pan.positionY.setTargetAtTime(r.y, t, 0.1); p.v.pan.positionZ.setTargetAtTime(r.z, t, 0.1) } } }
 // NPC-Schritt (groups.steps / npc.steps) bzw. Fluffer-Hüpfer (fluffer.hops) am Ort; außerhalb NPC_STEP_RANGE still
 export function npcStep(e, pos, surface) {
   if (S.mode !== 'full' || !pos) return null; const d = Math.hypot(pos.x - S.listener.x, pos.z - S.listener.z); if (d > NPC_STEP_RANGE) return null
-  const cue = e.type === 'hop' ? 'fluffer.hop' : npcStepCue(e, surface); if (!cue) return null
+  const cue = e.type === 'hop' ? (S.flufferHealed ? 'fluffer.hopHealed' : 'fluffer.hop') : npcStepCue(e, surface); if (!cue) return null
+  if (e.type === 'hop' && !S.flufferHealed) presence('fluffGlide', 'npc.fluffGlide', pos, 0.9) // N08 Goo zwischen den Hüpfern
+  if (e.group === 'toy_squad') presence('toyTick', 'npc.toyTick', pos, 0.8) // N06 Aufziehschlüssel, solange der Trupp geht
   let live = 0; for (const v of S.bank.voices) if (v.prio === 0) live++; if (live >= STEP_VOICES) { S.npcStepDrops = (S.npcStepDrops || 0) + 1; return null } // höchstens 8 Schritte zugleich
   const sp = Number.isFinite(e.speed) ? Math.min(1.3, 0.8 + 0.25 * e.speed) : 1; S.npcSteps = (S.npcSteps || 0) + 1
   return play(cue, { pos, gain: sp, rate: 0.96 + Math.random() * 0.08, prio: 0 }) // niedrigster Rang: werden zuerst verdrängt, nie Kampf/Fluffer
@@ -285,7 +296,7 @@ export function frame(st) {
   if (st.farm) farmTick(st.farm)
   driveTick(st, mode, ac.currentTime); coastTick(ac.currentTime)
   if (S.steps && mode === 'foot' && st.foot) stepTick(st.foot)
-  musicTick(mode); gatlingTick(ac.currentTime)
+  musicTick(mode); gatlingTick(ac.currentTime); presenceTick(ac.currentTime)
   // Ducking der Musik: laute SFX (Kampf, Crash), Dialog, Boost
   const db = musicDuckDb({ loud: S.combatActive || ac.currentTime < S.bank.loudUntil, dialogue: S.dialogue, boost: ac.currentTime < (S.boostUntil || 0) })
   if (db !== S.duckDb) { const up = db > S.duckDb; S.duckDb = db; S.graph.ducks.music.gain.setTargetAtTime(dbToGain(db), ac.currentTime, up ? DUCK.release / 3 : DUCK.attack / 3) }
@@ -360,7 +371,7 @@ export function stats() {
     music: S.music ? { list: S.music.list, changes: S.music.changes, started: S.music.started, errors: S.music.errors, tracks: { suno: S.music.lists.suno.length, cozy: S.music.lists.cozy.length } } : null,
     bank: { loaded: S.bank.buffers.size, plays: S.bank.plays, drops: S.bank.drops }, npcSteps: S.npcSteps || 0, npcStepDrops: S.npcStepDrops || 0, steps: S.steps0.n, surface: S.steps0.surface, mode2: S.mode2, tod: S.tod || null, biome: S.biome || null, water: S.water.ids || '',
     racer: S.racer ? (({ gear, rpm, speedKmh, mode, loaded, loadMs }) => ({ gear, rpm: Math.round(rpm), speedKmh: +speedKmh.toFixed(1), mode, loaded, loadMs: Math.round(loadMs) }))(S.racer.snapshot()) : null,
-    drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
+    presence: [...PRES.keys()], flufferHealed: !!S.flufferHealed, drive: DRV.loops ? { surface: DRV.surface, drift: +DRV.drift.toFixed(2), loops: Object.values(DRV.loops).filter(Boolean).length, brakes: DRV.brakes || 0, maxDrift: +(DRV.maxDrift || 0).toFixed(2) } : null, coast: !!COAST,
     outDb: outLevelDb(), events: S.events.slice(-40) }
 }
 function outLevelDb() { const G = S.graph; if (!G) return null; G.meter.getFloatTimeDomainData(G.pcm); let q = 0; for (const v of G.pcm) q += v * v; const r = Math.sqrt(q / G.pcm.length); return r > 0 ? +(20 * Math.log10(r)).toFixed(1) : -120 }

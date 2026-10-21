@@ -17,7 +17,7 @@ import { mountAudioPanel } from './audioPanel.js'
 
 const todName = (t) => (t == null ? 'day' : t < 0.18 ? 'night' : t < 0.55 ? 'evening' : 'day')
 const FLY_KIND = (() => { const t = new Set((RACER?.anchors || []).map((a) => a.type)); return t.has('thrust') ? 'jet' : t.has('fan') ? 'turbine' : 'antigrav' })()
-const _p = new THREE.Vector3(), _f = new THREE.Vector3(), _u = new THREE.Vector3(), _f2 = new THREE.Vector3(), _q = new THREE.Quaternion()
+const _p = new THREE.Vector3(), _f = new THREE.Vector3(), _u = new THREE.Vector3(), _f2 = new THREE.Vector3(), _q = new THREE.Quaternion(), _b = new THREE.Vector3()
 
 export default function AudioHost({ host }) {
   const { camera } = useThree()
@@ -95,11 +95,13 @@ export default function AudioHost({ host }) {
         if (first) continue // erstes Lesen je Quelle: nur merken (keine alten Schritte nachspielen)
         if (!Array.isArray(e.at)) continue; const x = e.at[0], z = e.at[1], y = hh ? hh(x, z) : pos.y
         A.npcStep(e, { x, y: y + 0.05, z }, e.group ? null : stepSurface({ r: Math.hypot(x, z), flatR: host.flatR || 0, y })) } } }
+    // Publikum an der Band (WS0 N15): leise Schleife, solange die Figur in 30 m Nähe der Band ist
+    const Bp = mods.band?.positions?.(); if (Bp?.length && H.t - (H.bdAt || 0) > 0.5) { H.bdAt = H.t; _b.set(Bp.reduce((s, p) => s + p.x, 0) / Bp.length, Bp.reduce((s, p) => s + p.y, 0) / Bp.length, Bp.reduce((s, p) => s + p.z, 0) / Bp.length);   /* Mitte der Musiker über positions() – der React-Host greift nicht auf Modul-Szenenknoten zu (contract-static) */ if (Math.hypot(_b.x - pos.x, _b.z - pos.z) < 30) A.presence('bandCrowd', 'npc.bandCrowd', { x: _b.x, y: _b.y + 1, z: _b.z }, 1.2) }
     // Dark Fluffer (WS-NPC): Ereignisse aus dem Modul, sobald es da ist (debug().events, je Ereignis einmal)
     const F = mods.fluffer; if (F?.debug && H.t - (H.flAt || 0) > 0.1) { H.flAt = H.t; const d = F.debug(), m = F.mouthWorld?.()
       for (const e of d.events || []) { const key = e.t + ':' + e.type + ':' + e.k; if (H.fluffSeen.has(key)) continue; H.fluffSeen.add(key)
         const at = m ? { x: m[0] ?? m.x, y: m[1] ?? m.y, z: m[2] ?? m.z } : d.x != null ? { x: d.x, y: pos.y, z: d.z } : null; A.fluffer(e, at) } }
   })
-  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
+  useEffect(() => { expose('Audio', { stats: A.stats, play: A.play, k10: A.k10, fluffer: A.fluffer, groupEvent: A.groupEvent, npcStep: A.npcStep, presence: A.presence, vehicleEvent: A.vehicleEvent, combatAction: A.combatAction, setVolume: A.setVolume, unlock: A.unlock, capture: A.captureStream }) }, [])
   return null
 }
