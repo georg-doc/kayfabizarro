@@ -195,3 +195,20 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 ## 22.10. · V-624: MVP-Stage als GPT-Site
 - Georg: Die spielbare MVP-Fassung baust du wieder als GPT-Site bzw. Stage wie zuvor, mit privatem Abruf serverseitig wie bei WS1-Staging. Kein Cloudflare-Pages-Projekt fürs Spiel.
 - Quelle ist der Spiel-Branch `ws1/mvp-r1` vom WS1-Lead (Brief `BRIEF_WS1_MVP_MERGE_SITE_R1.md`).
+
+
+## 22.10. · K13 Rig_Large-Nahkampf liegt im privaten Branch
+- WSB hat K13 geliefert, alle Karten CONTRACT_PASS (Prüfer WSA):
+  - Schwert groß, Axt groß, Keule (Raider), Schild normal (Knight), Schild groß (Brute/Demon);
+  - je Clip eine feste Halterung, `excludedClips` mit Grund, `clipMarkers`, `weaponDrop`;
+  - Boss-Launch V-600 für Large und Medium.
+- Pfad: `50_BLENDER/K13/` (`_privat_kauf_asset/`, `boss/`, `RETURN.md`).
+- Einbau in die Arena wie K10, nach Georgs Abnahme des Proof-Stage-Bogens.
+
+
+## 22.10. · V-628: Kartenprüfung für gerichtete Waffen
+- **Neue Prüfung in eurem Karten-Check (CONTRACT):**
+  - Bei Waffen mit Anker `KFB_Edge` (Axt, Schwert, Katana, Samurai-Schwert, Spitzhacke, Sense, Hammer) muss die Schneide an der Kontakt-Marke in Bewegungsrichtung der Waffenspitze zeigen (Skalarprodukt ≥ 0,7). Sonst ist die Karte FAIL.
+  - Ohne `KFB_Edge` an einer gerichteten Waffe: ebenfalls FAIL.
+- **Grund:** K13 hatte eine verdrehte Orc-Axt mit CONTRACT_PASS (Georg).
+- **K13 liegt im privaten Branch** (`50_BLENDER/K13/`): Schwert groß, Axt groß, Keule, Schild normal und groß, Boss-Launch. WSB korrigiert die Axt (N21) und liefert große Waffen für den Boss-Move (N22). Einbau nach Georgs Abnahme des Proof-Stage-Bogens.

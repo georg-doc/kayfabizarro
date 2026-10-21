@@ -8874,6 +8874,51 @@
    "applies": "sofort"
   },
   {
+   "id": "V-626",
+   "date": "2026-10-22",
+   "area": "Kampf",
+   "verdict": "TUNE",
+   "text": "K13 Orc-Axt (Georg 22.10.): Die Axt sitzt 180 Grad verdreht in der Hand, die Klinge muss nach vorne zeigen, also in Schlagrichtung. Korrektur nur in der Halterung (Drehung um die Griffachse), die Kit-Axt bleibt as-is (V-574). Gilt für Axt und Axt groß in allen behaltenen Clips und im Boss-Move; danach Durchdringungsprüfung und Bögen neu. Klingen-Waffen (Schwert) mitprüfen.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Eine Axt schlägt mit der Klinge; verdreht liest sich jeder Treffer falsch.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-627",
+   "date": "2026-10-22",
+   "area": "Kampf",
+   "verdict": "RULE",
+   "text": "Boss-Move Katapult-Hieb (ändert V-600 Waffenwahl, Georg 22.10.): Besser mit der großen Orc-Keule bzw. Zweihändern (Zweihand-Axt, Zweihand-Schwert, Hammer) aus den Kits as-is statt Einhand-Keule; Schlag-Clip dafür Melee_2H_Slam as-is (die 2H-Familie kommt für den Boss-Move zurück). Flug, Hammer-Space und Landung bleiben wie V-600. Klinge bzw. Schlagfläche in Schlagrichtung (V-626).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Ein großer Zweihand-Hieb liest sich als Katapult glaubwürdiger als eine kleine Keule.",
+   "applies": "sofort"
+  },
+  {
+   "id": "V-628",
+   "date": "2026-10-22",
+   "area": "Kampf",
+   "verdict": "RULE",
+   "text": "Gerichtete Waffen als Prüfung im Code (Georg 22.10., Ursache wiederholter verdrehter Äxte): (1) Anker KFB_Edge an jeder gerichteten Waffe (Axt, Schwert, Katana, Samurai-Schwert, Spitzhacke, Sense, Hammer-Schlagfläche), zeigt in Klingen- bzw. Schneidenrichtung, Kit-Datei sonst as-is; (2) die Halterungs-Suche nimmt nur Lagen, bei denen KFB_Edge am Kontakt in Bewegungsrichtung der Waffenspitze zeigt; (3) die WSA-Kartenprüfung schlägt fehl, wenn die Schneide am Kontakt nach hinten zeigt. Einschneidige Klingen (Katana, Samurai-Schwert) besonders: Schneide nach vorne, Rücken zum Körper. Bestehende Karten K10 und K13 laufen einmal durch.",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Suche optimierte nur Durchdringung und fand verdrehte Lagen; die Prüfung im Code verhindert das dauerhaft.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8961,7 +9006,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1071",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1074",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
