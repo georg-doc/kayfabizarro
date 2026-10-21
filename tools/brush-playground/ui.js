@@ -22,7 +22,7 @@
   }
 
   /* ---------------- popovers ---------------- */
-  const pops = { actions: ['popActions', 'btnActions'], brushes: ['popBrushes', null], color: ['popColor', 'btnColor'] };
+  const pops = { actions: ['popActions', 'btnActions'], brushes: ['popBrushes', null], color: ['popColor', 'btnColor'], layers: ['popLayers', 'btnLayers'] };
   let openPop = null;
   function open(name) {
     closeAll(name === 'studio' ? null : undefined);
@@ -31,6 +31,7 @@
     openPop = name;
     if (name === 'brushes') { const cur = E.brushes.get(E.currentId); if (cur && !cur.builtin) libSet = cur.setName || ''; $('libSearch').value = ''; renderLibrary(); }
     if (name === 'color') { renderDisc(); renderPalettes(); }
+    if (name === 'layers') { layerOpts = null; renderLayers(); }
   }
   function closeAll() {
     for (const k in pops) { const [pid, bid] = pops[k]; $(pid).classList.remove('open'); if (bid) $(bid).setAttribute('aria-expanded', 'false'); }
@@ -40,6 +41,7 @@
   function toggle(name) { if (openPop === name) closeAll(); else open(name); }
   $('btnActions').onclick = () => toggle('actions');
   $('btnColor').onclick = () => toggle('color');
+  $('btnLayers').onclick = () => toggle('layers');
   document.addEventListener('pointerdown', e => {
     if (!openPop) return;
     const [pid, bid] = pops[openPop];
@@ -111,6 +113,13 @@
     $('hudTilt').textContent = 'tilt ' + (h.tilt == null ? '–' : h.tilt + '°');
     if (h.speed != null) $('hudSpeed').textContent = 'speed ' + h.speed.toFixed(2) + ' screen px/ms';
   });
+  E.on('warn', msg => status(msg, true));
+  E.on('layers', info => {
+    const L = info.layers.find(l => l.id === info.active);
+    $('hudLayer').textContent = L ? L.name + (L.visible ? '' : ' (hidden)') : '–';
+    $('dark').checked = info.bg.color === E.PAPER_DARK;
+    if ($('popLayers').classList.contains('open')) scheduleLayers();
+  });
   E.on('pick', hex => { setColor(hex); commitRecent(); setTool(lastPaintTool); status('Picked ' + hex); });
   E.on('select', () => { renderLibrary(); renderStudio(); paintColorUI(); });
   E.on('params', id => { previewCache.delete(id); if (id === E.currentId) { refreshStudioState(); schedulePad(); } });
@@ -124,11 +133,11 @@
   });
 
   undoBtn(); function undoBtn() { $('undo').onclick = () => E.undo(); $('redo').onclick = () => E.redo(); }
-  $('clear').onclick = () => { if (E.clearCanvas()) status('Canvas cleared · undo brings it back'); closeAll(); };
+  $('clear').onclick = () => { if (E.clearLayer()) status('Layer cleared · undo brings it back'); closeAll(); };
   $('png').onclick = () => { E.download(false); closeAll(); };
   $('pngOpaque').onclick = () => { E.download(true); closeAll(); };
   $('saveSession').onclick = () => { E.downloadBlob(new Blob([E.sessionJSON()], { type: 'application/json' }), 'georg-brush-playground-drawing.json'); closeAll(); };
-  $('dark').onchange = () => { E.state.darkPaper = $('dark').checked; $('surface').classList.toggle('dark', E.state.darkPaper); };
+  $('dark').onchange = () => { E.setBackground({ color: $('dark').checked ? E.PAPER_DARK : E.PAPER, visible: true }); };
   $('righthand').checked = !!store.get('righthand', false);
   document.body.classList.toggle('righthand', $('righthand').checked);
   $('righthand').onchange = () => { document.body.classList.toggle('righthand', $('righthand').checked); store.set('righthand', $('righthand').checked); };
@@ -469,6 +478,84 @@
   }
   document.querySelector('.padopts').onclick = e => { const b = e.target.closest('[data-pad]'); if (b) { padMode = b.dataset.pad; schedulePad(); } };
 
+  /* ---------------- Layers ----------------
+     Procreate's panel as blueprint: top layer first, thumbnail, name, blend letter (tap → options), visibility;
+     background colour at the bottom. Every change is one undo step. */
+  const BLEND_LABEL = { normal: ['N', 'Normal'], multiply: ['M', 'Multiply'], screen: ['S', 'Screen'], overlay: ['O', 'Overlay'], darken: ['D', 'Darken'], lighten: ['L', 'Lighten'],
+    'color-burn': ['CB', 'Colour burn'], 'color-dodge': ['CD', 'Colour dodge'], 'hard-light': ['HL', 'Hard light'], 'soft-light': ['SL', 'Soft light'], difference: ['Di', 'Difference'],
+    exclusion: ['E', 'Exclusion'], hue: ['H', 'Hue'], saturation: ['Sa', 'Saturation'], color: ['C', 'Colour'], luminosity: ['Lu', 'Luminosity'] };
+  let layerOpts = null, layersPending = false;
+  function scheduleLayers() { if (!layersPending) { layersPending = true; requestAnimationFrame(() => { layersPending = false; renderLayers(); }); } }
+  function guard(fn) { try { return fn(); } catch (err) { status(err.message, true); return false; } }
+  function renderLayers() {
+    const info = E.layers(), ul = $('layerList');
+    $('layerCount').textContent = info.layers.length + ' / ' + info.max;
+    $('layerAdd').disabled = info.layers.length >= info.max;
+    const keepFocus = document.activeElement && document.activeElement.closest('.lopts') ? document.activeElement.id : null;
+    ul.innerHTML = '';
+    const top = info.layers.slice().reverse();
+    top.forEach((L, k) => {
+      const i = info.layers.length - 1 - k; // index from the bottom
+      const li = document.createElement('li'); li.className = 'layer' + (L.visible ? '' : ' hidden-layer'); li.dataset.id = L.id;
+      li.setAttribute('role', 'option'); li.setAttribute('aria-selected', L.id === info.active);
+      const [abbr, long] = BLEND_LABEL[L.blend] || ['N', 'Normal'];
+      li.innerHTML = '<canvas class="thumb" width="128" height="80"></canvas><span class="lname">' + esc(L.name) + '<small>' + long + (L.opacity < 1 ? ' · ' + Math.round(L.opacity * 100) + ' %' : '') + (L.alphaLock ? ' · alpha lock' : '') + '</small></span>' +
+        '<button class="blendbtn" data-act="opts" aria-expanded="' + (layerOpts === L.id) + '" title="Opacity, blend mode and layer actions">' + abbr + '</button>' +
+        '<input class="vis" type="checkbox" data-act="vis" title="Visible"' + (L.visible ? ' checked' : '') + ' aria-label="Visible">';
+      const t = li.querySelector('canvas').getContext('2d'); t.drawImage(L.canvas, 0, 0, 128, 80);
+      ul.appendChild(li);
+      if (layerOpts === L.id) {
+        const o = document.createElement('li'); o.className = 'lopts'; o.dataset.for = L.id;
+        o.innerHTML = '<div class="set"><label for="layerName">Name</label><span></span><input id="layerName" type="text" maxlength="60" value="' + esc(L.name) + '" style="grid-column:1/-1"></div>' +
+          '<div class="set"><label for="layerOpacity">Opacity</label><output id="layerOpacityOut">' + Math.round(L.opacity * 100) + ' %</output><input id="layerOpacity" type="range" min="0" max="1" step="0.01" value="' + L.opacity + '"></div>' +
+          '<div class="set"><label for="layerBlend">Blend mode</label><span></span><select id="layerBlend" style="grid-column:1/-1">' + E.BLENDS.map(b => '<option value="' + b + '"' + (b === L.blend ? ' selected' : '') + '>' + BLEND_LABEL[b][1] + '</option>').join('') + '</select></div>' +
+          '<div class="set toggle"><label for="layerAlpha">Alpha lock<span class="meta" style="display:block">paint only where the layer has paint</span></label><input id="layerAlpha" class="switch" type="checkbox"' + (L.alphaLock ? ' checked' : '') + '></div>' +
+          '<div class="acts"><button id="layerUp"' + (i === info.layers.length - 1 ? ' disabled' : '') + '>Up</button><button id="layerDown"' + (i === 0 ? ' disabled' : '') + '>Down</button>' +
+          '<button id="layerDup"' + (info.layers.length >= info.max ? ' disabled' : '') + '>Duplicate</button><button id="layerMerge"' + (i === 0 ? ' disabled' : '') + '>Merge down</button>' +
+          '<button id="layerClear">Clear</button><button id="layerDel"' + (info.layers.length === 1 ? ' disabled' : '') + '>Delete</button></div>';
+        ul.appendChild(o);
+      }
+    });
+    const bg = document.createElement('li'); bg.className = 'bgrow';
+    bg.innerHTML = '<button class="bgsw" id="bgColor" title="Set to the current colour" style="background:' + info.bg.color + '"></button><span class="lname">Background colour<small>tap the swatch for the current colour</small></span>' +
+      '<input class="vis" type="checkbox" id="bgVis" title="Visible"' + (info.bg.visible ? ' checked' : '') + ' aria-label="Background visible">';
+    ul.appendChild(bg);
+    if (keepFocus && $(keepFocus)) $(keepFocus).focus();
+  }
+  $('layerAdd').onclick = () => guard(() => { E.addLayer(); layerOpts = null; renderLayers(); });
+  $('layerList').addEventListener('click', e => {
+    if (e.target.id === 'bgColor') { E.setBackground({ color: E.state.color }); return; }
+    if (e.target.id === 'bgVis') return;
+    const opts = e.target.closest('.lopts');
+    if (opts) {
+      const id = opts.dataset.for, act = e.target.id;
+      if (act === 'layerUp') E.moveLayer(id, 1);
+      else if (act === 'layerDown') E.moveLayer(id, -1);
+      else if (act === 'layerDup') guard(() => { E.duplicateLayer(id); layerOpts = null; });
+      else if (act === 'layerMerge') guard(() => { E.mergeDown(id); layerOpts = null; status('Merged down'); });
+      else if (act === 'layerClear') { E.clearLayer(id); status('Layer cleared · undo brings it back'); }
+      else if (act === 'layerDel') guard(() => { E.deleteLayer(id); layerOpts = null; });
+      else return;
+      renderLayers(); return;
+    }
+    const li = e.target.closest('li.layer'); if (!li) return;
+    if (e.target.dataset.act === 'vis') return;
+    if (e.target.closest('[data-act="opts"]')) { layerOpts = layerOpts === li.dataset.id ? null : li.dataset.id; E.selectLayer(li.dataset.id); renderLayers(); return; }
+    E.selectLayer(li.dataset.id); if (layerOpts && layerOpts !== li.dataset.id) layerOpts = null; renderLayers();
+  });
+  $('layerList').addEventListener('change', e => {
+    if (e.target.id === 'bgVis') { E.setBackground({ visible: e.target.checked }); return; }
+    if (e.target.dataset.act === 'vis') { E.setLayer(e.target.closest('li.layer').dataset.id, { visible: e.target.checked }); return; }
+    const id = layerOpts; if (!id) return;
+    if (e.target.id === 'layerOpacity') E.setLayer(id, { opacity: Number(e.target.value) });
+    if (e.target.id === 'layerBlend') E.setLayer(id, { blend: e.target.value });
+    if (e.target.id === 'layerAlpha') E.setLayer(id, { alphaLock: e.target.checked });
+    if (e.target.id === 'layerName') E.setLayer(id, { name: e.target.value.trim() });
+  });
+  $('layerList').addEventListener('input', e => {
+    if (e.target.id === 'layerOpacity' && layerOpts) { E.previewLayer(layerOpts, { opacity: Number(e.target.value) }); $('layerOpacityOut').value = Math.round(e.target.value * 100) + ' %'; }
+  });
+
   /* ---------------- keyboard ---------------- */
   document.addEventListener('keydown', e => {
     if (e.target.matches('input[type=text],input[type=search]')) return;
@@ -479,6 +566,7 @@
     else if (!mod && k === 'b') toolButton('brush');
     else if (!mod && k === 'e') toolButton('eraser');
     else if (!mod && k === 'i') $('eyedrop').click();
+    else if (!mod && k === 'l') toggle('layers');
     else if (!mod && (e.key === '[' || e.key === ']')) setSize(clamp(Math.round(E.state.size * (e.key === ']' ? 1.12 : 1 / 1.12)), 2, 400));
   });
 
@@ -499,7 +587,10 @@
     perf: () => Object.assign({}, E.perf),
     resetPerf: () => Object.assign(E.perf, { frames: 0, frameMsMax: 0, frameMsSum: 0, commitMsMax: 0 }),
     lastStroke: () => JSON.parse(JSON.stringify(D2.done.filter(a => a.type === 'stroke').slice(-1)[0] || null)),
-    addStroke: rec => { const r = JSON.parse(JSON.stringify(rec)); D2.bakeStroke(D2.cctx, r); D2.pushAction(r); D2.refreshView(); },
+    addStroke: rec => { const r = JSON.parse(JSON.stringify(rec)); r.layerId = r.layerId || E.activeLayer; D2.pushAction(r); },
+    flatCanvas: () => E.flatten(null),
+    layerCanvas: id => (E.layers().layers.find(l => l.id === id) || {}).canvas,
+    layers: () => { const i = E.layers(); return { active: i.active, bg: i.bg, layers: i.layers.map(({ canvas, ...m }) => m) }; },
     brushParams: id => E.decodedWithGrain(E.brushes.get(id)),
     setMode: setTool, setSize, setColor: hex => { setColor(hex); commitRecent(); }, color: () => E.state.color,
     palettes: () => JSON.parse(JSON.stringify({ palettes, current: currentPal })),

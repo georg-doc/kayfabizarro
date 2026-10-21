@@ -1,5 +1,11 @@
 # KFB Brush Playground R1 · changelog (additive, newest first)
 
+## 2026-10-22 · R1.8 · Layers (Claude Code)
+- Up to 16 layers plus background colour; Procreate-style Layers panel with opacity, 16 blend modes, alpha lock, up/down, duplicate, merge down, clear, delete.
+- Action-based document with copy-on-write checkpoints: every layer action undoable, replays exact; blend modes against the paper; eyedropper samples the composite.
+- Sessions `session/2` (old `session/1` files load into Layer 1); PNG transparent = visible layers.
+- Unit 41/0, Chromium 37/0 (6 new layer tests).
+
 ## 2026-10-21 · R1.7 · Procreate-style interface, KFB skin, palettes (Claude Code)
 - Brushes moved to the git-ignored `tools/brush-playground/brushes/` (Georg's go).
 - New interface after Procreate's layout: Actions, Paint/Erase/Colour, size/opacity sidebar with eyedropper, Brush Library with stroke previews, Brush Studio (12 Procreate sections, status per control, drawing pad), colour Disc/Value/Palettes, `.swatches` import/export, shortcuts; KFB design-system colours, own icons.

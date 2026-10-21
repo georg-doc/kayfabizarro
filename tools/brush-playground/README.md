@@ -20,7 +20,9 @@ Procreate's layout is the blueprint, KFB's palette the skin (ink-black chrome, p
 - **Colour:** Disc (hue ring + saturation/brightness square), Value (HSB sliders, hex, system picker), Palettes (KFB Washes and KFB Inks & Papers as defaults, new palette, add colour, Procreate .swatches import/export), recent colours.
 - Shortcuts: B, E, I, [ ], ⌘Z, ⇧⌘Z, Esc.
 
-Not in the playground yet: layers, selection, transform, adjustments, smudge.
+- **Layers (R1.8):** top-bar button (L). Procreate's panel as blueprint: top layer first, thumbnail, name, blend letter and visibility per row; tapping the letter opens name, opacity (live preview, one undo step), blend mode (16 modes, computed against what lies below including the paper), alpha lock, up/down, duplicate, merge down, clear, delete. Background colour row at the bottom (hide for transparency, swatch takes the current colour). Up to 16 layers. Every layer action is undoable; checkpoints share unchanged layers (copy-on-write). Eyedropper samples the composite as seen. PNG transparent = visible layers; PNG on paper adds the background colour. Drawings are saved as `session/2`; `session/1` files from R1.6/R1.7 load into Layer 1.
+
+Not in the playground yet: selection, transform, adjustments, smudge, layer groups, clipping masks.
 
 ## What it does
 

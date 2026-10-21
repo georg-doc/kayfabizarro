@@ -73,11 +73,11 @@ const hline = (x0, x1, y, n, f) => Array.from({ length: n + 1 }, (_, i) => [x0 +
 
 /* ---- pixel helpers (canvas px) ---- */
 const px = (fn, ...a) => page.evaluate(fn, ...a);
-const hash = () => px(() => { const d = document.getElementById('paper').getContext('2d').getImageData(0, 0, 1600, 1000).data; let h = 0x811c9dc5; for (let i = 0; i < d.length; i += 7) { h ^= d[i]; h = Math.imul(h, 16777619); } return (h >>> 0).toString(16); });
-const regionHash = r => px(r => { const d = document.getElementById('paper').getContext('2d').getImageData(r.x, r.y, r.w, r.h).data; let h = 0x811c9dc5; for (let i = 0; i < d.length; i++) { h ^= d[i]; h = Math.imul(h, 16777619); } return (h >>> 0).toString(16); }, r);
+const hash = () => px(() => { const d = KFB.flatCanvas().getContext('2d').getImageData(0, 0, 1600, 1000).data; let h = 0x811c9dc5; for (let i = 0; i < d.length; i += 7) { h ^= d[i]; h = Math.imul(h, 16777619); } return (h >>> 0).toString(16); });
+const regionHash = r => px(r => { const d = KFB.flatCanvas().getContext('2d').getImageData(r.x, r.y, r.w, r.h).data; let h = 0x811c9dc5; for (let i = 0; i < d.length; i++) { h ^= d[i]; h = Math.imul(h, 16777619); } return (h >>> 0).toString(16); }, r);
 // thickness (alpha>20 rows) and mean alpha of a column band [x, x+w) between y0..y1
 const band = (x, w, y0, y1) => px(([x, w, y0, y1]) => {
-  const d = document.getElementById('paper').getContext('2d').getImageData(x, y0, w, y1 - y0).data; let th = 0, sa = 0, n = 0, r = 0, g = 0, b = 0, amax = 0;
+  /* layers without background */ const d = KFB.flatCanvas().getContext('2d').getImageData(x, y0, w, y1 - y0).data; let th = 0, sa = 0, n = 0, r = 0, g = 0, b = 0, amax = 0;
   for (let c = 0; c < w; c++) { let rows = 0; for (let y = 0; y < y1 - y0; y++) { const i = (y * w + c) * 4, a = d[i + 3]; if (a > 20) { rows++; sa += a; n++; r += d[i]; g += d[i + 1]; b += d[i + 2]; } amax = Math.max(amax, a); } th += rows; }
   return { thickness: th / w, meanAlpha: n ? sa / n / 255 : 0, maxAlpha: amax / 255, rgb: n ? [r / n, g / n, b / n].map(Math.round) : null, n };
 }, [x, w, y0, y1].map(Math.round));
@@ -301,7 +301,7 @@ await t('B22 save drawing as JSON and load it in a fresh tab: identical pixels',
   const [dl] = await Promise.all([page.waitForEvent('download'), action('share', 'saveSession')]);
   const f = path.join(PRIV, 'B22_drawing.json'); await dl.saveAs(f);
   const j = JSON.parse(fs.readFileSync(f, 'utf8'));
-  ok(j.format === 'kfb.brush-playground.session/1' && j.actions.length > 5, 'format/actions');
+  ok(j.format === 'kfb.brush-playground.session/2' && j.actions.length > 5, 'format/actions ' + j.format + ' ' + j.actions.length);
   ok(!/Shape\.png|data:image|iVBOR/.test(fs.readFileSync(f, 'utf8')), 'session contains image data');
   const p2 = await ctx.newPage(); const e2 = []; p2.on('pageerror', e => e2.push(e.message));
   await p2.goto('file://' + path.join(proto, 'index.html'));
@@ -317,11 +317,19 @@ await t('B22 save drawing as JSON and load it in a fresh tab: identical pixels',
   await p2.waitForFunction(() => /Grain replaced/.test(document.getElementById('status').textContent));
   await p2.setInputFiles('#loadSession', f);
   await p2.waitForFunction(() => /Loaded drawing/.test(document.getElementById('status').textContent));
-  const h2 = await p2.evaluate(() => { const d = document.getElementById('paper').getContext('2d').getImageData(0, 0, 1600, 1000).data; let h = 0x811c9dc5; for (let i = 0; i < d.length; i += 7) { h ^= d[i]; h = Math.imul(h, 16777619); } return (h >>> 0).toString(16); });
+  // a single-layer drawing saved by R1.6 (session/1, no layer ids) must load into Layer 1 identically
+  const v1 = JSON.parse(fs.readFileSync(f, 'utf8')); v1.format = 'kfb.brush-playground.session/1'; for (const a of v1.actions) delete a.layerId;
+  const f1 = path.join(PRIV, 'B22_drawing_v1.json'); fs.writeFileSync(f1, JSON.stringify(v1));
+  await p2.evaluate(() => { document.getElementById('status').textContent = ''; });
+  await p2.setInputFiles('#loadSession', f1);
+  await p2.waitForFunction(() => /Loaded drawing/.test(document.getElementById('status').textContent));
+  const hv1 = await p2.evaluate(() => { const d = KFB.flatCanvas().getContext('2d').getImageData(0, 0, 1600, 1000).data; let h = 0x811c9dc5; for (let i = 0; i < d.length; i += 7) { h ^= d[i]; h = Math.imul(h, 16777619); } return (h >>> 0).toString(16); });
+  const h2 = await p2.evaluate(() => { const d = KFB.flatCanvas().getContext('2d').getImageData(0, 0, 1600, 1000).data; let h = 0x811c9dc5; for (let i = 0; i < d.length; i += 7) { h ^= d[i]; h = Math.imul(h, 16777619); } return (h >>> 0).toString(16); });
   await p2.close();
   ok(!e2.length, e2.join('; '));
   ok(h2 === hBefore, `fresh tab ${h2} vs ${hBefore}`);
-  return `${j.actions.length} actions, ${(fs.statSync(f).size / 1024).toFixed(0)} KB, no image data · missing brushes named · fresh-tab hash ${h2} identical`;
+  ok(hv1 === hBefore, `session/1 file ${hv1} vs ${hBefore}`);
+  return `${j.actions.length} actions, ${(fs.statSync(f).size / 1024).toFixed(0)} KB, no image data · missing brushes named · fresh-tab hash ${h2} identical · session/1 file identical`;
 });
 
 await t('B23 comparison over all 21 set brushes against their Procreate previews', async () => {
@@ -359,7 +367,9 @@ await t('B25 eyedropper picks the red stroke colour and returns to the brush', a
   ok(await page.getAttribute('#eyedrop', 'aria-pressed') === 'true', 'eyedropper not active');
   await page.mouse.click(box.x + 210, box.y + 360);
   const c = await px(() => KFB.color()), rgb = core.fromHex(c);
-  ok(rgb[0] > rgb[1] + 60 && rgb[0] > rgb[2] + 60, 'picked ' + c);
+  // the eyedropper samples the composite as seen: 40 % red over paper
+  const seen = await px(([x, y]) => { const d = document.getElementById('paper').getContext('2d').getImageData(x, y, 1, 1).data; return '#' + [d[0], d[1], d[2]].map(v => v.toString(16).padStart(2, '0')).join(''); }, [Math.floor(C(210)), Math.floor(C(360))]);
+  ok(c === seen && rgb[0] > rgb[1] + 30 && rgb[0] > rgb[2] + 30, 'picked ' + c + ' vs view ' + seen);
   ok(await page.getAttribute('#brushMode', 'aria-pressed') === 'true', 'tool not restored');
   await px(() => KFB.setColor('#1f1a14'));
   return 'picked ' + c;
@@ -471,6 +481,127 @@ await t('B31 keyboard: B toggles the library, Esc closes, E/I switch tools', asy
   return 'b · Esc · e · i · b';
 });
 
+/* ================= R1.8 · layers ================= */
+const viewPx = (x, y) => px(([x, y]) => Array.from(document.getElementById('paper').getContext('2d').getImageData(x, y, 1, 1).data), [Math.floor(x), Math.floor(y)]);
+const layerAlpha = (id, r) => px(([id, r]) => { const L = KFB.layerCanvas(id); const d = L.getContext('2d').getImageData(r.x, r.y, r.w, r.h).data; let n = 0; for (let i = 3; i < d.length; i += 4) if (d[i] > 8) n++; return n; }, [id, r]);
+const histDone = async () => (await px(() => KFB.history())).done;
+const openLayers = async () => { if (!(await page.isVisible('#popLayers'))) await page.click('#btnLayers'); };
+const openLayerOpts = async id => {
+  await openLayers();
+  if (!(await page.isVisible(`.lopts[data-for="${id}"]`))) await page.click(`#layerList li.layer[data-id="${id}"] .blendbtn`);
+  await page.waitForTimeout(60); // the panel re-renders on the next frame after a selection
+};
+
+await t('B32 layers: new layer above, strokes go to the selected layer, hide/show, thumbnails', async () => {
+  await fresh(); await setVal('#color', '#3e6a83');
+  await page.click('#btnLayers'); await page.click('#layerAdd');
+  let L = await px(() => KFB.layers());
+  ok(L.layers.length === 2 && L.active === L.layers[1].id && L.layers[1].name === 'Layer 2', JSON.stringify(L));
+  const h0 = await hash();
+  await pen(hline(1000, 1300, 120, 30, 0.9));
+  const L2 = L.active, r = { x: Math.round(C(990)), y: Math.round(C(80)), w: Math.round(C(330)), h: Math.round(C(80)) };
+  ok(await layerAlpha(L2, r) > 500, 'stroke not on Layer 2');
+  ok(await layerAlpha(L.layers[0].id, r) === 0, 'stroke leaked into Layer 1');
+  const hWith = await hash();
+  await openLayers(); await page.click(`#layerList li.layer[data-id="${L2}"] .vis`);
+  ok(await hash() === h0, 'hidden layer still visible');
+  await page.click(`#layerList li.layer[data-id="${L2}"] .vis`);
+  ok(await hash() === hWith, 'shown again');
+  const thumbs = await page.$$eval('#layerList canvas.thumb', cs => cs.map(c => { const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data; let n = 0; for (let i = 3; i < d.length; i += 4) if (d[i]) n++; return n; }));
+  ok(thumbs.length === 2 && thumbs.every(n => n > 0), 'thumbnails ' + thumbs);
+  ok((await page.textContent('#layerCount')) === '2 / 16', 'count');
+  await page.screenshot({ path: path.join(PRIV, 'B32_layers.png') });
+  return `Layer 2 active · stroke only on Layer 2 · hide/show exact · thumbnails ${thumbs.join('/')} px`;
+});
+
+await t('B33 blend mode Multiply is computed against what lies below (incl. paper)', async () => {
+  const L2 = (await px(() => KFB.layers())).active;
+  const at = [C(1150), C(120)];
+  const normal = await viewPx(...at);
+  await openLayerOpts(L2);
+  await page.selectOption('#layerBlend', 'multiply');
+  const mult = await viewPx(...at);
+  ok(mult.slice(0, 3).every((v, i) => v <= normal[i]) && mult.slice(0, 3).some((v, i) => v < normal[i] - 4), `normal ${normal} vs multiply ${mult}`);
+  const st = (await px(() => KFB.layers())).layers.find(l => l.id === L2);
+  ok(st.blend === 'multiply' && /^M$/.test((await page.textContent(`#layerList li.layer[data-id="${L2}"] .blendbtn`)).trim()), 'label');
+  await page.click('#undo'); ok((await px(() => KFB.layers())).layers.find(l => l.id === L2).blend === 'normal', 'undo blend');
+  await page.click('#redo');
+  return `pixel ${normal.slice(0, 3)} → ${mult.slice(0, 3)} · undo/redo`;
+});
+
+await t('B34 layer opacity: slider previews live, one undo step on release', async () => {
+  const L2 = (await px(() => KFB.layers())).active, n0 = await histDone();
+  await openLayerOpts(L2);
+  const sl = page.locator('#layerOpacity'), b = await sl.boundingBox();
+  await page.mouse.move(b.x + b.width - 2, b.y + b.height / 2); await page.mouse.down();
+  await page.mouse.move(b.x + b.width * 0.6, b.y + b.height / 2, { steps: 3 });
+  const mid = (await px(() => KFB.layers())).layers.find(l => l.id === L2).opacity;
+  ok(await histDone() === n0, 'history grew during drag');
+  await page.mouse.move(b.x + b.width * 0.3, b.y + b.height / 2, { steps: 3 }); await page.mouse.up();
+  const end = (await px(() => KFB.layers())).layers.find(l => l.id === L2).opacity;
+  ok(await histDone() === n0 + 1 && end < 0.4 && mid > end, `mid ${mid} end ${end} history ${n0} → ${await histDone()}`);
+  await page.click('#undo'); ok((await px(() => KFB.layers())).layers.find(l => l.id === L2).opacity === 1, 'undo opacity');
+  await page.click('#redo');
+  return `drag preview ${mid.toFixed(2)} → commit ${end.toFixed(2)} as one step · undo → 1`;
+});
+
+await t('B35 alpha lock: paint stays inside existing paint of the layer', async () => {
+  const L2 = (await px(() => KFB.layers())).active;
+  await openLayerOpts(L2); await page.click('#layerAlpha');
+  ok((await px(() => KFB.layers())).layers.find(l => l.id === L2).alphaLock, 'alpha lock not set');
+  const outside = { x: Math.round(C(1000)), y: Math.round(C(170)), w: Math.round(C(300)), h: Math.round(C(60)) };
+  const inside = { x: Math.round(C(1000)), y: Math.round(C(95)), w: Math.round(C(300)), h: Math.round(C(50)) };
+  const redIn = () => px(([id, r]) => { const d = KFB.layerCanvas(id).getContext('2d').getImageData(r.x, r.y, r.w, r.h).data; let n = 0; for (let i = 0; i < d.length; i += 4) if (d[i + 3] > 8 && d[i] > d[i + 2] + 40) n++; return n; }, [L2, inside]);
+  const before = await layerAlpha(L2, outside), red0 = await redIn();
+  await setVal('#color', '#c2412c');
+  await pen(hline(1000, 1300, 120, 30, 1).map(([x, y, f], i) => [x, y + (i % 2 ? 50 : -10), f]));
+  const after = await layerAlpha(L2, outside), red1 = await redIn();
+  ok(after === before, `pixels outside existing paint ${before} → ${after}`);
+  ok(red1 > red0 + 200, `red inside the existing paint ${red0} → ${red1}`);
+  await openLayerOpts(L2); await page.click('#layerAlpha');
+  await setVal('#color', '#1f1a14');
+  return `zig-zag over the edge: outside ${before} → ${after} px · red inside ${red0} → ${red1} px`;
+});
+
+await t('B36 duplicate, move, merge down, delete: each one undo step, exact on undo and redo', async () => {
+  const L2 = (await px(() => KFB.layers())).active;
+  await openLayerOpts(L2);
+  const states = [{ h: await hash(), n: (await px(() => KFB.layers())).layers.length }];
+  const step = async label => { states.push({ h: await hash(), n: (await px(() => KFB.layers())).layers.length, label }); };
+  await page.click('#layerDup'); await step('duplicate');
+  const dup = (await px(() => KFB.layers())).active;
+  await openLayerOpts(dup); await page.click('#layerDown'); await step('move down');
+  await page.click('#layerMerge'); await step('merge down');
+  const merged = (await px(() => KFB.layers())).active;
+  await openLayerOpts(merged); await page.click('#layerDel'); await step('delete');
+  ok(states.map(s => s.n).join() === '2,3,3,2,1', 'layer counts ' + states.map(s => s.n));
+  for (let i = states.length - 1; i > 0; i--) { await page.click('#undo'); ok(await hash() === states[i - 1].h, 'undo ' + states[i].label); }
+  for (let i = 1; i < states.length; i++) { await page.click('#redo'); ok(await hash() === states[i].h, 'redo ' + states[i].label); }
+  for (let i = states.length - 1; i > 0; i--) await page.click('#undo');
+  ok((await px(() => KFB.layers())).layers.length === 2, 'back to 2 layers');
+  return 'layers 2 → 3 → 3 → 2 → 1 · every undo and redo pixel-identical';
+});
+
+await t('B37 background colour: hide shows transparency, swatch takes current colour, PNG transparent unaffected', async () => {
+  await fresh();
+  const corner = () => viewPx(3, 3);
+  ok((await corner())[3] === 255, 'background not opaque');
+  await openLayers(); await page.click('#bgVis');
+  ok((await corner())[3] === 0, 'hidden background still painted');
+  const flatA = await hash();
+  await page.click('#bgVis');
+  await setVal('#color', '#6b4e7d'); await openLayers(); await page.click('#bgColor');
+  ok((await corner()).slice(0, 3).join() === '107,78,125', 'bg colour ' + await corner());
+  ok(await hash() === flatA, 'layers changed by background');
+  const [dl] = await Promise.all([page.waitForEvent('download'), action('share', 'pngOpaque')]);
+  const f = path.join(PRIV, 'B37_paper_violet.png'); await dl.saveAs(f);
+  const o = await sharp(f).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  ok(o.data[0] === 107 && o.data[1] === 78 && o.data[2] === 125 && o.data[3] === 255, 'export bg ' + Array.from(o.data.slice(0, 4)));
+  await page.click('#undo'); ok((await corner()).slice(0, 3).join() === '243,234,211', 'undo bg colour');
+  await setVal('#color', '#1f1a14');
+  return 'hide → α 0 · violet swatch → view and PNG on paper · undo → paper cream';
+});
+
 /* ---- screenshots (before the synthetic performance strokes) ---- */
 await fresh();
 await px(() => KFB.select(KFB.brushes()[0].id));
@@ -480,6 +611,7 @@ await page.screenshot({ path: path.join(PUB, 'editor_ui_canvas.png') });
 const mask = await page.addStyleTag({ content: MASK });
 await px(() => KFB.ui.openStudio('pencil')); await page.screenshot({ path: path.join(PUB, 'editor_ui_studio_masked.png') }); await px(() => KFB.ui.closeStudio());
 await page.click('#btnColor'); await page.click('#popColor .tab[data-tab="palettes"]'); await page.screenshot({ path: path.join(PUB, 'editor_ui_palettes.png') });
+await px(() => KFB.ui.closeAll()); await page.click('#btnLayers'); await page.click('#layerList li.layer >> nth=0 >> .blendbtn'); await page.screenshot({ path: path.join(PUB, 'editor_ui_layers.png') });
 await mask.evaluate(n => n.remove());
 await fresh();
 

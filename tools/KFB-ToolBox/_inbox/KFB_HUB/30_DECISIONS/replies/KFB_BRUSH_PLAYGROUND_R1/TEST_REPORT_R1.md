@@ -157,3 +157,34 @@ Public (`tools/brush-playground/evidence/`): `editor_ui_canvas.png`, `editor_ui_
 
 ### Open
 Real iPad + Apple Pencil and Safari; a real Procreate `.swatches` file; layers, selection, transform, adjustments, smudge; drawing directly on the Studio pad; the fidelity seams from R1.6.
+
+## R1.8 · 2026-10-22 · Layers
+Georg: “ja, mach mit Ebenen weiter”.
+
+### What was built
+- Document model in `engine.js`: up to 16 layers (id, name, visible, opacity, blend, alpha lock) plus a background colour layer. The document is a pure function of the action list (`stroke`, `clear`, `layer-add/delete/move/set/dup/merge`, `bg`), so undo, redo, sessions and replays stay exact. Checkpoints every 5 actions (max 12) share unchanged layer canvases; a frozen layer is copied on its next write.
+- View = background + visible layers with their opacity and blend mode (16 canvas blend modes), so Multiply works against the paper like in Procreate. Live strokes render inside their layer's position in the stack. Strokes record their layer and the alpha-lock state (`source-atop`).
+- Layers popover after Procreate's panel (top bar, key L): thumbnails, name, blend letter, visibility; options with name, opacity (live preview, one undo step on release), blend mode, alpha lock, up/down, duplicate, merge down, clear, delete; background colour row (hide → transparency checker; swatch takes the current colour). Actions › Canvas: “Clear layer”, dark paper = background colour ink black (undoable).
+- Eyedropper samples the composite as seen. PNG transparent = visible layers, PNG on paper = plus background colour. Sessions now `kfb.brush-playground.session/2`; `session/1` files load into Layer 1.
+
+### Checks actually run (2026-10-22, Chromium 156.0.8078.4 headless)
+- `node tests/unit.mjs`: **41 passed, 0 failed** (unchanged core).
+- `node tests/browser.mjs`: **37 passed, 0 failed**. Pixel helpers now read the layers without background (`KFB.flatCanvas()`), the eyedropper test compares with the view pixel (40 % red over paper → #e9c6b1). B22 also loads the same drawing rewritten as `session/1` → identical hash. New:
+
+| # | Check | Result |
+|---|---|---|
+| B32 | new layer above and selected, stroke lands only on Layer 2, hide/show restores exact hash, thumbnails drawn, “2 / 16” | PASS |
+| B33 | Multiply against what lies below: view pixel 59,105,129 → 56,96,107; label “M”; undo/redo | PASS |
+| B34 | opacity slider drag: preview without history entry, one entry on release (0.29), undo → 1 | PASS |
+| B35 | alpha lock: zig-zag over the edge → 0 px outside the existing paint, 11,848 red px inside | PASS |
+| B36 | duplicate → move down → merge down → delete (2 → 3 → 3 → 2 → 1 layers), every undo and redo pixel-identical | PASS |
+| B37 | background hidden → view α 0; swatch → violet in view and in PNG on paper; layers unchanged; undo → paper cream | PASS |
+| B14 | performance with 2 layers, 70 strokes | frame mean 4.66 ms / max 9.9 ms, commit ≤ 26 ms, undo rebuild 63 ms (31.9 ms in the previous run) |
+
+Bug found and fixed on the way: a `//` comment I put into a one-line test helper disabled the rest of the line (known trap, see memory); 7 tests failed until it was moved into `/* */`.
+
+### Evidence
+Public: `tools/brush-playground/evidence/editor_ui_layers.png` (+ the earlier UI shots, refreshed), `browser-results.json`. Private: `tools/brush-playground/evidence-private/r18-run5/` (B32 layers panel, comparisons, exports).
+
+### Open
+iPad/Pencil and Safari; layer groups, clipping masks, reference layer, drag-to-reorder, selection/transform; per-frame cost grows with the number of visible layers (measured only with 2).

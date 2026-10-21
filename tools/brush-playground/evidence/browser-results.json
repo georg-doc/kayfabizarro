@@ -1,7 +1,7 @@
 {
-  "date": "2026-10-21T19:19:08.415Z",
+  "date": "2026-10-21T22:12:41.283Z",
   "browser": "chromium 156.0.8078.4",
-  "pass": 31,
+  "pass": 37,
   "fail": 0,
   "results": [
     {
@@ -17,27 +17,27 @@
     {
       "status": "PASS",
       "name": "B03 pen pressure: hardware pressure reaches the stroke and widens it",
-      "info": "pressure 0.05→1.00 · thickness 8.4 → 42.4 px"
+      "info": "pressure 0.05→1.00 · thickness 8.3 → 42.5 px"
     },
     {
       "status": "PASS",
       "name": "B04 pen tilt: tilted pen paints wider (tiltSize 0.39)",
-      "info": "upright 38.4 px · tilted 47.7 px"
+      "info": "upright 38.2 px · tilted 47.4 px"
     },
     {
       "status": "PASS",
       "name": "B05 speed: fast stroke lighter (speedOpacity .76) and wider (speedSize −.27)",
-      "info": "alpha 0.425 → 0.332 · thickness 27.6 → 29.5"
+      "info": "alpha 0.426 → 0.331 · thickness 27.5 → 29.6"
     },
     {
       "status": "PASS",
       "name": "B06 color, size and opacity controls act on new strokes",
-      "info": "rgb 191,55,41 · max alpha 0.220 · thickness 53.3"
+      "info": "rgb 191,55,41 · max alpha 0.220 · thickness 53.5"
     },
     {
       "status": "PASS",
       "name": "B07 undo/redo restore exact pixels (deterministic replay)",
-      "info": "hash ae474f4d restored after undo×2/redo×2 and keyboard"
+      "info": "hash 4238fcdf restored after undo×2/redo×2 and keyboard"
     },
     {
       "status": "PASS",
@@ -47,7 +47,7 @@
     {
       "status": "PASS",
       "name": "B09 eraser removes paint, undo restores it",
-      "info": "alpha sum in band 281 → 11 (painted px 758 → 94)"
+      "info": "alpha sum in band 281 → 5 (painted px 755 → 57)"
     },
     {
       "status": "PASS",
@@ -57,7 +57,7 @@
     {
       "status": "PASS",
       "name": "B11 transparent PNG export (download) matches canvas",
-      "info": "1600×1000 RGBA · 178565 painted px · 1411880 fully transparent px"
+      "info": "1600×1000 RGBA · 178484 painted px · 1412083 fully transparent px"
     },
     {
       "status": "PASS",
@@ -92,7 +92,7 @@
     {
       "status": "PASS",
       "name": "B22 save drawing as JSON and load it in a fresh tab: identical pixels",
-      "info": "10 actions, 61 KB, no image data · missing brushes named · fresh-tab hash 84b73220 identical"
+      "info": "10 actions, 61 KB, no image data · missing brushes named · fresh-tab hash c72bc190 identical · session/1 file identical"
     },
     {
       "status": "PASS",
@@ -107,7 +107,7 @@
     {
       "status": "PASS",
       "name": "B25 eyedropper picks the red stroke colour and returns to the brush",
-      "info": "picked #c33728"
+      "info": "picked #e9c6b1"
     },
     {
       "status": "PASS",
@@ -141,8 +141,38 @@
     },
     {
       "status": "PASS",
+      "name": "B32 layers: new layer above, strokes go to the selected layer, hide/show, thumbnails",
+      "info": "Layer 2 active · stroke only on Layer 2 · hide/show exact · thumbnails 120/1526 px"
+    },
+    {
+      "status": "PASS",
+      "name": "B33 blend mode Multiply is computed against what lies below (incl. paper)",
+      "info": "pixel 60,105,130 → 57,96,108 · undo/redo"
+    },
+    {
+      "status": "PASS",
+      "name": "B34 layer opacity: slider previews live, one undo step on release",
+      "info": "drag preview 0.61 → commit 0.29 as one step · undo → 1"
+    },
+    {
+      "status": "PASS",
+      "name": "B35 alpha lock: paint stays inside existing paint of the layer",
+      "info": "zig-zag over the edge: outside 0 → 0 px · red inside 0 → 13316 px"
+    },
+    {
+      "status": "PASS",
+      "name": "B36 duplicate, move, merge down, delete: each one undo step, exact on undo and redo",
+      "info": "layers 2 → 3 → 3 → 2 → 1 · every undo and redo pixel-identical"
+    },
+    {
+      "status": "PASS",
+      "name": "B37 background colour: hide shows transparency, swatch takes current colour, PNG transparent unaffected",
+      "info": "hide → α 0 · violet swatch → view and PNG on paper · undo → paper cream"
+    },
+    {
+      "status": "PASS",
       "name": "B14 performance: live frame and commit cost, 60-stroke rebuild",
-      "info": "{\"frames\":240,\"frameMsMean\":2.7,\"frameMsMax\":5.3,\"commitMsMax\":16.5,\"rebuildMs\":144.8,\"strokes\":68}"
+      "info": "{\"frames\":241,\"frameMsMean\":4.66,\"frameMsMax\":9.9,\"commitMsMax\":26.3,\"rebuildMs\":63.3,\"strokes\":70}"
     },
     {
       "status": "PASS",
@@ -163,92 +193,92 @@
   "metrics": {
     "pressure": {
       "light": {
-        "thickness": 8.4,
-        "meanAlpha": 0.29859943977591036,
+        "thickness": 8.35,
+        "meanAlpha": 0.29900199600798405,
         "maxAlpha": 0.3764705882352941,
         "rgb": [
           31,
           26,
           20
         ],
-        "n": 168
+        "n": 167
       },
       "heavy": {
-        "thickness": 42.35,
-        "meanAlpha": 0.44820242146445355,
-        "maxAlpha": 0.5725490196078431,
-        "rgb": [
-          31,
-          26,
-          20
-        ],
-        "n": 847
-      }
-    },
-    "tilt": {
-      "upright": {
-        "thickness": 38.4,
-        "meanAlpha": 0.42811478758169935,
-        "maxAlpha": 0.5176470588235295,
-        "rgb": [
-          31,
-          26,
-          20
-        ],
-        "n": 1152
-      },
-      "tilted": {
-        "thickness": 47.733333333333334,
-        "meanAlpha": 0.42571749370139117,
-        "maxAlpha": 0.5215686274509804,
-        "rgb": [
-          31,
-          26,
-          20
-        ],
-        "n": 1432
-      }
-    },
-    "speed": {
-      "slow": {
-        "thickness": 27.575,
-        "meanAlpha": 0.42524309814587663,
+        "thickness": 42.5,
+        "meanAlpha": 0.43543713956170704,
         "maxAlpha": 0.5450980392156862,
         "rgb": [
           31,
           26,
           20
         ],
-        "n": 1103
+        "n": 850
+      }
+    },
+    "tilt": {
+      "upright": {
+        "thickness": 38.233333333333334,
+        "meanAlpha": 0.4293416756414859,
+        "maxAlpha": 0.5215686274509804,
+        "rgb": [
+          31,
+          26,
+          20
+        ],
+        "n": 1147
+      },
+      "tilted": {
+        "thickness": 47.36666666666667,
+        "meanAlpha": 0.42633053221288514,
+        "maxAlpha": 0.5411764705882353,
+        "rgb": [
+          31,
+          26,
+          20
+        ],
+        "n": 1421
+      }
+    },
+    "speed": {
+      "slow": {
+        "thickness": 27.525,
+        "meanAlpha": 0.42630763477052946,
+        "maxAlpha": 0.5450980392156862,
+        "rgb": [
+          31,
+          26,
+          20
+        ],
+        "n": 1101
       },
       "fast": {
-        "thickness": 29.5,
-        "meanAlpha": 0.33218677301429045,
+        "thickness": 29.575,
+        "meanAlpha": 0.3314173006480699,
         "maxAlpha": 0.4117647058823529,
         "rgb": [
           31,
           26,
           20
         ],
-        "n": 1180
+        "n": 1183
       }
     },
     "controls": {
-      "thickness": 53.325,
-      "meanAlpha": 0.18410597244054677,
+      "thickness": 53.45,
+      "meanAlpha": 0.18352684385260185,
       "maxAlpha": 0.2196078431372549,
       "rgb": [
         191,
         55,
         41
       ],
-      "n": 2133
+      "n": 2138
     },
     "export": {
       "width": 1600,
       "height": 1000,
-      "painted": 178565,
-      "transparent": 1411880,
+      "painted": 178484,
+      "transparent": 1412083,
       "file": "georg-brush-playground.png"
     },
     "comparison": [
@@ -654,12 +684,12 @@
       ]
     },
     "performance": {
-      "frames": 240,
-      "frameMsMean": 2.7,
-      "frameMsMax": 5.3,
-      "commitMsMax": 16.5,
-      "rebuildMs": 144.8,
-      "strokes": 68
+      "frames": 241,
+      "frameMsMean": 4.66,
+      "frameMsMax": 9.9,
+      "commitMsMax": 26.3,
+      "rebuildMs": 63.3,
+      "strokes": 70
     }
   }
 }

@@ -39,7 +39,7 @@ input,select{font:inherit}
 /* ---------- canvas stage ---------- */
 .stage{position:fixed;inset:var(--bar) 0 0 0;display:grid;place-items:center;padding:14px 14px 30px 76px}
 .surface{position:relative;background:var(--paper);box-shadow:0 6px 30px #000a;max-width:100%;max-height:100%;aspect-ratio:1600/1000;width:min(100%,calc((100vh - var(--bar) - 44px) * 1.6))}
-.surface.dark{background:var(--ink)}
+.surface{background:conic-gradient(#d8d2c2 25%,#f3ead3 0 50%,#d8d2c2 0 75%,#f3ead3 0) 0 0/24px 24px}
 canvas#paper{display:block;width:100%;height:100%;touch-action:none;cursor:crosshair}
 body.picking canvas#paper{cursor:copy}
 
@@ -85,6 +85,29 @@ label.rowbtn input[type=file]{display:none}
 #popActions{left:10px;width:min(380px,calc(100vw - 20px))}
 #popBrushes{right:62px;width:min(620px,calc(100vw - 20px))}
 #popColor{right:10px;width:min(330px,calc(100vw - 20px))}
+#popLayers{right:52px;width:min(340px,calc(100vw - 20px))}
+
+/* layers */
+.layers{list-style:none;margin:0;padding:6px 8px 10px;overflow:auto;border-top:1px solid var(--line)}
+.layers>li.layer{display:grid;grid-template-columns:64px 1fr auto auto;align-items:center;gap:10px;padding:6px 8px;border-radius:10px;cursor:pointer;margin:3px 0;border:1px solid transparent}
+.layers>li.layer[aria-selected=true]{background:#e9c14a26;border-color:var(--rabbit)}
+.layers>li.layer.hidden-layer .lname,.layers>li.layer.hidden-layer canvas{opacity:.4}
+.layers canvas.thumb{width:64px;height:40px;border-radius:5px;display:block;background:conic-gradient(#d8d2c2 25%,#f3ead3 0 50%,#d8d2c2 0 75%,#f3ead3 0) 0 0/10px 10px}
+.layers .lname{font-size:13px;overflow-wrap:anywhere}
+.layers .lname small{display:block;color:var(--pencil);font-size:11px}
+.blendbtn{min-width:28px;height:26px;border-radius:7px;border:1px solid var(--line-2);font-size:12px;font-weight:650;color:var(--paper-2)}
+.blendbtn[aria-expanded=true]{background:var(--rabbit);color:var(--ink);border-color:var(--rabbit)}
+.vis{appearance:none;width:22px;height:22px;border-radius:6px;border:1.5px solid var(--pencil);cursor:pointer;display:grid;place-items:center}
+.vis:checked{background:var(--rabbit);border-color:var(--rabbit)}
+.vis:checked::after{content:"";width:9px;height:5px;border:2px solid var(--ink);border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.lopts{background:var(--ink-2);border:1px solid var(--line-2);border-radius:10px;padding:8px 10px 10px;margin:0 0 6px}
+.lopts .set{padding:6px 0}
+.lopts select,.lopts input[type=text]{width:100%;background:var(--ink-3);border:1px solid var(--line-2);border-radius:8px;color:var(--paper);padding:6px 8px}
+.lopts .acts{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+.lopts .acts button{border:1px solid var(--line-2);border-radius:8px;padding:6px 4px;font-size:12px;color:var(--paper-2)}
+.lopts .acts button:hover:not(:disabled){border-color:var(--rabbit)}
+.layers>li.bgrow{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:10px;padding:8px;margin-top:6px;border-top:1px solid var(--line);cursor:default}
+.bgsw{width:64px;height:40px;border-radius:5px;border:1px solid var(--line-2)}
 
 /* brush library */
 .lib-wrap{display:grid;grid-template-columns:170px 1fr;min-height:0;flex:1;border-top:1px solid var(--line)}
@@ -221,6 +244,10 @@ body.righthand .hud{left:14px}
     <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v4h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
     <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14M10 7V4.5h4V7M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3.5l8.5 4.6-8.5 4.6-8.5-4.6zM3.5 12.2l8.5 4.6 8.5-4.6M3.5 16.2l8.5 4.6 8.5-4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6.5 10.5L12 5l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down2" viewBox="0 0 24 24"><path d="M12 5v14M6.5 13.5L12 19l5.5-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-swatch" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="4" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="4" y="13" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="13" y="13" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
   </defs>
 </svg>
@@ -234,6 +261,7 @@ body.righthand .hud{left:14px}
   <div class="group">
     <button class="tool" id="brushMode" aria-pressed="true" title="Paint (B) · tap again for the Brush Library"><svg><use href="#i-brush"/></svg></button>
     <button class="tool" id="eraser" aria-pressed="false" title="Erase (E) · tap again for the Brush Library"><svg><use href="#i-eraser"/></svg></button>
+    <button class="tool" id="btnLayers" aria-expanded="false" aria-controls="popLayers" title="Layers (L)"><svg><use href="#i-layers"/></svg></button>
     <button class="colorbtn" id="btnColor" aria-expanded="false" aria-controls="popColor" title="Colour"></button>
   </div>
 </header>
@@ -250,7 +278,7 @@ body.righthand .hud{left:14px}
 </aside>
 
 <main class="stage"><div class="surface" id="surface"><canvas id="paper" width="1600" height="1000" aria-label="Drawing area"></canvas></div></main>
-<div class="hud"><span id="hudInput">input –</span><span id="hudP">pressure –</span><span id="hudTilt">tilt –</span><span id="hudSpeed">speed –</span><span id="hudStrokes">strokes 0</span></div>
+<div class="hud"><span id="hudInput">input –</span><span id="hudP">pressure –</span><span id="hudTilt">tilt –</span><span id="hudSpeed">speed –</span><span id="hudStrokes">strokes 0</span><span id="hudLayer">Layer 1</span></div>
 <p id="status" role="status" class="hide"></p>
 
 <!-- Actions -->
@@ -270,9 +298,9 @@ body.righthand .hud{left:14px}
       <label class="rowbtn"><span class="ico"><svg><use href="#i-file"/></svg></span><span>Open drawing<small>.json saved from this playground</small></span><input id="loadSession" type="file" accept=".json,application/json"></label>
     </div>
     <div data-panel="canvas" hidden>
-      <div class="rowbtn"><span class="ico">◐</span><span>Dark paper<small>view and “PNG on paper” only</small></span><input id="dark" class="switch" type="checkbox"></div>
-      <button class="rowbtn" id="clear"><span class="ico"><svg><use href="#i-trash"/></svg></span><span>Clear canvas<small>undoable</small></span></button>
-      <p class="note">Canvas 1600 × 1000 px, one layer. Layers, selection and transform are not part of this playground yet.</p>
+      <div class="rowbtn"><span class="ico">◐</span><span>Dark paper<small>sets the background colour to ink black · undoable</small></span><input id="dark" class="switch" type="checkbox"></div>
+      <button class="rowbtn" id="clear"><span class="ico"><svg><use href="#i-trash"/></svg></span><span>Clear layer<small>the selected layer · undoable</small></span></button>
+      <p class="note">Canvas 1600 × 1000 px, up to 16 layers plus background colour. Selection, transform and adjustments are not part of this playground yet.</p>
     </div>
     <div data-panel="share" hidden>
       <button class="rowbtn" id="png"><span class="ico"><svg><use href="#i-down"/></svg></span><span>PNG, transparent<small>painted layer only</small></span></button>
@@ -286,9 +314,16 @@ body.righthand .hud{left:14px}
     </div>
     <div data-panel="help" hidden>
       <p class="note">Georg Brush Playground reads Procreate <b>.brush</b> and <b>.brushset</b> files on this device and simulates them. Nothing is uploaded. Values marked <span class="chip h">heuristic</span> are our interpretation of Procreate's numbers, <span class="chip n">not simulated</span> ones are read but have no effect, <span class="chip m">missing</span> means Procreate keeps that resource outside the file.</p>
-      <div class="kbd"><b>B</b><span>paint · again: Brush Library</span><b>E</b><span>erase</span><b>I</b><span>eyedropper (or Alt-click)</span><b>[ ]</b><span>brush size</span><b>⌘Z ⇧⌘Z</b><span>undo · redo</span><b>Esc</b><span>close panels</span></div>
+      <div class="kbd"><b>B</b><span>paint · again: Brush Library</span><b>E</b><span>erase</span><b>I</b><span>eyedropper (or Alt-click)</span><b>[ ]</b><span>brush size</span><b>⌘Z ⇧⌘Z</b><span>undo · redo</span><b>L</b><span>layers</span><b>Esc</b><span>close panels</span></div>
     </div>
   </div>
+</section>
+
+<!-- Layers -->
+<section class="pop" id="popLayers" aria-label="Layers">
+  <header><h2>Layers</h2><span class="note" id="layerCount" style="margin:0"></span>
+    <button class="iconbtn" id="layerAdd" title="New layer above the selected one"><svg><use href="#i-plus"/></svg></button></header>
+  <ul class="layers" id="layerList" role="listbox" aria-label="Layers, top first"></ul>
 </section>
 
 <!-- Brush Library -->

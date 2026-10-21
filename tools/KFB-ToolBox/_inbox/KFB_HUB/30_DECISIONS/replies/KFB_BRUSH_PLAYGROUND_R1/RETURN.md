@@ -70,3 +70,9 @@ Added prototype/index.html (local brush shape import, pointer drawing, undo/redo
 - No PR, merge, deployment, Site, Notion or georgbrush.club change.
 - **One next gate:** Georg opens `tools/brush-playground/index.html`, uses Library → Studio → Colour like in Procreate and names what feels wrong or missing (layers are the obvious next candidate).
 - Checkpoint: R1.7 implementation commit `86d1a600f651733782e976610d40f8f7155fbeb2`, pushed and verified with `git ls-remote`; this line is a follow-up docs commit.
+
+## R1.8 · 2026-10-22 · Layers
+- Georg: “ja, mach mit Ebenen weiter”.
+- Delivered: up to 16 layers + background colour, Procreate-style Layers panel (thumbnail, name, blend letter, visibility; opacity, 16 blend modes, alpha lock, up/down, duplicate, merge down, clear, delete), every layer action undoable, copy-on-write checkpoints, blend modes computed against the paper, layered PNG/session export (`session/2`, `session/1` still loads).
+- Result: unit 41/0, Chromium 37/0 (6 new layer tests). No PR, merge, deployment, Site, Notion or georgbrush.club change.
+- **One next gate:** Georg draws a small comic panel with ink on one layer and colour (Multiply) on another and says what is missing compared to his Procreate routine (candidates: clipping mask, reference layer, drag reorder, selection/transform).

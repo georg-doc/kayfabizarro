@@ -12,7 +12,7 @@ const listeners = {};
 function on(ev, fn) { (listeners[ev] = listeners[ev] || []).push(fn); }
 function emit(ev, data) { for (const fn of listeners[ev] || []) { try { fn(data); } catch (e) { console.error(e); } } }
 const mk = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
-const committed = mk(W, H), cctx = committed.getContext('2d');
+const live2 = mk(W, H), lctx = live2.getContext('2d'); // active layer + live stroke, per frame region
 const active = mk(W, H), actx = active.getContext('2d', { willReadFrequently: true });
 const grained = mk(W, H), gctx = grained.getContext('2d');
 
@@ -265,7 +265,8 @@ function compositeStroke(target, src, tmp, r, brush, rec) {
   if (pat) { tctx.save(); tctx.globalCompositeOperation = 'destination-in'; tctx.fillStyle = pat; tctx.fillRect(r.x, r.y, r.w, r.h); tctx.restore(); }
   target.save();
   target.globalAlpha = rec.opacity;
-  target.globalCompositeOperation = rec.eraser ? 'destination-out' : 'source-over';
+  // alpha lock (captured on the stroke): paint only where the layer already has paint
+  target.globalCompositeOperation = rec.eraser ? 'destination-out' : rec.alphaLock ? 'source-atop' : 'source-over';
   target.drawImage(tmp, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
   target.restore();
 }
@@ -289,46 +290,182 @@ function bakeStroke(targetCtx, rec, canvases) {
   return { stamps: stamps.length, rect: r };
 }
 
+/* ---------------- document: layers + background ----------------
+   The document is a pure function of the action list applied to the initial document, so undo/redo,
+   sessions and replays are exact. Checkpoints every SNAP_EVERY actions share unchanged layer canvases:
+   after a checkpoint every layer is "frozen" and the next write to it copies the canvas first. */
+const MAX_LAYERS = 16;
+const BLENDS = { normal: 'source-over', multiply: 'multiply', screen: 'screen', overlay: 'overlay', darken: 'darken', lighten: 'lighten',
+  'color-burn': 'color-burn', 'color-dodge': 'color-dodge', 'hard-light': 'hard-light', 'soft-light': 'soft-light', difference: 'difference',
+  exclusion: 'exclusion', hue: 'hue', saturation: 'saturation', color: 'color', luminosity: 'luminosity' };
+const LAYER_PROPS = ['name', 'visible', 'opacity', 'blend', 'alphaLock'];
+const blank = () => mk(W, H);
+function newLayer(id, name, canvas) { return { id, name, visible: true, opacity: 1, blend: 'normal', alphaLock: false, canvas: canvas || blank(), frozen: false }; }
+const doc = { layers: [newLayer('L1', 'Layer 1')], bg: { visible: true, color: PAPER }, nextId: 2 };
+let activeId = 'L1';
+const layerById = id => doc.layers.find(L => L.id === id) || null;
+const layerIndex = id => doc.layers.findIndex(L => L.id === id);
+const ctxOf = L => L.canvas.getContext('2d');
+function writable(L) {
+  if (!L.frozen) return L;
+  const c = mk(W, H); c.getContext('2d').drawImage(L.canvas, 0, 0); L.canvas = c; L.frozen = false; return L;
+}
+function apply(a) {
+  switch (a.type) {
+    case 'stroke': { const L = layerById(a.layerId); if (L) bakeStroke(ctxOf(writable(L)), a); break; }
+    case 'clear': { const L = layerById(a.layerId); if (L) ctxOf(writable(L)).clearRect(0, 0, W, H); break; }
+    case 'layer-add': {
+      doc.layers.splice(clampI(a.index, 0, doc.layers.length), 0, newLayer(a.id, a.name));
+      doc.nextId = Math.max(doc.nextId, Number(String(a.id).slice(1)) + 1 || doc.nextId); break;
+    }
+    case 'layer-delete': { const i = layerIndex(a.id); if (i >= 0 && doc.layers.length > 1) doc.layers.splice(i, 1); break; }
+    case 'layer-move': { const i = layerIndex(a.id); if (i < 0) break; const [L] = doc.layers.splice(i, 1); doc.layers.splice(clampI(a.to, 0, doc.layers.length), 0, L); break; }
+    case 'layer-set': { const L = layerById(a.id); if (L) for (const k of LAYER_PROPS) if (k in a.props) L[k] = a.props[k]; break; }
+    case 'layer-dup': {
+      const i = layerIndex(a.src); if (i < 0) break; const S = doc.layers[i];
+      const c = mk(W, H); c.getContext('2d').drawImage(S.canvas, 0, 0);
+      const L = newLayer(a.id, a.name, c); for (const k of ['visible', 'opacity', 'blend', 'alphaLock']) L[k] = S[k];
+      doc.layers.splice(i + 1, 0, L); doc.nextId = Math.max(doc.nextId, Number(String(a.id).slice(1)) + 1 || doc.nextId); break;
+    }
+    case 'layer-merge': {
+      const i = layerIndex(a.id); if (i < 1) break; const U = doc.layers[i], Lo = writable(doc.layers[i - 1]), x = ctxOf(Lo);
+      x.save(); x.globalAlpha = U.opacity; x.globalCompositeOperation = BLENDS[U.blend] || 'source-over'; x.drawImage(U.canvas, 0, 0); x.restore();
+      doc.layers.splice(i, 1); break;
+    }
+    case 'bg': for (const k of ['visible', 'color']) if (k in a.props) doc.bg[k] = a.props[k]; break;
+  }
+}
+const clampI = (v, a, b) => Math.max(a, Math.min(b, v | 0));
+
 /* ---------------- history ---------------- */
 const done = [], undone = [];
 let lastRebuildMs = 0;
-/* checkpoints: a copy of the committed layer every SNAP_EVERY actions, so undo replays at most that many */
-const SNAP_EVERY = 10, SNAP_MAX = 6, snaps = new Map(); // done.length -> canvas
+const SNAP_EVERY = 5, SNAP_MAX = 12, snaps = new Map(); // done.length -> frozen document (copy-on-write: cheap)
+function freeze() {
+  for (const L of doc.layers) L.frozen = true;
+  return { layers: doc.layers.map(L => ({ id: L.id, name: L.name, visible: L.visible, opacity: L.opacity, blend: L.blend, alphaLock: L.alphaLock, canvas: L.canvas })), bg: Object.assign({}, doc.bg), nextId: doc.nextId };
+}
+function restore(sn) { doc.layers = sn.layers.map(m => Object.assign({}, m, { frozen: true })); doc.bg = Object.assign({}, sn.bg); doc.nextId = sn.nextId; }
+snaps.set(0, freeze());
+const INITIAL = snaps.get(0);
 function snapshotIfDue() {
-  const n = done.length; if (n % SNAP_EVERY) return;
-  const c = mk(W, H); c.getContext('2d').drawImage(committed, 0, 0); snaps.set(n, c);
-  while (snaps.size > SNAP_MAX) snaps.delete(Math.min(...snaps.keys()));
+  const n = done.length; if (!n || n % SNAP_EVERY || snaps.has(n)) return;
+  snaps.set(n, freeze());
+  while (snaps.size > SNAP_MAX + 1) snaps.delete(Math.min(...[...snaps.keys()].filter(k => k > 0)));
 }
 function dropSnapsAbove(n) { for (const k of [...snaps.keys()]) if (k > n) snaps.delete(k); }
-function rebuildCommitted() {
+function rebuild() {
   const t0 = performance.now();
   let from = 0; for (const k of snaps.keys()) if (k <= done.length && k > from) from = k;
-  cctx.clearRect(0, 0, W, H);
-  if (from) cctx.drawImage(snaps.get(from), 0, 0);
-  for (let i = from; i < done.length; i++) { const a = done[i]; if (a.type === 'clear') cctx.clearRect(0, 0, W, H); else bakeStroke(cctx, a); }
+  restore(snaps.get(from));
+  for (let i = from; i < done.length; i++) apply(done[i]);
   lastRebuildMs = performance.now() - t0;
 }
-function refreshView(r) {
+/* composite of background + visible layers into the view (optionally with the live stroke on its layer) */
+function compose(r, withLive) {
   r = r || { x: 0, y: 0, w: W, h: H };
+  view.save(); view.globalAlpha = 1; view.globalCompositeOperation = 'source-over';
   view.clearRect(r.x, r.y, r.w, r.h);
-  view.drawImage(committed, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
+  if (doc.bg.visible) { view.fillStyle = doc.bg.color; view.fillRect(r.x, r.y, r.w, r.h); }
+  for (const L of doc.layers) {
+    if (!L.visible) continue;
+    let src = L.canvas;
+    if (withLive && L.id === withLive.rec.layerId) {
+      lctx.save(); lctx.globalAlpha = 1; lctx.globalCompositeOperation = 'source-over';
+      lctx.clearRect(r.x, r.y, r.w, r.h); lctx.drawImage(L.canvas, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h); lctx.restore();
+      compositeStroke(lctx, active, grained, r, brushes.get(withLive.rec.brushId) || brushes.get(ROUND_ID), withLive.rec);
+      src = live2;
+    }
+    view.globalAlpha = L.opacity; view.globalCompositeOperation = BLENDS[L.blend] || 'source-over';
+    view.drawImage(src, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
+  }
+  view.restore();
 }
+function refreshView(r) { compose(r, null); }
+/* layers flattened without (or with a forced) background: exports and tests */
+function flatten(bgColor) {
+  const out = mk(W, H), x = out.getContext('2d');
+  if (bgColor) { x.fillStyle = bgColor; x.fillRect(0, 0, W, H); }
+  for (const L of doc.layers) { if (!L.visible) continue; x.globalAlpha = L.opacity; x.globalCompositeOperation = BLENDS[L.blend] || 'source-over'; x.drawImage(L.canvas, 0, 0); }
+  return out;
+}
+function fixActive() { if (!layerById(activeId)) activeId = doc.layers[doc.layers.length - 1].id; }
 function syncButtons() { emit('history', { canUndo: done.length > 0, canRedo: undone.length > 0, strokes: done.filter(a => a.type === 'stroke').length }); }
-function pushAction(a) { dropSnapsAbove(done.length); done.push(a); undone.length = 0; snapshotIfDue(); syncButtons(); }
-function undo() { if (!done.length || live) return; undone.push(done.pop()); rebuildCommitted(); refreshView(); syncButtons(); }
-function redo() {
-  if (!undone.length || live) return; const a = undone.pop(); done.push(a);
-  if (a.type === 'clear') cctx.clearRect(0, 0, W, H); else bakeStroke(cctx, a);
-  if (!snaps.has(done.length)) snapshotIfDue();
-  refreshView(); syncButtons();
+function afterChange(r) { fixActive(); compose(null, null); syncButtons(); emit('layers', layersInfo()); }
+function pushAction(a, r) { dropSnapsAbove(done.length); apply(a); done.push(a); undone.length = 0; snapshotIfDue(); afterChange(r); }
+function undo() { if (!done.length || live) return; undone.push(done.pop()); rebuild(); afterChange(); }
+function redo() { if (!undone.length || live) return; const a = undone.pop(); apply(a); done.push(a); snapshotIfDue(); afterChange(); }
+
+/* layer commands (all undoable, like Procreate) */
+function layersInfo() {
+  return { active: activeId, max: MAX_LAYERS, bg: Object.assign({}, doc.bg),
+    layers: doc.layers.map(L => ({ id: L.id, name: L.name, visible: L.visible, opacity: L.opacity, blend: L.blend, alphaLock: L.alphaLock, canvas: L.canvas })) };
 }
-function clearCanvas() { if (!done.length || live) return false; cctx.clearRect(0, 0, W, H); pushAction({ type: 'clear' }); refreshView(); return true; }
+function selectLayer(id) { if (layerById(id)) { activeId = id; emit('layers', layersInfo()); } }
+function addLayer() {
+  if (live) return null;
+  if (doc.layers.length >= MAX_LAYERS) throw Error('Layer limit reached (' + MAX_LAYERS + ')');
+  const id = 'L' + doc.nextId;
+  pushAction({ type: 'layer-add', id, name: 'Layer ' + doc.nextId, index: layerIndex(activeId) + 1 });
+  activeId = id; emit('layers', layersInfo()); return id;
+}
+function deleteLayer(id) {
+  if (live || !layerById(id)) return false;
+  if (doc.layers.length === 1) throw Error('The last layer cannot be deleted; clear it instead');
+  const i = layerIndex(id); pushAction({ type: 'layer-delete', id });
+  activeId = doc.layers[Math.max(0, i - 1)].id; emit('layers', layersInfo()); return true;
+}
+function moveLayer(id, dir) {
+  const i = layerIndex(id), to = i + dir; if (live || i < 0 || to < 0 || to >= doc.layers.length) return false;
+  pushAction({ type: 'layer-move', id, to }); return true;
+}
+function setLayer(id, props) {
+  const L = layerById(id); if (live || !L) return false;
+  const p = {};
+  for (const k of LAYER_PROPS) if (k in props) {
+    let v = props[k];
+    if (k === 'opacity') v = Math.max(0, Math.min(1, Number(v)));
+    if (k === 'visible' || k === 'alphaLock') v = !!v;
+    if (k === 'blend' && !BLENDS[v]) continue;
+    if (k === 'name') v = String(v).slice(0, 60) || L.name;
+    p[k] = v;
+  }
+  // values before a slider preview count as the current state
+  const base = Object.assign({}, L, L._preview || {}); delete L._preview;
+  if (!Object.keys(p).some(k => base[k] !== p[k])) { for (const k in p) L[k] = base[k]; compose(null, null); return false; }
+  pushAction({ type: 'layer-set', id, props: p }); return true;
+}
+/* slider drag: show the value without a history entry; setLayer() commits it */
+function previewLayer(id, props) {
+  const L = layerById(id); if (!L || live) return;
+  if (!L._preview) L._preview = { opacity: L.opacity, blend: L.blend };
+  if ('opacity' in props) L.opacity = Math.max(0, Math.min(1, Number(props.opacity)));
+  if ('blend' in props && BLENDS[props.blend]) L.blend = props.blend;
+  compose(null, null);
+}
+function duplicateLayer(id) {
+  const S = layerById(id); if (live || !S) return null;
+  if (doc.layers.length >= MAX_LAYERS) throw Error('Layer limit reached (' + MAX_LAYERS + ')');
+  const nid = 'L' + doc.nextId; pushAction({ type: 'layer-dup', src: id, id: nid, name: S.name + ' copy' });
+  activeId = nid; emit('layers', layersInfo()); return nid;
+}
+function mergeDown(id) {
+  const i = layerIndex(id); if (live || i < 1) { if (i === 0) throw Error('No layer below to merge into'); return false; }
+  const below = doc.layers[i - 1].id; pushAction({ type: 'layer-merge', id }); activeId = below; emit('layers', layersInfo()); return true;
+}
+function clearLayer(id) { const L = layerById(id || activeId); if (live || !L) return false; pushAction({ type: 'clear', layerId: L.id }); return true; }
+function setBackground(props) {
+  const p = {}; if ('visible' in props) p.visible = !!props.visible; if ('color' in props && C.fromHex(props.color)) p.color = C.toHex(...C.fromHex(props.color));
+  if (live || !Object.keys(p).some(k => doc.bg[k] !== p[k])) return false;
+  pushAction({ type: 'bg', props: p }); return true;
+}
+function clearCanvas() { return clearLayer(activeId); }
 
 /* ---------------- live input ---------------- */
 let live = null; // {rec, stamper, box, dirty, pointerId}
 let seedCounter = 1;
 /* UI-owned drawing state. tool: 'brush' | 'eraser' | 'pick' (eyedropper) */
-const state = { tool: 'brush', color: '#1f1a14', size: 70, opacity: 1, mousePressure: 0.6, darkPaper: false };
+const state = { tool: 'brush', color: '#1f1a14', size: 70, opacity: 1, mousePressure: 0.6 };
 
 function sampleOf(e) {
   const b = paper.getBoundingClientRect();
@@ -347,12 +484,12 @@ function sampleOf(e) {
 function hud(e, s, speed) {
   emit('hud', { input: e.pointerType, simulated: e.pointerType !== 'pen', pressure: s.p, tilt: s.alt == null ? null : Math.round(90 - s.alt * 180 / Math.PI), speed });
 }
-/* eyedropper: colour of the painted layer under the pointer (transparent → no change) */
+/* eyedropper: colour of the composite under the pointer, as seen (transparent → no change) */
 function pickAt(e) {
   const b = paper.getBoundingClientRect();
   const x = Math.floor((e.clientX - b.left) * W / b.width), y = Math.floor((e.clientY - b.top) * H / b.height);
   if (x < 0 || y < 0 || x >= W || y >= H) return null;
-  const d = cctx.getImageData(x, y, 1, 1).data;
+  const d = view.getImageData(x, y, 1, 1).data;
   if (d[3] < 8) return null;
   const hex = '#' + [d[0], d[1], d[2]].map(v => v.toString(16).padStart(2, '0')).join('');
   emit('pick', hex);
@@ -368,7 +505,9 @@ paper.addEventListener('pointerdown', e => {
   // Eraser (heuristic): same shape and size dynamics, but full flow without pressure/speed fade or grain,
   // so it can actually remove paint. Procreate's separate erase presets are not decoded.
   const params = eraser ? Object.assign(effectiveParams(id), { flow: 1, pressureOpacity: 0, speedOpacity: 0, jitterOpacity: 0, tiltOpacity: 0, grainStrength: 0 }) : effectiveParams(id);
-  const rec = { type: 'stroke', brushId: id, color: state.color, size: state.size, opacity: state.opacity,
+  const L = layerById(activeId);
+  if (!L.visible) emit('warn', '“' + L.name + '” is hidden: the stroke goes onto a hidden layer');
+  const rec = { type: 'stroke', layerId: L.id, alphaLock: !!L.alphaLock, brushId: id, color: state.color, size: state.size, opacity: state.opacity,
     eraser, seed: (seedCounter++ * 2654435761) | 0, params, input: e.pointerType, grainIdx: (brushes.get(id).grainIdx || 0),
     speedScale: paper.getBoundingClientRect().width / W, points: [s] };
   prepBuffer(actx, !!rec.params.glazeUniform);
@@ -408,39 +547,32 @@ function frameBody() {
   if (!live) return;
   const r = clip(live.dirty, W, H); live.dirty = newBox();
   if (!r) return;
-  refreshView(r);
-  const brush = brushes.get(live.rec.brushId);
-  compositeStroke(view, active, grained, r, brush, live.rec);
+  compose(r, live);
 }
 function finish(e) {
   if (!live || e.pointerId !== live.pointerId) return;
   const rec = live.rec, r = clip(live.box, W, H);
   live = null;
   const t0 = performance.now();
-  const res = bakeStroke(cctx, rec);
+  pushAction(rec, r);
   perf.commitMsMax = Math.max(perf.commitMsMax, performance.now() - t0);
-  pushAction(rec);
-  refreshView(unionRect(r, res.rect));
-  emit('stroke', { n: done.filter(a => a.type === 'stroke').length, samples: rec.points.length, stamps: res.stamps, brush: brushes.get(rec.brushId).name });
+  emit('stroke', { n: done.filter(a => a.type === 'stroke').length, samples: rec.points.length, brush: brushes.get(rec.brushId).name });
 }
 function unionRect(a, b) { if (!a) return b; if (!b) return a; const x = Math.min(a.x, b.x), y = Math.min(a.y, b.y); return { x, y, w: Math.max(a.x + a.w, b.x + b.w) - x, h: Math.max(a.y + a.h, b.y + b.h) - y }; }
 paper.addEventListener('pointerup', finish);
 paper.addEventListener('pointercancel', finish);
 
 /* ---------------- export ---------------- */
-function exportCanvas(opaque) {
-  const out = mk(W, H), x = out.getContext('2d');
-  if (opaque) { x.fillStyle = state.darkPaper ? PAPER_DARK : PAPER; x.fillRect(0, 0, W, H); }
-  x.drawImage(committed, 0, 0);
-  return out;
-}
+/* transparent = visible layers only; opaque = on the background colour (even if the background is hidden) */
+function exportCanvas(opaque) { return flatten(opaque ? doc.bg.color : null); }
 function downloadBlob(blob, name) {
   const a = document.createElement('a'); a.download = name; a.href = URL.createObjectURL(blob); a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
 }
 function download(opaque) { exportCanvas(opaque).toBlob(blob => downloadBlob(blob, 'georg-brush-playground' + (opaque ? '-paper' : '') + '.png'), 'image/png'); }
 
 /* ---------------- drawing session (strokes + settings, no brush data) ---------------- */
-const SESSION_FORMAT = 'kfb.brush-playground.session/1';
+const SESSION_FORMAT = 'kfb.brush-playground.session/2', SESSION_V1 = 'kfb.brush-playground.session/1';
+const ACTION_TYPES = new Set(['stroke', 'clear', 'layer-add', 'layer-delete', 'layer-move', 'layer-set', 'layer-dup', 'layer-merge', 'bg']);
 function sessionJSON() {
   const used = new Set(done.filter(a => a.type === 'stroke').map(a => a.brushId));
   return JSON.stringify({
@@ -451,14 +583,15 @@ function sessionJSON() {
 }
 function loadSession(text) {
   const j = JSON.parse(text);
-  if (!j || j.format !== SESSION_FORMAT || !Array.isArray(j.actions)) throw Error('Not a Brush Playground drawing (' + SESSION_FORMAT + ')');
+  if (!j || (j.format !== SESSION_FORMAT && j.format !== SESSION_V1) || !Array.isArray(j.actions)) throw Error('Not a Brush Playground drawing (' + SESSION_FORMAT + ')');
+  if (j.format === SESSION_V1) for (const a of j.actions) a.layerId = a.layerId || 'L1'; // single-layer drawings
   if (!j.canvas || j.canvas.width !== W || j.canvas.height !== H) throw Error('Canvas size differs');
   const missing = (j.brushes || []).filter(b => !brushes.has(b.id));
   if (missing.length) throw Error('Import these brushes first: ' + missing.map(b => b.name + (b.fileName ? ' (' + b.fileName + ')' : '')).join(', '));
-  for (const a of j.actions) if (a.type !== 'clear' && (a.type !== 'stroke' || !Array.isArray(a.points) || !a.params)) throw Error('Malformed action');
-  done.length = 0; undone.length = 0; snaps.clear(); cctx.clearRect(0, 0, W, H);
-  for (const a of j.actions) { if (a.type === 'clear') cctx.clearRect(0, 0, W, H); else bakeStroke(cctx, a); done.push(a); snapshotIfDue(); }
-  refreshView(); syncButtons();
+  for (const a of j.actions) if (!ACTION_TYPES.has(a.type) || (a.type === 'stroke' && (!Array.isArray(a.points) || !a.params))) throw Error('Malformed action');
+  done.length = 0; undone.length = 0; snaps.clear(); restore(INITIAL); snaps.set(0, freeze());
+  for (const a of j.actions) { apply(a); done.push(a); snapshotIfDue(); }
+  activeId = null; afterChange();
   return j.actions.length;
 }
 /* ---------------- comparison with the Procreate preview stroke ----------------
@@ -570,10 +703,12 @@ window.KFBEngine = {
   get currentId() { return currentId; }, setCurrent, effectiveParams, decodedWithGrain, setOverride, resetOverrides,
   importFile, replaceGrain, isBlankGrain, tinted, mipLevel,
   undo, redo, clearCanvas, history: () => ({ done, undone }), get live() { return !!live; },
+  layers: layersInfo, selectLayer, addLayer, deleteLayer, moveLayer, setLayer, previewLayer, duplicateLayer, mergeDown, clearLayer, setBackground,
+  BLENDS: Object.keys(BLENDS), MAX_LAYERS, flatten, get activeLayer() { return activeId; },
   exportCanvas, download, downloadBlob, sessionJSON, loadSession,
   compare: compareWithReference, renderPreview, pickAt,
   perf, get lastRebuildMs() { return lastRebuildMs; },
-  _internal: { bakeStroke, pushAction, refreshView, cctx, done }
+  _internal: { pushAction, refreshView, done, get activeId() { return activeId; } }
 };
 syncButtons();
 })();
