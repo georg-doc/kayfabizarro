@@ -112,3 +112,14 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
 - **Halterung:** keine Drehung, Versatz [0, 0, 0,1] handslot-lokal mit Beleg (V-574). 0 Durchstich in 42 Bildern.
 - **Abwurf:** Bild 19 = 0,633 s, Punkt [−0,713, 1,400, −0,188], 14,55 u/s, Gieren −8,0°, Steigung 9,3°.
 - Prüfer: nur die bekannte Versatz-Meldung.
+
+## 1H-Nahkampf K10 §8 fertig (WSB 21.10.), as-is angenommen
+- **Karte:** `50_BLENDER/K10/data/kfb_kit_skeleton_blade.weapon.json` (use melee, clipMarkers, asIsFindings, `KFB_Tip`), CONTRACT_PASS. Klinge Skeleton_Blade as-is an handslot.r, CombatMelee-Clips (CC0) unverändert.
+- **Kontakt-Marken** (eine Regel über das Spitzentempo, trifft K9-Chop 0,633 s):
+  - Jump_Chop 0,800 s
+  - Slice_Diagonal 0,467 s
+  - Slice_Horizontal 0,333 s
+  - Stab 0,433 s
+  - Volle Tabelle: `K10/out/melee/melee_markers.json`.
+- **Kleine Kit-Streifungen** (Helm ≤ 1,1 cm, Umhang, Körperseite beim Ausholen): Bei Spieltempo nicht sichtbar, deshalb **kein Versatz** (V-574: Versatz nur bei sichtbarer Durchdringung). In der Karte als `asIsFindings` dokumentiert.
+- Hit-Stop (V-567) und Kontakt-Event bitte an diese Marken hängen.

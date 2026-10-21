@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- WSB K10 §8 1H-Nahkampf as-is angenommen (Kontakt-Marken je Clip, kleine Kit-Streifungen bei Spieltempo unsichtbar, kein Versatz); an WSA übergeben.
 - WSB K10 §7 Wurf (Rauchbombe, CC0) angenommen: Versatz 10 cm, 0 Durchstich in 42 Bildern, Abwurf 0,633 s gemessen; an WSA übergeben.
 - V-592 Action-Figur-Gewehr 1H an der Hüfte wie im Kit-Artwork (WSB K10 §6 angenommen, an WSA übergeben).
 - WSB K11 §3 angenommen: Farmer B NPC (Digging Zinken ≤ 3,4 cm, Working_C mit einer festen Halterung 10° gekippt, Zinken ≤ 1,4 cm); Cast + Spiegel ergänzt; beide echten Figuren für WS-NPC Phase A fertig, fehlt nur Georgs lokale Kopie.
