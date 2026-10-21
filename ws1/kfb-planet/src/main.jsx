@@ -1,3 +1,11 @@
+import './siteRaw' // MVP-Site: Repo-Abrufe über /raw (nur im Site-Build aktiv)
+// MVP-Startseite (V-618): Vorhang mit Bühne vor dem Spiel. Auf der Site landet die Adresse ohne Hash im Spiel (neues Gelände) mit Vorhang;
+// überall sonst nur mit dem Schalter 'start' (die nackte Adresse bleibt für die bestehenden Tests unverändert).
+if (typeof location !== 'undefined') {
+  const bare = !location.hash || location.hash === '#'
+  if (bare && import.meta.env.VITE_KFB_SITE) history.replaceState(null, '', location.pathname + location.search + '#m1,harvest,look=terrain3,world=probe,start')
+  if (/(^|[#,])start(,|$)/.test(location.hash)) import('./start/startCurtain.js').then((m) => expose('Start', m.mountStartCurtain())).catch((e) => console.warn('[start]', e))
+}
 import { createRoot } from 'react-dom/client'
 import App from './App'
 import './style.css'

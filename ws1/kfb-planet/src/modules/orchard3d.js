@@ -7,7 +7,7 @@
 // state (createHarvestState), unit (m je KayKit-Einheit), collector: () => fluff.collect-Sammler | null, onCollect? }
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { FLUFF, rngOf } from '../world/fluff.js'
+import { FLUFF, rngOf, releaseAt } from '../world/fluff.js'
 import { fruitFromAnchors, assignLeads } from '../world/grammar.js'
 import { createOrchard } from '../world/harvest.js'
 
@@ -15,7 +15,13 @@ import { createOrchard } from '../world/harvest.js'
 export const FOREST_PIN = '54b9bb669fda8a5bc3d76a0743884473d04c1f50'
 const FOREST = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/${FOREST_PIN}/media/3D_Assets/KayKit_Forest_Nature_Pack_1.0_FREE/Assets/gltf/`
 export const CANOPY = ['Tree_1_A_Color1', 'Tree_1_B_Color1', 'Tree_2_B_Color1', 'Tree_2_C_Color1', 'Tree_3_A_Color1', 'Tree_3_B_Color1', 'Tree_3_C_Color1', 'Tree_4_A_Color1', 'Tree_4_B_Color1']
-export const ORCHARD = Object.freeze({ trees: 5, spacing: [5.5, 8.5], reach: 1.9, shotRange: 26, blastRange: 22, wiggle: 0.5 })
+export const ORCHARD = Object.freeze({ trees: 5, spacing: [5.5, 8.5], reach: 1.9, shotRange: 26, blastRange: 22, wiggle: 0.5, priorityBehind: 1.5 }) // priorityBehind: Georg 21.10. (a)
+// WS-NPC Phase C (V-583 Dark Fluffer, Lead-OK 21.10. b): ein Baum wird „tainted“ – nur Darstellung + Weltzustand, keine 7. Sorte. Die Kügelchen
+// werden dunkel (Instanzfarbe Richtung Tinte #1f1a14), fallen über den vorhandenen Treffer-Weg, bleiben liegen und sinken nach sinkAfter s in sinkDur s ein
+// (Zustand 'sunk', unsichtbar); tainted ist weder aufsammelbar noch ansaugbar. Flüchtig (kein Spielstand, V-585).
+// WS-NPC Phase C (Lead-OK c): Platz für freigegebenen Fluff (burst), Zone 'burst' entsteht erst beim ersten burst (sonst alles wie bisher)
+export const BURST = Object.freeze({ cap: 24, zone: 'burst' })
+export const TAINT = Object.freeze({ ink: '#1f1a14', mix: 0.82, sinkAfter: 2.5, sinkDur: 1.6 })
 
 export function createOrchard3d({ zones = [], terrainH, anchors, state, unit = 0.616381042, collector = null, onCollect = null, url = FOREST } = {}) {
   if (!terrainH || !anchors) throw new Error('ORCHARD_NO_TERRAIN_OR_ANCHORS')
@@ -39,10 +45,11 @@ export function createOrchard3d({ zones = [], terrainH, anchors, state, unit = 0
   }
   // Kügelchen: ein InstancedMesh (Einheitskugel, Radius je Instanz), Farbe = Sorte/Ton (V-292), matt; Knet folgt mit kfb-clay.v1 (V-429)
   const balls = orchards.flatMap((o) => o.balls), geo = new THREE.IcosahedronGeometry(1, 2), mat = new THREE.MeshStandardMaterial({ roughness: 0.9, metalness: 0 })
-  const mesh = new THREE.InstancedMesh(geo, mat, Math.max(1, balls.length)); mesh.name = 'orchard-fluff'; mesh.castShadow = mesh.receiveShadow = true; mesh.frustumCulled = false
+  const mesh = new THREE.InstancedMesh(geo, mat, Math.max(1, balls.length) + BURST.cap); mesh.count = Math.max(1, balls.length); mesh.name = 'orchard-fluff'; mesh.castShadow = mesh.receiveShadow = true; mesh.frustumCulled = false
   const col = new THREE.Color(), m4 = new THREE.Matrix4(), zero = new THREE.Matrix4().makeScale(0, 0, 0), q = new THREE.Quaternion(), s3 = new THREE.Vector3(), p3 = new THREE.Vector3()
-  balls.forEach((b, i) => mesh.setColorAt(i, col.set(b.color || FLUFF[b.kind].color)))
-  if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true
+  const ink = new THREE.Color(TAINT.ink)
+  const recolor = () => { balls.forEach((b, i) => { col.set(b.color || FLUFF[b.kind].color); if (b.tainted) col.lerp(ink, TAINT.mix); mesh.setColorAt(i, col) }); if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true }
+  recolor()
   root.add(mesh)
   // Bäume laden (je Modell einmal, geklont), Schatten werfen und empfangen (V-429 ein Rig)
   const loader = new GLTFLoader(), cache = new Map(), state0 = { status: 'LOADING', error: null, loaded: 0 }
@@ -66,7 +73,12 @@ export function createOrchard3d({ zones = [], terrainH, anchors, state, unit = 0
       best = t; bd = d }
     return best
   }
-  const info = { hits: [], shots: 0, blasts: 0 }
+  const info = { hits: [], shots: 0, blasts: 0, targetHits: [] }
+  const targets = new Map()
+  function nearestTarget(p, maxD, dir, cosMin) { let best = null
+    for (const it of targets.values()) { const q = it.pos(); if (!q) continue; const dx = q[0] - p[0], dz = q[2] - p[2], d = Math.hypot(dx, dz); if (d > maxD) continue
+      if (dir && d > 0.01 && (dx * dir[0] + dz * dir[2]) / d < cosMin) continue; if (!best || d < best.d) best = { it, d } }
+    return best }
   return {
     object3d: root,
     ready,
@@ -74,44 +86,72 @@ export function createOrchard3d({ zones = [], terrainH, anchors, state, unit = 0
     // Faust (Platzhalter Schlagring): nächster Baum in Reichweite vor dem Spieler
     punch(p, dir) { const t = nearestTree(p, ORCHARD.reach + 0.6, dir, 0.2); if (!t) return null; const keys = hitTree(t, 'punch'); puff([p[0] + dir[0] * 0.7, p[1] + 1.1, p[2] + dir[2] * 0.7], '#f4e2c8', 0.08, 0.35, 0.22); info.hits.push({ zone: t.zone, id: t.id, w: 'punch' }); return { tree: t.id, zone: t.zone, keys } },
     // Schuss: einfaches Projektil vom Spieler zum nächsten Baum im Blickkegel, Treffer bei Ankunft
-    shoot(p, dir) { const t = nearestTree(p, ORCHARD.shotRange, dir, 0.75); if (!t) return null; const [cx, cy, cz] = crown(t)
+    shoot(p, dir) { const t = nearestTree(p, ORCHARD.shotRange, dir, 0.75), g = nearestTarget(p, ORCHARD.shotRange, dir, 0.75)
+      if (!t && !g) return null
+      const td = t ? Math.hypot(t.pos[0] - p[0], t.pos[2] - p[2]) : Infinity // WS-NPC Phase C (Lead-OK d): näheres Ziel gewinnt; Georg 21.10. (a): ein Ziel mit Vorrang
+      const toTarget = g && (g.d < td || (!!g.it.priority?.() && g.d <= td + ORCHARD.priorityBehind)) // (z. B. feindlicher Dark Fluffer am Stamm) nimmt der Schuss auch bis priorityBehind m hinter dem Baum
       const m = new THREE.Mesh(fxGeo, new THREE.MeshStandardMaterial({ color: '#ffd46b', roughness: 1, emissive: '#ff9a2e', emissiveIntensity: 0.6 })); m.scale.setScalar(0.12); m.position.set(p[0], p[1] + 1.2, p[2]); root.add(m)
+      if (toTarget) { flights.push({ m, g: g.it, v: 34 }); info.shots++; return { target: g.it.id } }
+      const [cx, cy, cz] = crown(t)
       flights.push({ m, t, to: new THREE.Vector3(cx, cy, cz), v: 34 }); info.shots++; return { tree: t.id, zone: t.zone } },
+    // WS-NPC Phase C (Lead-OK 21.10. d): Ziele für den Schuss (z. B. Dark Fluffer zum Heilen). { id, pos: () => [x, y, z] (Mitte), r, onHit(id), priority?() }.
+    // priority() true (Georg 21.10. (a)): Vorrang vor einem höchstens ORCHARD.priorityBehind m näheren Baum im Kegel
+    // Kein Schaden, kein Kampfsystem: das Projektil folgt der Mitte und meldet beim Auftreffen onHit; Rückgabe = Abmeldung
+    addTarget(it) { if (!it || it.id == null || !(it.r > 0) || typeof it.pos !== 'function') throw new Error('ORCHARD_TARGET_INVALID'); targets.set(it.id, it); return () => targets.delete(it.id) },
     // Explosion (Sekundärtreffer): Ball am nächsten Baum, leert ihn auf einmal (gestaffelt zusammengedrückt)
     blast(p, dir) { const t = nearestTree(p, ORCHARD.blastRange, dir, 0.5); if (!t) return null; const keys = hitTree(t, 'explosion'); const [cx, cy, cz] = crown(t); puff([cx, cy, cz], '#ff8a3d', 0.3, 3.2, 0.5); info.blasts++; info.hits.push({ zone: t.zone, id: t.id, w: 'explosion' }); return { tree: t.id, zone: t.zone, keys } },
     collectAt(p, mode = 'walk') { let got = []; for (const o of orchards) got = got.concat(o.collect({ pos: p, mode }).keys); if (got.length) onCollect?.(got, state.counts()); return got }, // Prüfungen und Wirt
     // V-487 Stufe 2 · Saugen (kfb-fluff-suck): nächste Kügelchen im Kegel vor dem Sauger (hängend → Ursprung Baum, liegend/fallend → Boden); take nimmt
     // eines aus dem Garten (unsichtbar, solange es fliegt; zählt noch nicht), deliver zählt es beim Einsaugen wie ein Aufsammeln (Ernte-Stand, onCollect)
     suckable(p, dir, range = 6, cosMin = 0.5, n = 6) { const out = []
-      for (const b of balls) { if (b.state !== 'hanging' && b.state !== 'falling' && b.state !== 'resting') continue
+      for (const b of balls) { if (b.tainted || (b.state !== 'hanging' && b.state !== 'falling' && b.state !== 'resting')) continue
         const q = b.state === 'hanging' ? b.anchor : b.body.p, dx = q[0] - p[0], dy = q[1] - p[1], dz = q[2] - p[2], d = Math.hypot(dx, dy, dz); if (d > range) continue
         const dh = Math.hypot(dx, dz); if (dh > 0.3 && (dx * dir[0] + dz * dir[2]) / dh < cosMin) continue
         out.push({ key: b.key, d }) }
       return out.sort((a, b) => a.d - b.d).slice(0, n).map((e) => e.key) },
-    take(key) { const b = balls.find((x) => x.key === key); if (!b || (b.state !== 'hanging' && b.state !== 'falling' && b.state !== 'resting')) return null
+    take(key) { const b = balls.find((x) => x.key === key); if (!b || b.tainted || (b.state !== 'hanging' && b.state !== 'falling' && b.state !== 'resting')) return null
       const origin = b.state === 'hanging' ? 'tree' : 'ground', pos = (b.state === 'hanging' ? b.anchor : b.body.p).slice(); b.state = 'sucked'
       return { key, kind: b.kind, pos, r: b.r || 0.12, color: b.color || FLUFF[b.kind].color, origin } },
     deliver(key) { const b = balls.find((x) => x.key === key); if (!b || b.state !== 'sucked') return false; b.state = 'collected'; state.mark(key, b.kind); onCollect?.([key], state.counts()); return true },
     hitTree(zone, id, weapon) { const t = treeOf(zone, id); return t ? hitTree(t, weapon) : null }, // Prüfungen
+    // WS-NPC Phase C: Baum tainted an/aus. an: hängende Kügelchen werden dunkel (Abwurf ruft der Wirt über hitTree); aus: hängende bekommen ihre Farbe
+    // zurück, liegende tainted sinken weiter ein (endlich, kein Zurückholen). Rückgabe: betroffene Schlüssel
+    taint(zone, id, on = true) { const t = treeOf(zone, id); if (!t) return null; const keys = []
+      t.balls.forEach((b) => { if (on ? (b.state === 'hanging' && !b.tainted) : (b.tainted && b.state === 'hanging')) { b.tainted = !!on; b.sinkT = null; keys.push(b.key) } })
+      t.tainted = !!on; recolor(); return keys },
+    tainted: () => balls.filter((b) => b.tainted).map((b) => ({ key: b.key, state: b.state, sink: b.sinkT ?? null })),
+    // WS-NPC Phase C (Lead-OK c): n bunte Kügelchen an pos freigeben (fluff.releaseAt), danach Physik/Aufsammeln/Ernte-Stand wie Baum-Fluff.
+    // tag macht die Schlüssel eindeutig (z. B. 'heal:<fluffer>:<Tag>'); gleicher tag zweimal = keine neuen Kügelchen (endlich, kein Farmen)
+    burst(pos, n, seed = 0, tag = 'burst') { let o = orchardOf(BURST.zone); if (!o) { o = createOrchard({ zone: BURST.zone, seed: 0, trees: [], terrain, state }); orchards.push(o) }
+      const free = Math.max(0, mesh.instanceMatrix.count - balls.length), list = releaseAt(pos, Math.min(n, free), seed, { tag }).filter((b) => !balls.some((x) => x.key === b.key)); if (!list.length) return []
+      o.addFalling(list); balls.push(...list); mesh.count = balls.length; recolor(); return list.map((b) => b.key) },
     update(dt) {
       dt = Math.min(dt || 0, 0.1)
       for (const o of orchards) o.advance(dt)
       const c = collector?.(); if (c) { let got = []; for (const o of orchards) got = got.concat(o.collect(c).keys); if (got.length) onCollect?.(got, state.counts()) }
       balls.forEach((b, i) => {
-        if (b.state === 'collected' || b.state === 'sucked') { mesh.setMatrixAt(i, zero); return }
+        if (b.state === 'collected' || b.state === 'sucked' || b.state === 'sunk') { mesh.setMatrixAt(i, zero); return }
         const p = b.state === 'hanging' ? b.anchor : b.body.p, r = b.r || 0.12
+        if (b.tainted && b.state === 'resting') { b.sinkT = (b.sinkT ?? 0) + dt; const u = Math.min(1, Math.max(0, (b.sinkT - TAINT.sinkAfter) / TAINT.sinkDur)) // einsinken nach der Ruhezeit
+          if (u >= 1) { b.state = 'sunk'; mesh.setMatrixAt(i, zero); return }
+          mesh.setMatrixAt(i, m4.compose(p3.set(p[0], p[1] - r * 2 * u, p[2]), q, s3.setScalar(r * (1 - 0.35 * u)))); return }
         mesh.setMatrixAt(i, m4.compose(p3.fromArray(p), q, s3.setScalar(r)))
       })
       mesh.instanceMatrix.needsUpdate = true
       for (const t of trees) if (t.obj) { if (t.wig > 0) { t.wig = Math.max(0, t.wig - dt / ORCHARD.wiggle); const w = Math.sin(t.wig * 38) * 0.06 * t.wig; t.obj.rotation.z = w; t.obj.rotation.x = w * 0.6 } else { t.obj.rotation.z = t.obj.rotation.x = 0 } }
-      for (let i = flights.length - 1; i >= 0; i--) { const f = flights[i], d = f.to.clone().sub(f.m.position), l = d.length(), s = f.v * dt
+      for (let i = flights.length - 1; i >= 0; i--) { const f = flights[i]
+        if (f.g) { const q = targets.has(f.g.id) ? f.g.pos() : null; if (!q) { root.remove(f.m); f.m.material.dispose(); flights.splice(i, 1); continue }
+          const d = new THREE.Vector3(q[0], q[1], q[2]).sub(f.m.position), l = d.length(), s = f.v * dt
+          if (l <= s + f.g.r) { info.targetHits.push(f.g.id); puff(f.m.position.toArray(), '#ffe2a0', 0.15, 0.9, 0.25); root.remove(f.m); f.m.material.dispose(); flights.splice(i, 1); f.g.onHit?.(f.g.id) } else f.m.position.addScaledVector(d, s / l)
+          continue }
+        const d = f.to.clone().sub(f.m.position), l = d.length(), s = f.v * dt
         if (l <= s) { hitTree(f.t, 'shot'); info.hits.push({ zone: f.t.zone, id: f.t.id, w: 'shot' }); puff(f.to.toArray(), '#ffe2a0', 0.15, 0.9, 0.25); root.remove(f.m); f.m.material.dispose(); flights.splice(i, 1) } else f.m.position.addScaledVector(d, s / l) }
       for (let i = fx.length - 1; i >= 0; i--) { const e = fx[i]; e.t += dt; const u = Math.min(1, e.t / e.dur); e.m.scale.setScalar(e.r0 + (e.r1 - e.r0) * u); e.m.material.opacity = 0.9 * (1 - u); if (u >= 1) { root.remove(e.m); e.m.material.dispose(); fx.splice(i, 1) } }
     },
     counts: () => state.counts(),
     status: () => ({ status: state0.status, shown: state0.status === 'OK' }), // für das Knet-Modul (wartet auf geladene Bäume)
     balls: () => balls.map((b) => ({ key: b.key, zone: b.key.split(':')[0], kind: b.kind, state: b.state, p: (b.state === 'hanging' ? b.anchor : b.body?.p || b.anchor).slice(), r: b.r })),
-    stats: () => ({ status: state0.status, error: state0.error, trees: trees.length, loaded: state0.loaded, balls: balls.length, zones: orchards.map((o) => ({ zone: o.zone, ...o.stats() })), shots: info.shots, blasts: info.blasts, hits: info.hits.length }),
+    stats: () => ({ status: state0.status, error: state0.error, trees: trees.length, loaded: state0.loaded, balls: balls.length, zones: orchards.map((o) => ({ zone: o.zone, ...o.stats() })), shots: info.shots, blasts: info.blasts, hits: info.hits.length, targetHits: info.targetHits.length }),
     dispose() { geo.dispose(); mat.dispose(); fxGeo.dispose(); for (const e of fx) e.m.material.dispose(); for (const f of flights) f.m.material.dispose()
       root.traverse((m) => { if (m.isMesh && m !== mesh) { m.geometry?.dispose?.() } }); root.clear() },
   }

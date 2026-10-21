@@ -15,6 +15,10 @@ const toldBad = addReceipt(ws, R({ residentId: 'witch_a', mode: 'told', from: 's
 const idem = a.added && !again.added && receiptsOf(ws, 'farmer_harke').length === 1
 const witness = knows(ws, 'farmer_harke', EV) === 'participated' && knows(ws, 'lorekeeper', EV) === 'told' && knows(ws, 'witch_a', EV) === null && !toldBad.added
 
+// Erweiterung R0.6 Phase D: neue kind angenommen, unbekannte weiter abgelehnt
+const phaseD = ['hit_warning', 'hostile_response', 'resident_downed', 'respawned'].map((kind, i) => addReceipt(freshWorldSave(NOW), R({ residentId: 'skel_warrior', kind, eventKey: 'grp:d' + i, with: ['player'] })))
+const kindsD = phaseD.every((x) => x.added && x.ws.npc.receipts[0].kind === ['hit_warning', 'hostile_response', 'resident_downed', 'respawned'][phaseD.indexOf(x)]) && !addReceipt(freshWorldSave(NOW), R({ kind: 'telepathy', eventKey: 'zz2' })).added
+
 // Kappen je Bewohner: 16, niedrigste salience fliegt zuerst, dann der älteste
 let cap = freshWorldSave(NOW); for (let i = 0; i < 20; i++) cap = addReceipt(cap, R({ eventKey: 'ev' + i, day: i, salience: i < 4 ? 0 : 2 })).ws
 const capList = receiptsOf(cap, 'farmer_harke'), capOk = capList.length === WORLD_SAVE_LIMITS.perResident && capList.every((e) => e.salience === 2)
@@ -36,6 +40,7 @@ process.exit(report('world-save', {
   idempotent: idem && ws.npc.receipts[0].id === receiptId('farmer_harke', EV, 'participated'),
   witnessVsNot: witness,
   toldChain: toldOk.added,
+  kindsPhaseD: kindsD,
   capPerResident: capOk,
   repaired,
   roundTripBitEqual: roundTrip,

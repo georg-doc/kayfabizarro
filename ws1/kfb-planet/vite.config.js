@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { viteSingleFile } from 'vite-plugin-singlefile'
 import { fileURLToPath } from 'url'
+// WS-Audio R1 (V-598): private Töne/Musik nur über den lokalen Server (/@kfb-audio/), nie im Build – scripts/audio/vitePrivateAudio.mjs
+import { kfbPrivateAudio } from './scripts/audio/vitePrivateAudio.mjs'
 
 // F1 · Die Studio-Spender (kfb-hub/stage/toolbox/eye-rig-batch/lib, Branch cloudflare-live @db823766: die Fassung, die Rogue_Hooded kennt und in der Georg das Profil abgenommen hat) importieren ihre Abhängigkeiten
 // über feste jsDelivr-Adressen. Diese Adressen zeigen hier auf byte-gleiche Kopien in src/vendor/eyes/ (gleiche Pins,
@@ -17,9 +19,14 @@ const EYE_ALIASES = [
   [`${CDN}${P5650}/media/3D_Assets/build/pet-library.v6.js`, V('pet-library.v6.js')],
 ].map(([find, replacement]) => ({ find, replacement }))
 
+// MVP-Site (V-618): KFB_SITE=1 baut für das private Pages-Projekt – Dateien einzeln statt einer Riesen-HTML (Pages: höchstens 25 MiB je Datei),
+// VITE_KFB_SITE schaltet /raw-Umleitung (src/siteRaw.js) und Ton-Pfad der Site ein. Ohne KFB_SITE bleibt der Build wie bisher (eine Datei).
+const SITE = process.env.KFB_SITE === '1'
 export default defineConfig({
-  plugins: [react(), viteSingleFile()],
+  plugins: SITE ? [react(), kfbPrivateAudio()] : [react(), viteSingleFile(), kfbPrivateAudio()],
   publicDir: false,
   resolve: { alias: EYE_ALIASES },
-  build: { assetsInlineLimit: 100_000_000, chunkSizeWarningLimit: 100_000 },
+  define: SITE ? { 'import.meta.env.VITE_KFB_SITE': JSON.stringify('1') } : {},
+  build: SITE ? { assetsInlineLimit: 4096, chunkSizeWarningLimit: 100_000 } : { assetsInlineLimit: 100_000_000, chunkSizeWarningLimit: 100_000 },
+  server: { watch: { ignored: ['**/test/out/**'] } }, // Prüf-/Aufnahme-Ausgaben lösen kein Neuladen aus (WS-Audio-Video)
 })

@@ -11,7 +11,7 @@
 // Werte = Georgs Profil aus eye-rig-medium.batch-1.json (19.09.), unverändert. Kein React, kein Store (Vertrag §2).
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { mountKayKitEyes } from '../vendor/eyes/kaykit-eye-adapter.v1.js'
+import { mountKayKitEyes, deriveSourceAnchorSeed } from '../vendor/eyes/kaykit-eye-adapter.v1.js'
 import { prepareMediumActorCleanup } from '../vendor/eyes/medium-source-eye-cleanup.v1.js'
 import { sampleActorFaceColor } from '../vendor/eyes/face-color-sampler.v1.js'
 import { FACE_STEP, FACE_MAX_STEPS } from './faceMountActor'
@@ -44,7 +44,12 @@ function needsAutoFaceColor(profile) {
 // Zähler für den Vertragstest (Muster probeModule/test/host.mjs)
 export const eyeActorLog = { create: 0, update: 0, dispose: 0, lastCtx: null, freed: null }
 
-// options: { url, clipsUrl?, motion: 'bind'|Clipname, profile, contract, actor: { id, path, revision }, height | classScale, position, yaw, anchorId, receiveShadow }
+// options: { url, clipsUrl?, motion: 'bind'|Clipname, profile, contract, actor: { id, path, revision }, height | classScale, position, yaw, anchorId, receiveShadow,
+//   eyeAnchors?: { l: { node, r }, r: { node, r } } }
+// eyeAnchors (WS-NPC, Lead-OK 21.10., additiv; ohne die Option bitgenau wie bisher): Figuren ohne Eintrag in Georgs Batch (z. B. Kayfabrick-Bots B17)
+// bekommen den Augen-Sitz wie im Studio bei UNREVIEWED-Profilen (app.js sourceAnchorSeed): erst mit dem Profil montieren, dann dx/dy/ring und inset
+// mit deriveSourceAnchorSeed (kaykit-eye-adapter.v1, Quelle „cleanup02-root-eye-anchors“) aus den Anker-Knoten der Karte ableiten und anwenden.
+// Radius r = Augenradius aus der Figurenkarte (glTF-Einheiten). Kein eigener Zahlenwert.
 export function createEyeActor(options) {
   eyeActorLog.create++
   const { url, clipsUrl = null, motion = 'bind', contract, actor, height = 2.65, classScale = null, position = [0, 0, 0], yaw = 0, anchorId = null, receiveShadow = false } = options
@@ -76,6 +81,15 @@ export function createEyeActor(options) {
     const eyes = await mountKayKitEyes({ THREE, figure, sourceRef: { repo: 'georg-doc/kayfabizarro', path: actor.path, revision: actor.revision }, profile, expressionContract: contract, camera: null, log })
     state.eyes = eyes
     if (state.disposed) { eyes.dispose(); return }
+    if (options.eyeAnchors) {
+      const node = (n) => figure.getObjectByName(n) || figure.getObjectByName(THREE.PropertyBinding.sanitizeNodeName(n))
+      const at = (a) => { const o = a && node(a.node); if (!o) return null; o.updateWorldMatrix(true, false); const p = figure.worldToLocal(o.getWorldPosition(new THREE.Vector3())); return { pos: p.toArray(), r: a.r } }
+      const anchors = { l: at(options.eyeAnchors.l), r: at(options.eyeAnchors.r) }
+      const seed = anchors.l && anchors.r ? deriveSourceAnchorSeed({ THREE, figure, faceHost: eyes.faceHost, anchors }) : { status: 'UNSUPPORTED', reason: 'Anker-Knoten fehlen' }
+      state.anchorSeed = seed
+      if (seed.status === 'OK') { eyes.setAnchor(seed.anchor); eyes.setEye({ inset: seed.eye.inset }); profile.eye.anchor = { ...profile.eye.anchor, ...seed.anchor }; profile.eye.inset = seed.eye.inset }
+      log(`Augen-Sitz aus Ankern: ${seed.status}${seed.status === 'OK' ? ' · dx ' + seed.anchor.dx + ' dy ' + seed.anchor.dy + ' ring ' + seed.anchor.ring + ' inset ' + seed.eye.inset : ' · ' + seed.reason}`)
+    }
     if (needsAutoFaceColor(profile)) {
       const fc = sampleActorFaceColor({ THREE, figure, faceHost: eyes.faceHost, anchor: profile.eye?.anchor, preferredHeadMesh: cleanup.report?.headMesh || profile.sourceFace?.headMesh, log })
       if (fc.status === 'OK') { profile.sourceFace.faceColor = fc.color; profile.eye.baseColor = fc.color; eyes.setBaseColor(fc.color) }
@@ -117,7 +131,7 @@ export function createEyeActor(options) {
     setLife(patch) { state.eyes?.setLife(patch) },
     setKinetics(patch) { state.eyes?.setKinetics(patch) },
     expression(id) { return state.eyes?.applyExpression(id) },
-    status: () => ({ status: state.status, shown: !!state.figure?.visible, cleanup: state.cleanupStatus, error: state.error, log: state.log.slice(-8) }),
+    status: () => ({ status: state.status, shown: !!state.figure?.visible, cleanup: state.cleanupStatus, error: state.error, log: state.log.slice(-8), ...(state.anchorSeed ? { anchorSeed: { status: state.anchorSeed.status, anchor: state.anchorSeed.anchor, inset: state.anchorSeed.eye?.inset, asymmetry: state.anchorSeed.asymmetry } } : {}) }),
     report: () => state.eyes?.report() ?? null,
     debugRig: () => state.eyes?.rig ?? null, // nur Prüfungen (Bildpaar Lid geschlossen)
     debugParts: () => [root, state.eyes?.rig?.rig, state.eyes?.faceHost?.box, state.eyes?.faceHost?.inner].filter(Boolean), // nur Prüfungen (Freigabe)
