@@ -3010,11 +3010,14 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       for (const [a, b] of [[i - 1, k - 1], [i - 1, k], [i, k - 1], [i, k]]) if (a >= 0 && b >= 0 && a < NX && b < NZ && cell[a * NZ + b]) y = Math.min(y, cell[a * NZ + b].y)
       if (y < Infinity) out.push(new THREE.Vector3(bb.min.x + i * dx, y, bb.min.z + k * dz)) }
     return out }
+  /* Fahrfläche geglättet (QA P1 21.10.: Terrassenstufen bis 1,2 m galten als befahrbar, der 5-m-Rumpf fuhr durch die Stufenkante oder schwebte darüber):
+     Mittel über ±1,6 m → Stufen werden kurze Rampen, der Wagen neigt sich darüber. Die Darstellung (LIFT) prüft weiter gegen die echte Fläche. */
+  const surfSm = (x, z) => { if (window.__SM === 0) return surfAt(x, z); const r = 1.6; return (2 * surfAt(x, z) + surfAt(x + r, z) + surfAt(x - r, z) + surfAt(x, z + r) + surfAt(x, z - r)) / 6 };
   const DENV = {
-    ground: (x, z) => { const hv = carInfo?.hover; let gc = surfAt(x, z)
+    ground: (x, z) => { const hv = carInfo?.hover; let gc = surfSm(x, z)
       if (!hv || hv.length < 4) return { y: gc + RIDE, n: gN(x, z), floor: gc + RIDE }
       const cy = Math.cos(D.yaw), sy = Math.sin(D.yaw); let sum = 0
-      for (let i = 0; i < 4; i++) { const lx = hv[i][0] * UNIT, lz = hv[i][2] * UNIT, wx = x + lx * cy + lz * sy, wz = z - lx * sy + lz * cy, h = surfAt(wx, wz); HV.p[i].set(wx, h, wz); sum += h }
+      for (let i = 0; i < 4; i++) { const lx = hv[i][0] * UNIT, lz = hv[i][2] * UNIT, wx = x + lx * cy + lz * sy, wz = z - lx * sy + lz * cy, h = surfSm(wx, wz); HV.p[i].set(wx, h, wz); sum += h }
       HV.a.subVectors(HV.p[1], HV.p[2]); HV.b.subVectors(HV.p[0], HV.p[3]); HV.n.crossVectors(HV.a, HV.b).normalize(); if (HV.n.y < 0) HV.n.negate()   // Diagonalen FR−RL × FL−RR
       if (HV.n.y < 0.35) HV.n.set(0, 1, 0)
       // Rumpf frei halten (Georg 21.10.: Wagen steckte in Hügeln): Nase, Heck und Seitenmitten des Kastens abtasten – die Unterseite bleibt über allen Punkten
@@ -3023,6 +3026,12 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       const y = Math.max(gc + RIDE, sum / 4 + RIDE); void tip; return { y, n: [HV.n.x, HV.n.y, HV.n.z], floor: y } },   /* Nase/Heck nicht mehr in der Physik: in Mulden ergab das ein V, der Wagen pendelte ohne Gas (Georg 21.10.); den Rumpf hält LIFT frei */
     sweep: (from, delta) => { const tx = from[0] + delta[0], tz = from[2] + delta[2], base = from[1] - RIDE, g = groundAt(tx, tz); const h = Math.hypot(delta[0], delta[2])
       if (h > 1e-6 && g - base > 1.2) { const n = [-delta[0] / h, 0, -delta[2] / h]; return { delta: [0, delta[1], 0], hit: true, n, soft: false, ride: false } }   // Stufe höher als 1,2 m = Wand
+      /* Wand an Bug/Heck/Seite (QA P1 21.10.: Heck oder Flügel fuhren in Terrassenwände, die Darstellung hob den Wagen dann bis 5 m an): eine Ecke in Fahrtrichtung,
+         deren Boden deutlich steiler steigt als befahrbar (~42° + 1 m), blockiert wie eine Wand in der Mitte */
+      if (h > 1e-6 && carInfo?.box) { const bx = carInfo.box, cy = Math.cos(D.yaw), sy = Math.sin(D.yaw), hw = bx.h[0] * UNIT, zf = (bx.c[2] + bx.h[2]) * UNIT, zb = (bx.c[2] - bx.h[2]) * UNIT, g0 = Math.max(g, base)
+        for (const [lx, lz] of [[0, zf], [0, zb], [hw, 0], [-hw, 0], [hw * 0.8, zf * 0.8], [-hw * 0.8, zf * 0.8], [hw * 0.8, zb * 0.8], [-hw * 0.8, zb * 0.8]]) {
+          const ox = lx * cy + lz * sy, oz = -lx * sy + lz * cy, dd = Math.hypot(ox, oz); if (ox * delta[0] + oz * delta[2] <= 0) continue
+          if (groundAt(tx + ox, tz + oz) - g0 > 0.9 * dd + 1.0) { const n = [-ox / dd, 0, -oz / dd]; return { delta: [0, delta[1], 0], hit: true, n, soft: false, ride: false } } } }
       const R = OB.R(); let dx = delta[0], dz = delta[2], hitN = null
       for (const o of obstNear(tx, tz, R + 1, ON)) { if (o.top - base < OB.STEP) continue
         const ex = from[0] + dx - o.x, ez = from[2] + dz - o.z, d = Math.hypot(ex, ez), m = o.r + R
@@ -3202,9 +3211,10 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     /* Rumpf nie im Hang (Georg 21.10.: Wagen steckte in Hügeln): die echte Unterseite des Modells (tiefster Punkt je Rasterzelle, einmal pro Wagen) wird jedes Bild
        in der gezeichneten Lage gegen den Boden geprüft; ragt eine Ecke (Flügel, Bug) hinein, hebt die Darstellung den Wagen an – sofort hoch, sanft zurück. Physik bleibt k2t. */
     if (carHolder && carInfo) { if (LIFT.key !== carInfo) { LIFT.key = carInfo; LIFT.pts = liftPoints() }
-      carRoot.updateMatrixWorld(true); let pen = 0
-      for (const p of LIFT.pts) { LIFT.v.copy(p).applyMatrix4(carHolder.matrixWorld); const wx = LIFT.v.x + P.x, wz = LIFT.v.z + P.z; pen = Math.max(pen, Math.max(surfAt(wx, wz), S.vox ? -1e9 : meshH(wx, wz)) + 0.04 - LIFT.v.y) }
-      LIFT.y = pen > LIFT.y ? pen : LIFT.y + (pen - LIFT.y) * Math.min(1, dt * 5); carRoot.position.y += LIFT.y }
+      carRoot.updateMatrixWorld(true); const pens = LIFT.pens || (LIFT.pens = []); pens.length = 0
+      for (const p of LIFT.pts) { LIFT.v.copy(p).applyMatrix4(carHolder.matrixWorld); const wx = LIFT.v.x + P.x, wz = LIFT.v.z + P.z; pens.push(Math.max(surfAt(wx, wz), S.vox ? -1e9 : meshH(wx, wz)) + 0.04 - LIFT.v.y) }
+      pens.sort((a, b) => b - a); let pen = Math.max(0, pens[Math.min(window.__LK ?? 3, pens.length - 1)] ?? 0)   /* viertgrößter Punkt: einzelne Spitzen (Flügel an einer Wand) tauchen leicht ein, statt den ganzen Wagen schweben zu lassen (QA P1) */
+      pen = Math.min(pen, 1.0); LIFT.y = pen > LIFT.y ? Math.min(pen, LIFT.y + 6 * dt) : LIFT.y + (pen - LIFT.y) * Math.min(1, dt * 5); carRoot.position.y += LIFT.y }   /* höchstens 1 m, steigt gleitend (QA P1: Sprünge 1,3 m/Bild, Schweben bis 5 m) */
     LIFT.cy += (LIFT.y - LIFT.cy) * Math.min(1, dt * 6);   /* Kamera folgt dem Anheben nur weich (kein Ruck) */
     updateSpeedlines(dt, t); CARDS.update(dt, t);
     if (mode === 'over') {
