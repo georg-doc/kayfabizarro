@@ -165,3 +165,8 @@ Gehört in die neue ToolBox (P08-Export, „Fixes nur noch in der ToolBox“), n
 - **Fall** ≤ 0,4 s, Ruhelage flach neben der Figur.
 - Bitte an den Death-Clips anschließen. Bild: `K10/out/K10_weapondrop.png`.
 - Ausnahme: Bei den Bögen in Death_B prüft WSB noch die Endlage nach.
+
+## Nachtrag zum ToolBox-Job FrizzleBob (WSB-Befund 21.10.)
+- Das FB-Rohmodell `FB_TEMPLATE_LOOK_v5b.glb` enthält noch die Modell-Augen. Brauen, Nase und Mund stehen dort ohne Georgs Werte; die setzt bisher nur die Prüfbühne aus der Karte (`pets[0].original`).
+- Jede Laufzeit ohne face-mount zeigt deshalb Doppelaugen und zu tiefe Brauen. Bitte im ToolBox-Export (P08) so lösen, dass der Export selbst Georgs Werte trägt.
+- WSB baut FB nicht mehr (Georg). Ein falscher Blender-Versuch (k12b/k12c) ist verworfen.

@@ -1,5 +1,17 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., abends) · Disco-Besetzung K12 da (für den Dioramen-Test, Lead)
+- **Im privaten Branch** `KFB-Stunt-Car-Race/assets/private` (Stand 35ffbee): `50_BLENDER/K12/data/disco_cast_k12.json` + Karten `disco_<slot>.k12.figure.json`, GLBs `50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_*.src.glb`.
+- **7 Tänzer:** minion, avian, teen (protagonist_a), soldier, witch, knight, demon. KFB-Augen, Clips as-is, Plätze und Cues 1:1 aus RA `ra_disco_01`.
+- **floorLift (V-596):** `{fps 48, values[]}`, Wurzel.y += lerp(values[i], values[i+1]). Ohne Tabelle sinken die Mixamo-Tänze bis 21 cm ein.
+- **MC = `actor: "fb_game"`:** eure FB-Spielfigur, keine WSB-GLB (Georg: FB nur aus der ToolBox).
+  - Platz p (0,95 / 0 / −4,4) u, ry 0, hinter der Drum Machine.
+  - Cues: hip_hop_a 3,0 · wave 14,4 · chicken 19,2 (HIT 1) · locking 29,4 · hip_hop_a 30,6 · idle_happy 33,6 (HIT 2).
+  - floorLift für FB misst ihr an eurer Figur.
+- **Ork-Band:** `orc_legacy_a/b` jetzt ready (ORKBAND r1b im Branch).
+- Damit ist die Besetzung für Kritiker-Runde R3 da (Stopp-Regel war: erst mit Figuren). Lese-Schlüssel siehe Eintrag darunter.
+
+
 # NEU OBEN (21.10., abends) · Private Dateien jetzt per Git (Lead + WS-NPC)
 **Keine lokalen Kopien mehr.** Georg kann auf diesem Mac kein Dropbox installieren, also nie wieder danach fragen.
 - Alle privaten bzw. gekauften Dateien liegen jetzt im **privaten** Repo `georg-doc/KFB-Stunt-Car-Race`, Branch **`assets/private`** (156 Dateien, 28 MB, Pfade wie im Hub, `README_PRIVATE_ASSETS.md`):
