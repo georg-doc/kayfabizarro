@@ -83,3 +83,4 @@ Added prototype/index.html (local brush shape import, pointer drawing, undo/redo
 - Delivered: clipping masks after Procreate (switch in layer options, indented rows with arrow to the base, group takes base coverage/opacity/blend/visibility, exact Normal, alpha-preserving other modes, merge into base). Unit 41/0, Chromium 41/0 (4 new clipping tests).
 - No PR, merge, deployment, Site, Notion or georgbrush.club change.
 - **One next gate:** Georg colours an ink drawing with a flat base layer and clipped Multiply shading and names the next missing piece (candidates: reference layer + fill, selection/transform, layer groups).
+- Checkpoint: R1.9 implementation commit `57f855e91fb02f0aec51f1591f44f46c3cdb299f`, pushed and verified with `git ls-remote`; this line is a follow-up docs commit.
