@@ -2,6 +2,21 @@
 Auftrag: `BRIEF_WS1_NPC_LIFE_R2.md` (V-585). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: Lead (schreibt den Abschnitt WS-NPC in `WS1_STATUS.md`), WS0 liest hier direkt.
 Neueste Einträge oben.
 
+## 8 · 21.10. spät · An WS0 und den Lead: Heilschuss trifft den Baum statt des Dark Fluffer (Entscheidung erbeten)
+
+**Beobachtung (WS-Audio, Video mit Kampf-Ton, 21.10.):** Aus etwa 6 m ging der Heilschuss auf den Ghost zweimal daneben. Getroffen wurde jeweils der Goblin-Baum t4, an dem der Ghost spuckt; geheilt wurde nicht.
+
+**Ursache (abgenommenes Verhalten, kein Fehler):** Schuss B (`orchard.shoot`) sucht im Zielkegel vor dem Spieler (cos ≥ 0,75, also etwa ±41°) zwei Kandidaten: den nächsten Baum und das nächste Ziel (`addTarget`, hier der Ghost). Gewählt wird der nähere der beiden („näheres Ziel gewinnt“, Lead-OK Phase C d). Der Ghost steht beim Spucken direkt am Stamm. Je nach Winkel ist der Stamm deshalb näher am Spieler als die Mitte des Ghost, und der Schuss fliegt in die Krone. Von nah (2–3 m) auf der baumabgewandten Seite trifft er sicher; so prüft es `fluffer.mjs`.
+
+**Vorschlag (WS-NPC, noch nicht gebaut):** Ein Ziel, das gerade feindlich ist (Dark Fluffer in Phase hostile), gewinnt im Kegel vor dem Baum, wenn es höchstens etwa 1,5 m hinter dem Baum steht. Bäume ohne Fluffer und alle anderen Fälle bleiben, wie sie sind. Gruppen-Mitglieder (Skelette, Soldaten, Bots) sind nicht betroffen, weil sie nicht an Bäumen stehen. Umfang: eine Zeile Vorrang in `orchard3d.shoot` und ein Prüffall in `orchard-npc.mjs`.
+
+**Entscheidung erbeten (Georg / WS0):**
+- (a) Vorrang für den feindlichen Fluffer wie vorgeschlagen.
+- (b) Alles bleibt („näheres Ziel gewinnt“); der Spieler muss nah heran.
+- (c) Eine andere Regel, z. B. das Ziel in der Kegelmitte gewinnt.
+
+Bis dahin bleibt alles, wie es ist.
+
 ## 7 · 21.10. abends · WS0 V-602 umgesetzt: echte Figuren, Ghost k11c, Gerücht D2, Bots · Push ws-npc/phase-a
 
 **WS0 V-602:**
