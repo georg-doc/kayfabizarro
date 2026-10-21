@@ -81,3 +81,13 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
   - Kein Mündungsfeuer, sondern dein kurzer `release`-Effekt (Sehnen-Schnapp bzw. Staub-Puff, V-499).
   - Liegt nur in Georgs Dropbox; Zugriff wie bei den K10-Handwaffen.
 - Gatling folgt (am Boden fertig, Flug in Arbeit), Meldung über WS0.
+
+
+## ToolBox-Job FrizzleBob · 21.10.2026
+
+- **ToolBox-P08-Review-Branch:** `wsa/toolbox-frizzlebob-face-2026-10-21`, P08-Quellstand Commit `20a0123` (`P08: seat FrizzleBob face and enable shadow receivers`). Georgs FrizzleBob-Rig-Werte werden beim Runtime-Mount gesetzt: Augen `rig`, Brauen-Tiefe `-0.08`, Pitch `8` (oberer Rand nach hinten auf die Stirn). Der P08-Export/Import serialisiert `parts.eyes` und `partColors`, der Export überschreibt Modell-Augen mit Rig-Augen.
+- **Schatten:** Haar-Tufts, Brauen, Schnurrbart und Mund sind als Shadow-Receiver markiert. Brauen und Schnurrbart verwenden Shadowmap-Chunks im Shader; der Mund nutzt ein lichtempfangendes Lambert-Material. Die Gesichtsteile werfen selbst keine Schatten.
+- **P08-Ausgabe:** Im Branch liegt `dist/data/kfb-pet-frizzlebob-earrig-v5.georg-2026-10-21.p08.json` als source-derived Review-Candidate mit `eyes: "rig"` und den Brauenwerten. Er ist noch kein im Browser aus Runtime exportierter Download; der Export-/Import-Roundtrip braucht noch Browser-Prüfung.
+- **Proof-Stage-Bilder offen:** Der ToolBox-Site-Einstieg verlangt derzeit Anmeldung, und aus diesem Review-Lauf konnten weder P08 im Browser ausgeführt noch Stage-Bilder aufgenommen werden. Es wurde keine Version gespeichert oder veröffentlicht. Für die Abnahme sind echte Stage-Screenshots plus P08-Export/Roundtrip noch erforderlich.
+- **Bogen Death_B:** separater Draft-PR [#28](https://github.com/georg-doc/KFB-Combat-Arena/pull/28), Branch `wsa/bow-death-b-2026-10-21`, auf K10-Weapon-Families-Basis. `Death_B` ist für Bow/Bow-A als Death-Clip eingetragen; Ausschluss aus `weaponDrop` entfernt. Die vorhandenen gemessenen Ending-Transforms/Timings bleiben erhalten. Kein Merge und keine Live-Freigabe; Georgs Review/Entscheidung steht aus.
+- **Merge:** ToolBox- und Arena-Branches bleiben getrennte Review-Kandidaten. Zusammenführung nur mit Georg.
