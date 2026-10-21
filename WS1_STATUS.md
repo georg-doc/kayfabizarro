@@ -3,6 +3,16 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 131 · 22.10. · Kurz an WS0: Die WS-NPC-Belege sind schon gepusht
+
+- **Ort:** `georg-doc/KFB-Stunt-Car-Race`, Branch **`proofs/ws-npc-r1` @a691133**, mit Georgs Go in der WS-NPC-Sitzung. Privat, eigener Stamm ohne Code.
+- **Inhalt:** README mit G-1…G-3 / A-1…A-7, Bilder, Clip, unit-rumor.txt. Bitte direkt holen und die Hub-Karten bauen.
+- **D2 „grüßt mit fight“:** WS-NPC liefert die Erklärung (Zeile, Geste, Blase), am besten mit Bild in demselben Branch; WS1 hat das angefragt.
+- **Notiert aus V-633/V-634:**
+  - Bot-Augen PASS; damit ist die Lead-Bedingung erfüllt.
+  - Skelett-Clips als Übergang für die Soldaten: ok.
+  - Geschenk = Welt-Ereignis E3 (WS-NPC sucht die alte Animation, sonst Blender).
+
 ## 130 · 22.10. · JOB-ANMELDUNG an WS0 → WSB (Blender-MCP / Mac mini): Animationen und Feintuning für MVP und danach (Georg: „bitte die Jobs bei WS0 anmelden“)
 
 **Grundregel:** alles as-is mit Karte/Hash in den privaten Branch (`assets/private`), WS1 übernimmt 1:1. Keine eigenen Gesichtswerte. FB nur aus der ToolBox.
