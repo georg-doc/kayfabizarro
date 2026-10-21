@@ -179,7 +179,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <div class="row"><label for="sunel">Sonnenstand</label><output id="o_sunel"></output><input type="range" id="sunel" min="4" max="70" step="1" value="49"></div>
         <div class="row"><label for="sgrad">Himmelsverlauf (Sonnenseite)</label><output id="o_sgrad"></output><input type="range" id="sgrad" min="0" max="1" step="0.05" value="0.6"></div>
         <div class="row"><label for="aurora">Polarlicht</label><select id="aurora"><option value="1">nachts</option><option value="2">immer</option><option value="0">aus</option></select></div>
-        <label class="check"><input type="checkbox" id="flare" checked> Blendenflecken (Blick zur Sonne)</label>
+        <label class="check"><input type="checkbox" id="flare"> Blendenflecken (Blick zur Sonne)</label>
         <div class="row"><label for="moon">Himmelskörper</label><select id="moon"><option value="1">Knet-Riesenmond</option><option value="2">Ringplanet (Knete)</option><option value="0">keiner</option></select></div>
         <label class="check"><input type="checkbox" id="painted" checked> Gemalte Wolken am Himmel (3 Ebenen mit Parallaxe)</label>
         <div class="row"><label for="cform">Wolkenformation</label><select id="cform"><option value="4" selected>nur Kuppel (wie vorher)</option><option value="0">gemischt (3 Ebenen, Versuch)</option><option value="1">Haufenwolken</option><option value="2">Schäfchenwolken</option><option value="3">Wolkenbänke am Horizont</option></select></div>
@@ -2110,7 +2110,7 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
         float dpT=max(-dz,0.0); vec2 gxT=dFdx(P), gyT=dFdy(P); float exT=dFdx(dpT), eyT=dFdy(dpT), dtT=gxT.x*gyT.y-gxT.y*gyT.x;
         float sdT=dpT/max(length(abs(dtT)>1e-9 ? vec2(exT*gyT.y-gxT.y*eyT, gxT.x*eyT-exT*gyT.x)/dtT : vec2(0.0)),0.06), sw=fwidth(sdT)+1e-3, e1=0.9+0.45*wob;
         vec3 kDeep=vec3(0.227,0.227,0.204);                                                   /* Island Kit deep #3a3a34 */
-        vec3 bed=mix(wetC*0.85, mix(kDeep, uA_water*0.4, 0.3), smoothstep(e1-sw, e1+sw, sdT)); /* Schelf | Tiefe: dieselbe Kante wie im Wasser */
+        vec3 bed=mix(mix(uA_water*0.85, wetC, 0.25), mix(kDeep, uA_water*0.4, 0.3), smoothstep(e1-sw, e1+sw, sdT)); /* Schelf | Tiefe als flache Palettentöne – keine Fließfarben-Bänder unter Wasser (Georg 21.10.: verschmierte Küsten) */
         float uw=1.0-smoothstep(-aw, aw, dz);
         col=mix(col, wetC, wetB*(1.0-uw)); col=mix(col, bed, uw); under=0.0; }
       else col=mix(col, mix(col*uFlShal*1.6, uFlDeep, kd), under);
@@ -2123,7 +2123,7 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     if(uSky2>0.5 && uGridWorld<0.5) gl_FragColor=vec4(applyAir(col, vW-vec3(uCarW.x,0.0,uCarW.y), l),1.0); else gl_FragColor=vec4(mix(col, sky, f),1.0);
     { float dn=fract(52.9829189*fract(dot(gl_FragCoord.xy+0.5, vec2(0.06711056,0.00583715)))); gl_FragColor.rgb+= (dn-0.5)/255.0; }   /* Dithering: bricht 8-Bit-Stufen in flachen Verläufen (Schatten, Dunst) */
   }`;
-  U.uHole = { value: -1 }; U.uDrop = { value: 0 }; U.uNE = { value: 1.2 }; U.uCarW = { value: new THREE.Vector2() }; U.uGridWorld = { value: 0 }; U.uGS = { value: 8 }; U.uGShape = { value: 1 }; U.uGFill = { value: 0 }; U.uGCol = { value: 0 }; U.uClay = { value: 0 }; U.uGTex = { value: 0 }; U.uRing = { value: 1 };
+  U.uHole = { value: -1 }; U.uDrop = { value: 0 }; U.uNE = { value: SIZE / SEG };   /* = Gitterabstand und JS-NE0 (Audit C 21.10.): vorher 1,2 → GPU zeichnete Detail feiner als das 2,34-m-Gitter (Zacken) und eine andere Höhe als Physik/Platzierung */ U.uCarW = { value: new THREE.Vector2() }; U.uGridWorld = { value: 0 }; U.uGS = { value: 8 }; U.uGShape = { value: 1 }; U.uGFill = { value: 0 }; U.uGCol = { value: 0 }; U.uClay = { value: 0 }; U.uGTex = { value: 0 }; U.uRing = { value: 1 };
   U.uBankL = { value: 0 }; U.uBankD = { value: 0 }; U.uWKit = { value: 0 };   /* Island-Kit-Wasser */
   { const D = window.KFB_FLUID.defaults, L = new THREE.TextureLoader(), T = (url, srgb) => { const t = L.load(url); t.wrapS = t.wrapT = THREE.RepeatWrapping; if (srgb) t.encoding = THREE.sRGBEncoding; return t };
     Object.assign(U, { uKFCol: { value: new THREE.Color(...D.col) }, uKFShallow: { value: new THREE.Color(...D.shallow) }, uKFMoat: { value: D.moat }, uKFBand: { value: D.band }, uKFShoreFoam: { value: D.shoreFoam }, uKFV: { value: D.v }, uKFWind: { value: new THREE.Vector2(...D.wind) }, uKFZ: { value: new THREE.Vector2(...D.z) }, uKFDudv: { value: T(window.KFB_FLUID.dudv, false) }, uKFMap: { value: T(window.KFB_FLUID.map, true) }, uKFHasMap: { value: 1 } }) }
@@ -2207,7 +2207,8 @@ ${window.KFB_FLUID.glsl}
           vec4 kf=kitFluid(vec3(wp.x, wl, wp.y), vec2(0.0), sd, wp);
           vec3 kc=kf.rgb; float wsv=wShadow(vP); kc=mix(mix(kc*0.62, uContact, 0.18), kc, wsv);   /* Schatten im Wasserton, nie schwarz */
           if(uSky2>0.5) kc=applyAir(kc, vP, 1.0);
-          gl_FragColor=vec4(kc, kf.a*smoothstep(-dw,dw,dep)); return; }
+          float ka=max(kf.a, mix(0.8, 0.94, smoothstep(e1-sw, e1+sw, sdr)));   /* deckender als im Kit: über unserem bunten Gelände machte die Kit-Durchsicht (0,40–0,74) die Küste matschig */
+          gl_FragColor=vec4(kc, ka*smoothstep(-dw,dw,dep)); return; }
         float gum=step(0.5,uFlKind)*step(uFlKind,1.5), acid=step(1.5,uFlKind);
         vec3 rd=normalize(vP-cameraPosition);
         float drift=mix(1.0, mix(0.3,0.6,acid), max(gum,acid)), str=mix(0.15, mix(0.04,0.08,acid), max(gum,acid))*smoothstep(0.0,0.8,dep)*(1.0-smoothstep(60.0,260.0,length(vP-cameraPosition)));   /* fern ruhig: kein Flimmern */
@@ -2272,10 +2273,11 @@ ${window.KFB_FLUID.glsl}
     /* eine Wolkenebene im Kuppelstil: Rauschen hart geschnitten, Licht-/Schattenton (Seite zur Sonne hell), dunklere Kante */
     vec4 cloudLayer(vec3 d, float ph, float sc, vec2 wind, float par, float th, float sd, float edge, float orig){
       vec2 p=d.xz/(d.y+ph)*sc+wind+uCamXZ*par+vec2(sd*17.0,-sd*9.0);
-      float n=fbm4(p*1.4)+0.5; float fw=min(fwidth(n)*1.2,0.012); if(n<th-0.01) return vec4(0.0);   /* Kantenbreite in Pixeln (vor dem Ausstieg gemessen): scharf auch bei großen nahen Wolken */
+      th+=0.07*(1.0-smoothstep(0.02,0.12,d.y));   /* zum Horizont dünner statt dichter (AD-Audit Befund 3) */
+      float n=fbm4(p*1.4)+0.5; float fwA=max(fwidth(n)*1.2,1e-4), fw=min(fwA,0.012); if(n<th-max(0.01,fwA)) return vec4(0.0);   /* Kantenbreite in Pixeln (vor dem Ausstieg gemessen): scharf auch bei großen nahen Wolken */
       float n2=fbm4(p*1.4+(orig>0.5 ? vec2(0.07,0.05) : normalize(uSunDir.xz+1e-4)*0.086))+0.5;   /* orig: Lichtversatz exakt wie die Kuppel vorher (Georg 21.10.: sah besser aus) */
-      float m=orig>0.5 ? smoothstep(th,th+0.012,n) : smoothstep(th,th+max(fw,0.0015),n);
-      vec3 cc=mix(uShade,uLit,step(n2+0.012,n));
+      float m=orig>0.5 ? smoothstep(th,th+max(0.012,fwA),n) : smoothstep(th,th+max(fw,0.0015),n);   /* Kante nie schmaler als ein Bildpunkt: keine 2-px-Treppen am Horizont */
+      vec3 cc=mix(uShade,uLit,smoothstep(n2+0.012-fwA,n2+0.012+fwA,n));   /* Licht/Schatten-Grenze geglättet statt step() */
       cc=mix(cc,uShade*0.82,(m-smoothstep(th+0.012,th+0.03,n))*0.85*edge);   /* nahe Ebenen: schwächere Kante, sonst bleiben kleine Fetzen als Umriss-Geister */
       return vec4(cc,m); }
     void main(){
@@ -2569,7 +2571,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (!RC.dirty) $('recipe').value = JSON.stringify(r, null, 2);
     RC.last = r;
   }
-  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1, mig41: 1, mig42: 1, mig43: 1, mig44: 1 })) } catch (e) {} }
+  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1, mig41: 1, mig42: 1, mig43: 1, mig44: 1, mig45: 1 })) } catch (e) {} }
   function setUI(p) {
     for (const k of NUM) if (p[k] != null) $(k).value = p[k];
     for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
@@ -2634,6 +2636,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   if (stored && !stored.mig39) { stored.puffs = false; stored.cstretch = 1; stored.mig39 = 1 }
   if (stored && !stored.mig40) { stored.cform = 4; stored.mig40 = 1 }
   if (stored && !stored.mig41) { stored.fstage = 5; stored.mig41 = 1 }
+  if (stored && !stored.mig45) { stored.flare = false; stored.mig45 = 1 }   /* einmalig: Blendenflecken aus – Kamera-Optik, nicht gemalt (AD-Audit Befund 6) */
   if (stored && !stored.mig44) { stored.ground = true; stored.mig44 = 1 }   /* einmalig: Erdung (Boden-AO) wieder an (Georg 21.10.) */
   if (stored && !stored.mig43) { stored.fluid = 3; if (!(stored.water > 0.005)) stored.water = 0.06; stored.mig43 = 1 }   /* einmalig: Island-Kit-Wasser als Standard, sichtbar (Georg 21.10.) */
   if (stored && !stored.mig42) { stored.trails = false; stored.mig42 = 1 }   /* einmalig: Punkt-Kondensstreifen aus, Speedline-Bänder übernehmen (Effekt-Bildsprache R1) */   // einmalig: neues Gelände (70er Fließfarben) als Standard – gespeichertes v3 stammte aus der Zeit vor Stufe 5 (Georg 21.10.)   // einmalig: Kuppel wie vorher (Georg 21.10.: Ebenen wirken wie verschobene Formen)   // einmalig: Ebenen-Wolken aus (Georg 21.10.: verschmiert), Himmelsebenen übernehmen
@@ -2773,7 +2776,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     // Baum- und Buschgruppen: Hintergrund und Flanken, Freiraum vor der Öffnung, je Gruppe ein großer Baum + kleinere + Büsche
     rs = 11; if (S.props) for (let c = 0; c < 7; c++) { const a = DIO.open + Math.PI + (c - 3) * 0.55 + (rr() - 0.5) * 0.25, rad = DIO.R + 12 + rr() * 16, cx = DIO.x + Math.cos(a) * rad, cz = DIO.z + Math.sin(a) * rad
       const n = 3 + Math.floor(rr() * 4); for (let i = 0; i < n; i++) { const big = i === 0, bush = i >= 3, d = big ? 0 : 2.2 + rr() * 3.2, b = rr() * 6.28
-        put(bush ? BUSHES[Math.floor(rr() * BUSHES.length)] : TREES[Math.floor(rr() * TREES.length)], cx + Math.cos(b) * d, cz + Math.sin(b) * d, (big ? 1.25 : bush ? 0.7 : 0.85) * (0.85 + rr() * 0.3) * 0.62 * 1.6, 0.05, rr() * 6.28, propGroup) } }
+        { const kind = bush ? BUSHES[Math.floor(rr() * BUSHES.length)] : TREES[Math.floor(rr() * TREES.length)], px = cx + Math.cos(b) * d, pz = cz + Math.sin(b) * d, sc = (big ? 1.25 : bush ? 0.7 : 0.85) * (0.85 + rr() * 0.3) * 0.62 * 1.6, ry = rr() * 6.28
+          if (!(S.water > 0.005 && surfH(px, pz) < S.water * S.amp + 0.15 + (bush ? 0.2 : 0.6))) put(kind, px, pz, sc, 0.05, ry, propGroup) } } }   /* nie im See (AD-Audit Befund 7): Büsche ab +0,2 m, Bäume ab +0,6 m über dem Spiegel; Saatfolge unverändert */
     if (S.crumbs) { rs = 23
       for (const o of stoneGroup.children) crumbRing(o.position.x, o.position.z, o.scale.x * 0.55, o.scale.x * 1.0, 6, 0.06 * o.scale.x + 0.05, 0.22 * o.scale.x + 0.06)
       for (const o of propGroup.children) crumbRing(o.position.x, o.position.z, 0.35, 0.9, 4, 0.05, 0.18)
