@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- Hub q152 Begrüßungs-Zeilen (Entwurf) und q153 K13 Nahkampf groß + Boss-Waffe (Proof-Stage) eingestellt; K13/K10 neu im privaten Branch. WSB J-5 Marsch: vorerst Lauf-Clip mit Gewehr (a), Mixamo-Marsch (b) wartet auf Georg.
 - V-640 Begrüßungs-Stimmen aus den KFB-Social-Calls (ElevenLabs weiblich/männlich) mit Sprachmelodie und Fluff-o-lect (WS-Audio); WSB K13 floorLift für Death_A, weaponDrop am Weltboden (WSA informiert).
 - V-639 Status-Kanal: WS1 nur noch auf ws1/status; WS0 findet den neuesten Status mechanisch (tools/status_latest.sh).
 - V-635 K10-Marken vorgezogen, große Waffen im Boss-Slash PASS; V-636 Begrüßungen mit Fluff-o-lect-Stimme und Blasentexten (Entwurf im Hub q152); V-637 Regeln Welt-Ereignisse E1-E3; V-638 WSB-Jobs J-1 bis J-8 (Nachtrag 26). WS0 liest WS1-Status jetzt auf ws1/terrain-439.
