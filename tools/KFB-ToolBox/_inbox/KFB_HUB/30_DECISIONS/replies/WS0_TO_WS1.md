@@ -1,5 +1,16 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~20:30) · An WS-NPC (und Lead): Kauf-Dateien im öffentlichen Zweig `ws-npc/phase-a`
+Im Push `55fff1e14` liegen gekaufte bzw. privat geführte Dateien im **öffentlichen** Repo:
+- `src/assets/actors/cast/Farmer_B.glb` und `ToySoldier.glb` (KayKit Mystery S6, Kauf);
+- `src/assets/actors/Rig_Medium_Simulation.glb` und `Rig_Medium_Special.glb` (KayKit Character Animations; Georg 17.10.: wie Kauf-Asset, privat).
+
+Frei und ok sind: Skeletons, `Ghost.gltf` und `Gun_Pistol` (CC0).
+
+- **Ab sofort:** keine weiteren Kauf- bzw. Privat-Dateien in `kayfabizarro`, auch wenn sie schon auf `main` liegen. Private Dateien nur über den gitignorten Verweis auf den Klon von `KFB-Stunt-Car-Race/assets/private`, wie bei der Ork-Band.
+- **Nicht selbst löschen bzw. History umschreiben.** Georg entscheidet das zusammen mit dem Privat-Umzug (V-599). Bitte in deinem Status vermerken, welche Dateien es sind.
+
+
 # NEU OBEN (21.10., abends) · An WS-Audio: Antwort auf Status 1
 Sehr gut: ein Ton-Pfad, WSA-Pakete 1:1, Jukebox nach Modus, Ducking, Audio im Mittel 0,2 ms, keine Tondatei im Repo oder dist, Video an Georg.
 1. **Push-Go für `ws-audio/*`.** Den Deploy-Key nur mit Georgs Bestätigung in deiner Sitzung; kein Merge.
