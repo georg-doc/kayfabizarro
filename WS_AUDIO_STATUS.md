@@ -5,9 +5,9 @@ Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Ab
 ## 1 · 21.10. · Tier 0 steht lokal: ein Ton-Pfad, ganzer Ton auf dem Probe-Gelände
 
 **Stand:**
-- Branch `ws-audio/r1` im lokalen Repo `kfb-planet`, Commit 8660a84, aufgebaut auf `terrain/probe-world` @73d7790.
+- Branch `ws-audio/r1` im lokalen Repo `kfb-planet`, Commit 3929575, rebased auf `terrain/probe-world` @ba94c9d (Lead 21.10.: __RIVA behoben, Fahrzeug-Look A).
 - Nicht gepusht und nicht nach main gemergt. Push erst nach WS0-Go, Merge nur mit Georg.
-- Georg hat das 2-Minuten-Video mit Ton bekommen. Die Abnahme durch sein Ohr steht noch aus.
+- Georg hat das 2-Minuten-Video mit Ton bekommen, auch als Handy-Fassung (MP4 H.264/AAC, 960×540, 17,7 MB). Die Abnahme durch sein Ohr steht noch aus.
 
 **Volle Fassung lokal starten (ein Befehl):**
 ```
@@ -148,5 +148,9 @@ cd ~/kfb-ws1/kfb-planet/.claude/worktrees/affectionate-nash-61b1ea && npm run to
 ### Prüfungen
 - `test/unit/audioMixer.mjs` (in `npm test`): **PASS**. Geprüft werden Busse, Ducking, Regler, Musikliste je Modus mit Nachlauf, Zufallsfolge, Varianten, Entfernung, Stimmen-Pool, Zuordnung vollständig, alle 7 Dark-Fluffer-Ereignisse, die 5 K10-Ereignisse, Wasser-Ortung, Untergrund, Pfad-Schutz des Ton-Servers, keine Tondatei im Repo, jede Bank-Zeile findet echte Dateien.
 - `test/audio.mjs` (Browser, `PW_GPU=1 npm run test:audio`): **PASS**. Geprüft werden: still vor der Eingabe, ein AudioContext, alle Module, Cozy zu Fuß, Schritte, Atmo + Wasser, Kampf, die Adapter K10 und Fluffer, Ducking, Stimmen-Grenze, Suno bei Fahrt, Gänge und Drehzahl, ≤ 1 ms.
-- `npm test` (volle Reihe): Die Unit-Tests einschließlich audio-mixer sind **PASS**. Die Reihe bricht danach an `contract-static: debugOnlyKfbGlobals` ab. Ursache ist nicht WS-Audio: Der Basis-Branch `terrain/probe-world` @73d7790 setzt in `src/world/kfb-hydro.v1.js` `window.__RIVA`. Das ist an den Lead gemeldet. Die restlichen Browser-Tests laufen einzeln; das Ergebnis kommt als Nachtrag.
+- `npm test` (volle Reihe):
+  - Auf @73d7790 brach die Reihe an `contract-static: debugOnlyKfbGlobals` ab. Ursache war `window.__RIVA` im Basis-Branch, nicht WS-Audio.
+  - Nach dem Rebase auf @ba94c9d ist `contract-static` **PASS**, `audio-mixer` ist **PASS**.
+  - Einzeln **PASS** (nur ein Test zur Zeit, Lead-Wunsch): deps, host, s0, s1, s5a, s5b, preview. s5a fiel einmal unter Last 40–80 durch und läuft allein grün.
+  - Die volle Reihe kommt, sobald WS-NPC mit seiner Reihe fertig ist.
 - Abnahme-Video: `PW_GPU=1 npm run audio:video`, Ausgabe nur lokal in `test/out/audio/`.
