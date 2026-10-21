@@ -8439,6 +8439,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-596",
+   "date": "2026-10-21",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "Disco-Tänze K12: Motion-Library-Tanzclips (Mixamo-Ableitung) sinken je Bild bis 35 cm ein. Lösung: Clip-Spur unverändert, Laufzeit wendet eine Bodenlift-Tabelle je Figur x Clip x Bild an (floorLift, Werte aus den WSB-floor-Reports); kein Hüft-Lift in der Clip-Spur, kein pauschaler groundOffset (Schweben).",
+   "values": {},
+   "owner": "WSB (K12) · WS1 (Laufzeit)",
+   "check": "Tänzer ohne Einsinken und ohne Schweben",
+   "source": "WS0 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Bodenkontakt ist Kanon; die Tabelle hält die Quelle unverändert und ist für die Laufzeit billig.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8526,7 +8541,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1035",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1036",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

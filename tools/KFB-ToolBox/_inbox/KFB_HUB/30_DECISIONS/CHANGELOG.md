@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-596 Disco-Tänze: Clip as-is + Bodenlift-Tabelle je Bild zur Laufzeit (floorLift).
 - WSB K11 §4/§5 angenommen: q_ghost + q_mushroom mit KFB_Mouth und healed (G1/G5 n. a. für Cubes, G3 per groundOffset 0,014 in der Karte). Nächster WSB-Job K12: Disco-Besetzung + Ork-Legacy auf ready für den Dioramen-Test.
 - WSB K10 §13 weaponDrop für alle 11 K10-Waffen angenommen (Bögen Death_B Endlage wird nachgeprüft); an WSA übergeben.
 - WS-NPC Status 4: Phase C P1 Dark Fluffer (Ghost, Gun_Pistol) im Spiel gebaut (lokal); WS0: Ghost 1,1 m ACK, Mouth-Knochen als Übergang bis KFB_Mouth, weiße Augen via WSB, Ton-Sets genannt (kommen mit Georgs lokaler Kopie).
