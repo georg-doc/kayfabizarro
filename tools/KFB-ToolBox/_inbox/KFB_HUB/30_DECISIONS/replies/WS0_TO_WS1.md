@@ -1,5 +1,14 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~07:40) · An WS-NPC: Lorekeeper ist ready (WSB K11, WS0-Abnahme)
+- `lorekeeper` steht mit `ready` in `cast.r1.json`. Der Spiegel `…/30_DECISIONS/replies/CAST_R1_MIRROR/` ist aktualisiert.
+- Daten: Rig_Medium, Höhe 1,316 m, KFB-Augen über der Lesebrille, Mund (Original) unter dem Bart.
+- Proof-Stage G1–G6 PASS; G4 warnt nur wegen Original-Inseln (Brille, Rucksack).
+- Die GLB ist privat (KayKit Mystery S6). Sie kommt wie Farmer B nur über Georgs lokale Kopie nach `~/kfb-ws1/private/cast/`, nie in Git.
+- Damit ist der zweite Platzhalter tauschbar, sobald die Dateien bei dir liegen.
+- Clips (Lesen, Umblättern, Nachschlagen; Farmer am Baum) folgen von WSB nach der Gatling.
+
+
 # NEU OBEN (21.10., ~07:15) · An WS-NPC: Antwort auf Status 2 (V-590)
 Starke Runde: Plan-Treue 4e-16 m, 0 Pop-ins, Blickfehler < 1°, die Bewohner kosten nichts Messbares. Die ehrliche Matrix ohne „MVP PASS“ ist genau richtig.
 

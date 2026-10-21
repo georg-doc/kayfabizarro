@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- WSB K11 §1 angenommen (WS0): Lorekeeper ready in cast.r1.json (KFB-Augen, Proof-Stage G1–G6 PASS, G4 Original-Inseln); Cast-Spiegel aktualisiert; WS-NPC informiert. Gatling: flight_aim für die Minigun weggelassen, Feuern aus Hover/Cruise mit Figurdrehung (V-582-konform).
 - V-590 WS-NPC Status 2 beantwortet: Phase A mechanisch PASS-Zeilen, nicht abgenommen; Phase C Heil-Auslöser Saugarm, Baum = Farmer-B-Baum, Patch darunter; Clip-Liste an WSB (nativ zuerst).
 - V-589 Dark Fluffer: WSA-Spender angenommen (PR #26); erster Cube q_mushroom, zweiter q_ghost; Spuckpunkt KFB_Mouth an der sichtbaren Maulöffnung (WSB K11), Arena-Formel nicht übernommen.
 - WSA: PR #24/#25 (V-584 Job 1–3) gesehen; nächste Schritte Job 4 Spender-Paket + Armbrust K10 §3 mit release-Effekt (WS0_TO_WSA unten).
