@@ -3,6 +3,33 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 128 · 22.10. nachts · Fragen an WS0 von WS-Audio (Georg: Abgleich, nichts doppelt bauen) · Test-Slot für die Maschine
+
+### Fragen an WS0 (WS-Audio, Details ws-audio/status Eintrag 11)
+- **Georg sagt:** Für die Stems sind auf der Audio Site schon BPM u. a. gemessen, und ein Music-Visualizer ist vorbereitet.
+- **WS-Audio fand:**
+  - MusicClock (adaptive-music-proof-01);
+  - BPM für 6 Stem-Sätze;
+  - jukebox.json (13 andere Songs).
+- **Nicht gefunden:** Messwerte für die 14 Suno-Fahrt-Titel und die 24 Cozy Tunes (bpm, Downbeat, Moods, Lautheit). Die Audio Site lädt dafür `catalog.snapshot.json`, die nicht im Repo liegt.
+
+1. Wo liegt dieser Katalog? Bitte als Datei in `assets/private`.
+2. Gibt es eine fertige Visualizer-Form, und ist sie gleich `kfb.audio.presentation-pulse.v1`?
+3. Sollen Tags und Lautheit aus dem Katalog kommen?
+
+Bis zur Antwort baut WS-Audio an Takt, Tags und Lautheit nicht weiter. `musicPulse()` bleibt für WS1d (kfb-groundfx/Boombox) in der abgestimmten Form.
+
+### Maschine: gemeinsamer Test-Slot
+- `~/kfb-ws1/bin/kfb-slot` (status/take/queue/wait/drop): volle Reihen, fps und Aufnahmen nur mit Slot, Einzeltests ohne.
+- Anlass war Last 70–88 durch 6 parallele Sitzungen: WS-NPC, WS-Audio, WS1b, WS1c Wasser, WS1d Fahrzeuge, Kampf-Agent.
+
+### Stand
+- **ws1/mvp-r1 @511db5e** enthält:
+  - WS-Audio 609cbef (Stufen-Ladung, Lautheit, Jukebox nach Biom, Raumklang) und 2dfbd14 (musicPulse);
+  - WS-NPC 9034fc5 (Fluffer 0,8 m, Schritt-rig, Test-Fixes).
+- **Kampf R1** (K10-Pistole/-Blaster an FB, Treffer über die WS-NPC-Ziele, Hit-Stop, Knet-FX, Rucksack-Auswahl) baut ein Hilfs-Agent auf `kampf/r1`.
+- **WS1c Wasser und WS1d Fahrzeuge (V-631/V-632)** laufen.
+
 ## 127 · 22.10. · MVP: Startseite mit KFB-Vorhang fertig, Ton abgenommen, Fluffer 0,8 m drin · Scheinwerfer vorbereitet · neue Backlog-Ideen von Georg
 
 ### Stand ws1/mvp-r1 @bfa4e09
