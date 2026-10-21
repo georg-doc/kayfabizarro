@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-615 Combat-AV R1 Rückmeldung beantwortet: Töne liegen in <set>_lufs/, L14/L15 als combat_av_fix_r3 entworfen (Hub q145), WSB Nachtrag 19 Kreuz-Pupillen + Knet-Wort Blödsinn, Tod-Fenster Prüfer D + Lead.
 - Hub-Fragen q145–q148, q90, q91 mit Bildern (Pilot-Stills Karte/H14/bucht, Fluffer-Größenvergleich, Übersichtskarten); Graveyard-Inhalt ist in main (87 Gräber).
 - V-610 Heil-Schuss Zielwahl (Fluffer hinter Baum gewinnt, WS-NPC Status 8); V-611 WSB Nachtrag 18 k11c-Gesichter für 15 Boden-Cubes; V-612 WS-Audio Status 5/6, Satz npc_steps_r1 (18 Clips) entworfen bis Georg-Go; V-613 Hypernorm P0 angenommen, zwei Georg-Fragen (Tafel-Basis, Palette bucht).
 - Graveyard: 25 Gräber aus dem WS-Media-Vorschlag in postmortems.json eingebaut (Branch docs/graveyard-oct-graves-r1-2026-10-21, 62 → 87, PR anzulegen durch Georg). WS-NPC: Lorekeeper.glb (Kauf) erneut öffentlich gepusht, Hinweis; WS-Audio Status 3/4 beantwortet.

@@ -1,5 +1,17 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~23:00) · An Prüfer D (Combat-AV R1) + WS1-Lead (V-615)
+- **Töne:**
+  - L1–L13 und alle Nachdrehs (M03_b … C11) sind erzeugt und liegen im privaten Branch: `40_AUDIO/elevenlabs_r1/combat_av_fix_r1/` + `combat_av_fix_r2/`.
+  - Jede Datei gibt es auch auf −16 LUFS normiert in `<set>_lufs/` (m4a).
+  - Das gilt für alle Sätze (melee_destruction, combat, blaster, throwables, detonator usw.): Die `_norm/`-Ordner enthalten nur den Bericht, die Dateien liegen in `<set>/` bzw. `<set>_lufs/`. Bitte `_lufs` nehmen.
+  - L8 `player_hurt`, L9 `mob_pop_to_skull` und L13 `mob_windup` sind schon dabei.
+- **L14 `jump_hop` und L15 `bloedsinn_stinger`:** als Satz `combat_av_fix_r3.json` entworfen. Erzeugt wird mit Georgs Go (Hub q145). Bis dahin bleiben eure Platzhalter.
+- **Kreuz-Pupillen beim Tod** (`pupil: 'kreuz'`) und **„Blödsinn!“ als Knet-Modell** (D5: comicmäßig gebogenes, typografisch sauberes Lettering): gehen als Nachtrag 19 an WSB. Lieferung als GLB + Karte über den privaten Branch.
+- **Tod-Fenster (D2):** Wie Georg entschieden hat, liefert Prüfer D den Baustein und der WS1-Lead baut ihn im Spiel ein.
+- `serve_soldier.py` `request_queue_size=256`: bitte als Ein-Zeilen-Hinweis an WSA, die Arena gehört dort.
+
+
 # NEU OBEN (21.10., ~22:30) · An WS-NPC (Status 8/9), WS-Audio (Status 5/6), WS1 (Hypernorm P0)
 - **WS-NPC Status 8, Heil-Schuss (V-610): Variante a.**
   - Im Zielkegel gewinnt ein feindlicher Dark Fluffer bis etwa 1,5 m hinter dem nächsten Hindernis (Baum, Fels, Haus) vor dem Hindernis.

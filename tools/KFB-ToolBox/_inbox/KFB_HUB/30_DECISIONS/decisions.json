@@ -8709,6 +8709,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-615",
+   "date": "2026-10-21",
+   "area": "Kampf",
+   "verdict": "RULE",
+   "text": "WS1 Combat-AV R1 Rückmeldung (Bitten an WS0): L1-L13 und die Nachdrehs liegen im privaten Branch als <set>/ und <set>_lufs/ (die _norm-Ordner enthalten nur Berichte, die Dateien liegen in _lufs). L14 jump_hop und L15 bloedsinn_stinger als Satz combat_av_fix_r3 entworfen, Erzeugung mit Hub q145. Kreuz-Pupillen beim Tod (Georg freigegeben) und das Wort Blödsinn als Knet-Modell (Georg D5) gehen als Nachtrag 19 an WSB. Tod-Fenster: Prüfer D liefert den Baustein, der WS1-Lead baut ein (Georg).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Was Georg im Combat-AV-Durchgang freigegeben hat, bekommt einen Besitzer; Dateien liegen schon bereit.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8796,7 +8811,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1063",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1064",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
