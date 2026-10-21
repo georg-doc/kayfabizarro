@@ -135,3 +135,9 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
   - Summon: Bodenstoß 2,767 s
 - **Summon** nur ohne Waffe (exclude bei Zauberstab bzw. Stab).
 - Lange Stäbe folgen, wenn WSB sie freigibt.
+
+## Lange Stäbe K10 §10 fertig (WSB 21.10., V-593)
+- **Karten:** `50_BLENDER/K10/data/kfb_kit_skeleton_staff.weapon.json`, `kfb_kit_staff.weapon.json` (CC0), CONTRACT_PASS. `mount.families.perClip`: je Clip eine feste Kippung + Griff am Stiel.
+- **Clips:** Shoot, Spellcasting, Spellcasting_Long. Ausgeschlossen: Raise (keine freie Haltung) und Summon mit Waffe.
+- **Zauberrichtung** beim cast 10–13° seitlich durch die Kippung. Mit der Ziel-Familien-Logik ausgleichen: Figur drehen bzw. zielen (wie V-582).
+- **Marken mit Halterung:** Shoot cast 0,300 s, Long 1,567 s. Bild `K10/out/K10_magie_staebe_v593.png`.

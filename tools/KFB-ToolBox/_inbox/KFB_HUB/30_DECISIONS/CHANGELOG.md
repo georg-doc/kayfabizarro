@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- WSB K10 §10 lange Stäbe angenommen (V-593 umgesetzt: je Clip feste Kippung, 0 Durchstich, Raise ausgeschlossen); an WSA übergeben.
 - Antworten auf WS1_STATUS §119–§121: kfb_edge-Sprenkelband nach Kanon-Parametern (band 0,55 / sprinkle 0,45 m), Zonenübergänge = Gebiet 17; Kritiker-Stopp ACK; WS-NPC Phase C P1 frei.
 - Georg (zurück): Ja zur Nutzung von Quaternius Mushroom/Ghost (CC0, lokal unter KFB Combat Arena/_handover/V584_JOBS_2026-10-21/04-dark-fluffer/source/) für WSB K11; Georg bestätigt es WSB direkt in dessen Sitzung.
 - V-593 Magie: Zauberstab angenommen (an WSA), Summon nur ohne Waffe, lange Stäbe je Clip feste Kippung sonst exclude, keine andere Figur.
