@@ -496,10 +496,10 @@
     const top = info.layers.slice().reverse();
     top.forEach((L, k) => {
       const i = info.layers.length - 1 - k; // index from the bottom
-      const li = document.createElement('li'); li.className = 'layer' + (L.visible ? '' : ' hidden-layer'); li.dataset.id = L.id;
+      const li = document.createElement('li'); li.className = 'layer' + (L.visible ? '' : ' hidden-layer') + (L.clip ? ' clipped' : ''); li.dataset.id = L.id;
       li.setAttribute('role', 'option'); li.setAttribute('aria-selected', L.id === info.active);
       const [abbr, long] = BLEND_LABEL[L.blend] || ['N', 'Normal'];
-      li.innerHTML = '<canvas class="thumb" width="128" height="80"></canvas><span class="lname">' + esc(L.name) + '<small>' + long + (L.opacity < 1 ? ' · ' + Math.round(L.opacity * 100) + ' %' : '') + (L.alphaLock ? ' · alpha lock' : '') + '</small></span>' +
+      li.innerHTML = '<canvas class="thumb" width="128" height="80"></canvas><span class="lname">' + esc(L.name) + '<small>' + long + (L.opacity < 1 ? ' · ' + Math.round(L.opacity * 100) + ' %' : '') + (L.alphaLock ? ' · alpha lock' : '') + (L.clip ? ' · clipped' : '') + '</small></span>' +
         '<button class="blendbtn" data-act="opts" aria-expanded="' + (layerOpts === L.id) + '" title="Opacity, blend mode and layer actions">' + abbr + '</button>' +
         '<input class="vis" type="checkbox" data-act="vis" title="Visible"' + (L.visible ? ' checked' : '') + ' aria-label="Visible">';
       const t = li.querySelector('canvas').getContext('2d'); t.drawImage(L.canvas, 0, 0, 128, 80);
@@ -510,6 +510,7 @@
           '<div class="set"><label for="layerOpacity">Opacity</label><output id="layerOpacityOut">' + Math.round(L.opacity * 100) + ' %</output><input id="layerOpacity" type="range" min="0" max="1" step="0.01" value="' + L.opacity + '"></div>' +
           '<div class="set"><label for="layerBlend">Blend mode</label><span></span><select id="layerBlend" style="grid-column:1/-1">' + E.BLENDS.map(b => '<option value="' + b + '"' + (b === L.blend ? ' selected' : '') + '>' + BLEND_LABEL[b][1] + '</option>').join('') + '</select></div>' +
           '<div class="set toggle"><label for="layerAlpha">Alpha lock<span class="meta" style="display:block">paint only where the layer has paint</span></label><input id="layerAlpha" class="switch" type="checkbox"' + (L.alphaLock ? ' checked' : '') + '></div>' +
+          '<div class="set toggle"><label for="layerClip">Clipping mask<span class="meta" style="display:block">' + (i === 0 ? 'needs a layer below' : 'show only where the layer below has paint') + '</span></label><input id="layerClip" class="switch" type="checkbox"' + (L.clip ? ' checked' : '') + (i === 0 ? ' disabled' : '') + '></div>' +
           '<div class="acts"><button id="layerUp"' + (i === info.layers.length - 1 ? ' disabled' : '') + '>Up</button><button id="layerDown"' + (i === 0 ? ' disabled' : '') + '>Down</button>' +
           '<button id="layerDup"' + (info.layers.length >= info.max ? ' disabled' : '') + '>Duplicate</button><button id="layerMerge"' + (i === 0 ? ' disabled' : '') + '>Merge down</button>' +
           '<button id="layerClear">Clear</button><button id="layerDel"' + (info.layers.length === 1 ? ' disabled' : '') + '>Delete</button></div>';
@@ -550,6 +551,7 @@
     if (e.target.id === 'layerOpacity') E.setLayer(id, { opacity: Number(e.target.value) });
     if (e.target.id === 'layerBlend') E.setLayer(id, { blend: e.target.value });
     if (e.target.id === 'layerAlpha') E.setLayer(id, { alphaLock: e.target.checked });
+    if (e.target.id === 'layerClip') guard(() => E.setLayer(id, { clip: e.target.checked }));
     if (e.target.id === 'layerName') E.setLayer(id, { name: e.target.value.trim() });
   });
   $('layerList').addEventListener('input', e => {

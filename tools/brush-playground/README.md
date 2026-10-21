@@ -22,7 +22,9 @@ Procreate's layout is the blueprint, KFB's palette the skin (ink-black chrome, p
 
 - **Layers (R1.8):** top-bar button (L). Procreate's panel as blueprint: top layer first, thumbnail, name, blend letter and visibility per row; tapping the letter opens name, opacity (live preview, one undo step), blend mode (16 modes, computed against what lies below including the paper), alpha lock, up/down, duplicate, merge down, clear, delete. Background colour row at the bottom (hide for transparency, swatch takes the current colour). Up to 16 layers. Every layer action is undoable; checkpoints share unchanged layers (copy-on-write). Eyedropper samples the composite as seen. PNG transparent = visible layers; PNG on paper adds the background colour. Drawings are saved as `session/2`; `session/1` files from R1.6/R1.7 load into Layer 1.
 
-Not in the playground yet: selection, transform, adjustments, smudge, layer groups, clipping masks.
+- **Clipping masks (R1.9):** in the layer options (not for the bottom layer). A clipped layer shows only where the nearest non-clipped layer below (its base) has paint; its own content outside stays intact. The group takes the base's coverage, opacity and blend mode and hides with the base. Normal is exact (`source-atop`); other blend modes are masked by the base and the group alpha is reset to the base alpha, so grainy bases do not fill up. Merge down of a clipped layer applies it into the base with the same maths. Clipped rows are indented with an arrow to the base.
+
+Not in the playground yet: selection, transform, adjustments, smudge, layer groups, reference layer.
 
 ## What it does
 

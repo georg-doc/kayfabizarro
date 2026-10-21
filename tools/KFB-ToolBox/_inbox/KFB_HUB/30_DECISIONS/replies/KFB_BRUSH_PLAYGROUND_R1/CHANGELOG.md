@@ -1,5 +1,10 @@
 # KFB Brush Playground R1 · changelog (additive, newest first)
 
+## 2026-10-22 · R1.9 · Clipping masks (Claude Code)
+- Clipping masks after Procreate: switch in layer options, clipped rows indented with an arrow to the base.
+- Group compositing shared by view, live strokes, export and tests: base coverage, opacity, blend and visibility carry the group; Normal exact via source-atop, other modes reset to the base alpha; merge down into the base with the same maths.
+- Unit 41/0, Chromium 41/0 (4 new clipping tests).
+
 ## 2026-10-22 · R1.8 · Layers (Claude Code)
 - Up to 16 layers plus background colour; Procreate-style Layers panel with opacity, 16 blend modes, alpha lock, up/down, duplicate, merge down, clear, delete.
 - Action-based document with copy-on-write checkpoints: every layer action undoable, replays exact; blend modes against the paper; eyedropper samples the composite.

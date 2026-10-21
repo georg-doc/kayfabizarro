@@ -77,3 +77,9 @@ Added prototype/index.html (local brush shape import, pointer drawing, undo/redo
 - Result: unit 41/0, Chromium 37/0 (6 new layer tests). No PR, merge, deployment, Site, Notion or georgbrush.club change.
 - **One next gate:** Georg draws a small comic panel with ink on one layer and colour (Multiply) on another and says what is missing compared to his Procreate routine (candidates: clipping mask, reference layer, drag reorder, selection/transform).
 - Checkpoint: R1.8 implementation commit `1f641f8bda7c685113572d0d9165721fe69c76c3`, pushed and verified with `git ls-remote`; this line is a follow-up docs commit.
+
+## R1.9 · 2026-10-22 · Clipping masks
+- Georg: “ja, mach mit Clipping Masks weiter”.
+- Delivered: clipping masks after Procreate (switch in layer options, indented rows with arrow to the base, group takes base coverage/opacity/blend/visibility, exact Normal, alpha-preserving other modes, merge into base). Unit 41/0, Chromium 41/0 (4 new clipping tests).
+- No PR, merge, deployment, Site, Notion or georgbrush.club change.
+- **One next gate:** Georg colours an ink drawing with a flat base layer and clipped Multiply shading and names the next missing piece (candidates: reference layer + fill, selection/transform, layer groups).

@@ -602,6 +602,82 @@ await t('B37 background colour: hide shows transparency, swatch takes current co
   return 'hide → α 0 · violet swatch → view and PNG on paper · undo → paper cream';
 });
 
+/* ================= R1.9 · clipping masks ================= */
+const flatAlpha = r => px(r => { const d = KFB.flatCanvas().getContext('2d').getImageData(r.x, r.y, r.w, r.h).data; let s = 0, n = 0; for (let i = 3; i < d.length; i += 4) { s += d[i]; if (d[i] > 8) n++; } return { sum: s, n }; }, r);
+const rowsOf = (id, x) => px(([id, x]) => { const d = KFB.layerCanvas(id).getContext('2d').getImageData(x, 0, 1, 1000).data; let y0 = -1, y1 = -1; for (let y = 0; y < 1000; y++) if (d[y * 4 + 3] > 8) { if (y0 < 0) y0 = y; y1 = y; } return [y0, y1]; }, [id, Math.round(x)]);
+let CL = {};
+await t('B38 clipping mask: clipped paint shows only inside the base, content kept, toggle + undo exact', async () => {
+  await fresh(); await openLayers(); await page.click('#layerAdd');
+  const base = (await px(() => KFB.layers())).active;
+  await setVal('#size', 120); await setVal('#color', '#4f8a85');
+  await pen(hline(1060, 1320, 440, 30, 1));
+  await openLayers(); await page.click('#layerAdd');
+  const clip = (await px(() => KFB.layers())).active;
+  await openLayerOpts(clip); await page.click('#layerClip');
+  ok((await px(() => KFB.layers())).layers.find(l => l.id === clip).clip, 'clip flag');
+  await page.waitForSelector(`#layerList li.layer.clipped[data-id="${clip}"]`, { timeout: 3000 }).catch(() => null);
+  ok(await page.$eval(`#layerList li.layer[data-id="${clip}"]`, el => el.classList.contains('clipped')), 'row not shown as clipped');
+  await page.screenshot({ path: path.join(PRIV, 'B38_clip_panel.png') });
+  await setVal('#size', 240); await setVal('#color', '#c2412c');
+  await pen(hline(1000, 1360, 440, 40, 1));
+  await setVal('#size', 70); await setVal('#color', '#1f1a14');
+  const xc = C(1190), [b0, b1] = await rowsOf(base, xc), [c0, c1] = await rowsOf(clip, xc);
+  ok(b0 > 0 && c0 < b0 - 8 && c1 > b1 + 8, `clipped stroke must extend beyond the base: base ${b0}-${b1}, clipped ${c0}-${c1}`);
+  const outside = { x: Math.round(xc - 40), y: b1 + 4, w: 80, h: Math.max(4, c1 - b1 - 6) };
+  const inside = { x: Math.round(xc - 40), y: Math.round((b0 + b1) / 2) - 6, w: 80, h: 12 };
+  ok(await layerAlpha(clip, outside) > 100, 'clipped layer has no content outside the base (test region)');
+  const out1 = await flatAlpha(outside);
+  ok(out1.n === 0, 'clipped paint visible outside the base: ' + out1.n + ' px');
+  const red = await px(r => { const d = KFB.flatCanvas().getContext('2d').getImageData(r.x, r.y, r.w, r.h).data; let n = 0; for (let i = 0; i < d.length; i += 4) if (d[i + 3] > 8 && d[i] > d[i + 1] + 40) n++; return n; }, inside);
+  ok(red > 200, 'clipped colour not inside the base: ' + red);
+  const hClip = await hash();
+  await openLayerOpts(clip); await page.click('#layerClip');
+  const out2 = await flatAlpha(outside);
+  ok(out2.n > 100, 'clip off: paint outside should appear, got ' + out2.n);
+  await page.click('#undo'); ok(await hash() === hClip, 'undo clip-off');
+  await page.click('#redo'); ok((await flatAlpha(outside)).n === out2.n, 'redo clip-off');
+  await page.click('#undo');
+  CL = { base, clip, outside, inside, box: { x: Math.round(C(1000)), y: c0, w: Math.round(C(360)), h: c1 - c0 + 1 } };
+  await page.screenshot({ path: path.join(PRIV, 'B38_clipping.png') });
+  return `outside base: ${out1.n} px with clip, ${out2.n} px without · ${red} red px inside · undo/redo exact`;
+});
+
+await t('B39 clipped Multiply keeps the base coverage (no filling up)', async () => {
+  const { base, clip } = CL, region = { x: CL.box.x, y: CL.box.y, w: CL.box.w, h: CL.box.h };
+  await openLayerOpts(clip); await page.click(`#layerList li.layer[data-id="${clip}"] .vis`);
+  const baseOnly = await flatAlpha(region), basePx = await viewPx(CL.inside.x + 40, CL.inside.y + 6);
+  await page.click(`#layerList li.layer[data-id="${clip}"] .vis`);
+  await openLayerOpts(clip); await page.selectOption('#layerBlend', 'multiply');
+  const grp = await flatAlpha(region), mulPx = await viewPx(CL.inside.x + 40, CL.inside.y + 6);
+  ok(Math.abs(grp.sum - baseOnly.sum) <= baseOnly.sum * 0.002, `alpha sum base ${baseOnly.sum} vs group ${grp.sum}`);
+  ok(mulPx[1] < basePx[1] - 10, `multiply should darken green: ${basePx} → ${mulPx}`);
+  return `alpha sum ${baseOnly.sum} → ${grp.sum} · pixel ${basePx.slice(0, 3)} → ${mulPx.slice(0, 3)}`;
+});
+
+await t('B40 hiding the base hides its clipping group', async () => {
+  const { base, clip } = CL;
+  await openLayers(); await page.click(`#layerList li.layer[data-id="${base}"] .vis`);
+  const a = await flatAlpha(CL.box);
+  ok(a.n === 0, 'group still visible: ' + a.n + ' px');
+  await page.click(`#layerList li.layer[data-id="${base}"] .vis`);
+  ok((await flatAlpha(CL.box)).n > 1000, 'group back');
+  return 'base hidden → 0 px in the group area';
+});
+
+await t('B41 merge a clipped layer into its base: pixels unchanged, undo restores both layers', async () => {
+  const { clip } = CL;
+  await openLayerOpts(clip); await page.selectOption('#layerBlend', 'normal');
+  const n0 = (await px(() => KFB.layers())).layers.length, h0 = await hash();
+  await openLayerOpts(clip); await page.click('#layerMerge');
+  ok((await px(() => KFB.layers())).layers.length === n0 - 1, 'layer count');
+  const h1 = await hash();
+  ok(h1 === h0, `merge changed pixels ${h0} → ${h1}`);
+  await page.click('#undo'); ok((await px(() => KFB.layers())).layers.length === n0 && await hash() === h0, 'undo merge');
+  await page.click('#redo'); ok(await hash() === h1, 'redo merge');
+  await page.click('#undo');
+  return `merge down of the clipped layer: hash ${h0} kept · undo/redo exact`;
+});
+
 /* ---- screenshots (before the synthetic performance strokes) ---- */
 await fresh();
 await px(() => KFB.select(KFB.brushes()[0].id));
@@ -611,7 +687,7 @@ await page.screenshot({ path: path.join(PUB, 'editor_ui_canvas.png') });
 const mask = await page.addStyleTag({ content: MASK });
 await px(() => KFB.ui.openStudio('pencil')); await page.screenshot({ path: path.join(PUB, 'editor_ui_studio_masked.png') }); await px(() => KFB.ui.closeStudio());
 await page.click('#btnColor'); await page.click('#popColor .tab[data-tab="palettes"]'); await page.screenshot({ path: path.join(PUB, 'editor_ui_palettes.png') });
-await px(() => KFB.ui.closeAll()); await page.click('#btnLayers'); await page.click('#layerList li.layer >> nth=0 >> .blendbtn'); await page.screenshot({ path: path.join(PUB, 'editor_ui_layers.png') });
+await px(() => KFB.ui.closeAll()); await page.click('#btnLayers'); await page.click('#layerList li.layer >> nth=0 >> .blendbtn'); await page.waitForTimeout(60); await page.screenshot({ path: path.join(PUB, 'editor_ui_layers.png') });
 await mask.evaluate(n => n.remove());
 await fresh();
 

@@ -188,3 +188,27 @@ Public: `tools/brush-playground/evidence/editor_ui_layers.png` (+ the earlier UI
 
 ### Open
 iPad/Pencil and Safari; layer groups, clipping masks, reference layer, drag-to-reorder, selection/transform; per-frame cost grows with the number of visible layers (measured only with 2).
+
+## R1.9 · 2026-10-22 · Clipping masks
+Georg: “ja, mach mit Clipping Masks weiter”.
+
+### What was built
+- Layer property `clip` (undoable `layer-set`, kept by duplicate, sessions and checkpoints). Not allowed on the bottom layer; a clipped layer moved to the bottom acts as a base.
+- Compositing (`compositeInto`, shared by view, live strokes, exports and tests): base + following clipped layers form a group; the group is drawn with the base's opacity and blend mode; a hidden base hides the group; hidden clipped layers are skipped. Normal clipped layers use `source-atop` (exact). Other blend modes: clipped layer masked by the base (`destination-in`), blended, then the group's alpha is reset to the base alpha in one pixel pass over the region.
+- Merge down of a clipped layer into its base uses the same maths. Merge of a clipped layer into a clipped sibling stays a plain composite (approximation).
+- Layers panel: “Clipping mask” switch in the options, clipped rows indented with an arrow down to the base, “clipped” in the row subtitle.
+
+### Checks actually run (2026-10-22, Chromium 156.0.8078.4 headless)
+- `node tests/unit.mjs`: **41 passed, 0 failed** (core unchanged).
+- `node tests/browser.mjs`: **41 passed, 0 failed**. New:
+
+| # | Check | Result |
+|---|---|---|
+| B38 | 240 px red stroke clipped to a 120 px teal base: 0 px visible outside the base (2,880 px when clip is off), content kept on the clipped layer, 960 red px inside; toggle off, undo/redo exact; row shown indented | PASS |
+| B39 | clipped Multiply over a grainy CRAYONIC base: flat alpha sum 7,494,377 with and without the clipped layer (coverage unchanged), pixel 78,138,132 → 59,35,22 | PASS |
+| B40 | base hidden → 0 px in the whole group area, shown again → back | PASS |
+| B41 | merge the (Normal) clipped layer down into its base: pixel hash unchanged, layer count −1, undo/redo exact | PASS |
+| B14 | performance (3–4 layers, 72 strokes) | frame mean 1.97 ms / max 3.6 ms, commit ≤ 20.5 ms, undo rebuild 89 ms |
+
+### Open
+Merge into a clipped sibling is approximate for non-Normal modes; colour of non-Normal clipped layers at soft base edges is computed at grown coverage before the alpha reset (slight colour shift possible at edges, not measured against Procreate). iPad/Pencil, Safari, reference layer, layer groups, selection/transform still open.

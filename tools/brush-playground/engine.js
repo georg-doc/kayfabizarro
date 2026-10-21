@@ -298,9 +298,9 @@ const MAX_LAYERS = 16;
 const BLENDS = { normal: 'source-over', multiply: 'multiply', screen: 'screen', overlay: 'overlay', darken: 'darken', lighten: 'lighten',
   'color-burn': 'color-burn', 'color-dodge': 'color-dodge', 'hard-light': 'hard-light', 'soft-light': 'soft-light', difference: 'difference',
   exclusion: 'exclusion', hue: 'hue', saturation: 'saturation', color: 'color', luminosity: 'luminosity' };
-const LAYER_PROPS = ['name', 'visible', 'opacity', 'blend', 'alphaLock'];
+const LAYER_PROPS = ['name', 'visible', 'opacity', 'blend', 'alphaLock', 'clip'];
 const blank = () => mk(W, H);
-function newLayer(id, name, canvas) { return { id, name, visible: true, opacity: 1, blend: 'normal', alphaLock: false, canvas: canvas || blank(), frozen: false }; }
+function newLayer(id, name, canvas) { return { id, name, visible: true, opacity: 1, blend: 'normal', alphaLock: false, clip: false, canvas: canvas || blank(), frozen: false }; }
 const doc = { layers: [newLayer('L1', 'Layer 1')], bg: { visible: true, color: PAPER }, nextId: 2 };
 let activeId = 'L1';
 const layerById = id => doc.layers.find(L => L.id === id) || null;
@@ -324,12 +324,13 @@ function apply(a) {
     case 'layer-dup': {
       const i = layerIndex(a.src); if (i < 0) break; const S = doc.layers[i];
       const c = mk(W, H); c.getContext('2d').drawImage(S.canvas, 0, 0);
-      const L = newLayer(a.id, a.name, c); for (const k of ['visible', 'opacity', 'blend', 'alphaLock']) L[k] = S[k];
+      const L = newLayer(a.id, a.name, c); for (const k of ['visible', 'opacity', 'blend', 'alphaLock', 'clip']) L[k] = S[k];
       doc.layers.splice(i + 1, 0, L); doc.nextId = Math.max(doc.nextId, Number(String(a.id).slice(1)) + 1 || doc.nextId); break;
     }
     case 'layer-merge': {
       const i = layerIndex(a.id); if (i < 1) break; const U = doc.layers[i], Lo = writable(doc.layers[i - 1]), x = ctxOf(Lo);
-      x.save(); x.globalAlpha = U.opacity; x.globalCompositeOperation = BLENDS[U.blend] || 'source-over'; x.drawImage(U.canvas, 0, 0); x.restore();
+      if (U.clip && !Lo.clip) clipInto(x, Lo.canvas, [{ canvas: U.canvas, opacity: U.opacity, blend: U.blend }], FULL); // clipped layer into its base
+      else { x.save(); x.globalAlpha = U.opacity; x.globalCompositeOperation = BLENDS[U.blend] || 'source-over'; x.drawImage(U.canvas, 0, 0); x.restore(); }
       doc.layers.splice(i, 1); break;
     }
     case 'bg': for (const k of ['visible', 'color']) if (k in a.props) doc.bg[k] = a.props[k]; break;
@@ -343,7 +344,7 @@ let lastRebuildMs = 0;
 const SNAP_EVERY = 5, SNAP_MAX = 12, snaps = new Map(); // done.length -> frozen document (copy-on-write: cheap)
 function freeze() {
   for (const L of doc.layers) L.frozen = true;
-  return { layers: doc.layers.map(L => ({ id: L.id, name: L.name, visible: L.visible, opacity: L.opacity, blend: L.blend, alphaLock: L.alphaLock, canvas: L.canvas })), bg: Object.assign({}, doc.bg), nextId: doc.nextId };
+  return { layers: doc.layers.map(L => ({ id: L.id, name: L.name, visible: L.visible, opacity: L.opacity, blend: L.blend, alphaLock: L.alphaLock, clip: !!L.clip, canvas: L.canvas })), bg: Object.assign({}, doc.bg), nextId: doc.nextId };
 }
 function restore(sn) { doc.layers = sn.layers.map(m => Object.assign({}, m, { frozen: true })); doc.bg = Object.assign({}, sn.bg); doc.nextId = sn.nextId; }
 snaps.set(0, freeze());
@@ -361,34 +362,71 @@ function rebuild() {
   for (let i = from; i < done.length; i++) apply(done[i]);
   lastRebuildMs = performance.now() - t0;
 }
-/* composite of background + visible layers into the view (optionally with the live stroke on its layer) */
-function compose(r, withLive) {
-  r = r || { x: 0, y: 0, w: W, h: H };
-  view.save(); view.globalAlpha = 1; view.globalCompositeOperation = 'source-over';
-  view.clearRect(r.x, r.y, r.w, r.h);
-  if (doc.bg.visible) { view.fillStyle = doc.bg.color; view.fillRect(r.x, r.y, r.w, r.h); }
-  for (const L of doc.layers) {
-    if (!L.visible) continue;
-    let src = L.canvas;
-    if (withLive && L.id === withLive.rec.layerId) {
-      lctx.save(); lctx.globalAlpha = 1; lctx.globalCompositeOperation = 'source-over';
-      lctx.clearRect(r.x, r.y, r.w, r.h); lctx.drawImage(L.canvas, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h); lctx.restore();
-      compositeStroke(lctx, active, grained, r, brushes.get(withLive.rec.brushId) || brushes.get(ROUND_ID), withLive.rec);
-      src = live2;
-    }
-    view.globalAlpha = L.opacity; view.globalCompositeOperation = BLENDS[L.blend] || 'source-over';
-    view.drawImage(src, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
+/* ---------------- compositing ----------------
+   Clipping masks (Procreate model): a layer with clip=true is masked by the nearest non-clipped layer
+   below it (its base). Base + clipped layers form a group; the group carries the base's coverage,
+   opacity and blend mode, and disappears when the base is hidden.
+   Normal clipped layers use 'source-atop' (exact). Other blend modes: the clipped layer is masked by the
+   base, blended, and the group's alpha is then reset to the base alpha (one pixel pass over the region),
+   so grainy bases do not fill up. */
+const FULL = { x: 0, y: 0, w: W, h: H };
+const groupBuf = mk(W, H), gbx = groupBuf.getContext('2d', { willReadFrequently: true });
+const maskBuf = mk(W, H), mbx = maskBuf.getContext('2d');
+const tmpBuf = mk(W, H), tbx = tmpBuf.getContext('2d', { willReadFrequently: true });
+function reset(x) { x.globalAlpha = 1; x.globalCompositeOperation = 'source-over'; }
+/* paint clipped layers (canvas, opacity, blend) into ctx x whose current content is the base (baseCanvas) */
+function clipInto(x, baseCanvas, clipped, r) {
+  let fix = false;
+  for (const c of clipped) {
+    if (c.blend === 'normal') { x.globalAlpha = c.opacity; x.globalCompositeOperation = 'source-atop'; x.drawImage(c.canvas, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h); reset(x); continue; }
+    reset(mbx); mbx.clearRect(r.x, r.y, r.w, r.h); mbx.drawImage(c.canvas, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
+    mbx.globalCompositeOperation = 'destination-in'; mbx.drawImage(baseCanvas, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h); reset(mbx);
+    x.globalAlpha = c.opacity; x.globalCompositeOperation = BLENDS[c.blend] || 'source-over'; x.drawImage(maskBuf, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h); reset(x);
+    fix = true;
   }
-  view.restore();
+  if (fix) { // alpha := base alpha
+    tbx.clearRect(r.x, r.y, r.w, r.h); tbx.drawImage(baseCanvas, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
+    const g = x.getImageData(r.x, r.y, r.w, r.h), b = tbx.getImageData(r.x, r.y, r.w, r.h).data, d = g.data;
+    for (let i = 3; i < d.length; i += 4) d[i] = b[i];
+    x.putImageData(g, r.x, r.y);
+  }
 }
+/* bottom → top composite of the visible stack into ctx out over region r; liveRec puts the live stroke on its layer */
+function compositeInto(out, r, bgColor, withLive) {
+  out.save(); reset(out);
+  out.clearRect(r.x, r.y, r.w, r.h);
+  if (bgColor) { out.fillStyle = bgColor; out.fillRect(r.x, r.y, r.w, r.h); }
+  let liveSrc = null;
+  const src = L => {
+    if (!(withLive && L.id === withLive.rec.layerId)) return L.canvas;
+    if (!liveSrc) {
+      lctx.save(); reset(lctx); lctx.clearRect(r.x, r.y, r.w, r.h); lctx.drawImage(L.canvas, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h); lctx.restore();
+      compositeStroke(lctx, active, grained, r, brushes.get(withLive.rec.brushId) || brushes.get(ROUND_ID), withLive.rec);
+      liveSrc = live2;
+    }
+    return liveSrc;
+  };
+  const Ls = doc.layers;
+  for (let i = 0; i < Ls.length;) {
+    const B = Ls[i]; let j = i + 1; while (j < Ls.length && Ls[j].clip) j++;
+    const clipped = Ls.slice(i + 1, j).filter(c => c.visible);
+    i = j;
+    if (!B.visible) continue; // a hidden base hides its clipping group
+    let s = src(B);
+    if (clipped.length) {
+      reset(gbx); gbx.clearRect(r.x, r.y, r.w, r.h); gbx.drawImage(s, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
+      clipInto(gbx, s, clipped.map(c => ({ canvas: src(c), opacity: c.opacity, blend: c.blend })), r);
+      s = groupBuf;
+    }
+    out.globalAlpha = B.opacity; out.globalCompositeOperation = BLENDS[B.blend] || 'source-over';
+    out.drawImage(s, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
+  }
+  out.restore();
+}
+function compose(r, withLive) { compositeInto(view, r || FULL, doc.bg.visible ? doc.bg.color : null, withLive); }
 function refreshView(r) { compose(r, null); }
 /* layers flattened without (or with a forced) background: exports and tests */
-function flatten(bgColor) {
-  const out = mk(W, H), x = out.getContext('2d');
-  if (bgColor) { x.fillStyle = bgColor; x.fillRect(0, 0, W, H); }
-  for (const L of doc.layers) { if (!L.visible) continue; x.globalAlpha = L.opacity; x.globalCompositeOperation = BLENDS[L.blend] || 'source-over'; x.drawImage(L.canvas, 0, 0); }
-  return out;
-}
+function flatten(bgColor) { const out = mk(W, H); compositeInto(out.getContext('2d'), FULL, bgColor || null, null); return out; }
 function fixActive() { if (!layerById(activeId)) activeId = doc.layers[doc.layers.length - 1].id; }
 function syncButtons() { emit('history', { canUndo: done.length > 0, canRedo: undone.length > 0, strokes: done.filter(a => a.type === 'stroke').length }); }
 function afterChange(r) { fixActive(); compose(null, null); syncButtons(); emit('layers', layersInfo()); }
@@ -399,7 +437,7 @@ function redo() { if (!undone.length || live) return; const a = undone.pop(); ap
 /* layer commands (all undoable, like Procreate) */
 function layersInfo() {
   return { active: activeId, max: MAX_LAYERS, bg: Object.assign({}, doc.bg),
-    layers: doc.layers.map(L => ({ id: L.id, name: L.name, visible: L.visible, opacity: L.opacity, blend: L.blend, alphaLock: L.alphaLock, canvas: L.canvas })) };
+    layers: doc.layers.map((L, i) => ({ id: L.id, name: L.name, visible: L.visible, opacity: L.opacity, blend: L.blend, alphaLock: L.alphaLock, clip: !!L.clip && i > 0, canvas: L.canvas })) };
 }
 function selectLayer(id) { if (layerById(id)) { activeId = id; emit('layers', layersInfo()); } }
 function addLayer() {
@@ -425,7 +463,8 @@ function setLayer(id, props) {
   for (const k of LAYER_PROPS) if (k in props) {
     let v = props[k];
     if (k === 'opacity') v = Math.max(0, Math.min(1, Number(v)));
-    if (k === 'visible' || k === 'alphaLock') v = !!v;
+    if (k === 'visible' || k === 'alphaLock' || k === 'clip') v = !!v;
+    if (k === 'clip' && v && layerIndex(id) === 0) throw Error('The bottom layer has nothing below to clip to');
     if (k === 'blend' && !BLENDS[v]) continue;
     if (k === 'name') v = String(v).slice(0, 60) || L.name;
     p[k] = v;

@@ -92,6 +92,9 @@ label.rowbtn input[type=file]{display:none}
 .layers>li.layer{display:grid;grid-template-columns:64px 1fr auto auto;align-items:center;gap:10px;padding:6px 8px;border-radius:10px;cursor:pointer;margin:3px 0;border:1px solid transparent}
 .layers>li.layer[aria-selected=true]{background:#e9c14a26;border-color:var(--rabbit)}
 .layers>li.layer.hidden-layer .lname,.layers>li.layer.hidden-layer canvas{opacity:.4}
+.layers>li.layer.clipped{margin-left:22px;position:relative}
+.layers>li.layer.clipped::before{content:"";position:absolute;left:-13px;top:10px;bottom:4px;border-left:2px solid var(--rabbit)}
+.layers>li.layer.clipped::after{content:"";position:absolute;left:-17px;bottom:-4px;border:5px solid transparent;border-top:7px solid var(--rabbit)}
 .layers canvas.thumb{width:64px;height:40px;border-radius:5px;display:block;background:conic-gradient(#d8d2c2 25%,#f3ead3 0 50%,#d8d2c2 0 75%,#f3ead3 0) 0 0/10px 10px}
 .layers .lname{font-size:13px;overflow-wrap:anywhere}
 .layers .lname small{display:block;color:var(--pencil);font-size:11px}
