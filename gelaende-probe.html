@@ -3801,15 +3801,50 @@ uniform vec3 uHorizon; ${GLSL_SKY}
 ${GLSL_SKY}
 ${window.KFB_FLUID.glsl}
   uniform float uRivDbg;
-  void main(){ vec2 wp=vP.xz+uCarW; gNE=0.6; float hT=hgt(wp), dep=vLvl-hT, dw=fwidth(dep)+1e-3; if(uRivDbg>0.5){ gl_FragColor=vec4(clamp(0.5+dep*0.25,0.0,1.0), clamp(-dep*0.25+0.5,0.0,1.0), uRivDbg>1.5 ? rivSample(wp).y : 0.0, 1.0); return; } if(dep<-dw || hT<uWater*uAmp+0.15) discard;   /* wo das Meer liegt, zeichnet das Meer (keine Doppelfläche an der Mündung) */
+  void main(){ vec2 wp=vP.xz+uCarW; gNE=0.6; float hT=hgt(wp), dep=vLvl-hT, dw=fwidth(dep)+1e-3; if(uRivDbg>0.5){ gl_FragColor=vec4(clamp(0.5+dep*0.25,0.0,1.0), clamp(-dep*0.25+0.5,0.0,1.0), uRivDbg>1.5 ? rivSample(wp).y : 0.0, 1.0); return; } if(dep<-dw || hT<uWater*uAmp+0.15) discard;
+    { vec2 gxs=dFdx(vP.xz), gys=dFdy(vP.xz); float exs=dFdx(vP.y), eys=dFdy(vP.y), dts=gxs.x*gys.y-gxs.y*gys.x; vec2 gs=abs(dts)>1e-9 ? vec2(exs*gys.y-gxs.y*eys, gxs.x*eys-exs*gys.x)/dts : vec2(0.0); if(length(gs)>0.45) discard; }   /* Fallstufe zeichnet das Fall-Netz */   /* wo das Meer liegt, zeichnet das Meer (keine Doppelfläche an der Mündung) */
     vec2 gx=dFdx(wp), gy=dFdy(wp); float ex=dFdx(dep), ey=dFdy(dep), det=gx.x*gy.y-gx.y*gy.x; vec2 gw=abs(det)>1e-9 ? vec2(ex*gy.y-gx.y*ey, gx.x*ey-ex*gy.x)/det : vec2(0.0);
     float sdr=max(dep,0.0)/max(length(gw),0.06), wob=0.5+0.5*snoise(wp*0.21+uSeed*0.3), sw=fwidth(sdr)+1e-3, e1=0.6+0.3*wob, e2=1.8+0.5*wob;
     float sd=mix(0.25, 1.6, smoothstep(e1-sw, e1+sw, sdr)); sd=mix(sd, 3.2, smoothstep(e2-sw, e2+sw, sdr));   /* gestufte Uferzonen wie im See (Flach · Kante · Tiefe) */
     vec4 kf=kitFluid(vec3(wp.x, vLvl, wp.y), vFlow, sd, vSN);
     vec3 kc=kf.rgb; float wsv=wShadow(vP); kc=mix(mix(kc*0.62, uContact, 0.18), kc, wsv); if(uSky2>0.5) kc=applyAir(kc, vP, 1.0);
     float ka=max(kf.a, mix(0.8, 0.94, smoothstep(e1-sw, e1+sw, sdr))); gl_FragColor=vec4(kc, ka*smoothstep(-dw,dw,dep)); }` })
+    const fallMat = new THREE.ShaderMaterial({ uniforms: U, transparent: true, depthWrite: false, side: THREE.DoubleSide,
+      vertexShader: `attribute vec4 aF; varying vec4 vF; varying vec3 vP; void main(){ vF=aF; vec4 w=modelMatrix*vec4(position,1.0); vP=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
+      fragmentShader: `${GLSL_NOISE}
+  uniform float uTimeR; uniform vec2 uCarW; varying vec4 vF; varying vec3 vP; uniform vec3 uContact, uHorizon, uFlShal, uFlDeep, uFlGlow; uniform float uWater, uFlKind, uFlClar, uMoodK, uWKit;
+${GLSL_SKY}
+${window.KFB_FLUID.glsl}
+  void main(){ float t=vF.x, v=vF.y, H=vF.z, W=vF.w; vec2 q=vec2(v*W, t*(H+0.35));   /* Meter quer · Meter Fallweg */
+    float s1=kfNz3(vec3(q.x*1.6, (q.y-uTimeR*3.2)*0.45, uTimeR*0.25)), s2=kfNz3(vec3(q.x*3.4+5.0, (q.y-uTimeR*5.6)*0.9, 9.0+uTimeR*0.4));   /* zwei Lagen, ungleiches Tempo: keine Wiederholung */
+    vec3 base=mix(uKFCol, uKFShallow, 0.55)*1.15, foam=vec3(0.96,0.98,1.0);
+    vec3 c=mix(base, mix(base,foam,0.55), step(0.56, s1)); c=mix(c, foam, step(0.66, s2)*0.85);   /* harte Streifen (Cartoon), keine Verläufe */
+    c=mix(c, foam, 1.0-step(0.09+0.05*s2, t));                                                      /* Lichtsaum an der Lippe */
+    float edge=abs(v)+0.3*(kfNz3(vec3(v*2.0, q.y*0.7-uTimeR*2.0, 4.0))-0.5)+0.12*t; if(edge>0.95) discard;   /* Seitenränder wellig und nach unten leicht eingezogen, keine Linealkante */
+    float cut=smoothstep(0.5, 1.0, t); if(s1*0.65+s2*0.35 < cut*0.72) discard;                  /* unten zerreißt der Fall in Fetzen und Tropfen (Alpha-Schnitt wie RiME) */
+    if(uSky2>0.5) c=applyAir(c, vP, 1.0);
+    gl_FragColor=vec4(c, 0.93); }` })
+    const foamMat = new THREE.ShaderMaterial({ uniforms: U, transparent: true, depthWrite: false,
+      vertexShader: `attribute vec4 aC; varying vec4 vC; varying vec3 vP; void main(){ vC=aC; vec4 w=modelMatrix*vec4(position,1.0); vP=w.xyz; gl_Position=projectionMatrix*viewMatrix*w; }`,
+      fragmentShader: `${GLSL_NOISE}\n${GLSL_HEIGHT}
+  uniform float uTimeR; uniform vec2 uCarW; varying vec4 vC; varying vec3 vP; uniform vec3 uContact, uHorizon, uFlShal, uFlDeep, uFlGlow; uniform float uWater, uFlKind, uFlClar, uMoodK, uWKit;
+${GLSL_SKY}
+${window.KFB_FLUID.glsl}
+  void main(){ vec2 wp=vP.xz+uCarW, l=(wp-vC.xy)/vC.z; float r=length(l); if(r>1.0) discard; gNE=0.6; if(hgt(wp)>vC.w+0.02) discard;
+    float blob=step(0.68-0.2*(1.0-r), kfNz3(vec3(l*5.0, uTimeR*1.1))), ring=step(0.8, fract(r*2.6-uTimeR*0.7))*(1.0-r);   /* Gischt-Flecken nahe am Fall, Ringe wandern nach außen */
+    float a=max(blob*(1.0-smoothstep(0.35,1.0,r)), ring); if(a<0.5) discard;
+    vec3 c=vec3(0.95,0.97,1.0); if(uSky2>0.5) c=applyAir(c, vP, 1.0); gl_FragColor=vec4(c, 0.92); }` })
+    /* Gischt-Bällchen (Knete, kein Partikelnebel): 5 je Fall am Fuß, wippen und atmen */
+    const PUFF = { falls: [], mesh: new THREE.InstancedMesh(indexByPos(new THREE.IcosahedronGeometry(1, 1)), new THREE.MeshStandardMaterial({ color: '#f4f7fa', roughness: 0.9, metalness: 0 }), 32 * 5), m4: new THREE.Matrix4(), q: new THREE.Quaternion(), v: new THREE.Vector3(), sc: new THREE.Vector3() }
+    PUFF.mesh.count = 0; PUFF.mesh.frustumCulled = false; worldRoot.add(PUFF.mesh)
+    function puffs(t) { const F = PUFF.falls, M = PUFF.mesh; if (!F.length || !group.visible) { M.count = 0; return } let n = 0
+      for (let f = 0; f < F.length; f++) { const A = F[f], dx = A.b.x - A.a.x, dz = A.b.z - A.a.z, Ld = Math.hypot(dx, dz) || 1, ux = dx / Ld, uz = dz / Ld, H = A.top - A.bot
+        for (let k = 0; k < 5; k++) { const ph = (t * 0.45 + k * 0.23 + f * 0.37) % 1, side = (k - 2) * 0.22 * (A.wl + A.wr), sz = (0.16 + 0.04 * H) * (0.75 + 0.35 * Math.sin(ph * Math.PI))
+          PUFF.v.set(A.b.x + ux * (0.4 + ph * 1.6) - uz * side, A.bot + 0.15 + ph * (0.6 + 0.12 * H), A.b.z + uz * (0.4 + ph * 1.6) + ux * side); PUFF.sc.setScalar(sz * (1 - 0.6 * ph * ph))
+          M.setMatrixAt(n++, PUFF.m4.compose(PUFF.v, PUFF.q, PUFF.sc)) } }
+      M.count = n; M.instanceMatrix.needsUpdate = true }
     function clear() { for (const m of group.children) m.geometry.dispose(); group.clear(); ST.lines = []; ST.lakes = [] }
-    function off() { if (!RIV.on && !group.children.length) return; RIV.on = false; U.uRivO.value.w = 0; U.uRivV.value = ++RIV.v; clear(); ST.cx = 1e9; ST.sig = ''; if (window.__rockc) window.__rockc.dirty = true }
+    function off() { PUFF.falls = []; PUFF.mesh.count = 0; if (!RIV.on && !group.children.length) return; RIV.on = false; U.uRivO.value.w = 0; U.uRivV.value = ++RIV.v; clear(); ST.cx = 1e9; ST.sig = ''; if (window.__rockc) window.__rockc.dirty = true }
     function build(cx, cz) { const t0 = performance.now(), ox = cx - HS / 2, oz = cz - HS / 2, wl = S.water * S.amp + 0.15
       hmat.uniforms.uHO.value.set(ox, oz); const prev = renderer.getRenderTarget(); renderer.setRenderTarget(rt); renderer.render(hscene, hcam); renderer.setRenderTarget(prev)
       const px = new Float32Array(HN * HN * 4); renderer.readRenderTargetPixels(rt, 0, 0, HN, HN, px); const H = new Float32Array(HN * HN); for (let k = 0; k < HN * HN; k++) H[k] = px[k * 4]
@@ -3856,6 +3891,13 @@ ${window.KFB_FLUID.glsl}
       /* nur im Rinnen-Gebiet (innere 1024 m, 8 m Rand): außerhalb gäbe es Wasser ohne Bett */
       const inner = (q) => Math.abs(q.x - cx) < RIV.size / 2 - 8 && Math.abs(q.z - cz) < RIV.size / 2 - 8, live = []
       for (const L of lines) { let cur = []; for (const q of L.pts) { if (inner(q)) cur.push(q); else { if (cur.length >= 3) live.push({ ...L, pts: cur, len: (cur.length - 1) * 2, fromLake: L.fromLake && cur[0] === L.pts[0] }); cur = [] } } if (cur.length >= 3) live.push({ ...L, pts: cur, len: (cur.length - 1) * 2, fromLake: L.fromLake && cur[0] === L.pts[0] }) }
+      /* Wasserfälle F3 (Kit KONZEPT_R2 §1.2): steile Abschnitte (> 1,5 m auf 6 m) werden zur Stufe – Pegel springt an der Lippe auf das untere Niveau (immer ≤ natürlicher Pegel,
+         also nie über den Ufern), darunter ein flaches Becken; je Fall höchstens 6 m, längere Abstiege werden zur Kaskade */
+      const falls = []
+      for (const L of live) { const Pp = L.pts, n = Pp.length, nat = Pp.map((q) => q.lv); let i = 0
+        while (i < n - 2) { if (nat[i] - nat[Math.min(n - 1, i + 3)] > 1.5) { let j = i + 1; while (j < n - 1 && nat[i] - nat[j + 1] <= 6 && (nat[j] - nat[Math.min(n - 1, j + 3)] > 0.6 || nat[i] - nat[j] < 1.2)) j++
+            if (nat[i] - nat[j] >= 1.2 && falls.length < 32) { for (let k = i + 1; k <= j; k++) Pp[k].lv = nat[j]; const A0 = Pp[Math.max(0, i - 1)], B0 = Pp[i + 1], tl = Math.hypot(B0.x - A0.x, B0.z - A0.z) || 1, nx = -(B0.z - A0.z) / tl, nz = (B0.x - A0.x) / tl, wet = (sg) => { const ro = RIV.on; RIV.on = false; const q = Pp[i], bed = nat[i] - q.dp; let o = 0.5; for (; o < q.hw * 3.4; o += 0.5) { const h = hgt(q.x + nx * o * sg, q.z + nz * o * sg), w = 1 - ss(q.hw * 0.3, q.hw * 3.2, o); if (h * (1 - w) + bed * Math.min(w, 1) > nat[i] - 0.05 && Math.min(h, h * (1 - w) + bed * w) > nat[i] - 0.05) break } RIV.on = ro; return Math.max(0.8, o) }   /* gegen das gegrabene Bett (gleiches Profil wie die Rinne) */
+              falls.push({ a: Pp[i], b: Pp[i + 1], top: nat[i], bot: nat[j], hw: Pp[i].hw, wl: wet(1), wr: wet(-1) }); i = j; continue }   /* nasse Breite an der Lippe je Seite: der Vorhang ist so breit wie das Wasser oben */ } i++ } }
       // Rinne ins Feld: 512² über die inneren 1024 m; je Texel stärkstes Gewicht (Sohle·Gewicht vormultipliziert → bilinear ohne Sprünge am Rand)
       RIV.ox = cx - RIV.size / 2; RIV.oz = cz - RIV.size / 2; const D = RIV.data; D.fill(0); const ts = RIV.size / N
       for (const L of live) { const Pp = L.pts; for (let i = 0; i < Pp.length - 1; i++) { const a = Pp[i], b = Pp[i + 1], r = Math.max(a.hw, b.hw) * 3.3 + 2
@@ -3878,10 +3920,23 @@ ${window.KFB_FLUID.glsl}
         for (let j = 0; j < j1 - j0; j++) for (let i = 0; i < W - 1; i++) { const a = n0 + j * W + i, b = a + 1, c = a + W, d = c + 1; idx.push(a, c, b, b, c, d) } }
       if (idx.length) { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('aFlow', new THREE.Float32BufferAttribute(fl, 2)); g.setAttribute('aSN', new THREE.Float32BufferAttribute(sn, 2)); g.setAttribute('aLvl', new THREE.Float32BufferAttribute(lvA, 1)); g.setIndex(idx)
         const m = new THREE.Mesh(g, mat); m.frustumCulled = false; m.renderOrder = 3; group.add(m) }
+      if (falls.length) { const fp = [], fa = [], fi = [], cp = [], ca = [], ci = [], R = 10, C = 7
+        for (const F of falls) { const dx = F.b.x - F.a.x, dz = F.b.z - F.a.z, Ld = Math.hypot(dx, dz) || 1, ux = dx / Ld, uz = dz / Ld, H = F.top - F.bot, W0 = (F.wl + F.wr) / 2, n0 = fp.length / 3
+          for (let r = 0; r < R; r++) { const u = r / (R - 1), along = Ld * u, y = F.top - (H + 0.35) * u * u, w = W0 * (1 + 0.25 * u)   /* Wurfparabel: oben langsam, unten schnell, schießt über die Lippe */
+            for (let c = 0; c < C; c++) { const v = -1 + 2 * c / (C - 1), o = (v < 0 ? -v * F.wr * -1 : v * F.wl) * (1 + 0.2 * u); fp.push(F.a.x + ux * along - uz * o, y, F.a.z + uz * along + ux * o); fa.push(u, v, H, w) } }
+          for (let r = 0; r < R - 1; r++) for (let c = 0; c < C - 1; c++) { const a = n0 + r * C + c, b = a + 1, cc = a + C, d = cc + 1; fi.push(a, cc, b, b, cc, d) }
+          const m0 = cp.length / 3, Rf = Math.min(F.hw * 1.3, (F.wl + F.wr) * 0.65), ox2 = F.b.x + ux * 0.8, oz2 = F.b.z + uz * 0.8, G = 9   /* Gischt-Scheibe im Becken */
+          for (let j = 0; j < G; j++) for (let i2 = 0; i2 < G; i2++) { cp.push(ox2 + (i2 / (G - 1) * 2 - 1) * Rf, F.bot + 0.04, oz2 + (j / (G - 1) * 2 - 1) * Rf); ca.push(ox2, oz2, Rf, F.bot) }
+          for (let j = 0; j < G - 1; j++) for (let i2 = 0; i2 < G - 1; i2++) { const a = m0 + j * G + i2, b = a + 1, cc = a + G, d = cc + 1; ci.push(a, cc, b, b, cc, d) } }
+        const g1 = new THREE.BufferGeometry(); g1.setAttribute('position', new THREE.Float32BufferAttribute(fp, 3)); g1.setAttribute('aF', new THREE.Float32BufferAttribute(fa, 4)); g1.setIndex(fi)
+        const m1 = new THREE.Mesh(g1, fallMat); m1.frustumCulled = false; m1.renderOrder = 4; group.add(m1)
+        const g2 = new THREE.BufferGeometry(); g2.setAttribute('position', new THREE.Float32BufferAttribute(cp, 3)); g2.setAttribute('aC', new THREE.Float32BufferAttribute(ca, 4)); g2.setIndex(ci)
+        const m2 = new THREE.Mesh(g2, foamMat); m2.frustumCulled = false; m2.renderOrder = 4; group.add(m2) }
+      ST.falls = falls.map((F) => ({ bx: +F.b.x.toFixed(1), bz: +F.b.z.toFixed(1), ax: +F.a.x.toFixed(1), az: +F.a.z.toFixed(1), x: Math.round(F.a.x), z: Math.round(F.a.z), h: +(F.top - F.bot).toFixed(1), hw: +F.hw.toFixed(1), top: +F.top.toFixed(2) })); PUFF.falls = falls
       ST.lines = live.map((L) => ({ n: L.pts.length, len: L.len, end: L.end, fromLake: L.fromLake, x0: Math.round(L.pts[0].x), z0: Math.round(L.pts[0].z), drop: +(L.pts[0].lv - L.pts[L.pts.length - 1].lv).toFixed(1) }))
       ST.lakes = lakes.map((Lk) => ({ cells: Lk.cells.length, lv: +Lk.lv.toFixed(2) })); ST.cx = cx; ST.cz = cz; ST.ms = +(performance.now() - t0).toFixed(0); ST.n++
       if (window.__rockc) window.__rockc.dirty = true }
-    function update() { if (!S.rivers || S.vox) { off(); return }
+    function update() { if (!S.rivers || S.vox) { off(); return } puffs(performance.now() / 1000)
       const sig = hNames.map((n) => U[n] ? vs(U[n].value) : '').join('|') + '|' + S.water + '|' + (window.__RIVA || 0)
       if (sig !== ST.pend) { ST.pend = sig; ST.calm = 0; return } if (ST.calm < 20) { ST.calm++; return }   /* Regler ruhig (≈ 1/3 s), erst dann neu rechnen */
       const far = Math.max(Math.abs(P.x - ST.cx), Math.abs(P.z - ST.cz)) > 200   /* neu erst 200 m vom Mittelpunkt (Bau ≈ 50–90 ms, Rinnen-Gebiet reicht ±504 m) */
