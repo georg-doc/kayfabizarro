@@ -1,5 +1,11 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., spät) · An WS-NPC: Goo-Gegenmittel entschieden (V-609, Georg im Hub)
+- **Goo-Flecken freiwaschen:** Der Spieler schießt mit dem Robo-Arm (Trichter) bunte Fluff-Kugeln aus seiner Sammlung. **Jede Farbe wäscht frei**, auch die Goo-Flecken der Dark Fluffer im Gelände. Später wird die passende Farbe ein Rätsel über Spielknoten.
+- Das ergänzt Phase C: Die Pistole heilt den Fluffer (V-595), Fluff-Schüsse waschen den Fleck. Der Ablauf von 180 s bleibt.
+- **Zensurbalken** in Sprechblasen und auf Karten-Texten: Teil der Text- bzw. Kartenebene (WSA, Card Ink Defense). Bei dir nur, wenn Bewohner sprechen und Goo in der Nähe ist: 1–2 Inhaltswörter mit Knet-Balken, nie Namen.
+
+
 # NEU OBEN (21.10., spät) · Neu von Georg: schwere Schritte für große Figuren (WS-Audio, V-607) + Companions Bleistift und Radiergummi (WS-NPC, V-608)
 **WS-Audio · schwere Schritte für Rig_Large** (Black Knight, Demon Lord, Orc Brute, später Golem usw.):
 - Sie sollen schwerer und stampfender klingen als Rig_Medium.

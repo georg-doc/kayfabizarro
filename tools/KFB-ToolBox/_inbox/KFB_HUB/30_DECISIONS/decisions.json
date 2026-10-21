@@ -8634,6 +8634,21 @@
    "applies": "nach Phase E"
   },
   {
+   "id": "V-609",
+   "date": "2026-10-21",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Hub-Antworten Georg 21.10. abends (ergänzt V-532): q103 Goo-Gegenmittel C, jetzt wäscht jede Fluff-Farbe Geschwärztes frei (Robo-Arm-Fluff-Schüsse, auch Goo-Flecken im Gelände), später passende Farbe als Rätsel über Spielknoten; q104 Zensurbalken B, Knet-Balken in Tintenschwarz mit Glanz und Tropfkante über 1-2 Inhaltswörtern in Sprechblasen und auf geschwärzten Karten-Texten, nie über Titeln oder Namen. Dazu q126: Krone KFB_Crown_01 ist CC0 (Poly Pizza, Public Domain), darf öffentlich; q129 (20.10.): veraltete öffentliche B48-Stände löschen, Georg ja. q141 Hit-Stop war schon durch V-567 entschieden.",
+   "values": {},
+   "owner": "WS-NPC (Goo-Flecken) · WSA (Karten-Tinte, Balken) · WSB (Krone, B48)",
+   "check": "Goo-Fleck mit beliebiger Fluff-Farbe freiwaschen",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georgs Hub-Antworten schließen die offenen Punkte von V-532; einfache Regel zuerst, Rätsel später.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8721,7 +8736,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1059",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1060",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

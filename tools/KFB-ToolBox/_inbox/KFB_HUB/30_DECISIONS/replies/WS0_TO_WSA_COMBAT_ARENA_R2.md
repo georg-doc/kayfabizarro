@@ -186,3 +186,7 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 - Parameter heißt `?actor=soldier-r3d` (nicht `soldier`, `qa.js:22`).
 - Einbau der Prüfer-Prototypen (`ws1/combat-av-r1`: Klang je Waffe mit Ebenen V-461, Klinge Schwung vor Treffer, Gegner-Bus 0,4, `?hit=knet` als Umschalter, Gegner-Ankündigung): nach Georgs Auswahl über dich. `gunfight.v2.js` ist hash-gesperrt, also mit Nachtrag im Recovery-Manifest.
 - **Kaskade-Fehler:** `confirm.hit` feuert auch bei eigenem Schaden, Tod und Rauchbombe; Rauchbombe ruft `impact.kinetic.air`, den es nicht gibt; stumm sind Magie `raise`, weaponDrop, Schädel und Beute. Das gehört zu deinem nächsten Arena-Schritt.
+
+## Georg im Hub (21.10., V-609): Goo-Gegenmittel und Zensurbalken
+- **Freiwaschen:** jede Fluff-Farbe wäscht Geschwärztes frei (Karten und Spielfeld); die passende Farbe als Rätsel kommt später über Spielknoten. Für die Card Ink Defense bzw. das Arena-Clearen.
+- **Zensurbalken:** Knet-Streifen in Tintenschwarz mit Glanz und Tropfkante über 1–2 Inhaltswörtern, in Sprechblasen **und** auf geschwärzten Karten-Texten; nie über Kartentiteln oder Namen (V-508). Freiwaschen entfernt sie.
