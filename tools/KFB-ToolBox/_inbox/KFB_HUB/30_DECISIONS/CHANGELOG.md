@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-587 korrigiert: WS1 hat keinen Dropbox-Zugriff; K4/K5 vorerst nicht verfügbar, WS1 baut Job 3 mit RA-Rohteilen; Weg der freien Teile (CC0/CC-BY) entscheidet Georg.
 - WS0-Sounds erzeugt und normalisiert: dark_fluffer_r1 (18) + alchemy_r1 (14, Hexen-Trankküche) in 40_AUDIO/elevenlabs_r1/*_norm; Farmer B = farmer_harke (WSB), Lorekeeper-Aufnahme K11 auf Basis B31.
 - V-587 Antworten an WS1 §116/§117 (oben in WS0_TO_WS1): K4/K5-Ort, K1 vs. ORKBAND r1b, Felsen bleiben, Gimmicks ACK, Schattenkonzept R1 als Arbeitsstand, createContactAO raus, Island-Kit-Wasser Standard, WS-NPC jetzt; Kanon unverändert.
 - V-586 Die beiden Hexen sind Fluff-Alchemistinnen (Georg): Trankküche als Arbeits-POI, erste Kandidatinnen für Heilen im Team (Dark Fluffer); in NPC-Brief R2 und Dark-Fluffer-Brief nachgetragen.

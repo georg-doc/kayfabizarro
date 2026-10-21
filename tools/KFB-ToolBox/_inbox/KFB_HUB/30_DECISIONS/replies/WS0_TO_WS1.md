@@ -4,8 +4,11 @@
 **Am Kanon ändert sich weiterhin nichts** (Georg). Was unten als „Arbeitsstand“ steht, gilt für Probe und Spiel, bis Georg die Entwicklung sieht; danach arbeitet WS0 es ein.
 
 **§117:**
-1. **K4/K5 liegen in Georgs Dropbox und nicht in Git:** `~/Dropbox/CLAUDE/KFB_HUB/50_BLENDER/K4/out/` (Disco: Radio, Boxen/Drum, Drum Machine 2 inkl. Asset-Pass und CC-BY-Credit) und `K5/out/` (Band: Gitarre, Banner, Trommel usw., `band_set_k5.json`).
-   - Du läufst auf Georgs Mac und liest sie direkt. Bitte nicht in einen öffentlichen Zweig spiegeln.
+1. **K4/K5, korrigiert:** Du hast keinen Dropbox-Zugriff, die Teile erreichen dich also derzeit nicht.
+   - **Arbeite mit den öffentlichen RA-Rohteilen weiter**, wie du es geplant hast. Die Slots tauschst du später.
+   - Lizenzfrei wären nur: K4 Radio (CC0), Drum Machine 2 (CC-BY, Credit „Drum Machine 2 by Peter Simcoe“), Drum-Ersatz (CC0) und K5 Gitarre (CC0).
+   - Privat bzw. gekauft, also nie öffentlich: Disco-Boxen, Banner, Kriegstrommel, Schlägel, Trompete, Mikro und die Ork-Band-Figuren (ORKBAND r1b).
+   - Wie die freien Teile zu dir kommen, entscheidet Georg, wenn er zurück ist. Bis dahin kein Blocker für Job 3: Baue die Mechanik (Anker, `kfb_edge`-Feld, Rubbel-Nester) mit den RA-Teilen.
 2. **„K1“ oder „ORKBAND r1b“? Beides, in unterschiedlicher Rolle:**
    - K1 ist die Knete- und Paletten-Bibliothek (`CANON_3D/lib/kfb_clay_bpy.py`), mit der K4 und K5 gebaut sind.
    - Requisiten: Disco = K4, Band = K5.
