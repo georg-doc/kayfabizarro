@@ -175,6 +175,25 @@ t('curve: a soft size curve makes light pressure thinner than linear', () => {
   ok(mean(cur.map(s => s.size)) < mean(lin.map(s => s.size)) * 0.7);
 });
 
+/* ---------------- colour + palettes ---------------- */
+t('colour: hex → hsv → hex round trip for KFB washes', () => {
+  for (const h of ['#e9c14a', '#c2412c', '#6b4e7d', '#3e6a83', '#7a8d4a', '#1f1a14', '#f3ead3', '#000000', '#ffffff']) {
+    const back = C.toHex(...C.hsvToRgb(...C.rgbToHsv(...C.fromHex(h)))); ok(back === h, h + ' → ' + back);
+  }
+});
+t('swatches: build → parse round trip keeps name, order and empty slots', () => {
+  const cols = ['#e9c14a', null, '#c2412c', '#1f1a14'];
+  const z = C.buildSwatches('KFB Test', cols, fflate);
+  const [p] = C.parseSwatches(z, fflate);
+  ok(p.name === 'KFB Test' && p.colors.join() === cols.join(), JSON.stringify(p));
+});
+t('swatches: lenient read (object instead of array, bare JSON, components)', () => {
+  const bare = new TextEncoder().encode(JSON.stringify({ name: 'Bare', swatches: [{ hue: 0, saturation: 1, brightness: 1 }, { components: [0, 0, 1] }] }));
+  const [p] = C.parseSwatches(bare, fflate);
+  ok(p.colors.join() === '#ff0000,#0000ff', p.colors.join());
+});
+t('swatches: zip without Swatches.json rejected', () => throwsLike(() => C.parseSwatches(fflate.zipSync({ 'x.json': new Uint8Array(2) }), fflate), /Swatches.json missing/));
+
 /* ---------------- optional: real private brushes from BRUSH_DIR ---------------- */
 const dir = (process.env.BRUSH_DIR && process.env.BRUSH_DIR.replace(/^~/, os.homedir())) ||
   [path.join(here, '..', 'brushes'), path.join(here, '..', '..', 'KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BRUSH_PLAYGROUND_R1/Demo Brushes')].find(d => fs.existsSync(d));

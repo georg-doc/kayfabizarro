@@ -125,3 +125,35 @@ Open fidelity seams: DRUCKER 2.1 file grain far too strong (α 0.23 vs 0.91; `te
 
 ### Not tested / open
 Safari/WebKit, iPad + Apple Pencil hardware, Georg's own strokes with set brushes, real Procreate grains (Replace grain… is ready for them), the remaining Procreate 5 dynamics above. Catalog/Notion/Dropbox reconciliation and Comic (Re)Motion remain deferred; the session JSON is the first stroke-recording format they could build on.
+
+## R1.7 · 2026-10-21 · Procreate-style interface as blueprint, KFB skin, palettes
+Georg's request: build the UI as close to Procreate as possible, as a blueprint rather than a 1:1 copy, with settings following Procreate's menus and palettes.
+
+### What was built
+- Code split: `engine.js` (the tested renderer, import, history, export, sessions, comparison; DOM access only to `#paper`, events to the UI), `ui.js` (interface), `index.html` (markup + styles). Core gains colour conversion and Procreate `.swatches` read/write.
+- Layout after Procreate: full canvas; Actions (Add / Canvas / Share / Prefs / Help) top left; Paint / Erase / Colour top right; size and opacity sliders with eyedropper, undo and redo on the left (right-hand option). Skin: KAYFABIZARRO tokens (ink-black `#1f1a14` chrome, paper-cream `#f3ead3`, rabbit yellow `#e9c14a` active), own icons and wording, no Procreate assets.
+- Brush Library: sets column, brushes with live stroke previews rendered by our engine, search; second tap on the selected brush opens Brush Studio (Procreate habit).
+- Brush Studio: Procreate's 12 sections. 23 controls drive the simulation (labelled heuristic / edited), the other decoded fields are listed per section as not simulated; Shape and Grain show source isolation (as before); Apple Pencil shows the decoded pressure curves; About holds metadata, the Procreate-preview comparison and the decoded-field table; drawing pad with four preview modes; reset.
+- Colour: Disc, Value (HSB, hex, system picker), Palettes (KFB Washes, KFB Inks & Papers defaults; new palette, add colour, set default, remove; `.swatches` import/export), recent colours, previous/current swatch. Palettes, recent colours and the right-hand preference are stored in this browser only (localStorage).
+- `.swatches` format: ZIP with `Swatches.json` `[{name, swatches:[{hue, saturation, brightness, alpha…}|null]}]`, read leniently. **Not yet checked against a palette exported by Georg's Procreate** (none on the Mac).
+
+### Checks actually run (2026-10-21, Chromium 156.0.8078.4 headless, Playwright 1.64.0)
+- `node tests/unit.mjs`: **41 passed, 0 failed** (adds hex↔HSV round trip for KFB washes, `.swatches` build→parse round trip with empty slots, lenient read, missing Swatches.json rejected).
+- `node tests/browser.mjs`: **31 passed, 0 failed**. B01–B24 ported to the new UI (commands now reached through the Actions popover, isolation checked inside Brush Studio › Shape). B05 now uses a longer fast stroke and measures its second half, because 8 mouse events were too few for the speed smoothing on the larger canvas (alpha 0.425 → 0.332). New:
+
+| # | Check | Result |
+|---|---|---|
+| B25 | eyedropper on the red stroke, tool returns to brush | PASS · #c33728 |
+| B26 | size slider drag: half height ≈ 28 px (logarithmic), top 386 px; ArrowDown; opacity half 0.53 | PASS |
+| B27 | Brush Studio: spacing 0.4 → section and chip marked edited, pad redraws, next stroke carries spacing 0.4, Reset restores 0.071 and disables itself | PASS |
+| B28 | tap active brush tool → Library; all previews rendered; select; second tap → Brush Studio | PASS |
+| B29 | disc square centre → S/B 0.5; ring top → hue 0; H120 S100 B100 → #00ff00 | PASS |
+| B30 | KFB Washes swatch → #e9c14a; import of a generated `.swatches` (5 slots incl. empty); export via Actions › Share round-trips identically | PASS |
+| B31 | B toggles Library, Esc closes, E and I switch tools | PASS |
+| B14 | performance (68 strokes) | frame mean 2.7 ms / max 5.3 ms, commit ≤ 16.5 ms, undo rebuild 145 ms |
+
+### Evidence
+Public (`tools/brush-playground/evidence/`): `editor_ui_canvas.png`, `editor_ui_studio_masked.png`, `editor_ui_palettes.png`, `editor_ipad_portrait.png`, `editor_ipad_studio_masked.png`, `canvas_drawing.png`, `export_transparent.png`, `browser-results.json`. Masked = shape, derived stamp, grain and Procreate preview hidden; stroke previews and the pad are drawn output. Private: `tools/brush-playground/evidence-private/r17-run3/` (unmasked Studio, Library, colour, palettes, comparisons).
+
+### Open
+Real iPad + Apple Pencil and Safari; a real Procreate `.swatches` file; layers, selection, transform, adjustments, smudge; drawing directly on the Studio pad; the fidelity seams from R1.6.

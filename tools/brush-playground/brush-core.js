@@ -369,6 +369,55 @@
     ['minSize', 'size limit', 'IGNORED']
   ];
 
+  /* ---------- colour + Procreate palettes (.swatches) ----------
+     A .swatches file is a ZIP with Swatches.json: [{ name, swatches: [{ hue, saturation, brightness, alpha, … } | null] }]
+     (components 0..1). The layout follows public descriptions of the format and is read leniently;
+     it has not yet been checked against a palette exported by Georg's Procreate. */
+  function hsvToRgb(h, s, v) {
+    h = ((h % 1) + 1) % 1; const i = Math.floor(h * 6), f = h * 6 - i, p = v * (1 - s), q = v * (1 - f * s), t = v * (1 - (1 - f) * s);
+    const [r, g, b] = [[v, t, p], [q, v, p], [p, v, t], [p, q, v], [t, p, v], [v, p, q]][i % 6];
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+  }
+  function rgbToHsv(r, g, b) {
+    r /= 255; g /= 255; b /= 255; const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+    let h = 0;
+    if (d) h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+    h = ((h / 6) % 1 + 1) % 1;
+    return [h, mx ? d / mx : 0, mx];
+  }
+  const toHex = (r, g, b) => '#' + [r, g, b].map(v => clamp(Math.round(v), 0, 255).toString(16).padStart(2, '0')).join('');
+  const fromHex = h => { const m = /^#?([0-9a-f]{6})$/i.exec(String(h).trim()); if (!m) return null; const n = parseInt(m[1], 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; };
+  function parseSwatches(bytes, fflate) {
+    if (!(bytes instanceof Uint8Array)) bytes = new Uint8Array(bytes);
+    if (bytes.length > 5e6) throw Error('Palette file too large');
+    let text;
+    if (bytes[0] === 0x50 && bytes[1] === 0x4b) {
+      const files = fflate.unzipSync(bytes, { filter: f => /(^|\/)Swatches\.json$/i.test(f.name) && f.originalSize < 2e6 });
+      const k = Object.keys(files)[0];
+      if (!k) throw Error('Swatches.json missing: not a Procreate .swatches file');
+      text = new TextDecoder().decode(files[k]);
+    } else text = new TextDecoder().decode(bytes); // a bare Swatches.json is accepted too
+    let j; try { j = JSON.parse(text); } catch (e) { throw Error('Swatches.json is not valid JSON'); }
+    const list = Array.isArray(j) ? j : [j];
+    const out = [];
+    for (const pal of list.slice(0, 50)) {
+      if (!pal || !Array.isArray(pal.swatches)) continue;
+      const colors = pal.swatches.slice(0, 300).map(sw => {
+        if (!sw || typeof sw !== 'object') return null;
+        if (typeof sw.hue === 'number') return toHex(...hsvToRgb(sw.hue, num(sw.saturation, 0), num(sw.brightness, 0)));
+        if (Array.isArray(sw.components) && sw.components.length >= 3) return toHex(sw.components[0] * 255, sw.components[1] * 255, sw.components[2] * 255);
+        return null;
+      });
+      out.push({ name: typeof pal.name === 'string' && pal.name ? pal.name.slice(0, 80) : 'Untitled palette', colors });
+    }
+    if (!out.length) throw Error('No palette found in Swatches.json');
+    return out;
+  }
+  function buildSwatches(name, colors, fflate) {
+    const swatches = colors.map(c => { const rgb = fromHex(c); if (!rgb) return null; const [h, s, v] = rgbToHsv(...rgb); return { hue: h, saturation: s, brightness: v, alpha: 1, origin: 2, colorSpace: 0 }; });
+    return fflate.zipSync({ 'Swatches.json': new TextEncoder().encode(JSON.stringify([{ name, swatches }])) });
+  }
+
   /* ---------- deterministic randomness ---------- */
   function rng(seed) {
     let x = (seed | 0) || 0x9e3779b9;
@@ -502,5 +551,5 @@
     return out;
   }
 
-  return { LIMITS, FIELD_STATUS, parseBplist, parseXmlPlist, unarchive, inspectArchive, inspectBrushZip, curveFn, parseCurve, mapSettings, strokeParams, createStamper, stampsForStroke, pathLength, rng, TAPER_PX, FAST_SPEED };
+  return { hsvToRgb, rgbToHsv, toHex, fromHex, parseSwatches, buildSwatches, LIMITS, FIELD_STATUS, parseBplist, parseXmlPlist, unarchive, inspectArchive, inspectBrushZip, curveFn, parseCurve, mapSettings, strokeParams, createStamper, stampsForStroke, pathLength, rng, TAPER_PX, FAST_SPEED };
 });

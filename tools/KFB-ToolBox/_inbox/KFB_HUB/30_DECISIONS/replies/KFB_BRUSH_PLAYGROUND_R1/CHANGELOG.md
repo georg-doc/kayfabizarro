@@ -1,5 +1,11 @@
 # KFB Brush Playground R1 · changelog (additive, newest first)
 
+## 2026-10-21 · R1.7 · Procreate-style interface, KFB skin, palettes (Claude Code)
+- Brushes moved to the git-ignored `tools/brush-playground/brushes/` (Georg's go).
+- New interface after Procreate's layout: Actions, Paint/Erase/Colour, size/opacity sidebar with eyedropper, Brush Library with stroke previews, Brush Studio (12 Procreate sections, status per control, drawing pad), colour Disc/Value/Palettes, `.swatches` import/export, shortcuts; KFB design-system colours, own icons.
+- Code split into `engine.js`, `ui.js`, `index.html`; core adds colour conversion and `.swatches` read/write.
+- Unit 41/0, Chromium 31/0 (7 new UI tests).
+
 ## 2026-10-21 · R1.6 · .brushset, Procreate 5 curves, grain replace, sessions (Claude Code)
 - Editor moved to `tools/brush-playground/` on Georg's request (“nicht so tief”); planning docs stay in this folder.
 - `.brushset` import with set name/order, Reset/ skipped, content-hash identity (no duplicates), grouped and filterable library.

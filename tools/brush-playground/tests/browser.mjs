@@ -47,7 +47,11 @@ await page.goto('file://' + path.join(proto, 'index.html'));
 let box = await page.locator('#paper').boundingBox();
 const S = 1600 / box.width; // canvas px per css px
 // buttons below the fold scroll the page, so input helpers re-read the canvas position every time
-const fresh = async () => { await page.evaluate(() => window.scrollTo(0, 0)); box = await page.locator('#paper').boundingBox(); };
+const fresh = async () => { await page.evaluate(() => { window.scrollTo(0, 0); KFB.ui.closeAll(); KFB.ui.closeStudio(); }); box = await page.locator('#paper').boundingBox(); };
+// the Procreate-style UI keeps commands in the Actions popover: open it, pick the tab, click the row
+const action = async (tab, id) => { await page.evaluate(() => KFB.ui.closeAll()); await page.click('#btnActions'); await page.click(`#popActions .tab[data-tab="${tab}"]`); await page.click('#' + id); };
+// public screenshots hide what comes straight from the brush file: shape, derived stamp, grain, Procreate's preview
+const MASK = '#isoShape,#isoMask,#isoGrain,#refCanvas{visibility:hidden}';
 
 /* ---- input helpers (css coordinates relative to the canvas) ---- */
 async function pen(points, opts = {}) {
@@ -89,12 +93,15 @@ await t('B02 private CRAYONIC import: archive decoded, original shape isolated',
   const [b] = await px(() => KFB.brushes());
   ok(b.name === 'The CRAYONIC' && b.fields === 52, JSON.stringify(b));
   ok(b.shape[0] === 1024 && b.grain === 'substitute' && b.hasReference, 'shape/grain/ref');
-  ok(await page.locator('#iso').isVisible(), 'isolation tiles hidden');
+  await px(() => KFB.ui.openStudio('shape'));
+  ok(await page.locator('#iso').isVisible(), 'isolation tiles hidden in Brush Studio · Shape');
   // luminance -> alpha: stamp must be transparent in the corner and opaque in the middle (not a square)
   const a = await px(() => { const x = document.getElementById('isoMask').getContext('2d'); return [x.getImageData(4, 4, 1, 1).data[3], x.getImageData(128, 128, 1, 1).data[3]]; });
   ok(a[0] === 0 && a[1] > 120, 'mask alpha corner/center ' + a);
   ok(/SUBSTITUTE/.test(await page.textContent('#isoGrainLabel')), 'substitute grain not labelled');
-  await page.locator('.inspector').screenshot({ path: path.join(PRIV, 'B02_inspector_isolation.png') });
+  await page.screenshot({ path: path.join(PRIV, 'B02_studio_shape_isolation.png') });
+  await px(() => KFB.ui.openStudio('grain')); await page.screenshot({ path: path.join(PRIV, 'B02_studio_grain.png') });
+  await px(() => KFB.ui.closeStudio());
   return `${b.fields} fields · shape ${b.shape.join('×')} · stamp alpha corner ${a[0]} / centre ${a[1]}`;
 });
 
@@ -119,8 +126,8 @@ await t('B04 pen tilt: tilted pen paints wider (tiltSize 0.39)', async () => {
 
 await t('B05 speed: fast stroke lighter (speedOpacity .76) and wider (speedSize −.27)', async () => {
   await mouse(hline(60, 360, 250, 100, 0), 16);   // ~0.19 css px/ms
-  await mouse(hline(420, 720, 250, 8, 0), 16);    // ~2.3 css px/ms
-  const slow = await band(C(150), 40, C(200), C(305)), fast = await band(C(520), 40, C(200), C(305));
+  await mouse(hline(420, 1000, 250, 16, 0), 16);  // ~2.3 css px/ms; long enough for the speed smoothing to settle
+  const slow = await band(C(150), 40, C(200), C(305)), fast = await band(C(820), 40, C(200), C(305)); // second half of the fast stroke
   ok(fast.meanAlpha < slow.meanAlpha * 0.85, `alpha slow ${slow.meanAlpha.toFixed(3)} fast ${fast.meanAlpha.toFixed(3)}`);
   ok(fast.thickness > slow.thickness * 1.05, `thickness slow ${slow.thickness.toFixed(1)} fast ${fast.thickness.toFixed(1)}`);
   metrics.speed = { slow, fast };
@@ -183,14 +190,14 @@ await t('B09 eraser removes paint, undo restores it', async () => {
 });
 
 await t('B10 clear is undoable', async () => {
-  const h0 = await hash(); await page.click('#clear');
+  const h0 = await hash(); await action('canvas', 'clear');
   const n = await band(0, 1600, 0, 1000); ok(n.n === 0, 'not empty');
   await page.click('#undo'); ok(await hash() === h0, 'undo clear');
   return 'cleared and restored';
 });
 
 await t('B11 transparent PNG export (download) matches canvas', async () => {
-  const [dl] = await Promise.all([page.waitForEvent('download'), page.click('#png')]);
+  const [dl] = await Promise.all([page.waitForEvent('download'), action('share', 'png')]);
   const f = path.join(PRIV, 'B11_export_transparent.png'); await dl.saveAs(f);
   const { data, info } = await sharp(f).raw().toBuffer({ resolveWithObject: true });
   ok(info.width === 1600 && info.height === 1000 && info.channels === 4, JSON.stringify(info));
@@ -198,7 +205,7 @@ await t('B11 transparent PNG export (download) matches canvas', async () => {
   const onCanvas = (await band(0, 1600, 0, 1000)).n;
   ok(data[3] === 0, 'corner not transparent');
   ok(Math.abs(painted - onCanvas) / onCanvas < 0.001, `png ${painted} vs canvas ${onCanvas}`);
-  const [dl2] = await Promise.all([page.waitForEvent('download'), page.click('#pngOpaque')]);
+  const [dl2] = await Promise.all([page.waitForEvent('download'), action('share', 'pngOpaque')]);
   const f2 = path.join(PRIV, 'B11_export_paper.png'); await dl2.saveAs(f2);
   const o = await sharp(f2).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   ok(o.data[3] === 255, 'paper export corner not opaque');
@@ -211,7 +218,8 @@ await t('B12 comparison with original Procreate strokes (file previews)', async 
   await page.setInputFiles('#file', ACRY); await page.waitForFunction(() => KFB.brushes().length === 3);
   const all = await px(() => KFB.brushes().map(b => { KFB.select(b.id); return KFB.compare(b.id); }));
   const ids = await px(() => KFB.brushes().map(b => b.id));
-  for (const [i, id] of ids.entries()) { await px(id => { KFB.select(id); KFB.compare(id); }, id); await page.locator('#refBox').screenshot({ path: path.join(PRIV, `B12_compare_${i}.png`) }); }
+  for (const [i, id] of ids.entries()) { await px(id => { KFB.select(id); KFB.ui.openStudio('about'); KFB.compare(id); }, id); await page.locator('[data-section="about"]').screenshot({ path: path.join(PRIV, `B12_compare_${i}.png`) }); }
+  await px(() => KFB.ui.closeStudio());
   metrics.comparison = all;
   const cr = all.find(r => r.brush === 'The CRAYONIC');
   ok(cr.silhouetteIoU >= 0.75, 'CRAYONIC silhouette IoU ' + cr.silhouetteIoU);
@@ -241,8 +249,8 @@ await t('B18 real .brushset import: 21 brushes, set name and order, grouped and 
   ok(new Set(bs.map(b => b.setName)).size === 1 && bs[0].setName === expected, 'set name ' + bs[0].setName + ' vs ' + expected);
   ok(bs[0].name === 'GvW DUPA SKETCHPAINT color tilt P5', 'plist order, first = ' + bs[0].name);
   ok(bs.every(b => b.fields >= 169), 'field counts');
-  const groups = await page.$$eval('#lib .group', els => els.map(e => e.textContent));
-  ok(groups.some(g => /21/.test(g)), 'group header ' + groups);
+  const groups = await page.$$eval('#libSets li', els => els.map(e => e.textContent));
+  ok(groups.some(g => /21$/.test(g)), 'set list ' + groups);
   await setVal('#libSearch', 'kolinsky');
   const shown = await page.$$eval('#lib li[role=option]', els => els.length);
   await setVal('#libSearch', '');
@@ -290,7 +298,7 @@ await t('B21 replace grain: new strokes use the new grain, older strokes keep th
 
 await t('B22 save drawing as JSON and load it in a fresh tab: identical pixels', async () => {
   const hBefore = await hash();
-  const [dl] = await Promise.all([page.waitForEvent('download'), page.click('#saveSession')]);
+  const [dl] = await Promise.all([page.waitForEvent('download'), action('share', 'saveSession')]);
   const f = path.join(PRIV, 'B22_drawing.json'); await dl.saveAs(f);
   const j = JSON.parse(fs.readFileSync(f, 'utf8'));
   ok(j.format === 'kfb.brush-playground.session/1' && j.actions.length > 5, 'format/actions');
@@ -343,16 +351,137 @@ await t('B24 drawing with four set brushes (pen, pressure ramps)', async () => {
   return names.join(', ');
 });
 
+
+/* ================= R1.7 · Procreate-style interface ================= */
+await t('B25 eyedropper picks the red stroke colour and returns to the brush', async () => {
+  await fresh();
+  await page.click('#eyedrop');
+  ok(await page.getAttribute('#eyedrop', 'aria-pressed') === 'true', 'eyedropper not active');
+  await page.mouse.click(box.x + 210, box.y + 360);
+  const c = await px(() => KFB.color()), rgb = core.fromHex(c);
+  ok(rgb[0] > rgb[1] + 60 && rgb[0] > rgb[2] + 60, 'picked ' + c);
+  ok(await page.getAttribute('#brushMode', 'aria-pressed') === 'true', 'tool not restored');
+  await px(() => KFB.setColor('#1f1a14'));
+  return 'picked ' + c;
+});
+
+await t('B26 sidebar sliders: size is logarithmic px, opacity linear, keyboard steps', async () => {
+  await fresh();
+  const sb = await page.locator('#sizeSlider').boundingBox();
+  await page.mouse.move(sb.x + sb.width / 2, sb.y + sb.height - 2); await page.mouse.down();
+  await page.mouse.move(sb.x + sb.width / 2, sb.y + sb.height / 2, { steps: 4 });
+  const mid = Number(await page.inputValue('#size'));
+  await page.mouse.move(sb.x + sb.width / 2, sb.y + 1, { steps: 4 }); await page.mouse.up();
+  const top = Number(await page.inputValue('#size'));
+  ok(mid > 18 && mid < 40 && top >= 370, `half → ${mid} px, top → ${top} px`);
+  await page.focus('#sizeSlider'); await page.keyboard.press('ArrowDown');
+  ok(Number(await page.inputValue('#size')) < top, 'ArrowDown');
+  const ob = await page.locator('#opacitySlider').boundingBox();
+  await page.mouse.click(ob.x + ob.width / 2, ob.y + ob.height / 2);
+  const op = Number(await page.inputValue('#opacity'));
+  ok(Math.abs(op - 0.525) < 0.04, 'opacity at half ' + op);
+  await setVal('#size', 70); await setVal('#opacity', 1);
+  return `size half ${mid} px · top ${top} px · opacity half ${op}`;
+});
+
+await t('B27 Brush Studio: an edited setting reaches the next stroke, the pad redraws, reset restores', async () => {
+  const cray = await px(() => KFB.brushes().find(b => b.name === 'The CRAYONIC').id);
+  await px(id => { KFB.select(id); KFB.ui.openStudio('stroke'); }, cray);
+  const padBefore = await px(() => document.getElementById('pad').toDataURL().length);
+  await setVal('#st_spacing', 0.4);
+  await page.waitForTimeout(100);
+  ok(await page.$eval('#snav [data-s="stroke"]', el => el.classList.contains('edited')), 'nav not marked edited');
+  ok(/edited/i.test(await page.textContent('.set[data-k="spacing"] .chip')), 'chip not edited');
+  const padAfter = await px(() => document.getElementById('pad').toDataURL().length);
+  ok(padAfter !== padBefore, 'pad did not redraw');
+  await page.screenshot({ path: path.join(PRIV, 'B27_studio_stroke_edited.png') });
+  await pen(hline(430, 760, 500, 30, 0.8));
+  const rec = await px(() => KFB.lastStroke());
+  ok(Math.abs(rec.params.spacing - 0.4) < 1e-9, 'stroke spacing ' + rec.params.spacing);
+  await px(() => KFB.ui.openStudio('stroke')); await page.click('#resetDyn');
+  const eff = await px(id => KFB.brushParams(id).spacing, cray);
+  ok(Math.abs(Number(await page.inputValue('#st_spacing')) - eff) < 0.006 && await page.isDisabled('#resetDyn'), 'reset ' + await page.inputValue('#st_spacing') + ' vs ' + eff);
+  await px(() => KFB.ui.closeStudio());
+  return `spacing 0.4 in stroke · pad redrawn · reset → ${eff.toFixed(3)}`;
+});
+
+await t('B28 Brush Library: tap active brush tool opens it, previews render, tap selected brush opens Studio', async () => {
+  await fresh();
+  await page.click('#brushMode');
+  ok(await page.isVisible('#popBrushes'), 'library not open');
+  await page.waitForFunction(() => [...document.querySelectorAll('#lib li canvas')].filter(c => { const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data; for (let i = 3; i < d.length; i += 64) if (d[i]) return true; return false; }).length === document.querySelectorAll('#lib li canvas').length, null, { timeout: 15000 });
+  const n = await page.$$eval('#lib li canvas', els => els.length);
+  await page.locator('#libSets li').filter({ hasText: /21$/ }).click();
+  const first = page.locator('#lib li[role=option]').first();
+  await first.click();
+  const sel = await px(() => KFB.current());
+  ok(await first.getAttribute('aria-selected') === 'true', 'not selected');
+  await page.screenshot({ path: path.join(PRIV, 'B28_library.png') });
+  await first.click();
+  ok(await page.isVisible('#studio'), 'second tap did not open Brush Studio');
+  await px(() => KFB.ui.closeStudio());
+  return `${n} previews rendered · selected ${sel.slice(6, 12)} · second tap → Brush Studio`;
+});
+
+await t('B29 colour disc and value sliders set HSB', async () => {
+  await fresh();
+  await page.click('#btnColor');
+  const d = await page.locator('#disc').boundingBox();
+  await page.mouse.click(d.x + d.width * 0.5, d.y + d.height * 0.5); // centre of the square: s .5, b .5
+  const c1 = core.rgbToHsv(...core.fromHex(await px(() => KFB.color())));
+  ok(Math.abs(c1[1] - 0.5) < 0.06 && Math.abs(c1[2] - 0.5) < 0.06, 'square centre hsv ' + c1.map(v => v.toFixed(2)));
+  await page.mouse.click(d.x + d.width * 0.5, d.y + d.height * 0.035); // top of the ring = hue 0
+  const c2 = core.rgbToHsv(...core.fromHex(await px(() => KFB.color())));
+  ok(c2[0] < 0.03 || c2[0] > 0.97, 'ring top hue ' + c2[0]);
+  await page.click('#popColor .tab[data-tab="value"]');
+  await setVal('#hH', 120); await setVal('#hS', 100); await setVal('#hB', 100);
+  ok(await px(() => KFB.color()) === '#00ff00', 'value sliders ' + await px(() => KFB.color()));
+  await page.screenshot({ path: path.join(PRIV, 'B29_colour.png') });
+  return 'square centre → s/b 0.5 · ring top → hue 0 · H120 S100 B100 → #00ff00';
+});
+
+await t('B30 palettes: swatch sets colour, .swatches import and export round trip', async () => {
+  await page.click('#popColor .tab[data-tab="palettes"]');
+  await page.click('#palettes .palette >> nth=0 >> .sw >> nth=0');
+  ok(await px(() => KFB.color()) === '#e9c14a', 'swatch → ' + await px(() => KFB.color()));
+  const cols = ['#c2412c', '#3e6a83', null, '#7a8d4a', '#1f1a14'];
+  const f = path.join(PRIV, 'Test_Palette.swatches'); fs.writeFileSync(f, core.buildSwatches('Test Palette', cols, fflate));
+  const n0 = (await px(() => KFB.palettes())).palettes.length;
+  await page.setInputFiles('#swatchFile2', f);
+  await page.waitForFunction(n0 => KFB.palettes().palettes.length === n0 + 1, n0);
+  const pal = await px(() => KFB.palettes());
+  ok(pal.palettes[pal.current].name === 'Test Palette' && pal.palettes[pal.current].colors.join() === cols.join(), JSON.stringify(pal.palettes[pal.current]));
+  await page.screenshot({ path: path.join(PRIV, 'B30_palettes.png') });
+  const [dl] = await Promise.all([page.waitForEvent('download'), action('share', 'swatchExport')]);
+  const g = path.join(PRIV, 'B30_export.swatches'); await dl.saveAs(g);
+  const [back] = core.parseSwatches(fs.readFileSync(g), fflate);
+  ok(back.name === 'Test Palette' && back.colors.join() === cols.join(), JSON.stringify(back));
+  return `swatch → #e9c14a · imported 5 slots · exported ${dl.suggestedFilename()} round trip identical`;
+});
+
+await t('B31 keyboard: B toggles the library, Esc closes, E/I switch tools', async () => {
+  await fresh(); await page.click('#paper', { position: { x: 5, y: 5 }, trial: true });
+  await page.keyboard.press('b'); ok(await page.isVisible('#popBrushes'), 'b did not open library');
+  await page.keyboard.press('Escape'); ok(!(await page.isVisible('#popBrushes')), 'Esc');
+  await page.keyboard.press('e'); ok(await page.getAttribute('#eraser', 'aria-pressed') === 'true', 'e');
+  await page.keyboard.press('i'); ok(await page.getAttribute('#eyedrop', 'aria-pressed') === 'true', 'i');
+  await page.keyboard.press('i'); await page.keyboard.press('b');
+  ok(await page.getAttribute('#brushMode', 'aria-pressed') === 'true', 'back to brush');
+  await page.keyboard.press('Escape');
+  return 'b · Esc · e · i · b';
+});
+
 /* ---- screenshots (before the synthetic performance strokes) ---- */
-await page.evaluate(() => window.scrollTo(0, 0));
+await fresh();
 await px(() => KFB.select(KFB.brushes()[0].id));
-await px(() => KFB.compare(KFB.brushes()[0].id));
 await page.screenshot({ path: path.join(PRIV, 'editor_full_private.png') });
-await page.locator('aside.panel').first().screenshot({ path: path.join(PRIV, 'library_brushset_private.png') });
 await page.locator('#paper').screenshot({ path: path.join(PUB, 'canvas_drawing.png') });
-const mask = await page.addStyleTag({ content: '.inspector canvas,.lib canvas{visibility:hidden}' });
-await page.screenshot({ path: path.join(PUB, 'editor_ui_inspector_masked.png') });
+await page.screenshot({ path: path.join(PUB, 'editor_ui_canvas.png') });
+const mask = await page.addStyleTag({ content: MASK });
+await px(() => KFB.ui.openStudio('pencil')); await page.screenshot({ path: path.join(PUB, 'editor_ui_studio_masked.png') }); await px(() => KFB.ui.closeStudio());
+await page.click('#btnColor'); await page.click('#popColor .tab[data-tab="palettes"]'); await page.screenshot({ path: path.join(PUB, 'editor_ui_palettes.png') });
 await mask.evaluate(n => n.remove());
+await fresh();
 
 await t('B14 performance: live frame and commit cost, 60-stroke rebuild', async () => {
   await px(() => KFB.resetPerf());
@@ -381,10 +510,11 @@ await t('B15 privacy: no network requests besides local files', async () => {
 
 await t('B16 narrow viewport (iPad portrait 820×1180): no horizontal scroll', async () => {
   await page.setViewportSize({ width: 820, height: 1180 }); await page.evaluate(() => window.scrollTo(0, 0));
-  await page.addStyleTag({ content: '.inspector canvas,.lib canvas{visibility:hidden}' });
-  const w = await px(() => [document.documentElement.scrollWidth, innerWidth]);
-  ok(w[0] <= w[1], 'scrollWidth ' + w);
-  await page.screenshot({ path: path.join(PUB, 'editor_ipad_portrait_masked.png') });
+  await page.addStyleTag({ content: MASK });
+  const w = await px(() => [document.documentElement.scrollWidth, innerWidth, document.querySelector('.topbar').scrollWidth]);
+  ok(w[0] <= w[1] && w[2] <= w[1], 'scrollWidth ' + w);
+  await px(() => KFB.ui.openStudio('shape')); await page.screenshot({ path: path.join(PUB, 'editor_ipad_studio_masked.png') }); await px(() => KFB.ui.closeStudio());
+  await page.screenshot({ path: path.join(PUB, 'editor_ipad_portrait.png') });
   return 'scrollWidth ' + w[0] + ' / ' + w[1];
 });
 

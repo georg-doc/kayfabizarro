@@ -62,3 +62,10 @@ Added prototype/index.html (local brush shape import, pointer drawing, undo/redo
 - No PR, merge, deployment, Site, Notion or georgbrush.club change. ToolBox and animation ownership unchanged.
 - **One next gate:** Georg opens `tools/brush-playground/index.html`, imports the Comic Ink set, draws with 3–4 favourite brushes (ideally iPad/Pencil) and names which ones feel wrong; those become the next fidelity seams.
 - Checkpoint: R1.6 implementation commit `846d638e953283aec1e53fc300dec5e63a917efe`, pushed and verified with `git ls-remote`; this line is a follow-up docs commit.
+
+## R1.7 · 2026-10-21 · Procreate-style interface (blueprint, KFB skin) + palettes
+- Georg: brushes may move to `brushes/` (done: `tools/brush-playground/brushes/`, git-ignored, incl. the PDF he had placed there); UI as close to Procreate as possible but as a blueprint, settings after Procreate's menus and palettes.
+- Delivered: Procreate layout (canvas, Actions, Paint/Erase/Colour, size/opacity sidebar with eyedropper, Brush Library with previews, Brush Studio with Procreate's 12 sections and status labels per control, drawing pad, colour Disc/Value/Palettes, `.swatches` import/export) in KFB design-system colours with own icons. Code split into engine.js / ui.js / index.html.
+- Result: unit 41/0, Chromium 31/0. Not checked: iPad/Pencil hardware, Safari, a real Procreate `.swatches` export.
+- No PR, merge, deployment, Site, Notion or georgbrush.club change.
+- **One next gate:** Georg opens `tools/brush-playground/index.html`, uses Library → Studio → Colour like in Procreate and names what feels wrong or missing (layers are the obvious next candidate).
