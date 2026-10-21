@@ -15,7 +15,6 @@
 4. **Bild:**
    - Die Kamera startet bei 8,9 von 9 u, die Figur ist klein vor lauten Karten, die Steuerleiste belegt 24 % des Bildes.
    - Treffer sind ein flacher grüner Zackenstern.
-   - Kills zeigen Konfetti (V-499 sagt nein).
    - Der getroffene Spieler wird über 300 ms zur rosa Silhouette.
    - Mündungsblitz und Cast sind erst etwa 100–200 ms nach der Marke zu sehen.
    - Gegner werfen ohne Ankündigung.
@@ -40,11 +39,11 @@
 1. Klang je Waffe, geschichtet (S)
 2. Mischung und Kaskade (S)
 3. Gegner kündigt an (M)
-4. Treffer als Knet-Masse plus Stauchen beim Hit-Stop (M)
+4. Treffer als Knet-Masse, als Umschalter zum Stern (M)
 5. Spieler-Treffer ohne Geist (S–M)
 6. Kamera und Bühne (M)
 7. Abgang auf dem Bild der Marke (S–M)
-8. Kill am Ort statt Konfetti (S)
+8. Kill am Ort: Knet-Puff plus „PLOPP!“ als Weltwort (S)
 9. Tusche-Pfütze leiser (S)
 10. stumme Ereignisse vertonen (S)
 
@@ -84,3 +83,9 @@ Alle Prompts enden mit „…, cartoon clay world, warm and handmade, isolated, 
 **PASS mit TUNE später** für „Klang je Waffe“ (Top-10 Nr. 1).
 - TUNE 1: Einige Schüsse klingen noch nach hohem „Piu-Piu“. Vorschlag: Anschlag tiefer stimmen (Rate ×0,8–0,85), mehr Körper-Ebene, Laser-artige Ebenen leiser.
 - TUNE 2: Das Würfelrollen als KFB-Kennung anpassen. Vorschlag: kurzer Würfel-Klick als Körper-Ebene (Lücke L6 `dice_flick`) statt 1,4 s Schütteln.
+
+## Korrektur (21.10. abends)
+- Das vermeintliche „Konfetti“ beim Kill sind die farbcodierten Würfel (Geschosse und Beute), kein Verstoß gegen V-499. Den Punkt habe ich gestrichen.
+- Ein Stauchen beim Treffer gibt es bereits (`kfb-hit-response` über `_deformer`, `gunfight.v2.js:611`). Die Top-10 Nr. 4 betrifft nur noch die Form des Treffer-Effekts.
+- Der grüne Stern (`burst`) war am 06.09. Georgs Wunsch. Die Knet-Masse kommt deshalb als Umschalter, nicht als Ersatz.
+- Nächster Schritt laut Georg: Prototyp Treffer plus Kill (Top-10 Nr. 4 und 8), lokal auf `ws1/combat-av-r1`.
