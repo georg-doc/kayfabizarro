@@ -2,6 +2,35 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 11 · 22.10. · ABGLEICH an WS0: Musik-Messwerte und Visualizer – nichts doppelt bauen
+
+**Georg 22.10.:** „wir hatten für die stems auf der audio site eigentlich schon alles gemessen und auch für die music visualizer vorbereitet … sonst bitte info an WS0 zum abgleich“.
+
+**Was WS-Audio gebaut hat** (alles lokal auf ws-audio/r1 bzw. in ws1/mvp-r1):
+- `musicPulse()`: Form nach dem WS0-Entwurf `kfb.audio.presentation-pulse.v1`, mit WS1d für die Boombox-Ringe abgestimmt.
+  - Bänder Bass/Mitte/Höhe und Kick kommen aus einem Analyser.
+  - **Tempo und Takt-Phase werden aus den Kicks geschätzt.** Echt gemessen bei 60 fps: Suno-Kicks sicher, das Tempo sprang 127↔150 BPM; nachgebessert (gefaltete Abstände). Cozy hat kaum Tempo.
+- Lautheit je Musiktitel (BS.1770, eigene Messung, Gegenprobe gegen WS0 ±0,05 LU): `scripts/audio/music-gain.json`.
+- Stichworte je Titel (Biom/Tageszeit) für die Jukebox: `scripts/audio/music-tags.json`, eigener Vorschlag.
+
+**Was ich vorgefunden habe:**
+- `tools/KFB-ToolBox/audio/adaptive-music-proof-01/music-clock.mjs` (MusicClock: bpm, beatsPerBar, phraseBars, epoch → beat/bar/phrase, nextBoundary).
+- `tools/KFB-ToolBox/audio/runtime/runtime-registry.v1.json`: bpm für 6 Stem-Sätze (70–120 BPM).
+- `media/3D_Assets/Sounds/jukebox.json` (main): bpm für 13 andere Songs; aus der Fahrt-Liste nur „Shepards Coaster“ (90).
+- Die Audio Site lädt `catalog.snapshot.json` mit bpm/moods je Titel. **Diese Datei liegt nicht im Repo**, und ich komme nicht an sie heran.
+- WS0-Entwurf `kfb.audio.presentation-pulse.v1` (planning/world-pulse-…-2026-10-07): Danach richtet sich musicPulse.
+
+**Fragen an WS0:**
+1. Gibt es für **music/suno-roadtrip-jukebox-v2 (14 Titel)** und **music/cozy-tunes-classics (24 Titel)** gemessene Werte: bpm, erster Downbeat bzw. Beat-Raster, Stimmungen/Moods, Lautheit? Wo liegen sie? Am besten als Datei im privaten Branch `assets/private`, z. B. `music/<liste>/catalog.json`.
+2. Gibt es eine fertige **Music-Visualizer-Schnittstelle** oder Daten dafür (Stems, Bänder, Energie-Kurven je Titel)? Welche Form soll die Welt bekommen, und ist sie gleich `presentation-pulse.v1`?
+3. Sollen Stichworte und Lautheit je Titel aus eurem Katalog kommen statt aus meinen Dateien?
+
+**Vorschlag WS-Audio, sobald der Katalog da ist:**
+- `musicPulse` stellt den Takt auf **MusicClock mit Katalog-BPM + Downbeat** um. Der Analyser liefert dann nur noch Energie/Bänder und Kick als Bestätigung.
+- Tags und Lautheit kommen aus dem Katalog; meine zwei Dateien fallen weg.
+- Die Form für die Welt (WS1d, später Gras) bleibt gleich.
+- Bis zur Antwort baue ich an Takt, Tags und Lautheit nichts weiter.
+
 ## 10 · 22.10. · Optimierung: schneller Start, einheitliche Lautheit, Musik nach Biom, Raumklang
 
 **Georg 22.10.:** „dann gerne 2–5“. Hörpult entfällt, die Audio Site deckt das ab.
