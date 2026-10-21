@@ -1987,17 +1987,21 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     return mix(o, mix(ca,cb,0.5), smoothstep(0.25,0.6,aw));
   }`;
   const vert = `${GLSL_NOISE}\n${GLSL_HEIGHT}
-  uniform vec2 uOffset; uniform vec2 uCarW; uniform float uHole, uDrop, uNE, uOrg, uFS; uniform mat4 uShadowM; uniform float uEdges; varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv; varying float vCL; varying vec2 vVuv; varying float vVid;
+  uniform vec2 uOffset; uniform vec2 uCarW; uniform float uHole, uDrop, uNE, uOrg, uFS; uniform mat4 uShadowM; uniform float uEdges; uniform sampler2D uBake; uniform float uBaked; varying vec3 vW; varying vec3 vN; varying float vH; varying vec4 vSC; varying float vCurv; varying float vCL; varying vec2 vVuv; varying float vVid;
   void main(){ vVuv=vec2(0.0); vVid=0.0;
     vec2 p=position.xz+uOffset; { float chb=max(abs(p.x-uCarW.x),abs(p.y-uCarW.y)); gNE=mix(uNE, uNE*4.0, smoothstep(uNE*100.0, uNE*126.0, chb)); }
+    float h; if(uBaked>0.5){ vec4 bk=texture2D(uBake,(uv*256.0+0.5)/257.0); h=bk.x; vN=vec3(bk.y, sqrt(max(0.0,1.0-bk.y*bk.y-bk.z*bk.z)), bk.z); vH=h; vW=vec3(p.x,h,p.y); vCurv=bk.w;   /* gebacken (BAKE): Höhe, Normale, Krümmung je Gitterpunkt aus der Float-Textur */
+      vCL=0.0; if(uOrg>0.5 && uFS>3.5 && uFS<4.5){ float L=28.0; vCL=(hlow(p+vec2(L,0.0))+hlow(p-vec2(L,0.0))+hlow(p+vec2(0.0,L))+hlow(p-vec2(0.0,L)))*0.25-hlow(p); }
+    } else {
     { float om=gOcMax; gOcMax=5.0; float a0=hraw(p); gG=length(vec2(hraw(p+vec2(2.34375,0.0))-a0, hraw(p+vec2(0.0,2.34375))-a0))/2.34375; gOcMax=om; }
-    float h=hgt(p);   /* zum Rand hin wie das nächste, gröbere Gitter → keine Stufe an der Naht */ float e=uNE;
+    h=hgt(p);   /* zum Rand hin wie das nächste, gröbere Gitter → keine Stufe an der Naht */ float e=uNE;
     float hx=hgt(p+vec2(e,0.0)), hz=hgt(p+vec2(0.0,e));
     vN=normalize(vec3(h-hx, e, h-hz)); vH=h; vW=vec3(p.x,h,p.y);
     // Etherington: Licht folgt der großen Form (Formnormale über ~6 m), nicht jeder Delle → keine splittrigen Licht-Scherben an den Hängen
     if(uEther>0.5 && uNE<3.0){ float eF=max(6.0,uNE*2.5); float ha=hgt(p+vec2(eF,0.0)), hb=hgt(p-vec2(eF,0.0)), hc=hgt(p+vec2(0.0,eF)), hd=hgt(p-vec2(0.0,eF)); vN=normalize(mix(vN, normalize(vec3(hb-ha, 2.0*eF, hd-hc)), 0.75)); }
     vCL=0.0; if(uOrg>0.5 && uFS>3.5 && uFS<4.5){ float L=28.0; vCL=(hlow(p+vec2(L,0.0))+hlow(p-vec2(L,0.0))+hlow(p+vec2(0.0,L))+hlow(p-vec2(0.0,L)))*0.25-hlow(p); }   /* >0 Mulde/Tal, <0 Rücken (große Form) */
     vCurv=0.0; if(uEdges>0.5){ float e2=max(6.0,uNE*2.5); vCurv=(hgt(p+vec2(e2,0.0))+hgt(p-vec2(e2,0.0))+hgt(p+vec2(0.0,e2))+hgt(p-vec2(0.0,e2)))*0.25-h; } // <0: Grat/Kante (konvex)
+    }
     float y=h;
     // Ringgitter: der Teil eines groben Rings, der unter dem feineren Gitter liegt, sinkt weg (keine Doppelflächen, keine Risse am Rand)
     if(uHole>0.0){ float cheb=max(abs(p.x-uCarW.x),abs(p.y-uCarW.y)); y-=uDrop*smoothstep(uHole,uHole-30.0,cheb); }
@@ -2289,6 +2293,32 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     const m = new THREE.Mesh(new THREE.PlaneGeometry(R.size, R.size, SEG, SEG).rotateX(-Math.PI / 2), new THREE.ShaderMaterial({ uniforms: u, vertexShader: vert, fragmentShader: frag, polygonOffset: true, polygonOffsetFactor: R.po, polygonOffsetUnits: R.po * 2 }));
     m.frustumCulled = false; m.visible = false; scene.add(m); return { m, u, step: R.size / SEG };
   });
+
+  /* BAKE (CODE_PERF_R1 Folgeschritt): Höhe, Formnormale und Krümmung je Gitterpunkt einmal in eine Float-Textur (257²) rechnen, die Gitter lesen sie per Texturabruf
+     statt ~10 × hgt je Vertex. Neu gebacken wird nur, wenn sich Offset, Wagenlage (Detailstufe) oder ein Höhen-Uniform ändert und der Stand 2 Bilder ruhig ist
+     (fahrend rechnet das Gitter wie bisher selbst). Der Shader-Text ist derselbe wie im Vertex-Zweig, also gleiche Höhe. */
+  const BAKE = (() => { const branch = vert.split('} else {\n')[1].split('\n    }\n    float y=h;')[0]
+    const frag = `${GLSL_NOISE}\n${GLSL_HEIGHT}\n  uniform vec2 uOffset; uniform vec2 uCarW; uniform float uNE, uEdges, uOrg, uFS, uBakeSize;
+  void main(){ vec2 ij=floor(gl_FragCoord.xy); vec2 q=ij/256.0; vec2 p=vec2((q.x-0.5)*uBakeSize,(0.5-q.y)*uBakeSize)+uOffset;
+    { float chb=max(abs(p.x-uCarW.x),abs(p.y-uCarW.y)); gNE=mix(uNE, uNE*4.0, smoothstep(uNE*100.0, uNE*126.0, chb)); }
+    float h; vec3 vN; float vH; vec3 vW; float vCL; float vCurv;
+${branch}
+    gl_FragColor=vec4(h, vN.x, vN.z, vCurv); }`
+    const names = [...new Set([...(GLSL_HEIGHT.match(/uniform\s+\w+\s+[^;]+;/g) || []).flatMap((d) => d.replace(/uniform\s+\w+\s+/, '').replace(';', '').split(',').map((n) => n.trim().replace(/\[.*\]$/, ''))), 'uOffset', 'uCarW', 'uNE', 'uEdges'])]
+    const vs = (v) => typeof v === 'number' ? v : Array.isArray(v) ? v.map(vs).join(',') : v && v.toArray ? v.toArray().join(',') : String(v)
+    const cam = new THREE.Camera(), quadGeo = new THREE.PlaneGeometry(2, 2)
+    const list = [{ m: terrain, u: U, size: SIZE }, ...RINGS.map((R) => ({ m: R.m, u: R.u, size: R.step * SEG }))].map((B) => {
+      B.rt = new THREE.WebGLRenderTarget(SEG + 1, SEG + 1, { type: THREE.FloatType, format: THREE.RGBAFormat, minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter, depthBuffer: false })
+      B.u.uBake = { value: B.rt.texture }; B.u.uBaked = { value: 0 }
+      const mat = new THREE.ShaderMaterial({ uniforms: Object.assign({}, B.u, { uBakeSize: { value: B.size } }), vertexShader: 'void main(){ gl_Position=vec4(position.xy,0.0,1.0); }', fragmentShader: frag, depthTest: false, depthWrite: false })
+      B.scene = new THREE.Scene(); const q = new THREE.Mesh(quadGeo, mat); q.frustumCulled = false; B.scene.add(q); B.sig = ''; B.last = ''; B.calm = 0; B.n = 0; return B })
+    function update() { if (window.__BAKE_OFF) { for (const B of list) B.u.uBaked.value = 0; return }
+      for (const B of list) { if (!B.m.visible) continue; const sig = names.map((n) => B.u[n] ? vs(B.u[n].value) : '').join('|')
+        if (sig === B.sig) { B.u.uBaked.value = 1; continue }
+        B.u.uBaked.value = 0; if (sig === B.last) { if (++B.calm >= 2) { const prev = renderer.getRenderTarget(); renderer.setRenderTarget(B.rt); renderer.render(B.scene, cam); renderer.setRenderTarget(prev); B.sig = sig; B.n++; B.u.uBaked.value = 1 } } else B.calm = 0
+        B.last = sig } }
+    return { list, update, names } })();
+  window.__BAKE = BAKE;
 
   // Fluid-Haut (WASSER_R1, Georg 21.10.: „wirkt nicht als Wasser … klar ein anderes Material, ein Fluid“): halbtransparent, Fresnel mit Spiegelung des
   // eigenen Himmels (skyColor), Kräuselnormalen in echter Zeit (nicht an der Fahr-Uhr), gestochene Glanzlichter, Schaumringe am Ufer; Tiefe an der
@@ -3310,6 +3340,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     const sx = Math.floor(P.x / STEP) * STEP, sz = Math.floor(P.z / STEP) * STEP;
     U.uOffset.value.set(sx, sz); terrain.position.set(sx - P.x, 0, sz - P.z); water.position.copy(terrain.position); U.uCarW.value.set(P.x, P.z);
     for (const R of RINGS) { const rx = Math.floor(P.x / R.step) * R.step, rz = Math.floor(P.z / R.step) * R.step; R.u.uOffset.value.set(rx, rz); R.m.position.set(rx - P.x, 0, rz - P.z) } water.visible = S.water > 0.005;
+    try { BAKE.update() } catch (e) { window.__BAKE_OFF = 1; console.warn('bake', e) }
     worldRoot.position.set(-P.x, 0, -P.z);
     if (ROCKC.dirty || Math.hypot(P.x - ROCKC.cx, P.z - ROCKC.cz) > 40) buildRocks(P.x, P.z);
     carRoot.position.set(0, P.y, 0); carRoot.rotation.y = P.yaw;   // wie im Spiel: Ursprung = Unterseite auf Fahrhöhe
