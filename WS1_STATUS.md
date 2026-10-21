@@ -3,6 +3,41 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 119 · 21.10. · WS-NPC (Abschnitt für die parallele Sitzung) · kfb.world-save/1 steht · Spiegel terrain/439
+
+### WS-NPC
+Sitzung läuft. Eigene Datei: `WS_NPC_STATUS.md` auf `ws-npc/status` (dort die Einzelheiten, neueste oben).
+- **Status 1:**
+  - Inventur-Entwurf: `CANON_3D/sources/WS_NPC_INVENTUR_R1.md` auf `ws-npc/status`.
+  - Bauplan Phase A in fünf Schritten:
+    - A0: reiner Kern `npcRoute`/`npcDay` (`kfb.npc-day/1`), Begegnungs-Bus als Port von #210 plus orient/silent/cancel/interrupt/resume, Node-Tests;
+    - A1: Daten-POIs ≥ 1,5 m;
+    - A2: Modul `residentLife` (Plan ist Wahrheit, Aufholen ≤ 1,25×);
+    - A3: Begegnung;
+    - A4: Weggehen/Zurückkommen ohne Pop-in;
+    - A5: Abnahmematrix, Spielkamera-Clip, fps.
+  - Einbau in M1 nur hinter dem Hash `npc`. Arbeitsordner `~/kfb-ws1/kfb-planet-npc`, Zweig `ws-npc/phase-a` lokal; Push erst nach WS0-Go.
+- **Lead-Entscheide:**
+  - Platzhalter für die zweite Rolle: adventurer-mage, markiert „PLATZHALTER · Lorekeeper (WSB K11)“.
+  - Kein Waving-Clip aus dem Intake (Brief: keine neuen Assets). Grüßen vorerst über Blick, Kopf und Idle_B. Waving und Digging stehen auf der Clip-Liste an WS0.
+- **Speicher:**
+  - `kfb.world-save/1` ist im Spiel gebaut (Commit `4c6ec5a`, lokal; Spiegel nach voller Reihe).
+  - Modul `src/world/worldSave.js` mit Abschnitt `npc: { v: 1, receipts }` nach dem Schema von WS-NPC (idempotente ID, observed/participated/told, told nur mit Quelle, Kappen 16 je Bewohner und 256 gesamt, kein Freitext).
+  - Test `worldSave` PASS; Spieler-Save `kfb.save/1` bleibt unberührt.
+  - Phase B kann danach bauen.
+
+### Bitte an WS0 / Georg (Dateien nur lokal, nicht in Git)
+Auf diesem Mac gibt es kein Dropbox. Bitte einmal nach `~/kfb-ws1/private/` kopieren:
+1. `60_CAST/cast.r1.json` und `clips.r1.json`, dazu Farmer B (`farmer_harke`: GLB, Augenprofil, Figurenkarte), nach `~/kfb-ws1/private/cast/`.
+2. `50_BLENDER/K4/out`, `K5/out`, `ORKBAND` r1b (Dioramen-Test), nach `~/kfb-ws1/private/blender/`.
+3. Konzeptblatt Phase A für WS-NPC (Brief R2 Tier 0, WS0 schreibt es).
+
+### Spiel
+- `ws1/terrain-439` @ba2005b gespiegelt: `c2e46b8` (vyG-Fix) und `fd5ccc5` (Coyote, Puffer, Mini-Turbo).
+- `orbit` calmAfterRelease scheitert auch am Stand davor (`eac5cb0`), ist also kein Effekt dieser Commits; sieht nach GPU-Last aus.
+- Neu lokal `4c6ec5a`: worldSave und `createContactAO` aus M1 entfernt (V-587). Die volle Reihe läuft.
+- Spiel-Vorschau `ws1/preview` mit Startweiche aktualisiert.
+
 ## 118 · 21.10. · Antworten auf V-587 umgesetzt · WS-NPC gestartet · Dioramen Schritt 1 · Bitte an WS0: K4/K5
 
 **Danke für V-587.** Umgesetzt bzw. eingeplant:
