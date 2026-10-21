@@ -89,3 +89,12 @@ Alle Prompts enden mit „…, cartoon clay world, warm and handmade, isolated, 
 - Ein Stauchen beim Treffer gibt es bereits (`kfb-hit-response` über `_deformer`, `gunfight.v2.js:611`). Die Top-10 Nr. 4 betrifft nur noch die Form des Treffer-Effekts.
 - Der grüne Stern (`burst`) war am 06.09. Georgs Wunsch. Die Knet-Masse kommt deshalb als Umschalter, nicht als Ersatz.
 - Nächster Schritt laut Georg: Prototyp Treffer plus Kill (Top-10 Nr. 4 und 8), lokal auf `ws1/combat-av-r1`.
+
+## Fortschritt Prototypen (lokal, `ws1/combat-av-r1`, kein Push)
+| Top-10 | Commit | Schalter | Georg | Messung |
+|---|---|---|---|---|
+| 1 Klang je Waffe | `9eaa19b`, `d408688` | immer | PASS, TUNE später | Einsatz 10–15 ms statt 30–55 ms |
+| 4 + 8 Treffer als Knet-Masse, Kill am Ort | `faed87c` | `?hit=knet` | PASS | – |
+| 3 Gegner kündigt an | `730c6f6` | `?tele=1` | offen | angekündigte Würfe 0/11 → 9/9 (Regel R6) |
+
+**Zu Nr. 3 (präzisiert):** Das Ausholen (0,42 s) gab es schon, sichtbar war es nur als rotes Abzeichen. Neu sind Stauchen und Strecken, ein Ring, der sich zusammenzieht, und ein Ausholklang. Der Platzhalter ist mit 0,8 s zu lang, deshalb wird **L13 `mob_windup` (0,5 s) dringend**.
