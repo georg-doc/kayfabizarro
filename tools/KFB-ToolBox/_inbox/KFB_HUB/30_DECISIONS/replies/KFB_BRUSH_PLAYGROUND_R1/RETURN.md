@@ -61,3 +61,4 @@ Added prototype/index.html (local brush shape import, pointer drawing, undo/redo
 - Result: unit 37/0, Chromium 24/0. Real set imports 21/21 in ~2 s with name and order; median silhouette IoU over the set 0.864, median abs opacity error 0.032. Weak brushes and the DRUCKER 2.1 grain seam are listed in TEST_REPORT_R1.md R1.6.
 - No PR, merge, deployment, Site, Notion or georgbrush.club change. ToolBox and animation ownership unchanged.
 - **One next gate:** Georg opens `tools/brush-playground/index.html`, imports the Comic Ink set, draws with 3–4 favourite brushes (ideally iPad/Pencil) and names which ones feel wrong; those become the next fidelity seams.
+- Checkpoint: R1.6 implementation commit `846d638e953283aec1e53fc300dec5e63a917efe`, pushed and verified with `git ls-remote`; this line is a follow-up docs commit.
