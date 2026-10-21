@@ -172,7 +172,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <label class="check"><input type="checkbox" id="props" checked> Bäume und Büsche in Gruppen</label>
         <label class="check"><input type="checkbox" id="ground" checked> Erdung: dunkler Bodenkontakt + Kronen-Unterseiten</label>
         <label class="check"><input type="checkbox" id="crumbs" checked> Kontakt-Brocken an jeder Fuge (V-565)</label>
-        <label class="check"><input type="checkbox" id="fgmass" checked> Vordergrund-Tonmasse vor dem Diorama</label>
+        <label class="check"><input type="checkbox" id="fgmass"> Vordergrund-Tonmasse vor dem Diorama</label>
         <label class="check"><input type="checkbox" id="edges"> Farbige Kanten an Graten (Versuch, noch fleckig)</label>
         <label class="check"><input type="checkbox" id="shadowdyn"> Schatten nur für bewegte Objekte (Wagen, Figuren): kleine, scharfe Schattenkarte um den Wagen, ruhende Welt erdet sich über Boden-AO</label>
         <label class="check"><input type="checkbox" id="shadows" checked> Echte 3D-Schatten (im Palettenton)</label>
@@ -3155,7 +3155,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (!RC.dirty) $('recipe').value = JSON.stringify(r, null, 2);
     RC.last = r;
   }
-  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1, mig41: 1, mig42: 1, mig43: 1, mig44: 1, mig45: 1, mig46: 1, mig47: 1 })) } catch (e) {} }
+  function save() { try { localStorage.setItem('kfb-gelaende-probe-7', JSON.stringify({ ...S, mig39: 1, mig40: 1, mig41: 1, mig42: 1, mig43: 1, mig44: 1, mig45: 1, mig46: 1, mig47: 1, mig48: 1 })) } catch (e) {} }
   function setUI(p) {
     for (const k of NUM) if (p[k] != null) $(k).value = p[k];
     for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
@@ -3178,9 +3178,9 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     btn.disabled = false; $('benchCopy').disabled = false }
   /* Leistungsstufen (WS0 Job 1, Vorschlag bis Georgs Messung vorliegt): setzen nur Schalter, Grundeinstellung bleibt „eigene Auswahl“ */
   /* Leistungsstufen nach Messung CODE_PERF_R1 §4 (ms in der Fahrt, Georgs Werte): retina 13 · crumbs 3,5 · shadows 2 · painted 1 · stones 0,3. Schatten, Etherington, Kulissen, Himmel v2 bleiben an (zusammen < 2,5 ms, viel Look) */
-  const PERF = { hoch: { painted: 1, cards: 0, crumbs: 1, ring: 1, stones: 1, fgmass: 1, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 1 },
-    mittel: { painted: 1, cards: 0, crumbs: 1, ring: 1, stones: 1, fgmass: 1, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 0 },
-    niedrig: { painted: 1, cards: 0, crumbs: 0, ring: 1, stones: 0, fgmass: 1, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 0 } }
+  const PERF = { hoch: { painted: 1, cards: 0, crumbs: 1, ring: 1, stones: 1, fgmass: 0, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 1 },
+    mittel: { painted: 1, cards: 0, crumbs: 1, ring: 1, stones: 1, fgmass: 0, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 0 },
+    niedrig: { painted: 1, cards: 0, crumbs: 0, ring: 1, stones: 0, fgmass: 0, shadows: 1, ether: 1, kul: 1, sky2: 1, ground: 1, retina: 0 } }
   $('perfLevel').addEventListener('change', (e) => { const L = PERF[e.target.value]; if (!L) return; for (const [id, v] of Object.entries(L)) { const el = $(id); if (el && el.checked !== !!v) el.click() } })
   $('bench').addEventListener('click', () => { benchRun().catch((e) => { $('benchOut').textContent = 'Messung abgebrochen: ' + e.message; $('bench').disabled = false }) })
   $('benchCopy').addEventListener('click', () => { const t = $('benchOut').textContent; try { navigator.clipboard.writeText(t).catch(() => {}) } catch (e) {} })
@@ -3241,7 +3241,8 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   if (stored && !stored.mig40) { stored.cform = 4; stored.mig40 = 1 }
   if (stored && !stored.mig41) { stored.fstage = 5; stored.mig41 = 1 }
   if (stored && !stored.mig46) { stored.cards = false; stored.mig46 = 1 }
-  if (stored && !stored.mig47) { stored.rivers = true; stored.mig47 = 1 }   /* einmalig: Flüsse an (Georg 21.10.) */   /* einmalig: Wolkenkörper aus – Kuppelwolken reichen (Georg 21.10., Leistung) */
+  if (stored && !stored.mig47) { stored.rivers = true; stored.mig47 = 1 }   /* einmalig: Flüsse an (Georg 21.10.) */
+  if (stored && !stored.mig48) { stored.fgmass = false; stored.mig48 = 1 }   /* einmalig: Vordergrund-Tonmasse aus (Georg 21.10.: liest sich von oben als großer Schattenfleck) */   /* einmalig: Wolkenkörper aus – Kuppelwolken reichen (Georg 21.10., Leistung) */
   if (stored && !stored.mig45) { stored.flare = false; stored.mig45 = 1 }   /* einmalig: Blendenflecken aus – Kamera-Optik, nicht gemalt (AD-Audit Befund 6) */
   if (stored && !stored.mig44) { stored.ground = true; stored.mig44 = 1 }   /* einmalig: Erdung (Boden-AO) wieder an (Georg 21.10.) */
   if (stored && !stored.mig43) { stored.fluid = 3; if (!(stored.water > 0.005)) stored.water = 0.06; stored.mig43 = 1 }   /* einmalig: Island-Kit-Wasser als Standard, sichtbar (Georg 21.10.) */
