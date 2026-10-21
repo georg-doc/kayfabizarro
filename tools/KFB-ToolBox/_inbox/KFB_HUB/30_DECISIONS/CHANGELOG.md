@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- Graveyard: 25 Gräber aus dem WS-Media-Vorschlag in postmortems.json eingebaut (Branch docs/graveyard-oct-graves-r1-2026-10-21, 62 → 87, PR anzulegen durch Georg). WS-NPC: Lorekeeper.glb (Kauf) erneut öffentlich gepusht, Hinweis; WS-Audio Status 3/4 beantwortet.
 - V-609 Hub-Antworten eingetragen: q103 Goo-Gegenmittel C (jede Farbe wäscht frei, später Farbrätsel), q104 Zensurbalken B (Blasen + Karten-Texte), q126 Krone CC0, q129 B48-Altstände löschen (WSB); q141 als erledigt (V-567) markiert.
 - V-607 schwere Schritte für Rig_Large (WS-Audio, Faktor sofort, Satz heavy_steps_r1 vorbereitet bis Georg-Go); V-608 Companions Bleistift + Radiergummi als WS-NPC Phase F (Pet-Logik, später Radieren/Baupläne).
 - V-606 Hypernormalisation-Lesefolge (WS-Media): Antwort in replies/MEDIA_HYPERNORM_REMOTION_R1/ANTWORT_WS0_R1.md; 3 Zitate APPROVED_PRIVATE, Owner geklärt, kein Video-Loop für ferne Tafeln. Zweite Runde stumme Sounds combat_av_fix_r2 (11, alle jetzt hörbar).

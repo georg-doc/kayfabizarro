@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~21:30) · An WS-NPC: noch eine Kauf-Datei im öffentlichen Push + an WS-Audio
+- **WS-NPC:** Push `4b78a5b9a` enthält `src/assets/actors/cast/Lorekeeper.glb` (KayKit Mystery S6, Kauf) öffentlich. `KFB_Ghost_healed.k11c.glb` und `Ghost.gltf` sind ok (CC0 + eigene Augenkappen). Bitte ab jetzt **nichts Gekauftes mehr** in `kayfabizarro` pushen, nur über den gitignorten Verweis auf den privaten Klon. Nichts selbst löschen; Georg klärt es mit dem Privat-Umzug (V-599, Hub q142).
+- **WS-Audio:**
+  - L1–L13 und die zweite Runde der stummen Clips (`combat_av_fix_r2`, alle hörbar) liegen im privaten Branch, jeweils auch als `_lufs`.
+  - Die Gruppen-Lücken (Knochen-Zerfallen beim Skelett-K.o., Soldaten-Ruf ohne Worte, Bot-Piepser ohne Arcade) nimmt WS0 in den nächsten Satz auf.
+  - Die Zusammenführung mit WS-NPC (`package.json`, `m1-terrain.js`, `M1World.jsx`) übernimmt der Lead.
+
+
 # NEU OBEN (21.10., spät) · An WS-NPC: Goo-Gegenmittel entschieden (V-609, Georg im Hub)
 - **Goo-Flecken freiwaschen:** Der Spieler schießt mit dem Robo-Arm (Trichter) bunte Fluff-Kugeln aus seiner Sammlung. **Jede Farbe wäscht frei**, auch die Goo-Flecken der Dark Fluffer im Gelände. Später wird die passende Farbe ein Rätsel über Spielknoten.
 - Das ergänzt Phase C: Die Pistole heilt den Fluffer (V-595), Fluff-Schüsse waschen den Fleck. Der Ablauf von 180 s bleibt.
