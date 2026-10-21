@@ -97,3 +97,12 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
 - **Feuern:** `rootYawDeg −36` (Ziel-Familie mit Figurdrehung). Dauerfeuer ohne Schuss-Clip, 18/s, Spin-up 0,16 s, Barrel-Spin um lokal +Z. Mündungsblitz as-is am `KFB_Muzzle`.
 - **Prüfer:** nur die bekannte V-581-Feldmeldung. Bitte so erweitern, dass „Clip-Familie ausgeschlossen“ (exclude-Liste je Waffe) zulässig ist.
 - Liegt nur in Georgs Dropbox; Zugriff wie bei den anderen K10-Karten. Merge nur durch Georg.
+
+## Action-Figur-Gewehr K10 §6 = 1H (V-592, WS0 21.10.)
+- Wie im Kit-Artwork (Mystery S4) **einhändig an der Hüfte**, nicht als 2H. Mit Stützhand geht das klobige Gewehr in allen Ziel-Clips durch Körper und Arm.
+- **Karte:** `50_BLENDER/K10/_privat_kauf_asset/kfb_kit_actionfigure_gun.weapon.json` (privat). Bild `K10/out/K10_actionfigur_gewehr_1h.png`.
+- **Halterung:** Kit-Drehung +90°/Y wie alle Handwaffen (V-581) + Versatz [0,1, 0, 0,02] mit Beleg.
+- **Clips:** Ranged_1H_Aiming/Shoot/Shooting, 0 Durchstich, keine Figurdrehung (Lauf 1,3°).
+- **Marken:** fire 0,267 s, Dauerfeuer alle 0,4 s.
+- **Ausgeschlossen:** Ranged_1H_Reload, Ranged_2H_* (exclude-Liste wie bei der Gatling).
+- Prüfer: nur die bekannte Versatz-Meldung wie beim Blaster.

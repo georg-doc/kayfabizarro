@@ -8379,6 +8379,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-592",
+   "date": "2026-10-21",
+   "area": "Figuren",
+   "verdict": "TUNE",
+   "text": "Action-Figur-Gewehr (Mystery S4) wird 1H an der Hüfte geführt wie im Kit-Artwork, nicht 2H nach V-582: mit Stützhand geht es in allen Ziel-Clips durch Körper und Arm (bis 79 Punkte, 3 Fit-Läufe). 1H: Kit-Drehung +90 Grad Y (V-581) + Versatz [0,1, 0, 0,02], Ranged_1H_Aiming/Shoot/Shooting ohne Durchstich, keine Figurdrehung; ausgeschlossen Ranged_1H_Reload und Ranged_2H_*.",
+   "values": {},
+   "owner": "WSB (K10 §6) · WSA (Arena)",
+   "check": "Bildbogen 1H ohne Durchstich",
+   "source": "WS0 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Quelle (Kit-Artwork) zeigt einhändig; as-is-Prinzip V-574 vor einer erzwungenen 2H-Haltung.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8466,7 +8481,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1021",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1022",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
