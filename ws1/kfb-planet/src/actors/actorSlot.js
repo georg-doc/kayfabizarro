@@ -2,6 +2,7 @@
 // Prüft das Rezept gegen den Darsteller-Vertrag (#355, erweitert R2 in ./face-driver-contract.r2.mjs) und wählt das Modul:
 //   KFB_NATIVE  · Gesichts-Besitzer kaykit-eye-adapter (KayKit-Figur, F1)      → modules/eyeActor (Eye-Rig-Studio-Weg)
 //   KFB_NATIVE  · Gesichts-Besitzer face-mount.v1 (eigener Kopf, FrizzleBob)    → modules/faceMountActor (ToolBox-Weg)
+//   KFB_NATIVE  · Gesichts-Besitzer kfb-figure-loader#headpart (Kopfteil-Figur aus der Karte, Aliens, C2) → modules/headpartActor
 //   Der Besitzer steht im Rezept (composition.faceOwners.face); es gibt keinen stillen Rückfall auf den anderen Weg.
 //   WIREFACE_*  · nur mit VITE_WIREFACE=1 und lokalem SDK; ohne SDK keine Figur, sondern Status SOURCE_MISSING
 //                 (V-214: keine Figur ohne animiertes Gesicht; kein Ersatzgesicht).
@@ -11,8 +12,9 @@ import { Group } from 'three'
 import { companion } from './face-driver-contract.r2.mjs'
 import { createEyeActor } from '../modules/eyeActor'
 import { createFaceMountActor } from '../modules/faceMountActor'
+import { createHeadpartActor } from '../modules/headpartActor'
 
-const KFB_NATIVE_OWNERS = { 'kfb-lib/face-mount.v1.js': createFaceMountActor, 'lib/kaykit-eye-adapter.v1.js': createEyeActor }
+const KFB_NATIVE_OWNERS = { 'kfb-lib/face-mount.v1.js': createFaceMountActor, 'lib/kaykit-eye-adapter.v1.js': createEyeActor, 'vendor/figure/kfb-figure-loader.v1.js#headpart': createHeadpartActor }
 export const WIREFACE_ENABLED = typeof import.meta !== 'undefined' && import.meta.env?.VITE_WIREFACE === '1'
 
 // options: { recipe, faceDriver?, faceSource?, mount?, activeFaceOwners?, …modulspezifisch (modelUrl, earRig, hairUrl, clipsUrl, url, profile, contract …) }

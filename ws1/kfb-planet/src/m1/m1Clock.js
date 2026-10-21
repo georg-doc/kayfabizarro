@@ -15,7 +15,9 @@ export const STEP = 1 / 60
 // onStep: Prüf-Haken (nur Tests mit Debug-Schalter) – wird nach JEDEM Schritt gerufen, auch wenn ein Bildschirm-Bild mehrere Schritte macht;
 // onDraw: Prüf-Haken im Zeichenmoment (interpolierter Stand, siehe interpDraw)
 // nodraw (nur mit debug): Physik-Tests ohne Zeichnen – der Takt bleibt replay-fest, der Software-Renderer des Test-Browsers (≈ 8 Bilder/s) entfällt
-export const M1CLOCK = { replay: !!(DEBUG && m), nodraw: !!(DEBUG && /(^|[#,])nodraw(,|$)/.test(h)), hz, stepsPerFrame: hz === 30 ? 2 : 1, framesPerStep: hz === 120 ? 2 : 1, frame: 0, steps: 0, t: 0, draw: true, hidden: false, onStep: null, onDraw: null, stats: { stepMs: 0, drawMs: 0, steps: 0, draws: 0, multi: 0, dropped: 0 } }
+// norender (nur mit debug): wie gezeichnet – Interpolation, Kamera, onDraw je Bild –, nur renderer.render entfällt (Jitter-Messung im echten Bildtakt
+// ohne den langsamen Software-Renderer); fps=30 (nur mit debug): nur jedes zweite Bildschirm-Bild wird verarbeitet (gedrosselt)
+export const M1CLOCK = { replay: !!(DEBUG && m), nodraw: !!(DEBUG && /(^|[#,])nodraw(,|$)/.test(h)), norender: !!(DEBUG && /(^|[#,])norender(,|$)/.test(h)), half: !!(DEBUG && /(^|[#,])fps=30(,|$)/.test(h)), hz, stepsPerFrame: hz === 30 ? 2 : 1, framesPerStep: hz === 120 ? 2 : 1, frame: 0, steps: 0, t: 0, draw: true, hidden: false, onStep: null, onDraw: null, stats: { stepMs: 0, drawMs: 0, steps: 0, draws: 0, multi: 0, dropped: 0 } }
 export function resetClock() { Object.assign(M1CLOCK, { frame: 0, steps: 0, t: 0, draw: true, hidden: false, onStep: null, onDraw: null, stats: { stepMs: 0, drawMs: 0, steps: 0, draws: 0, multi: 0, dropped: 0 } }) }
 
 // Bild-Interpolation (Georg 16.10.: „ruckelt sehr stark beim Fliegen“; Sonde probe-judder: auf 120-Hz-Bildschirmen stand die Figur in jedem zweiten Bild
@@ -24,22 +26,25 @@ export function resetClock() { Object.assign(M1CLOCK, { frame: 0, steps: 0, t: 0
 // später Fahrzeug) und die Kamera. Nach dem Zeichnen wird der echte Stand zurückgesetzt – Logik und Tests sehen nie einen Zwischenwert.
 // Sprünge über 4 m (Teleport, Zurücksetzen) werden nicht gemischt.
 const _pv = new Map(), _cv = new Map()
-export const M1INTERP = { objs: new Set(), camera: null, on: true }
+// frameCam: Kamera-Besitzer im Bildtakt (C1, V-408) – fn(dt) läuft je Bild NACH der Interpolation, vor dem Zeichnen; solange gesetzt, wird die Kamera
+// nicht zwischen Physik-Schritten interpoliert (sie wird je Bild aus dem interpolierten Ziel neu gerechnet)
+export const M1INTERP = { objs: new Set(), camera: null, on: true, frameCam: null }
 const snap = (o) => ({ p: o.position.clone(), q: o.quaternion.clone(), fov: o.isPerspectiveCamera ? o.fov : 0 })
 export function interpTrack(o) { M1INTERP.objs.add(o); return () => { M1INTERP.objs.delete(o); _pv.delete(o); _cv.delete(o) } }
 // nach jedem Physik-Schritt: vorigen Stand merken, aktuellen aufnehmen
 export function interpAfterStep() {
-  const all = [...M1INTERP.objs]; if (M1INTERP.camera) all.push(M1INTERP.camera)
+  const all = [...M1INTERP.objs]; if (M1INTERP.camera && !M1INTERP.frameCam) all.push(M1INTERP.camera)
   for (const o of all) { const c = snap(o), prev = _cv.get(o); _pv.set(o, prev && prev.p.distanceTo(c.p) < 4 ? prev : c); _cv.set(o, c) }
 }
 // zeichnen mit α ∈ [0, 1]: draw() rendert; danach echter Stand zurück
 export function interpDraw(alpha, draw) {
-  if (!M1INTERP.on) { draw(); return }
-  const all = [...M1INTERP.objs]; if (M1INTERP.camera) all.push(M1INTERP.camera)
+  if (!M1INTERP.on) { M1INTERP.frameCam?.(); draw(); return }
+  const all = [...M1INTERP.objs]; if (M1INTERP.camera && !M1INTERP.frameCam) all.push(M1INTERP.camera)
   const used = []
   for (const o of all) { const a = _pv.get(o), b = _cv.get(o); if (!a || !b) continue
     used.push([o, snap(o)]); o.position.lerpVectors(a.p, b.p, alpha); o.quaternion.slerpQuaternions(a.q, b.q, alpha)
     if (o.isPerspectiveCamera && a.fov !== b.fov) { o.fov = a.fov + (b.fov - a.fov) * alpha; o.updateProjectionMatrix() } }
+  M1INTERP.frameCam?.() // Kamera nach der Interpolation (gleicher Transform wie gezeichnet)
   draw()
   for (const [o, s] of used) { o.position.copy(s.p); o.quaternion.copy(s.q); if (o.isPerspectiveCamera && o.fov !== s.fov) { o.fov = s.fov; o.updateProjectionMatrix() } }
 }

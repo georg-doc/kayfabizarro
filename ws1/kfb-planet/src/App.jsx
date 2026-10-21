@@ -41,7 +41,7 @@ export default function App() {
   return (
     <>
       <KeyboardControls map={MOVE_MAP}>
-        <Canvas frameloop={m1 ? 'never' : 'always'} shadows dpr={m1 ? [1, 2] : eyetest ? 1 : [1, 1.75]} flat={actortest} gl={eyetest && !actortest ? { toneMappingExposure: 1.05 } : undefined} camera={{ fov: 55, near: 0.1, far: 2000, position: [0, 30, 12] }}>
+        <Canvas frameloop={m1 ? 'never' : 'always'} shadows dpr={m1 ? [1, 1.25] : eyetest ? 1 : [1, 1.75]} flat={actortest} gl={eyetest && !actortest ? { toneMappingExposure: 1.05 } : undefined} camera={{ fov: 55, near: 0.1, far: 2000, position: [0, 30, 12] }}>
           {m1 ? <Suspense fallback={null}><M1World /></Suspense> : stage ? <Suspense fallback={null}><Stage /></Suspense> : stagetest ? <Suspense fallback={null}><StageTest /></Suspense> : actortest ? <Suspense fallback={null}><ActorTest /></Suspense> : eyetest ? <Suspense fallback={null}><EyeTest /></Suspense> : <>
           {SCENE === 'planets' ? <>
             <color attach="background" args={['#1b1633']} />

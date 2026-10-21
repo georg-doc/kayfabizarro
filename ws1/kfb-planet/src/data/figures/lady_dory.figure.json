@@ -1,0 +1,343 @@
+{
+ "schema": "kfb.figure/1",
+ "id": "lady_dory",
+ "displayName": "Lady Dory",
+ "aliases": [
+  "ladydory-headpart-r1",
+  "Lady Dory · Space Ranger"
+ ],
+ "role": "npc",
+ "body": {
+  "glb": {
+   "repo": "georg-doc/kayfabizarro",
+   "ref": "assets/kfb-blender-run-r1-2026-10-16",
+   "commit": "6ecf85775de0118a232161f4b4f9d4a08f379cc7",
+   "path": "media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/LadyDory_RigMedium.toolbox.r4.glb",
+   "blob": "1b741cd7cbbdda73afa90c7c8eae9fe8a8bff2fd",
+   "sha256": "74420ad9785c276bf0083e730214fa3494d08a03dc8dca0bfd890c15d7a04883",
+   "bytes": 4712400,
+   "onMain": false
+  },
+  "recipe": {
+   "path": "media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/ladydory-headpart-r4.ws0-2026-10-16.kfb-pets.json",
+   "ref": "assets/kfb-blender-run-r1-2026-10-16",
+   "blob": "82f1a67f644f4d37135b06fada0bde5969d9ec86",
+   "sha256": "a698c43b34c696f8b25991836c62189d8c91e483643fb2faeb0c4aeccf9484ad",
+   "schema": "kfb.pets/1 + kfb.headpart/1"
+  },
+  "rawSource": {
+   "body": "KayKit Space Ranger (purchase asset, local/private, V-261) · SpaceRanger.glb sha256 302f8aef4af43d0fb00abe8f7a237fbdf5baed356c8c11efe5e038f3177ca854",
+   "head": "Claude Design head part (MeshyModels/_alien_head_parts_r1/*_Head.part.glb)",
+   "note": "NEVER load directly"
+  },
+  "rig": "Rig_Medium + rigid head_part joint (head IBMs re-baked in Blender R2)",
+  "scale": {
+   "value": null,
+   "headTunables": {
+    "headScale": 0.925,
+    "headOffset": [
+     0.0,
+     -0.0905,
+     0.01614
+    ],
+    "neckTaper": 0.0
+   },
+   "source": "media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/ladydory-headpart-r4.ws0-2026-10-16.kfb-pets.json#pets[0].headPart.tunables"
+  },
+  "suit": {
+   "accent": "orange-red (V-261)",
+   "material": "SpaceRanger_LadyDory"
+  },
+  "variants": [
+   {
+    "id": "r1/r2",
+    "status": "superseded; use r4 only (BRIEF_WSA_ALIENS_TOOLBOX_R4.md)"
+   }
+  ]
+ },
+ "originals": {
+  "remove": [
+   "SpaceRanger_Head (not present in the GLB)"
+  ],
+  "keep": [
+   "SpaceRanger_Body incl. grey neck collar (visible, V-346)",
+   "SpaceRanger_ArmLeft/Right",
+   "SpaceRanger_LegLeft/Right",
+   "baked eye socket shell (do not hide/replace/cover, V-332)",
+   "head mesh"
+  ],
+  "method": "baked",
+  "note": "Frankenstein figure built in Blender: head sits on the collar like a helmet, no extra neck, rigid on head_part (V-346 r4, V-353). No original eyes to remove.",
+  "source": "media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/ladydory-headpart-r4.ws0-2026-10-16.kfb-pets.json#pets[0].headPart / .eyeSocket"
+ },
+ "eyeRig": {
+  "required": true,
+  "none": null,
+  "version": "pet-eye-rig.v6",
+  "module": {
+   "path": "tools/KFB-ToolBox/kfb-rigs-embed-v3/petstudio-v9/studio-v12/pet-eye-rig.v6.js",
+   "ref": "main",
+   "blob": "853bcf5fb090dd6564fda8bc83d0b4cb527e6b26"
+  },
+  "seat": "headpart-socket",
+  "anchors": {
+   "nodes": [
+    "KFB_Eye_C_anchor"
+   ],
+   "bones": [
+    "eyestalk.c"
+   ],
+   "C": {
+    "pos": [
+     -0.03102,
+     0.72464,
+     -0.00679
+    ],
+    "scale": 1,
+    "radius": 0.15406,
+    "gaze": [
+     0,
+     0,
+     1
+    ],
+    "socketColour": "#fb650e",
+    "shellRadius": 0.15621
+   },
+   "source": "ladydory-headpart-r4…#pets[0].eyes"
+  },
+  "lid": {
+   "type": "socket-shell",
+   "colour": "#fb650e",
+   "colourMode": "stalk tone x 0.72 (eyeSocket.lids)",
+   "fit": 0.9,
+   "note": "EyeRig v6 lid shells INSIDE the baked socket shell; no ToolBox lid flaps, clayLids off (V-332). Target: E2 closed lid skin inside the socket (V-348.4).",
+   "futureE2": {
+    "module": "tools/KFB-ToolBox/eye-actor-studio-v1/clay-eyelid/clay-eyelid.v2.js",
+    "ref": "eyes/kfb-clay-eyelid-e2-2026-10-16",
+    "commit": "e1e60edff3973a396e120c2206e559981154b3be",
+    "status": "construction PASS (V-348); integration as hull on EyeRig v6 still open (V-348 steps 2-4)",
+    "alienFit": "E2 outer 1.124 R > socket 1.10 R → scale eye + skin together s ≤ 0.973 (CHANGELOG 16.10.)"
+   }
+  },
+  "irisColour": null,
+  "pupil": {
+   "style": "matte-cute",
+   "size": 0.4,
+   "gloss": 0.1,
+   "form": null
+  },
+  "settings": {
+   "anchor": {
+    "dx": 0,
+    "dy": 0,
+    "ring": 0.3,
+    "track": 0.1
+   },
+   "lidFit": 0.9,
+   "inset": 0,
+   "converge": 0,
+   "splay": 0,
+   "socket": "anchor",
+   "singleEye": true,
+   "lashes": {
+    "length": 0,
+    "density": 6,
+    "width": 1
+   },
+   "life": {
+    "wander": 0.09,
+    "tremor": 0.045
+   },
+   "blink": {
+    "minGap": 2.5,
+    "maxGap": 6.5,
+    "dur": 0.12
+   },
+   "baseColor": "#fca840"
+  },
+  "source": "media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/ladydory-headpart-r4.ws0-2026-10-16.kfb-pets.json#pets[0].eye / .eyes[] / .eyeHost (WS0 build from Claude Design values; NOT a Georg ToolBox save). Top-level eyeRig/face blocks in that file are FB defaults (recolorDefault #f2c93c) – ignore.",
+  "alternatives": [],
+  "todo": [
+   "Single centre eye; shellRadius 1.014 R vs 1.10 R socket rule – clarify (CHANGELOG 16.10. E2 note).",
+   "Georg tunes and saves in the Figure Workshop (V-317) → replace settings."
+  ]
+ },
+ "brows": {
+  "owner": "planned",
+  "status": "later (V-297): smaller, thinner, narrower than Hunky",
+  "anchors": [
+   "KFB_Brow_C_anchor"
+  ]
+ },
+ "mouth": {
+  "owner": "decal-set",
+  "set": "gpt_b_r2",
+  "setLabel": "MOUTHS_GPT_R2/B (full lips, gap tooth, expressive)",
+  "path": "mouths/B/",
+  "rest": "closed",
+  "default": "smirk",
+  "anchor": {
+   "node": "KFB_Mouth_anchor",
+   "bone": "head_part",
+   "width": 0.24069
+  },
+  "tint": null,
+  "manifest": "assets/kfb-mouth-sets-r3-2026-10-16 @eb1100f9 · media/3D_Assets/Textures/KFB-Mouth-Sets_R3/mouth_sets.manifest.json",
+  "vRef": [
+   "V-346 (swap)",
+   "V-353"
+  ]
+ },
+ "appendages": [
+  {
+   "id": "antenna.r",
+   "type": "antenna",
+   "bone": "antenna.r",
+   "side": "R",
+   "stiffness": {
+    "stiffness": 26,
+    "damping": 3.2,
+    "maxDeg": 32,
+    "inertia": 0.02,
+    "spin": 0.06,
+    "bob": 4,
+    "bobHz": 0.8
+   }
+  },
+  {
+   "id": "antenna.l",
+   "type": "antenna",
+   "bone": "antenna.l",
+   "side": "L",
+   "stiffness": {
+    "stiffness": 26,
+    "damping": 3.2,
+    "maxDeg": 32,
+    "inertia": 0.02,
+    "spin": 0.06,
+    "bob": 4,
+    "bobHz": 0.8
+   }
+  },
+  {
+   "id": "eyestalk.c",
+   "type": "eyestalk",
+   "bone": "eyestalk.c",
+   "side": "C",
+   "stiffness": {
+    "stiffness": 45,
+    "damping": 5.5,
+    "maxDeg": 18,
+    "inertia": 0.016,
+    "spin": 0.05,
+    "bob": 2.5,
+    "bobHz": 0.55
+   },
+   "eyeFollows": true,
+   "note": "recipe says side \"L\" for the centre stalk – check (V-332 side rule)."
+  }
+ ],
+ "material": {
+  "clayProfile": "figure-fine",
+  "sheenMax": 0.05,
+  "canon": "skills/chat/KFB_OPEN_WORLD_CLAY_SURFACE_CANON_2026-10-07.md (K1/H0 golden line) · V-053 figures = Resident Atlas profile \"fine\" · V-340 one clay material for KayKit figures and Meshy vehicles (matte, thumbprint, ≤ 18 % palette pull, no mesh change)",
+  "rules": "V-346.6 acceptance images always with KFB clay · V-346.4 clay must not wash out texture colours · V-385/V-392 sheen ≤ 0.05, no rim/back light, no emissive, no private light",
+  "eyeMeshes": "eye meshes without clay and without shadow casting (anchored-eyes.v1)",
+  "note": "Head material *_Head_Clay present in GLB; suit accent colour per V-261. Proof images r4 (blender_run_r2/proofs) – check clay."
+ },
+ "voice": {
+  "engine": "kokoro v1.0",
+  "spec": "bf_isabella60+af_bella40",
+  "speed": 0.93,
+  "lang": "en-gb",
+  "vRef": [
+   "V-324"
+  ],
+  "source": "KFB_HUB/30_DECISIONS/replies/voice_casting.r1.json"
+ },
+ "performance": {
+  "story": "Cancel This Planet / Hunky & Dory; UFO as TARDIS hub (V-294)",
+  "expression": "eyes/lids first (V-297), named expression poses + appendage actors (V-338 C)"
+ },
+ "approval": {
+  "status": "candidate",
+  "by": null,
+  "date": null,
+  "vRef": [
+   "V-317",
+   "V-332",
+   "V-346",
+   "V-348",
+   "V-353"
+  ],
+  "parts": {
+   "body": {
+    "status": "tune-accepted",
+    "by": "Georg",
+    "date": "2026-10-16",
+    "vRef": "V-353",
+    "evidence": "r4 head on collar \"sieht jetzt okay aus … mit einem Tune\" "
+   },
+   "originals": {
+    "status": "approved",
+    "by": "Georg",
+    "date": "2026-10-16",
+    "vRef": "V-346",
+    "evidence": "collar visible, no extra neck (V-346 correction)"
+   },
+   "eyeRig": {
+    "status": "candidate",
+    "by": "Georg",
+    "date": "2026-10-15",
+    "vRef": "V-332",
+    "evidence": "socket enclosure approved (\"die Augen-Einfassung ist gut gelungen\", FrankenEyes R1, Georg 15.10.); EyeRig values never saved by Georg; E2 pending"
+   },
+   "mouth": {
+    "status": "approved",
+    "by": "Georg",
+    "date": "2026-10-16",
+    "vRef": "V-346",
+    "evidence": "mouths swapped per Georg (Hunky A / Dory B), free choice in dropdown"
+   },
+   "material": {
+    "status": "open",
+    "by": null,
+    "date": null,
+    "vRef": null,
+    "evidence": "clay proof to check"
+   }
+  },
+  "missing": [
+   "Figure Workshop r4 integration report (BRIEF_WSA_ALIENS_TOOLBOX_R4, Hub b61)",
+   "Georg tunes + saves (V-317)",
+   "E2 lids in socket (V-348.4)",
+   "Space Ranger head-turn transfer (V-353.2 / WSB B5)",
+   "brows (later, V-297)",
+   "Dory head oval + mouth area Blender job (V-336 BLENDER_MCP_HANDOFF) – status unknown"
+  ]
+ },
+ "provenance": [
+  {
+   "what": "recipe r4",
+   "path": "media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/ladydory-headpart-r4.ws0-2026-10-16.kfb-pets.json",
+   "ref": "assets/kfb-blender-run-r1-2026-10-16",
+   "sha256": "a698c43b34c696f8b25991836c62189d8c91e483643fb2faeb0c4aeccf9484ad"
+  },
+  {
+   "what": "proofs r4",
+   "path": "media/3D_Assets/MeshyModels/blender_run_r2/proofs/dory_r4/",
+   "ref": "assets/kfb-blender-run-r1-2026-10-16"
+  },
+  {
+   "what": "brief",
+   "path": "KFB_HUB/30_DECISIONS/replies/BRIEF_WSA_ALIENS_TOOLBOX_R4.md"
+  },
+  {
+   "what": "socket reference images",
+   "path": "media/3D_Assets/MeshyModels/alien_figures_toolbox_r1/reference/"
+  }
+ ],
+ "todo": [
+  "Put r4 GLB + card on main after Georg's save; pin commit (recipe has commit null)."
+ ]
+}

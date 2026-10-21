@@ -4,7 +4,8 @@ import path from 'path'
 import fs from 'fs'
 const CHROMIUM = process.env.PW_CHROMIUM || (fs.existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined)
 export async function openPage(hash = '', { log = false, viewport = { width: 1280, height: 800 } } = {}) {
-  const browser = await chromium.launch({ executablePath: CHROMIUM, args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] })
+  // PW_GPU=1: Chromium mit echter GPU (Metal, Hinweis WS1b 20.10.) – SwiftShader ist auf diesem Mac für light/m1-move/scale zu langsam
+  const browser = process.env.PW_GPU ? await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist'] }) : await chromium.launch({ executablePath: CHROMIUM, args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] })
   const page = await browser.newPage({ viewport })
   const errs = [], warns = []
   page.on('pageerror', (e) => errs.push(e.message))
