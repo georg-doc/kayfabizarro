@@ -1,7 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
-- WSB-Blocker gelöst: Quaternius Mushroom/Ghost (CC0) lokal aus dem gepinnten Commit c746a95 extrahiert nach KFB Combat Arena/_handover/V584_JOBS_2026-10-21/04-dark-fluffer/source/ (kein Download, nicht in Git); WSB startet K11 Cubes.
+- WSB-Blocker gelöst: Quaternius Mushroom/Ghost (CC0) lokal aus dem gepinnten Commit c746a95 extrahiert nach KFB Combat Arena/_handover/V584_JOBS_2026-10-21/04-dark-fluffer/source/ (kein Download, nicht in Git). WSB wartet nach seiner Regel auf Georgs Ja, bevor er die Dateien nutzt.
 - V-591 NPC-Clips: Lesen Holding_C (Buch liegt auf), Nachschlagen Holding_B statt Use_Item, Harken höchstens 5 cm Zinken.
 - WSB K10 §4 Gatling angenommen: eine seitliche Halterung Boden + Flug, Boden geschichtet (V-582), 10 + 8 Clips ohne Durchstich, rootYawDeg −36, Dauerfeuer 18/s; Ausschlüsse Ranged_2H/flight_aim/brake_recover; an WSA übergeben. K11-NPC-Clips: Lorekeeper Holding_C/Use_Item nativ + Umblättern gebaut, Farmer B Digging/Working_C nativ.
 - WSB K11 §1 angenommen (WS0): Lorekeeper ready in cast.r1.json (KFB-Augen, Proof-Stage G1–G6 PASS, G4 Original-Inseln); Cast-Spiegel aktualisiert; WS-NPC informiert. Gatling: flight_aim für die Minigun weggelassen, Feuern aus Hover/Cruise mit Figurdrehung (V-582-konform).
