@@ -12,16 +12,17 @@
       "castId": "farmer_harke",
       "stageCastId": "farmer-b",
       "label": "Farmer B (Bäuerin, Theaterdirektorin)",
-      "figure": "KayKit Mystery S6 Farmers · Farmer_B.glb as-is (eingebettete Textur, Georg 21.10.: „wie ausgeliefert“), kayfabizarro main @29c7500 Blob bc765229, Augen aus Georgs Batch eye-rig-medium.batch-1 @ac9dbaed (farmer-b, AUTO_CANDIDATE)",
+      "figure": "KayKit Mystery S6 Farmers · Farmer_B.glb as-is (eingebettete Textur, Georg 21.10.: „wie ausgeliefert“), kayfabizarro main @29c7500, Augen aus Georgs Batch (farmer-b). Privat, wenn src/private da ist: WSB K11 KFB_Farmer_harke.k11.glb (Punktlagen gleich, Augen gebacken, Werkzeug-Clips) + Gabel KFB_Pitchfork.k11 an handslot.r (je Clip eine Halterung)",
       "source": "Writers Room export_2026-10-20c · the_bards_barnyard_beatdown · BESTÄTIGT: „Bäuerin als Theaterdirektorin“, Zuhause „Scheune mit Strohballen-Bühne“; WS0-ACK Brief R2 #2"
     },
     {
-      "residentId": "lore_ph",
-      "castId": "adventurer-mage",
-      "stageCastId": "adventurer-mage",
-      "label": "PLATZHALTER · Lorekeeper (WSB K11)",
-      "placeholder": "PLATZHALTER · Lorekeeper (WSB K11) – Lead-OK 21.10.",
-      "source": "Writers Room export_2026-10-20c · frizzlebob_s_mission_control · VORSCHLAG: Lorekeeper „Guide, Mentor, Questgeber“, Zuhause „Kartenraum mit Questbrett“"
+      "residentId": "lorekeeper",
+      "castId": "lorekeeper",
+      "stageCastId": "lorekeeper",
+      "label": "Lorekeeper · Hüter des Wissens (Guide, Mentor, Questgeber)",
+      "figure": "KayKit Mystery S6 Lorekeeper. Öffentlich: Lorekeeper.glb aus kayfabizarro main mit Georgs Augenprofil (Batch @ac9dbaed, AUTO_CANDIDATE; WS0 V-595 Übergang). Privat, wenn src/private da ist: WSB K11 KFB_Lorekeeper.k11b.glb (Augen gebacken, Lese-Clips) + Buch KFB_Book_Open.k11 (CC0) an handslot.r",
+      "source": "Writers Room export_2026-10-20c · frizzlebob_s_mission_control · VORSCHLAG: Lorekeeper „Guide, Mentor, Questgeber“, Zuhause „Kartenraum mit Questbrett“",
+      "replaces": "lore_ph (PLATZHALTER adventurer-mage, bis 21.10.)"
     }
   ],
   "pois": [
@@ -701,7 +702,7 @@
           "at": 0.29,
           "poi": "fb_social",
           "activity": "social",
-          "meet": "lore_ph"
+          "meet": "lorekeeper"
         },
         {
           "at": 0.4,
@@ -722,7 +723,7 @@
     },
     {
       "schema": "kfb.npc-day/1",
-      "residentId": "lore_ph",
+      "residentId": "lorekeeper",
       "seed": 23,
       "speed": 1.0,
       "entries": [
@@ -763,13 +764,20 @@
     "tend": {
       "base": "Idle_A",
       "beats": [
-        "Interact",
-        "PickUp"
+        [
+          "Digging",
+          "Interact"
+        ],
+        [
+          "Working_C",
+          "PickUp"
+        ]
       ],
       "every": [
         3.5,
         6.0
-      ]
+      ],
+      "note": "Wunschlisten: erster vorhandener Clip (K11 privat: Graben/Harken mit Gabel; öffentlich: Interact/PickUp)"
     },
     "inspect": {
       "base": "Idle_A",
@@ -784,13 +792,24 @@
     "study": {
       "base": "Idle_A",
       "beats": [
-        "Use_Item",
-        "Idle_B"
+        [
+          "Holding_C",
+          "Use_Item"
+        ],
+        [
+          "kfb_npc_read_page_turn_a",
+          "Idle_B"
+        ],
+        [
+          "Holding_B",
+          "Idle_B"
+        ]
       ],
       "every": [
         4.0,
         7.0
-      ]
+      ],
+      "note": "Wunschlisten: K11 privat Lesen/Umblättern/Nachschlagen mit Buch (Use_Item mit Buch verboten, V-591); öffentlich Use_Item ohne Buch"
     },
     "social": {
       "base": "Idle_A",
@@ -806,7 +825,8 @@
   "fluffers": [
     {
       "id": "dark_fluffer_ghost",
-      "model": "media/3D_Assets/MonsterPack_Quaternius/MonsterCuteCubes/glTF/Ghost.gltf",
+      "model": "WSB K11 cubes/KFB_Ghost_healed.k11c.glb (sha256 521b73a7…, CC0 Quaternius Ghost as-is + KFB_Mouth + KFB_HealedEyes; WS0 V-602)",
+      "modelBefore": "media/3D_Assets/MonsterPack_Quaternius/MonsterCuteCubes/glTF/Ghost.gltf",
       "decision": "Georg 21.10.: Gegner Ghost; Heil-Waffe Gun_Pistol (KayKit Prototype Bits)",
       "seed": 7,
       "start": [
@@ -926,10 +946,22 @@
       "id": "toy_squad",
       "kind": "patrol",
       "combat": {
-        "warnClip": ["Interact", "Idle_B"],
-        "threatClip": ["Interact", "Idle_B"],
-        "koClip": ["Skeletons_Death", "Death_A"],
-        "awakeClip": ["Skeletons_Awaken_Floor", "Idle_B"],
+        "warnClip": [
+          "Interact",
+          "Idle_B"
+        ],
+        "threatClip": [
+          "Interact",
+          "Idle_B"
+        ],
+        "koClip": [
+          "Skeletons_Death",
+          "Death_A"
+        ],
+        "awakeClip": [
+          "Skeletons_Awaken_Floor",
+          "Idle_B"
+        ],
         "note": "Georg 21.10.: Soldaten treffbar. KO/Aufstehen vorerst mit den Rig_Medium-Clips aus Rig_Medium_Special (as-is); eigener Spielzeug-Aufsteh-Clip über WS0/Blender MCP beauftragt"
       },
       "zone": "m1-east",
@@ -1028,6 +1060,131 @@
         ]
       },
       "note": "Hut-Nummern (V-464, WSB r3) und Gewehr-Halterung (V-582, WSB r3d) fehlen auf diesem Mac → ohne Nummer, ohne Gewehr; Kommando-Triplets (WSA) offen"
+    },
+    {
+      "schema": "kfb.npc-group/1",
+      "id": "bot_crew",
+      "kind": "patrol",
+      "zone": "m1-southeast",
+      "decision": "Georg 21.10.: Bots als Arbeitstrupp (B17 r1, PROOF – WS0 prüft, dann Georg); Augen PROOF (Lead 21.10.: Frontbild an Georg vor main)",
+      "speed": 0.9,
+      "t0": 0,
+      "route": {
+        "points": [
+          [
+            16,
+            -14
+          ],
+          [
+            29,
+            -9
+          ],
+          [
+            28,
+            -6
+          ],
+          [
+            15,
+            -11
+          ]
+        ],
+        "stops": [
+          {
+            "i": 0,
+            "wait": 5
+          },
+          {
+            "i": 1,
+            "wait": 4
+          }
+        ],
+        "cornerR": 1.4
+      },
+      "members": [
+        {
+          "id": "bot_tragic",
+          "castId": "kayfabrick-bot:tragic:helm",
+          "placeholderCastId": "adventurer-barbarian",
+          "back": 0,
+          "side": 0
+        },
+        {
+          "id": "bot_comic",
+          "castId": "kayfabrick-bot:comic:helm",
+          "placeholderCastId": "adventurer-barbarian",
+          "back": 1.7,
+          "side": 0
+        },
+        {
+          "id": "bot_absurd",
+          "castId": "kayfabrick-bot:absurd:helm",
+          "placeholderCastId": "adventurer-barbarian",
+          "back": 3.4,
+          "side": 0
+        }
+      ],
+      "notice": {
+        "r": 7,
+        "holdS": 3.5,
+        "cooldownS": 25,
+        "leaderClip": [
+          "Waving",
+          "Idle_A"
+        ],
+        "othersClip": [
+          "Idle_A"
+        ]
+      },
+      "combat": {
+        "warnClip": [
+          "kfb_bot_angry_a",
+          "Idle_B"
+        ],
+        "threatClip": [
+          "kfb_bot_angry_a",
+          "Idle_B"
+        ],
+        "koClip": [
+          "Death_A"
+        ],
+        "awakeClip": [
+          "Skeletons_Awaken_Floor",
+          "Idle_A"
+        ],
+        "note": "Wut = kfb_bot_angry_a (B17), KO/Aufstehen Rig_Medium-Clips as-is wie beim Trupp"
+      },
+      "statics": [
+        {
+          "key": "station:tragic",
+          "at": [
+            14.2,
+            -15.6
+          ],
+          "yawDeg": 70
+        },
+        {
+          "key": "block:tragic",
+          "at": [
+            30.6,
+            -10.4
+          ]
+        },
+        {
+          "key": "block:comic",
+          "at": [
+            31.2,
+            -9.4
+          ]
+        },
+        {
+          "key": "block:absurd",
+          "at": [
+            30.2,
+            -11.4
+          ]
+        }
+      ],
+      "note": "Ort Platzhalter-POI (Lead-Teil, später Dioramen-Anker); Boden < 1°, frei von Bewohner-Routen, Skelett-Schleife, Trupp-Schleife und Amphitheater (Box x ±11,7, z −11,8…9,1). Eigentempo kfb_bot_carry_a nicht gemessen (aus Walking_A abgeleitet)"
     }
   ],
   "bands": [

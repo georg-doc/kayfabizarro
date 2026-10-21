@@ -8,7 +8,7 @@ import { createResidentSim, SIM } from '../../src/npc/residentSim.js'
 import { createFlufferSim } from '../../src/npc/flufferSim.js'
 
 const ctx = { pois: Object.fromEntries(W.pois.map((p) => [p.id, p])), routes: buildRoutes(W.routes), dayS: W.dayS }, DT = 1 / 60
-const lk = W.days.find((d) => d.residentId === 'lore_ph')
+const lk = W.days.find((d) => d.residentId === 'lorekeeper')
 // Welcher Tag führt den Lorekeeper auf dem Heimweg über Variante a (an der Spuckstelle vorbei)?
 let day = 0; for (; day < 20; day++) { const p = planAt(lk, ctx, day * W.dayS + 0.845 * W.dayS); if (p.routeId === 'lk_work-lk_home_a') break }
 const tHome = day * W.dayS + 0.84 * W.dayS
@@ -26,8 +26,8 @@ function run(withThreat) {
     if (prev) R.maxStepK = Math.max(R.maxStepK, Math.hypot(o.x - prev.x, o.z - prev.z) / (lk.speed * SIM.catchK * DT + 1e-9))
     prev = { x: o.x, z: o.z }
   }
-  const st = sim.byId.get('lore_ph').state().stats
-  return { ...R, alerts: st.alerts, maxSpeedK: st.maxSpeedK, avoid: st.maxAvoid, lagEnd: sim.byId.get('lore_ph').out.lag }
+  const st = sim.byId.get('lorekeeper').state().stats
+  return { ...R, alerts: st.alerts, maxSpeedK: st.maxSpeedK, avoid: st.maxAvoid, lagEnd: sim.byId.get('lorekeeper').out.lag }
 }
 const a = run(true), b = run(false)
 process.exit(report('unit-npcThreat (WS-NPC Phase C, Bewohner bemerkt und weicht aus)', {

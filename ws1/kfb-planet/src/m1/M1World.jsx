@@ -78,6 +78,8 @@ import { interpTrack } from './m1Clock'
 import { createDarkFluffer } from '../npc/darkFluffer'
 import { createGroupLife } from '../npc/groupLife'
 import { createBandLife } from '../npc/bandLife'
+import { withPrivateBody } from '../actors/privateCast'
+import { botCast, botStationUrl, botBlockUrl } from '../actors/botCast'
 import { CLASS_SCALE } from '../actors/stageCast'
 
 const hash = typeof location !== 'undefined' ? location.hash : ''
@@ -145,11 +147,12 @@ const makeBand = mk('band', createBandLife)
 const BAND_OPTS = BAND_DEF ? { scenelet: BAND_SCENE || { ...BAND_DEF.fallback, assets: {} }, urls: Object.fromEntries(Object.entries(BAND_PRIV).map(([k, v]) => [k.split('/').pop(), v])), at: BAND_AT.at, yaw: (BAND_AT.yawDeg * Math.PI) / 180,
   groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clock: () => (M1CLOCK.t ?? 0) + NPC_T0, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null }, worldScale: K, classScale: CLASS_SCALE,
   placeholder: { cast: () => KAYKIT(BAND_DEF.placeholderCast)(0, 0, null), clipUrls: [clipsGeneral, clipsSim] } } : null
-const GROUP_OPTS = { groups: NPC_WORLD.groups, tables: NPC_WORLD.encounterTables, bubbleR: NPC_WORLD.bubbleR, groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim, clipsSpecial], cast: (id) => KAYKIT(id)(0, 0, null), worldScale: K,
+const GROUP_OPTS = { groups: NPC_WORLD.groups, tables: NPC_WORLD.encounterTables, bubbleR: NPC_WORLD.bubbleR, groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim, clipsSpecial], cast: (id, m) => botCast(id) || KAYKIT(/^kayfabrick-bot:/.test(id) ? m?.placeholderCastId || 'adventurer-barbarian' : id)(0, 0, null), worldScale: K, classScale: CLASS_SCALE, // Bots B17 privat (PROOF), sonst Platzhalter
+  staticUrl: (key) => { const [kind, c] = key.split(':'); return kind === 'station' ? botStationUrl(c) : kind === 'block' ? botBlockUrl(c) : null },
   clock: () => M1CLOCK.t, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null }, orchard: () => mods.orchard, // D3: Ziele, Fluff
   day: () => Math.floor(((M1CLOCK.t ?? 0) + NPC_T0) / NPC_WORLD.dayS), onEvent: (e) => mods.npc?.observeGroup?.({ ...e, t: (M1CLOCK.t ?? 0) + NPC_T0 }) }
 // Phase B: Gedächtnis im Weltstand kfb.world-save/1 (localStorage, getrennt von kfb.save/1); npcfresh leert ihn vorher (Tests); npcmem=0 schaltet ab
-const NPC_OPTS = { world: NPC_WORLD, threat: () => mods.fluffer?.threat?.() ?? null, memory: !/(^|[#,])npcmem=0(,|$)/.test(hash), memoryFresh: /(^|[#,])npcfresh(,|$)/.test(hash), groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim], cast: (id) => KAYKIT(id)(0, 0, null), worldScale: K, t0: NPC_T0,
+const NPC_OPTS = { world: NPC_WORLD, threat: () => mods.fluffer?.threat?.() ?? null, memory: !/(^|[#,])npcmem=0(,|$)/.test(hash), memoryFresh: /(^|[#,])npcfresh(,|$)/.test(hash), groundAt: (x, z) => (mods.terrain?.surfaceAt || terrainHeight)(x, z), clipUrls: [clipsMove, clipsGeneral, clipsSim], cast: (id) => withPrivateBody(id, KAYKIT(id)(0, 0, null)), worldScale: K, t0: NPC_T0,
   clock: () => M1CLOCK.t, player: () => { const p = worldPosOf(mods.player); return p ? { x: p.x, y: p.y, z: p.z } : null } }
 // V-487 Stufe 3 · Kristall-Laternen (kfb-gem.v1 r4) entlang des Demo-Wegs, nachts leuchtend; echte Lichter nur über den Practicals-Pool (≤ 6, nächste zur
 // Kamera), Lichtfleck am Boden für alle (gem pool). Stärke = Stimmungs-glow (Tag 0, Gold 0,35, Nacht 1). lanterns=0 schaltet aus.

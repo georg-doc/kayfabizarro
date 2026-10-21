@@ -29,7 +29,7 @@ const lootDev = Math.max(...OB.loot.map((l) => { const g = B.loot.find((x) => x.
 await page.evaluate(() => {
   const M = window.__kfbM1, THREE = M.three(), cam = M.camera3(), fr = new THREE.Frustum(), pv = new THREE.Matrix4(), sp = new THREE.Sphere(new THREE.Vector3(), 1)
   const R = window.__npcRec = { steps: 0, popsInView: 0, maxJumpK: 0, soleMin: Infinity, soleMax: -Infinity, soleSamples: 0, tsMin: Infinity, tsMax: -Infinity, rootDy: 0, prev: null, faceErr: [], modes: {}, maxSpeedK: 0 }
-  const vmax = { farmer_b: 1.15 * 1.25, lore_ph: 1.0 * 1.25 }
+  const vmax = { farmer_b: 1.15 * 1.25, lorekeeper: 1.0 * 1.25 }
   M.clock.onStep = () => {
     const n = M.mods.npc; if (!n) return
     R.steps++; cam.updateMatrixWorld(); pv.multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse); fr.setFromProjectionMatrix(pv)
@@ -89,12 +89,12 @@ await browser.close()
 const face = faceChecks.length ? Math.max(...faceChecks.flat()) : null
 process.exit(report('npc-a (WS-NPC Phase A im Spiel)', {
   A_residentsLoadedWithEyes: A.status === 'OK' && A.residents.length === 2 && A.residents.every((r) => r.status === 'OK' && r.actor === 'OK' && r.visible && r.head),
-  A_placeholdersMarked: A.residents.every((r) => r.placeholder == null || /PLATZHALTER/.test(r.placeholder)) && /PLATZHALTER/.test(A.residents.find((r) => r.id === 'lore_ph').placeholder),
+  A_noUnmarkedPlaceholder: A.residents.every((r) => r.placeholder == null || /PLATZHALTER/.test(r.placeholder)) && A.residents.find((r) => r.id === 'lorekeeper')?.placeholder == null, // Lorekeeper echt (WS0 V-602)
   A_farmerBIsRealFigure: A.residents.find((r) => r.id === 'farmer_b').cast === 'farmer-b' && A.residents.find((r) => r.id === 'farmer_b').placeholder == null,
   B_mirrorMatchesGameTrees: treeDev < 1e-3,
   B_mirrorMatchesGameLoot: lootDev < 1e-3,
   C_encounterFullGrammar: ['notice,approach,orient,greet,react,part,resume', 'notice,approach,orient,silent,react,part,resume'].includes(beats),
-  C_encounterStableId: encId === 'meet:farmer_b+lore_ph:d0:wiese_rand',
+  C_encounterStableId: encId === 'meet:farmer_b+lorekeeper:d0:wiese_rand',
   C_faceEachOther: face !== null && face < 20,
   C_greetGesture: !beats.includes('greet') || played.some(([id, c]) => c === 'Waving'),
   D_solesOnGround: rec.soleSamples > 100 && rec.soleMin > -0.06 && rec.soleMin < 0.06,

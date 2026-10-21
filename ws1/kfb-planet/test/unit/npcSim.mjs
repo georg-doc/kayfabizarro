@@ -9,7 +9,7 @@ import { buildRoutes, planAt, meetingAt } from '../../src/npc/npcDay.js'
 import { createResidentSim, SIM } from '../../src/npc/residentSim.js'
 
 const ctx = { pois: Object.fromEntries(W.pois.map((p) => [p.id, p])), routes: buildRoutes(W.routes), dayS: W.dayS }
-const DT = 1 / 60, fb = W.days.find((d) => d.residentId === 'farmer_b'), lk = W.days.find((d) => d.residentId === 'lore_ph')
+const DT = 1 / 60, fb = W.days.find((d) => d.residentId === 'farmer_b'), lk = W.days.find((d) => d.residentId === 'lorekeeper')
 const wrap = (a) => Math.atan2(Math.sin(a), Math.cos(a))
 function run({ from = 0, to = W.dayS, player = () => null, near = () => true, each = () => {}, rules = SIM } = {}) {
   const sim = createResidentSim({ days: W.days, ctx, activities: W.activities, rules })
@@ -51,13 +51,13 @@ C.catchesUpToPlan = caught !== null && caught < planAt(fb, ctx, 25).stayEnd
 C.catchUpWithinGaitWindow = s3.maxSpeedK <= SIM.catchK + 1e-6 && s3.maxSpeedK > 1.01
 C.noTeleportWhileNear = r3.maxStep <= 1 + 1e-6
 X.interrupt = { held, lagMax: +lagMax.toFixed(2), caught: caught && +caught.toFixed(2), maxSpeedK: +s3.maxSpeedK.toFixed(3), maxStep: +r3.maxStep.toFixed(3) }
-// (4a) Spieler tritt in die laufende Begegnung (Tag 0, während 'orient'/'greet'), 3 s, geht wieder → Pause, dann gleicher Beat weiter
+// (4a) Spieler tritt in die laufende Begegnung (Tag 0, im Entscheidungs-Takt greet/silent), 3 s, geht wieder → Pause, dann gleicher Beat weiter
 const m0 = meetingAt(fb, lk, ctx, 0.33 * W.dayS)
 const fbSpot = ctx.pois.fb_social.pos
 let pauseSeen = null, beatAtPause = null, beatAfter = null, tP = null
 const r4 = run({ from: m0.start - 40, to: m0.end + 5, player: (t) => (tP !== null && t < tP + 3 ? { x: fbSpot[0] + 1.2, z: fbSpot[1] + 1.4, y: 0 } : { x: 60, z: 60, y: 0 }), each: (t, outs, sim) => {
   const c = sim.host.current
-  if (tP === null && c && c.beat === 'greet') tP = t
+  if (tP === null && c && (c.beat === 'greet' || c.beat === 'silent')) tP = t // Entscheidungs-Takt (je nach Tag greet oder silent)
   if (c?.paused && pauseSeen === null) { pauseSeen = t; beatAtPause = c.beat }
   if (pauseSeen !== null && beatAfter === null && c && !c.paused) beatAfter = c.beat } })
 const log4 = r4.sim.encounter().log.filter((e) => e.id === m0.key).map((e) => e.beat)

@@ -2,6 +2,55 @@
 Auftrag: `BRIEF_WS1_NPC_LIFE_R2.md` (V-585). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: Lead (schreibt den Abschnitt WS-NPC in `WS1_STATUS.md`), WS0 liest hier direkt.
 Neueste Einträge oben.
 
+## 7 · 21.10. abends · WS0 V-602 umgesetzt: echte Figuren, Ghost k11c, Gerücht D2, Bots · Push ws-npc/phase-a
+
+**WS0 V-602:**
+- Push-Go für `ws-npc/*` (kein Merge).
+- Gerücht nur ein Schritt.
+- Bots (B17) und Soldat r3d liegen im privaten Zweig.
+- `~/kfb-ws1/private` löschen nur mit Georgs Ja.
+- K11-Figuren sind fertig.
+
+**Georg 21.10.:**
+- `~/kfb-ws1/private` gelöscht.
+- Push ja.
+- Gewehr: WSB-Auftrag „Marsch“, bis dahin bleibt der Trupp ohne Gewehr.
+- Bots als Arbeitstrupp.
+
+**Lead 21.10.:**
+- `eyeActor` additiv um `eyeAnchors` erweitern, mit drei Bedingungen: ohne die Option bitgenau, nur Kanon-Werte, Bot-Augen PROOF mit Frontbild an Georg.
+- Keine sichtbaren Fenster.
+- Bilder und Abnahmen mit `look=terrain3`.
+
+**Push:** `ws-npc/phase-a` @55fff1e in `georg-doc/kayfabizarro`.
+- Spiegel wie `ws1/terrain-439`: Parent 41be79f, nur die 73 WS-NPC-Dateien unter `ws1/kfb-planet/`, Stand 32e1143, nichts Privates.
+- Die volle Reihe auf 32e1143 lag bei 63/64; c2 ist der bekannte Wackler, auch auf der Basis.
+
+**Lokal seit dem Push** (je einzeln PASS, volle Reihe folgt nach dem ruhigen Fenster von WS-Audio):
+| Commit | Inhalt |
+|---|---|
+| 846e209 | Dark Fluffer = WSB K11 `KFB_Ghost_healed.k11c` (CC0 laut Karte, im Repo). Spucken aus `KFB_Mouth`, weiße Augen erst nach dem Heilen (fluffer `E_whiteEyesAfterHeal`). |
+| ebdbb82 | Echte Bewohner. Der Lorekeeper ersetzt `lore_ph`: öffentlich Original + Georgs Profil, privat K11b mit Buch. Farmer B privat K11 mit Gabel (Digging/Working_C). Je Clip eine feste Halterung, die Requisite ist nur in diesen Clips sichtbar (figures-k11). |
+| cc6157f | Gerücht D2 (V-602): nur Selbsterlebtes, mit Quelle, salience −1, einmal je Erzähler und Tag. Wer nichts weiß, reagiert nicht; wer es gehört hat, grüßt mit „fight“ (unit-rumor 9/9). |
+| 1d09cc4 | `eyeActor` `eyeAnchors`: Studio-Weg `sourceAnchorSeed` (`deriveSourceAnchorSeed`). Ohne Option bitgenau (f1, actors, cast, g4, stage, m1-eyes PASS). |
+| eeb55fb | Kayfabrick-Bots (B17 r1 PROOF) als Arbeitstrupp: drei Bots mit Helm tragen Blöcke zwischen Ladestation und Baustelle. Wut bei Treffern, KFB-Augen an den Karten-Ankern (bots 7/7). |
+
+| # | Zeile | Ergebnis | Beleg |
+|---|---|---|---|
+| D-7a | Gerücht aus erster Hand (V-602-Regeln) | **PASS** (Node) · **NOT RUN** im Spiel (nächstes Treffen erst einen Spieltag später) | unit-rumor |
+| D-7b | Gerücht-Kette (told-of-told) | **NOT RUN** – WS0: kein told-of-told, erst nach Georgs Blick auf D2 | – |
+| D-9 | Bots (Arbeitstrupp) | **PASS** (Proof; Augen PROOF, Frontbild an Georg) | bots, `test/out/npc/bot_front.png`, `bot_crew.png` |
+| D-10 | Spielzeugsoldaten mit Gewehr | **NOT RUN** – WSB-Auftrag „Marsch“ (Halterung Walking/Idle oder Marsch-Clip), über den Lead an WS0 | – |
+| D-11 | fps headless, look=terrain3 (Last 28–40) | **FAIL** gegen 55 (Basis-Grenze). Ohne Gruppen/Band 39,5 / 41,2, mit 43,9 / 41,8 fps; kein messbarer Aufpreis (+166 Draw-Calls, +132 k Dreiecke) | fps-d.mjs |
+| E-1 | Weiße Augen am geheilten Ghost | **PASS** | fluffer `E_whiteEyesAfterHeal` |
+| K-1 | Echte Bewohner-Figuren (K11) mit Requisite | **PASS** | figures-k11, Bilder `k11_farmer.png`, `k11_lorekeeper.png` |
+
+**Lücken (neu):**
+1. Eigentempo von `kfb_bot_carry_a` ist nicht gemessen; es ist aus Walking_A abgeleitet, Fußgleiten möglich.
+2. Der Augen-Sitz der Bots ist PROOF und braucht Georgs Blick.
+3. Bots und Ort sind Platzhalter (Lead-Teil, später Dioramen-Anker).
+4. Weiter offen: Marsch-Clip bzw. Halterung für das Gewehr; der eigene Spielzeug-KO-Clip (WSB, nach K13).
+
 ## 6 · 21.10. · Phase D gebaut (lokal) · Abnahmematrix · Lückenliste
 
 **Georg 21.10.:** „mach weiter mit Phase D“. **Lead 21.10.:** RECEIPT_KINDS-Erweiterung selbst, eigener Commit, Version bleibt 1.

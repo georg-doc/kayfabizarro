@@ -9,7 +9,8 @@
 //   (eventKey grp:<Gruppe>:d<Tag>:…, je Tag einmal, idempotent)
 //   In der nächsten Begegnung erzählt, wer etwas gesehen hat, dem, der es nicht weiß → told (from = Erzähler), ein Thema je Begegnung
 // Daraus abgeleitet (nicht gespeichert): die Begrüßung des Spielers. Unbekannt → nur bemerken (Idle_B); kennt den Spieler → winkt (Waving);
-// hat die Heilung gesehen oder davon gehört → jubelt (Cheering). Kit-Clips as-is (Rig_Medium General/Simulation).
+// hat die Heilung gesehen oder davon gehört → jubelt (Cheering); hat den Kampf mit den Skeletten gesehen oder davon gehört → erzählt davon (Interact).
+// Gerücht (V-602): erzählt wird nur Selbsterlebtes (ein Schritt), mit Quelle, eine Stufe weniger sicher, höchstens einmal je Erzähler und Tag. Kit-Clips as-is (Rig_Medium General/Simulation).
 // Weltzeit wird nicht gespeichert: Tag/Anteil kommen aus der Sitzung (gleiche Schlüssel → idempotent, kein doppelter Beleg).
 import { freshWorldSave, addReceipt, receiptsOf, knows } from '../world/worldSave.js'
 
@@ -30,10 +31,11 @@ export function createNpcMemory({ store = null, ws = null, dayS = 300 } = {}) {
   const has = (id, eventKey) => knows(state, id, eventKey)
   const knowsPlayer = (id) => receiptsOf(state, id).some((e) => e.with.includes('player') || e.kind === 'player_greeted' || e.kind === 'interrupted_by_player')
   const heardCure = (id) => receiptsOf(state, id).some((e) => e.kind === 'fluffer_cured')
+  const heardFight = (id) => receiptsOf(state, id).some((e) => e.kind === 'resident_downed' || e.kind === 'hostile_response') // gesehen oder gehört: der Spieler hat sich mit den Skeletten angelegt
   return {
     state: () => state, log: () => log.slice(), loadStatus,
     receipts: (id) => receiptsOf(state, id),
-    has, knowsPlayer, heardCure,
+    has, knowsPlayer, heardCure, heardFight,
     // Ereignisse aus der Live-Schicht (residentSim hooks.onEvent) und der Welt (Fluffer)
     onEncounterDone({ key, a, b, decision, t }) { const kind = decision === 'silent' ? 'silent' : 'greeted'; record({ residentId: a, eventKey: key, kind, mode: 'participated', with: [b] }, t); record({ residentId: b, eventKey: key, kind, mode: 'participated', with: [a] }, t) },
     onPlayerNotice({ id, slot, t }) { return record({ residentId: id, eventKey: `player:${slot}`, kind: 'interrupted_by_player', mode: 'participated', with: ['player'] }, t) },
@@ -59,8 +61,13 @@ export function createNpcMemory({ store = null, ws = null, dayS = 300 } = {}) {
       }
       return null
     },
-    tell({ speaker, listener, topic, t }) { return topic ? record({ residentId: listener, eventKey: topic.eventKey, kind: topic.kind, mode: 'told', from: speaker, with: [speaker] }, t) : false },
+    // Weitererzählen (WS0 V-602, Phase D2): nur ein Schritt (Quelle = Zeuge), Sicherheit eine Stufe unter „gesehen“, höchstens einmal je Erzähler und Tag
+    toldToday: (speaker, t) => state.npc.receipts.some((e) => e.mode === 'told' && e.from === speaker && e.day === when(t).day),
+    tell({ speaker, listener, topic, t }) {
+      if (!topic || has(speaker, topic.eventKey) === 'told' || has(speaker, topic.eventKey) === null) return false
+      if (state.npc.receipts.some((e) => e.mode === 'told' && e.from === speaker && e.day === when(t).day)) return false
+      return record({ residentId: listener, eventKey: topic.eventKey, kind: topic.kind, mode: 'told', from: speaker, with: [speaker], salience: Math.max(0, (MEMORY.salience[topic.kind] ?? 1) - 1) }, t) },
     // Begrüßung des Spielers (Clip-Wunschliste) und Grund – abgeleitet, nicht gespeichert
-    greetPlayer(id) { if (heardCure(id)) return { clip: ['Cheering', 'Waving', 'Idle_B'], why: 'cure' }; if (knowsPlayer(id)) return { clip: ['Waving', 'Idle_B'], why: 'known' }; return { clip: ['Idle_B'], why: 'first' } },
+    greetPlayer(id) { if (heardCure(id)) return { clip: ['Cheering', 'Waving', 'Idle_B'], why: 'cure' }; if (heardFight(id)) return { clip: ['Interact', 'Waving', 'Idle_B'], why: 'fight' }; if (knowsPlayer(id)) return { clip: ['Waving', 'Idle_B'], why: 'known' }; return { clip: ['Idle_B'], why: 'first' } },
   }
 }

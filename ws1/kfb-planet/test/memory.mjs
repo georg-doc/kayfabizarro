@@ -17,15 +17,15 @@ const now = () => page.evaluate(() => window.__kfbM1.clock.t)
 const waitT = async (t) => { for (let i = 0; i < 3000; i++) { if ((await now()) >= t) return; await page.waitForTimeout(150) } }
 const mem = () => page.evaluate(() => window.__kfbM1.npc().memory)
 // Spieler neben den Lorekeeper stellen und Begrüßung lesen (Grund + gespielter Clip)
-const greetLk = async () => { await page.evaluate(() => { const M = window.__kfbM1, d = M.npc().debug.find((x) => x.id === 'lore_ph'); M.player().teleport([d.x + 1.5, M.terrainH(d.x + 1.5, d.z + 1) + 1.2, d.z + 1], Math.PI) })
-  for (let i = 0; i < 40; i++) { await page.waitForTimeout(150); const d = await page.evaluate(() => window.__kfbM1.npc().debug.find((x) => x.id === 'lore_ph')); if (d.mode === 'player') { await page.waitForTimeout(400); const pl = await page.evaluate(() => window.__kfbM1.npc().played.filter(([id]) => id === 'lore_ph').map(([, c]) => c)); return { why: d.greetWhy, last: pl.at(-1) } } }
+const greetLk = async () => { await page.evaluate(() => { const M = window.__kfbM1, d = M.npc().debug.find((x) => x.id === 'lorekeeper'); M.player().teleport([d.x + 1.5, M.terrainH(d.x + 1.5, d.z + 1) + 1.2, d.z + 1], Math.PI) })
+  for (let i = 0; i < 40; i++) { await page.waitForTimeout(150); const d = await page.evaluate(() => window.__kfbM1.npc().debug.find((x) => x.id === 'lorekeeper')); if (d.mode === 'player') { await page.waitForTimeout(400); const pl = await page.evaluate(() => window.__kfbM1.npc().played.filter(([id]) => id === 'lorekeeper').map(([, c]) => c)); return { why: d.greetWhy, last: pl.at(-1) } } }
   return { why: null } }
 // Sitzung 1
 await page.goto(url('#m1,debug,harvest,npc,fluffer,fluffert=2,npct=509,npcfresh')); await ready()
 await page.evaluate(() => { const M = window.__kfbM1; M.player().teleport([-4, M.terrainH(-4, 54) + 1.2, 54], Math.PI) }) // in der Spielerblase (Reaktionen nur dort), abseits der Wege
 let healedAt = null
 for (let i = 0; i < 1200 && healedAt === null; i++) { await page.waitForTimeout(120)
-  const s = await page.evaluate(() => { const M = window.__kfbM1, d = M.npc().debug.find((x) => x.id === 'lore_ph'), f = M.fluffer().debug; return { alerts: d.stats.alerts, mode: d.mode, x: d.x, z: d.z, fx: f.x, fz: f.z, target: !f.healed && f.phase !== 'gone' } })
+  const s = await page.evaluate(() => { const M = window.__kfbM1, d = M.npc().debug.find((x) => x.id === 'lorekeeper'), f = M.fluffer().debug; return { alerts: d.stats.alerts, mode: d.mode, x: d.x, z: d.z, fx: f.x, fz: f.z, target: !f.healed && f.phase !== 'gone' } })
   if (s.alerts > 0 && s.mode !== 'threat' && s.target) { // der Spieler heilt den Fluffer von hinten, der Lorekeeper steht in der Nähe
     healedAt = await page.evaluate(async () => { const M = window.__kfbM1, f = M.fluffer().debug; M.player().teleport([f.x + 4, M.terrainH(f.x + 4, f.z + 4) + 1.2, f.z + 4], Math.PI); await new Promise((r) => setTimeout(r, 500))
       const p = M.feet(), dx = f.x - p[0], dz = f.z - p[2], l = Math.hypot(dx, dz); M.mods.orchard.shoot(p, [dx / l, 0, dz / l]); await new Promise((r) => setTimeout(r, 1500)); return M.fluffer().debug.healed ? M.clock.t : null }) } }
@@ -41,7 +41,7 @@ await browser.close()
 const R = (m) => m.receipts.map((e) => `${e.residentId}:${e.kind}:${e.mode}`)
 const ids = (m) => m.receipts.map((e) => e.id)
 process.exit(report('memory (WS-NPC Phase B im Spiel, Weltstand + Neuladen)', {
-  s1_witnessSawPlagueAndCure: healedAt !== null && R(m1).includes('lore_ph:plague_seen:observed') && R(m1).includes('lore_ph:fluffer_cured:observed'),
+  s1_witnessSawPlagueAndCure: healedAt !== null && R(m1).includes('lorekeeper:plague_seen:observed') && R(m1).includes('lorekeeper:fluffer_cured:observed'),
   s1_farAwayNoReceipt: !R(m1).some((x) => x.startsWith('farmer_b:fluffer_cured') || x.startsWith('farmer_b:plague_seen')),
   s1_greetingChanged: g1.why === 'cure' && g1.last === 'Cheering',
   reload_memoryLoaded: m2.status === 'loaded' && JSON.stringify(ids(m1).filter((i) => ids(m2).includes(i))) === JSON.stringify(ids(m1).filter(Boolean)) ,

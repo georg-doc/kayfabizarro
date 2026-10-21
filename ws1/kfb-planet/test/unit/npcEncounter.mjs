@@ -40,7 +40,7 @@ function kfb({ decision = 'greet', script = () => {}, key = 'meet:a+b:d0:social'
   const bus = new EncounterBeatBus(), ev = []
   bus.subscribe((e) => ev.push(e))
   const host = createEncounterHost({ bus, grammar: 'kfb' })
-  const start = host.start({ actorId: 'farmer_b', targetId: 'lore_ph', decision, encounterKey: key })
+  const start = host.start({ actorId: 'farmer_b', targetId: 'lorekeeper', decision, encounterKey: key })
   let t = 0, n = 0
   while (host.isActive && n < 60 * 60) { script(host, t, ev); host.update(dt); t += dt; n++ }
   return { host, ev, beats: ev.map((e) => e.beat), start, t }
@@ -54,7 +54,7 @@ N.stableId = g.ev.every((e) => e.encounterId === 'meet:a+b:d0:social') && g.star
 N.durationAsPlanned = Math.abs(g.t - g.host.totalSeconds('greet')) < 0.05
 N.releasesBoth = !g.host.isActive && g.host.busyIds.length === 0
 N.silentHasNoSpeaker = kfb({ decision: 'silent' }).ev.find((e) => e.beat === 'silent').speakerId === null
-N.reactSpeakerIsTarget = g.ev.find((e) => e.beat === 'react').speakerId === 'lore_ph'
+N.reactSpeakerIsTarget = g.ev.find((e) => e.beat === 'react').speakerId === 'lorekeeper'
 // Unterbrechen in 'greet' für 3 s, dann Fortsetzen: gleiche Beat-Folge, Beat nicht neu gestartet, Gesamtzeit + 3 s
 let pausedAt = null, beatsDuringPause = 0, resumedBeat = null
 const ir = kfb({ script: (h, t, ev) => {
@@ -77,7 +77,7 @@ N.cancelWhilePausedFinishes = !cp.host.isActive && cp.beats.at(-1) === 'resume'
 const hA = createEncounterHost({ bus: new EncounterBeatBus(), grammar: 'kfb' }); hA.start({ actorId: 'a', targetId: 'b' })
 N.hostBusyDuringEncounter = hA.start({ actorId: 'a', targetId: 'c' }).reason === 'host-busy'
 // Aufräumen: nach Ende keine Restbelegung, neuer Start mit denselben Teilnehmern geht
-N.restartAfterEnd = g.host.start({ actorId: 'farmer_b', targetId: 'lore_ph', encounterKey: 'k2' }).ok
+N.restartAfterEnd = g.host.start({ actorId: 'farmer_b', targetId: 'lorekeeper', encounterKey: 'k2' }).ok
 // Gleiche Eingabe → gleiche Ereignisfolge (deterministisch)
 N.deterministic = same(kfb().ev, kfb().ev)
 

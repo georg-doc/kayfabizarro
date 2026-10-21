@@ -44,7 +44,7 @@ for (const r of routes) {
 }
 // Tagespläne
 for (const d of W.days) for (const e of validateDay(d, ctx)) bad.push(`${d.residentId}: ${e}`)
-const fb = dayOf('farmer_b'), lk = dayOf('lore_ph')
+const fb = dayOf('farmer_b'), lk = dayOf('lorekeeper')
 const used = new Set(); for (const d of W.days) for (let day = 0; day < 12; day++) for (let i = 0; i < d.entries.length; i++) { const r = routeFor(d, routes, day, i); if (r) used.add(r.id) }
 const pairs = new Set(W.routes.map((r) => r.from + '>' + r.to)), bothVariants = [...pairs].every((p) => W.routes.filter((r) => r.from + '>' + r.to === p).every((r) => used.has(r.id)))
 const host = createEncounterHost({ bus: new EncounterBeatBus(), grammar: 'kfb' }), need = host.totalSeconds('greet') + 1
@@ -64,7 +64,7 @@ process.exit(report('unit-npcWorld (WS-NPC A1, POIs/Routen/Pläne in der M1-Welt
   planContinuous: maxJump <= Math.max(fb.speed, lk.speed) / 30 + 0.05,
   deterministic: same,
   otherSeedOtherRoutes: otherSeed > 0,
-  placeholdersMarked: W.residents.every((r) => !('placeholder' in r) || /PLATZHALTER/.test(r.placeholder)) && /PLATZHALTER/.test(W.residents.find((r) => r.residentId === 'lore_ph').placeholder),
+  placeholdersMarked: W.residents.every((r) => !('placeholder' in r) || /PLATZHALTER/.test(r.placeholder)) && !('placeholder' in W.residents.find((r) => r.residentId === 'lorekeeper')) && /lore_ph/.test(W.residents.find((r) => r.residentId === 'lorekeeper').replaces), // Lorekeeper echt (WSB K11, WS0 V-602)
   farmerIsRealFigure: W.residents.find((r) => r.residentId === 'farmer_b').stageCastId === 'farmer-b' && !('placeholder' in W.residents.find((r) => r.residentId === 'farmer_b')),
 }, { bad: ALL ? bad : bad.slice(0, 20), minTrunk: +minTrunk.toFixed(2), minLoot: +minLoot.toFixed(2), minLantern: +minLantern.toFixed(2), minFence: +minFence.toFixed(2), maxSlope: +maxSlope.toFixed(1),
   meetWindows: meets.map((m) => m && +(m.end - m.start).toFixed(1)), need: +need.toFixed(2), routesUsed: used.size, routes: routes.length, otherSeed, lengths: Object.fromEntries(routes.map((r) => [r.id, +r.length.toFixed(1)])) }))

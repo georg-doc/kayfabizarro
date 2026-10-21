@@ -32,6 +32,7 @@ await waitT(85)
 const d = await page.evaluate(() => ({ ...window.__flRec, last: window.__flRec.last }))
 // E: heilen
 const counts0 = await page.evaluate(() => Object.values(window.__kfbM1.mods.orchard.counts()).reduce((s, v) => s + v, 0))
+const eyesBefore = await page.evaluate(() => window.__kfbM1.fluffer().status.eyes)
 const e0 = await page.evaluate(async () => { const M = window.__kfbM1, p = M.feet(), g = M.fluffer().debug, dx = g.x - p[0], dz = g.z - p[2], l = Math.hypot(dx, dz); const r = M.mods.orchard.shoot(p, [dx / l, 0, dz / l]); await new Promise((res) => setTimeout(res, 1600)); return { r, healed: M.fluffer().debug.healed } })
 const spitsAtHeal = (await F()).debug.spitsDone
 await page.waitForTimeout(6500)
@@ -53,6 +54,7 @@ process.exit(report('fluffer (WS-NPC Phase C P1 im Spiel)', {
   D_residentNoticesOnce: d.alertT !== null && d.last.alerts === 1 && d.faced,
   D_residentBackToPlan: d.last.mode === 'plan' && d.last.lag < 1e-6,
   E_healedByShot: e0.r?.target === 'dark_fluffer_ghost' && e0.healed,
+  E_whiteEyesAfterHeal: eyesBefore === 'hidden' && G.fluffer.eyes === 'white' && G.fluffer.mouth === 'KFB_Mouth', // WSB K11 k11c: weiße Augen erst nach dem Heilen, Spucken aus KFB_Mouth
   E_noSpitAfterHeal: e1.debug.spitsDone === spitsAtHeal && evTypes.filter((t) => t === 'spit').length === 3,
   E_burstOnceSixKinds: burst.length === 6 && new Set(burst.map((b) => b.kind)).size === 6 && again.bursts === 1 && again.heals === 1,
   E_burstCollectable: got === 6,

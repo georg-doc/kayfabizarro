@@ -4,6 +4,8 @@
 // dreht die Logik. Aus residentLife herausgelöst (Werte unverändert).
 //   createNpcFigure({ cast (Darsteller-Optionen), id, worldScale, groundAt }) → { holder, actor, load(clips), present(o, dt), soles(), status(), dispose() }
 //   o = { x, z, yaw, speed, clip?: { name | [Wunschliste], mode }, gaze?: { x, z, y? } }
+//   Privater Körper (actors/privateCast, cast.privateBody): eigene Clips der K11-Datei kommen dazu (vorhandene Namen bleiben), Requisite nur sichtbar,
+//   solange ein Clip mit Halterung läuft (je Clip EINE feste Halterung im Slot-Raum, V-581).
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { createActor } from '../actors/actorSlot'
@@ -23,9 +25,12 @@ export async function loadClipSet(urls = []) { const clips = {}; for (const u of
 export function createNpcFigure({ cast, id, worldScale = 1, groundAt, onPlay = null }) {
   const K = worldScale
   const holder = new THREE.Group(); holder.name = 'npc:' + id
-  const actor = createActor({ ...cast, motion: 'bind', position: [0, 0, 0], yaw: 0, anchorId: 'npc-' + id, worldScale: K })
+  let actor, actorError = null // ein Vertragsfehler (actorSlot wirft) darf nie die Szene abreißen: Figur mit Status ERROR statt Seitenfehler
+  try { actor = createActor({ ...cast, motion: 'bind', position: [0, 0, 0], yaw: 0, anchorId: 'npc-' + id, worldScale: K }) }
+  catch (e) { actorError = String(e?.message || e); actor = { object3d: new THREE.Group(), ready: Promise.resolve(), status: () => ({ status: 'ERROR', error: actorError }), update() {}, dispose() {}, lookAt() {} } }
   holder.add(actor.object3d); holder.visible = false // erst sichtbar, wenn der Gang-Mischer steht (keine Bindepose im Bild)
-  const r = { anim: null, fig: null, head: null, soles: null, scale: (cast.classScale ?? 1) * K, hist: [], clock: 0, headYaw: 0, headPitch: 0, headBase: null, headOut: null, status: 'LOADING', error: null, gazeOwn: false }
+  const PB = cast.privateBody || null, _qm = new THREE.Quaternion()
+  const r = { prop: null, propClip: null, anim: null, fig: null, head: null, soles: null, scale: (cast.classScale ?? 1) * K, hist: [], clock: 0, headYaw: 0, headPitch: 0, headBase: null, headOut: null, status: 'LOADING', error: null, gazeOwn: false }
   const _m = new THREE.Matrix4(), _v = new THREE.Vector3(), _q = new THREE.Quaternion(), _qa = new THREE.Quaternion(), _qp = new THREE.Quaternion(), _qf = new THREE.Quaternion(), _e = new THREE.Euler()
 
   async function load(clips) {
@@ -35,6 +40,11 @@ export function createNpcFigure({ cast, id, worldScale = 1, groundAt, onPlay = n
       let fig = null; actor.object3d.traverse((o) => { if (!fig && o.children?.some((c) => c.isSkinnedMesh || c.isBone)) fig = o })
       if (!fig) throw new Error('Figur im Slot nicht gefunden')
       try { r.soles = soleOffsets(THREE, fig) } catch (e) { r.soles = null } // Ferse/Ballen in der Bindepose (Messung Bodenkontakt, wie M1)
+      if (PB?.clipsUrl) { const own = await loadClips(PB.clipsUrl); clips = { ...clips }; for (const c of own) if (!clips[c.name]) clips[c.name] = c }
+      if (cast.clipAlias) { clips = { ...clips }; for (const [to, from] of Object.entries(cast.clipAlias)) if (clips[from]) clips[to] = clips[from] } // Gang-Mischer-Namen → eigene Clips der Figur (as-is, nur umbenannt; z. B. Bots: Gehen = Tragen)
+      if (PB?.prop) { let slot = null; const sn = THREE.PropertyBinding.sanitizeNodeName(PB.prop.slot); fig.traverse((o) => { if (!slot && (o.name === PB.prop.slot || o.name === sn)) slot = o }) // GLTFLoader nimmt den Punkt aus Knotennamen (handslot.r → handslotr)
+        if (slot) { const g = await new GLTFLoader().loadAsync(PB.prop.url); r.prop = g.scene; r.prop.name = 'prop:' + PB.prop.id; r.prop.visible = false
+          r.prop.traverse((o) => { if (o.isMesh) o.castShadow = true }); slot.add(r.prop) } }
       r.anim = new GaitAnimator(fig, clips); r.fig = fig
       fig.traverse((o) => { if (!r.head && o.isBone && o.name === 'head') r.head = o })
       r.anim.update(0, 0); r.status = 'OK'
@@ -59,6 +69,10 @@ export function createNpcFigure({ cast, id, worldScale = 1, groundAt, onPlay = n
     const want = o.clip && [].concat(o.clip.name).find((n) => r.anim.has(n)) // erster vorhandener Clip der Wunschliste (Kit-Clips as-is)
     if (want) { r.anim.play(want, { mode: o.clip.mode || 'once', fade: 0.2 }); onPlay?.(id, want) }
     r.anim.update(dt, Math.max(0, o.speed) / r.scale)
+    if (r.prop && PB.prop.whenWalking) { r.prop.visible = !r.anim.current() && (r.anim.last?.w?.walk ?? 0) > 0.5 } // Trage-Requisite am Anker: nur beim Gehen (= Trage-Clip), ohne Overlay
+    else if (r.prop) { const cur = r.anim.current(), m = cur && PB.prop.mounts[cur] // Requisite nur in Clips mit Halterung, eine feste Halterung je Clip
+      if (cur !== r.propClip) { r.propClip = cur; if (m) { r.prop.position.fromArray(m.position); r.prop.quaternion.copy(_qm.fromArray(m.rotation)) } }
+      r.prop.visible = !!m }
     // Blick: Ziel im Raum der Figur → Gier/Nick; Kopf folgt verzögert und gedämpft, Augen den Rest
     let ty = 0, tp = 0, g = null
     if (o.gaze) {
@@ -81,7 +95,7 @@ export function createNpcFigure({ cast, id, worldScale = 1, groundAt, onPlay = n
     update(dt, hctx, show = true) { holder.visible = !!r.anim && show; actor.update(dt, hctx) }, // show = false: unsichtbar (Begegnungstabelle), Plan läuft weiter
     anim: () => r.anim, head: () => r.head,
     soles: () => (r.soles ? Object.fromEntries(Object.entries(solePoints(THREE, r.soles)).map(([k, v]) => [k, v.toArray()])) : null),
-    status: () => ({ status: r.status, error: r.error, actor: actor.status?.().status, visible: holder.visible, head: !!r.head }),
+    status: () => ({ status: r.status, error: r.error, actor: actor.status?.().status, visible: holder.visible, head: !!r.head, body: PB ? 'private' : 'public', ...(actor.status?.().anchorSeed ? { anchorSeed: actor.status().anchorSeed } : {}), proof: !!cast.proof || undefined, prop: r.prop ? { id: PB.prop.id, visible: r.prop.visible, clip: r.propClip } : null }),
     dispose() { try { r.anim?.dispose() } catch (e) { /* weiter */ } actor.dispose() },
   }
 }

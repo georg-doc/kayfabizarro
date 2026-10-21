@@ -1,8 +1,8 @@
 // WS-NPC Phase C P1 (V-583 Dark Fluffer; Georg 21.10.: Gegner Ghost, Heil-Waffe Gun_Pistol) · Modul nach Host-Vertrag R1.2 für EINEN Dark Fluffer.
 // Ablauf = flufferSim (rein, Node-geprüft); dieses Modul zeigt ihn und gibt die Weltereignisse an die vorhandenen Besitzer weiter:
-//   Figur    Ghost.gltf (Quaternius MonsterCuteCubes, as-is, eigene Augen; weiße Augen = WSB-Variante, Lücke), Kit-Clips as-is (Idle, Walk, Bite_Front,
+//   Figur    KFB_Ghost_healed.k11c.glb (WSB K11, Quaternius MonsterCuteCubes Ghost as-is + KFB_Mouth + KFB_HealedEyes; weiße Augen sichtbar ab dem Heilen), Kit-Clips as-is (Idle, Walk, Bite_Front,
 //            Yes, Dance), vorne = +Z (Spender gemessen, isoliert nachgeprüft), auf das Gelände gestellt, Blick weich nachgeführt
-//   Spucken  spuck.v3: Tropfen sammeln sich 0,34 s am Maul (Knochen „Mouth“ des Modells), dann 3–5 Tropfen auf einem Bogen mit Mindeststeigung und
+//   Spucken  spuck.v3: Tropfen sammeln sich 0,34 s am Maul (Anker KFB_Mouth von WSB, V-589), dann 3–5 Tropfen auf einem Bogen mit Mindeststeigung und
 //            Nachlauf, Aufprall erst danach; Tinte #1f1a14, Material wie im Spender (MeshBasic, toneMapped aus). Keine Zielmarke.
 //   Welt     Fleck → terrain.setInkPatches; 1. Aufprall → orchard.taint; 2. Aufprall → orchard.hitTree (native Abwurf-Physik); Heilen → orchard.burst
 //            (einmal bunter Fluff), Fleck verblasst, taint aus. Treffer über orchard.addTarget (Schuss B), kein Schaden, kein Kampfsystem.
@@ -13,7 +13,7 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { createFlufferSim } from './flufferSim.js'
-import ghostUrl from '../assets/fluffer/Ghost.gltf?url'
+import ghostUrl from '../assets/fluffer/KFB_Ghost_healed.k11c.glb?url' // WSB K11 k11c (WS0 V-602): Ghost as-is + KFB_Mouth + KFB_HealedEyes (CC0, Quaternius)
 import gunUrl from '../assets/fluffer/Gun_Pistol.gltf?url'
 import gunBin from '../assets/fluffer/Gun_Pistol.bin?url'
 import gunTex from '../assets/fluffer/prototypebits_texture.png?url'
@@ -44,7 +44,7 @@ export function createDarkFluffer(options) {
     const g = await loader.loadAsync(ghostUrl), o = g.scene
     o.traverse((m) => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true } })
     const box = new THREE.Box3().setFromObject(o); S.scale = (def.heightM || 1.1) / Math.max(0.01, box.max.y - box.min.y); o.scale.setScalar(S.scale)
-    holder.add(o); S.mouth = o.getObjectByName('Mouth')
+    holder.add(o); S.mouth = o.getObjectByName('KFB_Mouth') || o.getObjectByName('Mouth'); S.eyes = o.getObjectByName('KFB_HealedEyes'); if (S.eyes) S.eyes.visible = false // Spucken aus KFB_Mouth (V-589); weiße Augen erst nach dem Heilen
     S.mixer = new THREE.AnimationMixer(o)
     for (const c of g.animations) S.actions[c.name] = S.mixer.clipAction(c)
     for (const n of ['Yes', 'Dance', 'Bite_Front']) if (S.actions[n]) { S.actions[n].setLoop(THREE.LoopOnce, 1); S.actions[n].clampWhenFinished = true }
@@ -93,7 +93,7 @@ export function createDarkFluffer(options) {
       // Lage, Blick (weich), Clip
       const y = options.groundAt(st.x, st.z); holder.position.set(st.x, y, st.z)
       if (S.yaw === null) S.yaw = st.yaw; else { let d = st.yaw - S.yaw; d = Math.atan2(Math.sin(d), Math.cos(d)); S.yaw += Math.sign(d) * Math.min(Math.abs(d), SPIT.turnRate * dt) }
-      holder.rotation.set(0, S.yaw, 0); holder.visible = st.phase !== 'gone' && st.phase !== 'wait'
+      holder.rotation.set(0, S.yaw, 0); holder.visible = st.phase !== 'gone' && st.phase !== 'wait'; if (S.eyes) S.eyes.visible = !!st.healed
       play(st.clip); if (S.actions.Walk) S.actions.Walk.timeScale = THREE.MathUtils.clamp(st.speed / 0.9, 0.8, 1.25) // Eigentempo Walk nicht gemessen (Lücke)
       S.mixer.update(dt)
       // Weltereignisse (genau einmal)
@@ -115,7 +115,7 @@ export function createDarkFluffer(options) {
           d.m.visible = true; d.m.position.set(q * q * _a.x + 2 * q * k * _b.x + k * k * _c.x + d.off[0], q * q * _a.y + 2 * q * k * _b.y + k * k * _c.y + d.off[1], q * q * _a.z + 2 * q * k * _b.z + k * k * _c.z + d.off[2]); d.m.scale.setScalar(d.r) }) }
     },
     threat: () => { const st = sim.at(S.t); return S.status === 'OK' && st.hostile ? { x: st.x, z: st.z, id: def.id } : null },
-    status: () => ({ status: S.status, error: S.error, gun: S.gunOn, target: !!S.offTarget, mouth: !!S.mouth, scale: +S.scale.toFixed(4) }),
+    status: () => ({ status: S.status, error: S.error, gun: S.gunOn, target: !!S.offTarget, mouth: S.mouth?.name ?? null, eyes: S.eyes ? (S.eyes.visible ? 'white' : 'hidden') : null, scale: +S.scale.toFixed(4) }),
     debug: () => { const st = sim.at(S.t); return { t: +S.t.toFixed(3), phase: st.phase, clip: S.clip, x: st.x, z: st.z, patch: st.patch, spitsDone: st.spitsDone, healed: st.healed, hostile: st.hostile, heals: S.heals, events: S.events.slice(), arrive: sim.arrive, spits: sim.spits.map((s) => ({ windup: s.windup, release: s.release, impact: s.impact })), drops: pools.flat().filter((d) => d.m.visible).length } },
     mouthWorld: () => mouthWorld(new THREE.Vector3()).toArray(),
     holder: () => holder,
