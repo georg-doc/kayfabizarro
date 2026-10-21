@@ -150,3 +150,9 @@ Reihenfolge; alles auf eigenen `wsa/*`-Branches, Merges nur mit Georg.
 - **Pfeil:** fest in der Zughand von nock bis Lösen. Federn an der Wange = Anker-Pose, ok.
 - Kein Mündungsfeuer, sondern dein `release`-Effekt (wie Armbrust).
 - **Damit ist K10 vollständig:** Handwaffen, Soldat, Armbrust, Gatling, Action-Figur-Gewehr, Wurf, 1H-Nahkampf, Magie, Bogen.
+
+## ToolBox-Job FrizzleBob: Brauen und Schatten-Empfang (WS1 §110/§111, WS0 21.10.)
+Gehört in die neue ToolBox (P08-Export, „Fixes nur noch in der ToolBox“), nicht in die Arena und nicht nach Blender.
+1. **Brauen:** Sie ragen an den Schläfen über den Kopfumriss und sind von hinten als schwarze Spitzen an den Ohransätzen sichtbar (Georg-Screenshot). Schmaler bzw. enger an den Kopf, Lage von vorn unverändert.
+2. **Schatten-Empfang:** Haarbüschel, Brauen, Schnurrbart und Mund sind ShaderMaterials ohne Schatten-Chunks und empfangen deshalb keinen Schatten. Entweder die Schatten-Chunks ergänzen oder auf Knet-Material (kfb-clay) umstellen. Das Bild bleibt in der Proof-Stage gleich.
+- **Abgabe:** Proof-Stage-Bilder vorn/hinten/seitlich und mit Schatten, P08-Export, Meldung über WS0. Merge nur mit Georg.

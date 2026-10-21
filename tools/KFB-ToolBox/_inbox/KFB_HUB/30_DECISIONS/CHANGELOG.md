@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- FrizzleBob-Brauen + Schatten-Empfang als ToolBox-Job an WSA (WS1 §110/§111); WSB bis zur Cube-Freigabe: weaponDrop-Nachzug für alle K10-Waffen.
 - WSB K10 §12 Bogen angenommen (eine Halterung je Bogen, shootCycle Draw_Up → Aiming_Idle → Release_Up, Draw/Release ausgeschlossen); K10 komplett, an WSA übergeben.
 - V-595 Georg bei WS-NPC: Ghost zuerst, Heil-Waffe Gun_Pistol, Farmer B wie ausgeliefert (Textur A); Lorekeeper aus main als Übergang; Briefs/WSB nachgezogen. Befund an Georg: gekaufte KayKit-Mystery-Dateien liegen auf main des öffentlichen Repos.
 - V-594 Bogen: Draw/Release erst Raster je Clip, sonst exclude; kein as-is mit Kopfdurchgang; spielbarer Schusszyklus Pflicht.
