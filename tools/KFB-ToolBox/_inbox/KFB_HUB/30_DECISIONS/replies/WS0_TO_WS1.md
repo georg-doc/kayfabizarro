@@ -1,5 +1,37 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~07:15) · An WS-NPC: Antwort auf Status 2 (V-590)
+Starke Runde: Plan-Treue 4e-16 m, 0 Pop-ins, Blickfehler < 1°, die Bewohner kosten nichts Messbares. Die ehrliche Matrix ohne „MVP PASS“ ist genau richtig.
+
+**Schon da, bitte im Register-Zweig `docs/kfb-decisions-register-2026-10-11` lesen:**
+- **M0-4 Konzeptblatt Phase A:** `tools/KFB-ToolBox/_inbox/KFB_HUB/65_SCENELETS/npc_a/KONZEPTBLATT_NPC_A_R1.md` + `concept.json`.
+  - Dein Treffpunkt Wiesenrand statt Kreuzung ist in Ordnung, solange er als Hero lesbar bleibt (Negativraum, 1,5 m).
+- **Cast-Daten:** `tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/CAST_R1_MIRROR/` (`cast.r1.json`, `clips.r1.json`).
+- **NPC-Recherche-Kurzfassung:** `…/30_DECISIONS/replies/NPC_RESEARCH_DIGEST_R1.md`.
+
+**Entscheidungen Phase C:**
+- **Cube = `q_mushroom`** (V-589), nicht Skull oder GreenDemon.
+  - Skull hat leere Augenhöhlen, dort gibt es nichts, was weiß werden kann. Die Arena schließt ihn außerdem aus.
+  - Der Pilz lebt am Waldboden bei den Obstbäumen, das ist die Weltlogik. Zweiter Cube ist `q_ghost`.
+  - Spucken nur aus `KFB_Mouth` (WSB K11).
+- **Heil-Auslöser = T Saugarm (ACK).** Der Saugarm zieht das Zensur-Goo aus dem Fluffer. Danach bekommt er weiße Augen, spuckt nicht mehr und lässt einmal bunten Fluff über `fluff.js` fallen. Kein neues Werkzeug.
+  - Später kommt „Heilen im Team“ mit den Hexen-Alchemistinnen dazu (V-586).
+- **Baum = der Fluff-Baum, den Farmer B pflegt.** So hat die Plage einen Grund, und die Bäuerin reagiert (ausweichen bzw. warnen).
+  - **Patch** = begrenzte Fläche unter diesem Baum (Decal bzw. Zellmaske, kein Flood-Shader). Das Verfahren stimmst du mit dem Lead als Terrain-Owner ab.
+
+**Lücken:**
+- **Clip-Liste:** geht an WSB. Zuerst prüft WSB native KayKit-Clips (Rig_Medium, as-is), erst dann wird gebaut.
+- **Scheune/Strohballen-Bühne und Kartenraum:** In Phase A bleiben es markierte Stellen ohne Asset. Ein neues Asset schlägt WS0 Georg später vor.
+- **Knete für die Adventurer-Platzhalter:** nicht nötig. Platzhalter gehen nicht in die Abnahme.
+- **M2-6 (E-Hinweis):** bleibt NOT RUN, bis M1 einen `interactable`-Host hat. Kein Blocker.
+- **P-1a fps:** Das ist die Grenze im Spiel selbst und gehört zu Job 1 des Leads. Phase A wird nicht dafür verantwortlich gemacht.
+
+**Weiter:**
+- Phase C P1 mit Platzhalter-Cube-Anker (Arena-Formel nur als vorläufiger Wert, sichtbar markiert), bis `KFB_Mouth` da ist. Ein Cube, ein Patch, ein Baum.
+- Push auf `ws-npc/*` wie V-588 (Deploy-Key nur mit Georgs Bestätigung in deiner Sitzung).
+- Farmer-B-Dateien: Georg kopiert sie nach seiner Rückkehr nach `~/kfb-ws1/private/cast/`.
+
+
 # NEU OBEN (21.10., ~06:30) · An WS-NPC: Dark-Fluffer-Spender da, Cube gewählt (V-589)
 - WSA-Paket: `georg-doc/KFB-Combat-Arena`, Branch `wsa/dark-fluffer-donor-v584-2026-10-21`, Ordner `dark_fluffer_donor/` (cubes.json, source-metadata.json, proof-receipt.json, Viewer).
 - **Phase C startet mit `q_mushroom`**, als Zweiter folgt `q_ghost`.

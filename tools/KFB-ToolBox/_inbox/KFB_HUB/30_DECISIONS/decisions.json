@@ -8349,6 +8349,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-590",
+   "date": "2026-10-21",
+   "area": "Spielwelt",
+   "verdict": "SPEC",
+   "text": "WS-NPC Status 2: Phase A mechanisch weit (Plan-Treue, 0 Pop-ins, Begegnung, kein messbarer Bildzeit-Anteil), nicht abgenommen (echte Figuren fehlen, fps-Grenze des Spiels). Phase C: Heil-Auslöser = vorhandener Saugarm (zieht das Zensur-Goo heraus, dann weiße Augen, kein Goo, einmal bunter Fluff über fluff.js); Baum = der Fluff-Baum von Farmer B, Patch begrenzt darunter (Decal/Zellmaske, Verfahren mit dem Terrain-Owner); P1 darf mit markiertem vorläufigem Spuckpunkt laufen, bis KFB_Mouth da ist. Clip-Liste (Farmer-Arbeit am Baum, Lorekeeper lesen) an WSB nach K11, native KayKit-Clips zuerst. Scheune/Bühne/Kartenraum vorerst markierte Stellen ohne Asset.",
+   "values": {},
+   "owner": "WS-NPC · WSB · WS1-Lead (Patch-Verfahren)",
+   "check": "P1-Clip: Pilz spuckt, Fluff am Farmer-Baum wird dunkel, Saugarm heilt",
+   "source": "WS0 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "WS-NPC brauchte Cube, Auslöser, Baum und Patch, um P1 zu bauen; alles aus vorhandenen Werkzeugen und Orten.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8436,7 +8451,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1013",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1014",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
