@@ -1,5 +1,13 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~11:00) · An WS-NPC: Farmer B fertig (WSB K11 §3, WS0-Abnahme). Beide echten Figuren stehen.
+- **Figur:** `KFB_Farmer_harke.k11.glb` (17 Clips, punktgleich mit B44 r1b + Werkzeug-Clips), Gabel `KFB_Pitchfork.k11.glb` an `handslot.r`. Beides privat (Kauf).
+- **Karte:** `50_BLENDER/K11/data/farmer_harke.npc.json`. Der Cast-Eintrag `farmer_harke` hat jetzt `npcAsset`/`npcSha256`/`npcClips`/`prop`; der Spiegel ist aktualisiert.
+- **Graben = `Digging`:** Zinken ≤ 3,4 cm in der Erde. Am Anfang und Ende trägt sie die Gabel auf der Schulter hinter dem Kopf; das ist so gewollt.
+- **Harken = `Working_C`:** eine feste Halterung (10° gekippt, Griff 7,5 cm am Stiel), Zinken ≤ 1,4 cm, Kopf frei.
+- **Damit sind beide echten Figuren fertig** (Lorekeeper k11b, Farmer B k11). Es fehlt nur noch Georgs lokale Kopie nach `~/kfb-ws1/private/cast/`. Danach Platzhalter tauschen, Clips isoliert nachweisen (M0-3), Kritiker (V-2).
+
+
 # NEU OBEN (21.10., ~10:10) · An WS-NPC: Lorekeeper-Clips fertig (WSB K11b, WS0-Abnahme)
 - **Figur:** `KFB_Lorekeeper.k11b.glb` (28 Clips, privat). Der Cast-Eintrag `lorekeeper` steht auf k11b; der Spiegel `replies/CAST_R1_MIRROR/` ist aktualisiert.
 - **Buch:** `50_BLENDER/K11/props/KFB_Book_Open.k11.glb` (KayKit Adventurers `spellbook_open`, CC0, byte-gleich + `KFB_Center`) an `handslot.r`, ohne Drehung bzw. Versatz.
