@@ -2,6 +2,44 @@
 Auftrag: `BRIEF_WS1_AUDIO_PLAYABLE_R1.md` (V-598). Lead: WS1 „R3F Modul-Host Vertrag“. Empfänger: WS0, Lead.
 Neueste Einträge oben. Hier stehen nur Text und Zahlen. Töne, Musik und das Abnahme-Video sind privat und liegen nur lokal.
 
+## 3 · 21.10. · WS0-Lieferung ws_audio_gaps_r1 eingebaut · Kampf-Video
+
+**Georg 21.10.:** „mach ein neues Video mit dem Kampf-Ton“.
+**Stand:** `ws-audio/r1` @cf59913 + Video-Profil, lokal.
+
+**Eingebaut** (die 20 Töne von WS0; Pegel aus `ws_audio_gaps_r1_lufs/lufs_report.json`, −16 LUFS, geht vor der Spitzen-Normierung):
+| Ton | Anschluss |
+|---|---|
+| R01–R04 hover_over grass/sand/rock/water | Racer am Boden: Schleife je Untergrund (Hang/Fels/Gras/Talboden wie `terrainDustColor`, Wasser = Fluss nah oder Meer), nach Tempo überblendet, in der Luft aus |
+| R05 drift_slide_loop · R06 drift_charge | Drift: Rutschwinkel aus Lage gegen Fahrtrichtung (nur lesend); `driftCharge`-Ereignis aus k2t |
+| R07 hover_brake_hiss | Bremsbeginn ab 6 m/s |
+| S01 wading_steps | Schritte im Wasser statt Untergrund-Bank |
+| K02 bomb_throw | K10 release Bombe |
+| K03/K04/K05/K07 impact metal/glass/clay/domino | K10 contact nach `material` |
+| K06 debris_tail · K08 leaves_burst | Explosion (Obstgarten und K10) · Baumtreffer am Obstgarten |
+| K01 rocket_flight_loop | liegt bereit (`k10.rocketLoop`), sobald die Arena den Raketenflug meldet |
+| A02 coastal_birds_loop | am Meer (Biom beach), nicht nachts |
+| A01 jungle_night · A03 thunder_dry | liegen bereit; es gibt noch kein Dschungel-Biom bzw. Wetter |
+
+- **Obstgarten V/B/N** läuft jetzt über die Kampf-Tabelle:
+  - Faust: Schwung (M01) → Schlagring + Baumschütteln + Laub;
+  - Blaster: Abgang in 3 Ebenen → Bolzen-Einschlag nach Flugzeit;
+  - Explosion: C08 + Holzsplitter + Laub + Trümmer-Ausklang.
+- **Noch offen bei WS0:** Combat-AV L1–L13, u. a. Bogen, Armbrust, Cast, Spieler-Bonk, Kill-Pop.
+
+**Kampf-Video** (an Georg, privat; `PW_GPU=1 npm run audio:video:kampf`):
+- MP4 H.264/AAC, 960×540, 20 MB, knapp 2 Minuten.
+- Ton in 99,7–100 % der Bilder messbar, keine Seiten- oder Modulfehler.
+- Hauptthread im Mittel 0,16–0,21 ms, p95 ≤ 0,4 ms.
+- Teil 1, Obstgarten: Schuss und Explosion treffen den Baum. Die Faust trifft im Skript nicht, weil der Abstand zum Baum zu groß ist; zu hören ist dann der Schwung.
+- Teil 2, Hörprobe der Arena-Waffen: per Prüfskript ausgelöst, weil die Arena noch nicht im Spiel ist. Das steht so im Bild.
+- Teil 3, Fahrt: Racer über Gras/Sand, Drift-Schleife (max. 0,68), Drift-Boost und Bremszischen. Im Testfeld springt der Racer oft über Rampen.
+
+**Tests:** `audio-mixer` PASS, `contract-static` PASS, `audio` (Browser, inkl. Untergrund-Schleifen am Boden) PASS.
+**NPC-Anschluss** (WS-NPC 21.10.):
+- Gruppen-Ereignisse über `mods.groups.events()`: hit, aggro, ko, awake, calm, fluff für skeleton_patrol, toy_squad und bot_crew.
+- Dark Fluffer über `debug().events`. Beides wird per Polling gelesen, bei WS-NPC ist keine Änderung nötig. Den Gruppen-Ton baue ich als Nächstes ein.
+
 ## 2 · 21.10. · Kampf-Tabelle aus Combat-AV R1 im K10-Adapter
 
 **Lead 21.10.:** Die Cue-Tabelle aus `research/audits/COMBAT_AV_R1.md` (VFX/SFX-Sitzung, Prototyp `ws1/combat-av-r1` @d408688) geht als Daten in `kfbAudio.k10`, ohne zweite Engine.
@@ -140,10 +178,10 @@ cd ~/kfb-ws1/kfb-planet/.claude/worktrees/affectionate-nash-61b1ea && npm run to
 
 ### Was fehlt
 **Töne (Bitte an WS0, nichts selbst synthetisiert):**
-1. Untergrund-Ton der Racer: Rollen/Schweben über Gras, Sand, Fels und Wasser-Gischt, je eine Schleife. Die Racer schweben, der Brief verlangt aber „Reifen je Untergrund“.
-2. Drift: Rutschen bzw. Schleifen als Schleife, dazu Drift-Laden (`driftCharge`).
-3. Bremsen: eine spielbare Schwebe-Bremse bzw. ein Luftzischen. `S2_brake_downshifts` ist nur Referenz. Hörbar ist bisher nur das Runterschalten.
-4. Schritte im Wasser (Waten am Fluss).
+1. ~~Untergrund-Ton der Racer~~ geliefert (ws_audio_gaps_r1, Eintrag 3): Rollen/Schweben über Gras, Sand, Fels und Wasser-Gischt, je eine Schleife. Die Racer schweben, der Brief verlangt aber „Reifen je Untergrund“.
+2. ~~Drift~~ geliefert: Rutschen bzw. Schleifen als Schleife, dazu Drift-Laden (`driftCharge`).
+3. ~~Bremsen~~ geliefert: eine spielbare Schwebe-Bremse bzw. ein Luftzischen. `S2_brake_downshifts` ist nur Referenz. Hörbar ist bisher nur das Runterschalten.
+4. ~~Schritte im Wasser~~ geliefert (S01).
 5. Kampf: Combat-AV-Lücken L1–L13 (Prompts im Bericht COMBAT_AV_R1, u. a. Bogen, Armbrust, Cast, Spieler-Bonk, Kill-Pop, Gatling-Anlauf, Gegner-Ausholen) und die Liste der WSA aus `combat/WS0_GAPS.json` (12 Wünsche, u. a. Block, Raketen-Flug als Schleife, Bombenwurf, Metall, Glas, Lehm-Aufprall, Trümmer-Ausklang, Einzel-Domino, Laub, Obstfall).
 6. Atmo: die Liste der WSA aus `ambience/WS0_REQUESTS.md` (Dschungel-Nacht, Küstenvögel, Donner trocken).
 
