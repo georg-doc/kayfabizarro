@@ -8499,6 +8499,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-600",
+   "date": "2026-10-21",
+   "area": "Kampf",
+   "verdict": "SPEC",
+   "text": "Boss-Move Wegkatapultieren (Georg bei WSB, Vorschlag angenommen): Schlag Melee_2H_Slam as-is (schnell: Melee_1H_Slash), Flugbahn als Laufzeit-Datum launch in der Waffenkarte (hitStop, squash, Richtung aus Schlag, Steigwinkel, Tempo, Drall, Scheitel, Landepuff), kinematisch ohne Ragdoll, danach fall_flat + getting_up am Opfer; für Medium- und Large-Opfer, später Special Move. Teil von K13.",
+   "values": {},
+   "owner": "WSB (K13) · WSA/WS1 (Laufzeit)",
+   "check": "Prüfbild Brute haut Raider über eine Mauer",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Gleiches Muster wie weaponDrop: Clip as-is, Bewegung als Daten; billig und für alle Gegnergrößen gleich.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8586,7 +8601,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1043",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1044",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

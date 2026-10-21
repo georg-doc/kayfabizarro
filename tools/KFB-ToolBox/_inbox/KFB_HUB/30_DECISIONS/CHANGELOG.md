@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-600 Boss-Move Wegkatapultieren in K13 (Melee_2H_Slam as-is + launch-Daten, kinematisch).
 - V-599 kayfabizarro wird privat: WSA bereitet die öffentlichen Seiten vor (FrizzleBob, PDF/Deck-Viewer, Pages, Sites → Cloudflare), Georg legt den Schalter um. Hub aktualisiert (Stand, 3 Fragen, 7 Schritte, 5 Briefings).
 - PR #27 (K10-Waffenfamilien) von Georg gemergt. V-598 WS-Audio (spielbare Version mit Ton) + privater Branch um alle Töne und Musik ergänzt (708 Dateien); WS1 soll Zugang zuerst über gh-Login prüfen.
 - WSA PR #27: alle K10-Waffen in der Arena spielbar (Familien, Marken, exclude, Pfeile, HitStop, weaponDrop); WS0: Bogen-Death_B freigeben, Rauchbombe-Rückfall ok.
