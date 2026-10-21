@@ -4,7 +4,7 @@
 //   – Lage in x/z mit Gierung yaw statt (s, lat, psi); keine Spurhilfe (ASSIST.follow/align brauchen eine Streckenrichtung).
 //   – Boden = Strahlen auf Gelände und Theater (ground-Rückruf), Neigung aus der Bodennormale; Luft, wenn der Boden schneller wegfällt als die Feder folgt.
 //   – Bande = Wände (sweep-Rückruf: Rapier-Shape-Cast, wie der Flug in M1); Prall wie k2b (Tempo-Erhalt wallKeep, Querimpuls bounceBase).
-//   – Drift Q/E seit V-347 wörtlich k2b (= K3-Zeile, K2B-Δ1); Boost fehlt noch. Überschlag gibt es in diesem Modell grundsätzlich nicht (kinematisch).
+//   – Drift Q/E seit V-347 wörtlich k2b (= K3-Zeile, K2B-Δ1); Boost Shift (M3), Mini-Turbo und Boost-Anzeige siehe DRIFTBOOST. Überschlag gibt es in diesem Modell grundsätzlich nicht (kinematisch).
 import { K, G, JUMP_K } from '../m1/m1Scale.js'
 const GK = G / 14 // Fallbeschleunigung: Welt jetzt 9,81 statt 14 (legacy 1)
 // V-345 (J17-Meter): Zahlen wie abgenommen, Tempi/Beschleunigungen/Längen × K, damit das Auto im kleineren Maß genauso fährt (Bild und Zeitverlauf
@@ -40,7 +40,16 @@ export const TURN = { below: 10 * K, yaw: 0.3, ramp: 3 }
 // bounceVN): kleiner Hüpfer bounce × vN statt Spin-Out. Lande-Boost (V-379 Entscheid 2): boostT s mit Schub × FEEL.boostAccelScale bei Gas, boostOn.
 // Schalter Fahrhilfe M3 (Vergleich „M3-Assist | vorher“, Georgs Fühlprobe): aus = Stand M2 (Lage schnappt/steht, keine Landehilfe, kein Anti-Steckenbleiben)
 export const ASSIST_M3 = { on: true }
-export const LAND = { flySteer: 0.35, grip: 0.3, gripDamp: 14, align: 12, bounceVN: 13 * K, bounce: 0.18, boostT: 0.45, boostOn: true }
+export const LAND = { flySteer: 0.35, grip: 0.3, gripDamp: 14, align: 12, bounceVN: 16 * K, bounce: 0.1, boostT: 0.45, boostOn: true } // Georg 21.10.: Aufkommen flüssiger (seltener, flacher nachhüpfen; vorher 13 K / 0,18)
+// Sprung je nach Bewegung (Georg 21.10., wie zu Fuß M1WOW.longJump): im Stand Hochsprung (× up), aus der Fahrt Weitsprung (× long, Schub × push ab longFrom m/s); nur beim Drücken
+// Spielgefühl (Georg 21.10., Audit-Vorschlag; Fahrhilfe M3): coyote s nach dem Abrollen über eine Kante zählt die Leertaste noch als Sprung (nicht nach
+// eigenem Sprung, kein Doppelsprung); buffer s – Leertaste in der Luft ohne Trick gedrückt, springt der Wagen im Landeschritt sofort
+export const JUMP = { up: 1.12, long: 0.92, push: 1.12, longFrom: 6 * K, coyote: 0.12, buffer: 0.12 }
+// Mini-Turbo (Georg 21.10., Audit-Vorschlag; Fahrhilfe M3): Drift am Boden über minSpeed lädt driftCharge (s), Stufen ab stages s (Ereignis driftCharge);
+// Q/E am Boden losgelassen → Boost boostT[Stufe] s (driftBoostT, frei wie der Lande-Boost) und Anzeige + fill[Stufe] (Ereignis driftBoost); Abbruch (Luft,
+// zu langsam) = Ladung weg. Anzeige boostMeter 0…1 (Start 1): Shift-Boost zieht drain/s und geht nur mit Füllung (leer: erst nach Loslassen wieder), passiv + regen/s
+export const DRIFTBOOST = { minSpeed: 9 * K, stages: [0.6, 1.2, 2.0], boostT: [0.35, 0.6, 0.9], fill: [0.2, 0.4, 0.7], drain: 0.35, regen: 0.05 }
+const driftStage = (c) => DRIFTBOOST.stages.reduce((n, s) => (c >= s ? n + 1 : n), 0)
 // M3 Stufe D (V-379) Anti-Steckenbleiben. Spender: K2B rescue (flyMax 8 s), Reverse-Assist (drive-intent), P2 recover; X/Y/Z setzt WS1:
 // „klemmt“ siehe unten (X = minProgress m in Y = window s, Z = Versuche). T1: Rück-Nudge (nudge m/s gegen die Fahrtrichtung über nudgeS s, Drehung
 // yawNudge weg von der Wand); T2 = Lage-Aufrichten (Stufe B, immer an); T3 nach tries vergeblichen T1 binnen windowS:
@@ -52,7 +61,7 @@ export const STUCK = { window: 0.7, minProgress: 1 * K, nudge: 5 * K, nudgeS: [0
 // (> abortSteer für abortHold s, Tastatur = voller Einschlag), Launch-Zusatzimpuls launchVy an der Lippe. Kräfte der 2D-Simulation × FS (m/s²).
 // „Pull“ = Neugier, kein Sog: außerhalb der Zone wirkt nichts. Tempi × K (P2 rechnete in alten KFB-Metern).
 export const PUSH = { capture: { lateralK: 0.65, yawK: 0.75, maxForce: 0.95, maxYaw: 0.72, speedMin: 7 * K, speedMax: 27 * K }, commit: { lateralK: 1.05, yawK: 1.15, maxForce: 1.35, maxYaw: 1.05, speedMin: 10 * K, speedMax: 26 * K },
-  abortHold: 0.32, FS: 4, launchVy: 2.2 * K }
+  abortHold: 0.32, FS: 4, launchVy: 2.2 * K, alignMax: 0.8 }
 // Wandfahrt (V-379 Entscheid 1): nur bei Kontakt mit markierter Fläche (sweep.ride), flach (|Anlauf| < maxInto) und schnell genug. Dann Zwei-Rad an der
 // Wand (lab-v7 vehicle-twowheel.v1.js wallride: holdMs 1400, Kippwinkel = Umfallwinkel + (90° − Umfallwinkel) × WALL_LEAN 0,45 – M2Car setzt leanRad aus
 // dem Wagen), Gierung parallel zur Wand, leichter Zug zur Wand; Freigabe nach hold, bei Wandende (contactLoss s ohne Kontakt) oder Weglenken (abortHold s).
@@ -69,7 +78,8 @@ const clamp = (x, a, b) => Math.min(b, Math.max(a, x))
 const fx0 = (d) => Math.sin(d.yaw), fz0 = (d) => Math.cos(d.yaw)
 
 export function createK2t(x, y, z, yaw) {
-  return { x, y, z, yaw, speed: 0, latV: 0, drift: 0, driftDir: 0, regrip: 0, vy: 0, vyG: 0, squash: 0, squashV: 0, events: [], signals: { speed: 0, longAccel: 0, lateral: 0, bank: 0, drift: 0 }, air: false, pitch: 0, roll: 0, up: [0, 1, 0], hits: 0 }
+  return { x, y, z, yaw, speed: 0, latV: 0, drift: 0, driftDir: 0, regrip: 0, vy: 0, vyG: 0, squash: 0, squashV: 0, events: [], signals: { speed: 0, longAccel: 0, lateral: 0, bank: 0, drift: 0 }, air: false, pitch: 0, roll: 0, up: [0, 1, 0], hits: 0,
+    boostMeter: 1, boostLatch: false, driftCharge: 0, driftStage: 0, driftBoostT: 0, coyoteT: 0, jumpBufT: 0, jumped: false } // Spielgefühl 21.10. (JUMP, DRIFTBOOST)
 }
 
 // in: { gas, brake, left, right, driftL, driftR, boost, jump } · env: { ground(x, z, fromY) → { y, n:[x,y,z] } | null, sweep(from[3], delta[3]) → { delta[3], hit, n } }
@@ -77,14 +87,20 @@ export function createK2t(x, y, z, yaw) {
 // vehicle-cartoon-deformer.v2.js, Schema kfb.cartoon-vehicle-deformer/2), damit Deformer, Zwei-Rad (§55) und VFX 1:1 andocken, ohne die Fahrphysik
 // anzufassen:
 //   d.events: { type: 'railImpact', side (+1 = Wand rechts, −1 = links), strength 0…1, contact, frontal } · { type: 'landing', strength 0…1 } ·
-//             { type: 'takeoff', vy, speed, jump? }
+//             { type: 'takeoff', vy, speed, jump?, kind?, via? ('coyote' | 'buffer') } · { type: 'driftCharge', stage 1…3 } · { type: 'driftBoost', stage 1…3 }
+//   d.boostMeter 0…1 · d.driftCharge s · d.driftStage 0…3 · d.driftBoostT s (HUD/Probe)
 //   d.signals: { speed 0…1, longAccel −1…1 (+ Gas), lateral −1…1 (+ nach rechts), bank −1…1 (Querneigung des Bodens), drift −1…1 (+ nach rechts, E) }
 export function stepK2t(d, inp, dt, env) {
   d.events.length = 0; const v0 = d.speed, yaw0 = d.yaw
   const steerIn = (inp.left ? 1 : 0) - (inp.right ? 1 : 0), slow = !d.air && steerIn ? Math.max(0, 1 - Math.abs(d.speed) / TURN.below) : 0 // Wenden (KFB)
   // Längs (k2b wörtlich)
-  d.landBoostT = Math.max(0, (d.landBoostT || 0) - dt); d.gripT = Math.max(0, (d.gripT || 0) - dt)
-  d.boosting = (!!inp.boost || d.landBoostT > 0) && d.speed > 4 * K // Boost (k2b wörtlich: Shift, ab 4 m/s, mehr Schub und höheres Höchsttempo)
+  d.landBoostT = Math.max(0, (d.landBoostT || 0) - dt); d.driftBoostT = Math.max(0, (d.driftBoostT || 0) - dt); d.gripT = Math.max(0, (d.gripT || 0) - dt)
+  const A3 = ASSIST_M3.on
+  // Boost-Anzeige (DRIFTBOOST): Shift nur mit Füllung, Lande- und Drift-Boost frei; leer gefahren erst nach Loslassen wieder (sonst flackert er mit der Nachfüllung)
+  if (!inp.boost) d.boostLatch = false
+  const freeBoost = d.landBoostT > 0 || d.driftBoostT > 0, shiftBoost = !!inp.boost && (!A3 || (d.boostMeter > 0 && !d.boostLatch))
+  d.boosting = (shiftBoost || freeBoost) && d.speed > 4 * K // Boost (k2b wörtlich: Shift, ab 4 m/s, mehr Schub und höheres Höchsttempo)
+  if (A3) { if (d.boosting && !freeBoost) { d.boostMeter = Math.max(0, d.boostMeter - DRIFTBOOST.drain * dt); if (d.boostMeter <= 0) d.boostLatch = true } else d.boostMeter = Math.min(1, d.boostMeter + DRIFTBOOST.regen * dt) }
   const maxF = d.boosting ? FEEL.boostMaxForward : FLOW.maxForward, acc = FLOW.accel * (d.boosting ? FEEL.boostAccelScale : 1)
   // über dem Höchsttempo (Boost losgelassen) gleitend zurück statt Sprung (KFB-Zusatz; k2b schneidet hart ab)
   if (d.speed > maxF && !inp.brake) d.speed = Math.max(maxF, d.speed - FLOW.accel * dt)
@@ -94,7 +110,6 @@ export function stepK2t(d, inp, dt, env) {
   d.speed = Math.max(-FLOW.maxReverse, d.speed)
   // Lenkung (k2b wörtlich; + = links); in der Luft keine Lenkung über die Räder
   const speedFactor = 1 / (1 + Math.abs(d.speed) * 0.048 / K)
-  const A3 = ASSIST_M3.on
   let yawRate = d.air ? (A3 ? steerIn * LAND.flySteer : 0) : -steerIn * FLOW.steerBase * Math.PI / 180 * speedFactor * 8.2 * (1 + TURN.yaw * slow) // Luft: k2b flySteer
   // Drift (k2b wörtlich, K3-Zeile): Q/E am Boden ab driftMinSpeed – Gierung verstärkt, Heck rutscht in Driftrichtung, danach kurz griffiger (regrip)
   const wantDrift = (inp.driftL ? -1 : 0) + (inp.driftR ? 1 : 0)
@@ -102,12 +117,18 @@ export function stepK2t(d, inp, dt, env) {
     if (!d.drift) d.driftDir = wantDrift; d.drift = Math.min(1, d.drift + dt * 3.4); d.regrip = FEEL.regripSeconds
     yawRate *= FEEL.driftSteerScale; yawRate += -d.driftDir * FEEL.driftYawGain * 0.42 * Math.min(1, Math.abs(d.speed) / (22 * K)) * d.drift
     const target = -d.driftDir * 7.5 * K * d.drift; d.latV += (target - d.latV) * Math.min(1, 9 * dt / 7.5)
-  } else { d.drift = Math.max(0, d.drift - dt * 2.6); d.regrip = Math.max(0, d.regrip - dt) }
+    if (A3 && d.speed > DRIFTBOOST.minSpeed) { const s0 = driftStage(d.driftCharge); d.driftCharge += dt; const s1 = driftStage(d.driftCharge); if (s1 > s0) d.events.push({ type: 'driftCharge', stage: s1 }) } // Mini-Turbo lädt
+  } else { d.drift = Math.max(0, d.drift - dt * 2.6); d.regrip = Math.max(0, d.regrip - dt)
+    // Mini-Turbo: Q/E am Boden losgelassen → Boost der erreichten Stufe; sonst (Luft, zu langsam) verfällt die Ladung
+    if (d.driftCharge > 0) { const st = driftStage(d.driftCharge); if (st && !wantDrift && !d.air) { d.driftBoostT = DRIFTBOOST.boostT[st - 1]; d.boostMeter = Math.min(1, d.boostMeter + DRIFTBOOST.fill[st - 1]); d.events.push({ type: 'driftBoost', stage: st }) } d.driftCharge = 0 } }
+  d.driftStage = driftStage(d.driftCharge)
   d.yaw += yawRate * dt * (d.speed >= 0 ? 1 : -1)
   // Rampen-Zone (Stufe F)
   { const z = A3 && !d.air && env.zone ? env.zone(d.x, d.z) : null, Zs = d.zone || (d.zone = { id: null, abortT: 0, aborted: false, seg: null })
-    if (!z || z.id !== Zs.id) { Zs.id = z?.id ?? null; Zs.abortT = 0; Zs.aborted = false }
-    Zs.seg = z && !Zs.aborted ? z.seg : null
+    if (!z || z.id !== Zs.id) { Zs.id = z?.id ?? null; Zs.abortT = 0; Zs.aborted = false; Zs.engaged = false }
+    // eingefangen wird nur, wer schon grob in Spurrichtung fährt (C1 17.10.: quer über die Anlaufspur gefahren → Wagen auf die Rampe gedreht = Sog)
+    if (z && !Zs.engaged && Math.abs(Math.atan2(Math.sin(d.yaw - z.dir), Math.cos(d.yaw - z.dir))) < PUSH.alignMax) Zs.engaged = true
+    Zs.seg = z && Zs.engaged && !Zs.aborted ? z.seg : null
     if (z && !Zs.aborted) { Zs.abortT = steerIn && z.seg === 'capture' ? Zs.abortT + dt : Math.max(0, Zs.abortT - 2 * dt); if (Zs.abortT >= PUSH.abortHold) { Zs.aborted = true; d.events.push({ type: 'zone', phase: 'abort', id: z.id }) } }
     if (Zs.seg) { const P = PUSH[Zs.seg], err = Math.atan2(Math.sin(d.yaw - z.dir), Math.cos(d.yaw - z.dir)), want = clamp(-(z.e / K) * 0.24, -0.7, 0.7)
       d.yaw += clamp(P.yawK * (want - err), -P.maxYaw, P.maxYaw) * dt
@@ -139,12 +160,18 @@ export function stepK2t(d, inp, dt, env) {
   d.trickT = Math.max(0, (d.trickT || 0) - dt)
   const trickSide = (inp.right ? 1 : 0) - (inp.left ? 1 : 0)
   const jumpEdge = !!inp.jump && !d.jumpHeld; d.jumpHeld = !!inp.jump; d.airT = d.air ? (d.airT || 0) + dt : 0
+  d.coyoteT = d.air ? Math.max(0, (d.coyoteT || 0) - dt) : 0; d.jumpBufT = Math.max(0, (d.jumpBufT || 0) - dt); let tricked = false
   // Fassrolle in der Luft (Leertaste erneut + A/D, frühestens airMin s nach dem Abheben); Zwei-Rad frei am Boden (X + A/D). Der normale Sprung bleibt.
   if (A3 && !d.ride && !d.trickT && trickSide && Math.abs(d.speed) >= TRICK.minSpeed && ((d.air && jumpEdge && d.airT >= TRICK.airMin) || (!d.air && inp.tip))) {
-    d.trickT = TRICK.lockS; d.tricks = (d.tricks || 0) + 1
+    d.trickT = TRICK.lockS; d.tricks = (d.tricks || 0) + 1; tricked = d.air
     if (d.air) d.events.push({ type: 'trick', kind: 'tumble', side: trickSide, speed: clamp(Math.abs(d.speed) / FLOW.maxForward, 0, 1) })
     else { d.freeTip = { side: trickSide, t: 0 }; /* nach rechts gelenkt: die rechten (inneren) Räder heben ab */ d.events.push({ type: 'trick', kind: 'twoWheel', side: trickSide }) } }
-  if (inp.jump && !d.air) { d.vy = FEEL.jumpImpulse; d.air = true; d.events.push({ type: 'takeoff', vy: d.vy, speed: Math.abs(d.speed), jump: true }) }
+  // Sprung: am Boden, in der Coyote-Zeit (mindestens Sprungtempo, ein Rampen-Schwung bleibt) oder gepuffert im Landeschritt (unten)
+  const jump = (via) => { const lj = Math.abs(d.speed) >= JUMP.longFrom; d.vy = Math.max(d.air ? d.vy : 0, FEEL.jumpImpulse * (lj ? JUMP.long : JUMP.up)); if (lj) d.speed *= JUMP.push; d.air = true; d.jumped = true; d.coyoteT = 0; d.jumpBufT = 0
+    d.events.push({ type: 'takeoff', vy: d.vy, speed: Math.abs(d.speed), jump: true, kind: lj ? 'long' : 'up', ...(via ? { via } : {}) }) }
+  if (jumpEdge && !d.air) jump()
+  else if (jumpEdge && A3 && d.coyoteT > 0 && !d.jumped && !tricked) jump('coyote')
+  else if (jumpEdge && A3 && d.air && !tricked) d.jumpBufT = JUMP.buffer // Puffer: kein Trick ausgelöst → beim Aufsetzen springen
   if (d.air) { d.vy -= ASSIST.flyGravity * dt; delta[1] = d.vy * dt }
   // Wände: verschieben mit Shape-Cast; Prall wie k2b-Bande
   // Drehung ohne Durchschwenken (m3-a 17.10.: 2/50 Anfahrten an ecke-2 durch die Wand – die Gierung dreht den Kasten ohne Sweep, eine Ecke schwenkte
@@ -171,15 +198,15 @@ export function stepK2t(d, inp, dt, env) {
   const want = g ? g.y + FEEL.hoverBase : -Infinity
   // Kuppe/Rampe: am Boden zählt die senkrechte Bodengeschwindigkeit (vyG); fällt der Boden schneller weg, als die Schwerkraft zieht, hebt das Auto
   // mit vyG ab – so springen Hügel wie Rampen (V-290)
-  if (d.air) { if (d.y <= want && d.vy <= 0) { const vN = -d.vy; d.events.push({ type: 'landing', strength: clamp(vN / (12 * K), 0, 1) }); d.squashV += 0.9 * clamp(vN / (12 * K), 0.3, 1.4); d.y = want // Landung: Knet-Stoß (k2b flyStep)
+  if (d.air) { if (d.y <= want && d.vy <= 0) { const vN = -d.vy; d.events.push({ type: 'landing', strength: clamp(vN / (12 * K), 0, 1) }); d.squashV += 0.9 * clamp(vN / (12 * K), 0.3, 1.4); d.y = want; d.vyG = 0 // Landung: Knet-Stoß (k2b flyStep); vyG zurück, sonst hebt der alte Rampen-Schwung im nächsten Bodenschritt sofort wieder ab (Audit C 21.10.: 6× statt 2× nach einer Rampe)
       if (A3 && vN > LAND.bounceVN) d.vy = vN * LAND.bounce // zu harter Aufprall: kleiner Hüpfer, Lage richtet sich in der Luft weiter auf (Stufe B)
-      else { d.vy = 0; d.air = false; if (A3) { d.gripT = LAND.grip; if (LAND.boostOn) d.landBoostT = LAND.boostT } } } }
-  else if (!g || want < d.y + (d.vyG - ASSIST.flyGravity * dt) * dt - SLOPE.takeoffGap) { d.air = true; d.vy = d.vyG + (d.zone?.seg === 'commit' ? PUSH.launchVy : 0); if (d.zone?.seg === 'commit') { d.events.push({ type: 'launch', id: d.zone.id }); d.launches = (d.launches || 0) + 1 } d.events.push({ type: 'takeoff', vy: d.vy, speed: Math.abs(d.speed) }) }
+      else { d.vy = 0; d.air = false; d.jumped = false; if (A3) { d.gripT = LAND.grip; if (LAND.boostOn) d.landBoostT = LAND.boostT; if (d.jumpBufT > 0) jump('buffer') } } } }
+  else if (!g || want < d.y + (d.vyG - ASSIST.flyGravity * dt) * dt - SLOPE.takeoffGap) { d.air = true; d.jumped = false; d.coyoteT = A3 ? JUMP.coyote : 0; d.vy = d.vyG + (d.zone?.seg === 'commit' ? PUSH.launchVy : 0); if (d.zone?.seg === 'commit') { d.events.push({ type: 'launch', id: d.zone.id }); d.launches = (d.launches || 0) + 1 } d.events.push({ type: 'takeoff', vy: d.vy, speed: Math.abs(d.speed) }) }
   // Steigtempo des Bodens nach oben höchstens aus dem Fahrtempo (Rampe bis ≈ 35°) – eine Stufe unter dem stehenden Wagen ist kein Katapult
   // (m3-a 17.10.: knapp unter der Fahrhöhe abgesetzt → 7,8 m/s Abhub → Wagen landete auf einem 3-m-Dach)
   else { d.vyG = Math.min(12 * K, Math.abs(d.speed) * 0.7 + 1 * K, Math.max(-15 * K, (want - d.y) / dt)); d.y = want } // begrenzt: eine Stufe (Bordkante) ist kein Katapult
   // Sicherung (Georg 16.10.: „fällt endlos“): nie unter dem Gelände-Höhenfeld – darunter sofort auf die Fläche, Fall beendet
-  if (g?.floor != null && d.y < g.floor - 0.05 * K) { d.y = g.floor; if (d.vy < 0) d.vy = 0; d.air = false; d.rescues = (d.rescues || 0) + 1 }
+  if (g?.floor != null && d.y < g.floor - 0.05 * K) { d.y = g.floor; if (d.vy < 0) d.vy = 0; d.vyG = 0; d.air = false; d.jumped = false; d.rescues = (d.rescues || 0) + 1 }
   { let t = g && !d.air ? g.n : null, rate = ATT.ground
     if (!A3) { if (t) rate = 1e6; else t = d.up } // Stand M2: am Boden Schnapp, in der Luft fest
     if (!t) { const vh = Math.max(Math.abs(d.speed), 1 * K), p = clamp(Math.atan2(d.vy, vh) * ATT.follow, -ATT.maxPitch, ATT.maxPitch), c = Math.cos(p), s = Math.sin(p)
@@ -195,7 +222,9 @@ export function stepK2t(d, inp, dt, env) {
   // m3-d 17.10. – Prall und Rückprall ergaben nie ein Dauer-Klemmen). T1 = Rück-Nudge über nudgeS[n] s mit gleichmäßiger Drehung weg von der Wand
   // (jede Teildrehung durch env.blocked geprüft); nach tries Versuchen binnen windowS → T3.
   { const U = STUCK, St = d.stuck || (d.stuck = { tries: [], safe: [], safeT: 0, clock: 0, airT: 0, hist: [], nudge: null }); St.clock += dt
-    const pushing = (inp.gas || inp.brake) && !d.air, win = Math.round(U.window / dt)
+    // „drückt“ = Gas (auch nach einem Rückprall) bzw. Bremse/Rückwärts aus dem Stand oder rückwärts – Bremsen aus der Vorwärtsfahrt ist Anhalten, kein Klemmen
+    // (C1-Clip 18.10.: S zum Anhalten löste T1-Stöße und am Ende einen Respawn aus)
+    const pushing = !d.air && (inp.gas || (inp.brake && d.speed <= 0.5 * K)), win = Math.round(U.window / dt)
     St.airT = d.air ? St.airT + dt : 0
     if (!d.air && !St.nudge && Math.abs(d.speed) > 3 * K && (St.safeT += dt) >= U.safeEvery) { St.safeT = 0; St.safe.push({ x: d.x, y: d.y, z: d.z, yaw: d.yaw, t: St.clock }); if (St.safe.length > 40) St.safe.shift() }
     St.tries = St.tries.filter((t) => St.clock - t < U.windowS)
