@@ -221,7 +221,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
-<script>/* KFB_DRIVE_BEGIN · Fahrphysik aus dem Spiel, unverändert gebündelt (kfb-planet-t439 @c2e46b8: m2/k2t.js, m2/racerFlight.js, m1/elan.js, camera/followCam.js; three = globales THREE) */
+<script>/* KFB_DRIVE_BEGIN · Fahrphysik aus dem Spiel, unverändert gebündelt (kfb-planet-t439 @fd5ccc5: m2/k2t.js, m2/racerFlight.js, m1/elan.js, camera/followCam.js; three = globales THREE) */
 var KFBDrive = (function(exports, three) {
 	Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 	//#region \0rolldown/runtime.js
@@ -337,8 +337,31 @@ var KFBDrive = (function(exports, three) {
 		up: 1.12,
 		long: .92,
 		push: 1.12,
-		longFrom: 6 * K
+		longFrom: 6 * K,
+		coyote: .12,
+		buffer: .12
 	};
+	var DRIFTBOOST = {
+		minSpeed: 9 * K,
+		stages: [
+			.6,
+			1.2,
+			2
+		],
+		boostT: [
+			.35,
+			.6,
+			.9
+		],
+		fill: [
+			.2,
+			.4,
+			.7
+		],
+		drain: .35,
+		regen: .05
+	};
+	var driftStage = (c) => DRIFTBOOST.stages.reduce((n, s) => c >= s ? n + 1 : n, 0);
 	var STUCK = {
 		window: .7,
 		minProgress: 1 * K,
@@ -435,7 +458,15 @@ var KFBDrive = (function(exports, three) {
 				1,
 				0
 			],
-			hits: 0
+			hits: 0,
+			boostMeter: 1,
+			boostLatch: false,
+			driftCharge: 0,
+			driftStage: 0,
+			driftBoostT: 0,
+			coyoteT: 0,
+			jumpBufT: 0,
+			jumped: false
 		};
 	}
 	function stepK2t(d, inp, dt, env) {
@@ -443,8 +474,18 @@ var KFBDrive = (function(exports, three) {
 		const v0 = d.speed, yaw0 = d.yaw;
 		const steerIn = (inp.left ? 1 : 0) - (inp.right ? 1 : 0), slow = !d.air && steerIn ? Math.max(0, 1 - Math.abs(d.speed) / TURN.below) : 0;
 		d.landBoostT = Math.max(0, (d.landBoostT || 0) - dt);
+		d.driftBoostT = Math.max(0, (d.driftBoostT || 0) - dt);
 		d.gripT = Math.max(0, (d.gripT || 0) - dt);
-		d.boosting = (!!inp.boost || d.landBoostT > 0) && d.speed > 4 * K;
+		const A3 = ASSIST_M3.on;
+		if (!inp.boost) d.boostLatch = false;
+		const freeBoost = d.landBoostT > 0 || d.driftBoostT > 0;
+		d.boosting = (!!inp.boost && (!A3 || d.boostMeter > 0 && !d.boostLatch) || freeBoost) && d.speed > 4 * K;
+		if (A3) {
+			if (d.boosting && !freeBoost) {
+				d.boostMeter = Math.max(0, d.boostMeter - DRIFTBOOST.drain * dt);
+				if (d.boostMeter <= 0) d.boostLatch = true;
+			} else d.boostMeter = Math.min(1, d.boostMeter + DRIFTBOOST.regen * dt);
+		}
 		const maxF = d.boosting ? FEEL.boostMaxForward : FLOW.maxForward, acc = FLOW.accel * (d.boosting ? FEEL.boostAccelScale : 1);
 		if (d.speed > maxF && !inp.brake) d.speed = Math.max(maxF, d.speed - FLOW.accel * dt);
 		else if (inp.gas) d.speed = Math.min(maxF, d.speed + acc * (slow ? Math.min(1, slow * TURN.ramp) : 1) * dt);
@@ -452,7 +493,6 @@ var KFBDrive = (function(exports, three) {
 		else d.speed *= Math.pow(FLOW.drag, dt * 4);
 		d.speed = Math.max(-FLOW.maxReverse, d.speed);
 		const speedFactor = 1 / (1 + Math.abs(d.speed) * .048 / K);
-		const A3 = ASSIST_M3.on;
 		let yawRate = d.air ? A3 ? steerIn * LAND.flySteer : 0 : -steerIn * FLOW.steerBase * Math.PI / 180 * speedFactor * 8.2 * (1 + TURN.yaw * slow);
 		const wantDrift = (inp.driftL ? -1 : 0) + (inp.driftR ? 1 : 0);
 		if (wantDrift && !d.air && Math.abs(d.speed) > FEEL.driftMinSpeed) {
@@ -463,10 +503,32 @@ var KFBDrive = (function(exports, three) {
 			yawRate += -d.driftDir * FEEL.driftYawGain * .42 * Math.min(1, Math.abs(d.speed) / (22 * K)) * d.drift;
 			const target = -d.driftDir * 7.5 * K * d.drift;
 			d.latV += (target - d.latV) * Math.min(1, 9 * dt / 7.5);
+			if (A3 && d.speed > DRIFTBOOST.minSpeed) {
+				const s0 = driftStage(d.driftCharge);
+				d.driftCharge += dt;
+				const s1 = driftStage(d.driftCharge);
+				if (s1 > s0) d.events.push({
+					type: "driftCharge",
+					stage: s1
+				});
+			}
 		} else {
 			d.drift = Math.max(0, d.drift - dt * 2.6);
 			d.regrip = Math.max(0, d.regrip - dt);
+			if (d.driftCharge > 0) {
+				const st = driftStage(d.driftCharge);
+				if (st && !wantDrift && !d.air) {
+					d.driftBoostT = DRIFTBOOST.boostT[st - 1];
+					d.boostMeter = Math.min(1, d.boostMeter + DRIFTBOOST.fill[st - 1]);
+					d.events.push({
+						type: "driftBoost",
+						stage: st
+					});
+				}
+				d.driftCharge = 0;
+			}
 		}
+		d.driftStage = driftStage(d.driftCharge);
 		d.yaw += yawRate * dt * (d.speed >= 0 ? 1 : -1);
 		{
 			const z = A3 && !d.air && env.zone ? env.zone(d.x, d.z) : null, Zs = d.zone || (d.zone = {
@@ -571,9 +633,13 @@ var KFBDrive = (function(exports, three) {
 		const jumpEdge = !!inp.jump && !d.jumpHeld;
 		d.jumpHeld = !!inp.jump;
 		d.airT = d.air ? (d.airT || 0) + dt : 0;
+		d.coyoteT = d.air ? Math.max(0, (d.coyoteT || 0) - dt) : 0;
+		d.jumpBufT = Math.max(0, (d.jumpBufT || 0) - dt);
+		let tricked = false;
 		if (A3 && !d.ride && !d.trickT && trickSide && Math.abs(d.speed) >= TRICK.minSpeed && (d.air && jumpEdge && d.airT >= TRICK.airMin || !d.air && inp.tip)) {
 			d.trickT = TRICK.lockS;
 			d.tricks = (d.tricks || 0) + 1;
+			tricked = d.air;
 			if (d.air) d.events.push({
 				type: "trick",
 				kind: "tumble",
@@ -592,19 +658,26 @@ var KFBDrive = (function(exports, three) {
 				});
 			}
 		}
-		if (jumpEdge && !d.air) {
+		const jump = (via) => {
 			const lj = Math.abs(d.speed) >= JUMP.longFrom;
-			d.vy = FEEL.jumpImpulse * (lj ? JUMP.long : JUMP.up);
+			d.vy = Math.max(d.air ? d.vy : 0, FEEL.jumpImpulse * (lj ? JUMP.long : JUMP.up));
 			if (lj) d.speed *= JUMP.push;
 			d.air = true;
+			d.jumped = true;
+			d.coyoteT = 0;
+			d.jumpBufT = 0;
 			d.events.push({
 				type: "takeoff",
 				vy: d.vy,
 				speed: Math.abs(d.speed),
 				jump: true,
-				kind: lj ? "long" : "up"
+				kind: lj ? "long" : "up",
+				...via ? { via } : {}
 			});
-		}
+		};
+		if (jumpEdge && !d.air) jump();
+		else if (jumpEdge && A3 && d.coyoteT > 0 && !d.jumped && !tricked) jump("coyote");
+		else if (jumpEdge && A3 && d.air && !tricked) d.jumpBufT = JUMP.buffer;
 		if (d.air) {
 			d.vy -= ASSIST.flyGravity * dt;
 			delta[1] = d.vy * dt;
@@ -687,14 +760,18 @@ var KFBDrive = (function(exports, three) {
 				else {
 					d.vy = 0;
 					d.air = false;
+					d.jumped = false;
 					if (A3) {
 						d.gripT = LAND.grip;
 						if (LAND.boostOn) d.landBoostT = LAND.boostT;
+						if (d.jumpBufT > 0) jump("buffer");
 					}
 				}
 			}
 		} else if (!g || want < d.y + (d.vyG - ASSIST.flyGravity * dt) * dt - SLOPE.takeoffGap) {
 			d.air = true;
+			d.jumped = false;
+			d.coyoteT = A3 ? JUMP.coyote : 0;
 			d.vy = d.vyG + (d.zone?.seg === "commit" ? PUSH.launchVy : 0);
 			if (d.zone?.seg === "commit") {
 				d.events.push({
@@ -717,6 +794,7 @@ var KFBDrive = (function(exports, three) {
 			if (d.vy < 0) d.vy = 0;
 			d.vyG = 0;
 			d.air = false;
+			d.jumped = false;
 			d.rescues = (d.rescues || 0) + 1;
 		}
 		{
@@ -1494,6 +1572,7 @@ var KFBDrive = (function(exports, three) {
 	exports.ASSIST_M3 = ASSIST_M3;
 	exports.ATT = ATT;
 	exports.CLASS_K = CLASS_K;
+	exports.DRIFTBOOST = DRIFTBOOST;
 	exports.FEEL = FEEL;
 	exports.FLOW = FLOW;
 	exports.FOLLOW = FOLLOW;
@@ -3003,7 +3082,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
       else if (e.type === 'railImpact') { if (k > 0.5) FX.hit = Math.max(FX.hit, 0.06); FX.trauma = Math.min(1, FX.trauma + 0.6 * k) }
       else if (e.type === 'takeoff') FX.syV += e.jump ? 3.2 : 2.0 }
     FX.evq.length = 0
-    const dr = KD.racerDrive(F, fin); P.boosting = dr ? !!dr.boost : fin.boost; P.boost = F.st ? Math.max(0, Math.min(1, (F.st.P ?? 1))) : 1
+    const dr = KD.racerDrive(F, fin); P.boosting = dr ? !!dr.boost : !!D.boosting; P.boost = F.st ? Math.max(0, Math.min(1, (F.st.P ?? 1))) : (D.boostMeter ?? 1)   /* Boost-Anzeige aus k2t (Mini-Turbo, fd5ccc5): Shift verbraucht, Drift füllt */
     P.thrust = P.fly ? 0.45 + (P.boosting ? 0.55 : 0) : (fin.gas ? 0.7 : 0) + (P.boosting ? 0.5 : 0) + 0.15;
   }
 
@@ -3048,7 +3127,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   const camOver = $('camOver'), camDrive = $('camDrive'), hint = $('hint');
   function setMode(m) {
     mode = m; camOver.setAttribute('aria-pressed', m === 'over'); camDrive.setAttribute('aria-pressed', m === 'drive');
-    hint.textContent = m === 'over' ? 'Ziehen: drehen · Rad/zwei Finger: zoomen' : 'W/S Gas/Bremse · A/D lenken · Q/E Driften · ⇧ Boost · Leertaste springen, in der Luft 2× fliegen · Pfeile Nase · R zurück';
+    hint.textContent = m === 'over' ? 'Ziehen: drehen · Rad/zwei Finger: zoomen' : 'W/S Gas/Bremse · A/D lenken · Q/E Driften (lädt Boost ★) · ⇧ Boost · Leertaste springen, in der Luft 2× fliegen · Pfeile Nase · R zurück';
     if (m === 'drive') { look = 0; FCAM.reset(); if (document.activeElement && document.activeElement !== document.body) document.activeElement.blur() }
   }
   camOver.addEventListener('click', () => setMode('over')); camDrive.addEventListener('click', () => setMode('drive'));
@@ -3174,7 +3253,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     $('hudSpeed').textContent = `${Math.round(Math.abs(P.vf) * 3.6)} km/h`;
     const alt = Math.max(0, P.y - RIDE - groundAt(P.x, P.z));
     $('hudMode').textContent = loading ? 'Racer lädt …' : loadErr ? 'Fehler' : P.fly ? `Flug · ${Math.round(alt)} m` : P.air ? `Sprung · ${alt.toFixed(1).replace('.', ',')} m` : 'Boden';
-    $('hudBoost').textContent = `Boost ${Math.round(P.boost * 100)} %`;
+    $('hudBoost').textContent = `Boost ${Math.round(P.boost * 100)} %` + (D.driftStage ? ' ' + '★'.repeat(D.driftStage) : '');   /* Drift-Stufen 1–3 */
     $('hudDist').textContent = `${(P.odo / 1000).toFixed(1).replace('.', ',')} km`;
     if (loadErr) hint.textContent = loadErr;
     requestAnimationFrame(frame);
