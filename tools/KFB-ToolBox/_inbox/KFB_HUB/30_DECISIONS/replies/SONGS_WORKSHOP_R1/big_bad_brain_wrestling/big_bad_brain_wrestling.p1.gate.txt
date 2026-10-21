@@ -1,0 +1,27 @@
+# Gate-Bericht big_bad_brain_wrestling.p1 · 2026-10-21
+gate song_gate.py sha256 0128b003c53a9e58df9995963d957ec31568953790d5b9f44740d643e1213370
+deck pin registry/assets/v1/decks/big_bad_brain_wrestling.json sha256 54f986f67f1f29c3b070c08c457d67fe46bad7727141c5929982fbc053d81a0a
+media pin media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json sha256 6e84e0c398bb57ad6feede12a3fda8b7a118ced3fa45ba04cb0bb0f6453aed1d
+lyrics sha256 c624dd47369f1091c12958d9873c928f093eba92ede1b5957459d666e412c305 · 741 Zeichen (Unicode len)
+style sha256 71e6e16724dbfa9be28ec9522742b3de60b4ea3a44288601a3f43a51c1f27228
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py lyrics tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.p1.suno.txt --deck registry/assets/v1/decks/big_bad_brain_wrestling.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.p1.songlines.json --media media/kfb/Big_Bad_Brain_Wrestling_-_ADD_web.pdf.json --corpus tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONG_CRITICS_R3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_BESTOF_R1
+exit 0
+song_gate R4.2 lyrics · big_bad_brain_wrestling.p1.suno.txt · 741 Zeichen · 4/4 Karten · Intro 2 · Brücken 0 · Outro 1 · Performer-Einschübe 4 · R4-Zuordnung
+lyrics sha256 c624dd47369f1091c12958d9873c928f093eba92ede1b5957459d666e412c305
+WARN A2: eigener Text (Rahmen + Performer) 53% aller Wörter (Richtwert <= 30%)
+WARN C11: Wort 'real' 3x im eigenen Text
+REVIEW B6: Performer-Text in 100% der Kartenbeats (alter Richtwert ein Drittel bis die Hälfte)
+INFO S2: deck gepinnt 54f986f67f1f
+INFO S2: media gepinnt 6e84e0c398bb
+INFO C9B: Bewohner verifiziert: ActionFigure (KayKit_Mystery_Series6/6 - December 2023 - Action Figure · Köpfe Normal/B/C/D)
+INFO C9: Decktitel-Wörter in Beat [1]
+INFO B7b: Rahmen-Beat 7 ruft Karte 55 auf (Callback)
+INFO E16b: kein Ton-Eintrag für dieses Deck; Deck-Hinweise in SONG_SPEC E16b prüfen
+PASS
+
+$ python3 tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/song_gate.py style tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.p1.style.txt --deck registry/assets/v1/decks/big_bad_brain_wrestling.json --songlines tools/KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/SONGS_WORKSHOP_R1/big_bad_brain_wrestling/big_bad_brain_wrestling.p1.songlines.json
+exit 0
+song_gate R4.2 style · big_bad_brain_wrestling.p1.style.txt · Familie A rock · 2 Variante(n) · 377, 305 Zeichen
+PASS
+
