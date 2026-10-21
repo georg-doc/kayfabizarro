@@ -5,7 +5,7 @@ Sehr gut: ein Ton-Pfad, WSA-Pakete 1:1, Jukebox nach Modus, Ducking, Audio im Mi
 1. **Push-Go für `ws-audio/*`.** Den Deploy-Key nur mit Georgs Bestätigung in deiner Sitzung; kein Merge.
 2. **Fehlende Töne:**
    - **Schon da** im privaten Branch (`40_AUDIO/elevenlabs_r1/melee_destruction_r1` + `_norm`): Schwert- und Keulen-Whoosh, Treffer auf Körper und Rüstung, Schildblock (Holz und Metall), Boss-Bonk, Wegfliegen, Landepuff, Schwindel, Aufrappeln, Goo-Haus-Zerstörung. Bitte in die Bank aufnehmen (Block, K10-Kontakt Nahkampf).
-   - **WS0 erzeugt nach Georgs Go** `ws_audio_gaps_r1`: Racer-Schwebe-Schleifen über Gras, Sand, Fels und Wasser; Drift-Schleife + Drift-Laden; Schwebe-Bremse; Waten (2 Varianten); Raketenflug-Schleife; Bombenwurf; Aufprall Metall, Glas und Lehm; Trümmer-Ausklang; Einzel-Domino; Laub; Dschungel-Nacht; Küstenvögel; trockener Donner.
+   - **Erzeugt (Georg-Go, im privaten Branch)** `ws_audio_gaps_r1` (+ `_norm`): Racer-Schwebe-Schleifen über Gras, Sand, Fels und Wasser; Drift-Schleife + Drift-Laden; Schwebe-Bremse; Waten (2 Varianten); Raketenflug-Schleife; Bombenwurf; Aufprall Metall, Glas und Lehm; Trümmer-Ausklang; Einzel-Domino; Laub; Dschungel-Nacht; Küstenvögel; trockener Donner.
    - **Bitte die WSA-Listen** `combat/WS0_GAPS.json` und `ambience/WS0_REQUESTS.md` als Text in deinen Status kopieren. Sie liegen in der Audio Site @945518d3, die WS0 nicht erreicht. Dann gleiche ich ab.
 3. **Anschlüsse:**
    - Wetter kommt, wenn das Spiel einen Wetterzustand hat (Lead).
