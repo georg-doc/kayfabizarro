@@ -32,7 +32,8 @@ import DEFORM_PROFILES from '../vendor/deformer/deformer-profiles.json'
 import VEHICLE_RIG from '../data/vehicles/kfb-vehicle-rig.r1.json'
 import { mountRacerRig, terrainDustColor } from './racerRig'
 import { createEngineAudio } from '../audio/engineAudio'
-import { terrainHeight } from '../modules/m1-terrain'
+import { applyVehicleLook } from '../look/vehicleLook.js'
+import { groundHeight } from '../modules/m1-terrain' // #439 world=probe: Höhe der aktiven Welt
 import { K, G } from '../m1/m1Scale.js'
 import { WORLD_K } from '../worldScale.js'
 import { createRacerFlight, racerFlightStep, racerAfterK2t, racerDrive } from './racerFlight.js'
@@ -125,11 +126,11 @@ function CarVisual({ squash, signals, lean }) {
     if (D) D.reset?.()
     // Knet-Squash wie J17 (holder.scale 1 + 0,12·sq, 1 − 0,18·sq, 1 + 0,06·sq) – nur die Optik, um die Unterseite
     const sq = squash?.() ?? 0; g.current?.scale.set(1 + SQUASH_LOOK.x * sq, 1 + SQUASH_LOOK.y * sq, 1 + SQUASH_LOOK.z * sq) })
-  useEffect(() => { let alive = true; loadModel().then((m) => { if (alive && m) setModel(m.clone(true)) }); return () => { alive = false } }, [])
+  useEffect(() => { let alive = true; loadModel().then((m) => { if (alive && m) { const c = m.clone(true); M2STATE.look = /(^|[#,])vlook=0/.test(H) ? { applied: 0, off: true } : applyVehicleLook(c); setModel(c) } })   /* Look A (Georg 21.10.) am Klon: Materialien geteilt, Zeichen-Haken je Klon; vlook=0 = Meshy-Original zum Vergleich */; return () => { alive = false } }, [])
   // R1a: Antriebs-Modul an den Düsen-Ankern des Racers. Modell und Anker hängen gemeinsam in rig.stretch (Stauchen/Strecken bei Boost und Sprung),
   // rig.object3d unter der Deformer-Gruppe – Fahnen bleiben bei jeder Verformung an den Düsen. Gas weich (0,12 s), Tempo aus den K2B-Signalen.
   const rig = useRef(null), drv = useRef({ gas: 0, boost: false, jump: false }), { scene: sceneR } = useThree()
-  const dustColorAt = useCallback((x, z) => terrainDustColor(terrainHeight, x, z, { flatY: 1.2 * K }), []) // über ≈ 0,8 m Geländehöhe = Hügel mit Gras
+  const dustColorAt = useCallback((x, z) => terrainDustColor(groundHeight, x, z, { flatY: 1.2 * K }), []) // über ≈ 0,8 m Geländehöhe = Hügel mit Gras
   useEffect(() => { if (!model || !body.current) return
     const M = mountRacerRig({ body: body.current, model, racer: RACER, unit: S, seed: RACER_ID.length, scene: sceneR, dustColor: '#c9b48a' }), R1 = M.rig; rig.current = R1; M2STATE.rig = R1
     const A = createEngineAudio({ types: new Set([...RACER.anchors.map((x) => x.type), 'hover']), muted: /(^|[#,])mute(,|$)/.test(H) }); M2STATE.audio = A // R1a Ton (propulsion_r1)
@@ -142,7 +143,7 @@ function CarVisual({ squash, signals, lean }) {
     if (k.fly) { if ((k.surgeN ?? 0) !== D.surgeN) R1.surge(1); if ((k.ascentN ?? 0) !== D.ascentN) R1.ascent(1) }
     else { if (k.boost && !D.boost && D.gas > 0.3) R1.surge(1); if (k.jump && !D.jump && !k.air) R1.ascent(0.9); if (k.brake && !D.brake && Math.abs(sg.speed ?? 0) > 0.25) R1.brake(1) } // brake: Nase taucht (V-487 §86)
     D.boost = !!k.boost; D.jump = !!k.jump; D.brake = !!k.brake; D.surgeN = k.surgeN ?? 0; D.ascentN = k.ascentN ?? 0
-    const ev = R1.update(dt, { throttle: D.gas * (k.boil ? 0.3 : 1), speed01: k.fly ? k.speed01 : Math.min(1, Math.abs(sg.speed ?? 0)), boost: k.fly ? !!k.boost : !!k.boost && D.gas > 0.3, brake: !!k.brake, groundAt: terrainHeight, groundColorAt: dustColorAt })
+    const ev = R1.update(dt, { throttle: D.gas * (k.boil ? 0.3 : 1), speed01: k.fly ? k.speed01 : Math.min(1, Math.abs(sg.speed ?? 0)), boost: k.fly ? !!k.boost : !!k.boost && D.gas > 0.3, brake: !!k.brake, groundAt: groundHeight, groundColorAt: dustColorAt })
     if (A) { if (boostStart) A.event({ type: 'boost' }); for (const x of ev) A.event(x); A.update(dt, { rpm: R1.engine.rpm, thrust: R1.thrust, boost: R1.boostLevel }) } })
   // Bild-Interpolation: Wurzel = Starrkörper-Gruppe über der Kippgruppe (C1 17.10.: seit M3 lag hier die Kippgruppe – der fahrende Körper wurde nicht
   // mehr interpoliert und ruckelte zwischen den Physik-Schritten). Auch Prüfwert für die Jitter-Messung.
@@ -210,7 +211,7 @@ const M2Car = forwardRef(function M2Car({ player }, ref) {
     return createFollowCam({ dom: gl.domElement, base: Math.hypot(ch - M2CAR.cam.target[1], cz), height: M2CAR.cam.target[1], eye: M2CAR.box.c[1] + M2CAR.box.h[1] * 1.05, eyeAhead: M2CAR.box.h[2] * 0.85, onPov: (on) => { const r = M2STATE.visualRoot; if (r) r.traverse((o) => { if (o.isMesh) o.visible = !on }) }, pitch0: Math.atan2(ch - M2CAR.cam.target[1], -cz), maxArm: 7.5 * K,
       collide: (from, dir, dist) => { ray.origin.x = from.x; ray.origin.y = from.y; ray.origin.z = from.z; ray.dir.x = dir.x; ray.dir.y = dir.y; ray.dir.z = dir.z
         const h = world.castRay(ray, dist, true, undefined, undefined, undefined, undefined, (co) => !co.parent()?.userData?.m2Car && !isFence(co)); return h ? h.timeOfImpact : null },
-      ground: (x, z) => terrainHeight(x, z) }) }, [gl, world, rapier])
+      ground: (x, z) => groundHeight(x, z) }) }, [gl, world, rapier])
   useEffect(() => { const v = new THREE.Vector3()
     M1INTERP.frameCam = () => { const c = car.current, root = M2STATE.visualRoot; if (!c || !root) return; root.getWorldPosition(v); follow.update(M1CLOCK.frameDt ?? STEP, camera, { target: v, heading: c.yaw(), moving: Math.abs(c.speed()) > 0.6 * K }) }
     M2STATE.follow = follow; return () => { M1INTERP.frameCam = null; M2STATE.follow = null; follow.detach() } }, [follow, camera])
@@ -316,12 +317,12 @@ function K2tCar({ at, keys, carRef, player }) {
     // Bodenhöhe unter dem Ursprung (= Unterseite) + Fahrhöhe. Georg 16.10.: „fährt durch den Berg und fällt endlos“ – der Strahl begann 1,5 m über dem
     // Auto und verfehlte einen steil ansteigenden Hang. Jetzt: Strahl ab 3 m über dem Auto auf Theater/Gelände, und das Gelände-Höhenfeld ist IMMER
     // Mindestboden (nie None, nie darunter); Normale aus dem Höhenfeld, wo der Strahl nichts Höheres trifft.
-    home: () => ({ x: M2CAR.spawn[0], y: terrainHeight(M2CAR.spawn[0], M2CAR.spawn[2]) + M2TUNE.rideHeight, z: M2CAR.spawn[2], yaw: M2CAR.yaw }), // T3-Rückfall (Stufe D)
+    home: () => ({ x: M2CAR.spawn[0], y: groundHeight(M2CAR.spawn[0], M2CAR.spawn[2]) + M2TUNE.rideHeight, z: M2CAR.spawn[2], yaw: M2CAR.yaw }), // T3-Rückfall (Stufe D)
     ground: (x, z, fromY) => { const from = fromY + 1.5 * K; ray.origin.x = x; ray.origin.y = from; ray.origin.z = z
       let h = world.castRayAndGetNormal(ray, 60, true, undefined, undefined, undefined, body.current ?? undefined, (c) => skip(c) && !isFence(c))
       // Strahl beginnt in einem Körper (toi ≈ 0, z. B. Wagen an einer Gebäudekante): dieser Körper ist kein Boden (m3-a 17.10.: Wagen kletterte aufs Dach)
       if (h && h.timeOfImpact < 1e-3) { const inside = h.collider; h = world.castRayAndGetNormal(ray, 60, true, undefined, undefined, undefined, body.current ?? undefined, (c) => skip(c) && !isFence(c) && c !== inside) }
-      const ty = terrainHeight(x, z), e = 0.4 * K, tn = new THREE.Vector3(terrainHeight(x - e, z) - terrainHeight(x + e, z), 2 * e, terrainHeight(x, z - e) - terrainHeight(x, z + e)).normalize()
+      const ty = groundHeight(x, z), e = 0.4 * K, tn = new THREE.Vector3(groundHeight(x - e, z) - groundHeight(x + e, z), 2 * e, groundHeight(x, z - e) - groundHeight(x, z + e)).normalize()
       const hy = h ? from - h.timeOfImpact : -Infinity
       // M3 Stufe B: steile Flächen (Normale < 60° zur Senkrechten, z. B. Rampenseite, Tafelkante) sind kein Boden – dann zählt das Gelände
       return hy > ty + 0.01 * K && (h.normal.y >= 0.5 || !ASSIST_M3.on) ? { y: hy + M2TUNE.rideHeight, n: [h.normal.x, h.normal.y, h.normal.z], floor: ty + M2TUNE.rideHeight } : { y: ty + M2TUNE.rideHeight, n: [tn.x, tn.y, tn.z], floor: ty + M2TUNE.rideHeight } },

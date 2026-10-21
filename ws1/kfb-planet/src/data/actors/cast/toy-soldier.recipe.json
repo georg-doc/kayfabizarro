@@ -1,0 +1,22 @@
+{
+ "schema": "kfb.actor-recipe/0.2-candidate",
+ "primaryFormat": "kfb.pets/1",
+ "source": {
+  "selectedId": "toy-soldier",
+  "rigFamily": "Rig_Medium",
+  "label": "ToySoldier (Kandidat zweite Besetzung, F-4)"
+ },
+ "composition": {
+  "modelRef": {
+   "path": "media/3D_Assets/KayKit_Mystery_Series6/6 - December 2025 - Toy Soldier/ToySoldier.glb",
+   "revision": "29c7500b39d20945f4f8e73fb02fef91a055b02c",
+   "blob": "9080d787"
+  },
+  "faceOwners": {
+   "face": "lib/kaykit-eye-adapter.v1.js",
+   "eye": "pet-eye-rig.v6",
+   "mouth": "keiner (KayKit ohne Sprechmund; Mund ist eine spätere Frage, F-4)"
+  }
+ },
+ "profile": "src/data/eyes/cast/toy-soldier.profile.json (AUTO_CANDIDATE, Batch @ac9dbaed)"
+}
