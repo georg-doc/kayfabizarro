@@ -3776,6 +3776,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
      1 Grundhöhe (ohne Rinnen) per GPU auf ein 4-m-Raster, 1536 m um den Wagen · 2 Priority-Flood: Senken über dem Meer füllen sich zu Bergseen (Pegel = Überlauf),
      jede Zelle bekommt einen Abfluss · 3 Einzugsgebiet; ab der Schwelle Fluss, von der Quelle (oder dem Seeabfluss) bergab bis Meer, See oder Mündung in einen Fluss
      4 Linien geglättet, Pegel fällt monoton, Breite/Tiefe aus dem Einzugsgebiet · 5 Rinne in uRiv (Bild = Physik) · 6 Wasser: Bänder mit Fließrichtung, Seen flach, Kit-Fluid */
+  let RIVER_WARM = null
   const RIVER = (() => { const HN = 385, HG = 4, HS = (HN - 1) * HG   /* 1536 m */
     const rt = new THREE.WebGLRenderTarget(HN, HN, { type: THREE.FloatType, format: THREE.RGBAFormat, minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter, depthBuffer: false })
     const hmat = new THREE.ShaderMaterial({ uniforms: Object.assign({}, U, { uRivO: { value: new THREE.Vector4(0, 0, 1, 0) }, uHO: { value: new THREE.Vector2() }, uHG: { value: HG } }), depthTest: false, depthWrite: false,
@@ -3849,6 +3850,9 @@ ${window.KFB_FLUID.glsl}
     /* Gischt-Bällchen (Knete, kein Partikelnebel): 5 je Fall am Fuß, wippen und atmen */
     const PUFF = { falls: [], mesh: new THREE.InstancedMesh(indexByPos(new THREE.IcosahedronGeometry(1, 1)), new THREE.MeshStandardMaterial({ color: '#cfe3df', roughness: 0.9, metalness: 0 }), 32 * 5), m4: new THREE.Matrix4(), q: new THREE.Quaternion(), v: new THREE.Vector3(), sc: new THREE.Vector3() }
     PUFF.mesh.count = 0; PUFF.mesh.frustumCulled = false; worldRoot.add(PUFF.mesh)
+    /* Shader vorab übersetzen (sonst erstes Erscheinen eines Flusses/Falls = 200+ ms Standbild) */
+    { const sc = new THREE.Scene(), mk = (m, at) => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute([0, 0, 0, 1, 0, 0, 0, 0, 1], 3)); for (const [n, k] of at) g.setAttribute(n, new THREE.Float32BufferAttribute(new Array(3 * k).fill(0), k)); const o = new THREE.Mesh(g, m); o.frustumCulled = false; sc.add(o) }
+      mk(mat, [['aFlow', 2], ['aSN', 2], ['aLvl', 1]]); mk(fallMat, [['aF', 4]]); mk(foamMat, [['aC', 4]]); try { renderer.compile(sc, camera) } catch (e) {} RIVER_WARM = sc }
     function puffs(t) { const F = PUFF.falls, M = PUFF.mesh; if (!F.length || !group.visible) { M.count = 0; return } let n = 0
       for (let f = 0; f < F.length; f++) { const A = F[f], dx = A.b.x - A.a.x, dz = A.b.z - A.a.z, Ld = Math.hypot(dx, dz) || 1, ux = dx / Ld, uz = dz / Ld, H = A.top - A.bot
         for (let k = 0; k < 5; k++) { const ph = (t * 0.45 + k * 0.23 + f * 0.37) % 1, side = (k - 2) * 0.22 * (A.wl + A.wr), sz = (0.16 + 0.04 * H) * (0.75 + 0.35 * Math.sin(ph * Math.PI))
@@ -3856,10 +3860,11 @@ ${window.KFB_FLUID.glsl}
           M.setMatrixAt(n++, PUFF.m4.compose(PUFF.v, PUFF.q, PUFF.sc)) } }
       M.count = n; M.instanceMatrix.needsUpdate = true }
     function clear() { for (const m of group.children) m.geometry.dispose(); group.clear(); ST.lines = []; ST.lakes = [] }
-    function off() { PUFF.falls = []; PUFF.mesh.count = 0; if (!RIV.on && !group.children.length) return; RIV.on = false; U.uRivO.value.w = 0; U.uRivV.value = ++RIV.v; clear(); ST.cx = 1e9; ST.sig = ''; if (window.__rockc) window.__rockc.dirty = true }
-    function build(cx, cz) { const t0 = performance.now(), ox = cx - HS / 2, oz = cz - HS / 2, wl = S.water * S.amp + 0.15
+    function off() { BG.gen = null; PUFF.falls = []; PUFF.mesh.count = 0; if (!RIV.on && !group.children.length) return; RIV.on = false; U.uRivO.value.w = 0; U.uRivV.value = ++RIV.v; clear(); ST.cx = 1e9; ST.sig = ''; if (window.__rockc) window.__rockc.dirty = true }
+    function* buildGen(cx, cz) { const t0 = performance.now(), ROX = cx - RIV.size / 2, ROZ = cz - RIV.size / 2, ox = cx - HS / 2, oz = cz - HS / 2, wl = S.water * S.amp + 0.15
       hmat.uniforms.uHO.value.set(ox, oz); const prev = renderer.getRenderTarget(); renderer.setRenderTarget(rt); renderer.render(hscene, hcam); renderer.setRenderTarget(prev)
       const px = new Float32Array(HN * HN * 4); renderer.readRenderTargetPixels(rt, 0, 0, HN, HN, px); const H = new Float32Array(HN * HN); for (let k = 0; k < HN * HN; k++) H[k] = px[k * 4]
+      if (BG.over()) yield 1
       const NC = HN * HN, F = new Float32Array(NC), dir = new Int32Array(NC).fill(-1), seen = new Uint8Array(NC), sea = new Uint8Array(NC), order = new Int32Array(NC); let no = 0
       // Priority-Flood (Barnes) mit kleinem Gefälle auf Flächen: Rand und Meer sind Abflüsse
       const hk = new Float64Array(NC + 8), hv = new Int32Array(NC + 8); let hn = 0
@@ -3867,12 +3872,13 @@ ${window.KFB_FLUID.glsl}
       const pop = () => { const v = hv[0], key = hk[--hn], last = hv[hn]; let i = 0; for (;;) { let c = 2 * i + 1; if (c >= hn) break; if (c + 1 < hn && hk[c + 1] < hk[c]) c++; if (hk[c] >= key) break; hk[i] = hk[c]; hv[i] = hv[c]; i = c } hk[i] = key; hv[i] = last; return v }
       for (let j = 0; j < HN; j++) for (let i = 0; i < HN; i++) { const k = j * HN + i; if (H[k] < wl) sea[k] = 1; if (sea[k] || i === 0 || j === 0 || i === HN - 1 || j === HN - 1) { F[k] = sea[k] ? wl : H[k]; seen[k] = 1; push(F[k], k) } }
       const NB = [1, -1, HN, -HN, HN + 1, HN - 1, -HN + 1, -HN - 1]
-      while (hn) { const c = pop(); order[no++] = c; const ci = c % HN; for (const d of NB) { const n = c + d; if (n < 0 || n >= NC || seen[n]) continue; const ni = n % HN; if (Math.abs(ni - ci) > 1) continue
+      while (hn) { if ((no & 2047) === 0 && BG.over()) yield 2; const c = pop(); order[no++] = c; const ci = c % HN; for (const d of NB) { const n = c + d; if (n < 0 || n >= NC || seen[n]) continue; const ni = n % HN; if (Math.abs(ni - ci) > 1) continue
         seen[n] = 1; F[n] = Math.max(H[n], F[c] + 1e-3); dir[n] = c; push(F[n], n) } }
       const A = new Float32Array(NC).fill(1); for (let k = no - 1; k >= 0; k--) { const c = order[k]; if (dir[c] >= 0 && !sea[c]) A[dir[c]] += A[c] }
       // Bergseen: gefüllte Senken über dem Meer, ≥ 40 Zellen (640 m²), ≥ 1,2 m tief, die 10 größten, Pegel = höchster Füllstand der Senke
+      if (BG.over()) yield 3
       const lakeId = new Int32Array(NC).fill(-1), lakes = []
-      for (let k = 0; k < NC; k++) { if (sea[k] || lakeId[k] >= 0 || F[k] - H[k] < 0.4) continue; const st = [k], cells = []; lakeId[k] = lakes.length; let lv = 0
+      for (let k = 0; k < NC; k++) { if ((k & 4095) === 0 && BG.over()) yield 4; if (sea[k] || lakeId[k] >= 0 || F[k] - H[k] < 0.4) continue; const st = [k], cells = []; lakeId[k] = lakes.length; let lv = 0
         while (st.length) { const c = st.pop(); cells.push(c); lv = Math.max(lv, F[c]); const ci = c % HN; for (const d of [1, -1, HN, -HN]) { const n = c + d; if (n < 0 || n >= NC || lakeId[n] >= 0 || sea[n] || Math.abs(n % HN - ci) > 1 || F[n] - H[n] < 0.4) continue; lakeId[n] = lakes.length; st.push(n) } }
         let dmax = 0; for (const c of cells) dmax = Math.max(dmax, F[c] - H[c]); if (cells.length < 40 || dmax < 1.2) { for (const c of cells) lakeId[c] = -2; continue } lakes.push({ cells, lv, lv0: lv, id: lakes.length })   /* ≥ 640 m² und ≥ 1,2 m tief, sonst nur Pfütze im Abfluss */ }
       if (lakes.length > 10) { const keep = new Set([...lakes].sort((a, b) => b.cells.length - a.cells.length).slice(0, 10)); for (const Lk of lakes) if (!keep.has(Lk)) for (const c of Lk.cells) lakeId[c] = -2
@@ -3885,7 +3891,7 @@ ${window.KFB_FLUID.glsl}
       const used = new Int32Array(NC).fill(-1), near = new Int32Array(NC).fill(-1), lines = [], srcs = []
       for (let k = 0; k < NC; k++) if (isR(k) && ups[k] === 0) srcs.push(k)
       srcs.sort((p2, q2) => H[q2] - H[p2])
-      for (const k of srcs) { const id = lines.length + srcs.length * 0
+      for (const k of srcs) { if (BG.over()) yield 5; const id = lines.length + srcs.length * 0
         let c = k, fromLake = false; for (const d of NB) { const n = k + d; if (n >= 0 && n < NC && lakeId[n] >= 0 && dir[n] === k) fromLake = true }   /* Seeabfluss: Quelle liegt am Seerand */
         const pts = [], mine = []; let end = 'rand'
         const tag = lines.length + 1
@@ -3900,14 +3906,13 @@ ${window.KFB_FLUID.glsl}
       const hb = (x, z) => { const fx = (x - ox) / HG, fz = (z - oz) / HG, i = Math.max(0, Math.min(HN - 2, Math.floor(fx))), j = Math.max(0, Math.min(HN - 2, Math.floor(fz))), tx = Math.min(1, Math.max(0, fx - i)), tz = Math.min(1, Math.max(0, fz - j)), k = j * HN + i
         return (H[k] * (1 - tx) + H[k + 1] * tx) * (1 - tz) + (H[k + HN] * (1 - tx) + H[k + HN + 1] * tx) * tz }
       const lakeLv = (x, z) => { const i = Math.round((x - ox) / HG), j = Math.round((z - oz) / HG); if (i < 0 || j < 0 || i >= HN || j >= HN) return null; const id = lakeId[j * HN + i]; return id >= 0 ? lakes[id].lv : null }
-      const rOn = RIV.on; RIV.on = false; const hT = (x, z) => hgt(x, z)   /* Höhe ohne alte Rinne */
-      for (const L of lines) { let P = L.pts; for (let it = 0; it < 3; it++) { const Q = [P[0]]; for (let i = 0; i < P.length - 1; i++) { const a = P[i], b = P[i + 1]; Q.push([a[0] * 0.75 + b[0] * 0.25, a[1] * 0.75 + b[1] * 0.25, a[2] * 0.75 + b[2] * 0.25], [a[0] * 0.25 + b[0] * 0.75, a[1] * 0.25 + b[1] * 0.75, a[2] * 0.25 + b[2] * 0.75]) } Q.push(P[P.length - 1]); P = Q }
+      const hT = (x, z) => { const o = RIV.on; RIV.on = false; const h = hgt(x, z); RIV.on = o; return h }   /* Höhe ohne Rinne, je Aufruf umgeschaltet (zwischen den Bildern sieht die Physik immer den alten, vollständigen Stand) */
+      for (const L of lines) { if (BG.over()) yield 6; let P = L.pts; for (let it = 0; it < 3; it++) { const Q = [P[0]]; for (let i = 0; i < P.length - 1; i++) { const a = P[i], b = P[i + 1]; Q.push([a[0] * 0.75 + b[0] * 0.25, a[1] * 0.75 + b[1] * 0.25, a[2] * 0.75 + b[2] * 0.25], [a[0] * 0.25 + b[0] * 0.75, a[1] * 0.25 + b[1] * 0.75, a[2] * 0.25 + b[2] * 0.75]) } Q.push(P[P.length - 1]); P = Q }
         const R = [P[0]]; let acc = 0; for (let i = 1; i < P.length; i++) { const a = P[i - 1], b = P[i], d = Math.hypot(b[0] - a[0], b[1] - a[1]); acc += d; while (acc >= 2) { acc -= 2; const t = 1 - acc / d; R.push([a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]) } } if (R.length < 3) { L.pts = []; continue }
         let lv = Infinity; const endLv = L.end === 'meer' ? wl + 0.08 : L.end === 'see' ? (lakeLv(R[R.length - 1][0], R[R.length - 1][1]) ?? wl) : -Infinity
         L.pts = R.map((q, i) => { const hw = Math.min(6.5, Math.max(2.4, 2.4 + 1.1 * Math.log2(q[2] / thr))), a = R[Math.max(0, i - 1)], b = R[Math.min(R.length - 1, i + 1)], tl = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, nx = -(b[1] - a[1]) / tl, nz = (b[0] - a[0]) / tl
           void nx; void nz; lv = Math.min(lv, hT(q[0], q[1]) - 0.3); lv = Math.max(lv, endLv);   /* Netz zuerst: Pegel nur aus der Mitte, streng fallend; Ufer baut das Talprofil selbst (hebt notfalls an) */   /* Anschluss an See/Meer nur, soweit die Ufer ihn halten (Seepegel kann über dem Zulauf liegen) */ return { x: q[0], z: q[1], s: i * 2, lv, hw, dp: 0.9 + 0.22 * hw } })
         L.len = (L.pts.length - 1) * 2 }
-      RIV.on = rOn
       /* nur im Rinnen-Gebiet (innere 1024 m, 8 m Rand): außerhalb gäbe es Wasser ohne Bett */
       const inner = (q) => Math.abs(q.x - cx) < RIV.size / 2 - 8 && Math.abs(q.z - cz) < RIV.size / 2 - 8, live = []
       for (const L of lines) { let cur = []; for (const q of L.pts) { if (inner(q)) cur.push(q); else { if (cur.length >= 3) live.push({ ...L, pts: cur, len: (cur.length - 1) * 2, fromLake: L.fromLake && cur[0] === L.pts[0] }); cur = [] } } if (cur.length >= 3) live.push({ ...L, pts: cur, len: (cur.length - 1) * 2, fromLake: L.fromLake && cur[0] === L.pts[0] }) }
@@ -3927,13 +3932,13 @@ ${window.KFB_FLUID.glsl}
       for (const L of live) { if (L.end !== 'meer') continue; const Pp = L.pts, e = Pp[Pp.length - 1], f = Pp[Pp.length - 2], l = Math.hypot(e.x - f.x, e.z - f.z) || 1, ux = (e.x - f.x) / l, uz = (e.z - f.z) / l
         for (let d = 2; d <= e.hw * 3.4 + 2; d += 2) Pp.push({ x: e.x + ux * d, z: e.z + uz * d, s: e.s + d, lv: e.lv, hw: e.hw, dp: e.dp * Math.max(0, 1 - d / (e.hw * 3.4)) }) }
       // Rinne ins Feld: 512² über die inneren 1024 m; je Texel stärkstes Gewicht (Sohle·Gewicht vormultipliziert → bilinear ohne Sprünge am Rand)
-      RIV.ox = cx - RIV.size / 2; RIV.oz = cz - RIV.size / 2; const D = RIV.data; D.fill(0); for (let k = 3; k < D.length; k += 4) D[k] = -999   /* A = örtlicher Wasserpegel (Fluss/See), -999 = keiner */; const ts = RIV.size / N
+      const D = new Float32Array(RIV.data.length);   /* eigener Puffer: eingesetzt wird erst am Ende */ for (let k = 3; k < D.length; k += 4) D[k] = -999   /* A = örtlicher Wasserpegel (Fluss/See), -999 = keiner */; const ts = RIV.size / N
       const own = new Int16Array(N * N).fill(-1), dist = new Float32Array(N * N).fill(1e9), wetT = new Uint8Array(N * N); let li = 0
-      for (const L of live) { const Pp = L.pts, id = li++; for (let i = 0; i < Pp.length - 1; i++) { const a = Pp[i], b = Pp[i + 1], r = Math.max(a.hw, b.hw) * 3.4 + 6
-        const i0 = Math.max(0, Math.floor((Math.min(a.x, b.x) - r - RIV.ox) / ts)), i1 = Math.min(N - 1, Math.ceil((Math.max(a.x, b.x) + r - RIV.ox) / ts)), j0 = Math.max(0, Math.floor((Math.min(a.z, b.z) - r - RIV.oz) / ts)), j1 = Math.min(N - 1, Math.ceil((Math.max(a.z, b.z) + r - RIV.oz) / ts))
+      for (const L of live) { const Pp = L.pts, id = li++; for (let i = 0; i < Pp.length - 1; i++) { if ((i & 7) === 0 && BG.over()) yield 7; const a = Pp[i], b = Pp[i + 1], r = Math.max(a.hw, b.hw) * 3.4 + 6
+        const i0 = Math.max(0, Math.floor((Math.min(a.x, b.x) - r - ROX) / ts)), i1 = Math.min(N - 1, Math.ceil((Math.max(a.x, b.x) + r - ROX) / ts)), j0 = Math.max(0, Math.floor((Math.min(a.z, b.z) - r - ROZ) / ts)), j1 = Math.min(N - 1, Math.ceil((Math.max(a.z, b.z) + r - ROZ) / ts))
         const dx = b.x - a.x, dz = b.z - a.z, l2 = dx * dx + dz * dz || 1
-        for (let j = j0; j <= j1; j++) for (let ii = i0; ii <= i1; ii++) { const tr = ((RIV.ox + (ii + 0.5) * ts - a.x) * dx + (RIV.oz + (j + 0.5) * ts - a.z) * dz) / l2; if (i === 0 && tr < -0.25) continue   /* keine runde Kappe hinter der Quelle (grub sonst in tieferes Gelände ohne Wasser) */
-          const x = RIV.ox + (ii + 0.5) * ts, z = RIV.oz + (j + 0.5) * ts, t = Math.max(0, Math.min(1, tr)), d = Math.hypot(x - a.x - t * dx, z - a.z - t * dz)
+        for (let j = j0; j <= j1; j++) for (let ii = i0; ii <= i1; ii++) { const tr = ((ROX + (ii + 0.5) * ts - a.x) * dx + (ROZ + (j + 0.5) * ts - a.z) * dz) / l2; if (i === 0 && tr < -0.25) continue   /* keine runde Kappe hinter der Quelle (grub sonst in tieferes Gelände ohne Wasser) */
+          const x = ROX + (ii + 0.5) * ts, z = ROZ + (j + 0.5) * ts, t = Math.max(0, Math.min(1, tr)), d = Math.hypot(x - a.x - t * dx, z - a.z - t * dz)
           /* Netz zuerst (Génevaux 2013, Kit-Regel „Gelände an der Fließlinie formen“): Talprofil = Bett (Parabel bis zum Pegel bei hw) · Ufer (+0,6 m bis 1,35 hw) · ebene Aue bis 1,6 hw,
              danach weich zurück ins Grundgelände bis 3,4 hw. Das Profil ERSETZT das Gelände (hebt und senkt) → Ufer liegen immer über dem Wasser */
           const hw = a.hw + (b.hw - a.hw) * t, w = 1 - ss(hw + Math.max(3.2, hw * 0.6) + 1.5, hw * 3.4 + 6, d); if (w <= 0) continue
@@ -3943,30 +3948,34 @@ ${window.KFB_FLUID.glsl}
           const oT = oW > 0 ? D[k] / oW : 0, win = oW === 0 || (both ? tgt < oT : wet ? true : wetT[kk] ? false : (w > 0.95 && oW > 0.95 ? tgt > oT : dn < dist[kk]))   /* Wasser schneidet durch Ufer; zwei Ufer: das höhere bleibt (Damm), in der Auslaufzone das nähere */
           if (win) { D[k] = tgt * w; D[k + 1] = Math.max(w, both ? oW : 0) === w ? w : oW; if (D[k + 1] !== w) D[k] = tgt * D[k + 1]; dist[kk] = dn; own[kk] = id; wetT[kk] = wet ? 1 : 0; D[k + 3] = wet ? lvH : -999 }
           else if (w > oW) { D[k] = (D[k] / oW) * w; D[k + 1] = w } }   /* Gewicht darf wachsen, Profil bleibt beim näheren Stück */ } }
-      for (let j = 1; j < N - 1; j++) for (let i = 1; i < N - 1; i++) { let m = 0; for (let b = -1; b <= 1; b++) for (let a = -1; a <= 1; a++) m = Math.max(m, D[((j + b) * N + i + a) * 4 + 1]); D[(j * N + i) * 4 + 2] = m }   /* Maske für den frühen Ausstieg */
-      tex.needsUpdate = true; RIV.on = true; U.uRivO.value.set(RIV.ox, RIV.oz, RIV.size, 1); U.uRivV.value = ++RIV.v
+      for (let j = 1; j < N - 1; j++) { if ((j & 31) === 0 && BG.over()) yield 8; for (let i = 1; i < N - 1; i++) { let m = 0; for (let b = -1; b <= 1; b++) for (let a = -1; a <= 1; a++) m = Math.max(m, D[((j + b) * N + i + a) * 4 + 1]); D[(j * N + i) * 4 + 2] = m } }   /* Maske für den frühen Ausstieg */
       // Wasser: Band je Fluss (5 Spuren quer, Pegel konstant quer), Seen als flaches Raster; Fließanteil am Seeabfluss von 0 hochgeblendet (Kit: keine Naht)
-      clear(); const pos = [], fl = [], sn = [], lvA = [], idx = []
+      const pos = [], fl = [], sn = [], lvA = [], idx = []
       for (const L of live) { const Pp = L.pts, n0 = pos.length / 3, lanes = [-1, -0.8, -0.55, -0.28, 0, 0.28, 0.55, 0.8, 1], NL = lanes.length   /* Bandkante = Flusskante (glatte Linie) */   /* breiter als die Mulde: die Wasserkante entsteht am Ufer (Gelände über Pegel), nie am Bandrand */
         for (let i = 0; i < Pp.length; i++) { const a = Pp[Math.max(0, i - 1)], b = Pp[Math.min(Pp.length - 1, i + 1)], tx = b.x - a.x, tz = b.z - a.z, tl = Math.hypot(tx, tz) || 1, ux = tx / tl, uz = tz / tl, q = Pp[i]
           const f = (L.fromLake ? ss(0, 8, q.s) : 1) * Math.min(1, ss(0, 4, q.s) + 0.4)
           for (const ln of lanes) { pos.push(q.x - uz * ln * q.hw, q.lv, q.z + ux * ln * q.hw); fl.push(ux * f, uz * f); sn.push(q.s, ln * q.hw); lvA.push(q.lv) } }
         for (let i = 0; i < Pp.length - 1; i++) for (let k = 0; k < NL - 1; k++) { const a = n0 + i * NL + k, b = a + 1, c = a + NL, d = c + 1; idx.push(a, c, b, b, c, d) } }
-      for (const Lk of lakes) { let i0 = 1e9, i1 = -1, j0 = 1e9, j1 = -1; for (const c of Lk.cells) { const i = c % HN, j = Math.floor(c / HN); i0 = Math.min(i0, i); i1 = Math.max(i1, i); j0 = Math.min(j0, j); j1 = Math.max(j1, j) }
+      for (const Lk of lakes) { if (BG.over()) yield 9; let i0 = 1e9, i1 = -1, j0 = 1e9, j1 = -1; for (const c of Lk.cells) { const i = c % HN, j = Math.floor(c / HN); i0 = Math.min(i0, i); i1 = Math.max(i1, i); j0 = Math.min(j0, j); j1 = Math.max(j1, j) }
         i0 = Math.max(0, i0 - 1); j0 = Math.max(0, j0 - 1); i1 = Math.min(HN - 1, i1 + 1); j1 = Math.min(HN - 1, j1 + 1); const n0 = pos.length / 3, W = i1 - i0 + 1
         for (let j = j0; j <= j1; j++) for (let i = i0; i <= i1; i++) { const x = ox + i * HG, z = oz + j * HG; pos.push(x, Lk.lv, z); fl.push(0, 0); sn.push(x, z); lvA.push(Lk.lv) }
-        { const ro = RIV.on; RIV.on = true; let rim = Infinity; const inL = new Set(Lk.cells)   /* Pegel = tiefster ECHTER Randpunkt (feines Gelände, 1 m Abtastung entlang der Zellgrenzen): das 4-m-Raster sah den Rand höher → Wasser hing über der Schlucht */
-          for (const c of Lk.cells) { const ci = c % HN, cj = Math.floor(c / HN); for (const [di, dj] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const n = c + dj * HN + di; if (inL.has(n)) continue
-            for (let f = 0; f <= 4; f++) { const x = ox + (ci + di * 0.75) * HG + (dj ? (f / 4 - 0.5) * HG : 0), z = oz + (cj + dj * 0.75) * HG + (di ? (f / 4 - 0.5) * HG : 0), rv = rivSampleJS(x, z); if (rv && rv[1] > 0.3) continue; rim = Math.min(rim, hgt(x, z)) } } }   /* am geformten Gelände (Netz zuerst), Abflussrinne ausgenommen */
-          let flo = Infinity; for (const c of Lk.cells) flo = Math.min(flo, H[c]); RIV.on = ro; Lk.lv = Math.min(Lk.lv, rim - 0.12, flo + 3.5);   /* höchstens 3,5 m tief: Teich am Grund statt randvoll gefüllter Grube (Georg 21.10.: man fuhr unter der Seefläche) */ for (let k = n0; k < pos.length / 3; k++) { pos[k * 3 + 1] = Lk.lv; lvA[k] = Lk.lv } }
+        { const sD = (x, z) => { const tx = (x - ROX) / RIV.size * N - 0.5, tz = (z - ROZ) / RIV.size * N - 0.5, c0 = Math.floor(tx + 0.5), c1 = Math.floor(tz + 0.5); if (c0 < 1 || c1 < 1 || c0 > N - 2 || c1 > N - 2) return null   /* = rivSampleJS am neuen Puffer */
+            const fx = tx - c0, fz = tz - c1, wx = [0.5 * (0.5 - fx) ** 2, 0.75 - fx * fx, 0.5 * (0.5 + fx) ** 2], wz = [0.5 * (0.5 - fz) ** 2, 0.75 - fz * fz, 0.5 * (0.5 + fz) ** 2]; let r = 0, g = 0
+            for (let jj = 0; jj < 3; jj++) for (let i3 = 0; i3 < 3; i3++) { const k = ((c1 + jj - 1) * N + c0 + i3 - 1) * 4, w = wx[i3] * wz[jj]; r += w * D[k]; g += w * D[k + 1] } return [r, g] }
+          let rim = Infinity, nC = 0;   /* Rand am NEUEN Feld: Grundhöhe (ohne Rinne) mit dem neuen Talprofil gemischt */ const inL = new Set(Lk.cells)   /* Pegel = tiefster ECHTER Randpunkt (feines Gelände, 1 m Abtastung entlang der Zellgrenzen): das 4-m-Raster sah den Rand höher → Wasser hing über der Schlucht */
+          for (const c of Lk.cells) { if ((++nC & 63) === 0 && BG.over()) yield 10; const ci = c % HN, cj = Math.floor(c / HN); for (const [di, dj] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const n = c + dj * HN + di; if (inL.has(n)) continue
+            for (let f = 0; f <= 4; f++) { const x = ox + (ci + di * 0.75) * HG + (dj ? (f / 4 - 0.5) * HG : 0), z = oz + (cj + dj * 0.75) * HG + (di ? (f / 4 - 0.5) * HG : 0), rv = sD(x, z); if (rv && rv[1] > 0.3) continue; const h0 = hT(x, z); rim = Math.min(rim, rv && rv[1] > 1e-4 ? h0 * (1 - rv[1]) + rv[0] : h0) } } }   /* am geformten Gelände (Netz zuerst), Abflussrinne ausgenommen */
+          let flo = Infinity; for (const c of Lk.cells) flo = Math.min(flo, H[c]); Lk.lv = Math.min(Lk.lv, rim - 0.12, flo + 3.5);   /* höchstens 3,5 m tief: Teich am Grund statt randvoll gefüllter Grube (Georg 21.10.: man fuhr unter der Seefläche) */ for (let k = n0; k < pos.length / 3; k++) { pos[k * 3 + 1] = Lk.lv; lvA[k] = Lk.lv } }
         const own = new Uint8Array(NC), fl2 = [...Lk.cells]; for (const c of fl2) own[c] = 2   /* Flutfüllung vom Seegrund bis knapp über den Pegel, dann genau eine Randzelle: nie über den Uferkamm auf tieferes Gelände (Georg 21.10.) */
         while (fl2.length) { const c = fl2.pop(), ci = c % HN; for (const d of [1, -1, HN, -HN]) { const n = c + d; if (n < 0 || n >= NC || own[n] || Math.abs(n % HN - ci) > 1) continue; if (H[n] < Lk.lv + 0.3 && F[n] >= Lk.lv0 - 0.01) { own[n] = 2; fl2.push(n) } } }   /* nur Beckenzellen (bis zum Überlauf gefüllt): unterhalb des Abflusses ist F = H < Überlauf */
+        if (BG.over()) yield 11
         for (let c = 0; c < NC; c++) if (own[c] === 2) { const ci = c % HN; for (const d of [1, -1, HN, -HN, HN + 1, HN - 1, -HN + 1, -HN - 1]) { const n = c + d; if (n >= 0 && n < NC && !own[n] && Math.abs(n % HN - ci) <= 1 && H[n] >= Lk.lv) own[n] = 1 } }
         Lk.own = own
         for (let j = 0; j < j1 - j0; j++) for (let i = 0; i < W - 1; i++) { const cc = (j0 + j) * HN + i0 + i; if (!(own[cc] && own[cc + 1] && own[cc + HN] && own[cc + HN + 1])) continue; const a = n0 + j * W + i, b = a + 1, c = a + W, d = c + 1; idx.push(a, c, b, b, c, d) } }
       for (const Lk of lakes) for (let c = 0; c < NC; c++) { if (!Lk.own || Lk.own[c] !== 2) continue; const x = ox + (c % HN) * HG, z = oz + Math.floor(c / HN) * HG, ts2 = RIV.size / N   /* Seepegel ins Feld (ohne Rinne): Volumen-Färbung und Unterwasser-Ansicht kennen ihn */
-        for (let dz2 = -HG * 0.5; dz2 < HG * 0.5; dz2 += ts2) for (let dx2 = -HG * 0.5; dx2 < HG * 0.5; dx2 += ts2) { const ii = Math.floor((x + dx2 - RIV.ox) / ts2), jj = Math.floor((z + dz2 - RIV.oz) / ts2); if (ii < 0 || jj < 0 || ii >= N || jj >= N) continue; const k = (jj * N + ii) * 4; if (D[k + 1] < 0.35) D[k + 3] = Math.max(D[k + 3], Lk.lv) } }
-      tex.needsUpdate = true
+        for (let dz2 = -HG * 0.5; dz2 < HG * 0.5; dz2 += ts2) for (let dx2 = -HG * 0.5; dx2 < HG * 0.5; dx2 += ts2) { const ii = Math.floor((x + dx2 - ROX) / ts2), jj = Math.floor((z + dz2 - ROZ) / ts2); if (ii < 0 || jj < 0 || ii >= N || jj >= N) continue; const k = (jj * N + ii) * 4; if (D[k + 1] < 0.35) D[k + 3] = Math.max(D[k + 3], Lk.lv) } }
+      /* einsetzen (alles in einem Bild): Feld, Ursprung, Meshes */
+      RIV.data.set(D); RIV.ox = ROX; RIV.oz = ROZ; RIV.on = true; tex.needsUpdate = true; U.uRivO.value.set(ROX, ROZ, RIV.size, 1); U.uRivV.value = ++RIV.v; clear()
       if (idx.length) { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('aFlow', new THREE.Float32BufferAttribute(fl, 2)); g.setAttribute('aSN', new THREE.Float32BufferAttribute(sn, 2)); g.setAttribute('aLvl', new THREE.Float32BufferAttribute(lvA, 1)); g.setIndex(idx)
         const m = new THREE.Mesh(g, mat); m.frustumCulled = false; m.renderOrder = 3; group.add(m) }
       if (falls.length) { const fp = [], fa = [], fi = [], cp = [], ca = [], ci = [], R = 10, C = 7
@@ -3983,14 +3992,19 @@ ${window.KFB_FLUID.glsl}
         const m2 = new THREE.Mesh(g2, foamMat); m2.frustumCulled = false; m2.renderOrder = 4; group.add(m2) }
       ST.falls = falls.map((F) => ({ bx: +F.b.x.toFixed(1), bz: +F.b.z.toFixed(1), ax: +F.a.x.toFixed(1), az: +F.a.z.toFixed(1), x: Math.round(F.a.x), z: Math.round(F.a.z), h: +(F.top - F.bot).toFixed(1), hw: +F.hw.toFixed(1), top: +F.top.toFixed(2) })); PUFF.falls = falls
       ST.lines = live.map((L) => ({ n: L.pts.length, len: L.len, end: L.end, xe: Math.round(L.pts[L.pts.length - 1].x), ze: Math.round(L.pts[L.pts.length - 1].z), fromLake: L.fromLake, x0: Math.round(L.pts[0].x), z0: Math.round(L.pts[0].z), drop: +(L.pts[0].lv - L.pts[L.pts.length - 1].lv).toFixed(1) }))
-      ST.lakes = lakes.map((Lk) => ({ cells: Lk.cells.length, lv: +Lk.lv.toFixed(2) })); ST.cx = cx; ST.cz = cz; ST.ms = +(performance.now() - t0).toFixed(0); ST.n++
+      ST.lakes = lakes.map((Lk) => ({ cells: Lk.cells.length, lv: +Lk.lv.toFixed(2) })); ST.cx = cx; ST.cz = cz; ST.ms = +(performance.now() - t0).toFixed(0); ST.n++; ST.slices = BG.slices; ST.maxSlice = +BG.maxSlice.toFixed(1); ST.maxAt = BG.maxAt
       if (window.__rockc) window.__rockc.dirty = true }
+    /* Verteilt auf Bilder (Georg 21.10.: Ruck beim Neuberechnen): höchstens ~5 ms je Bild; build() bleibt für Prüfungen synchron */
+    const BG = { gen: null, t0: 0, budget: 5, sync: false, slices: 0, maxSlice: 0, over() { return !this.sync && performance.now() - this.t0 > this.budget } }
+    function build(cx, cz) { BG.sync = true; BG.slices = 1; BG.maxSlice = 0; const g = buildGen(cx, cz); while (!g.next().done); BG.sync = false }
+    function step() { if (!BG.gen) return false; BG.t0 = performance.now(); const r = BG.gen.next(), dt = performance.now() - BG.t0; BG.slices++; if (dt > BG.maxSlice) { BG.maxSlice = dt; BG.maxAt = (BG.prevAt ?? 'start') + '→' + (r.done ? 'ende' : r.value) } BG.prevAt = r.done ? 'start' : r.value; if (r.done) BG.gen = null; return true }   /* maxAt: zwischen welchen Haltepunkten das längste Stück lag */
     function update() { if (!S.rivers || S.vox) { off(); return } puffs(performance.now() / 1000)
       const sig = hNames.map((n) => U[n] ? vs(U[n].value) : '').join('|') + '|' + S.water + '|' + (window.__RIVA || 0)
       if (sig !== ST.pend) { ST.pend = sig; ST.calm = 0; return } if (ST.calm < 20) { ST.calm++; return }   /* Regler ruhig (≈ 1/3 s), erst dann neu rechnen */
-      const far = Math.max(Math.abs(P.x - ST.cx), Math.abs(P.z - ST.cz)) > 200   /* neu erst 200 m vom Mittelpunkt (Bau ≈ 50–90 ms, Rinnen-Gebiet reicht ±504 m) */
-      if (sig !== ST.sig || far) { ST.sig = sig; build(Math.round(P.x / 64) * 64, Math.round(P.z / 64) * 64) } }
-    return { update, build, off, ST, group } })();
+      const far = Math.max(Math.abs(P.x - ST.cx), Math.abs(P.z - ST.cz)) > 160   /* neu erst 200 m vom Mittelpunkt (Bau ≈ 50–90 ms, Rinnen-Gebiet reicht ±504 m) */
+      if (sig !== ST.sig || (far && !BG.gen)) { ST.sig = sig; BG.slices = 0; BG.maxSlice = 0; BG.gen = buildGen(Math.round(P.x / 64) * 64, Math.round(P.z / 64) * 64) }
+      step() }
+    return { update, build, off, ST, group, BG } })();
   window.__RIVER = RIVER; window.__RIVD = RIV;
   /* Unterwasser-Ansicht (Kamera unter Meer-, Fluss- oder Seepegel): Bild in Wassertönen, Tiefe dunkelt ab, oben heller; keine Wasserdecke als Himmel */
   const UNDER = { lv: -999, k: 0, quad: new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({ uniforms: Object.assign({}, U, { uUK: { value: 0 }, uUD: { value: 0 } }), transparent: true, depthTest: false, depthWrite: false,
