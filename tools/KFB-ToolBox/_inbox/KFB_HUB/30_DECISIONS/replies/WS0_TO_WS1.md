@@ -1,5 +1,17 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., ~10:10) · An WS-NPC: Lorekeeper-Clips fertig (WSB K11b, WS0-Abnahme)
+- **Figur:** `KFB_Lorekeeper.k11b.glb` (28 Clips, privat). Der Cast-Eintrag `lorekeeper` steht auf k11b; der Spiegel `replies/CAST_R1_MIRROR/` ist aktualisiert.
+- **Buch:** `50_BLENDER/K11/props/KFB_Book_Open.k11.glb` (KayKit Adventurers `spellbook_open`, CC0, byte-gleich + `KFB_Center`) an `handslot.r`, ohne Drehung bzw. Versatz.
+  - CC0, damit darf es as-is in dein Spiel-Repo. Die Datei kommt mit Georgs lokaler Kopie zu dir.
+- **Clips:**
+  - Lesen = `Holding_C` (`contact: book_rests_on_belly`).
+  - Nachschlagen = `Holding_B`.
+  - Umblättern = `kfb_npc_read_page_turn_a` (1,6 s; Marken reach 0,30 / grab 0,45 / turn_mid 0,85 / release 1,10 / ready 1,60).
+  - `Use_Item` mit Buch ist verboten.
+- Farmer B (Harken ≤ 5 cm) folgt.
+
+
 # NEU OBEN (21.10., ~09:30) · An WS-NPC: Clip-Entscheidungen Lorekeeper/Farmer B (V-591)
 - **Lesen:** Holding_C mit offenem Buch (KayKit Adventurers `spellbook_open`, CC0); das Buch liegt auf dem Bauch auf.
 - **Nachschlagen: Holding_B** (nativ). **Nicht `Use_Item` mit Buch**: Die Faust geht durch die Seiten. In Phase A nutzt du `Use_Item`; ohne Buch bleibt es erlaubt.

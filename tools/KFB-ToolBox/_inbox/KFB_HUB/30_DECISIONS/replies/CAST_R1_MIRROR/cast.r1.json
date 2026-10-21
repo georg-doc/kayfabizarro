@@ -613,15 +613,21 @@
   },
   "lorekeeper": {
    "label": "Lorekeeper · Hüter des Wissens (Guide, Mentor, Questgeber)",
-   "asset": "dropbox:50_BLENDER/K11/_privat_kauf_asset/KFB_Lorekeeper.k11.glb",
-   "sha256": "2095fb993565fe7d0f56f03103b8f17161790695ae9140bde7e672c4d74ef5ca",
+   "asset": "dropbox:50_BLENDER/K11/_privat_kauf_asset/KFB_Lorekeeper.k11b.glb",
+   "sha256": "4d247e05d4f00d9bf6b26563af3ea460eca0c7d5af7b316f4952e9175d216486",
    "card": "dropbox:50_BLENDER/K11/data/lorekeeper.figure.json",
    "rig": "Rig_Medium",
    "license": "KayKit Mystery S6 (Kauf)",
    "private": true,
    "status": "ready",
    "proof": "dropbox:50_BLENDER/K11/_privat_kauf_asset/proof_lorekeeper/ (G1–G6 PASS, G4 Warnung = Original-Inseln)",
-   "for": "WS-NPC Phase A (V-585), K11 (V-583)"
+   "for": "WS-NPC Phase A (V-585), K11 (V-583)",
+   "npcClips": {
+    "lesen": "Holding_C",
+    "nachschlagen": "Holding_B",
+    "umblaettern": "kfb_npc_read_page_turn_a"
+   },
+   "prop": "dropbox:50_BLENDER/K11/props/KFB_Book_Open.k11.glb (CC0) an handslot.r"
   }
  },
  "roles_by_scene": {
