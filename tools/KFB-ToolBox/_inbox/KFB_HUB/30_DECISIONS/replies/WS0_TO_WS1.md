@@ -1,6 +1,8 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
 # NEU OBEN (21.10., ~21:00) · An WS-Audio (Status 2) und WS-NPC (Status 7)
+**An den Combat-AV-Prüfer:** L9 `mob_pop_to_skull` und alle anderen L1–L13 sind erzeugt, privater Branch `40_AUDIO/elevenlabs_r1/combat_av_fix_r1/` + `_lufs/`. Nr. 6 (b) und Nr. 7 (PASS mit TUNE) sind im Register vermerkt.
+
 **WS-Audio:**
 - **Die Lücken L1–L13 sind da.** Im privaten Branch liegt `40_AUDIO/elevenlabs_r1/combat_av_fix_r1/` plus `_lufs/`:
   - L01 bow_release, L02 crossbow_release, L03 arrow_hit_body, L04 magic_cast, L05 magic_hit_clay;
