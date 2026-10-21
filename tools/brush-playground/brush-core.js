@@ -21,7 +21,11 @@
     plistBytes: 2e6,         // Brush.archive
     plistObjects: 20000,
     imagePixels: 4096 * 4096,
-    imageSide: 4096
+    imageSide: 4096,
+    setBytes: 200e6,         // whole .brushset file
+    setEntries: 4000,
+    setTotalBytes: 400e6,    // inflated active members of a set
+    setBrushes: 300
   };
 
   /* ---------- bplist00 ---------- */
@@ -105,7 +109,8 @@
         if (o && typeof o === 'object' && !Array.isArray(o) && !(o instanceof Uint8Array)) {
           if ('NS.string' in o) return o['NS.string'];
           if ('NS.bytes' in o) return o['NS.bytes'];
-          if (depth > 2) return { $ref: v.$uid };
+          if (Array.isArray(o['NS.objects']) && depth <= 3) return o['NS.objects'].slice(0, 256).map(x => deref(x, depth + 1));
+          if (depth > 3) return { $ref: v.$uid };
           const out = {};
           for (const k in o) if (k !== '$class') out[k] = deref(o[k], depth + 1);
           if (o.$class) { const c = objects[o.$class.$uid]; if (c && c.$classname) out.$class = c.$classname; }
@@ -124,36 +129,155 @@
     return flat;
   }
 
-  /* ---------- .brush ZIP (single brush; .brushset deferred) ---------- */
-  const ACTIVE = { archive: 'Brush.archive', shape: 'Shape.png', grain: 'Grain.png', thumb: 'QuickLook/Thumbnail.png' };
-  function inspectBrushZip(bytes, fflate) {
+  /* ---------- XML plist (brushset.plist may be XML or binary) ---------- */
+  function parseXmlPlist(text) {
+    if (text.length > LIMITS.plistBytes) throw Error('plist too large');
+    // token: [_, slash, tag, selfClose, text]; attributes are allowed and ignored, <?…?> and <!…> skipped
+    const re = /<(\/?)([a-zA-Z]+)(?:\s[^>]*?)?(\/)?>|<[?!][^>]*>|([^<]+)/g, tokens = [];
+    let m; while ((m = re.exec(text))) if (m[2] || m[4] !== undefined) tokens.push(m);
+    let i = 0;
+    const decode = t => t.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, '&');
+    function textUntil(tag) { let out = ''; while (i < tokens.length && !(tokens[i][1] === '/' && tokens[i][2] === tag)) { if (tokens[i][4]) out += tokens[i][4]; i++; } i++; return decode(out); }
+    function value(depth) {
+      if (depth > 32) throw Error('plist nesting too deep');
+      while (i < tokens.length && (!tokens[i][2] || tokens[i][4] !== undefined)) i++;
+      const t = tokens[i++]; if (!t) throw Error('unexpected end of plist');
+      const tag = t[2], selfClose = !!t[3];
+      if (tag === 'true') return true; if (tag === 'false') return false;
+      if (selfClose) return tag === 'array' ? [] : tag === 'dict' ? {} : '';
+      if (tag === 'string' || tag === 'key' || tag === 'date' || tag === 'data') return textUntil(tag);
+      if (tag === 'integer' || tag === 'real') return Number(textUntil(tag));
+      if (tag === 'array') { const a = []; for (;;) { skipWs(); if (closing('array')) return a; a.push(value(depth + 1)); } }
+      if (tag === 'dict') { const d = {}; for (;;) { skipWs(); if (closing('dict')) return d; const k = value(depth + 1); d[String(k)] = value(depth + 1); } }
+      throw Error('unsupported plist tag <' + tag + '>');
+    }
+    function skipWs() { while (i < tokens.length && tokens[i][4] !== undefined && !tokens[i][4].trim()) i++; }
+    function closing(tag) { if (tokens[i] && tokens[i][1] === '/' && tokens[i][2] === tag) { i++; return true; } return false; }
+    while (i < tokens.length && tokens[i][2] !== 'plist') i++;
+    i++;
+    return value(0);
+  }
+  function parseAnyPlist(bytes) {
+    const head = String.fromCharCode.apply(null, bytes.subarray(0, 8));
+    if (head === 'bplist00') return parseBplist(bytes);
+    return parseXmlPlist(new TextDecoder().decode(bytes));
+  }
+
+  /* ---------- .brush / .brushset ZIP ----------
+     A .brush has Brush.archive + Shape.png at the root. A .brushset has one folder per brush
+     (<UUID>/Brush.archive …), a Reset/ copy per brush and brushset.plist (name + brush order).
+     Only active files are inflated; Reset/, author/signature pictures are skipped unread. */
+  const PARTS = { 'Brush.archive': 'archive', 'Shape.png': 'shape', 'Grain.png': 'grain', 'QuickLook/Thumbnail.png': 'thumb' };
+  function splitPath(name) {
+    for (const tail in PARTS) {
+      if (name === tail) return { folder: '', part: PARTS[tail] };
+      if (name.endsWith('/' + tail)) {
+        const folder = name.slice(0, -tail.length - 1);
+        if (folder.split('/').includes('Reset')) return null;
+        return { folder, part: PARTS[tail] };
+      }
+    }
+    return null;
+  }
+  function inspectArchive(bytes, fflate) {
     if (!(bytes instanceof Uint8Array)) bytes = new Uint8Array(bytes);
-    if (bytes.length > LIMITS.archiveBytes) throw Error('Archive exceeds 32 MB private-import limit');
-    if (bytes[0] !== 0x50 || bytes[1] !== 0x4b) throw Error('Not a ZIP-based .brush file');
-    const seen = [], wanted = new Set(Object.values(ACTIVE));
-    let total = 0;
+    if (bytes.length > LIMITS.setBytes) throw Error('Archive exceeds ' + (LIMITS.setBytes / 1e6) + ' MB private-import limit');
+    if (bytes[0] !== 0x50 || bytes[1] !== 0x4b) throw Error('Not a ZIP-based .brush/.brushset file');
+    const seen = [];
+    let total = 0, isSet = false;
     const files = fflate.unzipSync(bytes, {
       filter(f) {
         seen.push(f.name);
-        if (seen.length > LIMITS.entries) throw Error('Too many ZIP entries');
-        if (f.name.includes('..') || f.name.startsWith('/') || f.name.includes('\\')) throw Error('Unsafe path in archive: ' + f.name);
-        if (!wanted.has(f.name)) return false;          // Reset/, author pictures etc. ignored
+        if (seen.length > LIMITS.setEntries) throw Error('Too many ZIP entries');
+        if (f.name.split('/').includes('..') || f.name.startsWith('/') || f.name.includes('\\') || /[\x00-\x1f]/.test(f.name)) throw Error('Unsafe path in archive: ' + f.name);
+        const isPlist = f.name === 'brushset.plist';
+        if (isPlist) isSet = true;
+        if (!isPlist && !splitPath(f.name)) return false;
         if (f.originalSize > LIMITS.entryBytes) throw Error(f.name + ' too large');
         total += f.originalSize;
-        if (total > LIMITS.totalBytes) throw Error('Archive expands beyond safety cap');
+        if (total > LIMITS.setTotalBytes) throw Error('Archive expands beyond safety cap');
         return true;
       }
     });
-    if (!files[ACTIVE.archive]) throw Error('Brush.archive missing: not a single Procreate brush' + (seen.some(n => n.endsWith('brushset.plist')) ? ' (.brushset import is a later phase)' : ''));
-    if (!files[ACTIVE.shape]) throw Error('Shape.png missing (bundled Procreate shapes are not in the file)');
     for (const k in files) if (files[k].length > LIMITS.entryBytes) throw Error(k + ' decompressed beyond cap');
-    const settings = unarchive(parseBplist(files[ACTIVE.archive]));
-    return {
-      settings,
-      entries: seen,
-      shapePng: files[ACTIVE.shape],
-      grainPng: files[ACTIVE.grain] || null,
-      thumbPng: files[ACTIVE.thumb] || null
+    const folders = new Map();
+    for (const name in files) {
+      const sp = splitPath(name); if (!sp) continue;
+      if (!folders.has(sp.folder)) folders.set(sp.folder, {});
+      folders.get(sp.folder)[sp.part] = files[name];
+    }
+    if (!isSet && !folders.has('')) {
+      if (folders.size) isSet = true; // folder-per-brush layout without plist: treat as set
+      else throw Error('Brush.archive missing: not a Procreate brush');
+    }
+    if (!isSet && folders.size !== 1) throw Error('Unexpected layout: root brush plus brush folders');
+    let setName = null, order = [];
+    if (files['brushset.plist']) {
+      try {
+        const pl = parseAnyPlist(files['brushset.plist']);
+        if (pl && typeof pl.name === 'string') setName = pl.name;
+        if (pl && Array.isArray(pl.brushes)) order = pl.brushes.map(String);
+      } catch (e) { /* order and name stay unknown; folders still import */ }
+    }
+    const keys = [...folders.keys()].sort((a, b) => {
+      const ia = order.indexOf(a), ib = order.indexOf(b);
+      return (ia < 0 ? 1e9 : ia) - (ib < 0 ? 1e9 : ib) || a.localeCompare(b);
+    });
+    if (keys.length > LIMITS.setBrushes) throw Error('More than ' + LIMITS.setBrushes + ' brushes in one set');
+    const brushes = [], skipped = [];
+    for (const folder of keys) {
+      const f = folders.get(folder);
+      try {
+        if (!f.archive) throw Error('Brush.archive missing');
+        const settings = unarchive(parseBplist(f.archive));
+        if (!f.shape) throw Error('Shape.png missing' + (typeof settings.bundledShapePath === 'string' ? ' (Procreate built-in shape “' + settings.bundledShapePath + '”)' : ''));
+        brushes.push({ folder, settings, archiveBytes: f.archive, shapePng: f.shape, grainPng: f.grain || null, thumbPng: f.thumb || null });
+      } catch (e) { skipped.push({ folder, reason: e.message }); }
+    }
+    if (!isSet && skipped.length) throw Error(skipped[0].reason);
+    return { kind: isSet ? 'brushset' : 'brush', setName, entries: seen.length, order: order.length, brushes, skipped };
+  }
+  /* single-brush view kept for callers that only accept one brush */
+  function inspectBrushZip(bytes, fflate) {
+    if (bytes.length > LIMITS.archiveBytes) throw Error('Archive exceeds 32 MB private-import limit');
+    const r = inspectArchive(bytes, fflate);
+    if (r.kind !== 'brush') throw Error('This is a .brushset with ' + r.brushes.length + ' brushes, not a single brush');
+    const b = r.brushes[0];
+    return { settings: b.settings, entries: r.entries, shapePng: b.shapePng, grainPng: b.grainPng, thumbPng: b.thumbPng, archiveBytes: b.archiveBytes };
+  }
+
+  /* ---------- pressure curves (Procreate 5 archives) ----------
+     Stored as {points: ["{x, y}", …]} in any order. Interpolation between points is OURS
+     (monotone cubic); Procreate's exact curve function is not documented. */
+  function parseCurve(c) {
+    const pts = c && Array.isArray(c.points) ? c.points : null;
+    if (!pts) return null;
+    const out = [];
+    for (const t of pts) {
+      const m = typeof t === 'string' && t.match(/^\{\s*(-?[\d.eE+-]+)\s*,\s*(-?[\d.eE+-]+)\s*\}$/);
+      if (m) out.push([clamp(+m[1], 0, 1), clamp(+m[2], 0, 1)]);
+    }
+    if (out.length < 2) return null;
+    out.sort((a, b) => a[0] - b[0]);
+    const linear = out.length === 2 && out[0][0] === 0 && out[0][1] === 0 && out[1][0] === 1 && out[1][1] === 1;
+    return linear ? null : out;
+  }
+  function curveFn(pts) {
+    if (!pts) return p => p;
+    const n = pts.length, xs = pts.map(p => p[0]), ys = pts.map(p => p[1]), d = [], m = new Array(n);
+    for (let i = 0; i < n - 1; i++) d.push((ys[i + 1] - ys[i]) / Math.max(1e-6, xs[i + 1] - xs[i]));
+    m[0] = d[0]; m[n - 1] = d[n - 2];
+    for (let i = 1; i < n - 1; i++) m[i] = d[i - 1] * d[i] <= 0 ? 0 : (d[i - 1] + d[i]) / 2;
+    for (let i = 0; i < n - 1; i++) {
+      if (d[i] === 0) { m[i] = m[i + 1] = 0; continue; }
+      const a = m[i] / d[i], b = m[i + 1] / d[i], h = a * a + b * b;
+      if (h > 9) { const t = 3 / Math.sqrt(h); m[i] = t * a * d[i]; m[i + 1] = t * b * d[i]; }
+    }
+    return p => {
+      if (p <= xs[0]) return ys[0]; if (p >= xs[n - 1]) return ys[n - 1];
+      let i = 0; while (p > xs[i + 1]) i++;
+      const hh = xs[i + 1] - xs[i], t = (p - xs[i]) / hh, t2 = t * t, t3 = t2 * t;
+      return clamp((2 * t3 - 3 * t2 + 1) * ys[i] + (t3 - 2 * t2 + t) * hh * m[i] + (-2 * t3 + 3 * t2) * ys[i + 1] + (t3 - t2) * hh * m[i + 1], 0, 1);
     };
   }
 
@@ -187,7 +311,10 @@
       flow: Math.max(0.05, num(s.dynamicsGlazeFlow, num(s.dynamicsGlazedFlow, 1))),
       // INTERPRETATION: glaze type 1 read as Procreate "Uniform glaze" = stamps do not build up
       // inside one stroke (per-pixel maximum). Every other type accumulates (source-over).
-      glazeUniform: s.dynamicsGlazeType === 1 ? 1 : 0,
+      glazeUniform: s.dynamicsGlazeType === 1 || s.renderingMaxTransfer === true ? 1 : 0,
+      sizeCurve: parseCurve(s.dynamicsPressureSizeCurve),
+      opacityCurve: parseCurve(s.dynamicsPressureOpacityCurve),
+      grainDepth: typeof s.grainDepth === 'number' ? s.grainDepth : null,
       opacity: num(s.paintOpacity, 1),
       grainScale: num(s.textureScale, 1),
       grainZoom: num(s.textureZoom, 1),
@@ -221,6 +348,10 @@
     ['dynamicsGlazeFlow', 'glaze flow per stamp', 'HEURISTIC'],
     ['dynamicsGlazeType', 'glaze mode: 1 → uniform (no build-up), else accumulate', 'HEURISTIC'],
     ['dynamicsGlazedFlow', 'glaze flow per stamp (newer format)', 'HEURISTIC'],
+    ['renderingMaxTransfer', 'true → uniform (no build-up), newer format', 'HEURISTIC'],
+    ['dynamicsPressureSizeCurve', 'pressure curve → size (monotone cubic)', 'HEURISTIC'],
+    ['dynamicsPressureOpacityCurve', 'pressure curve → opacity (monotone cubic)', 'HEURISTIC'],
+    ['grainDepth', 'default grain strength (× 0.3 for substitute grain)', 'HEURISTIC'],
     ['textureScale', 'grain scale', 'HEURISTIC'],
     ['textureInverted', 'grain polarity', 'HEURISTIC'],
     ['textureMovement', 'grain movement (rolling)', 'IGNORED · texturized only'],
@@ -261,12 +392,14 @@
      settings = {size, seed, params} */
   function createStamper(settings) {
     const P = settings.params, base = settings.size, rand = rng(settings.seed), speedScale = settings.speedScale || 1;
+    const cSize = curveFn(P.sizeCurve), cOpac = curveFn(P.opacityCurve);
     const taperStartPx = P.taperStart * TAPER_PX, taperEndPx = P.taperEnd * TAPER_PX;
     let prev = null, carry = 0, arc = 0, speed = 0, sx = 0, sy = 0, first = true;
     const totalLen = settings.totalLength; // known only on final replay (end taper)
 
     function dynamics(p, alt, s, atArc) {
-      const pf = 1 - P.pressureSize * (1 - p);
+      const ps = cSize(p), po = cOpac(p);
+      const pf = 1 - P.pressureSize * (1 - ps);
       const sf = 1 - P.speedSize * s;
       let tf = 1, tof = 1;
       if (alt != null) {
@@ -287,7 +420,7 @@
         taperO = Math.min(taperO, 1 - P.taperOpacity * (1 - u));
       }
       const size = base * clamp(pf, 0.02, 2) * clamp(sf, 0.05, 2) * tf * clamp(taper, 0.02, 1);
-      const alpha = P.flow * clamp(1 - P.pressureOpacity * (1 - p), 0, 1) * clamp(1 - P.speedOpacity * s, 0.03, 1) * clamp(tof, 0, 1) * clamp(taperO, 0, 1);
+      const alpha = P.flow * clamp(1 - P.pressureOpacity * (1 - po), 0, 1) * clamp(1 - P.speedOpacity * s, 0.03, 1) * clamp(tof, 0, 1) * clamp(taperO, 0, 1);
       return { size, alpha };
     }
 
@@ -369,5 +502,5 @@
     return out;
   }
 
-  return { LIMITS, FIELD_STATUS, parseBplist, unarchive, inspectBrushZip, mapSettings, strokeParams, createStamper, stampsForStroke, pathLength, rng, TAPER_PX, FAST_SPEED };
+  return { LIMITS, FIELD_STATUS, parseBplist, parseXmlPlist, unarchive, inspectArchive, inspectBrushZip, curveFn, parseCurve, mapSettings, strokeParams, createStamper, stampsForStroke, pathLength, rng, TAPER_PX, FAST_SPEED };
 });

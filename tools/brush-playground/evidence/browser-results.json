@@ -1,0 +1,630 @@
+{
+  "date": "2026-10-21T18:58:46.772Z",
+  "browser": "chromium 156.0.8078.4",
+  "pass": 24,
+  "fail": 0,
+  "results": [
+    {
+      "status": "PASS",
+      "name": "B01 page loads from file:// without errors",
+      "info": ""
+    },
+    {
+      "status": "PASS",
+      "name": "B02 private CRAYONIC import: archive decoded, original shape isolated",
+      "info": "52 fields · shape 1024×1024 · stamp alpha corner 0 / centre 223"
+    },
+    {
+      "status": "PASS",
+      "name": "B03 pen pressure: hardware pressure reaches the stroke and widens it",
+      "info": "pressure 0.05→1.00 · thickness 8.7 → 42.5 px"
+    },
+    {
+      "status": "PASS",
+      "name": "B04 pen tilt: tilted pen paints wider (tiltSize 0.39)",
+      "info": "upright 38.1 px · tilted 47.5 px"
+    },
+    {
+      "status": "PASS",
+      "name": "B05 speed: fast stroke lighter (speedOpacity .76) and wider (speedSize −.27)",
+      "info": "alpha 0.433 → 0.192 · thickness 28.4 → 32.5"
+    },
+    {
+      "status": "PASS",
+      "name": "B06 color, size and opacity controls act on new strokes",
+      "info": "rgb 191,55,41 · max alpha 0.220 · thickness 54.3"
+    },
+    {
+      "status": "PASS",
+      "name": "B07 undo/redo restore exact pixels (deterministic replay)",
+      "info": "hash cdc7100 restored after undo×2/redo×2 and keyboard"
+    },
+    {
+      "status": "PASS",
+      "name": "B08 brush switch: strokes keep their own brush across undo rebuilds",
+      "info": "stroke brushes fd77c4,fd77c4,fd77c4,fd77c4,fd77c4,fd77c4,cbaf66,fd77c4"
+    },
+    {
+      "status": "PASS",
+      "name": "B09 eraser removes paint, undo restores it",
+      "info": "alpha sum in band 289 → 5 (painted px 777 → 54)"
+    },
+    {
+      "status": "PASS",
+      "name": "B10 clear is undoable",
+      "info": "cleared and restored"
+    },
+    {
+      "status": "PASS",
+      "name": "B11 transparent PNG export (download) matches canvas",
+      "info": "1600×1000 RGBA · 249592 painted px · 1337804 fully transparent px"
+    },
+    {
+      "status": "PASS",
+      "name": "B12 comparison with original Procreate strokes (file previews)",
+      "info": "The CRAYONIC: IoU 0.867, width err 0.099, alpha 0.472/0.484, σ 0.109/0.191 | The PASTEL: IoU 0.883, width err 0.115, alpha 0.457/0.648, σ 0.131/0.225 | The ACRYLOID dry 2.0: IoU 0.754, width err 0.552, alpha 0.378/0.349, σ 0.344/0.091"
+    },
+    {
+      "status": "PASS",
+      "name": "B13 rejects broken files; a set without usable brushes is an error with reasons",
+      "info": "Import error (fake.brush): no usable brush in this set · skipped 1: Brush.archive size out of range"
+    },
+    {
+      "status": "PASS",
+      "name": "B18 real .brushset import: 21 brushes, set name and order, grouped and filterable",
+      "info": "21 brushes · “✒️𝗖𝗼𝗺𝗶𝗰 𝗜𝗻𝗸 #𝟮” · filter “kolinsky” → 6 · grains {\"substitute\":18,\"file\":1,\"none\":2}"
+    },
+    {
+      "status": "PASS",
+      "name": "B19 importing the same set again adds no duplicates",
+      "info": "Loaded set “✒️𝗖𝗼𝗺𝗶𝗰 𝗜𝗻𝗸 #𝟮” from GvW_Comic_Ink_Brushes_02.brushset: 0 brushes, 21 already imported. D"
+    },
+    {
+      "status": "PASS",
+      "name": "B20 Procreate 5 pressure curve decoded (MEGA MARKER WET P5)",
+      "info": "175 fields · size curve decoded"
+    },
+    {
+      "status": "PASS",
+      "name": "B21 replace grain: new strokes use the new grain, older strokes keep theirs",
+      "info": "grain versions 2 · old stroke region unchanged after 10× undo + 10× redo (full rebuild) · new stroke grainIdx 1"
+    },
+    {
+      "status": "PASS",
+      "name": "B22 save drawing as JSON and load it in a fresh tab: identical pixels",
+      "info": "10 actions, 60 KB, no image data · missing brushes named · fresh-tab hash 7bfd57d0 identical"
+    },
+    {
+      "status": "PASS",
+      "name": "B23 comparison over all 21 set brushes against their Procreate previews",
+      "info": "median IoU 0.864 (min 0.426) · median |α sim − ref| 0.032"
+    },
+    {
+      "status": "PASS",
+      "name": "B24 drawing with four set brushes (pen, pressure ramps)",
+      "info": "GvW INKUS MAXIMUS black P5, GvW KOLINSKY 2.1, GvW DUPA Marker, GvW PEYO 2.0"
+    },
+    {
+      "status": "PASS",
+      "name": "B14 performance: live frame and commit cost, 60-stroke rebuild",
+      "info": "{\"frames\":240,\"frameMsMean\":1.84,\"frameMsMax\":2.4,\"commitMsMax\":10,\"rebuildMs\":52.1,\"strokes\":67}"
+    },
+    {
+      "status": "PASS",
+      "name": "B15 privacy: no network requests besides local files",
+      "info": "3 requests, all file:/blob:"
+    },
+    {
+      "status": "PASS",
+      "name": "B16 narrow viewport (iPad portrait 820×1180): no horizontal scroll",
+      "info": "scrollWidth 820 / 820"
+    },
+    {
+      "status": "PASS",
+      "name": "B17 no console errors during the whole run",
+      "info": ""
+    }
+  ],
+  "metrics": {
+    "pressure": {
+      "light": {
+        "thickness": 8.65,
+        "meanAlpha": 0.3007140428425706,
+        "maxAlpha": 0.37254901960784315,
+        "rgb": [
+          43,
+          33,
+          29
+        ],
+        "n": 173
+      },
+      "heavy": {
+        "thickness": 42.5,
+        "meanAlpha": 0.44696193771626297,
+        "maxAlpha": 0.5607843137254902,
+        "rgb": [
+          43,
+          33,
+          29
+        ],
+        "n": 850
+      }
+    },
+    "tilt": {
+      "upright": {
+        "thickness": 38.1,
+        "meanAlpha": 0.4226922615065274,
+        "maxAlpha": 0.5215686274509804,
+        "rgb": [
+          43,
+          33,
+          29
+        ],
+        "n": 1143
+      },
+      "tilted": {
+        "thickness": 47.53333333333333,
+        "meanAlpha": 0.43007727635233617,
+        "maxAlpha": 0.5215686274509804,
+        "rgb": [
+          43,
+          33,
+          29
+        ],
+        "n": 1426
+      }
+    },
+    "speed": {
+      "slow": {
+        "thickness": 28.375,
+        "meanAlpha": 0.43306210589962857,
+        "maxAlpha": 0.5490196078431373,
+        "rgb": [
+          43,
+          33,
+          29
+        ],
+        "n": 1135
+      },
+      "fast": {
+        "thickness": 32.5,
+        "meanAlpha": 0.19209351432880845,
+        "maxAlpha": 0.24705882352941178,
+        "rgb": [
+          43,
+          33,
+          29
+        ],
+        "n": 1300
+      }
+    },
+    "controls": {
+      "thickness": 54.3,
+      "meanAlpha": 0.1807225652692016,
+      "maxAlpha": 0.2196078431372549,
+      "rgb": [
+        191,
+        55,
+        41
+      ],
+      "n": 2172
+    },
+    "export": {
+      "width": 1600,
+      "height": 1000,
+      "painted": 249592,
+      "transparent": 1337804,
+      "file": "georg-brush-playground.png"
+    },
+    "comparison": [
+      {
+        "brush": "The CRAYONIC",
+        "refSize": "440×276",
+        "recoveredBaseSize": 168.3,
+        "samples": 173,
+        "assumedSpeedPxMs": 0.25,
+        "silhouetteIoU": 0.867,
+        "areaRatio": 1.053,
+        "meanAlphaRef": 0.484,
+        "meanAlphaSim": 0.472,
+        "alphaStdRef": 0.191,
+        "alphaStdSim": 0.109,
+        "widthProfileError": 0.099,
+        "columnsCompared": 345,
+        "grain": "substitute"
+      },
+      {
+        "brush": "The PASTEL",
+        "refSize": "440×276",
+        "recoveredBaseSize": 55.6,
+        "samples": 166,
+        "assumedSpeedPxMs": 0.25,
+        "silhouetteIoU": 0.883,
+        "areaRatio": 1.085,
+        "meanAlphaRef": 0.648,
+        "meanAlphaSim": 0.457,
+        "alphaStdRef": 0.225,
+        "alphaStdSim": 0.131,
+        "widthProfileError": 0.115,
+        "columnsCompared": 331,
+        "grain": "substitute"
+      },
+      {
+        "brush": "The ACRYLOID dry 2.0",
+        "refSize": "440×276",
+        "recoveredBaseSize": 80.3,
+        "samples": 136,
+        "assumedSpeedPxMs": 0.25,
+        "silhouetteIoU": 0.754,
+        "areaRatio": 1.323,
+        "meanAlphaRef": 0.349,
+        "meanAlphaSim": 0.378,
+        "alphaStdRef": 0.091,
+        "alphaStdSim": 0.344,
+        "widthProfileError": 0.552,
+        "columnsCompared": 255,
+        "grain": "file"
+      }
+    ],
+    "brushset": {
+      "brushes": 21,
+      "setName": "✒️𝗖𝗼𝗺𝗶𝗰 𝗜𝗻𝗸 #𝟮",
+      "grains": {
+        "substitute": 18,
+        "file": 1,
+        "none": 2
+      }
+    },
+    "brushsetComparison": {
+      "medianIoU": 0.864,
+      "minIoU": 0.426,
+      "medianAlphaError": 0.032,
+      "rows": [
+        {
+          "brush": "GvW DUPA SKETCHPAINT color tilt P5",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 275.8,
+          "samples": 420,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.964,
+          "areaRatio": 0.997,
+          "meanAlphaRef": 0.938,
+          "meanAlphaSim": 0.948,
+          "alphaStdRef": 0.154,
+          "alphaStdSim": 0.086,
+          "widthProfileError": 0.027,
+          "columnsCompared": 840,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW INKUS MAXIMUS black P5",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 285.3,
+          "samples": 410,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.864,
+          "areaRatio": 0.968,
+          "meanAlphaRef": 0.951,
+          "meanAlphaSim": 0.943,
+          "alphaStdRef": 0.09,
+          "alphaStdSim": 0.099,
+          "widthProfileError": 0.268,
+          "columnsCompared": 784,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW KOLINSKY chisel dry P5",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 220.3,
+          "samples": 417,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.596,
+          "areaRatio": 1.487,
+          "meanAlphaRef": 0.858,
+          "meanAlphaSim": 0.932,
+          "alphaStdRef": 0.246,
+          "alphaStdSim": 0.117,
+          "widthProfileError": 0.242,
+          "columnsCompared": 832,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW KOLINSKY old P5.1",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 190.4,
+          "samples": 416,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.893,
+          "areaRatio": 0.898,
+          "meanAlphaRef": 0.957,
+          "meanAlphaSim": 0.932,
+          "alphaStdRef": 0.139,
+          "alphaStdSim": 0.116,
+          "widthProfileError": 0.107,
+          "columnsCompared": 831,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW KOLINSKY rough P5",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 139.8,
+          "samples": 413,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.426,
+          "areaRatio": 2.346,
+          "meanAlphaRef": 0.93,
+          "meanAlphaSim": 0.849,
+          "alphaStdRef": 0.176,
+          "alphaStdSim": 0.193,
+          "widthProfileError": 1.374,
+          "columnsCompared": 826,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW KOLINSKY 2.1",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 143.4,
+          "samples": 421,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.961,
+          "areaRatio": 1.018,
+          "meanAlphaRef": 0.969,
+          "meanAlphaSim": 0.932,
+          "alphaStdRef": 0.118,
+          "alphaStdSim": 0.119,
+          "widthProfileError": 0.049,
+          "columnsCompared": 838,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW KOLINSKY 2.5",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 143.4,
+          "samples": 421,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.961,
+          "areaRatio": 1.019,
+          "meanAlphaRef": 0.969,
+          "meanAlphaSim": 0.932,
+          "alphaStdRef": 0.118,
+          "alphaStdSim": 0.119,
+          "widthProfileError": 0.051,
+          "columnsCompared": 842,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW KOLINSKY paint 2.5",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 208.9,
+          "samples": 422,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.93,
+          "areaRatio": 0.937,
+          "meanAlphaRef": 0.976,
+          "meanAlphaSim": 0.942,
+          "alphaStdRef": 0.105,
+          "alphaStdSim": 0.099,
+          "widthProfileError": 0.059,
+          "columnsCompared": 843,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW BARKS 2.0",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 80.1,
+          "samples": 418,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.716,
+          "areaRatio": 0.754,
+          "meanAlphaRef": 0.961,
+          "meanAlphaSim": 0.938,
+          "alphaStdRef": 0.142,
+          "alphaStdSim": 0.117,
+          "widthProfileError": 0.306,
+          "columnsCompared": 771,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW DRUCKER 2.0",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 204.3,
+          "samples": 421,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.618,
+          "areaRatio": 0.636,
+          "meanAlphaRef": 0.958,
+          "meanAlphaSim": 0.944,
+          "alphaStdRef": 0.132,
+          "alphaStdSim": 0.099,
+          "widthProfileError": 0.387,
+          "columnsCompared": 795,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW DRUCKER 2.1",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 219,
+          "samples": 418,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.556,
+          "areaRatio": 0.573,
+          "meanAlphaRef": 0.91,
+          "meanAlphaSim": 0.226,
+          "alphaStdRef": 0.152,
+          "alphaStdSim": 0.042,
+          "widthProfileError": 0.398,
+          "columnsCompared": 786,
+          "grain": "file"
+        },
+        {
+          "brush": "GvW DRUCKER 2.1 no texture",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 221.5,
+          "samples": 418,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.591,
+          "areaRatio": 0.613,
+          "meanAlphaRef": 0.987,
+          "meanAlphaSim": 0.988,
+          "alphaStdRef": 0.087,
+          "alphaStdSim": 0.083,
+          "widthProfileError": 0.392,
+          "columnsCompared": 798,
+          "grain": "none"
+        },
+        {
+          "brush": "GvW DUPA 2.1",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 93.6,
+          "samples": 418,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.856,
+          "areaRatio": 1.153,
+          "meanAlphaRef": 0.959,
+          "meanAlphaSim": 0.937,
+          "alphaStdRef": 0.147,
+          "alphaStdSim": 0.113,
+          "widthProfileError": 0.18,
+          "columnsCompared": 821,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW DUPA 2.1 no texture",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 93.9,
+          "samples": 418,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.854,
+          "areaRatio": 1.156,
+          "meanAlphaRef": 0.969,
+          "meanAlphaSim": 0.979,
+          "alphaStdRef": 0.133,
+          "alphaStdSim": 0.107,
+          "widthProfileError": 0.183,
+          "columnsCompared": 822,
+          "grain": "none"
+        },
+        {
+          "brush": "GvW DUPA 2.1 streamliner",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 93.6,
+          "samples": 418,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.855,
+          "areaRatio": 1.154,
+          "meanAlphaRef": 0.959,
+          "meanAlphaSim": 0.936,
+          "alphaStdRef": 0.147,
+          "alphaStdSim": 0.117,
+          "widthProfileError": 0.183,
+          "columnsCompared": 820,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW DUPA Marker",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 245.4,
+          "samples": 424,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.937,
+          "areaRatio": 0.993,
+          "meanAlphaRef": 0.938,
+          "meanAlphaSim": 0.943,
+          "alphaStdRef": 0.142,
+          "alphaStdSim": 0.101,
+          "widthProfileError": 0.035,
+          "columnsCompared": 848,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW GREG 2.0",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 201.2,
+          "samples": 419,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.951,
+          "areaRatio": 0.954,
+          "meanAlphaRef": 0.985,
+          "meanAlphaSim": 0.947,
+          "alphaStdRef": 0.091,
+          "alphaStdSim": 0.09,
+          "widthProfileError": 0.044,
+          "columnsCompared": 835,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW KUNKEL 2.1",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 104.9,
+          "samples": 420,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.868,
+          "areaRatio": 1.093,
+          "meanAlphaRef": 0.871,
+          "meanAlphaSim": 0.939,
+          "alphaStdRef": 0.182,
+          "alphaStdSim": 0.107,
+          "widthProfileError": 0.163,
+          "columnsCompared": 839,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW PEYO 2.0",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 145.8,
+          "samples": 420,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.874,
+          "areaRatio": 0.925,
+          "meanAlphaRef": 0.979,
+          "meanAlphaSim": 0.942,
+          "alphaStdRef": 0.107,
+          "alphaStdSim": 0.106,
+          "widthProfileError": 0.097,
+          "columnsCompared": 840,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW STERRETT 2.0",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 161.1,
+          "samples": 421,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.933,
+          "areaRatio": 0.997,
+          "meanAlphaRef": 0.975,
+          "meanAlphaSim": 0.942,
+          "alphaStdRef": 0.115,
+          "alphaStdSim": 0.105,
+          "widthProfileError": 0.05,
+          "columnsCompared": 841,
+          "grain": "substitute"
+        },
+        {
+          "brush": "GvW THOMPSON 2.0",
+          "refSize": "1060×324",
+          "recoveredBaseSize": 126.7,
+          "samples": 421,
+          "assumedSpeedPxMs": 0.25,
+          "silhouetteIoU": 0.705,
+          "areaRatio": 0.706,
+          "meanAlphaRef": 0.968,
+          "meanAlphaSim": 0.936,
+          "alphaStdRef": 0.133,
+          "alphaStdSim": 0.126,
+          "widthProfileError": 0.287,
+          "columnsCompared": 842,
+          "grain": "substitute"
+        }
+      ]
+    },
+    "performance": {
+      "frames": 240,
+      "frameMsMean": 1.84,
+      "frameMsMax": 2.4,
+      "commitMsMax": 10,
+      "rebuildMs": 52.1,
+      "strokes": 67
+    }
+  }
+}

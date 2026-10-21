@@ -1,5 +1,12 @@
 # KFB Brush Playground R1 · changelog (additive, newest first)
 
+## 2026-10-21 · R1.6 · .brushset, Procreate 5 curves, grain replace, sessions (Claude Code)
+- Editor moved to `tools/brush-playground/` on Georg's request (“nicht so tief”); planning docs stay in this folder.
+- `.brushset` import with set name/order, Reset/ skipped, content-hash identity (no duplicates), grouped and filterable library.
+- Procreate 5 pressure curves (size, opacity), `grainDepth`, `renderingMaxTransfer`; grain defaults calibrated against 24 Procreate previews; blank grain = no texture.
+- Replace grain… (own grain image, versioned per stroke); Save/Load drawing as JSON without brush data.
+- Unit 37/0, Chromium 24/0; real Comic Ink #2 set 21/21, median IoU 0.864. Private brushes and the Dropbox share link not committed.
+
 ## 2026-10-21 · R1.5 · local CRAYONIC editor tested (Claude Code)
 - Editor rebuilt on the R1.4 candidate: in-browser `Brush.archive` decode, luminance → alpha stamp (CRAYONIC shape has no alpha channel), per-stroke brush/params/seed, uniform-glaze interpretation of glaze type 1, labelled substitute grain for missing Procreate built-in grains, eraser, undo checkpoints, PNG exports, comparison with each file's Procreate preview stroke.
 - New DOM-free `brush-core.js`, vendored fflate 0.8.3 (MIT), Node unit suite (28/0) and Chromium suite with pen pressure/tilt via CDP (17/0).

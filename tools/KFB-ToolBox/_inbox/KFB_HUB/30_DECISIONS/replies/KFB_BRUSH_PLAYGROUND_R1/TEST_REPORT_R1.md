@@ -86,3 +86,42 @@ A global square-root spacing mapping was tried on all three and rejected (no con
 
 ### Not tested / open
 Safari/WebKit and iPad + Apple Pencil (no WebKit engine and no device in this run; Pencil pressure/tilt only proven through Chromium's pen pipeline), real hand-drawn strokes by Georg, human visual acceptance, `.brushset` import, grain movement/rolling, wet mix, Procreate pressure curves of newer archives, memory on very large sessions (checkpoints hold up to 6 × 6.4 MB).
+
+## R1.6 · 2026-10-21 · .brushset import, Procreate 5 archives, grain replace, drawing sessions
+Status: **local editor, all automated checks PASS · fidelity = SIMULATION · Georg feedback on R1.5: “funktioniert schon sehr gut, auch die Speed-Sensitivität ist gut”, Striche und Export im Repo okay.**
+**Moved:** editor, tests and public evidence now live in `tools/brush-playground/` (git mv, history kept). Private brushes and private evidence belong in the git-ignored `tools/brush-playground/brushes/` and `evidence-private/`.
+
+### New behaviour
+- `.brushset` import (`inspectArchive`): XML or binary `brushset.plist` (set name, order), one folder per brush, `Reset/`, author and signature pictures skipped unread, broken brushes skipped with reason, set limits 200 MB / 4000 entries / 400 MB inflated / 300 brushes, path traversal and control characters rejected. A set with no usable brush is reported as an error.
+- Brush identity = SHA-256 of `Brush.archive` + `Shape.png`: re-importing a set or a brush that is also in a set adds nothing.
+- Procreate 5 fields: `dynamicsPressureSizeCurve` / `dynamicsPressureOpacityCurve` (`{x, y}` point strings, unordered) → monotone cubic curve (interpolation is ours); `dynamicsGlazedFlow`; `renderingMaxTransfer = true` read as uniform glaze (interpretation); `grainDepth`.
+- Grain defaults (HEURISTIC, calibrated against 24 Procreate previews): old archives 0.85; newer archives `grainDepth`, × 0.3 for the substitute tile. Reason: the 19 set brushes with Procreate paper grains came out 0.11 too light with the strong substitute and 0.02 with the light one; the two “no texture” variants matched without grain. Procreate's blank grain → no texture, no substitute.
+- Replace grain…: loads your own image (e.g. the real Procreate grain) as a new grain version; strokes keep the grain version they were drawn with.
+- Save/Load drawing: `kfb.brush-playground.session/1` JSON with strokes, settings and brush references only (no image data); loading names missing brushes.
+- Library grouped by set with count and a filter field; long names wrap.
+
+### Checks actually run (2026-10-21, Chromium 156.0.8078.4 headless, Playwright 1.64.0)
+- `node tests/unit.mjs`: **37 passed, 0 failed** (adds XML plist, synthetic set order/Reset/parts, broken brush skipped, traversal in set, plist missing, curve parse/identity, monotone cubic, curve thins light pressure, real set 21/21 with name and order).
+- `node tests/browser.mjs`: **24 passed, 0 failed**. B01–B17 as in R1.5 (B13 now: broken set → error with reason), plus:
+
+| # | Check | Result |
+|---|---|---|
+| B18 | real `GvW_Comic_Ink_Brushes_02.brushset`: 21 brushes, set name equals Node read, plist order (first = DUPA SKETCHPAINT color tilt P5), ≥ 169 fields each, group header, filter “kolinsky” → 6 | PASS · grains: 18 substitute, 1 file, 2 none |
+| B19 | same set again | PASS · 0 added, 21 already imported |
+| B20 | MEGA MARKER WET P5: 175 fields, size curve decoded | PASS |
+| B21 | replace grain, draw, full undo/redo rebuild | PASS · old stroke region unchanged, new stroke on grain version 1 |
+| B22 | save drawing, fresh tab: load without brushes names CRAYONIC, import brushes + same grain, load → identical pixel hash | PASS · 10 actions, 60 KB, no image data |
+| B23 | comparison over all 21 set brushes (gate: median IoU ≥ 0.8) | PASS · median IoU 0.864, min 0.426, median abs α error 0.032 |
+| B24 | drawing with INKUS MAXIMUS, KOLINSKY 2.1, DUPA Marker, PEYO 2.0 (pen, pressure ramps) | PASS |
+| B14 | performance with 67 strokes | frame mean 1.84 ms / max 2.4 ms, commit ≤ 10 ms, undo rebuild 52 ms |
+
+### Set comparison (Procreate preview vs simulation, decoded values, no fitting)
+Good (IoU ≥ 0.9): DUPA SKETCHPAINT 0.964, KOLINSKY 2.1/2.5 0.961, GREG 0.951, DUPA Marker 0.937, STERRETT 0.933, KOLINSKY paint 0.930. Mid (0.85–0.9): KOLINSKY old, PEYO, KUNKEL, INKUS MAXIMUS, DUPA 2.1 (+ no texture, streamliner). Weak: THOMPSON 0.705, BARKS 0.716, DRUCKER 2.0 0.618, KOLINSKY chisel dry 0.596, DRUCKER 2.1 no texture 0.591, DRUCKER 2.1 0.556, KOLINSKY rough 0.426 (width error 137 %).
+Open fidelity seams: DRUCKER 2.1 file grain far too strong (α 0.23 vs 0.91; `textureScale 4`, `textureZoom 0` semantics unknown; inverting the grain helps DRUCKER but breaks ACRYLOID, so polarity was left unchanged); KOLINSKY rough and chisel dry silhouettes (rolling grain / shape count fields not simulated); colour dynamics, wet mix, bleed, shape roundness, shape count and burnt edges of Procreate 5 not simulated.
+
+### Evidence
+- Public (`tools/brush-playground/evidence/`): `canvas_drawing.png` (now incl. the four set-brush strokes), `export_transparent.png`, `editor_ui_inspector_masked.png`, `editor_ipad_portrait_masked.png`, `browser-results.json` (all 24 results and the 21-row set comparison).
+- Private, not in Git: `tools/brush-playground/evidence-private/r16-run4/` (full editor with isolation, library with the set, comparisons, exports, drawing JSON).
+
+### Not tested / open
+Safari/WebKit, iPad + Apple Pencil hardware, Georg's own strokes with set brushes, real Procreate grains (Replace grain… is ready for them), the remaining Procreate 5 dynamics above. Catalog/Notion/Dropbox reconciliation and Comic (Re)Motion remain deferred; the session JSON is the first stroke-recording format they could build on.

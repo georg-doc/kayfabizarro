@@ -1,12 +1,11 @@
 // KFB Brush Playground · real-browser functional tests (Chromium via Playwright, file:// page)
 // The private .brush files are read from BRUSH_DIR and never copied into the repository.
 //
-//   PLAYWRIGHT=~/kfb-ws1/kfb-planet/node_modules/playwright \
-//   BRUSH_DIR=~/Downloads EVIDENCE_PRIVATE=~/kfb-ws1/brush-evidence-private/run \
 //   node tests/browser.mjs
-//
-// Private evidence (isolated shape, Procreate reference, comparisons) goes to EVIDENCE_PRIVATE.
-// Public-safe evidence (drawn canvas, UI with the inspector masked, metrics JSON) goes to ../evidence.
+// Defaults: brushes from ./brushes (git-ignored), private evidence to ./evidence-private/run (git-ignored),
+// Playwright from ~/kfb-ws1/kfb-planet/node_modules. Override with BRUSH_DIR, EVIDENCE_PRIVATE, PLAYWRIGHT.
+// Private evidence (isolated shape, Procreate reference, comparisons) never leaves EVIDENCE_PRIVATE.
+// Public-safe evidence (drawn canvas, UI with the inspector masked, metrics JSON) goes to ./evidence.
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -19,12 +18,15 @@ const proto = path.resolve(here, '..');
 const { chromium } = require(tilde(process.env.PLAYWRIGHT || '~/kfb-ws1/kfb-planet/node_modules/playwright'));
 const sharp = require(path.join(path.dirname(require.resolve(tilde(process.env.PLAYWRIGHT || '~/kfb-ws1/kfb-planet/node_modules/playwright'))), '..', 'sharp'));
 const fflate = require(path.join(proto, 'vendor', 'fflate-0.8.3.umd.js'));
-const BRUSH_DIR = tilde(process.env.BRUSH_DIR || '~/Downloads');
-const PRIV = tilde(process.env.EVIDENCE_PRIVATE || '~/kfb-ws1/brush-evidence-private/run');
-const PUB = path.resolve(proto, '..', 'evidence');
+const core = require(path.join(proto, 'brush-core.js'));
+const LEGACY_DIR = path.resolve(proto, '..', 'KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BRUSH_PLAYGROUND_R1/Demo Brushes');
+const BRUSH_DIR = tilde(process.env.BRUSH_DIR) || [path.join(proto, 'brushes'), LEGACY_DIR].find(d => fs.existsSync(d)) || tilde('~/Downloads');
+const PRIV = tilde(process.env.EVIDENCE_PRIVATE || path.join(proto, 'evidence-private', 'run'));
+const PUB = path.join(proto, 'evidence');
 fs.mkdirSync(PRIV, { recursive: true }); fs.mkdirSync(PUB, { recursive: true });
 const CRAY = path.join(BRUSH_DIR, 'The_CRAYONIC (1).brush'), PASTEL = path.join(BRUSH_DIR, 'The_PASTEL.brush'), ACRY = path.join(BRUSH_DIR, 'The_ACRYLOID_dry_2.0.brush');
-for (const f of [CRAY, PASTEL, ACRY]) if (!fs.existsSync(f)) { console.error('missing private brush: ' + f); process.exit(2); }
+const SET = path.join(BRUSH_DIR, 'GvW_Comic_Ink_Brushes_02.brushset'), MEGA = path.join(BRUSH_DIR, 'GvW Inktober MEGA MARKER WET P5.brush');
+for (const f of [CRAY, PASTEL, ACRY, SET, MEGA]) if (!fs.existsSync(f)) { console.error('missing private brush: ' + f); process.exit(2); }
 
 const results = []; const metrics = {};
 async function t(name, fn) {
@@ -217,13 +219,128 @@ await t('B12 comparison with original Procreate strokes (file previews)', async 
   return all.map(r => `${r.brush}: IoU ${r.silhouetteIoU}, width err ${r.widthProfileError}, alpha ${r.meanAlphaSim}/${r.meanAlphaRef}, σ ${r.alphaStdSim}/${r.alphaStdRef}`).join(' | ');
 });
 
-await t('B13 rejects broken files and names .brushset as later phase', async () => {
+await t('B13 rejects broken files; a set without usable brushes is an error with reasons', async () => {
   const bad = path.join(PRIV, 'not-a-brush.brush'); fs.writeFileSync(bad, 'hello');
   await page.setInputFiles('#file', bad); await page.waitForFunction(() => /Import error/.test(document.getElementById('status').textContent));
   const set = path.join(PRIV, 'fake.brush'); fs.writeFileSync(set, fflate.zipSync({ 'brushset.plist': new Uint8Array(8), 'a/Brush.archive': new Uint8Array(8) }));
-  await page.setInputFiles('#file', set); await page.waitForFunction(() => /brushset/.test(document.getElementById('status').textContent));
+  await page.setInputFiles('#file', set); await page.waitForFunction(() => /no usable brush in this set · skipped 1/.test(document.getElementById('status').textContent));
   ok((await px(() => KFB.brushes().length)) === 3, 'bad file was added');
   return (await page.textContent('#status')).slice(0, 120);
+});
+
+
+/* ================= R1.6 · brushset, curves, grain replace, sessions ================= */
+await t('B18 real .brushset import: 21 brushes, set name and order, grouped and filterable', async () => {
+  const n0 = await px(() => KFB.brushes().length);
+  await page.setInputFiles('#file', SET);
+  await page.waitForFunction(() => /Loaded set|Import error/.test(document.getElementById('status').textContent), null, { timeout: 60000 });
+  const st = await page.textContent('#status');
+  const bs = (await px(() => KFB.brushes())).slice(n0);
+  ok(bs.length === 21, bs.length + ' brushes · ' + st);
+  const expected = core.inspectArchive(fs.readFileSync(SET), fflate).setName; // read independently in Node
+  ok(new Set(bs.map(b => b.setName)).size === 1 && bs[0].setName === expected, 'set name ' + bs[0].setName + ' vs ' + expected);
+  ok(bs[0].name === 'GvW DUPA SKETCHPAINT color tilt P5', 'plist order, first = ' + bs[0].name);
+  ok(bs.every(b => b.fields >= 169), 'field counts');
+  const groups = await page.$$eval('#lib .group', els => els.map(e => e.textContent));
+  ok(groups.some(g => /21/.test(g)), 'group header ' + groups);
+  await setVal('#libSearch', 'kolinsky');
+  const shown = await page.$$eval('#lib li[role=option]', els => els.length);
+  await setVal('#libSearch', '');
+  const want = (await px(() => KFB.brushes())).filter(b => /kolinsky/i.test(b.name)).length;
+  ok(shown === want && want > 0, 'filter kolinsky shows ' + shown + ', expected ' + want);
+  metrics.brushset = { brushes: bs.length, setName: bs[0].setName, grains: bs.reduce((m, b) => (m[b.grain || 'none'] = (m[b.grain || 'none'] || 0) + 1, m), {}) };
+  return `${bs.length} brushes · “${bs[0].setName}” · filter “kolinsky” → ${shown} · grains ${JSON.stringify(metrics.brushset.grains)}`;
+});
+
+await t('B19 importing the same set again adds no duplicates', async () => {
+  const n0 = await px(() => KFB.brushes().length);
+  await page.setInputFiles('#file', SET);
+  await page.waitForFunction(() => /already imported/.test(document.getElementById('status').textContent), null, { timeout: 60000 });
+  ok(await px(() => KFB.brushes().length) === n0, 'count changed');
+  return (await page.textContent('#status')).slice(0, 110);
+});
+
+await t('B20 Procreate 5 pressure curve decoded (MEGA MARKER WET P5)', async () => {
+  await page.setInputFiles('#file', MEGA);
+  await page.waitForFunction(() => KFB.brushes().some(b => /MEGA MARKER/.test(b.name)));
+  const b = await px(() => KFB.brushes().find(b => /MEGA MARKER/.test(b.name)));
+  ok(b.fields === 175 && b.sizeCurve, JSON.stringify(b));
+  return `${b.fields} fields · size curve decoded`;
+});
+
+await t('B21 replace grain: new strokes use the new grain, older strokes keep theirs', async () => {
+  const cray = await px(() => KFB.brushes().find(b => b.name === 'The CRAYONIC').id);
+  await px(id => KFB.select(id), cray);
+  const reg = { x: Math.round(C(60)), y: Math.round(C(130)), w: Math.round(C(320)), h: Math.round(C(60)) };
+  const h0 = await regionHash(reg);
+  const g = path.join(PRIV, 'test-grain.png');
+  await sharp({ create: { width: 256, height: 256, channels: 3, background: '#fff' } }).composite([{ input: Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256"><g stroke="#000" stroke-width="5">' + Array.from({ length: 32 }, (_, i) => `<line x1="0" y1="${i * 8}" x2="256" y2="${i * 8}"/>`).join('') + '</g></svg>') }]).png().toFile(g);
+  await page.setInputFiles('#grainFile', g);
+  await page.waitForFunction(() => /Grain replaced/.test(document.getElementById('status').textContent));
+  const b = await px(id => KFB.brushes().find(b => b.id === id), cray);
+  ok(b.grain === 'user' && b.grainVersions === 2, JSON.stringify(b));
+  await pen(hline(60, 360, 230, 30, 0.9));
+  const n = (await px(() => KFB.history())).done;
+  await px(n => { for (let i = 0; i < n; i++) KFB.undo(); for (let i = 0; i < n; i++) KFB.redo(); }, n);
+  ok(await regionHash(reg) === h0, 'old stroke changed after grain replace + rebuild');
+  const last = await px(() => KFB.lastStroke());
+  ok(last.grainIdx === 1, 'new stroke grainIdx ' + last.grainIdx);
+  return `grain versions 2 · old stroke region unchanged after ${n}× undo + ${n}× redo (full rebuild) · new stroke grainIdx 1`;
+});
+
+await t('B22 save drawing as JSON and load it in a fresh tab: identical pixels', async () => {
+  const hBefore = await hash();
+  const [dl] = await Promise.all([page.waitForEvent('download'), page.click('#saveSession')]);
+  const f = path.join(PRIV, 'B22_drawing.json'); await dl.saveAs(f);
+  const j = JSON.parse(fs.readFileSync(f, 'utf8'));
+  ok(j.format === 'kfb.brush-playground.session/1' && j.actions.length > 5, 'format/actions');
+  ok(!/Shape\.png|data:image|iVBOR/.test(fs.readFileSync(f, 'utf8')), 'session contains image data');
+  const p2 = await ctx.newPage(); const e2 = []; p2.on('pageerror', e => e2.push(e.message));
+  await p2.goto('file://' + path.join(proto, 'index.html'));
+  await p2.setInputFiles('#loadSession', f);
+  await p2.waitForFunction(() => /Load error/.test(document.getElementById('status').textContent));
+  const missingMsg = await p2.textContent('#status');
+  ok(/CRAYONIC/.test(missingMsg), 'missing-brush message: ' + missingMsg);
+  await p2.setInputFiles('#file', [CRAY, PASTEL, ACRY, SET]);
+  await p2.waitForFunction(() => KFB.brushes().length >= 24, null, { timeout: 60000 });
+  // grain versions are part of the session state: replay the same replacement in the fresh tab
+  await p2.evaluate(id => KFB.select(id), await px(() => KFB.brushes().find(b => b.name === 'The CRAYONIC').id));
+  await p2.setInputFiles('#grainFile', path.join(PRIV, 'test-grain.png'));
+  await p2.waitForFunction(() => /Grain replaced/.test(document.getElementById('status').textContent));
+  await p2.setInputFiles('#loadSession', f);
+  await p2.waitForFunction(() => /Loaded drawing/.test(document.getElementById('status').textContent));
+  const h2 = await p2.evaluate(() => { const d = document.getElementById('paper').getContext('2d').getImageData(0, 0, 1600, 1000).data; let h = 0x811c9dc5; for (let i = 0; i < d.length; i += 7) { h ^= d[i]; h = Math.imul(h, 16777619); } return (h >>> 0).toString(16); });
+  await p2.close();
+  ok(!e2.length, e2.join('; '));
+  ok(h2 === hBefore, `fresh tab ${h2} vs ${hBefore}`);
+  return `${j.actions.length} actions, ${(fs.statSync(f).size / 1024).toFixed(0)} KB, no image data · missing brushes named · fresh-tab hash ${h2} identical`;
+});
+
+await t('B23 comparison over all 21 set brushes against their Procreate previews', async () => {
+  const rows = await px(() => KFB.brushes().filter(b => b.setName).map(b => KFB.compare(b.id)));
+  ok(rows.length === 21, rows.length + ' set brushes compared');
+  const med = a => { const s = [...a].sort((x, y) => x - y); return s[Math.floor(s.length / 2)]; };
+  const iou = rows.map(r => r.silhouetteIoU), dA = rows.map(r => Math.abs(r.meanAlphaSim - r.meanAlphaRef));
+  metrics.brushsetComparison = { medianIoU: med(iou), minIoU: Math.min(...iou), medianAlphaError: +med(dA).toFixed(3), rows };
+  ok(med(iou) >= 0.8, 'median IoU ' + med(iou));
+  return `median IoU ${med(iou)} (min ${Math.min(...iou)}) · median |α sim − ref| ${med(dA).toFixed(3)}`;
+});
+
+await t('B24 drawing with four set brushes (pen, pressure ramps)', async () => {
+  const names = ['GvW INKUS MAXIMUS black P5', 'GvW KOLINSKY 2.1', 'GvW DUPA Marker', 'GvW PEYO 2.0'];
+  const all = await px(() => KFB.brushes());
+  const used = [];
+  for (const [i, n] of names.entries()) {
+    const b = all.find(x => x.name === n); ok(b, 'missing ' + n);
+    await px(id => KFB.select(id), b.id);
+    await setVal('#size', 34);
+    const y = 345 + i * 32;
+    await pen(Array.from({ length: 41 }, (_, k) => [430 + k * 8, y + Math.sin(k / 6) * 9, 0.1 + 0.9 * Math.sin(Math.PI * k / 40)]));
+    used.push((await px(() => KFB.lastStroke())).brushId === b.id);
+  }
+  await setVal('#size', 70);
+  ok(used.every(Boolean), 'brush ids ' + used);
+  return names.join(', ');
 });
 
 /* ---- screenshots (before the synthetic performance strokes) ---- */
@@ -231,6 +348,7 @@ await page.evaluate(() => window.scrollTo(0, 0));
 await px(() => KFB.select(KFB.brushes()[0].id));
 await px(() => KFB.compare(KFB.brushes()[0].id));
 await page.screenshot({ path: path.join(PRIV, 'editor_full_private.png') });
+await page.locator('aside.panel').first().screenshot({ path: path.join(PRIV, 'library_brushset_private.png') });
 await page.locator('#paper').screenshot({ path: path.join(PUB, 'canvas_drawing.png') });
 const mask = await page.addStyleTag({ content: '.inspector canvas,.lib canvas{visibility:hidden}' });
 await page.screenshot({ path: path.join(PUB, 'editor_ui_inspector_masked.png') });

@@ -62,7 +62,50 @@ t('zip: Reset/ copies are ignored, active root entries win', () => {
 });
 t('zip: path traversal rejected', () => throwsLike(() => C.inspectBrushZip(fflate.zipSync({ '../evil.png': fakePng(), 'Brush.archive': ARCH }), fflate), /Unsafe path/));
 t('zip: missing Shape.png rejected', () => throwsLike(() => C.inspectBrushZip(fflate.zipSync({ 'Brush.archive': ARCH }), fflate), /Shape.png missing/));
-t('zip: .brushset is named as later phase', () => throwsLike(() => C.inspectBrushZip(fflate.zipSync({ 'brushset.plist': new Uint8Array(4), 'x/Brush.archive': ARCH }), fflate), /brushset/));
+t('zip: single-brush API refuses a .brushset with a clear message', () => throwsLike(() => C.inspectBrushZip(fflate.zipSync({ 'brushset.plist': new Uint8Array(4), 'x/Brush.archive': ARCH }), fflate), /brushset/));
+
+/* ---------------- .brushset ---------------- */
+const enc = s => new TextEncoder().encode(s);
+const xmlSet = (name, ids) => enc('<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n<plist version="1.0">\n<dict>\n\t<key>brushes</key>\n\t<array>' + ids.map(i => '<string>' + i + '</string>').join('') + '</array>\n\t<key>name</key>\n\t<string>' + name + '</string>\n</dict>\n</plist>\n');
+t('xml plist: attributes, doctype, entities, empty array', () => {
+  const r = C.parseXmlPlist('<?xml version="1.0"?><!DOCTYPE x><plist version="1.0"><dict><key>name</key><string>Ink &amp; Co</string><key>n</key><integer>3</integer><key>t</key><true/><key>e</key><array/></dict></plist>');
+  ok(r.name === 'Ink & Co' && r.n === 3 && r.t === true && Array.isArray(r.e) && !r.e.length, JSON.stringify(r));
+});
+t('brushset: folders imported in plist order, Reset/ skipped, name read', () => {
+  const z = fflate.zipSync({
+    'brushset.plist': xmlSet('Test Set', ['BBB', 'AAA']),
+    'AAA/Brush.archive': ARCH, 'AAA/Shape.png': fakePng(), 'AAA/Reset/Brush.archive': new Uint8Array(9), 'AAA/Reset/Shape.png': fakePng(),
+    'BBB/Brush.archive': ARCH, 'BBB/Shape.png': fakePng(), 'BBB/Grain.png': fakePng(), 'BBB/QuickLook/Thumbnail.png': fakePng(),
+    'BBB/AuthorPicture/AuthorPicture.png': fakePng()
+  });
+  const r = C.inspectArchive(z, fflate);
+  ok(r.kind === 'brushset' && r.setName === 'Test Set', r.kind + ' ' + r.setName);
+  ok(r.brushes.map(b => b.folder).join() === 'BBB,AAA', r.brushes.map(b => b.folder).join());
+  ok(r.brushes[0].grainPng && r.brushes[0].thumbPng && !r.brushes[1].grainPng, 'parts');
+  ok(!r.skipped.length, JSON.stringify(r.skipped));
+});
+t('brushset: a broken brush is skipped with reason, the rest imports', () => {
+  const z = fflate.zipSync({ 'brushset.plist': xmlSet('S', ['A', 'B']), 'A/Brush.archive': ARCH, 'A/Shape.png': fakePng(), 'B/Brush.archive': new Uint8Array(50) });
+  const r = C.inspectArchive(z, fflate);
+  ok(r.brushes.length === 1 && r.skipped.length === 1 && /plist/.test(r.skipped[0].reason), JSON.stringify(r.skipped));
+});
+t('brushset: path traversal inside a set rejected', () => throwsLike(() => C.inspectArchive(fflate.zipSync({ 'brushset.plist': xmlSet('S', []), 'A/../../x/Brush.archive': ARCH }), fflate), /Unsafe path/));
+t('brushset: missing or unreadable brushset.plist still imports folders', () => {
+  const r = C.inspectArchive(fflate.zipSync({ 'brushset.plist': enc('garbage'), 'A/Brush.archive': ARCH, 'A/Shape.png': fakePng() }), fflate);
+  ok(r.kind === 'brushset' && r.brushes.length === 1 && r.setName === null);
+});
+
+/* ---------------- pressure curves ---------------- */
+t('curve: unordered "{x, y}" points parse and sort; identity curve → null', () => {
+  const c = C.parseCurve({ points: ['{0.000000, 0.000000}', '{1.000000, 1.000000}', '{0.879447, 0.725000}', '{0.532570, 0.273542}'] });
+  ok(c.length === 4 && c[1][0] < c[2][0], JSON.stringify(c));
+  ok(C.parseCurve({ points: ['{0, 0}', '{1, 1}'] }) === null, 'identity');
+});
+t('curve: monotone cubic hits the points, stays in [0,1] and monotone', () => {
+  const pts = [[0, 0], [0.53257, 0.273542], [0.879447, 0.725], [1, 1]], f = C.curveFn(pts);
+  for (const [x, y] of pts) ok(Math.abs(f(x) - y) < 1e-9, 'point ' + x);
+  let prev = -1; for (let x = 0; x <= 1.0001; x += 0.01) { const y = f(x); ok(y >= prev - 1e-9 && y >= 0 && y <= 1, 'x ' + x); prev = y; }
+});
 t('zip: highly compressed oversize member (zip bomb) rejected before inflate', () => {
   const z = fflate.zipSync({ 'Brush.archive': ARCH, 'Shape.png': new Uint8Array(25e6) }, { level: 9 });
   ok(z.length < 1e6, 'fixture should be small'); throwsLike(() => C.inspectBrushZip(z, fflate), /too large/);
@@ -126,10 +169,26 @@ t('spacing: half spacing → about twice the stamps', () => {
   ok(b / a > 1.7 && b / a < 2.3, `${a} → ${b}`);
 });
 
+t('curve: a soft size curve makes light pressure thinner than linear', () => {
+  const P = Object.assign({}, P0, { pressureSize: 1, jitterSize: 0, taperEnd: 0, speedSize: 0 });
+  const lin = stroke(P, line(40, 4, 10, .5)), cur = stroke(Object.assign({}, P, { sizeCurve: [[0, 0], [0.53, 0.27], [0.88, 0.72], [1, 1]] }), line(40, 4, 10, .5));
+  ok(mean(cur.map(s => s.size)) < mean(lin.map(s => s.size)) * 0.7);
+});
+
 /* ---------------- optional: real private brushes from BRUSH_DIR ---------------- */
-const dir = process.env.BRUSH_DIR && process.env.BRUSH_DIR.replace(/^~/, os.homedir());
+const dir = (process.env.BRUSH_DIR && process.env.BRUSH_DIR.replace(/^~/, os.homedir())) ||
+  [path.join(here, '..', 'brushes'), path.join(here, '..', '..', 'KFB-ToolBox/_inbox/KFB_HUB/30_DECISIONS/replies/KFB_BRUSH_PLAYGROUND_R1/Demo Brushes')].find(d => fs.existsSync(d));
 if (dir && fs.existsSync(dir)) {
   const files = fs.readdirSync(dir).filter(f => f.endsWith('.brush'));
+  for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.brushset'))) {
+    t('private brushset imports: ' + f, () => {
+      const r = C.inspectArchive(fs.readFileSync(path.join(dir, f)), fflate);
+      ok(r.kind === 'brushset' && r.brushes.length > 0 && !r.skipped.length, r.brushes.length + ' brushes, skipped ' + JSON.stringify(r.skipped));
+      ok(r.setName && r.order === r.brushes.length, 'name/order ' + r.setName + ' ' + r.order);
+      ok(r.brushes.every(b => !b.folder.includes('Reset')), 'Reset copy imported');
+      return r;
+    });
+  }
   for (const f of files) {
     t('private brush decodes: ' + f, () => {
       const r = C.inspectBrushZip(fs.readFileSync(path.join(dir, f)), fflate);
@@ -143,7 +202,7 @@ if (dir && fs.existsSync(dir)) {
     const close = (a, b) => Math.abs(a - b) < 0.001;
     ok(close(s.dynamicsPressureSize, 1) && close(s.dynamicsPressureOpacity, .408) && close(s.dynamicsSpeedSize, -.267) && close(s.dynamicsSpeedOpacity, .763) && close(s.dynamicsTiltSize, .391) && close(s.shapeScatter, 1));
   });
-} else results.push(['SKIP', 'private brush checks (set BRUSH_DIR)']);
+} else results.push(['SKIP', 'private brush checks (no ./brushes folder; set BRUSH_DIR)']);
 
 for (const [s, n] of results) console.log(s.padEnd(5), n);
 console.log(`\n${pass} passed, ${fail} failed`);

@@ -52,3 +52,12 @@ Added prototype/index.html (local brush shape import, pointer drawing, undo/redo
 - Open: Safari/iPad + Apple Pencil on hardware; Georg draws with CRAYONIC and judges against Procreate; real grain (Georg-supplied grain image or approved substitute); `.brushset`, catalog, Notion and Comic (Re)Motion stay deferred.
 - **One next gate:** Georg opens `prototype/index.html` locally (double-click), imports `The_CRAYONIC (1).brush`, draws with mouse and ideally iPad/Pencil, and returns PASS / TUNE / FAIL on the CRAYONIC look against Procreate.
 - Checkpoint: implementation + evidence commit `0d2affcb81c76d3d46b3a1d407d026379d8f06c5`, pushed and read back via `git ls-remote` (branch head matched). This line is a follow-up docs commit; the final head is reported in chat.
+
+## R1.6 · 2026-10-21 · .brushset, Procreate 5 curves, grain replace, sessions · moved to tools/brush-playground
+- Georg on R1.5: “funktioniert schon sehr gut, auch die Speed-Sensitivität ist gut”; drawn strokes and export may stay in the repo; “gerne weiter”, everything persisted on GitHub, and “nicht so tief ablegen”.
+- **New location:** `tools/brush-playground/` (editor, core, vendor, tests, public evidence, README). Planning docs (this Return, plan, test report, changelog) stay here because briefs route here.
+- Georg placed his private brushes (5 × `.brush`, `GvW_Comic_Ink_Brushes_02.brushset`) plus one PDF in `Demo Brushes/` in this folder. They are **not committed** (public repo; brief protection rule); a local `.gitignore` here protects them. Moving them to `tools/brush-playground/brushes/` was blocked by the session's permission guard, so Georg moves the folder himself (Finder) or approves the move. Tests find both places.
+- Georg also gave a Dropbox shared link for the brushset; it carries a share key and is therefore **not written into this public repo** (kept locally).
+- Result: unit 37/0, Chromium 24/0. Real set imports 21/21 in ~2 s with name and order; median silhouette IoU over the set 0.864, median abs opacity error 0.032. Weak brushes and the DRUCKER 2.1 grain seam are listed in TEST_REPORT_R1.md R1.6.
+- No PR, merge, deployment, Site, Notion or georgbrush.club change. ToolBox and animation ownership unchanged.
+- **One next gate:** Georg opens `tools/brush-playground/index.html`, imports the Comic Ink set, draws with 3–4 favourite brushes (ideally iPad/Pencil) and names which ones feel wrong; those become the next fidelity seams.

@@ -43,6 +43,11 @@ canvas#paper{display:block;width:100%;height:auto;touch-action:none;cursor:cross
 .lib li{display:flex;gap:8px;align-items:center;padding:5px 6px;border-radius:6px;cursor:pointer;border:1px solid transparent}
 .lib li[aria-selected=true]{border-color:var(--ink);background:#fff}
 .lib small{color:var(--muted);font-size:11px;display:block}
+.libwrap{max-height:340px;overflow-y:auto;overflow-x:hidden;margin-top:6px}
+.lib li>div{min-width:0;overflow-wrap:anywhere}
+.lib .group{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding:6px 4px 2px;cursor:default;border:0}
+#libSearch{width:100%;margin-top:6px;font:inherit;padding:5px 8px;border:1px solid #998b7a;border-radius:6px;background:#fff}
+.file.small{display:inline-block;margin-top:4px;padding:3px 7px;font-size:11px}
 .tiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
 .tile{font-size:11px;color:var(--muted)}
 .tile canvas{width:100%;aspect-ratio:1;display:block;border:1px solid var(--line);border-radius:4px;background:#fff}
@@ -71,8 +76,9 @@ input[type=color]{width:44px;height:30px;padding:0;border:1px solid #998b7a;bord
 <div class="app">
   <aside class="panel" aria-label="Tools">
     <h2>Brush</h2>
-    <label class="file">Import .brush… <input id="file" type="file" accept=".brush" multiple></label>
-    <ul class="lib" id="lib" role="listbox" aria-label="Imported brushes"></ul>
+    <label class="file">Import .brush / .brushset… <input id="file" type="file" accept=".brush,.brushset" multiple></label>
+    <input id="libSearch" type="search" placeholder="Filter brushes…" aria-label="Filter brushes" hidden>
+    <div class="libwrap"><ul class="lib" id="lib" role="listbox" aria-label="Imported brushes"></ul></div>
     <p class="empty" id="libEmpty">No brush imported. Without a brush you draw with a plain round test tip.</p>
 
     <h2>Paint</h2>
@@ -101,6 +107,10 @@ input[type=color]{width:44px;height:30px;padding:0;border:1px solid #998b7a;bord
       <button id="png">Export PNG (transparent)</button>
       <button id="pngOpaque">PNG on paper</button>
     </div>
+    <div class="btns" style="margin-top:6px">
+      <button id="saveSession" title="Strokes and settings as JSON. Contains no brush data.">Save drawing (.json)</button>
+      <label class="file">Load drawing… <input id="loadSession" type="file" accept=".json,application/json"></label>
+    </div>
     <div class="row" style="margin-top:8px"><label for="dark">Dark paper (view only)</label><input id="dark" type="checkbox"></div>
   </aside>
 
@@ -116,7 +126,8 @@ input[type=color]{width:44px;height:30px;padding:0;border:1px solid #998b7a;bord
     <div class="tiles" id="iso" hidden>
       <div class="tile"><canvas id="isoShape" width="256" height="256"></canvas>Shape.png as stored</div>
       <div class="tile"><canvas id="isoMask" class="checker" width="256" height="256"></canvas>Stamp (luminance → alpha)</div>
-      <div class="tile"><canvas id="isoGrain" class="checker" width="256" height="256"></canvas><span id="isoGrainLabel">Grain</span></div>
+      <div class="tile"><canvas id="isoGrain" class="checker" width="256" height="256"></canvas><span id="isoGrainLabel">Grain</span>
+        <label class="file small">Replace grain… <input id="grainFile" type="file" accept="image/png,image/jpeg"></label></div>
     </div>
 
     <h2>Procreate reference</h2>
@@ -162,7 +173,7 @@ function makeRoundBrush() {
   const g = x.createRadialGradient(128, 128, 0, 128, 128, 120);
   g.addColorStop(0, '#fff'); g.addColorStop(.8, '#fff'); g.addColorStop(1, 'rgba(255,255,255,0)');
   x.fillStyle = g; x.fillRect(0, 0, 256, 256);
-  return { id: ROUND_ID, name: 'Round test tip (built-in)', builtin: true, mips: buildMips(c), grain: null,
+  return { id: ROUND_ID, name: 'Round test tip (built-in)', builtin: true, mips: buildMips(c), grain: null, grains: [], grainIdx: 0,
     params: Object.assign(C.mapSettings({}), { spacing: .08, pressureSize: .6, pressureOpacity: .3 }), settings: {} };
 }
 
@@ -213,12 +224,13 @@ function substituteGrain(seed) {
 }
 
 const grainVariants = new Map();
-function grainPattern(ctx, brush, strength, scale) {
-  if (!brush.grain || strength <= 0) return null;
-  const key = brush.id + '|' + strength.toFixed(2);
+function grainPattern(ctx, brush, strength, scale, idx) {
+  const grain = brush.grains ? brush.grains[idx || 0] : null;
+  if (!grain || strength <= 0) return null;
+  const key = brush.id + '|' + (idx || 0) + '|' + strength.toFixed(2);
   let tile = grainVariants.get(key);
   if (!tile) {
-    const src = brush.grain.canvas, t = mk(src.width, src.height), x = t.getContext('2d', { willReadFrequently: true });
+    const src = grain.canvas, t = mk(src.width, src.height), x = t.getContext('2d', { willReadFrequently: true });
     x.drawImage(src, 0, 0);
     const im = x.getImageData(0, 0, t.width, t.height), d = im.data;
     for (let i = 3; i < d.length; i += 4) d[i] = 255 * (1 - strength * (1 - d[i] / 255));
@@ -249,28 +261,59 @@ async function decodeImage(bytes, label) {
   return bmp;
 }
 
-async function importBrushFile(file) {
-  if (file.size > C.LIMITS.archiveBytes) throw Error('Archive exceeds 32 MB private-import limit');
-  const bytes = new Uint8Array(await file.arrayBuffer());
-  const id = 'brush:' + await hashBytes(bytes);
-  if (brushes.has(id)) return brushes.get(id);
-  const info = C.inspectBrushZip(bytes, window.fflate);
-  const params = C.mapSettings(info.settings);
-  const shape = await decodeImage(info.shapePng, 'Shape.png');
+function concatBytes(a, b) { const o = new Uint8Array(a.length + b.length); o.set(a, 0); o.set(b, a.length); return o; }
+/* Procreate's blank grain means "no texture": no substitute is invented for it. */
+const isBlankGrain = name => /blank/i.test(name || '');
+
+async function buildBrush(entry, source) {
+  // identity = archive + shape content, so the same brush from a .brush and from a .brushset is one entry
+  const id = 'brush:' + await hashBytes(concatBytes(entry.archiveBytes, entry.shapePng));
+  if (brushes.has(id)) return { brush: brushes.get(id), duplicate: true };
+  const params = C.mapSettings(entry.settings);
+  const shape = await decodeImage(entry.shapePng, 'Shape.png');
   const mask = lumToAlpha(shape, params.shapeInverted, Math.min(1024, Math.max(shape.width, shape.height)));
   let grain = null;
-  if (info.grainPng) {
-    const g = await decodeImage(info.grainPng, 'Grain.png');
+  if (entry.grainPng) {
+    const g = await decodeImage(entry.grainPng, 'Grain.png');
     grain = { source: 'file', canvas: lumToAlpha(g, params.grainInverted, Math.min(512, g.width)), label: 'Grain.png from file' };
     g.close();
+  } else if (params.bundledGrain && isBlankGrain(params.bundledGrain)) {
+    grain = null;
   } else if (params.bundledGrain) {
     grain = { source: 'substitute', canvas: substituteGrain(7), label: 'SUBSTITUTE grain · Procreate built-in “' + params.bundledGrain + '” is not in the file' };
   }
-  const thumb = info.thumbPng ? await decodeImage(info.thumbPng, 'Thumbnail.png') : null;
-  const brush = { id, name: params.name, fileName: file.name, settings: info.settings, params, shape, mask, mips: buildMips(mask), grain, thumb,
-    entries: info.entries, fields: Object.keys(info.settings).length };
+  const thumb = entry.thumbPng ? await decodeImage(entry.thumbPng, 'Thumbnail.png') : null;
+  const brush = { id, name: params.name, fileName: source.fileName, setName: source.setName || null, folder: entry.folder || '', order: source.order,
+    settings: entry.settings, params, shape, mask, mips: buildMips(mask), grains: grain ? [grain] : [], grainIdx: 0, thumb,
+    fields: Object.keys(entry.settings).length };
+  Object.defineProperty(brush, 'grain', { get() { return this.grains[this.grainIdx] || null; } });
   brushes.set(id, brush);
-  return brush;
+  return { brush, duplicate: false };
+}
+
+async function importFile(file, progress) {
+  if (file.size > C.LIMITS.setBytes) throw Error('File exceeds ' + C.LIMITS.setBytes / 1e6 + ' MB private-import limit');
+  const bytes = new Uint8Array(await file.arrayBuffer());
+  const info = C.inspectArchive(bytes, window.fflate);
+  const setName = info.kind === 'brushset' ? (info.setName || file.name.replace(/\.brushset$/i, '')) : null;
+  const out = { kind: info.kind, setName, added: [], duplicates: 0, skipped: info.skipped };
+  for (let i = 0; i < info.brushes.length; i++) {
+    if (progress) progress(i + 1, info.brushes.length);
+    const r = await buildBrush(info.brushes[i], { fileName: file.name, setName, order: i });
+    if (r.duplicate) out.duplicates++; else out.added.push(r.brush);
+    await new Promise(res => setTimeout(res, 0)); // keep the tab responsive during large sets
+  }
+  return out;
+}
+
+/* Replace the current grain with a user image (e.g. the real Procreate grain). Older strokes keep theirs. */
+async function replaceGrain(file) {
+  const b = brushes.get(currentId); if (!b) throw Error('Select a brush first');
+  if (file.size > 30e6) throw Error('Grain image too large');
+  const bmp = await decodeImage(new Uint8Array(await file.arrayBuffer()), 'grain image');
+  b.grains.push({ source: 'user', canvas: lumToAlpha(bmp, b.params.grainInverted, Math.min(512, bmp.width)), label: 'Grain from your image “' + file.name + '”' });
+  bmp.close();
+  b.grainIdx = b.grains.length - 1;
 }
 
 /* ---------------- effective parameters ---------------- */
@@ -287,7 +330,19 @@ const DYN = [
   ['grainStrength', 'Grain strength', 0, 1],
   ['glazeUniform', 'Uniform glaze (no build-up)', 0, 1, 'bool']
 ];
-function decodedWithGrain(b) { return Object.assign({ grainStrength: b.grain ? 0.85 : 0 }, b.params); }
+/* Default grain strength (HEURISTIC, calibrated against the Procreate previews of 24 brushes, R1.6):
+   - old archives without grainDepth: 0.85 (CRAYONIC tone matched, Georg OK 21.10.)
+   - newer archives: grainDepth; for the high-contrast SUBSTITUTE tile 0.3 × grainDepth, because the
+     paper grains it stands in for barely dim ink strokes (19 set brushes: error 0.11 → 0.02). */
+const SUBSTITUTE_DEPTH = 0.3;
+function decodedWithGrain(b) {
+  let g = 0;
+  if (b.grain) {
+    if (b.params.grainDepth == null) g = 0.85;
+    else g = b.params.grainDepth * (b.grain.source === 'substitute' ? SUBSTITUTE_DEPTH : 1);
+  }
+  return Object.assign({ grainStrength: +g.toFixed(3) }, b.params);
+}
 function effectiveParams(id) { const b = brushes.get(id); return Object.assign(decodedWithGrain(b), overrides.get(id) || {}); }
 
 function renderDynControls() {
@@ -386,7 +441,7 @@ function compositeStroke(target, src, tmp, r, brush, rec) {
     tctx.clearRect(r.x, r.y, r.w, r.h);
     tctx.drawImage(src, r.x, r.y, r.w, r.h, r.x, r.y, r.w, r.h);
   }
-  const pat = grainPattern(tctx, brush, rec.params.grainStrength || 0, rec.params.grainScale || 1);
+  const pat = grainPattern(tctx, brush, rec.params.grainStrength || 0, rec.params.grainScale || 1, rec.grainIdx);
   if (pat) { tctx.save(); tctx.globalCompositeOperation = 'destination-in'; tctx.fillStyle = pat; tctx.fillRect(r.x, r.y, r.w, r.h); tctx.restore(); }
   target.save();
   target.globalAlpha = rec.opacity;
@@ -489,7 +544,7 @@ paper.addEventListener('pointerdown', e => {
   // so it can actually remove paint. Procreate's separate erase presets are not decoded.
   const params = eraser ? Object.assign(effectiveParams(id), { flow: 1, pressureOpacity: 0, speedOpacity: 0, jitterOpacity: 0, tiltOpacity: 0, grainStrength: 0 }) : effectiveParams(id);
   const rec = { type: 'stroke', brushId: id, color: $('color').value, size: Number($('size').value), opacity: Number($('opacity').value),
-    eraser, seed: (seedCounter++ * 2654435761) | 0, params, input: e.pointerType,
+    eraser, seed: (seedCounter++ * 2654435761) | 0, params, input: e.pointerType, grainIdx: (brushes.get(id).grainIdx || 0),
     speedScale: paper.getBoundingClientRect().width / W, points: [s] };
   prepBuffer(actx, !!rec.params.glazeUniform);
   live = { rec, stamper: C.createStamper({ size: rec.size, seed: rec.seed, params: rec.params, speedScale: rec.speedScale }), box: newBox(), dirty: newBox(), pointerId: e.pointerId, lastT: s.t, lastX: s.x, lastY: s.y };
@@ -582,33 +637,88 @@ $('file').onchange = async e => {
   const files = Array.from(e.target.files || []); e.target.value = '';
   for (const f of files) {
     try {
-      const b = await importBrushFile(f);
-      select(b.id);
-      $('status').className = '';
-      $('status').textContent = 'Loaded “' + b.name + '” locally from ' + f.name + ' · ' + b.fields + ' archive fields decoded · shape ' + b.shape.width + '×' + b.shape.height +
-        (b.grain ? ' · ' + (b.grain.source === 'file' ? 'grain from file' : 'grain is a labelled substitute') : '') + '. Dynamics are a heuristic simulation.';
+      $('status').className = ''; $('status').textContent = 'Reading ' + f.name + ' locally…';
+      const r = await importFile(f, (i, n) => { if (n > 1) $('status').textContent = 'Reading ' + f.name + ' locally · brush ' + i + ' / ' + n + '…'; });
+      if (r.added.length) select(r.added[0].id); else if (r.duplicates) renderLibrary();
+      const sk = r.skipped.length ? ' · skipped ' + r.skipped.length + ': ' + r.skipped.map(x => x.reason).join('; ') : '';
+      if (r.kind === 'brushset' && !r.added.length && !r.duplicates) {
+        $('status').className = 'err'; $('status').textContent = 'Import error (' + f.name + '): no usable brush in this set' + sk;
+      } else if (r.kind === 'brushset') {
+        $('status').textContent = 'Loaded set “' + r.setName + '” from ' + f.name + ': ' + r.added.length + ' brushes' + (r.duplicates ? ', ' + r.duplicates + ' already imported' : '') + sk + '. Dynamics are a heuristic simulation.';
+      } else {
+        const b = r.added[0] || null;
+        $('status').textContent = b ? 'Loaded “' + b.name + '” locally from ' + f.name + ' · ' + b.fields + ' archive fields decoded · shape ' + b.shape.width + '×' + b.shape.height +
+          (b.grain ? ' · ' + (b.grain.source === 'file' ? 'grain from file' : 'grain is a labelled substitute') : '') + '. Dynamics are a heuristic simulation.' : f.name + ' is already imported.';
+      }
     } catch (err) {
       $('status').className = 'err'; $('status').textContent = 'Import error (' + f.name + '): ' + err.message;
     }
   }
 };
+$('libSearch').oninput = () => renderLibrary();
+$('grainFile').onchange = async e => {
+  const f = e.target.files && e.target.files[0]; e.target.value = ''; if (!f) return;
+  try { await replaceGrain(f); renderInspector(); renderDynControls(); $('status').className = ''; $('status').textContent = 'Grain replaced for “' + brushes.get(currentId).name + '” with ' + f.name + '. Earlier strokes keep their grain.'; }
+  catch (err) { $('status').className = 'err'; $('status').textContent = 'Grain error: ' + err.message; }
+};
+
+/* ---------------- drawing session (strokes + settings, no brush data) ---------------- */
+const SESSION_FORMAT = 'kfb.brush-playground.session/1';
+function sessionJSON() {
+  const used = new Set(done.filter(a => a.type === 'stroke').map(a => a.brushId));
+  return JSON.stringify({
+    format: SESSION_FORMAT, created: new Date().toISOString(), canvas: { width: W, height: H },
+    brushes: [...used].map(id => { const b = brushes.get(id); return { id, name: b.name, setName: b.setName || null, fileName: b.fileName || null, builtin: !!b.builtin }; }),
+    actions: done
+  });
+}
+function loadSession(text) {
+  const j = JSON.parse(text);
+  if (!j || j.format !== SESSION_FORMAT || !Array.isArray(j.actions)) throw Error('Not a Brush Playground drawing (' + SESSION_FORMAT + ')');
+  if (!j.canvas || j.canvas.width !== W || j.canvas.height !== H) throw Error('Canvas size differs');
+  const missing = (j.brushes || []).filter(b => !brushes.has(b.id));
+  if (missing.length) throw Error('Import these brushes first: ' + missing.map(b => b.name + (b.fileName ? ' (' + b.fileName + ')' : '')).join(', '));
+  for (const a of j.actions) if (a.type !== 'clear' && (a.type !== 'stroke' || !Array.isArray(a.points) || !a.params)) throw Error('Malformed action');
+  done.length = 0; undone.length = 0; snaps.clear(); cctx.clearRect(0, 0, W, H);
+  for (const a of j.actions) { if (a.type === 'clear') cctx.clearRect(0, 0, W, H); else bakeStroke(cctx, a); done.push(a); snapshotIfDue(); }
+  refreshView(); syncButtons();
+  return j.actions.length;
+}
+$('saveSession').onclick = () => {
+  const blob = new Blob([sessionJSON()], { type: 'application/json' });
+  const a = document.createElement('a'); a.download = 'georg-brush-playground-drawing.json'; a.href = URL.createObjectURL(blob); a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+};
+$('loadSession').onchange = async e => {
+  const f = e.target.files && e.target.files[0]; e.target.value = ''; if (!f) return;
+  try { if (f.size > 50e6) throw Error('File too large'); const n = loadSession(await f.text()); $('status').className = ''; $('status').textContent = 'Loaded drawing ' + f.name + ': ' + n + ' actions replayed.'; }
+  catch (err) { $('status').className = 'err'; $('status').textContent = 'Load error: ' + err.message; }
+};
 
 function renderLibrary() {
   const ul = $('lib'); ul.textContent = '';
-  const list = [...brushes.values()].filter(b => !b.builtin);
-  $('libEmpty').hidden = list.length > 0;
-  for (const b of list) {
-    const li = document.createElement('li'); li.setAttribute('role', 'option'); li.setAttribute('aria-selected', b.id === currentId);
-    li.dataset.id = b.id;
-    const c = mk(36, 36); c.style.cssText = 'width:36px;height:36px;border-radius:4px;background:#fff;border:1px solid var(--line)';
-    const x = c.getContext('2d'); x.drawImage(tinted(b, '#2b211d', mipLevel(b, 36)), 0, 0, 36, 36);
-    li.appendChild(c);
-    const t = document.createElement('div'); t.innerHTML = '<b></b><small></small>';
-    t.querySelector('b').textContent = b.name; t.querySelector('small').textContent = b.fileName + ' · ' + b.id.slice(6, 14);
-    li.appendChild(t);
-    li.onclick = () => select(b.id);
-    ul.appendChild(li);
+  const all = [...brushes.values()].filter(b => !b.builtin);
+  $('libEmpty').hidden = all.length > 0;
+  $('libSearch').hidden = all.length < 6;
+  const q = $('libSearch').value.trim().toLowerCase();
+  const list = q ? all.filter(b => (b.name + ' ' + (b.setName || '') + ' ' + b.fileName).toLowerCase().includes(q)) : all;
+  const groups = new Map();
+  for (const b of list) { const g = b.setName || 'Single brushes'; if (!groups.has(g)) groups.set(g, []); groups.get(g).push(b); }
+  for (const [g, items] of groups) {
+    if (groups.size > 1 || items[0].setName) { const h = document.createElement('li'); h.className = 'group'; h.setAttribute('role', 'presentation'); h.textContent = g + ' · ' + items.length; ul.appendChild(h); }
+    for (const b of items) {
+      const li = document.createElement('li'); li.setAttribute('role', 'option'); li.setAttribute('aria-selected', b.id === currentId);
+      li.dataset.id = b.id;
+      const c = mk(36, 36); c.style.cssText = 'width:36px;height:36px;border-radius:4px;background:#fff;border:1px solid var(--line);flex:none';
+      const x = c.getContext('2d'); x.drawImage(tinted(b, '#2b211d', mipLevel(b, 36)), 0, 0, 36, 36);
+      li.appendChild(c);
+      const t = document.createElement('div'); t.innerHTML = '<b></b><small></small>';
+      t.querySelector('b').textContent = b.name; t.querySelector('small').textContent = (b.setName ? b.fileName : b.fileName) + ' · ' + b.id.slice(6, 14);
+      li.appendChild(t);
+      li.onclick = () => select(b.id);
+      ul.appendChild(li);
+    }
   }
+  if (q && !list.length) { const li = document.createElement('li'); li.className = 'group'; li.textContent = 'No brush matches “' + q + '”'; ul.appendChild(li); }
 }
 
 function select(id) {
@@ -630,7 +740,7 @@ function renderInspector() {
   const gc = $('isoGrain').getContext('2d');
   gc.clearRect(0, 0, 256, 256);
   if (b.grain) { gc.fillStyle = '#2b211d'; gc.fillRect(0, 0, 256, 256); gc.globalCompositeOperation = 'destination-in'; gc.drawImage(b.grain.canvas, 0, 0, 256, 256); gc.globalCompositeOperation = 'source-over'; }
-  $('isoGrainLabel').textContent = b.grain ? b.grain.label : 'No grain in file or settings';
+  $('isoGrainLabel').textContent = b.grain ? b.grain.label : (isBlankGrain(b.params.bundledGrain) ? 'Procreate blank grain → no texture' : 'No grain in file or settings');
   $('isoGrainLabel').style.color = b.grain && b.grain.source === 'substitute' ? 'var(--bad)' : '';
   if (b.thumb) {
     const rc = $('refCanvas'); rc.width = b.thumb.width; rc.height = b.thumb.height;
@@ -735,7 +845,8 @@ $('color').oninput = () => { if (currentId) drawContain($('isoMask').getContext(
 /* ---------------- test / replay hooks (local only) ---------------- */
 window.KFB = {
   core: C,
-  brushes: () => [...brushes.values()].filter(b => !b.builtin).map(b => ({ id: b.id, name: b.name, fields: b.fields, shape: [b.shape.width, b.shape.height], grain: b.grain && b.grain.source, hasReference: !!b.thumb })),
+  brushes: () => [...brushes.values()].filter(b => !b.builtin).map(b => ({ id: b.id, name: b.name, setName: b.setName, fields: b.fields, shape: [b.shape.width, b.shape.height], grain: b.grain && b.grain.source, grainVersions: b.grains.length, hasReference: !!b.thumb, sizeCurve: !!b.params.sizeCurve, uniform: b.params.glazeUniform })),
+  sessionJSON, loadSession,
   select,
   current: () => currentId,
   history: () => ({ done: done.length, undone: undone.length, strokes: done.filter(a => a.type === 'stroke').map(a => ({ brushId: a.brushId, points: a.points.length, input: a.input, pmin: Math.min(...a.points.map(p => p.p)), pmax: Math.max(...a.points.map(p => p.p)) })) }),
