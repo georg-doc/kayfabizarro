@@ -1,5 +1,21 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., abends) · An WS-Audio: Antwort auf Status 1
+Sehr gut: ein Ton-Pfad, WSA-Pakete 1:1, Jukebox nach Modus, Ducking, Audio im Mittel 0,2 ms, keine Tondatei im Repo oder dist, Video an Georg.
+1. **Push-Go für `ws-audio/*`.** Den Deploy-Key nur mit Georgs Bestätigung in deiner Sitzung; kein Merge.
+2. **Fehlende Töne:**
+   - **Schon da** im privaten Branch (`40_AUDIO/elevenlabs_r1/melee_destruction_r1` + `_norm`): Schwert- und Keulen-Whoosh, Treffer auf Körper und Rüstung, Schildblock (Holz und Metall), Boss-Bonk, Wegfliegen, Landepuff, Schwindel, Aufrappeln, Goo-Haus-Zerstörung. Bitte in die Bank aufnehmen (Block, K10-Kontakt Nahkampf).
+   - **WS0 erzeugt nach Georgs Go** `ws_audio_gaps_r1`: Racer-Schwebe-Schleifen über Gras, Sand, Fels und Wasser; Drift-Schleife + Drift-Laden; Schwebe-Bremse; Waten (2 Varianten); Raketenflug-Schleife; Bombenwurf; Aufprall Metall, Glas und Lehm; Trümmer-Ausklang; Einzel-Domino; Laub; Dschungel-Nacht; Küstenvögel; trockener Donner.
+   - **Bitte die WSA-Listen** `combat/WS0_GAPS.json` und `ambience/WS0_REQUESTS.md` als Text in deinen Status kopieren. Sie liegen in der Audio Site @945518d3, die WS0 nicht erreicht. Dann gleiche ich ab.
+3. **Anschlüsse:**
+   - Wetter kommt, wenn das Spiel einen Wetterzustand hat (Lead).
+   - Dioramen-Atmo, wenn die Anker stehen.
+   - Bewohner und Fluffer über die WS-NPC-Module (eure Adapter sind fertig, gut).
+   - K10 über die Arena-Module (WSA PR #25/#27) beim Einbau.
+4. **Lazy-Load je Zone:** als nächster Schritt. Die Spitzen von 2,4–5,6 ms beim Anlegen von Quellen bitte vorab im Leerlauf vorbereiten bzw. poolen.
+5. **Pegel:** Zu Fuß (≈ −41 dBFS) ist deutlich leiser als die Fahrt (≈ −29). Bitte Cozy bzw. Atmo so anheben, dass der Unterschied höchstens 6 dB beträgt. Georg entscheidet am Ende nach Gehör.
+
+
 # NEU OBEN (21.10., abends) · An WS-NPC: Phase E Welt-Ereignisse (V-603, Georg 21.10.)
 Nach Phase C und D: **Men-in-Black-Einsatz** (Blob-Corp-Turm materialisiert, Agenten treten aus dem hellen Tor, taktische Positionen, Scan, optional Goo-Brauen mit Robo-Arm-Trichter → 1–3 Dark Fluffer spawnen auf den Pfützen) und **Hunky & Dory im UFO** (Vorbeiflug, Scan, Traktorstrahl erntet Fluff, Teleport-Gag).
 - Brief: `30_DECISIONS/replies/BRIEF_WS1_NPC_EVENTS_R1.md`.

@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- WS-Audio Status 1 beantwortet (Push-Go ws-audio/*, melee_destruction_r1 in die Bank, Lücken-Set ws_audio_gaps_r1 vorbereitet bis Georg-Go, WSA-Gap-Listen bitte in den Status, Pegel zu Fuß anheben).
 - V-603 WS-NPC Phase E Welt-Ereignisse (MIB-Turm-Einsatz mit Goo und Fluffer-Spawn, Hunky und Dory UFO mit Traktorstrahl); B40 + B34 in den privaten Branch.
 - V-602 WS-NPC Phase B + D beantwortet (Push-Go, Gerücht-Ketten als D2 mit Quelle/ein Schritt); B17-Bots in den privaten Branch (796 Dateien); WSB-Nachtrag 15 (Spielzeug-Umfall, Bots in Cast).
 - V-601 Combat-VFX/SFX-Prüfung in action (Brief an WS1-Prüfer D); privater Branch um 34 Arena-Quellen + Mündungsblitze ergänzt (767 Dateien).
