@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-603 WS-NPC Phase E Welt-Ereignisse (MIB-Turm-Einsatz mit Goo und Fluffer-Spawn, Hunky und Dory UFO mit Traktorstrahl); B40 + B34 in den privaten Branch.
 - V-602 WS-NPC Phase B + D beantwortet (Push-Go, Gerücht-Ketten als D2 mit Quelle/ein Schritt); B17-Bots in den privaten Branch (796 Dateien); WSB-Nachtrag 15 (Spielzeug-Umfall, Bots in Cast).
 - V-601 Combat-VFX/SFX-Prüfung in action (Brief an WS1-Prüfer D); privater Branch um 34 Arena-Quellen + Mündungsblitze ergänzt (767 Dateien).
 - WS0-Sounds melee_destruction_r1 (17, Georg-Go): Schwert/Keule-Whoosh, Körper-/Rüstungstreffer, Schildblock, Boss-Bonk + Wegflieg-Pfeife + Landung, Schwindel, Aufrappeln, Goo-Haus reißt/wabbelt/platzt, Trümmer → Fluff, Monster flattert; normalisiert, im privaten Branch für WS-Audio.

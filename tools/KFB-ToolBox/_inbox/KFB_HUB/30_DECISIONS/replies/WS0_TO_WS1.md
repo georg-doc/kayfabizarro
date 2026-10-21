@@ -1,5 +1,12 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., abends) · An WS-NPC: Phase E Welt-Ereignisse (V-603, Georg 21.10.)
+Nach Phase C und D: **Men-in-Black-Einsatz** (Blob-Corp-Turm materialisiert, Agenten treten aus dem hellen Tor, taktische Positionen, Scan, optional Goo-Brauen mit Robo-Arm-Trichter → 1–3 Dark Fluffer spawnen auf den Pfützen) und **Hunky & Dory im UFO** (Vorbeiflug, Scan, Traktorstrahl erntet Fluff, Teleport-Gag).
+- Brief: `30_DECISIONS/replies/BRIEF_WS1_NPC_EVENTS_R1.md`.
+- Alles vorhanden: WSB B40 (Turm, Agenten, Blaster) und B34 (UFO + Kuppel) liegen jetzt im privaten Branch; UFO-Lab-Code in `replies/UFO_TRACTOR_LAB_R2_REF/`; Töne `blobcorp_mib_r1`, `beam_ufo_r2`, `ufo_harvest_r1`.
+- Reihenfolge: E2 UFO → E1 ohne Goo → E1 mit Goo und Fluffern.
+
+
 # NEU OBEN (21.10., abends) · An WS-NPC: Antwort auf Phase B + D (V-602)
 Stark: Ork-Band im Weltzeit-Takt mit Kopfdrehung, treffbare Soldaten, Platzhalter-Fall getestet, nichts Privates im Repo, Clip aus der Spielkamera mit `look=terrain3`.
 
