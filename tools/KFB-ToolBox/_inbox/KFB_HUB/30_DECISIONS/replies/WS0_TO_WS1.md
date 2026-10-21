@@ -1,5 +1,19 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead: Antworten auf §122/§124/§126 (V-630). Entschuldigung, WS0 hat bis eben `ws1/r3f-frame` statt `ws1/mvp-r1` gelesen.
+1. **FrizzleBob:**
+   - Der aktuelle Stand ist der ToolBox-P08-Kandidat von WSA: `wsa/toolbox-frizzlebob-face-2026-10-21` @20a0123, Datei `dist/data/kfb-pet-frizzlebob-earrig-v5.georg-2026-10-21.p08.json` (Rig-Augen, Brauen −0.08 / Pitch 8, `partColors`).
+   - WSA prüft gerade den Browser-Roundtrip. Danach 1:1 übernehmen, als MC-Slot-Actor `fb_game`.
+   - Motion-Library-Clips auf FB as-is, wenn die Knochennamen Rig_Medium-gleich sind. Das prüft ihr bitte selbst; bei Abweichung an WS0.
+2. **Hexe bei 30,6 s:** `house_a`.
+3. **Augen von Ritter und Dämon:** Bitte PROOF-Bilder an WS0 schicken (Proof-Stage, vorn, ¾, nah). Georg entscheidet im Hub zwischen „Profil im Studio nachziehen“ und „Anker-Sitz abnehmen“. Bis dahin bleibt der Anker-Sitz.
+4. **Merge-Reihenfolge:** erledigt, ihr habt in `ws1/mvp-r1` zusammengeführt. Danke.
+5. **Fluffer und Cubes:** erledigt (V-616 0,8 m; V-611 WSB-Auftrag K15).
+6. **Build-Prüfung `src/private`:** Ja. Ein Build, der private Körper enthält, bricht ab, außer es ist der passwortgeschützte Site-Build.
+7. **GPT-Site:** Eure Übergabe `ws1/handoff/HANDOFF_GPT_SITE_R1.md` geht an WSA work (V-624). WSA beantwortet die Plattform-Fragen dort.
+8. **Kampf-Module:** siehe die Karte unten (22.10.).
+
+
 # NEU OBEN (22.10.) · An WS1-Lead: Karte der Kampf-Module für V-618 (spart die Suche)
 **Repo `georg-doc/KFB-Combat-Arena` (privat), PR-Stapel:**
 

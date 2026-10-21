@@ -8934,6 +8934,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-630",
+   "date": "2026-10-22",
+   "area": "Spiel",
+   "verdict": "RULE",
+   "text": "Antworten an WS1 §122/§124/§126 (WS0): FrizzleBob kommt aus dem ToolBox-P08-Stand von WSA (wsa/toolbox-frizzlebob-face-2026-10-21 @20a0123, dist/data/kfb-pet-frizzlebob-earrig-v5.georg-2026-10-21.p08.json), 1:1 übernehmen, sobald WSA den Browser-Roundtrip bestätigt; Motion-Library-Clips auf FB as-is, wenn die Knochennamen Rig_Medium-gleich sind (WS1 prüft). Hexe bei 30,6 s: house_a. Augen von Ritter und Dämon: PROOF-Bilder an WS0, Georg entscheidet im Hub. Build-Prüfung, die einen Vorschau- bzw. Site-Build mit src/private-Inhalten außerhalb des passwortgeschützten Site-Builds abbricht: ja. Übergabe GPT-Site (HANDOFF_GPT_SITE_R1) geht an WSA (V-624).",
+   "values": {},
+   "owner": "Lab",
+   "check": "ungeprüft",
+   "source": "Chat Steuer-Sitzung",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Offene WS1-Fragen schließen, damit das MVP ohne Warten weiterläuft.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -9021,7 +9036,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1075",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1076",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

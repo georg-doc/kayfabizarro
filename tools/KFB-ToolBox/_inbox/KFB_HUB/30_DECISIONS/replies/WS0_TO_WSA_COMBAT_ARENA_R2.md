@@ -233,3 +233,12 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 ## 22.10. · Karten-Check: neuer slotOffset-Grund „edge-forward“ (V-628)
 - WSB trägt bei Halterungen, die wegen der Schneidenregel gedreht sind, `alsoReason: "edge-forward"` ein. Bitte diesen Grund im Karten-Check zulassen, neben „visible-interpenetration“.
 - K13 ist nach der Axt-Korrektur neu im privaten Branch: alle 5 Karten CONTRACT_PASS, Axt-Block_Attack und -Stab auf exclude.
+
+
+## 22.10. · WSA-Work-Job „GPT-Site mit allen Features“ fürs MVP (V-624, V-630)
+- **Übergabe von WS1:** `ws1/handoff/HANDOFF_GPT_SITE_R1.md` auf `ws1/mvp-r1` (Kopie in `ws1/kfb-planet/docs/`).
+- **Quelle:** privates Repo `KFB-Stunt-Car-Race`, Branch `game/mvp-r1`. Private Dateien kommen aus `assets/private`.
+- **Build:** `npm ci && node scripts/site/build-site.mjs` (Node 22, `ASSETS_TOKEN`) → `dist/`. Umfang: 46 MB Spiel, 242 MB Ton.
+- **Laufzeit:** Passwort für alle Pfade (Plattform-Secret), `/raw`-Proxy, HTTP-Range für Musik, MIME-Typen.
+- **Bitte beantworten:** Plattform-Grenzen, Funktionen und Secrets, Deploy-Auslöser, Adresse und Tester. Antwort in eine eigene Datei `replies/WSA_TO_WS0_GPT_SITE_R1.md`.
+- **Danach:** FrizzleBob-P08-Roundtrip melden, damit WS1 ihn übernimmt.
