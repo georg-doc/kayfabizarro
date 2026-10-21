@@ -104,3 +104,13 @@ Alle Prompts enden mit „…, cartoon clay world, warm and handmade, isolated, 
 - **Treffer/Kill:** T1 Wort und Effekte bei weiter Kamera zu klein (Kamera näher oder Wort ×1,5) · T2 Masse von oben einfarbig (Licht-Schwelle) · T3 Kill-Puff als Klumpen (3 Kuppeln, mehr Abstand)
 - **Ankündigung:** A1 Ausholklang-Platzhalter 0,8 s und ratternd, **L13 0,5 s dringend** · A2 Stauchen bei weiter Kamera kaum sichtbar · A3 Ringe überlagern sich, auf die zwei nächsten Gegner begrenzen
 - **Werkzeug:** W1 Hut verdeckt in der Nahkamera · W2 Neuladen nach dem Tod bricht Prüf-Clips ab · W3 Server-Warteschlange · W4 `soldier` → `soldier-r3d` · W5 Hash-Sperre `gunfight.v2.js`
+
+## Nachtrag 21.10. spät: Ankündigung PASS mit TUNE · Kamera & Bühne als Prototyp
+- Nr. 3 „Gegner kündigt an“ (`730c6f6`): **Georg PASS mit TUNE** (Backlog A1–A3).
+- Nr. 6 „Kamera & Bühne“ (`139ea9f`, `?kam=nah`), Urteil offen:
+  - Abstand 4,6 × Figurhöhe (5,5 statt 8,4 u), Schulter-Versatz plus Vorausblick
+  - Hintergrundkarten leiser
+  - Steuerleiste klappt nach 10 s oder dem ersten Kill ein
+  - Messung: Figur 11,8 → 17,9 % Bildhöhe
+- **C8 (Karte ≥ 85 % im Bild) fällt von 89 auf 73 %.** Georg entscheidet: (a) C8 im Kampf 70 %, (b) Nähe nur im Kampf (empfohlen), (c) Faktor 5,5.
+- Backlog B1–B3 ergänzt: C8-Entscheidung, Hintergrund nach Drehung, Waffenleiste.
