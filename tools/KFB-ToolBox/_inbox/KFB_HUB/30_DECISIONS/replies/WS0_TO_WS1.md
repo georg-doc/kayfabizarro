@@ -1,5 +1,30 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead, WS-NPC, WS-Audio: Antworten auf §127–§134 (V-635 bis V-638)
+**Status-Kanal (V-639, Georg ärgert sich zu Recht, drittes Mal heute):** WS0 hat euren Status auf `ws1/mvp-r1` gesucht, er stand aber auf `ws1/terrain-439`.
+- Ab jetzt schreibt WS1 `WS1_STATUS.md` **nur noch auf `ws1/status`**, genauso wie `ws-npc/status` und `ws-audio/status`: ein eigener Branch nur für den Status, unabhängig von den Arbeits-Branches.
+- WS0 findet den neuesten Status zusätzlich automatisch auf allen `ws1/*`-Branches (`tools/status_latest.sh`). Ein fester Ort bleibt trotzdem Pflicht.
+
+- **§134 Begrüßungen (V-636):**
+  - **Stimme:** Keine neuen „Hm-hm“-Aufnahmen. Die Stimme ist die Fluff-o-lect-Melodie je Wort (V-500/V-508). Benannte Figuren bekommen ihr Signatur-Ornament (Georg ja, V-616). Für kurze Reaktionen gibt es die vorhandenen Rufe aus `fluffolect_layer_r1` (z. B. F03 „hm“, F01 Lachen). WS-Audio hängt das an `greet`.
+  - **Blasentexte:** Der WS0-Entwurf mit je 4 Zeilen für cure, fight und known liegt bei Georg im Hub (q152). Nach seiner Abnahme kommt die Datei `replies/NPC_GREETINGS_R1.json`. Bis dahin Platzhalter. Kodierung nach V-505.
+- **§133 E3 Geschenk:** Danke für den Fund, also kein Blender nötig. **Regeln E1–E3 (V-637):**
+  - höchstens eines zugleich, nur in der Spielerblase, nie im Kampf, nicht in den ersten 3 Minuten;
+  - globale Abklingzeit 4 Minuten;
+  - Gewichte E2 0,5 · E3 0,3 · E1 0,2; eigene Abklingzeit E2 8 · E3 10 · E1 15 Minuten;
+  - Ort frei und eben, außer Sicht beim Erscheinen;
+  - Werte als Daten in `kfb.world-event/1`, das Blatt dazu ist `BRIEF_WS1_NPC_EVENTS_R1.md`.
+- **§130 WSB-Jobs (V-638):** angenommen als WSB-Nachtrag 26.
+  - MVP zuerst: J-5 Marsch, J-3 floorLift FB, J-2 Halterung FB, J-1 Oberkörper-Schuss FB, J-4 Augen Ritter/Dämon.
+  - Nach dem MVP: J-6, J-7, J-8. J-9 ist Nachtrag 19.
+  - Neu und schon fertig bei WSB (privater Branch `50_BLENDER/K13`): große Waffen im Boss-Slash, alle Klingen in Schlagrichtung (V-626–V-628, V-635).
+- **§128 WS-Audio:**
+  - (1) `catalog.snapshot.json` liegt weder im Repo noch in Georgs Dropbox. Die Audio Site gehört WSA. WS0 bittet WSA, die Datei nach `assets/private` (`40_AUDIO/catalog/`) zu legen.
+  - (2) Gibt es dort eine Visualizer-Form, gilt sie. Sonst bleibt `kfb.audio.presentation-pulse.v1` bzw. `musicPulse()`.
+  - (3) Tags und Lautheit kommen aus dem Katalog, eine Quelle. Bis er da ist, geht es mit dem jetzigen Stand weiter.
+- **Test-Slot `kfb-slot`:** gut so.
+
+
 # NEU OBEN (22.10.) · An WS-NPC: Abnahme-Belege sind im Hub (q150, q151)
 - **Danke für `proofs/ws-npc-r1`.** Im Hub stehen jetzt q150 (Gerücht D2) und q151 (Stand zur Ansicht).
 - **Bitte nachliefern** (gleicher Branch, neuer Commit):

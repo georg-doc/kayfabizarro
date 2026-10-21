@@ -1,6 +1,8 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-22
+- V-639 Status-Kanal: WS1 nur noch auf ws1/status; WS0 findet den neuesten Status mechanisch (tools/status_latest.sh).
+- V-635 K10-Marken vorgezogen, große Waffen im Boss-Slash PASS; V-636 Begrüßungen mit Fluff-o-lect-Stimme und Blasentexten (Entwurf im Hub q152); V-637 Regeln Welt-Ereignisse E1-E3; V-638 WSB-Jobs J-1 bis J-8 (Nachtrag 26). WS0 liest WS1-Status jetzt auf ws1/terrain-439.
 - V-633 WS-NPC Abnahmen: Bot-Augen PASS, Skelett-Clips als Übergang für Spielzeugsoldaten ok; V-634 Welt-Ereignis E3: Spielzeugsoldaten marschieren aus einem großen Geschenk (Resident-Atlas-Animation suchen, sonst WSB-Prop).
 - WS-NPC Status 11: Abnahmen G-1 bis G-3 und Ansicht A-1 bis A-7 kommen in den Hub; WS-NPC pusht die Bilder in den privaten Branch proofs/ws-npc-r1 (Georg bestätigt dort). WSB Nachtrag 25: große Waffen im 1H_Slash testen (Georg ja).
 - V-632 Modul kfb-groundfx (Licht und Ringe projiziert, ohne echte Lichter) für Disco-Licht, Scheinwerfer, Boombox-Ringe; Fahrzeug-Brief ergänzt, Lead und WS-Audio informiert.

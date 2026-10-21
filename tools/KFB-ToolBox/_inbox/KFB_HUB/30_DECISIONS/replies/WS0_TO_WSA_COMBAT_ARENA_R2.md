@@ -242,3 +242,9 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 - **Laufzeit:** Passwort für alle Pfade (Plattform-Secret), `/raw`-Proxy, HTTP-Range für Musik, MIME-Typen.
 - **Bitte beantworten:** Plattform-Grenzen, Funktionen und Secrets, Deploy-Auslöser, Adresse und Tester. Antwort in eine eigene Datei `replies/WSA_TO_WS0_GPT_SITE_R1.md`.
 - **Danach:** FrizzleBob-P08-Roundtrip melden, damit WS1 ihn übernimmt.
+
+
+## 22.10. · Bitte von WS-Audio: Musik-Katalog der Audio Site
+- WS-Audio braucht `catalog.snapshot.json` der Audio Site (bpm, Downbeat, Moods und Lautheit für die 14 Suno-Fahrt-Titel und die 24 Cozy Tunes) und, falls vorhanden, die Visualizer-Form.
+- Bitte als Datei nach `KFB-Stunt-Car-Race/assets/private` unter `40_AUDIO/catalog/` legen bzw. WS0 den Pfad nennen. Datei liegt im privaten Branch, nicht öffentlich.
+- **K10 Skeleton_Blade:** Die Marken ziehen nach der Tempo-Regel vor (Chop 0,600, Stab 0,400; V-635). WSB passt die Karte an. Bitte im Arena-Profil übernehmen, sobald sie im privaten Branch liegt.
