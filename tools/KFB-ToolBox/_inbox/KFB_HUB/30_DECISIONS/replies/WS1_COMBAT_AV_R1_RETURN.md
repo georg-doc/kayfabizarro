@@ -122,3 +122,11 @@ Alle Prompts enden mit „…, cartoon clay world, warm and handmade, isolated, 
   - Neu: Cast- und Sehnen-Pop als Knet-Masse an der Mündung, Band hinter eigenen Geschossen.
   - Fix im Prototyp: Knet und Wort starten bei Maßstab 0.
   - Backlog V1–V3.
+
+## Nachtrag: Abgang PASS mit TUNE · Kill am Ort fertig
+- Nr. 7 Abgang sichtbar (`e94b0e2`): **Georg PASS mit TUNE** (V1–V3).
+- Nr. 8 Kill am Ort, Runde 2 (`fe1e98d`):
+  - Pop → Klack beim Schädel-Tausch, vorher stumm. Platzhalter, **L9 `mob_pop_to_skull` bitte erzeugen.**
+  - Das Rauch-Flipbook ist im Knet-Modus aus.
+  - TUNE T1–T3 erledigt: Wort ×1,3, beide Töne sichtbar, 3 Kuppeln.
+- Gesamtprobe mit allen Schaltern: R1, R2, R4 und R6 PASS (11/11 Würfe angekündigt).
