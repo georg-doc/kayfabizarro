@@ -18,6 +18,7 @@
   - Georgs neue Fakten in `SONGS_WORKSHOP_R1/personae/PERSONAE_PATCH_R1.json` (4GTN, 4GTN Forgotten, Lord Hunky, Norman) und die Vorschläge Goth Girl, Caveman, Combat Mech, FrizzleBob (als Standard-Spielfigur);
   - `RESIDENT_DP_ALIGNMENT_R1.md`;
   - der gültige Bewohner-Stand `WRITERS_ROOM_R1/export_2026-10-20c` (Bewohner je Deck mit Rolle, Zuhause und Meta).
+  - **Neu von Georg (21.10.):** Die beiden Hexen (KayKit Witch, Textur A und B; im Cast `witch`) sind **Fluff-Alchemistinnen**. Sie veredeln Fluff in ihrer Kräuter- bzw. Trankküche. Das ist ihr Arbeits-POI. In Phase C (Dark Fluffer) sind sie die ersten Kandidatinnen für „Heilen im Team“, z. B. mit einem Trank aus buntem Fluff. WS0 entscheidet das nach der Inventur.
   - Nutzung: Ziele, Tagesablauf und Begegnungen kommen aus Rolle und Bogen. Das „Zuhause“ eines Bewohners ist ein POI-Kandidat. `BESTÄTIGT` ist bindend, `VORSCHLAG` nur Richtung. WS-NPC ändert keinen Bogen; Lücken meldet es an WS0.
 - Im Hub: `replies/SPEC_NPC_PATROL_R1.md` (Fahrplan statt Simulation) und `replies/BRIEF_WS1_DARK_FLUFFER_R1.md`.
 

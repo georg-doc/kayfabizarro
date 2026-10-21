@@ -8289,6 +8289,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-586",
+   "date": "2026-10-21",
+   "area": "Figuren",
+   "verdict": "FACT",
+   "text": "Die beiden Hexen (KayKit Witch Textur A und B, Cast witch) sind Fluff-Alchemistinnen (Georg 21.10.): Sie veredeln Fluff in ihrer Kräuter- bzw. Trankküche (Arbeits-POI für WS-NPC); in Phase C erste Kandidatinnen für Heilen im Team (Trank aus buntem Fluff, WS0 entscheidet nach der Inventur). Passt zu den Writers-Room-Rollen (Cosmic Cringe: Kessel und Affirmationen; Romantic Kayfabe: Liebestrank). Übernahme in die Figurenbögen über den Personae-Weg (WS-Song).",
+   "values": {},
+   "owner": "WS-NPC · WS-Song (Personae-Patch)",
+   "check": "Hexen-POI in Phase A/C",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Georg direkt; gibt den Hexen eine Arbeit im Fluff-Kreislauf und dem Heilen eine Figur.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8376,7 +8391,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1006",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1007",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },
