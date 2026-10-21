@@ -1,12 +1,16 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
-# NEU OBEN (21.10., später) · Bitte neue Sitzung „WS-Fluffer“ starten (Georg 21.10.)
-Georg möchte sein Dark-Fluffer-Konzept (heilen statt töten) als eigene, parallele Claude-Code-Sitzung umgesetzt haben. **Bitte starte sie mit dem Brief `30_DECISIONS/replies/BRIEF_WS1_DARK_FLUFFER_R1.md`** (V-583) als erster Nachricht.
-- Grundlage ist der Ausführungs-Brief aus dem Web-Chat (Draft-PR #400, `skills/chat/recovery/WS1_DARK_FLUFFER_…_R1`); der WS0-Brief enthält die Entscheidungen dazu.
-- Kurz: ein Cube, ein Patch, ein Baum zuerst; dann heilen mit weißen Augen und einmal buntem Fluff über `fluff.js`. Keine Blumen, kein zweites Effekt-, Kampf- oder Physiksystem.
-- Zulieferer: WSA bringt das Spender-Paket mit Maul-Anker und Spuck-Timing (V-584), WSB die Augen-Variante, WS0 die Töne.
-- Deine Jobs 1–4 (unten) behalten Vorrang; WS-Fluffer arbeitet nur auf `ws-fluffer/*`.
-
+# NEU OBEN (21.10., später) · Bitte neue Sitzung „WS-NPC“ starten (Georg 21.10.)
+Georg möchte die **gesamte NPC-Slice aus dem Web-Chat** als eigene, parallele Claude-Code-Sitzung umgesetzt haben: Resident Life R0.6–R1, AI-Town R0.8, das Recherche-Google-Doc und das Dark-Fluffer-Konzept. **Bitte starte sie mit dem Brief `30_DECISIONS/replies/BRIEF_WS1_NPC_LIFE_R2.md`** (V-585) als erster Nachricht.
+- Grundlage ist der Workshop-Brief aus dem Web-Chat (Draft-PR #400, `skills/chat/recovery/WS1_EMERGENT_RESIDENT_LIFE_…_R1`). Der WS0-Brief beantwortet die sieben Intake-Fragen.
+- Reihenfolge A → C → B → D:
+  - A: zwei Bewohner (`farmer_karre`, `witch`) mit Tagesplan und einer echten Begegnung;
+  - C: Dark Fluffer nach `BRIEF_WS1_DARK_FLUFFER_R1.md` (heilen, weiße Augen, einmal bunter Fluff über `fluff.js`, keine Blumen);
+  - B: Gedächtnis, erst wenn du den Owner von `kfb.world-save/1` benannt hast;
+  - D: später.
+- **Von dir gebraucht:** den Speicher-Owner benennen und den Pfad von `WS1_STATUS` bestätigen.
+- Zulieferer: WSA bringt das Spender-Paket Dark Fluffer (V-584), WSB die Augen-Variante (K11), WS0 die Töne.
+- Deine Jobs 1–4 (unten) behalten Vorrang; WS-NPC arbeitet nur auf `ws-npc/*`.
 
 # NEU OBEN (21.10.) · Nächste Jobs für den WS1-Lead (Georg 21.10.: „1 bis 4 an WS1“)
 WS0 hat die Geländeprobe, §108–§116 und das AD-Audit gelesen. Der Kern ist stark: Höhenformel GLSL = JS, endlose Welt, Diorama über `dioMod` in die Höhenfunktion eingeschrieben. **Am Kanon ändert WS0 jetzt nichts. Georg will die Entwicklung erst abwarten.** Reihenfolge:

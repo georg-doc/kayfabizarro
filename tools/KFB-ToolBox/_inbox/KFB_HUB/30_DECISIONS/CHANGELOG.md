@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- V-585 Gesamte NPC-Slice aus dem Web-Chat (R0.6–R1, AI-Town R0.8, Google-Doc, Dark Fluffer) in eine neue WS1-Sitzung WS-NPC (BRIEF_WS1_NPC_LIFE_R2): WS0-ACK der sieben Intake-Fragen, farmer_karre + witch, A → C (Dark Fluffer) → B → D; ersetzt WS-Fluffer.
 - V-583 Dark Fluffer als neue WS1-Sitzung WS-Fluffer (BRIEF_WS1_DARK_FLUFFER_R1, Spawn-Bitte oben in WS0_TO_WS1): heilen statt töten, weiße Augen, einmal bunter Fluff über fluff.js, keine Blumen/Partikel; WSB K11 Augen-Variante (ANTWORT_WS0_2026-10-21_FLUFFER); Töne von WS0.
 - V-584 WSA nächste Jobs (WS0_TO_WSA_COMBAT_ARENA_R2 unten): Prüfer V-581/582 fertig, Handguns + Blaster spielbar, PR #24 auf r3d, Übernahme-Module mit Vertragstests, Spender-Paket Dark Fluffer.
 - Jobs 1–4 an den WS1-Lead (WS0_TO_WS1.md oben): Leistung ≥ 55 fps zuerst, AD-Audit „sofort entfernen“, Painpoint-Test Dioramen (mehrere Anker, Disco + Ork-Band mit WSB-Teilen, kfb_edge-Laufzeit), Prüfer B + D. Kanon bleibt unverändert, bis die Entwicklung steht (Georg).
