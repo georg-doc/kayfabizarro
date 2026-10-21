@@ -44,3 +44,24 @@ test('character field type and unlisted render style rejected',()=>{for(const ed
 test('nested player memory is rejected by exact relationship template schema',()=>{const edit={path:'/memory/relationships',value:[{with:'player',type:'friend',details:{playerId:'real-user',runningMemory:['private']}}]};assert.throws(()=>applyEdits(character,{...request('character'),edits:[edit]},{now,actorId:auth.actorId}),code('INVALID_INPUT'));});
 test('relationship template supports source references and player template without runtime values',()=>{const values=[...clone(character.memory.relationships.v),{with:'player',type:'friend',triggers:{mutual:['helped']},dynamicAxes:['trust'],baselineHeat:.5}];const r=applyEdits(character,{...request('character'),edits:[{path:'/memory/relationships',value:values}]},{now,actorId:auth.actorId});assert.equal(r.document.memory.relationships.status,'GEORG');assert.equal(r.document.memory.relationships.v.at(-1).with,'player');});
 test('brow fields use explicit owner and declared field types, including nullable values',()=>{const f=clone(figure);f.brows={owner:'browrig-v2',values:{enabled:true,height:null,color:'#aaaaaa'}};for(const [path,value] of [['enabled',{nested:true}],['height','not numeric'],['anything',1],['color',null]])assert.throws(()=>applyEdits(f,{...request(),edits:[{path:'/brows/values/'+path,value}]},{now,actorId:auth.actorId}),e=>['INVALID_INPUT','INVALID_PATH','PROTECTED_FIELD'].includes(e.code));assert.equal(applyEdits(f,{...request(),edits:[{path:'/brows/values/enabled',value:false}]},{now,actorId:auth.actorId}).document.brows.values.enabled,false);});
+
+test('confirmation includes verified field diff and fixed GitHub links after readback',async()=>{
+ const a=adapter(),reads=[],read=a.readFile;a.readFile=async(...args)=>{reads.push(args);return read(...args);};
+ const r=await saveProposal(a,request(),auth,{now});
+ assert.deepEqual(r.diff,[{path:'/eyeRig/pupil/size',before:.4,after:.43}]);
+ assert.equal(r.commitUrl,'https://github.com/georg-doc/kayfabizarro/commit/'+r.commit);
+ assert.equal(r.githubUrl,'https://github.com/georg-doc/kayfabizarro/tree/'+r.branch);
+ assert.equal(r.diffUrl,'https://github.com/georg-doc/kayfabizarro/compare/base...'+r.commit);
+ assert.ok(reads.some(x=>x[1]===r.commit&&x[2]===figpath));
+ assert.ok(reads.some(x=>x[1]==='base'&&x[2]===figpath));
+});
+test('confirmation refuses missing immutable base readback even when proposal file matches receipt',async()=>{
+ const a=adapter(),read=a.readFile;a.readFile=async(...args)=>a.writes&&args[1]==='base'?null:read(...args);
+ await assert.rejects(saveProposal(a,request(),auth,{now}),code('VERIFY_FAILED'));
+});
+test('replayed confirmation returns the same verified diff and commit without new writes',async()=>{
+ const a=adapter(),first=await saveProposal(a,request(),auth,{now});
+ const again=await saveProposal(a,request(),auth,{now:'2026-10-22T00:00:00.000Z'});
+ for(const key of ['branch','commit','diff','githubUrl','commitUrl','diffUrl'])assert.deepEqual(again[key],first[key]);
+ assert.equal(a.writes,1);
+});

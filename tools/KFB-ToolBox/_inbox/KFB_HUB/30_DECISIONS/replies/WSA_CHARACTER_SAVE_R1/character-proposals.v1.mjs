@@ -135,7 +135,17 @@ export async function saveProposal(adapter, request, auth, { now = new Date().to
     const commitInfo=await adapter.readCommit(REPOSITORY,ref.sha);
     const expected=[documentPath,receiptPath].sort();
     if(commitInfo.parentSha!==receipt.json.baseCommit || JSON.stringify([...commitInfo.changedPaths].sort())!==JSON.stringify(expected)) fail('VERIFY_FAILED','Unexpected parent or changed-file scope');
-    return { status: 'success', branch, commit: ref.sha, path: documentPath, existing: true, changed: receipt.json.changed };
+    // Build the confirmation from immutable provider reads, including the base.
+    // A receipt and document altered together must not certify a different edit.
+    const original = await adapter.readFile(REPOSITORY, receipt.json.baseCommit, documentPath);
+    if (!original || original.sha !== request.baseBlob || receipt.json.baseBlob !== request.baseBlob) fail('VERIFY_FAILED', 'Proposal base does not match the requested source');
+    const reconstructed = applyEdits(original.json, request, { now: receipt.json.date, actorId: auth.actorId, catalog });
+    if (digest(reconstructed.document) !== digest(written.json) || JSON.stringify(reconstructed.changed) !== JSON.stringify(receipt.json.changed)) fail('VERIFY_FAILED', 'Readback differs from the requested edits');
+    const diff = reconstructed.changed.map(path => ({ path, before: copy(at(original.json, path)), after: copy(at(written.json, path)) }));
+    const github = `https://github.com/${REPOSITORY}`;
+    return { status: 'success', branch, commit: ref.sha, path: documentPath, existing: true, changed: reconstructed.changed, diff,
+      githubUrl: `${github}/tree/${branch}`, commitUrl: `${github}/commit/${ref.sha}`,
+      diffUrl: `${github}/compare/${receipt.json.baseCommit}...${ref.sha}` };
   }
   const replay = await existing(); if (replay) return replay;
   const base = await adapter.readRef(REPOSITORY, REGISTER);
