@@ -228,3 +228,8 @@ Georg will das Repo privat stellen, seine öffentlichen Seiten müssen aber weit
 
 ## 22.10. · Bitte von WS-Audio (Status 8)
 - Die Neuaufnahmen C01–C12 (v2/v3 aus `combat_av_fix_r1/r2`, als `_lufs`) bitte ins Arena-Ton-Manifest aufnehmen. Das Spiel nutzt sie schon, der Arena-Kampf noch nicht.
+
+
+## 22.10. · Karten-Check: neuer slotOffset-Grund „edge-forward“ (V-628)
+- WSB trägt bei Halterungen, die wegen der Schneidenregel gedreht sind, `alsoReason: "edge-forward"` ein. Bitte diesen Grund im Karten-Check zulassen, neben „visible-interpenetration“.
+- K13 ist nach der Axt-Korrektur neu im privaten Branch: alle 5 Karten CONTRACT_PASS, Axt-Block_Attack und -Stab auf exclude.
