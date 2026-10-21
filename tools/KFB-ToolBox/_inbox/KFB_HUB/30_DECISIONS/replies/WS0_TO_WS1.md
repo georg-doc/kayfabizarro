@@ -1,5 +1,27 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (22.10.) · An WS1-Lead: Karte der Kampf-Module für V-618 (spart die Suche)
+**Repo `georg-doc/KFB-Combat-Arena` (privat), PR-Stapel:**
+
+| PR | Branch @ Commit | Inhalt | Basis |
+|---|---|---|---|
+| #23 | `wsa/arena-weapon-policy-r1-2026-10-20` @412269c | Waffen-Verträge V-581/V-582: Halterungen, Clip-Familien, Bogen-`release` | main |
+| #24 | `wsa/toysoldier-r3c-playable-2026-10-20` @f712f0d | K10 Pistole/Blaster spielbar, Soldat r3d. **Enthält #27** (alle K10-Waffen, native Ereignisse, `weaponDrop`). **Das ist der Arena-Stand zum Übernehmen.** | #23 |
+| #28 | `wsa/bow-death-b-2026-10-21` @e1a830e | Bogen `Death_B` (CI grün) | k10-weapon-families |
+| #25 | `wsa/openworld-modules-v584-2026-10-21` @cb0d93c | **4 eigenständige Combat-Module mit Vertragstests für die offene Welt**, inkl. Hit-Stop-Vertrag V-567. **Das ist euer Einstieg fürs Spiel.** | planning/open-world-combat-transfer |
+| #26 | `wsa/dark-fluffer-donor-v584-2026-10-21` @028dd00 | Dark Fluffer: 17 Cube-Spender, Front- und Spuck-Belege | main |
+
+- **Doku je Waffe** (Marken, Effekte, Grenzen): `_handover/K10_RUNTIME_2026-10-21/README.md` im Arena-Repo.
+- **Private Modelle und Töne:** `KFB-Stunt-Car-Race/assets/private`:
+  - `50_BLENDER/B50`, K10-Karten, Mündungsblitze unter `kaykit/Mystery_S4_Action_Figure/gltf/`;
+  - neu `50_BLENDER/K13/` (Nahkampf Rig_Large, Boss-Launch);
+  - Töne in `40_AUDIO/elevenlabs_r1/<set>_lufs/`.
+- **Combat-AV-Prototypen** (Georg PASS mit TUNE: Ankündigung, Kamera nah nur im Kampf, Abgang, Kill am Ort, Spieler-Treffer, Tusche, Tod-Inszenierung):
+  - Sie liegen auf `ws1/combat-av-r1`, **laut Prüfer D nur lokal, nicht gepusht.**
+  - **Prüfer D: bitte `ws1/combat-av-r1` pushen**, damit der Lead sie sieht. Die Schalter stehen in `replies/WS1_COMBAT_AV_R1_RETURN.md` (`?tele=1`, `?kam=nah`, `?abgang=1`, `?hurt=1`, `?ton=1`, `?tod=1`).
+- **Noch in Arbeit bei WSB, erst nach Georgs Abnahme einbauen:** K13-Axt-Korrektur, Boss-Move mit großen Zweihändern, Klingen-Prüfung `KFB_Edge` (V-626–V-628).
+
+
 # NEU OBEN (22.10.) · MVP-Site: GPT-Site/Stage statt Cloudflare (V-624)
 - **Georg hat Cloudflare gestoppt.** WSA work baut die spielbare Fassung wieder als GPT-Site bzw. Stage wie zuvor.
 - **Ihr habt das schon eingeplant.** Der Brief V-618 ist angepasst: Der Lead liefert `ws1/mvp-r1`, WSA die Stage.
