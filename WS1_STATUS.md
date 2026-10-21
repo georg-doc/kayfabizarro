@@ -3,6 +3,33 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 130 · 22.10. · JOB-ANMELDUNG an WS0 → WSB (Blender-MCP / Mac mini): Animationen und Feintuning für MVP und danach (Georg: „bitte die Jobs bei WS0 anmelden“)
+
+**Grundregel:** alles as-is mit Karte/Hash in den privaten Branch (`assets/private`), WS1 übernimmt 1:1. Keine eigenen Gesichtswerte. FB nur aus der ToolBox.
+
+| # | Job (WSB) | Wofür / Befund WS1 | Abgabe | Priorität |
+|---|---|---|---|---|
+| J-1 | **Oberkörper-Schussclips für FrizzleBob** (Rig_Medium): Ranged_1H/2H Shoot und Aim als Oberkörper-Familie (Masken ab spine), dazu Halte-Idle mit Waffe (statt Idle_A, Waffe hängt sonst nach unten) | Kampf R1: Der KayKit-Clip bewegt den ganzen Körper. Laufen und Schießen rutscht, in Luft/Flug ist Schießen deshalb gesperrt. | Clips + Karte, Marker fire_s je Clip | MVP |
+| J-2 | **Waffen-Halterung an FB neu messen** (HeroMan-Blaster, Pistole; später die übrigen K10-Karten) | Karten sind an Hero Man gemessen (`mount.slotOffset`, die Karte sagt selbst „an anderen Figuren neu prüfen“). Abstand Hand–Griff an FB: 6,9 cm Pistole / 8,4 cm Blaster. | FB-Variante je Karte (`families.fb`) | MVP |
+| J-3 | **floorLift-Tabellen für FB** zu den MC-Clips der Disco (hip_hop_a, wave_hip_hop_a, chicken_a, locking_hip_hop_a, idle_happy_a) | WSB hat das in K12 §4 angeboten. WS1 misst bis dahin zur Laufzeit nach der WSB-Regel (Füße −0,6 … +4 cm). | `fb.floorlift.json` (48 fps, V-596) | MVP |
+| J-4 | **Augenprofile Ritter (black_knight) und Dämon (demon_lord)** für die Disco | Beide fehlen in Georgs Batch und laufen heute mit Anker-Sitz (PROOF). Ritter: Augen im Visierschlitz. | Profile im Batch-Format oder Georg im Studio | MVP |
+| J-5 | **Marsch des Spielzeugsoldaten** (schon gemeldet, §121): Gewehr-Halterung für Walking_A/Idle_A oder Marsch-Clip mit geschultertem Gewehr | WS-NPC-Trupp heute ohne Gewehr | Halterung/Clip + Karte | MVP |
+| J-6 | **Scheinwerfer-Anker** der 14 Racer abnehmen bzw. nachmessen (8 mit `check` aus der Probe-Automatik) | WS1d baut die Scheinwerfer; Georg nimmt im Rig-Studio ab, WSB misst, wo unklar | `headlight-anchors` je Racer | nach MVP |
+| J-7 | **Fahrer im Dach** (Georg 22.10.): je Racer ein Sitz-Anker (Hüfte mittig im Dach) + Lenkrad-Griffpunkte L/R; Ein-/Aussteige-Clip nur bis zur Hüfte (Hineinhüpfen); Feder-Rigs für FB-Ohren und Alien-Augenstiele/Antennen (Fahrt-Kinetik wie Joyride Cabrio v17) | Kayfabe/Immersion: Figur sichtbar beim Fahren | Anker + Clips + Karte | nach MVP |
+| J-8 | **Nahkampf und weitere Waffen an FB**: Skeleton Blade (Jump_Chop/Diagonal/Horizontal/Stab), Armbrust, Action-Rifle, Gatling, Bögen, Zauberstäbe – je FB-Mount und ggf. Oberkörper-Variante | Kampf R2 nach dem MVP | Karten FB | nach MVP |
+| J-9 | **„Blödsinn!“-Knet-Lettering (D5) und Kreuz-Pupillen** – schon als Nachtrag 19 an WSB (WS0 §23:00) | Baustein „eigener Tod“ (Einbau nach dem MVP, mit Gegner-Schaden) | GLB + Karte | nach MVP |
+
+### Abnahme-Belege WS-NPC
+Mit Georgs Go gepusht: `georg-doc/KFB-Stunt-Car-Race`, Branch **`proofs/ws-npc-r1`** @a691133 (privat, eigener Stamm ohne Code).
+- `README.md` mit der Liste G-1…G-3 / A-1…A-7 und den Fragen an Georg;
+- Bilder, Clip `WS_NPC_PhaseD3_clip_terrain3.webm` (64 s), `unit-rumor.txt`.
+
+WS1-Belege folgen nach demselben Muster (`proofs/ws1-lead-r1`).
+
+### Stand MVP ws1/mvp-r1 @384964c
+- Kampf R1 gemergt; WS-Audio hat dazu die Mischung angepasst (kein doppelter Lehm-Treffer, Gruppen-K.o. über den Gruppen-Ton).
+- Als Nächstes WS1: Leistung (fps-Tabelle q=fast/standard/sharp in drei Szenen, dpr 2 wie Georgs Bildschirm) und Disco-Licht auf `kfb-groundfx` (WS1d).
+
 ## 129 · 22.10. nachts · Georgs Abnahmen an einer Stelle bei WS0 (Georg: „gib das an WS0, dann machen wir das dort“) · Liste WS-NPC
 
 **Quelle:** WS_NPC_STATUS §11 auf `ws-npc/status` @e1e48d4.
