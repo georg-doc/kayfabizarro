@@ -1,6 +1,7 @@
 # KFB Entscheidungen · Changelog (additiv, neueste oben, nie umschreiben)
 
 ## 2026-10-21
+- WSB QA-Korrektur K10: nur Prüfbilder ohne V-574-Versatz gerendert (Blaster, Armbrust, Gatling), neu als *_fix.png; Karten/mounts/Messwerte unverändert richtig. Harken Farmer B: feste Kippung je Clip erlaubt, sonst entfällt Harken (Digging + Interact/PickUp).
 - WSB K11b angenommen: Lorekeeper-NPC-Clips (Holding_C Lesen, Holding_B Nachschlagen, Umblättern gebaut 1,6 s mit Marken), Buch KayKit spellbook_open CC0 am handslot.r; Cast + Spiegel auf k11b; WS-NPC informiert.
 - WSB-Blocker gelöst: Quaternius Mushroom/Ghost (CC0) lokal aus dem gepinnten Commit c746a95 extrahiert nach KFB Combat Arena/_handover/V584_JOBS_2026-10-21/04-dark-fluffer/source/ (kein Download, nicht in Git). WSB wartet nach seiner Regel auf Georgs Ja, bevor er die Dateien nutzt.
 - V-591 NPC-Clips: Lesen Holding_C (Buch liegt auf), Nachschlagen Holding_B statt Use_Item, Harken höchstens 5 cm Zinken.
