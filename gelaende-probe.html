@@ -189,6 +189,7 @@ kbd { font: 500 11px var(--f-mono); color: var(--ink); background: var(--chip); 
         <div class="row"><label for="aurora">Polarlicht</label><select id="aurora"><option value="1">nachts</option><option value="2">immer</option><option value="0">aus</option></select></div>
         <label class="check"><input type="checkbox" id="flare"> Blendenflecken (Blick zur Sonne)</label>
         <label class="check"><input type="checkbox" id="hero" checked> Heldenfarbe: Racer-Lack in KFB-Rot</label>
+        <div class="row"><label for="carlook">Fahrzeug-Look</label><select id="carlook"><option value="0" selected>Original (Meshy-Werte je Modell)</option><option value="1">einheitlich: Lack (Vorschlag A)</option><option value="2">einheitlich: Knete matt (Vorschlag B)</option></select></div>
         <label class="check"><input type="checkbox" id="retina"> Retina-Schärfe (×2, kostet etwa die halbe Bildrate)</label>
         <div class="row"><label for="perfLevel">Leistungsstufe</label><select id="perfLevel"><option value="">– eigene Auswahl –</option><option value="hoch">Hoch: alles an, Retina-Schärfe</option><option value="mittel">Mittel: alles an, normale Schärfe (empfohlen)</option><option value="niedrig">Niedrig: wie Mittel, ohne Brösel und Steinband</option></select></div>
         <div class="row"><button type="button" id="bench">Leistung messen (≈ 2 Min., im Fahrmodus stehen lassen)</button><button type="button" id="benchCopy" disabled>Tabelle kopieren</button></div>
@@ -2367,10 +2368,11 @@ function createLightPoolKit(THREE, { max = 16 } = {}) {
     float v=f*uBands*mix(1.0,0.55,uFlowDown)+0.8*length(q)+tt*0.6+hn*uBands*mix(0.9,2.4,uFlowDown)+uFlowDown*uTimeT*0.035*uFlow; v+=0.22*sin(v*1.7+r.x*2.0);
     float idx=floor(v), k=fract(v); float aw=fwidth(v)*1.1+1e-4;
     float i6=mod(idx,6.0), j6=mod(idx+1.0,6.0);
-    vec3 cAa=i6<0.5?uA_peak:(i6<1.5?uA_sand:(i6<2.5?uA_low:(i6<3.5?uA_mid:(i6<4.5?uA_high:mix(uA_water,uA_mid,0.35)))));
-    vec3 cBa=i6<0.5?uB_peak:(i6<1.5?uB_sand:(i6<2.5?uB_low:(i6<3.5?uB_mid:(i6<4.5?uB_high:mix(uB_water,uB_mid,0.35)))));
-    vec3 cAb=j6<0.5?uA_peak:(j6<1.5?uA_sand:(j6<2.5?uA_low:(j6<3.5?uA_mid:(j6<4.5?uA_high:mix(uA_water,uA_mid,0.35)))));
-    vec3 cBb=j6<0.5?uB_peak:(j6<1.5?uB_sand:(j6<2.5?uB_low:(j6<3.5?uB_mid:(j6<4.5?uB_high:mix(uB_water,uB_mid,0.35)))));
+    /* 6. Band: Geländeton statt Wasser-Mischton (Georg 21.10.: türkise Flächen über dem Wasser lesen sich als Wasser, wo keins ist) */
+    vec3 cAa=i6<0.5?uA_peak:(i6<1.5?uA_sand:(i6<2.5?uA_low:(i6<3.5?uA_mid:(i6<4.5?uA_high:mix(uA_mid,uA_high,0.5)))));
+    vec3 cBa=i6<0.5?uB_peak:(i6<1.5?uB_sand:(i6<2.5?uB_low:(i6<3.5?uB_mid:(i6<4.5?uB_high:mix(uB_mid,uB_high,0.5)))));
+    vec3 cAb=j6<0.5?uA_peak:(j6<1.5?uA_sand:(j6<2.5?uA_low:(j6<3.5?uA_mid:(j6<4.5?uA_high:mix(uA_mid,uA_high,0.5)))));
+    vec3 cBb=j6<0.5?uB_peak:(j6<1.5?uB_sand:(j6<2.5?uB_low:(j6<3.5?uB_mid:(j6<4.5?uB_high:mix(uB_mid,uB_high,0.5)))));
     float hA=fract(sin(idx*12.9898+3.1)*43758.5453), hB=fract(sin((idx+1.0)*12.9898+3.1)*43758.5453);
     vec3 ca=mix(cAa, cBa, smoothstep(hA*0.8, hA*0.8+0.2, tb)), cb=mix(cAb, cBb, smoothstep(hB*0.8, hB*0.8+0.2, tb));
     vec3 o=mix(ca, cb, smoothstep(1.0-aw, 1.0, k));
@@ -2760,7 +2762,9 @@ ${window.KFB_FLUID.glsl}
            Weltort, Fließrichtung (Stillwasser: 0), Meter zum Ufer (Tiefe ÷ Geländeneigung, Neigung aus den Bildschirm-Ableitungen), Fließkoordinaten */
         vec2 gx=dFdx(wp), gy=dFdy(wp); float ex=dFdx(dep), ey=dFdy(dep), det=gx.x*gy.y-gx.y*gy.x;
         vec2 gw=abs(det)>1e-9 ? vec2(ex*gy.y-gx.y*ey, gx.x*ey-ex*gy.x)/det : vec2(0.0);
-        if(dep<-dw) discard;
+        /* Uferlinie = Schnitt des GEZEICHNETEN Geländes mit der Wasserfläche (Tiefentest), nicht die eigene Höhenrechnung: das Dreiecksnetz liegt stellenweise tiefer als hgt(),
+           dort fehlte sonst das Wasser und der dunkle Grund lag offen (Georg 21.10.: verschmierte Uferfarben). Tiefe nur noch für Farbe und Schaum, nie zum Ausschneiden */
+        if(uWKit<0.5 && dep<-dw) discard;
         if(uWKit>0.5){ float sdr=max(dep,0.0)/max(length(gw),0.06), wob=0.5+0.5*snoise(wp*0.21+uSeed*0.3), sw=fwidth(sdr)+1e-3, e1=0.9+0.45*wob, e2=2.6+0.6*wob;
           /* Design-Kontext: der Kit rechnet Farbe, Schaum und Deckkraft stetig aus dem Uferabstand; gestuft eingespeist ergibt das drei klare Töne
              (Flachwasser · Kante · Tiefe) mit gemalter, welliger Grenze – dieselbe Kantenlogik wie die Fließfarben-Bänder, Kit-Shader unverändert */
@@ -2769,7 +2773,7 @@ ${window.KFB_FLUID.glsl}
           vec3 kc=kf.rgb; float wsv=wShadow(vP); kc=mix(mix(kc*0.62, uContact, 0.18), kc, wsv);   /* Schatten im Wasserton, nie schwarz */
           if(uSky2>0.5) kc=applyAir(kc, vP, 1.0);
           float ka=max(kf.a, mix(0.8, 0.94, smoothstep(e1-sw, e1+sw, sdr)));   /* deckender als im Kit: über unserem bunten Gelände machte die Kit-Durchsicht (0,40–0,74) die Küste matschig */
-          gl_FragColor=vec4(kc, ka*smoothstep(-dw,dw,dep)); return; }
+          gl_FragColor=vec4(kc, ka); return; }
         float gum=step(0.5,uFlKind)*step(uFlKind,1.5), acid=step(1.5,uFlKind);
         vec3 rd=normalize(vP-cameraPosition);
         float drift=mix(1.0, mix(0.3,0.6,acid), max(gum,acid)), str=mix(0.15, mix(0.04,0.08,acid), max(gum,acid))*smoothstep(0.0,0.8,dep)*(1.0-smoothstep(60.0,260.0,length(vP-cameraPosition)));   /* fern ruhig: kein Flimmern */
@@ -3097,7 +3101,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   function readUI() {
     for (const k of NUM) S[k] = parseFloat($(k).value);
     for (const k of BOOL) S[k] = $(k).checked;
-    S.palA = $('palA').value; S.palB = $('palB').value; S.tod = $('tod').value; S.tempo = $('tempo').value; S.gshape = +$('gshape').value; S.gfill = +$('gfill').value; S.gcol = +$('gcol').value; S.gtex = +$('gtex').value; S.fstage = +$('fstage').value; S.kus = +$('kus').value; S.moon = +$('moon').value; S.aurora = +$('aurora').value; S.cform = +$('cform').value; S.fluid = +$('fluid').value; S.flow = +$('flow').value; S.flowtree = +$('flowtree').value; S.discoMode = +$('discoMode').value; S.bands = +$('bands').value; S.voxs = +$('voxs').value; S.voxh = +$('voxh').value < 0 ? S.voxs : +$('voxh').value; S.voxhSel = +$('voxh').value; S.dbg = +$('dbg').value;
+    S.palA = $('palA').value; S.palB = $('palB').value; S.tod = $('tod').value; S.tempo = $('tempo').value; S.gshape = +$('gshape').value; S.gfill = +$('gfill').value; S.gcol = +$('gcol').value; S.gtex = +$('gtex').value; S.fstage = +$('fstage').value; S.kus = +$('kus').value; S.moon = +$('moon').value; S.aurora = +$('aurora').value; S.cform = +$('cform').value; S.carlook = +$('carlook').value; S.fluid = +$('fluid').value; S.flow = +$('flow').value; S.flowtree = +$('flowtree').value; S.discoMode = +$('discoMode').value; S.bands = +$('bands').value; S.voxs = +$('voxs').value; S.voxh = +$('voxh').value < 0 ? S.voxs : +$('voxh').value; S.voxhSel = +$('voxh').value; S.dbg = +$('dbg').value;
     const sd = S.seed; S.sx = fract(Math.sin(sd * 12.9898) * 43758.5453) * 200 - 100; S.sy = fract(Math.sin(sd * 78.233) * 12345.6789) * 200 - 100;
   }
   /* Schatten nur für Bewegtes (Georg 21.10.: „brauchen wir primär für Höhen- und Fahrgefühl“): ruhende Welt wirft nicht, Schattenkarte ±20 m statt ±55 m → schärfer und billiger */
@@ -3106,13 +3110,14 @@ uniform vec3 uHorizon; ${GLSL_SKY}
     if (typeof worldRoot !== 'undefined') worldRoot.traverse((o) => { if (!o.isMesh) return; if (o.userData.cs0 === undefined) o.userData.cs0 = o.castShadow; o.castShadow = on ? false : o.userData.cs0 })
     const e = on ? 20 : 55; Object.assign(sun.shadow.camera, { left: -e, right: e, top: e, bottom: -e }); sun.shadow.camera.updateProjectionMatrix() }
   /* CODE_PERF_R1 F5: Diorama/Felsen nur neu aufbauen, wenn ein Regler Gelände oder Platzierung ändert (vorher 8 ms je Ereignis, beim Ziehen 43–53 ms). Unbekannte Schlüssel lösen weiter aus. */
-  const VISUAL_ONLY = new Set(['sunel', 'sgrad', 'shadowdyn', 'retina', 'claytex', 'hero', 'toon', 'painted', 'puffs', 'trails', 'rings', 'ground', 'shadows', 'edges', 'sky2', 'flowspeed', 'flare', 'cards', 'flowdown', 'tod', 'tempo', 'moon', 'cform', 'fluid'])
+  const VISUAL_ONLY = new Set(['sunel', 'sgrad', 'shadowdyn', 'retina', 'claytex', 'hero', 'toon', 'painted', 'puffs', 'trails', 'rings', 'ground', 'shadows', 'edges', 'sky2', 'flowspeed', 'flare', 'cards', 'flowdown', 'tod', 'tempo', 'moon', 'cform', 'fluid', 'carlook'])
   const PUSHSIG = { dio: null, rock: null }
   function geoSignature() { let k = ''; for (const key of Object.keys(S).sort()) if (!VISUAL_ONLY.has(key)) k += key + '=' + S[key] + ';'; return k }
   function pushUniforms() {
     try { applyShadowDyn() } catch (e) {}
     { const pr = Math.min(window.devicePixelRatio || 1, S.retina ? 2 : 1.25);   /* 1,25 kostet gemessen kaum mehr als 1 */ if (renderer.getPixelRatio() !== pr) { renderer.setPixelRatio(pr); try { resize() } catch (e) {} } }
     try { heroApply() } catch (e) {}   /* beim ersten Aufruf gibt es noch keinen Wagen */
+    try { carLookApply() } catch (e) {}
     U.uScale.value = S.scale; U.uAmp.value = S.amp; U.uOct.value = S.oct; U.uRidge.value = S.ridge; U.uWarp.value = S.warp; U.uMacro.value = S.macro; U.uValley.value = S.valley; U.uPlateau.value = S.plateau;
     U.uSteps.value = S.steps; U.uSharp.value = S.sharp; U.uSeed.value.set(S.sx, S.sy); U.uWater.value = S.water; U.uSoft.value = S.soft; U.uCliff.value = 1 - Math.cos(S.cliff * Math.PI / 180);
     U.uStrata.value = S.strata ? 1 : 0; U.uToon.value = S.toon ? 1 : 0; U.uMix.value = S.mix ? 1 : 0; U.uGrid.value = S.grid ? 1 : 0;
@@ -3160,7 +3165,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
   function setUI(p) {
     for (const k of NUM) if (p[k] != null) $(k).value = p[k];
     for (const k of BOOL) if (p[k] != null) $(k).checked = !!p[k];
-    if (p.palA) $('palA').value = p.palA; if (p.palB) $('palB').value = p.palB; if (p.tod) $('tod').value = p.tod; if (p.tempo) $('tempo').value = p.tempo; if (p.gshape != null) $('gshape').value = p.gshape; if (p.gfill != null) $('gfill').value = p.gfill; if (p.gcol != null) $('gcol').value = p.gcol; if (p.gtex != null) $('gtex').value = p.gtex; if (p.fstage != null) $('fstage').value = p.fstage; if (p.kus != null) $('kus').value = p.kus; if (p.moon != null) $('moon').value = p.moon; if (p.voxs != null) $('voxs').value = p.voxs; if (p.flow != null) $('flow').value = p.flow; if (p.flowtree != null) $('flowtree').value = p.flowtree; if (p.bands != null) $('bands').value = p.bands; if (p.voxhSel != null) $('voxh').value = p.voxhSel; if (p.dbg != null) $('dbg').value = p.dbg;
+    if (p.carlook != null) $('carlook').value = p.carlook; if (p.palA) $('palA').value = p.palA; if (p.palB) $('palB').value = p.palB; if (p.tod) $('tod').value = p.tod; if (p.tempo) $('tempo').value = p.tempo; if (p.gshape != null) $('gshape').value = p.gshape; if (p.gfill != null) $('gfill').value = p.gfill; if (p.gcol != null) $('gcol').value = p.gcol; if (p.gtex != null) $('gtex').value = p.gtex; if (p.fstage != null) $('fstage').value = p.fstage; if (p.kus != null) $('kus').value = p.kus; if (p.moon != null) $('moon').value = p.moon; if (p.voxs != null) $('voxs').value = p.voxs; if (p.flow != null) $('flow').value = p.flow; if (p.flowtree != null) $('flowtree').value = p.flowtree; if (p.bands != null) $('bands').value = p.bands; if (p.voxhSel != null) $('voxh').value = p.voxhSel; if (p.dbg != null) $('dbg').value = p.dbg;
   }
   function markPreset(name) { for (const b of presetBox.children) b.setAttribute('aria-pressed', b.dataset.preset === name ? 'true' : 'false') }
   function applyPreset(name) { const grid = $('grid').checked; setUI(PRESETS[name]); $('grid').checked = grid; markPreset(name); update(); setTimeout(() => { try { settleCar() } catch (e) {} }, 0) }   /* neues Gelände: Wagen auf befahrbaren Grund (QA P2: Grat-Gebirge startete auf 69°) */
@@ -3304,6 +3309,24 @@ uniform vec3 uHorizon; ${GLSL_SKY}
         for (let i = 0, q = 0; i < d.length; i += 4, q++) { const k = M[q]; if (k <= 0.001) continue; const [, sa, v] = hsv(d[i] / 255, d[i + 1] / 255, d[i + 2] / 255)
           const c = new THREE.Color().setHSL(hh.h, Math.max(0.55, sa * 1.3), Math.min(0.62, v * 0.62)); d[i] = d[i] + (c.r * 255 - d[i]) * k; d[i + 1] = d[i + 1] + (c.g * 255 - d[i + 1]) * k; d[i + 2] = d[i + 2] + (c.b * 255 - d[i + 2]) * k }
         cx.putImageData(id, 0, 0); const t = new THREE.CanvasTexture(cv2); t.flipY = mp.flipY; t.encoding = mp.encoding; t.wrapS = mp.wrapS; t.wrapT = mp.wrapT; t.anisotropy = mp.anisotropy; mt.userData.mapOrig = mp; mt.userData.mapHero = t; mt.userData.heroDone = true; mt.map = S.hero === false ? mp : t; mt.needsUpdate = true } catch (e) { console.warn('heroColor', e) } } }) }
+  /* Fahrzeug-Look einheitlich (Georg 21.10.: „andere Beleuchtung“, Graffiti-Kreuzer sieht anders aus): Meshy legt Metall je Modell zwischen 45 und 98 % der Fläche an, die Grundhelligkeit
+     reicht von 0,22 bis 0,46 (tests/mrstats.mjs). Ohne Spiegelumgebung wird Metall fast schwarz – je mehr Metall, desto dunkler und fremder wirkt das Modell.
+     A = Lack: Metall ×0,35, Rauheit ≥ 0,5, Spiegelung von Himmel und Boden (Farben der Hemisphäre). B = Knete matt: kein Metall, Rauheit ≥ 0,78. Beide: Grundhelligkeit auf 0,33 angeglichen (×0,85…1,5). */
+  let carEnv = null, carEnvKey = ''
+  function carEnvTex() { const key = hemi.color.getHexString() + hemi.groundColor.getHexString(); if (carEnv && carEnvKey === key) return carEnv
+    const W = 64, H = 32, d = new Uint8Array(W * H * 4), top = hemi.color.clone(), hor = hemi.color.clone().lerp(new THREE.Color('#ffffff'), 0.35), bot = hemi.groundColor.clone()
+    for (let y = 0; y < H; y++) { const v = 1 - (y + 0.5) / H, c = v > 0.5 ? hor.clone().lerp(top, (v - 0.5) * 2) : bot.clone().lerp(hor, Math.pow(v * 2, 3)); for (let x = 0; x < W; x++) { const k = (y * W + x) * 4; d[k] = c.r * 255; d[k + 1] = c.g * 255; d[k + 2] = c.b * 255; d[k + 3] = 255 } }
+    const t = new THREE.DataTexture(d, W, H); t.mapping = THREE.EquirectangularReflectionMapping; t.flipY = true; t.needsUpdate = true; const pm = new THREE.PMREMGenerator(renderer), rt = pm.fromEquirectangular(t)
+    if (carEnv) carEnv.dispose(); carEnv = rt.texture; carEnvKey = key; t.dispose(); pm.dispose(); return carEnv }
+  function carLookPrep(scn) { scn.traverse((m) => { if (!m.isMesh) return; for (const mt of [].concat(m.material)) { if (mt.userData.cl) continue; const mp = mt.map, mr = mt.metalnessMap || mt.roughnessMap; if (!mp || !mp.image || !mr || !mr.image) continue
+    try { const lumOf = (img) => { const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d'); x.drawImage(img, 0, 0, 64, 64); const d = x.getImageData(0, 0, 64, 64).data; let s = 0, n = 0; for (let i = 0; i < d.length; i += 4) { if (d[i + 3] < 10) continue; s += (d[i] + d[i + 1] + d[i + 2]) / 765; n++ } return n ? s / n : 0.33 }
+      const gain = Math.min(1.5, Math.max(0.85, 0.33 / Math.max(0.05, lumOf(mp.image)))), img = mr.image, W = Math.min(1024, img.width), H = Math.round(img.height * W / img.width)
+      const mk = (metal, rough) => { const c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d'); x.drawImage(img, 0, 0, W, H); const id = x.getImageData(0, 0, W, H), d = id.data
+        for (let i = 0; i < d.length; i += 4) { d[i + 1] = Math.max(d[i + 1], rough * 255); d[i + 2] = d[i + 2] * metal } x.putImageData(id, 0, 0); const t = new THREE.CanvasTexture(c); t.flipY = mr.flipY; t.wrapS = mr.wrapS; t.wrapT = mr.wrapT; return t }
+      mt.userData.cl = { gain: +gain.toFixed(3), mr, A: mk(0.35, 0.5), B: mk(0, 0.78), mode: 0 }; (window.__carLook = window.__carLook || {})[mt.name || m.name] = mt.userData.cl.gain } catch (e) { console.warn('carLook', e) } } }) }
+  function carLookApply() { if (!carHolder) return; const mode = S.carlook | 0, env = mode === 1 ? carEnvTex() : null
+    carHolder.traverse((m) => { if (m.isMesh) for (const mt of [].concat(m.material)) { const cl = mt.userData.cl; if (!cl) continue; const tex = mode === 1 ? cl.A : mode === 2 ? cl.B : cl.mr
+      mt.metalnessMap = mt.roughnessMap = tex; mt.color.setScalar(mode ? cl.gain : 1); mt.envMapIntensity = 0.55; if (mt.envMap !== env || cl.mode !== mode) { mt.envMap = env; cl.mode = mode; mt.needsUpdate = true } } }) }
   function heroApply() { if (!carHolder) return; carHolder.traverse((m) => { if (m.isMesh) for (const mt of [].concat(m.material)) if (mt.userData.heroDone) { mt.map = S.hero === false ? mt.userData.mapOrig : mt.userData.mapHero; mt.needsUpdate = true } }) }
   async function loadCar(id) {
     const info = RACERS.find((r) => r.id === id) || RACERS[0]; loading = true; loadErr = '';
@@ -3314,7 +3337,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
         const url = `https://raw.githubusercontent.com/georg-doc/kayfabizarro/9bd8e0376105b29375377ea3052e33528d50fbb6/media/3D_Assets/MeshyModels/vehicles/${info.id}/${info.id}_browser.v3.glb`;
         const buf = await fetch(url).then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.arrayBuffer() });
         scn = await new Promise((res, rej) => loader.parse(buf, '', (g) => res(g.scene), rej));
-        scn.traverse((m) => { if (m.isMesh) { m.frustumCulled = false; m.castShadow = true } }); castFront(scn); scn.traverse((m) => { if (m.isMesh) for (const mm of [].concat(m.material)) addGrounding(mm, 'plane') }); heroColor(scn); cache.set(info.id, scn);
+        scn.traverse((m) => { if (m.isMesh) { m.frustumCulled = false; m.castShadow = true } }); castFront(scn); scn.traverse((m) => { if (m.isMesh) for (const mm of [].concat(m.material)) addGrounding(mm, 'plane') }); carLookPrep(scn); heroColor(scn); cache.set(info.id, scn);
       }
       while (squash.children.length) squash.remove(squash.children[0]);
       for (const p of plumes) for (const m of p.mats) m.dispose();
