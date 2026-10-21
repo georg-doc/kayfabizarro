@@ -79,3 +79,8 @@ Alle Prompts enden mit „…, cartoon clay world, warm and handmade, isolated, 
 - Der Prompt-Zusatz „LOUD“ wirkt nicht (5 von 8 Nachdrehs sind leiser).
 - Bitte auf Lautheit normieren (etwa −16 LUFS je Einzelklang), nicht auf die Spitze.
 - Die `_norm/`-Ordner im privaten Branch enthalten nur Reports, keine Dateien.
+
+## Georgs Urteil (21.10., nach Hörprobe Vorher/Nachher)
+**PASS mit TUNE später** für „Klang je Waffe“ (Top-10 Nr. 1).
+- TUNE 1: Einige Schüsse klingen noch nach hohem „Piu-Piu“. Vorschlag: Anschlag tiefer stimmen (Rate ×0,8–0,85), mehr Körper-Ebene, Laser-artige Ebenen leiser.
+- TUNE 2: Das Würfelrollen als KFB-Kennung anpassen. Vorschlag: kurzer Würfel-Klick als Körper-Ebene (Lücke L6 `dice_flick`) statt 1,4 s Schütteln.
