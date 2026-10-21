@@ -45,3 +45,23 @@ Public delivery primary existing GPT Site if applicable; Cloudflare only if name
 CURRENT: design only. 0 production editor tests, 0 input device tests, 0 source-isolated rendered browser demos, 0 Comic (Re)Motion tests, 0 public Stage/Site validations. GitHub/Dropbox source discovery is documentary evidence only.
 Unresolved: actual KFB brush-tool owner and animation owner paths, exact p5.brush fidelity against Procreate, ownership and accessibility of all 2,000+ assets, per-brush public distribution permissions, missing proprietary grain references, Apple Pencil platform behavior, real rendering performance.
 One next gate: WS0 identify existing ToolBox brush authoring and Comic (Re)Motion owners and authorize one isolated CRAYONIC drawing/export vertical slice with **private source** and source-isolated visual proof, before any public asset or Site release.
+
+## Additive R1.1 · 2026-10-21 · .brushset + older MegaPack source
+Georg supplied `GvW_Comic_Ink_Brushes_02.brushset` (private chat file) and pointed to an older historical MegaPack Dropbox folder.
+
+### Actual local brushset container check
+- Source file name: `GvW_Comic_Ink_Brushes_02.brushset`; 21,637,576 bytes; valid ZIP.
+- ZIP entries 213; 42 `Brush.archive` (21 active + 21 under `Reset/`), 21 active `Shape.png`, one active `Grain.png`, and `brushset.plist`. All 21 active archives begin with binary plist signature. Neither 42 archives nor 170 PNGs represent 42/170 unique brushes.
+- Treat active vs Reset resources separately. Stable import ID should include source set identity, per-brush UUID, and archive content digest; avoid duplicate reset brush counts.
+- Validation must safely reject zip-slip paths, compressed archive bombs, malformed plists, untrusted filenames/nested archives and huge textures; cap count, decompressed size and decoded pixels. Preserve group/order metadata when present.
+- Reader API: `brushset → inspect bundle → 21 brush records → shape/grain asset-resolution + archived dynamics → normalized private registry → selected simulation variants`. Make importer compatible with single `.brush` and `.brushset`, without leaking brush binaries/shape textures into public bundles.
+
+### Second Dropbox source · historical MegaPack
+- User shared https://www.dropbox.com/scl/fo/hf1uvd0swkncvbfp2uvo6/AHObs4VfBv3yMoObF36AauI?rlkey=5unj3mgsqzcykyhe3f5bnsnfx&dl=0
+- Connected Dropbox shared-link lookup resolves to folder `Georg's Procreate MEGAPACK Brushes & Swatches  In Order`, path `/georg's procreate megapack brushes & swatches  in order`, audience public, download allowed, access_level edit. No contents scan, asset download or exact item count done; older release version per Georg.
+- Catalog must support multiple source roots and historical lineage: sourceRoot, packVersion, setId, brushId, slug, original title, hash, canonical/superseded status, format, provenance, effective license/public-demo approval.
+- Resolve duplicates by real identity/content hashes, NOT only names. Distinguish same-named revised presets and older variants. Swatch files are palette sources, not brushes. Never automatically overwrite a newer brush with old MegaPack data.
+- Protect public site from edit-capable Dropbox link/token leakage, and do not embed original commercial brush or derived stamp files without Georg's explicit distribution policy.
+
+### Extended gate
+This is a source-inspection and design-only increment, not a production import. Keep the original single next gate: WS0 owner routing + private source-isolated CRAYONIC draw/undo/PNG vertical slice. .brushset batch parser and multi-root catalog are immediate successor phases, Comic (Re)Motion remains optional after working paint export.
