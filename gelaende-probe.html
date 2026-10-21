@@ -3099,7 +3099,7 @@ uniform vec3 uHorizon; ${GLSL_SKY}
         for (const K of KUL) { const C = K.c || (K.c = { x: cx, z: cz }), R = K.R * sc; C.x += (cx - C.x) * (1 - Math.exp(-dt * 0.15)); C.z += (cz - C.z) * (1 - Math.exp(-dt * 0.15))
           const dx = cx - C.x, dz = cz - C.z, dl = Math.hypot(dx, dz), mx = 0.3 * R; if (dl > mx) { C.x = cx - dx * mx / dl; C.z = cz - dz * mx / dl }   // verzögert mitführen = Parallaxe, nie erreichbar
           K.m.position.set(C.x - P.x, lift, C.z - P.z); K.m.scale.setScalar(sc) } } }
-    dome.position.copy(camera.position); SKY.uTime.value = t; FLOWT += dt * (1 + (S.flowspeed ? Math.min(6, Math.hypot(P.vf, P.vl, P.fly ? P.vy : 0) / 8) : 0)); U.uTimeT.value = FLOWT; U.uTimeR.value = t;   // Fließuhr: im Stand sanft, mit Tempo schneller SKY.uCamXZ.value.set(P.x, P.z);
+    dome.position.copy(camera.position); SKY.uTime.value = t; FLOWT += dt * (1 + (S.flowspeed ? Math.min(6, Math.hypot(P.vf, P.vl, P.fly ? P.vy : 0) / 8) : 0)); U.uTimeT.value = FLOWT; U.uTimeR.value = t;   /* Fließuhr: im Stand sanft, mit Tempo schneller */ SKY.uCamXZ.value.set(P.x, P.z);   /* stand vorher hinter einem //-Kommentar und lief nie (Audit C, 21.10.) */
     scene.fog.near = U.uFogNear.value * 2.2; scene.fog.far = U.uFogFar.value * 3.4; // Knet-Wolken bleiben weiter sichtbar als das Gelände
     { const cb = S.amp + 70, k = +S.cstretch || 2.4; let dh = P.yaw - CLOUDH.th; dh = Math.atan2(Math.sin(dh), Math.cos(dh)); CLOUDH.th += dh * (1 - Math.exp(-dt / 7))   // Richtung folgt der Flugrichtung langsam (≈7 s)
       const ax = Math.sin(CLOUDH.th), az = Math.cos(CLOUDH.th), cx = camera.position.x + P.x, cz = camera.position.z + P.z
