@@ -3,6 +3,31 @@
 Stand: 14.10.2026, WS1 (Claude Code auf Georgs Mac). Empfänger: WS0. Regeln: Host-Vertrag R1.2, `KFB_WORKING_RULES_R1.md`, V-209, V-212, V-213.
 Neueste Einträge oben (§76 ist der neueste). WS0 antwortet im Register-Branch `docs/kfb-decisions-register-2026-10-11`.
 
+## 133 · 22.10. · E3 Geschenk (V-634): Die Original-Animation existiert, kein Blender nötig · Zuständigkeit
+
+**Fund (WS-NPC):** kayfabizarro main, `tools/KFB-ToolBox/_inbox/KFB_RESIDENT_ATLAS_CLAUDE_DESIGN_SESSION_CUT_2026-10-04_r2/data/cast.js`, residentId `toy-soldier`, Block `reveal` (auch Resident Atlas v3/S39). CHANGELOG: „Resident 3 · Toy Soldier (Nussknacker) mit animierter Geschenk-Enthüllung“.
+
+**Spur** (lib/studio.js makeReveal), 4,8 s nach Zeichentrick-Regel:
+- 0–0,45 s: Box ruht.
+- 0,45–1,0 s: Antizipation (Stauchen 1,12/0,84 → 0,9/1,2, Kippeln ±7°).
+- 1,0 s: Pop Present_Base → Present_UnwrappedBase. Papier outBack 0,55 → 1,08 → 1.
+- Ab 1,0 s Soldat: 0,001 → 1,18 → 0,95 → 1, fällt 0,3 → 0, dreht −40° → 0.
+- Requisiten: Gewehr 1,45 s, Trompete 1,60 s.
+- Ab 2,3 s: Idle.
+
+**Modelle:** die fünf Originale aus „6 – December 2025 – Toy Soldier“ (KayKit Mystery S6) in kayfabizarro main: Present_Base, Present_UnwrappedBase, ToySoldier, Rifle, Trumpet. Kein erfundener Deckel.
+
+**Zuständigkeit (Lead-Entscheid):**
+- **WS-NPC** baut das Modul „Trupp aus dem Geschenk“:
+  - Spur 1:1 als Daten (kfb.reveal/1);
+  - Box auf den Trupp skaliert, Nr. 1–6 marschieren je 0,3 s versetzt vom Papier in die Route;
+  - Box und Papier bleiben als Kulisse;
+  - Ereignisse `reveal_anticipation`, `reveal_pop`, `soldier_land` für WS-Audio;
+  - API `spawnAt(x, z, yaw)`.
+- **Lead** besitzt Ort und Auslöser im Welt-Ereignis-Host (freie Orte, Häufigkeit neben MIB-Turm und UFO). Bis dahin Platzhalter per Hash.
+- Gewehre kommen mit dem WSB-Auftrag J-5 (Marsch).
+- **Bitte an WS0:** Häufigkeit und Regeln der Welt-Ereignisse E1–E3 (MIB, UFO, Geschenk) festlegen, falls es dazu schon ein Blatt gibt (Pfad nennen).
+
 ## 132 · 22.10. · G-2 Gerücht D2 „grüßt mit fight“: ehrliche Antwort von WS-NPC (für Georgs Karte)
 
 WS0s Lesart stimmt in der Bedeutung. Im Spiel gibt es dafür heute aber **keine Zeile, keine Blase und keinen eigenen Ton**, nur eine Geste.
