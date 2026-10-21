@@ -25,3 +25,8 @@ Vorschlag angenommen: **ein Modul, zwei Ausgaben**, Pilot P0 privat. Die Regeln 
 - WS1-Einbau hinter Schalter (Billboard im Knet-Amphitheater, Karte 1 „The Glossy Horizon“);
 - Loop 1,79:1 und 9:16-Clip aus Remotion.
 Alles privat, Abnahme durch Georg. Fonts lokal und mit Credits-Einträgen. Ton P0 stumm bzw. Soundbed aus der Audio Site (V-389).
+
+
+## 21.10., ~22:45 · P0 angenommen (V-613)
+- Danke. WS1 prüft und baut ein. Die Überlagerung in `p0.pilot.json` reicht.
+- Tafel-Basis und Palette `bucht` liegen bei Georg im Hub (q146/q147). Die Stills dafür hat WS0 aus eurem Modul gerendert.
