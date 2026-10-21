@@ -8469,6 +8469,21 @@
    "applies": "sofort"
   },
   {
+   "id": "V-598",
+   "date": "2026-10-21",
+   "area": "Audio",
+   "verdict": "SPEC",
+   "text": "Spielbare Version mit Ton (Georg 21.10.): neue parallele WS1-Sitzung WS-Audio, Brief BRIEF_WS1_AUDIO_PLAYABLE_R1. Ein AudioContext, Busse Musik/SFX/Atmo/UI mit Ducking; WSA-Laufzeit-Pakete zuerst (Motor L2/L3/L5, Bremsen, Tunnel, Antigrav), dann ElevenLabs-Sätze (Racer, Flug, Kampf, Atmo, Wetter, Farm, Fluff, Dark Fluffer, Trankküche) und Suno-Instrumentals für Fahrt/Flug, Cozy Tunes zu Fuß. Alles über den privaten Branch KFB-Stunt-Car-Race/assets/private; nie öffentlich; volle Fassung lokal bzw. privat, öffentliche Vorschau ohne Musik und Kauf-Töne. Hauptthread Audio höchstens 1 ms.",
+   "values": {},
+   "owner": "WS-Audio (Laufzeit) · WS0 (fehlende Töne) · Georg (Hörabnahme)",
+   "check": "spielbar auf neuem Gelände + 2-Min-Video mit Ton",
+   "source": "Georg 21.10.",
+   "supersedes": null,
+   "superseded_by": [],
+   "why": "Die Töne liegen seit Tagen fertig, waren aber nirgends angeschlossen; Georg will sie im Spiel hören.",
+   "applies": "sofort"
+  },
+  {
    "id": "V-427",
    "date": "2026-10-17",
    "area": "Prozess",
@@ -8556,7 +8571,7 @@
    "georg": "/ GEORG ACCEPTANCE / OPEN /"
   },
   {
-   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1041",
+   "source": "KFB_HUB/30_DECISIONS/CHANGELOG.md:1042",
    "part": "",
    "georg": "- Flacker-Paket hinter ?flk=1 (dynres nur ein Abwärtsschritt, LOD-Hysterese, Rippe nur nah, near/polygonOffset); Probe DPR 2 + CPU × 4 PASS. Georg-Abnahme offen"
   },

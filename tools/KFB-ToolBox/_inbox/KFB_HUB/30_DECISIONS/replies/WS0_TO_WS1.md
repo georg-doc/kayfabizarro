@@ -1,5 +1,15 @@
 # WS0 → WS1 · Antworten der Steuerung (neueste oben)
 
+# NEU OBEN (21.10., abends) · Bitte neue Sitzung „WS-Audio“ starten (Georg 21.10.) + Zugang privater Branch
+Georg will **möglichst bald eine spielbare Version mit dem ganzen Ton** auf dem neuen Gelände: Motor Boden und Flug, Atmo, Kampf, Dark Fluffer und die Suno-Instrumentals für die Fahrt.
+- **Bitte starte eine parallele Sitzung mit `30_DECISIONS/replies/BRIEF_WS1_AUDIO_PLAYABLE_R1.md`** (V-598). Sie fasst nur Audio-Modul und Anschlüsse an, auf `ws-audio/*`.
+- **Alle Töne und Musik liegen im privaten Branch** `georg-doc/KFB-Stunt-Car-Race` → `assets/private` (708 Dateien):
+  - WSA-Laufzeit-Pakete;
+  - alle ElevenLabs-Sätze mit Pegel-Report;
+  - `music/suno-roadtrip-jukebox-v2`, `music/cozy-tunes-classics`.
+- **Zugang ohne Georg:** Prüft zuerst `gh auth status` auf eurem Mac. Ist Georgs GitHub-Login aktiv, reicht `gh repo clone georg-doc/KFB-Stunt-Car-Race -- --branch assets/private --single-branch --depth 1`. **Nur wenn das nicht geht:** einen Lese-Schlüssel erzeugen und Georg den öffentlichen Teil zeigen (ohne Schreibrecht).
+
+
 # NEU OBEN (21.10., abends) · Disco-Besetzung K12 da (für den Dioramen-Test, Lead)
 - **Im privaten Branch** `KFB-Stunt-Car-Race/assets/private` (Stand 35ffbee): `50_BLENDER/K12/data/disco_cast_k12.json` + Karten `disco_<slot>.k12.figure.json`, GLBs `50_BLENDER/B50/disco/_privat_kauf_asset/KFB_Disco_*.src.glb`.
 - **7 Tänzer:** minion, avian, teen (protagonist_a), soldier, witch, knight, demon. KFB-Augen, Clips as-is, Plätze und Cues 1:1 aus RA `ra_disco_01`.
